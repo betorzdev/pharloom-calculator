@@ -512,6 +512,14 @@ The wiki's `Hunter's Journal (Silksong)` table (order, `HJ <Name>.png`, kills) p
 
 ### 4.7 The map: `tools/extract-map.py`
 
+**Verified on 27 September 2026 with the game installed: the map can be extracted, and the spike
+drew it.** `maps_assets_all.bundle` (Addressables, `StreamingAssets/aa/StandaloneLinux64/`) holds
+a `Game_Map_Hornet` tree as Hollow Knight's `Game_Map`: one child per area, one GameObject per
+room named after its scene, its Transform and a SpriteRenderer tinted with the area's colour;
+the sprites are `hornet_map.spriteatlas` (4096², BC7, 1,199 rooms by name) and a patch atlas.
+UnityPy reads them with the Unity version set by hand (6000.0.50f1). `tools/extract-map.py`
+places 1,110 rooms and gives the game's map line for line. What follows was written before:
+
 Unverified, but the signs are good. `extract-map.py` reads Hollow Knight's `resources.assets`
 for the `Game_Map` object tree (a `<scene>_Cornifer` sprite per room, the tint, the pins) and
 the `level<N>` files for the tk2d sizes. Silksong is Unity 6 (AssetRipper and AssetStudio need
@@ -777,6 +785,11 @@ its card, what you do to it and what it does to you, and the quickest way to kil
 for, from a full spool, no Bind; minimal by construction, tested). Left: Binds and the damage
 taken over a fight, the phases' bars one by one (only the Forebrothers carry them in the data),
 the per-boss pages (phase 8's) and the gauntlets (phase 7's).
+
+**Phase 6's spike is done** (the same day): the map comes out of the game's files (§4.7), so the
+fallback (a schematic map from the randomizer's room graph) isn't needed. Left for the phase:
+the icons, the rooms with two states, the scene names joined to the collectibles, Hornet walking
+between benches, and deciding what the site publishes of it.
 
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about

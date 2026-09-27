@@ -47,7 +47,7 @@
     return `<div class="ft-card">
         <img class="ft-big" src="${portrait(f)}" alt="">
         <h3 class="inv-name"${NT}>${esc(foeName(f))}</h3>
-        <p class="ft-hp"><span class="save-k">${esc(t('ftHp'))}</span> <b>${hp == null ? '—' : num(hp)}</b>${f.bars ? ` <span class="ft-bars">${esc(f.bars.map((b) => num(b)).join(' + '))}</span>` : ''}</p>
+        <p class="ft-hp"><span class="save-k">${esc(t('ftHp'))}</span> <b>${hp == null ? '?' : num(hp)}</b>${f.bars ? ` <span class="ft-bars">${esc(f.bars.map((b) => num(b)).join(' + '))}</span>` : ''}</p>
         ${f.bt ? `<button type="button" class="check" role="switch" aria-checked="${black}" data-act="ftBlack"><span class="check-box" aria-hidden="true">${App.tick}</span><span>${esc(t('ftBlack', { n: num(f.bt) }))}</span></button>` : ''}
         <div class="ft-mods"><span class="save-k">${esc(t('ftMods'))}</span><ol>${mods}</ol>
           <p class="pg-note">${esc(t('ftModsNote', { n: num(lv), k: num(kit) }))}</p></div>
@@ -59,7 +59,7 @@
   const row = (img, name, each, total, uses, extra = '') => `<li>${img ? `<img src="${img}" alt="">` : '<span></span>'}
       <span class="ct-list-name"${NT}>${esc(name)}</span>
       <span class="ct-list-sub">${esc([each.length > 1 ? each.map((x) => num(x)).join(' + ') : '', extra].filter(Boolean).join(' · '))}</span>
-      <b>${num(total)}</b><span class="ft-uses">${uses == null ? '—' : esc(t('ftUses', { n: num(uses) }))}</span></li>`;
+      <b>${num(total)}</b><span class="ft-uses">${uses == null ? '' : esc(t('ftUses', { n: num(uses) }))}</span></li>`;
   const icon = (list, id) => `assets/icons/${list}/${id}.webp`;
 
   function against(f, r) {
