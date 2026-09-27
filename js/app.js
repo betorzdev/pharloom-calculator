@@ -371,6 +371,8 @@
       return;
     }
     if (h.lang && h.lang !== prefs.lang) { prefs.lang = I.setLang(h.lang); prefs.langChosen = true; savePrefs(); rebuildNF(); }
+    // A link pasted by hand may bring a build: the same as on arriving (js/app-tools.js).
+    if (h.build && h.build !== App.build) { App.build = h.build; if (App.adoptBuild) App.adoptBuild(); }
     setView(h.view || BARE_VIEW);
     writeUrl(false);
     render();

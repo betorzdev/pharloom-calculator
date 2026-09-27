@@ -77,3 +77,17 @@ test('silk, the Bind and the slots', () => {
   assert.equal(E.compute({ tools: y }).slots.yellow.over, 1);
   assert.equal(E.compute({ tools: y, vest: { yellow: true } }).slots.yellow.over, 0);
 });
+
+test("the Crests' own slashes: the Architect's drills and the Witch's whip, each hit rounded on its own", () => {
+  // Architect, Pale Steel (21): 0.9x + 0.1x + 0.1x = 18.9 → 19, 2.1 → 2, 2 → 23 in all.
+  const a = E.compute({ crest: 'architect', needle: 4 }).needle.attacks;
+  assert.deepEqual(a.find((x) => x.id === 'slash').each, [19, 2, 2]);
+  // Its down-slash: 0.55x + 0.5x = 11.55 → 12, 10.5 → 10 (half to even); held, two more of 0.5x.
+  const down = a.find((x) => x.id === 'down');
+  assert.deepEqual([down.each, down.charged], [[12, 10], 20]);
+  // The Witch's run-slash: 1x + 0.5x, and 0.5x more when it lands.
+  const run = E.compute({ crest: 'witch', needle: 4 }).needle.attacks.find((x) => x.id === 'run');
+  assert.deepEqual([run.each, run.onHit], [[21, 10], 10]);
+  // Everyone else slashes once at the Needle's damage.
+  assert.deepEqual(E.compute({ crest: 'reaper', needle: 4 }).needle.attacks.map((x) => x.total), [21, 21, 21]);
+});

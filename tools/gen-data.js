@@ -236,6 +236,39 @@ function buildTools(rows) {
 /* ── The Crests ───────────────────────────────────────────────────────── */
 const CRESTS = ['Hunter', 'Reaper', 'Wanderer', 'Beast', 'Witch', 'Architect', 'Shaman'];
 
+/* The Crests whose slashes aren't one hit at the Needle's damage: their pages say it in prose,
+   one bullet per attack ("Down-slash: … 0.55x Needle damage … 0.5x"), so the multipliers are
+   written here and each is checked against its bullet: if the wiki changes one, npm run data
+   fails instead of carrying an old figure. hits: [multiplier, times]; charged: what holding the
+   attack adds; onHit: a hit that only comes when the first ones land. The rest slash at 1x. */
+const CREST_ATTACKS = {
+  Architect: {
+    slash: { bullet: 'Neutral Slashes', hits: [[0.9, 1], [0.1, 2]] },
+    down: { bullet: 'Down-slash', hits: [[0.55, 1], [0.5, 1]], charged: [[0.5, 2]] },
+    run: { bullet: 'Run-slash', hits: [[0.55, 1], [0.5, 1]], charged: [[0.5, 2]] },
+  },
+  Witch: {
+    down: { bullet: 'Down-slash', hits: [[0.55, 1], [0.5, 1]] },
+    run: { bullet: 'Run-slash', hits: [[1, 1], [0.5, 1]], onHit: [[0.5, 1]] },
+  },
+};
+function crestAttacks(c, page) {
+  const want = CREST_ATTACKS[c];
+  if (!want) return undefined;
+  const bullets = page.split('\n').filter((l) => /^\*\s/.test(l)).map((l) => W.plain(l));
+  const out = {};
+  for (const [id, a] of Object.entries(want)) {
+    const line = bullets.find((l) => l.replace(/^\*\s*/, '').startsWith(a.bullet));
+    if (!line) fail(`${c} Crest: no "${a.bullet}" bullet`);
+    const said = (line.match(/\d+(?:\.\d+)?x/g) || []).map((x) => Number(x.slice(0, -1)));
+    for (const [m] of [...a.hits, ...(a.charged || []), ...(a.onHit || [])]) {
+      if (!said.includes(m)) fail(`${c} Crest's ${a.bullet}: the page no longer says ${m}x (it says ${said.join(', ')})`);
+    }
+    out[id] = { hits: a.hits, charged: a.charged, onHit: a.onHit };
+  }
+  return out;
+}
+
 function buildCrests(strikes) {
   const out = CRESTS.map((c) => {
     const title = c + ' Crest';
@@ -261,6 +294,7 @@ function buildCrests(strikes) {
       strike: { hits, minHits: count && count[2] ? Number(count[1]) : undefined },
     };
     if (c === 'Hunter') crest.evolved = text('CREST_HUNTER_UPGRADED_DESC');
+    crest.attacks = crestAttacks(c, t);
     return crest;
   });
   // The totals in the Needle Strike table, "7 (14)", are checked against hits × count.
@@ -427,6 +461,9 @@ const HORNET = {
                   rosaries per shot, reserve = a reserve is spent first.
      slots        a Crest's [open, locked] per colour; locked ones open with Memory Lockets.
      strike       the Crest's Needle Strike; minHits = the Witch's hits when not all land.
+     attacks      a Crest's slashes when they aren't one hit at 1x the Needle (the Architect's
+                  drills, the Witch's whip): { slash, down, run }, each hits [×Needle, times],
+                  charged (held) and onHit (only when it lands); read from the Crest's page.
      MODIFIERS    add = into (1 + Σ), mul = after it; to = 'needle' or 'skill'.`;
   const size = write(OUT, header, 'data', parts);
   console.log(`js/data.js: ${crests.length} Crests, ${tools.length} Tools, ${skills.length} Silk Skills (${(size / 1024).toFixed(1)} KB)`);

@@ -103,6 +103,19 @@
       crit: critChance ? { damage: roundHalfEven(base * bracketN) * 3, chance: critChance } : null,
     };
 
+    /* The Crest's three slashes: one hit at 1x the Needle but for the Crests that split them
+       (js/data.js, attacks: the Architect's drills, the Witch's whip); each hit is Needle ×
+       multiplier × bracket, rounded on its own. charged: what holding the attack adds; onHit:
+       the hit that only comes when the first ones land. */
+    const ownAttacks = crest.attacks || {};
+    const attack = (id) => {
+      const a = ownAttacks[id] || { hits: [[1, 1]] };
+      const at = (list) => hitsOf((list || []).map(([m, n]) => [base * m, n]), bracketN);
+      const h = at(a.hits);
+      return { id, ...h, charged: a.charged ? at(a.charged).total : null, onHit: a.onHit ? at(a.onHit).total : null };
+    };
+    needle.attacks = ['slash', 'down', 'run'].map(attack);
+
     // The Needle Strike: the Crest's own, at the Needle's level, through the same bracket.
     const sHits = crest.strike ? crest.strike.hits[st.needle] : null;
     const strike = sHits ? { ...hitsOf(sHits, bracketN), minHits: crest.strike.minHits || null } : null;

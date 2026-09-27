@@ -749,8 +749,13 @@ saves that have one it always fits its Crest (`check-pack` checks it). The Crest
 in a save, read-only as on the Hollow Knight site (decided with the author), the moment
 switchable; in Free mode, every choice at hand, kept in `pharloom.build`. Found on the way: §2.4
 said a red Tool costs 80 shards from empty at any Pouch level; it's 40 at the base capacity and
-80 at the top. Left in phase 3: the Crests' own attacks (the Witch's and Architect's split hits),
-the Effects plates for the passive Tools, the URL codec and Share.
+80 at the top. Then the Crests' own attacks (the Architect's drills and down- and run-slashes, the
+Witch's down- and run-slashes: in prose on their pages, so `tools/gen-data.js` carries the
+multipliers and checks each one against its sentence, failing if the wiki changes), the effects
+of the passive Tools in the game's words, and the build in the URL (`js/codec.js`, readable, only
+what differs from the base, the Tools by id so a patch that reorders the lists doesn't break a
+link) with Share. **Phase 3 is done** but for the DPS figure, which still waits for the attack
+speed per Crest (§2.3's gap), and a figures summary that stays in view on a phone.
 
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about

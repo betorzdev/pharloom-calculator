@@ -72,6 +72,16 @@ with the Needle; no player modifier reaches a Tool. In a save, the build is what
 the game, at its levels, and it's read, not changed (the moment can still be switched): to try
 builds, Free mode, where the build is kept in this browser.
 
+The Architect and the Witch split their slashes (the Architect drills: 0.9× + 0.1× + 0.1× the
+Needle; both have their own down- and run-slashes), and the screen shows all three attacks with
+their hits, what holding adds and what a landed hit adds; the others slash once at the Needle's
+damage. The Tools equipped that deal no damage are listed with the game's text of what they do.
+
+**Share** copies a link that opens the build on screen as it is (yours from a save too). The
+link is readable (`#v=1&crest=architect&needle=4&tools=straight-pin,compass…`) and carries only
+what differs from a Hunter with nothing: in Free mode the address always says the build. A link
+with a build opens it in Free mode; if you were in a save, the page goes to Free mode and says so.
+
 ### Progress
 
 What's missing for 100%, in the wiki's ten categories: the Tools (with their slot colour),

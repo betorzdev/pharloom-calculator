@@ -16,6 +16,9 @@
                   rosaries per shot, reserve = a reserve is spent first.
      slots        a Crest's [open, locked] per colour; locked ones open with Memory Lockets.
      strike       the Crest's Needle Strike; minHits = the Witch's hits when not all land.
+     attacks      a Crest's slashes when they aren't one hit at 1x the Needle (the Architect's
+                  drills, the Witch's whip): { slash, down, run }, each hits [×Needle, times],
+                  charged (held) and onHit (only when it lands); read from the Crest's page.
      MODIFIERS    add = into (1 + Σ), mul = after it; to = 'needle' or 'skill'. */
 (() => {
   'use strict';
@@ -139,6 +142,10 @@
       },
       slots: { skill: 1, red: [1, 1], blue: [1, 2], yellow: [0, 0] },
       strike: { hits: [[[4, 4]], [[7, 4]], [[10, 4]], [[14, 4]], [[17, 4]]], minHits: 2 },
+      attacks: {
+        down: { hits: [[0.55, 1], [0.5, 1]] },
+        run: { hits: [[1, 1], [0.5, 1]], onHit: [[0.5, 1]] },
+      },
     },
     {
       id: 'architect',
@@ -151,6 +158,11 @@
       },
       slots: { skill: 0, red: [3, 0], blue: [0, 2], yellow: [0, 2] },
       strike: { hits: [[[3, 5]], [[5, 5]], [[8, 5]], [[10, 5]], [[13, 5]]] },
+      attacks: {
+        slash: { hits: [[0.9, 1], [0.1, 2]] },
+        down: { hits: [[0.55, 1], [0.5, 1]], charged: [[0.5, 2]] },
+        run: { hits: [[0.55, 1], [0.5, 1]], charged: [[0.5, 2]] },
+      },
     },
     {
       id: 'shaman',

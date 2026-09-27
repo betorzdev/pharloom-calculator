@@ -1116,3 +1116,10 @@ kbd {
 @media (max-width: 640px) {
   .ct-body { grid-template-columns: minmax(0, 1fr); }
 }
+/* The passive Tools' effects: icon and the game's own text, quiet. */
+.ct-effects { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-3); }
+.ct-effects li { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: var(--sp-3); align-items: start; }
+.ct-effects img { width: 32px; height: 32px; object-fit: contain; }
+.ct-eff-name { margin: 0; font-size: var(--fs-sm); color: var(--ink-strong); }
+.ct-eff-desc { margin: var(--sp-half) 0 0; font-size: var(--fs-xs); line-height: 1.5; color: var(--ink-2); }
+.ct-share { margin-top: var(--sp-3); }

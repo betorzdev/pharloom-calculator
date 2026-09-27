@@ -13,10 +13,13 @@
   const fromUrl = urlHash.lang || (PAGE_LANG === 'en' ? null : PAGE_LANG);
   // The screen: the link's; without it, the page's own; and with no link, wherever you left it.
   prefs.view = urlHash.view || PAGE_VIEW || prefs.view;
+  App.build = urlHash.build;
   I.setLang(fromUrl || prefs.lang);
   prefs.lang = I.current;
   if (fromUrl) prefs.langChosen = true;   // a link with a language counts as choosing it
   rebuildNF();
+  // A build in the link goes to Free mode (js/app-tools.js); without one, Free mode's own shows in the URL.
+  if (App.adoptBuild) App.adoptBuild();
   persist();
   render();
   // The save you're in, if it follows the game's file, starts watching it (js/app-saves.js).

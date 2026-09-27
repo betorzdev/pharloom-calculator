@@ -13,6 +13,7 @@
   const D = SS.data, E = SS.engine;
   const App = SS.app;
   const { t, pick, esc, NT, ART, brackets, screenHead, actions, load, save, render, toast } = App;
+  const C = SS.codec, S = SS.saves;
 
   const KEY = 'pharloom.build';
   const num = (n, d = 0) => App.NF[d].format(n);
@@ -29,7 +30,23 @@
     try { x = JSON.parse(load(KEY) || 'null'); } catch (e) { x = null; }
     return E.normalize({ ...FREE_START, ...(x && typeof x === 'object' ? x : {}) });
   }
-  const setFree = (st) => save(KEY, JSON.stringify(st));
+  // Free mode's build is kept here and travels in the URL (js/codec.js), so a link says it.
+  const setFree = (st) => { save(KEY, JSON.stringify(st)); App.build = C.encode(st); };
+
+  /* A build in the link (the boot, or a link pasted by hand): it's Free mode's. In a save, which
+     is read and not changed, the page goes to Free mode to show it, and says so. Without a
+     link, Free mode's own build goes into the URL; a save's never does (its link is Share's). */
+  App.adoptBuild = () => {
+    const linked = App.build ? C.decode(App.build) : null;
+    let store = null;
+    try { store = localStorage; } catch (e) { store = null; }
+    if (linked) {
+      if (store && App.activeSlot() !== S.FREE && S.select(store, S.FREE)) toast(t('ctLinkFree'));
+      setFree(linked);
+      return;
+    }
+    App.build = App.game() ? '' : C.encode(freeBuild());
+  };
   /* The moment of the fight (focus, fury, Flintslate, a Challenge) isn't part of the build: in a
      save too it can be switched, and it's kept only while the page is open. */
   const moment = { focus: true, fury: false, flint: false, challenge: false };
@@ -110,9 +127,13 @@
 
   function figures(r) {
     const n = r.needle;
+    // The Crests that split their slashes show all three; the rest, the one slash.
+    const own = !!D.CRESTS.find((c) => c.id === r.state.crest).attacks;
     const mods = r.mods.needle.map((id) => `<li${NT}>${esc(modName(id))}</li>`).join('');
     const needle = `<section class="ct-block"><h3 class="ct-h">${esc(t('ctNeedle'))}</h3>
-        ${fig(esc(t('ctSlash')), `<b>${num(n.slash)}</b>`, n.bracket !== 1 ? esc(t('ctBracket', { base: num(n.base), x: num(n.bracket, 2) })) : '')}
+        ${own ? n.attacks.map((a) => fig(esc(t('ctAtt_' + a.id)), `<b>${num(a.total)}</b>`,
+          esc([hitsText(a.each), a.charged ? t('ctCharged', { n: num(a.charged) }) : '', a.onHit ? t('ctOnHit', { n: num(a.onHit) }) : ''].filter(Boolean).join(' · ')))).join('')
+        : fig(esc(t('ctSlash')), `<b>${num(n.slash)}</b>`, n.bracket !== 1 ? esc(t('ctBracket', { base: num(n.base), x: num(n.bracket, 2) })) : '')}
         ${mods ? `<ul class="ct-mods">${mods}</ul>` : ''}
         ${n.crit ? fig(esc(t('ctCrit')), `<b>${num(n.crit.damage)}</b>`, esc(t('ctCritChance', { p: num(n.crit.chance * 100, 1) }))) : ''}
         ${r.strike ? fig(esc(t('ctStrike')), `<b>${num(r.strike.total)}</b>`, esc(hitsText(r.strike.each))) : ''}
@@ -132,14 +153,21 @@
         ${fig(esc(t('invSilk')), `<b>${num(r.silk.spool)}</b>`, esc(t('ctCasts', { n: num(r.silk.casts), c: num(r.silk.skill) })))}
         ${fig(esc(t('ctBind')), `<b>${num(r.health.bind.heals)}</b>`, esc(t('ctBindSub', { parts: r.health.bind.parts.map((p) => num(p)).join(' + '), s: num(r.health.bind.seconds, 2) })))}
       </section>`;
-    return `<div class="ct-figs">${needle}${tools}${skills}${body}</div>`;
+    /* The Tools equipped that deal no damage: what each does, in the game's words (their numbers,
+       where the engine has them, are in the figures above: the Bind, silk, the modifiers). */
+    const passive = r.tools.filter((x) => !x.attacks.length);
+    const effects = passive.length ? `<section class="ct-block"><h3 class="ct-h">${esc(t('ctEffects'))}</h3><ul class="ct-effects">${passive.map((x) => {
+      const tool = TOOL.get(x.id);
+      return `<li><img src="${icon('tools', x.id)}" alt=""><div><p class="ct-eff-name"${NT}>${esc(pick(tool.name))}</p>${tool.desc ? `<p class="ct-eff-desc">${esc(pick(tool.desc))}</p>` : ''}</div></li>`; }).join('')}</ul></section>` : '';
+    return `<div class="ct-figs">${needle}${tools}${skills}${body}${effects}</div>`;
   }
 
   App.screens.tools = (sec) => {
     const { st, locked } = current();
     const r = E.compute(st);
+    const share = `<button type="button" class="btn ct-share" data-act="ctShare">${esc(t('ctShare'))}</button>`;
     const note = locked ? `<p class="saves-note">${esc(t('ctLocked', { n: App.activeSlot() }))} <a class="text-btn" href="${App.here(App.hashFor('saves'))}" data-act="view" data-value="saves">${esc(t('freeMode'))}</a></p>` : '';
-    sec.innerHTML = `<div class="ct">${brackets}${screenHead(esc(t('navTools')), note)}
+    sec.innerHTML = `<div class="ct">${brackets}${screenHead(esc(t('navTools')), note + share)}
       <div class="ct-body">
         <aside class="ct-side">${slotsHtml(st, r)}</aside>
         ${controls(st, locked)}
@@ -153,9 +181,24 @@
     const st = freeBuild();
     f(st);
     setFree(E.normalize(st));
+    App.persist();
     render();
   }
+  /* Share: the link to this build (a save's too), on the Crest screen and in the page's language,
+     copied; where the browser won't copy, the notice shows it. */
+  function shareLink() {
+    const { st } = current();
+    const u = new URL(location.href);
+    u.hash = C.encode(st) + (App.prefs.lang !== App.PAGE_LANG ? '&lang=' + App.prefs.lang : '') + '&view=tools';
+    return u.href;
+  }
   Object.assign(actions, {
+    ctShare() {
+      const link = shareLink();
+      App.track('share');
+      const done = () => toast(t('ctShared'));
+      try { navigator.clipboard.writeText(link).then(done, () => toast(link)); } catch (e) { toast(link); }
+    },
     ctCrest(node) { change((st) => { st.crest = node.dataset.value; if (!D.CRESTS.find((c) => c.id === st.crest).slots.skill) st.skill = null; }); },
     ctLevel(node) { change((st) => { st[node.dataset.key] = Number(node.dataset.value); }); },
     ctToggle(node) {
