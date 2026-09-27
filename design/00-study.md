@@ -797,6 +797,14 @@ the map doesn't draw. Every floor piece but one has its room, and every bench of
 saves but a tutorial one. Left: the icons (the site's own, by what the game has found), the
 rooms with two states, Hornet walking between benches.
 
+**Phase 7 has started** (the same day): the Tasks. The completionist's 74 (21 main objectives and
+53 wishes in 11 types) with their save field, joined to the game's own names by their English
+among its quest titles (`QUEST_<X>_TITLE`, `MQ_<X>_NAME`, `SQ_<X>_NAME`; compared without commas:
+the completionist's "Pain, Anguish, and Misery" is the game's "Pain, Anguish and Misery"), all 74
+named; the types by `TYPE_<X>_TITLE`. They show in Progress as a third part and in "since the
+previous save"; the author's 100% game has 64 done (two are one mode's only, a few one path's).
+The fleas were already in Progress and on the Map. Left: the 49 enemy gauntlets.
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).

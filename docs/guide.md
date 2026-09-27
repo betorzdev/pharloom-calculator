@@ -133,6 +133,11 @@ the area it's in, with the game's names; what belongs to a later Act than yours 
 what doesn't count but opens things: Memory Lockets, Craftmetal, Pale Oil, the Lost Fleas, the
 four Old Hearts (the Red Memory), the three melodies (the Cradle) and the abilities outside the
 100% (the two cloaks, Beastling Call, Elegy of the Deep).
+
+Last, **Tasks** («Tareas», the game's pane): the main objectives and the wishes on the boards by
+type (Wayfarer, Gather, Donate, Hunt, Grand Hunt, Delivery…), 74 in all, each with the game's own
+name, its Act and where. The one only Steel Soul has, and the one only Classic has, show only in a
+game of that mode. A task done also shows in "Since the previous save".
 In a save it shows what's missing, or everything with a tick where you have it; without a save,
 the whole list, as a guide. Which piece you have is read from the save one by one, and on the
 92 real saves it agrees with the game's own counters (masks, spools, the three upgrade ladders,

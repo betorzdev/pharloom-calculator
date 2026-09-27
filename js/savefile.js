@@ -227,6 +227,7 @@
        hearts             Silk Hearts (silkRegenMax); needle, kit, pouch: the three upgrade ladders
        everbloom          the White Flower in Collectables
        pieces             the indices of js/collectibles.js's PIECES found
+       wishes             the indices of its WISHES done (the pane «Tareas»)
        journal            { entry id: kills } for every entry the save lists
        act                1, 2 from act2Started, 3 once the world is black-threaded (blackThreadWorld)
        bench, area        where Hornet rests (respawnScene) and the area she's in (currentArea)
@@ -239,6 +240,8 @@
       if (!bools.has(k)) bools.set(k, e.Value);
     }
     const visited = new Set(Array.isArray(pd.scenesVisited) ? pd.scenesVisited : []);
+    const kills = new Map((pd.EnemyJournalKillData && Array.isArray(pd.EnemyJournalKillData.list) ? pd.EnemyJournalKillData.list : [])
+      .map((e) => [e.Name, e.Record ? int(e.Record.Kills) : 0]));
     const has = (c) => {
       switch (c[0]) {
         case 'flag': return !!pd[c[1]];
@@ -246,14 +249,13 @@
         case 'quest': return !!(quests.get(c[1]) || {}).IsCompleted;
         case 'bool': return !!bools.get(c[1] + '\u0000' + c[2]);
         case 'visited': return visited.has(c[1]);
+        case 'journal': return kills.has(c[1]);   // the entry is listed (seen)
         case 'any': return c.slice(1).some(has);
         default: return false;
       }
     };
     const whole = (v, base) => Math.max(0, int(v) - base);
     const journal = {};
-    const kills = new Map((pd.EnemyJournalKillData && Array.isArray(pd.EnemyJournalKillData.list) ? pd.EnemyJournalKillData.list : [])
-      .map((e) => [e.Name, e.Record ? int(e.Record.Kills) : 0]));
     for (const [id, name] of Object.entries(CO.JOURNAL)) if (kills.has(name)) journal[id] = Math.max(0, kills.get(name));
     const flower = (named(pd.Collectables).get('White Flower') || {}).Amount;
     return {
@@ -266,6 +268,7 @@
       pouch: Math.min(4, whole(pd.ToolPouchUpgrades, 0)),
       everbloom: int(flower) > 0,
       pieces: CO.PIECES.map((p, i) => (has(p[2]) ? i : -1)).filter((i) => i >= 0),
+      wishes: CO.WISHES.map((w, i) => (has(w[2]) ? i : -1)).filter((i) => i >= 0),
       journal,
       act: pd.blackThreadWorld === true ? 3 : pd.act2Started === true ? 2 : 1,
       bench: typeof pd.respawnScene === 'string' && /^[\w ()-]{1,64}$/.test(pd.respawnScene) ? pd.respawnScene : '',
@@ -289,9 +292,10 @@
      (new pieces, another order) still finds the ones a slot saved before it. */
   const pieceKey = (p) => p[0] + ' ' + JSON.stringify(p[2]);
   const KEY_AT = new Map(CO.PIECES.map((p, i) => [pieceKey(p), i]));
+  const WISH_AT = new Map(CO.WISHES.map((w, i) => [pieceKey(w), i]));
   function toSnapshot(pd, sd = null, saved = null) {
     const g = game(pd, sd);
-    const progress = { ...g, pieces: g.pieces.map((i) => pieceKey(CO.PIECES[i])) };
+    const progress = { ...g, pieces: g.pieces.map((i) => pieceKey(CO.PIECES[i])), wishes: g.wishes.map((i) => pieceKey(CO.WISHES[i])) };
     for (const k of [...OWNED, 'journal']) delete progress[k];
     const m = meta(pd);
     return {
@@ -302,7 +306,7 @@
     };
   }
   const EMPTY = Object.freeze({ tools: [], crests: [], skills: [], arts: [], journal: {}, masks: 0, spools: 0, hearts: 0,
-    needle: 0, kit: 0, pouch: 0, everbloom: false, pieces: [], act: 1, bench: '', area: '', build: {} });
+    needle: 0, kit: 0, pouch: 0, everbloom: false, pieces: [], wishes: [], act: 1, bench: '', area: '', build: {} });
   const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
   // Each field only if it has the type an empty game gives it.
   function gameOf(snap) {
@@ -316,6 +320,7 @@
     }
     // The pieces by their keys → today's places in the list; a key the list no longer has is dropped.
     out.pieces = out.pieces.map((k) => KEY_AT.get(k)).filter((i) => i !== undefined);
+    out.wishes = out.wishes.map((k) => WISH_AT.get(k)).filter((i) => i !== undefined);
     return out;
   }
   const metaOf = (snap) => ({ version: '', time: 0, completion: 0, rosaries: 0, shards: 0, steel: false, dead: false, saved: null,

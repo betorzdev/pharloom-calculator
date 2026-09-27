@@ -33,3 +33,8 @@ test('losses are not told, and the same game twice is nothing', () => {
   assert.deepEqual(CH.diff(a, a), []);
   assert.deepEqual(CH.diff(null, a), []);
 });
+
+test('a wish done is told too', () => {
+  const a = { ...empty(), wishes: [] }, b = { ...empty(), wishes: [3] };
+  assert.deepEqual(CH.diff(a, b), [{ kind: 'wish', i: 3 }]);
+});

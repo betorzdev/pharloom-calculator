@@ -127,12 +127,15 @@ for (const z of [...ZONES].sort()) {
 // The completionist's spellings that aren't the game's.
 const AREA_ALIAS = { 'weavnest atla': 'weavenest atla' };
 const AREAS = {};
-function areaOf(details) {
+/* strict: a piece's heading must be an area (the generator stops otherwise); a wish's may name a
+   place that isn't one ("Grand Bellway"), and then it has no area. */
+function areaOf(details, strict = true) {
   const head = /^([^:]{2,60}):/.exec(details || '');
   if (!head) return null;
   let en = norm(head[1].split(' (')[0].split(' / ')[0]);
   en = AREA_ALIAS[en] || en;
   const z = zoneByEn.get(en);
+  if (!z && !strict) return null;
   if (!z) fail(`no area of the game named "${head[1]}"`);
   AREAS[z] = zoneText(z);
   return z;
@@ -148,6 +151,7 @@ function check(p) {
     case 'quest': return ['quest', id];
     case 'sceneDataBool': return ['bool', id[0], id[1]];
     case 'sceneVisited': return ['visited', id];
+    case 'journal': return ['journal', id];
     default: return fail(`check type ${p.type} not read yet`);
   }
 }
@@ -181,6 +185,35 @@ for (const [flag, key, kind, act] of [
   const desc = N.text(key.startsWith('INV_NAME_') ? key.replace('INV_NAME_', 'INV_DESC_') : key.replace(/_NAME$/, '_DESC'));
   PIECES.push([kind, act, ['flag', flag], null, N.text(key), desc]);
 }
+
+/* ── The Wishes (the pane «Tareas»): the main objectives and the wishes by type, as the
+   completionist lists them, each with the game's own name. The name is looked up by its English
+   among the game's quest titles (QUEST_<X>_TITLE, MQ_<X>_NAME, SQ_<X>_NAME…); a type's among its
+   TYPE_<X>_TITLE. "Broodfeast / Runtfeast (ACT 3)" is one wish with two names: the first. ── */
+const QUEST_KEY = /^(QUEST_.*_TITLE|MQ_.*_NAME(_\w+)?|SQ_.*_NAME)$/;
+const questByEn = new Map();
+// Compared without commas: the completionist's "Pain, Anguish, and Misery" is the game's "Pain, Anguish and Misery".
+const qnorm = (x) => norm(x).replace(/,/g, '');
+for (const k of Object.keys(EN).sort()) if (QUEST_KEY.test(k)) { const n = qnorm(EN[k]); if (!questByEn.has(n)) questByEn.set(n, k); }
+const WISH_TYPE_KEY = { 'Main Objectives': null, Wayfarer: 'TYPE_WAYFARER_1_TITLE', Gather: 'TYPE_GATHER_1_TITLE', Donate: 'TYPE_DONATE_1_TITLE',
+  Hunt: 'TYPE_HUNT_1_TITLE', 'Grand Hunt': 'TYPE_HUNT_2_TITLE', Delivery: 'TYPE_COURIER_TITLE', Learn: 'TYPE_JOURNAL_TITLE',
+  Collect: null, Sprint: 'TYPE_SPRINT_TITLE', Witness: 'TYPE_HERALD_TITLE', Steel: 'TYPE_STEELSENTINEL_TITLE' };
+const WISH_TYPES = [], WISHES = [];
+for (const sec of sections('tasks.ts')) {
+  const type = sec.name.replace(/^Wishes · /, '');
+  if (!(type in WISH_TYPE_KEY)) fail(`a wish type the generator doesn't know: ${type}`);
+  const id = type.toLowerCase().replace(/[^a-z]+/g, '-');
+  WISH_TYPES.push({ id, name: WISH_TYPE_KEY[type] ? N.text(WISH_TYPE_KEY[type]) : undefined });
+  for (const it of sec.items) {
+    const en = it.name.split(' / ')[0].replace(/\s*\(ACT \d\)$/i, '');
+    const key = questByEn.get(qnorm(en));
+    // With no quest title of the game's (a few main objectives), the game's own name elsewhere.
+    const name = key ? N.text(key) : N.gameName(en) || { es: en, en, key: undefined };
+    const mode = it.onlyFoundInSteelSoulMode ? 'steel' : it.onlyFoundInClassicMode ? 'classic' : undefined;
+    WISHES.push([id, it.whichAct, check(it.parsingInfo), areaOf(it.completionDetails, false), name, mode]);
+  }
+}
+const unnamed = WISHES.filter((w) => !w[4].key).map((w) => w[4].en);
 
 /* ── Where the rest of the 100% is: Tools, Crests, Silk Skills, abilities, the Everbloom ──
    site id → [act, area], by the game's English name ("Swift Step (Dash / Sprint)" is Swift
@@ -224,13 +257,17 @@ const size = write(OUT, `js/collectibles.js — where each thing lives in Silkso
      JOURNAL   site Journal id → its name in playerData.EnemyJournalKillData.list
      AREAS     the game's area ids (playerData.currentArea) → the game's name for them
      WHERE     { tools, crests, skills, arts: { site id: [act, area] }, everbloom: [act, area] }
+     WISH_TYPES the pane «Tareas»'s groups: { id, name } (the main objectives, then each wish type)
+     WISHES    [type id, act, check, area, name, mode?]: check as a piece's (a quest, a flag, or
+               ['journal', entry] listed in the Journal); mode 'steel' or 'classic' when only one has it
      PIECES    [kind, act, check, area, name?, desc?]: a piece's own name and text (an Old Heart,
                a melody); area
                an AREAS id (or null); check is ['bool', scene, id] (sceneData.persistentBools),
                ['flag', name], ['min', name, n], ['quest', name] (QuestCompletionData
                IsCompleted), ['visited', scene] (playerData.scenesVisited) or ['any', check…].
                Act 0 = there from the start.`,
-'collectibles', [['TOOLS', TOOLS], ['COUNTED', COUNTED], ['CRESTS', CRESTS], ['JOURNAL', JOURNAL], ['AREAS', AREAS], ['WHERE', WHERE], ['PIECES', PIECES]]);
+'collectibles', [['TOOLS', TOOLS], ['COUNTED', COUNTED], ['CRESTS', CRESTS], ['JOURNAL', JOURNAL], ['AREAS', AREAS], ['WHERE', WHERE], ['PIECES', PIECES], ['WISH_TYPES', WISH_TYPES], ['WISHES', WISHES]]);
 console.log(`js/collectibles.js  ${Object.keys(TOOLS).length} Tools (${COUNTED.length} counted), ${Object.keys(CRESTS).length} Crests, `
-  + `${Object.keys(JOURNAL).length} Journal entries, ${Object.keys(AREAS).length} areas, ${PIECES.length} pieces  (${size} bytes)`);
+  + `${Object.keys(JOURNAL).length} Journal entries, ${Object.keys(AREAS).length} areas, ${PIECES.length} pieces, ${WISHES.length} wishes`
+  + ` (${unnamed.length} with no game name: ${unnamed.join(', ') || 'none'})  (${size} bytes)`);
 })().catch((e) => { console.error(e.message); process.exit(1); });

@@ -40,6 +40,7 @@
       case 'upgrade':
         if (c.id === 'needle') return { name: pick(D.NEEDLES[c.to].name), nt: true };
         return { name: t({ masks: 'chMasks', spools: 'chSpools', hearts: 'chHearts', kit: 'chKit', pouch: 'chPouch' }[c.id], { n: num(c.id === 'masks' ? 5 + c.to : c.to) }) };
+      case 'wish': return { name: pick(CO.WISHES[c.i][4]), where: t('chWish'), nt: true };
       case 'piece': {
         const p = CO.PIECES[c.i];
         const name = p[4] ? pick(p[4]) : p[0] === 'flea' ? t('kind_flea') : itemName(KIND_ITEM[p[0]]);

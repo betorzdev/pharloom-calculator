@@ -11,6 +11,7 @@
      { kind: 'piece', i }             a loose piece found (js/collectibles.js's PIECES index): a
                                       shard, a fragment, a locket, Craftmetal, Pale Oil, a flea.
                                       Not the upgrades and Silk Hearts one by one: 'upgrade' says those
+     { kind: 'wish', i }              a wish or objective done (js/collectibles.js's WISHES index)
      { kind: 'journal', id, done }    a Journal entry: new (done if already complete), or
                                       completed now (done: true, was: true)
      { kind: 'pct', from, to }        the completion went up (js/completion.js)
@@ -39,6 +40,7 @@
     for (const id of UPGRADES) if (b[id] > a[id]) out.push({ kind: 'upgrade', id, to: b[id] });
     if (b.everbloom && !a.everbloom) out.push({ kind: 'everbloom' });
     for (const i of b.pieces) if (!a.pieces.includes(i) && !BY_UPGRADE.has(CO.PIECES[i][0])) out.push({ kind: 'piece', i });
+    for (const i of b.wishes || []) if (!(a.wishes || []).includes(i)) out.push({ kind: 'wish', i });
     // The Journal, in its own order: an entry the save didn't list, or one completed now.
     for (const e of J.BOOK) {
       if (b.journal[e.id] === undefined) continue;

@@ -84,6 +84,20 @@
       </section>`;
   }
 
+  /* The pane «Tareas»: the main objectives, then the wishes by type, each with the game's name. */
+  const TYPE_NAME = { 'main-objectives': () => t('pgTasksMain'), collect: () => t('pgTasksCollect') };
+  function tasks(g) {
+    // A wish only one mode has (the Steel Soul's, a Classic one) shows in a game of that mode.
+    const m = App.gameMeta();
+    const mode = !g ? null : m && m.steel ? 'steel' : 'classic';
+    return CO.WISH_TYPES.map((ty) => {
+      const list = CO.WISHES.map((w, i) => ({ w, i })).filter(({ w }) => w[0] === ty.id && (!mode || !w[5] || w[5] === mode))
+        .map(({ w, i }) => ({ name: pick(w[4]), got: !!g && g.wishes.includes(i), act: w[1], area: w[3] })).sort(byAct);
+      const title = ty.name ? pick(ty.name) : TYPE_NAME[ty.id]();
+      return list.length ? group('wish-' + ty.id, title, list, g, list.filter((x) => x.got).length, list.length) : '';
+    }).join('');
+  }
+
   App.screens.progress = (sec) => {
     const g = App.game();
     const all = things(g);
@@ -111,6 +125,9 @@
         <h3 class="pg-part">${esc(t('pgBeyond'))}</h3>
         <p class="pg-note">${esc(t('pgBeyondNote'))}</p>
         <div class="pg-groups">${beyond}</div>
+        <h3 class="pg-part">${esc(t('pgTasks'))}</h3>
+        <p class="pg-note">${esc(t('pgTasksNote'))}</p>
+        <div class="pg-groups">${tasks(g)}</div>
       </div>`;
   };
 

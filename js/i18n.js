@@ -154,6 +154,7 @@
     chJournal:      { es: 'Diario: {n} entradas nuevas o completadas', en: 'Journal: {n} entries new or completed' },
     chJournalOne:   { es: 'Diario: una entrada nueva o completada', en: 'Journal: one entry new or completed' },
     chMore:         { es: 'y {n} más', en: 'and {n} more' },
+    chWish:         { es: 'tarea cumplida', en: 'task done' },
     chToast:        { es: 'Tu partida: {list}', en: 'Your game: {list}' },
 
     /* The Crest screen (js/app-tools.js, js/engine.js) */
@@ -274,6 +275,10 @@
     kind_oldHearts: { es: 'Viejos corazones', en: 'Old Hearts' },   // as the wish MQ_BLACKTHREAD_5_NAME says them
     kind_melodies:  { es: 'Melodías', en: 'Melodies' },
     pgOtherArts:    { es: 'Otras habilidades', en: 'Other abilities' },
+    pgTasks:        { es: 'Tareas', en: 'Tasks' },   // PANE_QUESTS
+    pgTasksNote:    { es: 'Los objetivos del juego y los deseos de los tablones, con el nombre que les da el juego. No cuentan para la finalización.', en: 'The game\'s objectives and the wishes on the boards, with the game\'s names for them. They don\'t count for completion.' },
+    pgTasksMain:    { es: 'Objetivos principales', en: 'Main objectives' },
+    pgTasksCollect: { es: 'Colección', en: 'Collect' },
 
     /* Footer: the fan-project notice, the sources and the author (docs/guide.md, "Credits and licences") */
     footLabel:      { es: 'Aviso, fuentes y contacto', en: 'Notice, sources and contact' },
