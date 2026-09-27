@@ -82,6 +82,18 @@ link is readable (`#v=1&crest=architect&needle=4&tools=straight-pin,compass…`)
 what differs from a Hunter with nothing: in Free mode the address always says the build. A link
 with a build opens it in Free mode; if you were in a save, the page goes to Free mode and says so.
 
+### Journal
+
+The Hunter's Journal as the game's pane: the 236 portraits (237 in Steel Soul) in its order, and
+beside them the one you point at or tap, with its portrait, name, description, the kills against
+what the full entry needs and, once complete, the Hunter's note. A complete entry is at full
+light, one seen and not complete half-lit with its kills (12/25), one not seen a grey silhouette,
+and the six optional ones carry a small diamond. On top, the count for Nuu's Hunter's Memento
+(230 required, 231 in Steel Soul) and how many you've seen; "What's missing" hides the complete
+ones. An entry is complete when the save lists it with its kills done: the game writes them even
+for the entries it completes another way, and on the saves where Nuu has given the Memento the
+site counts all 230. In Free mode, the whole Journal.
+
 ### Progress
 
 What's missing for 100%, in the wiki's ten categories: the Tools (with their slot colour),
@@ -128,8 +140,8 @@ texts and names are © Team Cherry; they're used here only to show the game's ow
   Journal entry and loose piece lives in the save comes from the completionist's dictionary,
   pinned in `kb/data/completionist/` with its licence (`npm run collectibles`).
 - **Sprites and icons**: Hornet, the masks, the spool, the five Needles (`npm run art`) and the
-  inventory icons of the Tools, Crests, Silk Skills, abilities and items (`npm run icons`, fitted
-  into 256 px as WebP) are the game's, downloaded from the wiki and shown as a fan project.
+  inventory icons of the Tools, Crests, Silk Skills, abilities and items and the Journal's 237
+  portraits (`npm run icons`, fitted into 256 px as WebP) are the game's, downloaded from the wiki and shown as a fan project.
 - **Fonts**: Cinzel, Spectral and Patrick Hand SC, under the
   [SIL Open Font License 1.1](../assets/fonts/OFL.txt).
 - **Code**: MIT ([`LICENSE`](../LICENSE)). It covers only the code, not any of the above.

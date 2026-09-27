@@ -195,6 +195,19 @@
     ctBind:         { es: 'Enlazar', en: 'Bind' },   // BUTTON_CAST
     ctBindSub:      { es: 'cura {parts} máscaras en {s} s', en: 'heals {parts} masks in {s} s' },
 
+    /* The Hunter's Journal (js/app-journal.js) */
+    hjMemento:      { es: 'Para el Recuerdo de cazadora', en: 'For the Hunter\'s Memento' },   // as INV_NAME_HUNTER_MEMENTO names it
+    hjSeen:         { es: '{n} de {m} vistas', en: '{n} of {m} seen' },
+    hjKills:        { es: 'Derrotados', en: 'Defeated' },
+    hjOptional:     { es: 'Opcional: no cuenta para el Recuerdo', en: 'Optional: not needed for the Memento' },
+    hjBy:           { es: 'También se completa al derrotar a: {names}', en: 'Also completed by defeating: {names}' },
+    hjInspect:      { es: 'Se completa al leer su lápida.', en: 'Completed by reading its tablet.' },
+    hjHint:         { es: 'Señala una entrada para leerla.', en: 'Point at an entry to read it.' },
+    hjFree:         { es: 'Modo libre: el Diario entero. Elige una partida para ver lo que te falta.', en: 'Free mode: the whole Journal. Pick a save to see what you\'re missing.' },
+    hjState_done:   { es: 'completa', en: 'complete' },
+    hjState_seen:   { es: 'vista, sin completar', en: 'seen, not complete' },
+    hjState_unseen: { es: 'aún no vista', en: 'not seen yet' },
+
     /* The Inventory (js/app-game.js) */
     invFree:        { es: 'Modo libre: todo desbloqueado. Elige una partida para ver lo que llevas.', en: 'Free mode: everything unlocked. Pick a save to see what you carry.' },
     invItems:       { es: 'Objetos', en: 'Items' },

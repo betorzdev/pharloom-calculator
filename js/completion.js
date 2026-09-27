@@ -51,6 +51,12 @@
     return { total: categories.reduce((a, c) => a + c.got, 0), max: 100, categories };
   }
 
-  SS.completion = { CATEGORIES, CRESTS, SKILLS, ARTS, count };
+  /* A Hunter's Journal entry is complete when the save lists it with its kills done. An entry
+     with no kill count (the Void Tendrils, completed by reading its tablet) is complete once
+     listed: the game lists it then. Not listed is never complete (0 >= null is true in
+     JavaScript, which once counted the Void Tendrils before they were seen). */
+  const journalDone = (e, journal) => journal[e.id] !== undefined && journal[e.id] >= (e.kills || 0);
+
+  SS.completion = { CATEGORIES, CRESTS, SKILLS, ARTS, count, journalDone };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.completion;
 })();

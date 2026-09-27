@@ -757,6 +757,15 @@ what differs from the base, the Tools by id so a patch that reorders the lists d
 link) with Share. **Phase 3 is done** but for the DPS figure, which still waits for the attack
 speed per Crest (§2.3's gap), and a figures summary that stays in view on a phone.
 
+**Phase 4 is done** (the same day): the Journal screen, with the wiki's 237 portraits paired to the
+entries by the page each links to (pairing by the table's order shifted every row after the
+Steel Soul one, which carries an icon in between). How the game completes an entry was read on
+the author's full Journal: it writes the kills even for the entries it completes another way (a
+boss's minions, the Void Tendrils' tablet), so "listed with its kills done" is the rule, one
+function (`completion.journalDone`) for every screen, and `check-pack` checks it against Nuu's
+Memento (`nuuMementoAwarded`: 230 of 230). Found on the way: the Void Tendrils, with no kill
+count, were counted complete before being seen (`0 >= null`), on Your game and in `check-pack`.
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).

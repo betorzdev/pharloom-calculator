@@ -28,7 +28,6 @@
   const UPGRADES = ['masks', 'spools', 'hearts', 'needle', 'kit', 'pouch'];
   // The pieces 'upgrade' already tells.
   const BY_UPGRADE = new Set(['needle', 'tool-pouch', 'crafting-kit', 'silk-heart']);
-  const NEED = new Map(J.BOOK.map((e) => [e.id, e.kills]));
 
   function diff(a, b) {
     const out = [];
@@ -42,11 +41,10 @@
     for (const i of b.pieces) if (!a.pieces.includes(i) && !BY_UPGRADE.has(CO.PIECES[i][0])) out.push({ kind: 'piece', i });
     // The Journal, in its own order: an entry the save didn't list, or one completed now.
     for (const e of J.BOOK) {
-      const was = a.journal[e.id], now = b.journal[e.id];
-      if (now === undefined) continue;
-      const need = NEED.get(e.id) || 1;
-      if (was === undefined) out.push({ kind: 'journal', id: e.id, done: now >= need });
-      else if (now >= need && was < need) out.push({ kind: 'journal', id: e.id, done: true, was: true });
+      if (b.journal[e.id] === undefined) continue;
+      const was = CP.journalDone(e, a.journal), now = CP.journalDone(e, b.journal);
+      if (a.journal[e.id] === undefined) out.push({ kind: 'journal', id: e.id, done: now });
+      else if (now && !was) out.push({ kind: 'journal', id: e.id, done: true, was: true });
     }
     const from = CP.count(a).total, to = CP.count(b).total;
     if (to > from) out.push({ kind: 'pct', from, to });

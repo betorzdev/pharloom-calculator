@@ -66,7 +66,7 @@
      231 in Steel Soul, js/journal.js). The Journal screen (phase 4) refines it: the entries
      completed some other way. */
   const bookTotal = (steel) => J.REQUIRED[steel ? 'steel' : 'classic'];
-  const bookDone = (book, steel) => J.BOOK.filter((e) => !e.optional && (!e.steel || steel) && (book[e.id] || 0) >= e.kills).length;
+  const bookDone = (book, steel) => J.BOOK.filter((e) => !e.optional && (!e.steel || steel) && CP.journalDone(e, book)).length;
   function summary(snap) {
     const g = F.gameOf(snap), m = F.metaOf(snap);
     return { g, m, masks: 5 + g.masks, done: CP.count(g).total, journal: bookDone(g.journal, m.steel), bookMax: bookTotal(m.steel) };

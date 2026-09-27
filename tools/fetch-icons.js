@@ -71,6 +71,18 @@ function get(url, hops = 5) {
     ['melody-architect', "Icon SS Architect's Melody Art.png"], ['melody-librarian', "Icon SS Vaultkeeper's Melody Art.png"],
     ['melody-conductor', "Icon SS Conductor's Melody Art.png"]]) jobs.push([`pieces/${id}`, file]);
   for (const x of D.ITEMS) add('items', x.id, x.name.en, ["%'s Journal (Silksong)"]);
+  /* The Hunter's Journal's portraits: the wiki's table names each row's file with the page it
+     links to ("[[File:HJ Mossgrub.png|60px|link=Mossgrub]]"); they're paired with js/journal.js's
+     entries by that page's name, not by order (the Steel Soul row carries an icon between the two,
+     and an order-pairing shifts every row after it). An entry with no portrait stops the run. */
+  require('../js/journal.js');
+  const J = globalThis.SS.journal;
+  const norm = (x) => x.toLowerCase().replace(/ \(silksong\)$/, '').replace(/[’']/g, "'").trim();
+  const portrait = new Map([...W.page("Hunter's Journal (Silksong)").matchAll(/\[\[File:(HJ [^|\]]+)\|[^\]]*?link=([^\]|]+)\]\]/g)]
+    .map((m) => [norm(m[2]), m[1]]));
+  const lost = J.BOOK.filter((e) => !portrait.has(norm(e.name.en))).map((e) => e.name.en);
+  if (lost.length) throw new Error('no Journal portrait for ' + lost.join(', '));
+  for (const e of J.BOOK) jobs.push([`journal/${e.id}`, portrait.get(norm(e.name.en))]);
   const missing = jobs.filter(([, f]) => !f).map(([k]) => k);
   if (missing.length) console.log('no picture found for:', missing.join(', '));
   let n = 0;

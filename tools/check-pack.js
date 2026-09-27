@@ -11,6 +11,9 @@
                  upgrades and the Silk Hearts (must match: exit code 1 if not)
      build       what Hornet wears (savefile's buildOf) fits her Crest's slots with the
                  Vesticrest's, as js/engine.js counts them (must: exit code 1 if not)
+     journal     once Nuu has given the Hunter's Memento (nuuMementoAwarded), the required
+                 entries complete by their kills are all of them: 230, or 231 in Steel Soul
+                 (must: exit code 1 if not)
    On Linux the game's folder is ~/.config/unity3d/Team Cherry/Hollow Knight Silksong/<id>/.
    The saves stay where they are: they're somebody's games and don't go in the repo. */
 'use strict';
@@ -20,6 +23,7 @@ const CO = require('../js/collectibles.js');
 const F = require('../js/savefile.js');
 const CP = require('../js/completion.js');
 const E = require('../js/engine.js');
+const J = require('../js/journal.js');
 
 const root = process.argv[2];
 if (!root || !fs.existsSync(root)) {
@@ -59,6 +63,12 @@ for (const file of files) {
   const game = Math.round(Number(r.pd.completionPercentage) || 0);
   const ok = c.total === game;
   const pd = pieceDiffs(r.pd, g);
+  if (r.pd.nuuMementoAwarded === true) {
+    const steel = F.meta(r.pd).steel;
+    const done = J.BOOK.filter((e) => !e.optional && (!e.steel || steel) && CP.journalDone(e, g.journal)).length;
+    const need = J.REQUIRED[steel ? 'steel' : 'classic'];
+    if (done !== need) pd.push(`journal ${done}≠${need} with the Memento`);
+  }
   if (g.build.crest) {
     const sl = E.compute(g.build).slots;
     for (const c of ['red', 'blue', 'yellow']) if (sl[c].over) pd.push(`build ${c} +${sl[c].over}`);

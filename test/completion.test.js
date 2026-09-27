@@ -72,3 +72,14 @@ test('the Act: 1, then act2Started, then the black-threaded world', () => {
   assert.equal(F.game({ silk: 0 }).act, 1);
   assert.equal(F.game({ silk: 0, act2Started: true, blackThreadWorld: true }).act, 3);
 });
+
+test('a Journal entry is complete when listed with its kills; one with no count (a tablet) once listed', () => {
+  const J = require('../js/journal.js');
+  const vt = J.BOOK.find((e) => e.id === 'void-tendrils');
+  const mg = J.BOOK.find((e) => e.id === 'mossgrub');
+  assert.equal(vt.kills, null);
+  assert.equal(CP.journalDone(vt, {}), false);   // not seen: not complete (0 >= null is true in JS)
+  assert.equal(CP.journalDone(vt, { 'void-tendrils': 0 }), true);
+  assert.equal(CP.journalDone(mg, { mossgrub: 24 }), false);
+  assert.equal(CP.journalDone(mg, { mossgrub: 25 }), true);
+});
