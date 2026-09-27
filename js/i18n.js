@@ -35,6 +35,114 @@
     soon:           { es: 'Aún no está: llega en la fase {n} del plan.', en: 'Not built yet: it comes in phase {n} of the plan.' },
     soonStudy:      { es: 'El estudio y el plan', en: 'The study and the plan' },
 
+    /* Saves: four, as the game's profile screen, and free mode (js/app-saves.js) */
+    saveSlot:       { es: 'Partida {n}', en: 'Save {n}' },
+    saveSelect:     { es: 'Selecciona partida', en: 'Select save' },
+    saveBtnHint:    { es: 'Elegir partida: cuatro, como en el juego, o el Modo libre', en: 'Choose a save: four, as in the game, or Free mode' },
+    savesNote:      { es: 'Cada partida viene del archivo del juego: tus herramientas y blasones, las mejoras, el Diario y lo que falta para el 100 %. Se ve tal como la guardó el juego: aquí no se cambia. Mientras no eliges una, estás en el Modo libre.',
+                      en: 'Each save comes from the game\'s file: your Tools and Crests, the upgrades, the Journal and what\'s missing for 100%. It shows as the game saved it: nothing is changed here. Until you pick one, you\'re in Free mode.' },
+    savesNoStorage: { es: 'Este navegador no deja guardar datos: solo hay una partida', en: 'This browser doesn\'t let the site save data: there\'s only one save' },
+    freeMode:       { es: 'Modo libre', en: 'Free mode' },
+    freeModeNote:   { es: 'Todo desbloqueado, para probar builds: no es ninguna de tus partidas', en: 'Everything unlocked, to try builds: it isn\'t one of your saves' },
+    saveCurrent:    { es: 'Estás aquí', en: 'You\'re here' },
+    saveContinue:   { es: 'Seguir con esta partida', en: 'Continue with this save' },
+    saveLoad:       { es: 'Cargar esta partida', en: 'Load this save' },
+    saveImport:     { es: 'Importar del juego', en: 'Import from the game' },
+    saveImportShort:{ es: 'Importar', en: 'Import' },   // the same, on a phone
+    saveImportBad:  { es: 'No se pueden leer los datos: busca user1.dat, user2.dat…', en: 'Save cannot be read: look for user1.dat, user2.dat…' },   // PROFILE_CORRUPTED, and where to look
+    saveClear:      { es: 'Borrar', en: 'Clear' },
+    saveClearAsk:   { es: '¿Borrar el perfil?', en: 'Clear Profile?' },   // PROFILE_CLEAR_PROMPT
+    saveClearNote:  { es: 'Solo aquí: tu partida del juego no cambia.', en: 'Only here: your game\'s own save doesn\'t change.' },
+    saveAct:        { es: 'Acto {n}', en: 'Act {n}' },   // ACT_1_SUPER…, in the game's capitals there
+    saveDefeated:   { es: 'Derrota', en: 'Defeated' },   // PROFILE_DEFEATED
+    yes:            { es: 'Sí', en: 'Yes' },   // YES
+    no:             { es: 'No', en: 'No' },   // NO
+    steelSoul:      { es: 'Alma de acero', en: 'Steel Soul' },   // MODE_STEEL
+    completion:     { es: 'Finalización', en: 'Completion' },   // COMPLETION
+    rosaries:       { es: 'Rosarios', en: 'Rosaries' },   // INV_NAME_COIN
+
+    /* Importing a save from the game's file */
+    impTitle:       { es: 'Importar a la Partida {n}', en: 'Import into Save {n}' },
+    impLead:        { es: 'Trae tu partida real: la web lee el archivo que guarda el juego y rellena esta partida con lo que llevas: herramientas, blasones, mejoras, el Diario y el 100 %.',
+                      en: 'Bring your real game: the site reads the file the game saves and fills this save with what you carry: Tools, Crests, upgrades, the Journal and the 100%.' },
+    impMobile:      { es: 'Tus partidas están en el ordenador donde juegas: abre esta web allí, o pásate el archivo a este dispositivo.',
+                      en: 'Your saves are on the computer you play on: open this site there, or move the file to this device.' },
+    impOs:          { es: 'Tu sistema', en: 'Your system' },
+    impStep1:       { es: 'Copia la carpeta de las partidas', en: 'Copy the saves folder' },
+    impStep2:       { es: 'Abre el selector y pega la carpeta', en: 'Open the picker and paste the folder' },
+    impStep3:       { es: 'Entra en la carpeta de tu cuenta y elige el archivo', en: 'Go into your account\'s folder and pick the file' },
+    impHowWin:      { es: 'Pulsa «Seleccionar archivo», pega la ruta en la casilla del nombre y pulsa {k1}.',
+                      en: 'Press "Choose file", paste the path into the file name box and press {k1}.' },
+    impHowMac:      { es: 'Pulsa «Seleccionar archivo», luego {k1}, pega la ruta y pulsa {k2}.',
+                      en: 'Press "Choose file", then {k1}, paste the path and press {k2}.' },
+    impHowLinux:    { es: 'Pulsa «Seleccionar archivo», luego {k1}, pega la ruta y pulsa {k2}.',
+                      en: 'Press "Choose file", then {k1}, paste the path and press {k2}.' },
+    impFiles:       { es: 'Dentro hay una carpeta con un número (tu cuenta de Steam) o «default». Cada perfil del juego es un archivo: el primero es user1.dat, el segundo user2.dat, y así. En Restore_Points hay copias de momentos anteriores (restoreData): también se pueden importar.',
+                      en: 'Inside there\'s a folder named with a number (your Steam account) or "default". Each of the game\'s profiles is a file: the first is user1.dat, the second user2.dat, and so on. Restore_Points holds copies of earlier moments (restoreData): those can be imported too.' },
+    impCopy:        { es: 'Copiar', en: 'Copy' },
+    impCopied:      { es: 'Copiada', en: 'Copied' },
+    impEnter:       { es: 'Intro', en: 'Enter' },
+    impDrop:        { es: 'Arrastra aquí el archivo de tu partida', en: 'Drag your save\'s file here' },
+    impDropping:    { es: 'Suéltalo', en: 'Let go' },
+    impReading:     { es: 'Leyendo…', en: 'Reading…' },
+    impOr:          { es: 'o', en: 'or' },
+    impChoose:      { es: 'Seleccionar archivo', en: 'Choose file' },
+    impOther:       { es: 'Elegir otro archivo', en: 'Choose another file' },
+    impPrivate:     { es: 'Se lee aquí, en tu navegador: no se envía a ningún sitio y tu partida del juego no cambia.',
+                      en: 'It\'s read here, in your browser: it isn\'t sent anywhere and your game\'s save doesn\'t change.' },
+    impTime:        { es: '{h} h {m} min', en: '{h} h {m} min' },
+    impVersion:     { es: 'Guardada con la versión {v}', en: 'Saved with version {v}' },
+    impRestore:     { es: 'Punto de restauración del {date}', en: 'Restore point of {date}' },
+    impReplace:     { es: 'Sustituirá lo que tiene ahora la Partida {n}.', en: 'It will replace what Save {n} holds now.' },
+    impSync:        { es: 'Mantener sincronizada con el juego', en: 'Keep in sync with the game' },
+    impSyncOn:      { es: 'Activado', en: 'On' },
+    impSyncOff:     { es: 'Desactivado', en: 'Off' },
+    impSyncNote:    { es: 'Se pone al día cada vez que el juego guarda, mientras la web esté abierta en este navegador.',
+                      en: 'It catches up every time the game saves, while the site is open in this browser.' },
+
+    /* Following the game's file (js/live.js) */
+    liveFollow:     { es: 'Seguir al juego', en: 'Follow the game' },
+    liveFollowShort:{ es: 'Seguir', en: 'Follow' },   // the same, on a phone
+    liveFollowHint: { es: 'Elige el archivo de esta partida: se pone al día con él ahora y cada vez que el juego guarde',
+                      en: 'Pick this save\'s file: it catches up with it now and every time the game saves' },
+    liveFollowing:  { es: 'La Partida {n} sigue ahora a {file}', en: 'Save {n} now follows {file}' },
+    liveFollowNo:   { es: 'Este navegador no deja guardar el vínculo con el archivo', en: 'This browser doesn\'t let the site keep the link to the file' },
+    liveFollows:    { es: 'Sigue a {file}', en: 'Follows {file}' },
+    liveUnlink:     { es: 'Dejar de seguir', en: 'Stop following' },
+    liveState_live: { es: 'en vivo', en: 'live' },
+    liveState_paused: { es: 'en pausa', en: 'paused' },
+    liveState_lost: { es: 'sin archivo', en: 'file missing' },
+    livePaused:     { es: 'Esta partida sigue a {file}, pero el navegador pide permiso otra vez para leerlo.',
+                      en: 'This save follows {file}, but the browser asks for permission to read it again.' },
+    liveLost:       { es: 'No se encuentra {file}: la partida conserva lo que tenía, pero ya no sigue al juego.',
+                      en: '{file} can\'t be found: the save keeps what it had, but no longer follows the game.' },
+    liveResume:     { es: 'Seguir', en: 'Resume' },
+    liveRelink:     { es: 'Buscar el archivo', en: 'Find the file' },
+    liveResumeNo:   { es: 'Sin permiso, la partida no sigue al juego', en: 'Without permission, the save doesn\'t follow the game' },
+    liveUpdated:    { es: 'Tu partida se ha puesto al día con el juego', en: 'Your save caught up with the game' },
+    liveTag:        { es: 'Tu partida real', en: 'Your real game' },
+
+    /* Your game: the start screen (js/app-home.js) */
+    homeInvite:     { es: 'Trae tu partida', en: 'Bring your game' },
+    homeInviteLead: { es: 'Arrastra aquí el archivo de tu partida, o elige una de las cuatro: la web te dice qué te falta para el 100 %, pieza a pieza.',
+                      en: 'Drag your save\'s file here, or pick one of the four: the site tells you what\'s missing for 100%, piece by piece.' },
+    homeInviteBtn:  { es: 'Importar del juego', en: 'Import from the game' },
+    homeCompletion: { es: 'Tu 100 %', en: 'Your 100%' },
+    homeMatches:    { es: 'Coincide con el {pct} que muestra el juego.', en: 'It matches the {pct} the game shows.' },
+    homeDiffers:    { es: 'El juego muestra {pct}: tu archivo es de una versión que cuenta distinto, o hay un fallo. Escríbenos.',
+                      en: 'The game shows {pct}: your file is from a version that counts differently, or there\'s a bug. Write to us.' },
+    homeJournal:    { es: 'Diario', en: 'Journal' },   // PANE_JOURNAL
+    cat_tools:      { es: 'Herramientas', en: 'Tools' },
+    cat_spools:     { es: 'Carretes de seda', en: 'Silk Spools' },
+    cat_upgrades:   { es: 'Kit de fabricación y bolsa de herramientas', en: 'Crafting Kit and Tool Pouch' },
+    cat_arts:       { es: 'Habilidades', en: 'Abilities' },
+    cat_skills:     { es: 'Habilidades de seda', en: 'Silk Skills' },
+    cat_crests:     { es: 'Blasones', en: 'Crests' },
+    cat_masks:      { es: 'Máscaras', en: 'Masks' },
+    cat_needle:     { es: 'Mejoras de la aguja', en: 'Needle upgrades' },
+    cat_hearts:     { es: 'Corazones de seda', en: 'Silk Hearts' },   // INV_DESC_SPOOL_SILKHEARTS
+    cat_items:      { es: 'Siempreviva', en: 'Everbloom' },   // INV_NAME_WHITE_FLOWER
+
     /* Footer: the fan-project notice, the sources and the author (docs/guide.md, "Credits and licences") */
     footLabel:      { es: 'Aviso, fuentes y contacto', en: 'Notice, sources and contact' },
     footFan:        { es: 'Proyecto de fans no oficial, gratuito y sin ánimo de lucro, sin relación con {tc}. Hollow Knight: Silksong y su arte son © Team Cherry.',

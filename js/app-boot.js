@@ -19,4 +19,6 @@
   rebuildNF();
   persist();
   render();
+  // The save you're in, if it follows the game's file, starts watching it (js/app-saves.js).
+  if (App.liveStart) App.liveStart();
 })();

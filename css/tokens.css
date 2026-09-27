@@ -11,8 +11,8 @@
      · the red is atmosphere only: never the accent, a figure or text;
      · the accent is bone (#f1ebdc, the Crest screen's cream): the game selects with white on
        grey, not with a hue, so what responds to the finger is told by its shape and its glow;
-     · every screen is framed in the pause menu's white filigree (--filigree); the section
-       tints, four of the map's area lines above 5.9:1 on --card-on, colour only the titles.
+     · every screen is framed and titled in the pause menu's white filigree (--filigree): no
+       section has a colour of its own, as none of the game's panes does.
    What's the web's stays (design/01-web.md): the type scale, the spacing, the tracking, the
    control heights, the motion, the atmosphere.
 
@@ -191,13 +191,6 @@
   --sticky-h: 64px;
   --measure: 68ch;    /* maximum measure for long prose */
 
-  /* One tint per section: an area's line on the game's map (design/02-silksong.md §4). It goes
-     on the section's title only: the frame is the filigree's. Never on a figure or on what
-     responds to the finger, which still belongs to the accent. */
-  --tint-sheet: #fce5b9;      /* the Crest screen and the Inventory: Bellhart */
-  --tint-combat: #f1a1b4;     /* combat: Sands of Karak */
-  --tint-journal: #bac4d2;    /* the Hunter's Journal: Mount Fay */
-  --tint-progress: #a9cb99;   /* Your game, Progress and the Map: Moss Grotto */
 
   /* The screens are the game's inventory: almost pure black, and the light behind a plate is
      white and only where you look. */
@@ -221,7 +214,7 @@
   --grain-opacity: 0.025;
   /* The frame of every screen: the pause menu's white filigree (#f6f6f6, measured on its
      screenshots), and its light, the warm bone of the Crest screen's spotlight. The same for
-     every section: only the title carries the area's tint (css/app.css). The shares below say
+     every section, and the titles are the filigree's too (css/app.css). The shares below say
      how much of each goes into the brackets, the glows and the plates' halo. */
   --filigree: #f6f6f6;
   --spotlight: #f1ebdc;

@@ -73,21 +73,12 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
 .bk.bl { bottom: -1px; left: -1px; border-bottom: 2px solid var(--bracket); border-left: 2px solid var(--bracket); }
 .bk.br { bottom: -1px; right: -1px; border-bottom: 2px solid var(--bracket); border-right: 2px solid var(--bracket); }
 
-/* ── Tinted sections ─────────────────────────────────────────────────────
-   Each screen is a pause-menu screen: its frame is the game's white filigree, the same for all
-   (the corner brackets, the rule under the title, the line under the screen bar), and its light
-   the warm bone of the Crest screen's spotlight. What tells the sections apart is the title,
-   in its area's tint on the game's map (tokens.css): the game selects and frames with white,
-   never with a hue (design/02-silksong.md §3 and §5). */
-.screen { --tint: var(--tint-sheet); }
-.screen[data-view="fight"] { --tint: var(--tint-combat); }
-.screen[data-view="journal"] { --tint: var(--tint-journal); }
-.screen:is([data-view="home"], [data-view="progress"], [data-view="map"]) { --tint: var(--tint-progress); }
-/* A title outside the screens takes the tint of the screen in view. */
-.page { --tint: var(--tint-sheet); }
-.page:has(.screen[data-view="fight"]:not([hidden])) { --tint: var(--tint-combat); }
-.page:has(.screen[data-view="journal"]:not([hidden])) { --tint: var(--tint-journal); }
-.page:has(.screen:is([data-view="home"], [data-view="progress"], [data-view="map"]):not([hidden])) { --tint: var(--tint-progress); }
+/* ── The screens' frame ─────────────────────────────────────────────────
+   Each screen is a pause-menu screen, framed and titled in the game's white filigree, the same
+   for all (the corner brackets, the title and the rule under it, the line under the screen bar),
+   with the warm bone of the Crest screen's spotlight as its light. The game titles its panes and
+   selects in white, never with a hue (design/02-silksong.md §3 and §5): the sections are told
+   apart by their names and the screen bar, not by a colour. */
 .page, .screen {
   --lamp: var(--filigree);
   --lamp-light: var(--spotlight);
@@ -99,7 +90,7 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
 }
 .sec-title {
   font-family: var(--font-display); text-transform: uppercase; letter-spacing: var(--track-caps);
-  font-weight: 600; font-size: var(--fs-lg); line-height: 1.2; color: var(--tint);
+  font-weight: 600; font-size: var(--fs-lg); line-height: 1.2; color: var(--filigree);
 }
 
 /* The interface icons (tokens.css): the width sets the size, the height follows the viewBox. */
@@ -111,7 +102,7 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
 
 /* ── A screen ──────────────────────────────────────────────────────────
    Every screen is a page of the game's inventory: the black field with the corner brackets in
-   its tint, and its title centred in Cinzel over the rule with the diamond (App.screenHead). */
+   the filigree, and its title centred in Cinzel over the rule with the diamond (App.screenHead). */
 .screen { position: relative; padding: var(--sp-8); background: var(--inv-bg); --inv-pad: var(--sp-8); }
 .screen-head { display: flex; flex-direction: column; align-items: center; gap: var(--sp-2); margin-bottom: var(--sp-6); }
 .screen-head .rule { color: var(--lamp); }
@@ -443,4 +434,475 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
 }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* ── Saves: the game's profile screen ────────────────────────────────────
+   The four slots stacked like the game's bars: the number, the masks with the
+   HUD's sprites, the nail and what the game carries (charms found, Journal, Hall). No boxes:
+   rules in the spotlight's bone between slots, and the whole bar responds to the finger. The slot you're
+   playing carries the accent's line on its edge, as the equipped charm does, and a light from
+   that edge. Free mode, which is nobody's game, is the one sheet with a frame. */
+.saves-body {
+  --inv-pad: var(--sp-8);
+  --inv-line: color-mix(in oklab, var(--spotlight) 13%, transparent);
+  position: relative; background: var(--inv-bg); padding: var(--inv-pad);
+}
+.saves-note { max-width: var(--measure); margin: 0; font-size: var(--fs-sm); color: var(--muted); text-wrap: pretty; }
+/* Free mode and the four share their columns (subgrid): the slot, then its buttons, stacked as a
+   menu in a column of their own behind a rule (free mode's note, there), so the numbers, the masks,
+   the nails and the buttons line up from one slot to the next whatever each one holds. */
+.saves-lists { display: grid; grid-template-columns: minmax(0, 1fr) auto; }
+.saves-list {
+  grid-column: 1 / -1; list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--inv-line);
+  display: grid; grid-template-columns: subgrid;
+}
+.save {
+  grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; align-items: center;
+  border-top: 1px solid var(--inv-line); transition: background var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+.save-main {
+  width: 100%; display: grid; grid-template-columns: var(--sp-12) minmax(0, 1fr) calc(var(--sp-16) * 2);
+  grid-template-areas: "n hud nail" "n facts nail"; align-items: center; gap: var(--sp-3) var(--sp-6);
+  padding: var(--sp-4); text-align: left; font-size: var(--fs-md); color: var(--ink);
+}
+/* The slot is one piece, its buttons included: the hover, the light of the one you're in and the
+   focus ring go on the whole row, not only on the part that loads it. The hover is a light coming
+   in from the left, the side the number is on; the nail catches it. */
+.save:has(> .save-main:hover) { background: linear-gradient(90deg, var(--accent-soft), transparent 75%); }
+.save.is-active {
+  box-shadow: inset var(--sp-half) 0 0 var(--accent-line);
+  background: linear-gradient(90deg, color-mix(in oklab, var(--accent-line) 16%, transparent), transparent 60%);
+}
+.save.is-active:has(> .save-main:hover) { background: linear-gradient(90deg, color-mix(in oklab, var(--accent-line) 24%, transparent), transparent 75%); }
+.save-main:focus-visible { outline: none; }
+.save:has(> .save-main:focus-visible) { outline: 2px solid var(--accent); outline-offset: -2px; }
+.save-n {
+  grid-area: n; justify-self: center; text-align: center;
+  font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-2xl); line-height: 1; color: var(--ink-strong);
+}
+.save-hud { grid-area: hud; display: flex; align-items: center; flex-wrap: wrap; gap: var(--sp-2) var(--sp-4); }
+.save-masks { display: flex; flex-wrap: wrap; gap: var(--sp-half); }
+.save-masks img { height: var(--sp-6); width: auto; }
+/* You're here: the rule's diamond, lit, and the words, at the head of the card. */
+.save.is-active:not(.is-free) .save-main { grid-template-areas: "n tag nail" "n hud nail" "n facts nail"; }
+.save-tag {
+  grid-area: tag; justify-self: start; display: inline-flex; align-items: center; gap: var(--sp-2);
+  font-size: var(--fs-2xs); letter-spacing: var(--track-label); text-transform: uppercase; color: var(--ink-2);
+}
+.save-tag::before {
+  content: ''; width: var(--sp-2); height: var(--sp-2); transform: rotate(45deg);
+  background: var(--ink-strong); box-shadow: 0 0 8px color-mix(in oklab, var(--ink-strong) 55%, transparent);
+}
+.save-nail { grid-area: nail; display: flex; flex-direction: column; align-items: center; gap: var(--sp-1); font-size: var(--fs-xs); color: var(--ink-2); text-align: center; text-wrap: balance; }
+.save-nail img { height: calc(var(--sp-16) * 1.5); width: auto; transition: filter var(--dur-slow) var(--ease); }
+.save:has(> .save-main:hover) .save-nail img { filter: drop-shadow(0 0 10px color-mix(in oklab, var(--spotlight) 45%, transparent)); }
+.save-facts { grid-area: facts; display: flex; flex-wrap: wrap; gap: var(--sp-1) var(--sp-6); }
+.save-fact { display: inline-flex; align-items: baseline; gap: var(--sp-2); }
+.save-k { font-size: var(--fs-2xs); letter-spacing: var(--track-label); text-transform: uppercase; color: var(--label); }
+.save-fact b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-md); color: var(--ink-strong); }
+.save-fact .u { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-xs); }
+/* The slot's buttons: a menu in the second column, behind a rule, one under the other. */
+.save-foot {
+  display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: var(--sp-1);
+  align-self: stretch; margin-block: var(--sp-4); padding-inline: var(--sp-4) var(--sp-6);
+  border-left: 1px solid var(--inv-line);
+}
+/* The file the slot follows, above its buttons; on the one you're in, how the link is. */
+.save-link { display: flex; flex-direction: column; align-items: flex-start; gap: var(--sp-1); padding: 0 var(--sp-4) var(--sp-2); font-size: var(--fs-xs); color: var(--ink-2); }
+.save-link-t { font-family: var(--font-num); overflow-wrap: anywhere; }
+.save-link b { font-family: var(--font-body); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; font-size: var(--fs-2xs); color: var(--ink-strong); }
+.save-link.is-live b { color: var(--good); }
+.save-link.is-paused b, .save-link.is-lost b { color: var(--cond); }
+.save-link .text-btn { font-size: var(--fs-xs); }
+.save-ask { display: flex; flex-direction: column; align-items: flex-start; gap: var(--sp-1); }
+.save-ask-q { padding-inline: var(--sp-4); font-size: var(--fs-sm); color: var(--ink-strong); }
+/* Under the question: only the site's copy goes, the game's file isn't touched. */
+.save-ask-note { max-width: 26ch; padding-inline: var(--sp-4); font-size: var(--fs-xs); line-height: 1.4; color: var(--muted); text-wrap: pretty; }
+.save-ask-yn { display: flex; gap: var(--sp-2); }
+/* The slot's buttons, as the game's menu items (js/app-saves.js, FLEURS): capitals in the menu's
+   face, no box, and the menu's two pointers fading in on either side of the one you're on.
+   Quieter than the slot itself: they're what you do to it, not what it holds. */
+.save-act {
+  position: relative; display: inline-flex; align-items: center; gap: var(--sp-2);
+  min-height: var(--ctl); padding: var(--sp-1) var(--sp-4);
+  font-family: var(--font-display); font-weight: 600; font-size: var(--fs-xs); letter-spacing: var(--track-caps); text-transform: uppercase;
+  color: var(--label); transition: color var(--dur) var(--ease);
+}
+.save-act:hover, .save-act:focus-visible { color: var(--ink-strong); }
+.save-act.is-clear:hover, .save-act.is-clear:focus-visible { color: var(--bad); }
+/* The pointers are the focus mark, as in the game's menus: no ring on top of them. */
+.save-act:focus-visible { outline: none; }
+.save-act-short { display: none; }
+.save-fleur {
+  position: absolute; top: 50%; width: var(--sp-3); height: calc(var(--sp-4) + var(--sp-1)); display: flex; color: var(--ink-strong);
+  opacity: 0; transform: translateY(-50%) scaleX(0.3); pointer-events: none;
+  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+.save-fleur svg { width: 100%; height: 100%; }
+.save-fleur.is-l { left: calc(var(--sp-1) * -1); }
+.save-fleur.is-r { right: calc(var(--sp-1) * -1); }
+.save-fleur.is-r svg { transform: scaleX(-1); }
+.save-act:hover .save-fleur, .save-act:focus-visible .save-fleur,
+.save-main:hover .save-new .save-fleur, .save-main:focus-visible .save-new .save-fleur { opacity: 1; transform: translateY(-50%) scaleX(1); }
+/* The icons, in the text's ink. Import's arrow dips into the tray; Clear's bin lifts its lid. */
+.save-ico { width: var(--sp-4); height: var(--sp-4); flex-shrink: 0; overflow: visible; }
+.save-ico-arrow, .save-ico-lid { transition: transform var(--dur) var(--ease); transform-box: fill-box; }
+.save-ico-lid { transform-origin: 100% 100%; }
+.save-act.is-import:hover .save-ico-arrow, .save-act.is-import:focus-visible .save-ico-arrow { transform: translateY(1.5px); }
+.save-act.is-clear:hover .save-ico-lid, .save-act.is-clear:focus-visible .save-ico-lid { transform: translate(0.5px, -1.5px) rotate(14deg); }
+.save-ico-turn { transform-origin: 50% 50%; transition: transform var(--dur-slow) var(--ease); transform-box: fill-box; }
+.save-act.is-follow:hover .save-ico-turn, .save-act.is-follow:focus-visible .save-ico-turn { transform: rotate(180deg); }
+/* Free mode, above the four and apart from them: nobody's game, so a sheet of its own, with
+   Hornet standing instead of a number and its name on its own row. */
+.saves-list.is-free {
+  margin-bottom: var(--sp-8); border: 1px solid var(--inv-line);
+  background: linear-gradient(180deg, color-mix(in oklab, var(--spotlight) 5%, transparent), transparent 70%);
+}
+.saves-list.is-free .save { border-top: 0; }
+.save-note { max-width: calc(var(--sp-16) * 3); padding-inline: var(--sp-6); font-size: var(--fs-sm); line-height: 1.5; color: var(--muted); text-wrap: pretty; }
+.save.is-free .save-main { grid-template-areas: "n name nail" "n hud nail" "n facts nail"; padding-block: var(--sp-6); }
+.save.is-free .save-n {
+  position: relative; isolation: isolate; display: grid; place-items: center;
+}
+.save.is-free .save-n::before {
+  content: ''; position: absolute; z-index: -1; width: calc(var(--sp-16) * 1.5); aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in oklab, var(--spotlight) 20%, transparent), transparent);
+}
+.save.is-free .save-n img { height: var(--sp-12); width: auto; }
+.save-name { grid-area: name; display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-1) var(--sp-4); }
+.save-name b { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; letter-spacing: var(--track-caps); font-size: var(--fs-md); color: var(--ink-strong); }
+/* An empty slot is its one way in, where the game's says New Game: the number unlit and «Import
+   from the game», with its tray, between the menu's pointers (a save only comes from the file). */
+.save.is-empty .save-main { grid-template-areas: "n new new"; min-height: calc(var(--sp-16) + var(--sp-6)); }
+.save.is-empty .save-n { color: var(--muted); transition: color var(--dur) var(--ease); }
+.save-new {
+  grid-area: new; justify-self: start; position: relative; display: inline-flex; align-items: center; gap: var(--sp-2);
+  margin-inline-start: calc(var(--sp-4) * -1); padding-inline: var(--sp-4);
+  font-family: var(--font-display); font-weight: 600; text-transform: uppercase; letter-spacing: var(--track-caps); font-size: var(--fs-md);
+  color: var(--ink-2); transition: color var(--dur) var(--ease);
+}
+.save.is-empty .save-main:hover .save-new, .save.is-empty .save-main:focus-visible .save-new,
+.save.is-empty .save-main:hover .save-n { color: var(--ink-strong); }
+.save.is-empty .save-main:hover .save-ico-arrow, .save.is-empty .save-main:focus-visible .save-ico-arrow { transform: translateY(1.5px); }
+/* Going into a game (js/app-saves.js, leave): the slot's nail catches the light and its masks
+   glow before the page fades. */
+.save.is-loading { pointer-events: none; }
+.save.is-loading .save-nail img { animation: lit-in 600ms var(--ease) both; }
+.save.is-loading .save-masks img { animation: light-up 600ms var(--ease) both; }
+
+/* Clear Save, seen (js/app-saves.js, shatter): the masks break from the right one after another
+   (a flash and gone, as on the HUD), and the rest of the slot fades
+   while dust rises out of it. Then the slot is cleared and its Import fades in. */
+.save { position: relative; }
+.save-where { flex-basis: 100%; font-family: var(--font-display); font-size: var(--fs-sm); letter-spacing: var(--track-title); color: var(--ink); }
+.save.is-clearing { pointer-events: none; }
+.save.is-clearing .save-foot { opacity: 0; transition: opacity var(--dur) var(--ease); }
+.save.is-clearing .save-masks img { animation: save-break 420ms var(--ease) both; animation-delay: calc(var(--r) * 70ms); }
+.save.is-clearing .save-main { animation: save-fade 700ms var(--ease-fade) calc(var(--masks) * 70ms + 150ms) both; }
+.save.is-clearing { background: transparent; }
+.save-dust { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.save-dust i {
+  position: absolute; left: var(--x); top: var(--y); width: var(--s); height: var(--s); border-radius: 50%;
+  background: var(--mote); box-shadow: 0 0 6px var(--mote); opacity: 0;
+  animation: save-dust 900ms var(--ease-fade) both; animation-delay: calc(var(--masks) * 70ms + var(--d) * 0.6);
+}
+.save.is-cleared .save-new, .save.is-cleared .save-n, .save.is-cleared .save-foot { animation: title-in 700ms var(--ease-fade) both; }
+@keyframes save-break {
+  30% { opacity: 1; filter: brightness(2.6); transform: scale(1.12); }
+  100% { opacity: 0; filter: brightness(2.6); transform: scale(0.7); }
+}
+@keyframes save-drain { to { opacity: 0; filter: brightness(0.4); } }
+@keyframes save-fade { to { opacity: 0; filter: blur(3px); } }
+@keyframes save-dust {
+  0% { opacity: 0; transform: translate(0, 0); }
+  25% { opacity: var(--o); }
+  100% { opacity: 0; transform: translate(var(--dx), -48px); }
+}
+/* ── The import view ────────────────────────────────────────────────────
+   It takes the list's place on the same sheet. Left, the three steps to find the game's file,
+   each on a medallion (the game's achievement icons: a clean circle with a white line) joined by
+   a thread; right, the zone to drop it on: Hornet under a light that breathes, as a bench's
+   lamp does, and brightens when a file comes over it. Once read, the zone shows the save as the
+   game's profile screen would (masks appearing one by one, the nail, the time and the %) before
+   anything is written. Only fades, and Hornet floats (design/02 §5: no slides, no bounce). */
+.imp-bar { display: flex; margin-bottom: calc(var(--sp-4) * -1); }
+.imp-back { gap: var(--sp-2); min-height: var(--ctl); font-size: var(--fs-sm); }
+.imp .saves-note { margin-inline: auto; }
+.imp-mobile {
+  max-width: var(--measure); margin: var(--sp-6) auto 0; padding: var(--sp-3) var(--sp-4);
+  border-left: 2px solid var(--bracket); background: var(--card); font-size: var(--fs-sm); color: var(--ink-2);
+}
+.imp-grid {
+  display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: var(--sp-8);
+  align-items: stretch; margin-top: var(--sp-8);
+}
+
+.imp-steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.imp-step { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--sp-4); padding-bottom: var(--sp-8); }
+.imp-step:last-child { padding-bottom: 0; }
+/* The thread from one medallion to the next. */
+.imp-step:not(:last-child)::before {
+  content: ''; position: absolute; left: calc(var(--sp-12) / 2); top: var(--sp-12); bottom: 0; width: 1px;
+  background: linear-gradient(var(--bracket), transparent);
+}
+.imp-num {
+  display: grid; place-items: center; width: var(--sp-12); height: var(--sp-12); border-radius: 50%;
+  border: 1px solid var(--bracket); background: var(--card);
+  box-shadow: inset 0 0 0 3px var(--scene-bg), inset 0 0 0 4px color-mix(in oklab, var(--spotlight) 18%, transparent);
+  font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-lg); color: var(--ink-strong);
+}
+.imp-step-body { min-width: 0; padding-top: var(--sp-2); display: flex; flex-direction: column; gap: var(--sp-3); }
+.imp-step-title { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: var(--fs-lg); letter-spacing: var(--track-title); line-height: 1.25; color: var(--ink-strong); }
+.imp-text { margin: 0; max-width: var(--measure); font-size: var(--fs-sm); line-height: 1.6; color: var(--ink-2); text-wrap: pretty; }
+.imp-os { align-self: flex-start; }
+.imp-path {
+  display: flex; align-items: center; gap: var(--sp-3); padding: var(--sp-2) var(--sp-3);
+  border: 1px solid var(--line-ctl); background: var(--card);
+}
+.imp-path code { flex: 1; min-width: 0; font-family: var(--font-num); font-size: var(--fs-sm); color: var(--ink); overflow-wrap: anywhere; user-select: all; }
+.imp-copy { flex-shrink: 0; font-size: var(--fs-sm); }
+.imp-copy.is-done { color: var(--ink-strong); text-decoration-color: transparent; }
+.imp-copy.is-done::before { content: '✓ '; }
+kbd {
+  display: inline-block; padding: 0 var(--sp-1); border: 1px solid var(--line-ctl); border-bottom-width: 2px;
+  background: var(--card); font-family: var(--font-num); font-size: var(--fs-xs); line-height: 1.5; color: var(--ink-strong); white-space: nowrap;
+}
+.imp-files { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.imp-files li {
+  display: inline-flex; align-items: center; gap: var(--sp-2); padding: var(--sp-1) var(--sp-3);
+  border: 1px solid var(--line); font-family: var(--font-num); font-size: var(--fs-xs); color: var(--ink);
+}
+.imp-files li.is-bak { color: var(--muted); border-style: dashed; text-decoration: line-through; text-decoration-color: var(--muted); }
+.imp-ficon { flex-shrink: 0; color: var(--label); }
+
+.imp-drop {
+  position: relative; isolation: isolate; overflow: hidden;
+  display: flex; flex-direction: column; min-height: calc(var(--sp-16) * 7);
+  border: 1px dashed color-mix(in oklab, var(--spotlight) 32%, transparent); background: var(--scene-bg);
+  transition: border-color var(--dur) var(--ease);
+}
+.imp-light {
+  position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0.7;
+  background: radial-gradient(55% 48% at 50% 40%, color-mix(in oklab, var(--spotlight) 17%, transparent), transparent 72%);
+  transition: opacity var(--dur-slow) var(--ease), transform var(--dur-slow) var(--ease);
+}
+.imp-drop.is-drag { border-style: solid; border-color: var(--accent-line); }
+.imp-drop.is-drag .imp-light { opacity: 1; transform: scale(1.15); }
+.imp-drop-in { flex: 1; display: flex; align-items: center; justify-content: center; padding: var(--sp-8) var(--sp-6) var(--sp-4); }
+.imp-still { display: flex; flex-direction: column; align-items: center; gap: var(--sp-3); text-align: center; }
+.imp-figure { height: calc(var(--sp-16) * 2.25); width: auto; margin-bottom: var(--sp-3); transition: opacity var(--dur-slow) var(--ease), filter var(--dur-slow) var(--ease); }
+.imp-figure.is-fallen { height: calc(var(--sp-16) * 1.75); }
+.imp-drop.is-drag .imp-figure { filter: drop-shadow(0 0 18px color-mix(in oklab, var(--spotlight) 45%, transparent)); }
+.imp-drop[data-state="reading"] .imp-figure { opacity: 0.45; }
+.imp-drop-title, .imp-drop-drag { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: var(--fs-xl); letter-spacing: var(--track-title); color: var(--ink-strong); }
+.imp-drop-drag, .imp-drop.is-drag .imp-drop-title { display: none; }
+.imp-drop.is-drag .imp-drop-drag { display: block; }
+.imp-drop.is-drag .imp-or, .imp-drop.is-drag .imp-still .btn { visibility: hidden; }
+.imp-or { margin: 0; font-size: var(--fs-sm); color: var(--muted); }
+.imp-err { margin: 0; max-width: 30ch; font-size: var(--fs-md); color: var(--ink); text-wrap: balance; }
+.imp-private { margin: 0; padding: 0 var(--sp-6) var(--sp-4); font-size: var(--fs-xs); color: var(--muted); text-align: center; text-wrap: balance; }
+
+.imp-found {
+  display: grid; grid-template-columns: auto auto; justify-content: center; align-items: center;
+  grid-template-areas: "fname fname" "nail hud" "nail meta" "facts facts" "warn warn" "sync sync" "actions actions";
+  gap: var(--sp-3) var(--sp-6); text-align: center;
+}
+.imp-fname { grid-area: fname; margin: 0 0 var(--sp-2); display: inline-flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: var(--sp-2); font-family: var(--font-num); font-size: var(--fs-sm); color: var(--ink-2); }
+.imp-steel { margin-left: var(--sp-2); color: var(--ink-strong); }
+.imp-hud { grid-area: hud; display: flex; align-items: center; flex-wrap: wrap; gap: var(--sp-2) var(--sp-4); justify-content: flex-start; }
+.imp-hud .save-masks img { height: var(--sp-8); }
+.imp-nail { grid-area: nail; display: flex; flex-direction: column; align-items: center; gap: var(--sp-1); font-size: var(--fs-xs); color: var(--ink-2); }
+.imp-nail img { height: calc(var(--sp-16) + var(--sp-8)); width: auto; }
+.imp-meta { grid-area: meta; margin: 0; display: flex; flex-wrap: wrap; gap: var(--sp-1) var(--sp-4); align-items: baseline; font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-sm); color: var(--ink); }
+.imp-meta b { font-weight: 600; color: var(--ink-strong); }
+.imp-ver { font-family: var(--font-body); font-size: var(--fs-xs); color: var(--muted); }
+.imp-meta .save-k { margin-right: var(--sp-1); }
+.imp-facts { grid-area: facts; justify-content: center; margin: var(--sp-2) 0 0; }
+.imp-warn { grid-area: warn; margin: 0; font-size: var(--fs-sm); color: var(--bad); }
+/* Following the game (js/live.js): a row of the game's options menu. What it is in the text's
+   ink, and its value on a button (.btn, its frame says it can be pressed) with the rule's
+   diamond: lit in bone when it's on, hollow and dimmer when it's off. */
+.imp-sync { grid-area: sync; justify-self: center; display: flex; flex-direction: column; align-items: center; gap: var(--sp-2); max-width: 44ch; margin-top: var(--sp-3); }
+.imp-sync-k { font-size: var(--fs-md); color: var(--ink-strong); }
+.imp-sync-v { font-size: var(--fs-md); }
+.imp-sync-v[aria-checked="true"] { color: var(--ink-strong); }
+.imp-sync-note { margin: 0; font-size: var(--fs-sm); line-height: 1.45; color: var(--muted); text-wrap: pretty; }
+.imp-actions { grid-area: actions; display: flex; flex-direction: column; align-items: center; gap: var(--sp-3); margin-top: var(--sp-3); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .imp.is-fresh .imp-step { animation: title-in var(--dur-slow) var(--ease-fade) both; animation-delay: calc(var(--i) * 140ms + 100ms); }
+  .imp.is-fresh .imp-drop { animation: title-in 700ms var(--ease-fade) 300ms both; }
+  .imp-light { animation: imp-breathe 5s var(--ease-fade) infinite alternate; }
+  .imp-drop.is-drag .imp-light { animation: none; }
+  .imp-figure { animation: imp-float 4.2s ease-in-out infinite; }
+  .imp-figure.is-fallen { animation: title-in var(--dur-slow) var(--ease-fade) both, imp-float 3.2s ease-in-out infinite; }
+  .imp-drop[data-state="reading"] .imp-drop-title { animation: notch-pending 700ms var(--ease-fade) infinite alternate; }
+  .imp-drop-in > * { animation: title-in var(--dur-slow) var(--ease-fade) both; }
+  .imp-hud img { animation: mask-mend 500ms var(--ease) both; animation-delay: calc(var(--i) * 70ms + 150ms); }
+  .imp-meta, .imp-facts, .imp-warn, .imp-actions { animation: title-in 600ms var(--ease-fade) 600ms both; }
+}
+@keyframes imp-breathe { from { opacity: 0.5; } to { opacity: 0.85; } }
+@keyframes imp-float { 50% { transform: translateY(-6px); } }
+/* In the header, Hornet and the slot you're playing; on mobile, only the number beside her. */
+/* The save selector (saveLink): Hornet at a bench, under a lamp's light that breathes, and
+   the label in the game's menu capitals, like the slots' buttons (.save-act). It's the way into
+   your saves, so it reads as pressable at rest (27-sep): Hornet at full light and the menu's
+   pointers already either side of the label, small; on hover or focus they open whole, the lamp
+   swells and Hornet glows (the focus mark). */
+.mh-save {
+  display: inline-flex; align-items: center; gap: 0; min-height: var(--ctl); white-space: nowrap; text-decoration: none;
+  font-family: var(--font-display); font-weight: 600; font-size: var(--fs-xs); letter-spacing: var(--track-caps); text-transform: uppercase;
+  color: var(--ink); transition: color var(--dur) var(--ease);
+}
+.mh-save:focus-visible { outline: none; }
+.mh-save-fig { position: relative; isolation: isolate; display: grid; place-items: center; width: var(--sp-12); height: var(--sp-12); }
+.mh-save-fig img { height: var(--sp-12); width: auto; transition: filter var(--dur) var(--ease); }
+.mh-save-light {
+  position: absolute; inset: -25%; z-index: -1; pointer-events: none; opacity: 0.7;
+  background: radial-gradient(closest-side, color-mix(in oklab, var(--spotlight) 22%, transparent), transparent);
+  transition: opacity var(--dur-slow) var(--ease), transform var(--dur-slow) var(--ease);
+}
+.mh-save-lbl { position: relative; padding-inline: var(--sp-4); }
+.mh-save .save-fleur { opacity: 0.5; transform: translateY(-50%) scaleX(0.6); }
+.mh-save:is(:hover, :focus-visible, [aria-current="page"]) { color: var(--ink-strong); }
+.mh-save:is(:hover, :focus-visible, [aria-current="page"]) .mh-save-fig img { filter: drop-shadow(0 0 6px var(--mote)); }
+.mh-save:is(:hover, :focus-visible) .mh-save-light { opacity: 1; transform: scale(1.15); }
+.mh-save:is(:hover, :focus-visible) .save-fleur { opacity: 1; transform: translateY(-50%) scaleX(1); }
+@media (prefers-reduced-motion: no-preference) {
+  .mh-save-light { animation: imp-breathe 5s var(--ease-fade) infinite alternate; }
+  .mh-save:is(:hover, :focus-visible) .mh-save-light { animation: none; }
+}
+.mh-save-short { display: none; }
+/* Following the game (js/live.js): under the label, the rule's diamond and the state in small
+   capitals. Live, the diamond lit in bone, breathing like the lamp; paused or with the file
+   missing, hollow, in the notice's colour. On mobile, only the diamond, over the save's number. */
+.mh-save-lbl:has(.mh-live) { display: inline-flex; flex-direction: column; align-items: flex-start; gap: var(--sp-half); }
+.mh-live { display: inline-flex; align-items: center; gap: var(--sp-2); font-family: var(--font-body); font-weight: 600; font-size: var(--fs-2xs); letter-spacing: var(--track-label); color: var(--ink-2); }
+.mh-live-dot { width: var(--sp-2); height: var(--sp-2); transform: rotate(45deg); border: 1px solid currentColor; }
+.mh-save.is-live .mh-live-dot { background: var(--ink-strong); border-color: var(--ink-strong); box-shadow: 0 0 8px color-mix(in oklab, var(--ink-strong) 55%, transparent); }
+.mh-save.is-paused .mh-live, .mh-save.is-lost .mh-live { color: var(--cond); }
+@media (prefers-reduced-motion: no-preference) {
+  .mh-save.is-live .mh-live-dot { animation: live-breathe 2.4s var(--ease-fade) infinite alternate; }
+}
+@keyframes live-breathe { from { opacity: 0.55; } to { opacity: 1; } }
+@media (max-width: 899px) {
+  /* A slot takes the whole row, and a full one's menu (or free mode's note) goes under it. */
+  .save .save-main { grid-column: 1 / -1; }
+  .save.is-free .save-note { grid-column: 1 / -1; max-width: none; margin: 0; padding: 0 var(--sp-4) var(--sp-6) calc(var(--sp-12) + var(--sp-6) + var(--sp-4)); border-left: 0; }
+  .save:not(.is-free) .save-foot {
+    grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; justify-content: flex-end; align-items: center;
+    margin: calc(var(--sp-2) * -1) 0 0; padding: 0 var(--sp-2) var(--sp-2); border-left: 0;
+  }
+  .save-ask { flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: flex-end; }
+  .save-ask-note { order: 1; flex: 1 1 100%; max-width: none; text-align: right; }
+  .save-link { flex: 1 0 100%; flex-direction: row; flex-wrap: wrap; align-items: baseline; justify-content: flex-end; gap: var(--sp-1) var(--sp-4); padding: 0 var(--sp-3); }
+  .imp-grid { grid-template-columns: minmax(0, 1fr); }
+  .imp-drop { min-height: calc(var(--sp-16) * 6); }
+}
+@media (max-width: 599px) {
+  .saves-body { --inv-pad: var(--sp-4); }
+  .imp-found { grid-template-areas: "fname fname" "nail hud" "meta meta" "facts facts" "warn warn" "sync sync" "actions actions"; }
+  .imp-meta { justify-content: center; }
+  .imp-bar { margin-bottom: var(--sp-2); }
+  /* On a phone an empty slot says only «Import». */
+  .save.is-empty .save-main { min-height: calc(var(--sp-16) + var(--sp-2)); }
+  .save-act-long { display: none; }
+  .save-act-short { display: inline; }
+  .save-act { padding-inline: var(--sp-3); letter-spacing: var(--track-title); }
+  .save-new { font-size: var(--fs-sm); letter-spacing: var(--track-caps); }
+  .imp-hud .save-masks img { height: var(--sp-6); }
+  .save-main { grid-template-columns: var(--sp-8) minmax(0, 1fr) var(--sp-8); gap: var(--sp-2) var(--sp-3); padding: var(--sp-3) var(--sp-2); }
+  .save.is-free .save-main { padding-block: var(--sp-4) var(--sp-2); }
+  .save.is-free .save-note { padding: 0 var(--sp-2) var(--sp-4) calc(var(--sp-8) + var(--sp-3) + var(--sp-2)); font-size: var(--fs-xs); }
+  .save-new { white-space: nowrap; }
+  /* The facts as a little table: the label, then the figure lined up on the right. */
+  .save-facts { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: baseline; gap: var(--sp-1) var(--sp-half); }
+  .save-where { grid-column: 1 / -1; }
+  .save-fact { display: contents; }
+  .save-fact b { text-align: right; }
+  .save.is-free .save-n::before { width: var(--sp-16); }
+  .save.is-free .save-n img { height: var(--sp-8); }
+  .save-masks img { height: var(--sp-4); }
+  .save-nail img { height: var(--sp-12); }
+  .save-nail span { display: none; }
+  /* On a phone Hornet alone didn't say "your saves": larger, with a short word under her
+     (Saves, or Save 1 after the state's diamond when it follows the game), in a 44 px target. */
+  .mh-save-lbl, .mh-save-lbl:has(.mh-live) { display: none; }
+  .mh-save { flex-direction: column; justify-content: center; gap: var(--sp-half); min-width: var(--ctl); min-height: var(--ctl); }
+  .mh-save-fig { width: var(--sp-8); height: var(--sp-8); }
+  .mh-save-fig img { height: var(--sp-8); }
+  .mh-save-short {
+    display: inline-flex; align-items: center; gap: var(--sp-1);
+    font-family: var(--font-body); font-size: var(--fs-2xs); letter-spacing: 0; text-transform: none; line-height: 1.2;
+  }
+  .mh-save:is(.is-live, .is-paused, .is-lost) .mh-save-short::before {
+    content: ''; flex: none; width: var(--diamond); height: var(--diamond); transform: rotate(45deg); border: 1px solid var(--cond);
+  }
+  .mh-save.is-live .mh-save-short::before { border-color: var(--ink-strong); background: var(--ink-strong); box-shadow: 0 0 8px color-mix(in oklab, var(--ink-strong) 55%, transparent); }
+}
+
+
+@keyframes lit-in {
+  from { filter: brightness(0.2) saturate(0); }
+  40% { filter: brightness(1.8) drop-shadow(0 0 8px var(--focus-glow)); }
+}
+@keyframes light-up { 30% { filter: brightness(1.9) drop-shadow(0 0 10px var(--focus-glow)); opacity: 1; } }
+@keyframes mask-mend { from { filter: brightness(2.4); opacity: 0; transform: scale(0.5); } }
+@keyframes notch-pending { to { opacity: 0.55; } }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* ── Your game, the start screen (js/app-home.js) ─────────────────────────
+   In free mode, the invitation: Hornet at a bench, and the file dropped here goes into the
+   first empty save. In a save: the profile's line (the Act, the time, the rosaries), your 100%
+   large with the game's own figure under it, and the wiki's ten categories as bars in bone,
+   full ones lit. Figures in --font-num, as everywhere. */
+.hm { position: relative; }
+.hm-invite {
+  display: grid; justify-items: center; gap: var(--sp-3); max-width: var(--measure); margin: 0 auto;
+  padding: var(--sp-8) var(--sp-4); text-align: center; border: 1px dashed transparent;
+  transition: border-color var(--dur) var(--ease), background-color var(--dur) var(--ease);
+}
+.hm-invite.is-drag { border-color: var(--accent-line); background: var(--accent-soft); }
+.hm-figure { height: calc(var(--sp-16) * 1.5); width: auto; filter: drop-shadow(0 0 18px color-mix(in oklab, var(--spotlight) 18%, transparent)); }
+.hm-invite-title { margin: 0; font-family: var(--font-display); font-size: var(--fs-xl); letter-spacing: var(--track-title); color: var(--ink-strong); }
+.hm-invite-lead { margin: 0; font-size: var(--fs-lg); color: var(--ink-2); text-wrap: pretty; }
+.hm-invite-acts { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--sp-4); margin-top: var(--sp-2); }
+
+.hm-meta {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-2) var(--sp-6); margin: 0 0 var(--sp-6);
+  font-size: var(--fs-sm); color: var(--ink-2);
+}
+.hm-meta b { font-family: var(--font-num); font-variant-numeric: tabular-nums; color: var(--ink-strong); }
+.hm-act { font-family: var(--font-display); letter-spacing: var(--track-title); color: var(--ink); }
+.hm-total { display: grid; justify-items: center; gap: var(--sp-1); margin-bottom: var(--sp-8); }
+.hm-total-k { margin: 0; font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
+.hm-total-n { margin: 0; font-family: var(--font-num); font-variant-numeric: tabular-nums; line-height: 1; color: var(--ink-strong); }
+.hm-total-n b { font-size: var(--fs-hero); font-weight: 600; }
+.hm-total-n .u { font-size: var(--fs-2xl); color: var(--ink-2); margin-left: 0.08em; }
+.hm-check { margin: var(--sp-2) 0 0; font-size: var(--fs-sm); color: var(--muted); text-align: center; }
+.hm-check.is-off { color: var(--cond); }
+
+.hm-cats {
+  list-style: none; margin: 0 auto; padding: 0; max-width: 720px;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-3) var(--sp-8);
+}
+.hm-cat { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "name n" "bar bar"; gap: var(--sp-1) var(--sp-3); align-items: baseline; }
+.hm-cat-name { grid-area: name; font-size: var(--fs-md); color: var(--ink); }
+.hm-cat-n { grid-area: n; font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-md); color: var(--ink-strong); }
+.hm-cat-n .u { font-size: var(--fs-xs); font-style: normal; color: var(--muted); }
+.hm-cat-bar { grid-area: bar; position: relative; height: 2px; background: var(--line); }
+.hm-cat-bar i {
+  position: absolute; inset: 0 auto 0 0; width: calc(var(--f) * 100%);
+  background: color-mix(in oklab, var(--spotlight) 70%, transparent);
+}
+.hm-cat.is-full .hm-cat-bar i { background: var(--ink-strong); box-shadow: 0 0 8px color-mix(in oklab, var(--ink-strong) 45%, transparent); }
+.hm-cat.is-full .hm-cat-name { color: var(--ink-strong); }
+.hm-journal { margin: var(--sp-8) 0 0; text-align: center; font-size: var(--fs-md); color: var(--ink-2); }
+.hm-journal b { font-family: var(--font-num); font-variant-numeric: tabular-nums; color: var(--ink-strong); margin-left: var(--sp-2); }
+.hm-journal .u { font-family: var(--font-num); font-size: var(--fs-xs); font-style: normal; color: var(--muted); }
+@media (max-width: 640px) {
+  .hm-cats { grid-template-columns: minmax(0, 1fr); }
 }

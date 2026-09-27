@@ -693,7 +693,7 @@ from 51 boss pages) and `js/journal.js` (237 entries with the game's name, descr
 Hunter's note). `npm run text -- --audit` checks 1,154 keyed texts against the dump, all
 green. `design/02-silksong.md` measures the HUD, the slots and the 32 areas' tints
 (`npm run palette`); the HUD and the slots are in `tokens.css`, and **the surfaces, the accent
-and the section tints were decided the same day (§5): the page is the main menu (its red-cast black, the red light from below, the embers), the screens the pause menu, a bone accent, four area lines as tints**. Found on the way:
+and the frames were decided the same day (§5): the page is the main menu (its red-cast black, the red light from below, the embers), the screens the pause menu, framed and titled in its white filigree, a bone accent**. Found on the way:
 the Barbed Bracelet is yellow, not blue (§2.4); the map's tints are darker and warmer than
 Hallownest's; the game selects with white on grey, not with a hue. Left out on purpose: the
 common enemies' contact damage (the wiki has it in prose only), and the Journal's seven
@@ -711,7 +711,12 @@ trackers do, and the Silk Skills by their `has*` flags. `js/collectibles.js` is 
 the completionist's dictionary (`npm run collectibles`, pinned) and joins the save's names to the
 site's ids; its Mask Shards and Spool Fragments, found one by one, match the game's counters in
 all 92 too. `savefile.game()` gives the Act (`act2Started`, `blackThreadWorld`) and the bench.
-Left: the slot's snapshot, the Saves and Your game screens, `progress.js` and `changes.js`.
+The same day, the **Saves screen** (ported from the Hollow Knight site: the import view by
+system, the preview, following the file, Clear with the game's own question; restore points
+import too) and **Your game** (the 100% by category against the game's figure, the Act, the
+Journal), with the game's sprites from the wiki (`npm run art`). Driven end to end in headless
+Chrome with a real restore point. Left: Progress (the pieces one by one, which needs the
+scene → area names), `changes.js` ("since last time") and the per-bench unit for the live link.
 
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about

@@ -43,8 +43,8 @@ test('a save that is already JSON is read as it is; anything else is refused', (
 
 test("the profile's figures: time, completion, rosaries, shards, Steel Soul and the version", () => {
   const m = F.meta({ ...BASE, version: '1.0.30000', playTime: 3661.5, completionPercentage: 93, geo: 2100, ShellShards: 350, permadeathMode: 2 });
-  assert.deepEqual(m, { version: '1.0.30000', time: 3661.5, completion: 93, rosaries: 2100, shards: 350, steel: true });
-  assert.deepEqual(F.meta({}), { version: '', time: 0, completion: 0, rosaries: 0, shards: 0, steel: false });
+  assert.deepEqual(m, { version: '1.0.30000', time: 3661.5, completion: 93, rosaries: 2100, shards: 350, steel: true, dead: true });
+  assert.deepEqual(F.meta({}), { version: '', time: 0, completion: 0, rosaries: 0, shards: 0, steel: false, dead: false });
 });
 
 test('a restore point wraps a whole .dat, with the save one level down, and says when and why', () => {
@@ -57,4 +57,16 @@ test('a restore point wraps a whole .dat, with the save one level down, and says
   assert.deepEqual(r.sd, { persistentBools: { serializedList: [] } });
   assert.deepEqual(r.restore, { number: 16, date: '2025/10/18', event: 'GAINED_MELODY_CONDUCTOR' });
   assert.equal(F.read(datOf({ data: 'not base64!' })).ok, false);
+});
+
+test("a game goes into a slot's four keys and comes back whole; a damaged key falls back to empty", () => {
+  const pd = { ...BASE, maxHealthBase: 7, geo: 5, playTime: 60, blackThreadWorld: true };
+  const snap = F.toSnapshot(pd, null, 1700000000000);
+  assert.deepEqual(Object.keys(snap).sort(), ['pharloom.journal', 'pharloom.meta', 'pharloom.owned', 'pharloom.progress']);
+  const g = F.gameOf(snap);
+  assert.deepEqual(g, F.game(pd, null));
+  assert.equal(F.metaOf(snap).saved, 1700000000000);
+  const hurt = F.gameOf({ ...snap, 'pharloom.owned': '{"tools":"nope"}', 'pharloom.progress': 'not json' });
+  assert.deepEqual([hurt.tools, hurt.masks, hurt.act], [[], 0, 1]);
+  assert.deepEqual(F.gameOf(null).journal, {});
 });

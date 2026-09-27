@@ -224,6 +224,16 @@
   const lens = '<svg class="ic" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="5" r="3.6"/><path d="M7.8 7.8 L10.8 10.8"/></svg>';
   const tick = '<svg class="ic" width="12" height="10" viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 5.2 L4.6 8.2 L10.5 1.8"/></svg>';
   const cross = '<svg class="ic" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2 2 L10 10 M10 2 L2 10"/></svg>';
+  /* The pointers of the game's menus, either side of the item you're on (drawn: the wiki doesn't
+     have the sprite). The slots' buttons on Saves and the header's save selector carry them. */
+  const FLEUR = '<svg viewBox="0 0 12 20" fill="currentColor" aria-hidden="true"><path d="M1 10 C4.5 9.4 7.2 7.2 8.6 2.4 C9 6.4 10 8.8 11.6 10 C10 11.2 9 13.6 8.6 17.6 C7.2 12.8 4.5 10.6 1 10 Z"/><circle cx="2.4" cy="10" r="1.3"/></svg>';
+  const FLEURS = `<span class="save-fleur is-l">${FLEUR}</span><span class="save-fleur is-r">${FLEUR}</span>`;
+  // The game's sprites (tools/fetch-art.js, npm run art).
+  const ART = {
+    mask: 'assets/hud/mask.png', spool: 'assets/hud/spool.png', spoolEmpty: 'assets/hud/spool-empty.png',
+    resting: 'assets/hornet/resting.png', idle: 'assets/hornet/idle.png', corpse: 'assets/hornet/corpse.png',
+    needle: (n) => `assets/needles/${Math.max(0, Math.min(4, n | 0))}.png`,
+  };
   const rule = `<svg class="rule" width="220" height="12" viewBox="0 0 220 12" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M0 6 H92"/><path d="M128 6 H220"/><path d="M110 1 L116 6 L110 11 L104 6 Z"/></svg>`;
   // An empty state (css: .empty): the rule, the text and, if there is one, the action that solves it.
   const emptyHtml = (text, act = '', { tag = 'p', cls = '' } = {}) =>
@@ -272,6 +282,8 @@
     renderColophon();
     renderNav();
     renderScreens();
+    // The notice above the screens when following the game needs you (js/app-saves.js).
+    if (el.banner) el.banner.innerHTML = App.liveBanner ? App.liveBanner() : '';
     showScreen();
     restoreFocus(focus);
   }
@@ -368,5 +380,5 @@
 
   Object.assign(App, { t, pick, KEY, PAGE_LANG, PAGE_VIEW, $, el, hoverable, VIEWS, TOOLS, NT, esc, load, save, rebuildNF, pctSpace,
     prefs, loadPrefs, savePrefs, splitHash, hashFor, here, persist, navNow, applyNav, writeUrl, navTo, track,
-    brackets, chevron, lens, tick, cross, rule, emptyHtml, screenHead, screenOf, render, go, toast, actions, restoreFocus, focusDescriptor });
+    brackets, chevron, lens, tick, cross, rule, FLEURS, ART, emptyHtml, screenHead, screenOf, render, go, toast, actions, restoreFocus, focusDescriptor });
 })();

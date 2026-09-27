@@ -39,9 +39,9 @@ Neither folder is part of the page: `index.html` doesn't load them.
   `localStorage`: `hollow.*` is the other site's, never read or written here.
 - **Every colour, typeface and spacing value comes from `css/tokens.css`.** No loose values.
   The HUD and the slot colours are measured (`design/02-silksong.md`); the surfaces, the accent
-  and the section tints were decided on them (its §5, and the tokens' header). The page is the
-  main menu (its red light and embers), the screens the pause menu (black, framed in white filigree, the
-  section's tint only in its title): the
+  and the frames were decided on them (its §5, and the tokens' header). The page is the
+  main menu (its red light and embers), the screens the pause menu (black, framed and titled in white
+  filigree, with no colour per section): the
   red is atmosphere only, never the accent, a figure or text.
 - **`js/data.js`, `js/enemies.js` and `js/journal.js` are generated** (`npm run data`, from
   `kb/data/raw/` and the dump, offline): change `tools/gen-*.js`, never the output. Every game

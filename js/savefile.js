@@ -174,6 +174,7 @@
     rosaries: Math.max(0, int(pd.geo)),
     shards: Math.max(0, int(pd.ShellShards)),
     steel: int(pd.permadeathMode) > 0,
+    dead: int(pd.permadeathMode) === 2,   // a Steel Soul game lost: the profile says «Derrota»
   });
 
   /* ── The save in the site's ids ────────────────────────────────────────── */
@@ -239,6 +240,46 @@
     };
   }
 
-  SS.savefile = { SKILL_PD, ART_PD, decrypt, unwrap, read, meta, game };
+  /* ── A slot's keys (js/saves.js) ──────────────────────────────────────
+     A game is kept in four keys, the ones js/saves.js moves between slots:
+       pharloom.owned     { tools, crests, skills, arts }: what the Crest screen can equip
+       pharloom.journal   { entry id: kills }
+       pharloom.progress  the rest of game(): masks, spools, hearts, needle, kit, pouch,
+                          everbloom, pieces, act, bench, area
+       pharloom.meta      what the profile screen shows (meta()) and when the file was saved
+     toSnapshot() writes them; gameOf() reads them back into one game, with the same defaults as
+     an empty game for anything missing or damaged. */
+  const OWNED = ['tools', 'crests', 'skills', 'arts'];
+  function toSnapshot(pd, sd = null, saved = null) {
+    const g = game(pd, sd);
+    const progress = { ...g };
+    for (const k of [...OWNED, 'journal']) delete progress[k];
+    const m = meta(pd);
+    return {
+      'pharloom.owned': JSON.stringify(Object.fromEntries(OWNED.map((k) => [k, g[k]]))),
+      'pharloom.journal': JSON.stringify(g.journal),
+      'pharloom.progress': JSON.stringify(progress),
+      'pharloom.meta': JSON.stringify({ ...m, saved: Number.isFinite(saved) && saved > 0 ? saved : null }),
+    };
+  }
+  const EMPTY = Object.freeze({ tools: [], crests: [], skills: [], arts: [], journal: {}, masks: 0, spools: 0, hearts: 0,
+    needle: 0, kit: 0, pouch: 0, everbloom: false, pieces: [], act: 1, bench: '', area: '' });
+  const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
+  // Each field only if it has the type an empty game gives it.
+  function gameOf(snap) {
+    const s = snap || {};
+    const src = { ...parse(s['pharloom.owned']), ...parse(s['pharloom.progress']), journal: parse(s['pharloom.journal']) };
+    const out = {};
+    for (const [k, def] of Object.entries(EMPTY)) {
+      const v = src[k];
+      const ok = Array.isArray(def) ? Array.isArray(v) : typeof v === typeof def && v !== null;
+      out[k] = ok ? v : (Array.isArray(def) ? [] : typeof def === 'object' ? {} : def);
+    }
+    return out;
+  }
+  const metaOf = (snap) => ({ version: '', time: 0, completion: 0, rosaries: 0, shards: 0, steel: false, dead: false, saved: null,
+    ...parse((snap || {})['pharloom.meta']) });
+
+  SS.savefile = { SKILL_PD, ART_PD, decrypt, unwrap, read, meta, game, toSnapshot, gameOf, metaOf };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.savefile;
 })();
