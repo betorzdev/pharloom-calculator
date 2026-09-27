@@ -766,6 +766,15 @@ function (`completion.journalDone`) for every screen, and `check-pack` checks it
 Memento (`nuuMementoAwarded`: 230 of 230). Found on the way: the Void Tendrils, with no kill
 count, were counted complete before being seen (`0 >= null`), on Your game and in `check-pack`.
 
+**Phase 5 has started** (the same day): `js/engine.js` takes an enemy (`compute(state, { foe,
+black })`): each hit is one product rounded once (weapon × the enemy's modifier at the level of
+what hits × Hornet's bracket), bonus damage takes neither, and each attack says how many uses kill
+it. Checked against the damage page's own two examples, which it reproduces: 9 for the first, and
+80 then 65 for the second, which showed that the Challenge only reaches an attack's first hit (the
+engine gave it to every hit until then). The Combat screen puts it on a page: the enemy picked,
+its card, what you do to it and what it does to you. Left: the fight over time (silk gained,
+Binds, Tool ammo spent, the phases' bars one by one), the per-boss pages and the gauntlets.
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).

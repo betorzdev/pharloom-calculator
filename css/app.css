@@ -1167,3 +1167,45 @@ kbd {
   .hj-body { grid-template-columns: minmax(0, 1fr); }
   .hj-detail .hj-big { grid-row: 1 / span 5; width: 72px; height: 81px; }
 }
+
+/* ── Combat (js/app-fight.js): the enemy, its card, and the two lists ─────
+   Three columns: the enemies to pick (a search and portraits), the one picked with its health
+   and its five modifiers (the level your Needle hits at, and your Kit's, marked), and what you do
+   to it and it to you, as the Crest screen's lists. */
+.ft-body { display: grid; grid-template-columns: 260px 240px minmax(0, 1fr); gap: var(--sp-8); align-items: start; margin-top: var(--sp-6); }
+.ft-pick { display: grid; gap: var(--sp-3); }
+.ft-foes { list-style: none; margin: 0; padding: 0; max-height: 70vh; overflow: auto; display: grid; gap: var(--sp-half); }
+.ft-foe {
+  display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; align-items: center; gap: var(--sp-2); width: 100%;
+  padding: var(--sp-1) var(--sp-2); border: 1px solid transparent; background: none; color: var(--ink-2); text-align: left; font: inherit; font-size: var(--fs-sm); cursor: pointer;
+}
+.ft-foe img { width: 32px; height: 36px; object-fit: contain; }
+.ft-foe:is(:hover, :focus-visible) { border-color: color-mix(in oklab, var(--filigree) 40%, transparent); background: var(--veil); color: var(--ink); outline: none; }
+.ft-foe.is-on { border-color: var(--filigree); background: var(--veil); color: var(--ink-strong); }
+.ft-boss { font-style: normal; font-size: var(--fs-2xs); letter-spacing: var(--track-label); text-transform: uppercase; color: var(--muted); }
+.ft-card { display: grid; justify-items: center; gap: var(--sp-3); text-align: center; position: sticky; top: calc(var(--sticky-h) + var(--sp-4)); }
+.ft-big { width: 144px; height: 162px; object-fit: contain; }
+.ft-hp b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-2xl); color: var(--ink-strong); }
+.ft-hp { margin: 0; color: var(--ink-2); }
+.ft-bars { display: block; font-family: var(--font-num); font-size: var(--fs-xs); color: var(--muted); }
+.ft-mods { display: grid; gap: var(--sp-1); width: 100%; }
+.ft-mods ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--sp-1); }
+.ft-mods li { display: grid; gap: var(--sp-half); padding: var(--sp-1) 0; border: 1px solid var(--line); font-family: var(--font-num); font-variant-numeric: tabular-nums; }
+.ft-mods li span { font-size: var(--fs-2xs); color: var(--muted); }
+.ft-mods li b { font-size: var(--fs-sm); font-weight: 500; color: var(--ink-2); }
+.ft-mods li.is-needle { border-color: var(--filigree); }
+.ft-mods li.is-needle b, .ft-mods li.is-kit b { color: var(--ink-strong); }
+.ft-mods li.is-kit:not(.is-needle) { border-style: dashed; border-color: var(--ink-2); }
+.ft-stagger { margin: 0; font-size: var(--fs-sm); color: var(--ink-2); }
+.ft-list li { grid-template-columns: 28px minmax(0, 1fr) auto auto; grid-template-areas: "i n v u" "i s v u"; column-gap: var(--sp-3); }
+.ft-list.is-theirs li { grid-template-columns: minmax(0, 1fr) auto auto; grid-template-areas: "n v u" "s v u"; }
+.ft-uses { grid-area: u; min-width: 8ch; text-align: right; font-size: var(--fs-xs); color: var(--ink-2); }
+@media (max-width: 1100px) {
+  .ft-body { grid-template-columns: 240px minmax(0, 1fr); }
+  .ft-body > .ct-figs { grid-column: 1 / -1; }
+  .ft-card { position: static; }
+}
+@media (max-width: 640px) {
+  .ft-body { grid-template-columns: minmax(0, 1fr); }
+  .ft-foes { max-height: 40vh; }
+}

@@ -195,6 +195,28 @@
     ctBind:         { es: 'Enlazar', en: 'Bind' },   // BUTTON_CAST
     ctBindSub:      { es: 'cura {parts} máscaras en {s} s', en: 'heals {parts} masks in {s} s' },
 
+    /* Combat: your build against one enemy (js/app-fight.js) */
+    ftBuild:        { es: 'Tu build: {crest}, {needle}, kit de fabricación {kit}. Se cambia en', en: 'Your build: {crest}, {needle}, Crafting Kit {kit}. It\'s changed in' },
+    ftSearch:       { es: 'Buscar un enemigo', en: 'Find an enemy' },
+    ftNone:         { es: 'Ningún enemigo se llama así.', en: 'No enemy by that name.' },
+    ftBoss:         { es: 'jefe', en: 'boss' },
+    ftHp:           { es: 'Vida', en: 'Health' },
+    ftBlack:        { es: 'Con hilo negro (acto 3): {n}', en: 'Black-threaded (Act 3): {n}' },
+    ftMods:         { es: 'Daño que recibe, por nivel', en: 'Damage it takes, by level' },
+    ftModsNote:     { es: 'Tu aguja, tu golpe concentrado y tus habilidades usan el nivel {n}; tus herramientas, el {k}.', en: 'Your Needle, Needle Strike and Skills use level {n}; your Tools, level {k}.' },
+    ftStagger:      { es: 'Se aturde tras', en: 'Staggers after' },
+    ftHits:         { es: '{n} golpes', en: '{n} hits' },
+    ftYours:        { es: 'Lo que le haces', en: 'What you do to it' },
+    ftYoursNote:    { es: 'Cada golpe ya lleva su modificador a tu nivel; los usos, contando con que todos aciertan.', en: 'Each hit already carries its modifier at your level; the uses, counting every hit landing.' },
+    ftUses:         { es: '{n} para matarlo', en: '{n} to kill it' },
+    ftFormula:      { es: '{base} × {x} × {m}', en: '{base} × {x} × {m}' },
+    ftLoad:         { es: 'una carga, {p} % de su vida', en: 'a full load, {p}% of its health' },
+    ftTheirs:       { es: 'Lo que te hace, con tus {n} máscaras', en: 'What it does to you, with your {n} masks' },
+    ftTheirsNote:   { es: 'Máscaras por golpe según la wiki (1 cuando no lo dice); los nombres de los ataques son de la wiki: el juego no los nombra.', en: 'Masks per hit as the wiki gives them (1 when it doesn\'t); the attacks\' names are the wiki\'s: the game doesn\'t name them.' },
+    ftToDie:        { es: '{n} te matan', en: '{n} kill you' },
+    ftType_fire:    { es: 'fuego', en: 'fire' },
+    ftType_void:    { es: 'vacío', en: 'void' },
+
     /* The Hunter's Journal (js/app-journal.js) */
     hjMemento:      { es: 'Para el Recuerdo de cazadora', en: 'For the Hunter\'s Memento' },   // as INV_NAME_HUNTER_MEMENTO names it
     hjSeen:         { es: '{n} de {m} vistas', en: '{n} of {m} seen' },

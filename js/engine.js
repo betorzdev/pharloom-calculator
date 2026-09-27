@@ -51,10 +51,12 @@
     };
   }
 
-  /* The player's modifiers that apply now, to the Needle or to the Skills: { add, mul, active: [ids] }.
-     The Hunter's focus is its evolved stages' sum: stage 2 +0.3, stage 3 +0.3 +0.2. */
+  /* The player's modifiers that apply now, to the Needle or to the Skills: { add, first, mul,
+     active: [ids] }. first: what only the first hit of an attack takes (the Challenge: the wiki's
+     own example, a Needle Strike's two hits at 2.75 and 2.25). The Hunter's focus is its evolved
+     stages' sum: stage 2 +0.3, stage 3 +0.3 +0.2. */
   function modsFor(st, to) {
-    let add = 0, mul = 1;
+    let add = 0, first = 0, mul = 1;
     const active = [];
     const has = (id) => st.tools.includes(id);
     for (const m of D.MODIFIERS) {
@@ -68,39 +70,59 @@
       else if (m.crest) on = st.crest === m.crest;
       else if (m.tool) on = has(m.tool);
       if (!on) continue;
-      if (m.add) add += m.add;
+      if (m.add && m.firstHit) first += m.add;
+      else if (m.add) add += m.add;
       if (m.mul) mul *= m.mul;
       active.push(m.id);
     }
-    return { add, mul, active };
+    return { add, first, mul, active };
   }
 
-  /* A list of [damage, times] hits at one level → each hit's damage after the bracket, and the total. */
-  function hitsOf(list, bracket = 1, roundDown = false) {
-    const each = [];
+  /* A list of [damage, times] hits at one level → each hit's damage, one product rounded once:
+     weapon × mult (the enemy's modifier × the bracket); the attack's very first hit takes first
+     instead (the Challenge's). Returns each hit, the total, and rest: the total when the first
+     hit takes no more than the others (a second use, after the Challenge is spent). */
+  function hitsOf(list, mult = 1, roundDown = false, first = mult) {
+    const round = (v, i) => (roundDown && i > 0 ? Math.floor(v + 1e-9) : roundHalfEven(v));
+    const each = [], plain = [];
+    let k = 0;
     list.forEach(([d, n], i) => {
-      const v = d * bracket;
-      const r = roundDown && i > 0 ? Math.floor(v + 1e-9) : roundHalfEven(v);
-      for (let k = 0; k < n; k++) each.push(r);
+      for (let j = 0; j < n; j++, k++) {
+        each.push(round(d * (k === 0 ? first : mult), i));
+        plain.push(round(d * mult, i));
+      }
     });
-    return { each, total: each.reduce((a, b) => a + b, 0) };
+    const sum = (a) => a.reduce((x, y) => x + y, 0);
+    return { each, total: sum(each), rest: sum(plain) };
   }
+  // Uses of an attack to take hp: the first use as it is (with the Challenge), the rest plain.
+  const usesToKill = (h, hp) => (!hp || !h.rest ? null : h.total >= hp ? 1 : 1 + Math.ceil((hp - h.total) / h.rest));
 
-  function compute(state) {
+  /* compute(state, { foe, black }): with an enemy (js/enemies.js FOES), every hit takes its
+     modifier at the level of what hits, and each attack says how many uses kill it (black: its
+     black-threaded health, Act 3). */
+  function compute(state, opts = {}) {
     const st = normalize(state);
     const crest = CREST.get(st.crest);
     const has = (id) => st.tools.includes(id);
     const nm = modsFor(st, 'needle'), sm = modsFor(st, 'skill');
     const bracketN = 1 + nm.add, bracketS = 1 + sm.add;
+    const foe = opts.foe || null;
+    const em = (level) => (foe && Array.isArray(foe.mods) ? foe.mods[level] : 1);
+    const hp = foe ? (opts.black ? foe.bt : foe.hp) : null;
+    const eN = em(st.needle), eK = em(st.kit);
+    // The Needle's multiplier and its first hit's (with the Challenge), the enemy's inside.
+    const mN = bracketN * eN, fN = (bracketN + nm.first) * eN;
+    const kill = (h) => (hp ? { ...h, uses: usesToKill(h, hp) } : h);
 
     /* The Needle: one slash at its level, through the bracket; the Wanderer's critical hit is ×3
        after it, 2% of hits (2.2% with Magnetite Dice, the wiki's figure). */
     const base = D.NEEDLES[st.needle].damage;
-    const slash = roundHalfEven(base * bracketN);
+    const slash = roundHalfEven(base * fN);
     const critChance = st.crest === 'wanderer' ? (has('magnetite-dice') ? 0.022 : 0.02) : 0;
     const needle = {
-      level: st.needle, base, bracket: bracketN, slash,
-      crit: critChance ? { damage: roundHalfEven(base * bracketN) * 3, chance: critChance } : null,
+      level: st.needle, base, bracket: bracketN + nm.first, slash, enemy: eN,
+      crit: critChance ? { damage: roundHalfEven(base * fN) * 3, chance: critChance } : null,
     };
 
     /* The Crest's three slashes: one hit at 1x the Needle but for the Crests that split them
@@ -110,20 +132,20 @@
     const ownAttacks = crest.attacks || {};
     const attack = (id) => {
       const a = ownAttacks[id] || { hits: [[1, 1]] };
-      const at = (list) => hitsOf((list || []).map(([m, n]) => [base * m, n]), bracketN);
-      const h = at(a.hits);
+      const at = (list, f = mN) => hitsOf((list || []).map(([m, n]) => [base * m, n]), mN, false, f);
+      const h = kill(at(a.hits, fN));
       return { id, ...h, charged: a.charged ? at(a.charged).total : null, onHit: a.onHit ? at(a.onHit).total : null };
     };
     needle.attacks = ['slash', 'down', 'run'].map(attack);
 
     // The Needle Strike: the Crest's own, at the Needle's level, through the same bracket.
     const sHits = crest.strike ? crest.strike.hits[st.needle] : null;
-    const strike = sHits ? { ...hitsOf(sHits, bracketN), minHits: crest.strike.minHits || null } : null;
+    const strike = sHits ? { ...kill(hitsOf(sHits, mN, false, fN)), minHits: crest.strike.minHits || null } : null;
 
     // The Silk Skills, all six at the Needle's level, and whether one is in the Crest's slot.
     const skills = D.SKILLS.map((s) => {
       const a = s.attacks[0];
-      const h = hitsOf(a.hits[st.needle], bracketS, a.roundDown);
+      const h = kill(hitsOf(a.hits[st.needle], bracketS * eN, a.roundDown));
       return { id: s.id, equipped: st.skill === s.id, silk: has('egg-of-flealia') ? 3 : s.silk, ...h };
     });
 
@@ -133,8 +155,10 @@
     const tools = st.tools.map((id) => {
       const t = TOOL.get(id);
       const attacks = (t.attacks || []).map((a) => {
+        // Bonus damage (a burn, a venom) takes no modifier at all, neither the enemy's nor Hornet's.
         const lvl = a.scale === 'needle' ? st.needle : st.kit;
-        const h = hitsOf(a.hits[lvl], a.scale === 'needle' ? bracketN : 1, a.roundDown);
+        const mult = a.bonus ? 1 : (a.scale === 'needle' ? bracketN : 1) * em(lvl);
+        const h = kill(hitsOf(a.hits[lvl], mult, a.roundDown));
         return { scale: a.scale, bonus: !!a.bonus, ...h };
       });
       const ammo = Array.isArray(t.ammo) ? t.ammo[st.pouch] : null;
@@ -142,6 +166,8 @@
       return {
         id, color: t.color, attacks, ammo,
         load: ammo && main ? ammo * main.total : null,
+        // A full load against the enemy: how much of its health, as a share (1 = it dies).
+        loadShare: hp && ammo && main ? (ammo * main.total) / hp : null,
         refill: ammo && t.refill && t.refill.shards ? Math.round(ammo * t.refill.shards) : null,
       };
     });
@@ -175,9 +201,9 @@
     slots.skill = { open: crest.slots.skill, used: st.skill ? 1 : 0 };
 
     return { state: st, needle, strike, skills, tools, silk, health, slots,
-      mods: { needle: nm.active, skill: sm.active } };
+      mods: { needle: nm.active, skill: sm.active }, foe: foe ? { id: foe.id, hp, black: !!opts.black, needle: eN, kit: eK } : null };
   }
 
-  SS.engine = { roundHalfEven, normalize, modsFor, hitsOf, compute };
+  SS.engine = { roundHalfEven, normalize, modsFor, hitsOf, usesToKill, compute };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.engine;
 })();

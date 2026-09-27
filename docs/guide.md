@@ -94,6 +94,21 @@ ones. An entry is complete when the save lists it with its kills done: the game 
 for the entries it completes another way, and on the saves where Nuu has given the Memento the
 site counts all 230. In Free mode, the whole Journal.
 
+### Combat
+
+Your build against one enemy. Every enemy has five damage modifiers, one per level of what
+hits it (Moorwing takes ×2 from a level-0 weapon and ×0.85 from a level-4 one), so how many hits
+kill it is a question per enemy. Pick it from the list (search in either language, accents
+optional; bosses first, with their Journal portrait); its card shows its health, the
+black-threaded one when it has it (Act 3), its five modifiers with the level your Needle hits at
+and your Crafting Kit's marked, and the hits that stagger it. Beside it, what you do to it: each
+of your attacks (the slash, with its product: Needle × your modifiers × its modifier; the
+Crest's own attacks; the Needle Strike; the Silk Skill equipped; each Tool that deals damage,
+with what share of its health a full load takes) and how many uses kill it, counting every hit
+landing; after a Challenge, only the first hit takes it. And what it does to you: each of its
+attacks (the wiki's names, the game doesn't name them), how many masks it takes (the Barbed
+Bracelet doubles them) and how many kill you. The build is the Crest screen's.
+
 ### Progress
 
 What's missing for 100%, in the wiki's ten categories: the Tools (with their slot colour),

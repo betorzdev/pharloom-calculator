@@ -91,3 +91,27 @@ test("the Crests' own slashes: the Architect's drills and the Witch's whip, each
   // Everyone else slashes once at the Needle's damage.
   assert.deepEqual(E.compute({ crest: 'reaper', needle: 4 }).needle.attacks.map((x) => x.total), [21, 21, 21]);
 });
+
+test("against an enemy: the wiki's two worked examples, and uses to kill", () => {
+  // "One Needle upgrade, Barbed Bracelet, an enemy whose level 1 modifier is 0.8": 9 × 0.8 × 1.25 = 9.
+  const foe = { id: 'x', hp: 100, mods: [1, 0.8, 1, 1, 1] };
+  assert.equal(E.compute({ needle: 1, tools: ['barbed-bracelet'] }, { foe }).needle.slash, 9);
+  // "Fully evolved Hunter, focus, all upgrades, Bracelet, Flintslate, a Challenge; a Needle Strike
+  // against a level 4 modifier of 1": the first hit 29 × 2.75 = 79.75 → 80, the second 29 × 2.25 = 65.25 → 65.
+  const full = { crest: 'hunter', hunterStage: 3, focus: true, needle: 4, tools: ['barbed-bracelet', 'flintslate'], flint: true, challenge: true };
+  const s = E.compute(full, { foe: { id: 'y', hp: 1000, mods: [1, 1, 1, 1, 1] } }).strike;
+  assert.deepEqual(s.each, [80, 65]);
+  // Uses to kill 1000: the first Strike 145, then 130 each (no Challenge left): 1 + ceil(855 / 130) = 8.
+  assert.deepEqual([s.total, s.rest, s.uses], [145, 130, 8]);
+});
+
+test("a real enemy's modifier at the level of what hits: Lace in the Cradle", () => {
+  require('../js/enemies.js');
+  const lace = globalThis.SS.enemies.FOES.find((f) => f.id === 'lace-the-cradle');   // 800, mods 1.75/1.2/1/0.85/0.85
+  const c = E.compute({ needle: 4, kit: 0, tools: ['straight-pin'] }, { foe: lace });
+  // Pale Steel (21) × 0.85 = 17.85 → 18; 800 / 18 → 45 slashes. A pin at Kit 0: 5 × 1.75 = 8.75 → 9.
+  assert.equal(c.needle.slash, 18);
+  assert.equal(c.needle.attacks[0].uses, 45);
+  assert.equal(c.tools[0].attacks[0].total, 9);
+  assert.equal(c.foe.hp, 800);
+});

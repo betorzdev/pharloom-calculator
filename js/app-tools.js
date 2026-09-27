@@ -58,6 +58,9 @@
       ...moment }) };
   }
 
+  // The build on screen, for the other screens too (Combat, js/app-fight.js).
+  App.currentBuild = () => current().st;
+
   /* ── The Crest and its slots ── */
   function slotsHtml(st, r) {
     const crest = D.CRESTS.find((c) => c.id === st.crest);
