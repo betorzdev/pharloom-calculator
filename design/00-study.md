@@ -721,8 +721,15 @@ own ids (`currentArea`: `CRADLE`, `HUNTERS_MARCH`…) with the game's names (the
 whole title under another key where the map card splits it: «Escalones Ajados», not «Blasted
 Escalones»), and a slot keeps its pieces by what they are, not by their place in the list, so a
 regenerated list still reads an old slot. The upgrades and Silk Hearts one by one match the
-game's counters on the 92 saves too. Left: `changes.js` ("since last time") and the
-per-bench unit for the live link.
+game's counters on the 92 saves too. And **"Since the previous save"** (`js/changes.js`, on Your
+game and in the live notice), checked on the restore points: between two of the same game, the
+event that wrote the second (`GAINED_BEAST`, `GAINED_DOUBLE_JUMP`, `ACT_3`…) is always among
+what's new, but three kinds the site doesn't track yet (the Cursed Crest, the three Needolin
+melodies, the four Old Hearts): they're Progress's next rows. The live link follows `user#.dat`
+alone (the restore points go to `Restore_Points#/` and aren't followed), which should make the
+bench its unit, as in Hollow Knight: whether Silksong writes `user#.dat` only on resting and
+quitting (§4.3's open question) is still to see by hand. **Phase 2 is done** but for that: trying
+the live link in Chrome with the game running, which a headless browser can't.
 
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about

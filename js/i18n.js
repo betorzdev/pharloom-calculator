@@ -143,6 +143,19 @@
     cat_hearts:     { es: 'Corazones de seda', en: 'Silk Hearts' },   // INV_DESC_SPOOL_SILKHEARTS
     cat_items:      { es: 'Siempreviva', en: 'Everbloom' },   // INV_NAME_WHITE_FLOWER
 
+    /* Since the previous save (js/changes.js): Your game and the notice when the game saves */
+    homeSince:      { es: 'Desde el guardado anterior', en: 'Since the previous save' },
+    homeSinceAt:    { es: 'guardado {ago}', en: 'saved {ago}' },
+    chMasks:        { es: 'Máscaras: {n}', en: 'Masks: {n}' },
+    chSpools:       { es: 'Carretes de seda: {n}', en: 'Silk Spools: {n}' },
+    chHearts:       { es: 'Corazones de seda: {n}', en: 'Silk Hearts: {n}' },
+    chKit:          { es: 'Kit de fabricación, mejora {n}', en: 'Crafting Kit, upgrade {n}' },
+    chPouch:        { es: 'Bolsa de herramientas, mejora {n}', en: 'Tool Pouch, upgrade {n}' },
+    chJournal:      { es: 'Diario: {n} entradas nuevas o completadas', en: 'Journal: {n} entries new or completed' },
+    chJournalOne:   { es: 'Diario: una entrada nueva o completada', en: 'Journal: one entry new or completed' },
+    chMore:         { es: 'y {n} más', en: 'and {n} more' },
+    chToast:        { es: 'Tu partida: {list}', en: 'Your game: {list}' },
+
     /* Progress: what's missing, piece by piece (js/app-progress.js) */
     pgShow:         { es: 'Mostrar', en: 'Show' },
     pgMissing:      { es: 'Lo que falta', en: 'What\'s missing' },

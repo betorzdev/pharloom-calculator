@@ -37,6 +37,12 @@ patches, Steel Soul): whole masks and spools, not loose shards and fragments (tw
 still 0%), and a Tool and its upgrade (Curveclaw and Curvesickle) are one point. And the
 Journal: the required entries with their kills done, out of 230 (231 in Steel Soul).
 
+When the save follows the game's file, each new save the game writes to it (the restore points
+go to their own folder and aren't followed) brings a block **Since
+the previous save**: the new Act, Crests, Tools, Silk Skills and abilities by name, the upgrades
+with their new value, each piece found with its area, the Journal entries new or completed as a
+count, and what the completion went up by. The notice at the top says the same in one line.
+
 ### Progress
 
 What's missing for 100%, in the wiki's ten categories: the Tools (with their slot colour),

@@ -657,7 +657,7 @@
         await L.links.put(n, { ...rec, stamp });
         if (!changed || activeSlot() !== n) return;
         render();
-        if (changed === 'game') toast(t('liveUpdated'));
+        if (changed === 'game') toast((App.gainedLine && App.gainedLine()) || t('liveUpdated'));
         if (!synced) { synced = true; track('save-sync'); }
       },
       onState(s) { live.state = s; render(); },

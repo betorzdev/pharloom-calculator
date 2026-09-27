@@ -9,10 +9,82 @@
   const SS = globalThis.SS;
   const CP = SS.completion;
   const App = SS.app;
-  const { t, esc, NT, ART, brackets, screenHead, pctSpace } = App;
+  const { t, pick, esc, NT, ART, brackets, screenHead, pctSpace } = App;
 
   const num = (n) => App.NF[0].format(n);
   const pct = (n) => num(n) + pctSpace();
+  const D = SS.data, CO = SS.collectibles, F = SS.savefile, CH = SS.changes;
+
+  /* ── What the game gained since the save before (pharloom.prev, kept by js/saves.js when the
+     followed file brings a new save) ── */
+  function gained() {
+    const now = App.game();
+    let prev = null;
+    try { prev = JSON.parse(App.load('pharloom.prev') || 'null'); } catch (e) { prev = null; }
+    if (!now || !prev || !prev.snap) return { list: [], saved: null };
+    return { list: CH.diff(F.gameOf(prev.snap), now), saved: prev.saved || null };
+  }
+  const nameIn = (list, id) => { const x = list.find((y) => y.id === id); return x ? pick(x.name) : id; };
+  const itemName = (id) => nameIn(D.ITEMS, id);
+  const KIND_ITEM = { 'mask-shard': 'mask-shard', 'spool-fragment': 'spool-fragment', 'memory-locket': 'memory-locket',
+    craftmetal: 'craftmetal', 'pale-oil': 'pale-oil' };
+  // Each change as { name, where }: named with the game's own words where it has them.
+  function describe(c) {
+    switch (c.kind) {
+      case 'act': return { name: t('saveAct', { n: c.to }) };
+      case 'tool': return { name: nameIn(D.TOOLS, c.id), nt: true };
+      case 'crest': return { name: nameIn(D.CRESTS, c.id), nt: true };
+      case 'skill': return { name: nameIn(D.SKILLS, c.id), nt: true };
+      case 'art': return { name: nameIn(D.ARTS, c.id), nt: true };
+      case 'everbloom': return { name: itemName('everbloom'), nt: true };
+      case 'upgrade':
+        if (c.id === 'needle') return { name: pick(D.NEEDLES[c.to].name), nt: true };
+        return { name: t({ masks: 'chMasks', spools: 'chSpools', hearts: 'chHearts', kit: 'chKit', pouch: 'chPouch' }[c.id], { n: num(c.id === 'masks' ? 5 + c.to : c.to) }) };
+      case 'piece': {
+        const p = CO.PIECES[c.i];
+        const name = p[0] === 'flea' ? t('kind_flea') : itemName(KIND_ITEM[p[0]]);
+        return { name, where: p[3] && CO.AREAS[p[3]] ? pick(CO.AREAS[p[3]]) : '', nt: true };
+      }
+      default: return null;
+    }
+  }
+  // The Journal's entries in one line, and the rest one by one; the completion last.
+  function lines(list) {
+    const out = list.filter((c) => c.kind !== 'journal' && c.kind !== 'pct').map(describe).filter(Boolean);
+    const j = list.filter((c) => c.kind === 'journal').length;
+    if (j) out.push({ name: j === 1 ? t('chJournalOne') : t('chJournal', { n: num(j) }) });
+    return out;
+  }
+  function ago(ms) {
+    if (!ms) return '';
+    const m = Math.round((ms - Date.now()) / 60000);
+    try {
+      const rtf = new Intl.RelativeTimeFormat(App.prefs.lang, { numeric: 'auto' });
+      return Math.abs(m) < 60 ? rtf.format(m, 'minute') : Math.abs(m) < 60 * 24 ? rtf.format(Math.round(m / 60), 'hour') : rtf.format(Math.round(m / 1440), 'day');
+    } catch (e) { return ''; }
+  }
+  function sinceHtml() {
+    const { list, saved } = gained();
+    if (!list.length) return '';
+    const up = list.find((c) => c.kind === 'pct');
+    const items = lines(list).map((x) => `<li class="hm-gain"><span class="hm-gain-name"${x.nt ? NT : ''}>${esc(x.name)}</span>${x.where ? `<span class="hm-gain-where"${NT}>${esc(x.where)}</span>` : ''}</li>`).join('');
+    return `<section class="hm-since" aria-labelledby="hm-since-h">
+        <h3 class="hm-since-h" id="hm-since-h">${esc(t('homeSince'))}${saved ? ` <span class="hm-since-at">${esc(t('homeSinceAt', { ago: ago(saved) }))}</span>` : ''}
+          ${up ? `<b class="hm-since-pct">+${num(up.to - up.from)}${pctSpace()}</b>` : ''}</h3>
+        <ul class="hm-gains">${items}</ul>
+      </section>`;
+  }
+  /* The notice when the followed file brings a new save (js/app-saves.js): three things by name at most. */
+  App.gainedLine = () => {
+    const list = gained().list;
+    if (!list.length) return '';
+    const named = lines(list).map((x) => x.name);
+    let text = named.slice(0, 3).join(', ');
+    if (named.length > 3) text += ' ' + t('chMore', { n: num(named.length - 3) });
+    const up = list.find((c) => c.kind === 'pct');
+    if (up) text += ' · +' + num(up.to - up.from) + pctSpace();
+    return t('chToast', { list: text });
+  };
 
   function invite() {
     return `<div class="hm-invite">
@@ -48,6 +120,7 @@
     }).join('');
     const book = App.bookDone(g.journal, m.steel), bookMax = App.bookTotal(m.steel);
     return `${top}
+      ${sinceHtml()}
       <div class="hm-total">
         <p class="hm-total-k">${esc(t('homeCompletion'))}</p>
         <p class="hm-total-n"><b>${num(c.total)}</b><span class="u">${esc(pctSpace().trim() || '%')}</span></p>
