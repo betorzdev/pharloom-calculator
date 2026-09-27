@@ -1,0 +1,231 @@
+/* css/tokens.css — Pharloom: design tokens.
+   Every colour, type and spacing value comes from here.
+
+   PROVISIONAL. This palette was measured for Hollow Knight (hallownest-calculator's
+   design/02-hollow-knight.md) and carried over with the skeleton. What's the web's stays
+   (design/01-web.md): the type scale, the spacing, the tracking, the control heights, the
+   motion, the atmosphere. What's the game's is a placeholder until design/02-silksong.md
+   measures Silksong's own sprites and screenshots (phase 1 of design/00-study.md §9):
+     · the page background and the surfaces (Hollow Knight's blue-black);
+     · the accent (Hollow Knight's pale blue; Silksong's has to be measured on the game's own
+       interactive marks, the Crest screen's selection and the Tool slot's glow, and it will
+       NOT be Hornet's red, for the same reason it wasn't soul's cyan: the accent doesn't
+       decorate data, it only marks what responds to the finger);
+     · the HUD (--mask*, --silk*: silk's colour is to be measured, not assumed);
+     · the section tints (--tint-*: Silksong's map screen, area by area).
+
+   Three decisions that carry over as they are:
+
+   1. Numbers don't go in Cinzel. It's a Roman capital with no real lowercase, so every number
+      goes in --font-num, a system sans with tabular figures.
+   2. The accent has a single job: what responds to the finger (focus, hover, equipped). The
+      figures go in bone, like the game's HUD.
+   3. Depth is built downwards (the field sinks, the sheet stays), so all the ink passes AA. */
+/* The typefaces travel with the site (assets/fonts/, Google Fonts' Latin subset): opened with a
+   double click and offline, it looks the same. Silksong's interface is Trajan Pro and its
+   dialogue Perpetua, as Hollow Knight's: Cinzel and Spectral stand in for them here too. Cinzel
+   is variable: one file for 400–900. */
+@font-face { font-family: 'Cinzel'; font-style: normal; font-weight: 400 900; font-display: swap;
+  src: url('../assets/fonts/cinzel.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Spectral'; font-style: normal; font-weight: 300; font-display: swap;
+  src: url('../assets/fonts/spectral-300.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Spectral'; font-style: italic; font-weight: 300; font-display: swap;
+  src: url('../assets/fonts/spectral-300-italic.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Spectral'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('../assets/fonts/spectral-400.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Spectral'; font-style: normal; font-weight: 500; font-display: swap;
+  src: url('../assets/fonts/spectral-500.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Spectral'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url('../assets/fonts/spectral-600.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Patrick Hand SC'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('../assets/fonts/patrick-hand-sc.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+:root {
+  --font-display: 'Cinzel', 'Trajan Pro', Georgia, 'Times New Roman', serif;
+  --font-body: 'Spectral', Georgia, 'Times New Roman', serif;
+  /* The Hunter's hand, for the Journal's notes, and only there. */
+  --font-hand: 'Patrick Hand SC', 'Segoe Print', 'Bradley Hand', cursive;
+  /* System sans: zero network bytes, and its figures are already tabular out of the box. */
+  --font-num: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+              'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+
+  /* Background and surfaces (PLACEHOLDER: Hollow Knight's). Depth is built downwards. */
+  --bg: #06080d;
+  --page-bg: radial-gradient(1100px 620px at 50% -180px, #16203a 0%, #0b101b 55%, #06080d 100%);
+  --panel: linear-gradient(180deg, #141c30 0%, #0d1421 100%);
+  --block: #111828;         /* raised surface: blocks and inner panels */
+  --card: #080c15;          /* sunken surface: fields, cells, wells */
+  --card-idle: #161e31;     /* interactive piece at rest, raised above the block */
+  --card-on: #1c2743;       /* the same, selected */
+  --ctl: #151d2e;
+  --well: #05070c;
+
+  /* Lines */
+  --line-panel: #2b3552;
+  --line: #222c42;
+  --line-card: #232e44;
+  --line-row: #1a2233;
+  --line-ctl: #2b3550;
+  --well-line: #253048;
+  --bracket: #4a5f85;
+
+  /* Ink. Four steps and each with a job; all pass AA (min. 4.7:1) on the surfaces above. */
+  --ink-strong: #f7f9fd;    /* figures and titles */
+  --ink: #f0f2f8;           /* body */
+  --ink-2: #a7b0c6;         /* secondary */
+  --label: #9aa4be;         /* small-caps labels */
+  --muted: #8891ad;         /* notes, captions, supporting text */
+  --ink-idle: #b3bccf;
+
+  /* Accent (PLACEHOLDER): interactive things only. See the header. */
+  --accent: #9ec6ea;
+  --accent-line: #6d8cb6;
+  --accent-ink: #a8cdee;
+  --accent-soft: rgba(158, 198, 234, 0.14);
+  --glow: 0 0 22px -8px #9ec6ea;
+
+  /* Round wells for the icons */
+  --medal: #0d1626;
+  --medal-line: #5f7ca6;
+  --medal-off: #0c111c;
+  --medal-off-line: #28324a;
+  --medal-off-ink: #8791ab;
+
+  /* HUD (PLACEHOLDER: to be measured on SS_Mask.png, Silk.png and the spool sprites). */
+  --mask: #dfe6f2;
+  --mask-line: #f2f5fa;
+  --mask-empty: #2a3247;
+  --silk: #ececec;                        /* the spool's strands: measure it, don't assume it */
+  --silk-well: #0b1019;                   /* the empty spool, under the silk */
+  --silk-rim: #2a3247;                    /* its edge */
+  --plasmium: #2d5f72;                    /* the Plasmium (lifeblood) mask */
+  --plasmium-line: #7ec8de;
+  --hud-frame: #d9dce6;                   /* the HUD's frame: bone stroke, like the game's */
+
+  /* The screens are scenes from the game: an almost black field and a cold spotlight. */
+  --scene-bg: #04060b;
+  --scene-glow: rgba(116, 142, 196, 0.26);
+  --scene-glow-low: rgba(116, 142, 196, 0.1);
+  --scene-floor: #000;
+  --scene-flash: rgba(236, 240, 248, 0.34);    /* the flash when taking a hit */
+  --focus-glow: rgba(242, 244, 250, 0.85);     /* a Bind's white glow */
+  --area-spot: rgba(236, 236, 236, 0.13);
+  --area-spot-off: rgba(236, 236, 236, 0.04);
+  --scene-cold: rgba(116, 142, 196, 0.26);
+  --scene-cold-off: rgba(116, 142, 196, 0.08);
+  /* Each area's ramp (--area-<id>-mid / -deep / -light) goes here once design/02-silksong.md
+     measures the 33 areas: the enemy's stage takes its area's ambience. */
+
+  /* Traffic light for the deltas and conditional notices */
+  --good: #7fc7a0;
+  --good-soft: rgba(127, 199, 160, 0.14);
+  --bad: #e2705f;
+  --bad-soft: rgba(226, 112, 95, 0.14);
+  --cond: #ccbe9c;
+  --notice-bg: #1a1710;
+  --notice-line: #3b3422;
+
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 18px 54px rgba(0, 0, 0, 0.62);
+
+  /* Typography: seven steps and two scaled ones. No half pixels on purpose. */
+  --fs-2xs: 11px;     /* small-caps labels, units, badges */
+  --fs-xs: 13px;      /* dense cells, notes under a figure */
+  --fs-sm: 14px;      /* secondary interface */
+  --fs-md: 16px;      /* body ← base */
+  --fs-lg: 18px;      /* prose, lead paragraph */
+  --fs-xl: 24px;      /* block titles, medium figures */
+  --fs-2xl: 34px;     /* large figures */
+  --fs-brand: clamp(1.5rem, 1rem + 1.2vw, 2.125rem);     /* 24 → 34 px: the title, in the one-row header */
+  --fs-hero: clamp(3.5rem, 2.2rem + 4vw, 5.5rem);        /* 56 → 88 px */
+
+  /* Spacing: eight steps, deliberately non-linear. */
+  --sp-half: 2px;
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+
+  /* Tracking: one step per use, not per element. Figures go at 0. */
+  --track-title: 0.04em;
+  --track-label: 0.08em;
+  --track-caps: 0.12em;
+  --track-wide: 0.2em;
+
+  /* Control heights: two with a mouse, and both at 44 px with a finger. */
+  --ctl-sm: 32px;
+  --ctl: 40px;
+
+  /* The drawn interface icons: 12 px inside text, 16 px alone in a button, one stroke. */
+  --icon-sm: 12px;
+  --icon: 16px;
+  --icon-stroke: 1.6px;
+  --diamond: 5px;           /* the game's small hollow diamond, in front of a tag or a notice's tag */
+
+  /* Motion: ~250 ms to respond to the finger, ~400 ms for a fade, no bounce. */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 120ms;
+  --dur: 250ms;
+  --dur-slow: 400ms;
+  --ease-fade: cubic-bezier(0.45, 0, 0.55, 1);
+
+  --page-max: 1216px;
+  --page-pad: var(--sp-8);
+  /* What the screen bar stuck at the top takes up. */
+  --sticky-h: 64px;
+  --measure: 68ch;    /* maximum measure for long prose */
+
+  /* One tint per section (PLACEHOLDER: Hollow Knight's map tints; Silksong's map screen is to
+     be measured). It goes on section titles, corner brackets and ornaments; never on a figure
+     or on what responds to the finger, which still belongs to the accent. */
+  --tint-sheet: #d5ddfd;      /* the Crest screen and the Inventory */
+  --tint-combat: #f8cffc;     /* combat */
+  --tint-journal: #bce6f4;    /* the Hunter's Journal */
+  --tint-progress: #d8ffcc;   /* Your game, Progress and the Map */
+
+  /* The screens are the game's inventory: almost pure black, and the light behind a plate is
+     white and only where you look. */
+  --inv-bg: var(--scene-bg);
+  --inv-line: #1c2536;
+  --halo-plate: radial-gradient(closest-side, rgba(236, 236, 236, 0.2), rgba(236, 236, 236, 0.06) 58%, transparent);
+  --halo-plate-off: radial-gradient(closest-side, rgba(150, 164, 196, 0.2), transparent 78%);
+  --mote: rgba(226, 232, 245, 0.7);    /* the dust motes from the main menu */
+
+  /* ── Atmosphere and the section's lights ───────────────────────────────
+     The whole page is the main menu: a vignette on the four edges, dust motes across the
+     window, and a grain so faint it's felt rather than seen. All three fixed to the window and
+     BEHIND the content (css/app.css, .atmos). The grain is an inline SVG: over file:// nothing
+     is fetched. */
+  --vignette: radial-gradient(ellipse 75% 70% at 50% 45%, transparent 55%, rgba(4, 6, 12, 0.55) 85%, rgba(4, 6, 12, 0.9) 100%);
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --grain-opacity: 0.025;
+  /* Each section's lamp: the hue of its tint at a fixed lightness and more chroma. It lights
+     what is light, never ink: the title's rule and the corner brackets (--lamp), the spotlight
+     and the plates' halo (--lamp-light). css/app.css derives them per section. */
+  --lamp-l: 0.8;
+  --lamp-c: 0.1;
+  --lamp-light-c: 0.13;
+  --lamp-line: 78%;
+  --lamp-glow: 20%;
+  --lamp-glow-low: 8%;
+  --lamp-plate: 24%;
+  --lamp-plate-edge: 7%;
+  --dur-flash: 900ms;                   /* the glow of a figure that just changed */
+  --dur-delta: 4s;                      /* how long your last change's chip stays in view */
+  /* What's touched on that black goes unboxed: on hover, a veil of ink; the chosen one, a
+     veil of the accent with its rule (--accent-line). */
+  --veil: color-mix(in oklab, var(--ink) 5%, transparent);
+  --picked: color-mix(in oklab, var(--accent) 8%, transparent);
+
+  /* What you don't have yet, everywhere: colourless and half-lit. */
+  --missing-art: grayscale(1) brightness(0.4);
+
+  color-scheme: dark;
+}
+@media (pointer: coarse) {
+  :root { --ctl-sm: 44px; --ctl: 44px; }
+}

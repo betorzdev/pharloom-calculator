@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pharloom Calculator · Hollow Knight: Silksong</title>
+<meta name="description" content="How each of Hornet's stats changes with each Tool, Crest and upgrade in Hollow Knight: Silksong, and your real game followed from its save. In English and Spanish. In the making.">
+<link rel="canonical" href="https://betorzdev.github.io/pharloom-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pharloom Calculator">
+<meta property="og:title" content="Pharloom Calculator · Hollow Knight: Silksong">
+<meta property="og:description" content="How each of Hornet's stats changes with each Tool, Crest and upgrade in Hollow Knight: Silksong, and your real game followed from its save. In English and Spanish.">
+<meta property="og:url" content="https://betorzdev.github.io/pharloom-calculator/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<!-- Visit counts (GoatCounter: no cookies, doesn't count file://, localhost or iframes). Explicit
+     https: a protocol-relative src would become file:// when opened locally. -->
+<script data-goatcounter="https://betorzdev.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<meta name="theme-color" content="#07090e">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div class="page">
+  <div class="shell">
+    <header class="masthead" id="masthead"></header>
+    <nav class="nav" id="nav" aria-label="Screens">
+      <div class="nav-tabs">
+        <a class="nav-tab" data-act="view" data-value="home" href="#view=home">Your game</a>
+        <a class="nav-tab" data-act="view" data-value="game" href="#view=game">Inventory</a>
+        <a class="nav-tab" data-act="view" data-value="progress" href="#view=progress">Progress</a>
+        <a class="nav-tab" data-act="view" data-value="map" href="#view=map">Map</a>
+        <a class="nav-tab" data-act="view" data-value="journal" href="#view=journal">Journal</a>
+        <span class="nav-sep" aria-hidden="true"></span>
+        <a class="nav-tab" data-act="view" data-value="tools" href="#view=tools">Crest</a>
+        <a class="nav-tab" data-act="view" data-value="fight" href="#view=fight">Combat</a>
+      </div>
+    </nav>
+    <main class="screens">
+      <div id="banner"></div>
+      <section class="screen" data-view="home" id="home" aria-label="Your game" hidden></section>
+      <section class="screen" data-view="game" id="game" aria-label="Inventory" hidden></section>
+      <section class="screen" data-view="progress" id="progress" aria-label="Progress" hidden></section>
+      <section class="screen" data-view="map" id="map" aria-label="Map" hidden></section>
+      <section class="screen" data-view="journal" id="journal" aria-label="Journal" hidden></section>
+      <section class="screen" data-view="tools" id="tools" aria-label="Crest" hidden></section>
+      <section class="screen" data-view="fight" id="fight" aria-label="Combat" hidden></section>
+      <section class="screen" data-view="saves" id="saves" aria-label="Saves" hidden></section>
+    </main>
+    <!-- about -->
+    <section class="about" id="about" lang="en" aria-labelledby="about-h">
+      <h1 id="about-h">Your Hollow Knight: Silksong game, live</h1>
+      <p>Pharloom Calculator will read your Silksong save file and show what the game doesn't tell you: what's missing for 100%, item by item, where every Mask Shard, Spool Fragment and Tool you don't have yet is, on the game's own map, and how many Hunter's Journal entries are left. In Chrome and Edge it will follow the file while you play, and catch up every time you rest at a bench.</p>
+      <p>It will work without a save too: the Crest screen tells you how each of Hornet's stats changes with each Tool, Crest and upgrade (Needle damage, hits per enemy through its own modifiers, silk, Bind, Silk Skills), and the combat simulator takes your build against every enemy and boss. Every number comes from the wiki, with the game's rounding, and every name from its official translation.</p>
+      <p><strong>In the making.</strong> The study behind it and the plan are public, in the repository.</p>
+    </section>
+    <!-- /about -->
+    <footer class="colophon" id="colophon"></footer>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script src="js/i18n.js"></script>
+<script src="js/saves.js"></script>
+<script src="js/savefile.js"></script>
+<script src="js/live.js"></script>
+<script src="js/app.js"></script>
+<script src="js/app-boot.js"></script>
+</body>
+</html>

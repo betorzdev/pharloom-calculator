@@ -1,0 +1,11 @@
+{
+  "name": "pharloom-calculator",
+  "version": "0.1.0",
+  "description": "How Hornet's stats change with each Tool, Crest and upgrade in Hollow Knight: Silksong, and your real game followed from its save.",
+  "private": true,
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "serve": "python3 -m http.server 8000",
+    "text": "node tools/game-text.js"
+  }
+}
