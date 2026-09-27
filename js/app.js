@@ -138,12 +138,13 @@
   const persist = () => { writeUrl(false); };
 
   /* ── Header and screen bar ───────────────────────────────────────────── */
-  /* The atmosphere behind the whole page (css/app.css, .atmos): the main menu's vignette and 22
-     dust motes rising slowly, in fixed places spread without randomness so that two loads come
+  /* The atmosphere behind the whole page (css/app.css, .atmos): the main menu's red light, its
+     vignette and 40 embers rising, in fixed places spread without randomness so that two loads come
      out the same. Put in once and never repainted. */
-  const MOTES = Array.from({ length: 22 }, (_, i) => {
+  const MOTES = Array.from({ length: 40 }, (_, i) => {
     const r = (n) => { const x = Math.sin(i * 12.9898 + n * 78.233) * 43758.5453; return x - Math.floor(x); };
-    return `<i style="--x:${(4 + r(1) * 88).toFixed(1)}%;--s:${(1 + r(2) * 2.6).toFixed(1)}px;--t:${(38 + r(3) * 26).toFixed(1)}s;--d:${(-r(4) * 64).toFixed(1)}s;--o:${(0.25 + r(5) * 0.5).toFixed(2)};--dx:${((r(6) - 0.5) * 60).toFixed(0)}px"></i>`;
+    const dx = (r(6) - 0.5) * 160;
+    return `<i style="--x:${(4 + r(1) * 88).toFixed(1)}%;--s:${(1.5 + r(2) * 2).toFixed(1)}px;--t:${(22 + r(3) * 20).toFixed(1)}s;--d:${(-r(4) * 42).toFixed(1)}s;--o:${(0.35 + r(5) * 0.55).toFixed(2)};--dx:${dx.toFixed(0)}px;--tilt:${(dx / 12).toFixed(1)}deg"></i>`;
   }).join('');
   el.page.insertAdjacentHTML('afterbegin', `<div class="atmos" aria-hidden="true">${MOTES}</div>`);
 

@@ -1,19 +1,19 @@
 /* css/tokens.css — Pharloom: design tokens.
    Every colour, type and spacing value comes from here.
 
-   PROVISIONAL. This palette was measured for Hollow Knight (hallownest-calculator's
-   design/02-hollow-knight.md) and carried over with the skeleton. What's the web's stays
-   (design/01-web.md): the type scale, the spacing, the tracking, the control heights, the
-   motion, the atmosphere. What's the game's is a placeholder until design/02-silksong.md
-   measures Silksong's own sprites and screenshots (phase 1 of design/00-study.md §9):
-     · the page background and the surfaces (Hollow Knight's blue-black);
-     · the accent (Hollow Knight's pale blue; Silksong's has to be measured on the game's own
-       interactive marks, the Crest screen's selection and the Tool slot's glow, and it will
-       NOT be Hornet's red, for the same reason it wasn't soul's cyan: the accent doesn't
-       decorate data, it only marks what responds to the finger);
-     · the section tints (--tint-*: Silksong's map screen, area by area).
-   design/02-silksong.md has measured them all: the HUD and the slots are in (below); the
-   surfaces, the accent and the tints are proposals there (§5), still to decide.
+   Measured on Silksong's own sprites and screenshots (design/02-silksong.md), and decided on
+   27 September 2026 (its §5). The page is the game's two families of screens:
+     · the page itself is the main menu (title, options, profile select): a black with a red
+       cast (#0f0604) and a red light rising from the bottom centre (--ember-glow), with orange
+       embers drifting up (--mote). The surfaces are that black's ramp (H 5°, S under 30%);
+     · the screens (.screen: the Crest, the Inventory, the Journal) are the pause menu: pure
+       black, a warm spotlight (#23201d) and the white filigree, with no colour of their own;
+     · the red is atmosphere only: never the accent, a figure or text;
+     · the accent is bone (#f1ebdc, the Crest screen's cream): the game selects with white on
+       grey, not with a hue, so what responds to the finger is told by its shape and its glow;
+     · the section tints are four of the map's area lines, all above 5.9:1 on --card-on.
+   What's the web's stays (design/01-web.md): the type scale, the spacing, the tracking, the
+   control heights, the motion, the atmosphere.
 
    Three decisions that carry over as they are:
 
@@ -50,47 +50,47 @@
   --font-num: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
               'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
 
-  /* Background and surfaces (PLACEHOLDER: Hollow Knight's). Depth is built downwards. */
-  --bg: #06080d;
-  --page-bg: radial-gradient(1100px 620px at 50% -180px, #16203a 0%, #0b101b 55%, #06080d 100%);
-  --panel: linear-gradient(180deg, #141c30 0%, #0d1421 100%);
-  --block: #111828;         /* raised surface: blocks and inner panels */
-  --card: #080c15;          /* sunken surface: fields, cells, wells */
-  --card-idle: #161e31;     /* interactive piece at rest, raised above the block */
-  --card-on: #1c2743;       /* the same, selected */
-  --ctl: #151d2e;
-  --well: #05070c;
+  /* Background and surfaces: the main menu's red-cast black. Depth is built downwards. */
+  --bg: #0f0604;
+  --page-bg: #0f0604;
+  --panel: linear-gradient(180deg, #302322 0%, #211817 100%);
+  --block: #281d1c;         /* raised surface: blocks and inner panels */
+  --card: #150f0f;          /* sunken surface: fields, cells, wells */
+  --card-idle: #312422;     /* interactive piece at rest, raised above the block */
+  --card-on: #43312f;       /* the same, selected */
+  --ctl: #2e2120;
+  --well: #0c0908;
 
   /* Lines */
-  --line-panel: #2b3552;
-  --line: #222c42;
-  --line-card: #232e44;
-  --line-row: #1a2233;
-  --line-ctl: #2b3550;
-  --well-line: #253048;
-  --bracket: #4a5f85;
+  --line-panel: #523b39;
+  --line: #42302e;
+  --line-card: #443130;
+  --line-row: #332524;
+  --line-ctl: #503a38;
+  --well-line: #483432;
+  --bracket: #85605d;
 
   /* Ink. Four steps and each with a job; all pass AA (min. 4.7:1) on the surfaces above. */
-  --ink-strong: #f7f9fd;    /* figures and titles */
-  --ink: #f0f2f8;           /* body */
-  --ink-2: #a7b0c6;         /* secondary */
-  --label: #9aa4be;         /* small-caps labels */
-  --muted: #8891ad;         /* notes, captions, supporting text */
-  --ink-idle: #b3bccf;
+  --ink-strong: #fdf9f7;    /* figures and titles */
+  --ink: #f8f3f0;           /* body */
+  --ink-2: #c6bdb8;         /* secondary */
+  --label: #beb5b1;         /* small-caps labels */
+  --muted: #ada5a1;         /* notes, captions, supporting text */
+  --ink-idle: #cfc5c1;
 
-  /* Accent (PLACEHOLDER): interactive things only. See the header. */
-  --accent: #9ec6ea;
-  --accent-line: #6d8cb6;
-  --accent-ink: #a8cdee;
-  --accent-soft: rgba(158, 198, 234, 0.14);
-  --glow: 0 0 22px -8px #9ec6ea;
+  /* Accent: bone, interactive things only. See the header. */
+  --accent: #f1ebdc;
+  --accent-line: #a69d93;
+  --accent-ink: #f1ebdc;
+  --accent-soft: rgba(241, 235, 220, 0.1);
+  --glow: 0 0 22px -8px #f1ebdc;
 
   /* Round wells for the icons */
-  --medal: #0d1626;
-  --medal-line: #5f7ca6;
-  --medal-off: #0c111c;
-  --medal-off-line: #28324a;
-  --medal-off-ink: #8791ab;
+  --medal: #261c1b;
+  --medal-line: #a67874;
+  --medal-off: #1c1414;
+  --medal-off-line: #4a3634;
+  --medal-off-ink: #aba39f;
 
   /* HUD, measured on the game's sprites (design/02-silksong.md §2). Bone, not colour: the one
      saturated piece is the Plasmium mask. */
@@ -112,17 +112,18 @@
   --slot-locked: #606060;
   --slot-locked-rim: #dcdcdc;
 
-  /* The screens are scenes from the game: an almost black field and a cold spotlight. */
-  --scene-bg: #04060b;
-  --scene-glow: rgba(116, 142, 196, 0.26);
-  --scene-glow-low: rgba(116, 142, 196, 0.1);
+  /* The screens are scenes from the game: a black field and the Crest screen's warm spotlight
+     (#23201d). The --scene-cold* names are kept from the skeleton; the light isn't cold. */
+  --scene-bg: #010101;
+  --scene-glow: rgba(94, 84, 74, 0.3);
+  --scene-glow-low: rgba(94, 84, 74, 0.12);
   --scene-floor: #000;
-  --scene-flash: rgba(236, 240, 248, 0.34);    /* the flash when taking a hit */
-  --focus-glow: rgba(242, 244, 250, 0.85);     /* a Bind's white glow */
+  --scene-flash: rgba(248, 244, 240, 0.34);    /* the flash when taking a hit */
+  --focus-glow: rgba(255, 255, 255, 0.85);     /* a Bind's white glow */
   --area-spot: rgba(236, 236, 236, 0.13);
   --area-spot-off: rgba(236, 236, 236, 0.04);
-  --scene-cold: rgba(116, 142, 196, 0.26);
-  --scene-cold-off: rgba(116, 142, 196, 0.08);
+  --scene-cold: rgba(94, 84, 74, 0.3);
+  --scene-cold-off: rgba(94, 84, 74, 0.1);
   /* Each area's ramp (--area-<id>-mid / -deep / -light) goes here once design/02-silksong.md
      measures the 33 areas: the enemy's stage takes its area's ambience. */
 
@@ -132,7 +133,7 @@
   --bad: #e2705f;
   --bad-soft: rgba(226, 112, 95, 0.14);
   --cond: #ccbe9c;
-  --notice-bg: #1a1710;
+  --notice-bg: #1a1312;
   --notice-line: #3b3422;
 
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
@@ -189,28 +190,32 @@
   --sticky-h: 64px;
   --measure: 68ch;    /* maximum measure for long prose */
 
-  /* One tint per section (PLACEHOLDER: Hollow Knight's map tints; Silksong's map screen is to
-     be measured). It goes on section titles, corner brackets and ornaments; never on a figure
-     or on what responds to the finger, which still belongs to the accent. */
-  --tint-sheet: #d5ddfd;      /* the Crest screen and the Inventory */
-  --tint-combat: #f8cffc;     /* combat */
-  --tint-journal: #bce6f4;    /* the Hunter's Journal */
-  --tint-progress: #d8ffcc;   /* Your game, Progress and the Map */
+  /* One tint per section: an area's line on the game's map (design/02-silksong.md §4). It goes
+     on section titles, corner brackets and ornaments; never on a figure or on what responds to
+     the finger, which still belongs to the accent. */
+  --tint-sheet: #fce5b9;      /* the Crest screen and the Inventory: Bellhart */
+  --tint-combat: #f1a1b4;     /* combat: Sands of Karak */
+  --tint-journal: #bac4d2;    /* the Hunter's Journal: Mount Fay */
+  --tint-progress: #a9cb99;   /* Your game, Progress and the Map: Moss Grotto */
 
   /* The screens are the game's inventory: almost pure black, and the light behind a plate is
      white and only where you look. */
   --inv-bg: var(--scene-bg);
-  --inv-line: #1c2536;
+  --inv-line: #362726;
   --halo-plate: radial-gradient(closest-side, rgba(236, 236, 236, 0.2), rgba(236, 236, 236, 0.06) 58%, transparent);
-  --halo-plate-off: radial-gradient(closest-side, rgba(150, 164, 196, 0.2), transparent 78%);
-  --mote: rgba(226, 232, 245, 0.7);    /* the dust motes from the main menu */
+  --halo-plate-off: radial-gradient(closest-side, rgba(128, 128, 128, 0.2), transparent 78%);
+  --mote: rgba(241, 139, 69, 0.8);     /* the main menu's embers (#f18b45) */
 
   /* ── Atmosphere and the section's lights ───────────────────────────────
-     The whole page is the main menu: a vignette on the four edges, dust motes across the
-     window, and a grain so faint it's felt rather than seen. All three fixed to the window and
+     The whole page is the main menu: its red light from below, a vignette on the four edges,
+     embers across the window, and a grain so faint it's felt rather than seen. All three fixed to the window and
      BEHIND the content (css/app.css, .atmos). The grain is an inline SVG: over file:// nothing
      is fetched. */
-  --vignette: radial-gradient(ellipse 75% 70% at 50% 45%, transparent 55%, rgba(4, 6, 12, 0.55) 85%, rgba(4, 6, 12, 0.9) 100%);
+  --vignette: radial-gradient(ellipse 75% 70% at 50% 45%, transparent 55%, rgba(15, 6, 4, 0.55) 85%, rgba(15, 6, 4, 0.9) 100%);
+  /* The main menu's red light, rising from the bottom centre of the window. The game's reaches
+     #93342f at the edge; the page stops at #5b2424 (the options menu at 85% of its height) so
+     that --muted still reads 5:1 on it. */
+  --ember-glow: radial-gradient(ellipse 80% 85% at 50% 100%, #5b2424 0%, #3d1716 32%, #260f0c 62%, transparent 100%);
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   --grain-opacity: 0.025;
   /* Each section's lamp: the hue of its tint at a fixed lightness and more chroma. It lights

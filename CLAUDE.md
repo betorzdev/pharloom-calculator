@@ -39,7 +39,9 @@ Neither folder is part of the page: `index.html` doesn't load them.
   `localStorage`: `hollow.*` is the other site's, never read or written here.
 - **Every colour, typeface and spacing value comes from `css/tokens.css`.** No loose values.
   The HUD and the slot colours are measured (`design/02-silksong.md`); the surfaces, the accent
-  and the section tints are still Hollow Knight's placeholders (its §5, and the tokens' header).
+  and the section tints were decided on them (its §5, and the tokens' header). The page is the
+  main menu (its red light and embers), the screens the pause menu (black, white filigree): the
+  red is atmosphere only, never the accent, a figure or text.
 - **`js/data.js`, `js/enemies.js` and `js/journal.js` are generated** (`npm run data`, from
   `kb/data/raw/` and the dump, offline): change `tools/gen-*.js`, never the output. Every game
   text in them carries its key, `{ es, en, key }`, and `--audit` checks each one against it.

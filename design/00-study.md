@@ -683,7 +683,7 @@ URL, the save slots, the file watcher, the save decrypt, `game-text.js` on the S
 the tests). The two other decisions (§5.1's copy rather than a shared package, and the first
 release's scope) were left to the plan: a copy, and Your game first.
 
-**Phase 1 is done, but for three design decisions** (the same day). `kb/data/raw/` holds the
+**Phase 1 is done** (the same day). `kb/data/raw/` holds the
 wiki's wikitext for 522 pages (`npm run kb`, the list in `kb/data/pages.txt`), and three
 generators read it with the game's text, offline (`npm run data`): `js/data.js` (the Needle,
 7 Crests and the Vesticrest, 57 Tool entries with ammo, refill and damage as hits per level,
@@ -693,7 +693,7 @@ from 51 boss pages) and `js/journal.js` (237 entries with the game's name, descr
 Hunter's note). `npm run text -- --audit` checks 1,154 keyed texts against the dump, all
 green. `design/02-silksong.md` measures the HUD, the slots and the 32 areas' tints
 (`npm run palette`); the HUD and the slots are in `tokens.css`, and **the surfaces, the accent
-and the section tints are proposals there (§5) waiting for a decision**. Found on the way:
+and the section tints were decided the same day (§5): the page is the main menu (its red-cast black, the red light from below, the embers), the screens the pause menu, a bone accent, four area lines as tints**. Found on the way:
 the Barbed Bracelet is yellow, not blue (§2.4); the map's tints are darker and warmer than
 Hallownest's; the game selects with white on grey, not with a hue. Left out on purpose: the
 common enemies' contact damage (the wiki has it in prose only), and the Journal's seven

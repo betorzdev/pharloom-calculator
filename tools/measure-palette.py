@@ -34,6 +34,10 @@ SPRITES = [
     ("Hunter Crest Inventory.png", "a Crest in the inventory"),
     ("Vesticrest.png", "the Vesticrest"),
     ("SS Crests Menu.png", "the Crest screen (screenshot): the selection, the frame"),
+    # The menus: the page's atmosphere
+    ("Menu Theme Silksong.png", "the main menu (default style): the red light and the embers"),
+    ("Hunt Wish Art.png", "a Wish's art"),
+    ("Silksong Key Art 2025.webp", "the key art: the wine the game doesn't use"),
     # The map
     ("Silksong Small Map Clean.png", "the world map, clean: the tints"),
     ("Silksong Small Map Ruin Clean.png", "the world map in Act 3"),

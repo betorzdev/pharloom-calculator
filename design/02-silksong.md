@@ -123,31 +123,63 @@ Done with this document (the values are one-to-one with a sprite):
   `--plasmium-line`, `--hud-frame`: §2.
 - New: `--slot-red`, `--slot-blue`, `--slot-yellow`, `--slot-skill`, `--slot-locked`: §3.
 
-**Left to decide** (they're design, not measurement, and they move the whole page):
+**Decided** (27 September 2026). Design, not measurement: what the page does with the above.
 
-1. **The surfaces.** Hollow Knight's blue-black (`#06080d`, `#16203a`…) is wrong for Pharloom:
-   the game's screens are a neutral black with a warm spotlight (`#010101` → `#23201D`). The
-   proposal: the same depth ramp as now, with the hue taken from 220° to about 30° and the
-   saturation kept under 20%, so the page reads as the Crest screen does. Every ink step has to
-   be re-checked for AA on the new surfaces (`design/01-web.md`).
-2. **The accent.** The game has no selection hue (§1.3): it selects with white on grey. Two ways
-   to honour that: a **warm bone accent** (the cream `#F1EBDC` of the screen's text, with the
-   glow as the "on" state), or keep a hue and admit it's the site's, not the game's. The first
-   is the game's; its risk is that bone is also the figures' ink, so "interactive" has to be
-   told by the shape (the four kinds of button) and the glow, not by the colour alone.
-3. **The section tints** (`--tint-sheet`, `-combat`, `-journal`, `-progress`): from §4's
-   lines, the ones that stay above 7:1 on the spotlight too. A reading, not a measurement: Bellhart's `#FCE5B9` or Choral Chambers' `#F0E5AB`
-   for the Crest screen, Sands of Karak's `#F1A1B4` for combat (8.1:1; Hunter's March's salmon is
-   the closer idea but drops to 4.6:1), Mount Fay's
-   `#BAC4D2` for the Journal, Moss Grotto's `#A9CB99` for Progress and the map.
+1. **The page is the main menu; the screens are the pause menu.** The game has two families
+   of screens, and the red belongs to one of them. Every menu outside the game (the title,
+   Options, Audio, Video, Select Profile, the credits; the **Silksong** menu style, the default,
+   `Menu Theme Silksong.png` on the wiki's *Menu Styles (Silksong)*) is a black with a red cast
+   and a red light rising from the bottom centre, with orange embers drifting up. Measured on
+   the full-size screenshots of the Game UI Database (1920×1080, the centre fifth, embers and
+   text left out), the same in all four:
+
+   | Height | Colour | HSV |
+   |---|---|---|
+   | top | `#0F0604` | H 10 S 73 V 5 |
+   | 25% | `#1C0B0A` | H 3 S 64 V 10 |
+   | 50% | `#381410` | H 5 S 71 V 21 |
+   | 70% | `#581D19` | H 3 S 71 V 34 |
+   | 85% | `#7B2926` | H 2 S 69 V 48 |
+   | bottom edge | `#93342F` | H 3 S 68 V 57 |
+   | bottom corners | `#24191C` left, `#090809` right | the light is centred |
+   | embers, brightest fifth | `#F18B45` | H 24 S 71 V 94 |
+   | text | `#F7F6F5` | white |
+
+   The pause menus (Inventory, Crest, Tasks, Journal, Map) are the other family: pure black
+   (`#000000`), the white filigree frame (`#F6F6F6`), a warm spotlight (`#312A22`, `#13110C`)
+   and no colour of their own. The Wishes' art is in the menu's family (`Hunt Wish Art.png`:
+   `#1A0B0B`, `#361E1F`, `#553232`, `#8A5A56`, H 0–5°); the 2025 key art is a wine (`#40121D`,
+   H 346°) that the game itself doesn't use, and the in-game frames (dialogue, rules, the
+   Materium) are white.
+
+   So the page is the main menu: `--bg` `#0F0604`, the red light fixed to the bottom of the
+   window (`--ember-glow`), and 40 embers (`--mote` `#F18B45`) rising behind the content. The
+   light stops at `#5B2424` (the options menu at 85%) instead of the game's `#93342F`, so
+   `--muted` still reads 5:1 on its brightest point. The surfaces are that black's ramp (Hollow
+   Knight's depths with the hue moved from 220° to 5° and the saturation capped at 30%:
+   `--block` `#281D1C`, `--card-on` `#43312F`). The screens (`.screen`) are the pause menu:
+   `#010101` and the warm spotlight, as the Crest screen. The red is atmosphere only: never the
+   accent, a figure or text.
+2. **The accent: bone.** `#F1EBDC`, the Crest screen's cream, with a line `#A69D93` (4.5:1 on
+   `--card-on`) and the glow as the "on" state. Bone is also the figures' ink, so what's
+   interactive is told by its shape (the four kinds of button) and its glow, as in the game.
+3. **The section tints**: Bellhart's `#FCE5B9` for the Crest screen, Sands of Karak's
+   `#F1A1B4` for combat, Mount Fay's `#BAC4D2` for the Journal, Moss Grotto's `#A9CB99` for
+   Your game, Progress and the map. On `--card-on`, the lightest raised surface: 9.7, 6.0,
+   6.8 and 6.6:1.
+
+Every ink step was re-checked on the new surfaces: the lowest is `--muted` at 5.05:1 on
+`--card-on` (`--medal-off-ink` 4.93:1), all above AA.
 
 ## Sources
 
-The wiki's files, through `Special:FilePath` (hollowknight.wiki, 27 September 2026): the HUD
+The Game UI Database's Silksong set (gameuidatabase.com, game 2178; 44 screenshots of patch 1.0,
+8 September 2025, behind a browser check: fetched by hand, not by the script). The wiki's files, through `Special:FilePath` (hollowknight.wiki, 27 September 2026): the HUD
 sprites (`SS Mask.png`, `SS Mask Lifeblood.png`, `Silk.png`, `Silk Spool HUD Complete.png`,
 `Silk Spool HUD Complete Filled.png`, `Hunter Crest HUD Filled.png`, `Rosaries.png`,
 `Shell Shards.png`), the Crest screen's pieces (`Red/Blue/Yellow Tools Icon.png`,
 `Red Tools Icon Locked.png`, `Silk Skills Icon.png`, `Hunter Crest Inventory.png`,
 `Vesticrest.png`) and screenshot (`SS Crests Menu.png`), the world map
 (`Silksong Small Map Clean.png`, `Silksong Small Map Ruin Clean.png`) and each area's
-`<Area> Map Clean.png`. © Team Cherry; measured, not redistributed.
+`<Area> Map Clean.png`, the menu styles (`Menu Theme Silksong.png` and its True Ending
+version), `Hunt Wish Art.png` and `Silksong Key Art 2025.webp`. © Team Cherry; measured, not redistributed.
