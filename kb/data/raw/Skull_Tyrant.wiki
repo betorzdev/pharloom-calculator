@@ -1,0 +1,136 @@
+{{SS Infobox Boss
+|image1 = <gallery>
+B Skull Tyrant.png|Hunter's Journal
+Skull Tyrant Idle.png|Idle
+Skull Tyrant Unprovoked.png|Disguised
+Skull Tyrant No Skull.png|No Skull
+</gallery>
+|location = [[The Marrow]]<br/>[[Bone Bottom]]
+|drops = [[Crown Fragment]] <br> [[Beast Shard]] ([[Act 3]])
+|health = 450/{{BT|900}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.2|1|0.9|0.85|0.8}}
+|numbers_required = 1
+|theme = [https://www.youtube.com/watch?v=iqSBa35FOPI&list=RDiqSBa35FOPI&start_radio=1 Incisive Battle]
+|singnum = 1
+}}
+
+{{Quote
+|Rare, enormous Skull Scuttler. The Marrow's largest predator, and the most feared for its ferocious temperament.<hr/>Though surely fierce, the skull it bears looks taken from an even larger beast. If not for the bones as proof, I would scarcely believe bugs could grow to such scale.
+|Hr = Journal
+}}
+
+The <b>Skull Tyrant</b> is a [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. It is a rare, giant [[Skull Scuttlers|Skull Scuttler]] and the largest predator of [[the Marrow]].<ref name=hj/> It can first be found as the objective of <i>[[The Terrible Tyrant]]</i> [[wish]]. Completing this wish creates a chance for a second Skull Tyrant to rampage through [[Bone Bottom]]'s settlement.
+
+== Background ==
+Skull Tyrants are massive [[Skull Scuttler]]s and the biggest predators in [[the Marrow]]. They are greatly feared because of their ferociousness,<ref name="hj">Skull Tyrant [[Hunter's Journal (Silksong)|Hunter's Journal]]: <i>"Rare, enormous Skull Scuttler. The Marrow's largest predator, and the most feared for its ferocious temperament."</i></ref> especially by pilgrims who must travel the path beneath their caves.<ref>[[The Terrible Tyrant]] [[wish]]: <i>"A Skull Tyrant, largest of the Marrow's loathsome bony predators, prowls the caves above the great path. Slay the beast and keep us all safe!"</i></ref>
+
+== In-game Events ==
+A Skull Tyrant can first be fought in [[the Marrow]], as the objective of [[Bone Bottom]]'s <i>[[The Terrible Tyrant]]</i> [[wish]]. Uniquely for [[Grand Hunt Wishes]], the boss will spawn even if the wish is never accepted. If fought during [[Act 3]], he is [[Black-Threaded|Black-threaded]]. He no longer drops the quest item in this case, as Bone Bottom is destroyed.
+
+[[Nuu]] appears in Skull Tyrant's arena later on, inspecting his remains.
+
+There is a 30% chance that after defeating the first Skull Tyrant, if Hornet has reached either the [[Blasted Steps]], [[the Citadel]], or [[Sinner's Road]] and then rests at a [[Bench (Silksong)|bench]] outside [[Moss Grotto]] or [[the Marrow]], a second Skull Tyrant appears if she returns to rest at the bench in Bone Bottom. It rampages in from the east side of Bone Bottom, destroying parts of the settlement, including the bench. The second Skull Tyrant kills [[Pilby]] if he is still in the settlement. 
+
+Once the <i>[[Silk and Soul]]</i> wish is accepted, the second Skull Tyrant no longer attacks Bone Bottom.
+
+After the second fight, [[Flick the Fixer]] can be found rebuilding the destroyed bench.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+=== The Marrow ===
+Skull Tyrant is dormant under his shell when [[Hornet (Silksong)|Hornet]] first approaches, and she must strike the skull he is hiding under to rouse him. Once awoken, Skull Tyrant roars and begins the fight. On subsequent attempts against the [[Bosses (Silksong)|boss]], Skull Tyrant begins the fight by dropping down from the ceiling and roaring.
+
+Skull Tyrant has 3 attacks:
+
+* <b>Rampage</b>: Skull Tyrant winds up by scuttling back a short distance before charging towards Hornet. He only stops after he has passed Hornet, and she is behind him. When he ends the charge, he carries some momentum, skidding a short distance before coming to a full stop.
+* <b>Leap</b>: Skull Tyrant gathers strength and then performs a large leap towards Hornet. He causes 2 boulders to fall from the ceiling upon landing, with one always landing close to the boss and the other at a random location.
+* <b>Tantrum</b>: Skull Tyrant roars once before jumping in place three times, each jump causing 1–2 boulders to fall from random locations on the ceiling.
+
+Skull Tyrant is immune to attacks from above. Hornet can still [[Needle]] bounce off his skull, but this deals no damage. Falling boulders are telegraphed by columns of dust raining down from their drop spots.
+
+All of Skull Tyrant's attacks, including the boulders he drops, deal {{Damage|2}}.
+
+<hr />
+
+==== Act 3 ====
+If Skull Tyrant is not fought until [[Act 3]], he becomes [[Black-Threading|black-threaded]], doubling his HP and giving him the <b>Void Projectiles</b> attack. All his attacks now deal {{Damage|2|type=Void}}.
+<hr />
+
+=== Bone Bottom ===
+The Skull Tyrant fight in [[Bone Bottom]] plays out nearly identically. However, it begins the fight by rampaging towards Hornet, and its Tantrum attack has been slightly modified to only drop two boulders with the first stomp and none afterwards.
+
+<hr />
+
+Hornet is not locked into either of Skull Tyrant's arena, meaning she can leave at any time.
+
+During the initial fight, there is an area under the arena (near the lower entrance to the room) that Skull Tyrant cannot reach, making it a good place to heal or use ranged attacks. During the fight in Bone Bottom, the second Skull Tyrant cannot cross the gap that leads into [[Moss Grotto]] (an invisible wall stops it), meaning Hornet can rest on the left side.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Break and bash!
+* Crush and smash!
+* Crowned as ruler...
+* All beasts must bow!
+}}
+
+== Location ==
+The first Skull Tyrant can be found in an alcove in [[the Marrow]], accessible from the lower portion of the area. After the first is defeated, another Skull Tyrant can appear in [[Bone Bottom]] after certain conditions have been met.
+
+{{Gallery
+|Image1 = Mapshot SS Skull Tyrant 01.png!Location in the Marrow
+|Image2 = Mapshot SS Skull Tyrant 02.png!Location in Bone Bottom
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Skull Tyrant 01.png!Leap
+|Image2 = Screenshot SS Skull Tyrant 03.png!Rampage
+|Image3 = Screenshot SS Skull Tyrant 04.png!Tantrum
+|Image4 = Screenshot SS Skull Tyrant 05.png!Reacting to the Needolin
+|Image5 = Screenshot SS The Marrow 12.png!Disguised before the battle
+|Image6 = Screenshot SS Skull Tyrant 02.png!Bone Bottom invasion
+|Image7 = Silksong Early 026.png!<i>Silksong</i> reveal trailer
+|Image8 = Ari SS Sketch 12.png!Concept Sketches
+}}
+
+== Trivia ==
+*Skull Tyrant's internal name of "Skull King" was used on Team Cherry's official <i>Silksong</i> help page.<ref>[https://web.archive.org/web/20250918021048/https://hollowknightsilksong.com/help Help - Hollow Knight: Silksong] (Sep 18 2025 archive)</ref>
+
+{{Localisation
+|DEname = Schädeltyrann
+|DEmeaning = Skull-tyrant
+|ESname = Cráneo tirano
+|ESmeaning = Skull Tyrant
+|FRname = Crâne-Tyran
+|FRmeaning = Skull Tyrant
+|ITname = Teschio Tiranno
+|ITmeaning = Tyrant Skull
+|JAname = オオズガイ
+|JAromanised = Oozugai
+|JAkatakana = enemy
+|JAmeaning = Combination of 大 <i>ō</i> (large) and 頭蓋 <i>zugai</i> (skull).
+|KOname = 해골 폭군
+|KOromanised = Haegol pokgun
+|KOmeaning = Skull Tyrant
+|PTname = Tiranocrânio
+|PTmeaning = Skull Tyrant, compound word of <i>Tirano</i> and <i>crânio</i>
+|RUname = Тиран Череп
+|RUromanised = Tiran Čerep
+|RUmeaning = Skull Tyrant
+|TWname = 顱骨暴君
+|TWromanised = Lúgǔ bàojūn
+|TWmeaning = same
+|ZHname = 颅骨暴君
+|ZHromanised = Lúgǔ bàojūn
+|ZHmeaning = Skull Tyrant
+|CODEname = SKULL_KING
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+{{#seo:|keywords=skull king, skull tyrant, skull boss silksong, bone bottom skull, bone bottom invasion}}
+
+[[fr:Crâne-Tyran]]
+[[pt:Tiranocrânio]]

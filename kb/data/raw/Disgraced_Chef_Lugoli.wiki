@@ -1,0 +1,164 @@
+{{SS Infobox Boss
+| image1 = <gallery>
+B Disgraced Chef Lugoli.png|Hunter's Journal
+Disgraced Chef Lugoli idle.png|Idle
+Disgraced Chef Lugoli Stagger.png|Staggered
+</gallery>
+| theme = [https://youtu.be/M-z6fPrpg-k Cut Through (Main)] (Enemy Gauntlet)<br>[https://youtu.be/M-z6fPrpg-k?t=92 Cut Through (Main + Percussion)] (Lugoli)
+| location = [[Sinner's Road]]
+| health = 600/{{BT|1200}}
+| damage_modifiers = {{SS Spaced Damage Modifiers|1.7|1.2|1|0.9|0.85}}
+| numbers_required = 1
+| drops = [[Pickled Muckmaggot]]
+| singnum = 1
+| affiliation = [[Roach Tenders]] (Member)
+}}
+
+{{Quote
+|Hr = Journal
+|Once exalted chef, exiled from the Citadel for repeated culinary crimes.<hr/>
+Returned to their home caves, this chef continued to devise delicacies too repulsive for any bug still sane.
+}}
+
+<b>Disgraced Chef Lugoli</b> is a [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. They are a once-honoured chef of [[the Citadel]] now exiled to the [[Sinner's Road]].<ref name=hj/> They hold the [[Pickled Muckmaggot]] required for the <i>[[Great Taste of Pharloom]]</i> [[Wishes|wish]].
+
+== Background ==
+Lugoli was a once a chef in [[the Citadel]] who seemingly earned notoriety for the famed repulsiveness of their dishes, such as the [[Pickled Muckmaggot]], described by [[Loyal Mergwin]] as one of their specialties.<ref>[[Loyal Mergwin]]: <i>"It was a specialty of the chef Lugoli, long ago banished for culinary sacrilege."</i></ref> They were at some point exiled due to their "culinary crimes",<ref name=hj>[[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Once exalted chef, exiled from the Citadel for repeated culinary crimes."</i></ref> likely referencing the various pickled sapient bugs stored in the secret room above their arena. After their exile, they returned to their home caves in [[Sinner's Road]] where they continued to cook, even after falling victim to the Haunting.<ref name="journal">[[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Returned to their home caves, this chef continued to devise delicacies too repulsive for any bug still sane."</i></ref><ref name="mergwin2">[[Loyal Mergwin]]: <i>"Rumours sing that the great chef retreated to their home-caves in the dank midlands below..."</i></ref><ref name="hornet">{{HTalk|I claimed the maggot from the chef themself. Their brutish work continued, even with their shell claimed by cursed thread.}}</ref>
+
+== In-game Events ==
+Lugoli is found in [[Sinner's Road]], in a kitchen arena only accessible with [[Faydown Cloak]]. Upon being defeated, Lugoli drops the [[Pickled Muckmaggot]], one of the five ingredients required for the <i>[[Great Taste of Pharloom]]</i> [[Wishes|Wish]]. If this fight is encountered during [[Act 3]] instead, they are [[Black-Threading|black-threaded]].
+
+If Hornet returns to the room after Lugoli's defeat, the two [[Roachserver]] assistants can be seen preparing Lugoli's corpse in the background. Using a precise [[Clawline]] immediately followed by a double jump or using [[Silk Soar]] up the chute in the middle of the arena reveals a secret hidden room filled with large jars of pickled bugs, including [[Muckroach]]es, [[Roachcatcher]]s, and [[Craw]]s. A memory of Lugoli can be seen if the [[Needolin]] is used here.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+After entering the arena, Hornet must ring the massive gong hanging from the ceiling to initiate the fight. The gong first summons 2 [[Roachserver]]s from the background which must be killed before the boss fight begins.
+
+=== Phase 1 ===
+Lugoli descends from the ceiling and performs a Slam attack in the middle of the arena. They then float about the room and have the following attacks:
+* <b>Slam</b>: Lugoli rises up towards the ceiling and floats after [[Hornet (Silksong)|Hornet]]. When close to her, they fly a short distance diagonally upwards to position over Hornet before slamming down into the ground, sending 4 arcing [[Muckmaggot]] Globs flying, 2 in each direction.
+* <b>Leaping Butt Slam</b>: Lugoli leaps, rear first, horizontally towards Hornet and lands on the ground. The leap covers over roughly half of the arena.
+* <b>Ladle Slap</b>: Lugoli winds up their ladle for a moment before quickly slamming it into the ground in Hornet's direction, flinging 2 arcing Muckmaggot Globs forwards.
+
+=== Phase 2 ===
+After reaching half health (300/{{BT|600}} HP) Lugoli roars and immediately performs the Muckmaggot Dive attack. They then add this attack to their arsenal.
+* <b>Muckmaggot Dive</b>: Lugoli grunts and then makes a large dive into the muck under the floor – randomly choosing either the left, right, or centre of the arena. When they hit the water, 2 Muckmaggot Globs arc out to the left and right. They then emerge again from the same spot, flinging out 4 more Muckmaggot Globs. Note that while doing this attack in the centre of the arena, the Globs' trajectories are not symmetrical.
+
+Lugoli and their ladle deal {{Damage|2}} of contact damage.
+
+Muckmaggot Globs deal {{Damage|1}} and infest Hornet if they hit her, having the same effect as dropping into Muckmaggot-infested water.
+* Muckmaggot Globs ricochet off walls and are destroyed when they hit the ground.
+* If struck with the [[Needle]], the Globs' forward momentum is stopped: they fall down to the ground, but are not knocked away.
+* [[Needle Strike]]s of the [[Hunter Crest|Hunter]], [[Reaper Crest|Reaper]], and [[Beast Crest|Beast]] Crests are able to destroy the Globs; that of the [[Wanderer Crest|Wanderer]] and [[Architect Crest|Architect]] Crests can only knock the Globs away even when all hits connect. 
+* Equipping the [[Wreath of Purity]] prevents Muckmaggot infestation up to 3 times but does not block the damage dealt by the Globs themselves. 
+
+{{Hr|small}}
+
+=== Act 3 ===
+If Lugoli is not fought until Act 3, they become [[Black-Threading|black-threaded]], doubling their HP and gaining the <b>Void Blades</b> attack. All of their physical and Void attacks now deal {{Damage|2|type=Void}}.
+
+<hr />
+
+{{Stagger
+| Lugoli is knocked to the ground, flailing about.
+| 16
+| game = SS
+}}
+
+<hr />
+
+== [[Needolin]] Dialogue ==
+During battle:
+{{SS Needolin|columns=2|
+* Is this enough? Is it ever enough?
+* A holy gift...
+* For the work to sustain...
+* Carve it! Sear it! Stew it!
+}}
+
+
+Memory above arena:
+{{SS Needolin|columns=2|
+* This holy taste...
+* Shells to soak... and define...
+* Pharloom's flavour...
+* Pharloom's soul...
+* Preserved... remembered...
+* From you all...
+* For you all...
+* Essence... true essence...
+}}
+
+== Location ==
+Lugoli is located towards the eastern end of [[Sinner's Road]]; reaching their arena requires [[Faydown Cloak]].
+
+{{Gallery
+|Image1 = File:Mapshot SS Disgraced Chef Lugoli 01.png!Location in Sinner's Road
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot_SS_Sinner's_Road_13.png!Lugoli's kitchen before the battle
+|Image2 = Screenshot SS Disgraced Chef Lugoli 12.png!Roachserver enemy gauntlet before Lugoli's battle
+|Image3 = Screenshot SS Disgraced Chef Lugoli 10.png!Idle
+|Image4 = Screenshot SS Disgraced Chef Lugoli 03.png!Slam
+|Image5 = Screenshot SS Disgraced Chef Lugoli 01.png!Leaping Butt Slam
+|Image6 = Screenshot SS Disgraced Chef Lugoli 02.png!Ladle Slap 
+|Image7 = Screenshot SS Disgraced Chef Lugoli 05.png!Muckmaggot Dive
+|Image8 = Screenshot SS Disgraced Chef Lugoli 04.png!Post-Muckmaggot Dive
+|Image9 = Screenshot SS Disgraced Chef Lugoli 07.png!Stagger
+|Image10 = Screenshot SS Disgraced Chef Lugoli 09.png!Singing
+|Image11 = Screenshot SS Disgraced Chef Lugoli 08.png!Lugoli [[Black-Threaded]]
+|Image12 = Screenshot SS Disgraced Chef Lugoli 11.png!Arena in Sinner's Road
+|Image13 = Screenshot SS Disgraced Chef Lugoli 06.png!Lugoli's body being prepared by Roachservers
+|Image14 = Screenshot SS Sinner's Road 15.png!Secret room above arena
+}}
+
+== Trivia ==
+* In the <i>Silksong</i> Xbox trailer, Disgraced Chef Lugoli had a very different voice.<ref>[https://www.youtube.com/watch?v=JSfuFlhsxZY Hollow Knight: Silksong - Xbox Game Pass Reveal Trailer - Xbox & Bethesda Games Showcase 2022]</ref>
+* Disgraced Chef Lugoli has the same Needolin dialogue as the [[Roachserver]].
+* Disgraced Chef Lugoli is referred to with various genders in different language versions of the game:
+** In the Spanish and Portuguese translations, they are referred to with feminine terms and pronouns. <ref name = gender></ref>
+** In Italian, all text referring to Disgraced Chef Lugoli was written to avoid using gendered language, with their name using the adjective "Esule" ("Exiled"), one of the few words in Italian that is gender-neutral, instead of the more common, gendered "Esiliato/a". Loyal Mergwin's dialogue when giving him the Pickled Muckmaggot was changed as well, with "So that banished chef's recipes outlived them after all!" being changed to "Dunque le ricette dell'esule chef sono sopravvissute alla creatura stessa!" ("So the recipes of the exiled chef survived/outlived the creature itself!"), using "sopravvisute alla creatura stessa" to avoid gendered words like "Lo chef"/"La chef". In Lugoli's Italian Hunter's Journal entry, "Returned to their home caves" was translated to "Una volta di ritorno nelle sue caverne", saying "Of return to their caves" instead of "Returned to their caves" since using the adjective version would gender Lugoli.
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Fixed instance where Lugoli could leave the arena and not return.
+|1.0.28650 (Patch 2): Added catch to prevent Lugoli sometimes flying off screen and not returning during battle.
+}}
+{{Localisation
+|DEname = Geächteter Koch Lugoli
+|DEmeaning = Banished Chef Lugoli
+|ESname = Lugoli, chef caída en desgracia
+|ESmeaning = Lugoli, Chef Fallen in Disgrace (feminine)
+|FRname = Chef Déshonoré Lugoli
+|FRmeaning = Dishonoured Chef Lugoli
+|ITname = Esule Chef Lugoli
+|ITmeaning = Exiled Chef Lugoli
+|JAname = 穢れた調理師ルゴリ
+|JAromanised = Kegerata chōrishi rugori
+|JAmeaning = Disgraced Chef Lugoli
+|KOname = 불명예 요리사 루고리
+|KOromanised = Bulmyeongye yorisa rugori
+|KOmeaning = Dishonoured Chef Lugoli
+|PTname = Chef Desacreditada Lugoli
+|PTmeaning = Discredited Chef Lugoli (feminine)
+|RUname = Опальная повариха Луголи
+|RUromanised = Opal'naja povarixa lugoli
+|RUmeaning = Disgraced Cook Lugoli (feminine)
+|TWname = 失格大廚盧戈利
+|TWromanised = Shīgé dàchú lúgēlì
+|TWmeaning = same
+|ZHname = 失格大厨卢戈利
+|ZHromanised = Shīgé dàchú lúgēlì
+|ZHmeaning = Disqualified Head Chef Lugoli
+|CODEname = ROACHKEEPER_CHEF
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[pt:Chef Desacreditada Lugoli]]
+
+{{#seo:|keywords=disgraced chef lugoli, lugoli, disgraced chef, ass jim}}

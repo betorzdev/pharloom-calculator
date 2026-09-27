@@ -1,0 +1,76 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Nuphar.png|Hunter's Journal
+Nuphar Disguised.png|Disguised
+</gallery>
+|drops = None
+|health = 70
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.35|1.15|1|1|1}}
+|numbers_required = 6<br>(Instantly completed on [[Clover Dancers]]' death)
+}}
+{{Quote
+|Hr = Journal
+|Predatory plant with a powerful jaw shaped to resemble a lily pad.<hr/>
+A snapping surprise on first encounter, though one easily avoided once aware.
+}}
+
+<b>Nuphars</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are predatory plants from [[Verdania]], with their jaw shaped to resemble a lily pad.<ref>Nuphar Hunter's Journal entry: <i>"Predatory plant with a powerful jaw shaped to resemble a lily pad."</i></ref>
+
+== Behaviour and Tactics ==
+Nuphars disguise themselves as large lily pads, which can be found all over Verdania for platforming. They trigger once stepped on, trembling before leaping out of the water in an attempt to devour Hornet, comboing her for {{Damage|1+1}} if she gets caught in its mouth, however other [[Enemies (Silksong)|enemies]] can be eaten by Nuphars as well. Sometimes they leap out immediately after being stepped on.
+<br>Nuphars sink into the water after attacking, and come back up if 6 seconds has passed and Hornet has swum in the water of their previous location.
+
+They can be safely ignored by quickly dashing off lily pads, especially since they give ample warning that they are about to attack. They are able to be attacked for a brief moment after leaping, but there is little reason to kill such a sedentary threat, especially as their [[Hunter's Journal (Silksong)|Journal]] entry is automatically granted after defeating the [[Clover Dancers]].
+
+== Location ==
+Nuphars can be found in [[Lost Verdania]].
+
+{{Gallery
+|Image1 = Mapshot SS Nuphar 01.png!Locations in Lost Verdania
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Nuphar 03.png!A Nuphar on the left, next to a normal lily pad. Note their identical appearance
+|Image2 = Screenshot SS Nuphar 01.png!A Nuphar having just leapt out of the water
+}}
+
+== Trivia ==
+* Though Nuphars have no Needolin dialogue, they writhe about in the water when the Needolin is played near them.
+* Nuphars can also be triggered by an enemy landing on them, not just by Hornet.
+{{Gallery
+|Image1 = Screenshot SS Nuphar 02.png!A Nuphar thrashing around in the water as the [[Needolin]] is played
+}}
+* In real life, <i>[[wikipedia:Nuphar|Nuphar]]</i> is a plant genus which various species of water-lilies belong to.
+{{Localisation
+|DEname = Nuphar
+|DEmeaning = —
+|ESname = Núfar
+|ESmeaning = From <i>nenúfar</i> (lily pad)<br><small>Núfar is also a phonetic adaptation of the English name.</small>
+|FRname = Voraphore
+|FRmeaning = From <i>vorare</i> (devour) and <i>nenuphar</i> (lily pad).
+|ITname = Mandilotus
+|ITmeaning = Portmanteau of <i>mandibola</i> (jaw) and <i>lotus</i>.
+|JAname = ヌプハル
+|JAromanised = Nupuharu
+|JAkatakana = foreignenemy
+|JAmeaning = Nuphar
+|KOname = 수련잎
+|KOromanised = Suryeonip
+|KOmeaning = Water Lily Leaf
+|PTname = Nenúfar
+|PTmeaning = Nenuphar
+|RUname = Пастецвет
+|RUromanised = Pastecvet
+|RUmeaning = Maw Flower
+|ZHname = 拟态睡莲
+|ZHromanised = Nǐtài shuìlián
+|ZHmeaning = Water Lily Mimic
+|TWname = 擬態睡蓮
+|TWromanised = Nǐtài shuìlián
+|TWmeaning = same
+|CODEname=LILYPAD_TRAP
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Enemies}}

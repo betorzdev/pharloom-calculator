@@ -1,0 +1,309 @@
+{{SS Infobox Boss
+| label1 = NPC
+| image1 = <gallery>
+Pinstress Idle.png|Sitting
+Pinstress Sleeping.png|Sleeping
+Pinstress Standing.png|Standing
+Pinstress Snow.png|Sleeping (snow)
+</gallery>
+| location = [[Blasted Steps]]<br>[[Mount Fay]]
+| combat1 = false
+| affiliation = [[Seamstress]] (Pin-sister)<br>
+[[Order of the Pinstress]] (Member)
+| quest = [[Fatal Resolve]]
+| singnum = 1
+| label2 = Boss
+| title2 = Pinstress
+| image2 = <gallery>
+B_Pinstress.png|Hunter's Journal
+Pinstress Staggered.png|Staggered
+Pinstress Float.png|Floating
+</gallery>
+| location2 = Mount Fay
+| affiliation2 = [[Seamstress]] (Pin-sister)<br>
+[[Order of the Pinstress]] (Member)
+| quest2 = [[Fatal Resolve]]
+| drops2 = [[Pin Badge]]
+| health2 = 910
+| damage_modifiers2 = {{SS Spaced Damage Modifiers|1.5|1.1|1|1|0.9}}|
+| numbers_required2 = 1
+| theme2 = [https://www.youtube.com/watch?v=vick40gW0mE Strive]
+| g2 = Pinstress
+| singnum2 = 1
+}}
+
+{{Quote
+|Hr = Journal
+|Blade maiden of a once renowned warrior sect, survived long beyond the rest of her order.<hr/>
+I like her. For her willingness to teach and her spirit still strong, despite a long age spent solitary... she has my respect.
+}}
+
+The <b>Pinstress</b> is an [[NPCs (Silksong)|NPC]] and quest [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. She is a member of the [[Order of the Pinstress]],<ref name=gender/> and teaches [[Hornet (Silksong)|Hornet]] the [[Needle Strike]] ability. She can be fought as apart of the <i>[[Fatal Resolve]]</i> [[Wishes|wish]], which rewards the [[Pin Badge]].
+
+== Background ==
+Pinstress is a warrior of the [[Order of the Pinstress]], a group of female warriors who were once renowned in [[Pharloom]].<ref>Pinstress [[Needolin]] dialogue: <i>"An order lost of maidens fair..." </i></ref><ref name=gender/> The order of the Pinstress was once allied with [[the Citadel]], before the Citadel turned against them and stamped them out.<ref>Pinstress: <i>"Our grand Citadel learnt well from the training of Pinstresses past. Then it went and turned those teachings upon us! Despite our superior skills, our numbers have always been few, and their strength overwhelmed."</i></ref>
+
+Pinstress and [[Seamstress]] are the only surviving members of the order of the Pinstress.<ref>Pinstress: <i>"Of my once revered order, only two of us remain"</i></ref> While Seamstress has turned her back on the ways of the order,<ref>[[Seamstress]]: <i>"I sure ain't sharing many of those violent values no more."</i></ref> Pinstress still holds true to their values.<ref>[[Seamstress]]: <i>"Last to hold true to the old ways of the pin, she was..."</i></ref>
+
+Pinstress resides in the [[Blasted Steps]], where she hopes to avoid the attention of the Citadel.<ref>{{HTalk|Then this is not a place of hiding? That Citadel up top seems no friend to the free, or the strong who'd choose to remain apart.}}<br>Pinstress: <i>"...Aye. Well, yes. That too's a reason, though one that shames me some."</i></ref>
+
+== In-game Events ==
+Upon first encountering Pinstress, she is found asleep, snoring loudly. When [[Hornet (Silksong)|Hornet]] approaches to speak, Pinstress scolds Hornet for waking her from her deep meditation. She then asks Hornet to train with her, through which Hornet learns the [[Needle Strike]] ability. 
+
+Whenever Hornet interacts with Pinstress while she is sleeping, she is startled awake. On subsequent visits, she can be seen working at her desk or wandering her hut and rummaging through her furniture.
+
+After entering [[Act 3]], the <i>[[Fatal Resolve]]</i> [[wish]] becomes available if Hornet has learnt Needle Strike, and can be accepted from a note left in Pinstress's airship, or [[Bellhart]]'s [[Wishwall]] if [[Silk Soar]] has been obtained. From the foot of [[Mount Fay]], Pinstress can be tracked to the peak where she is found sleeping. She can be awakened by attacking her. If Hornet stands away from her and does not interact, she slumps and falls back asleep. Only once she has gone back to sleep will she react to Hornet playing the [[Needolin]]. Upon being interacted with, she greets Hornet and requests a duel. Upon defeat, she gives Hornet the [[Pin Badge]] tool. Following the fight, she also provides a hint as to [[Mount Fay#Sub-area: Brightvein|Brightvein's]] location, provided [[Silk Soar]] has been obtained.
+
+After Hornet has both completed <i>Fatal Resolve</i> and found Brightvein, Pinstress leaves Mount Fay and is absent for the rest of the game.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+Upon accepting Pinstress's challenge, she initiates the fight and has the following attacks:
+*<b>Triple Pin</b>: Pinstress can throw 3 spread out pins to the side (similarly to a [[Squatcraw]]). While airborne, she can also throw these pins directly downwards or at a slight angle.
+*<b>Golden Dash</b>: Pinstress quickly dashes forward across the platform towards Hornet with her golden pin extended.
+*<b>Aerial Plunge</b>: While in the air, Pinstress lunges diagonally downwards with her golden pin. Upon landing, she follows up with a Golden Dash in the direction of Hornet. After the first dash, if Hornet is close to the ground behind her, she performs a second Golden Dash.
+*<b>Cross Strike</b>: Pinstress charges up an attack, using the same animation as the [[Needle Strike]] ability. Once this attack is charged, Pinstress either leaps towards Hornet and unleashes the strike just before landing, or leaps into a Brolly Float to hold the charge for a bit longer before unleashing it while landing. When unleashed, Cross Strike creates a massive X-shaped slash that reaches below and slightly behind Pinstress. She will only perform this attack after reaching 774 HP.
+*<b>Brolly Float</b>: Pinstress spends roughly half of her neutral state floating midair with her cloak puffed out, resembling the [[Drifter's Cloak]]. She floats up and down and can perform Triple Pins, Aerial Plunge, or Cross Strike in this state.
+** Triple Pins can be used midair up to 2 times while maintaining Brolly Float. 
+** Performing an Aerial Plunge or Cross Strike cancels this state and grounds her.
+*<b>Leap & Teleport</b>: Pinstress either leaps or teleports into a midair position to begin the Brolly Float manoeuvre, or to perform an airborne Triple Pins or Aerial Plunge attack. Pinstress can also teleport while midair. If Pinstress falls off the edge of the platform at any point, she teleports back onto the centre of the platform, or directly into a Brolly Float.
+*<b>Parry & Retreat</b>: Pinstress scurries away from Hornet to reposition in between attacks. While scurrying on the ground, she parries using her pins, blocking damage. If retreating while in the air, she skips backwards and lands back on the ground.
+
+Triple Pin and contact with Pinstress deal {{Damage|1}}. All other attacks deal {{Damage|2}}.
+
+Hornet is not locked into the arena for this fight and can escape at any time.
+
+<hr/>
+
+{{Stagger
+| Pinstress flops to the ground. If she is knocked off the platform by the stagger, she cannot be targeted for the remainder of the duration, before then teleporting back.
+| 15
+| game = SS
+}}
+
+<hr/>
+
+=== Strategy ===
+* The easiest moment to hit the Pinstress is after Aerial Plunge and Golden Dash. Needle bounce off of her when she lands from Aerial Plunge and jump over her and attack her from after Golden Dash.
+* Once Cross Strike is loaded, she will only unleash the attack when [[Hornet]] is close to her. Keeping this in mind allows one to manage where the massive area of effect is. It can be advantageous to approach Pinstress and then quickly retreat then allowing her to approach you. One can even run under and past Pinstress.
+
+{{MissingInfo}}
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = <b>If first encounter is before Act 3:</b><br>
+So rude! To raise a Pinstress from their deep meditation!<br>
+You carry on with that kind of brash behaviour and you're likely to be stuck quick through!<br>
+{{HTalk|I'm surprised to find a bug of sound mind alive in such an inhospitable place. You are a warrior learned in the blades of this land?}}<br>
+Aye! A Pinstress! Your needle there might fit you fair, strange as it is'n all, but it's the pin that's the glorious weapon of Pharloom.<br>
+Given I'm now awake, maybe you'd fancy a little training? Care to test the power of a Pinstress? Might be even this old master could show you a thing or two.
+<hr/>
+<b>If first encounter is in Act 3:</b><br>
+So rude! To raise a Pinstress from their deep meditation!<br>
+You carry on with that kind of brash behaviour and you're likely to be stuck quick through!<br>
+{{HTalk|I'm surprised to find any bug still alive in such an inhospitable place. You are a warrior learned in the blades of this land?}}<br>
+Aye! A Pinstress! Your needle there might fit you fair, but it's the pin that's the glorious weapon of Pharloom, least it was... It's sure starting to feel like Pharloom doesn't have long left.<br>
+Well, given I'm now awake, and time's suddenly short, maybe you'd fancy a little training? Might be even this old master could show you a thing or two?
+| Title1_Event2 = Declining to train
+| Title1_Dialogue2 = Ahh, is your needle too shy to show its edge? What a shame.
+| Title1_Event3 = Speaking after declining
+| Title1_Dialogue3 = Planning to hang about are you, needle bug?<br>
+Fancy a little training? Care to test the power of a Pinstress? Might be even this old master could show you a thing or two?
+| Title1_Event4 = Accepting to train
+| Title1_Dialogue4 = Bold choice, needle bug. Let's get our shells a'shaking!<br>
+How grand! To face an opponent with a bit of energy.<br>
+You're a skilled one, clear enough. I hope my training has granted some insight.
+| Title1_Event5 = Speaking after training
+| Title1_Dialogue5 = <b>If the training is before Act 3:</b><br>
+It's a right long time since I've felt so vigorous. All those dulled pilgrims are useless for testing my talents.<br>
+{{HTalk|Your blade proved an impressive challenge, Pinstress. The strength and skills hidden about this kingdom continue to surprise me.}}<br>
+You bear your own strange strengths, needle bug. More I think than you'd be willing to reveal to me.<br>
+What, I wonder, are you planning to turn all that power towards?
+<hr/>
+<b>If the training is in Act 3:</b><br>
+It's a right long time since I've felt so vigorous. All those dulled pilgrims were useless for testing my talents.<br>
+{{HTalk|Your blade proved an impressive challenge, Pinstress. I've travelled the length of this kingdom, yet the strength and skills hidden throughout continue to surprise me.}}<br>
+You bear your own strange strengths, needle bug. If only we'd met in less troubled times, just think of all we could have learned from one another!
+| Title1_Event6 = Exhausted dialogue after training
+| Title1_Dialogue6 = Off with you now, needle bug! A Pinstress of my substantial talent requires their deep meditation, especially after such a satisfying bout.<br>
+{{HTalk|Goodbye, Pinstress. May your blade remain sharp.}}
+| Title1_Event7 = Revisiting after some time
+| Title1_Dialogue7 = <b>If Pinstress is standing:</b><br>
+Back again, needle bug? Surely you've more important places calling than these sandy steps?<br>
+{{HTalk|I shan't stay long, Pinstress. Your home and your skills offer a sense of safety rare about these lands.}}
+<hr/>
+<b>If Pinstress is sitting:</b><br>
+{{HTalk|Pinstress, why do you choose to live amidst these storm-swept caverns? Surely there are more hospitable places?}}<br>
+Somewhere gentler? Warmer? I'd only go soft! How else is one expected to maintain their wits?<br>
+{{HTalk|Then this is not a place of hiding? That Citadel up top seems no friend to the free, or the strong who'd choose to remain apart.}}<br>
+...Aye. Well, yes. That too's a reason, though one that shames me some.<br>
+Our grand Citadel learnt well from the training of Pinstresses past. Then it went and turned those teachings upon us!<br>
+Despite our superior skills, our numbers have always been few, and their strength overwhelmed.<br>
+Of my once revered order, only two of us remain, wormed away in Pharloom's forgotten corners, and my pin-sibling, she's lost herself to more peaceable pursuits.
+| Title1_Event8 = Exhausted dialogue when revisiting
+| Title1_Dialogue8 = <b>If Pinstress is standing:</b><br>
+Even my welcome has limits, needle bug.<br>
+I've become well accustomed to solitude, and it's unnerving to play host to your strange strength overlong.
+<hr/>
+<b>If Pinstress is sitting:</b><br>
+Off with you now, needle bug. I've respect for you and your sharp blade, but my hospitality shouldn't be abused.
+| Title1_Event9 = Playing the [[Needolin]]
+| Title1_Dialogue9 = [n]The flurried dance of blades swung swift...<br>
+Warriors proud in battle's midst...<br>
+An order lost of maidens fair...<br>
+Lethal talents beyond compare...<br>
+I remember you... My sisters passed...<br>
+You were the finest... bravest... caste...
+
+| Title2 = Fatal Resolve
+| Title2_Event1 = First conversation
+| Title2_Dialogue1 = Ah ha! Needle bug! Who else would dare wake a Pinstress with such force?!<br>
+Saw my wish, I'm guessing? Here hopin' to fulfill it?<br>
+{{HTalk|I know what you are seeking, Pinstress... a death duel, an end from battle, not cavern's collapse.}}<br>
+{{HTalk|I can oblige... to a point... But a greater challenge still awaits me below.}}<br>
+Whatever else you're about, you might be finding it futile now, needle bug. The black quakes... Pharloom's finale arrives.<br>
+So let's stop the yapping, aye! How's 'bout we begin? Let's see at least one of us end true to our nature!
+| Title2_Event2 = Declining the duel
+| Title2_Dialogue2 = Ahh... Shame. Surely battle'd be the better end, no?<br>
+If not by blade, we'll just have to accept whatever conclusion this new quaking calamity flings upon our heads.
+| Title2_Event3 = Speaking after declining
+| Title2_Dialogue3 = Having second thoughts on our bout, needle bug? Good! I'll not hold back my blade, and I'll expect the same from you.
+| Title2_Event4 = Returning after accepting the duel, if Hornet did not win
+| Title2_Dialogue4 = Needle bug! With those black quakes, Pharloom's finale is fast arriving.<br>
+Raise your blade! Let's see at least one of us end true to our nature!
+| Title2_Event5 = Speaking after winning the duel
+| Title2_Dialogue5 = Gah! Bested fair, and yet you choose to stay the killing blow?<br>
+{{HTalk|I can test you, Pinstress, and myself for what's to come, but I will not cut you down.}}<br>
+{{HTalk|Despite its quakes, Pharloom's demise is not as certain as it seems. I shall act to change that fate.}}<br>
+{{HTalk|If I succeed at my task, the land that remains will require the watch of strong bugs like you.}}<br>
+Well, ain't you an inspiration! Makin' me seem a right fool, here thinkin' only on the end while you're looking to a future fair...<br>
+Seems you've beaten me twice, needle bug, both my pin's edge, and my heart's resolve...<br>
+For your talents, needle bug, in blade and strength... and restraint, take this emblem of my order.<br>
+Hadn't ever thought another'd be joining our slim ranks, but you're as deserving a member as's ever come before.
+| Title2_Event6 = Speaking again
+| Title2_Dialogue6 = <b>If Hornet has not visited [[Mount Fay#Sub-area:_Brightvein|Brightvein]]:</b><br>
+Dunno if you've heard it, needle bug, but supposedly there's a gleaming secret hidden at this mountain's core.<br>
+Meant to be a marvel, or so my sisters past once told, a giant cavern all of crystal.<br>
+If you're hanging around these heights, and time's allowing, maybe you'll get to seeking it?<br>
+Course you'd first have to find the entrance, but you've certainly shown the skills to wriggle up in there, provided you're so inclined.
+<hr/>
+<b>If Hornet has visited Brightvein before winning the duel:</b><br>
+Dunno if you've heard it, needle bug, but supposedly there's a gleaming secret hidden at this mountain's core.<br>
+Meant to be a marvel, or so my sisters past once told, a giant cavern all of crystal.<br>
+{{HTalk|I have visited the core, Pinstress. It was a remarkable site indeed. I only hope that it shall not soon be lost.}}<br>
+Course you've seen it! Master at the blade and at the seeking. You've proven yourself an imposing talent.<br>
+Well, given you seem done up here, maybe it's time you get back to your all important business?
+| Title2_Event7 = Exhausted dialogue
+| Title2_Dialogue7 = A mighty battle we had, my friend... Time now you get to your all important business. I'll be wishing for your success.
+| Title2_Event8 = Playing the [[Needolin]]
+| Title2_Dialogue8 = [n]Pin's edge... Kingdom's peak...<br>
+A noble end is all we seek!<br>
+Sisters, faded... all's adrift...<br>
+One final clash... one final gift...
+| Title3 = Written
+| Title3_Event1 = [[Lore Tablets (Silksong)#Blasted Steps|Blasted Steps Lore Tablet]]
+| Title3_Dialogue1 = I have departed to scale Pharloom's frigid mount. If any bug exists brave enough to match my pin's fatal resolve, then climb and face me upon its stormward side<br>
+- Pinstress
+| Title3_Event2 = <i>[[Fatal Resolve]]</i> wish
+| Title3_Dialogue2 = If the world is truly ending, I would test my pin in combat one last time. Come to my home at border's edge and accept my challenge!
+}}
+
+== Location ==
+Pinstress can be found west of the [[Great Conchflies]] boss area in the [[Blasted Steps]]. From the boss area, travel west. Her floating home can be found near the western edge of a large outdoor area. During <i>[[Fatal Resolve]]</i>, she can be found in [[Mount Fay]], in the same area as the bench halfway up the mountain.
+
+{{Gallery
+|Image1 = Mapshot_SS_Pinstress_01.png!Location in the Blasted Steps
+|Image2 = Mapshot_SS_Pinstress_02.png!Location in Mount Fay
+}}
+
+== Gallery==
+{{Gallery
+|Image1 = Screenshot SS Pinstress 05.png!Pinstress's hut
+|Image2 = Screenshot SS Pinstress 01.png!Sleeping before first interaction
+|Image3 = Screenshot_SS_Pinstress_21.png!Sitting awake
+|Image4 = Screenshot_SS_Pinstress_22.png!Before training
+|Image5 = Screenshot_SS_Pinstress_23.png!After training
+|Image6 = Screenshot SS Pinstress 02.png!Working at desk
+|Image7 = Screenshot SS Pinstress 03.png!Wandering her hut
+|Image8 = Screenshot SS Pinstress 24.png!Responding to the Needolin
+|Image9 = Needle Strike Training.mp4!Needle Strike training cinematic
+|Image10 = Screenshot SS Pinstress 28.png!Note left by Pinstress in her hut
+|Image11 = Screenshot SS Pinstress 04.png!Sleeping on Mount Fay during [[Fatal Resolve]]
+|Image12 = Screenshot SS Pinstress 25.png!Resting after Hornet rejects her challenge
+|Image13 = Screenshot SS Pinstress 26.png!Startled awake
+|Image14 = Screenshot SS Pinstress 27.png!Sitting after being defeated by Hornet
+|Image15 = Ari SS Sketch 04.jpg!Concept sketches
+}}
+
+=== Battle ===
+{{Gallery
+|Image1 = Screenshot SS Pinstress 06.png!Idle
+|Image2 = Screenshot SS Pinstress 07.png!Triple Pin (Grounded)
+|Image3 = Screenshot SS Pinstress 08.png!Triple Pin (Airborne)
+|Image4 = Screenshot SS Pinstress 09.png!Triple Pin (Diagonal)
+|Image5 = Screenshot SS Pinstress 10.png!Triple Pin (Downwards)
+|Image6 = Screenshot SS Pinstress 11.png!Golden Dash
+|Image7 = Screenshot SS Pinstress 12.png!Aerial Plunge
+|Image8 = Screenshot SS Pinstress 13.png!Cross Strike
+|Image9 = Screenshot SS Pinstress 14.png!Brolly Float
+|Image10 = Screenshot SS Pinstress 15.png!Leap
+|Image11 = Screenshot SS Pinstress 16.png!Teleport
+|Image12 = Screenshot SS Pinstress 17.png!Retreat (Airborne)
+|Image13 = Screenshot SS Pinstress 18.png!Retreat (Grounded)
+|Image14 = Screenshot SS Pinstress 19.png!Parry
+|Image15 = Screenshot SS Pinstress 20.png!Staggered
+|Image16 = Screenshot SS Mount Fay 05.png!Arena in Mount Fay
+}}
+
+== Achievements ==
+{{Achievement|game=silksong|Fatal Resolve}}
+
+== Trivia ==
+* What appears to be another sister of the Pinstress's order can be discovered dead in the [[Putrified Ducts]], where the [[Wreath of Purity]] is found. She is clad in a green mossy covering and her airship is broken down in the background.
+* Pinstress's voice lines when playing the [[Needolin]] have a similar melody to "Strive", her battle music.
+* After Hornet finishes training with Pinstress, upon revisiting before Act 3, Pinstress can be found either standing or sitting. She has different dialogues depending on her current state. There is a 50% chance that she switches states each time Hornet rests on a [[Bench (Silksong)|Bench]] outside her tent.<ref group=code><code>GameManager.Timepasses()</code> sets <code>pinstressInsideSitting</code>.</ref>
+** As Pinstress is cleaning, the dust on the surfaces slowly reappears after some time.
+** Under certain circumstances, when Hornet is just about to leave the room, Pinstress will wave at her.
+* The track that plays during the Flea Minigames is called "[[Soundtrack_(Silksong)#Not_Featured_on_the_Album_2|Pinstress Battle]]" internally, implying that it was originally her theme.
+* Pinstress' downwards <b>Triple Pin</b> attack originally used four pins.<ref>Developer note: <i>"Pinstress Boss/Down Projectiles 2 Old: spread of four"</i></ref>
+
+{{Localisation
+|DEname = Nadlerin
+|DEmeaning = Portmanteau of <i>nadel</i> (pin) and <i>herrin</i> (mistress).
+|ESname = Alfilera
+|ESmeaning = Portmanteau of <i>alfiler</i> (pin) and <i>señora</i> (lady).
+|FRname= Maîtresse de la Pique
+|FRmeaning= Mistress of the Pin
+|ITname = Puntaspilli
+|ITmeaning = Pincushion<br><small><i>Puntaspilli</i> is also sometimes used as a nickname for a tailor.</small>
+|JAname = ピンの女傑
+|JAromanised = Pin no joketsu
+|JAmeaning = Mistress of Pin
+|KOname = 핀의 여인
+|KOromanised = Pinui yeoin
+|KOmeaning = Lady of Pin
+|PTname = Alfinistra
+|PTmeaning = Portmanteau of <i>alfinete</i> (pin) and <i>mestra</i> (mistress or teacher).
+|RUname = Булавочница
+|RUromanised = Bulavočnica
+|RUmeaning = Portmanteau of булавка <i>bulavka</i> (pin) and любовница <i>ljubovnica</i> (mistress). 
+|TWname = 御針女侍
+|TWromanised = Yù zhēn nǚ shì
+|TWmeaning = Pin-wielding Maiden
+|ZHname = 针姬
+|ZHromanised = Zhēn jī
+|ZHmeaning = Pinstress or Pin Lady
+|CODEname = PINSTRESS</code> (NPC)<br>
+<code>PINSTRESS_BOSS</code> (Boss)
+}}
+
+{{Refs|hr=ss}}
+<div class="mw-collapsible mw-collapsed" data-expandtext="Show Code References" data-collapsetext="Hide Code References">
+<references group="code" />
+</div>
+{{SS Nav NPCs}}
+{{SS Nav Enemies}}
+
+[[pt:Alfinistra]]

@@ -1,0 +1,107 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Minister.png|Hunter's Journal
+Minister Idle.png|Idle
+</gallery>
+| hasdrop = true
+| r1 = 27
+| r2 = 48
+| sh1 = 3-5
+| sh2 = 4-7
+|health = 60/{{BT|120}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.25|1|1|1|1}}
+|numbers_required = 15
+|singnum = 1
+}}
+{{Quote
+|Hr = Journal
+|Gold ranked disciple of the Choir and direct servant to the Citadel's Conductors.<hr/>
+The lethality of these bugs is unexpected. Their bodies were never built for combat. The Haunting has altered their nature dramatically.
+}}
+
+<b>Ministers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are winged, high ranked disciples of [[the Choir]] made aggressive by the [[Haunting]].<ref>Minister [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Gold ranked disciple of the Choir and direct servant to the Citadel's Conductors."</i></ref><ref>Minister [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"The lethality of these bugs is unexpected. Their bodies were never built for combat. The Haunting has altered their nature dramatically."</i></ref>
+
+== Behaviour and Tactics ==
+Ministers can often be found sitting on the floor or clinging to walls, and pursue [[Hornet (Silksong)|Hornet]] within a radius around their spawn area.<br>
+Being flying enemies, Ministers attempt to keep aerial distance from Hornet before closing in to attack. They have three moves:
+* <b>Slice Barrage:</b> Rears its head back, then darts towards Hornet whilst headbutting at her wildly, comboing Hornet for {{Damage|1+1}} if she is caught at any point during the attack.
+* <b>Parry Strike:</b> The Minister assumes a parry stance with a glinting sound effect. If Hornet hits the Minister while it is in this stance, it takes no damage and performs a large swooping headbutt at Hornet.
+* <b>Evade:</b> Performs an aerial dash backwards and away from Hornet, often used after an attack and if Hornet is close to it. 
+
+Ministers are immune to the venom effect of the [[Pollip Pouch]]. They parry or evade any careless attack, so letting them strike first and then using [[Cross Stitch]] may be a safer option. Additionally, as with many other melee flying enemies, [[Needle#Needle-bouncing|Needle-bouncing]] and attacking from below work well against Ministers, as they cannot defend themselves from these directions.
+
+=== Act 3 ===
+[[Black-threaded]] Ministers have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Grant us resonance!
+* Great Conductors!
+* Holy masters!
+* Your vision guides us...
+* Your devotion compels us!
+* Highest of the high!
+}}
+
+== Location ==
+Ministers can be found throughout the [[High Halls]], and four of them are fought as part of the [[Enemy_Gauntlets_(Silksong)/High_Halls 1|enemy gauntlet]] in [[the Forum]]. Upon returning to the arena in [[Act 3]], one [[black-threaded]] Minister can be found there alongside a [[Choir Clapper]], and does not respawn after being defeated.
+
+{{Gallery
+|Image1 = Mapshot SS Minister 01.png!Locations in the High Halls
+|Image2 = Mapshot SS Minister 02.png!Locations in the High Halls in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Minister 01.png!Dormant in the High Halls
+|Image2 = Screenshot SS Minister 02.png!Clinging to a wall
+|Image3 = Screenshot SS Minister 03.png!Idle
+|Image4 = Screenshot SS Minister 04.png!Slice Barrage
+|Image5 = Screenshot SS Minister 05.png!Parry Strike
+|Image6 = Screenshot SS Minister 06.png!Evade
+|Image7 = Screenshot SS Minister 07.png!Reacting to the Needolin
+|Image8 = Screenshot SS Minister 08.png!Corpses in a pool of water
+|Image9 = Screenshot SS Minister 09.png!Corpse in the High Halls
+|Image10 = Screenshot SS Minister 10.png!Black-threaded Ministers and [[Void Mass]] during Act 3
+|Image11 = Screenshot SS Minister 11.png!Corpse in Act 3
+|Image12 = Screenshot SS Minister 12.png!Corpse in [[the Cradle]]
+|Image13 = Screenshot SS Choir 07.png!Minister in a Silk Memory in the Cradle
+}}
+
+==Trivia==
+*There is a description of a cut [[Choral Commandment]] in the game's files issued by the Ministers to a penitent of [[the Slab]]:
+*:<i>Sentence issued by the Citadel Ministers.<br>"Chosen of the Choir, by grace of our magnanimous Conductors you are granted mercy. When you exit that cage, an elder bug of sins absolved, you may rejoin our flock and feel our light, and never again shall your voice fall silent."</i><ref name="cutRelic">Full entry: <entry name="RELIC_SEAL_CHIT_SLABCORPSE_DESC">Sentence issued by the Citadel Ministers. "Chosen of the Choir, by grace of our magnanimous Conductors you are granted mercy. When you exit that cage, an elder bug of sins absolved, you may rejoin our flock and feel our light, and never again shall your voice fall silent."</entry></ref>
+*Ministers share their Needolin dialogue with [[Maestro]]s.
+{{Localisation
+|DEname = Ministrant
+|DEmeaning = Minister
+|ESname = Ministro
+|ESmeaning = Minister
+|FRname = Prêtre
+|FRmeaning = Priest
+|ITname = Ministro
+|ITmeaning = Minister
+|JAname = セイショクシャ
+|JAromanised = Seishokusha
+|JAkatakana = enemy
+|JAmeaning = From {{lang|ja|聖職者 <i>seishokusha</i>}} (religious minister).
+|KOname = 성직자
+|KOromanised = Seongjikja
+|KOmeaning = Minister
+|PTname = Ministro
+|PTmeaning = Minister
+|RUname = Министр
+|RUromanised = Ministr
+|RUmeaning = Minister
+|TWname = 聖詠大臣
+|TWromanised = Shèngyǒng dàchén
+|TWmeaning = same
+|ZHname = 圣咏大臣
+|ZHromanised = Shèngyǒng dàchén
+|ZHmeaning = Psalm Minister
+|CODEname=SONG_ADMINISTRATOR
+|CODEmeaning = "Song" internally refers to the Citadel
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

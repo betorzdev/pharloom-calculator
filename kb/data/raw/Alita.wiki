@@ -1,0 +1,78 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Alita.png|Hunter's Journal
+Alita Idle.png|Idle
+</gallery>
+|drops=None
+|health=80
+|damage_modifiers={{SS Spaced Damage Modifiers|1.5|1.2|1.1|1|1}}
+|numbers_required = 6<br>(Instantly completed on [[Crust King Khann]]'s death)
+}}
+{{Quote
+|Hr = Journal
+|Leaping hunter of a bygone age. The swiftest of their sect, deftly skilled with spinning foreblades.<hr/>
+In contests of speed against strength, I have seen the swift more often triumphant, a lesson I have taken to my own heart.
+}}
+
+<b>Alitas</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are members of the [[Order of Karak]], long lost to time and living on only in memory.
+
+== Behaviour and Tactics ==
+Alitas cannot walk and can only move via any of the following moves:
+* <b>Jump:</b> Jumps up high in any direction, often using <b>Foreblade Throw</b> at the height of their jump. Alita will use this move to close in on Hornet if she's out of range for Foreblade Throw.
+** The Alita may sometimes jump into a wall, cling to it for a moment before jumping off, then either do nothing or use Foreblade Throw.
+* <b>Foreblade Throw:</b> Launches a blade that arcs upwards through the air at Hornet. The aerial version of this attack is always aimed slightly too high and will miss Hornet if she stands still. When used on the ground, the Alita jumps just off the ground before launching the blade, which will sweep along the ground. The projectile can be struck with Hornet's [[Needle]] to make it harmless.
+* <b>Zip Dash:</b> Dashes away from Hornet if she gets too close, or more commonly, if she's close and it just missed a move. The Alita moves so fast that it's intangible during the dash.
+** The dash can be angled upwards slightly, and it may use Foreblade Throw midair once the Zip Dash ends.
+
+== Location ==
+Alitas can only be found in [[Crust King Khann]]'s [[Elegy of the Deep|Memory]] of the [[Coral Tower]] during [[Acts|Act 3]].
+
+{{Gallery
+|Image1 = Mapshot SS Coral Tower.png
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Alita 01.png!Idle
+|Image2 = Screenshot SS Alita 02.png!Wall Cling
+|Image3 = Screenshot SS Alita 03.png!Foreblade Throw (Aerial)
+|Image4 = Screenshot SS Alita 04.png!Foreblade Throw (Grounded)
+|Image5 = Screenshot SS Alita 05.png!Zip
+}}
+
+== Trivia ==
+* Alitas do not respond to the [[Needolin]].
+* The filename of an [[Cut_Content (Silksong)/Graphics#Quest Icons|earlier design]] of the Alita suggests they might have originally been designed as [[Skarr]] warriors.
+{{Localisation
+|DEname = Alita
+|DEmeaning = —
+|ESname = Alita
+|ESmeaning = —
+|FRname = Alita
+|FRmeaning = —
+|ITname = Alita
+|ITmeaning = —
+|JAname = アリタ
+|JAromanised = Arita
+|JAkatakana = foreignenemy
+|JAmeaning = Alita
+|KOname = 알리타
+|KOromanised = Allita
+|KOmeaning = Alita
+|PTname = Alita
+|PTmeaning = —
+|RUname = Алита
+|RUromanised = Alita
+|RUmeaning = Alita
+|TWname = 阿利塔
+|TWromanised = Ālìtǎ
+|TWmeaning = same
+|ZHname = 阿利塔
+|ZHromanised = Ālìtǎ
+|ZHmeaning = Alita
+|CODEname=CORAL_HUNTER
+|CODEmeaning=Other Order of Karak internal names begin with "Coral"
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

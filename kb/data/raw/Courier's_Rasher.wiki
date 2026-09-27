@@ -1,0 +1,91 @@
+{{Navbar|icons=true|page1=Mossberry Stew|page2=Vintage Nectar|page3=Courier's Rasher|page4=Crustnut|page5=Pickled Muckmaggot}}
+{{SS Infobox Item
+| type = [[Items (Silksong)#Deliverables|Deliverable]]
+| image = <gallery>
+Courier's Rasher.png|Intact
+Courier's Rasher Broken.png|Broken
+</gallery>
+| source = [[Tipp & Pill]]
+| description = Fatty meat of indeterminate origin. Once prepared it will quickly spoil if not stored properly.
+}}
+
+{{Quote
+| For the core of the meal, find that marvellous meat... The rasher of a courier, those spritely bugs who once arrived at the toll of every second bell.<br>
+I saw many a courier gorge upon this fatty snack. Where are they all? Have they abandoned their holy toil?
+| Loyal Mergwin
+| Hr = SS
+}}
+
+<b>Courier's Rasher</b> is a [[Items (Silksong)#Deliverables|deliverable item]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+Courier's Rasher is one of the five ingredients required for the <i>[[Great Taste of Pharloom]]</i> wish, given by [[Tipp & Pill]] as a delivery item. It must be delivered carefully all the way from [[Bellhart]] to [[Loyal Mergwin]] in the [[Choral Chambers]], similarly to [[Delivery Wishes]]. Like other delivery wish items, it'll break instantly when using methods of [[Fast Travel (Silksong)|Fast Travel]]  including [[Bellway]]s, the [[Beastling Call]], [[Ventrica]]s or travelling with the [[Flea Caravan]].
+
+{{Gallery
+|Image1 = Mapshot SS Loyal Mergwin 01.png!Location in Choral Chambers
+|Image2 = Screenshot SS Loyal Mergwin 02.png!Loyal Mergwin in Choral Chambers
+}}
+
+Unlike Delivery Wish items, the durability of Courier's Rasher decays over time. It has 8 durability segments, each decaying after 47 seconds. If Hornet takes damage or makes a hard impact with a surface (making a heavy landing, hitting a wall while using [[Swift Step]], or hitting a ceiling while using [[Silk Soar]]), the item loses 1 segment, or 2 if Hornet takes a 2 damage hit, with the decaying segment being treated as full, meaning Hornet can take "free" damage if the segment is almost fully decayed. For instance, if Hornet runs into a wall while using [[Swift Step]] and the Courier's Rasher has 6 and a quarter segments, the durability goes down to 6 segments instead of 5 and a quarter. If Hornet doesn't damage the item, she has a maximum of 376 seconds (6 minutes and 16 seconds) to get it from Tipp & Pill to Loyal Mergwin.
+
+The time limit means that moving slowly and cautiously is not an option like it would be in a Delivery Wish. Fighting enemies during the delivery should be avoided to save time and damage. Travelling the chosen delivery path backwards without resting at a bench allows Hornet to clear out most of the enemies in advance and gain familiarity with the route, making the actual delivery safer and faster. If the [[Bellhome]] was unlocked with the [[Bellhome Key]] and a [[Personal Spa]] has been purchased, resting in the spa prevents certain enemies from respawning.
+
+The [[Silkspeed Anklets]] are extremely valuable for speed, though care must be taken to not run into walls or hazards. Obtaining the [[Faydown Cloak]] is highly recommended to make the delivery easier, and it is required for acquiring [[Pickled Muckmaggot|another ingredient]] for the wish regardless.
+
+== Possible routes ==
+===Exhaust Organ route===
+This route goes through [[Greymoor]], [[Sinner's Road]] and the [[Exhaust Organ]] to arrive at the [[Grand Bellway]] in the [[Choral Chambers]]. From there it continues through the area to end up at Loyal Mergwin.
+{{Gallery
+|Image1 = Mapshot SS Courier's Rasher 01.png!Exhaust Organ route
+}}
+=== Blasted Steps route ===
+This route goes through [[Shellwood]], [[Blasted Steps]] and up the [[Grand Gate]] to arrive to the Choral Chambers. From there it continues through the area to end up at Loyal Mergwin.
+{{Gallery
+|Image1 = Mapshot SS Courier's Rasher 02.png!Blasted Steps route
+}}
+=== Wisp Thicket route ===
+This route goes through [[Greymoor]], [[Wisp Thicket]] and the [[Underworks]] to arrive to the Choral Chambers. From there it continues through the area to end up at Loyal Mergwin.
+{{Gallery
+|Image1 = Mapshot SS Courier's Rasher 03.png!Wisp Thicket route
+}}
+
+== How to Acquire ==
+After unlocking delivery wishes through [[Tipp & Pill]] and starting the <i>[[Great Taste of Pharloom]]</i> wish, Courier's Rasher becomes available as one of the delivery options. If the currently held one is destroyed, Hornet can return to Tipp & Pill to obtain another and try again.
+
+{{Gallery
+| Image1 = Mapshot SS Tipp & Pill 01.png!Tipp & Pill location in [[Bellhart]]
+|Image2 = Screenshot SS Tipp & Pill 04.png!Couriers Tipp & Pill in Bellhart
+}}
+
+{{Localisation
+|DEname = Kurierspeck
+|DEmeaning = Courier Bacon
+|ESname = Loncha de mensajero
+|ESmeaning = Messenger's Slice
+|FRname = Lard de coursier
+|FRmeaning = Courier's Lard
+|ITname = Fettina del corriere
+|ITmeaning = Courier's Cutlet
+|JAname=運び屋の薄切り肉
+|JAromanised= Hakobiya no usugiri niku
+|JAmeaning = Courier's Thin-sliced Meat
+|KOname = 배달부의 베이컨
+|KOromanised = Baedalbuui beikeon
+|KOmeaning = Deliverer's Bacon
+|PTname =  Naco de Entregador
+|PTmeaning = Courier's Piece of Food
+|RUname = Курьерский ломтик мяса
+|RUromanised = Kur'erskij lomtik mjasa
+|RUmeaning = Courier's Meat Slice
+|TWname = 送貨員的燻肉
+|TWromanised = Sònghuòyuán de xūnròu
+|TWmeaning = same
+|ZHname = 送货员的熏肉
+|ZHromanised = Sònghuòyuán de xūnròu
+|ZHmeaning = Courier's Smoked Meat or Courier's Rasher
+|CODEname = COURIER_SUPPLIES_MEAT
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}

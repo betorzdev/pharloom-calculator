@@ -1,0 +1,126 @@
+{{SS Infobox Tool
+| image = <gallery>
+Magnetite Dice.png|Inventory
+Magnetite Dice Game.png|Game
+</gallery>
+| type = Yellow
+| effect = Has a chance to block damage from incoming attacks
+| location = [[Blasted Steps]]
+| description = Playthings carved from magnetic material.<hr>
+Used in simple games and believed to bring luck to the bearer.
+}}
+
+{{Quote
+| I do have something small for you, at least. These dice. They certainly seem to have taken a liking to you. Take them, in memory of our meeting. 
+| [[Lumble the Lucky]]
+| Hr = SS
+}}
+
+The <b>Magnetite Dice</b> are a {{CrestSlot|Yellow|1}} in <i>[[Hollow Knight: Silksong]]</i>. It has a chance to block damage when [[Hornet (Silksong)|Hornet]] is hit by an enemy or moving hazards, as well as boosting Hornet's luck in several niche situations.
+
+== Usefulness ==
+The dice have a variable chance to block a single hit of damage from an enemy or moving hazard - stationary hazards that cause Hornet to respawn on safe ground when hit cannot be blocked. Hornet will still be knocked back during the hit, so caution is advised when using it near environmental hazards.
+
+The block chance resets to 0% every time the Tool prevents damage and increases by 2.02% with each hit taken, up to a maximum of 10.1%. This gives the following block chances for each hit:
+
+{| class="article-table" style="text-align: center; width: 100%;"
+! 0 Hits Taken
+! 1 Hit Taken
+! 2 Hits Taken
+! 3 Hits Taken
+! 4 Hits Taken
+! 5+ Hits Taken
+|-
+|0%
+|2.02% <math>\left(\frac{2}{99}\right)</math>
+|4.04% <math>\left(\frac{4}{99}\right)</math>
+|6.06% <math>\left(\frac{6}{99}\right)</math>
+|8.08% <math>\left(\frac{8}{99}\right)</math>
+|10.1% <math>\left(\frac{10}{99}\right)</math>
+|-
+|}
+
+The average block chance is 7.7878%.
+
+The dice are only able to block the last hit of multihit attacks ({{Damage|1+1}} or {{Damage|1+1+1}}), only reducing the damage of these attacks by one mask. They also cannot block damage from being eaten by [[Groal the Great]], [[Barnak]]s, or [[Gloomsac]]s.<ref group=Source>All of these use <code>HeroController.DoSpecialDamage()</code> to deal damage, which does not trigger the dice.</ref> Attacks that deal {{Damage|2}} in a single hit will be fully blocked by the dice, making them more effective against these attacks.
+
+The Magnetite Dice are one of the only Yellow Tools to provide an advantage in combat. This means they can be added onto any combat build at effectively no cost, making them worth using in most combat situations despite the unreliable luck based effect.
+
+The Magnetite Dice also give a small boost to a couple of luck-based events:
+* The chance of landing a critical hit with the [[Wanderer Crest]] is raised from 2% to 2.2%
+* The drop rate of [[Silver Bells]] is increased from 25% to 30%
+
+== How to Acquire ==
+* Prior to defeating the [[Cogwork Dancers]] or obtaining the [[Clawline]]: Given by [[Lumble the Lucky]] if you win against him after he runs out of [[Rosaries]].
+* After defeating the Cogwork Dancers or obtaining the Clawline: Found next to Lumble's body.
+* [[Act 3]]: Sold by [[Grindle]] for {{R|300}}.
+
+{{Gallery
+|Image1 = Mapshot SS Lumble the Lucky 01.png!Location in Blasted Steps
+|Image2 = Screenshot SS Lumble 01.png!Lumble the Lucky in Blasted Steps
+|Image3 = Screenshot SS Lumble 05.png!Next to Lumble's corpse in Blasted Steps
+}}
+
+{{Gallery
+|Image1 = Mapshot SS Grindle 01.png!Location in Blasted Steps
+|Image2 = Screenshot SS BlastedSteps 06.png!Grindle in Blasted Steps
+}}
+
+{{Clear}}
+
+== Tool Synergies ==
+{{SS Table Tool Interactions
+| Tool1 = Magnetite Brooch
+| Tool1Desc = The delay before Rosaries are pulled towards Hornet is reduced by 30%.<ref group=Source><code>CurrencyObjectBase::Getter()</code> in <code>Assembly-CSharp.dll</code></ref>
+| Tool2 = Flintslate
+| Tool2Desc = Increases the chances of a "lucky hit" (which has a chance of needing fewer hits in a row to ignite an enemy) by 2%.<ref group=Source><code>DamageEnemies.DoEnemyDamageNailImbuement()</code> in <code>Assembly-CSharp.dll</code></ref> 
+| Tool3 = Wanderer Crest
+| Tool3Img = Wanderer Crest File
+| Tool3Desc = Multiplies the chance of a critical hit by 1.1, increasing it to 2.2%.
+}}
+
+== Gallery ==
+{{Gallery
+|Image1=Magnetite Dice.gif!Magnetite Dice blocking a hit from an enemy
+}}
+
+== Trivia ==
+*The Magnetite Dice are made up of 3 different sided dice, those being a D4 (Tetrahedron), D8 (Octahedron), and a non-standard D14 (Hexagonal Bifrustum).
+* Magnetite is the name of a [[wikipedia:Magnetite|real-world mineral]] that is ferrimagnetic, meaning it is attracted to magnets and can become magnetic itself. Naturally-magnetic magnetite, traditionally called lodestone, was the source of the original discovery of magnetism.
+
+{{Localisation
+|DEname = Magnetit-Würfel
+|DEmeaning = Magnetite Die
+|ESname = Dados de magnetita
+|ESmeaning = Magnetite Dice
+|FRname = Dés de magnétite
+|FRmeaning = Magnetite Dice
+|ITname = Dadi di magnetite
+|ITmeaning = Magnetite Dice
+|JAname = サイコロ
+|JAromanised = Saikoro
+|JAmeaning = Dice
+|KOname = 자철석 주사위
+|KOromanised = Jacheolseok jusawi 
+|KOmeaning = Magnetite Dice
+|PTname = Dados de Magnetita
+|PTmeaning = Magnetite Dice
+|RUname = Магнетитовые кубики
+|RUromanised = Magnetitovye kubiki
+|RUmeaning = Magnetite Cubes
+|TWname = 磁石骰子
+|TWromanised = Císhí tóuzǐ
+|TWmeaning = same
+|ZHname = 磁石骰
+|ZHromanised = Císhí tóu
+|ZHmeaning = Magnet Dice
+|CODEname = MAGNETITE_DICE
+}}
+
+{{Hr|SS}}
+
+== Code References ==
+<references group="Source"/>
+
+{{SS Nav Tools}}
+[[fr:Dés de magnétite]]

@@ -1,0 +1,262 @@
+{{Nav Games Header}}
+
+{{SS Infobox Item
+| label = Fragment
+| image = <gallery>
+Mask Shard (Silksong).png|Shop
+Icon SS Mask Shard Pickup 1.png|Pickup 1
+Icon SS Mask Shard Pickup 2.png|Pickup 2 
+Icon SS Mask Shard Pickup 3.png|Pickup 3
+</gallery>
+| title = Mask Shard
+| type = Upgrade
+| effects = Increases maximum Masks
+| source = [[Wish]] reward<br>[[NPCs (Silksong)#Merchants|Merchants]]<br>Points of Interest scattered across the world
+| description = Shard of an ancient mask worn to protect oneself from harm.<hr/>
+Complete a mask to strengthen the shell and protect against damage.
+| audio = Pickup Idle [[File:Heart Piece Idle Loop 2.ogg]]
+
+| label2 = Completed
+| title2 = Ancient Mask
+| image2 = SS Ancient Mask.png
+| type2 = Upgrade
+| effects2 = Increases maximum Masks
+| source2 = [[Wish]] reward<br>[[NPCs (Silksong)#Merchants|Merchants]]<br>Points of Interest scattered across the world
+| description2 = An ancient mask carved from cold, pale ore. The mask protects the wearer, guarding their shell against damage.
+| audio2 = Pickup Idle [[File:Heart Piece Idle Loop 2.ogg]]
+}}
+
+{{Quote
+| Part of an ancient mask, or a fractured shard of someone's visage? With the full thing, you'd be better able to protect your shell.
+| [[Jubilana]]
+| Hr = SS
+}}
+
+<b>Mask Shards</b> are [[Items (Silksong)|Items]] in <i>[[Hollow Knight: Silksong]]</i> that are used to increase [[Hornet (Silksong)|Hornet]]'s [[Hornet (Silksong)#Health|Health]].
+
+== Use ==
+4 Mask Shards are needed to form an Ancient Mask, which increases Hornet's [[Hornet_(Silksong)#Health_and_Silk|maximum health]] by 1.
+
+With a total of 20 Mask Shards in the game, Hornet's health can be increased by 5, for a maximum of <b>10</b> permanent Masks.
+
+Completing a Mask will also fully restore Hornet's health.
+
+== How to Acquire ==
+A total of six Mask Shards are accessible in [[Act 1]], allowing for Hornet to have one additional Mask by the Act's completion.
+
+Ten more Mask Shards are accessible in [[Act 2]], allowing for four additional Masks by the Act's completion.
+
+Four more Mask Shards are accessible in [[Act 3]], allowing for a total of five additional Masks.
+
+{{Clear}}
+
+{| class="article-table" style="text-align: center;" width="100%" data-tpt-table-id="silksong-mask-shards"
+|-
+! 
+! Source
+! Requirements
+! Map
+|- data-tpt-row-no-checkbox 
+! colspan="4" | Accessible in [[Act 1]]
+|- data-tpt-rowspan="2"
+! rowspan="2" | 1
+| Bought from [[Pebb]] in [[Bone Bottom]] for {{R|300}}
+| Requires getting to [[Bone Bottom]]
+| [[File:Mapshot SS Pebb 01.png|150x150px|center]]
+|-style="border-top: 0.15rem dashed rgba(255, 255, 255, 0.3);"
+| In [[Act 3]], bought from [[Grindle]] in [[Blasted Steps]] for {{R|320}}
+| Requires [[Faydown Cloak]]
+| [[File:Mapshot SS Grindle 01.png|150x150px|center]]
+|-
+! 2
+| Lower [[Wormways]] accessed through [[Mosshome]]
+| Behind a breakable wall, just in front of the door requiring a [[Simple Key (Silksong)|Simple Key]]
+| [[File:Mapshot SS Mask Shard 02.png|150x150px|center]]
+|-
+! 3
+| A passageway between [[the Marrow]] and [[Deep Docks]]
+| Accessed from the Marrow. [[Cling Grip]] recommended
+| [[File:Mapshot SS Mask Shard 03.png|150x150px|center]]
+|-
+! 4
+| Area above [[Seamstress]]'s home in [[Far Fields]]
+| Requires [[Drifter's Cloak]]
+| [[File:Mapshot SS Mask Shard 04.png|150x150px|center]]
+|-
+! 5
+| Centre of [[Shellwood]]
+| At the end of a platforming challenge behind a breakable wall
+| [[File:Mapshot SS Mask Shard 05.png|150x150px|center]]
+|-
+! 6
+| East [[Weavenest Atla]]
+| Requires [[Needolin]]. Behind breakable wall
+| [[File:Mapshot SS Mask Shard 06.png|150x150px|center]]
+|- data-tpt-row-no-checkbox 
+! colspan="4" | Accessible in [[Act 2]]
+|-
+! 7
+| Sold by [[Jubilana]] in [[Songclave]] for {{R|750}}
+| Complete the <i>[[The Wandering Merchant]]</i> [[Wish]]
+| [[File:Mapshot SS Jubilana 01.png|150x150px|center]]
+|-
+! 8
+| West [[Cogwork Core]] past enemy gauntlet
+| Accessible after defeating the [[Cogwork Dancers]]
+| [[File:Mapshot SS Mask Shard 08.png|150x150px|center]]
+|-
+! 9
+| Behind moving box puzzle in central [[Whispering Vaults]]
+| None
+| [[File:Mapshot SS Mask Shard 09.png|150x150px|center]]
+|-
+! 10
+| Reward for completing the <i>[[Savage Beastfly (Wish)|Savage Beastfly]]</i> [[Wish]].
+| Defeat [[Fourth Chorus]] in [[Far Fields]] and [[Savage Beastfly]] in [[Hunter's March]], enter [[Songclave]]
+| [[File:Mapshot SS Bellhart Wishwall.png|150x150px|center]]
+|-
+! 11
+| Inside [[Far Fields#Special Rooms|Skull Cave]] in east [[Far Fields]]
+| Requires [[Clawline]] and [[Drifter's Cloak]]
+| [[File:Mapshot SS Mask Shard 11.png|150x150px|center]]
+|-
+! 12
+| Southwest [[Mount Fay]], west of the bench
+| Requires [[Faydown Cloak]]
+| [[File:Mapshot SS Mask Shard 12.png|150x150px|center]]
+|-
+! 13
+| Northeast part of [[the Slab]]
+| Requires [[Slab Keys|Key of Apostate]] and [[Faydown Cloak]]. Challenge can be skipped with [[Silk Soar]]
+| [[File:Mapshot SS Mask Shard 13.png|150x150px|center]]
+|-
+! 14
+| East [[Bilewater]]
+| At the end of a hallway filled with [[Slubberlug]]s
+| [[File:Mapshot SS Mask Shard 14.png|150x150px|center]]
+|-
+! 15
+| East [[Wisp Thicket]] 
+| Requires [[Faydown Cloak]].
+| [[File:Mapshot SS Mask Shard 15.png|150x150px|center]]
+|-
+! 16
+| West [[Blasted Steps]]
+| Requires [[Clawline]] and [[Faydown Cloak]]. Challenge can be skipped with [[Silk Soar]]
+| [[File:Mapshot SS Mask Shard 16.png|150x150px|center]]
+|- data-tpt-row-no-checkbox 
+! colspan="4" | Accessible in [[Act 3]]
+|-
+! 17
+| [[Mount Fay#Sub-area: Brightvein|Brightvein]]
+| Requires [[Silk Soar]]
+| [[File:Mapshot SS Mask Shard 17.png|150x150px|center]]
+|-
+! 18
+| East [[Far Fields]]
+| Complete the <i>[[Fastest in Pharloom]]</i> wish
+| [[File:Mapshot SS Sprintmaster Swift 01.png|150x150px|center]]
+|-
+! 19
+| Reward for completing the <i>[[Dark Hearts]]</i> wish
+| Complete [[SEEK: Awaiting the End]]
+| rowspan="2" | [[File:Mapshot SS Bellhart Wishwall.png|150x150px|center]]
+|-
+! 20
+| Reward for completing the <i>[[The Hidden Hunter]]</i> wish
+| Meet [[Skarrsinger Karmelita]] in [[Far Fields]]
+|}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Mask Shard 01.png!In Wormways
+|Image2 = Screenshot SS Mask Shard 02.png!In Deep Docks
+|Image3 = Screenshot SS Mask Shard 03.png!In Far Fields
+|Image4 = Screenshot SS Mask Shard 04.png!In Shellwood
+|Image5 = Screenshot SS Mask Shard 05.png!In Weavenest Atla
+|Image6 = Screenshot SS Mask Shard 06.png!In Cogwork Core
+|Image7 = Screenshot SS Mask Shard 07.png!In Whispering Vaults
+|Image8 = Screenshot SS Mask Shard 08.png!In Skull Cave (Far Fields)
+|Image9 = Screenshot SS Mask Shard 09.png!In Mount Fay
+|Image10 = Screenshot SS Mask Shard 10.png!In the Slab
+|Image11 = Screenshot SS Mask Shard 11.png!In Bilewater
+|Image12 = Screenshot SS Mask Shard 12.png!In Wisp Thicket
+|Image13 = Screenshot SS Mask Shard 13.png!In Blasted Steps
+|Image14 = Screenshot SS Mask Shard 14.png!In Brightvein (Mount Fay)
+}}
+
+== Achievements ==
+{{Achievements|allgames=silksong|Protected|Masked}}
+
+==Trivia==
+*In the 2019 <i>Silksong</i> demo, an empty mask in the inventory, labeled "Mask Pieces 2", had the description of <i>"Fine shards of an old mask. If fully assembled, masks can provide powerful protection from damage."</i><ref>[https://www.youtube.com/watch?v=Y8lvHT_IQbM Hollow Knight: Silksong Gameplay - Nintendo Treehouse: Live | E3 2019]</ref>
+
+{{Localisation
+|DEname = Maskenscherbe
+|DEmeaning = Mask Fragment
+|ESname = Fragmento de máscara
+|ESmeaning = Mask Fragment
+|FRname = Fragment de masque
+|FRmeaning = Mask Fragment
+|ITname = Frammento di maschera
+|ITmeaning = Mask fragment
+|JAname = 仮面の破片
+|JAromanised = Kamen no hahen
+|JAmeaning = Mask Fragment
+|KOname = 가면 조각
+|KOromanised = Gamyeon jogag
+|KOmeaning = Mask Piece
+|PTname = Fragmento de Máscara
+|PTmeaning = Mask Fragment
+|RUname = Обломок маски
+|RUromanised = Oblomok maski
+|RUmeaning = Mask fragment
+|TWname = 面具碎片
+|TWromanised = Miànjù suìpiàn
+|TWmeaning = same
+|ZHname = 面具碎片
+|ZHromanised = Miànjù suìpiàn
+|ZHmeaning = Mask Shard
+|CODEname = HEART_PIECE_1
+}}
+
+=== Ancient Mask ===
+{{Localisation
+|hr=false
+|DEname = Uralte Maske
+|DEmeaning = Ancient Mask
+|ESname = Máscara antigua
+|ESmeaning = Ancient Mask
+|FRname = Masque ancien
+|FRmeaning = Ancient Mask
+|ITname = Maschera antica
+|ITmeaning = Ancient Mask
+|JAname = 古代の仮面
+|JAromanised = Kodai no kamen
+|JAmeaning = Ancient Mask
+|KOname = 고대 가면
+|KOromanised = Godae gamyeon
+|KOmeaning = Ancient Mask
+|PTname = Máscara Antiga
+|PTmeaning = Ancient Mask
+|RUname = Древняя маска
+|RUromanised = Drevnjaja maska
+|RUmeaning = Ancient Mask
+|TWname = 遠古面具
+|TWromanised = Yuǎngǔ miànjù
+|TWmeaning = same
+|ZHname = 远古面具
+|ZHromanised = Yuǎngǔ miànjù
+|ZHmeaning = Ancient Mask
+|CODEname = HEART_PIECE_FULL
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[fr:Fragment de masque]]
+[[pt:Fragmento de Máscara (Silksong)]]
+
+[[Category:Items (Silksong)]]
+{{DISPLAYTITLE:Mask Shard (''Silksong'')}}

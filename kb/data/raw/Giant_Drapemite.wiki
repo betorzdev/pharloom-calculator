@@ -1,0 +1,105 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Giant Drapemite.png|Hunter's Journal
+Giant Drapemite Idle.png|Idle
+Sprite SS Giant Drapemite Hiding.png|Hidden
+</gallery>
+| hasdrop = true
+| sh1 = 7-11
+| sh2 = 9-14
+|health = 100/{{BT|200}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.25|1.15|1|1|1}}
+|numbers_required = 6
+}}
+
+{{Quote
+|Hr = Journal
+|Full-sized mite of the Citadel cloaked in an old curtain.<hr/>
+Few creatures of that Silk stricken place would find nourishment enough to grow so large.
+}}
+
+<b>Giant Drapemites</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are fully-grown [[Drapemite]]s garbed in old curtains.<ref>Giant Drapemite [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Full-sized mite of the Citadel cloaked in an old curtain."</i></ref>
+
+== Behaviour and Tactics ==
+Giant Drapemites are disguised as large rags among piles of rags and sheets, emerging once Hornet gets near, as indicated by rustling and dust being kicked up. In certain locations they will wait until after Hornet has passed by and ambush her from behind. Giant Drapemites will walk towards Hornet between attacks, turning around at edges. Once Hornet is in range, they will use one of two moves: 
+* <b>Wild Swipes:</b> Primes its claws and then lunges forward, slashing wildly in front of itself. Combos Hornet for {{Damage|1+1}} if she's hit by the attack. Due to Giant Drapemites often being in very tight areas, dashing backwards is often the only means of not getting hit.
+* <b>Retreat:</b> Scuttles backwards a set distance, often used after missing Wild Swipes and when Hornet is close. Note that it does not always do this, and may sometimes immediately perform another Wild Swipes.
+
+Contact with Giant Drapemites deals {{Damage|2}}.
+
+Dashing out of a Giant Drapemite's range and then dashing back in to counterattack is often the only strategy available, although [[Silk Skills]] and [[Tools]] can be used to defeat it from a distance.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Giant Drapemites have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Hidden long... waiting long...
+* Golden claws... snap them...
+* Scalding breath... take cover...
+* Double steps... strike quickly!
+}}
+
+== Location ==
+Five Giant Drapemites can be found in [[the Citadel]]. One is located in the [[Whiteward]], behind a breakable grate inside a vent leading to the [[Underworks]]. Another hides next to a stash of [[Rosaries]] in the [[Whispering Vaults]]. Two more reside in the [[High Halls]], within the waterworks below the room where the [[Cogfly]] tool is crafted. The last one is inside the [[High Halls#Rosary Bank|Rosary Bank]], which requires a [[Simple Key (Silksong)|Simple Key]] to unlock.
+
+{{Gallery
+|Image1 = Mapshot SS Giant Drapemite 03.png!Location in the Whiteward
+|Image2 = Mapshot SS Giant Drapemite 02.png!Location in the Whispering Vaults
+|Image3 = Mapshot SS Giant Drapemite 01.png!Locations in the High Halls (One inside the Rosary Bank)
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Giant Drapemite 01.png!In Whiteward
+|Image2 = Screenshot SS Giant Drapemite 02.png!In High Halls
+|Image3 = Screenshot SS Giant Drapemite 03.png!Disguised
+|Image4 = Screenshot SS Giant Drapemite 04.png!Emerging
+|Image5 = Screenshot SS Giant Drapemite 05.png!Idle
+|Image6 = Screenshot SS Giant Drapemite 06.png!Wild Swipes
+|Image7 = Screenshot SS Giant Drapemite 07.png!Retreat
+|Image8 = Screenshot SS Giant Drapemite 08.png!Returning to hiding
+|Image9 = Screenshot SS Giant Drapemite 09.png!Reacting to Needolin
+|Image10 = Screenshot SS Giant Drapemite 10.png!Disguised while being Black-Threaded in Act 3
+|Image11 = Screenshot SS Giant Drapemite 11.png!Black-Threaded in Act 3
+}}
+
+==Trivia==
+* Before update [[Updates_(Silksong)#1.0.29909|1.0.29909]], no audio played when Giant Drapemites reacted to the Needolin.
+* Giant Drapemites constantly shed particles while moving, which are the same particles that curtains and rags break into when destroyed.
+* Giant Drapemite's Needolin dialogue mentions "scalding breath" and "golden claws". This is likely referring to steam and the gilded spinning blades of fans frequently found in vents throughout the Citadel.
+* All five Giant Drapemites are found close to collectibles, acting as guards. Three are found close to Rosary caches (one being the Rosary Bank vault), one near a [[Shell Shard]] cache and one near a [[Psalm Cylinder]].
+
+{{Localisation
+|DEname = Riesen-Gardinenmilbe
+|DEmeaning = Giant Drapemite
+|ESname = Acarotina gigante
+|ESmeaning = Giant Drapemite
+|FRname = Tissomite Colossal
+|FRmeaning = Colossal Drapemite
+|ITname = Acaro dei Cenci Gigante
+|ITmeaning = Giant Rags Mite
+|JAname = オオヌノダニ
+|JAromanised = Ōnunodani
+|JAmeaning = Combination of {{lang|ja|大 <i>ō</i>}} (large), {{lang|ja|布}} <i>nuno</i> (cloth) and {{lang|ja|ダニ}} <i>dani</i> (mite).
+|KOname = 거대 장막진드기
+|KOromanised = Geodae jangmakjindeugi
+|KOmeaning = Giant Curtain Mite
+|PTname = Grudácaro Gigante
+|PTmeaning = Giant Drapemite
+|RUname = Гигантский полотняный клещ
+|RUromanised = Gigantskij polotnjanyj klešč
+|RUmeaning = Gigantic Linen Mite
+|TWname = 巨型帷蟎
+|TWromanised = Jùxíng wéi mǎn
+|TWmeaning = same
+|ZHname = 巨型帷螨
+|ZHromanised = Jùxíng wéi mǎn
+|ZHmeaning = Giant Drape Mite
+|CODEname=UNDERSTORE_MITE_GIANT
+|CODEmeaning= "Understore" internally refers to the [[Underworks]], which is where [[Drapemite]]s can be found
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

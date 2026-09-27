@@ -1,0 +1,235 @@
+{{Steel Soul Header|SS}}
+{{SS Infobox Tool
+| description = Quick access container formed from an old shell.<hr/>
+Increases the quantity of crafted tools.
+| type = Yellow
+| effect = Increase {{CrestSlot|Red|s}} capacity
+| location = [[Wormways]]
+}}
+
+{{Quote|Hr=SS
+|I see you have a tool pouch of your own there. Full to bursting with baubles and trinkets, no doubt!
+|[[Loddie]]
+}}
+
+The <b>Shell Satchel</b> is a {{CrestSlot|Yellow|1}} in <i>[[Hollow Knight: Silksong]]</i>. It increases the maximum quantity of {{CrestSlot|Red|s}} available to use.
+
+== Usefulness ==
+The specific increase for each Tool varies based on its carrying capacity and [[Tool Pouch]] upgrades.
+
+Swapping to a [[Crest]] that does not have the Shell Satchel equipped, unequipping the Shell Satchel, or obtaining a new Crest causes the extra tools to disappear, forcing Hornet to craft new ones when the Shell Satchel is re-equipped, using up her [[Shell Shards]] and potentially draining her [[Flea Brew]] and [[Plasmium Phial]] reserves.
+
+Obtaining a new Crest removes the tools even if the Shell Satchel is equipped in the Vesticrest.
+
+{| class="article-table sortable" style="text-align:center"
+! rowspan="2" | Tool
+! colspan="5" | Pouch Capacity per Upgrade<br>+ Shell Satchel
+|- class="sorttop"
+! None
+! ●○○○
+! ●●○○
+! ●●●○
+! ●●●●
+|-
+! style="text-align:left" | [[Straight Pin]]
+| 18
+| 21
+| 24
+| 27
+| 30
+|-
+! style="text-align:left" | [[Threefold Pin]]
+| 15
+| 17
+| 20
+| 22
+| 25
+|-
+! style="text-align:left" | [[Sting Shard]]
+| 9
+| 10
+| 12
+| 13
+| 15
+|-
+! style="text-align:left" | [[Tacks]]
+| 7
+| 8
+| 10
+| 11
+| 12
+|-
+! style="text-align:left" | [[Longpin]]
+| 15
+| 17
+| 20
+| 22
+| 25
+|-
+! style="text-align:left" | [[Curveclaw]]
+| 12
+| 14
+| 16
+| 18
+| 20
+|-
+! style="text-align:left" | [[Curvesickle]]
+| 12
+| 14
+| 16
+| 18
+| 20
+|-
+! style="text-align:left" | [[Throwing Ring]]
+| 15
+| 17
+| 20
+| 22
+| 25
+|-
+! style="text-align:left" | [[Pimpillo]]
+| 6
+| 7
+| 8
+| 9
+| 10
+|-
+! style="text-align:left" | [[Conchcutter]]
+| 12
+| 14
+| 16
+| 18
+| 20
+|-
+! style="text-align:left" | [[Silkshot]] ([[Mount Fay]])
+| 12
+| 14
+| 16
+| 18
+| 20
+|-
+! style="text-align:left" | [[Silkshot]] ([[Twelfth Architect]])
+| 18
+| 21
+| 24
+| 27
+| 30
+|-
+! style="text-align:left" | [[Silkshot]] ([[Forge Daughter]])
+| 22
+| 26
+| 30
+| 33
+| 37
+|-
+! style="text-align:left" | [[Delver's Drill]]
+| 13
+| 15
+| 18
+| 20
+| 22
+|-
+! style="text-align:left" | [[Cogwork Wheel]]
+| 7
+| 8
+| 10
+| 11
+| 12
+|-
+! style="text-align:left" | [[Cogfly]]
+| 6
+| 7
+| 8
+| 9
+| 10
+|-
+! style="text-align:left" | [[Voltvessels]]
+| 7
+| 8
+| 10
+| 11
+| 12
+|-
+! style="text-align:left" | [[Flintslate]]
+| 4
+| 5
+| 6
+| 6
+| 7
+|-
+! style="text-align:left" | [[Snare Setter]]
+| 7
+| 8
+| 10
+| 11
+| 12
+|-
+! style="text-align:left" | [[Flea Brew]]
+| 4
+| 5
+| 6
+| 6
+| 7
+|-
+! style="text-align:left" | [[Plasmium Phial]]
+| 4
+| 5
+| 6
+| 6
+| 7
+|}
+
+== How to Acquire ==
+The Shell Satchel can be found on a corpse in the northeast portion of the [[Wormways]] during {{Steel Soul Icon Mini|SS}} [[Steel Soul Mode (Silksong)|Steel Soul Mode]], replacing the [[Dead Bug's Purse]].
+
+{{Gallery
+|Image1 = Mapshot SS Dead Bugs Purse.png!Location in the Wormways
+|Image2 = Screenshot SS Dead Bug's Purse Room.png!Room where the Shell Satchel is acquired
+}}
+
+== Tool Combo Tips ==
+{{SS Table Tool Interactions
+| Tool1 = Plasmium Phial
+| Tool1Desc = With a fully upgraded [[Tool Pouch]] and the Shell Satchel equipped, Hornet can hold seven Plasmium Phials, which is enough to become [[plasmified]] by killing the [[Winged Lifeseed]]s of only one [[Plasmium Cocoon]]. This makes it possible to become plasmified before [[Act 3]] and without using the [[Architect Crest]].
+}}
+
+{{History
+|game = SS
+|1.0.29909 (Patch 5): Fixed an instance of tool quantity not updating correctly when unequipping Shell Satchel.
+}}
+{{Localisation
+|DEname = Panzerbeutel
+|DEmeaning = Shell Pouch
+|ESname = Saquito de coraza
+|ESmeaning = Shell Pouch
+|FRname = Sacoche en carapace
+|FRmeaning = Shell Sack
+|ITname = Borsa di carapace
+|ITmeaning = Shell Bag
+|JAname= 殻のサチェル
+|JAromanised= Kara no sacheru
+|JAkatakana = foreign
+|JAmeaning = Shell Satchel
+|KOname = 껍질 가방
+|KOromanised = Kkeopjil gabang
+|KOmeaning = Shell Backpack
+|PTname =  Mochila de Carapaça
+|PTmeaning = Shell Backpack
+|RUname = Панцирная сумка
+|RUromanised = Pancirnaja sumka
+|RUmeaning = Shell Bag
+|TWname = 甲殼包
+|TWromanised = Jiǎké bāo
+|TWmeaning = same
+|ZHname = 壳囊
+|ZHromanised = Ké náng
+|ZHmeaning = Shell Satchel
+|CODEname = SHELL_SATCHEL
+}}
+
+{{Refs|hr=SS}}
+
+
+{{SS Nav Tools}}
+[[Category:Steel Soul Mode (Silksong)]]
+[[fr:Sacoche en carapace]]

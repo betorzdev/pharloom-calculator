@@ -1,0 +1,115 @@
+{{SS Infobox Item
+| image = <gallery>
+Pale Oil.png|Inventory
+Pale Oil Pickup.png|Pickup
+</gallery>
+| description = Bile gland of a rare sylphean slug. Talented pinmasters can use the glistening liquid within to improve a blade's sharpness.
+| effects = Give to [[Pinmaster Plinney]] to upgrade [[Needle]]
+| type = [[Items (Silksong)#Tradables|Tradable]]
+| source = [[Choral Chambers]]<br>[[Wish]] reward
+| max = 3
+}}
+{{Quote|Hr=SS
+|Welly, ho! That oil! You have it! That rare substance, hoarded close by the Citadel. Few are the pinmasters of our age that ever chanced to work its wonders.
+|[[Pinmaster Plinney]]}}
+
+<b>Pale Oil</b> is a [[Items (Silksong)#Tradables|tradable item]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+Pale Oil can be brought to [[Pinmaster Plinney]] to upgrade [[Hornet (Silksong)|Hornet]]'s [[Needle]].
+
+The first Needle upgrade is completely free, while the following three require one Pale Oil each. The third upgrade also requires {{R|450}}, and the fourth requires {{R|680}}.
+
+{{Gallery
+|Image1 = File:Mapshot SS Pinmaster Plinney 01.png!Location of Pinmaster Plinney in [[Bellhart]]
+|Image2 = Screenshot SS Bellhart 10.png!Pinmaster Plinney in Bellhart
+}}
+
+{| class="article-table" align="center"
+! [[Needle]] Upgrade
+! style="width:5rem;" | Cost
+! Damage
+|-
+| Needle → Sharpened Needle
+| <center>Free</center>
+| 9 (+80%)
+|-
+| Sharpened Needle → Shining Needle
+| <center>[[File:Pale Oil.png|20x20px|Pale Oil]] 1</center>
+| 13 (+44.4%)
+|-
+| Shining Needle → Hivesteel Needle
+| <center>{{R|450}}<br>[[File:Pale Oil.png|20x20px|Pale Oil]] 1</center>
+| 17 (+30.8%)
+|-
+| Hivesteel Needle → Pale Steel Needle
+| <center>{{R|680}}<br>[[File:Pale Oil.png|20x20px|Pale Oil]] 1</center>
+| 21 (+23.5%)
+|}
+
+== How to Acquire ==
+A total of three Pale Oil glands can be obtained, two of which are in [[The Citadel]] (available in Act 2) and one from the [[Flea Caravan]] in [[Putrified Ducts]] (available in Act 3).
+
+{| class="article-table" width="100%" data-tpt-table-id="pale-oils"
+! 
+! style="width:8rem;" | Requires
+! Location
+! Map
+|-
+! 1
+| [[Cling Grip]]
+| In northeast [[Choral Chambers]], accessed through the adjoining room in [[Whispering Vaults]].
+| [[File:Mapshot SS Pale Oil 01.png|200px|center]]
+|-
+! 2
+| [[Swift Step]]<br>Cling Grip<br>[[Faydown Cloak]]
+| Reward from [[Loyal Mergwin]] upon completing <i>[[Great Taste of Pharloom]]</i>.
+| [[File:Mapshot SS Pale Oil 02.png|200px|center]]
+|-
+! 3
+| Rescue all [[Flea]]s<br>Be in [[Act 3]]
+| Reward from the [[Flea Caravan]] upon completing <i>[[Ecstasy of the End]]</i>.
+| [[File:Mapshot SS Pale Oil 03.png|200px|center]]
+|}
+
+== Gallery ==
+{{Gallery
+|Image1=Screenshot SS Pale Oil 01.png!In northeast Choral Chambers
+|Image2=Screenshot SS Choral Chambers 15.png!Pale Oil at Loyal Mergwin
+|Image3=Plinney Sharpen Cinematic (Oil).mp4!Needle sharpen cinematic using Pale Oil
+}}
+
+{{Localisation
+|DEname = Bleiches Öl
+|DEmeaning = Pale Oil
+|ESname = Aceite pálido
+|ESmeaning = Pale Oil
+|FRname = Huile Pâle
+|FRmeaning = Pale Oil
+|ITname = Olio pallido
+|ITmeaning = Pale Oil
+|JAname = 蒼白の油
+|JAromanised = Sōhaku no abura
+|JAmeaning = Pale Oil
+|KOname = 창백 기름
+|KOromanised = Changbaek gireum
+|KOmeaning = Pale Oil
+|PTname = Óleo Pálido
+|PTmeaning = Pale Oil
+|RUname = Бледное масло
+|RUromanised = Blednoe maslo
+|RUmeaning = Pale Oil
+|TWname = 蒼白油
+|TWromanised = Cāngbái yóu
+|TWmeaning = same
+|ZHname = 苍白油
+|ZHromanised = Cāngbái yóu
+|ZHmeaning = Pale Oil
+|CODEname = PLINNEY_TOOLS
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[pt:Óleo Pálido]]

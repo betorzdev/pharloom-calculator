@@ -1,0 +1,129 @@
+{{SS Infobox Crest
+|image1 = <gallery>
+Beast Crest Inventory.png|Inventory
+Beast Crest.png|HUD
+Beast Crest Activated.png|Activated
+</gallery>
+|description = Tear foes with savage slashes. Bind to enter a wild fury and steal life from prey.
+|skill = 1
+|red = 2
+|redlock = 0
+|blue =
+|yellow = 0
+|yellowlock = 2
+|attack = Close-range claw swipes
+|bind = Enter fury mode for 5 seconds:<br>
+Restore up to 3 Masks by striking enemies<br>
+Increased attack range, speed and damage
+|location = [[Chapel of the Beast]]
+}}
+
+{{Quote
+|Civilisation encroaches from this kingdom's crown, but the lowlands are still ruled by great beasts. Its roar stirs something deep within me, some primal instinct.
+|Hr = Hornet
+|[[Hornet (Silksong)|Hornet]]
+}}
+
+The <b>Beast Crest</b> is a [[Crest]] in <i>[[Hollow Knight: Silksong]]</i>. While equipped, [[Hornet (Silksong)|Hornet]] will slash aggressively with claw-like strikes. When using [[Bind]], Hornet will instead enter a fury state in which her attacks will become stronger and heal her when they hit enemies.
+
+== Attacks ==
+* Neutral Slashes: Hornet performs a quick overhead slash. When attacking upwards, the slash starts slightly behind Hornet.
+* Down-slash: Hornet pounces forward and spins like a sawblade after a slight delay, with a movement arc similar to a [[Swift Step|dash]] that curves downwards and can be adjusted slightly. On a successful hit, Hornet bounces up unless she is too far below the target.
+* [[Swift Step|Run-slash]]: Hornet hops up and slashes in a wide arc. On a successful hit, she leaps up while keeping some forward momentum.
+* [[Needle Strike]]: Hornet leaps forward and performs a large forward slash. Inflicts [[Heavy Damage]].
+
+== Mechanics ==
+[[Bind]] is performed much faster than normal (about 1 second), but instead of healing Masks directly, Hornet enters a fury state, indicated with a red visual effect on the edges of the screen and the Crest HUD. 
+
+* In this state, each Needle attack that hits an enemy heals 1 Mask, up to 3 Masks per Bind. The Masks that would be healed this way are outlined in red while fury is active. During fury, [[Needle]] attack range and speed are increased by 20%, Needle damage is increased by 25%, and attacks pierce through enemy guard stances, shields and armour. In addition, [[Needle Strike]] deals 3 x Needle damage instead of the usual 2.5.
+** The exclusion to the pierce are the parry and riposte moves of [[Second Sentinel]], [[Phantom]], [[Lace]] in [[the Cradle]] and [[Lost Lace]].
+* Fury ends after 4.7 seconds. The duration is extended by 1 second when a mask is healed, 0.5 seconds when a second mask is healed, and 0.25 seconds for a third. If Hornet does not have empty masks to heal, the duration will not be extended. Taking damage reduces the duration by 2.35 seconds.
+* When entering this state the frosting effect on [[Mount Fay]] is reversed by 15%, and while it is active the frosting rate is slowed by 10%.<ref>From the code, TickFrostEffect() and GetTotalFrostSpeed() functions in HeroCotroller class</ref>
+
+Entering fury while it is already active does not stack its effects, instead resetting the remaining time and Masks that can be healed.
+
+Hornet uses an alternate animation and deeper pitched voice line when using [[Challenge]]. 
+
+While Fury is active, Hornet uses an alternate idle animation and her attack shouts change to growling noises.
+
+Beast can be identified by the light red colour of Hornet's slash attacks, which is amplified while in fury.
+
+== Usefulness ==
+The Beast Crest is very aggressive, allowing Hornet to close gaps quickly and take advantage of openings with fury to deal large bursts of damage.
+* The Crest's [[Bind]] activates much faster than other Crests, creating more opportunities for Hornet to heal in combat as long as she can land hits.
+** The attack speed boost from fury makes it easier to build up [[Silk]] for another Bind or {{CrestSlot|Skill|1}} use. 
+** Binding at or near full Masks does not waste healing potential; Hornet can take damage while in fury and heal it back if she is quick enough.
+* The Down-slash has an altered trajectory that is useful for combat, allowing Hornet to bounce on enemies from the side as a short-range alternative to the [[Clawline]]. 
+** The slight delay of this attack requires some horizontal space between Hornet and her target; otherwise, she can miss the attack or take contact damage before it can hit. The distance requirement can be awkward in tight platforming sections.
+* The Run-slash allows her to leap over enemies, positioning her to strike from behind or continue running past them.
+* Weaknesses:
+** The Crest is limited by its lack of any {{CrestSlot|Blue|1}} slots.
+** Hornet cannot heal without enemies to attack.
+** In order to extend the duration of Fury, Hornet must have missing masks to heal; as a result, maximising Beast Crest's damage output requires strategically taking damage outside Fury.
+** Beast Crest's nonconventional down-slash can cause Hornet to take damage if she is not positioned correctly, and is the most difficult version to platform with.
+
+== Synergies ==
+* The {{CrestSlot|Blue|1}} slot of the [[Vesticrest]] is very valuable for this Crest once obtained, unlocking several helpful [[Tools|Tool]] options for combat:
+** [[Druid's Eye|Druid's Eye(s)]] helps with getting Silk to enter fury with, as Hornet needs to take damage outside of fury to maximise its duration anyway.
+** [[Claw Mirror|Claw Mirror(s)]] pairs well with the short Bind, making it easier to hit enemies with.
+** The range increase of fury stacks with [[Longclaw]].
+** The faster Bind time stacks with [[Injector Band]], shortening it to approximately two thirds of a second.
+*** [[Multibinder]] increases the potential healing up to 4 Masks, while increasing Bind duration to ~1.2 seconds. It does not increase the duration of fury, and actually healing a 4th Mask can be unreliable.
+* [[Flintslate]] can be used before entering fury to deal extreme bursts of damage.
+** Using [[Flea Brew]] in the same way is not recommended, as the attack speed buff it grants is significantly reduced when combined with fury. This is due to a cap on attack speed which is lower than the sum of both effects.
+* [[Weighted Belt]] can allow Hornet to stay on the offensive even when struck.
+* Due to the unusual arc of her down strike, fighting in the air can be much harder than normal. [[Ascendant's Grip]] can allow for less stressful combat by relying on walls, and [[Clawline]] can be used for more reliable hits on airborne enemies.
+** Similarly to the [[Hunter Crest]] and [[Architect Crest]], the [[Delver's Drill]] can function as a Pseudo Down-Slash for platforming and damaging enemies below Hornet.
+* [[Plasmium Phial]] is useful for emergency healing. Being [[plasmified]] is uniquely powerful on this Crest as its [[Bind]] will still recover the normal amount of [[Masks]], and it provides passive healing to make up for missed healing during fury.
+
+== How to Acquire ==
+The Beast Crest can be obtained inside the [[Chapel of the Beast]] after defeating the [[Savage Beastfly]].
+{{Gallery
+|Image1 = Mapshot SS Beast Crest.png!Location in Hunter's March
+|Image2 = BeastCrestBind.png!Hornet binding the Beast Crest
+}}
+
+== Gallery ==
+{| align="center" style="text-align:center"
+| {{#ev:youtube|https://www.youtube.com/watch?v=JFrkHpso9s0|250|center|Deep Dive}}
+|}
+
+{{History
+|game = SS
+|1.0.29280 (Patch 4): 
+*Fixed Beast Crest fury slashes not piercing as intended.
+*Fixed Beast's [[Needle Strike]] sometimes gaining unintended height when performed in the air.
+}}
+
+{{Localisation
+|DEname = Bestie
+|DEmeaning = Beast
+|ESname = Bestia
+|ESmeaning = Beast
+|FRname = Bête
+|FRmeaning = Beast
+|ITname = Bestia
+|ITmeaning = Beast
+|JAname= 獣者
+|JAromanised= Jūsha
+|JAmeaning = Beast-one<br><small>This is the same term used for [[Herrah the Beast]] in Japanese.</small>
+|KOname = 야수
+|KOromanised = Yasu
+|KOmeaning = Beast
+|PTname =  Besta
+|PTmeaning = Beast
+|RUname = Зверь
+|RUromanised = Zverʹ
+|RUmeaning = Beast
+|TWname = 野獸
+|TWromanised = Yěshòu
+|TWmeaning = same
+|ZHname = 野兽
+|ZHromanised = Yěshòu
+|ZHmeaning = Beast
+|CODEname = CREST_WARRIOR</code> <br> <code>BEAST
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+{{SS Nav Crests}}
+[[fr:Emblème Bête]]

@@ -1,0 +1,87 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Verdanir.png|Hunter's Journal
+Verdanir Idle.png|Idle
+Verdanir Airborne.png|Airborne Idle
+Verdanir Airborne 2.png|Airborne Idle Alt.
+</gallery>
+|drops = None
+|health = 100
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.35|1.15|1|1|1}}
+|numbers_required = 10<br>(Instantly completed on [[Clover Dancers]]' death)
+}}
+{{Quote
+|Hr = Journal
+|Darting warrior with sharpened forelimbs and heightened senses.<hr/>
+They rarely relax, always alert for potential danger, even deep in their own territory. To defeat them my focus must match their own.
+}}
+
+<b>Verdanirs</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are darting [[Verdanians|Verdanian]] warriors with sharpened forelimbs and heightened senses, always alert for potential danger.<ref>Verdanir Hunter's Journal entry: <i>"Darting warrior with sharpened forelimbs and heightened senses. They rarely relax, always alert for potential danger, even deep in their own territory."</i></ref>
+
+== Behaviour and Tactics ==
+Verdanirs are often hidden or idly squatting until Hornet comes near, upon which they reveal themselves and begin their blindingly fast assault.<br>
+Verdanirs zip around Hornet between attacks – they cannot be hurt whilst performing these dashes, nor can they deal contact damage. Verdanirs also always maintain distance from Hornet, and only approach via their attacks. Verdanirs have 4 moves:
+* <b>Double Slash:</b> Zips to be mostly horizontally away from Hornet, then performs 2 lunging slashes towards her, Comboing her for {{Damage|1+1}} if she gets hit by either slash.
+* <b>Corkscrew Dive:</b> Zips to be above Hornet and then dives downwards whilst slashing all around itself. Combos Hornet for {{Damage|1+1}} if she gets hit.
+* <b>Jumping Uppercut:</b> Performs a large, mainly vertical jumping uppercut into the air. This attack is very rare, and is most often used whilst Hornet is airborne and near the Verdanir. This attack also is more commonly used whilst the Verdanir is fighting alongside another enemy.
+* <b>Backdash:</b> Performs a short dash backwards and slightly upwards, often immediately zipping or performing a Double Slash at the end of the dash. This move is notably different from their usual zipping as they can be hurt during this dash, mainly used after missing a move and if Hornet is close to them.
+
+Verdanirs constantly zip away from Hornet if she approaches carelessly, so a bait-and-punish method must be used. Simply waiting until the Verdanir does a Double Slash or Corkscrew Dive and quickly taking advantage of the short moment where the Verdanir cannot act is essentially the only method to defeating them.
+
+== Location ==
+Verdanirs can be found exclusively in [[Lost Verdania]].
+{{Gallery
+|Image1 = Mapshot SS Verdanir 01.png!Location in Lost Verdania
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Verdanir 01.png!Hiding in foreground
+|Image2= Screenshot SS Verdanir 02.png!Before gauntlet
+|Image3= Screenshot SS Verdanir 03.png!Idle
+|Image4= Screenshot SS Verdanir 04.png!Double Slash attack
+|Image5= Screenshot SS Verdanir 05.png!Corkscrew Dive attack
+|Image6= Screenshot SS Verdanir 06.png!Jumping Uppercut attack
+|Image7= Screenshot SS Verdanir 07.png!Backdash
+|Image8= Screenshot SS Verdanir 08.png!Zipping around
+|Image9 = Ari SS Sketch 07.jpg!Concept Sketches
+}}
+
+== Trivia ==
+* Verdanirs do not respond to the [[Needolin]].
+
+{{Localisation
+|DEname = Verdanir
+|DEmeaning = —
+|ESname = Verdanir
+|ESmeaning = —
+|FRname = Verdanir
+|FRmeaning = —
+|ITname = Fiorprode
+|ITmeaning = Portmanteau of ''fiore'' (flower) and ''prode'' (brave)
+|JAname = ヴェルダニール
+|JAromanised = Verudanīru
+|JAkatakana = foreignenemy
+|JAmeaning = Verdanir
+|KOname = 베르다니르
+|KOromanised = Bereudanireu
+|KOmeaning = Verdanir
+|PTname = Verdanir
+|PTmeaning = —
+|RUname = Верданир
+|RUromanised = Verdanir
+|RUmeaning = Verdanir
+|TWname = 維達尼爾
+|TWromanised = Wéidáníěr
+|TWmeaning = same
+|ZHname = 维达尼尔
+|ZHromanised = Wéidáníěr
+|ZHmeaning = Verdanir
+|CODEname=GRASSHOPPER_SLASHER
+|CODEmeaning = [[Kindanir]]s and [[Escalion]]s are internally known as "Grasshoppers"
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Enemies}}
+
+[[zh:维达尼尔]]

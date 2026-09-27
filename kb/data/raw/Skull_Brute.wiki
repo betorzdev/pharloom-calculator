@@ -1,0 +1,97 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Skull Brute.png|Hunter's Journal
+Skull Brute Disguised.png|Disguised
+Skull Brute No Skull.png|No Skull
+</gallery>
+|health = 30/{{BT|60}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.8|0.75|0.6|0.6}}
+|numbers_required = 15
+| hasdrop = true
+| sh1 = 7-11
+| sh2 = 9-14
+|singnum = 1
+}}
+
+{{Quote
+|Hr = Journal
+|Soft bug beneath a huge, horned skull. Charges at intruders to protect its territory and its smaller companions.<hr/>Either its size has made it fearless or the Haunting has removed its sense of self-preservation.
+}}
+
+<b>Skull Brutes</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are large [[Skull Scuttlers]] that use huge, horned skulls, charging at intruders to protect their territory and smaller kin.<ref>Skull Brute [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Soft bug beneath a huge, horned skull. Charges at intruders to protect its territory and its smaller companions."</i></ref>
+
+== Behaviour and Tactics ==
+Skull Brutes pretend to be skulls until [[Hornet (Silksong)|Hornet]] gets close, after which their skulls shake and they pop out of the ground fully. They move back and forth on their platforms, turning at edges or when they meet a wall. They charge towards Hornet if they see her.
+
+Skull Brutes deal {{damage|2}} on contact, even when they have not emerged from hiding. Being wary of any large skulls on the ground or memorising which skulls are Skull Brutes can prevent suddenly getting hit.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Skull Brutes have their health doubled. They gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+*Rumbling, crackling...
+*Shells are strong...
+*Scratching, seeking...
+*Warm and dark...
+*Digging, hiding...
+*Claws are sharp...
+}}
+
+== Location ==
+Skull Brutes can be found primarily in [[the Marrow]], but they also appear in the [[Deep Docks]] and the [[Memorium]].
+
+{{Gallery
+|Image1 = Mapshot SS Skull Brute 01.png!Locations in the Marrow
+|Image2 = Mapshot SS Skull Brute 03.png!Locations in Deep Docks
+|Image3 = Mapshot SS Skull Brute 04.png!Location in Deep Docks in Act 3
+|Image4 = Mapshot SS Skull Brute 02.png!Location in the Memorium
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Skull Brute 01.png!In the Marrow
+|Image2= Screenshot SS Skull Brute 02.png!In Deep Docks
+|Image3= Screenshot SS Skull Brute 03.png!In the Memorium
+|Image4= Screenshot SS Skull Brute 04.png!Charging
+|Image5= Screenshot SS Skull Brute 05.png!Reacting to Needolin
+|Image6= Screenshot SS Skull Brute 06.png!Disguised
+}}
+==Trivia==
+*Skull Brutes had more HP as of 2019, taking 7 hits to kill at base Needle (~35 HP).<ref name="e3">[https://www.youtube.com/watch?v=Y8lvHT_IQbM Hollow Knight: Silksong Gameplay - Nintendo Treehouse: Live <nowiki>|</nowiki> E3 2019]</ref>
+{{Localisation
+|DEname = Schädelstürmer
+|DEmeaning = Skull Striker
+|ESname = Cráneo salvaje
+|ESmeaning = Savage Skull or Wild Skull
+|FRname = Gros Cornusque
+|FRmeaning = Big Horned
+|ITname = Teschio Bruto
+|ITmeaning = Brute Skull
+|JAname = ズガイリキ
+|JAromanised = Zugai riki
+|JAkatakana = enemy
+|JAmeaning = Combination of {{lang|ja|頭蓋}} zugai (skull) and {{lang|ja|力}} <i>riki</i> (strong).
+|KOname = 해골 야수벌레
+|KOromanised = Haegol yasubeolle
+|KOmeaning = Skull Beast Bug
+|PTname = Brutocrânio
+|PTmeaning = Skull Brute
+|RUname = Бодливый череп
+|RUromanised = Bodlivyj čerep
+|RUmeaning = Butting Skull
+|TWname = 顱骨蠻兵
+|TWromanised = Lúgǔ mán bīng
+|TWmeaning = Skull Barbaric Warrior
+|ZHname = 颅蛮虫
+|ZHromanised = Lú mán chóng
+|ZHmeaning = Skull Barbaric Bug
+|CODEname=BONE_GOOMBA_LARGE
+|CODEmeaning = Skull Scuttlers are internally called "Bone Goombas"
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[fr:Gros Cornusque]]

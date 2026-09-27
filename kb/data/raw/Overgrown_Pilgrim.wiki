@@ -1,0 +1,100 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Overgrown Pilgrim.png|Hunter's Journal
+Overgrown Pilgrim Idle.png|Idle
+Overgrown Pilgrim Without Shawl.png|Without Shawl
+</gallery>
+| health = 20/{{BT|80}} 
+| damage_modifiers = {{SS Spaced Damage Modifiers|1.4|1.2|1|1|1}}
+| hasdrop = true
+| r1 = 13
+| r2 = 20
+| sh1 = 3-5
+| sh2 = 4-7
+| drops = [[Pilgrim Shawl]]
+| numbers_required = 20
+|va=Lauren Koopowitz<ref name="va">[https://www.youtube.com/watch?v=pA7Id7lff6E Interview with Lauren Koopowitz]</ref>
+|singnum=2
+}}
+{{Quote
+|Hr = Journal
+|Aged pilgrim, overgrown with lichen and moss.<hr/>The moss looks to grow even inside their stomach, which the pilgrim spits at foes in compressed gobs. A foul form of offence.
+}}
+
+<b>Overgrown Pilgrims</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are aged pilgrims capable of spitting moss from within their stomachs.<ref>Overgrown Pilgrim [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Aged pilgrim, overgrown with lichen and moss. The moss looks to grow even inside their stomach, which the pilgrim spits at foes in compressed gobs. A foul form of offence."</i></ref>
+
+== Behaviour and Tactics ==
+Overgrown Pilgrims naturally wander, walking until they reach an edge or a wall, in which case they turn around and continue walking.
+Overgrown Pilgrims do not pursue Hornet, but alternate between the following moves if she is in range:
+* <b>Leap:</b> Leaps backwards a set distance, though they will shorten their leap to prevent going past the edge of a platform. If they are already at the edge of a platform, they instead perform a short jump forwards. This move is always immediately followed up with Moss Spit.
+* <b>Moss Spit:</b> Spits out a glob of moss at Hornet, which arcs through the air and disappears on impact with a surface. The projectile can be struck with the [[Needle]] to destroy it and create an opening for attack.
+** Overgrown Pilgrims can sometimes be found stationary at the edge of platforms. When in this state, they do not use Retreat Leap and relentlessly try to prevent Hornet from jumping to their platform. They go back to normal behaviour once Hornet lands on their platform.
+
+Attacking from above can be effective for avoiding their projectiles or, alternatively, just hitting the moss globs to get rid of them and staying on the Overgrown Pilgrim as they try to retreat.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Overgrown Pilgrims have their health quadrupled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* Caves grown holy...
+* Caves all green...
+* We shall join you...
+* Safe in damp and dim...
+}}
+
+== Location ==
+Overgrown Pilgrims can be found primarily in [[Mosshome]], though one can be found in a secret room in the eastern [[Wormways]] and another near the entrance to this location in [[Bonegrave]].
+
+{{Gallery
+| Image1 = Mapshot SS Overgrown Pilgrim 01.png!Locations in Bone Bottom
+| Image2 = Mapshot SS Overgrown Pilgrim 02.png!Locations in Bone Bottom in Act 3
+| Image3 = Mapshot SS Overgrown Pilgrim 03.png!Location in the Wormways
+}}
+
+== Gallery ==
+{{Gallery
+|Image1=Screenshot SS Overgrown Pilgrim 01.png!In Mosshome
+|Image2=Screenshot SS Overgrown Pilgrim 02.png!In the Wormways
+|Image3=Screenshot SS Overgrown Pilgrim 03.png!In Bonegrave
+|Image4=Screenshot SS Overgrown Pilgrim 04.png!Leap
+|Image5=Screenshot SS Overgrown Pilgrim 05.png!Moss Spit attack
+|Image6=Screenshot SS Overgrown Pilgrim 06.png!Reacting to the Needolin
+|Image7=Screenshot SS Overgrown Pilgrim 07.png!Without shawl during the <i>[[Garb of the Pilgrims]]</i> wish
+}}
+
+== Trivia ==
+*Overgrown Pilgrims share their voice with [[Underworker]]s.
+{{Localisation
+|DEname = Überwachsener Pilger
+|DEmeaning = Overgrown Pilgrim
+|ESname = Peregrino hipertrofiado
+|ESmeaning = Overdeveloped Pilgrim
+|FRname = Pèlerin Moussu
+|FRmeaning = Mossy Pilgrim
+|ITname = Pellegrino Infestato
+|ITmeaning = Infested Pilgrim
+|JAname = 苔むした巡礼者
+|JAromanised = Kokemushita junreisha
+|JAmeaning = Moss-covered Pilgrim
+|KOname = 이끼 낀 순례자
+|KOromanised = Ikki kkin sullyeja
+|KOmeaning = Pilgrim Stuck with Moss
+|PTname = Peregrino-musgoso
+|PTmeaning = Mossy Pilgrim
+|RUname = Заросший пилигрим
+|RUromanised = Zarosšij piligrim
+|RUmeaning = Overgrown Pilgrim
+|TWname = 滿身苔蘚的朝聖者
+|TWromanised = Mǎn shēn táixiǎn de cháoshèng zhě
+|TWmeaning = Moss-covered Pilgrim
+|ZHname = 苔蚀朝圣者
+|ZHromanised = Tái shí cháoshèngzhě
+|ZHmeaning = Moss Eroded Pilgrim
+|CODEname=PILGRIM_MOSS_SPITTER
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

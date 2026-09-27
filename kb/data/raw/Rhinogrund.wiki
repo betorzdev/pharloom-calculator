@@ -1,0 +1,164 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Rhinogrund.png|Hunter's Journal
+Rhinogrund Idle.png|Idle
+</gallery>
+|hasdrop = true
+|sh1 = 15-23<br/>20-28 ([[Memorium]])
+|sh2 = 19-29<br/>25-35 ([[Memorium]])
+|drops = [[Beast Shard]] ([[Pilgrim's Rest]] and [[Memorium]])
+|health = 150/{{BT|300}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.3|1|1|1|1}}
+|numbers_required = 2
+|singnum=1
+}}
+
+{{Quote
+|Long-horned beast of Pharloom's lowlands. Relies on its horn both to impale and to wrench the ground beneath it, flinging dangerous debris. <hr/> Certain tools and skills can pierce its defences. I should adjust my strategy as needed.
+| Hr = Journal
+}}
+
+<b>Rhinogrunds</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are large beasts able to fling dangerous amount of debris with their horns, and are invincible to most [[Tools]] and attacks towards their armoured front half.
+
+== In-game Events ==
+Only 3 Rhinogrunds exist in the game, and none of them respawn once killed.
+The first one appears in [[Pilgrim's Rest]], trapped behind the gate to the east of the room, repeatedly ramming it to try and escape.<br>
+If the gate is opened from inside before the Rhinogrund is killed, it will prioritise running out of the room, temporarily despawning, and will reappear, starting an event called "rhinoRuckus", after the following:
+* Hornet has broken the door mechanism to Mort's shop.
+* The gate to the Rhinogrund's room has been opened and it has <i>not</i> been killed.
+* Hornet has entered [[The Citadel]].
+Once these conditions are met, the Rhinogrund reappears inside [[Mort|Mort's shop]], with Mort cowering behind the counter. The Rhinogrund will display its behaviour of repeatedly charging into the left wall and stamping in this room, identical to when in its cage room.<br>
+If [[Pilby]]'s conditions are met at the same time as the rhinoRuckus is triggered, and is thus also currently in the room, he dies on contact with the Rhinogrund and does not receive any funeral.<br>
+The Rhinogrund will stay in this room until it is defeated, or Act 3 is triggered. If it is not killed by then, it disappears.
+If this imprisoned Rhinogrund had instead not been released before Act 3 is triggered, it will be found dead and bound by void-covered silk inside its room.<br>
+The second appears in the [[Memorium]], and the third one appears in the southwestern corridor of [[Far Fields]] after starting Act 3.
+
+== Behaviour and Tactics ==
+Rhinogrunds have different starting behaviours based on where they are located. The Pilgrim's Rest Rhinogrund repeatedly uses <b>Charge</b> into the gate or wall, roaring at Hornet and attacking her once it notices her.<br>
+In the [[Memorium]] and in [[Far Fields]] during Act 3, the Rhinogrund stays in place and does not wander naturally. Once it notices Hornet it will roar at her, indicating the beginning of its relentless assault.<br>
+Rhinogrunds have 3 different attacks and 1 feint that they use against Hornet:
+* <b>Charge:</b> Rears back and then gallops towards Hornet, only stopping once she is behind it or it hits a wall. It frequently turns around skidding and immediately performs another charge when Hornet gets behind it. It can also jump over small gaps or obstacles during the Charge, and deals 100 Damage to any other enemy it runs into.
+** Rhinogrunds always use this move to pursue Hornet if she attempts to run away and is out of range for its other attacks.
+
+* <b>Whirling Leap:</b> Tenses up and crouches, then leaps high towards Hornet, spinning wildly, and curls up to make its armour cover its whole body during the jump. It occasionally performs the jump again shortly after landing from the initial jump if Hornet is not behind it. The Rhinogrund can use this move to reach Hornet if she is on an elevated surface that the Rhinogrund cannot scale with Charge. This attack also deals 100 Damage to any other Enemies it makes contact with during the leap.
+
+* <b>Ground Wrench:</b> Jams its horns in the ground and, after a second of struggle, launches up a large amount of rocks and debris in Hornet's direction which travel in an arc with slight RNG variation. It also has a large vertical hitbox on its head as its horns get thrown back by the force of its wrenching, which also deals 100 damage to any other Enemies it hits. It cannot use this move twice in a row.
+
+* <b>Stamp:</b> Stamps its feet on the ground for about a second, then just picks another move to perform. This attack has a 15% chance of happening when the Rhinogrund is picking an attack.
+
+All of the Rhinogrund's attacks, including contact damage, deal {{Damage|2}}.
+
+Rhinogrunds have a unique constant invincibility to Hornet's [[Needle]] attacks and most [[Tools]] on the front half of their body. However, certain Tools and all [[Silk Skills]] pierce through this invincibility. This means that frequently using the correct Tools or any Silk Skill is a viable strategy to defeating them.<br>
+The Rhinogrunds can be counterplayed even without Tools, as Needle bouncing can be especially effective to hit their backside as they either Charge past or land from a Whirling Leap. Additionally, dashing over them as soon as they begin Ground Wrench can provide a large opening to get in a few hits, as they'll be stuck in the animation and won't be able to change the attack's direction once it's started.
+
+=== Tool Pierce Guide ===
+<b>Cannot pierce:</b>
+The following [[Tools]] bounce off of the Rhinogrund's front plating and only deal damage to its backside.
+* [[Straight Pin]]
+* [[Threefold Pin]]
+* [[Throwing Ring]]
+* [[Conchcutter]]
+* [[Silkshot]]  ([[Forge Daughter]] & [[Twelfth Architect]])
+* [[Delver's Drill]]
+
+<b>Can Pierce:</b>
+These Tools pierce through the Rhinogrund's armoured front shell and deal damage to it.
+* [[Longpin]]
+* [[Silkshot]] ([[Mount Fay]])
+* [[Rosary Cannon]]
+* [[Needle Phial]]
+
+<b>Can't pierce but can clip through:</b>
+While these Tools cannot deal damage to the front half of the Rhinogrund, they are not blocked by the Rhinogrund's hitbox and can still somewhat easily go through and hit its backside.
+* [[Sting Shard]]
+* [[Tacks]]
+* [[Curveclaw]]/[[Curvesickle]]
+* [[Pimpillo]]
+* [[Cogwork Wheel]]
+* [[Cogfly]]
+* [[Voltvessels]]
+* [[Snare Setter]]
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Rhinogrunds have their health doubled. They gain the [[Black-Threading#Movesets|Heavy Void Blobs]] attack.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2 |
+* Break through!
+* Vast... wild...
+* Gouging rock...
+* Scarred shell!
+}}
+
+== Location ==
+It is only possible to encounter three live Rhinogrunds per save.<br>
+The first Rhinogrund can be found east of [[Pilgrim's Rest]] in [[Far Fields]], trapped on the opposite side of a gate, repeatedly ramming the door to escape.<br>
+To access it, a platforming challenge via a hidden path in the lower-right corner of the region's Bellway station must be completed.<br>
+
+The second Rhinogrund can be found in Act 2 in the second layer of the [[Memorium]], located in [[The Citadel]].<br>
+
+The third one can be found in Act 3 in the tunnel area that connects [[Deep Docks]] and [[Far Fields]].<br>
+
+{{Gallery
+| Image1 = Mapshot SS Rhinogrund 01.png!First Rhinogrund's locations in [[Far Fields]]
+| Image2 = Mapshot SS Rhinogrund 03.png!Second Rhinogrund's location in the [[Memorium]]
+| Image3 = Mapshot SS Rhinogrund 02.png!Third Rhinogrund's location in Far Fields in Act 3
+}}
+
+== Gallery ==
+{{Gallery
+| Image1 = GIF SS Rhinogrund 01.gif!Ramming into the gate as seen from outside
+| Image2 = Screenshot SS Rhinogrund 01.png!Ramming into the gate in Far Fields
+| Image3 = Screenshot SS Rhinogrund 06.png!Corpse in Act 3
+| Image4 = GIF SS Rhinogrund 02.gif!Wreaking havoc in Pilgrim's Rest as seen from outside
+| Image5 = Screenshot SS Rhinogrund 02.png!Wreaking havoc in Pilgrim's Rest
+| Image6 = Screenshot SS Rhinogrund 03.png!Idle in the Memorium
+| Image7 = Screenshot SS Rhinogrund 07.png!Charge
+| Image8 = Screenshot SS Rhinogrund 08.png!Whirling Leap
+| Image9 = Screenshot SS Rhinogrund 09.png!Ground Wrench
+| Image10 = Screenshot SS Rhinogrund 10.png!Stamp
+| Image11 = Screenshot SS Rhinogrund 11.png!Reacting to Needolin
+| Image12 = Screenshot SS Rhinogrund 05.png!Black-threaded in Far Fields during Act 3
+| Image13 = Screenshot SS Rhinogrund 12.png!Heavy Void Drops
+}}
+
+== Trivia ==
+*The Rhinogrund is one of the few enemies that never respawns.
+* Rhinogrunds resemble real-life [https://en.wikipedia.org/wiki/Dynastinae Rhinoceros Beetles].
+* The caged Rhinogrund responds to the [[Needolin]] and [[Challenge]] from behind the gate, where the latter causes it to ram into the gate rapidly for six times.
+* During Act 3, the [[Far Fields]] Rhinogrund can Charge out of the left exit of the room and pass the invisible wall that keeps most enemies inside. However, it does not fully leave, and instead gets stuck on the other side and is unable to re-enter the room. Exiting and re-entering the room resets the Rhinogrund back to its original position.
+* The Rhinogrund will become Black-Threaded even after the [[Void Mass]] in the right side of the same room is destroyed. Instead of appearing Black-Threaded from the start, it will gain that appearance after triggering combat.
+
+{{Localisation
+|DEname = Rhinogrond
+|DEmeaning = Combination of rhino and {{lang|de|<i>grund</i>}} (ground).
+|ESname = Rinoterrestre
+|ESmeaning = Portmanteau of <i>rinoceronte</i> (rhinoceros) and <i>terrestre</i> (land-dwelling).
+|FRname = Groncéros
+|FRmeaning = Portmanteau of <i>gronder</i> (to growl or to grunt) and <i>rhinocéros</i> (rhinoceros).
+|ITname = Rinoterra
+|ITmeaning = Portmanteau of <i>rinoceronte</i> (rhinoceros) and <i>terra</i> (ground).
+|JAname = オオサイムシ
+|JAromanised = Ō sai mushi
+|JAkatakana = enemy
+|JAmeaning = Combination of {{lang|ja|大 <i>ō</i>}} (large), {{lang|ja|犀 <i>sai</i>}} (rhino) and {{lang|ja|虫 <i>mushi</i>}} (insect).
+|KOname = 코뿔야수
+|KOromanised = Koppullyasu
+|KOmeaning = Portmanteau 코뿔소 <i>koppullso</i> (rhinoceros) and 야수 <i>yasu</i> (beast).
+|PTname = Rinobesta
+|PTmeaning = Rhinobeast
+|RUname = Рогатый землелом
+|RUromanised = Rogatyj zemlelom
+|RUmeaning = Horned Groundbreaker, portmanteau of {{lang|ru|земля <i>zemlya</i>}} (ground) and {{lang|ru|ломать <i>lomat'</i>}} (break or crush).
+|TWname = 犀角掘地獸
+|TWromanised = Xījiǎo juédì shòu
+|TWmeaning = same
+|ZHname = 犀角掘地兽
+|ZHromanised = Xījiǎo juédì shòu
+|ZHmeaning = Rhino-horned Digging Beast
+|CODEname = RHINO
+}}
+
+{{SS Nav Enemies}}
+[[fr:Groncéros]]

@@ -1,0 +1,77 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Skrill.png|Hunter's Journal
+Skrill Idle.png|Idle
+</gallery>
+| hasdrop = true
+| sh1 = 2-3
+| sh2 = 3-4
+|health = 17
+|damage_modifiers = {{SS Spaced Damage Modifiers|2|1.25|1|1|1}}
+|numbers_required = 10
+}}
+{{Quote
+|Hr = Journal
+|Common crawler that lives beneath sand.<hr/>
+This surface dweller is free of Silk. Its nature remains its own. The monarch's influence must only have stretched below it.
+}}
+
+<b>Skrills</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are skittish, roach-like bugs found solely on the surface of [[Pharloom]], where they remain unaffected by the [[Haunting]].<ref>Skrill [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Common crawler that lives beneath sand. This surface dweller is free of Silk. Its nature remains its own."</i></ref>
+
+== Behaviour and Tactics ==
+Skrills stand still, chittering at random and turning around on occasion. They deal no damage on contact. When [[Hornet (Silksong)|Hornet]] approaches, damages them with [[Tools]], or alerts them with the [[Needolin]], the [[Challenge]] ability, or loud Tools, they skitter away before burrowing beneath the sand. After a Skrill is killed or retreats underground, another appears in its place once Hornet moves far enough away.
+
+== Location ==
+Skrills can be found on the [[Nameless Town|surface]] above Pharloom.
+
+{{Gallery
+|Image1 = Mapshot SS Skrill 01.png!Locations on the surface
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Skrill 01.png!Idle
+|Image2 = Screenshot SS Skrill 02.png!Chirping
+|Image3 = Screenshot SS Skrill 03.png!Turning
+|Image4 = Screenshot SS Skrill 04.png!Running
+|Image5 = Screenshot SS Skrill 05.png!Burrowing
+|Image6 = Screenshot SS Skrill 06.png!Corpse
+|Image7 = Screenshot SS Skrill 07.png!Reacting to the Needolin
+|Image8 = Screenshot SS Skrill 08.png!In the Nameless Town
+|Image9 = Screenshot SS Skrill 09.png!In the foreground
+|Image10 = Screenshot SS Skrill 10.png!In the background
+|Image11 = Screenshot SS Skrill Cutscene 1.png!Wandering during [[Mister Mushroom (Silksong)|Mister Mushroom]]'s ending cutscene
+}}
+
+== Trivia ==
+* Skrills do not sing when the [[Needolin]] is played near them and instead run away.
+
+{{Localisation
+|DEname = Skrill
+|DEmeaning = —
+|ESname = Skrill
+|ESmeaning = —
+|FRname = Skrill
+|FRmeaning = —
+|ITname = Carapillo
+|ITmeaning = Portmanteau of <i>carapace</i> (shell) and <i>grillo</i> (cricket).
+|JAname = スクリル
+|JAromanised = Sukuriru
+|JAkatakana = foreignenemy
+|JAmeaning = Skrill
+|KOname = 스크릴
+|KOromanised = Seukeuril
+|KOmeaning = Skrill
+|PTname = Skrill
+|PTmeaning = —
+|RUname = Скрилл
+|RUromanised = Skrill
+|RUmeaning = Skrill
+|ZHname = 沙行虫
+|ZHromanised = Shā xíng chóng
+|ZHmeaning = Sand Walker Bug
+|CODEname= SURFACE_SCUTTLER
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Enemies}}

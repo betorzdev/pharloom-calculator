@@ -1,0 +1,124 @@
+{{SS Infobox Boss
+|image1 = <gallery>
+B Plasmified Zango.png|Hunter's Journal
+Plasmified Zango Idle.png|Idle
+Zango Dead.png|Corpse
+</gallery>
+|location = [[Wormways]]
+|drops = None
+|health = 1000
+|damage_modifiers = {{SS Spaced Damage Modifiers|2|1.25|1.1|1|1}}
+|numbers_required = 1
+}}
+{{Quote
+|Hr = Journal
+|Husk of an alchemist's assistant granted false life by Plasmium.<hr/>
+He carelessly seeded these caves with that cursed substance... His final fate seems fair reward for those efforts, yet I feel some sympathy. It is an alluring power.
+}}
+
+<b>Plasmified Zango</b> is a [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. He is the corpse of [[Alchemist Zylotol]]'s assistant reanimated by [[Lifeblood|Plasmium]].<ref> Plasmified Zango [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Husk of an alchemist's assistant granted false life by Plasmium."</i></ref>
+
+== Background ==
+
+Zango served as [[Alchemist Zylotol]]'s assistant and shared his interest in [[Lifeblood|Plasmium]], believing the substance could give life to their dead lands.<ref>[[Alchemist Zylotol]]: <i>"You haven't met Zango, my assistant, by chance? An indolent sort? Short, slovenly, rather unreliable-seeming?"</i></ref><ref>Zango [[Needolin]] dialogue: <i>"To our dead lands... life... The buds must grow..."</i></ref> Together, they injected it into local flora and fauna to test its effects.<ref>Alchemist Zylotol: <i>"My assistant and I have been injecting Plasmium into the local flora and fauna since we arrived. No ill effects have been observed, and so we can conclude that the process is utterly, completely safe."</i></ref> Zango later died in the [[Wormways]] while carrying out Alchemist Zylotol's instructions to plant [[Plasmium Bud|Plasmium buds]] in the caves.<ref>Alchemist Zylotol: <i>"Now! Before he went and died, my previous assistant seeded the warrens below with Plasmium buds."</i></ref> Alchemist Zylotol describes Zango negatively, claiming he was indolent, unreliable, and never showed a talent for true discovery.<ref>Alchemist Zylotol: <i>"Ah ha! That careless buffoon. No surprises then. That lump never shone with the talent for true discovery."</i></ref>
+
+== In-game Events ==
+At first, Zango appears as a corpse, but after the [[Wormways]] are transformed by [[Lifeblood|Plasmium]] during [[Act 3]], his corpse is reanimated, and he becomes hostile.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+When [[Hornet (Silksong)|Hornet]] approaches Plasmified Zango, he shouts and initiates the fight.
+
+* <b>Regeneration</b>: When Plasmified Zango is not actively taking damage, he regenerates health at a rate of 25 health every 0.75 seconds. This regeneration can revert modifications to attacks brought on by health thresholds.
+* <b>Shuffle</b>: Plasmified Zango walks aimlessly forward, turning around upon reaching the edge of the arena.
+
+While below 950 HP, Plasmified Zango can use an additional attack:
+* <b>Plasmium Torrent</b>: Plasmified Zango occasionally stops moving to violently shake, releasing a volley of [[Lifeblood|Plasmium]] blobs in an arc on either side of him. The blobs are released in pairs for a total of 4–5 consecutive sets.
+
+While below 750 HP, Shuffle is much faster. Plasmium Torrent is now more frequent, sending out 6–7 sets of blobs that arc further with each volley.
+
+While below 500 HP, Shuffle is replaced by a new attack, Slide. Plasmium Torrent now sends out 8–9 sets of blobs at an even higher frequency, which travel even further, covering roughly the entire arena.
+* <b>Slide</b>: When Plasmified Zango is below 500 HP, he crouches and slides a short distance between Plasmium Torrents instead of shuffling.
+
+While below 250 HP, Plasmium Torrent increases even more in frequency, sending out blobs in 9–10 sets that fly further than the entire length of the room.
+
+Plasmium Blobs and contact with Plasmified Zango deal {{Damage|2}}. 
+
+Hornet is not locked into the room for this fight and can leave at any time.
+
+Extracting [[Plasmified Blood]] from Plasmified Zango using the [[Needle Phial]], obtained from initiating the <i>[[Alchemist's Assistant]]</i> or <i>[[Advanced Alchemy]]</i> [[wishes]], reduces his maximum HP by 250. This change persists even if Hornet leaves the room and returns. Zango dies after four successful extractions.
+
+<hr>
+
+Without access to the [[Needle Phial]], it is recommended to use [[Tools]] that allow Hornet to maintain distance, as Plasmified Zango's attacks become faster and he begins to use Slide. [[Silkshot]] (Original), [[Sting Shard]], and [[Tacks]] are especially useful. The high damage and attack speed of the [[Beast Crest]]'s fury can be used to out-damage the healing effect and continue to heal while attacking. The high attack speed of the [[Wanderer Crest]] can also be used to out-damage the healing, but taking some breaks to heal may be required. Using just [[Needle]] attacks can save shards that might otherwise be wasted due to Zango's healing.
+
+== [[Needolin]] Dialogue ==
+Plasmified Zango does not respond to the [[Needolin]]. However, his corpse can be found before [[Act 3]] and has an associated [[Needolin Locations#Wormways|Needolin memory]] with the following dialogue:
+
+{{SS Needolin|columns=2|
+* To our dead lands... life... 
+* The buds must grow...
+* Only a little... Only a spark... 
+* Too dark...
+}}
+
+== Location ==
+Plasmified Zango can be found in a secret room within the western [[Wormways]] during [[Act 3]].
+
+{{Gallery
+|Image1 = Mapshot_SS_Plasmified Zango_01.png!Location in the Wormways
+}}
+
+==Gallery==
+
+{{Gallery
+|Image1=Screenshot SS Wormways 06.png!Zango's corpse during Act 1–2
+|Image2=Screenshot SS Needolinwormways 4.png!Needolin memory during Act 1–2
+|Image3=Screenshot SS Plasmified Zango 01.png!Zango in his arena
+|Image4=Screenshot SS Plasmified Zango 02.png!Idle
+|Image5=Screenshot SS Plasmified Zango 03.png!Regeneration
+|Image6=Screenshot SS Plasmified Zango 04.png!Shuffle
+|Image7=Screenshot SS Plasmified Zango 05.png!Plasmium Torrent<br>(Below 950 HP)
+|Image8=Screenshot SS Plasmified Zango 06.png!Plasmium Torrent<br>(Below 750 HP)
+|Image9=Screenshot SS Plasmified Zango 07.png!Plasmium Torrent<br>(Below 500 HP)
+|Image10=Screenshot SS Plasmified Zango 08.png!Plasmium Torrent<br>(Below 250 HP)
+|Image11=Screenshot SS Plasmified Zango 09.png!Slide
+|Image12=Screenshot SS Plasmified Zango 10.png!Hornet using the Needle Phial on Zango
+|Image13=Screenshot SS Plasmified Zango 12.png!Zango's death chunks when using the Needle Phial
+|Image14=Screenshot SS Wormways 07.png!Arena
+|Image15=Screenshot SS Plasmified Zango 11.png!Zoomed out arena
+}}
+{{Localisation
+|DEname = Plasmifizierter Zango
+|DEmeaning = Plasmified Zango
+|ESname = Zango plasmificado
+|ESmeaning = Plasmified Zango
+|FRname = Zango Plasmifié
+|FRmeaning = Plasmified Zango
+|ITname = Zango Plasmificato
+|ITmeaning = Plasmified Zango
+|JAname= プラスミザンゴ
+|JAromanised= Purasumi zango
+|JAmeaning = Plasmium Zango
+|KOname = 플라스미움화된 장고
+|KOromanised = Peullaseumiumhwadoen janggo
+|KOmeaning = Plasmium-mutated Zango
+|PTname =  Zango Plasmificado
+|PTmeaning = Plasmified Zango
+|RUname = Плазмифицированный Занго
+|RUromanised = Plazmificirovannyj Zango
+|RUmeaning = Plasmified Zango
+|TWname = 原質異化的贊戈
+|TWromanised = Yuánzhì yìhuà de zàngē
+|TWmeaning = Protoplasm Mutated Zango<br><small>{{lang|zh-Hant|原質液 <i>yuánzhìyè</i>}} (protoplasm fluid) is [[Plasmium]] in Traditional Chinese.</small>
+|ZHname = 生质异化的赞戈
+|ZHromanised = Shēngzhì yìhuà de zàngē
+|ZHmeaning = Life Subtance Mutated Zango<br><small>{{lang|zh-Hans|生质液 <i>shēngzhìyè</i>}} (life substance fluid) is [[Plasmium]] in Simplified Chinese.</small>
+|CODEname=BLUE_ASSISTANT
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[pt:Zango Plasmificado]]

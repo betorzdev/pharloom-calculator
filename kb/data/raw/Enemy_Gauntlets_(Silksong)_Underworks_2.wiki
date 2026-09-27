@@ -1,0 +1,42 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Underworks_06.png|400px|center]]
+|[[File:Mapshot_SS_Underworks_Arena_2.png|400px|center]]
+|-
+| colspan="2" | Enemy gauntlet in the middle of the Underworks.
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>[[Spool Fragment]]</center>
+| <center>[https://www.youtube.com/watch?v=swPmNk9_fw0 Generic Enemy Battle A]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Underloft.png|35x35px|link=Underloft]] [[Underloft]], left<br/>
+[[File:HJ_Underworker.png|35x35px|link=Underworker]] [[Underworker]], left
+| Both enemies can be killed before the start of the gauntlet. In this case, they drop [[Rosaries]] and [[Shell Shards]], but will respawn upon re-entering the room.
+|-
+|
+[[File:HJ_Undersweep.png|35x35px|link=Undersweep]] [[Undersweep]], left<br/>
+[[File:HJ_Underpoke.png|35x35px|link=Underpoke]] [[Underpoke]], top left or right<br/>
+[[File:HJ_Underscrub.png|35x35px|link=Underscrub]] [[Underscrub]], right
+| Undersweep and Underscrub emerge from the floor shortly after the Underpoke descends.
+|-
+|
+[[File:HJ_Underloft.png|35x35px|link=Underloft]] Underloft, top left<br/>
+[[File:HJ_Undercrank.png|35x35px|link=Undercrank]] [[Undercrank]], right
+| Undercrank slams down from the ceiling.
+|-
+|
+[[File:HJ_Undercrank.png|35x35px|link=Undercrank]] Undercrank, centre
+| Undercrank slams down from the ceiling, smashes a hole in the arena floor, and then dies to the spinning gears below.
+|-
+|
+[[File:HJ_Underloft.png|35x35px|link=Underloft]] Underloft, top left<br/>
+[[File:HJ_Underpoke.png|35x35px|link=Underpoke]] Underpoke, top right
+|
+|}

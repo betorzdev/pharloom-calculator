@@ -1,0 +1,87 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Bloatroach.png|Hunter's Journal
+Bloatroach Idle.png|Idle
+</gallery>
+|health=80/{{BT|160}}
+| hasdrop = true
+| sh1 = 8-12
+| sh2 = 10-15
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.75|1.2|1|0.9|0.9}}
+|numbers_required = 12
+|singnum=1
+}}
+
+{{Quote
+|Hr = Journal
+|Obese offshoot of Muckroaches, born of the Citadel's exhaust smog. The winged roach's sagging stomach is filled with sizzling bile.<hr/>
+Its form is absurd... Surely it should not be able to hold itself in the air? The noxious gases in its stomach must provide its levity.
+}}
+<b>Bloatroaches</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are giant, floating relatives of the [[Muckroach]] mutated by the [[Exhaust Organ]]'s smog.
+
+== Behaviour and Tactics ==
+Bloatroaches float in the air, moving from their position only slightly. When in range, they attack by vomiting a cone of acid at [[Hornet (Silksong)|Hornet]]. Contact with the acid projectiles or the Bloatroach itself deals {{Damage|2}}. When approached, they float slowly backwards. They are immune to spikes.
+
+Bloatroaches can only aim their acid attack straight ahead and are incapable of attacking anything directly above or below them. Because of their size, they are easy to approach with the [[Clawline]] and Needle bounce off of repeatedly, as long as their backwards movement is followed. Their acid has extreme range and care should be taken when evading  them to avoid catching stray projectiles.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Bloatroaches have their health doubled. They gain one of the following [[Black-Threading#Movesets|void attacks]]: Void Blades, Void Tendrils, or Void Projectiles.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Gurgling... gasping...
+* Warm waters teeming...
+* Soft shells...
+* Meat inside...
+* Burn them... bite them...
+* Swallow them...
+}}
+
+== Location ==
+Bloatroaches can be found in [[Bilewater]].
+{{Gallery
+|Image1 = Mapshot SS Bloatroach 01.png!Bloatroach locations in Bilewater
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Bloatroach 01.png!Bloatroach in Bilewater
+|Image2 = Screenshot SS Bloatroach 02.png!Attacking
+|Image3 = Screenshot SS Bloatroach 03.png!Singing
+}}
+
+==Trivia==
+* The [[Spider Strings]] are most likely necessary to see their [[Needolin]] dialogue, since Bloatroaches are almost always floating just out of reach of the base Needolin range.
+*[[Groal the Great]] appears to have identical wings to those of a Bloatroach.
+
+{{Localisation
+|DEname = Schwellschabe
+|DEmeaning = Swollen Cockroach
+|ESname = Suciarachota
+|ESmeaning = Portmanteau of <i>sucia</i> (dirty) and <i>cucaracha</i> (cockroach) and <i>-ota</i> (augmentative suffix).
+|FRname = Férochard Boursouflé
+|FRmeaning = Bloated Muckroach
+|ITname = Scaragonfio
+|ITmeaning = Portmanteau of <i>scarafaggio</i> (roach) and <i>gonfio</i> (bloated).
+|JAname = フクレゴキブリ
+|JAromanised = Fukure gokuburi
+|JAkatakana = enemy
+|JAmeaning = Combination of {{lang|ja|膨れ}} <i>fukure</i> (bloated) {{lang|ja|蜚蠊}} <i>gokiburi</i> (cockroach).
+|KOname = 부푼바퀴
+|KOromanised = Bupunbakwi
+|KOmeaning = Bloated Cockroach
+|PTname = Baraiu
+|PTmeaning = From <i>barata<i> (roach).
+|RUname = Брюхатый таракан
+|RUromanised = Brjuxatyj tarakan
+|RUmeaning = Paunchy Cockroach
+|TWname = 浮腫蟑螂
+|TWromanised = Fúzhǒng zhāngláng
+|TWmeaning = same
+|ZHname = 浮肿蟑螂
+|ZHromanised = Fúzhǒng zhāngláng
+|ZHmeaning = Bloatroach<br><small>{{lang|zh-Hans|浮}}/{{lang|zh-Hant|浮 <i>fú</i>}} by itself also means to float.</small>
+|CODEname=BLOAT_ROACH
+}}
+{{Refs|hr=ss}}
+{{SS Nav Enemies}}

@@ -1,0 +1,89 @@
+{{Navbar
+|icons=true
+|page1=Hornet Statuette
+|page2=Shard Bundle
+|page3=Beast Shard
+|page4=Pristine Core
+|icon5={{Steel Soul Icon Mini|SS}} 
+|page5=Growstone
+}}
+
+{{SS Infobox Item
+| description = Intricate internal mechanism of a cogwork bug. Can be broken into individual shell shards for use in crafting.<hr>Breaks into 220 shell shards.
+| effects = Provides {{S|220}}
+| type = [[Items (Silksong)#Consumables|Consumable]]
+| source = [[Twelfth Architect]]<br>[[Cogwork Clapper]]
+| max = 2
+}}
+
+{{Quote
+|Hr=SS
+|The skill to construct an Architect... That was taken by t-t-time. I am the last-final. The core remains to sustain the song, but no more Architects to tend-toil or build anew.
+|[[Twelfth Architect]]
+}}
+
+<b>Pristine Cores</b> are [[Items (Silksong)#Consumables|consumable items]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+Can be used from the inventory to gain {{S|220}}.
+
+
+== How to Acquire ==
+There are two <b>Pristine Cores</b> that can be obtained:
+
+{| class="article-table" style="text-align: center;" width="100%" data-tpt-table-id="silksong-pristine-core"
+! 
+! Area
+! Location
+! Map
+|-
+! 1
+| [[Underworks]]
+| After purchasing all equipment from [[Twelfth Architect]] and obtaining the [[Architect's Melody]], speaking with it one last time and then sitting on a faraway [[Bench (Silksong)|bench]], upon returning it will be found dead. A Pristine Core will then be found on its corpse.
+| [[File:Mapshot SS Twelfth Architect 01.png|center|200x200px]]
+|-
+! 2
+| [[Cogwork Core]]
+| Dropped by one of the two [[Cogwork Clapper]]s in their storage room arena during [[Act 3]], after defeating both.
+| [[File:Mapshot SS Cogwork Clapper 02.png|center|200x200px]]
+|}
+
+== Gallery ==
+{{gallery
+|Image1 = Screenshot SS Silk Fly 05.png!Next to Twelfth Architect in Underworks
+|Image2 = Screenshot SS Cogwork Clapper 04.png!Dropped by one of two Cogwork Clappers in Cogwork Core
+}}
+
+{{Localisation
+|DEname = Makelloser Kern
+|DEmeaning = Flawless Core
+|ESname = Núcleo prístino
+|ESmeaning = Pristine Core
+|FRname = Noyau intact
+|FRmeaning = Intact Core
+|ITname = Nucleo intatto
+|ITmeaning = Intact core
+|JAname = 無傷の核
+|JAromanised = Mukizu no kaku
+|JAmeaning = Untainted Core
+|KOname = 온전한 핵
+|KOromanised = Onjeonhan haek
+|KOmeaning = Intact Core
+|PTname = Núcleo Imaculado
+|PTmeaning = Immaculate Core
+|RUname = Целое нутро
+|RUromanised = Celoe nutro
+|RUmeaning = Whole Innard
+|TWname = 純淨核心
+|TWromanised = Chúnjìng héxīn
+|TWmeaning = same
+|ZHname = 纯净核心
+|ZHromanised = Chúnjìng héxīn
+|ZHmeaning = Pristine Core
+|CODEname = PRISTINE_CORE
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+[[Category: Items (Silksong)]]

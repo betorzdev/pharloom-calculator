@@ -1,0 +1,209 @@
+{{SS Infobox Area
+| tab1 = Acts 1/2
+| image1 = <gallery>
+Hunter's March Map Marked.png|Marked
+Hunter's March Map Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Hunter's March Map Ruin Marked.png|Marked
+Hunter's March Map Ruin Clean.png|Unmarked
+</gallery>
+| connection = [[The Marrow]]<br>[[Deep Docks]]<br>[[Far Fields]]
+| ambience = [https://www.youtube.com/watch?v=eFWkGhlVhD4 Atmos Ant]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+| main = [https://www.youtube.com/watch?v=WzfNMTzIFZg Hunter's Trail]
+| action = [https://youtu.be/j1GHUxGtueY Hunter's Trail Action]<br>
+[https://www.youtube.com/watch?v=NRJe8xGWGK4 Dark Descent] (Act 3)
+}}
+{{Quote|Burrowed paths of the red-shells. Their stores and shrines are frequent throughout. These tunnels must grant them swift passage about the fields below.|[[Shakra]]
+| Hr = SS
+}}
+The <b>Hunter's March</b> is an [[Areas_(Silksong)|area]] in <i>[[Hollow Knight: Silksong]]</i>. A warm yet lush set of tunnels to the lowlands, the March is the territory of the [[Skarr]], an aggressive warrior tribe of red ants, and acts as the border between [[the Marrow]] and upper [[Far Fields]].
+
+== Description ==
+[[File:Screenshot SS Hunter's March 16.png|thumb|200px|left|Red pea pods above thorns]]
+Hunter's March consists mostly of natural tunnels, covered in foliage and crawling with small red ants. The area is often dark, lit only by silk fly lamps; while by itself benign, the darkness becomes dangerous when accompanied by the large number of traps placed around the March, which range from spikes and sickles to a breakable cage that traps Hornet temporarily. Besides traps, much of Hunter's March is covered by bright red thorns, which often necessitate needle bouncing on the equally red flowers; this red colour extends into the March's Skarr. Being the main territory of the Skarr, the red ant tribe is almost always the primary threat, often burrowing in and out of the March's ground to appear and strike quickly. Tiny non-hostile ants also scurry across the ground in this area, retrieving Skarr corpses after defeat as well as loose [[Shell Shards]] and [[Rosaries]].
+
+Hunter's March is composed of two sections, the first starting at an entrance from the Marrow and continuing onto a lengthy path through the March, with no rest points and numerous Skarr standing between Hornet and the tribe's valuables. The entrance is guarded by a massive [[Skarrgard]], but beyond the bulky warrior is a pseudo-gauntlet consisting of platforming, fighting, and dodging traps. For most of this section, safety and rest are rarely given, requiring near-constant vigilance when travelling; this only becomes more apparent the further Hornet travels through this path.
+
+At the end of this pseudo-gauntlet is a large, vertical section with blowing winds that require the [[Drifter's Cloak]] to properly scale. This leads to a set of rooms, including one with a large, finely-crafted statue of the tribe's leader, [[Skarrsinger Karmelita]]; a room with a trapped bench that can be made usable by deactivating the trap; a room of shell shards and a hidden path to the friendly [[Mottled Skarr]]; and a room with treasure guarded by a [[Spear Skarr]] and a Skarrgard. At the bottom is a path that leads to an exit to [[Deep Docks]]; this room is required to reach the Weaverspire that grants Hornet [[Swift Step]].
+
+== History ==
+{{For|Information about the history of the Skarr in general|Skarr}}
+
+Hunter's March is the border for the territory of the Skarr tribe; a series of tunnels acting both as an entrance to their territory and travel for the Skarr's hunters and warriors, allowing them to move about the fields below and nearby the area.<ref>[https://www.merriam-webster.com/dictionary/march Dictionary definition of march]</ref><ref>Shakra: ''"Burrowed paths of the red-shells. Their stores and shrines are frequent throughout. These tunnels must grant them swift passage about the fields below."''</ref> It is heavily guarded and trapped, exclusively populated by the red-ants and acting as a deterrent to outsiders wishing to wander into their territory.
+
+After Hornet arrives in Pharloom, she is forced to fight through a camp of Skarr on the outskirts of the March, in order to attain Swift Step. When she crosses the March from the Marrow, halfway through, she is ambushed by a large group of Skarr; if she is yet to exit the lowlands (through entering [[Greymoor]], [[Bellhart]], or [[Shellwood]]), [[Shakra]] will appear and assist her during the fight. If she does not help, Shakra will instead be in the tunnel leading to the Chapel of the Beast. During Acts 1 and 2, [[Gilly]] is found primarily in the March, observing and studying the Skarr and their territory for their inexplicable resistance to the Haunting.<ref>Gilly: ''"These fields still display life and growth, even as the lands around erode to dust."''
+
+Gilly: ''"The red-shells ... They are part of it, somehow, the life that flourishes here. Even haunted, they seem to lose less of themselves…"''</ref>
+
+During Act 3, Hunter's March is heavily affected by the [[Void]]; multiple Void Masses of Skarr bodies form, and the Skarr are vulnerable to [[Black-Threading]]. The entrances from Deep Docks becomes blocked off, once again requiring Hornet to fight through the now Void-afflicted March in order to unblock it. During the <i>[[Acts#The Old Hearts|SEEK: The Old Hearts]]</i> Objective, Hornet is required to cross through Hunter's March to reach the statue of Skarrsinger Karmelita, using Silk Soar to access the secret entrance into the rest of the Skarr's territory in upper Far Fields.
+
+== How to Access ==
+Hunter's March has two entrances; one from the Marrow, and one from Deep Docks. When entering from the Deep Docks entrance, Hornet is limited to the single room by a locked door, which can only be opened from the other side. The rest of Hunter's March can only be accessed through the Marrow entrance below the path up to Bellhart, guarded by a Skarrgard.
+
+In Act 3, the Deep Docks entrance is once again blocked off from the rest of the area, this time by rubble that can only be cleared from the other side. Hornet needs to go through the Marrow entrance once more.
+
+{{TabbedPOI
+|Header = true
+
+|NPC1 = Mottled Skarr
+|NPC2 = Shakra
+|NPC3 = Gilly
+
+|Enemy1 = Skarrlid
+|Enemy2 = Skarrwing
+|Enemy3 = Skarr Scout
+|Enemy4 = Skarr Stalker
+|Enemy5 = Spear Skarr
+|Enemy6 = Skarrgard
+|Enemy7 = Void Mass
+|Enemy7Note = ([[Act 3]] only)
+
+|Loot1_FileName = Curveclaw
+|Loot1_Description = bought from the [[Mottled Skarr]] or found in a room above if he has been killed
+|Loot2_FileName = Fractured Mask
+|Loot2_Description = bought from the [[Mottled Skarr]] or found on his corpse if he has been killed
+|Loot3_FileName = Memory Locket
+|Loot3_Amount = 1
+|Loot4_FileName = Flea
+|Loot4_Amount = 1
+|Loot5_FileName = Rosary Necklace
+|Loot5_Amount = 1
+
+|EnemyGauntletsSource = Hunter's March 1, Hunter's March 2, Hunter's March 3, Hunter's March 4, Hunter's March 5, Hunter's March 6
+}}
+
+== Sub-area: Chapel of the Beast ==
+
+{{SS Infobox Area
+|image1 = <gallery>
+Chapel_of_the_Beast_Map_Marked.png|Marked
+Chapel_of_the_Beast_Map_Clean.png|Unmarked
+</gallery>
+|ambience = [https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+|main = [https://www.youtube.com/watch?v=O-cYxAOIbVM Chapel Music]
+|action = [https://youtu.be/XxuhyHSa460?si=She9Ty8DcXaaOabo Rip & Shred]
+}}
+
+The <b>Chapel of the Beast</b> can be found at the south-east point of Hunter's March, requiring the Drifter's Cloak in order to be accessed. It is a structure of sharp bone, surrounded by cages and constantly shaken by the furious thrashing of a huge beast. The Chapel consists of a short platforming section, followed by a boss fight with the [[Savage Beastfly]] responsible for the structures rumbling. After killing the massive creature, Hornet can bind the corpse of a huge beast to obtain the [[Beast Crest]]. After binding the Beast Crest and leaving the sub-area, the door closes permanently.
+
+{{TabbedPOI
+|Enemy1 = Kilik
+|Enemy2 = Beastfly
+|Enemy3 = Caranid
+|Enemy4 = Vicious Caranid
+
+|Boss1 = Savage Beastfly
+
+|Loot1_FileName = Beast Crest File
+|Loot1_Name = Beast Crest
+}}
+{{Clear}}
+
+== Creation and Development ==
+{{Main|Cut Content (Silksong)/Areas#Hunters' Nest}}
+[[File:Silksong Early 019.png|thumb|220px|<i>Silksong</i> reveal trailer screenshot]]
+[[File:Hunter Nest 2021.webp|thumb|220px|Hunters' Nest in April 2021]]
+Hunter's March went through multiple changes throughout development, originally being much larger in size. It began development around August 2017 as an area with ant mound visuals, with "Bone Hunter Nest" being the earliest name used for the area. By September 2018, the area was given the name "Hunters' Nest" as it continued to grow, along with being planned to connect to additional areas such as the [[Far Fields]] and [[Greymoor]] (via [[Creige]]'s cellar). Around this time, the area was revealed to the public in the 2019 <i>Silksong</i> reveal trailer showcasing the then vast bone structures the area featured, along with [[Skarrsinger Karmelita]]'s arena.<ref>[https://www.youtube.com/watch?v=pFAknD_9U7c Hollow Knight: Silksong Reveal Trailer]</ref>
+
+Post May 2019, the area was reworked, its layout being revamped along with the ant mound visuals and bone structures being removed. After this, Hunters' Nest steadily increased in size as various sub-areas were added, such as a section for a [[Skarrgard]] [[Enemy Gauntlets (Silksong)|enemy gauntlet]], the [[Cut Content (Silksong)/NPCs#Beastmaster|Beastmaster]] Den (which was reworked into [[Chapel of the Beast]]), and a dungeon sub-area dedicated to [[Gurr the Outcast]]. This version of the area became the complete Hunters' Nest, however, around April 2022, several of the sub-areas were removed, reworked or moved to a different area completely as the area was downsized into the Hunter's March present in the final release of the game.
+
+The final iteration of the area, the Hunter's March, was revealed in the June 2022 <i>Xbox Game Pass Reveal Trailer</i>, which had a clip of the battle against the area-guarding Skarrgard.<ref name="xbox">[https://www.youtube.com/watch?v=JSfuFlhsxZY Hollow Knight: Silksong - Xbox Game Pass Reveal Trailer - Xbox & Bethesda Games Showcase 2022]</ref> According to [[Matthew Griffin|Matthew "Leth" Griffin]], [[Team Cherry]] does not intend or expect the player to enter the Hunter's March right away following the first visit to [[the Marrow]] in the final version of the game, due to the Hunter's March's higher difficulty, but still made it possible. Their vision was for it to be an area that is returned to later in the game.<ref>[https://www.youtube.com/watch?v=dAd-vua7ssg Silksong, a First Playthrough] (11:20:03), Live Chat, Leth: "<i>We watched you go thru Hunter's March - not supposed to go in there! But you did it!</i>"</ref> 
+
+The name of Hunter's March's theme internally contains "v4", implying that there were three revisions of the song previously composed.
+
+{{Gallery|
+|Title=Gallery
+|Image1= Screenshot SS Hunter's March 01.png!Arena near [[Deep Docks]]
+|Image2= Screenshot SS Hunter's March 02.png!Entrance Arena near [[the Marrow]]
+|Image3= Screenshot SS Hunter's March 03.png!Bone Arena
+|Image4= Screenshot SS Hunter's March Arena 3 Act 3.png!Bone Arena (Act 3)
+|Image5= Screenshot SS Hunter's March 04.png!Bench
+|Image6=Screenshot SS Hunter's March 05.png!Shell Shard Room
+|Image7=Screenshot SS Hunter's March 06.png![[Mottled Skarr]] (dead)
+|Image8=Screenshot SS Hunter's March 07.png![[Karmelita]] Statue 
+|Image9=Screenshot SS Hunter's March 08.png!Karmelita Statue (Act 3)
+|Image10=Screenshot SS Hunter's March 09.png!Chapel of the Beast Entrance (Open)
+|Image11=Screenshot SS Hunter's March 11.png!Chapel of the Beast Arena (Open)
+|Image12=Screenshot SS Hunter's March 13.png!Chapel of the Beast Corpse (pre-claiming)
+|Image13=Screenshot SS Hunter's March 14.png!Chapel of the Beast Corpse (post-claiming)
+|Image14=Silksong Early 019.png!<i>Silksong</i> reveal trailer
+}}
+
+== Trivia ==
+* When approaching the connection between Hunter's March and Deep Docks from the Docks side, a Skarr Scout can be seen observing Hornet, diving into the ground when she gets near. Similarly, at the start of the gauntlet fight required to get to Swift Step, one of the two Skarr Scouts that rests at the camp dives underground and does not reappear.
+* The name for the area's theme is "Hunter's Trail", a term also used internally. 
+* [[Skarr Stalker]]s can be seen running across the bridges in the far background of the vertical room east of Hunter's March.
+* While risky, Hunter's March can be accessed before Hornet has even entered Deep Docks, as all of the platforming is achievable without Swift Step.
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Slight increase in pea pod collider scale.
+}}
+{{Localisation
+|DEname = Jägermark
+|DEmeaning = Hunter March
+|ESname = Marcha del Cazador
+|ESmeaning = Hunter's March
+|FRname = Sentier du Chasseur
+|FRmeaning = Path of the Hunter
+|ITname = Marcia del Cacciatore
+|ITmeaning = Hunter's March
+|JAname = 捕食者の狩場
+|JAromanised = Hoshokusha no kariba
+|JAmeaning = Predator's Hunting Ground
+|KOname = 사냥꾼의 행진로
+|KOromanised = Sanyangkkunui haengjinno
+|KOmeaning = Hunter's Marching Route
+|PTname = Trilha de Skarr
+|PTmeaning = Skarr's Trail
+|RUname = Путь охотника
+|RUromanised = Put' oxotnika
+|RUmeaning = Hunter's Path
+|ZHname = 猎者小径
+|ZHromanised = Lièzhě xiǎojìng
+|ZHmeaning = Hunter's Trail
+|TWname = 獵手的行軍道
+|TWromanised = Lièshǒu de xíngjūn dào
+|TWmeaning = Hunter's Marching Road
+|CODEname=HUNTERS_NEST
+|CODEmeaning = Prior to its rework, Hunter's March was known as [[Cut Content (Silksong)/Areas#Hunters' Nest|Hunters' Nest]]
+}}
+===Chapel of the Beast===
+{{Localisation
+|hr=false
+
+|DEname = Kapelle der Bestie
+|DEmeaning = Chapel of the Beast
+|ESname = Capilla de la Bestia
+|ESmeaning = Chapel of the Beast
+|FRname = Chapelle De La Bête
+|FRmeaning = Chapel of the Beast
+|ITname = Cappella della Bestia
+|ITmeaning = Chapel of the Beast
+|JAname = 獣のチャペル
+|JAromanised = Kemono no chaperu
+|JAmeaning = Beast's Chapel
+|KOname = 야수의 예배당
+|KOromanised = Yasuui yebaedang
+|KOmeaning = Beast's Chapel
+|PTname = Capela da Besta
+|PTmeaning = Chapel of the Beast
+|RUname = Капелла Зверя
+|RUromanised = Kapella Zverja
+|RUmeaning = Chapel of the Beast
+|ZHname = 野兽教堂
+|ZHromanised = Yěshòu jiàotáng
+|ZHmeaning = Beast Chapel
+|TWname = 野獸教堂
+|TWromanised = Yěshòu jiàotáng
+|TWmeaning = same
+|CODEname=CHAPEL_BEAST</code><br><code>CHAPEL_WARRIOR
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Areas}}
+
+[[fr:Sentier du Chasseur]]
+[[zh:猎者小径]]

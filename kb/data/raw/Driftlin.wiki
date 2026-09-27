@@ -1,0 +1,89 @@
+{{SS Infobox Enemy
+|drops = None
+|health = 4/{{BT|8}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 20
+|singnum=1
+}}
+{{Quote
+|Hr = Journal
+|Gentle glider of Mount Fay. Its downy wings and cowl allow it to resist even the most cutting cold. <hr/>
+This one would make a perfect pet, but for the freezing temperatures it requires for comfort.
+}}
+
+<b>Driftlins</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They reside on [[Mount Fay]], where their downy wings and cowl allow them to resist freezing temperatures.<ref>Driftlin [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Gentle glider of Mount Fay. Its downy wings and cowl allow it to resist even the most cutting cold."</i></ref>
+
+== Behaviour and Tactics ==
+Driftlins float in place, dealing {{Damage|1}} on contact. After a Driftlin is killed, a new one takes its place shortly after.
+
+They are used primarily for traversal via [[Needle#Needle-bouncing|Needle-bouncing]] or the [[Clawline]].
+
+=== Act 3 ===
+[[Black-threaded]] Driftlins have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+The new Driftlin that spawns after defeating a black-threaded Driftlin is also black-threaded. Its void attack may differ from that of the previous one.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Lightly, lightly, oh so lightly...
+* Drifty, drifty, oh so nicely...
+* Mother, mother, gleam so brightly...
+* Glidey! Glidey! Glidey!
+}}
+
+== Location ==
+Driftlins can be found throughout [[Mount Fay]].
+
+Two Driftlins in the northeastern part of Mount Fay disappear once [[Pinstress]] arrives there, and return only once she leaves.
+
+{{Gallery
+|Image1 = Mapshot SS Driftlin 01.png!Locations in Mount Fay
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Driftlin 01.png!Idle
+|Image2 = Screenshot SS Driftlin 02.png!Reacting to the Needolin
+|Image3 = GIF SS Driftlin 01.gif!Flying in to replace a previously slain Driftlin
+|Image4 = Screenshot SS Driftlin 04.png!Killed by Pinstress
+|Image5 = Screenshot SS Driftlin 03.png!Modded screenshot of multiple Driftlins in the background without blur
+}}
+
+==Trivia==
+*The 1.0.27535 and 1.0.27776 versions of <i>Silksong</i> playable on PlayStation 4 and Nintendo Switch respectively, which are older than the PC launch version (1.0.28324), have the Driftlin be named Snowdlin.<ref>[https://docs.google.com/document/d/1GaNLkTTszFKFv55DZj3Iw1hTUi6gbstSR56WXizrMAI Silksong Switch full text] on Google Docs</ref>
+* Driftlins are likely related to the [[Fayforn]] due to visual similarities and their Needolin dialogue.
+* Driftlins have a [[Cut Content (Silksong)#Enemy Behaviours|cut]] "Blizzard Idle" behaviour, where they angle themselves and shake as if pushed by strong winds.
+
+{{Localisation
+|DEname = Schweblin
+|DEmeaning = Portmanteau of <i>schweben</i> (drift) and Driftlin.
+|ESname = Nievelín
+|ESmeaning = Portmanteau of <i>nieve</i> (snow) and Driftlin.
+|FRname = Neigelin
+|FRmeaning = Portmanteau of <i>neige</i> (snow) and Driftlin.
+|ITname = Nevolio
+|ITmeaning = From <i>neve</i> (snow).
+|JAname =フワリン
+|JAromanised = Fuwarin
+|JAmeaning = Portmanteau of {{lang|ja|ふわふわ <i>fuwafuwa</i>}} (soft or airy) and Driftlin.
+|KOname = 눈나방
+|KOromanised = Nunnabang
+|KOmeaning = Snow Moth
+|PTname =  Nevalévulo
+|PTmeaning = From <i>nevar</i> (to snow).
+|RUname = Снеголин
+|RUromanised = Snegolin
+|RUmeaning = Portmanteau of {{lang|ru|снег <i>sneg</i>}} (snow) and Driftlin.
+|TWname = 雪精靈
+|TWromanised = Xuě jīnglíng
+|TWmeaning = same
+|ZHname = 雪精灵
+|ZHromanised = Xuě jīnglíng
+|ZHmeaning = Snow Fairy
+|CODEname = PEAKS_DRIFTER
+|CODEmeaning = "Peak" internally refers to Mount Fay
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

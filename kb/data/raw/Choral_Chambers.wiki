@@ -1,0 +1,509 @@
+{{SS Infobox Area
+| tab1 = Act 2
+| image1 = <gallery>
+Choral Chambers Map Marked.png|Marked
+Choral Chambers Map Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Choral Chambers Map Ruin Marked.png|Marked
+Choral Chambers Map Ruin Clean.png|Unmarked
+</gallery>
+| connection = [[Bilewater]]<ref group="Note">Connects via a passageway through the Underworks after defeating Phantom.</ref><br/>[[Cogwork Core]]<br/>[[Grand Gate]]<br/>[[High Halls]]<br/>[[Memorium]]<br/>[[The Slab]]<br/>[[Underworks]]<br/>[[Whispering Vaults]]<br/>[[Whiteward]]
+| ambience = [https://www.youtube.com/watch?v=UdcTyq_aXXI Atmos Citadel Halls Pre Wakeup] (before awakening + Act 3)<br>
+[https://www.youtube.com/watch?v=62rByKODo9A Citadel Halls] (after awakening, Act 2)<br>
+[https://www.youtube.com/watch?v=GivJqT7ml0M Atmos Citadel Outside] (after awakening, Act 2)<br>
+[https://www.youtube.com/watch?v=imSH2Pv_sCo Atmos Crumbling World] (Act 3)<br>
+[https://www.youtube.com/watch?v=YWYwjaVGr_0 Atmos Cogwork Core] (near the windows facing the Cogwork Core)<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+| main = [https://www.youtube.com/watch?v=Vhw-hTtuo8A Ambient Citadel Surrounds] (before awakening)
+[https://www.youtube.com/watch?v=zKsT17-UnyM Choral Chambers] (after awakening)
+| action = [https://www.youtube.com/watch?v=swPmNk9_fw0 Generic Enemy Battle A]
+}}
+{{Quote
+|Your ringing halls... Your shining walls... The song... Where is the song? When may I rest? Is this the way?
+|[[The Choir#Pilgrim Choirbugs|Pilgrim Choirbug]]
+| Hr = SS
+}}
+The <b>Choral Chambers</b> is an [[Areas (Silksong)|area]] in [[the Citadel]] in <i>[[Hollow Knight: Silksong]]</i>. They are golden, [[Silk]]-lined halls that comprise the majority of [[the Citadel]]'s structure, inhabited by the [[Haunting|haunted]] members of [[the Choir]]. Entering the Choral Chambers marks the beginning of [[Act 2]].
+
+== Description ==
+[[File:Screenshot_SS_Choral_Chambers_11.png|thumb|200px|left|Eastern section of the Choral Chambers]]
+The Choral Chambers is the main and largest area of the Citadel. Grand, gold-adorned halls weave through the Citadel's towering structure. The corridors are lined with gilded trims and elegant Silk drapes befitting the religious centre and capital of [[Pharloom]]. Once a holy place of song, the Choral Chambers now lie in disrepair, inhabited by the reanimated Choir who have fallen to the [[Haunting]] by [[Grand Mother Silk]]. The members of the Choir here drop the most [[Rosaries]], showing that those in the Choral Chambers and the Citadel in general are very devoted to the religion of Pharloom.
+
+Golden bells hang from platforms in the vertical rooms, which [[Hornet (Silksong)|Hornet]] can [[Needle-bounce]]. Many platforms in the western part of the halls periodically move in and out of the walls, giving Hornet little time to platform.
+
+To the east, a large rotating hallway can be found. When a lever is struck at either entrance, the contraption rotates and opens up an entrance between the areas. This either connects the [[Cogwork Core]] to the [[Whispering Vaults]], or, in the other position, allows access to the upper east part of the chambers.
+
+The upper halls, connecting to the [[High Halls]] and the [[Memorium]], are long, grand hallways leading to the Cogwork Core. These are guarded by powerful [[Grand Reed]]s, who can fly and lash out with deadly Silk attacks. If Hornet enters the Cogwork Core, she is faced with the [[Cogwork Dancers]].
+
+Near the centre of the structure, [[Loyal Mergwin]] can be found, dedicated to serving his master, the [[Great Gourmand]], and providing food for their insatiable appetite. He gives Hornet a [[Pale Oil]] in exchange for completing the <i>[[Great Taste of Pharloom]]</i> wish. Another Pale Oil can be found in a room to the west, only accessible via the Whispering Vaults.
+
+Bell puzzles can be found in several locations around the Citadel, one of them being in the western section of the Choral Chambers. Solving it requires hitting the bells in the order they play. Solving the puzzle gives Hornet a [[Cogheart Piece]], three of which are used to assemble the Cogheart, which is required to repair the [[Second Sentinel]].
+
+The very eastern section of the Choral Chambers leads to a bridge that connects to [[the Slab]].
+
+== History ==
+The Choral Chambers was the area where the Choir used to sing, unknowingly keeping Grand Mother Silk sealed in slumber.<ref>[[The Choir#Disciples|Disciple of the Choir]] Needolin dialogue: <i>"Raise your voices, chosen few! The song sustains! Holy call of the Citadel... Fill the chambers, sacred song..."</i></ref><ref>Pontiff [[Needolin Locations#Whispering Vaults|Needolin dialogue]]: <i>"Damned bugs... We prayed a cage... We sang your chains... Divine Silk..."</i></ref> It was a wealthy area and contained many of the Citadel's facilities,<ref>Choral Chambers [[Needolin Locations#Choral Chambers|Needolin dialogue]]: <i>"...All our wealth... ...All our glory... ...All to end... like this? ...Beauty... faded..."</i></ref> such as a restaurant, a spa, and the main entrance to the theatre in the Whispering Vaults. Pilgrims from all over would make their way to the Citadel in the hope of receiving a great reward.<ref>[[Mort]]: <i>"The lands in every direction punish us, but such is our test. Above it all, the Citadel shines, our destination and our reward... I'll make it there, you'll see. I've easily earned my place in such a paradise."</i></ref><ref>[[Exhausted Pilgrim]]: <i>"My sore shell will cease tormenting me once I reach the Citadel. It's sung that all ails are healed just as soon as we step beyond the Grand Gate..."</i></ref> Those who were admitted entry to the Choral Chambers were initiated into [[the Choir]] to serve the Citadel.<ref>[[Choir Pouncer]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Agile bug, and one of few hardy pilgrims to have reached the Citadel."</i></ref><ref>[[Choir Cloak]] description: <i>"Garment gifted to pilgrims on admittance to the Citadel."</i></ref><ref>[[Choir Hornhead]] Hunter's Journal entry: <i>"Full-grown former pilgrim serving the Citadel."</i></ref> The Choirbugs had to fill the Choral Chambers with song, never allowed to waver or wither.<ref>Disciple of the Choir Needolin dialogue: <i>"Our voices will be heard! For our song, the precious Silk! Waver not! Wither not! All must gather! All must sing!"</i></ref><ref>[[Whiteward]] [[Lore Tablets (Silksong)#Whiteward|Lore Tablet]]: <i>"While song must be sung, none may falter."</i></ref> The ones who were too old or sickly to sing were sent to the [[Whiteward]], where [[Silk]] was inserted inside their bodies to extend their lives.<ref>Hornet and the [[Caretaker]] dialogue: <br><i>Hornet: "In the ward down below, I saw it clear, the hollowed husks, and the many torturous implements... machines to instill a bug with thread, that would see their life extended."<br>Caretaker: "Aye! That's it, in part! But there's more scale to it than all that. Just think of'em greedily shoving the Silk into their shells, the madness that overcame them, eternal life for mortal bugs! Then think on how long it's all gone on..."</i></ref> This eventually made the bugs of the Citadel become [[Haunting|haunted]] by Grand Mother Silk, who possessed them through the Silk within them.<ref>Hornet and the Caretaker dialogue: <br><i>Caretaker: "Have you done it yet, bellringer? Wriggled deep? Discovered the depths of obsession that brought this place so low?"<br>Hornet: "If you speak of this Citadel and its Silk, Caretaker, then yes, I now know the start of it."</i></ref> The Haunting turned the Choral Chambers and the rest of the Citadel into a gilded tomb,<ref>[[Choir Pouncer]] Hunter's Journal entry: <i>"Once one of Pharloom's favoured bugs, and yet their domain and their shells would have been the first to fall to the Haunting."</i></ref><ref>Hornet dialogue with the [[Seamstress]]: <i>"I have ventured high, seen the Citadel and its state. That place is long lost... generations lost, a gilded tomb, drowned in Silk dregs."</i></ref> and the Choir's voices fell silent.<ref>Hornet dialogue with the [[Second Sentinel]]: <i>"I had assumed as much. Yet look around you, gilded one. During your slumber, the Citadel has fallen, and its voices lay silent. This place is dead, or very nearly."</i></ref>
+
+== How to Access ==
+There are three ways into the Choral Chambers. After defeating the [[Last Judge]] and entering the [[Grand Gate]], a breakable wall in the upper portion of the area leads to a small alcove that connects to the Choral Chambers. If [[Hornet (Silksong)|Hornet]] instead takes the lift down to the [[Underworks]], the northeastern section of the area holds an openable connection that leads to the chambers.
+
+The alternate path is via [[Phantom]]. After defeating them in [[Exhaust Organ]], a lift leads to Grand Bellway and to the rest of the Choral Chambers.
+
+{{Gallery
+|Image1 = Screenshot SS Grand Gate 07.png!Broken wall in the Grand Gate
+|Image2 = Screenshot SS Underworks 18.png!Opening leading to the Choral Chambers in the Underworks
+}}
+{{TabbedPOI
+|Header = true
+
+|NPC1 = Grindle
+|NPC2 = Jubilana
+|NPC3 = Garmond and Zaza
+|NPC4 = Green Prince
+|NPC5 = Lace
+|NPC6 = Second Sentinel
+|NPC7 = Sherma
+|NPC8 = Loyal Mergwin
+|NPC9 = Great Gourmand
+
+|Enemy1 = Snitchfly
+|Enemy2 = Drapefly
+|Enemy3 = Drapemite
+|Enemy4 = Envoy
+|Enemy5 = Choir Pouncer
+|Enemy6 = Choir Hornhead
+|Enemy7 = Choir Bellbearer
+|Enemy8 = Choir Flyer
+|Enemy9 = Choir Elder
+|Enemy10 = Choristor
+|Enemy11 = Reed
+|Enemy12 = Grand Reed
+|Enemy13 = Clawmaiden
+|Enemy14 = Cogworker
+|Enemy15 = Void Mass
+|Enemy15Note = ([[Act 3]] only)
+
+|Loot1_FileName = Pale Oil
+|Loot1_Amount = 2
+|Loot1_Description = one is obtained after the <i>[[Great Taste of Pharloom]]</i> wish
+|Loot2_FileName = Silkeater
+|Loot2_Amount = 2
+|Loot3_FileName = Rosary Necklace
+|Loot3_Amount = 2
+|Loot4_FileName = Heavy Rosary Necklace
+|Loot4_Amount = 1
+|Loot5_FileName = Flea
+|Loot5_Amount = 2
+|Loot6_FileName = Cogheart Piece 1
+|Loot6_Name = Cogheart Piece
+|Loot6_Amount = 1
+
+|EnemyGauntletsSource = Choral Chambers
+}}
+
+== Sub-area: Grand Bellway ==
+
+{{SS Infobox Area
+| title = Grand Bellway
+| image1 = <gallery>
+Grand Bellway Map Marked.png|Marked
+Grand Bellway Map Clean.png|Unmarked
+</gallery>
+| ambience = [https://www.youtube.com/watch?v=UdcTyq_aXXI Atmos Citadel Halls Pre Wakeup] (before awakening + Act 3)<br>
+[https://www.youtube.com/watch?v=62rByKODo9A Citadel Halls] (after awakening, Act 2)<br>
+[https://www.youtube.com/watch?v=GivJqT7ml0M Atmos Citadel Outside] (after awakening, Act 2)<br>
+[https://www.youtube.com/watch?v=imSH2Pv_sCo Atmos Crumbling World] (Act 3)<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+| main = [https://www.youtube.com/watch?v=J6hVFLmuC3s Repose] (Act 2)<br>[https://www.youtube.com/watch?v=N9wonV-Q3c0 Reprieve] (Act 3)
+| nocat=true
+}}
+
+<b>Grand Bellway</b> consists of a [[Bellway]] station, a [[Bench (Silksong)|bench]], and a [[Ventrica Station]]. It is located in the southeast corner of the Choral Chambers. If Hornet accesses the Citadel through [[Sinner's Road]], she passes through Exhaust Organ, which leads into an alcove that drops her here.
+
+{{TabbedPOI
+|NPC1 = Bell Beast
+
+|Loot1_FileName = Memory Locket
+|Loot1_Amount = 1
+
+|Boss1 = Bell Eater
+|Boss1Note = (Appears in the first bellway hornet tries to use once [[Act 3]] starts)
+}}
+
+{{clear}}
+
+== Sub-area: Songclave ==
+{{SS Infobox Area
+| title = Songclave
+| image1 = <gallery>
+Songclave Map Marked.png|Marked
+Songclave Map Clean.png|Unmarked
+</gallery>
+| ambience = [https://www.youtube.com/watch?v=UdcTyq_aXXI Atmos Citadel Halls Pre Wakeup] (before ringing bell + Act 3)<br>
+[https://www.youtube.com/watch?v=62rByKODo9A Citadel Halls] (after ringing bell, Act 2)<br>
+[https://www.youtube.com/watch?v=GivJqT7ml0M Atmos Citadel Outside] (after ringing bell, Act 2)<br>
+[https://www.youtube.com/watch?v=imSH2Pv_sCo Atmos Crumbling World] (Act 3)<br>
+[https://www.youtube.com/watch?v=UZD12AngJKg Atmos Outside Wind]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+| main = [https://www.youtube.com/watch?v=eu_z8mvzz-0 Songclave] (Act 2)<br>
+[https://www.youtube.com/watch?v=i_2ZD3zJf3A Enclave Split Sub] (Act 3)
+| nocat=true
+}}
+
+<b>Songclave</b> is located at the northeast corner of the Choral Chambers, and becomes active after Hornet rings the bell bench in First Shrine. Managed by the [[Caretaker]], it serves as a respite for any pilgrims passing through. As more pilgrims populate the area, [[Jubilana]] sets up shop as its merchant, [[Sherma]] stops by to aid the injured, and [[Garmond & Zaza]] also can be found resting here. It also has a [[Wishwall]] where Hornet can take on wishes from its residents. 
+
+The "First Shrine" [[Ventrica Station]] can be found one floor above Songclave.
+
+During [[Act 3]], the entrance to First Shrine is destroyed. The Caretaker leaves to join his family in the [[Ruined Chapel]], giving the role of Caretaker to Sherma, who manages the care of any refugee bugs that have fled to the Songclave or have been rescued by the [[Second Sentinel]].
+{{TabbedPOI
+|NPC1 = Jubilana
+|NPC2 = Garmond and Zaza
+|NPC3 = Sherma
+|NPC4 = Caretaker
+|NPC5 = Humble Pilgrim
+|NPC6 = Pilgrim Preacher
+|NPC7 = Scared Pilgrim
+|NPC8 = Dejected Pilgrim
+|NPC8Note = ([[Act 3]] only)
+|NPC9 = Worried Pilgrim
+|NPC9Note = (Act 3 only)
+
+|Loot1_FileName = White Key
+|Loot1_Description = if not picked up before discovering Songclave, sold by [[Jubilana]] for {{R|220}}
+|Loot2_FileName = Heavy Rosary Necklace
+|Loot2_Amount = 3
+|Loot2_Description = * given for completing the <i>[[Fine Pins]]</i> wish
+* given for completing the <i>[[Cloaks of the Choir]]</i> wish
+* given for completing the <i>[[The Wailing Mother]]</i> wish
+}}
+
+=== Songclave Wishes ===
+<div class="mw-collapsible mw-collapsed" data-expandtext="Show List of Wishes" data-collapsetext="Hide List of Wishes">
+{{TaskEntry
+| top = true
+| header = <b><i>Accessible in [[Act 2]]</i></b>
+| id = Balm for the Wounded
+| title = [[Balm for the Wounded]]
+| description = For the sake of our ailing brothers and sisters, I will descend into the holy Whiteward and search for healing supplies. If you are able, please join me! Company will make the work much merrier.
+| objective = Search for traces of the pilgrim, Sherma, and track his location.
+Sherma was travelling to the Citadel's Whiteward.
+| location = <b><i>[[Choral Chambers|Songclave]] Wishwall</i></b>
+[[Sherma]] of Songclave
+| reward = [[Spool Fragment]]<br><i>Prerequisite for [[Silk and Soul]]</i>
+}}
+{{TaskEntry
+| id = The Wandering Merchant
+| title = [[The Wandering Merchant]]
+| description = The old merchant pilgrim, Jubilana, was seen wandering down in the Choral Chambers, but she never made it up here. Has some foul fortune befallen her?
+| objective = Search for traces of the merchant, Jubilana, and track her location.
+Jubilana was last seen in the lower Choral Chambers.
+| location = <b><i>[[Choral Chambers|Songclave]] Wishwall</i></b>
+Residents of Songclave
+| reward = Jubilana sets up shop in Songclave.<br><i>Prerequisite for [[The Lost Merchant]]</i>
+}}
+{{TaskEntry
+| id = The Lost Merchant
+| title = [[The Lost Merchant]]
+| description = Our dear merchant left to scavenge treasures from the Citadel's Memorium. She's been gone far too long. Please make sure she's safe!
+| objective = Search for traces of the merchant, Jubilana, and track her location.
+Jubilana was last seen near the Citadel's Memorium.
+| location = <b><i>[[Choral Chambers|Songclave]] Wishwall</i></b>
+Residents of Songclave
+| reward = Opens additional inventory to purchase from Jubilana.
+}}
+{{TaskEntry
+| id = Final Audience
+| title = [[Final Audience]]
+| description =  Attend this Sentinel's request, Hunter in Red. Meet in halls high, the chamber of its fellows. The way shall be marked.
+| objective = Track the Second Sentinel by their markers left near Songclave.
+| location = <b><i>[[Choral Chambers|Songclave]] Wishwall</i></b>
+[[Second Sentinel]]
+| reward = [[Reserve Bind]]
+}}
+{{TaskEntry
+| id = Silk and Soul
+| title = [[Silk and Soul]]
+| description = Oi! I'm wishin' for that bothersome bellringer! That you readin' this? Then head up top beside the shrine. Might be we two should have a little chat...
+| objective = Acquire the necessary components to build a powerful trap.
+* Maiden's Soul
+* Hermit's Soul
+* Seeker's Soul
+* Snare Setter
+| location = <b><i>[[Bellhart]] Wishwall / [[Choral Chambers|Songclave]] NPC</i></b>
+[[Caretaker]] of Songclave
+| reward = Unlocks the <i>[[DESTROY: Soul Snare]]</i> objective.
+}}
+{{TaskEntry
+| id = Fine Pins
+| title = [[Fine Pins]]
+| description = Our settlement sits defenceless! No more! When the worst comes, we must stand ready. Bring us pins of the choirbugs, those blades still sharp and strong.
+| objective = Hunt pin-wielding choirbugs of the Citadel and collect [[Fine Pin]]s.
+| location = <b><i>[[Choral Chambers|Songclave]] Wishwall</i></b>
+Residents of Songclave
+| reward = [[Heavy Rosary Necklace]]
+}}
+{{TaskEntry
+| id = Cloaks of the Choir
+| title = [[Cloaks of the Choir]]
+| description = Our haunted brethren wandering the great halls still wear their fine white cloaks. This settlement would greatly benefit from their protection. Please fetch some for us!
+| objective = Hunt cloaked choirbugs of the Citadel and collect [[Choir Cloak]]s from their bodies.
+| location = <b><i>[[Choral Chambers|Songclave]] Wishwall</i></b>
+Residents of Songclave
+| reward = [[Heavy Rosary Necklace]]
+}}
+{{TaskEntry
+| id = The Wailing Mother
+| title = [[The Wailing Mother]]
+| description = Horrible cries have been heard from that prison beside the Citadel. What profanities must be happening within to cause such an awful sound?
+| objective = Track down the wailing creature in the Slab and slay it.
+The creature can be tracked by its slime trail.
+| location = <b><i>[[Choral Chambers|Songclave]] Wishwall</i></b>
+Residents of Songclave
+| reward = [[Heavy Rosary Necklace]]
+}}
+{{TaskEntry
+| id = Building Up Songclave
+| title = [[Building Up Songclave]]
+| description = If this place must provide shelter for every ragged bug who wanders in, we'll need supplies and currency. So if you're reading this, empty your pockets!
+| objective = Donate rosaries to aid the growing Songclave.
+| location = <b><i>[[Choral Chambers|Songclave]] Wishwall</i></b>
+[[Caretaker]] of Songclave
+| reward = None<br><i>Prerequisite for [[Strengthening Songclave]]<br>Prerequisite for [[Silk and Soul]]</i>
+}}
+{{TaskEntry
+| id = Strengthening Songclave
+| title = [[Strengthening Songclave]]
+| description = How do all of these wretched, lost bugs keep finding their way here?! Each hungry and squalling for shelter! We need more rosaries, so empty your pockets.
+| objective = Donate rosaries to aid the growing Songclave.
+| location = <b><i>[[Choral Chambers|Songclave]] Wishwall</i></b>
+[[Caretaker]] of Songclave
+| reward = None<br><i>Prerequisite for [[The Lost Merchant]]<br>Prerequisite for [[Silk and Soul]]</i>
+}}
+{{TaskEntry
+| bottom = true
+| header = <b><i>Accessible in [[Act 3]]</i></b>
+| id = Pain, Anguish and Misery
+| title = [[Pain, Anguish and Misery]]
+| description = In the darkest of shadows, all is made clear. Pharloom draws its final breath, and we few remaining must bear its dying pain. Come to the Citadel's Stage and let us suffer together.
+| objective = Return to the Citadel's Stage, beside the Whispering Vaults.
+| location = <b><i>[[Choral Chambers|Songclave]] Wishwall</i></b>
+[[Tormented Trobbio|The Tormented One]]
+| reward = [[Claw Mirrors|Dark Mirror]]
+}}
+</div>
+
+== Sub-area: Citadel Spa ==
+{{SS Infobox Area
+| title = Citadel Spa
+|tab1= Act 2
+| image1 = <gallery>
+Citadel_Spa_Map_Marked.png|Marked
+Citadel_Spa_Map_Clean.png|Unmarked
+</gallery>
+|tab2= Act 3
+| image2 = <gallery>
+Citadel_Spa_Map_Ruin_Marked.png|Marked
+Citadel_Spa_Map_Clean.png|Unmarked
+</gallery>
+| ambience = [https://www.youtube.com/watch?v=UdcTyq_aXXI Atmos Citadel Halls Pre Wakeup] (before awakening + Act 3)<br>
+[https://www.youtube.com/watch?v=62rByKODo9A Citadel Halls] (after awakening, Act 2)<br>
+[https://www.youtube.com/watch?v=GivJqT7ml0M Atmos Citadel Outside] (after awakening, Act 2)<br>
+[https://www.youtube.com/watch?v=imSH2Pv_sCo Atmos Crumbling World] (Act 3)<br>
+[https://www.youtube.com/watch?v=u-j6oEvMQvM Lake Atmos]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+| nocat=true
+}}
+<b>Citadel Spa</b> is located one floor above the Choral Chambers Ventrica Station, though Hornet must first unlock its doors by moving through the showers' plumbing. She can relax there to enjoy its healing and Silk-restoring properties, and Sherma can also be found here taking a break from his pilgrimage.
+
+{{TabbedPOI
+|NPC1 = Sherma
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Choral Chambers 01.png!Grand Bellway
+|Image2 = Screenshot SS Choral Chambers 03.png!Bench near the Underworks entrance
+|Image3 = Screenshot SS Choral Chambers 04.png!Fountain near the Underworks entrance
+|Image4 = Screenshot SS Choral Chambers 20.png!Window with corpses
+|Image5 = Screenshot SS Caretaker 01.png!Songclave (initial)
+|Image6 = Screenshot SS Choral Chambers 02.png!Songclave (populated)
+|Image7 = Screenshot SS Choral Chambers 08.png!Citadel Spa
+|Image8 = Screenshot SS Choral Chambers 13.png!Dining chamber
+|Image9 = Screenshot SS Choral Chambers 14.png!Kitchen
+|Image10 = Screenshot SS Choral Chambers 15.png!Loyal Mergwin with a Pale Oil
+|Image11 = Screenshot SS Choral Chambers 16.png!Mergwin with the Great Gourmand
+|Image12 = Screenshot SS Choral Chambers 09.png!Bench near the High Halls
+|Image13 = Screenshot SS Choral Chambers 19.png!Large spool near the High Halls
+|Image14 = Screenshot SS Choral Chambers 18.png!Cogheart Piece room
+|Image15 = Screenshot SS Choral Chambers 22.png!Bridge to the Slab
+|Image16 = Gilded City Trailer.png!<i>Silksong</i> reveal trailer
+|Image17 = Silksong Early 008.png!Pre-release screenshot
+}}
+
+== Trivia ==
+*The 1.0.27535 version of <i>Silksong</i> playable on PlayStation 4, which is older than the PC launch version (1.0.28324), has First Shrine be named Citadel Shrine.<ref>[https://www.diffchecker.com/Nu85hOJA/ Comparison of 1.0.27535 (PlayStation 4) and 1.0.27776 (Early Nintendo Switch build)]</ref>
+* If the <i>[[OPEN: Grand Gate]]</i> objective is active, ringing First Shrine shows a notification indicating the objective has been updated, despite First Shrine not being required for the objective, nor has an update been made.
+
+{{Localisation
+|DEname = Chorkammern
+|DEmeaning = Choir Chambers
+|ESname = Cámaras Corales
+|ESmeaning = Choral Chambers
+|FRname = Alcôves de la Chorale
+|FRmeaning = Alcoves of the Choir
+|ITname = Stanze Corali
+|ITmeaning = Choral Rooms
+|JAname = 合唱の間
+|JAromanised = Gasshō no ma
+|JAmeaning = Chambers of the Choir
+|KOname = 합창의 방
+|KOromanised = Hapchangui bang
+|KOmeaning = Rooms of the Choir
+|PTname = Salões Harmônicos
+|PTmeaning = Harmonic Halls
+|RUname = Хоровые палаты
+|RUromanised = Xorovye palaty
+|RUmeaning = Choral Chambers
+|ZHname = 圣咏殿
+|ZHromanised = Shèng yǒng diàn
+|ZHmeaning = Psalm Halls or Psalm Temple
+|TWname = 聖詠殿
+|TWromanised = Shèng yǒng diàn
+|TWmeaning = same
+|CODEname = HIGH_HALLS
+|CODEmeaning = Original name for Choral Chambers, now used for a [[High Halls|different area]].
+}}
+===Grand Bellway===
+{{Localisation
+|hr = false
+|DEname = Großer Glockenweg
+|DEmeaning = Grand Bellway
+|ESname = Gran Vía Campana
+|ESmeaning = Grand Bell Way
+|FRname = Station des Clochevoies
+|FRmeaning = Bellway Station
+|ITname = Via Grancampana
+|ITmeaning = Grand-bell Way
+|JAname = 鐘鳴りの駅
+|JAromanised = Kane nari no eki
+|JAmeaning = Bell Ringing Station
+|KOname = 위대한 종의 길
+|KOromanised = Widaehan jongui gil
+|KOmeaning = Grand Bell Path
+|PTname =  Estação Via Campanária
+|PTmeaning = Bell Road Station
+|RUname = Звонкий узел
+|RUromanised = Zvonkij uzel
+|RUmeaning = Bell Ringing Junction
+|ZHname = 圣堡钟道
+|ZHromanised = Shèng bǎo zhōng dào
+|ZHmeaning = Holy Castle Bell Road<br><small>{{lang|zh-Hans|圣堡}} / {{lang|zh-Hant|聖堡}} <i>shèng bǎo</i> (holy castle) is the name of [[the Citadel]] in Chinese.</small>
+|TWname = 樞紐鐘道
+|TWromanised = Shūniǔ zhōng dào
+|TWmeaning = Hub Bell Road
+|CODEname = CITADEL_STATION
+}}
+=== First Shrine ===
+{{Localisation
+|hr = false
+|DEname = Erster Schrein
+|DEmeaning = First Shrine
+|ESname = Primer Santuario
+|ESmeaning = First Shrine
+|FRname = Premier Sanctuaire
+|FRmeaning = First Sanctuary
+|ITname = Primo Tempio
+|ITmeaning = First Temple
+|JAname = 最初の聖堂
+|JAromanised = Saisho no seidō
+|JAmeaning = First Shrine
+|KOname = 첫 번째 성소
+|KOromanised = Cheot beonjjae seongsu
+|KOmeaning = First Shrine
+|PTname = Primeiro Santuário
+|PTmeaning = First Shrine
+|RUname = Первый алтарь
+|RUromanised = Pervyj altar'
+|RUmeaning = First Shrine
+|ZHname = 始源钟殿
+|ZHromanised = Shǐ yuán zhōng diàn
+|ZHmeaning = Original Bellshrine
+|TWname = 原初鐘殿
+|TWromanised = Yuánchū zhōng diàn
+|TWmeaning = same
+|CODEname = CITADELSHRINE
+}}
+
+===Songclave===
+{{Localisation
+|hr = false
+|DEname = Sangesloge
+|DEmeaning = Song Lodge
+|ESname = Enclave Cancioneril
+|ESmeaning = Songbook Enclave
+|FRname = Chantsoir
+|FRmeaning = Evening Song
+|ITname = Suonclave
+|ITmeaning = Portmanteau of <i>suon</i> (sound) and enclave.
+|JAname = 歌の集落
+|JAromanised = Uta no shūraku
+|JAmeaning = Song Village
+|KOname = 노래 부르는 자들
+|KOromanised = Norae bureuneun jadeul
+|KOmeaning = Song Singing People 
+|PTname =  Cantoclave
+|PTmeaning = Songclave or Cornerclave
+|RUname = Уголок Песни
+|RUromanised = Ugolok Pesni
+|RUmeaning = Song Corner
+|ZHname = 圣歌盟地
+|ZHromanised = Shènggē méngdì
+|ZHmeaning = Hymn Alliance Land
+|TWname = 聖歌飛地
+|TWromanised = Shènggē fēidì
+|TWmeaning = Hymn Enclave
+|CODEname = ENCLAVE
+}}
+
+===Citadel Spa===
+{{Localisation
+|hr = false
+|DEname = Zitadellenbad
+|DEmeaning = Citadel Bath or Citadel Pool
+|ESname = Balneario de la Ciudadela
+|ESmeaning = Citadel Spa
+|FRname = Spa de la Citadelle
+|FRmeaning = Citadel Spa
+|ITname = Terme
+|ITmeaning = Hot Springs
+|JAname = 聖なる湯
+|JAromanised = Seinaru yu
+|JAmeaning = Holy Hot Spring
+|KOname = 성채 욕탕
+|KOromanised = Seongchae yogtang 
+|KOmeaning = Citadel Bathhouse
+|PTname =  Spa da Cidadela
+|PTmeaning = Citadel Spa
+|RUname = Купальни Цитадели
+|RUromanised = Kupalʹni Citadeli
+|RUmeaning = Citadel Bath
+|ZHname = 圣堡温泉
+|ZHromanised = Shèng bǎo wēnquán
+|ZHmeaning = Holy Castle Hot Springs<br><small>{{lang|zh-Hans|圣堡}} / {{lang|zh-Hant|聖堡}} <i>shèng bǎo</i> (holy castle) is the name of [[the Citadel]] in Chinese.</small>
+|TWname = 聖堡溫泉
+|TWromanised = Shèng bǎo wēnquán
+|TWmeaning = same
+|CODEname = CITADEL_SPA</code><br><code>BATHHOUSE
+}}
+
+{{hr|ss}}
+
+== Notes ==
+<references group="Note"/>
+{{Refs|hr=false}}
+{{SS Nav Areas}}
+[[Category:The Citadel]]
+
+[[zh:圣咏殿]]

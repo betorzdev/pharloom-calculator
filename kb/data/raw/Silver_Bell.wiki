@@ -1,0 +1,80 @@
+{{SS Infobox Item
+| image = <gallery>
+Silver Bell.png|Inventory
+Silver Bell Pickup.png|Pickup
+</gallery>
+| source = Found in [[Bellhart]] during the <i>[[Silver Bells]]</i> [[wish]]
+| type = [[Items (Silksong)#Deliverable|Deliverable]]
+| description = Finely forged bell made from a gleaming metal.
+}}
+
+{{Quote
+| When searching the bellveins carefully, you can sometimes find rare, silver bells. If we can salvage some, the material would be of great use!
+| Residents of [[Bellhart]]
+| Hr = SS
+}}
+
+<b>Silver Bells</b> are [[Items (Silksong)#Deliverables|deliverable items]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+Eight Silver Bells are required to complete the <i>[[Silver Bells]]</i> [[wish]], available from [[Bellhart]]'s [[wishwall]] after completing the <i>[[SAVE: The Threadspun Town]]</i> objective.
+
+{{Gallery
+|Image1 = Mapshot SS Frey 01.png!Location of the wishwall in Bellhart
+|Image2 = Screenshot SS Frey 01.png!Wishwall in Bellhart
+}}
+
+== How to Acquire ==
+Silver Bells can be found in the bellvein tunnels above and below [[Bellhart]] during the <i>[[Silver Bells]]</i> [[wish]]. They drop randomly in specific locations and need to be picked up.
+
+There are seven bell-spawning locations above the town and seven below it. When Hornet enters the room, each location determines which bell it contains, with a 75% chance for a regular bell and a 25% chance for a Silver Bell. The location then waits for Hornet to approach within 14 units before triggering the drop. If she does not enter this range before a 15-second timer expires, the bell drops automatically.
+
+Once dropped, a bell is guaranteed to remain for at least 8 seconds. After this time, if Hornet is more than 15 units away, the bell despawns and the location prepares a new drop. Once a Silver Bell is collected, its location prepares a new bell after 5-8 seconds. Each location cannot drop more than four regular bells in a row, and Silver Bells are limited to a maximum of two consecutive drops. Equipping the [[Magnetite Dice]] increases the limit for Silver Bells to three and raises their overall spawn chance to 30%.
+
+In practice, this means that the best way to complete the wish is to move around the area in loops. Underneath Bellhart, taking a circular route around the bellveins without exiting the room provides enough distance for dropped bells to despawn and reset. Alternatively, exiting the room despawns all currently dropped bells.
+
+Once eight Silver Bells have been collected, they cease to spawn.
+
+{{Gallery
+| Image1 = Screenshot SS Silver Bell 01.png!Spawn locations of Silver Bells in the upper bellveins (Composite map by [https://scripterswar.com/silksong/map RainingChain])
+| Image2 = Screenshot SS Silver Bell 02.png!Spawn locations of Silver Bells in the lower bellveins (Composite map by [https://scripterswar.com/silksong/map RainingChain])
+}}
+
+== Trivia ==
+[[File:Silver Furm.png|right|150x150px|link=Cut Content (Silksong)/Enemies#Silver Furm]]
+* There is an [[Cut Content (Silksong)/Enemies#Silver Furm|unused silver-belled variant]] of the [[Furm]]. Upon defeat, it would have dropped a single Silver Bell.
+{{Clear}}
+
+{{Localisation
+|DEname = Silberglocke
+|DEmeaning = Silver Bell
+|ESname = Campana de plata
+|ESmeaning = Silver Bell
+|FRname = Cloche argentée
+|FRmeaning = Silver Bell
+|ITname = Campana d'argento
+|ITmeaning = Silver Bell
+|JAname = 銀の鐘
+|JAromanised = Gin no kane
+|JAmeaning = Silver Bell
+|KOname = 은색 종
+|KOromanised = Eunsaek jong
+|KOmeaning = Silver Bell
+|PTname = Sino Prateado
+|PTmeaning = Silver Bell
+|RUname = Серебряный колокольчик
+|RUromanised = Serebrjanyj kolokol'čik
+|RUmeaning = Silver Bell or Silver Handbell
+|TWname = 銀色鈴鐺
+|TWromanised = Yínsè língdāng
+|TWmeaning = Silver Bell
+|ZHname = 银光铃铛
+|ZHromanised = Yínguāng língdāng
+|ZHmeaning = Silver Shine Bell
+|CODEname = BELLCLAPPER_ITEM
+|CODEmeaning = 
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Items}}

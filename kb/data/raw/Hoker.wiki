@@ -1,0 +1,94 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Hoker.png|Hunter's Journal
+Hoker Idle.png|Idle
+</gallery>
+| hasdrop = true
+| sh1 = 4-6
+| sh2 = 5-8
+|drops = [[Spine Core]]
+|numbers_required = 15
+|health = 15
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.8|0.55|0.55|0.8}}
+|singnum = 1
+}}
+
+{{Quote
+|Hr = Journal
+|Spine-shooting drifter of the lowlands.<hr/>
+Whatever admiration I had for its fleecy down is spoilt by its disturbing mask... and its steely spines.
+}}
+
+<b>Hokers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are spine-shooting drifters of [[Pharloom]]'s lowlands who have fleecy down and a mask.<ref>Hoker [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Spine-shooting drifter of the lowlands. Whatever admiration I had for its fleecy down is spoilt by its disturbing mask..."</i></ref>
+
+== Behaviour and Tactics ==
+Hokers hover idly, even if approached by Hornet. When hit or affected by [[Needolin]], they shoot sharp spines straight out from their body, which continue travelling until they hit Hornet or the environment. After a few moments, additional spines appear facing new directions. When defeated, the Hoker shoots one last volley of spines before dying. <br>
+Hokers can only have symmetrical spine configurations, and can have a maximum of 6 spines on their body at once.
+
+Attacking Hokers or playing the Needolin is required for the <i>[[Flexile Spines]]</i> [[Wish]] - Hornet must collect [[Spine Core]]s by striking the Hokers' spines after they have been expelled. [[Sting Shard]]s are incredibly effective at gathering the Spine Cores, as throwing a Sting Shard at the centre of a Hoker will kill it in one go and cause it to drop all primed spines on death in item form.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* Rising heat...
+* Dwellings deep...
+* Spines to spear...
+* Predators near...
+}}
+
+== Location ==
+Hokers can be found in the eastern [[Far Fields]], in rooms to the right of the [[Seamstress]]' house.
+
+The Hoker below the [[Far_Fields#Skull_Cave|Skull Cave]] starts to spawn only after the start of [[Act 2]].
+
+{{Gallery
+|Image1 = Mapshot SS Hoker 01.png!Locations in the Far Fields
+|Image2 = Mapshot SS Hoker 02.png!Locations in the Far Fields in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1=Screenshot SS Hoker 01.png!With two horizontal and two vertical spines
+|Image2=Screenshot SS Hoker 02.png!With four diagonal spines 
+|Image3=Screenshot SS Hoker 03.png!With four diagonal and two horizontal spines
+|Image4=Screenshot SS Hoker 04.png!With four diagonal and two vertical spines
+|Image5=Screenshot SS Hoker 05.png!Shooting spines
+|Image6=Screenshot SS Hoker 06.png!Reacting to Needolin
+|Image7=Screenshot SS Hoker 07.png!After shooting spines
+|Image8=Screenshot SS Hoker 08.png!Corpse
+}}
+
+{{Localisation
+|DEname = Hieker
+|DEmeaning = —
+|ESname = Pinchoso
+|ESmeaning = Spikey
+|FRname = Hokeur
+|FRmeaning = —
+|ITname = Rigonfio
+|ITmeaning = Swollen
+|JAname = ホーカー
+|JAromanised = Hōkā
+|JAkatakana = foreignenemy
+|JAmeaning = Hoker
+|KOname = 호커
+|KOromanised = Hokeo
+|KOmeaning = Hoker
+|PTname = Espinostro
+|PTmeaning = Portmanteau of <i>espinho<i> (spine or spike) and <i>rostro<i> (rostrum, a curved or spike-like appendage).
+|RUname = Хокер
+|RUromanised = Xoker
+|RUmeaning = Hoker
+|TWname = 絨棘蟲
+|TWromanised = Róng jí chóng
+|TWmeaning = same
+|ZHname = 绒棘虫
+|ZHromanised = Róng jí chóng
+|ZHmeaning = Velvety Spiny Bug
+|CODEname = SPINE_FLOATER
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+[[fr:Hokeur]]

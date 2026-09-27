@@ -1,0 +1,22 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Choir_Clapper_09.png|400px|center]]
+|[[File:Mapshot_SS_High_Halls_Arena_1.png|250px|center]]
+|-
+| colspan="2" | Enemy gauntlet in The Forum accessible in Act 3 that reuses the previous gauntlet's arena. Hornet is not locked into the arena. All enemies start off [[Black-Threading|black-threaded]].
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>[[Rune Harp]]</center>
+| <center>None</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Choir Clapper.png|35x35px|link=Choir Clapper]] Choir Clapper, left<br/>
+[[File:HJ_Minister.png|35x35px|link=Minister]] Minister, top centre
+| Minister descends shortly after initiating the Choir Clapper.
+|}

@@ -1,0 +1,65 @@
+{{Navbar|icons=true|page1=Maiden's Soul|page2=Hermit's Soul|page3=Seeker's Soul}}
+{{SS Infobox Item
+| image = [[File:Seeker's Soul.png]]
+| type = [[Items (Silksong)#Deliverable|Deliverable]]
+| source = [[Bilewater|Bilehaven]]
+| description = Cracked shell containing soul drawn from a long deceased bug.
+}}
+
+{{Quote
+| Find the husk of my cousin, claimed by the scorned bugs of the swamps.<br>A careless fool to let himself be taken, and dead they might be, but some glimmer of his soul can still be sensed.
+| [[Caretaker]]
+| Hr = SS
+}}
+
+The <b>Seeker's Soul</b> is a [[Items (Silksong)#Deliverables|deliverable item]] in <i> [[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+The Seeker's Soul can be given to the [[Caretaker]] in [[Songclave]] along with the [[Maiden's Soul]], [[Hermit's Soul]], and [[Snare Setter]] to complete the <i>[[Silk and Soul]]</i> Wish.
+
+{{Gallery
+|Image1 = Mapshot SS Sherma 07.png!Location in Choral Chambers
+|Image2 = Screenshot SS Caretaker 01.png!Caretaker in Choral Chambers
+}}
+
+== How to Acquire ==
+The Seeker's Soul can be found at [[Bilewater#Sub-area: Bilehaven|Bilehaven]] in [[Bilewater]] after defeating [[Groal the Great]]. It is below a corpse of a [[Snail Shamans|Snail Shaman]] which shrivels up after the Seeker's Soul is acquired.
+
+{{Gallery
+|Image1 = Mapshot SS Seeker's Soul.png!Location in Bilewater
+|Image2 = Screenshot SS Bilewater 04.png!Room where the Seeker's Soul is acquired 
+}}
+
+{{Localisation
+|DEname = Sucherseele
+|DEmeaning = Seeker Soul
+|ESname = Alma del buscador
+|ESmeaning = Seeker's Soul
+|FRname = L'âme du chercheur
+|FRmeaning = The Searcher's Soul
+|ITname = Anima del cercatore
+|ITmeaning = Seeker's Soul
+|JAname = 求者の魂
+|JAromanised = Kyūsha no tamashii
+|JAmeaning = Seeker's Soul
+|KOname = 추적자의 영혼
+|KOromanised = Chujeokjaui yeonghon
+|KOmeaning = Seeker's Soul
+|PTname =  Alma de Colecionador
+|PTmeaning = Collector's Soul
+|RUname = Душа искателя
+|RUromanised = Duša iskatelja
+|RUmeaning = Seeker's Soul
+|TWname = 追尋者之魂
+|TWromanised = Zhuīxún zhě zhīhún
+|TWmeaning = same
+|ZHname = 追寻者之魂
+|ZHromanised = Zhuīxún zhě zhīhún
+|ZHmeaning = Seeker's Soul
+|CODEname = SNARE_SOUL_SWAMP_BUG
+|CODEmeaning = 
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}

@@ -1,0 +1,78 @@
+{{SS Infobox Enemy
+|drops = —
+|health = —
+|numbers_required = 40
+}}
+{{Quote
+|Hr = Journal
+|Shell plated worm that lives beneath pools of shifting sand.<hr/>
+Bursts forth at movement sensed close, and will consume any object or bug careless enough to fall into its maw.
+}}
+
+<b>Sandcarvers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are aggressive shell plated worms that live beneath pools of shifting sand, bursting forth when movement is sensed nearby.<ref>Sandcarver Hunter's Journal entry: <i>"Shell plated worm that lives beneath pools of shifting sand. Bursts forth at movement sensed close,"</i></ref>
+
+== Behaviour and Tactics ==
+Sandcarvers act as an environmental hazard, bursting out of loose sand pits when Hornet draws near and damaging her similarly to spikes or thorns, dealing {{Damage|1}} and resetting her location to the last solid ground she occupied. Other enemies can be defeated by knocking them into Sandcarver-infested sand.
+
+Sandcarvers can be defeated with tools such as [[Cogwork Wheel]], [[Pimpillo]], and [[Sawtooth Circlet]] to add them to the [[Hunter's Journal (Silksong)|Hunter's Journal]]; however, this does not negate the danger, since new Sandcarvers immediately spawn from the same area. {{CrestSlot|Skill|s}} <i>cannot</i> kill Sandcarvers.
+
+== Location ==
+Sandcarvers can be found in sand pits in the [[Blasted Steps]] and the [[Sands of Karak]].
+{{Gallery
+|Image1 = Mapshot SS Sandcarver 01.png!Locations in the Blasted Steps
+|Image2 = Mapshot SS Sandcarver 02.png!Locations in the Sands of Karak
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Sandcarver 01.png!In the Blasted Steps
+|Image2 = Screenshot SS Sandcarver 02.png!In the Sands of Karak
+|Image3 = Screenshot SS Sandcarver 03.png!Attacking
+|Image4 = Screenshot SS Sandcarver 04.png!Hornet killing Sandcarvers
+}}
+
+== Trivia ==
+* While Sandcarvers do not respond to the [[Needolin]], they have the following [[Cut Content (Silksong)/Text#Sandcarver|unused Needolin text]]:
+{{SS Needolin|columns=2|
+* Churning, shifting...
+* Scouring wind!
+* Hard bone beneath...
+* Rattling, wriggling...}}
+* When dead [[Enemies (Silksong)|enemies]] land near Sandcarvers, they lash out at the dead body. Enemy corpses that land in Sandcarver pits will be consumed.
+** In the case of [[Watcher at the Edge]], the [[Grey Memento]] will be spat out.
+{{Gallery
+|Image1 = Screenshot SS Watcher at the Edge 14.png!Grey Memento spat out by Sandcarvers
+}}
+* Sandcarvers may release a red cloud of dust when Hornet gets devoured by them. This is only for aesthetic purpose.
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Sandcarvers were changed to deal 1 damage instead of 2.
+}}
+{{Localisation
+|DEname = Sandwühler
+|DEmeaning = Sand Burrower
+|ESname = Tallador de arena
+|ESmeaning = Sand Carver
+|FRname = Fouisseur des Sables
+|FRmeaning = Burrower of the Sands
+|ITname = Squarciasabbia
+|ITmeaning = Sand Tearer
+|JAname = スナモグリ
+|JAromanised = Suna moguri
+|JAmeaning = Combination of {{lang|ja|砂}} <i>suna</i> (sand) and {{lang|ja|潜り}} <i>moguri</i> (diver).
+|JAkatakana = enemy
+|KOname = 모래저밈벌레
+|KOromanised = Moraejeomimbeolle
+|KOmeaning = Sand-dwelling Bug
+|PTname = Escavareia
+|PTmeaning = Portmanteau of <i>escavar</i> (dig or excavate) and <i>areia</i> (sand).
+|RUname = Пескорез
+|RUromanised = Peskorez
+|RUmeaning = Combination of {{lang|ru|песко}} <i>pesko</i> (sand) and {{lang|ru|рез}} <i>rez</i> (to cut or to carve). 
+|ZHname = 沙噬虫
+|ZHromanised = Shā shì chóng
+|ZHmeaning = Sand-eating Worm
+|CODEname=SAND_CENTIPEDE
+}}
+{{Refs|hr=ss}}
+{{SS Nav Enemies}}

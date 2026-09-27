@@ -1,0 +1,108 @@
+{{SS Infobox Enemy
+|title1 = Smelt Shoveller
+|image1 = <gallery>
+B Smelt Shoveller.png|Hunter's Journal
+Smelt Shoveller Idle.png|Idle
+</gallery>
+| hasdrop = true
+| r1 = 7
+| r2 = 10
+| sh1 = 3-5
+| sh2 = 4-7
+| health = 30/{{BT|120}} <br>20 (Cutscene)<ref group="Note">The one who is talking to [[Forebrother Signis]] and quickly leaves when the fight starts.</ref>
+|damage_modifiers = {{SS Multiple Damage Modifiers|Default|1.5|1|1|0.85|0.85|Cutscene|1|1|1|1|1}}
+|numbers_required = 25
+|void = 15%
+|singnum=1
+}}
+
+{{Quote
+|Hr = Journal
+|Low level worker lost to Pharloom's Haunting. Instinct keeps them at their task, though in much simpler fashion than before.<hr/>This kingdom appears more advanced in metalwork than my own ever was, in great part due to the natural heat source at its base. Working in such an environment is an impressive feat.
+}}
+
+<b>Smelt Shovellers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are [[Dock Workers|workers]] of the [[Deep Docks]] found shovelling [[Flintstone]].
+
+== Behaviour and Tactics ==
+Smelt Shovellers are usually found patrolling an area, but some may be seen stationary, either working beside [[Flintstone]] deposits or resting.<br>
+To attack, they rear their bident back before jabbing towards [[Hornet (Silksong)|Hornet]]. 
+
+The bells they wear on their heads make them immune specifically to [[Needle-bounce]]s, but they are vulnerable while winding up their attacks and after they have attacked.
+
+=== Act 3 ===
+[[Black-threaded]] Smelt Shovellers have their health quadrupled. They can gain any of the standard [[Black-Threading#Movesets|Void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* For grace above...
+* Smelt dug and churned...
+* Toil, and toil, and toil...
+* Tunnel, breach, bore...
+* Seek the shine... find the ore...
+* By holy light...
+}}
+
+== Location ==
+Smelt Shovellers can be found in the [[Deep Docks]] and near its entrance from [[the Marrow]].
+
+{{Gallery
+|Image1 = Mapshot SS Smelt Shoveller 01.png!Locations in the Marrow
+|Image2 = Mapshot SS Smelt Shoveller 04.png!Location in the Marrow in Act 3
+|Image3 = Mapshot SS Smelt Shoveller 02.png!Locations in the Deep Docks
+|Image4 = Mapshot SS Smelt Shoveller 03.png!Locations in the Deep Docks in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Smelt Shoveller 02.png!In the Marrow
+|Image2 = Screenshot SS Smelt Shoveller 01.png!In the Deep Docks
+|Image3 = Screenshot SS Smelt Shoveller 03.png!Attacking
+|Image4 = Screenshot SS Smelt Shoveller 04.png!Reacting to the Needolin
+|Image5 = Screenshot SS Deep Docks 19.png!Killed by [[Shakra]]
+|Image6 = Screenshot SS Smelt Shoveller 07.png!Shovelling Flintstone
+|Image7 = Screenshot SS Deep Docks 10.png!Being instructed by Forebrother Signis alongside a Flintstone Flyer
+|Image8 = Screenshot SS Smelt Shoveller 08.png!Slacking off from work
+|Image9 = Screenshot SS Smelt Shoveller 09.png!Resting beside a chest
+|Image10 = Screenshot SS Smelt Shoveller 05.png!Two Smelt Shovellers resting
+|Image11 = Screenshot SS Smelt Shoveller 06.png!Corpses in Act 3
+|Image12 = Screenshot SS Smelt Shoveller 10.png!Black-threaded
+|Image13 = Screenshot SS Void Mass 08.jpg!In a [[Void Mass]]
+|Image14 = Screenshot SS Deep Diver 01.png!Corpse near a [[Deep Diver]]
+|Image15 = Screenshot SS Shard Bundle 02.png!Corpse with a [[Shard Bundle]]
+|Image16 = Screenshot SS Needolindocks 2.png!Needolin memory near the [[Flintslate]]
+|Image17 = Screenshot SS Warding Bell Room.png!Corpse with the [[Warding Bell]] in the [[Far Fields]]
+}}
+
+{{Localisation
+|DEname = Schmelzschaufler
+|DEmeaning = Smelt Shoveller
+|ESname = Paleador de roca ígnea
+|ESmeaning = Igneous Rock Shoveller
+|FRname = Fourrecreux
+|FRmeaning = 
+|ITname = Spalatore Fuso
+|ITmeaning = Molten Shoveller
+|JAname = 溶鉱炉の労働者
+|JAromanised = Youkouro no roudousha
+|JAmeaning = Blast Furnace Worker
+|KOname = 제련 삽질꾼
+|KOromanised = Jeryeon sapjilkkun
+|KOmeaning = Smelt Shoveller
+|PTname = Servo da Fornalha
+|PTmeaning = Furnace Servant
+|RUname = Черпатель расплава
+|RUromanised = Čerpatelʹ rasplava
+|RUmeaning = Smelt Scooper
+|ZHname = 炼岩工
+|ZHromanised = Liàn yán gōng
+|ZHmeaning = Ore Smelter
+|CODEname=DOCK_WORKER
+|CODEmeaning = <code>DOCK</code> internally refers to the Deep Docks.
+}}
+
+== Notes ==
+<references group="Note"/>
+
+{{Refs|hr=false}}
+
+{{SS Nav Enemies}}

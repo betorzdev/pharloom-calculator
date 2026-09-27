@@ -1,0 +1,109 @@
+{{SS Infobox Enemy 
+|title1 = Skarrgard
+|image1 = <gallery>
+B Skarrgard.png|Hunter's Journal
+Skarrgard Idle.png|Idle
+Skarrgard Resting.png|Resting
+</gallery>
+|health = 150/{{BT|300}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.75|0.65|0.65|0.65}}
+|drops = None
+|numbers_required = 2
+|singnum = 2
+}}
+
+{{Quote
+|Hr=Journal
+|Huge ant hunter tasked to protect the stores and passages of its tribe.<hr/>
+Theirs is the perfect shell for their duty, a wall of a warrior and an adept fighter. If I hope to claim their treasures, I must bring my best.
+}}
+
+<b>Skarrgards</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. Bulky defenders of the [[Skarr]]'s stores and passages, they attack with ferocious might.<ref>Skarrgard [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Huge ant hunter tasked to protect the stores and passages of its tribe. Theirs is the perfect shell for their duty, a wall of a warrior and an adept fighter."</i></ref>
+
+== Behaviour and Tactics ==
+Skarrgards do not naturally wander, and are instead always resting in place. They often perform short forward dashes to pursue [[Hornet (Silksong)|Hornet]], but otherwise use Leaping Slam or Burrow to chase her down.<br>
+Skarrgards have three different moves that they can perform:
+* <b>Double Swing:</b> Rears back and performs two forward swings with their weapon, stepping backwards slightly on the second swing.
+* <b>Jump Slam:</b> Leaps forwards to where Hornet is and performs a colossal overhead swing. Running under their jump is often the only means of escape without [[Swift Step]], but with a quick enough reaction, Hornet can also escape by running away.
+* <b>Burrow:</b> Jumps down into the ground and reappears where Hornet is standing, with a slight variation. 
+
+Skarrgards deal {{Damage|2}} for all attacks as well as contact damage.
+
+As the fight starts, Skarrgards roar for approximately one second, during which they are vulnerable to damage. When a Skarrgard leaps for a jump slam, stay on the ground and walk past so that they pass overhead. Hornet can jump over a Skarrgard's Double Swings, following up with a downward attack to deal damage. Obtaining [[Swift Step]] is highly recommended, as it allows Hornet to dash and sprint, which greatly helps with evading Skarrgards' attacks. Alternatively, all attacks can be parried with good timing.
+
+=== Act 3 ===
+[[Black-threaded]] Skarrgards have their health doubled. They gain the [[Black-Threading#Movesets|Void Blobs]] attack.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns = 2|
+* Strength from her. Strength for her...
+* Strike hard. Strike lethal...
+* All for the singer...
+* To leap, and run, and slay!
+* No nest, no home...
+* The caves call... we listen...
+* ...Is this still her song?
+* These lands... always ours...
+}}
+
+== Location ==
+There are a total of four Skarrgards that can be found, and once defeated, they do not respawn:
+* The first can be found guarding the passage between [[the Marrow]] and [[Hunter's March]].
+* The second guards a storeroom at the top of Hunter's March, and takes part in the [[Enemy Gauntlets (Silksong)/Hunter's March 2|enemy gauntlet]] alongside a [[Spear Skarr]].
+* The third appears in the [[Halfway Home]]'s cellar, as part of the [[Enemy Gauntlets (Silksong)/Greymoor 4|gauntlet]].
+* The fourth, [[black-threaded]] Skarrgard can be found in [[Act 3]], in a hidden room past [[Skarrsinger Karmelita]]'s chamber in the [[Far Fields]].
+
+{{Gallery
+|Image1=Mapshot SS Skarrgard 01.png!Locations in Hunter's March 
+|Image2=Mapshot SS Skarrgard 02.png!Location in Greymoor
+|Image3=Mapshot SS Skarrgard 03.png!Location in the Far Fields in Act 3
+}}
+
+== Gallery ==
+{{Gallery
+|Image1=Screenshot SS Skarrgard 01.png!In Hunter's March
+|Image2=Screenshot SS Hunter's March Arena 4.png!Guarding the storage in Hunter's March
+|Image3=Screenshot SS Skarrgard 07.png!In Greymoor
+|Image4=Screenshot SS Far Fields Arena 2.png!In the Far Fields
+|Image5=Screenshot SS Skarrgard 02.png!Double Swing
+|Image6=Screenshot SS Skarrgard 03.png!Jump Slam
+|Image7=Screenshot SS Skarrgard 04.png!Burrow
+|Image8=Screenshot SS Skarrgard 05.png!Reacting to the Needolin
+}}
+
+==Trivia==
+* Skarrgards have several [[Cut Content (Silksong)#Enemy Behaviours|cut]] attacks and movements.
+
+{{Localisation
+|DEname = Skarrwache
+|DEmeaning = Skarr Guard
+|ESname = Skarr guardián
+|ESmeaning = Skarr Guardian
+|FRname = Skarragarde
+|FRmeaning = Skarr Guard
+|ITname = Mirmede Guardia
+|ITmeaning = Skarr Guard<br><small><i>Mirmede</i> is the name of the [[Skarr]] in Italian, from <i>mirmeco-</i> (prefix for ants) and <i>-ede</i> (taxonomic suffix).</small>
+|JAname = スカールの守り手
+|JAromanised = Sukāru no mamorishu
+|JAmeaning = Skarr Defender
+|KOname = 스카르 경비병
+|KOromanised = Seukareu gyeongbibyeong
+|KOmeaning = Skarr Guard
+|PTname = Skarr-sentinela
+|PTmeaning = Skarr Sentinel
+|RUname = Скарр-страж
+|RUromanised = Skarr-straž
+|RUmeaning = Skarr Guard
+|TWname = 斯卡爾守衛
+|TWromanised = Sīkǎ'ěr shǒuwèi
+|TWmeaning = same
+|ZHname = 斯卡尔守卫
+|ZHromanised = Sīkǎ'ěr shǒuwèi
+|ZHmeaning = Skarr Guard
+|CODEname = BONE_HUNTER_THROW
+|CODEmeaning = "Bone Hunter" internally refers to the Skarr
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

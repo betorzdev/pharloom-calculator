@@ -15,3 +15,6 @@ node_modules/
 # The game's full text dump (Team Cherry's): tools/game-text.js downloads it again, pinned to
 # patch 1.0.30000, the first time it needs it (9 MB)
 kb/data/all_text.json
+
+# The wiki's sprites, downloaded by tools/measure-palette.py to measure the palette (Team Cherry's art)
+kb/data/art/

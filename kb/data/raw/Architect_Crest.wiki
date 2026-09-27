@@ -1,0 +1,138 @@
+{{SS Infobox Crest
+|image1 = <gallery>
+Architect Crest Inventory.png|Inventory
+Architect Crest.png|HUD
+</gallery>
+|description = Spin the needle as a screw, shredding foes. Spend silk to rapidly craft new tools from shell shards.
+|red = 3
+|redlock = 0
+|blue = 0
+|bluelock = 2
+|yellow = 0
+|yellowlock = 2
+|attack = Drill-like attacks that can hit multiple times<br>
+Some attacks can be charged for double damage
+|bind = Hold UP while Binding to craft {{CrestSlot|Red|s}}
+|location= [[Chapel of the Architect]]
+}}
+
+{{Quote
+|Master, I have communed with the shrine above. Your learnings are unique, techniques born of cogwork hearts. Their mastery will require some commitment on my part.
+|Hr=Hornet
+|[[Hornet (Silksong)|Hornet]]
+}}
+
+The <b>Architect Crest</b> is a [[Crests|Crest]] in <i>[[Hollow Knight: Silksong]].</i> It is notable for its major focus on and synergies with {{CrestSlot|Red|s}} in exchange for preventing the use of {{CrestSlot|Skill|s}}. While equipped, [[Hornet (Silksong)|Hornet]] can perform a unique <b>Craft Bind</b> to replenish her {{CrestSlot|Red|s}} anywhere at the cost of [[Silk]] and [[Shell Shards]].
+
+== Attacks ==
+All attacks involve Hornet spinning the Needle like a drill. Drill attacks hit multiple times in rapid succession, but do not generate more Silk from these extra hits.
+* Neutral Slashes: Hornet lunges in the attack direction and briefly drills the needle, doing 3 strikes that deal 0.9x, 0.1x, and 0.1x Needle damage respectively.
+* Down-slash: Hornet dives diagonally downwards, drilling in the same direction. This deals an initial hit of 0.55x Needle damage and a follow up hit dealing 0.5x Needle damage. Holding the ATTACK button charges up the attack, delivering two extra hits for 0.5x Needle damage each.
+* [[Swift_Step#Run-slashes|Run-slash]]: Hornet dashes and drills forwards, dealing an initial hit of 0.55x Needle damage and a follow up hit dealing 0.5x Needle damage. Holding the ATTACK button charges up the attack, delivering two extra hits for 0.5x Needle damage each.
+* [[Needle Strike]]: Hornet unleashes a massive spinning drill attack, dealing 5 rapid hits dealing 0.6x Needle damage each, for a total damage of 3x a normal slash.
+
+==Mechanics==
+<b>Craft Bind</b> allows Hornet to replenish her {{CrestSlot|Red|s}} without using a [[Bench (Silksong)|Bench]]. It is performed by holding the UP button then using [[Bind]], with a standard Bind being performed if no directional input is used. 
+
+Craft Bind consumes the same amount of [[Silk]] as a standard Bind, but does not heal any [[Masks]] and is 0.5s faster. It uses the same amount of [[Shell Shards]] that would normally be used when replenishing the Tools at a Bench. If Craft Bind is used while no Tools need replenishing, {{S|5}} will be consumed.
+
+Most Tools and effects relating to Binding do not apply to Craft Bind, such as [[Injector Band]] and [[Claw Mirror|Claw Mirror(s)]] - with the exception of [[Reserve Bind]].
+
+== Usefulness ==
+The Architect Crest's use comes from is its focus on {{CrestSlot|Red|s}}, since it can let Hornet use up to 3 different {{CrestSlot|Red|s}} at once. Its unique <b>Craft Bind</b> allows her to immediately use her [[Shell Shards]] to restore {{CrestSlot|Red|s}} to full when they run out, giving her a near limitless arsenal. This comes at the cost of being unable to use {{CrestSlot|Skill|s}}.
+
+As such, the Architect's Crest's strength is heavily reliant on external factors like game progression and proactiveness to gain {{CrestSlot|Red|s}}, [[Tool Pouch|Tool Pouches]], [[Crafting Kit|Crafting Kits]], and [[Shell Shards]], making its power greatly increase over time.
+
+The Architect Crest's attacks are powerful, but can be risky and require charging.
+
+* The [[Needle Strike]] on the Architect Crest is a powerful attack, dealing 3x needle damage at a long range. Heavily use of Needle Strike will require a hit-and-run combat style, which is strong in certain situations, but weak in others. It will also only generate 1 [[Silk]] strand with each Needle Strike.
+* The Down-slash and Run-slash are a middle ground between a normal attack and a Needle Strike in terms of time investment and damage.
+* Compared to the [[Hunter Crest]]'s dive attack, the timing and distance of the Architect Crest's can be configured to precisely hit a target, with a larger damage potential. Like other dive-style Down-slashes, it is harder to bounce with for platforming than Down-slashes that go directly downwards. The charge pause also halts all momentum, further impacting it in platforming.
+
+Its ability to enter the [[Plasmified]] state easily by crafting [[Plasmium Phial|Plasmium Phials]] gives this Crest an advantage against difficult enemies and situations that make healing harder, such as enemies being hard to hit or depleting [[Silk]]. Its ability to attack from a safe distance with Needle Strike and {{CrestSlot|Red|s}} also helps Hornet's survivability.
+* Weaknesses:
+** Without {{CrestSlot|Skill|s}}, it heavily relies on Tools and [[Shell Shards]] for damage. Due to this, it is recommended to use this Crest once Hornet has acquired enough [[Rosaries]] to sustainably buy [[Shard Bundle|Shard Bundles]], or when she has stockpiled an abundance of Shell Shards.
+*** Some other work-arounds are to use Tools slowly to balance Shell Shards gained and used, or to only use Tools for short periods of time during difficult situations.
+** Its attacks are fairly average and slow, further incentivising heavy Tool use.
+** It is possible to accidentally use '''Craft Bind''' instead of healing [[Bind]] (and vice versa), so it is important to be careful of which direction is being held while [[Bind]]ing.
+** Like other dive-style Down-slashes, it is harder to bounce with the Down-slash when platforming than Down-slashes that go directly downwards. The charge pause also halts all momentum, further impacting it in platforming.
+** The Run-slash lacks the followup attacks of other Crests, which can leave Hornet vulnerable if the target is still alive after the attack.
+
+==Synergies==
+
+* The Architect Crest's <b>Craft Bind</b> and multiple {{CrestSlot|Red|1}} slots allow for all {{CrestSlot|Red|s}} to be used more often.
+** Many high damaging {{CrestSlot|Red|s}} such as [[Curveclaw]], [[Tacks]], [[Conchcutter]], [[Cogwork Wheel]], and [[Cogfly]] can greatly benefit from these traits.
+** Craft Binding [[Plasmium Phial|Plasmium Phials]] allows the [[Plasmified]] state to be easily triggered at any location.
+*** Even without plasmification - Craft Binding Plasmium Phials results in the Craft Bind being able to 'heal' up to twice as much as a normal [[Bind]], for the same amount of [[Silk]]. Gaining the [[Plasmium Gland]] in [[Act 3]] removes the need to turn to [[Alchemist Zylotol]] and returning to the [[Wormways]] to refill Plasmium reserves, making this strategy stronger.
+* Similarly to the [[Hunter Crest]], the [[Delver's Drill]] can function both as a Pseudo Down-slash, but also functions as a reliable damaging Tool.
+* [[Pollip Pouch]] and [[Quick Sling]] both increase Tool damage, with a few caveats.
+** Pollip Pouch's venom does not stack, reducing its impact the more often tools are used.
+** Pollip Pouch generally desynergizes with [[Plasmium Phial]] strategies, as it will make Plasmium Masks detonate shortly after being used, making becoming plasmified near-impossible and reducing its ability to absorb damage.
+** Pollip Pouch reduces [[Flintslate]]'s damage increase and prevents its burn damage, in exchange for adding venom damage. This is overall worse than base Flintslate.
+** Quick Sling only affects thrown tools, making it less effective for certain loadouts.
+* [[Shard Pendant]] and [[Snitch Pick]] help with gathering [[Shell Shards]].
+** [[Magnetite Brooch]] and [[Thief's Mark]] also help gather [[Rosaries]], which can be used to buy {{S|80}} [[Shard Bundle|Shard Bundles]] for {{R|50|}}. Shard Bundles can additionally be stockpiled and even used in combat. Up to 20 Shard Bundles can be held, with a value of {{S|1600}} in total, effectively tripling Hornet's maximum Shell Shard capacity.
+** [[Barbed Bracelet]] and [[Silkspeed Anklets]] also speed up finding and killing enemies for Shell Shards.
+* [[Reserve Bind]] can be used to perform a Craft Bind if no [[Silk]] is available.
+* [[Druid's Eye|Druid's Eye(s)]] grants additional Silk for more potential uses of Craft Bind. Note that Craft Binding will remove all active green blobs.
+* [[Wispfire Lantern]] and [[Silkshot]] grant extra ways to use excess [[Silk]] for damage.
+* [[Pin Badge]] allows further use of its powerful [[Needle Strike]].
+* [[Longclaw]] increases the range and safety of attacks.
+* In [[Steel Soul Mode (Silksong)|Steel Soul Mode]], the [[Shell Satchel]] increases the maximum capacity of {{CrestSlot|Red|s}}, and the [[Growstone]] gives Hornet additional [[Shell Shards]].<br />
+[[Warding Bell]], [[Injector Band]] and [[Multibinder]] do not affect Craft Bind.
+
+[[Egg of Flealia]] and [[Volt Filament]] do not affect the Architect Crest due to the Crest lacking {{CrestSlot|Skill|s}}.
+
+==How to Acquire==
+The Architect's Crest is found in the [[Chapel of the Architect]], an area in the [[Underworks]] unlocked with the [[Architect's Key]].
+
+The key is sold by [[Twelfth Architect]] for {{R|110|}}. It can only be purchased after 25 Tools have been acquired.
+
+{{Gallery
+|Image1 = Mapshot SS Architect Crest.png!Location
+|Image2 = ArchitectCrestBind.png!Hornet binding the Architect Crest
+}}
+
+== Gallery ==
+{| align="center" style="text-align:center"
+| {{#ev:youtube|https://www.youtube.com/watch?v=JAopqzdmG2M|250|center|Deep Dive}}
+|}
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Fixed craft bind behaving incorrectly when in memories.
+|1.0.28650 (Patch 2): 
+*Reduced number of hits dealt by the Needle Strike from 7 to 5.
+*Made the Needle Strike give 1 strand of silk upon hitting an enemy.
+}}
+{{Localisation
+|DEname = Architekt
+|DEmeaning = Architect
+|ESname = Arquitecta
+|ESmeaning = Architect (feminine)
+|FRname = Architecte
+|FRmeaning = Architect
+|ITname = Artefice
+|ITmeaning = Artificer
+|JAname= 設計者
+|JAromanised= Sekkeisha
+|JAmeaning = Designer
+|KOname = 설계자
+|KOromanised = Seolgyeja
+|KOmeaning = Designer
+|PTname = Arquiteto
+|PTmeaning = Architect
+|RUname = Архитектор
+|RUromanised = Arxitektor
+|RUmeaning = Architect
+|TWname = 建築師
+|TWromanised = Jiànzhùshī
+|TWmeaning = same
+|ZHname = 建筑师
+|ZHromanised = Jiànzhùshī
+|ZHmeaning = Architect
+|CODEname = CREST_TOOLMASTER
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+{{SS Nav Crests}}
+[[fr:Emblème Architecte]]

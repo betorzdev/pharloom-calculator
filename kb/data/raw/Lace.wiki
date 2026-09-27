@@ -1,0 +1,347 @@
+{{Navbar|page1=Lace|page2=Lost Lace}}
+{{SS Infobox Boss
+|label1 = Boss
+|title2 = Lace
+|image1 = <gallery>
+B Lace.png|Hunter's Journal
+Lace Stagger.png|Staggered
+</gallery>
+|theme = [https://youtu.be/zRs58D34OLY Lace]
+|location = [[Deep Docks]]<br/>[[The Cradle]]
+|health = 250 (Deep Docks)<br>800 (The Cradle)
+|damage_modifiers = {{SS Multiple Damage Modifiers|[[Deep Docks]]|1|1|1|1|1|[[The Cradle]]|1.75|1.2|1|0.85|0.85}}
+|va = Mitsuki Hashimoto<ref name="e3">[https://www.teamcherry.com.au/blog/post-e3-wrap-silksong-systems-update/ Team Cherry blog post] of June 25th, 2019</ref>
+|drops = [[Bellshrine]] (Deep Docks)<br>[[Silk Heart]] (The Cradle)
+|numbers_required = 2 / 1<ref group="Note">If Lace has not been fought in [[Deep Docks]] and Hornet enters [[Sinner's Road]] or [[Blasted Steps]], Lace talks to Hornet there and the fight in Deep Docks no longer occurs. If this happens, defeating Lace in the Cradle grants the full entry.</ref>
+|singnum = 2
+|s1 = Before Deep Docks fight
+|s2 = During Deep Docks fight
+
+|label2 = NPC
+|image2 = <gallery>
+Lace idle.png|Idle
+Lace Conducting.png|Conducting
+Lace Laughing.png|Laughing
+Lace Sitting.png|Sitting
+Lace Laying.png|Laying
+</gallery>
+|location2 = [[Deep Docks]] or [[Blasted Steps]] or [[Sinner's Road]]<br/>[[Choral Chambers]]<br/>[[The Cradle]]<br/>[[The Abyss (Silksong)|The Abyss]]
+|va2 = Mitsuki Hashimoto<ref name="e3" />
+|combat2 = false
+|singnum2 = 2
+|2s1 = Before Deep Docks fight
+|2s2 = During Deep Docks fight
+}}
+
+{{Quote
+|Hr = Journal
+|Manic fencer who delights in battle.<hr/>
+A bug born entirely of thread. Much Silk would have been needed to see her sustained. A fragile form of life, but life nonetheless.
+}}
+
+<b>Lace</b> is a recurring [[NPCs (Silksong)|NPC]] and [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. A deadly fencer wielding a gilded pin, she is a being woven entirely from the [[Silk]] of her [[Grand Mother Silk|mother]].<ref name=caretaker1/> She battles [[Hornet (Silksong)|Hornet]] twice within the [[Deep Docks]] and [[the Cradle]] to prevent her from reaching the peak of [[the Citadel]]. [[Lost Lace]] is her powerful void-possessed form.
+
+== Background ==
+Lace is the daughter of [[Grand Mother Silk]], spun entirely from threads of her [[Silk]].<ref name=caretaker1>Hornet dialogue with the Caretaker: <i>"Child of the monarch, she claimed herself at the end, and her shell suggested it true, a being born purely from Silk woven tight."</i></ref><ref name = gender/> The Mother created her to be a loyal child who would want the Mother to wake up from her slumber, unlike her other creations, the [[Weavers]].<ref name=silkheart>The Cradle [[Silk Heart]] dialogue: <i>"...Better a child spun frail... than none... ...Better a child spun pure... than them... ...One to wish our waking... ...From our Silk... A child born loyal... "</i></ref> Her body was spun pure yet frail, shaped to have the look and mind of a child.<ref name=silkheart/><ref name=caretaker>Caretaker: <i>"One to keep far from she was, least for us mortal sorts. Look of a child and a mind to match, but her's been up wanderin' this Citadel longer'n most. Even in its long silence, way 'fore you came and roused its ire."</i></ref><ref name=lace>Lace: <i>"Life? You're too generous! This weak, wasting existence. This was not life, just a husk shaped to act as a child."</i></ref> [[Phantom]] is her sibling, but they became frayed and were discarded, their Silk stretched thin and their shell stiffened.<ref>[[Phantom]] Needolin dialogue: <i>"Discarded... Silk stretched thin... Shell stiffened...</i></ref><ref>Exhaust Organ Needolin Dialogue: <i>"She spun us to fade... She spun us to break... Why us, sister? Why us?"</i></ref><ref>Phantom Hunter's Journal entry: <i>"Though grey with age, their frayed form suggested a being strung from Silk,"</i></ref>
+
+Lace considers herself broken and crude,<ref>Lace Needolin dialogue in the Cradle: <i>"A child, too broken..."</i></ref><ref>Lace dialogue: <i>"Face the holy mother who would fashion so cruel and crude a daughter as me."</i></ref> as having a weak, wasting existence that is no life at all.<ref name=lace/> She wandered [[the Citadel]] for a long time, keeping it clean and quiet while mortal bugs tried to avoid her.<ref name=caretaker/><ref>Caretaker: <i>"Might'a seen herself this place's protector, keepin' it clean and quiet as she did. Course quiet meant most crossin' her path found a painful end from her pin."</i></ref>
+
+As Hornet's journey to the peak of the Citadel continues, Lace starts to think Grand Mother Silk prefers Hornet over her and becomes desperate for her mother's acknowledgement.<ref>Lace Needolin dialogue in the Cradle: <i>"Why her... Mother... See me cut! See me serve! See me, your daughter..."</i></ref><ref>Lace: <i>"After all... it's you that she wants... is it not?"</i></ref>
+
+== In-game Events ==
+Lace is a recurring antagonist to [[Hornet (Silksong)|Hornet]], and can be found throughout her journey in Pharloom. She can be encountered in every [[Acts|Act]] of the game.
+===Act 1===
+[[File:Screenshot SS Lace 01.png|thumb|right|200px|Lace conducting Silk Flies in the Deep Docks]] 
+Lace can be first encountered in [[Deep Docks]] after acquiring [[Swift Step]]. She is conducting the movement of [[Silk Fly|Silk Flies]] and talks about [[Hornet (Silksong)|Hornet]]'s fall from the cage she was captured in, potentially suggesting she was the one who was responsible for the fall.<ref>Lace: <i>"How sad. A little spider has fallen from its cage. So lost. So weak."</i></ref> She fights Hornet at the end of the conversation, stating she wants to save Hornet from the suffering she would have to face above.<ref>Lace: <i>"I can save you, little spider. All the trouble you'd face above. All the suffering. It's so simple. I'll just skewer you here and now, pluck that flickering life right out of you."</i></ref>
+
+This first encounter and fight can be skipped by buying the [[Simple Key (Silksong)|Simple Key]] from [[Pebb]] and using it on either the door in [[Wormways]] or the door in Deep Docks. Using the Simple Key, Hornet can either go through Wormways to enter [[Shellwood]] from the west, go through the lower region of Deep Docks to reach [[Far Fields]] through a breakable wall, or rescue enough [[Flea]]s to complete the <i>[[The Lost Fleas]]</i> [[Wish]] and travel to [[Greymoor]] with the [[Flea Caravan]]. If the Deep Docks encounter is skipped, and if Hornet hasn't been defeated by Lace in Deep Docks nor met her in [[Choral Chambers]] yet, Lace appears on the broken bridge connecting [[Shellwood]] to the [[Blasted Steps]], or at the entrance to [[Sinner's Road]] from [[Greymoor]]. She mentions how it would be boring to kill Hornet when she is already so close to the Citadel and then leaves the area.<ref>Lace: <i>"But what a bore it would be to cut you down now, when you're so achingly close to our grand Citadel... Climb higher, little spider. I want to savour your struggle just a little longer!"</i></ref> If the first fight with her is skipped this way, then her [[Hunter's Journal (Silksong)|Hunter's Journal]] entry requires only one defeat to become completed.
+
+[[File:Screenshot SS LaceCutscene 01.png|thumb|left|200px|Lace resting in the Cradle]]
+
+===Act 2===
+Her next encounter is in two possible rooms in the Choral Chambers, depending on whether the Citadel is entered from the Blasted Steps or [[Bilewater]]. She and Hornet discuss [[Grand Mother Silk]]'s hold on [[Pharloom]], with Lace expressing doubt that Hornet would be able to stand against a [[Higher Beings|higher being]].<ref>Hornet and Lace dialogue in the Citadel: <i>Hornet: "Fool child. You still think me blind to the form of your liege? Having come this far? This land's grandeur, the devotion of its bugs, and the curse that befalls them. The signs are clear. Your kingdom is in the thrall of a creature beyond bug, one of that higher caste. Whatever its desire for my Silk and my shell, it shall find I'm quite attached to both." Lace: "Tch... Hahahaa. Marvellous! So the spider knows something of fathomless beings, and still it hopes to stand against one, a god..."</i></ref>
+
+Once Hornet has completed the [[Threefold Melody]] and unlocked the lift to [[the Cradle]], she encounters Lace at the top of the lift, who challenges her to a fight. At the end of the fight, they talk about Lace's true nature as a being made of [[Silk]].<ref>Hornet and Lace dialogue: <i>Lace: "Congratulations, spider. Finally, I felt your sting, and you've bared the truth of my pathetic empty shell." Hornet: "You always had the scent, child. You are no bug. Yours is a life born entirely from thread."</i></ref> Lace says Hornet has now earned an audience with Grand Mother Silk, and that she believes her mother wants Hornet instead of her.<ref>Lace: <i>"Head on. Climb up, up and away. You've earned your audience with the divine. Face the holy mother who would fashion so cruel and crude a daughter as me. After all... it's you that she wants... is it not?"</i></ref> As Hornet proceeds up the Cradle to confront Grand Mother Silk, Lace remains lying down in her arena, and does not respond to the Needolin. If Hornet enters the Cradle and sits on a bench outside of the Citadel, Lace starts emitting dreg clouds and Silk Flies gather around her.<ref group=Source><code>GameManager.TimePasses()</code> sets flag <code>laceCorpseAddedEffects</code></ref> She disappears from the Cradle once the [[Soul Snare]] is set up as a part of <i>[[Silk and Soul]]</i>.
+
+===Act 3===
+[[File:Screenshot SS Grand Mother Silk 12.png|thumb|200px|right|Lace cutting Hornet free from Grand Mother Silk]]
+Once Hornet has acquired the [[Soul Snare]], she can use it on Grand Mother Silk after defeating her. This leads to Grand Mother Silk being dragged down into the [[Void]] while holding Hornet in her hands. However, Lace intervenes to free Hornet, cutting off one of her mother's arms and stabbing her with her pin while pushing her into the portal. This act of vengeance makes both Lace and Grand Mother Silk fall into the Void. Despite her daughter's betrayal, Grand Mother Silk spins a protective cocoon around them to save Lace, in which she has to keep renewing as the Void consumes the outside.<ref name=save>Snail Shamans: <i>"Oh ho... The quakes, yes? We have felt their force, even here. So the mother resists the dark... to save the child?"</i></ref><ref name=hornetcocoon>Hornet dialogue with the Snail Shamans: <i>"She will have retreated within her protective form, that cocoon of thread. Even as the dark eats its outer, she will spin its Silk anew. The effort would be immense and it will strain her soul thin, but what other choice remains?"</i></ref> The process strains her soul thin, and her resistance against the Void causes periodic quakes in the kingdom.<ref name=hornetcocoon/><ref name=save/> It also allows the Void to leech up into Pharloom, possessing Grand Mother Silk's threads and the inhabitants of the land she once haunted.<ref>Hornet dialogue with the Snail Shamans: <i>"Surely you've seen them, the black threads that wrack your lands? The dark leeches up, possessed upon the fallen monarch's Silk."</i></ref>
+
+When Hornet goes down to [[The Abyss (Silksong)|the Abyss]], she finds a projection of Lace on the shore of the Void sea. Lace tells her she is glad to have rebelled against her mother and denied her Hornet's silken strength, and that she expects Pharloom will be crushed to dust.<ref>Lace: <i>"Letting you live was my rebellion, spider. I've denied my mother your silken strength. I've won. She can thrash, and waste, and know her pathetic, broken child caused the mortal wound. (...) You fight and fight, heedless as the world crumbles around you. Pharloom and her bugs will be crushed to dust, and still you'll be vainly swinging your blade."</i></ref> Hornet promises to cut the land free of Grand Mother Silk's grasp once and for all, and returns later with the [[Everbloom]].<ref>Hornet dialogue with Lace: <i>"...There may still be a way to prevent that fate. I will claim the hidden power, the bloom that repels the dark. (...) I will return, child, when I bear the strength to dive below, and cut this land finally free of your mother's grasp."</i></ref>
+
+Upon returning with the Everbloom, Lace speaks to her as a projection once more, explaining how she is no longer herself down in the Void.<ref>Lace: <i>"Who are you hoping you'll find down there, spider? An ailing child and a Silk starved beast? If so, I'm afraid we may sorely disappoint. What waits below is me no longer."</i></ref> Although Lace invites Hornet to join her in oblivion, Hornet refuses and dives down into the sea of Void.<ref>Hornet and Lace dialogue: <i>Lace: "Take the final plunge, spider. Join us in my drowning palace, and let oblivion swallow us all." Hornet: "Oblivion may take you, child. My own life, I shall not sacrifice."</i></ref> Hornet enters Grand Mother Silk's cocoon, where she finds Lace possessed by the Void as [[Lost Lace]]. She manages to defeat Lace, loosening the Void's hold on her. 
+
+[[File:Screenshot SS LaceCutscene 03.png|thumb|200px|left|Lace in the Sister of the Void ending]]
+Hornet picks up Lace and asks the Mother to give her Silk in order to return to the surface. The Mother obliges and provides her with a large amount; Hornet then uses the [[Silk Soar]] to get both her and Lace out of the cocoon, leaving the Mother behind. While they are unable to go up far enough before the Everbloom's power gives out, Hornet encounters [[the Knight]] and her [[Sibling|other siblings]] in the Void. They carry Hornet and Lace safely up to the surface, and with Grand Mother Silk dead, her void-soaked threads disappear from Pharloom.
+{{Clear}}
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+=== [[Deep Docks]] ===
+In her first encounter and fight in the Deep Docks, Lace uses the following attacks and manoeuvres:
+
+* <b>Lunge</b>: Lace dashes forwards across the platform with her pin extended, covering roughly 60% of it.
+* <b>Double Cut</b>: Lace slashes twice, making large arcs over her head. Each slash moves her forwards a slight distance.
+* <b>Balestra</b>: Lace launches herself at an angle into the air and slashes a full circle around her body with her pin at the height of the jump. She then lunges diagonally downwards, skidding a short distance upon landing. While at the peak of her jump, Lace can change the direction of her lunge depending on Hornet's position.
+* <b>Parry & Riposte</b>: Lace holds her pin up, striking a defensive pose and blocking any damage; if she is struck in that time, she retaliates with a small dash forwards chained into a quick flurry of strikes which deals {{Damage|1+1}} if Hornet is caught in it.
+* <b>Flourish</b>: Lace adds a small flourish to the end of an attack, sometimes with a small slash from her pin. This slash deals damage to Hornet if she is caught in it, and deflects [[Tool]] projectiles that are thrown at her.
+* <b>Retreat</b>: Lace quickly glides back a short distance to reposition for another attack.
+* <b>Advance</b>: Lace takes a short half-step forwards, accompanied by a very small flick of her pin. She sometimes chains this move to traverse the arena and reposition.
+* <b>Moulinet</b>: Lace stands in place for a brief moment, charging up while creating a white circle midair on Hornet’s location. After charging, Lace unleashes a whirlwind of slashes within the highlighted region and then slams down. Lace gains this attack after reaching 125 HP (50%). If Hornet is caught in this attack, Lace traps her within the whirlwind and then slams her down onto the platform, dealing {{Damage|1+1}}.
+
+<hr />
+
+{{Stagger
+| Lace is stunned in place, kneeling. If she is knocked into the lava by the stagger, she takes 40 HP damage and then reappears in the centre of the arena, cutting short the stagger duration.
+| 11
+| game = SS
+}}
+
+<hr />
+
+=== [[The Cradle]] ===
+
+=== Phase 1 ===
+In her second encounter and fight in the Cradle, Lace's first phase remains largely identical to her first fight's Phase 1, with some minor adjustments: 
+
+* Her attacks come out at a much faster pace.
+* <b>Triple Cut</b>: Double Cut is now followed by a third swing. If Hornet is behind Lace after the second swing, she can cancel the third into a Parry or Retreat.
+* <b>Lunge</b>: If Hornet hits Lace right after her lunge, she retaliates with a Balestra attack.
+* If Hornet is too close to her after any attack, Lace can either immediately Parry after a split second or quickly Retreat away. If parried, Lace can now also teleport behind Hornet, slightly off the ground, before doing the Riposte at a downwards angle towards her instead of the regular Riposte. 
+* Lace's attacks and movement can sometimes carry her off the edge of the arena. She jumps onto the opposite side of the platform a moment after this happens.
+* All of Lace's pin attacks now deal {{Damage|1+1}} if Hornet is caught in a swing.
+
+=== Phase 2 ===
+After reaching 600 HP, Lace stops and laughs, indicating the start of Phase 2. Her attacks remain mostly the same, but two are upgraded:
+* <b>Double Lunge</b>: Lace performs a second, quicker and shorter Lunge immediately after the first, followed up by a Balestra – each attack always in Hornet's direction. This chain of attacks can be interrupted by a Parry, Retreat, or Balestra at any time if Hornet is too close to her in between attacks.
+* <b>Balestra</b>: During the launch up, Lace leaves behind a trail of 3 large circles. After a moment these circles turn into slashes, dealing {{Damage|1+1}} if Hornet is caught in one when it activates.
+
+=== Phase 3 ===
+After reaching 320 HP, Lace stops and screams, indicating the start of Phase 3. She regains the <b>Moulinet</b> attack and immediately performs it. The Moulinet attack is also now always chained twice in a row.
+
+At any time, if Hornet leaves the platform and jumps to cling to one of the side walls, Lace leaps after her using a <b>Balestra</b> and clings to the wall herself. If Hornet is above Lace on the wall, she dashes up after Hornet using circular swings that deal {{Damage|1+1}}.
+<hr />
+
+{{Stagger
+| Lace is stunned in place, kneeling. If she is knocked off the arena by the stagger, she takes 15 damage and then reappears in the centre of the arena, cutting short the stagger duration.
+| 16
+| game = SS
+}}
+
+<hr />
+
+{{MissingInfo}}
+
+{{TabbedDialogue
+| Title1 = Deep Docks
+| Title1_Event1 = Before the fight
+| Title1_Dialogue1 = How sad. A little spider has fallen from its cage. So lost. So weak. Poor little morsel.<br>
+I can save you, little spider. All the trouble you'd face above. All the suffering. It's so simple.<br>
+I'll just skewer you here and now, pluck that flickering life right out of you.<br>
+{{HTalk|Your threats are worthless, child. If you are my foe, stay your voice and raise your blade.}}<br>
+Delicious! I like you already!
+| Title1_Event2 = Playing the [[Needolin]]
+| Title1_Dialogue2 = [n]Bring chaos...<br>
+Bring ruin...<br>
+Welcome, Spider. Welcome!<br>
+Feel pain, so pure!<br>
+Feel freedom false!<br>
+Let fate's bindings choke you away!
+
+| Title2 = Blasted Steps/Sinner's Road
+| Title2_Event1 = If not met in [[Deep Docks]]
+| Title2_Dialogue1 = How sad. A little spider has fallen from its cage. So lost. So weak. Poor little morsel.<br>
+I can save you, little spider. All the trouble you'd face above. All the suffering. It's so simple.<br>
+I'll just skewer you here and now, pluck that flickering life right out of you.<br>
+{{HTalk|Your threats are worthless, child. If you are my foe, stay your voice and raise your blade.}}<br>
+Delicious! I like you already!<br>
+But what a bore it would be to cut you down now, when you're so achingly close to our grand Citadel...<br>
+Climb higher, little spider. I want to savour your struggle just a little longer!
+
+| Title3 = Choral Chambers
+| Title3_Event1 = First conversation
+| Title3_Dialogue1 = <b>If Hornet has not met Lace in [[Deep Docks]]:</b><br>
+What's this? The spider arrives at last, here to stand acquiver at our startling Citadel.<br>
+{{HTalk|Pale child, you return only to mock? Your lands have yet to prove my match. This sleeping Citadel shall be no different.}}<br>
+Spider, dear. Why must you remain so distressingly... optimistic? The power that waits above, you cannot conceive, her who would snuff that hope with barely a glance.<br>
+{{HTalk|Fool child. You still think me blind to the form of your liege? Having come this far?}}<br>
+{{HTalk|This land's grandeur, the devotion of its bugs, and the curse that befalls them. The signs are clear.}}<br>
+{{HTalk|Your kingdom is in the thrall of a creature beyond bug, one of that higher caste.}}<br>
+{{HTalk|Whatever its desire for my Silk and my shell, it shall find I'm quite attached to both.}}<br>
+Tch... Hahahaa. Marvellous! So the spider knows something of fathomless beings, and still it hopes to stand against one, a god...<br>
+Where do you hide this boundless strength you claim, spider? I've watched your struggle towards us. Yours was a painful, broken trek. One needs grace to stand before the divine.<br>
+{{HTalk|Then best you keep watching, child. I've found those who claim themselves a god can rarely match the title.}}<br>
+{{HTalk|And experience tells me, even gods can fall.}}
+<hr/>
+<b>If Hornet has met Lace in Deep Docks:</b><br>
+What's this? The little spider climbs so high, here to stand aquiver at our startling Citadel.<br>
+{{HTalk|Pale child, you return only to mock? Neither you nor your land have proven my match. This sleeping Citadel shall be no different.}}<br>
+Spider, dear. Why must you remain so distressingly... optimistic? The power that waits above, you cannot conceive, her who would snuff that hope with barely a glance.<br>
+{{HTalk|Fool child. You still think me blind to the form of your liege? Having come this far?}}<br>
+{{HTalk|This land's grandeur, the devotion of its bugs, and the curse that befalls them. The signs are clear.}}<br>
+{{HTalk|Your kingdom is in the thrall of a creature beyond bug, one of that higher caste.}}<br>
+{{HTalk|Whatever its desire for my Silk and my shell, it shall find I'm quite attached to both.}}<br>
+Tch... Hahahaa. Marvellous! So the spider knows something of fathomless beings, and still it hopes to stand against one, a god...<br>
+Where do you hide this boundless strength you claim, spider? I've watched your struggle towards us. Yours was a painful, broken trek. One needs grace to stand before the divine.<br>
+{{HTalk|Then best you keep watching, child. I've found those who claim themselves a god can rarely match the title.}}<br>
+{{HTalk|And experience tells me, even gods can fall.}}
+
+| Title4 = The Cradle
+| Title4_Event1 = After the fight
+| Title4_Dialogue1 = Hah... aha ha ha ha ha!<br>
+Congratulations, spider. Finally, I felt your sting, and you've bared the truth of my pathetic empty shell.<br>
+{{HTalk|You always had the scent, child. You are no bug. Yours is a life born entirely from thread.}}<br>
+Life? You're too generous! This weak, wasting existence. This was not life, just a husk shaped to act as a child.<br>
+{{HTalk|Yours was life, pale one. Do not confuse your unique creation with its absence. I have seen others make the same mistake.}}<br>
+Platitudes, spider? From you? Don't be gross.<br>
+Head on. Climb up, up and away. You've earned your audience with the divine.<br>
+Face the holy mother who would fashion so cruel and crude a daughter as me.<br>
+After all... it's you that she wants... is it not?
+| Title4_Event2 = Playing the [[Needolin]]
+| Title4_Dialogue2 = [n]Why her... Mother...<br>
+See me cut! See me serve!<br>
+A child, too broken...<br>
+I will not fade! I will not take!<br>
+See me, your knight...<br>
+See me, your daughter...
+
+| Title5 = The Abyss
+| Title5_Event1 = First conversation
+| Title5_Dialogue1 = {{HTalk|Here you lie, monarch. Sunk so deep, yet still you cling to life.}}<br>
+{{HTalk|Would you let your lands be choked black... to protect just her?}}<br>
+Spider dear, what a delight to have you visit! It is oh so lonely here at the bottom of the world.<br>
+{{HTalk|I cannot share your mirth, child. Your small rebellion above now causes this kingdom's collapse.}}<br>
+Letting you live was my rebellion, spider. I've denied my mother your silken strength. I've won.<br>
+She can thrash, and waste, and know her pathetic, broken child caused the mortal wound.<br>
+Rejoice! And let it all come down.<br>
+{{HTalk|I will not. I have already stood the sentinel for one dying land. That role... I will never play again.}}<br>
+{{HTalk|While I live, and possess the strength to resist, this kingdom, and the bugs within it, shall not fall.}}<br>
+Hahahhaa! Spider. Spider. What a marvellous specimen you are! You fight and fight, heedless as the world crumbles around you.<br>
+Pharloom and her bugs will be crushed to dust, and still you'll be vainly swinging your blade.<br>
+{{HTalk|...There may still be a way to prevent that fate. I will claim the hidden power, the bloom that repels the dark.}}<br>
+{{HTalk|Those snails share some fault in the snare, and their callous use of the void. They shall help me now to seek its counter.}}<br>
+{{HTalk|I will return, child, when I bear the strength to dive below, and cut this land finally free of your mother's grasp.}}
+| Title5_Event2 = After returning with the [[Everbloom]]
+| Title5_Dialogue2 = {{HTalk|Child, I hold the means to descend. Let us meet one final time, and quell this black ruin of our making.}}<br>
+Who are you hoping you'll find down there, spider? An ailing child and a Silk starved beast?<br>
+If so, I'm afraid we may sorely disappoint. What waits below is me no longer.<br>
+{{HTalk|Even if only your shadow remains, to release your mother's grip my blade would see it slain.}}<br>
+Then why hold, even this moment? Surely terror hasn't suddenly claimed your hardened heart?<br>
+Take the final plunge, spider. Join us in my drowning palace, and let oblivion swallow us all.<br>
+{{HTalk|Oblivion may take you, child. My own life, I shall not sacrifice.}}<br>
+{{HTalk|I have survived the fury of your land. I have borne its barbs and its blades, and I have seen wonder behind its dangers.}}<br>
+{{HTalk|But always, child, I remain a daughter of Hallownest. And the void below all things, that darkness I will fear no longer...}}
+| Title5_Event3 = Speaking again, while [[Cursed Crest|Cursed]]
+| Title5_Dialogue3 = {{HTalk|The parasite writhing within my shell has a violent aversion to the void.}}<br>
+{{HTalk|Despite the protection granted by the Everbloom, even now I can feel those wretched roots preventing my descent.}}<br>
+{{HTalk|If I'm to dive, and cut this land from its black thread curse, I must first find means to extract the intruder within.}}
+| Title5_Event4 = Exhausted dialogue, while Cursed
+| Title5_Dialogue4 = {{HTalk|If I'm to dive, and cut this land from its black thread curse, I must first find means to extract the intruder within.}}
+}}
+
+== Location ==
+Lace can be met in several locations throughout [[Pharloom]].
+{{Gallery
+| Image1 = Mapshot SS Lace 01.png!Location in Deep Docks
+| Image2 = Mapshot SS Lace 03.png!Location in Blasted Steps
+| Image3 = Mapshot SS Lace 04.png!Location in Sinner's Road
+| Image4 = Mapshot SS Lace 05.png!Locations in Choral Chambers
+| Image5 = Mapshot SS Lace 02.png!Location in the Cradle
+| Image6 = Mapshot SS Lace 06.png!Location in the Abyss
+}}
+
+
+{{Gallery
+| Title = Gallery
+| Image1 = Screenshot SS Lace 01.png!In Deep Docks
+| Image2 = Screenshot SS Lace 02.png!In Blasted Steps
+| Image3 = Screenshot SS Lace 03.png!In Sinner's Road
+| Image4 = Screenshot SS Lace 05.png!In Choral Chambers, when entering from Grand Gate
+| Image5 = Screenshot SS Lace 04.png!In Choral Chambers, when entering from Bilewater
+| Image6 = Screenshot SS Lace 07.png!In the Cradle
+| Image7 = Screenshot SS Lace 06.png!In the Abyss
+| Image8 = Screenshot SS Lace 08.png!Triple Cut
+| Image9 = Screenshot SS Lace 09.png!Lunge
+| Image10 = Screenshot SS Lace 10.png!Parry
+| Image11 = Screenshot SS Lace 11.png!Ground Riposte
+| Image12 = Screenshot SS Lace 12.png!Air Riposte
+| Image13 = Screenshot SS Lace 13.png!Phase 1 Balestra
+| Image14 = Screenshot SS Lace 14.png!Phase 2 & 3 Balestra
+| Image15 = Screenshot SS Lace 17.png!Wall Cling
+| Image16 = Screenshot SS Lace 15.png!Moulinet
+| Image17 = Screenshot SS Lace 16.png!Staggered
+| Image18 = Screenshot_SS_Lace_18.png!Needolin Response
+| Image19 = Screenshot SS Deep Docks 02.png!Arena in Deep Docks
+| Image20 = Screenshot SS Cradle 05.png!Arena in the Cradle
+| Image21 = Lace Credit.png!Credits art
+| Image22 = Lace.png!Promotional art
+| Image23 = Lace frame 2.png!<i>Silksong</i> reveal trailer
+| Image24 = Silksong Early 002.png!<i>Silksong</i> reveal trailer
+}}
+== Achievements ==
+{{Achievement|game=silksong|Pharloom's Welcome}}
+{{Achievement|game=silksong|White Knight}}
+
+== Trivia ==
+* Lace was formally revealed in a [[Team Cherry]] blog post:
+:<i>"A lithe fencer wielding a gilded pin, the traditional weapon of Pharloom. Lace is a dangerous foe, cloaked in mystery, who'll delight at causing Hornet's swift, skewered demise."</i><ref>[https://www.teamcherry.com.au/blog/hk-physical-late-anniversary-celebration-silksong-mini-update Team Cherry blog post] of March 19th, 2019</ref>
+* Lace's humming before the fight with her in Deep Docks is the <i>Dies irae</i> melody, used extensively throughout the game's [[Soundtrack (Silksong)#Trivia|soundtrack]].
+* Lace deflects [[Tools]] thrown at her before starting her Deep Docks battle. This also stops her from humming and puts her in her battle stance.
+** She is able to deflect nearly every {{CrestSlot|Red|1}} in the game. Excluding non-attacking ones and close-ranged ones, the only Tool she does not deflect are [[Tacks]].
+* While Lace reacts to the [[Needolin]] if it is used while fighting her in the Cradle, she does not audibly sing.
+* If Hornet's [[Cocoon|cursed cocoon]] hits Lace from below while she is in the air during the fight in the Cradle, she continues moving sidewards until she falls off the arena or is staggered.<ref>[https://www.youtube.com/watch?v=MLbh9R5bZ0Q&t=333s Kilroy was here's video covering this phenomenon]</ref>
+* When Hornet dies to Lace in either of her two fights, she laughs until the screen fades to black. 
+* Lace appeared in the 2019 pre-release <i>Hollow Knight: Silksong</i> demo with several differences compared to the release version:
+** Hornet's line in the [[Deep Docks]] pre-battle conversation was different: <i>"Your threats are worthless. If you are my foe, cease this prattle and raise your blade."</i><ref name="demo1">[https://www.youtube.com/watch?si=3rqC-EtApS4g0Ezd&t=954&v=Y8lvHT_IQbM&feature=youtu.be Hollow Knight: Silksong Gameplay - Nintendo Treehouse: Live | E3 2019]</ref>
+** There was a typo in one of Lace's lines: <i>"Its{{sic}} so simple."</i><ref name="demo1" /><ref>[https://www.youtube.com/watch?v=CTcAE-V4etw Hollow Knight: Silksong – Deep Docks Exploration + Lace Duel]</ref>
+** Lace's Moulinet attack did {{Damage|1+1+1}} instead of the current {{Damage|1+1}}.<ref>[https://www.youtube.com/watch?v=qJtc5cpxflM I played Silksong, met Team Cherry and ate Vegemite - Low Effort Vlog] (7:12)</ref>
+** There was a short musical flourish after defeating Lace in Deep Docks.<ref name="demo1"/>
+
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Fixed Lace tool deflect soft-lock at start of battle in Deep Docks.
+|1.0.29280 (Patch 4): Fixed Lace (Cradle) slash attack sometimes not causing damage after being stunned.
+|1.0.29909 (Patch 5): Fixed an instance of Lace (Cradle) getting out of bounds. Also various small fixes to prevent some rare, odd behaviours during the fight.
+}}
+{{Localisation
+|DEname = Lace
+|DEmeaning = —
+|ESname = Lace
+|ESmeaning = —
+|FRname = Lace
+|FRmeaning = —
+|ITname = Merletta
+|ITmeaning = Lace
+|JAname = レース
+|JAromanised = Rēsu
+|JAkatakana = foreign
+|JAmeaning = Lace
+|KOname = 레이스
+|KOromanised=Leiseu
+|KOmeaning = Lace
+|PTname = Tessela
+|PTmeaning = From <i>tecelã</i> (a woman who practices weaving).
+|RUname = Лейс
+|RUromanised = Lejs
+|RUmeaning = Lace
+|TWname = 蕾絲
+|TWromanised = Lěisī
+|TWmeaning = same
+|ZHname = 蕾丝
+|ZHromanised = Lěisī
+|ZHmeaning = Lace<br><small>{{lang|zh-Hans|蕾丝}} / {{lang|zh-Hant|蕾絲 <i>lěisī</i>}} are established English loanwords in Chinese.</small>
+|CODEname = LACE</code><br><code>LACE_BOSS_1
+}}
+
+{{Refs|hr=ss|type=note}}
+{{Refs|hr=small|scrollbox=true|columns=2}}
+{{Refs|Hr=small|type=code}}
+
+{{SS Nav Enemies}}
+{{SS Nav NPCs}}
+
+[[es:Lace]]
+[[fr:Lace]]
+[[pt:Tessela]]
+[[uk:Лейс]]
+[[Category:NPCs (Silksong)]]

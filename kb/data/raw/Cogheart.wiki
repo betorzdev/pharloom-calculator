@@ -1,0 +1,182 @@
+{{SS Infobox Item
+| label = Complete
+| type = [[Items (Silksong)#Deliverable|Deliverable]]
+| title = Cogheart
+| image = Cogheart.png
+| description = Reassembled cogwork heart, containing a fine array of wheels and regulators.
+| effects = Reactivates the [[Second Sentinel]]
+| source = Found throughout [[the Citadel]]
+| label2 = Piece
+| title2 = Cogheart Piece
+| image2 = Cogheart Piece 1.png
+| description2 = One part of a cogwork heart, containing an intricate mechanism of wheels and regulators.
+| effects2 = Assembled into the Cogheart<br>Requires two more pieces
+| label3 = Pieces
+| title3 = Cogheart Pieces
+| image3 = Cogheart Pieces.png
+| description3 = Two parts of a cogwork heart, containing an intricate array of wheels and regulators.
+| effects3 = Assembled into the Cogheart<br>Requires one more piece
+}}
+
+{{Quote|Hr=SS
+|Woken, is this sentinel.<br>F-f-f-functional, is its shell.
+|[[Second Sentinel]]
+}}
+
+The <b>Cogheart</b>, also referred to as <b>Cogwork Heart</b>,<ref>Prompt when using the Cogheart on the inert [[Second Sentinel]]: <i>"Insert Cogwork Heart?"</i></ref> is a [[Items (Silksong)#Deliverables|deliverable item]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+The Cogheart is used to activate [[Second Sentinel]] in [[Cogwork Core]]. This is required to be able to partake in the <i>[[Final Audience]]</i> [[Wish]].
+
+{{Gallery
+|Image1 = Cogwork Core Map Clean Textless Cogheart.png!Location of Second Sentinel's body in Cogwork Core
+|Image2 = Screenshot SS Cogwork Core 08.png!Second Sentinel encased in Cogwork Core
+}}
+
+== How to Acquire ==
+The Cogheart is fashioned from three Cogheart Pieces found throughout [[the Citadel]], in the following locations:
+
+{| class="article-table" width="100%"
+! Area
+! Location
+! Map
+|-
+! [[Choral Chambers]]
+| To the west, connected to the tall room that leads to [[The Slab]].
+| [[File:Mapshot SS Cogheart Piece 01.png|center|200px]]
+|-
+! [[Whispering Vaults]]
+| In a room below the entrance to [[The Stage]].
+| [[File:Mapshot SS Cogheart Piece 02.png|center|200px]]
+|-
+! [[Memorium]]
+| To the east, in the room above the map room.
+| [[File:Mapshot SS Cogheart Piece 03.png|center|200px]]
+|}
+
+In order to collect each Cogheart Piece, a memory puzzle must be solved by striking bells in the same order as they are played. Failing a round will only reset the current one. The solutions are as follows, from left to right:
+
+{| class="article-table" align="center"
+! colspan=2 | Choral Chambers
+|-
+| 
+* 1 - 5 - 4 - 6
+* 3 - 6 - 5 - 1 - 7
+* 2 - 4 - 6 - 3 - 5 - 1
+| [[File:Screenshot SS Cogheart Choral Chambers Numbered.png|right|200px]]
+|-
+! colspan=2 | Whispering Vaults
+|-
+| 
+* 1 - 2 - 7 - 4
+* 7 - 5 - 6 - 4 - 5
+* 2 - 7 - 3 - 5 - 6 - 1
+| [[File:Screenshot SS Cogheart Whispering Vaults Numbered.png|right|200px]]
+|-
+! colspan=2 | Memorium
+|-
+| 
+(up - down)
+* 7 - 2 - 4 - 6
+* 4 - 2 - 1 - 4 - 3
+* 1 - 5 - 6 - 2 - 7 - 3
+| [[File:Screenshot SS Cogheart Memorium Numbered.png|right|200px]]
+|}
+
+== Gallery ==
+{{Gallery
+| Image1 = Cogheart Piece 1.png!First<br>Cogheart Piece
+| Image2 = Cogheart Piece 2.png!Second<br>Cogheart Piece
+| Image3 = Cogheart Piece 3.png!Third<br>Cogheart Piece
+}}
+{{Localisation
+|DEname = Räderherz
+|DEmeaning = Cogheart
+|ESname = Corazón de engranajes
+|ESmeaning = Heart of Cogwheels
+|FRname = Cœur mécanique
+|FRmeaning = Mechanical Heart
+|ITname = Cuore meccanico
+|ITmeaning = Mechanical Heart
+|JAname = カラクリの心臓
+|JAromanised = Karakuri no shinzō
+|JAmeaning = Mechanical Heart<br><small>{{lang|ja|心臓}} <i>shinzō</i> specfically refers to a heart that is a central part of something.</small>
+|KOname = 톱니심장
+|KOromanised = Tobnisimjang
+|KOmeaning = Cogheart
+|PTname = Coração Mecânico
+|PTmeaning = Mechanical Heart
+|RUname = Заводное сердце
+|RUromanised = Zavodnoe serdce
+|RUmeaning = Clockwork Heart
+|TWname = 機心
+|TWromanised = Jī xīn
+|TWmeaning = same
+|ZHname = 机心
+|ZHromanised = Jī xīn
+|ZHmeaning = Mechanical Heart<br><small>When read together, it means diabolical scheme or cunning idea.</small>
+|CODEname = COG_HEART
+}}
+===Cogheart Piece===
+{{Localisation
+|hr=false
+|DEname = Teil eines Räderherzens
+|DEmeaning = Piece of a Cogheart
+|ESname = Pieza de corazón de engranajes
+|ESmeaning = Piece of a Heart of Cogwheels
+|FRname = Composant mécanique
+|FRmeaning = Mechanical Component 
+|ITname = Pezzo di cuore meccanico
+|ITmeaning = Piece of a Mechanical Heart
+|JAname = カラクリの心臓のかけら
+|JAromanised = Karakuri no shinzō no kakera
+|JAmeaning = Piece of a Mechanical Heart
+|KOname = 톱니심장 조각
+|KOromanised = Tobnisimjang jogak
+|KOmeaning = Cogheart Piece
+|PTname = Peça de Coração Mecânico
+|PTmeaning = Piece of Mechanical Heart 
+|RUname = Часть заводного сердца
+|RUromanised = Častʹ zavodnogo serdca
+|RUmeaning = Part of a Clockwork Heart
+|TWname = 機心部件
+|TWromanised = Jī xīn bùjiàn
+|TWmeaning = same
+|ZHname = 机心部件
+|ZHromanised = Jī xīn bùjiàn
+|ZHmeaning = Mechanical Heart Component
+|CODEname = COG_HEART_PIECE
+}}
+===Cogheart Pieces===
+{{Localisation
+|hr=false
+|DEname = Teile eines Räderherzens
+|DEmeaning = Pieces of a Cogheart
+|ESname = Piezas de corazón de engranajes
+|ESmeaning = Pieces of a Heart of Cogwheels
+|FRname = Composants mécanique
+|FRmeaning = Mechanical Components 
+|ITname = Pezzi di cuore meccanico
+|ITmeaning = Pieces of a Mechanical Heart
+|JAname = カラクリの心臓の部位
+|JAromanised = Karakuri no shinzō no bui
+|JAmeaning = Part of a Mechanical Heart<br><small>{{lang|ja|部位}} <i>bui</i> specfically refers to a part of the body.</small>
+|KOname = 톱니심장 조각들
+|KOromanised = Tobnisimjang jogakduel
+|KOmeaning = Cogheart Pieces
+|PTname = Peças de Coração Mecânico
+|PTmeaning = Pieces of Mechanical Heart 
+|RUname = Части заводного сердца
+|RUromanised = Časti zavodnogo serdca
+|RUmeaning = Parts of a Clockwork Heart
+|TWname = 一對機心部件
+|TWromanised = Yī duì jī xīn bùjiàn
+|TWmeaning = same
+|ZHname = 一对机心部件
+|ZHromanised = Yī duì jī xīn bùjiàn
+|ZHmeaning = One Pair of a Mechanical Heart Component 
+|CODEname = COG_HEART_PIECES
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Items}}

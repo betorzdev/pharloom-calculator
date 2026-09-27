@@ -1,0 +1,90 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Driznarga.png|Hunter's Journal
+Driznarga Idle.png|Idle
+Driznarga No Shell.png|No Coral
+Driznarga Hidden.png|Hidden
+</gallery>
+| hasdrop = true
+| sh1 = 5-8
+| sh2 = 7-10
+|health = 55/{{BT|110}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1.2|1.1|1|1}}
+|numbers_required = 14
+|singnum=1
+}}
+{{Quote
+|Hr = Journal
+|Large male Driznit, ferocious and territorial. Fires its heavy coral mask at intruders.<hr/>
+A fine shot with its sharp mask. Its aggression has no ill effect on its aim.
+}}
+
+<b>Driznargas</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are large male [[Driznit|Driznits]].<ref>Driznarga [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Large male Driznit, ferocious and territorial."</i></ref>
+
+== Behaviour and Tactics ==
+Driznargas behave very similiarly to [[Driznit]]s, burrowing out of ceilings when Hornet gets near and firing off their coral-fused masks.<br>
+Being ranged flying enemies, Driznargas always try to maintain distance between themselves and Hornet, but especially prioritising vertical distance. They are, however, slower than Driznits and have a larger hitbox.<br>
+To attack, Driznargas fire off their coral masks at a diagonal angle, which ricochet off of surfaces up to 7 times before breaking. If Hornet is hit by the projectile, it drills into her and combos her for {{Damage|1+1}}. Hornet's attacks can change the spike's direction and cause it to hit itself or other enemies for 15 damage. The spike can only damage enemies if Hornet has hit it.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Driznargas have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* The crust covers...
+* The crust conceals...
+* Our shells made strong...
+* Our nest made secret...
+}}
+
+== Location ==
+Driznargas can be found primarily in the [[Sands of Karak]], but one also appears in the [[Memorium]], and another spawns alongside a [[Void Mass]] during [[Act 3]] in the [[Blasted Steps]], disappearing once the mass is destroyed.
+{{Gallery
+|Image1 = Mapshot SS Driznarga 02.png!Locations in the Sands of Karak
+|Image2 = Mapshot SS Driznarga 03.png!Location in the Memorium
+|Image3 = Mapshot SS Driznarga 01.png!Location in the Blasted Steps in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Driznarga 01.png!Driznarga in [[Coral Tower]]
+|Image2= Screenshot SS Driznarga 02.png!Attacking
+|Image3= Screenshot SS Driznarga 03.png!Hidden
+|Image4= Screenshot SS Driznarga 07.png!Singing
+|Image5= Screenshot SS Driznarga 04.png!Driznarga in Sands of Karak
+|Image6= Screenshot SS Driznarga 05.png!Driznarga in Blasted Steps
+|Image7= Screenshot SS Driznarga 06.png!Driznarga in Memorium
+}}
+
+{{Localisation
+|DEname = Driznarga
+|DEmeaning = —
+|ESname = Driznarga
+|ESmeaning = —
+|FRname = Drizzna
+|FRmeaning = —
+|ITname = Maschimbomba
+|ITmeaning = Portmanteau of <i>maschera</i> (mask) and <i>rimbombare</i> (to rumble).
+|JAname = ドリズナルガ
+|JAromanised = Dorizunaruga
+|JAkatakana = foreigenemy
+|JAmeaning = Driznarga
+|KOname = 드리즈나르가
+|KOromanised = Deurijeunareuga
+|KOmeaning = Driznarga
+|PTname = Driznarga
+|PTmeaning = —
+|RUname = Маскострел
+|RUromanised = Maskostrel
+|RUmeaning = Portmanteau of {{lang|ru|маска}} <i>maska</i> (mask) and {{lang|ru|стрелять}} <i>streljat'</i> (to shoot or to fire).
+|TWname = 重甲擲面蟲
+|TWromanised = Zhòngjiǎ zhì miàn chóng
+|TWmeaning = same
+|ZHname = 重甲掷面虫
+|ZHromanised = Zhòngjiǎ zhì miàn chóng
+|ZHmeaning = Heavy-armoured Face-throwing Bug
+|CODEname= CORAL_CONCH_SHOOTER_HEAVY
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

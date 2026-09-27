@@ -1,0 +1,66 @@
+{{SS Infobox Item
+| source = [[Gurr the Outcast]]
+| type = [[Items (Silksong)#Deliverable|Deliverable]]
+| description = Carved child's toy of a bug clad in leaves.
+}}
+
+{{Quote
+| A huge red-shell stole my precious keepsake and disappeared into the fields! Please chase down the thief and recover my treasure!
+| [[Gilly]]
+| Hr = SS
+}}
+
+<b>Grass Doll</b> is a [[Items (Silksong)#Deliverables|deliverable item]] in <i>[[Hollow Knight: Silksong]]</i>. It is a doll belonging to [[Gilly]] that was stolen from her.
+
+== Use ==
+Grass Doll can be turned in at [[Bellhart]] to complete the <i>[[The Hidden Hunter]]</i> [[wish]], which grants a [[Mask Shard (Silksong)|Mask Shard]].
+
+{{Gallery
+|Image1 = Mapshot SS Frey 01.png!Location in Bellhart
+|Image2 = Screenshot SS Frey 02.png!Wishwall in Bellhart
+}}
+
+== How to Acquire ==
+Grass Doll can be picked up after defeating [[Gurr the Outcast]] in [[Act 3]], who is found after accepting the wish [[The Hidden Hunter]].
+
+{{Gallery
+|Image1 = Mapshot SS Grass Doll.png!Location in the Far Fields
+|Image2 = Screenshot SS Grass Doll 01.png!Grass Doll in Gurr the Outcast's lair in Far Fields
+}}
+
+{{Localisation
+|DEname = Graspuppe
+|DEmeaning = Grass Doll
+|ESname = Muñeca de hierba
+|ESmeaning = Grass Doll
+|FRname = Poupée d'herbe
+|FRmeaning = Grass Doll
+|ITname = Bambola d'erba
+|ITmeaning = Grass Doll
+|JAname=ムシ形
+|JAromanised= Mushigyō
+|JAmeaning = From {{lang|ja|人形 <i>ningyō</i>}} (doll), with {{lang|ja|人 <i>nin</i>}} (human) replaced with {{lang|ja|虫 <i>mushi</i>}} (bug).
+|JAkatakana = enemy
+|KOname = 잔디 인형
+|KOromanised = Jandi inhyeong
+|KOmeaning = Grass Doll
+|PTname =  Camarada da Relva
+|PTmeaning = Grass Companion
+|RUname = Травяная кукла
+|RUromanised = Travjanaja kukla
+|RUmeaning = Grass Doll
+|TWname = 草娃娃
+|TWromanised = Cǎo wáwá
+|TWmeaning = same
+|ZHname = 草娃娃
+|ZHromanised = Cǎo wáwá
+|ZHmeaning = Grass Doll
+|CODEname = ANT_TRAPPER_ITEM
+|CODEmeaning = 
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

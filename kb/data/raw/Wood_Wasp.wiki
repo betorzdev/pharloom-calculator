@@ -1,0 +1,98 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Wood Wasp.png|Hunter's Journal
+Wood Wasp Nest.png|Nest
+</gallery>
+|drops = None
+|health = 15/{{BT|30}} <br> 50 (Hive)
+|damage_modifiers = {{SS Multiple Damage Modifiers|Wasp|1|0.8|0.8|0.8|0.8|Hive|1|0.75|0.75|0.75|0.75}}
+|numbers_required = 12
+|singnum=1
+}}
+{{Quote
+|Hr = Journal
+|Pointed, darting insect that builds a hardy hive from Shellwood's dried bark.<hr/>Destroying the hives will limit their presence in the wood. Useful to me now, as I pass along the branches. Dangerous in time for the wood's order. Even a small disruption can tip a fragile balance.
+}}
+
+<b>Wood Wasps</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are tiny, purplish wasps with bulging eyes. They are often found near their nests.
+
+== Behaviour and Tactics ==
+When idle, Wood Wasps hover around a small area. When Hornet approaches, they fly towards her and attack by charging at her in a straight line. If they hit a surface while charging, they are stuck briefly before dislodging themselves.
+
+Wood Wasps deal {{Damage|1}} both upon contact and with their attack.
+
+They spawn regularly from the destructible purple hives found in Shellwood when Hornet is nearby, starting with a maximum of 2 wasps out at once and increasing to 3 once the hive drops to 16 health.
+Once their hive is destroyed, 1–2 wasps will continue to respawn around the area of their hive.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Wood Wasps have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* Find the scent...
+* Dig in deep...
+* Drink the sap...
+* Protect the nest...
+}}
+
+== Location ==
+Wood Wasps can be found in [[Shellwood]], often surrounding their hives or intact [[Pollip Heart]] flowers.
+{{Gallery
+|Image1 = Mapshot SS Wood Wasp 01.png!Locations in Shellwood (hives intact)
+|Image2 = Mapshot SS Wood Wasp 02.png!Locations in Shellwood (hives destroyed)
+|Image3 = Mapshot SS Wood Wasp 03.png!Locations in Shellwood in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Wood Wasp 01.png!Idle at hive
+|Image2= Screenshot SS Wood Wasp 02.png!Idle at destroyed hive
+|Image3= Screenshot SS Wood Wasp 03.png!Idle at [[Pollip Heart]] flower
+|Image4= Screenshot SS Wood Wasp 04.png!Attacking
+|Image5= Screenshot SS Wood Wasp 05.png!Singing
+}}
+
+==Trivia==
+* Wood Wasp is an alternate name for [[wikipedia:Horntail|Horntails]], a real life species of sawflies.
+* [[Pollip Heart]]s are dead bodies of Wood Wasps, consumed by the purple plant from which the Pollip Hearts are dropped.<ref>Pollip Heart description: <i>"Core of a flower formed around the body of a consumed Wood Wasp."</i></ref>
+{{Gallery
+|Image1= Pollip Heart.png!A Pollip Heart
+}}
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Fixed Snitch Pick not giving [[rosaries]] and [[Shell Shards|shell shards]] as intended.
+|1.0.29909 (Patch 5): Fixed issues with Wood Wasps' colliders sometimes lingering longer than intended or not reactivating on respawn.
+}}
+{{Localisation
+|DEname = Holzwespe
+|DEmeaning = Wood Wasp<br><small><i>Holz</i> refers to the material, and not a forest.</small>
+|ESname = Avispa forestal
+|ESmeaning = Forest Wasp
+|FRname = Guêpe Sylvestre
+|FRmeaning = Forest Wasp
+|ITname = Caravespa
+|ITmeaning = Portmanteau of <i>carapace</i> (shell) and <i>vespa</i> (wasp).
+|JAname = 森のワスプ
+|JAromanised = Mori no wasupu
+|JAmeaning = Forest Wasp
+|KOname = 송곳벌
+|KOromanised = Songgotbeol
+|KOmeaning = Horntail<br><small>[[wikipedia:Horntail|Horntail]]s are a species of sawflies commmonly known as Wood Wasps.</small>
+|PTname = Vespa-cascomadeira
+|PTmeaning = Shellwood Wasp
+|RUname = Древесная оса
+|RUromanised = Drevesnaja osa
+|RUmeaning = Tree Wasp
+|TWname = 木蜂
+|TWromanised = Mù fēng
+|TWmeaning = same
+|ZHname = 木蜂
+|ZHromanised = Mù fēng
+|ZHmeaning = Wood Wasp<br><small>{{lang|zh-Hans|木蜂}} <i>mù fēng</i> literally means wood wasp but specfically refers to [[wikipedia:Carpenter Bee|Carpenter Bee]]s.</small>
+|CODEname=SHELLWOOD_WASP
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

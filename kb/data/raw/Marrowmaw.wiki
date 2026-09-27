@@ -1,0 +1,105 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Marrowmaw.png|Hunter's Journal
+Marrowmaw Idle.png|Idle
+Marrowmaw Resting.png|Resting
+Marrowmaw Curled up.png|Curled Up
+</gallery>
+| health = 50/{{BT|100}} <br> 45 ([[Moss Grotto]])
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.9|0.75|0.65|0.6}}
+| hasdrop = true
+| sh1 = 10-15
+| sh2 = 13-19
+| drops = [[Beast Shard]] ([[Moss Grotto]])
+| numbers_required = 8
+|singnum=1
+}}
+
+{{Quote
+| Hr = Journal
+| Giant roller of the lowlands. Its ridged hide will crush smaller creatures beneath it.<hr/>Sheer bulk makes for an effective weapon, but requires much sustenance. This creature would have spent most of its time eating. An acceptable life for some.
+}}
+
+<b>Marrowmaws</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are giant, bulkier variants of [[Mawling]]s, able to crush smaller creatures with their ridged hide.<ref>Marrowmaw [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Giant roller of the lowlands. Its ridged hide will crush smaller creatures beneath it."</i></ref>
+
+== Behaviour and Tactics ==
+Upon spotting [[Hornet (Silksong)|Hornet]], Marrowmaws cry out before rolling into a ball and charging at her, bouncing off walls and rolling in the other direction, or stopping if they reach an edge. Any other enemies caught in the roll will be killed.
+
+After rolling for long enough, they stop and pant heavily, creating an opening for attack. After a few seconds, they will regain their energy and be able to roll again.
+
+Jumping over their charge and performing a down-slash can be an effective method of defeating them.<br>
+Or, if Hornet's [[Needle]] is strong enough, they can be rushed down before they even begin their assault.
+
+Marrowmaws deal {{Damage|2}} on contact.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Marrowmaws have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+*Rumbling, crackling...
+*Shells are strong...
+*Scratching, seeking...
+*Warm and dark...
+*Digging, hiding...
+*Claws are sharp...
+}}
+
+== Location ==
+One Marrowmaw can be found in [[Moss Grotto]] behind two hidden entrances directly east of Hornet's starting area, and does not respawn once defeated. In [[Act 3]], it dies, but another Marrowmaw appears near the entrance to [[Weavenest Atla]]. Marrowmaws can more commonly be found in the western section of [[Weavenest Atla]]. Another one appears in the [[Memorium]], east of the area's bench.
+
+{{Gallery
+|Image1 = Mapshot SS Marrowmaw 01.png!Location in Moss Grotto
+|Image2 = Mapshot SS Marrowmaw 04.png!Location in Moss Grotto in Act 3
+|Image3 = Mapshot SS Marrowmaw 02.png!Locations in Weavenest Atla
+|Image4 = Mapshot SS Marrowmaw 03.png!Location in the Memorium
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Marrowmaw 02.png!In Moss Grotto
+|Image2 = Screenshot SS Marrowmaw 01.png!In Weavenest Atla
+|Image3 = Screenshot SS Marrowmaw 03.png!In the Memorium
+|Image4 = Screenshot SS Marrowmaw 04.png!In Moss Grotto in Act 3
+|Image5 = Screenshot SS Marrowmaw 08.png!Idle
+|Image6 = Screenshot SS Marrowmaw 06.png!Attacking
+|Image7 = Screenshot SS Marrowmaw 07.png!Reacting to the Needolin
+|Image8 = Screenshot SS Marrowmaw 05.png!Corpse in Moss Grotto in Act 3
+}}
+
+== Trivia ==
+* If the Marrowmaw in [[Moss Grotto]] has not been killed before [[Act 3]], it will be dead, leaving behind a Void-filled corpse, and preventing its [[Beast Shard]] from being collected.
+* In the secret room within the [[Blasted Steps]] full of [[Squirrm]]s, there is a [[Shell Shard]] deposit which loosely resembles a Marrowmaw. It is referred to as a <code>primal_marrowmaw</code> by its file name.
+{{Gallery
+| Image1 = Marrowmaw Shell Shard Deposit.png!"Primal Marrowmaw"
+}}
+{{Localisation
+|DEname = Markschlund
+|DEmeaning = Marrowmaw
+|ESname = Apisonador
+|ESmeaning = From <i>apisonadora</i> (steamroller or bulldozer).
+|FRname = Mawrok
+|FRmeaning =
+|ITname = Schiacciatore
+|ITmeaning = Crusher
+|JAname = マロマウ
+|JAromanised = Maromau
+|JAkatakana = enemy
+|JAmeaning = Marrowmaw
+|KOname = 골수 분쇄자
+|KOromanised = Golsu bunswaeja
+|KOmeaning = Marrow Crusher
+|PTname = Trinca-ossos
+|PTmeaning = Bone Breaker
+|RUname = Мувень
+|RUromanised = Muvenʹ
+|RUmeaning =
+|ZHname = 髓渊兽
+|ZHromanised = Suǐ yuān shòu
+|ZHmeaning = Marrow Depths Beast
+|CODEname = BONE_THUMPER
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

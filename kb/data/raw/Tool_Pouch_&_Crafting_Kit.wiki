@@ -1,0 +1,590 @@
+{{SS Infobox Item
+| label = Combined
+| title = Tool Pouch<br>& Crafting Kit
+| image = Tool Pouch & Crafting Kit.png
+| description = A pouch for holding traps and tools, and fine crafting implements to increase their lethality.
+| effects = Increase [[Tools]] capacity<br>Increase [[Tools]] damage<br>Increase [[Shell Shards]] capacity
+| type = [[Items (Silksong)#Equipment|Equipment]]<br>[[Items (Silksong)#Upgrades|Upgrade]]
+| source = [[NPCs (Silksong)#Merchants|Merchant]]<br>[[Wish]] reward
+| buy = 
+| max = 4 each
+
+| label2 = Tool Pouch
+| title2 = Tool Pouch
+| image2 = Tool Pouch.png
+| description2 = Basic pouch designed for holding tools, traps and crafting materials.
+| effects2 = Increase [[Tools]] capacity<br>Increase [[Shell Shards]] capacity
+| type2 = [[Items (Silksong)#Equipment|Equipment]]<br>[[Items (Silksong)#Upgrades|Upgrade]]
+| source2 = Starting item<br>[[NPCs (Silksong)#Merchants|Merchant]]<br>[[Wish]] reward
+| buy2 = {{R|220}}
+| max2 = 4
+
+| label3 = Crafting Kit
+| title3 = Crafting Kit
+| image3 = Crafting Kit.png
+| effects3 = Increase [[Tools]] damage
+| type3 = [[Items (Silksong)#Equipment|Equipment]]<br>[[Items (Silksong)#Upgrades|Upgrade]]
+| source3 = [[NPCs (Silksong)#Merchants|Merchant]]<br>[[Wish]] reward
+| buy3 = {{R|180}}<br>{{R|450}}<br>{{R|700}}
+| max3 = 4
+}}
+
+{{Quote
+|Hr=SS
+|Crafting by claw alone produces inferior results. With this kit, you can craft finer, sharper, and deadlier tools... if that is your wish.
+|[[Forge Daughter]]
+}}
+
+The <b>Tool Pouch</b> and the <b>Crafting Kit</b> are [[Items (Silksong)#Equipment|equipment items]] in <i>[[Hollow Knight: Silksong]]</i> used by [[Hornet (Silksong)|Hornet]]. The Tool Pouch holds her [[Tools]] and {{S|[[Shell Shards]]}}, and she uses her Crafting Kit to craft stronger Tools.
+
+== Function ==
+The Tool Pouch and the Crafting Kit can be upgraded separately up to four times each. Each of these upgrades offer different improvements to [[Hornet (Silksong)|Hornet]]'s Tools.
+
+=== Tool Pouch ===
+<b>Tool Pouch</b> upgrades increase the maximum capacity of [[Shell Shards]] by {{S|100}}, starting with a capacity of {{S|400}}, up to a maximum of {{S|800}}.
+
+Tool Pouch upgrades also increase the maximum capacity of {{CrestSlot|Red|s}}. The increase per pouch varies by Tool and by upgrade, generally being around 25%, with the final upgrade always allowing double the base amount. This effect does not apply to the [[Rosary Cannon]], as its maximum capacity cannot be increased, and the [[Needle Phial]], which has infinite uses.
+
+Repairing any Tool at a [[Bench (Silksong)|bench]], except for [[Rosary Cannon]] and [[Flea Brew]], costs {{S|40}} divided by the Tool's base capacity.
+
+Using the {{Steel Soul Icon Mini|SS}} [[Shell Satchel]], the maximum capacity of Tools can be increased even further depending on the upgrade level.
+
+{| class="article-table sortable" style="text-align:center"
+! rowspan="2" | Tool
+! colspan="5" | Pouch Capacity per Upgrade
+! rowspan="2" | Repair Cost
+|- class="sorttop"
+! None
+! ●○○○
+! ●●○○
+! ●●●○
+! ●●●●
+|-
+! style="text-align:left" | [[Straight Pin]]
+| 12
+| 15
+| 18
+| 21
+| 24
+| {{S|3.33}}
+|-
+! style="text-align:left" | [[Threefold Pin]]
+| 10
+| 12
+| 15
+| 17
+| 20
+| {{S|4}}
+|-
+! style="text-align:left" | [[Sting Shard]]
+| 6
+| 7
+| 9
+| 10
+| 12
+| {{S|6.66}}
+|-
+! style="text-align:left" | [[Tacks]]
+| 5
+| 6
+| 7
+| 8
+| 10
+| {{S|8}}
+|-
+! style="text-align:left" | [[Longpin]]
+| 10
+| 12
+| 15
+| 17
+| 20
+| {{S|4}}
+|-
+! style="text-align:left" | [[Curveclaw]]
+| 8
+| 10
+| 12
+| 14
+| 16
+| {{S|5}}
+|-
+! style="text-align:left" | [[Curvesickle]]
+| 8
+| 10
+| 12
+| 14
+| 16
+| {{S|5}}
+|-
+! style="text-align:left" | [[Throwing Ring]]
+| 10
+| 12
+| 15
+| 17
+| 20
+| {{S|4}}
+|-
+! style="text-align:left" | [[Pimpillo]]
+| 4
+| 5
+| 6
+| 7
+| 8
+| {{S|10}}
+|-
+! style="text-align:left" | [[Conchcutter]]
+| 8
+| 10
+| 12
+| 14
+| 16
+| {{S|5}}
+|-
+! style="text-align:left" | [[Silkshot]] (Original)
+| 8
+| 10
+| 12
+| 14
+| 16
+| {{S|5}}
+|-
+! style="text-align:left" | [[Silkshot]] ([[Twelfth Architect]])
+| 12
+| 15
+| 18
+| 21
+| 24
+| {{S|3.33}}
+|-
+! style="text-align:left" | [[Silkshot]] ([[Forge Daughter]])
+| 15
+| 18
+| 22
+| 26
+| 30
+| {{S|2.66}}
+|-
+! style="text-align:left" | [[Delver's Drill]]
+| 9
+| 11
+| 13
+| 15
+| 18
+| {{S|4.44}}
+|-
+! style="text-align:left" | [[Cogwork Wheel]]
+| 5
+| 6
+| 7
+| 8
+| 10
+| {{S|8}}
+|-
+! style="text-align:left" | [[Cogfly]]
+| 4
+| 5
+| 6
+| 7
+| 8
+| {{S|10}}
+|-
+! style="text-align:left" | [[Voltvessels]]
+| 5
+| 6
+| 7
+| 8
+| 10
+| {{S|8}}
+|-
+! style="text-align:left" | [[Flintslate]]
+| 3
+| 3
+| 4
+| 5
+| 6
+| {{S|13.33}}
+|-
+! style="text-align:left" | [[Snare Setter]]
+| 5
+| 6
+| 7
+| 8
+| 10
+| {{S|8}}
+|-
+! style="text-align:left" | [[Flea Brew]]
+| 3
+| 3
+| 4
+| 5
+| 6
+| {{S|10}}<ref>If empty bottle is broken by throwing it.</ref>
+|-
+! style="text-align:left" | [[Plasmium Phial]]
+| 3
+| 3
+| 4
+| 5
+| 6
+| {{S|13.33}}
+|- class="sortbottom"
+| colspan="7" style="text-align:left" | <references />
+|}
+
+=== Crafting Kit ===
+<b>Crafting Kit</b> upgrades increase the damage dealt by damage-dealing {{CrestSlot|Red|s}} and {{CrestSlot|Blue|s}} by 60%. The damage is rounded before any future damage calculations. This effect does not apply to the damage bonus of [[Flintslate]].
+
+{| class="article-table sortable" style="text-align:center"
+! class="unsortable" rowspan="2" style="width:0.1rem" | 
+! rowspan="2" | Tool
+! colspan="5" | Tool Damage per Upgrade
+|- class="sorttop"
+! None
+! ●○○○
+! ●●○○
+! ●●●○
+! ●●●●
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Straight Pin]]
+| 5
+| 8
+| 11
+| 14
+| 17
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Threefold Pin]]
+| 4
+| 6
+| 9
+| 11
+| 14
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Sting Shard]]
+| 4
+| 6
+| 9
+| 11
+| 14
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Tacks]]
+| 2
+| 3
+| 4
+| 6
+| 7
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Longpin]]
+| 5
+| 8
+| 11
+| 14
+| 17
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Curveclaw]]
+| 3
+| 5
+| 7
+| 8
+| 10
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Curvesickle]]
+| 5
+| 8
+| 11
+| 14
+| 17
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Throwing Ring]]
+| 4
+| 6
+| 9
+| 11
+| 14
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Pimpillo]]
+| 15
+| 24
+| 33
+| 42
+| 51
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Conchcutter]]
+| 2
+| 3
+| 4
+| 6
+| 7
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Silkshot]] (Original)
+| 10
+| 16
+| 22
+| 28
+| 34
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Silkshot]] ([[Twelfth Architect]])
+| 3
+| 5
+| 7
+| 8
+| 10
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Silkshot]] ([[Forge Daughter]])
+| 6
+| 10
+| 13
+| 17
+| 20
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Delver's Drill]]
+| 4
+| 6
+| 9
+| 11
+| 14
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Cogwork Wheel]]
+| 2
+| 3
+| 4
+| 6
+| 7
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Cogfly]]
+| 3
+| 5
+| 7
+| 8
+| 10
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Rosary Cannon]]
+| 2
+| 3
+| 4
+| 6
+| 7
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Voltvessels]] (Spear Form)
+| 3
+| 5
+| 7
+| 8
+| 10
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Voltvessels]] (Bola Form)
+| 2
+| 5
+| 7
+| 8
+| 10
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Snare Setter]]
+| 7
+| 11
+| 15
+| 20
+| 24
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Needle Phial]]
+| 7
+| 11
+| 15
+| 20
+| 24
+|-
+! {{CrestSlot|Blue}}
+! style="text-align:left" | [[Warding Bell]]
+| 9
+| 14
+| 20
+| 25
+| 31
+|-
+! {{CrestSlot|Blue}}
+! style="text-align:left" | [[Pollip Pouch]]
+| 1
+| 2
+| 2
+| 3
+| 3
+|-
+! {{CrestSlot|Blue}}
+! style="text-align:left" | [[Sawtooth Circlet]]
+| 8
+| 13
+| 18
+| 22
+| 27
+|-
+! {{CrestSlot|Blue}}
+! style="text-align:left" | [[Claw Mirror]]
+| 11
+| 18
+| 24
+| 31
+| 37
+|-
+! {{CrestSlot|Blue}}
+! style="text-align:left" | [[Claw Mirrors]]
+| 15
+| 24
+| 33
+| 42
+| 51
+|-
+! {{CrestSlot|Blue}}
+! style="text-align:left" | [[Memory Crystal]]
+| 10
+| 16
+| 22
+| 28
+| 34
+|-
+! {{CrestSlot|Blue}}
+! style="text-align:left" | [[Wispfire Lantern]]
+| 5
+| 8
+| 11
+| 14
+| 17
+|- class="sortbottom"
+| colspan="7" style="text-align:left" | <b>Note:</b> This list includes only the base damage/per-hit damage for each Tool. <br> For a more comprehensive overview check their respective pages, or in [[Damage Values and Enemy Health (Silksong)#Tools|Damage Values and Enemy Health]].
+|}
+
+== How to Acquire ==
+The Tool Pouch is available from the start of the game. After obtaining a Crafting Kit, both items combine and occupy a single space in the inventory.
+
+There are a total of four Tool Pouch upgrades and four Crafting Kit upgrades that Hornet can get from various [[NPCs (Silksong)|characters]], either by buying them from merchants, or as a reward for completing certain actions and [[Wishes]].
+
+{| class="article-table" width="100%"
+! style="width: 8rem;" | Item
+! Location
+! Requires
+! Map
+|- 
+! rowspan=2 | [[File:Tool Pouch Upgrade.png|72x72px|center]] Tool Pouch
+| In [[Act 1]] or [[Act 2]], purchased from [[Mort]] in [[Pilgrim's Rest]] for {{R|220}}.<ref>[[Mort]]: <i>That pouch of yours... With the scraps left here and a little work, I could add some pockets for you, let you carry more tools and shards while on the road. That'd be nice, wouldn't it?</i></ref>
+| -
+| [[File:Mapshot SS Pilgrim's Rest.png|150x150px|center]]
+|- style="border-top: 0.1rem dashed rgba(255,255,255,0.5);"
+| In [[Act 3]], purchased from [[Grindle]] in [[Blasted Steps]] for {{R|220}}.<ref>[[Grindle]]: <i>We could add a little pocket to yer tool pouch for you. You could pack even more goodies in there! All your shards'n sharp things!</i></ref>
+| [[Faydown Cloak]]
+| [[File:Mapshot SS Grindle 01.png|150x150px|center]]
+|-
+! rowspan=2 | [[File:Tool Pouch Upgrade.png|72x72px|center]] Tool Pouch
+| In [[Act 1]] or [[Act 2]], reward from [[Loddie]] in [[the Marrow]] after beating his first challenge.<ref>[[Loddie]]: <i>I see you have a tool pouch of your own there. Full to bursting with baubles and trinkets, no doubt! I'll fit another pocket onto it, so you can carry even more tools and shards with you. A fair prize, wouldn't you say?</i></ref>
+| Complete <i>[[SAVE: The Threadspun Town]]</i>
+| rowspan=2 | [[File:Mapshot SS Marrow Prison.png|150x150px|center]]
+|- style="border-top: 0.1rem dashed rgba(255,255,255,0.5);"
+| In [[Act 3]], found in Loddie's former location, on a table
+| -
+|-
+! [[File:Tool Pouch Upgrade.png|72x72px|center]] Tool Pouch
+| Reward from [[Nuu]] in [[Halfway Home]] for completing the <i>[[Bugs of Pharloom]]</i> [[wish]].<ref>[[Nuu]]: <i>And take a gift to help with your huntings, miss grown-up! Nuu will add a pocket to your tool pouch, for bringing of many tools on your hunts!</i></ref>
+| [[Hunter's Journal (Silksong)|Hunter's Journal]]
+| [[File:Mapshot SS Hunter's Journal.png|150x150px|center]]
+|-
+! [[File:Tool Pouch Upgrade.png|72x72px|center]] Tool Pouch
+| Reward from [[Fleamaster Mooshka]] in [[Fleatopia]] after helping the [[Flea Caravan]] move.<ref>[[Fleamaster Mooshka]]: <i>I have been learning to sew, and the little fleas have been gathering materials for me. I thought I could add an extra pocket to your tool pouch, to make your travels just a little easier.</i></ref>
+| Rescue 22 [[Flea]]s<br>
+Visit [[Pale Lake]]
+| [[File:Mapshot SS Flea Caravan 04.png|150x150px|center]]
+|-
+! [[File:Crafting Kit Upgrade.png|72x72px|center]] Crafting Kit
+| Purchased from [[Forge Daughter]] in [[Deep Docks]] for {{R|180}}.<ref>[[Forge Daughter]]: <i>If you add the implements from this set to your own, the quality of your crafting will increase. You will produce finer, sharper, and deadlier tools... if that is your wish.</i></ref>
+| -
+| [[File:Mapshot SS Forge Daughter 01.png|150x150px|center]]
+|-
+! [[File:Crafting Kit Upgrade.png|72x72px|center]] Crafting Kit
+| Reward from [[Creige]] in [[Halfway Home]] for completing the <i>[[Crawbug Clearing]]</i> [[wish]].<ref>[[Creige]]: <i>As payment goes, I've got something I think you'd make good use of. A spare crafting kit.
+I'd been holding onto it for someone else, but they've been gone long enough now, I know they won't be returning.</i></ref>
+| Complete <i>[[SAVE: The Threadspun Town]]</i>
+| [[File:Mapshot SS Creige 01.png|150x150px|center]]
+|-
+! [[File:Crafting Kit Upgrade.png|72x72px|center]] Crafting Kit
+| Purchased from [[Twelfth Architect]] in [[Underworks]] for {{R|450}}.<ref>[[Twelfth Architect]]: <i>Tools of my craft. They could be used to improve your own. Make harder, sharper.</i></ref>
+| [[Clawline]]
+| [[File:Mapshot SS Twelfth Architect 01.png|150x150px|center]]
+|-
+! [[File:Crafting Kit Upgrade.png|72x72px|center]] Crafting Kit
+| Purchased from [[Grindle]] in [[Blasted Steps]] for {{R|700}}.<ref>[[Grindle]]: <i>You're in the habit of craftin' all kinds'a nasty tools'n traps, aint'cha? This kit'll let you build 'em even nastier, heh heh...</i></ref>
+| [[Faydown Cloak]]
+| [[File:Mapshot SS Grindle 01.png|150x150px|center]]
+|}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Far Fields 07.png ! Mort in Pilgrim's Rest
+|Image2 = Screenshot SS The Marrow 11.png ! Loddie in the Marrow
+|Image3 = Screenshot_SS_Loddie's_Camp_01.png ! Loddie's desk in Act 3, where a tool pouch upgrade can be acquired if it wasn't already
+|Image4 = Screenshot SS Greymoor 06.png ! Nuu in Halfway Home
+|Image5 = Screenshot SS Flea Caravan 05.png ! Fleamaster Mooshka in Fleatopia
+|Image6 = Screenshot SS Deep Docks 03.png ! Forge Daughter in Deep Docks
+|Image7 = Screenshot SS Greymoor 01.png ! Creige in Halfway Home
+|Image8 = Screenshot SS Underworks 11.png ! Twelfth Architect in Underworks
+|Image9 = Screenshot SS BlastedSteps 06.png ! Grindle in Blasted Steps
+}}
+
+==Trivia==
+* The Tool Pouch appears to have a [[Hallownest Seal]] on it.
+* In the 2019 <i>Silksong</i> demo, the Tool Pouch had the description of <i>"A basic pouch, designed to hold tools, traps and accessories."</i><ref name="doc">[https://docs.google.com/document/d/10wyWpWJAtbRUSrOstN4e1l09mtx-vrjU_IiqdB2QGyc Everything we know about Hollow Knight: Silksong] (June 13th, 2022)</ref>
+{{History
+|game = SS
+|1.0.28497 (Patch 1): The damage boost of each Crafting Kit was reduced from 70% to 60%.
+|1.0.28891 (Patch 3): Fixed Crafting Kits not increasing the damage of offensive blue tools.
+}}
+{{Localisation
+|DEname = Werkzeugtasche und Fertigungssatz
+|DEmeaning = Tool Pouch and Craft Set
+|ESname = Bolsa de herramientas y kit de fabricación
+|ESmeaning = Tool Bag and Manufacturing Kit
+|FRname = Sac à outils & Kit de fabrication
+|FRmeaning = Sack of Tools & Fabrication Kit 
+|ITname = Sacca per strumenti e corredo per creazione
+|ITmeaning = Sack of Tools and Creation Supply
+|JAname=ポーチ&作成キット
+|JAromanised= Pōchi & sakusei kitto
+|JAkatakana = foreign
+|JAmeaning = Pouch & Craft Kit
+|KOname = 도구 주머니 및 제작 키트
+|KOromanised = Dogu jumeoni mit jejak kiteu
+|KOmeaning = Tool Pouch and Craft Kit
+|PTname =  Bolsa de Ferramentas e Conjunto de Fabricação
+|PTmeaning = Tool Pouch and Fabrication Kit
+|RUname = Сумка с инструментами и набор умельца
+|RUromanised = Sumka s instrumentami i nabor umel'ca
+|RUmeaning = Tool Bag and Craftsperson's Kit
+|TWname = 工具袋 & 製作匣
+|TWromanised = Gōngjù dài & zhìzuò xiá
+|TWmeaning = same
+|ZHname = 工具袋 & 制作匣
+|ZHromanised = Gōngjù dài & zhìzuò xiá
+|ZHmeaning = Tool Pouch & Crafting Case
+|CODEname = POUCHANDTOOLKIT
+|CODEmeaning = 
+}}
+{{Refs|hr=false}}
+
+{{SS Nav Items}}
+[[Category:Items (Silksong)]]

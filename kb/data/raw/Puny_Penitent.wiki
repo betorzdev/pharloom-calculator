@@ -1,0 +1,76 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Puny Penitent.png|Hunter's Journal
+Puny Penitent Idle.png|Idle
+</gallery>
+| hasdrop = true
+| sh1 = 4-6
+| sh2 = 5-8
+|health = 40
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1.25|1|1|1}}
+|numbers_required = 6
+|singnum=1
+|va = Beau Fitzgerald<ref>Beau Fitzgerald is credited in Puny Penitent's audio files.</ref>
+}}
+{{Quote
+|Hr = Journal
+|Small bug, shackled and cowled for sin committed within the Citadel. <hr/>Their thick shroud leaves them sightless, yet it seems to matter little. They have no care for their own safety, wishing only to charge at those they sense as sinful.
+}}
+
+<b>Puny Penitents</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are small [[Slab_Penitents#The_Penitents|penitents]] in [[the Slab]] who are shackled and cowled for sin committed within [[the Citadel]], leaving them sightless but still wishing to charge at those they sense as sinful.<ref>Puny Penitent Hunter's Journal entry: <i>"Small bug, shackled and cowled for sin committed within the Citadel. Their thick shroud leaves them sightless, yet it seems to matter little. They have no care for their own safety, wishing only to charge at those they sense as sinful.</i></ref>
+
+== Behaviour and Tactics ==
+Puny Penitents start off bound in chains, but break out of them once Hornet comes near.<br>
+Being flying Enemies, Puny Penitents keep aerial distance from Hornet by attempting to remain diagonally above her. To attack, they close in and perform a short, mainly horizontal swoop at her.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Chastise us... o shame!
+* Shame! Shame!
+* Punish us... cleanse us...
+* Holy silence... swallow our shame...
+}}
+
+== Location ==
+Puny Penitents can be found exclusively in the Slab.
+
+{{Gallery
+|Image1 = Mapshot SS Puny Penitent 01.png!Location in the Slab 
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Puny Penitent 01.png!Shackled
+|Image2= Screenshot SS Puny Penitent 02.png!Idle 
+|Image3= Screenshot SS Puny Penitent 03.png!Swooping
+|Image4= Screenshot SS Puny Penitent 04.png!Singing
+}}
+{{Localisation
+|DEname = Schmächter Büßer
+|DEmeaning = Languish Penitent
+|ESname = Penitente enclenque
+|ESmeaning = Puny Penitent
+|FRname = Pénitent Chétif
+|FRmeaning = Weak Penitent
+|ITname = Penitente Minuto
+|ITmeaning = Tiny Penitent
+|JAname=小さな悔悟者
+|JAromanised=Chīsana kaigosha 
+|JAmeaning = Little Penitent 
+|KOname = 빈약한 회개자
+|KOromanised = Binyakan hoegaeja
+|KOmeaning = Poor Penitent
+|PTname =  Penitente Fraco
+|PTmeaning = Weak Penitent
+|RUname = Хилый покаянник
+|RUromanised = Xilyj pokajannik
+|RUmeaning = Puny Penitent
+|ZHname = 弱小悔罪者
+|ZHromanised = Ruòxiǎo huǐzuì zhě
+|ZHmeaning = Weak Penitent
+|CODEname = SLAB_PRISONER_FLY_NEW
+|CODEmeaning = [[Penitent]]s are also labelled as "new" 
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

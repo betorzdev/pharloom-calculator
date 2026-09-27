@@ -1,0 +1,96 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Dreg Husk.png|Hunter's Journal
+Dreg Husk Idle.png |Idle
+</gallery>
+| hasdrop = true
+| sh1 = 2-3
+| sh2 = 3-4
+| health = 50
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.2|1|0.85|0.85|0.85}}
+|numbers_required = 8<br>(Instantly completed on [[the Unravelled]]'s death)
+|singnum = 2
+}}
+{{Quote
+|Hr = Journal
+|Remains of a Citadel bug possessed by Silk dregs. The husk will lash out wildly with the many sharp pins caught inside its thread.<hr/>
+There is old anguish bound upon these threads, the result of countless cruel procedures.
+}}
+
+<b>Dreg Husks</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are corpses possessed by [[Silk]] dregs that lash out with the sharp pins caught inside their thread.<ref>Dreg Husk [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Remains of a Citadel bug possessed by Silk dregs. The husk will lash out wildly with the many sharp pins caught inside its thread."</i></ref>
+
+== Behaviour and Tactics ==
+Dreg Husks hover aimlessly while idle, starting to float slowly over to [[Hornet (Silksong)|Hornet]] once they have spotted her. They try to keep horizontal distance from Hornet, usually staying just out of [[Needle]] range. They have two moves they use depending on the situation:
+* <b>Pin Lash:</b> Pins poke out of the Dreg Husk's head for a moment before it moves forward slightly and wildly lashes with pins and Silk in front of itself, comboing Hornet for {{Damage|1+1}} if she is caught at any point during the attack.
+* <b>Evade:</b> Quickly dashes horizontally away from Hornet. They only use this move if she gets close after they miss with Pin Lash.
+
+Due to Dreg Husks' slow speed and predictable movements, their attacks can easily be jumped over and [[Needle#Needle-bouncing|Needle-bounced]].<br>
+Alternatively, repeatedly striking them upwards whilst beneath them is an easy tactic to defeat them, as they cannot defend themselves from below and continually fly downwards back into striking range.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* ...Stretched... thin...
+* ...Why?... again...
+* ...I am... fading...
+* ...Remember... shell...
+* ...The shell... I was...
+* ...The pain... forget the pain...
+}}
+
+== Location ==
+One Dreg Husk can be found in the [[Whiteward]] to the west of the lift after picking up the [[Choral Commandment]] there, and another appears where the [[Surgeon's Key]] is found, either after picking up the key or re-entering the room.
+
+Three Dreg Husks appear during the [[Enemy_Gauntlets_(Silksong)/Unravelled|fight]] with [[the Unravelled]], and up to two spawn in each wave of the infinitely respawning enemies in the arena once the boss is defeated.
+
+{{Gallery
+|Image1 = Mapshot SS Dreg Husk 01.png!Locations in the Whiteward
+|Image2 = Mapshot SS Dreg Husk 02.png!Locations in the Whiteward after defeating the Unravelled
+}}
+
+== Trivia ==
+
+* Dreg Husks do not drop organs for the <i>[[Broodfeast]]</i> or <i>[[Runtfeast]]</i> [[wishes]], nor do they release blood particles when hit, aligning with Hornet's mention of "hollowed husks" she saw in the Whiteward.<ref>Hornet dialogue with the [[Caretaker]]: <i>"In the ward down below, I saw it clear, the hollowed husks, and the many torturous implements... machines to instill a bug with thread, that would see their life extended."</i></ref>
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Dreg Husk 01.png!Behind a sheet
+|Image2 = Screenshot SS Dreg Husk 02.png!Revealed
+|Image3 = Screenshot SS Dreg Husk 03.png!At the Surgeon's Key
+|Image4 = Screenshot SS Dreg Husk 04.png!Pin Lash
+|Image5 = Screenshot SS Dreg Husk 05.png!Evade
+|Image6 = Screenshot SS Dreg Husk 07.png!Reacting to the Needolin
+|Image7 = Screenshot SS Dreg Husk 06.png!Launched by the Unravelled
+}}
+{{Localisation
+|DEname = Fetzenhülle
+|DEmeaning = Rag Husk
+|ESname = Cáscara de restos
+|ESmeaning = Dreg Husk
+|FRname = Carapace de Résidus
+|FRmeaning = Shell of Residues
+|ITname = Relitto Residuale
+|ITmeaning = Residual Derelict
+|JAname= クズイトノカラ
+|JAromanised = Kuzuito no kara
+|JAmeaning = Combination of {{lang|ja|屑糸 <i>kuzuito</i>}} (waste thread) and {{lang|ja|殻 <i>kara</i>}} (husk).
+|JAkatakana = enemy
+|KOname = 찌꺼기 껍데기
+|KOromanised = Jjikkeogi kkeopdegi
+|KOmeaning = Dreg Husk
+|PTname =  Carcaça Residual
+|PTmeaning = Residual Carcass
+|RUname = Ошмёточная оболочка
+|RUromanised = Ošmëtočnaja oboločka
+|RUmeaning = Ragged Husk
+|TWname = 殘絲軀殼
+|TWromanised = Cán sī qūké
+|TWmeaning = same
+|ZHname = 残丝躯壳
+|ZHromanised = Cán sī qūké
+|ZHmeaning = Dreg Silk Husk
+|CODEname=SONG_THREADED_HUSK
+|CODEmeaning="Song" internally refers to the Citadel
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

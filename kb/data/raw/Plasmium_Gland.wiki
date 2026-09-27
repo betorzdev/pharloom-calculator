@@ -1,0 +1,65 @@
+{{SS Infobox Item
+| image = <gallery>
+Plasmium Gland Animated.png|Inventory
+Icon SS Plasmium Gland.png|HUD
+</gallery>
+| description = Pulsating organ grown within the shell of Alchemist Zylotol. The gland replenishes over time, providing a near limitless source of Plasmium.<hr>
+Crafting new Plasmium Phials no longer requires a reserve.
+| effects = Allows [[Hornet (Silksong)|Hornet]] to craft unlimited [[Plasmium Phial]]s without returning to [[Alchemist Zylotol]]
+| type = Equipment
+}}
+
+{{Quote
+| For your reward... take the gland from within my shell... my gift to you.<br>I have no more need of it... and it shall grant you... unending reserves of Plasmium...<br>Yes... Plasmium. Pure... beautiful... Plasmium...
+| [[Alchemist Zylotol]]
+| Hr = SS
+}}
+
+The <b>Plasmium Gland</b> is an [[Items (Silksong)#Equipment)|equipment item]] in <i>[[Hollow Knight: Silksong]]</i>. 
+
+== Function ==
+The Plasmium Gland acts as an endless reserve of Plasmium when crafting [[Plasmium Phial]]s at [[Bench (Silksong)|benches]]. Before acquiring it, replenishing the Plasmium reserve requires visiting [[Alchemist Zylotol]] and paying him {{R|50}}.
+
+== How to Acquire ==
+Obtained as a reward for completing the <i>[[Advanced Alchemy]]</i> [[wish]].
+
+{{Gallery
+|Image1 = Mapshot SS Alchemist Zylotol 01.png!Location in the [[Wormways]]
+|Image2 = Screenshot SS Wormways 08.png! Alchemist Zylotol holding the Plasmium Gland within himself 
+|Image3 = Screenshot SS Alchemist Zylotol 02.png!Zylotol with the Plasmium Gland taken
+}}
+
+==Trivia==
+* The Plasmium Gland is animated in the inventory, pulsing slowly.
+{{Localisation
+|DEname = Plasmiumdrüse
+|DEmeaning = Plasmium Gland
+|ESname = Glándula de plasmio
+|ESmeaning = Plasmium Gland
+|FRname = Glande de plasmonium
+|FRmeaning = Plasmium Gland
+|ITname = Ghiandola di plasmio
+|ITmeaning = Plasmium Gland
+|JAname = プラスミウムの分泌腺
+|JAromanised = Purasumiumu no bunpisen
+|JAmeaning = Plasmium Gland
+|KOname = 플라스미움 샘
+|KOromanised = Peullaseumium saem
+|KOmeaning = Plasmium Gland
+|PTname = Glândula de Plásmio
+|PTmeaning = Plasmium Gland
+|RUname = Плазмиумная железа
+|RUromanised = Plazmiumnaja železa
+|RUmeaning = Plasmium Gland
+|TWname = 原質液腺
+|TWromanised = Yuán zhì yè xiàn
+|TWmeaning = Protoplasm Fluid Gland<br><small>{{lang|zh-Hant|原質液 <i>yuánzhìyè</i>}} (protoplasm fluid) is [[Plasmium]] in Traditional Chinese.
+|ZHname = 生质液腺
+|ZHromanised = Shēng zhì yè xiàn
+|ZHmeaning = Life Substance Fluid Gland<br><small>{{lang|zh-Hans|生质液 <i>shēngzhìyè</i>}} (life substance fluid) is [[Plasmium]] in Simplified Chinese.</small>
+|CODEname = PLASMIUM_GLAND
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}

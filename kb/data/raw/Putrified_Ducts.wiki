@@ -1,0 +1,262 @@
+{{WIP}}
+
+{{SS Infobox Area
+| tab1 = Act 2
+| image1 = <gallery>
+Putrified_Ducts_Map_Marked.png|Marked
+Putrified_Ducts_Map_Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Putrified_Ducts_Map_Ruin_Marked.png|Marked
+Putrified_Ducts_Map_Ruin_Clean.png|Unmarked
+</gallery>
+| connection = [[Memorium]]
+[[Bilewater]]
+| ambience = [https://www.youtube.com/watch?v=04rQ_V7y02o Atmos Dust]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+| main = [https://www.youtube.com/watch?v=GKuvGphKNXY Tomb]
+}}
+{{Quote
+|Sisters, spiders, watch these waters flow, Cleansing, Binding, as Silk from shell, Memories of our kingdom calm.
+|[[Lore Tablets (Silksong)|Lore Tablet]]
+|Hr=SS}}
+The <b>Putrified Ducts</b> are an [[Areas (Silksong)|area]] connected to the [[Memorium]] and [[Bilewater]] in <i>[[Hollow Knight: Silksong]]</i>. The dirty, swamp-like tunnels here have been polluted by smog from [[the Citadel]].
+
+== Description ==
+[[File:Screenshot SS Putrified Ducts 11.png|thumb|200px|left|Broken bridge]]
+The area mostly consists of vile and disgusting water, filled with [[Muckmaggot]]s. There are 4 large rooms with aqueducts running from one side to another.
+The ducts are also home to the [[Ductsucker]], which feeds off of the slime on the ducts. The [[Wreath of Purity]] tool can be found there, next to the ruins of a Pinstress's balloon.
+[[Vog]] can be found at the top of the area, after a secret parkour challenge. After talking to her, she will find her way to the [[Flea Caravan]].
+Once she is back at the Flea Caravan, she will provide the locations of [[Flea]]s in exchange for Rosaries.
+{{clear}}
+
+== History ==
+It is likely that long ago the whole area was as clean as the surroundings of the Pale Lake, with stone aqueducts built to carry water.<ref>Pale Lake [[Lore_Tablets_(Silksong)#Pale_Lake|Lore Tablet]]: <i>"Sisters, spiders, watch these waters flow, Cleansing, Binding, as Silk from shell, Memories of our kingdom calm."</i></ref><ref>Hornet dialogue with [[Fleamaster Mooshka]]: <i>"Fleamaster, if your troupe is still prepared to travel, I have discovered a cave beyond the Citadel, at the edge of some ancient aqueducts."</i></ref> But eventually, like [[Bilewater]], these caves suffered from [[the Citadel]]'s pollution,<ref>[[Needolin_Locations#Putrified_Ducts|Needolin dialogue]] near the corpses of the Citadel workers: <i>"...Trapped... ...So dark... ...All turned rotten... The bites... the stench..."</i></ref> driven in part by smog expelled from the [[Exhaust Organ]],<ref>Spit Squit [[Needolin]] dialogue: <i>"Survive in smog... Choke on bile... Feed... or starve... Resist the rot..."</i></ref> and turned into a fetid swamp, with their inhabitants forced to adapt to the toxic environment.<ref>Spit Squit Hunter's Journal entry: <i>"To subsist on the sickly water in this fetid environment it spits out the most toxic elements. Over generations, this former survival technique has turned into an effective hunting tool."</i></ref>
+
+== How to Access ==
+The entrance via the [[Memorium]] can be found through a hidden passage in the ceiling of the Memorium's map room which is discovered as part of the <i>[[The Lost Merchant]]</i> [[Wish]]. This passage leads to an open area with a breakable wall on the far right at a point accessible through careful jumping. 
+
+Alternatively, there is an entrance that may be opened through the highest point in [[Bilewater]], past the arena in Bilehaven. This passage leads to the bottommost room of the region, next to the [[Huntress]]'s dwelling. A gate will block off the top areas of the Putrified Ducts however, so the rest will have to be explored through the Memorium entrance.
+
+{{TabbedPOI
+|Header = true
+
+|NPC1 = Huntress
+|NPC2 = Vog
+|NPC3 = Runt
+
+|Enemy1 = Muckmaggot
+|Enemy2 = Spit Squit
+|Enemy3 = Barnak
+|Enemy4 = Ductsucker
+
+|Loot1_FileName = Wreath of Purity
+|Loot2_FileName = Longclaw
+|Loot2_Description = given by [[Huntress]] after completing the <i>[[Broodfeast]]</i> wish or by [[Runt]] after completing the <i>[[Runtfeast]]</i> wish
+|Loot3_FileName = Key of Apostate
+|Loot3_Name = Slab Keys{{!}}Key of Apostate
+|Loot4_FileName = Flea
+|Loot4_Amount = 1
+|Loot4_Description = [[Vog]]
+|Loot5_FileName = Frayed Rosary String
+|Loot5_Amount = 1
+|Loot6_FileName = Underworks Map
+|Loot6_Name = Map and Quill (Silksong){{!}}Putrified Ducts Map
+}}
+
+== Sub-area: Pale Lake ==
+{{SS Infobox Area
+| tab1 = Act 2
+| image1 = <gallery>
+Pale_Lake_Map_Marked.png|Marked
+Pale Lake_Map_Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Pale_Lake_Map_Ruin_Marked.png|Marked
+Pale_Lake_Map_Ruin_Clean.png|Unmarked
+</gallery>
+|ambience = [https://www.youtube.com/watch?v=ZzyCwfkjyCI Lake Atmos Hornet]<br>
+[https://www.youtube.com/watch?v=zNcy8lmv3-Q Atmos Cave Misc 4]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]<br>
+[https://youtu.be/29ILR84YJT0 Fungal Wastes Atmos Loop] (Near <i>Passing of the Age</i> tablet)
+}}
+The <b>Pale Lake</b> is a sub-area in the far east of Putrified Ducts. It consists of a large, open cavern with a vast expanse of water in it.
+
+In contrast to the rest of the area, the water in the Pale Lake is clear and clean.
+
+In [[Act 3]], Hornet can use [[Silk Soar]] to access a secret area and find a lore tablet for the [[Passing of the Age (Wish)|Passing of the Age]] wish.
+
+At the edge of the lake is a [[Weavers|Weaver]] [[Lore_Tablets_(Silksong)|Lore Tablet]] that can be revealed by playing the [[Needolin]].
+
+{{TabbedPOI
+|Loot1_FileName = Craftmetal
+|Loot1_Amount = 1
+
+|LoreTabletsSource = SS Pale Lake
+}}
+{{clear}}
+
+== Sub-area: Fleatopia ==
+{{SS Infobox Area
+| tab1 = Act 2
+|image1 = <gallery>
+Fleatopia_Map_Marked.png|Marked
+Fleatopia_Map_Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+|image2 = <gallery>
+Fleatopia_Map_Ruin_Marked.png|Marked
+Fleatopia_Map_Ruin_Clean.png|Unmarked
+</gallery>
+|ambience = [https://www.youtube.com/watch?v=ZzyCwfkjyCI Lake Atmos Hornet]<br>
+[https://www.youtube.com/watch?v=zNcy8lmv3-Q Atmos Cave Misc 4]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]<br>
+|main = [https://www.youtube.com/watch?v=Yq1Aw-ckjPg Fleatopia]<br>
+[https://youtu.be/QpnCmEsRJzI?si=NzZUkNtjOW48ZmiA Flea Festival]<br>
+[https://youtu.be/gEUNADnBcwU?si=Y_EYqjWkUQm4Ke10 Fleatopia Paired Back A]<br>
+[https://youtu.be/TsAjaZm4xd4?si=IAmJKzhHxvtAmccG Fleatopia Paired Back B]
+|action = [https://www.youtube.com/watch?v=MV3U2RMT3R4 Flea Festival games]
+}}
+<b>Fleatopia</b> is a sub-area located at the Pale Lake. If Hornet has visited the Pale Lake and rescued 22 [[Flea|Fleas]], the [[Flea Caravan]] will move to the Pale Lake and set up a permanent residence there.
+
+In [[Act 3]], [[Fleamaster Mooshka]] will set up the [[Festival of the Flea]] and give the <i>[[Ecstasy of the End]]</i> wish.
+
+After [[Shrine Guardian Seth]] has been defeated in [[Grand Gate]] and met in various locations, he may be found in Fleatopia. Seth competes in the [[Festival of the Flea]], gaining higher scores than any of the Fleas. If Hornet beats all of his high scores he will give the [[Guardian's Memento]].
+
+{{TabbedPOI
+|NPC1 = Flea Caravan
+
+|Loot1_FileName = Egg of Flealia
+|Loot1_Description = given by [[Fleamaster Mooshka]] after rescuing all [[Fleas]]
+|Loot2_FileName = Tool Pouch Upgrade
+|Loot2_Name = Tool Pouch
+|Loot2_Description = given by [[Fleamaster Mooshka]] after moving the Caravan
+|Loot3_FileName = Pale Oil
+|Loot3_Amount = 1
+|Loot3_Description = given by [[Fleamaster Mooshka]] after completing the <i>[[Ecstasy of the End]]</i> wish
+|Loot4_FileName = Guardian's Memento
+|Loot4_Description = given by [[Seth]] after beating all his high scores in the Festival of the Flea
+}}
+{{clear}}
+
+{{Gallery|
+|Title= Gallery
+|Image1 = Screenshot SS Putrified Ducts 01.png![[Huntress]] Hut (Outside)
+|Image2 = Screenshot SS Putrified Ducts 02.png!Huntress Hut (Inside)
+|Image3 = Screenshot SS Putrified Ducts 03.png!Huntress Hut (Empty)
+|Image4 = File:Bellway PutrifiedDucts.png![[Bellway]] station
+|Image5 = Screenshot SS Putrified Ducts 04.png![[Vog]]'s camp
+|Image6 = Screenshot SS Putrified Ducts 05.png!Map location
+|Image7 = Screenshot SS Putrified Ducts 06.png![[Wreath of Purity]] location
+|Image8 = Screenshot SS Putrified Ducts 07.png!Clear water edge
+|Image9 = Screenshot SS Putrified Ducts 08.png!Festival of the Flea
+|Image10 = Screenshot_SS_Festival_of_the_Flea_Muckroast.png!Replacement meat if [[Moorwing]] is skipped
+}}
+
+== Trivia ==
+* The Pale Lake is the furthest east point in present-day Pharloom, barely more so than [[Weavenest Cindril]] of [[Far Fields]].
+* The Pale Lake sub-area title is removed on the in-game map after it is replaced by Fleatopia, but has an unused position where it is moved to the right instead. That position is used by the wiki maps for sake of clarity.
+
+{{History
+|game = SS
+|1.0.28891 (Patch 3): Fixed floor between Putrified Ducts and [[Bilewater]] being breakable from above using a [[Voltvessels]] spear, which allowed [[Groal]] to be skipped.
+|1.0.30000 (Patch 5): Added a bench beside Pale Lake, before the Flea Caravan’s arrival.
+}}
+
+{{Localisation
+|DEname = Verseuchtes Aquädukte
+|DEmeaning = Contaminated Aquaducts
+|ESname = Conductos Putrefactos
+|ESmeaning = Putrid Ducts
+|FRname = Conduits Putrides
+|FRmeaning = Putrid Conduits
+|ITname = Dotti Putridi
+|ITmeaning = Putrid Ducts
+|JAname = 悪臭の水路
+|JAromanised = Akushū no suiro
+|JAmeaning = Foul Smell Waterways
+|KOname = 부패한 송수로
+|KOromanised = Bupaehan songsuro
+|KOmeaning = Putried Waterway
+|PTname = Canais Pestilentos
+|PTmeaning = Pestilent Canals
+|RUname = Гнилые стоки
+|RUromanised = Gnilye stoki
+|RUmeaning = Putrid Sewers
+|ZHname = 腐殖渠
+|ZHromanised = Fǔzhí qú
+|ZHmeaning = Humic Canal
+|TWname = 腐敗溝渠
+|TWromanised = Fǔbài gōuqú
+|TWmeaning = Decayed Aqueduct or Corrupted Aqueduct
+|CODEname=AQUEDUCT
+}}
+===Pale Lake===
+{{Localisation
+|hr=false
+|DEname = Bleicher See
+|DEmeaning = Pale Lake
+|ESname = Lago Pálido
+|ESmeaning = Pale Lake
+|FRname = Lac Pâle
+|FRmeaning = Pale Lake
+|ITname = Lago Pallido
+|ITmeaning = Pale Lake
+|JAname = 蒼白の湖
+|JAromanised = Sōhaku no mizūmi
+|JAmeaning = Pale Lake
+|KOname = 창백한 호수
+|KOromanised = Changbaekhan hosu
+|KOmeaning = Pale Lake
+|PTname = Lago Pálido
+|PTmeaning = Pale Lake
+|RUname = Бледное озеро
+|RUromanised = Blednoe ozero
+|RUmeaning = Pale Lake
+|ZHname = 苍湖
+|ZHromanised = Cāng hú
+|ZHmeaning = Pale Lake
+|TWname = 蒼白之湖
+|TWromanised = Cāngbái zhīhú
+|TWmeaning = same
+|CODEname=WHITELAKE
+}}
+
+===Fleatopia===
+{{Localisation
+|hr=false
+|DEname = Flohtopia
+|DEmeaning = Fleatopia
+|ESname = Pulgatopía
+|ESmeaning = Fleatopia
+|FRname = Pucetopie
+|FRmeaning = Fleatopia
+|ITname = Salteria
+|ITmeaning = Portmanteau of <i>salto</i> (jump) and <i>terra</i> (land).
+|JAname = ノミの楽園
+|JAromanised = Nomi no rakuen
+|JAmeaning = Flea's Paradise
+|KOname = 벼룩의 낙원
+|KOromanised = Byeorugui nagwon
+|KOmeaning = Flea's Paradise
+|PTname = Pulgatopia
+|PTmeaning = Fleatopia
+|RUname = Блошетопия
+|RUromanised = Blošetopija
+|RUmeaning = Fleatopia
+|ZHname = 蚤托邦
+|ZHromanised = Zǎo tuō bāng
+|ZHmeaning = Flea Utopia
+|TWname = 蚤托邦
+|TWromanised = Zǎo tuō bāng
+|TWmeaning = same
+|CODEname=FLEATOPIA
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Areas}}
+
+[[zh:腐殖渠]]
+[[fr:Conduits Putrides]]

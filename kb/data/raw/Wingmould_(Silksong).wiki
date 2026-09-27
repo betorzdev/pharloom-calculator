@@ -1,0 +1,77 @@
+{{Navbar
+|page1 = Wingmould (Hollow Knight)
+|title1 = Hollow Knight
+|page2 = Wingmould (Silksong)
+|title2 = Silksong
+}}
+
+{{SS Infobox Enemy
+| title1 = Wingmould
+| image1= <gallery>
+B Wingmould (Silksong).png|Hunter's Journal
+Wingmould Silksong Ingame.png|In-game
+Wingmould Silksong Open.png|Open
+</gallery>
+| drops = None
+| health = 1
+| damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+| numbers_required = 10<br>(Instantly completed after completing [[Red Memory]])
+}}
+{{Quote
+|Hr = Journal
+|False fly with a rune etched shell. A tortured mix of soul and void is caged within.<hr/>
+A crude construct of my father's fallen domain. Only a fool believes that void can be fashioned to do their bidding.
+}}
+
+<b>Wingmoulds</b> are [[Wingmould (Hollow Knight)|returning]] [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are constructs once found in [[Hallownest]]'s [[White Palace]], now seen only in [[Red Memory|Hornet's memory]].
+
+== Behaviour and Tactics ==
+Floats in place, dealing damage upon contact. Splits apart when hit, before reforming and regaining all health. While in this state, it does not deal contact damage, nor can it be attacked.
+
+Wingmoulds can be used as pseudo-platforms that Hornet can Needle bounce off of or use the [[Clawline]] to reach. Hornet can traverse distances without risk of them becoming unavailable since they cannot be permanently killed.
+
+== Location ==
+Wingmoulds can only be found in certain sections of the [[Red Memory]] after obtaining 3 [[Old Hearts]] and returning to the [[Snail Shamans (Silksong)|Snail Shamans]].
+
+{{Gallery
+|Image1 = Mapshot SS Red Memory.png!Red Memory access location
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Wingmould 01.png!Wingmould in the Red Memory
+|Image2 = Screenshot SS Wingmould 02.png!Two Wingmoulds
+}}
+
+== Trivia ==
+* Wingmoulds do not respond to the [[Needolin]].
+* The Wingmoulds, alongside the [[Void Tendrils (Silksong)|Void Tendrils]] and [[Shadow Creeper (Silksong)|Shadow Creepers]], are one of the 3 [[Enemies (Silksong)|Enemies]] that first appeared in <i>[[Hollow Knight]]</i>.
+
+{{Localisation
+|DEname = Gussfliege
+|DEmeaning = Mould Flyer
+|ESname = Carcasa alada
+|ESmeaning = Winged Casing
+|FRname = Ombrelisse
+|FRmeaning = Smooth Shadow<br><small>This is incosistent with their name in the French version of <i>Hollow Knight</i>, which was <i>Corps Ailé</i> (Winged Body).</small>
+|ITname = Falsala
+|ITmeaning = Portmanteau of <i>falsa</i> (false) and <i>ala</i> (wing).<br><small>This is incosistent with their name in the Italian version of <i>Hollow Knight</i>, which was <i>Automa Alato</i> (Winged Automaton).</small>
+|JAname = ハネカネムシ
+|JAromanised = Hanekanemushi
+|JAmeaning = Combination of {{lang|ja|羽}} <i>hane</i> (wings), {{lang|ja|金}} <i>kane</i> (metal) and {{lang|ja|虫}} <i>mushi</i> (bug).
+|KOname = 날개 달린 형상
+|KOromanised = Malgae dallin hyeongsang
+|KOmeaning = Winged Form 
+|PTname = Armadura Alada
+|PTmeaning = Winged Armour
+|RUname = Крылень
+|RUromanised = Krylen'
+|RUmeaning = Portmanteau of крыло <i>krylo</i> (wing) and тень <i>ten'</i> (shadow).
+|ZHname = 翅膀傀儡
+|ZHromanised = Chìbǎng kuǐlěi
+|ZHmeaning = Winged Puppet
+|CODEname = WHITE_PALACE_FLY
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Enemies}}

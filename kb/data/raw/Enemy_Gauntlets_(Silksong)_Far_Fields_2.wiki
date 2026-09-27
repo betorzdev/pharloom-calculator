@@ -1,0 +1,21 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Far_Fields_Arena_2.png|400px|center]]
+|[[File:Mapshot_SS_Memory_Locket_17.png|400px|center]]
+|-
+| colspan="2" | Enemy Gauntlet in the northeast corner of Far Fields, right of Karmelita. Only accessible in Act 3 and requires [[Silk Soar]]. Hornet is not locked into the arena.
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>[[Memory Locket]]</center>
+| <center>None</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Skarrgard.png|35x35px|link=Skarrgard]] [[Skarrgard]], right
+|Starts off [[Black-Threading|black-threaded]].
+|}

@@ -1,0 +1,230 @@
+{{SS Infobox Area
+| title = Verdania
+| image1 = <gallery>
+Verdania Map Ruin Marked.png|Marked
+Verdania Map Ruin Clean.png|Unmarked
+</gallery>
+| connection = [[Greymoor]]
+| ambience = [https://www.youtube.com/watch?v=imSH2Pv_sCo Atmos Crumbling World]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+}}
+
+{{Quote
+|These waters, at land's edge... and the shrine atop... our furtive escape... our brief retreat from rule... 
+So many moments spent simple... joyful... free...
+|[[Green Prince]]
+|Hr=SS
+}}
+<b>Verdania</b> is an [[Areas (Silksong)|area]] in [[Hollow Knight: Silksong]] which was once home to the rulers of Verdania, the [[Clover Dancers]]. It was filled with greenery and beautiful flora of bulbous flowers and fauna of nimble bugs, but now it is a dilapidated cavern found in [[Acts|Act 3]] if [[Hornet (Silksong)|Hornet]] chooses to free the [[Green Prince]] in [[Sinner's Road]] and finds him in the room containing the [[Cogwork Dancers]]. Upon entering present-day Verdania, the Green Prince can be found standing above the corpse of a Cogwork Dancer, grieving over his partner. Hornet can enter the memory of Lost Verdania by playing the [[Elegy of the Deep]] near the Green Prince.
+== Description ==
+The Verdania that is found in-game is the remains of the lost kingdom of Verdania. It is a dimly lit cave, housing ruined architectures of the lost kingdom and the lamenting [[Green Prince]]. This small corridor is devoid of collectibles, barring the Verdania Map and a bench at the end.
+
+== History ==
+Verdania was once a lush kingdom of green neighbouring Pharloom ruled by the [[Green Prince]] and his lover. When Pharloom's ruler threatened Verdania, the Green Prince's lover offered his own body as the mould from which the [[Cogwork Dancers]] were made in exchange for Verdania's safety.<ref>Green Prince: <i>"The dancers… they were the last free act of my partner… Always hopeful. Always naive. His whole he gave, in desperate trade to see our own caves left safe. His shell and soul became the mould."</i></ref> However, this deal would not be upheld, as Verdania has since been reduced to a tiny desolate corridor; the last remaining specimens of Verdania in the [[Memorium]] were left to rot and be forgotten when the environment was "exceeded".<ref>Memorium [[Lore_Tablets_(Silksong)#Memorium|Lore Tablet]]: "Verdanian environment exceeded - Destined to forget."</ref> 
+
+Hornet can visit Verdania in its prime, known as Lost Verdania, by accessing the Green Prince's memories.
+
+== How to Access ==
+Verdania can be accessed through a pathway in [[Greymoor]] after progressing the [[Green Prince]] storyline. Talking to him once to the west of the [[Citadel Spa]] and once in the room where the [[Cogwork Dancers]] were first fought moves him to Verdania, the entrance to which opens upon reaching Act 3. The entrance to Verdania is located on the rightmost wall of [[Craw Lake]] in the far east of Greymoor.
+
+{{TabbedPOI
+|Header = true
+
+|NPC1 = Green Prince
+
+|Enemy2 = Pharlid Diver 
+|Enemy1 = Pharlid
+
+|Loot1_FileName = Verdania Map
+|Loot1_Name = Map and Quill (Silksong){{!}}Verdania Map
+|Loot2_FileName = Conjoined Heart
+|Loot2_Description = found after defeating [[Clover Dancers]]
+}}
+
+== Lost Verdania ==
+{{SS Infobox Area
+| title = Lost Verdania
+| image1 = <gallery>
+Verdania_Map_Marked.png|Marked
+Verdania_Map_Clean.png|Unmarked
+</gallery>
+| ambience = [https://www.youtube.com/watch?v=CUR-P4v2Cyk Atmos Moss Cave]<br>
+[https://www.youtube.com/watch?v=u-j6oEvMQvM Lake Atmos]<br>
+[https://www.youtube.com/watch?v=ZzyCwfkjyCI Lake Atmos Hornet]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+| main = [https://www.youtube.com/watch?v=_4P3NmMap6w Lost Verdania]
+| action = [https://youtu.be/swPmNk9_fw0?si=u0UZUdRY-EBdPU6W Generic Enemy Battle A]
+}}
+
+Playing the [[Elegy of the Deep]] by the Green Prince in Verdania transports [[Hornet (Silksong)|Hornet]] to <b>Lost Verdania</b>, a memory of Verdania in its prime. This is a lush, green cave that contains some puzzles where 12 glowing orbs have to be collected in a row in order to access the [[Clover Dancers]] boss fight. 7 are found in breakable statues or flowers which spawn a chain of orbs that must be collected quickly. 5 are obtained from defeating the [[Palestag]], and another 5 are obtained from activating the Sacred Shrine in the eastern-most room. If Hornet collects all 17 orbs from completing all of the puzzles, she will gain access to an additional lore tablet. Playing the [[Needolin]] highlights edges of the screen in the direction of uncollected orbs.
+
+Defeating the Clover Dancers grants Hornet the [[Conjoined Heart]], which is a fourth Heart that can substitute one of the three needed to advance the plot. 
+
+Note that after beating the [[Clover Dancers]], Lost Verdania becomes '''completely inaccessible''', though it also unlocks all necessary [[Hunter's Journal (Silksong)|Hunter's Journal]] entries from the area. (This does not include [[Palestag]], which is not required for 100%.)
+
+{{TabbedPOI
+|NPC1 = Green Prince
+
+|Enemy1 = Leaf Glider
+|Enemy2 = Leaf Roller
+|Enemy3 = Pendra
+|Enemy4 = Pendragor
+|Enemy5 = Nuphar
+|Enemy6 = Cloverstag
+|Enemy7 = Kindanir
+|Enemy8 = Verdanir
+|Enemy9 = Escalion
+
+|Boss1 = Palestag
+|Boss2 = Clover Dancers
+
+|LoreTabletsSource = SS Lost Verdania
+
+|EnemyGauntletsSource = Verdania
+}}
+
+== [[Needolin]] Dialogue ==
+[[Verdania|Lost Verdania]] entrance
+{{SS Needolin
+| columns = 2|
+* ...Lands green...
+* ...Paths wild...
+* ...Free...
+* ...Forgotten...
+}}
+
+Everywhere else
+{{SS Needolin
+| columns = 2|
+* Teeming...thriving...
+* All born brave...
+* All born free...
+* Sprout tall... Spread far...
+* For shoot, and sheath, and blade...
+* Stones washed green...
+* Paths lost in shade...
+* Peace earned by claw...
+}}
+Inside the building where the [[Clover Dancers]] are located
+{{SS Needolin
+| columns = 2|
+* Our joy... together...
+* Our hearts... together...
+* Reflection made real...
+* Our wish...
+* Our strength...
+* Our land...
+}}
+
+== Creation and Development ==
+[[File:2021 Aspid Map.png|thumb|"Aspid" in April 2021]]
+Verdania in its current form was not initially planned for <i>Silksong</i>; originally, in the place currently taken up by the [[Wormways]], was the "[[Cut Content (Silksong)/Areas#Aspid (Cloverland)|Aspid]]" area, a lush clover-filled area that featured [[Cut Content (Silksong)/Enemies#Aspid (Cloverland)|unique enemies]], some of which being the [[Aknid]] and [[Craggler]], both of which being repurposed and not cut. The "Aspid" area had its first rooms created around early 2019, and is seen in the February 2019 <i>Silksong</i> reveal trailer and in a screenshot released in February 2021's <i>EDGE Magazine</i> issue.<ref>[https://www.youtube.com/watch?v=pFAknD_9U7c Hollow Knight: Silksong Reveal Trailer]</ref><ref>[https://pocketmags.com/edge-magazine/february-2021 Edge Magazine February 2021 edition], p. 54.</ref> 
+
+Within the Aspid area was what appears to be a [[Bellway]], in addition to a Sub-Area dungeon known as "Greenhaven" or "Grovehome", where [[Green Prince]]'s boss fight is currently located; it appears to have contained a [[Weaver Burial Spire]]. Also located in this area was seemingly a [[Bellshrine]].
+
+Around early 2022, the "Aspid" area was removed, with the Wormways also being added, appearing in its former location. Lost Verdania was introduced that year, being added to the right of Greymoor, where the cut [[Cut Content (Silksong)/Areas#Pharloom Bay|Pharloom Bay]] area originally was. Lost Verdania acted as a shrunken and reworked "flipped" version of the "Aspid" area, flipping and keeping some of its rooms, cutting others, and introducing new ones. The flipping aspect is displayed in the first Verdania screenshot released, released in September 2022 alongside <i>Silksong</i>'s PlayStation port announcement, which displayed the room seen in February 2021's <i>EDGE Magazine</i> issue, flipped.<ref>[https://www.reddit.com/r/HollowKnight/comments/xgi7sq/new_silksong_screenshots_from_the_ps_mobile_app/ New Silksong screenshots from the PS Mobile App!] on Reddit</ref>
+
+According to [[Ari Gibson]], Verdania was "''on the chopping block''" during the later years of development and "''just got saved a year or two before [release].''"<ref>[https://www.bloomberg.com/news/newsletters/2025-11-28/the-makers-of-hollow-knight-silksong-aren-t-done-just-yet The Makers of 'Silksong' Aren't Done Just Yet]</ref>
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Verdania 02.png!Map and Bench Room
+|Image2 = Screenshot SS Verdania 01.png![[Green Prince]] near [[Cogwork Dancers | Dancer]] Corpse
+|Image3 = Screenshot SS Lost Verdania 01.png!Lost Verdania Entrance
+|Image4 = Screenshot SS Lost Verdania 02.png!Ambush Room
+|Image5 = Screenshot SS Lost Verdania 12.png!Arena
+|Image6 = Screenshot SS Lost Verdania 16.png!Pale Plant Egg
+|Image7 = Screenshot SS Lost Verdania 17.png!Pale Clovers
+|Image8 = Screenshot SS Lost Verdania 07.png!Green Prince near Temple
+|Image9 = Screenshot SS Lost Verdania 11.png!Temple
+|Image10 = Screenshot SS Lost Verdania 13.png!Green Prince on [[Palestag]] trail
+|Image11 = Screenshot SS Lost Verdania 14.png!Palestag Building
+|Image12 = Screenshot SS Lost Verdania 15.png!Palestag Arena
+|Image13 = Screenshot SS Lost Verdania 03.png!Palace Lantern (Memory Incomplete)
+|Image14 = Screenshot SS Lost Verdania 04.png!Palace Lantern (Memory Complete)
+|Image15 = Screenshot SS Lost Verdania 05.png!Green Prince near Palace Entrance (Memory Incomplete)
+|Image16 = Screenshot SS Lost Verdania 06.png!Palace Entrance (Memory Complete)
+|Image17 = Screenshot SS Lost Verdania 19.png!Palace Tablet Room (Memory Incomplete)
+|Image18 = Screenshot SS Lost Verdania 20.png!Palace Tablet Room (Memory Complete)
+}}
+{{Gallery|
+|Image1 = Screenshot SS Lost Verdania 21.png!Green Prince before Dual Throne
+|Image2 = Screenshot SS Lost Verdania 22.png![[Clover Dancers]] Arena
+|Image3 = Screenshot SS Verdania 03.png!Green Prince and Dancer Corpses (initial)
+|Image4 = Screenshot SS Verdania 04.png!Green Prince and Dancer Corpses (returning)
+}}
+
+{{Gallery
+| Image1 = Silksong Early 009.png!Early Verdania screenshot
+| Image2 = Lost Verdania save art.png!Unused save profile art
+}}
+{{History
+|game = SS
+|1.0.28650 (Patch 2): Fixed Verdania memory orbs sometimes replaying layered screen-edge burst effects.
+|1.0.28891 (Patch 3): Clover plants begin to regrow around the [[Green Prince]] after he dies.
+}}
+{{Localisation
+|DEname = Verdania
+|DEmeaning = —
+|ESname = Verdania
+|ESmeaning = —
+|FRname = Tréfloria
+|FRmeaning = Portmanteu of <i>trèfle</i> (clover) and flora. 
+|ITname = Verdania
+|ITmeaning = —
+|JAname = ヴェルダニア
+|JAromanised = Verudania
+|JAmeaning = Verdania
+|KOname = 베르다니아
+|KOromanised = Bereudania
+|KOmeaning = Verdania
+|PTname = Verdânia
+|PTmeaning = —
+|RUname = Вердания
+|RUromanised = Verdanija
+|RUmeaning = Verdania
+|ZHname = 翠庭
+|ZHromanised = Cuìtíng
+|ZHmeaning = Verdant Court or Verdant Courtyard
+|TWname = 翠庭
+|TWromanised = Cuìtíng
+|TWmeaning = same
+|CODEname = CLOVER</code>
+}}
+
+=== Lost Verdania ===
+{{Localisation
+|hr = false
+|DEname = Verlorenes Verdania
+|DEmeaning = Lost Verdania
+|ESname = Verdania Perdida
+|ESmeaning = Lost Verdania
+|FRname = Tréfloria Perdue
+|FRmeaning = Lost Verdania
+|ITname = Verdania Perduta
+|ITmeaning = Lost Verdania
+|JAname = 失われしヴェルダニア
+|JAromanised = Ushinawa reshi verudania
+|JAmeaning = Lost Verdania
+|KOname = 사라진 베르다니아
+|KOromanised = Sarajin bereudania
+|KOmeaning = Vanished Verdania
+|PTname = Verdânia Perdida
+|PTmeaning = Lost Verdania
+|RUname = Потерянная Вердания
+|RUromanised = Poterjannaja Verdanija
+|RUmeaning = Lost Verdania
+|ZHname = 失落的翠庭
+|ZHromanised = Shīluò de cuìtíng
+|ZHmeaning = Lost Verdant Court or Lost Verdant Courtyard
+|TWname = 失落的翠庭
+|TWromanised = Shīluò de cuìtíng
+|TWmeaning = same
+|CODEname = GROVE
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Areas}}
+
+[[zh:翠庭]]

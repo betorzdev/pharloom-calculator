@@ -1,0 +1,164 @@
+__NOTOC__
+[[File:SS Crests Menu.png|thumb|370px|alt=Screenshot of the Crests menu.]]
+
+{{Quote
+| You speak of their crest? That signifier of a bug's essence and their invisible yoke born through a lifetime.
+| [[Hornet (Silksong)|Hornet]]
+| Hr = Hornet
+}}
+
+<b>Crests</b> are a special type of collectible in <i>[[Hollow Knight: Silksong]]</i> that allow [[Hornet (Silksong)|Hornet]] to use different [[Needle]] attacks and equip different [[Tools]].
+
+== Crests ==
+Crests alters Hornet's attacks with the [[Needle]], as well as giving her a new unique ability. Each Crest changes the design of the HUD around the wheel in the upper left to indicate which Crest is equipped, and some designs change further to indicate when the Crest's mechanic is active.
+
+[[Tools]] and [[Skills]] are equipped in slots on Crests. Each Crest starts with a varying number of {{CrestSlot|Red|1}}, {{CrestSlot|Yellow|1}}, {{CrestSlot|Blue|1}}, and {{CrestSlot|Skill|1}} slots unlocked. Some Tool slots on each Crest must be unlocked with [[Memory Locket]]s.
+
+{| class="article-table" width="100%" data-tracking-id="crests-table"
+|-
+! style="width: 8rem;" | Crest
+! Description
+! style="width: 12rem;" | Slots
+|-
+! align="center" | [[File:Hunter Crest 1 File.png|link=Hunter Crest|100px]]
+[[Hunter Crest]]
+| <i>Stalk prey and attack with lethal strikes.
+| align="center" rowspan="2" | {{CrestSlot|Skill}}|{{CrestSlot|Red}}{{CrestSlot|RedLocked}}│{{CrestSlot|Blue}}{{CrestSlot|BlueLocked}}│{{CrestSlot|Yellow}}{{CrestSlot|YellowLocked}}
+|- style="border-top: 0.15rem dashed rgba(255, 255, 255, 0.3);"
+! align="center" | [[File:Hunter Crest 2 File.png|link=Hunter Crest|100px]]
+[[File:Hunter Crest 3 File.png|link=Hunter Crest|100px]]
+[[Hunter Crest|Hunter Crest (Evolved)]]
+| <i>Stalk prey and attack with lethal strikes. Build focus with successive strikes.
+|-
+! align="center" | [[File:Reaper Crest File.png|link=Reaper Crest|100px]]
+[[Reaper Crest]]
+| <i>Attack with heavy, arcing slashes and reap additional Silk from enemies.
+| align="center" | {{CrestSlot|Skill}}│{{CrestSlot|Red}}{{CrestSlot|RedLocked}}│{{CrestSlot|Blue}}{{CrestSlot|BlueLocked}}│{{CrestSlot|Yellow}}{{CrestSlot|YellowLocked}}
+|-
+! align="center" | [[File:Wanderer Crest File.png|link=Wanderer Crest|100px]]
+[[Wanderer Crest]]
+| <i>Cut swiftly and nimbly with short, precise strikes.
+| align="center" | {{CrestSlot|Skill}}│{{CrestSlot|Red}}│{{CrestSlot|BlueLocked}}{{CrestSlot|BlueLocked}}│{{CrestSlot|Yellow}}{{CrestSlot|Yellow}}{{CrestSlot|YellowLocked}}
+|-
+! align="center" | [[File:Beast Crest File.png|link=Beast Crest|100px]]
+[[Beast Crest]]
+| <i>Tear foes with savage slashes. Bind to enter a wild fury and steal life from prey.
+| align="center" | {{CrestSlot|Skill}}│{{CrestSlot|Red}}{{CrestSlot|Red}}│{{CrestSlot|YellowLocked}}{{CrestSlot|YellowLocked}}
+|-
+! align="center" | [[File:Cursed Crest File.png|link=Cursed Crest|100px]]
+[[Cursed Crest]]
+| N/A
+| align="center" | None
+|- style="border-top: 0.15rem dashed rgba(255, 255, 255, 0.3);"
+! align="center" | [[File:Witch Crest File.png|link=Witch Crest|100px]]
+[[Witch Crest]]
+| <i>Whip the needle in sweeping swings. Leech the life of foes through twisted roots.
+| align="center" | {{CrestSlot|Skill}}│{{CrestSlot|Red}}{{CrestSlot|RedLocked}}│{{CrestSlot|Blue}}{{CrestSlot|BlueLocked}}{{CrestSlot|BlueLocked}}
+|-
+! align="center" | [[File:Architect Crest File.png|link=Architect Crest|100px]]
+[[Architect Crest]]
+| <i>Spin the needle as a screw, shredding foes. Spend silk to rapidly craft new tools from shell shards.
+| align="center" | {{CrestSlot|Red}}{{CrestSlot|Red}}{{CrestSlot|Red}}│{{CrestSlot|BlueLocked}}{{CrestSlot|BlueLocked}}│{{CrestSlot|YellowLocked}}{{CrestSlot|YellowLocked}}
+|-
+! align="center" | [[File:Shaman Crest File.png|link=Shaman Crest|100px]]
+[[Shaman Crest]]
+| <i>Cast the blade forward and strengthen Silk Skills with powerful runes.
+| align="center" | {{CrestSlot|Skill}}{{CrestSlot|Skill}}{{CrestSlot|Skill}}│{{CrestSlot|BlueLocked}}{{CrestSlot|BlueLocked}}
+|-
+! align="center" | [[File:No Crest.png|link=Cloakless Crest|100px]]
+[[Cloakless Crest]]
+| N/A
+| align="center" | None
+|}
+
+{{Clear}}
+
+=== Vesticrest ===
+The <b>Vesticrest</b> adds additional tool slots that operate independently from Crests. [[Tools]] equipped to the Vesticrest will remain equipped regardless of which Crest is equipped. 
+
+The Vesticrest is given by [[Eva]] in [[Weavenest Atla]] once 12 slots have been unlocked across all Crests except for the [[Hunter Crest]]. Any slots that are automatically unlocked when the Crest is claimed add to the total number of unlocked slots. It allows for one {{CrestSlot|Yellow|1}} to be equipped.
+
+After 20 slots have been unlocked, Eva will upgrade the Vesticrest to also allow one {{CrestSlot|Blue|1}} to be equipped.
+
+{{Gallery
+| Image1 = Vesticrest Single.png!Basic Vesticrest
+| Image2 = Vesticrest.png!Upgraded Vesticrest
+}}
+
+{{Clear}}
+
+==Creation and Development==
+Crests were first shown off in the February 2019 <i>Silksong</i> reveal trailer.<ref name="trailer">[https://www.youtube.com/watch?v=pFAknD_9U7c Hollow Knight: Silksong Reveal Trailer]</ref> A crest internally named the [[Cut Content (Silksong)/Items#Crests|Weaver Crest]] was planned, but removed, with its function unknown; a sprite of it can be seen in the reveal trailer and some others remain the files.<ref name="trailer" /> An early development method for upgrading Crests would have used an "experience" system where interacting with each Crest's unique function would slowly level up that specific crest and unlock its slots in place of [[Memory Locket]]s. According to [[William Pellen]], this mechanic was cut as it was difficult to explain using the UI and allowed for players to grind to unlock every slot right away.<ref name="bloomberg2">[https://www.bloomberg.com/news/newsletters/2025-11-28/the-makers-of-hollow-knight-silksong-aren-t-done-just-yet The Makers of 'Silksong' Aren't Done Just Yet] on Bloomberg</ref>
+
+== Achievements ==
+{{Achievement|game=silksong|Claimed}}
+{{Achievement|game=silksong|Consumed}}
+
+{{Localisation
+|DEname = Wappen
+|DEmeaning = Crest
+|ESname = Blasón
+|ESmeaning = Crest
+|FRname = Emblème
+|FRmeaning = Emblem
+|ITname = Emblema
+|ITmeaning = Emblem
+|JAname= クレスト
+|JAromanised= Kuresuto
+|JAmeaning = Crest
+|JAkatakana = foreign
+|KOname = 문장
+|KOromanised = Munjang
+|KOmeaning = Crest
+|PTname =  Brasão
+|PTmeaning = Crest
+|RUname = Знак
+|RUromanised = Znak
+|RUmeaning = Symbol
+|TWname = 紋章
+|TWromanised = Wénzhāng
+|TWmeaning = same
+|ZHname = 纹章
+|ZHromanised = Wénzhāng
+|ZHmeaning = Crest
+}}
+===Vesticrest===
+{{Localisation
+|hr=false
+|DEname = Vestiwappen
+|DEmeaning = Vesticrest
+|ESname = Vestiblasón
+|ESmeaning = Vesticrest
+|FRname = Vesticron
+|FRmeaning = 
+|ITname = Protoemblema
+|ITmeaning = Proto-emblem
+|JAname= クレストソケット
+|JAromanised= Kuresuto soketto
+|JAmeaning = Crest Socket
+|JAkatakana = foreign
+|KOname = 문장의 자취
+|KOromanised = Munjangui jachwi
+|KOmeaning = Crest Remanents 
+|PTname =  Brasão Vestigial
+|PTmeaning = Vestigial Crest
+|RUname = Шлейф Знака
+|RUromanised = Šlejf Znaka
+|RUmeaning = Symbol Trail
+|TWname = 蛻形紋章
+|TWromanised = Tuì xíng wénzhāng
+|TWmeaning = same
+|ZHname = 蜕形纹章
+|ZHromanised = Tuì xíng wénzhāng
+|ZHmeaning = Metamorphosed Crest
+|CODEname = EXTRASLOT
+|CODEmeaning = 
+}}
+
+{{#seo:|keywords=Skills, Crests, Silk Skills, Abilities, Silksong, Silksong Crest Powers, Wanderer Crest, Architect Crest, Reaper Crest, Hunter Crest, Beast Crest, Witch Crest, Shaman Crest, Memory Locket, locket, where to find, vesticrest}}
+
+[[Category:Crests]]
+
+[[fr:Emblèmes]]
+[[pt:Brasões]]
+{{SS Nav Crests}}

@@ -1,0 +1,119 @@
+{{SS Infobox Item
+| description = Crude journal made of coarse fabric and bone, left by a fallen pilgrim. <hr/> 
+A relic of Pharloom's past, interesting to collectors of historical items.
+| effects = Can be sold to [[Relic Seeker Scrounge]] for {{R|90}}
+| type = [[Items (Silksong)#Tradables|Tradable]]
+| source = [[Far Fields]]<br>[[Greymoor]]<br>[[Underworks]]<br>[[Wisp Thicket]]
+| max = 4
+}}
+
+{{Quote|Hr=SS
+|More, then! Bring me more relics of the past! Records, seals, idols! Let's gather up the history of the world and hoard it all here, nice and safe!
+|[[Relic Seeker Scrounge]]}}
+
+<b>Bone Scrolls</b> are [[Items (Silksong)#Tradables|tradable items]] in <i>[[Hollow Knight: Silksong]]</i>. They are journals written by pilgrims on their way to the [[Citadel]], and can be deciphered by [[Relic Seeker Scrounge]].  
+
+== Use ==
+Can be sold to [[Relic Seeker Scrounge]] for {{R|90}}.
+
+After sale, they can be read by visiting Relic Seeker Scrounge, or in the [[Bellhome]] after purchasing the [[Desk]].
+
+{{Gallery
+|Image1 = Mapshot SS Relic Seeker Scrounge 01.png!Location of Relic Seeker Scrounge in Bellhart
+|Image2 = Screenshot SS Bellhart 11.png!Relic Seeker Scrounge in Bellhart
+}}
+
+{| class="article-table" width="100%"
+! style="width: 8rem;" | Item
+! Description
+|-
+! [[File:Bone Scroll.png|72x72px|center|link=Bone Scroll|Bone Scroll]] Bone Scroll
+| 
+<i>Singed parchment containing a pilgrim's scrawl.<br><br>
+"My dear companions, all are gone now, devoured, scorched, fallen to exhaustion, or worse, seduced by the Haunting."</i>
+|-
+! [[File:Bone Scroll.png|72x72px|center|link=Bone Scroll|Bone Scroll]] Bone Scroll
+| 
+<i>Faded parchment containing the last words of a lost pilgrim.<br><br>
+"-ter I die here in the damp dark than join those poor sods, trapped to stumble, aimless and empty, until their limbs fall to dust."</i>
+|-
+! [[File:Bone Scroll.png|72x72px|center|link=Bone Scroll|Bone Scroll]] Bone Scroll
+| 
+<i>Filthy rag, marked with the scrawl of an Underworker.<br><br>
+"So much suffering. Are we truly chosen, or have we sinned unknowing, and now are punished for it?"</i>
+|-
+! [[File:Bone Scroll.png|72x72px|center|link=Bone Scroll|Bone Scroll]] Bone Scroll
+| 
+<i>Crumpled parchment containing the prayer of a Burning Bug.<br><br>
+"Hail to your heat! O glorious flame. You who builds and breaks us. Sear our shells. Char them black. That we may rise to join you, wreathed in bright and blazing joy."</i>
+|}
+
+== How to Acquire ==
+There are a total of four Bone Scrolls that can be obtained:
+
+{| class="article-table" style="text-align: center;" width="100%" data-tpt-table-id="bone-scroll"
+! 
+! Location
+! Map
+|-
+! 1
+| [[Far Fields]], east of the [[Seamstress]]'s home, up a tall wind current.
+| [[File:Mapshot SS Bone Scroll 01.png|200px|center]]
+|-
+! 2
+| [[Greymoor]], east of [[Halfway Home]].
+| [[File:Mapshot SS Bone Scroll 02.png|200px|center]]
+|-
+! 3
+| Western [[Underworks]].
+| [[File:Mapshot SS Bone Scroll 03.png|200px|center]]
+|-
+! 4
+| [[Wisp Thicket]], room east of the bench.
+| [[File:Mapshot SS Bone Scroll 04.png|200px|center]]
+|}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Bone Scroll 01.png!East of Seamstress in Far Fields
+|Image2 = Screenshot SS Bone Scroll 02.png!East of Halfway Home in Greymoor
+|Image3 = Screenshot SS Drapefly 03.png!Under the map room in Underworks
+|Image4 = Screenshot SS Bone Scroll 03.png!East of the bench room in Wisp Thicket
+}}
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Bone Scrolls had their value increased from 50 rosaries to 90.
+}}
+{{Localisation
+|DEname = Knochenschriftrolle
+|DEmeaning = Bone Scroll
+|ESname = Pergamino óseo
+|ESmeaning = Bony Parchment
+|FRname = Manuscrit d'os
+|FRmeaning = Bone Manuscript
+|ITname = Rotolo d'ossa
+|ITmeaning = Scroll of Bones
+|JAname = 骨の巻物
+|JAromanised = Hone no makimono
+|JAmeaning = Bone Scroll
+|KOname = 뼈 두루마리
+|KOromanised = Ppyeo durumari
+|KOmeaning = Bone Scroll
+|PTname = Pergaminho de Osso
+|PTmeaning = Bone Parchment
+|RUname = Костяной свиток
+|RUromanised = Kostjanoj svitok
+|RUmeaning = Bone Scroll
+|TWname = 骸骨卷軸
+|TWromanised = Háigǔ juànzhóu
+|TWmeaning = same
+|ZHname = 骨卷轴
+|ZHromanised = Gǔ juànzhóu
+|ZHmeaning = Bone Scroll
+|CODEname = BONE_RECORD
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+[[Category:Items (Silksong)]]

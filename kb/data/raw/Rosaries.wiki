@@ -1,0 +1,272 @@
+{{SS Infobox Item
+|label = Regular
+|title = Rosaries
+|image = Rosaries large.png
+|type = Currency
+|effects = Used to purchase goods and activate certain machines
+|description = Beads carved from various materials, used as a measure of faith and traded as currency. Each is etched with a fine patterned design.
+
+|label2 = Shell
+|title2 = Shell Rosaries
+|image2 = Shell Rosaries large.png
+|type2 = Currency
+|effects2 = Used to purchase goods and activate certain machines
+|description2 = Beads carved from polished shell. The finer material reflects their increased value.
+
+|label3 = Pearl
+|title3 = Pearl Rosaries
+|image3 = Pearl Rosaries large.png
+|type3 = Currency
+|effects3 = Used to purchase goods and activate certain machines
+|description3 = Beads carved over with intricate markings. The rarest and most highly valued rosaries in all of Pharloom.
+}}
+
+{{Quote
+|Rosaries! Those finely carved beads of prayer! If you will only share some with me, I will trade you something fair. 
+|[[Pebb]]
+|Hr=SS}}
+
+<b>Rosaries</b> are the currency of [[Pharloom]] used in <i>[[Hollow Knight: Silksong]]</i>. There are three types of Rosaries that can be found, each with a different value:
+
+{| class="article-table"
+! Type
+| [[File:Rosary Red.png|36x36px|center]]
+| [[File:Rosary Shell.png|36x36px|center]]
+| [[File:Rosary Pearl.png|center]]
+|-
+! Worth
+| {{R|1}}
+| {{R|5}}
+| {{R|15}}
+|}
+
+== Use ==
+Rosaries are used to purchase certain goods, and to activate toll booths to unlock certain [[Bench (Silksong)|Benches]], [[Bellways]], and [[Ventrica]] stations. Certain other machines may also be activated by inserting Rosaries.
+
+Rosaries can be attached to strings, preventing them from being lost upon death. [[Hornet (Silksong)|Hornet]] cannot spend the strung Rosaries until the Rosary String is broken.<ref name="e3">[https://youtu.be/Y8lvHT_IQbM?t=480 Hollow Knight: Silksong Gameplay - Nintendo Treehouse: Live | E3 2019]</ref><ref name=edge>[https://pocketmags.com/edge-magazine/february-2021 Edge Magazine February 2021 edition], p. 55.</ref>
+
+=== Tolls ===
+* {{R|590}} for all [[Fast Travel (Silksong)#Bellways|Bellways]]
+* {{R|480}} for all [[Fast Travel (Silksong)#Ventrica|Ventricas]]
+* {{R|510}} for all [[Bench (Silksong)|Benches]]
+''{{R|1580}} total''
+
+{{Hr|small}}
+
+=== Merchants ===
+* {{R|1640}} to buy everything from [[Shakra]] (including {{R|50}} for [[Map and Quill (Silksong)|Quill]], which can be picked up later)
+** {{R|890}} for all maps from Shakra
+* {{R|980}} to buy everything from [[Pebb]]
+* {{R|560}} to buy everything from [[Mort]] (including {{R|160}} for [[Weighted Belt]], which can be picked up later, and {{R|30}} for the first entry fee)
+* {{R|430}} to buy everything from [[Forge Daughter]]
+* {{R|400}} to buy everything from [[Mottled Skarr]] (all of which can be picked up later)
+* {{R|480}} to buy [[Vintage Nectar]] from [[Creige]]
+* {{R|160}} to buy [[Steel Spines]] from [[Crull and Benjin]] (which can be picked up later)
+* {{R|4290}} to buy everything from [[Frey]]
+** {{R|2810}} for all [[Bellhome]] items
+* {{R|1130}} to fully upgrade the [[Needle]]
+* {{R|2950}} to buy everything from [[Grindle]]'s original inventory
+** Extra {{R|1260}} for all Pebb's leftover Grindle picks up later ({{R|280}} more expensive)
+** Extra {{R|470}} for all Mort's leftover Grindle picks up later ({{R|100}} more expensive, {{R|70}} if first entry fee counts)
+** Extra {{R|300}} for [[Magnetite Dice]] if Hornet did not get it
+** {{R|55}} total for Grindle's hints after being freed in [[the Marrow]]
+* {{R|3870}} to buy everything from [[Jubilana]] (including {{R|220}} for [[White Key]] if Hornet did not pick it up)
+* {{R|1290}} to buy everything from [[Twelfth Architect]]
+* {{R|700}} to buy everything from [[Vog]]
+* {{R|240}} for Forge Daughter to make [[Silkshot]], {{R|130}} for Twelfth Architect, or for free by [[Hornet (Silksong)|Hornet]] herself
+
+{{Hr|small}}
+
+=== Miscellaneous ===
+* {{R|460}} to get all [[the Citadel]] maps (including {{R|70}} for [[the Cradle]] map, which can be picked up later)
+* {{R|650}} to fully donate to [[Bellhart]]
+* {{R|800}} to fully donate to [[Songclave]]
+* {{R|160}} to get four [[Silk#Silk Spools|Silk Spools]] from a vending machine in [[Choral Chambers]] ({{R|40}} each)
+
+{{Hr|small}}
+
+=== Infinite Spendings ===
+The following can be spent at infinite supply or infinitely until Hornet does certain actions.
+* {{R|50}} per [[Shard Bundle]]
+* {{R|80}} per [[Rosary String]]
+* {{R|140}} per [[Rosary Necklace]] (bought from Frey only)
+* {{R|30}} per [[Pilgrim's Rest]] entry and bench use. After the first pay, Hornet can break the mechanism inside the building or wait until it collapses in [[Acts#Act 3: Abyss|Act 3]] to make the entries free.
+* {{R|30}} each time [[Flea Brew]] is refilled. In Act 3, Flea Brew is refilled for free.
+* {{R|10}} each time Hornet uses [[Kratt]]'s spa service. After the first pay, Hornet can punish Kratt for peeping to use freely.
+* {{R|50}} each time [[Plasmium Phial]] is refilled. Eventually it is replaced by [[Plasmium Gland]] which acts as endless reserve.
+* {{R|4}} each lost game with [[Lumble the Lucky]]. Eventually Hornet can get all the rosaries back from winning.
+* {{R|25}} for each game round organised by [[Loddie]]. Loddie rewards Hornet with [[Tool Pouch]] for first won round, which can be picked up later, and [[Heavy Rosary Necklace]] for second won round. For the third round, Loddie has {{R|380}} in his inventory, which can be depleted or increased by playing. <br><i>Main Article: [[Loddie]]</i>
+* {{R|15}} each [[Underworks]] bench use
+* {{R|25}} for each confession towards the booth in Underworks' break room
+* {{R|10}} to buy a drink from [[Creige]] in [[Greymoor|Halfway Home]]
+
+In addition, the [[Rosary Cannon]] uses Rosaries as ammunition and can be used to load the tool at a bench.
+
+{{Hr|small}}
+
+=== Summary of Costs ===
+* {{R|22635}} to get everything at the most sparing prices (excluding Silkshot)
+* {{R|23225}} to get everything at maximum prices ({{R|590}} difference, including {{R|240}} for the most expensive Silkshot variant)
+* {{R|21065}} to get everything at the most sparing prices but items that can be obtained for free instead
+* {{R|12880}} to get everything at the most sparing prices required for [[Completion (Silksong)|Completion]] percentage
+
+== How to Acquire ==
+[[File:Rosary pile.png|right|150x150px]]
+Rosaries can be acquired in different ways:
+* Certain [[Enemies (Silksong)|enemies]] drop Rosaries on death.
+** Equipping the [[Thief's Mark]] tool increases Rosary drops, but also causes Hornet to lose 3.5% of her Rosaries whenever she takes damage.
+** Equipping the [[Snitch Pick]] makes enemies hit by the [[Clawline]] drop some of their Rosaries before they die, but does not increase how many they can drop in total. 
+* Rosaries can be found in containers and artificial structures.
+** Destroying Rosary rocks in [[the Marrow]], the [[Far Fields]], [[Greymoor]], [[Bilewater]], and the [[Putrified Ducts]] grants {{R|20}}. Slightly bigger rocks found in [[Bone Bottom]], the Marrow, and the Far Fields grant {{R|25}}. The biggest rocks with visible Shell Rosaries grant {{R|40}} and can be found in Bone Bottom, [[Shellwood]], Bilewater, and the Putrified Ducts.
+** Destroying Rosary sacks in the [[Blasted Steps]], Greymoor, [[Sinner's Road]], and Bilewater grants {{R|21}}.
+** Emptying Rosary cymbals in Bone Bottom, the Marrow, Greymoor, and [[Mount Fay]] grants {{R|24}}.
+** Emptying Rosary buckets in the [[Whispering Vaults]] grants {{R|30}}.
+** Emptying Rosary bells in the Whispering Vaults and [[Bellhart]] grants {{R|30}}.
+* Striking Rosary caches or strings.
+* Opening chests.
+* Several items can be broken into Rosaries.
+** Breaking a [[Frayed Rosary String]] grants {{R|30}}.
+** Breaking a [[Rosary String]] grants {{R|60}}.
+** Breaking a [[Rosary Necklace]] grants {{R|120}}.
+** Breaking a [[Heavy Rosary Necklace]] grants {{R|220}}.
+** Breaking a [[Pale Rosary Necklace]] grants {{R|340}}.
+* Selling [[Items (Silksong)#Tradables|Relics]] to [[Relic Seeker Scrounge]].
+* Selling [[Psalm Cylinder]]s to [[Vaultkeeper Cardinius]].
+* Selling extra [[Mossberries]] to [[Moss Druid]].
+* Completing [[Delivery Wishes]].
+* {{Steel Soul Icon Mini|SS}} Selling [[Silkeater]]s to [[Skynx]].
+
+Dropped Rosaries roll along the ground and will be destroyed if they fall into spikes or if Hornet leaves the room without picking them up. With the [[Magnetite Brooch]] equipped, dropped Rosaries fly towards Hornet after a delay. 
+
+Hornet can carry a maximum of 20 of each type of Rosary String or Rosary Necklace in her Inventory. There are different ways of obtaining these items:
+* Examining glowing spots across Pharloom.
+* Completing certain [[Wishes]].
+* Paying a vendor or a machine {{R|80}} to receive a [[Rosary String]] (worth {{R|60}}).
+* Paying [[Frey]] {{R|140}} to receive a [[Rosary Necklace]] (worth {{R|120}}).
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Rosary String Hang.png ! Hanging Rosary strings in the Marrow
+|Image2 = Screenshot SS Rosary String Hang Shell.png ! Hanging Rosary strings with Shell Rosaries in the Bellveins
+|Image3 = Screenshot SS Pale Rosary Necklace 01.png! Hanging Rosary strings with Pearl Rosaries in the High Halls Bank
+|Image4 = Screenshot SS Rosary Shrine.png ! A Rosary shrine in the Marrow
+|Image5 = Screenshot SS Rosary Shrine Moss.png ! A mossy Rosary shrine above Bone Bottom
+|Image6 = Screenshot SS Rosary Shrine Gold.png! A gilded Rosary shrine in Greymoor
+|Image7 = Screenshot SS Rosary Dish Hanging.png ! A hanging Rosary cymbal in Mount Fay
+}}
+
+== Trivia ==
+* Similarly to {{S|Shell Shards}}, Shell Rosaries sink after a few seconds unlike the other variants which remain afloat.
+* Rosaries have a maximum capacity of {{R|9999999}}. However, this limit would likely never be reached through normal gameplay.
+* In the 2019 <i>Silksong</i> demo, Rosaries had a different description: <i>"Holy currency beads used to trade for goods. Each rosary is etched with a fine patterned design."</i><ref name="e3" />
+* In ''EDGE Magazine'', a "100-bead-strong-rosary" that costs {{R|120}} to buy from [[Pebb]] is discussed; such an item does not exist in-game.<ref name="edge"/>
+**Since the Rosary String, now {{R|60}}, originally was valued at {{R|40}}, this item is likely the now-{{R|120}} [[Rosary Necklace]].
+* There are [[Cut Content (Silksong)/Graphics#Sprites|unused graphics]] for Rosary-filled [[Cocoon]]s, and an unused type of Rosary called <code>pearl_clean</code> which is worth {{R|15}}.
+
+{{Gallery
+|Image1= Cocoon_extra_rosaries.png ! Rosary filled [[Cocoon]] 
+|Image2= Unused_Pearl.png ! Pearl Rosaries
+}}
+{{Localisation
+|DEname = Rosenkranzperlen
+|DEmeaning = Rosary Beads
+|ESname = Rosarios
+|ESmeaning = Rosaries
+|FRname = Perles
+|FRmeaning = Pearls
+|ITname = Grani
+|ITmeaning = Beads
+|JAname=ロザリー
+|JAromanised= Rozarii
+|JAkatakana = foreign
+|JAmeaning = Rosary
+|KOname = 묵주
+|KOromanised = Mukju
+|KOmeaning = Rosary
+|PTname = Rosários
+|PTmeaning = Rosaries
+|RUname = Бусины
+|RUromanised = Businy
+|RUmeaning = Beads
+|TWname = 念珠
+|TWromanised = Niànzhū
+|TWmeaning = same
+|ZHname = 念珠
+|ZHromanised = Niànzhū
+|ZHmeaning = Rosaries
+|CODEname = COIN
+|CODEmeaning = 
+}}
+=== Shell Rosaries ===
+{{Localisation
+|hr = false
+|DEname = Panzerperlen
+|DEmeaning = Shell Pearls
+|ESname = Rosarios de coraza
+|ESmeaning = Shell Rosaries
+|FRname = Perles de carapace
+|FRmeaning = Shell Pearls
+|ITname = Grani di carapace
+|ITmeaning = Shell Beads
+|JAname=殻のロザリー
+|JAromanised= Kara no rozarii
+|JAkatakana = foreign
+|JAmeaning = Shell Rosary
+|KOname = 껍질 묵주
+|KOromanised = Kkeopjil mukju
+|KOmeaning = Shell Rosary
+|PTname = Rosários de Carapaças
+|PTmeaning = Shell Rosaries
+|RUname = Панцирные бусины
+|RUromanised = Pancirnye businy
+|RUmeaning = Shell Beads
+|TWname = 甲殼念珠
+|TWromanised = Jiǎqiào niànzhū
+|TWmeaning = same
+|ZHname = 甲壳念珠
+|ZHromanised = Jiǎqiào niànzhū
+|ZHmeaning = Shell Rosaries
+|CODEname = COIN_MID
+|CODEmeaning = 
+}}
+
+=== Pearl Rosaries ===
+{{Localisation
+|hr=false
+|DEname = Echtperlen
+|DEmeaning = Real Pearls<br><small>The translations for the other types of Rosaries call them <i>perlen</i> (pearls) as well, so the Pearl Rosaries are called <i>echt</i> (real).</small>
+|ESname = Rosarios de perla
+|ESmeaning = Pearl Rosaries
+|FRname = Perles étincelantes
+|FRmeaning = Sparkling Pearls
+|ITname = Grani di perla
+|ITmeaning = Pearl Beads
+|JAname = 真珠のロザリー
+|JAromanised = Shinju no rosarii
+|JAkatakana = foreign
+|JAmeaning = Pearl Rosary
+|KOname = 진주 묵주
+|KOromanised = Jinju mukju
+|KOmeaning = Pearl Rosary
+|PTname =  Rosários de Pérola
+|PTmeaning = Pearl Rosaries
+|RUname = Жемчужные бусины
+|RUromanised = Žemčužnye businy
+|RUmeaning = Pearl Beads
+|TWname = 珍珠念珠
+|TWromanised = Zhēnzhū niànzhū
+|TWmeaning = same
+|ZHname = 珍珠念珠
+|ZHromanised = Zhēnzhū niànzhū
+|ZHmeaning = Pearl Rosaries
+|CODEname = COIN_BIG
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+[[Category:Points of Interest (Silksong)]]
+{{#seo:
+|keywords=rosary,rosaries,beads,money,currency,rosary string,silksong
+}}
+
+[[fr:Perles]]

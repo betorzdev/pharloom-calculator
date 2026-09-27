@@ -1,0 +1,48 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Underworks_Arena_3.png|400px|center]]
+|[[File:Mapshot_SS_Underworks_Arena_3.png|400px|center]]
+|-
+| colspan="2" | Enemy gauntlet in [[the Cauldron]], initiated by using the [[Clawline]] on the ring mechanism in the arena.
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>Exit to the Cauldron</center>
+| <center>[https://www.youtube.com/watch?v=swPmNk9_fw0 Generic Enemy Battle A]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Underscrub.png|35x35px|link=Underscrub]] [[Underscrub]], left<br/>
+[[File:HJ_Undersweep.png|35x35px|link=Undersweep]] [[Undersweep]], right
+|
+|-
+|
+[[File:HJ_Cogwork Hauler.png|35x35px|link=Cogwork Hauler]] [[Cogwork Hauler]], top left
+|
+|-
+|
+[[File:HJ_Cogwork Hauler.png|35x35px|link=Cogwork Hauler]] Cogwork Hauler, top right
+|
+|-
+|
+[[File:HJ_Underpoke.png|35x35px|link=Underpoke]] [[Underpoke]], top left<br/>
+[[File:HJ_Underloft.png|35x35px|link=Underloft]] [[Underloft]], top right
+| If [[Hornet (Silksong)|Hornet]] is on the left side of the arena, the Underpoke will instead descend from the top centre. If she is on the right side, the Underloft will appear on the left, below the Underpoke.
+|-
+|
+[[File:HJ_Cogwork Hauler.png|35x35px|link=Cogwork Hauler]] Cogwork Hauler, top centre
+|
+|-
+|
+[[File:HJ_Undercrank.png|35x35px|link=Undercrank]] [[Undercrank]], right
+| Undercrank slams down from the ceiling.
+|-
+|
+[[File:HJ_Cogwork Hauler.png|35x35px|link=Cogwork Hauler]] Cogwork Hauler, top left<br/>
+[[File:HJ_Cogwork Hauler.png|35x35px|link=Cogwork Hauler]] Cogwork Hauler, top right
+|Top left Cogwork Hauler descends shortly after.
+|}

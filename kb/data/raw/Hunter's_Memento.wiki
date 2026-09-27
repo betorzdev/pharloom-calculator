@@ -1,0 +1,94 @@
+{{SS Infobox Item
+| image = <gallery>
+Hunter's Memento.png|Inventory
+Hunter's Memento Shelf.png|Bellhome
+</gallery>
+| source = Complete all entries in the [[Hunter's Journal (Silksong)|Hunter's Journal]]
+| description = Seal symbol given in recognition of a true Hunter, stamped in sticky goo.
+}}
+
+{{Quote|Hr=SS
+|Nuu has for you this token, a symbol of all your efforts, and a marker of your true nature. It carries with it her sweet, sweet smell!
+|[[Nuu]]
+}}
+
+The <b>Hunter's Memento</b> is a [[Materium#Mementos|Memento]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+The memento can be displayed on a shelf in the [[Bellhome]] after interacting with the desk.
+
+It appears in the center of the shelving slots.
+
+{{Gallery
+|Image1 = Mapshot SS Bellhome.png!Location in Bellhart
+|Image2 = Screenshot SS Bellhart 09.png!Displayed inside Bellhome in Bellhart
+}}
+
+== How to Acquire ==
+Given by [[Nuu]] after completing the 230 required entries in the [[Hunter's Journal (Silksong)|Hunter's Journal]] in <abbr title="The default game mode.">Classic Mode</abbr> (or 231 in {{Steel Soul Icon Mini|SS}} [[Steel Soul Mode (Silksong)|Steel Soul Mode]]).
+
+{{Gallery
+|Image1 = Mapshot SS Hunter's Journal.png!Location of Nuu in [[Greymoor]]
+|Image2 = Screenshot SS Greymoor 06.png!Nuu inside Halfway Home in Greymoor
+}}
+
+{{Steel Soul Icon Mini|SS}} [[Summoned Saviour]] is a boss unique to Steel Soul Mode and accounts for the extra entry required to acquire the Hunter's Memento in Steel Soul Mode.
+
+The following entries are not required in order to acquire the Hunter's Memento:
+
+<div style="text-align:top; columns:2">
+* [[Flintbeetle]]
+* [[Palestag]]
+* [[Shakra]]
+* [[Garmond and Zaza]]
+* [[Lost Garmond]]
+* [[Lost Lace]]
+</div>
+
+== Achievement ==
+{{Achievements|allgames=silksong|True Hunter}}
+
+== Trivia ==
+* The Hunter's Memento is marked with the same symbol as the [[Hunter's Mark]] from <i>[[Hollow Knight]]</i>.
+* An older design of the Hunter's Memento exists within game files.
+{{gallery
+|Image1 = Hunter nuu memento old.png!Old Design
+|Image2 = Early Hunter's Memento Shelf.png!Displayed in Bellhome
+}}
+{{Localisation
+|DEname = Jägerinnen-Memento
+|DEmeaning = Huntresses' Memento
+|ESname = Recuerdo de cazadora
+|ESmeaning = Huntress Memento
+|FRname = Souvenir de Nuu
+|FRmeaning = Memento from Nuu
+|ITname = Cimelio della cacciatrice
+|ITmeaning = Heirloom of the Huntress
+|JAname = 狩猟者のメメント
+|JAromanised = Shuryōsha no memento
+|JAmeaning = Hunter's Memento
+|KOname = 사냥꾼의 증표
+|KOromanised = Sanyangkkunui jeungpyo
+|KOmeaning = Hunter's Mark
+|PTname = Memento de Nuu
+|PTmeaning = Nuu's Memento
+|RUname = Сувенир от Нуу
+|RUromanised = Suvenir ot Nuu
+|RUmeaning = Souvenir from Nuu
+|TWname = 獵手紀念章
+|TWromanised = Lièshǒu jìniànzhāng
+|TWmeaning = Hunter's Memento
+|ZHname = 猎人忆痕
+|ZHromanised = Lièrén yì hén 
+|ZHmeaning = Hunter's Memory Mark
+|CODEname = HUNTER_MEMENTO
+}}
+{{Hr|SS}}
+
+== Notes ==
+<references group="Note"/>
+{{Refs|hr=false}}
+
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

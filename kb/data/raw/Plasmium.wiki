@@ -1,0 +1,76 @@
+
+{{For|the in-game mechanic of "Plasmium"|Lifeblood}}
+{{SS Infobox Item
+| type = [[Items (Silksong)#Deliverables|Deliverable]]
+| source = Extracted from [[Plasmium Bud|Plasmium buds]] in the [[Wormways]]
+| description = Liquid lifeseed, possessed of remarkable regenerative qualities. A substance foreign to Pharloom, introduced by the Alchemist Zylotol.<ref group="Note">Extended description from the [[Materium]].</ref><hr/>
+Liquid lifeseed extracted from a ripe bud. Possesses regenerative qualities.
+}}
+
+{{Quote
+| Before he up and vanished, my previous assistant seeded the warrens below with Plasmium buds. The buds should be ripening as we speak, and the nectar within must be extracted before they reach maturity.
+| [[Alchemist Zylotol]]
+| Hr = SS
+}}
+
+<b>Plasmium</b> is a [[Items (Silksong)#Deliverables|deliverable item]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+Three samples of Plasmium are required to complete the <i>[[Alchemist's Assistant]]</i> [[wish]], given by [[Alchemist Zylotol]] in the [[Wormways]].
+
+{{Gallery
+|Image1 = Mapshot SS Alchemist Zylotol 01.png!Location of Alchemist Zylotol in the Wormways
+|Image2 = Screenshot SS Wormways 04.png!Alchemist Zylotol in the Wormways
+}}
+
+{{Clear}}
+
+== How to Acquire ==
+Plasmium can be extracted from [[Plasmium Bud|Plasmium buds]] during the <i>Alchemist's Assistant</i> wish with a fully charged stab from the [[Needle Phial]]. Three of these buds can be found throughout the Wormways, detectable through walls by their extremely deep blue glow.
+
+{{Gallery
+|Image1 = Mapshot SS Plasmium Bud 01.png!Plasmium bud locations in the Wormways
+|Image2 = Screenshot SS Plasmium Bud 01.png!In the southeast Wormways
+|Image3 = Screenshot SS Plasmium Bud 02.png!In the southwest Wormways
+|Image4 = Screenshot SS Plasmium Bud 03.png!In the northern Wormways
+}}
+
+{{Localisation
+|DEname = Plasmium
+|DEmeaning = —
+|ESname = Plasmio
+|ESmeaning = —
+|FRname = Plasmonium
+|FRmeaning = —
+|ITname = Plasmio
+|ITmeaning = —
+|JAname=プラスミウム
+|JAromanised= Purasumiumu
+|JAkatakana = foreign
+|JAmeaning = Plasmium
+|KOname = 플라스미움
+|KOromanised = Peullaseumium
+|KOmeaning = Plasmium
+|PTname =  Plásmio
+|PTmeaning = —
+|RUname = Плазмиум
+|RUromanised = Plazmium
+|RUmeaning = Plasmium
+|TWname = 原質液
+|TWromanised = Yuán zhì yè 
+|TWmeaning = Protoplasm Fluid<br><small>{{lang|zh-Hant|原質}} <i>yuán zhì</i> is shortened from {{lang|zh-Hant|原生質}} <i>yuánshēngzhí</i> (protoplasm).</small>
+|ZHname = 生质液
+|ZHromanised = Shēng zhì yè
+|ZHmeaning = Life Substance Fluid
+|CODEname = BLUE_GOOP
+|CODEmeaning = 
+}}
+{{Hr|SS}}
+
+== Notes ==
+<references group="Note"/>
+
+{{Refs|hr=false}}
+
+{{SS Nav Items}}
+[[fr:Plasmonium]]

@@ -1,0 +1,66 @@
+{{SS Infobox Item
+| description = Large spike of bone collected from a defeated Skull Tyrant.
+| type = [[Items (Silksong)#Deliverable|Deliverable]]
+| source = Dropped by [[Skull Tyrant]] in [[the Marrow]] during <i>[[The Terrible Tyrant]]</i>.
+}}
+
+{{Quote
+| A Skull Tyrant, largest of the Marrow's loathsome bony predators, prowls the caves above the great path. Slay the beast and keep us all safe!
+| Residents of [[Bone Bottom]]
+| Hr = SS
+}}
+
+The <b>Crown Fragment</b> is a [[Items (Silksong)#Deliverables|deliverable item]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+The Crown Fragment must be delivered to [[Bone Bottom]] to complete the Grand Hunt Wish <i>The Terrible Tyrant</i>, available from its [[Wishwalls|Wishwall]] after obtaining the [[Cling Grip]]. It rewards a [[Heavy Rosary Necklace]].
+
+{{Gallery
+|Image1 = Mapshot SS Flick the Fixer 01.png!Location in Bone Bottom
+|Image2 = Screenshot SS Flick the Fixer 02.png!Flick the Fixer in Bone Bottom
+}}
+
+== How to Acquire ==
+The Crown Fragment is dropped after slaying the [[Skull Tyrant]] in the Marrow before Act 3. In Act 3, Bone Bottom is destroyed, so the Crown Fragment is not dropped.
+
+{{Gallery
+|Image1 = Mapshot SS Skull Tyrant 01.png!Location in the Marrow
+|Image2 = Screenshot SS The Marrow 12.png!Skull Tyrant in the Marrow
+}}
+
+==Act 3==
+The Crown Fragment will be removed from the inventory at the start of Act 3, as Bone Bottom has been destroyed.
+{{Localisation
+|DEname = Kronenfragment
+|DEmeaning = Crown Fragment
+|ESname = Fragmento de corona
+|ESmeaning = Crown Fragment
+|FRname = Fragment de couronne
+|FRmeaning = Crown Fragment
+|ITname = Frammento di corona
+|ITmeaning = Crown Fragment
+|JAname=頭部の破片
+|JAromanised= Tōbu no hahen
+|JAmeaning = Head Fragment
+|KOname = 왕관 파편
+|KOromanised = Wanggwan papyeon
+|KOmeaning = Crown Fragment
+|PTname =  Fragmento de Coroa
+|PTmeaning = Crown Fragment
+|RUname = Обломок короны
+|RUromanised = Oblomok korony
+|RUmeaning = Crown Fragment
+|TWname = 王冠碎片
+|TWromanised = Wángguān suìpiàn
+|TWmeaning = same
+|ZHname = 王冠碎片
+|ZHromanised = Wángguān suìpiàn
+|ZHmeaning = Crown Fragment
+|CODEname = SK_FRAGMENT
+|CODEmeaning = SK is the abbreviation for Skull Tyrant's internal name, Skull King
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

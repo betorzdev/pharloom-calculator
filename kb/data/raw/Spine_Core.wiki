@@ -1,0 +1,69 @@
+{{SS Infobox Item
+| max = 25
+| type = [[Items (Silksong)#Deliverable|Deliverable]]
+| source = Dropped by [[Hoker|Hokers]] in [[Far Fields]] during <i>[[Flexile Spines]]</i>
+| description = Flexible fibre from within a Hoker's spine. Can be woven into garments and accessories by a skilled seamstress.
+}}
+
+{{Quote|Hr=SS
+|Head for the caves beyond my home. The bugs within produce a spine with a marvellous core, flexible yet strong.
+|[[Seamstress]]
+}}
+
+<b>Spine Cores</b> are [[Items (Silksong)#Deliverables|deliverable items]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+Spine Cores are only available during the <i>[[Flexile Spines]]</i> wish, given out by [[Seamstress]] in the eastern [[Far Fields]]. 25 cores must be gathered to complete the wish and obtain the [[Drifter's Cloak]].
+
+{{Gallery
+|Image1 = Mapshot SS Seamstress 01.png!Location in Far Fields
+|Image2 = Screenshot SS Seamstress 01.png!Seamstress in Far Fields
+}}
+
+== How to Acquire ==
+Spine Cores are dropped by [[Hoker|Hokers]] in Far Fields after accepting the <i>Flexile Spines</i> wish. Hokers fire 3 to 6 spines out of their bodies when provoked, and [[Hornet (Silksong)|Hornet]] can obtain a core by striking a spine, which otherwise disappear after a few seconds. 
+
+Hornet can carry up to 25 Spine Cores, after which they will no longer drop from broken spines.
+
+{{Gallery
+|Image1 = Mapshot SS Hoker 01.png!Location in Far Fields
+|Image2 = Screenshot SS Hoker 04.png!Hoker in Far Fields
+|Image3 = Screenshot SS Hoker 05.png!Shooting spines
+|Image4 = Screenshot SS Hoker 07.png!After shooting spines
+}}
+
+{{Localisation
+|DEname = Stachelkern
+|DEmeaning = Spike Core
+|ESname = Núcleo de púa
+|ESmeaning = Spine Core or Spine Heart
+|FRname = Cœur d'épine
+|FRmeaning = Spine Core
+|ITname = Cuor di aculeo
+|ITmeaning = Spine Heart
+|JAname = トゲの繊維
+|JAromanised = Toge no seni
+|JAmeaning = Spike Fiber
+|KOname = 가시 심
+|KOromanised = Gasi sim
+|KOmeaning = Thorn Core
+|PTname = Fibra Medular
+|PTmeaning = Medullary Fibre
+|RUname = Сердцевина шипа
+|RUromanised = Serdcevina šipa
+|RUmeaning = Spine Core
+|TWname = 棘刺芯
+|TWromanised = Jícì xīn
+|TWmeaning = same
+|ZHname = 棘刺芯
+|ZHromanised = Jícì xīn
+|ZHmeaning = Spine Core
+|CODEname = SPINE
+|CODEmeaning = 
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

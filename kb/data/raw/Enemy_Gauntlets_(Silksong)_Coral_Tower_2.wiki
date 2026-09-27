@@ -1,0 +1,67 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Coral_Tower_Arena_2.png|400px|center]]
+|[[File:Mapshot_SS_Coral_Tower.png|400px|center]]
+|-
+| colspan="2" | Second floor enemy gauntlet of the Coral Tower.
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>Progress to floor 3</center>
+| <center>[https://youtube.com/watch?v=YHACfnIFkdY Coral Tower Battle]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Alita.png|35x35px|link=Alita]] [[Alita]] x2, left and right
+| Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Karaka.png|35x35px|link=Karaka]] Karaka x2, left and right
+| Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Kakri.png|35x35px|link=Kakri]] Kakri, top centre
+|
+|-
+|
+[[File:HJ_Yumama.png|35x35px|link=Yumama]] [[Yumama]], top centre
+| [[Yuma]]s spawned are not counted towards, and do not affect wave progression.
+|-
+| colspan="2" | Coral spikes emerge to cover the left and right ends of the arena.
+|-
+|
+[[File:HJ_Driznarga.png|35x35px|link=Driznarga]] [[Driznarga]] x2, top left and right
+| Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Kakri.png|35x35px|link=Kakri]] Kakri, top left<br/>
+[[File:HJ_Yago.png|35x35px|link=Yago]] Yago, top right
+|
+|-
+|
+[[File:HJ_Karak Gor.png|35x35px|link=Karak Gor]] [[Karak Gor]], right
+| Karak Gor will destroy any coral spikes they run into.
+|-
+| colspan="2" | Coral spikes emerge to cover the left and right edges of the arena, as well as the centre.
+|-
+|
+[[File:HJ_Kai.png|35x35px|link=Kai]] Kai x3, top centre<br/>
+[[File:HJ_Steelspine Kai.png|35x35px|link=Steelspine Kai]] [[Steelspine Kai]] x2, top centre
+| Defeating two enemies spawns the next row.
+|-
+|
+[[File:HJ_Yago.png|35x35px|link=Yago]] Yago, centre right
+|
+|-
+|
+[[File:HJ_Conchfly.png|35x35px|link=Conchfly]] Conchfly x2, top left and right
+| Conchflies burrow out of surfaces.
+|-
+|
+[[File:HJ_Karak Gor.png|35x35px|link=Karak Gor]] Karak Gor x2, left and right
+| Karak Gor will destroy any coral spikes they run into.
+|}

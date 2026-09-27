@@ -1,0 +1,86 @@
+{{SS Infobox Skill
+| title = Cross Stitch
+| title2 = <small>Learned the Silk Skill</small><br />Cross Stitch
+| image = Icon_SS_Cross_Stitch.png
+| damage formula = (0.75 x [[Needle]]) x 4
+| damage total = 4/7/10/13/16 <br> (per hit, 4 hits) <br> 16/28/40/52/64 (total)
+| description = Deflective technique of a creature spun from thread. Bind Silk around the needle to deflect enemy attacks and instantly strike back.
+| description2 = Bind Silk around the needle to deflect enemy attacks and instantly strike back.<hr/>Silk Skills can be equipped in the Crest screen of the Menu.
+| effect = Parries the next hit taken in a short window then deals damage in the location of the offending enemy
+| location = [[Exhaust Organ]]
+}}
+
+<b>Cross Stitch</b> is a [[Skills|Skill]] in <i>[[Hollow Knight: Silksong]]</i>. It allows [[Hornet (Silksong)|Hornet]] to counter any incoming damage and counter back with several strikes.
+
+== Function ==
+Hornet raises the [[Needle]] in a defensive stance, countering with a flurry of 4 attacks upon blocking a hit. Anything that is able to hurt Hornet can be blocked by Cross Stitch, including [[Enemies (Silksong)|enemy]] contact damage. Cross Stitch deals [[Damage Values and Enemy Health (Silksong)#Needle|0.75x Needle Damage]] on hit, rounding up, resulting in a total of 3x Needle Damage if all hits connect. 
+
+It has little-to-no delay between the button input and the defensive stance being entered. This means it prevents damage in instances that [[Sharpdart]], the other defensive Skill, would be interrupted by due to bad timing, making it better for quickly reacting to incoming damage but worse for anticipating it. It can also be performed in any location, whereas Sharpdart may result in Hornet being propelled into an environmental hazard, requiring careful use in regards to positioning.
+
+The counterattacks can hit multiple enemies at once, making Cross Stitch useful in tight spaces where a lot of enemies are close together.
+
+Hornet is briefly invulnerable after performing the counterattack. During periods of invulnerability, Cross Stitch will not be able to block a hit as Hornet cannot take damage.
+
+=== Modifiers ===
+* [[Volt Filament]] electrifies Cross Stitch, increasing the damage by 25% and adding a tick of 5 damage.
+* [[Shaman Crest]] sheathes Cross Stitch in Soul, increasing the damage by 40%.
+** Volt Filament and Shaman Crest's damage increases add together to grant +65% damage.
+* [[Egg of Flealia]] reduces the cost of Cross Stitch to 3 Silk while at full health.
+
+== How to Acquire ==
+Learned after defeating [[Phantom]] in the [[Exhaust Organ]] of [[Bilewater]].
+
+{{Gallery
+| Image1 = Mapshot SS Exhaust Organ.png!Location in Bilewater
+}}
+== Gallery ==
+{{Gallery
+| Image1 = Cross Stitch.png!Splash Art
+| Image2 = Icon SS Cross Stitch Art.png!Splash Art
+}}
+
+== Trivia ==
+* Cross Stitch is the only Skill that is learned instead of bound. 
+*Using Cross Stitch on [[Wardenfly|Wardenflies]]' or [[Guardfly|Guardflies]]' projectiles breaks them, but Cross Stitch's flurry is not triggered.
+*In the <i>Silksong</i> reveal trailer,<ref>[https://www.youtube.com/watch?v=pFAknD_9U7c Hollow Knight: Silksong Reveal Trailer]</ref> Cross Stitch appears to act differently, with Hornet dashing forward with her needle pointed instead of countering with a flurry of needle attacks. Matching the unused <code>prompt_hornet_parry</code> prompt.
+{{Gallery
+|Image1 = Prompt_hornet_parry.png!prompt_hornet_parry
+}}
+{{History
+|game = SS
+|1.0.28891 (Patch 3): Cross Stitch's damage was slightly increased.
+}}
+{{Localisation
+|DEname = Kreuzstich
+|DEmeaning = Cross Stitch
+|ESname = Punto de cruz
+|ESmeaning = Cross Stitch
+|FRname = Point de croix
+|FRmeaning = Cross Stitch
+|ITname = Punto Croce
+|ITmeaning = Cross Stitch
+|JAname = クロススティッチ
+|JAkatakana = foreign
+|JAromanised = Kurosu sutitchi
+|JAmeaning = Cross Stitch
+|KOname = 십자수
+|KOromanised = Sipjasu
+|KOmeaning = Cross Stitch
+|PTname = Ponto Cruz
+|PTmeaning = Cross Stitch
+|RUname = Поперечный стежок
+|RUromanised = Poperečnyj stežok
+|RUmeaning = Cross Stitch
+|TWname = 十字繡
+|TWromanised = Shízì xiù
+|TWmeaning = same
+|ZHname = 十字绣
+|ZHromanised = Shízì xiù
+|ZHmeaning = Cross Stitch
+|CODEname=SKILL_PARRY</code><br><code>PARRY
+}}
+{{Refs|hr=SS}}
+
+{{SS_Nav_Skills}}
+[[fr:Point de croix]]
+[[zh:十字绣]]

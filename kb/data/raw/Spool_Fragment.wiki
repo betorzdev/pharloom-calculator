@@ -1,0 +1,240 @@
+{{SS Infobox Item
+|label= Fragment
+|image = <gallery>
+Spool Fragment.png|Shop
+Icon SS Spool Fragment Pickup.png|Pickup
+</gallery>
+|type = Upgrade
+|effects = Increases Silk capacity
+|source = [[Wish]] reward<br>[[NPCs (Silksong)#Merchants|Merchants]]<br>Points of Interest scattered across the world
+|description=One half of an artefact left behind by the Weavers, designed to collect and hold Silk.<hr/>A completed spool will allow one to hold more Silk within their shell.
+|audio = Pickup Idle [[File:Spool Fragment Idle Loop.ogg]]
+
+| label2 = Completed
+| title2 = Silk Spool
+| image2 = Silk Spool.png
+| type2 = Upgrade
+| effects2 = Increases Silk capacity
+| source2 = [[Wish]] reward<br>[[NPCs (Silksong)#Merchants|Merchants]]<br>Points of Interest scattered across the world
+| description2 = Artefact left behind by the Weavers, designed to collect and hold additional Silk.
+| audio2 = Pickup Idle [[File:Spool Fragment Idle Loop.ogg]]
+}}
+
+{{Quote
+| Half a spider's spool. You'd just have to find its match. Them ol' Weavers built some fine things alright. They're all long dead, but their craftwork still gleams bright.
+| [[Jubilana]]
+| Hr = SS
+}}
+
+<b>Spool Fragments</b> are [[Items (Silksong)|Items]] in <i>[[Hollow Knight: Silksong]]</i> that are used to increase [[Hornet (Silksong)|Hornet]]'s [[Silk]] capacity.
+
+__TOC__
+
+== Use ==
+{{Main|Silk}}
+Two Spool Fragments are combined to form a Spool, which increases Hornet's [[Silk]] capacity by 1. There are 18 total Spool Fragments to collect, allowing Hornet to hold 9 additional Silk once all Spool Fragments have been collected, and up to 21 Silk with the [[Spool Extender]] tool.
+
+Completing a Spool will also completely fill Hornet's Silk meter.
+
+{{Clear}}
+
+== How to Acquire ==
+Six Spool Fragments are available in [[Act 1]], allowing Hornet to hold 3 additional strands of Silk by the Act's completion. 
+
+The remaining twelve Spool Fragments can be obtained across Act 2, allowing for a total of 9 additional strands of Silk.
+
+{| class="article-table" style="text-align:center" width="100%" data-tpt-table-id="spool-fragments"
+! #
+! Source
+! Requirements
+! Map
+|- data-tpt-row-no-checkbox
+! colspan="4" | Accessible in [[Acts|Act 1]]
+|-
+! 1
+| Behind a breakable wall in a mossy area above [[Bone Bottom]]
+| None
+| [[File:Mapshot SS Spool Fragment 01.png|150x150px|center]]
+|-
+! 2
+| Central section of the [[Deep Docks]]. Take the southwest exit from [[Forge Daughter]]'s location. Descend the vertical room and take the first eastward exit to a large room with a burning floor. Hop across the platforms to first flip the lever on the far end of the room, then turn around and hop up the platforms to acquire the Spool Fragment
+| None
+| [[File:Mapshot SS Spool Fragment 02.png|150x150px|center]]
+|-
+! 3
+| In [[Greymoor]], above [[Shakra]]'s bench. Start by wall-jumping off the vertical planks to the northeast of the [[Halfway Home]], then travel east before pulling a lever that deploys numerous balloons. [[Needle-bounce]] off the balloons to reach the top of this large vertical area
+| Requires the [[Cling Grip]] to enter the passage
+| [[File:Mapshot SS Spool Fragment 03.png|150x150px|center]]
+|-
+! 4
+| Sold by [[Frey]] in [[Bellhart]] for {{R|270}}<ref>Frey: <i>"For a spool bearing no Silk, it's surprisingly heavy. Do you think perhaps it could be a gift left behind by the old creeping ones?"</i></ref>
+| Complete the <i>[[My Missing Courier]]</i> [[wish]]
+| [[File:Mapshot SS Frey 01.png|150x150px|center]]
+|-
+! 5
+| In a passage in [[Weavenest Atla]]. Ascend the east wall after taking the teleporter into the lower area. Travel west to the first [[Marrowmaw]], jump upwards into the higher passage, navigate past the second Marrowmaw, and drop down to acquire the Fragment
+| Requires the [[Needolin]] to open the Weavenest
+| [[File:Mapshot SS Spool Fragment 04.png|150x150px|center]]
+|-
+! 6
+| From the [[Bellway]] station in [[the Slab]], ascend two levels northwards into a large open room. Wall-climb off the west wall (without entering the westernmost chamber), then jump east across the tops of the cages before accessing a passage in the ceiling. Travel west along this passage, passing through the traps, and climb to the top of the outdoor section
+| Requires the [[Cling Grip]] and a [[The Slab#Capture by Wardenfly|transport]] to the Slab
+| [[File:Mapshot SS Spool Fragment 05.png|150x150px|center]]
+|- data-tpt-row-no-checkbox
+! colspan="4" | Accessible in [[Act 2]]
+|-
+! 7
+| At the top of the [[Grand Gate]]. If approached from below, strike the scales with an upward attack to tip them
+| None
+| [[File:Mapshot SS Spool Fragment 06.png|150x150px|center]]
+|-
+! 8
+| Central section of the [[Underworks]]. Head south from the [[Ventrica Station]], then proceed west. Fight through the [[Enemy Gauntlets (Silksong)/Underworks 2|enemy gauntlet]] and continue west to acquire
+| None
+| [[File:Mapshot SS Spool Fragment 07.png|150x150px|center]]
+|-
+! 9
+| Given by the [[Fleamaster Mooshka]] upon their ascent to the Grand Gate<ref name=mooshka>[[Fleamaster Mooshka]]: <i>"Ahh, and before the road steals you away from us again, allow me to offer you a humble gift! One of the little ones found a pale artefact while digging about in the sands. A spiny, cold sort of thing."</i></ref>
+| Requires 12 found [[Flea]]s and the [[Last Judge]] defeated
+| [[File:Mapshot SS Flea Caravan 03.png|150x150px|center]]
+|-
+! 10
+| In the [[Whiteward]], under the lift. Call up the lift using the buttons on the top, then quickly jump down the lift shaft and duck into either side passage to let the lift pass. Dive into the bottom, past where the lift normally stops, to acquire
+| Requires [[White Key]]
+| [[File:Mapshot SS Spool Fragment 08.png|150x150px|center]]
+|-
+! 11
+| Southeastern section of the lower [[Cogwork Core]]. Defeat or dodge a [[Cogwork Clapper]] and continue east and down to acquire. The Cogwork Clapper does not appear in Act 3
+| None
+| [[File:Mapshot SS Spool Fragment 09.png|150x150px|center]]
+|-
+! 12
+| Lower right section of the [[Underworks]]. Head east from [[the Cauldron]] and descend down a vertical shaft to a small room with a burning floor. Break the wall on the left to access
+| None
+| [[File:Mapshot SS Spool Fragment 10.png|150x150px|center]]
+|-
+! 13
+| Given by [[Sherma]] after completing the <i>[[Balm for the Wounded]]</i> [[wish]]<ref name=sherma>[[Sherma]]: <i>"Oh! And I have something for you as well. I found it buried amongst the broken relics down here in the darkness, glowing with a pale light."</i></ref>
+| Requires [[White Key]]
+| [[File:Mapshot SS Sherma 08.png|150x150px|center]]
+|-
+! 14
+| Sold by [[Jubilana]] for {{R|500}}<ref>Jubilana: <i>"Half a spider's spool. You'd just have to find its match. Them ol' Weavers built some fine things alright. They're all long dead, but their craftwork still gleams bright."</i></ref>
+| Complete the <i>[[The Lost Merchant]]</i> [[wish]]
+| [[File:Mapshot SS Jubilana 01.png|150x150px|center]]
+|-
+! 15
+| Southeastern section of the [[Deep Docks]]. First, use the Clawline to open the locked gate in the southeastern corner. Open the hatch, descend into the open cavern, then use the Clawline to reach the far wall and break open the explosive rock. This opens a platforming challenge across spikes, lava, and more explosive rocks, before finally leading to the Spool Fragment on the opposite side of the locked door
+| Requires the [[Clawline]] and the [[Cling Grip]]. The [[Faydown Cloak]] makes acquiring this easier
+| [[File:Mapshot SS Spool Fragment 11.png|150x150px|center]]
+|-
+! 16
+| In the [[High Halls]] at the highest point in the left vertical room
+| Requires the [[Faydown Cloak]] and the [[Clawline]]. The challenge can be skipped with the [[Silk Soar]]
+| [[File:Mapshot SS Spool Fragment 12.png|150x150px|center]]
+|-
+! 17
+| In the western section of the [[Memorium]]. Access the chamber by going west from the fourth floor (one floor below the [[Ventrica Station]]), then navigate around the spikes to access it. Break the vines going south to open the path leading back to the Memorium entrance
+| Requires the [[Faydown Cloak]] and the [[Clawline]]
+| [[File:Mapshot SS Spool Fragment 13.png|150x150px|center]]
+|-
+! 18
+| Sold by [[Grindle]] for {{R|680}}<ref>Grindle: <i>"Beautiful this, a glowy little piece of somethin'. Stinks of them horrid crawling whisperers a bit, so might be dangerous. You should take it! Give us your rosaries and lighten my claws of it!"</i></ref>
+| Requires the [[Faydown Cloak]] and the [[Cling Grip]]
+| [[File:Mapshot SS Grindle 01.png|150x150px|center]]
+|}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Spool Fragment 1.png ! Bone Bottom
+|Image2 = Screenshot SS Spool Fragment 2.png ! Deep Docks (Centre)
+|Image3 = Screenshot SS Spool Fragment 3.png ! Greymoor
+|Image4 = Screenshot SS Spool Fragment 4.png ! Weavenest Atla
+|Image5 = Screenshot SS Spool Fragment 5.png ! The Slab
+|Image6 = Screenshot SS Spool Fragment 6.png ! Grand Gate
+|Image7 = Screenshot SS Spool Fragment 7.png ! Underworks (Centre)
+|Image8 = Screenshot SS Spool Fragment 8.png ! Whiteward
+|Image9 = Screenshot SS Spool Fragment 9.png ! Cogwork Core
+|Image10 = Screenshot SS Spool Fragment 10.png ! Underworks (East)
+|Image11 = Screenshot SS Spool Fragment 11.png ! Deep Docks (East)
+|Image12 = Screenshot SS Spool Fragment 12.png ! High Halls
+|Image13 = Screenshot SS Spool Fragment 13.png ! Memorium
+}}
+
+== Achievements ==
+{{Achievements|allgames=silksong|Restored|Extended}}
+
+== Trivia ==
+* Upon picking up a Spool Fragment, an animation is triggered that grants Hornet invincibility frames until the animation concludes.
+* Spool Fragments are described as glowing, pale artefacts that are cold to the touch.<ref name=sherma /><ref name=mooshka /> They share these properties with [[Pale Ore]].<ref>Pale Ore description: <i>"Rare, pale metal that emanates an icy chill."</i></ref><ref>[[Mask Shard (Silksong)|Ancient Mask]] description: <i>"An ancient mask carved from cold, pale ore."</i></ref>
+
+{{History
+|game = SS
+|1.0.28891 (Patch 3): Fixed instances of some Spool Fragments being permanently missable if a player immediately quit after collecting the item.
+}}
+{{Localisation
+|DEname = Spulenfragment
+|DEmeaning = Spool Fragment
+|ESname = Fragmento de carrete
+|ESmeaning = Spool Fragment
+|FRname = Fragment de bobine
+|FRmeaning = Spool Fragment
+|ITname = Frammento di spola
+|ITmeaning = Spool Fragment
+|JAname = 糸巻の破片
+|JAromanised = Itomaki no hahen
+|JAmeaning = Spool Fragment
+|KOname = 실타래 조각
+|KOromanised = Siltalae jogag
+|KOmeaning = Skein Piece<br><small>[[wiktionary:skein|Skein]] is a ball of yarn formed into an oblong shape.</small>
+|PTname = Fragmento de Carretel
+|PTmeaning = Spool Fragment
+|RUname = Обломок катушки
+|RUromanised = Oblomok katushki
+|RUmeaning = Spool Fragment
+|TWname = 靈絲軸碎片
+|TWromanised = Língsī zhóu suìpiàn
+|TWmeaning = same
+|ZHname = 灵丝轴碎片
+|ZHromanised = Língsī zhóu suìpiàn
+|ZHmeaning = Silk Spool Fragment
+|CODEname = SPOOL_PIECE_HALF
+}}
+
+=== Silk Spool ===
+{{Localisation
+|hr=false
+|DEname = Seidenspule
+|DEmeaning = Spool of Silk
+|ESname = Carrete de seda
+|ESmeaning = Spool of Silk
+|FRname = Bobine de soie
+|FRmeaning = Spool of Silk
+|ITname = Spola di Seta
+|ITmeaning = Spool of Silk
+|JAname = シルクの糸巻
+|JAromanised = Shiruku no itomaki
+|JAmeaning = Spool of Silk
+|KOname = 실크 실타래
+|KOromanised = Silkeu siltarae
+|KOmeaning = Silk Skein<br><small>[[wiktionary:skein|Skein]] is a ball of yarn formed into an oblong shape.</small>
+|PTname =  Carretel de Seda
+|PTmeaning = Silk Spool
+|RUname = Катушка Шёлка
+|RUromanised = Katushka Shyolka
+|RUmeaning = Silk Spool
+|TWname = 靈絲軸
+|TWromanised = Língsī zhóu 
+|TWmeaning = same
+|ZHname = 灵丝轴
+|ZHromanised = Língsī zhóu
+|ZHmeaning = Silk Spool
+|CODEname = SPOOL_PIECE_FULL
+}}
+
+{{Hr|SS}}
+
+{{SS Nav Items}}
+
+[[fr:Fragment de bobine]]
+[[pt:Fragmento de Carretel]]

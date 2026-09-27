@@ -1,0 +1,141 @@
+{{SS Infobox Area
+| tab1 = Act 2
+| image1 = <gallery>
+Whiteward Map Marked.png|Marked
+Whiteward Map Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Whiteward Map Ruin Marked.png|Marked
+Whiteward Map Ruin Clean.png|Unmarked
+</gallery>
+| connection = [[Choral Chambers]]<br/>[[Underworks]]<ref group="Note">Connects via one-way drop from Whiteward.</ref>
+| ambience = [https://www.youtube.com/watch?v=EcGoF3Smik0 Atmos Creepy v2]<br>
+[https://www.youtube.com/watch?v=UdcTyq_aXXI Atmos Citadel Halls Pre Wakeup]<br>
+[https://www.youtube.com/watch?v=62rByKODo9A Atmos Citadel Halls]<br>
+[https://www.youtube.com/watch?v=Qnk8nhLhEXE Atmos Under]
+| main = [https://www.youtube.com/watch?v=tqqqgcgPEGo Whiteward]
+| action = [https://www.youtube.com/watch?v=LCcerjly60w Cut Through]
+}}
+
+{{Quote
+|In the ward down below, I saw it clear, the hollowed husks, and the many torturous implements... machines to instill a bug with thread, that would see their life extended.
+| [[Hornet (Silksong)|Hornet]]
+| Hr = Hornet
+}}
+
+The <b>Whiteward</b> is an [[Areas (Silksong)|area]] in [[The Citadel]] in <i>[[Hollow Knight: Silksong]]</i>. It served as [[the Citadel]]'s medical ward.
+
+== Description ==
+The Whiteward is a dark area draped in webs of [[Silk]]. Formerly a medical facility, it contains numerous bottles and flasks lining the floors and shelves, with those bearing sharp points creating spike pits. Wheelchairs and stretchers are scattered throughout, sometimes even forming breakable walls. Gilded Silk spools, found primarily in [[the Cradle]] where Silk was harvested from [[Grand Mother Silk]], can also be seen here in large numbers.
+
+Upon entering the Whiteward, the path down to the main area is blocked by a lift that requires the [[White Key]] to unlock. Taking the lift down opens a route to the west, leading to the operating theatre, which houses machines built to instill bugs with thread.<ref name=caretaker /> The needle used in these machines is depicted on a sign at the entrance from the [[Choral Chambers]]. Beneath one of them lies a sluice, which can be opened with the [[Surgeon's Key]] to access the disposal pit below and fight [[the Unravelled]].
+
+A ventilation shaft leads up to the second floor, where the area's first enemy, a [[Dreg Husk]], can be encountered. It hides behind a sheet, only emerging and ambushing [[Hornet (Silksong)|Hornet]] once the [[Choral Commandment]] in this room is collected.
+
+To the east, a lever can be activated to open a passage into the second half of the area. Initially, only the lower section, the crematorium inhabited by [[Mortician]]s, is accessible. Numerous barrels of [[Flintstone]] from the [[Deep Docks]] can be found here, serving as fuel for the furnaces. Entering one of these furnaces leads down to the [[Underworks]].
+
+[[Sherma]] can be found above the crematorium, in a room unlocked after the <i>[[Balm for the Wounded]]</i> [[wish]] is promised. The [[Enemy Gauntlets (Silksong)/Whiteward 1|enemy gauntlet]] must be fought to rescue him.
+
+In [[Act 3]], using the [[Silk Soar]] near the map machine allows access to a room containing the Silk Siphon,<ref group="Note">"Silk_Siphon" is the file name used for the Needolin dialogue in that room.</ref> a machine built to create [[Silk Flies]].
+
+== History ==
+The Whiteward was constructed within the Citadel as a medical facility tasked with banishing infirmity, sickness, and even death from the Citadel, for a bug who serves and sings must never falter or die.<ref>Whiteward [[Lore Tablets (Silksong)#Whiteward|Lore Tablet]]: <i>"While song must be sung, none may falter. Infirmity. Sickness. Death. All are banished from our Citadel."</i></ref><ref>[[The Cradle]] [[Lore Tablets (Silksong)#The Cradle|Lore Tablet]]: <i>"Due to unacceptably high injury and unsanctioned deaths, Ventrica travel shall henceforth be denied to all. For Pharloom eternal, a bug who serves must never die."</i></ref> To prolong the lives of bugs and make them immortal, the physicians of the Whiteward inserted [[Silk]] harvested from [[Grand Mother Silk]] into them.<ref name=caretaker>Hornet and the [[Caretaker]] dialogue: <br><i>Hornet: "In the ward down below, I saw it clear, the hollowed husks, and the many torturous implements... machines to instill a bug with thread, that would see their life extended."<br>Caretaker: "Aye! That's it, in part! But there's more scale to it than all that. Just think of'em greedily shoving the Silk into their shells, the madness that overcame them, eternal life for mortal bugs! Then think on how long it's all gone on..."</i></ref><ref>Pharloom's Folly: <i>"They forget your heart, bound in slumber and servitude,"</i></ref><ref>[[:File:Cocoon Grand Mother Silk.png|Screenshot]] showing Grand Mother Silk's cocoon in the Cradle, strands of Silk leading out from it similar to a loom.</ref> They performed operations and modifications on bugs, and even the [[Conductors]] underwent surgeries there.<ref>[[Surgeon]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Cruel physician of Whiteward, responsible for operations and modifications on the Citadel's bugs."</i></ref><ref>[[Psalm Cylinder]] description: <i>"Last surgery of Conductor Mizello, performed in Whiteward's operating theatre."</i></ref> Despite the abundance of effective healing supplies, no method of anaesthesia was ever discovered, and so patients were bound with straps.<ref>[[Sherma]]: <i>"I'm no healer, but with the supplies we found in the ward below even my unlearned claws can ease the suffering of our brothers and sisters."</i></ref><ref>Whiteward [[Needolin Locations#Whiteward|Needolin dialogue]]: <i>"...Pins... Pain... ...Straps tight..."</i></ref> Those who died during a Silk suture and refused to revive were branded as sinners, their bodies cremated in the crematorium to retrieve the Silk dregs from their shells for recycling.<ref>[[Choral Commandment]]: <i>"Surgeon's orders. "Devout has succumbed during Silk suture. Refuses to revive. Sin committed. Permit no rites. Husk marked for cremation. Retrieve dregs.""</i></ref><ref>[[Mortician]] Hunter's Journal entry: <i>"Altered servant of the Citadel's Whiteward, responsible for the cremation of husks and the recycling of Silk from their shells."</i></ref> 
+
+Sickly, old, or dying bugs of the Citadel who could no longer sing were selected for the sacred duty to become the lights that would guide the other pilgrims.<ref>Choral Commandment description: <i>"Tattered decree of the Citadel. "Bug of voice grown hoarse or shell fallen frail, you have been selected for duty most sacred. Become our light, our guide in darkness, that others worthy may climb to join the holy song.""</i></ref> In the Whiteward, a Silk Siphon was used to create [[Silk Flies]] from these bugs, leaving their bodies to be discarded in the adjacent room. These Silk Flies were used in light fixtures throughout the kingdom and within most of the [[Architects#Creations|cogwork automatons]] in the Citadel.<ref>[[Cogwork Choirbug]] Hunter's Journal entry: <i>"Its core is filled with fine mechanisms, but that alone should not produce such a convincing mimic of life. Silk must also be used to animate this artifice, though exactly how I am not sure."</i></ref><ref>[[:File:Screenshot SS Fourth Chorus 04.png|Screenshot]] showing Silk Flies flying out of the [[Fourth Chorus]].</ref>
+
+Over many generations, Silk had seeded deep into the shells of Pharloom's inhabitants,<ref>Hornet dialogue with the Caretaker: <i>"...The children born of them, and all the pilgrims after... The Silk has seeded deep into this kingdom's shells, generations deep..."</i></ref> until the air and water became permeated with threads as well.<ref>[[The Marrow]] [[Lore Tablets (Silksong)#The Marrow|Lore Tablet]]: <i>"In the air. The water. Everywhere. Inside their shells. Twisted inside. Guts. Tightest around heart. Pulsing rhythm."</i></ref> This made the bugs of Pharloom easy prey for Grand Mother Silk's [[Haunting|haunted]] thread, which only had to seek for itself to reach them.<ref>Hornet dialogue with the Caretaker: <i>"No wonder Pharloom's bugs proved such easy prey for that haunted thread. It had only to seek for itself to reach them."</i></ref> The Haunting caused the Citadel, including the Whiteward, to fall into ruin and its voices to lay silent.<ref>Hornet and the Caretaker dialogue: <br><i>Caretaker: "Have you done it yet, bellringer? Wriggled deep? Discovered the depths of obsession that brought this place so low?"<br>Hornet: "If you speak of this Citadel and its Silk, Caretaker, then yes, I now know the start of it."</i></ref><ref>[[Choral Chambers]] room [[Needolin Locations#Choral Chambers|Needolin dialogue]]: <i>"All our wealth... ...All our glory... ...All to end... like this? ...Beauty... faded..."</i></ref><ref>Hornet dialogue with the [[Second Sentinel]]: <i>"I had assumed as much. Yet look around you, gilded one. During your slumber, the Citadel has fallen, and its voices lay silent. This place is dead, or very nearly."</i></ref>
+
+== How to Access ==
+The Whiteward can be accessed via a lift located in the southwestern part of the [[Choral Chambers]]. The lift must be unlocked with the [[White Key]], which can be found on the corpse of a Surgeon in [[Songclave]] or bought from [[Jubilana]] for {{R|220}} if the <i>[[The Wandering Merchant]]</i> wish has been fulfilled.
+
+{{TabbedPOI
+| Header = true
+
+| NPC1 = Sherma
+
+| Enemy1 = Drapefly
+| Enemy2 = Giant Drapemite
+| Enemy3 = Dreg Husk
+| Enemy4 = Dregwheel
+| Enemy5 = Surgeon
+| Enemy6 = Mortician
+
+| Boss1 = The Unravelled
+
+| Loot1_FileName = Injector Band
+| Loot2_FileName = Surgeon's Key
+| Loot3_FileName = Spool Fragment
+| Loot3_Amount = 2
+| Loot3_Description = 1 fragment is given by [[Sherma]] after completing the ''[[Balm for the Wounded]]'' [[wish]]
+| Loot4_FileName = Icon SS Silk Heart
+| Loot4_Name = Silk Heart
+| Loot4_Description = dropped by [[the Unravelled]]
+| Loot5_FileName = Silkeater
+| Loot5_Amount = 1
+| Loot6_FileName = Psalm Cylinder
+| Loot6_Amount = 1
+| Loot7_FileName = Choral Commandment
+| Loot7_Amount = 2
+
+|LoreTabletsSource = SS Whiteward
+
+|EnemyGauntletsSource = Whiteward 1, Unravelled
+}}
+
+{{Gallery
+| Title = Gallery
+| Image1 = Screenshot SS Whiteward 10.png!Entrance from the Choral Chambers
+| Image2 = Screenshot SS Whiteward 03.png!Bench
+| Image3 = Screenshot SS Whiteward 04.png!Operating theatre
+| Image4 = Screenshot SS Whiteward 09.png!Crematorium
+| Image5 = Screenshot SS Whiteward 06.png!Message board
+| Image6 = Screenshot SS Whiteward 07.png!Sherma hiding spot
+| Image7 = Screenshot SS Whiteward 08.png!The Unravelled arena
+| Image8 = Screenshot SS Whiteward 01.png!Silk Siphon room (Act 3)
+| Image9 = Screenshot SS Whiteward 02.png!Room filled with corpses (Act 3)
+| Image10 = Silksong Early 016.png!<i>Silksong</i> reveal trailer
+}}
+
+==Trivia==
+*Whiteward appears as a part of the [[Underworks]], rather than [[the Citadel]], when the map is zoomed out. 
+*[[Cut Content (Silksong)/Areas#City Catacombs|Earlier in development]], Whiteward was known as the City Catacombs. 
+
+{{Localisation
+|DEname = Weißstation
+|DEmeaning = Whiteward
+|ESname = Ala Blanca
+|ESmeaning = White Wing
+|FRname = Aile Blanche
+|FRmeaning = White Wing
+|ITname = Corsia Bianca
+|ITmeaning = White Ward
+|JAname = 白色の棟
+|JAromanised = Hakushoku no mune
+|JAmeaning = White Ward
+|KOname = 백색 병동
+|KOromanised = Baeksaek byeongdong
+|KOmeaning = White Medical Ward
+|PTname = Ala Branca
+|PTmeaning = White Wing
+|RUname = Белые покои
+|RUromanised = Belye pokoi
+|RUmeaning = White Room<br><small>Покои <i>pokoi</i> is an archaic term for room, likely from {{lang|ru|приемный}} покои <i>priemnyj pokoi</i> (emergency room).</small>
+|ZHname = 白愈厅
+|ZHromanised = Bái yù tīng
+|ZHmeaning = White Healing Hall
+|TWname = 白色療養所
+|TWromanised = Báisè liáoyǎng suǒ
+|TWmeaning = White Sanatorium
+|CODEname = WARD
+}}
+
+[[zh:白愈厅]]
+
+{{hr|ss}}
+== Notes ==
+<references group="Note"/>
+{{Refs|hr=false|columns=2|scrollbox=true}}
+{{SS Nav Areas}}
+
+[[Category:The Citadel]]

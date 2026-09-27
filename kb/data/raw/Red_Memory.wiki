@@ -1,0 +1,142 @@
+{{SS Infobox Area
+|image1 = SS-No-Map-Icon.png
+|connection = [[Moss Grotto]]<ref group="Note">Connects via [[Snail Shamans (Silksong)|Snail Shamans]].</ref>
+|ambience = [https://www.youtube.com/watch?v=wQZ82QCpvDc Atmos Web Memory]<br>
+[https://youtu.be/jHjT50q0W2s Deepnest Atmos Loop]<br>
+[https://www.youtube.com/watch?v=M1-QRnFCR5s Hive Atmos Loop]
+|main = [https://www.youtube.com/watch?v=XDK610Xfbuk Red Memory]
+}}
+{{Quote
+|In the distant past, I knew the flower. My thread still holds its faint memory. If the Everbloom was grasped strongly enough within my Silk, it could be made to manifest.
+|[[Hornet (Silksong)|Hornet]]
+|Hr=Hornet
+}}
+<b>Red Memory</b> is an [[Areas (Silksong)|area]] in <i>[[Hollow Knight: Silksong]]</i> visited as part of the [[Act 3]] plotline. In it, [[Hornet (Silksong)|Hornet]] journeys through her own memories to find the [[Everbloom]].
+
+== Description ==
+[[File: Screenshot SS Red Memory 03.png|thumb|left|200px|Path to Weavers' Den]]
+Red Memory is [[Hornet (Silksong)|Hornet]]'s memory of her past and her upbringing. It is a foggy, dream-like area with several strands of thread strung across the whole area over a faint spider's web, with a deep red colour behind it all. Like with [[Silk Heart]] memories, a loud heartbeat along with whispers can be heard throughout most of the area. Paths laid with thread, and orbs of Silk that can be used to [[Needle-bounce]] off, lead up to the entrance to Hornet's memory within [[Weavers' Den]]. After Weavers' Den, Hornet's memory leads to the settlement of [[Distant Village]], suspended structures of webs made from red threads laid with banners bearing the eyes of a [[Weaver]]. Here, one of the cocoons leads to [[Beast's Den]] and contains a memory of Hornet and [[Herrah the Beast|her mother]] in a throne room. 
+
+Following Hornet's memory of her mother and a hallway lined with Weaver insignias, the area transitions into [[the Hive]] and its hexagonal architecture and furniture. Bright, orange light covers most of this section, with the walls and floor formed out of hardened honey in hexagonal shapes and occasionally, a [[Hiveling]] can be seen flying across. Faint webs can be seen layered over the Hive's architecture with clumps of honey over gaps that can be used to platform across, leading to a gateway that contains a memory of Hornet training with [[Hive Queen Vespa]].
+
+Past the Hive, Hornet enters her memory of the [[White Palace]]. It is characterised by a bright, pale light and its ornate architecture bearing the design of [[the Pale King]]'s crown, decorated by grey flora. At the edges of the White Palace, glowing, pale roots can be seen. Like the previous two sections, the White Palace is covered in a layer of thread. For this section, [[Wingmould (Silksong)|Wingmoulds]] floating across gaps are used to traverse the White Palace. At its end, Hornet descends to a memory of [[the White Lady]], during the descent, the heartbeats and whispers can no longer be heard.
+
+While Hornet can be harmed by the spikes on top of the Distant Village lift, platforms in the White Palace section, and contact with [[Wingmould]]s, she is unable to die from this damage. Falling during any of the platforming sections returns her to the last safe ground unharmed.
+
+== How to Access ==
+After acquiring three out of the four possible [[Old Hearts|old hearts]] for the <i>[[SEEK: The Old Hearts]]</i> objective, Hornet can visit the [[Snail Shamans (Silksong)|Snail Shamans]] in the [[Ruined Chapel]] and hand the hearts to them. Upon doing so, the Snail Shamans use the three hearts on Hornet to put her into Red Memory. If all four hearts have been obtained, Conjoined Heart remains unused.
+
+Red Memory becomes inaccessible after the final memory takes place and Hornet receives the [[Everbloom]].
+{{Gallery
+|Image1 = Mapshot SS Red Memory.png!Location of the Snail Shamans in the Moss Grotto
+}}
+
+{{TabbedPOI
+|Header = true
+
+|NPC1 = Weavers
+|NPC2 = Herrah the Beast
+|NPC3 = Hive Queen Vespa
+|NPC4 = White Lady
+
+|Enemy1 = Wingmould (Silksong){{!}}Wingmould
+
+|Loot1_FileName = Everbloom
+|Loot1_Description=Given by the [[White Lady]]
+}}
+
+{{TabbedDialogue
+| Title1 = Red Memory
+| Title1_Event1 = [[Weavers]]
+| Title1_Dialogue1 = ...Show us your craft, child...<br>
+...Show it splendid, as only we can teach...<br>
+...Prove yourself more Weaver than Wyrm...
+| Title1_Event2 = [[Herrah the Beast|Herrah]]
+| Title1_Dialogue2 = ...Ignore them, daughter... their whispers...<br>
+...Greater, grander... Weaver, guardian, queen... Those are their desires... not your own. Certainly not mine...<br>
+...Only if you resist them, you might see it, another hope... beyond...<br>
+...But to recall these words, in time so far... Will you even remember me, child? Could you?...<br>
+...A mother... before the mask... before I lay forever in duty...
+| Title1_Event3 = [[Hive Queen Vespa|Vespa]]
+| Title1_Dialogue3 = ...Good... Better...<br>
+...Yet still you will need to be faster...<br>
+...In time, they will come for you... Those who fear your nature, and those seeking to claim it...<br>
+...To survive our world, you must learn to sting... swift and sudden...
+| Title1_Event4 = [[White Lady]]
+| Title1_Dialogue4 = ...Alas... spider's child...<br>
+...For our ways you will think us harsh... You will think us uncaring, unrepentant...<br>
+...And so we must seem, for such is the cost of our wish...<br>
+{{HTalk|You are wrong, Lady...}}<br>
+{{HTalk|I knew the wish, and the price to achieve it. And now, across these many ages, I have only come to know it better...}}<br>
+{{HTalk|Strength... in mind, in care, in claw. Strength enough that I may live to see a world better than our own, or to craft a world as I desire.}}<br>
+{{HTalk|That was the wish, of my mother, of my mentor, and of you...<br>}}
+...Indeed, spider... So much pain you must have passed to speak our hope so simply...<br>
+For her you become... who knows clear our desire, and has seen full the darkness beneath our house, I would show you the gift...<br>
+Witness, the first light. The only means we possess to resist that void with which our family is forever linked.<br>
+Reach forth, child grown strong. Wrest it from this remembrance. Burn yourself free from our sad fate...
+| Title1_Event5 = Playing the [[Needolin]]
+| Title1_Dialogue5 = [n]...Child born pale...<br>
+...Watch... Wait... Pray...<br>
+...Child born bound...<br>
+...Hunt... Seek... Slay...<br>
+...Warrior... Princess...<br>
+...Warrior... Queen...<br>
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Red Memory 01.png!Hornet entering her Red Memory
+|Image2 = Screenshot SS Red Memory 02.png!An orb of Silk
+|Image4 = Screenshot SS Red Memory 04.png!Entrance to Weavers' Den
+|Image5 = Screenshot SS Weavers 04.png!Hornet alongside Weavers
+|Image6 = Screenshot SS Red Memory 05.png!Distant Village
+|Image7 = Screenshot SS Red Memory 06.png!Entrance to Beast's Den
+|Image8 = Screenshot SS Herrah 01.png!Hornet and Herrah
+|Image9 = Screenshot SS Red Memory 07.png!Hallway of Weaver insignias
+|Image10 = Screenshot SS Red Memory 08.png!The Hive
+|Image11 = Screenshot SS Red Memory 09.png!Clumps of honey
+|Image12 = Screenshot SS Red Memory 10.png!Path to Hive Queen Vespa
+|Image13 = Screenshot SS Red Memory 11.png!Entrance to Hive Queen Vespa
+|Image14 = Screenshot SS Vespa 01.png!Hornet and Vespa training
+|Image15 = Screenshot SS Red Memory 12.png!The White Palace
+|Image16 = Screenshot SS Red Memory 13.png!Wingmould in the White Palace
+|Image17 = Screenshot SS Red Memory 14.png!Pale roots at the edge of the memory 
+|Image18 = Screenshot SS Red Memory 15.png!Descent to the White Lady
+|Image19 = Screenshot SS White Lady 01.png!Hornet bowing to the White Lady
+}}
+
+==Trivia==
+*The music for Red Memory is a slowed down version of [[Hornet Protector|Hornet]]'s boss theme in <i>[[Hollow Knight]]</i>.
+{{Localisation
+|DEname = Rote Erinnerung
+|DEmeaning = Red Memory
+|ESname = Memoria roja
+|ESmeaning = Red Memory
+|FRname = Souvenir Rouge
+|FRmeaning = Red Memory
+|ITname = Ricordo Rosso
+|ITmeaning = Red Rememberance
+|JAname = 赤い記憶
+|JAromanised = Akai kioku
+|JAmeaning = Red Memory
+|KOname = 붉은 기억
+|KOromanised = Bulgeun gieok
+|KOmeaning = Red Memory
+|PTname = Memória Vermelha
+|PTmeaning = Red Memory
+|RUname = Красное видение
+|RUromanised = Krasnoe videnie
+|RUmeaning = Red Dream or Red Vision
+|ZHname = 赤红忆境
+|ZHromanised = Chìhóng yìjìng
+|ZHmeaning = Crimson Memories
+|TWname = 赤紅回憶
+|TWromanised = Chìhóng huíyì
+|TWmeaning = same
+|CODEname= MEMORY_RED
+}}
+
+{{Refs|hr=SS|type=note}}
+{{SS Nav Areas}}
+
+[[zh:赤红忆境]]

@@ -1,0 +1,34 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_Pinmaster_Plinney_01.png|400px|center]]
+|[[File:Mapshot_SS_Pinmaster_Plinney_02.png|400px|center]]
+|-
+| colspan="2" | [[Act 3]] enemy gauntlet within the western grave room of Shellwood. Required to rescue [[Pinmaster Plinney]] and return him to [[Bellhart]]. Hornet is not locked into the arena. All enemies are [[Black-Threading|black-threaded]] or become black-threaded shortly after appearing.
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>Rescuing Pinmaster Plinney</center>
+| <center>[https://www.youtube.com/watch?v=NRJe8xGWGK4 Dark Descent]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Pilgrim Pouncer.png|35x35px|link=Pilgrim Pouncer]] [[Pilgrim Pouncer]], left<br />
+[[File:HJ_Pilgrim Groveller.png|35x35px|link=Pilgrim Groveller]] [[Pilgrim Groveller]], right
+| 
+|-
+|
+[[File:HJ_Pilgrim Bellbearer.png|35x35px|link=Pilgrim Bellbearer]] [[Pilgrim Bellbearer]], left<br />
+[[File:HJ_Pilgrim Hulk.png|35x35px|link=Pilgrim Hulk]] [[Pilgrim Hulk]], centre<br />
+[[File:HJ_Pilgrim Pouncer.png|35x35px|link=Pilgrim Pouncer]] Pilgrim Pouncer, right
+| Pilgrim Hulk leaps out of the ground and bounces towards Hornet.
+|-
+|
+[[File:HJ_Pilgrim Groveller.png|35x35px|link=Pilgrim Groveller]] Pilgrim Groveller, left<br />
+[[File:HJ_Pilgrim Guide.png|35x35px|link=Pilgrim Guide]] [[Pilgrim Guide]], centre<br />
+[[File:HJ_Pilgrim Hulk.png|35x35px|link=Pilgrim Hulk]] Pilgrim Hulk, right
+| Pilgrim Hulk leaps out of the ground and bounces towards Hornet.
+|}

@@ -1,0 +1,90 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Hardbone Hopper.png|Hunter's Journal
+Hardbone Hopper Idle.png|Idle
+</gallery>
+
+|health = 20/{{BT|80}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|0.75|0.75|0.75}}
+|numbers_required = 20
+| hasdrop = true
+| sh1 = 4-6
+| sh2 = 5-8
+|singnum=1
+}}
+
+{{Quote
+|Hr = Journal
+|Grazing creature with sharp senses that nimbly retreats from danger.<hr/>Despite the Haunting of its shell, it has not been overcome with aggression. Its desire to flee remains too strong.
+}}
+
+<b>Hardbone Hoppers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are grazing creatures with sharp senses who are not overcome with aggression despite being [[Haunting|haunted]].<ref>Hardbone Hopper [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Grazing creature with sharp senses that nimbly retreats from danger.<br>Despite the Haunting of its shell, it has not been overcome with aggression. Its desire to flee remains too strong."</i></ref>
+
+== Behaviour and Tactics ==
+Hops around aimlessly, turning around once it reaches a wall or at random, largely ignoring its surroundings. Occasionally pauses for a moment before resuming hopping. While it does not attack, it still deals contact damage.<br>
+It should be noted that they do not take any knockback from Hornet's attacks.<br>
+Hardbone Hoppers respawn upon re-entering the room, making getting their Hunter's Journal entry much easier.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Hardbone Hoppers have their health quadrupled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* World's breath, rustling leaf...
+* Hard bone beneath...
+* Roaming, feeding, distant depths...
+* Mark of circle, mark of death...
+}}
+
+== Location ==
+Four Hardbone Hoppers can be found in the northeast [[Deep Docks]], and one of them, on the far right side of the room, disappears once [[Cling Grip]] has been acquired.
+
+In [[Act 3]], a few more can be found in the northern [[Far Fields]], in the areas north and east of [[Pilgrim's Rest]] that are accessible from [[Hunter's March]] with the [[Silk Soar]]; they are also accompanied by three [[Hardbone Elder]]s.
+
+{{Gallery
+|Image1 = Mapshot SS Hardbone Hopper 01.png!Locations in the Deep Docks
+|Image2 = Mapshot SS Hardbone Hopper 03.png!Locations in the Deep Docks in Act 3
+|Image3 = Mapshot SS Hardbone Hopper 02.png!Locations in the Far Fields in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1=Screenshot SS Hardbone Hopper 01.png!In Deep Docks
+|Image2=Screenshot SS Hardbone Hopper 02.png!In Far Fields in Act 3
+|Image3=Screenshot SS Hardbone Hopper 03.png!Hopping
+|Image4=Screenshot SS Hardbone Hopper 04.png!Reacting to Needolin
+|Image5=Screenshot SS Hardbone Hopper 05.png!Black-threaded
+}}
+
+{{Localisation
+|DEname = Hartknochenhüpfer
+|DEmeaning = Hardbone Hopper
+|ESname = Saltahuesos
+|ESmeaning = Combination of <i>salta</i> (jumper or hopper) and <i>huesos</i> (bones).
+|FRname = Hoppemort
+|FRmeaning = Combination of hop and <i>mort</i> (dead).
+|ITname = Saltatore Ossoduro
+|ITmeaning = Hardbone Jumper
+|JAname = ホネハネムシ
+|JAromanised = Hone hane mushi
+|JAkatakana = enemy
+|JAmeaning = Combination of {{lang|ja|骨}} <i>hone</i> (bone), {{lang|ja|跳ね}} <i>hane</i> (jump) and 虫 <i>mushi</i> (bug).
+|KOname = 단단뼈 뜀벌레
+|KOromanised = Dandanppyeo ttwimbeolle
+|KOmeaning = Hardbone Jump Bug
+|PTname = Saltador-ossoférreo
+|PTmeaning = Ironbone Hopper
+|RUname = Твердопанцирный прыгун
+|RUromanised = Tverdopancirnyj prygun
+|RUmeaning = Hard-shelled Jumper
+|ZHname = 硬骨跳跃者
+|ZHromanised = Yìng gǔ tiàoyuè zhě
+|ZHmeaning = Hard Bone Hopper
+|CODEname = BONE_HOPPER
+|CODEmeaning =
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[fr:Hoppemort]]

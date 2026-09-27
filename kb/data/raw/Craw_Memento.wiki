@@ -1,0 +1,69 @@
+{{SS Infobox Item
+| image = <gallery>
+Craw Memento.png|Inventory
+Craw Memento Shelf.png|Bellhome
+</gallery>
+| source = Drop from [[Crawfather]]
+| description = Iron emblem of the Court of Craws, absolving the bearer of all crimes past and future.
+}}
+
+{{Quote|Hr=SS
+|Lay down your judgement!
+|[[Court of Craws]]
+}}
+
+The <b>Craw Memento</b> is a [[Materium#Mementos|Memento]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+
+The memento can be displayed on a shelf in the [[Bellhome]] after interacting with the desk.
+
+It appears in the bottom-right slot of the shelving.
+
+{{Gallery
+|Image1 = Mapshot SS Bellhome.png!Location in Bellhart
+|Image2 = Screenshot SS Bellhart 09.png!Displayed inside Bellhome in Bellhart
+}}
+
+== How to Acquire ==
+Awarded after defeating the [[Crawfather]] in the [[Greymoor#Court of Craws|Court of Craws]].
+
+{{Gallery
+| Image1 = Mapshot SS Court of Craws.png!Location of the Court of Craws
+| Image2 = Screenshot SS Greymoor 16.png!The Court of Craws
+}}
+
+{{Localisation
+|DEname = Krähfer-Memento
+|DEmeaning = Craw Memento
+|ESname = Recuerdo cuervón
+|ESmeaning = Craw Memento
+|FRname = Souvenir de corbotère
+|FRmeaning = Memento of the Craw
+|ITname = Cimelio dei Corvidi
+|ITmeaning = Heirloom of the Craws
+|JAname=ボロガワのメメント
+|JAromanised= Borogawa no memento
+|JAmeaning = Craw's Memento
+|KOname = 까마귀 증표
+|KOromanised = Kkamagwi jeungpyo
+|KOmeaning = Crow Mark
+|PTname = Memento de Corbo
+|PTmeaning = Craw Memento (see [[Craw]])
+|RUname = Сувенир от каров
+|RUromanised = Suvenir ot karov
+|RUmeaning = Souvenir from crows
+|TWname = 鴉蟲紀念章
+|TWromanised = Yā chóng jìniànzhāng
+|TWmeaning = Crow Bug Memento
+|ZHname = 鸦虫忆痕
+|ZHromanised = Yā chóng yì hén
+|ZHmeaning = Crow Bug Memory Mark
+|CODEname = MEMENTO_CROWMAN
+|CODEmeaning = Most [[Craws|Craw]] enemies are internally labelled as <code>CROWMAN</code>
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

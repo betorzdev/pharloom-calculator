@@ -1,0 +1,168 @@
+{{SS Infobox Boss
+|image1 = <gallery>
+B Fourth Chorus.png|Hunter's Journal
+Fourth Chorus Idle.png|Idle
+Fourth Chorus Stagger.png|Staggered
+</gallery>
+|theme = [https://www.youtube.com/watch?v=Yk_DIxKGK7o Fourth Chorus]
+|location = [[Far Fields]]
+|health = 500
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.65|0.5|0.45|0.45}}
+|numbers_required = 1
+|drops = None
+|singnum = 1
+}}
+{{Quote
+|Towering iron automaton, driven by rotor and cog.<hr />
+A terrifying achievement of Pharloom, to build a construct so large and yet so nimble.
+|Hr=Journal
+}}
+
+<b>Fourth Chorus</b> is a main [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. A towering [[Cogwork Bugs|automaton]] built by [[the Citadel]], it reactivates to battle [[Hornet (Silksong)|Hornet]] once she acquires the [[Drifter's Cloak]].<ref>Fourth Chorus [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Towering iron automaton, driven by rotor and cog."</i></ref>
+
+== Background ==
+It is the fourth of the four known giant automatons built by [[the Citadel]] for unknown purposes, possibly combat. After the Citadel turned against the [[Order of the Pinstress]],<ref>[[Pinstress]]: <i>"Our grand Citadel learnt well from the training of Pinstresses past. Then it went and turned those teachings upon us! Despite our superior skills, our numbers have always been few, and their strength overwhelmed."</i></ref> it likely deployed Fourth Chorus to hunt down one of the order's surviving members, the [[Seamstress]]. The automaton engaged in battle with her in the [[Far Fields]] before she subdued it by impaling her pin into its neck and leaving it behind under the rubble.<ref>The internal name for the lodged pin is <code>Room_Umbrella_hang_pins</code> – "umbrella" being the internal name for sprites related to the Seamstress and her airship. The pin's design is also identical to the ones used by [[Pinstress]] and the dead pin-sister in the [[Putrified Ducts]].</ref> Fourth Chorus's lower half is crusted with dried lava.
+
+Like other automatons, Fourth Chorus is animated primarily by [[Silk Flies]], as evidenced by the flies that escape from its head when it is defeated.
+
+== In-game Events ==
+Fourth Chorus is found initially deactivated in the [[Far Fields]], crushed by debris and with a pin in its neck. [[Hornet (Silksong)|Hornet]] passes it by on her way to the [[Seamstress]].
+
+When Hornet returns to the arena after acquiring the [[Drifter's Cloak]] from the Seamstress, Fourth Chorus reactivates, initiating the fight. After its defeat, it falls and sinks into the lava.
+
+If not defeated by [[Act 3]], Fourth Chorus no longer appears and its [[Hunter's Journal (Silksong)|Hunter's Journal]] entry is automatically obtained.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+=== Phase 1 ===
+Fourth Chorus can only be attacked by hitting its head. Its head and body do not deal damage on contact. It has two attacks:
+* <b>Swipe</b>: Swipes one of its lower arms across the entire arena. The left hand swipes from left to right, and vice versa.
+* <b>Slam</b>: Raises one of its upper arms before slamming it down. This causes up to two of the platforms in the arena to sink into the lava, leaving a gap until they come back. Each hand is restricted to the platforms on its respective side and will not cross the centre of the arena.
+Attacks are telegraphed by the corresponding hand glowing, and each hand deals {{Damage|2}}.
+
+Platforms sunk by Slam each have their own timer before rising, which does not reset if Fourth Chorus slams the same area again.
+
+=== Phase 2 ===
+After reaching 450 HP, Fourth Chorus staggers and falls to the platform. When it gets up, it stops and roars, indicating the start of Phase 2. Its attack speed increases, and it gains one new attack which it always performs at the start of the phase:
+* <b>Rock Dance</b>: Fourth Chorus raises its arms upwards and slams the top of the arena multiple times, causing molten rocks to fall down in random locations over several seconds. These rocks fall in 7–8 waves, with each wave consisting of 1–2 rocks. It may perform other attacks during the last 3–4 waves.
+
+=== Phase 3 ===
+After reaching 325 HP, Fourth Chorus staggers and collapses again. When it rises, its attack speed increases.
+
+=== Phase 4 ===
+When Fourth Chorus reaches 200 HP, it staggers a final time. It roars again after rising, which destroys the two outer platforms and creates two updrafts in their place. Its attack speed is lowered in this phase, and it can no longer perform Rock Dance.
+
+Riding these updrafts allows Hornet to reach two explosives embedded in the ceiling. Hitting both of them causes a massive boulder to drop onto Fourth Chorus's head, instantly killing it and ending the fight. This finisher is optional; the fight can also be concluded by attacking it as normal.
+
+Upon defeat, any platforms submerged by its Slams immediately reemerge from the lava.
+
+<hr />
+
+{{Stagger
+|Fourth Chorus's stagger is based on its HP, and it staggers between all phase transitions.
+
+When staggered, Fourth Chorus collapses with its head resting on the platform, shaking in place. All the platforms that were submerged by its Slams reemerge for the stagger.
+| -
+| game = SS
+}}
+
+<hr />
+
+The Fourth Chorus fight does not trap Hornet in the arena; she can leave at any point. However, the camera remains locked onto the boss until Hornet is far enough away.
+
+* <b>Swipe</b>: Be wary of this attack when doing jump-attacks to hit Fourth Chorus's head. Wait until the hand passes Hornet, or use the [[Drifter's Cloak]] to stall in the air.
+* <b>Slam</b>: Avoid falling into the gaps left by this attack, especially if the [[Magma Bell]] is not equipped.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* WE... ARE... ONE...
+* WE... ARE... MANY...
+* VOICES... TOGETHER...
+* SACRED... TOIL...
+* SONG... HOLY...
+* SACRED... LIGHT...
+* UNENDING... UNYIELDING...
+* STRONG... STRONG...
+}}
+
+== Location ==
+Fourth Chorus can be found in a large central area of the [[Far Fields]]. It is initially inactive, but after Hornet returns with the [[Drifter's Cloak]], it reactivates and begins its battle.
+
+{{Gallery
+|Image1 = Mapshot SS Fourth Chorus 01.png!Location in the Far Fields
+}}
+
+== Creation and Development ==
+Fourth Chorus was first sketched on [[Team Cherry]]'s development map in November 2017.<ref>[[Cut Content (Silksong)#Gallery|Early <i>Silksong</i> development maps]]</ref> Before the boss' completion, in order to explain it to [[Christopher Larkin]] for its theme, [[William Pellen]] acted out its movements.<ref>[https://www.abc.net.au/news/2026-02-03/christopher-larkin-hollow-knight-silksong-music-at-acmi/106127840 Behind the music of hit Australian indie game Hollow Knight: Silksong]</ref> Fourth Chorus was first showcased in the February 2019 <i>Silksong</i> reveal trailer.<ref>[https://www.youtube.com/watch?v=pFAknD_9U7c Hollow Knight: Silksong Reveal Trailer]</ref> Initially, it dropped a [[Silk Heart]], as confirmed through unused code.<ref><code>Memory_Silk_Heart_SongGolem</code></ref>
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Fourth Chorus 01.png!Slam
+|Image2 = Screenshot SS Fourth Chorus 02.png!Swipe
+|Image3 = Screenshot SS Fourth Chorus 03.png!Rock Dance
+|Image4 = Screenshot SS Fourth Chorus 05.png!Stagger
+|Image5 = Screenshot SS Fourth Chorus 06.png!Reacting to the Needolin
+|Image6 = Screenshot SS Fourth Chorus 04.png!Mid-destruction
+|Image7 = Screenshot SS Far Fields 03.png!Arena in the Far Fields
+|Image8 = Screenshot SS Far Fields 02.png!Before activation
+|Image9 = Silksong Early 006.png!<i>Silksong</i> reveal trailer
+|Image10 = Ari SS Sketch 12.png!Concept sketches
+}}
+
+== Achievements ==
+{{Achievement|game=silksong|Servant}}
+
+== Trivia ==
+* In the eastern section of the [[Underworks]], near [[Twelfth Architect]], there are two slots that hold automatons resembling Fourth Chorus, with the third slot, west of Twelfth Architect, being empty.
+** Playing the [[Needolin]] near them causes their eyes to glow white and their bodies to shake, producing a low droning noise and triggering the following dialogue:
+{{SS Needolin|columns=2|
+*...WE...ALL...TOGETHER...
+*...SERVE...BEYOND SHELL...
+*...LIGHT...SEE US...
+*...REMEMBER US...
+*...WE WERE MANY...
+*...WE ARE ONE...
+}}
+* In [[Chapel of the Architect]], another automaton that bears a resemblance to Fourth Chorus can be found. It can be bound to gain the [[Architect Crest]].
+* If the explosive rocks are not destroyed, they remain intact and can be reached during the second [[Savage Beastfly]] fight. Although there is no special interaction as with Fourth Chorus, if hit, the explosions and the falling boulder deal 100 damage each to the Beastfly.
+* Fourth Chorus has the harshest damage modifier of any enemy, weakening level 3/4 [[Needle]]s and [[Tool]]s to only 45% of their normal damage.
+* The two explosives on the ceiling of the arena can be hit before Phase 4 through [[Needle-bouncing]] off Fourth Chorus's head, allowing the boulder to fall and end the fight much earlier.
+* Fourth Chorus can be skipped with a well-timed dash-jump out of its arena, as no walls appear on the sides of the arena to contain Hornet; stalling in mid-air by [[Bind]]ing can help with this.
+** Like fellow [[Act 1]] boss [[Sister Splinter]], skipping Fourth Chorus does not utilise glitches. Unlike Sister Splinter, if Fourth Chorus is not defeated before entering [[Act 3]], it dies offscreen and its [[Hunter's Journal (Silksong)|journal]] entry is automatically granted.
+* The arms of Fourth Chorus are shorter in the image of its [[Hunter's Journal (Silksong)|Hunter's Journal]] entry than they are in-game, likely to allow the whole enemy to fit within the menu.
+
+{{Localisation
+|DEname = Vierter Chorus
+|DEmeaning = Fourth Chorus
+|ESname = Cuarto Coro
+|ESmeaning = Fourth Chorus
+|FRname = Quatrième Chorale
+|FRmeaning = Fourth Chorus
+|ITname = Quarto Coro
+|ITmeaning = Fourth Chorus
+|JAname = 第四の合唱者
+|JAromanised = Daiyon no gasshō-sha
+|JAmeaning = Fourth Choir
+|KOname = 네 번째 합창단
+|KOromanised = Ne beonjjae habchangdan
+|KOmeaning = Fourth Choir
+|PTname = Quarto Vozerio
+|PTmeaning = Fourth Chorus
+|RUname = Четвёртый Хор
+|RUromanised = Četvërtyj Xor
+|RUmeaning = Fourth Choir
+|TWname = 第四聖詠團
+|TWromanised = Dì sì shèngyǒng tuán
+|TWmeaning = same
+|ZHname = 第四圣咏团
+|ZHromanised = Dì sì shèngyǒng tuán
+|ZHmeaning = Fourth Chorus
+|CODEname = SONG_GOLEM
+|CODEmeaning = "Song" internally refers to [[the Citadel]].
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[pt:Quarto Vozerio]]

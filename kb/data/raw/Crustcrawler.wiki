@@ -1,0 +1,79 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Crustcrawler.png|Hunter's Journal
+Crustcrawler Alt.png|Alt. Form
+</gallery>
+|drops = None
+|health = 25
+|damage_modifiers = {{SS Spaced Damage Modifiers|2|1.2|1.1|1|1}}
+|numbers_required = 10<br>(Instantly completed on [[Crust King Khann]]'s death)
+}}
+{{Quote
+|Hr = Journal
+|Soft-shelled scrambler encased in coral.<hr/>
+Hidden amongst their tower's matching crust, these smaller bugs would have survived and thrived. 
+}}
+
+'''Crustcrawlers''' are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are soft-shelled scramblers encased in coral, mimicking their tower's matching crust to survive.<ref>Crustcrawler [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Soft-shelled scrambler encased in coral. Hidden amongst their tower's matching crust, these smaller bugs would have survived and thrived."</i></ref>
+
+== Behaviour and Tactics ==
+Crustcrawlers aimlessly walk back and forth, frequently pausing briefly. They deal {{Damage|1}} on contact.
+
+They come in two forms, one of which is thinner and slightly taller.
+
+== Location ==
+Crustcrawlers can be found in [[Crust King Khann]]'s [[Elegy of the Deep|memory]] of the [[Coral Tower]] during [[Act 3]].
+
+{{Gallery
+|Image1 = Mapshot SS Coral Tower.png!Location in the Sands of Karak
+}}
+
+== Creation and Development ==
+[[File:Unnamed Coral enemy.webp|thumb|200px|"Inner" Crustcrawler sprites]]
+Crustcrawlers were originally located in the cut [[Cut Content (Silksong)/Areas#Red Coral Gorge|Red Coral Gorge]] area. In it, they were able to walk on the walls of its platforms. In the Coral Tower, they only walk back and forth. This is depicted in one of the Red Coral Gorge scenes seen in the February 2019 <i>Silksong</i> reveal trailer.<ref>[https://youtu.be/pFAknD_9U7c?t=30 Hollow Knight: Silksong Reveal Trailer]</ref>  
+
+Crustcrawlers also formerly reacted to the Needolin, likely prior to the removal of the Red Coral Gorge.<ref>Developer note: <i>"Coral Goomba L/Idle: Note: no longer sings"</i></ref>
+
+Additionally, Crustcrawlers originally had an "inner" pink body that would appear once the red outer shell was broken, which would then be flung and attempt to run away.<ref><code>L (little) INNER</code></ref>
+
+==Gallery==
+{{Gallery|
+|Image1 = Screenshot SS Crustcrawler 01.png!Tall Crustcrawler
+|Image2 = Screenshot SS Crustcrawler 02.png!Short Crustcrawler
+|Image3 = Screenshot SS Crustcrawler 03.png!<i>Silksong</i> reveal trailer
+}}
+
+{{Localisation
+|DEname = Krustenkrabbler
+|DEmeaning = Crustcrawler
+|ESname = Reptador encostrado
+|ESmeaning = Encrusted Crawler
+|FRname = Corailleur
+|FRmeaning =
+|ITname = Corridore Corallino
+|ITmeaning = Coral Runner
+|JAname = サンゴハイズリ
+|JAromanised = Sango haizuri
+|JAkatakana = enemy
+|JAmeaning = Combination of {{lang|ja|珊瑚}} <i>sango</i> (coral) and  {{lang|ja|這いずり}} <i>haizuri</i> (crawler).
+|KOname = 산호굼벵이
+|KOromanised = Sanhogumbengi
+|KOmeaning = Coral Larva
+|PTname = Crostejador
+|PTmeaning = Portmanteau of <i>crosta</i> (crust) and <i>rastejador</i> (crawler)
+|RUname = Коралловый ползун
+|RUromanised = Korallovyj polzun
+|RUmeaning = Coral Crawler
+|TWname = 珊瑚殼蟲
+|TWromanised = Shānhú ké chóng
+|TWmeaning = same
+|ZHname = 珊瑚壳虫
+|ZHromanised = Shānhú ké chóng
+|ZHmeaning = Coral Shell Bug
+|CODEname=CORAL_GOOMBA
+|CODEmeaning = Crustcrawlers act like [https://www.mariowiki.com/Goomba Goombas] from the <i>Mario</i> franchise 
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

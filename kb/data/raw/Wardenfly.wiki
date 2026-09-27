@@ -1,0 +1,144 @@
+{{SS Infobox Enemy
+|label1 = Without Cage
+|image1 = <gallery>
+B Wardenfly.png|Hunter's Journal
+Wardenfly Idle.png|Idle
+Wardenfly cage.png|With Cage
+Wardenfly Dressed Up.png|Dressed Up
+</gallery>
+| hasdrop = true
+| r1 = 12
+| r2 = 18
+| sh1 = 4-6
+| sh2 = 5-8
+|health = 70/{{BT|140}} <br> 64 (With Cage)
+|damage_modifiers = {{SS Multiple Damage Modifiers||1.6|1.1|0.8|0.8|0.8|With Cage|1.3|1|1|1|1|}}
+|numbers_required = 8
+|singnum=3
+}}
+{{Quote
+|Hr = Journal
+|Heavy, hairy jailer responsible for capturing sinners and punishing prisoners.<hr/>
+Disgusting both in manner and stench. I feel no remorse to see them felled.
+}}
+
+<b>Wardenflies</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are large, stout [[Slab_Penitents#The_Jailers|jailers]] who are responsible for capturing sinners and punishing prisoners in [[the Slab]].<ref>Wardenfly Hunter's Journal entry: <i>"Heavy, hairy jailer responsible for capturing sinners and punishing prisoners."</i></ref> When encountered outside of the Slab, they hold a metal cage, taking [[Hornet (Silksong)|Hornet]] to the Slab if she is captured by it.
+
+== Behaviour and Tactics ==
+
+When not wielding a cage, Wardenflies have several attacks:
+
+* <b>Spit</b>: The Wardenfly spits several globs of non-damaging goo at Hornet that require fierce button-mashing to escape if touched. The globs persist on the ground, but disappear after a short while or if hit two to four times.
+* <b>Body Slam</b>: The Wardenfly flies to be above Hornet's current location and slams downward onto the ground.
+* <b>Two-Step Lunge</b>: The Wardenfly lunges in Hornet's direction, reels for a moment, and lunges again.
+
+Wardenflies always deal {{Damage|2}}.
+
+The Two-Step Lunge attack can easily catch Hornet unawares, as the Wardenfly appears to be idle when between lunges. 
+
+Dashing out from under a Wardenfly's Body Slam is an easy way to avoid any damage. As such, the attack becomes much deadlier when paired with a Spit from another Wardenfly or [[Guardfly]].
+
+If [[Hornet (Silksong)|Hornet]] has defeated the [[Bell Beast]] and acquired [[Cling Grip]], Wardenflies spawn in certain rooms in [[Deep Docks]], [[Greymoor]], and [[Bilewater]] wielding a Hornet-sized cage. If Hornet is spotted, they slam the cage down in an attempt to trap her inside, abducting her to [[the Slab]]'s jail and [[Cloakless Crest|confiscating all non-movement items and Tools]] if successful. Once a cage-wielding Wardenfly has been defeated, it does not respawn.
+
+Wardenflies do not spawn with cages if Hornet has not defeated the [[Bell Beast]], has interacted with the [[Fayforn]],<ref group=Source name=code>FSM <code>DJ Get Sequence</code> in <code>Peak_08b</code>.</ref> or has completed the arena that returns her belongings. The Wardenfly in [[Greymoor]] additionally does not spawn unless the <i>[[SEARCH: Silent Halls]]</i> [[Acts|objective]] has been completed, and [[Moorwing]] has been defeated.
+
+If Hornet is [[Witch_Crest#Cursed_Crest_interactions|Cursed]], the capture fails and she is not transported to the Slab. Instead, she wakes up at the same spot, surrounded by vines that have killed the Wardenfly.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Wardenflies have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* You! You! You are the sinner!
+* I’m clean... I’m cleaner!
+* I'll be cleansed...
+* Why was I born in the filth?
+* You! The filth! It’s you!
+* By toil... by torment...
+}}
+
+Wardenflies with cages:
+{{SS Needolin|columns=2|
+* O sinner! O filth!
+* Lay yourself down...
+* Be caged! Be caged!
+* Let my duty... absolve me...
+}}
+
+== Location ==
+
+Wardenflies can be found primarily in the Slab's upper areas. In [[Acts]] 1 and 2, they appear in certain parts of [[Deep Docks]], [[Greymoor]], and [[Bilewater]] if [[Cling Grip]] has been acquired and the [[Bell Beast]] has been defeated (and the <i>[[SEARCH: Silent Halls]]</i> [[Acts|objective]] has been completed, in the case of the Greymoor location).
+
+{{Gallery
+
+|Image1 = Mapshot SS Wardenfly 01.png!Location in Deep Docks
+|Image2 = Mapshot SS Wardenfly 02.png!Location in Bilewater
+|Image3 = Mapshot SS Wardenfly 03.png!Location in Greymoor
+|Image4 = Mapshot SS Wardenfly 04.png!Location in the Slab
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Wardenfly 02.png!In the Deep Docks
+|Image2 = Screenshot SS Wardenfly 03.png!In Bilewater
+|Image3 = Screenshot SS Needolinbilewater 3.png!Corpse in Bilewater
+|Image4 = Screenshot SS Wardenfly 01.png!After attempting to capture [[Cursed Crest|cursed]] Hornet
+|Image5 = Screenshot SS Wardenfly 04.png!In Greymoor
+|Image6 = Screenshot SS Putrified Ducts 10.png!Corpse in the Putrified Ducts
+|Image7 = Screenshot SS Wardenfly 15.png!Corpse in the Slab
+|Image8 = Screenshot SS Wardenfly 05.png!Capturing Hornet
+|Image9 = Screenshot SS The Slab 13.png!Resting if Hornet is not captured
+|Image10 = Screenshot SS Wardenfly 16.png!Awoken by Hornet's noise
+|Image11 = Screenshot SS Wardenfly 17.png!Inspecting Hornet's equipment
+|Image12 = Screenshot SS Wardenfly 06.png!Reacting to Hornet's noise
+|Image13 = Screenshot SS Wardenfly 07.png!Wearing Hornet's cloak
+|Image14 = Screenshot SS Wardenfly 13.png!Hornet killing the Wardenfly wearing her cloak
+|Image15 = Screenshot SS Wardenfly 08.png!At the top of the Slab
+|Image16 = Screenshot SS Wardenfly 09.png!Resting at the top of the Slab
+|Image17 = Screenshot SS Wardenfly 10.png!Spit
+|Image18 = Screenshot SS Wardenfly 11.png!Body Slam
+|Image19 = Screenshot SS Wardenfly 12.png!Two-Step Lunge
+|Image20 = Screenshot SS Wardenfly 14.png!Reacting to the Needolin
+}}
+
+==Trivia==
+* A Wardenfly corpse trapped in the mouth of a [[Barnak]] can be found in [[Putrified Ducts]], with the [[Slab Keys|Key of Apostate]] dropped nearby.
+* Successfully using [[Cross Stitch]] on their projectile destroys it, but the effect of Cross Stitch is not triggered.
+{{History
+|game = SS
+|1.0.28891 (Patch 3): Wardenflies no longer spawn outside [[the Slab]] with cages if travel via the [[Bell Beast]] has not yet been unlocked, preventing a potential softlock.
+}}
+{{Localisation
+|DEname = Wärterfliege
+|DEmeaning = Wardenfly
+|ESname = Moscalcaide
+|ESmeaning = Portmanteau of <i>mosca</i> (fly) and <i>alcaide</i> (warden).
+|FRname = Mouche Carcérale
+|FRmeaning = Carceral Fly
+|ITname = Mosca Carceriera
+|ITmeaning = Jailer Fly
+|JAname= ショチョウバエ
+|JAromanised= Shochō bae
+|JAmeaning = Combination of {{lang|ja|所長 <i>shochō</i>}} (chief) and {{lang|ja|蝿 <i>hae</i>}} (fly).
+|KOname = 간수파리
+|KOromanised = Gansupari
+|KOmeaning = Prison Guard Fly
+|PTname = Mosfétida
+|PTmeaning = Portmanteau of <i>mosca</i> (fly) and <i>fétido</i> (fetid).
+|RUname = Муха-страж
+|RUromanised = Muxa-straž
+|RUmeaning = Fly Guard
+|ZHname = 狱卒蝇
+|ZHromanised = Yùzú yíng
+|ZHmeaning = Jailer Fly
+|CODEname = SLAB_FLY_LARGE
+|CODEmeaning = 	Other Slab Jailers use the Slab Fly name internally
+}}
+
+{{Refs|hr=ss}}
+
+== Code References ==
+<references group="Source"/>
+
+{{SS Nav Enemies}}
+{{#seo:|keywords=silksong, slab, fly, cage, capture, jail}}

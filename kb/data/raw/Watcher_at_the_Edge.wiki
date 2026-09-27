@@ -1,0 +1,150 @@
+{{SS Infobox Boss
+|image1 = <gallery>
+B Watcher at the Edge.png|Hunter's Journal
+Watcher at the Edge idle.png|Idle
+Watcher at the Edge Staggered.png|Staggered
+Watcher at the Edge Dormant.png|Dormant
+</gallery>
+|theme = [https://youtube.com/watch?v=sBNJLCHwqAY Chapel Ambience Battle Layer]
+|health = 900
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1.2|1|0.9|0.85}}
+|numbers_required = 1
+|location = [[Sands of Karak]]
+|drops = [[Grey Memento]]
+|affiliation = [[Order of Karak]] (Member)
+}}
+{{Quote
+|Hr = Journal
+|Old warrior guarding the border of their domain, stiffened by time and awoken by song.<hr/>
+They held long at their vigil, far beyond the age of their brethren, yet still when roused they swung their blade with remarkable ease.
+}}
+
+The <b>Watcher at the Edge</b> is a [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. The last living member of the [[Order of Karak]], they are found at the border of the [[Sands of Karak]]. They drop the [[Grey Memento]] upon defeat.
+
+== Background ==
+The Watcher at the Edge is an ancient [[Karaka]] warrior who lived far past the time of their tribe, and by the time [[Hornet (Silksong)|Hornet]] finds them, is the last Karaka alive. They were tasked with guarding the borders of the [[Sands of Karak]].
+
+== In-Game Events ==
+The Watcher at the Edge can only be accessed in [[Act 3]] after obtaining the [[Silk Soar]] and using it to reach their arena. They stand stiff and dormant when Hornet first encounters them, and must be awakened by the [[Needolin]] to begin the fight.
+
+They drop the [[Grey Memento]] on defeat.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+Upon being woken by the Needolin, the Watcher at the Edge roars and begins the fight with a Crashing Sands attack. On subsequent attempts of the boss, they start the fight beneath the ground and begin by leaping out into a Crashing Sands attack.
+
+Watcher at the Edge has the following attacks:
+
+* <b>Crashing Sands</b>: The Watcher leaps directly upwards while swinging the blade in front of them, creating a large arc at the peak. They then fall towards [[Hornet (Silksong)|Hornet]], changing direction midair if Hornet is behind them, while bringing the blade down in front of them. 
+** This attack can be performed by the Watcher burrowing into the ground and leaping out near Hornet's location. They also use this burrowing variation of the attack to close in on Hornet if she is too far from them.
+* <b>Triple Swing</b>: The Watcher swings 3 times in a row, moving forwards slightly with each. The third downwards swing is delivered much quicker and covers more distance. Additionally, the Watcher can turn around for the third swing if Hornet is behind them.
+* <b>Leaping Downslash</b>: The Watcher makes a large jump towards Hornet and performs a downslash. This attack is only performed if Hornet is a set moderate distance away from them. However, if Hornet is mid-air, they will use this attack to catch her.
+* <b>Feint</b>: The Watcher backsteps a short distance, and immediately follows up with a quick swing forwards.
+* <b>Block & Retaliate</b>: In between attacks, the Watcher raises their blade in a defensive stance when Hornet is close. If they block a hit, the Watcher follows up with one of the attacks listed above.
+* <b>Chasedown</b>: If Hornet is too far away, the Watcher quickly runs after her with incredible speed.
+* <b>Retreat</b>: If Hornet [[Bind]]s while close to the Watcher, they leap backwards to distance themselves.
+All of the Watcher at the Edge's blade attacks deal {{Damage|2}}, but contact damage only deals {{Damage|1}}.
+
+The Watcher's attacks can carry them off the platform into the pit of [[Sandcarver]]s on the left side of the arena. If they fall into the Sandcarvers, they take 3 damage for every .25 seconds they remain in the pit before burrowing back under the arena into a Crashing Sands attack.
+
+Hornet is not locked into the arena for this fight and can escape out the entrance at any time.
+
+<hr />
+
+{{Stagger
+| The Watcher at the Edge takes a knee. If knocked into the Sandcarver pit, they skip the remainder of the stagger.
+| 21
+| game = SS
+}}
+
+<hr />
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* For the river long...
+* For a lord born strong...
+* For life... its beat, its flow...
+* For order brought, by claw and blade!
+}}
+
+== Location ==
+Located in a hidden zone inside of [[Sands of Karak]] requiring [[Silk Soar]] to reach. They stand vigil like a statue. Using the [[Needolin]] wakes them and begins the fight.
+
+{{Gallery
+|Image1 = Mapshot SS Watcher at the Edge 01.png!Location in Sands of Karak
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1=Screenshot SS Sands of Karak 10.png! Dormant Watcher on first encounter
+|Image2=Screenshot SS Watcher at the Edge 01.png! Idle
+|Image3=Screenshot SS Watcher at the Edge 02.png! Crashing Sands
+|Image4=Screenshot SS Watcher at the Edge 03.png! Crashing Sands (Mid-air Turn)
+|Image5=Screenshot SS Watcher at the Edge 04.png! Crashing Sands (Burrowing)
+|Image6=Screenshot SS Watcher at the Edge 05.png! Triple Swing
+|Image7=Screenshot SS Watcher at the Edge 06.png! Leaping Downslash
+|Image8=Screenshot SS Watcher at the Edge 07.png! Feint
+|Image9=Screenshot SS Watcher at the Edge 08.png! Block
+|Image10=Screenshot SS Watcher at the Edge 09.png! Chasedown
+|Image11=Screenshot SS Watcher at the Edge 10.png! Retreat
+|Image12=Screenshot SS Watcher at the Edge 11.png! Staggered
+|Image13=Screenshot SS Watcher at the Edge 12.png! Arena
+|Image14=Screenshot SS Watcher at the Edge 13.png! Modded screenshot of the arena
+}}
+
+== Trivia ==
+* Watcher at the Edge is not stunned by the Needolin; their dialogue appears without stopping combat to sing.
+* Watcher at the Edge uses the generic [[Coral Tower]] Needolin dialogue with only minor punctuation differences, however they have the following [[Cut Content (Silksong)/Text|cut Needolin dialogue]]:
+{{SS Needolin|columns=2|
+*Teeming... writhing wastes...
+*King...
+*Tower...
+*Watching... always...
+*Scouring wind...
+*Our might...
+}}
+* If Watcher at the Edge's corpse lands in the pit of Sandcarvers after being defeated, it will be eaten and the Grey Memento spat back out.
+{{Gallery
+|Image1= Screenshot SS Watcher at the Edge 14.png!Grey Memento spat out by Sandcarvers
+}}
+
+* When returning to the arena after defeating Watcher at the Edge, their blade can be found lying on the floor, being slowly eroded by the sandstorm.
+
+{{Gallery
+|Image1= Screenshot SS Watcher at the Edge 15.png!Watcher at the Edge's blade lying on the floor of the arena
+}}
+
+{{Localisation
+|DEname = Wächter am Rande
+|DEmeaning = Guardian at the Edge
+|ESname = Vigilante de la frontera
+|ESmeaning = Watchman of the Border
+|FRname = Gardien de la Frontière
+|FRmeaning = Guardian of the Border
+|ITname = Sentinella di Frontiera
+|ITmeaning = Sentinel of the Border 
+|JAname = 境界の監視者
+|JAromanised = Kyōkai no kanshisha
+|JAmeaning = Watcher of the Border
+|KOname = 가장자리의 감시자
+|KOromanised = Gajangjaliui gamsija
+|KOmeaning = Watcher of the Edge
+|PTname =  Vigilante da Borda
+|PTmeaning = Watchman of the Edge
+|RUname = Пограничный наблюдатель
+|RUromanised = Pograničnyj nabljudatel'
+|RUmeaning = Border Watcher
+|TWname = 邊陲守望者
+|TWromanised = Biānchuí shǒuwàng zhě
+|TWmeaning = same
+|ZHname = 边陲守望者
+|ZHromanised = Biānchuí shǒuwàng zhě
+|ZHmeaning = Frontier Watcher
+|CODEname = CORAL_WARRIOR_GREY
+|CODEmeaning = <code>CORAL_WARRIOR</code> is the internal name for [[Karaka]]s.
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

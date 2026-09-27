@@ -1,0 +1,99 @@
+{{Navbar|icons=true
+|page1=Hunter's Cloak
+|page2=Drifter's Cloak
+|page3=Faydown Cloak}}
+
+{{SS Infobox Item
+| image = Hunter's Cloak.png
+| description = Simple protective garb, expertly woven but showing signs of age.
+| effects = None<br>Can be upgraded
+| type = [[Items (Silksong)#Equipment|Equipment]]
+| source = Starting item
+}}
+
+{{Quote|Hr=Hornet
+|Beware your greed, thief. You'd be dead before your claw reached my cloak.
+|[[Hornet (Silksong)|Hornet]] to [[Grindle]]}}
+
+The <b>Hunter's Cloak</b> is an [[Items (Silksong)#Equipment|equipment item]] in <i>[[Hollow Knight: Silksong]]</i>. It is [[Hornet (Silksong)|Hornet]]'s default cloak and one of the first items available in her inventory.
+
+== Function ==
+The Hunter's Cloak serves no gameplay function until it gets upgraded.
+
+== How to Acquire ==
+The Hunter's Cloak is available in the inventory from the beginning of the game in Moss Grotto.
+
+== In-game Events ==
+As [[Hornet (Silksong)|Hornet]] meets more [[NPCs (Silksong)|characters]] throughout [[Pharloom]] she gets recognised by the colour of her cloak, with some characters pointing it out directly by giving her nicknames, such as "Red maiden" by [[Sherma]],<ref>[[Sherma]]: <i>"Join your voice with mine, red maiden! You, me, and my lucky chime will sing together until the great gate opens!"</i></ref> and "Bug-Red" by [[Twelfth Architect]].<ref>[[Twelfth Architect]]: <i>"Bug-Red. Do you ask-need our service? We shall create, as is our d-d-directive. To serve, for Pharloom eternal."</i></ref>
+
+=== Upgrades ===
+When meeting the [[Seamstress]], she mentions how the Hunter's Cloak alone would not suffice for Hornet to traverse the [[Far Fields]] and that it would need the help of her sewing skills. After completing the <i>[[Flexile Spines]]</i> [[wish]], the Seamstress takes the cloak and upgrades it into the [[Drifter's Cloak]], allowing Hornet to float in the air and catch updraft winds.<ref>[[Seamstress]]: <i>"If you're planning to ascend from these low fields, you'll be needing some lift, and I'm just the bug to help."</i></ref>
+
+Once Hornet reaches the tuning fork at the peak of [[Mount Fay]] and plays the [[Needolin]], the [[Fayforn]] descends and grants Hornet her down to create the [[Faydown Cloak]]. The [[Mask Maker (Silksong)|Mask Maker]] seems impressed with this gift and with the fact that the Fayforn has lent Hornet her aid.<ref>[[Mask Maker (Silksong)|Mask Maker]]: <i>"To pass something so precious... That's a mighty gift you've been given. Seems she's thrown her lot in with you."</i></ref>
+
+=== The Slab ===
+After getting [[The Slab#Capture by Wardenfly|captured]] and taken to [[the Slab]], Hornet wakes up and finds herself [[Cloakless Crest|lacking all her items]], including her [[Needle]] and cloak. Making her way through the prison, she eventually finds a [[Wardenfly]] using her equipment, so she proceeds to sneak up on them and retrieve her belongings.
+
+Upon escaping the Slab, Hornet's cloak will reek with the smell from the prison flies, which will persist until she washes it away by going into bodies of water.<ref group="Note">Any body of water is sufficient to wash Hornet's cloak of the fly smell. The [[muckmaggot]]-infested waters in [[Bilewater]] and [[Putrified Ducts]], as well as the sea of [[Void]] in [[The Abyss (Silksong)|the Abyss]] while Hornet has the [[Everbloom]], are treated as water for the purposes of cleaning the cloak.</ref>
+
+The cloak's inventory description also changes depending on its current state.
+
+{| class="article-table"
+! Odour
+! Description
+|-
+! Full
+| <i>Smells strongly of fly.</i>
+|-
+! Half
+| <i>Smells faintly of fly.</i>
+|}
+
+== Gallery ==
+{{Gallery
+|Image1 = Silksong Early 003.png ! Hornet in Moss Grotto<br>(Pre-release screenshot)
+|Image2 = Screenshot SS Cloakless Crest 03.png ! Hornet retrieving her equipment from Wardenfly
+}}
+
+==Trivia==
+*In the 2019 <i>Silksong</i> demo, the Hunter's Cloak instead had the description: <i>"Simple protective garb. Discreet pockets are woven within the lining."</i><ref>[https://www.youtube.com/watch?v=Y8lvHT_IQbM Hollow Knight: Silksong Gameplay - Nintendo Treehouse: Live | E3 2019]</ref>
+
+{{Localisation
+|DEname = Jägerumhang
+|DEmeaning = Hunter's Cloak
+|ESname = Capa de cazador
+|ESmeaning = Hunter's Cloak
+|FRname = Cape du chasseur
+|FRmeaning = Hunter's Cloak
+|ITname = Mantello del cacciatore
+|ITmeaning = Hunter's Cloak
+|JAname = 狩猟者のクローク
+|JAromanised = Shuryōsha no kurōku
+|JAmeaning = Hunter's Cloak
+|KOname = 사냥꾼의 망토
+|KOromanised = Sanyangkkunui mangto
+|KOmeaning = Hunter's Cloak
+|PTname = Manto do Caçador
+|PTmeaning = Hunter's Cloak
+|RUname = Плащ охотника
+|RUromanised = Plašč oxotnika
+|RUmeaning = Hunter's Cloak
+|TWname = 獵手斗篷
+|TWromanised = Lièshǒu dǒupéng
+|TWmeaning = same
+|ZHname = 猎人披风
+|ZHromanised = Lièrén pīfēng
+|ZHmeaning = Hunter's Cloak
+|CODEname=DRESS_REG
+}}
+{{Hr|SS}}
+
+== Notes ==
+<references group="Note" />
+{{Refs|hr=false}}
+
+
+{{SS Nav Items}}
+[[Category: Items (Silksong)]]
+[[fr:Cape du chasseur]]
+[[pt:Manto do Caçador]]

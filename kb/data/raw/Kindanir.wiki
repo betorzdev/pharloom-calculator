@@ -1,0 +1,74 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Kindanir.png|Hunter's Journal
+Kindanir Resting.png|Resting
+</gallery>
+|drops = None
+|health = 55
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.35|1.15|1|1|1}}
+|numbers_required = 10<br>(Instantly completed on [[Clover Dancers]]' death)
+}}
+{{Quote
+|Hr = Journal
+|Child of Verdania, fully capable to fight despite its young age.<hr/>
+Fierce and fast, and defending their lands even from birth. These are children to be proud of.
+}}
+
+<b>Kindanirs</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are [[Verdanians|Verdanian]] children who defend their lands from birth.<ref>Kindanir Hunter's Journal entry: <i>"Child of Verdania, fully capable to fight despite its young age. Fierce and fast, and defending their lands even from birth."</i></ref>
+
+== Behaviour and Tactics ==
+Found either perched on walls or in green cocoons which hatch quickly when Hornet approaches.<br>
+Kindanirs fly in short bursts and attempt to close in on Hornet before attacking with a large flurry of slashes in her direction that last for 1.5 seconds. Often dashes backwards after missing their attack if Hornet is close.<br>
+The flurry comboes Hornet for {{Damage|1+1}} if she is hit at any point during the attack.
+
+== Location ==
+Kindanirs can be found exclusively in [[Lost Verdania]].
+{{Gallery
+|Image1 = Mapshot SS Kindanirs 01.png!Location in Lost Verdania
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Kindanir 01.png!Before hatching
+|Image2= Screenshot SS Kindanir 02.png!Perching on the wall
+|Image3= Screenshot SS Kindanir 03.png!Idle
+|Image4= Screenshot SS Kindanir 04.png!Flurry attack
+|Image5 = Ari SS Sketch 07.jpg!Concept Sketches
+}}
+
+== Trivia ==
+* Kindanirs do not respond to the [[Needolin]].
+
+{{Localisation
+|DEname = Kindanir
+|DEmeaning = —
+|ESname = Kindanir
+|ESmeaning = —
+|FRname = Trèflellin
+|FRmeaning = From <i>trèfle</i> (clover) 
+|ITname = Fiorente
+|ITmeaning = Flourishing
+|JAname = キンダニル
+|JAromanised = Kindaniru
+|JAmeaning = Kindanir
+|JAkatakana = foreign
+|KOname = 킨다니르
+|KOromanised = Kindanireu
+|KOmeaning = Kindanir
+|PTname = Infanir
+|PTmeaning = Portmanteau of either <i>infante</i> (infant) or <i>infância</i> (childhood) and Kindanir.
+|RUname = Бравир
+|RUromanised = Bravir
+|RUmeaning = From {{lang|ru|бравый <i>bravyj</i>}} (brave) and Kindanir.
+|TWname = 金達尼爾
+|TWromanised = Jīndání'ěr
+|TWmeaning = same
+|ZHname = 金达尼尔
+|ZHromanised = Jīndání'ěr
+|ZHmeaning = Kindanir
+|CODEname=GRASSHOPPER_CHILD
+|CODEmeaning = [[Verdanir]]s and [[Escalion]]s are internally known as "Grasshoppers"
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Enemies}}

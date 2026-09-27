@@ -1,0 +1,101 @@
+{{SS Infobox Tool
+| image = Scuttlebrace.png
+| type = Yellow
+| effect = Allows Hornet to quickly scuttle backwards
+| location = [[Underworks]]
+| description = Artificial spine that clasps tight around the shell.<hr/>
+Enhances the wearer's innate flexibility, allowing rapid retreat.
+}}
+
+{{Quote
+| A flexible shell-prosthetic. It would enhance a weave-type's flexibility, allowing evasive options.
+| [[Twelfth Architect]]
+| Hr = SS
+}}
+
+<b>Scuttlebrace</b> is a {{CrestSlot|Yellow|1}} in <i>[[Hollow Knight: Silksong]]</i>. It grants [[Hornet (Silksong)|Hornet]] the ability to scuttle backwards.
+
+== Usefulness ==
+While equipped, pressing DOWN + [[Controls (Silksong)|SPRINT]] will cause Hornet to dash backwards and begin scuttling away until SPRINT is released. This allows her to quickly retreat from danger without the need to turn around.
+
+Hornet's hitbox is shorter but wider while using Scuttlebrace compared to when dashing/sprinting or standing. This means some attacks will pass over her than would otherwise hit her.
+[[File:Scuttlebrace hurtbox comparison.png|thumb|Hornet's hitbox while standing, running, and using Scuttlebrace respectively.]]
+If the Scuttlebrace is used during the [[Combat (Silksong)#Parrying|parry]] window of an enemy attack, Hornet will evade the attack with a unique animation and sound effect.
+
+Note that because of overlapping inputs, the scuttle dash overrides the downwards dash—except while hovering with the [[Drifter's Cloak]], which allows Hornet to perform a downwards dash like normal.
+
+Scuttling behaves similarly to [[Swift Step|Sprinting]], with subtle differences:
+* Scuttlebrace's dash grants slightly more horizontal momentum than [[Swift Step]]'s dash.
+* Scuttling is slightly slower than sprinting (80% faster than walking vs 110%).
+* Hornet's air resistance is greatly reduced while scuttling, and no directional inputs are needed to preserve momentum in the air. Therefore, the initial dash will reliably send her back a large distance, and jumping will not lose much speed.
+* Hornet jumps shorter and falls faster while scuttling, which helps to reach the ground quickly.
+* The turnaround animation can be skipped by jumping, which lets Hornet turn instantly without stopping.
+* If Hornet scuttles into a wall, she automatically starts climbing it and will continue to scuttle until she hits a ceiling.
+* If Hornet attacks while scuttling, she will perform a standard slash rather than a lunge. This also cancels the scuttle immediately.
+* Scuttling will cancel [[Needle Strike]] if it is charged.
+* Unlike sprinting, scuttling does not persist across screen transitions.
+* Unlike the regular dash, scuttling can be done multiple times in the air without touching the ground. However, it is not possible to perform an air scuttle after an air dash.
+
+Side-by-side comparison of Dashing with and without Scuttlebrace and/or [[Silkspeed Anklets]]:
+[[File:Dash vs Scuttlebrace.mp4|loop|x360px|description=Full speed]]
+[[File:Dash vs Scuttlebrace slow.mp4|loop|x360px|description=1/10th speed]]
+
+== How to Acquire ==
+Purchased from the [[Twelfth Architect]] in [[Underworks]] for {{R|140}} and {{C|1}}.
+
+{{Gallery
+|Image1 = Mapshot SS Twelfth Architect 01.png!Location in Underworks
+|Image2 = Screenshot SS Underworks 11.png!Twelfth Architect in Underworks
+}}
+
+== Tool Synergies ==
+{{SS Table Tool Interactions
+| Tool1 = Silkspeed Anklets
+| Tool1Desc = Increases the scuttle speed of the Scuttlebrace by 26%.
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Blue Tool 3.png!<i>Hollow Knight: Silksong</i> reveal trailer icon
+}}
+
+== Trivia ==
+* The Scuttlebrace was originally intended to be a Blue Tool.<ref>[https://www.youtube.com/watch?v=pFAknD_9U7c Hollow Knight: Silksong Reveal Trailer]</ref>
+
+{{History
+|game = SS
+|1.0.28891 (Patch 3): Fixed Scuttlebrace sometimes allowing a wall jump when not intended.
+}}
+{{Localisation
+|DEname = Krabbelklammer
+|DEmeaning = Crawl Clamp
+|ESname = Brazada de desliz
+|ESmeaning = Stroke of Slip<br><small><i>Brazada</i> can more closely mean the act of rowing or the movement of the arms and legs while swimming.</small>
+|FRname = Broclet
+|FRmeaning = 
+|ITname = Velosupporto
+|ITmeaning = Portmanteau of <i>velocità</i> (speed) and <i>supporto</i> (support).
+|JAname= クモ走りの装具
+|JAromanised= Kumo hashiri no Sōgu
+|JAmeaning = Spider-running Brace
+|KOname = 종종걸음 교정기
+|KOromanised = Jongjonggeoreum gyojeonggi
+|KOmeaning = Scuttle Brace
+|PTname = Braçaranha
+|PTmeaning = Portmanteau of <i>braçadeira</i> (brace) and <i>aranha</i> (spider)
+|RUname = Панцирный корсет
+|RUromanised = Pancirnyj korset
+|RUmeaning = Armoured Corset
+|TWname = 迅捷脊架
+|TWromanised = Xùnjié jǐ jià
+|TWmeaning = Swift Spine Brace
+|ZHname = 迅捷脊锁
+|ZHromanised = Xùnjié jǐ suǒ
+|ZHmeaning = Swift Tight Spine Clasp
+|CODEname = SCUTTLEBRACE
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Broclet]]

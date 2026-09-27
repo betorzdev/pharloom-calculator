@@ -1,0 +1,171 @@
+{{SS Infobox Boss
+|image1=<gallery>
+B Last Judge.png|Hunter's Journal
+Last Judge Stagger.png|Staggered
+Last Judge Death.png|After Exploding
+</gallery>
+|location = [[Blasted Steps]]
+|drops = Access to [[The Citadel]]
+|health = 720
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.2|1|0.85|0.75|0.7}}
+|numbers_required = 1
+|theme=[https://youtu.be/W66m15CEruQ Last Judge]
+|singnum = 1
+|va=Lauren Koopowitz<ref name="va">[https://www.youtube.com/watch?v=pA7Id7lff6E&t=1857s Shakra Voice Actor Lauren Koopowitz talks <i>Hollow Knight Silksong</i>, Singing, Poshanka & Team Cherry]: "<i>I love Last Judge. I had so much fun doing, doing her voice.</i>"</ref>
+}}
+{{Quote
+|Final arbiter of the Blasted Steps, tasked to ensure only the sinless ever step beyond the Grand Gate.<hr/>
+The huge Judge likely stood through countless generations, never defeated, never wavering in their charge.
+|Hr = Journal
+}}
+
+The <b>Last Judge</b> is a main [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. They are a large [[Judges|Judge]] that guards the [[Grand Gate]] as the final arbiter of the [[Blasted Steps]].<ref name=journalentry/> They act as one of the possible final bosses of [[Act 1]].
+
+== Background ==
+The Last Judge is a huge [[Judge]] who serves as the final [[Judges|arbiter]] of the Blasted Steps, ensuring only those deemed as sinless may enter the [[The Citadel|Citadel]].<ref name=journalentry>Last Judge [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Final arbiter of the Blasted Steps, tasked to ensure only the sinless ever step beyond the Grand Gate."</i></ref> They have likely been doing this task for generations.<ref name=journalnote>[[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"The huge Judge likely stood through countless generations, never defeated, never wavering in their charge."</i></ref>
+
+== In-game Events ==
+After [[Hornet (Silksong)|Hornet]] rings all 5 [[Bellshrine]]s in Act 1 and attempts to open the door to the [[Grand Gate]] using the [[Needolin]] along with the [[Pilgrims]], the Last Judge appears from the shadows to prevent it. They then utter a small battle chant, signalling the beginning of the fight.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+The Last Judge lets out a shout at the beginning of the fight and at the start of Phase 2 of the fight.
+
+On their first encounter only, they always lead with the Thurible Throw attack aimed at [[Hornet (Silksong)|Hornet]]. This attack kills the other 2 Pilgrims that were waiting beside her at the [[Grand Gate]] door.
+
+=== Phase 1 ===
+During Phase 1 of the fight, the Last Judge uses the following attacks:
+
+* <b>Slam</b>: The Last Judge leaps into the air, hovers in place for a moment, and then slams their thurible into the ground at Hornet's location.
+* <b>Thurible Throw</b>: The Last Judge winds back before throwing their thurible forwards in an upward arc. Shortly after the ball hits the ground, they quickly pull it back towards themself.
+* <b>Thurible Spin</b>: The Last Judge starts spinning their thurible around themself. This attack is telegraphed by the Last Judge first doing a quick twirl of the thurible around their wrist before swinging it in full.
+** During this attack, projectiles from red tools are deflected and cannot hit the Last Judge unless they are already in the thurible circle before the attack, which makes them hit the Last Judge repeatedly.
+* <b>Adjust</b>: The Last Judge does quick, low jumps, either forwards or backwards.
+* <b>Leap</b>: The Last Judge leaps to reposition for attacks. They often leap to the centre of the arena when they are too close to a wall.
+
+=== Phase 2 ===
+After reaching 540 HP, the ball of the Last Judge's thurible ignites, and their attacks become stronger. The Last Judge continues to use Adjust, but replaces the rest of the attacks of Phase 1 with the following attacks:
+
+* <b>Blazing Rings</b>: Thurible Spin now creates multiple concentric rings of fire centred on the Last Judge and moving slowly outwards. They always use this attack when Phase 2 begins.
+* <b>Exploding Thurible Throw</b>: The Last Judge throws their thurible forwards in an upward arc. Shortly after hitting the ground, the ball explodes. The Last Judge then quickly pulls it back towards themself.
+* <b>Searing Slam</b>: Shortly after the Last Judge lands from using Slam, the thurible sends out two small, burning shockwaves in either direction that cross the arena. 
+* <b>Pillar Charge</b>: The Last Judge crouches, then charges a set distance in Hornet's direction, leaving 3 evenly spaced pillars of fire behind them.
+* <b>Judgement</b>: Once per fight, at 216 HP, the Last Judge emits a loud shout, signalling the beginning of this attack. For around 5 seconds, they perform a longer Blazing Rings attack that periodically switches the position of the rings to an offset pattern. Once Judgement is over, the Last Judge is exhausted for a few seconds before returning to their regular attack patterns.
+* <b>Retributive Explosion</b>: When the Last Judge is defeated, they drop to their knees and their thurible starts to emit smoke. After a short while, several explosions happen in a large area centred around the Last Judge, each dealing {{Damage|2|type=Fire}}.
+
+All of the Last Judge's attacks and making contact with them deal {{Damage|2}}, except their fire attacks, which deal {{Damage|2|type=Fire}} and can be reduced to {{Damage|1|type=Fire}} with [[Magma Bell]] equipped. Their fire-based attacks in Phase 2 are telegraphed by clouds of smokey incense, which indicate the area of damage shortly before igniting.
+
+<hr />
+
+{{Stagger
+|The Last Judge stumbles and takes a knee.
+| 14
+| game = SS
+}}
+
+<hr />
+
+The Leap and Slam hitboxes are relatively narrow and can be avoided without too much horizontal movement. These are good openings to get a few melee hits in. Searing Slam offers a smaller window of opportunity as the shockwaves must be jumped over.
+
+[[Swift Step]]ping towards or away from the Last Judge should be enough to dodge the Thurible Throw and the Exploding Thurible Throw, but if Hornet Swift Steps towards the Last Judge, jump shortly after to dodge the ball of the thurible being pulled back.
+
+The Pillar Charge attack can be dodged by jumping over the Last Judge and positioning Hornet between the subsequent flame pillars.
+
+Thurible Spin is difficult to punish but has a short range. Keeping distance offers the breathing room to heal. [[Skills and Abilities (Silksong)|Silk Skills]] can still damage the Last Judge during Thurible Spin.
+
+The Blazing Rings and Judgement attacks require slow, precise movement in order to stay between the rings and move with them.
+
+Once the Last Judge is defeated, stay away from them in order to avoid damage from their Retributive Explosion. If Hornet is defeated during this explosion, the Last Judge needs to be fought again.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* Only the pure may pass!
+* Smite the sinners!
+* Only the holy may judge!
+* For the Citadel strong!
+* The purity of flame...
+* Our duty, eternal...
+}}
+
+== Location ==
+The Last Judge is located in the north east of the Blasted Steps. All five Bellshrines must be activated before the Last Judge can be fought.
+
+{{Gallery
+|Image1 = Mapshot SS Flea Caravan 03.png!Location in the Blasted Steps
+}}
+
+== Creation and Development ==
+[[File:Screenshot SS Last Judge 10.png|thumb|250px|The Last Judge in ''EDGE Magazine'']]
+The Last Judge's arena was created around November 2019 and placed in the [[Cut Content (Silksong)/Areas#Red Coral Gorge|Red Coral Gorge]], implying a boss creation around then. They were designed to "''impress on the player the might and strength and the religious fervour of the Citadel''". [[William Pellen]] described their fight as a "''huge threshold moment''" and "''intimidating and [...] overwhelming''". The intended experience of the fight was for it to be "''this big wall suddenly appearing in front of you, cutting you off, cornering and pummelling you.''" [[Ari Gibson]] stated that their design is meant to mirror Hornet's design, with Hornet being a taller character than [[The Knight]]. According to Gibson, if the Last Judge was a boss in ''[[Hollow Knight]]'', they likely would have "''been more like a big, round blob ... the equivalent of the False Knight, [since] everything was squishier and squatter and slow because everything reflects or works against the protagonist.''"<ref>[https://shop.acmi.net.au/products/acmi-guide-hollow-knight-silk-song-softcover ACMI Guide: Hollow Knight Silksong], p. 18.</ref>
+
+The initial location of the Last Judge was in the Coral Steps segment of the Red Coral Gorge area. They were first revealed and named in February 2021's ''EDGE Magazine'' issue with a screenshot.<ref name="edge">[https://pocketmags.com/edge-magazine/february-2021 <i>Edge Magazine</i> February 2021 edition], p. 63.</ref>  The Coral Steps were cut and reworked into the Blasted Steps in 2021, but the Last Judge's arena received minimal changes. Additional footage of them was revealed in the June 2022 ''Xbox Game Pass Reveal Trailer'' and other 2022 Xbox promotional material, where they had a much deeper voice than in the final game, likely not being voiced by Lauren Koopowitz.<ref>[https://www.youtube.com/watch?v=JSfuFlhsxZY Hollow Knight: Silksong - Xbox Game Pass Reveal Trailer - Xbox & Bethesda Games Showcase 2022]</ref> As of then, Bellshrines were not required to be rung prior to fighting the Last Judge, as they were related to the later-cut [[Strung to Serve]] ending. 
+
+[[Team Cherry]] considered making the Last Judge drop a [[Silk Heart]]; a sketch note refers to it and so does unused code.<ref>[[:File:Ari SS Sketch 17.jpg|<i>Silksong</i> development sketch by Ari Gibson]]</ref> They also have a [[Black-Threading]] Multiplier of 2 in the files that can never be triggered in normal gameplay, as their defeat is required for the [[Flea Caravan]] to move to the Blasted Steps, a requirement for [[Act 3]].<ref>[[:File:Last Judge Black-threaded.png|Black-threaded Last Judge screenshot]]</ref> This may imply that earlier in development, they could have been encountered and battled in Act 3 under unknown circumstances. In the Last Judge footage seen at ACMI's ''Game Worlds'' exhibit, the Last Judge is seen having a different wind-up animation for their Thurible Spin attack.
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Last Judge 02.png!Slam attack
+|Image2 = Screenshot SS Last Judge 03.png!Thurible Throw
+|Image3 = Screenshot SS Last Judge 08.png!Thurible Spin 
+|Image4 = Screenshot SS Last Judge 05.png!Blazing Rings
+|Image5 = Screenshot SS Last Judge 12.png!Pillar Charge
+|Image6 = Screenshot SS Last Judge 04.png!Exploding Thurible Throw
+|Image7 = Screenshot SS Last Judge 06.png!Searing Slam
+|Image8 = Screenshot SS Last Judge 11.png!Stagger
+|Image9 = Screenshot SS Last Judge 13.png!Retributive Explosion
+|Image10 = Screenshot SS Last Judge 15.png!Singing
+|Image11 = Screenshot SS BlastedSteps 04.png!Arena in the Blasted Steps
+|Image12 = Screenshot SS Last Judge 14.png!Last Judge appearing
+}}
+
+== Achievements ==
+{{Achievement|game=silksong|Judge}}
+
+== Trivia ==
+* The Last Judge wields a large thurible, a metal vessel for burning incense swung on a chain. They are often used in religious ceremonies, which may relate to their task of guarding the Citadel from the sinful.<ref name=journalentry/>
+* During the battle with Last Judge, the floor of the arena becomes progressively destroyed, specifically during their <b>Slam</b>, <b>Thurible Throw</b>, and <b>Leap</b> attack. The portions of the floor that are damaged remain so even if Hornet dies.
+* The Last Judge is referred to as male in the <i>Silksong</i> section of ACMI's Game Worlds exhibit that details their boss fight's design.<ref>[https://www.reddit.com/r/Silksong/comments/1njc5l3/opening_night_at_acmi_screenworlds_in_melbourne/ Video tour of Game Worlds] on Reddit (2:00): <i>"Tall and lithe, he is able to reach Hornet at any height."</i></ref>
+
+{{History
+|game = SS
+|1.0.29909 (Patch 5): Fixed Last Judge's death explosion doing 3 damage (now 2), and not being reduced by [[Magma Bell]].
+}}
+{{Localisation
+|DEname = Letzter Richter
+|DEmeaning = Last Judge (neuter/masculine)
+|ESname = Última Jueza
+|ESmeaning = Last Judge (feminine)
+|FRname = Dernière Juge
+|FRmeaning = Last Judge (feminine)
+|ITname = Ultima Giudice
+|ITmeaning = Last Judge (feminine)
+|JAname = 最後の審判者
+|JAromanised = Saigo no shinpansha
+|JAmeaning = Last Judge
+|KOname = 마지막 심판
+|KOromanised = Majimak simpan
+|KOmeaning = Last Judge
+|PTname = Última Juíza
+|PTmeaning = Last Judge (feminine)
+|RUname = Последняя судья
+|RUromanised = Poslednjaja sud'ja
+|RUmeaning = Last Judge
+|TWname = 最後裁決者
+|TWromanised = Zuìhòu cáijué zhě
+|TWmeaning = Last Judge
+|ZHname = 末代裁决者
+|ZHromanised = Mòdài cáijué zhě
+|ZHmeaning = Last Generation Judge
+|CODEname = LAST_JUDGE
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Enemies}}
+
+[[fr:Dernier Juge]]
+[[pt:Última Juíza]]
+[[zh:末代裁决者]]

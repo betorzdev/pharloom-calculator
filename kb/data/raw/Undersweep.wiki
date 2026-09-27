@@ -1,0 +1,100 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Undersweep.png|Hunter's Journal
+Undersweep Idle.png|Idle
+</gallery>
+| hasdrop = true
+| r1 = 1
+| r2 = 2
+| sh1 = 5-8
+| sh2 = 7-10
+|health = 35/{{BT|70}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.25|1|0.8|0.75|0.75}}
+|numbers_required = 10
+|sing=Pilgrim Guide
+|singnum=2
+|va = Beau Fitzgerald<ref>Beau Fitzgerald is credited in Undersweep's audio files.</ref>
+}}
+{{Quote
+|Hr = Journal
+|Uses their steel-bristled pin to scrub the soot from vents and pipes.<hr/>
+Their sharp cleaning implement is as filthy as the rest of the place. They only layer grime on grime.
+}}
+
+<b>Undersweeps</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are the [[Underworkers|Underworker]] variant of [[Pilgrim Guide]]s dedicated to scrubbing away soot with their long steel-bristled pins.<ref>Undersweep Hunter's Journal entry: <i>"Uses their steel-bristled pin to scrub the soot from vents and pipes."</i></ref>
+
+== Behaviour and Tactics ==
+Undersweeps are often stationary as they sweep vents, but begin to walk once they notice Hornet. Once Hornet is in range, they use one of two attacks:
+* <b>Flail Sweep:</b> Rears back briefly before thrusting their brush forward, shaking it around for a second before stopping.
+* <b>Jump Swing:</b> Jumps up with a variable horizontal trajectory and does a large overhead swing with their brush as they land.
+
+Undersweeps deal {{Damage|1}} with their attacks as well as upon contact.
+
+Due to them often being encountered in tight passages and hallways, make sure to have a retreat option, as their attacks can cover a lot of area quite quickly.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Undersweeps have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|* For the light, unseen...
+* These halls kept clean...
+* Rest and fade...
+* We... were chosen...
+* See us faithful!
+* Shells bend, shells break...
+* Through duty, purity...
+* The sacred toil...|columns=2}}
+
+== Location ==
+Undersweeps can be found throughout the [[Underworks]], with one fought as part of the [[Enemy Gauntlets (Silksong)/Underworks 2|enemy gauntlet]] in the middle of the area, and another during the [[Enemy Gauntlets (Silksong)/Underworks 3|gauntlet]] in [[the Cauldron]].
+{{Gallery
+|Image1 = Mapshot SS Undersweep 01.png!Locations in the Underworks
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Undersweep 01.png!In the Underworks
+|Image2 = Screenshot SS Undersweep 02.png!Flail Sweep
+|Image3 = Screenshot SS Undersweep 03.png!Jump Swing
+|Image4 = Screenshot SS Undersweep 04.png!Responding to the Needolin
+|Image5 = Screenshot SS Undersweep 05.png!Working in the western Underworks
+|Image6 = Screenshot SS Undersweep 06.png!Working inside vents 
+|Image7 = Screenshot SS Undersweep 07.png!Working in the Cauldron
+|Image8= Screenshot_SS_Underworker_10.png!Corpse below a bench room
+|Image9= Screenshot_SS_Underworks_08.png!Corpses in a bench room
+}}
+
+{{Localisation
+|DEname = Unterfeger
+|DEmeaning = Undersweep
+|ESname = Subarredor
+|ESmeaning = Portmanteau of <i>sub</i> (under) and <i>barredor</i> (sweeper).
+|FRname = Sous-frotteur
+|FRmeaning = Under Polisher
+|ITname = Fondospazzo
+|ITmeaning = Bottomsweeper
+|JAname = 礎の清掃者
+|JAromanised = Ishizue no seisō-sha
+|JAmeaning = Foundation Cleaner
+|KOname = 지하빗질쟁이
+|KOromanised = Jihabitjiljaengi
+|KOmeaning = Underground Comber
+|PTname = Claustrolimpador
+|PTmeaning = From <i>claustro-</i> (prefix for enclosed space) and <i>limpador</i> (cleaner).
+|RUname = Цехомёт
+|RUromanised = Cexomët
+|RUmeaning = Workshop Cleaner
+|TWname = 下層清掃工
+|TWromanised = Xiàcéng qīngsǎo gōng
+|TWmeaning = Lower-level Sweeper<br><small>{{lang|zh-Hant|下層工廠}} <i>xiàcéng gōngchǎng</i> (Lower-level Factory) is the name of the [[Underworks]] in Traditional Chinese.</small>
+|ZHname = 圣厂清扫工
+|ZHromanised = Shèngchǎng qīngsǎo gōng
+|ZHmeaning = Holy Factory Sweeper<br><small>{{lang|zh-Hans|圣堡工厂}} <i>shèng bǎo gōngchǎng</i> (Holy Castle Factory) is the name of the [[Underworks]] in Simplified Chinese.</small>
+|CODEname=PILGRIM_STAFF_UNDERSTORE
+|CODEmeaning = <code>UNDERSTORE</code> internally refers to Underworks. <code>PILGRIM_STAFFWIELDER</code> internally refers to [[Pilgrim Guide]]s.
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[zh:圣厂清扫工]]

@@ -1,0 +1,96 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Hardbone Elder.png|Hunter's Journal
+Hardbone Elder Idle.png|Idle
+</gallery>
+| hasdrop = true
+| sh1 = 6-9
+| sh2 = 8-12
+|health = 110/{{BT|220}} <br> 90 (First Room) 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.75|1.4|1.1|1|1}}
+|numbers_required = 10
+|singnum = 1
+}}
+{{Quote
+|Hr = Journal
+|Tall creature with sharp senses. Defends its herd with powerful legs and a sharp-tipped mask.<hr/>
+There is surprising strength hidden in their thin, elegant limbs. It would be a pleasure to ride upon it...
+}}
+
+<b>Hardbone Elders</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are larger, more powerful [[Hardbone Hopper|Hardbone Hoppers]] that violently protect their smaller kin.
+
+== Behaviour and Tactics ==
+Hardbone Elders hop in similar manner to their younger counterparts, hopping idly, turning around at random, or pausing for 3 seconds to check behind themselves every few hops. Additionally, some Hardbone Elders start off resting, not wandering at all and instead supervising a [[Hardbone Hopper]]. If Hornet gets near, it will get up and begin its usual behaviour.<br>
+However, they are aggressive if approached, and have two attacks depending on whether they're facing Hornet:
+* <b>Mask Thrust:</b> Lunges forward, thrusting its face outwards and attacking with its sharp mask. 
+* <b>Buck:</b> Kicks whatever is behind it in an upwards slashing motion.
+
+Both attacks deal {{Damage|2}}, however contact damage only deals {{Damage|1}}.
+
+They are best dodged by jumping over the Elder when in front of it, and backing away when behind it. It has few defenses from being attacked from above.
+
+Sometimes [[Skarr Scout|Skarr Scouts]] can be seen attempting to hunt the Hardbone Elder, although it often kills them first.<br>
+The 2nd one in the first room they are encountered in has 90 HP instead of 110 HP.
+
+It should also be noted that Hardbone Elders respawn upon re-entering the room, despite their large size.
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Hardbone Elders have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* World's breath, rustling leaf...
+* Hard bone beneath...
+* Roaming, feeding, distant depths...
+* Mark of circle, mark of death...
+}}
+
+== Location ==
+Hardbone Elders can be found in the northeast [[Far Fields]] during [[Act 3]], accessible from eastern [[Hunter's March]] with the [[Silk Soar]].
+
+{{Gallery
+|Image1 = Mapshot SS Hardbone Elder 01.png!Locations in the Far Fields in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1=Screenshot SS Hardbone Elder 01.png!Idle
+|Image2=Screenshot SS Hardbone Elder 02.png!Hopping
+|Image3=Screenshot SS Hardbone Elder 03.png!Mask Thrust attack
+|Image4=Screenshot SS Hardbone Elder 04.png!Buck attack
+|Image5=Screenshot SS Hardbone Elder 05.png!Reacting to Needolin
+}}
+
+==Trivia==
+*The 1.0.27535 version of <i>Silksong</i> playable on PlayStation 4, which is older than the PC launch version (1.0.28324), has the Hardbone Elder be named Big Hardbone Hopper.<ref>[https://www.diffchecker.com/Nu85hOJA/ Comparison of 1.0.27535 (PlayStation 4) and 1.0.27776 (Early Nintendo Switch build)]</ref>
+
+{{Localisation
+|DEname = Hartknochen-Ältester
+|DEmeaning = Hardbone Elder 
+|ESname = Anciano Saltahuesos
+|ESmeaning = Hardbone Hopper Elder
+|FRname = Hoppemort Ancien
+|FRmeaning = Elder Hardbone Hopper
+|ITname = Ossoduro Anziano
+|ITmeaning = Elder Hardbone
+|JAname = ロウホネハネムシ
+|JAromanised = Rō hone hane mushi
+|JAmeaning = Combination of {{lang|ja|老}} rō (old age), {{lang|ja|骨}} hone (bone), {{lang|ja|跳ね}} hane (jump) and {{lang|ja|虫}} mushi (bug).
+|KOname = 단단뼈 장로
+|KOromanised = Dandanppyeo jangno
+|KOmeaning = Hardbone Elder
+|PTname = Ancião Ossoférreo
+|PTmeaning = Ironbone Elder
+|RUname = Вожак твердопанцирных
+|RUromanised = Vožak tverdopancirnyx
+|RUmeaning = Pack Leader of the Hard-shelled Ones
+|ZHname = 硬骨长者
+|ZHromanised = Yìng gǔ zhǎngzhě
+|ZHmeaning = Hard Bone Elder
+|CODEname = BONE_HOPPER_GIANT
+|CODEmeaning = Hardbone Hoppers are internally known as "Bone Hoppers"
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

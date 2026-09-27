@@ -1,0 +1,121 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+Spear Skarr.png|Hunter's Journal
+Spear Skarr Idle.png|Idle
+Spear Skarr Resting.png|Resting
+Spear Skarr Standing.png|During Karmelita
+</gallery>
+| hasdrop = true
+| r1 = 20
+| r2 = 27
+| sh1 = 6-9
+| sh2 = 8-12
+| sing = Mottled Skarr
+| singnum = 2
+|health = 75/{{BT|150}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.2|1|1|1|1}}
+|numbers_required = 10<br>(Instantly completed on [[Skarrsinger Karmelita]]'s death)
+}}
+
+{{Quote
+|Hr = Journal
+|Winged ant hunter that strikes from the air with its bone lance.<hr/>
+In my youth, I envied all bugs with wings. I even fancied I might grow a pair... I have since learned better. Accept the limitations of one's body... and augment with tools as needed.
+}}
+
+<b>Spear Skarr</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are winged [[Skarr]] hunters in bone armour, wielding bone lances.<ref>Spear Skarr Hunter's Journal entry: <i>"Winged ant hunter that strikes from the air with its bone lance."</i></ref>
+
+== Behaviour and Tactics ==
+Spear Skarr often start off resting, but take flight once Hornet approaches or a nearby Skarr is attacked.<br>
+They attempt to maintain horizontal distance between themselves and Hornet, preferring to be slightly above her, and pursue her over any distance.<br>
+Spear Skarr use 4 different moves, depending on Hornet's position:
+* <b>Lance Throw:</b> Aims and throws its lance at Hornet, with the lance having a straight flight path. 
+* <b>Double Slash:</b> Rears back slightly and delivers two diagonal slashes towards Hornet, moving towards her with each slash. This move is only used if Hornet is horizontally close enough.
+* <b>Divebomb:</b> Points their lance beneath themself and dives towards the ground. They only use this move if Hornet is beneath them.
+* <b>Evade:</b> Does a large backwards twirl to gain distance from Hornet. Mainly appears as a follow-up after missing a move and Hornet is close to it.
+
+Spear Skarrs deal {{damage|1}} with all attacks and upon contact.
+
+Optimal counterplay would be to strike as soon as they miss an attack, since they leave openings after every whiff. Baiting out attacks and knowing their telegraphs can also be very beneficial. Beware of jumping instinctively whilst retreating, as they may angle their Lance Throws upwards and catch Hornet mid-jump.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Spear Skarr have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+*Strength from her. Strength for her...
+*Strike hard. Strike lethal...
+*All for the singer...
+*To leap, and run, and slay!
+*No nest, no home...
+*The caves call... we listen...
+*...Is this still her song?
+*These lands... always ours...
+}}
+
+== Location ==
+Spear Skarrs can be found in [[Hunter's March]], the [[Far Fields]], the upper [[Deep Docks]], [[the Marrow]], and [[Halfway Home]]'s cellar as part of the [[Enemy Gauntlets (Silksong)/Greymoor 4|gauntlet]].
+
+In Hunter's March, clearing the central [[Enemy Gauntlets (Silksong)/Hunter's March 2|gauntlet]] allows one Spear Skarr to spawn as a random encounter on subsequent visits before [[Act 3]]. In the northern part of Hunter's March, one Spear Skarr appears as part of the [[Enemy Gauntlets (Silksong)/Hunter's March 4|gauntlet]] alongside a [[Skarrgard]]. A second [[Enemy Gauntlets (Silksong)/Hunter's March 5|gauntlet]] featuring two Spear Skarrs can occur in the same arena if the first one is cleared before the [[Mottled Skarr]] is killed and [[Curveclaw]] has not been purchased. In the Far Fields, a Spear Skarr starts to spawn in the room containing targets after [[Hornet (Silksong)|Hornet]] defeats the [[Cogwork Dancers]], acquires the [[Clawline]], or visits [[Songclave]].
+
+{{Gallery
+|Image1 = Mapshot SS Spear Skarr 01.png!Locations in Hunter's March
+|Image2 = Mapshot SS Spear Skarr 06.png!Locations in Hunter's March in Act 3
+|Image3 = Mapshot SS Spear Skarr 02.png!Location in the Far Fields
+|Image4 = Mapshot SS Spear Skarr 04.png!Locations in the Far Fields in Act 3, including [[Void Mass]] spawn
+|Image5 = Mapshot SS Spear Skarr 03.png!Location in the Deep Docks
+|Image6 = Mapshot SS Spear Skarr 05.png!Locations in the Deep Docks in Act 3
+|Image7 = Mapshot SS Spear Skarr 08.png!Location in the Marrow in Act 3
+|Image8 = Mapshot SS Spear Skarr 07.png!Location in Greymoor
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Spear Skarr 01.png!In Hunter's March
+|Image2= Screenshot SS Spear Skarr 02.png!In Far Fields
+|Image3= Screenshot SS Spear Skarr 03.png!In Deep Docks with a Skarr Scout
+|Image4= Screenshot SS Spear Skarr 04.png!On the side before Skarrsinger Karmelita's fight
+|Image5 = Screenshot SS Far Fields 22.png!In the audience during Skarrsinger Karmelita's fight
+|Image6 = Screenshot SS Skarrsinger Karmelita 02.png!Modded clear screenshot
+|Image7= Screenshot SS Spear Skarr 05.png!Fighting before Skarrsinger Karmelita's fight
+|Image8= Screenshot SS Spear Skarr 06.png!Lance Throw attack
+|Image9= Screenshot SS Spear Skarr 07.png!Double Slash attack
+|Image10= Screenshot SS Spear Skarr 08.png!Divebomb attack
+|Image11= Screenshot SS Spear Skarr 09.png!Singing
+}}
+
+== Trivia ==
+* The Spear Skarr seem to be wearing the skulls of [[Tarmite]]s.
+** Unlike the Tarmite skull, the mask on their chest completely disappears when defeated.
+* Despite the name, the Hunter's Journal claims they wield lances rather than spears.
+
+{{Localisation
+|DEname = Speerskarr
+|DEmeaning = Spear Skarr
+|ESname = Skarr con lanza
+|ESmeaning = Skarr with Spear
+|FRname = Skarralance
+|FRmeaning = Spear Skarr
+|ITname = Mirmede Lanciere
+|ITmeaning = Spearer Skarr<br><small><i>Mirmede</i> is the name of the [[Skarr]] in Italian, from <i>mirmeco-</i> (prefix for ants) and <i>-ede</i> (taxonomic suffix).</small>
+|JAname = スカールの槍手
+|JAromanised = Sukāru no yarishu 
+|JAmeaning = Spearwielder Skarr
+|KOname = 스카르 창병
+|KOromanised = Seukareu changbyeong
+|KOmeaning = Skarr Spearwielder
+|PTname = Skarr-alado
+|PTmeaning = Winged Skarr
+|RUname = Скарр-копейщик
+|RUromanised = Skarr-kopejščik
+|RUmeaning = Skarr Lancer
+|ZHname = 斯卡尔长矛手
+|ZHromanised = Sīkǎ'ěr chángmáo shǒu
+|ZHmeaning = Skarr Spear Wielder
+|CODEname = BONE_HUNTER_FLY
+|CODEmeaning = "Bone Hunter" internally refers to the Skarr
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

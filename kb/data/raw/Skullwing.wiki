@@ -1,0 +1,89 @@
+{{SS Infobox Enemy
+| image1 = <gallery>
+B Skullwing.png|Hunter's Journal
+Skullwing No Skull.png|No Skull
+</gallery>
+|drops = None
+|health = 15
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 15
+|sing=Beastfly
+}}
+
+{{Quote
+|Hr = Journal
+|Airborne relative of the grounded Skull Scuttler, found only in the Marrow's deepest, hottest caves.<hr/>Such feeble creatures could only survive thanks to the rarity of predators in these super-heated caverns.
+}}
+
+<b>Skullwings</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are airborne relatives of the [[Skull Scuttlers]], only found in [[the Marrow]]'s deepest and hottest caves.<ref>Skullwing [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Airborne relative of the grounded Skull Scuttler, found only in the Marrow's deepest, hottest caves."</i></ref>
+
+== Behaviour and Tactics ==
+Skullwings have no attacks, instead hovering in place and dealing {{Damage|1}} on contact. When killed, another flies in after a short period of time, except for the two found in the room following [[the Abyss (Silksong)|the Abyss]] escape sequence.
+
+Skullwings mainly serve as platforming elements for [[Needle]] bounces or the [[Clawline]]. [[Cogflies]] do not attack them, and the [[Wispfire Lantern]] does not spawn [[Wisp]]s if a Skullwing is nearby, but [[Pale Nails]] still target them.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+*Rumbling, crackling...
+*Shells are strong...
+*Scratching, seeking...
+*Warm and dark...
+*Digging, hiding...
+*Claws are sharp...
+}}
+
+== Location ==
+Skullwings can be found primarily in a part of the Marrow connected to [[Weavenest Atla]], specifically in the area where the [[Mask Shard (Silksong)|Mask Shard]] is obtained.
+
+Some Skullwings also serve as targets for the [[Clawline]] or [[Needle]] bounce during the escape sequence after visiting [[the Abyss (Silksong)|the Abyss]] for the first time.
+
+{{Gallery
+|Image1 = Mapshot SS Skullwing 01.webp!Locations near Weavenest Atla
+|Image2 = Mapshot SS Skullwing 02.png!Location in the Deep Docks in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Skullwing 01.png!Near Weavenest Atla
+|Image2 = Screenshot SS Skullwing 02.png!Above the Abyss
+|Image3 = Screenshot SS Skullwing 03.png!Reacting to the Needolin
+}}
+
+{{History
+|game = SS
+|1.0.28650 (Patch 2): Fixed [[Cogfly|Cogflies]] and [[Wispfire Lantern|Wisps]] inappropriately targeting Skullwings.
+}}
+{{Localisation
+|DEname = Schädelflügel
+|DEmeaning = Winged Skull
+|ESname = Cráneo alado
+|ESmeaning = Winged Skull
+|FRname = Aile-d'os
+|FRmeaning = Wing of Bone
+|ITname = Teschio Alato
+|ITmeaning = Winged Skull
+|JAname = ズガイバネ
+|JAromanised = Zugaibane
+|JAmeaning = Skullwing<br><small>Combination of {{lang|ja|頭蓋}} <i>zugai</i> (skull) and {{lang|ja|羽}} <i>hane</i> (wings).</small>
+|KOname = 해골날개
+|KOromanised = Haegollalgae
+|KOmeaning = Skullwing
+|PTname = Crânio-alado
+|PTmeaning = Winged Skull
+|RUname = Черепокрыл
+|RUromanised = Čerepokryl
+|RUmeaning = Skullwing
+|TWname = 顱骨飛蟲
+|TWromanised = Lúgǔ fēi chóng
+|TWmeaning = Skull Fly Bug
+|ZHname = 颅翼虫
+|ZHromanised = Lú yì chóng
+|ZHmeaning = Skull Wing Bug
+|CODEname = BONE_GOOMBA_BOUNCE_FLY
+|CODEmeaning = <code>BONE_GOOMBA</code> is the name for the [[Skull Scuttler]], and the Skullwing is intended to be "bounced" upon.
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[fr:Aile-d’os]]

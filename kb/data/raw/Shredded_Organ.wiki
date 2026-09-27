@@ -1,0 +1,63 @@
+{{Navbar|page1=Seared Organ|page2=Shredded Organ|page3=Skewered Organ}}
+{{SS Infobox Item
+| max = 35
+| type = [[Items (Silksong)#Deliverable|Deliverable]]
+| source = Any enemies killed with the [[Beast Crest]]'s downwards attack, the [[Architect Crest]]'s attacks, [[Sawtooth Circlet]], [[Cogwork Wheel]], or [[Delver's Drill]] during <i>[[Broodfeast]]</i> or <i>[[Runtfeast]]</i>
+| description = Meat harvested from a defeated creature. It has been diced into fine chunks.
+}}
+
+{{Quote
+| Usss need meatsss, much, too... Hunter... Usss wants many... Seared... Skewered... Shredded...
+| [[Runt]]
+| Hr = SS
+}}
+
+<b>Shredded Organs</b> are [[Items (Silksong)#Deliverables|deliverable items]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+15 [[Seared Organ]]s, 35 Shredded Organs, and 10 [[Skewered Organ]]s are required to complete the <i>[[Broodfeast]]</i> [[Wish]], given by [[Huntress]] at [[Putrified Ducts]] (or the <i>[[Runtfeast]]</i> Wish, given by [[Runt]] in the same location after [[Act 3]] begins).
+
+== How to Acquire ==
+Only obtainable while <i>Broodfeast</i> or <i>Runtfeast</i> is active. 3 Shredded Organs drop from most enemies killed by the following sources:
+* [[Sawtooth Circlet]]
+* [[Cogwork Wheel]]
+* [[Delver's Drill]]
+* [[Conchcutter]]
+* [[Beast Crest]]'s downwards attack
+* [[Architect Crest]]'s charged down-slash/[[Swift Step|run-slash]] and [[Needle Strike]]
+
+[[Hornet (Silksong)|Hornet]] can carry up to 35 Shredded Organs, after which they are no longer obtainable.
+{{Localisation
+|DEname = Zerhacktes Organ
+|DEmeaning = Shredded Organ
+|ESname = Órgano triturado
+|ESmeaning = Shredded organ
+|FRname = Organe découpé
+|FRmeaning = Chopped Organ
+|ITname = Organo sminuzzato
+|ITmeaning = Minced organ
+|JAname = 細切れの肉
+|JAromanised = Komagire no niku
+|JAmeaning = Meat Scraps
+|KOname = 조각 난 장기
+|KOromanised = Jogak nan janggi
+|KOmeaning = Fragmented Organ
+|PTname = Órgão Retalhado
+|PTmeaning = Shredded Organ
+|RUname = Искромсанный орган
+|RUromanised = Iskromsannyj organ
+|RUmeaning = Mangled Meat
+|TWname = 切碎內臟
+|TWromanised = Qiēsuì nèizàng
+|TWmeaning = same
+|ZHname = 切碎的内脏
+|ZHromanised = Qiēsuì de nèizàng
+|ZHmeaning = Shredded Organs
+|CODEname = MORSEL_SHREDDED
+|CODEmeaning = All other organs for <i>[[Broodfeast]]</i>/<i>[[Runtfeast]]</i> are also called <code>MORSEL</code>
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

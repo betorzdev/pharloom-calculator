@@ -1,0 +1,93 @@
+{{For|information on the lore of this species|Mossmirs}}
+{{SS Infobox Enemy
+| title1 = Mossmir
+| image1 = Mossmir Idle.png
+| health = 12/{{BT|24}}
+| damage_modifiers = {{SS Spaced Damage Modifiers|1|1|0.9|0.9|0.9}}
+| hasdrop = true
+| sh1 = 2-3
+| sh2 = 3-4
+| numbers_required = 20
+|singnum = 1
+}}
+
+{{Quote
+| Small fluttering creature capable of defending itself with its small stinger. <hr/>This bug is soft and clumsy, but to its fortune its home caves seem relatively free of effective predators. I wonder why that is.
+| Hr = Journal
+}}
+
+<b>Mossmirs</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are the juvenile forms of the [[Moss Mother]]s,<ref>Moss Mother [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Adult Mossmir with a fully developed stinger and hardened hide."</i></ref> capable of defending themselves with their stingers despite being soft and clumsy.<ref>Mossmir Hunter's Journal entry: <i>"Small fluttering creature capable of defending itself with its small stinger. This bug is soft and clumsy, but to its fortune its home caves seem relatively free of effective predators."</i></ref>
+
+== Behaviour and Tactics ==
+Mossmirs hover aimlessly while idle. As soon as one spots [[Hornet (Silksong)|Hornet]], it flies diagonally upwards towards her. Once directly overhead, it dives straight downwards for a fixed distance, usually enough to hit the ground. After a brief pause, it flies back into the air to attempt another attack. Mossmirs can pursue Hornet over a great distance from their spawn point.
+
+Because of their downwards attacks, it is best to hit them from the side, especially immediately after one misses its lunge. During their dive, Mossmirs can crash into water or spikes and are instantly defeated.
+=== Act 3 ===
+[[Black-threaded]] Mossmirs have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* Protect us, mother!
+* Call for danger, hide away...
+* Young must eat, grow or die...
+* Sleep and change, have no fear...
+}}
+
+== Location ==
+Mossmirs are found primarily in the [[Moss Grotto]], but can also be seen in the western portion of [[Weavenest Atla]] and in the Moss Grotto section of the [[Memorium]]. In [[Act 3]], two Mossmirs spawn alongside a [[Void Mass]] in Weavenest Atla.
+
+{{Gallery
+|Image1 = Mapshot SS Mossmir 01.png!Locations in the Moss Grotto
+|Image2 = Mapshot SS Mossmir 04.png!Locations in the Moss Grotto in Act 3
+|Image3 = Mapshot SS Mossmir 02.png!Locations in Weavenest Atla
+|Image4 = Mapshot SS Mossmir 05.png!Locations in Weavenest Atla in Act 3
+|Image5 = Mapshot SS Mossmir 03.png!Locations in the Memorium
+}}
+
+== Gallery ==
+{{Gallery
+| Image1= Screenshot SS Mossmir 01.png!In the Moss Grotto
+| Image2= Screenshot SS Mossmir 02.png!In Weavenest Atla
+| Image3= Screenshot SS Mossmir 03.png!In the Memorium
+| Image4= Screenshot SS Mossmir 04.png!Diving attack
+| Image5= Screenshot SS Mossmir 05.png!Reacting to the Needolin
+| Image6= Screenshot SS Mossmir 06.png!Black-threaded Mossmirs and Void Mass in Act 3
+}}
+
+{{Localisation
+|DEname = Moosmir
+|DEmeaning = Mossmir
+|ESname = Musgomir
+|ESmeaning = Portmanteau of <i>musgo</i> (moss) and Mossmir.
+|FRname = Moucheton Verdoyant
+|FRmeaning= Verdant Fly
+|ITname = Moscamuschio
+|ITmeaning = Moss Fly
+|JAname = コケミル
+|JAromanised = Kokemiru
+|JAmeaning = Mossmir<br><small>Combination of {{lang|ja|苔 <i>koke</i>}} (moss) and <i>Mossmir</i>.</small>
+|KOname = 모스미르
+|KOromanised = Moseumireu
+|KOmeaning = Mossmir
+|PTname = Musgoso
+|PTmeaning = Mossy
+|RUname = Мшемир
+|RUromanised = Mšemir
+|RUmeaning = Mossmir
+|TWname = 苔翼蟲
+|TWromanised = Tái yì chóng
+|TWmeaning = same
+|ZHname = 苔翼虫
+|ZHromanised = Tái yì chóng
+|ZHmeaning = Moss Wing Bug
+|CODEname = MOSSBONE_FLY
+|CODEmeaning = <code>MOSSBONE</code> internally refers to [[Mossmirs|Mossmir]] enemies.
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[fr:Moucheton Verdoyant]]

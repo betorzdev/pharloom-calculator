@@ -1,0 +1,42 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Greymoor_16.png|400px|center]]
+|[[File:Mapshot_SS_Crawfather_01.png|400px|center]]
+|-
+| colspan="2" | [[Crawfather]]'s enemy gauntlet as part of his boss encounter. Located in the lower level of the watermound. Requires [[Craw Summons]].
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>[[Craw Memento]]<br>[[Crawbell]]</center>
+| <center>[https://youtu.be/M-z6fPrpg-k Cut Through (Main)] (Waves 1-4)<br>[https://youtu.be/M-z6fPrpg-k?t=92 Cut Through (Main + Percussion)] (Wave 5)<br>[https://youtu.be/M-z6fPrpg-k?t=184 Cut Through (Main + Percussion + Vocals)] (Crawfather)</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Squatcraw Juror.png|35x35px|link=Squatcraw Juror]] [[Squatcraw Juror]], top left<br>
+[[File:HJ_Tallcraw Juror.png|35x35px|link=Tallcraw Juror]] [[Tallcraw Juror]], top right
+|Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Craw Juror.png|35x35px|link=Craw Juror]] [[Craw Juror]] x2, top left and right<br>
+|
+|-
+|
+[[File:HJ_Squatcraw Juror.png|35x35px|link=Squatcraw Juror]] Squatcraw Juror x2, top left and right
+|Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Craw Juror.png|35x35px|link=Craw Juror]] Craw Juror x2, top left and right<br>
+|
+|-
+|
+[[File:HJ_Tallcraw Juror.png|35x35px|link=Tallcraw Juror]] Tallcraw Juror x2, top left and right
+|
+|-
+|
+[[File:HJ_Crawfather.png|35x35px|link=Crawfather]] Crawfather, top centre
+| The Crawfather himself can spawn other Jurors during his battle.
+|}

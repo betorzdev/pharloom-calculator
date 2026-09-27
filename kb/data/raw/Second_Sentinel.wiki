@@ -1,0 +1,231 @@
+{{SS Infobox Boss
+|label1 = NPC
+|image1 = <gallery>
+Second_Sentinel_Idle.png|Idle
+Second_Sentinel_Bow.png|Bowing
+Second_Sentinel_Resting.png|Resting
+Second_Sentinel_Dormant.png|No Cogheart
+</gallery>
+|location = [[Cogwork Core]]<br>[[Choral Chambers]]<br>[[High Halls]]
+|combat1 = false
+|singnum = 2
+|quest = [[Final Audience]]
+
+|label2 = Boss
+|title2 = Second Sentinel
+|image2 = <gallery>
+B_Second_Sentinel.png|Hunter's Journal
+Second_Sentinel_Idle.png|Idle
+Second_Sentinel_Stagger.png|Staggered
+</gallery>
+|theme2 = [https://www.youtube.com/watch?v=YCZjk270nvQ The Choir]
+|location2 = [[High Halls]]
+|drops2 = [[Reserve Bind]]
+|health2 = 800
+|damage_modifiers2 = {{SS Spaced Damage Modifiers|1.4|1.1|0.85|0.7|0.65}}
+|numbers_required2 = 1
+|g2 = Second Sentinel
+|singnum2 = 2
+|quest2 = [[Final Audience]]
+}}
+
+{{Quote
+|Cogwork knight of Pharloom, once protector of its pilgrims, and master of the scissor blade.<hr/>The talent and intelligence of this construct goes far beyond others I have witnessed. They seem less built as a tool to serve than an attempt at life itself.
+|Hr = Journal
+}}
+
+The <b>Second Sentinel</b> is an [[NPCs (Silksong)|NPC]] and quest [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. An [[Cogwork Bugs|automaton]] once tasked with defending the pilgrims of [[the Citadel]],<ref>Second Sentinel [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Cogwork knight of Pharloom, once protector of its pilgrims, and master of the scissor blade."</i></ref> it can be reawakened after assembling the [[Cogheart]]. Its defeat is the objective of the <i>[[Final Audience]]</i> [[Wishes|wish]] which grants the [[Reserve Bind]].
+== Background ==
+The Second Sentinel is the second of the five known cogwork sentinels built by [[the Citadel]] to protect its pilgrims.<ref>In the background of its battle arena, 4 other Sentinels can be seen. It is unknown if more were created beyond these 5 directly shown.</ref><ref>Second Sentinel: <i>"Defence of the sacred Cit-t-tadel, and the voices that fill it, is the eternal d-duty of the sentinels."</i></ref> 
+
+The cogwork sentinels were built by the Architects long ago<ref>[[Twelfth Architect]]: <i>"That heart is an inspired form, conceived by the first of my line for a knight of cog and blade. In it, I see my predecessor's talent, immense, now lost-forgotten."</i></ref> and were tasked with bringing bugs safely into the Citadel, possibly by force, starting long before the creation of the [[Cogwork Core]].<ref>[[Twelfth Architect]]: <i>"A gleaming order, cogwork sentinels, so impressive-majestic in function they were charged-b-b-bound to the highest holy duty. Long before the c-c-creation of the core, the sentinels ventured, even beyond these walls, to see all bugs brought-forced safe to serve the Citadel."</i></ref>
+
+== In-game Events ==
+[[Hornet (Silksong)|Hornet]] can activate Second Sentinel after finding three [[Cogheart Piece]]s and placing the assembled [[Cogheart]] in its body in the [[Cogwork Core]]. After its activation, Second Sentinel chooses to continue protecting [[the Citadel]].<ref>Second Sentinel: <i>"While its shell is f-f-functional, this sentinel will hold true to its duty.</i>"</ref> It can then be found in several different locations within the Citadel.<ref group=code><code>GameManager.TimePasses()</code> sets various flags <code>songChevalierActiveIn[Area]</code>.</ref>
+
+Second Sentinel can be found fighting enemies at these locations:
+* In the hallway east of the [[Cogwork Dancers]] boss room
+* In the long [[Choral Chambers]] hallway right below the [[Cogwork Core]]
+* In the room west of the [[Citadel Spa]], if Hornet has completed the enemy gauntlet before
+* In the long hallway below the Citadel Spa and east of the [[Ventrica]] station (only in Act 3)
+Second Sentinel can be found resting at these locations (only in Act 3):
+* In the room northwest of the [[Whiteward]] entrance, if the [[Wish]] <i>[[The Wandering Merchant]]</i> is completed and [[Jubilana]] has been rescued from this room
+* In the room west of the Grand Bellway [[Bellway]] station
+* In the westernmost room of [[High Halls]] that is accessed by using the [[Clawline]] ability on several rings to traverse a vertical column above the westernmost [[Bench (Silksong)|Bench]] in Choral Chambers 
+
+After its activation, Second Sentinel is guaranteed to appear once at each of these locations, provided that the conditions for the locations are fulfilled. After meeting at one location, Hornet needs to rest on a bench for Second Sentinel to appear again at another.
+
+After the following conditions are fulfilled, the Wish <i>[[Final Audience]]</i> appears in [[Songclave]]:
+* Meeting Second Sentinel at least twice (whether it is fighting enemies or resting), or at least once if the [[Everbloom]] has been acquired
+* Completing at least 2 Songclave Wishes, including the Wish <i>[[Building Up Songclave]]</i>
+* Learning the [[Conductor's Melody]]
+
+Once the conditions are fulfilled, Second Sentinel disappears from all of its fighting locations. It can still be met at its resting locations if Hornet has not met it there yet.
+
+After accepting this Wish, markers lead to a newly opened room in [[High Halls]], where Second Sentinel attacks Hornet to assess whether she is [[Haunting|Haunted]] by [[Silk]]. Upon defeat, it grants the [[Reserve Bind]].
+
+After the Wish is completed, Second Sentinel can be randomly found in any of the aforementioned fighting and resting locations, except for the room west of the Citadel Spa, if in Act 3.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+Second Sentinel has several repositioning moves, many of which send it airborne to perform aerial variations of attacks, and a multitude of attacks using its scissor blades. It uses these same attacks when encountered fighting enemies.
+*<b>Gilded Combo</b>: Second Sentinel reels in one of its blades before lunging forward, following up with a slash from the other blade. If [[Hornet (Silksong)|Hornet]] is not behind Second Sentinel, it can then perform a second, shorter lunge; otherwise, it turns to face her and chain into a Gilded Parry or Scissor Strike.
+*<b>Aerial Lunge</b>: Second Sentinel leaps forwards mid-air, and then lunges diagonally downwards towards Hornet.
+*<b>Power Blade</b>: Second Sentinel holds both blades behind its back, and then swings them forward, sending a large wind projectile forward while pushing itself slightly backwards.
+** This attack can be performed while airborne, after a forwards leap or another manoeuvre, causing the projectile to instead be sent diagonally downwards.
+*<b>Scissor Strike</b>: Second Sentinel quickly charges up an attack using the same animation as Hornet's [[Needle Strike]] ability. Once the charge is ready, Second Sentinel makes a small jump forwards before unleashing a massive X-shaped slash with both of its blades, dealing {{Damage|2}} on hit.
+** This attack can be performed while airborne, after a forwards leap or another manoeuvre, with the charge happening mid-air and the strike coming out just before it lands.
+*<b>Gilded Whirl</b>: Second Sentinel crouches and readies itself with one blade pointed forwards and the other angled behind its head. It then jumps forwards and upwards, spinning both blades for momentum, before landing on the ground. If Hornet is caught in the vortex, Gilded Whirl deals {{Damage|1+1}} to her.
+** At the height of the spin, Second Sentinel can chain into an Aerial Lunge or an aerial Power Blade or Scissor Strike.
+*<b>Flying Retreat</b>: Second Sentinel makes a large backwards leap, clinging to the wall, before performing an Aerial Lunge or an aerial Power Blade or Scissor Strike. 
+** If it performs a Power Blade off the wall, the recoil from the attack pushes it back onto the wall, after which it chains into one last aerial attack.
+*<b>Gilded Parry & Riposte</b>: If Hornet is too close to Second Sentinel, it strikes a defensive stance, blocking all incoming damage. If hit, it counters with a far-reaching flurry of strikes in front of it. If Hornet is caught in the flurry, Second Sentinel deals {{Damage|1+1}} to her.
+*<b>Quick Dash</b>: Second Sentinel makes quick dashes backwards and forwards to reposition for attacks or to avoid Hornet between attacks.
+
+<hr />
+
+{{Stagger
+| Second Sentinel kneels against the ground, blades crossed.
+| 15
+| game = SS
+}}
+
+<hr />
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = Playing the [[Needolin]]
+| Title1_Dialogue1 = [n]Save this Citadel...<br>
+Cut down the cursed...<br>
+Protect the pure...<br>
+Siblings...Gone...<br>
+Awake... Alone...Forever?
+| Title2 = Cogwork Core
+| Title2_Event1 = Upon inspection
+| Title2_Dialogue1 = An inert automaton with an empty chest.
+| Title2_Event2 = After inserting the [[Cogheart]]
+| Title2_Dialogue2 = Woken, is this sentinel. F-f-f-functional, is its shell.<br>
+Still devoted, is this s-s-sentinel, and awaiting your commandment.<br>
+{{HTalk|You speak, gilded one? I've no command for you, but my curiosity is piqued.}}<br>
+{{HTalk|You call yourself a sentinel. What is it you are charged with protecting?}}<br>
+Defence of the sacred C-c-citadel, and the voices that fill it-t-t, is our eternal duty.<br>
+{{HTalk|I had assumed as much. Yet look around you, gilded one. During your slumber, the Citadel has fallen, and its voices lay silent. This place is dead, or very nearly.}}<br>
+{{HTalk|Some would argue that standing guard over a kingdom's corpse is a foolish task, empty of meaning. I wonder then, will you still hold true to your charge?}}<br>
+Eternal, is the Citadel. Et-t-ternal, is the devotion of the sentinels.<br>
+While its shell is f-f-functional, this sentinel will hold true to its duty.
+| Title3 = Final Audience
+| Title3_Event1 = First conversation
+| Title3_Dialogue1 = {{HTalk|I am here, gilded one.}}<br>
+{{HTalk|I had thought I was answering your summons as a friend, or at least an ally, but now that we stand together in this place I can sense your intent.}}<br>
+{{HTalk|You mean to raise your blades against me. Am I your enemy, then?}}<br>
+D-defence of the sacred Citadel, and the voices that fill it-t-t, is the eternal duty of the sentinels.<br>
+Termination, is the n-n-necessary fate of all those enthralled by the whispering Silk.<br>
+{{HTalk|You believe me haunted, a slave to the pale threads? I think you are more perceptive than that. My Silk is my own, as is my will.}}<br>
+Unsure, is this sentinel. B-both haunted and innocent, you seem. With regret, this sentinel must t-t-test the strength of your will.
+| Title3_Event2 = Speaking after the fight
+| Title3_Dialogue2 = By the purity of your will... the c-c-clarity of your intent... you are innocent of the silken curse.<br>
+Failed, has this sentinel. Your j-judgment, will it accept.<br>
+{{HTalk|Is this truly failure, gilded one? You meant to test me and have done so. I would expect nothing less of a true guardian.}}<br>
+{{HTalk|The matter is resolved. There is no need for death. Stand, and let us part as friends.}}<br>
+Accept, a t-t-token of the sentinel's order.<br>
+As friends... let us p-part.
+| Title4 = Act 3
+| Title4_Event1 = Speaking while it is resting
+| Title4_Dialogue1 = {{HTalk|Gilded one, what remained of the Citadel has been torn apart by the black threads. Still you keep to your duty?}}<br>
+While voices still fill the g-g-great chambers... the sacred task of the sentinels continues.<br>
+To defend... To p-p-protect.
+| Title4_Event2 = Exhausted dialogue
+| Title4_Dialogue2 = Cleansed, is this place. Eternal, is the d-d-duty of the sentinels.
+| Title5 = Written
+| Title5_Event1 = <i>[[Final Audience]]</i> wish
+| Title5_Dialogue1 = Attend this Sentinel's request, Hunter in Red. Meet in halls high, the chamber of its fellows. The way shall be marked.
+}}
+
+== Location ==
+[[Hornet (Silksong)|Hornet]] can find Second Sentinel in many locations across [[the Citadel]]. It is initially found towards the western centre of the [[Cogwork Core]] before travelling around [[Choral Chambers]] and [[High Halls]]. Second Sentinel's [[Bosses (Silksong)|boss]] fight is located in the southeast of High Halls and is accessible through the <i>[[Final Audience]]</i> [[Wish]].
+{{Gallery
+| Image1 = Mapshot_SS_Second_Sentinel_01.png!Location in the [[Cogwork Core]]
+| Image2 = Mapshot_SS_Second_Sentinel_02.png!Locations of possible fights before Act 3
+| Image3 = Mapshot_SS_Second_Sentinel_03.png!Location of <i>[[Final Audience]]</i> battle
+| Image4 = Mapshot_SS_Second_Sentinel_04.png!Locations of possible fights in Act 3
+| Image5 = Mapshot SS Second Sentinel 05.png!Resting locations in [[Choral Chambers]] in Act 3
+| Image6 = Mapshot SS Second Sentinel 06.png!Resting location in [[High Halls]] in Act 3
+}}
+
+{{Gallery
+| Title = Gallery
+| Image1 = Screenshot SS Second Sentinel 04.png!Gilded Combo
+| Image2 = Screenshot SS Second Sentinel 05.png!Aerial Lunge
+| Image3 = Screenshot SS Second Sentinel 06.png!Gilded Whirl
+| Image4 = Screenshot SS Second Sentinel 07.png!Flying Retreat
+| Image5 = Screenshot SS Second Sentinel 08.png!Power Blade
+| Image6 = Screenshot SS Second Sentinel 09.png!Gilded Parry
+| Image7 = Screenshot SS Second Sentinel 10.png!Riposte
+| Image8 = Screenshot SS Second Sentinel 12.png!Scissor Strike
+| Image9 = Screenshot SS Second Sentinel 11.png!Stagger
+| Image10 = Screenshot SS Second Sentinel 15.png!Singing
+| Image11 = Screenshot SS Cogwork Core 08.png!In [[Cogwork Core]], before activation
+| Image12 = Screenshot SS Silk Fly 01.png!In [[High Halls]], at the end of <i>[[Final Audience]]</i>
+| Image13 = Screenshot SS Second Sentinel 01.png!Resting in [[Choral Chambers]] in Act 3, in the room northwest of the [[Whiteward]] entrance
+| Image14 = Screenshot SS Second Sentinel 02.png!Resting in [[Choral Chambers]] in Act 3, in the room west of the [[Bellway]] station
+| Image15 = Screenshot SS Second Sentinel 03.png!Resting in [[High Halls]] in Act 3
+| Image16 = Screenshot SS Second Sentinel 13.png!Fighting haunted Choirbugs
+| Image17 = Screenshot SS Second Sentinel 14.png!Idle after defeating haunted bugs
+| Image18 = Silksong Early 012.png!Pre-release screenshot
+}}
+
+== Trivia ==
+* Upon first entering Second Sentinel's arena in the High Halls, it is surrounded by four [[Silk Flies]] which float away when Hornet approaches.<ref>[[:File:Screenshot SS Silk Fly 01.png|Screenshot]] of Sentinels and Silk Flies.</ref> Silk Flies presumably power the various automatons across the Citadel.
+** These four Silk Flies around Second Sentinel in particular may be the original Silk Flies that inhabited the other deactivated Sentinel shells scattered around the room, as there happen to be exactly four empty Sentinel shells.
+* Second Sentinel's <b>Scissor Strike</b> is nearly identical to an attack used by [[Pinstress]] in her fight. Pinstress herself states that the Citadel once learned from the teachings of previous members of her order before then wiping them out. Those teachings were, in part, likely implemented into the Sentinels, as seen by this attack.<ref>[[Pinstress]]: <i>"Our grand Citadel learnt well from the training of Pinstresses past. Then it went and turned those teachings upon us! Despite our superior skills, our numbers have always been few, and their strength overwhelmed.</i>"</ref>
+* Second Sentinel's <b>Gilded Parry</b> bears resemblance to a manoeuvre used by [[Lace]], suggesting that one's technique was based on the other, or that it otherwise shared a similar source.
+* Second Sentinel has the same voice as a [[Cogwork Defender]].
+* In the <i>Silksong</i> reveal trailier and early promotional material, it is shown that the Second Sentinel boss fight originally took place in the upper halls of [[Choral Chambers]], with darkened sprites.<ref>[https://www.youtube.com/watch?v=pFAknD_9U7c Hollow Knight: Silksong Reveal Trailer]</ref>
+
+{{History
+|game = SS
+|1.0.28891 (Patch 3): Fixed rare instance of Second Sentinel becoming rotated when defeated.
+|1.0.29280 (Patch 4): Fixed additional instance of Second Sentinel being able to push Hornet out of bounds in rare instances.
+}}
+{{Localisation
+|DEname = Zweiter Wächter
+|DEmeaning = Second Guardian 
+|ESname = Segundo Centinela
+|ESmeaning = Second Sentinel
+|FRname = Seconde Sentinelle
+|FRmeaning = Second Sentinel
+|ITname = Seconda Sentinella
+|ITmeaning = Second Sentinel
+|JAname=第二の歩哨
+|JAromanised= Daini no hoshō
+|JAmeaning = Second Sentinel
+|KOname = 두 번째 파수병
+|KOromanised = Du beonjjae pasubyeong
+|KOmeaning = Second Sentinel
+|PTname =  Segundo Sentinela
+|PTmeaning = Second Sentinel
+|RUname = Второй Страж
+|RUromanised = Vtoroj Straž
+|RUmeaning = Second Guardian
+|TWname = 第二戍衛
+|TWromanised = Dì èr shù wèi
+|TWmeaning = Second Guard
+|ZHname = 次席戍卫
+|ZHromanised = Cìxí shù wèi
+|ZHmeaning = Second Rank Guard
+|CODEname = SONG_KNIGHT</code><br><code>SONG_CHEVALIER
+|CODEmeaning = "Song" internally refers to [[the Citadel]].
+}}
+
+{{Refs|hr=ss}}
+<div class="mw-collapsible mw-collapsed" data-expandtext="Show Code References" data-collapsetext="Hide Code References">
+<references group="code" />
+</div>
+
+{{SS Nav NPCs}}
+{{SS Nav Enemies}}
+[[Category:NPCs (Silksong)]]
+
+[[fr:Seconde Sentinelle]]
+[[pt:Segundo Sentinela]]

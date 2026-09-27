@@ -1,0 +1,79 @@
+{{SS Infobox Tool
+| image = <gallery>
+Straight Pin.png|Inventory
+Straight Pin Poison.png|Pollip Pouch
+Straight Pin Pickup.png|Pickup
+</gallery>
+| type = Red
+| damage = 5/8/11/14/17
+| max = 12/15/18/21/24 
+| refill_type = Repair
+| refill = {{S|3.33}} (rounded)
+| effect = Throws a projectile forwards
+| location = [[The Marrow]]
+| description = Light throwing tool, designed for rapid attacks.
+}}
+
+{{Quote
+| Ola, ola, time to play! Take these straight pins and strike the target when you see it!
+| [[Loddie]]
+| Hr = SS
+}}
+
+<b>Straight Pin</b> is a {{CrestSlot|Red|1}} in <i>[[Hollow Knight: Silksong]]</i>. When used, [[Hornet (Silksong)|Hornet]] quickly tosses a pin directly forwards. It can be blocked by attacks and armour.
+
+== Usefulness ==
+Straight Pins can be thrown quickly, have a high maximum capacity, and cost very few [[Shell Shards]] per use, making them easy to continuously fire without consequence.
+
+The pins can be a useful long range attack in the early game.
+
+{{clear|left}}
+
+== How to Acquire ==
+Found inside of [[Grindle]]'s cell in [[the Marrow]].
+
+{{Gallery
+|Image1 = Mapshot SS Marrow Prison.png!Location in the Marrow
+|Image2 = Screenshot SS Straight Pin Room.png!Room where the Straight Pin is acquired
+}}
+
+== Gallery ==
+
+{{Gallery
+|Image1 = GIF SS Straight Pin 01.gif!Hornet throwing Straight Pin
+|Image2 = GIF SS Straight Pin 02.gif!Playing Loddie's minigame
+}}
+
+{{Localisation
+|DEname = Gerade Nadel
+|DEmeaning = Straight Pin
+|ESname = Alfiler recto
+|ESmeaning = Straight Pin
+|FRname = Dardillon
+|FRmeaning = From <i>dard</i> (dart) and <i>-illon</i> (diminutive suffix).
+|ITname = Spillo dritto
+|ITmeaning = Straight Pin
+|JAname = まっすぐなピン
+|JAromanised = Massuguna pin
+|JAmeaning = Straight Pin
+|KOname = 곧은 핀
+|KOromanised = Godeun pin
+|KOmeaning = Straight Pin
+|PTname = Pino Reto
+|PTmeaning = Straight Pin
+|RUname = Прямая булавка
+|RUromanised = Prjamaja bulavka
+|RUmeaning = Straight Pin
+|TWname = 直針
+|TWromanised = Zhí zhēn
+|TWmeaning = same
+|ZHname = 直针
+|ZHromanised = Zhí zhēn
+|ZHmeaning = Straight Pin
+|CODEname= STRAIGHT_PIN
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Dardillon]]

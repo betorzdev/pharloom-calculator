@@ -1,0 +1,119 @@
+__NOTOC__
+{{Nav Games Header|Steel Soul Mode}}
+{| align="center" style="text-align:center;padding:5px;"
+| [[File:Steel Soul Silksong.png|300px]]
+<i>No Reviving. Death is Permanent. The Ultimate Challenge.</i>
+|}
+
+{{Hr|SS}}
+
+<b>Steel Soul Mode</b> is a game mode in <i>[[Hollow Knight: Silksong]]</i> that is unlocked after finishing the game for the first time, or by inputting: <code>up</code>, <code>down</code>, <code>up</code>, <code>down</code>, <code>left</code>, <code>right</code>, <code>left</code>, <code>right</code> on the "Extras" page.
+
+<div class="grid grid--align-center" style="max-width: 1920px;">
+<div class="grid__col--span-12" style="justify-self: center;">
+{{typography|tag=p|style=margin: .5rem 0 0; text-align: center;|type=h1|text=Changes}}
+* [[Hornet (Silksong)|Hornet]] does not respawn upon death. Once Hornet dies, the game ends, and the [[Save Data (Silksong)|save profile]] is reset. 
+** Hornet may be defeated by [[First Sinner]], [[Shakra]], [[Garmond and Zaza]],<ref group="Note">Being hit into the spikes counts as an actual death.</ref> and within [[Elegy of the Deep]] memories without deleting the save profile. 
+** Trying to enter a failed Steel Soul run results in being prompted to clear the save slot. The save slot also says the word "DEFEATED" instead of the location the game was last saved in.
+*** Exiting and reloading the saved slot when close to death can prevent the slot "DEFEATED".
+* [[Styx]] is dead in his nest, with a new passage leading to [[Skynx]]. [[Silkeater|Silkeaters]] can be sold to Skynx for {{R|46–154}}.<ref group="Note">Skynx gives either {{R|50}}, {{R|100}}, or {{R|150}}, with a variation of up to {{R|4}}.</ref>
+** The two [[Void Mass]]es that appear in his nest during [[Act 3]] no longer appear as well.
+** The <i>[[Queen's Egg (Wish)|Queen's Egg]]</i> [[Delivery Wishes|Delivery Wish]] is no longer available as a result, and the [[Queen's Egg]] [[Materium]] entry is unobtainable. The <i>[[Liquid Lacquer (Wish)|Liquid Lacquer]]</i> Delivery Wish now has different prerequisites to accommodate for this.
+* In [[Blasted Steps]], a room with a [[Silkeater]] is replaced with [[Steel Seer Zi]] and her wish, ''[[A Vassal Lost]]''.
+** The wish features a new NPC named [[Sula]], an exclusive boss fight against [[Summoned Saviour]] at the end of a new passageway in [[Bone Bottom]], and completing it rewards Hornet with the [[Growstone]].
+* [[Dead Bug's Purse]] is replaced with [[Shell Satchel]].
+* The White [[Bellhome]] Bell Lacquer is replaced by Chrome.
+
+
+<div class="grid grid--align-center" style="max-width: 1920px;">
+<div class="grid__col--span-12" style="justify-self: center;">
+{{typography|tag=p|style=margin: .5rem 0 0; text-align: center;|type=h1|text=Exclusive Content}}
+</div>
+<div class="grid__col--span-4" style="justify-self: center;">
+{{typography|tag=p|style=margin: .5rem 0 0;|type=h3|text=Bosses}}
+* [[Summoned Saviour]]
+</div>
+<div class="grid__col--span-4" style="justify-self: center;">
+{{typography|tag=p|style=margin: .5rem 0 0;|type=h3|text=NPCs}}
+* [[Steel Seer Zi]]
+* [[Sula]]
+* [[Skynx]]
+</div>
+<div class="grid__col--span-4" style="justify-self: center;">
+{{typography|tag=p|style=margin: .5rem 0 0;|type=h3|text=Wishes}}
+* [[A Vassal Lost]]
+</div>
+</div>
+<hr />
+<div class="grid grid--align-center" style="max-width: 1920px;">
+<div class="grid__col--span-4" style="justify-self: center;">
+{{typography|tag=p|style=margin: .5rem 0 0;|type=h3|text=Tools}}
+* [[Shell Satchel]]
+</div>
+<div class="grid__col--span-4" style="justify-self: center;">
+{{typography|tag=p|style=margin: .5rem 0 0;|type=h3|text=Items}}
+* [[Growstone]]
+</div>
+<div class="grid__col--span-4" style="justify-self: center;">
+{{typography|tag=p|style=margin: .5rem 0 0;|type=h3|text=Misc}}
+* Steel [[Menu Styles (Silksong)|menu style]]
+* Chrome [[Bellhome]] colour
+* 2 [[Achievements (Silksong)#Challenges|achievements]]
+</div>
+</div>
+
+{{Hr|SS}}
+
+{{Gallery
+| Title = Gallery
+| Image1 = Silksong Steel Soul Unlock.png!Screen for unlocking Steel Soul Mode
+| Image2 = Steel Soul SS Completed.png!Screen for completing Steel Soul mode without dying
+| Image3 = Silksong Steel Soul Game Over.png!The Game Over screen, only visible after dying in Steel Soul Mode
+| Image4 = Menu Theme Steel Soul (Silksong).png!Steel [[Menu Styles (Silksong)|menu style]]
+| Image5 = Menu Theme Steel Soul True Ending.png!Steel menu style after [[Endings (Silksong)#Ending 4: Sister of the Void|Sister of the Void]] Ending
+}}
+
+== Achievements ==
+{{Achievement|game=silksong|Steel Soul}}
+{{Achievement|game=silksong|Steel Heart}}
+
+{{Localisation
+|DEname = Modus Seele aus Stahl
+|DEmeaning = Mode Soul of Steel
+|ESname = Modo Alma de acero
+|ESmeaning = Mode Soul of Steel
+|FRname = Mode Âme d'acier
+|FRmeaning = Mode Soul of Steel
+|ITname = Modalità Anima d'acciaio
+|ITmeaning = Mode Soul of Steel
+|JAname = スティールソウル・モード
+|JAkatakana = foreign  
+|JAromanised = Sutīru souru mōdo
+|JAmeaning = Steel Soul Mode 
+|KOname = 강철 영혼 모드
+|KOromanised = Gangcheol yeonghon modeu
+|KOmeaning = Steel Soul Mode
+|PTname = Modo Alma de Aço
+|PTmeaning = Mode Soul of Steel
+|RUname = Режим Стальной души
+|RUromanised = Režim Stal'noj duši
+|RUmeaning = Mode Steel Soul
+|TWname = 鋼鐵之魂模式
+|TWromanised = Gāngtiě zhī hún móshì
+|TWmeaning = same
+|ZHname = 钢铁之魂模式
+|ZHromanised = Gāngtiě zhī hún móshì
+|ZHmeaning = Soul of Steel Mode
+|CODEname = PERMA</code><br><code>MODE_STEEL</code><br><code>STEEL_SOUL
+}}
+
+{{Hr|SS}}
+
+== Notes ==
+<references group="Note"/>
+
+[[fr:Mode Âme d’acier (Silksong)]]
+[[pt:Modo Alma de Aço (Silksong)]]
+
+[[Category:Steel Soul Mode (Silksong)| ]]
+{{DISPLAYTITLE:Steel Soul Mode (''Silksong'')}}

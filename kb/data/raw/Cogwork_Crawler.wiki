@@ -1,0 +1,92 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Cogwork Crawler.png|Hunter's Journal
+Cogwork Crawler Idle.png|Idle
+</gallery>
+| hasdrop = true
+| sh1 = 3-5
+| sh2 = 4-7
+|health=35/{{BT|70}}
+|damage_modifiers={{SS Spaced Damage Modifiers|1.25|1|1|1|1}}
+|numbers_required = 15
+|sing=Cogworker
+}}
+{{Quote
+|Hr = Journal
+|Automaton built in the shape of a scuttling bug. Its back contains retractable pins, intended to cut song cylinders free of any obstruction.<hr>
+Its form is certainly based on bugs found outside the Citadel. In my own craftwork, I too often look to nature for inspiration.
+}}
+
+<b>Cogwork Crawlers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are small [[Cogwork Bugs|automatons]] with long retractable pins on their backs.<ref>Cogwork Crawler [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Automaton built in the shape of a scuttling bug. Its back contains retractable pins, intended to cut song cylinders free of any obstruction."</i></ref> 
+
+== Behaviour and Tactics ==
+Cogwork Crawlers crawl up and down unpredictably along walls, pausing frequently. Once [[Hornet (Silksong)|Hornet]] approaches or attacks them, they stop moving and extend long pins from their backs for around 1.5 seconds. Even whilst retracted, the pins shield them from horizontal Needle attacks and most [[Tools]].
+
+[[Needle#Needle-bouncing|Needle-bouncing]] or up-slashes are all that is required to kill them, as they cannot defend the space above or below themselves.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Cogwork Crawlers have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* ...Am I...Who?...
+* ...Lift it...Fix it...Me?...
+* ...The Core...Holy...
+* ...Work...Eternal...
+* ...To mend...
+* ...To serve...
+}}
+
+== Location ==
+Cogwork Crawlers can be found throughout the [[Cogwork Core]].
+
+{{Gallery
+|Image1 = Mapshot SS Cogwork Crawler 01.png!Locations in the Cogwork Core
+|Image2 = Mapshot SS Cogwork Crawler 02.png!Locations in the Cogwork Core in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Cogwork Crawler 01.png!In the Cogwork Core
+|Image2= Screenshot SS Cogwork Crawler 02.png!Extending pins
+|Image3= Screenshot SS Cogwork Crawler 03.png!Reacting to the Needolin
+|Image4= Screenshot SS Cogwork Crawler 04.png![[Silk Fly]] freed upon death
+}}
+
+==Trivia==
+* "Song cylinders" (as opposed to [[Psalm Cylinder]]s) likely refer to the rotating cylindrical structures found in the [[Cogwork Core]].<ref>Modded [[:File:Screenshot SS Cogwork Core 20.png|screenshot]] of a cylinder in the Cogwork Core.</ref>
+* When singing, Cogwork Crawlers produce the same chirping sounds as [[Hornet (Silksong)|Hornet]]'s and [[Maestro]]'s [[Cogfly|Cogflies]].
+
+{{Localisation
+|DEname = Räderwerk-Krabbler
+|DEmeaning = Cogwork Crawler
+|ESname = Reptador mecánico
+|ESmeaning = Mechanical Crawler
+|FRname = Rampant Mécanique
+|FRmeaning = Mechanical Crawler
+|ITname = Meccanismo Corridore
+|ITmeaning = Running Mechanism
+|JAname = カラクリハイズリ
+|JAromanised = Karakuri haizuri
+|JAmeaning = Combination of {{lang|ja|カラクリ <i>karakuri</i>}} (mechanism) and {{lang|ja|這いずり <i>haizuri</i>}} (crawler).
+|KOname = 톱니바퀴 굼벵이
+|KOromanised = Tomnibakwi gumbengi
+|KOmeaning = Cogwheel Larva
+|PTname =  Rastejador Mecânico
+|PTmeaning = Mechanical Crawler
+|RUname = Заводной ползун
+|RUromanised = Zavodnoj polzun
+|RUmeaning = Clockwork Crawler
+|TWname = 機樞巡遊者
+|TWromanised = Jīshū xúnyóu zhě
+|TWmeaning = same
+|ZHname = 机枢巡游者
+|ZHromanised = Jīshū xúnyóu zhě
+|ZHmeaning = Mechanical Patroller
+|CODEname=SONG_AUTOMATON_GOOMBA
+|CODEmeaning = Cogwork Crawlers act like [https://www.mariowiki.com/Goomba Goombas] from the <i>Mario</i> franchise, but on walls instead of the ground. "Song" internally refers to the Citadel. Other [[Architects#Creations |Cogwork Bugs]] use the Automaton name internally
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

@@ -1,0 +1,81 @@
+{{SS Infobox Ability
+| description1 = Fabled Weaver talent. Dash forward and sprint with unnatural speed, as though gliding upon Silk.
+| title2 = <small>Bound the Ancestral Art</small><br>Swift Step
+| description2 = Hold SPRINT<hr/>
+Sprint at blinding speed, beyond one's natural limits. Chase down prey and leap great distances.
+| input = SPRINT
+| location = [[Deep Docks]]
+}}
+<b>Swift Step</b> is an [[Abilities (Silksong)|Ability]] that [[Hornet (Silksong)|Hornet]] acquires in <i>[[Hollow Knight: Silksong]]</i>. It allows her to dash and sprint, helping her traverse [[Areas (Silksong)|areas]] quickly and jump across longer gaps.
+
+== Function ==
+* Tap SPRINT to dash forwards. This can be used on the ground or while airborne.
+** While airborne, hold DOWN and tap SPRINT to dash downwards. If SPRINT is held, Hornet does not stop the down-dash until the button is released.
+* Hold SPRINT to run along the ground. Hornet moves 112% faster and can jump farther.
+* While sprinting or dashing, press ATTACK to perform a run-slash with the [[Needle]]. The specific move varies depending on the equipped [[Crest]]. 
+** Performing a run-slash resets the needle's attack cooldown, allowing Hornet to perform a non-run-slash attack again immediately. All crests except the Reaper and Shaman crest don't interrupt the dash when performing a run-slash, and as such require Hornet to stop holding SPRINT or hit an enemy in order to not run-slash again.
+** The Wanderer Crest has a special followup attack when ATTACK is pressed after hitting an enemy with a run-slash. Both of these hits count as part of the run-slash, which means performing the second hit will reset the needle's attack cooldown.
+* While swimming, tap or hold SPRINT to swim faster. Doing so does not allow for attacks or longer jumps like it does on land.
+* With the [[Silkspeed Anklets]] equipped, sprinting is 34% faster but drains 1 [[Silk]] strand every 6 seconds.
+Swift Step is necessary to complete some jumps throughout the game. For larger gaps, Hornet can sprint, make a longer jump, and then dash in midair to clear them.
+
+===Run-slashes===
+*[[Hunter Crest]]: Hornet strikes with the point of her needle and keeps running on a miss. On a hit, Hornet is launched into the air, similarly to a down-slash.
+*[[Reaper Crest]]: Hornet performs an uppercut, raising her into the air and stopping her run with a jumping backflip.
+*[[Wanderer Crest]]: Hornet performs a quick, short-range slash, which does not stop movement on a miss. On hit, Hornet darts up and back. Another attack input shortly after a hit results in a followup attack where Hornet dashes back in, launching her into the air on hit. Both hits can generate Silk.
+*[[Beast Crest]]: Hornet hops up and slashes her Needle in a wider arc. On a successful hit, she leaps up while keeping some forward momentum.
+*[[Witch Crest]]: Hornet sweeps her needle twice, carrying her forward. If she hits something, she briefly vanishes after the second hit before leaping upwards. Roughly 2x Needle damage is dealt across 3 hits. The first and second hits can both generate Silk, for a total of 2 Silk. Unlike other run-slashes, this Crest's run-slash does not have a startup animation, making gauging the initial dash of Swift Step crucial to avoid contact damage.
+*[[Architect Crest]]: Hornet dashes and drills forwards. Holding the attack button makes Hornet pause briefly to charge, extending the spin time, dash distance, and the number of hits it deals. With a full charge, it deals double damage and strikes twice as many times. The damage is spread roughly evenly across hits. On hit, Hornet is launched into the air.
+*[[Shaman Crest]]: Hornet hops forwards and shoots a circular energy wave that pushes her back. This always pushes Hornet back the same amount, but has a small blind spot directly in front of her, meaning it can miss smaller enemies at close range.
+
+== How to Acquire ==
+Swift Step can be found in a [[Weaver Burial Spire]] in the northernmost area of [[Deep Docks]].
+
+{{Gallery
+| Image1 = Mapshot SS Swift Step.png!Location in Deep Docks
+| Image2 = Screenshot SS Deep Docks 01.png!Weaver spire
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Icon SS Swift Step Splash.png ! Splash Art
+|Image2 = Icon SS Swift Step Splash Clear.png ! Splash Art
+}}
+
+{{History
+|game = SS
+|1.0.28891 (Patch 3): Fixed rare instances of being able to air dash when not intended.
+}}
+{{Localisation
+|DEname = Flinkschritt
+|DEmeaning = Quick Step
+|ESname = Paso ágil
+|ESmeaning = Agile Step
+|FRname = Pas rapide
+|FRmeaning = Rapid Step
+|ITname = Passo Rapido
+|ITmeaning = Rapid Step
+|JAname = 俊敏なる脚
+|JAromanised = Shunbin naru ashi
+|JAmeaning = Agile Legs
+|KOname = 재빠른 발걸음
+|KOromanised = Jaeppareun balgeoreum
+|KOmeaning = Quick Foot Step
+|PTname = Passo Veloz
+|PTmeaning = Quick Step
+|RUname = Быстрый шаг
+|RUromanised = Bystryj šag
+|RUmeaning = Fast Step
+|TWname = 疾風步
+|TWromanised = Jífēng bù
+|TWmeaning = same
+|ZHname = 疾风步
+|ZHromanised = Jífēng bù
+|ZHmeaning = Quick Step
+|CODEname=SKILL_SPRINT</code><br><code>SPRINT
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Skills}}
+[[fr:Pas rapide]]
+{{#seo:|keywords=silksong, swift step, dash, run, dodge, sprint}}

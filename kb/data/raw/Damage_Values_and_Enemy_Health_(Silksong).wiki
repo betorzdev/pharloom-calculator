@@ -1,0 +1,3284 @@
+__NOTOC__
+{{Nav Games Header}}
+<center><big><b>[[#Damage Values| Damage Values]]</b></big><br />
+[[#Damage Calculation| Damage Calculation]] • [[#Needle| Needle]] • [[#Needle Strike| Needle Strike]] • [[#Tools| Tools]] • [[#Silk Skills| Silk Skills]] • [[#Modifiers| Modifiers]] <br />
+<hr />
+<big><b>[[#Health Values and Damage Modifiers| Health Values and Damage Modifiers]]</b></big><br />
+[[#Standard Enemies| Standard Enemies]] • [[#Bosses and Minibosses| Bosses and Minibosses]]</center>
+
+== Damage Values ==
+
+=== Damage Calculation ===
+To understand how health and damage work, the following concepts are needed:
+* <b>[[#Health_Values_and_Damage_Modifiers|Enemy HP]]</b>: Each enemy has a certain amount of health.
+* <b>[[#Needle|Weapon Damage]]</b>: Each weapon has a base-damage that it would deal on its own.
+* <b>[[#Health_Values_and_Damage_Modifiers|Enemy-specific Modifiers]]</b>: Each enemy has a set of 5 values. Generally, one of these values is used to change the amount of damage taken from a hit, depending on the level of the attacking weapon. More specifically, the relevant level is almost always the level of the thing that would need to be upgraded to change the damage of the attack, i.e. the [[Crafting Kit]] for [[Tools]], and [[Needle]] upgrades for Needle hits, [[Silk Skills]] and similar.
+* <b>[[#Modifiers|Other Modifiers]]</b>: There are numerous other things that can modify damage taken, e.g. [[Barbed Bracelet]] or effects of certain [[Crests]].
+* <b>Bonus Damage</b>: A few things like poison from the [[Pollip Pouch]] do not contribute to direct damage from the initial hit, instead dealing their own bonus damage. Bonus damage generally does not scale with upgrades and is unaffected by all modifiers. 
+* <b>Rounding</b>: Silksong generally applies “round to even” rounding, meaning damage values are rounded to the nearest whole number, with .5 values going to the nearest even number. However, not all cases follow this rule—for example, the follow-up damage from [[Threefold Pin]] and [[Silkshot|Silkshot (Twelfth Architect)]] rounds down instead.
+
+
+It is worth noting that the same type of enemy can have different health and damage modifiers in different circumstances. E.g. a summoned enemy in a bossfight may have different stats from the same enemy encountered outside of the bossfight.
+
+==== Formula ====
+<pre>
+total_damage = weapon_damage[weapon_level] * enemy_modifiers[weapon_level] * player_modifiers
+</pre>
+
+==== Examples ====
+Hornet has one Needle upgrade, and has Barbed Bracelet equipped. She hits an enemy that has a level 1 modifier of 0.8.
+
+<pre>
+total_damage =
+    9    [Needle damage at level 1]
+  * 0.8  [Enemy modifier for level 1 attack]
+  * 1.25 [Barbed Bracelet]
+  = 9 damage
+</pre>
+
+Hornet has Fully Evolved [[Hunter Crest|Hunter's Crest]], Enhanced Focus, all Needle upgrades, [[Barbed Bracelet]], activated [[Flintslate]], and has just used [[Challenge]]. She performs a Needle Strike against an enemy with a level 4 modifier of 1.
+
+<pre>
+total_damage = 
+    29 [Needle Strike damage at level 4]
+  * 1  [Enemy modifier for level 4 attack]
+  * ( 1      [ Additional Modifiers ]
+      + 0.3  [Focus]
+      + 0.2  [Enhanced Focus]
+      + 0.25 [Barbed Bracelet]
+      + 0.5  [Flintslate]
+      + 0.5  [Challenge]
+    )
+  = 79.75 [Round to Even -> Round Up]
+  = 80 damage
+
+total_damage [1st Hit] = 80 damage
+  = 29 * 1 * 2.75 = 79.75 [Round to Even -> Round Up]
+
+total_damage [2nd Hit] = 65 damage
+  = 29 * 1 * 2.25 = 65.25 [Round to Even -> Round Down]
+</pre>
+
+=== Needle ===
+For the purposes of enemy-specific modifiers, the level of Needle Attacks is the level of the Needle. (Note the "level number" is usually identical with the number of Needle upgrades, excepting the [[Cloakless Crest]].)
+
+{| class="article-table"
+! colspan="3" | Basic Needle Attack Damage
+|-
+! Level
+! Source
+! Damage
+|-
+| –
+| No Needle ([[Cloakless Crest]])
+| 3
+|-
+| 0
+| Needle
+| 5
+|-
+| 1
+| Sharpened Needle
+| 9
+|-
+| 2
+| Shining Needle
+| 13
+|-
+| 3
+| Hivesteel Needle
+| 17
+|-
+| 4
+| Pale Steel Needle
+| 21
+|}
+
+=== Needle Strike ===
+For Crests whose [[Needle Strike|Needle Strikes]] deal more than one hit, the total damage inflicted assuming all hits connect is shown in parentheses.
+
+{| class="article-table sortable" style="text-align:center"
+! colspan="6" | [[Needle Strike]] Damage
+|-
+! class="unsortable" rowspan="2" | [[Crests|Crest]]
+! colspan="5" | Damage at Needle Level
+|-
+! style="width: 14ch;" | Lvl. 0
+! style="width: 14ch;" | Lvl. 1
+! style="width: 14ch;" | Lvl. 2
+! style="width: 14ch;" | Lvl. 3
+! style="width: 14ch;" | Lvl. 4
+|-
+! style="text-align:left" | [[Hunter Crest|Hunter]] (2 hits)
+| 7 (14)
+| 13 (26)
+| 18 (36)
+| 24 (48)
+| 29 (58)
+|-
+! style="text-align:left" | [[Reaper Crest|Reaper]]
+| 12
+| 22
+| 32
+| 42
+| 52
+|-
+! style="text-align:left" | [[Wanderer Crest|Wanderer]] (5 hits)
+| 3 (15)
+| 5 (25)
+| 7 (35)
+| 9 (45)
+| 12 (60)
+|-
+! style="text-align:left" | [[Beast Crest|Beast]]
+| 12
+| 22
+| 32
+| 42
+| 52
+|-
+! style="text-align:left" | [[Witch Crest|Witch]] (2-4 hits)
+| 4 (8-16)
+| 7 (14-28)
+| 10 (20-40)
+| 14 (28-56)
+| 17 (34-68)
+|-
+! style="text-align:left" | [[Architect Crest|Architect]] (5 hits)
+| 3 (15)
+| 5 (25)
+| 8 (40)
+| 10 (50)
+| 13 (65)
+|-
+! style="text-align:left" | [[Shaman Crest|Shaman]]
+| 12
+| 21
+| 30
+| 39
+| 48
+|}
+
+=== Tools ===
+For the purposes of enemy-specific modifiers, the level of [[Tools|Tool]] attacks is the level of the [[Crafting Kit]].
+
+{| class="article-table sortable" style="text-align:center"
+! colspan="7" | [[Tools|Tool]] Damage
+|-
+! class="unsortable" rowspan="2" | 
+! rowspan="2" | [[Tools]]
+! colspan="5" | Damage at [[Crafting Kit]] level
+|-
+! style="width: 14ch;" | Lvl. 0
+! style="width: 14ch;" | Lvl. 1
+! style="width: 14ch;" | Lvl. 2
+! style="width: 14ch;" | Lvl. 3
+! style="width: 14ch;" | Lvl. 4
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Straight Pin]]
+| 5
+| 8
+| 11
+| 14
+| 17
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Threefold Pin]]<br>(1st+2nd+3rd hit)
+| 4+2+1 / 7
+| 6+3+2 / 11
+| 9+4+3 / 16
+| 11+5+3 / 19
+| 14+7+4 / 25
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Sting Shard]]<br>(one spike/full hit)
+| 4 / 10
+| 6 / 15
+| 9 / 20
+| 11 / 30
+| 14 / 35
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Tacks]]<br>(damage per hit × 2 hits per tack @ 4 tacks per use / total per use)
+| 2×2×4 / 16
+| 3×2×4 / 24
+| 4×2×4 / 32
+| 6×2×4 / 48
+| 7×2×4 / 56
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Longpin]]
+| 5
+| 8
+| 11
+| 14
+| 17
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Curveclaw]]<br>(per hit)
+| 3
+| 5
+| 7
+| 8
+| 10
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Curvesickle]]<br>(per hit)
+| 5
+| 8
+| 11
+| 14
+| 17
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Throwing Ring]]<br>(per hit)
+| 4
+| 6
+| 9
+| 11
+| 14
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Pimpillo]]
+| 15
+| 24
+| 33
+| 42
+| 51
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Conchcutter]]<br>(per hit, 6 hits / total)
+| 2×6 / 12
+| 3×6 / 18
+| 4×6 / 24
+| 6×6 / 36
+| 7×6 / 42
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Silkshot|Silkshot (Forge Daughter)]]
+| 6
+| 10
+| 13
+| 17
+| 20
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Silkshot|Silkshot (Twelfth Architect)]]<br>(1st+2nd+3rd hit)
+| 3+1+1 / 5
+| 5+2+1 / 8
+| 7+3+2 / 12
+| 8+4+2 / 14
+| 10+5+3 / 18
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Silkshot|Silkshot (Original)]]
+| 10
+| 16
+| 22
+| 28
+| 34
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Delver's Drill]]<br>(per hit, 6 hits / total)
+| 4×6 / 24
+| 6×6 / 36
+| 9×6 / 54
+| 11×6 / 66
+| 14×6 / 84
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Cogwork Wheel]]<br>(per hit, 7 hits / total)
+| 2×7 / 14
+| 3×7 / 21
+| 4×7 / 28
+| 6×7 / 42
+| 7×7 / 49
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Cogfly]]<br>(per hit, 5 hits per fly / total per fly)
+| 3×5 / 15
+| 5×5 / 25
+| 7×5 / 35
+| 8×5 / 40
+| 10×5 / 50
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Rosary Cannon]] (High/Low)
+| 2/1
+| 3/2
+| 4/2
+| 6/3
+| 7/3
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Voltvessels|Voltvessels (Spear)]]<br>(needle + zap, 6 zaps / total)<br> (Attack uses Needle upgrade)
+| 5 + 3×6 / 23
+| 8 + 5×6 / 38
+| 11 + 7×6 / 53
+| 14 + 8×6 / 62
+| 17 + 10×6 / 77
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Voltvessels|Voltvessels (Bola)]]<br>(orb + zap, 4 zaps / total)
+| 5 + 3×4 / 17
+| 5 + 5×4 / 25
+| 5 + 7×4 / 33
+| 5 + 8×4 / 37
+| 5 + 10×4 / 45
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Flintslate]]<br>(bonus burning damage, 3 ticks)<br> (uses Needle upgrade)
+| 1×3 / 3
+| 2×3 / 6
+| 3×3 / 9
+| 3×3 / 9
+| 4×3 / 12
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Snare Setter]]<br>(direct hit/snare)
+| 7/25
+| 11/40
+| 15/55
+| 20/70
+| 24/85
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Flea Brew]]<br>(Thrown when empty)
+| 3
+| 3
+| 3
+| 3
+| 3
+|-
+! {{CrestSlot|Red}}
+! style="text-align:left" | [[Needle Phial]]
+| 7
+| 11
+| 15
+| 20
+| 24
+|-
+! {{CrestSlot|Blue}}
+! style="text-align:left" | [[Warding Bell]]<br>(when hit during Binding)
+| 9
+| 14
+| 20
+| 25
+| 31
+|-
+! {{CrestSlot|Blue}}
+! style="text-align:left" | [[Pollip Pouch]]<br>(2-3 ticks per poison, depends on tool)
+| 1
+| 2
+| 2
+| 3
+| 3
+|-
+! {{CrestSlot|Blue}}
+! style="text-align:left" | [[Sawtooth Circlet]]
+| 8+1
+| 13+1
+| 18+1
+| 22+1
+| 27+1
+|-
+! {{CrestSlot|Blue}}
+! style="text-align:left" | [[Claw Mirror]]
+| 11 + 5x2 / 21
+| 18 + 5x2 / 28
+| 24 + 5x2 / 34
+| 31 + 5x2 / 41
+| 37 + 5x2 / 47
+|-
+! {{CrestSlot|Blue}}
+! style="text-align:left" | [[Claw Mirrors]]
+| 15 + 8x2 / 31
+| 24 + 8x2 / 40
+| 33 + 8x2 / 49
+| 42 + 8x2 / 58
+| 51 + 8x2 / 67
+|-
+! {{CrestSlot|Blue}}
+! style="text-align:left" | [[Memory Crystal]]
+| 10
+| 16
+| 22
+| 28
+| 34
+|-
+! {{CrestSlot|Blue}}
+! style="text-align:left" | [[Wispfire Lantern]]
+| 5
+| 8
+| 11
+| 14
+| 17
+|}
+
+=== Silk Skills ===
+For the purposes of enemy-specific modifiers, the level of {{CrestSlot|Skill|1}} attacks is the level of the Needle.
+
+{| class="article-table sortable" style="text-align:center"
+! colspan="6" | [[Silk Skills|'''Silk Skills''']]
+|-
+! class= "unsortable" rowspan="2" | [[Silk Skills|Silk Skill]]
+! colspan="5" | Damage at [[Needle]] level
+|-
+! style="width: 14ch;" | Lvl. 0
+! style="width: 14ch;" | Lvl. 1
+! style="width: 14ch;" | Lvl. 2
+! style="width: 14ch;" | Lvl. 3
+! style="width: 14ch;" | Lvl. 4
+|-
+! style="text-align:left" | [[Silkspear]]
+| 15
+| 27
+| 39
+| 51
+| 63
+|-
+! style="text-align:left" | [[Thread Storm]]<br>(per first 4 hits / 5th hit  / Total)
+| 4 / 1 /  17
+| 7 / 2 / 30
+| 10 / 3 / 43
+| 13 / 4 / 56
+| 16 / 5 / 69
+|-
+! style="text-align:left" | [[Thread Storm| Thread Storm (Extended)]]<br>(per extra hit, max 6 hits / Total)
+| 1 / 23
+| 1 / 36
+| 2 / 55
+| 3 / 74
+| 4 / 93
+|-
+! style="text-align:left" | [[Cross Stitch]]<br>(per hit, 4 hits / Total)
+| 4 / 16
+| 7 / 28
+| 10 / 40
+| 13 / 52
+| 16 / 64
+|-
+! style="text-align:left" | [[Sharpdart]]<br>(main hit + secondary hits / Total)
+| 14+1+1+1 / 17
+| 25+2+2+2 / 31
+| 36+3+3+3 / 45
+| 47+4+4+4 / 59
+| 58+5+5+5 / 73
+|-
+! style="text-align:left" | [[Rune Rage]] (first hit)<ref>Only the first rune to hit an enemy deals full damage. The n<sup>th</sup> rune in a cast to hit the same enemy will deal 1/n<sup>th</sup> of the damage.</ref>
+| 10
+| 19
+| 27
+| 36
+| 44
+|-
+! style="text-align:left" | [[Pale Nails]]<br>(per hit, 3 hits / Total)
+| 5 / 15
+| 9 / 27
+| 13 / 39
+| 17 / 51
+| 21 / 63
+|}
+<references/>
+
+=== Modifiers ===
+
+{| class="article-table"
+|-
+! colspan="2" |<center>Needle</center>
+|-
+!Source
+!Damage
+|-
+|[[Challenge]] (first hit only)
+| +50%
+|-
+|[[Hunter Crest]] lvl 2, 6+ attacks without taking damage
+| +30%
+|-
+|[[Hunter Crest]] lvl 3, 12+ attacks without taking damage
+| +20%
+|-
+|[[Wanderer Crest]] (Critical Hit)
+| x 3 <ref>Multiplier is applied to the final modified damage after all other modifiers listed here take effect.</ref>
+|-
+|[[Beast Crest]] fury (after binding)
+| +25%
+|-
+|[[Flintslate]]
+| +50%
+|-
+|[[Barbed Bracelet]]
+| +25%
+|-
+! colspan="2" |<center>Silk Skills</center>
+|-
+|[[Shaman Crest]]
+| +40%
+|-
+|[[Volt Filament]]
+| +25% <ref>Also adds 1-3 instances of 5 flat damage, varying in number between Silk Skills</ref>
+|-
+|}
+<references/>
+
+===Miscellaneous===
+
+{| class="article-table"
+! Source
+! Damage
+|-
+! colspan="2" | Environment
+|-
+| [[Flintstone]]
+| Projectile Contact: 5 <br> Explosion: 6 <br> Surface Contact: 3
+|-
+| Lava ([[Lace#Deep Docks|Lace]])
+| 40
+|-
+| Arena Knockout ([[Lace#The Cradle|Lace]])
+| 15
+|-
+| Lava ([[Forebrothers Signis & Gron]])
+| 5
+|-
+| Boulder ([[Savage Beastfly#Far Fields|Savage Beastfly]])
+| 100
+|-
+! colspan="2" | Allies
+|-
+| [[Shakra]]
+| Ring Throw: 10 <br> Ring Burst: 10 + 15
+|-
+| [[Garmond and Zaza]]
+| 5
+|-
+| [[Second Sentinel]]
+| 13
+|-
+! colspan="2" | Enemy Attacks
+|-
+| [[Flintbeetle]] Spark Attacks
+| 10
+|-
+| [[Rhinogrund]] Physical Attacks
+| 100
+|-
+| [[Pilgrim Bellbearer]] Projectile
+| {{MissingInfo}}
+|-
+| [[Winged Pilgrim Bellbearer]] Projectile
+| {{MissingInfo}}
+|-
+| [[Skarr Scout]] Projectile
+| 8
+|-
+| [[Roachcatcher]] Projectile
+| 5
+|-
+| [[Stilkin Trapper]] Projectile
+| 50
+|-
+| [[Pondcatcher]] Projectile
+| 15
+|-
+| [[Nyleth]] Spike Balls
+| 15
+|-
+| [[Driznit]] Projectile
+| 15
+|-
+| [[Driznarga]] Projectile
+| 15
+|-
+| [[Great Conchflies|Great Conchfly]] Projectile
+| 15
+|-
+| [[Raging Conchfly]] Projectile
+| 15
+|-
+| [[Yago]] Projectile
+| {{MissingInfo}}
+|-
+| [[Choir Bellbearer]] Projectile
+| {{MissingInfo}}
+|-
+| [[Memoria]] Projectile
+| {{MissingInfo}}
+|-
+| [[Freshfly]] Explosion
+| 5
+|-
+| [[Servitor Boran]] Attacks
+| 100
+|-
+|}
+
+== Health Values and Damage Modifiers ==
+
+{{Disclaimer| Enemies with multiple different health values and/or damage modifiers are not yet fully explored. Expanding this table and the enemy pages to indicate which values correspond to which appearance in-game is a WIP.}}
+
+=== Standard Enemies ===
+
+{| class="article-table sortable"
+|-
+! colspan="9" | Regular Enemies
+|-
+! style="width: 3ch;" rowspan="2" | [[Hunter's Journal (Silksong)|HJ]] ID
+! style="width: 35ch;" rowspan="2" colspan="2" | Enemy
+! style="width: 12ch;" rowspan="2" |  HP / [[Black-Threading|BT]]
+! style="width: 46ch;" colspan="5" | Damage Modifiers by [[Damage Values and Enemy Health (Silksong)#Needle|Needle Level]]
+|-
+! style="width: 5ch;" class="unsortable"| Lvl. 0
+! style="width: 5ch;" class="unsortable"| Lvl. 1
+! style="width: 5ch;" class="unsortable"| Lvl. 2
+! style="width: 5ch;" class="unsortable"| Lvl. 3
+! style="width: 5ch;" class="unsortable"| Lvl. 4
+|-
+!5
+! style="width: 1ch;" | [[File:HJ Aknid.png|30px|link=Aknid]]
+! style="text-align:left" | [[Aknid]]
+| 15 / 60
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!137
+! [[File:HJ Alita.png|30px|link=Alita]]
+! style="text-align:left" | [[Alita]]
+| 80
+| 1.5
+| 1.2
+| 1.1
+| 1
+| 1
+|-
+!96
+! [[File:HJ Barnak.png|30px|link=Barnak]]
+! style="text-align:left" | [[Barnak]]
+| 35
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!11
+! [[File:HJ Beastfly.png|30px|link=Beastfly]]
+! style="text-align:left" | [[Beastfly]]
+| 15 / 60
+| 1
+| 0.8
+| 0.8
+| 0.8
+| 0.8
+|-
+!11
+! [[File:HJ Beastfly.png|30px|link=Beastfly]]
+! style="text-align:left" | [[Beastfly]] ([[Savage Beastfly]])
+| 15
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!82
+! [[File:HJ Bloatroach.png|30px|link=Bloatroach]]
+! style="text-align:left" | [[Bloatroach]]
+| 80 / 160
+| 1.75
+| 1.2
+| 1
+| 0.9
+| 0.9
+|-
+!49
+! [[File:HJ Brushflit.png|30px|link=Brushflit]]
+! style="text-align:left" | [[Brushflit]]
+| 1
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!70
+! [[File:HJ Burning Bug.png|30px|link=Burning Bug]]
+! style="text-align:left" | [[Burning Bug]]
+| 90
+| 1.5
+| 1.15
+| 1
+| 1
+| 1
+|-
+!13
+! [[File:HJ Caranid.png|30px|link=Caranid]]
+! style="text-align:left" | [[Caranid]]
+| 14 / 56
+| 1
+| 0.75
+| 0.75
+| 0.75
+| 0.75
+|-
+!155
+! [[File:HJ Choir Bellbearer.png|30px|link=Choir Bellbearer]]
+! style="text-align:left" | [[Choir Bellbearer]]
+| 35 / 70
+| 1.4
+| 1
+| 1
+| 0.8
+| 0.8
+|-
+!157
+! [[File:HJ Choir Elder.png|30px|link=Choir Elder]]
+! style="text-align:left" | [[Choir Elder]]
+| 45 / 90
+| 1.5
+| 1
+| 1
+| 0.8
+| 0.8
+|-
+!156
+! [[File:HJ Choir Flyer.png|30px|link=Choir Flyer]]
+! style="text-align:left" | [[Choir Flyer]]
+| 30 / 60
+| 1.5
+| 1
+| 1
+| 0.8
+| 0.8
+|-
+!156
+! [[File:HJ Choir Flyer.png|30px|link=Choir Flyer]]
+! style="text-align:left" | [[Choir Flyer]] (Fighting [[Second Sentinel]])
+| 40 / 80
+| 1.5
+| 1
+| 1
+| 0.8
+| 0.8
+|-
+!154
+! [[File:HJ Choir Hornhead.png|30px|link=Choir Hornhead]]
+! style="text-align:left" | [[Choir Hornhead]]
+| 45 / 90
+| 1.5
+| 1
+| 1
+| 0.8
+| 0.8
+|-
+!154
+! [[File:HJ Choir Hornhead.png|30px|link=Choir Hornhead]]
+! style="text-align:left" | [[Choir Hornhead]] (Fighting [[Second Sentinel]])
+| 55 / 110
+| 1.5
+| 1
+| 1
+| 0.8
+| 0.8
+|-
+!153
+! [[File:HJ Choir Pouncer.png|30px|link=Choir Pouncer]]
+! style="text-align:left" | [[Choir Pouncer]]
+| 30 / 60
+| 1.5
+| 1
+| 1
+| 0.8
+| 0.8
+|-
+!158
+! [[File:HJ Choristor.png|30px|link=Choristor]]
+! style="text-align:left" | [[Choristor]]
+| 55 / 110
+| 1
+| 1
+| 0.8
+| 0.8
+| 0.8
+|-
+!158
+! [[File:HJ Choristor.png|30px|link=Choristor]]
+! style="text-align:left" | [[Choristor]] (Fighting [[Garmond]])
+| 5
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!162
+! [[File:HJ Clawmaiden.png|30px|link=Clawmaiden]]
+! style="text-align:left" | [[Clawmaiden]]
+| 48
+| 1.25
+| 1
+| 0.9
+| 0.9
+| 0.9
+|-
+!209
+! [[File:HJ Cloverstag.png|30px|link=Cloverstag]]
+! style="text-align:left" | [[Cloverstag]]
+| 62
+| 1.5
+| 1.5
+| 1
+| 1
+| 1
+|-
+!177
+! [[File:HJ Cogwork Choirbug.png|30px|link=Cogwork Choirbug]]
+! style="text-align:left" | [[Cogwork Choirbug]]
+| 35 / 70
+| 1.25
+| 1
+| 1
+| 1
+| 1
+|-
+!178
+! [[File:HJ Cogwork Cleanser.png|30px|link=Cogwork Cleanser]]
+! style="text-align:left" | [[Cogwork Cleanser]]
+| 40 / 80
+| 1.25
+| 1
+| 1
+| 1
+| 1
+|-
+!174
+! [[File:HJ Cogwork Crawler.png|30px|link=Cogwork Crawler]]
+! style="text-align:left" | [[Cogwork Crawler]]
+| 35 / 70
+| 1.25
+| 1
+| 1
+| 1
+| 1
+|-
+!179
+! [[File:HJ Cogwork Defender.png|30px|link=Cogwork Defender]]
+! style="text-align:left" | [[Cogwork Defender]]
+| 55 / 110
+| 1.25
+| 1
+| 1
+| 1
+| 1
+|-
+!173
+! [[File:HJ Cogwork Hauler.png|30px|link=Cogwork Hauler]]
+! style="text-align:left" | [[Cogwork Hauler]]
+| 20
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!176
+! [[File:HJ Cogwork Spine.png|30px|link=Cogwork Spine]]
+! style="text-align:left" | [[Cogwork Spine]]
+| 21 / 42
+| 1.25
+| 1
+| 1
+| 1
+| 1
+|-
+!172
+! [[File:HJ Cogwork Underfly.png|30px|link=Cogwork Underfly]]
+! style="text-align:left" | [[Cogwork Underfly]]
+| 4
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!175
+! [[File:HJ Cogworker.png|30px|link=Cogworker]]
+! style="text-align:left" | [[Cogworker]]
+| 28
+| 1.25
+| 1
+| 1
+| 1
+| 1
+|-
+!124
+! [[File:HJ Conchfly.png|30px|link=Conchfly]]
+! style="text-align:left" | [[Conchfly]]
+| 45
+| 1.5
+| 1.2
+| 1.1
+| 1
+| 1
+|-
+!124
+! [[File:HJ Conchfly.png|30px|link=Conchfly]]
+! style="text-align:left" | [[Conchfly]] ([[Coral Tower]])
+| 55
+| 1.5
+| 1.2
+| 1.1
+| 1
+| 1
+|-
+!120
+! [[File:HJ Coral Furm.png|30px|link=Coral Furm]]
+! style="text-align:left" | [[Coral Furm]]
+| 45
+| 1.25
+| 1
+| 1
+| 1
+| 1
+|-
+!47
+! [[File:HJ Cragglite.png|30px|link=Cragglite]]
+! style="text-align:left" | [[Cragglite]]
+| 20 / 40
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!72
+! [[File:HJ Craw.png|30px|link=Craw]]
+! style="text-align:left" | [[Craw]]
+| 20 / 40
+| 1
+| 0.74
+| 0.74
+| 0.74
+| 0.74
+|-
+!75
+! [[File:HJ Craw Juror.png|30px|link=Craw Juror]]
+! style="text-align:left" | [[Craw Juror]]
+| 50
+| 1.5
+| 1
+| 0.95
+| 0.95
+| 0.95
+|-
+!127
+! [[File:HJ Crustcrag.png|30px|link=Crustcrag]]
+! style="text-align:left" | [[Crustcrag]]
+| 80
+| 1.25
+| 1
+| 1
+| 1
+| 1
+|-
+!126
+! [[File:HJ Crustcrawler.png|30px|link=Crustcrawler]]
+! style="text-align:left" | [[Crustcrawler]]
+| 25
+| 2
+| 1.2
+| 1.1
+| 1
+| 1
+|-
+!45
+! [[File:HJ Deep Diver.png|30px|link=Deep Diver]]
+! style="text-align:left" | [[Deep Diver]]
+| 90 / 180
+| 1.25
+| 0.95
+| 0.85
+| 0.75
+| 0.7
+|-
+!142
+! [[File:HJ Drapefly.png|30px|link=Drapefly]]
+! style="text-align:left" | [[Drapefly]]
+| 25 / 50
+| 1
+| 0.9
+| 0.9
+| 0.7
+| 0.7
+|-
+!143
+! [[File:HJ Drapelord.png|30px|link=Drapelord]]
+! style="text-align:left" | [[Drapelord]]
+| 50 / 100
+| 1
+| 0.9
+| 0.9
+| 0.7
+| 0.7
+|-
+!144
+! [[File:HJ Drapemite.png|30px|link=Drapemite]]
+! style="text-align:left" | [[Drapemite]]
+| 25 / 50
+| 1
+| 0.8
+| 0.8
+| 0.7
+| 0.7
+|-
+!65
+! [[File:HJ Dreg Catcher.png|30px|link=Dreg Catcher]]
+! style="text-align:left" | [[Dreg Catcher]]
+| 21 / 42
+| 1
+| 1
+| 0.75
+| 0.75
+| 0.75
+|-
+!65
+! [[File:HJ Dreg Catcher.png|30px|link=Dreg Catcher]]
+! style="text-align:left" | [[Dreg Catcher]] ([[Greymoor]] Arena)
+| - / 74
+| 1
+| 1
+| 0.75
+| 0.75
+| 0.75
+|-
+!167
+! [[File:HJ Dreg Husk.png|30px|link=Dreg Husk]]
+! style="text-align:left" | [[Dreg Husk]]
+| 50
+| 1.2
+| 1
+| 0.85
+| 0.85
+| 0.85
+|-
+!167
+! [[File:HJ Dreg Husk.png|30px|link=Dreg Husk]]
+! style="text-align:left" | [[Dreg Husk]] ([[The Unravelled]])
+| 65
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!168
+! [[File:HJ Dregwheel.png|30px|link=Dregwheel]]
+! style="text-align:left" | [[Dregwheel]]
+| 50
+| 1.2
+| 1
+| 0.85
+| 0.85
+| 0.85
+|-
+!195
+! [[File:HJ Driftlin.png|30px|link=Driftlin]]
+! style="text-align:left" | [[Driftlin]]
+| 4 / 8
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!122
+! [[File:HJ Driznarga.png|30px|link=Driznarga]]
+! style="text-align:left" | [[Driznarga]]
+| 55 / 110
+| 1.5
+| 1.2
+| 1.1
+| 1
+| 1
+|-
+!121
+! [[File:HJ Driznit.png|30px|link=Driznit]]
+! style="text-align:left" | [[Driznit]]
+| 29
+| 1
+| 0.85
+| 0.7
+| 0.7
+| 0.7
+|-
+!97
+! [[File:HJ Ductsucker.png|30px|link=Ductsucker]]
+! style="text-align:left" | [[Ductsucker]]
+| 100
+| 1.25
+| 1.1
+| 1
+| 0.9
+| 0.9
+|-
+!32
+! [[File:HJ Elder Pilgrim.png|30px|link=Elder Pilgrim]]
+! style="text-align:left" | [[Elder Pilgrim]]
+| 30 / 120
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!32
+! [[File:HJ Elder Pilgrim.png|30px|link=Elder Pilgrim]]
+! style="text-align:left" | [[Elder Pilgrim]] (Fighting [[Shakra]])
+| - / 105
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!152
+! [[File:HJ Envoy.png|30px|link=Envoy]]
+! style="text-align:left" | [[Envoy]]
+| 38 / 76
+| 1
+| 1
+| 0.9
+| 0.9
+| 0.9
+|-
+!152
+! [[File:HJ Envoy.png|30px|link=Envoy]]
+! style="text-align:left" | [[Envoy]] (Fighting [[Second Sentinel]])
+| 48 / 96
+| 1
+| 1
+| 0.9
+| 0.9
+| 0.9
+|-
+!213
+! [[File:HJ Escalion.png|30px|link=Escalion]]
+! style="text-align:left" | [[Escalion]]
+| 100
+| 1.35
+| 1.15
+| 1
+| 1
+| 1
+|-
+!50
+! [[File:HJ Fertid.png|30px|link=Fertid]]
+! style="text-align:left" | [[Fertid]]
+| 15 / 30
+| 1
+| 0.75
+| 0.75
+| 0.75
+| 0.75
+|-
+!51
+! [[File:HJ Flapping Fertid.png|30px|link=Flapping Fertid]]
+! style="text-align:left" | [[Flapping Fertid]]
+| 15 / 30
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!43
+! [[File:HJ Flintflame Flyer.png|30px|link=Flintflame Flyer]]
+! style="text-align:left" | [[Flintflame Flyer]]
+| 60 / 120
+| 1.5
+| 1
+| 0.9
+| 0.85
+| 0.85
+|-
+!42
+! [[File:HJ Flintstone Flyer.png|30px|link=Flintstone Flyer]]
+! style="text-align:left" | [[Flintstone Flyer]]
+| 30 / 120
+| 1.5
+| 1
+| 1
+| 0.85
+| 0.85
+|-
+!42
+! [[File:HJ Flintstone Flyer.png|30px|link=Flintstone Flyer]]
+! style="text-align:left" | [[Flintstone Flyer]] (Cutscene)<ref group="Note" name="signis">The one talking to [[Forebrother Signis]] which quickly leaves when the fight starts.</ref>
+| 20
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!63
+! [[File:HJ Fluttermite.png|30px|link=Fluttermite]]
+! style="text-align:left" | [[Fluttermite]]
+| 15 / 30
+| 1
+| 0.8
+| 0.8
+| 0.8
+| 0.8
+|-
+!190
+! [[File:HJ Freshfly.png|30px|link=Freshfly]]
+! style="text-align:left" | [[Freshfly]]
+| 5
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!111
+! [[File:HJ Furm.png|30px|link=Furm]]
+! style="text-align:left" | [[Furm]]
+| 20 / 40
+| 1
+| 1
+| 0.75
+| 0.75
+| 0.75
+|-
+!108
+! [[File:HJ Gahlia.png|30px|link=Gahlia]]
+! style="text-align:left" | [[Gahlia]]
+| 20 / 40
+| 1
+| 1
+| 0.75
+| 0.75
+| 0.75
+|-
+!223
+! [[File:HJ Garpid.png|30px|link=Garpid]]
+! style="text-align:left" | [[Garpid]]
+| 999999 (1)
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!218
+! [[File:HJ Gargant Gloom.png|30px|link=Gargant Gloom]]
+! style="text-align:left" | [[Gargant Gloom]]
+| 200
+| 2
+| 1.5
+| 1.1
+| 1
+| 1
+|-
+!145
+! [[File:HJ Giant Drapemite.png|30px|link=Giant Drapemite]]
+! style="text-align:left" | [[Giant Drapemite]]
+| 100 / 200
+| 1.25
+| 1.15
+| 1
+| 1
+| 1
+|-
+!217
+! [[File:HJ Gloomsac.png|30px|link=Gloomsac]]
+! style="text-align:left" | [[Gloomsac]]
+| 50
+| 2
+| 1.2
+| 1
+| 1
+| 1
+|-
+!160
+! [[File:HJ Grand Reed.png|30px|link=Grand Reed]]
+! style="text-align:left" | [[Grand Reed]]
+| 130 / 260
+| 1.5
+| 1.2
+| 1
+| 1
+| 1
+|-
+!24
+! [[File:HJ Grom.png|30px|link=Grom]]
+! style="text-align:left" | [[Grom]]
+| 30
+| 1
+| 0.8
+| 0.8
+| 0.8
+| 0.8
+|-
+!23
+! [[File:HJ Gromling.png|30px|link=Gromling]]
+! style="text-align:left" | [[Gromling]]
+| 30
+| 1.25
+| 1
+| 1
+| 1
+| 1
+|-
+!192
+! [[File:HJ Guardfly.png|30px|link=Guardfly]]
+! style="text-align:left" | [[Guardfly]]
+| 45 / 90
+| 1.5
+| 1
+| 0.85
+| 0.85
+| 0.85
+|-
+!16
+! [[File:HJ Hardbone Elder.png|30px|link=Hardbone Elder]] 
+! style="text-align:left" | [[Hardbone Elder]]
+| 110 / 220
+| 1.75
+| 1.4
+| 1.1
+| 1
+| 1
+|-
+!16
+! [[File:HJ Hardbone Elder.png|30px|link=Hardbone Elder]]
+! style="text-align:left" | [[Hardbone Elder]] (First Room) <ref group="Note" name="firstff">In the first [[Far Fields]] room they appear in, the second one has lowered HP while the first is normal</ref>
+| 90
+| 1.75
+| 1.4
+| 1.1
+| 1
+| 1
+|-
+!15
+! [[File:HJ Hardbone Hopper.png|30px|link=Hardbone Hopper]]
+! style="text-align:left" | [[Hardbone Hopper]]
+| 20 / 80
+| 1
+| 1
+| 0.75
+| 0.75
+| 0.75
+|-
+!20
+! [[File:HJ Hoker.png|30px|link=Hoker]]
+! style="text-align:left" | [[Hoker]]
+| 15
+| 1
+| 0.8
+| 0.55
+| 0.55
+| 0.8
+|-
+!224
+! [[File:HJ Imoba.png|30px|link=Imoba]]
+! style="text-align:left" | [[Imoba]]
+| 50
+| 1.25
+| 1.1
+| 1
+| 1
+| 1
+|-
+!118
+! [[File:HJ Judge.png|30px|link=Judge]]
+! style="text-align:left" | [[Judge]]
+| 75 / 150
+| 1.25
+| 1
+| 1
+| 1
+| 1
+|-
+!128
+! [[File:HJ Kai.png|30px|link=Kai]]
+! style="text-align:left" | [[Kai]]
+| 5
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!134
+! [[File:HJ Kakri.png|30px|link=Kakri]]
+! style="text-align:left" | [[Kakri]]
+| 60
+| 1.4
+| 1.2
+| 1
+| 1
+| 1
+|-
+!133
+! [[File:HJ Karaka.png|30px|link=Karaka]]
+! style="text-align:left" | [[Karaka]]
+| 90
+| 1.5
+| 1.2
+| 1.1
+| 1
+| 1
+|-
+!10
+! [[File:HJ Kilik.png|30px|link=Kilik]]
+! style="text-align:left" | [[Kilik]]
+| 20 / 80
+| 1
+| 0.9
+| 0.76
+| 0.9
+| 1
+|-
+!211
+! [[File:HJ Kindanir.png|30px|link=Kindanir]]
+! style="text-align:left" | [[Kindanir]]
+| 55
+| 1.35
+| 1.15
+| 1
+| 1
+| 1
+|-
+!183
+! [[File:HJ Lampbearer.png|30px|link=Lampbearer]]
+! style="text-align:left" | [[Lampbearer]]
+| 50 / 100
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!40
+! [[File:HJ Lavalarga.png|30px|link=Lavalarga]]
+! style="text-align:left" | [[Lavalarga]]
+| 85 / 170
+| 1.75
+| 1.2
+| 1.1
+| 0.9
+| 0.9
+|-
+!39
+! [[File:HJ Lavalug.png|30px|link=Lavalug]]
+! style="text-align:left" | [[Lavalug]]
+| 15 / 30
+| 1
+| 0.8
+| 0.8
+| 0.8
+| 0.8
+|-
+!204
+! [[File:HJ Leaf Glider.png|30px|link=Leaf Glider]]
+! style="text-align:left" | [[Leaf Glider]]
+| 1
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!205
+! [[File:HJ Leaf Roller.png|30px|link=Leaf Roller]]
+! style="text-align:left" | [[Leaf Roller]]
+| 42
+| 2
+| 1.25
+| 1
+| 1
+| 1
+|-
+!165
+! [[File:HJ Maestro.png|30px|link=Maestro]]
+! style="text-align:left" | [[Maestro]]
+| 65 / 130
+| 1
+| 1
+| 0.8
+| 0.75
+| 0.75
+|-
+!19
+! [[File:HJ Marrowmaw.png|30px|link=Marrowmaw]]
+! style="text-align:left" | [[Marrowmaw]]
+| 50 / 100
+| 1
+| 0.9
+| 0.75
+| 0.65
+| 0.6
+|-
+!19
+! [[File:HJ Marrowmaw.png|30px|link=Marrowmaw]]
+! style="text-align:left" | [[Marrowmaw]] ([[Moss Grotto]])
+| 45 / 90
+| 1
+| 0.9
+| 0.75
+| 0.65
+| 0.6
+|-
+!2
+! [[File:HJ Massive Mossgrub.png|30px|link=Massive Mossgrub]]
+! style="text-align:left" | [[Massive Mossgrub]]
+| 80
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!18
+! [[File:HJ Mawling.png|30px|link=Mawling]]
+! style="text-align:left" | [[Mawling]]
+| 15 / 30
+| 1
+| 0.8
+| 0.8
+| 0.8
+| 0.8
+|-
+!163
+! [[File:HJ Memoria.png|30px|link=Memoria]]
+! style="text-align:left" | [[Memoria]]
+| 70 / 140
+| 1.5
+| 1
+| 1
+| 1
+| 1
+|-
+!164
+! [[File:HJ Minister.png|30px|link=Minister]]
+! style="text-align:left" | [[Minister]]
+| 60 / 120
+| 1.25
+| 1
+| 1
+| 1
+| 1
+|-
+!90
+! [[File:HJ Miremite.png|30px|link=Miremite]]
+! style="text-align:left" | [[Miremite]]
+| 30
+| 1.5
+| 1.1
+| 1
+| 1
+| 1
+|-
+!62
+! [[File:HJ Mite.png|30px|link=Mite]]
+! style="text-align:left" | [[Mite]]
+| 15 / 30
+| 1
+| 0.8
+| 0.8
+| 0.8
+| 0.8
+|-
+!64
+! [[File:HJ Mitemother.png|30px|link=Mitemother]]
+! style="text-align:left" | [[Mitemother]]
+| 60 / 120
+| 1.2
+| 0.95
+| 0.95
+| 0.95
+| 0.95
+|-
+!196
+! [[File:HJ Mnemonid.png|30px|link=Mnemonid]]
+! style="text-align:left" | [[Mnemonid]]
+| 50
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!197
+! [[File:HJ Mnemonord.png|30px|link=Mnemonord]]
+! style="text-align:left" | [[Mnemonord]]
+| 50
+| 1
+| 1
+| 1
+| 0.9
+| 0.9
+|-
+!170
+! [[File:HJ Mortician.png|30px|link=Mortician]]
+! style="text-align:left" | [[Mortician]]
+| 95 / 190
+| 1.25
+| 1
+| 1
+| 1
+| 1
+|-
+!1
+! [[File:HJ Mossgrub.png|30px|link=Mossgrub]]
+! style="text-align:left" | [[Mossgrub]]
+| 10 / 20
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!3
+! [[File:HJ Mossmir.png|30px|link=Mossmir]]
+! style="text-align:left" | [[Mossmir]]
+| 12 / 24
+| 1
+| 1
+| 0.9
+| 0.9
+| 0.9
+|-
+!89
+! [[File:HJ Mothleaf Lagnia.png|30px|link=Mothleaf Lagnia]]
+! style="text-align:left" | [[Mothleaf Lagnia]]
+| 1
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!81
+! [[File:HJ Muckroach.png|30px|link=Muckroach]]
+! style="text-align:left" | [[Muckroach]]
+| 50 / 100
+| 1.25
+| 1
+| 0.9
+| 0.9
+| 0.9
+|-
+!81
+! [[File:HJ Muckroach.png|30px|link=Muckroach]]
+! style="text-align:left" | [[Muckroach]] (In Cage)
+| 50
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!208
+! [[File:HJ Nuphar.png|30px|link=Nuphar]]
+! style="text-align:left" | [[Nuphar]]
+| 70
+| 1.35
+| 1.15
+| 1
+| 1
+| 1
+|-
+!36
+! [[File:HJ Overgrown Pilgrim.png|30px|link=Overgrown Pilgrim]]
+! style="text-align:left" | [[Overgrown Pilgrim]]
+| 23 / 92
+| 1.4
+| 1.2
+| 1
+| 1
+| 1
+|-
+!206
+! [[File:HJ Pendra.png|30px|link=Pendra]]
+! style="text-align:left" | [[Pendra]]
+| 22
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!206
+! [[File:HJ Pendra.png|30px|link=Pendra]]
+! style="text-align:left" | [[Pendra]] (First Room) <ref group="Note" name="firstlv">In the first room of [[Lost Verdania]], the second one has higher HP while the first is normal</ref>
+| 35
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!207
+! [[File:HJ Pendragor.png|30px|link=Pendragor]]
+! style="text-align:left" | [[Pendragor]]
+| 70
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!188
+! [[File:HJ Penitent.png|30px|link=Penitent]]
+! style="text-align:left" | [[Penitent]]
+| 50
+| 1.5
+| 1.25
+| 1
+| 1
+| 1
+|-
+!106
+! [[File:HJ Phacia.png|30px|link=Phacia]]
+! style="text-align:left" | [[Phacia]]
+| 15 / 30
+| 1
+| 0.75
+| 0.75
+| 0.75
+| 0.75
+|-
+!113
+! [[File:HJ Pharlid.png|30px|link=Pharlid]]
+! style="text-align:left" | [[Pharlid]]
+| 25 / 50
+| 1.25
+| 1
+| 0.9
+| 0.7
+| 0.7
+|-
+!114
+! [[File:HJ Pharlid Diver.png|30px|link=Pharlid Diver]]
+! style="text-align:left" | [[Pharlid Diver]]
+| 25 
+| 1.25
+| 1
+| 0.9
+| 0.7
+| 0.7
+|-
+!30
+! [[File:HJ Pilgrim Bellbearer.png|30px|link=Pilgrim Bellbearer]]
+! style="text-align:left" | [[Pilgrim Bellbearer]]
+| 20 / 80
+| 1.4
+| 1.2
+| 1
+| 1
+| 1
+|-
+!26
+! [[File:HJ Pilgrim Groveller.png|30px|link=Pilgrim Groveller]]
+! style="text-align:left" | [[Pilgrim Groveller]]
+| 20 / 80
+| 1.4
+| 1.2
+| 1
+| 1
+| 1
+|-
+!35
+! [[File:HJ Pilgrim Guide.png|30px|link=Pilgrim Guide]]
+! style="text-align:left" | [[Pilgrim Guide]]
+| 30 / 120
+| 1.5
+| 1.2
+| 1
+| 1
+| 1
+|-
+!34
+! [[File:HJ Pilgrim Hiker.png|30px|link=Pilgrim Hiker]]
+! style="text-align:left" | [[Pilgrim Hiker]]
+| 30 / 90
+| 1.25
+| 1
+| 1
+| 1
+| 1
+|-
+!28
+! [[File:HJ Pilgrim Hornfly.png|30px|link=Pilgrim Hornfly]]
+! style="text-align:left" | [[Pilgrim Hornfly]]
+| 20 / 80
+| 1.4
+| 1.2
+| 1
+| 1
+| 1
+|-
+!29
+! [[File:HJ Pilgrim Hulk.png|30px|link=Pilgrim Hulk]]
+! style="text-align:left" | [[Pilgrim Hulk]]
+| 30 / 120
+| 1.4
+| 1.2
+| 1
+| 1
+| 1
+|-
+!27
+! [[File:HJ Pilgrim Pouncer.png|30px|link=Pilgrim Pouncer]]
+! style="text-align:left" | [[Pilgrim Pouncer]]
+| 20 / 80
+| 1.4
+| 1.2
+| 1
+| 1
+| 1
+|-
+!201
+! [[File:HJ Plasmid.png|30px|link=Plasmid]]
+! style="text-align:left" | [[Plasmid]]
+| 60
+| 1.25
+| 1
+| 1
+| 1
+| 0.9
+|-
+!202
+! [[File:HJ Plasmidas.png|30px|link=Plasmidas]]
+! style="text-align:left" | [[Plasmidas]]
+| 80
+| 1.25
+| 1
+| 1
+| 0.9
+| 0.9
+|-
+!123
+! [[File:HJ Pokenabbin.png|30px|link=Pokenabbin]]
+! style="text-align:left" | [[Pokenabbin]]
+| 45 / 90
+| 1.5
+| 1
+| 1
+| 1
+| 1
+|-
+!107
+! [[File:HJ Pollenica.png|30px|link=Pollenica]]
+! style="text-align:left" | [[Pollenica]]
+| 20 / 40
+| 1
+| 1
+| 0.75
+| 0.75
+| 1
+|-
+!98
+! [[File:HJ Pond Skipper.png|30px|link=Pond Skipper]]
+! style="text-align:left" | [[Pond Skipper]]
+| 15 / 30
+| 1
+| 0.8
+| 0.8
+| 0.8
+| 0.8
+|-
+!99
+! [[File:HJ Pondcatcher.png|30px|link=Pondcatcher]]
+! style="text-align:left" | [[Pondcatcher]]
+| 25 / 100
+| 1.5
+| 1.2
+| 1
+| 1
+| 1
+|-
+!99
+! [[File:HJ Pondcatcher.png|30px|link=Pondcatcher]]
+! style="text-align:left" | [[Pondcatcher]] (Fighting [[Shakra]])
+| - / 88
+| 1
+| 0.9
+| 0.7
+| 0.7
+| 0.7
+|-
+!189
+! [[File:HJ Puny Penitent.png|30px|link=Puny Penitent]]
+! style="text-align:left" | [[Puny Penitent]]
+| 40
+| 1.5
+| 1.25
+| 1
+| 1
+| 1
+|-
+!159
+! [[File:HJ Reed.png|30px|link=Reed]]
+! style="text-align:left" | [[Reed]]
+| 55 / 110
+| 1
+| 1
+| 0.8
+| 0.8
+| 0.8
+|-
+!83
+! [[File:HJ Roachcatcher.png|30px|link=Roachcatcher]]
+! style="text-align:left" | [[Roachcatcher]]
+| 40 / 80
+| 1.25
+| 1
+| 0.9
+| 0.9
+| 0.9
+|-
+!83
+! [[File:HJ Roachcatcher.png|30px|link=Roachcatcher]]
+! style="text-align:left" | [[Roachcatcher]] ([[Greymoor]] Arena)
+| - / 140
+| 1.25
+| 1
+| 0.9
+| 0.9
+| 0.9
+|-
+!84
+! [[File:HJ Roachfeeder.png|30px|link=Roachfeeder]]
+! style="text-align:left" | [[Roachfeeder]]
+| 45 / 90
+| 1.25
+| 1
+| 0.9
+| 0.9
+| 0.9
+|-
+!85
+! [[File:HJ Roachkeeper.png|30px|link=Roachkeeper]]
+! style="text-align:left" | [[Roachkeeper]]
+| 100 / 200
+| 1.3
+| 1.1
+| 0.9
+| 0.9
+| 0.9
+|-
+!191
+! [[File:HJ Scabfly.png|30px|link=Scabfly]]
+! style="text-align:left" | [[Scabfly]]
+| 20 / 40
+| 1.25
+| 1
+| 0.75
+| 0.85
+| 1
+|-
+!184
+! [[File:HJ Scrollreader.png|30px|link=Scrollreader]]
+! style="text-align:left" | [[Scrollreader]]
+| 100 / 200
+| 1.3
+| 1.1
+| 0.9
+| 0.8
+| 0.8
+|-
+!199
+! [[File:HJ Servitor Boran.png|30px|link=Servitor Boran]]
+! style="text-align:left" | [[Servitor Boran]]
+| 70
+| 1.25
+| 1
+| 1
+| 1
+| 1
+|-
+!198
+! [[File:HJ Servitor Ignim.png|30px|link=Servitor Ignim]]
+! style="text-align:left" | [[Servitor Ignim]]
+| 1
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!216
+! [[File:HJ Shadow Charger.png|30px|link=Shadow Charger]]
+! style="text-align:left" | [[Shadow Charger]]
+| 80
+| 2.5
+| 1.5
+| 1.3
+| 1
+| 1
+|-
+!215
+! [[File:HJ SS Shadow Creeper.png|30px|link=Shadow Creeper (Silksong)]]
+! style="text-align:left" | [[Shadow Creeper (Silksong)|Shadow Creeper]]
+| 40
+| 2
+| 1.2
+| 1
+| 1
+| 1
+|-
+!115
+! [[File:HJ Shardillard.png|30px|link=Shardillard]]
+! style="text-align:left" | [[Shardillard]]
+| 50
+| 1.3
+| 1.1
+| 0.9
+| 0.8
+| 0.8
+|-
+!100
+! [[File:HJ Shellwood Gnat.png|30px|link=Shellwood Gnat]]
+! style="text-align:left" | [[Shellwood Gnat]]
+| 15 / 30
+| 1
+| 0.8
+| 0.8
+| 0.8
+| 0.8
+|-
+!100
+! [[File:HJ Shellwood Gnat.png|30px|link=Shellwood Gnat]]
+! style="text-align:left" | [[Shellwood Gnat]] (Inner)
+| 10 / 20
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!66
+! [[File:HJ Silk Snipper.png|30px|link=Silk Snipper]]
+! style="text-align:left" | [[Silk Snipper]]
+| 29 / 58
+| 1
+| 0.8
+| 0.7
+| 0.55
+| 0.55
+|-
+!55
+! [[File:HJ Skarr Scout.png|30px|link=Skarr Scout]]
+! style="text-align:left" | [[Skarr Scout]]
+| 30 / 90
+| 1
+| 0.8
+| 0.75
+| 0.75
+| 0.7
+|-
+!56
+! [[File:HJ Skarr Stalker.png|30px|link=Skarr Stalker]]
+! style="text-align:left" | [[Skarr Stalker]]
+| 75 / 150
+| 1.2
+| 1
+| 1
+| 1
+| 1
+|-
+!53
+! [[File:HJ Skarrlid.png|30px|link=Skarrlid]]
+! style="text-align:left" | [[Skarrlid]]
+| 20
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!54
+! [[File:HJ Skarrwing.png|30px|link=Skarrwing]]
+! style="text-align:left" | [[Skarrwing]]
+| 20
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!225
+! [[File:HJ Skrill.png|30px|link=Skrill]]
+! style="text-align:left" | [[Skrill]]
+| 17
+| 2
+| 1.25
+| 1
+| 1
+| 1
+|-
+!8
+! [[File:HJ Skull Brute.png|30px|link=Skull Brute]]
+! style="text-align:left" | [[Skull Brute]]
+| 30 / 60
+| 1
+| 0.8
+| 0.75
+| 0.6
+| 0.6
+|-
+!6
+! [[File:HJ Skull Scuttler.png|30px|link=Skull Scuttler]]
+! style="text-align:left" | [[Skull Scuttler]]
+| 15 / 60
+| 1
+| 0.8
+| 0.8
+| 0.8
+| 0.8
+|-
+!7
+! [[File:HJ Skullwing.png|30px|link=Skullwing]]
+! style="text-align:left" | [[Skullwing]]
+| 15
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!80
+! [[File:HJ Slubberlug.png|30px|link=Slubberlug]]
+! style="text-align:left" | [[Slubberlug]]
+| 22
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!41
+! [[File:HJ Smelt Shoveller.png|30px|link=Smelt Shoveller]]
+! style="text-align:left" | [[Smelt Shoveller]]
+| 30 / 120
+| 1.5
+| 1
+| 1
+| 0.85
+| 0.85
+|-
+!41
+! [[File:HJ Smelt Shoveller.png|30px|link=Smelt Shoveller]]
+! style="text-align:left" | [[Smelt Shoveller]] (Cutscene)<ref group="Note" name="signis"></ref>
+| 20
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!44
+! [[File:HJ Smokerock Sifter.png|30px|link=Smokerock Sifter]]
+! style="text-align:left" | [[Smokerock Sifter]]
+| 40 / 160
+| 1.75
+| 1
+| 1
+| 0.85
+| 0.85
+|-
+!38
+! [[File:HJ Snitchfly.png|30px|link=Snitchfly]]
+! style="text-align:left" | [[Snitchfly]]
+| 35
+| 1.2
+| 0.9
+| 0.8
+| 0.65
+| 0.65
+|-
+!57
+! [[File:HJ Spear Skarr.png|30px|link=Spear Skarr ]]
+! style="text-align:left" | [[Spear Skarr ]]
+| 75 / 150
+| 1.2
+| 1
+| 1
+| 1
+| 1
+|-
+!129
+! [[File:HJ Spinebeak Kai.png|30px|link=Spinebeak Kai]]
+! style="text-align:left" | [[Spinebeak Kai]]
+| 5
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!92
+! [[File:HJ Spit Squit.png|30px|link=Spit Squit]]
+! style="text-align:left" | [[Spit Squit]]
+| 55 / 110
+| 1.5
+| 1.1
+| 1
+| 0.9
+| 0.9
+|-
+!102
+! [[File:HJ Splinter.png|30px|link=Splinter]]
+! style="text-align:left" | [[Splinter]]
+| 25 / 100
+| 1
+| 0.9
+| 0.9
+| 0.9
+| 0.9
+|-
+!104
+! [[File:HJ Splinterbark.png|30px|link=Splinterbark]]
+! style="text-align:left" | [[Splinterbark]]
+| 15 / 30
+| 1
+| 0.8
+| 0.8
+| 0.8
+| 0.8
+|-
+!103
+! [[File:HJ Splinterhorn.png|30px|link=Splinterhorn]]
+! style="text-align:left" | [[Splinterhorn]]
+| 25 / 100
+| 1
+| 0.9
+| 0.9
+| 0.9
+| 0.9
+|-
+!74
+! [[File:HJ Squatcraw.png|30px|link=Squatcraw]]
+! style="text-align:left" | [[Squatcraw]]
+| 50 / 100
+| 1.25
+| 1
+| 0.9
+| 0.9
+| 0.9
+|-
+!77
+! [[File:HJ Squatcraw Juror.png|30px|link=Squatcraw Juror]]
+! style="text-align:left" | [[Squatcraw Juror]]
+| 60
+| 1.4
+| 1
+| 0.9
+| 0.9
+| 0.9
+|-
+!117
+! [[File:HJ Squirrm.png|30px|link=Squirrm]]
+! style="text-align:left" | [[Squirrm]]
+| 12
+| 1
+| 0.9
+| 0.8
+| 0.6
+| 0.6
+|-
+!130
+! [[File:HJ Steelspine Kai.png|30px|link=Steelspine Kai]]
+! style="text-align:left" | [[Steelspine Kai]]
+| 5
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!94
+! [[File:HJ Stilkin Trapper.png|30px|link=Stilkin Trapper]]
+! style="text-align:left" | [[Stilkin Trapper]]
+| 45
+| 1.25
+| 1
+| 1
+| 1
+| 1
+|-
+!93
+! [[File:HJ Stilkin.png|30px|link=Stilkin]]
+! style="text-align:left" | [[Stilkin]]
+| 45
+| 1.25
+| 1
+| 1
+| 1
+| 1
+|-
+!169
+! [[File:HJ Surgeon.png|30px|link=Surgeon]]
+! style="text-align:left" | [[Surgeon]]
+| 75
+| 1.2
+| 1
+| 1
+| 1
+| 1
+|-
+!91
+! [[File:HJ Swamp Squit.png|30px|link=Swamp Squit]]
+! style="text-align:left" | [[Swamp Squit]]
+| 35
+| 1.5
+| 1
+| 1
+| 1
+| 1
+|-
+!73
+! [[File:HJ Tallcraw.png|30px|link=Tallcraw]]
+! style="text-align:left" | [[Tallcraw]]
+| 50 / 100
+| 1.25
+| 1
+| 0.9
+| 0.9
+| 0.9
+|-
+!76
+! [[File:HJ Tallcraw Juror.png|30px|link=Tallcraw Juror]]
+! style="text-align:left" | [[Tallcraw Juror]]
+| 60
+| 1.1
+| 1
+| 0.9
+| 0.9
+| 0.9
+|-
+!17
+! [[File:HJ Tarmite.png|30px|link=Tarmite]]
+! style="text-align:left" | [[Tarmite]]
+| 25 / 50
+| 1
+| 0.9
+| 0.9
+| 0.73
+| 0.73
+|-
+!17
+! [[File:HJ Tarmite.png|30px|link=Tarmite]]
+! style="text-align:left" | [[Tarmite]] ([[Savage Beastfly]])
+| 30
+| 1
+| 0.9
+| 0.9
+| 0.73
+| 0.73
+|-
+!67
+! [[File:HJ Thread Raker.png|30px|link=Thread Raker]]
+! style="text-align:left" | [[Thread Raker]]
+| 50 / 100
+| 1
+| 0.75
+| 0.6
+| 0.55
+| 0.55
+|-
+!67
+! [[File:HJ Thread Raker.png|30px|link=Thread Raker]]
+! style="text-align:left" | [[Thread Raker]] ([[Greymoor]] Arena)
+| - / 150
+| 1
+| 0.75
+| 0.6
+| 0.55
+| 0.55
+|-
+!151
+! [[File:HJ Undercrank.png|30px|link=Undercrank]]
+! style="text-align:left" | [[Undercrank]]
+| 70 / 140
+| 1.25
+| 1
+| 1
+| 1
+| 1
+|-
+!150
+! [[File:HJ Underloft.png|30px|link=Underloft]]
+! style="text-align:left" | [[Underloft]]
+| 40 / 80
+| 1.25
+| 1
+| 1
+| 1
+| 0.9
+|-
+!149
+! [[File:HJ Underpoke.png|30px|link=Underpoke]]
+! style="text-align:left" | [[Underpoke]]
+| 40 / 80
+| 1.25
+| 1
+| 1
+| 1
+| 0.9
+|-
+!147
+! [[File:HJ Underscrub.png|30px|link=Underscrub]]
+! style="text-align:left" | [[Underscrub]]
+| 27 / 54
+| 1
+| 0.9
+| 0.8
+| 0.75
+| 0.75
+|-
+!148
+! [[File:HJ Undersweep.png|30px|link=Undersweep]]
+! style="text-align:left" | [[Undersweep]]
+| 35 / 70
+| 1.25
+| 1
+| 0.8
+| 0.75
+| 0.75
+|-
+!146
+! [[File:HJ Underworker.png|30px|link=Underworker]]
+! style="text-align:left" | [[Underworker]]
+| 30 / 60
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!182
+! [[File:HJ Vaultborn.png|30px|link=Vaultborn]]
+! style="text-align:left" | [[Vaultborn]]
+| 40 / 80
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!185
+! [[File:HJ Vaultkeeper.png|30px|link=Vaultkeeper]]
+! style="text-align:left" | [[Vaultkeeper]]
+| 70 / 140
+| 1.1
+| 1
+| 0.8
+| 0.8
+| 0.8
+|-
+!212
+! [[File:HJ Verdanir.png|30px|link=Verdanir]]
+! style="text-align:left" | [[Verdanir]]
+| 100
+| 1.35
+| 1.15
+| 1
+| 1
+| 1
+|-
+!14
+! [[File:HJ Vicious Caranid.png|30px|link=Vicious Caranid]]
+! style="text-align:left" | [[Vicious Caranid]]
+| 27 / 108
+| 1
+| 0.9
+| 0.6
+| 0.6
+| 0.5
+|-
+!14
+! [[File:HJ Vicious Caranid.png|30px|link=Vicious Caranid]]
+! style="text-align:left" | [[Vicious Caranid]] ([[Savage Beastfly]])
+| 25
+| 1
+| 0.9
+| 0.6
+| 0.6
+| 0.5
+|-
+!220
+! [[File:HJ Void Mass.png|30px|link=Void Mass]]
+! style="text-align:left" | [[Void Mass]]
+| 190
+| 1.75
+| 1.25
+| 1.1
+| 1
+| 1
+|-
+!193
+! [[File:HJ Wardenfly.png|30px|link=Wardenfly]]
+! style="text-align:left" | [[Wardenfly]]
+| 70 / 140
+| 1.6
+| 1.1
+| 0.8
+| 0.8
+| 0.8
+|-
+!193
+! [[File:HJ Wardenfly.png|30px|link=Wardenfly]]
+! style="text-align:left" | [[Wardenfly]] (With Cage)
+| 64
+| 1.3
+| 1
+| 1
+| 1
+| 1
+|-
+!112
+! [[File:HJ Winged Furm.png|30px|link=Winged Furm]]
+! style="text-align:left" | [[Winged Furm]]
+| 30 / 60
+| 1.2
+| 1
+| 0.75
+| 0.7
+| 0.7
+|-
+!31
+! [[File:HJ Winged Pilgrim.png|30px|link=Winged Pilgrim]]
+! style="text-align:left" | [[Winged Pilgrim]]
+| 20 / 80
+| 1.4
+| 1.2
+| 1
+| 1
+| 1
+|-
+!33
+! [[File:HJ Winged Pilgrim Bellbearer.png|30px|link=Winged Pilgrim Bellbearer]]
+! style="text-align:left" | [[Winged Pilgrim Bellbearer]]
+| 20 / 40
+| 1.4
+| 1.2
+| 1
+| 1
+| 1
+|-
+!222
+! [[File:HJ SS Wingmould.png|30px|link=Wingmould (Silksong)]]
+! style="text-align:left" | [[Wingmould (Silksong)|Wingmould]]
+| 1
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!101
+! [[File:HJ Wood Wasp.png|30px|link=Wood Wasp]]
+! style="text-align:left" | [[Wood Wasp]]
+| 15 / 30
+| 1
+| 0.8
+| 0.8
+| 0.8
+| 0.8
+|-
+!101
+! [[File:HJ Shellwood Hive.png|30px|link=Wood Wasp]]
+! style="text-align:left" | [[Wood Wasp|Wood Wasp Hive]]
+| 50
+| 1
+| 0.75
+| 0.75
+| 0.75
+| 0.75
+|-
+!88
+! [[File:HJ Wraith.png|30px|link=Wraith]]
+! style="text-align:left" | [[Wraith]]
+| 45
+| 1.5
+| 1
+| 1
+| 1
+| 1
+|-
+!135
+! [[File:HJ Yago.png|30px|link=Yago]]
+! style="text-align:left" | [[Yago]]
+| 60
+| 1.4
+| 1.2
+| 1
+| 1
+| 1
+|-
+!131
+! [[File:HJ Yuma.png|30px|link=Yuma]]
+! style="text-align:left" | [[Yuma]]
+| 5
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!132
+! [[File:HJ Yumama.png|30px|link=Yumama]]
+! style="text-align:left" | [[Yumama]]
+| 75
+| 2
+| 1.25
+| 1
+| 1
+| 1
+|}
+
+=== Bosses and Minibosses ===
+
+{| class="article-table sortable"
+|-
+! colspan="9" | Bosses and Minibosses
+|-
+! style="width: 3ch;" rowspan="2" | [[Hunter's Journal (Silksong)|HJ]] ID
+! style="width: 35ch;" rowspan="2" colspan="2" | Enemy
+! style="width: 14ch;" rowspan="2" |  HP / [[Black-Threading|BT]]
+! style="width: 46ch;" colspan="5" class="unsortable"| Damage Modifiers
+|-
+! style="width: 5ch;" class="unsortable"| Lvl. 0
+! style="width: 5ch;" class="unsortable"| Lvl. 1
+! style="width: 5ch;" class="unsortable"| Lvl. 2
+! style="width: 5ch;" class="unsortable"| Lvl. 3
+! style="width: 5ch;" class="unsortable"| Lvl. 4
+|-
+!25
+! style="width: 1ch;" | [[File:HJ Bell Beast.png|30px|link=Bell Beast]] 
+! style="text-align:left" | [[Bell Beast]]
+| 150
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!226
+! [[File:HJ Bell Eater.png|30px|link=Bell Eater]]
+! style="text-align:left" | [[Bell Eater]]
+| 800
+| 1.75
+| 1.35
+| 1.2
+| 1
+| 1
+|-
+!194
+! [[File:HJ Broodmother.png|30px|link=Broodmother]]
+! style="text-align:left" | [[Broodmother]]
+| 700
+| 1.35
+| 1.1
+| 1
+| 1
+| 1
+|-
+!161
+! [[File:HJ Choir Clapper.png|30px|link=Choir Clapper]]
+! style="text-align:left" | [[Choir Clapper]]
+| 230 / 460
+| 1.5
+| 1.15
+| 1
+| 0.9
+| 0.9
+|-
+!214
+! [[File:HJ Clover Dancers.png|30px|link=Clover Dancers]]
+! style="text-align:left" | [[Clover Dancers]]
+| 1160
+| 1.75
+| 1.25
+| 1.15
+| 1
+| 1
+|-
+!180
+! [[File:HJ Cogwork Clapper.png|30px|link=Cogwork Clapper]]
+! style="text-align:left" | [[Cogwork Clapper]] 
+| 145
+| 1.5
+| 1
+| 0.9
+| 0.8
+| 0.8
+|-
+!180
+! [[File:HJ Cogwork Clapper.png|30px|link=Cogwork Clapper]]
+! style="text-align:left" | [[Cogwork Clapper]] (Pair)
+| 190
+| 1.5
+| 1
+| 0.9
+| 0.8
+| 0.8
+|-
+!138
+! [[File:HJ Corrcrust Karaka.png|30px|link=Corrcrust Karaka]]
+! style="text-align:left" | [[Corrcrust Karaka]]
+| 105
+| 1.5
+| 1.2
+| 1.1
+| 1
+| 0.9
+|-
+!37
+! [[File:HJ Covetous Pilgrim.png|30px|link=Covetous Pilgrim]]
+! style="text-align:left" | [[Covetous Pilgrim]]
+| 85 
+| 1
+| 0.8
+| 0.7
+| 0.6
+| 0.6
+|-
+!37
+! [[File:HJ Covetous Pilgrim.png|30px|link=Covetous Pilgrim]]
+! style="text-align:left" | [[Covetous Pilgrim]] ([[Bilewater]])
+| 130
+| 1
+| 0.8
+| 0.7
+| 0.6
+| 0.6
+|-
+!48
+! [[File:HJ Craggler.png|30px|link=Craggler]]
+! style="text-align:left" | [[Craggler]]
+| 200 / 400
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!78
+! [[File:HJ Crawfather.png|30px|link=Crawfather]]
+! style="text-align:left" | [[Crawfather]]
+| 1300
+| 1.6
+| 1.25
+| 1.1
+| 1
+| 1
+|-
+!139
+! [[File:HJ Crust King Khann.png|30px|link=Crust King Khann]]
+! style="text-align:left" | [[Crust King Khann]]
+| 1650
+| 2
+| 1.35
+| 1.15
+| 1
+| 0.95
+|-
+!181
+! [[File:HJ Cogwork Dancers.png|30px|link=Cogwork Dancers]]
+! style="text-align:left" | [[Cogwork Dancers]]
+| 810
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!87
+! [[File:HJ Disgraced Chef Lugoli.png|30px|link=Disgraced Chef Lugoli]]
+! style="text-align:left" | [[Disgraced Chef Lugoli]]
+| 600 / 1200
+| 1.7
+| 1.2
+| 1
+| 0.9
+| 0.85
+|-
+!71
+! [[File:HJ Father of the Flame.png|30px|link=Father of the Flame]]
+! style="text-align:left" | [[Father of the Flame]]
+| 650<ref group="Note">If their health is not depleted, the Wisp Lanterns on Father of the Flame's arms will break after 12 hits, and its core will break after 30 hits. Hits landed during a cooldown of 0.5 seconds will not count towards that number.</ref>
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!46
+! [[File:HJ Forebrothers Signis & Gron.png|30px|link=Forebrothers Signis & Gron]]
+! style="text-align:left" | [[Forebrothers Signis & Gron]]
+| 720 + 520
+| 1.6
+| 1.25
+| 1
+| 0.95
+| 0.9
+|-
+!233
+! [[File:HJ First Sinner.png|30px|link=First Sinner]]
+! style="text-align:left" | [[First Sinner]]
+| 1300
+| 1.75
+| 1.25
+| 1.1
+| 1
+| 1
+|-
+!21
+! [[File:HJ Flintbeetle.png|30px|link=Flintbeetle]]
+! style="text-align:left" | [[Flintbeetle]]
+| 95
+| 1
+| 0.8
+| 0.8
+| 0.7
+| 0.7
+|-
+!52
+! [[File:HJ Fourth Chorus.png|30px|link=Fourth Chorus]]
+! style="text-align:left" | [[Fourth Chorus]]
+| 500
+| 1
+| 0.65
+| 0.5
+| 0.45
+| 0.45
+|-
+!229
+! [[File:HJ Garmond & Zaza.png|30px|link=Garmond & Zaza]]
+! style="text-align:left" | [[Garmond & Zaza]]
+| 460
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!236
+! [[File:HJ Grand Mother Silk.png|30px|link=Grand Mother Silk]]
+! style="text-align:left" | [[Grand Mother Silk]]
+| 1224
+| 1.1
+| 1
+| 1
+| 0.88
+| 0.88
+|-
+!125
+! [[File:HJ Great Conchfly.png|30px|link=Great Conchfly]]
+! style="text-align:left" | [[Great Conchfly]]
+| 400
+| 1.3
+| 1
+| 0.825
+| 0.7
+| 0.6
+|-
+!95
+! [[File:HJ Groal the Great.png|30px|link=Groal the Great]]
+! style="text-align:left" | [[Groal the Great]]
+| 650
+| 1.8
+| 1.2
+| 1
+| 0.9
+| 0.9
+|-
+!59
+! [[File:HJ Gurr the Outcast.png|30px|link=Gurr the Outcast]]
+! style="text-align:left" | [[Gurr the Outcast]]
+| 1000
+| 1.7
+| 1.25
+| 1.1
+| 1
+| 0.95
+|-
+!227
+! [[File:HJ Huge Flea.png|30px|link=Huge Flea]]
+! style="text-align:left" | [[Huge Flea]]
+| 200
+| 1.5
+| 1.2
+| 1.1
+| 1
+| 1
+|-
+!136
+! [[File:HJ Karak Gor.png|30px|link=Karak Gor]]
+! style="text-align:left" | [[Karak Gor]]
+| 140
+| 1.5
+| 1.2
+| 1.1
+| 1
+| 0.9
+|-
+!235
+! [[File:HJ Lace.png|30px|link=Lace]]
+! style="text-align:left" | [[Lace]]
+| 250
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!235
+! [[File:HJ Lace.png|30px|link=Lace| Lace]]
+! style="text-align:left" | [[Lace| Lace 2]]
+| 800
+| 1.75
+| 1.2
+| 1
+| 0.85
+| 0.85
+|-
+!60
+! [[File:HJ Last Claw.png|30px|link=Last Claw]]
+! style="text-align:left" | [[Last Claw]]
+| 130
+| 1.5
+| 1.2
+| 1.1
+| 1
+| 1
+|-
+!119
+! [[File:HJ Last Judge.png|30px|link=Last Judge]]
+! style="text-align:left" | [[Last Judge]]
+| 720<ref group="Note">The Last Judge has Black-Threaded Multiplier of 2 in the files, but this is impossible to see in game as defeating them is a requirement to enter [[Act 3]].</ref>
+| 1.2
+| 1
+| 0.85
+| 0.75
+| 0.7
+|-
+!230
+! [[File:HJ Lost Garmond.png|30px|link=Lost Garmond]]
+! style="text-align:left" | [[Lost Garmond]]
+| - / 900
+| 2
+| 1.5
+| 1.2
+| 1.1
+| 1
+|-
+!237
+! [[File:HJ Lost Lace.png|30px|link=Lost Lace]]
+! style="text-align:left" | [[Lost Lace]]
+| 1800
+| 1.7
+| 1.25
+| 1.1
+| 1.05
+| 0.95
+|-
+!68
+! [[File:HJ Moorwing.png|30px|link=Moorwing]]
+! style="text-align:left" | [[Moorwing]]
+| 600 / 1200
+| 2
+| 1.3
+| 1
+| 0.9
+| 0.85
+|-
+!4
+! [[File:HJ Moss Mother.png| Moss Mother.png|30px|link=Moss Mother| Moss Mother]]
+! style="text-align:left" | [[Moss Mother]] ([[Ruined Chapel]])
+| 120
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!4
+! [[File:HJ Moss Mother.png|30px|link=Moss Mother]]
+! style="text-align:left" | [[Moss Mother]] ([[Acts|Act 3]] [[Moss Grotto]])
+| - / 700
+| 1.25
+| 1
+| 1
+| 1
+| 1
+|-
+!4
+! [[File:HJ Moss Mother.png| Moss Mother.png|30px|link=Moss Mother| Moss Mother]]
+! style="text-align:left" | [[Moss Mother]] ([[Weavenest Atla]])
+| 350 / 700
+| 1.2
+| 1
+| 0.9
+| 0.85
+| 0.8
+|-
+!110
+! [[File:HJ Nyleth.png|30px|link=Nyleth]]
+! style="text-align:left" | [[Nyleth]]
+| 1250
+| 1.5
+| 1.25
+| 1.1
+| 1
+| 0.91
+|-
+!210
+! [[File:HJ Palestag.png|30px|link=Palestag]]
+! style="text-align:left" | [[Palestag]]
+| 480
+| 1.5
+| 1.2
+| 1.15
+| 1
+| 1
+|-
+!234
+! [[File:HJ Phantom.png|30px|link=Phantom]]
+! style="text-align:left" | [[Phantom]]
+| 650
+| 1.2
+| 1
+| 0.85
+| 0.75
+| 0.7
+|-
+!231
+! [[File:HJ Pinstress.png|30px|link=Pinstress]]
+! style="text-align:left" | [[Pinstress]]
+| 910
+| 1.5
+| 1.1
+| 1
+| 1
+| 0.9
+|-
+!203
+! [[File:HJ Plasmified Zango.png|30px|link=Plasmified Zango]]
+! style="text-align:left" | [[Plasmified Zango]]
+| 1000
+| 2
+| 1.25
+| 1.1
+| 1
+| 1
+|-
+!125
+! [[File:HJ Great Conchfly.png|30px|link=Raging Conchfly]]
+! style="text-align:left" | [[Raging Conchfly]]
+| 820
+| 1.5
+| 1.2
+| 1.05
+| 0.85
+| 0.75
+|-
+!22
+! [[File:HJ Rhinogrund.png|30px|link=Rhinogrund]]
+! style="text-align:left" | [[Rhinogrund]]
+| 150 / 300
+| 1.3
+| 1
+| 1
+| 1
+| 1
+|-
+
+!86
+! [[File:HJ Roachserver.png|30px|link=Roachserver]]
+! style="text-align:left" | [[Roachserver]]
+| 60
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+!12
+! [[File:HJ Savage Beastfly.png|30px|link=Savage Beastfly]]
+! style="text-align:left" | [[Savage Beastfly]]<br>([[Chapel of the Beast]])
+| 550 / 1100
+| 1.7
+| 1.2
+| 1
+| 0.9
+| 0.8
+|-
+!12
+! [[File:HJ Savage Beastfly.png|30px|link=Savage Beastfly]]
+! style="text-align:left" | [[Savage Beastfly]]<br>([[Far Fields]])
+| 650 / 1300
+| 1.7
+| 1.2
+| 1
+| 0.9
+| 0.8
+|-
+!166
+! [[File:HJ Second Sentinel.png|30px|link=Second Sentinel]]
+! style="text-align:left" | [[Second Sentinel]]
+| 800
+| 1.4    
+| 1.1
+| 0.85
+| 0.7
+| 0.65
+|-
+!228
+! [[File:HJ Shakra.png|30px|link=Shakra]]
+! style="text-align:left" | [[Shakra]]
+| 600
+| 1.5
+| 1.15
+| 1
+| 0.9
+| 0.9
+|-
+!109
+! [[File:HJ Shrine Guardian Seth.png|30px|link=Shrine Guardian Seth]]
+! style="text-align:left" | [[Shrine Guardian Seth]]
+| 1185
+| 1.7
+| 1.25
+| 1.1
+| 1
+| 0.95
+|-
+!105
+! [[File:HJ Sister Splinter.png|30px|link=Sister Splinter]]
+! style="text-align:left" | [[Sister Splinter]]
+| 310
+| 1
+| 0.675
+| 0.575
+| 0.55
+| 0.5
+|-
+!58
+! [[File:HJ Skarrgard.png|30px|link=Skarrgard]]
+! style="text-align:left" | [[Skarrgard]]
+| 150 / 300
+| 1
+| 0.75
+| 0.65
+| 0.65
+| 0.65
+|-
+!61
+! [[File:HJ Skarrsinger Karmelita.png|30px|link=Skarrsinger Karmelita]]
+! style="text-align:left" | [[Skarrsinger Karmelita]]
+| 1500
+| 1.5
+| 1.25
+| 1.1
+| 1
+| 0.95
+|-
+!9
+! [[File:HJ Skull Tyrant.png|30px|link=Skull Tyrant]]
+! style="text-align:left" | [[Skull Tyrant]]
+| 450 / 900
+| 1.2
+| 1
+| 0.9
+| 0.85
+| 0.8
+|-
+!221
+! [[File:HJ Summoned Saviour.png|30px|link=Summoned Saviour]]
+! style="text-align:left" | [[Summoned Saviour]]
+| 500
+| 2
+| 1.3
+| 1.05
+| 0.9
+| 0.85
+|-
+!171
+! [[File:HJ The Unravelled.png|30px|link=The Unravelled]]
+! style="text-align:left" | [[The Unravelled]]
+| 1000
+| 1
+| 1
+| 1
+| 0.9
+| 0.85
+|-
+!187
+! [[File:HJ Tormented Trobbio.png|30px|link=Tormented Trobbio]]
+! style="text-align:left" | [[Tormented Trobbio]]
+| 950
+| 1.4
+| 1
+| 0.9
+| 0.8
+| 0.75
+|-
+!186
+! [[File:HJ Trobbio.png|30px|link=Trobbio]]
+! style="text-align:left" | [[Trobbio]]
+| 700
+| 1.4
+| 1
+| 0.9
+| 0.8
+| 0.8
+|-
+!141
+! [[File:HJ Voltvyrm.png|30px|link=Voltvyrm]]
+! style="text-align:left" | [[Voltvyrm]]
+| 550
+| 1.8
+| 1.2
+| 1
+| 0.9
+| 0.8
+|-
+!140
+! [[File:HJ Watcher at the Edge.png|30px|link=Watcher at the Edge]]
+! style="text-align:left" | [[Watcher at the Edge]]
+| 900
+| 1.5
+| 1.2
+| 1
+| 0.9
+| 0.85
+|-
+!232
+! [[File:HJ Widow.png|30px|link=Widow]]
+! style="text-align:left" | [[Widow]]
+| 360
+| 1
+| 1
+| 1
+| 1
+| 1
+|-
+|}
+
+== Notes ==
+<references group="Note"/>
+
+[[Category:Combat (Silksong)]]
+[[fr:Valeurs des dégâts et santé de l’ennemi (Silksong)]]

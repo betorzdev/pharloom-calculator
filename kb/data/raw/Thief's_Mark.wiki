@@ -1,0 +1,72 @@
+{{SS Infobox Tool
+| image = Thief's Mark.png
+| type = Yellow
+| effect = Enemies drop more [[Rosaries]], but [[Hornet (Silksong)|Hornet]] loses some when damaged
+| location = [[Blasted Steps]]
+| description = Symbol worn to identify oneself to fellow thieves.<hr/>
+Gain extra rosaries from defeated enemies, but lose some rosaries on taking damage.
+}}
+
+{{Quote
+| Sign yourself as a snitch! And scoop up more rosaries from your bested foes. Just watch it when you're snitchin' that you don't lose sum'a your own...
+| [[Grindle]]
+| Hr = SS
+}}
+
+<b>Thief's Mark</b> is a {{CrestSlot|Yellow|1}} in <i>[[Hollow Knight: Silksong]]</i>. It increases [[Rosary]] drops from defeated enemies, but causes [[Hornet (Silksong)|Hornet]] to lose some Rosaries when taking damage.
+
+== Usefulness ==
+When equipped, enemies drop extra [[Rosaries]] when defeated. These rosaries glow white when dropped, but fade colour after about half a second. The total amount of rosaries is based on the type of bead dropped, rounded up:
+* Regular [[File:Rosaries large.png|20x20px|link=Rosaries|Regular Rosaries]] beads are multiplied by 1.4 (+40%)
+* Shell [[File:Shell Rosaries large.png|20x20px|link=Rosaries|Shell Rosaries]] beads are multiplied by 1.3 (+30%)
+* Pearl [[File:Pearl Rosaries large.png|20x20px|link=Rosaries|Pearl Rosaries]] beads are multiplied by 1.2 (+20%)
+
+However, when Hornet takes damage, she has a 30% chance of losing 3-5% of her held Rosaries, rounded up, capping out at 10-20 Rosaries depending on percentage. 
+* Multi-hit attacks still have a 30% chance total to drop Rosaries, but the amount changes to 6-10% with a cap of 15-30 Rosaries.
+* 1-3 Rosaries lost are dropped on the ground, giving Hornet the chance to get them back. The rest will break when dropped.
+
+[[Snitchfly|Snitchflies]] do not attack Hornet when Thief's Mark is equipped, unless Hornet attacks them first. The Snitchflies in their [[Blasted Steps]] hideout will also no longer hide when Hornet enters there.
+
+Any rosaries lost in an [[Elegy of the Deep]] Memory or in the [[First Sinner]] fight will be returned to her upon leaving.
+
+== How To Acquire ==
+Purchased from [[Grindle]] in [[Blasted Steps]] for {{R|350}}.
+
+{{Gallery
+|Image1 = Mapshot SS Grindle 01.png!Location in Blasted Steps
+|Image2 = Screenshot SS BlastedSteps 06.png!Grindle in Blasted Steps
+}}
+
+{{Localisation
+|DEname = Diebeszeichen
+|DEmeaning = Thieves' Mark
+|ESname = Marca de ladrón
+|ESmeaning = Thief Mark
+|FRname = Marque du voleur
+|FRmeaning = Thief's Mark
+|ITname = Segno del ladro
+|ITmeaning = Sign of the Thief
+|JAname = 盗賊の証
+|JAromanised = Tōzoku no akashi
+|JAmeaning = Thief's Symbol
+|KOname = 도둑의 표식
+|KOromanised = Dodug-ui pyosig
+|KOmeaning = Thief's Mark
+|PTname =  Marca do Ladrão
+|PTmeaning = Thief's Sign
+|RUname = Метка вора
+|RUromanised = Metka vora
+|RUmeaning = Mark of the Thief
+|TWname = 竊賊印記
+|TWromanised = Qièzéi yìnjì
+|TWmeaning = same
+|ZHname = 窃贼印记
+|ZHromanised = Qièzéi yìnjì
+|ZHmeaning = Thief's Mark
+|CODEname=THIEF_CHARM
+|CODEmeaning=Reference to [[Charm]]s from <i>[[Hollow Knight]]</i>
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Marque du voleur]]

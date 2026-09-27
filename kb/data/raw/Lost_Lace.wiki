@@ -1,0 +1,279 @@
+{{Navbar|page1=Lace|page2=Lost Lace}}
+{{SS Infobox Boss
+| image1 = <gallery>
+B Lost Lace.png|Hunter's Journal
+Lost Lace Idle.png|Idle
+Lost Lace Stagger 1.png|Staggered (Phases 1 - 2)
+Lost Lace Stagger 2.png|Staggered (Phases 3 - 4)
+</gallery>
+| theme = [https://youtu.be/akFDizhL6lU Lost Lace (Phase 1)] (Phase 1-2)<br>[https://youtu.be/X3k0zY7H_sE Lost Lace (Phase 2)] (Phase 3-4)
+| location = [[The Abyss (Silksong)|The Abyss]]
+| health = 1800
+| damage_modifiers = {{SS Spaced Damage Modifiers|1.7|1.25|1.1|1.05|0.95}}
+| numbers_required = 1
+| va = Mitsuki Hashimoto
+| drops = [[Endings (Silksong)#Ending 4: Sister of the Void|Sister of the Void]] ending
+}}
+
+{{Quote
+| Hr = Journal
+| Silk-spun child possessed by the void.<hr />
+To quell the mother's rage, and see this kingdom saved, I will claim her back. This one... the dark shall not take.
+}}
+
+<b>Lost Lace</b> is the final [[Bosses (Silksong)|boss]] of [[Act 3]] in <i>[[Hollow Knight: Silksong]]</i>. She is the [[Void]]-possessed form of [[Lace]].<ref>Lost Lace [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Silk-spun child possessed by the void."</i></ref>
+
+== In-game Events ==
+After Hornet dives into the [[Void]] at the bottom of [[The Abyss (Silksong)|the Abyss]] using the [[Everbloom]], she enters a large silken cocoon where she finds [[Grand Mother Silk]] strung up and nearly devoid of her Silk. Hornet challenges Grand Mother Silk, before Lost Lace then erupts from the Void and wails, beginning the fight.
+
+Upon defeating Lost Lace, Hornet picks up [[Lace]]'s body, now purified of Void. Borrowing the last of Grand Mother Silk's strength, Hornet uses [[Silk Soar]] to escape the cocoon with Lace.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+{{CollapseTable| collapsed = true | expand-text = Phase 1 |
+* <b>Dive</b>: Between attacks, Lost Lace dives into the Void floor and emerges near [[Hornet (Silksong)|Hornet]]. She can either emerge on the ground or leap straight into the air to perform an aerial attack. She can also dive directly into the Void floor when descending from aerial attacks.
+* <b>Advance & Retreat</b>: Lost Lace can perform small hops across the arena to reposition closer to Hornet or to distance herself from Hornet after attacks, performing up to two in a row. However, Lost Lace uses this manoeuvre far less compared to her previous fights, and more often uses Dive to reposition.
+* <b>Leap</b>: Lost Lace leaps straight up into the air in order to perform one of her aerial attacks.
+* <b>Parry & Riposte</b>: After every attack, if Hornet is too close to her, Lost Lace holds her pin up and strikes a defensive position, blocking any damage. If she is struck in that time, she retaliates by either:
+** dashing forwards slightly and unleashing a quick flurry of strikes.
+** teleporting slightly off the ground behind Hornet before performing the flurry at a downwards angle and then leaping away from Hornet.
+* <b>Aerial Lunge</b>: While midair, Lost Lace lunges diagonally down towards Hornet, deviating slightly to target her, and sliding a bit after landing. If she hits Hornet with her pin, she slashes twice, dealing damage to Hornet and ends the attack prematurely.
+* <b>Void Tendrils</b>: Lost Lace stands still and lashes out with long void tendrils extending horizontally from her arm. 
+** <b>Aerial Void Tendrils</b>: Lost Lace performs Void Tendrils while midair, attacking diagonally downwards in Hornet's direction and propelling herself backwards as she falls.
+* <b>Balestra</b>: Lost Lace leaps diagonally into the air in Hornet's direction and slashes in a circle around her as she moves. Being hit by Lost Lace's pin during this circular slash will cause her to slash twice, dealing damage to Hornet and ending the attack prematurely. At the height of Lost Lace's jump, she will perform an Aerial Lunge or Aerial Void Tendrils.
+* <b>Triple Cut</b>: Lost Lace slashes thrice, making large arcs over her head. Each slash moves her forwards slightly. Being hit by any slash will deal damage to Hornet and cancel the attack prematurely. Depending on Hornet's position, the third slash can also be cancelled:
+** completely if Hornet is too far or too close. If Hornet is too close, Lost Lace will perform her Parry. 
+** into a Void Tendrils attack if Hornet is far enough in front of or behind Lost Lace.
+* <b>Lashing Lunge</b>: Lost Lace raises her pin and steps back, before dashing forwards with her pin extended towards Hornet while leaving a trail of Void Tendrils that lash out of the ground behind her. Being hit by Lost Lace's pin at any point during a lunge will cause her to slash twice, dealing damage to Hornet and prematurely ending the attack. Lost Lace performs this attack twice, and can change directions with each lunge if Hornet is behind her. Afterwards, she follows up with a Balestra attack if Hornet is sufficiently high in the air. Otherwise, she will perform one of the following three movements:
+** 60% of the time she will perform a third lunge into a swipe with her pin.
+** 20% of the time she will perform a Void Tendrils attack.
+** 20% of the time she will perform a Balestra attack.
+}}
+
+{{CollapseTable| collapsed = true | expand-text = Phase 2 |
+After reaching 1349 HP, Lost Lace laughs manically, beginning Phase 2. She spends less time idle between attacks, gains new attacks, and alters one existing attack:
+
+* <b>Void Columns</b>: Lost Lace waves her arms in the air and summons 4 evenly spaced columns of Void tendrils, which sprout from the ground and lash upwards as she starts her next attack. The location of each column is indicated by the tendrils' tips appearing amidst rumbling particles on the Void floor before they erupt upwards. Lost Lace always begins Phase 2 with this attack.
+** Lost Lace can occasionally perform this attack immediately upon performing Dive, skipping the clapping animation, in which case she will emerge from one of the lashing columns near Hornet to perform one of her aerial attacks.
+** Lost Lace can also immediately Dive after performing this attack, in which case she can either emerge from one of the lashing columns to perform an aerial attack or re-emerge on the ground.
+* <b>Lashing Dive</b>: Occasionally after Lost Lace uses Dive, a column of Void Tendrils shoots out from the location in which she entered the Void, coinciding with the start of her next attack.
+* <b>Void Projectiles</b>: Lost Lace claps and then points her pin at Hornet, summoning 3 glowing circles in the air that each fire an arcing Void projectile targeting Hornet, one after the other.
+** <b>Aerial Void Projectiles</b>: Lost Lace performs Void Projectiles while midair, leaping away from Hornet after attacking.
+* <b>Void Blobs</b>: Lost Lace hops, then launches 6 evenly spaced Void blobs that arc to her left and right. The blobs themselves will not damage Hornet once they hit the ground; after a short delay, they burst into small circular slashes, which will damage Hornet. If a blob hits Hornet before it lands on the ground, it will disappear prematurely. If performed too close to a wall, the blobs that collide with the wall will bounce off and land in a clump.
+** <b>Aerial Void Blobs</b>: Lost Lace performs Void Blobs while midair, leaping away from Hornet after attacking. The blobs remain evenly spaced, although the projectiles fall in steeper arcs due to starting higher in the air.
+}}
+
+{{CollapseTable| collapsed = true | expand-text = Phase 3 |
+After reaching 900 HP, Lost Lace falls beneath the Void floor, removing any lingering projectile attacks she was executing. The cocoon ruptures, causing Void to flood into the arena, and [[Grand Mother Silk]] shrieks while collapsing to the ground. Two massive Void Waves sweep across the entire arena, first from the left and then from the right. Grand Mother Silk shrieks again; after a short delay, Lost Lace bursts from the ground in the centre of the arena and wails, beginning Phase 3.
+
+Lost Lace's attacks slow in frequency again, but she can defend more often. She gains a new attack and modifies one existing attack:
+* <b>Void Waves</b>: Lost Lace dives into the Void floor and does not immediately re-emerge. The arena begins shaking, and then a massive wave of Void Blades appears on one side of the arena, telegraphed by rumbling void particles. A second wave spawns from the opposite side after the first ends. These waves sweep across the entire arena, quickly swelling to a height greater than Hornet's basic jump, reaching their peak at the centre of the arena, and shrinking as they approach the opposite wall. The waves will destroy any lingering [[Tools]]. After both waves, Lost Lace emerges as if concluding a normal Dive.
+* <b>Lashing Dive</b>: Void Tendrils will now always spawn following each Dive.
+}}
+
+{{CollapseTable| collapsed = true | expand-text = Phase 4 |
+After reaching 540 HP, Lost Lace stops to laugh one last time. Her attacks increase in frequency again, and she gains an attack which she uses immediately:
+* <b>Lost Moulinet</b>: Lost Lace stands in place for a brief moment, creating 2–4 white, circular telegraphs in the air; one of these circles covers Hornet's position, and the second closest telegraph to Hornet will be raised by a length approximately equal to Hornet's height. Lost Lace then teleports quickly to each circle, unleashing a whirlwind of slashes within them one after the other, ending at the elevated circle. After the final circle triggers, Lost Lace slams into the ground and, after a moment, spawns Void Tendrils that emerge in a large area around her. If Hornet is far enough away from Lost Lace after the final circle triggers, Lost Lace will teleport to a position near Hornet to execute the slam. If Hornet is caught in a circle when it triggers, a short cutscene plays in which Lost Lace unleashes a torrent of slashes before slamming Hornet into the floor, ending the attack prematurely.
+}}
+
+Lost Lace deals {{Damage|2|type=Void}} contact damage. Lost Lace's attacks involving her pin deal {{Damage|1+1|type=Void}}, while her attacks involving Void deal {{Damage|2|type=Void}}. Exceptions are Void Tendrils and Void Waves, which deal {{Damage|1+1|type=Void}}, and Lost Moulinet which deals {{Damage|1+1+1|type=Void}}.
+
+<hr/>
+
+{{Stagger
+| Lace is stunned in place, revealing her white Silk beneath the Void covering her. In Phases 3 and 4, significantly more Silk is revealed.
+| 19
+| game = SS
+}}
+
+<hr />
+
+=== Tactics ===
+Lost Lace's attacks will always attempt to hit Hornet directly. As Lost Lace frequently dives into and out of the void floor, it is not recommended to sprint for long periods, which risks running into her and taking contact damage. Instead, a series of small dashes can be employed to reposition. Hornet can create opportunities to [[Bind]] by using [[Cling Grip]] to climb the walls and then using [[Faydown Cloak]], which will get her to a height that none of Lost Lace's attacks, except Void Projectiles, can reach.
+
+Lost Lace takes a significant amount of knockback. This is most noticeable when she staggers; as such, it is recommended to move towards her while attacking to stay in range.
+
+Lost Lace is fast, but all of her attacks are avoidable and there are wide attack windows for Hornet at the end of each of them. Generally, one hit can be safely scored in the recovery time after each attack, although two hits is possible.
+
+Simple jumps allow Hornet to avoid most of Lost Lace's attacks and create a chance to get downwards Needle hits in. Faydown Cloak and [[Swift Step]]'s dash allow Hornet to quickly reposition if she is caught in a bad position. [[Clawline]] can be safely used anywhere Swift Step would be.
+
+{{CollapseTable| collapsed = true | expand-text = Phase 1 |
+There is enough time to dash and hit Lost Lace once at the start of the fight before she starts attacking.
+[[File:Combat Start.gif|center|300px]]
+
+* <b>Parry & Riposte</b>: If the parry is triggered, Lost Lace's followup flurry of strikes can be easily avoided by jumping immediately and either double-jumping with [[Faydown Cloak]] or dashing away from the attack at the apex of the jump.
+<center>[[File:Grounded Parry.gif|300px]]
+[[File:Aerial Parry.gif|300px]]</center>
+
+* <b>Aerial Lunge</b>: Hornet can dodge this attack by dashing a sufficient distance in either direction or by using a regular jump.
+[[File:Aerial Lunge.gif|center|300px]]
+* <b>Void Tendrils</b>: On the ground, Lost Lace's tendrils will usually catch Hornet if she dashes away from them. Instead, jumping away or towards Lost Lace can allow Hornet to keep her distance or Needle bounce off of her, respectively.
+[[File:Grounded Void Tendrils.gif|center|300px]]
+* <b>Aerial Void Tendrils</b>: Aerial Void Tendrils, as with Aerial Lunge, can be dodged by dashing in either direction or jumping.
+[[File:Aerial Void Tendrils.gif|center|300px]]
+* <b>Balestra</b>: Dash away from Lost Lace as she starts Balestra, or, if Hornet is already midair and too close to her, dash over her. This is the one attack which CANNOT be safely avoided by simply jumping.
+[[File:Balestra.gif|center|300px]]
+After Lost Lace executes Balestra, she will immediately execute either an Aerial Lunge or Aerial Void Tendrils. These are dodged in very similar ways, so reading her telegraph is not strictly necessary.
+* <b>Triple Cut</b>: Jump when Lost Lace initiates the attack, and if necessary, use Faydown Cloak or [[Swift Step]] to get behind her.
+[[File:Triple Slash.gif|center|300px]]
+If she cancels the third slash in the attack, either Parry or Void Tendrils will be used next. Read her telegraph, and react accordingly.
+* <b>Lashing Lunge</b>: Jump and either use Faydown Cloak or Swift Step to get over the lashing tendrils. Repeat for the second lunge.
+[[File:Lashing Lunge.gif|center|300px]]
+After Lost Lace executes Lashing Lunge, she will immediately execute Balestra, Void Tendrils, or a third lunge. Since Void Tendrils and Balestra cover different sections of the arena, it is highly recommended to watch her telegraph.
+}}
+
+{{CollapseTable| collapsed = true | expand-text = Phase 2 |
+Lost Lace can be continuously attacked during and slightly after the transition into Phase 2, since Void Columns is the first attack of the phase, and the knockback applied on her can be used to create a safe space around Hornet.
+[[File:Combat Start Phase 2.gif|center|300px]]
+
+* <b>Void Columns</b>: One of Lost Lace's easiest attacks, this attack can be dodged by simply moving slightly out of the telegraphed zone.
+[[File:Void Columns Dodge.gif|center|300px]]
+It is recommended to capitalise on this opportunity to hit Lost Lace. Use [[Swift Step]] towards her to close the distance and stand on safe ground while attacking. Generally, regardless of the [[Crests|Crest]] Hornet has equipped, Lost Lace can be hit 1–2 times before she initiates another attack.
+[[File:Void Column Attack.gif|center|300px]]
+* <b>Lashing Dive</b>: Similar to Void Columns, this attack can simply be sidestepped and then disregarded once enough distance is put between Hornet and the column.
+[[File:Lashing Dive.gif|center|300px]]
+* <b>Void Projectiles</b>: This is a deceptively simple attack. The projectiles will always track Hornet's movement from her original position at the time the attack was initiated instead of targeting her current position. As such, simply move in a straight line at a consistent pace.
+[[File:Void Projectiles Dodge.gif|center|300px]]
+* <b>Aerial Void Projectiles</b>: When performed in the air, Lost Lace is susceptible to damage and her subsequent movement is predictable, allowing Hornet to get 1–2 hits in.
+[[File:Void Projectiles Attack.gif|center|300px]]
+* <b>Void Blobs</b>: If not focusing on hitting Lost Lace, this attack can be easily dodged by standing equidistant between two of the blobs. However, this is also the attack with the largest window of time within which Hornet can damage Lost Lace.
+[[File:Void Blobs Dodge.gif|center|300px]]
+This opportunity should be capitalised on – since the blobs can be easily dodged as projectiles and are of no consequence on the ground until they trigger, anywhere from 3–5 hits can be achieved, depending on the Crest equipped and the distance from Lost Lace as Hornet starts the attack. The knockback from repeated attacks will create a safe opening between the two void blobs spawned directly to either side of Lost Lace.
+[[File:Void Blobs Attack.gif|center|300px]]
+* <b>Aerial Void Blobs</b>: Since the space directly below Lost Lace is safe, Hornet can stand underneath her and up-slash twice before she leaps away. A third slash can be landed if it is well-timed.
+[[File:Aerial Void Blobs Attack.gif|center|300px]]
+}}
+
+{{CollapseTable| collapsed = true | expand-text = Phase 3 |
+At the start of Phase 3, stand in the centre of the arena directly above the rumbling indicating where Lost Lace will spawn to get as close to her as possible, since she cannot deal contact damage as she emerges. Once she knocks Hornet back, she can be hit once by walking forwards slightly and timing the hit as she falls. A second hit is possible if Lost Lace does not Dive, but is not encouraged, as she may retaliate with a fast attack.
+[[File:Combat Start Phase 3.gif|center|300px]]
+
+* <b>Void Waves</b>: The Void waves are another deceptively easy attack. When the arena rumbles, sprint to the nearest wall of the arena and [[Cling Grip]] to it. Repeatedly using [[Swift Step]] while clinging to the wall will make Hornet dash up the wall, and continuing to input Swift Step will make Hornet alternate between dashing up-and-off the wall and dashing back towards the wall. So long as the input for Cling Grip is held and the input for Swift Step is repeated, Hornet can remain high up enough to dodge the waves entirely.
+[[File:Void Waves Dash Spam.gif|center|300px]]
+If not at all possible to dodge the waves by reaching a wall, Hornet can instead use [[Faydown Cloak]] to jump over the waves and [[Drifter's Cloak]] to wait out the waves' duration. Faydown Cloak and [[Swift Step]]'s dash can also be used when the waves are lower, near the start and end of their lifespan.
+[[File:Void Waves Faydown.gif|center|300px]]
+}}
+
+{{CollapseTable| collapsed = true | expand-text = Phase 4 |
+Similarly to Phase 2, Lost Lace can be continually damaged during and slightly after the transition into Phase 4, since she stops for an extended moment to laugh and her first attack, Lost Moulinet, has a lengthy starting animation.
+[[File:Beatupphase4-ezgif.com-optimize.gif|center|300px]]
+
+* <b>Lost Moulinet</b>: Since each attack radius is clearly defined, simply stand outside each white circle. Special care should be taken to stand far away from the elevated circle, as it indicates where Lost Lace will end the attack by slamming down, and thus where a large area of Void tendrils will appear.
+[[File:Lost Moulinet Dodge.gif|center|450px]]
+There is a short window to attack Lost Lace when she starts the attack, and when she slams into the ground. The Void tendrils that spawn after she lands can be dodged by jumping.
+[[File:Lost Moulinet Attack.gif|center|300px]]
+}}
+
+=== Tools & Crests ===
+
+{{CollapseTable| collapsed = true | expand-text = Recommended |
+* [[Pale Nails]] can provide an easy way to convert excess Silk into near-guaranteed damage, if used during an attack or in the short downtime after Lost Lace dives, since they will hover behind Hornet and lock on when she reappears.
+* Offensive {{CrestSlot|Red|s}} can be saved for Phase 4, where the hectic and speedy nature of Lost Lace's attacks can be overwhelming. 
+** Tools which help with this playstyle include [[Tacks]] and [[Cogflies]] as they deal good damage and require relatively little effort to maximise their value. <b>Void Waves</b> and <b>Void Columns</b> remove Tacks, so they should be placed directly after these attacks to maximise effectiveness.
+* [[Flea Brew]] and [[Flintslate]] can make the most of the long phase transitions and longer attack windows introduced in Phase 2 and onwards.
+* [[Plasmium Phial]] can be used to induce Plasmification, which heightens Hornet's survivability given her ability to semi-consistently dodge attacks. 
+** Plasmification no longer clears when diving through the Void, and can be used prior to entering the arena. 
+** Alternatively, all 6 charges can be used in the relatively long transition between Phases 2 and 3, allowing Hornet to buffer her actual masks.
+* [[Druid's Eyes]] is an effective Tool in this fight, where a good portion of Lost Lace's attacks deal damage in separate instances.
+** Other defensive {{CrestSlot|Blue|s}} can also provide room for error in an otherwise very chaotic fight.
+* [[Longclaw]] can aid in capitalising on the windows of attack by lowering the distance required to hit. [[Silkspeed Anklets]] function similarly, but heighten the chance of colliding with Lost Lace as she emerges from the void.
+* [[Weighted Belt]] can help with remaining in range to hit Lost Lace multiple times. 
+* Aggressive use of the Clawline, to hit Lost Lace when she is far away (e.g. Aerial Parry) and close the distance, can increase DPS and speed up the fight.
+}}
+
+{{CollapseTable| collapsed = true | expand-text = Important to Note |
+* Slow {{CrestSlot|Red|s}} like the [[Pimpillo]], [[Silkshot]], and [[Voltvessels]] can have trouble hitting the fast-moving Lost Lace unless she is staggered or they are used predictively to hit at the end of her attacks.
+* [[Wispfire Lantern]] can provide a low-input form of damage. However, it is difficult for the slow-aiming and moving Wisp to hit Lost Lace, especially if she Dives.
+* The [[Architect Crest]]'s basic attack has a hitbox which is often unable to extend high enough to hit Lost Lace during Aerial Void Blobs, her most exploitable attack. This can be remedied by performing small hops while slashing.
+* The [[Witch Crest]]'s [[Bind]] requires repeated hits over a short period. Using it on an idle Lost Lace is a sure-fire way to miss as she Dives or otherwise moves. Instead, attacks which travel a set distance such as Lashing Lunge and Dive should be exploited, starting the Bind just above the spot where Lost Lace will appear after moving. [[Injector Band]] can assist with timing on the Bind as well. [[Multibinder]] is generally not very useful when using Witch Crest in this fight, since hitting all of the heals is unlikely.
+* [[Wanderer Crest]]'s attack speed bonus often is not significant enough to add an extra hit safely. However, it still makes a difference on longer attacks and means less time spent in close proximity to Lost Lace.
+* Crests with down-slashes that move Hornet, such as Architect, Hunter, and Beast, incur higher risk when used against Lost Lace's Lost Moulinet, due to a miss being punished by the void tendrils. Additionally, Architect's slow down-slash means that it can only score one hit total against Lost Lace at the end of the attack.
+}}
+
+== Location ==
+Lost Lace is located in [[The Abyss (Silksong)|the Abyss]], under the vast sea of [[Void]] that lies at its base. The [[Everbloom]] is required to access it, and Hornet cannot be [[Cursed_Crest|Cursed]].
+
+{{Gallery
+|Image1 = Mapshot SS Lost Lace 01.png!Location in the Abyss
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Lost Lace 00.png!Entering the arena
+|Image2 = Screenshot SS Lost Lace 01.png!Idle
+|Image3 = Screenshot SS Lost Lace 02.png!Dive
+|Image4 = Screenshot SS Lost Lace 03.png!Advance
+|Image5 = Screenshot SS Lost Lace 04.png!Retreat
+|Image6 = Screenshot SS Lost Lace 05.png!Leap
+|Image7 = Screenshot SS Lost Lace 06.png!Parry
+|Image8 = Screenshot SS Lost Lace 07.png!Riposte
+|Image9 = Screenshot SS Lost Lace 08.png!Aerial Riposte
+|Image10 = Screenshot SS Lost Lace 09.png!Aerial Lunge
+|Image11 = Screenshot SS Lost Lace 10.png!Void Tendrils
+|Image12 = Screenshot SS Lost Lace 11.png!Aerial Void Tendrils
+|Image13 = Screenshot SS Lost Lace 12.png!Balestra
+|Image14 = Screenshot SS Lost Lace 13.png!Triple Cut
+|Image15 = Screenshot SS Lost Lace 14.png!Lashing Lunge
+|Image16 = Screenshot SS Lost Lace 15.png!Void Columns
+|Image17 = Screenshot SS Lost Lace 16.png!Lashing Dive
+}}
+
+{{Gallery
+|Image1 = Screenshot SS Lost Lace 17.png!Void Projectiles
+|Image2 = Screenshot SS Lost Lace 18.png!Aerial Void Projectiles
+|Image3 = Screenshot SS Lost Lace 19.png!Void Blobs
+|Image4 = Screenshot SS Lost Lace 20.png!Aerial Void Blobs
+|Image5 = Screenshot SS Lost Lace 21.png!Void Waves
+|Image6 = Screenshot SS Lost Lace 22.png!Lost Moulinet
+|Image7 = Screenshot SS Lost Lace 23.png!Hornet caught in Lost Moulinet
+|Image8 = Screenshot SS Lost Lace 24.png!Stagger (Phases 1 - 2)
+|Image9 = Screenshot SS Lost Lace 25.png!Stagger (Phases 3 - 4)
+|Image10 = Screenshot SS The Abyss 11.png!Arena in the Abyss (Phases 1 - 2)
+|Image11 = Screenshot SS The Abyss 12.png!Arena in the Abyss (Phases 3 - 4)
+}}
+
+== Achievements ==
+{{Achievement|game=silksong|Sister of the Void}}
+
+== Trivia ==
+* Lost Lace does not respond to the [[Needolin]].
+* Lost Lace has a cut attack where Hornet would get stuck in threads and Lost Lace would unleash a torrent of slashes on her.<ref>[https://youtu.be/jKF9WrmdcFk?t=90 Lost Lace Cut Thread Attack] on YouTube.</ref> Her attack animation was reused for the Lost Moulinet attack.
+* Lost Lace's difficulty was nerfed prior to <i>Silksong</i>'s release;<ref>[https://www.youtube.com/watch?v=DBvt0maVetE&t=19392s Live stream VOD discussing conversation with Matthew Griffin] (5:22:18)</ref> her cut attack's removal was likely part of this.
+* Unlike other void-possessed enemies and bosses, Lost Lace is not programmed with a [[Black-Threading]] multiplier.
+
+{{Localisation
+|DEname = Verlorene Lace
+|DEmeaning = Lost Lace
+|ESname = Lace perdida
+|ESmeaning = Lost Lace
+|FRname = Lace Déchue
+|FRmeaning = Fallen Lace
+|ITname = Merletta Perduta
+|ITmeaning = Lost Lace
+|JAname = 漆黒のレース
+|JAromanised = Shikkoku no rēsu
+|JAmeaning = Pitch Black Lace
+|KOname = 광기에 빠진 레이스
+|KOromanised = Gwanggloe ppajin leiseu
+|KOmeaning = Fallen to Madness Lace
+|PTname = Tessela Perdida
+|PTmeaning = Lost Lace
+|RUname = Пропащая Лейс
+|RUromanised = Propaščaja Lejs
+|RUmeaning = Lost Lace
+|TWname = 失心蕾絲
+|TWromanised = Shīxīn lěisī
+|TWmeaning = same
+|ZHname = 失心蕾丝
+|ZHromanised = Shīxīn lěisī
+|ZHmeaning = Lost Mind Lace or Lost Heart Lace
+|CODEname = LOST_LACE
+}}
+ 
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[pt:Tessela Perdida]]

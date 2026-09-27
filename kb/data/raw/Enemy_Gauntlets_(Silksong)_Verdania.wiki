@@ -1,0 +1,41 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Lost_Verdania_12.png|400px|center]]
+|[[File:Mapshot_SS_Lost_Verdania_Arena_1.png|400px|center]]
+|-
+| colspan="2" | Enemy gauntlet in the central portion of Lost Verdania.
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>A shortcut to the left side of the area</center>
+| <center>[https://www.youtube.com/watch?v=swPmNk9_fw0 Generic Enemy Battle A]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Verdanir.png|35x35px|link=Verdanir]] [[Verdanir]] x2, near Hornet
+| Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Kindanir.png|35x35px|link=Kindanir]] [[Kindanir]], left
+| Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Escalion.png|35x35px|link=Escalion]] [[Escalion]], near Hornet
+| Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Kindanir.png|35x35px|link=Kindanir]] Kindanir, right
+| Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Verdanir.png|35x35px|link=Verdanir]] Verdanir, near Hornet
+| Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Escalion.png|35x35px|link=Escalion]] Escalion, near Hornet
+|
+|}

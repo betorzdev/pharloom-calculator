@@ -1,0 +1,30 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Greymoor Arena 1 Act 3.png|400px|center]]
+|[[File:Mapshot_SS_Greymoor Arena 1 Act 3.png|400px|center]]
+|-
+| colspan="2" | [[Act 3]] enemy gauntlet which reuses the previous gauntlet's arena. All enemies become [[Black-Threading|black-threaded]] shortly after arriving.
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>Nothing</center>
+| <center>[https://www.youtube.com/watch?v=NRJe8xGWGK4 Dark Descent]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Dreg Catcher.png|35x35px|link=Dreg Catcher]] Dreg Catcher x2, left and right
+|
+|-
+|
+[[File:HJ_Dreg Catcher.png|35x35px|link=Dreg Catcher]] Dreg Catcher, centre<br>
+[[File:HJ_Roachcatcher.png|35x35px|link=Roachcatcher]] [[Roachcatcher]], top right
+|
+|-
+|
+[[File:HJ_Thread Raker.png|35x35px|link=Thread Raker]] Thread Raker x2, left and right
+|
+|}

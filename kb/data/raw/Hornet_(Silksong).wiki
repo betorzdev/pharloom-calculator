@@ -1,0 +1,186 @@
+{{For|the [[Hollow Knight]] character and boss|Hornet (Hollow Knight)}}
+{{Infobox Playable Character
+|weapon = [[Needle]]
+|equipment = [[Tools]]
+|energy_source = [[Silk]]
+|image1 = <gallery>
+Hornet_Idle.png|Idle
+Hornet_No_Cloak.png|Cloakless
+Hornet_Red_Memory.png|Red Memory
+</gallery>
+|title1 = Hornet
+|gender = Female<ref>Hornet [[Hunter's Journal (Hollow Knight)|Hunter's Journal]] entry: <i>"I have seen this nimble little creature. I thought her prey and pounced at her, but with a flash she stabbed me with her flying stinger and darted away."</i></ref>
+|va = Makoto Koji<ref>[https://twitter.com/teamcherrygames/status/835701787541692419?lang=en Tweet] by Team Cherry</ref>
+|aka = Bug not flea ([[Vog]])<ref>[[Vog]]: <i>"Bug not flea, my learnings, all have been scratched to your maps."</i></ref><br>
+Bug-red ([[Twelfth Architect]])<ref>[[Twelfth Architect]]: <i>"Bug-Red. Do you ask-need our service? We shall create, as is our d-d-directive. To serve, for Pharloom eternal."</i></ref><br>Child Wielding Needle/Hornet Wielding Needle ([[Shakra]])<ref>[[Shakra]]: <i>"Poshanka! So you found my calling ring, Child Wielding Needle."</i></ref><ref>Shakra: <i>"Poshanka, Hornet Wielding Needle. For that is your name, is it not? I have heard it spoken in this land with reverence."</i></ref><br>Daughter of a Distant Land ([[Weavers]])<ref>Weaver Burial Spire dialogue: <i>"Daughter of a distant land... We who remained have waited long..."</i></ref><br>Miss grown-up ([[Nuu]])<ref>[[Nuu]]: <i>"Come to rest here, miss grown-up? Then let Nuu see our journal, for she is eager to see your cuts!"</i></ref><br>Red Maiden ([[Sherma]])<ref>[[Sherma]]: <i>"Join your voice with mine, red maiden! You, me, and my lucky chime will sing together until the great gate opens!"</i></ref><br>Old One ([[Mask Maker]], [[Snail Shamans (Silksong)|Snail Shamans]])<ref>[[Mask Maker (Silksong)]]: <i>"Ahh. Old One. Your kind should know it's rude to expose me such. Unmasked, the task becomes heavy."</i></ref><ref>[[Snail Shamans (Silksong)|Snail Shamans]]: <i>"You seem displeased, Old One. We only did as you asked, yes? The snare is sprung, the creature consumed."</i></ref><br>Pale beast ([[Skarrsinger Karmelita]])<ref>[[Skarrsinger Karmelita]]: <i>"My strength... my power... Could you claim it, pale beast? Are you so strong?..."</i></ref><br>Pale It ([[Steel Seer Zi]])<ref>[[Steel Seer Zi]]: <i>"The wish? No... pale It... Zi sensed clear your meeting... (...) A small gift for you, pale It... for the thought, complex..."</i></ref><br>Spider/Little Spider ([[Lace]])<ref>[[Lace]]: <i>"Spider, dear. Why must you remain so distressingly... optimistic?"</i></ref><ref>[[Lace]]: <i>"I can save you, little spider. All the trouble you'd face above. All the suffering. It's so simple."</i></ref><br>Spider/Spider's child ([[White Lady]])<ref>[[White Lady]]: <i>"...Alas... spider's child... (...) ...Indeed, spider... So much pain you must have passed to speak our hope so simply..."</i></ref><br>Weaver-spawn ([[Vaultkeeper Cardinius]])<ref>[[Vaultkeeper Cardinius]]: <i>"This pact is made, Weaver-spawn, insight for us, both she and it."</i></ref><br>Wyrm child ([[Mister Mushroom (Silksong)|Mister Mushroom]]).<ref>[[Mister Mushroom (Silksong)|Mister Mushroom]]: <i>"...Oh. Wyrm child. No surprise it's you who meets me here."</i></ref>
+|affiliation = [[Herrah]] (mother)<ref>Hornet in Beast's Den: <i>"We do not choose our mothers, or the circumstance into which we are born."</i></ref><br>[[Pale King]] (father)<ref name=wl>White Lady: <i>"It faced the Gendered Child? She's a fierce foe, strong in mind and body, striking reflection of her mother, though the two were permitted little time together. I never begrudged the Wyrm's dalliance as bargain. In fact, I feel some affection for the creature birthed."</i></ref><br>[[White Lady]] (stepmother)<ref name=wl/><br>[[Hive Queen Vespa]] (mentor)<ref>Vespa: <i>"...Good... Better... ...Yet still you will need to be faster... ...In time, they will come for you... Those who fear your nature, and those seeking to claim it... ...To survive our world you must learn to sting... swift and sudden..."</i></ref><ref>Hornet dialogue with White Lady: <i>That was the wish, of my mother, of my mentor, and of you...</i></ref><br>[[The Knight]] (half-sibling)<ref name=hornetsiblings>Hornet to [[the Knight]]: <i>"Would you supplant our birth-cursed sibling, or would you transcend it?"</i></ref><br>[[The Hollow Knight]] (half-sibling)<ref name=hornetsiblings/><br>[[Broken Vessel]] (half-sibling)<ref name=hornetsiblings/><br>[[Sibling]]s (half-siblings)<ref name=hornetsiblings/><br>[[Hallownest]] (homeland)<ref>Hornet dialogue with Lace: <i>"But always, child, I remain a daughter of Hallownest."</i></ref><br>[[Deepnest]] (princess)<ref>Weaver corpse in [[Weavers' Den]] Dream Nail dialogue: <i>"...Princess..."</i></ref><br>[[Weavers]] (ancestors)<ref>[[Widow]]: <i>"She is here! The rare birthling! Precious child of Wyrm and Weaver!"</i></ref>
+}}
+{{Quote
+|Hr=Hornet
+|I have already stood sentinel for one dying land. That role... I will never play again. While I live, and possess the strength to resist, this kingdom, and the bugs within it, shall not fall.
+|Hornet
+}}
+
+<b>Hornet</b> is the mysterious princess-protector of [[Hallownest|Hallownest’s]] ruins, a major character in <i>[[Hollow Knight]]</i> and the playable protagonist of <i>[[Hollow Knight: Silksong]]</i>. She wields a [[Needle]] and thread with deadly prowess.<ref>[https://www.fangamer.com/collections/hollow-knight/products/hollow-knight-switch-ps4-pc-collectors-edition-game Official manual]</ref> Hornet is captured by outsider bugs and brought to their kingdom, [[Pharloom]], but she escapes her cage before arriving at their destination. She then must battle foes and solve mysteries to ascend on a deadly pilgrimage to the kingdom's peak.
+
+== Background ==
+Hornet is the daughter of [[Pale King|The Pale King]] and [[Herrah the Beast]], the result of a bargain for [[Herrah the Beast|Herrah]] to become a [[Dreamers|Dreamer]]. Her [[The Pale King|shared father]] with [[the Knight]], [[The Hollow Knight]], and the rest of [[Vessels|The Vessels]] makes her their half sister. 
+
+She was birthed by [[Herrah the Beast|Herrah]], the queen of [[Deepnest]]. Eventually, Hornet was brought to [[White Palace|The White Palace]] and was brought up by [[White Lady|The White Lady]], queen of [[Hallownest]]. At some point, she was trained in [[The Hive]] by [[Hive Queen Vespa]]. 
+
+She was brought to [[Pharloom]] by [[Envoy|veiled bugs]] in a cage covered in a rune. Hornet was intended to be brought to [[Grand Mother Silk]], so the Mother could use Hornet's power.<ref>Hornet dialogue with [[Seamstress]]: <i>"I have seen their Citadel and its state, and I have strong suspicion...They hunt me for my nature. For the Silk produced within my shell. Not for themselves but for the one atop it all."</i></ref>
+
+==In-game Events==
+At an unspecified point of time after the [[Radiance]] was slain and the [[Infection]] ended along with it, Hornet was captured by Choirbugs and taken to Pharloom. After the rune on the cage<ref>[[Choral Commandment]]: ''"Full Chamber to the kingdom of the White Wyrm. Claim the Weaver, in half part. Last of their line. Sensed strong with Silk. Resistance anticipated. Quell with rune cage."''</ref> is broken by a [[Silk Fly]], Hornet breaks free and falls down. She begins her journey through the haunted kingdom of Pharloom to find out the purpose behind her capture. 
+
+She discovers [[Bone Bottom]], a small settlement, meets [[Lace]], who she battles, and enters [[The Citadel]] either by activating five bells and defeating the [[Last Judge]], or by defeating [[Phantom]] in [[Bilewater]]. Once in The Citadel, she conducts the Threefold Melody, letting her ascend to [[The Cradle]], where she defeats Lace once again. She then may defeat [[Grand Mother Silk]] and bind her, becoming the new ruler of Pharloom, marking a [[Endings (Silksong)#Ending 1: Weaver Queen|possible ending]]. 
+
+Alternatively, if she completes a large amount of [[Wishes|Wishes]], making her start to care for Pharloom and its people, she may seeks an alternative method, and accepts the [[Silk and Soul]] quest from the [[Caretaker]] to accomplish this. After she completes the quest by gathering materials needed to craft a trap, Hornet then activates it after the battle against Grand Mother Silk, instead of binding her. This causes void to spread into Pharloom, starting [[Act 3]] of the game.{{MissingInfo}}
+
+== Health and Silk ==
+
+=== Health ===
+<div style="display: grid; grid-template-columns: 96px auto; align-items: center;">
+<div style="margin: 0 0 1.5rem;">[[File:SS Mask.png|center|link=|44x44px]]</div>
+[[Mask Shard (Silksong)|Health]] is represented as <b>Masks</b>, shown in the upper-left corner of the screen. Hornet starts the game with 5 Masks and can obtain more by collecting [[Mask Shard (Silksong)|Mask Shard]]s. Health is lost by taking damage, either from enemies or from environmental hazards. Health can be regained by the use of the Bind ability, consuming a full Silk spool to regain three masks. This is increased to four with the [[Multibinder]] tool.
+<div style="margin: 0 0 1.5rem;">[[File:SS Mask Lifeblood.png|center|link=|48x48px]]</div>
+<b>Lifeblood/Plasmium Masks</b>, granted by [[Plasmium Phial|Plasmium Phials]] or killing [[Winged Lifeseed]]s are temporary masks that cannot be normally regenerated by healing, they are removed when sitting on a bench.
+</div>
+
+=== Cocoon ===
+<div style="display: grid; grid-template-columns: 96px auto; align-items: center;">
+<div style="margin: 0 0 1.5rem;">[[File:Map Pin Silk Cocoon.png|link=Cocoon|center|48x48px]]</div>
+Upon running out of Health, Hornet will die, leaving behind a [[Cocoon]]. In Normal Mode, she will respawn at the last used [[Bench (Silksong)|Bench]] or checkpoint, without her [[Rosaries]] and with any [[Spool Fragment|Spool upgrades]] that was previously collected missing. Breaking the Cocoon will bring those back. In {{Steel Soul Icon Mini|SS}} [[Steel Soul Mode (Silksong)|Steel Soul Mode]], the game will instead end and be permanently lost on that save profile, attempting to load said profile will prompt the player to clear it.
+</div>
+
+=== Silk ===
+<div style="display: grid; grid-template-columns: 96px auto; align-items: center;">
+<div style="margin: 0 0 1.5rem;">[[File:Silk_Spool_HUD_Broken_Filled.png|link=Silk|center|60x48px]]</div>
+[[Silk]] is represented as a spool below the health indicator. Silk is consumed when using special abilities, including [[Bind]]. Striking enemies with the Needle fills the spool by 1 strand. When there is enough silk to perform a Bind, the symbol representing the side of the spool left to the health indicator is filled.
+The Spool can be expanded by collecting [[Spool Fragment]]s. Every two Spool Fragments permanently allows Hornet to store one more strand of Silk.
+</div>
+
+== Upgrades and Equipment ==
+
+=== Needle ===
+<div style="display: grid; grid-template-columns: 160px auto; align-items: center;">
+<div style="margin: 0 0 1.5rem;">[[File:Needle 1 Needle.png|center|100x100px|link=Needle]]</div>
+Hornet's main weapon. Can be used to slash or block attacks against [[Enemies (Silksong)|enemies]]. The [[Needle]] can be used to attack downwards while Hornet is above [[Enemies (Silksong)|enemies]], spikes or certain objects to bounce off them and gain vertical height, this is called [[Needle#Needle-bouncing|Needle-bouncing]].
+Hornet also uses the needle as a [[Clawline|grappling hook]], and alongside her other abilities.
+</div>
+
+=== Tools ===
+<div style="display: grid; grid-template-columns: 160px auto; align-items: center;">
+<div style="margin: 0 0 1.5rem;">[[File:Tools Prompt.png|center|100x100px|link=Tools]]</div>
+Special items classified into red, blue and yellow versions, equipped on a Crest with limited slots for each type. [[Tools]] can be used as throwing weapons or defensive aids and do not cost Silk. They are found throughout Pharloom, and can be changed while sitting on a [[Bench (Silksong)|Bench]], similar to [[Charms]] in the previous game.
+</div>
+
+=== Crests ===
+<div style="display: grid; grid-template-columns: 160px auto; align-items: center;">
+<div style="margin: 0 0 1.5rem;">[[File:Hunter_Crest_Inventory.png|center|120x120px|link=Crests]]</div>
+Special items that alter Hornet's basic attacks. Each [[Crests|Crest]] has its own unique set of needle attacks and a Needle-Bounce, some have additional mechanics.
+The Crest also determines the amount of Tools and Skills slots, starting with a different number for each type, and more can be unlocked using [[Memory Locket]]s.<br>
+Hornet can aquire new Crests in specifc places in Pharloom, binding the Crest to herself.
+Crests can be replaced while sitting on a Bench, with exactly one Crest being equipped at any time. The [[Hunter Crest]] is the default.
+</div>
+
+=== Silk Skills ===
+<div style="display: grid; grid-template-columns: 160px auto; align-items: center;">
+<div style="margin: 0 0 1.5rem;">[[File:Icon_SS_Silkspear_Art.png|center|130x100px|link=Skills_and_Abilities_(Silksong)#Silk_Skills]]</div>
+Offensive spells designed by the [[Weavers]] out of Silk. After learning any of them, Hornet can expend some silk to use the [[Skills and Abilities (Silksong)#Silk Skills|Skill]], damaging nearby enemies.
+Silk Skill damage scales with needle upgrades, each skill always dealing around three times needle damage.
+Like tools, Silk Skills can be equiped and swapped while sitting on a Bench.
+</div>
+
+=== Ancestral Arts ===
+<div style="display: grid; grid-template-columns: 160px auto; align-items: center;">
+<div style="margin: 0 0 1.5rem;">[[File:Icon_SS_Swift_Step_Splash_Clear.png|center|100x100px|link=Skills_and_Abilities_(Silksong)#Ancestral_Arts]]</div>
+Weaver abilities that enhance Hornet's movement and aid in her traversal of Pharloom. These are primarily not for combat, but they can still be useful in a fight.
+Like Silk Skills, [[Skills and Abilities (Silksong)#Ancestral_Arts|Ancestral Arts]] are found in what remains of the Weavers in Pharloom, mainly in the [[Weaver Burial Spire]]s.
+</div>
+
+=== Abilities ===
+<div style="display: grid; grid-template-columns: 160px auto; align-items: center;">
+<div style="margin: 0 0 1.5rem;">[[File:Drifter's_Cloak.png|center|100x100px|link=Skills_and_Abilities_(Silksong)#Other_Abilities]]</div>
+[[Skills_and_Abilities_(Silksong)#Other_Abilities |Other abilities]] Hornet may gain throughout her journey, helping with movement, combat or progression, they can be aquired in a variety of ways.
+</div>
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Hornet 01.png!Hornet arriving to Pharloom
+|Image2 = Screenshot SS Hornet 02.png!Hornet sitting on a bench in Bone Bottom
+|Image3 = Screenshot SS Hornet 03.png!Hornet snared by Silk in Bellhart
+|Image4 = Screenshot SS Hornet 04.png!Hornet given clarity on her nature by Eva
+|Image5 = Screenshot SS Flea Caravan 08.png!Hornet travelling with the Flea Caravan
+|Image6 = Screenshot SS Hornet 05.png!Hornet and Phantom clashing
+|Image7 = Screenshot SS Hornet 10.png!Hornet caged after being taken to the Slab
+|Image8 = Screenshot SS Hornet 11.png!Hornet and the Fayforn
+|Image9 = Screenshot SS Hornet 06.png!Hornet sitting on a bench in Songclave
+|Image10 = Screenshot SS Hornet 07.png!Hornet in Whiteward with Sherma
+|Image11 = Screenshot SS Hornet 08.png!Hornet playing the Threefold Melody
+|Image12 = Screenshot SS Hornet 09.png!Hornet and Lace in the Cradle
+|Image13 = Screenshot SS Hornet 12.png!Hornet and Shakra at Trail's End
+|Image14 = Screenshot SS Hornet 13.png!Hornet binding the First Sinner
+|Image15 = Screenshot SS Hornet 14.png!Hornet binding Grand Mother Silk
+|Image16 = Screenshot SS Skarrsinger Karmelita 01.png!Hornet taking Karmelita's heart
+|Image17 = Screenshot SS Hornet 15.png!Hornet entering her Red Memory
+|Image18 = Screenshot SS Herrah 01.png!Baby Hornet with her mother in Deepnest
+|Image19 = Screenshot SS Vespa 01.png!Young Hornet with her mentor in the Hive
+|Image20 = Screenshot SS White Lady 02.png!Hornet confronting the memory of the White Lady in the White Palace
+|Image21 = Screenshot SS Hornet 16.png!Hornet diving into the Void with the Everbloom
+|Image22 = Screenshot SS Hornet 17.png!Hornet picking up Lace in the Abyss
+|Image23 = Screenshot SS Hornet 18.png!Hornet sleeping in her Bellhome in Bellhart
+}}
+=== Pre-release art ===
+{{Gallery|
+|Image1 = Hornet (Silksong).png!Promotional art
+|Image2 = Ari SS Sketch 01.jpg!Concept Art
+|Image3 = Ari SS Sketch 15.png!Concept Art
+|Image4 = Ari SS Sketch 31.png!Concept Art
+|Image5 = Ari SS Sketch 33.png!Concept Art
+}}
+
+== Trivia ==
+* On Silksong's Steam page, Hornet is called a "Princess Knight".<ref>[https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/ Silksong Steam page]</ref>
+* Hornet has a love of fluffy bugs, as evidenced by various entries in her [[Hunter's Journal (Silksong)|Hunter's Journal]].<ref>[[Mossgrub|Mossgrub's]] Hunter's Journal entry: <i>"If not for the spikes, I would think it an appealing bug."</i></ref><ref>[[Furm|Furm's]] Hunter's Journal entry: <i>"I would very much like to feel their soft fur, if only they weren't so hostile."</i></ref><ref>[[Huge Flea|Huge Flea's]] Hunter's Journal entry: <i>"I would not have guessed so large and marvellous a flea existed. I am pleased it saw sense before I had to strike a killing blow."</i></ref>
+* Regardless of whether she is imprisoned by them, Hornet shows a disgust toward the flies of [[the Slab]].<ref>[[Wardenfly]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Disgusting both in manner and stench. I feel no remorse to see them felled."</i></ref><ref>[[Scabfly]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Foul creatures birthed into servitude. Their plight elicits no sympathy from me."</i></ref><ref>[[Freshfly]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"The less these gruesome bugs breed, the better."</i></ref>
+* At some point in the past, Hornet had mates.<ref>[[Great Conchflies]] [[Hunter's Journal (Silksong)|Hunter's journal]] entry: <i>"(…) I once sought similar union, but of my own mates none could match my lifespan."</i></ref>
+* Hornet's cloak has a deeper red colour in-game than the colour of her extracted sprites. This is due to the game's lighting making her cloak appear more saturated in most areas. Her sprites use the same colour red as her sprites in <i>[[Hollow Knight]]</i>.
+
+{{Localisation
+|DEname = Hornet
+|DEmeaning = —
+|ESname = Hornet
+|ESmeaning = —
+|FRname = Hornet
+|FRmeaning = —
+|ITname = Hornet
+|ITmeaning = —
+|JAname = ホーネット
+|JAkatakana = foreign
+|JAromanised = Hōnetto
+|JAmeaning = Hornet
+|KOname = 호넷
+|KOromanised = Honet
+|KOmeaning = Hornet
+|PTname = Hornet
+|PTmeaning = —
+|RUname = Хорнет
+|RUromanised = Xornet
+|RUmeaning = Hornet
+|ZHname = 大黄蜂
+|ZHromanised = Dà huángfēng
+|ZHmeaning = Hornet (name for the insect)
+|TWname = 大黃蜂
+|TWromanised = Dà huángfēng
+|TWmeaning = same
+|CODEname = HORNET
+}}
+
+{{Refs|hr=ss|scrollbox=true|columns=2}}
+[[es:Hornet_(Silksong)]]
+[[it:Hornet_(Silksong)]]
+[[fr:Hornet_(Silksong)]]
+[[uk:Горнет_(Silksong)]]
+
+[[Category:Hollow Knight: Silksong]]

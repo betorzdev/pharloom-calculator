@@ -1,0 +1,174 @@
+{{Navbar|page1=Trobbio|page2=Tormented Trobbio}}
+{{SS Infobox Boss
+|image1 = <gallery>
+B_Tormented_Trobbio.png|Hunter's Journal
+Tormented_Trobbio_Idle.png|Idle
+Tormented Trobbio Stagger.png|Staggered
+Tormented Trobbio Dramatic Entrance.png|Entrance
+</gallery>
+|theme = [https://www.youtube.com/watch?v=iZaZoY4f9-8 Tormented Trobbio]
+|location = [[Whispering_Vaults#Sub-area:_The_Stage|The Stage]] (Act 3 only)
+|health = 950
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.4|1|0.9|0.8|0.75}}
+|drops = [[Dark Mirror]]
+|numbers_required = 1
+|va = [[Matt Trobbiani]]
+|singnum = 1
+|quest = [[Pain, Anguish and Misery]]
+}}
+{{Quote
+|Hr = Journal
+|Depressed thespian, consumed by the melancholy of a collapsing world. <hr/>
+This one chose to embrace the doom to come. I shall not share such easy surrender.
+}}
+
+<b>Tormented Trobbio</b> is a [[Bosses (Silksong)|boss]] and [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. He is the depressed and tormented form of [[Trobbio]] consumed by the melancholy of the collapsing [[Pharloom]].<ref>Tormented Trobbio Hunter's Journal entry: <i>"Depressed thespian, consumed by the melancholy of a collapsing world."</i></ref> His defeat is the objective of the <i>[[Pain, Anguish and Misery]]</i> [[wish]] which rewards the [[Dark Mirror]].
+
+== In-game Events ==
+In [[Act 3]], after accepting the <i>[[Pain, Anguish and Misery]]</i> [[Wish]] from the [[Songclave]] Wishwall, Tormented Trobbio can be fought after returning to his [[the Stage|Stage]]. After his defeat, he is lowered by a lift into the floorboards before then tossing out the [[Dark Mirror]].
+
+If [[Hornet (Silksong)|Hornet]] returns to the Stage after benching outside of [[The Citadel]] and waits without moving for 8 seconds, Tormented Trobbio peeks out from under the floorboards, and then quickly hides again after spotting Hornet.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+Upon entering the stage, coloured smoke flows in from the sides as Tormented Trobbio is slowly raised into the arena by an underground lift. He then leaps up in a large flash, beginning the battle.
+The flash can damage [[Hornet (Silksong)|Hornet]] for {{Damage|2}} if she is too close to Tormented Trobbio.
+
+=== Phase 1 ===
+Tormented Trobbio has the following attacks and manoeuvres during Phase 1:
+
+* <b>Woeful Whirlwind:</b> Tormented Trobbio spins into a whirlwind and moves rapidly towards Hornet, continuing in the opposite direction when he collides with a wall. At the end of the dash, he sends out 2 whirlwind projectiles in either direction which arc upwards. Tormented Trobbio is immune to damage from the sides while within the whirlwind, but he can still be damaged from above. Compared to Hornet's first fight with Trobbio, the whirlwind and its projectiles are slightly taller, and both the whirlwind and its projectiles leave sparkling trails. These sparkles explode after a delay and deal {{Damage|1}}.
+** If used while airborne, Tormented Trobbio arcs downwards towards Hornet before continuing on the ground. The whirlwind also descends more slowly compared to the base fight, creating less of a sharp downwards arc and travelling more horizontally.
+** If [[Tacks]] are run over by the whirlwind, they are destroyed without doing damage.
+* <b>Fell Fireworks</b>: Tormented Trobbio jumps into the air and shoots out 4 telegraphed lines in a large plus (+) or wide cross (x) shape centred on his body; they cover most of the arena and explode after a delay. Following this, Tormented Trobbio jumps slightly and creates 5 large sparkling circles randomly across the arena. These circles explode into fireworks after some delay.
+** This attack can be used airborne with little variation.
+* <b>Baleful Bombs</b>: Tormented Trobbio throws out 3 glittering baleful bombs. They bounce around for a bit, and then stop in place and release pillars of damaging smoke shaped like a plus (+) or cross (x). If Hornet hits them before they prime, they will be launched in the attacked direction; if hit after priming, they will immediately explode. The glitter bombs explode at staggered intervals.
+** If used while airborne, the glitter bombs immediately ricochet downwards off the ceiling.
+* <b>Flying Leap</b>: Tormented Trobbio leaps straight into the air to either immediately perform an aerial attack at the height of the jump or begin Fluttering.
+* <b>Flutter</b>: While airborne, Tormented Trobbio flutters horizontally across the arena. He can use an aerial attack at any time to cut the Flutter short. Otherwise, he drops to the ground at the end of the move.
+* <b>Floorboard Shuffle</b>: Tormented Trobbio descends into the floorboards to traverse to the opposite end of the arena. He can then emerge from the floorboards either onto the ground, or directly into a Flying Leap, allowing him to chain additional moves. He cannot be damaged while beneath the stage, and his location is indicated by the rattling floorboards.
+* <b>Hidden Baleful Bombs</b>: Tormented Trobbio descends into the floorboards and travels to the centre of the arena, throwing 3 glitter bombs out of a hatch, before continuing into a Floorboard Shuffle manoeuvre.
+* <b>Whirlwind Dodge</b>: Tormented Trobbio can quickly dash backwards defensively in a small whirlwind if Hornet is too close to him.
+* <b>Flourish</b>: Tormented Trobbio uses short dashes to move around the arena, flourishing with each.
+
+=== Phase 2 ===
+Upon reaching 375 HP, Tormented Trobbio strikes a pose and cries out to signal the start of Phase 2. He replaces the Hidden Baleful Bomb attack with the following:
+* <b>Profane Pyrotechnics</b>: Tormented Trobbio disappears underground, and then 7 fire pillars shoot out from the ground from random locations and at staggered intervals. The pillars are telegraphed by a fizzle coming from under the floor where they will appear. Tormented Trobbio launches into the air from within the fifth fire pillar, and either performs an aerial attack immediately or goes into a Flutter.
+
+<hr />
+
+{{Stagger
+| Tormented Trobbio slumps to the ground, in a daze.
+| 17
+| game = SS
+}}
+
+<hr />
+
+Due to the sheer amount of area denial caused by Woeful Whirlwind, one of the safest places during this attack is high up on either wall, though the secondary whirlwind projectiles should be kept in mind. Alternatively, using [[Drifter's Cloak]] to safely float directly above Tormented Trobbio provides a similar amount of safety while also offering a viable opportunity to attack. 
+
+The initial blast of Fell Fireworks can be difficult to dodge due to its extremely brief telegraph time. A safe option is staying close on either side of Tormented Trobbio as he jumps, which also allows Hornet to attack when he reaches the floor. 
+
+Striking the glitter bombs thrown by Hidden Baleful Bombs the instant they are thrown isolates them in a safe corner where they are unable to do much damage. 
+
+During the Flutter attack, Tormented Trobbio is left extremely vulnerable. This can be one of the best times to damage Tormented Trobbio as the attack takes a long time to complete, allowing for roughly 3 Needle hits before the attack is completed. 
+
+Count the blasts caused by Profane Pyrotechnics to predict when Tormented Trobbio will emerge so Hornet can move into position for a quick attack. 
+
+Tools that grant manoeuvrability can be very useful during this fight as the majority of Tormented Trobbio's attacks pour heavily on area denial. 
+
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = You! Mite or mourner! Fell fated chosen left till last!<br>
+Relent! Submit! The fatal blow was struck. Fair Pharloom wails its end.<br>
+We woe befallen few remained, let us join here, at last, and show our fires fierce.<br>
+Together to share our kingdom's pain, feel it scorch our shells, and know clear its suffering, its sorrow!
+| Title1_Event2 = After battle
+| Title1_Dialogue2 = So be it, impudent louse! Deny our kingdom's agony. Refuse its touch upon your fickle shell!<br>
+Carve your hapless path. Stalk, and strike, and fight, but know your foe is fate herself, and she has risen raging!
+| Title1_Event3 = Playing the [[Needolin]]
+| Title1_Dialogue3 =[n]Woe...Woe...<br>
+Fell fated fallen!<br>
+Pain... Despair... Torment...<br>
+Alone against the dark...<br>
+Scorned to suffer...<br>
+Light's final gleam...
+| Title2 = Written
+| Title2_Event1 = [[Lore Tablets (Silksong)#Whispering Vaults|Whispering Vaults Lore Tablet]]
+| Title2_Dialogue1 = Damned are we! The lingered few bound still to suffer. Cursed thrice by Pharloom, to wait, to watch, to cry our anguish.<br>
+No more! We say! No more! We cry! We all have wailed and wept. Fair Pharloom's fall has come at last. Its end we now accept.
+| Title2_Event2 = <i>[[Pain, Anguish and Misery]]</i> wish
+| Title2_Dialogue2 = In the darkest of shadows, all is made clear. Pharloom draws its final breath, and we few remaining must bear its dying pain. Come to the Citadel's Stage and let us suffer together.
+}}
+
+==Location==
+Tormented Trobbio is located in [[the Stage]], after promising the <i>[[Pain, Anguish and Misery]]</i> [[Wish]].
+
+{{Gallery
+|Image1 = Mapshot SS Trobbio 01.png!Location in the Stage
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Tormented Trobbio 01.png!Entrance
+|Image2 = Screenshot SS Tormented Trobbio 02.png!Woeful Whirlwind
+|Image3 = Screenshot SS Tormented Trobbio 07.png!Fell Fireworks start
+|Image4 = Screenshot SS Tormented Trobbio 06.png!Fell Fireworks end
+|Image5 = Screenshot SS Tormented Trobbio 03.png!Baleful Bombs
+|Image6 = Screenshot SS Tormented Trobbio 08.png!Hidden Baleful Bombs
+|Image7 = Screenshot SS Tormented Trobbio 04.png!Profane Pyrotechnics
+|Image8 = Screenshot SS Tormented Trobbio 09.png!Stagger
+|Image9 = Screenshot SS Tormented Trobbio 10.png!Singing
+|Image10 = Screenshot SS Tormented Trobbio 05.png!Dramatic Exit
+|Image11 = Screenshot SS Tormented Trobbio 11.png!Peeking below floorboards after defeat
+|Image12 = Screenshot SS Whispering Vaults 13.png!Arena in the Stage
+|Image13 = Screenshot SS Whispering Vaults 12.png!Mural in the Stage
+}}
+
+==Trivia==
+* Trobbio is one of three bosses in the <i>Hollow Knight</i> series to have more than one boss fight and survive both. The other two are [[Hornet (Hollow Knight)|Hornet]] and [[Lace]].
+* Like his regular form, two spotlights constantly shine on Tormented Trobbio during the fight.
+* If Hornet has not acquired a [[Map and Quill (Silksong)|Quill]], she can take a purple one from Trobbio's desk near the Stage's arena during [[Act 3]]. This results in a unique sprite for the Quill and Map and Quill icons in the Inventory.
+{{Gallery
+|Image1 = Quill Purple.png!Purple Quill inventory icon
+|Image2 = Map & Quill Purple.png!Purple Map and Quill inventory icon
+}}
+
+{{Localisation
+|DEname = Gequälter Trobbio
+|DEmeaning = Tormented Trobbio
+|ESname = Trobbio atormentado
+|ESmeaning = Tormented Trobbio
+|FRname = Trobbio Tourmenté
+|FRmeaning = Tormented Trobbio
+|ITname = Farfleto Tormentato
+|ITmeaning = Tormented Trobbio<br><small><i>Farfleto</i> is the name of [[Trobbio]] in Italian, a portmanteau of <i>farfalla</i> (butterfly) and <i>Amleto</i> (Hamlet).</small>
+|JAname = 苦痛にさいなまれしトロッビオ
+|JAromanised = Kutsū ni sainama reshi torobbio
+|JAkatakana = foreign
+|JAmeaning = Tormented by Pain Trobbio
+|KOname = 고통받는 트로비오
+|KOromanised = Gotongbatneun teurobio
+|KOmeaning = Pained Trobbio
+|PTname = Trobbio Atormentado
+|PTmeaning = Tormented Trobbio
+|RUname = Истерзанный Троббио
+|RUromanised = Isterzannyj Trobbio
+|RUmeaning = Tortured Trobbio
+|TWname = 苦痛的特羅比奧
+|TWromanised = Kǔtòng de tèluóbǐào
+|TWmeaning = same
+|ZHname = 痛苦的特罗比奥
+|ZHromanised = Tòngkǔ de tèluóbǐào
+|ZHmeaning = Pained Trobbio
+|CODEname = TORMENTED_TROBBIO 
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+{{SS Nav NPCs}}
+[[Category:NPCs (Silksong)]]

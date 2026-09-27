@@ -6,6 +6,9 @@
   "scripts": {
     "test": "node --test test/*.test.js",
     "serve": "python3 -m http.server 8000",
-    "text": "node tools/game-text.js"
+    "text": "node tools/game-text.js",
+    "kb": "python3 kb/data/fetch-wiki.py",
+    "palette": "python3 tools/measure-palette.py",
+    "data": "node tools/gen-data.js && node tools/gen-enemies.js && node tools/gen-journal.js"
   }
 }

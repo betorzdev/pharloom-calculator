@@ -1,0 +1,77 @@
+{{SS Infobox Tool
+| type = Yellow
+| effect =
+* Increases [[Needle]] damage by 25% <ref group="Note" name="calculation">The damage is rounded to the nearest integer. This results in 6, 11, 16, 21 and 26 damage at Needle base damages 5, 9, 13, 17 and 21 respectively. For example, at max Needle upgrade the base damage is 21, so with Barbed Bracelet it will be 1.25 • 21 = 26.25, which rounded down results in 26</ref>
+* Doubles damage taken
+| location = [[Sinner's Road]]
+| description = Vicious bracelet worn by those who believe they have not been duly punished.<hr/>
+Increases damage taken, but also increases damage dealt by the needle.
+}}
+
+<b>Barbed Bracelet</b> is a {{CrestSlot|Yellow|1}} in <i>[[Hollow Knight: Silksong]]</i>. It increases Needle damage by 25% but doubles most damage taken.<ref group="Note" name="calculation"/>
+
+== Usefulness ==
+Barbed Bracelet only increases the damage of the Needle itself, including the [[Needle Strike]]. [[Silk Skills]] are not affected.
+
+As damage from nearly every source is doubled, it is not recommended to equip this Tool in areas with lots of environmental hazards, as the damage from missing a platforming section can quickly add up.
+* Damage dealt by the cold on [[Mount Fay]] {{Damage|1|type=Ice}} is not doubled.
+
+In many cases, it will reduce the amount of hits needed to kill an enemy by 1, making it effective when re-treading explored areas or farming for [[Rosaries]], as enemy attack patterns are already known and unexpected damage is less likely.
+
+== How to Acquire ==
+Found in [[Sinner's Road]], at the bottom of a pit at the easternmost end of the passage from [[Greymoor]].
+
+{{Gallery
+| Image1 = Mapshot SS Barbed Bracelet.png!Location in Sinner's Road
+|Image2 = Screenshot SS Barbed Bracelet Room.png!Room where the Barbed Bracelet is acquired
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Barbed Bracelet HUD.png!Hornet's Masks with the Barbed Bracelet
+}}
+
+{{History
+|game = SS
+|1.0.29909 (Patch 5): Void damage is now doubled properly
+}}
+
+{{Localisation
+|DEname = Stachelarmreif
+|DEmeaning = Spiked Bracelet
+|ESname = Cilicio
+|ESmeaning = Cilice<br><small>[[wikipedia:Cilice|Cilice]] is a garment made from coarse cloth worn as a means of self-repentence.</small> 
+|FRname = Bracelet épineux
+|FRmeaning = Spikey Bracelet
+|ITname = Bracciale spinato
+|ITmeaning = Barbed Bracelet
+|JAname = トゲの腕輪
+|JAromanised = Toge no udewa
+|JAkatakana = foreign
+|JAmeaning = Thorned Bracelet
+|KOname = 가시 팔찌
+|KOromanised = Gasi paljji
+|KOmeaning = Thorn Bracelet
+|PTname = Bracelete Farpado
+|PTmeaning = Barbed Bracelet
+|RUname = Колючий браслет
+|RUromanised = Koljučij braslet
+|RUmeaning = Spiked Bracelet
+|TWname = 棘刺手環
+|TWromanised = Jícì shǒuhuán
+|TWmeaning = same
+|ZHname = 棘刺手环
+|ZHromanised = Jícì shǒuhuán
+|ZHmeaning = Barbed Bracelet
+|CODEname= BARBED_WIRE
+}}
+
+{{Hr|SS}}
+
+== Notes ==
+<references group="Note"/>
+
+{{Refs|hr=false}}
+
+{{SS Nav Tools}}
+[[fr:Bracelet épineux]]

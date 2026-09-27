@@ -1,0 +1,106 @@
+{{SS Infobox Enemy
+| image1 = <gallery>
+B Choir Elder.png|Hunter's Journal
+Choir Elder Idle.png|Idle
+Choir Elder No Cloak.png|Without Cloak
+</gallery>
+| hasdrop = true
+| r1 = 12
+| r2 = 18
+| sh1 = 4-6
+| sh2 = 5-8
+| drops = [[Choir Cloak]]
+| health = 45/{{BT|90}} 
+| damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1|1|0.8|0.8}}
+| numbers_required = 6
+|sing=Elder Pilgrim
+}}
+
+{{Quote
+|Hr = Journal
+|Aged former pilgrim. Uses their wings to position above threats and crush them under their large shell.<hr/>
+Time allowed their shell to grow thick, all the better for battering their targets.
+}}
+
+<b>Choir Elders</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are [[Elder Pilgrim]]s who have become part of [[the Choir]], positioning themselves above their enemies to crush them.<ref>Choir Elder [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Aged former pilgrim. Uses their wings to position above threats and crush them under their large shell."</i></ref>
+
+== Behaviour and Tactics ==
+Choir Elders either walk along the ground or start off lifeless and get reanimated with [[Silk]] as [[Hornet (Silksong)|Hornet]] approaches, and then take to the air. Their sole attack is to fly quickly above Hornet and slam into the ground. To counter, dash away just past the slam and follow up with a quick attack.
+
+=== Act 3 ===
+[[Black-threaded]] Choir Elders have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|Void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* There is no pain, nor fear, nor death...
+* Am I worthy?
+* The path... the holy path...
+* My soul... my shell. For you!
+* My faith... my reward...
+* Raise me higher! Pull me closer!
+* Lives end, journeys begin...
+* Raise my shell! Pull me closer!
+* Shining bright, our Citadel waits...
+* Pull us higher, ever higher...
+* We will climb! Climb! Climb forever!
+}}
+
+== Location ==
+Choir Elders can be found in the [[Choral Chambers]].
+
+One Choir Elder appears during the [[Enemy Gauntlets (Silksong)/Whispering Vaults 1|enemy gauntlet]] at the entrance to the [[Whispering Vaults]], accessible from the [[Cogwork Core]].
+
+{{Gallery
+|Image1 = Mapshot SS Choir Elder 01.png!Locations in the Choral Chambers
+|Image2 = Mapshot SS Choir Elder 02.png!Locations in the Choral Chambers in Act 3
+|Image3 = Mapshot SS Choir Elder 03.png!Location in the Whispering Vaults
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Choir Elder 01.png!In the Choral Chambers
+|Image2 = Screenshot SS Choir Elder 02.png!Dormant
+|Image3 = GIF SS Choir Elder 01.gif!Reanimating
+|Image4 = Screenshot SS Choir Elder 03.png!Attacking
+|Image5 = Screenshot SS Choir Elder 04.png!Reacting to the Needolin
+|Image6 = Screenshot SS Choir Elder 05.png!Without cloak during the <i>[[Cloaks of the Choir]]</i> wish
+|Image7 = Screenshot SS Choir Elder 06.png!Corpse in Act 3
+}}
+
+== Trivia ==
+* Choir Elders share the same [[Needolin]] dialogue as normal pilgrim enemies, instead of sharing it with other members of [[the Choir]].
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Choir Elders were changed to deal 1 damage instead of 2.
+}}
+{{Localisation
+|DEname = Chorältester
+|DEmeaning = Choir Elder
+|ESname = Anciano del Coro
+|ESmeaning = Elder of the Choir
+|FRname = Ancien de la Chorale
+|FRmeaning = Elder of the Choir
+|ITname = Anziano Corale
+|ITmeaning = Choral Elder
+|JAname = 老いた合唱者
+|JAromanised = Oita gasshōsha
+|JAmeaning = Old Aged Chorister
+|KOname = 성가대 장로
+|KOromanised = Seonggadae jangno
+|KOmeaning = Choir Elder
+|PTname = Ancião-coralista
+|PTmeaning = Elder Chorister
+|RUname = Пожилой хоровик
+|RUromanised = Požiloj xorovik
+|RUmeaning = Elder Choirbug
+|TWname = 聖詠長老
+|TWromanised = Shèngyǒng zhǎnglǎo
+|TWmeaning = same
+|ZHname = 圣咏长老
+|ZHromanised = Shèngyǒng zhǎnglǎo
+|ZHmeaning = Choral Elder or Psalm Elder, with reference to {{lang|zh-Hans|圣咏殿}}/{{lang|zh-Hant|聖詠殿}} <i>shèngyǒng diàn</i> which is Choral Chambers in Chinese
+|CODEname= PILGRIM_STOMPER_SONG
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

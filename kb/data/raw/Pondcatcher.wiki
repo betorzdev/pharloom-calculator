@@ -1,0 +1,105 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Pondcatcher.png|Hunter's Journal
+Pondcatcher Idle.png|Idle
+Pondcatcher Resting.png|Resting
+</gallery>
+| hasdrop = true
+| r1 = 12
+| r2 = 18
+| sh1 = 4-6
+| sh2 = 5-8
+|health = 30/{{BT|120}} <br> {{BT|88}} (Fighting [[Shakra]])
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1.2|1|1|1}}
+|numbers_required = 20
+|singnum = 2
+}}
+
+{{Quote
+|Hr = Journal
+|Old catcher over Shellwood Pond, bearing a longpin and stricken by the Haunting.<hr/>Once a hunter purely for food, now they hunt unthinking and unending.
+}}
+
+<b>Pondcatchers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are round, flying bugs wearing a hood wielding a wood-handled long-pin. When out of combat with [[Hornet (Silksong)|Hornet]], they may be found hunting [[Pond Skipper]]s.
+
+== Behaviour and Tactics ==
+When out of combat, Pondcatchers hunt [[Pond Skipper]]s, but they prioritise Hornet once she gets in range.
+The Pondcatcher tries to fly at a diagonal angle to Hornet like most flying enemies, occasionally lowering down to aim a longpin, which it throws in a low arc at Hornet.
+
+Pondcatchers deal {{Damage|1}} with their longpins, as well as on contact.
+
+Pondcatchers deal 15 damage to enemies that are hit with their longpins.
+
+Stay underneath it to avoid the throws, or get above it before it takes off to Needle Bounce. Attacking with the Needle just as the longpin hits negates the contact damage.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Pondcatchers have their health quadrupled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Hunt to feed...
+* The pond’s bounty...
+* Watch the ripples...
+* Read the reeds...
+* To feed... them...
+* Hidden... under...
+}}
+
+== Location ==
+Pondcatchers can be found exclusively in lower [[Shellwood]].
+
+{{Gallery
+|Image1 = Mapshot SS Pondcatcher 01.png!Locations in Shellwood
+|Image2 = Mapshot SS Pondcatcher 02.png!Locations in Shellwood in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Pondcatcher 01.png!Pondcatcher in Shellwood
+|Image2 = Screenshot SS Pondcatcher 02.png!Attacking
+|Image3 = Screenshot SS Pondcatcher 03.png!Resting
+|Image4 = Screenshot SS Pondcatcher 04.png!Singing
+|Image5 = Screenshot_SS_Pond_Skipper_06.png!Hunting a [[Pond Skipper]]
+|Image6 = Screenshot_SS_Void_Mass_20.jpg! [[Void Mass]] of Pondcatchers
+}}
+
+==Trivia==
+
+* The Pondcatcher's use of a longpin to catch prey in the water is likely a reference to fishing [https://en.wikipedia.org/wiki/Harpoon Harpoons].
+* The Pondcatcher's longpin is similar to, but different from Hornet's [[Longpin]] tool.
+* Pondcatchers' cloaks were originally planned to be grey. The change to green was done sometime between December 2020 (EDGE Magazine) and June 2022 (Xbox Showcase).
+{{Gallery
+|Image1=Screenshot SS Shellwood Pre-Release.png!December 2020 screenshot
+|Image2=XboxScreenshot Shell Wood.png!June 2022 screenshot
+}}
+
+{{Localisation
+|DEname = Teichfänger
+|DEmeaning = Pondcatcher
+|ESname = Cazadora de los estanques
+|ESmeaning = Huntress of the Ponds
+|FRname = Pêcheur d'Étang
+|FRmeaning = Pond Fisher
+|ITname = Fiocinante
+|ITmeaning = Harpooner
+|JAname = イケツリムシ
+|JAromanised = Iketsuri mushi
+|JAmeaning = Combination of {{lang|ja|池釣り}} <i>iketsuri</i> (pond fishing) and {{lang|ja|虫}} <i>mushi</i> (bug).
+|KOname = 연못의 낚시꾼
+|KOromanised = Yeonmosui naksikkun
+|KOmeaning = Fisher of the Pond
+|PTname = Pescadora-do-lago
+|PTmeaning = Fisher of the Lake (feminine)
+|RUname = Прудоловка
+|RUromanised = Prudolovka
+|RUmeaning = Pondcatcher
+|ZHname = 渔夫
+|ZHromanised = Yúfū
+|ZHmeaning = Fisher
+|CODEname = PILGRIM_FISHER
+|CODEmeaning = 
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

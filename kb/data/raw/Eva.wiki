@@ -1,0 +1,213 @@
+{{SS Infobox NPC
+| area = [[Weavenest Atla]]
+| role = Lore
+| affiliation = [[Weavers]] (Creators)<ref name = kin>Eva dialogue: <i>"I am Eva, a thing... difficult to describe, a child of Weavers, yet not quite their kin..."</i></ref><ref name=gender/>
+|singnum = 1
+|va= Juni Beau/Shalulu<ref>[https://x.com/junibeau Juni (@junibeau)] bio on Twitter</ref>
+}}
+{{Quote
+|I am Eva, a thing... difficult to describe, a child of Weavers, yet not quite their kin...
+|Eva
+|Hr=SS
+}}
+
+<b>Eva</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. She provides upgrades to [[Crests]] by giving clarity to [[Hornet (Silksong)|Hornet]]'s nature.
+
+== Background ==
+Eva was created by the [[Weavers]] as an attempt to defy a curse shared by their tribe, which makes conceiving children a nearly impossible task, and also as an attempt to mimic divinity.<ref>Eva: <i>"My mothers shared the curse of their tribe, to conceive a child is a painful, near impossible task."</i></ref><ref name=gender/> A life spun from rune and shell, she is birthed inside an iron cage which sustains her, and to leave it through conventional means would result in her death.<ref name = "death">Eva: <i>"Lady, you mistake. What seems a cage is as much my shell as the form inside. I was born within this space. To leave would be my death, an uninspired end, though one I've sometimes wished would come."</i></ref> Eva finds herself difficult to define.<ref name = kin/> She considers herself a child of the Weavers, yet not quite of their kin, and the differences between her and her mothers, as well as her fragility, lead to growing distance and eventual disdain.<ref name = "flaw" >Eva: <i>"A flawed attempt. A life spun from rune and shell, sustained only by its cage. My thoughts may mimic a Weavers, but my senses are my own. Over time, that difference brought only distance between us."</i></ref><ref name=gender/>
+
+Eva possesses a unique perceptive ability the Weavers call "silken sight", which is a power also attributed to [[Grand Mother Silk]] and one from which the Weavers once sought to hide.<ref name = "senses">Eva [[Needolin]] dialogue: <i>"Our senses' limits... Our silken sight... What worlds beyond?"</i></ref><ref>Rune Harp found in [[Weavenest Cindril]]: <i>"Plea of a Weaver from the furthest edge of Pharloom. "Flee, sisters. Flee until your strength exhausts, so far you may escape at last her silken sight. To start anew, to sustain, free of web and service eternal.""</i></ref> Eva perceives the world not as other bugs do, but through the imprints left upon the souls of living creatures.<ref name = "sight">[[Hornet (Silksong)|Hornet]] and Eva dialogue: <br><i>Hornet: "You see one's nature, Eva? It is a skill far beyond bugs." <br>Eva: "One not without cost. My sight perceives a bug only through the imprint upon their soul."</i></ref> She is able to sense the nature of others even across great distances.<ref>Eva: <i>"Lady? So you live, still. This is good... I had felt the conflict commence, pale hearts ablaze, and the sudden well of darkness after."</i></ref> At closer range, her powers grow sharper still, as she can feel the emotions and thoughts of others and even aid in the growth and expansion of their nature.<ref>Eva: <i>"There, my mothers built their tools, all traps and bindings. Small things, but tests for larger forms. I still remember their thoughts as they worked, their desperation, and their hunger."</i></ref><ref>Eva: <i>"But I can sense it in you, lady. You have not yielded to despair, so some hope must still remain?"</i></ref><ref>Eva: <i>"Step closer, lady, that my senses would better understand your nature."</i></ref> She believes this perception comes at a high cost, for her ordinary senses remain limited.<ref name = "sight"/><ref name = "senses"/>
+
+Eva regards herself as a flawed attempt, a fragile and confined creature.<ref>Hornet and Eva dialogue: <br><i>Hornet: "I know the curse well, Eva, for I am also its victim, and spawn of one who managed to overcome its limits. Are you too an attempt to defy that cruel constraint?" <br>Eva: "A flawed attempt. A life spun from rune and shell, sustained only by its cage."</i></ref><ref>Eva Needolin dialogue: <i>"This shell of iron... This life confined... This form so fragile..."</i></ref> She longs for escape from the weight of ages spent sealed, whether through union with a being truly unbound or even through death itself.<ref>Eva: <i>"To be united with one unbound... This is the kind of escape I once prayed for, though the weight of ages had almost made me forget."</i></ref><ref name = "death"/>
+
+Eva feels a deep revulsion towards [[Lifeblood|Plasmium]] and the [[Twisted Bud]] and refuses to allow anyone afflicted by either into her chamber.<ref>Eva: <i>"Stay back, twisted leech! Even lodged within another's shell, your ravenous nature shines clear. You shall not defoul this chamber, nor claim my soul. Begone!"</i></ref><ref>Eva: <i>"Come no closer! I sense the forbidden blood coursing through you, that which grows and reshapes the world in its own vulgar image. Whether it was imbibed willingly or not, none shall be allowed into this chamber while so afflicted. Begone!"</i></ref>
+
+== In-game Events ==
+Eva can be found in [[Weavenest Atla]] after [[Hornet (Silksong)|Hornet]] obtains the [[Needolin]].
+
+On Hornet's first visit, Eva can enhance the [[Hunter Crest]], increasing the damage Hornet deals with successful attacks.
+
+Afterward, she can further aid Hornet depending on how many {{CrestSlot|Skill|1}}, {{CrestSlot|Red|1}}, {{CrestSlot|Blue|1}}, and {{CrestSlot|Yellow|1}} slots are unlocked on every Crest <b>except for Hunter Crest</b>. This includes slots that are unlocked upon obtaining a new Crest and slots unlocked using [[Memory Locket]]s.
+
+For example, Wanderer Crest unlocks 4 slots when it is first obtained. Memory Lockets can be used to unlock up to 3 more slots, contributing up to 7 slots.
+
+{| class="article-table" width="100%"
+! style="width:8rem" | Requirements
+! Effect
+|-
+! Meeting Eva
+| Upgrades the [[Hunter Crest]].
+|-
+! Unlock 12 slots
+| Grants the [[Vesticrest]], awarding an additional {{CrestSlot|Yellow|1}} slot independent of equipped [[Crests]].
+|-
+! Unlock 20 slots
+| Expands the Vesticrest, awarding an additional {{CrestSlot|Blue|1}} slot independent of equipped Crests.
+|-
+! Unlock 27 slots
+| Upgrades the [[Hunter Crest]] the second time.
+|-
+! Unlock 32 slots
+| Eva requests to have herself [[Bind|Bound]] to [[Hornet (Silksong)|Hornet]]. Doing so grants Hornet Eva's Art, [[Sylphsong]]. This Art causes Hornet's silk spool to rapidly fill to full capacity  while resting at a [[Bench (Silksong)|Bench]].
+|}
+
+The minimum number of [[Memory Locket]]s required to obtain Sylphsong is 12 (out of 20 in total). If Memory Lockets are used to expand the Hunter Crest, up to 18 may be required. Therefore, obtaining all Memory Lockets is not a requirement for 100% [[Completion (Silksong)|Completion]].
+
+If Hornet visits Eva while [[plasmified]] or [[Cursed Crest|cursed]], Eva places a rune around her chamber, preventing Hornet from approaching.
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = Who's there? Has someone come to free me? Or are you here to bring my end?<br>
+{{HTalk|I am Hornet, prisoner, only a traveller and not here to slay you.}}<br>
+{{HTalk|What cause sees you caged in these ruins of Weavers past? Were you their enemy?}}<br>
+No. Not their enemy, and their prisoner not through malice. I am Eva, a thing... difficult to describe, a child of Weavers, yet not quite their kin...<br>
+{{HTalk|How strange. That description could fit me as well as yourself.}}<br>
+Child of Weavers?... And not? I can detect your Weaver strain, yet you are different from them, and from me, a shifting, blended thing? What are you creature?<br>
+Step closer, lady, that my senses would better understand your nature.<br>
+| Title1_Event2 = Speaking again
+| Title1_Dialogue2 = {{HTalk|You see one's nature, Eva? It is a skill far beyond bugs.}}<br>
+One not without cost. My sight perceives a bug only through the imprint upon their soul.<br>
+{{HTalk|You speak of their crest? That signifier of a bug's essence and their invisible yoke born through a lifetime.}}<br>
+Crest? Yes, the old Weaver term. A simple word to attempt description of something so profound.<br>
+But wait. Your own nature... Is it?...<br>
+Lady, permit me to look deeper still, that I may offer clarity...
+| Title1_Event3 = Speaking again after denying insight
+| Title1_Dialogue3 = Lady, please. Permit me to look upon your nature, that I may offer clarity...
+| Title1_Event4 = Speaking after meeting Eva, resting at a bench, and getting the first two upgrades in a row
+| Title1_Dialogue4 ={{HTalk|How did you come to be sealed here, Eva?}}<br>
+Lady, you mistake. What seems a cage is as much my shell as the form inside.<br>
+I was born within this space. To leave would be my death, an uninspired end, though one I've sometimes wished would come.<br>
+I am unique, you see. My mothers shared the curse of their tribe, to conceive a child is a painful, near impossible task.<br>
+{{HTalk|I know the curse well, Eva, for I am also its victim, and spawn of one who managed to overcome its limits.}}<br>
+{{HTalk|Are you too an attempt to defy that cruel constraint?}}<br>
+A flawed attempt. A life spun from rune and shell, sustained only by its cage. My thoughts may mimic a Weavers, but my senses are my own.<br>
+Over time, that difference brought only distance between us.<br>
+| Title1_Event5 = Exhausted dialogue
+| Title1_Dialogue5 = Lady, if in your travels you are able to further expand your nature, return to me. With what power I possess, I may be able to aid you further.<br>
+{{HTalk|If my nature expands as you say, Eva, I shall return.}}<br>
+| Title1_Event6 = Playing the [[Needolin]]
+| Title1_Dialogue6 = [n]This shell of iron...<br>
+This life confined...<br>
+This form so fragile...<br>
+Our senses' limits...<br>
+Our silken sight...<br>
+What worlds beyond?
+| Title2 = Upgrades
+| Title2_Event1 = After the first upgrade
+| Title2_Dialogue1 = Incredible... Your nature is so unlike a mortal bug's. Yours is malleable, transitory. It is a marvellous thing, worth my long life to behold.<br>
+If in your travels you are able to further evolve, return to me. With what power I possess, I may be able to aid you further.<br>
+{{HTalk|Thank you, Eva. If my nature expands as you say, I shall return.}}<br>
+| Title2_Event2 = Speaking when the second upgrade is available right after the first
+| Title2_Dialogue2 = Lady, still my senses resound. You seem so far beyond the bounds of a bug.<br>Permit me to gaze again upon your nature, that I may offer clarity.
+| Title2_Event3 = Speaking when an upgrade is available
+| Title2_Dialogue3 = Lady, my senses resound. You have grown further beyond the bounds of a bug.<br>
+Permit me to gaze again upon your nature, that I may offer clarity.<br>
+| Title2_Event4 = After subsequent upgrades
+| Title2_Dialogue4 = Incredible... Your nature is so unlike a mortal bug's. Yours is malleable, transitory. It is a marvellous thing, worth my long life to behold.<br>
+With what power I possess, I may still be able to aid you further.<br>
+| Title2_Event5 = After the final upgrade
+| Title2_Dialogue5 = Lady, you are a multitude within a single shell. A being truly unbound. To aid your growth has proved a grand task, even for one as limited as me.<br>
+As my last act, permit me to ask a final, selfish request.<br>
+{{HTalk|Your talents have provided great benefit, Eva. What is it you desire of me?}}
+<br>Only to have my own soul, my own memories, bound within your shell... As you have done with those others throughout these lands.<br>
+I would not define as a crest within you, but my small strength may still grant a final boon.<br>
+{{HTalk|You ask to be subsumed? Know your mind would cease to be, in any independent sense.}}<br>
+I know. And still I seek it, gladly. To be united with one unbound... This is the kind of escape I once prayed for, though the weight of ages had almost made me forget.<br>Dear Lady, would you grant me this request?<br>
+| Title2_Event6 = Accepting Binding Eva
+| Title2_Dialogue6 = By your grace, I am at last broken from my fate.<br>
+{{HTalk|Gladly I accept your union, Eva. No longer shall you suffer eternity alone.}}<br>
+| Title2_Event7 = Declining Binding Eva
+| Title2_Dialogue7 = {{HTalk|I am sorry, Eva. I cannot grant you this. At least, not yet.}}<br>
+{{HTalk|Yours is a mind strong and strange. That union could prove dangerous to my identity.}}<br>
+I understand, Lady. I will be here, if ever you reconsider.<br>
+| Title2_Event8 = Speaking after declining
+| Title2_Dialogue8 = Lady, would you think again upon my last request? To be bound amidst your shimmering soul?<br>
+I understand it is a selfish thing to ask, and I will hold no ill will if you reject.<br>
+| Title3 = Silk and Soul
+| Title3_Event1 = First conversation
+| Title3_Dialogue1 = {{HTalk|Eva, I am seeking a tool, told to be somewhere in this structure. It is a snare device of Weaver make. Do you know of it?}}<br>
+I may, lady. Search over from here, on side where the moss meets the nest. There, my mothers built their tools, all traps and bindings. Small things, but tests for larger forms.<br>
+I still remember their thoughts as they worked, their desperation, and their hunger. Another hopeless attempt to wrest their freedom. All ended in failure, of course.<br>
+| Title4 = Act 3
+| Title4_Event1 = First conversation
+| Title4_Dialogue1 = Lady? So you live, still. This is good... I had felt the conflict commence, pale hearts ablaze, and the sudden well of darkness after.<br>
+{{HTalk|I am sorry, Eva. I had hoped to slay the monarch, and was near achieving that goal, but the situation has become... complicated. Now, all of Pharloom threatens to fall.}}<br>
+But I can sense it in you, lady. You have not yielded to despair, so some hope must still remain?<br>
+{{HTalk|...Slim hope, I suspect. But true, there may yet be a way through this disaster. I shall pursue that goal with whatever strength remains.}}<br>
+Then allow me to continue to aid you as I can... Mine might be a small contribution, but I shall provide it eagerly.
+| Title4_Event2 = Exhausted dialogue
+| Title4_Dialogue2 = Lady, Pharloom's time grows short. If you are able to further expand your nature, I urge you return to me.<br>Any power I possess, I shall grant it for your aid.<br>
+{{HTalk|My thanks, Eva. If my nature expands as you say, I shall return.}}
+
+| Title5 = Additional Dialogue
+| Title5_Event1 = Speaking while [[Cursed Crest|cursed]]
+| Title5_Dialogue1 = Stay back, twisted leech! Even lodged within another's shell, your ravenous nature shines clear.<br>
+You shall not defoul this chamber, nor claim my soul. Begone!<br>
+| Title5_Event2 = Speaking while [[plasmified]]
+| Title5_Dialogue2 = Come no closer! I sense the forbidden blood coursing through you, that which grows and reshapes the world in its own vulgar image.<br>
+Whether it was imbibed willingly or not, none shall be allowed into this chamber while so afflicted. Begone!<br>
+}}
+
+== Location ==
+Eva can be found in the southeast portion of [[Weavenest Atla]], accessible after acquiring the [[Needolin]].
+
+{{Gallery
+| Image1 = File:Mapshot SS Eva 01.png!Location in Weavenest Atla}}
+
+{{Gallery
+|Title=Gallery
+|Image1= Screenshot SS Eva 01.png!Eva in Weavenest Atla
+|Image2 = Screenshot SS Hornet 04.png!Eva giving clarity to Hornet
+|Image3 = Screenshot SS Eva 04.png!About to be bound
+|Image4 = Screenshot SS Eva 05.png!Being bound
+|Image5= Screenshot SS Eva 02.png!Eva's iron shell after being bound
+|Image6= Screenshot SS Eva 03.png!The rune around Eva if Hornet is plasmified or cursed
+}}
+
+== Achievements ==
+{{Achievement|game=silksong|Entwined}}
+
+== Trivia ==
+* If Hornet becomes plasmified while in Eva's room, she will not put up a rune, but will still refuse to speak. If Hornet leaves her area and returns, she will then put up a rune.
+* The inner portion of Eva's shell shown after binding her is identical to the one found in [[Weaver Burial Spire]]s.
+* [[Cut Content (Silksong)/Text#Eva|Unused dialogue]] exists for Eva if all four of her upgrades are received at once during the first encounter. While this is active in-game, it cannot be accessed during normal gameplay, as she always gives the first Hunter Crest upgrade independently of the rest.
+
+{{History
+|game = SS
+|1.0.28891 (Patch 3): Fixed Eva Hunter Crest upgrades unintentionally clearing tool equips.
+}}
+
+{{Localisation
+|DEname = Eva
+|DEmeaning = —
+|ESname = Eva
+|ESmeaning = —
+|FRname = Eva 
+|FRmeaning = —
+|ITname = Eva 
+|ITmeaning = —
+|JAname = エヴァ
+|JAromanised = Eva 
+|JAkatakana = foreign
+|JAmeaning = Eva
+|KOname = 에바
+|KOromanised = Eba 
+|KOmeaning = Eva
+|PTname = Eva
+|PTmeaning = — 
+|RUname = Ева
+|RUromanised = Eva
+|RUmeaning = Eva
+|TWname = 伊娃
+|TWromanised = Yīwá
+|TWmeaning = same
+|ZHname = 伊娃
+|ZHromanised = Yīwá
+|ZHmeaning = Eva
+|CODEname = CREST_UPG_SHRINE</code><br><code>CREST_UPGRADE
+}}
+
+{{Refs|hr=SS}}
+{{SS Nav NPCs}}
+[[Category:Crests]]

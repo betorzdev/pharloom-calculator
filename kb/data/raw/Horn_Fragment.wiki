@@ -1,0 +1,64 @@
+{{SS Infobox Item
+| description = Hardened chunk of horned shell collected from a defeated Savage Beastfly.
+| source = Dropped by [[Savage Beastfly]] in [[Far Fields]] during the wish <i>[[Savage Beastfly (Wish)|Savage Beastfly]]</i>
+}}
+
+{{Quote
+| O Beastfly, raging through the scorching wildlands below! May you hinder good pilgrims no longer! May you be struck down by a holy fury!
+| Residents of [[Bellhart]]
+| Hr = SS
+}}
+
+The <b>Horn Fragment</b> is a [[Items (Silksong)#Deliverables|deliverable item]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+The Horn Fragment must be delivered to [[Bellhart]] to complete the <i>[[Savage Beastfly (Wish)|Savage Beastfly]]</i> Grand Hunt Wish, available from its [[Wishwalls|Wishwall]] after defeating the original [[Savage Beastfly]] in [[Hunter's March]], having discovered [[Songclave]], and after defeating [[Fourth Chorus]] (the last one is optional in [[Act 3]]).
+
+{{Gallery
+|Image1 = Mapshot SS Frey 01.png!Location in Bellhart
+|Image2 = Screenshot SS Frey 01.png!Wishwall in Bellhart
+}}
+
+== How to Acquire ==
+The Horn Fragment is dropped after slaying the [[Savage Beastfly]] in [[Far Fields]], which only appears while the wish <i>Savage Beastfly</i> is in progress.
+
+If Hornet dies after the Savage Beastfly is killed, the Horn Fragment can be found on the floor of the arena upon reentering the room.
+
+{{Gallery
+|Image1 = Mapshot SS Savage Beastfly 02.png!Location in Far Fields
+|Image2 = Screenshot SS Savage Beastfly 06.png!Savage Beastfly in Far Fields
+}}
+
+{{Localisation
+|DEname = Hornfragment
+|DEmeaning = Horn Fragment
+|ESname = Fragmento de cuerno
+|ESmeaning = Horn Fragment
+|FRname = Fragment de corne
+|FRmeaning = Horn Fragment
+|ITname = Frammento di corno
+|ITmeaning = Horn Fragment
+|JAname = 角の破片
+|JAromanised = Tsuno no hahen
+|JAmeaning = Horn Fragment
+|KOname = 뿔 파편
+|KOromanised = Ppul papyeon
+|KOmeaning = Horn Fragment
+|PTname = Fragmento de Chifre
+|PTmeaning = Horn Fragment
+|RUname = Кусок рога
+|RUromanised = Kusok roga
+|RUmeaning = Horn Piece
+|TWname = 獸角碎片
+|TWromanised = Shòu jiǎo suìpiàn
+|TWmeaning = same
+|ZHname = 兽角碎片
+|ZHromanised = Shòu jiǎo suìpiàn
+|ZHmeaning = Beast Horn Fragment
+|CODEname = BEASTFLY_REMAINS
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

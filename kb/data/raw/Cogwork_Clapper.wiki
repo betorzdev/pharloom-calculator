@@ -1,0 +1,111 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Cogwork Clapper.png|Hunter's Journal
+Cogwork Clapper Idle.png|Idle
+Cogwork Clapper Ball.png|Ball Form
+</gallery>
+| hasdrop = true
+| sh1 = 15-23
+| sh2 = 19-29<br>[[Pristine Core]] (Pair)
+|health = 145 <br> 190 (Pair)
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1|0.9|0.8|0.8}}
+|numbers_required = 1
+|singnum=2
+}}
+{{Quote
+|Hr = Journal
+|Rare automaton intended to perform the ringing of bells and cymbals in the depths of the Core.<hr/>
+I have not yet seen the bell this automaton is designed to ring, nor do I ever wish to hear it. Such a clamour would no doubt be unpleasant to experience.
+}}
+
+<b>Cogwork Clappers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are rare [[Cogwork Bugs|automatons]] intended to perform the ringing of bells and cymbals deep within the [[Cogwork Core]].<ref>Cogwork Clapper [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Rare automaton intended to perform the ringing of bells and cymbals in the depths of the Core."</i></ref>
+
+== Behaviour and Tactics ==
+Cogwork Clappers have two moves that they alternate between:
+* <b>Ricochet Bounce:</b> Tucks up into a ball and bounces in place once before launching itself at a steep angle, bouncing off the ceiling, floor, and walls 7 times before stopping, dealing {{Damage|2}} if it hits Hornet. Always follows this move up with Slash Bells.
+* <b>Slash Bells:</b> Launches 2-3 bells in either direction at different angles. The bells can bounce and then pause midair after two seconds and slash in a small area before stopping, Comboing Hornet for {{Damage|1+1}} if they hit. Always follows this move up with Ricochet Bounce.
+
+Contact damage with Cogwork Clappers deal {{Damage|2}}.<br>
+Counterplay is rather simple, as merely waiting for them to finish their Ricochet Bounce and then hounding them with attacks can get in huge chunks of damage at a time.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* ...Am I...Who?...
+* ...Lift it...Fix it...Me?...
+* ...The Core...Holy...
+* ...Work...Eternal...
+* ...To mend...
+* ...To serve...
+}}
+
+== Location ==
+Cogwork Clappers can be found in the [[Cogwork Core]]. One is found in the southeasternmost room, and once Hornet defeats it and rests at a [[Bench (Silksong)|bench]], two [[Cogworker]]s appear to repair it. They complete their work and depart only when Hornet rests at a bench again after visiting them, though if she attacks them during the first visit, uses the [[Challenge]] ability, or alerts them in any other way, she must reset them to a working state by re-entering the room. The recovery of the Cogwork Clapper repeats every time it is destroyed, unless the repair is disrupted by knocking its partially reconstructed shell into the pit of active cogs, or until [[Act 3]] begins. 
+
+Upon obtaining [[Silk Soar]], two more can be found by ascending through the ceiling in the same room, with one of them dropping a [[Pristine Core]] upon defeat.
+
+{{Gallery
+|Image1 = Mapshot SS Cogwork Clapper 01.png!Location in the Cogwork Core
+|Image2 = Mapshot SS Cogwork Clapper 02.png!Location in the Cogwork Core in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Cogwork Clapper 01.png!Dormant in dispenser
+|Image2 = Screenshot SS Cogwork Clapper 02.png!Entering the arena
+|Image3 = Screenshot SS Cogwork Clapper 05.png!Idle
+|Image4 = Screenshot SS Cogwork Clapper 06.png!Ricochet Bounce
+|Image5 = Screenshot SS Cogwork Clapper 07.png!Launching Slash Bells
+|Image6 = Screenshot SS Cogwork Clapper 08.png!Slash Bells
+|Image7 = Screenshot SS Cogwork Clapper 13.png!Responding to the Needolin
+|Image8 = Screenshot SS Cogwork Clapper 14.png![[Silk Flies]] freed upon death
+|Image9 = Screenshot SS Cogwork Clapper 09.png!Arena in the Cogwork Core
+|Image10 = Screenshot SS Cogwork Clapper 10.png!Cogwork Clapper storage room in Act 3
+|Image11 = Screenshot SS Cogwork Clapper 11.png!Entering the arena
+|Image12 = Screenshot SS Cogwork Clapper 04.png!In storage room
+|Image13 = Screenshot SS Cogwork Clapper 12.png!Arena in storage room
+}}
+
+==Trivia==
+* Cogwork Clappers resemble a smaller version of [[Fourth Chorus]].
+* Cogwork Clappers and Fourth Chorus are the only [[Cogwork Bugs]] to release multiple [[Silk Fly|Silk Flies]] upon death.
+* Upon defeating the first Cogwork Clapper and returning after some time, two [[Cogworker]]s can be seen repairing its remnants.
+** It is possible to strike the broken Cogwork Clapper, which will cause it to roll and the Cogworkers to start pursuing Hornet. If it is knocked into a pit with active cogs, it will be permanently destroyed, and the Cogworkers will no longer appear in that room on subsequent visits.
+*The Cogwork Clapper is one of the few enemies that never respawns.
+*Cogwork Clappers share their Needolin dialogue with [[Cogwork Choirbug]]s, [[Cogwork Cleanser]]s, [[Cogwork Defender]]s, [[Cogworker]]s, [[Cogwork Spine]]s, [[Cogwork Crawler]]s, and [[Cogwork Underfly|Cogwork Underflies]].
+{{Gallery
+|Image3 = Screenshot SS Cogwork Clapper 03.png!Cogwork Clapper being repaired by Cogworkers
+}}
+
+{{Localisation
+|DEname = Räderwerk-Glöckner
+|DEmeaning = Cogwheel Bellringer
+|ESname = Repicador mecánico
+|ESmeaning = Mechanical Bellringer
+|FRname = Sonneur Mécanique
+|FRmeaning = Mechanical Bellringer
+|ITname = Meccanismo Percussore
+|ITmeaning = Striking Mechanism, <i>percussore</i> specifically refers to striking a drum.
+|JAname = カラクリシャンシャン
+|JAromanised = Karakuri shanshan
+|JAmeaning = Combination of 絡繰り <i>karakuri</i> (mechanism) and シャンシャン <i>shanshan</i>  (Japanese onomatopoeia for jingling or clapping).
+|KOname = 톱니바퀴 추
+|KOromanised = Tomnibakwi chu
+|KOmeaning = Cogwheel Clapper
+|PTname =  Tilintador Mecânico
+|PTmeaning = Mechanical Tinkler
+|RUname = Заводной ударник
+|RUromanised = Zavodnoj udarnik
+|RUmeaning = Clockwork Drummer
+|TWname = 機樞擊鈸者
+|TWromanised = Jīshū jī bó zhě
+|TWmeaning = same
+|ZHname = 机枢击钹者
+|ZHromanised = Jīshū jī bó zhě
+|ZHmeaning = Mechanical Cymbalist
+|CODEname = SONG_AUTOMATON_BALL
+|CODEmeaning = "Song" internally refers to the Citadel. Other [[Architects#Creations |Cogwork Bugs]] use the Automaton name internally
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

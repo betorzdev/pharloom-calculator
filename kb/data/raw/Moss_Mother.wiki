@@ -1,0 +1,154 @@
+{{SS Infobox Boss
+|location=[[Ruined Chapel]]<br>[[Weavenest Atla]]<br/>[[Moss Grotto]]
+|image1 = <gallery>
+B Moss Mother.png|Hunter's Journal
+Moss Mother idle.png|Idle
+</gallery>
+|health = 120 ([[Ruined Chapel]]) <br> 350/{{BT|700}} ([[Weavenest Atla]]) <br> {{BT|700}} ([[Moss Grotto]] - [[Act 3]])
+|damage_modifiers = {{SS Multiple Damage Modifiers|[[Ruined Chapel]]|1|1|1|1|1|[[Weavenest Atla]]|1.2|1|0.9|0.85|0.8|[[Moss Grotto]] - [[Act 3]]|1.25|1|1|1|1}}
+|gender = Female
+|drops = Access to [[Bone Bottom]]<br/>[[Weavelight]] ([[Weavenest Atla]])
+|numbers_required = 3
+|theme = [https://www.youtube.com/watch?v=vick40gW0mE&list=RDvick40gW0mE&start_radio=1 Strive]
+|sing = Mossgrub
+|singnum = 1
+}}
+
+{{Quote
+| Adult Mossmir with a fully developed stinger and hardened hide.<hr/>
+Motherhood is an instinct that can push creatures beyond what seems their natural limits. It turns even weaker beasts like these into formidable foes.
+| Hr = Journal
+}}
+
+The <b>Moss Mother</b> is a main [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. She is an adult [[Mossmirs|Mossmir]] with a fully developed stinger and hardened hide, found in the [[Ruined Chapel]].<ref name="journal1">Moss Mother [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Adult Mossmir with a fully developed stinger and hardened hide."</i></ref>
+
+== Background ==
+Moss Mothers are adult [[Mossmir]]s,<ref name="journal1"/> and are native to the [[Moss Grotto]]. Their motherhood instinct pushes them to defend their offspring beyond what seems to be their natural limits.<ref>Moss Mother Hunter's Journal entry: <i>"Motherhood is an instinct that can push creatures beyond what seems their natural limits. It turns even weaker beasts like these into formidable foes."</i></ref>
+
+== In-game Events ==
+The Moss Mother is encountered in the [[Ruined Chapel]] as the first boss of the game. Two additional Moss Mothers can be found together in [[Weavenest Atla]] as an optional boss fight, with the [[Weavelight]] [[tool]] as a reward.
+
+In [[Act 3]], another Moss Mother appears in the lower Moss Grotto. This one is [[black-threaded]] and much more aggressive.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+After destroying one of the chrysalides in her room, using the [[Challenge]] ability, walking to the end of the arena, or striking her cocoon, she bursts out and screeches, signalling the start of the fight. The Moss Mother has two attacks:
+
+* <b>Swoop</b>: Flies down in a short dive with her stinger pointed in [[Hornet (Silksong)|Hornet]]'s direction. She skids horizontally across the ground, covering roughly half of the arena.
+* <b>Headbutt</b>: Quickly swoops up and slams her head into the ceiling of the arena, causing either 1–2 [[Mossgrub]]s or 3 stalactites to fall from above. The positions of the falling objects are telegraphed by a small puff of dust before they fall, and each object may drop at slightly different times. She gains this attack upon reaching 113 HP, and Mossgrubs can only spawn from this attack once she reaches 83 HP.
+
+{{Hr|small}}
+
+=== Weavenest Atla ===
+In Weavenest Atla, the battle starts with one Moss Mother. However, after she reaches 313/{{BT|628}} HP, the next time she performs a <b>Headbutt</b> attack, she summons a second Moss Mother instead of stalactites or Mossgrubs. In this fight, both Moss Mothers have more HP and summon 4 stalactites instead of 3, with the fourth stalactite sometimes falling shortly after the first three.
+
+If this fight occurs in [[Act 3]], both Moss Mothers are [[black-threaded]], gaining more HP and dealing {{Damage|2|type=Void}} on contact. The first Moss Mother gains the [[Black-Threading#Movesets|Void Tendrils]] attack, and the second gains the [[Black-Threading#Movesets|Void Projectiles]] attack.
+
+If the first Moss Mother is killed before she can use a <b>Headbutt</b> attack to summon the second, the second Moss Mother will spawn after the first dies.
+
+{{Hr|small}}
+
+=== Moss Grotto - Act 3 ===
+In Act 3, a single black-threaded Moss Mother can be found in the lower Moss Grotto. She is encountered in a large, open room as opposed to the smaller arenas of the previous fights, has doubled HP, deals {{Damage|2|type=Void}} on contact, and chains attacks together with much shorter intervals. She remains within an area roughly equal to the zone covered by the stalactites from her <b>Headbutt</b> attack. If Hornet leaves this area, the Moss Mother quickly returns to its centre.
+
+When she uses the <b>Headbutt</b> attack, 7 stalactites fall from above, but sometimes only 4 or 5 drop, and Mossgrubs are no longer spawned. Additionally, she gains the [[Black-Threading#Movesets|Void Blades]] attack.
+
+As Hornet is not locked into the room for this fight, she can escape at any time. Unlike the other Moss Mother encounters, this one does not have a title card or a boss theme.
+
+<hr />
+
+{{Stagger
+| Moss Mother floats in place, looking up, and slightly shaking.
+| 11
+| game = SS
+}}
+
+<hr />
+
+When Mossgrubs appear, it is best to kill them as quickly as possible, as they complicate the fight by making it hard to focus on the Moss Mother. Additionally, they are a great source of [[Silk]].
+
+When the Moss Mother swoops, the attack can be dodged by jumping over her or by correctly timing a [[Needle#Needle-bouncing|Needle-bounce]].
+
+In Weavenest Atla, if the Moss Mother is hit immediately after a <b>Swoop</b> attack, she instantly repeats it. This can be used to prevent her from summoning the second Moss Mother until her stagger.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* For none but us...
+* Eat... grow... hide away...
+* See my form, now!
+* See what you'll become!
+* My young, my young...
+* Follow creeping green...
+}}
+
+== Location ==
+The Moss Mother is located in the [[Ruined Chapel]]. A pair of Moss Mothers can be found in a western section of [[Weavenest Atla]]. In [[Act 3]], a [[black-threaded]] Moss Mother can be found in the lower [[Moss Grotto]].
+
+{{Gallery
+| Image1=Mapshot SS Moss Mother 01.png!Location in the Moss Grotto
+| Image2=Mapshot SS Moss Mother 02.png!Location in Weavenest Atla
+| Image3=Mapshot SS Moss Mother 03.png!Location in the Moss Grotto in Act 3
+}}
+
+==Creation and Development==
+The Moss Mother was first seen in the February 2019 <i>Silksong</i> reveal trailer,<ref>[https://www.youtube.com/watch?v=pFAknD_9U7c Hollow Knight: Silksong Reveal Trailer]</ref> and was part of the June 2019 demo. In the demo, she had a [[Cut Content (Silksong)#Audio|different theme]], and had more health, taking 32 hits to kill with the base Needle (~160 HP).<ref name="e3">[https://youtu.be/Y8lvHT_IQbM?t=335 Hollow Knight: Silksong Gameplay - Nintendo Treehouse: Live <nowiki>|</nowiki> E3 2019]</ref> The theme was a placeholder, according to someone who met [[Team Cherry]].<ref>[https://www.youtube.com/watch?v=tc-fqnUPS8Q&lc=UgygsslMTvNJc26CzPR4AaABAg.AO9xELHCsKAAOA4L-Nb3B8 Comment by track recreator] on YouTube</ref><ref>[https://www.reddit.com/r/HollowKnight/comments/1o3rtet/met_ari_william_and_matt_trobbiani_at_pax/ Post about them meeting Team Cherry] on Reddit</ref> [[Cut Content (Silksong)/Areas#Moss Grotto|Earlier in development]], the Moss Mother could be skipped if Hornet avoided the chrysalides in her arena. This was likely part of the cut [[Judge]]s <code>[[Cut_Content_(Silksong)#Enemy_Behaviours|Proclaim Innocent]]</code> mechanic, which would have made Judges passive if Hornet never killed an enemy. Currently, Moss Mother is the only required kill prior to entering the [[Blasted Steps]].
+
+{{Gallery
+| Title = Gallery
+|Image1 = Screenshot SS Moss Mother 08.png!Idle
+|Image2 = Screenshot SS Moss Mother 01.png!Swoop
+|Image3 = Screenshot SS Moss Mother 02.png!Headbutt
+|Image4 = Screenshot SS Moss Mother 03.png!Falling stalactites
+|Image5 = Screenshot SS Moss Mother 04.png!Falling Mossgrub
+|Image6 = Screenshot SS Moss Mother 05.png!Stagger
+|Image7 = Screenshot SS Moss Mother 09.png!Reacting to the Needolin
+|Image8 = Screenshot SS Moss Grotto 04.png!Arena in the Moss Grotto
+|Image9 = Screenshot SS Weavenest Atla 06.png!Arena in Weavenest Atla
+|Image10 = Screenshot SS Moss Mother 06.png!Arena in the Moss Grotto in Act 3
+|Image11 = Screenshot SS Moss Mother 07.png!Inside her cocoon
+|Image12 = Screenshot SS Moss Mother 10.png!Moss Mothers in Weavenest Atla
+|Image13 = Screenshot SS Moss Mother 11.png!Black-threaded
+|Image14 = Silksong Early 028.png!<i>Silksong</i> reveal trailer
+}}
+{{#ev:youtube|https://www.youtube.com/watch?v=IFwSUbXl2Oo|300|center}}
+
+{{Localisation
+|DEname = Moosmutter
+|DEmeaning = Moss Mother
+|ESname = Madre Musgo
+|ESmeaning = Moss Mother
+|FRname = Mère Forestière
+|FRmeaning= Forest Mother
+|ITname = Madre Muschio
+|ITmeaning = Moss Mother
+|JAname = コケママ
+|JAromanised = Koke mama
+|JAkatakana = enemy
+|JAmeaning = Moss Mama<br><small>Combination of {{lang|ja|苔}} <i>koke</i> (moss) and mama.</small>
+|KOname = 이끼 어미
+|KOromanised = Ikki eomi
+|KOmeaning = Moss Mother
+|PTname = Musgo-Mãe
+|PTmeaning = Moss Mother
+|RUname = Матерь Мхов
+|RUromanised = Mater' Mxov
+|RUmeaning = Mother of Mosses
+|TWname = 苔蘚之母
+|TWromanised = Táixiǎn zhī mǔ
+|TWmeaning = same
+|ZHname = 苔藓之母
+|ZHromanised = Táixiǎn zhī mǔ
+|ZHmeaning = Mother of Moss
+|CODEname = MOSSBONE_MOTHER
+|CODEmeaning = <code>MOSSBONE</code> internally refers to [[Mossmirs|Mossmir]] enemies.
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+[[es:Madre Musgo]]
+[[fr:Mère Forestière]]
+[[pt:Musgo-mãe]]

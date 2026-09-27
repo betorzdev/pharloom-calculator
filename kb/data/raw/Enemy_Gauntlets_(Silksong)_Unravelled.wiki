@@ -1,0 +1,53 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Whiteward_08.png|400px|center]]
+|[[File:Mapshot_SS_The_Unravelled_01.png|400px|center]]
+|-
+| colspan="2" | [[The Unravelled]]'s enemy gauntlet as part of its boss encounter. The Unravelled and its enemy waves alternate depending on the boss's phases. Requires [[Surgeon's Key]].
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>[[Silk Heart]]<br>[[Psalm Cylinder]]</center>
+| <center>[https://youtu.be/qCOGxHLBSzM Sister Splinter (Ambient)] (Enemy Phase)<br>[https://youtu.be/dznNLVC0HPo Sister Splinter (Main)] (The Unravelled)</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Dreg Husk.png|35x35px|link=Dreg Husk]] [[Dreg Husk]], near Hornet
+|Defeating the enemy brightens the room.
+|-
+|
+[[File:HJ_Dreg Husk.png|35x35px|link=Dreg Husk]] Dreg Husk, left or right randomly<br />
+[[File:HJ_Dregwheel.png|35x35px|link=Dregwheel]] [[Dregwheel]], near Hornet
+|Defeating both enemies brightens the room.
+|-
+|
+[[File:HJ_The Unravelled.png|35x35px|link=The Unravelled]] [[The Unravelled]], Phase 1
+|<i>See {{Section link|The Unravelled#Phase 1}}</i>
+|-
+|
+[[File:HJ_Dregwheel.png|35x35px|link=Dregwheel]] Dregwheel, left or right randomly<br />
+[[File:HJ_Dregwheel.png|35x35px|link=Dregwheel]] Dregwheel, near Hornet
+|
+|-
+|
+[[File:HJ_The Unravelled.png|35x35px|link=The Unravelled]] The Unravelled, Phase 2
+|<i>See {{Section link|The Unravelled#Phase 2}}</i>
+|-
+|
+[[File:HJ_Dreg Husk.png|35x35px|link=Dreg Husk]] Dreg Husk, Right<br />
+[[File:HJ_Dregwheel.png|35x35px|link=Dregwheel]] Dregwheel, near Hornet
+|Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Dregwheel.png|35x35px|link=Dregwheel]] Dregwheel, near Hornet
+|
+|-
+|
+[[File:HJ_The Unravelled.png|35x35px|link=The Unravelled]] The Unravelled, Phase 3
+|<i>See {{Section link|The Unravelled#Phase 3}}</i>
+|-
+|}

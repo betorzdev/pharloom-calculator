@@ -1,0 +1,120 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Pilgrim Hulk.png|Hunter's Journal
+Pilgrim Hulk.png|Idle
+Pilgrim Hulk Without Shawl.png|Without Shawl
+</gallery>
+|health = 30/{{BT|120}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.4|1.2|1|1|1}}
+| hasdrop = true
+| r1 = 6
+| r2 = 9
+| sh1 = 4-6
+| sh2 = 5-8
+|drops = [[Pilgrim Shawl]]
+|numbers_required = 10
+|singnum=2
+| va = Matthew Fitzgerald<ref>Matthew Fitzgerald is credited in Pilgrim Hulk's audio files.</ref>
+}}
+
+{{Quote
+|Hr = Journal
+|Sturdy bug lost to the Haunting. Rolls at threats with no care for its own discomfort.<hr/>A rare built bug within these ailing lands. Most pilgrims' shells seem small by comparison. What nourishment did they discover to grow so large?
+}}
+
+<b>Pilgrim Hulks</b> are rarer, larger Pilgrim [[Enemies (Silksong)|Enemies]] in <i>[[Hollow Knight: Silksong]]</i>. Lost to the [[Haunting]], they roll at threats without caring about their own discomfort.<ref>Pilgrim Hulk [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Sturdy bug lost to the Haunting. Rolls at threats with no care for its own discomfort."</i></ref>
+
+== Behaviour and Tactics ==
+Pilgrim Hulks slowly walk back and forth in a small area when idle. Once they have spotted Hornet, they use either of the following attacks:
+* <b>Bouncing Roll:</b> Begins charging up and bounces towards Hornet twice, with the second bounce going lower than the first.
+* <b>Spindash:</b> Bounces backwards briefly before gaining speed in their roll, then thunders towards Hornet until she's behind it or it hits a wall.<br>
+
+Pilgrim Hulks often have short cooldowns after their attacks, allowing them to be hit easily. Their large hitbox size also makes certain [[Tools]] such as [[Sting Shard]]s or [[Curveclaw]]s especially effective.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Pilgrim Hulks have their health quadrupled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* There is no pain, nor fear, nor death...
+* Am I worthy?
+* The path... the holy path...
+* My soul... my shell. For you!
+* My faith... my reward...
+* Raise me higher! Pull me closer!
+* Lives end, journeys begin...
+* Raise my shell! Pull me closer!
+* Shining bright, our Citadel waits...
+* Pull us higher, ever higher...
+* We will climb! Climb! Climb forever!
+}}
+
+Haunted [[Weary Pilgrim]] at the entrance to [[Pilgrim's Rest]]:
+{{SS Needolin|columns=2|
+* Forget... your pain...
+* Climb... the climb...
+* Sing...
+* Have... faith...
+}}
+
+== Location ==
+Pilgrim Hulks can be found primarily in the [[Far Fields]]. A unique Pilgrim Hulk, the [[Weary Pilgrim]], can be found at the entrance to [[Pilgrim's Rest]]. Eventually, she succumbs to the [[Haunting]] and becomes hostile. She does not respawn upon death and disappears once [[Act 3]] starts.
+
+One Pilgrim Hulk appears as part of the [[Enemy Gauntlets (Silksong)/Deep Docks 2|gauntlet]] in the [[Deep Docks]], and two more appear in the [[Chapel of the Wanderer]] [[Enemy_Gauntlets_(Silksong)#Chapel_of_the_Wanderer|gauntlet]].
+
+During [[Act 3]], two Pilgrim Hulks can be found in [[Shellwood]] attacking [[Pinmaster Plinney]].
+
+{{Gallery
+|Image1 = Mapshot SS Pilgrim Hulk 02.png!Locations in the Far Fields
+|Image2 = Mapshot SS Pilgrim Hulk 05.png!Locations in the Far Fields in Act 3
+|Image3 = Mapshot SS Pilgrim Hulk 03.png!Location in the Deep Docks
+|Image4 = Mapshot SS Pilgrim Hulk 01.png!Location in Bone Bottom
+|Image5 = Mapshot SS Pilgrim Hulk 04.png!Location in Shellwood in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1=Screenshot SS Pilgrim Hulk 01.png!In Far Fields
+|Image2=Screenshot SS Pilgrim Hulk 02.png!In Deep Docks
+|Image3=Screenshot SS Pilgrim Hulk 03.png!In the Chapel of the Wanderer
+|Image4=Screenshot SS Pilgrim Hulk 04.png!Attacking Plinney in Shellwood in Act 3
+|Image5=Screenshot SS Pilgrim Hulk 05.png!Idle
+|Image6=Screenshot SS Pilgrim Hulk 06.png!Bouncing Roll
+|Image7=Screenshot SS Pilgrim Hulk 07.png!Spindash
+|Image8=Screenshot SS Pilgrim Hulk 08.png!Responding to the Needolin
+|Image9=Screenshot SS Weary Pilgrim 02.png!Haunted Weary Pilgrim
+|Image10=Screenshot SS Pilgrim Hulk 09.png!Without shawl during <i>[[Garb of the Pilgrims]]</i>
+
+}}
+
+{{Localisation
+|DEname = Pilgerkoloss
+|DEmeaning = Colossus Pilgrim
+|ESname = Peregrino mazacote
+|ESmeaning = Concrete Pilgrim
+|FRname = Gros Pèlerin
+|FRmeaning = Large Pilgrim
+|ITname = Gigante Pellegrino
+|ITmeaning = Pilgrim Giant
+|JAname = 大柄な巡礼者
+|JAromanised = Ōgara na junreisha
+|JAmeaning = Large Build Pilgrim
+|KOname = 순례자 덩치
+|KOromanised = Sullyeja deongchi
+|KOmeaning = Bulk Pilgrim
+|PTname = Colosso-peregrino
+|PTmeaning = Colossus Pilgrim
+|RUname = Пилигрим-громила
+|RUromanised = Piligrim-gromila
+|RUmeaning = Pilgrim Bully
+|ZHname = 壮硕朝圣者
+|ZHromanised = Zhuàngshuò cháoshèngzhě
+|ZHmeaning = Well-built Pilgrim
+|CODEname=PILGRIM_02
+|CODEmeaning = Generic name shared with [[Pilgrim Pouncer|01]], [[Pilgrim Groveller|03]], [[Pilgrim Hornfly|04]], and [[Elder Pilgrim|05]]
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

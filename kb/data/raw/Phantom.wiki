@@ -1,0 +1,164 @@
+{{SS Infobox Boss
+|image1 = <gallery>
+B Phantom.png|Hunter's Journal
+Phantom_idle.png|Idle
+Phantom Stagger.png|Staggered
+</gallery>
+|theme = [https://youtu.be/4PVB6Okn73c Phantom]
+|health = 650
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.2|1|0.85|0.75|0.7}}
+|drops = [[Cross Stitch]]<br/>Access to [[The Citadel]]
+|numbers_required = 1
+|location = [[Exhaust Organ]]
+|singnum = 2
+}}
+{{Quote
+| Hr = Journal
+|Mournful creature tasked alone to expel the Citadel's choking refuse. Their talent with a longpin is unmatched.<hr/>
+Though grey with age, their frayed form suggested a being strung from Silk, one who welcomed a decisive end in combat over a slow decline.
+}}
+
+<b>Phantom</b> is a [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. They are a mournful creature strung from [[Silk]] found within the [[Exhaust Organ]].<ref>Phantom Hunter's Journal entry: <i>"Mournful creature tasked alone to expel the Citadel's choking refuse. Their talent with a longpin is unmatched."</i></ref><ref>Phantom Hunter's Journal entry: <i>"Though grey with age, their frayed form suggested a being strung from Silk, one who welcomed a decisive end in combat over a slow decline."</i></ref> They act as the final boss of the alternate route through [[Act 1]].
+
+== Background ==
+Phantom is the child of [[Grand Mother Silk]], spun entirely from threads of her [[Silk]], eventually being discarded by her. Their Silk stretched thin and their shell stiffened.<ref>Phantom Needolin dialogue: <i>"Discarded... Silk stretched thin... Shell stiffened...</i></ref> They play the [[Exhaust Organ]] at the edge of [[Bilewater]], which expels a mixture of steam and Silk dregs into the surrounding air and has transformed a small part of Sinner's Road and Bilewater into [[the Mist]]. Their mask has also decayed; they must hold it steady on their face during combat, and when solitary are seen playing the Exhaust Organ without wearing it. [[Lace]] is their sister, spun pure yet frail and shaped to have the look and mind of a child.<ref>Exhaust Organ [[Needolin Locations#Exhaust_Organ|Needolin dialogue]]: <i>"She spun us to fade... She spun us to break... Why us, sister? Why us?"</i></ref>
+
+== In-game Events ==
+When traversing through [[the Mist]], the music of Phantom's playing can be heard in the distance. Upon successfully navigating the maze of rooms, Hornet arrives at the [[Exhaust Organ]]. Passing through the numerous pipes and steam valves, she enters into the main room of the Organ, whereupon Phantom ceases playing and disappears into a cloud of mist before re-emerging in the arena, initiating the battle.
+
+The last hit inflicted on Phantom is always parried, which initiates a cutscene where they and Hornet trade blows before rushing at one another. Hornet is given the option to "parry", and doing so results in dealing a lethal blow to Phantom. Upon defeat, Phantom screams before unravelling and exploding into Silk dregs. Hornet is then rewarded the [[Cross Stitch]] Silk Skill.
+
+After the fight concludes, Hornet can access a lift that travels up through the [[Underworks]] before emerging in the [[Grand Bellway]]. Continuing into the room past the Grand Bellway marks the end of [[Act 1]]. In addition, once Phantom is defeated, the entire [[Exhaust Organ]] ceases to function. This means several pipes in the Underworks and Bilewater are no longer blasted with pressurised steam, and the area that used to be the Mist reverts into [[Sinner's Road]] and [[Bilewater]].
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+The fight starts with a steam column coming down to hide Phantom in the background. Another column blasts down on the left side of the arena, and Phantom appears out of it. Getting caught in the steam column that deposits Phantom deals {{Damage|1+1}}.
+
+=== Phase 1 ===
+Emerging out of the steam column, Phantom has the following attacks and can run across the arena to reposition for them:
+* <b>Flurry</b>: Phantom performs three rapid jabs towards Hornet, moving forwards slightly with each one. If [[Hornet (Silksong)|Hornet]] is behind them after the second jab, they cancel the third one with a Retreat.
+* <b>Pin Rush</b>: While on the ground, if Hornet is far enough away, Phantom throws their longpin horizontally towards Hornet, then quickly dashes after it. After catching the longpin, Phantom continues on into a dash; however, if the longpin hits a wall, then they catch it without the follow-up dash. This attack covers most of the arena.
+* <b>Aerial Pin Rush</b>: Phantom leaps into the air and throws their longpin towards Hornet, which travels a set distance or until it embeds in a surface, before then dashing to it.
+* <b>Cross Stitch</b>: Phantom blocks with their longpin, nullifying incoming damage. If struck during this time, they retaliate by slashing back and forth three times across the area in front of them, dealing {{Damage|1+1}} if Hornet is caught by a slash. Unlike other bosses, Phantom can use this attack mid-air after a leap if Hornet is too close to them.
+* <b>Retreat</b> : Phantom quickly glides back a short distance to reposition for another attack.
+* <b>Lightfall</b>: Phantom leaps upwards off-screen and marks Hornet's position with a large, faint white column that has a white spark at its centre. They then slam into the ground, dealing {{Damage|2}} if Hornet is caught in the telegraphed column of steam. Phantom gains this attack at 455 HP.
+
+=== Phase 2 ===
+After reaching 227 HP, Phantom roars and performs Lightfall 5 times in succession. The battlefield becomes filled with mist, and they gain one new ability:
+* <b>Misty Step</b>: Phantom can now sometimes disappear into the mist and teleport to another part of the arena to perform any of the previous attacks. 
+** Teleporting directly mid-air into an <b>Aerial Pin Throw</b>, or teleporting off-screen into a <b>Lightfall</b> are also considered separate attacks that are performed alongside their regular variations.
+
+After Phantom reaches 0 HP, doing any damage to them while they are holding their longpin has a high chance of causing Phantom to perform a successful <b>Cross Stitch</b> block, forcing Hornet and Phantom to take their places left and right of the arena before lunging towards each other. A prompt to press the SILK SKILL button is then shown on screen. If the input is not pressed in time, which lasts a few seconds, Phantom deals {{Damage|1+1}} to Hornet and sets their own health to 60 HP, thereby continuing the fight.
+
+Striking Phantom while they are not holding the longpin – while they are performing either the <b>Pin Rush</b> or the <b>Aerial Pin Rush</b> attack – will still deal damage and continue the fight as normal. This can lead to Phantom internally having negative health.
+<hr/>
+
+{{Stagger
+| Phantom collapses onto both knees, swooning with their head tipped upwards and a claw pressed to their forehead.
+| 17
+| game = SS
+}}
+<hr/>
+
+Maintaining distance is key to this fast-paced battle. Avoid attacking from the front, as Phantom frequently uses Cross Stitch. Needle bounces are a safe option (especially with the [[Hunter Crest]]), though care must be taken against Aerial Pin Rush while airborne. After striking, retreat quickly and wait for the next opening.
+
+There are a few opportunities to safely deal damage:
+
+Pin Rush, Aerial Pin Rush and Flurry: Jumping and Needle bouncing while manoeuvring into and out of position with [[Swift Step]]s allows for safe hits.
+
+Lightfall: After landing, Phantom is briefly vulnerable, making dash-strikes effective.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+*Show me strength, spider...
+*Forgotten...
+*Discarded...
+*Silk stretched thin...
+*Shell stiffened...
+*Claws quivering...
+*Free me from this fading fate...
+*Free me!
+}}
+
+== Location ==
+Phantom can be found in the [[Exhaust Organ]] in [[Bilewater]], accessed through [[the Mist]] either from [[Sinner's Road]] to the west or from Bilewater to the east.
+
+{{Gallery
+|Image1= Mapshot SS Exhaust Organ.png!Location in Bilewater
+}}
+
+== Creation and Development == 
+: <i>See also: [[Cut Content (Silksong)/NPCs#Organ Sleepers]]</i>
+[[File:Organ_Sleeper_Locations.png|thumb|220px|Possible location of other tanks in the Exhaust Organ]]
+Phantom is named after and inspired by the titular character of Andrew Lloyd Webber's Broadway production, <i>[[wikipedia:The Phantom of the Opera (1986 musical)|The Phantom of The Opera]]</i> as indicated by Phantom's theme being named "Phantom of the Organ" in game files, along with several allusions that can be made to Phantom and the musical. 
+
+While their exact connection to Phantom is unknown, three NPCs known as "[[Cut Content (Silksong)/NPCs#Organ Sleepers|Organ Sleepers]]" that loosely resemble Phantom was originally planned to be featured within the game, along with accompanying [[Needolin]] memories. The Organ Sleepers would have been featured in tanks identical to the one where Phantom's Needolin memory is present. In the April 2021 map, what appears to be these tanks can be made out in the Exhaust Organ that were removed in the final release.
+{{Clear}}
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Phantom 06.png!Flurry attack
+|Image2 = Screenshot SS Phantom 05.png!Pin Rush attack
+|Image3 = Screenshot SS Phantom 10.png!Aerial Pin Rush
+|Image4 = Screenshot SS Phantom 03.png!Cross Stitch parry 
+|Image5 = Screenshot SS Phantom 04.png!Cross Stitch riposte
+|Image6 = Screenshot SS Phantom 07.png!Lightfall attack
+|Image7 = Screenshot SS Phantom 09.png!Smoke Step attack
+|Image8 = Screenshot SS Hornet 05.png!Final Clash
+|Image9 = Screenshot SS Phantom 08.png!Staggered
+|Image10 = Screenshot SS Phantom 11.png!Singing
+|Image11 = Screenshot SS Bilewater 13.png!Arena in Bilewater
+|Image12 = Screenshot SS Phantom 02.png!Playing the pipe organ
+|Image13 = Screenshot SS Bilewater 12.png!Lace and Phantom in a memory in the Exhaust Organ
+|Image14 = Phantom.png!Promotional art
+|Image15 = Ari SS Sketch 28.jpg!Concept sketches
+}}
+
+== Achievements ==
+{{Achievement|game=silksong|Grey Ghost}}
+
+== Trivia ==
+* Phantom is the only boss in the game whose health can drop into the negatives. The maximum the game allows is -1000, after which it caps out. This can only be achieved if the parry attack is purposely dodged.
+**Phantom is the boss with the single largest heal in the game. They can heal up to 1060 health in a single frame.
+* Phantom is referred to with various genders in different language versions of the game:
+** They are referred to as female in the Spanish and French translations of the game.<ref> Dialogue between [[Lace]] and Phantom in the Spanish translation: <i>"¿Por qué nosotras, hermana...?"</i> uses the female variant of "us" (nosotras).</ref><ref>French Phantom Hunter's Journal entry: <i>"Elle semble être une créature née de la soie. Elle préfère une fin rapide"</i> uses "she" (elle).</ref>
+** In the Italian and German versions, they are referred to with gender-neutral language.
+*** In Italian, texts referring to Phantom (such as the Hunter's Journal) are written to avoid using a specific gender.<ref>Needolin memory in the Exhaust Organ: <i>"Ci ha tessuti perché scomparissimo..."</i> uses a version of the verb that describes a group of either all males or a mix of various genders.</ref><ref>In their Needolin dialogue, Phantom uses masculine words to refer to themself, but this could be because "Phantom" (Fantasma) is a masculine word, and Italian tends to use masculine words in a gender-neutral context in lieu of not having specific gender-neutral language.</ref>
+*** In German, they are referred to using "it".<ref>German Phantom Hunter's Journal entry: <i>"Zwar war es schon alt und ergraut..."</i> (because it was old and grayed).</ref>
+** They are referred to as male in the Russian version.<ref>Russian Phantom Hunter's Journal entry: <i>"...он не знает себе равных."</i> (...he is unmatched).</ref>
+
+{{Localisation
+|DEname = Phantom
+|DEmeaning = —
+|ESname = Fantasma
+|ESmeaning = Phantom
+|FRname = Fantôme
+|FRmeaning = Phantom 
+|ITname = Fantasma
+|ITmeaning = Phantom
+|JAname = ファントム
+|JAromanised = Fantomu
+|JAkatakana = foreign
+|JAmeaning = Phantom
+|KOname = 팬텀
+|KOromanised = Paenteom
+|KOmeaning = Phantom
+|PTname = Fantasma
+|PTmeaning = Phantom
+|RUname = Фантом
+|RUromanised = Fantom
+|RUmeaning = Phantom
+|TWname = 魅影
+|TWromanised = Mèiyǐng
+|TWmeaning = Phantom<br/><small>From {{lang|zh-Hant|歌劇魅影 <i>gējù mèiyǐng</i>}} (Phantom of the Opera; lit. opera's magic shadow).</small>
+|ZHname = 幽影
+|ZHromanised = Yōuyǐng
+|ZHmeaning = Secluded Shadow<br/><small>Combination of {{lang|zh-Hans|幽灵}} <i>yōulíng</i> (ghost; lit. secluded spirit) and {{lang|zh-Hans|歌剧魅影}} <i>gējù mèiyǐng</i> (Phantom of the Opera; lit. opera's magic shadow).</small>
+|CODEname = PHANTOM
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+[[fr:Fantôme]]
+[[pt:Fantasma]]

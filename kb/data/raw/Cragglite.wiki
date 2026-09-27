@@ -1,0 +1,83 @@
+{{SS Infobox Enemy
+| hasdrop = true
+| sh1 = 3-5
+| sh2 = 4-7
+|health = 20/{{BT|40}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 3
+|singnum=1
+}}
+{{Quote
+|Hr = Journal
+|Infant form of the more formidable Craggler.<hr/>
+If left to grow, these young bugs will fight for dominance until only one remains.
+}}
+
+<b>Cragglites</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are infant forms of the [[Craggler]] that appear once it has been defeated.<ref>Cragglite [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Infant form of the more formidable Craggler."</i></ref>
+
+== Behaviour and Tactics ==
+Simply walks left or right at random for half a second, pausing in between movements for about a second.<br>
+Does not react to anything and deals {{Damage|1}} of contact damage.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Cragglites have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Our time has come...
+* The great one, defeated...
+* Fallen shell, fallen feast!
+* Now we grow... we grow...
+}}
+
+== Location ==
+Three Cragglites appear in the [[Wormways]] in the same room as the [[Craggler]] after it has been defeated, the <i>[[SEARCH: Silent Halls]]</i> [[Acts|objective]] has been completed, and Hornet has rested at a bench outside of the Wormways, [[Bone Bottom]], or [[the Marrow]].
+
+{{Gallery
+|Image1 = Mapshot SS Cragglite 01.png!Location in Wormways
+}}
+
+==Gallery==
+{{Gallery
+|Image1=Screenshot SS Cragglite 01.png!In Wormways
+|Image2=Screenshot SS Cragglite 02.png!Singing
+}}
+
+==Trivia==
+* Cragglites first appeared in the 2019 <i>Silksong</i> reveal trailer, crawling along the platforms within the cut [[Cut Content (Silksong)/Areas|Pharloom Bay]] area.<ref>[https://www.youtube.com/watch?v=pFAknD_9U7c Hollow Knight: Silksong Reveal Trailer]</ref>
+** Though impossible under normal circumstances, Cragglites can walk on walls. This is likely leftover code as they are seen crawling on ceilings in the reveal trailer.
+{{Gallery
+| Image1 = Silksong Early 024.png!<i>Silksong</i> reveal trailer
+}}
+
+{{Localisation
+|DEname = Winzklüfter
+|DEmeaning = Portmentau of <i>winzig</i> (tiny) and <i>Klüfter</i> (Craggler).
+|ESname = Cragglerín
+|ESmeaning = From <i>Craggler</i> and <i>-ín</i> (diminutive suffix).
+|FRname = Craggin
+|FRmeaning = From <i>Craggleur</i> (Craggler) and <i>in</i> (diminutive suffix).
+|ITname = Granchinio
+|ITmeaning = Small Crab
+|JAname = コクラッグラ
+|JAromanised = Ko kuraggura
+|JAmeaning = Combination of {{lang|ja|小}} <i>ko</i> (small) and {{lang|ja|クラッグラ}} <i>kuraggura</i> (Craggler).
+|KOname = 바위벌레 유충
+|KOromanised = Bawibeolle yuchung
+|KOmeaning = Rock Bug Larva
+|PTname = Gargolote
+|PTmeaning = Portmanteau of <i>Gárgolo</i> (Craggler) and <i>filhote</i> (cub or offspring).
+|RUname = Скальныш
+|RUromanised = Skal'nyš
+|RUmeaning = From {{lang|ru|Скальнер <i>skal'ner</i>}} (Craggler) and {{lang|ru|-ёныш <i>-ënyš</i>}} (suffix commonly used to signify a baby).
+|TWname = 小懸峭獸
+|TWromanised = Xiǎo xuán qiào shòu
+|TWmeaning = same
+|ZHname = 小悬峭兽
+|ZHromanised = Xiǎo xuán qiào shòu
+|ZHmeaning = Small Crag Beast or Small Hanging Steep Beast<br><small>{{lang|zh-Hans|悬峭兽}} / {{lang|zh-Hant|悬峭兽}} <i>xuán qiào shòu</i> is a play on {{lang|zh-Hans|悬崖峭壁}} / {{lang|zh-Hant|懸崖峭壁}} <i>xuányáqiàobì</i> (sheer cliff or crag).</small>
+|CODEname=SMALL_CRAB
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

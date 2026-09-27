@@ -1,0 +1,72 @@
+{{Navbar
+|icons=true
+|page1=Hornet Statuette
+|page2=Shard Bundle
+|page3=Beast Shard
+|page4=Pristine Core
+|icon5={{Steel Soul Icon Mini|SS}} 
+|page5=Growstone
+}}
+
+{{SS Infobox Item
+|effects = Provides {{S|60}}
+|source = [[Flick the Fixer]]
+|description = Small sculpture, inexpertly but painstakingly crafted as a symbol of enduring friendship.<hr>
+Breaks into 60 shell shards.
+}}
+
+{{Quote
+|Hr=SS
+|S'only a token, really! But I've put all me talent into it, much as I've got! Something to keep you company on the lonely roads above.<br>
+Hold onto it on your travels, and remember that you're always welcome down here with us.
+|[[Flick the Fixer]]
+}}
+
+The <b>Hornet Statuette</b> is a [[Items (Silksong)#Consumables|consumable item]] in <i>[[Hollow Knight: Silksong]]</i>, given to [[Hornet (Silksong)|Hornet]] as a gift.
+
+== Use ==
+Can be used from the inventory to gain {{S|60}}.
+
+== How to Acquire ==
+Gifted to [[Hornet (Silksong)|Hornet]] by [[Flick the Fixer]] after completing the <i>[[An Icon of Hope]]</i> [[wish]]. Only one can ever be obtained.
+
+{{Gallery
+|Image1 = Mapshot SS Flick the Fixer 01.png!Location in Bone Bottom
+|Image2 = Screenshot SS Flick the Fixer 02.png!Flick the Fixer in Bone Bottom
+}}
+
+{{Localisation
+|DEname = Hornet-Statuette
+|DEmeaning = Hornet Statuette
+|ESname = Estatuilla de Hornet
+|ESmeaning = Statuette of Hornet
+|FRname = Statuette d'Hornet
+|FRmeaning = Statuette of Hornet
+|ITname = Statuina di Hornet
+|ITmeaning = Statuette of Hornet
+|JAname=ホーネットの像
+|JAromanised= Hōnetto no zō
+|JAkatakana = foreign
+|JAmeaning = Hornet Statue
+|KOname = 호넷 조각상
+|KOromanised = Honet jogaksang
+|KOmeaning = Hornet Shard Statue
+|PTname =  Estatueta de Hornet
+|PTmeaning = Statuette of Hornet
+|RUname = Статуэтка Хорнет
+|RUromanised = Statuètka Xornet
+|RUmeaning = Hornet Statuette
+|TWname = 大黃蜂雕像
+|TWromanised = Dàhuángfēng diāoxiàng
+|TWmeaning = same
+|ZHname = 大黄蜂雕像
+|ZHromanised = Dàhuángfēng diāoxiàng
+|ZHmeaning = Hornet Statue
+|CODEname = FIXER_IDOL
+|CODEmeaning = [[Flick the Fixer]] is internally referred to as simply <code>FIXER</code>
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

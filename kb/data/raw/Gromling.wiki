@@ -1,0 +1,98 @@
+{{SS Infobox Enemy
+|health = 30
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.25|1|1|1|1}}
+| hasdrop = true
+| sh1 = 3-5
+| sh2 = 4-7
+|numbers_required = 25
+|singnum=1
+}}
+
+{{Quote
+|Hr = Journal
+|Young masked worm that delights in ambushing intruders within its tunnels.<hr/>
+A frustrating fiend. They flee beneath the bone whenever I try to strike them down.
+}}
+
+<b>Gromlings</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are young [[Groms]] that ambush intruders within their domain and quickly retreat underground when attacked.<ref>Gromling [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Young masked worm that delights in ambushing intruders within its tunnels. A frustrating fiend. They flee beneath the bone whenever I try to strike them down."</i></ref>
+
+== Behaviour and Tactics ==
+Gromling spawn locations are typically divided into groups, with only one enemy per group ready to attack at any given time. When a Gromling is killed or burrows underground, there is a 3–6 second delay before it either prepares to attack again or the turn passes to a different location. Shifting dust particles on the ground indicate a potential spawn point, but not all locations display this visual effect, nor does it mean that the Gromling is ready to attack.
+
+While burrowed, Gromlings face a specific direction that is predetermined for each location. They only attack if Hornet is in front of them, which frequently results in her being ambushed from behind. Playing the [[Needolin]] forces them to emerge, regardless of Hornet's position. Once Gromlings burst from the rock, they screech in warning before leaping toward Hornet. After that, they crawl forward for 1-1.5 seconds before burrowing back underground, retaining any damage they have taken.
+
+Due to their speed, Gromlings can be difficult to defeat with the [[Needle]], so [[Tools]] and {{CrestSlot|Skill|s}} that deal high burst damage can be used instead.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2|
+* Dig... dig... dig...
+* Through bone, through shell...
+* Find it... find it...
+* Deep scent...
+}}
+
+== Location ==
+Gromlings can be found throughout the [[Wormways]].
+
+In [[Act 3]], the majority of them are mutated by [[Lifeblood|Plasmium]] into [[Plasmid]]s. Only a few remain in the northeastern section of the area.
+
+On the maps below, Gromling spawn location groups are colour-coded and labelled with a letter. Within these groups, only one enemy can attack at a time. Regular markers indicate ungrouped Gromlings, which are always active.
+
+However, with the exception of the Gromling in the southern Wormways, individual Gromlings have their own unique behaviours:
+
+* The Gromling in [[Weavenest Karn]] has a 50% chance of not spawning at all when Hornet enters the room. If it does spawn, there is a 50% chance it disappears each time it is killed or burrows underground, returning only when Hornet re-enters the room.
+* Two Gromlings near the pilgrim's corpse in the northeastern Wormways simultaneously ambush Hornet and then disappear, only respawning when she re-enters the room. Additionally, a nearby group of two spawn locations becomes active only after this ambush is triggered.
+
+{{Gallery
+|Image1 = Screenshot SS Gromling 09.png!Locations in the Wormways (Composite map by [https://scripterswar.com/silksong/map RainingChain])
+|Image2 = Screenshot SS Gromling 10.png!Locations in the Wormways in Act 3 (Composite map by [https://scripterswar.com/silksong/map RainingChain])
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Gromling 01.png!Dust particles indicating a potential Gromling spawn location
+|Image2 = Screenshot SS Gromling 02.png!Emerging from the floor
+|Image3 = Screenshot SS Gromling 03.png!Charging
+|Image4 = Screenshot SS Gromling 04.png!Emerging from a wall
+|Image5 = Screenshot SS Gromling 05.png!Leaping
+|Image6 = Screenshot SS Gromling 06.png!Burrowing
+|Image7 = Screenshot SS Gromling 07.png!Reacting to the Needolin
+|Image8 = Screenshot SS Gromling 08.png!Ambush
+}}
+
+==Trivia==
+* Despite their leaping attack having the same animation as attacks that deal (or used to deal at release) {{Damage|1+1}}, Gromlings have always dealt {{Damage|1}}.
+
+{{Localisation
+|DEname = Gromling
+|DEmeaning = —
+|ESname = Gromlín
+|ESmeaning = —
+|FRname = Gromllin
+|FRmeaning = —
+|ITname = Picoverme
+|ITmeaning = Small Worm
+|JAname = コグロム
+|JAromanised = Ko guromu
+|JAkatakana = foreign
+|JAmeaning = Combination of {{lang|ja|小}} <i>ko</i> (small) and {{lang|ja|グロム}} <i>guromu</i> (Grom).
+|KOname = 그롬링
+|KOromanised = Geuromning
+|KOmeaning = Gromling
+|PTname = Gromlin
+|PTmeaning = —
+|RUname = Жраклинг
+|RUromanised = Žrakling
+|RUmeaning = From {{lang|ru|жрать <i>žrat'</i>}} (devour) and {{lang|ru|-линг <i>-ling</i>}} (diminutive suffix)
+|TWname = 戈魯姆幼體
+|TWromanised = Gēlǔmǔ yòutǐ
+|TWmeaning = same
+|ZHname = 戈鲁姆幼虫
+|ZHromanised = Gēlǔmǔ yòuchóng
+|ZHmeaning = Grom Larva
+|CODEname=CRYPT_WORM
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

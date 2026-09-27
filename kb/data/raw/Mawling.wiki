@@ -1,0 +1,93 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Mawling.png|Hunter's Journal
+Mawling Idle.png|Idle
+Mawling Curled up.png|Curled Up
+</gallery>
+| health = 15/{{BT|30}}
+| damage_modifiers = {{SS Spaced Damage Modifiers|1|0.8|0.8|0.8|0.8}}
+| hasdrop = true
+| sh1 = 2-3
+| sh2 = 3-4
+|numbers_required = 30
+|sing=Skarrwing
+}}
+{{Quote
+|Hr = Journal
+|Young, bony bug that can curl its body to form a ball.<hr/>Their rough, ridged shell grips tight to any surface. Even walls and roofs become pathways for these nimble bugs.
+}}
+
+<b>Mawlings</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are the younger form of [[Marrowmaw]]s, capable of rolling themselves around surfaces.<ref>Mawling [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Young, bony bug that can curl its body to form a ball. Their rough, ridged shell grips tight to any surface. Even walls and roofs become pathways for these nimble bugs."</i></ref>
+
+== Behaviour and Tactics ==
+Mawlings are found standing on small platforms. When approached, they roll around the platform, clinging to the sides and bottom, and stop upon returning to their original position. They deal {{Damage|1}} upon contact.
+
+As they are often present on very small platforms, it is usually best to attack them from an adjacent platform to avoid being hit by their attack.
+
+Additionally, they take no knockback from any of [[Hornet (Silksong)|Hornet]]'s attacks.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Mawlings have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+*Rumbling, crackling...
+*Shells are strong...
+*Scratching, seeking...
+*Warm and dark...
+*Digging, hiding...
+*Claws are sharp...
+}}
+
+== Location ==
+Mawlings can first be found in the eastern section of [[Moss Grotto]], but they also appear in the western portion of [[Weavenest Atla]], as well as the lower section of the [[Memorium]].
+
+{{Gallery
+|Image1 = Mapshot SS Mawling 05.png!Locations in Moss Grotto
+|Image2 = Mapshot SS Mawling 08.png!Location in Moss Grotto in Act 3
+|Image3 = Mapshot SS Mawling 06.png!Location in Weavenest Atla
+|Image4 = Mapshot SS Mawling 09.png!Location in Weavenest Atla in Act 3
+|Image5 = Mapshot SS Mawling 07.png!Location in the Memorium
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Mawling 01.png!In Moss Grotto
+|Image2 = Screenshot SS Mawling 02.png!In Weavenest Atla
+|Image3 = Screenshot SS Mawling 03.png!In the Memorium
+|Image4 = GIF SS Mawling 01.gif!Attacking
+|Image5 = Screenshot SS Mawling 04.png!Reacting to the Needolin
+}}
+
+==Trivia==
+* Mawlings had lower HP as of 2019, taking 2 hits to kill with the base [[Needle]] (~10 HP).<ref>[https://youtu.be/Y8lvHT_IQbM?t=276 Hollow Knight: Silksong Gameplay - Nintendo Treehouse: Live | E3 2019]</ref>
+{{Localisation
+|DEname = Schlundling
+|DEmeaning = Mawling
+|ESname = Pelotero
+|ESmeaning = From <i>escarabajo pelotero</i> (dung beetle).
+|FRname = Carapton
+|FRmeaning =
+|ITname = Pallaosso
+|ITmeaning = Boneball
+|JAname = マウリン
+|JAromanised = Maurin
+|JAkatakana = enemy 
+|JAmeaning = Mawling
+|KOname = 뼈굴림 벌레
+|KOromanised = Ppyeogullim beolle
+|KOmeaning = Bone Rolling Bug
+|PTname = Garrunho
+|PTmeaning = Portmanteau of <i>garra</i> (claw) and <i>unhar</i> (to scratch).
+|RUname = Мувлинг
+|RUromanised = Muvling
+|RUmeaning = Mawling
+|ZHname = 卷球幼兽
+|ZHromanised = Juǎn qiú yòushòu
+|ZHmeaning = Ball-up Young Beast
+|CODEname = BONE_ROLLER
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+[[fr:Carapton]]

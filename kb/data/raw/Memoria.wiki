@@ -1,0 +1,96 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Memoria.png|Hunter's Journal
+Memoria Idle.png|Idle
+</gallery>
+| hasdrop = true
+| r1 = 18
+| r2 = 35
+| sh1 = 4-6
+| sh2 = 5-8
+|health = 70/{{BT|140}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1|1|1|1}}
+|numbers_required = 2
+|singnum=2
+}}
+{{Quote
+|Hr = Journal
+|Learned disciple of the Choir charged to maintain the Citadel's Memorium.<hr/>
+From the outset, theirs was a hopeless task. Those wild lands could never be replicated within a space so artificial.
+}}
+<!-- Memoriae is the correct plural of Memoria, please stop trying to change it. https://en.wiktionary.org/wiki/memoriae -->
+<b>Memoriae</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are learned disciples of [[the Choir]] who were charged to maintain the [[Memorium]] in [[the Citadel]].<ref>Memoria [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Learned disciple of the Choir charged to maintain the Citadel's Memorium."</i></ref>
+
+== Behaviour and Tactics ==
+As flying enemies, Memoriae often try to maintain an aerial distance from [[Hornet (Silksong)|Hornet]], but will close in to perform melee attacks. Memoriae have four moves:
+* <b>Double Slash:</b> Performs two outwards horizontal slashes, moving slightly forwards with each slash.
+* <b>Voltvessels:</b> Throws a volt orb at Hornet, which bounces around for a few seconds before pausing midair and bursting into a circular electric field. This deals {{Damage|1+1}} to Hornet if she is hit either by the orb itself or by its electric field. This move is often used when Hornet is out of range of their other attacks.
+** The orb can also hit other Memoriae and enemies, including the Memoria that threw it, so they will try to fly away if they get too close to an orb or if Hornet knocks it back towards them. The same applies when the [[Voltvessels]] tool is used against Memoriae; however, when the Voltvessels are in spear form, Memoriae do not dodge, since they do not use this form.
+* <b>Parry:</b> Raises their baton to block incoming damage from that direction, retaliating with a Double Slash if the parry is struck.
+* <b>Evade:</b> Performs a horizontal dash away from Hornet, often used after missing with a Double Slash when she gets too close.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Memoriae have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Our past, remembered...
+* These lands, eternal...
+* Saved, preserved, perfect...
+* What was will not be forgotten...
+}}
+
+== Location ==
+Memoriae can be found in the [[Memorium]]. 
+
+Initially, a [[Enemy_Gauntlets_(Silksong)#Memorium|gauntlet]] of two can be encountered in a hidden room, guarding the [[Voltvessels]]. In [[Act 3]], an additional [[Black-Threading|black-threaded]] Memoria appears just outside the [[Ventrica]] room.
+
+{{Gallery
+|Image1 = Mapshot SS Memoria 02.png!Location in the Memorium
+|Image2 = Mapshot SS Memoria 01.png!Additional location in the Memorium in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Memorium 04.png!Corpse beside [[Materium]]
+|Image2= Screenshot SS Memoria 02.png!Dormant
+|Image3= GIF SS Memoria 01.gif!Reanimating
+|Image4= Screenshot SS Choir 04.png!In the Voltvessels arena
+|Image5= Screenshot SS Memoria 01.png!Black-threaded Memoria in Act 3
+|Image6= Screenshot SS Memoria 03.png!Double Slash
+|Image7= Screenshot SS Memoria 04.png!Voltvessels
+|Image8= Screenshot SS Memoria 05.png!Parry
+|Image9= Screenshot SS Memoria 06.png!Reacting to the Needolin
+}}
+
+{{Localisation
+|DEname = Memoria
+|DEmeaning = —
+|ESname = Memorio
+|ESmeaning = —
+|FRname = Mémoria
+|FRmeaning = —
+|ITname = Memoria
+|ITmeaning = —
+|JAname = キオクリア
+|JAromanised = Kiokuria
+|JAkatakana = enemy
+|JAmeaning = Portmanteau of {{lang|ja|記憶}} <i>kioku</i> (memory) and Memoria.
+|KOname = 보존 관리자
+|KOromanised = Bojon gwallija
+|KOmeaning = Preservation Manager
+|PTname = Memoriel
+|PTmeaning = From <i>memória</i> (memory).
+|RUname = Мемория
+|RUromanised = Memorija
+|RUmeaning = Memoria
+|ZHname = 忆廊使徒
+|ZHromanised = Yìláng shǐtú
+|ZHmeaning = Memorium Apostle or Memory Gallery Apostle
+|CODEname=ARBORIUM_KEEPER
+|CODEmeaning="Arborium" internally refers to the Memorium
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Enemies}}

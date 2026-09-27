@@ -1,0 +1,375 @@
+{{SS Infobox Boss
+|label1 = Boss
+|image1 = <gallery>
+B Shrine Guardian Seth.png|Hunter's Journal
+Shrine Guardian Seth Idle.png|Idle
+Shrine Guardian Seth Stagger.png|Staggered
+Shrine Guardian Seth Sitting.png|Sitting
+</gallery>
+|drops = Access to [[Nyleth]]'s Shrine
+|health = 1185
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.7|1.25|1.1|1|0.95}}
+|numbers_required = 1
+|creator = Seth Goldman
+|va = Nassim "Simo" Gebrail<ref name="va">[[:File:Discord_Simo voice actors.png|Messages from Simo]] on Discord.</ref>
+|theme = [https://youtu.be/m1oP-f08vbg Nyleth (Seth)] (Phase 1)<br>
+[https://youtu.be/L4VhBh681kI Nyleth (Petals)] (Phase 2)
+|singnum = 2
+|location = [[Grand Gate]]
+
+|label2 = NPC
+|title2 = Seth
+|image2 = <gallery>
+Seth NPC.png|Standing
+Seth Sitting.png|Sitting
+</gallery>
+|combat2 = false
+|creator2 = Seth Goldman
+|va2 = Nassim "Simo" Gebrail<ref name="va" />
+|singnum2 = 1
+|location2 = [[Greymoor]]<br>[[Shellwood]]<br>[[Grand Gate]]<br>[[Fleatopia]]
+|sing2 = Seth
+|g2 = Shrine Guardian Seth
+|affiliation2 = [[Flea Caravan]] (Member)<ref>Seth: <i>"They said I could be a flea here with them, so of course I agreed. Seems as good a place as any to call home, at least for a time.</i></ref>
+}}
+{{Quote
+|Hr = Journal
+|Eternal defender of Shellwood Shrine. His pin and cymbal show many marks of their use.<hr/>
+He offered fair warning and challenge, a duel in the purest sense. I admire his honour, and his skill.
+}}
+
+<b>Shrine Guardian Seth</b> is a main [[Bosses (Silksong)|boss]] and [[NPCs (Silksong)#Wanderers|wandering NPC]] in <i>[[Hollow Knight: Silksong]]</i>. He is the eternal defender to [[Nyleth]]'s shrine, battling anyone who wishes to pass through.<ref>Shrine Guardian Seth [[Hunter's Journal]] entry: <i>"Eternal defender of Shellwood Shrine. His pin and cymbal show many marks of their use."</i></ref> After his defeat, he begins travelling around [[Pharloom]], seemingly having lost his memory.
+
+== Background ==
+Shrine Guardian Seth serves as the eternal guardian to the [[Shellwood]] Shrine in [[Grand Gate]] containing the monument to [[Nyleth]], which he defends by entering into combat with anyone who attempts to pass him.<ref>Shrine Guardian Seth: <i>"I am charged forever to guard the sacred shrine beyond. Any who wish to pass must cross their weapon with my own."</i></ref> He has slain many bugs in his defence of the shrine, a fact which he laments.<ref>Shrine Guardian Seth: <i>"I am the last bound to protect [the shrine]. Sadly, in that service, many have fallen to my blade."</i></ref>
+
+== In-game Events ==
+Shrine Guardian Seth is first encountered guarding the [[Shellwood]] Shrine in [[Grand Gate]]. He falls into the waters of Shellwood once he is defeated and the path to [[Nyleth]]'s shrine opens.
+
+After Nyleth is defeated and [[Hornet (Silksong)|Hornet]] has either defeated one of the other [[Old Hearts]]<ref group=Source name=code><code>GamemManager.SethTravelCheck()</code> called in FSM <code>heart_death_outro</code>.</ref> or obtained the [[Everbloom]], Seth appears in [[Greymoor]], revealing he survived his battle with Hornet. He has seemingly lost his memory and does not recognise Hornet. He reveals his name as just Seth, and his name-card no longer includes the "Shrine Guardian" title. He says he is now travelling [[Pharloom]]. He can be next found in [[Shellwood]], east of the [[Bellway]], and then back in the Grand Gate, just outside the entrance to [[the Citadel]]. If the [[Ecstasy of the End]] wish has been completed, Seth can then be found at [[Fleatopia]]. If Hornet has completed the Ecstasy of the End wish and obtained the Everbloom, Seth skips appearing in Grand Gate and moves directly to Fleatopia after his Shellwood appearance.
+
+Seth holds the highest score out of the NPCs in all three of the Flea games, and beating his high score in all the games grants the [[Guardian's Memento]].
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+Seth sits passively in his arena and does not start the fight unless [[Hornet (Silksong)|Hornet]] engages him after talking to him, uses [[Challenge]], or tries to walk past him.
+
+=== Phase 1 ===
+Seth wields a gilded pin and a cymbal he uses as both shield and projectile. He has the following attacks in this phase:
+
+* <b>Pin Combo</b>: Seth hops backwards slightly into the air before slashing 3 times with his pin, moving forwards slightly with each slash. If Hornet is hit, Seth slashes again, dealing {{Damage|1+1}}. The attack may be cancelled into Backstep after the second slash if Hornet is behind Seth.
+* <b>Pin Whirlwind</b>: Seth slashes forwards before jumping backwards while spinning his pin around himself. If Hornet is behind him after the initial slash, Seth continues the whirlwind forwards instead. If Hornet is caught in the whirlwind, it deals {{Damage|1+1}}.
+** Occasionally, at the height of the spin, Seth teleports out into another attack instead of landing.
+* <b>Cymbal Toss</b>: Seth throws his shield horizontally before teleporting to the shield's location and catching it.
+* <b>Aerial Cymbal Toss</b>: Seth jumps mid-air and throws his shield diagonally down towards Hornet. The shield bounces upwards upon hitting the ground, after which Seth teleports to its location and catches it before falling to the ground.
+* <b>Cymbal Crash</b>: Seth jumps mid-air and then dashes towards the ground with his shield, creating a circular shockwave on impact. The shockwave deals {{Damage|2}}.
+* <b>Follow Through</b>: Seth lunges forward with his pin, ending with a second short stab after travelling enough distance or hitting Hornet. Seth always uses this attack after a Cymbal Crash, and sometimes after a Cymbal Toss, but he does not use it on its own. If Hornet is hit, Seth stabs again, dealing {{Damage|1+1}}.
+* <b>Bulwark</b>: In between attacks, Seth assumes a defensive stance and positions his cymbal to block any damage from the sides or above. Seth always retaliates with an attack after blocking damage.
+* <b>Backstep & Quickstep</b>: If Hornet stands too close to Seth, he may dash backwards a short distance. Otherwise, he makes short dashes around the arena to reposition for attacks. 
+* <b>Teleport</b>: Instead of leaping or quickstepping to position for attacks, Seth sometimes teleports directly into an attack, often behind Hornet. He always uses teleport attacks to reach Hornet if she is too far away.
+
+When Seth reaches or is below 889 HP, the time between his attacks is reduced.
+
+=== Phase 2 ===
+When Seth reaches 474 HP, he gets staggered; he then shouts to indicate the beginning of Phase 2. In this phase, he gains a new attack and modifies some of his existing ones. The time between his attacks is also greatly reduced.
+* <b>Crash Combo</b>: Seth executes the teleporting variant of Cymbal Crash 3 times in a row, ending with a Follow Through. Seth begins Phase 2 with this attack and continues to use it interchangeably with the standard Cymbal Crash.
+* <b>Aerial Cymbal Toss</b>: After catching his shield, Seth now occasionally follows this attack into a Cymbal Crash or Crash Combo, instead of falling to the ground normally.
+* <b>Pin Whirlwind</b>: Seth can now perform an Aerial Cymbal Toss or Cymbal Crash at the height of the spin; otherwise, he always teleports out into another attack. He also chooses to teleport more frequently compared to Phase 1.
+
+Hornet is not locked into the arena for this fight and can escape at any time. Leaving resets the fight.
+
+<hr />
+
+{{Stagger
+| Seth slumps over in a daze.
+| 17
+| game = SS
+}}
+
+<hr />
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = Playing the [[Needolin]]
+| Title1_Dialogue1 = [n]<b>While Seth is guarding Nyleth's shrine:</b><br>
+Memories kept...<br>
+Ages pass...<br>
+Guardian's call...<br>
+Sacred seeds...
+<hr/>
+<b>After Seth becomes an NPC:</b><br>
+To the beginning and back...<br>
+Where others tread... and beyond...<br>
+Fateless and free...<br>
+Fresh shell... clear sight...
+
+| Title2 = Guarding Nyleth's shrine
+| Title2_Event1 = First encounter
+| Title2_Dialogue1 = Halt, stranger. I am charged forever to guard the sacred shrine beyond.<br>
+Any who wish to pass must cross their weapon with my own.
+| Title2_Event2 = Declining to challenge Seth
+| Title2_Dialogue2 = Then go no further, that peace may remain between us.
+| Title2_Event3 = Speaking after declining to challenge
+| Title2_Dialogue3 = You may remain here and rest, if you choose. I am no enemy of yours. Only if you try to step beyond will I raise my weapon against you.<br>
+{{HTalk|Then tell me, warrior, of the shrine you guard. These caves on wood's edge seem long forgotten.}}<br>
+Some things may be hidden, but never forgotten. The shrine remains to remember the wood's first seed, her that once was and always is.<br>
+I am the last bound to protect it. Sadly, in that service, many have fallen to my blade.
+| Title2_Event4 = Exhausted dialogue
+| Title2_Dialogue4 = You may rest here in this sacred place, but know, if you choose to step further, you shall see my weapon raised.
+
+| Title3 = Greymoor
+| Title3_Event1 = First conversation
+| Title3_Dialogue1 = {{HTalk|Sir Guardian... I scarcely thought we would meet again after our encounter.}}<br>
+Hm? Apologies friend, I fear I don't recognise you. And I'm sure I would remember such a striking figure!<br>
+{{HTalk|...Pay no heed, sir. It seems I mistook you for another.}}<br>
+{{HTalk|You are... a traveller through these quaking lands, I take it?}}<br>
+I suppose I am indeed! I was born into this world not long ago, waking beside a lake with only this weapon laying beside me.<br>
+Seth is my name, though I know not who gave it to me.<br>
+The custom of the newly-born is to explore the world, is it not? So that is what I have set out to do! I will rest here a moment, then continue my journey.
+| Title3_Event2 = Exhausted dialogue
+| Title3_Dialogue2 = The sharp-faced bugs of these drizzled caves love to swoop and play, don't they? If only I could understand their beautiful language...
+
+| Title4 = Shellwood
+| Title4_Event1 = First conversation
+| Title4_Dialogue1 = Oh, hullo again! This time, I most certainly do recognise you! 'Tis a pleasure to bump into you here, deep in this serene wood.<br>
+Do you have a name, like I do? Would you share it with me?<br>
+{{HTalk|Certainly, sir. I am Hornet.}}<br>
+{{HTalk|I notice you gazing at the buds above us... are they familiar to you, perhaps?}}<br>
+Hm? No, not at all. Very beautiful though! Perhaps I should gather some up before venturing on...
+| Title4_Event2 = Exhausted dialogue
+| Title4_Dialogue2 = I've learnt too that travelling is not without its dangers... but I find myself wielding my weapon quite adeptly.<br>
+It's curious, the way our instincts can guide us with such precision.
+
+| Title5 = Grand Gate
+| Title5_Event1 = First conversation
+| Title5_Dialogue1 = This great structure... It would have taken the lifetimes of so many bugs to build it. Now its wounds run deep, and I can hear the groaning of its final breaths.<br>
+Everything that grows must pass, I suppose. Still, to witness even its current state is a privilege I'll not squander.<br>
+And what of you, friend Hornet? Where are your travels taking you?<br>
+{{HTalk|They have taken me deep, and will take me yet deeper still. I have a responsibility to cut this land free of its dark fate.}}<br>
+{{HTalk|That is no concern of yours though, sir. You should continue your own journey, albeit with a claw on your weapon at all times.}}
+| Title5_Event2 = Exhausted Dialogue
+| Title5_Dialogue2 = These black threads... they reach upwards with such a powerful longing. No wonder they can force themselves through even mighty stone!
+
+| Title6 = Fleatopia
+| Title6_Event1 = First conversation
+| Title6_Dialogue1 = {{HTalk|Greetings, Seth. It is a welcome surprise to see you here amongst these festivities.}}<br>
+Hullo, hullo! Yes, my wandering was long, and I began to fear I would meet my end in those sticky swamps below.<br>
+How lucky I was to stumble upon the home of these friendly revellers!<br>
+They said I could be a flea here with them, so of course I agreed. Seems as good a place as any to call home, at least for a time.<br>
+Now I just need to grow a little fur and sprout some wings, eh? Ha ha!
+| Title6_Event2 = Exhausted dialogue
+| Title6_Dialogue2 = Have you tried your claw at the games? Rollicking good fun, don't you think?<br>
+I wonder if I could score a little higher if I tried again...
+| Title6_Event3 = After beating his high scores
+| Title6_Dialogue3 = Well now! How brilliant! In all these fine games you have matched my scores and more!<br>
+What wonder to be here, and able to witness a display of such profound talent.<br>
+{{HTalk|Besting your scores proved an immense challenge, Seth, and yet you seem to have achieved them yourself with relative ease.}}<br>
+You flatter me! But yes, my own aptitude continues to surprise me. So many skills I cannot recall learning...<br>
+But do not underplay your own achievements, for they too are significant, inspiring even!<br>
+In fact, for my deep respect I insist you take this small medallion. I found it within my belongings, and know not where I came upon it, but it has a most pleasant sense.<br>
+Let it serve as marker of a friendship I feel has only just begun.<br>
+{{HTalk|Thank you, Seth. I shall keep it close.}}
+| Title6_Event4 = Exhausted dialogue after beating his high scores
+| Title6_Dialogue4 = Your achievements in the games are inspiring! In time, I may have to challenge those impressive scores...
+}}
+
+== Location ==
+Seth is fought in a hidden area outside of the [[Shellwood]] Shrine in [[Grand Gate]], accessed through a breakable wall in the lift shaft. After [[Nyleth]] is defeated and [[Hornet (Silksong)|Hornet]] obtains either another [[SEEK: The Old Hearts|Old Heart]] or the [[Everbloom]], he becomes a [[NPCs (Silksong)#Wanderers|wandering NPC]] and visits [[Greymoor]], [[Shellwood]], Grand Gate (skippable after meeting him in Shellwood if [[Ecstasy of the End]] has already been completed and the Everbloom is obtained), and lastly [[Fleatopia]] (once Ecstasy of the End is completed).
+
+{{Gallery
+|Image1 = Mapshot SS Seth 01.png!First location at the Grand Gate
+|Image2 = Mapshot SS Seth 02.png!Location in Greymoor
+|Image3 = Mapshot SS Seth 03.png!Location in Shellwood
+|Image4 = Mapshot SS Seth 04.png!Second location at the Grand Gate
+|Image5 = Mapshot SS Seth 05.png!Location in Fleatopia
+}}
+
+== Creation and Development ==
+[[File:Seth Sketch.jpg|thumb|220px|Original concept sketch by creator Seth Goldman from 2020]]
+In early February 2020, Seth Goldman, a <i>Hollow Knight</i> fan with [https://en.wikipedia.org/wiki/Ewing_sarcoma Ewing sarcoma], a type of childhood cancer, met [[Team Cherry]] through the Marty Lyons Foundation.<ref>[https://www.reddit.com/r/HollowKnight/comments/eyi0uh/i_talked_with_team_cherry_tonight/ I talked with team cherry tonight] on Reddit</ref> Initially, all Goldman wished for was to meet Team Cherry, but [[Ari Gibson]] and [[William Pellen]] met with him numerous times and offered him the opportunity to create and name a boss character for <i>Silksong</i>.<ref>[https://www.thegamer.com/hollow-knight-silksong-boss-npc-terminally-ill-fan/ Terminally Ill Hollow Knight Fan Gets "Dream Come True" To Create NPC For Sequel] on ''TheGamer''</ref> Goldman sketched a character and named him after himself, Seth, and sent the design over to Team Cherry. After creating an early version of his fight, they showed it to Goldman, leading him to call the character ''"a monster"''.<ref>[https://www.reddit.com/r/HollowKnight/comments/ftoylt/comment/fnclpj2/?context=3 Ohhhh, he will, I saw gifs of Seth and he is a fucking monster] on Reddit</ref> In April 2020, Goldman revealed that he created a character for <i>Silksong</i> through a post on Reddit.<ref>[https://www.reddit.com/r/HollowKnight/comments/ftoylt/i_made_a_character_for_silksong/ I made a character for silksong] on Reddit</ref>  
+
+Goldman tragically passed away later that year,<ref>[https://www.dignitymemorial.com/obituaries/forest-hills-ny/seth-goldman-9218182 Seth Goldman Obituary] on Dignity Memorial</ref> and he is commemorated as the final name in the [[Endings (Silksong)|ending]] credits as an "Extra Special Thanks".
+
+Shrine Guardian Seth's original planned name was Shellwood Guardian Seth.<ref>[[:File:Ari SS Sketch_18.png|Early <i>Hollow Knight: Silksong</i> sketch]]</ref> He is the last of a series of [[NPCs (Silksong)|NPCs]] teased using riddles provided by [[Matthew Griffin|Matthew "Leth" Griffin]]<ref>[https://x.com/griffinmatta @griffinmatta] on X (Twitter)</ref> that lasted throughout June to July of 2020, the others being [[Huntress]], [[Grindle]], and the [[Flea Caravan]]. Seth was the only character that required two riddles to be solved before being revealed.
+
+The following description was provided upon the riddles being solved, alongside the promotional art and two gifs:
+: <i>"The Voice… has chosen me."
+: An eternal protector, waiting amidst tangled roots at the base of [[the Citadel]]. He guards a secret long forgotten and will attack any who stray too close.
+: Imbued with stamina and strength beyond a normal bug, he strikes up close or from a distance with blinding speed. With unwavering devotion, this ancient guardian will fight until the very end, and beyond.
+: Many of the Citadel's caste have fallen to this deadly warrior. Those who encounter him should turn back, or else prepare for a vicious battle.</i>
+<br>
+: <i>The character of Seth was developed together with Seth Goldman, who's a really cool young guy we were fortunate enough to meet and get to know. Thanks to the Marty Lyons Foundation for hooking us up with Seth. Huge thanks to Seth himself! And look forward to entering battle with his deadly bug warrior!</i><ref>The [https://discordapp.com/channels/283467363729408000/586931790208434203/729804624638509164 file] where Seth was revealed</ref>
+The riddles solved to reveal Seth required two passwords: the first one to open the initial file, the second to open the file within. The passwords were <i>protector</i> and <i>bloom</i>. The riddles and solutions are outlined below:
+
+<table class="cquote" cellpadding="0" cellspacing="0" border="0" style="width:{{{width|70%}}}; margin-bottom:3px; margin-top:3px;margin-left:auto;margin-right:auto;"><tr><td style="background:transparent;"><div style="overflow:auto; height:{{{height|230px}}}; width:{{{width|99.9%}}};  -moz-border-radius-topleft:0.5em; border:1px solid #AAAAAA; padding-left:0.5em; background:transparent;">
+
+:<b>Riddle 1</b>
+:"To find me, dream of a spider's web
+:A site with a wondrous view
+:I dwell among visions of dangerous foes
+:Near colored lands berry and blue"
+:<i>Answer: Go to [http://www.hollowknightsilksong.com Silksong's official website], look at the green and blue screenshots.</i>
+
+:"The visions' arrangement, left, right and left
+:Depicting an exciting story
+:Among words they lie there frozen in time
+:Anticipating tales of glory"
+:<i>Answer: The screenshots are formatted left, right, left.</i>
+
+:"To the west, green is nearly all I see
+:Where dangers are raining down
+:Among the ancient text here is hidden
+:A pass-word that may be found"
+:<i>Answer: "Hornet, princess-protector" is in the text next to the green screenshot.</i>
+
+:"To remove the lock we need the key
+:Ignoring the title we proceed finally
+:Now count the number of visions you see
+:And move through the text accordingly"
+:<i>Answer: Ignore the title and pick the third word, "protector".</i>
+
+:<i>Final result: Protector.</i>
+<hr/>
+
+:<b>Riddle 2</b>
+:"[[The Knight]] BEARS Them"
+:<i>Answer: [[Charms]]</i>
+
+:"[[Divine]] EATS X of Them"
+:<i>Answer: Divine eats 3 Charms. X = 3.</i>
+
+:"[[Salubra]] SELLS Y of Them"
+:<i>Answer: Salubra sells 5 Charms. Y = 5.</i>
+
+:"FIND the WORDS:
+:AA  ----------- (Divine's Gift)"
+:<i>Answer: AA = Unbreakable</i>
+
+:"BB  ---------   (Baby Flukes)"
+:<i>Answer: BB = [[Flukenest]]</i>
+
+:"CC  ---------   ([[Joni's Blessing]])"
+:<i>Answer: CC = Lifeblood</i>
+
+:"DD  ----------  (Weaverling Companionship)"
+:<i>Answer: DD = [[Weaversong]]</i>
+
+:"EE  ----- ------    (Conjured Shield)"
+:<i>Answer: EE = [[Dreamshield]]</i>
+
+:"FF  ---- -----  (Void Unifier)"
+:<i>Answer: FF = [[Void Heart]]</i>
+ 
+:"ARRANGE the WORDS to find the vertical KNIGHT."
+:<i>Answer: Arrange the letters in each word to vertically spell out KNIGHT.</i>
+
+:"TRANSLATE the WORDS to find the answer: -----
+:DDFF +Y
+:CCDD -X
+:DDFF -X
+:BB +X
+:BB +X
+:AABBCC -Y"
+:<i>Answer: Move the words over by X or Y amount of spaces in the specified directions, for instance, move DD and FF up 5 for the first instruction.</i>
+
+:AA: UNBREAKA<b>B</b>LE
+:BB:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;F<b>L</b>UKENEST
+:CC:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LIFEBL<b>O</b>OD
+:DD:&nbsp;&nbsp;&nbsp;&nbsp;WEAVERS<b>O</b>NG
+:EE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DREA<b>M</b>SHIELD
+:FF:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VOID HEART 
+:<i>Going straight down from "B" in UNBREAKABLE, it shows BLOOM.</i>
+
+:<i>Final result: Bloom.</i>
+</div></td><td style="width:8px;"></td></tr></table> 
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Seth 01.png!Seth in his arena
+|Image2 = Screenshot SS Seth 06.png!Reacting to Needolin
+|Image3 = Screenshot SS Seth 07.png!Idle
+|Image4 = Screenshot SS Seth 08.png!Pin Combo
+|Image5 = Screenshot SS Seth 09.png!Pin Whirlwind
+|Image6 = Screenshot SS Seth 10.png!Cymbal Toss
+|Image7 = Screenshot SS Seth 11.png!Aerial Cymbal Toss
+|Image8 = Screenshot SS Seth 12.png!Cymbal Crash
+|Image9 = Screenshot SS Seth 13.png!Follow Through
+|Image10 = Screenshot SS Seth 14.png!Bulwark (Side)
+|Image11 = Screenshot SS Seth 15.png!Bulwark (Upward)
+|Image12 = Screenshot SS Seth 16.png!Quickstep
+|Image13 = Screenshot SS Seth 17.png!Backstep
+|Image14 = Screenshot SS Seth 18.png!Teleport
+|Image15 = Screenshot SS Seth 19.png!Staggered
+|Image16 = Screenshot SS Seth 20.png!Arena
+|Image17 = Screenshot SS Seth 02.png!Seth in Greymoor
+|Image18 = Screenshot SS Seth 21.png!Seth reacting to Needolin
+|Image19 = Screenshot SS Seth 03.png!Seth in Shellwood
+|Image20 = Screenshot SS Seth 04.png!Seth at the Grand Gate
+}}
+
+{{Gallery
+|Image1 = Screenshot SS Seth 05.png!Seth at the Flea Festival
+|Image2 = Seth.png!Promotional art
+|Image3 = Seth2.gif!Pre-release riddle gif
+|Image4 = Seth1.gif!Pre-release riddle gif
+|Image5 = Ari SS Sketch 18.png!Ari Gibson's development sketches
+}}
+
+== Trivia ==
+* Seth does not respond to the [[Needolin]] during combat, but he does respond to it when passive.
+* Seth's voice lines when playing the Needolin have a similar melody to the soundtrack <i>"Nyleth"</i>, his battle music.
+* Seth is the only [[NPCs (Silksong)|NPC]] in the <i>Hollow Knight</i> series to have visually asymmetric antennae, a trait inherited from his original concept sketch.
+
+{{History
+|game = SS
+|1.0.28650 (Patch 2): Fixed rare cases of Shrine Guardian Seth getting out of bounds during battle.
+|1.0.28891 (Patch 3): 
+*Fixed additional case of Seth sometimes getting out of bounds and not returning.
+*Fixed Seth sometimes remaining invincible for a moment at the start of a refight.
+*Lowered Seth's high score in [[Flea Dodge]] from 95 to 90.
+|1.0.29909 (Patch 5): Fixed another instance of Shrine Guardian Seth being able to push Hornet through a wall.
+}}
+{{Localisation
+|DEname = Schreinwächter Seth
+|DEmeaning = Shrine Guardian Seth
+|ESname = Guardián del santuario Seth
+|ESmeaning = Guardian of the Shrine Seth
+|FRname = Gardien du Sanctuaire Seth
+|FRmeaning = Guardian of the Sanctuary Seth
+|ITname = Guardiano del Tempio Seth 
+|ITmeaning = Guardian of the Temple Seth
+|JAname = 聖堂の守護者 セス
+|JAromanised = Seidō no shugosha sesu
+|JAmeaning = Shrine Guardian Seth
+|KOname = 성소 수호자 세스
+|KOromanised = Seongsu suhoja seseu
+|KOmeaning = Shrine Guardian Seth
+|PTname = Guardião do Santuário Seth
+|PTmeaning = Guardian of the Shrine Seth
+|RUname = Страж алтаря Сет 
+|RUromanised = Straž altarja Set 
+|RUmeaning = Sanctuary Guardian Seth
+|TWname = 聖所守衛者 賽斯
+|TWromanised = Shèngsuǒ shǒuwèizhě sàisī
+|TWmeaning = same
+|ZHname = 圣所守卫者 赛斯
+|ZHromanised = Shèngsuǒ shǒuwèizhě sàisī
+|ZHmeaning = Sanctuary Guardian Seth
+|CODEname= SETH</code> (NPC)<br><code>SETH_GUARDIAN</code> (Boss)
+}}
+
+{{Refs|hr=ss}}
+
+== Code References ==
+<references group="Source"/>
+
+[[es:Seth]]
+[[fr:Seth]]
+[[pt:Seth]]
+
+{{SS Nav Enemies}}
+{{SS Nav NPCs}}
+[[Category:NPCs (Silksong)]]
+[[Category:Bosses (Silksong)]]
+[[Category:Enemies (Silksong)]]

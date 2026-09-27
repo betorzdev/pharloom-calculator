@@ -1,0 +1,83 @@
+{{SS Infobox Enemy
+| hasdrop = true
+| sh1 = 3-5
+| sh2 = 4-7
+|health = 15/{{BT|30}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 20
+|singnum = 1
+}}
+
+{{Quote
+|Hr = Journal
+|Docile bug whose wings mimic the grasses of the Far Fields. A common snack for larger predators.<hr/>
+When roosting, it would look convincingly plant-like. In flight, its bulbous body quickly ruins the ruse.
+}}
+
+<b>Flapping Fertids</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are docile bugs with bulbous bodies and wings that mimic the grasses of the [[Far Fields]].<ref> Flapping Fertid [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Docile bug whose wings mimic the grasses of the Far Fields. ... In flight, its bulbous body quickly ruins the ruse."</i></ref>
+
+== Behaviour and Tactics ==
+Flies back and forth idly, pausing briefly to make a small noise before continuing flying.<br>
+Deals {{Damage|1}} on contact despite its non-aggression.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Flapping Fertids have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* From heat we grow...
+* Between bone we sprout...
+* Shells soft...
+* Leaves hide...
+}}
+
+== Location ==
+Flapping Fertids are found primarily in the [[Far Fields]], though one also appears in the eastern [[Deep Docks]].
+
+{{Gallery
+|Image1 = Mapshot SS Flapping Fertid 02.png!Locations in the Far Fields
+|Image2 = Mapshot SS Flapping Fertid 03.png!Locations in the Far Fields in Act 3
+|Image3 = Mapshot SS Flapping Fertid 04.png!Location in the Deep Docks
+}}
+
+==Gallery==
+
+{{Gallery
+|Image1 = Screenshot SS Flapping Fertid 01.png!Idle
+|Image2 = Screenshot SS Flapping Fertid 02.png!Chirping
+|Image3 = Screenshot SS Flapping Fertid 03.png!Singing
+}}
+
+{{Localisation
+|DEname = Flatterfertide
+|DEmeaning = Flutter Fertid
+|ESname = Fértido alado
+|ESmeaning = Winged fertid
+|FRname = Folfeuille Ailé
+|FRmeaning = Winged Fertid
+|ITname = Erbide Volante
+|ITmeaning = Flying Fertid
+|JAname = トビクサガクレ
+|JAromanised = Tobi kusa gakure
+|JAkatakana = enemy
+|JAmeaning = Flying Hidden Grass<br><small>Combination of {{lang|ja|飛び}} <i>tobi</i> (flying), {{lang|ja|草}} <i>kusa</i> (grass) and {{lang|ja|隠れ}} <i>kakure</i> (hidden).</small>
+|KOname = 펄럭이는 번식충
+|KOromanised = Peolleogineun beonsikchung
+|KOmeaning = Fluttering Propagation Bug
+|PTname = Fértido-voador
+|PTmeaning = Flying Fertid
+|RUname = Колышущийся травид
+|RUromanised = Kolyšuščijsja travid
+|RUmeaning = Swaying Fertid
+|TWname = 擬草蛾
+|TWromanised = Nǐcǎo é
+|TWmeaning = same
+|ZHname = 拟草蛾
+|ZHromanised = Nǐcǎo é
+|ZHmeaning = Grass Mimic Moth
+|CODEname=FIELDS_FLYER
+|CODEmeaning="Fields" internally refers to Far Fields
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

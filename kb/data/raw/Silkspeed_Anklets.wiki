@@ -1,0 +1,76 @@
+{{SS Infobox Tool
+| type = Yellow
+| effect = Increases [[Swift Step|sprint]] speed at the expense of a constant drainage of [[Silk]] while running
+| location = [[Far Fields]]
+| description = Experimental anklets of Weaver make.<hr>
+Draws upon the wearer's own Silk to increase sprinting speed.
+}}
+
+{{Quote
+| "Flee, sisters. Flee until your strength exhausts, so far you may escape at last her silken sight. To start anew, to sustain, free of web and service eternal."
+| [[Rune Harp]]
+| Hr = SS
+}}
+
+<b>Silkspeed Anklets</b> is a {{CrestSlot|Yellow|1}} in <i>[[Hollow Knight: Silksong]]</i>. At the cost of slowly draining [[Silk]], it increases grounded [[Swift Step|sprinting]] speed by 34% while equipped.
+
+== Usefulness ==
+While [[Hornet (Silksong)|Hornet]] sprints on the ground for roughly six seconds, the Silkspeed Anklets will consume one unit of Silk. The roughly six seconds of sprinting to consume Silk is remembered if Hornet stops sprinting, then continues sprinting, so long as she continues in under four seconds. If Hornet sprints on the ground for roughly one second, stops, then sprints for roughly five seconds, one unit of Silk will still be consumed. The Silkspeed Anklets will not grant additional speed or drain Silk if Hornet is in the air. If Hornet has Silk and sprints, the Silk drain that the Silkspeed Anklets cause will completely stop and restart the regeneration process of a unit of Silk caused by [[Silk Heart]]s and [[Weavelight]]. If Hornet has no Silk, then the Silkspeed Anklets have no effect and will not prevent Silk from regenerating.
+
+The extra movement speed granted by the Silkspeed Anklets is useful for exploration and combat. The applications in exploration can allow Hornet to get to her destinations faster, especially when exploring previous areas again. The applications in combat can allow Hornet to dodge attacks more easily and run back to a vulnerable enemy in less time.
+
+Can be useful in completing [[Wishes#Delivery Wishes|Delivery Wishes]] more quickly, particularly [[Courier's Rasher]] as the delivery is time-limited.
+
+== How to Acquire ==
+Found inside [[Weavenest Cindril]], on the far east of [[Far Fields]]. Acquired by running across all the pressure plates with [[Swift Step]].
+
+{{Gallery
+|Image1 = Mapshot SS Silkspeed Anklets.png!Location in Far Fields
+|Image2 = Screenshot SS Silkspeed Anklets 01.png!In Weavenest Cindril in Far Fields
+}}
+
+== Tool Synergies ==
+{{SS Table Tool Interactions
+| Tool1 = Scuttlebrace
+| Tool1Desc = Increases the scuttle speed of the Scuttlebrace by 27%.
+}}
+== Tool Combo Tips ==
+{{SS Table Tool Interactions
+| Tool1 = Flea Brew
+| Tool1Desc = Movement speed increases add together to a total of 57%.
+Using this combination in [[Weavenest Cindril]], [[Far Fields]] to cross the pressure plates that originally granted the Silkspeed Anklets will open a trapdoor, leading to a [[Rune Harp]].
+}}
+{{Localisation
+|DEname = Seidentempo-Fußketten
+|DEmeaning = Silkpace Anklets
+|ESname = Tobilleras rapisedeñas
+|ESmeaning = Silken Speed Anklet<br><small><i>Rapisedeñas</i> is a portmanteu of <i>rapidez</i> (speed) and <i>sedeñas</i> (silken).</small>
+|FRname = Bracelets vifsoie
+|FRmeaning = Quick Silk Bracelets
+|ITname = Silken Speed veloseriche 
+|ITmeaning = Silkspeed Anklets<br><small><i>Veloseriche</i> is a portmanteau of <i>velocità</i> (speed) and <i>seriche</i> (silken).</small>
+|JAname= シルクアンクレット
+|JAromanised= Shiruku ankuretto
+|JAkatakana = foreign
+|JAmeaning = Silk Anklet
+|KOname = 재빠른 실크의 발찌
+|KOromanised = Jaeppareun silkeuui baljji
+|KOmeaning = Anklets of Quick Silk
+|PTname =  Tornozeleiras Sedavelozes
+|PTmeaning = Silkspeed Anklets
+|RUname = Скорошёлковые анклеты
+|RUromanised = Skorošëlkovye anklety
+|RUmeaning = Fast Silk Anklets
+|TWname = 絲速腳環
+|TWromanised = Sī sù jiǎohuán
+|TWmeaning = same
+|ZHname = 丝速脚环
+|ZHromanised = Sī sù jiǎohuán
+|ZHmeaning = Silk Speed Anklet
+|CODEname = SPRINTMASTER
+|CODEmeaning = The [[Sprintmaster]] charm in <i>[[Hollow Knight]]</i> has a similar function.
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Bracelets vifsoie]]

@@ -1,0 +1,127 @@
+{{SS Infobox Enemy
+|drops = None
+|health = 190
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.75|1.25|1.1|1|1}}
+|numbers_required = 8
+}}
+{{Quote
+|Hr = Journal
+|Dense knot of husks bound tight by void soaked Silk.<hr/>
+Silk and shells corrupted. That void seeks now to claim this land whole. These poor shells are only the beginning.
+}}
+
+<b>Void Masses</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are clumps of creatures bound together by [[Void]] soaked threads.<ref>Void Mass [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Dense knot of husks bound tight by void soaked Silk."</i></ref> Their presence in a room can be heard by sounds of howling wind and faint garbled voices.
+== Behaviour and Tactics ==
+Void Masses are immobile enemies that cling to the ceiling or walls. When approached or attacked, it performs one of two attacks in the direction of the target:
+
+* <b>Void Tendrils:</b> Lashes out with void tendrils. 
+* <b>Void Projectiles:</b> Fires three consecutive void projectiles.
+
+Void Masses deal {{Damage|2|type=Void}} on contact, as well as with the Void Projectiles attack; the Void Tendrils attack deals {{Damage|1+1|type=Void}}.
+
+When Hornet enters a room containing a Void Mass, the enemy roster in that location is modified. All enemies in the room not immune to [[Black-Threading|black-threading]] spawn in already black-threaded, with some exceptions. The presence of a Void Mass can also be deduced from the sounds of howling winds in places that would normally lack it.
+
+Void Masses do not respawn when destroyed, except the two near [[Styx]] (which only spawn in <abbr title="The default game mode.">Classic Mode</abbr>), which respawn after exiting and reentering the room if only one is destroyed. There are 47 known Void Masses (45 in [[Steel Soul Mode (Silksong)|Steel Soul Mode]]) across the entirety of [[Pharloom]], though Hornet only needs to destroy 12 to complete the <i>[[Dark Hearts]]</i> Wish.
+
+Enemies that spawn as a result of the presence of a Void Mass may differ from ones without it, including some rarer enemies. It may be wiser to leave some alive when attempting to complete the [[Hunter's Journal (Silksong)|Hunter's Journal.]]
+
+== Location ==
+47 Void Masses in total (45 in [[Steel Soul Mode (Silksong)|Steel Soul Mode]]) can be found across [[Pharloom]] beginning in [[Acts#Act 3: Abyss|Act 3]].
+
+*1 can be found in [[Bone Bottom]], [[Weavenest Atla]], [[Bilewater]], [[Grand Gate]], and [[Cogwork Core]].
+*2 can be found in the [[Hunter's March]] and [[High Halls]].
+*3 can be found in the [[Far Fields]], [[Blasted Steps]], [[Underworks]], [[Deep Docks]], [[Sinner's Road]],<ref group="Note">The two near [[Styx]] do not appear in [[Steel Soul Mode (Silksong)|Steel Soul Mode]].</ref> and [[Whispering Vaults]].
+*4 can be found in [[the Marrow]].
+*5 can be found in [[Greymoor]] and [[Shellwood]].
+*6 can be found in the [[Choral Chambers]].
+{{Gallery
+|Image1 = Mapshot SS Void Mass 01.png!Location across Pharloom
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Void Mass 01.jpg!Void Mass in Bilewater
+|Image2 = Screenshot SS Void Mass 02.jpg!Void Mass in Blasted Steps
+|Image3 = Screenshot SS Void Mass 03.jpg!Void Mass in Blasted Steps
+|Image4 = Screenshot SS Void Mass 04.jpg!Void Mass in Bone Bottom
+|Image5 = Screenshot SS Void Mass 05.jpg!Void Mass in Choral Chambers
+|Image6 = Screenshot SS Void Mass 06.jpg!Void Mass in Cogwork Core
+|Image7 = Screenshot SS Void Mass 07.jpg!Void Mass in Deep Docks
+|Image8 = Screenshot SS Void Mass 08.jpg!Void Mass in Deep Docks
+|Image9 = Screenshot SS Void Mass 09.jpg!Void Mass in Far Fields
+|Image10 = Screenshot SS Void Mass 10.jpg!Void Mass in Grand Gate
+|Image11 = Screenshot SS Void Mass 11.jpg!Void Mass in Greymoor
+|Image12 = Screenshot SS Void Mass 12.jpg!Void Mass in Greymoor
+|Image13 = Screenshot SS Void Mass 13.jpg!Void Mass in Greymoor
+|Image14 = Screenshot SS Void Mass 14.jpg!Void Mass in Greymoor
+|Image15 = Screenshot SS Void Mass 15.jpg!Void Mass in High Halls
+|Image16 = Screenshot SS Void Mass 16.jpg!Void Mass in High Halls
+|Image17 = Screenshot SS Void Mass 17.jpg!Void Mass in Hunter's March
+|Image18 = Screenshot SS Void Mass 18.jpg!Void Mass in Shellwood
+|Image19 = Screenshot SS Void Mass 19.jpg!Void Mass in Shellwood
+|Image20 = Screenshot SS Void Mass 20.jpg!Void Mass in Shellwood
+|Image21 = Screenshot SS Void Mass 21.png!Void Mass in Sinner's Road
+|Image22 = Screenshot SS Void Mass 28.png!Void Mass in Sinner's Road
+|Image23 = Screenshot SS Void Mass 22.jpg!Void Mass in the Marrow
+|Image24 = Screenshot SS Void Mass 23.jpg!Void Mass in the Marrow
+}}
+{{Gallery
+|Image1 = Screenshot SS Void Mass 24.jpg!Void Mass in Underworks
+|Image2 = Screenshot SS Void Mass 25.jpg!Void Mass in Weavenest Atla
+|Image3 = Screenshot SS Void Mass 26.jpg!Void Mass in Whispering Vaults
+|Image4 = Screenshot SS Void Mass 27.jpg!Void Mass in Whispering Vaults
+}}
+
+== Trivia ==
+* Void Masses do not respond to the [[Needolin]], as is the case for most Void-derived enemies.
+** Along with not responding to the [[Needolin]], the Void Mass does not grant [[Silk]] when attacked by the [[Needle]].
+* The appearance of the Void Mass is based off the creatures in whatever part of the environment it is in; the Hunter's Journal entry icon is of one in the [[Choral Chambers]], as a [[Choristor]], [[Reed]], and [[Choir Bellbearer]] can be seen tangled up in the black threads.
+** One in [[Bilewater]] is [[Stilkin Trapper|Stilkin Trappers]].
+** Ones across [[Blasted Steps]] are a [[Pilgrim Pouncer]], [[Pilgrim Groveller]], and [[Pilgrim Hulk]]. One in the [[Great Conchflies]] arena is a [[Driznit]] and [[Driznarga]].
+** One in [[Bone Bottom]] is a [[Pilgrim Pouncer]], [[Pilgrim Groveller]], and [[Pilgrim Hulk]].
+** Ones across [[Choral Chambers]] are a [[Choristor]], [[Reed]], and [[Choir Bellbearer]].
+** One in [[Cogwork Core]] is [[Cogwork Choirbug|Cogwork Choirbugs]].
+** Ones across [[Deep Docks]] are a [[Smelt Shoveller]] and [[Flintflame Flyer]]. One in upper Deep Docks is a [[Skull Scuttler]], [[Skull Brute]], and [[Beastfly]]. 
+** Ones across [[Far Fields]] and one in [[Hunter's March]] are a [[Skarr Scout]] and [[Skarr Stalker]].
+** One in [[Grand Gate]] near [[Shrine Guardian Seth|Seth's]] arena is [[Phacia|Phacias]].
+** Ones in [[Greymoor]] near [[Greymoor#Sub-Area: Craw Lake|Craw Lake]] are a [[Craw]] and [[Tallcraw]]. Ones near the towers are a [[Silk Snipper]] and [[Dreg Catcher]]. One in the tunnels near the Bellway is of a [[Mite]] and [[Fluttermite]]. One in the middle of Greymoor is a [[Winged Pilgrim]], [[Pilgrim Groveller]], and [[Pilgrim Hulk]].
+** One in [[High Halls]] is a [[Choristor]], [[Reed]], and [[Choir Bellbearer]], despite these enemies not appearing in this area. Another is of [[Minister|Ministers]].
+** Ones across [[Shellwood]] are of [[Splinter|Splinters]], and ones of [[Splinterbark|Splinterbarks]]. One in western Shellwood is of [[Pondcatcher|Pondcatchers]].
+** One in lower [[Sinner's Road]] are of [[Roachcatcher]]s and [[Roachfeeder]]s. In [[Styx|Styx's]] nest are of [[Silkeater]] cocoons.
+** One in [[the Marrow]] is of a [[Winged Pilgrim]], [[Pilgrim Groveller]], and [[Pilgrim Hulk]]. One near the Deep Docks entrance is of a [[Smelt Shoveller]], [[Flintflame Flyer]], and [[Skull Brute]].
+** Ones across [[Underworks]] are of an [[Underworker]], [[Underpoke]], [[Underloft]], and [[Underscrub]].
+** One in [[Weavenest Atla]] is of [[Mossmir|Mossmirs]].
+** Ones across [[Whispering Vaults]] are of a [[Scrollreader]], [[Lampbearer]], and [[Vaultborn]].
+* The Void Mass is one of the few enemies that never respawns, and defeating all of them gives no additional reward.
+
+{{Localisation
+|DEname = Leerenmasse
+|DEmeaning = Void Mass
+|ESname = Masa de vacío
+|ESmeaning = Mass of Void
+|FRname = Masse du Néant
+|FRmeaning = Mass of the Void
+|ITname = Massa del Vuoto
+|ITmeaning = Void Mass
+|JAname = 虚無の塊
+|JAromanised = Kyomu no katamari
+|JAmeaning = Nothingness mass
+|KOname = 공허의 덩어리
+|KOromanised = Gongheoui deongeori
+|KOmeaning = Mass of Void
+|PTname = Massa do Vazio
+|PTmeaning = Mass of the Void
+|RUname = Тело пустоты
+|RUromanised = Telo pustoty
+|RUmeaning = Body of Void
+|ZHname = 虚空聚合体
+|ZHromanised = Xūkōng jùhétǐ
+|ZHmeaning = Void Aggregate
+|CODEname=BLACK_THREAD_CORE
+}}
+{{Hr|SS}}
+== Notes ==
+<references group="Note"/>
+{{Refs|hr=false}}
+
+{{SS Nav Enemies}}

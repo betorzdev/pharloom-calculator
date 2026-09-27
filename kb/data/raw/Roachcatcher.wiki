@@ -1,0 +1,97 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Roachcatcher.png|Hunter's Journal
+Roachcatcher Idle.png|Idle
+</gallery>
+| hasdrop = true
+| r1 = 10
+| r2 = 17
+| sh1 = 3-5
+| sh2 = 4-7
+|health = 40/{{BT|80}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.25|1|0.9|0.9|0.9}}
+|numbers_required = 20
+|sing = Stilkin Trapper
+|singnum = 3
+}}
+
+{{Quote
+|Hr = Journal
+|Short, nimble bug who uses barbed bolas to keep beasts corralled and caged.<hr/>Their throwing weapon is well-suited to the wide caverns they inhabit. These sly little bugs must have a keen claw for crafting.
+}}
+
+<b>Roachcatchers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are round, flying [[Roach Tenders]] in tattered hoods, wielding spiked bolas.
+
+== Behaviour and Tactics ==
+Roachcatchers fly in a small area when idle, but pursue Hornet through the air after spotting her.<br>
+Being ranged flying enemies, they constantly attempt to keep distance between themselves and Hornet, but mainly horizontally distance themselves.
+To attack, they whirl a shuriken-like bola around before throwing it at Hornet. If it hits the ground, the bola splits in two and bounces, staying on the ground as a hazard before despawning after a few seconds. They can be knocked away and destroyed by Hornet's attacks.
+
+Hornet can deflect the bolas with her attacks, sometimes hitting the Roachcatcher with their own shurikens, dealing 5 damage. Deflected bolas do not leave environmental hazards after landing on a surface.
+
+=== Act 3 ===
+[[Black-threaded]] Roachcatchers have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|Void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2|
+* Poke them, slash them...
+* Teach them fear...
+* Locks tight...
+* Sharp jaws, and teeth...
+}}
+
+== Location ==
+Roachcatchers can be found primarily in [[Sinner's Road]]. They also appear in [[Greymoor]].
+
+The rightmost one in Sinner's Road only spawns when Hornet is spotted by the nearby [[Roachfeeder]].
+
+{{Gallery
+|Image1 = Mapshot SS Roachcatcher 01.png!Locations in Sinner's Road
+|Image2 = Mapshot SS Roachcatcher Greymoor 01.png!Location in Greymoor
+|Image3 = Mapshot SS Roachcatcher Greymoor 02.png!Location in Greymoor Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Roachcatcher 05.png!In Greymoor
+|Image2 = Screenshot SS Roachcatcher 01.png!In Sinner's Road
+|Image3 = Screenshot SS Roachcatcher 02.png!Throwing Bolas
+|Image4 = Screenshot SS Roachcatcher 03.png!Bolas on the ground
+|Image5 = Screenshot SS Roachcatcher 04.png!Reacting to the Needolin
+|Image6 = Screenshot SS Tipp & Pill 03.png!Harassing [[Pill]] during the <i>[[My Missing Brother]]</i> wish
+|Image7 = Screenshot SS Sinner's Road 10.png!Corpses at the entrance to [[the Mist]]
+|Image8 = Screenshot SS Void Mass 28.png!In a [[Void Mass]]
+}}
+
+{{Localisation
+|DEname = Schabenfänger
+|DEmeaning = Cockroach Catcher
+|ESname = Atrapacucarachas
+|ESmeaning = Cockroach Catcher
+|FRname = Férochardier
+|FRmeaning =
+|ITname = Domablatte
+|ITmeaning = Roachtamer
+|JAname = ツチゴキブリの捕獲者
+|JAromanised = Tsuchiburi no hokakusha
+|JAmeaning = Muckroach Catcher
+|KOname = 바퀴포획자
+|KOromanised = Bakwipohoekja
+|KOmeaning = Cockroach Catcher
+|PTname = Doma-baratas
+|PTmeaning = Roach Tamer
+|RUname = Тараканолов
+|RUromanised = Tarakanolov
+|RUmeaning = Roachcatcher
+|TWname = 蟑螂牧者
+|TWromanised = Zhāngláng mù zhě
+|TWmeaning = Cockroach Herder
+|ZHname = 蟑群牧者
+|ZHromanised = Zhāng qún mù zhě
+|ZHmeaning = Roach Swarm Herder
+|CODEname=ROACHFEEDER_SHORT
+|CODEmeaning=[[Roachfeeder]]s are internally known as <code>ROACHFEEDER_TALL</code>.
+}}
+{{Refs|hr=ss}}
+{{SS Nav Enemies}}

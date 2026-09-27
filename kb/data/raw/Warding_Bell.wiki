@@ -1,0 +1,86 @@
+{{SS Infobox Tool
+| type = Blue
+| damage = 9/14/20/25/31
+| effect = Negates damage taken while binding
+| location = [[Far Fields]]
+| description = Holy bell inscribed with a hymn of protection.<hr/>
+Shields the bearer as they bind their wounds.
+}}
+
+<b>Warding Bell</b> is a {{CrestSlot|Blue|1}} in <i>[[Hollow Knight: Silksong]]</i>. It negates damage taken while [[Bind]]ing.
+
+== Usefulness ==
+Activates when [[Hornet (Silksong)|Hornet]] is attacked during the act of [[Bind]]ing, and prevents damage to her, as well as dealing 9 base damage in a small area surrounding her; the damage scales with [[Crafting Kit]] upgrades. Knockback and Bind cancellation are not negated. The effects of not directly damaging attacks (such as being caught by [[Barnak]] tongues or the spit attack from [[Guardfly|Guardflies]], [[Wardenfly|Wardenflies]], and the [[Broodmother]]) activate the Warding Bell, but do not interrupt the Bind.
+* The cancelled Bind will have no healing effect and its [[Silk]] cost wasted. However, any Silk that wasn't consumed by the Bind is preserved.
+* The shield lasts for a short period after the Bind finishes healing, allowing Hornet to receive the healing and simultaneously shield herself from any attacks directly after.
+* The Warding Bell's damage is unaffected by damage multipliers, and is only increased by [[Crafting Kit]]s.
+* Does not activate when using the [[Architect Crest]]'s Craft Bind.
+* Does not reactivate during the same Bind after nullifying a disabling attack. Successive Binds with the [[Multibinder]] are counted as the same Bind.
+* The shield activates with a slight delay when Binding with Silk from [[Reserve Bind]]. If attacked during this period, Hornet will take the appropriate damage, no damage burst occurs from the bell, and the Bind is cancelled, but any Silk that wasn't consumed by the Bind is preserved.
+
+== Tool/Crest Combo Tips ==
+{{SS Table Tool Interactions
+| Tool1 = Multibinder
+| Tool1Desc = Protects Hornet during the longer [[Bind]].
+| Tool2 = Claw Mirror
+| Tool2Desc = Reduces the risk of [[Bind]]ing offensively. Warding Bell's shield duration overlaps slightly with Claw Mirror's explosion, which can result in both damage effects activating at once.
+| Tool3 = Claw Mirrors
+| Tool3Desc = Reduces the risk of [[Bind]]ing offensively. Warding Bell's shield duration overlaps slightly with Claw Mirrors' explosion, which can result in both damage effects activating at once.
+| Tool4 = Plasmium Phial
+| Tool4Desc = Becoming [[Plasmified]] results in automatic healing and a weakened [[Bind]], reducing Warding Bell's value by proxy.
+| Tool5 = Witch Crest
+| Tool5Img = Witch Crest File
+| Tool5Desc = Protects Witch Crest's strict healing conditions with its unique life-steal [[Bind]].
+}}
+
+== How to Acquire ==
+Found on a dead [[Smelt Shoveller]] in lower [[Far Fields]], beside the lower entrance to [[Deep Docks]]. 
+
+{{Gallery
+|Image1 = Mapshot SS Warding Bell.png!Location in Far Fields
+|Image2 = Screenshot SS Warding Bell Room.png!Room where the Warding Bell is acquired
+}}
+
+== Gallery ==
+{{Gallery
+|Image1= Ari SS Sketch 30.jpg!Concept sketches
+}}
+{| align="center" style="text-align:center"
+| {{#ev:youtube|https://www.youtube.com/watch?v=I95Pdax8VP0|250|center|Deep Dive}}
+|}
+
+== Trivia ==
+* Most enemies killed by the Warding Bell will become charred and release white particles. This effect is similar to the one used in <i>[[Hollow Knight]]</i> when [[The Knight]] kills an enemy using spells.
+
+{{Localisation
+|DEname = Abwehrglocke
+|DEmeaning = Defence Bell
+|ESname = Campana protectora
+|ESmeaning = Protecting Bell
+|FRname = Cloche de protection
+|FRmeaning = Bell of Protection
+|ITname = Campana difensiva
+|ITmeaning = Defensive Bell
+|JAname = 護りの鐘
+|JAromanised= Mamori no Kane
+|JAmeaning = Protective Bell
+|KOname = 보호의 종
+|KOromanised = Bohoui jong
+|KOmeaning = Bell of Protection
+|PTname = Sino Protetor
+|PTmeaning = Protector Bell
+|RUname = Охранный колокольчик
+|RUromanised = Oxrannyj kolokolʹčik
+|RUmeaning = Guarding Bell or Guarding Handbell
+|TWname = 護佑鐘
+|TWromanised = Hùyòu zhōng
+|TWmeaning = same
+|ZHname = 护佑钟
+|ZHromanised = Hùyòu zhōng
+|ZHmeaning = Protective Blessing Bell
+|CODEname = BELL_BIND
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Cloche de protection]]

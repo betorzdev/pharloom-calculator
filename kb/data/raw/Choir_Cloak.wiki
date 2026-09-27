@@ -1,0 +1,48 @@
+{{SS Infobox Item
+| max = 16
+| type = [[Items (Silksong)#Deliverable|Deliverable]]
+| source = Dropped by Choirbugs in [[Choral Chambers]] during <i>[[Cloaks of the Choir]]</i>
+| description = Garment gifted to pilgrims on admittance to the Citadel. Its thick weave offers additional protection against wind and cold.
+}}
+
+<b>Choir Cloaks</b> are [[Items (Silksong)#Deliverables|deliverable items]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+16 Choir Cloaks are required to complete the <i>[[Cloaks of the Choir]]</i> Wish, given out by the [[Wishwalls|Wishwall]] at [[Choral Chambers#Sub-area: Songclave|Songclave]].
+
+== How to Acquire ==
+Choir cloaks can be obtained from the corpses of slain [[Choir Pouncer]]s, [[Choir Hornhead]]s, [[Choir Flyer|Choir Flyers]], and [[Choir Elder]]s in [[Choral Chambers]] while <i>Cloaks of the Choir</i> is active. [[Hornet (Silksong)|Hornet]] can carry up to 16 cloaks, after which they will no longer drop from defeated Choirbug enemies.
+{{Localisation
+|DEname = Chorumhang
+|DEmeaning = Choir Cloak
+|ESname = Capa del Coro
+|ESmeaning = Cape of the Choir
+|FRname = Toge de la chorale
+|FRmeaning = Robe of the Choir
+|ITname = Mantello corale
+|ITmeaning = Choral Cloak
+|JAname = 合唱者のクローク
+|JAromanised = Gasshōsha no kurōku
+|JAmeaning = Chorister Cloak
+|KOname = 성가대 망토
+|KOromanised = Seonggadae mangto
+|KOmeaning = Choir Cloak
+|PTname = Manto de Cântico
+|PTmeaning = Cloak of Song
+|RUname = Плащ Хора
+|RUromanised = Plašč Xora
+|RUmeaning = Choir Cloak
+|TWname = 聖詠斗篷
+|TWromanised = Shèng yǒng dǒupéng
+|TWmeaning = same
+|ZHname = 圣咏披风
+|ZHromanised = Shèngyǒng pīfēng
+|ZHmeaning = Psalm Cloak
+|CODEname = SONGPILGRIM_CLOAK_ITEM
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

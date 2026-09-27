@@ -1,0 +1,95 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Kilik.png|Hunter's Journal
+Kilik Idle.png|Idle
+</gallery>
+|health = 20/{{BT|80}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.9|0.76|0.9|1}}
+|numbers_required = 25
+| hasdrop = true
+| sh1 = 3-5
+| sh2 = 4-7
+|singnum=1
+}}
+{{Quote
+|Hr = Journal
+|Small bony bug that favours dark tunnels. Can expand its spiked carapace to ward against attacking predators.<hr/>I am fond of simple, effective traps such as this bug's extendable spikes. An unwary predator would be skewered clean through.
+}}
+
+<b>Kiliks</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are small bony bugs favouring dark tunnels, capable of expanding their spiked carapace to defend themselves from predators.<ref>Kilik [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Small bony bug that favours dark tunnels. Can expand its spiked carapace to ward against attacking predators."</i></ref>
+
+== Behaviour and Tactics ==
+Kiliks crawl back and forth on ceilings and floors. When approached, they extend their spikes for around 2 seconds before retracting them, with a short cooldown before they can do so again. Kiliks can often be found in narrow tunnels where their spikes completely block passage. While their spikes are extended, they cannot be damaged by the [[Needle]] or the following tools:
+* [[Straight Pin]]
+* [[Threefold Pin]]
+* [[Curveclaw]] / [[Curvesickle]]
+* [[Conchcutter]]
+* [[Silkshot]] ([[Forge Daughter]] & [[Twelfth Architect]])
+* [[Delver's Drill]]
+* [[Rosary Cannon]] (Rosaries pass through Kiliks)
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Kiliks have their health quadrupled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+*Rumbling, crackling...
+*Shells are strong...
+*Scratching, seeking...
+*Warm and dark...
+*Digging, hiding...
+*Claws are sharp...
+}}
+
+== Location ==
+
+Kiliks can be found primarily in [[the Marrow]], but they also appear in the [[Memorium]] and in the [[Chapel of the Beast]] within [[Hunter's March]], where they can also be summoned by a [[Savage Beastfly]].
+
+{{Gallery
+|Image1 = Mapshot SS Kilik 01.png!Locations in the Marrow
+|Image2 = Mapshot SS Kilik 02.png!Location in the Memorium
+|Image3 = Mapshot SS Beast Crest.png!Location in Hunter's March
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Kilik 01.png!In the Marrow
+|Image3 = Screenshot SS Kilik 03.png!In Hunter's March
+|Image2 = Screenshot SS Kilik 02.png!In the Memorium
+|Image5 = Screenshot SS Kilik 06.png!Summoned by Savage Beastfly
+|Image4 = Screenshot SS Kilik 04.png!Extending spikes
+|Image6 = Screenshot SS Kilik 05.png!Reacting to the Needolin
+}}
+{{Localisation
+|DEname = Kilik
+|DEmeaning = —
+|ESname = Kilik
+|ESmeaning = —
+|FRname = Kilik
+|FRmeaning = —
+|ITname = Spinolo
+|ITmeaning = From spine and <i>-olo</i> (diminutive suffix).
+|JAname = キリク
+|JAromanised = Kiriku
+|JAkatakana = foreignenemy
+|JAmeaning = Kilik
+|KOname = 킬릭
+|KOromanised = Killik
+|KOmeaning = Kilik
+|PTname = Espinóris
+|PTmeaning = From <i>espinho</i> (spine or spike).
+|RUname = Килик
+|RUromanised = Kilik
+|RUmeaning = Kilik
+|TWname = 刺鎧蟲
+|TWromanised = Cì kǎi chóng
+|TWmeaning = same
+|ZHname = 刺铠虫
+|ZHromanised = Cì kǎi chóng
+|ZHmeaning = Spike Armour Bug
+|CODEname = BONE_CRAWLER
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+[[fr:Kilik]]

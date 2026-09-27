@@ -1,0 +1,185 @@
+{{Navbar
+|page1 = The Abyss (Hollow Knight)
+|title1 = Hollow Knight
+|page2 = The Abyss (Silksong)
+|title2 = Silksong
+}}
+{{SS Infobox Area
+| title = The Abyss
+| image1 = <gallery>
+SS The Abyss Map Marked.png|Marked
+SS The Abyss Map Clean.png|Unmarked
+</gallery>
+| connection = [[Deep Docks]]
+| ambience = [https://youtu.be/4XxRUH8DOIQ Abyss]<br/>
+[https://www.youtube.com/watch?v=GeUHAnIixB4 Atmos Lava Far]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]<br>
+[https://www.youtube.com/watch?v=ZzyCwfkjyCI Lake Atmos Hornet]
+| main = [https://www.youtube.com/watch?v=Rd5U3Gglw5I Tense]<br>
+[https://www.youtube.com/watch?v=aO0EK-naf1M Last Dive Prologue Layer 1]<br>
+[https://www.youtube.com/watch?v=LO6GENrYm3g Last Dive Prologue Layer 2]<br>
+[https://www.youtube.com/watch?v=q_5FZw9l3fc Last Dive Prologue Layer 3]<br>
+[https://www.youtube.com/watch?v=k5ynZ4FVxiY Enter Pharloom]
+}}
+{{Quote
+| The void that will claim all things... In the barbed forms it chooses its nature can be seen clear.
+| [[Void Tendrils (Silksong)|Hornet]]
+| Hr = Hornet}}
+
+<b>The Abyss</b> is an [[Areas (Silksong)|area]] accessible during [[Act 3]] of <i>[[Hollow Knight: Silksong]]</i>. Located beneath the kingdom of [[Pharloom]], it is a dark and gloomy area and the origin of the [[Void]].
+
+== Description ==
+[[File:Screenshot SS The Abyss 14.png|Lake of Void|200px|left|thumb]]
+Located at the very bottom of the world, the Abyss is a largely dark and gloomy set of caverns and the origin point of the [[Void]]. It is made up of expansive caverns held up by large columns and littered with black, fossilised shells of varying sizes. The only flora present in the Abyss are black roots and grass, with the roots being able to bear orbs of Void that can be used to [[Needle#Needle-bouncing|Needle-bounce]] throughout the area. At the very bottom of the Abyss, a sea of [[Void Tendrils (Silksong)|Void Tendrils]] lash out in barbed forms at any living creature nearby, only repelled by the light of the [[Everbloom]].<ref>[[Void Tendrils (Silksong)|Void Tendrils]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"The void that will claim all things... In the barbed forms it chooses its nature can be seen clear."</i></ref><ref>[[Everbloom]] description: <i>"Ethereal flower plucked from a deep and distant memory. Glows with soft, pale light that wards against the void."</i></ref>
+
+Strange, simple life-forms can be found scattered throughout the Abyss, all adapted to live within the Abyss near-lifeless conditions.<ref>[[Gargant Gloom]] Hunter's Journal entry: <i>"Enormous tubular beast uniquely suited to living close to the void below."</i></ref> Bugs such as the [[Shadow Creeper (Silksong)|Shadow Creeper]]s and [[Shadow Charger]]s have adapted to survive without food, liquid, or even sleep.<ref>[[Shadow Creeper (Silksong)|Shadow Creeper]] Hunter's Journal entry: <i>"Shell-plated worm found only in the deepest depths. Seems to survive despite consuming no food or liquid."</i></ref><ref>[[Shadow Charger]] Hunter's Journal entry: <i>"These ones grow large, yet I have never observed them eating, or sleeping. They seem such simple bugs... but I suspect they are not truly our cousins."</i></ref> Other bugs, such as [[Gargant Gloom]]s, have evolved to carry Void within their stomachs and use it to spray at their enemies.<ref>[[Gargant Gloom]] Hunter's Journal entry: <i>"Amazingly, the creature carries the void's black liquid in its stomach, violently spraying it forth if threatened."</i></ref>
+
+Structures and architecture of both the [[Ancient Civilisation|ancient civilisation]] and the [[Weavers]] can be found lower in the Abyss, with the latter having built a [[Weavenest]] within it to research the Void.<ref name=research2>Void Tendrils inspect text found within Weavenest Absolom: <i>"A rune-scroll depicting void given form."</i></ref><ref name=research1>[[:File:Screenshot SS The Abyss 09.png|Rune-scroll in Weavenest Absolom around jars of Void]]</ref>
+== History ==
+Before the kingdom of [[Pharloom]] and [[the Citadel]] were founded, an ancient civilisation that worshipped the Void originated from or near the Abyss.<ref>[[Arcane Egg (Silksong)|Arcane Egg]] description: <i>"Black stone egg formed before the birth of Pharloom."</i></ref><ref>The Abyss [[Lore Tablets (Silksong)#The Abyss|Lore Tablet]]: <br><i>"Erase our fear,<br>Eliminate our desire,<br>To suffer no more,<br>Void, cleanse us."</i></ref> During the time of the Weavers in Pharloom, they descended into the Abyss to build a Weavenest to conduct research on the Void, alongside creating a rune-map of the Abyss.<ref name=research2/><ref name=research1/><ref>The Abyss [[Map and Quill (Silksong)|Map]] inspect text: <i>"A rune depicting the Abyss."</i></ref>
+
+== How to Access ==
+The Abyss can be accessed via the [[Diving Bell|diving bell]] located within the lower sections of the [[Deep Docks]]. The [[Diving Bell Key]] can be acquired from [[Ballow]] during the <i>[[SEEK: The Dark Below]]</i> objective in [[Act 3]]. After its initial use, the diving bell is rendered inoperable for the ascent back, requiring Hornet to acquire the [[Silk Soar]] ability in Weavenest Absolom to exit the Abyss. Both the initial entry and exit of the Abyss are one-way.
+
+Once Hornet has acquired the [[Everbloom]] from [[Red Memory]], the diving bell has been reinforced by Ballow, allowing for reusable descent and ascent to the Abyss.
+{{Gallery
+|Image1 = Mapshot SS Diving Bell 01.png!Location of the diving bell in the Deep Docks
+|Image2 = Screenshot SS Deep Docks 14.png!The diving bell
+}}
+
+{{TabbedPOI
+|Header = true
+
+| NPC1 = Lace
+| NPC2 = Grand Mother Silk
+| NPC3 = The Knight
+| NPC3Note = (as the [[Void Entity]])
+| NPC4 = Sibling{{!}}Siblings
+
+|Enemy1 = Skullwing
+|Enemy2 = Shadow Creeper (Silksong){{!}}Shadow Creeper
+|Enemy3 = Shadow Charger
+|Enemy4 = Gloomsac
+|Enemy5 = Gargant Gloom
+|Enemy6 = Void Tendrils (Silksong){{!}}Void Tendrils
+
+|Boss1 = Lost Lace
+
+|Loot1_FileName = Arcane Egg Silksong
+|Loot1_Name = Arcane Egg (Silksong){{!}}Arcane Egg
+|Loot1_Amount = 1
+|Loot2_FileName = Weavenest Atla Map
+|Loot2_Name = Map and Quill (Silksong){{!}}The Abyss Map
+
+|LoreTabletsSource = SS The Abyss
+}}
+
+== Sub-area: Weavenest Absolom ==
+{{SS Infobox Area
+|image1 = <gallery>
+Weavenest Absolom Map Marked.png|Marked
+Weavenest Absolom Map Clean.png|Unmarked
+</gallery>
+|ambience = [https://www.youtube.com/watch?v=OGDjsXpW7UA Atmos Weavers] (Before obtaining the Silk Soar)<br>
+[https://youtu.be/4XxRUH8DOIQ Abyss]<br>
+[https://www.youtube.com/watch?v=ZzyCwfkjyCI Lake Atmos Hornet]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+}}
+<b>Weavenest Absolom</b> is a sub-area in the lower eastern section of the Abyss. It can be reached by crossing a lake of [[Void Tendrils (Silksong)|Void Tendrils]] and completing a platforming section. Like other [[Weavenest]]s, the [[Needolin]] must be played to open the door to access it.
+
+The [[Silk Soar]] ability can be acquired from a [[Weaver Burial Spire]] at the bottom of the Weavenest, which is required in order to exit the Abyss. Additionally, the [[Farsight]] can be found in the eastern passage of Weavenest Absolom, alongside the Void Tendrils [[Hunter's Journal (Silksong)|Hunter's Journal]] entry west of the vertical room.
+
+{{TabbedPOI
+|Enemy1 = Void Tendrils (Silksong){{!}}Void Tendrils
+
+|Loot1_FileName = Icon SS Silk Soar
+|Loot1_Name = Silk Soar
+|Loot2_FileName = Farsight
+|Loot3_FileName = HJ SS Void Tendrils
+|Loot3_Name = Void Tendrils (Silksong){{!}}Void Tendrils
+|Loot3_Description = [[Hunter's Journal (Silksong)|Hunter's Journal]] entry
+}}
+
+{{Gallery|
+| Title = Gallery
+| Image1 = Screenshot SS The Abyss 01.png!Diving bell (fixed up)
+| Image2 = Screenshot SS The Abyss 02.png!Diving bell (inside, open)
+| Image3 = Screenshot SS The Abyss 03.png!Diving bell (inside, closed)
+| Image4 = Screenshot SS The Abyss 04.png!Large drop room
+| Image5 = Screenshot SS The Abyss 05.png!Ancient tablet
+| Image6 = Screenshot SS The Abyss 06.png!Arcane Egg room
+| Image7 = Screenshot SS The Abyss 07.png!Lower bench
+| Image8 = Screenshot SS The Abyss 08.png!Weavenest Absolom entrance
+| Image9 = Screenshot SS The Abyss 13.png!Silk Soar Weaver spire
+| Image10 = Screenshot SS The Abyss 09.png!Void Tendrils tablet
+| Image11 = Screenshot SS The Abyss 10.png!Escape room (clogged)
+| Image12= Screenshot SS The Abyss 11.png!Lost Lace arena}}
+
+== Trivia ==
+* The Abyss and Void seemingly exist underneath everything else in the world.<ref>[[Shadow Creeper (Silksong)|Shadow Creeper]] Hunter's Journal entry: <i>"A creature long familiar to me. I suspect that no matter how far I travel, if I descend deep enough they will always be there."</i></ref><ref>[[Hornet]] dialogue with [[Lace]]: <i>"And the void below all things, that darkness I will fear no longer..."</i></ref>
+* [[Cut Content (Silksong)#Early Maps|Earlier in development]], the Abyss escape sequence was planned to be much shorter.
+
+{{Localisation
+|DEname = Der Abgrund
+|DEmeaning = The Abyss
+|ESname = El Abismo
+|ESmeaning = The Abyss
+|FRname = Les Abysses
+|FRmeaning = The Abyss
+|ITname = L'Abisso
+|ITmeaning = The Abyss
+|JAname = アビス
+|JAromanised = Abisu
+|JAmeaning = Abyss
+|KOname = 심연
+|KOromanised = Simyeon 
+|KOmeaning = Abyss
+|PTname = O Abismo
+|PTmeaning = The Abyss
+|RUname = Бездна
+|RUromanised = Bezdna
+|RUmeaning = Abyss
+|ZHname = 深渊
+|ZHromanised = Shēnyuān
+|ZHmeaning = Abyss
+|TWname = 深淵
+|TWromanised = Shēnyuān
+|TWmeaning = same
+|CODEname=ABYSS
+}}
+
+=== Weavenest Absolom ===
+{{Localisation
+|hr=false
+|DEname = Webnest Absolom
+|DEmeaning = Weavenest Absolom
+|ESname = Nido de Tejedora Absolom
+|ESmeaning = Nest of Weaver Absolom
+|FRname = Tisse-nid D'Absolom
+|FRmeaning = Weavenest Absolom
+|ITname = Tessinido Absolom
+|ITmeaning = Weavenest Absolom
+|JAname = 紡ぎの巣アブソロム
+|JAromanised = Tsumugi no su Abusoromu
+|JAmeaning = Spinning Nest Absolom
+|KOname = 방직둥지 앱솔롬
+|KOromanised = Bangjikdungji eabsollom
+|KOmeaning = Weaving Nest Absolom
+|PTname = Ninho de Tecelã Absolom
+|PTmeaning = Nest of Weaver Absolom
+|RUname = Ткачедом Абсолом
+|RUromanised = Tkačedom Absolom
+|RUmeaning = Weaver House Absolom
+|ZHname = 阿布索伦织巢
+|ZHromanised = Ābùsuǒlún zhī cháo
+|ZHmeaning = Absolom Weavenest
+|TWname = 阿布索倫織巢
+|TWromanised = Ābùsuǒlún zhī cháo
+|TWmeaning = same
+|CODEname=WEAVE_ABYSS
+}}
+
+{{Refs|hr=ss}}
+{{DEFAULTSORT:Abyss (Silksong)}}
+{{SS Nav Areas}}
+[[zh:深渊 (丝之歌)]]

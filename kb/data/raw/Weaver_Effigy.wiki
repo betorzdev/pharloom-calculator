@@ -1,0 +1,115 @@
+{{SS Infobox Item
+| description = Carved bone idol of an ancient Weaver. A prayer is etched upon its body. <hr/> 
+A relic of Pharloom's past, interesting to collectors of historical items.
+| effects = Can be sold to [[Relic Seeker Scrounge]] for {{R|150}}
+| type = [[Items (Silksong)#Tradables|Tradable]]
+| source = [[Bone Bottom]]<br>[[Shellwood]]<br>[[The Slab]]
+| max = 3
+}}
+
+{{Quote|Hr=SS
+|Weaver of Pharloom. By grace you warded. By thread you healed. For your favour, eternal, we offer our song. 
+|[[Mosshome]] [[Lore Tablets (Silksong)|Lore Tablet]]}}
+
+<b>Weaver Effigies</b> are [[Items (Silksong)#Tradables|tradable items]] in <i>[[Hollow Knight: Silksong]]</i>. They are carved from bone and depict various [[Weavers|Weaver]] figures, with prayers dedicated to the specific Weaver etched onto the body of the figure. [[Relic Seeker Scrounge]] can decipher the prayer.
+
+== Use ==
+Can be sold to Relic Seeker Scrounge for {{R|150}}.
+
+After sale, they can be read by visiting Relic Seeker Scrounge, or in the [[Bellhome]] after purchasing the [[Desk]].
+
+{{Gallery
+|Image1 = Mapshot SS Relic Seeker Scrounge 01.png!Location of Relic Seeker Scrounge in Bellhart
+|Image2 = Screenshot SS Bellhart 11.png!Relic Seeker Scrounge in Bellhart
+}}
+
+{| class="article-table" width="100%"
+! style="width: 8rem;" | Item
+! Description
+|-
+! [[File:Weaver Effigy.png|72x72px|center|link=Weaver Effigy|Weaver Effigy]] Weaver Effigy
+| 
+<i>Carving of Camora, Weaver of healing. A prayer is etched upon it.<br><br>
+"Weaver, heal my sons, their fearful hearts, their limbs that shake at the climb to come. We pray, gift but a glimmer of your strength, that when we stand before your divinity, you see bugs shed free of fear."</i>
+|-
+! [[File:Weaver Effigy.png|72x72px|center|link=Weaver Effigy|Weaver Effigy]] Weaver Effigy
+| 
+<i>Carving of Keelal, Weaver of the path. A prayer is etched upon it.<br><br>
+"Blessed Weaver, lady of grace, you who see our sin, our frail shells, our voices weak, and still offer your protection. How great your mind to care so much for ones so lowly."</i>
+|-
+! [[File:Weaver Effigy.png|72x72px|center|link=Weaver Effigy|Weaver Effigy]] Weaver Effigy
+| 
+<i>Carving of Atla, Weaver of time. A prayer is etched upon it.<br><br>
+"By grace of your example, and our history held full in mind, our song is yours, as your name is sacred. Weaver Atla, may you be praised eternal."</i>
+|}
+
+== How to Acquire ==
+There are a total of three Weaver Effigies that can be obtained.
+
+{| class="article-table" style="text-align: center;" width="100%" data-tpt-table-id="weaver-effigy"
+! 
+! Area
+! Location
+! Map
+|-
+! 1
+| [[Bone Bottom]]
+| West of [[Mosshome]], below the entrance to [[Wormways]].
+| [[File:Mapshot SS Weaver Effigy 01.png|200px|center]]
+|-
+! 2
+| [[Shellwood]]
+| East of [[Chapel of the Witch]]. Accessible after completing the [[Rite of Rebirth]] Wish.
+| [[File:Mapshot SS Weaver Effigy 02.png|200px|center]]
+|-
+! 3
+| [[The Slab]]
+| In a room below [[First Sinner]]'s cell, behind several walls of spiked coral nuts (requires [[Slab Keys|Key of Apostate]]).
+| [[File:Mapshot SS Weaver Effigy 03.png|200px|center]]
+|}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Weaver Effigy 01.png!In Bone Bottom
+|Image2 = Screenshot SS Weaver Effigy 02.png!In Chapel of the Witch (Shellwood)
+|Image3 = Screenshot SS Weaver Effigy 03.png!In the Slab
+}}
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Weaver Effigies had their value increased from 75 rosaries to 150.
+}}
+{{Localisation
+|DEname = Weberabbild
+|DEmeaning = Weaver Image
+|ESname = Efigie de Tejedora
+|ESmeaning = Weaver effigy
+|FRname = Effigie de tisserande
+|FRmeaning = Weaver Effigy
+|ITname = Effigie di Tessitrice
+|ITmeaning = Weaver Effigy
+|JAname = 紡ぐ者の像
+|JAromanised = Tsumugu mono no zō
+|JAmeaning = Likeness of a Weaver
+|KOname = 방직자 모형
+|KOromanised = Bangjikja mohyeong
+|KOmeaning = Weaver Model
+|PTname = Efígie de Tecelã
+|PTmeaning = Weaver Effigy
+|RUname = Фигурка Ткача
+|RUromanised = Figurka Tkača
+|RUmeaning = Weaver Figure
+|TWname = 編織者雕像
+|TWromanised = Biānzhī zhě diāoxiàng
+|TWmeaning = same
+|ZHname = 编织者雕像
+|ZHromanised = Biānzhī zhě diāoxiàng
+|ZHmeaning = Weaver Effigy
+|CODEname = WEAVER_TOTEM
+|CODEmeaning = 
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Items}}
+
+[[Category:Items (Silksong)]]

@@ -1,0 +1,90 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Cogwork Spine.png|Hunter's Journal
+Cogwork Spine Idle.png|Idle
+</gallery>
+| hasdrop = true
+| sh1 = 3-5
+| sh2 = 4-7
+|health=21/{{BT|42}}
+|damage_modifiers={{SS Spaced Damage Modifiers|1.25|1|1|1|1}}
+|numbers_required = 10
+|sing=Cogworker
+}}
+{{Quote
+|Hr = Journal
+|Spherical, winged automaton housing many sharp spikes. <hr/>I cannot decipher its function to the greater Core. Is it built for defence? If so, its passivity seems far from optimal.
+}}
+
+<b>Cogwork Spines</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are winged [[Cogwork Bugs|automatons]] able to extend spikes in a circular field.
+
+== Behaviour and Tactics ==
+Cogwork Spines fly up and down in a set path, stopping at regular intervals to extend 8 short spines in all directions.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Cogwork Spines have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* ...Am I...Who?...
+* ...Lift it...Fix it...Me?...
+* ...The Core...Holy...
+* ...Work...Eternal...
+* ...To mend...
+* ...To serve...
+}}
+
+== Location ==
+Cogwork Spines can be found in the [[Cogwork Core]], and three of them are fought as part of the [[Enemy Gauntlets (Silksong)/Cogwork Core 1|enemy gauntlet]] in the southwest of the area.
+{{Gallery
+|Image1 = Mapshot SS Cogwork Spine 01.png!Locations in the Cogwork Core
+|Image2 = Mapshot SS Cogwork Spine 02.png!Locations in the Cogwork Core in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Cogwork Spine 01.png!In the Cogwork Core
+|Image2 = GIF SS Cogwork Spine 01.gif!Flying in
+|Image3 = Screenshot SS Cogwork Spine 02.png!Extending spikes
+|Image4 = Screenshot SS Cogwork Spine 03.png!Reacting to the Needolin
+|Image5 = Screenshot SS Cogwork Spine 04.png![[Silk Fly]] freed upon death
+|Image6 = Screenshot SS Cogwork Spine 05.png!Modded screenshot of Cogwork Spines in the background without blur
+}}
+
+== Trivia ==
+* Despite being a "passive" enemy, Cogwork Spines are always aware of Hornet and will face in her direction while she is in the same room, regardless of distance. This allows them to be pulled in by [[Challenge]] from anywhere in the same room.
+
+{{Localisation
+|DEname = Räderwerk-Dorn
+|DEmeaning = Cogwork Thorn
+|ESname = Espinoso mecánico
+|ESmeaning = Mechanical Spiny
+|FRname = Engréchine
+|FRmeaning = 
+|ITname = Meccanismo Spinoso
+|ITmeaning = Spiked Mechanism
+|JAname= カラクリトゲトゲ
+|JAromanised = Karakuri togetoge
+|JAkatakana = enemy
+|JAmeaning = Combination of {{lang|ja|カラクリ <i>karakuri</i>}} (mechanism) and {{lang|ja|刺々 <i>togetoge</i>}} (sharp or spiky),
+|KOname = 톱니바퀴 가시 기계
+|KOromanised = Tomnibakwi gasi gigye
+|KOmeaning = Cogwheel Thorn Robot
+|PTname =  Mecanismo Espinhoso
+|PTmeaning = Spiny Mechanism
+|RUname = Заводной острошип
+|RUromanised = Zavodnoj ostrošip
+|RUmeaning = Clockwork Sharp Spike
+|TWname = 機樞棘球
+|TWromanised = Jīshū jí qiú
+|TWmeaning = same
+|ZHname = 机枢棘球
+|ZHromanised = Jīshū jí qiú
+|ZHmeaning = Mechanical Spiny Ball
+|CODEname = SONG_AUTOMATON_FLY_SPIKE
+|CODEmeaning = "Song" internally refers to the Citadel. Other [[Architects#Creations |Cogwork Bugs]] use the Automaton name internally
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

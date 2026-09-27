@@ -1,0 +1,219 @@
+{{SS Infobox Area
+| tab1 = Acts 1/2
+| image1 = <gallery>
+Wormways Map Marked.png|Marked
+Wormways Map Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Wormways Map Ruin Marked.png|Marked
+Wormways Map Clean.png|Unmarked
+</gallery>
+| connection = [[Bone Bottom]]
+| ambience = [https://www.youtube.com/watch?v=QwwLxnuvcTA Atmos Crawl]<br>
+[https://www.youtube.com/watch?v=pShKghTl4UY Atmos Lifeblood Wormways] (Act 3)<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+| main = [https://youtu.be/AhhXadbGp64 Ways]
+}}
+
+{{Quote|Worm-ridden caverns, shaking and unstable. There remain faint signs that pilgrims once travelled these tight paths.|[[Shakra]]
+| Hr = SS
+}}
+
+The <b>Wormways</b> is an [[Areas (Silksong)|area]] in <i>[[Hollow Knight: Silksong]]</i>. Tucked away into the south-west corner of [[Pharloom]], it is a nest of tunnels filled with worms and Plasmium growths.
+
+== Description ==
+[[File:Screenshot SS Wormways 11.png|thumb|200px|left|A Grom burrowing]]
+The Wormways consists of dark, sandy caverns infested with burrowing [[Groms|worms]], whose ceaseless churning leaves the rock and bone unstable and whose presence renders most of the area dangerous and difficult to navigate.<ref>[[Shakra]]: <i>"Poshanka! It is a difficult task to track anything in these caverns while the worms ceaselessly churn the rock."</i></ref><ref>[[Grom]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"They ceaselessly churn through rock and bone without ever seeming to rest. Do they have a destination? Or are they compelled to dig forever deeper?"</i></ref>
+
+The Wormways is primarily populated by burrowing worms known as [[Grom]]s and their young, the [[Gromling]]s. Most of the caverns consist of tight, winding tunnels and spiked pits that make traversal around these enemies difficult. Interspersed throughout the Wormways are [[Plasmium Bud|Plasmium buds]], which are being studied by the [[Alchemist Zylotol]] in his lab at the north of the area. 
+
+There is a utility shaft in the approximate centre of the caverns containing several [[Winged Pilgrim]]s; it divides the entrances to the Wormways from the bulk of the actual area. At the bottom of the utility shaft is a trapdoor that needs to be unlocked from above.
+
+At the lower entrance is a long, horizontal room inhabited by the [[Craggler]], and later, by several [[Cragglite]]s in Act 2.<ref group="Note">More specifically, the Craggler must have been killed, the Citadel's enemies must have been woken, and Hornet must have rested at a bench outside the Wormways, [[Mosslands]], and [[the Marrow]].</ref> West of this room is a door locked with a [[Simple Key (Silksong)|Simple Key]] which leads to a path through the Wormways that can be followed (without having the [[Cling Grip]]). The upwards path leads directly to [[Shellwood]] and is an alternate path to [[Bellhart]].<ref group="Note">This path bypasses the [[Far Fields]] route to Bellhart, and allows Hornet to free Bellhart without entering its Haunted state or go through Haunted Bellhart's west entrance to skip the [[Moorwing]] fight. Skipping Haunted Bellhart unlocks some dialogue with Shakra and the residents of Bellhart after freeing them.</ref> Additionally, the downwards path past the Simple Key door leads to [[Bonegrave]].
+
+== History ==
+The Wormways was once travelled by pilgrims long ago in Pharloom's history. However, at some unknown point, it was abandoned and became a nesting ground for the voracious worms.<ref>[[Shakra]]: <i>"There are signs that pilgrims once travelled even these crumbling paths, long ago. Now only the voracious worms nest here."</i></ref> In the past, the [[Weavers]] used the caverns as the location of Weavenest Karn, although at present, Karn is completely abandoned, likely due to the Weavers having long left the kingdom.
+
+Shortly before Hornet's arrival in Pharloom, the [[Alchemist Zylotol]] brought the Plasmium to the Wormways under his master's guidance, intending to study how the substance flourished in a foreign environment.<ref>[[Alchemist Zylotol]]: <i>"Plasmium was discovered by my master at the farthest edge of Pharloom, hidden deep in salt-stricken waters. I brought it to these caves under her direction, to study how it flourishes in a foreign place."</i></ref> His assistant, [[Zango]], was responsible for planting Plasmium seeds around the Wormways.<ref>[[Alchemist Zylotol]]: <i>"Before he went and died, my previous assistant seeded the warrens below with Plasmium buds."</i></ref>
+
+=== Act 3 ===
+In Act 3, as a result of the Alchemist Zylotol's experiments with the Plasmium, large chunks of the Wormways become [[Lifeblood#Mutation|plasmified]], with the substance having spread through most of the caverns, deforming the environment and its fauna. Groms and Gromlings have been mutated into [[Plasmidas]]es and [[Plasmid]]s respectively, and [[Plasmium Cocoon]]s have sprouted in a few locations. Most of these changes apply only to the western portion of the Wormways; the eastern portion is mostly unchanged from Act 2. Uniquely, all enemies within the Wormways are immune to [[black-threading]].
+
+Zango's husk has been reanimated and given false life by Plasmium.<ref>[[Plasmified Zango]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Husk of an alchemist's assistant granted false life by Plasmium."</i></ref> While Zylotol is left in an immobile state after also being corrupted by the substance, he still continues his [[Advanced Alchemy|research]].
+
+== How to Access ==
+The Wormways is located to the west of [[Bone Bottom]] and has two entrances, both of which branch from the cavern stretching up to the [[Blasted Steps]]. The southern entrance is located in the room directly left of Mosshome and typically requires the Swift Step<ref group="Note">While it is possible to bounce on the enemies using the Needle, it is assumed the Swift Step is used to cross the gap.</ref> to access. The northern entrance requires Hornet to pass through Shellwood.
+
+West of the Craggler room at the southern entrance, there is a door that requires a Simple Key to unlock; it bars entrance to the rest of the Wormways. It cannot be bypassed, as the northern connection must be opened from the western side.
+
+{{TabbedPOI
+|Header = true
+
+|NPC1 = Shakra
+|NPC2 = Alchemist Zylotol
+
+|Enemy1 = Aknid
+|Enemy2 = Gromling
+|Enemy3 = Grom
+|Enemy4 = Pilgrim Hornfly
+|Enemy5 = Winged Pilgrim
+|Enemy6 = Winged Pilgrim Bellbearer
+|Enemy7 = Overgrown Pilgrim
+|Enemy8 = Cragglite
+|Enemy9 = Craggler
+|Enemy10 = Winged Lifeseed
+|Enemy11 = Plasmid
+|Enemy11Note = ([[Act 3]] only) 
+|Enemy12 = Plasmidas
+|Enemy12Note = (Act 3 only)
+
+|Boss1 = Plasmified Zango
+|Boss1Note= (Act 3 only) 
+
+|Loot1_FileName = Plasmium Phial
+|Loot1_Description = given by the [[Alchemist Zylotol]] after completing the <i>[[Alchemist's Assistant]]</i> [[wish]]
+|Loot2_FileName = Dead Bug's Purse
+|Loot3_FileName = Shell Satchel
+|Loot3_Description =  replaces the [[Dead Bug's Purse]] in {{Steel Soul Icon Mini|SS}} [[Steel Soul Mode (Silksong)|Steel Soul Mode]]
+|Loot3cp = {{Steel Soul Icon Mini|SS}}
+|Loot4_FileName = Plasmium Gland
+|Loot4_Description = given by the Alchemist Zylotol after completing the <i>[[Advanced Alchemy]]</i> [[wish]]
+|Loot5_FileName = Mask Shard (Silksong) 
+|Loot5_Amount = 1
+|Loot5_Name = Mask Shard (Silksong){{!}}Mask Shard
+|Loot6_FileName = Memory Locket
+|Loot6_Amount = 1
+|Loot7_FileName = Flea
+|Loot7_Amount = 1
+|Loot8_FileName = Frayed Rosary String
+|Loot8_Amount = 1
+|Loot9_FileName = Beast Shard
+|Loot9_Amount = 1
+|Loot9_Description = dropped by the [[Craggler]]
+|Loot10_FileName = Lifeblood Cocoon
+|Loot10_Amount = 3
+|Loot10_Description = 2 of them [[Act 3]] only; each containing 2 [[Winged Lifeseed]]s
+|Loot11_FileName = Plasmium
+|Loot11_Amount = 3
+|Loot11_Description = only obtainable while the <i>Alchemist's Assistant</i> wish is active
+|Loot12_FileName = Plasmified Blood
+|Loot12_Description = only obtainable while the <i>Alchemist's Assistant</i> or <i>Advanced Alchemy</i> wish is active
+}}
+
+== Sub-area: Weavenest Karn ==
+{{SS Infobox Area
+|image1 = <gallery>
+Weavenest Karn Map Marked.png|Marked
+Weavenest Karn Map Clean.png|Unmarked
+</gallery>
+| ambience = [https://www.youtube.com/watch?v=QwwLxnuvcTA Atmos Crawl]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+}}
+
+<b>Weavenest Karn</b> is a derelict [[Weavenest]] infested by the worms that persist throughout the Wormways. It can be found at the leftmost point of the Wormways; its entrance is on a high up ledge that requires the [[Clawline]] to reach. It consists of a platforming challenge that ends with a [[Weaver Burial Spire]], where Hornet can bind the [[Sharpdart]] [[Silk Skill]].
+{{TabbedPOI
+|Enemy1 = Gromling 
+|Enemy2 = Grom 
+|Enemy3 = Plasmid
+|Enemy3Note = ([[Act 3]] only) 
+
+|Loot1_FileName = Sharpdart 
+}}
+{{clear}}
+
+== Creation and Development ==
+[[File:2021 Aspid Map.png|thumb|"Aspid" in April 2021]]
+The Wormways in its current form was not initially planned for <i>Silksong</i>; originally, in its current location, was the "[[Cut Content (Silksong)/Areas#Aspid (Cloverland)|Aspid]]" area, a lush clover-filled area that featured [[Cut Content (Silksong)/Enemies#Aspid (Cloverland)|unique enemies]], some of which being the [[Aknid]] and [[Craggler]], both of which being repurposed and not cut. The "Aspid" area had its first rooms created around early 2019, and is seen in the February 2019 <i>Silksong</i> reveal trailer and in a screenshot released in February 2021's <i>EDGE Magazine</i> issue.<ref>[https://www.youtube.com/watch?v=pFAknD_9U7c Hollow Knight: Silksong Reveal Trailer]</ref><ref>[https://pocketmags.com/edge-magazine/february-2021 Edge Magazine February 2021 edition], p. 54.</ref> 
+
+Within the Aspid area was what appears to be a [[Bellway]], in addition to a Sub-Area dungeon known as "Greenhaven" or "Grovehome", where [[Green Prince]]'s boss fight is currently located; it appears to have contained a [[Weaver Burial Spire]]. Also located in this area was seemingly a [[Bellshrine]].
+
+Around early 2022, the "Aspid" area was removed, with the Wormways also being added, appearing in its former location. While [[Lost Verdania]] was also added that year and contained reworked and reused "Aspid" rooms, the beginning of Wormways uses reworked versions of the first "Aspid" rooms.
+
+{{Gallery
+| Title = Gallery
+| Image1 = Screenshot SS Wormways 01.png ! [[Shakra]]'s tent
+| Image2 = Screenshot SS Needolinwormways 1.png ! [[Dead Bug's Purse]] location
+| Image3 = Screenshot SS Wormways 03.png ! Tent near [[Flea]]
+| Image4 = Screenshot SS Wormways 10.png ! [[Sharpdart]] Weaver Spire
+| Image5 = Screenshot SS Wormways 04.png ! [[Alchemist Zylotol]]'s room
+| Image6 = Screenshot SS Wormways 08.png ! Alchemist's room (Act 3 start)
+| Image7 = Screenshot SS Wormways 05.png ! Alchemist's room (After completing the <i>Advanced Alchemy</i> wish)
+| Image8 = Screenshot SS Needolinwormways 2.png ! Assistant Zango room
+| Image9 = Screenshot SS Wormways 07.png ! [[Plasmified Zango]] room (Act 3)
+| Image10 = Screenshot SS Lifeblood Cocoon 01.png ! Lifeblood Cocoon (Act 3)
+| Image11 = Wormways Tunnels Composite Map.png ! Composite map of the Wormways tunnels by [https://scripterswar.com/silksong/map RainingChain]
+| Image12 = XboxScreenshot Wormways.png ! <i>Silksong</i> Xbox trailer}}
+
+== Trivia ==
+* The changes made to the Wormways in Act 3 are reminiscent of the [[Infected Crossroads]] from <i>[[Hollow Knight]]</i>; both replace several enemies with stronger, massively altered counterparts, and involve a normally dull-coloured area undergoing a sudden, vibrant change in colour. This connection is alluded to by Hornet while talking to the Alchemist Zylotol.<ref name=":0">Hornet and the Alchemist Zylotol dialogue: <br><i>Alchemist Zylotol: "These lands have taken the Plasmium well... the soil has drunk it deep, and the creatures bloom so beautifully... have you seen them?" <br>Hornet: "The effect of your Plasmium on the beasts here is all too evident. Great change has been inflicted upon them. There is an echo also of other infections I have witnessed. I wonder at the meaning of it all... or if I am perhaps imagining similarities where there are none."</i></ref>
+
+
+{{Localisation
+|DEname = Wurmwege
+|DEmeaning = Wormways
+|ESname = Gusaneras
+|ESmeaning = From <i>gusano</i> (worm) and <i>-eras</i> (suffix for places).
+|FRname = Vermiterres
+|FRmeaning = Portmanteau of <i>vermine</i> (vermin) and <i>terres</i> (lands).
+|ITname = Vie dei Vermi
+|ITmeaning = Ways of the Worms
+|JAname = 地虫の穴
+|JAromanised = Jimushi no ana
+|JAmeaning = Worm Hole or Worm Den
+|KOname = 벌레의 길
+|KOromanised = Beollaeui gil
+|KOmeaning = Worm Path or Bug Path
+|PTname = Covil dos Vermes
+|PTmeaning = Worms' Lair
+|RUname = Червоточины
+|RUromanised = Červotočiny
+|RUmeaning = Wormholes
+|ZHname = 沙噬虫道
+|ZHromanised = Shā shì chóng dào
+|ZHmeaning = Sand-eating Worm Ways<br><small>{{lang|zh-hans|沙噬虫}} <i>shā shì chóng</i> are the name of [[Sandcarver]]s in Chinese, despite none appearing in the area.</small>
+|TWname = 蠕蟲甬道
+|TWromanised = Rúchóng yǒngdào
+|TWmeaning = Worm Tunnel
+|CODEname = CRAWLSPACE</code><br><code>CRAWL
+}}
+
+=== Weavenest Karn ===
+{{Localisation
+|hr=false
+|DEname = Webnest Karn
+|DEmeaning = Weavenest Karn 
+|ESname = Nido de Tejedora Karn
+|ESmeaning = Nest of Weaver Karn
+|FRname = Tisse-nid De Karn
+|FRmeaning = Weavenest of Karn
+|ITname = Tessinido Karn
+|ITmeaning = Weavenest Karn
+|JAname = 紡ぎの巣カルン
+|JAromanised = Tsumugi no su karun
+|JAmeaning = Spinning Nest Karn
+|KOname = 방직둥지 카른
+|KOromanised = Bangjikdungji kareun
+|KOmeaning = Weaving Nest Karn
+|PTname = Ninho de Tecelã Karn
+|PTmeaning = Nest of Weaver Karn
+|RUname = Ткачедом Карн
+|RUromanised = Tkačedom Karn
+|RUmeaning = Weaver House Karn
+|ZHname = 卡恩织巢
+|ZHromanised = Kǎēn zhī cháo
+|ZHmeaning = Karn Weavenest
+|TWname = 卡恩織巢
+|TWromanised = Kǎēn zhī cháo
+|TWmeaning = same
+|CODEname = WEAVE_CRAWL
+}}
+
+== Notes ==
+<references group="Note" />
+
+{{Refs|hr=SS}}
+
+{{SS Nav Areas}}
+
+[[zh:沙噬虫道]]

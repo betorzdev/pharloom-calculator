@@ -1,0 +1,102 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Servitor Ignim.png|Hunter's Journal
+Servitor Ignim Idle.png|Idle
+Servitor Ignim Moss.png|Moss Alt.
+Servitor Ignim Broken.png|Broken
+</gallery>
+| hasdrop = true
+| sh1 = 3-5<br/>1-2 (broken)
+| sh2 = 4-7<br/>3 (broken)
+|health = 1
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 8
+|singnum=1
+}}
+{{Quote
+|Hr = Journal
+|Small construct built by Weavers past, brought to life through Silk runes threaded within.<hr/>Though the Weavers have long passed from Pharloom, this servant still performs its function.
+}}
+
+<b>Servitors Ignim</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are small constructs built by the [[Weavers]], brought to life by [[Silk]] runes threaded within them.<ref>Servitor Ignim [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Small construct built by Weavers past, brought to life through Silk runes threaded within."</i></ref> They passively patrol the [[Weavenest]]s, awaiting the return of the Weavers.<ref>Servitor Ignim [[Needolin]] dialogue: <i>"...watch their halls... ...await their return..."</i></ref>
+
+== Behaviour and Tactics ==
+Servitors Ignim have no attacks. Instead, they follow [[Hornet (Silksong)|Hornet]], shining a spotlight on her. They can be seen on floors and ceilings around the Weavenests, trying to get as far away from Hornet as possible while still keeping her in sight. After some time, if Hornet goes too far away, they return to a dormant state. They do not deal contact damage.
+
+Servitors Ignim cannot be damaged by the cloud of venom spawned after using the [[Plasmium Phial]] or the [[Flea Brew]] while the [[Pollip Pouch]] is equipped, by the [[Claw Mirror]] explosion, or by [[Tacks]]. They also do not activate [[Sting Shard]]s or trigger the ignition of runes placed using the [[Snare Setter]]. [[Cogflies]] do not attack Servitors Ignim, [[Pale Nails]] do not target them, and the [[Wispfire Lantern]] does not spawn [[Wisp]]s if a Servitor Ignim is nearby.
+
+Broken Servitors Ignim found on the floor count as enemies for the special healing of the [[Beast Crest]] and [[Witch Crest]]. Like functional Servitors, they respawn only after Hornet rests at a [[Bench (Silksong)|bench]].
+
+Upon destruction, both broken and functional Servitors Ignim drop a fragment of their bodies. If the fragment falls from a great height, it shatters into {{S|2}} by itself. Otherwise, it can be instantly destroyed with a [[Needle Strike]], or hit with a regular attack, which causes it to bounce and break upon a second impact with a surface.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* ...watch their halls...
+* ...await their return...
+* ...keep their secrets...
+* ...remember their song...
+* ...obey their laws...
+* ...execute their will...
+}}
+
+== Location ==
+Functional Servitors Ignim can be found in [[Weavenest Atla]], [[Weavenest Cindril]], and [[Weavenest Murglin]]. A unique Servitor Ignim can be encountered in Weavenest Atla after using the lift for the first time: it runs away to the left exit and never respawns.
+
+Broken Servitors Ignim can be found in [[Weavenest Absolom]], the Weaver chambers on [[Mount Fay]], Weavenest Cindril, [[Weavenest Karn]], and Weavenest Murglin.
+{{Gallery
+|Image1 = Mapshot SS Servitor Ignim 01.png!Locations in Weavenest Atla
+|Image2 = Mapshot SS Servitor Ignim 02.png!Locations in Weavenest Cindril
+|Image3 = Mapshot SS Servitor Ignim 03.png!Locations in Weavenest Murglin
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Servitor Ignim 02.png!Inactive in Weavenest Atla
+|Image2 = Screenshot SS Servitor Ignim 03.png!Inactive on the wall in Weavenest Atla
+|Image3 = Screenshot SS Servitor Ignim 04.png!Putting a spotlight on Hornet in Weavenest Atla
+|Image4 = Screenshot SS Servitor Ignim 05.png!Moss covered Servitor in Weavenest Atla
+|Image5 = Screenshot SS Servitor Ignim 13.png!Moss covered Servitor putting a spotlight on Hornet
+|Image6 = Screenshot SS Servitor Ignim 06.png!Putting a spotlight on Hornet in Weavenest Cindril
+|Image7 = Screenshot SS Servitor Ignim 09.png!Inactive in Weavenest Murglin
+|Image8 = Screenshot SS Servitor Ignim 12.png!Singing
+|Image9 = Screenshot SS Servitor Ignim 11.png!Broken Servitors flickering when playing the Needolin near them
+|Image10= Screenshot SS Servitor Ignim 07.png!Broken Servitors in Weavenest Cindril
+|Image11= Screenshot SS Servitor Ignim 08.png!Broken Servitor in Weavenest Karn
+|Image12= Screenshot SS Servitor Ignim 10.png!Broken Servitor in Weavenest Murglin
+|Image13 = Screenshot SS Mount Fay 02.png!Broken Servitor in the Weaver chambers on Mount Fay
+|Image14= Screenshot SS Servitor Ignim 01.png!Broken Servitor in Weavenest Absolom
+}}
+
+== Trivia ==
+* Playing the Needolin near broken Servitors Ignim that can be found on the ground in the Weavenests makes them sputter and flicker.
+* The head-orb design for Servitors Ignim is used for the Weaver "heat lamps" in [[Mount Fay]].
+{{Localisation
+|DEname = Servitor Ignim
+|DEmeaning = —
+|ESname = Servidor Ignim
+|ESmeaning = Servitor Ignim
+|FRname = Serviteur Ignim
+|FRmeaning = Servitor Ignim
+|ITname = Servitore Ignim
+|ITmeaning = Servitor Ignim
+|JAname = 従事者イグニム
+|JAromanised = Jūjisha igunimu
+|JAmeaning = Worker Ignim
+|JAkatakana = foreignenemy
+|KOname = 시종 이그님
+|KOromanised = Sijong igeunim
+|KOmeaning = Servant Ignim
+|PTname =  Servitor Ignim
+|PTmeaning = —
+|RUname = Служитель Игним
+|RUromanised = Služitel' Ignim
+|RUmeaning = Servant Ignim
+|ZHname = 仆从伊格尼姆
+|ZHromanised = Púcóng yīgénímǔ
+|ZHmeaning = Servitor Ignim
+|CODEname = WEAVER_SERVITOR
+|CODEmeaning = 
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

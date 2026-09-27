@@ -1,0 +1,479 @@
+{{Nav Games Header}}
+
+Objects collected throughout <i>[[Hollow Knight: Silksong]]</i> that have varying properties. They can be viewed by pressing the [[Controls (Silksong)|INVENTORY]] key.
+
+== Equipment ==
+Core gameplay items that are automatically equipped by [[Hornet (Silksong)|Hornet]].
+
+{| class="article-table" width="100%"
+! width="150px" | [[File:Hunter's Cloak.png|link=Hunter's Cloak|72x72px]]
+[[Hunter's Cloak]]
+| <i>Simple protective garb, expertly woven but showing signs of age.</i>
+|-
+! [[File:Drifter's Cloak.png|link=Drifter's Cloak|72x72px]]
+[[Drifter's Cloak]]
+| <i>Simple protective garb, sewn through with flexible spines.
+|-
+! [[File:Faydown Drifter's Cloak.png|link=Faydown Cloak|72x72px]]
+[[Faydown Cloak]]
+| <i>Protective garb lined with the soft down of a Fayforn and sewn through with flexible spines.
+|-
+! [[File:Tool Pouch.png|link=Tool Pouch|72x72px]]
+[[Tool Pouch]]
+| <i>Basic pouch designed for holding tools, traps and crafting materials.
+|-
+! [[File:Crafting Kit.png|link=Crafting Kit|72x72px]]
+[[Crafting Kit]]
+| -
+|-
+! [[File:Tool Pouch & Crafting Kit.png|link=Tool Pouch & Crafting Kit|72x72px]]
+[[Tool&nbsp;Pouch &&nbsp;Crafting&nbsp;Kit]]
+| <i>A pouch for holding traps and tools, and fine crafting implements to increase their lethality.
+|-
+! [[File:Map (Silksong).png|link=Map and Quill (Silksong)|72x72px]]
+[[Map and Quill (Silksong)|Map]]
+| <i>Map of Pharloom, partially filled out. Without a quill it cannot be updated.
+|-
+! [[File:Quill (Silksong).png|link=Map and Quill (Silksong)|72x72px]]
+[[Map and Quill (Silksong)|Quill]]
+| <i>Writing implement for recording one's travels. Can be used to update any acquired maps.
+|-
+! [[File:Map & Quill (Silksong).png|link=Map and Quill (Silksong)|72x72px]]
+[[Map and Quill (Silksong)|Map & Quill]]
+| <i>Map of Pharloom and a quill for recording one's travels. When resting at a bench or elsewhere, the map will be updated with newly discovered areas.
+|-
+! [[File:Plasmium Gland.png|link=Plasmium Gland|72x72px]]
+[[Plasmium Gland]]
+| <i>Pulsating organ grown within the shell of Alchemist Zylotol. The gland replenishes over time, providing a near limitless source of Plasmium.
+Crafting new Plasmium Phials no longer requires a reserve.
+|-
+! [[File:Everbloom.png|link=Everbloom|72x72px]]
+[[Everbloom]]
+| <i>Ethereal flower plucked from a deep and distant memory. Glows with soft, pale light that wards against the void.
+|}
+
+== Upgrades ==
+Items that increase the capacity of Hornet's HUD meters.
+
+{| class="article-table" width="100%"
+! width="150px" | [[File:Mask Shard (Silksong).png|link=Mask Shard (Silksong)|72x72px]]
+[[Mask Shard (Silksong)|Mask Shard]]
+| <i>Shard of an ancient mask worn to protect oneself from harm.
+Complete a mask to strengthen the shell and protect against damage.
+|-
+! [[File:Spool Fragment.png|link=Spool Fragment|72x72px]]
+[[Spool Fragment]]
+| <i>One half of an artefact left behind by the Weavers, designed to collect and hold Silk.
+A completed spool will allow one to hold more Silk within their shell.
+|-
+! [[File:Memory Locket.png|link=Memory Locket|72x72px]]
+[[Memory Locket]]
+| <i>Keepsake containing a precious memory. Can be used to expand a Crest.
+Expand Crests in the Crest pane of the Menu.
+|-
+! [[File:Icon SS Silk Heart.png|link=Silk Heart|72x72px]]
+[[Silk Heart]]
+| <i>Silk Hearts will automatically regenerate some Silk.
+|}
+
+== Consumables ==
+Stashes of [[Rosaries]] and [[Shell Shards]] that can be used from the bottom half of the inventory.
+
+{| class="article-table" width="100%"
+! width="150px" | [[File:Frayed Rosary String.png|link=Frayed Rosary String|72x72px]]<br>
+[[Frayed Rosary String]]
+| <i>Worn string holding a meagre amount of rosaries. Can be broken and the loose rosaries used to trade.
+Contains 30 rosaries.
+|-
+! [[File:Rosary String.png|link=Rosary String|72x72px]]
+[[Rosary String]]
+| <i>Short string of rosaries. Can be broken and the rosaries used to trade.
+Contains 60 rosaries.
+|-
+! [[File:Rosary Necklace.png|link=Rosary Necklace|72x72px]]
+[[Rosary Necklace]]
+| <i>Adornment strung with a large quantity of rosaries. Can be broken and the rosaries used to trade.
+Contains 120 rosaries.
+|-
+! [[File:Heavy Rosary Necklace.png|link=Heavy Rosary Necklace|72x72px]]
+[[Heavy Rosary Necklace]]
+| <i>String threaded with a mix of common and fine rosaries. Can be broken and the rosaries used to trade.
+Contains 220 rosaries.
+|-
+! [[File:Pale Rosary Necklace.png|link=Pale Rosary Necklace|72x72px]]
+[[Pale Rosary Necklace]]
+| <i>Heavy necklace laden with pearl rosaries. Can be broken and the rosaries used to trade.
+Contains 340 rosaries.
+|-
+! [[File:Shard Bundle.png|link=Shard Bundle|72x72px]]
+[[Shard Bundle]]
+| <i>Small bundle of shell shards tied together with string. Can be broken to use the shards for crafting.
+Contains 80 shell shards.
+|-
+! [[File:Beast Shard.png|link=Beast Shard|72x72px]]
+[[Beast Shard]]
+| <i>Chunk of hardened material found in the shells of great beasts. Can be broken into individual shell shards for use in crafting.
+Breaks into 140 shell shards.
+|-
+! [[File:Pristine Core.png|link=Pristine Core|72x72px]]
+[[Pristine Core]]
+| <i>Intricate internal mechanism of a cogwork bug. Can be broken into individual shell shards for use in crafting.
+Breaks into 220 shell shards.
+|-
+! [[File:Hornet Statuette.png|link=Hornet Statuette|72x72px]]
+[[Hornet Statuette]]
+| <i>Small sculpture, inexpertly but painstakingly crafted as a symbol of enduring friendship.
+Breaks into 60 shell shards.
+|-
+! [[File:Growstone 4.png|link=Growstone|72x72px]]
+{{Steel Soul Icon Mini|SS}} [[Growstone]]
+| <i>Cold, steely stone with remarkable regrowth capacity.
+If shattered into shell shards, it will reform over time.
+|-
+! [[File:Silkeater.png|link=Silkeater|72x72px]]
+[[Silkeater]]
+| <i>Grub that lives within and feeds upon Pharloom's lingering Silk, born with the ability to sense Silk over great distances.
+Consume the Silkeater to retrieve a cocoon after falling in battle.
+|}
+
+== Tradables ==
+Items that can be traded to certain [[NPCs (Silksong)|NPCs]] for [[Rosaries]] or other services.
+
+{| class="article-table" width="100%"
+! width="150px" | [[File:Craftmetal.png|link=Craftmetal|72x72px]]
+[[Craftmetal]]
+| <i>Rare element found naturally within the rock and bone of Pharloom.
+Used by skilled craftsbugs in the construction of tools and trinkets.
+|-
+! [[File:Pale Oil.png|link=Pale Oil|72x72px]]
+[[Pale Oil]]
+| <i>Bile gland of a rare sylphean slug. Talented pinmasters can use the glistening liquid within to improve a blade's sharpness.
+|-
+! [[File:Bone Scroll.png|link=Bone Scroll|72x72px]]<br>
+[[Bone Scroll]]
+| <i>Crude journal made of coarse fabric and bone, left by a fallen pilgrim.
+A relic of Pharloom's past, interesting to collectors of historical items.
+|-
+! [[File:Weaver Effigy.png|link=Weaver Effigy|72x72px]]
+[[Weaver Effigy]]
+| <i>Carved bone idol of an ancient Weaver. A prayer is etched upon its body.
+A relic of Pharloom's past, interesting to collectors of historical items.
+|-
+! [[File:Choral Commandment.png|link=Choral Commandment|72x72px]]
+[[Choral Commandment]]
+| <i>Order issued by the Citadel. The once gleaming seal has worn with time.
+A relic of Pharloom's past, interesting to collectors of historical items.
+|-
+! [[File:Rune Harp.png|link=Rune Harp|72x72px]]
+[[Rune Harp]]
+| <i>Old Weaver recording instrument, strung with Silk runes. The faded runes hold a Weaver's words from ages gone.
+A relic of Pharloom's past, interesting to collectors of historical items.
+|-
+! [[File:Arcane Egg Silksong.png|link=Arcane Egg (Silksong)|72x72px]]
+[[Arcane Egg (Silksong)|Arcane Egg]]
+| <i>Black stone egg formed before the birth of Pharloom.
+A relic from the ancient past. Highly prized by collectors of historical items.
+|-
+! [[File:Psalm Cylinder.png|link=Psalm Cylinder|72x72px]]
+[[Psalm Cylinder]]
+| <i>Metallic cylinder of Citadel make, etched with a recording of sound.
+The cylinder can be played in a gramophone.
+|-
+! [[File:Sacred Cylinder.png|link=Psalm Cylinder|72x72px]]
+[[Psalm Cylinder|Sacred Cylinder]]
+| <i>Metallic cylinder of Citadel make, etched with the melody of the Vaultkeepers.
+The cylinder can be played in a gramophone.
+|}
+
+== Deliverables ==
+Items that are delivered to certain [[NPCs (Silksong)|NPCs]], [[Wishwalls]], or other locations to complete [[Wishes]] or progress other quests.
+
+{| class="article-table" width="100%"
+|-
+! width="150px" | [[File:Mossberry.png|link=Mossberry|72x72px]]
+[[Mossberry]]
+| <i>Sweet fruit that grows in moist environments. Its seeds are toxic to most creatures.
+|-
+! [[File:Mossberry Stew.png|link=Mossberry Stew|72x72px]]
+[[Mossberry Stew]]
+| <i>Thick, syrupy soup of Mossberries and druidic herbs. Sweet and aromatic, but poisonous to most creatures.
+|-
+! [[File:Pilgrim Shawl.png|link=Pilgrim Shawl|72x72px]]
+[[Pilgrim Shawl]]
+| <i>Simple garment worn by several pilgrims over the ages. Torn, tattered and repaired many times over.
+|-
+! [[File:Flintgem.png|link=Flintgem|72x72px]]
+[[Flintgem]]
+| <i>Gem-like organ taken from a Flintbeetle. Produces incendiary sparks when abraded, and may explode if cracked or dropped.
+|-
+! [[File:Spine Core.png|link=Spine Core|72x72px]]
+[[Spine Core]]
+| <i>Flexible fibre from within a Hoker's spine. Can be woven into garments and accessories by a skilled seamstress.
+|-
+! [[File:Crown Fragment.png|link=Crown Fragment|72x72px]]
+[[Crown Fragment]]
+| <i>Large spike of bone collected from a defeated Skull Tyrant.
+|-
+! [[File:Horn Fragment.png|link=Horn Fragment|72x72px]]
+[[Horn Fragment]]
+| <i>Hardened chunk of horned shell collected from a defeated Savage Beastfly.
+|-
+! [[File:Silver Bell.png|link=Silver Bell|72x72px]]
+[[Silver Bell]]
+|<i>Finely forged bell made from a gleaming metal.</i>
+|-
+! [[File:Plasmium.png|link=Plasmium|72x72px]]
+[[Plasmium]]
+| <i>Liquid lifeseed extracted from a ripe bud. Possesses regenerative qualities.
+|-
+! [[File:Plasmified Blood.png|link=Plasmified Blood|72x72px]]
+[[Plasmified Blood]]
+| <i>Blood of a creature merged full with liquid lifeseed. Possesses powerful regenerative qualities.
+|-
+! [[File:Ragpelt.png|link=Ragpelt|72x72px]]
+[[Ragpelt]]
+| <i>Tattered pelt taken from the body of a Crawbug. Fragile and drab, it is considered to have few practical uses.
+|-
+! [[File:Pollip Heart.png|link=Pollip Heart|72x72px]]
+[[Pollip Heart]]
+| <i>Core of a flower formed around the body of a consumed Wood Wasp. Secretes a sticky sap that the wasps subsist on.
+|-
+! [[File:Roach Guts.png|link=Roach Guts|72x72px]]
+[[Roach Guts]]
+| <i>Fresh innards of a Muckroach, tough and slimy with a rank odour. Unpalatable to most.
+|-
+! [[File:Courier's Swag.png|link=Courier's Swag|72x72px]]
+[[Courier's Swag]]
+| <i>Heavy cloth sack containing tools, trinkets and medical aids.
+|-
+! [[File:Queen's Egg.png|link=Queen's Egg|72x72px]]
+[[Queen's Egg]]
+| <i>Fragile egg containing a young Silkeater Queen. Though the Queen cannot gather Silk itself, with time and care it could be raised to breed more Silkeaters.
+|-
+! [[File:Liquid Lacquer.png|link=Liquid Lacquer|72x72px]]
+[[Liquid Lacquer]]
+| <i>Pale glaze used in the preparation and protection of bone masks.
+|-
+! [[File:Courier's Rasher.png|link=Courier's Rasher|72x72px]]
+[[Courier's Rasher]]
+| <i>Fatty meat of indeterminate origin. Once prepared it will quickly spoil if not stored properly.
+|-
+! [[File:Vintage Nectar.png|link=Vintage Nectar|72x72px]]
+[[Vintage Nectar]]
+| <i>High quality nectar of a long-lived aphid, kept in storage over many lifetimes to allow a complex maturation.
+|-
+! [[File:Pickled Muckmaggot.png|link=Pickled Muckmaggot|72x72px]]
+[[Pickled Muckmaggot]]
+| <i>Pungent delicacy preserved in roach brine. The most famous creation of the disgraced chef Lugoli.
+|-
+! [[File:Crustnut.png|link=Crustnut|72x72px]]
+[[Crustnut]]
+| <i>Tough, furred seed from the centre of a corpora cluster. Stale to taste, but strong once ground as seasoning.
+|-
+! [[File:Steel Spines.png|link=Steel Spines|72x72px]]
+[[Steel Spines]]
+| <i>Hard forged spines, intended for use in heavy machinery and able to pierce through even the toughest shell.
+|-
+! [[File:Choir Cloak.png|link=Choir Cloak|72x72px]]
+[[Choir Cloak]]
+| <i>Garment gifted to pilgrims on admittance to the Citadel. Its thick weave offers additional protection against wind and cold.
+|-
+! [[File:Broodmother's Eye.png|link=Broodmother's Eye|72x72px]]
+[[Broodmother's Eye]]
+| <i>Gelatinous organ collected from the defeated Broodmother.
+|-
+! [[File:Seared Organ.png|link=Seared Organ|72x72px]]
+[[Seared Organ]]
+| <i>Meat harvested from a defeated creature. It has been seared in a way that noticeably affects the flavour.
+|-
+! [[File:Shredded Organ.png|link=Shredded Organ|72x72px]]
+[[Shredded Organ]]
+| <i>Meat harvested from a defeated creature. It has been diced into fine chunks.
+|-
+! [[File:Skewered Organ.png|link=Skewered Organ|72x72px]]
+[[Skewered Organ]]
+| <i>Meat harvested from a defeated creature. It has been cleanly speared through, but is otherwise intact.
+|-
+! [[File:Hermit's Soul.png|link=Hermit's Soul|72x72px]]
+[[Hermit's Soul]]
+|<i>Heavy bell filled with the shimmering soul of the Bell Hermit.
+|-
+! [[File:Maiden's Soul.png|link=Maiden's Soul|72x72px]]
+[[Maiden's Soul]]
+|<i>Vial gifted by the Chapel Maid, filled full with swirling soul.
+|-
+! [[File:Seeker's Soul.png|link=Seeker's Soul|72x72px]]
+[[Seeker's Soul]]
+|<i>Cracked shell containing soul drawn from a long deceased bug.
+|-
+! [[File:Encrusted Heart.png|link=Encrusted Heart|72x72px]]
+[[Encrusted Heart]]
+| <i>Enlivened heart of Crust King Khann. It beats deep and slow.
+|-
+! [[File:Pollen Heart.png|link=Pollen Heart|72x72px]]
+[[Pollen Heart]]
+| <i>Enlivened heart of Nyleth. It beats faint and fast.
+|-
+! [[File:Hunter's Heart.png|link=Hunter's Heart|72x72px]]
+[[Hunter's Heart]]
+| <i>Enlivened heart of Skarrsinger Karmelita. Its beat is steady and strong.
+|-
+! [[File:Conjoined Heart.png|link=Conjoined Heart|72x72px]]
+[[Conjoined Heart]]
+| <i>Enlivened heart of the Green Prince. Its beat is sharp and clear.
+|-
+! [[File:Cogheart Piece 1.png|link=Cogheart|72x72px]]
+[[Cogheart Piece]]
+| <i>One part of a cogwork heart, containing an intricate mechanism of wheels and regulators.
+|-
+! [[File:Cogheart Pieces.png|link=Cogheart|72x72px]]
+[[Cogheart Pieces]]
+| <i>Two parts of a cogwork heart, containing an intricate array of wheels and regulators.
+|-
+! [[File:Cogheart.png|link=Cogheart|72x72px]]
+[[Cogheart]]
+| <i>Reassembled cogwork heart, containing a fine array of wheels and regulators.
+|-
+! [[File:Fine Pin.png|link=Fine Pin|72x72px]]
+[[Fine Pin]]
+| <i>Common weapon of Pharloom, still in good condition despite long use. An expertly crafted metal rod with a sharpened tip.
+|-
+! [[File:Grass Doll.png|link=Grass Doll|72x72px]]
+[[Grass Doll]]
+| <i>Carved child's toy of a bug clad in leaves.
+|-
+! [[File:Ruined Tool.png|link=Ruined Tool|72x72px]]
+[[Ruined Tool]]
+| <i>Remains of an ancient Weaver implement, broken and inoperable.
+A craftsbug of high skill may be able to repair it.
+|-
+! [[File:Twisted Bud Idle.png|link=Twisted Bud|72x72px]]
+[[Twisted Bud]]
+| <i>Contorted mass of ashen vine. Cries out incessantly.
+|}
+
+== Keys ==
+Items that unlock certain doors throughout [[Pharloom]].
+
+{| class="article-table" width="100%"
+! width="150px" | [[File:Simple Key (Silksong).png|link=Simple Key (Silksong)|72x72px]]
+[[Simple Key (Silksong)|Simple Key]]
+| <i>Rusted key of common design. Can be used to open a range of simple locks.
+Degraded by time, it will break after a single use.
+|-
+! [[File:Key of Indolent.png|link=Slab Keys|72x72px]]
+[[Slab Keys|Key of Indolent]]
+| <i>Key with the mark of 'Indolent'. Opens the way to certain cells and passages of the Slab.
+|-
+! [[File:Key of Heretic.png|link=Slab Keys|72x72px]]
+[[Slab Keys|Key of Heretic]]
+| <i>Key with the mark of 'Heretic'. Opens the way to certain cells and passages of the Slab.
+|-
+! [[File:Key of Apostate.png|link=Slab Keys|72x72px]]
+[[Slab Keys|Key of Apostate]]
+| <i>Key with the mark of 'Apostate'. Opens the way to certain cells and passages of the Slab.
+|-
+! [[File:Slab Keys.png|link=Slab Keys|72x72px]]
+[[Slab Keys]]
+| <i>Keys to the cells and passages of the Slab.</i>
+|-
+! [[File:White Key.png|link=White Key|72x72px]]
+[[White Key]]
+| <i>Finely crafted metal key, shaped to resemble a surgical implement.
+Grants access to the Citadel's Whiteward.
+|-
+! [[File:Surgeon's Key.png|link=Surgeon's Key|72x72px]]
+[[Surgeon's Key]]
+| <i>Discarded key of the Whiteward.
+Opens the sluice beneath the operating theatre.
+|-
+! [[File:Bellhome Key.png|link=Bellhome Key|72x72px]]
+[[Bellhome Key]]
+| <i>Key to a restored bell above Bellhart.
+|-
+! [[File:Architect's Key.png|link=Architect's Key|72x72px]]
+[[Architect's Key]]
+| <i>Rotary key of the Architects. Opens their Chapel in the Underworks.
+|-
+! [[File:Diving Bell Key.png|link=Diving Bell Key|72x72px]]
+[[Diving Bell Key]]
+| <i>Small worker's key.
+Unlocks the door to the diving bell in Deep Docks.
+|-
+! [[File:Craw Summons.png|link=Craw Summons|72x72px]]
+[[Craw Summons]]
+| <i>Scrawled missive on tattered black rag.
+"Defiler... Dark... Attend... Home... Wheel..."
+|}
+
+== Bellhome Upgrades ==
+Items that are brought to Hornet's [[Bellhome]] to improve it.
+{| class="article-table" width="100%"
+|-
+! width="150px" | [[File:Materium.png|link=Materium|72x72px]]
+[[Materium]]
+| <i>Tubes and receptacles built for the storing, recording and research of various materials.
+The Materium can be assembled in a home.
+|-
+! [[File:Farsight.png|link=Farsight|72x72px]]
+[[Farsight]]
+| <i>Retracted Weaver surveillance instrument. Once assembled, the device will allow observation over vast distances.
+The Farsight can be assembled in a home.
+|-
+! [[File:Crawbell.png|link=Crawbell|72x72px]]
+[[Crawbell]]
+| <i>Nest fashioned from an old bell. Once set up, young Craws will occasionally roost within, filling the bell with shell shards and rosaries.
+The Crawbell can be installed on the exterior of a home.
+|}
+
+== Mementos ==
+Items that can be displayed in the [[Bellhome]]'s [[Materium]]. The [[Old Hearts|Old Heart]] not used to enter the [[Red Memory]] can also be displayed.
+
+{| class="article-table" width="100%"
+|-
+! width="150px" | [[File:Sprintmaster Memento.png|link=Sprintmaster Memento|72x72px]]
+[[Sprintmaster Memento]]
+| <i>Gilded trophy awarded by Sprintmaster Swift to the fastest bug in Pharloom.
+The memento can be displayed in a home.
+|-
+! [[File:Guardian's Memento.png|link=Guardian's Memento|72x72px]]
+[[Guardian's Memento]]
+| <i>Aged medallion of the wanderer Seth. A gift given in respect of great skill.
+The memento can be displayed in a home.
+|-
+! [[File:Hero's Memento.png|link=Hero's Memento|72x72px]]
+[[Hero's Memento]]
+| <i>Heirloom of a village lost to Pharloom's Haunting.
+The memento can be displayed in a home.
+|-
+! [[File:Hunter's Memento.png|link=Hunter's Memento|72x72px]]
+[[Hunter's Memento]]
+| <i>Seal symbol given in recognition of a true Hunter, stamped in sticky goo.
+The memento can be displayed in a home.
+|-
+! [[File:Grey Memento.png|link=Grey Memento|72x72px]]
+[[Grey Memento]]
+| <i>Engraved cruststone, worn by sand and blanched by time.<br>...Watch...Remember...Till time... Life anew...
+The memento can be displayed in a home.
+|-
+! [[File:Surface Memento.png|link=Surface Memento|72x72px]]
+[[Surface Memento]]
+| <i>Worn ornament of the Nameless Town high above Pharloom.
+The memento can be displayed in a home.
+|-
+! [[File:Craw Memento.png|link=Craw Memento|72x72px]]
+[[Craw Memento]]
+| <i>Iron emblem of the Court of Craws, absolving the bearer of all crimes past and future.
+The memento can be displayed in a home.
+|}
+
+== Trivia ==
+[[File:Deep Memory Prompt.png|right|150x150px]]
+* All consumable items, such as Shard Bundles or Rosary Strings, cannot be used in [[Elegy of the Deep|memories]]. This includes [[the Old Hearts]] memories, [[First Sinner]]'s battle, and in the [[Red Memory]] where the Inventory menu is inaccessible.
+** When attempting to do so, the game displays a unique splash screen with the message: <i>"Cannot use items while in a memory."</i>
+
+
+{{Refs|hr=SS}}
+[[fr:Objets (Silksong)]]
+[[pt:Itens (Silksong)]]
+[[Category:Items (Silksong)| ]]

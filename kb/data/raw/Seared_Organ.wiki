@@ -1,0 +1,62 @@
+{{Navbar|page1=Seared Organ|page2=Shredded Organ|page3=Skewered Organ}}
+{{SS Infobox Item
+| max = 15
+| type = [[Items (Silksong)#Deliverable|Deliverable]]
+| source = Any enemies killed with the [[Flintslate]] or [[Pimpillo]] during <i>[[Broodfeast]]</i> or <i>[[Runtfeast]]</i>
+| description = Meat harvested from a defeated creature. It has been seared in a way that noticeably affects the flavour.
+}}
+
+{{Quote
+| Good ssspidderr! Ssskewered. Ssshredded. Ssseared! Bring it all. Much will be needed, enough to sate my brood to come.
+| [[Huntress]]
+| Hr = SS
+}}
+
+<b>Seared Organs</b> are [[Items (Silksong)#Deliverables|deliverable items]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+15 Seared Organs, 35 [[Shredded Organ]]s, and 10 [[Skewered Organ]]s are required to complete the <i>[[Broodfeast]]</i> Wish, given by [[Huntress]] at [[Putrified Ducts]] (or the <i>[[Runtfeast]]</i> Wish, given by [[Runt]] in the same location after [[Act 3]] begins).
+
+== How to Acquire ==
+Only obtainable while <i>Broodfeast</i> or <i>Runtfeast</i> is active. Seared Organs drop from most enemies killed by the following sources:
+* [[Needle]] after using [[Flintslate]]
+* [[Pimpillo]]
+* [[Wispfire Lantern]]
+* [[Voltvessels]]
+* Other sources of heat (i.e. a [[Memoria]] blown up by another Memoria's electrified explosive). 
+
+[[Hornet (Silksong)|Hornet]] may carry up to 15 Seared Organs, after which they are no longer obtainable.
+{{Localisation
+|DEname = Geröstetes Organ
+|DEmeaning = Roasted Organ
+|ESname = Órgano chamuscado
+|ESmeaning = Seared Organ
+|FRname = Organe rôti
+|FRmeaning = Roasted Organ
+|ITname = Organo scottato
+|ITmeaning = Scorched Organ
+|JAname = 焼かれた肉
+|JAromanised = Yaka reta niku
+|JAmeaning = Burnt Meat
+|KOname = 그슬린 장기
+|KOromanised = Geuseullin janggi
+|KOmeaning = Scorched Organ
+|PTname = Órgão Salteado
+|PTmeaning = Sautéed Organ
+|RUname = Обожжённый орган
+|RUromanised = Obožžënnyj organ
+|RUmeaning = Burnt Organ
+|TWname = 炙烤內臟
+|TWromanised = Zhì kǎo nèizàng
+|TWmeaning = Seared Organ
+|ZHname = 烤焦的内脏
+|ZHromanised = Kǎojiāo de nèizàng
+|ZHmeaning = Burnt Organ
+|CODEname = MORSEL_SEARED
+|CODEmeaning = All other organs for <i>[[Broodfeast]]</i>/<i>[[Runtfeast]]</i> are also called <code>MORSEL</code>
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

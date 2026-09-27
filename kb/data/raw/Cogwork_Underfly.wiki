@@ -1,0 +1,85 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Cogwork Underfly.png|Hunter's Journal
+Cogwork Underfly Idle.png|Idle
+</gallery>
+|drops = None
+|health=4
+|damage_modifiers={{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 25
+|sing=Cogworker
+}}
+{{Quote
+|Hr = Journal
+|Small automaton built to work, without complaint, in the scorching heat of the Underworks' Cauldron.<hr/>
+It is no wonder these constructs were cast. No mortal bug would last long inside that scorching place. Even my shell struggles to withstand its heat.
+}}
+
+<b>Cogwork Underflies</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are small [[Cogwork Bugs|automaton]] [[Underworkers]] built to work in the scorching heat of the [[Underworks#Sub-area:_The_Cauldron|Cauldron]].<ref>Cogwork Underfly [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Small automaton built to work, without complaint, in the scorching heat of the Underworks' Cauldron."</i></ref>
+
+== Behaviour and Tactics ==
+Floats stationary in the air. If [[Hornet (Silksong)|Hornet]] approaches, it slowly floats towards her and spins bladed appendages in a circle around itself, dealing {{Damage|1}}.
+
+Easy to avoid alone. Be aware of its position during platforming segments or around other enemies. Avoid using the [[Cogfly]] tool when attempting to platform using these enemies, since Cogflies can attack and defeat them before Hornet reaches them.
+
+The Cogwork Underflies in the [[Clawline]] room are unique in that they will be replaced by another Cogwork Underfly roughly 3 seconds after being killed, akin to how [[Driftlin]]s and [[Skullwing]]s behave.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* ...Am I...Who?...
+* ...Lift it...Fix it...Me?...
+* ...The Core...Holy...
+* ...Work...Eternal...
+* ...To mend...
+* ...To serve...
+}}
+
+== Location ==
+Cogwork Underflies can be found in the [[Underworks]], specifically in the Cauldron.
+
+{{Gallery
+|Image1 = Mapshot SS Cogwork Underfly 01.png!Location in the Underworks
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Cogwork Underfly 01.png!Idle
+|Image2 = Screenshot SS Cogwork Underfly 02.png!Attacking
+|Image3 = Screenshot SS Cogwork Underfly 03.png!Responding to the Needolin
+|Image4 = Screenshot SS Cogwork Underfly 04.png![[Silk Fly]] freed upon death
+|Image5 = Screenshot SS Cogwork Underfly 05.png!Modded shot of various Cogwork Underflies in the background without blur 
+}}
+
+{{Localisation
+|DEname = Räderwerk-Unterfliege
+|DEmeaning = Cogwork Underfly
+|ESname = Submosca mecánica
+|ESmeaning = Mechanical Underfly
+|FRname = Sous-mouche Mécanique
+|FRmeaning = Mechanical Underfly 
+|ITname = Fondomosca Meccanica
+|ITmeaning = Mechanical Bottom Fly
+|JAname = カラクリテントウ
+|JAromanised = Karakuri tentō
+|JAmeaning = Combination of {{lang|ja|カラクリ <i>karakuri</i>}} (mechanism) and {{lang|ja|転倒}} <i>tentō</i> (fall down).
+|KOname = 톱니바퀴 지하파리
+|KOromanised = Tomnibakwi jihapari
+|KOmeaning = Cogwheel Underground Fly
+|PTname =  Claustromosca Mecânica
+|PTmeaning = Mechanical Claustrofly<br><small><i>Claustromosca</i> is from <i>claustro-</i> (suffix for enclosed space) and <i>mosca</i> (fly).</small>
+|RUname = Заводная цехомуха
+|RUromanised = Zavodnaja cexomuxa
+|RUmeaning = Clockwork Workshop Fly
+|TWname = 機樞飛工
+|TWromanised = Jīshū fēi gōng
+|TWmeaning = same
+|ZHname = 机枢飞工
+|ZHromanised = Jīshū fēi gōng
+|ZHmeaning = Mechanical Flying Worker
+|CODEname = UNDERSTORE_AUTOMATON
+|CODEmeaning = 	"Understore" internally refers to the Underworks. Other [[Architects#Creations|Cogwork Bugs]] use the Automaton name internally
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

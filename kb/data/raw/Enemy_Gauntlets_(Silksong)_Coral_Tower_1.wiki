@@ -1,0 +1,51 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Coral_Tower_Arena_1.png|400px|center]]
+|[[File:Mapshot_SS_Coral_Tower.png|400px|center]]
+|-
+| colspan="2" | First floor enemy gauntlet of the Coral Tower. Requires [[Elegy of the Deep]].
+
+Most Coral Tower gauntlet enemies arrive from within coral pillars that shoot out from the floor or ceiling; the position of each is telegraphed by rumbling dust. These coral pillars can damage both Hornet and enemies that get hit.
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>Progress to floor 2</center>
+| <center>[https://youtube.com/watch?v=YHACfnIFkdY Coral Tower Battle]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Karaka.png|35x35px|link=Karaka]] [[Karaka]] x2, left and right
+| Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Yago.png|35x35px|link=Yago]] [[Yago]], top left<br/>
+[[File:HJ_Karaka.png|35x35px|link=Karaka]] Karaka, right
+|
+|-
+|
+[[File:HJ_Conchfly.png|35x35px|link=Conchfly]] [[Conchfly]] x3, top left, centre, and right
+| Conchflies burrow out of surfaces; middle Conchfly burrows up from the floor. Defeating two enemies spawns the next wave.
+|-
+|
+[[File:HJ_Kai.png|35x35px|link=Kai]] [[Kai]] x2, left<br/>
+[[File:HJ_Kai.png|35x35px|link=Kai]] Kai x3, left
+| Defeating two enemies spawns the next row.
+|-
+|
+[[File:HJ_Kakri.png|35x35px|link=Kakri]] [[Kakri]], top left<br/>
+[[File:HJ_Karaka.png|35x35px|link=Karaka]] Karaka, right
+| Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Kakri.png|35x35px|link=Kakri]] Kakri, top centre
+| Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Karaka.png|35x35px|link=Karaka]] Karaka, left<br/>
+[[File:HJ_Yago.png|35x35px|link=Yago]] Yago, top right
+|
+|}

@@ -1,0 +1,74 @@
+{{Navbar
+|page1 = Shadow Creeper (Hollow Knight)
+|title1 = Hollow Knight
+|page2 = Shadow Creeper (Silksong)
+|title2 = Silksong
+}}
+
+{{SS Infobox Enemy
+|title1 = Shadow Creeper
+| hasdrop = true
+| sh1 = 3-5
+| sh2 = 4-7
+|health = 40
+|damage_modifiers = {{SS Spaced Damage Modifiers|2|1.2|1|1|1}}
+|numbers_required = 16
+}}
+{{Quote
+|Hr = Journal
+|Shell-plated worm found only in the deepest depths. Seems to survive despite consuming no food or liquid.<hr/>
+A creature long familiar to me. I suspect that no matter how far I travel, if I descend deep enough they will always be there.
+}}
+
+<b>Shadow Creepers</b> are [[Shadow Creeper (Hollow Knight)|returning]] [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are shell-plated worms that inhabit the deepest depths and require no food or liquid to survive.<ref>Shadow Creeper [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Shell-plated worm found only in the deepest depths. Seems to survive despite consuming no food or liquid."</i></ref>
+
+== Behaviour and Tactics ==
+Shadow Creepers crawl back and forth on floors and walls, dealing {{Damage|1}} on contact.
+
+== Location ==
+Shadow Creepers can be found in [[The Abyss (Silksong)|the Abyss]].
+
+{{Gallery
+|Image1 = Mapshot SS Shadow Creeper 01.png!Locations in the Abyss
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Shadow Creeper 01.png!Crawling vertically
+|Image2= Screenshot SS Shadow Creeper 02.png!Crawling horizontally
+}}
+
+== Trivia ==
+* Shadow Creepers do not react to the [[Needolin]].
+
+{{Localisation
+|DEname = Schattenkriecher
+|DEmeaning = Shadow Crawler
+|ESname = Reptador sombrío
+|ESmeaning = Shadowy Crawler<br><small>Inconsistent with the <i>Hollow Knight</i> Shadow Creeper, which is translated as <i>trepasombras</i> (climb-shadow)</small>
+|FRname = Rampant Obscure
+|FRmeaning = Crawling Shadow<br><small>Inconsistent with the <i>[[Hollow Knight]]</i> [[Shadow Creeper (Hollow Knight)|Shadow Creeper]], which is translated as <i>rampant des ombres</i> (crawling of the shadows)</small>
+|ITname = Scarafide delle Ombre
+|ITmeaning = Shadow Crawler
+|JAname = カゲハイズリ
+|JAromanised = Kage haizuri
+|JAmeaning = Shadow Crawler<br><small>Combination of {{lang|ja|影}} <i>kage</i> (shadow) and {{lang|ja|這いずり}} <i>haizuri</i> (crawler).</small>
+|KOname = 그림자 포복충
+|KOromanised = Geurimja pobokchung
+|KOmeaning = Shadow Crawl Bug
+|PTname = Rastejador Sombrio
+|PTmeaning = Dark Crawler
+|RUname = Теневой ползун
+|RUromanised = Tenevoj polzun
+|RUmeaning = Shadow Crawler
+|TWname = 陰影爬蟲
+|TWromanised = Yīnyǐng pá chóng
+|TWmeaning = same
+|ZHname = 阴影爬虫
+|ZHromanised = Yīnyǐng pá chóng
+|ZHmeaning = Shadow Crawling Bug
+|CODEname= ABYSS_CRAWLER
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Enemies}}

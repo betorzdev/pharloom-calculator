@@ -1,0 +1,64 @@
+{{SS Infobox Tool
+| image = Ascendant's Grip.png
+| type = Yellow
+| effect = Allows [[Hornet (Silksong)|Hornet]] to stick to walls while using [[Cling Grip]]
+| location = [[Songclave]]
+| description = Gilded piton that allows one to hold in place while on a wall.
+}}
+
+{{Quote
+| A gleaming find for you climbing types. With this in your claw, you'll be able to stick to walls for as long as you like!
+| [[Jubilana]]
+| Hr = SS
+}}
+
+<b>Ascendant's Grip</b> is a {{CrestSlot|Yellow|1}} in <i>[[Hollow Knight: Silksong]]</i>. It allows [[Hornet (Silksong)|Hornet]] to stick to walls while using [[Cling Grip]].
+
+== Usefulness ==
+Ascendant's Grip causes [[Hornet (Silksong)|Hornet]] to stick in place while clinging to a wall rather than sliding down the surface. The effect can be cancelled by releasing movement inputs after clinging to a wall. The effect is not instantaneous; falling from high up before clinging to a wall will cause Hornet to slide down the wall a short distance before stopping.
+
+Ascendant's Grip is very useful in platforming sections that require a lot of wall movement. It can also be used to stall in the air during arena fights by clinging to a wall.
+
+== How to Acquire ==
+Sold by [[Jubilana]] in [[Songclave]] for {{R|350}}.
+
+{{Gallery
+|Image1 = Mapshot SS Jubilana 01.png!Location in Choral Chambers
+|Image2 = Screenshot SS Jubilana 01.png!Jubilana in Choral Chambers
+}}
+
+==Trivia==
+*Ascendant's Grip originally had a slightly different design, and was planned to be a {{CrestSlot|Blue|1}} instead of a {{CrestSlot|Yellow|1}}.<ref name="edge52">[https://pocketmags.com/us/edge-magazine/february-2021 <i>Edge Magazine</i> February 2021 Edition] p. 52.</ref>
+
+{{Localisation
+|DEname = Aufsteigergriff
+|DEmeaning = Climber Grip
+|ESname = Agarre del ascendente
+|ESmeaning = Ascendant's Grip
+|FRname = Griffe du grimpeur
+|FRmeaning = Climber's Grip
+|ITname = Stretta dell'ascendente
+|ITmeaning = Grip of the Ascendant
+|JAname = 登攀者の爪
+|JAromanised = Tōhansha no tsume
+|JAmeaning = Climber's Claw
+|KOname = 등반의 쇠못
+|KOromanised = Deungbanui soemot
+|KOmeaning = Climber's Nail
+|PTname = Empunhadura de Subida
+|PTmeaning = Ascending Grip
+|RUname = Зацеп скалолаза
+|RUromanised = Zacep skalolaza
+|RUmeaning = Climber's Grip
+|TWname = 登峰之爪
+|TWromanised = Dēngfēng zhī zhǎo
+|TWmeaning = Claw of Peak-climbing
+|ZHname = 登极握爪
+|ZHromanised = Dēngjí wòzhǎo
+|ZHmeaning = Enthroning Grip Claw or Ascend Extremes Grip Claw
+|CODEname=WALLCLING
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Griffe du grimpeur]]

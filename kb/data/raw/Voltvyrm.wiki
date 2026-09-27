@@ -1,0 +1,105 @@
+{{SS Infobox Boss
+|drops = [[Volt Filament]]
+|health = 550
+|image1 = B Voltvyrm.png
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.8|1.2|1|0.9|0.8}}
+|numbers_required = 1
+|theme = [https://www.youtube.com/watch?v=WJt4oeA9FxM&list=RDWJt4oeA9FxM&start_radio=1 Sister Splinter]
+|location = [[Voltnest]]
+}}
+{{Quote
+|Hr = Journal
+|Coiled nest of charged worms. Assaults intruders with bolts of crackling electricity.<hr/>
+Barely a bug, and possessing only basic thought, yet instinct alone proved enough to turn it deadly.
+}}
+
+<b>Voltvyrm</b> is a [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. It is a nest of coiled worms found in the recesses of the [[Voltnest]] capable of controlling electricity to attack intruders.<ref name=hj/> Defeating it grants the [[Volt Filament]].
+
+== Background ==
+Voltvyrm is a nest of charged worms which resides in Voltnest. It attacks anyone who intrudes on its home with electricity.<ref name=hj>Voltvyrm [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Coiled nest of charged worms. Assaults intruders with bolts of crackling electricity."</i></ref> It is completely unaffected by the [[Haunting]], but possesses only basic thought.<ref>[[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Barely a bug, and possessing only basic thought, yet instinct alone proved enough to turn it deadly."</i></ref>
+
+[[The Citadel]] [[The Choir|choir]] bugs kept Voltvyrms and [[Voltridian]] in the northern section of the [[Memorium]]. The [[Memoria|Memoriae]] studied and experimented with Voltvyrms, using their research to create [[Voltvessels]], the effects of which greatly resemble the Voltridian-boosted attacks of Voltvyrms.
+
+== In-game Events ==
+Voltvyrm is encountered at the end of [[Voltnest]]. Upon defeat, the [[Volt Filament]] floats down out of its shell.
+
+[[Nuu]] appears in its arena later on, inspecting the Voltvyrm's corpse.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+The Voltvyrm resides in a ceiling mass of barnacles, switching randomly between 3 holes (left, right, or centre) to emerge from. When it emerges from a hole, it performs an electric attack before retreating and repeating the process. It has the following two attacks:
+* <b>Volt Pillars</b>: Voltvyrm creates waves of electric columns that span the arena vertically in the following patterns:
+** 3 waves of paired columns which start from the edges of the arena and close in, ending with the 2 middle columns.
+** 3 waves of paired columns which start from the middle and expand outwards to the edges of the arena.
+** 4 waves consisting of 2 columns at the edges, then the 2 middle columns one after the other, and finally ending with the 2 columns between the edges and the centre.
+* <b>Volt Field</b>: Voltvyrm creates a burst of small electric circles across the arena in the following patterns:
+** 6 circles in a line, with each alternating the top and bottom halves of the arena, creating a zigzag pattern.
+** 6–7 paired up circles in a line, with each pair alternating the top and bottom halves of the arena, creating a looser zigzag.
+** 6 circles stacked in pairs to create 3 spaced-apart columns.
+** 7 circles that cover the entire ground of the arena, forcing [[Hornet (Silksong)|Hornet]] to be airborne.
+All electric attacks are first telegraphed by the area of effect being outlined in glowing pink light, before then creating a lingering zone of damage.
+
+If Hornet jumps into the mass of Barnacles on the ceiling, she takes electric damage. All electric damage, including Voltvyrm's attacks, deal {{Damage|1+1}}. Contact with Voltvyrm only deals {{Damage|1}}.
+
+== Location ==
+Voltvyrm is found at the end of [[Voltnest]] in the northern part of [[Sands of Karak]].
+
+{{Gallery
+|Image1 = Mapshot SS Voltnest.png!Location of Voltnest
+|Image2 = Mapshot SS Voltvyrm 01.png!Voltvyrm location in Voltnest
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Voltvyrm 03.png!Inactive before the battle
+|Image2 = Screenshot SS Voltvyrm 01.png!Volt Field Configurations
+|Image3 = Screenshot SS Voltvyrm 05.png!Volt Field 
+|Image4 = Screenshot SS Voltvyrm 02.png!Volt Pillar
+|Image5 = Screenshot SS Volt Filament 01.png!Volt Filament drifting after defeating Voltvyrm
+|Image6 = Screenshot SS Volt Filament 02.png!Volt Filament next to Voltvyrm remains
+|Image7 = Screenshot SS Sands of Karak 07.png!Arena in Voltnest
+|Image8 = Screenshot SS Voltnest 02.png!Nuu inspecting Voltvyrm remains in Voltnest
+|Image9 = Screenshot SS Memoria 02.png!Voltvyrm remains in the Memorium around the [[Voltvessels]] [[Tools|Tool]]
+}}
+
+== Trivia ==
+* Voltvyrm does not respond to the [[Needolin]].
+* Unused sprite of a Voltvyrm corpse exists in the game files.
+{{Gallery
+|Image1 = Cut_Voltvyrm_Corpse.png!Cut Voltvyrm Corpse
+}}
+{{Localisation
+|DEname = Voltvyrm
+|DEmeaning = —
+|ESname = Voltvyrm
+|ESmeaning = —
+|FRname = Foudrelon
+|FRmeaning = Portmanteau of <i>foudre</i> (lightning) and <i>frelon</i> (hornet).
+|ITname = Voltverme
+|ITmeaning = Volt Worm
+|JAname = パチパチニア
+|JAromanised = Pachipachinia
+|JAmeaning = From パチパチ <i>pachipachi</i> (Japanese onomatopoeia for crackling).
+|KOname = 벼락벌레
+|KOromanised = Byeolakbeolle
+|KOmeaning = Lightning Worm or Lightning Bug
+|PTname = Voltvyrm
+|PTmeaning = —
+|RUname = Червевольт
+|RUromanised = Červevol't 
+|RUmeaning = Portmanteau of {{lang|ru|червей}} <i>červej</i> (worm) and {{lang|ru|вольт}} <i>vol't</i> (volt).
+|TWname = 雷電維姆
+|TWromanised = Léidiàn wéimǔ
+|TWmeaning = Lighting Vyrm<br><small>{{lang|zh-Hant|維姆 <i>wéimǔ</i>}} (vyrm) is based on {{lang|zh-Hant|沃姆 <i>wòmǔ</i>}} (wyrm).</small>
+|ZHname = 伏特维姆
+|ZHromanised = Fútè wéimǔ
+|ZHmeaning = Voltvyrm<br><small>{{lang|zh-Hans|伏特 <i>fútè</i>}} (volt) is an English loanword. {{lang|zh-Hans|维姆 <i>wéimǔ</i>}} (vyrm) is based on {{lang|zh-Hans|沃姆 <i>wòmǔ</i>}} (wyrm).</small>
+|CODEname = ZAP_CORE_ENEMY
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[pt:Voltvyrm]]

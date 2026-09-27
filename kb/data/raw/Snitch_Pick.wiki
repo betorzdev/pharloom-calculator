@@ -1,0 +1,72 @@
+{{SS Infobox Tool
+| type = Blue
+| effect = Steals [[Rosaries]] and [[Shell Shards]] from enemies upon hitting them with [[Clawline]]
+| location = [[Blasted Steps]]
+| description = Hooked tool for the forceful retrieval of loot from bugs and husks.<hr/>
+Harpoon into foes to steal rosaries and shell shards, while causing additional damage.
+}}
+
+{{Quote
+| Basic tool'o the job, here. Throw your big needle and scratch shinies straight off your target's shell!
+| [[Grindle]]
+| Hr = SS
+}}
+
+<b>Snitch Pick</b> is a {{CrestSlot|Blue|1}} in <i>[[Hollow Knight: Silksong]]</i>. Striking an enemy with [[Clawline]] will cause them to drop [[Shell Shards]] and [[Rosaries]]. It has the hidden effect of also increasing Clawline damage.
+
+== Usefulness ==
+* The Snitch Pick makes the [[Clawline]] deal additional damage to enemies by granting a third additional hit that does damage equal to 0.25 times the Needle's base damage.
+**In other words, when the Snitch Pick is equipped, the total amount of damage changes from the standard <math>(2\times0.50N)</math> present in the base Clawline to <math>((2\times0.50N)+(1\times0.25N))</math>, where <math>N</math> equals damage from the base Needle. The damage from the additional hit cannot be changed in any way except by upgrading the Needle.
+*The third additional hit causes the enemy to drop some [[Rosaries]] and [[Shell Shards]]. The dropped Rosaries are subtracted from the amount that the enemy will drop when defeated, but the dropped Shell Shards are not.
+** Because of this, the Snitch Pick is more helpful for actively farming Shell Shards than for Rosaries, though it can also be used to snag some extra Rosaries from enemies in passing during exploration. {{MissingInfo}}
+
+== How to Acquire ==
+Purchased from [[Grindle]] in [[Blasted Steps]] for {{R|740}} after acquiring the Clawline ability.
+
+{{Gallery
+|Image1 = Mapshot SS Grindle 01.png!Location in Blasted Steps
+|Image2 = Screenshot SS BlastedSteps 06.png!Grindle in Blasted Steps
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Snitch Pick stealing.png! Snitch Pick in action
+}}
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Fixed Snitch Pick not giving [[rosaries]] and [[Shell Shards|shell shards]] as intended.
+|1.0.29909 (Patch 5): Fixed Snitch Pick not doing its 3rd hit of damage when in a memory.
+}}
+{{Localisation
+|DEname = Stibitzhacke
+|DEmeaning = Portmanteau of <i>stibitzen</i> (to pilfer) and <i>hacke</i> (hook).
+|ESname = Pico hurgón
+|ESmeaning = Rummager Pick
+|FRname = Serrepince
+|FRmeaning = Portmanteau of <i>serrer</i> (to grip) and <i>pince</i> (pliers).
+|ITname = Rubaldello
+|ITmeaning = Portmanteau of <i>rubare</i> (to steal) and <i>grimaldello</i> (lock pick).
+|JAname = 強奪のピック
+|JAromanised = Gōdatsu no pikku
+|JAkatakana = foreign
+|JAmeaning = Robbing Pick
+|KOname = 밀고의 갈고리
+|KOromanised = Milgoui galgori
+|KOmeaning = Snitch's Pick<br><small>{{lang|ko|밀고}} <i>milgo</i> means snitch as in an informer, and not the act of stealing.</small>
+|PTname = Catassaque
+|PTmeaning = Portmanteau of <i>catar</i> (to pick up) and <i>saque</i> (loot)
+|RUname = Доставатель
+|RUromanised = Dostavatel'
+|RUmeaning = From {{lang|ru|доставать <i>dostavat'</i>}} (to obtain) and {{lang|ru|-тель <i>-tel'</i>}} (agent suffix).
+|TWname = 扒手鉤
+|TWromanised = Páshǒu gōu
+|TWmeaning = Pickpocket Hook
+|ZHname = 撬赃钩
+|ZHromanised = Qiào zāng gōu
+|ZHmeaning = Loot Prier Hook
+|CODEname = THIEF_CLAW
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Serrepince]]

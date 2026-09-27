@@ -1,0 +1,731 @@
+{{SS Infobox Boss
+|label1 = NPC
+|location = Various
+|image1 = <gallery>
+Shakra idle.png|Standing
+Shakra Crouching.png|Crouching
+Shakra Sitting.png|Sitting
+</gallery>
+|va = Lauren Koopowitz<ref name = va>[https://www.youtube.com/watch?v=pA7Id7lff6E Interview with Lauren Koopowitz] on YouTube</ref>
+|combat1 = false
+|quest = [[Trail's End]]
+|singnum = 5
+
+|label2 = Boss
+|title2 = Shakra
+|location2 = [[Greymoor]]
+|image2 = <gallery>
+B Shakra.png|Hunter's Journal
+Shakra Staggered.png|Staggered
+</gallery>
+|health2 = 600
+|damage_modifiers2 = {{SS Spaced Damage Modifiers|1.5|1.15|1|0.9|0.9}}
+|drops2 = None
+|numbers_required2 = 1
+|g2 = Shakra
+|va2 = Lauren Koopowitz<ref name = va />
+|singnum2 = 5
+|theme2=[https://youtube.com/watch?v=swPmNk9_fw0 Generic Enemy Battle A Track]
+
+}}
+
+{{Quote
+| Hr = Journal
+| Warrior cartographer of a tribe from Pharloom's edge. Her skills in battle could challenge the kingdom's best.<hr/>
+She has lived a mere fraction of my lifetime and yet her rings prove a ferocious match. As gifted a warrior as I have ever encountered, and one I am fortunate to call a friend.
+}}
+
+<b>Shakra</b> is a [[NPCs (Silksong)#Merchants|Merchant]] and [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. She is a warrior cartographer from [[Pharloom]]'s edge seeking to find her master.<ref name=gender/><ref name=master/> She sells [[Map and Quill (Silksong)|maps]] and mapping tools in exchange for [[Rosaries]]. After completing the <i>[[Trail's End]]</i> [[Wishes|wish]], she can be dueled in [[Greymoor]] during [[Act 2]].
+
+== Background ==
+Shakra is a warrior and navigator from a tribe on [[Pharloom]]'s edge.<ref name=gender /> Shakra's tribe values prowess in combat<ref>Shakra: <i>"Ended by age... My tribe would call that shame,"</i></ref> and refer to one another by the weapon they carry.<ref>Shakra: <i>"I am Shakra, Wielding Rings."</i><br>Shakra: <i>"Poshanka, Hornet Wielding Needle. For that is your name, is it not?"</i></ref> The members of her tribe that leave their nest-plains, including herself, cannot return.<ref>Shakra: <i>"I shall not return, Hornet Wielding Needle... I cannot. To leave my tribe's nest-plains, that journey has only one direction."</i></ref> She traverses Pharloom in search for her lost master.<ref name=master>Shakra: <i>"I came deeper into Pharloom in search of my mentor, the greatest of my tribe."</i></ref><ref>Shakra: <i>"An unfortunate thing that my great mentor never learnt the skill. Her talent at getting lost... I should almost be impressed..."</i></ref>
+
+== In-game Events ==
+Shakra can be encountered in various locations in [[Pharloom]], adding new goods to her shop in almost every new area. With the exception of [[Bone Bottom]] and [[Bellhart]], once Shakra has been encountered in a location, she moves on and does not return to that location.<ref group=Source>FSM <code>mapper_evaluate_location</code> in <code>fsmtemplates_assets_mapper.bundle</code>.</ref> Shakra may leave an area before [[Hornet (Silksong)|Hornet]] finds her if certain conditions are met; in such cases, her shop items for those areas can be purchased on her next encounter.
+
+Shakra can be first encountered in [[the Marrow]]. After the [[Bell Beast]] is defeated, she resides on a ledge on the eastern side of Bone Bottom. If Shakra is away, she can be called back by hitting her ring pole. Once [[Widow]] is defeated, or if <i>[[The Terrible Tyrant]]</i> [[wish]] is completed,<ref group=Source>FSM <code>Mapper Control</code> in <code>bonetown.bundle</code>.</ref> Shakra moves to Bellhart permanently and does not return to Bone Bottom even if called. Once in Bellhart, Shakra can be called back from her travels by hitting her new ring pole.
+
+Shakra appears as a combat ally in [[Enemy Gauntlets (Silksong)/Hunter's March 2|the enemy gauntlet]] in [[Hunter's March]] if Hornet has not visited [[Greymoor]], [[Bellhart]] or [[Shellwood]] yet.<ref group=Source>FSM <code>CallAlly</code> in <code>ant_04_mid.bundle</code>.</ref> If Shakra does not appear for the fight, she can be encountered in a later section of Hunter's March, in the long tunnel leading east to the [[Chapel of the Beast]]. Hornet can also request Shakra's aid with [[Enemy Gauntlets (Silksong)/High Halls 1|the enemy gauntlet]] at [[the Forum]], if the <i>[[Trail's End]]</i> [[wish]] has been completed. Shakra replaces [[Garmond & Zaza]]'s own appearance here if their quest has also been completed.<ref group=Source>FSM <code>Aid NPC Control</code> in <code>hang_06.bundle</code>.</ref>
+
+If the prerequisites for the <i>[[Trail's End]]</i> wish are fulfilled, Shakra disappears from all locations and will not return until the wish is completed.<ref group=Source><code>GameManager.TimePasses()</code> calls <code>MapperLeaveAll()</code>.</ref>
+
+After the wish is completed, Shakra gives Hornet the [[Throwing Ring]] Tool, and can be asked to assist with the Forum fight in [[High Halls]]. Shakra can also be met just outside the Greymoor entrance to Bellhart by hitting the ring pole there, upon which she challenges Hornet to a friendly duel that can be repeated even after winning. There is no reward for winning the duel. The duel is no longer accessible during Act 3, and is also inaccessible while the [[Flea Caravan]] is in Greymoor.
+
+Once [[Act 3]] begins, Shakra takes up the role of defender of Bellhart, and only rests inside the town occasionally.<ref group=Source>FSM <code>Mapper Control</code> in <code>belltown.bundle</code>.</ref> She can sometimes be seen killing enemies outside the town entrances in Greymoor and Shellwood.<ref group=Source>GameObject <code>Shakra Guard Scene</code> checks <code>mapperLocationAct3</code> in <code>greymoor_08.bundle</code> and <code>shellwood_01.bundle</code>.</ref>
+
+=== Benches ===
+Shakra also sets up temporary [[Bench (Silksong)|Benches]] at her camps in Greymoor and Mount Fay, providing convenient [[Save Data (Silksong)/Save Points|save points]] while Hornet completes challenges nearby. Shakra abandons each camp after Hornet fulfils a respective condition:
+* Defeating [[Enemy Gauntlets (Silksong)/Greymoor 3|the enemy gauntlet]] at [[Craw Lake]]
+* Obtaining the [[Faydown Cloak]] at the summit of [[Mount Fay]]
+
+The cloth disappears from each Bench afterwards, and they can no longer be interacted with.
+
+{{Gallery
+| Image1 = Bench SS Tent Greymoor.png!Shakra's Bench in [[Greymoor]]
+| Image2 = Bench SS Tent Mount Fay.png! Shakra's Bench on [[Mount Fay]]
+}}
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+Shakra has the following moves as both an ally and an opponent:
+* <b>Teleport</b>: Between each attack, Shakra rapidly teleports 1–3 times as her main form of movement around the available space. She always maintains distance between herself and her opponent with each teleport.
+* <b>Ring Throw</b>: Shakra teleports mid-air and quickly tosses 1–2 rings in quick succession at her opponent. These rings bounce once and are not affected by gravity.
+* <b>Ring Burst</b>: Shakra teleports directly above her opponent and pauses for a moment before slamming down to the ground, creating a ring-shaped burst of energy around herself. Against Hornet, this deals {{Damage|2}}.
+
+When allied with Hornet against other foes, Shakra occasionally blocks enemy attacks or projectiles. After blocking 15 times, she becomes stunned and falls to her knees. She recovers after 6 seconds, or immediately if Hornet [[Bind]]s near her. 
+
+While sparring with her in Greymoor, Shakra also has the following moves:
+* <b>Ring Thrust</b>: Shakra teleports to the ground and quickly dashes towards Hornet, creating a large pulse of energy with her rings at the end of the dash that deals {{Damage|2}}. If Hornet is behind her, she follows this up by throwing a ring in the opposite direction of the dash.
+If Hornet is defeated, she simply passes out and wakes up by the challenge ring post. As such, losing this duel in {{Steel Soul Icon Mini|SS}} [[Steel Soul Mode (Silksong)|Steel Soul Mode]] will not cause permanent loss of the [[Save Data (Silksong)|save profile]].
+<hr />
+
+{{Stagger
+| Shakra stumbles and crouches to the ground.
+| 11
+| game = SS
+}}
+
+<hr />
+
+== Goods ==
+=== Maps ===
+{| class="article-table formatted-table" width="100%"
+! style="width: 8rem;" | Item
+! style="width: 5rem;" | Cost
+! Shakra's Description
+! style="min-width: 12rem;" | Requires<ref group=Source><code>shopitems.bundle</code> checks flags <code>SeenMapperIn[Area]</code> for maps to appear in shop. These flags are set either by meeting Shakra directly in the areas, or by <code>fsmtemplates_assets_mapper.bundle</code> when it checks various other flags.</ref>
+|-
+! [[File:Mosslands Map.png|center|72x72px]]
+[[Mosslands]] Map
+| align="center" | {{R|40}}
+| <i>These overgrown caves offer little challenge to a skilled warrior. A place for reflection, perhaps.</i>
+|
+|-
+! [[File:The Marrow Map.png|center|72x72px]]
+[[The Marrow]] Map
+| align="center" | {{R|50}}
+| <i>Crumbling roads built upon the shells of ancient bugs. All of Pharloom rests upon these fragile foundations.</i>
+|
+|-
+! [[File:Deep Docks Map.png|center|72x72px]]
+[[Deep Docks]] Map
+| align="center" | {{R|50}}
+| <i>These docks, I thought them small when first I passed. Now I feel the structure's true bulk hides below the molten lake.</i>
+| Meeting Shakra in [[Deep Docks]], or activating the [[Bellshrine]] in the area, or defeating [[Widow]]
+|-
+! [[File:Far Fields Map.png|center|72x72px]]
+[[Far Fields]] Map
+| align="center" | {{R|50}}
+| <i>Fierce red-shells nest across these wide caverns. Battle with them is most intense. Impressive are the warriors of Pharloom.</i>
+| Meeting Shakra in [[Far Fields]], or defeating Widow, or unlocking [[Drifter's Cloak]], or entering [[the Citadel]]
+|-
+! [[File:Wormways Map.png|center|72x72px]]
+[[Wormways]] Map
+| align="center" | {{R|70}}
+| <i>Worm-ridden caverns, shaking and unstable. There remain faint signs that pilgrims once travelled these tight paths.</i>
+| Meeting Shakra in [[Wormways]], or entering the Citadel
+|-
+! [[File:Hunter's March Map.png|center|72x72px]]
+[[Hunter's March]] Map
+| align="center" | {{R|70}}
+| <i>Burrowed paths of the red-shells. Their stores and shrines are frequent throughout. These tunnels must grant them swift passage about the fields below.</i>
+| Meeting Shakra in [[Hunter's March]]
+|-
+! [[File:Greymoor Map.png|center|72x72px]]
+[[Greymoor]] Map
+<ref group="Note">Also grants map for [[Wisp Thicket]].</ref>
+| align="center" | {{R|70}}
+| <i>Wide, dim hollows, choked by rag and dust. The bugs who once tended these lands have clearly lost their way.</i>
+| Meeting Shakra in [[Greymoor]], or activating the [[Bellshrine]] in the area, or unlocking [[Thread Storm]]
+|-
+! [[File:Bellhart Map.png|center|72x72px]]
+[[Bellhart]] Map
+| align="center" | {{R|40}}
+| <i>A town built within the thick vein of bells that runs through Pharloom's core. One wonders who would craft so many, and for what purpose?</i>
+| Entering [[Bellhart]]
+|-
+! [[File:Shellwood Map.png|center|72x72px]]
+[[Shellwood]] Map
+| align="center" | {{R|70}}
+| <i>Tangled roads choked beneath bramble and root. The flora is often as deadly as the creatures who call this place home.</i>
+| Meeting Shakra in [[Shellwood]], or unlocking [[Cling Grip]], or defeating Widow
+|-
+! [[File:Blasted Steps Map.png|center|72x72px]]
+[[Blasted Steps]] Map
+| align="center" | {{R|70}}
+| <i>Huge caves ascending to Pharloom's Citadel. The roads are slowly being devoured by sand and howling wind.</i>
+| Meeting Shakra in [[Blasted Steps]], or defeating [[Last Judge]]
+|-
+! [[File:Sinner's Road Map.png|center|72x72px]]
+[[Sinner's Road]] Map
+| align="center" | {{R|90}}
+| <i>Old roads and passages overrun by roaches and their keepers. The ways are covered thick with filth.</i>
+| Meeting Shakra in [[Sinner's Road]]
+|-
+! [[File:Mount Fay Map.png|center|72x72px]]
+[[Mount Fay]] Map
+| align="center" | {{R|40}}
+| <i>The jagged crest looming over all of Pharloom. Its whipping winds and bitter cold would pierce the strongest shell.</i>
+| Meeting Shakra in [[Mount Fay]], or unlocking [[Faydown Cloak]]
+|-
+! [[File:Sands of Karak Map.png|center|72x72px]]
+[[Sands of Karak]] Map
+| align="center" | {{R|90}}
+| <i>Crusted heights above those howling steps. Signs suggest great warriors once ruled this winding place, though the sand has eroded much of their mark.</i>
+| Meeting Shakra in [[Sands of Karak]], or defeating the [[Raging Conchfly]] in the area
+|-
+! [[File:Bilewater Map.png|center|72x72px]]
+[[Bilewater]] Map
+| align="center" | {{R|90}}
+| <i>Swamps born in the Citadel's shadow. There is evidence the waters here once ran clear.</i>
+| Meeting Shakra in [[Bilewater]], or defeating [[Groal the Great]]
+|}
+Buying all of Shakra's maps costs {{R|890}} total, and is a prerequisite for the <i>[[Trail's End]]</i> wish.
+=== Mapping Tools ===
+{| class="article-table" width="100%"
+! style="width: 8rem;" | Item
+! style="width: 5rem;" | Cost
+! Shakra's Description
+! style="width: 12rem;" | Requires
+|-
+! [[File:Quill (Silksong).png|center|link=Map and Quill (Silksong)|72x72px]]
+[[Map and Quill (Silksong)|Quill]]
+| align="center" | {{R|50}}
+| <i>With this quill, you can add any new areas you discover to the maps that you own. We pluck these quills from Golpeni hunted by my tribe. Their hollowed shafts make the perfect charting tool.</i>
+|
+|-
+! [[File:Compass.png|center|link=Compass|72x72px]]
+[[Compass ]]
+| align="center" | {{R|70}}
+| <i>Track your location throughout these winding lands with a bone compass. Each member of our tribe can craft them. I would pass you mine, for a small price.</i>
+|
+|}
+
+=== Map Pins ===
+{| class="article-table" width="100%"
+! style="width: 8rem;" | Item
+! style="width: 5rem;" | Cost
+! Shakra's Description
+! style="width: 12rem;" | Requires
+|-
+! [[File:Bench Pins.png|center|72x72px]]
+[[Bench (Silksong)|Bench]] Pins
+| align="center" | {{R|60}}
+| <i>When travelling in unfriendly lands, it is important to remember safe places to camp.</i>
+<i>These pins will mark benches and other rest spots on your map.</i>
+|
+|-
+! [[File:Bellway Pins.png|center|72x72px]]
+[[Bellways|Bellway]] Pins
+| align="center" | {{R|60}}
+| <i>The bellways, gilded veins that run throughout the lands. Supposedly, they were once used for travel?</i>
+<i>These pins will mark stations on your map.</i>
+| Defeating the [[Bell Beast]]
+|-
+! [[File:Ventrica Pins.png|center|72x72px]]
+[[Ventrica]] Pins
+| align="center" | {{R|80}}
+| <i>As you requested, these pins will mark the travel stations within that hideous structure of steel and steam.</i>
+| After opening the first [[Ventrica]], Hornet will request Ventrica pins when next talking to Shakra, but the pins will not be available for sale until a subsequent encounter.
+|-
+! [[File:Vendor Pins (Silksong).png|center|72x72px]]
+[[NPCs (Silksong)#Merchants|Vendor]] Pins
+| align="center" | {{R|60}}
+| <i>Many of Pharloom's bugs have useful equipment and items to trade. It would do you well to keep track of their locations with this pin.</i>
+<i>These pins will mark vendors on your map.</i>
+| Entering [[Deep Docks]], [[Wormways]], or [[Greymoor]]
+|-
+! [[File:Shell Marker (Silksong).png|center|72x72px]]
+Shell Marker
+| align="center" | {{R|40}}
+| <i>You can use these to mark places of importance or reminders on your map.</i>
+<i>These markers I have modelled after the sheen of my own shell. Perhaps you will think of me when you use them.</i>
+|
+|-
+! [[File:Ring Marker.png|center|72x72px]]
+Ring Marker
+| align="center" | {{R|40}}
+| <i>You can use these to mark places of importance or reminders on your map.</i>
+<i>With these I often mark the locations of worthy foes.</i>
+| Entering [[Deep Docks]] or [[Wormways]]
+|-
+! [[File:Hunt Marker.png|center|72x72px]]
+Hunt Marker
+| align="center" | {{R|60}}
+| <i>You can use these to mark places of importance or reminders on your map.</i>
+<i>The shell of the red-hunters makes for a vivid marker indeed.</i>
+| Meeting Shakra in [[Hunter's March]], or defeating [[Widow]]
+|-
+! [[File:Dark Marker.png|center|72x72px]]
+Dark Marker
+| align="center" | {{R|90}}
+| <i>You can use these to mark places of importance or reminders on your map.</i>
+<i>This dark-shell material is cold to the touch, and more resilient than it looks.</i>
+| Entering the [[Citadel]]
+|-
+! [[File:Bronze Marker.png|center|72x72px]]
+Bronze Marker
+| align="center" | {{R|120}}
+| <i>You can use these to mark places of importance or reminders on your map.</i>
+<i>These I have fashioned from the husks of old bells. A hard task to make, so the cost reflects the extra effort.</i>
+| Entering the [[Citadel]]
+|}
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = Poshanka! Edges sharp and senses keen!<br>
+In my land, that is the way warriors greet each other. For though you are a child barely hatched, you are also a warrior. Your stance, your weapon, your movements all proclaim it so.<br>
+{{HTalk|You have keen sight for my skill, bug, but my childhood has long since passed. What has happened here? I see signs of battle all around.}}<br>
+These strange, shuffling pilgrims... In the camp below they were docile enough, but up here they seem to have lost their senses. They cry out to the darkness and attack their fellow travellers.<br>
+Yakkanesh! Keep your weapon drawn and your bearings true! The way ahead is winding, and to lose one's way invites only death.<br>
+I am a navigator amongst my tribe and have been making maps of these lands. I can trade them with you, and supplies, if you wish.
+| Title1_Event2 = After opening the shop the first time
+| Title1_Dialogue2 = In these lands names are given freely, are they not? I am Shakra, Wielding Rings. If our hunts intertwine again, I will have new maps to trade.<br>
+Until then, farewell, Child Wielding Needle.
+| Title1_Event3 = Speaking outside of [[Bone Bottom]] or [[Bellhart]], if Hornet has not had this conversation
+| Title1_Dialogue3 = {{HTalk|Who are you calling for, Shakra? Your voice echoes through the caverns.}}<br>
+I came deeper into Pharloom in search of my mentor, the greatest of my tribe. I could not keep pace though, and her trail grew cold.<br>
+She will have travelled much farther by now, but if I keep moving and stay vigilant I will reunite with her.
+| Title1_Event4 = Buying the last item of stock
+| Title1_Dialogue4 = You have purchased the last of my mapping stock, for now. Stay alive on your journey, and when our paths next cross we may trade again.
+| Title1_Event5 = Speaking when Shakra has no items to offer
+| Title1_Dialogue5 = In this moment, I have no more items to trade. Perhaps, if we meet again on the roads ahead, I shall have crafted new goods to sell.
+| Title1_Event6 = After using the calling ring for the first time
+| Title1_Dialogue6 = Poshanka! So you found my calling ring, Child Wielding Needle. I recognised the sound of your weapon's foreign metal against it.<br>
+On the hunt for my master, I am often away, but I still use this place as camp. Use the ring to call me whenever you wish to make trade.
+| Title1_Event7 = First conversation after travelling via [[Fast Travel (Silksong)#Ventrica|Ventrica]]
+| Title1_Dialogue7 = {{HTalk|Shakra, if I may, I'd ask a small task of your carving talents.}}<br>
+{{HTalk|Within the halls of the Citadel, I encountered a means of travel new to me, a network of pipes traversed in vessels propelled by steam and air.}}<br>
+{{HTalk|That Citadel is a labyrinth, and pins to mark each station would prove useful to me.}}<br>
+What you describe sounds as hideous and unnatural as anything in that place. Still, if it will aid you, I shall craft the pins.<br>
+Seek me at a moment not long from now. The pins will be carved, and we may trade.
+| Title1_Event8 = While [[Cursed Crest|Cursed]]
+| Title1_Dialogue8 = Gara Takana! What has happened to you, Child Wielding Needle, to cause you such brutal weakening?<br>
+{{HTalk|You are seeing the effects of a parasite, Shakra, a writhing entity implanted by force. It will not kill me, not quickly at least, but its presence wears greatly on my shell.}}<br>
+It is a horrid state you suffer. Fight yourself free, or find help with haste. I would not wish to see you defeated by such deceitful strength.
+| Title1_Event9 = While infested by [[Muckmaggot]]s
+| Title1_Dialogue9 = Ka, va! Your shell is ridden with those gruesome maggots. It was a foolish choice of yours to swim in their sickly pools.<br>
+{{HTalk|This was by no means desired, Shakra. For now, I think it best you remain at limb's length.}}<br>
+{{HTalk|I shall not abide this infestation long. By Silk or by rest I shall soon see myself cleansed.}}
+| Title1_Event10 = If Hornet does not own a Quill, does own Maps, and [[the Citadel]] has been visited
+| Title1_Dialogue10 = You hold many charts, Child Wielding Needle. You should consider trading for a quill. <br>
+With a quill in claw, your maps can be further extended from your own travels. Record enough and you may, in time, come to know this kingdom all.<br>
+| Title1_Event11 = Speaking to Shakra after seeing her in [[Far Fields]], [[Shellwood]], [[Sinner's Road]], [[Bilewater]], [[Wormways]], or [[Blasted Steps]], if Hornet has not had this conversation
+| Title1_Dialogue11 = {{HTalk|To search these lands so thoroughly, Shakra... I wonder, who is it you hope to find?}}<br>
+Okklu-Din... a perceptive question. I travel in search of my mentor, the greatest of my tribe. I have followed her trail throughout this kingdom, but have so far failed to catch her.<br>
+She will have travelled much farther by now, but if I keep moving and stay vigilant, we shall reunite.
+| Title1_Event12 = After having both [[Map and Quill (Silksong)|Map and Quill]]
+| Title1_Dialogue12 = {{HTalk|Your charts and tools show fine skill, Shakra. I've met few who'd match your talent.}} <br>
+Cartography! Peh. Bakallo! It is a craft-skill common amongst my tribe. Most important to keep one's mind sharp when on a journey.<br>
+The charting of caverns, the memory of travel, the knowing of one's place within the kingdom, an engaging task for a warrior's mind.<br>
+An unfortunate thing that my great mentor never learnt the skill. Her talent at getting lost... I should almost be impressed...
+| Title1_Event13 = Speaking after completing <i>[[Trail's End]]</i>
+| Title1_Dialogue13 = {{HTalk|Your master has been found, Shakra. Your task in these lands is finished. Will you now return to your tribe?}}<br>
+I shall not return, Hornet Wielding Needle... I cannot. To leave my tribe's nest-plains, that journey has only one direction.<br>
+This has always been our way, our long leaving, for those few who survive till age seeks to claim their shell, and those fewer who choose to send them on.<br>
+But these lands, Pharloom... My nest-plains I once saw so grand, now they become small. A place for birth, and growing, but a place too narrow to live a bug's life full.
+| Title1_Event14 = Playing the [[Needolin]]
+| Title1_Dialogue14 = [n]Beyond land's bounds...<br>
+Warrior's call...<br>
+We fall with weapons high...<br>
+We fight on... fearless...<br>
+Strength and courage...<br>
+Discipline and skill...<br>
+
+| Title2 = Areas
+| Title2_Event1 = [[The Marrow]]
+| Title2_Dialogue1 = <b> Speaking while having less than {{R|20}}:</b><br>
+You haven't enough rosaries for trading? The mad pilgrims in the overgrown village near here always carry some with them.<br>
+Will you take what you need from them? Leaving them to wander their path endlessly is a false mercy.
+<hr/>
+<b>Exhausted dialogue:</b><br>
+I will soon leave these crumbling roads, but if you stop by the settlement below we may meet again. I pass there often to trade with the pilgrims.
+| Title2_Event2 = [[Bone Bottom]]
+| Title2_Dialogue2 = <b>First conversation:</b><br>
+This outpost that the shambling pilgrim-bugs have built for themselves... Dondakku!<br>
+Where are the armaments? The watch-poles? Never have I seen such a poorly defended encampment!<br>
+{{HTalk|The pilgrims here seem to have no mind for war, Shakra. I suspect most depart for the [[Citadel]] soon after their arrival.}}<br>
+Hmph. If they persist in their carelessness, they will find only death in these harsh lands.<br>
+<hr/>
+<b>Exhausted dialogue:</b><br>
+From this safe vantage, I can keep watch for threats while I work. These lowlands are brittle and dangerous. Keep your weapon close.
+|Title2_Event3 = [[Deep Docks]]
+|Title2_Dialogue3 = <b>First conversation:</b><br>
+Child Wielding Needle. What do you make of this huge, groaning structure?<br>
+{{HTalk|The scale of it all impresses me. If this is merely an outpost of the Citadel above, then their capital must be grand beyond measure.}}<br>
+Yokkala... Perhaps so. They must have prized indeed the work done here, to build something so vast in such a dangerous place.
+<hr/>
+<b>Exhausted dialogue:</b><br>
+I see much wasted effort in these docks. There is too much flourish to the form of it all. The ways of others are strange indeed...
+| Title2_Event4 = [[Hunter's March]]
+| Title2_Dialogue4 = <b>First conversation (if she fought alongside Hornet):</b> <br>
+That was a battle well-fought, Child Wielding Needle. Your master would be proud of you. <br>  
+{{HTalk|The one who trained me long ago... I never called her master. Whether she would be proud of what has become of me, I cannot say.}} <br> 
+Nu-Hakkata! Whether she is dead or alive, have faith! Nothing a pupil does escapes their master's sight!
+<hr/>
+<b>First conversation (if she did not fight alongside Hornet):</b> <br>
+{{HTalk|Greetings, Shakra. I had a sense I would find you in these winding tunnels, filled as they are with the marks of combat.}} <br> 
+Poshanka! You trust your instincts rightly. The red-shelled warriors who carved out these roads make for excellent opponents indeed. <br>
+I would gladly spend much time here, testing myself against their blades and cunning traps, but I must keep to my task. As should you!
+<hr/>
+<b>Exhausted dialogue:</b><br>
+These twisting tunnels hide many worthy opponents, but many traps as well. Watch your footing closely.
+| Title2_Event5 = [[Far Fields]]
+| Title2_Dialogue5 = <b>First conversation:</b> 
+{{HTalk|Shakra, you look well at home in these wilds.}} <br>
+Poshanka! These scorched fields offer many paths and much combat. To leap from vantage upon the red-shells or to meet them face-front with rings ready? These are decisions to live for! <br>
+I am much surprised those soft pilgrims ever safely climbed this scorched and savage place.
+<hr/>
+<b>Exhausted dialogue:</b><br>
+My master would have found her way to these wilds, I am sure. Her warrior's sense has no equal. Surely, I must be drawing closer to her!
+| Title2_Event6 = [[Greymoor]]
+| Title2_Dialogue6 = <b>First conversation:</b> 
+{{HTalk|Fair greetings, Shakra. You are a welcome sight amidst the sodden gloom of these caverns.}}<br>
+Child Wielding Needle, your aspect is still sharp. My respect remains. Heed a warning, many fierce bugs roost nearby.<br>
+On the lake beyond this cave nest a ragged horde atop an old watermound. Their mastery of flight makes them dangerous. My shell will forever carry the score of their pins.<br>
+If you're seeking a safer path, head back, towards this land's core.
+<hr/>
+<b>Exhausted dialogue:</b><br>
+If you choose to rest here, I will watch over you, Child Wielding Needle. These charts require long attention, and my own sleep is far off yet.
+| Title2_Event7 = [[Bellhart]]
+| Title2_Dialogue7 = <b>First conversation (if Hornet has seen [[Haunted Bellhart]]):</b> 
+Poshanka, Child Wielding Needle. This heart-home is cut free of its curse. <br> Tell me, was it your blade that brought its saving? My shock would be great if another here managed the feat.<br>
+{{HTalk|I slew a tall creature above the town, a Weaver I suspect, though one twisted in purpose.}}<br>
+{{HTalk|By voice and claw it aided, perhaps guided, the thread that strung the town.}}<br>
+Weaver? Those vicious old things! To our young we tell the tales, but had thought them long dead, only corpses bound in spires.<br>
+{{HTalk|This one still lived, though if it was a Weaver, it was broken in a savage way.}}<br>
+{{HTalk|Its own Silk was bound, pinned deep within its shell. A cruel punishment I've not before witnessed.}}<br>
+Even broken, my envy remains. A Weaver's fabled skills... To meet one in combat means great challenge, and great pride in victory.
+<hr />
+<b>First conversation (if Hornet has not seen Haunted Bellhart):</b><br>
+Poshanka! Child Wielding Needle. You too have discovered this haven of bells.<br>
+For a long time, I avoided this place for sense of something strange. Now arrived, I find it free, and its few remaining residents offering trade and welcome.<br>
+{{HTalk|I slew a tall creature above the town, a Weaver I suspect, though one twisted in purpose.}}<br>
+{{HTalk|It was her you may have sensed. A formidable force, even aged. By voice and claw she aided, perhaps guided, the haunted thread that grasps these lands.}}<br>
+Weaver? Those vicious things. To our young we tell the tales, but had thought them long dead, only corpses bound in spires.<br>
+{{HTalk|This one still lived, though if it was a Weaver, it was broken in a savage way.}}<br>
+{{HTalk|Its own Silk was bound, pinned deep within its shell. A cruel punishment I've not before witnessed.}}<br>
+Even broken, my envy remains. A Weaver's fabled skills... To meet one in combat means great challenge, and great pride in victory.
+<hr />
+<b>Speaking again:</b><br>
+{{HTalk|Your camp here looks comfortably set, Shakra. Are you planning to stay a time?}}<br>
+Perhaps, yes. This heart-home makes a fine base for now and later if needed.<br>
+Still! I must take care not to rest overlong. My shell would soften and my senses dull.
+<hr />
+<b>Speaking again after revisiting:</b><br>
+This vein of gilded bells creates an effectively defended settlement. I can see it once gave a long time of peace to its bugs.<br>
+And yet, look at their numbers now. Stricken by cursed thread. Only a few have survived.<br>
+We must learn from them, Child Wielding Needle. Peace is a slow poison that would wither even the hardiest bug.
+<hr />
+<b>Exhausted dialogue:</b><br>
+Rest below while you can. In the lands beyond these bells, it is rare to see such safety.
+
+| Title3 = Areas (Cont.)
+| Title3_Event1 = [[Shellwood]]
+| Title3_Dialogue1 = <b>First conversation (if Hornet has seen [[Bellhart|Haunted Bellhart]], and [[Widow]] is not defeated yet):</b><br>
+Needle Child. Hakk! I encountered a settlement near here, at the core of a vein of old bells. The bugs there were snared silent on a web of Silk.<br>
+It seemed the pernicious trap of some unseen predator. I left quickly, making sure to avoid the glimmering threads.<br>
+{{HTalk|I passed the town myself. The thread sickness, I've seen its like upon the roads, but there it does not discriminate.}}<br>
+{{HTalk|The curse that strikes the town, it is driven, focused. A cold use of Silk at a concerning scale.}}<br>
+{{HTalk|If the path permits, I will investigate its source.}}
+<hr/>
+<b> First conversation (if Hornet has not seen Haunted Bellhart, or if [[Widow]] is already defeated, or if Hornet has had the previous first conversation):</b><br>
+These root-woven roads show evidence of my master's passage. A thrice-crushed bug, gouged wood, score-prints of sharp claws passing. Small signs that only I can read.<br>
+Though the trail is cold, it eases me to know she is still within this land.
+<hr/>
+<b>Exhausted dialogue:</b><br>
+The creatures of this wood can disguise themselves amongst the many branches. Watch for unexpected movement and be prepared to strike.
+| Title3_Event2 = [[Wormways]]
+| Title3_Dialogue2 =  <b>First conversation:</b><br>
+{{HTalk|Greetings, Shakra. It was a welcome surprise to hear your call echo through these crumbling tunnels. How goes the search for your master?}}<br>
+Poshanka! It is a difficult task to track anything in these caverns while the worms ceaselessly churn the rock.<br>
+Still, I can see that my master has travelled here. Her path within this land winds strangely... I wonder at her intent.<br>
+It is no matter though. She can enlighten me when again we meet. Until then, I will continue in her shadow.
+<hr/>
+<b>Exhausted dialogue:</b><br>
+There are signs that pilgrims once travelled even these crumbling paths, long ago. Now only the voracious worms nest here.
+| Title3_Event3 = [[Blasted Steps]]
+| Title3_Dialogue3 = <b>First conversation:</b>
+Poshanka! Child Wielding Needle, have you seen trace of my master nearby? I feel she was here only recently!<br>
+{{HTalk|I cannot say for certain, Shakra, though if she travels seeking skilled opponents, these steps would serve her well. The warriors watching over them are formidable.}}<br>
+True! Impressive guardians they are, fighting defensively and loath to leave their stations. They swing their weapons with a cold brutality that should not be underestimated.<br>
+<hr/>
+<b>Exhausted dialogue:</b><br>
+In time, even these great steps will be swept away by the sands. Nothing is immovable.
+| Title3_Event4 = [[Sinner's Road]]
+| Title3_Dialogue4 = <b>First conversation:</b><br>
+Child Wielding Needle. These are stale roads, ill-fitted for warriors such as ourselves.<br>
+There is fair combat here against the roach-beasts and their keepers, but the air is sickly and the water writhes with parasites.<br>
+{{HTalk|This environment is harsh indeed, though life seems to adapt itself to many hardships. Do you believe your master travelled these roads?}}<br>
+I had thought not at first, but upon closer search I found the fragments of a trail winding through these fetid ruins.<br>
+Perhaps she saw something here that I did not? Her senses are often keen where mine are clouded.<br>
+<hr/>
+<b>Speaking after using the nearby broken [[Bench (Silksong)|Toll bench]] and having not fixed it yet:</b><br>
+Do you see? How crass and frail that Citadel's machines! This one groans in pain at its very existence.<br>
+{{HTalk|Its mechanism is likely jammed. If the gears were unstuck its clamorous complaints would soon cease, and it could become a useful place to rest.}}<br>
+A place to rest or no, I desire only for the noise to stop!<br>
+<hr/>
+<b>Exhausted dialogue:</b><br>
+If you venture further and higher into these caverns, beware. The sickly air only grows thicker.
+| Title3_Event5 = [[Bilewater]]
+| Title3_Dialogue5 = <b>First conversation:</b> 
+{{HTalk|Shakra, you too brave these bogs? The heights of Pharloom offer harsh welcome.}}<br>
+So winds my master's path, and so I follow. Yet true you speak! This is no place for me.<br>
+That Citadel's shadow falls heavy here. I can sense its horrid bulk besides.<br>
+It is no surprise to see it choke these caverns dank and stagnant. That monstrosity of metal and stone cares not for the lands it consumes.
+<hr/>
+<b>Exhausted dialogue:</b><br>
+The stone structures of this place suggest clear waters once ran throughout.<br>
+What fantasy that now seems! Even this swamp's inhabitants seem spawned of its noxious nature.
+| Title3_Event6 = [[Mount Fay]]
+| Title3_Dialogue6 = <b>First conversation:</b><br>
+Child Wielding Needle, how far our wanderings take us! The cold air here bites through our shells as true as any blade. Warm yourself by my lantern while I call.<br>
+{{HTalk|Pharloom is a land of harsh extremes. Perhaps that is, in part, why the pilgrims have a culture of testing themselves against it so fervently.}}<br>
+Perhaps. When I first encountered them, I had little respect for the weak, rag-bundled bugs. Too cowardly to even carry a weapon!<br>
+But... Dondakku. Sometimes we judge too quickly. There is a subtle strength to them, though it is difficult for me to truly understand it.
+<hr/>
+<b>Exhausted dialogue:</b><br>
+Charting the heights of this great mount would prove a mighty challenge. For now, I have seen only its base.<br>Once I have completed the search for my master, I would like to return and attempt the climb in full.  
+| Title3_Event7 = [[Sands of Karak]]
+| Title3_Dialogue7 = <b>First conversation:</b><br>
+{{HTalk|Fair greetings Shakra, in these drifts consumed by crust and sand.}}<br>
+{{HTalk|These caverns have returned to nature, but I see evidence of bold structures buried throughout.}}<br>
+The shells of their builders rest in a tower above. A grand tribe they seemed, and strong fighters I'm sure. Alas, they exist now only as hardened husks.<br>
+Lament, Child Wielding Needle! We lived too late to match their claws.
+<hr/>
+<b>Exhausted dialogue:</b><br>
+If chance allows, visit the tower above. It is an impressive sight, not overgrown by the crust upon these caverns, but rather formed full of the material itself.<br>
+If the old tribe of this place were able to guide its growth to such grand degree... then they possessed a power to rival even that Citadel.
+
+| Title4 = Trail's End
+| Title4_Event1 = Meeting in [[Bilewater]]
+| Title4_Dialogue1 = Poshanka, Hornet Wielding Needle. For that is your name, is it not? I have heard it spoken in this land with reverence.<br>
+I had hoped you would accept my summons. In these moments one is good, but two is best.<br>
+{{HTalk|I would not deny the wish, Shakra. A sombre ceremony seemed likely at this trail's end, and I am sadly proved correct. This then is your master?}}<br>
+The fiercest of my tribe, here she lies. I called her master, true, but she was mother just as much, more by far than the bug who bore me.<br>
+{{HTalk|Among the many marvels of this kingdom, she found a fine place to meet her end.}}<br>
+Ended by age... My tribe would call that shame, but I see only strength unbeaten.<br>
+Even as her shell betrayed her, she walked this kingdom's breadth. It was her trail followed that allowed me to share witness to its dignity.<br>
+Hornet Wielding Needle, you too have journeyed these many paths, as my master before us. Join me now for her song-sending.<br>
+It is time for her soul to walk beyond her shell...
+| Title4_Event2 = After playing the song-sending
+| Title4_Dialogue2 = For sharing this moment I shall have you accept a gift, one I had believed I would never pass.<br>
+You would take these rings, and the learnings to make more.<br>
+They are built of a clever method devised by my master and will crush hard this kingdom's toughest shell. Use them, and she is remembered!<br>
+{{HTalk|My thanks, Shakra. To gain a tool so defined by its owner, I am much grateful. They shall prove a great aid on my own journey.}}
+
+| Title5 = High Halls
+| Title5_Event1 = First interaction
+| Title5_Dialogue1 = Poshanka! Here we meet, high atop this twisted steel structure. I can sense fierce enemies ahead.<br>
+It seems you too draw closer to your trail's end. With my own task now resolved, my rings call for combat.<br>
+Hornet Wielding Needle, shall we fight forward together?
+| Title5_Event2 = Refusing aid
+| Title5_Dialogue2 = If you would fight alone, I will say nothing more.
+| Title5_Event3 = Speaking again
+| Title5_Dialogue3 = Shall we fight forward together?
+| Title5_Event4 = Accepting aid
+| Title5_Dialogue4 = {{HTalk|Gladly I will accept your aid Shakra. Let us cut closer to this Citadel's haunted heart.}}<br>
+Garrok! Hornet Wielding Needle. Beside you, I will gladly raise my rings!
+| Title5_Event5 = Speaking after accepting aid
+| Title5_Dialogue5 = Let us charge on. My rings shall sing loud on the shells of our enemies.
+| Title5_Event6 = After the battle
+| Title5_Dialogue6 = Bakkana! A battle well won! The haunted bugs have been defeated and the way forward is yours. Let us meet again soon, away from this dreadful Citadel.
+
+| Title6 = Duel
+| Title6_Event1 = Speaking after summoning her to [[Greymoor]]
+| Title6_Dialogue1 = Hornet Wielding Needle! With my master's passing, I have resolved to improve my skills that, in time, I may match her prime.<br>
+Much work I must do to achieve that goal. I have found this wide bare stone fine ground on which to train.<br>
+Would you spar with me now? Raise that blade and test my rings! You may prove my greatest challenge yet.
+| Title6_Event2 = Rejecting the duel
+| Title6_Dialogue2 = {{HTalk|Another time, Shakra. I am always eager to learn, but for now my tasks call me away.}}<br>
+Bakelo! Answer to your tasks, then. My rings shall await your return.
+| Title6_Event3 = Speaking again after rejecting the duel
+| Title6_Dialogue3 = We must never let our shells soften, or Pharloom's sharp teeth will sink in quick.<br>
+Would you duel with me, Hornet Wielding Needle? Together we shall sharpen one another's skill.
+| Title6_Event4 = Accepting the duel
+| Title6_Dialogue4 = {{HTalk|Gladly, Shakra. Upon this stone, let us test our shells.}}
+| Title6_Event5 = Speaking again after winning the duel
+| Title6_Dialogue5 = Un-Daak... well struck. To face the fury of your weapon in a true battle would be an experience indeed. I would gladly duel again, if you have the time for it.
+| Title6_Event6 = Summoning again after losing the duel
+| Title6_Dialogue6 = You recover quickly. Already, my ring-marks have faded from your shell. If you are prepared, let us duel again.
+
+| Title7 = Act 3
+| Title7_Event1 = First conversation
+| Title7_Dialogue1 = <b>If first meeting is in [[Bellhart]]:</b>
+{{HTalk|Shakra, what has happened here? For these masses to huddle so amongst such destruction?}}<br>
+The dark-spun bugs, they besiege the town, relentless. I have defended against each wave anew, but they are empowered in foul ways, and I am much fatigued.<br>
+{{HTalk|...It is the void, stretched up into this world and its husks. I know it well, that force, its nature. If it senses soul, it will drive voracious towards it.}}<br>
+As you say! All these bugs, gathered close within the bells... but nowhere else is safe with this black threat rising.<br>
+{{HTalk|Shakra, I seek to end this new disaster, for in it I share much blame, but know, I shall need time to complete my task. I would ask you hold fast till then.}}<br>
+{{HTalk|This town and its bugs needs a guardian, and I can think of none better.}}<br>
+Very well, Hornet Wielding Needle. A pact made strong. If you are working towards the venom's end, I shall fight with faith renewed.
+<hr/>
+<b>If first meeting is in [[Greymoor]] or [[Shellwood]]:</b><br>
+{{HTalk|Shakra, you pit yourself against the black-threaded bugs? They are dangerous foes, even for a hardened warrior.}}<br>
+I relish such danger, and have little choice besides. These creatures besiege the town within. They are relentless, and empowered.<br>
+{{HTalk|...It is the void, stretched up into this world and its husks. I know it well, this force, its nature. If it senses soul within, it will drive voracious towards it.}}<br>
+As you say! Many bugs now huddle within the bells. Nowhere else is safe with this black threat rising.<br>
+Some luck, at least, that I chose to remain, and can offer my rings' defence.<br>
+{{HTalk|Shakra, I seek to end this new disaster, for in it I share much blame, but know, I shall need time to complete my task.}}<br>
+{{HTalk|I ask you hold fast till then. This town and its bugs need a guardian, and I can think of none better.}}<br>
+Very well, Hornet Wielding Needle. A pact made strong. If you are working towards the venom's end, I shall fight with faith renewed.
+| Title7_Event2 = Speaking after obtaining the [[Everbloom]]
+| Title7_Dialogue2 = {{HTalk|The time is close, Shakra. The cost was grave, and the challenge steep, but I have claimed a power that can put end to this disaster.}}<br>
+Gendaa... This is good, Hornet Wielding Needle, essential. My own strength has near reached its limit, and the dark husks continue their assault unceasing.<br>
+Take your final action, and let us all see the end of this.
+| Title7_Event3 = Exhausted dialogue
+| Title7_Dialogue3 = <b>In Bellhart:</b>
+Best keep your visits brief, Hornet Wielding Needle. Without swift action taken, our world's ruin seems certain.<br>
+If you cannot calm Pharloom's tortured throes, then certainly no other bug could face the task.<br>
+{{HTalk|As you say, Shakra. I shall do what I must.}}
+<hr/>
+<b>In Greymoor or Shellwood:</b><br>
+Seek swift to calm our crying land, Hornet Wielding Needle. And know that I shall remain here, to stand against these husks gone dark.
+| Title7_Event4 = Speaking in Bellhart after purchasing all goods
+| Title7_Dialogue4 = For my mapping stock, we have traded all the charts and tools I can provide. While this new threat remains, I shall not make more.<br>
+My cartography may be a simple sort, but I hope that my craft shared has made your travels easier.
+| Title7_Event5 = Playing the [[Needolin]]
+| Title7_Dialogue5 = [n]Still I stand...<br> 
+Until the end...<br> 
+For those remaining...<br> 
+For those too weak...<br> 
+My rings ready... for you all...
+| Title8 = Written
+| Title8_Event1 = <i>[[Trail's End]]</i> wish
+| Title8_Dialogue1 = Child Wielding Needle, I have caught fresh scent of my master in those stricken swamps beside the Citadel. I ask you now to follow, to meet together at trail's end.
+}}
+
+== Locations ==
+Shakra can be found in various locations across [[Pharloom]].
+
+{{Gallery
+| Image1 = Mapshot SS Shakra The Marrow.png! Location in the Marrow
+| Image2 = Mapshot SS Shakra Bone Bottom.png! Location in Bone Bottom
+| Image3 = Mapshot SS Shakra Deep Docks.png! Location in the Deep Docks
+| Image4 = Mapshot SS Shakra Hunter's March.png! Locations in Hunter's March
+| Image5 = Mapshot SS Shakra Far Fields.png! Location in the Far Fields
+| Image6 = Mapshot SS Shakra Greymoor.png! Location in Greymoor
+| Image7 = Mapshot SS Shakra Bellhart.png! Location in Bellhart
+| Image8 = Mapshot SS Shakra Shellwood.png! Location in Shellwood
+| Image9 = Mapshot SS Shakra Wormways.png! Location in the Wormways
+| Image10 = Mapshot SS Shakra Blasted Steps.png! Location in the Blasted Steps
+| Image11 = Mapshot SS Shakra Sinner's Road.png! Location in Sinner's Road
+| Image12 = Mapshot SS Covetous Pilgrim 02.png! Location in Bilewater
+| Image13 = Mapshot SS Shakra Sands Of Karak.png! Location in Sands of Karak
+| Image14 = Mapshot SS Shakra Mount Fay.png! Location in Mount Fay
+| Image15 = Mapshot SS Shakra Trail's End.png! Location in Bilewater, after accepting the <i>[[Trail's End]]</i> [[wish]]
+| Image16 = Mapshot SS Shakra Greymoor Duel.png! Location in Greymoor, after completing the <i>[[Trail's End]]</i> wish
+| Image17 = Mapshot SS Garmond and Zaza 05.png! Location in the High Halls, after completing the <i>[[Trail's End]]</i> wish and before [[the Forum]] [[Enemy Gauntlets (Silksong)/High Halls 1|enemy gauntlet]]
+| Image18 = Mapshot SS Shakra Shellwood Act 3.png! Location in Shellwood in Act 3
+| Image19 = Mapshot SS Shakra Greymoor Duel.png! Location in Greymoor in Act 3
+}}
+
+== Gallery ==
+{{Gallery
+| Image1 = Screenshot SS The Marrow 14.png! In [[the Marrow]]
+| Image2 = Screenshot SS Moss Grotto 24.png! In [[Bone Bottom]]
+| Image3 = Screenshot SS Deep Docks 19.png! In the [[Deep Docks]]
+| Image4 = Screenshot SS Hunter's March 15.png! In [[Hunter's March]]
+| Image5 = Screenshot SS Shakra 08.png! Fighting in [[Hunter's March]]
+| Image6 = Screenshot SS Far Fields 24.png! In the [[Far Fields]]
+| Image7 = Screenshot SS Greymoor 18.png! In [[Greymoor]]
+| Image8 = Screenshot SS Bellhart 12.png! In [[Bellhart]]
+| Image9 = Screenshot SS Shakra 09.png! Singing
+| Image10 = Screenshot SS Shellwood 23.png! In [[Shellwood]]
+| Image11 = Screenshot SS Wormways 09.png! In the [[Wormways]]
+| Image12 = Screenshot SS Blasted Steps 15.png! In the [[Blasted Steps]]
+| Image13 = Screenshot SS Sinner's Road 03.png! In [[Sinner's Road]]
+| Image14 = Screenshot SS Bilewater 16.png! In [[Bilewater]]
+| Image15 = Screenshot SS Sands of Karak 11.png! In [[Sands of Karak]]
+| Image16 = Screenshot SS Mount Fay 01.png! In [[Mount Fay]]
+| Image17 = Screenshot SS Bilewater 17.png! Shakra and her master in [[Bilewater]] during the <i>[[Trail's End]]</i> wish
+| Image18 = Screenshot SS High Halls 15.png! In the [[High Halls]]
+}}
+=== Battle ===
+{{Gallery
+| Image1 = Screenshot SS Shakra 01.png! Entering the arena
+| Image2 = Screenshot SS Shakra 02.png! Idle
+| Image3 = Screenshot SS Shakra 03.png! Teleport
+| Image4 = Screenshot SS Shakra 04.png! Ring Throw
+| Image5 = Screenshot SS Shakra 05.png! Ring Burst
+| Image6 = Screenshot SS Shakra 06.png! Ring Thrust
+| Image7 = Screenshot SS Shakra 07.png! Staggered
+}}
+=== Other ===
+{{Gallery
+| Image1 = Shakra Credit.png! Credits art
+| Image2 = Shakra.png! Promotional art
+| Image3 = Shakra reveal trailer approach.png!<i>Silksong</i> reveal trailer
+| Image4 = Shakra Team Cherry Blog.png!Pre-release screenshot
+}}
+== Achievements ==
+{{Achievement|game=silksong|Cartographer}}
+{{Achievement|game=silksong|Trail's End}}
+
+== Trivia ==
+* Shakra was formally revealed in a [[Team Cherry]] blog post:
+:<i>"Fierce and intimidating, Shakra is a warrior seeking her master, who vanished under strange circumstances. Shakra's clan are skilled fighters who can handle their own in the kingdom's wilds. Usefully for Hornet, each member of the clan also hones a Craft-Skill and Shakra's mastery of cartography will prove invaluable on Hornet's adventure."</i><ref name="blog">[http://teamcherry.com.au/hk-physical-late-anniversary-celebration-silksong-mini-update/ Team Cherry Blog post] of March 19th, 2019.</ref>
+* If any enemy gets too close to Shakra at any time, she moves to attack it with Throwing Rings.
+* Shakra only sings if the [[Needolin]] is played outside of combat. She does not respond to it during battle with either enemies or with [[Hornet (Silksong)|Hornet]].
+* Shakra can have different dialogue depending on her current animation modes. The most commonly used modes are her standing mode and her sitting mode. For most locations, this does not matter much as she only uses a single mode; but for [[Bone Bottom]] and [[Bellhart]], this can affect the dialogues she may use because these locations use both her standing and sitting modes.<ref group=Source>FSMs <code>Mapper NPC - Dialogue</code> and <code>Mapper Sit NPC - Dialogue</code> in <code>bonetown.bundle</code> and <code>belltown.bundle</code>.</ref> The standing mode is used when Shakra is called back to town using her ring pole, and the sitting mode is used if Hornet enters these areas and Shakra is already there. It is important to note that if Shakra is in either town, and if Hornet rests on a Bench outside of the current town where Shakra is at, then there is a 50% chance that Shakra leaves that town and does not return unless she is called with the ring pole.<ref group=Source><code>GameManager.TimePasses()</code> sets flag <code>mapperAway</code>.</ref>
+* The icon for the Ventrica Pins sold in Shakra's shop is inconsistent: the pins on the map are black while they are shown to be grey in the shop.
+** The black shop icon does exist in the game's files; however, they seem to be incorrectly named and are not used.
+{{Gallery
+| Image1 = Ventrica Pins Black.png!Unused Icon
+| Image2 = Map Pin Ventrica.png!Map Pin
+}}
+* Shakra's Bone Bottom location was initially different. She would sit in the middle of the settlement, instead of on a ledge to the right of it.
+{{Gallery
+| Image1 = Screenshot SS EDGE 04.png!Pre-release screenshot
+}}
+
+{{Localisation
+|DEname = Shakra
+|DEmeaning = —
+|ESname = Shakra
+|ESmeaning = —
+|FRname = Shakra
+|FRmeaning = —
+|ITname = Shakra
+|ITmeaning = —
+|JAname = シャクラ
+|JAromanised = Shakura
+|JAkatakana = foreign 
+|JAmeaning = Shakra
+|KOname = 샤크라
+|KOromanised = Syakeura
+|KOmeaning = Shakra
+|PTname = Shakra
+|PTmeaning = —
+|RUname = Шакра
+|RUromanised = Šakra
+|RUmeaning = Shakra
+|TWname = 沙克拉
+|TWromanised = Shākèlā
+|TWmeaning = same
+|ZHname = 沙克拉
+|ZHromanised = Shākèlā
+|ZHmeaning = Shakra
+|CODEname=MAPPER
+}}
+{{Hr|SS}}
+
+== Notes ==
+<references group="Note"/>
+{{Refs|hr=false}}
+
+<div class="mw-collapsible mw-collapsed" data-expandtext="Show Code References" data-collapsetext="Hide Code References">
+<references group="Source" />
+</div>
+
+{{SS Nav NPCs}}
+{{SS Nav Enemies}}
+
+[[es:Shakra]]
+[[fr:Shakra]]
+
+[[Category:Enemies (Silksong)]]
+[[Category:Bosses (Silksong)]]
+[[Category:NPCs (Silksong)]]

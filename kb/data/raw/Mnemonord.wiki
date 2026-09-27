@@ -1,0 +1,73 @@
+{{SS Infobox Enemy
+|drops = None
+|health = 50
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|0.9|0.9}}
+|numbers_required = 3
+|singnum = 1
+}}
+{{Quote
+|Hr = Journal
+|Huge flighted creature formed from coldshard.<hr/>
+This larger form carries so much weight it can barely move from its place.
+}}
+
+<b>Mnemonords</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are a larger form of [[Mnemonid]], barely able to move due to their weight.<ref>Mnemonord [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Huge flighted creature formed from coldshard. This larger form carries so much weight it can barely move from its place."</i></ref>
+
+== Behaviour and Tactics ==
+Mnemonords float in place, dealing {{Damage|1}} on contact. If [[Hornet (Silksong)|Hornet]] approaches, they blink for a brief moment before creating a ring of icicles around themselves. These icicles shatter after a short delay, but can be broken instantly with an attack. If destroyed, Mnemonords reform in the same location after a few seconds.
+
+They are used primarily for traversal via [[Needle#Needle-bouncing|Needle-bouncing]] or the [[Clawline]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Mem... remem...
+* Rem... mem...
+* Memem... rem... mem...
+* Mem...
+}}
+
+== Location ==
+Mnemonords can be found in the [[Brightvein]] sub-area of [[Mount Fay]] during Act 3.
+
+{{Gallery
+|Image1 = Mapshot SS Mnemonord 01.png!Location in Mount Fay in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Mnemonord 01.png!Idle
+|Image2 = Screenshot SS Mnemonord 02.png!Attacking
+|Image3 = Screenshot SS Mnemonord 03.png!Reacting to the Needolin
+|Image4 = Screenshot SS Mnemonord 04.png!Modded screenshot of several Mnemonords in the background without blur
+}}
+
+{{Localisation
+|DEname = Mnemonorde
+|DEmeaning = —
+|ESname = Mnemonidón
+|ESmeaning = Combination of <i>Mnemonido</i> (Mnemonid) and <i>-ón</i> (augmentative suffix)
+|FRname = Mnémonorde
+|FRmeaning = —
+|ITname = Nordimoria
+|ITmeaning = Portmanteau of <i>Mnemonord</i> and <i>memoria</i> (memory).
+|JAname = ニモノルド
+|JAromanised = Nimonorudo
+|JAkatakana = foreignenemy
+|JAmeaning = Mnemonord
+|KOname = 대형 결정충
+|KOromanised = Daehyeong gyeoljeongchung
+|KOmeaning = Large Crystal Bug
+|PTname = Mnemonorde
+|PTmeaning = —
+|RUname = Мнемонорд
+|RUromanised = Mnemonord
+|RUmeaning = Mnemonord
+|ZHname = 巨型冰晶虫
+|ZHromanised = Jùxíng bīngjīng chóng
+|ZHmeaning = Giant Ice Crystal Bug
+|CODEname=CRYSTAL_DRIFTER_GIANT
+|CODEmeaning= <code>CRYSTAL_DRIFTER</code> are Mnemonid's internal name.
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

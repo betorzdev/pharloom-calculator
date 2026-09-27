@@ -1,0 +1,31 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot SS Elder Pilgrim 01.png|400px|center]]
+|[[File:Mapshot_SS_Memory_Locket_03.png|400px|center]]
+|-
+| colspan="2" | Enemy gauntlet northeast of the Marrow's [[Bellway]]. Requires [[Cling Grip]].
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>[[Memory Locket]]</center>
+| <center>[https://www.youtube.com/watch?v=swPmNk9_fw0 Generic Enemy Battle A]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Elder Pilgrim.png|35x35px|link=Elder Pilgrim]] [[Elder Pilgrim]], centre right
+|
+|-
+|
+[[File:HJ_Pilgrim Groveller.png|35x35px|link=Pilgrim Groveller]] [[Pilgrim Groveller]], left<br />
+[[File:HJ_Winged Pilgrim.png|35x35px|link=Winged Pilgrim]] [[Winged Pilgrim]], right
+| Pilgrim Groveller drops out of a sack and waits a moment before reviving.
+|-
+|
+[[File:HJ_Pilgrim Groveller.png|35x35px|link=Pilgrim Groveller]] Pilgrim Groveller, centre<br />
+[[File:HJ_Pilgrim Pouncer.png|35x35px|link=Pilgrim Pouncer]] [[Pilgrim Pouncer]], centre left<br />
+| Pilgrim Pouncer drops out of a sack shortly after previous enemy.
+|}

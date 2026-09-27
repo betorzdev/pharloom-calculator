@@ -1,0 +1,185 @@
+{{Navbar
+|icons=true
+|page1=Hornet Statuette
+|page2=Shard Bundle
+|page3=Beast Shard
+|page4=Pristine Core
+|icon5={{Steel Soul Icon Mini|SS}} 
+|page5=Growstone
+}}
+
+{{SS Infobox Item
+| description = Small bundle of shell shards tied together with string. Can be broken to use the shards for crafting.<hr>Contains 80 shell shards.
+| effects = Provides {{S|80}}
+| type = [[Items (Silksong)#Consumables|Consumable]]
+| source = [[NPCs (Silksong)#Merchants|Merchants]]<br>Glowing item spots
+| buy = {{R|50}}
+| max = 20
+}}
+
+{{Quote
+|Hr=SS
+|Raw materials, for creation. Carry them with you always, that y-y-you may be prepared.
+|[[Twelfth Architect]]
+}}
+
+<b>Shard Bundles</b> are [[Items (Silksong)#Consumables|consumable items]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+Can be used from the inventory to gain {{S|80}}. A maximum of 20 may be held at a time.
+
+
+== How to Acquire ==
+Shard Bundles can be purchased for {{R|50}} from various [[NPCs_(Silksong)#Merchants|merchants]] who carry an unlimited supply of them.
+
+{| class="article-table" width="100%"
+! style="width:8rem" | Merchant
+! style="width:5rem" | Price
+! Description
+! Map
+|-
+! [[Forge Daughter]]
+| rowspan=5 style="text-align:center" | {{R|50}}
+| <i>To maintain one's tools is a constant task. These shards should be kept close when you travel, that you can repair and replenish as the need arises.</i>
+| [[File:Mapshot SS Forge Daughter 01.png|center|200x200px]]
+|-
+! [[Mottled Skarr]]
+| <i>Rkraha. Tnk uokn.</i>
+| [[File:Mapshot SS Mottled Skarr.png|center|200x200px]]
+|-
+! [[Frey]]
+| <i>Travellers should always keep spare shards close by. We Bellharters were once praised for our fine claw-work. An art lost on most modern pilgrims... excepting yourself I'm sure.</i>
+| [[File:Mapshot SS Frey 01.png|center|200x200px]]
+|-
+! [[Twelfth Architect]]
+| <i>Raw materials, for creation. Carry them with you always, that y-y-you may be prepared.</i>
+| [[File:Mapshot SS Twelfth Architect 01.png|center|200x200px]]
+|-
+! [[Mort]] (after completion of the [[Pilgrim's Rest Supplies]] Wish)
+| <i>These humble shards can form together into something grand, if you possess the vision to shape them.</i>
+| [[File:Mapshot_SS_Pilgrim's_Rest.png|center|200x200px]]
+|}
+
+
+Shard Bundles may also be found by interacting with glowing item spots across [[Pharloom]].
+
+{| class="article-table" style="text-align: center;" width="100%" data-tpt-table-id="silksong-shard-bundles"
+! 
+! Area
+! Location
+! Map
+|-
+! 1
+| [[Deep Docks]]
+| In a hidden area west of [[Forge Daughter]]'s location
+| [[File:Mapshot SS Shard Bundle 01.png|center|200x200px]]
+|-
+! 2
+| [[Deep Docks]]
+| Southern Deep Docks, on a ledge at the bottom of a lava pit
+| [[File:Mapshot SS Shard Bundle 02.png|center|200x200px]]
+|-
+! 3
+| [[Greymoor]]
+| Central Greymoor, found by going straight up from the [[Bellway]] station
+| [[File:Mapshot SS Shard Bundle 03.png|center|200x200px]]
+|-
+! 4
+| [[Greymoor]]
+| In the flooded room to the east of [[Halfway Home]]
+| [[File:Mapshot SS Shard Bundle 04.png|center|200x200px]]
+|-
+! 5
+| [[Shellwood]]
+| In a hidden room north-west of Shellwood's entrance to upper [[Bellhart]], requires [[Cling Grip]].
+| [[File:Mapshot SS Shard Bundle 12.png|center|200x200px]]
+|-
+! 6
+| [[Underworks]]
+| On a ledge at the top of [[The Cauldron]]
+| [[File:Mapshot SS Shard Bundle 05.png|center|200x200px]]
+|-
+! 7
+| [[Underworks]]
+| In the western area of the Underworks, behind a breakable wall
+| [[File:Mapshot SS Shard Bundle 06.png|center|200x200px]]
+|-
+! 8
+| [[Underworks]]
+| In the passage between the Underworks and [[Exhaust Organ]]
+| [[File:Mapshot SS Shard Bundle 07.png|center|200x200px]]
+|-
+! 9
+| [[Sinner's Road]]
+| In Sinner's Road by the exit to [[Bilewater]]
+| [[File:Mapshot SS Shard Bundle 08.png|center|200x200px]]
+|-
+! 10
+| [[The Slab]]
+| In the Slab, west from the entrance from [[Choral Chambers]]
+| [[File:Mapshot SS Shard Bundle 09.png|center|200x200px]]
+|-
+! 11
+| [[Cogwork Core]]
+| In the western area of the Cogwork Core
+| [[File:Mapshot SS Shard Bundle 10.png|center|200x200px]]
+|-
+! 12
+| [[Memorium]]
+| In the far eastern edge of the Memorium, below the entrance to [[Putrified Ducts]]
+| [[File:Mapshot SS Shard Bundle 11.png|center|200x200px]]
+|}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Shard Bundle 01.png!West of Forge Daughter in Deep Docks
+|Image2 = Screenshot SS Shard Bundle 02.png!East of Forgebrothers Signis & Gron in Deep Docks
+|Image3 = Screenshot SS Shard Bundle 03.png!North of Bellway station in Greymoor
+|Image4 = Screenshot SS Shard Bundle 04.png!Northeast of Halfway Home in Greymoor
+|Image5 = Screenshot SS Shard Bundle 05.png!Northwest of highest Bellhart entrance in Shellwood
+|Image6 = Screenshot SS Shard Bundle 06.png!Upper west ledge of The Cauldron in Underworks
+|Image7 = Screenshot SS Shard Bundle 07.png!Behind a breakable grate in Underworks
+|Image8 = Screenshot SS Shard Bundle 08.png!Inside an Exhaust Organ pipe in Underworks
+|Image9 = Screenshot SS Shard Bundle 09.png!By the entrance to Bilewater in Sinner's Road
+|Image10 = Screenshot SS Shard Bundle 10.png!West of the Choral Chambers entrance in the Slab
+|Image11 = Screenshot SS Shard Bundle 11.png!West of Second Sentinel's room in Cogwork Core
+|Image12 = Screenshot SS Shard Bundle 12.png!Below the entrance to Putrified Ducts in Memorium
+}}
+
+==Trivia==
+*Shard Bundles were [[Cut Content (Silksong)/Items|originally]] known as Shard Pouches, and had a different appearance and description.
+
+{{Localisation
+|DEname = Splitterbündel
+|DEmeaning = Shard Bundle
+|ESname = Manojo de fragmentos
+|ESmeaning = Handful of Fragments
+|FRname = Paquet de fragments de carapace
+|FRmeaning = Pack of Shell Fragments
+|ITname = Fascio di schegge
+|ITmeaning = Bundle of Shards
+|JAname = 破片の束
+|JAromanised= Hahen no taba
+|JAmeaning = Fragment Bundle
+|KOname = 조각 꾸러미
+|KOromanised = Jogak kkureomi 
+|KOmeaning = Shard Bundle
+|PTname = Feixe de Fragmentos
+|PTmeaning = Fragment Bundle
+|RUname = Набор осколков
+|RUromanised = Nabor oskolkov
+|RUmeaning = Shard Collection
+|TWname = 碎片包
+|TWromanised = Suìpiàn bāo
+|TWmeaning = same
+|ZHname = 碎片包
+|ZHromanised = Suìpiàn bāo
+|ZHmeaning = Shard Pack
+|CODEname = SHARD_POUCH
+}}
+
+{{Refs|hr=SS}}
+
+
+{{SS Nav Items}}
+[[Category: Items (Silksong)]]

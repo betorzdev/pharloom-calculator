@@ -1,0 +1,51 @@
+{{SS Infobox Area
+| image1 = Mosslands_Map_Clean.png
+| connection = [[Blasted Steps]]<br>[[The Marrow]]<br>[[Shellwood]]<br>[[Weavenest Atla]]<br>[[Wormways]]
+| nocat=true
+}}
+The <b>Mosslands</b> are a pair of areas in <i>[[Hollow Knight: Silksong]]</i>. The [[Map and Quill (Silksong)#Maps|Map]] of both areas is bought from [[Shakra]] as a single map named Mosslands, and both areas have separate Quick Maps; when zoomed-out, the map groups up both areas in one map which is (somewhat erroneously) labelled Bone Bottom.
+
+==Areas==
+{{Gallery
+|Image1 = Screenshot SS Moss Grotto 01.png!link=Moss Grotto![[Moss Grotto]]
+|Image2 = Screenshot SS Bone Bottom 01.png!link=Bone Bottom![[Bone Bottom]]
+}}
+
+==Trivia==
+*Both Mosslands areas are the only areas in the game to share a map colour; they are both the same shade of green.
+
+{{Localisation
+|DEname = Moosland
+|DEmeaning = Mossland
+|ESname = Tierras musgosas
+|ESmeaning = Moss Lands
+|FRname = Terres Verdoyantes
+|FRmeaning = Verdant Lands
+|ITname = Terre muschiose
+|ITmeaning = Mossy Lands
+|JAname = 苔の地
+|JAromanised = Koke no ji
+|JAmeaning = Moss Land
+|KOname = 이끼의 대지
+|KOromanised = Ikkiui daeji
+|KOmeaning = Moss Land
+|PTname = Terras Musgosas
+|PTmeaning = Mossy Lands
+|RUname = Моховые земли
+|RUromanised = Moxovye zemli
+|RUmeaning = Mossy Lands
+|TWname = 苔蘚地區
+|TWromanised = Táixiǎn dìqū
+|TWmeaning = Moss Region
+|ZHname = 苔藓之地
+|ZHromanised = Táixiǎn zhī dì
+|ZHmeaning = Moss Land
+|CODEname = MOSSGROTTO
+|CODEmeaning = The map which Shakra sells is labelled <code>MAPPER_ITEM_MAP_MOSSGROTTO</code>, which is the only place "Mosslands" is named.
+}}
+
+{{Hr|SS}}
+{{SS Nav Areas}}
+
+[[fr:Terres Verdoyantes]]
+[[Category:Areas (Silksong)]]

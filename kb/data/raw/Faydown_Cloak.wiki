@@ -1,0 +1,82 @@
+{{Navbar|icons=true|page1=Hunter's Cloak|page2=Drifter's Cloak|page3=Faydown Cloak}}
+
+{{SS Infobox Ability
+| title2 = <small>Received the</small><br>Faydown Cloak
+| image1 = Faydown Drifter's Cloak.png
+| description1 = Protective garb lined with the soft down of a Fayforn and sewn through with flexible spines.
+| description2 = Press JUMP<hr>Fabled feather down, layered within the cloak. Leap again while airborne.<br>Soar above foes. Reach new heights. Strike from above.
+| effects = Allows [[Hornet (Silksong)|Hornet]] to double jump once before landing, and protects against the cold air in Mount Fay
+| location = Summit of [[Mount Fay]]
+| input = JUMP}}
+
+{{Quote|Hr=Hornet
+|I have paid my respects, and been granted her favour. Her down now fills my cloak, and does much to ward against the frost of these heights.
+|[[Hornet (Silksong)|Hornet]]}}
+
+The <b>Faydown Cloak</b> is an [[Items (Silksong)#Equipment|equipment item]] in <i>[[Hollow Knight: Silksong]]</i> which functions as an upgrade to the [[Hunter's Cloak]] and [[Drifter's Cloak]], replacing it in [[Hornet (Silksong)|Hornet's]] inventory. It allows jumping again while in mid-air.
+
+== Function ==
+The Faydown Cloak grants Hornet two new abilities: an additional jump in mid-air, and resistance to the freezing temperatures of [[Mount Fay]], which would otherwise deal continuous damage after a certain period of time. The Faydown Cloak does not protect against damage from swimming in icy water.
+
+The additional jump will only be refreshed after landing on the ground, [[Cling Grip|clinging]] to a wall, [[Needle|Needle Bouncing]], successfully hitting a hoop or bounceable object with the [[Clawline]], or using a wind updraft.
+
+With the [[Drifter's Cloak]], Hornet must use the Faydown Cloak's extra jump first before she can float.
+
+== How to Acquire ==
+The Faydown Cloak can be acquired at the peak of [[Mount Fay]], which involves a series of platforming challenges using the Clawline to cross large gaps, bounce off obstacles, and gain altitude, all while working under the time pressure from the mountain's freezing climate. Upon reaching the peak, Hornet must play her [[Needolin]] to call down a [[Fayforn]] that grants her this item.
+
+The [[Weavelight]], [[Flintslate]], [[Ascendant's Grip]] and [[Plasmium Phial]] Tools can all make the trek easier, though they are not required.
+
+{{Gallery
+|Image1 = Mapshot SS Fayforn.png!Location in Mount Fay
+|Image2 = Screenshot SS Mount Fay 07.png!Tuner in Mount Fay
+|Image3 = Screenshot SS Fayforn 01.png!Fayforn in Mount Fay
+}}
+
+== Trivia ==
+[[File:Faydown Hunter's Cloak.png|100px|right|]]
+* There is an [[Cut Content (Silksong)/Items|unused sprite]] of Faydown Cloak without the [[Drifter's Cloak]] upgrade.
+* It used to be possible to hold down and jump to use the Drifter's Cloak without expending the extra jump, but this was removed in patch version 1.0.28497.
+* Using [[Sharpdart]] and Flintslate allows Faydown Cloak to be obtained without Clawline<ref>[https://www.youtube.com/watch?v=BC9LS9KuCJo Silksong – Faydown Cloak without Clawline <nowiki>[</nowiki>Act 1<nowiki>]</nowiki>]</ref>, though it is arduous beyond recommendation. It is also possible to get Faydown Cloak without Clawline via the Plasmium Phial, Flea Brew, and Thread Storm, yet this is even more arduous than the last method.
+
+{{History
+|game = SS
+|1.0.28891 (Patch 3): Fixed rare instances of being able to double jump when not intended.
+}}
+{{Localisation
+|DEname = Feidaunen-Umhang
+|DEmeaning = Faydown Cloak
+|ESname = Capa de fayforno
+|ESmeaning = Fayforn Cloak
+|FRname = Cape de plumes
+|FRmeaning = Cloak of Feathers
+|ITname = Mantello fatato
+|ITmeaning = Fairy Cloak
+|JAname = フェイのクローク
+|JAromanised = Fei no kurōku
+|JAmeaning = Fay Cloak
+|KOname = 페이 털 망토
+|KOromanised = Pei teol mangto
+|KOmeaning = Fay Fur Cloak
+|PTname = Manto de Plumídio
+|PTmeaning = Fayforn Cloak<br><small><i>Plumídio</i> is the name of the [[Fayforn]] in Portuguese, from <i>pluma</i> (feather) and <i>-ídio</i> (taxonomic suffix).</small>
+|RUname = Плащ из пуха фейфорнов
+|RUromanised = Plašč iz puxa fejfornov
+|RUmeaning = Cloak of the Fayforn's Down
+|TWname = 雪靈斗篷
+|TWromanised = Xuě líng dǒupéng
+|TWmeaning = same
+|ZHname = 雪灵披风
+|ZHromanised = Xuě líng pīfēng
+|ZHmeaning = Snow Fairy Cloak
+|CODEname=DRESS_DJ
+|CODEmeaning = <code>DJ</code> stands for double-jump.
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+{{SS Nav Skills}}
+[[Category:Items (Silksong)]]
+[[Category:Skills and Abilities (Silksong)]]
+[[fr:Cape de plumes]]
+[[pt:Manto de Plumídio]]

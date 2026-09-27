@@ -1,0 +1,107 @@
+{{SS Infobox Tool
+| image = <gallery>
+Rosary Cannon.png|Unloaded
+Rosary Cannon Loaded.png|Loaded
+</gallery>
+| type = Red
+| damage = 2, 1.5, 1 / 3, 2.5, 2 / 4, 3, 2 / 6, 4.5, 3 / 7, 5, 3 / (High, Average, Low) <br> 160, 120, 80 / 240, 200, 160 / 320, 240, 160 / 480, 360, 240 / 560, 400, 240 (total damage)(High, Average, Low)
+| max = 80<br><i>(No Changes)</i>
+| refill_type = Reload
+| refill = {{R|1}}
+| effect = Fires [[Rosaries]] as a projectile
+| location = [[High Halls]]
+| description = Repurposed mechanism from the base of a rosary stringing machine.<hr>
+Rosaries must be inserted to reload the cannon.
+}}
+
+The <b>Rosary Cannon</b> is a {{CrestSlot|Red|1}} in <i>[[Hollow Knight: Silksong]]</i>. It fires [[Rosaries]] as a projectile.
+
+== Usefulness ==
+When pressing the [[Controls (Silksong)|SKILL/TOOL]] input, [[Hornet (Silksong)|Hornet]] stands still to pull out the Rosary Cannon and begins firing after a short delay. As long as the input is held, the cannon fires automatically at a rate of roughly 10 [[Rosaries]] per second, stopping immediately when the input is released or the cannon runs out of Rosaries. 
+
+Hornet must stand in place while firing the cannon, and its recoil will slowly push her backwards. Hornet can turn around while firing, briefly firing diagonally upwards and overhead as she changes direction, but this does not allow it to function as a respectable weapon for aerial [[Enemies (Silksong)|enemies]] since it is impossible to control. Each Rosary deals 1 of 2 damage values at random. 
+
+A small amount of Rosaries may be dropped and collected again after they have been fired from the Rosary Cannon.
+
+* The Rosary Cannon has a high maximum capacity, but due to the small damage per Rosary, it only deals an average amount of total damage.
+* {{CrestSlot|Red|s}} that are replenished using [[Shell Shards]] universally cost 80 shards to refill from empty. Hornet can buy [[Shard Bundle]]s, consumable items that grant 80 Shell Shards, from various vendors across [[Pharloom]] for 50 Rosaries. However, the Rosary Cannon requires 80 Rosaries to refill. This makes it the most expensive {{CrestSlot|Red|1}} to reload, 60% more than others.
+* Hornet cannot reload the cannon when she respawns at a bench, due to losing all of her Rosaries upon death. This drawback can be mitigated by having the [[Dead Bug's Purse]] equipped, using [[Rosary String|Rosary Strings]], or consuming a [[Silkeater]].
+* Unlike other [[Tools]], the Rosary Cannon is not replenished automatically. It must be manually loaded while resting at a [[Bench (Silksong)|Bench]] by selecting it in the inventory and holding the [[Controls (Silksong)|ATTACK]] input.
+** Due to this, it is unable to be reloaded by the [[Architect Crest]]'s Craft Bind.
+
+== Tool Combo Tips ==
+{{SS Table Tool Interactions
+| Tool1 = Dead Bug's Purse
+| Tool1Desc = Retains Rosaries to reload with after death.
+| Tool2 = Magnetite Brooch
+| Tool2Desc = Automatically picks up Rosaries that drop after being fired.
+Improves ammo collection in general.
+| Tool3 = Thief's Mark
+| Tool3Desc = Increases ammo collection rate, potentially increasing the pool of enemies that drop more Rosaries than are required to kill them.
+| Tool4 = Pollip Pouch
+| Tool4Desc = Adds a poison effect, dealing damage over time to the enemy and supplementing the tool's relatively low damage output.
+If fired in short, controlled bursts, it can be a very resource-efficient way to keep an enemy constantly poisoned.
+}}
+
+== How to Acquire ==
+Found behind a breakable wall inside of the [[High Halls#Rosary Bank|Rosary Bank]] in [[High Halls]], just west of the [[Ventrica]] station. A [[Simple Key (Silksong)|Simple Key]] is required to open the room.
+
+When the mechanism in the room below the [[Rosary]] stringing machine is broken by hitting it with the [[Needle]], it drops the [[Tool]] as a collectible.
+
+{{Gallery
+|Image1 = Mapshot SS Simple Key Use High_Halls.png!Location in High Halls
+|Image2 = Screenshot SS High Halls 12.png!Rosary Bank entrance
+|Image3 = Screenshot SS High Halls 13.png!Room with the mechanism intact
+|Image4 = Screenshot SS Rosary Cannon Room.png!Room with the mechanism broken
+}}
+
+== Gallery ==
+{{MissingImage}}
+{{Gallery
+|Image1 = Recording SS Rosary-Cannon.gif!Hornet using Rosary Cannon
+|Image2 = Rosary Cannon 4.png!Capacity 80%
+|Image3 = Rosary Cannon 3.png!Capacity 60%
+|Image4 = Rosary Cannon 2.png!Capacity 40%
+|Image5 = Rosary Cannon 1.png!Capacity 20%
+|Image6 = Rosary Cannon 0.png!Empty
+|Image7 = ! Reload animation
+}}
+
+== Trivia ==
+* Rosary Cannon is made from the mechanism of a Rosary stringing machine, which can be used before acquiring it. After the Rosary Cannon has been acquired, the machine will no longer be usable.
+** Its capacity is likely in reference to the machines costing {{R|80}} to operate.
+* The concept may be based on [[wikipedia:Rotary cannon|rotary cannons]] due to its similar name and function.
+* The Rosary Cannon has a unique text prompt for trying to reload it without a [[Bench (Silksong)|Bench]]: <i>"Reload Tools while resting at a bench."</i> It uses the same icon as trying to change [[Tools]] without a Bench.
+
+{{Localisation
+|DEname = Rosenkranz-Kanone
+|DEmeaning = Rosary Cannon
+|ESname = Cañón de rosarios
+|ESmeaning = Cannon of Rosaries
+|FRname = Chapletier
+|FRmeaning = 
+|ITname = Cannone di grani
+|ITmeaning = Cannon of Beads
+|JAname = ロザリー砲
+|JAromanised = Rozarī ho
+|JAmeaning = Rosary Cannon
+|KOname = 묵주 대포
+|KOromanised = Mugju daepo
+|KOmeaning = Rosary Cannon
+|PTname = Canhão de Rosários
+|PTmeaning = Cannon of Rosaries
+|RUname = Бусинная пушка
+|RUromanised = Businnaja puška
+|RUmeaning = Beaded Firearm
+|TWname = 念珠炮
+|TWromanised = Niànzhū pào
+|TWmeaning = same
+|ZHname = 念珠炮
+|ZHromanised = Niànzhū pào
+|ZHmeaning = Rosary Cannon
+|CODEname= ROSARYCANNON
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Chapletier]]

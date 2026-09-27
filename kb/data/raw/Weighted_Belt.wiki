@@ -1,0 +1,86 @@
+{{SS Infobox Tool
+| type = Yellow
+| effect = Reduces knockback when hitting [[Enemies (Silksong)|enemies]] with the [[Needle]] and from being hit. Increases the time spent invulnerable after taking damage. Increases maximum falling speed. Reduces pull speed from [[Barnak]]s and [[Groal the Great]]'s inhale attack.
+| description = Heavy band favoured by those with an unsteady step.<hr/>
+The wearer will recoil less when striking foes and will not be flung as far when taking damage.
+| location = [[Far Fields]]
+}}
+
+{{Quote
+| A holy burden to help maintain your poise. Whether striking others or being struck yourself, you'll remain firmly in place.
+| [[Mort]]
+| Hr = SS
+}}
+
+<b>Weighted Belt</b> is a {{CrestSlot|Yellow|1}} in <i>[[Hollow Knight: Silksong]]</i>. Primarily, it reduces knockback when striking or being struck by enemies, and increases the time spent invulnerable after taking damage, alongside other minor changes.
+
+== Usefulness ==
+* Recoil distance from either taking damage or striking an enemy with the Needle is halved.
+* The time spent invulnerable after taking damage is increased by 30%.
+* Reduces the speed at which [[Barnak]]s drag Hornet upward by ~33%.{{MissingRef}}
+* Reduces the speed at which [[Groal the Great]] pulls in Hornet using their Great Inhale attack by ~38%.{{MissingRef}}
+* Increases Hornet's maximum falling speed by ~26%<ref group=code><code>normal max fall is: 30</code><br><code>Weighted max fall is: 38</code></ref>. This does not affect the acceleration to reach this speed.
+
+Reduced recoil allows Hornet to get a few more strikes in during the small windows of vulnerability after an enemy attacks. Best used with Crests with faster attack speeds like [[Hunter Crest]] and [[Wanderer Crest]], or while using  the [[Flea Brew|Flea Brew's]] attack speed buff.
+
+Reduced knockback from hits reduces the risk of Hornet getting launched into level hazards like spikes or lava. It also helps Hornet get close enough to attack again after being hit.
+
+Increased falling speed makes it faster to traverse down vertical rooms.
+
+Reduced Barnak drag speed makes it easier to time the hits needed to break free for the small platforming challenges that require them.
+
+{{Clear}}
+
+== How To Acquire ==
+Purchased from [[Mort]] in [[Pilgrim's Rest]] for {{R|160}}.
+
+In [[Act 3]], it can instead be found in the vertical room west of the Far Fields [[Bellway]] station next to Mort's corpse.
+
+{{Gallery
+|Image1 = Mapshot SS Pilgrim's Rest.png!Location in Far Fields
+|Image2 = Screenshot SS Far Fields 07.png!Mort in Far Fields
+}}
+
+{{Gallery
+|Image1 = Mapshot SS Weighted Belt.png!Location in Far Fields
+|Image2 = Screenshot SS Mort Corpse.png!Mort's corpse in Far Fields
+}}
+
+{{Localisation
+|DEname = Beschwerter Gürtel
+|DEmeaning = Weighted Belt
+|ESname = Cinturón lastrado
+|ESmeaning = Ballasted Belt
+|FRname = Anneau lourd
+|FRmeaning = Heavy Ring
+|ITname = Fascia zavorrata
+|ITmeaning = Weighted Band
+|JAname = 重いベルト
+|JAromanised = Omoi beruto
+|JAkatakana = foreign
+|JAmeaning = Weighty Belt
+|KOname = 가중 허리끈
+|KOromanised = Gajung heorikkeun
+|KOmeaning = Weighted Belt
+|PTname = Cinto Pesado
+|PTmeaning = Heavy Belt
+|RUname = Увесистая обвязка
+|RUromanised = Uvesistaja obvjazka
+|RUmeaning = Heavy Harness
+|TWname = 負重腰帶
+|TWromanised = Fùzhòng yāodài
+|TWmeaning = same
+|ZHname = 负重环带
+|ZHromanised = Fùzhòng huán dài
+|ZHmeaning = Weight-bearing Belt
+|CODEname=WEIGHTED_ANKLET
+}}
+
+{{Refs|hr=SS}}
+
+<div class="mw-collapsible mw-collapsed" data-expandtext="Show Code References" data-collapsetext="Hide Code References">
+<references group="code" />
+</div>
+
+{{SS Nav Tools}}
+[[fr:Anneau lourd]]

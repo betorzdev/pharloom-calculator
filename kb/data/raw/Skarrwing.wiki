@@ -1,0 +1,91 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Skarrwing.png|Hunter's Journal
+Skarrwing Resting.png|Resting
+</gallery>
+| hasdrop = true
+| sh1 = 3-5
+| sh2 = 4-7
+|health = 20
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 30
+|singnum = 1
+}}
+
+{{Quote
+|Hr = Journal
+|Darting predator that clings fast to roofs and outcrops, often summoned to aid its larger companions.<hr/>They would make effective hunting companions, though even without the Haunting I suspect their loyalty would always remain to their clan.
+}}
+
+<b>Skarrwings</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are flying [[Skarr]] that hang on ceilings and wait to ambush intruders.
+
+== Behaviour and Tactics ==
+Skarrwings are initially found clinging to ceilings or flying in place when idle.<br>
+They take flight once Hornet draws near and pursue her through the air, performing a short aerial dash towards her once they are within range.
+
+Due to their unusual flying pattern, often hovering just slightly above Hornet's basic attack, maintaining distance and quickly turning around to strike before retreating and repeating can prove all that is needed to dispatch them.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* For her! For her!
+* Away... toward...
+* Find it... take it...
+* Strong together! Strong forever!
+}}
+
+== Location ==
+Skarrwings can be found primarily in [[Hunter's March]], but they also appear in the upper [[Deep Docks]] and as part of the [[Enemy Gauntlets (Silksong)/Greymoor 4|gauntlet]] in [[Halfway Home]]'s cellar.
+
+After clearing the [[Enemy Gauntlets (Silksong)/Hunter's March 3|gauntlet]] in the eastern part of Hunter's March, a Skarrwing appears alongside a [[Skarr Scout]] upon revisiting the arena before [[Act 3]].
+
+{{Gallery
+|Image1 = Mapshot SS Skarrwing 01.png!Locations in Hunter's March
+|Image2 = Mapshot SS Skarrwing 04.png!Locations in Hunter's March in Act 3
+|Image3 = Mapshot SS Skarrwing 02.png!Locations in the Deep Docks
+|Image4 = Mapshot SS Skarrwing 05.png!Locations in the Deep Docks in Act 3
+|Image5 = Mapshot SS Skarrwing 03.png!Location in Greymoor
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Skarrwing 01.png!Skarrwing in Hunter's March
+|Image2 = Screenshot SS Skarrwing 02.png!Skarrwing attacking in Hunter's March
+|Image3 = Screenshot SS Skarrwing 03.png!Skarrwing hanging from ceiling in Hunter's March
+|Image4 = Screenshot SS Skarrwing 04.png!Skarrwing in Deep Docks
+|Image5 = Screenshot SS Skarrwing 05.png!Skarrwing singing
+}}
+
+{{Localisation
+|DEname = Skarrflügler
+|DEmeaning = Winged Skarr
+|ESname = Skarr alado
+|ESmeaning = Winged Skarr
+|FRname = Skarravole
+|FRmeaning = Flying Skarr
+|ITname = Mirmede Alato
+|ITmeaning = Winged Skarr<br><small><i>Mirmede</i> is the name of the [[Skarr]] in Italian, from <i>mirmeco-</i> (prefix for ants) and <i>-ede</i> (taxonomic suffix).</small>
+|JAname = スカールバエ
+|JAromanised = Sukāru bae
+|JAkatakana = foreignenemy
+|JAmeaning = Combination of {{lang|ja|スカール}} <i>sukāru</i> (skarr) and {{lang|ja|蝿}} <i>hae</i> (fly).
+|KOname = 날개 스카르
+|KOromanised = Nalgae seukareu
+|KOmeaning = Wing Skarr
+|PTname = Skarr-adjunto
+|PTmeaning = Skarr Assistant
+|RUname = Крылоскарр
+|RUromanised = Kryloskarr
+|RUmeaning = Skarrwing
+|TWname = 斯卡爾飛蟻
+|TWromanised = Sīkǎ'ěr fēiyǐ
+|TWmeaning = same
+|ZHname = 斯卡尔飞蚁
+|ZHromanised = Sīkǎ'ěr fēiyǐ
+|ZHmeaning = Skarr Flying Ant
+|CODEname = BONE_HUNTER_BUZZER
+|CODEmeaning = "Bone Hunter" internally refers to the Skarr
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

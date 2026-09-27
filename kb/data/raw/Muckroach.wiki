@@ -1,0 +1,104 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Muckroach.png|Hunter's Journal
+Muckroach Idle.png|Idle
+Muckroach Sleeping.png|Sleeping
+Muckroach Guts Removed.png|Gutted
+</gallery>
+| hasdrop = true
+| sh1 = 5-8
+| sh2 = 7-10
+|drops = [[Roach Guts]]
+|health = 50/{{BT|100}}
+|damage_modifiers = {{SS Multiple Damage Modifiers||1.25|1|0.9|0.9|0.9|(In Cage)|1|1|1|1|1}}
+|numbers_required = 20
+|singnum = 1
+}}
+
+{{Quote
+|Hr = Journal
+|Starved pack bug with an insatiable appetite. Despite their tough hide and pungent meat, roaches breed rapidly so are sometimes farmed for food.<hr/>A revolting creature. My shell itches at their presence. In the pens where their numbers grow vast, I am forever on edge.
+}}
+
+<b>Muckroaches</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are crawling pack bugs, once bred in cages to feed the residents of [[Greymoor]].<ref>[[Creige]]: <i>"You visited them pens up above here, miss? Horrid place, once all about growing meat or some such. Meant to keep us moorbugs livin', and working, it's told..."</i></ref>
+
+== Behaviour and Tactics ==
+Muckroaches sleep motionless until disturbed, after which they chase Hornet relentlessly. They can run quickly, jump short distances, and climb walls to reach her. Muckroaches have three different moves they can choose from:
+* <b>Maul:</b> Tenses up before leaping at Hornet at a variable angle, often leaping again if she is not yet behind it. If she is caught by the attack, it grabs her and drags her to the ground before mauling her for {{Damage|1+1}}. The Muckroach chews briefly after a successful attack. It can use this move to reach elevated surfaces to continue pursuing Hornet.
+* <b>Backpedal:</b> Scurries backwards a set distance, often used after missing a Maul attack.
+* <b>Bark:</b> Tilts its head back and bites at nothing. Seems to be randomly chosen, often after using Backpedal. Great as an opening to counterattack and deal damage.
+
+Because of their high speed and evasive movements, Muckroaches are difficult to hit. The simplest way to defeat them is to jump over their leaps and attack from above. [[Crests]] with high attack knockback can also repel their lunge. Since they spawn motionless in predetermined locations, careful routing can be used to avoid waking them in most rooms, allowing for an easy escape. Their loud snoring is an easy way to tell when to exercise extra caution in a new room.
+
+Some Muckroaches are trapped inside cages and cannot escape. While they are harmless, their snarling and thrashing alert any other Muckroaches nearby. In some specific cases, a Muckroach can be aware of other nearby sleeping Muckroaches that can reach Hornet, and will seek them instead of directly engaging in combat. When this happens, the sleeping Muckroaches will then awaken and attack Hornet in packs. Be aware that Muckroaches also sleep in cages that are open or broken, which can give the illusion of safety.
+
+=== Act 3 ===
+[[Black-threaded]] Muckroaches have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|Void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Gouge and gnaw...
+* Bite and claw...
+* Eat it all...
+* More and more!
+}}
+
+== Location ==
+Muckroaches can be found in [[Sinner's Road]].
+
+{{Gallery
+|Image1 = Mapshot SS Muckroach 01.png!Locations in Sinner's Road
+|Image2 = Mapshot SS Muckroach 02.png!Locations in Sinner's Road in Act 3
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Muckroach 01.png!Sleeping
+|Image2 = Screenshot SS Muckroach 02.png!Idle
+|Image3 = Screenshot SS Muckroach 03.png!Attacking
+|Image4 = Screenshot SS Muckroach 04.png!Barking
+|Image5 = Screenshot SS Muckroach 05.png!Mauling Hornet
+|Image6 = Screenshot SS Muckroach 06.png!Reacting to the Needolin
+|Image7 = Screenshot SS Styx 02.png!Barking at a hidden [[Styx]]
+|Image8 = Screenshot SS Muckroach 07.png!Dead with harvestable Roach Guts during the <i>Roach Guts</i> wish 
+|Image9 = Screenshot SS Muckroach 08.png!Relieved of its Roach Guts during the <i>Roach Guts</i> wish 
+|Image10 = Ari SS Sketch 08.jpg!Concept sketches
+}}
+
+== Trivia ==
+* Muckroaches were initially planned to be named Dustroaches and were located in the [[Cut Content (Silksong)/Areas#Dustroach Pens|Dustroach Pens]]. The Dustroach Pens was originally planned to be a sub-area of [[Greymoor]], which eventually became the current [[Sinner's Road]].<ref>[https://www.teamcherry.com.au/blog/post-e3-wrap-silksong-systems-update/ Team Cherry blog post] of June 25th, 2019: <i>"In the pens at [Greymoor]'s height, keepers wrangle swarms of Dustroaches, rapid-breeding pests with insatiable appetites."</i></ref>
+
+{{Localisation
+|DEname = Mistschabe
+|DEmeaning = Muck Cockroach
+|ESname = Suciaracha
+|ESmeaning = Portmanteau of <i>sucia</i> (dirty) and <i>cucaracha</i> (cockroach).
+|FRname = Férochard
+|FRmeaning = Portmanteau of <i>féroce</i> (fierce) and <i>cafard</i> (cockroach).
+|ITname = Scarafango
+|ITmeaning = Portmanteau of <i>scarafaggio</i> (cockroach) and <i>fango</i> (mud).
+|JAname = ツチゴキブリ
+|JAromanised = Tsuchi gokiburi
+|JAkatakana = enemy
+|JAmeaning = Combination of {{lang|ja|土 <i>tsuchi</i>}} (mud) and {{lang|ja|蜚蠊 <i>gokiburi</i>}} (cockroach).
+|KOname = 진흙바퀴
+|KOromanised = Jinheulbakwi
+|KOmeaning = Mud Cockroach
+|PTname = Barata-do-Lodo
+|PTmeaning = Sludge-Roach
+|RUname = Навозный таракан
+|RUromanised = Navoznyj tarakan
+|RUmeaning = Dung Roach
+|TWname = 淤泥蟑螂
+|TWromanised = Yūní zhāngláng
+|TWmeaning = Muckroach
+|ZHname = 淤秽蟑螂
+|ZHromanised = Yū huì zhāngláng
+|ZHmeaning = Muckroach
+|CODEname = DUSTROACH
+|CODEmeaning = Original name for the enemy when they were situated in the cut [[Cut Content (Silksong)/Areas#Dustroach Pens|Dustroach Pens]] area. 
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

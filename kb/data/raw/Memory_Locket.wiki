@@ -1,0 +1,250 @@
+{{SS Infobox Item
+| description = Keepsake containing a precious memory. Can be used to expand a Crest.<hr>
+Expand Crests in the Crest pane of the Menu. 
+| effects = Unlock {{CrestSlot|RedLocked}}{{CrestSlot|BlueLocked}}{{CrestSlot|YellowLocked}} [[Tool]] slots<br>in [[Crests]]
+| type = [[Items (Silksong)#Upgrades|Upgrade]]
+| source = Various
+| buy = {{R|150}}<br>{{R|250}}<br>{{R|330}}
+| max = 20
+}}
+
+{{Quote|Hr=SS
+|Memories only weigh us down, but some pilgrims still cling to them with unseemly devotion. This memory isn't yours, but perhaps you could find some use for it?
+|[[Mort]]}}
+
+<b>Memory Lockets</b> are [[Items (Silksong)#Upgrades|Items]] used to expand the capabilities of [[Crests]]. Each Crest starts with a different number of locked slots for {{CrestSlot|Red}}Red, {{CrestSlot|Blue}}Blue, and {{CrestSlot|Yellow}}Yellow [[Tools]], which can be unlocked by using Memory Lockets in the Crest menu. This can be done even if Hornet is not sitting at a [[Bench (Silksong)|bench]].
+
+== Use ==
+Memory Lockets are used to unlock Tool slots in [[Crests]], allowing Hornet to equip more {{CrestSlot|Red|s}}, {{CrestSlot|Blue|s}}, and {{CrestSlot|Yellow|s}}.
+
+After acquiring new Crests and unlocking more slots, [[Hornet (Silksong)|Hornet]] can speak to [[Eva]], who will grant her upgrades based on the current amount of slots unlocked, including [[Tools]] and [[Skills and Abilities (Silksong)#Silk Skills|Silk Skill]] slots. This does not count any slots from the [[Hunter Crest]], or any unused Memory Lockets in the inventory.
+
+{{Gallery
+|Image1 = Mapshot SS Eva 01.png!Location of [[Eva]] in [[Weavenest Atla]]
+|Image2 = Screenshot SS Eva 01.png!Eva in Weavenest Atla
+}}
+
+{| class="article-table" align="center"
+! Requirements
+! Upgrades
+|-
+! Meeting [[Eva]]
+| [[Hunter Crest]] Evolved
+|-
+! Unlock 12 slots
+| {{CrestSlot|Yellow|1}} [[Crests#Vesticrest|Vesticrest]] slot
+|-
+! Unlock 20 slots
+| {{CrestSlot|Blue|1}} [[Crests#Vesticrest|Vesticrest]] slot
+|-
+! Unlock 27 slots
+| [[Hunter Crest]] Fully Evolved
+|-
+! Unlock 32 slots
+| [[Sylphsong]]
+|}
+
+== How to Acquire ==
+There are 20 Memory Lockets in total, exactly enough to unlock every slot. Two Memory Lockets may move locations in Act 3 if not previously collected.
+
+{| class="article-table sortable" width="100%" data-tpt-table-id="memory-lockets"
+! #
+! Area
+! class="unsortable" | Location
+! class="unsortable" | Requires
+! class="unsortable" | Map
+|-
+! 1
+| [[Hunter's March]]
+| Below the [[Hunter%27s March#Sub-area: Chapel of the Beast|Chapel of the Beast]].
+| -
+| [[File:Mapshot SS Memory Locket 01.png|150x150px|center]]
+|- data-tpt-rowspan="2"
+! rowspan=2 | 2
+| [[Far Fields]]
+| In [[Act 1]] or [[Act 2]], purchased from [[Mort]] for {{R|150}}.
+| -
+| [[File:Mapshot SS Pilgrim's Rest.png|150x150px|center]]
+|- style="border-top: 0.15rem dashed rgba(255, 255, 255, 0.3);"
+| [[Blasted Steps]]
+| In [[Act 3]], purchased from [[Grindle]] for {{R|250}}.
+| Not purchasing the Memory Locket from Mort
+| [[File:Mapshot SS Grindle 01.png|150x150px|center]]
+|-
+! 3
+| [[Greymoor]]
+| West of the Bellway.
+| -
+| [[File:Mapshot SS Memory Locket 02.png|150x150px|center]]
+|- data-tpt-rowspan="2"
+! rowspan=2 | 4
+| [[Bone Bottom]]
+| In [[Act 1]] or [[Act 2]], awarded after completing the <i>[[Volatile Flintbeetles]]</i> [[Wish]].
+| Reach [[Greymoor]]
+| [[File:Mapshot SS Bone Bottom Wishwall.png|150x150px|center]]
+|- style="border-top: 0.15rem dashed rgba(255, 255, 255, 0.3);" 
+| data-sort-value="Marrow" | [[The Marrow]]
+| In [[Act 3]], found in [[Survivor's Camp]] lying on the ground next to [[Flick the Fixer]].
+| Not having completed <i>[[Volatile Flintbeetles]]</i>
+| [[File:Mapshot SS Flea Caravan 01.png|150x150px|center]]
+|-
+! 5
+| data-sort-value="Marrow" | [[The Marrow]]
+| Northeast of the [[Bellway]] station.
+| [[Cling Grip]]
+| [[File:Mapshot SS Memory Locket 03.png|150x150px|center]]
+|-
+! 6
+| [[Wormways]]
+| In the southwest next to a large bug corpse.
+| [[Simple Key (Silksong)|Simple Key]]<br>
+[[Cling Grip]]
+| [[File:Mapshot SS Memory Locket 04.png|150x150px|center]]
+|-
+! 7
+| [[Bellhart]]
+| Purchased from [[Frey]] for {{R|330}}.
+| Complete <i>[[Acts#The Threadspun Town|SAVE: The Threadspun Town]]</i>
+| [[File:Mapshot SS Frey 01.png|150x150px|center]]
+|-
+! 8
+| [[Blasted Steps]]
+| In the room above the first bench.
+| [[Cling Grip]]
+| [[File: Mapshot SS Memory Locket 05.png|150x150px|center]]
+|-
+! 9
+| [[Bilewater]]
+| In a hidden room northwest of the [[Bellway]].
+| -
+| [[File: Mapshot SS Memory Locket 06.png|150x150px|center]]
+|-
+! 10
+| [[Choral Chambers]]
+| Above the [[Choral Chambers#Sub-area: Grand Bellway|Grand Bellway]], accessed from the eastern part of the [[Underworks]].
+| Defeat [[Phantom]] or [[Trobbio]]
+| [[File:Mapshot SS Memory Locket 07.png|150x150px|center]]
+|-
+! 11
+| [[Underworks]]
+| Through a false ceiling above the benches by the confessional.
+| -
+| [[File:Mapshot SS Memory Locket 08.png|150x150px|center]]
+|-
+! 12
+| [[Deep Docks]]
+| West of the diving bell.
+| [[Clawline]]<br>
+Defeat [[Forebrothers Signis & Gron]]
+| [[File:Mapshot SS Memory Locket 09.png|150x150px|center]]
+|-
+! 13
+| [[Whispering Vaults]]
+| Below the exit to the outside area.
+| -
+| [[File:Mapshot SS Memory Locket 10.png|150x150px|center]]
+|-
+! 14
+| [[Sands of Karak]]
+| In the first big room to the left.
+| [[Clawline]]
+| [[File:Mapshot SS Memory Locket 11.png|150x150px|center]]
+|-
+! 15
+| [[Greymoor]]
+| Inside of [[Greymoor#Sub-area: Halfway Home|Halfway Home]], above the left-hand door.
+| [[Faydown Cloak]]
+| [[File:Mapshot SS Memory Locket 12.png|150x150px|center]]
+|-
+! 16
+| [[Memorium]]
+| In the left [[Shellwood]] themed central room.
+| [[Faydown Cloak]]
+| [[File:Mapshot SS Memory Locket 13.png|150x150px|center]]
+|-
+! 17
+| data-sort-value="Slab" | [[The Slab]]
+| In the shortcut cave between the Bellway area and the upper areas.
+| [[Slab Keys|Key of Apostate]]<br>[[Faydown Cloak]]
+| [[File:Mapshot SS Memory Locket 14.png|150x150px|center]]
+|-
+! 18
+| [[Bilewater]]
+| Held by a corpse in a breakable cocoon just west of the hidden [[Bench (Silksong)|bench]]. Not visible until the cocoon is broken.
+| [[Faydown Cloak]]
+| [[File:Mapshot SS Memory Locket 15.png|150x150px|center]]
+|-
+! 19
+| [[Bellhart]]
+| In [[Act 3]], above the [[Bellhome]].
+| [[Silk Soar]]
+| [[File:Mapshot SS Memory Locket 16.png|150x150px|center]]
+|-
+! 20
+| [[Far Fields]]
+| In [[Act 3]], east of [[Skarrsinger Karmelita]].
+| [[Silk Soar]]<br>
+Defeat the [[Black-Threading|black-threaded]] [[Skarrgard]]
+| [[File:Mapshot SS Memory Locket 17.png|150x150px|center]]
+|}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Memory Locket 01.png!South of Chapel of the Beast in Hunter's March
+|Image2 = Screenshot SS Memory Locket 03.png!West of the Bellway station in Greymoor
+|Image3 = Screenshot SS Memory Locket 04.png!In Survivor's Camp in the Marrow during Act 3
+|Image4 = Screenshot SS Memory Locket 05.png!Northeast of the Bellway station in the Marrow
+|Image5 = Screenshot SS Memory Locket 06.png!Southeast of Zango's corpse in Wormways
+|Image6 = Screenshot SS Memory Locket 08.png!North of the first bench in Blasted Steps
+|Image7 = Screenshot SS Memory Locket 09.png!Northwest of the Bellway station in Bilewater
+|Image8 = Screenshot SS Memory Locket 10.png!Above the Grand Bellway station in Choral Chambers
+|Image9 = Screenshot SS Memory Locket 11.png!West of the benches in Underworks
+|Image10 = Screenshot SS Memory Locket 12.png!West of the Diving Bell in Deep Docks
+|Image11 = Screenshot SS Memory Locket 13.png!East of Vaultkeeper Cardinius in Whispering Vaults
+|Image12 = Screenshot SS Memory Locket 14.png!East of Watcher at the Edge in Sands of Karak
+|Image13 = Screenshot SS Memory Locket 15.png!In Halfway Home in Greymoor
+|Image14 = Screenshot SS Memory Locket 16.png!In the west Shellwood-themed room the Memorium
+|Image15 = Screenshot SS Memory Locket 17.png!South of the entrance to Choral Chambers in the Slab
+|Image16 = Screenshot SS Memory Locket 18.png!West of the bench in Bilewater
+|Image17 = Screenshot SS Memory Locket 19.png!Above the Bellhome in Bellhart in Act 3
+|Image18 = Screenshot SS Memory Locket 20.png!East of Skarrsinger Karmelita in Act 3
+}}
+
+{{Localisation
+|DEname = Erinnerungsmedaillon
+|DEmeaning = Memory Locket
+|ESname = Relicario de memorias
+|ESmeaning = Memory Locket or Memory Reliquary
+|FRname = Médaillon de Souvenir
+|FRmeaning = Memory Locket
+|ITname = Medaglione del ricordo
+|ITmeaning = Memory Medallion
+|JAname=記憶のロケット
+|JAromanised = Kioku no roketto
+|JAkatakana = foreign
+|JAmeaning = Memory Locket
+|KOname = 기억 로켓
+|KOromanised = Gieok loket
+|KOmeaning = Memory Locket
+|PTname =  Medalhão Memorial
+|PTmeaning = Memorial Locket
+|RUname = Медальон на память
+|RUromanised = Medal'on na pamjat'
+|RUmeaning = Keepsake Medallion
+|TWname = 回憶掛墜盒
+|TWromanised = Huíyì guà zhuì hé
+|TWmeaning = Memory Locket
+|ZHname = 忆境纪念盒
+|ZHromanised = Yì jìng jìniàn hé
+|ZHmeaning = Memory Memento Box
+|CODEname = CREST_SOCKET
+|CODEmeaning = 
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Items}}
+
+[[Category:Crests]]
+
+[[fr:Médaillon de souvenir]]

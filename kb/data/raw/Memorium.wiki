@@ -1,0 +1,170 @@
+{{SS Infobox Area
+| image1 = <gallery>
+Memorium Map Marked.png|Marked
+Memorium Map Clean.png|Unmarked
+</gallery>
+| connection = [[Choral Chambers]]<br/>
+[[Putrified Ducts]]
+| action = [https://youtu.be/swPmNk9_fw0?si=u0UZUdRY-EBdPU6W Generic Enemy Battle A]
+| ambience = [https://www.youtube.com/watch?v=76EooYpGAtY Atmos Arborium]
+[https://www.youtube.com/watch?v=L609URKFP-o Atmos Indoor Air]<br>
+[https://www.youtube.com/watch?v=UZD12AngJKg Atmos Outside Wind]<br>
+[https://www.youtube.com/watch?v=LqSQzABsPH0 Atmos Coral Zap Area]<br>
+[https://www.youtube.com/watch?v=ZzyCwfkjyCI Lake Atmos Hornet]<br>
+[https://www.youtube.com/watch?v=62rByKODo9A Atmos Citadel Halls] (Act 2)<br>
+[https://www.youtube.com/watch?v=GivJqT7ml0M Atmos Citadel Outside] (Act 2)<br>
+[https://www.youtube.com/watch?v=UdcTyq_aXXI Atmos Citadel Halls Pre Wakeup] (Act 3)<br>
+[https://www.youtube.com/watch?v=imSH2Pv_sCo Atmos Crumbling World] (Act 3)<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+| main = [https://www.youtube.com/watch?v=-uE8dfsgsZc Memorium]
+}}
+{{Quote
+|Here is established, by holy consent of the Conductors,
+The Memorium of Pharloom.
+
+What Is Remembered Is Never Lost.
+|[[Lore Tablets (Silksong)#Memorium|Lore Tablet]]
+|Hr=SS
+}}
+
+The <b>Memorium</b> is an [[Areas (Silksong)|area]] in [[the Citadel]] in <i>[[Hollow Knight: Silksong]]</i>. Located near the top of the Citadel, the Memorium was established by the [[Conductors]] to document and preserve the wildlife of [[Pharloom]].
+
+== Description ==
+The Memorium is a preserve located near the top of the Citadel, housing specimens of various wildlife from across Pharloom. It is divided into several floors, with rooms designed to replicate the native biomes of the specimens kept within. Both within and outside the artificial biomes, the Memorium shares architectural similarities with the rest of the Citadel, featuring intricately carved gilded structures as well as the steam pipes that run through the city.
+
+The Memorium features eight artificial environments that replicate areas from Pharloom: [[Moss Grotto]], [[Verdania]], [[Sands of Karak]] and its [[Voltnest]], [[Shellwood]], [[Far Fields]], [[the Marrow]], and [[Greymoor]].
+{{Gallery
+|Image1 = Memorium Environments.png!Memorium environments
+}}
+
+Each environment is inhabited by enemies that can be found in its corresponding area. Moss Grotto contains an additional [[Mossgrub]] variant, [[Massive Mossgrub]]s, while the [[Sands of Karak]] houses [[Crustcrag]]s, an oversized variant of the now-extinct [[Crustcrawler]]s. The fauna in the Verdanian biome has died out; сorpses of [[Leaf Roller]]s can still be seen in one of its rooms. At the top of the area is a [[Craws|Craw]] aviary full of cages containing dead Crawbugs and a [[Huge Flea]]. 
+
+On the east side of the Memorium, in the room with the map machine, a hidden passage leads to a bridge on the outside of the Citadel. This connects to the western part of the [[Putrified Ducts]].
+
+== History ==
+The Memorium was created by consent of the [[Conductors]], with the goal of perfectly preserving the ecosystems of Pharloom for eternity.<ref>Memorium [[Lore_Tablets_(Silksong)#Memorium|Lore Tablet]]: <i>"Here is established, by holy consent of the Conductors, The Memorium of Pharloom. What Is Remembered Is Never Lost."</i></ref><ref>[[Memoria]] [[Needolin]] dialogue: <i>"Our past, remembered... These lands, eternal... Saved, preserved, perfect... What was will not be forgotten..."</i></ref> It contains separate environments with the flora and fauna of specific areas. Verdania's ecosystem eventually exceeded its environment and had to be cut off to maintain the balance of the other environments.<ref>Memorium [[Lore_Tablets_(Silksong)#Memorium|Lore Tablet]]: <i>"Containment fails. Memory lost. Excise outer. Maintain inner. Shellwood stasis sustained - Remember. Marrowlands stasis critical - Remember. Verdanian environment exceeded - Destined to forget."</i></ref> In addition to preserving Pharloom's environment, the Memorium also researched various materials and bred some bugs to massive size, such as [[Crustcrag]]s and [[Massive Mossgrub]]s.<ref>[[Materium]] description: <i>"Tubes and receptacles built for the storing, recording and research of various materials."</i></ref><ref>Crustcrag [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Coral hulk with a dense shell, bred to immense size by the Citadel's Memorium."</i></ref><ref>Massive Mossgrub Hunter's Journal entry: <i>"Unnaturally overgrown Mossgrub, bred within the Citadel's Memorium."</i></ref> The [[Memoria|Memoriae]], learned disciples of [[the Choir]], were charged to maintain the Memorium.<ref>Memoria Hunter's Journal entry: <i>"Learned disciple of the Choir charged to maintain the Citadel's Memorium."</i></ref> However, theirs was a hopeless task from the start, as Pharloom's wild lands could never be truly replicated within such an artificial space,<ref>Memoria Hunter's Journal entry: <i>"From the outset, theirs was a hopeless task. Those wild lands could never be replicated within a space so artificial."</i></ref> and the creatures in the Memorium were able to sense that they were far from their true home.<ref>Crustcrag Needolin dialogue: <i>"Crackling, growing, stretching shell... Water's source... hidden... lost... False chambers... long teeth... Poison light... painful lash..."</i></ref><ref> Massive Mossgrub Needolin dialogue: <i>"Mother's voice... distant... Little sisters... hide away..."</i></ref>
+
+After the [[Haunting]] struck the Citadel, the Memorium became abandoned, and most of its caretakers died.
+
+== How to Access ==
+
+The Memorium can be accessed from the [[Choral Chambers]], via the long hallway connecting [[Songclave]] and the [[Cogwork Core]]. The [[Faydown Cloak]] is required for access. 
+
+{{TabbedPOI
+|Header = true
+
+|NPC1 = Jubilana
+
+|Enemy1 = Mossgrub
+|Enemy2 = Massive Mossgrub
+|Enemy3 = Mossmir
+|Enemy4 = Skull Scuttler
+|Enemy5 = Skull Brute
+|Enemy6 = Kilik
+|Enemy7 = Beastfly
+|Enemy8 = Caranid
+|Enemy9 = Vicious Caranid
+|Enemy10 = Mawling
+|Enemy11 = Marrowmaw
+|Enemy12 = Rhinogrund
+|Enemy13 = Pond Skipper
+|Enemy14 = Shellwood Gnat
+|Enemy15 = Phacia
+|Enemy16 = Pollenica
+|Enemy17 = Gahlia
+|Enemy18 = Driznit
+|Enemy19 = Driznarga
+|Enemy20 = Crustcrag
+|Enemy21 = Drapefly
+|Enemy22 = Drapelord
+|Enemy23 = Memoria
+|Enemy24 = Huge Flea
+
+|Loot1_FileName = Voltvessels
+|Loot2_FileName = Materium
+|Loot3_FileName = Spool Fragment
+|Loot3_Amount = 1
+|Loot4_FileName = Memory Locket
+|Loot4_Amount = 1
+|Loot5_FileName = Flea
+|Loot5_Amount = 1
+|Loot5_Description = [[Huge Flea]]
+|Loot6_FileName = Shard Bundle
+|Loot6_Amount = 1
+|Loot7_FileName = Beast Shard
+|Loot7_Amount = 1
+|Loot7_Description = dropped by [[Rhinogrund]]
+|Loot8_FileName = Mossberry
+|Loot8_Amount = 1
+|Loot9_FileName = Cogheart Piece 1
+|Loot9_Name = Cogheart Piece
+|Loot9_Amount = 1
+
+|LoreTabletsSource = SS Memorium
+
+|EnemyGauntletsSource = Memorium
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Memorium 01.png!Entrance
+|Image2 = Screenshot SS Memorium 02.png!Bench
+|Image3 = Screenshot SS Memorium 03.png!Message board
+|Image4 = Screenshot SS Memorium 09.png!Entrance to the Verdania environment
+|Image5 = Screenshot SS Leaf Roller 05.png!Verdania environment
+|Image6 = Screenshot SS Memorium 05.png!Exhibits
+|Image7 = Screenshot SS Memorium 04.png![[Materium]] room
+|Image8 = Screenshot_SS_Memoria_02.png![[Voltvessels]] room
+|Image9 = Screenshot SS Memorium 06.png!Craw aviary with [[Huge Flea]]
+|Image10 = Screenshot SS Memorium 07.png![[Cogheart Piece]] Room
+|Image11 = Screenshot SS Memorium 08.png!Bridge to the [[Putrified Ducts]]
+}}
+
+== Trivia ==
+* The term Memorium is likely a play on <i>in memoriam</i>, meaning "in memory of", used often in epitaphs, combined with the -um suffix used for large buildings (e.g. <i>stadium</i>).
+*[[Cut Content (Silksong)/Areas#Memorium|Earlier in development]], the Memorium did not require the [[Faydown Cloak]] to access alongside other smaller differences.
+* The list of [[Enemies (Silksong)|enemies]] on display in the exhibits section are: a [[Grom]], [[Skarr Stalker]]s, a [[Silk Snipper]], [[Winged Pilgrim Bellbearer]]s, [[Savage Beastfly|Savage Beastflies]], a [[Stilkin Trapper]], and [[Pilgrim Pouncer]]s.
+** A body of a [[Verdanir]] is also in the game files, but it cannot be found in the Memorium and appears to have been cut.
+** Along with the listed enemies, a corpse that resembles [[Cut Content (Silksong)/NPCs#Bay Hermit Crab|a cut NPC]] that would have appeared in the removed [[Cut_Content (Silksong)/Areas#Pharloom Bay|Pharloom Bay]] area is also displayed in the exhibit.
+{{Gallery
+|Image1 = Pinned bugs 0002 1.png!Cut Verdanir corpse
+|Image2 = Pharloom_Bay_hermit_npc_memorium.png!Corpse in the Memorium
+|Image3 = Silksong_Early_014.png!Cut NPC in Pharloom Bay
+}}
+* If the <i>[[Garb of the Pilgrims]]</i> [[Wish]] is active, a [[Pilgrim Shawl]] can be taken from the body of a [[Pilgrim Groveller]] within a glass display at the exhibits section.
+
+{{Localisation
+|DEname = Memorium
+|DEmeaning = —
+|ESname = Memorium
+|ESmeaning = — 
+|FRname = Mémorium
+|FRmeaning = —
+|ITname = Memorium
+|ITmeaning = —
+|JAname = 記憶庫
+|JAromanised = Kiokuko
+|JAmeaning = Memory Storage
+|KOname = 보존실
+|KOromanised = Bojonsil
+|KOmeaning = Preservation Room
+|PTname = Memorium
+|PTmeaning = —
+|RUname = Мемориум
+|RUromanised = Memorium
+|RUmeaning = Memorium
+|ZHname = 忆廊
+|ZHromanised = Yì láng
+|ZHmeaning = Memory Gallery<br><small>The name is a homophone of {{lang|zh-hans|艺廊}} <i>yìláng</i> (art gallery).
+|TWname = 銘錄館
+|TWromanised = Míng lù guǎn
+|TWmeaning = Record Museum Gallery
+|CODEname = ARBORIUM
+|CODEmeaning = Refers to an [[wikipedia:Arboretum|Arboretum]], a collection of a variety of tree and shrub species.
+}}
+{{Refs|hr=ss|columns=2}}
+
+{{SS Nav Areas}}
+[[Category:The Citadel]]
+
+[[zh:忆廊]]

@@ -1,0 +1,84 @@
+{{SS Infobox Enemy
+| hasdrop = true
+| sh1 = 3-5
+| sh2 = 4-7
+|health = 20/{{BT|40}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|0.75|0.75|0.75}}
+|numbers_required = 25
+|singnum = 1
+}}
+{{Quote
+|Hr = Journal
+|Burrower that nests in the Bellvein and seeks out hard bells to protect its soft body.<hr/>I would very much like to feel their soft fur, if only they weren't so hostile.
+}}
+
+<b>Furms</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are burrowers that nest in the Bellvein and use hard bells to protect their soft body.<ref>Furm [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Burrower that nests in the Bellvein and seeks out hard bells to protect its soft body."</i></ref> [[Winged Furm]]s are their mature form.<ref>[[Winged Furm]] Hunter's Journal entry: <i>"Furred bug beneath a heavy bell. It has grown too large to burrow, but in maturing has developed small wings."</i></ref>
+
+== Behaviour and Tactics ==
+Remains burrowed in floors and walls until Hornet approaches, after which it emerges and wanders along the surface. When within striking range, it rears back slightly then leap towards Hornet. While leaping, its bell defends against any incoming strikes; however, hitting it mid-leap knocks it backwards, making this a simple method to counter its attack. It is recommended to attack it after a leap, or to trick it into jumping down a pit.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Furms have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2|
+* Rings from high, hide away...
+* Rings from low, hidden prey...
+* Shining shells, find your own...
+* Watch the darkness, hear the bells...
+}}
+
+== Location ==
+Furms can be found in bellvein tunnels above and below [[Bellhart]], and near [[Yarnaby]]'s bellhome in [[Greymoor]]. In Bellhart, Furm spawn locations can change upon re-entering the room, and new Furms can appear in different spots once the existing ones are killed or burrow back into the bells.
+{{Gallery
+|Image1 = Mapshot SS Furm 02.png!Locations in Bellhart
+|Image2 = Mapshot SS Furm 01.png!Location in Greymoor
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Furm 01.png!In Bellhart
+|Image2 = Screenshot SS Furm 02.png!In Greymoor
+|Image3 = Screenshot SS Furm 03.png!Attacking
+|Image4 = Screenshot SS Furm 04.png!Hornet hitting their bell
+|Image5 = Screenshot SS Furm 05.png!Responding to the Needolin
+}}
+
+== Trivia ==
+[[File:Silver Furm.png|right|150x150px|link=Cut Content (Silksong)/Enemies#Silver Furm]]
+* There is an [[Cut Content (Silksong)/Enemies#Silver Furm|unused silver-belled variant]] of the Furm.
+{{Clear}}
+{{Localisation
+|DEname = Furm
+|DEmeaning = —
+|ESname = Furmo
+|ESmeaning = —
+|FRname = Pelu
+|ITname = Vellio
+|ITmeaning = From <i>vello</i> (fleece)
+|JAname = ファルム
+|JAromanised = Farumu
+|JAkatakana = foreign
+|JAmeaning = Furm
+|KOname = 털벌레
+|KOromanised = Teolbeolle
+|KOmeaning = Fur Bug 
+|PTname = Pelumo
+|PTmeaning = From <i>pelo</i> (fur).
+|RUname = Фурм
+|RUromanised = Furm
+|RUmeaning = Furm
+|TWname = 絨甲蟲
+|TWromanised = Róng jiǎchóng
+|TWmeaning = same
+|ZHname = 绒甲虫
+|ZHromanised = Róng jiǎchóng
+|ZHmeaning = Velvet Beetle
+|CODEname = BELL_GOOMBA
+|CODEmeaning = Furms slightly act like [https://www.mariowiki.com/Goomba Goombas] from the <i>Mario</i> franchise 
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

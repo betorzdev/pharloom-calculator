@@ -1,0 +1,110 @@
+{{Navbar|page1=Garmond and Zaza|page2=Lost Garmond}}
+{{SS Infobox Boss
+|image1 = <gallery>
+B Lost Garmond.png|Hunter's Journal
+Lost Garmond Stagger.png|Staggered
+</gallery>
+|theme = [https://www.youtube.com/watch?v=NRJe8xGWGK4 Dark Descent]
+|location = [[Blasted Steps]]
+|drops = [[Hero's Memento]]
+|health = 900
+|damage_modifiers = {{SS Spaced Damage Modifiers|2|1.5|1.2|1.1|1}}
+|numbers_required = 1
+|va = Nic "Bitter Bits"<ref>[https://x.com/Bitter_Bits/status/1963602428843970879 Twitter/X post] by Bitter Bits [[:File:Reference Garmond Voice.png|(Archive)]]</ref>
+}}
+{{Quote
+|Hr = Journal
+|Old knight consumed by black thread.<hr/>
+A tragic fate for a once honourable bug. Those void soaked threads... Their physical might is nothing compared to the corruption they wreak upon a soul.
+}}
+
+<b>Lost Garmond</b> is a [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. He is the [[Black-Threaded|black-threaded]] form of [[Garmond]].<ref>Lost Garmond Hunter's Journal entry: <i>"Old knight consumed by black thread."</i></ref> His defeat is the objective of the <i>[[Hero's Call]]</i> [[wish]].
+
+==In-Game Events==
+After [[Hornet (Silksong)|Hornet]] promises the <i>[[Hero's Call]]</i> [[wish]], Zaza appears in the [[Blasted Steps]] [[Bellway]] station. He leads Hornet through the passage below and to the west of the station to a room where Lost Garmond is waiting. When Hornet gets close enough, Lost Garmond roars, signalling the beginning of the fight.
+
+After defeating Lost Garmond, he speaks his final words to Hornet before giving her his [[Hero's Memento]] and sitting down, presumably passing away. Afterwards, Zaza remains forever by his side; Zaza will respond to the [[Needolin]], but Garmond will not. If Hornet leaves the room without talking to Garmond, he presumably passes away, leaving the Hero's Memento on his body for Hornet to pick up.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+Lost Garmond shuffles slowly after [[Hornet (Silksong)|Hornet]] and can perform the following attacks:
+* <b>Hornlance Sweep</b>: If Hornet is close to him, Lost Garmond can stop and swing his hornlance back and forth 6 times in large arcs that cover the space above him and to his sides.
+* <b>Quick Jabs</b>: Lost Garmond stabs forwards 3 times in a row, travelling with each jab, pausing a moment before the final, slightly longer, stab. During that pause, he can switch direction for the third stab if Hornet has moved behind him.
+* <b>Void Projectiles</b>: Lost Garmond shouts as he turns black and launches 4 slightly arcing void projectiles in Hornet's direction. The first projectile is launched horizontally, with each subsequent one shot at slightly higher angles.
+* <b>Corrupted Drop</b>: Lost Garmond makes a tall leap towards Hornet at a set distance. At the apex of the jump, he stabs downwards with his hornlance straight into the ground, which launches 4 arcing Void Blobs to his left and right at the point of impact. Upon hitting the ground, each blob then creates a small circular slash around itself.
+As Lost Garmond is [[Black-Threading|black-threaded]], all his attacks deal {{Damage|2|type=Void}}; the Void blades from Corrupted Drop deal {{Damage|1+1|type=Void}}.
+
+<hr />
+
+{{Stagger
+| Lost Garmond falls onto his back and flails about.
+| 17
+| game = SS
+}}
+
+<hr />
+{{MissingInfo}}
+
+== Location ==
+Lost Garmond can be found in the [[Blasted Steps]], in a room west of the [[Bellway]]. He can only be fought during the <i>[[Hero's Call]]</i> [[Wish]].
+
+{{Gallery
+|Image1 = Mapshot SS Lost Garmond 01.png!Location in the Blasted Steps
+}}
+
+==Gallery==
+{{Gallery|
+|Image1=Screenshot SS Lost Garmond 01.png!Idle
+|Image2=Screenshot SS Lost Garmond 02.png!Hornlance Sweep
+|Image3=Screenshot SS Lost Garmond 03.png!Quick Jabs
+|Image4=Screenshot SS Lost Garmond 04.png!Void Projectiles
+|Image5=Screenshot SS Lost Garmond 05.png!Corrupted Drop
+|Image6=Screenshot SS Lost Garmond 06.png!Stagger
+|Image7=Screenshot SS BlastedSteps 14.png!Lost Garmond's final resting spot.
+}}
+
+{{hr|ss}}
+
+==Achievements==
+{{Achievement|game=silksong|Hero's Call}}
+
+== Trivia ==
+* Lost Garmond does not respond to the [[Needolin]].
+* Lost Garmond is the only [[Enemies (Silksong)|enemy]] in the game with a [[Black-Threading|black-threaded]] HP multiplier of 1. This is because he is the only black-threaded enemy to not have a "base form" whose health is multiplied.
+* The icon of the achievement depicts Garmond <i>and</i> Zaza instead of Lost Garmond.
+* If Hornet leaves the room without speaking to Garmond after his defeat, Garmond will be found dead upon re-entering, with the Hero's Memento lying next to him.
+* Lost Garmond's sprites are actually fully coloured, however they're desaturated in-game.
+
+{{Localisation
+|DEname = Verlorener Garmond
+|DEmeaning = Lost Garmond
+|ESname = Garmond perdido
+|ESmeaning = Lost Garmond
+|FRname = Garmond Perdu
+|FRmeaning = Lost Garmond
+|ITname = Crimondo Perduto
+|ITmeaning = Lost Crimondo
+|JAname= 漆黒のガーモンド
+|JAromanised= Shikkoku no gāmondo 
+|JAmeaning = Pitch Black Garmond
+|KOname = 광기에 빠진 가몬드
+|KOromanised = Gwanggloe ppajin gamondeu 
+|KOmeaning = Fallen to Madness Garmond
+|PTname =  Garmond Perdido
+|PTmeaning = Lost Garmond
+|RUname = Пропащий Гармонд
+|RUromanised = Propaščij Garmond 
+|RUmeaning = Lost Garmond
+|TWname = 失心加蒙德
+|TWromanised = Shīxīn jiāméngdé
+|TWmeaning = same
+|ZHname = 失心加蒙德
+|ZHromanised = Shīxīn jiāméngdé
+|ZHmeaning = Lost Mind Garmond or Lost Heart Garmond
+|CODEname = GARMOND
+}}
+{{Refs|hr=ss}}
+{{SS Nav Enemies}}
+
+[[pt:Garmond Perdido]]

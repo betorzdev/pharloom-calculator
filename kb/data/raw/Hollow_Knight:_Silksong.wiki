@@ -1,0 +1,245 @@
+{{DISPLAYTITLE:<i>Hollow Knight: Silksong</i>}}
+{{Navbar|page1=Hollow Knight|title1=<i>Hollow Knight</i>|page2=Hollow Knight: Silksong|title2=<i>Hollow Knight: Silksong</i>}}
+{{Infobox Game
+|title1 = <i>Hollow Knight: Silksong</i>
+|image1 = Silksong cover.jpg
+|developers = [[Team Cherry]]
+|music = Christopher Larkin
+|platform = Windows, macOS, Linux, Nintendo Switch, Nintendo Switch 2, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X<nowiki>|</nowiki>S
+|release date = September 4th, 2025<ref name="lasttrailer" />
+|version = [[Updates (Silksong)#1.0.30000 (Patch 5)|1.0.30000]]
+}}
+{{Quote
+|As the lethal hunter Hornet, adventure through a kingdom ruled by silk and song! Captured and taken to this unfamiliar world, prepare to battle mighty foes and solve ancient mysteries as you ascend on a deadly pilgrimage to the kingdom's peak.
+|Hr=SS
+}}
+
+<i><b>Hollow Knight: Silksong</b></i> is the sequel to <i>[[Hollow Knight]]</i> featuring [[Hornet (Silksong)|Hornet]] as the playable character. It was developed by [[Team Cherry]], and released on Windows, macOS, Linux, Nintendo Switch, Nintendo Switch 2, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X|S on September 4th, 2025.
+
+== Gameplay ==
+[[Hornet (Silksong)|Hornet]] can explore the large interconnected world of [[Pharloom]] using a variety of [[Ancestral Arts|movement]] and [[Combat (Silksong)|combat]] techniques. In classic Metroidvania style, there are areas of the world that Hornet cannot access until she obtains particular [[Skills]] or [[Abilities (Silksong)|Abilities]]. [[Map and Quill (Silksong)|Maps]] for each area must be bought from a [[NPCs (Silksong)#Merchants|shopkeeper]] generally hidden somewhere in that area, and Hornet can also buy upgrades that place [[Map and Quill (Silksong)#Map Pins|markers]] on the map or allow them to reveal parts of the map as she explores. Many areas contain "[[Bosses (Silksong)|boss]]" enemies that Hornet must defeat in order to continue, as well as sub-bosses that drop useful rewards or upgrades.
+
+Defeated [[Enemies (Silksong)|enemies]] drop [[Shell Shards]] and [[Rosaries]], currencies that Hornet can use to buy [[Items (Silksong)|items]] from shopkeepers. If Hornet is killed, she respawns at the last place she rested and loses all her Rosaries. She must then return to the [[Cocoon]] at her place of death in order to recover the currency. Hornet also gains [[Silk]] by attacking enemies, which she can then spend to recover lost health or activate special abilities. Health can also be recovered by resting at a [[Bench (Silksong)|Bench]].
+
+== Development ==
+<i>Hollow Knight: Silksong</i> was first planned as additional content to <i>Hollow Knight</i>, as part of a Kickstarter goal to have a second playable character.<ref>[https://www.kickstarter.com/projects/11662585/hollow-knight/posts/1088384 Playable Hornet! You're all incredible!] on Kickstarter</ref> Eventually, the development became too ambitious for a DLC, so Team Cherry opted for a new game. It was revealed on February 14th, 2019.<ref name=reveal>[https://www.teamcherry.com.au/blog/hollow-knight-silksong-revealed/ HOLLOW KNIGHT: SILKSONG REVEALED!] on Team Cherry's blog</ref> The game also used the remaining Kickstarter backer creations such as characters, bosses and areas. 
+
+On June 12th, 2022, <i>Hollow Knight: Silksong</i> was shown in the Xbox & Bethesda showcase, where it was confirmed to be on Game Pass day 1.<ref>[https://youtu.be/JSfuFlhsxZY Hollow Knight: Silksong - Xbox Game Pass Reveal Trailer - Xbox & Bethesda Games Showcase 2022] on YouTube</ref> It, alongside all other games shown, was confirmed to be releasing in the timeframe of twelve months.<ref>[https://x.com/Xbox/status/1536034468460261376 Everything you're seeing today is playable over the next 12 months 🎤👇] — @Xbox on X</ref> On May 9th, 2023, the game was indefinitely delayed.<ref>[https://x.com/griffinmatta/status/1656106351184199680 Hey gang, just a quick update about Silksong. We had planned to release in the 1st half of 2023, but development is still continuing. We're excited by how the game is shaping up, and it's gotten quite big, so we want to take the time to make the game as good as we can. Expect more details from us once we get closer to release.] — @griffinmatta on X</ref> On April 2nd, 2025, <i>Hollow Knight: Silksong</i> appeared in the Nintendo Switch 2 Direct.<ref>[https://youtu.be/rv0f8mYemL4 Coming to Nintendo Switch 2: Partner Sizzle Reel – Nintendo Direct | Nintendo Switch 2] on YouTube</ref> It was given a release window of 2025.<ref>[https://x.com/NintendoEurope/status/1907430913148944627 Ascend to the peak of a haunted kingdom in Hollow Knight: Silksong, arriving on #NintendoSwitch2 this year.] — @NintendoEurope on X</ref> After the game received some new footage at the 2025 Xbox Showcase,<ref>[https://youtu.be/FIVmyOIV1MQ ROG Xbox Ally World Premiere Reveal Trailer | Xbox Games Showcase] on YouTube</ref> [[Matthew Griffin]] confirmed that the game would release before Christmas 2025, in response to confusion over the game's announcement as being available day one on the Holiday 2025 Xbox Ally console.<ref name=Lethpost>[https://discord.com/channels/283467363729408000/586931790208434203/1381347827011293344 I confirmed BEFORE Holiday - we are not tied to a console release] — @griffinmatta on Discord</ref><ref name=Lethclarify>[https://discord.com/channels/283467363729408000/586931790208434203/1381348061657436172 Christmas yes] — @griffinmatta on Discord</ref> On August 21st, Team Cherry announced that <i>Hollow Knight: Silksong</i> would release on September 4th, 2025.<ref name="lasttrailer">[https://youtu.be/6XGeJwsUP9c Hollow Knight: Silksong - Release Trailer] on YouTube</ref>
+
+{{Clear}}
+
+==Reception==
+===Pre-Release===
+The playable <i>Hollow Knight: Silksong</i> demo at E3 2019 received critical praise. IGN writer Tom Marks liked "its combat and movement even more than the original", and said "Silksong has the potential to be even better than the original." Following the demo, <i>Silksong</i> became one of the most anticipated indie games between 2020 and 2024, climbing to the top of Steam's wishlist charts with over 5.2 million wishlists by August 2025. It also received Unity's award for “Most Anticipated Game” in both 2021 and 2024.
+
+{{#ev:youtube|https://youtu.be/7SnMKTy_k1w?si=CPv08n_YHfM18I7v|300|right}}
+Due to its lengthy development, fans would often hope for <i>Silksong</i> news to appear at game showcases. On 16 January 2021, the YouTube fan channel [https://www.youtube.com/c/DailySilksongNews Daily Silksong News] began tracking and reporting updates on the game's status every day, leading to more than 1600 uploads over three years. Almost every video consists of the script, "Today is [date]. This is [host name], your host for today bringing you your daily Silksong news. There has been no news to report for Silksong today. This has been your daily news for Silksong for today, [date]."
+
+===Post-Release===
+<i>Hollow Knight: Silksong</i> was very well received, garnering excellent reviews. On [https://www.metacritic.com/game/hollow-knight-silksong Metacritic], a game review aggregation website, the game received "Universal Acclaim" with a 92/100. This was a step up from Hollow Knight's 87/100 on release in 2017. [https://opencritic.com/game/7425/hollow-knight-silksong OpenCritic] reported a top critic average score of 91% across all platforms, with 97% of critics recommending the game.
+
+Due to its highly anticipated release and absence of pre-orders, <i>Silksong</i> caused digital storefronts such as Steam and the Nintendo eShop to crash upon its launch, leading to players being unable to buy or download the game. It was also temporarily unavailable on the PlayStation Store. The game reached over 100,000 concurrent players within 45 minutes after release, peaking at over 500,000 active players during the first day of launch. 
+
+Although the reception was mostly positive, <i>Hollow Knight: Silksong</i> received some notable criticism upon release. Critics considered <i>Silksong</i> to be a more difficult game than its predecessor. Many reviews mention the long boss runbacks, increased enemy damage as compared to Hollow Knight, and the difficulty of using Hornet's [[Hunter Crest|diagonal pogo]]. Furthermore, reviews from the Chinese player base trended negative, largely due to a disliked and poorly translated Chinese localisation. Team Cherry later responded with a [https://www.teamcherry.com.au/blog/silksong-patch-4 fully updated translation] (largely developed by the community) and adjustments to enemy and environmental damage in subsequent game patches.
+
+On November 17, 2025, <i>Hollow Knight: Silksong</i> was nominated for Ultimate Game of the Year at [https://thegameawards.com/nominees/game-of-the-year The Game Awards]. On November 20, 2025, <i>Silksong</i> won both "PC Game of the Year" and "Best Indie Game - Self Published" at the [https://www.gamesradar.com/games/events-conferences/golden-joystick-awards-2025-all-winners Golden Joystick Awards]. On December 11, 2025, <i>Silksong</i> won the award for Best Action/Adventure Game at [https://en.wikipedia.org/wiki/The_Game_Awards_2025#Awards The Game Awards]. 
+
+As of December 15, 2025, the game has sold over 7 million copies across all platforms.<ref>[https://www.teamcherry.com.au/blog/holiday2025 December 2025 Team Cherry blog post]</ref>
+
+== Credits ==
+<table cellpadding="0" cellspacing="0" border="0" style="width: 70%; margin: 2rem auto;"><tr><td><div style="overflow: auto; height: 230px; width: 100%; -moz-border-radius-topleft: 0.5em; border: 1px solid #aaa; padding-left: .5em;">
+<div class="center" style="width: auto; margin-left: auto; margin-right: auto;">
+: <small>A game by</small>
+: <i>[[Team Cherry]]</i>
+
+
+: <i>[[Ari Gibson]]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[[William Pellen]]</i>
+: {{Hr}}
+
+
+: <small>Technical Director</small>
+: <i>[[Jasmine Vine|Jack Vine]]</i><ref group="Note">Now goes by Jasmine Vine.</ref>
+
+
+: <small>Sound & Music by</small>
+: <i>[[Christopher Larkin]]</i>
+
+
+: <small>Marketing & Public Relations</small>
+: <i>[[Matthew Griffin]]</i>
+
+
+: <small>Additional Programming</small>
+: <i>Huy Le</i>
+
+: <small>Testing & QA</small>
+: <i>Nassim "Simo" Gebrail</i>
+: <i>Benjamin Zarb</i>
+
+: <small>Additional Character Design</small>
+: <i>Makoto Koji</i>
+
+: <small>Additional Environment Dressing</small>
+: <i>Tyler Bartley</i>
+: <i>Nathan Elmer</i>
+: <i>James Ross Mcnabb</i>
+
+: <small>Hornet</small>
+: <i>Makoto Koji</i>
+
+: <small>Lace</small>
+: <i>Mitsuki Hashimoto</i>
+
+: <small>Additional Character Voices</small>
+: <i>Ditte Wad Andersen</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Anna Braunack-Mayer</i>
+: <i>Adam Atkins</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Monte Masi</i>
+: <i>Eric Barone</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Lex Pellen</i>
+: <i>Tyler Bartley</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Thomas Pellen</i>
+: <i>Beau Fitzgerald</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Victoria Pellen</i>
+: <i>Matthew Fitzgerald</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Zara Pellen</i>
+: <i>Nassim "Simo" Gebrail</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Ned Rogers</i>
+: <i>Nic (Bitter Bits)</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Shalulu</i>
+: <i>Matthew Griffin</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Peter Yong</i>
+: <i>Lillian Hollitt</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Benjamin Zarb</i>
+: <i>Lauren Koopowitz</i>
+
+:<small>and</small>
+: <i>[[Matt Trobbiani|Matthew Trobbiani]]</i>
+: <small>(as Trobbio)</small>
+
+: <small>Music Orchestration & Typesetting</small>
+: <i>Nathan Cummins</i>
+
+: <small>Misc & Engineering Assistance</small>
+: <i>Lachlan Bramble</i>
+
+: <small>Additional Audio Editing</small>
+: <i>Hew Wagner</i>
+
+: <small>Strings</small>
+: <i>Lachlan Bramble</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Belinda Kendall-Smith</i>
+: <i>Timothy Cheel</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Emma Perkins</i>
+: <i>Linda Garrett</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Gemma Phillips</i>
+: <i>Belinda Gehlert</i>
+
+: <small>Wind & Brass</small>
+: <i>Mitch Berick</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Hannah Kovilpillai</i>
+: <i>Nathan Cummins</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Kathryn Moorhead</i>
+: <i>Peter Duggan</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Jackie Newcomb</i>
+: <i>Samantha Hennessy</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Joshua Oats</i>
+: <i>Ed Koltun</i>
+
+: <small>Solo Singers</small>
+: <i>Amelia Holds</i>
+: <i>Jamie Moffatt</i>
+: <i>Siobhan Owen</i>
+
+: <small>Additional Singers</small>
+: <i>Victoria Coxhill</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>James Scott</i>
+: <i>Michael Denholm</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Courtney Turner</i>
+: <i>Christian Evans</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Gerry Masi</i>
+: <i>Adam Goodburn</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Hew Wagner</i>
+: <i>Sidonie Henbest</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Brooke Window</i>
+: <i>Brock Roberts</i>
+
+: <small>Additional Creature Vocal Design</small>
+: <i>Tim Whitt</i>
+
+: <small>Testing Leads</small>
+: <i>Nassim "Simo" Gebrail</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Benjamin Zarb</i>
+
+: <small>Playtesters</small>
+: <i>Ditte Wad Andersen</i>
+: <i>Matthew Griffin</i>
+: <i>Sam Griffin</i>
+: <i>Daniel James Freer</i>
+: <i>Matthew Trobbiani</i>
+: <i>Peter Yong</i>
+
+: <small>Unity Technical Support</small>
+: <i>Paul Burslem</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Sebastian Hein</i>
+: <i>Attilio Carotenuto</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Kjetil Kalla</i>
+: <i>Paul Georges</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Karolis Ozerovas</i>
+
+: <small>The Knights of U</small>
+: <i>Kamil Kloc</i>
+: <i>Jan Mróz</i>
+: <i>Jakub Augustyniak</i>
+: <i>Karol Fornalcyzk</i>
+
+: <small>French Localisation</small>
+: <i>Shalulu</i>
+
+: <small>Japanese Localisation</small>
+: <i>Kakehashi Games</i>
+: <i>Ryu Ito</i>
+
+: <small>Chinese Localisation (Simplified)</small>
+: <i>Finn Wu 吴华锋</i>
+: <i>Hertzz Liu 刘辉洲</i>
+: <small>and</small>
+: <i>Team Cart Fix 修车组</i>
+
+: <small>Universally Speaking - German</small>
+: <i>Alexander Faisst</i>
+: <i>Christoph Bechtel</i>
+
+: <small>Universally Speaking - Russian</small>
+: <i>Dmitry Usov</i>
+: <i>Yuliia Tatsenko</i>
+
+: <small>Universally Speaking - Italian</small>
+: <i>Laura Innocenti</i>
+: <i>Oliver Cozzio</i>
+
+: <small>Universally Speaking - Korean</small>
+: <i>Haejung Lee</i>
+: <i>Inwoo Lee</i>
+
+: <small>Universally Speaking - Spanish</small>
+: <i>Gabriel Pérez-Ayala Huertas</i>
+: <i>Débora Ferroni Avi</i>
+
+: <small>Universally Speaking - Brazilian Portuguese</small>
+: <i>Simone Verdi Fronza</i>
+: <i>Cristine Martin</i>
+: <i>Rafael Antunes Dotti</i>
+
+: <small>Chinese (Traditional)</small>
+: <i>craft (indienova)</i>
+
+: <small>German (Additional)</small>
+: <i>Tobias Gut</i>
+
+: <small>Special Thanks</small>
+: <i>Ed Bernard</i>
+: <i>Rohan Fraser</i>
+: <i>Harrison Gibbins</i>
+: <i>David Kazi</i>
+: <i>Lukas Stobie</i>
+
+: <small>Extra Special Thanks</small>
+: <i>[[Hollow Knight Kickstarter|2158 Kickstarter Backers]]</i>
+: <i>& [[Shrine Guardian Seth#Trivia|Seth Goldman]]</i>
+</div>
+</div></td></tr></table>
+
+== Gallery == 
+{{Main|Hollow Knight: Silksong/Gallery}}
+
+== Notes ==
+<references group="Note"/>
+{{Refs|hr=ss}}
+{{SS Nav Releases}}
+
+[[es:Hollow Knight: Silksong]]
+[[fr:Hollow Knight: Silksong]]
+[[it:Hollow Knight: Silksong]]
+[[pl:Hollow Knight: Silksong]]
+[[pt:Hollow Knight: Silksong]]
+[[uk:Hollow Knight: Silksong]]
+[[ru:Silksong]]
+[[zh:苔藓部落]]
+
+[[Category:Hollow Knight: Silksong| ]]
+{{#seo:|keywords=hollow knight silksong, silksong, hollow knight 2, skong, playable hornet }}

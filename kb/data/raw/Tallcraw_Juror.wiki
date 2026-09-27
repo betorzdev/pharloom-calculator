@@ -1,0 +1,92 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Tallcraw Juror.png|Hunter's Journal
+Tallcraw Juror Airborne.png|Airborne
+Tallcraw Juror.png|Grounded
+</gallery>
+|drops = None
+|health = 60
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.1|1|0.9|0.9|0.9}}
+|numbers_required = 10 <br>(Instantly completed on [[Crawfather]]'s death)
+|sing=Tallcraw
+|singnum=2
+}}
+
+{{Quote
+|Hr = Journal
+|Elder crawbug serving in a sacred ceremony.<hr/>
+Curiosity saw me answer their summons, but I shall not allow them to stall me long. I must work fast to fix my grand mistake.
+}}
+
+<b>Tallcraw Jurors</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are lanky, elder [[Craws|crawbugs]] who summon Hornet in service of a sacred ceremony.<ref>Tallcraw Juror [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Elder crawbug serving in a sacred ceremony." "Curiosity saw me answer their summons, but I shall not allow them to stall me long."</i></ref> They are the [[Act 3]] counterparts to [[Tallcraw]]s, with slightly more health, a slightly lower damage modifier, a changed attack, and an immunity to needle-bounce attacks.
+
+== Behaviour and Tactics ==
+Tallcraw Jurors behave identically to their weaker counterparts, either flapping in the air or hopping around on the ground, preparing for an attack. They occasionally switch between their grounded and aerial states, which each have different attacks.
+
+The Tallcraw Jurors have 5 attacks that are all identical to the [[Tallcraw]]s', except for one:
+
+* <b>Jab:</b> Performs a short jab at Hornet.
+* <b>Dash:</b> Raises its pin before performing a long dash at Hornet, covering much more area.
+* <b>Arcing Slashes:</b> The Tallcraw hops into the air, spinning its pin around itself repeatedly. This attack CANNOT Combo Hornet, which makes getting hit by it less threatening.
+* <b>Aerial Jab:</b> The Tallcraw flies to a point over Hornet before pointing its pin downwards, trying to drop down on top of her.
+* <b>Aerial Dash:</b> The Tallcraw raises its pin towards Hornet before dashing straight at her, bouncing off the first surface it hits. The angle of the dash is not static and changes so they go in a straight line towards Hornet.
+
+
+Tallcraw Jurors' metal headwear provides them with a special Immunity to needle-bounce attacks on their whole bodies.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+*Guilty! Guilty!
+*Lay down your judgement!
+*Father, Father!
+*Punish the villain!
+}}
+
+== Location ==
+Tallcraw Jurors can be found exclusively in [[Greymoor]] during the [[Court of Craws]] fight in the [[Craw Lake]] building.
+{{Gallery
+|Image1 = Mapshot SS Court of Craws.png!Location of the Court of Craws
+}}
+
+==Gallery==
+{{Gallery
+|Image2=Screenshot SS Tallcraw Juror 01.png!Flying idle
+|Image3=Screenshot SS Tallcraw Juror 02.png!Jab attack
+|Image4=Screenshot SS Tallcraw Juror 03.png!Dash attack
+|Image5=Screenshot SS Tallcraw Juror 04.png!Arcing Slashes attack
+|Image6=Screenshot SS Tallcraw Juror 05.png!Aerial Jab attack
+|Image7=Screenshot SS Tallcraw Juror 06.png!Aerial Dash attack
+|Image8=Screenshot SS Tallcraw Juror 07.png!Singing
+}}
+{{Localisation
+|DEname = Schlackskrähfer-Schöffe
+|DEmeaning = Lanky Craw <abbr title="The German word Schöffe refers to a concept in German law known as a lay-judge in English. While similar to a jury, lay-judges in Germany are elected from the general populace for a full period of 5 years to serve in various trials alongside a judge.">Lay-Judge</abbr><br><small><i>Krähfer</i> is the name of the [[Craws]] in German, a portmanteau of <i>krähe</i> (crow) and <i>käfer</i> (bug).</small>
+|ESname = Jurado cuervón alto
+|ESmeaning = Tall Craw Juror<br><small><i>Cuervón</i> is the name of the [[Craws]] in Spanish, from <i>cuervo</i> (crow) and <i>-ón</i> (augmentative suffix).</small>
+|FRname = Grand Juré Corbotère
+|FRmeaning = Tall Juror Craw<br><small><i>Corbotère</i> is the name of the [[Craws]] in French, from <i>corbeau</i> (crow).</small>
+|ITname = Corvide Alto Giurato
+|ITmeaning = Sworn Tall Corvid
+|JAname = セイタカボロガワの審議者
+|JAromanised = Seitaka borogawa no shingisha
+|JAmeaning = Tall Craw Juror or Tall Craw Deliberator<br><small>{{lang|ja|ボロガワ}} <i>borogawa</i> is the name of the [[Craws]] in Japanese, a combination of {{lang|ja|襤}} <i>boro</i> (rag) and {{lang|ja|皮}} <i>kawa</i> (skin).</small>
+|KOname = 큰까마귀 배심원
+|KOromanised = Keunkkamagwi baesimwon
+|KOmeaning = Big Crow Juror
+|PTname = Jurado Corbisco-alto
+|PTmeaning = Tallcraw Juror<br><small><i>Corbisco-alto</i> is the name of the [[Tallcraw]]s in Brazilian Portuguese, from <i>Corbo</i> (Craw) and <i>-isco</i> (diminutive suffix) combined with <i>alto</i> (tall).<small>
+|RUname = Присяжный высокар
+|RUromanised = Prisjažnyj vysokar
+|RUmeaning = Juror Tall Craw<br><small>{{lang|ru|Кар}} <i>kar</i> is the name of the [[Craws]] in Russian, from {{lang|ru|кар}} <i>kar</i> (Russian onomatopoeia for a crow's call).</small>
+|TWname = 高鴉蟲陪審員
+|TWromanised = Gāo yā chóng péishěnyuán
+|TWmeaning = same
+|ZHname = 高鸦虫陪审员
+|ZHromanised = Gāo yā chóng péishěnyuán
+|ZHmeaning = Tall Crow Bug Juror
+|CODEname = CROWMAN_JUROR
+|CODEmeaning =
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Enemies}}

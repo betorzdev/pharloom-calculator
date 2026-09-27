@@ -1,0 +1,74 @@
+{{Nav Games Header}}
+<div style="margin-bottom:8px; margin-top:8px">{{Hr|SS}}</div>
+
+<center>{{Typography|type=h2|text=[[Pharloom]]}}</center>
+<div class="hidden"><!-- hide desktop part on mobile -->
+<center>Clicking an area will lead to that area's page.</center><br>
+{{SS World Map}}
+​<sub>(The following areas are not included in the world map:
+[[Moss Grotto]],
+[[the Mist]],
+[[Wisp Thicket]],
+[[Red Memory]])</sub>
+<div style="margin-bottom:8px; margin-top:8px">{{Hr|SS}}</div>
+<div style="margin-bottom:8px;"><center>{{Typography|type=h2|text=[[The Citadel]]}}</center></div>
+{{SS Citadel Map}}
+</div><!-- hide desktop part on mobile -->
+{{Hr|SS}}
+
+<h2>Alphabetical List</h2>
+<div class="mw-collapsible mw-collapsed">
+* Outer Pharloom
+**[[The Abyss (Silksong)|The Abyss]]
+**[[Bellhart]]
+**[[Bilewater]]
+**[[Blasted Steps]]
+**[[Bone Bottom]]
+**[[The Citadel]]
+**[[The Cradle]]
+**[[Deep Docks]]
+**[[Far Fields]]
+**[[Greymoor]]
+**[[Hunter's March]]
+**[[The Marrow]]
+**[[The Mist]]
+**[[Moss Grotto]]
+**[[Mount Fay]]
+**[[Putrified Ducts]]
+**[[Red Memory]]
+**[[Sands of Karak]]
+**[[Shellwood]]
+**[[Sinner's Road]]
+**[[The Slab]]
+**[[Underworks]]
+**[[Verdania]]
+**[[Weavenest Atla]]
+**[[Wisp Thicket]]
+**[[Wormways]]
+*[[The Citadel]]
+**[[Choral Chambers]]
+**[[Cogwork Core]]
+**[[Grand Gate]]
+**[[High Halls]]
+**[[Memorium]]
+**[[Whispering Vaults]]
+**[[Whiteward]]
+</div>
+
+{{Hr|SS}}
+{{Gallery
+|Title = More World Maps
+|Image1 = Silksong Small Map Sketch.png!Unfinished map
+|Image2 = Silksong Small Map Clean.png!Complete Act 2 map<br>(unmarked)
+|Image3 = Silksong Small Map Marked.png!Complete Act 2 map<br>(areas labelled)
+|Image4 = Silksong Small Map Ruin Clean.png!Complete Act 3 map<br>(unmarked)
+|Image5 = Silksong Small Map Ruin Marked.png!Complete Act 3 map<br>(areas labelled)
+|Image6 = Silksong Overview Map.png!Act 2 overview map
+|Image7 = Silksong Overview Map Ruin.png!Act 3 overview map
+|Image8 = Silksong Full Scale Map.png!Composite Map showing the "true" highest and lowest points of Pharloom
+}}
+
+{{#seo:|keywords=silksong, areas, regions, zones, map}}
+[[Category:Areas (Silksong)| ]]
+
+[[fr:Zones de Pharloom]]

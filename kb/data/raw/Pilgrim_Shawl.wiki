@@ -1,0 +1,124 @@
+{{SS Infobox Item
+| max = 12
+| type = [[Items (Silksong)#Deliverable|Deliverable]]
+| source = Dropped by defeated pilgrims during <i>[[Garb of the Pilgrims]]</i>.
+| description = Simple garment worn by several pilgrims over the ages. Torn, tattered and repaired many times over.
+}}
+
+{{Quote
+| Those mad, violent pilgrims who haunt the great path... we could make use of their shawls here in Bone Bottom. And felling them would surely be a mercy!
+| Residents of [[Bone Bottom]]
+| Hr = SS
+}}
+
+<b>Pilgrim Shawls</b> are [[Items (Silksong)#Deliverables|deliverable items]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+12 Pilgrim Shawls are required to complete the <i>[[Garb of the Pilgrims]]</i> [[wish]], given out by the [[Wishwalls|Wishwall]] at [[Bone Bottom]].
+
+== How to Acquire ==
+Shawls can be obtained from the corpses of slain pilgrims while <i>Garb of the Pilgrims</i> is active. They are most plentiful in [[Mosshome]] due to its large groups of pilgrim enemies:
+
+<!-- Note that Pilgrim Shawls do not drop in enemy gauntlets, or during Act 3 -->
+{| class="article-table"
+|-
+| width="48px" | Pilgrim
+| width="150em" | Name
+| width="500em" | Locations
+|-
+! [[File:Pilgrim Groveller Idle.png|48x48px]]<br>[[File:Pilgrim Groveller Without Shawl.png|48x48px]]
+| [[Pilgrim Groveller]]
+| [[Mosshome]], [[Bonegrave]], [[the Marrow]], [[Far Fields]], [[Greymoor]], [[Blasted Steps]]
+|-
+! [[File:Pilgrim Pouncer Idle.png|48x48px]] <br>[[File:Pilgrim Pouncer Without Shawl.png|48x48px]]
+| [[Pilgrim Pouncer]]
+| Mosshome, Bonegrave, the Marrow, Far Fields, Greymoor, Blasted Steps
+|-
+! [[File:Overgrown Pilgrim Idle.png|48x48px]] <br> <br>[[File:Overgrown Pilgrim Without Shawl.png|48x48px]]
+| [[Overgrown Pilgrim]]
+| Mosshome, [[Wormways]], Bonegrave
+|}
+
+Shawls can also be acquired from pilgrims in other areas:
+
+{| class="article-table"
+|-
+! width="48px" | [[File:Pilgrim Flyer Idle.png|48x48px]] <br>[[File:Winged Pilgrim Without Shawl.png|48x48px]] 
+| width="150em" | [[Winged Pilgrim]]
+| width="500em" | The Marrow, Far Fields, Bonegrave, [[Shellwood]], Wormways
+|-
+! width="48px" | [[File:Covetous Pilgrim Idle.png|48x48px]] <br>[[File:Covetous Pilgrim Without Shawl.png|48x48px]]
+| width="150em" | [[Covetous Pilgrim]]
+| width="500em" | Shellwood, [[Bilewater]]
+|-
+! [[File:Pilgrim Hulk.png|48x48px]] <br>[[File:Pilgrim Hulk Without Shawl.png|48x48px]]
+| [[Pilgrim Hulk]]
+| Far Fields
+|-
+! [[File:Pilgrim Hornfly Idle.png|48x48px]] <br>[[File:Pilgrim Hornfly Without Shawl.png|48x48px]]
+| [[Pilgrim Hornfly]]
+| Bonegrave, Far Fields, Wormways
+|-
+! [[File:Pilgrim Bellbearer Idle.png|48x48px]] <br>[[File:Pilgrim Bellbearer Without Shawl.png|48x48px]]
+| [[Pilgrim Bellbearer]]
+| Greymoor, Shellwood, Blasted Steps
+|-
+! [[File:B Winged Pilgrim Bellbearer.png|48x48px]] <br>[[File:Winged Pilgrim Bellbearer Without Shawl.png|48x48px]]
+| [[Winged Pilgrim Bellbearer]]
+| Shellwood, Wormways, Blasted Steps
+|-
+! [[File:Elder Pilgrim Idle.png|48x48px]] <br>[[File:Elder Pilgrim Without Shawl.png|48x48px]]
+| [[Elder Pilgrim]]
+| The Marrow, Bonegrave
+|-
+! [[File:Pilgrim Hiker Idle.png|48x48px]] <br>[[File:Pilgrim Hiker Without Shawl.png|48x48px]]
+| [[Pilgrim Hiker]]
+| Blasted Steps
+|-
+! [[File:Pilgrim Guide Idle.png|48x48px]] <br>[[File:Pilgrim Guide Without Shawl.png|48x48px]]
+| [[Pilgrim Guide]]
+| The Marrow, Greymoor, Shellwood, Bonegrave
+|}
+
+Additionally, upon breaking bags containing Pilgrim corpses in [[Bilewater]], certain corpses will have collectable Shawls.
+
+[[Hornet (Silksong)|Hornet]] can carry up to 12 Pilgrim Shawls, after which they will no longer drop from defeated pilgrims or the corpses in Bilewater.
+
+== Act 3 ==
+All Pilgrim Shawls are removed from the inventory at the start of Act 3, as Bone Bottom has been destroyed.
+
+{{Localisation
+|DEname = Pilgerschal
+|DEmeaning = Worn Shawl
+|ESname = Mantón de peregrino
+|ESmeaning = Pilgrim Shawl
+|FRname = Châle de pèlerin
+|FRmeaning = Pilgrim's Shawl
+|ITname = Scialle consunto
+|ITmeaning = Worn Shawl
+|JAname = 巡礼者のショール
+|JAromanised = Junreisha no shōru
+|JAkatakana = foreign
+|JAmeaning = Pilgrim's Shawl
+|KOname = 순례자 숄
+|KOromanised = Sullyeja syol
+|KOmeaning = Pilgrim Shawl
+|PTname = Xale Velho
+|PTmeaning = Old Shawl
+|RUname = Изношенная накидка
+|RUromanised = Iznošennaja nakidka
+|RUmeaning = Worn Cloak
+|TWname = 朝聖者披肩
+|TWromanised = Cháoshèngzhě pījiān
+|TWmeaning = same
+|ZHname = 朝圣者披肩
+|ZHromanised = Cháoshèngzhě pījiān
+|ZHmeaning = Pilgrim Shawl
+|CODEname = PILGRIM_RAGS_ITEM
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

@@ -1,0 +1,121 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Winged Pilgrim.png|Hunter's Journal
+Pilgrim Flyer Idle.png|Idle
+Winged Pilgrim Without Shawl.png|Without Shawl
+</gallery>
+|health = 20/{{BT|80}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.4|1.2|1|1|1}}
+| hasdrop = true
+| r1 = 6
+| r2 = 9
+| sh1 = 2-3
+| sh2 = 3-4
+|drops = [[Pilgrim Shawl]]
+|numbers_required = 25
+|singnum=2
+|va = Beau Fitzgerald<ref>Beau Fitzgerald is credited in Winged Pilgrim's audio files.</ref>
+}}
+{{Quote
+|Hr = Journal
+|Short-horned bug born with underdeveloped wings.<hr/>
+Flight it possesses, but only just. It may lift from the stone, but those sad wings would never carry it far.
+}}
+
+<b>Winged Pilgrims</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are bugs with a short horn and born with small wings that cannot carry them far.<ref>Winged Pilgrim [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Short-horned bug born with underdeveloped wings. Flight it possesses, but only just. It may lift from the stone, but those sad wings would never carry it far."</i></ref>
+
+== Behaviour and Tactics ==
+Winged Pilgrims either start off resting on a platform or flying idly back and forth.<br>
+In either case, once they have spotted Hornet, they try to maintain distance from her whilst flying. They then try to line themselves up with Hornet horizontally and point their horn at her before flying at her, stopping after a certain distance has been travelled.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Winged Pilgrims have their health quadrupled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* There is no pain, nor fear, nor death...
+* Am I worthy?
+* The path... the holy path...
+* My soul... my shell. For you!
+* My faith... my reward...
+* Raise me higher! Pull me closer!
+* Lives end, journeys begin...
+* Raise my shell! Pull me closer!
+* Shining bright, our Citadel waits...
+* Pull us higher, ever higher...
+* We will climb! Climb! Climb forever!
+}}
+
+== Location ==
+Winged Pilgrims can be found in many lower areas of [[Pharloom]]: in [[the Marrow]], in [[Far Fields]] to the east of the [[Seamstress]], outside the [[Chapel of the Wanderer]] in [[Bone Bottom]], and in the vertical shaft rooms of [[Shellwood]] and [[Wormways]].
+
+They can also be found inside the [[Chapel of the Wanderer]]'s arena.
+
+During [[Act 3]], one will spawn in [[Lumble the Lucky]]'s room in [[Blasted Steps]] alongside a [[Pilgrim Hiker]] and an [[Elder Pilgrim]] before <i>[[Hero's Call]]</i>. Another will spawn with a [[Void Mass]] and disappear once the mass is killed. Winged Pilgrims can also be seen fighting [[Shakra]] at the [[Shellwood]] and [[Greymoor]] entrances to [[Bellhart]].
+
+
+{{Gallery
+|Image1 = Mapshot SS Winged Pilgrim 03.png!Location in the Marrow
+|Image2 = Mapshot SS Winged Pilgrim 02.png!Location in Far Fields in Act 1-2
+|Image3 = Mapshot SS Winged Pilgrim 01.png!Location in Shellwood in Act 1-2
+|Image4 = Mapshot SS Winged Pilgrim 04.png!Location in the Wormways
+|Image5 = Mapshot SS Winged Pilgrim 05.png!Location in Bone Bottom
+|Image6 = Mapshot SS Winged Pilgrim 06.png!Location in the Blasted Steps in Act 3
+|Image7 = Mapshot SS Winged Pilgrim 08.png!Location in Far Fields in Act 3
+|Image8 = Mapshot SS Winged Pilgrim 09.png!Location in Shellwood in Act 3
+|Image9 = Mapshot SS Winged Pilgrim 10.png!Location in Greymoor in Act 3, only while fighting Shakra
+}}
+
+==Gallery==
+{{Gallery
+|Image1=Screenshot SS Winged Pilgrim 01.png!In the Marrow
+|Image2=Screenshot SS Winged Pilgrim 02.png!In Far Fields
+|Image3=Screenshot SS Winged Pilgrim 03.png!Inside the Chapel of the Wanderer
+|Image4=Screenshot SS Winged Pilgrim 04.png!Outside the Chapel of the Wanderer
+|Image5=Screenshot SS Winged Pilgrim 05.png!In Shellwood
+|Image6=Screenshot SS Winged Pilgrim 06.png!In the Wormways
+|Image7=Screenshot SS Winged Pilgrim 10.png!In the Blasted Steps in Act 3
+|Image8=Screenshot SS Winged Pilgrim 07.png!Dormant
+|Image9=GIF SS Winged Pilgrim 01.gif!Awakening
+|Image10=GIF SS Winged Pilgrim 02.gif!Reanimating
+|Image11=Screenshot SS Winged Pilgrim 08.png!Attacking
+|Image12=Screenshot SS Winged Pilgrim 09.png!Responding to the Needolin
+|Image13=Screenshot SS Winged Pilgrim 11.png!Corpse in [[Greymoor]]
+|Image14=Screenshot SS Winged Pilgrim 12.png!Without shawl during <i>[[Garb of the Pilgrims]]</i>
+}}
+
+{{Localisation
+|DEname = Geflügelter Pilger
+|DEmeaning = Winged Pilgrim
+|ESname = Peregrino alado
+|ESmeaning = Winged Oilgrim
+|FRname = Pèlerin Ailé
+|FRmeaning =Winged Pilgrim
+|ITname = Pellegrino Alato
+|ITmeaning = Winged Pilgrim
+|JAname = 羽根の生えた巡礼者
+|JAromanised = Hane no haeta junreisha
+|JAmeaning = Winged pilgrim
+|KOname = 날개 달린 순례자
+|KOromanised = Nalgae dallin sullyeja
+|KOmeaning = Winged Pilgrim
+|PTname = Peregrino-alado
+|PTmeaning = Winged-pilgrim
+|RUname = Крылатый пилигрим
+|RUromanised = Krylatyj piligrim
+|RUmeaning = Winged Pilgrim
+|TWname = 殘翼朝聖者
+|TWromanised = Cán yì cháoshèngzhě
+|TWmeaning = same
+|ZHname = 残翼朝圣者
+|ZHromanised = Cán yì cháoshèngzhě
+|ZHmeaning = Broken-winged Pilgrim
+|CODEname=PILGRIM_FLY
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[fr:Pèlerin Ailé]]

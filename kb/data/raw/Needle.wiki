@@ -1,0 +1,267 @@
+{{SS Infobox Item
+
+|label = Needle
+|title = Needle
+|image = Needle 1 Needle.png
+|description =  Long sewing tool, uniquely balanced for combat. The blade is marked by time and use.
+|damage = 5
+|type = [[Items (Silksong)#Equipment|Equipment]]
+|source = Starting item
+
+|label2 = Sharpened
+|title2 = Sharpened Needle
+|image2 = Needle 2 Sharpened Needle.png
+|description2 =  Long sewing tool, uniquely balanced for combat. The blade is honed to a fine edge.
+|damage2 = 9 (+80%)
+|type2 = [[Items (Silksong)#Equipment|Equipment]]
+|source2 = [[Pinmaster Plinney]]
+|buy2 = Free (once [[Bellhart]] is saved)
+
+|label3 = Shining
+|title3 = Shining Needle
+|image3 = Needle 3 Shining Needle.png
+|description3 =  Long sewing tool, uniquely balanced for combat. The blade gleams sharper than ever before.
+|damage3 = 13 (+44.4%)
+|type3 = [[Items (Silksong)#Equipment|Equipment]]
+|source3 = [[Pinmaster Plinney]]
+|buy3 = [[File:Pale Oil.png|20x20px|link=Pale Oil]] 1
+
+|label4 = Hivesteel
+|title4 = Hivesteel Needle
+|image4 = Needle 4 Hivesteel Needle.png
+|description4 =  Long sewing tool, uniquely balanced for combat. The highly refined blade reveals its hivesteel banding.
+|damage4 = 17 (+30.8%)
+|type4 = [[Items (Silksong)#Equipment|Equipment]]
+|source4 = [[Pinmaster Plinney]]
+|buy4 = {{r|450}}<br>[[File:Pale Oil.png|20x20px|link=Pale Oil]] 1
+
+|label5 = Pale Steel
+|title5 = Pale Steel Needle
+|image5 = Needle 5 Pale Steel Needle.png
+|description5 =  Long sewing tool, uniquely balanced for combat. The Hivesteel blade has been sharpened to its ultimate form.
+|damage5 = 21 (+23.55%)
+|type5 = [[Items (Silksong)#Equipment|Equipment]]
+|source5 = [[Pinmaster Plinney]]
+|buy5 = {{r|680}}<br>[[File:Pale Oil.png|20x20px|link=Pale Oil]] 1
+}}
+
+{{Quote
+| The blade was a gift, given by a noble tribe of my homeland. They forged the strongest steel, though it was rarely seen beyond their hive.
+| [[Hornet (Silksong)|Hornet]]
+| Hr = SS
+}}
+
+The <b>Needle</b> is the bladed weapon wielded by [[Hornet (Silksong)|Hornet]]. It is used to perform basic attacks, as well as certain [[Silk Skills]] and [[Abilities (Silksong)|Abilities]]. The Needle can be upgraded by [[Pinmaster Plinney]] up to four times, adding additional [[Damage Values and Enemy Health (Silksong)|damage]].
+
+== Background ==
+The Needle is the signature weapon of [[Hornet (Silksong)|Hornet]], the princess of [[Hallownest]]. It is a long sewing tool balanced for combat, forged from the strongest steel by [[Bees|the members]] of [[the Hive]], engraved with hivesteel bandings, and given as gift to the princess.<ref>Hornet and [[Pinmaster Plinney]] dialogue:<br>Hornet: <i>"The blade was a gift, given by a noble tribe of my homeland. They forged the strongest steel, though it was rarely seen beyond their hive."</i></ref><ref>Hivesteel Needle description: <i>"Long sewing tool, uniquely balanced for combat. The highly refined blade reveals its hivesteel banding."</i></ref>
+
+By the time Hornet enters [[Pharloom]], the Needle's blade has been greatly dulled by time and use.<ref>Needle description: <i>Long sewing tool, uniquely balanced for combat. The blade is marked by time and use.</i></ref><ref>Hornet and [[Pinmaster Plinney]] dialogue:<br>Hornet: <i>"This is fine service, pinmaster. It has been a long age since I have seen my needle such. I had not remembered the finesse of its forging."</i></ref>
+
+== Crests ==
+Each [[Crest]] provides a unique set of Needle attacks. The basic attacks differ in speed and range, while [[Needle Strike]]s differ in range, damage and the number of hits per attack.
+
+Additionally, some crests provide situational [[Damage Values and Enemy Health (Silksong)|damage]] bonuses:
+
+* Evolved [[Hunter Crest]], by 30% after landing 6 hits. Hunter Crest's second evolution increases the damage bonus to 50% after another 6 hits. The damage bonuses persist until Hornet takes damage.
+* [[Beast Crest]], by 25% in fury mode after [[Bind]]ing. Fury mode by default lasts 4.7 seconds, and can be increased by dealing damage or decreased by taking damage.
+* [[Wanderer Crest]], by 3x damage via a 2% chance (2.2% with the [[Magnetite Dice]]) of random critical hits while Bind is ready.
+
+== Needle-bouncing ==
+While in the air, downward slashes can be performed on enemies, spikes and certain objects in order to bounce. This move is known as "Needle-bouncing", "pogo-jumping", or simply "pogo-ing". Successfully bouncing refreshes Hornet's mid-air abilities.
+
+Like with other attacks, each crest provides a unique downward slash, requiring different positioning relative to the bounce target.
+
+* [[Hunter Crest]]: Hornet does a long dash strike diagonally downwards.
+* [[Reaper Crest]]: Hornet cuts down in a wide half-circle, moving diagonally downwards a short distance in the facing direction.
+* [[Wanderer Crest]]: Hornet performs a quick, wide slash directly beneath herself, lacking sideways movement on a miss or delay before bouncing on a hit. This is similar to [[The Knight|the Knight's]] slashes from the first game.
+* [[Beast Crest]]: Hornet pounces forward and spins like a sawblade after a slight delay, with a movement arc similar to a dash that curves downwards and can be adjusted slightly. On a successful hit, Hornet bounces up unless she is too far below the target.
+* [[Witch Crest]]: Hornet whips her Needle downwards with a small angular offset. On hit, she briefly becomes intangible. This attack strikes twice on hit; however, this does not generate more Silk. The damage is split between the two hits, the first dealing slightly more, totalling 1 more damage than normal.
+* [[Architect Crest]]: Hornet dives diagonally downwards, drilling in the same direction. Holding the attack button makes Hornet pause to charge, extending the spin time, dive distance, and the number of hits it deals. With a full charge, it deals double damage and strikes twice as many times. The damage is spread roughly evenly across hits.
+* [[Shaman Crest]]: Hornet fires an energy wave downward. This causes Hornet to move up slightly even if it does not hit a target, although hitting a target moves her further.
+
+== Tools ==
+Some [[Tools]] affect various aspects of the Needle:
+
+* [[Weighted Belt]] lessens knockback when striking an enemy.
+* [[Longclaw]] increases the Needle's range by 27%.
+* [[Flea Brew]] temporarily increases the Needle's attack speed by 50%.
+* [[Flintslate]] temporarily increases the Needle's damage by 50% and inflicts burn upon three consecutive hits.
+** When combined with [[Pollip Pouch]], the Needle inflicts poison on every hit, but the damage bonus is reduced and burn is no longer applied.
+* [[Barbed Bracelet]] increases the Needle's damage by 25% at the cost of doubling the damage Hornet receives.
+
+{{Gallery
+|Title = Gallery
+|Image1 = Plinney Sharpen Cinematic.mp4!First Needle sharpen cinematic
+|Image2 = Plinney Sharpen Cinematic (Oil).mp4!Needle sharpen cinematic using [[Pale Oil]]
+|Image3 = Needle Upgrade Icon.png!Needle upgrade icon
+|Image4 = Menu Theme Silksong.png!In the menu
+|Image5 = Needle Credit.png!Credits art
+|Image6 = HornetPromo2.jpg!Promotional art
+}}
+
+== Trivia ==
+* In the 2019 <i>Silksong</i> demo, the base Needle, which looked like the Sharpened Needle, had the description of <i>"Long, bladed weapon, uniquely balanced for combat."</i><ref name="doc">[https://docs.google.com/document/d/10wyWpWJAtbRUSrOstN4e1l09mtx-vrjU_IiqdB2QGyc Everything we know about Hollow Knight: Silksong] (June 13th, 2022)</ref>
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Fixed getting stuck floating after down-bouncing on certain projectiles.
+|1.0.29909 (Patch 5): Fixed certain tools unintentionally being down-bounceable in specific instances.
+}}
+{{Localisation
+|DEname = Nähnadel
+|DEmeaning = Sewing Needle<br><small>While <i>{{lang|de|nadel}}</i> can mean both needle and pin interchangeably, <i>Nähnadel</i> specfically refers to Hornet's needle while <i>nadel</i> on its own only ever refer to pins in game.</small>
+|ESname = Aguja
+|ESmeaning = Needle
+|FRname = Aiguille
+|FRmeaning = Needle
+|ITname = Ago
+|ITmeaning = Needle
+|JAname = 針
+|JAromanised = Hari
+|JAmeaning = Needle
+|KOname = 바늘
+|KOromanised = Baneul
+|KOmeaning = Needle
+|PTname = Agulha
+|PTmeaning = Needle
+|RUname = Игла
+|RUromanised = Igla
+|RUmeaning = Needle
+|TWname = 織針
+|TWromanised = Zhī zhēn
+|TWmeaning = same
+|ZHname = 织针
+|ZHromanised = Zhī zhēn
+|ZHmeaning = Weaving Needle
+|CODEname = NAIL1
+}}
+
+=== Sharpened Needle ===
+{{Localisation
+|hr = false
+|DEname = Geschärfte Nähnadel
+|DEmeaning = Sharpened Sewing Needle<br><small>While <i>{{lang|de|nadel}}</i> can mean both needle and pin interchangeably, <i>Nähnadel</i> specfically refers to Hornet's needle while <i>nadel</i> on its own only ever refer to pins in game.</small>
+|ESname = Aguja afilada
+|ESmeaning = Sharp Needle
+|FRname = Aiguille aiguisée
+|FRmeaning = Sharpened Needle
+|ITname = Ago affilato
+|ITmeaning = Sharp Needle
+|JAname = 鋭利な針
+|JAromanised = Eirina hari
+|JAmeaning = Sharp Needle
+|KOname = 날카로운 바늘
+|KOromanised = Nalkaroun baneul
+|KOmeaning = Sharp Needle
+|PTname = Agulha Afiada
+|PTmeaning = Sharp Needle
+|RUname = Заострённая игла
+|RUromanised = Zaostrënnaja igla
+|RUmeaning = Sharpened Needle
+|TWname = 尖銳織針
+|TWromanised = Jiānruì zhī zhēn
+|TWmeaning = same
+|ZHname = 尖锐织针
+|ZHromanised = Jiānruì zhī zhēn
+|ZHmeaning = Sharp Weaving Needle
+|CODEname = NAIL2
+}}
+
+=== Shining Needle ===
+{{Localisation
+|hr = false
+|DEname = Glänzende Nähnadel
+|DEmeaning = Shiny Sewing Needle<br><small>While <i>{{lang|de|nadel}}</i> can mean both needle and pin interchangeably, <i>Nähnadel</i> specfically refers to Hornet's needle while <i>nadel</i> on its own only ever refer to pins in game.</small>
+|ESname = Aguja resplandeciente
+|ESmeaning = Radiant Needle
+|FRname = Aiguille brillante
+|FRmeaning = Brilliant Needle
+|ITname = Ago lucente
+|ITmeaning = Shining Needle
+|JAname = 輝く針
+|JAromanised = Kagayaku hari
+|JAmeaning = Shining Needle
+|KOname = 빛나는 바늘
+|KOromanised = Bitnaneun baneul
+|KOmeaning = Glowing Needle
+|PTname = Agulha Reluzente
+|PTmeaning = Shining Needle
+|RUname = Сияющая игла
+|RUromanised = Sijajuščaja igla
+|RUmeaning = Shining Needle
+|TWname = 輝光織針
+|TWromanised = Huī guāng zhī zhēn
+|TWmeaning = same
+|ZHname = 辉光织针
+|ZHromanised = Huī guāng zhī zhēn
+|ZHmeaning = Glowing Weaving Needle
+|CODEname = NAIL3
+}}
+
+=== Hivesteel Needle ===
+{{Localisation
+|hr = false
+|DEname = Schwarmstahl-Nähnadel
+|DEmeaning = Swarm Steel Sewing Needle<br><small>While <i>{{lang|de|nadel}}</i> can mean both needle and pin interchangeably, <i>Nähnadel</i> specfically refers to Hornet's needle while <i>nadel</i> on its own only ever refer to pins in game.</small>
+|ESname = Aguja de acerocolmena
+|ESmeaning = Needle of Hivesteel
+|FRname = Aiguille d'acier-alvéole
+|FRmeaning = Needle of Hive-Steel
+|ITname = Ago in alveacciaio
+|ITmeaning = Needle of Hivesteel<br><small><i>Alveacciaio</i> is a portmanteau of <i>alveare</i> (hive) and <i>acciaio</i> (steel).</small>
+|JAname = ハイブ鋼の針
+|JAromanised = Haibukō no hari
+|JAmeaning = Hivesteel Needle
+|KOname = 벌집강철 바늘
+|KOromanised = Beoljipgangcheol baneul
+|KOmeaning = Hivesteel Needle
+|PTname = Agulha de Aço Favônio
+|PTmeaning = Needle of Honeycomb Steel
+|RUname = Игла из стали Улья
+|RUromanised = Igla iz stali Ulʹja
+|RUmeaning = Needle of Hive Steel
+|TWname = 蜂鋼織針
+|TWromanised = Fēng gāng zhī zhēn
+|TWmeaning = same
+|ZHname = 蜂钢织针
+|ZHromanised = Fēng gāng zhī zhēn
+|ZHmeaning = Bee Steel Weaving Needle
+|CODEname = NAIL4
+}}
+
+=== Pale Steel Needle ===
+{{Localisation
+|hr = false
+|DEname = Bleichstahl-Nähnadel
+|DEmeaning = Pale Steel Sewing Needle<br><small>While <i>{{lang|de|nadel}}</i> can mean both needle and pin interchangeably, <i>Nähnadel</i> specfically refers to Hornet's needle while <i>nadel</i> on its own only ever refer to pins in game.</small>
+|ESname = Aguja de acero pálido
+|ESmeaning = Needle of Pale Steel
+|FRname = Aiguille d'acier pâle
+|FRmeaning = Needle of Pale Steel
+|ITname = Ago in acciaio pallido
+|ITmeaning = Needle of Pale Steel
+|JAname = 蒼白の針
+|JAromanised = Sōhaku no hari
+|JAmeaning = Pale Needle
+|KOname = 창백한 강철 바늘
+|KOromanised = Changbaekan gangcheol baneul
+|KOmeaning = Pale Steel Needle
+|PTname = Agulha de Aço Pálido
+|PTmeaning = Needle of Pale Steel
+|RUname = Игла из бледной стали
+|RUromanised = Igla iz blednoj stali
+|RUmeaning = Needle of Pale Steel
+|TWname = 蒼白蜂鋼織針
+|TWromanised = Cāngbái fēng gāng zhī zhēn
+|TWmeaning = same
+|ZHname = 苍白蜂钢织针
+|ZHromanised = Cāngbái fēng gāng zhī zhēn
+|ZHmeaning = Pale Bee Steel Weaving Needle
+|CODEname = NAIL5
+}}
+
+{{Refs|hr=ss}}
+
+[[Category:Combat (Silksong)]]
+
+[[fr:Aiguille]]

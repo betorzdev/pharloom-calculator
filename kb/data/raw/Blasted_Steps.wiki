@@ -1,0 +1,216 @@
+{{SS Infobox Area
+| tab1 = Acts 1/2
+| image1 = <gallery>
+Blasted Steps Map Marked.png|Marked
+Blasted Steps Map Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Blasted Steps Map Ruin Marked.png|Marked
+Blasted Steps Map Ruin Clean.png|Unmarked
+</gallery>
+| connection = [[Bone Bottom]]<br/>[[Grand Gate]]<br/>[[Sands of Karak]]<br/>[[Shellwood]]<br/>[[Wasteland]]
+| ambience = [https://www.youtube.com/watch?v=xmL6HrARoIg Atmos Blasted Steps]
+| main = [https://youtu.be/w2lW03QWMAM Blasted Steps]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]<br>
+[https://www.youtube.com/watch?v=t2k1Ke0f9JQ Atmos Outside Wind Chasm]<br>
+[https://www.youtube.com/watch?v=nnnt8BhsX0o Atmos Lonely Planes Wind]<br>
+[https://www.youtube.com/watch?v=zNcy8lmv3-Q Atmos Cave Misc 4]
+}}
+
+{{Quote
+|Huge caves ascending to Pharloom's Citadel. The roads are slowly being devoured by sand and howling wind.
+|[[Shakra]]
+|Hr=SS
+}}
+
+The <b>Blasted Steps</b> is a stormy, ruined desert [[Areas (Silksong)|area]] in <i>[[Hollow Knight: Silksong]]</i>. Located on the western edge of [[Pharloom]], it is the final path up to the [[Grand Gate]] and entrance into [[the Citadel]].
+
+== Description ==
+[[File:Screenshot SS Judge 01.png|thumb|200px|left|A Judge guarding the area]]
+The Blasted Steps is the highest point of Pharloom's midlands, marking the western border between Pharloom and the [[Wasteland]] surrounding the kingdom. Composed of natural caves, a path has been carved for the pilgrimage, turning these caves into the steps at the foot of the Citadel. Strong winds and sand from the Wasteland continually batter the Blasted Steps, eroding much of the old construction. The sand that composes much of the area's floors is constantly passed through by deadly [[Sandcarver]]s, who pop out whenever they detect nearby life.
+
+Compared to surrounding areas, the Blasted Steps is a significant leap in platforming difficulty. Through the caverns, strong winds periodically blow through to the east, diminishing the effectiveness of the [[Drifter's Cloak]]. The vertical nature of the Steps demands more involved use of the [[Cling Grip]], and numerous hanging bells requiring several [[Needle#Needle-bouncing|Needle-bounces]] to scale the area. Inside the pit, many gilded cages hang down from the ceiling, several of which extend down as far as the gap between [[Mosshome]] and the [[Wormways]].
+
+The main landmark of the Blasted Steps is a huge pit in the centre-east, which vertically spans almost the entirety of the area's height. At the bottom is a bridge destroyed by Hornet in the game's opening cutscene, where the pit extends down into [[Bone Bottom]]. In a fashion similar to the [[Moss Grotto]], the initial path through the Steps weaves around this gap, starting to its left, passing through it to a section at its right before weaving up to the roof of the pit.
+
+A path extending west from the pit leads to an area pervaded by coral, where [[Great Conchflies]] appear to reside. Past the two mates is the far western edge, where [[Pinstress]] resides in her floating home. Platforming above her home using the Clawline leads to the neighbouring [[Sands of Karak]], from where two other shortcuts back into the Steps can be opened.
+
+One of the shortcuts to Karak is located near the top of the huge pit, in a vertical room that leads to multiple other, mostly small, rooms. From top to bottom: a dark room focused around a small nest of [[Squirrm]]s; a settlement of [[Snitchfly|Snitchflies]] where [[Grindle]] sets up shop, that requires the [[Faydown Cloak]] to access; the path to the pit, which contains a [[Bellway]]; and a long hallway leading to [[Lumble the Lucky]].
+
+At the peak of the Blasted Steps is the entrance to the Citadel, blocked by the Grand Gate. This gate can only be unlocked by ringing five bells scattered around Pharloom and is guarded by the [[Last Judge]], who is the final challenge before the Citadel. Once this gate is open and the Last Judge is defeated, the [[Flea Caravan]] moves into her arena after twelve [[Flea]]s have been saved.
+
+If Hornet attempts to leave Pharloom from this location, she delivers a unique monologue:
+{{TabbedDialogue
+| header = false
+| Title1 = Dialogue
+| Title1_Event1 = When attempting to leave Pharloom for the first time while in Acts 1 or 2
+| Title1_Dialogue1 = {{HTalk|These sands mark the edge of Pharloom's territory. I was brought to this land through the caverns beyond.}}<br>
+{{HTalk|Something at this kingdom's height still hungers for me. Were I to flee now, I would again be pursued.}}<br>
+{{HTalk|Until I find the source of that hunger, and slay it, I will not be free.}}
+| Title1_Event2 = Trying to leave Pharloom again while in Acts 1 or 2
+| Title1_Dialogue2 = {{HTalk|I cannot yet leave this land. Until I slay its source, this kingdom's hunger for me will never abate.}}
+| Title1_Event3 = When attempting to leave Pharloom for the first time while in Act 3
+| Title1_Dialogue3 = {{HTalk|If I chose to head beyond, I would abandon Pharloom to a collapse of my making.}}<br>
+{{HTalk|While I live, and still possess the strength to act, I will not allow that end to come to pass.}}
+| Title1_Event4 = Trying to leave Pharloom again while in Act 3
+| Title1_Dialogue4 = {{HTalk|I will not flee. I cannot abandon the kingdom to a collapse of my making.}}
+}}
+
+== History ==
+Once part of the area now known as [[Sands of Karak]], the land bordering the Wasteland was vibrant and flowing with rivers of water.<ref>Sands of Karak [[Lore Tablets (Silksong)#Sands of Karak|Lore Tablet]]:<br> <i>"Coral sways,<br>Clear water flows,<br>Upon our river free of time."</i></ref> Corals scaled the walls and floors during the land's prime, supplied by water falling from [[Coral Tower]].<ref name="water">Coral Tower [[Lore Tablets (Silksong)#Coral Tower|Lore Tablet]]:<br> <i>"At water's source,<br>And coral's heart,<br>Our lord born last to rule."</i></ref> When this water dried up, the area eventually became a desert, with the only remnants of its past being dried coral.
+
+With the creation of the Citadel at Pharloom's summit, the area below the [[Order of Karak]]'s home was turned into the Blasted Steps. Simple bugs are compelled to take on a pilgrimage to reach the Citadel, believing the massive structure calls to them.<ref>[[Aged Pilgrim]]: <i>"Might have taken me a beat to build the courage, but I can feel it, closer now... the Citadel calling me up."</i></ref><ref>Hornet dialogue with Pilby: <i>"Your life is your own, and need not be squandered at the ghostly call of the Citadel."</i></ref> The Blasted Steps acts as the final hurdle of the pilgrimage, its ascension necessary to reach the Grand Gate.
+
+Preventing the sinful from entering the sacred Citadel are the [[Judges]]; aged Squirrms tasked from birth to guard the Steps.<ref>Blasted Steps [[Lore Tablets (Silksong)#Blasted Steps|Lore Tablet]]: <i>Bug born of Pharloom. You have been chosen. May our Citadel's holy gilding harden your soft shell. Stand eternal as our arbiter, that no bug bearing sin shall step within our sacred halls.</i></ref> On the path of the steps, pilgrims judged to be sinful are killed by the Judges.<ref>[[Judge]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"They remorselessly eliminate any pilgrim or passerby deemed impure to their sight."</i></ref><ref>[[Last Judge]] [[Needolin]] dialogue: <i>"Only the pure may pass! Smite the sinners!"</i></ref> The Last Judge who guards the Grand Gate is the final arbiter of the steps, having likely stood for countless generations to ensure that only the sinless ever passed through the Grand Gate.<ref>Last Judge Hunter's Journal Entry: <i>"Final arbiter of the Blasted Steps, tasked to ensure only the sinless ever step beyond the Grand Gate. The huge Judge likely stood through countless generations, never defeated, never wavering in their charge."</i></ref>
+
+== How to Access ==
+The Blasted Steps is accessed from the west of [[Shellwood]], going west from the [[Bench (Silksong)|bench]] near the Bellway station. The [[Cling Grip]] is required to enter the area.
+
+==Area Features==
+{{TabbedPOI
+|NPC1 = Grindle
+|NPC2 = Lumble the Lucky
+|NPC3 = Shakra
+|NPC4 = Flea Caravan
+|NPC5 = Lace
+|NPC5Note = (if not encountered in the [[Deep Docks]] or [[Sinner's Road]])
+|NPC6 = Sherma
+|NPC7 = Nuu
+|NPC7Note = (after defeating Great Conchflies)
+|NPC8 = Pinstress
+|NPC9 = Steel Seer Zi
+|NPC9cp = {{Steel Soul Icon Mini|SS}} 
+|NPC10 = Tall Pilgrim
+|NPC11 = Garmond and Zaza
+|NPC11Note = ([[Act 3]] only)
+
+|Enemy1 = Pilgrim Groveller
+|Enemy1Note = (before Act 3)
+|Enemy2 = Pilgrim Pouncer
+|Enemy3 = Pilgrim Bellbearer
+|Enemy4 = Winged Pilgrim Bellbearer
+|Enemy5 = Pilgrim Hiker
+|Enemy6 = Pharlid
+|Enemy7 = Sandcarver
+|Enemy8 = Squirrm
+|Enemy9 = Judge
+|Enemy10 = Driznit
+|Enemy11 = Winged Pilgrim
+|Enemy11Note = (Act 3 only)
+|Enemy12 = Elder Pilgrim
+|Enemy12Note = (Act 3 only)
+|Enemy13 = Driznarga
+|Enemy13Note = (Act 3 only)
+|Enemy14 = Void Mass
+|Enemy14Note = (Act 3 only)
+
+|Boss1 = Last Judge
+|Boss2 = Great Conchflies
+|Boss3 = Lost Garmond
+|Boss3Note = (Act 3 only)
+
+|Loot1_FileName = Icon SS Needle Strike Art
+|Loot1_Name = Needle Strike
+|Loot2_FileName = Magnetite Dice
+|Loot2_Description = * During [[Act 1]]: given by [[Lumble the Lucky]] for beating his game 10 times
+* During [[Act 2]]: found next to Lumble's body
+|Loot3_FileName = Growstone 4
+|Loot3_Name = Growstone
+|Loot3_Description = given by [[Steel Seer Zi]] after completing the <i>[[A Vassal Lost]]</i> wish
+|Loot3cp = {{Steel Soul Icon Mini|SS}} 
+|Loot4_FileName = Mask Shard (Silksong)
+|Loot4_Name = Mask Shard (Silksong){{!}}Mask Shard
+|Loot4_Amount = 1
+|Loot5_FileName = Spool Fragment
+|Loot5_Amount = 1
+|Loot5_Description = given by [[Fleamaster Mooshka]] after moving the Caravan
+|Loot6_FileName = Memory Locket
+|Loot6_Amount = 1
+|Loot7_FileName = Craftmetal
+|Loot7_Amount = 1
+|Loot8_FileName = Flea
+|Loot8_Amount = 1
+|Loot9_FileName = Silkeater
+|Loot9_Amount = 1
+|Loot10_FileName = Frayed Rosary String
+|Loot10_Amount = 1
+|Loot11_FileName = Beast Shard
+|Loot11_Amount = 1
+|Loot12_FileName = Hero's Memento
+|Loot12_Description = obtained after defeating [[Lost Garmond]]
+
+|LoreTabletsSource = SS Blasted Steps
+}}
+
+== Creation and Development ==
+[[File:April 2021 Red Coral Gorge Stitch.png|thumb|220px|April 2021 Red Coral Gorge stitched map created by Min Ferna.]]
+The Blasted Steps in its current form was not initially planned for <i>Silksong</i>; originally, in it and the [[Sands of Karak]]'s place, was the [[Cut Content (Silksong)/Areas#Red Coral Gorge|Red Coral Gorge]] area, a large area first added to the map around November 2017 and seen in the February 2019 <i>Silksong</i> reveal trailer and in February 2021's <i>EDGE Magazine</i> issue.<ref>[https://www.youtube.com/watch?v=pFAknD_9U7c Hollow Knight: Silksong Reveal Trailer]</ref><ref>[https://pocketmags.com/edge-magazine/february-2021 Edge Magazine February 2021 edition], p. 54.</ref>  The final layout of the Red Coral Gorge was divided into roughly 3 sections: <code>Coral Steps</code>, <code>Coral River</code>, and Voltnest. The Coral Steps was the segment that became the Blasted Steps.
+
+By September 2021, it began getting cut, and in early 2022, the Blasted Steps was introduced. [[Team Cherry]] stated that the area was removed because having "''beautiful lush" areas "went against the narrative that [they] were trying to tell''" about "''a place where the Citadel has really consumed the lands beneath it''", noting that "''It reduces the drive of the story and the character if the world is beautiful and fine''". It narratively "''exists still''", but was "''brought forward in time and eroded''", becoming the Sands of Karak and Blasted Steps.<ref name="bloomberg2">[https://www.bloomberg.com/news/newsletters/2025-11-28/the-makers-of-hollow-knight-silksong-aren-t-done-just-yet The Makers of 'Silksong' Aren't Done Just Yet] on Bloomberg</ref>
+
+Some rooms from the Coral Steps section of the Red Coral Gorge, namely lower rooms such as <code>Coral_2</code> and <code>Coral_3</code>, were kept appear in the Blasted Steps, now being dried up. It was first showcased in the June 2022 <i>Xbox Game Pass Reveal Trailer</i>,<ref name="xbox">[https://www.youtube.com/watch?v=JSfuFlhsxZY Hollow Knight: Silksong - Xbox Game Pass Reveal Trailer - Xbox & Bethesda Games Showcase 2022]</ref> and its name was partially revealed in a screenshot filename released around then, which called it "Steps".<ref>[https://web.archive.org/web/20221029084823/https://news.xbox.com/en-us/media/hollow-knight-silksong-xbox-bethesda-showcase-2022/ Hollow Knight: Silksong – Xbox & Bethesda Showcase 2022 - Xbox Wire (archive)]</ref>
+
+{{Gallery
+|Title = Gallery
+|Image1 = Bellway BlastedSteps.png!Bellway Station
+|Image2 = Screenshot SS BlastedSteps 01.png!Lower Toll Bench
+|Image3 = Screenshot SS BlastedSteps 02.png!Upper Toll Bench
+|Image4 = Screenshot SS BlastedSteps 03.png![[Great Conchflies]] Arena
+|Image5 = Screenshot SS BlastedSteps 04.png![[Last Judge]] Arena
+|Image6=Screenshot SS BlastedSteps 05.png!Carriage
+|Image7=Screenshot SS BlastedSteps 06.png![[Grindle]] Hideout
+|Image8=Screenshot SS BlastedSteps 07.png![[Pinstress]] Hut Outside
+|Image9=Screenshot SS BlastedSteps 08.png!Pinstress Hut Inside
+|Image10=Screenshot SS BlastedSteps 09.png!Entry to Pharloom
+|Image11=Screenshot SS BlastedSteps 10.png!Entry to Pharloom (Act 3)
+|Image12=Screenshot SS BlastedSteps 11.png![[Squirrm]] Room Entrance
+|Image13=Screenshot SS BlastedSteps 12.png!Squirrms singing along Hornet
+|Image14=Screenshot SS BlastedSteps 13.png!Squirrm Room Shardbeast
+|Image15=Screenshot SS BlastedSteps 14.png!Garmond and Zaza (Act 3)
+|Image16=Screenshot SS Blasted Steps Cutscene.png!Hornet's captors passing through the Blasted Steps
+|Image17=XboxScreenshot Blasted Steps.png!Pre-release screenshot}}
+
+{{Gallery
+|Image1=Silksong Early 021.png!Pre-release screenshot
+}}
+
+{{History
+|game = SS
+|1.0.29909 (Patch 5): Removed a sprite of a [[Conductors|Conductor]]'s mantle in western Blasted Steps near its connection to the Wasteland.
+}}
+
+{{Localisation
+|DEname = Windgepeitschte Stufen
+|DEmeaning = Wind-swept Steps
+|ESname = Escalones Ajados
+|ESmeaning = Eroded Steps
+|FRname = Marches Érodées
+|FRmeaning = Eroded Steps
+|ITname = Gradini Distrutti
+|ITmeaning = Destroyed Steps
+|JAname = 暴風の石段
+|JAromanised = Bōfū no ishidan
+|JAmeaning = Stormy Stone Steps
+|KOname = 풍화된 계단
+|KOromanised = Punghwadoen gyedan
+|KOmeaning = Weathered Stairs<br><small>{{lang|ko|풍화된 <i>punghwadoen</i>}} can literally be translated as "wind-transformed".</small>
+|PTname = Degraus Devastados
+|PTmeaning = Destroyed Steps
+|RUname = Подточенные ступени
+|RUromanised = Podtočennye stupeni
+|RUmeaning = Eroded Steps
+|ZHname = 风蚀长阶
+|ZHromanised = Fēng shí cháng jiē
+|ZHmeaning = Wind-eroded Long Steps
+|TWname = 風蝕長階
+|TWromanised = Fēng shí cháng jiē
+|TWmeaning = same
+|CODEname= JUDGE_STEPS</code><br><code>CORAL_STEPS
+|CODEmeaning = [[Cut Content (Silksong)/Areas#Red Coral Gorge|Red Coral Gorge]]'s Coral Steps was an earlier name and concept for Blasted Steps
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav Areas}}
+
+[[zh:风蚀长阶]]

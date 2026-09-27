@@ -1,0 +1,117 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Pilgrim Guide.png|Hunter's Journal
+Pilgrim Guide Idle.png|Idle
+Pilgrim Guide Without Shawl.png|Without Shawl
+</gallery>
+| hasdrop = true
+| r1 = 15
+| r2 = 24
+| sh1 = 4-6
+| sh2 = 5-8
+|drops = [[Pilgrim Shawl]]
+|health = 30/{{BT|120}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1.2|1|1|1}}
+|numbers_required = 15
+|singnum=2
+|va = Beau Fitzgerald<ref>Beau Fitzgerald is credited in Pilgrim Guide's audio files.</ref>
+}}
+
+{{Quote
+|Hr = Journal
+|Old pilgrim carrying a heavy iron bell staff.<hr/>
+The large bell seems to signify them as once leader of a climbing troupe, though the Haunting has erased that former authority.
+}}
+
+<b>Pilgrim Guides</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are old pilgrims who carry a heavy iron bell staff, once the leaders of climbing troupes before becoming [[Haunting|Haunted]].<ref>Pilgrim Guide [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Old pilgrim carrying a heavy iron bell staff. The large bell seems to signify them as once leader of a climbing troupe, though the Haunting has erased that former authority."</i></ref>
+
+== Behaviour and Tactics ==
+Pilgrim Guides naturally walk when idle, except for the one in Greymoor who is leading a prayer. Once Hornet is in range, they use either of the following attacks:
+* <b>Double Bonk:</b> Slams their staff at Hornet, pausing for a moment, then performs another slam. Moves forward with each slam.
+* <b>Jump Slam:</b> Jumps either backwards or forwards and slams their bell staff down as they land.
+
+Pilgrim Guides deal {{Damage|2}} with their bell staff, but only {{Damage|1}} on contact.
+
+As for counterplay, baiting out their attacks and striking during the downtime is the best strategy, since they have a short cooldown between attacks and leave many openings.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Pilgrim Guides have their health quadrupled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* There is no pain, nor fear, nor death...
+* Am I worthy?
+* The path... the holy path...
+* My soul... my shell. For you!
+* My faith... my reward...
+* Raise me higher! Pull me closer!
+* Lives end, journeys begin...
+* Raise my shell! Pull me closer!
+* Shining bright, our Citadel waits...
+* Pull us higher, ever higher...
+* We will climb! Climb! Climb forever!
+}}
+
+== Location ==
+Two consistently respawning Pilgrim Guides can be found in the middle of [[Greymoor]], east of [[Halfway Home]].
+After defeating [[Shellwood]]'s [[Covetous Pilgrim]], a Pilgrim Guide can be found in the room it previously occupied, alongside a [[Pilgrim Bellbearer]].
+A non-respawning Pilgrim Guide can also be found in [[the Marrow]]'s jail, but only before [[Loddie]]'s minigame is set up.
+In [[Bonegrave]], one Pilgrim Guide can spawn as an enemy variant upon revisiting the area. Inside the [[Chapel of the Wanderer]], one is encountered as part of the [[Enemy_Gauntlets_(Silksong)#Chapel_of_the_Wanderer|gauntlet]].
+
+During [[Act 3]], a Pilgrim Guide can be found in Shellwood attacking [[Pinmaster Plinney]].
+
+{{Gallery
+|Image1 = Mapshot SS Pilgrim Guide 03.png!Locations in Bone Bottom
+|Image2 = Mapshot SS Pilgrim Guide 01.png!Location in the Marrow
+|Image3 = Mapshot SS Pilgrim Guide 02.png!Locations in Greymoor
+|Image4 = Mapshot SS Covetous Pilgrim 01.png!Location in Shellwood
+|Image5 = Mapshot SS Pilgrim Guide 04.png!Location in Shellwood in Act 3
+}}
+
+==Gallery==
+{{Gallery|
+|Image1= Screenshot SS Pilgrim Pouncer 03.png!In Greymoor with a [[Pilgrim Pouncer]] and a [[Pilgrim Bellbearer]]
+|Image2= Screenshot SS Pilgrim Bellbearer 03.png!In Shellwood with a Pilgrim Bellbearer
+|Image3= Screenshot SS Pilgrim Guide 01.png!In the Marrow
+|Image4= Screenshot SS Pilgrim Guide 02.png!Inside the Chapel of the Wanderer
+|Image5= Screenshot SS Pilgrim Guide 03.png!Outside the Chapel of the Wanderer
+|Image6= Screenshot SS Pilgrim Guide 04.png!Attacking Plinney in Shellwood in Act 3
+|Image7= Screenshot SS Pilgrim Guide 05.png!Double Bonk attack
+|Image8= Screenshot SS Pilgrim Guide 06.png!Jump Slam attack
+|Image9= Screenshot SS Pilgrim Guide 07.png!Responding to the Needolin
+|Image10= Screenshot SS Pilgrim Guide 08.png!Without shawl during <i>[[Garb of the Pilgrims]]</i>
+}}
+
+{{Localisation
+|DEname = Pilgerführer
+|DEmeaning = Pilgrim Leader
+|ESname = Peregrino guía
+|ESmeaning = Guide Pilgrim
+|FRname = Guide des Pèlerins
+|FRmeaning = Guide of Pilgrims
+|ITname = Guida Pellegrina
+|ITmeaning = Pilgrim Guide
+|JAname = 先導の巡礼者
+|JAromanised = Sendou no junreisha
+|JAmeaning = Guide Pilgrim
+|KOname = 순례 인도자
+|KOromanised = Sullye indoja
+|KOmeaning = Pilgrimage Guide
+|PTname = Guia-peregrino
+|PTmeaning = Pilgrim Guide
+|RUname = Пилигрим-гид
+|RUromanised = Piligrim-gid
+|RUmeaning = Guide Pilgrim
+|TWname = 引路朝聖者
+|TWromanised = Yǐnlù cháoshèngzhě
+|TWmeaning = same
+|ZHname = 引路朝圣者
+|ZHromanised = Yǐnlù cháoshèngzhě
+|ZHmeaning = Guide Pilgrim
+|CODEname=PILGRIM_STAFFWIELDER
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

@@ -1,0 +1,89 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Conchfly.png|Hunter's Journal
+Conchfly Idle.png|Idle
+Conchfly Drill.png|Drilling
+</gallery>
+| hasdrop = true
+| sh1 = 4-6
+| sh2 = 5-8
+|health = 45 ([[Sands of Karak]]) <br> 55 ([[Coral Tower]])
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1.2|1.1|1|1}}
+|numbers_required = 8
+|singnum=1
+}}
+{{Quote
+|Hr = Journal
+|Small bug that crafts a shell of sharpened coral. Spins its shell at rapid speed to cut through crust and bone.<hr/>
+The way it darts in and out of the ground has an almost playful quality to it. An amusing and effective way to ambush prey.
+}}
+
+'''Conchflies''' are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are small bugs that craft shells of sharpened coral to drill through their prey.<ref> Conchfly [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Small bug that crafts a shell of sharpened coral. Spins its shell at rapid speed to cut through crust and bone."</i></ref>
+
+== Behaviour and Tactics ==
+Conchflies are flying enemies always found in pairs.<br>
+They drill into the ground and walls and then launch back out of different surfaces at Hornet. If the tip of their pointy shell hits Hornet, they drill into her and Combo her for {{Damage|1+1}}.<br>
+
+Contact with idle Conchflies deals {{Damage|1}}.
+
+Though they only have melee attacks, Conchflies still attempt to keep their distance between attacks.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* The crust covers...
+* The crust conceals...
+* Our shells made strong...
+* Our nest made secret...
+}}
+
+== Location ==
+Conchflies can be found primarily in the [[Coral Tower]], but two can also be encountered next to a bench in [[Sands of Karak]], and they can be summoned by the [[Raging Conchfly]].
+
+{{Gallery
+|Image1 = Mapshot SS Conchfly 01.png!Location in the Sands of Karak
+|Image2 = Mapshot SS Raging Conchfly 01.png!Raging Conchfly location
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Conchfly 01.png!Conchfly in Sands of Karak
+|Image2 = Screenshot_SS_Raging_Conchfly_04.png!In [[Raging Conchfly]] battle
+|Image3 = Screenshot SS Conchfly 02.png!Conchfly in Coral Tower
+|Image4 = Screenshot SS Conchfly 03.png!Attacking (Horizontal)
+|Image5 = Screenshot SS Conchfly 04.png!Attacking (Vertical)
+|Image6 = Screenshot SS Conchfly 06.png!Singing
+}}
+
+{{Localisation
+|DEname = Muschelfliege
+|DEmeaning = Conchfly or Shell Fly
+|ESname = Moscarola
+|ESmeaning = Portmanteau of <i>mosca</i> (fly) and <i>caracola</i> (conch).
+|FRname = Volucorne
+|FRmeaning = Horn Fly
+|ITname = Mosconchiglia
+|ITmeaning = Portmanteau of <i>mosca</i> (fly) and <i>conchiglia</i> (conch).
+|JAname = ホラガイバエ
+|JAromanised = Horagai-bae
+|JAkatakana = foreign
+|JAmeaning = Combination of {{lang|ja|ほら貝}} <i>horagai</i> (conch) and {{lang|ja|蝿}} <i>hae</i> (fly).
+|KOname = 고둥파리
+|KOromanised = Godungpari
+|KOmeaning = Conchfly or Snail Fly
+|PTname = Mosquicórnio
+|PTmeaning = Horn Fly
+|RUname = Ракушечная муха
+|RUromanised = Rakušečnaja muxa
+|RUmeaning = Seashell Fly
+|TWname = 螺蠅
+|TWromanised = Luó yíng
+|TWmeaning = same
+|ZHname = 螺蝇
+|ZHromanised = Luó yíng
+|ZHmeaning = Conch Fly
+|CODEname = CORAL_CONCH_DRILLER
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

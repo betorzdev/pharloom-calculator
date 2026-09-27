@@ -1,0 +1,63 @@
+{{Navbar|icons=true|page1=Maiden's Soul|page2=Hermit's Soul|page3=Seeker's Soul}}
+{{SS Infobox Item
+| image = [[File:Maiden's Soul.png]]
+| type = [[Items (Silksong)#Deliverable|Deliverable]]
+| source = Given by the [[Chapel Maid]] after accepting the <i>[[Silk and Soul]]</i> Wish
+| description = Vial gifted by the Chapel Maid, filled full with swirling soul.
+}}
+
+{{Quote
+| Rest'a my family spent far too long huddled and glum... or dead! Not me! I'd always been thinkin' it a waste to just take what's coming, when her up top wakes. Better to fight for freedom or go out in a blaze, oh ho! 
+| [[Chapel Maid]]
+| Hr = SS
+}}
+
+The <b>Maiden's Soul</b> is a [[Items (Silksong)#Deliverables|deliverable item]] in <i> [[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+The <b>Maiden's Soul</b> can be given to the [[Caretaker]] in [[Songclave]] along with the [[Hermit's Soul]], [[Seeker's Soul]], and [[Snare Setter]] to complete the <i>[[Silk and Soul]]</i> Wish.
+
+{{Gallery
+|Image1 = Mapshot SS Sherma 07.png!Location in Choral Chambers
+|Image2 = Screenshot SS Caretaker 01.png!Caretaker in Choral Chambers
+}}
+
+== How to Acquire ==
+After accepting the <i>[[Silk and Soul]]</i> Wish, [[Hornet (Silksong)|Hornet]] must travel to [[Bone Bottom]] and speak with the [[Chapel Maid]] who will give her the Maiden's Soul.
+
+{{Gallery
+|Image1 = File:Mapshot SS Chapel Maid 01.png!Location in Moss Grotto
+|Image2 = Screenshot SS Chapel Maid 02.png!Chapel Maid in Moss Grotto
+}}
+{{Localisation
+|DEname = Jungfernseele
+|DEmeaning = Maid Soul
+|ESname = Alma de la Doncella
+|ESmeaning = Maiden's Soul
+|FRname = L'âme de la jeune fille
+|FRmeaning = The Maiden's Soul
+|ITname = Anima della fanciulla
+|ITmeaning = Maiden's Soul
+|JAname = 乙女の魂
+|JAromanised = Otome no tamashii
+|JAmeaning = Maiden's soul
+|KOname = 여인의 영혼
+|KOromanised = Yeoinui yeonghon
+|KOmeaning = Lady's Soul
+|PTname =  Alma da Dama
+|PTmeaning = Lady's Soul
+|RUname = Душа прислужницы
+|RUromanised = Duša prislužnicy
+|RUmeaning = Maid's Soul
+|TWname = 嬤嬤之魂
+|TWromanised = Mómo zhī hún
+|TWmeaning = same
+|ZHname = 侍女之魂
+|ZHromanised = Shìnǚ zhīhún
+|ZHmeaning = Maid's Soul
+|CODEname = SNARE_SOUL_CHURCHKEEPER
+|CODEmeaning = Chapel Maid was previously named Churchkeeper.
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}

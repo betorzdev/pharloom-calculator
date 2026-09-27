@@ -1,0 +1,72 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Shadow Charger.png|Hunter's Journal
+Shadow Charger Idle.png|Idle
+</gallery>
+| hasdrop = true
+| sh1 = 9-14
+| sh2 = 12-18
+|health = 80
+|damage_modifiers = {{SS Spaced Damage Modifiers|2.5|1.5|1.3|1|1}}
+|numbers_required = 6
+}}
+{{Quote
+|Hr = Journal
+|Bulky worm of the deepest depths. Lives in tight crevices and uses its weighty body to batter.<hr/>
+These ones grow large, yet I have never observed them eating, or sleeping. They seem such simple bugs... but I suspect they are not truly our cousins.
+}}
+
+<b>Shadow Chargers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are the bulkier varients of the [[Shadow Creeper (Silksong)|Shadow Creepers]] found deeper within [[The Abyss (Silksong)|the Abyss]] beneath [[Pharloom]].
+
+== Behaviour and Tactics ==
+The Shadow Charger crawls along the ground at a slow pace when idle, turning around once it reaches an edge. Unlike its smaller counterpart, it will not spawn climbing vertically on any walls. When it sees Hornet or if Hornet gets especially close when it is facing away, it rears for a moment and then charges in Hornet's direction, stopping either after Hornet cannot be reached, Hornet gets behind it, or a second has passed since the last time it targeted her. If it reaches an edge, it turns around, which does not cancel the Charge.
+
+Shadow Chargers deal {{Damage|2}} contact damage for all their attacks.
+
+== Location ==
+A total of three Shadow Chargers can be found scattered throughout [[The Abyss (Silksong)|the Abyss]], typically in tight corridors.
+{{Gallery
+|Image1= Mapshot SS Shadow Charger.png!Locations in the Abyss
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Shadow Charger 01.png!Idle
+|Image2= Screenshot SS Shadow Charger 02.png!Charge attack
+}}
+
+== Trivia ==
+* Shadow Chargers do not respond to the Needolin.
+* Shadow Chargers have the highest damage modifier of any enemy, increasing the damage of unupgraded weapons by 250%.
+* Unlike their smaller kin, Shadow Chargers bleed out [[Void]] upon death.
+{{Localisation
+|DEname = Schattenstürmer
+|DEmeaning = Shadow Striker
+|ESname = Embestidor sombrío
+|ESmeaning = Shadowy Charger
+|FRname = Batailleur Obscure
+|FRmeaning = Shadow Fighter
+|ITname = Megadonte delle Ombre
+|ITmeaning = Shadow Megadon
+|JAname = カゲバシリ
+|JAromanised = Kage bashiri
+|JAmeaning = Shadow Runner<br><small>Combination of {{lang|ja|影 <i>kage</i>}} (shadow) and {{lang|ja|走り <i>hashiri</i>}} (runner).</small>
+|KOname = 그림자 돌진충
+|KOromanised = Geurimja doljinchung
+|KOmeaning = Shadow Charge Bug
+|PTname = Beligerante Sombrio
+|PTmeaning = Dark Belligerent
+|RUname = Теневой громила
+|RUromanised = Tenevoj gromila
+|RUmeaning = Shadow Thug or Shadow Smasher
+|ZHname = 阴影冲锋者
+|ZHromanised = Yīnyǐng chōngfēng zhě
+|ZHmeaning = Shadow Charger 
+|TWname = 陰影衝鋒者
+|TWromanised = Yīnyǐng chōngfēng zhě
+|TWmeaning = same 
+|CODEname = ABYSS_CRAWLER_LARGE
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Enemies}}

@@ -1,0 +1,117 @@
+{{SS Infobox Tool
+| type = Blue
+| damage = 1/2/2/3/3
+| effect = Most {{CrestSlot|Red|s}} apply venom that deals extra damage over time
+| location = [[Shellwood]]
+| description = Pouch containing a fast-acting venom drawn from a flower's heart.<hr/>
+Applies venom to equipped tools.
+}}
+
+{{Quote
+| Bug. Cloaked by red. The time of rebirth approaches. First rite is completed. Prepared. For the time of birth. Take... take. The refuse of the rite. 
+| [[Greyroot]]
+| Hr = SS
+}}
+
+<b>Pollip Pouch</b> is a {{CrestSlot|Blue|1}} in <i>[[Hollow Knight: Silksong]]</i>. It applies venom to equipped {{CrestSlot|Red|s}}, making them deal extra damage over time.
+
+== Usefulness ==
+With the Pollip Pouch equipped, when a {{CrestSlot|Red|1}} hits an enemy, venom is applied to them that deals 2 ticks of damage. This effect does not apply to the [[Needle Phial]].
+
+The damage of each tick depends on the number of [[Crafting Kit]]s that [[Hornet (Silksong)|Hornet]] has. Venom ticks deal 1 damage when Hornet has no kits, 2 damage when she has 1–2 kits, and 3 damage when she has 3–4 kits. Hitting an enemy that has been envenomed resets the effect.
+* Due to poison damage being unaffected by [[Damage Values and Enemy Health (Silksong)#Damage Calculation|Enemy Damage Modifiers]], it is particularly helpful against high-HP enemies, especially during the mid-game when other damage outputs might not yet match the increased enemy HP triggered by Needle upgrades.
+
+* Pollip Pouch synergises extremely well with the [[Architect Crest]] thanks to its strong reliance on {{CrestSlot|Red|s}} during combat.
+** It is not recommended to use Pollip Pouch with the Architect Crest's [[Plasmification]] build though, as it will destroy the Plasmium gained from the [[Plasmium Phial]].
+* Enemies cannot be affected by multiple sources of venom at the same time. So, to deal the most damage, it's more effective to wait out each instance of venom until the previous one has expired.
+* If an enemy disappears and then reappears somewhere else (or teleports), then any venom applied to the enemy is removed. This is assumedly because the game resets the enemy's state when spawning in a new sprite.
+* [[Sister Splinter]] and [[The Unravelled]] do not take damage from the venom of the Pollip Pouch.<ref>[https://www.youtube.com/watch?v=JXUtfO6UQXo&t=1123s Video showing Pollip Pouch immunity]</ref>
+* Enemies damaged by a tool affected by the Pollip Pouch will <b>not drop [[Seared Organ]]s</b>.
+
+== How to Acquire ==
+Given by [[Greyroot]] in [[Shellwood]] after completing the <i>[[Rite of the Pollip]]</i> [[Wish]].
+
+{{Gallery
+|Image1 = Mapshot SS Greyroot.png!Location in Shellwood
+|Image2 = Screenshot SS Greyroot 02.png!Greyroot in Shellwood
+}}
+
+== Tool Synergies ==
+{{SS Table Tool Interactions
+| Tool1 = Flintslate
+| Tool1Desc = Temporarily makes the [[Needle]] inflict venom on every hit instead of igniting enemies after 3 hits.<ref group="Note" name="Flintslate">Having the Pollip Pouch equipped prevents Fire and Electric based {{CrestSlot|Red|s}} from causing [[Seared Organ]]s to drop while the <i>[[Broodfeast]]</i> Wish or the <i>[[Runtfeast]]</i> Wish is active.</ref> Deals 3 ticks of poison instead of 2. Lowers damage increase from 50% to 30%. Tool's effect is no longer removed upon falling into water.{{MissingInfo}} The tool's duration is increased to 10 seconds.
+| Tool2 = Flea Brew
+| Tool2Desc =  Causes Hornet to leave behind clouds of venom as she moves.
+| Tool3 = Plasmium Phial
+| Tool3Desc = Using the Plasmium Phial creates a purple mask that breaks on its own after 3 seconds. Upon breaking, Hornet releases a large cloud of venom.
+Does not occur while [[plasmified]].
+}}
+
+== Gallery ==
+The appearance of {{CrestSlot|Red|s}} is altered when Pollip Pouch is equipped:
+{{Gallery
+| Image1 = Straight Pin Poison.png![[Straight Pin]]
+| Image2 = Threefold Pin Poison.png![[Threefold Pin]]
+| Image3 = Sting Shard Poison.png![[Sting Shard]]
+| Image4 = Tacks Poison.png![[Tacks]]
+| Image5 = Longpin Poison.png![[Longpin]]
+| Image6 = Curveclaw Poison.png![[Curveclaw]]
+| Image7 = Curvesickle Poison.png![[Curvesickle]]
+| Image8 = Throwing Ring Poison.png![[Throwing Ring]]
+| Image9 = Pimpillo Poison.png![[Pimpillo]]
+| Image10 = Conchcutter Poison.png![[Conchcutter]]
+| Image11 = Forge Daughter Silkshot Poison.png![[Silkshot]] (Forge Daughter)
+| Image12 = Twelfth Architect Silkshot Poison.png![[Silkshot]] (Twelfth Architect)
+| Image13 = Silkshot Poison.png![[Silkshot]] (Original)
+| Image14 = Delver's Drill Poison.png![[Delver's Drill]]
+| Image15 = Cogwork Wheel Poison.png![[Cogwork Wheel]]
+| Image16 = Cogfly Poison.png![[Cogfly]]
+| Image17 = Rosary Cannon Loaded Poison.png![[Rosary Cannon]]
+| Image18 = Voltvessels Poison.png![[Voltvessels]] (Spear)
+| Image19 = Voltvessels2 Poison.png![[Voltvessels]] (Bola)
+| Image20 = Flintslate Poison.png![[Flintslate]]}}
+{{Gallery
+| Image1 = Snare Setter Poison.png![[Snare Setter]]
+| Image2 = Flea Brew Poison.png![[Flea Brew]]
+| Image3 = Plasmium Phial Poison.png![[Plasmium Phial]]
+}}
+{| align="center" style="text-align:center"
+| {{#ev:youtube|https://www.youtube.com/watch?v=L6WEZA3uYIs|250|center|Deep Dive}}
+|}
+{{Localisation
+|DEname = Pollip-Tasche
+|DEmeaning = Pollip Pouch
+|ESname = Bolsa pólipo
+|ESmeaning = Pollip Bag
+|FRname = Bourse de pollip
+|FRmeaning = Purse of Pollip
+|ITname = Sacca nettarina
+|ITmeaning = Nectarine Sack
+|JAname=ポリップのポーチ
+|JAromanised= Porippu no pōchi
+|JAkatakana = foreign
+|JAmeaning = Pollip Pouch
+|KOname = 폴립 주머니
+|KOromanised = Pollip jumeoni
+|KOmeaning = Pollip Pouch
+|PTname = Bolsa de Pólipo
+|PTmeaning = Pollip Pouch
+|RUname = Полиповый мешочек
+|RUromanised = Polipovyj mešoček
+|RUmeaning = Polyp Pouch<br><small>{{lang|ru|Полип <i>polip</i>}} can be read as a phonetic translation of pollip or as the word for polyp.</small>
+|TWname = 花芯囊
+|TWromanised = Huā xīn náng
+|TWmeaning = same
+|ZHname = 花芯囊
+|ZHromanised = Huā xīn náng
+|ZHmeaning = Flower Core Pouch<br><small>{{lang|zh-Hans|花芯}} / {{lang|zh-Hant|花芯 <i>huā xīn</i>}} (flower core) is the name of the [[Pollip Heart]]s in Chinese.
+|CODEname = POISON_POUCH
+}}
+{{Hr|SS}}
+
+== Notes ==
+<references group="Note"/>
+{{Refs|hr=false}}
+{{#seo:|keywords=venom, poison, pouch}}
+{{SS Nav Tools}}
+[[fr:Bourse de pollip]]

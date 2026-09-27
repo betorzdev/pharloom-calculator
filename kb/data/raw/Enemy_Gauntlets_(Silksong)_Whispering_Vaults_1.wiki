@@ -1,0 +1,46 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Whispering_Vaults_01.png|400px|center]]
+|[[File:Mapshot_SS_Whispering_Vaults_Arena_1.png|300px|center]]
+|-
+| colspan="2" | Enemy gauntlet at the entrance to the Whispering Vaults, accessible from the [[Cogwork Core]].
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>Access to the Whispering Vaults</center>
+| <center>[https://www.youtube.com/watch?v=YCZjk270nvQ The Choir]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Choristor.png|35x35px|link=Choristor]] [[Choristor]], left<br/>
+[[File:HJ_Choir Flyer.png|35x35px|link=Choir Flyer]] [[Choir Flyer]], top centre<br/>
+[[File:HJ_Choir Hornhead.png|35x35px|link=Choir Hornhead]] [[Choir Hornhead]], right
+|
+|-
+|
+[[File:HJ_Choir Hornhead.png|35x35px|link=Choir Hornhead]] Choir Hornhead, left<br/>
+[[File:HJ_Choir Elder.png|35x35px|link=Choir Elder]] [[Choir Elder]], top centre<br/>
+[[File:HJ_Choir Pouncer.png|35x35px|link=Choir Pouncer]] [[Choir Pouncer]], right
+|
+|-
+|
+[[File:HJ_Choir Flyer.png|35x35px|link=Choir Flyer]] Choir Flyer, top left<br/>
+[[File:HJ_Choir Bellbearer.png|35x35px|link=Choir Bellbearer]] [[Choir Bellbearer]], top centre<br/>
+[[File:HJ_Reed.png|35x35px|link=Reed]] [[Reed]], top right
+|
+|-
+|
+[[File:HJ_Choir Bellbearer.png|35x35px|link=Choir Bellbearer]] Choir Bellbearer, top left<br/>
+[[File:HJ_Choir Pouncer.png|35x35px|link=Choir Pouncer]] Choir Pouncer, left<br/>
+[[File:HJ_Choristor.png|35x35px|link=Choristor]] Choristor, right<br/>
+[[File:HJ_Choir Flyer.png|35x35px|link=Choir Flyer]] Choir Flyer, top right
+|
+|-
+|
+[[File:HJ_Vaultkeeper.png|35x35px|link=Vaultkeeper]] [[Vaultkeeper]], centre
+|
+|}

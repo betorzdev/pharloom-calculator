@@ -1,0 +1,43 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Choral Chambers_Arena_1.png|400px|center]]
+|[[File:Mapshot_SS_Green_Prince_02.png|400px|center]]
+|-
+| colspan="2" | Enemy gauntlet at the west end of the Choral Chambers, available only before the start of [[Act 3]]. Defeating the gauntlet allows the [[Green Prince]] to be encountered in this room later if he has been freed.
+
+[[Clawmaiden]]s in this gauntlet can be removed by destroying the core in the [[High_Halls#Special_Rooms|Clawmaiden control room]].
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>Access to the [[Ventrica]] station<br>{{R|113}}</center>
+| <center>[https://www.youtube.com/watch?v=swPmNk9_fw0 Generic Enemy Battle A]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Choristor.png|35x35px|link=Choristor]] [[Choristor]], left<br/>
+[[File:HJ_Reed.png|35x35px|link=Reed]] [[Reed]], top left or right, depending on [[Hornet (Silksong)|Hornet]]'s position
+|
+|-
+|
+[[File:HJ_Choir Pouncer.png|35x35px|link=Choir Pouncer]] [[Choir Pouncer]], left<br/>
+[[File:HJ_Clawmaiden.png|35x35px|link=Clawmaiden]] [[Clawmaiden]], near Hornet<br/>
+[[File:HJ_Choir Flyer.png|35x35px|link=Choir Flyer]] [[Choir Flyer]], top right
+|
+|-
+|
+[[File:HJ_Choir Bellbearer.png|35x35px|link=Choir Bellbearer]] [[Choir Bellbearer]], top left<br/>
+[[File:HJ_Choristor.png|35x35px|link=Choristor]] Choristor, right
+|
+|-
+|
+[[File:HJ_Reed.png|35x35px|link=Reed]] Reed x2, top left and right
+| Defeating one enemy spawns the next row
+|-
+|
+[[File:HJ_Clawmaiden.png|35x35px|link=Clawmaiden]] Clawmaiden, near Hornet
+|
+|}

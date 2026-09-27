@@ -1,0 +1,98 @@
+{{Steel Soul Header|SS}}
+{{SS Infobox Boss
+|image1 = B Summoned Saviour.png
+|theme = [https://www.youtube.com/watch?v=NRJe8xGWGK4 Dark Descent]
+|drops = None
+|location = [[Bonegrave]]
+|health = 500
+|damage_modifiers = {{SS Spaced Damage Modifiers|2|1.3|1.05|0.9|0.85}}
+|numbers_required = 1
+}}
+
+{{Quote
+|Hr = Journal
+|Mass of old masks swollen and animated by writhing void.<hr/>
+A creature born of a bug's desperate hope for strength. Few possess the skill to call the void, and of those that can, none possess the means to tame it.
+}}
+
+<b>Summoned Saviour</b> is a [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. It is a mass of old masks swollen and animated by the [[Void]],<ref>Summoned Saviour [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Mass of old masks swollen and animated by writhing void."</i></ref> appearing at the conclusion of the <i>[[A Vassal Lost]]</i> [[wish]]. It is exclusive to [[Steel Soul Mode (Silksong)|Steel Soul Mode]].
+
+== Background ==
+The Saviour was summoned by [[Sula]], a vassal of the [[Steel Society]], who decided to run away after growing tired of watching the lands die and the bugs suffer.<ref>Sula: <i>"But the seer knows nothing! Nothing of the pain. All small Sula's to bear... To watch, watch these lands dying, slow, the bugs suffering, falling, while our shell sustains..."</i></ref> After three failed attempts to perform a rite at various locations in Pharloom,<ref>Hornet: <i>"This location was marked by the steel child. This camp is old, but still shows clear evidence of an attempt at a rite. Whatever the vassal hoped to achieve here seems to have failed. The other marked locations may provide more clues to its intent."</i></ref><ref>Hornet: <i>"The second spot marked by the child of steel. This camp too was used by their vassal, and another rite was conducted here, this one incomplete. The action was clearly taken in haste. Did they believe themself pursued? The etchings here are crude, but the words are disturbing... and desperate."</i></ref> Sula arrived in Bonegrave and, using the husks of pilgrims, succeeded in creating a champion to protect themselves.<ref><i>A Vassal Lost</i> wish description: <i>"Investigate the ritual site beside Bonegrave."</i></ref><ref>Sula: <i>"No. No. No... My champion slain! Why do you do this, cruel slasher? Why must I stay, and serve, so long, long, long?"</i></ref>
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+Upon being summoned by Sula, the Saviour materialises in the air and screams, causing rocks to crumble and locking [[Hornet (Silksong)|Hornet]] in the arena. 
+
+Summoned Saviour does not grant [[Silk]] or build up focus for the [[Hunter Crest]] when hit.
+
+Summoned Saviour has five attacks, four of which are identical to the ones used by all the regular [[black-threaded]] enemies in [[Act 3]]. All attacks other than Air Swim are telegraphed by Void particles for about one second:
+
+* <b>Void Tendrils:</b> Starts charging up two tiny tendrils in Hornet's direction before extending them outwards, covering a distance the length of itself. This attack deals {{Damage|1+1|type=Void}}.
+* <b>Void Blades:</b> Releases Void particles in all directions before lashing out into a large circle of blades. This attack deals {{Damage|1+1|type=Void}}.
+* <b>Void Projectiles:</b> Charges Void particles in Hornet's direction before firing three consecutive Void projectiles towards her. These projectiles arc very slightly. This attack deals {{Damage|2|type=Void}}.
+* <b>Void Blobs:</b> Releases Void particles from its three tails, before launching four arcing Void blobs to the left and right. Upon hitting the ground, each blob pauses for a moment and then lashes out with a small circular slash around itself. Contact with the droplets or blades at any time deals {{Damage|2|type=Void}}.
+* <b>Air Swim:</b> Between attacks, Summoned Saviour can quickly dash a set distance through the air in a random direction without warning – the angle of the dash varies, but is mainly horizontal.
+
+Summoned Saviour deals {{Damage|2|type=Void}} on contact.
+
+== Location ==
+Summoned Saviour can be found behind a broken wall southwest of [[Bonegrave]] in [[Bone Bottom]]. It only appears at the conclusion of the <i>[[A Vassal Lost]]</i> wish.
+
+{{Gallery
+|Image1 = Mapshot SS Summoned Saviour 01.png!Location in Bone Bottom 
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Sula 01.png!Sula summoning the Saviour
+|Image2 = Screenshot SS Summoned Saviour 07.png!Forming itself with bug masks
+|Image3 = Screenshot SS Summoned Saviour 01.png!Idle
+|Image4 = Screenshot SS Summoned Saviour 02.png!Void Tendrils
+|Image5 = Screenshot SS Summoned Saviour 03.png!Void Blades
+|Image6 = Screenshot SS Summoned Saviour 04.png!Void Projectiles
+|Image7 = Screenshot SS Summoned Saviour 05.png!Void Blobs
+|Image8 = Screenshot SS Summoned Saviour 06.png!Air Swim
+|Image9 = Screenshot SS Summoned Saviour 08.png!Arena
+}}
+
+== Trivia ==
+* Like [[black-threaded]] enemies, the Summoned Saviour does not react to the [[Needolin]].
+* Summoned Saviour is the only enemy in the <i>Hollow Knight</i> series to be exclusive to [[Steel Soul Mode]].
+* Summoned Saviour's scream before the fight is identical to the scream of the [[Void Entity#Void Given Focus|Void Given Focus]] from the [[Embrace the Void]] ending of <i>[[Hollow Knight]]</i>.
+
+{{Localisation
+|DEname = Beschworener Erlöser
+|DEmeaning = Summoned Saviour
+|ESname = Salvador invocado
+|ESmeaning = Invoked Saviour
+|FRname = Salvation Invoquée
+|FRmeaning = Invoked Salvation
+|ITname = Salvezza Evocata
+|ITmeaning = Summoned Salvation 
+|JAname = 召喚されし救世主
+|JAromanised = Shōkan sa reshi kyūseishu
+|JAmeaning = Summoned Saviour
+|KOname = 소환된 구원자
+|KOromanised = Sohwandoen guwonja
+|KOmeaning = Summoned Saviour
+|PTname =  Sombra da Invocação
+|PTmeaning = Summoned Shadow
+|RUname = Призванный Спаситель
+|RUromanised = Prizvannyj Spasitel'
+|RUmeaning = Summoned Saviour
+|TWname = 蒙召救主
+|TWromanised = Méng zhào jiù zhǔ
+|TWmeaning = same
+|ZHname = 蒙召救主
+|ZHromanised = Méng zhào jiù zhǔ
+|ZHmeaning = Summoned Saviour
+|CODEname=ABYSS_MASS
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+[[Category:Steel Soul Mode (Silksong)]]
+
+[[pt:Sombra da Invocação]]

@@ -1,0 +1,128 @@
+{{Navbar
+|icons=true
+|page1=Hornet Statuette
+|page2=Shard Bundle
+|page3=Beast Shard
+|page4=Pristine Core
+|icon5={{Steel Soul Icon Mini|SS}} 
+|page5=Growstone
+}}
+
+{{SS Infobox Item
+| description = Chunk of hardened material found in the shells of great beasts. Can be broken into individual shell shards for use in crafting.<hr>Breaks into 140 shell shards.
+| effects = Provides {{S|140}}
+| type = [[Items (Silksong)#Consumables|Consumable]]
+| source = Large enemies<br>Glowing item spots<br>[[Wish]] reward
+| max = 9
+}}
+
+{{Quote
+|Hr=SS
+|Another reward must be given for your speed, nimble bug. One deserved in full!
+|[[Sprintmaster Swift]]
+}}
+
+<b>Beast Shards</b> are [[Items (Silksong)#Consumables|consumable items]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+Can be used from the inventory to gain {{S|140}}.
+
+
+== How to Acquire ==
+There are a total of nine Beast Shards in the game, which can be found after defeating specific [[Enemies (Silksong)|enemies]], picked up from [[Items (Silksong)|glowing item spots]], and received as a [[Wish]] reward.
+
+{| class="article-table" width="100%" 
+! 
+! Location
+! Map
+|-
+! colspan=3 | Enemy drops
+|-
+! 1
+| In [[Act 1]] or [[Act 2]], dropped by a [[Marrowmaw]] in the hidden room to the right of the starting area in [[Moss Grotto]].
+| [[File:Mapshot SS Marrowmaw 01.png|center|200px]]
+|-
+! 2
+| Dropped by [[Craggler]] in the [[Wormways]].
+| [[File:Mapshot SS Craggler 01.png|center|200px]]
+|-
+! 3
+| In [[Act 1]] or [[Act 2]], dropped by [[Rhinogrund]] in [[Pilgrim's Rest]].
+Requires [[Cling Grip]].
+| [[File:Mapshot SS Rhinogrund 01.png|center|200px]]
+|-
+! 4
+| Dropped by [[Rhinogrund]] in the [[Memorium]].
+| [[File:Mapshot SS Rhinogrund 03.png|center|200px]]
+|-
+! 5
+| In [[Act 3]], if not defeated prior, dropped by [[Skull Tyrant]] in [[the Marrow]].
+| [[File:Mapshot SS Skull Tyrant 01.png|center|200px]]
+|-
+! 6
+| In [[Act 2]] or [[Act 3]], if not defeated prior, dropped by [[Moorwing]] in [[Greymoor]].
+| [[File:Mapshot SS Moorwing 02.png|center|200px]]
+|-
+! colspan=3 | Glowing spots
+|-
+! 7
+| Found after destroying a shard statue behind a breakable wall in [[Blasted Steps]].
+| [[File:Mapshot SS Beast Shard 02.png|center|200px]]
+|-
+! 8
+| Found in the lower area of [[Deep Docks]] on the way to the [[Diving Bell]].
+Requires [[Clawline]].
+| [[File:Mapshot SS Beast Shard 01.png|center|200px]]
+|-
+! colspan=3 | Rewards
+|-
+! 9
+| Reward from [[Sprintmaster Swift]] after beating his second race in <i>[[Fastest in Pharloom]]</i>.
+| [[File:Mapshot SS Sprintmaster Swift 01.png|center|200px]]
+|}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Moss Grotto 07.png!Marrowmaw in Moss Grotto
+|Image2 = Screenshot SS Craggler 02.png!Craggler in Wormways
+|Image3 = Screenshot SS Rhinogrund 01.png!Rhinogrund in Pilgrim's Rest
+|Image4 = Screenshot SS Rhinogrund 03.png!Rhinogrund in the Memorium
+|Image5 = Screenshot SS The Marrow 12.png!Skull Tyrant in the Marrow
+|Image6 = ! Moorwing in Greymoor
+|Image7 = Screenshot SS BlastedSteps 13.png!Beast Shard in Blasted Steps
+|Image8 = Screenshot SS Beast Shard 01.png!Beast Shard in Deep Docks
+}}
+
+{{Localisation
+|DEname = Biestsplitter
+|DEmeaning = Beast Shard
+|ESname = Fragmento de bestia
+|ESmeaning = Beast Fragment
+|FRname = Fragment de bête
+|FRmeaning = Beast Fragment
+|ITname = Scheggia di bestia
+|ITmeaning = Beast Shard
+|JAname = 野獣の破片
+|JAromanised = Yajū no hahen
+|JAmeaning = Beast's Fragment
+|KOname = 야수 조각
+|KOromanised = Yasu jogak
+|KOmeaning = Beast Shard
+|PTname = Fragmento de Besta
+|PTmeaning = Beast Fragment
+|RUname = Осколок зверя
+|RUromanised = Oskolok zverja
+|RUmeaning = Beast Shard
+|TWname = 獸甲碎片
+|TWromanised = Shòu jiǎ suìpiàn
+|TWmeaning = same
+|ZHname = 兽甲碎片
+|ZHromanised = Shòu jiǎ suìpiàn
+|ZHmeaning = Beast Shell Shard
+|CODEname = GREAT_SHARD
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+[[Category: Items (Silksong)]]

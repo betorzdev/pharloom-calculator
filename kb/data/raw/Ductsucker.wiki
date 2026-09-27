@@ -1,0 +1,90 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Ductsucker.png|Hunter's Journal
+Ductsucker Charge.png|Charging
+Ductsucker Hidden.png|Hidden
+</gallery>
+|numbers_required = 6
+| hasdrop = true
+| sh1 = 8-12
+| sh2 = 10-15
+|health = 100
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.25|1.1|1|0.9|0.9}}
+|singnum = 1
+}}
+
+{{Quote
+|Hr = Journal
+|Suction creature surviving on the thick slime that coats its caves.<hr/>
+This mindless bug seems to sense only through its tendrils, yet despite that simplicity it still poses a serious threat.
+}}
+
+<b>Ductsuckers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are large, worm-like creatures sustained by the thick slime coating their caves.<ref>Ductsucker [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Suction creature surviving on the thick slime that coats its caves."</i></ref>
+
+== Behaviour and Tactics ==
+Ductsuckers start out moving slowly along aqueducts, gutturally roaring as soon as [[Hornet (Silksong)|Hornet]] approaches and beginning a ferocious onslaught using the following attacks:
+* <b>Charge:</b> Charges towards Hornet, turning around with poor traction as soon as she gets behind it or it reaches an edge. It can turn around up to three times before choosing a different move.
+* <b>Leap:</b> Roars and then leaps at Hornet, an attack easily dodged by moving underneath it. If it has enough space and Hornet isn't behind it, it Leaps a second time. It often uses Charge immediately after its final Leap if Hornet is still in front of it. Occasionally, a Ductsucker may leap off the edge of an aqueduct and fall into the water, but this does not count as a kill for the [[Hunter's Journal (Silksong)|Hunter's Journal]]. After roughly 15 seconds, it returns to the platform, emerging from the ground.
+* <b>Burrow:</b> Quickly dives into the ground, then pokes its mouth out beneath Hornet 1–2 times, indicated by green particles kicking up below her. Once finished, it resurfaces somewhere along its aqueduct segment. It cannot use this move twice in a row.
+If Hornet becomes fully unreachable, the Ductsucker immediately burrows and returns to its slow-moving state somewhere on the aqueduct.
+
+All of the Ductsuckers' attacks, including contact damage, deal {{Damage|2}}.
+
+Stationary traps like [[Tacks]] or [[Sting Shard]]s are highly effective for dealing damage without getting too close. The [[Curveclaw]] also works exceptionally well due to the Ductsucker's size, allowing it to land multiple hits in a single strike.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Eating... eat...
+* Swallow... suffer...
+* Swallow... swell...
+* Touching... tasting...
+* Slime... Slick...
+* Sliding... wet...
+}}
+
+== Location ==
+Ductsuckers can be found in the [[Putrified Ducts]].
+{{Gallery
+|Image1 = Mapshot SS Ductsucker 01.png!Locations in the Putrified Ducts
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Ductsucker 01.png!Hidden
+|Image2 = Screenshot SS Ductsucker 02.png!Charge
+|Image3 = Screenshot SS Ductsucker 03.png!Leap
+|Image4 = Screenshot SS Ductsucker 04.png!Burrow
+|Image5 = Screenshot SS Ductsucker 05.png!Reacting to the Needolin
+}}
+{{Localisation
+|DEname = Aquäduktsauger
+|DEmeaning = Aquaduct Sucker
+|ESname = Chupaconductos
+|ESmeaning = Ductsucker
+|FRname = Siphonneur
+|FRmeaning = Siphoner
+|ITname = Succhiacondotti
+|ITmeaning = Ducts Sucker
+|JAname = オオグライ
+|JAromanised = Ō gurai
+|JAmeaning = Combination of {{lang|ja|大 <i>ō</i>}} (large) and {{lang|ja|食らう <i>kurai</i>}} (eater).
+|KOname = 관빨이
+|KOromanised = Gwanppari
+|KOmeaning = Pipe Sucker
+|PTname = Sugaduto
+|PTmeaning = Ductsucker
+|RUname = Туннелесос
+|RUromanised = Tunnelesos
+|RUmeaning = Portmanteau of {{lang|ru|туннель}} <i>tunnel'</i> (tunnel) and {{lang|ru|сосать}} <i>sosat'</i> (to suck).
+|TWname = 溝渠吮吸者
+|TWromanised = Gōuqú shǔnxī zhě
+|TWmeaning = Aqueduct Sucker
+|ZHname = 腐殖吮吸者
+|ZHromanised = Fǔzhí shǔnxī zhě
+|ZHmeaning = Humus Sucker or Putrified Ducts Sucker
+|CODEname= SWAMP_DUCTSUCKER
+|CODEmeaning = "Swamp" sometimes internally refers to Putrified Ducts
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

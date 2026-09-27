@@ -1,0 +1,77 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Karak Gor.png|Hunter's Journal
+Karak Gor Idle.png|Idle
+</gallery>
+|drops = None
+|health = 140
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1.2|1.1|1|0.9}}
+|numbers_required = 8<br>(Instantly completed on [[Crust King Khann]]'s death)
+}}
+{{Quote
+|Hr = Journal
+|Heavy, hard-shelled charger relying on weight and strength. <hr/>
+Far tougher for being matched inside their encrusted domain. They must have lived their whole lives within their tower, to command it so.
+}}
+
+<b>Karak Gors</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. Fierce and bulky warriors that can control the coral around them, they are members of the [[Order of Karak]], long lost to time and living on only in memory. 
+
+== Behaviour and Tactics ==
+Karak Gors cannot walk and can only move via their attacks below:
+* <b>Running Charge:</b> Runs at Hornet until they hit a wall, bouncing away from the wall and causing a small patch of Coral to shoot up behind them that lingers for 1.5 seconds. They also destroy any already present coral by trampling it as they run.
+* <b>Jump:</b> Leaps into the air towards Hornet in a set arc, landing heavily and kicking up coral on both sides of themself that lingers for 1 second.
+* <b>Stomping Summon:</b> Stomps the ground 3 times and causes a patch of coral to burst up from the floor beneath Hornet, indicated by dust getting kicked up from where it is about to appear. The coral lingers for 1.5 seconds.
+
+All of Karak Gor's attacks, as well as contact damage, deal {{Damage|2}}. The coral they summon also does {{Damage|2}}.
+
+== Location ==
+Karak Gors can only be found in [[Crust King Khann]]'s [[Elegy of the Deep|Memory]] of the [[Coral Tower]] during [[Acts|Act 3]].
+
+{{Gallery
+|Image1 = Mapshot SS Coral Tower.png
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Karak Gor 01.png!Idle
+|Image2= Screenshot SS Karak Gor 02.png!Jump
+|Image3= Screenshot SS Karak Gor 03.png!Running Charge
+|Image4= Screenshot SS Karak Gor 04.png!Stomping Summon
+}}
+
+== Trivia ==
+* Karak Gors do not respond to the [[Needolin]].
+* Karak Gors have [[Cut Content (Silksong)#Enemy Behaviours|cut]] "Block" behaviors.
+{{Localisation
+|DEname = Karak Gor
+|DEmeaning = —
+|ESname = Karak Gor
+|ESmeaning = —
+|FRname = Karak Gorr
+|FRmeaning = —
+|ITname = Karak Gor
+|ITmeaning = —
+|JAname = カラクゴール
+|JAromanised = Karaku goru
+|JAkatakana = foreignenemy
+|JAmeaning = Karak Gor
+|KOname = 카라크 고르
+|KOromanised = Karakeu goreu
+|KOmeaning = Karak Gor
+|PTname = Karak Gor
+|PTmeaning = —
+|RUname = Карак-гор
+|RUromanised = Karak-gor
+|RUmeaning = Karak Gor
+|TWname = 卡拉卡格
+|TWromanised = Kǎlākǎ gé
+|TWmeaning = same
+|ZHname = 卡拉卡格
+|ZHromanised = Kǎlākǎ gé
+|ZHmeaning = Karaka Gor
+|CODEname=CORAL_BRAWLER
+|CODEmeaning=Other Order of Karak internal names begin with "Coral"
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

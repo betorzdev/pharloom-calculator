@@ -1,0 +1,61 @@
+{{SS Infobox Tool
+| type = Yellow
+| effect = Causes enemies to drop 25%<ref name=percentage /> more [[Shell Shards]] upon defeat
+| location = [[The Marrow]]
+| description = Crude trinket worn by collectors and crafters.<hr/ >
+Allows one to collect more shell shards from defeated creatures.
+}}
+
+The <b>Shard Pendant</b> is a {{CrestSlot|Yellow|1}} in <i>[[Hollow Knight: Silksong]]</i>. It increases [[Shell Shard]] drops from defeated enemies.
+
+== Usefulness ==
+Equipping the Shard Pendant increases the number of [[Shell Shard]]s dropped by enemies by 25%,<ref name=percentage>In <code>globalsettings_assets_all.bundle</code>, check <code>Global Gameplay Settings</code>'s field <code>boneNecklaceShellshardIncrease</code>, or check <code>GlobalSettings.Gameplay.BoneNecklaceShellshardIncrease</code> in-game.</ref> rounded up to the nearest whole number.<ref><code>HealthManager.Die()</code>.</ref> It does not increase the number of Shell Shards gained from other sources, such as Shell Shard deposits and [[Shard Bundle]]s.
+
+It pairs well with the [[Architect Crest]] due to that Crest's focus on the use of {{CrestSlot|Red|s}}.
+
+== How to Acquire ==
+Found in [[the Marrow]], in a side room off the room below the [[Bellshrine]].
+
+{{Gallery
+| Image1 = Mapshot SS Shard Pendant.png! Location in the Marrow
+| Image2 = Screenshot SS Shard Pendant Room.png! Room where the Shard Pendant is acquired
+}}
+
+== Trivia ==
+* The Shard Pendant was originally sold by [[Pebb]].<ref name="edge59">[https://pocketmags.com/us/edge-magazine/february-2021 Edge Magazine February 2021 Edition], p. 59. ([[:File: Reference Shard Pendant.png|Archive]])</ref>
+
+{{Localisation
+|DEname = Splitteranhänger
+|DEmeaning = Splinter Pendant
+|ESname = Colgante fragmentador
+|ESmeaning = Fragmenting Pendant
+|FRname = Collier d'os
+|FRmeaning = Necklace of Bone
+|ITname = Ciondolo di schegge
+|ITmeaning = Shards Pendant
+|JAname= 破片のペンダント
+|JAromanised = Hahen no pendanto
+|JAkatakana = foreign
+|JAmeaning = Shard Pendent
+|KOname = 조각 펜던트
+|KOromanised = jogak Pendeonteu
+|KOmeaning = Shard Pendant
+|PTname =  Pingente de Fragmento
+|PTmeaning = Fragment Pendant
+|RUname = Осколочная подвеска
+|RUromanised = Oskoločnaja podveska
+|RUmeaning = Fragment Pendant
+|TWname = 碎殼掛墜
+|TWromanised = Suì ké guàzhuì
+|TWmeaning = same
+|ZHname = 碎壳挂坠
+|ZHromanised = Suì ké guàzhuì
+|ZHmeaning = Shell Shard Pendant
+|CODEname = BONE_NECKLACE
+|CODEmeaning = 
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Collier d’os]]

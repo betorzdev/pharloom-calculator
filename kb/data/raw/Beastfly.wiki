@@ -1,0 +1,97 @@
+{{SS Infobox Enemy
+|health = 15/{{BT|60}}
+|damage_modifiers = {{SS Multiple Damage Modifiers||1|0.8|0.8|0.8|0.8|[[Savage Beastfly]]|1|1|1|1|1}}
+|numbers_required = 30
+| hasdrop = true
+| sh1 = 4-6
+| sh2 = 5-8
+|singnum=1
+}}
+
+{{Quote
+|Hr = Journal
+|Aggressive fly of Pharloom's lowlands. Rams prey with its hardbone mask.<hr/>Dancing around this simple creature as it charges back and forth is the sort of game I delighted in as a child. Alas, I now have more pressing matters to attend to.
+}}
+
+<b>Beastflies</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are aggressive flies of [[Pharloom]]'s lowlands that ram prey with their hardbone mask.<ref>Beastfly [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Aggressive fly of Pharloom's lowlands. Rams prey with its hardbone mask."</i></ref>
+
+== Behaviour and Tactics ==
+Will move towards [[Hornet (Silksong)|Hornet]] when it sees her and then charges horizontally in a straight line. Beastflies may collide with the environment or with each other while charging.
+
+Beastflies hover out of range before charging, but they can be jumped over and hit with downward attacks. They can also be baited into charging over Hornet's head, allowing her to hit them as they pass by.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Beastflies have their health quadrupled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+*Rumbling, crackling...
+*Shells are strong...
+*Scratching, seeking...
+*Warm and dark...
+*Digging, hiding...
+*Claws are sharp...
+}}
+
+== Location ==
+Beastflies can be found primarily in [[the Marrow]], but they also appear in the [[Far Fields]], [[Memorium]], [[Deep Docks]], and the [[Chapel of the Beast]] within [[Hunter's March]], where they can also be summoned by a [[Savage Beastfly]].
+
+After clearing the [[Enemy Gauntlets (Silksong)/The Marrow 1|gauntlet]] in the Marrow, a Beastfly appears upon revisiting the arena.
+
+{{Gallery
+|Image1 = Mapshot SS Beastfly 01.png!Locations in the Marrow
+|Image2 = Mapshot SS Beastfly 03.png!Locations in the Far Fields
+|Image3 = Mapshot SS Beastfly 04.png!Location in Deep Docks
+|Image4 = Mapshot SS Beastfly 05.png!Locations in Deep Docks in Act 3
+|Image5 = Mapshot SS Beast Crest.png!Location in Hunter's March
+|Image6 = Mapshot SS Beastfly 02.png!Location in the Memorium
+}}
+
+==Gallery==
+{{Gallery
+| Image1 = Screenshot SS Beastfly 01.png!In the Marrow
+| Image2 = Screenshot SS Beastfly 02.png!In Far Fields
+| Image3 = Screenshot SS Beastfly 03.png!In Deep Docks
+| Image4 = Screenshot SS Beastfly 05.png!In Hunter's March
+| Image5 = Screenshot SS Beastfly 04.png!In the Memorium
+| Image6 = Screenshot SS Beastfly 06.png!Summoned by Savage Beastfly
+| Image7 = Screenshot SS Beastfly 07.png!Attacking
+| Image8 = Screenshot SS Beastfly 08.png!Reacting to Needolin
+}}
+
+== Trivia ==
+* Beastflies are one of the few enemies that respawns upon leaving and re-entering the room.
+*Beastflies are mentioned by name on <i>[[Hollow Knight: Silksong]]</i>'s [[wikipedia:Entertainment Software Rating Board|ESRB]] rating summary, used as an example for "fantastical enemies".<ref>[https://www.esrb.org/ratings/41418/hollow-knight-silksong/ Hollow Knight: Silksong], ESRB</ref>
+{{Localisation
+|DEname = Biestfliege
+|DEmeaning = Beastfly
+|ESname = Moscabestia
+|ESmeaning = Beastfly 
+|FRname = Volpeste
+|FRmeaning =Flying Pest 
+|ITname = Moscabestia
+|ITmeaning = Beastfly
+|JAname = ケモノバエ
+|JAromanised = Kemono bae
+|JAmeaning = Combination of {{lang|ja|獣 <i>kemono</i>}} (beast) and {{lang|ja|蝿 <i>hae</i>}} (fly).
+|KOname = 야수파리
+|KOromanised = Yasupari
+|KOmeaning = Beast Fly
+|PTname = Besta-alada
+|PTmeaning = Winged-beast
+|RUname = Зверомуха
+|RUromanised = Zveromuxa
+|RUmeaning = Beastfly
+|TWname = 獸虻
+|TWromanised = Shòu méng
+|TWmeaning = Beast Horsefly
+|ZHname = 兽蝇
+|ZHromanised = Shòu yíng
+|ZHmeaning = Beast Fly
+|CODEname = BONE_FLYER
+|CODEmeaning =
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav Enemies}}
+[[fr:Volpeste]]

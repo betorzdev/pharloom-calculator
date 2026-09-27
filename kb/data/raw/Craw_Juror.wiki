@@ -1,0 +1,84 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Craw Juror.png|Hunter's Journal
+Craw Juror Perched.png|Perched
+</gallery>
+| hasdrop = true
+| r1 = 6
+| r2 = 9
+| sh1 = 2-3
+| sh2 = 3-4
+|health = 50
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1|0.95|0.95|0.95}}
+|numbers_required = 15 <br>(Instantly completed on [[Crawfather]]'s death)
+|sing=Craw
+|singnum=2
+}}
+
+{{Quote
+|Hr = Journal
+|Screeching scavenger dyed black in mourning at their land's collapse.<hr/>
+Weak, afraid, and aware of the imminent end. I understand their desperation, but my death will not prevent the coming fall.
+}}
+
+<b>Craw Jurors</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are [[Craws|Craw]] scavengers with pelts dyed black, to mourn [[Pharloom]]'s collapse.<ref>Craw Juror [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Screeching scavenger dyed black in mourning at their land's collapse."</i></ref> They are the [[Act 3]] counterparts to [[Craw]]s, with more health, a slightly higher damage modifier, and an immunity to head-on attacks while swooping.
+
+== Behaviour and Tactics ==
+Craw Jurors are often found sitting on various things, including things in the background or foreground. When they spot Hornet, they take flight and pursue her.<br>
+They fly in short arcing flaps, and try to maintain distance between themselves and Hornet, performing a horizontal swooping attack at her once they've aligned themselves with her.
+Craw Jurors' metal beak plating gives their attacks a special property where attempting to attack them head-on as they swoop results in a Parry, as opposed to their attack being interrupted. This means that chasing them as they fly and reposition is much more beneficial for damage, since their forward swoops are likely to negate counterattacks.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+*Guilty! Guilty!
+*Lay down your judgement!
+*Father, Father!
+*Punish the villain!
+}}
+
+== Location ==
+Before defeating [[Crawfather]], Craw Jurors replace existing Craws in [[Craw Lake]] and adjacent rooms in [[Greymoor]] in [[Act 3]]. They also spawn during the [[Court of Craws]] fight. After Crawfather's defeat, Craw Jurors no longer appear.
+{{Gallery
+|Image1 = Mapshot SS Craw Juror 01.png!Location in Greymoor
+}}
+
+==Gallery==
+{{Gallery
+|Image1=Screenshot SS Craw Juror 01.png!In background and foreground
+|Image2=Screenshot SS Craw Juror 02.png!Sitting
+|Image3=Screenshot SS Craw Juror 03.png!Flying idle
+|Image4=Screenshot SS Craw Juror 04.png!Swooping
+|Image5=Screenshot SS Craw Juror 05.png!Singing
+|Image6=Screenshot SS Craw Juror 06.png!During Court of Craws fight
+}}
+
+{{Localisation
+|DEname = Krähferschöffe
+|DEmeaning = Craw <abbr title="The German word Schöffe refers to a concept in German law known as a lay-judge in English. While similar to a jury, lay-judges in Germany are elected from the general populace for a full period of 5 years to serve in various trials alongside a judge.">Lay-Judge</abbr><br><small><i>Krähfer</i> is the name of the [[Craws]] in German, a portmanteau of <i>krähe</i> (crow) and <i>käfer</i> (bug).</small>
+|ESname = Jurado cuervón
+|ESmeaning = Craw Juror<br><small><i>Cuervón</i> is the name of the [[Craws]] in Spanish, from <i>cuervo</i> (crow) and <i>-ón</i> (augmentative suffix).</small>
+|FRname = Juré Corbotère
+|FRmeaning = Juror Craw<br><small><i>Corbotère</i> is the name of the [[Craws]] in French, from <i>corbeau</i> (crow).</small>
+|ITname = Corvide Giurato
+|ITmeaning = Sworn Corvid
+|JAname = ボロガワの審議者
+|JAromanised = Borogawa no shingisha
+|JAmeaning = Craw Juror or Craw Deliberator<br><small>{{lang|ja|ボロガワ}} <i>borogawa</i> is the name of the [[Craws]] in Japanese, a combination of {{lang|ja|襤}} <i>boro</i> (rag) and {{lang|ja|皮}} <i>kawa</i> (skin).</small>
+|KOname = 까마귀 배심원
+|KOromanised = Kkamagwi baesimwon
+|KOmeaning = Crow Juror
+|PTname = Jurado Corbo
+|PTmeaning = Craw Juror<br><small><i>Corbo</i> is the name of the [[Craws]] in Brazilian Portuguese, from <i>corvo</i> (crow).</small>
+|RUname = Присяжный кар
+|RUromanised = Prisjažnyj kar
+|RUmeaning = Juror Craw<br><small>{{lang|ru|Кар}} <i>kar</i> is the name of the [[Craws]] in Russian, from {{lang|ru|кар}} <i>kar</i> (Russian onomatopoeia for a crow's call).</small>
+|TWname = 鴉蟲陪審員
+|TWromanised = Yā chóng péishěnyuán
+|TWmeaning = same
+|ZHname = 鸦虫陪审员
+|ZHromanised = Yā chóng péishěnyuán
+|ZHmeaning = Crow Bug Juror
+|CODEname = CROWMAN_JUROR_TINY
+}}
+{{Refs|hr=SS}}
+{{SS Nav Enemies}}

@@ -1,0 +1,125 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Shardillard.png|Hunter's Journal
+Shardillard Hidden.png|Disguised
+</gallery>
+|health = 50
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.3|1.1|0.9|0.8|0.8}}
+| hasdrop = true
+| sh1 = 30-38 <!-- Max: one hit for 3 + remaining 27 + max bonus 8 (because 27*0.5>8) -->
+| sh2 = 30-47 <!-- Max: one hit for 3 + (remaining 27 + max bonus 8) * 1.25 rounded up -->
+|numbers_required = 3
+|singnum=1
+}}
+
+{{Quote|Hr=Journal
+|Devious ambusher that poses as a fossil.<hr/>
+Once roused, the bug will crash its steely shell into walls, floors and foes.
+}}
+
+<b>Shardillards</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are flying creatures that disguise themselves as fossils.
+
+== Behaviour and Tactics ==
+Shardillards will start off disguised as a [[Shell Shards|Shell Shard]] cache, but once struck, they shake and unburrow from their position. This initial hit deals no damage to the Shardillard.
+
+Shardillards fly and keep their distance from [[Hornet (Silksong)|Hornet]], before curling into a ball and launching themselves at her. They ricochet off surfaces for around 2 seconds, shorter if Hornet is further away, until stopping. Shardillards have a short cooldown between attacks, where they simply fly and keep distance before launching themselves at Hornet again.
+
+Shardillards deal {{Damage|1}} upon contact and with their attack.
+
+Uniquely, a Shardillard holds {{S|30}} upon encounter. Every time it takes damage, {{S|3}} fly off it, with the 3 being subtracted from the amount dropped on death. The remaining amount dropped on death is subject to the [[Shell Shard]] bonus percentage and [[Shard Pendant]] bonus.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* May time harden me...
+* May darkness hide me..
+* May rock sustain me...
+* May the world ignore me...
+}}
+
+== Location ==
+Shardillards have various conditions for their appearances.
+
+{| class="article-table" width="100%"
+! 
+! style="width:7rem" | Area
+! Location
+! Map
+|-
+! 1
+| [[Deep Docks]]
+| Hanging under a floating platform in the long hall room beneath the [[Swift Step]] room. Only appears after entering [[Blasted Steps]] for the first time.
+| [[File:Mapshot SS Shardillard 03.png|center|200px]]
+|-
+! 2
+| [[Greymoor]]
+| In the secret tunnel beneath the entrance to [[Styx]]'s room.
+| [[File:Mapshot SS Shardillard 02.png|center|200px]]
+|-
+! 3
+| [[Sands of Karak]]
+| Near the Eastmost bench of the zone, go left, drop down and look for a suspicious-looking Shell Shard cache.
+| [[File:Mapshot SS Shardillard 01.png|center|200px]]
+|-
+! 4
+| [[The Marrow]]
+| At the highest point in the Marrow, attached to the top left wall. Only appears after beating [[Lace]] in [[the Cradle]].
+| [[File:Mapshot SS Shardillard 04.png|center|200px]]
+|-
+! 5
+| [[The Marrow]]
+| In the long room to the right of the [[Bellway]] bench, to the left of a magnetite platform. Only appears after entering Act 2.
+| [[File:Mapshot SS Shardillard 05.png|center|200px]]
+|-
+! 6
+| [[Far Fields]]
+| On the upper side of a spinal bone platform. If the spinal bone is broken go straight up. Otherwise, it is accessible by coming around top, from the direction of the [[Weavenest_Cindril|Weavenest]] to the right. Only appears after obtaining the [[Faydown Cloak]].
+| [[File:Far Fields Shardillard Map.png|center|200px]]
+|}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot_SS_Shardillard_02.png ! Disguised
+|Image2= Screenshot_SS_Shardillard_04.png ! In Deep Docks
+|Image3= Screenshot SS Shardillard 01.png ! In Greymoor
+|Image4= Screenshot_SS_Shardillard_06.png ! In Sands of Karak
+|Image5= Screenshot_SS_Shardillard_03.png ! At the top of the Marrow
+|Image6= Screenshot_SS_Shardillard_07.png ! East of the Marrow Bellway
+|Image7= Screenshot_SS_Shardillard_08.png ! In Far Fields
+|Image8= Screenshot_SS_Shardillard_05.png ! Attacking
+|Image9= Screenshot_SS_Shardillard_09.png ! Responding to the Needolin
+}}
+
+==Trivia==
+*The Shardillard is one of the few enemies that never respawns.
+
+{{Localisation
+|DEname = Splittarde
+|DEmeaning =
+|ESname = Fragmentardo
+|ESmeaning = Portmanteau of <i>fragmento</i> (fragment) and Shardillard.
+|FRname = Fossillard
+|FRmeaning = Portmanteau of <i>fossile</i> (fossil) and Shardillard.
+|ITname = Fossilare
+|ITmeaning = From <i>fossile</i> (fossil).
+|JAname = カライシモドキ
+|JAromanised = Kara ishi modoki
+|JAkatakana = foreign
+|JAmeaning = Combination of {{lang|ja|殻}} <i>kara</i> (shell), {{lang|ja|石}} <i>ishi</i> (rock) and {{lang|ja|擬き}} <i>modoki</i> (mock or imitate).
+|KOname = 조각화석
+|KOromanised = Jogakwaseok
+|KOmeaning = Shard Fossil
+|PTname = Falsofóssil
+|PTmeaning = Fake Fossil
+|RUname = Панциреносец
+|RUromanised = Pancirenosec
+|RUmeaning = 
+|ZHname = 碎甲突袭者
+|ZHromanised = Suìjiǎ tūxí zhě
+|ZHmeaning = Shell Shard Ambusher or Shell Shatterer Ambusher
+|CODEname= SHELL_FOSSIL_MIMIC
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

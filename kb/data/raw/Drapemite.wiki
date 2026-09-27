@@ -1,0 +1,116 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Drapemite.png|Hunter's Journal
+Sprite SS Drapemite Hiding.png|Hidden
+</gallery>
+| hasdrop = true
+| sh1 = 3-5
+| sh2 = 4-7
+|health = 25/{{BT|50}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.8|0.8|0.7|0.7}}
+|numbers_required = 20
+|singnum = 1
+}}
+
+{{Quote
+|Hr = Journal
+|Cloth-covered crawler with sharpened forelimbs. Lives and breeds in dark places.<hr/>
+Pharloom's structures seem almost built for them. The endless corners and cracks, so perfect for mites to burrow and nest.
+}}
+
+<b>Drapemites</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are crawlers covered in cloth that nest in rags and sheets that litter the dilapidated [[Citadel]]. They are the younger, smaller form of [[Giant Drapemite]]s.
+
+== Behaviour and Tactics ==
+Most Drapemites are disguised as rags among piles of rags and sheets, emerging once Hornet gets near, as indicated by rustling and dust being kicked up. They will walk towards Hornet between attacks, turning around at edges. Once Hornet is in range, they will use one of two moves:
+* <b>Jumping Scratches:</b> Primes its gleaming claws and jumps at Hornet, swiping wildly for the jump's entire duration. If Hornet is caught by the attack at any point, she is comboed for {{Damage|1+1}}.
+* <b>Retreat:</b> Scuttles backwards a set distance, ''often'' used as a followup to Jumping Scratches. Make sure to wait before dashing to prevent easily avoided contact damage.
+
+Drapemites only deal {{Damage|1}} on contact.
+
+If Hornet is out of range and far enough away, Drapemites will briefly walk back and forth before resuming their camouflaged form at a random location nearby.
+
+Almost always encountered in tight passages, the most common option for escaping their flurry of scratches is to dash backwards. Immediately dashing back and attacking during the openings is often Hornet's only choice. Make sure to avoid getting cornered, and even use Silk Skills if necessary.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Drapemites have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Smell it, starving...
+* Deeper, darker...
+* Shriek and scratch them...
+* Claw and fang...
+* Find it. Take it...
+* Hide below them...
+}}
+
+== Location ==
+Drapemites can be found only in and around [[the Citadel]], primarily among rags and sheets in crawlspaces and shafts of [[the Slab]], [[Grand Gate]], [[Underworks]], [[Choral Chambers]], [[Cogwork Core]], and [[High Halls]]. They are found in great numbers in the [[Whispering Vaults]], disguised as rags among the furniture.
+
+{{Gallery
+|Image1 = Mapshot SS Drapemite 07.png!Locations in the Slab
+|Image2 = Mapshot SS Drapemite 08.png!Location in the Grand Gate in Act 3
+|Image3 = Mapshot SS Drapemite 09.png!Locations in the Underworks
+|Image4 = Mapshot SS Drapemite 05.png!Locations in the Choral Chambers
+|Image5 = Mapshot SS Drapemite 06.png!Locations in the Choral Chambers in Act 3
+|Image6 = Mapshot SS Drapemite 02.png!Location in the Cogwork Core
+|Image7 = Mapshot SS Drapemite 03.png!Locations in the Cogwork Core in Act 3
+|Image8 = Mapshot SS Drapemite 01.png!Locations in the Whispering Vaults<br>(Before Vaultborn are released)
+|Image9 = Mapshot SS Drapemite 10.png!Locations in the Whispering Vaults<br>(After Vaultborn are released)
+|Image10 = Mapshot SS Drapemite 04.png!Location in the High Halls (Inside the Rosary Bank)
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Drapemite 01.png!In The Slab
+|Image2 = Screenshot SS Drapemite 02.png!In Grand Gate
+|Image3 = Screenshot SS Drapemite 03.png!In Underworks
+|Image4 = Screenshot SS Drapemite 04.png!In Choral Chambers
+|Image5 = Screenshot SS Drapemite 05.png!In Cogwork Core
+|Image6 = Screenshot SS Drapemite 06.png!Inside the Rosary Bank in High Halls
+|Image7 = Screenshot SS Drapemite 07.png!Disguised
+|Image8 = Screenshot SS Drapemite 08.png!Emerging
+|Image9 = Screenshot SS Drapemite 09.png!Idle in Whispering Vaults
+|Image10 = Screenshot SS Drapemite 10.png!Jumping Scratches
+|Image11 = Screenshot SS Drapemite 11.png!Retreat
+|Image12 = Screenshot SS Drapemite 12.png!Going back into hiding
+|Image13 = Screenshot SS Drapemite 13.png!Reacting to Needolin
+|Image14 = Screenshot SS Drapemite 14.png!Disguised while being [[Black-Threaded]] in [[Act 3]]
+|Image15 = Screenshot SS Drapemite 15.png!Black-Threaded in Cogwork Core in Act 3
+|Image16 = Screenshot SS Drapemite 16.png!Corpses killed by traps in The Slab
+|Image17 = Screenshot SS Drapemite 17.png!Corpse in Choral Chambers in Act 3
+}}
+
+{{Localisation
+|DEname = Gardinenmilbe
+|DEmeaning = Drapemite
+|ESname = Acarotina
+|ESmeaning = Combination of <i>ácaro</i> (mite) and <i>cortina</i> (curtain).
+|FRname = Tissomite
+|FRmeaning = Combination of <i>tissu</i> (fabric) and mite.
+|ITname = Acaro dei Cenci
+|ITmeaning = Rags Mite
+|JAname = ヌノダニ
+|JAromanised = Nuno dani
+|JAmeaning = Combination of {{lang|ja|布}} <i>nuno</i> (cloth) and {{lang|ja|ダニ}} <i>dani</i> (mite).
+|KOname = 장막진드기
+|KOromanised = Jangmakjindeugi
+|KOmeaning = Curtain Mite
+|PTname = Grudácaro
+|PTmeaning = Portmanteau of <i>grudar</i> (to stick) and <i>ácaro</i> (mite).
+|RUname = Полотняный клещ
+|RUromanised = Polotnjanyj klešč
+|RUmeaning = Linen Mite
+|TWname = 帷蟎
+|TWromanised = Wéi mǎn
+|TWmeaning = same
+|ZHname = 帷螨
+|ZHromanised = Wéi mǎn
+|ZHmeaning = Drape Mite
+|CODEname=MITE_HEAVY
+|CODEmeaning= [[Mite|Greymoor's Mites]] are internally known as simply "Mites"
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

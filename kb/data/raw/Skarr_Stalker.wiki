@@ -1,0 +1,121 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Skarr Stalker.png|Hunter's Journal
+Skarr Stalker Idle.png|Idle
+Skarr Stalker Resting.png|Resting
+Skarr Stalker during Karmelita.png|During Karmelita
+</gallery>
+|title1 = Skarr Stalker
+| hasdrop = true
+| r1 = 25
+| r2 = 37
+| sh1 = 5-8
+| sh2 = 7-10
+| sing = Mottled Skarr
+| singnum = 2
+|health = 75/{{BT|150}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.2|1|1|1|1}}
+|numbers_required = 15<br>(Instantly completed on [[Skarrsinger Karmelita]]'s death)
+}}
+
+{{Quote
+|Hr = Journal
+|Skilled ant hunter bearing blade and armour fashioned from bone.<hr/>
+Fierce, strong and disciplined... yet these qualities do not protect them from the Haunting. Is such a fate inevitable in these lands?
+}}
+
+<b>Skarr Stalkers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are skilled [[Skarr]] hunters, wielding a bone blade and helmet.<ref>Skarr Stalker Hunter's Journal entry: <i>"Skilled ant hunter bearing blade and armour fashioned from bone."</i></ref>
+
+== Behaviour and Tactics ==
+Skarr Stalkers do not naturally wander and start off resting, letting out a battle cry once Hornet comes close and beginning their assault.<br>
+They can walk forwards to close the distance between them and Hornet, and have a multitude of different attacks and manoeuvres:
+* <b>Triple Slash:</b> Swings their blade three times, moving forward with each swing. They cancel the third swing if Hornet is behind them.
+* <b>Dash Slash:</b> Raises their blade before dashing forward a long distance, finishing with a swing. The swing also hits slightly behind them.
+* <b>Dive Slash:</b> Jumps in the air, before diving to the ground at a variable, but mainly diagonal angle, ending with an outwards swing once they hit the ground. The swing also hits slightly behind them. The angle they dive at is not static, and they readjust it to aim towards Hornet.
+* <b>Block:</b> Enters a defensive stance using their blade. Any damage coming towards the front is negated, and the Skarr is pushed back. They may follow a blocked attack with any of the attacks above.
+* <b>Backdash:</b> Performs a short dash backwards to get distance.
+* <b>Burrow:</b> Burrows into the ground if Hornet leaves their platform, coming back up at their spawn position once Hornet gets near it.
+
+Skarr Stalkers deal {{damage|1}} with all of their attacks and upon contact.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Skarr Stalkers have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+*Strength from her. Strength for her...
+*Strike hard. Strike lethal...
+*All for the singer...
+*To leap, and run, and slay!
+*No nest, no home...
+*The caves call... we listen...
+*...Is this still her song?
+*These lands... always ours...
+}}
+
+== Location ==
+Skarr Stalkers are primarily found in [[Hunter's March]] and the [[Far Fields]], but they also appear in the upper [[Deep Docks]] and as part of the [[Enemy Gauntlets (Silksong)/Greymoor 4|gauntlet]] in [[Halfway Home]]'s cellar.
+
+In Hunter's March, clearing the central [[Enemy Gauntlets (Silksong)/Hunter's March 2|gauntlet]] allows one Skarr Stalker to spawn as a random encounter on subsequent visits before [[Act 3]]. In the Deep Docks, a Skarr Stalker near the [[Weaver Burial Spire]] starts to spawn only after the [[Drifter's Cloak]] is acquired.
+
+{{Gallery
+|Image1 = Mapshot SS Skarr Stalker 02.png!Locations in Hunter's March
+|Image2 = Mapshot SS Skarr Stalker 05.png!Locations in Hunter's March in Act 3
+|Image3 = Mapshot SS Skarr Stalker 01.png!Locations in the Far Fields
+|Image4 = Mapshot SS Skarr Stalker 06.png!Locations in the Far Fields in Act 3
+|Image5 = Mapshot SS Skarr Stalker 03.png!Location in the Deep Docks
+|Image6 = Mapshot SS Skarrwing 03.png!Location in Greymoor
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Skarr Stalker 01.png!In Hunter's March with a Skarr Scout
+|Image2= Screenshot SS Skarr Stalker 02.png!In Far Fields with a Skarr Scout
+|Image3= Screenshot SS Skarr Scout 02.png!In Deep Docks with a Skarr Scout
+|Image4= Screenshot SS Spear Skarr 04.png!On the side before Skarrsinger Karmelita's fight
+|Image5 = Screenshot SS Far Fields 22.png!In the audience during Skarrsinger Karmelita's fight
+|Image6 = Screenshot SS Skarrsinger Karmelita 02.png!Modded clear screenshot
+|Image7= Screenshot SS Skarr Scout 09.png!Fighting before Skarrsinger Karmelita's fight
+|Image8= Screenshot SS Skarr Stalker 03.png!Triple Slash attack
+|Image9= Screenshot SS Skarr Stalker 04.png!Dash Slash attack
+|Image10= Screenshot SS Skarr Stalker 05.png!Dive Slash attack
+|Image11= Screenshot SS Skarr Stalker 06.png!Block
+|Image12= Screenshot SS Skarr Stalker 07.png!Singing
+|Image13 = Ari SS Sketch 22.png!Concept sketches
+}}
+
+==Trivia==
+*The moveset of Skarr Stalkers is built off [[Hornet (Hollow Knight)|Hornet]]'s boss battle moveset in <i>[[Hollow Knight]]</i>.<ref>[https://shop.acmi.net.au/products/acmi-guide-hollow-knight-silk-song-softcover ACMI Guide: Hollow Knight Silksong], p. 16.</ref>
+{{Localisation
+|DEname = Skarrpirscher
+|DEmeaning = Skarr Stalker
+|ESname = Skarr acechador
+|ESmeaning = Skarr Stalker
+|FRname = Skarreux
+|FRmeaning =
+|ITname = Mirmede Persecutore
+|ITmeaning = Pursuer Skarr<br><small><i>Mirmede</i> is the name of the [[Skarr]] in Italian, from <i>mirmeco-</i> (prefix for ants) and <i>-ede</i> (taxonomic suffix).</small>
+|JAname = スカールの追跡者
+|JAromanised = Sukāru no tsuiseki-sha
+|JAmeaning = Skarr's Tracker or Skarr's Pursuer
+|KOname = 스카르 추적자
+|KOromanised = Seukareu chujeokja
+|KOmeaning = Skarr Pursuer
+|PTname = Skarr-perseguidor
+|PTmeaning = Skarr Stalker
+|RUname = Скарр-охотник
+|RUromanised = Skarr-oxotnik
+|RUmeaning = Skarr Hunter
+|TWname = 斯卡爾追獵者
+|TWromanised = Sīkǎ'ěr zhuī liè zhě
+|TWmeaning = same
+|ZHname = 斯卡尔追猎者
+|ZHromanised = Sīkǎ'ěr zhuī liè zhě
+|ZHmeaning = Skarr Stalking Hunter
+|CODEname = BONE_HUNTER
+|CODEmeaning = "Bone Hunter" internally refers to the Skarr
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

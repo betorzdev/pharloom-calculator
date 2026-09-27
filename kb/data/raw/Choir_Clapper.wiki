@@ -1,0 +1,116 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Choir Clapper.png|Hunter's Journal
+Choir Clapper Idle.png|Idle
+Choir Clapper Silk.png|Wrapping Silk
+Choir Clapper Resting.png|Resting
+</gallery>
+|drops = [[Silk#Silk Spools|Silk Spool]]
+|health = 230/{{BT|460}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1.15|1|0.9|0.9}}
+|numbers_required = 3
+|sing=Groal the Great
+|singnum=2
+}}
+{{Quote
+|Hr = Journal
+|Mighty percussive disciple of the Choir, wielding a mallet and a Silk spool to wrap and enhance their attacks.<hr/>
+There is no finesse in its use of Silk. It consumes its slim supply only to amplify its force.
+}}
+
+<b>Choir Clappers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are slow, but powerful members of [[the Choir]] wielding a mallet and a [[Silk]] spool to enchance their attacks.<ref>Choir Clapper [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Mighty percussive disciple of the Choir, wielding a mallet and a Silk spool to wrap and enhance their attacks."</i></ref>
+
+== Behaviour and Tactics ==
+Choir Clappers walk slowly between attacks, walking backwards a short distance when Hornet is too close to them, and walking forwards to pursue her when she is out of range of all their attacks.
+* <b>Retreat:</b> Performs a much faster backwards scuttle than their usual walk speed. Often used after missing an attack when Hornet is close to them.
+* <b>Lunge Clap:</b> Readies its mallet behind itself before lunging forward a short distance and doing a large overhead swing with their mallet.
+* <b>Jumping Clap:</b> Holds their mallet above their head before jumping forward and swinging it overhead as they land.
+* <b>Silk Implosions:</b> Holds its mallet high as silk wraps around it, then taps the ground with the staff of the mallet, sending waves of silk implosions outwards toward both sides of the arena, telegraphed by white circles. The silk implosions only deal {{Damage|1}}.
+* <b>Silk Slam:</b> Readies their mallet above their head whilst wrapping it in silk, then performs a Jumping Clap attack, with a large white circle appearing where they swung. After a moment, the circle implodes with silk, dealing {{Damage|2}}.
+
+Mallet strikes and contact damage with Choir Clappers deal {{Damage|2}}.<br>
+Choir Clappers have a 100% chance to drop a Silk Spool on death that can replenish 2 strands of Hornet's Silk.
+
+<hr/>
+
+The 2 Choir Clappers fought as the final wave of the Forum gauntlet never overlap attacks, roughly alternating between which one attacks at a time.
+
+The Choir Clapper in Act 3 gains the <b>Void Blobs</b> attack, and uniquely doesn't perform the <b>Silk Implosions</b> or <b>Silk Slam</b> attacks. All forms of damage it produces deal {{Damage|2|type=Void}}.
+
+Despite their large size and impressive reach, Choir Clappers do not chase down Hornet aggressively, preferring for Hornet to remain at the edge of their reach and mainly using their basic melee swings or their only ranged attack against her. They have a large blind spot in front and above them, as even when jumping, they only swing when reaching the ground. This means using the wall of the arena is very effective when cornered, allowing Hornet to stay high up and dodge their attacks before jumping above and behind them.
+
+When fighting two Choir Clappers at once, it is important to make sure the two of them are not on opposite sides of Hornet, as they can deny her the space needed to dodge their attacks.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Bow your heads in reverence!
+* Prostrate your meagre shells!
+* Tremble before our masters!
+* Know our lords divine!
+}}
+
+== Location ==
+Choir Clappers can be found exclusively in [[the Forum]] of the [[High Halls]], where three of them are fought as part of the [[Enemy Gauntlets (Silksong)/High Halls 1|enemy gauntlet]]. In [[Act 3]], one [[black-threaded]] Choir Clapper can be found there alongside a [[Minister]], and does not respawn after being defeated.
+
+{{Gallery
+|Image1 = Mapshot SS Choir Clapper 01.png!Location in the High Halls
+|Image2 = Mapshot SS Choir Clapper 02.png!Location in the High Halls in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Choir Clapper 01.png!Idle
+|Image2 = Screenshot SS Choir Clapper 02.png!Retreat
+|Image3 = Screenshot SS Choir Clapper 03.png!Lunge Clap
+|Image4 = Screenshot SS Choir Clapper 04.png!Jumping Clap
+|Image5 = Screenshot SS Choir Clapper 05.png!Silk Implosions
+|Image6 = Screenshot SS Choir Clapper 06.png!Silk Slam
+|Image7 = Screenshot SS Choir Clapper 07.png!Reacting to Needolin
+|Image8 = Screenshot SS Choir Clapper 08.png!Dropped Silk Spool (full, half-full and empty)
+|Image9 = Screenshot SS Choir Clapper 09.png!Black-Threaded during Act 3
+|Image10 = Ari SS Sketch 06.jpg!Concept Sketches
+}}
+
+==Trivia==
+*The Choir Clapper is one of the few enemies that never respawns.
+
+{{Localisation
+|DEname = Chorklopfer
+|DEmeaning = Choir Knocker
+|ESname = Repicador del Coro
+|ESmeaning = Bell-ringer of the Choir
+|FRname = Sonneur de la Chorale
+|FRmeaning = Ringer of the Choir
+|ITname = Percussore Corale
+|ITmeaning = Choral Striker, <i>percussore</i> specfically refers to striking a drum.
+|JAname = 殴撃の合唱者
+|JAromanised = Ogeki no gasshō mono
+|JAmeaning = Choir Striker
+|KOname = 성가대 추
+|KOromanised = Seonggadae chu
+|KOmeaning = Choir Clapper
+|PTname = Badalo-coralista
+|PTmeaning = Clapper Chorister
+|RUname = Хоровик-ударник
+|RUromanised = Xorovik-udarnik
+|RUmeaning = Choirbug Drummer
+|TWname = 聖詠槌手
+|TWromanised = Shèngyǒng chuíshǒu
+|TWmeaning = same
+|ZHname = 圣咏槌手
+|ZHromanised = Shèngyǒng chuíshǒu
+|ZHmeaning = Psalm Drummer
+|CODEname=SONG_HEAVY_SENTRY
+|CODEmeaning="Song" internally refers to the Citadel
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[de:Chorklatscher]]
+[[es:Repicador del Coro]]
+[[fr:Sonneur de la Chorale]]
+[[it:Percussore Corale]]
+[[pt:Badalo-coralista]]
+[[ru:Хоровик-ударник]]
+[[zh:圣咏槌手]]

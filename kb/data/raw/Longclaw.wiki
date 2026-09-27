@@ -1,0 +1,63 @@
+{{SS Infobox Tool
+| type = Blue
+| effect = Increases [[Needle]] attack range by 20%
+| location = [[Putrified Ducts]]
+| description = Talisman fashioned from the talon of a large predator.<hr/>
+Increases the range of needle attacks.
+}}
+
+{{Quote
+| The meatsss?... For ussss?... Yesss, hunter! We have giftssss... Clawsss long...
+| [[Runt]]
+| Hr = SS
+}}
+
+<b>Longclaw</b> is a {{CrestSlot|Blue|1}} in <i>[[Hollow Knight: Silksong]]</i>. It increases the range of the [[Needle]]'s attack by 20% lengthwise and 7.5% widthwise.
+
+== Usefulness ==
+Longclaw's main use is allowing [[Hornet (Silksong)|Hornet]] to strike enemies from farther away, making it easier to avoid enemy attacks and contact damage. It is also effective for platforming segments that require Needle-bouncing as the range of downward Needle swings is also increased.
+
+On the [[Witch Crest]], the multiplier is 4.5% lengthwise and 26.5% widthwise.
+
+== How to Acquire ==
+Given by [[Huntress]] after completing the <i>[[Broodfeast]]</i> Wish during [[Act 2]], or by [[Runt]] after completing the <i>[[Runtfeast]]</i> Wish during [[Act 3]].
+
+{{Gallery
+|Image1 = Mapshot SS Huntress 01.png!Location in Putrified Ducts
+|Image2 = Screenshot SS Putrified Ducts 02.png!Huntress in Putrified Ducts
+|Image3 = Screenshot SS Runt 02.png!Runt in Putrified Ducts
+}}
+
+{{Localisation
+|DEname = Langkralle
+|DEmeaning = Longclaw
+|ESname = Garralarga
+|ESmeaning = Longclaw
+|FRname = Longue-griffe
+|FRmeaning = Long Claw
+|ITname = Grangrinfia
+|ITmeaning = Greatclaw
+|JAname= 長い爪
+|JAromanised= Nagai tsume 
+|JAmeaning = Long Claw
+|KOname = 긴 발톱
+|KOromanised = Bin baltop
+|KOmeaning = Long Claw
+|PTname =  Garralonga
+|PTmeaning = Longclaw
+|RUname = Длинный коготь
+|RUromanised = Dlinnyj kogotʹ
+|RUmeaning = Long Claw
+|TWname = 長爪
+|TWromanised = Cháng zhǎo
+|TWmeaning = same
+|ZHname = 长爪
+|ZHromanised = Cháng zhǎo
+|ZHmeaning = Long Claw
+|CODEname = LONGNEEDLE
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Longue-griffe]]

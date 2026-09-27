@@ -1,0 +1,91 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Smokerock Sifter.png|Hunter's Journal
+Smokerock Sifter Idle.png|Idle
+</gallery>
+| hasdrop = true
+| r1 = 10
+| r2 = 17
+| sh1 = 5-8
+| sh2 = 7-10
+|health = 40/{{BT|160}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.75|1|1|0.85|0.85}}
+|numbers_required = 10
+|singnum=2
+}}
+
+{{Quote
+|Hr = Journal
+|Cymbal bearing worker of the Deep Docks. Pans the hauls of smokerock to find traces of more precious minerals.<hr/>
+The Haunting has stolen some important part of these bugs, yet still they attempt their former task. Until, that is, they sense my presence...
+}}
+
+<b>Smokerock Sifters</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are short [[Dock Workers|workers]] of the [[Deep Docks]] tasked to sift smokerock with their cymbals.
+
+== Behaviour and Tactics ==
+Smokerock Sifters wander idly, occasionally pausing before resuming walking until Hornet gets in their vicinity, in which case they use one of their three moves:
+* <b>Cymbal Bash:</b> Raises their cymbal in front of themself and charges towards Hornet, blocking all [[Needle]] attacks and non-piercing [[Tools]] from the front. They get pushed back when the cymbal blocks an attack, but continue to charge. The charge only ends once Hornet is behind them or they have been hit back into a wall.
+* <b>Cymbal Jump:</b> Leaps into the air to try and land on Hornet, holding their cymbal over their head, blocking all damage from needle bounces. As they fall, they hold the cymbal beneath themself, blocking all damage from [[Needle]] attacks angled upwards. Hitting their cymbal as they fall causes them to bounce upwards, and this can be continued to bounce them across the room if Hornet desires.
+* <b>Block:</b> Raises their cymbal towards Hornet for 1 second, changing their block angle to be above them if Hornet jumps above them, turning around as well if Hornet gets behind them. Every time they change their blocking stance, the timer is reset, which means they can be trapped in this move by Hornet simply jumping repeatedly. If Hornet strikes the cymbal, they immediately perform one of their other 2 moves as a counter-attack.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Smokerock Sifters have their health quadrupled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* For grace above...
+* Smelt dug and churned...
+* Toil, and toil, and toil...
+* Tunnel, breach, bore...
+* Seek the shine... find the ore...
+* By holy light...
+}}
+
+== Location ==
+Smokerock Sifters can be found throughout the [[Deep Docks]]. They can also be summoned by [[Forebrother Signis]]. 
+
+In the room with two respawning Smokerock Sifters, one of them will only spawn once [[Widow]] is defeated.
+
+{{Gallery
+|Image1 = Mapshot SS Smokerock Sifter 01.png!Locations in the Deep Docks
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Smokerock Sifter 01.png!In the Deep Docks
+|Image2 = Screenshot SS Smokerock Sifter 03.png!Cymbal Bash
+|Image3 = Screenshot SS Smokerock Sifter 04.png!Cymbal Jump
+|Image4 = Screenshot SS Smokerock Sifter 02.png!Block
+|Image5 = Screenshot SS Smokerock Sifter 06.png!Singing
+|Image6 = Screenshot SS Smokerock Sifter 05.png!Summoned by Forebrother Signis
+}}
+{{Localisation
+|DEname = Rauchstein-Sieber
+|DEmeaning = Smokerock Siever
+|ESname = Tamizador de rocahumada
+|ESmeaning = Smokerock Sifter
+|FRname = Orpailleur de Pierre Fumante
+|FRmeaning = Gold Prospector of Smoke Rock
+|ITname = Cercatore di Pietrafumea
+|ITmeaning = Seeker of Smokerock
+|JAname = エンガンサライ
+|JAromanised = Engan sarai
+|JAkatakana = enemy
+|JAmeaning = Combination of {{lang|ja|煙岩}} <i>engan</i> (smokerock) and {{lang|ja|浚い}} <i>sarai</i> (dredging).
+|KOname = 연기바위 일꾼
+|KOromanised = Yeongibawi ilkkun
+|KOmeaning = Smokerock Worker
+|PTname = Peneirador de Rochafúmea
+|PTmeaning = Sifter of Smokerock
+|RUname = Сортировщик дымнокамня
+|RUromanised = Sortirovščik dymnokamnja
+|RUmeaning = Smokerock Sorter
+|ZHname = 烟岩筛工
+|ZHromanised = Yānyán shāigōng
+|ZHmeaning = Smoke Ore Sifter
+|CODEname=SHIELD_DOCK_WORKER
+|CODEmeaning = <code>DOCK_WORKER</code> refers to [[Smelt Shoveller]]s.
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

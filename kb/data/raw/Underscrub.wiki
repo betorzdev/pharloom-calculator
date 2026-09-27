@@ -1,0 +1,97 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Underscrub.png|Hunter's Journal
+Underscrub Idle.png|Idle
+Underscrub_Scrubbing.png|Scrubbing
+</gallery>
+| hasdrop = true
+| r1 = 1
+| r2 = 2
+| sh1 = 3-5
+| sh2 = 4-7
+|health = 27/{{BT|54}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.9|0.8|0.75|0.75}}
+|numbers_required = 20
+|sing=Pilgrim Groveller
+}}
+{{Quote
+|Hr = Journal
+|Drained yet dedicated labourer, wielding a coarse steel brush.<hr/>
+That they ever hoped to keep their domain clean... What futility.
+}}
+
+<b>Underscrubs</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are the [[Underworkers|Underworker]] variant of [[Pilgrim Groveller]]s, who wield a coarse steel brush which they use to endlessly clean their domain.<ref>Underscrub Hunter's Journal entry: <i>"Drained yet dedicated labourer, wielding a coarse steel brush."</i></ref><ref>Underscrub Hunter's Journal entry: <i>"That they ever hoped to keep their domain clean... What futility."</i></ref>
+
+== Behaviour and Tactics ==
+Underscrubs are either stationary and at work or glumly wandering back and forth. Less commonly, they are hiding in rags similarly to [[Drapemite]]s.<br>
+When they detect Hornet, they lunge at her with their brush in an attempt to deal contact damage, sliding briefly on the ground before getting back up.
+
+Underscrubs deal {{Damage|1}} on contact.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Underscrubs have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* For the light, unseen...
+* These halls kept clean...
+* Rest and fade...
+* We... were chosen...
+* See us faithful!
+* Shells bend, shells break...
+* Through duty, purity...
+* The sacred toil...
+}}
+
+== Location ==
+Underscrubs can be found throughout the [[Underworks]], with one fought as part of the [[Enemy Gauntlets (Silksong)/Underworks 2|enemy gauntlet]] in the middle of the area, and another during the [[Enemy Gauntlets (Silksong)/Underworks 3|gauntlet]] in [[the Cauldron]].
+{{Gallery
+|Image1 = Mapshot SS Underscrub 01.png!Locations in the Underworks
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Underscrub 01.png!In Underworks
+|Image2= Screenshot SS Underscrub 02.png!Lunge attack
+|Image3= Screenshot SS Underscrub 03.png!Responding to Needolin
+|Image4= Screenshot SS Underscrub 04.png!Working in Underworks
+|Image5= Screenshot SS Underscrub 05.png!Working in the Cauldron
+|Image6= Screenshot SS Underscrub 06.png!Corpse in Underworks
+|Image7= Screenshot SS Underworker 10.png!Corpse below a bench room
+|Image8= Screenshot SS Underworks 08.png!Corpses in a bench room
+|Image9= Screenshot SS Underscrub 07.png!Corpse in Cogwork Core
+}}
+
+{{Localisation
+|DEname = Unterschrubber
+|DEmeaning = Under Scrubber
+|ESname = Subfrotador
+|ESmeaning = Under Scrubber
+|FRname = Sous-brosseur
+|FRmeaning = Under Brush
+|ITname = Fondosfrego
+|ITmeaning = Combintion of <i>fondo</i> (bottom) and <i>sfrego</i> (rub).
+|JAname = 礎の洗浄者
+|JAromanised = Ishizue no senjōsha
+|JAmeaning = Foundation Cleaner
+|KOname = 지하솔질쟁이
+|KOromanised = Jihasoljiljaengi
+|KOmeaning = Underground Brusher
+|PTname = Claustrosivo
+|PTmeaning = From <i>claustro-</i> (prefix for enclosed space) and <i>-ivo<i> (suffix that indicates capability).
+|RUname = Цехотёр
+|RUromanised = Cexotër
+|RUmeaning = Workshop Scrubber
+|TWname = 下層擦地工
+|TWromanised = Xiàcéng cādì gōng
+|TWmeaning = Lower-level Floor Scrubber<br><small>{{lang|zh-Hant|下層工廠}} <i>xiàcéng gōngchǎng</i> (Lower-level Factory) is the name of the [[Underworks]] in Traditional Chinese.</small>
+
+|ZHname = 圣厂擦地工
+|ZHromanised = Shèngchǎng cādì gōng
+|ZHmeaning = Holy Factory Floor Scrubber<br><small>{{lang|zh-Hans|圣堡工厂}} <i>shèng bǎo gōngchǎng</i> (Holy Castle Factory) is the name of the [[Underworks]] in Simplified Chinese.</small>
+|CODEname= PILGRIM_03_UNDERSTORE
+|CODEmeaning = <code>UNDERSTORE</code> internally refers to Underworks. <code>PILGRIM_03</code> internally refers to [[Pilgrim Groveller]]s.
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

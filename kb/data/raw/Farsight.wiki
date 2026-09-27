@@ -1,0 +1,90 @@
+{{SS Infobox Item
+| label = Item
+| image = <gallery>
+Farsight.png|Inventory
+Farsight Bellhome.png|Bellhome
+</gallery>
+| source = [[The Abyss (Silksong)#Sub-area: Weavenest Absolom|Weavenest Absolom]]
+| description = Retracted Weaver surveillance instrument. Once assembled, the device will allow observation over vast distances.<hr/>
+The Farsight can be assembled in a home.
+| effects = Displays current [[Completion (Silksong)|Completion]] percentage
+
+| title2 = <small>Constructed the</small><br>Farsight
+| label2 = Prompt
+| image2 = Icon SS Farsight Art.png
+| source2 = [[The Abyss (Silksong)#Sub-area: Weavenest Absolom|Weavenest Absolom]]
+| description2 = The state of the world can be sensed.
+Completion quantities will be displayed in Menus.
+| effects2 = Displays current [[Completion (Silksong)|Completion]] percentage
+}}
+
+{{Quote
+|Sister, spider, sat between salt and stone,<br>Build those tools of brilliant mind imagined,<br>Aid us when our Silk has waned.
+|Hr=SS
+|[[Weavenest Murglin]] [[Lore Tablets (Silksong)|Lore Tablet]]
+}}
+
+The <b>Farsight</b> is an [[Items (Silksong)|item]] in <i>[[Hollow Knight: Silksong]]</i>. It is functionally equivalent to the [[World Sense]] ability of <i>[[Hollow Knight]]</i> once activated in the [[Bellhome]].
+
+== Use ==
+Displays current [[Completion (Silksong)|completion]] percentage in the inventory and on the [[Save Data (Silksong)|save profile]] in the main menu. Also shows the number of enemies encountered and required in the [[Hunter's Journal (Silksong)|Hunter's Journal]], and number of [[Tools]] and [[Silk Skills]] obtained.
+
+Anything that is yet to be collected, whether it is a Tool, Silk Skill, Hunter's Journal entry, or [[Materium]] entry, is shown as a small grey circle.
+
+Farsight itself is not a requirement for 100% completion. The completion percentage always shows up after the credit screen if the [[Endings (Silksong)#Ending 4: Sister of the Void|Sister of the Void]] ending is completed, regardless of whether Farsight is installed.
+
+{{Gallery
+|Image1 = Mapshot SS Bellhome.png!Location in Bellhart
+|Image2 = Screenshot SS Bellhart 09.png!Displayed inside Bellhome in Bellhart
+}}
+
+== How to Acquire ==
+Found in [[The Abyss (Silksong)|the Abyss]], in the upper east passage of [[The Abyss (Silksong)|Weavenest Absolom]]. The item must be constructed in the Bellhome in [[Bellhart]] before it can be used. 
+
+{{Gallery
+|Image1 = Mapshot SS Farsight.png!Location in the Abyss
+|Image2 = Screenshot SS Farsight 01.png!Farsight in the Abyss
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Farsight Cinematic.mp4!Farsight cinematic
+}}
+
+== Trivia ==
+* The Farsight icon appears on the <i>Completion</i> [[Achievements (Silksong)|achievement]].
+
+{{Localisation
+|DEname = Weitblick
+|DEmeaning = Farsight
+|ESname = Vistalejana
+|ESmeaning = Distant Vision
+|FRname = Longue-vue
+|FRmeaning = Telescope or Long View
+|ITname = Lungovisore
+|ITmeaning = Long View
+|JAname = 遠視眼
+|JAromanised = En shigan
+|JAmeaning = Far Vision or Farsightedness
+|KOname = 천리의 눈
+|KOromanised = Cheonliui nun
+|KOmeaning = Eye of a Thousand Li<br><small>{{lang|ko|리}} <i>li</i> refers to the [[wikipedia:Li_(unit)|Chinese mile]]. {{lang|ko|천리}} <i>cheonli</i> is potentionally derived from {{lang|ko|삼천리}} <i>samcheonli</i> (traditional nickname for the country of Korea; lit. three thousand li).</small>
+|PTname = Clarivisor
+|PTmeaning = Portmanteu of <i>claridade</i> (clarity) and <i>visão</i> (sight) and <i>-or</i> (noun suffix).
+|RUname = Дальногляд
+|RUromanised = Dal'nogljad
+|RUmeaning = Farsight
+|TWname = 遙觀儀
+|TWromanised = Yáo guān yí
+|TWmeaning = same
+|ZHname = 遥观仪
+|ZHromanised = Yáo guān yí 
+|ZHmeaning = Remote Observation Instrument
+|CODEname = FARSIGHT 
+}}
+
+{{SS Nav Items}}
+{{SS Nav Skills}}
+[[Category:Items (Silksong)]]
+[[Category:Skills and Abilities (Silksong)]]
+[[fr:Longue-vue]]

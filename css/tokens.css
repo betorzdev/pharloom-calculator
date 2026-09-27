@@ -11,8 +11,9 @@
        interactive marks, the Crest screen's selection and the Tool slot's glow, and it will
        NOT be Hornet's red, for the same reason it wasn't soul's cyan: the accent doesn't
        decorate data, it only marks what responds to the finger);
-     · the HUD (--mask*, --silk*: silk's colour is to be measured, not assumed);
      · the section tints (--tint-*: Silksong's map screen, area by area).
+   design/02-silksong.md has measured them all: the HUD and the slots are in (below); the
+   surfaces, the accent and the tints are proposals there (§5), still to decide.
 
    Three decisions that carry over as they are:
 
@@ -91,16 +92,25 @@
   --medal-off-line: #28324a;
   --medal-off-ink: #8791ab;
 
-  /* HUD (PLACEHOLDER: to be measured on SS_Mask.png, Silk.png and the spool sprites). */
-  --mask: #dfe6f2;
-  --mask-line: #f2f5fa;
-  --mask-empty: #2a3247;
-  --silk: #ececec;                        /* the spool's strands: measure it, don't assume it */
-  --silk-well: #0b1019;                   /* the empty spool, under the silk */
-  --silk-rim: #2a3247;                    /* its edge */
-  --plasmium: #2d5f72;                    /* the Plasmium (lifeblood) mask */
-  --plasmium-line: #7ec8de;
-  --hud-frame: #d9dce6;                   /* the HUD's frame: bone stroke, like the game's */
+  /* HUD, measured on the game's sprites (design/02-silksong.md §2). Bone, not colour: the one
+     saturated piece is the Plasmium mask. */
+  --mask: #e7d8e0;                        /* SS Mask.png: ivory with the faintest mauve */
+  --mask-line: #c3b7c2;                   /* its shaded half */
+  --mask-empty: #363335;
+  --silk: #ffffff;                        /* Silk.png: pure white, measured */
+  --silk-well: #312d2f;                   /* the empty spool's strands */
+  --silk-rim: #bab0b1;                    /* its bone rim */
+  --plasmium: #1d4879;                    /* the Plasmium (lifeblood) mask */
+  --plasmium-line: #57b3ce;
+  --hud-frame: #dad1d3;                   /* the Crest wheel's frame: warm bone */
+
+  /* The Crest screen's slots (§3): data, not the accent. One family: S 46–51%, V 92–94%. */
+  --slot-red: #eb857d;
+  --slot-blue: #76def0;
+  --slot-yellow: #f0cc7e;
+  --slot-skill: #ffffff;
+  --slot-locked: #606060;
+  --slot-locked-rim: #dcdcdc;
 
   /* The screens are scenes from the game: an almost black field and a cold spotlight. */
   --scene-bg: #04060b;

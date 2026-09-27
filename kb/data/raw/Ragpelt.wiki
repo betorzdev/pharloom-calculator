@@ -1,0 +1,75 @@
+{{SS Infobox Item
+| max = 25
+| description = Tattered pelt taken from the body of a Crawbug. Fragile and drab, it is considered to have few practical uses.
+| type = [[Items (Silksong)#Deliverable|Deliverable]]
+| source = Dropped by Crawbugs in [[Greymoor]] during <i>[[Crawbug Clearing]]</i>
+}}
+
+{{Quote
+| All I need is some Ragpelt from the crawbugs themselves. Hunt 'em down, collect their pelts, and bring me back a heap of the stuff. I'll do the rest! 
+| [[Creige]]
+| Hr = SS
+}}
+
+<b>Ragpelt</b> is a [[Items (Silksong)#Deliverables|deliverable item]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+25 Ragpelt are required to complete the <i>[[Crawbug Clearing]]</i> [[wish]], given by [[Creige]] in [[Halfway Home]].
+
+{{Gallery
+|Image1 = Mapshot_SS_Creige_01.png!Creige location in [[Greymoor]]
+|Image2 = Screenshot SS Creige 01.png!Creige in Greymoor
+}}
+
+== How to Acquire ==
+Ragpelt is dropped by [[Craw]]s, [[Tallcraw]]s and [[Squatcraw]]s in [[Greymoor]] during the <i>Crawbug Clearing</i> wish, drifting down slowly after those enemies are defeated. Craws drop 1 each, and both Tallcraws and Squatcraws drop 2-5 each. Ragpelts will still drop from enemies killed in the [[Enemy Gauntlets (Silksong)|enemy gauntlet]] in Craw Lake.
+
+[[Hornet (Silksong)|Hornet]] can carry up to 25 Ragpelt, after which they will no longer drop from defeated Craw enemies.
+
+{{Gallery
+|Image1 = Mapshot SS Craw Greymoor 01.png!Location of Craws in Greymoor
+|Image2 = Screenshot SS Craw 02.png!Craw in Greymoor
+|Image3 = Mapshot SS Tallcraw Greymoor 01.png!Location of Tallcraws in Greymoor
+|Image4 = Screenshot SS Tallcraw 01.png!Tallcraw in Greymoor
+}}
+
+{{Gallery
+|Image1 = Mapshot SS Squatcraw Greymoor 01.png!Location of Squatcraws in Greymoor
+|Image2 = Screenshot SS Squatcraw 01.png!Squatcraw in Greymoor
+}}
+
+{{Localisation
+|DEname = Lumpenpelz
+|DEmeaning = Ragpelt
+|ESname = Piel zaparrastrosa
+|ESmeaning = Disheveled Skin
+|FRname = Pelage
+|FRmeaning = 
+|ITname = Pelle straccia
+|ITmeaning = Torn Skin
+|JAname = ボロ皮
+|JAromanised = Boro kawa 
+|JAmeaning = Rag Skin
+|KOname = 누더기 생가죽
+|KOromanised = Nudeogi saenggajuk
+|KOmeaning = Rag Pelt
+|PTname = Andrajo
+|PTmeaning = Rag
+|RUname = Драная шкура
+|RUromanised = Dranaja škura
+|RUmeaning = Ragged Pelt
+|TWname = 襤褸皮毛
+|TWromanised = Lánlǚ pímáo
+|TWmeaning = Ragged Pelt
+|ZHname = 破毛皮
+|ZHromanised = Pò máopí
+|ZHmeaning = Worn Out Pelt
+|CODEname = CROW_FEATHER
+|CODEmeaning = [[Craw]] is known internally as <code>CROW</code>
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

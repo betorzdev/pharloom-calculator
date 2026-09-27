@@ -1,0 +1,450 @@
+{{Nav Games Header|Completion}}
+This page details the requirements for reaching 100% <b>completion</b> in <i>[[Hollow Knight: Silksong]]</i>. The current completion percentage can be viewed in the menu after gaining and constructing the [[Farsight]].
+
+<center>
+<big>Table of Contents</big>
+
+[[#Tools|Tools]] • [[#Silk Skills|Silk Skills]] • [[#Upgrades|Upgrades]] • [[#Silk Heart|Silk Hearts]] • [[#Crests|Crests]] • [[#Abilities|Abilities]] • [[#Mask Shards|Mask Shards]] • [[#Silk Spools|Silk Spools]] • [[#Needle Upgrades|Needle Upgrades]] • [[Completion (Silksong)#Items|Items]]
+</center>
+
+== Requirements ==
+
+=== Tools ===
+{| class="article-table" width="100%"
+! style="width: 80%; |Name
+! style="width: 20%; |Percentage
+(total: 51%)
+|-
+|{{CrestSlot|Red}}[[Straight Pin]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Red}}[[Threefold Pin]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Red}}[[Sting Shard]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Red}}[[Tacks]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Red}}[[Longpin]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Red}}[[Curveclaw]] /{{CrestSlot|Red}}[[Curvesickle]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Red}}[[Throwing Ring]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Red}}[[Pimpillo]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Red}}[[Conchcutter]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Red}}[[Silkshot]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Red}}[[Delver's Drill]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Red}}[[Cogwork Wheel]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Red}}[[Cogfly]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Red}}[[Rosary Cannon]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Red}}[[Voltvessels]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Red}}[[Flintslate]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Red}}[[Flea Brew]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Red}}[[Plasmium Phial]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Blue}}[[Druid's Eye]] /{{CrestSlot|Blue}}[[Druid's Eyes]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Blue}}[[Magma Bell]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Blue}}[[Warding Bell]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Blue}}[[Pollip Pouch]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Blue}}[[Fractured Mask]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Blue}}[[Multibinder]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Blue}}[[Weavelight]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Blue}}[[Sawtooth Circlet]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Blue}}[[Injector Band]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Blue}}[[Spool Extender]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Blue}}[[Reserve Bind]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Blue}}[[Claw Mirror]] /{{CrestSlot|Blue}}[[Claw Mirrors]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Blue}}[[Memory Crystal]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Blue}}[[Snitch Pick]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Blue}}[[Volt Filament]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Blue}}[[Quick Sling]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Blue}}[[Wreath of Purity]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Blue}}[[Longclaw]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Blue}}[[Wispfire Lantern]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Blue}}[[Egg of Flealia]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Blue}}[[Pin Badge]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Yellow}}[[Compass]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Yellow}}[[Shard Pendant]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Yellow}}[[Magnetite Brooch]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Yellow}}[[Weighted Belt]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Yellow}}[[Barbed Bracelet]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Yellow}}[[Dead Bug's Purse]] / {{Steel Soul Icon Mini|SS}}{{CrestSlot|Yellow}}[[Shell Satchel]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Yellow}}[[Magnetite Dice]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Yellow}}[[Scuttlebrace]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Yellow}}[[Ascendant's Grip]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Yellow}}[[Spider Strings]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Yellow}}[[Silkspeed Anklets]]
+| style="text-align: center"; | 1%
+|-
+|{{CrestSlot|Yellow}}[[Thief's Mark]]
+| style="text-align: center"; | 1%
+|-
+|}
+
+{{Disclaimer|
+Curveclaw does not provide a percentage point after being handed over to the [[Unnamed Skarr]]. Retrieving the Curvesickle restores the percentage point.
+}}
+
+=== Silk Skills ===
+{| class="article-table" width="100%"
+|-
+! style="width: 60%; |Name
+! style="width: 20%; |Requires
+! style="width: 20%; |Percentage
+(total: 6%)
+|-
+|[[Silkspear]]
+|Bind at [[Moss Grotto#Sub-area:_Mosshome|Mosshome]]
+| style="text-align: center"; | 1%
+|-
+|[[Thread Storm]]
+|Bind at [[Greymoor]]
+| style="text-align: center"; | 1%
+|-
+|[[Cross Stitch]]
+|Defeat [[Phantom]]
+| style="text-align: center"; | 1%
+|-
+|[[Sharpdart]]
+|Bind at [[Wormways#Sub-area:_Weavenest_Karn|Weavenest Karn]]
+| style="text-align: center"; | 1%
+|-
+|[[Rune Rage]]
+|Defeat [[First Sinner|The First Sinner]]
+| style="text-align: center"; | 1%
+|-
+|[[Pale Nails]]
+|Bind [[Grand Mother Silk]]'s arm at [[The Cradle]]
+| style="text-align: center"; | 1%
+|-
+|}
+
+=== Upgrades ===
+{| class="article-table" width="100%"
+|-
+! style="width: 80%; |Name
+! style="width: 20%; |Percentage
+(total: 8%)
+|-
+|[[Crafting Kit]] upgrade 1
+| style="text-align: center"; | 1%
+|-
+|Crafting Kit upgrade 2
+| style="text-align: center"; | 1%
+|-
+|Crafting Kit upgrade 3
+| style="text-align: center"; | 1%
+|-
+|Crafting Kit upgrade 4
+| style="text-align: center"; | 1%
+|-
+|[[Tool Pouch]] upgrade 1
+| style="text-align: center"; | 1%
+|-
+|Tool Pouch upgrade 2
+| style="text-align: center"; | 1%
+|-
+|Tool Pouch upgrade 3
+| style="text-align: center"; | 1%
+|-
+|Tool Pouch upgrade 4
+| style="text-align: center"; | 1%
+|-
+|}
+
+=== Silk Hearts ===
+{| class="article-table" width="100%"
+|-
+! style="width: 60%; |Name
+! style="width: 20%; |Requires
+! style="width: 20%; |Percentage
+(total: 3%)
+|-
+|[[Silk Heart]] 1
+|Defeat [[Bell Beast]]
+| style="text-align: center"; | 1%
+|-
+|Silk Heart 2
+|Defeat [[The Unravelled]]
+| style="text-align: center"; | 1%
+|-
+|Silk Heart 3
+|Defeat [[Lace]] at [[The Cradle]]
+| style="text-align: center"; | 1%
+|-
+|}
+
+=== Crests ===
+{| class="article-table" width="100%"
+|-
+! style="width: 80%; |Name
+! style="width: 20%; |Percentage
+(total: 6%)
+|-
+|[[Reaper Crest]]
+| style="text-align: center"; | 1%
+|-
+|[[Wanderer Crest]]
+| style="text-align: center"; | 1%
+|-
+|[[Beast Crest]]
+| style="text-align: center"; | 1%
+|-
+|[[Witch Crest]]
+| style="text-align: center"; | 1%
+|-
+|[[Architect Crest]]
+| style="text-align: center"; | 1%
+|-
+|[[Shaman Crest]]
+| style="text-align: center"; | 1%
+|-
+|}
+
+=== Abilities ===
+{| class="article-table" width="100%"
+|-
+! style="width: 80%; |Name
+! style="width: 20%; |Percentage
+(total: 7%)
+|-
+|[[Needolin]]
+| style="text-align: center"; | 1%
+|-
+|[[Swift Step]]
+| style="text-align: center"; | 1%
+|-
+|[[Cling Grip]]
+| style="text-align: center"; | 1%
+|-
+|[[Clawline]]
+| style="text-align: center"; | 1%
+|-
+|[[Silk Soar]]
+| style="text-align: center"; | 1%
+|-
+|[[Sylphsong]]
+| style="text-align: center"; | 1%
+|-
+|[[Needle Strike]]
+| style="text-align: center"; | 1%
+|-
+|}
+
+=== Mask Shards ===
+{| class="article-table" width="100%"
+|-
+! style="width: 60%; |Name
+! style="width: 20%; |Requires
+! style="width: 20%; |Percentage
+(total: 5%)
+|-
+|Mask Upgrade 1
+|4 [[Mask Shard (Silksong)|Mask Shards]]
+| style="text-align: center"; | 1%
+|-
+|Mask Upgrade 2
+|4 Mask Shards
+| style="text-align: center"; | 1%
+|-
+|Mask Upgrade 3
+|4 Mask Shards
+| style="text-align: center"; | 1%
+|-
+|Mask Upgrade 4
+|4 Mask Shards
+| style="text-align: center"; | 1%
+|-
+|Mask Upgrade 5
+|4 Mask Shards
+| style="text-align: center"; | 1%
+|-
+|}
+
+=== Silk Spools ===
+{| class="article-table" width="100%"
+|-
+! style="width: 60%; |Name
+! style="width: 20%; |Requires
+! style="width: 20%; |Percentage
+(total: 9%)
+|-
+|Silk Upgrade 1
+|2 [[Spool Fragment|Spool Fragments]]
+| style="text-align: center"; | 1%
+|-
+|Silk Upgrade 2
+|2 Spool Fragments
+| style="text-align: center"; | 1%
+|-
+|Silk Upgrade 3
+|2 Spool Fragments
+| style="text-align: center"; | 1%
+|-
+|Silk Upgrade 4
+|2 Spool Fragments
+| style="text-align: center"; | 1%
+|-
+|Silk Upgrade 5
+|2 Spool Fragments
+| style="text-align: center"; | 1%
+|-
+|Silk Upgrade 6
+|2 Spool Fragments
+| style="text-align: center"; | 1%
+|-
+|Silk Upgrade 7
+|2 Spool Fragments
+| style="text-align: center"; | 1%
+|-
+|Silk Upgrade 8
+|2 Spool Fragments
+| style="text-align: center"; | 1%
+|-
+|Silk Upgrade 9
+|2 Spool Fragments
+| style="text-align: center"; | 1%
+|-
+|}
+
+=== Needle Upgrades ===
+{| class="article-table" width="100%"
+|-
+! style="width: 60%; |Name
+! style="width: 20%; |Requires
+! style="width: 20%; |Percentage
+(total: 4%)
+|-
+|[[Needle]] → Sharpened Needle
+|Defeating [[Widow]]
+| style="text-align: center"; | 1%
+|-
+|Sharpened Needle → Shining Needle
+|[[Pale Oil]]
+| style="text-align: center"; | 1%
+|-
+|Shining Needle → Hivesteel Needle
+|[[Pale Oil]] + {{r|450}}
+| style="text-align: center"; | 1%
+|-
+|Hivesteel Needle → Pale Steel Needle
+|[[Pale Oil]] + {{r|680}}
+| style="text-align: center"; | 1%
+|-
+|}
+
+=== Items  ===
+{| class="article-table" width="100%"
+|-
+! style="width: 60%; |Name
+! style="width: 20%; |Requires
+! style="width: 20%; |Percentage
+|-
+|[[Everbloom]]
+|Complete the [[Red Memory]]
+| style="text-align: center"; | 1%
+|-
+|}
+{{Hr|SS}}
+
+== Achievements ==
+{{Achievement|game=silksong|Completion}}
+{{Achievement|game=silksong|Speed Completion}}
+{{Achievement|game=silksong|Steel Heart}}
+
+{{Disclaimer|These achievements are only awarded after an [[Endings (Silksong)|ending]].}}
+
+== Trivia ==
+* It is possible to reach an ending and complete Act 2 with a max of 93% completion. The 7% locked behind Act 3 are: a [[Mask Shard (Silksong)|Mask upgrade]], the [[Pale Steel Needle]] upgrade, [[Pin Badge]], [[Pale Nails]], [[Shaman Crest]], [[Silk Soar]], and [[Everbloom]].
+
+[[fr:Pourcentage d'Achèvement (Silksong)]]
+[[Category:Hollow Knight: Silksong]]

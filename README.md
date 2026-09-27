@@ -9,7 +9,7 @@ item, the game's own map with what you're missing, the Hunter's Journal; keep pl
 time you sit on a bench it catches up. Then try builds (a Crest, its Tools, the Needle's level)
 and take them into a fight where the answer is different for each enemy.
 
-**Status (27 September 2026): phase 0 of the plan, the skeleton.** Nothing is published yet.
+**Status (27 September 2026): phase 1 of the plan, the data.** Nothing is published yet.
 The study of the game and the plan by value and cost are in
 [`design/00-study.md`](design/00-study.md); the rules for working on it, in
 [`CLAUDE.md`](CLAUDE.md).
@@ -22,6 +22,8 @@ No framework, no build, no install. Double-click `index.html`, or serve the fold
 python3 -m http.server 8000    # then http://localhost:8000
 npm test                       # node --test, no dependencies
 npm run text -- "Straight Pin" # the game's own text, in every language it ships
+npm run kb                     # downloads the wiki's wikitext into kb/data/raw/
+npm run data                  # regenerates js/data.js, js/enemies.js and js/journal.js from it
 ```
 
 ## Credits

@@ -1,0 +1,83 @@
+{{SS Infobox Enemy
+| hasdrop = true
+| sh1 = 2-3
+| sh2 = 3-4
+|health = 20/{{BT|40}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.25|1|0.75|0.85|1}}
+|numbers_required = 15
+|sing=Freshfly
+|singnum=2
+}}
+{{Quote
+|Hr = Journal
+|Sticky young fly, born and grown in service to the Slab.<hr/>
+Foul creatures birthed into servitude. Their plight elicits no sympathy from me.
+}}
+
+<b>Scabflies</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are sticky young [[Slab Penitents#The Jailers|jailer]] flies, born and grown in service to [[the Slab]].<ref>Scabfly [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Sticky young fly, born and grown in service to the Slab."</i></ref>
+
+== Behaviour and Tactics ==
+Scabflies sit on [[Penitent]]s while idle. Once disturbed, they start to fly around in diagonal lines, bouncing off walls. 
+
+Scabflies do not target [[Hornet (Silksong)|Hornet]], but still deal {{Damage|1}} on contact.
+
+=== Act 3 ===
+[[Black-threaded]] Scabflies have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Sinner!...
+* Born in filth...
+* No escape!
+* Be still! Be still!
+* No light!
+}}
+
+== Location ==
+Scabflies can be found in [[the Slab]]. Six are encountered as part of the eastern [[Enemy Gauntlets (Silksong)/The Slab 1|enemy gauntlet]], and another six appear during the northwestern [[Enemy Gauntlets (Silksong)/The Slab 2|gauntlet]] (or four, if Hornet triggers the [[Enemy Gauntlets (Silksong)/The Slab 3|alternative variation]] by reaching the arena via the [[Choral Chambers]] entrance instead of being [[The Slab#Capture by Wardenfly|captured]]).
+
+Outside the gauntlets, Scabflies spawn exclusively perched on [[Penitent]]s. One of these Penitents is already dead, but the other is alive and can be killed, which prevents its Scabfly from respawning until Hornet rests at a [[Bench (Silksong)|bench]].
+
+{{Gallery
+|Image1 = Mapshot SS Scabfly 01.png!Locations in the Slab
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Scabfly 01.png!On dead Penitent
+|Image2 = Screenshot SS Scabfly 02.png!On living Penitent
+|Image3 = Screenshot SS Scabfly 03.png!Flying around
+|Image4 = Screenshot SS Scabfly 04.png!Reacting to the Needolin
+}}
+
+{{Localisation
+|DEname = Schorffliege
+|DEmeaning = Scabfly
+|ESname = Moscasarna
+|ESmeaning = Portmanteau of <i>mosca</i> (fly) and <i>sarna</i> (scab)
+|FRname = Scabiole
+|FRmeaning = 
+|ITname = Mosca Succube
+|ITmeaning = Succubus Fly
+|JAname=カサブタバエ
+|JAromanised= Kasabuta bae
+|JAmeaning = Combination of {{lang|ja|瘡蓋 <i>kasabuta</i>}} (scab) and {{lang|ja|蝿 <i>hae</i>}} (fly).
+|JAkatakana = enemy
+|KOname = 딱지파리
+|KOromanised = Ttakjipari
+|KOmeaning = Scabfly
+|PTname =  Mosca-do-Rochedo
+|PTmeaning = Fly of the Rock
+|RUname = Шелудивая муха
+|RUromanised = Šeludivaja muxa
+|RUmeaning = Scabby Fly
+|ZHname = 痂蝇
+|ZHromanised = Jiā yíng
+|ZHmeaning = Scab Fly
+|CODEname = SLAB_FLY_SMALL
+|CODEmeaning = 	Other Slab Jailers use the Slab Fly name internally
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

@@ -1,0 +1,33 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Greymoor_Arena 5.png|400px|center]]
+|[[File:Mapshot_SS_Reaper_Crest.png|400px|center]]
+|-
+| colspan="2" | Enemy gauntlet in the centre of Chapel of the Reaper.
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>[[Reaper Crest]]</center>
+| <center>[https://www.youtube.com/watch?v=sBNJLCHwqAY Chapel Battle]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Silk Snipper.png|35x35px|link=Silk Snipper]] [[Silk Snipper]], right
+|Drops in from ceiling.
+|-
+|
+[[File:HJ_Dreg Catcher.png|35x35px|link=Dreg Catcher]] Dreg Catcher x2, left and right
+|
+|-
+|
+[[File:HJ_Thread Raker.png|35x35px|link=Thread Raker]] Thread Raker, left
+|
+|-
+|
+[[File:HJ_Silk Snipper.png|35x35px|link=Silk Snipper]] Silk Snipper x2, left and right
+|Drops in from ceiling.
+|}

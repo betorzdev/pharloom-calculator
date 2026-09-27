@@ -1,0 +1,192 @@
+{{Navbar|page1=Trobbio|page2=Tormented Trobbio}}
+{{SS Infobox Boss
+|location = [[The Stage]]
+|drops = [[Claw Mirror]]<br/>Access to the [[Vaultkeeper's Melody]]
+|theme = [https://www.youtube.com/watch?v=QyPFT_p7SoU&list=RDQyPFT_p7SoU&start_radio=1 Trobbio]
+|health = 700
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.4|1|0.9|0.8|0.8}}
+|image1 = <gallery>
+B Trobbio.png|Hunter's Journal
+Trobbio idle.png|Idle
+Trobbio Stagger.png|Staggered
+Trobbio Fireworks.png|Fireworks
+</gallery>
+|va = [[Matt Trobbiani]]<ref name=edge>[https://pocketmags.com/edge-magazine/february-2021 Edge Magazine February 2021 edition], p. 58. ([[:File: Reference Trobbio.png|Archive]])</ref>
+|numbers_required = 1
+|sing = Tormented Trobbio
+|singnum = 1
+}}
+
+{{Quote
+|Hr = Journal
+|Haughty thespian convinced that only dazzling performance can raise Pharloom from the throes of death.<hr/>
+His desire to see Pharloom saved may have been well intentioned, but he seemed quite happy for others to die upon the stage in pursuit of his goal.
+}}
+
+<b>Trobbio</b> is a main [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. He is a haughty thespian wishing to raise [[Pharloom]] with his dazzling performance.<ref name=journal1>Trobbio [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Haughty thespian convinced that only dazzling performance can raise Pharloom from the throes of death."</i></ref> Defeating him grants the [[Claw Mirror]] and access to the [[Vaultkeeper's Melody]]. [[Tormented Trobbio]] is his stronger, depressed form.
+
+== Background ==
+Trobbio is a flamboyant butterfly who avoided the [[Haunting]]. He seeks fame and adoration across [[Pharloom]],<ref name="tcminiupdate">[http://teamcherry.com.au/hk-physical-late-anniversary-celebration-silksong-mini-update/ Team Cherry blog post] of March 19th, 2019</ref> intending to rouse the kingdom from its Haunting through his performances.<ref name=journal1/> He is willing to kill to achieve this goal.<ref name=gender/>
+
+== In-game Events==
+Trobbio is encountered at [[the Stage]] in the [[Whispering Vaults]] and must be defeated to gain access to the [[Vaultkeeper's Melody]], which is part of the <i>[[ASCEND: Pharloom's Crown]]</i> [[Objectives|objective]]. He drops the [[Claw Mirror]] on defeat.
+
+After the fight, Trobbio only plays dead. If [[Hornet (Silksong)|Hornet]] moves away, then returns to him, he can be seen throwing himself to the floor to quickly resume his act. He cries out if Hornet attacks him after seeing him play dead. Trobbio disappears once Hornet leaves the room.
+
+In Act 3, after Hornet accepts the <i>[[Pain, Anguish and Misery]]</i> [[wish]] from [[Songclave]]'s [[wishwall]], Trobbio returns to his stage in a much more aggressive and difficult encounter as [[Tormented Trobbio]].
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+Upon entering the stage, multiple smoke plumes fire off in the background before Trobbio leaps out of the floorboards in the centre of the arena, beginning the battle.
+
+=== Phase 1 ===
+Trobbio has a unique set of main attacks, in that Wondrous Whirlwind, Fabulous Fireworks, and Glitter Bombs can be performed either on the ground or while he is in the air. As such, Trobbio also has a large set of manoeuvres to reposition for these attacks:
+
+* <b>Wondrous Whirlwind:</b> Spins into a whirlwind and moves rapidly towards Hornet. Upon reaching a wall, he bounces off it and continues in the opposite direction. When he stops whirling, he strikes a pose and sends out two whirlwind projectiles, which arc upwards in either direction. Trobbio is immune to damage from the sides while within the whirlwind, but he can still be damaged from above.
+** If initiated while airborne, Trobbio swoops downwards towards Hornet before continuing on the ground.
+** If the [[Tacks]] are run over by the whirlwind, they are destroyed without doing any damage to Trobbio.
+* <b>Fabulous Fireworks</b>: Jumps and creates five large sparkling circles randomly across the arena. These circles explode into fireworks after some delay.
+** He can use this attack while airborne with little variation.
+* <b>Glitter Bombs</b>: Throws out three glitter bombs. They bounce 1–2 times off the floor, walls, or ceiling, and then stop in place and release pillars of damaging smoke either horizontally or vertically. If Hornet hits them before they prime, they will be launched in the attacked direction; if hit after priming, they will be destroyed. The glitter bombs explode at staggered intervals. 
+** If used while airborne, the glitter bombs immediately ricochet downwards off the ceiling.
+* <b>Flying Leap</b>: Leaps straight into the air to either immediately perform an aerial attack at the height of the jump or begin Fluttering.
+* <b>Flutter</b>: While airborne, flutters horizontally across the arena. He can use an aerial attack at any time to cut the Flutter short. Otherwise, he drops to the ground at the end of the move.
+* <b>Floorboard Shuffle</b>: Descends into the floorboards to traverse to the opposite end of the arena. He can then emerge from the floorboards either onto the ground, or directly into a Flying Leap, allowing him to chain more moves. He cannot be damaged while beneath the stage, and his location is indicated by the rattling floorboards.
+* <b>Hidden Glitter Bombs</b>: Descends into the floorboards and travels to the centre of the arena, throwing three glitter bombs out of a hatch before continuing into a Floorboard Shuffle manoeuvre.
+* <b>Whirlwind Dodge</b>: Trobbio can quickly dash backwards defensively in a small whirlwind if Hornet is too close to him.
+* <b>Flourish</b>: Trobbio uses short dashes to move around the arena, flourishing with each.
+
+=== Phase 2 ===
+Upon reaching 350 HP (50% of max HP), Trobbio strikes a dramatic pose and cries out his name, signalling the beginning of Phase 2. He replaces the Hidden Glitter Bomb attack with a new one, which he performs immediately:
+* <b>Passionate Pyrotechnics</b>: Disappears underground, and then five fire pillars shoot out from the ground in random locations and at staggered intervals. The pillars are telegraphed by a fizzle coming from under the floor where they will appear. Trobbio launches into the air from within the fifth fire pillar, and either performs an aerial attack immediately or goes into a Flutter.
+All of Trobbio's attacks deal {{Damage|2}}, except the Whirlwind-based attacks, which deal {{Damage|1+1}}.
+
+<hr />
+
+{{Stagger
+| The stage lights turn briefly red, and Trobbio slumps to the ground in a daze.
+| 15
+| game = SS
+}}
+
+<hr />
+
+* Trobbio's glitter bombs can be knocked away before they are primed. However, this does not guarantee that the explosions of these glitter bombs will not reach Hornet. Furthermore, if they are primed when struck, they will detonate, and Hornet will take {{Damage|2}}.
+* Caution is recommended for the secondary whirlwinds Trobbio sends out as projectiles, as their hitboxes are deceptively large.
+* Due to the distance travelled during Whirlwind attacks, Hornet must leap over them to avoid them.
+* Despite not being [[Haunting|haunted]], Trobbio still willingly pauses mid-battle to sing if the [[Needolin]] is played.
+
+{{TabbedDialogue
+|Title1 = General
+|Title1_Event1 = First encounter
+|Title1_Dialogue1 = Oh drab and trembling squib, you who timidly step upon the Great Stage, fate has seen you chosen!<br>Cast away your fear and join me as my partner. Pharloom's flame may flicker, but together we shall spark it ablaze!<br>Let us enliven this Citadel lost to silence! Let us rouse the soul of this once great land!
+| Title1_Event2 = Playing the [[Needolin]] 
+| Title1_Dialogue2 =[n]Awake Pharloom!<br>
+Awake and witness!<br>
+See my spark!<br>
+See my flare!<br>
+A performer unmatched!<br>
+These wings blaze radiant!<br>
+Your saviour... Your hero... Trobbio!<br>
+The light! The heat! The glory!
+
+| Title2 = Written
+| Title2_Event1 = [[Lore Tablets (Silksong)#Whispering Vaults|Whispering Vaults Lore Tablet]] #1
+| Title2_Dialogue1 = Great bugs! You who weep as your kingdom fades,<br>
+join me upon the Stage.<br>
+Together, we shall enflame the passion of Pharloom!
+| Title2_Event2 = [[Lore Tablets (Silksong)#Whispering Vaults|Whispering Vaults Lore Tablet]] #2
+| Title2_Dialogue2 = O, great land whose flame doth falter!<br>
+Whose choir, conductors, all doth fail,<br>
+Observe! Take heart! That spark still burning,<br>
+Yon butterfly of crimson grace,<br>
+All bells shall peal, and voices raise,<br>
+When brave Trobbio steps, at last, upon the stage!
+}}
+
+== Location ==
+Trobbio can be found at [[the Stage]] between the [[Choral Chambers]] and the [[Whispering Vaults]].
+
+{{Gallery
+|Image1 = Mapshot SS Trobbio 01.png!Location in the Whispering Vaults
+}}
+
+==Creation and Development==
+[[File:Ari SS Sketch 02.jpg|thumb|250px|Concept sketches of Trobbio]]
+Prior to the reveal of <i>Silksong</i> in February 2019, [[Team Cherry]] contacted [[Matt Trobbiani]], an Australian game developer best known for creating the 2015 hacking simulator game <i>Hacknet</i> and a friend of the team, telling him that they were thinking of a character and wanted to name him Trobbio in reference to his surname, and offering him the role of being his voice actor.<ref name=edge /><ref>[https://youtu.be/3p5A7mQDlLg?t=204 Trobbio Voice Actor Matt Trobbiani talks Hollow Knight Silksong, Team Cherry & Secrets of Game Dev] (3:24): <i>"They said they had a character like this and uh were thinking about uh like naming it Trobbio and like asked if I could do the voice. I'm obviously like, "Yeah, of course"."</i></ref> He accepted and recorded his lines in what he later described in an interview as <i>"40 minutes in a little closet with a microphone"</i>.<ref>[https://youtu.be/3p5A7mQDlLg?t=90 Trobbio Voice Actor Matt Trobbiani talks Hollow Knight Silksong, Team Cherry & Secrets of Game Dev] (1:30): <i>"Like, you know, 40 minutes in a little closet with a microphone, but uh yeah, technically true. Technically, voice actor."</i></ref> 
+
+[[Ari Gibson]] came up with the easter egg of Trobbio trying to get away off-screen, faking his death once more when caught.<ref>[https://youtu.be/3p5A7mQDlLg?t=491 Trobbio Voice Actor Matt Trobbiani talks Hollow Knight Silksong, Team Cherry & Secrets of Game Dev] (8:11): <i>"Yeah, that's that's all Ari. Yeah, it's got those got those good touches in there."</i></ref> Trobbio was revealed in the <i>Silksong</i> reveal trailer, which showcased the cutscene prior to his boss fight.<ref>[https://youtu.be/pFAknD_9U7c?t=47 Hollow Knight: Silksong Reveal Trailer] (0:47)</ref> Despite being in the "new bosses" segment of the reveal trailer, in the press kit released alongside the trailer, he was labelled as an "NPC", and his artwork was less red;<ref name="2024Presskit">[https://web.archive.org/web/20241213173803/https://drive.google.com/drive/folders/1gjCKkQww45JAWMvmUXsbODrr-90Jw7pP <i>Hollow Knight: Silksong</i> press kit] as of December 13, 2024</ref> both aspects were changed in 2025, re-labelling him to a boss and updating the artwork.<ref>[https://web.archive.org/web/20251011143957/https://drive.google.com/drive/folders/1gjCKkQww45JAWMvmUXsbODrr-90Jw7pP <i>Hollow Knight: Silksong</i> press kit] as of October 11, 2025</ref> In March 2019, he was formally described in a blog post as <i>"Master of the Stage, the Brush and the Voice, the flamboyant butterfly Trobbio seeks fame and adoration throughout Pharloom."</i><ref>[https://www.teamcherry.com.au/blog/hk-physical-late-anniversary-celebration-silksong-mini-update Team Cherry blog post] of March 19th, 2019</ref> In February 2021's <i>EDGE Magazine</i> issue, Gibson described the narrative idea for Trobbio as <i>"<nowiki>'</nowiki>The hero enters'. He steps onto the stage, utterly convinced of his own brilliance - and proceeds to do a lot of stupid things"</i>.<ref name=edge /> Likely until late-development, Trobbio had the title "The Red Tornado"; it still appears in the Japanese translation and footage in ACMI's ''Game Worlds'' exhibit.<ref>[https://www.youtube.com/watch?v=kAIN8E7gtIM A violent spotlight!? Showdown between the red tornado Trobbio! [Hollow Knight: Silksong #13] on YouTube</ref>
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Trobbio 01.png!Wondrous Whirlwind
+|Image2 = Screenshot SS Trobbio 02.png!Fabulous Fireworks
+|Image3 = Screenshot SS Trobbio 04.png!Glitter Bombs
+|Image4 = Screenshot SS Trobbio 03.png!Hidden Glitter Bombs
+|Image5 = Screenshot SS Trobbio 05.png!Passionate Pyrotechnics
+|Image6 = Screenshot SS Trobbio_06.png!Singing
+|Image7 = Screenshot_SS_Trobbio_07.png!Dramatic Finish 
+|Image8 = Trobbiocorpse.png!Faked death
+|Image9 = Screenshot SS Choral Chambers 17.png!Arena in the Stage
+|Image10 = Screenshot SS Whispering Vaults 11.png!Mural in the Stage
+|Image11 = Trobbio Credits.png!Credits art
+|Image12 = Trobbio.png!Promotional art
+|Image13 = Trobbio reveal trailer.png!<i>Silksong</i> reveal trailer
+|Image14 = Trobbio reveal trailer wings.png!<i>Silksong</i> reveal trailer
+|Image15 = Trobbio Old.png!Early art
+|Image16 = Trobbio Cut Title.png! Trobbio's cut title
+}}
+
+== Achievements ==
+{{Achievement|game=silksong|Tragedian}}
+
+== Trivia ==
+* Two spotlights constantly shine on Trobbio during the fight, even tracking his position while he is beneath the stage.
+* If Trobbio is skipped using glitches or unintended Silk Skill behaviour, his normal fight no longer appears, though his [[Hunter's Journal (Silksong)|Hunter's Journal]] entry can be obtained by defeating [[Tormented Trobbio]].
+* If Hornet has not acquired a [[Map and Quill (Silksong)#Mapping Tools|Quill]], she can take a red one from Trobbio's desk near [[the Stage]]'s arena. This results in a unique sprite for the Quill and Map and Quill icons in the Inventory.
+{{Gallery
+| Image1 = Quill Red.png!Red Quill inventory icon
+| Image2 = Map & Quill Red.png!Red Map and Quill inventory icon
+}}
+
+{{Localisation
+|DEname = Trobbio
+|DEmeaning = —
+|ESname = Trobbio
+|ESmeaning = —
+|FRname = Trobbio
+|FRmeaning = —
+|ITname = Farfleto
+|ITmeaning = Portmanteau of <i>farfalla</i> (butterfly) and <i>Amleto</i> (Hamlet).
+|JAname = 赤い竜巻トロッビオ
+|JAromanised = Akai tatsumaki torobbio
+|JAkatakana = foreign
+|JAmeaning = Red Tornado Trobbio<br><small>The title "Red Tornado" was a cut title for Trobbio.</small>
+|KOname = 트로비오
+|KOromanised = Teurobio
+|KOmeaning = Trobbio
+|PTname = Trobbio
+|PTmeaning = —
+|RUname = Троббио
+|RUromanised = Trobbio
+|RUmeaning = Trobbio
+|TWname = 特羅比奧
+|TWromanised = Tèluóbǐào
+|TWmeaning = same
+|ZHname = 特罗比奥
+|ZHromanised = Tèluóbǐào
+|ZHmeaning = Trobbio
+|CODEname = TROBBIO
+}}
+
+{{Refs|hr=ss}}
+
+[[es:Trobbio]]
+[[fr:Trobbio]]
+[[pt:Trobbio]]
+
+{{SS Nav Enemies}}
+
+[[Category:Bosses (Silksong)]]
+[[Category:Enemies (Silksong)]]

@@ -1,0 +1,64 @@
+{{SS Infobox Item
+| image = Broodmother's Eye.png
+| type = [[Items (Silksong)#Deliverable|Deliverable]]
+| description = Gelatinous organ collected from the defeated Broodmother.
+| source = Dropped by [[Broodmother]] in [[the Slab]] during <i>[[The Wailing Mother]]</i>
+}}
+
+{{Quote
+| Horrible cries have been heard from that prison beside the Citadel. What profanities must be happening within to cause such an awful sound?
+| Residents of [[Choral Chambers|Songclave]]
+| Hr = SS
+}}
+
+The <b>Broodmother's Eye</b> is a [[Items (Silksong)#Deliverables|deliverable item]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+The Broodmother's Eye must be delivered to [[Songclave]] to complete the Grand Hunt Wish <i>[[The Wailing Mother]]</i>, available from its [[Wishwalls|Wishwall]] after completing the [[Strengthening Songclave]] wish and completing the final arena battle in [[the Slab]].
+
+{{Gallery
+|Image1 = Mapshot SS Jubilana 01.png!Location in Choral Chambers
+|Image2 = Screenshot SS Jubilana 01.png!Wishwall in Choral Chambers
+}}
+
+== How to Acquire ==
+Broodmother's Eye is dropped after slaying the [[Broodmother]], which only appears in [[the Slab]] while <i>[[The Wailing Mother]]</i> is in progress.
+
+{{Gallery
+|Image1 = Mapshot SS Broodmother 01.png!Location in the Slab
+|Image2 = Screenshot SS Broodmother 02.png!Broodmother in the Slab
+}}
+
+{{Localisation
+|DEname = Auge der Brutmutter
+|DEmeaning = Eye of the Broodmother
+|ESname = Ojo de la Madre Ponedora
+|ESmeaning = Eye of the Egg Laying Mother
+|FRname = Ojo de la Madre Ponedora
+|FRmeaning = Eye of the Nourishing Mother
+|ITname = Occhio di Madre Nutrice
+|ITmeaning = Eye of the Nursing Mother
+|JAname = 排卵の母の眼
+|JAromanised = Hairan no haha no me
+|JAmeaning = Mother of Ovulation's Eye
+|KOname = 무리어미의 눈
+|KOromanised = Murieomiui nun
+|KOmeaning = Swarm Mother's Eye
+|PTname = Olho da Progenitora
+|PTmeaning = Progenitor's Eye 
+|RUname = Глаз Матери рода
+|RUromanised = Glaz Materi roda
+|RUmeaning = Eye of the Swarm Mother
+|TWname = 育母之眼
+|TWromanised = Yùmǔ zhī yǎn
+|TWmeaning = same
+|ZHname = 育母之眼
+|ZHromanised = Yùmǔ zhī yǎn
+|ZHmeaning = Nurser Mother's Eye
+|CODEname = BROODMOTHER_REMAINS
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

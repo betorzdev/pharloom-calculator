@@ -15,9 +15,10 @@ Before touching anything, check whether it's already solved:
 - **`design/`** — design. **`design/00-study.md` is the entry point**: what Silksong has for each
   piece of the site, the damage model, every data source checked from here, what carries over
   from the Hollow Knight site, the risks, and **the plan by value and cost, with its status**.
-  Next to it, web best practices (`01-web.md`). The game's visual language, measured, will be
-  `02-silksong.md` (phase 1). **Read the study before any change.**
-- **`kb/`** — combat knowledge, to be rebuilt from the wiki in phase 1 (`kb/README.md`).
+  Next to it, web best practices (`01-web.md`) and the game's visual language, measured
+  (`02-silksong.md`). **Read the study before any change.**
+- **`kb/`** — the wiki's wikitext (`kb/data/raw/`, `npm run kb`) that the site's data is generated
+  from (`kb/README.md`).
 
 Neither folder is part of the page: `index.html` doesn't load them.
 
@@ -37,8 +38,11 @@ Neither folder is part of the page: `index.html` doesn't load them.
   This site and the Hollow Knight one share the `betorzdev.github.io` origin, so they share
   `localStorage`: `hollow.*` is the other site's, never read or written here.
 - **Every colour, typeface and spacing value comes from `css/tokens.css`.** No loose values.
-  The palette there was measured for Hollow Knight and is **provisional** until
-  `design/02-silksong.md` measures Silksong's (its header says which tokens are placeholders).
+  The HUD and the slot colours are measured (`design/02-silksong.md`); the surfaces, the accent
+  and the section tints are still Hollow Knight's placeholders (its §5, and the tokens' header).
+- **`js/data.js`, `js/enemies.js` and `js/journal.js` are generated** (`npm run data`, from
+  `kb/data/raw/` and the dump, offline): change `tools/gen-*.js`, never the output. Every game
+  text in them carries its key, `{ es, en, key }`, and `--audit` checks each one against it.
 - **Every visible string carries its `{ es, en }` pair**, and the engine, when it exists,
   receives the language: `compute(state, lang)`. The maths never depends on the language.
 - **The numbers come from `hollowknight.wiki`**, with the game's rounding (half to the even
@@ -85,6 +89,7 @@ a game name that doesn't say what the game says.
 
 ## When you finish
 
+- If you've touched `tools/gen-*.js` or re-fetched `kb/`, `npm run data` and look at the diff.
 - `npm test` — `node --test`, no dependencies. `test/i18n.test.js` fails if a Spanish accent
   slips into the English or a string is left untranslated. If you've touched game names,
   `npm run text -- --audit`.
@@ -113,5 +118,10 @@ From the study (`design/00-study.md`) and the wiki's damage page:
 - **The wiki disagrees with itself in places** (Silk Heart timing, Longclaw's range, the Witch's
   Needle Strike hits): take the damage page's number and note the other.
 - **Pharloom is «Telalejana»** in the game, and the Tools screen is «Blasón» (`PANE_TOOLS`).
+- **The Barbed Bracelet («Cilicio») is a yellow Tool**, not blue, though it's a combat one.
+- **Six wiki pages carry a `CODEname` that isn't their Journal key** (`CORAL_GOOMBA` for
+  `NAME_CORAL_GOOMBAS`); `tools/names.js` falls back to the title.
+- **The game selects with white on grey, with no selection hue**: don't invent one from
+  Hornet's red (`design/02-silksong.md` §3).
 - **Silksong is still patched, and Sea of Sorrow (a free expansion) is due in 2026**: every
   generated file has to be regenerable in one command.

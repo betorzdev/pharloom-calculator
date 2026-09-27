@@ -1,0 +1,106 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Pilgrim Hiker.png|Hunter's Journal
+Pilgrim Hiker Idle.png|Idle
+Pilgrim Hiker Blocking.png|Blocking
+Pilgrim Hiker Without Shawl.png|Without Shawl
+</gallery>
+| hasdrop = true
+| r1 = 14
+| r2 = 21
+| sh1 = 3-5
+| sh2 = 4-7
+|drops = [[Pilgrim Shawl]]
+|health = 30/{{BT|90}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.25|1|1|1|1}}
+|numbers_required = 10
+|singnum=2
+}}
+{{Quote
+|Hr = Journal
+|Hard-shelled bug with a climber's pin. Their pin, once aid, has become a weapon, though the bug is unrefined in its use.<hr/>
+A bug once frail, pushed by twisted thread beyond its mortal limits. 
+}}
+
+<b>Pilgrim Hikers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are hard-shelled bugs who use a climber's pin as both a walking stick and a weapon.<ref>Pilgrim Hiker [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Hard-shelled bug with a climber's pin. Their pin, once aid, has become a weapon, though the bug is unrefined in its use."</i></ref>
+
+== Behaviour and Tactics ==
+Pilgrim Hikers either slowly wander back and forth, or are hiding in their shells in place, and do not make any attempt to pursue Hornet. Once Hornet is in range, they may use any of the following moves:
+* <b>Triple Thrust:</b> Thrusts forward with their pin thrice.
+* <b>Slash:</b> Raises its pin before doing a large outwards slash that also hits slightly above themselves.
+* <b>Shell Retreat:</b> Tucks itself into its shell for 1.5 seconds, blocking any Needle strikes and most Tools; if they successfully block an attack, they will immediately respond with either of the 2 moves listed above.
+* <b>Leap:</b> Leaps either backwards or forwards to reposition, shortening their Leap to not fall off an edge.
+
+Their inferior attacks frequently leave them very exposed, creating many openings for counterattack. Plus, they are not exactly adept at protecting themselves from above.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Pilgrim Hikers have their health tripled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin| columns = 2|
+* There is no pain, nor fear, nor death...
+* Am I worthy?
+* The path... the holy path...
+* My soul... my shell. For you!
+* My faith... my reward...
+* Raise me higher! Pull me closer!
+* Lives end, journeys begin...
+* Raise my shell! Pull me closer!
+* Shining bright, our Citadel waits...
+* Pull us higher, ever higher...
+* We will climb! Climb! Climb forever!
+}}
+
+== Location ==
+Pilgrim Hikers can be found exclusively in [[Blasted Steps]], namely in the top part of the vertical room east of the [[Bellways|Bellway]].<br>
+In [[Act 3]], one can be found in [[Lumble the Lucky]]'s room before <i>[[Hero's Call]]</i>. The Hiker outside [[Last Judge]]'s arena spawns alongside a [[Void Mass]] and will disappear when the mass is killed.
+
+{{Gallery
+|Image1 = Mapshot SS Pilgrim Hiker 01.png!Location in the Blasted Steps in Act 1-2
+|Image3 = Mapshot SS Pilgrim Hiker 02.png!Location in the Blasted Steps in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1=Screenshot SS Pilgrim Hiker 01.png!Hiding in their shell
+|Image2=Screenshot SS Pilgrim Hiker 02.png!Idle in the Blasted Steps
+|Image3=Screenshot SS Pilgrim Hiker 03.png!In Lumble the Lucky's room in Act 3
+|Image4=Screenshot SS Pilgrim Hiker 04.png!Triple Thrust attack
+|Image5=Screenshot SS Pilgrim Hiker 05.png!Slash attack
+|Image6=Screenshot SS Pilgrim Hiker 06.png!Shell retreat
+|Image7=Screenshot SS Pilgrim Hiker 07.png!Leap
+|Image8=Screenshot SS Pilgrim Hiker 08.png!Responding to the Needolin
+|Image9=Screenshot SS Pilgrim Hiker 09.png!Without shawl during <i>[[Garb of the Pilgrims]]</i>
+}}
+
+{{Localisation
+|DEname = Pilgerwanderer
+|DEmeaning = Pilgrim Hiker
+|ESname = Peregrino senderista
+|ESmeaning = Hiker pilgrim
+|FRname = Pèlerin Randonneur
+|FRmeaning = Pilgrim Hiker
+|ITname = Escursionista Pellegrino
+|ITmeaning = Pilgrim Hiker
+|JAname = 登攀の巡礼者
+|JAromanised = Tōhan no junrei-sha
+|JAmeaning = Climbing-up Pilgrim
+|KOname = 순례자 등반가
+|KOromanised = Sullyeja deungbanga
+|KOmeaning = Pilgrim Climber
+|PTname = Escalador-peregrino
+|PTmeaning = Hiker Pilgrim
+|RUname = Пилигрим-походник
+|RUromanised = Piligrim-poxodnik
+|RUmeaning = Pilgrim Hiker
+|TWname = 攀山朝聖者
+|TWromanised = Pānshān cháoshèngzhě
+|TWmeaning = same
+|ZHname = 攀山朝圣者
+|ZHromanised = Pānshān cháoshèngzhě
+|ZHmeaning = Hiking Pilgrim
+|CODEname=PILGRIM_HIKER
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

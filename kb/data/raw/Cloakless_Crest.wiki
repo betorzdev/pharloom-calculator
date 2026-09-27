@@ -1,0 +1,106 @@
+{{Disclaimer|This Crest has no official in-game name; the name used on the wiki is based on internal files, consistency with other Crest names, and developer patch notes.<ref>[[Updates_(Silksong)#1.0.28470_(beta)|v1.0.28470]]: <i>Fixed situation where players could remain cloakless after Slab escape sequence.</i></ref>}}
+{{SS Infobox Crest
+|image1 = <gallery>
+Hornet No Cloak.png|Sprite
+No Crest.png|HUD
+</gallery>
+|attack = No [[Needle]]<br>Kicks with low range and damage
+|effects = Crest Menu disabled<br>Some abilities disabled<br>All items removed from inventory
+|slots = None
+|source = Getting arrested by a cage-wielding [[Wardenfly]] after acquiring [[Cling Grip]]
+}}
+{{Quote
+|Hr=Hornet
+|They'll not get the chance. I will reclaim my belongings and leave this grim place with haste.
+|[[Hornet (Silksong)|Hornet]]
+}}
+The <b>Cloakless Crest</b> is a temporary [[Crests|Crest]] in <i>[[Hollow Knight: Silksong]]</i> used if Hornet is captured and taken to [[the Slab]]. Hornet loses the [[Needle]], [[Hunter's Cloak]] (and its upgrades), and most other items in her Inventory. The Crest menu cannot be accessed at all until Hornet retrieves her items. She retains [[Swift Step]] and [[Cling Grip]].
+
+== Attacks ==
+Hornet attacks at the same speed as the [[Hunter Crest]]. Her attacks deal 3 damage regardless of [[Needle]] upgrades and enemy [[Damage_Values_and_Enemy_Health_(Silksong)#Damage_Calculation|Damage Modifiers]].
+* Neutral Slashes: Hornet alternates between kicks and roundhouse kicks in the facing direction. The range and shape of the attacks are similar to the [[Wanderer Crest]].
+* Down-slash: Hornet performs a dive kick with a similar trajectory to the [[Hunter Crest]]'s. This cannot be used to bounce off spikes.
+* [[Swift Step|Run-slash]]: Hornet performs a jumping kick, bouncing into the air if she hits an enemy.
+* [[Needle Strike]]: Cannot be used.
+
+== Mechanics ==
+All Inventory [[Items (Silksong)|Items]] except the following are removed:
+* [[Bind]]
+* [[Silk Heart]]s
+* [[Mask Shard (Silksong)|Mask Shards]]
+* [[Spool Fragment]]s
+* [[Swift Step]]
+* [[Cling Grip]]
+This means the following can <b>not</b> be used:
+* [[Map and Quill (Silksong)|Map and Quill]]
+** A map of the Slab can be found and used, but not updated.
+* [[Drifter's Cloak]]
+* [[Needolin]]
+* [[Needle Strike]]
+* [[Clawline]]
+* [[Faydown Cloak]]
+
+[[Skills]] and [[Tools]] cannot be used or equipped, and Crests cannot be swapped, as the Menu for doing so disappears entirely.
+
+To remove the Crest and regain her belongings, Hornet must navigate the Slab until she finds a Wardenfly wearing her Cloak and wielding her Needle. A prompt will appear to perform a takedown through the trapdoor Hornet is standing on. 
+{{Gallery
+|Image1=Mapshot SS Key of Heretic.png!Location of Wardenfly holding Hornet's belongings
+|Image2=Screenshot SS Cloakless Crest 03.png!The prompt to Attack the Wardenfly and reclaim Hornet's belongings}}
+
+Hornet drops through the trapdoor, breaks the Wardenfly's neck, and reclaims her belongings, switching to the last used Crest and {{CrestSlot|Skill|1}} but with no tools. She must then fight through waves of enemies. If Hornet is killed in the gauntlet outside of [[Steel Soul Mode (Silksong)|Steel Soul Mode]], she respawns at the last [[Bench (Silksong)|bench]] with the Cloakless Crest back and her inventory missing again. On defeating the waves of enemies, the [[Key of Heretic]] can be acquired and used to leave the Slab.
+
+== Usefulness ==
+The Cloakless Crest is entirely detrimental, reducing Hornet's damage and range. It cannot be used outside [[the Slab]].
+
+Hornet can avoid getting captured and sent to the Slab. However, if she is captured, the following can be obtained as early as [[Act 1]], without acquiring the [[Slab Keys|Key of Apostate]]:
+{| class="article-table" style="text-align: center;"
+|-
+|[[File:The Slab Map.png|link=Map and Quill (Silksong)#Maps|39px|center]]||[[Map and Quill (Silksong)#Maps|Slab Map]]
+|-
+|[[File:Spool Fragment.png|link=Spool Fragment|39px|center]]||[[Spool Fragment]] x 1
+|-
+|[[File:Flea.png|link=Flea|39px|center]]||[[Flea]] x 1
+|-
+|[[File:Shard Bundle.png|link=Shard Bundle|39px|center]]||[[Shard Bundle]] x 1
+|-
+|[[File:Frayed Rosary String.png|link=Frayed Rosary String|39px|center]]||[[Frayed Rosary String]] x 2
+|}
+
+== How to Acquire ==
+After defeating the [[Bell Beast]] and acquiring [[Cling Grip]], [[Wardenfly|Wardenflies]] wielding Hornet-sized cages can appear in [[Deep Docks]] and [[Bilewater]], in areas that are now reachable by wall jumping. Upon completing the <i>[[SEARCH: Silent Halls]]</i> [[Acts|objective]] at the start of [[Act 2]], a third cage-wielding Wardenfly appears in [[Greymoor]]. If one of these Wardenflies successfully slams the cage onto her, Hornet will be transported to the Slab with this Crest automatically equipped. 
+
+* While Hornet is [[Cursed Crest|Cursed]], she cannot be captured; when caged, roots will thrash out from her to destroy the cage and kill the Wardenfly.
+
+* When cage-wielding Wardenflies are killed, they do not respawn or get replaced; if all three die, the Cloakless Crest can no longer be obtained on this playthrough.
+
+* If Hornet has already been captured and has escaped, enters the top of the Slab using the [[Slab Keys|Key of Apostate]], or enters [[Act 3]], the remaining cage-wielding Wardenflies disappear. This makes the Cloakless Crest impossible to [re]acquire.
+{{Gallery
+|Image1=Mapshot SS Wardenfly 01.png!Wardenfly Location in Deep Docks
+|Image2=Mapshot SS Wardenfly 02.png!Wardenfly Location in Bilewater
+|Image3=Mapshot SS Wardenfly 03.png!Wardenfly Location in Greymoor
+}}
+
+{{Gallery
+|Title=Gallery
+|Image1=Screenshot SS Wardenfly 02.png!Cage-wielding Wardenfly in Deep Docks
+|Image2=Screenshot SS Wardenfly 03.png!Cage-wielding Wardenfly in Bilewater
+|Image3=Screenshot SS Wardenfly 04.png!Cage-wielding Wardenfly in Greymoor
+|Image4=Screenshot SS Wardenfly 05.png!Hornet gets captured
+|Image5=Screenshot SS Cloakless Crest 01.png!Hornet awakens in a Cage in the Slab
+|Image6=Screenshot SS Cloakless Crest 02.png!Hornet breaks out of the Cage
+}}
+
+== Trivia ==
+* The Cloakless Crest is the only Crest that alters Hornet's appearance.
+* Getting arrested and recovering Hornet's equipment is the only way to hear the track [[Soundtrack (Silksong)#Track Listing|Red Maiden]] (which uses the same melody as [[Hornet Protector|Hornet]]'s boss theme in <i>[[Hollow Knight]]</i>) in-game.{{BandcampPlayer|Red Maiden}}
+* When in the areas of the slab that have the [[Mount Fay]] frosting effect, Hornet frosts twice as fast compared to with her cloak.<ref group=Source name="frosting">From the code, TickFrostEffect() and GetTotalFrostSpeed() functions in HeroCotroller class</ref>
+* While Cloakless, if Hornet sits on a bench and checks her map, she will be twitching one of her legs. {{MissingImage}}
+{{#seo:|keywords=crest, cloakless, no cloak, naked, kicking, slab}}
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Fixed situation where players could remain cloakless after [[Slab]] escape sequence.
+}}
+{{Refs|hr=small|type=code}}
+
+{{SS Nav Crests}}
+[[fr:Emblème Volé]]

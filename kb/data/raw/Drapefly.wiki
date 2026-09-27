@@ -1,0 +1,127 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Drapefly.png|Hunter's Journal
+Sprite SS Drapefly Hanging.png|Roosting
+</gallery>
+| hasdrop = true
+| sh1 = 2-3
+| sh2 = 3-4
+|health = 25/{{BT|50}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.9|0.9|0.7|0.7}}
+|numbers_required = 30
+|singnum = 1
+}}
+{{Quote
+|Hr = Journal
+|Erratic, flying pest that nests in rags and curtains.<hr/>
+Like fabric somehow sprung to life. Its pelt is perfectly matched to the rags it infests.
+}}
+
+'''Drapeflies''' are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are erratic, flying pests that roost in the curtains and rags that litter the dilapidated [[Citadel]]. They are the younger, smaller form of [[Drapelord]]s.
+
+== Behaviour and Tactics ==
+Drapeflies can often be found hanging from ceilings among curtains and inside vents in the Citadel. Once [[Hornet (Silksong)|Hornet]] approaches, they will announce their presence with a chirp and take flight to begin their attack.<br>
+Being flying enemies, Drapeflies always try to keep distance between themselves and Hornet, and have very good evasive capabilities due to their high speeds. They can easily move out of range in between attacks, and can be hard to take down with the [[Needle]].<br>
+Their only attack is to rear back briefly before swooping at Hornet at a low angle, rolling and retreating after the attack until they do it again.
+
+Their attack and contact both deal {{Damage|1}}.
+
+The best strategy to quickly dispose of Drapeflies is to try and corner them, constantly advancing so they are unable to make use of their evasive nature.
+
+Flocks of Drapeflies will harmlessly fly by when walking on the platform outside the [[Memorium]], and on the platforms outside the [[Whispering Vaults]] in [[Act 3]]. 0-2 Drapeflies can appear when this occurs. Flocks of Drapeflies can also be seen flying by in the distant background outside the [[Grand Gate]], eastern entrance to [[The Slab]], [[Choral Chambers]] (including [[Songclave]]), Memorium and [[Whispering Vaults]] at all times.
+
+Several flocks of Drapeflies can be seen flying outside the Citadel during the Act 2 intro cutscene when entering the Choral Chambers for the first time, and briefly during the Act 2 intro cutscene when entering the Grand Gate for the first time.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Drapeflies have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Swooping and feeding...
+* Hiding, hiding...
+* Larger, hide away!
+* Smaller, catch the prey!
+}}
+
+== Location ==
+Drapeflies can be found only in and around [[the Citadel]], primarily in the ventilation tunnels of the [[Underworks]], [[Grand Gate]], [[Whiteward]], and [[High Halls]]. They can also be seen roosting in places with plenty of curtains, such as the ceilings of rooms in [[the Slab]], [[Exhaust Organ]], [[Choral Chambers]], and [[Whispering Vaults]]. Lastly, they can be found in the eastern part of the [[Memorium]], on the bridge leading to the [[Putrified Ducts]]. Aside from the initial visit or during the <i>[[The Lost Merchant]]</i> wish, these enemies have a random chance to spawn upon re-entering the room; however, resting at a [[Bench (Silksong)|bench]] is not required to reset them.
+
+{{Gallery
+|Image1 = Mapshot SS Drapefly 08.png!Locations in the Slab
+|Image2 = Mapshot SS Drapefly 05.png!Location in the Grand Gate in Act 3
+|Image3 = Mapshot SS Drapefly 01.png!Locations in the Underworks
+|Image4 = Mapshot SS Drapefly 09.png!Location in Bilewater (Exhaust Organ)
+|Image5 = Mapshot SS Drapefly 03.png!Locations in the Choral Chambers
+|Image6 = Mapshot SS Drapefly 04.png!Locations in the Choral Chambers in Act 3
+|Image7 = Mapshot SS Drapefly 06.png!Location in the Whiteward
+|Image8 = Mapshot SS Drapefly 07.png!Locations in the Whispering Vaults
+|Image9 = Mapshot SS Drapefly 11.png!Locations in the Whispering Vaults in Act 3
+|Image10 = Mapshot SS Drapefly 02.png!Locations in the High Halls (One inside the Rosary Bank)
+|Image11 = Mapshot SS Drapefly 10.png!Locations in the Memorium (0-2 spawn per location)
+|Image12 = Mapshot SS Drapefly 12.png!Location in the Memorium during the <i>The Lost Merchant</i> wish
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Drapefly 01.png!Roosting in The Slab
+|Image2 = Screenshot SS Drapefly 02.png!Roosting in Grand Gate
+|Image3 = Screenshot SS Drapefly 03.png!Roosting in Underworks
+|Image4 = Screenshot SS Drapefly 04.png!Roosting in Bilewater (Exhaust Organ)
+|Image5 = Screenshot SS Drapefly 05.png!Roosting in Choral Chambers
+|Image6 = Screenshot SS Drapefly 06.png!Roosting in Whiteward
+|Image7 = Screenshot SS Drapefly 07.png!Roosting in High Halls
+|Image8 = Screenshot SS Drapefly 08.png!Emerging from background
+|Image9 = Screenshot SS Drapefly 09.png!Emerging from flock of Drapeflies
+|Image10 = Screenshot SS Drapefly 10.png!Idle
+|Image11 = Screenshot SS Drapefly 11.png!Attacking
+|Image12 = Screenshot SS Drapefly 12.png!Reacting to Needolin
+|Image13 = Screenshot SS Drapefly 13.png!Flock outside the Memorium
+|Image14 = Screenshot SS Drapefly 14.png!Flock outside the Memorium using mods to remove blur
+|Image15 = Screenshot SS Drapefly 15.png!Flock in the background of the Memorium with and without blur
+|Image16 = Screenshot SS Drapefly 16.png!Flock in the background of Whispering Vaults with and without blur
+|Image17 = Screenshot SS Jubilana 03.png!Harassing Jubilana in The Lost Merchant wish
+|Image18 = Screenshot SS Drapelord 06.png!Wave 2 in The Lost Merchant Wish
+|Image19 = Screenshot SS Drapefly 17.png!With Drapelord
+|Image20 = Screenshot SS Drapefly 18.png!With Drapelord in Act 3
+|Image21 = Screenshot SS Drapefly 19.png!Corpse in Choral Chambers in Act 3
+|Image22 = Screenshot SS Drapefly 20.png!Corpse in Whispering Vaults in Act 3
+|Image23 = Screenshot SS Drapefly 21.png!Flock outside the Citadel during Act 2 intro cinematic
+|Image24 = City Reveal Inner.mp4!Choral Chambers Act 2 intro cinematic featuring several flocks
+}}
+
+== Trivia ==
+*Drapeflies are heavily inspired by bats, and are named Citadel bats internally.
+*Drapeflies constantly shed particles while flying, which are the same particles that curtains and rags break into when destroyed.
+
+{{Localisation
+|DEname = Gardinenfliege
+|DEmeaning = Drapefly
+|ESname = Moscatina
+|ESmeaning = Portmanteau of <i>mosca</i> (fly) and <i>cortina</i> (curtain).
+|FRname = Voletissier
+|FRmeaning = 
+|ITname = Mosca dei Cenci
+|ITmeaning = Rags Fly
+|JAname = ヌノバエ
+|JAromanised = Nuno bae
+|JAmeaning = Combination of {{lang|ja|布 <i>nuno</i>}} (cloth) and {{lang|ja|蝿 <i>hae</i>}} (fly).
+|KOname = 장막파리
+|KOromanised = Jangmakpari
+|KOmeaning = Curtain Fly
+|PTname = Trapo-vivo
+|PTmeaning = Living Rag
+|RUname = Полотняная муха
+|RUromanised = Polotnjanaja muxa
+|RUmeaning = Linen Fly
+|TWname = 帷蟲
+|TWromanised = Wéi chóng
+|TWmeaning = same
+|ZHname = 帷虫
+|ZHromanised = Wéi chóng
+|ZHmeaning = Drape Bug
+|CODEname = CITADEL_BAT
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

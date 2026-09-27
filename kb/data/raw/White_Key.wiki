@@ -1,0 +1,74 @@
+{{SS Infobox Item
+| effects = Unlocks the [[Whiteward]]
+| source = [[Choral Chambers#Sub-area: Songclave|Songclave]]
+| image = [[File:White Key.png|thumb]]
+| description = Finely crafted metal key, shaped to resemble a surgical implement.<hr/>
+Grants access to the Citadel's Whiteward.
+| type = [[Items (Silksong)#Keys|Key]]
+| buy = {{R|220}}
+}}
+
+{{Quote
+| Real fine key this. No doubt it'll open the way to somewhere special. Somewhere full of goodies, I'll bet. Find the lock, and it'll practically pay for itself!
+| [[Jubilana]]
+| Hr = SS
+}}
+
+The <b>White Key</b> is an [[Items (Silksong)#Keys|item]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+Used to unlock the lift at the entrance to the [[Whiteward]], allowing [[Hornet (Silksong)|Hornet]] to access the rest of the area.<ref>Inspecting the lock: <i>"A white lock bearing a surgical symbol."</i></ref>
+
+{{Gallery
+|Image1 = Mapshot SS White Key Use.png!Location in the Whiteward where the White Key can be used
+|Image2 = Screenshot SS White Key 01.png!White Key lock
+}}
+
+{{Clear}}
+
+== How to Acquire ==
+The key is found on a [[Surgeon]]'s corpse at the far right edge of [[Songclave]] in the [[Choral Chambers]], if Songclave has not yet become a town. If it has, the <i>[[The Wandering Merchant]]</i> [[wish]] must first be granted, allowing the key to be purchased from [[Jubilana]] for {{R|220}}.<ref>Jubilana: <i>"Real fine key this. No doubt it'll open the way to somewhere special. Somewhere full of goodies, I'll bet. Find the lock, and it'll practically pay for itself!"</i></ref>
+
+{{Gallery
+|Image1 = Mapshot SS White Key 01.png!Location in the Choral Chambers
+|Image2 = Screenshot SS White Key 02.png!Key on Surgeon's corpse
+}}
+
+{{Gallery
+|Image1 = Mapshot SS Jubilana 01.png!Location in the Choral Chambers after granting <i>The Wandering Merchant</i> wish
+|Image2 = Screenshot SS Jubilana 01.png!Jubilana in Songclave
+}}
+
+{{Localisation
+|DEname = Weißer Schlüssel
+|DEmeaning = White Key
+|ESname = Llave blanca
+|ESmeaning = White key
+|FRname = Clé blanche
+|FRmeaning = White Key
+|ITname = Chiave bianca
+|ITmeaning = White key
+|JAname=白い鍵
+|JAromanised= Shiroi kagi
+|JAmeaning = White Key
+|KOname = 흰색 열쇠
+|KOromanised = Huinsaek yeolsoe
+|KOmeaning = White Key
+|PTname =  Chave Branca
+|PTmeaning = White Key
+|RUname = Белый ключ
+|RUromanised = Belyj ključ
+|RUmeaning = White key
+|TWname = 白色鑰匙
+|TWromanised = Báisè yàoshi
+|TWmeaning = White Key
+|ZHname = 白愈钥匙
+|ZHromanised = Bái yù yàoshi
+|ZHmeaning = White Healing Key<br><small>{{lang|zh-Hans|白愈厅 <i>bái yù tīng</i>}} (white healing hall)  is [[Whiteward]] in Simplified Chinese.</small>
+|CODEname = WARD_KEY
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

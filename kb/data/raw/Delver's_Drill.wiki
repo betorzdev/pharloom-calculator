@@ -1,0 +1,76 @@
+{{SS Infobox Tool
+| image = <gallery>
+Delver's Drill.png|Inventory
+Delver's Drill Poison.png|Pollip Pouch
+Delver's Drill Pickup.png|Pickup
+</gallery>
+| type = Red
+| damage = 4/6/9/11/14 (per hit, up to 6 hits) <br> 24/36/54/66/84 (total)
+| max = 9/11/13/15/18
+| refill_type = Repair
+| refill = {{S|4.44}} (Rounded)
+| effect = Causes [[Hornet (Silksong)|Hornet]] to drill downward into her enemy
+| location = [[Underworks]]
+| description = Rotary tool used for boring into bone and rock. <hr />Drives the wielder downwards, while spinning the drill with destructive force. 
+}}
+
+<b>Delver's Drill</b> is a {{CrestSlot|Red|1}} in <i>[[Hollow Knight: Silksong]]</i>. Using it causes Hornet to spin rapidly, dive and attack directly below her, hitting multiple times.
+
+== Usefulness ==
+* Delver's Drill has the potential to deal a high amount of damage in a single use, but is harder to land hits with than other {{CrestSlot|Red|s}}. In [[Act 3]], where [[Snare Setter]] is not available, it does the highest damage per use of any {{CrestSlot|Red|1}}, and can potentially deal more damage across all charges than any other.
+* [[Hornet (Silksong)|Hornet]] prevents [[Enemies (Silksong)|enemies]] from attacking upwards or moving upwards while drilling into them. However, enemies may attack or move upwards immediately afterwards without Hornet having a chance to move out of the way, making it safer to avoid using Delver's Drill on enemies that can do so.
+* Hornet can cancel out of the drill dive by releasing the input that activates it. While the input is held, Hornet dives until she hits something, takes damage, or goes through a room transition.
+** A charge is only consumed if the drill makes contact with an enemy, spikes, or a solid surface. Getting damaged out of the animation or falling into water does not consume a charge.
+** While drilling an enemy, releasing the input will also allow Hornet to leave the drilling animation early. This reduces the total potential damage of the charge but can be used to evade incoming attacks.
+* Delver's Drill can be useful while using crests with diagonal [[Needle]] bounces such as [[Hunter Crest]] and [[Beast Crest]], as Hornet cannot otherwise attack directly downwards while using them.
+** Using the Delver's Drill on objects like the red flowers in [[Hunter's March]] and the void spheres in [[The Abyss (Silksong)|the Abyss]] will allow Hornet to bounce off them like a [[Needle#Needle-bouncing|Needle bounce]]. Doing this will not consume a charge of the drill. This makes it helpful for those who want vertical mobility in their kit without having to swap their [[Crests]]. 
+
+{{clear|left}}
+
+== How to Acquire ==
+Found on a table in the southwestern [[Underworks]].
+
+{{Gallery
+|Image1 = Mapshot SS Delver's Drill.png!Location in the Underworks
+|Image2 = Screenshot SS Delver's Drill Room.png!Room where the Delver's Drill is acquired
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = GIF SS Delver's Drill.gif!Hornet using Delver's Drill
+|Image2 = GIF SS Delver's Drill 01.gif!Killing enemy
+}}
+
+{{Localisation
+|DEname = Forschungsbohrer
+|DEmeaning = Researching Drill
+|ESname = Taladro de excavador
+|ESmeaning = Excavator's Drill
+|FRname = Foreuse du mineur
+|FRmeaning = Miner's Drill
+|ITname = Trapano da scavo
+|ITmeaning = Digging Drill
+|JAname= 採掘者のドリル
+|JAromanised = Saikutsu-sha no doriru
+|JAmeaning = Miner's Drill
+|KOname = 파헤치는 자의 드릴
+|KOromanised = Pahechineun jaui deuril
+|KOmeaning = Digger's Drill
+|PTname = Broca do Cavador
+|PTmeaning = Digger's Drill
+|RUname = Бур копателя
+|RUromanised = Bur kopatelja
+|RUmeaning = Digging Drill
+|TWname = 掘洞鑽
+|TWromanised = Jué dòng zuàn
+|TWmeaning = same
+|ZHname = 掘洞钻
+|ZHromanised = Jué dòng zuàn
+|ZHmeaning = Hole-delving Drill
+|CODEname = SCREWATTACK
+|CODEmeaning = Likely a reference to the [https://www.metroidwiki.org/wiki/Screw_Attack Screw Attack] from <i>Metroid</i>
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Foreuse du mineur]]

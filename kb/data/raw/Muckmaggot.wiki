@@ -1,0 +1,98 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Muckmaggot.png|Hunter's Journal
+Muckmaggot Pool.png|In water
+</gallery>
+|drops = —
+|health = —
+|numbers_required = 80
+}}
+
+{{Quote
+|Hr = Journal
+|Mindless infant larva, coated in thick slime.
+<hr>They cling fast to the shells of other bugs, destroying any hope for concentration or comfort.
+}}
+
+<b>Muckmaggots</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are the larval form of the [[Muckroach]] living in infested waters, able to cling to [[Hornet (Silksong)|Hornet]]'s shell and drain her [[Silk]].
+
+== Background ==
+Muckmaggots are the infant larval form of the [[Slubberlug]], which mature into adulthood as [[Muckroach]]es. They multiply at an exceptional rate, infesting waterways and acting as a convenient source of food for the less-fortunate bugs of [[Pharloom]].
+
+== Behaviour and Tactics ==
+Muckmaggots are an environmental hazard infesting the waters of certain [[Areas (Silksong)|Areas]], signified by the greenish hue and churning maggots visible in the water. If [[Hornet (Silksong)|Hornet]] touches the water, her shell becomes infested with maggots, sapping her [[Silk]] over time and depriving her of the ability to heal or build [[Hunter Crest|Focus]] until after she rids herself of the parasites. Silk drains faster while swimming in maggot-infested waters.
+
+* If Hornet falls into infested water when already infested, she instantly loses 1 strand of Silk. Repeatedly jumping in and out can rapidly deplete her Silk spool. Some heavily infested water bodies can rapidly deplete Silk without further input.
+* [[Wreath of Purity]] temporarily protects Hornet from 3 "hits" of Muckmaggots, denoted by a screen effect. This allows for some forgiveness while traversing Areas with infested waters.
+* Getting infested also removes the focus of the [[Hunter Crest]].
+
+Muckmaggot infestation can be cured by:
+
+* Resting at a [[Bench (Silksong)|Bench]]
+* Using [[Bind]]
+** Binding costs the usual amount of Silk, but only clears the Muckmaggots instead of healing Hornet
+** With [[Multibinder]] equipped, the first Bind clears the Muckmaggots, and the second Bind restores {{Damage|2}} as normal
+* Swimming in non-infested water for a few seconds
+** This includes non-obvious bodies of water, including [[Moss Druid]]'s cauldron (which will deal {{Damage|1}} before clearing the infestation) and swimming in Void in [[The Abyss (Silksong)|The Abyss]] with the [[Everbloom]].<ref group = Note>While the only way to reach The Abyss is via the Bench in the Diving Bell, this Bench only clears the infestation if the Bell is not ready for travel. It does not clear the infestation when solely transporting Hornet. Therefore, Hornet can reach The Abyss in an infested state.</ref>
+* [[Fast Travel (Silksong)|Fast travelling]]
+* Entering a Memory
+* Binding a new [[Crest]] (including the non-standard [[Cursed Crest]])
+
+An attack with the [[Pimpillo]], [[Voltvessels]], or a [[Volt Filament]]-infused [[Silk Skills|Silk Skill]] into the water kills some of the Muckmaggots, unlocking their [[Hunter's Journal (Silksong)|Hunter's Journal]] entry. However, this does not change the effects of the water.
+
+== Location ==
+Muckmaggots appear as an environmental hazard in the waters of [[Sinner's Road]], [[Bilewater]], [[Wisp Thicket]], and [[Putrified Ducts]]. 
+
+{{Gallery
+|Title=Gallery
+|Image1 = Screenshot SS Muckmaggot 01.png!In Sinner's Road
+|Image2 = Screenshot SS Muckmaggot 02.png!In Bilewater
+|Image3 = Screenshot SS Muckmaggot 03.png!In Wisp Thicket
+|Image4 = Screenshot SS Muckmaggot 04.png!In Putrified Ducts
+|Image5 = Screenshot SS Muckmaggot 05.png!Swimming in Muckmaggot water
+|Image6 = Screenshot SS Muckmaggot 06.png!Hornet Infested with Muckmaggots
+|Image7 = Screenshot SS Muckmaggot 07.png!Removing Muckmaggot Infestation
+|Image8 = Screenshot SS Muckmaggot 08.png!Muckmaggots killed by [[Pimpillo]]
+|Image9 = Screenshot SS Muckmaggot 09.png![[Disgraced Chef Lugoli|Disgraced Chef Lugoli's]] attack
+|Image10 = Muckmaggot HUD 03.gif!Becoming Infested with Muckmaggots
+|Image11 = Muckmaggot HUD 01.gif!Depleting Silk
+|Image12 = Muckmaggot HUD 02.gif!Removing Muckmaggot Infestation
+}}
+
+== Trivia ==
+* A small pool of water in a hidden room above the [[Bilewater]] [[Bellways]] (under the location<ref group = Note>[[:File:Mapshot SS Memory Locket 06.png|Location]]</ref> of the [[Memory Locket]]) is actually in a pipe of the [[Exhaust Organ]], and therefore has steam crossing it  vertically before defeating [[Phantom]]. This pool is considered clean during this period, and with precise timing Hornet can even clear Muckmaggot infestations here before taking {{Damage|1+1}} steam damage. However, after Phantom's defeat, the steam stops and this pool is infested by Muckmaggots again.
+
+{{Localisation
+|DEname = Mistmade
+|DEmeaning = Muckmaggot
+|ESname = Gusasucio
+|ESmeaning = Portmanteau of <i>gusano</i> (worm) and <i>sucio</i> (dirty).
+|FRname = Bouefrasse
+|FRmeaning =
+|ITname = Bacofango
+|ITmeaning = Mud Maggot
+|JAname = ドロウジ
+|JAromanised = Doro uji
+|JAmeaning = Combination of {{lang|ja|泥}} <i>doro</i> (mud) {{lang|ja|蛆}} <i>uji</i> (maggot).
+|KOname = 진흙구더기
+|KOromanised = Jinheulgudeogi
+|KOmeaning = Mud Maggot
+|PTname = Larva-do-Lodo
+|PTmeaning = Larva of the Sludge
+|RUname = Навозная личинка
+|RUromanised = Navoznaja ličinka
+|RUmeaning = Dung Maggot
+|ZHname = 淤秽蛆
+|ZHromanised = Yū huì qū
+|ZHmeaning = Dirty Muck Maggot
+|CODEname= MAGGOTS
+}}
+
+{{Hr|SS}}
+
+== Notes ==
+<references group="Note"/>
+{{Refs|hr=false}}
+
+
+{{SS Nav Enemies}}

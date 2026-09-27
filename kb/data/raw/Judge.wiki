@@ -1,0 +1,110 @@
+{{For|information on the lore of the group|Judges}}
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Judge.png|Hunter's Journal
+Judge Idle.png|Idle
+Judge Dormant.png|Dormant
+</gallery>
+| hasdrop = true
+| r1 = 19
+| r2 = 25
+| sh1 = 5-8
+| sh2 = 7-10
+|health = 75/{{BT|150}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1.1|1|1|1}}
+|numbers_required = 15
+|singnum=1
+}}
+{{Quote
+|Hr = Journal
+|Gilded guardian of the Blasted Steps, bearing a cymbal and mallet.<hr/>
+They remorselessly eliminate any pilgrim or passerby deemed impure to their sight. The countless husks, strewn on paths beside them, tell of their conclusive decisions.}}
+
+<b>Judges</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are adult [[Squirrm]]s wielding a cymbal and mallet to judge pilgrims on their journey to [[the Citadel]], killing any they deem impure.<ref>[[Blasted Steps]] [[Lore Tablets (Silksong)#Blasted Steps|Lore Tablet]]: <i>"Bug born of Pharloom. You have been chosen. May our Citadel's holy gilding harden your soft shell. Stand eternal as our arbiter, that no bug bearing sin shall step within our sacred halls."</i></ref><ref>Judge [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Gilded guardian of the Blasted Steps, bearing a cymbal and mallet."</i></ref><ref>Judge Hunter's Journal entry: <i>"They remorselessly eliminate any pilgrim or passerby deemed impure to their sight."</i></ref>
+
+== Behaviour and Tactics ==
+Judges either start off in place or patrol their platform. Once [[Hornet (Silksong)|Hornet]] comes near, they begin their judgement, indicated by them banging their mallet against their cymbal. If Hornet leaves the platform or initially attacks from a distance, they will strike their cymbal twice and begin patrolling. Whilst Hornet is out of range, they simply walk towards her until they are close enough to attack. Judges have four different moves they use, depending on their distance from Hornet:
+* <b>Double Slam:</b> Raises their mallet and then swings it down at Hornet; after a delay, performs another, much larger swing whilst also moving further forward. They can turn before the second swing if Hornet moves behind them after the first. This move is only used if Hornet is close to them.
+* <b>Dash Bash:</b> Holds their mallet outwards behind them and tenses up briefly before dashing towards Hornet, keeping their shield up for the attack's entire duration. They will stay in place for a moment after ending this dash, giving a small opening to [[Needle#Needle-bouncing|Needle-bounce]]. This attack is often used if there is a distance between them and Hornet.
+* <b>Jump Strike:</b> Lowers their mallet before jumping towards Hornet, swinging the mallet as they land. This is also often used if there is a distance between them and Hornet.
+* <b>Backdash:</b> Performs a short dash backwards, often used after a Double Slam or Dash Bash.
+
+Judges' shields frequently come into play – whenever they are raised, they block any Needle attacks and the majority of [[Tools]] from that direction. For the first three listed attacks, the Judges' shields are up during the entire foreswing. <br>
+Because of this, Hornet may need to use a bait-and-punish playstyle to defeat them, as they only leave openings after they attack. Every time they block an attack, they cycle through the first three moves in the order they are listed. This means Hornet can strike their shield until they are ready to perform a desirable attack, which is indicated by how they hold their mallet behind their back, then dodge and take advantage of the opening. 
+Needle-bouncing with [[Reaper Crest]] or [[Wanderer Crest]] also proves very efficient, as they never raise their shields above their heads. However, their Jump Strikes can hit Hornet unexpectedly while doing this if not timed right. If timed right, the Needle-bounce will push them back down during their Jump Strike.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Judges have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Pass only the pure...
+* Crush sin upon the step!
+* The edict, absolute...
+* Glory to the gilded...
+* Only the holy may judge!
+* Ever vigilant!
+}}
+
+== Location ==
+Judges can be found in the [[Blasted Steps]].
+
+{{Gallery
+|Image1 = Mapshot SS Judge.png!Locations in the Blasted Steps
+|Image2 = Mapshot SS Judge 02.png!Locations in the Blasted Steps in Act 3
+}}
+
+==Creation and Development==
+[[File:Silksong Early 021.png|thumb|220px|A Judge in the Coral Steps]]
+Prior to the area's removal in late 2021, the Judges were located in the Coral Steps section of the [[Cut Content (Silksong)/Areas#Red Coral Gorge|Red Coral Gorge]],<ref name="edge52">[https://pocketmags.com/us/edge-magazine/february-2021 Edge Magazine February 2021 Edition] p. 54.</ref> which was later turned into the Blasted Steps. Judges are also internally labeled as <code>CORAL_JUDGE</code> due to this original location.
+
+The Judges have disabled coding that would have caused them to proclaim Hornet innocent (rendering them inactive) if she had never killed an enemy. Even if activated, this interaction would be impossible to see normally, as [[Moss Mother]] is a required kill en route to the [[Blasted Steps]]. However, [[Cut_Content_(Silksong)/Areas#Moss_Grotto|earlier in development]] Moss Mother was skippable, potentially allowing this interaction to be seen.
+{{Clear}}
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Judge 01.png!Dormant
+|Image2 = Screenshot SS Judge 02.png!Patrolling
+|Image3 = Screenshot SS Judge 03.png!Double Slam
+|Image4 = Screenshot SS Judge 04.png!Dash Bash
+|Image5 = Screenshot SS Judge 05.png!Jump Strike
+|Image6 = Screenshot SS Judge 06.png!Backdash
+|Image7 = Screenshot SS Judge 07.png!Blocking
+|Image8 = Screenshot SS Judge 08.png!Reacting to the Needolin
+|Image9 = Screenshot SS Judge 09.png!Standing corpse
+|Image10 = Screenshot SS Judge 10.png!Encrusted corpse
+|Image11 = Screenshot SS Judge 11.png!Corpse in Act 3
+}}
+
+==Trivia==
+* In the northeasternmost room of the Blasted Steps, a standing Judge corpse can be found, which can be destroyed after a few hits. Unlike other Judges, all corpses of pilgrims around this one are fossilised.
+
+{{Localisation
+|DEname = Richter
+|DEmeaning = Judge
+|ESname = Juez
+|ESmeaning = Judge
+|FRname = Juge
+|FRmeaning = Judge
+|ITname = Giudice
+|ITmeaning = Judge
+|JAname = 審判者
+|JAromanised = Shinpansha
+|JAmeaning = Judge
+|KOname = 심판
+|KOromanised = Simpan
+|KOmeaning = Judge
+|PTname = Juiz
+|PTmeaning = Judge
+|RUname = Судья
+|RUromanised = Sud'ja
+|RUmeaning = Judge
+|ZHname = 裁决者
+|ZHromanised = Cáijué zhě
+|ZHmeaning = Judge
+|CODEname = CORAL_JUDGE
+|CODEmeaning = Judges were originally located in the [[Cut Content (Silksong)/Areas#Red Coral Gorge|Red Coral Gorge]]
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

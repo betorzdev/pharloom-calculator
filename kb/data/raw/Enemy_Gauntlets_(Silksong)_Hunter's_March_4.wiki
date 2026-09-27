@@ -1,0 +1,22 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot SS Hunter's March Arena 4.png|400px|center]]
+|[[File:Mapshot SS Hunter's March Arena 4.png|400px|center]]
+|-
+| colspan="2" | Enemy gauntlet at the northeast corner of Hunter's March. Hornet is not locked into the arena. The [[Cling Grip]] is required for access.
+|-
+! Reward
+! [[Soundtrack (Silksong)|Theme]]
+|-
+| <center>{{R|395}}<br>[[Curveclaw]] (if [[Mottled Skarr]] has been killed)</center>
+| <center>[https://youtu.be/j1GHUxGtueY Hunter's Trail Action]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ Skarrgard.png|35x35px|link=Skarrgard]] [[Skarrgard]], left<br/>
+[[File:HJ Spear Skarr.png|35x35px|link=Spear Skarr]] [[Spear Skarr]], top right
+|Spear Skarr descends shortly after the start of the gauntlet.
+|}

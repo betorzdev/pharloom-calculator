@@ -1,0 +1,247 @@
+{{SS Infobox Item
+
+|label = Conductor
+|title = Conductor's Melody
+|description =  One part of the Threefold Melody, entrusted to the Conductors.
+|image = <gallery>
+Icon SS Conductor's Melody Art.png|Prompt
+Conductor Quest Icon.png|Objective
+</gallery>
+|effects = One part to open the way into [[the Cradle]]
+|source = [[Conductor Ballador]]
+
+|label2 = Architect
+|title2 = Architect's Melody
+|image2 = <gallery>
+Icon SS Architect's Melody Art.png|Prompt
+Architect Quest Icon.png|Objective
+</gallery>
+|description2 =  One part of the Threefold Melody, entrusted to the industrious Architects.
+|effects2 = One part to open the way into [[the Cradle]]
+|source2 = [[Cogwork Core]]
+
+|label3 = Vaultkeeper
+|title3 = Vaultkeeper's Melody
+|image3 = <gallery>
+Icon SS Vaultkeeper's Melody Art.png|Prompt
+Vaultkeeper Quest Icon.png|Objective
+</gallery>
+|description3 =  One part of the Threefold Melody, entrusted to the secretive Vaultkeepers.
+|effects3 = One part to open the way into [[the Cradle]]
+|source3 = [[Sacred Cylinder]]
+}}
+
+{{Quote
+|Pilgrim of Pharloom eternal, regale us with our Threefold song, that you may rise above and worship before our kingdom's divine heart. 
+|[[Cogwork Statues]]
+|Hr=SS
+}}
+The <b>Threefold Melody</b> is the main goal of the <i>[[ASCEND: Pharloom's Crown]]</i> [[Objectives|objective]] in <i>[[Hollow Knight: Silksong]]</i>. The <i>[[LEARN: Conductor's Melody]]</i>, <i>[[LEARN: Architect's Melody]]</i>, and <i>[[LEARN: Vaultkeeper's Melody]]</i> objectives need to be completed to learn the Threefold Melody.
+
+== Use ==
+Can be played at the lift to [[the Cradle]] to open the path to it.
+
+{{Gallery
+|Image1 = Mapshot SS Cogwork Dancers.png!Location to play the Threefold Melody
+|Image2 = Screenshot SS Threefold Melody 01.png!Lift and statues to play the Threefold Melody
+}}
+
+== How to Acquire ==
+The Threefold Melody is learned after first learning the three separate parts of the sequence:
+<h3>Conductor's Melody</h3>
+The Conductor's Melody can be learned from [[Conductor Ballador]] in the [[High Halls]], after an enemy [[Enemy Gauntlets (Silksong)/High Halls 1|gauntlet]] in [[the Forum]].
+
+{{Gallery
+|Image1 = Mapshot SS Conductor's Melody.png!Conductor's Melody location in the High Halls
+|Image2 = Screenshot SS Conductor Ballador 01.png!Conductor Ballador in the High Halls
+}}
+
+<h3>Architect's Melody</h3>
+The Architect's Melody can be learned from the cogwork constructs at the top of the [[Cogwork Core]], after completing the puzzle there.
+
+{{Gallery
+|Image1 = Mapshot SS Architect's Melody.png!Architect's Melody location in the Cogwork Core
+|Image2 = Screenshot SS Threefold Melody 03.png!Architect's Melody puzzle solution
+|Image3 = Screenshot SS Threefold Melody 04.png!Architect's Melody cogwork constructs
+}}
+
+<h3>Vaultkeeper's Melody</h3>
+The Vaultkeeper's Melody can be learned after obtaining the [[Psalm Cylinder|Sacred Cylinder]] from the body of the pontiff in the [[Whispering Vaults]], and then asking [[Vaultkeeper Cardinius]] to play it.
+
+{{Gallery
+|Image1 = Mapshot SS Sacred Cylinder.png!Sacred Cylinder location in the Whispering Vaults
+|Image2 = Screenshot SS Threefold Melody 05.png!Pontiff corpse holding the Sacred Cylinder
+}}
+
+{{Gallery
+|Image1 = Mapshot SS Vaultkeeper Cardinius.png!Vaultkeeper Cardinius location in the Whispering Vaults
+|Image2 = Screenshot SS Vaultkeeper Cardinius 01.png!Vaultkeeper Cardinius in Whispering Vaults
+}}
+
+== Audio ==
+
+{| class="article-table" width="100%"
+! Source
+! width = "30%" | Description
+! Audio
+|-
+! rowspan=4 | [[File:Icon SS Needolin.png|center|72x72px]] Needolin
+| Conductor's Melody played on the Needolin.
+| [[File:Conductor's Melody Needolin.ogg|center]]
+|-
+| Vaultkeeper's Melody played on the Needolin.
+| [[File:Vaultkeeper's Melody Needolin.ogg|center]]
+|-
+| Architect's Melody played on the Needolin.
+| [[File:Architect's Melody Needolin.ogg|center]]
+|-
+| Full melody played on the Needolin.
+| [[File:Threefold Melody Needolin.ogg|center]]
+|-
+! rowspan=4 | [[File:Seek Quest Icon.png|center|84x84px]] Objective
+| Conductor's Melody sung by Conductor Ballador.
+| [[File:Conductor Ballador Sing 02.ogg|center]]
+|-
+| Vaultkeeper's Melody played by the Sacred Cylinder.
+| [[File:melody b musicbox gramaphone.ogg|center]]
+|-
+| Architect's Melody played in the Cogwork Core.
+| [[File:Cogwork Core Architect's Melody.ogg|center]]
+|-
+| Full melody sung by the statues.
+| [[File:Cogwork Statues Sing.ogg|center]]
+|}
+
+== Achievements ==
+{{Achievement|game=silksong|Harmonious}}
+
+== Trivia ==
+* Although the melodies are presented to Hornet by the statues in the order of Architect's, Vaultkeeper's, Conductor's, the order in which the final melody is composed is that of Conductor's, Vaultkeeper's, Architect's.
+** This results in the Architect and Conductor statue having their songs swapped when the full melody is played.
+* Despite the Cogwork Statues describing the melodies in possession to groups, they are named in singular possessives. 
+** In some translations of the game, this discrepancy does not occur.
+* It is possible to buy the [[Gramophone]] for Hornet's [[Bellhome]] before learning the Vaultkeeper's Melody (by giving the [[Sacred Cylinder]] to [[Vaultkeeper Cardinius]] without playing it). However it is not possible to learn the melody from the gramophone this way.
+
+{{Localisation
+|DEname = Dreifaltige Melodie
+|DEmeaning = Trinity Melody
+|ESname = Melodía Ternaria
+|ESmeaning = Ternary Melody
+|FRname = Mélotrine
+|FRmeaning = Portmanteau of <i>mélodie</i> (melody) and <i>trine</i> (threefold).
+|ITname = Triplice Melodia
+|ITmeaning = Triple Melody
+|JAname = ３つのメロディ
+|JAromanised = Mittsu no merodi
+|JAmeaning = Three Melody
+|KOname = 삼중 선율
+|KOromanised = Samjung seonyul
+|KOmeaning = Threefold Melody
+|PTname = Melodia Tríplice
+|PTmeaning = Triple Melody
+|RUname = Трёхчастная мелодия
+|RUromanised = Trëxčastnaja melodija
+|RUmeaning = Three-part Melody
+|TWname = 三重旋律
+|TWromanised = Sānchóng xuánlǜ
+|TWmeaning = same
+|ZHname = 三重旋律
+|ZHromanised = Sānchóng xuánlǜ
+|ZHmeaning = Triple Melody
+}}
+===Conductor's Melody===
+{{Localisation
+|hr = false
+|DEname = Melodie der Dirigenten
+|DEmeaning = Conductors' Melody
+|ESname = Melodía de los Directores
+|ESmeaning = Conductors' Melody
+|FRname = Mélodie Maestrels
+|FRmeaning = Conductors' Melody
+|ITname = Melodia dei Direttori
+|ITmeaning = Conductors' Melody
+|JAname = 指揮者のメロディ
+|JAromanised = Shikisha no merodi
+|JAmeaning = Conductor's Melody
+|KOname = 지휘자의 선율
+|KOromanised = Jihwijaui seonyul
+|KOmeaning = Conductor's Melody
+|PTname = Melodia do Condutor
+|PTmeaning = Conductor's Melody
+|RUname = Мелодия Дирижёра
+|RUromanised = Melodija Dirižëra
+|RUmeaning = Conductor's Melody
+|TWname = 指揮家的旋律
+|TWromanised = Zhǐhuījiā de xuánlǜ
+|TWmeaning = same
+|ZHname = 指挥家的旋律
+|ZHromanised = Zhǐhuījiā de xuánlǜ
+|ZHmeaning = Conductor's Melody
+|CODEname = MELODY_CONDUCTOR
+}}
+
+===Architect's Melody===
+{{Localisation
+|hr = false
+|DEname = Melodie der Architekten
+|DEmeaning = Architects' Melody
+|ESname = Melodía de los Arquitectos
+|ESmeaning = Architects' Melody
+|FRname = Mélodie des Architectes
+|FRmeaning = Architects' Melody
+|ITname = Melodia degli Artefici
+|ITmeaning = Artificers' Melody
+|JAname = 設計者のメロディ
+|JAromanised = Sekkeisha no merodi
+|JAmeaning = Designer's Melody
+|KOname = 설계자의 선율
+|KOromanised = Seolgyejaui seonyul
+|KOmeaning = Designer's Melody
+|PTname = Melodia do Arquiteto
+|PTmeaning = Architect's Melody
+|RUname = Мелодия Архитектора
+|RUromanised = Melodija Arxitektora
+|RUmeaning = Architect's Melody
+|TWname = 建築師的旋律
+|TWromanised = Jiànzhùshī de xuánlǜ
+|TWmeaning = same
+|ZHname = 建筑师的旋律
+|ZHromanised = Jiànzhùshī de xuánlǜ
+|ZHmeaning = Architect's Melody
+|CODEname = MELODY_ARCHITECT
+}}
+===Vaultkeeper's Melody===
+{{Localisation
+|hr = false
+|DEname = Melodie der Glaubenshüter
+|DEmeaning = Faith Guardians' Melody
+|ESname = Melodía de los Guardianes de las Bóvedas
+|ESmeaning = Vault Guardians' Melody
+|FRname = Mélodie Archivistes
+|FRmeaning = Archivists' Melody
+|ITname = Melodia degli Archivisti
+|ITmeaning = Archivists' Melody
+|JAname = 管理者のメロディ
+|JAromanised = Kanrisha no merodi
+|JAmeaning = Administrator's Melody
+|KOname = 금고지기의 선율
+|KOromanised = Geumgojigiui seonyul
+|KOmeaning = Vaultkeeper's Melody
+|PTname = Melodia do Sentinela das Câmaras
+|PTmeaning = Chamber Sentinels' Melody
+|RUname = Мелодия Смотрителей Катакомб
+|RUromanised = Melodija Smotritelej Katakomb
+|RUmeaning = Catacomb Keeper's Melody
+|TWname = 管理員的旋律
+|TWromanised = Guǎnlǐyuán de xuánlǜ
+|TWmeaning = same
+|ZHname = 管理员的旋律
+|ZHromanised = Guǎnlǐyuán de xuánlǜ
+|ZHmeaning = Administrator's Melody<br><small>{{lang|zh-Hans|管理员}} / {{lang|zh-Hant|管理員}} <i>guǎnlǐyuán</i> is shortened from {{lang|zh-Hans|书库管理员}} / {{lang|zh-Hant|書庫管理員}} <i>shūkù guǎnlǐyuán</i> (Vaultkeeper; lit. library adminstrator).</small>
+|CODEname = MELODY_LIBRARIAN
+|CODEmeaning = [[Vaultkeeper|Vaultkeepers]] are internally called <code>SCHOLAR</code>; only [[Vaultkeeper Cardinius]] is named <code>LIBRARIAN</code>
+}}
+
+{{SS Nav Skills}}
+[[Category: Hollow Knight: Silksong]]
+[[fr:Mélotrine]]

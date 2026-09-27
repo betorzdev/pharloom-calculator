@@ -1,0 +1,85 @@
+{{SS Infobox Enemy
+|drops = None
+|health = 15/{{BT|30}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.8|0.8|0.8|0.8}}
+|numbers_required = 12
+|singnum=1
+}}
+{{Quote
+|Hr = Journal
+|Sticky mollusc that defends itself by spraying burning fluid from growths on its back.<hr/>What seems at first a purely defensive mechanism may also be necessary to rid this creature of excess heat.
+}}
+
+<b>Lavalugs</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are small molluscs that spray burning fluid in self-defence.
+
+== Behaviour and Tactics ==
+Lavalugs cling to surfaces – often isolated platforms – and slowly crawl along them. When approached or attacked, they stop in place and release a spray of burning orange fluid that travels in an arc and deals {{Damage|2|type=Fire}}. On death, they will stay in place and shake for a second before bursting. This deals no extra damage; the only effect of this animation is the lingering contact damage hitbox, though it disappears once they burst.
+
+The burning spray is affected by gravity and has a very long range, especially when the Lavalugs are on the undersides of platforms (since the spray falls further before dissipating). While easy to deal with alone, they can be extremely dangerous in close quarters or when other enemies are attacking as well. Lavalugs respawn whenever Hornet leaves and reenters the room, so avoiding them may be preferable to killing them, due to their slow and predictable movement. 
+
+Since Lavalugs tend to be found on thin platforms, it is possible to attack them through the platforms with [[Needle]] attacks to dispatch them more safely.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Lavalugs have their health doubled. They gain one of the following [[Black-Threading#Movesets|void attacks]]: Void Blades, Void Tendrils, or Void Projectiles.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* Feel its burn...
+* Deeper... Hotter...
+* Never enough...
+* Protection in pain...
+}}
+
+== Location ==
+Lavalugs can be found in lower parts of the [[Deep Docks]].
+
+{{Gallery
+|Image1 = Mapshot SS Lavalug 01.png!Locations in the Deep Docks
+|Image2 = Mapshot SS Lavalug 02.png!Locations in the Deep Docks in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Lavalug 01.png!In Deep Docks
+|Image2 = Screenshot SS Lavalug 02.png!Burning Spray
+|Image3 = Screenshot SS Lavalug 03.png!Singing
+}}
+
+{{History
+|game = SS
+|1.0.29909 (Patch 5): Fixed a rare instance of Lavalugs getting frozen in place.
+}}
+{{Localisation
+|DEname = Lavaneck
+|DEmeaning = Portmanteau of lava and <i>schnecke</i> (slug).
+|ESname = Lavabosa
+|ESmeaning = Portmanteau of lava and <i>babosa</i> (slug).
+|FRname = Lavaluge
+|FRmeaning = —
+|ITname = Lumalava
+|ITmeaning = Portmanteau of <i>lumaca</i> (slug) and lava.
+|JAname = ヨウガンハイズリ
+|JAromanised = Yōgan haizuri
+|JAmeaning = Combination of {{lang|ja|溶岩 ''yōgan''}} (lava) and {{lang|ja|這いずり ''haizuri''}} (crawler).
+|KOname = 용암달팽이
+|KOromanised = Yongamdalpaengi
+|KOmeaning = Lava Snail
+|PTname = Lavaguento
+|PTmeaning = Combination of lava and <i>-ento<i> (suffix that indicates quality or similarity)
+|RUname = Лавовый гребешок
+|RUromanised = Lavovyj grebešok
+|RUmeaning = Lava Scallop
+|TWname = 熔岩蛞蝓
+|TWromanised = Róngyán kuòyú
+|TWmeaning = same
+|ZHname = 熔岩蛞蝓
+|ZHromanised = Róngyán kuòyú
+|ZHmeaning = Lava Slug
+|CODEname=TAR_SLUG
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

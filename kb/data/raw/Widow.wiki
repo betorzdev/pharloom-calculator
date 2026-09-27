@@ -1,0 +1,196 @@
+{{SS Infobox Boss
+|image1 = <gallery>
+B Widow.png|Hunter's Journal
+Widow Stagger.png|Staggered
+Widow Scuttle.png|Scuttle
+Widow Silk.png|Playing Silk
+Widow Memory.png|Memory
+</gallery>
+|theme = [https://youtu.be/njUKtnIL6sQ Widow] (Phase 1)<br>[https://youtu.be/nLpxN1rDM7o Widow 2nd Phase] (Phase 3)
+|health = 360
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|drops = [[Needolin]]<br>Breaks the curse<br>ensnaring [[Bellhart]].
+|numbers_required = 1
+|location = [[Bellhart]]
+|singnum = 2
+|va=Lauren Koopowitz<ref name="va">[https://www.youtube.com/watch?v=pA7Id7lff6E Interview with Lauren Koopowitz]</ref>
+}}
+{{Quote
+| Hr = Journal
+|Crazed fanatic able to guide Pharloom's haunted Silk by music played upon it.<hr/>
+Her body seemed a Weaver's, but her mask had been forcibly removed, and her own Silk was bound useless by heavy pins lodged through her spine.
+}}
+
+<b>Widow</b> is a main [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. She is a [[Weavers|Weaver]] that guides haunted [[Silk]] down to the town of [[Bellhart]].<ref>Widow Hunter's Journal entry: <i>"Crazed fanatic able to guide Pharloom's haunted Silk by music played upon it."</i></ref> Her defeat grants the [[Needolin]] ability, and completes the <i>[[SAVE: The Threadspun Town]]</i> [[Acts|objective]], freeing Bellhart from the [[Haunting]].
+
+==Background==
+Widow is a [[Weavers|Weaver]] who is loyal to [[Grand Mother Silk]].<ref>Widow Needolin dialogue in the Cradle: <i>"Of the first... the last..."</i></ref><ref name=widowdialogue>Widow dialogue: <i>"They shall join... Union upon your thread... A gift, for your waking. A world strung to serve..."</i></ref> Widow was the last of the first children to remain in [[the Cradle]], where the Weavers used to sustain the Mother with song.<ref name=widowcutscene>Widow post-fight [https://www.youtube.com/watch?v=E86ZUn2Wz6E cutscene].</ref><ref>Widow Needolin dialogue in the Cradle: <i>"Of the first... the last... Our mother... true... Our light divine... Wake... Wake... Wake... Glory to you... Devotion to you..."</i></ref> She refers to the Weavers who left [[Pharloom]] as "those who dared to flee".<ref>Widow dialogue: <i>"Spawn of those who dared to flee."</i></ref> Widow's mask was forcibly removed, and heavy pins were lodged through her spine to bind her [[Silk]] useless.<ref name = gender/> [[Hornet (Silksong)|Hornet]] calls this a "cruel punishment".<ref>Hornet dialogue with [[Shakra]]: <i>"Its own Silk was bound, pinned deep within its shell. A cruel punishment I've not before witnessed."</i></ref> At some point, Widow went down to [[Bellhart]], where she guided threads above the town to ensnare its residents and make them become [[Haunting|haunted]] by Grand Mother Silk.<ref name=widowdialogue/>
+
+== In-game Events ==
+Widow is first encountered in the room just above Bellhart. She recognises Hornet and intends to claim her for Grand Mother Silk, starting a fight. After she is defeated, Hornet leaps on top of her and [[Bind]]s Widow's power, granting her the [[Needolin]] talent. Hornet then witnesses one of Widow's memories, which shows the Weavers producing song for Grand Mother Silk when they were all still loyal to her.<ref name=widowcutscene/> Widow's death frees the residents of the town from the Haunting.
+
+Later in the Cradle, a memory of Widow can be seen when using the [[Needolin]] in a northeastern room.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+=== Phase 1 ===
+During Phase 1, Widow has the following attacks and manoeuvres:
+* <b>Bell Pull</b>: Widow stands straight and pulls 1–3 bells from the ceiling using [[Silk]] threads, one at a time. These bells can fall straight down vertically or angled at 45 degrees and are generally aimed at [[Hornet (Silksong)|Hornet's]] position, but they sometimes fall in random locations. All bells Widow creates bounce once before disappearing.
+* <b>Aerial Lunge</b>: Widow teleports into the air before dashing downwards at an angle towards Hornet. Upon reaching the floor, she pauses for a moment, flashing her claws, and then charges across the length of the arena towards Hornet while slashing her claws in front of herself. A pop sound effect plays when she flashes her claws. While airborne, Widow can delay this attack by skittering left or right to reposition so that she dashes into Hornet. This attack deals {{Damage|1+1}} if Hornet is caught in her swipes.
+* <b>Debris Field</b>: Widow starts at one end of the arena and runs across the entire floor, attaching 4 large, evenly-spaced thread bundles to the ceiling. Shortly after, each thread bundle sequentially pulls up hazardous debris from below the ground – these debris fields linger for a short period before sinking back into the ground in the order of their appearance. The debris deals {{Damage|2}} on contact.
+* <b>Teleport</b>: Widow teleports to a random location in the arena between attacks.
+* <b>Skitter</b>: After an attack, Widow can skitter backwards to avoid Hornet if she is too close to her.
+
+=== Phase 2 ===
+After reaching 250 HP, Widow adds another attack to her repertoire, which she uses immediately:
+* <b>Bell Cascade</b>: Widow shouts, causing multiple bells to fall together in a large block; they can either cover the centre, the left or right, or both edges of the arena.
+
+=== Phase 3 ===
+After reaching 150 HP, Widow fakes a defeat by leaving the arena, but she quickly reappears, shouting and starting Phase 3. During this phase, Widow can no longer be staggered, she also moves quicker and has a different set of attacks:
+* <b>Diagonal Bell Rain</b>: Widow stands still and pulls 2 evenly spaced bells at a diagonal angle from the ceiling.
+* <b>Vertical Bell Rain</b>: Widow shouts and causes 3–4 evenly spaced bells to fall vertically from the ceiling.
+* <b>Frenzied Charge</b>: Widow flashes her claws before charging across the length of the arena towards Hornet, slashing her claws in front of herself. The same pop sound cue from her aerial attack plays here. This attack deals {{Damage|1+1}} if Hornet is caught in the swipes.
+* <b>Skitter</b>: Widow still skitters away if Hornet is too close to her after an attack. However, Widow can now perform a Frenzied Charge immediately following a Skitter.
+
+<hr />
+
+{{Stagger
+| Widow collapses to the ground, stunned.
+| 11
+| game = SS
+}}
+
+<hr />
+
+=== Strategy ===
+
+The Debris Field can be used as an easy opportunity to heal. Healing midair keeps Hornet from falling into the debris, and Widow does not attack until the debris is gone.
+
+The Debris Field can also be avoided by using [[Cling Grip]] to bounce off of the walls of the arena, [[Drifter's Cloak]] to float over a pile of debris before dashing over it, or by using Needle bounces.
+
+In Phase 3:
+
+* Hornet can safely stand between the two Silk indication lines of the Diagonal Bell Rain attack.
+
+* Parrying projectiles is also a viable and effective way to avoid being damaged by Diagonal Bell Rain, although this requires timing.
+
+* Dash-strike and a few follow-up attacks can be performed when Vertical Bell Rain is used.
+
+* Widow's charges have a very short starting animation, so it is dangerous to stay near her before she initiates an attack.
+
+* After doing three projectile attacks, Widow will always use a charge attack.
+
+* It is usually safe to heal mid-air immediately after jumping over Widow when she charges.
+* Staying to one side of the arena during Phase 3 allows for much easier avoiding of most of Widow's attacks.
+
+{{TabbedDialogue
+|Title1 = Above Bellhart
+|Title1_Event1 = Before the fight
+|Title1_Dialogue1 = Oh! Ohhhh! They shall join... Union upon your thread... A gift, for your waking. A world strung to serve...
+
+{{HTalk|Creature, your claws guide those cursed threads, but you are not their source. What role do you play in this vile affliction?}}
+
+Ohhhh! She is here! The rare birthling! Precious child of Wyrm and Weaver!<br>
+Spawn of those who dared to flee. She has found her way home... at last. <br> 
+How fine her shell, and Silk, and claw... For you, mother... let me claim her all for you!
+|Title1_Event2 = After the fight
+|Title1_Dialogue2= [n]...For her light... eternal... our song sustains...<br>
+
+|Title2 = Memory in the Cradle
+|Title2_Event1 = Needolin dialogue
+|Title2_Dialogue1 = [n]Our mother... true...<br>
+Our light divine...<br>
+Wake... Wake... Wake...<br>
+Glory to you...<br>
+Devotion to you...<br>
+Spin... Bind... Punish...<br>
+Of the first... the last...<br>
+We hear you!
+}}
+
+== Location ==
+Widow can be found in [[Bellhart]] above the town after entering and traversing the bellveins. The entrance to the upper bellveins is found in the upper right corner of [[Shellwood]], though an additional route – just to the right of Shellwood's rightmost bench – can be unlocked after reaching the tunnel above Widow's arena.
+
+{{Gallery
+| Image1 = Mapshot SS Widow 01.png!Location in Bellhart
+}}
+
+== Creation and Development ==
+[[File:Cut Weaver Memory Spinner.png|thumb|250px|<code>memory_spinner</code> spritesheet]]
+Widow's arena first appeared on the map around September 2019.<ref>[[Cut Content (Silksong)#Gallery|Early <i>Silksong</i> development maps]]</ref> A [[Cut Content (Silksong)/Graphics#Weaver Memory Cutscenes|much lengthier memory]] for Widow was planned, which showcased her having her mask removed and Silk bound by pins. Initially, Widow also did not give the Needolin upon defeat, as it was found in the later-cut [[Cut Content (Silksong)/Areas#Weavenest|Weavenest]] area, which was reworked into the multiple [[Weavenest|Weavenests]]. Widow has Needolin dialogue available during her battle, despite the Needolin ability not being accessible before defeating her, likely due to this older progression. 
+{{SS Needolin|columns=2|
+* The last... The last...
+* Eternity... Alone...
+* Hear her heart!
+* Hear her voice!
+* The gift, of strength and Silk...
+* For you, holy mother... all for you...
+}} 
+
+[[Christopher Larkin]] described Widow's boss theme as a "''bit of an experiment''". Deviating from what he normally did, he went to the recording session and recorded "Widow" before giving the song to [[Team Cherry]] and gaining their approval. He expected Team Cherry to "''reject it straight away''", and was surprised that they liked it. His vision was for it to "''push this idea of the string instruments being like guitars in a metal band''", since he thinks that "''strings can be just as cool and as hip as electric guitars.''". After showcasing the recorded song to Team Cherry, they told Larkin that the boss had a second phase and asked him to make a faster variant.<ref>[https://daily.bandcamp.com/features/christopher-larkin-hollow-knight-silksong-interview Christopher Larkin Doesn’t Just Score Video Games, He Creates Worlds] on ''Bandcamp''</ref><ref>[https://www.abc.net.au/listen/programs/game-show/game-show-interview-christopher-larkin/106109340 Game Show Interview - Christopher Larkin] on ''ABC''</ref>
+
+== Gallery ==
+{{Gallery
+|Image2 = Screenshot SS Widow 01.png!Bell Pull
+|Image3 = Screenshot SS Widow 04.png!Aerial Lunge
+|Image4 = Screenshot SS Widow 05.png!Frenzied Charge
+|Image5 = Screenshot SS Widow 06.png!Bell Cascade
+|Image6 = Screenshot SS Widow 10.png!Diagonal Bell Rain
+|Image7 = Screenshot SS Widow 11.png!Vertical Bell Rain
+|Image8 = Screenshot SS Widow 12.png!Stagger
+|Image9 = Screenshot SS Weavers 05.png!Widow guiding threads
+|Image10 = Screenshot SS Weavers 01.png!Widow's memory after the fight
+|Image11 = Screenshot SS Widow 02.png!Room in the Cradle with broken harps
+|Image12 = Screenshot SS Widow 03.png!Memory of Widow in the Cradle room
+|Image13 = Widow music.ogg!Widow playing music on threads
+}}
+
+== Achievements ==
+{{Achievement|game=silksong|Fanatic}}
+
+== Trivia ==
+* Widow's pre-fight dialogue can be skipped if Hornet uses the [[Challenge]] ability.
+* If Widow is skipped using glitches, she will automatically die by [[Act 3]]; the Needolin will automatically play in all of its required sequences ([[Threefold Melody]], [[Trail's End]], and ending Grand Mother Silk's fight) even without earning the item. Unlike [[Fourth Chorus]], Widow's [[Hunter's Journal (Silksong)|journal]] entry is not automatically granted, making her entry unobtainable if she was skipped.
+
+* Faint whispering can be heard near Widow, the same heard near [[Weaver Burial Spire]]s. It ceases once Widow stops playing to address Hornet.
+* Widow is one of only a few bosses in the series to completely replace their entire move-set with a new one following a phase change. The other two are [[Soul Master]], and [[Radiance]] (along with their respective rematches).
+
+{{Gallery
+|Image1 = Screenshot SS Widow 07.png!Needolin Response
+}}
+
+{{Localisation
+|DEname = Witwe
+|DEmeaning = Widow
+|ESname = Viuda
+|ESmeaning = Widow
+|FRname = Veuve
+|FRmeaning = Widow
+|ITname = Vedova
+|ITmeaning = Widow
+|JAname = ウィドウ
+|JAromanised = Widō
+|JAkatakana = foreign
+|JAmeaning = Widow
+|KOname = 과부
+|KOromanised = Gwabu 
+|KOmeaning = Widow
+|PTname = Viúva
+|PTmeaning = Widow
+|RUname = Вдова
+|RUromanised = Vdova
+|RUmeaning = Widow
+|TWname = 殉道寡婦
+|TWromanised = Xùndào guǎfù
+|TWmeaning = Martyr Widow
+|ZHname = 黑寡妇
+|ZHromanised = Hēi guǎfù
+|ZHmeaning = Black Widow
+|CODEname=SPINNER
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[pt:Viúva]]

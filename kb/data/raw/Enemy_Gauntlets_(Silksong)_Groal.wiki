@@ -1,0 +1,43 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Bilewater_Arena_1.png|400px|center]]
+|[[File:Mapshot_SS_Groal_the_Great_01.png|400px|center]]
+|-
+| colspan="2" | [[Groal the Great]]'s enemy gauntlet, encountered as part of their boss fight. Provides an alternative route to a southern portion of the [[Putrified Ducts]] containing [[Huntress]] and the [[Key of Apostate]].
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>[[Seeker's Soul]]<br>[[Bench (Silksong)|Bench]]</center>
+| <center>[https://youtu.be/M-z6fPrpg-k?t=92 Cut Through (Main + Percussion)] (Enemy Gauntlet)<br>[https://youtu.be/M-z6fPrpg-k?t=184 Cut Through (Main + Percussion + Vocals)] (Groal the Great)</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Stilkin.png|35x35px|link=Stilkin]] [[Stilkin]] x2, left and right<br>
+|
+|-
+|
+[[File:HJ_Stilkin Trapper.png|35x35px|link=Stilkin Trapper]] [[Stilkin Trapper]] x2, left and right<br>
+| Defeating both enemies triggers a Spike Ball trap that swings from right to left.
+|-
+|
+[[File:HJ_Swamp Squit.png|35x35px|link=Swamp Squit]] [[Swamp Squit]] x3, left, centre, and right
+| If [[Hornet (Silksong)|Hornet]] is on the edge of the left or right platform, the corresponding Swamp Squit will instead appear in the lower centre. If she is in the air in the upper centre, the central Swamp Squit will appear on the left (above the other enemy) or in the lower centre.
+|-
+|
+[[File:HJ_Stilkin Trapper.png|35x35px|link=Stilkin Trapper]] Stilkin Trapper, left<br/>
+[[File:HJ_Stilkin.png|35x35px|link=Stilkin]] Stilkin, right
+|Defeating both enemies triggers two consecutive Spike Ball traps: the first swings from left to right, and the second in the opposite direction.
+|-
+|
+[[File:HJ_Swamp Squit.png|35x35px|link=Swamp Squit]] Swamp Squit x2, left and right<br/>
+[[File:HJ_Stilkin Trapper.png|35x35px|link=Stilkin Trapper]] Stilkin Trapper, centre
+| If Hornet is on the left or right platform, the corresponding Swamp Squit will instead appear in the upper centre.
+|-
+|
+[[File:HJ_Groal the Great.png|35x35px|link=Groal the Great]] [[Groal the Great]], centre
+|
+|}

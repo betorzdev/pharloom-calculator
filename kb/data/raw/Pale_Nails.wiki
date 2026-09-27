@@ -1,0 +1,69 @@
+{{SS Infobox Skill
+| damage formula = 1x [[Needle]] per projectile
+| damage total = 5/9/13/17/21 <br> (per nail, 3 hits) <br> 15/27/39/51/63 (total)
+| effect = Creates 3 projectiles that home in on enemies
+| location = [[The Cradle]]
+| image = Icon_SS_Pale_Nails.png
+| description = Technique taken from the primal source of Silk. Spin talons from thread that seek out enemies.
+| description2 = Press SKILL/TOOL<hr>Spin lethal talons from thread that seek out enemies.<br>Silk Skills can be equipped in the Crest screen of the Menu.
+}}
+
+<b>Pale Nails</b> is a [[Skills|Skill]] in <i>[[Hollow Knight: Silksong]]</i>. Using it summons three [[Silk]] talons that home on nearby [[Enemies (Silksong)|enemies]]. 
+
+== Function ==
+[[Hornet (Silksong)|Hornet]] summons 3 spectral Nails that float behind her for a few seconds, before firing in straight lines, disappearing when they hit an enemy or a surface. If an enemy comes within range before the Nails fire, or was the closest enemy in range when cast, the Nails will target that enemy after a short delay and fire towards it, curving slightly as they travel towards the target. If the enemy dies before all Nails are expended, the Nails will continue in a straight line. If Pale Nails is cast again before the first set fire, they will fire in straight lines as if they had no target. Each Nail deals [[Damage Values and Enemy Health (Silksong)#Needle|1x Needle Damage]] on hit, resulting in a total of 3x Needle Damage if all Nails hit the same enemy.
+
+=== Modifiers ===
+* [[Volt Filament]] electrifies Pale Nails, increasing the damage by 25% and adding a tick of 5 damage once per enemy.
+* [[Shaman Crest]] sheathes Pale Nails in Soul, increasing the damage by 40%.
+** Volt Filament and Shaman Crest's damage increases add together to grant +65% damage.
+* [[Egg of Flealia]] reduces the cost of Pale Nails to 3 Silk while at full health.
+
+== How to Acquire ==
+Pale Nails can be obtained by binding [[Grand Mother Silk|Grand Mother Silk's]] severed arm after returning to [[the Cradle]] in [[Act 3]] by using [[Silk Soar]].
+
+{{Gallery
+| Image1 = Mapshot SS Pale Nails.png!Location in the Cradle
+| Image2 = Screenshot SS Pale Nails 01.png!Grand Mother Silk's arm before binding it
+| Image3 = Screenshot SS Pale Nails 02.png!Hornet binding the Pale Nails
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Pale Nails.png ! Splash Art
+|Image2 = Icon SS Pale Nails Art.png ! Splash Art
+}}
+{{Clear}}
+{{Localisation
+|DEname = Bleiche Nägel
+|DEmeaning = Pale Nails
+|ESname = Uñas pálidas
+|ESmeaning = Pale Nails
+|FRname = Griffes pâles
+|FRmeaning = Pale Claws
+|ITname = Artigli Pallidi
+|ITmeaning = Pale Claws
+|JAname = 蒼白の爪
+|JAromanised = Sōhaku no tsume
+|JAmeaning = Pale Nail or Pale Claw
+|KOname = 창백한 손톱
+|KOromanised = Changbaekan sontop
+|KOmeaning = Pale Fingernail
+|PTname =  Ferrões Pálidos
+|PTmeaning = Pale Stingers
+|RUname = Бледные коготки
+|RUromanised = Blednye kogotki
+|RUmeaning = Pale Claws
+|TWname = 蒼白之爪
+|TWromanised = Cāngbái zhī zhǎo
+|TWmeaning = same
+|ZHname = 苍白之爪
+|ZHromanised = Cāngbái zhī zhǎo
+|ZHmeaning = Pale Nails or Pale Claws
+|CODEname = SKILL_SILKBOSS_NEEDLE
+|CODEmeaning= <code>SILK_BOSS</code> is [[Grand Mother Silk]]'s internal name.
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Skills}}
+[[fr:Griffes pâles]]

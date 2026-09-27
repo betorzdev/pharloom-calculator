@@ -1,0 +1,113 @@
+{{Navbar|icons=true
+|page1=Frayed Rosary String
+|page2=Rosary String
+|page3=Rosary Necklace
+|page4=Heavy Rosary Necklace
+|page5=Pale Rosary Necklace}}
+
+{{SS Infobox Item
+| description = String threaded with a mix of common and fine rosaries. Can be broken and the rosaries used to trade.<hr>Contains 220 rosaries.
+| effects = Provides {{R|220}}
+| type = [[Items (Silksong)#Consumables|Consumable]]
+| source = [[Wish]] reward<br>Glowing item spots
+| max = 7
+}}
+
+{{Quote|Hr=SS
+|Here then... a lovely necklace full with rosaries. I'd been hanging onto this for a while, but you've earned it fairly.
+|[[Loddie]]}}
+
+<b>Heavy Rosary Necklaces</b> are [[Items (Silksong)#Consumables|consumable items]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+Can be used from the inventory to gain {{R|220}}.
+
+Strung Rosaries are not dropped upon death.
+
+== How to Acquire ==
+Heavy Rosary Necklaces can be found by interacting with glowing spots across [[Pharloom]], and as a reward for completing [[Wishes]].
+
+{| class="article-table" width="100%"
+! 
+! Location
+! Map
+|-
+!
+! Rewards
+!
+|-
+! 1
+| Rewarded after completing the Wish <i>[[Fine Pins]]</i>.
+| [[File:Mapshot SS Songclave Wishwall.png|center|200x200px]]
+|-
+! 2
+| Rewarded after completing the Wish <i>[[Cloaks of the Choir]]</i>.
+| [[File:Mapshot SS Songclave Wishwall.png|center|200x200px]]
+|-
+! 3
+| Rewarded after completing the Wish <i>[[The Terrible Tyrant]]</i>.
+| [[File:Mapshot SS Bone Bottom Wishwall.png|center|200x200px]]
+|-
+! 4
+| Rewarded after completing the Wish <i>[[The Wailing Mother]]</i>.
+| [[File:Mapshot SS Songclave Wishwall.png|center|200x200px]]
+|-
+! 5
+| Reward from [[Loddie]] for completing his second challenge.
+| [[File:Mapshot SS Marrow Prison.png|center|200x200px]]
+|-
+!
+! Glowing Spots
+!
+|-
+! 6
+| East of [[Songclave]], in the outdoor area accessed from [[Whispering Vaults]].
+| [[File:Mapshot SS Heavy Rosary Necklace 01.png|center|200x200px]]
+|-
+! 7
+| In [[Choral Chambers]], left of the Citadel Spa in a secret passage accessed through a breakable ceiling grate.
+| [[File:Mapshot SS Heavy Rosary Necklace 02.png|center|200x200px]]
+|}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Whispering Vaults 09.png!Outside Whipsering Vaults
+|Image2 = Screenshot SS Heavy Rosary Necklace 01.png!Choral Chambers left of Spa
+}}
+
+{{Localisation
+|DEname = Schwerer Rosenkranz
+|DEmeaning = Heavy Rosary<br><small>Individual Rosaries are <i>rosenkranzperlen</i> (rosary beads) in German.</small>
+|ESname = Collar de rosarios pesado
+|ESmeaning = Heavy Rosary Necklace
+|FRname = Lourd collier de perles
+|FRmeaning = Heavy Necklace of Pearls<br><small><i>Perles</i> (pearls) are the name of Rosaries in Italian.</small>
+|ITname = Collana di grani pesante
+|ITmeaning = Heavy Beads Necklace<br><small><i>Grani</i> (beads) are the name of Rosaries in Italian.</small>
+|JAname = 重いロザリーの首飾り
+|JAromanised = Omoi rozarī no kubikazari
+|JAkatakana = foreign
+|JAmeaning = Heavy Rosary Necklace
+|KOname = 무거운 묵주 목걸이
+|KOromanised = Mugeoun mukju mokgeori
+|KOmeaning = Heavy Rosary Necklace
+|PTname = Colar de Rosários Pesado
+|PTmeaning = Heavy Rosary Necklace 
+|RUname = Тяжёлые чётки-ожерелье
+|RUromanised = Tjažëlye čëtki-ožerel'e
+|RUmeaning = Heavy Rosary Necklace
+|TWname = 沉甸甸的念珠項鍊
+|TWromanised = Chéndiàndiàn de niànzhū xiàngliàn
+|TWmeaning = same
+|ZHname = 沉甸甸的念珠项链
+|ZHromanised = Chéndiàndiàn de niànzhū xiàngliàn
+|ZHmeaning = Heavy Rosary Necklace
+|CODEname = COIN_SET_M2
+|CODEmeaning = <code>COIN_SET_M</code> refers to [[Rosary Necklace]]s
+}}
+
+{{Refs|hr=SS}}
+
+
+{{SS Nav Items}}
+[[Category: Items (Silksong)]]

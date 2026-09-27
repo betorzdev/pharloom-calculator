@@ -167,8 +167,7 @@ Mirrors, Dead Bug's Purse → Shell Satchel in Steel Soul). Three colours:
   17 + 10 × 6 at the top, Rosary Cannon spends rosaries, Flintslate ×1.5 Needle damage for 8 s
   and a burn. Two (Snare Setter, Needle Phial) are taken away by Wishes, so 18 in a completed
   game. Quick Sling throws two at once.
-- **Blue (21)**: combat passives. With a number: Barbed Bracelet +25% Needle damage and double
-  damage taken; Longclaw +20% range; Injector Band −40% Bind time; Multibinder two Binds of 2
+- **Blue (21)**: combat passives. With a number: Longclaw +20% range; Injector Band −40% Bind time; Multibinder two Binds of 2
   masks (1.94 s in all); Volt Filament +25% Silk Skill damage plus flat 5s; Egg of Flealia:
   Skills cost 3 at full health; Druid's Eye 1 silk per 2 hits taken; Weavelight +35%
   regeneration and a fourth Silk Heart; Warding Bell no damage while binding and a 9 → 31
@@ -177,12 +176,14 @@ Mirrors, Dead Bug's Purse → Shell Satchel in Steel Soul). Three colours:
   8 + 1 → 27 + 1; Pollip Pouch venom 1 → 3 per tick; Pin Badge: Needle Strike charge 1.35 →
   0.8 s; Fractured Mask one lethal hit; Reserve Bind one free Bind per bench; Spool Extender
   +3 silk; Wreath of Purity, Magma Bell (fire 2 → 1), Snitch Pick.
-- **Yellow (12)**: exploration and economy. Weighted Belt (knockback halved, i-frames +30%),
+- **Yellow (12)**: exploration and economy, and one combat Tool with a drawback: **Barbed
+  Bracelet** +25% Needle damage and double damage taken (yellow on the Tools page and in its
+  infobox; this study had it blue until phase 1's data said otherwise). Weighted Belt (knockback halved, i-frames +30%),
   Shard Pendant +25% shards, Silkspeed Anklets (+34% sprint for 1 silk per 6 s), Spider
   Strings (Needolin +25%), Magnetite Dice (block chance +2.02% per hit taken, up to 10.1%),
   Thief's Mark (rosaries ×1.4, 30% chance to lose some on a hit), Dead Bug's Purse (half the
-  rosaries kept), Magnetite Brooch, Compass, Scuttlebrace, Ascendant's Grip, and the Steel
-  Soul Shell Satchel.
+  rosaries kept), Magnetite Brooch, Compass, Scuttlebrace, Ascendant's Grip; plus the Steel
+  Soul Shell Satchel, which replaces the Dead Bug's Purse there.
 
 The Tools that change a figure on the sheet are about twenty. The rest are **Effects** in the
 sense of the Hollow Knight site's plates (what a charm does that the numbers don't show), and
@@ -681,6 +682,23 @@ shell, the tokens with the placeholder palette, the four kinds of button, the la
 URL, the save slots, the file watcher, the save decrypt, `game-text.js` on the Silksong dump,
 the tests). The two other decisions (§5.1's copy rather than a shared package, and the first
 release's scope) were left to the plan: a copy, and Your game first.
+
+**Phase 1 is done, but for three design decisions** (the same day). `kb/data/raw/` holds the
+wiki's wikitext for 522 pages (`npm run kb`, the list in `kb/data/pages.txt`), and three
+generators read it with the game's text, offline (`npm run data`): `js/data.js` (the Needle,
+7 Crests and the Vesticrest, 57 Tool entries with ammo, refill and damage as hits per level,
+6 Silk Skills, 11 abilities, the modifiers, the items), `js/enemies.js` (the 262 rows of the
+master tables, joined to the Journal by the game's own key, and 291 attacks and 31 staggers
+from 51 boss pages) and `js/journal.js` (237 entries with the game's name, description and
+Hunter's note). `npm run text -- --audit` checks 1,154 keyed texts against the dump, all
+green. `design/02-silksong.md` measures the HUD, the slots and the 32 areas' tints
+(`npm run palette`); the HUD and the slots are in `tokens.css`, and **the surfaces, the accent
+and the section tints are proposals there (§5) waiting for a decision**. Found on the way:
+the Barbed Bracelet is yellow, not blue (§2.4); the map's tints are darker and warmer than
+Hallownest's; the game selects with white on grey, not with a hue. Left out on purpose: the
+common enemies' contact damage (the wiki has it in prose only), and the Journal's seven
+entries with no health row (Wisp, Muckmaggot, Sandcarver, Winged Lifeseed, Shadow Creeper,
+Void Tendrils, Wingmould).
 
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about

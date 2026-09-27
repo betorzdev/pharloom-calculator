@@ -1,0 +1,122 @@
+{{Navbar|page1=Great Conchflies|title1=Great Conchflies|page2=Raging Conchfly}}
+{{SS Infobox Boss
+|title1 = Great Conchfly
+|image1 = <gallery>
+B Great Conchfly.png|Hunter's Journal
+Great Conchfly Drill.png|Drilling
+Great Conchfly Corpse.png|Dead
+</gallery>
+|theme = [https://youtu.be/iqSBa35FOPI Incisive Battle]
+|health = 400 (Shared)
+| damage_modifiers = {{SS Spaced Damage Modifiers|1.3|1|0.825|0.7|0.6}}
+|drops = Access to [[Pinstress]] and [[Sands of Karak]]
+|numbers_required = 2<ref group=Note>Entry shared with [[Raging Conchfly]]</ref>
+|location = [[Blasted Steps]]
+|singnum = 2
+}}
+{{Quote
+| Hr = Journal
+|Elder Conchfly crowned with a huge coral horn. Once partnered with a mate, they will rarely be seen alone.<hr/>
+To pair with another is a base instinct, and one that brings some bugs great joy. I once sought similar union, but of my own mates none could match my lifespan.
+}}
+
+The <b>Great Conchflies</b> are a dual main [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. They are a pair of elder [[Conchfly|Conchflies]] bearing a huge coral horn.<ref name=journal1/> They block the path to the [[Pinstress]] and [[Sands of Karak]].
+
+==Background==
+The Great Conchflies are two elder Conchflies that have mated, now being incredibly close.<ref name="journal1">Great Conchflies [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Elder Conchfly crowned with a huge coral horn. Once partnered with a mate, they will rarely be seen alone."</i></ref>
+
+== In-game Events ==
+In the northwest section of the [[Blasted Steps]], Hornet encounters a room filled with pinkish conch shells. Entering this room causes the doorways to become blocked, and two Great Conchflies appear, roaring in unison. After one is defeated, the other retreats into the background, giving a final roar before fleeing.
+
+[[Nuu]] appears in their arena later on, inspecting the corpse of the defeated Great Conchfly.
+
+The surviving Great Conchfly can later be fought in the [[Sands of Karak]] as the [[Raging Conchfly]] boss.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+The encounter begins with the Great Conchflies entering the arena, one flying in from the ceiling and the other from the floor, roaring when they meet in the centre of the room. Afterwards, they continue their respective initial trajectories and burrow out of the arena. The fight then begins with the pair of bosses having the following shared move set:
+
+* <b>Drill Dash</b>: Both Great Conchflies burst out of the walls, ground, or ceiling, travel directly across the arena, and then burrow back out of the arena.
+* <b>Conch Spit</b>: A single Great Conchfly descends from a ceiling corner and either stays near the ceiling or floats to the ground before spitting a conch projectile in a diagonal direction towards [[Hornet (Silksong)|Hornet]]. The conch deals {{Damage|1}} and ricochets 3 times before breaking. After the projectile bounces twice, the Great Conchfly burrows directly downwards while the other Great Conchfly simultaneously performs a Drill Dash attack.
+* <b>Drill Slam</b>: A single Great Conchfly burrows out of a ceiling corner, flies horizontally across the room and then burrows downwards into the ground. When the first Great Conchfly is burrowing into the ground, the other Great Conchfly can either perform a simultaneous Drill Dash, or perform a single Conch Spit attack.
+
+A pillar of rumbling sand indicates where a Great Conchfly will emerge. Contact with a Great Conchfly deals {{Damage|2}}.
+
+<hr />
+
+The conch projectiles can be hit back towards the Great Conchfly to deal 15 damage to it.
+
+Hornet can avoid most attacks by positioning herself in the corner of the arena. Jumping once toward the wall and sliding down places her in a spot where Conch Spit and Drill Slam cannot reach. The only threat is when a Great Conchfly uses Drill Dash across the floor, but this can be safely avoided with a simple jump.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Together! Stronger!
+* Protect our caves...
+* This small one... trapped...
+* Pierce the stone!
+* Break the shell!
+* We found each other...
+}}
+
+==Location ==
+The Great Conchflies can be found below the Blasted Steps Bellway, west of the central tall room, the entrance marked by a blue banner displaying crossed pins.
+{{Gallery
+|Image1 = Mapshot_SS_Great_Conchflies_01.png!Location in the Blasted Steps}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Great Conchfly 01.png!Conch Spit
+|Image2 = Screenshot SS Great Conchfly 02.png!Drill Slam
+|Image3 = Screenshot SS Great Conchfly 03.png!Drill Dash
+|Image4 = Screenshot SS Great Conchfly 04.png!Singing
+|Image5 = Screenshot SS BlastedSteps 03.png!Arena in the Blasted Steps
+}}
+
+== Trivia ==
+* The Great Conchflies have a unique response to the Needolin, with both emerging from where they are currently drilled into the stone to sing together. They do not sing if only one Conchfly is currently visible.
+* According to [[Nuu]], the insides of a Great Conchfly are very sweet.
+{{Localisation
+|DEname = Große Muschelfliegen
+|DEmeaning = Great Conchflies or Great Shell Flies
+|ESname = Grandes Moscarolas
+|ESmeaning = Great Conchflies<br><small><i>Moscarola</i> is the name of [[Conchfly|Conchflies]] in Spanish, a portmanteau of <i>mosca</i> (fly) and <i>caracola</i> (conch).</small>
+|FRname = Grandes Volucornes
+|FRmeaning = Large Horn Flyers (feminine)
+|ITname = Gran Mosconchiglie
+|ITmeaning = Great Conchflies<br><small><i>Mosconchiglia</i> is the name of [[Conchfly|Conchflies]] in Italian, a portmanteau of <i>mosca</i> (fly) and <i>conchiglia</i> (conch).</small>
+|JAname = オオホラガイバエ
+|JAromanised = Ō horagai bae
+|JAkatakana = enemy
+|JAmeaning = Combination of {{lang|ja|大 <i>ō</i>}} (large), {{lang|ja|ほら貝 <i>horagai</i>}} (conch) and {{lang|ja|蝿 <i>hae</i>}} (fly).
+|KOname = 거대 고둥파리
+|KOromanised = Geodae godungpari
+|KOmeaning = Giant Conchfly or Giant Snail Fly 
+|PTname = Grandes Mosquicórnios
+|PTmeaning = Great Horn Flies
+|RUname = Большие ракушечные мухи
+|RUromanised = Bol'šie rakušečnye muxi
+|RUmeaning = Giant Seashell Flies
+|TWname = 巨型螺蠅
+|TWromanised = Jùxíng luó yíng
+|TWmeaning = same
+|ZHname = 巨型螺蝇
+|ZHromanised = Jùxíng luó yíng
+|ZHmeaning = Giant Conch Fly
+|CODEname = CORAL_CONCH_DRILLER_GIANT</code><br><code>CORAL_DRILLER_DUO</code><br><code>DRILLERS
+|CODEmeaning = [[Conchfly]] is refered to as <code>CORAL_CONCH_DRILLER</code>
+}}
+
+{{Hr|SS}}
+
+== Notes ==
+<references group="Note"/>
+{{Refs|hr=false}}
+
+[[es:Grandes Moscarolas]]
+[[pt:Grandes Mosquicórnios]]
+
+{{SS Nav Enemies}}
+[[Category:Enemies (Silksong)]]
+[[Category:Bosses (Silksong)]]
+{{#seo:|keywords=great conchfly, great conchflies, big conchflies, boss conchflies, drill heads, drill boss silksong}}

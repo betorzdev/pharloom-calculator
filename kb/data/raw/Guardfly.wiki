@@ -1,0 +1,99 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Guardfly.png|Hunter's Journal
+Guardfly Resting.png|Resting
+</gallery>
+| hasdrop = true
+| r1 = 9
+| r2 = 16
+| sh1 = 3-5
+| sh2 = 4-7
+|health = 45/{{BT|90}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1|0.85|0.85|0.85}}
+|numbers_required = 10
+|singnum=3
+}}
+{{Quote
+|Hr = Journal
+|Starved servant of the Slab, bearing a hooked longpin.<hr/>
+The smell from these jailers overwhelms my senses. I strongly doubt they have ever thought to bathe.
+}}
+
+<b>Guardflies</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are starved [[Slab_Penitents#The_Jailers|jailers]] of [[the Slab]] bearing a hooked longpin.<ref>Guardfly Hunter's Journal entry: <i>"Starved servant of the Slab, bearing a hooked longpin."</i></ref>
+
+== Behaviour and Tactics ==
+Guardflies either start off resting, or patrolling back and forth.<br/>
+Similarly to [[Tallcraw]]s, Guardflies can switch between flying and grounded at will, and have slightly different behaviours depending on which state they are in.
+Guardflies have 3 moves:
+* <b>Double Slash:</b> Rears back slightly before slashing outwards twice, moving forward with each slash. Their hooked longpin gives them considerable range and also hits behind them slightly, so jumping is often the best option. Despite being a double slash, this only deals {{Damage|1}}
+* <b>Spit:</b> Charges up for a moment before spitting out a glob of sticky saliva, which lingers on the ground for around 2 seconds, or until hit a few times. If Hornet is hit by the glob of spit or touches it, she takes knockback and is stuck in place, needing to mash an input 4–6 times to free herself. Guardflies immediately take this opportunity to attack, which knocks Hornet out of the stun. This move is mainly used at mid-range. The glob does not deal any damage by itself.
+* <b>Retreat Leap:</b> A grounded-only move – the Guardfly leaps backwards to avoid strikes. Mainly used after missing Double Slash if Hornet tries to close in.
+
+Guardflies deal {{Damage|1}} on contact.
+
+It should be noted that Guardflies naturally fight more cautiously whilst grounded due to having access to Retreat Leap, and are more aggressive and also use Spit more whilst flying.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Guardflies have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* You! You! You are the sinner!
+* I’m clean... I’m cleaner!
+* I'll be cleansed...
+* Why was I born in the filth?
+* You! The filth! It’s you!
+* By toil... by torment...
+}}
+
+== Location ==
+Guardflies can be found exclusively in the Slab.
+{{Gallery
+|Image1 = Mapshot SS Guardfly 01.png!Location in the Slab
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Guardfly 01.png!Resting
+|Image2= Screenshot SS Guardfly 02.png!Patrolling in the Slab
+|Image3= Screenshot SS Guardfly 03.png!Fighting Hornet during gauntlet
+|Image4= Screenshot SS Guardfly 04.png!Double Slash attack
+|Image5= Screenshot SS Guardfly 05.png!Spit attack
+|Image6= Screenshot SS Guardfly 06.png!Singing
+|Image7= Ari SS Sketch 06.jpg!Concept Sketches
+}}
+
+==Trivia==
+* Successfully using [[Cross Stitch]] on their projectile destroys it, but the effect of Cross Stitch is not triggered.
+
+{{Localisation
+|DEname = Wachfliege
+|DEmeaning = Guardfly
+|ESname = Moscaguardia
+|ESmeaning = Combination of <i>mosca</i> (fly) and <i>guardia</i> (guard)
+|FRname = Garde-mouche
+|FRmeaning = Guard Fly
+|ITname = Mosca Guardiana
+|ITmeaning = Guardian Fly
+|JAname= バンペイバエ
+|JAromanised= Banpei bae
+|JAkatakana = enemy 
+|JAmeaning = Combination of {{lang|ja|番兵 <i>banpei</i>}} (guard) and {{lang|ja|蝿 <i>hae</i>}} (fly).
+|KOname = 경비파리
+|KOromanised = Gyeongbipari
+|KOmeaning = Guardfly
+|PTname = Moscalante
+|PTmeaning = Portmanteau of <i>mosca</i> (fly) and either <i>alante</i> (winged) or <i>trescalante</i> (that which emits a strong smell).
+|RUname = Сторожевая муха
+|RUromanised = Storoževaja muxa
+|RUmeaning = Guard Fly
+|ZHname = 看守蝇
+|ZHromanised = Kānshǒu yíng
+|ZHmeaning = Guard Fly
+|CODEname = SLAB_FLY_MID
+|CODEmeaning = 	Other Slab Jailers use the Slab Fly name internally
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

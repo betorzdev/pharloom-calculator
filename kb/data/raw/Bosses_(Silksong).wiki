@@ -1,0 +1,155 @@
+{{Nav Games Header}}
+
+<b>Bosses</b> are unique [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They typically have higher health and deal more damage than the standard creatures in the same area. [[Hornet (Silksong)|Hornet]] may have to defeat a boss to access a new [[Areas (Silksong)|area]], acquire an [[Items (Silksong)|item]], complete a [[Quests_(Silksong)|Quest]], or simply further the main story of the game.
+
+When Hornet encounters a boss, their name appears on-screen, and the music typically changes into a battle theme.
+
+Not including bosses with repeated fights, there are 43 bosses in <i>Hollow Knight: Silksong</i>; counting repeated fights, there are 47 bosses.
+
+== Act 1 ==
+{{ImageGrid
+| gap       = 20px 70px
+| Image1    = Bell Beast Icon.png
+| Link1     = Bell Beast
+| Image2    = Fourth Chorus Icon.png
+| Link2     = Fourth Chorus
+| Image3    = Great Conchflies Icon.png
+| Link3     = Great Conchflies
+| Image4    = Lace Icon.png
+| Caption4  = [[Lace]]<br><small>([[Deep Docks]])</small>
+| Link4     = Lace
+| Image5    = Last Judge Icon.png
+| Link5     = Last Judge
+| Image6    = Moorwing Icon.png
+| Link6     = Moorwing
+| Image7    = Moss Mother Icon.png
+| Caption7  = [[Moss Mother]]<br><small>([[Ruined Chapel]])</small>
+| Link7     = Moss Mother
+| Image8    = Moss Mothers Icon.png
+| Caption8  = [[Moss Mother#Weavenest Atla|Moss Mother]]<br><small>([[Weavenest Atla]])</small>
+| Link8     = Moss Mother#Weavenest Atla
+| Image9    = Phantom Icon.png
+| Link9     = Phantom
+| Image10   = Savage Beastfly Icon.png
+| Caption10 = [[Savage Beastfly]]<br><small>([[Chapel of the Beast]])</small>
+| Link10    = Savage Beastfly
+| Image11   = Sister Splinter Icon.png
+| Link11    = Sister Splinter
+| Image12   = Skull Tyrant Icon.png
+| Caption12 = [[Skull Tyrant]]<br><small>([[The Marrow]] & [[Bone Bottom]])</small>
+| Link12    = Skull Tyrant
+| Image13   = Widow Icon.png
+| Link13    = Widow
+}}
+{{Hr|SS}}
+
+== Act 2 ==
+These bosses either require entering [[the Citadel]], or require Act 2's abilities, [[Clawline]] or [[Faydown Cloak]], to reach.
+
+{{ImageGrid
+| gap       = 20px 70px
+| Image1    = Broodmother Icon.png
+| Link1     = Broodmother
+| Image2    = Cogwork Dancers Icon.png
+| Link2     = Cogwork Dancers
+| Image3    = Disgraced Chef Lugoli Icon.png
+| Link3     = Disgraced Chef Lugoli
+| Image4    = Father of the Flame Icon.png
+| Link4     = Father of the Flame
+| Image5    = First Sinner Icon.png
+| Link5     = First Sinner
+| Image6    = Forebrothers Signis and Gron Icon.png
+| Link6     = Forebrothers Signis & Gron
+| Image7    = Garmond and Zaza Icon.png
+| Link7     = Garmond and Zaza
+| Image8    = Grand Mother Silk Icon.png
+| Link8     = Grand Mother Silk
+| Image9    = Groal the Great Icon.png
+| Link9     = Groal the Great
+| Image10   = Lace 2 Icon.png
+| Caption10 = [[Lace]]<br><small>([[The Cradle]])</small>
+| Link10    = Lace
+| Image11   = Raging Conchfly Icon.png
+| Link11    = Raging Conchfly
+| Image12   = Savage Beastfly 2 Icon.png
+| Caption12 = [[Savage Beastfly]]<br><small>([[Far Fields]])</small>
+| Link12    = Savage Beastfly
+| Image13   = Second Sentinel Icon.png
+| Link13    = Second Sentinel
+| Image14   = Shakra Icon.png
+| Link14    = Shakra
+| Image15   = Summoned Saviour Icon.png
+| Caption15 = {{Steel Soul Icon Mini|SS}} [[Summoned Saviour]]
+| Link15    = Summoned Saviour
+| Image16   = The Unravelled Icon.png
+| Link16    = The Unravelled
+| Image17   = Trobbio Icon.png
+| Link17    = Trobbio
+| Image18   = Voltvyrm Icon.png
+| Link18    = Voltvyrm
+}}
+{{Hr|SS}}
+
+== Act 3 ==
+Certain bosses not defeated during previous acts may be [[Black-Threading|black-threaded]]. [[Shakra]] and [[Garmond & Zaza]] will no longer be able to be fought.
+
+{{ImageGrid
+| gap       = 20px 70px
+| Image1    = Bell Eater Icon.png
+| Link1     = Bell Eater
+| Image2    = Clover Dancers Icon.png
+| Link2     = Clover Dancers
+| Image3    = Crawfather Icon.png
+| Link3     = Crawfather
+| Image4    = Crust King Khann Icon.png
+| Link4     = Crust King Khann
+| Image5    = Gurr the Outcast Icon.png
+| Link5     = Gurr the Outcast
+| Image6    = Lost Garmond Icon.png
+| Link6     = Lost Garmond
+| Image7    = Lost Lace Icon.png
+| Link7     = Lost Lace
+| Image8    = Nyleth Icon.png
+| Link8     = Nyleth
+| Image9    = Palestag Icon.png
+| Link9     = Palestag
+| Image10   = Pinstress Icon.png
+| Link10    = Pinstress
+| Image11   = Plasmified Zango Icon.png
+| Link11    = Plasmified Zango
+| Image12   = Shrine Guardian Seth Icon.png
+| Link12    = Shrine Guardian Seth
+| Image13   = Skarrsinger Karmelita Icon.png
+| Link13    = Skarrsinger Karmelita
+| Image14   = Tormented Trobbio Icon.png
+| Link14    = Tormented Trobbio
+| Image15   = Watcher at the Edge Icon.png
+| Link15    = Watcher at the Edge
+}}
+{{Hr|SS}}
+
+== Trivia ==
+* [[Plasmified Zango]] is the only boss that does not use a battle theme.
+* The bosses which can be [[Black-Threading|black-threaded]] in [[Act 3]] are: 
+**The double [[Moss Mother]] fight in [[Weavenest Atla]].
+***A single black-threaded Moss Mother is in the [[Moss Grotto]] during Act 3. Unlike other Moss Mother encounters, this one lacks a title card and boss music.
+**[[Moorwing]] if it was skipped initially
+**Both versions of [[Savage Beastfly]]
+**The [[Skull Tyrant]] in [[the Marrow]]
+**[[Disgraced Chef Lugoli]]
+**The enemies that [[Forebrothers Signis & Gron]] summon become black-threaded in Act 3, though Signis & Gron themselves do not.
+* A reward for the third-to-last tier in the Kickstarter campaign allowed backers to create their own bosses. It is mentioned in the Kickstarter campaign that three people pledged to this tier. Two of the backer-created bosses are [[God Tamer]] in <i>Hollow Knight</i> and [[Skarrsinger Karmelita]] in <i>Silksong</i>. The third was [[Cut Content (Silksong)/Enemies#Steel Assassin Sharpe|Steel Assassin Sharpe]], who was also supposed to debut in <i>Silksong</i> but has since been delayed and will return later on.<ref name="bloomberg" />
+** Three bosses from the "create your own dungeon" reward tier were also achieved, with one being [[Crust King Khann]] released in <i>Silksong</i>, with his dungeon being the [[Coral Tower]]. The other two dungeon bosses have not had any further direct mention, but will eventually be added, as Team Cherry have promised to "deliver on all of [their] obligations".<ref name="bloomberg">[https://www.bloomberg.com/news/newsletters/2025-11-28/the-makers-of-hollow-knight-silksong-aren-t-done-just-yet The Makers of 'Silksong' Aren't Done Just Yet]</ref> 
+* Playtester [[Matt Trobbiani]] has stated that bosses were "much harder" during his 2025 pre-release playthrough, though some like Trobbio were "pretty much the same."<ref>[https://www.youtube.com/watch?v=3p5A7mQDlLg Interview with Matt Trobbiani]</ref>
+{{History
+|game = SS
+|1.0.28650 (Patch 2): Fixed various instances of dying to bosses while killing them causing death sequences to play messily or out of sync.
+}}
+{{Refs|hr=ss}}
+[[Category:Bosses (Silksong)| ]]
+
+[[fr:Boss (Silksong)]]
+[[it:Boss (Silksong)]]
+[[pl:Kategoria:Bossowie z Pharloom]]
+[[pt:Categoria:Chefes (Silksong)]]
+{{DISPLAYTITLE:Bosses (''Silksong'')}}

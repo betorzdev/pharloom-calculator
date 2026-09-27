@@ -1,0 +1,68 @@
+{{For|the [[Delivery Wishes|Delivery Wish]]|Liquid Lacquer (Wish)}}
+
+{{SS Infobox Item
+| type = [[Items (Silksong)#Deliverables|Deliverable]]
+| image = <gallery>
+Liquid Lacquer.png|Intact
+Liquid Lacquer Broken.png|Broken
+</gallery>
+| source = [[Tipp & Pill]]
+| description = Pale glaze used in the preparation and protection of bone masks.
+}}
+
+{{Quote
+| A delivery deadly, dangerous, fiercably cold, for old bug up there that does need it much-much! Serves us all he does, so we serve back.
+| Courier Tipp
+| Hr = SS
+}}
+
+<b>Liquid Lacquer</b> is a [[Items (Silksong)#Deliverables|deliverable item]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+Liquid Lacquer is a fragile item given by [[Couriers Tipp & Pill]] that needs to be transported for the [[Delivery Wishes|Delivery Wish]] <i>[[Liquid Lacquer (Wish)|Liquid Lacquer]]</i>. It has three hit points, which decrease when [[Hornet (Silksong)|Hornet]] takes damage, makes a heavy landing, collides into a wall while using [[Swift Step]], or collides into a ceiling while using [[Silk Soar]]. It breaks instantly when using [[Fast Travel (Silksong)|Fast Travel]]  including [[Bellway]]s, the [[Beastling Call]], [[Ventrica]]s or travelling with the [[Flea Caravan]]. It is to be delivered to [[Mask Maker (Silksong)|Mask Maker]] in [[Mount Fay]]. After that is done, it is added to the [[Materium]].
+
+{{Gallery
+|Image1 = Mapshot SS Mask Maker 01.png!Mask Maker's location in Mount Fay
+|Image2 = Screenshot SS Mount Fay 11.png!Mask Maker in Mount Fay
+}}
+
+== How to Acquire ==
+After completing the Delivery Wish <i>[[Queen's Egg (Wish)|Queen's Egg]]</i> or by being in {{Steel Soul Icon Mini|SS}} [[Steel Soul Mode (Silksong)|Steel Soul Mode]], in addition to having obtained the [[Faydown Cloak]], having talked to the Mask Maker, and having played the [[Threefold Melody]], Liquid Lacquer becomes available as part of one of the Delivery Wishes of Couriers Tipp and Pill. If the currently held one is destroyed, Hornet can return to Tipp and Pill to obtain another and try again.
+
+{{Gallery
+|Image1 = Mapshot SS Tipp & Pill 01.png!Couriers Tipp & Pill's location in Bellhart
+|Image2 = Screenshot SS Tipp & Pill 04.png!Couriers Tipp & Pill in Bellhart
+}}
+
+{{Localisation
+|DEname = Flüssiglack
+|DEmeaning = Liquid Lacquer
+|ESname = Laca líquida
+|ESmeaning = Liquid Lacquer
+|FRname = Laque de protection liquide
+|FRmeaning = Lacquer of Liquid Protection
+|ITname = Lacca liquida
+|ITmeaning = Liquid Lacquer
+|JAname = 液状塗料
+|JAromanised = Ekijō toryō
+|JAmeaning = Liquid-form Paint
+|KOname = 칠용 액체
+|KOromanised = Chillyong aekche
+|KOmeaning = Liquid for Painting 
+|PTname = Laca Líquida
+|PTmeaning = Liquid Lacquer
+|RUname = Жидкий лак
+|RUromanised = Židkij lak
+|RUmeaning = Liquid Varnish
+|TWname = 漆罐
+|TWromanised = Qī guàn
+|TWmeaning = Lacquer Can
+|ZHname = 液状漆
+|ZHromanised = Yèzhuàng qī
+|ZHmeaning = Liquid Lacquer
+|CODEname = COURIER_SUPPLIES_MASK
+|CODEmeaning = <code>MASK</code> refers to the [[Mask Maker (Silksong)|Mask Maker]]
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}

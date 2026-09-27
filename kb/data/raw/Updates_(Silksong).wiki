@@ -1,0 +1,519 @@
+{{Nav Games Header}}
+
+<i>[[Hollow Knight: Silksong]]</i> is still in active development post-release. Updates are released first to PC players through a [https://steamcommunity.com/sharedfiles/filedetails/?id=182912431 beta branch], and eventually roll out to all players a few days later.
+
+Each update has a version number with 3 subgroups:
+
+:<code>MAJOR.MINOR.BUILD</code>
+
+The <code>MAJOR</code> and <code>MINOR</code> numbers are for major/minor feature additions, respectively. The <code>BUILD</code> number is for non-content-adding changes, like bugfixes and difficulty balancing.
+
+{{Tocright}}
+{{Hr|SS|noclear=true}}
+
+== [https://steamcommunity.com/app/1030300 1.0.30000] (Patch 5) ==
+<b>March 24th, 2026</b><ref>Release date: [https://steamdb.info/app/1030300/history/ March 24th, 2026]<br>Patch notes: {{MissingInfo}}</ref>
+{{Disclaimer|In addition to the same Patch Notes as [[#1.0.29909 (Patch 5)|Patch 5]]}}
+*Added a bench beside Pale Lake, before the Flea Caravan’s arrival.
+== 1.0.30000 (beta) ==
+<b>March 24th, 2026</b><ref>Release date: [https://steamdb.info/app/1030300/history/ March 24th, 2026]<br>Version number: [https://www.gogdb.org/product/1558393671#builds GOGdb]</ref>
+{{Disclaimer|No patch notes were published.}}
+== 1.0.29980 (Patch 5) ==
+<b>March 20th, 2026</b><ref>Release date: [https://steamdb.info/app/1030300/history/ March 20th, 2026]<br>Version number: [https://www.gogdb.org/product/1558393671#builds GOGdb]</ref>
+{{Disclaimer|No patch notes were published.}}
+
+== 1.0.29980 (beta) ==
+<b>March 20th, 2026</b><ref>Release date: [https://steamdb.info/app/1030300/history/ March 20th, 2026]<br>Version number: [https://www.gogdb.org/product/1558393671#builds GOGdb]</ref>
+{{Disclaimer|No patch notes were published.}}
+
+== 1.0.29972 (beta) ==
+<b>March 19th, 2026</b><ref>Release date: [https://steamdb.info/app/1030300/history/ March 19th, 2026]<br>Version number: [https://www.gogdb.org/product/1558393671#builds GOGdb]</ref>
+{{Disclaimer|No patch notes were published.}}
+
+== 1.0.29926 (Patch 5) ==
+<b>March 17th, 2026</b><ref>Release date: [https://steamdb.info/app/1030300/history/ March 17th, 2026]<br>Version number: [https://www.gogdb.org/product/1558393671#builds GOGdb]</ref>
+{{Disclaimer|No patch notes were published.}}
+
+== 1.0.29926 (beta) ==
+<b>March 17th, 2026</b><ref>Release date: [https://steamdb.info/app/1030300/history/ March 17th, 2026]<br>Version number: [https://www.gogdb.org/product/1558393671#builds GOGdb]</ref>
+{{Disclaimer|No patch notes were published.}}
+
+== [https://www.teamcherry.com.au/blog/silksong-patch-5 1.0.29909] (Patch 5)==
+<b>March 16th, 2026</b><ref>Release date: [https://www.gogdb.org/product/1558393671#builds March 16th, 2026]<br>
+Patch notes: {{MissingInfo}}</ref>
+{{Disclaimer|Same list of changes as [[#1.0.29909 (beta)|previous beta]].}}
+
+== [https://steamcommunity.com/app/1030300/discussions/0/780947731575232634/ 1.0.29909] (beta) ==
+<b>March 13th, 2026</b><ref>Beta date: [https://www.gogdb.org/product/1558393671#builds March 13th, 2026]<br>
+Patch notes: {{MissingInfo}}</ref>
+
+{{Disclaimer|Same list of changes as [[#1.0.29884 (beta)|previous beta]].}}
+== 1.0.29884 (beta) ==
+<b>March 6th, 2026</b><ref>Beta date: [https://www.gogdb.org/product/1558393671#builds March 6th, 2026]<br>
+Patch notes: {{MissingInfo}}</ref>
+* Savage Beastfly's summoned minions now die when the boss is killed.
+{{CollapseTable | collapsed = true | expand-text = Show All Changes Since Patch 4 | collapse-text = Hide All Changes Since Patch 4 |
+* Added new Traditional Chinese localisation.
+* Refined German translation to improve clarity and consistency with English version.
+* Allowed [[Silk Soar]] through top scene exits.
+* Fixed various instances of specific enemies being able to get stuck out of bounds.
+* Fixed various instances of [[Hornet (Silksong)|Hornet]] being able to be pulled out of bounds by enemies.
+* Fixed [[Last Judge]]'s death explosion doing 3 damage (now 2), and not being reduced by [[Magma Bell]].
+* [[Magma Bell]] now protects against all fire-type explosions.
+* Fixed another instance of [[Shrine Guardian Seth]] being able to push Hornet through a wall.
+* Fixed an instance of [[Lace#The Cradle|Lace (Cradle)]] getting out of bounds. Also various small fixes to prevent some rare, odd behaviours during the fight.
+* Fixed certain [[tools]] unintentionally being [[Needle|down-bounceable]] in specific instances.
+* Fixed [[Border Caves]] bounce-pods giving [[Silk]] & Health for certain [[Crests]].
+* Fixed [[Snitch Pick]] not doing its 3rd hit of damage when in a memory.
+* Fixed issues with [[Wood Wasp]]s' colliders sometimes lingering longer than intended or not reactivating on respawn.
+* Fixed Choruses in [[Underworks]] not playing their full [[Needolin]] text.
+* Fixed an instance of [[Thread Raker]]s being able to get stuck out of bounds.
+* Far Fields [[Savage Beastfly]] is now stunned when hit by the hanging bomb rock.
+* Fixed an instance of [[tool]] quantity not updating correctly when unequipping [[Shell Satchel]].
+* Fixed a rare instance of [[Lavalug]]s getting frozen in place.
+* Fixed fast travel unintentionally clearing [[Hunter Crest|Hunter]] focus.
+}}
+
+== 1.0.29811 (beta) ==
+<b>February 25th, 2026</b><ref>Beta date: [https://www.gogdb.org/product/1558393671#builds February 25th, 2026]<br>
+Patch notes: {{MissingInfo}}</ref>
+* [[Magma Bell]] now protects against all fire-type explosions.
+* Fixed an instance of [[tool]] quantity not updating correctly when unequipping [[Shell Satchel]].
+* Fixed a rare instance of [[Lavalug]]s getting frozen in place.
+* Fixed fast travel unintentionally clearing [[Hunter Crest|Hunter]] focus.
+
+{{CollapseTable | collapsed = true | expand-text = Show All Changes Since Patch 4 | collapse-text = Hide All Changes Since Patch 4 |
+* Added new Traditional Chinese localisation.
+* Refined German translation to improve clarity and consistency with English version.
+* Allowed [[Silk Soar]] through top scene exits.
+* Fixed various instances of specific enemies being able to get stuck out of bounds.
+* Fixed various instances of [[Hornet (Silksong)|Hornet]] being able to be pulled out of bounds by enemies.
+* Fixed [[Last Judge]]'s death explosion doing 3 damage (now 2), and not being reduced by [[Magma Bell]].
+* Fixed another instance of [[Shrine Guardian Seth]] being able to push Hornet through a wall.
+* Fixed an instance of [[Lace#The Cradle|Lace (Cradle)]] getting out of bounds. Also various small fixes to prevent some rare, odd behaviours during the fight.
+* Fixed certain [[tools]] unintentionally being [[Needle|down-bounceable]] in specific instances.
+* Fixed [[Border Caves]] bounce-pods giving [[Silk]] & Health for certain [[Crests]].
+* Fixed [[Snitch Pick]] not doing its 3rd hit of damage when in a memory.
+* Fixed issues with [[Wood Wasp]]s' colliders sometimes lingering longer than intended or not reactivating on respawn.
+* Fixed Choruses in [[Underworks]] not playing their full [[Needolin]] text.
+* Fixed an instance of [[Thread Raker]]s being able to get stuck out of bounds.
+* Far Fields [[Savage Beastfly]] is now stunned when hit by the hanging bomb rock.
+}}
+
+== 1.0.29740 (beta) ==
+<b>February 17th, 2026</b><ref>Beta date: [https://www.gogdb.org/product/1558393671#builds February 17th, 2026]<br>
+Patch notes: [[:File:Updates (Silksong) Reference 1.0.29740.png|(Archive)]]</ref>
+
+* Added new Traditional Chinese localisation.
+* Refined German translation to improve clarity and consistency with English version.
+* Allowed [[Silk Soar]] through top scene exits.
+* Fixed various instances of specific enemies being able to get stuck out of bounds.
+* Fixed various instances of [[Hornet (Silksong)|Hornet]] being able to be pulled out of bounds by enemies.
+* Fixed [[Last Judge]]'s death explosion doing 3 damage (now 2), and not being reduced by [[Magma Bell]].
+* Fixed another instance of [[Shrine Guardian Seth]] being able to push Hornet through a wall.
+* Fixed an instance of [[Lace#The Cradle|Lace (Cradle)]] getting out of bounds. Also various small fixes to prevent some rare, odd behaviours during the fight.
+* Fixed certain [[tools]] unintentionally being [[Needle|down-bounceable]] in specific instances.
+* Fixed [[Border Caves]] bounce-pods giving [[Silk]] & Health for certain [[Crests]].
+* Fixed [[Snitch Pick]] not doing its 3rd hit of damage when in a memory.
+* Fixed issues with [[Wood Wasp]]s' colliders sometimes lingering longer than intended or not reactivating on respawn.
+* Fixed Choruses in [[Underworks]] not playing their full [[Needolin]] text.
+* Fixed an instance of [[Thread Raker]]s being able to get stuck out of bounds.
+* Far Fields [[Savage Beastfly]] is now stunned when hit by the hanging bomb rock.
+* Various minor fixes and tweaks.
+
+== 1.0.29354 (console only) ==
+<b>November 19th, 2025</b><ref>Switch: [https://www.reddit.com/r/HollowKnight/comments/1p89lqd/how_to_activate_film_grain_setting/ Activate film grain setting] on Reddit<br>
+Switch 2: [https://www.reddit.com/r/HollowKnight/comments/1p0eh19/comment/nqsj0de/ Patch 4 on consoles?] on Reddit<br>
+PS5: [https://www.prosperopatches.com/PPSA12544 Patch 01.000.009]<br>
+PS4: [https://www.orbispatches.com/CUSA39420 Patch 01.09]</ref>
+* Fix critical progression-blocking crash issue.
+
+== 1.0.29315 ==
+<b>November 12th, 2025</b><ref>Beta date: [https://www.gogdb.org/product/1558393671#builds November 12th, 2025]<br>
+Release date: [https://steamdb.info/patchnotes/20764176/ November 12th, 2025]</ref>
+{{Disclaimer|No patch notes were published.}}
+
+== 1.0.29296 (beta) ==
+<b>November 11th, 2025</b><ref>Beta date: [https://www.gogdb.org/product/1558393671#builds November 11th, 2025]</ref>
+{{Disclaimer|No patch notes were published.}}
+
+== [https://steamcommunity.com/app/1030300/discussions/0/670600486987142014/ 1.0.29280] (Patch 4) ==
+<b>November 10th, 2025</b><ref>Beta date: [https://www.gogdb.org/product/1558393671#builds November 10th, 2025]<br>
+Release date: [https://steamdb.info/app/1030300/patchnotes/ November 12th, 2025]<br>
+Patch notes: [[:File:Updates (Silksong) Reference 1.0.29280.png|(Archive)]]</ref>
+{{Disclaimer|Announced as "part of Patch 4" due to also appearing in console updates.}}
+
+* Added Advanced Settings to Controller menu. Specific options per OS.
+* Fixed [[Gloomsac]]s not damaging the player on impact, when on one mask.
+* Fixed [[Lace#The Cradle|Lace (Cradle)]] slash attack sometimes not causing damage after being stunned.
+* Fixed [[Beast Crest|Beast]]'s [[Needle Strike]] sometimes gaining unintended height when performed in the air.<ref>[https://www.youtube.com/watch?v=-rJDMR7gzFw Beast crest momentum storage] on YouTube</ref><ref>[https://www.youtube.com/watch?v=hcTN8kh8RcU Using momentum storage to get into Memorium early] on YouTube</ref>
+* Fixed additional instance of [[Second Sentinel]] being able to push [[Hornet (Silksong)|Hornet]] out of bounds in rare instances.
+
+=== Undocumented Changes ===
+* The cinematic of [[Pinmaster Plinney]] sharpening Hornet's needle is now skippable.<ref name=cutsceneskip>[[:File:Updates (Silksong) Reference 1.0.29220.png|Screenshot of messages discussing change]] on Discord</ref>
+
+== [https://www.teamcherry.com.au/blog/silksong-patch-4 1.0.29242] (Patch 4) ==
+<b>November 7th, 2025</b><ref>Release date: [https://www.gogdb.org/product/1558393671#builds November 7th, 2025]<br>
+Patch notes: [[:File:Updates (Silksong) Reference 1.0.29242.png|(Archive)]]</ref>
+
+* Added film grain effect to advanced options. Defaults to 'off'
+
+{{CollapseTable | collapsed = true | expand-text = Show All Changes Since Patch 3 | collapse-text = Hide All Changes Since Patch 3 |
+* Updated Simplified Chinese translation to use fan translation<ref>[https://www.bilibili.com/video/BV19epDzrEut/ Silksong Chinese Patch V1.2] on BiliBili</ref> provided by Team Cart Fix.<ref group="Note" name="teamcartfix"/>
+* Switched to Unity's Input System to improve overall controller support. This includes rumble features now working for various controllers, and additional controllers being recognised. Some issues may remain. For a full list of supported controllers and features, please visit: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.14/manual/SupportedDevices.html
+* Added additional dithering levels. Now defaults to 'low'.
+* Various localisation fixes implemented across all languages.
+* Fixed [[Styx]] not giving [[rosaries]] when delivering the [[Queen's Egg]].
+* Fixed [[Druid's Eyes]] sometimes not equipping correctly when first acquired.
+* Fixed some down attack colliders getting stuck on in rare instances.<ref name="pogostorage"/>
+* Fixed several instances of Hornet's [[Plasmification|plasmified state]] clearing when not intended (eg [[Bellway]] travel).
+* Fixed issues entering the plasmified state when killing a [[Winged Lifeseed]], rather than using the [[Plasmium Phial]].
+* Reduced unintentionally long [[bind]] time when using [[Multibinder]] with the [[Shaman Crest|Shaman crest]].
+* Updated Multibinder's initial bind to clear [[Muckmaggot|maggots]], per community comments.
+* [[Wreath of Purity]] durability increased.
+* Fixed [[void]] incorrectly conducting electricity.<ref group="Note" name="voidwater"/>
+* [[Gurr the Outcast]] trap-throw attack updated from single lob to spin-style, to reduce time spent static. Other slight refinements.<ref>[https://www.youtube.com/watch?v=jUR7gltWHDw Before] and [https://www.youtube.com/watch?v=cOap3QLxvKQ after] on YouTube</ref>
+* Fixed [[Beast Crest]] fury slashes not piercing as intended.
+* Fixed [[Rune Rage]] damage scaling incorrectly.
+* Fixed [[Thread Storm]] damage tapering (additional hits don't taper down as sharply).
+* Fixed rare instances of regaining control when grabbed by a [[Wraith]].
+* Fixed [[Couriers Tipp & Pill|couriers]] incorrectly offering the same delivery immediately after completing it.
+* Fixed additional instances of [[Hornet (Silksong)|Hornet]] being able to push some enemy types through the floor.
+* Fixed issues when using [[Clawline|Harpoon]] to stun or kill certain bosses.
+* Fixed [[Fractured Mask]] not protecting against [[Voltnest|volt hazards]].
+* Various smaller tweaks and fixes.
+}}
+
+== [https://steamcommunity.com/app/1030300/discussions/0/603045243319975841/ 1.0.29235] (beta) ==
+<b>November 6th, 2025</b><ref>Beta date: [https://www.gogdb.org/product/1558393671#builds November 6th, 2025]<br>
+Patch notes: [[:File:Updates (Silksong) Reference 1.0.29235.png|(Archive)]]</ref>
+
+* Added additional dithering levels. Now defaults to 'low'.
+
+{{CollapseTable | collapsed = true | expand-text = Show All Changes Since Patch 3 | collapse-text = Hide All Changes Since Patch 3 |
+* Updated Simplified Chinese translation to use fan translation<ref name="bilibili"/> provided by Team Cart Fix.<ref group="Note" name="teamcartfix"/>
+* Switched to Unity's Input System to improve overall controller support. This includes rumble features now working for various controllers, and additional controllers being recognised. Some issues may remain. For a full list of supported controllers and features, please visit: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.14/manual/SupportedDevices.html
+* Various localisation fixes implemented across all languages.
+* Fixed [[Styx]] not giving [[rosaries]] when delivering the [[Queen's Egg]].
+* Fixed [[Druid's Eyes]] sometimes not equipping correctly when first acquired.
+* Fixed some down attack colliders getting stuck on in rare instances.<ref name="pogostorage"/>
+* Fixed several instances of Hornet's [[Plasmification|plasmified state]] clearing when not intended (eg [[Bellway]] travel).
+* Fixed issues entering the plasmified state when killing a [[Winged Lifeseed]], rather than using the [[Plasmium Phial]].
+* Reduced unintentionally long [[bind]] time when using [[Multibinder]] with the [[Shaman Crest|Shaman crest]].
+* Updated Multibinder's initial bind to clear [[Muckmaggot|maggots]], per community comments.
+* [[Wreath of Purity]] durability increased.
+* Fixed [[void]] incorrectly conducting electricity.<ref group="Note" name="voidwater"/>
+* [[Gurr the Outcast]] trap-throw attack updated from single lob to spin-style, to reduce time spent static. Other slight refinements.<ref>[https://www.youtube.com/watch?v=jUR7gltWHDw Before] and [https://www.youtube.com/watch?v=cOap3QLxvKQ after] on YouTube</ref>
+* Fixed [[Beast Crest]] fury slashes not piercing as intended.
+* Fixed [[Rune Rage]] damage scaling incorrectly.
+* Fixed [[Thread Storm]] damage tapering (additional hits don't taper down as sharply).
+* Fixed rare instances of regaining control when grabbed by a [[Wraith]].
+* Fixed [[Couriers Tipp & Pill|couriers]] incorrectly offering the same delivery immediately after completing it.
+* Fixed additional instances of [[Hornet (Silksong)|Hornet]] being able to push some enemy types through the floor.
+* Fixed issues when using [[Clawline|Harpoon]] to stun or kill certain bosses.
+* Fixed [[Fractured Mask]] not protecting against [[Voltnest|volt hazards]].
+* Various smaller tweaks and fixes.
+}}
+
+== 1.0.29220 (beta) ==
+<b>November 5th, 2025</b><ref>Beta date: [https://www.gogdb.org/product/1558393671#builds November 5th, 2025]</ref>
+{{Disclaimer|No patch notes were published.}}
+=== Undocumented Changes ===
+* The cinematic of [[Pinmaster Plinney]] sharpening Hornet's needle is now skippable.<ref name=cutsceneskip/>
+
+== 1.0.29139 (beta) ==
+<b>October 28th, 2025</b><ref>Beta date: [https://www.gogdb.org/product/1558393671#builds October 28th, 2025]<br>
+Patch notes: [[:File:Updates (Silksong) Reference 1.0.29139.png|(Archive)]]</ref>
+
+{{Disclaimer|Same list of changes as [[#1.0.29120 (beta)|previous beta]].}}
+
+== 1.0.29120 (beta) ==
+<b>October 28th, 2025</b><ref>Beta date: [https://www.gogdb.org/product/1558393671#builds October 28th, 2025]<br>
+Patch notes: [[:File:Updates (Silksong) Reference 1.0.29120.png|(Archive)]]</ref>
+
+* Updated Simplified Chinese translation to use fan translation<ref name="bilibili">[https://www.bilibili.com/video/BV19epDzrEut/ Silksong Chinese Patch V1.2] on BiliBili</ref> provided by Team Cart Fix.<ref group="Note" name="teamcartfix">修车组, also translatable as Car Repair Team.</ref>
+* [[Wreath of Purity]] durability increased.
+* Fixed [[void]] incorrectly conducting electricity.<ref group="Note" name="voidwater">Void in [[The Abyss (Silksong)|The Abyss]] no longers reacts like water to [[Voltvessels]] and [[Volt Filament]].</ref>
+* [[Gurr the Outcast]] trap-throw attack updated from single lob to spin-style, to reduce time spent static. Other slight refinements.<ref>[https://www.youtube.com/watch?v=jUR7gltWHDw Before] and [https://www.youtube.com/watch?v=cOap3QLxvKQ after] on YouTube</ref>
+* Fixed [[Beast Crest]] fury slashes not piercing as intended.<ref group="Note">Post was edited an hour later with this change.</ref>
+* Fixed [[Rune Rage]] damage scaling incorrectly.
+* Fixed [[Thread Storm]] damage tapering (additional hits don't taper down as sharply).
+* Fixed rare instances of regaining control when grabbed by a [[Wraith]].
+* Fixed [[Couriers Tipp & Pill|couriers]] incorrectly offering the same delivery immediately after completing it.
+* Fixed additional instances of [[Hornet (Silksong)|Hornet]] being able to push some enemy types through the floor.
+* Fixed issues when using [[Clawline|Harpoon]] to stun or kill certain bosses.
+* Fixed [[Fractured Mask]] not protecting against [[Voltnest|volt hazards]].
+
+{{CollapseTable | collapsed = true | expand-text = Show All Changes Since Patch 3 | collapse-text = Hide All Changes Since Patch 3 |
+* Switched to Unity's Input System to improve overall controller support. This includes rumble features now working for various controllers, and additional controllers being recognised. Some issues may remain. For a full list of supported controllers and features, please visit: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.14/manual/SupportedDevices.html
+* Various localisation fixes implemented across all languages.
+* Fixed [[Styx]] not giving [[rosaries]] when delivering the [[Queen's Egg]].
+* Fixed [[Druid's Eyes]] sometimes not equipping correctly when first acquired.
+* Fixed some down attack colliders getting stuck on in rare instances.<ref name="pogostorage"/>
+* Fixed several instances of Hornet's [[Plasmification|plasmified state]] clearing when not intended (eg [[Bellway]] travel).
+* Fixed issues entering the plasmified state when killing a [[Winged Lifeseed]], rather than using the [[Plasmium Phial]].
+* Reduced unintentionally long [[bind]] time when using [[Multibinder]] with the [[Shaman Crest|Shaman crest]].
+* Updated Multibinder's initial bind to clear [[Muckmaggot|maggots]], per community comments.
+* Various smaller tweaks and fixes.
+}}
+
+== 1.0.28954 (beta) ==
+<b>October 16th, 2025</b><ref>Beta date: [https://www.gogdb.org/product/1558393671#builds October 16th, 2025]<br>
+Patch notes: [[:File:Updates (Silksong) Reference 1.0.28954.png|(Archive)]]</ref>
+
+* Updated Simplified Chinese translation with a new script for public testing. This is a basic implementation only, to be refined and updated based on player feedback.
+* Various localisation fixes implemented across all languages.
+* Switched to Unity's Input System to improve overall controller support. This includes rumble features now working for various controllers, and additional controllers being recognised. Some issues may remain. For a full list of supported controllers and features, please visit: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.14/manual/SupportedDevices.html
+* Fixed [[Styx]] not giving [[rosaries]] when delivering the [[Queen's Egg]].
+* Fixed [[Druid's Eyes]] sometimes not equipping correctly when first acquired.
+* Fixed some down attack colliders getting stuck on in rare instances.<ref name="pogostorage">[https://youtu.be/zAN3oyIYn68?t=150 Pogo Storage] on YouTube</ref>
+* Fixed several instances of [[Hornet (Silksong)|Hornet]]'s [[Plasmification|plasmified state]] clearing when not intended (eg [[Bellway]] travel).
+* Fixed issues entering the plasmified state when killing a [[Winged Lifeseed]], rather than using the [[Plasmium Phial]].
+* Reduced unintentionally long [[bind]] time when using [[Multibinder]] with the [[Shaman Crest|Shaman crest]].
+* Updated Multibinder's initial bind to clear [[Muckmaggot|maggots]], per community comments.
+* Various smaller tweaks and fixes.
+
+== [https://www.teamcherry.com.au/blog/silksong-patch-3 1.0.28891] (Patch 3) ==
+<b>October 7th, 2025</b><ref>Beta date: [https://www.gogdb.org/product/1558393671#builds October 7th, 2025]<br>
+Release date: [https://store.steampowered.com/news/app/1030300/view/503964399479816737 October 14th, 2025]<br>
+Patch notes: [[:File:Updates (Silksong) Reference 1.0.28891.png|(Archive)]]</ref>
+{{Disclaimer|Same list of changes as [[#1.0.28877 (beta)|previous beta]].}}
+
+=== Undocumented Changes ===
+* Lowered [[Seth]]'s high score in [[Flea Dodge]] from <b>95</b> to <b>90</b>.{{MissingRef}}
+* [[Wardenfly|Wardenflies]] no longer spawn outside [[the Slab]] with cages if travel via the [[Bell Beast]] has not yet been unlocked, preventing a potential softlock.
+* Increased [[Hunter Crest]] damage multipliers when focused from 25% and 40% to 30% and 50%.
+
+== 1.0.28877 (beta) ==
+<b>October 3rd, 2025</b><ref>Beta date: [https://www.gogdb.org/product/1558393671#builds October 3rd, 2025]<br>
+Patch notes: [[:File:Updates (Silksong) Reference 1.0.28877.png|(Archive)]]</ref>
+* Fixed [[Cogfly|Cogflies]] sometimes appearing from odd locations after scene transition and, in rare cases, having their active quantity reduced by 1.<ref group="Note">Rephrased in this patch to mention a quantity bug.</ref>
+* Fixed [[Crafting Kit]]s not increasing the damage of offensive [[Tools#Blue Tools|blue tools]] (eg [[Sawtooth Circlet]]).<ref group="Note">Also benefits [[Claw Mirror]], [[Claw Mirrors]] and [[Wispfire Lantern]].</ref>
+* Slight increase to [[Sharpdart|Sharp Dart]] and [[Cross Stitch]] damage.
+* Updated damage scaling on [[Rune Rage]] to match other [[Silk Skills]].
+* Slight decrease to [[Thread Storm]] damage at higher [[needle]] levels.
+* Fixed [[Surgeon]] enemies sometimes pulling [[Hornet (Silksong)|the hero]] out of bounds.
+* Fixed instances of some [[Spool Fragment]]s being permanently missable if a player immediately quit after collecting the item.
+* Fixed [[Crust King Khann]] sometimes falling out of bounds during entry, when fought on low-end systems.
+* Fixed rare instance of [[Second Sentinel]] becoming rotated when defeated.
+* Fixed additional case of [[Shrine Guardian Seth|Seth]] sometimes getting out of bounds and not returning.
+* Fixed Seth sometimes remaining invincible for a moment at the start of a refight.
+* Fixed [[Whispering Vaults|Vaults]] slide blocks incorrectly responding to damage sources [[Rune Rage|other than the needle]].
+* Changed <i>[[Fine Pins]]</i> [[wish]] drops from 50% chance to 100%, but raised required quantity.<ref group="Note">Increased from 10 pins → 12 pins.</ref>
+* Fixed issues when consuming a [[Silkeater]] while in water.
+* Fixed [[Scuttlebrace]] sometimes allowing a wall jump when not intended.
+* Fixed a soft-lock during the [[Grand Gate]] opening sequence, if the [[The Citadel|Citadel]] had been visited and some [[bellshrine]]s remained inactive.
+
+{{CollapseTable | collapsed = true | expand-text = Show All Changes Since Patch 2 | collapse-text = Hide All Changes Since Patch 2 |
+* Added support for Dualsense Edge controllers.
+* Improved support for various controllers on Mac.
+* Game now pauses when the controller disconnects.
+* Fixed various smaller controller issues (more fixes to come in future).
+* Fixed remaining instance of certain players getting stuck [[Cursed Crest|cursed]] while in the late game.
+* Fixed [[Curveclaw]] not reacting to [[Hunter Crest|Hunter]] down-stab.
+* Fixed rare instances of being able to [[Swift Step|air dash]] and [[Faydown Cloak|double jump]] when not intended.
+* Fixed several out of bounds situations.
+* Fixed [[Pharlid Diver]]s sometimes sliding on roofs after ambushing in certain scenes.
+* Fixed [[Eva]] Hunter Crest upgrades unintentionally clearing [[tool]] equips.
+* Fixed rare instances of [[Clawline|Harpoon]] sometimes granting 2 [[Silk]] instead of 1.
+* Various smaller fixes and tweaks.
+}}
+
+=== Undocumented Changes ===
+* [[:File:Screenshot SS Verdania 04.png|Clover plants]] begin to regrow around the [[Green Prince]] after he dies in [[Verdania]].<ref>[https://www.reddit.com/r/Silksong/comments/1nyjjjy/repost_new_beta_adds_a_new_detail_in_the_lategame/ Verdania regrowth] on Reddit</ref>
+* Adjusted damage of [[Needle Strike]]s depending on [[Crests|Crest]].<ref>[https://youtu.be/md6g33Sjru0?t=167 Crest Changes] on YouTube</ref>
+* Reduced base damage of [[Claw Mirror]], [[Claw Mirrors]] and [[Wispfire Lantern]] due to the Crafting Kit damage boosts.<ref>[https://youtu.be/md6g33Sjru0?t=203 Tool Changes] on YouTube</ref>
+* Fixed floor between [[Putrified Ducts]] and [[Bilewater]] being breakable from above using a [[Voltvessels]] spear.<ref>[https://youtube.com/shorts/UyyjAbl51wM New Groal skip just dropped!] on YouTube</ref><ref>[https://x.com/doodle3087/status/1974964126897295619 They patched the Groal skip] on X</ref>
+
+== 1.0.28714a ==
+<b>October 3rd, 2025</b><ref>Release date: [https://www.gogdb.org/product/1558393671#builds October 3rd, 2025]</ref>
+{{Disclaimer|No patch notes were published.}}
+
+=== Undocumented Changes ===
+* Patched Unity game engine to fix a [https://discussions.unity.com/t/unity-platform-protection-take-immediate-action-to-protect-your-games-and-apps/1688031 security vulnerability] disclosed that day.<ref>[https://steamdb.info/patchnotes/20233035/ Only 2 files modified] on SteamDB</ref>
+
+== 1.0.28750 (beta) ==
+<b>September 26th, 2025</b><ref>Beta date: [https://www.gogdb.org/product/1558393671#builds September 26th, 2025]<br>
+Patch notes: [[:File:Updates (Silksong) Reference 1.0.28750.png|(Archive)]]</ref>
+* Added support for Dualsense Edge controllers.
+* Improved support for various controllers on Mac.
+* Game now pauses when the controller disconnects.
+* Fixed various smaller controller issues (more fixes to come in future).
+* Fixed remaining instance of certain players getting stuck [[Cursed Crest|cursed]] while in the late game.
+* Fixed [[Curveclaw]] not reacting to [[Hunter Crest|Hunter]] down-stab.
+* Fixed [[Cogfly|Cogflies]] sometimes appearing from odd locations after scene transition.
+* Fixed rare instances of being able to [[Swift Step|air dash]] and [[Faydown Cloak|double jump]] when not intended.
+* Fixed several out of bounds situations.
+* Fixed [[Pharlid Diver]]s sometimes sliding on roofs after ambushing in certain scenes.
+* Fixed [[Eva]] Hunter Crest upgrades unintentionally clearing [[tool]] equips.
+* Fixed rare instances of [[Clawline|Harpoon]] sometimes granting 2 [[Silk]] instead of 1.
+* Various smaller fixes and tweaks.
+
+=== Undocumented Changes ===
+* Decreased damage of [[Sawtooth Circlet]] from 13+1 to 8+1.{{MissingRef}}
+
+== 1.0.28716 (console only) ==
+<b>September 25th, 2025</b><ref>Switch:
+: [https://www.reddit.com/r/HollowKnight/comments/1nr3lfo/new_patch/ New patch?] on Reddit<br>
+: [https://www.reddit.com/r/HollowKnight/comments/1o3jq5h/unique_silksong_challenge_run_spoiler/ Unique Silksong Challenge Run] on Reddit
+PS5: [https://www.prosperopatches.com/PPSA12544 Patch 01.000.006]<br>
+PS4: [https://www.orbispatches.com/CUSA39420 Patch 01.06]</ref>
+* Various fixes.
+
+== 1.0.28714 ==
+<b>September 24th, 2025</b><ref>Release date: [https://www.gogdb.org/product/1558393671#builds September 24th, 2025]</ref>
+{{Disclaimer|No patch notes were published.}}
+
+== [https://www.teamcherry.com.au/blog/silksong-patch-2 1.0.28650] (Patch 2) ==
+<b>September 18th, 2025</b><ref>Beta date: [https://www.gogdb.org/product/1558393671#builds September 18th, 2025]<br>
+Release date: [https://steamcommunity.com/games/1030300/announcements/detail/503962497384974198/ September 22nd, 2025]<br>
+Patch notes: [[:File:Updates (Silksong) Reference 1.0.28650.png|(Archive)]]</ref>
+* Added Dithering effect option in Advanced video settings (PC only).<ref group="Note">Clarified in this patch as "PC only".</ref> Reduces colour banding but can slightly soften the appearance of foreground assets. Defaults to 'Off'.
+* Fixed rare case of [[Second Sentinel]] knocking the player out of bounds during battle.
+
+{{CollapseTable | collapsed = true | expand-text = Show All Changes Since Patch 1 | collapse-text = Hide All Changes Since Patch 1 |
+* Updated [[Mister Mushroom (Silksong)|Herald's]] Wish [[Achievements_(Silksong)|achievement]] description to clarify that players must both [[Passing of the Age (Wish)|complete the wish]] and [[Endings (Silksong)|finish the game]].
+* Fixed [[Savage Beastfly]] in [[Far Fields]] sometimes remaining below the lava.
+* Fixed rare cases of [[Shrine Guardian Seth]] getting out of bounds during battle.
+* Added catch to prevent [[Disgraced Chef Lugoli|Lugoli]] sometimes flying off screen and not returning during battle.
+* Further reduced chance of [[Silk Snipper]]s getting stuck out of bounds in [[Chapel of the Reaper]] battle.
+* Fixed various instances of dying to [[Bosses (Silksong)|bosses]] while killing them causing death sequences to play messily or out of sync.
+* Fixed [[Shaman Crest|Shaman Binding]] into a bottom transition causing a softlock.
+* [[Cocoon]] positions in some locations updated to prevent it spawning in inaccessible areas.
+* Fixed <i>[[Liquid Lacquer (Wish)|Liquid Lacquer]]</i> courier delivery not being accessible in [[Steel Soul Mode (Silksong)|Steel Soul mode]].
+* Fixed some [[NPCs (Silksong)|NPCs]] not correctly playing cursed hint dialogues in certain instances.
+* Fixed [[Pondcatcher Reed]] not being able to fly away after [[Needolin|singing]].
+* Fixed [[Verdania]] memory orbs sometimes replaying layered screen-edge burst effects.
+* Fixed the break counter not working for certain multihitter tools eg [[Conchcutter]].
+* Fixed [[Volt Filament]] damage multiplier not applying for certain [[Silk Skills]].
+* Fixed [[Cogfly|Cogflies]] and [[Wispfire Lantern|Wisps]] inappropriately targeting [[Skullwing]]s.
+* Fixed Cogflies incorrectly resetting their HP to full on scene change.
+* Fixed [[Curveclaw]] always breaking on the first hit after being deflected.
+* Fixed [[Plasmium Phial]] and [[Flea Brew]] sometimes not restoring as intended at [[Bench (Silksong)|benches]].
+* Various other smaller tweaks and fixes.
+}}
+
+=== Undocumented Changes ===
+* Charged [[Needle Strike]]s now generate 1 strand of [[Silk]] upon hitting an enemy.<ref name="needlestrike-patch2">[https://youtu.be/IHQv0Zbu_EM?t=14 Charge Attack] on YouTube</ref>
+** [[Hunter Crest]]'s Needle Strike can generate 2 strands of Silk if both hits connect.<ref name="needlestrike-patch2"></ref>
+* Reduced number of hits dealt by [[Architect Crest]]'s Needle Strike from 7 to 5.<ref name="needlestrike-patch2"></ref>
+* Adjusted damage boost that [[Flintslate]] applies to Needle Strikes from +10 per hit to +50% per hit.<ref name="flintslate-patch2">[https://youtu.be/IHQv0Zbu_EM?t=46 Flintslate] on YouTube</ref>
+** Slightly benefits [[Hunter Crest]], [[Reaper Crest]] and [[Beast Crest]], while slightly weakening other [[Crests]].<ref name="flintslate-patch2"></ref>
+* Reduced damage boost that Hunter Crest's [[Hunter Crest#Mechanics|Focus]] applies to [[Clawline]] attacks.<ref>[https://youtu.be/IHQv0Zbu_EM?t=91 Clawline] on YouTube</ref>
+* Increased damage boost that [[Volt Filament]] applies to [[Silk Skills]] by 15–40%, depending on the Skill.<ref>[https://youtu.be/IHQv0Zbu_EM?t=111 Volt Filament] on YouTube</ref>
+* Reduced number of hits that a [[Cogfly]] can take from 6 to 5.{{MissingRef}}
+* Reduced max capacity of [[Cogwork Wheel]] from 8–16 to 5–10.<ref>[https://www.reddit.com/r/Silksong/comments/1no6ujd/ Tool Stealth Nerf not in Patch Notes] on Reddit</ref>
+
+== 1.0.28626 (beta) ==
+<b>September 16th, 2025</b><ref>Beta date: [https://www.gogdb.org/product/1558393671#builds September 16th, 2025]<br>
+Patch notes: [[:File:Updates (Silksong) Reference 1.0.28626.png|(Archive)]]</ref>
+* Added Dithering effect option in Advanced video settings. Reduces colour banding but can slightly soften the appearance of foreground assets. Defaults to 'Off'.
+* Updated [[Mister Mushroom (Silksong)|Herald's]] Wish [[Achievements (Silksong)#Endings|achievement]] description to clarify that players must both [[Passing of the Age (Wish)|complete the wish]] and [[Endings (Silksong)|finish the game]].
+* Fixed [[Savage Beastfly]] in [[Far Fields]] sometimes remaining below the lava.
+* Fixed rare cases of [[Shrine Guardian Seth]] getting out of bounds during battle.
+* Added catch to prevent [[Disgraced Chef Lugoli|Lugoli]] sometimes flying off screen and not returning during battle.
+* Further reduced chance of [[Silk Snipper]]s getting stuck out of bounds in [[Chapel of the Reaper]] battle.<ref group="Note">[https://steamcommunity.com/app/1030300/discussions/0/546746634645557243/ Post] was edited from "to get" → "getting".</ref>
+* Fixed various instances of dying to [[Bosses (Silksong)|bosses]] while killing them causing death sequences to play messily or out of sync.
+* Fixed [[Shaman Crest|Shaman Binding]] into a bottom transition causing a softlock.
+* [[Cocoon]] positions in some locations updated to prevent it spawning in inaccessible areas.
+* Fixed <i>[[Liquid Lacquer (Wish)|Liquid Lacquer]]</i> courier delivery not being accessible in [[Steel Soul Mode (Silksong)|Steel Soul mode]].
+* Fixed some [[NPCs (Silksong)|NPCs]] not correctly playing cursed hint dialogues in certain instances.
+* Fixed [[Pondcatcher Reed]] not being able to fly away after [[Needolin|singing]].
+* Fixed [[Verdania]] memory orbs sometimes replaying layered screen-edge burst effects.
+* Fixed the break counter not working for certain multihitter tools eg [[Conchcutter]].
+* Fixed [[Volt Filament]] damage multiplier not applying for certain [[Silk Skills]].
+* Fixed [[Cogfly|Cogflies]] and [[Wispfire Lantern|Wisps]] inappropriately targeting [[Skullwing]]s.
+* Fixed Cogflies incorrectly resetting their HP to full on scene change.
+* Fixed [[Curveclaw]] always breaking on the first hit after being deflected.
+* Fixed [[Plasmium Phial]] and [[Flea Brew]] sometimes not restoring as intended at [[Bench (Silksong)|benches]].
+* Various other smaller tweaks and fixes.
+
+== 1.0.28561 ==
+<b>September 12th, 2025</b><ref>Release date: [https://www.gogdb.org/product/1558393671#builds September 12th, 2025]</ref>
+{{Disclaimer|No patch notes were published.}}
+
+== [https://www.teamcherry.com.au/blog/silksong-patch-1 1.0.28497] (Patch 1) ==
+<b>September 10th, 2025</b><ref>Beta date: [https://www.gogdb.org/product/1558393671#builds September 10th, 2025]<br>
+Release date: [https://store.steampowered.com/news/app/1030300/view/497206645180334094 September 12th, 2025]<br>
+Patch notes: [[:File:Updates (Silksong) Reference 1.0.28497.png|(Archive)]]</ref>
+* Fixed [[Swamp Squit]]s becoming invincible if hit under water.
+* Fixed instance where [[Disgraced Chef Lugoli|Lugoli]] could leave the arena and not return.
+* Reduced chance of [[Silk Snipper]]s in [[Chapel of the Reaper]] sometimes getting stuck out of bounds.<ref group="Note">Rephrased in this patch from "Fixed" → "Reduced chance".</ref>
+
+{{CollapseTable | collapsed = true | expand-text = Show All Changes Since Release | collapse-text = Hide All Changes Since Release |
+* Fixed situation where players could remain cloakless after [[The Slab|Slab]] escape sequence.
+* Fixed wish <i>[[Infestation Operation]]</i> often not being completable during the late game.
+* Fixed wish <i>[[Beast in the Bells]]</i> not being completable when [[Bell Beast]] is summoned at the [[Bilewater]] [[Bellways|Bellway]] during the late game.
+* Fixed getting stuck floating after down-bouncing on certain projectiles.
+* Fixed [[Tipp & Pill#Wishes|courier deliveries]] sometimes being inaccessible in the late game.
+* Fixed [[Architect Crest|craft bind]] behaving incorrectly when in memories.
+* Fixed [[Lace]] tool deflect soft-lock at start of battle in [[Deep Docks]].
+* Fixed [[Claw Mirror]]s leaving Hornet inverted if taking damage during a specific moment while [[bind]]ing.
+* Fixed [[Snitch Pick]] not giving [[rosaries]] and [[Shell Shards|shell shards]] as intended.
+* Removed [[Drifter's Cloak|float]] override input (down + jump, after player has [[Faydown Cloak]]).
+* Slight difficulty reduction in early game bosses [[Moorwing]] and [[Sister Splinter]].
+* Reduction in damage from [[Sandcarver]]s.
+* Slight increase in [[:File:Screenshot SS The Marrow 05.png|pea pod]] collider scale.
+* Slight reduction in mid-game [[Bellways|Bellway]] and [[Bench (Silksong)|Bell Bench]] prices.
+* Slight increase in rosary rewards from [[Relic Seeker Scrounge|relics]] and [[Psalm Cylinder|psalm cylinders]].
+* Increase in rosary rewards for courier deliveries.
+* Various additional fixes and tweaks.
+}}
+
+=== Undocumented Changes ===
+* Reduced tool damage boost of each [[Crafting Kit]] from 70% to 60%.{{MissingRef}}
+* Changed Hornet's [[Gilly#Dialogue|conversation]] with [[Gilly]] after killing [[Skarrsinger Karmelita]], if [[Hunter's Heart|her heart]] was the fourth one obtained.{{MissingRef}}
+
+== 1.0.28470 (beta) ==
+<b>September 9th, 2025</b><ref>Beta date: [https://www.gogdb.org/product/1558393671#builds September 9th, 2025]<br>
+Patch notes: [[:File:Updates (Silksong) Reference 1.0.28470.png|(Archive)]]</ref>
+* Fixed situation where players could remain cloakless after [[The Slab|Slab]] escape sequence.
+* Fixed wish <i>[[Infestation Operation]]</i> often not being completable during the late game.
+* Fixed wish <i>[[Beast in the Bells]]</i> not being completable when [[Bell Beast]] is summoned at the [[Bilewater]] [[Bellways|Bellway]] during the late game.
+* Fixed getting stuck floating after down-bouncing on certain projectiles.
+* Fixed [[Tipp & Pill#Wishes|courier deliveries]] sometimes being inaccessible in the late game.<ref group="Note">[https://steamcommunity.com/app/1030300/discussions/0/595159519774039622/ Post] was edited from "Act 3" → "the late game".</ref>
+* Fixed [[Architect Crest|craft bind]] behaving incorrectly when in memories.
+* Fixed [[Lace]] tool deflect soft-lock at start of battle in [[Deep Docks]].
+* Fixed [[Silk Snipper]]s in [[Chapel of the Reaper]] sometimes getting stuck out of bounds.
+* Fixed [[Claw Mirror]]s leaving Hornet inverted if taking damage during a specific moment while [[bind]]ing.
+* Fixed [[Snitch Pick]] not giving [[rosaries]] and [[Shell Shards|shell shards]] as intended.
+* Removed [[Drifter's Cloak|float]] override input (down + jump, after player has [[Faydown Cloak]]).
+* Slight difficulty reduction in early game bosses [[Moorwing]] and [[Sister Splinter]].
+* Reduction in damage from [[Sandcarver]]s.
+* Slight increase in [[:File:Screenshot SS The Marrow 05.png|pea pod]] collider scale.
+* Slight reduction in mid-game [[Bellways|Bellway]] and [[Bench (Silksong)|Bell Bench]] prices.
+* Slight increase in rosary rewards from [[Relic Seeker Scrounge|relics]] and [[Psalm Cylinder|psalm cylinders]].
+* Increase in rosary rewards for courier deliveries.
+* Various additional fixes and tweaks.
+
+=== Undocumented Changes ===
+* Reduction in damage from other environmental hazards, including [[The Citadel|spinning fans]] and [[Cogwork Core|spinning cogwheels]].{{MissingRef}}
+* Reduction in damage from various enemies that dealt 2 damage, including [[Elder Pilgrim]], [[Choir Elder]] and [[Splinterbark]].{{MissingRef}}
+
+== 1.0.28374 (beta) == 
+<b>September 5th, 2025</b><ref>Beta date: [https://www.gogdb.org/product/1558393671#builds September 5th, 2025]<br>
+Help site: [[:File:Updates (Silksong) Reference 1.0.28374.png|(Archive)]]</ref>
+* Fixed an issue where players, if they died while dealing a killing blow in the final wave of the [[The Slab|Slab]] escape sequence, could respawn with their cloak permanently missing.
+
+== 1.0.28324a ==
+<b>September 4th, 2025</b><ref>GOG upload date: [https://www.gogdb.org/product/1558393671#builds September 1st, 2025]</ref>
+* Initial GOG release version for macOS.
+
+== 1.0.28324 ==
+<b>September 4th, 2025</b><ref>GOG upload date: [https://www.gogdb.org/product/1558393671#builds August 30th, 2025]</ref>
+* Initial GOG release version.
+
+{{Hr|SS}}
+
+== Notes ==
+<references group="Note"/>
+
+{{Refs|hr=false|columns=2|scrollbox=true}}
+
+{{#seo:
+|title=Silksong Updates
+|description=A list of updates and beta releases for Hollow Knight: Silksong
+|keywords=silksong, updates, patch notes, beta
+}}
+[[fr:Mises à jour (Silksong)]]
+[[Category:Hollow Knight: Silksong]]

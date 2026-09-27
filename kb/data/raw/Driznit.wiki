@@ -1,0 +1,88 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Driznit.png|Hunter's Journal
+Driznit Idle.png|Idle
+Driznit No Shell.png|No Coral
+Driznit Hidden.png|Hidden
+</gallery>
+| hasdrop = true
+| sh1 = 3-5
+| sh2 = 4-7
+|health = 29
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.85|0.7|0.7|0.7}}
+|numbers_required = 25
+|singnum=1
+}}
+{{Quote
+|Hr = Journal
+|Nesting creature that fuses its face with sharpened coral.<hr/>
+It is easy to be caught off-guard by the ricocheting trajectory of its flung mask, especially in tight corners.
+}}
+
+<b>Driznits</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are small winged creatures with a sharp coral mask that doubles as a weapon.
+
+== Behaviour and Tactics ==
+Driznits start off concealed in patches of coral on ceilings and burst down once Hornet comes near. Between attacks, Driznits constantly attempt to maintain distance between themselves and Hornet, prioritizing vertical distance over horizontal distance.<br>
+The Driznit's only attack is to spin its coral mask like a drill and fire it at Hornet at a diagonal angle. The coral spike ricochets off of surfaces up to 6 times before breaking.<br>
+Hornet's attacks can change the spike's direction and cause it to hit itself or other enemies for 15 damage. The spike can only damage enemies if Hornet has hit it.
+
+
+It should be noted that unlike most other small creatures, Driznits do not respawn upon re-entering the room.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* The crust covers...
+* The crust conceals...
+* Our shells made strong...
+* Our nest made secret...
+}}
+
+== Location ==
+Driznits can be found primarily in the [[Blasted Steps]] and [[Sands of Karak]]. They can also be found in the [[Memorium]].
+{{Gallery
+|Image1 = Mapshot SS Driznit 01.png!Location in the [[Blasted Steps]]
+|Image2 = Mapshot SS Driznit 02.png!Location in the [[Sands of Karak]]
+|Image3 = Mapshot SS Driznit 03.png!Location in the [[Memorium]]
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Driznit 01.png!Hidden
+|Image2 = Screenshot SS Driznit 02.png!Driznit in Blasted Steps
+|Image3 = Screenshot SS Driznit 03.png!Attacking
+|Image4 = Screenshot SS Driznit 06.png!Singing
+|Image5 = Screenshot SS Driznit 04.png!Driznit in Sands of Karak
+|Image6 = Screenshot SS Driznit 05.png!Driznit in Memorium
+}}
+{{Localisation
+|DEname = Driznit
+|DEmeaning = —
+|ESname = Driznito
+|ESmeaning = —
+|FRname = Drizznite
+|FRmeaning = —
+|ITname = Maschimbalzo
+|ITmeaning = Portmanteau of <i>maschera</i> (mask) and <i>rimbalzo</i> (bounce).
+|JAname = ドリズニット
+|JAromanised = Dorizunitto
+|JAkatakana = foreignenemy
+|JAmeaning = Driznit
+|KOname = 드리즈니트
+|KOromanised = Deurijeuniteu
+|KOmeaning = Driznit
+|PTname = Driznit
+|PTmeaning = —
+|RUname = Маскомёт
+|RUromanised = Maskomët
+|RUmeaning = Portmanteau of {{lang|ru|маска}} <i>maska</i> (mask) and {{lang|ru|метать}} <i>metat'</i> (to throw or to cast).
+|TWname = 擲面蟲
+|TWromanised = Zhì miàn chóng
+|TWmeaning = same
+|ZHname = 掷面虫
+|ZHromanised = Zhì miàn chóng
+|ZHmeaning = Face-throwing Bug
+|CODEname= CORAL_CONCH_SHOOTER
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

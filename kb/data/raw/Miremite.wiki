@@ -1,0 +1,83 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Miremite.png|Hunter's Journal
+Miremite Idle.png|Idle
+</gallery>
+| hasdrop = true
+| sh1 = 3-5
+| sh2 = 4-7
+|health = 30
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1.1|1|1|1}}
+|numbers_required = 20
+|singnum=1
+}}
+
+{{Quote
+|Hr = Journal
+|Crawling insect with a sizzling bile sack in its abdomen.<hr/>
+The threat of its exploding rear is an effective deterrent to predators, but the slightest jolt or fall can cause its premature end.
+}}
+
+<b>Miremites</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are small, crawling bugs with a bulbous green abdomen.<ref>Miremite [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Crawling insect with a sizzling bile sack in its abdomen."</i></ref>
+
+== Behaviour and Tactics ==
+Miremites move back and forth along floors or walls, dealing {{Damage|1}} upon contact.
+
+When killed, they pause in the air and build up towards an explosion, which deals {{Damage|2}}. Nearby [[Swamp Squit]]s caught within the blast radius explode as well.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Survive in smog...
+* Choke on bile...
+* Feed... or starve...
+* Resist the rot...
+}}
+
+== Location ==
+Miremites can be found throughout [[Bilewater]].
+
+{{Gallery
+|Image1 = Mapshot SS Miremite 01.png!Locations in Bilewater
+|Image2 = Mapshot SS Miremite 02.png!Locations in Bilewater in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Miremite 01.png!On wall
+|Image2 = Screenshot SS Miremite 02.png!On ground
+|Image3 = Screenshot SS Miremite 03.png!Death explosion
+|Image4 = Screenshot SS Miremite 04.png!Reacting to the Needolin
+|Image5 = Screenshot SS Miremite 06.png!Corpse in Act 3
+|Image6 = Screenshot SS Miremite 05.png!Killed by [[Shakra]]'s master
+}}
+
+{{Localisation
+|DEname = Sumpfmilbe
+|DEmeaning = Swamp Mite
+|ESname = Ácaro explosivo
+|ESmeaning = Explosive Mite
+|FRname = Miremitte
+|FRmeaning = —
+|ITname = Acaro del Pantano
+|ITmeaning = Mite of the Swamp
+|JAname = ヌマダニ
+|JAromanised = Numa dani
+|JAmeaning = Combination of {{lang|ja|沼}} <i>numa</i> (swamp) and {{lang|ja|ダニ}} <i>dani</i> (mite).
+|KOname = 수렁진드기
+|KOromanised = Sureongjindeugi
+|KOmeaning = Miremite
+|PTname = Bilácaro
+|PTmeaning = Portmanteau of bile and <i>ácaro</i> (mite).
+|RUname = Тинный клещ
+|RUromanised = Tinnyj klešč
+|RUmeaning = Oozy Mite
+|ZHname = 沼泽螨
+|ZHromanised = Zhǎozé mǎn
+|ZHmeaning = Swamp Mite
+|CODEname = SWAMP_GOOMBA
+|CODEmeaning =
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

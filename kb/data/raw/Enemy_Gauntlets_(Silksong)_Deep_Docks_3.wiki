@@ -1,0 +1,40 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Deep_Docks_Arena_3.png|400px|center]]
+|[[File:Mapshot_SS_Deep_Docks_Arena_3.png|400px|center]]
+|-
+| colspan="2" | Enemy gauntlet in the southeast area of the Deep Docks. The [[Clawline]] is required for access.
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>[[Flea]]</center>
+| <center>[https://www.youtube.com/watch?v=swPmNk9_fw0 Generic Enemy Battle A]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Smokerock Sifter.png|35x35px|link=Smokerock Sifter]] [[Smokerock Sifter]], left<br/>
+[[File:HJ_Flintstone Flyer.png|35x35px|link=Flintstone Flyer]] [[Flintstone Flyer]], top centre<br/>
+[[File:HJ_Smelt Shoveller.png|35x35px|link=Smelt Shoveller]] [[Smelt Shoveller]], right
+| Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Flintflame Flyer.png|35x35px|link=Flintflame Flyer]] [[Flintflame Flyer]], top right<br/>
+|
+|-
+|
+[[File:HJ_Deep Diver.png|35x35px|link=Deep Diver]] [[Deep Diver]], centre<br/>
+[[File:HJ_Smokerock Sifter.png|35x35px|link=Smokerock Sifter]] Smokerock Sifter, right
+| Deep Diver drops down from the ceiling. Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Flintstone Flyer.png|35x35px|link=Flintstone Flyer]] Flintstone Flyer, top right
+|
+|-
+|
+[[File:HJ_Flintflame Flyer.png|35x35px|link=Flintflame Flyer]] Flintflame Flyer x2, top left and right<br/>
+|
+|}

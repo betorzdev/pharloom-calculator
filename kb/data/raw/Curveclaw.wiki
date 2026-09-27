@@ -1,0 +1,147 @@
+{{SS Infobox Tool
+| label = Curveclaw
+| image = <gallery>
+Curveclaw.png|Inventory
+Curveclaw Poison.png|Pollip Pouch
+</gallery>
+| type = Red
+| damage = 3/5/7/8/10
+| max = 8/10/12/14/16
+| refill_type = Repair
+| refill = {{S|5}}
+| effect = Throws a projectile that shoots forward in an arc before flying backward
+| location = [[Hunter's March]]
+| description = Arched sharpbone used by hunters to take down flying prey.
+
+| title2 = Curvesickle
+| label2 = Curvesickle
+| image2 = <gallery>
+Curvesickle.png|Inventory
+Curvesickle Poison.png|Pollip Pouch
+</gallery>
+| type2 = Red
+| damage2 = 5/8/11/14/17 (per hit) <br> 4/6/9/11/14 (per hit, occasionally)
+| max2 = 8/10/12/14/16
+| refill_type2 = Repair
+| refill2 = {{S|5}}
+| effect2 = Throws a large projectile that shoots forward in an arc before flying backward
+| location2 = [[Far Fields]]
+| description2 = Radial sharpbone used by skilled hunters to take down dangerous prey.
+}}
+
+{{Quote
+| Auakh khe. Rnka. Uakht rk.
+| [[Mottled Skarr]]
+| Hr = SS
+}}
+
+<b>Curveclaw</b> is a {{CrestSlot|Red|1}} in <i>[[Hollow Knight: Silksong]]</i>. When used, [[Hornet (Silksong)|Hornet]] throws a boomerang-like projectile forwards, before its direction curves to up and behind her as it returns. It can be upgraded into the <b>Curvesickle</b> in [[Act 3]].
+
+== Usefulness ==
+Curveclaw can pierce through targets and even hit the same target multiple times. Its unique arc allows it to stay active for longer, making it useful for dealing with crowds and controlling areas, especially above [[Hornet (Silksong)|Hornet]]. It can be particularly effective against large targets if Hornet is standing far enough away that the curveclaw hits the enemy multiple times while it changes direction.
+
+* If it hits a surface before it naturally returns, it will bounce off the surface and continue flying.{{MissingInfo}}
+
+* Hornet can hit a Curveclaw in flight to launch it towards the direction of the hit. 
+
+* Its exact return angle appears to be slightly random.
+
+* Once upgraded into Curvesickle, it gets bigger with increased damage, making it able to keep control over an area more effectively.{{MissingInfo}} 
+
+
+== How to Acquire ==
+Curveclaw can be purchased from [[Mottled Skarr]] for {{R|140}}. If he dies before it is purchased, the Curveclaw can be found in the room above his corpse.
+
+To upgrade the Curveclaw to the Curvesickle, visit the target practice room above the [[Far Fields]] [[Bellway]] station during [[Act 3]] with Curveclaw equipped. If all the targets are hit in one throw, a friendly [[Unnamed Skarr|Mottled Skarr Scout]] will appear and take the Curveclaw. Return to the room after sitting on a [[Bench (Silksong)|Bench]] to find the Curvesickle on the ground. (Note: Using the [[Pollip Pouch]] will hit each target more than once and prevent the friendly Mottled Skarr Scout from appearing). 
+
+Collecting Curvesickle is not required to unlock the <i>Arsenal</i> [[Achievements (Silksong)|Achievement]], nor is it required for [[Completion (Silksong)|100%]], although the <i>Arsenal</i> achievement does not unlock if the Curveclaw is still in the possession of the Skarr Scout who takes it.
+
+{{Gallery
+|Image1 = Mapshot SS Mottled Skarr.png!Location in Hunter's March
+|Image2 = Screenshot SS Mottled Skarr 02.png!Mottled Skarr in Hunter's March
+}}
+
+{{Gallery
+|Image1 = Mapshot SS Unnamed Skarr 01.png!Location in Far Fields
+|Image2 = Screenshot SS Unnamed Skarr 03.png!Target practice room in Hunter's March
+|Image3 = Screenshot SS Unnamed Skarr 01.png!Mottled Skarr Scout in Hunter's March
+|Image4 = Screenshot SS Unnamed Skarr 06.png!Curvesickle in Hunter's March
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Recording SS Curveclaw.gif!Throwing Curveclaw
+|Image2 = GIF SS Curvesickle 01.gif!Throwing Curvesickle
+|Image3 = GIF SS Curvesickle 02.gif!Completing target practice
+}}
+
+==Trivia==
+* It is currently unknown why Curvesickle's base damage sometimes ranges from 4 to 5.
+{{History
+|game = SS
+|1.0.28650 (Patch 2): Fixed Curveclaw always breaking on the first hit after being deflected.
+|1.0.28891 (Patch 3): Fixed Curveclaw not reacting to [[Hunter Crest]] down-stab.
+}}
+{{Localisation
+|DEname = Kurvenkralle
+|DEmeaning = Curveclaw
+|ESname = Garracurva
+|ESmeaning = Curveclaw
+|FRname = Courbe-serre
+|FRmeaning = Curved Claw
+|ITname = Curvartiglio
+|ITmeaning = Portmanteau of <i>curvo</i> (curve) and <i>artiglio</i> (claw).
+|JAname= 湾曲した爪
+|JAromanised = Wankyoku shita tsume
+|JAmeaning = Curved Claw
+|KOname = 곡선 발톱
+|KOromanised = Gokseon baltop
+|KOmeaning = Curve Claw
+|PTname = Curvagarra
+|PTmeaning = Curveclaw
+|RUname = Загнутый коготь
+|RUromanised = Zagnutyj kogotʹ
+|RUmeaning = Curved Claw
+|TWname = 弧爪
+|TWromanised = Hú zhǎo
+|TWmeaning = same
+|ZHname = 弧爪
+|ZHromanised = Hú zhǎo
+|ZHmeaning = Curve Claw
+|CODEname = CURVE_CLAWS
+}}
+===Curvesickle===
+{{Localisation
+|hr=false
+|DEname = Kurvensichel
+|DEmeaning = Curvesickle
+|ESname = Hozcurva
+|ESmeaning = Curvesickle
+|FRname = Faurelle
+|FRmeaning = From <i>faucille</i> (sickle).
+|ITname = Curvofalce
+|ITmeaning = Combination of <i>curvo</i> (curve) and <i>falce</i> (schyte or sickle).
+|JAname = 切り裂きの円刃
+|JAromanised = Kirisaki no enjin
+|JAmeaning = Slashing Circular Blade
+|KOname = 곡선 낫
+|KOromanised = Gokseon nat
+|KOmeaning = Curve Sickle
+|PTname = Curvafoice
+|PTmeaning = Curvesickle
+|RUname = Загнутый серп
+|RUromanised = Zagnutyj serp
+|RUmeaning = Curved Sickle
+|TWname = 曲鐮
+|TWromanised = Qǔ lián
+|TWmeaning = same
+|ZHname = 曲镰
+|ZHromanised = Qǔ lián
+|ZHmeaning = Curve Sickle
+|CODEname = CURVE_CLAWS_UPG
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Courbe-serre]]

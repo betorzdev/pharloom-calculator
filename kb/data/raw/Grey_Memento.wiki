@@ -1,0 +1,77 @@
+{{SS Infobox Item
+| image = <gallery>
+Grey Memento.png|Inventory
+Grey Memento Shelf.png|Bellhome
+</gallery>
+| source = Drop from  [[Watcher at the Edge]]  
+| description = Engraved cruststone, worn by sand and blanched by time.<br>
+...Watch...Remember...Till time... Life anew...
+}}
+
+{{Quote|Hr=SS
+|For the river long... For the lord born strong...<br>For life... its beat, its flow... For order brought by claw and blade... 
+|[[Order of Karak]]
+}}
+
+The <b>Grey Memento</b> is a [[Materium#Mementos|Memento]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+
+The memento can be displayed on a shelf in the [[Bellhome]] after interacting with the desk.
+
+It appears in the top-left slot of the shelving.
+
+{{Gallery
+|Image1 = Mapshot SS Bellhome.png!Location in Bellhart
+|Image2 = Screenshot SS Bellhart 09.png!Displayed inside Bellhome in Bellhart
+}}
+
+== How to Acquire ==
+Dropped by [[Watcher at the Edge]] in [[Sands of Karak]] after defeating them in combat. Reaching this area requires the use of the [[Silk Soar]].
+
+{{Gallery
+|Image1 = Mapshot SS Watcher at the Edge 01.png!Location in Sands of Karak
+|Image2 = Screenshot SS Sands of Karak 10.png!Watcher at the Edge in Sands of Karak
+|Image3 = Screenshot SS Grey Memento 01.png!Grey Memento in Sands of Karak
+}}
+
+== Trivia ==
+* If Watcher at the Edge's corpse lands in the pit of [[Sandcarver]]s after being defeated, it will be eaten and the Grey Memento spat back out.
+
+{{Gallery
+|Image1= Screenshot SS Watcher at the Edge 14.png!Grey Memento spat out by Sandcarvers
+}}
+
+{{Localisation
+|DEname = Graues Memento
+|DEmeaning = Grey Memento
+|ESname = Recuerdo gris
+|ESmeaning = Grey Memento
+|FRname = Souvenir gris
+|FRmeaning = Grey Memento
+|ITname = Cimelio plumbeo
+|ITmeaning = Plumbeous Heirloom
+|JAname = 灰色のメメント
+|JAromanised = Haiiro no memento
+|JAmeaning = Grey Memento
+|KOname = 회색 증표
+|KOromanised = Hoesaek jeungpyo
+|KOmeaning = Grey Mark
+|PTname = Memento Cinza
+|PTmeaning = Grey Memento
+|RUname = Серый сувенир
+|RUromanised = Seryj suvenir
+|RUmeaning = Grey Souvenir
+|TWname = 灰色紀念章
+|TWromanised = Huīsè jìniànzhāng
+|TWmeaning = Grey Memento
+|ZHname = 灰色忆痕
+|ZHromanised = Huīsè yì hén
+|ZHmeaning = Grey Memory Mark
+|CODEname = MEMENTO_GREY
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

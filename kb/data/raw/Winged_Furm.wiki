@@ -1,0 +1,79 @@
+{{SS Infobox Enemy
+| hasdrop = true
+| sh1 = 5-8
+| sh2 = 7-10
+|health = 30/{{BT|60}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.2|1|0.75|0.7|0.7}}
+|numbers_required = 12
+|singnum = 1
+}}
+
+{{Quote
+|Hr = Journal
+|Furred bug beneath a heavy bell. It has grown too large to burrow, but in maturing has developed small wings.<hr/>Huge and soft, a fantastic combination ruined by their haunted aggression.
+}}
+
+<b>Winged Furms</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are mature [[Furm]]s that have developed small wings and have grown too large to burrow, hiding their furry bodies beneath heavy bells.<ref>Winged Furm [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Furred bug beneath a heavy bell. It has grown too large to burrow, but in maturing has developed small wings."</i></ref>
+
+== Behaviour and Tactics ==
+Winged Furms lazily fly up and down in vertical tunnels, dealing {{Damage|2}} on contact.
+
+They are immune to attacks from above and towards their bell helmets, but are knocked downwards when struck there.
+
+=== Act 3 ===
+[[Black-threaded]] Winged Furms have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|Void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2|
+* Rings from high, hide away...
+* Rings from low, hidden prey...
+* Shining shells, find your own...
+* Watch the darkness, hear the bells...
+}}
+
+== Location ==
+Winged Furms can be found in the bellvein tunnels above and below [[Bellhart]].
+
+{{Gallery
+|Image1 = Mapshot SS Winged Furm 01.png!Locations in Bellhart
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Winged Furm 01.png!Idle
+|Image2 = Screenshot SS Winged Furm 02.png!Reacting to the Needolin
+}}
+
+== Trivia ==
+* Winged Furms and [[Wraith]]s share the same singing voice.
+
+{{Localisation
+|DEname = Flügelfurm
+|DEmeaning = Winged Furm
+|ESname = Furmo alado
+|ESmeaning = Winged Furm
+|FRname = Pelu Ailé
+|FRmeaning = Wing Furm
+|ITname = Vellio Alato
+|ITmeaning = Winged Furm
+|JAname = ハネツキファルム
+|JAromanised = Hanetsuki farumu
+|JAmeaning = Combination of {{lang|ja|羽付き}} <i>hanetsuki</i> (winged) and {{lang|ja|ファルム}} <i>farumu</i> (Furm). 
+|KOname = 날개 달린 털벌레
+|KOromanised = Nalgae dallin teolbeolle
+|KOmeaning = Winged Fur Bug
+|PTname = Pelumo-alado
+|PTmeaning = Winged Furm
+|RUname = Крылатый фурм
+|RUromanised = Krylatyj furm
+|RUmeaning = Winged Furm
+|ZHname = 有翼绒甲虫
+|ZHromanised = Yǒu yì róng jiǎchóng
+|ZHmeaning = Winged Velvet Beetle
+|CODEname= BELL_FLY
+|CODEmeaning = 
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

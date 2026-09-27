@@ -1,0 +1,142 @@
+{{Navbar|page1=Green Prince|page2=Cogwork Dancers|page3=Clover Dancers}}
+{{SS Infobox Boss
+|image1= <gallery>
+B Clover Dancers.png|Hunter's Journal
+Clover Dancers Idle.png|Idle
+Clover Dancers Stagger.png|Staggered
+</gallery>
+|theme = [https://www.youtube.com/watch?v=ko4lxiUA13s Clover Dancers]
+|location = [[Lost Verdania]]
+|health = 1160
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.75|1.25|1.15|1|1}}
+|drops = [[Conjoined Heart]]
+|numbers_required = 1
+}}
+{{Quote
+|Hr = Journal
+|Dual princes of old Verdania, beloved by their subjects for their grace and for the ballet of death they delivered upon outsiders.<hr/>
+For one to love another so similar to themselves, is that selfless or vain?
+}}
+
+The <b>Clover Dancers</b> are a [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. They are the finest form of the [[Green Prince]] and his late partner, found within the memory of [[Lost Verdania]].<ref>Green Prince: <i>"Do not seek to console me, warrior... This memory is mine alone... I'll not brook your brutish intrusion... You who dare trespass this sacred chamber, ready yourself... to see us, and know us, Verdania's rulers, together in our finest form..."</i></ref> Their defeat grants the [[Conjoined Heart]], which can be used as an alternative option to one of the other [[Old Hearts]] for the <i>[[SEEK: The Old Hearts]]</i> [[Acts|objective]].
+
+== Background ==
+The Clover Dancers are the Green Prince's memory of both himself and his partner fighting together in tandem in their "finest form", inspired by their unique dancing style. In the past, the partner of the Green Prince traded his very shell and soul to [[the Citadel]] in a naive attempt to save his kingdom's caves. These parts of himself become the mould for the [[Cogwork Dancers]].<ref name = gender />
+
+Devastated by the loss of his lover, and with his home fallen to ruin, the Green Prince resigned himself to self-exile, wasting away caged in [[Sinner's Road]].<ref>Green Prince's dialogue in [[Sinner's Road]]: <i>"Leave me be. This kingdom's collapse has come. Better I stay here to accept it. To die within a cage... A fitting finale for this shell, and a well deserved fate for these cursed lands."</i></ref>
+
+After [[Hornet (Silksong)|Hornet]] frees him from his cage, he travels to the Citadel and collects the broken parts of one of the Cogwork Dancers once they have been defeated. He takes these to a makeshift grave east of [[Greymoor]], where Verdania once stood. It is here that Hornet finds him, lamenting his great loss.
+
+== In-game Events ==
+During Act 3, provided the [[Green Prince]] has been freed from his cage, he is found by [[Hornet (Silksong)|Hornet]] next to the remains of a Cogwork Dancer in the ruins of [[Verdania]]. By entering his memories, Hornet accesses "[[Lost Verdania]]", the Green Prince's memory of Verdania in its prime. Here, Hornet discovers a mural that narrates the history of the princes.<ref group="Note">This Lore Tablet only unlocks if all memory orbs around Lost Verdania have been collected.</ref>
+
+<blockquote><i>“Two children born entwined, apart,<br>Two children marked to rule,<br>They danced, they sang, proved blades beyond,<br>But none forgot their birth,<br>For lovers born on beat exact shall be forever cursed.”</i></blockquote>
+
+The Green Prince is found by Hornet in the throne room of the capital of Lost Verdania. Here, she attempts to console him, telling him Verdania's fall was "inexorable". However, the Green Prince rebukes her, accusing her of trespassing in his memories, and prepares to battle, creating a phantom version of his partner.
+
+As with all [[Elegy of the Deep]] memories, if Hornet dies in the memory, she wakes up next to the Prince without losing her [[Rosaries]] and without creating a [[Cocoon]], with all Tool uses refilled at no cost. Dying also does not end {{Steel Soul Icon Mini|SS}} [[Steel Soul Mode (Silksong)|Steel Soul mode]].
+
+After defeating the Clover Dancers, Hornet leaves the memory. She finds the body of the Green Prince slumped against the remains of the Cogwork Dancer. From him, she acquires the [[Conjoined Heart]].
+
+The Conjoined Heart can be used as an alternative for any of the other [[Old Hearts]] for the <i>[[SEEK: The Old Hearts]]</i> [[Acts|Objective]]. However, the other three hearts always take priority if all four are taken to the Snail Shamans. If it is the remaining heart, it can be placed in Hornet's [[Bellhome]] as a memento.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+=== Phase 1 ===
+The Clover Dancers behave much like the [[Cogwork Dancers]] during their fight, with many similar moves. However, of the two, only the Green Prince can be damaged. 
+
+* <b>Clover Cadence</b>: Each Dancer simultaneously projects a light beam from its head before dashing in that direction. However, unlike the Cogwork Dancers, these beams swiftly disappear before the Dancers dash. If one dashes to the ground with this attack, it slashes to both sides as it lands. Occasionally, one of the Dancers may pirouette in place while the other dashes. This attack is now performed at the pace of Cogwork Dancers' Phase 2.
+* <b>Clover Configuration</b>: Both Dancers leave the arena temporarily, and then a pattern of light beams appears. The Dancers attack by dashing along each light beam. This attack is always done twice, following which the Dancers return to the arena.
+* <b>Clover Cyclone</b>: Both Dancers project light beams towards the centre of the arena, where a circle telegraph appears. They dash towards the centre, attack, and begin twirling together, which creates 2 spinning tornadoes that extend outward from either side of the Dancers and begin to rotate for a few seconds, circling just over 180 degrees either clockwise or counter-clockwise and covering the entire arena. At the end of this attack, the two Dancers do not pause to embrace mid-air and instead immediately resume the fight.
+
+Contact with the Green Prince, his phantom lover, or their blades deals {{Damage|2}}, while Clover Configuration and Clover Cyclone deal {{Damage|1+1}}.
+
+=== Phase 2 ===
+After the Green Prince reaches 580 HP, he staggers once while the phantom temporarily fades. Afterwards, the Clover Cadence attacks become offset from each other, similarly to Phase 3 of the Cogwork Dancers. Other attacks are unchanged.
+
+<hr />
+
+{{Stagger
+|The phantom prince temporarily vanishes and the Green Prince takes a knee. They then return to their original positions in the corners of the arena, with the phantom prince restored.
+| N/A – The Clover Dancers only stagger once, when the Green Prince begins Phase 2 of the fight.
+| game = SS
+}}
+
+<hr />
+
+==[[Needolin]] Dialogue==
+{{SS Needolin|columns=2|
+* What kingdom without you?
+* What life alone?
+* An end... together...
+* Each breath shared...
+* Hearts united...
+* Hearts entwined...
+}}
+
+==Location==
+The Clover Dancers are encountered at the very top of [[Lost Verdania]], after collecting 12 memory orbs throughout the map.
+
+{{Gallery
+|Image1 = Mapshot SS Clover Dancers.png!Location in Lost Verdania
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Clover Dancers 01.png!Clover Cadence
+|Image2 = Screenshot SS Clover Dancers 02.png!Clover Configuration
+|Image3 = Screenshot SS Clover Dancers 03.png!Clover Cyclone
+|Image4 = Screenshot SS Clover Dancers 04.png!Stagger
+|Image5 = Screenshot SS Lost Verdania 21.png!Green Prince looking at his throne before the battle
+|Image6 = Screenshot SS Lost Verdania 22.png!Arena in Lost Verdania
+|Image7 = Screenshot SS Clover Dancers 06.png!Clover Dancers' heart ripping
+}}
+
+== Achievements ==
+{{Achievements|allgames=silksong|Lamenter}}
+
+== Trivia ==
+* The Clover Dancers are not stunned by the [[Needolin]]; their dialogue appears without stopping combat to sing.
+* [[Cogfly|Cogflies]] will attempt to attack the phantom prince, despite the phantom prince not being able to take any damage. 
+* The Clover Dancers' [https://www.youtube.com/watch?v=ko4lxiUA13s theme] closely resembles an instrumental rendition of [[Skarrsinger Karmelita]]'s [https://www.youtube.com/watch?v=XPZU_xt1XNc theme].
+*The Clover Dancers have a [[Cut Content (Silksong)#Enemy Behaviours|cut]] "Tornado" attack.
+
+{{Localisation
+|DEname = Kleeblatt-Tänzer
+|DEmeaning = Cloverleaf Dancers
+|ESname = Duo del Bailarines Trifolios
+|ESmeaning = Trefoils Dancer Duo<br><small>[[wikipedia:trefoil|Trefoil]] is a shape akin to a three-leaf clover.</small>
+|FRname = Duo Trèfleur
+|FRmeaning = Portmanteau of <i>trèfle</i> (clover) and <i>danseur</i> (dancer) with duo.
+|ITname = Duo del Trifoglio
+|ITmeaning = Duo of the Clover
+|JAname = クローバーの舞踏者
+|JAromanised = Kurōbā no butōsha
+|JAkatakana = foreign
+|JAmeaning = Clover Dancer
+|KOname = 클로버 춤꾼들
+|KOromanised = Keullobeo chumkkundeul
+|KOmeaning = Clover Dancers
+|PTname = Dançarinos do Trevo
+|PTmeaning = Clover Dancers
+|RUname = Клеверные танцоры
+|RUromanised = Klevernye tancory
+|RUmeaning = Clover Dancers
+|TWname = 三葉草舞者
+|TWromanised = Sānyècǎo wǔzhě
+|TWmeaning = same
+|ZHname = 三叶草舞者
+|ZHromanised = Sānyècǎo wǔzhě
+|ZHmeaning = Three-leaf Clover Dancers
+|CODEname = CLOVER_DANCER
+}}
+
+{{Refs|hr=SS}}
+
+== Notes ==
+<references group="Note"/>
+
+{{SS Nav Enemies}}
+
+[[pt:Dançarinos do Trevo]]

@@ -1,0 +1,272 @@
+{{SS Infobox Boss
+|label1 = Journal
+|title1=Forebrothers<br>Signis & Gron
+|location = [[Deep Docks]]
+|image1 = B Forebrothers Signis & Gron.png
+|drops = Access to the [[Diving Bell]]
+|health = 720 (Signis)<br/>
+520 (Gron)<br/>
+Total: 1240
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.6|1.25|1|0.95|0.9}}
+|numbers_required = 1
+|theme = [https://www.youtube.com/watch?v=Yk_DIxKGK7o Fourth Chorus]
+|singnum = 2
+|s1 = Gron
+|s2 = Signis
+
+|label2 = Signis
+|title2=Forebrother Signis
+|location2 = [[Deep Docks]]
+|image2 = <gallery>
+Signis.png|Idle
+Signis Stagger.png|Staggered
+</gallery>
+|drops2 = Access to the [[Diving Bell]]
+|health2 = 720
+|damage_modifiers2 = {{SS Spaced Damage Modifiers|1.6|1.25|1|0.95|0.9}}
+|numbers_required2 = 1
+|g2 = Forebrother Signis
+|theme2 = [https://www.youtube.com/watch?v=Yk_DIxKGK7o Fourth Chorus]
+|singnum2 = 1
+|sing2 = Forebrother Signis
+
+|label3 = Gron
+|title3=Forebrother Gron
+|location3 = [[Deep Docks]]
+|image3 = <gallery>
+Gron Idle.png|Idle
+Gron Stagger.png|Staggered
+</gallery>
+|drops3 = Access to the [[Diving Bell]]
+|health3 = 520
+|damage_modifiers3 = {{SS Spaced Damage Modifiers|1.6|1.25|1|0.95|0.9}}
+|numbers_required3 = 1
+|g3 = Forebrother Gron
+|theme3 = [https://www.youtube.com/watch?v=Yk_DIxKGK7o Fourth Chorus]
+|singnum3 = 1
+|sing3 = Forebrother Gron
+}}
+
+{{Quote
+|Elder overseers of the Deep Docks, responsible for the oversight and punishment of lesser workers.<hr/>Lost in the madness of the Haunting, they still commanded the endless excavation of their caves.
+|Hr = Journal
+}}
+
+<b>Forebrothers Signis & Gron</b> are a dual main [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. They are the elder overseers of the [[Deep Docks]] and its [[Dock Workers|workers]].<ref name=hj/> They block the path to the [[Diving Bell]] required for the <i>[[SEEK: The Dark Below]]</i> [[Objectives|objectives]].
+
+== Background ==
+Forebrothers Signis & Gron are the two elder overseers of the [[Deep Docks]], responsible for the oversight, commanding and punishment of the lesser workers.<ref name=hj>Forebrothers Signis & Gron Hunter's Journal entry: <i>"Elder overseers of the Deep Docks, responsible for the oversight and punishment of lesser workers."</i></ref> Despite being [[Haunting|Haunted]], they still continue to lead the endless excavation of the area.<ref>Forebrothers Signis & Gron Hunter's Journal entry: <i>"Lost in the madness of the Haunting, they still commanded the endless excavation of their caves."</i></ref>
+ 
+== In-game Events ==
+In an earlier room in the [[Deep Docks]], Gron appears and throws spears at Hornet while leaping away from platform to platform until he escapes into the ceiling.
+
+Upon entering the arena, Signis can be seen talking to a [[Smelt Shoveller]] and a [[Flintstone Flyer]]. When [[Hornet (Silksong)|Hornet]] gets close enough, the Smelt Shoveller and Flintstone Flyer quickly leave, and the fight begins.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+=== Phase 1 (Forebrother Signis) ===
+When the fight is initiated, Forebrother Signis shouts, causing two grates to open up and release constant streams of lava on the left and right sides of the room, trapping [[Hornet (Silksong)|Hornet]] in the arena. Signis performs the following attacks:
+* <b>Reposition</b>: Signis can run or make small leaps around the arena to reposition for attacks.
+* <b>Protect</b>: Signis skips backwards across the arena while spinning his pugil stick.
+* <b>Spinning Combo</b>: Signis slashes twice in a row, travelling forwards with each, and finishes off the second slash by spinning his pugil stick in front of himself.
+* <b>Flaming Boomerang</b>: Signis spins his pugil stick and throws it horizontally at Hornet. After travelling across roughly 75% of the arena, the pugil stick flies back to him. Signis sometimes makes a short backwards dash either before performing this attack or while the pugil stick is still spinning, causing it to travel a longer distance back to him.
+* <b>Summon</b>: Signis shouts, summoning enemies that drop from the ceiling. This attack is used only 3 times at certain HP thresholds. If Signis takes enough damage and the next HP threshold is reached, he may skip a Summon. If fought in [[Act 3]], the summoned enemies have a chance to be [[Black-Threading|black-threaded]], giving them quadrupled HP.
+** At 648 HP, he spawns a [[Flintstone Flyer]]. 
+** At 504 HP, he spawns a [[Smokerock Sifter]] and another Flintstone Flyer. 
+** Finally, at 360 HP, he summons Forebrother Gron, who falls into the arena with a Dive attack and begins Phase 2.
+
+=== Phase 2 (Forebrothers Signis & Gron) === 
+In this phase, Forebrother Signis's behaviour stays the same, while Forebrother Gron has the following attacks:
+* <b>Spear Throw</b>: Gron makes a large leap upwards and throws his spear at Hornet at the apex of the jump. The throw propels him slightly backwards as he falls back down. If the spear embeds into the ground, the tip explodes shortly after; otherwise, the spear is destroyed if it hits a lava wall.
+* <b>Explosive Dive</b>: Gron leaps upwards directly above Hornet's position, and then dives down to the floor using his spear, causing an explosion where he lands.
+
+=== Phase 3 === 
+After either Forebrother is defeated, if the remaining one is below 350 HP, he gains 200 HP (up to a maximum of 350) and continues to fight. A column of lava begins to periodically flow in the centre of the arena, and the behaviour of the remaining Forebrother is altered:
+
+* Signis leaps and uses Protect to stay away from Hornet and keep the flowing lava stream in between them. While he and Hornet are on opposite sides of the arena, Signis continually uses the Flaming Boomerang attack. He only uses Spinning Combo attacks if Hornet gets too close to him, before once again retreating to the other half of the arena.
+* Gron leaps backwards to stay away from Hornet and keep the flowing lava stream in between them. While he and Hornet are on opposite sides of the arena, Gron continually uses the Spear Throw attack. He only uses Explosive Dive attacks if Hornet gets too close to him, before once again retreating to the other half of the arena.
+
+If Signis or Gron happens to be in the middle of the arena when the column of lava starts flowing, they take slow ticks of 5 damage for as long as they remain in the lava.
+
+Forebrothers Signis & Gron are immune to attacks from above. Hornet can still Needle bounce off their bell helmets, but this deals no damage. Additionally, both bosses' spear attacks deal {{Damage|2|type=Fire}}, which can be reduced to {{Damage|1|type=Fire}} with [[Magma Bell]] equipped.
+
+<hr />
+
+=== Staggering ===
+
+Both Forebrothers Signis & Gron have individual stagger controls and stagger separately from each other. If they are hit by lava in this state, they instantly stop being staggered.
+
+{{Stagger
+| Signis falls over and flails on the ground.
+| 11
+| game = SS
+| note = (Signis)
+}}
+
+{{Stagger
+| Gron falls over and flails on the ground.
+| 13
+| game = SS
+| note = (Gron)
+}}
+
+<hr />
+
+<b>Notes and Strategies:</b>
+* The lava on the sides of the arena counts as a hazard, so it is possible to get hit by an attack (disabling Magma Bell) and for the knockback to send Hornet into the lava, resulting in a total of {{Damage|1+2|type=Fire}} ({{Damage|2+2|type=Fire}} without Magma Bell). For this reason, staying clear of the edges of the arena or using the [[Weighted Belt]] is recommended.
+* Due to Smokerock Sifters charging at Hornet, they often end up right at the edge of the arena. They can be killed quickly by jumping over them, and then hitting them into the lava.
+* If Hornet hits a coal lump that a Flintstone Flyer threw and it hits an enemy, it counts as a hit, meaning it does damage and contributes to the stagger counter.
+* Eliminate the worker(s) that Signis calls in to minimise the amount of ongoing hazards. Signis only calls in help when he reaches certain HP thresholds, and focusing too much damage on Signis can create a situation where Hornet is fighting five enemies (Signis, Gron, three workers) all at once.
+* The battle does not pause when Gron enters the fight and his boss title appears on screen. Stay clear of the bottom-right corner to avoid taking collision damage from his entrance.
+* Signis spends almost all of his time on the ground, and is extremely vulnerable to damage from [[Tacks]]. This can speed up Phase 2 to leave Hornet in a one-on-one fight with Gron, which is much simpler than managing both Forebrothers at once.
+* Due to the surviving brother healing when the other is defeated, it is best to focus damage on one of the two exclusively. Otherwise, the extra damage dealt may be completely negated by the healing.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+<b>Forebrother Signis</b>
+* Break the stone, seek the ore...
+* Breathe it deep, dark burning air...
+* World's blood runs hot...
+* For Pharloom, we toil...
+
+<b>Forebrother Gron</b>
+* Burn your claws, sister!
+* Break your shell, brother!
+* Sing together! Work together!
+* Rest together! Rise together!
+}}
+
+== Location ==
+Forebrothers Signis & Gron can be found in the southern region of [[Deep Docks]]. The route to them is barred by a locked door that can only be opened by hanging on the nearby [[Clawline]] hook. Hornet must then navigate lower Deep Docks, dodging around Gron's attacks before finally reaching their arena.
+
+Their defeat grants access to the Deep Docks sauna below, and eventual access to the [[Diving Bell]] at the very bottom.
+
+{{Gallery
+|Image1 = Mapshot SS SignisGron.png!Location in Deep Docks
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Deep Docks 10.png!Forebrother Signis instructing Docks workers before the fight
+|Image2 = Screenshot SS Forebrothers Signis and Gron 09.png!Forebrother Gron watching Hornet before the fight
+|Image3 = Screenshot SS Forebrothers Signis and Gron 11.png!Arena in Deep Docks (Phase 1)
+|Image4 = Screenshot SS Forebrothers Signis and Gron 10.png!Arena in Deep Docks (Phase 2)
+|Image5 = Screenshot SS Forebrothers Signis and Gron 01.png!Signis Flaming Boomerang
+|Image6 = Screenshot SS Forebrothers Signis and Gron 02.png!Signis Spinning Combo
+|Image7 = Screenshot SS Forebrothers Signis and Gron 03.png!Signis Summon (504HP)
+|Image8 = Screenshot SS Forebrothers Signis and Gron 04.png!Signis Stagger
+|Image9 = Screenshot SS Forebrothers Signis and Gron 05.png!Gron Entering Arena
+|Image10 = Screenshot SS Forebrothers Signis and Gron 06.png!Gron Explosive Dive
+|Image11 = Screenshot SS Forebrothers Signis and Gron 07.png!Gron Spear Throw
+|Image12 = Screenshot SS Forebrothers Signis and Gron 08.png!Gron Stagger
+|Image13 = Screenshot SS Forebrothers Signis and Gron 12.png!Signis & Gron singing
+}}
+
+
+== Trivia ==
+* There is a bug involving Gron, where he can get stuck on the top left/right corner of the arena after backing away from Hornet.
+* Their title as "Forebrothers" is likely a play on the word "foreman".
+* There is unused coding for this boss which suggests that it was originally going to drop a [[Silk Heart]].
+* If Signis is defeated before Gron enters the arena, the title-card displays "Forebrother Gron" instead of "Forebrothers Signis & Gron".
+{{Gallery
+|Image1 = File:Screenshot SS Forebrothers Signis and Gron 13.png!Forebrother Gron title-card
+}}
+* Forebrothers Signis & Gron is the longest boss name in both <i>Hollow Knight: Silksong</i> and <i>[[Hollow Knight]]</i>, at 23 letters excluding spaces.
+** It is tied with [[Winged Pilgrim Bellbearer]] for the enemy with the longest name.
+{{Clear}}
+{{Localisation
+|DEname = Vorbrüder Signis & Gron
+|DEmeaning = Forebrothers Signis & Gron
+|ESname = Hermanos mayores Signis y Gron
+|ESmeaning = Elder brothers Signis and Gron
+|FRname = Frères Précurseurs Signis & Gron
+|FRmeaning = Precursor Brothers Signis & Gron
+|ITname = Capofratelli Brace e Torbo
+|ITmeaning = Chief Brothers Ember and Peat<br><small>[[wiktionary:peat|Peat]] is soil from organic matter burned as fuel.</small>
+|JAname = 港の兄弟 シグニス&グロン
+|JAromanised = Minato no kyōdai shigunisu & guron
+|JAmeaning = Harbour Brothers Signis & Gron
+|KOname = 감독관 형제들 시그니스 & 그론
+|KOromanised = Gamdokgwan hyeongjedeul sigeuniseu & geuron
+|KOmeaning = Supervisor Brothers Signis & Gron
+|PTname = Arqui-irmãos Signis e Gron
+|PTmeaning = Arch-brothers Signis and Gron
+|RUname = Старшие братья Сигнис и Грон
+|RUromanised = Staršie bratʹja Signis i Gron
+|RUmeaning = Elder Brothers Signis and Gron
+|TWname = 監工兄弟 西格尼斯 & 格隆
+|TWromanised = Jiāngōng xiōngdì xīgénísī & gélóng
+|TWmeaning = same
+|ZHname = 监工兄弟 西格尼斯 & 格隆
+|ZHromanised = Jiāngōng xiōngdì xīgénísī & gélóng
+|ZHmeaning = Overseer Brothers Signis & Gron
+|CODEname = DOCK_GUARD_DUO
+}}
+===Forebrother Signis===
+{{Localisation
+|hr=false
+|DEname = Vorbruder Signis
+|DEmeaning = Forebrother Signis
+|ESname = Hermano mayor Signis
+|ESmeaning = Elder brother Signis
+|FRname = Frère Précurseur Signis
+|FRmeaning = Precursor Brother Signis
+|ITname = Capofratello Brace
+|ITmeaning = Chief Brother Ember
+|JAname = 港の監督者 シグニス
+|JAromanised = Minato no kantokusha shigunisu
+|JAmeaning = Harbour Supervisor Signis
+|KOname = 감독관 형제 시그니스
+|KOromanised = Gamdokgwan hyeongje sigeuniseu
+|KOmeaning = Supervisor Brother Signis
+|PTname = Arqui-irmão Signis
+|PTmeaning = Arch-brother Signis
+|RUname = Старший брат Сигнис
+|RUromanised = Staršie brat Signis
+|RUmeaning = Elder Brother Signis
+|TWname = 監工兄弟 西格尼斯
+|TWromanised = Jiāngōng xiōngdì xīgénísī
+|TWmeaning = same
+|ZHname = 监工兄弟 西格尼斯
+|ZHromanised = Jiāngōng xiōngdì xīgénísī
+|ZHmeaning = Overseer Brother Signis
+|CODEname=DOCK_GUARD_SLASHER</code><br><code>DOCK_ELDER_A
+}}
+===Forebrother Gron===
+{{Localisation
+|hr=false
+|DEname = Vorbruder Gron
+|DEmeaning = Forebrother Gron
+|ESname = Hermano mayor Gron
+|ESmeaning = Elder brother Gron
+|FRname = Frère Précurseur Gron
+|FRmeaning = Precursor Brother Gron
+|ITname = Capofratello Torbo
+|ITmeaning = Chief Brother Peat<br><small>[[wiktionary:peat|Peat]] is soil from organic matter burned as fuel.</small>
+|JAname = 港の監督者 グロン
+|JAromanised = Minato no kantokusha guron
+|JAmeaning = Harbour Supervisor Gron
+|KOname = 감독관 형제 그론
+|KOromanised = Gamdokgwan hyeongje geuron
+|KOmeaning = Supervisor Brother Gron
+|PTname = Arqui-irmão Gron
+|PTmeaning = Arch-brother Gron
+|RUname = Старший брат Грон
+|RUromanised = Staršie brat Gron
+|RUmeaning = Elder Brother Gron
+|TWname = 監工兄弟 格隆
+|TWromanised = Jiāngōng xiōngdì gélóng
+|TWmeaning = same
+|ZHname = 监工兄弟 格隆
+|ZHromanised = Jiāngōng xiōngdì gélóng
+|ZHmeaning = Overseer Brother Gron
+|CODEname=DOCK_GUARD_THROWER</code><br><code>DOCK_ELDER_B
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+{{#seo:|keywords=forebrothers signis & gron, forgebrothers signis & gron, forebrothers, forgebrothers}}
+
+[[fr:Frères Précurseurs Signis & Gron]]
+[[pt:Arqui-irmãos Signis e Gron]]

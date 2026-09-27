@@ -1,0 +1,97 @@
+{{SS Infobox Enemy
+| image1 = <gallery>
+B Deep Diver.png|Hunter's Journal
+Deep Diver.png|Idle
+</gallery>
+| hasdrop = true
+| r1 = 20
+| r2 = 29
+| sh1 = 7-11
+| sh2 = 9-14
+| health = 90/{{BT|180}}
+| damage_modifiers = {{SS Spaced Damage Modifiers|1.25|0.95|0.85|0.75|0.7}}
+| numbers_required = 5
+| singnum = 1
+}}
+
+{{Quote
+| Bell-clad bug responsible for mining the deeper, treacherous depths below their docks.<hr/>Their heavier bells armour them well against my strikes, but against that oppressive heat... can they help at all?
+| Hr = Journal
+}}
+
+<b>Deep Divers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are bulky, bell-clad [[Dock Workers|workers]] found throughout the lower depths of the [[Deep Docks]].
+
+== Behaviour and Tactics ==
+Deep Divers often stand in place whilst idle, but yell once they notice [[Hornet (Silksong)|Hornet]]. Depending on the available space, they use one of two moves:
+
+* <b>Charge:</b> Tenses up briefly and then runs towards Hornet, stopping once she's behind them or they hit a wall.
+* <b>Jump:</b> Jumps up high towards Hornet, occasionally jumping again if she isn't behind them after the first jump. They only use this move if there is enough space above themselves.
+
+Deep Divers deal {{Damage|2}} of contact damage for all attacks.
+
+Due to their bell armour, Deep Divers are completely immune to needle bounces. They do not get stunned at all by helmet attacks, unlike smaller bell-helmeted workers like [[Smelt Shoveller]]s.
+
+Finally, Deep Divers are one of the [[Silk Snipper|few enemies]] who can jump up and down through platforms to reach Hornet.
+
+Since they are mostly fought in narrow corridors, stay near edges of platforms and jump up or down between them when they charge. There is usually just enough space to dash over them when they charge, though timing is tight.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Deep Divers have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* For grace above...
+* Smelt dug and churned...
+* Toil, and toil, and toil...
+* Tunnel, breach, bore...
+* Seek the shine... find the ore...
+* By holy light...
+}}
+
+== Location ==
+Deep Divers can be found in the southeast [[Deep Docks]], in the area unlocked using a [[Simple Key (Silksong)|Simple Key]].
+
+{{Gallery
+| Image1 = Mapshot SS Deep Diver 01.png!Locations in the Deep Docks
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Deep Diver 01.png!In the Deep Docks
+|Image2 = Screenshot SS Deep Diver 03.png!Charge Attack
+|Image3 = Screenshot SS Deep Diver 02.png!Jump Attack
+|Image4 = Screenshot SS Deep Diver 04.png!Moving between platforms
+|Image5 = Screenshot SS Deep Diver 06.png!Singing
+}}
+{{Localisation
+|DEname = Tiefentaucher
+|DEmeaning = Depths Diver
+|ESname = Buzo de las profundidades
+|ESmeaning = Diver of the Depths
+|FRname = Clochelier
+|FRmeaning = 
+|ITname = Tuffatore Estremo
+|ITmeaning = Extreme Diver
+|JAname = 深みの採掘者
+|JAromanised = Fukami no saikutsusha
+|JAmeaning = Miner of the Depths
+|KOname = 깊은 곳 잠수부
+|KOromanised = Gipeun got jamsubu
+|KOmeaning = Depth Diver
+|PTname = Mergulhador Extremo
+|PTmeaning = Extreme Diver
+|RUname = Глубинный ныряльщик
+|RUromanised = Glubinnyj nyrjalʹščik
+|RUmeaning = Depths Diver
+|TWname = 深潛者
+|TWromanised = Shēnqián zhě
+|TWmeaning = same
+|ZHname = 深潜者
+|ZHromanised = Shēnqián zhě
+|ZHmeaning = Deep Diver
+|CODEname=DOCK_CHARGER
+|CODEmeaning = <code>DOCK</code> internally refers to the Deep Docks.
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

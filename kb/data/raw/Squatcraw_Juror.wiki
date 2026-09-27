@@ -1,0 +1,88 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Squatcraw Juror.png|Hunter's Journal
+Squatcraw Juror Airborne.png|Airborne
+Squatcraw Juror.png|Grounded
+</gallery>
+|drops = None
+|health = 60
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.4|1|0.9|0.9|0.9}}
+|numbers_required = 8 <br>(Instantly completed on [[Crawfather]]'s death)
+|sing=Tallcraw
+|singnum=2
+}}
+
+{{Quote
+|Hr = Journal
+|Short elder crawbug eagerly serving in their court.<hr/>
+They seek to slay their only chance at survival. Alas, any words would fall useless. I have only my blade to offer response.
+}}
+
+<b>Squatcraw Jurors</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are stout, elder [[Craws|crawbugs]] who eagerly serve the [[Craws#Court_of_Craws|Court of Craws]].<ref>Squatcraw Juror [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Short elder crawbug eagerly serving in their court."</i></ref> They are the [[Act 3]] counterparts to [[Squatcraw]]s, with slightly more health, a slightly higher damage modifier, and an immunity to needle-bounce attacks.
+
+== Behaviour and Tactics ==
+Squatcraw Jurors frequently switch between flying and being grounded at any time, and have no behavioural differences to their Act 1/2 counterparts.
+
+Squatcraws Jurors' only attack is to launch three pins in an 80° fan formation, similar to the [[Threefold Pin]]. Whilst flying, they change the angle of throwing but still can cover an 80-degree area. Dodging between the pins is often necessary, so it is important to get used to the angles. Despite their stature, they are highly mobile and attempt to always fly out of Hornet's reach. They remain stationary when preparing to attack, so this is a good moment to get close and strike.
+
+Due to their special metallic headwear, Squatcraw Jurors are completely immune to Needle-bounce attacks.
+
+Whilst flying, remaining directly below them can allow Hornet to easily strike them with the Needle, as well as always dodge their Pins, since they can't attack directly beneath themselves whilst airborne.
+
+Whilst they're grounded, always be ready to do a small jump to avoid the lowest Pin that they throw and capitalise on the opening.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+*Guilty! Guilty!
+*Lay down your judgement!
+*Father, Father!
+*Punish the villain!
+}}
+
+== Location ==
+Squatcraw Jurors can be found exclusively in [[Greymoor]] during the [[Court of Craws]] fight in the [[Craw Lake]] building.
+
+{{Gallery
+|Image1 = Mapshot SS Court of Craws.png!Location of the Court of Craws
+}}
+
+==Gallery==
+{{Gallery
+|Image1=Screenshot SS Squatcraw Juror 01.png!Flying
+|Image2=Screenshot SS Squatcraw Juror 02.png!On the ground
+|Image3=Screenshot SS Squatcraw Juror 03.png!Reading to throw pins from the ground
+|Image4=Screenshot SS Squatcraw Juror 04.png!Throwing pins 
+|Image5=Screenshot SS Squatcraw Juror 05.png!Singing
+}}
+{{Localisation
+|DEname = Feistkrähfer-Schöffe
+|DEmeaning = Squatcraw <abbr title="The German word Schöffe refers to a concept in German law known as a lay-judge in English. While similar to a jury, lay-judges in Germany are elected from the general populace for a full period of 5 years to serve in various trials alongside a judge.">Lay-Judge</abbr><br><small><i>Krähfer</i> is the name of the [[Craws]] in German, a portmanteau of <i>krähe</i> (crow) and <i>käfer</i> (bug).</small>
+|ESname = Jurado cuervón recio
+|ESmeaning = Thick Craw Juror<br><small><i>Cuervón</i> is the name of the [[Craws]] in Spanish, from <i>cuervo</i> (crow) and <i>-ón</i> (augmentative suffix).</small>
+|FRname = Juré Corbotère Trapu
+|FRmeaning = Juror Squat Craw<br><small>This is incosistent with the name of [[Squatcraw]]s themselves which is <i>Corbotère Robuste</i> (robust Craw).</small>
+|ITname = Corvide Tozzo Giurato
+|ITmeaning = Sworn Stubby Corvid
+|JAname = ズングリボロガワの審議者
+|JAromanised = Zunguri borogawa no shingisha
+|JAmeaning = Stocky Craw Juror or Stocky Craw Deliberator<br><small>{{lang|ja|ボロガワ}} <i>borogawa</i> is the name of the [[Craws]] in Japanese, a combination of {{lang|ja|襤}} <i>boro</i> (rag) and {{lang|ja|皮}} <i>kawa</i> (skin).</small>
+|KOname = 땅딸막까마귀 배심원
+|KOromanised = Ttangttalmakkkamagwi baesimwon
+|KOmeaning = Squat Crow Juror
+|PTname = Jurado Corbisco-robusto
+|PTmeaning = Squatcraw Juror<br><small><i>Corbisco-robusto</i> is the name of the [[Squatcraw]]s in Brazilian Portuguese, from <i>Corbo</i> (Craw) and <i>-isco</i> (diminutive suffix) combined with <i>robusto</i> (robust).<small>
+|RUname = Присяжный широкар
+|RUromanised = Prisjažnyj širokar
+|RUmeaning = Juror Wide Craw<br><small>{{lang|ru|Кар}} <i>kar</i> is the name of the [[Craws]] in Russian, from {{lang|ru|кар}} <i>kar</i> (Russian onomatopoeia for a crow's call).</small>
+|TWname = 矮鴉蟲陪審員
+|TWromanised = Ǎi yā chóng péishěnyuán
+|TWmeaning = same
+|ZHname = 矮鸦虫陪审员
+|ZHromanised = Ǎi yā chóng péishěnyuán
+|ZHmeaning = Squat Crow Bug Juror
+|CODEname=CROWMAN_DAGGER_JUROR
+|CODEmeaning=Squatcraws are internally known as "Crowman Daggers"
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Enemies}}

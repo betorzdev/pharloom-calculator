@@ -1,0 +1,54 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Cogwork_Core_05.png|400px|center]]
+|[[File:Mapshot_SS_Cogwork_Core_Arena_1.png|150px|center]]
+|-
+| colspan="2" | Enemy gauntlet in the southwest of the Cogwork Core. The arena begins with two platforms (centre and right), and the platforms change over the duration of the fight.
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>[[Mask Shard (Silksong)|Mask Shard]]</center>
+| <center>[https://www.youtube.com/watch?v=swPmNk9_fw0 Generic Enemy Battle A]</center>
+|-
+! colspan="2" |Waves
+|-
+| colspan="2" | Right platform drops. Two platforms rise up to the left and right of the centre platform.
+|-
+|
+[[File:HJ_Cogwork Choirbug.png|35x35px|link=Cogwork Choirbug]] [[Cogwork Choirbug]] x2, left and right
+|
+|-
+| colspan="2" | Three middle platforms drop. Two platforms rise up at the left and right edges of the arena.
+|-
+|
+[[File:HJ_Cogwork Spine.png|35x35px|link=Cogwork Spine]] [[Cogwork Spine]] x3, centre<br/>
+[[File:HJ_Cogwork Cleanser.png|35x35px|link=Cogwork Cleanser]] [[Cogwork Cleanser]], left or right platform, depending on [[Hornet (Silksong)|Hornet]]'s position
+| Cogwork Cleanser appears shortly after Cogwork Spines.
+|-
+| colspan="2" | Both left and right platforms drop. One platform rises up in the centre.
+|-
+|[[File:HJ_Cogworker.png|35x35px|link=Cogworker]] [[Cogworker]] x2, top left and bottom right
+|
+|-
+| colspan="2" | Two platforms rise up to the left and right of the centre platform.
+|-
+|
+[[File:HJ_Cogwork Defender.png|35x35px|link=Cogwork Defender]] [[Cogwork Defender]], left<br/>
+[[File:HJ_Cogwork Choirbug.png|35x35px|link=Cogwork Choirbug]] Cogwork Choirbug, right
+|
+|-
+| colspan="2" | Three middle platforms drop. Two platforms rise up at the left and right edges of the arena.
+|-
+|
+[[File:HJ_Cogworker.png|35x35px|link=Cogworker]] Cogworker x2, top and bottom centre
+|
+|-
+| colspan="2" | Both left and right platforms drop. Two platforms rise up in the centre.
+|-
+|
+[[File:HJ_Cogwork Defender.png|35x35px|link=Cogwork Defender]] Cogwork Defender, left
+|
+|}

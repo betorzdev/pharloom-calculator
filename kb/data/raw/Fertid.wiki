@@ -1,0 +1,91 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Fertid.png|Hunter's Journal
+Fertid Idle.png|Idle
+</gallery>
+| hasdrop = true
+| sh1 = 3-5
+| sh2 = 4-7
+|health = 15/{{BT|30}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.75|0.75|0.75|0.75}}
+|numbers_required = 25
+|singnum = 1
+}}
+
+{{Quote
+|Hr = Journal
+|Skittish scrambler of the Far Fields. Its antennae resemble stalks of grass to aid in camouflage.<hr/>
+It has no means to defend itself. Its only hope for survival is to be mistaken for a plant.
+}}
+
+<b>Fertids</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are skittish, defenceless creatures that mimic stalks of grass to survive.<ref>Fertid [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Skittish scrambler of the Far Fields. Its antennae resemble stalks of grass to aid in camouflage. It has no means to defend itself. Its only hope for survival is to be mistaken for a plant."</i></ref>
+
+== Behaviour and Tactics ==
+Fertids walk back and forth, pausing occasionally. They do not attack, and do not react or attempt to escape when [[Hornet (Silksong)|Hornet]] attacks them.
+
+Despite their non-aggression, they deal {{Damage|1}} on contact.
+
+=== Act 3 ===
+[[Black-threaded]] Fertids have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|Void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* From heat we grow...
+* Between bone we sprout...
+* Shells soft...
+* Leaves hide...
+}}
+
+== Location ==
+Fertids can be found in the [[Far Fields]] and the eastern [[Deep Docks]].
+
+The Fertid below the entrance to the [[Skull Cave]] stops spawning once Hornet defeats the cave's [[Enemy Gauntlets (Silksong)/Far Fields 1|enemy gauntlet]] and rests at a [[Bench (Silksong)|bench]]. During the <i>[[The Hidden Hunter]]</i> [[wish]], two more are temporarily replaced by a trail of items leading to [[Gurr the Outcast]] and return once the boss is defeated. In {{Steel Soul Icon Mini|SS}} [[Steel Soul Mode (Silksong)|Steel Soul Mode]], the Fertid to the left of the Skull Cave no longer appears if [[Sula]] happens to set up camp at its location during the <i>[[A Vassal Lost]]</i> wish.
+
+{{Gallery
+|Image1 = Mapshot SS Fertid 01.png!Locations in the Far Fields
+|Image2 = Mapshot SS Fertid 03.png!Locations in the Far Fields in Act 3
+|Image3 = Mapshot SS Fertid 02.png!Location in the Deep Docks
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Deep Docks 20.png!In the Deep Docks
+|Image2 = Screenshot SS Fertid 01.png!In the Far Fields
+|Image3 = Screenshot SS Fertid 02.png!Chirping
+|Image4 = Screenshot SS Fertid 03.png!Reacting to the Needolin
+|Image5 = Screenshot SS Fertid 04.png!Killed by [[Shakra]]
+|Image6 = Screenshot SS Fertid 05.png!Corpse in Act 3
+}}
+
+{{Localisation
+|DEname = Fertide
+|DEmeaning = —
+|ESname = Fértido
+|ESmeaning = —
+|FRname = Folfeuille
+|FRmeaning =
+|ITname = Erbide
+|ITmeaning = From <i>erba</i> (grass) and <i>-ide</i> (suffix for creatures)
+|JAname = クサガクレ
+|JAromanised = Kusa gakure
+|JAmeaning = Hidden Grass<br><small>Combination of {{lang|ja|草}} <i>kusa</i> (grass) and {{lang|ja|隠れ}} <i>kakure</i> (hidden).</small>
+|KOname = 번식충
+|KOromanised = Beonsikchung
+|KOmeaning = Propagation Bug
+|PTname = Fértido
+|PTmeaning = —
+|RUname = Травид
+|RUromanised = Travid
+|RUmeaning = Portmanteu of {{lang|ru|Трава <i>trava</i>}} (grass) and Fertid.
+|TWname = 擬草蟲
+|TWromanised = Nǐcǎo chóng
+|TWmeaning = same
+|ZHname = 拟草虫
+|ZHromanised = Nǐcǎo chóng
+|ZHmeaning = Grass Mimic Bug
+|CODEname=FIELDS_GOOMBA
+|CODEmeaning = "Fields" internally refers to Far Fields. Fertids act like [https://www.mariowiki.com/Goomba Goombas] from the <i>Mario</i> franchise 
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

@@ -1,0 +1,76 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Spinebeak Kai.png|Hunter's Journal
+Spinebeak Kai Attacking.png|Attacking
+</gallery>
+|drops = None
+|health = 5
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 10<br>(Instantly completed on [[Crust King Khann]]'s death)
+}}
+{{Quote
+|Hr = Journal
+|Steel horned floater, able to defend itself and its companions.<hr/>
+A critical member of the larger flock. Without them present the Kai would be fast driven to extinction by larger predators.
+}}
+
+<b>Spinebeak Kais</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are plump floaters with sharp beaks, long lost to time and living on only in memory. 
+
+== Behaviour and Tactics ==
+Spinebeak Kais start off floating around idly; however, once they detect Hornet they pursue her relentlessly.<br>
+Before attacking, it'll try to get horizontally aligned with Hornet, then performing a short dash attack towards her with its pointy beak once she's in range.
+
+Spinebeak Kais deal {{Damage|1}} on all attacks and contact damage.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* The crust covers...
+* The crust conceals...
+* Our shells made strong...
+* Our nest made secret...
+}}
+
+== Location ==
+Spinebeak Kais can only be found in [[Crust King Khann]]'s [[Elegy of the Deep|Memory]] of the [[Coral Tower]] during [[Acts|Act 3]].
+
+{{Gallery
+|Image1 = Mapshot SS Coral Tower.png
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Spinebeak Kai 01.png!Idle
+|Image2= Screenshot SS Spinebeak Kai 02.png!Attacking
+}}
+{{Localisation
+|DEname = Stachelschnabel-Kai
+|DEmeaning = Spike Beak Kai
+|ESname = Kai picagudo
+|ESmeaning = Pointy Pike Kai, portmanteau of <i>pica</i> (pike) and <i>agudo</i> (pointy).
+|FRname = Kai Gardecorne
+|FRmeaning =
+|ITname = Kai Beccospino
+|ITmeaning = Spinebeak Kai
+|JAname = トゲクチノカイ
+|JAromanised = Toge kuchi no kai
+|JAmeaning = Combination of {{lang|ja|刺}} <i>toge</i> (thorn), {{lang|ja|口}} <i>kuchi</i> (mouth) and {{lang|ja|カイ}} <i>kai</i> (Kai).
+|KOname = 가시부리 카이
+|KOromanised = Gasiburi kai
+|KOmeaning = Thorn Beak Kai
+|PTname = Kai Bico-de-concha
+|PTmeaning = Conch-beak Kai or Shell-beak Kai
+|RUname = Кай-спинолом
+|RUromanised = Kaj-spinolom
+|RUmeaning =
+|TWname = 旋角凱蟲
+|TWromanised = Xuán jiǎo kǎi chóng
+|TWmeaning = same
+|ZHname = 旋角凯虫
+|ZHromanised = Xuán jiǎo kǎi chóng
+|ZHmeaning = Spiral-horned Kai Bug
+|CODEname=POKE_SWIMMER
+|CODEmeaning=[[Steelspine Kai]]s are internally known as "Spike Swimmers"
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

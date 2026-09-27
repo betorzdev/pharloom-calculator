@@ -1,0 +1,129 @@
+__NOTOC__
+{{SS Infobox Item
+| source = [[Moss Grotto]]<br>[[Bone Bottom]]<br>[[Weavenest Atla]]<br>[[Memorium]]
+| type = [[Items (Silksong)#Deliverable|Deliverable]]
+| description = Sweet fruit that grows in moist environments. Its seeds are toxic to most creatures.
+}}
+{{Quote
+|Hr=SS
+|Mmm, the precious fruit! And... oh! Such fruit! Perfectly ripe! Perfectly fragrant! Perfectly round!
+|[[Moss Druid]]
+}}
+<b>Mossberries</b> are [[Items_(Silksong)#Deliverables|deliverable items]] in <i>[[Hollow Knight: Silksong]]</i>. They are mostly found in the [[Mosslands]], recognisable by their bright green glow.
+
+== Use ==
+Mossberries can be given to [[Moss Druid]] to complete the <i>[[Berry Picking]]</i> [[Wish]]. 
+3 berries are required for the completion of the wish, upon which Moss Druid will give the [[Druid's Eye]]. 
+
+Additional berries can be sold to Moss Druid for [[Rosaries]] ({{R|131}}/{{R|157}}/{{R|173}} in a random order) after the wish has been completed. 
+
+Upon delivering all 7 Mossberries, [[Moss Druid]] will give the [[Druid's Eyes]], an upgraded version of Druid's Eye.
+
+{{Gallery
+|Image1 = Mapshot SS Moss Druid.png!Location in Moss Grotto
+|Image2 = Screenshot SS Moss Grotto 14.png!Moss Druid in Moss Grotto
+}}
+
+{{Clear}}
+
+== How to Acquire ==
+{| class="article-table" style="text-align: center;" data-tpt-table-id="ss-mosberries"
+! #
+! Area
+! Location
+! Map
+|- data-tpt-row-id="mossberry-moss-grotto-1"
+! 1
+| [[Moss Grotto]]
+| At the top of the room northwest of the starting area
+| [[File:Mapshot SS Mossberry 01.png|200px|center]]
+|- data-tpt-row-id="mossberry-moss-grotto-2"
+! 2
+| [[Moss Grotto]]
+| At the top of the eastern room
+| [[File:Mapshot SS Mossberry 02.png|200px|center]]
+|- data-tpt-row-id="mossberry-bone-bottom-1"
+! 3
+| [[Bone Bottom]]
+| Carried by an [[Aknid]] in the room below [[Moss Druid]]'s home
+| [[File:Mapshot SS Mossberry 03.png|200px|center]]
+|- data-tpt-row-id="mossberry-bone-bottom-2" data-tpt-rowspan="2"
+! rowspan=2 | 4 
+| rowspan=2 | [[Bone Bottom]]
+| Carried by an Aknid above the town 
+| [[File:Mapshot SS Mossberry 04.png|200px|center]]
+|-
+| In [[Act 3]] the Aknid moves one room east
+| [[File:Mapshot SS Mossberry 05.png|200px|center]]
+|- data-tpt-row-id="mossberry-bone-bottom-3"
+! 5
+| [[Bone Bottom]]
+| Carried by an Aknid above [[Bonegrave]]
+| [[File:Mapshot SS Mossberry 06.png|200px|center]]
+|- data-tpt-row-id="mossberry-weavenest-atla"
+! 6
+| [[Weavenest Atla]]
+| In a hidden room west of the [[Bench (Silksong)|bench]]
+| [[File:Mapshot SS Mossberry 07.png|200px|center]]
+|- data-tpt-row-id="mossberry-memorium"
+! 7
+| [[Memorium]]
+| In the room east of the bench
+| [[File:Mapshot SS Mossberry 08.png|200px|center]]
+|-
+|}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Mossberry 01.png!In Moss Grotto (West)
+|Image2 = Screenshot SS Mossberry 02.png!In Moss Grotto (East)
+|Image3 = Screenshot SS Mossberry 03.png!In Mosshome (Moss Grotto)
+|Image4 = Screenshot SS Mossberry 04.png!In Bone Bottom (Moss Grotto)
+|Image5 = Screenshot SS Mossberry 05.png!In Bone Bottom in Act 3 (Moss Grotto)
+|Image6 = Screenshot SS Mossberry 06.png!In Bonegrave (Moss Grotto)
+|Image7 = Screenshot SS Mossberry 07.png!In Weavenest Atla
+|Image8 = Screenshot SS Mossberry 08.png!In Memorium
+}}
+
+== Trivia ==
+* Mossberries share the same sprite as [[Pollip Heart]]s for when the item has not been picked up. This base sprite is not coloured, instead being given its in-game appearance by post-processing effects or a shader.
+{{Gallery
+|Image1= Mossberry Pickup.png ! Mossberry pickup sprite
+|Image2= Pollip Heart Pickup.png ! Pollip Heart pickup sprite
+|Image3= Mossberry Pickup Grey.png ! The uncoloured base sprite for both
+}}
+
+
+{{Localisation
+|DEname = Moosbeere
+|DEmeaning = Mossberry
+|ESname = Baya musgosa
+|ESmeaning = Mossy Berry
+|FRname = Baie verdissante
+|FRmeaning = Greening Berry
+|ITname = Baccamuschio
+|ITmeaning = Mossberry
+|JAname = 苔の実
+|JAromanised = Koke no mi
+|JAmeaning = Moss Fruit
+|KOname = 이끼베리
+|KOromanised = Ikkiberi
+|KOmeaning = Mossberry
+|PTname = Musgogaba
+|PTmeaning = Portmanteau of <i>musgo</i> (moss) and <i>mangaba</i>.<br><small>[[wikipedia:Hancornia|Mangaba]] is a species of fruit native to Brazil.</small>
+|RUname = Болотная ягода
+|RUromanised = Bolotnaya jagoda
+|RUmeaning = Swamp Berry
+|TWname = 苔蘚漿果
+|TWromanised = Táixiǎn jiāngguǒ
+|TWmeaning = Moss Berry
+|ZHname = 苔莓
+|ZHromanised = Tái méi
+|ZHmeaning = Moss Berry<br><small>{{lang|zh-Hans|莓}} <i>méi</i> has an alternate definition of "moss" as well.</small>
+|CODEname = MOSSBERRY
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+{{SS Nav Items}}
+
+[[Category:Items (Silksong)]]

@@ -1,0 +1,100 @@
+{{SS Infobox Item
+| image = <gallery>
+Craw Summons.png|Inventory
+Craw Summons Pickup.png|Pickup
+</gallery>
+| type = [[Items (Silksong)#Keys|Key]]
+| source = Benches in various areas around [[Greymoor]] (See{{Section link|#Locations}})
+| description = Scrawled missive on tattered black rag.<hr>
+"Defiler. . . Dark... Attend... Home... Wheel..."
+| effects = Grants access to the [[Greymoor#Sub-area: Court of Craws|Court of Craws]]
+}}
+
+{{Quote
+| Curiosity saw me answer their summons, but I shall not allow them to stall me long. I must work fast to fix my grand mistake.
+| [[Hornet (Silksong)|Hornet]]
+| Hr = Hornet
+}}
+
+The <b>Craw Summons</b> is an [[Items (Silksong)#Keys|item]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+The Craw Summons is used to unlock the door inside the [[Craw Lake]] house on the far east side of [[Greymoor]], granting access to the [[Greymoor#Court_of_Craws|Court of Craws]]. 
+
+{{Gallery
+|Image1=Mapshot SS Craw Summons 01.png!Location of the house in Craw Lake
+|Image2=Screenshot SS Craw Summons 01.png!The Craw Lake house
+|Image3=Screenshot SS Craw Summons 02.png!Door inside the house
+|Image4=Screenshot SS Craw Summons 04.png!Hornet giving the summons
+}}
+
+== How To Acquire ==
+To receive the Craw Summons, [[Hornet (Silksong)|Hornet]] must have reached [[Act 3]], completed the <i>[[SEEK: Awaiting the End]]</i> [[Objectives|objective]], and hit the lever inside the Craw house on [[Craw Lake]]. 
+
+Once these things are done, there is a 20% chance Hornet receives the Summons every time she rests at certain Benches in [[Bellhart]], [[Bilewater]], [[Far Fields]], [[Shellwood]], [[Sinner's Road]], and [[Wisp Thicket]]. If the Summons does not appear, she must leave the room (or the [[Save Data (Silksong)|save profile]] must be reloaded) before the chance can be rolled again.
+
+Once [[Silk Soar]] is obtained, the chance is raised to 25%, and each [[Old Hearts|Old Heart]] that is taken increases the chance by another 5%. The [[Everbloom]] also adds 5%, totalling to a maximum 50% chance to receive the Summons when resting at an applicable Bench once all of these [[Objectives|objective]] items are obtained.<ref group=Source>FSM <code>craw_summons_spawn_check</code> in <code>fsmtemplates_assets_shared.bundle</code>, FSM <code>craw_court_summons_pin</code> only exists in certain scenes with benches.</ref>
+
+The following [[Bench (Silksong)|benches]] can receive the Craw Summons. [[Greymoor]] does not have a bench that can receive the Summons.
+
+{{Gallery
+|Image1 = Mapshot SS Bellhart Craw Bench.png!Bench location in [[Bellhart]]
+|Image2 = Mapshot SS Bilewater Craw Bench.png!Bench location in [[Bilewater]]
+|Image3 = Mapshot SS Far Fields Craw Bench.png!Bench locations in [[Far Fields]]
+|Image4 = Mapshot SS Shellwood Craw Benches.png!Bench locations in [[Shellwood]]
+|Image5 = Mapshot SS Sinner's Road Craw Bench.png!Bench locations in [[Sinner's Road]]
+|Image6 = Mapshot SS Wisp Thicket Craw Bench.png!Bench location in [[Wisp Thicket]]
+}}
+
+== Gallery ==
+
+{{Gallery
+|Image1 = Screenshot SS Craw Summons 03.png!Craw Summons in Bellhart
+|Image2 = Screenshot SS Craw Summons 05.png!Craw Summons in Far Fields
+|Image3 = Screenshot SS Craw Summons 13.png!Craw Summons in Far Fields
+|Image4 = Screenshot SS Craw Summons 06.png!Craw Summons in Wisp Thicket
+|Image5 = Screenshot SS Craw Summons 07.png!Craw Summons in Sinner's Road
+|Image6 = Screenshot SS Craw Summons 08.png!Craw Summons in Sinner's Road
+|Image7 = Screenshot SS Craw Summons 09.png!Craw Summons in Bilewater
+|Image8 = Screenshot SS Craw Summons 10.png!Craw Summons in Shellwood
+|Image9 = Screenshot SS Craw Summons 11.png!Craw Summons in Shellwood
+|Image10 = Screenshot SS Craw Summons 12.png!Craw Summons in Shellwood
+}}
+
+== Trivia ==
+* If Hornet is hit by the Craw Summons as it is being thrown, it deals {{Damage|1}}. Once it is embedded in the ground, it no longer deals damage.
+{{Localisation
+|DEname = Krähfer-Vorladung
+|DEmeaning = Craw Court Summons<br><small><i>Krähfer</i> is the name of the [[Craws]] in German, a portmanteau of <i>krähe</i> (crow) and <i>käfer</i> (bug).</small>
+|ESname = Citación cuervona
+|ESmeaning = Craw Citation<br><small><i>Cuervón</i> is the name of the [[Craws]] in Spanish, from <i>cuervo</i> (crow) and <i>-ón</i> (augmentative suffix).</small>
+|FRname = Message de corbotère
+|FRmeaning = Craw Message<br><small><i>Corbotère</i> is the name of the [[Craws]] in French, from <i>corbeau</i> (crow).</small>
+|ITname = Appello di Corvide
+|ITmeaning = Corvid Call
+|JAname = ボロガワの文書
+|JAromanised = Borogawa no bunsho
+|JAmeaning = Craw's Document<br><small>{{lang|ja|ボロガワ}} <i>borogawa</i> is the name of the [[Craws]] in Japanese, a combination of {{lang|ja|襤}} <i>boro</i> (rag) and {{lang|ja|皮}} <i>kawa</i> (skin).</small>
+|KOname = 까마귀의 소환장
+|KOromanised = Kkamagwiui sohwanjang
+|KOmeaning = Crow Court Summons
+|PTname =  Convocação dos Corbos
+|PTmeaning = Craw Summons<br><small><i>Corbo</i> is the name of the [[Craws]] in Brazilian Portuguese, from <i>corvo</i> (crow).</small>
+|RUname = Зов каров
+|RUromanised = Zov karov
+|RUmeaning = Craw's Summons<br><small>{{lang|ru|Кар}} <i>kar</i> is the name of the [[Craws]] in Russian, from {{lang|ru|кар}} <i>kar</i> (Russian onomatopoeia for a crow's call).</small>
+|TWname = 鴉蟲傳喚令
+|TWromanised = Yā chóng chuánhuàn lìng
+|TWmeaning = same
+|ZHname = 鸦虫传唤令
+|ZHromanised = Yā chóng chuánhuàn lìng
+|ZHmeaning = Crow Bug Summons
+|CODEname = CRAW_SUMMONS
+}}
+
+{{Hr|SS}}
+
+== Code References ==
+<references group="Source"/>
+
+{{SS Nav Items}}

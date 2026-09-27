@@ -1,0 +1,72 @@
+{{SS Infobox Item
+| image = Bellhome Key.png
+| type = [[Items (Silksong)#Keys|Key]]
+| source = [[Pavo]]
+| description = Key to a restored bell above Bellhart.
+}}
+
+{{Quote
+| In recognition of your noble efforts, and as one small step to solving the problem, I have decreed a grand gift should be given! A bellhome of your very own!
+A place to reflect. A bed to lay in. It's hanging up there at the top, beside our good pinmaster.
+| [[Pavo]]
+| Hr = SS
+}}
+
+The <b>Bellhome Key</b> is an [[Items (Silksong)#Keys|item]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+Used to open the bell located above [[Bellhart]], allowing access to the [[bellhome]].
+
+{{Gallery
+|Image1 = Mapshot SS Bellhome.png!Bellhome location in Bellhart
+|Image2 = Screenshot SS Bellhome 01.png!Bellhome in Bellhart
+}}
+
+== How to Acquire ==
+[[Pavo]] gives the Bellhome Key to Hornet after completing <i>[[Bellhart's Glory]]</i><ref group = Source>FSM <code>Belltown Greeter NPC - Dialogue</code> in <code>belltown.bundle</code> checking <code>PlayerData.BelltownHouseState</code>.</ref> and 2 of the following Wishes:<ref group = Source><code>Belltown House Key</code> in <code>dataassets/questsystem/completetotalgroups.bundle</code>.</ref>
+* <i>[[Silver Bells]]</i>
+* <i>[[My Missing Courier]]</i>
+* <i>[[My Missing Brother]]</i>
+* <i>[[Savage Beastfly (Wish)|Savage Beastfly]]</i>
+
+{{Gallery
+|Image1 = Mapshot SS Pavo 01.png!Pavo's location in Bellhart
+|Image2 = Screenshot SS Bellhart 02.png!Pavo in Bellhart
+}}
+
+{{Localisation
+|DEname = Glockenheimschlüssel
+|DEmeaning = Bellhome Key
+|ESname = Llave de hogar campana
+|ESmeaning = Key of Bell Home
+|FRname = Clé d'un Clochetoit
+|FRmeaning = Key of a Bellhome
+|ITname = Chiave della casacampana
+|ITmeaning = Key of the Bellhome
+|JAname=鐘の家の鍵
+|JAromanised = Kane no ie no kagi
+|JAmeaning = Bell Home Key
+|KOname = 종의 집 열쇠
+|KOromanised = Jong-ui jip yeolsoe
+|KOmeaning = Bell Home Key
+|PTname = Chave do Campalar
+|PTmeaning = Bellhome Key<br><small><i>Campalar</i> is a portmanteau of <i>campânula</i> (bell or bellflower) and <i>lar</i> (home)</small>.
+|RUname = Ключ от Звонкого дома
+|RUromanised = Ključ ot Zvonkogo doma
+|RUmeaning = Bell Home Key<br><small>{{lang|ru|Звонкого <i>Zvonkogo</i>}} means "ringing" but can also be interpreted as the relational of {{lang|ru|звон <i>zvon</i>}} (chime).</small>
+|TWname = 鐘屋鑰匙
+|TWromanised = Zhōng wū yàoshi
+|TWmeaning = same
+|ZHname = 钟居钥匙
+|ZHromanised = Zhōng jū yàoshi
+|ZHmeaning = Bell House Key
+|CODEname = BELL_HOUSE_KEY</code> <br> <code>BELLTOWN_HOUSE_KEY
+}}
+{{Refs|hr=ss}}
+
+== Code References ==
+<references group="Source"/>
+
+{{SS Nav Items}}
+
+[[Category:Items (Silksong)]]

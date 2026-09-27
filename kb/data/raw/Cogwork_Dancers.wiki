@@ -1,0 +1,153 @@
+{{Navbar|page1=Cogwork Dancers|page2=Clover Dancers}}
+{{SS Infobox Boss
+|title1= Cogwork Dancers
+|image1= <gallery>
+B Cogwork Dancers.png|Hunter's Journal
+Cogwork Dancers Idles.png|Idle
+Cogwork Dancers Staggered.png|Staggered
+Cogwork Dancers Inactive.png|Inactive
+</gallery>
+|theme = [https://youtu.be/GQFdtaL6W90 Cogwork Dancers (1stPhase)] (Phase 1)<br>[https://youtu.be/WL1FtUmBvI4 Cogwork Dancers (2ndPhase)] (Phase 2)<br>[https://youtu.be/6HTmFomdSTQ Cogwork Dancers (3rdPhase)] (Phase 3)<br>[https://youtu.be/qq0QeW1B2As Cogwork Dancers (4thPhase)] (Phase 4)<br>
+|location= [[Cogwork Core]]
+|health= 190 + 190 (First Phase)<br/>220 + 220 (Second Phase)<br/>220 + 220 (Third Phase)
+630 (Total Each, Phases 1-3)<br/>180 (Fourth Phase)
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|drops= Access to the rest of [[Cogwork Core]]
+|numbers_required = 1
+|singnum = 2
+}}
+
+{{Quote
+|Hr = Journal
+|Automatons of impeccable construction, welcoming entrants to their chamber with a display of deadly dance.<hr/>
+Two cogwork bugs, and yet the soul seemed singular? A sad, yet masterful imitation of life, imbued inside shells of iron.
+}}
+
+The <b>Cogwork Dancers</b> are a main [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. They are twin [[Cogwork Bugs|automaton]] dancers of impeccable construction.<ref name=hj1>Cogwork Dancers [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Automatons of impeccable construction, welcoming entrants to their chamber with a display of deadly dance."</i></ref> They serve as the guardians of the [[ASCEND: Pharloom's Crown|final trial]] for those who wish to reach [[Pharloom]]'s [[the Cradle|peak]]. 
+
+== Background ==
+The Cogwork Dancers were modelled after the partner of the [[Green Prince]], the dual prince of [[Verdania]]. In a desperate attempt to keep their land safe, the prince made a deal with [[the Citadel]], offering himself up as trade. His body was used as the mould for the automatons and his soul was split in two, and placed within them.<ref>[[Green Prince]]: <i>"The dancers… they were the last free act of my partner... His whole he gave, in desperate trade to see our own caves left safe. His shell and soul became the mould."</i></ref><ref>Cogwork Dancers [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Two cogwork bugs, and yet the soul seemed singular?"</i></ref> 
+The dancers were created to defend the entrance to the [[Cogwork Core]], and by extension [[the Cradle]]. <ref>Cogwork Dancers [[Needolin]] dialogue: <i>"The gilded threshold!", "To dance! Our duty!", "Our honour! Our peace!", "Claws clash! Blades sing!"</i></ref><ref name=hj1/> 
+
+== In-game Events ==
+The Cogwork Dancers are fought in the central area of [[Cogwork Core]]. Defeating them reveals a lift, and the [[Cogwork Statues]], while progressing the main objective.
+
+If the [[Green Prince]] has been freed, he'll come to inspect the remains of the Cogwork Dancers. In [[Act 3]] he will bring one of the remains to the ruins of [[Verdania]] to lament over. After the defeat of the [[Clover Dancers]], Green Prince will be found dead lying next to the shell.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+The Cogwork Dancers have 3 main attacks, which they perform on a rhythm. All of their attacks have clear telegraphs:
+* <b>Cogwork Cadence</b>: Each Dancer simultaneously projects a light beam from its head before dashing in the indicated direction. If one dashes to the ground with this attack, it slashes to both sides as it lands. Occasionally, one of the Dancers may pirouette in place while the other dashes.
+* <b>Cogwork Configuration</b>: Both Dancers leave the arena temporarily, then a pattern of light beams appears. The Dancers attack by dashing along each light beam, then return to the arena.
+* <b>Cogwork Clash</b>: Both Dancers project light beams towards the centre of the arena, where a circle telegraph appears. They dash toward the centre, then attack in a flurry of slashes within the circle. At the end of this attack, the Dancers hover for a moment to embrace midair, before resuming the Cogwork Cadence.
+
+Contact with the Dancers or their blades deals {{Damage|2}}, while Cogwork Configuration and Cogwork Clash deal {{Damage|1+1}}.
+
+This battle is split into <b>4 phases</b>, each marked by the Dancers moving back to their stations to be wound up. Cogwork Dancers do not share HP; a phase ends when either reaches 0 health for the phase.
+
+* In Phase 2, their attacks become faster and they sometimes use Cogwork Configuration twice in a row.
+* In Phase 3, each Dancer performs Cogwork Cadence offset from one another.
+* Phase 4 begins when one Dancer is destroyed; the fight continues with only one Dancer, which moves at a much slower pace. If it attempts to use Cogwork Clash, it fails and drops to the ground. It can no longer use Cogwork Configuration.
+
+<hr />
+
+{{Stagger
+|The Cogwork Dancers' stagger is based on their HP. One of the dancers staggers at the end of a phase, after which both retreat to their initial position within the machine in the background of the arena. 
+
+At the end of Phase 3, instead of staggering, one of the Dancers permanently dies, leaving the other to return to the machine alone.
+| -
+| game = SS
+}}
+
+<hr />
+
+If using the [[Ascendant's Grip]] Tool, it is possible to avoid almost all attacks (except Cogwork Configuration) by clinging to the middle of either wall. When a Cogwork Dancer dashes to a corner near the wall Hornet is on, she can make a few hits without needing to move.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* You and I...I and You...
+* We shall never...Dance alone!
+* Claws clash! Blades sing!
+* The gilded threshold!
+* Our honour! Our peace!
+* To dance! Our duty!
+}}
+During the final phase, the dialogue changes to the following;
+{{SS Needolin
+| columns = 2
+|
+* You and I... ...
+* ... ...Dance alone...
+* Claws... ...Blades...
+* ... ...Threshold...
+* ... ...Our peace...
+* To dance... ...
+}}
+
+== Location ==
+The Cogwork Dancers are found at the centre of the [[Cogwork Core]], accessible from the upper halls of the [[Choral Chambers]].
+
+{{Gallery
+|Image1 = Mapshot SS Cogwork Dancers.png!Location in Cogwork Core
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Cogwork Dancers 01.png!Cogwork Cadence
+|Image2 = Screenshot SS Cogwork Dancers 02.png!Cogwork Configuration
+|Image3 = Screenshot SS Cogwork Dancers 03.png!Cogwork Clash
+|Image4 = Screenshot SS Cogwork Dancers 06.png!Phase Change (Stagger)
+|Image5 = Screenshot SS Cogwork Dancers 04.png!Solo Cogwork Cadence
+|Image6 = Screenshot SS Cogwork Dancers 05.png!Failed Cogwork Clash
+|Image7 = Screenshot_SS_Cogwork_Dancers_07.png!Singing
+|Image8 = Screenshot_SS_Cogwork_Dancers_08.png!Singing (Airborne)
+|Image9 = Screenshot SS Cogwork Core 01.png!Arena in Cogwork Core
+|Image10 = Screenshot_SS_Verdania_01.png!Green Prince with the shell of a Cogwork Dancer
+}}
+
+== Achievements ==
+{{Achievement|game=silksong|Last Dance}}
+
+== Trivia ==
+* The Cogwork Dancers' theme has waltz-like motifs, but is in 4/4 time, potentially to emphasise the mechanical nature of the boss.
+* The attacks of the Cogwork Dancers are synced with the music, and unlike other played music in Silksong, the music stops at points during their battle, likely to keep their attacks in sync.
+*The Cogwork Dancers have numerous [[Cut Content (Silksong)#Enemy Behaviours|cut]] "Cogwork Configuration" variations.
+* Cogwork Dancers are the only [[Cogwork Bugs]] to not release [[Silk Flies]] when defeated.
+{{Localisation
+|DEname = Räderwerk-Tänzer
+|DEmeaning = Cogwork Dancers
+|ESname = Bailarines Mecánicos
+|ESmeaning = Mechanical Dancers
+|FRname = Duo-mécanique
+|FRmeaning = Mechanical Duo
+|ITname = Duo Meccanico
+|ITmeaning = Mechanical Duo
+|JAname = カラクリの舞踏者
+|JAromanised = Karakuri no butōsha
+|JAmeaning = Mechanism Dancer
+|KOname = 톱니바퀴 춤꾼들
+|KOromanised = Tomnibakwi chumkkundeul
+|KOmeaning = Cogwheel Dancers
+|PTname = Dançarinos Mecânicos
+|PTmeaning = Mechanical Dancers
+|RUname = Заводные танцоры
+|RUromanised = Zavodnye tancory
+|RUmeaning = Clockwork Dancers
+|TWname = 機樞舞者
+|TWromanised = Jīshū wǔzhě
+|TWmeaning = same
+|ZHname = 机枢舞者
+|ZHromanised = Jīshū wǔzhě
+|ZHmeaning = Mechanical Dancers
+|CODEname = CLOCKWORK_DANCER
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[pt:Dançarinos Mecânicos]]
+{{#seo:|keywords=cogwork dancers, dancers, clockwork dancers, clockwork, silksong}}

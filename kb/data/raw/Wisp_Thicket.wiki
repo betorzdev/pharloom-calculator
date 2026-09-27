@@ -1,0 +1,118 @@
+{{SS Infobox Area
+| image1 = <gallery>
+Wisp Thicket Map Marked.png|Marked
+Wisp Thicket Map Clean.png|Unmarked
+</gallery>
+| connection = [[Greymoor]]<br>[[Underworks]]
+| ambience = [https://www.youtube.com/watch?v=X-KW08PART0 Atmos Greymoor Cave]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+| main = [https://www.youtube.com/watch?v=BJ_-fDJbQTg Bit Dreamy]
+}}
+{{Quote
+|Miss grown-up, for your continued huntings you should climb up, up above here, above the tallest spinning towers! Hidden in the dark thickets are strange bugs who call up dancing flames. So pretty! So warm!
+|[[Nuu]]
+|Hr=SS
+}}
+<b>Wisp Thicket</b> is an [[Areas (Silksong)|area]] in <i>[[Hollow Knight: Silksong]]</i>. It is a small, dimly lit forest located to the top left of [[Greymoor]], inhabited by the [[Burning Bugs]].
+
+==Description==
+[[File:Screenshot SS Wisp Thicket 04.png|left|thumb|200px|Red tents amidst the thicket]]
+Wisp Thicket is a small, lush area with darker rooms. It is one of the smallest areas in [[Pharloom]] and can be accessed via the top of [[Greymoor]]. Many of the platforming challenges require the [[Clawline]] and the [[Faydown Cloak]].
+
+To the west is [[Father of the Flame]] boss fight. Defeating the boss gives the [[Wispfire Lantern]] [[tool]].
+
+The area's only [[Bench (Silksong)|bench]] is trapped in a hanging bag. [[Hornet (Silksong)|Hornet]] must strike the bag to free the bench and gain access to it. A [[Bone Scroll]] is located at the top of the vertical room east of the bench.
+
+A hidden path on the way to Father of the Flame leads to a [[Flea]] and connects up to the [[Underworks]].
+
+==History==
+Wisp Thicket is a secluded and secretive area home to the [[Burning Bugs]], a religious group that worship the [[Wisp]]s and the flame. Over time, the Burning Bugs achieved the ability to control and create Wisps that reside in the air of the thicket.<ref>[[Burning Bug]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"These ones somehow learnt to call and guide the scorching Wisps that share their thicket. Whether through dominance or reverence is unclear."</i></ref> They also supplied the materials to craft the [[Pimpillo]],<ref>[[:File:Mapshot SS Pimpillo Crafting Bench.png|Screenshot]] of a Pimpillo crafting location.</ref> a fabric pouch filled with volatile substances that can explode.<ref>[[Pimpillo]] description: <i>"Fabric pouch filled with volatile material. Explodes on impact with enemies or when ignited by its fuse."</i></ref> The Burning Bugs took [[pilgrims]] and burnt them, storing their remains and ashes in bags that they then hung all throughout the thicket.<ref>[[:File:Screenshot SS Burning Bugs 01.png|Screenshot]] of pilgrim remains falling from a sack.</ref>
+
+The Burning Bugs built [[Father of the Flame]] as a totem to represent their god.<ref name="father">[[Father of the Flame]] Hunter's Journal entry: <i>"Totem and god, built and worshipped by the Burning Bugs. The remains of an aged bug were housed at the pyre's heart. The structure suggested they wished for immolation. If so, I have seen their wish granted."</i></ref> The totem contains an old Burning Bug housed at the pyre's heart.<ref name="father" /> The ultimate desire of the Burning Bugs and the bug inside Father of the Flame totem was to die through immolation to reach and join their god.<ref name="arson is bad">[[Bone Scroll]]: <i>"Crumpled parchment containing the prayer of a Burning Bug. "Hail to your heat! O glorious flame. You who builds and breaks us. Sear our shells. Char them black. That we may rise to join you, wreathed in bright and blazing joy.""</i></ref><ref>Father of the Flame [[Needolin]] dialogue: <i>"Dancing, dancing, burn away! Feed us, free us! Live and die! Burn bright! Burn hot! Flare together! To meet you... Father..."</i></ref>
+
+After the structure is burnt, the remaining Burning Bugs immolate themselves and transform into Wisps that continue to live in the thicket.
+
+== How to Access ==
+Wisp Thicket is accessed through Greymoor, behind a hidden passage in the ceiling of a room at the very north-west of the area. This can be reached by going to the tower next to the [[Halfway Home]], taking the north exit and bouncing on the balloons to the north-west. 
+
+The [[Faydown Cloak]] is required to enter this area. Even if Hornet were to climb up to the entrance, an invisible wall is placed in the room transition until the double jump is acquired.
+
+{{Gallery|
+|Image1=Screenshot SS Greymoor Wisp Thicket Secret Passage.png!The secret passage leading to Wisp Thicket
+}}
+
+{{TabbedPOI
+|Header = true
+
+|Enemy1 = Wisp
+|Enemy2 = Burning Bug
+|Enemy3 = Muckmaggot
+|Enemy4 = Pharlid
+|Enemy5 = Pharlid Diver
+
+|Boss1 = Father of the Flame
+
+|Loot1_FileName = Wispfire Lantern
+|Loot1_Description = dropped by [[Father of the Flame]]
+|Loot2_FileName = Mask Shard (Silksong)
+|Loot2_Name = Mask Shard (Silksong){{!}}Mask Shard
+|Loot2_Amount = 1
+|Loot3_FileName = Rosary Necklace
+|Loot3_Amount = 1
+|Loot4_FileName = Craftmetal
+|Loot4_Amount = 1
+|Loot5_FileName = Bone Scroll
+|Loot5_Amount = 1
+}}
+
+== Creation and Development ==
+{{Main|Cut Content (Silksong)/Areas#Wisp Thicket}}
+[[File:Wisp Thicket April 2021.jpg|thumb|220px|Wisp Thicket in 2021]]
+Wisp Thicket rooms were first created around April 2021. It was initially a slightly bigger area, having connected to western Greymoor where [[Yarnaby]] is located in the final release. After additional space was added between Greymoor and [[Underworks]] around September 2021, the Wisp Thicket was restructured, with the western Greymoor connection being removed. Wisp Thicket also gained a connection to [[Bellhart]], with [[Father of the Flame]]'s arena connecting to it, a remnant of this connection can still be seen in the final release, as Father of the Flame's arena on the map is coloured to Bellhart's map colours. This iteration of the area also only required [[Clawline]] to access, with an extra platform around Father of the Flame to remedy the lack of the [[Faydown Cloak]]. Wisp Thicket was reworked into its final state around February 2023, this iteration now having been modified to require the Faydown Cloak.
+
+{{Gallery
+|Title=Gallery
+|Image1 = Screenshot SS Wisp Thicket 03.png!Entrance
+|Image2 = Screenshot SS Wisp Thicket 01.png!Bench (Bagged)
+|Image3 = Screenshot SS Wisp Thicket 02.png!Bench (Freed)
+|Image4 = Screenshot SS Wisp Thicket 07.png!Path to Father of the Flame
+|Image5 = Screenshot SS Bone Scroll 03.png!Bone Scroll room
+|Image6 = Screenshot SS Wisp Thicket 06.png!Craftmetal room
+}}
+
+== Trivia ==
+* The map for this area is obtained alongside the map of [[Greymoor]], although the QUICK MAP input only shows Wisp Thicket while in the area. Additionally, Wisp Thicket does not appear on its own when zoomed out, instead appearing as part of Greymoor.
+
+{{Localisation
+|DEname = Irrwisch-Dickicht
+|DEmeaning = Will o' the Wisp Thicket
+|ESname = Espesura Fatua
+|ESmeaning = Wisp Thicket<br><small>The word <i>fatua</i> and its masculine counterpart <i>fatuo</i> is rarely used in modern Spanish outside of the phrase <i>fuego fatuo</i> (will o' the wisp; lit. foolish fire).</small>
+|FRname = Bosquet de Feu Follet
+|FRmeaning = Grove of Will o' the Wisp
+|ITname = Fratta Fatua
+|ITmeaning = Wisp Thicket<br><small>The word <i>fatua</i> and its masculine counterpart <i>fatuo</i> is rarely used in modern Italian outside of the phrase <i>fuoco fatuo</i> (will o' the wisp; lit. foolish fire).</small>
+|JAname = ウィスプの茂み
+|JAromanised = Wispu no shigemi
+|JAmeaning = Thicket of Wisp 
+|KOname = 정령의 덤불
+|KOromanised = Jeongnyeongui deombul
+|KOmeaning = Thicket of Spirit
+|PTname = Bosque dos Lumes
+|PTmeaning = Grove of the Flames
+|RUname = Трутовая чаща
+|RUromanised = Trutovaja čašča
+|RUmeaning = Tinder Thicket
+|ZHname = 火灵竹丛
+|ZHromanised = Huǒlíng zhúcóng
+|ZHmeaning = Fire Spirit Bamboo Thicket
+|TWname = 火靈竹叢
+|TWromanised = Huǒlíng zhúcóng
+|TWmeaning = same
+|CODEname = WISP
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav Areas}}
+
+[[zh:火灵竹丛]]

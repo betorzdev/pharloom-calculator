@@ -1,0 +1,84 @@
+{{SS Infobox Tool
+| type = Yellow
+| effect = Attracts loose [[Rosaries]] to [[Hornet (Silksong)|Hornet]]'s position
+| location = [[Bone Bottom]] (Act 1/2)<br>[[Blasted Steps]] (Act 3)
+| description = Holy stone inscribed with a prayer for rosaries.<hr/ >
+Any loose beads will be pulled toward the wearer.
+}}
+
+{{Quote
+| This stone's a beauty, isn't it? They say it'll help you gather up rosaries on the road ahead. You'll come back and share some with me, won't you?
+| [[Pebb]]
+| Hr = SS
+}}
+
+<b>Magnetite Brooch</b> is a {{CrestSlot|Yellow|1}} in <i>[[Hollow Knight: Silksong]]</i>. It attracts loose [[Rosaries]].
+
+== Usefulness ==
+Magnetite Brooch pulls loose [[Rosaries]] dropped by [[Enemies (Silksong)|enemies]] or from Rosary caches towards [[Hornet (Silksong)|Hornet]]. This can save time spent chasing down loose Rosaries, and reduces the risk of Rosaries being destroyed by rolling into hazards like spikes or lava. The effect does not stop Rosaries from falling directly into such hazards.
+
+Rosaries that generate as loose on the ground are not affected by the Magnetite Brooch until Hornet swings her needle while near them.
+
+{{Clear}}
+
+==  How to acquire ==
+Purchased from [[Pebb]] in [[Bone Bottom]] for {{R|120}}. If it was not purchased before the start of [[Act 3]], it can be purchased from [[Grindle]] in [[Blasted Steps]] for {{R|220}}.
+
+{{Gallery
+|Image1 = Mapshot SS Pebb 01.png!Location in Moss Grotto
+|Image2 = Screenshot SS Pebb 01.png!Pebb in Moss Grotto
+}}
+
+{{Gallery
+|Image1 = Mapshot SS Grindle 01.png!Location in Blasted Steps
+|Image2 = Screenshot SS BlastedSteps 06.png!Grindle in Blasted Steps
+}}
+
+== Tool Synergies ==
+{{SS Table Tool Interactions
+| Tool1 = Magnetite Dice
+| Tool1Desc = Rosaries will wait for 30% less time before being pulled towards Hornet.<ref group=Source><code>CurrencyObjectBase::Getter()</code> in <code>Assembly-CSharp.dll</code></ref>
+}}
+== Tool Combo Tips ==
+{{SS Table Tool Interactions
+| Tool1 = Rosary Cannon
+| Tool1Desc = Rosaries that drop after being fired are automatically picked up.
+Improves ammo collection in general.
+}}
+
+== Trivia ==
+* Magnetite is the name of a [[wikipedia:Magnetite|real-world mineral]] that is ferrimagnetic, meaning it is attracted to magnets and can become magnetic itself. Naturally-magnetic magnetite, traditionally called lodestone, was the source of the original discovery of magnetism.
+
+{{Localisation
+|DEname = Magnetit-Brosche
+|DEmeaning = Magnetite Brooch
+|ESname = Broche de magnetita
+|ESmeaning = Magnetite Brooch
+|FRname = Broche magnétite
+|FRmeaning = Magnetite Brooch
+|ITname = Spilla di magnetite
+|ITmeaning = Magnetite Pin
+|JAname = マグネタイトのブローチ
+|JAromanised = Magunetaito no burōchi
+|JAkatakana = foreign
+|JAmeaning = Magnetite Brooch
+|KOname = 자철석 브로치
+|KOromanised = Jacheolseok beurochi
+|KOmeaning = Magnetite Brooch
+|PTname = Broche de Magnetita
+|PTmeaning = Magnetite Brooch
+|RUname = Магнетитовая брошь
+|RUromanised = Magnetitovaja brošʹ
+|RUmeaning = Magnetite Brooch
+|TWname = 磁石胸針
+|TWromanised = Císhí xiōngzhēn
+|TWmeaning = same
+|ZHname = 磁石胸针
+|ZHromanised = Císhí xiōngzhēn
+|ZHmeaning = Magnet Brooch
+|CODEname=ROSARY_MAGNET
+}}
+{{Refs|hr=ss|type=code}}
+
+{{SS Nav Tools}}
+[[fr:Broche magnétite]]

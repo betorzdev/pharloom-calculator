@@ -1,0 +1,71 @@
+{{SS Infobox Tool
+| type = Blue
+| damage = 8+1 / 13+1 / 18+1 / 22+1 / 27+1 
+| effect = Slashes around Hornet when activating [[Faydown Cloak]] or [[Drifter's Cloak]]
+| location = [[Underworks]]
+| description = Flexible belt of serrated metal teeth, able to be affixed to the hem of a cloak.<hr/>
+Flaring the cloak will spin the blades, damaging surrounding enemies.
+}}
+
+{{Quote
+| This band of metal teeth, sharp and light-fine. It could be woven within your red outer layer? A hidden weapon.
+| [[Twelfth Architect]]
+| Hr = SS
+}}
+
+<b>Sawtooth Circlet</b> is a {{CrestSlot|Blue|1}} in <i>[[Hollow Knight: Silksong]]</i>. It damages nearby enemies when activating [[Faydown Cloak]] or [[Drifter's Cloak]].
+
+== Usefulness ==
+When [[Hornet (Silksong)|Hornet]] activates [[Faydown Cloak]] or [[Drifter's Cloak]], a blade will slash around her in a circular motion, dealing damage. The blade's slashes will follow Hornet as she moves. 
+
+* Detrimental during platforming, as it can sometimes destroy objects before Hornet can bounce off them with her [[Needle]].
+* Most useful when paired with the Faydown Cloak, as it can be quickly activated for extra damage. Crests with a Down-slash that move Hornet downwards, such as the Hunter or Witch crest, can override the upwards momentum of the Faydown Cloak, allowing the blades to strike grounded enemies.
+** Since Down-slashing an enemy refreshes the Faydown Cloak's mid-air jump, Hornet is able repeatedly combo Down-slashes, double jumps, and Sawtooth Circlet hits for great damage. 
+* Attacks that land with the Sawtooth Circlet do not accumulate Silk.
+
+== How to Acquire ==
+Purchased from [[Twelfth Architect]] in [[Underworks]] for {{R|230}} and {{C|1}}.
+
+{{Gallery
+|Image1 = File:Mapshot SS Twelfth Architect 01.png!Location in Underworks
+|Image2 = Screenshot SS Underworks 11.png!Twelfth Architect in Underworks
+}}
+
+== Gallery ==
+{| align="center" style="text-align:center"
+| {{#ev:youtube|https://www.youtube.com/watch?v=h3a4xleIB3E|250|center|Deep Dive}}
+|}
+
+{{Localisation
+|DEname = Sägezahn-Reif
+|DEmeaning = Sawtooth Circlet
+|ESname = Anillo de dientes de sierra
+|ESmeaning = Sawtooth Circulet or Sawtooth Ring
+|FRname = Ceinture à dents-de-scie
+|FRmeaning = Sawtoothed Belt
+|ITname = Cinta seghettata
+|ITmeaning = Serrated Belt
+|JAname = 鋸歯のサークレット
+|JAromanised = Kyoshi no sākuretto
+|JAmeaning = Sawtooth Circlet
+|KOname = 톱니 관
+|KOromanised = Tomni gwan
+|KOmeaning = Sawtooth Crown
+|PTname = Bainha Serrilhada
+|PTmeaning = Serrated Underdress or Serrated Hem
+|RUname = Зубчатый обод
+|RUromanised = Zubčatyj obod
+|RUmeaning = Serrated Rim
+|TWname = 鋸齒環
+|TWromanised = Jùchǐ huán
+|TWmeaning = same
+|ZHname = 锯齿环
+|ZHromanised = Jùchǐ huán
+|ZHmeaning = Sawtooth Ring
+|CODEname = BROLLYSPIKE
+|CODEmeaning = <code>BROLLY</code> internally refers to the [[Drifter's Cloak]].
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Ceinture à dents-de-scie]]

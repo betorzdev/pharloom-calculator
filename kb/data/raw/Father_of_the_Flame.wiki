@@ -1,0 +1,138 @@
+{{SS Infobox Boss
+|image1 = B Father of the Flame.png
+|location = [[Wisp Thicket]]
+|drops = [[Wispfire Lantern]]
+|health = Phase 1: 100*4
+Phase 2: 250<br/>
+Total: 650
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 1
+|theme = [https://youtu.be/WJt4oeA9FxM Sister Splinter]
+}}
+
+{{Quote
+|Hr = Journal
+|Totem and god, built and worshipped by the Burning Bugs.<hr/>
+The remains of an aged bug were housed at the pyre's heart. The structure suggested they wished for immolation. If so, I have seen their wish granted.
+}}
+
+<b>Father of the Flame</b> is a [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. It is a massive totem and god built and worshipped by the [[Burning Bugs]].<ref name=hj>Father of the Flame [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Totem and god, built and worshipped by the Burning Bugs. The remains of an aged bug were housed at the pyre's heart."</i></ref> It drops the [[Wispfire Lantern]] upon its destruction.
+
+== Background ==
+Father of the Flame is a giant totem built and worshipped by the [[Burning Bugs]]. Its heart contains the remains of an aged bug.<ref name=hj/>
+
+== In-game Events ==
+Father of the Flame is encountered inside a massive, empty bell at the west end of [[Wisp Thicket]]. Before [[Hornet (Silksong)|Hornet]] first enters the area, or until [[Act 3]] begins, the chanting of the Burning Bugs can be heard by approaching the bell's exterior from the [[Underworks]].
+
+Upon entering the arena, thirteen dead Burning Bugs can be seen sitting around Father of the Flame. The battle begins as the lanterns in the massive pyre ignite.
+
+Once Father of the Flame is defeated, its core drops and explodes, simultaneously incinerating the thirteen Burning Bugs in the arena. The [[Wispfire Lantern]] can then be collected from the wrecked core.
+
+After that, all Burning Bugs in Wisp Thicket become dormant and immolate themselves as soon as Hornet approaches, permanently disappearing.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+Father of the Flame is a unique boss, as damage can only be dealt by striking specific parts of its body. They are located high above the ground and can be reached only by [[Needle-bouncing]] on hanging pouches, since the walls of the arena cannot be climbed. All of Father of the Flame's attacks deal {{Damage|2|type=Fire}}, which can be reduced to {{Damage|1|type=Fire}} by equipping the [[Magma Bell]]. Additionally, the boss does not grant [[Silk]] or build up focus for the [[Hunter Crest]] when hit.
+
+=== Phase 1 ===
+Father of the Flame has six arms. The two upper and two lower arms each contain a glowing lantern, and all four lanterns must be destroyed to progress to the next phase. Four pouches are attached to the upper and middle arms at varying heights, allowing Hornet to reach every lantern. Destroying an upper arm also destroys the pouch attached to it.
+
+Father of the Flame has one attack:
+* <b>Wisp Summoning</b>: The massive lantern at the core of Father of the Flame continuously spawns [[Wisp]]s one by one, with a 2.5-second cooldown. Once two arms are destroyed or a total of 200 damage is dealt across all arms, the summon cooldown drops to 2 seconds.
+
+=== Phase 2 ===
+Destroying Father of the Flame's arms gradually exposes its core. Once all arms are destroyed, the fully revealed core flares up and becomes vulnerable to attacks.
+
+Father of the Flame gains the following attacks:
+* <b>Ring of Fire</b>: The exposed core unleashes a torrent of fireballs in all directions, with some travelling in curved trajectories. The core continuously fires for 4 seconds. Afterward, Father of the Flame performs Wisp Summoning 3-4 times and then repeats this attack.
+* <b>Final Immolation</b>: When Father of the Flame is defeated, its core falls to the ground, pulsing and emitting sparks before unleashing a massive explosion that deals {{Damage|2|type=Fire}}.
+<hr />
+=== Strategy ===
+Father of the Flame's lanterns can be destroyed by either depleting their health or hitting them enough times, whichever comes first.
+
+With proper timing, the core breaks after 30 hits, and the arm lanterns break after 12 hits. However, Father of the Flame has a 0.5-second hit cooldown; striking the lantern before this cooldown expires reduces its overall health, but does not count toward the hits needed to break it.
+
+It is best to destroy the lower lanterns last, as they can be used in tandem with the pouches to reach the upper lanterns.
+
+Alternating between Needle-bouncing on the lantern and using the [[Faydown Cloak]] is an effective way to match the spawn rate of the Wisps. Alternatively, cycling between hitting the lantern with the [[Clawline]] and using the Faydown Cloak can help advance the fight much faster, but this method depletes Hornet's Silk, which is a limited resource during this encounter.
+
+{{CollapseTable| collapsed = true | expand-text = Recommended |
+* As attacking the boss with the Needle does not grant [[Silk]], the [[Reserve Bind]] or the [[Druid's Eye]] can serve as alternative methods for Silk generation. Additionally, the [[Plasmium Phial]] can provide extra health, reducing the reliance on [[Bind]].
+* The [[Reaper Crest]] and the [[Wanderer Crest]] have vertical downward slashes, which make Needle-bouncing on the pouches and lanterns much easier. The Reaper Crest has a larger range, providing more leeway, while the Wanderer Crest has a shorter attack cooldown.
+* The [[Sawtooth Circlet]] allows Hornet to land an additional hit on the lantern while dodging the Wisps using the Faydown Cloak.
+* The [[Thread Storm]] is large enough to hit two lanterns simultaneously, but it requires precise placement.
+* The [[Voltvessels]]' spear form deals large amounts of damage in a vertical column, allowing the core to be quickly destroyed during Phase 2. During Phase 1, most of the lanterns can be damaged by the Voltvessels only if the tool is embedded in the wall.
+* For the two lower arm lanterns and the core, certain [[Crests]] allow charging the [[Needle Strike]] on the ground and then jumping upward to release the attack, safely avoiding the Wisps.
+* The [[Delver's Drill]] can be a decent option for dealing high damage to the lanterns in Phase 1 without requiring the precise timing and positioning of repeated Needle-bounces. However, this leaves Hornet vulnerable to attacks while using the tool. Additionally, in Phase 2, the Delver's Drill passes straight through the core, landing only a fraction of its total hits.
+}}
+{{CollapseTable| collapsed = true | expand-text = Important to Note |
+* Lanterns do not count as enemies for the special healing of the [[Beast Crest]] and the [[Witch Crest]]. Additionally, the downward slashes of the Witch Crest are split into two consecutive hits, with the damage divided between them. The second hit only occurs when striking enemies, meaning it does not trigger against lanterns. Since this fight requires heavy use of Needle-bounces, this mechanic results in significantly reduced damage compared to other Crests.
+* Lanterns are not recognised as targets by the [[Cogflies]] or the [[Pale Nails]], though the latter can still deal damage if they pass through the lanterns.
+* Neither the lanterns nor the spawned Wisps trigger the explosion of the [[Pimpillo]]. Due to the height of the lanterns, this prevents the tool from damaging the boss.
+}}
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Dancing, dancing, burn away!
+* Feed us, free us!
+* Live and die!
+* Burn bright! Burn hot!
+* Flare together!
+* To meet you... Father...
+}}
+
+== Location ==
+Father of the Flame can be found in the westernmost room of [[Wisp Thicket]].
+
+{{Gallery
+|Image1 = Mapshot SS Father of the Flame 01.png!Location in Wisp Thicket
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Father of the Flame 04.png!Before the fight
+|Image2 = Screenshot SS Father of the Flame 01.png!Idle (Phase 1)
+|Image3 = Screenshot SS Father of the Flame 06.png!Phase change
+|Image4 = Screenshot SS Father of the Flame 05.png!Idle (Phase 2)
+|Image5 = Screenshot SS Father of the Flame 02.png!Ring of Fire
+|Image6 = Screenshot SS Father of the Flame 03.png!Final Immolation
+|Image7 = GIF SS Father of the Flame 01.gif!Wisp Summoning
+|Image8 = Father of the Flame Core Bug.png!The bug's corpse at Father of the Flame's core
+}}
+
+{{Localisation
+|DEname = Vater der Flamme
+|DEmeaning = Father of the Flame
+|ESname = Padre de la Llama
+|ESmeaning = Father of the Flame
+|FRname = Père de la Flamme
+|FRmeaning = Father of the Flame
+|ITname = Padre della Fiamma
+|ITmeaning = Father of the Flame
+|JAname = 業炎の父
+|JAromanised = Gouen no chichi
+|JAmeaning = Father of Hellfire
+|KOname = 불꽃의 아버지
+|KOromanised = Bulkkochui abeoji
+|KOmeaning = Father of Flame
+|PTname = Pai da Chama
+|PTmeaning = Father of the Flame
+|RUname = Отец пламени
+|RUromanised = Otec plameni
+|RUmeaning = Father of Flame
+|TWname = 熾焰之父
+|TWromanised = Chìyàn zhī fù
+|TWmeaning = same
+|ZHname = 炽焰之父
+|ZHromanised = Chìyàn zhī fù
+|ZHmeaning = Father of the Blazing Flame
+|CODEname = WICKER_BUG</code><br><code>WISP_TOTEM</code><br><code>WISP_PYRE_EFFIGY
+|CODEmeaning = Refers to [[wikipedia:Wicker man|wicker man]], a large wooden statue made to sacrifice humans and animals by combustion. 
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[pt:Pai da Chama]]

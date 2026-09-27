@@ -1,0 +1,95 @@
+{{Navbar
+|page1 = Arcane Egg (Hollow Knight)
+|title1 = Hollow Knight
+|page2 = Arcane Egg (Silksong)
+|title2 = Silksong
+}}
+{{SS Infobox Item
+| title = Arcane Egg
+| image = Arcane Egg Silksong.png
+| description = Black stone egg formed before the birth of Pharloom. <hr/>
+A relic from the ancient past. Highly prized by collectors of historical items.
+| effects = Can be sold to [[Relic Seeker Scrounge]] for {{R|600}}
+| type = [[Items (Silksong)#Tradables|Tradable]]
+| source = [[The Abyss (Silksong)|The Abyss]]
+| max = 1
+}}
+{{Quote|Hr=SS
+|In silence your voice,<br>In darkness your form,<br>We higher who see you seeking,<br>Our shells yearn for your embrace.
+|[[Lore Tablets (Silksong)#The Abyss|Lore Tablet]]}}
+
+The <b>Arcane Egg</b> is a returning [[Items_(Silksong)#Tradables|tradable item]] in <i>[[Hollow Knight: Silksong]]</i>. It is found in [[The Abyss (Silksong)|the Abyss]], originating from a time before the existence of [[Pharloom]]. Within the Arcane Egg are many etchings, some of which can be deciphered after selling to [[Relic Seeker Scrounge]].
+
+== Use ==
+Can be sold to [[Relic Seeker Scrounge]] for {{R|600}}.
+
+After sale, it can be read by visiting Relic Seeker Scrounge, or in the [[Bellhome]] after purchasing the [[Desk]].
+
+{{Gallery
+|Image1 = Mapshot SS Relic Seeker Scrounge 01.png!Location of Relic Seeker Scrounge in Bellhart
+|Image2 = Screenshot SS Bellhart 11.png!Relic Seeker Scrounge in Bellhart
+}}
+
+{| class="article-table" style="text-align: center;" width="100%"
+! style="width:8rem" | Item
+! Description
+|-
+! [[File:Arcane Egg Silksong.png|72x72px|center|link=Arcane Egg (Silksong)|Arcane Egg]] Arcane Egg
+| 
+<i>An artefact almost impossibly old, marked inside with many fine etchings. Most are indecipherable.<br><br>
+"...No will... No self... Shade..."</i>
+|}
+
+== How to Acquire ==
+There is one Arcane Egg that can be obtained.
+
+{| class="article-table" style="text-align: center;" width="100%"
+! Area
+! Location
+! Map
+|-
+| [[The Abyss (Silksong)|The Abyss]]
+| At the dead end of a room accessible from the west.
+| [[File:Mapshot SS Arcane Egg.png|200px|center]]
+|}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Arcane Egg 01.png!In the Abyss
+}}
+{{History
+|game = SS
+|1.0.28497 (Patch 1): The Arcane Egg had its value increased from 250 rosaries to 600.
+}}
+{{Localisation
+|DEname = Arkanes Ei
+|DEmeaning = Arcane Egg
+|ESname = Huevo arcano
+|ESmeaning = Arcane egg
+|FRname = Œuf arcanique
+|FRmeaning = Arcane Egg
+|ITname = Uovo arcano
+|ITmeaning = Arcane Egg
+|JAname = 神秘の卵
+|JAromanised = Shinpi no tamago
+|JAmeaning = Mysterious Egg
+|KOname = 신비의 알
+|KOromanised = Sinbiui al
+|KOmeaning = Mysterious Egg
+|PTname = Ovo Arcano
+|PTmeaning = Arcane Egg
+|RUname = Загадочное яйцо
+|RUromanised = Zagadočnoe jajco
+|RUmeaning = Mysterious egg
+|TWname = 神祕蛋
+|TWromanised = Shénmì dàn
+|TWmeaning = same
+|ZHname = 神秘蛋
+|ZHromanised = Shénmì dàn
+|ZHmeaning = Arcane Egg
+|CODEname = ANCIENT_EGG
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+{{DISPLAYTITLE:Arcane Egg (''Silksong'')}}

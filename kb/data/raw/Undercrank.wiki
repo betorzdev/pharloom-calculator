@@ -1,0 +1,106 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Undercrank.png|Hunter's Journal
+Undercrank Idle.png|Idle
+Undercrank Blocking.png|Blocking
+</gallery>
+| hasdrop = true
+| r1 = 3
+| r2 = 4
+| sh1 = 7-11
+| sh2 = 9-14
+|health = 70/{{BT|140}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.25|1|1|1|1}}
+|numbers_required = 4
+|va = [[Matt Trobbiani]]<ref name="va">[https://youtu.be/3p5A7mQDlLg?t=382 Interview with Matt Trobbiani]</ref>
+|singnum = 1
+}}
+{{Quote
+|Hr = Journal
+|Heavy, hard-shelled worker, forever repairing the Citadel's crumbling Underworks.<hr/>
+There seem no ranks in their domain, yet this one has risen above the rest. A station likely gained through intimidation and thuggery.
+}}
+
+<b>Undercranks</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are heavy, hard-shelled [[Underworkers]] who have risen above the other workers, tasked with repairing the [[Underworks]].<ref>Undercrank [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Heavy, hard-shelled worker, forever repairing the Citadel's crumbling Underworks. There seem no ranks in their domain, yet this one has risen above the rest."</i></ref>
+
+== Behaviour and Tactics ==
+Undercranks often start off stationary at work, but begin to attack [[Hornet (Silksong)|Hornet]] once they notice her, wandering naturally if she gets out of detection range. When she is in range, they perform any of the following attacks:
+* <b>Shortswing:</b> Readies their long twistpin before performing a short, low swing at Hornet. This attack has heavy backswing, leaving them extremely open once they miss.
+** If Hornet gets behind the Undercrank during any part of this move's animation, they turn around with a follow-up overhead swing at her. 
+* <b>Jump Slam:</b> Performs a short jump before slamming their twistpin down as they land, also having heavy backswing. This attack is easily dodged by dashing backwards, and immediately leaves them open to counterattack.
+** A different version of this attack happens if they spawn from the ceiling in some of the [[Underworks]] many arenas. In this scenario, they fall straight down and perform the overhead swing as they land.
+* <b>Shell Retreat:</b> Retracts into their bulky shell, which blocks all Needle attacks and most [[Tools]] and moves backwards a set distance.
+
+Undercranks deal {{Damage|2}} for all attacks, as well as contact damage.<br>
+Undercranks' sturdy shells make them immune to all attacks from behind that don't pierce armour or blocks.
+
+While they may seem threatening at first glance, Undercranks are easy to defeat. Their incredibly slow and poorly controlled attacks constantly leave them open, and they hardly have any more range than Hornet. Keeping pressure on them whilst jumping when required can net an easy victory over these brutes.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Undercranks have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* For the light, unseen...
+* These halls kept clean...
+* Rest and fade...
+* We... were chosen...
+* See us faithful!
+* Shells bend, shells break...
+* Through duty, purity...
+* The sacred toil...}}
+
+== Location ==
+Undercranks can be found primarily in the [[Underworks]], with one encountered as part of the [[Enemy Gauntlets (Silksong)/Underworks 1|enemy gauntlet]] in the northwest of the area, two in the [[Enemy Gauntlets (Silksong)/Underworks 2|gauntlet]] in the middle of the area, and another during the [[Enemy Gauntlets (Silksong)/Underworks 3|gauntlet]] in [[the Cauldron]]. One Undercrank drops from the ceiling when a [[Craftmetal]] deposit in the lower part of the Cauldron is struck, but never appears again once the deposit is broken.
+
+A [[black-threaded]] Undercrank is fought during the [[Enemy Gauntlets (Silksong)/Cogwork Core 2|gauntlet]] in the ruined [[Cogwork Core]] at the beginning of [[Act 3]].
+{{Gallery
+|Image1 = Mapshot SS Undercrank 01.png!Locations in the Underworks
+|Image2 = Mapshot SS Underworker 02.png!Location in the Cogwork Core in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Undercrank 03.png!In the Underworks
+|Image2 = Screenshot SS Undercrank 02.png!In the Cogwork Core during Act 3
+|Image3 = Screenshot SS Undercrank 04.png!Shortswing attack
+|Image4 = Screenshot SS Undercrank 05.png!Jump Slam attack
+|Image5 = Screenshot SS Undercrank 06.png!Shell Retreat
+|Image6 = Screenshot SS Undercrank 07.png!Responding to the Needolin
+|Image7 = Screenshot SS Undercrank 01.png!Working in the Underworks
+|Image9 = Screenshot SS Needolinunderworks 5.png!Memory in the Underworks
+|Image10= Ari SS Sketch 28.jpg!Concept sketches
+}}
+
+{{Localisation
+|DEname = Unterkurbler
+|DEmeaning = Undercranker
+|ESname = Bruto subterráneo
+|ESmeaning = Underground Brute
+|FRname = Sous-trenier
+|FRmeaning =
+|ITname = Fondaggiusto
+|ITmeaning = Portmanteau of <i>fonderie</i> (foundary) and <i>aggiusto</i> (fix).
+|JAname = 礎の修理者
+|JAromanised = Ishizue no shūri-sha
+|JAmeaning = Foundation Repairer
+|KOname = 지하수리공
+|KOromanised = Jihasurigong
+|KOmeaning = Underground Repairer
+|PTname = Claustrobruto
+|PTmeaning = From <i>claustro-</i> (prefix for enclosed space) and <i>bruto</i> (brute).
+|RUname = Цеховой монтёр
+|RUromanised = Cexovoj montër
+|RUmeaning = Fitter to the Workshop
+|TWname = 下層維修工
+|TWromanised = Xiàcéng wéixiū gōng
+|TWmeaning = Lower-level Maintenance Worker<br><small>{{lang|zh-Hant|下層工廠}} <i>xiàcéng gōngchǎng</i> (Lower-level Factory) is the name of the [[Underworks]] in Traditional Chinese.</small>
+
+|ZHname = 圣厂维修工
+|ZHromanised = Shèngchǎng wéixiūgōng
+|ZHmeaning = Holy Factory Maintenance Worker<br><small>{{lang|zh-Hans|圣堡工厂}} <i>shèng bǎo gōngchǎng</i> (Holy Castle Factory) is the name of the [[Underworks]] in Simplified Chinese.</small>
+|CODEname=UNDERSTORE_HEAVY
+|CODEmeaning = <code>UNDERSTORE</code> internally refers to Underworks.
+}}
+{{Refs|hr=ss}}
+{{SS Nav Enemies}}

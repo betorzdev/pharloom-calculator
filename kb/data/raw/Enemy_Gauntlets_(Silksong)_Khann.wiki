@@ -1,0 +1,68 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Coral_Tower_Arena_4.png|400px|center]]
+|[[File:Mapshot_SS_Coral_Tower.png|400px|center]]
+|-
+| colspan="2" | Fourth floor enemy gauntlet of the Coral Tower, as well as [[Crust King Khann]]'s enemy gauntlet as part of his boss encounter. The enemy gauntlet arena is comprised of three platforms over a pit of spikes. Crust King Khann is fought in his own separate arena.
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>[[Encrusted Heart]]</center>
+| <center>[https://youtube.com/watch?v=YHACfnIFkdY Coral Tower Battle] (enemy gauntlet)<br/>[https://youtu.be/bOWu5AXLFwQ Crust King Khann] (Crust King Khann)</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Karaka.png|35x35px|link=Karaka]] Karaka x2, left and right
+| Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Yago.png|35x35px|link=Yago]] Yago, top centre
+| Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Corrcrust Karaka.png|35x35px|link=Corrcrust Karaka]] Corrcrust Karaka, top centre
+| Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Alita.png|35x35px|link=Alita]] Alita, right
+|
+|-
+| colspan="2" | The coral pillar which spawns the next row destroys the middle platform.
+|-
+|
+[[File:HJ_Spinebeak Kai.png|35x35px|link=Spinebeak Kai]] Spinebeak Kai x2, top centre<br/>
+[[File:HJ_Kai.png|35x35px|link=Kai]] Kai x2, centre<br/>
+[[File:HJ_Steelspine Kai.png|35x35px|link=Steelspine Kai]] Steelspine Kai, bottom centre
+| Defeating three enemies spawns the next row.
+|-
+|
+[[File:HJ_Driznarga.png|35x35px|link=Driznarga]] Driznarga x2, top left and right
+| Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Yumama.png|35x35px|link=Yumama]] Yumama
+| Yumas spawned are not counted towards, and do not affect wave progression.
+|-
+| colspan="2" | Middle platform regrows.
+|-
+|
+[[File:HJ_Karaka.png|35x35px|link=Karaka]] Karaka, left<br/>
+[[File:HJ_Alita.png|35x35px|link=Alita]] Alita, right
+|
+|-
+|
+[[File:HJ_Yago.png|35x35px|link=Yago]] Yago, top left<br/>
+[[File:HJ_Karaka.png|35x35px|link=Karaka]] Karaka, centre<br/>
+[[File:HJ_Kakri.png|35x35px|link=Kakri]] Kakri, top right
+|
+|-
+| colspan="2" | Hole in the ceiling opens up as coral spikes begin to cover the entire arena, Hornet is required to [[Silk Soar]] up.
+|-
+|
+[[File:HJ_Crust King Khann.png|35x35px|link=Crust King Khann]] [[Crust King Khann]], centre right
+|
+|}

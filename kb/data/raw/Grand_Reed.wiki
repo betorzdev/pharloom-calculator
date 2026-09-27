@@ -1,0 +1,115 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Grand Reed.png|Hunter's Journal
+Grand Reed Idle.png|Idle
+Grand Reed Fly.png|Flying
+Grand Reed Scuttle.png|Scuttling
+Grand Reed Dormant.png|Dormant
+</gallery>
+| hasdrop = true
+| r1 = 32
+| r2 = 55
+| sh1 = 3-5
+| sh2 = 4-7
+|drops = [[Silk#Silk Spools|Silk Spool]] (50%)
+|health = 130/{{BT|260}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1.2|1|1|1}}
+|numbers_required = 12
+|singnum=1
+|va=Lauren Koopowitz<ref name="va">[https://www.youtube.com/watch?v=pA7Id7lff6E&t=1857s Shakra Voice Actor Lauren Koopowitz talks <i>Hollow Knight Silksong</i>, Singing, Poshanka & Team Cherry]: "<i>I love Last Judge. I had so much fun doing, doing her voice.</i>"</ref><ref group="Note">Grand Reed uses the Last Judge's audio files pitched down by 18%.</ref>
+}}
+{{Quote
+|Hr = Journal
+|High standing insect of the Choir, bearing a bow. This elite Reed has been trained and fed beyond its smaller fellows.<hr/>This bug bears a spool of Silk, which they flail to attack. Though somewhat crude, theirs is a technique much reminiscent of Weavers. I wonder who taught them such a use?
+}}
+
+<b>Grand Reeds</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are tall, six-limbed [[Reed]]s trained beyond their smaller fellows, wielding a large bow and a spool of [[Silk]].<ref>Grand Reed [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"High standing insect of the Choir, bearing a bow. This elite Reed has been trained and fed beyond its smaller fellows. This bug bears a spool of Silk, which they flail to attack. Though somewhat crude, theirs is a technique much reminiscent of Weavers. I wonder who taught them such a use?"</i></ref>
+
+== Behaviour and Tactics ==
+Grand Reeds start off inactive and seemingly dead, but get reanimated and let out a battlecry as soon as Hornet steps within range. This animation is ample opportunity to get a good few free starting hits in. Grand Reeds also cannot walk naturally and can only move via their attacks or Scuttle.<br>
+Grand Reeds have a large selection of attacks and moves that make them formidable enemies:
+* <b>Scuttle:</b> The Grand Reed drops to a crawl and skitters backwards a set distance. Scuttle is used to move forwards only if Hornet runs too far out of range of any of their other attacks.
+* <b>Dash:</b> Dashes forwards a short distance to close in on Hornet. Only used if she is a specific distance away from them.
+* <b>Bow Strike:</b> The Grand Reed winds back briefly before swinging forward quickly (twice in a row if they were hit whilst Parrying).
+* <b>Parry:</b> The Grand Reed assumes a Parry stance and block any attacks from Hornet in that direction, immediately retaliating with an extended version of Bow Strike if Hornet strikes them during their Parry Window.
+* <b>Aerial Dive:</b> The Grand Reed takes flight, flying upwards and back slightly before suddenly slamming diagonally down in the direction they are facing with slight variations in timing. They always Scuttle after landing from this attack.
+* <b>Thread Storm:</b> The Grand Reed charges up for a moment and then releases a flurry of Silk threads around their body in a circular area, similar to [[Hornet (Silksong)|Hornet's]] [[Thread Storm]]. This attack Combos Hornet for {{Damage|1+1}}.
+** A [[Black-Threading|Black-Threaded]] Grand Reed cannot use this attack.
+
+Grand Reeds deal {{Damage|2}} for all attacks as well as contact damage, with the exception of Thread Storm.
+
+The Bow Strike can be dodged by jumping upwards and floating briefly. Their Aerial Dive can also be dodged by dashing away the moment before they strike, though they change their direction if Hornet gets too far behind them.
+
+Most of these attacks have a long wind-down period, so learning the tells and moving in after each attack is effective. Alternatively, they can be easily avoided by fleeing when they take flight for Aerial Dive.
+
+Upon defeat, they may drop a [[Silk#Silk Spools|Silk Spool]] that Hornet can hit twice to restore up to two strands of Silk. This does not happen if they are [[Black-Threading|Black-Threaded]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Those worthiest may climb...
+* The holy heights of the Citadel...
+* May my voice never fade...
+* May my shell never break...
+* For my devotion... unending...
+* May I rise... May I rise...
+}}
+
+== Location ==
+Grand Reeds can be found in the upper hallway of [[Choral Chambers]] connecting it to the [[Cogwork Core]].
+
+{{Gallery
+|Image1 = Mapshot SS Grand Reed 01.png!Locations in Choral Chambers 
+|Image2 = Mapshot SS Grand Reed 02.png!Locations in Choral Chambers in Act 3
+}}
+
+==Gallery==
+
+{{Gallery
+|Image1 = Screenshot SS Choir 03.png!Idle
+|Image2 = Screenshot SS Grand Reed 01.png!Dormant
+|Image3 = GIF SS Grand Reed 01.gif!Reanimating
+|Image4 = Screenshot SS Grand Reed 02.png!Corpse in Act 3
+|Image5 = Screenshot SS Grand Reed 03.png!Corpse in Act 3
+|Image6 = Screenshot SS Grand Reed 04.png!Scuttle
+|Image7 = Screenshot SS Grand Reed 05.png!Bow Strike
+|Image8 = Screenshot SS Grand Reed 06.png!Parry
+|Image9 = Screenshot SS Grand Reed 07.png!Aerial Dive
+|Image10 = Screenshot SS Grand Reed 08.png!Thread Storm
+|Image11 = Screenshot SS Grand Reed 09.png!Reacting to Needolin
+|Image12= Ari SS Sketch 06.jpg!Concept sketches
+|Image13= Ari SS Sketch 24.png!Concept sketches
+}}
+
+{{Localisation
+|DEname = Erzblatt
+|DEmeaning = Greater Reed
+|ESname = Gran Lengüete
+|ESmeaning = Grand Reed
+|FRname = Grand Reed
+|FRmeaning = —
+|ITname = Grand'Ancia
+|ITmeaning = Grand Reed
+|JAname = 高貴なるリード
+|JAromanised = Kōkinaru rīdo
+|JAmeaning = Noble Reed
+|KOname = 위대한 리드
+|KOromanised = Widaehan rideu
+|KOmeaning = Great Reed
+|PTname = Grande Palheta
+|PTmeaning = Grand Reed
+|RUname = Тростина-гигант
+|RUromanised = Trostina-gigant
+|RUmeaning = Reed Giant
+|TWname = 精英簧舌戰士
+|TWromanised = Jīngyīng huáng shé zhànshì
+|TWmeaning = same
+|ZHname = 精英簧片战士
+|ZHromanised = Jīngyīng huángpiàn zhànshì
+|ZHmeaning = Elite Reed Warrior
+|CODEname=SONG_REED_GRAND
+|CODEmeaning=Reeds are internally known as "Song Reeds"
+}}
+{{Refs|hr=ss|type=note}}
+{{Refs|hr=small}}
+
+{{SS Nav Enemies}}

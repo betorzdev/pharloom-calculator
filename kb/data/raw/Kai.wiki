@@ -1,0 +1,75 @@
+{{SS Infobox Enemy
+|drops = None
+|health = 5
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 10<br>(Instantly completed on [[Crust King Khann]]'s death)
+}}
+{{Quote
+|Hr = Journal
+|Plump, plentiful drifter of a coral past.<hr/>
+They once teemed around their tower, in numbers immense. It is a rare chance to witness such a bountiful display of life.
+}}
+
+<b>Kais</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are plump floaters that once teemed around the [[Coral Tower]] in immense numbers.<ref>Kai Hunter's Journal entry: <i>"They once teemed around their tower, in numbers immense. It is a rare chance to witness such a bountiful display of life."</i></ref>  Long lost to time, they live on only in memory. 
+
+== Behaviour and Tactics ==
+Kais float gently through the air, turning around once they reach a wall. If Hornet gets near,  they dash a short distance at her, mainly horizontally.
+Kais deal {{Damage|1}} of contact damage.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* The crust covers...
+* The crust conceals...
+* Our shells made strong...
+* Our nest made secret...
+}}
+
+== Location ==
+Kais can only be found in [[Crust King Khann]]'s [[Elegy of the Deep|Memory]] of the [[Coral Tower]] during [[Acts|Act 3]].
+
+{{Gallery
+|Image1 = Mapshot SS Coral Tower.png
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Kai 01.png!Idle
+|Image2 = Screenshot SS Kai 02.png!Attacking
+}}
+
+== Trivia ==
+* Though Kais respond to the [[Needolin]] with dialogue, they do not sing or visibly react.
+
+{{Localisation
+|DEname = Kai
+|DEmeaning = —
+|ESname = Kai
+|ESmeaning = —
+|FRname = Kai
+|FRmeaning = —
+|ITname = Kai
+|ITmeaning = —
+|JAname = カイ
+|JAromanised = Kai
+|JAkatakana = foreignenemy
+|JAmeaning = Kai
+|KOname = 카이
+|KOromanised = Kai
+|KOmeaning = Kai
+|PTname = Kai
+|PTmeaning = —
+|RUname = Кай
+|RUromanised = Kaj
+|RUmeaning = Kai
+|TWname = 凱蟲
+|TWromanised = Kǎi chóng
+|TWmeaning = same
+|ZHname = 凯虫
+|ZHromanised = Kǎi chóng
+|ZHmeaning = Kai Bug
+|CODEname=CORAL_SWIMMER_FAT
+|CODEmeaning = "Coral Swimmer" internally refers to [[Yuma]]s and the cut [[Cut Content (Silksong)/Enemies#Red Coral Gorge|Shillfin]]
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

@@ -1,0 +1,169 @@
+{{SS Infobox Boss
+|image1=<gallery>
+B The Unravelled.png|Hunter's Journal
+The Unravelled Idle.png|Idle
+The Unravelled Stagger.png|Staggered
+</gallery>
+|location = [[Whiteward]]
+|drops = [[Silk Heart]]<br>
+[[Psalm Cylinder]]
+|health = 1000
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|0.9|0.85}}
+|numbers_required = 1
+|theme = [https://youtu.be/qCOGxHLBSzM Sister Splinter (Ambient)] (Enemy Phases)<br>[https://youtu.be/dznNLVC0HPo Sister Splinter (Main)] (The Unravelled)
+|singnum = 1
+}}
+
+{{Quote
+|Tormented will of countless husks made manifest in a pit of Silk dregs.<hr/>The souls of so many bugs, obsessed with Silk, consumed by it. Their pain shall forever remain in that pit. Even I do not possess strength enough to cleanse it.
+|Hr = Journal
+}}
+
+<b>The Unravelled</b> is a [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. It is a mass of the tormented will of countless husks, manifested in a pit of [[Silk]] dregs deep within the [[Whiteward]].<ref name=hj/> Defeating it summons a [[Silk Heart]] and opens a passageway between the Whiteward and the [[Underworks]].
+
+== Background ==
+Husks of bugs that perished during surgeries in the [[Whiteward]] were cast into the pit beneath the operating theatre. Among them was a [[Conductors|Conductor]], most likely [[Conductors#Mizello|Conductor Mizello]], whose final surgery is recorded on the [[Psalm Cylinder]] found in a room below the pit.<ref>[[Conductor Ballador]], the only living Conductor seen in-game, wears a mantle seemingly identical to the one found in the pit.</ref><ref>[[Psalm Cylinder]] description: <i>"Last surgery of Conductor Mizello, performed in Whiteward's operating theatre."</i></ref> Bound within the [[Silk]], their souls retained a fragment of self-awareness, struggling to remember who they were in life and how they came to be there, while enduring endless agony and the grim realisation that escape is beyond them.<ref>The Unravelled Hunter's Journal entry: <i>"The souls of so many bugs, obsessed with Silk, consumed by it. Their pain shall forever remain in that pit. Even I do not possess strength enough to cleanse it."</i></ref><ref>The Whiteward pit [[Needolin_Locations#Whiteward|Needolin dialogue]]: "...No release... ...No escape... ...Lost... Lost... ...Pain... No more... ...Where?... Why? ...Pit... Deep..."</ref>
+
+== In-game Events ==
+When [[Hornet (Silksong)|Hornet]] opens the sluice in the Whiteward's operating theatre using the [[Surgeon's Key]] and drops into the disposal pit below, the tormented will of these bugs manifests as the Unravelled, a mass of Silk and husks strung together beneath a Conductor's mantle.<ref name=hj>The Unravelled [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Tormented will of countless husks made manifest in a pit of Silk dregs."</i></ref> The souls that comprise it, much like the rest trapped within the pit, barely remember their former selves.<ref>The Unravelled [[Needolin]] dialogue: <i>"Who... we... Where... when... Cannot... see... Cannot... feel... Cannot... remember... ...Our claws... Our shells..."</i></ref> They attack Hornet, who they perceive as possessing a strong shell and pure Silk, in a desperate bid to reclaim their old glory.<ref>The Unravelled Needolin dialogue: <i>"Your Silk... pure! Your shell... strong! Ours... ours... ...Old... glory..."</i></ref> Defeating the Unravelled grants one of the three [[Silk Heart]]s and completes the [[Dreg Husk]] and [[Dregwheel]] entries in the [[Hunter's Journal (Silksong)|Hunter's Journal]].
+
+After the battle, the gate at the top of the arena closes, making it inaccessible from the Whiteward; the arena can now only be reached from the [[Underworks]] below. Re-entering the arena spawns two Dreg Husks, two Dregwheels, or one Dreg Husk and one Dregwheel, which burst out of the ground. A few seconds after the two enemies are defeated, two more spawn, and this continues indefinitely.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+After falling into the disposal pit, the Unravelled's title card appears, but the boss does not yet emerge. In order to begin the boss fight, [[Hornet (Silksong)|Hornet]] must first defeat two waves of enemies:
+<div class="mw-collapsible mw-collapsed">
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Dreg Husk.png|35x35px|link=Dreg Husk]] [[Dreg Husk]], near Hornet
+|Defeating the enemy brightens the room.
+|-
+|
+[[File:HJ_Dreg Husk.png|35x35px|link=Dreg Husk]] Dreg Husk, left or right randomly<br />
+[[File:HJ_Dregwheel.png|35x35px|link=Dregwheel]] [[Dregwheel]], left or right randomly
+|Defeating both enemies brightens the room.
+|}
+</div>
+=== Phase 1 ===
+Afterwards, the arena begins rumbling, and the Conductor's mantle in the background disappears before reemerging from beneath the ground as the Unravelled. It roars and begins the fight by immediately performing a single Dreg Rush at Hornet.
+
+The Unravelled remains underground between most of its attacks. Rumbling dust particles telegraph where it is about to emerge. Upon emerging, it can perform the following attacks before burrowing again:
+
+* <b>Dreg Rush</b>: The Unravelled emerges on either side and rushes horizontally across the entire arena, bouncing back slightly upon colliding with a wall; it then burrows again. 
+* <b>Cadaver Spit</b>: The Unravelled emerges on either side and, without moving, screams before launching two bodies in succession that fly across the arena, one horizontally and the other at a slightly upwards angle. Hitting these corpse projectiles does not stop their momentum but grants [[Silk]] and counts as hitting an enemy for the [[Crests]]' special abilities. Each husk has 65 HP and can be destroyed, even dropping organs for the <i>[[Broodfeast]]</i> or <i>[[Runtfeast]]</i> [[wishes]]. After this attack, the Unravelled can either burrow down or immediately perform a Dreg Rush.
+
+=== Phase 2 ===
+After reaching 750 HP, the Unravelled is staggered for the first time, dropping into the ground before summoning two Dregwheels. Upon their defeat, the arena rumbles as the nearby lance-like scalpels are pulled into the ground. One scalpel then shoots out of the ground, followed by three more in quick succession near Hornet. Their launching positions are indicated by white glowing lines.
+
+After shooting out of the ground, all scalpels (in this attack and most future ones) hover at a fixed horizontal distance in mid-air, aiming towards Hornet before shooting back down into the ground. If a scalpel's fixed movement distance would carry it into a wall while chasing Hornet, it flies in the opposite direction instead.
+
+The Unravelled then re-emerges to perform a Dreg Rush attack. It gains two new attacks and modifies its previous two:
+
+* <b>Dreg Rush</b>: When it hits a wall, the Unravelled now shoots out a single scalpel upwards from beneath Hornet.
+* <b>Cadaver Spit</b>: The Unravelled fires three bodies in a row, with the third body fired at a random angle – it may follow either of the first two bodies' paths, or arc upwards at an even greater diagonal angle.
+* <b>Scalpel Storm</b>: While underground, the Unravelled sends out three scalpels in succession, similar to the attack used during the phase transition. While the final scalpel is still mid-air, the Unravelled performs another attack.
+* <b>Scalpel Summon</b>: The Unravelled emerges near the centre of the arena for a moment and roars, summoning two scalpels from its left and right. In this particular attack, both scalpels always target the central position from which the boss appeared, leaving a small gap in between.
+
+=== Phase 3 ===
+Upon reaching 400 HP, the Unravelled staggers for a second time, falling into the dregs again and spawning a Dreg Husk and a Dregwheel in its place. Defeating either enemy causes another Dregwheel to emerge. After killing all the summoned enemies, the fight resumes with the Unravelled keeping the same patterns but modifying one attack:
+
+* <b>Scalpel Summon</b>: Right after the first two scalpels are summoned, a third one shoots out from behind the Unravelled's position. This third scalpel follows the regular pattern.
+
+The Unravelled's massive golden Conductor's mantle makes it immune to damage from above, but it can still be [[Needle#Needle-bouncing|Needle-bounced]]. Contact with the Unravelled, as well as its scalpels, deals {{Damage|2}}. Cadavers only deal {{Damage|1}}.
+<hr />
+
+{{Stagger
+| The Unravelled drops directly into the ground, allowing for one hit at most before it disappears.
+| N/A – The Unravelled's stagger is based on its HP, and it staggers between all phase transitions.
+| game = SS
+}}
+
+<hr />
+The Unravelled is immune to the venom effect of the [[Pollip Pouch]].
+
+[[Tools]] such as [[Tacks]] are extremely effective against the Unravelled, as it cannot leave the ground. The [[Beast Crest]]'s [[Bind]]ing is effective in this fight due to the boss's large size, and the Crest's boosted attack speed allows for quick, reliable hits.
+
+Due to the significant delay between the three initial dregs and phase 1, Red Tools can be deployed in large quantities to deal massive damage to the Unravelled during its roar, and its time spent stationary allows Tools such as [[Voltvessels]] to reliably deal their damage in full.
+
+The cadavers can be stunned with Threadstorm, and the Unravelled can be damaged at the same time if positioned well; one or two hits can be scored during the windup of <b>Cadaver Spit</b> before jumping above the Unravelled to avoid the attack.
+
+<b>Scalpel Summon</b> can be exploited to safely land hits on the Unravelled, as it remains in place for the duration of the attack, and the first two scalpels, due to aiming where the Unravelled is, where Hornet is the least likely to be, become much less of a threat after they shoot out.
+
+Being directly above the Unravelled is an easy way to avoid most attacks except scalpels, and the very top of either wall is safe from all of its attacks, as the scalpels cannot move too close to the walls, and the cadavers cannot reach the top corners.
+<hr />
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Who... we...
+* Where... when...
+* Cannot... see...
+* Cannot... feel...
+* Cannot... remember...
+* ...Our claws... Our shells...
+* Your Silk... pure!
+* Your shell... strong!
+* Ours... ours...
+* ...Old... glory...
+}}
+
+== Location ==
+The Unravelled can be found in a locked room in the southwest of the [[Whiteward]] that requires the [[Surgeon's Key]] to access.
+
+{{Gallery
+|Image1 = Mapshot SS The Unravelled 01.png!Location in the Whiteward
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1= Screenshot SS The Unravelled 08.png!Enemy gauntlet before the boss battle
+|Image2= Screenshot SS Whiteward 08.png!Arena prior to the fight
+|Image3= Screenshot SS The Unravelled 01.png!Idle
+|Image4= Screenshot SS The Unravelled 02.png!Dreg Rush
+|Image5= Screenshot SS The Unravelled 03.png!Cadaver Spit
+|Image6= Screenshot SS The Unravelled 04.png!Scalpel Storm
+|Image7= Screenshot SS The Unravelled 05.png!Scalpel Summon
+|Image8= Screenshot SS The Unravelled 06.png!Reacting to the Needolin
+|Image9= Screenshot SS The Unravelled 07.png!Arena
+}}
+
+== Trivia ==
+* The Unravelled does not drop organs for the <i>[[Broodfeast]]</i> or <i>[[Runtfeast]]</i> [[wishes]].
+
+{{Localisation
+|DEname = Der Aufgelöste
+|DEmeaning = The Dissolved
+|ESname = Los Desentrañados
+|ESmeaning = The Unravelled
+|FRname = L'exfilé
+|FRmeaning = The Woven
+|ITname = I Rimasugli
+|ITmeaning = The Remnants
+|JAname = 糸解かれし者
+|JAromanised = Ito toka reshi mono
+|JAmeaning = Unravelled Thread
+|KOname = 풀려난 자
+|KOromanised = Pullyeonan ja
+|KOmeaning = Unravelled One
+|PTname = Sepulcro de Seda
+|PTmeaning = Tomb of Silk
+|RUname = Распутыватель
+|RUromanised = Rasputyvatel
+|RUmeaning = Unraveller
+|TWname = 失縛怨魂
+|TWromanised = Shīfù yuànhún
+|TWmeaning = same
+|ZHname = 失缚怨魂
+|ZHromanised = Shīfù yuànhún
+|ZHmeaning = Unbound Vengeful Soul
+|CODEname = CONDUCTOR_BOSS
+|CODEmeaning = Refers to the Conductor's mantle they are strung under.
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[pt:Sepulcro de Seda]]

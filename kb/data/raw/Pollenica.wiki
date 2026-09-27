@@ -1,0 +1,92 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Pollenica.png|Hunter's Journal
+Pollenica Closed.png|Closed
+</gallery>
+|drops = None
+|health = 20/{{BT|40}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|0.75|0.75|1}}
+|numbers_required = 10
+|sing=Phacia
+}}
+
+{{Quote
+|Hr = Journal
+|Floral foe that reacts instinctively to movement nearby. Spits pellets of crackling pollen that burst on impact.<hr/>
+What exceptional senses it possesses. It detects me with ease, even when not a single sound is made.
+}}
+
+<b>Pollenicas</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are stationary floral foes that instinctively react to movement by spitting bursting pollen pellets.<ref>Pollenica [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Floral foe that reacts instinctively to movement nearby. Spits pellets of crackling pollen that burst on impact."</i></ref>
+
+== Behaviour and Tactics ==
+Pollenicas do not move, and once [[Hornet (Silksong)|Hornet]] is in range, they use their only attack.<br>
+To attack, Pollenicas launch four globs of pollen at Hornet, with a delay between each glob. The pollen moves slowly in the air and cannot be deflected, and may also travel at slightly different angles and arcs.
+
+=== Act 3 ===
+[[Black-threaded]] Pollenicas have their health doubled. They gain the [[Black-Threading#Movesets|Void Projectiles]] attack, which replaces their normal one.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* Drifting, dancing, falling seeds...
+* Thirsty roots creeping down...
+* Sleeping... Sleeping...
+* Voice! Wake! Voice calls out...
+}}
+
+== Location ==
+Pollenicas can be found in [[Shellwood]], the [[Memorium]], and the [[Grand Gate]].
+
+{{Gallery
+|Image1 = Mapshot SS Pollenica 01.png!Locations in Shellwood
+|Image2 = Mapshot SS Pollenica 02.png!Locations in the Memorium
+|Image3 = Mapshot SS Pollenica 03.png!Location in the Grand Gate
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Pollenica 01.png!Disguised
+|Image2= Screenshot SS Pollenica 02.png!Reacting to the Needolin
+|Image3= Screenshot SS Pollenica 03.png!In the Memorium
+|Image4= Screenshot SS Pollenica 04.png!In the Grand Gate
+|Image5= Screenshot SS Pollenica 05.png!Attacking
+|Image6= Screenshot SS Pollenica 06.png!Disguised while black-threaded
+|Image7= Screenshot SS Pollenica 07.png!Attacking while black-threaded
+}}
+
+==Trivia==
+* Despite being described as floral creatures, Pollenicas drop organs for the <i>[[Broodfeast]]</i> or <i>[[Runtfeast]]</i> [[wish]]es.
+
+{{Localisation
+|DEname = Pollenica
+|DEmeaning = —
+|ESname = Pollenica
+|ESmeaning = —
+|FRname = Pollenor
+|FRmeaning = —
+|ITname = Pollenica
+|ITmeaning = —
+|JAname = カフントバシ
+|JAromanised = Kafun tobashi
+|JAkatakana = enemy
+|JAmeaning = Combination of {{lang|ja|花粉 <i>kafun</i>}} (pollen) and {{lang|ja|飛ばし <i>tobashi</i>}} (to throw or to fly).
+|KOname = 꽃가루초
+|KOromanised = Kkotgarucho
+|KOmeaning = Pollen Plant
+|PTname = Polênica
+|PTmeaning = —
+|RUname = Пыльценика
+|RUromanised = Pyl'cenika
+|RUmeaning = Portmanteau of {{lang|ru|пыльца}} <i>pyl'ca</i> (pollen) and the English -ica.
+|TWname = 爆粉葵
+|TWromanised = Bào fěn kuí
+|TWmeaning = same
+|ZHname = 爆粉葵
+|ZHromanised = Bào fěn kuí
+|ZHmeaning = Pollen-bursting Sunflower
+|CODEname= BLOOM_SHOOTER
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

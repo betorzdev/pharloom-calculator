@@ -1,0 +1,21 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Hunter's_March_Arena_1.png|400px|center]]
+|[[File:Mapshot_SS_Hunter's March Arena 1.png|400px|center]]
+|-
+| colspan="2" | Enemy gauntlet at the entrance to Hunter's March. Hornet is not locked into the arena.
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>Access to Hunter's March</center>
+| <center>[https://youtu.be/j1GHUxGtueY Hunter's Trail Action]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Skarrgard.png|35x35px|link=Skarrgard]] [[Skarrgard]], right
+|
+|}

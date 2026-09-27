@@ -1,0 +1,78 @@
+{{SS Infobox Tool
+| image = <gallery>
+Conchcutter.png|Inventory
+Conchcutter Poison.png|Pollip Pouch
+Conchcutter Pickup.png|Pickup
+</gallery>
+| type = Red
+| damage = 2/3/4/6/7 (per hit, 6 hits) <br> 12/18/24/36/42 (total)
+| max = 8/10/12/14/16
+| refill_type = Repair
+| refill = {{S|5}}
+| effect = Throws a piercing shell that bounces off the environment
+| location = [[Sands of Karak]]
+| description = Spiral weapon fashioned from a hardened conchspire.<hr />Thrown at an angle, it can ricochet and catch prey off guard.
+}}
+
+<b>Conchcutter</b> is a {{CrestSlot|Red|1}} in <i>[[Hollow Knight: Silksong]]</i>. It throws a ricocheting, drilling projectile similar to those of the [[Driznit]], [[Driznarga]], and [[Great Conchflies]].
+
+== Usefulness ==
+Conchcutter is thrown diagnally downwards in the direction [[Hornet (Silksong)|Hornet]] is facing and will ricochet off walls in an ordinal direction. When colliding with an [[Enemies (Silksong)|enemy]] it will slow its movement and rapidly drill into them, dealing damage up to six times before breaking.  
+
+Its multi-hit and ricocheting properties makes it most effective in tight spaces and/or in the presence of a lot of enemies.
+
+== How to Acquire ==
+Found inside [[Coral Tower]] in the west of [[Sands of Karak]], accessible after defeating the [[Raging Conchfly]].
+
+{{Gallery
+|Image1 = Mapshot SS Coral Tower.png!Location in [[Sands of Karak]]
+|Image2 = Screenshot SS Conchcutter Room.png!Room which the Conchcutter is acquired
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = GIF SS Conchcutter 01.gif!Hornet throwing Conchcutter
+|Image2 = GIF SS Conchcutter 02.gif!Killing enemy
+|Image3 = Ari SS Sketch 19.jpg!Concept sketches
+}}
+
+== Trivia ==
+* The conchspire which Hornet breaks off to fashion the Conchutter tool from is part of a much larger conchspire that is partially buried in the floor.
+{{History
+|game = SS
+|1.0.28650 (Patch 2): Fixed the break counter not working for Conchcutter.
+}}
+{{Localisation
+|DEname = Muschelschneider
+|DEmeaning = Shell Cutter
+|ESname = Cortaconcha
+|ESmeaning = Conchcutter
+|FRname = Coquilleur
+|FRmeaning = Portmanteau of <i>conque</i> (conch) and <i>tailleur</i> (cutter).
+|ITname = Tagliaconchiglia
+|ITmeaning = Seashell Cutter
+|JAname = ホラガイの刃
+|JAromanised= Horagai no ha
+|JAmeaning = Conch Blade
+|KOname = 고둥칼날
+|KOromanised = Godungkallal
+|KOmeaning = Conch Blade
+|PTname = Corta-concha
+|PTmeaning = Shell Cutter
+|RUname = Ракушечный резак
+|RUromanised = Rakušečnyj rezak
+|RUmeaning = Seashell Cutter
+|TWname = 螺切刃
+|TWromanised = Luó qiē rèn
+|TWmeaning = same
+|ZHname = 螺切刃
+|ZHromanised = Luó qiē rèn
+|ZHmeaning = Conch Cutting Blade
+|CODEname = CONCH_DRILL
+|CODEmeaning = 
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Coquilleur]]

@@ -1,0 +1,27 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Underworks_Arena_1.png|400px|center]]
+|[[File:Mapshot_SS_Underworks_Arena_1.png|400px|center]]
+|-
+| colspan="2" | Enemy gauntlet in the northwest of the Underworks. Arena exits are blocked by steam that deals {{Damage|1+1}}. Required to access the [[Choral Chambers]] if the Underworks was entered from the fallen [[Grand Gate]] lift.
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>Access to the [[Delver's Drill]]<center>
+| <center>[https://www.youtube.com/watch?v=swPmNk9_fw0 Generic Enemy Battle A]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Undercrank.png|35x35px|link=Undercrank]] [[Undercrank]], left<br/>
+[[File:HJ_Underloft.png|35x35px|link=Underloft]] [[Underloft]], top left or right
+| Undercrank can be killed before the start of the gauntlet. In this case, they drop [[Rosaries]] and [[Shell Shards]], but will respawn upon re-entering the room. Underloft descends shortly after the start of the gauntlet.
+|-
+|
+[[File:HJ_Undercrank.png|35x35px|link=Undercrank]] Undercrank, centre<br/>
+[[File:HJ_Underpoke.png|35x35px|link=Underpoke]] [[Underpoke]], top left or right
+| Undercrank slams down from the ceiling. Underpoke descends shortly after.
+|}

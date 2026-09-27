@@ -1,0 +1,62 @@
+{{SS Infobox Enemy
+|drops = None
+|health = 1
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 12<br>(Instantly completed on [[Clover Dancers]]' death)
+}}
+{{Quote
+|Hr = Journal
+|Fine winged flyer that survives in flocks.<hr/>
+So light they can rest atop still water's surface. An elegant bug indeed.
+}}
+
+<b>Leaf Gliders</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are light winged flyers that live in flocks in [[Verdania]].<ref>Leaf Glider Hunter's Journal entry: <i>"Fine winged flyer that survives in flocks. So light they can rest atop still water's surface."</i></ref>
+
+== Behaviour and Tactics ==
+Leaf Gliders are completely harmless, and fly away if Hornet gets in their vicinity or plays the Needolin. This alerts any other nearby Leaf Gliders to fly away as well.
+
+== Location ==
+Leaf Gliders can be found in [[Lost Verdania]].
+
+{{Gallery
+|Image1 = Mapshot SS Leaf Glider 01.png!Locations in Lost Verdania
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Leaf Glider 01.png!On the water and a lily pad
+|Image2= Screenshot SS Leaf Glider 02.png!Flying away
+|Image3= Screenshot SS Lost Verdania 07.png!Near the Green Prince
+}}
+
+== Trivia ==
+* Leaf Gliders do not have [[Needolin]] dialogue, and instead flee when it is played.
+{{Localisation
+|DEname = Blättergleiter
+|DEmeaning = Glider of Leaves
+|ESname = Planeabriznas
+|ESmeaning = Portmanteau of <i>planear</i> (to glide) and <i>briznas</i> (strands or blades).
+|FRname = Glissefeuille
+|FRmeaning = Leaf Glide
+|ITname = Volafoglia
+|ITmeaning = Leaf Fly
+|JAname= ハワタリ
+|JAromanised = Ha watari
+|JAkatakana = enemy
+|JAmeaning = Combination of {{lang|ja|葉}} <i>ha</i> (leaf) and {{lang|ja|渡り}} <i>watari</i> (wanderer).
+|KOname = 잎 활공벌레
+|KOromanised = Ip hwalgongbeolle
+|KOmeaning = Leaf Glide Bug
+|PTname = Planafolha
+|PTmeaning = Portmanteau of <i>planar</i> (to glide) and <i>folha</i> (leaf).
+|RUname = Листолёт
+|RUromanised = Listolët
+|RUmeaning = Combination of {{lang|ru|лист <i>list</i>}} (leaf) and {{lang|ru|летать <i>letat'</i>}} (to fly).
+|ZHname = 滑叶虫
+|ZHromanised = Huá yè chóng
+|ZHmeaning = Gliding Leaf Bug
+|CODEname=LILYPAD_FLY
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

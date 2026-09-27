@@ -1,0 +1,71 @@
+{{SS Infobox Enemy
+|drops = None
+| health = 22 <br> 35 (First Room)
+| damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 10<br>(Instantly completed on [[Clover Dancers]]' death)
+}}
+{{Quote
+|Hr = Journal
+|Flighty insect that lives beside still waters.<hr/>
+Though generally passive, their sharp masks can cause injury if carelessly blundered into.
+}}
+
+<b>Pendras</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are flighty masked insects from [[Verdania]] that live beside still waters.<ref>Pendra Hunter's Journal entry: <i>"Flighty insect that lives beside still waters. Though generally passive, their sharp masks can cause injury if carelessly blundered into."</i></ref>
+
+== Behaviour and Tactics ==
+Pendras are non-hostile flying enemies that hover over bodies of water, flying to a new position and pausing, never staying still for more than a second. Despite their lack of hostility, they still deal {{Damage|1}} contact damage.
+
+The second Pendra in the first room of [[Lost Verdania]] has 35 HP; all other Pendras have 22 HP.
+
+== Location ==
+Pendras can be found in [[Lost Verdania]].
+
+{{Gallery
+|Image1 = Mapshot SS Pendra 01.png!Locations in Lost Verdania
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Pendra 01.png!Near entrance of Lost Verdania
+|Image2= Screenshot SS Pendra 02.png!With a silhouette in the background in Lost Verdania
+|Image3= Screenshot SS Pendra 03.png!Two Pendras flying around in Lost Verdania
+|Image4= Screenshot SS Pendra 04.png!Silhouettes in [[the Citadel]]'s [[Memorium]]
+|Image5= Screenshot SS Pendra 05.png!Silhouettes in [[Moss Grotto]]
+|Image6= Screenshot SS Pendra 06.png!Silhouettes in [[Weavenest Atla]]
+}}
+
+== Trivia ==
+* Pendras do not respond to the [[Needolin]].
+* Pendras were [[Cut Content (Hollow Knight)#Miscellaneous Unused Assets|originally intended]] to appear in <i>[[Hollow Knight]]</i>, but were cut.
+* The silhouette of a Pendra can be seen flying in the foreground of the Lost Verdania habitat in the Memorium, and near the water in Moss Grotto and Weavenest Atla.
+
+{{Localisation
+|DEname = Pendra
+|DEmeaning = —
+|ESname = Pendra
+|ESmeaning = —
+|FRname = Pindra
+|FRmeaning = —
+|ITname = Pendra
+|ITmeaning = —
+|JAname=ペンドラ
+|JAromanised= Pendora
+|JAmeaning = Pendra
+|JAkatakana = foreignenemy
+|KOname = 펜드라
+|KOromanised = Pendeura
+|KOmeaning = Pendra
+|PTname =  Pendra
+|PTmeaning = —
+|RUname = Пендра
+|RUromanised = Pendra
+|RUmeaning = Pendra
+|ZHname = 潘德拉
+|ZHromanised = Pāndélá
+|ZHmeaning = Pendra
+|CODEname=HORNET_DRAGONFLY
+|CODEmeaning= Pendras resemble [https://en.wikipedia.org/wiki/Hornet hornets] and [https://en.wikipedia.org/wiki/Dragonfly dragonflies]
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

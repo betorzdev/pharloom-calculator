@@ -1,0 +1,79 @@
+{{SS Infobox Ability
+| description1 = Essence of a being merged within. Silk will be restored when resting at a bench.
+| title2 = Bound Eva's Art Sylphsong
+| description2 = Eva's soul and strength reside within.<hr/>
+Silk will regenerate while resting at a bench.
+| location = [[Weavenest Atla]]
+| music = [[File:Sylphsong 01.ogg]]
+[[File:Sylphsong 02.ogg]]
+}}
+
+<b>Sylphsong</b> is an [[Abilities (Silksong)|Ability]] that [[Hornet (Silksong)|Hornet]] acquires in <i>[[Hollow Knight: Silksong]]</i>, allowing her to rapidly regenerate [[Silk]] at [[Bench (Silksong)|benches]].
+
+== Use ==
+If Hornet rests at a bench without a full spool of Silk, Sylphsong activates after roughly one second. While Sylphsong is active, a glowing symbol appears above Hornet, [[Eva]]'s singing can be faintly heard, and Hornet rapidly regenerates Silk at a rate of roughly four strands per second. Once Hornet's Silk has been fully replenished, the visual and auditory effects of Sylphsong cease, even if Hornet continues to rest at the bench.
+
+== How to Acquire ==
+Sylphsong can be acquired from [[Eva]]. After unlocking enough [[Crest]]s and using enough [[Memory Locket]]s to acquire 32 total Crest slots, Eva requests that Hornet bind her to her shell. Accepting her offer binds Eva to Hornet, and she becomes Sylphsong. 
+
+All unlocked Crest slots are counted — both [[Skills_and_Abilities_(Silksong)|Silk Skills]] slots and coloured [[Tools]] slots, which are unlocked using Memory Lockets.
+Example: if Hornet acquires the [[Wanderer Crest]], which has 7 slots (4 unlocked and 3 locked), only the 4 unlocked slots are counted at first. After unlocking the remaining three with Memory Lockets, all 7 are included in the total.
+
+'''Note: the 7 slots of the [[Hunter Crest]], available to Hornet from the start of the game, are not included in the count, even if their coloured tool slots are unlocked.'''
+
+Therefore, Sylphsong can be obtained even before the beginning of Act 3 by collecting all Crests from the first two acts (except the [[Shaman Crest]] which is available only in Act 3) and all 18 Memory Lockets.
+If no Memory Lockets are used to unlock the three slots on the Hunter Crest, only 15 Memory Lockets are required to obtain the ability before Act 3.
+
+{{Gallery
+| Image1 = File:Mapshot SS Eva 01.png!Location of Eva in Weavenest Atla}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Sylphsong 01.png!Hornet with Sylphsong active
+|Image2 = Icon SS Sylphsong Splash.png!Splash Art
+|Image3 = Icon SS Sylphsong Splash Clear.png!Splash Art
+}}
+
+== Achievements ==
+{{Achievement|game=silksong|Entwined}}
+
+== Trivia ==
+* After reaching the first tier of the evolved [[Hunter Crest]]'s damage bonus, hitting enemies with the [[Needle]] makes a visual effect resembling Sylphsong's visual effect appear. Once Hornet reaches the second tier of the damage bonus, this visual effect is strengthened.
+{{Gallery
+|Image1=Screenshot SS Hunter's Crest Sylphsong 01.png ! Evolved
+|Image2=Screenshot SS Hunter's Crest Sylphsong 02.png ! Fully Evolved
+}}
+{{Localisation
+|DEname = Sylphenlied
+|DEmeaning = Sylphsong
+|ESname = Silfonía
+|ESmeaning = Portmanteau <i>silfo</i> (sylph) and <i>sinfonía</i> (symphony).
+|FRname = Sylphonie
+|FRmeaning = Portmanteau <i>sylphe</i> (sylph) and <i>symphonie</i> (symphony).
+|ITname = Silfonia
+|ITmeaning = Portmanteau <i>silfide</i> (sylph) and <i>sinfonia</i> (symphony).
+|JAname = シルフソング
+|JAromanised = Shirufu songu
+|JAkatakana = foreign
+|JAmeaning = Sylph Song
+|KOname = 실프의 노래
+|KOromanised = Silpeuui norae
+|KOmeaning = Sylph's Song
+|PTname = Silfonia
+|PTmeaning = Portmanteau <i>sílfide</i> (sylph) and <i>sinfonia</i> (symphony).
+|RUname = Песнь сильфиды
+|RUromanised = Pesn' sil'fidy
+|RUmeaning = Sylph's Song
+|TWname = 風靈謠
+|TWromanised = Fēng líng yáo
+|TWmeaning = same
+|ZHname = 风灵谣
+|ZHromanised = Fēng líng yáo
+|ZHmeaning = Air Spirit Ballad
+|CODEname = SKILL_EVAHEAL</code><br><code>SLYTHSONG 
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Skills}}
+[[fr:Sylphonie]]

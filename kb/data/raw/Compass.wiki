@@ -1,0 +1,67 @@
+{{For|the Charm from <i>[[Hollow Knight]]</i>|Wayward Compass}}
+{{SS Infobox Tool
+| type = Yellow
+| effect = Shows Hornet's location on the [[Map and Quill (Silksong)|Map]]
+| location = Purchased from [[Shakra]]
+| description = Intricate tracking device, carved from shell.
+When equipped, the bearer's location will be marked on their map.
+}}
+
+{{Quote
+|Hr=SS
+|Track your location throughout these winding lands with a bone compass. Each member of our tribe can craft them. I would pass you mine, for a small price.
+|[[Shakra]]
+}}
+
+<b>Compass</b> is a {{CrestSlot|Yellow|1}} in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Usefulness ==
+Equipping the Compass will mark [[Hornet (Silksong)|Hornet]]'s location on the [[Map and Quill (Silksong)|Map]]. 
+
+If Hornet does not hold a Map for her current area, her location is still displayed between areas on the [[Areas (Silksong)|zoomed out Map]].
+
+The Tool has no usefulness in combat.
+
+== How to Acquire ==
+Bought from [[Shakra]] for {{R|70}}.
+{{Gallery
+|Image1 = Mapshot SS Shakra 01.png!Shakra Location throughout Pharloom
+}}
+== Gallery ==
+{{Gallery
+|Image1 = Map Pin Hornet.png!Hornet's map pin
+}}
+{{Localisation
+|DEname=Kompass
+|DEmeaning=Compass
+|ESname = Brújula
+|ESmeaning = Compass
+|FRname = Boussole
+|FRmeaning = Compass
+|ITname = Bussola
+|ITmeaning = Compass
+|JAname=コンパス
+|JAromanised= Konpasu
+|JAkatakana = foreign
+|JAmeaning = Compass
+|KOname = 나침반
+|KOromanised = Nachimban
+|KOmeaning = Compass
+|PTname =  Bússola
+|PTmeaning = Compass
+|RUname = Компас
+|RUromanised = Kompas
+|RUmeaning = Compass
+|TWname = 羅盤
+|TWromanised = Luópán
+|TWmeaning = same
+|ZHname = 罗盘
+|ZHromanised = Luópán
+|ZHmeaning = Compass
+|CODEname = COMPASS
+|CODEmeaning = 
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Tools}}
+[[fr:Boussole]]

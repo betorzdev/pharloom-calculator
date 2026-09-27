@@ -1,0 +1,71 @@
+{{SS Infobox Item
+| image = <gallery>
+Surface Memento.png|Inventory
+Surface Memento Shelf.png|Bellhome
+</gallery>
+| type = [[Items (Silksong)#Mementos|Memento]]
+| source = Obtained by playing the [[Needolin]] in a decaying house on the eastern edge of the [[Nameless Town]]
+| description = Worn ornament of the Nameless Town high above Pharloom.<hr>
+The memento can be displayed in a home.
+}}
+
+{{Quote|Hr=SS
+|The weaving ones beckon... Sweet promises whispered...<br>From depths below... Friends seduced...<br>Now only the wind...
+|[[Needolin Locations#Nameless Town|A Nameless Town dweller]]
+}}
+
+The <b>Surface Memento</b> is a [[Materium#Mementos|memento]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+The memento can be displayed on a shelf in the [[Bellhome]] after interacting with the desk.
+
+It appears in the bottom-left slot of the shelving.
+
+{{Gallery
+|Image1 = Mapshot SS Bellhome.png!Location in Bellhart
+|Image2 = Screenshot SS Bellhart 09.png!Displayed inside the Bellhome in Bellhart
+}}
+
+== How to Acquire ==
+Obtained by playing the [[Needolin]] in a decaying house on the eastern edge of the [[Nameless Town]].
+
+{{Gallery
+|Image1 = Mapshot SS Mister Mushroom 03.png!Entrance to the Border Caves in [[the Cradle]]
+|Image2 = Mapshot SS Surface Memento 01.png!Surface Memento location in the Nameless Town
+|Image3 = Screenshot SS Surface Memento 01.png!Surface Memento in the Nameless Town
+}}
+
+{{Localisation
+|DEname = Oberflächen-Memento
+|DEmeaning = Surfaces Memento
+|ESname = Recuerdo de la superficie
+|ESmeaning = Memento of the Surface
+|FRname = Souvenir de la surface
+|FRmeaning = Memento of the Surface
+|ITname = Cimelio di superficie
+|ITmeaning = Surface Heirloom
+|JAname = 地表のメメント
+|JAromanised = Chihyou no memento
+|JAkatakana = foreign
+|JAmeaning = Surface Memento
+|KOname = 표면 증표
+|KOromanised = Pyomyeon jeungpyo
+|KOmeaning = Surface Memento
+|PTname =  Memento Superficial
+|PTmeaning = Superficial Memento
+|RUname = Сувенир с поверхности
+|RUromanised = Suvenir s poverxnosti
+|RUmeaning = Souvenir from the Surface
+|TWname = 地表紀念章
+|TWromanised = Dìbiǎo jìniànzhāng
+|TWmeaning = Surface Memento
+|ZHname = 地表忆痕
+|ZHromanised = Dìbiǎo yì hén
+|ZHmeaning = Surface Memory Mark
+|CODEname = MEMENTO_SURFACE
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

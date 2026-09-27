@@ -1,0 +1,97 @@
+{{SS Infobox Enemy
+| hasdrop = true
+| sh1 = 2-3
+| sh2 = 3-4
+|health = 15/{{BT|60}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 15
+|singnum=1
+}}
+
+{{Quote
+|Hr = Journal
+|Winged insect that feeds upon moss and lichen in the caves above Bone Bottom.<hr/>In its natural state it would avoid potential predators, but Pharloom's Haunting now compels it to aggression. Fortunately, its jaws are ill-suited for combat.
+}}
+
+<b>Aknids</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are winged insects feeding upon moss and lichen, compelled to aggression by the [[Haunting]].<ref>Aknid [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Winged insect that feeds upon moss and lichen in the caves above Bone Bottom. In its natural state it would avoid potential predators, but Pharloom's Haunting now compels it to aggression."</i></ref>
+
+== Behaviour and Tactics ==
+Aknids can be found hovering in the air or eating moss on walls and floors. When they spot [[Hornet (Silksong)|Hornet]], they fly towards her, dealing {{damage|1}} upon contact. They have poor turning ability but can fly with brief bursts of speed. Some Aknids can be found carrying a [[Mossberry]] or [[Flea]], and fly along a predetermined route instead of targeting Hornet. Playing the [[Needolin]] forces them to drop what they are carrying.
+
+When faced with Aknids, the best strategy is to attack them from below. They quickly move towards Hornet, but her damage far outpaces their health. If they bolt towards Hornet, try performing a [[Needle]] bounce or multiple needle slashes.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Aknids have their health quadrupled. They gain one of the following [[Black-Threading#Movesets|void attacks]]: Void Blades, Void Tendrils, or Void Projectiles.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Seek the sweet...
+* Fill the nest...
+* Flee the danger...
+* For the hatching...
+}}
+
+== Location ==
+Aknids are most commonly found in [[Bone Bottom]], but they also appear in the lowest part of [[Shellwood]]. A few of them can be found holding [[Mossberries]] and do not respawn after dropping the berries. If the Aknid holding a Mossberry above the Bone Bottom settlement has not been defeated before the start of [[Act 3]], it will move one room to the east. One Aknid appears on the left side of the room where the [[Weaver Burial Spire]] is located once the [[Silkspear]] has been acquired from the spire.
+
+Two Aknids can be seen in the [[Wormways]], one of them carrying a [[Flea]].
+
+{{Gallery
+|Image1 = Mapshot SS Aknid 01.png!Locations in Bone Bottom
+|Image2 = Mapshot SS Aknid 04.png!Locations in Bone Bottom in Act 3
+|Image3 = Mapshot SS Aknid 02.png!Locations in Shellwood
+|Image4 = Mapshot SS Aknid 03.png!Locations in the Wormways
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1= Screenshot SS Aknid 03.png!In Bone Bottom
+|Image2= Screenshot SS Aknid 04.png!In Mosshome
+|Image3= Screenshot SS Aknid 05.png!In Shellwood
+|Image4= Screenshot SS Aknid 06.png!Attacking
+|Image5= Screenshot SS Aknid 07.png!Reacting to the Needolin
+|Image6= Screenshot SS Aknid 01.png!Chewing moss growth on a body
+|Image7= Screenshot SS Aknid 02.png!Holding a Mossberry
+|Image8= Screenshot SS Aknid 08.png!Holding a Flea
+}}
+
+== Trivia ==
+* Aknids were used by [[Snail Shamans]] as one of the ingredients for the Anguished Aura.<ref>[[Ruined Chapel]] [[Lore_Tablets_(Silksong)#Ruined_Chapel|Lore Tablet]]: <i>"Anguished Aura<br> Eight masks hard, swirled soul enraged.<br> Twelve aknids flat, all juices strained.<br> Six pilgrims living, hung long to drain."</i></ref>
+* Aknids are leftover [[Cut_Content_(Silksong)/Areas#Aspid_(Cloverland)|Aspid enemies]] and have a [[Cut_Content_(Silksong)/Enemies#Aspid_(Cloverland)|cut attack]] where they would spit a yellow projectile towards Hornet.
+
+{{Localisation
+|DEname = Aknide
+|DEmeaning = —
+|ESname = Aknid
+|ESmeaning = —
+|FRname = Aknide
+|FRmeaning = —
+|ITname = Acnide
+|ITmeaning = —
+|JAname = アクニド
+|JAromanised = Akunido
+|JAkatakana = enemy
+|JAmeaning = Aknid
+|KOname = 진물벌레
+|KOromanised = Jinmulbeolle
+|KOmeaning = Resin Bug
+|PTname = Afelgo
+|PTmeaning = Portmanteau of <i>afídio</i> (aphid) and <i>famelgo</i> (hungry or cunning).
+|RUname = Акнид
+|RUromanised = Aknid
+|RUmeaning = Aknid
+|TWname = 阿克尼
+|TWromanised = Ākèní
+|TWmeaning = same
+|ZHname = 阿克尼
+|ZHromanised = Ākèní
+|ZHmeaning = Aknid
+|CODEname = ASPID_COLLECTOR
+|CODEmeaning = Refers to the cut "[[Cut Content (Silksong)/Areas#Aspid (Cloverland)|Aspid]]" area, which the Aknid were originally situated in.
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[fr:Aknide]]

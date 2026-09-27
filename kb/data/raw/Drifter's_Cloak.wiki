@@ -1,0 +1,78 @@
+{{Navbar|icons=true|page1=Hunter's Cloak|page2=Drifter's Cloak|page3=Faydown Cloak}}
+
+{{SS Infobox Item
+| label = Inventory
+| title = Drifter's Cloak
+| image = Drifter's Cloak.png
+| description = Simple protective garb, sewn through with flexible spines.
+| effects = Allows [[Hornet (Silksong)|Hornet]] to ride updrafts or glide down slowly
+| type = [[Items (Silksong)#Equipment|Equipment]]
+| source = Reward for completing the <i>[[Flexile Spines]]</i> Wish
+
+| label2 = Prompt
+| title2 = <small>Received the</small><br>Drifter's Cloak
+| image2 = Icon SS Drifter's Cloak Art.png
+| description2 = Hold JUMP in air<hr>Flare the cloak to ride strong winds or glide gracefully.
+}}
+
+{{Quote
+|Float away now, stray one, and do try not to die. I'd rather not have my hard work go to waste.
+|[[Seamstress]]
+|Hr=SS
+}}
+
+The <b>Drifter's Cloak</b> is an [[Items (Silksong)#Equipment|equipment item]] in <i>[[Hollow Knight: Silksong]]</i> which functions as an upgrade to the [[Hunter's Cloak]], replacing it in [[Hornet (Silksong)|Hornet's]] inventory.
+
+== Function ==
+Holding the [[Controls (Silksong)|JUMP]] button in mid-air allows Hornet to ride vertical updrafts of wind in the environment. This ability can also be used to glide down slowly from high places.
+
+== How to Acquire ==
+The [[Seamstress]] in the [[Far Fields]] sews an array of spines into Hornet's cloak as a reward for completing the <i>[[Flexile Spines]]</i> Wish. [[Hoker]]s must be attacked in order to collect the 25 necessary [[Spine Core]]s.
+
+{{Gallery
+|Image1 = Mapshot SS Seamstress 01.png!Location of Seamstress
+|Image2 = Screenshot SS Seamstress 01.png!Seamstress in Far Fields
+|Image3 = Screenshot SS Seamstress 02.png!Seamstress holding Drifter's Cloak in the cutscene
+}}
+
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Removed the ability to override the [[Faydown Cloak]] after it was obtained, through the input "DOWN + JUMP".
+}}
+{{Localisation
+|DEname = Schwebeumhang
+|DEmeaning = Drift Cloak
+|ESname = Capa de flotador
+|ESmeaning = Floater's Cloak
+|FRname = Cape flottante
+|FRmeaning = Floating Cloak
+|ITname = Mantello del nomade
+|ITmeaning = Nomad's Cloak
+|JAname = 漂流者のクローク
+|JAromanised = Hyōryūsha no kurōku
+|JAmeaning = Drifter's Cloak
+|KOname = 방랑자의 망토
+|KOromanised = Bangnangjaui mangto
+|KOmeaning = Wanderer's Cloak
+|PTname = Manto do Errante
+|PTmeaning = Wanderer's Cloak 
+|RUname = Плащ бродяги
+|RUromanised = Plašč brodjagi
+|RUmeaning = Vagabond's Cloak
+|TWname = 飄泊者斗篷
+|TWromanised = Piāobó zhě dǒupéng
+|TWmeaning = same
+|ZHname = 飘泊者披风
+|ZHromanised = Piāobó zhě pīfēng
+|ZHmeaning = Drifter's Cloak or Wanderer's Cloak
+|CODEname= DRESS_BROLLY
+|CODEmeaning = [[wiktionary:brolly|Brolly]] is an informal term for an umbrella.
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+{{SS Nav Skills}}
+[[Category: Items (Silksong)]]
+[[Category:Skills and Abilities (Silksong)]]
+[[fr:Cape flottante]]
+[[pt:Manto do Errante]]

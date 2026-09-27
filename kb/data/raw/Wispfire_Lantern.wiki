@@ -1,0 +1,94 @@
+{{SS Infobox Tool
+| type = Blue
+| damage = 5/8/11/14/17<br>(Wisp Damage)  <br> 1/2/3/3/4 x 3 <br>(Burning Damage)<ref group = Note>Burning damage increases based on the Needle level, not the level of the [[Crafting Kit]].</ref>
+| effect = When enemies are nearby, consumes 1 [[Silk]] every 4 seconds to spawn a Wisp that attacks nearby enemies
+| location = [[Wisp Thicket]]
+| description = Broken iron lantern containing smouldering wispfire.<hr/>
+Wisps will spawn from the lantern and burn foes, at the cost of Silk.
+}}
+
+{{Quote
+| To live only a single, bright moment... What would one feel? Is it glorious, or only despair? Or could it be both, mixed equal? 
+| [[Hornet (Silksong)|Hornet]]
+| Hr = SS
+}}
+
+<b>Wispfire Lantern</b> is a {{CrestSlot|Blue|1}} in <i>[[Hollow Knight: Silksong]]</i>. It uses [[Silk]] to passively spawn friendly Wisps that attack nearby enemies. 
+
+== Usefulness ==
+When enemies are nearby, Wispfire Lantern consumes 1 [[Silk]] strand every 4 seconds to spawn a [[Wisp]]. These Wisps seek out nearby enemies and do 5 base [[Damage Values and Enemy Health (Silksong)|damage]] on contact, dissipating if they hit anything else while attacking. Damage is increased by [[Crafting Kit|Crafting Kits]].
+
+After the Wisps hit an enemy between 2-5 times in a row, the enemy will catch on fire and take 3 ticks of burning damage. There is a 20% chance for it to take between 2-5 blows; otherwise it will take between 3-4. <ref group=Source><code>DamageEnemies.DoEnemyDamageNailImbuement()</code> in <code>Assembly-CSharp.dll</code>.</ref>
+
+* Wispfire Lantern is useful in longer, sustained fights against larger or more evasive enemies, as it provides passive damage without needing to aim. 
+* Note that against faster enemies, it often misses and dissipates after hitting a surface. 
+* As it uses Silk, it's best used with a Needle-focused build, allowing the Wisps to use most of the Silk during the fight.
+* Note this is a {{CrestSlot|Blue|1}}, and therefore unaffected by [[Pollip Pouch]] (which only affects {{CrestSlot|Red|s}}).
+
+== How to Acquire ==
+Can be collected from the remains of [[Father of the Flame]]'s core after defeating it in [[Wisp Thicket]].
+
+{{Gallery
+|Image1 = Mapshot SS Father of the Flame 01.png!Location in Wisp Thicket
+|Image2 = Screenshot SS Wispfire Lantern 01.png!Wispfire Lantern in Wisp Thicket
+}}
+
+== Tool Combo Tips ==
+{{SS Table Tool Interactions
+| Tool1 = Weavelight
+| Tool1Desc = More regenerated Silk allows for more Wisps to spawn at the beginning of combat without any other sources of Silk. <b>However, during combat, due to the delay in regeneration when Silk value is changed, Weavelight is effectively pointless.</b>
+| Tool2 = Flintslate
+| Tool2Desc = Flintslate and Wispfire Lantern both contribute to the combined chance of setting enemies on fire.
+}}
+
+== Trivia ==
+* While the Wispfire Lantern is equipped, [[Hornet (Silksong)|Hornet]] will gain a pulsing orange glow and will begin emitting small embers.
+[[File:Wispfire Lantern Glow.gif|thumb|220x220px]]
+* While equipped, the Wispfire Lantern tool lowers the rate of frosting in [[Mount Fay]] by 20%, despite only being normally accessible after receiving the Faydown Cloak, which completely shields Hornet from the effect.
+** When Wisps are summoned by the lantern, it resets the freezing timer.
+{{Clear}}
+{{History
+|game = SS
+|1.0.28650 (Patch 2): Fixed Wisps inappropriately targeting [[Skullwing]]s.
+|1.0.28891 (Patch 3): Reduced base damage.
+}}
+{{Localisation
+|DEname = Irrwisch-Laterne
+|DEmeaning = Will o' the Wisp Lantern
+|ESname = Farol de fuego fatuo
+|ESmeaning = Will o' the Wisp Lantern
+|FRname = Lanterne de flambrume
+|FRmeaning = Lantern of Flame Mist
+|ITname = Lanterna fatua
+|ITmeaning = Foolish Lantern<br><small>From <i>fuoco fatuo</i> (will o' the wisp; lit. foolish fire).</small>
+|JAname= ウィスプの火のランタン
+|JAromanised = Wisupu no hi no rantan
+|JAkatakana = foreign
+|JAmeaning = Wispfire Lantern
+|KOname = 정령불 등
+|KOromanised = Jeongnyeongbul deung
+|KOmeaning = Spiritfire Lamp
+|PTname =  Lanterna de Lumefogo
+|PTmeaning = Wispfire Lantern
+|RUname = Трутовый фонарь
+|RUromanised = Trutovyj fonar'
+|RUmeaning = Tinder Lantern
+|TWname = 靈火提燈
+|TWromanised = Líng huǒ tídēng
+|TWmeaning = same
+|ZHname = 灵火提灯
+|ZHromanised = Líng huǒ tídēng
+|ZHmeaning = Wisp Fire Lantern
+|CODEname = WISP_LANTERN
+|CODEmeaning = 
+}}
+
+== Notes ==
+<references group="Note"/>
+== Sources ==
+<references group="Source"/>
+
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Lanterne de flambrume]]

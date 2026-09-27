@@ -1,0 +1,111 @@
+{{SS Infobox Enemy
+| image1 = <gallery>
+B Vaultkeeper.png|Hunter's Journal
+Vaultkeeper No Shell.png|No Shell
+</gallery>
+| hasdrop = true
+| r1 = 21
+| r2 = 39
+| sh1 = 3-5
+| sh2 = 4-7
+| health = 70/{{BT|140}}
+| damage_modifiers = {{SS Spaced Damage Modifiers|1.1|1|0.8|0.8|0.8}}
+| numbers_required = 10
+| singnum = 1
+}}
+{{Quote
+| Hr = Journal
+| High caste bug, responsible for delivering sermons and leading prayer for those beyond the walls of the Whispering Vaults.<hr/>
+Most likely this one's true charge was to root out and condemn those not seen as sufficiently fervent.
+}}
+
+<b>Vaultkeepers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are [[Keepers|high caste]] bugs who are responsible for delivering sermons and leading prayer in the [[Whispering Vaults]].<ref>Vaultkeeper [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"High caste bug, responsible for delivering sermons and leading prayer for those beyond the walls of the Whispering Vaults."</i></ref>
+
+== Behaviour and Tactics ==
+Vaultkeepers often hang from the ceiling or pop out of the background, dropping down once Hornet draws near.
+Vaultkeepers behave very erratically and can be very unpredictable, and have 4 moves to choose from:
+* <b>Skitter:</b> Walks a set distance either left or right.
+* <b>Jump:</b> Jumps up, often attempting to land either on Hornet or very close to her; alternatively, they use this move to jump entirely away from her.
+** Vaultkeepers will repeatedly use this move to platform over obstacles and get to Hornet if she is on a different elevation than them.
+* <b>Lunge Claw:</b> Moves backwards a short distance before lunging forward with a single strike with their claws. Often immediately follows this move up with Charging Slashes.
+* <b>Charging Slashes:</b> Primes its claws and then rushes towards Hornet whilst slashing wildly in front of itself, Comboing her for {{Damage|1+1}} if she is caught at any point during the slashes. Ends the move if Hornet gets behind it or it reaches a wall.
+
+Vaultkeepers deal {{Damage|1}} with Lunge Claw and on contact.
+
+Simply attacking as soon as they end a move like Jump or jumping behind them after Charging Slashes are the main modes of counterplay. Attempting to predict their next move is often useless due to Vaultkeepers' erratic movement.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Vaultkeepers have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Ours to guard...
+* Ours to keep...
+* Hidden dark and deep...
+* Holy secrets, sacred whispers...
+* Words that only we may speak...
+* Songs that only we may sing!
+}}
+
+== Location ==
+Vaultkeepers can be found in the [[Whispering Vaults]]. One is fought in the [[Enemy_Gauntlets_(Silksong)/Whispering_Vaults_1|enemy gauntlet]] at the entrance to the area, and two more can be encountered in the [[Enemy_Gauntlets_(Silksong)/Whispering_Vaults_2|optional gauntlet]] that reuses this arena.
+
+The Vaultkeeper in the north-eastern room only starts to spawn once Hornet approaches the [[Silkeater]] cocoon hidden behind a breakable wall there.
+
+{{Gallery
+| Image1 = Mapshot SS Vaultkeeper 01.png!Locations in the Whispering Vaults
+}}
+
+== Creation and Development ==
+[[File:Enemy 163 164 165.png|thumb|220px|First reveal image]]
+Vaultkeepers, alongside [[Scrollreader]]s and [[Lampbearer]]s, were first revealed in a blog post released in December 2019, where their silhouette was shown. [[Team Cherry]] described them as being in a <i>"tough later game trio who, when in battle, work closely together, covering for each other's weaknesses."</i><ref>[https://www.teamcherry.com.au/blog/11xf7azcuebhybgossfhdc0mphiqbs Team Cherry blog post] of December 13th, 2019</ref> 
+
+In the final release of the game, these three enemies do not specifically work together.
+
+Vaultkeepers were also originally planned to be able to be struck in their shelled form; currently, they can only be struck in their shell-less form.<ref>[[:File:Vaultkeeper Cut Sprites.png|Vaultkeeper Cut Sprites]]</ref>
+{{Clear}}
+== Gallery ==
+{{Gallery
+| Image1 = Screenshot SS Vaultkeeper 08.png!Hanging from the ceiling
+| Image2 = Screenshot SS Vaultkeeper 01.png!Idle
+| Image3 = Screenshot SS Vaultkeeper 02.png!Skitter attack
+| Image4 = Screenshot SS Vaultkeeper 03.png!Jump attack
+| Image5 = Screenshot SS Vaultkeeper 04.png!Lunge Claw attack
+| Image6 = Screenshot SS Vaultkeeper 05.png!Charging Slashes attack
+| Image7 = Screenshot SS Vaultkeeper 09.png!Responding to the Needolin
+| Image8 = Screenshot SS Vaultkeeper 06.png!Giving a sermon
+| Image9 = Screenshot SS Vaultkeeper 07.png!Modded screenshot of sermon without blur
+| Image10 = Screenshot SS Vaultkeeper 10.png!Shells in the Whispering Vaults
+|Image11= Ari SS Sketch 25.png!Concept sketches
+}}
+
+{{Localisation
+|DEname = Glaubenshüter
+|DEmeaning = Faith Guardian
+|ESname = Guardián de las Bóvedas
+|ESmeaning = Vault Guardian
+|FRname = Archiviste
+|FRmeaning = Archivist
+|ITname = Archivista
+|ITmeaning = Archivist
+|JAname = 貯蔵庫の管理者
+|JAromanised = Chozōko no kanrisha
+|JAmeaning = Repository Administrator 
+|KOname = 금고지기
+|KOromanised = Geumgojigi
+|KOmeaning = Vaultkeeper
+|PTname =  Sentinela das Câmaras
+|PTmeaning = Chamber Sentinel
+|RUname = Смотритель Катакомб
+|RUromanised = Smotritel' Katakomb
+|RUmeaning = Catacomb Keeper
+|ZHname = 书库管理员
+|ZHromanised = Shūkù guǎnlǐyuán
+|ZHmeaning = Librarian
+|CODEname = SCHOLAR
+|CODEmeaning = 
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

@@ -1,0 +1,1010 @@
+{{Nav Games Header|Hunter's Journal (Hollow Knight)|Hunter's Journal (Silksong)}}
+
+{{SS Infobox Item
+| title = Hunter's Journal
+| type = Quest Item
+| image = Hunters Journal Silksong.png
+| source = Given by [[Nuu]] in [[Greymoor]]
+| description = Press INVENTORY.<hr/>
+Defeat foes to add their records to the Journal. Review defeated foes in the Journal pane of the Menu.
+}}
+
+{{Quote
+|For her, you would seek Pharloom's many fabulous bugs and cut them.
+Cut them with your blade! Cut them with your mature spirit! Cut them with your savage adult heart!
+Would you help Nuu? Could you take her scroll, and fill its pages with the learnings of your cuts?
+|[[Nuu]]
+|Hr=SS}}
+
+The <b>Hunter's Journal</b> is a compendium of every [[Enemies (Silksong)|enemy]] found in <i>[[Hollow Knight: Silksong]]</i>. New entries are added to the Journal after defeating new enemies. A few entries can only be obtained by inspecting a specific object or as a reward for completing a challenge. 
+
+== Use ==
+Defeating a specified number of each enemy completes the journal, unlocking additional notes from [[Hornet (Silksong)|Hornet]] about that enemy, as well as some lore and techniques for fighting that enemy.
+
+== How to Acquire ==
+Given by [[Nuu]] in the Halfway Home in [[Greymoor]].  When it is inspected, the Journal can be found as a pane in the Menu. 
+
+{{Gallery
+|Image1 =Mapshot SS Hunter's Journal.png!Location in Greymoor
+|Image2 = Screenshot SS Greymoor 06.png!Nuu inside Halfway Home in Greymoor
+}}
+
+== Hunter's Journal entries ==
+A total of 236 entries can be acquired for the Hunter's Journal in <abbr title="The default game mode.">Classic Mode</abbr> (and 237 in {{Steel Soul Icon Mini|SS}} [[Steel Soul Mode (Silksong)|Steel Soul Mode]]).
+	
+See the entry list for the 6 entries not required for the <i>True Hunter</i> [[Achievements (Silksong)|achievement]] or obtaining the [[Hunter's Memento]]. The [[Summoned Saviour]] entry is exclusive to {{Steel Soul Icon Mini|SS}} [[Steel Soul Mode (Silksong)|Steel Soul Mode]], and is required for the Hunter's Memento in Steel Soul savefiles.
+
+In order to see the number of creatures encountered and the total number required to complete the journal, the [[Farsight]] item must be constructed. This item will also add grey slots in the places that unencountered enemies necessary for the [[Hunter's Memento]] would occupy. Entries which are not required do not have corresponding grey slots.
+
+{| class="article-table mw-collapsible mw-collapsed" width="100%" data-tpt-table-id="hunter-journal"
+! colspan="3"| {{Typography|type=h3|style=line-height: 1.5; text-align: center;|text=All entries}}
+|- data-tpt-row-no-checkbox
+! style="min-width: 20em" | Entry
+! style="width: 12em;" | Number of kills required for full entry
+! Notes
+|-
+|[[File:HJ Mossgrub.png|60px|link=Mossgrub]] [[Mossgrub]]
+|25
+|Incomplete entry is already unlocked after obtaining the Hunter's Journal.
+|-
+|[[File:HJ Massive Mossgrub.png|60px|link=Massive Mossgrub]] [[Massive Mossgrub]]
+|3
+|
+|-
+|[[File:HJ Mossmir.png|60px|link=Mossmir]] [[Mossmir]]
+|20
+|
+|-
+|[[File:HJ Moss Mother.png|60px|link=Moss Mother]] [[Moss Mother]]
+|3
+|
+|- 
+|[[File:HJ Aknid.png|60px|link=Aknid]] [[Aknid]]
+|15
+|
+|-
+|[[File:HJ Skull Scuttler.png|60px|link=Skull Scuttler]] [[Skull Scuttler]]
+|35
+|
+|-
+|[[File:HJ Skullwing.png|60px|link=Skullwing]] [[Skullwing]]
+|15
+|
+|-
+|[[File:HJ Skull Brute.png|60px|link=Skull Brute]] [[Skull Brute]]
+|15
+|
+|-
+|[[File:HJ Skull Tyrant.png|60px|link=Skull Tyrant]] [[Skull Tyrant]]
+|1
+|
+|-
+|[[File:HJ Kilik.png|60px|link=Kilik]] [[Kilik]]
+|25
+|
+|-
+|[[File:HJ Beastfly.png|60px|link=Beastfly]] [[Beastfly]]
+|30
+|
+|-
+|[[File:HJ Savage Beastfly.png|60px|link=Savage Beastfly]] [[Savage Beastfly]]
+|2
+|
+|-
+|[[File:HJ Caranid.png|60px|link=Caranid]] [[Caranid]]
+|25
+|
+|-
+|[[File:HJ Vicious Caranid.png|60px|link=Vicious Caranid]] [[Vicious Caranid]]
+|15
+|
+|-
+|[[File:HJ Hardbone Hopper.png|60px|link=Hardbone Hopper]] [[Hardbone Hopper]]
+|20
+|
+|-
+|[[File:HJ Hardbone Elder.png|60px|link=Hardbone Elder]] [[Hardbone Elder]]
+|10
+|
+|-
+|[[File:HJ Tarmite.png|60px|link=Tarmite]] [[Tarmite]]
+|10
+|
+|-
+|[[File:HJ Mawling.png|60px|link=Mawling]] [[Mawling]]
+|30
+|
+|-
+|[[File:HJ Marrowmaw.png|60px|link=Marrowmaw]] [[Marrowmaw]]
+|8
+|
+|-
+|[[File:HJ Hoker.png|60px|link=Hoker]] [[Hoker]]
+|15
+|
+|-
+|[[File:HJ Flintbeetle.png|60px|link=Flintbeetle]] [[Flintbeetle]]
+|3
+|Not required for True Hunter achievement. Not required for [[Hunter's Memento]].
+|-
+|[[File:HJ Rhinogrund.png|60px|link=Rhinogrund]] [[Rhinogrund]]
+|2
+|
+|-
+|[[File:HJ Gromling.png|60px|link=Gromling]] [[Gromling]]
+|25
+|
+|-
+|[[File:HJ Grom.png|60px|link=Grom]] [[Grom]]
+|10
+|
+|-
+|[[File:HJ Bell Beast.png|60px|link=Bell Beast]] [[Bell Beast]]
+|1
+|
+|-
+|[[File:HJ Pilgrim Groveller.png|60px|link=Pilgrim Groveller]] [[Pilgrim Groveller]]
+|35
+|
+|-
+|[[File:HJ Pilgrim Pouncer.png|60px|link=Pilgrim Pouncer]] [[Pilgrim Pouncer]]
+|35
+|Killing [[Pebb]] counts towards its entry.
+|-
+|[[File:HJ Pilgrim Hornfly.png|60px|link=Pilgrim Hornfly]] [[Pilgrim Hornfly]]
+|15
+|
+|-
+|[[File:HJ Pilgrim Hulk.png|60px|link=Pilgrim Hulk]] [[Pilgrim Hulk]]
+|10
+|Killing [[Weary Pilgrim]] counts towards its entry.
+|-
+|[[File:HJ Pilgrim Bellbearer.png|60px|link=Pilgrim Bellbearer]] [[Pilgrim Bellbearer]]
+|10
+|
+|-
+|[[File:HJ Winged Pilgrim.png|60px|link=Winged Pilgrim]] [[Winged Pilgrim]]
+|25
+|
+|-
+|[[File:HJ Elder Pilgrim.png|60px|link=Elder Pilgrim]] [[Elder Pilgrim]]
+|5
+|
+|-
+|[[File:HJ Winged Pilgrim Bellbearer.png|60px|link=Winged Pilgrim Bellbearer]] [[Winged Pilgrim Bellbearer]]
+|10
+|
+|-
+|[[File:HJ Pilgrim Hiker.png|60px|link=Pilgrim Hiker]] [[Pilgrim Hiker]]
+|10
+|
+|-
+|[[File:HJ Pilgrim Guide.png|60px|link=Pilgrim Guide]] [[Pilgrim Guide]]
+|15
+|
+|-
+|[[File:HJ Overgrown Pilgrim.png|60px|link=Overgrown Pilgrim]] [[Overgrown Pilgrim]]
+|20
+|
+|-
+|[[File:HJ Covetous Pilgrim.png|60px|link=Covetous Pilgrim]] [[Covetous Pilgrim]]
+|2
+|
+|-
+|[[File:HJ Snitchfly.png|60px|link=Snitchfly]] [[Snitchfly]]
+|4
+|
+|-
+|[[File:HJ Lavalug.png|60px|link=Lavalug]] [[Lavalug]]
+|12
+|
+|-
+|[[File:HJ Lavalarga.png|60px|link=Lavalarga]] [[Lavalarga]]
+|8
+|
+|-
+|[[File:HJ Smelt Shoveller.png|60px|link=Smelt Shoveller]] [[Smelt Shoveller]]
+|25
+|
+|-
+|[[File:HJ Flintstone Flyer.png|60px|link=Flintstone Flyer]] [[Flintstone Flyer]]
+|25
+|
+|-
+|[[File:HJ Flintflame Flyer.png|60px|link=Flintflame Flyer]] [[Flintflame Flyer]]
+|10
+|
+|-
+|[[File:HJ Smokerock Sifter.png|60px|link=Smokerock Sifter]] [[Smokerock Sifter]]
+|10
+|
+|-
+|[[File:HJ Deep Diver.png|60px|link=Deep Diver]] [[Deep Diver]]
+|5
+|
+|-
+|[[File:HJ Forebrothers Signis & Gron.png|60px|link=Forebrothers Signis & Gron]] [[Forebrothers Signis & Gron]]
+|1
+|
+|-
+|[[File:HJ Cragglite.png|60px|link=Cragglite]] [[Cragglite]]
+|3
+|
+|-
+|[[File:HJ Craggler.png|60px|link=Craggler]] [[Craggler]]
+|1
+|
+|-
+|[[File:HJ Brushflit.png|60px|link=Brushflit]] [[Brushflit]]
+|15
+|
+|-
+|[[File:HJ Fertid.png|60px|link=Fertid]] [[Fertid]]
+|25
+|
+|-
+|[[File:HJ Flapping Fertid.png|60px|link=Flapping Fertid]] [[Flapping Fertid]]
+|20
+|
+|-
+|[[File:HJ Fourth Chorus.png|60px|link=Fourth Chorus]] [[Fourth Chorus]]
+|1
+|This entry can also be completed by entering [[Act 3]]
+|-
+|[[File:HJ Skarrlid.png|60px|link=Skarrlid]] [[Skarrlid]]
+|25
+|
+|-
+|[[File:HJ Skarrwing.png|60px|link=Skarrwing]] [[Skarrwing]]
+|30
+|
+|-
+|[[File:HJ Skarr Scout.png|60px|link=Skarr Scout]] [[Skarr Scout]]
+|20
+| rowspan="3" style="border-left: 1px solid #ccc;" | These entries can also be completed by defeating [[Skarrsinger Karmelita]]
+|-
+|[[File:HJ Skarr Stalker.png|60px|link=Skarr Stalker]] [[Skarr Stalker]]
+|15
+|-
+|[[File:HJ Spear Skarr.png|60px|link=Spear Skarr]] [[Spear Skarr]]
+|10
+|-
+|[[File:HJ Skarrgard.png|60px|link=Skarrgard]] [[Skarrgard]]
+|2
+|
+|-
+|[[File:HJ Gurr the Outcast.png|60px|link=Gurr the Outcast]] [[Gurr the Outcast]]
+|1
+|
+|-
+|[[File:HJ Last Claw.png|60px|link=Last Claw]] [[Last Claw]]
+|6
+|This entry can also be completed by defeating [[Skarrsinger Karmelita]]
+|-
+|[[File:HJ Skarrsinger Karmelita.png|60px|link=Skarrsinger Karmelita]] [[Skarrsinger Karmelita]]
+|1
+| 
+|-
+|[[File:HJ Mite.png|60px|link=Mite]] [[Mite]]
+|30
+|
+|-
+|[[File:HJ Fluttermite.png|60px|link=Fluttermite]] [[Fluttermite]]
+|25
+|
+|-
+|[[File:HJ Mitemother.png|60px|link=Mitemother]] [[Mitemother]]
+|10
+|
+|-
+|[[File:HJ Dreg Catcher.png|60px|link=Dreg Catcher]] [[Dreg Catcher]]
+|20
+|
+|-
+|[[File:HJ Silk Snipper.png|60px|link=Silk Snipper]] [[Silk Snipper]]
+|25
+|
+|-
+|[[File:HJ Thread Raker.png|60px|link=Thread Raker]] [[Thread Raker]]
+|15
+|
+|-
+|[[File:HJ Moorwing.png|60px|link=Moorwing]] [[Moorwing]]
+|1
+|
+|-
+|[[File:HJ Wisp.png|60px|link=Wisp]] [[Wisp]]
+|15
+| rowspan="2" style="border-left: 1px solid #ccc;" | These entries can also be completed by defeating [[Father of the Flame]]
+|-
+|[[File:HJ Burning Bug.png|60px|link=Burning Bug]] [[Burning Bug]]
+|8
+|-
+|[[File:HJ Father of the Flame.png|60px|link=Father of the Flame]] [[Father of the Flame]]
+|1
+|
+|-
+|[[File:HJ Craw.png|60px|link=Craw]] [[Craw]]
+|25
+|
+|-
+|[[File:HJ Tallcraw.png|60px|link=Tallcraw]] [[Tallcraw]]
+|20
+|
+|-
+|[[File:HJ Squatcraw.png|60px|link=Squatcraw]] [[Squatcraw]]
+|15
+|
+|-
+|[[File:HJ Craw Juror.png|60px|link=Craw Juror]] [[Craw Juror]]
+|15
+| rowspan="3" style="border-left: 1px solid #ccc;" | These entries can also be completed by defeating [[Crawfather]]
+|-
+|[[File:HJ Tallcraw Juror.png|60px|link=Tallcraw Juror]] [[Tallcraw Juror]]
+|10
+|-
+|[[File:HJ Squatcraw Juror.png|60px|link=Squatcraw Juror]] [[Squatcraw Juror]]
+|8
+|-
+|[[File:HJ Crawfather.png|60px|link=Crawfather]] [[Crawfather]]
+|1
+|
+|-
+|[[File:HJ Muckmaggot.png|60px|link=Muckmaggot]] [[Muckmaggot]]
+|80
+|
+|-
+|[[File:HJ Slubberlug.png|60px|link=Slubberlug]] [[Slubberlug]]
+|12
+|
+|-
+|[[File:HJ Muckroach.png|60px|link=Muckroach]] [[Muckroach]]
+|20
+|
+|-
+|[[File:HJ Bloatroach.png|60px|link=Bloatroach]] [[Bloatroach]]
+|12
+|
+|-
+|[[File:HJ Roachcatcher.png|60px|link=Roachcatcher]] [[Roachcatcher]]
+|20
+|
+|-
+|[[File:HJ Roachfeeder.png|60px|link=Roachfeeder]] [[Roachfeeder]]
+|20
+|
+|-
+|[[File:HJ Roachkeeper.png|60px|link=Roachkeeper]] [[Roachkeeper]]
+|10
+|
+|-
+|[[File:HJ Roachserver.png|60px|link=Roachserver]] [[Roachserver]]
+|10
+|This entry can also be completed by defeating [[Disgraced Chef Lugoli]]
+|-
+|[[File:HJ Disgraced Chef Lugoli.png|60px|link=Disgraced Chef Lugoli]] [[Disgraced Chef Lugoli]]
+|1
+|
+|-
+|[[File:HJ Wraith.png|60px|link=Wraith]] [[Wraith]]
+|10
+|This entry can also be completed by defeating [[Phantom]]
+|-
+|[[File:HJ Mothleaf Lagnia.png|60px|link=Mothleaf Lagnia]] [[Mothleaf Lagnia]]
+|25
+|
+|-
+|[[File:HJ Miremite.png|60px|link=Miremite]] [[Miremite]]
+|20
+|
+|-
+|[[File:HJ Swamp Squit.png|60px|link=Swamp Squit]] [[Swamp Squit]]
+|30
+|
+|-
+|[[File:HJ Spit Squit.png|60px|link=Spit Squit]] [[Spit Squit]]
+|20
+|
+|-
+|[[File:HJ Stilkin.png|60px|link=Stilkin]] [[Stilkin]]
+|15
+|
+|-
+|[[File:HJ Stilkin Trapper.png|60px|link=Stilkin Trapper]] [[Stilkin Trapper]]
+|12
+|
+|-
+|[[File:HJ Groal the Great.png|60px|link=Groal the Great]] [[Groal the Great]]
+|1
+|
+|-
+|[[File:HJ Barnak.png|60px|link=Barnak]] [[Barnak]]
+|8
+|
+|-
+|[[File:HJ Ductsucker.png|60px|link=Ductsucker]] [[Ductsucker]]
+|6
+|
+|-
+|[[File:HJ Pond Skipper.png|60px|link=Pond Skipper]] [[Pond Skipper]]
+|15
+|
+|-
+|[[File:HJ Pondcatcher.png|60px|link=Pondcatcher]] [[Pondcatcher]]
+|20
+|
+|-
+|[[File:HJ Shellwood Gnat.png|60px|link=Shellwood Gnat]] [[Shellwood Gnat]]
+|15
+|
+|-
+|[[File:HJ Wood Wasp.png|60px|link=Wood Wasp]] [[Wood Wasp]]
+|12
+|
+|-
+|[[File:HJ Splinter.png|60px|link=Splinter]] [[Splinter]]
+|12
+|
+|-
+|[[File:HJ Splinterhorn.png|60px|link=Splinterhorn]] [[Splinterhorn]]
+|10
+|
+|-
+|[[File:HJ Splinterbark.png|60px|link=Splinterbark]] [[Splinterbark]]
+|10
+|
+|-
+|[[File:HJ Sister Splinter.png|60px|link=Sister Splinter]] [[Sister Splinter]]
+|1
+|
+|-
+|[[File:HJ Phacia.png|60px|link=Phacia]] [[Phacia]]
+|25
+|
+|-
+|[[File:HJ Pollenica.png|60px|link=Pollenica]] [[Pollenica]]
+|10
+|
+|-
+|[[File:HJ Gahlia.png|60px|link=Gahlia]] [[Gahlia]]
+|20
+|
+|-
+|[[File:HJ Shrine Guardian Seth.png|60px|link=Shrine Guardian Seth]] [[Shrine Guardian Seth]]
+|1
+|
+|-
+|[[File:HJ Nyleth.png|60px|link=Nyleth]] [[Nyleth]]
+|1
+|
+|-
+|[[File:HJ Furm.png|60px|link=Furm]] [[Furm]]
+|25
+|
+|-
+|[[File:HJ Winged Furm.png|60px|link=Winged Furm]] [[Winged Furm]]
+|12
+|
+|-
+|[[File:HJ Pharlid.png|60px|link=Pharlid]] [[Pharlid]]
+|20
+|
+|-
+|[[File:HJ Pharlid Diver.png|60px|link=Pharlid Diver]] [[Pharlid Diver]]
+|10
+|
+|-
+|[[File:HJ Shardillard.png|60px|link=Shardillard]] [[Shardillard]]
+|3
+|
+|-
+|[[File:HJ Sandcarver.png|60px|link=Sandcarver]] [[Sandcarver]]
+|40
+|
+|-
+|[[File:HJ Squirrm.png|60px|link=Squirrm]] [[Squirrm]]
+|4
+|
+|-
+|[[File:HJ Judge.png|60px|link=Judge]] [[Judge]]
+|15
+|
+|-
+|[[File:HJ Last Judge.png|60px|link=Last Judge]] [[Last Judge]]
+|1
+|
+|-
+|[[File:HJ Coral Furm.png|60px|link=Coral Furm]] [[Coral Furm]]
+|15
+|
+|-
+|[[File:HJ Driznit.png|60px|link=Driznit]] [[Driznit]]
+|25
+|
+|-
+|[[File:HJ Driznarga.png|60px|link=Driznarga]] [[Driznarga]]
+|14
+|
+|-
+|[[File:HJ Pokenabbin.png|60px|link=Pokenabbin]] [[Pokenabbin]]
+|16
+|
+|-
+|[[File:HJ Conchfly.png|60px|link=Conchfly]] [[Conchfly]]
+|8
+|
+|-
+|[[File:HJ Great Conchfly.png|60px|link=Great Conchfly]] [[Great Conchfly]]
+|2
+|[[Raging Conchfly]] needs to be defeated to obtain the full entry.
+|-
+|[[File:HJ Crustcrawler.png|60px|link=Crustcrawler]] [[Crustcrawler]]
+|10
+|This entry can also be completed by defeating [[Crust King Khann]]
+|-
+|[[File:HJ Crustcrag.png|60px|link=Crustcrag]] [[Crustcrag]]
+|6
+|
+|-
+|[[File:HJ Kai.png|60px|link=Kai]] [[Kai]]
+|10
+| rowspan="11" style="border-left: 1px solid #ccc;" | These entries can also be completed by defeating [[Crust King Khann]]
+|-
+|[[File:HJ Spinebeak Kai.png|60px|link=Spinebeak Kai]] [[Spinebeak Kai]]
+|10
+|-
+|[[File:HJ Steelspine Kai.png|60px|link=Steelspine Kai]] [[Steelspine Kai]]
+|15
+|-
+|[[File:HJ Yuma.png|60px|link=Yuma]] [[Yuma]]
+|16
+|-
+|[[File:HJ Yumama.png|60px|link=Yumama]] [[Yumama]]
+|3
+|-
+|[[File:HJ Karaka.png|60px|link=Karaka]] [[Karaka]]
+|10
+|-
+|[[File:HJ Kakri.png|60px|link=Kakri]] [[Kakri]]
+|10
+|-
+|[[File:HJ Yago.png|60px|link=Yago]] [[Yago]]
+|12
+|-
+|[[File:HJ Karak Gor.png|60px|link=Karak Gor]] [[Karak Gor]]
+|8
+|-
+|[[File:HJ Alita.png|60px|link=Alita]] [[Alita]]
+|6
+|-
+|[[File:HJ Corrcrust Karaka.png|60px|link=Corrcrust Karaka]] [[Corrcrust Karaka]]
+|6
+|-
+|[[File:HJ Crust King Khann.png|60px|link=Crust King Khann]] [[Crust King Khann]]
+|1
+|
+|-
+|[[File:HJ Watcher at the Edge.png|60px|link=Watcher at the Edge]] [[Watcher at the Edge]]
+|1
+|
+|-
+|[[File:HJ Voltvyrm.png|60px|link=Voltvyrm]] [[Voltvyrm]]
+|1
+|
+|-
+|[[File:HJ Drapefly.png|60px|link=Drapefly]] [[Drapefly]]
+|30
+|
+|-
+|[[File:HJ Drapelord.png|60px|link=Drapelord]] [[Drapelord]]
+|4
+|
+|-
+|[[File:HJ Drapemite.png|60px|link=Drapemite]] [[Drapemite]]
+|20
+|
+|-
+|[[File:HJ Giant Drapemite.png|60px|link=Giant Drapemite]] [[Giant Drapemite]]
+|6
+|
+|-
+|[[File:HJ Underworker.png|60px|link=Underworker]] [[Underworker]]
+|15
+|
+|-
+|[[File:HJ Underscrub.png|60px|link=Underscrub]] [[Underscrub]]
+|20
+|
+|-
+|[[File:HJ Undersweep.png|60px|link=Undersweep]] [[Undersweep]]
+|10
+|
+|-
+|[[File:HJ Underpoke.png|60px|link=Underpoke]] [[Underpoke]]
+|25
+|
+|-
+|[[File:HJ Underloft.png|60px|link=Underloft]] [[Underloft]]
+|25
+|
+|-
+|[[File:HJ Undercrank.png|60px|link=Undercrank]] [[Undercrank]]
+|4
+|
+|-
+|[[File:HJ Envoy.png|60px|link=Envoy]] [[Envoy]]
+|20
+|
+|-
+|[[File:HJ Choir Pouncer.png|60px|link=Choir Pouncer]] [[Choir Pouncer]]
+|30
+|
+|-
+|[[File:HJ Choir Hornhead.png|60px|link=Choir Hornhead]] [[Choir Hornhead]]
+|15
+|
+|-
+|[[File:HJ Choir Bellbearer.png|60px|link=Choir Bellbearer]] [[Choir Bellbearer]]
+|25
+|
+|-
+|[[File:HJ Choir Flyer.png|60px|link=Choir Flyer]] [[Choir Flyer]]
+|20
+|
+|-
+|[[File:HJ Choir Elder.png|60px|link=Choir Elder]] [[Choir Elder]]
+|6
+|
+|-
+|[[File:HJ Choristor.png|60px|link=Choristor]] [[Choristor]]
+|25
+|
+|-
+|[[File:HJ Reed.png|60px|link=Reed]] [[Reed]]
+|30
+|
+|-
+|[[File:HJ Grand Reed.png|60px|link=Grand Reed]] [[Grand Reed]]
+|12
+|
+|-
+|[[File:HJ Choir Clapper.png|60px|link=Choir Clapper]] [[Choir Clapper]]
+|3
+|
+|-
+|[[File:HJ Clawmaiden.png|60px|link=Clawmaiden]] [[Clawmaiden]]
+|10
+| This entry can also be completed by destroying the source of the Clawmaidens in High Halls, or by entering [[Act 3]].
+|-
+|[[File:HJ Memoria.png|60px|link=Memoria]] [[Memoria]]
+|2
+|
+|-
+|[[File:HJ Minister.png|60px|link=Minister]] [[Minister]]
+|15
+|
+|-
+|[[File:HJ Maestro.png|60px|link=Maestro]] [[Maestro]]
+|6
+|
+|-
+|[[File:HJ Second Sentinel.png|60px|link=Second Sentinel]] [[Second Sentinel]]
+|1
+|
+|-
+|[[File:HJ Dreg Husk.png|60px|link=Dreg Husk]] [[Dreg Husk]]
+|8
+| rowspan="2" style="border-left: 1px solid #ccc;" | These entries can also be completed by defeating [[The Unravelled]]
+|-
+|[[File:HJ Dregwheel.png|60px|link=Dregwheel]] [[Dregwheel]]
+|8
+|-
+|[[File:HJ Surgeon.png|60px|link=Surgeon]] [[Surgeon]]
+|3
+|
+|-
+|[[File:HJ Mortician.png|60px|link=Mortician]] [[Mortician]]
+|10
+|
+|-
+|[[File:HJ The Unravelled.png|60px|link=The Unravelled]] [[The Unravelled]]
+|1
+|
+|-
+|[[File:HJ Cogwork Underfly.png|60px|link=Cogwork Underfly]] [[Cogwork Underfly]]
+|25
+|
+|-
+|[[File:HJ Cogwork Hauler.png|60px|link=Cogwork Hauler]] [[Cogwork Hauler]]
+|12
+|
+|-
+|[[File:HJ Cogwork Crawler.png|60px|link=Cogwork Crawler]] [[Cogwork Crawler]]
+|15
+|
+|-
+|[[File:HJ Cogworker.png|60px|link=Cogworker]] [[Cogworker]]
+|15
+|
+|-
+|[[File:HJ Cogwork Spine.png|60px|link=Cogwork Spine]] [[Cogwork Spine]]
+|10
+|
+|-
+|[[File:HJ Cogwork Choirbug.png|60px|link=Cogwork Choirbug]] [[Cogwork Choirbug]]
+|20
+|
+|-
+|[[File:HJ Cogwork Cleanser.png|60px|link=Cogwork Cleanser]] [[Cogwork Cleanser]]
+|12
+|
+|-
+|[[File:HJ Cogwork Defender.png|60px|link=Cogwork Defender]] [[Cogwork Defender]]
+|8
+|
+|-
+|[[File:HJ Cogwork Clapper.png|60px|link=Cogwork Clapper]] [[Cogwork Clapper]]
+|1
+|
+|-
+|[[File:HJ Cogwork Dancers.png|60px|link=Cogwork Dancers]] [[Cogwork Dancers]]
+|1
+|
+|-
+|[[File:HJ Vaultborn.png|60px|link=Vaultborn]] [[Vaultborn]]
+|20
+|
+|-
+|[[File:HJ Lampbearer.png|60px|link=Lampbearer]] [[Lampbearer]]
+|20
+|
+|-
+|[[File:HJ Scrollreader.png|60px|link=Scrollreader]] [[Scrollreader]]
+|15
+|
+|-
+|[[File:HJ Vaultkeeper.png|60px|link=Vaultkeeper]] [[Vaultkeeper]]
+|10
+|
+|-
+|[[File:HJ Trobbio.png|60px|link=Trobbio]] [[Trobbio]]
+|1
+|
+|-
+|[[File:HJ Tormented Trobbio.png|60px|link=Tormented Trobbio]] [[Tormented Trobbio]]
+|1
+|
+|-
+|[[File:HJ Penitent.png|60px|link=Penitent]] [[Penitent]]
+|8
+|
+|-
+|[[File:HJ Puny Penitent.png|60px|link=Puny Penitent]] [[Puny Penitent]]
+|6
+|
+|-
+|[[File:HJ Freshfly.png|60px|link=Freshfly]] [[Freshfly]]
+|20
+|This entry can also be completed by defeating [[Broodmother]]
+|-
+|[[File:HJ Scabfly.png|60px|link=Scabfly]] [[Scabfly]]
+|15
+|
+|-
+|[[File:HJ Guardfly.png|60px|link=Guardfly]] [[Guardfly]]
+|10
+|
+|-
+|[[File:HJ Wardenfly.png|60px|link=Wardenfly]] [[Wardenfly]]
+|8
+|
+|-
+|[[File:HJ Broodmother.png|60px|link=Broodmother]] [[Broodmother]]
+|1
+|
+|-
+|[[File:HJ Driftlin.png|60px|link=Driftlin]] [[Driftlin]]
+|20
+|
+|-
+|[[File:HJ Mnemonid.png|60px|link=Mnemonid]] [[Mnemonid]]
+|10
+|
+|-
+|[[File:HJ Mnemonord.png|60px|link=Mnemonord]] [[Mnemonord]]
+|3
+|
+|-
+|[[File:HJ Servitor Ignim.png|60px|link=Servitor Ignim]] [[Servitor Ignim]]
+|8
+|
+|-
+|[[File:HJ Servitor Boran.png|60px|link=Servitor Boran]] [[Servitor Boran]]
+|5
+|
+|-
+|[[File:HJ Winged Lifeseed.png|60px|link=Winged Lifeseed]] [[Winged Lifeseed]]
+|8
+|
+|-
+|[[File:HJ Plasmid.png|60px|link=Plasmid]] [[Plasmid]]
+|15
+|
+|-
+|[[File:HJ Plasmidas.png|60px|link=Plasmidas]] [[Plasmidas]]
+|6
+|
+|-
+|[[File:HJ Plasmified Zango.png|60px|link=Plasmified Zango]] [[Plasmified Zango]]
+|1
+|
+|-
+|[[File:HJ Leaf Glider.png|60px|link=Leaf Glider]] [[Leaf Glider]]
+|12
+| rowspan="6" style="border-left: 1px solid #ccc;" | These entries can also be completed by defeating [[Clover Dancers]]
+|-
+|[[File:HJ Leaf Roller.png|60px|link=Leaf Roller]] [[Leaf Roller]]
+|10
+|-
+|[[File:HJ Pendra.png|60px|link=Pendra]] [[Pendra]]
+|10
+|-
+|[[File:HJ Pendragor.png|60px|link=Pendragor]] [[Pendragor]]
+|10
+|-
+|[[File:HJ Nuphar.png|60px|link=Nuphar]] [[Nuphar]]
+|6
+|-
+|[[File:HJ Cloverstag.png|60px|link=Cloverstag]] [[Cloverstag]]
+|10
+|-
+|[[File:HJ Palestag.png|60px|link=Palestag]] [[Palestag]]
+|1
+|Increases total entry count by one. Not required for True Hunter achievement. Not required for [[Hunter's Memento]].
+|-
+|[[File:HJ Kindanir.png|60px|link=Kindanir]] [[Kindanir]]
+|10
+| rowspan="3" style="border-left: 1px solid #ccc;" | These entries can also be completed by defeating [[Clover Dancers]]
+|-
+|[[File:HJ Verdanir.png|60px|link=Verdanir]] [[Verdanir]]
+|10
+|-
+|[[File:HJ Escalion.png|60px|link=Escalion]] [[Escalion]]
+|10
+|-
+|[[File:HJ Clover Dancers.png|60px|link=Clover Dancers]] [[Clover Dancers]]
+|1
+|
+|-
+|[[File:HJ SS Shadow Creeper.png|60px|link=Shadow Creeper (Silksong)]] [[Shadow Creeper (Silksong)|Shadow Creeper]]
+|16
+|
+|-
+|[[File:HJ Shadow Charger.png|60px|link=Shadow Charger]] [[Shadow Charger]]
+|6
+|
+|-
+|[[File:HJ Gloomsac.png|60px|link=Gloomsac]] [[Gloomsac]]
+|15
+|
+|-
+|[[File:HJ Gargant Gloom.png|60px|link=Gargant Gloom]] [[Gargant Gloom]]
+|4
+|
+|-
+|[[File:HJ SS Void Tendrils.png|60px|link=Void Tendrils (Silksong)]] [[Void Tendrils (Silksong)|Void Tendrils]]
+|Entry
+|This entry can be obtained after inspecting a lore tablet in [[Weavenest Absolom]].
+|-
+|[[File:HJ Void Mass.png|60px|link=Void Mass]] [[Void Mass]]
+|8
+|
+|-
+|[[File:HJ Summoned Saviour.png|60px|link=Summoned Saviour]] {{Steel Soul Icon Mini|SS}} [[Summoned Saviour]]
+|1
+|Exclusive to {{Steel Soul Icon Mini|SS}} [[Steel Soul Mode (Silksong)|Steel Soul Mode]].  Required for [[Hunter's Memento]] when in Steel Soul Mode.
+|-
+|[[File:HJ SS Wingmould.png|60px|link=Wingmould (Silksong)]] [[Wingmould (Silksong)|Wingmould]]
+|10
+|This entry can also be completed by completing [[Red Memory]]
+|-
+|[[File:HJ Garpid.png|60px|link=Garpid]] [[Garpid]]
+|30
+|
+|-
+|[[File:HJ Imoba.png|60px|link=Imoba]] [[Imoba]]
+|4
+|
+|-
+|[[File:HJ Skrill.png|60px|link=Skrill]] [[Skrill]]
+|10
+|
+|-
+|[[File:HJ Bell Eater.png|60px|link=Bell Eater]] [[Bell Eater]]
+|1
+|
+|-
+|[[File:HJ Huge Flea.png|60px|link=Huge Flea]] [[Huge Flea]]
+|1
+|
+|-
+|[[File:HJ Shakra.png|60px|link=Shakra]] [[Shakra]]
+|1
+| rowspan="3" style="border-left: 1px solid #ccc;" | These enteries increases total entry count by one. Not required for True Hunter achievement. Not required for [[Hunter's Memento]].
+|-
+|[[File:HJ Garmond & Zaza.png|60px|link=Garmond & Zaza]] [[Garmond & Zaza]]
+|1
+|-
+|[[File:HJ Lost Garmond.png|60px|link=Lost Garmond]] [[Lost Garmond]]
+|1
+|-
+|[[File:HJ Pinstress.png|60px|link=Pinstress]] [[Pinstress]]
+|1
+|
+|-
+|[[File:HJ Widow.png|60px|link=Widow]] [[Widow]]
+|1
+|
+|-
+|[[File:HJ First Sinner.png|60px|link=First Sinner]] [[First Sinner]]
+|1
+|
+|-
+|[[File:HJ Phantom.png|60px|link=Phantom]] [[Phantom]]
+|1
+|
+|-
+|[[File:HJ Lace.png|60px|link=Lace]] [[Lace]]
+|1/2
+|If the fight with Lace in the [[Deep Docks]] was skipped, her entry will be unlocked upon defeating her only once, in [[The Cradle]].
+|-
+|[[File:HJ Grand Mother Silk.png|60px|link=Grand Mother Silk]] [[Grand Mother Silk]]
+|1
+|
+|-
+|[[File:HJ Lost Lace.png|60px|link=Lost Lace]] [[Lost Lace]]
+|1
+|Increases total entry count by one. Not required for True Hunter achievement. Not required for [[Hunter's Memento]].
+|}
+{{Clear}}
+
+== Achievements ==
+{{Achievements|allgames=silksong|Keen Hunter|True Hunter}}
+
+== Trivia ==
+* Completed entries in the Hunter's Journal have a different border around their icons.
+[[File:Bestiary_icon_0000_frame_full.png |thumb|center|Border added to completed journal entries]]
+
+{{Localisation
+|DEname = Journal der Jägerin
+|DEmeaning = Journal of the Huntress
+|ESname = Diario de caza
+|ESmeaning = Hunting diary
+|FRname = Journal de chasse
+|FRmeaning = Hunting Journal
+|ITname = Diario della cacciatrice
+|ITmeaning = Diary of the Huntress
+|JAname = 狩猟の書
+|JAromanised = Shuryō no sho
+|JAmeaning = Hunting Journal
+|KOname = 사냥꾼의 일지
+|KOromanised = Sanyangkkunui ilji
+|KOmeaning = Hunter's Diary
+|PTname = Diário da Caçadora
+|PTmeaning = Hunter's Diary
+|RUname = Журнал охоты
+|RUromanised = Žurnal oxoty
+|RUmeaning = Hunting Journal
+|TWname = 獵手筆記
+|TWromanised = Lièshǒu bǐjì
+|TWmeaning = Hunter's Notes
+|ZHname = 猎人日志
+|ZHromanised = Lièrén rìzhì
+|ZHmeaning = Hunter Journal; while the character {{lang|zh-Hans|人 <i>rén</i>}} literally refers to a human person, it is used here in reference to Hornet.
+|CODEname = JOURNAL
+}}
+
+[[Category:Items (Silksong)]]
+[[fr:Journal de Chasse]]
+[[pt:Diário da Caçadora (Silksong)]]
+{{DISPLAYTITLE:Hunter's Journal (''Silksong'')}}

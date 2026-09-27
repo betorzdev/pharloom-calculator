@@ -1,0 +1,93 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Swamp Squit.png|Hunter's Journal
+Swamp Squit Idle.png|Idle
+</gallery>
+| hasdrop = true
+| sh1 = 2-3
+| sh2 = 3-4
+|health = 35
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1|1|1|1}}
+|numbers_required = 30
+|singnum=2
+}}
+{{Quote
+|Hr = Journal
+|Plentiful pest with a sharp proboscis and a belly full of bile.<hr/>More dangerous in the moment of its explosive and corrosive death than it ever was in life.
+}}
+
+<b>Swamp Squits</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are plentiful pests with sharp proboscises and bellies full of bile.<ref>Swamp Squit [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Plentiful pest with a sharp proboscis and a belly full of bile."</i></ref> Their species is a member of the [[Squits|Squit]] family.
+
+== Behaviour and Tactics ==
+Swamp Squits hover around in a small area or hang on walls when not aggressive.<br>
+When a Swamp Squit spots Hornet, it follows her while maintaining distance, then attacks by darting towards her. It bounces back slightly if it hits a wall while lunging.
+
+When a Swamp Squit dies, it pauses in the air whilst building up toward bursting, and then leaves behind a green explosion that deals {{Damage|2}}. Other Swamp Squits and [[Miremite]]s are instantly killed when caught in this explosion, triggering their explosions as well.
+
+Swamp Squits deal {{Damage|1}} with their lunge and upon contact.
+
+Dead Swamp Squits respawn after 5 seconds if Hornet is far away enough from their chosen respawn point or after Hornet re-enters the room.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Survive in smog...
+* Choke on bile...
+* Feed... or starve...
+* Resist the rot...
+}}
+
+== Location ==
+Swamp Squits can be found all over [[Bilewater]], with each room having several predetermined locations that a Swamp Squit can choose to spawn at. Only a certain number of Swamp Squits can exist in the room at a time.
+{{Gallery
+|Image1 = Mapshot SS Swamp Squit 01.png!Number of spawns in Bilewater
+|Image2 = Mapshot SS Swamp Squit 02.png!Location of spawns in Bilewater
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Swamp Squit 01.png!Resting on wall
+|Image2 = Screenshot SS Swamp Squit 02.png!Swamp Squit in Bilewater
+|Image3 = Screenshot SS Swamp Squit 03.png!Attacking
+|Image4 = Screenshot SS Swamp Squit 04.png!Death Explosion
+|Image5 = Screenshot SS Swamp Squit 05.png!Singing
+|Image6 = GIF SS Swamp Squit 01.gif!Regenerating
+}}
+
+==Trivia==
+* Swamp Squits have the same Needolin dialogue as the [[Miremite]] and [[Spit Squit]].
+* Swamp Squits share a similar name and visual design as the [[Squit]]s from <i>[[Hollow Knight]]</i>.
+** Interestingly, this name similarity is not preserved in all translations of the game, perhaps due to different teams translating both games.
+
+{{Localisation
+|DEname = Sumpfskit
+|DEmeaning = Swamp Squit<br><small>Inconsistent with the Squit in <i>Hollow Knight</i>, which was translated as <i>Piekser</i> (piercer).</small>
+|ESname = Escupebilis pantanoso
+|ESmeaning = Swampy Spit Squit<br><small>Inconsistent with the Squit in <i>Hollow Knight</i>, which was translated as <i>Mosquito</i> (mosquito).</small>
+|FRname = Squitard des Marais
+|FRmeaning = Spit Squit of the Swamp<br><small>Inconsistent with the [[Squit]] in <i>[[Hollow Knight]]</i>, which was translated as <i>Moustique</i> (Mosquito).</small>
+|ITname = Sputafiele Palustre
+|ITmeaning = Swamp Bile Spitter<br><small>Inconsistent with the Squit in <i>Hollow Knight</i>, which was translated as <i>Tafide</i> (Horsefly-idae).</small>
+|JAname = ヌマスクイット
+|JAromanised = Numa sukuitto
+|JAmeaning = Swamp Squit<br><small>Combination of {{Lang|ja|沼 <i>numa</i>}} (swamp) and {{lang|ja|スクイット}} <i>sukuitto</i> (squit).</small>
+|JAkatakana = foreignenemy
+|KOname = 늪지 모기
+|KOromanised = Neupji mogi
+|KOmeaning = Swamp Mosquito
+|PTname = Mosquito-do-pântano
+|PTmeaning = Mosquito of the Swamp
+|RUname = Болотный жалень
+|RUromanised = Bolotnyj žalen'
+|RUmeaning = Swampy Squit
+|TWname = 沼澤斯奎特
+|TWromanised = Zhǎozé sīkuítè
+|TWmeaning = Swamp Squit
+|ZHname = 沼栖飞蚋
+|ZHromanised = Zhǎo qī fēiruì
+|ZHmeaning = Swamp-dwelling Mosquito<br><small>Inconsistent with the Squit in <i>Hollow Knight</i>, which was translated as {{lang|zh-Hans|斯奎特 <i>sīkuítè</i>}}, a phonetic loan.</small>
+|CODEname= SWAMP_MOSQUITO
+|CODEmeaning = "Swamp" internally refers to Bilewater; Swamp Squits resemble [https://en.wikipedia.org/wiki/Mosquito mosquitos]
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

@@ -1,0 +1,85 @@
+{{SS Infobox Enemy
+|drops = None
+|health = 22
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 12
+|singnum=1
+}}
+{{Quote
+|Hr = Journal
+|Younger form of a Muckroach. Attacks prey by leaping from the water and snapping with its flexible jaws.<hr/>
+These creatures look to have been bred deliberately in watery pens. If they are food to be, their scent suggests they must taste vile.
+}}
+
+<b>Slubberlugs</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are the adolescent form of the [[Muckroach]].
+
+== Behaviour and Tactics ==
+Slubberlugs swim in water and jump out in an arc to attack. They can grab [[Hornet (Silksong)|Hornet]] in their mouths and pull her into the water if the water is reachable by her. Contact damage with a Slubberlug deals {{Damage|1}}; being grabbed in their mouth does {{Damage|1+1}}.
+
+Slubberlugs telegraph their attack by popping their heads above the surface of the water with a splash, tilting toward the direction they will jump in.
+
+While killing a Slubberlug knocks it back a significant distance and changes its trajectory, it still wriggles around as it falls, attempting to catch Hornet in its mouth. If this succeeds, Hornet will take {{Damage|1+1}} and will be pulled down into the infested water if possible.
+
+If a Slubberlug lands on solid ground, it wriggles back into the water.
+
+Due to the brief window of a Slubberlug landing on the ground and the timing of its jump, it is recommended to use [[Needle Strike]] or [[Silk Skills]] to kill them.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Eat and grow...
+* Grow or die!
+* Poison's flow...
+* Eat! Eat! Eat!
+}}
+
+== Location ==
+Slubberlugs are found in [[Bilewater]], in the large dead-end tunnel midway up the map on the right.
+
+{{Gallery
+|Image1 = Mapshot SS Slubberlug 01.png!Location in Bilewater
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Slubberlug 01.png!Jumping
+|Image2 = Screenshot SS Slubberlug 02.png!Emerging and Diving
+|Image3 = Screenshot SS Slubberlug 03.png!Grabbing Hornet
+|Image4 = Screenshot SS Slubberlug 04.png!Singing
+}}
+
+==Trivia==
+*The 1.0.27535 and 1.0.27776 versions of <i>Silksong</i> playable on PlayStation 4 and Nintendo Switch respectively, which are older than the PC launch version (1.0.28324), have a different journal description:<ref>[https://docs.google.com/document/d/1GaNLkTTszFKFv55DZj3Iw1hTUi6gbstSR56WXizrMAI Silksong Switch full text] on Google Docs</ref>
+:"<i>Snapping younger relative of a Muckroach, more maggot than bug.</i>"
+{{Localisation
+|DEname = Schlabberneck
+|DEmeaning =
+|ESname = Suciacuajo
+|ESmeaning = Portmanteau of <i>sucio</i> (dirty) and <i>renacuajo</i> (tadpole).
+|FRname = Férovore
+|FRmeaning =
+|ITname = Lumalarva
+|ITmeaning = Portmanteau of <i>lumaca</i> (slug) and larva.
+|JAname = スラバラグ
+|JAromanised = Suraburagu
+|JAkatakana = foreignenemy
+|JAmeaning = Slubberlug
+|KOname = 진흙바퀴 새끼
+|KOromanised = Jinheulbakwi saekki
+|KOmeaning = Mud Cockroach Child or Mud Cockroach Bastard
+|PTname = Baralarva
+|PTmeaning = Portmanteau of <i>barata</i> (roach) and larva.
+|RUname = Слизнешлёп
+|RUromanised = Sliznešlëp
+|RUmeaning = Combination of {{lang|ru|слизень <i>slizen'</i>}} (slug) and {{lang|ru|шлёп <i>šlëp</i>}} (slap or plop)
+|TWname = 沼蛆
+|TWromanised = Zhǎo qū
+|TWmeaning = same
+|ZHname = 沼蛆
+|ZHromanised = Zhǎo qū
+|ZHmeaning = Swamp Maggot
+|CODEname=DUSTROACH_POLLYWOG
+|CODEmeaning=Muckroaches were initially planned to be named Dustroaches. A pollywog is the larval stage of a toad or frog.
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

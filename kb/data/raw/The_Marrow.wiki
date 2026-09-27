@@ -1,0 +1,199 @@
+{{SS Infobox Area
+| tab1 = Acts 1/2
+| image1 = <gallery>
+The Marrow Map Marked.png|Marked
+The Marrow Map Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+The Marrow Map Ruin Marked.png|Marked
+The Marrow Map Clean.png|Unmarked
+</gallery>
+| connection = [[Bone Bottom]]<br>[[Deep Docks]]<br>[[Hunter's March]]<br>[[Bellhart]]<br>[[Shellwood]]
+| ambience = [https://www.youtube.com/watch?v=WcIVBqq2_2k Atmos Boneforest]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]<br>
+[https://www.youtube.com/watch?v=fWVGhLwoNX4 Atmos Lava Near Big]<br>
+[https://www.youtube.com/watch?v=GeUHAnIixB4 Atmos Lava Far]
+| main = [https://www.youtube.com/watch?v=9vEhtLTm6zI Main Bone] (Main rooms)<br>
+[https://www.youtube.com/watch?v=kmvyUO5asVs Main Lava] (Lava rooms)<br>
+[https://www.youtube.com/watch?v=IUOqRi-nrD0 Sub] (Small rooms)<br>
+[https://www.youtube.com/watch?v=VHYyWUnnKRE The Marrow] (Main + Lava + Sub)<br>
+[https://youtu.be/lV3RGzes6Zs?si=eRE50RVrap2LWAt8 Mini Games] (Loddie minigames)
+| action = [https://youtu.be/3VoHxtarCwA?si=lYklSQQeweuWFPyI Boneforest Action]<br>
+[https://www.youtube.com/watch?v=swPmNk9_fw0 Generic Enemy Battle A]
+}}
+{{Quote
+| Crumbling roads built upon the shells of ancient bugs. All of Pharloom rests upon these fragile foundations.
+| [[Shakra]]
+| Hr = SS
+}}
+
+<b>The Marrow</b> is an [[Areas (Silksong)|area]] in <i>[[Hollow Knight: Silksong]]</i>. Its now-crumbling roads are built upon the bones of ancient bugs long gone. 
+
+== Description ==
+The Marrow is located deep in the lowlands of [[Pharloom]]. Composed entirely of bone and the ancient shells of long-dead bugs, the Marrow forms the fragile foundation upon which the rest of the kingdom is built. The area is inhabited by [[Skull Scuttlers]], which use the old skulls as protection. The Marrow is also home to [[Flintbeetle]]s, explosive creatures that hold [[Flintgem]]s required for the <i>[[Volatile Flintbeetles]]</i> wish.
+
+[[File:Screenshot SS The Marrow 05.png|thumb|left|200px|A typical room in the Marrow, featuring red flowers that Hornet can [[Needle-bounce]] off]]
+Being one of the first areas [[Hornet (Silksong)|Hornet]] travels through, the Marrow is important on her journey. The [[Bell Beast]] is encountered here stuck in [[Silk]], and can be fought after binding the [[Silkspear]] in [[Bone Bottom]]. Defeating and taming the Bell Beast allows Hornet to unlock a useful [[Fast Travel (Silksong)|fast travel]] system.
+
+Hornet can find a few useful tools, such as the [[Straight Pin]], and meet new NPCs for the first time, such as [[Sherma]] and [[Shakra]].
+
+To the east is the entrance to [[Hunter's March]], guarded by a [[Skarrgard]], an early-game mini-boss. A nearby prison cell contains [[Grindle]], who Hornet can choose to free. Following the defeat of [[Widow]], [[Loddie]] takes up residence in the area, offering a pin-throwing minigame in exchange for several rewards. 
+
+== History ==
+[[File:Screenshot SS The Marrow 03.png|thumb|right|200px|An ancient skull found in the Marrow]]
+Not much is known about the ancient past of [[Pharloom]], but it is evident that the Marrow is made almost entirely out of the shells and bones of ancient bugs. Fossilisation, similar to what is found in the [[Forgotten Crossroads]] in [[Hallownest]], over generations formed into the solid foundations of the land.<ref>[[Shakra]]: <i>"Crumbling roads built upon the shells of ancient bugs. All of Pharloom rests upon these fragile foundations."</i></ref><ref>[[Hollow Knight: Wanderer's Journal|Wanderer's Journal]], p. 19.</ref>
+
+Similar skeletal structures can be found all over the lowlands of Pharloom, from [[Bone Bottom]] to the [[Far Fields]], suggesting that the land was inhabited by massive creatures in the past.<ref>[[:File:Screenshot SS Far Fields 10.png|Screenshot]] of the [[Skull Cave]].</ref><ref>[[:File:Screenshot SS Far Fields 19.png|Screenshot]] of remains in the Far Fields.</ref><ref>[[:File:Screenshot SS Far Fields 20.png|Screenshot]] of [[Frontier]] entrance.</ref>
+
+Following the construction of [[the Citadel]], intricate roads and [[Bellshrine]]s were built through the land to make it easier for [[pilgrims]] to travel. Many pilgrims start their journey in the Marrow, and have to ascend through the kingdom as part of their holy [[Citadel#Pilgrimage|pilgrimage]].
+
+== How to Access ==
+The Marrow can initially be entered by going east of [[Bone Bottom]], which marks the edge of the [[Mosslands]].
+
+{{TabbedPOI
+|Header = true
+
+|NPC1 = Grindle
+|NPC2 = Loddie
+|NPC3 = Shakra
+|NPC4 = Sherma
+|NPC5 = Flea Caravan
+|NPC6 = Nuu
+|NPC6Note = (after defeating the Skull Tyrant)
+|NPC7 = Garmond and Zaza
+|NPC7Note = ([[Act 3]] only)
+|NPC8 = Flick the Fixer
+|NPC8Note = (Act 3 only)
+
+|Enemy1 = Skull Scuttler
+|Enemy2 = Skull Brute
+|Enemy3 = Kilik
+|Enemy4 = Beastfly
+|Enemy5 = Caranid
+|Enemy6 = Flintbeetle
+|Enemy6Note = (during the <i>[[Volatile Flintbeetles]]</i> wish)
+|Enemy7 = Pilgrim Groveller
+|Enemy8 = Pilgrim Pouncer
+|Enemy9 = Winged Pilgrim 
+|Enemy10 = Elder Pilgrim
+|Enemy11 = Pilgrim Guide
+|Enemy12 = Smelt Shoveller
+|Enemy13 = Flintstone Flyer
+|Enemy14 = Shardillard
+|Enemy15 = Void Mass
+|Enemy15Note = (Act 3 only)
+
+|Boss1 = Skull Tyrant
+|Boss2 = Bell Beast
+
+|Loot1_FileName = Straight Pin
+|Loot2_FileName = Icon SS Silk Heart
+|Loot2_Name = Silk Heart
+|Loot2_Description = dropped by the [[Bell Beast]]
+|Loot3_FileName = Tool Pouch Upgrade
+|Loot3_Name = Tool Pouch
+|Loot3_Description = given by [[Loddie]] after beating his first challenge
+|Loot4_FileName = Memory Locket
+|Loot4_Amount = 1
+|Loot5_FileName = Craftmetal
+|Loot5_Amount = 1
+|Loot6_FileName = Flea
+|Loot6_Amount = 1
+|Loot7_FileName = Heavy Rosary Necklace
+|Loot7_Amount = 1
+|Loot7_Description = given by Loddie after beating his second challenge
+|Loot8_FileName = Frayed Rosary String
+|Loot8_Amount = 1
+|Loot9_FileName = Flintgem
+|Loot9_Description = dropped by [[Flintbeetle]]s during the <i>[[Volatile Flintbeetles]]</i> wish
+|Loot10_FileName = Crown Fragment
+|Loot10_Description = dropped by the [[Skull Tyrant]]
+|Loot11_FileName = Memory Locket
+|Loot11_Amount = 1
+|Loot11_Description = if <i>[[Volatile Flintbeetles]]</i> is not completed by Act 3
+|Loot12_FileName = Beast Shard
+|Loot12_Amount = 1
+|Loot12_Description = dropped by the Skull Tyrant in Act 3
+
+|LoreTabletsSource = SS The Marrow
+
+|EnemyGauntletsSource = The Marrow 1, The Marrow 2
+}}
+
+== Special Rooms ==
+=== Survivor's Camp ===
+After the start of [[Act 3]], the survivors of [[Bone Bottom]] move to the central room where the [[Flea Caravan]] used to be and set up the Survivor's Camp. If the <i>[[Volatile Flintbeetles]]</i> wish is not completed by Act 3, the [[Memory Locket]] it rewards is instead found here.
+
+The <i>[[Survivor's Camp Supplies]]</i> [[Delivery Wishes|delivery wish]] can be delivered here to [[Flick the Fixer]].
+
+== Creation and Development ==
+[[File:Early Screenshot 01.jpg|thumb|220px|Forest of Bones in <i>Hollow Knight</i>]]
+The Marrow is one of the earliest <i>Silksong</i> areas to be worked on; in the August 2017 map, the first known in-game development map, it is the main area that is comparatively the most complete.<ref>[[Cut Content (Silksong)#Gallery|Early <i>Silksong</i> development maps]]</ref> Throughout development, it remained generally the same, with only a few notable changes, the most notable being that the Skarr were planned to invade the Marrow at some point in the game, according to an unused save profile flag.<ref name="skarrinvade"><code>hunterInfestationBoneForest</code></ref> The [[Cut Content (Silksong)/NPCs|Learned Pilgrim]] NPC, cut late into development, would have also appeared in the Marrow.
+
+The Marrow is based on the cut <i>[[Hollow Knight]]</i> area, [[Cut Content (Hollow Knight)#Areas|Forest of Bones]]. Internally, it is often called <code>Boneforest</code>.<ref name="skarrinvade" /> [[William Pellen]] has stated that the idea of <i>Silksong</i> starting in a fiery area was an idea from the beginning, <i>"partly because [they] had started [working on the Forest of Bones] for Hollow Knight"</i>, which he called <i>"a nice environment"</i>.<ref name="bloomberg">[https://www.bloomberg.com/news/newsletters/2025-11-28/the-makers-of-hollow-knight-silksong-aren-t-done-just-yet The Makers of 'Silksong' Aren't Done Just Yet] ([[:File: Reference Boneforest.png|Archive]])</ref>
+
+The area was showcased in the February 2019 <i>Silksong</i> reveal trailer,<ref>[https://youtu.be/pFAknD_9U7c?t=28 Hollow Knight: Silksong Reveal Trailer] (0:28)</ref> and it was the location used for the game's key art released alongside the announcement. In a June 2019 blog post, a screenshot of Shakra's room in the Marrow was shown, with its minor differences implying that she may have been skippable, as her platform could have been fully walked under.<ref>[https://www.teamcherry.com.au/blog/post-e3-wrap-silksong-systems-update Team Cherry blog post] of June 25th, 2019</ref> Footage of the Marrow Skull Tyrant's battle was included in the June 2022 <i>Xbox Game Pass Reveal Trailer</i>, showcasing him in a differently shaped arena.<ref name="xbox">[https://youtu.be/JSfuFlhsxZY?t=64 Hollow Knight: Silksong - Xbox Game Pass Reveal Trailer - Xbox & Bethesda Games Showcase 2022] (1:04)</ref>
+
+{{Gallery
+| Image1 = Shakra Team Cherry Blog.png!Pre-release screenshot
+| Image2 = Screenshot SS EDGE 05.png!Pre-release screenshot
+}}
+
+== Gallery ==
+{{Gallery
+| Image1 = Bellway Marrow.png!Bell Beast arena
+| Image2 = Screenshot SS The Marrow 01.png!Bellshrine
+| Image3 = Screenshot SS The Marrow 04.png!Bridge east of the Bellshrine
+| Image4 = Screenshot SS The Marrow 02.png!Lower central area
+| Image5 = Screenshot SS The Marrow 03.png!Upper area with giant skull
+| Image6 = Screenshot SS The Marrow 05.png!Upper eastern area
+| Image7 = Screenshot SS The Marrow 06.png!Entrance to Hunter's March
+| Image8 = Screenshot SS The Marrow 07.png!Prison bench
+| Image9 = Screenshot SS The Marrow 08.png!Grindle's cell
+| Image10 = Screenshot SS The Marrow 09.png!Moving platform over lava
+| Image11 = Screenshot SS The Marrow 10.png!Entrance to the Deep Docks
+| Image12 = Screenshot SS The Marrow 11.png!Loddie room
+| Image13 = Screenshot SS The Marrow 12.png!Skull Tyrant arena
+| Image14 = Screenshot SS The Marrow 13.png!Survivor's Camp (Act 3)
+}}
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Slight increase in pea pod collider scale.
+}}
+{{Localisation
+|DEname = Tal der Knochen
+|DEmeaning = Valley of Bones
+|ESname = La Médula
+|ESmeaning = The Marrow
+|FRname = L'Antre
+|FRmeaning = The Cave
+|ITname = L'Antro
+|ITmeaning = The Den
+|JAname = 脊髄の道
+|JAromanised = Sekizui no michi
+|JAmeaning = Spinal Cord Path
+|KOname = 골수
+|KOromanised = Golsu
+|KOmeaning = Marrow
+|PTname = A Medula
+|PTmeaning = The Marrow
+|RUname = Костяк
+|RUromanised = Kostjak
+|RUmeaning = Backbone or Skeleton
+|ZHname = 髓骨洞窟
+|ZHromanised = Suǐgǔ dòngkū
+|ZHmeaning = Marrow Bone Cave
+|TWname = 骨髓地基
+|TWromanised = Gǔsuǐ dìjī
+|TWmeaning = Marrow Foundation
+|CODEname = PATH_OF_BONE</code><br><code>BONEFOREST
+}}
+{{Refs|hr=SS}}
+
+{{DEFAULTSORT:Marrow}}
+
+{{SS Nav Areas}}
+[[es:La Médula]]
+[[fr:L'Antre]]
+[[zh:髓骨洞窟]]

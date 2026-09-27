@@ -1,0 +1,107 @@
+{{SS Infobox Enemy
+|health = 27/{{BT|108}} <br> 25 ([[Savage Beastfly]])
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.9|0.6|0.6|0.5}}
+|numbers_required = 15
+| hasdrop = true
+| sh1 = 5-8
+| sh2 = 7-10
+|singnum=1
+}}
+
+{{Quote
+|Hr = Journal
+|Aggressive winged bug of the lowlands. When angered, it rapidly whips its bladed tail as a weapon.<hr/>
+Its wings are quite small compared to its bulk. Perhaps it uses the warm air of these fiery lands to help stay airborne. Clever, if so.
+}}
+
+<b>Vicious Caranids</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are aggressive winged bugs of [[Pharloom]]'s lowlands, whipping their bladed tail as a weapon when angered.<ref>Vicious Caranid [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Aggressive winged bug of the lowlands. When angered, it rapidly whips its bladed tail as a weapon."</i></ref>
+
+== Behaviour and Tactics ==
+Vicious Caranids fly aimlessly and extremely slowly, but they gradually pursue Hornet once she gets close.<br>
+They attack by flailing their sharp tails wildly around themselves, comboing Hornet for {{Damage|1+1}}. They deal {{Damage|1}} on contact.
+
+Since this attack covers a wide area and deals heavy damage, take care and avoid being cornered by Vicious Caranids. It is possible to bounce over them entirely with downward attacks, but note that their body and blade attack are different sizes. Missing the timing causes Hornet to take damage.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Vicious Caranids have their health quadrupled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+*Rumbling, crackling...
+*Shells are strong...
+*Scratching, seeking...
+*Warm and dark...
+*Digging, hiding...
+*Claws are sharp...
+}}
+
+== Location ==
+Vicious Caranids can be found primarily in the [[Far Fields]], but they also appear in the [[Deep Docks]], the [[Memorium]], and the [[Chapel of the Beast]] within [[Hunter's March]], where they can also be summoned by a [[Savage Beastfly]]. Once the Savage Beastfly is defeated, one Vicious Caranid starts to spawn in the corridor below its arena.
+
+After [[Forebrothers Signis & Gron]] are defeated, three Vicious Caranids appear in the southeast area of the Deep Docks.
+
+{{Gallery
+|Image1 = Mapshot SS Vicious Caranid 02.png!Locations in the Far Fields
+|Image2 = Mapshot SS Vicious Caranid 04.png!Locations in the Far Fields in Act 3
+|Image3 = Mapshot SS Vicious Caranid 01.png!Location in the Memorium
+|Image4 = Mapshot SS Savage Beastfly 01.png!Location in  Hunter's March
+|Image5 = Mapshot SS Vicious Caranid 03.png!Locations in the Deep Docks
+|Image6 = Mapshot SS Vicious Caranid 05.png!Locations in the Deep Docks in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1=Screenshot SS Vicious Caranid 01.png!In Far Fields
+|Image2=Screenshot SS Vicious Caranid 02.png!In the Memorium
+|Image3=Screenshot SS Vicious Caranid 03.png!In the Chapel of the Beast
+|Image4=Screenshot SS Vicious Caranid 04.png!In Deep Docks in Act 3
+|Image5=Screenshot SS Vicious Caranid 05.png!Attacking
+|Image6=Screenshot SS Vicious Caranid 06.png!Reacting to Needolin
+|Image7=Screenshot SS Vicious Caranid 07.png!Black-threaded
+|Image8=Screenshot SS Vicious Caranid 08.png!Summoned by Savage Beastfly
+|Image9=Screenshot SS Vicious Caranid 09.png!In a cage in Far Fields
+|Image10=Screenshot SS Vicious Caranid 10.png!Corpse in Hunter's March
+}}
+
+==Trivia==
+*In the <i>Hollow Knight: Silksong</i> Xbox trailer, small Vicious Caranids can be seen, making them similar to basic [[Caranid]]s in size.<ref>[https://www.youtube.com/watch?v=JSfuFlhsxZY Hollow Knight: Silksong - Xbox Game Pass Reveal Trailer - Xbox & Bethesda Games Showcase 2022]</ref> In the final game, all Vicious Caranids are much bigger.
+{{Gallery
+|Image1=XboxScreenshot Vicious Caranid.png!<i>Silksong</i> Xbox trailer
+}}
+
+{{Localisation
+|DEname = Wilde Caranide
+|DEmeaning = Wild Caranid
+|ESname = Caránido feroz
+|ESmeaning = Vicious Caranid
+|FRname = Caranide Féroce
+|FRmeaning = Ferocious Caranid
+|ITname = Carranide Feroce
+|ITmeaning = Fierce Caranid
+|JAname = レイケツカラニド
+|JAromanised = Reiketsu karanido
+|JAkatakana = foreignenemy
+|JAmeaning = Combination of {{lang|ja|冷血}} <i>reiketsu</i> (cold-hearted) and {{lang|ja|カラニド}} <i>karanido</i> (Caranid).
+|KOname = 포악한 카라니드
+|KOromanised = Poakan karanideu
+|KOmeaning = Vicious Caranid
+|PTname = Caranídeo-feroz
+|PTmeaning = Ferocious Caranid
+|RUname = Злобный каранид
+|RUromanised = Zlobnyj karanid
+|RUmeaning = Vicious Caranid
+|TWname = 狂躁刃尾蜂
+|TWromanised = Kuángzào rèn wěi fēng
+|TWmeaning = same
+|ZHname = 狂躁刃尾蜂
+|ZHromanised = Kuángzào rèn wěi fēng
+|ZHmeaning = Irritable Blade-tailed Bee<br><small>{{lang|zh-Hans|刃尾蜂}}/{{lang|zh-Hant|刃尾蜂}} <i>rèn wěi fēng</i> (Blade-tailed Bee) is the name of [[Caranid]]s in Chinese.</small>
+|CODEname = BONE_CIRCLER_VICIOUS
+|CODEmeaning = Caranids are called <code>BONE_CIRCLER</code> internally
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[fr:Caranide Féroce]]

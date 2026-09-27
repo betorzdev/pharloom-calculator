@@ -1,0 +1,96 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Cogwork Cleanser.png|Hunter's Journal
+Cogwork Cleanser Idle.png|Idle
+</gallery>
+| hasdrop = true
+| sh1 = 5-8
+| sh2 = 7-10
+|health=40/{{BT|80}}
+|damage_modifiers={{SS Spaced Damage Modifiers|1.25|1|1|1|1}}
+|numbers_required = 12
+|sing = Cogwork Choirbug
+|singnum = 2
+}}
+{{Quote
+|Hr = Journal
+|Steam shooting automaton, forged to clean the Cogwork Core and keep it free of infestation. <hr/>An inspired use of steam. I must remember its construction when designing future tools.
+}}
+
+<b>Cogwork Cleansers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are stubby [[Cogwork Bugs|automatons]] forged to maintain the [[Cogwork Core]] and purge infestations.<ref>Cogwork Cleanser [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Steam shooting automaton, forged to clean the Cogwork Core and keep it free of infestation."</i></ref>
+
+== Behaviour and Tactics ==
+Cogwork Cleansers walk back and forth unpredictably whilst idle, pausing frequently. They make no attempt to pursue [[Hornet (Silksong)|Hornet]], but if she approaches, they build up steam for a moment before ejecting it diagonally upwards in both directions at a low angle. The steam combos Hornet for {{Damage|1+1}} if she is caught in it at any time.
+
+Due to the angle of the steam attack, neither jumping nor stepping back is effective. The most reliable options are to fully dash away or jump directly above the Cogwork Cleansers. [[Needle#Needle-bouncing|Needle-bouncing]] on top of them repeatedly can easily kill them.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Cogwork Cleansers have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* ...Am I...Who?...
+* ...Lift it...Fix it...Me?...
+* ...The Core...Holy...
+* ...Work...Eternal...
+* ...To mend...
+* ...To serve...
+}}
+
+== Location ==
+Cogwork Cleansers can be found in the [[Cogwork Core]], and one of them is fought as part of the [[Enemy Gauntlets (Silksong)/Cogwork Core 1|enemy gauntlet]] in the southwest of the area. After the fight, up to two of them can spawn upon each return to the arena.
+{{Gallery
+|Image1 = Mapshot SS Cogwork Cleanser 01.png!Locations in the Cogwork Core
+|Image2 = Mapshot SS Cogwork Cleanser 02.png!Locations in the Cogwork Core in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Cogwork Cleanser 01.png!In the Cogwork Core
+|Image2 = GIF SS Cogwork Cleanser 01.gif!Deployed via lift
+|Image3 = Screenshot SS Cogwork Cleanser 02.png!Expelling steam
+|Image4 = Screenshot SS Cogwork Cleanser 03.png!Knocked by a Cogwork Choirbug
+|Image5 = Screenshot SS Cogwork Cleanser 04.png!Reacting to the Needolin
+|Image6 = Screenshot SS Cogwork Cleanser 05.png![[Silk Fly]] freed upon death
+|Image7 = Screenshot SS Cogwork Core 07.png!Inactive Cogwork Cleansers
+|Image8 = Screenshot SS Underworks 11.png!In the [[Twelfth Architect]]'s workshop
+}}
+
+==Trivia==
+* Cogwork Cleansers share their Needolin dialogue with [[Cogwork Choirbug]]s, [[Cogwork Defender]]s, [[Cogwork Clapper]]s, [[Cogworker]]s, [[Cogwork Spine]]s, [[Cogwork Crawler]]s, and [[Cogwork Underfly|Cogwork Underflies]].
+** Additionally, they share their singing audio with Cogwork Choirbugs.
+
+{{Localisation
+|DEname = Räderwerk-Reiniger
+|DEmeaning = Cogwork Cleaner
+|ESname = Limpiador mecánico
+|ESmeaning = Mechanical Cleaner
+|FRname = Nettoyeur Mécanique
+|FRmeaning = Mechanical Cleaner
+|ITname = Meccanismo Pulente
+|ITmeaning = Cleaning Mechanism
+|JAname = カラクリセイソウシャ
+|JAromanised = Karakuri seisōsha
+|JAkatakana = enemy
+|JAmeaning = Combination of {{lang|ja|カラクリ <i>karakuri</i>}} (mechanism) and {{lang|ja|清掃者}} <i>seisōsha</i> (cleaner).
+|KOname = 톱니바퀴 청소부
+|KOromanised = Tomnibakwi cheongsobu
+|KOmeaning = Cogwheel Cleaner
+|PTname =  Purificador Mecânico
+|PTmeaning = Mechanical Purifier
+|RUname = Заводной чистильщик
+|RUromanised = Zavodnoj čistilʹščik
+|RUmeaning = Clockwork Cleaner
+|TWname = 機樞清道夫
+|TWromanised = Jīshū qīngdàofū
+|TWmeaning = same
+|ZHname = 机枢清道夫
+|ZHromanised = Jīshū qīngdàofū
+|ZHmeaning = Mechanical Street Cleaner 
+|CODEname = SONG_AUTOMATON_02
+|CODEmeaning = "Song" internally refers to the Citadel; 01 is the [[Cogwork Choirbug]]; other [[Architects#Creations |Cogwork Bugs]] use the Automaton name internally
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

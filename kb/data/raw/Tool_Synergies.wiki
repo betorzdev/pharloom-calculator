@@ -1,0 +1,143 @@
+A <b>Tool Synergy</b> is when two [[Tools]] or a Tool and a [[Crest]] work together to produce a novel effect, altering either of their default mechanics.
+
+{{Disclaimer
+|This page does not list combined effects of two Tools that are to be expected, such as [[Pollip Pouch|Pollip Pouch's]] [[Pollip Pouch#Usefulness|venom]] effect applying to {{CrestSlot|Red|s}}.
+}}
+
+== Tool Synergies ==
+
+{| class="article-table" width="100%" 
+
+|width="96px" align="center"| [[File:Magnetite Brooch.png|link=Magnetite Brooch|72x72px]]<br>
+[[Magnetite Brooch]] 
+|width="96px" align="center"| [[File:Magnetite Dice.png|link=Magnetite Dice|72x72px]]<br>
+[[Magnetite Dice]] 
+| [[Rosaries]] will wait for 30% less time before being pulled towards Hornet.<ref group=Source><code>CurrencyObjectBase::Getter()</code> in <code>Assembly-CSharp.dll</code></ref>
+|-
+ 
+|width="96px" align="center"| [[File:Wanderer Crest File.png|link=Wanderer Crest|72x72px]]<br>
+[[Wanderer Crest]]
+|width="96px" align="center"| [[File:Magnetite Dice.png|link=Magnetite Dice|72x72px]]<br>
+[[Magnetite Dice]]
+| Multiplies the chance of a critical hit by 1.1, increasing it to 2.2%. 
+|-
+
+|width="96px" align="center"| [[File:Flintslate.png|link=Flintslate|72x72px]]<br>
+[[Flintslate]] 
+|width="96px" align="center"| [[File:Magnetite Dice.png|link=Magnetite Dice|72x72px]]<br>
+[[Magnetite Dice]] 
+| Increases the chances of a "lucky hit" (which has a chance to take fewer hits to ignite an enemy) by 2%.<ref group=Source><code>DamageEnemies.DoEnemyDamageNailImbuement()</code> in <code>Assembly-CSharp.dll</code></ref> 
+|-
+
+|width="96px" align="center"| [[File:Flintslate.png|link=Flintslate|72x72px]]<br>
+[[Flintslate]] 
+|width="96px" align="center"| [[File:Wispfire Lantern.png|link=Wispfire Lantern|72x72px]]<br>
+[[Wispfire Lantern]] 
+| Flintslate and Wispfire Lantern both contribute to the combined chance of setting enemies on [[Flintslate#Usefulness|fire]]. 
+|-
+
+|width="96px" align="center"| [[File:Flintslate.png|link=Flintslate|72x72px]]<br>
+[[Flintslate]] 
+|width="96px" align="center"| [[File:Pollip Pouch.png|link=Pollip Pouch|72x72px]]<br>
+[[Pollip Pouch]]
+|Every Needle swing inflicts venom, but enemies no longer catch fire, the damage increase is reduced from 50% to 30%, and [[Seared Organ]]s will no longer drop from slain enemies while the <i>[[Broodfeast]]</i> or <i>[[Runtfeast]]</i> [[wish]]es are active.<ref group="Note" name="Flintslate">Having the Pollip Pouch equipped prevents Fire and Electric-based {{CrestSlot|Red|s}} from causing [[Seared Organ]]s to drop during the <i>[[Broodfeast]]</i> or <i>[[Runtfeast]]</i> [[wish]]es.</ref> The effect is also no longer removed upon falling into water, and the duration is increased from 8 to 10 seconds.
+|-
+
+|width="96px" align="center"| [[File:Pimpillo.png|link=Pimpillo|72x72px]]<br>
+[[Pimpillo]]
+|width="96px" align="center"| [[File:Pollip Pouch.png|link=Pollip Pouch|72x72px]]<br>
+[[Pollip Pouch]]
+| Prevents Pimpillo from causing [[Seared Organ]]s to drop  from slain enemies while the <i>[[Broodfeast]]</i> or <i>[[Runtfeast]]</i> [[wish]]es are active.<ref group="Note" name="Flintslate"></ref>
+|-
+
+|width="96px" align="center"| [[File:Flea Brew.png|link=Flea Brew|72x72px]]<br>
+[[Flea Brew]]
+|width="96px" align="center"| [[File:Pollip Pouch.png|link=Pollip Pouch|72x72px]]<br>
+[[Pollip Pouch]]
+| Causes Hornet to leave behind clouds of venom as she moves. Enemies that touch the cloud take 2 ticks of the venom's damage. 
+|-
+
+|width="96px" align="center"| [[File:Plasmium Phial.png|link=Plasmium Phial|72x72px]]<br>
+[[Plasmium Phial]]
+|width="96px" align="center"| [[File:Pollip Pouch.png|link=Pollip Pouch|72x72px]]<br>
+[[Pollip Pouch]]
+| Using the Plasmium Phial creates a purple Mask that breaks on its own after 3 seconds, making it impossible to achieve [[Plasmification]] without additional [[Lifeblood|Plasmium]] sources. On the Mask breaking, Hornet releases a cloud of venom.
+
+This effect does not happen while plasmified. 
+|-
+
+|width="96px" align="center"| [[File:Plasmium Phial.png|link=Plasmium Phial|72x72px]]<br>
+[[Plasmium Phial]]
+|width="96px" align="center"| [[File:Beast Crest File.png|link=Beast Crest|72x72px]]<br>
+[[Beast Crest]]
+| Fury's healing cap is not reduced while plasmified, and [[Bind|Binding]] also heals 1 Mask immediately. 
+|-
+
+|width="96px" align="center"| [[File:Plasmium Phial.png|link=Plasmium Phial|72x72px]]<br>
+[[Plasmium Phial]]
+|width="96px" align="center"| [[File:Witch Crest File.png|link=Witch Crest|72x72px]]<br>
+[[Witch Crest]]
+| Bind's healing cap is not reduced while plasmified. 
+|-
+
+|width="96px" align="center"| [[File:Plasmium Phial.png|link=Plasmium Phial|72x72px]]<br>
+[[Plasmium Phial]]
+|width="96px" align="center"| [[File:Multibinder.png|link=Multibinder|72x72px]]<br>
+[[Multibinder]]
+| Binding heals 2 total Masks instead of 1 while plasmified. 
+|-
+
+|width="96px" align="center"| [[File:Claw Mirror.png|link=Claw Mirror|72x72px]]<br>
+[[Claw Mirror]]
+|width="96px" align="center"| [[File:Multibinder.png|link=Multibinder|72x72px]]<br>
+[[Multibinder]]
+| Triggers Claw Mirror's explosion and its lingering damage twice. 
+|-
+
+|width="96px" align="center"| [[File:Claw Mirrors.png|link=Claw Mirrors|72x72px]]<br>
+[[Claw Mirrors]]
+|width="96px" align="center"| [[File:Multibinder.png|link=Multibinder|72x72px]]<br>
+[[Multibinder]]
+| Triggers Claw Mirrors' explosion and its lingering damage twice. 
+|-
+
+|width="96px" align="center"| [[File:Injector Band.png|link=Injector Band|72x72px]]<br>
+[[Injector Band]]
+|width="96px" align="center"| [[File:Multibinder.png|link=Multibinder|72x72px]]<br>
+[[Multibinder]]
+| Both bind durations are shortened by 52%. The total Bind duration is slightly faster than normal Bind.<ref group="Note" name="Duration">The increase to Bind duration varies based on Crest and whether [[Injector Band]] is also equipped; see [[Bind#Modifiers|table of Bind durations]].</ref>
+|-
+
+|width="96px" align="center"| [[File:Beast Crest File.png|link=Beast Crest|72x72px]]<br>
+[[Beast Crest]]
+|width="96px" align="center"| [[File:Multibinder.png|link=Multibinder|72x72px]]<br>
+[[Multibinder]]
+| Bind is not split into two segments. Heal up to 4 Masks by hitting enemies during Fury. 
+|-
+
+|width="96px" align="center"| [[File:Witch Crest File.png|link=Witch Crest|72x72px]]<br>
+[[Witch Crest]]
+|width="96px" align="center"| [[File:Multibinder.png|link=Multibinder|72x72px]]<br>
+[[Multibinder]]
+| Thrash an additional time and heal up to 4 Masks by hitting enemies while Binding. 
+|-
+
+|width="96px" align="center"| [[File:Silkspeed Anklets.png|link=Silkspeed Anklets|72x72px]]<br>
+[[Silkspeed Anklets]]
+|width="96px" align="center"| [[File:Scuttlebrace.png|link=Scuttlebrace|72x72px]]<br>
+[[Scuttlebrace]]
+| Increases the scuttle speed of the Scuttlebrace by 26%. 
+|-
+
+|}
+{{Hr|SS}}
+
+== Notes ==
+<references group="Note"/>
+
+== Code References ==
+<references group="Source"/>
+
+{{Refs|hr=SS}}
+{{SS Nav Tools}}
+[[Category:Tools]]

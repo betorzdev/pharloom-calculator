@@ -1,0 +1,78 @@
+{{SS Infobox Enemy
+|drops = None
+|health = 85/{{BT|170}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.75|1.2|1.1|0.9|0.9}}
+|numbers_required = 8
+|singnum=1
+}}
+{{Quote
+|Hr = Journal
+|Fully grown mollusc able to unleash a gushing torrent of burning fluid from its back.<hr/>To survive while storing so much searing fluid within... Before I would have believed it impossible, but Pharloom is home to many marvels.
+}}
+
+<b>Lavalargas</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They're the full-grown versions of [[Lavalug]]s, and can expel much more fluid as a result.
+
+== Behaviour and Tactics ==
+Lavalargas move back and forth along walls or ceilings, stopping and shooting out a jet of droplets of lava when [[Hornet (Silksong)|Hornet]] moves near them that deals {{Damage|2|type=Fire}}. The jet of lava is shot straight out from the top of the Lavalarga, either vertically or horizontally, depending on which surface the Lavalarga is on, as well as in a smaller radius around it.
+
+When killed, Lavalargas build up before exploding in lava, shooting out in a small radius in all directions.
+
+It should be noted that Lavalargas respawn upon re-entering the room, despite their size.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Lavalargas have their health doubled. They gain one of the following [[Black-Threading#Movesets|void attacks]]: Void Blades or Void Projectiles.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* Feel its burn...
+* Deeper... Hotter...
+* Never enough...
+* Protection in pain...
+}}
+
+== Location ==
+Lavalargas can be found in the lowest part of the [[Deep Docks]], in the room leading up to the [[Diving Bell]].
+
+{{Gallery
+|Image1 = Mapshot SS Lavalarga 01.png!Locations in the Deep Docks
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Lavalarga 02.png!In Deep Docks
+|Image2 = Screenshot SS Lavalarga 03.png!Burning Spray
+|Image3 = Screenshot SS Lavalarga 05.png!Death explosion
+|Image4 = Screenshot SS Lavalarga 04.png!Singing
+|Image5 = Screenshot SS Lavalarga 01.png!Pair of Lavalurgas
+}}
+{{Localisation
+|DEname = Lavanorm
+|DEmeaning = Portmanteau of lava and <i>enorm</i> (enormous).
+|ESname = Lavalarga
+|ESmeaning = —
+|FRname = Laveluge
+|FRmeaning = 
+|ITname = Megalava
+|ITmeaning = Mega Lava
+|JAname = ヨウガンオオズリ
+|JAromanised = Yōgan oo zuri
+|JAmeaning = Combination of {{lang|ja|溶岩}} yōgan (lava), {{lang|ja|大}} ō (large) and {{lang|ja|這いずり}} haizuri (crawler). 
+|KOname = 거대 용암달팽이
+|KOromanised = Geodae yongamdalpaengi
+|KOmeaning = Giant Lava Snail
+|PTname = Lavalarga
+|PTmeaning = —
+|RUname = Лавидия
+|RUromanised = Lavidija
+|RUmeaning = Portmanteau of {{lang|ru|лава <i>lava</i>}} (lava) and {{lang|ru|мидия <i>midija</i>}} (mussel).
+|ZHname = 成年熔岩蛞蝓
+|ZHromanised = Chéngnián róngyán kuòyú
+|ZHmeaning = Adult Lava Slug
+|CODEname=TAR_SLUG_HUGE
+|CODEmeaning = Lavalugs are internally known as "Tar Slugs"
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

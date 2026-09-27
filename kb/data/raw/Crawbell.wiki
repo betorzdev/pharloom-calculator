@@ -1,0 +1,71 @@
+{{SS Infobox Item
+| image = <gallery>
+Crawbell.png|Inventory
+Crawbell Bellhome.png|Bellhome
+</gallery>
+| description = Nest fashioned from an old bell. Once set up, young Craws will occasionally roost within, filling the bell with shell shards and rosaries.<hr/>
+The Crawbell can be installed on the exterior of a home.
+| effects = Passively accumulates Rosaries and Shell Shards at the [[Bellhome]]
+| source = [[Greymoor#Sub-area: Court of Craws|Court of Craws]]
+}}
+
+{{Quote
+|Shiny, shiny, all for us!<br>Take their treasures!
+|[[Craw]] [[Needolin]] dialogue
+|Hr=SS
+}}
+
+The <b>Crawbell</b> is an [[Items (Silksong)#Bellhome Upgrades|Item]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+Can be installed outside the [[Bellhome]]. Shell Shards and Rosaries appear in the Crawbell, which can be collected by interacting with the nest.
+
+{{Gallery
+|Image1 = Mapshot SS Bellhome.png!Bellhome location in Bellhart
+|Image2 = Screenshot SS Crawbell 01.png!Crawbell installed outside the Bellhome
+}}
+
+== Mechanics ==
+The Crawbell has a maximum capacity of {{R|300–500}} and {{S|300–500}}. The maximum capacity is randomly selected again every time the nest's contents are collected.
+
+For every 5 minutes that pass in-game, {{R|5–20}} and {{S|5–20}} are added to the nest. The Crawbell is full after an average of 160 minutes of in-game time.
+
+== How to Acquire == 
+After beating the [[Greymoor#Court of Craws|Court of Craws]], the Crawbell can be collected in the room after the arena.
+
+{{Gallery
+|Image1 = Mapshot SS Court of Craws.png!Location of the Court of Craws
+|Image2 = Screenshot SS Crawbell 02.png!Crawbell in the Court of Craws
+}}
+
+==Trivia==
+* Squeaking craw sounds can be heard if the installed Crawbell is hit with the [[Needle]].
+{{Localisation
+|DEname = Krähferglocke
+|DEmeaning = Crawbell<br><small><i>Krähfer</i> is the name of the [[Craws]] in German, a portmanteau of <i>krähe</i> (crow) and <i>käfer</i> (bug).</small>
+|ESname = Nido campana
+|ESmeaning = Bell Nest
+|FRname = Clochetoit de corbotère
+|FRmeaning = Craw Bellhome<br><small><i>Corbotère</i> is the name of the [[Craws]] in French, from <i>corbeau</i> (crow).</small>
+|ITname = Campana per Corvidi
+|ITmeaning = Bell for Corvids
+|JAname = ボロガワの鐘
+|JAromanised = Borogawa no kane
+|JAmeaning = Craw's Bell<br><small>{{lang|ja|ボロガワ}} <i>borogawa</i> is the name of the [[Craws]] in Japanese, a combination of {{lang|ja|襤}} <i>boro</i> (rag) and {{lang|ja|皮}} <i>kawa</i> (skin).</small>
+|KOname = 까마귀종
+|KOromanised = Kkamagwijong
+|KOmeaning = Crow Bell
+|PTname = Campânula de Corbos
+|PTmeaning = Bell of Craws<br><small><i>Corbo</i> is the name of the [[Craws]] in Brazilian Portuguese, from <i>corvo</i> (crow).</small>
+|RUname = Карозвон
+|RUromanised = Karozvon
+|RUmeaning = Crawbell<br><small>{{lang|ru|Кар}} <i>kar</i> is the name of the [[Craws]] in Russian, from {{lang|ru|кар}} <i>kar</i> (Russian onomatopoeia for a crow's call).</small>
+|TWname = 鴉蟲鐘巢
+|TWromanised = Yā chóng zhōng cháo
+|TWmeaning = same
+|ZHname = 鸦虫钟巢
+|ZHromanised = Yā chóng zhōng cháo
+|ZHmeaning = Crow Bug Bell Nest
+|CODEname = CRAWBELL
+}}
+{{SS Nav Items}}

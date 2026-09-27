@@ -1,0 +1,71 @@
+{{For|the [[Delivery Wishes|Delivery Wish]]|Queen's Egg (Wish)}}
+{{SS Infobox Item
+| type = [[Items (Silksong)#Deliverables|Deliverable]]
+| image = <gallery>
+Queen's Egg.png|Intact
+Queen's Egg Broken.png|Broken
+</gallery>
+| source = [[Tipp & Pill]]
+| description = Fragile egg containing a young Silkeater Queen. Though the Queen cannot gather Silk itself, with time and care it could be raised to breed more Silkeaters. 
+}}
+
+{{Quote
+| We is got requested times a'many for this, a queeny egg of those eaters of Silk. Wish from big, sticky creature, near many roaches caged. Wants it muchly!
+| Courier Tipp
+| Hr = SS
+}}
+
+<b>Queen's Egg</b> is a [[Items (Silksong)#Deliverables|deliverable item]] in <i>[[Hollow Knight: Silksong]]</i>. It is not obtainable during {{Steel Soul Icon Mini|SS}} [[Steel Soul Mode (Silksong)|Steel Soul Mode]].
+
+== Use ==
+The Queen's Egg is a fragile item given by [[Couriers Tipp & Pill]] that needs to be transported for the [[Delivery Wishes|Delivery Wish]] <i>[[Queen's Egg (Wish)|Queen's Egg]]</i>. It has four hit points, which decrease when [[Hornet (Silksong)|Hornet]] takes damage, makes a heavy landing, collides into a wall while using [[Swift Step]], or collides into a ceiling while using [[Silk Soar]]. It is immediately destroyed if Hornet travels with the [[Bellways]], [[Ventrica]], [[Flea Caravan]], or [[Beastling Call]]. It is to be delivered to [[Styx]] in [[Sinner's Road]]. After that is done it will be added to the [[Materium]], and Styx will upgrade his [[Silkeater]] farm, now capable of holding a maximum of two Silkeaters at a time.
+
+{{Gallery
+|Image1 = Mapshot SS Styx.png!Styx's location in Sinner's Road
+|Image2 = Screenshot SS Sinner's Road 08.png!Styx in Sinner's Road
+|Image3 = Screenshot SS Styx 06.png!Styx's Silkeater farm upgraded
+}}
+
+== How to Acquire ==
+After obtaining a [[Silkeater]] from [[Styx]] and fulfilling at least one other Delivery Wish, the Queen's Egg becomes available as part of one of the Delivery Wishes of Couriers Tipp & Pill. If the currently held one is destroyed, Hornet can return to Tipp & Pill to obtain another and try again.
+
+{{Gallery
+|Image1 = Mapshot SS Tipp & Pill 01.png!Couriers Tipp & Pill's location in Bellhart
+|Image2 = Screenshot SS Tipp & Pill 04.png!Couriers Tipp & Pill in Bellhart
+}}
+
+{{History
+|game = SS
+|1.0.29242 (Patch 4): Fixed Styx not giving rosaries when delivering the Queen's Egg.
+}}
+{{Localisation
+|DEname = Ei der Königin
+|DEmeaning = Queen's Egg
+|ESname = Huevo de la reina
+|ESmeaning = Queen's Egg
+|FRname = Œuf de la reine
+|FRmeaning = Queen's Egg
+|ITname = Uovo della regina
+|ITmeaning = Queen's Egg
+|JAname=女王の卵
+|JAromanised= Joō no tamago
+|JAmeaning = Queen's Egg
+|KOname = 여왕의 알
+|KOromanised = Yeowang-ui al
+|KOmeaning = Queen's Egg
+|PTname = Ovo da Rainha
+|PTmeaning = Queen's Egg
+|RUname = Яйцо Королевы
+|RUromanised = Jajco Korolevy
+|RUmeaning = Queen's Egg
+|TWname = 女王之卵
+|TWromanised = Nǚwáng zhī luǎn
+|TWmeaning = same
+|ZHname = 女王之卵
+|ZHromanised = Nǚwáng zhī luǎn
+|ZHmeaning = Queen's Egg
+|CODEname = COURIER_SUPPLIES_SLAVE
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}

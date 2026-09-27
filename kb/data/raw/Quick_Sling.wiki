@@ -1,0 +1,61 @@
+{{SS Infobox Tool
+| type = Blue
+| effect = Throw 2 tools at a time
+| location = [[Bilewater]]
+| description = Taut-drawing mechanism built from reed and bone, intended for mounting on the limb of a bug.<hr/>
+Doubles the number of tools thrown.
+}}
+
+<b>Quick Sling</b> is a {{CrestSlot|Blue|1}} in <i>[[Hollow Knight: Silksong]]</i>. It doubles the number of {{CrestSlot|Red|s}} that are thrown with one input.
+
+== Usefulness ==
+Allows [[Hornet (Silksong)|Hornet]] to throw two {{CrestSlot|Red|s}} at a time instead of one. 
+
+The additional thrown Tool is not free; two Tool charges will be consumed. The projectile maximum capacity is <i>not</i> doubled; the quantity per throw is. 
+
+For example, if the maximum capacity of [[Straight Pin|Straight Pins]] is 24, the supply will be exhausted in 12 throws.
+
+Quick Sling does not affect [[Silkshot]], [[Delver's Drill]], [[Rosary Cannon]], [[Flintslate]], [[Snare Setter]], [[Flea Brew]], or [[Plasmium Phial]].{{MissingInfo}}.
+
+== How to Acquire ==
+Found in a hidden room above a breakable ceiling in [[Bilewater]].
+
+{{Gallery
+| Image1 = Mapshot SS Quick Sling.png!Entry location in Bilewater
+| Image2 = Quickslingbreakablewall.png!Broken ceiling leading to Quick Sling
+| Image3 = Screenshot SS Quick Sling Room.png!Room where the Quick Sling is acquired
+}}
+{{Localisation
+|DEname = Schnellschleuder
+|DEmeaning = Quick-Slinger
+|ESname = Honda veloz
+|ESmeaning = Quick Sling
+|FRname = Jet-éclair
+|FRmeaning = Flash Throw
+|ITname = Fionda rapida
+|ITmeaning = Quick Sling
+|JAname=スリング
+|JAromanised= Suringu
+|JAmeaning = Sling
+|JAkatakana = foreign
+|KOname = 신속 투척기
+|KOromanised = Sinsok tucheokgi
+|KOmeaning = Quick Thrower
+|PTname =  Sela Rápida
+|PTmeaning = Quick Saddle
+|RUname = Быстрая праща
+|RUromanised = Bystraja prašča
+|RUmeaning = Quick Sling
+|TWname = 速射索
+|TWromanised = Sùshè suǒ
+|TWmeaning = same
+|ZHname = 速射索
+|ZHromanised = Sùshè suǒ
+|ZHmeaning = Quick Shooter Sling
+|CODEname = QUICK_SLING
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Jet-éclair]]
+[[zh:速射索]]

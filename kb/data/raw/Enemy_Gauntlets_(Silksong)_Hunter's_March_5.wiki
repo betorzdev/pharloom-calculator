@@ -1,0 +1,22 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot SS Hunter's March Arena 5.png|400px|center]]
+|[[File:Mapshot SS Hunter's March Arena 4.png|400px|center]]
+|-
+| colspan="2" | Enemy gauntlet that reuses the previous gauntlet's arena. It appears only if [[Mottled Skarr]] is killed after the previous gauntlet has been cleared, and the [[Curveclaw]] has not been purchased. Hornet is not locked into the arena.
+|-
+! Reward
+! [[Soundtrack (Silksong)|Theme]]
+|-
+| <center>[[Curveclaw]]</center>
+| <center>[https://youtu.be/j1GHUxGtueY Hunter's Trail Action]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ Spear Skarr.png|35x35px|link=Spear Skarr]] [[Spear Skarr]], left<br/>
+[[File:HJ Spear Skarr.png|35x35px|link=Spear Skarr]] Spear Skarr, top right
+|Top right Spear Skarr descends shortly after the start of the gauntlet.
+|}

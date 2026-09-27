@@ -1,0 +1,84 @@
+{{SS Infobox Tool
+| image = <gallery>
+Sting Shard.png|Inventory
+Sting Shard Poison.png|Pollip Pouch
+</gallery>
+| type = Red
+| damage = 4/6/9/11/14 (single spike, 5 hits) <br> 20/30/45/55/70 (spikes, total) <br> 2/3/4/6/7 (contact, 5 hits) <br> 10/15/20/30/35 (contact, total)
+| max = 6/7/9/10/12
+| refill_type = Repair
+| refill = {{S|6.66}} (rounded)
+| effect = Places a hanging trap in the air
+| location = [[Deep Docks]]
+| description = Lethal trap formed of tightly bound blades.<hr>Once placed, the trap will pierce enemies that come into contact.
+}}
+
+{{Quote
+| A vicious stabbing trap? We can build it. Just know, it disturbs us, these devious implements you conceive to kill.
+| [[Forge Daughter]]
+| Hr = SS
+}}
+
+<b>Sting Shard</b> is a {{CrestSlot|Red|1}} in <i>[[Hollow Knight: Silksong]]</i>. Using it creates a trap of tightly bound blades that damages an [[Enemies (Silksong)|enemy]] on contact. It can also be attacked, causing it to explode and shoot its blades outwards.
+
+== Usefulness ==
+Sting Shard is a trap placed mid-air that activates when an [[Enemies (Silksong)|enemy]] moves within range. The trap can be destroyed by having either [[Hornet (Silksong)|Hornet]] or an enemy attack it, or by placing another Sting Shard very close to it. Destroying the trap fires 5 spikes away from it, which also deal damage to enemies.
+
+Up to 3 Sting Shards can be deployed at once. Deploying a fourth will cause the oldest one to automatically detonate, spraying its blades outwards.
+
+The trap is best used on enemies that cannot destroy it using their attacks, as well as flying enemies that are difficult to hit using the [[Needle]].
+
+If an enemy's spawn location is known beforehand (such as during an arena fight), Hornet can throw piles of needles into that spot right before it spawns. The enemy will spawn right in the centre of the pile and take the full damage of the trap before they have a chance to move.
+
+== How to Acquire ==
+Sting Shard can be purchased from [[Forge Daughter]] in [[Deep Docks]] for {{R|140}} and {{C|1}}.
+
+{{Gallery
+|Image1 = Mapshot SS Forge Daughter 01.png!Location in Deep Docks
+|Image2 = Screenshot SS Forge Daughter 01.png!Forge Daughter in Deep Docks
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Recording SS Stingshard.gif!Hornet deploying Sting Shard
+|Image2 = GIF SS Sting Shard 01.gif!Sting Shard killing enemy
+}}
+
+== Trivia ==
+* The Sting Shard resembles one of Hornet's attacks in [[Hornet Sentinel|her second boss fight in Hollow Knight]].
+* In the reveal trailer for <i>[[Hollow Knight: Silksong]]</i>, Hornet could [[Needle]] bounce off of her own Sting Shards.<ref>[https://www.youtube.com/watch?v=pFAknD_9U7c&t=91s Hollow Knight: Silksong Reveal Trailer (1:31)] on YouTube</ref> This functionality is not present in the release version of the game.
+
+{{Localisation
+|DEname = Stachelsplitter
+|DEmeaning = Stinger Shard
+|ESname = Aguijón cortante
+|ESmeaning = Cutting Stinger
+|FRname = Mortaille
+|FRmeaning = Portmanteau of <i>mort</i> (dead) and <i>aiguille</i> (needle).
+|ITname = Scheggia pungente
+|ITmeaning = Stinging Shard
+|JAname = 刺殺のトゲ
+|JAromanised = Shisatsu no toge
+|JAmeaning = Death-stab Thorn
+|KOname = 침 파편
+|KOromanised = Chim papyeon
+|KOmeaning = Sting Fragment
+|PTname = Fragmento de Ferrão
+|PTmeaning = Stinger Fragment
+|RUname = Осколок жала
+|RUromanised = Oskolok žala
+|RUmeaning = Sting Splinter 
+|TWname = 蜇刺碎片
+|TWromanised = Zhē cì suìpiàn
+|TWmeaning = same
+|ZHname = 蜇刺碎片
+|ZHromanised = Zhē cì suìpiàn
+|ZHmeaning = Sting Shard
+|CODEname= STING_SHARD
+|CODEmeaning= 
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Mortaille]]

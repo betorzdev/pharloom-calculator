@@ -1,0 +1,174 @@
+{{Navbar|icons=true
+|page1=Frayed Rosary String
+|page2=Rosary String
+|page3=Rosary Necklace
+|page4=Heavy Rosary Necklace
+|page5=Pale Rosary Necklace}}
+
+{{SS Infobox Item
+| description = Worn string holding a meagre amount of rosaries. Can be broken and the loose rosaries used to trade.<hr>Contains 30 rosaries.
+| effects = Provides {{R|30}}
+| type = [[Items_(Silksong)#Consumables|Consumable]]
+| source = Glowing item spots
+| max = 19
+}}
+
+{{Quote|Hr=SS
+|A little more... ‘tis all I need...
+|[[Covetous Pilgrim]]
+}}
+
+<b>Frayed Rosary Strings</b> are [[Items_(Silksong)#Consumables|consumable items]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+Can be used from the inventory to gain {{R|30}}.
+
+Strung Rosaries are not dropped upon death.
+
+== How to Acquire ==
+There are 19 Frayed Rosary Strings that can be obtained, found across [[Pharloom]] at glowing item spots.
+
+{| class="article-table" width="100%" data-tpt-table-id="frayed-rosary-string"
+! 
+! Location
+! Map
+|- data-tpt-row-no-checkbox
+!
+! Glowing Spots
+!
+|-
+! 1
+| In [[Moss Grotto]] on a ledge above the starting area.
+| [[File:Mapshot SS Frayed Rosary String 01.png|center|200x200px]]
+|-
+! 2
+| In [[Bone Bottom]], to the west of where [[Silkspear]] is found.
+| [[File:Mapshot SS Frayed Rosary String 02.png|center|200x200px]]
+|-
+! 3
+| In [[the Marrow]], inside the passage above and to the east of where the [[Flea Caravan]] can be found.
+| [[File:Mapshot SS Frayed Rosary String 03.png|center|200x200px]]
+|-
+! 4
+| In [[Deep Docks]], behind a breakable wall beside the exit to [[Hunter's March]].
+| [[File:Mapshot SS Frayed Rosary String 04.png|center|200x200px]]
+|-
+! 5
+| In [[Bilewater]], on a ledge in the tall room to the east of the [[Bellway]] station.
+| [[File:Mapshot SS Frayed Rosary String 05.png|center|200x200px]]
+|-
+! 6
+| In [[Blasted Steps]], on the body of a pilgrim in a cage directly above the broken bridge.
+| [[File:Mapshot SS Frayed Rosary String 06.png|center|200x200px]]
+|-
+! 7
+| In [[Greymoor]], on a ledge above [[Yarnaby]]'s house.
+| [[File:Mapshot SS Frayed Rosary String 07.png|center|200x200px]]
+|-
+! 8
+| In Greymoor, on a ledge in the room to the west of [[Craw Lake]].
+| [[File:Mapshot SS Frayed Rosary String 08.png|center|200x200px]]
+|-
+! 9
+| In Greymoor, on a ledge on the west side of Craw Lake.
+| [[File:Mapshot SS Frayed Rosary String 09.png|center|200x200px]]
+|-
+! 10
+| In [[Shellwood]], on a platform in the room directly adjacent to [[Bellhart]].
+| [[File:Mapshot SS Frayed Rosary String 10.png|center|200x200px]]
+|-
+! 11
+| In the [[Wormways]], at the very top of the tall room above the locked door by the lower entrance from Bone Bottom.
+| [[File:Mapshot SS Frayed Rosary String 11.png|center|200x200px]]
+|-
+! 12
+| In [[Sinner's Road]], in a cage in the entrance connected to Greymoor.
+| [[File:Mapshot SS Frayed Rosary String 12.png|center|200x200px]]
+|-
+! 13
+| In [[the Slab]], in a cage at the top of the entrance room from [[Choral Chambers]].
+| [[File:Mapshot SS Frayed Rosary String 13.png|center|200x200px]]
+|-
+! 14
+| In the Slab, behind a breakable wall in a room accessed from the eastmost vertical passage.
+| [[File:Mapshot SS Frayed Rosary String 14.png|center|200x200px]]
+|-
+! 15
+| In the Slab, on the west side of the upper outside area.
+| [[File:Mapshot SS Frayed Rosary String 15.png|center|200x200px]]
+|-
+! 16
+| In the [[Underworks]], in the northeast of the room below the Choral Chambers exit.
+| [[File:Mapshot SS Frayed Rosary String 16.png|center|200x200px]]
+|-
+! 17
+| In the Underworks, in the small room to the west of the [[Ventrica]] station.
+| [[File:Mapshot SS Frayed Rosary String 17.png|center|200x200px]]
+|-
+! 18
+| In the [[Putrified Ducts]], at the end of the long passage from the [[Memorium]] entrance.
+| [[File:Mapshot SS Frayed Rosary String 18.png|center|200x200px]]
+|-
+! 19
+| In the [[High Halls]], on a body in the laundry room leading to the [[Clawmaiden]] room.
+| [[File:Mapshot SS Frayed Rosary String 19.png|center|200x200px]]
+|}
+
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Frayed Rosary String 01.png!Moss Grotto Ledge
+|Image2 = Screenshot SS Frayed Rosary String 02.png!Bone Bottom near Silkspear
+|Image3 = Screenshot SS Frayed Rosary String 03.png!The Marrow near Flea Caravan
+|Image4 = Screenshot SS Frayed Rosary String 04.png!Deep Docks by Hunter's March exit
+|Image5 = Screenshot SS Frayed Rosary String 05.png!Bilewater tall room ledge
+|Image6 = Screenshot SS Frayed Rosary String 06.png!Blasted Steps above bridge
+|Image7 = Screenshot SS Frayed Rosary String 07.png!Greymoor near Yarnaby
+|Image8 = Screenshot SS Frayed Rosary String 08.png!Greymoor left of Craw Lake
+|Image9 = Screenshot SS Frayed Rosary String 09.png!Greymoor Craw Lake
+|Image10 = Screenshot SS Frayed Rosary String 10.png!Shellwood from Bellhart
+|Image11 = Screenshot SS Frayed Rosary String 11.png!Wormways tall room
+|Image12 = Screenshot SS Frayed Rosary String 12.png!Sinner's Road entrance
+|Image13 = Screenshot SS Frayed Rosary String 13.png!The Slab Choral Chambers entrance
+|Image14 = Screenshot SS Frayed Rosary String 14.png!The Slab secret passage
+|Image15 = Screenshot SS Frayed Rosary String 15.png!The Slab rooftop
+|Image16 = Screenshot SS Frayed Rosary String 16.png!Underworks before Choral Chambers exit 
+|Image17 = Screenshot SS Frayed Rosary String 17.png!Underworks rest room left of Ventrica
+|Image18 = Screenshot SS Frayed Rosary String 18.png!Purified Ducts Memorium entrance
+|Image19 = Screenshot SS Frayed Rosary String 19.png!High Halls laundry room
+}}
+
+{{Localisation
+|DEname = Ausgefranste Rosenkranzschnur
+|DEmeaning = Frayed Rosary Bead String
+|ESname = Ristra de rosarios desgastada
+|ESmeaning = Worn Rosary String
+|FRname = Chapelet usé
+|FRmeaning = Worn Rosary
+|ITname = Filo di grani rovinato
+|ITmeaning = Ruined String of Beads<br><small><i>Grani</i> (beads) are the name of Rosaries in Italian.</small>
+|JAname = 傷んだロザリーの紐
+|JAromanised = Itanda rozarī no himo
+|JAmeaning = Damaged Rosary String
+|KOname = 닳은 묵주 줄
+|KOromanised = Daleun mukju jul
+|KOmeaning = Worn Rosary String
+|PTname = Cordão de Rosários Desgastado
+|PTmeaning = Worn Rosary String
+|RUname = Ветхие чётки
+|RUromanised = Vetxie čëtki
+|RUmeaning = Old Rosary
+|TWname = 殘破念珠串
+|TWromanised = Cánpò niànzhū chuàn
+|TWmeaning = Broken Rosary String
+|ZHname = 朽损念珠串
+|ZHromanised = Xiǔ sǔn niàn zhūchuàn
+|ZHmeaning = Frayed Rosary String
+|CODEname = COIN_SET_F
+|CODEmeaning = 
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+[[Category: Items (Silksong)]]

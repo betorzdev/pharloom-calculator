@@ -1,0 +1,154 @@
+{{SS Infobox Crest
+|label = Original
+|title1 = Hunter Crest
+|image1 = <gallery>
+Hunter Crest Inventory.png|Inventory
+Hunter Crest.png|HUD
+</gallery>
+|description = Stalk prey and attack with lethal strikes.
+|attack = Standard attacks
+|skill = 1
+|red = 1
+|redlock = 1
+|blue = 1
+|bluelock = 1
+|yellow = 1
+|yellowlock = 1
+|source = Starting item
+
+|label2 = Evolved
+|title2 = Hunter Crest
+|image2 = <gallery>
+Hunter Crest Inventory 2.png|Inventory
+Hunter Crest 2.png|HUD
+Hunter Crest 2 Activated.png|Full Focus
+</gallery>
+|description2 = Stalk prey and attack with lethal strikes. Build focus with successive strikes.
+|attack2 = Standard attacks
+|skill2 = 1
+|red2 = 1
+|redlock2 = 1
+|blue2 = 1
+|bluelock2 = 1
+|yellow2 = 1
+|yellowlock2 = 1
+|effects2 = Increases [[Needle]] damage after striking enemies 6 times; resets after taking damage or sitting on a [[Bench (Silksong)|Bench]]
+|location2 = [[Weavenest Atla]]
+
+|label3 = Fully Evolved
+|title3 = Hunter Crest
+|image3 = <gallery>
+Hunter Crest Inventory 3.png|Inventory
+Hunter Crest 3.png|HUD
+Hunter Crest 3 Activated.png|Full Focus
+</gallery>
+|description3 = Stalk prey and attack with lethal strikes. Build focus with successive strikes.
+|attack3 = Standard attacks
+|skill3 = 1
+|red3 = 1
+|redlock3 = 1
+|blue3 = 1
+|bluelock3 = 1
+|yellow3 = 1
+|yellowlock3 = 1
+|effects3 = Increases [[Needle]] damage after striking enemies 6 times; resets after taking damage or sitting on a [[Bench (Silksong)|Bench]]<br>
+Increases damage further after striking enemies 6 more times
+|location3 = [[Weavenest Atla]]
+}}
+
+The <b>Hunter Crest</b> is the starting [[Crests|Crest]] in <i>[[Hollow Knight: Silksong]]</i>. It starts with no special properties. When evolved, it gains the ability to build <b>focus</b> by striking enemies, which increases [[Needle]] damage. 
+== Attacks ==
+* Neutral Slashes: Hornet strikes in a medium sized arc.
+* Down-slash: Hornet does a long dash strike diagonally downwards.
+* [[Swift Step|Run-slash]]: Hornet strikes with the point of her needle and keeps running on a miss. On a hit, Hornet is launched into the air, similarly to a Down-slash.
+* [[Needle Strike]]: Hornet executes two great slashes. Unlike all other multi-hit attacks, both slashes can generate a strand of silk. Inflicts [[Heavy Damage]].
+
+== Mechanics ==
+After being evolved, Hornet will build focus upon hitting enemies. Needle damage is multiplied by 1.3x once focus is fully built up after 6 hits. Partially built focus does not grant part of the damage bonus. Focus resets to zero if Hornet takes damage, becomes infested by [[Muckmaggot]]s, or sits on a [[Bench (Silksong)|Bench]]. Focus is represented on the HUD with a bar curving around the left side of the Crest icon that fills from the middle.
+
+With the second evolution, another tier of focus is added, with the multiplier increasing to 1.5x upon reaching it with 6 more hits, or 12 hits in total. The focus meter on the HUD Crest is extended, with a gap to separate the tiers.
+
+* Focus does not increase {{CrestSlot|Skill|1}} damage. 
+* Both [[Challenge]] and [[Clawline]] build 1 hit of Focus on hit.
+
+== Usefulness ==
+Hunter Crest offers a balance of [[Tool]] slots, attack range and attack speed.
+* Down-slash can be used to dodge attacks and close distance on enemies.
+* Run-slash has generous range and area coverage.
+* Needle Strike can deal high damage and generate more [[Silk]] than normal.
+* When fully upgraded and at max Focus, Hunter Crest has the highest sustained Needle DPS of any Crest.
+* Weaknesses:
+** Hunter Crest's Down-slash being at a diagonal angle can make it difficult to bounce off objects and enemies.
+** [[Memory Locket|Memory Lockets]] used on the Hunter Crest do not count towards [[Eva]]'s Tool slot count for her upgrades.
+
+== Synergies ==
+Due to the balance of available Tool slots and no significant strengths or weaknesses, the Hunter Crest has several options for builds:
+
+* The [[Delver's Drill]] allows Hornet to attack directly downwards from a distance, offsetting the down-slash being unable to.
+* [[Flintslate]]'s damage increase only stacks additively with focus; [[Flea Brew]] may therefore be a better alternative for burst Needle damage, and can also be used to build focus faster.
+* [[Longclaw]] increases Hunter Crest's attack range for more consistent safety and focus.
+* [[Pin Badge]] is reliable for generating both Silk and focus quickly, and also allowing longer range needle attacks to keep a safer range from enemies.
+* [[Magnetite Dice]], [[Cross Stitch]] and [[Warding Bell]] can all prevent damage, and therefore the loss of focus.
+* While focus is being consistently maintained, Binding is unnecessary and Skills do not benefit like the Needle does, leading to an abundance of Silk for [[Wispfire Lantern]] and [[Silkspeed Anklets]] to passively use.
+
+== How to Acquire ==
+This crest is available from the start, as Hornet has it equipped at base. 
+
+It can be evolved by speaking with [[Eva]] in [[Weavenest Atla]], which is found behind a door opened with the [[Needolin]] at the easternmost edge of [[Moss Grotto]]. After unlocking 27 total slots on all Crests besides the Hunter Crest and speaking to Eva again will allow Hornet to fully evolve the Crest.{{Gallery
+| Image1 = Mapshot SS Eva 01.png!Location where the Hunter Crest can be evolved
+}}
+
+== Gallery ==
+{| align="center" style="text-align:center"
+| {{#ev:youtube|https://www.youtube.com/watch?v=OTwnojmuCDk&t=99s|250|center|Deep Dive}}
+|}
+
+== Trivia ==
+* The Hunter Crest's attacks are based on those Hornet used [[Hornet Protector|as a boss in Hollow Knight]].
+* Hornet has the Hunter Crest forcefully equipped to her after certain cutscenes: After it is upgraded, when reclaiming her belongings after getting [[Cloakless Crest|captured]], and after entering [[Act 3]].
+* Getting silk drained by a [[Clawmaiden]] and getting captured by a [[Barnak]] do not reset the focus meter.
+* [[Winged Lifeseed]]s and {{Steel Soul Icon Mini|SS}} [[Summoned Saviour]] do not grant focus when struck.
+* After reaching the first tier of the evolved Hunter Crest's damage bonus, hitting enemies with the [[Needle]] makes a visual effect resembling [[Sylphsong]]'s visual effect appear. Once Hornet reaches the second tier of the damage bonus, this visual effect is strengthened.
+{{Gallery
+|Image1=Screenshot SS Hunter's Crest Sylphsong 01.png ! Evolved
+|Image2=Screenshot SS Hunter's Crest Sylphsong 02.png ! Fully Evolved
+}}
+{{History
+|game = SS
+|1.0.28891 (Patch 3): 
+* Fixed Eva Hunter Crest upgrades unintentionally clearing tool equips.
+* Increased Hunter Crest damage multipliers when focused from 25% and 40% to 30% and 50%.
+|1.0.29909 (Patch 5): Fixed fast travel unintentionally clearing Hunter focus.
+}}
+{{Localisation
+|DEname = Jäger
+|DEmeaning = Hunter
+|ESname = Cazadora
+|ESmeaning = Huntress
+|FRname = Chasseur
+|FRmeaning = Hunter
+|ITname = Cacciatore 
+|ITmeaning = Hunter
+|JAname= 狩猟者
+|JAromanised= Shuryōsha
+|JAmeaning = Hunter
+|KOname = 사냥꾼
+|KOromanised = Sanyangkkun
+|KOmeaning = Hunter
+|PTname = Caçador
+|PTmeaning = Hunter
+|RUname = Охотница
+|RUromanised = Oxotnica
+|RUmeaning = Huntress
+|TWname = 獵手
+|TWromanised = Lièshǒu
+|TWmeaning = same
+|ZHname = 猎手
+|ZHromanised = Lièshǒu
+|ZHmeaning = Hunter
+|CODEname = CREST_HUNTER
+|CODEmeaning = 
+}}
+[[pt:Brasão de Caçador]]
+[[fr:Emblème Chasseur]]
+{{SS Nav Crests}}

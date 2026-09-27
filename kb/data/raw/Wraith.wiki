@@ -1,0 +1,99 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Wraith.png|Hunter's Journal
+Wraith Idle.png|Idle
+Wraith Chasing.png|Chasing
+</gallery>
+|drops = None
+|health = 45
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1|1|1|1}}
+|numbers_required = 10<br>(Instantly completed on [[Phantom]]'s death)
+|sing=Winged Furm
+}}
+
+{{Quote
+|Hr = Journal
+|Anguished spectre of lingering thread. Despite its ephemeral nature, strong strikes can dispel the Wraith for a time. <hr/>Not a bug but a projection of another's will cast in smog and Silk.
+}}
+
+<b>Wraiths</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are ghost-like beings made of silk and the smog of the [[Exhaust Organ]] and the only hostile inhabitants of [[the Mist]].<ref>Wraith Hunter's Journal entry: <i>"Not a bug but a projection of another's will cast in smog and Silk."</i></ref>
+
+== In-game Events ==
+
+Wraiths normally spawn in [[the Mist]]; however, that area becomes inaccessible once [[Phantom]] is defeated, making it no longer possible to fight them.
+
+Defeating [[Phantom]] also completes the Wraiths' entry in the [[Hunter's Journal (Silksong)|Hunter's Journal]] if it has not been completed already.
+
+== Behaviour and Tactics ==
+Wraiths remain passive until approached by Hornet. When Hornet nears a Wraith, it screams and begins to follow her; then, when Hornet is within range of their attack, the Wraith screams and charges at her horizontally. Wraiths ignore all obstacles and can pursue Hornet through walls and platforms. If Hornet is caught, it deals {{Damage|1+1}} and drains 3 strands of Silk.
+
+Wraiths only charge horizontally, so carefully timed jumps can allow Hornet to avoid a Wraith's attack and retaliate with downward strikes while she is airborne. 
+{{CrestSlot|Red|s}} such as [[Sting Shard]] and [[Threefold Pin]] are also useful.
+
+Wraiths will respawn in one of their pre-determined locations after 3 seconds after being killed. As such it is best to not stay in one place for too long after one is killed.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+*You are not wanted here!
+*Nothing for you... here...
+*Begone, begone!
+*Leave this place...
+*Those who wander... will die...
+*You will be lost...
+}}
+== Location ==
+Wraiths can be found in [[the Mist]]. Each room in the Mist contains points where Wraiths can spawn, but which spot a Wraith may spawn in is decided at random. The number of Wraiths spawned per room is increased as Hornet progresses through the Mist, starting with 2 in the second room Hornet enters, 3 in the third, 4 in the room after the crossing, and 5 from then onwards. This number is reset if Hornet fails the maze and returns to the entrance.
+
+{{Gallery
+|Image1 = Mapshot SS Wraith 01.png!Location in the Mist (Unofficial map by esau)
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS The Mist 02.png!Inactive
+|Image2 = Screenshot SS The Mist 03.png!Agitated
+|Image3 = Screenshot SS Wraith 01.png!Charging
+|Image4 = Screenshot SS Wraith 02.png!Sapping Silk
+|Image5 = Screenshot SS Wraith 04.png!Singing
+|Image6 = Screenshot SS Wraith 03.png!Death
+|Image7 = Wraith HUD 01.gif!Sapping Silk
+|Image8 = Ari SS Sketch 28.jpg!Concept sketches
+}}
+
+{{History
+|game = SS
+|1.0.29242 (Patch 4): Fixed rare instances of regaining control when grabbed by a Wraith.
+}}
+{{Localisation
+|DEname = Gespinst
+|DEmeaning = From <i>gespinst</i> (web or thread) and <i>gespenst</i> (ghost).
+|ESname = Aparición
+|ESmeaning = Apparition
+|FRname = Spectre
+|FRmeaning = Spectre
+|ITname = Spettro
+|ITmeaning = Spectre
+|JAname = ボウレイ
+|JAromanised = Bōrei
+|JAkatakana = enemy
+|JAmeaning = Ghost or Apparition
+|KOname = 망령
+|KOromanised = Mangnyeong
+|KOmeaning = Wraith
+|PTname = Espectro
+|PTmeaning = Spectre
+|RUname = Дух
+|RUromanised = Dux
+|RUmeaning = Ghost or Spirit
+|TWname = 絲魂
+|TWromanised = Sīhún
+|TWmeaning = same
+|ZHname = 丝魂
+|ZHromanised = Sīhún
+|ZHmeaning = Silk Spirit<br><small>Similarly pronounced to {{lang|zh-Hans|失魂}} / {{lang|zh-Hant|失魂}} <i>shīhún</i> (bewildered or absent-minded; lit. lost one's soul).</small>
+|CODEname = WRAITH 
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

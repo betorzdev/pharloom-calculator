@@ -1,0 +1,87 @@
+{{SS Infobox Item
+| description = Core of a flower formed around the body of a consumed Wood Wasp. Secretes a sticky sap that the wasps subsist on.
+| max = 6
+| type = [[Items (Silksong)#Deliverable|Deliverable]]
+| source = Purple flower buds in [[Shellwood]] during <i>[[Rite of the Pollip]]</i>
+}}
+
+{{Quote
+| P... Pollip Hearts. Found in the wood. Yes, bug. Seek out the purple blooms. Inside... the hearts. The time of birth approaches. Pollip Hearts are needed. Bring them, bug, and power will be shared. 
+| [[Greyroot]]
+| Hr = SS
+}}
+
+<b>Pollip Hearts</b> are [[Items (Silksong)#Deliverables|deliverable items]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+6 Pollip Hearts are required to complete the <i>[[Rite of the Pollip]]</i> Wish, given by [[Greyroot]] in [[Shellwood]].
+
+{{Gallery
+|Image1 = Mapshot SS Greyroot.png!Location in Shellwood
+|Image2 = Screenshot SS Greyroot 02.png!Greyroot in Shellwood
+}}
+
+== How to Acquire ==
+Purple flowers called Pollips can be found growing around Shellwood, some of which sprout large buds that can be destroyed to drop a single Pollip Heart.
+
+{{Gallery
+|Image1 = Mapshot SS Pollip Heart.png!Locations of the Pollip Hearts
+}}
+
+{{Gallery
+|Image1 = Screenshot SS Pollip Heart 01.png!Pollip Heart north of the [[Longpin]] [[Tool]]
+|Image2 = Screenshot SS Pollip Heart 02.png!Pollip Heart east of [[Greyroot]]
+|Image3 = Screenshot SS Pollip Heart 03.png!Pollip Heart west of the upper [[Bellvein]]
+|Image4 = Screenshot SS Pollip Heart 04.png!Pollip Heart south of [[Sister Splinter]]
+|Image5 = Screenshot SS Pollip Heart 05.png!Pollip Heart southwest of the [[Weaver Burial Spire]]
+|Image6 = Screenshot SS Pollip Heart 06.png!Pollip Heart northeast of the Weaver Burial Spire
+}}
+
+== Trivia ==
+* Pollip Hearts share the same sprite as [[Mossberry|Mossberries]] for when the item has not been picked up. This base sprite is not coloured, instead being given its in-game appearance by post-processing effects or a shader.
+
+{{Gallery
+|Image1 = Screenshot SS Pollip Heart 07.png!Pollip Heart item
+}}
+
+{{Gallery
+|Image1= Pollip Heart Pickup.png ! Pollip Heart pickup sprite
+|Image2= Mossberry Pickup.png ! Mossberry pickup sprite
+|Image3= Mossberry Pickup Grey.png ! The uncoloured base sprite used for both
+}}
+
+{{Localisation
+|DEname = Pollip-Herz
+|DEmeaning = Pollip Heart
+|ESname = Corazón de pólipo
+|ESmeaning = Heart of Polyp
+|FRname = Cœur-pollip
+|FRmeaning = Pollip Heart
+|ITname = Cuor di nettare
+|ITmeaning = Heart of Nectar
+|JAname = ポリップの心
+|JAromanised = Porippu no kokoro
+|JAkatakana = foreign
+|JAmeaning = Heart of Pollip
+|KOname = 폴립 심장
+|KOromanised = Pollip simjang
+|KOmeaning = Pollip Heart
+|PTname = Coração de Pólipo
+|PTmeaning = Heart of Pollip
+|RUname = Сердце полипа
+|RUromanised = Serdce polipa
+|RUmeaning = Polyp Heart<br><small>{{lang|ru|Полип <i>polip</i>}} can be read as a phonetic translation of pollip or as the word for polyp.</small>
+|TWname = 花芯
+|TWromanised = Huā xīn
+|TWmeaning = same
+|ZHname = 花芯
+|ZHromanised = Huā xīn
+|ZHmeaning = Flower Core<br><small>While the word {{lang|zh-Hans|芯}} / {{lang|zh-Hant|芯 <i>xīn</i>}} more broadly means core, it has the semantic {{lang|zh-Hans|艹}} / {{lang|zh-Hant|艹 <i>cǎo</i>}} plant radical component as the word can specifically mean the soft inner material of a plant.</small>
+|CODEname = SHELL_FLOWER
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[fr:Coeur-pollip]]
+[[Category: Items (Silksong)]]

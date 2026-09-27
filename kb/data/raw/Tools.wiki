@@ -1,0 +1,485 @@
+{{Quote
+|In my youth, I envied all bugs with wings. I even fancied I might grow a pair... I have since learned better. Accept the limitations of one's body... and augment with tools as needed.
+|[[Hornet (Silksong)|Hornet]]
+|Hr=Hornet
+}}
+
+<b>Tools</b> are equippable items in <i>[[Hollow Knight: Silksong]]</i> that give [[Hornet (Silksong)|Hornet]] access to up to 53 additional weapons and abilities. There are three categories of Tools, each identified by a colour-coded symbol:
+
+<b>{{CrestSlot|Red|s}}</b> are active offensive tools that act as limited-use consumables. They are refilled by sitting on a [[Bench (Silksong)|Bench]], usually at the cost of {{S|[[Shell Shards]]}}. 
+
+<b>{{CrestSlot|Blue|s}}</b> offer passive effects related to combat and survivability. No Shell Shard cost.
+
+<b>{{CrestSlot|Yellow|s}}</b> offer passive effects that usually speed up exploration or resource gathering. No Shell Shard cost. 
+
+Depending on the [[Crests|Crest]] used, different numbers of each coloured Tool can be equipped. Additional Tool slots can be unlocked on each Crest by using [[Memory Locket]]s. The [[Vesticrest]] can be used to provide Tool slots that are available independent of the equipped Crest.
+
+For a list of Tool damage values, see the relevant section of the [[Damage Values and Enemy Health (Silksong)#Tools|Damage Values page]].
+
+== Red Tools ==
+[[File:Red Tools Heading.png|center]]
+
+<b>{{CrestSlot|Red|s}}</b> are active tools that are usually limited-use consumables. They are used by pressing the [[Controls (Silksong)|SKILL/TOOL]] input combined with UP, DOWN or no direction depending on which slot they are equipped in. Most of them have a maximum capacity that must be replenished at [[Bench (Silksong)|Benches]] or by using the [[Architect Crest|Architect Crest's]] Craft Binding mechanic, usually requiring {{S|[[Shell Shards]]}} and/or a reserve pool.
+
+Hornet can acquire 20 <b>{{CrestSlot|Red|s}}</b>, though two –the [[Snare Setter]] and [[Needle Phial]]– are removed from Hornet's inventory after certain [[Wishes]] are completed, leaving only 18 if all Wishes are completed. The [[Curveclaw]] can be upgraded and replaced in Act 3, while the [[Silkshot]] has 3 mutually exclusive variants. [[Voltvessels]] also has 2 separate forms that function differently.
+
+{| class="article-table" width="100%" data-tpt-table-id="red-tools-table" 
+! style="width: 96px; min-width: 12rem;" | Tool
+! Description
+! Location
+! style="min-width: 4rem;" | Capacity
+! style="min-width: 6rem;" | Refill Cost
+|-
+! align="center" | [[File:Straight Pin.png|link=Straight Pin|72x72px]]<br>
+[[Straight Pin]]
+| <i>Light throwing tool, designed for rapid attacks.</i>
+| Located in [[the Marrow]] inside of [[Grindle|Grindle's]] cell.
+| align="center" | 12/15/18/21/24
+| align="center" | {{S|3.33}} (rounded)
+|-
+! align="center" | [[File:Threefold Pin.png|link=Threefold Pin|72x72px]]<br>[[Threefold Pin]]
+| <i>Flat, layered weapon, crafted to be thrown in a set.</i>
+| Located in [[Greymoor]] at Craw Lake. The tool is in a small room at the top right of the cavern, guarded by a Tallcraw.
+| align="center" | 10/12/15/17/20
+| align="center" | {{S|4}}
+|-
+! align="center" | [[File:Sting Shard.png|link=Sting Shard|72x72px]]<br>
+[[Sting Shard]]
+| <i>Lethal trap formed of tightly bound blades.<br>
+Once placed, the trap will pierce enemies that come into contact.</i>
+| Purchased from [[Forge Daughter]] in [[Deep Docks]] for {{r|140}} and [[File:Craftmetal.png|20x20px|link=Craftmetal]] 1.
+| align="center" | 6/7/9/10/12
+| align="center" | {{S|6.66}} (rounded)
+|-
+! align="center" | [[File:Tacks.png|link=Tacks|72x72px]]<br>
+[[Tacks]]
+| <i>Short pins designed to be scattered along the ground.<br>
+The sharp points will pierce any enemy who steps upon them.</i>
+| Reward for completing the <i>[[Roach Guts (Wish)|Roach Guts]]</i> Wish.
+| align="center" | 5/6/7/8/10
+| align="center" | {{S|8}}
+|-
+! align="center" | [[File:Longpin.png|link=Longpin|72x72px]]<br>
+[[Longpin]]
+| <i>Weighted pin and haft, formed to pierce tough shells.</i>
+| Located in [[Shellwood]] above the main entrance to [[Bellhart]], blocked by a [[Wood Wasp]] nest.
+| align="center" | 10/12/15/17/20
+| align="center" | {{S|4}}
+|-
+! align="center" | [[File:Curveclaw.png|link=Curveclaw|72x72px]]<br>
+[[Curveclaw]]
+| <i>Arched sharpbone used by hunters to take down flying prey.</i>
+|
+* [[Act 1]]: Purchased from [[Mottled Skarr]] in [[Hunter's March]] for {{r|140}}.
+* [[Act 2]]/[[Act 3|3]]: Found locked behind a gauntlet north of his original location.<ref name=":0" group="Note">The Mottled Skarr only dies after defeating the [[Cogwork Dancers]], ringing the bell in First Shrine, or obtaining the [[Clawline]] Ancestral Art.</ref>
+| align="center" | 8/10/12/14/16
+| align="center" | {{S|5}}
+|-
+! align="center" | [[File:Curvesickle.png|link=Curvesickle|72x72px]]<br>
+[[Curvesickle]]
+| <i>Radial sharpbone used by skilled hunters to take down dangerous prey.</i>
+| Obtained in Act 3 by giving the Curveclaw to a Mottled Skarr Scout in the target practice room above the [[Far Fields]] Bellway station.
+| align="center" | 8/10/12/14/16
+| align="center" | {{S|5}}
+|-
+! align="center" | [[File:Throwing Ring.png|link=Throwing Ring|72x72px]]<br>
+[[Throwing Ring]]
+| <i>Hardened throwing weapon of the warrior Shakra.<br>
+Blunt force weapon that rebounds between enemies and hard surfaces.</i>
+| Reward for completing the <i>[[Trail's End]]</i> Wish.
+| align="center" | 10/12/15/17/20
+| align="center" | {{S|4}}
+|-
+! align="center" | [[File:Pimpillo.png|link=Pimpillo|72x72px]]<br>
+[[Pimpillo]]
+| <i>Fabric pouch filled with volatile material.<br>
+Explodes on impact with enemies or when ignited by its fuse.</i>
+| Crafted in a hidden room in northwest [[Greymoor]] for [[File:Craftmetal.png|20x20px|link=Craftmetal]] 1.
+| align="center" | 4/5/6/7/8
+| align="center" | {{S|10}}
+|-
+! align="center" | [[File:Conchcutter.png|link=Conchcutter|72x72px]]<br>
+[[Conchcutter]]
+| <i>Spiral weapon fashioned from a hardened conchspire.<br>
+Thrown at an angle, it can ricochet and catch prey off guard.</i>
+| Found inside the [[Coral Tower]] in [[Sands of Karak]].
+| align="center" | 8/10/12/14/16
+| align="center" | {{S|5}}
+|-
+! align="center" | [[File:Silkshot.png|link=Silkshot|72x72px]]<br>
+[[Silkshot]] (Original)
+| <i>Ancient weapon of the Weavers, repaired to its original form.<br>
+Uses shell canisters and the wielder's own Silk to fire.</i>
+| Obtained by repairing the [[Ruined Tool]] found in [[Weavenest Murglin]]. 
+Repairing at a room near the peak of [[Mount Fay]] for [[File:Craftmetal.png|20x20px|link=Craftmetal]] 1 provides this variant.
+| align="center" | 8/10/12/14/16
+| align="center" | {{S|5}}
+|-
+! align="center" | [[File:Twelfth Architect Silkshot.png|link=Silkshot|72x72px]]<br>
+[[Silkshot]] (Twelfth Architect)
+| <i>Ancient weapon of the Weavers, repaired and modified by Twelfth Architect.<br>
+Uses shell canisters and the wielder's own Silk to fire.</i>
+| Obtained by repairing the [[Ruined Tool]] found in [[Weavenest Murglin]].
+Repairing at [[Twelfth Architect]] for {{R|140}} and [[File:Craftmetal.png|20x20px|link=Craftmetal]] 1 provides this variant.
+| align="center" | 12/15/18/21/24
+| align="center" | {{S|3.33}} (rounded)
+|-
+! align="center" | [[File:Forge Daughter Silkshot.png|link=Silkshot|72x72px]]<br>
+[[Silkshot]] (Forge Daughter)
+| <i>Ancient weapon of the Weavers, repaired and modified by Forge Daughter.<br>
+Uses shell canisters and the wielder's own Silk to fire.</i>
+| Obtained by repairing the [[Ruined Tool]] found in [[Weavenest Murglin]]. 
+Repairing at [[Forge Daughter]] for {{R|240}} and [[File:Craftmetal.png|20x20px|link=Craftmetal]] 1 provides this variant.
+| align="center" | 15/18/22/26/30
+| align="center" | {{S|2.66}} (rounded)
+|-
+! align="center" | [[File:Delver's Drill.png|link=Delver's Drill|72x72px]]<br>
+[[Delver's Drill]]
+| <i>Rotary tool used for boring into bone and rock.<br>
+Drives the wielder downwards, while spinning the drill with destructive force.</i>
+| Found on a crafting table in the southwest of the [[Underworks]].
+| align="center" | 9/11/13/15/18
+| align="center" | {{S|4.44}} (rounded)
+|-
+! align="center" | [[File:Cogwork Wheel.png|link=Cogwork Wheel|72x72px]]<br>
+[[Cogwork Wheel]]
+| <i>Expanding circular blade powered by a cogwork motor.<br>
+Propels forward, slicing through foes.</i>
+| Purchased at [[Twelfth Architect]] for {{r|360}} and [[File:Craftmetal.png|20x20px|link=Craftmetal]] 1.
+| align="center" | 5/6/7/8/10
+| align="center" | {{S|8}}
+|-
+! align="center" | [[File:Cogfly.png|link=Cogfly|72x72px]]<br>
+[[Cogfly]]
+| <i>Winged cogwork companion that will seek nearby foes and attack.</i>
+| Crafted in a room in [[High Halls]] for [[File:Craftmetal.png|20x20px|link=Craftmetal]] 1.
+| align="center" | 4/5/6/7/8
+| align="center" | {{S|10}}
+|-
+! align="center" | [[File:Rosary Cannon.png|link=Rosary Cannon|72x72px]]<br>
+[[Rosary Cannon]]
+| <i>Repurposed mechanism from the base of a rosary stringing machine.<br>
+Rosaries must be inserted to reload the cannon.</i>
+| Found behind a locked door in [[High Halls]] east of the sub-area [[the Forum]].
+| align="center" | 80
+''(No Changes)''
+| align="center" | {{R|1}}
+|-
+! align="center" | [[File:Voltvessels.png|link=Voltvessels|72x72px]]<br>[[File:Voltvessels2.png|link=Voltvessels|60x60px]]<br>
+[[Voltvessels]]
+| <i>Convertible orbs containing electricity.<br>
+The vessels can be thrown as a bola for an explosive discharge or staked as a spear to release a column of energy.</i>
+| Found behind a hidden wall in the northeast of the [[Memorium]].
+| align="center" | 5/6/7/8/10
+| align="center" | {{S|8}}
+|-
+! align="center" | [[File:Flintslate.png|link=Flintslate|72x72px]]<br>
+[[Flintslate]]
+| <i>Sharpening slate made from cut and polished Flintgem.<br>
+Temporarily super heats the needle's blade, imbuing each slash with flame and increasing lethality.</i>
+| Found in [[Deep Docks]], beyond the [[Simple Key (Silksong)|Simple Key]] door.
+| align="center" | 3/3/4/5/6
+| align="center" | {{S|13.33}} (rounded)
+|-
+! align="center" | [[File:Snare Setter.png|link=Snare Setter|72x72px]]<br>
+[[Snare Setter]]
+| <i>Trap-setting tool of the Weavers. Lays a Silk rune that ignites when foes come into contact.<br><br>Uses shell canisters and the wielder's own Silk.</i>
+| Found in a secret room within [[Weavenest Atla]].
+Used to complete the <i>[[Silk and Soul]]</i> Wish. Permanently removed from inventory after Wish is completed.
+| align="center" | 5/6/7/8/10
+| align="center" | {{S|8}}
+|-
+! align="center" | [[File:Flea Brew.png|link=Flea Brew|72x72px]]<br>
+[[Flea Brew]]
+| <i>Invigorating beverage prepared by the Flea Caravan.<br>
+Temporarily increases the speed of movement and attacks.</i>
+| Obtained from the [[Flea Caravan]] after completing the <i>[[The Lost Fleas]]</i> Wish.
+| align="center" | 3/3/4/5/6
+| align="center" | [[File:Icon SS Flea Brew Reserve.png|20x20px|link=Flea Brew|Flea Brew Reserve]] 1 (max 30) <br> {{S|10}} (if bottle is broken)
+|-
+! align="center" | [[File:Plasmium Phial.png|link=Plasmium Phial|72x72px]]<br>
+[[Plasmium Phial]]
+| <i>Spear-phial containing Plasmium.<br>
+Injecting the liquid allows one to gain health beyond their natural limits.</i>
+| Reward for completing the <i>[[Alchemist's Assistant]]</i> Wish.
+| align="center" | 3/3/4/5/6
+| align="center" | [[File:Icon SS Plasmium Reserve.png|20x20px|link=Plasmium Phial|Plasmium Reserve]] 1 (max 20)<br>or [[File:Icon SS Plasmium Gland Small.png|link=Plasmium Gland]]<br>{{S|13.33}} (rounded)
+|-
+! align="center" | [[File:Needle Phial.png|link=Needle Phial|72x72px]]<br>
+[[Needle Phial]]
+| <i>Tool designed to extract and store fluids.<br>
+To pierce its target, the Needle Phial must first be charged to full tension.</i>
+| Given to complete <i>[[Alchemist's Assistant]]</i> and <i>[[Advanced Alchemy]]</i> Wishes, after which it is unobtainable.
+| align="center" | Infinite
+| align="center" | N/A
+|}
+
+{{Hr|small}}
+
+== Blue Tools ==
+[[File:Blue Tools Heading.png|center]]
+
+<b>{{CrestSlot|Blue|s}}</b> are combat-focused passive support tools. They augment Hornet's abilities in combat or survivability, with some even granting her new ways to gain or use Silk.
+
+Hornet can acquire 21 {{CrestSlot|Blue|s}}, with two –the [[Druid's Eye]] and [[Claw Mirror]]– being able to be upgraded and replaced.
+
+{| class="article-table mw-collapsible" width="100%" data-tpt-table-id="blue-tools-table"
+| colspan="3" |
+|-
+! scope="col" style="width: 96px; min-width: 12rem;" | Tool
+! scope="col" | Description
+! scope="col" | Location
+|-
+! align="center" | [[File:Druid's Eye.png|link=Druid's Eye|72x72px]]<br>
+[[Druid's Eye]]
+| <i>Amulet of protection formed from Mossberries.<br>
+As the bearer takes damage, the amulet weeps a green elixir that will form into Silk.</i>
+| Reward for completing the <i>[[Berry Picking]]</i> Wish.
+|-
+! align="center" | [[File:Druid's Eyes.png|link=Druid's Eyes|72x72px]]<br>
+[[Druid's Eyes]]
+| <i>Powerful amulet of protection formed from many Mossberries.<br>
+As the bearer takes damage, the amulet weeps a green elixir that will form into Silk.</i>
+| Bring 4 additional [[Mossberries]] to [[Moss Druid]] after completing the <i>[[Berry Picking]]</i> Wish. Replaces the Druid's Eye.
+|-
+! align="center" | [[File:Magma Bell.png|link=Magma Bell|72x72px]]<br>
+[[Magma Bell]]
+| <i>Forged iron bell, crafted to ward against the intense heat of the Deep Docks.<br>
+Reduces the damage taken from flame and magma.</i>
+| Purchased from [[Forge Daughter]] for {{R|110}} and [[File:Craftmetal.png|20x20px|link=Craftmetal]] 1.
+|-
+! align="center" | [[File:Warding Bell.png|link=Warding Bell|72x72px]]<br>
+[[Warding Bell]]
+| <i>Holy bell inscribed with a hymn of protection.<br>
+Shields the bearer as they bind their wounds.</i>
+| Found on a body in [[Far Fields]].
+|-
+! align="center" | [[File:Pollip Pouch.png|link=Pollip Pouch|72x72px]]<br>
+[[Pollip Pouch]]
+| <i>Pouch containing a fast-acting venom drawn from a flower's heart.<br>
+Applies venom to equipped tools.</i>
+| Reward for completing the <i>[[Rite of the Pollip]]</i> Wish.
+|-
+! align="center" | [[File:Fractured Mask.png|link=Fractured Mask|72x72px]]<br>
+[[Fractured Mask]]
+| <i>Old bug's skull carved for protection. Shields against critical damage but shatters on impact.<br>
+If shattered, the mask will be repaired while resting at a bench.</i>
+|
+* [[Act 1]]: Purchased from [[Mottled Skarr]] for {{R|260}}.
+
+* [[Act 2]]/[[Act 3|3]]: Found next to Mottled Skarr's corpse.<ref name=":0" group="Note" />
+|-
+! align="center" | [[File:Multibinder.png|link=Multibinder|72x72px]]<br>
+[[Multibinder]]
+| <i>Elaborate, etched Weaver spindle, usable only by wielders of Silk.<br>
+Extends the act of binding, but increases its healing effect.</i>
+| Purchased from [[Frey]] for {{R|880}} after completing the <i>[[My Missing Courier]]</i> Wish.
+|-
+! align="center" | [[File:Weavelight.png|link=Weavelight|72x72px]]<br>
+[[Weavelight]]
+| <i>Gleaming apparatus of Weaver make. Its core emits a faint glow.<br>
+Increases the speed of Silk regeneration.</i>
+| Found in [[Weavenest Atla]] after defeating a pair of [[Moss Mother|Moss Mothers]].
+|-
+! align="center" | [[File:Sawtooth Circlet.png|link=Sawtooth Circlet|72x72px]]<br>
+[[Sawtooth Circlet]]
+| <i>Flexible belt of serrated metal teeth, able to be affixed to the hem of a cloak.<br>
+Flaring the cloak will spin the blades, damaging surrounding enemies.</i>
+| Purchased from [[Twelfth Architect]] for {{r|230}} and [[File:Craftmetal.png|20x20px|link=Craftmetal]] 1.
+|-
+! align="center" | [[File:Injector Band.png|link=Injector Band|72x72px]]<br>
+[[Injector Band]]
+| <i>Brace of surgical pins from the Whiteward. Used to forcefully insert Silk deep inside a bug's shell. <br>
+Increases the speed of binding.</i>
+| Found in [[Whiteward]].
+|-
+! align="center" | [[File:Spool Extender.png|link=Spool Extender|72x72px]]<br>
+[[Spool Extender]]
+| <i>Silk-storing tool of the Citadel, fashioned after an artefact of the Weavers.<br>
+Allows the storing of additional Silk beyond one's natural abilities.</i>
+| Bought from [[Jubilana]] for {{R|720}}.
+|-
+! align="center" | [[File:Reserve Bind.png|link=Reserve Bind|72x72px]]<br>
+[[Reserve Bind]]
+| <i>Ornate artefact of the Citadel, able to hold a Bind's worth of Silk. Used when healing is needed and one's natural resources run low.<br>
+The Reserve Bind will be restored when resting at a bench.</i>
+| Reward for completing the <i>[[Final Audience]]</i> Wish.
+|-
+! align="center" | [[File:Claw Mirror.png|link=Claw Mirror|72x72px]]<br>[[Claw Mirror]]
+| <i>Theatrical tool of a vainglorious bug.<br>
+When binding, emits a dazzling flash that damages surrounding enemies.</i>
+| Reward for defeating [[Trobbio]] in [[Whispering Vaults|The Stage]].
+|-
+! align="center" | [[File:Claw Mirrors.png|link=Claw Mirrors|72x72px]]<br>
+[[Claw Mirrors]]
+| <i>Twin theatrical tools of a vainglorious bug.<br>
+When binding, emits a searing blast that damages surrounding enemies.</i>
+| Reward for defeating [[Tormented Trobbio]] in [[Whispering Vaults|The Stage]]. Replaces the Claw Mirror.
+|-
+! align="center" | [[File:Memory Crystal.png|link=Memory Crystal|72x72px]]<br>
+[[Memory Crystal]]
+| <i>Reflective stone with mnemonic properties.<br>
+When taking damage, a memory of the bearer is formed of crystal. The memory will shatter into sharp spines if an enemy comes into contact.</i>
+| Found in a hidden room in southwest [[Mount Fay]].
+|-
+! align="center" | [[File:Snitch Pick.png|link=Snitch Pick|72x72px]]<br>
+[[Snitch Pick]]
+| <i>Hooked tool for the forceful retrieval of loot from bugs and husks.<br>
+Harpoon into foes to steal rosaries and shell shards, while causing additional damage.</i>
+| Bought from [[Grindle]] for {{R|740}}.
+|-
+! align="center" | [[File:Volt Filament.png|link=Volt Filament|72x72px]]<br>
+[[Volt Filament]]
+| <i>Charged organ from a defeated Voltvyrm.<br>
+Can be coiled around thread, imbuing Silk Skills with electric charge.</i>
+| Reward for defeating [[Voltvyrm]] in [[Sands of Karak|Voltnest]].
+|-
+! align="center" | [[File:Quick Sling.png|link=Quick Sling|72x72px]]<br>
+[[Quick Sling]]
+| <i>Taut-drawing mechanism built from reed and bone, intended for mounting on the limb of a bug.<br>
+Doubles the number of tools thrown.</i>
+| Found behind a breakable ceiling in [[Bilewater]].
+|-
+! align="center" | [[File:Wreath of Purity.png|link=Wreath of Purity|72x72px]]<br>
+[[Wreath of Purity]]
+| <i>Fragile band woven of reed and leaf, crafted to repel Muckmaggots.<br>
+If broken, the wreath will be repaired while resting at a bench.</i>
+| Found in a secret passage within [[Putrified Ducts]].
+|-
+! align="center" | [[File:Longclaw.png|link=Longclaw|72x72px]]<br>
+[[Longclaw]]
+| <i>Talisman fashioned from the talon of a large predator.<br>
+Increases the range of needle attacks.</i>
+|
+* [[Act 2]]: Reward for completing the <i>[[Broodfeast]]</i> Wish.
+* [[Act 3]]: Reward for completing  the <i>[[Runtfeast]]</i> Wish.
+|-
+! align="center" | [[File:Wispfire Lantern.png|link=Wispfire Lantern|72x72px]]<br>
+[[Wispfire Lantern]]
+| <i>Broken iron lantern containing smouldering wispfire.<br>
+Wisps will spawn from the lantern and burn foes, at the cost of Silk.</i>
+| Reward for defeating [[Father of the Flame]] in [[Wisp Thicket]].
+|-
+! align="center" | [[File:Egg of Flealia.png|link=Egg of Flealia|72x72px]]<br>
+[[Egg of Flealia]]
+| <i>Icon of the mythical mother flea, passed down from caravans of old. A symbol of protection and kinship.<br>
+Decreases the cost of Silk Skills while health is full.</i>
+| Reward from [[Fleamaster Mooshka]] after finding all 30 [[Fleas]].
+|-
+! align="center" | [[File:Pin Badge.png|link=Pin Badge|72x72px]]<br>
+[[Pin Badge]]
+| <i>Emblem of the Order of the Pinstress, the old blademasters of Pharloom.<br>
+Reduces charge time of Needle Strike.</i>
+| Reward for completing <i>[[Fatal Resolve]]</i> Wish.
+|}
+
+{{Hr|small}}
+
+== Yellow Tools ==
+[[File:Yellow Tools Heading.png|center]]
+
+<b>{{CrestSlot|Yellow|s}}</b> are "miscellaneous" passive support tools, focusing on making exploration and resource gathering easier, or providing indirect benefits. When they do provide combat functionality, their effects are usually weaker than {{CrestSlot|Blue|s}} or have a drawback.
+
+Hornet can acquire 12 {{CrestSlot|Yellow|s}}; though one – the [[Dead Bug's Purse]] – is replaced by the [[Shell Satchel]] in {{Steel Soul Icon Mini|SS}} [[Steel_Soul_Mode_(Silksong)|Steel Soul Mode]].
+
+{| class="article-table mw-collapsible" width="100%" data-tpt-table-id="yellow-tools-table"
+| colspan="3" |
+|-
+! scope="col" style="width: 96px; min-width: 12rem;" | Tool
+! scope="col" | Description
+! scope="col" | Location
+|-
+! align="center" | [[File:Compass.png|link=Compass|72x72px]]<br>
+[[Compass]]
+| <i>Intricate tracking device, carved from shell.<br>
+When equipped, the bearer's location will be marked on their map.</i>
+| Purchased from [[Shakra]] for {{R|70}}.
+|-
+! align="center" | [[File:Shard Pendant.png|link=Shard Pendant|72x72px]]<br>
+[[Shard Pendant]]
+| <i>Crude trinket worn by collectors and crafters.<br>
+Allows one to collect more shell shards from defeated creatures.</i>
+| Found in [[the Marrow]].
+|-
+! align="center" | [[File:Magnetite Brooch.png|link=Magnetite Brooch|72x72px]]<br>
+[[Magnetite Brooch]]
+| <i>Holy stone inscribed with a prayer for rosaries.<br>
+Any loose beads will be pulled toward the wearer.</i>
+| Purchased from [[Pebb]] for {{R|120}}, or from [[Grindle]] for {{R|220}} during [[Act 3]].
+|-
+! align="center" | [[File:Weighted Belt.png|link=Weighted Belt|72x72px]]<br>
+[[Weighted Belt]]
+| <i>Heavy band favoured by those with an unsteady step.<br>
+The wearer will recoil less when striking foes and will not be flung as far when taking damage.</i>
+|
+* [[Act 1]]/[[Act 2|2]]: Purchased from [[Mort]] for {{R|160}}.
+* [[Act 3]]: Found next to Mort's body.
+|-
+! align="center" | [[File:Barbed Bracelet.png|link=Barbed Bracelet|72x72px]]<br>
+[[Barbed Bracelet]]
+|<i>Vicious bracelet worn by those who believe they have not been duly punished.<br>
+Increases damage taken, but also increases damage dealt by the needle.</i>
+| Found in [[Sinner's Road]].
+|-
+! align="center" | [[File:Dead Bug's Purse.png|link=Dead Bug's Purse|72x72px]]<br>
+[[Dead Bug's Purse]]
+| <i>Discarded purse of a fallen pilgrim.<br>
+Allows the bearer to retain some rosaries upon defeat.</i>
+| Found in the [[Wormways]].
+|-
+! align="center" | [[File:Shell Satchel.png|link=Shell Satchel|72x72px]]<br>
+{{Steel Soul Icon Mini|SS}} [[Shell Satchel]]
+| <i>Quick access container formed from an old shell.<br>
+Increases the quantity of crafted tools.</i>
+| Found in the [[Wormways]] ([[Steel Soul Mode (Silksong)|Steel Soul Mode]] only).
+|-
+! align="center" | [[File:Magnetite Dice.png|link=Magnetite Dice|72x72px]]<br>
+[[Magnetite Dice]]
+| <i>Playthings carved from magnetic material.<br>
+Used in simple games and believed to bring luck to the bearer.</i>
+|
+* [[Act 1]]: Given by [[Lumble the Lucky]] after achieving 5 wins more than him. 
+* [[Act 2]]: Found beside [[Lumble the Lucky]]'s corpse in [[Blasted Steps]]. <ref group="Note">Lumble only dies after defeating the [[Cogwork Dancers]] or obtaining the [[Clawline]] Ancestral Art.</ref>
+* [[Act 3]]: Purchased from [[Grindle]] for {{R|300}}.
+|-
+! align="center" | [[File:Scuttlebrace.png|link=Scuttlebrace|72x72px]]<br>
+[[Scuttlebrace]]
+| <i>Artificial spine that clasps tight around the shell.<br>
+Enhances the wearer's innate flexibility, allowing rapid retreat.</i>
+| Purchased from [[Twelfth Architect]] for {{R|140}} and [[File:Craftmetal.png|20x20px|link=Craftmetal]] 1.
+|-
+! align="center" | [[File:Ascendant's Grip.png|link=Ascendant's Grip|72x72px]]<br>
+[[Ascendant's Grip]]
+| <i>Gilded piton that allows one to hold in place while on a wall.</i>
+| Purchased from [[Jubilana]] for {{R|350}}.
+|-
+! align="center" | [[File:Spider Strings.png|link=Spider Strings|72x72px]]<br>
+[[Spider Strings]]
+| <i>Sophisticated Weaver device. Resonates with music played to amplify and enhance a performance.<br>
+Expands and strengthens the effects of the Needolin.</i>
+| Purchased from [[Jubilana]] for {{R|320}}  after completing the <i>[[The Lost Merchant]]</i> Wish.
+|-
+! align="center" | [[File:Silkspeed Anklets.png|link=Silkspeed Anklets|72x72px]]<br>
+[[Silkspeed Anklets]]
+| <i>Experimental anklets of Weaver make.<br>
+Draws upon the wearer's own Silk to increase sprinting speed.</i>
+| Found inside [[Weavenest Cindril]] in [[Far Fields]].
+|-
+! align="center" | [[File:Thief's Mark.png|link=Thief's Mark|72x72px]]<br>
+[[Thief's Mark]]
+| <i>Symbol worn to identify oneself to fellow thieves.<br>
+Gain extra rosaries from defeated enemies, but lose some rosaries on taking damage.</i>
+| Purchased from [[Grindle]] for {{R|350}}.
+|}
+
+== Trivia ==
+* The early internal names for the three categories of Tools in the code are <code>attack</code> (<b>{{CrestSlot|Red|s}}</b>), <code>defend</code> (<b>{{CrestSlot|Blue|s}}</b>), and <code>explore</code> (<b>{{CrestSlot|Yellow|s}}</b>).
+
+{{Refs|hr=SS}}
+
+== Notes ==
+<references group="Note"/>
+
+[[fr:Outils]]
+[[pt:Categoria:Ferramentas]]
+[[Category:Tools| ]]

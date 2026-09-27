@@ -1,0 +1,62 @@
+{{Navbar|icons=true|page1=Mossberry Stew|page2=Vintage Nectar|page3=Courier's Rasher|page4=Crustnut|page5=Pickled Muckmaggot}}
+{{SS Infobox Item
+| type = [[Items (Silksong)#Deliverables|Deliverable]]
+| source = [[Sands of Karak]]
+| description = Tough, furred seed from the centre of a corpora cluster. Stale to taste, but strong once ground as seasoning.
+}}
+{{Quote
+|To season a meal such as this... only a Crustnut will do. Once, scores of them could be gathered, high atop those coral crusted caves beyond the Grand Gate.<br>
+Surely some must still grow within that sand-ravaged land?
+|Loyal Mergwin
+|Hr=SS}}
+
+The <b>Crustnut</b> is a [[Items (Silksong)#Deliverables|deliverable item]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+The Crustnut is one of the five ingredients required for the <i>[[Great Taste of Pharloom]]</i> wish. It is given to [[Loyal Mergwin]] in the [[Choral Chambers]].
+
+{{Gallery
+|Image1 = Mapshot SS Loyal Mergwin 01.png!Location in Choral Chambers
+|Image2 = Screenshot SS Loyal Mergwin 02.png!Loyal Mergwin in Choral Chambers
+}}
+
+== How to Acquire ==
+The Crustnut is found in a room in the [[Sands of Karak]], behind many breakable walls and floors.
+
+{{Gallery
+|Image1 = Mapshot SS Crustnut.png!Location in Sands of Karak
+|Image2 = Screenshot SS Crustnut 01.png!Crustnut in Sands of Karak 
+}}
+
+{{Localisation
+|DEname = Krustennuss
+|DEmeaning = Crustnut
+|ESname = Nuez de corteza
+|ESmeaning = Crust Walnut
+|FRname = Écornoix
+|FRmeaning = From <i>écrou</i> (nut), <i>corne</i> (callus) and <i>noix</i> (nut).
+|ITname = Noce corallina
+|ITmeaning = Coral Nut
+|JAname = 珊瑚殻の実
+|JAromanised = Sango kara no mi
+|JAmeaning = Coral Shell Nut
+|KOname = 단단열매
+|KOromanised = Dandanyeolmae
+|KOmeaning = Tough Nut
+|PTname = Crostanha
+|PTmeaning = Portmanteau of <i>crosta</i> (crust) and <i>castanha</i> (chestnut).
+|RUname = Твердорех
+|RUromanised = Tverdorex
+|RUmeaning = Portmanteau of {{lang|ru|твердый}} <i>tverdyj</i> (solid) and {{lang|ru|орех}} <i>orex</i> (nut).
+|TWname = 硬殼果
+|TWromanised = Yìngké guǒ
+|TWmeaning = same
+|ZHname = 硬壳果
+|ZHromanised = Yìngké guǒ
+|ZHmeaning = Crust Nut
+|CODEname = GOURMAND_CORAL_INGREDIENT
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}

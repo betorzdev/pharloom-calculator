@@ -1,0 +1,67 @@
+{{SS Infobox Item
+| image = Architect's Key.png
+| type = [[Items (Silksong)#Keys|Key]]
+| effects = Unlocks the [[Chapel of the Architect]]
+| source = Purchased from [[Twelfth Architect]]
+| buy = {{R|110}}
+| description = Rotary key of the Architects. Opens their Chapel in the Underworks.
+}}
+
+{{Quote
+| If Bug-Red could prove their aptitude with our implements, and others like, I would offer my key, to grant access to the chapel-store above.
+| [[Twelfth Architect]]
+| Hr=SS
+}}
+
+The <b>Architect's Key</b> is an [[Items (Silksong)#Keys|item]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+Opens the [[Chapel of the Architect]] in the [[Underworks]].<ref><i>"A locked gate bearing the symbol of an Architect."</i></ref>
+
+{{Gallery
+|Image1 = Mapshot SS Architect Crest.png!Chapel of the Architect location in the Underworks
+|Image2 = Screenshot SS Architect's Key 01.png!Chapel of the Architect gate in the Underworks
+}}
+
+== How to Acquire ==
+Purchased from [[Twelfth Architect]] for {{R|110}} after acquiring a total of 25 [[Tools]].<ref>[[Twelfth Architect]]: <i>"If Bug-Red could prove their aptitude with our implements, and others like, I would offer my key, to grant access to the chapel-store above."</i></ref>
+
+{{Gallery
+|Image1 = Mapshot SS Twelfth Architect 01.png!Location of Twelfth Architect in the Underworks
+|Image2 = Screenshot SS Underworks 11.png!Twelfth Architect in the Underworks
+}}
+
+{{Localisation
+|DEname = Architektenschlüssel
+|DEmeaning = Architect Key
+|ESname = Llave de los Arquitectos
+|ESmeaning = Key of the Architects
+|FRname = Clé de l'architecte
+|FRmeaning = Key of the Architect
+|ITname = Chiave dell'Artefice
+|ITmeaning = Key of the Maker
+|JAname = 設計者の鍵
+|JAromanised = Sekkei-sha no kagi
+|JAmeaning = Designer's Key
+|KOname = 설계자의 열쇠
+|KOromanised = Seolgyejaui yeolsoe
+|KOmeaning = Designer's Key
+|PTname = Chave de Arquiteto
+|PTmeaning = Key of Architect
+|RUname = Ключ Архитектора
+|RUromanised = Ključ Arxitektora
+|RUmeaning = Architect's Key
+|TWname = 建築師鑰匙
+|TWromanised = Jiànzhùshī yàoshi
+|TWmeaning = same
+|ZHname = 建筑师钥匙
+|ZHromanised = Jiànzhùshī yàoshi
+|ZHmeaning = Architect Key
+|CODEname = ARCHITECT_KEY
+}}
+
+{{Refs}}
+
+{{SS Nav Items}}
+
+[[Category:Items (Silksong)]]

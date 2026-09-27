@@ -1,0 +1,187 @@
+{{SS Infobox Boss
+|drops = [[Craw Memento]]<br/> [[Crawbell]]
+|location = [[Greymoor#Sub-area:_Craw_Lake|Craw Lake]]
+|image1 = <gallery>
+B Crawfather.png|Hunter's Journal
+Crawfather_Idle.png|Idle
+</gallery>
+|health = 1300
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.6|1.25|1.1|1|1}}
+|numbers_required = 1
+|theme = [https://youtu.be/M-z6fPrpg-k Cut Through (Main)] (Waves 1-4)<br>[https://youtu.be/M-z6fPrpg-k?t=92 Cut Through (Main + Percussion)] (Wave 5)<br>[https://youtu.be/M-z6fPrpg-k?t=184 Cut Through (Main + Percussion + Vocals)] (Crawfather)
+|singnum = 2
+}}
+{{Quote
+|Hr = Journal
+|Lord and justice of Pharloom's craws. Delivers death to condemned bugs with his steel-plated beak.<hr/>
+Did he recognise my part played in this land's void-strung state? If so, perhaps his judgment was not unfair. To these bugs I have brought much destruction.
+}}
+
+The <b>Crawfather</b> is a [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. He is the lord and justice of the [[Court of Craws]] bringing death with his steel-plated beak.<ref name=hj/> His defeat grants the [[Craw Memento]] and the [[Crawbell]].
+
+== Background ==
+Crawfather is the leader of the [[Craws]] and the Judge of their Court.<ref name=hj>Crawfather [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Lord and justice of Pharloom's craws. Delivers death to condemned bugs with his steel-plated beak."</i></ref> 
+
+== In-game Events ==
+In Act 3, as the [[Void]] invades [[Pharloom]], Crawfather sends summons for [[Hornet (Silksong)|Hornet]], calling her a "defiler" and possibly blaming her for the destruction caused by the Void.<ref>Crawfather [[Needolin]] dialogue: <i>"A calamitous criminal!"</i></ref><ref>Crawfather Journal Entry: <i>"Did he recognise my part played in this land's void-strung state?"</i></ref>
+
+After receiving the [[Craw Summons]] and returning to [[Craw Lake]], Hornet can turn in the Summons at a gate within the Craw home. Doing so lets her pass into the Court of Craws, where Crawfather and his jurors decide Hornet's verdict. After being defeated, Crawfather will drop the [[Craw Memento]], which absolves the bearer of any past and future crime.<ref>[[Craw Memento]] description: <i>"Iron emblem of the Court of Craws, absolving the bearer of all crimes past and future."</i></ref> If Hornet returns to the arena after resting on a bench, Crawfather's body is nowhere to be seen.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+=== Phase 1 (Court of Craws) ===
+Crawfather starts his trial by summoning several waves of enemies:
+<div class="mw-collapsible mw-collapsed">
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Squatcraw Juror.png|35x35px|link=Squatcraw Juror]] [[Squatcraw Juror]], top left<br>
+[[File:HJ_Tallcraw Juror.png|35x35px|link=Tallcraw Juror]] [[Tallcraw Juror]], top right
+|Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Craw Juror.png|35x35px|link=Craw Juror]] [[Craw Juror]] x2, top left and right<br>
+|
+|-
+|
+[[File:HJ_Squatcraw Juror.png|35x35px|link=Squatcraw Juror]] Squatcraw Juror x2, top left and right
+|Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Craw Juror.png|35x35px|link=Craw Juror]] Craw Juror x2, top left and right<br>
+|
+|-
+|
+[[File:HJ_Tallcraw Juror.png|35x35px|link=Tallcraw Juror]] Tallcraw Juror x2, top left and right
+|
+|}
+</div>
+
+=== Phase 2 (Crawfather) ===
+Once all waves have been defeated, Crawfather flies in himself to deliver punishment to [[Hornet (Silksong)|Hornet]]. Crawfather shuffles around the arena and performs the following attacks:
+
+* <b>Summon Juror<!--Witness To The Stand--></b>: Crawfather screams, summoning either 2 Craw Jurors, 1 Tallcraw Juror, or 1 Squatcraw Juror. Crawfather will attempt to use Summon Juror in between all other attacks as long as there are no enemies still alive.
+** This attack can be interrupted by bouncing on top of his metal head-piece.
+* <b>Triple Peck<!--Order In The Court--></b>: Crawfather reels his head back before pecking the ground 3 times, moving forward with each attack.
+* <b>Dive Peck<!--Justice From On High--></b>: Crawfather leaps up, fluttering horizontally for a short while to line up with Hornet, and then lunges diagonally downwards towards Hornet with his beak. Upon striking the ground, he bounces forwards slightly.
+** While fluttering mid-air, if his metal head-piece is struck, Crawfather will descend back down and cancel the rest of the attack.
+* <b>Chain Punishment<!--Chains For The Penitent--></b>: Crawfather charges up before leaping into the air and sending 6 chains in all directions, with 3 spaced out to his left and right. After a moment, the chains erupt in barbed spikes. Crawfather then dives beak-first back down to the ground. He gains this attack after reaching 780 HP.
+* <b>Backstep</b>: Crawfather makes a quick shuffle backwards if Hornet is too close to him.
+
+All of Crawfather's attacks, including contact with him, deal {{Damage|2}}, except Chain Punishment, which deals {{Damage|1+1}}. Crawfather's metal headpiece makes him immune to any damage that strikes his head from above, though it can still be bounced off of with Needle bounces.
+
+<hr />
+
+{{Stagger
+| Crawfather falls onto his back. Any remaining Craws continue to attack.
+| 19
+| game = SS
+}}
+
+<hr />
+
+* The Jurors are stronger versions of the Crawbugs from earlier in Greymoor. Tactics from before are just as effective in dispatching them, though bear in mind that the spiked crowns on the Tallcraw and Squatcraw Jurors make aerial down-attacks ineffective.
+* Prioritise defeating any Jurors that join the fight. The fight becomes more complex when handling multiple enemies. Alternatively, Crawfather will not summon additional Jurors if any are still alive. As the Craw Jurors are easier to dodge than the other Jurors, 1 Craw Juror can be kept alive to prevent Crawfather from summoning other more threatening Jurors.
+* Despite being a winged [[Bosses (Silksong)|boss]], Crawfather spends a lot of time on the ground, and is highly vulnerable to ground-based [[Tools]] such as [[Tacks]] and [[Cogwork Wheel]].
+* Tools that specialise in damaging aerial enemies, such as [[Curveclaw]], [[Curvesickle]], and [[Threefold Pin]], are also useful in this fight to clear the Jurors Crawfather summons.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Hear me, hear me!
+* O clattorous chorus!
+* This spinderous spiderling...
+* Sinner! I say sinner!
+* I condemn! I punish!
+* A calamitous criminal!
+}}
+
+== Location ==
+Crawfather can be found in [[Greymoor]], in the basement of the large building in Craw Lake. Once [[Hornet (Silksong)|Hornet]] obtains the [[Craw Summons]] and presents it to the door inside the building, she can head down into the Craw Court.
+
+{{Gallery
+|Image1 = Mapshot SS Crawfather 01.png!Location in Greymoor
+}}
+
+== Gallery ==
+{{Gallery|
+|Image1 = Screenshot SS Greymoor 16.png!Crawfather and his Council
+|Image2 = Screenshot SS Crawfather 01.png!Summon Wave
+|Image3 = Screenshot SS Crawfather 02.png!Summon Juror
+|Image4 = Screenshot SS Crawfather 03.png!Triple Peck
+|Image5 = Screenshot SS Crawfather 04.png!Dive Peck
+|Image6 = Screenshot SS Crawfather 05.png!Chain Punishment
+|Image7 = Screenshot SS Crawfather 06.png!Stagger
+|Image8 = Screenshot_SS_Crawfather_07.png!Singing
+|Image9 = Ari SS Sketch 03.jpg!Concept sketches
+}}
+
+== Trivia ==
+* The stand of Craws in the background react by shrieking whenever Crawfather is staggered, and fly away upon his defeat.
+* In Crawfather's [[Needolin]] dialogue, the word "Spinderous" is used, which is a made-up word with unclear meaning, but may relate to words such as "spin", "spindle" and "spider".
+** The word "Clattorous" is another made-up word with unclear meaning, but may relate to words such as "clatter" and "clamorous".
+{{Localisation
+|DEname = Krähvater
+|DEmeaning = Portmanteau of <i>krähe</i> (crow) and <i>vater</i> (father).
+|ESname = Padre Cuervón
+|ESmeaning = Craw Father<br><small><i>Cuervón</i> is the name of the [[Craws]] in Spanish, from <i>cuervo</i> (crow) and <i>-ón</i> (augmentative suffix).</small>
+|FRname = Père Corbotère
+|FRmeaning = Craw Father<br><small><i>Corbotère</i> is the name of the [[Craws]] in French, from <i>corbeau</i> (crow).</small>
+|ITname = Padre Corvide
+|ITmeaning = Corvid Father
+|JAname = ボロガワの父
+|JAromanised = Borogawa no chichi
+|JAkatakana = enemy
+|JAmeaning = Father of the Craws<br><small>{{lang|ja|ボロガワ}} <i>borogawa</i> is the name of the [[Craws]] in Japanese, a combination of {{lang|ja|襤}} <i>boro</i> (rag) and {{lang|ja|皮}} <i>kawa</i> (skin).</small>
+|KOname = 까마귀의 아버지
+|KOromanised = Kkamagwiui abeoji
+|KOmeaning = Father of the Crows
+|PTname = Pai Corbo
+|PTmeaning = Craw Father<br><small><i>Corbo</i> is the name of the [[Craws]] in Brazilian Portuguese, from <i>corvo</i> (crow).</small>
+|RUname = Отец каров
+|RUromanised = Otec karov
+|RUmeaning = Father of Craws<br><small>{{lang|ru|Кар}} <i>kar</i> is the name of the [[Craws]] in Russian, from {{lang|ru|кар}} <i>kar</i> (Russian onomatopoeia for a crow's call).</small>
+|TWname = 鴉蟲教父
+|TWromanised = Yā chóng jiàofù
+|TWmeaning = same
+|ZHname = 鸦虫教父
+|ZHromanised = Yā chóng jiàofù
+|ZHmeaning = Crow Bug Godfather
+|CODEname=CRAWFATHER
+}}
+===Court of Craws===
+{{Localisation
+|hr = false
+|DEname = Gericht der Krähfer
+|DEmeaning = Court of the Craws or Judgement of the Craws<br><small><i>Krähfer</i> is the name of the [[Craws]] in German, a portmanteau of <i>krähe</i> (crow) and <i>käfer</i> (bug).</small>
+|ESname = Corte de Cuervones
+|ESmeaning = Court of Craws<br><small><i>Cuervón</i> is the name of the [[Craws]] in Spanish, from <i>cuervo</i> (crow) and <i>-ón</i> (augmentative suffix).</small>
+|FRname = Tribunal Des Corbotères
+|FRmeaning = Court of the Craws or Tribunal of the Craws<br><small><i>Corbotère</i> is the name of the [[Craws]] in French, from <i>corbeau</i> (crow).</small>
+|ITname = Corte dei Corvidi
+|ITmeaning = Court of the Corvids
+|JAname = ボロガワの審議会
+|JAromanised = Borogawa no shingikai
+|JAmeaning = Council of Craw<br><small>{{lang|ja|ボロガワ}} <i>borogawa</i> is the name of the [[Craws]] in Japanese, a combination of {{lang|ja|襤}} <i>boro</i> (rag) and {{lang|ja|皮}} <i>kawa</i> (skin).</small>
+|KOname = 까마귀 법정
+|KOromanised = Kkamagwi beopjeong
+|KOmeaning = Crow Court
+|PTname = Corte dos Corbos
+|PTmeaning = Court of Craws<br><small><i>Corbo</i> is the name of the [[Craws]] in Brazilian Portuguese, from <i>corvo</i> (crow).</small>
+|RUname = Суд каров
+|RUromanised = Sud karov
+|RUmeaning = Court of Crows<br><small>{{lang|ru|Кар}} <i>kar</i> is the name of the [[Craws]] in Russian, from {{lang|ru|кар}} <i>kar</i> (Russian onomatopoeia for a crow's call).</small>
+|TWname = 鴉蟲審判庭
+|TWromanised = Yā chóng shěnpàntíng
+|TWmeaning = same
+|ZHname = 鸦虫审判庭
+|ZHromanised = Yā chóng shěnpàntíng
+|ZHmeaning = Crow Bug Court
+|CODEname=CROW_COURT
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Enemies}}
+
+[[pt:Pai Corbo]]

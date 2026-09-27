@@ -1,0 +1,77 @@
+{{SS Infobox Enemy
+|drops = None
+|health = 80
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.25|1|1|0.9|0.9}}
+|numbers_required = 6
+}}
+
+{{Quote
+|Hr = Journal
+|Large worm mutated heavily by Plasmium. The creature has become fused to the roof of its cave, no longer able to move freely.<hr/>
+In my home caves, when once this substance was allowed to flourish, I saw similar aberrations. This is wonder tainted strong with revulsion.
+}}
+
+<b>Plasmidases</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are the [[Lifeblood#Mutation|plasmified]] form of [[Grom]]s that have become fused to the ceiling and are no longer able to move freely.<ref>Plasmidas [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Large worm mutated heavily by Plasmium. The creature has become fused to the roof of its cave, no longer able to move freely."</i></ref>
+
+== Behaviour and Tactics ==
+Plasmidases remain stationary on the ceilings of cave passages. When [[Hornet (Silksong)|Hornet]] approaches or attacks them from a distance, they spray droplets of [[Lifeblood|Plasmium]] in a continuous burst around their bodies for 1.75 seconds. After a short period of not taking damage, Plasmidases rapidly heal themselves at a rate of 10 health every 0.75 seconds.
+
+Plasmidases deal {{Damage|2}} with their attack and on contact.
+
+Due to their regenerative ability and tendency to shoot blobs in all directions, damaging Plasmidases from a distance with [[Tools]] or {{CrestSlot|Skill|s}} may be more effective than [[Needle]] attacks. Plasmidases cannot be damaged by the cloud of venom spawned after using the [[Plasmium Phial]] or the [[Flea Brew]] while the [[Pollip Pouch]] is equipped. Extracting [[Plasmified Blood]] from Plasmidases using the [[Needle Phial]], obtained by initiating the <i>[[Alchemist's Assistant]]</i> or <i>[[Advanced Alchemy]]</i> [[wish]]es, kills them immediately.
+
+== Location ==
+Plasmidases can be found in the [[Wormways]] during [[Act 3]].
+
+{{Gallery
+|Image1 = Mapshot SS Plasmidas 01.png!Locations in the Wormways in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Plasmidas 01.png!In the Wormways
+|Image2= Screenshot SS Plasmidas 02.png!Hidden
+|Image3= Screenshot SS Plasmidas 03.png!Idle
+|Image4= Screenshot SS Plasmidas 04.png!Plasmium Torrent
+|Image5= Screenshot SS Plasmidas 05.png!Regeneration
+|Image6= Screenshot SS Plasmidas 06.png!Remains
+|Image7= Screenshot SS Plasmidas 07.png!Remains upon leaving and returning to the room
+}}
+
+== Trivia ==
+* Though Plasmidases do not react to the [[Needolin]], they "sing" on their own.
+* Piercing Plasmidases with the [[Needle Phial]] instantly counts as a kill for the [[Hunter's Journal (Silksong)|Hunter's Journal]], even if the extraction is interrupted by taking damage. This makes it possible to complete the entry without actually killing any Plasmidases.
+
+{{Localisation
+|DEname = Plasmidas
+|DEmeaning = —
+|ESname = Plásmidas
+|ESmeaning = — 
+|FRname = Plasmopode
+|FRmeaning = From <i>Plasmidas</i> and <i>-pode</i> (suffix denoting an organism with a certain type of feet).
+|ITname = Plasmode
+|ITmeaning = —
+|JAname=プラスミダス
+|JAromanised= Purasumidasu
+|JAkatakana = foreignenemy
+|JAmeaning = Plasmidas
+|KOname = 플라스미다스
+|KOromanised = Peullaseumidaseu
+|KOmeaning = Plasmidas
+|PTname =  Plasmida
+|PTmeaning = — 
+|RUname = Плазмидас
+|RUromanised = Plazmidas 
+|RUmeaning = Plasmidas
+|TWname = 原質蠕蟲
+|TWromanised = Yuánzhì rúchóng
+|TWmeaning = Protoplasm Worm<br><small>{{lang|zh-Hant|原質液 <i>yuánzhìyè</i>}} (protoplasm fluid) is [[Plasmium]] in Traditional Chinese.</small>
+|ZHname = 生质蠕虫
+|ZHromanised = Shēngzhì rúchóng
+|ZHmeaning = Life Substance Worm<br><small>{{lang|zh-Hans|生质液 <i>shēngzhìyè</i>}} (life substance fluid) is [[Plasmium]] in Simplified Chinese.</small>
+|CODEname=BONE_WORM_BLUETURRET
+|CODEmeaning="Bone Worm" internally refers to Groms
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

@@ -1,0 +1,88 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Dregwheel.png|Hunter's Journal
+Dregwheel Idle.png |Idle
+</gallery>
+|drops = None
+|health = 50
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.2|1|0.85|0.85|0.85}}
+|numbers_required = 8<br>(Instantly completed on [[the Unravelled]]'s death)
+|sing=Dreg Husk
+|singnum=2
+}}
+{{Quote
+|Hr = Journal
+|Shell of a small bug possessed by Silk dregs. The husk will stretch its Silk to form a crude, crushing wheel.<hr/>
+Living Silk commanding a dead shell... An affront to nature, and one all too common across Pharloom. 
+}}
+
+<b>Dregwheels</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are small, silk-possessed bugs whose bodies stretch to form crude wheels.<ref>Dregwheel [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Shell of a small bug possessed by Silk dregs. The husk will stretch its Silk to form a crude, crushing wheel."</i></ref>
+
+== Behaviour and Tactics ==
+Dregwheels naturally wander back and forth. They pursue [[Hornet (Silksong)|Hornet]] when attacking, but lose interest once she leaves their range.<br>
+To attack, Dregwheels jump up and extend their bodies, spinning rapidly before launching themselves towards Hornet. They track her horizontal movement as they bounce off the ground, stopping after three bounces and folding back into their usual shape.
+
+Dregwheels can easily be rushed down before they begin their assault. Simply outspacing them also works, as their hurtbox extends when they transform.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* ...Stretched... thin...
+* ...Why?... again...
+* ...I am... fading...
+* ...Remember... shell...
+* ...The shell... I was...
+* ...The pain... forget the pain...
+}}
+
+== Location ==
+Five Dregwheels appear during the [[Enemy_Gauntlets_(Silksong)/Unravelled|fight]] with [[the Unravelled]], and up to two spawn in each wave of the infinitely respawning enemies in the arena once the boss is defeated.
+
+{{Gallery
+|Image1 = Mapshot SS Dregwheel 01.png! Location in the Whiteward
+|Image2 = Mapshot SS Dregwheel 02.png! Location in the Whiteward after defeating the Unravelled
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Dregwheel 01.png!Idle
+|Image2 = Screenshot SS Dregwheel 02.png!Attacking
+|Image3 = Screenshot SS Dregwheel 03.png!Reacting to the Needolin
+|Image4 = Screenshot SS Dregwheel 04.png!Launched by the Unravelled
+}}
+
+== Trivia ==
+* Dregwheels do not drop organs for the <i>[[Broodfeast]]</i> or <i>[[Runtfeast]]</i> [[wishes]], nor do they release blood particles when hit, aligning with Hornet's mention of "hollowed husks" she saw in the Whiteward.<ref>Hornet dialogue with the [[Caretaker]]: <i>"In the ward down below, I saw it clear, the hollowed husks, and the many torturous implements... machines to instill a bug with thread, that would see their life extended."</i></ref>
+
+{{Localisation
+|DEname = Fetzenrad
+|DEmeaning = Ragwheel
+|ESname = Rueda de restos
+|ESmeaning = Dreg wheel
+|FRname = Soissile
+|FRmeaning = 
+|ITname = Ruota Residuale
+|ITmeaning = Residual Wheel
+|JAname= クズイトマキ
+|JAromanised= Kuzuito maki
+|JAmeaning = Combination of {{lang|ja|屑糸 <i>kuzuito</i>}} (waste thread) and {{lang|ja|巻 <i>maki</i>}} (roll).
+|JAkatakana = enemy
+|KOname = 찌꺼기바퀴
+|KOromanised = Jjikkeogibakwi
+|KOmeaning = Dregwheel
+|PTname =  Roda Residual
+|PTmeaning = Residual Wheel
+|RUname = Ошмёточное колесо
+|RUromanised = Ošmëtočnoe koleso
+|RUmeaning = Ragged Wheel
+|TWname = 殘絲輪骸
+|TWromanised = Cán sī lún hái
+|TWmeaning = same
+|ZHname = 残丝轮骸
+|ZHromanised = Cán sī lún hái
+|ZHmeaning = Dreg Silk Wheel Corpse
+|CODEname=SONG_THREADED_HUSK_SPIN
+|CODEmeaning=[[Dreg Husk]]s are internally known as "Song Threaded Husks"
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

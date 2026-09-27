@@ -1,0 +1,36 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_The_Slab_Arena_2.png|400px|center]]
+|[[File:Mapshot_SS_Broodmother_01.png|300px|center]]
+|-
+| colspan="2" | [[Broodmother]]'s enemy gauntlet as apart of her boss encounter. Entrance to the gauntlet is only accessible after <i>[[The Wailing Mother]]</i> wish has been promised.
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>[[Broodmother's Eye]]</center>
+| <center>[https://youtu.be/M-z6fPrpg-k Cut Through (Main)] (Enemy Gauntlet)<br>[https://youtu.be/y5O2l_VQI-k Cut Through (Main + Vocals)] (Broodmother)</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Freshfly.png|35x35px|link=Freshfly]] [[Freshfly]] x2, left<br/>
+[[File:HJ_Freshfly.png|35x35px|link=Freshfly]] Freshfly x2, right
+|
+|-
+|
+[[File:HJ_Freshfly.png|35x35px|link=Freshfly]] Freshfly x3, top left, centre, and right<br/>
+[[File:HJ_Guardfly.png|35x35px|link=Guardfly]] Guardfly, left
+|
+|-
+|
+[[File:HJ_Freshfly.png|35x35px|link=Freshfly]] Freshfly x3, top left, centre, and right<br/>
+[[File:HJ_Wardenfly.png|35x35px|link=Wardenfly]] Wardenfly, top centre
+|
+|-
+|
+[[File:HJ_Broodmother.png|35x35px|link=Broodmother]] [[Broodmother]], centre
+|
+|}

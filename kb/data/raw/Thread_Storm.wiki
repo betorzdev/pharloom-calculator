@@ -1,0 +1,74 @@
+{{SS Infobox Skill
+| damage formula = (0.75x [[Needle]]) x 4 + (0.25x [[Needle]]) + ([[Damage Values and Enemy Health (Silksong)#Needle|Needle Level]]) x 6 
+| damage total = 4/7/10/13/16 (per hit) 17/30/43/56/69 (Unextended) <br> 23/36/55/74/93 (Extended)
+| description = Deadly Weaver technique. Cast the needle in a whirl of Silk around oneself, lashing foes.
+| image = Icon_SS_Thread_Storm.png
+| description2 = Press SKILL/TOOL<hr>Attack by whipping a storm of Silk around oneself.<br>Silk Skills can be equipped in the Crest screen of the Menu.
+| effect = Deals damage in a radius around Hornet<br>Can be extended with repeated inputs
+| location = [[Craw Lake]]
+}}
+
+<b>Thread Storm</b> is a [[Skills|Skill]] in <i>[[Hollow Knight: Silksong]]</i>. Using it creates a whirl of [[Silk]] around [[Hornet (Silksong)|Hornet]].
+
+== Function ==
+Creates a whirl of Silk centred on Hornet that strikes 5 times, which can be extended to 11 times via repeated input of the [[Controls (Silksong)|SKILL/TOOL]] button. Thread Storm deals [[Damage Values and Enemy Health (Silksong)#Needle|0.75x Needle Damage]] in the first 4 hits, the 5th hit deals 0.25x Needle Damage, and the remaining hits deal damage equal to current Needle Level (minimum of 1). Thread storm will destroy most weak projectiles.
+
+=== Modifiers ===
+* [[Volt Filament]] electrifies Thread Storm, increasing the damage by 25% and adding 2 ticks of 5 damage (plus another when extended). 
+* [[Shaman Crest]] sheathes Thread Storm in Soul, increasing the damage by 40%.
+** Volt Filament and Shaman Crest's damage increases add together to grant +65% damage.
+* [[Egg of Flealia]] reduces the cost of Thread Storm to 3 Silk while at full health.
+
+== How to Acquire ==
+Thread Storm can be acquired from a [[Weaver Burial Spire]] in the north of the [[Craw Lake]] area of [[Greymoor]]. After defeating an [[Enemy Gauntlets (Silksong)|Enemy Gauntlet]] of [[Craw]]s, [[Tallcraw]]s, and [[Squatcraw]]s, a lever can be struck to deploy a series of balloons that provide access to the skill.
+
+{{Gallery
+| Image1 = Mapshot SS Thread Storm.png!Location in Greymoor
+| Image2 = Screenshot SS Greymoor 20.png!Weaver Spire
+}}
+== Gallery ==
+{{Gallery
+|Image1 = Thread Storm.png ! Splash Art
+|Image2 = Icon SS Thread Storm Art.png ! Splash Art
+}}
+
+== Trivia ==
+* Thread Storm was one of Hornet's attacks [[Hornet Protector|as a boss in <i>Hollow Knight</i>]], with the Skill and attack even sharing the same sprites.
+{{History
+|game = SS
+|1.0.28891 (Patch 3): Slight decrease to Thread Storm damage at higher needle levels.
+|1.0.29242 (Patch 4): Fixed Thread Storm damage tapering (additional hits don't taper down as sharply).
+}}
+{{Localisation
+|DEname = Fadensturm
+|DEmeaning = Threadstorm
+|ESname = Tormenta de hilos
+|ESmeaning = Storm of threads
+|FRname = Tisse-tempête
+|FRmeaning = Weave Storm
+|ITname = Tempesta di Fili
+|ITmeaning = Storm of Threads
+|JAname = シルクの嵐
+|JAromanised = Shiruku no arashi
+|JAkatakana = foreign
+|JAmeaning = Silk Storm
+|KOname = 실 폭풍
+|KOromanised = Sil pokpung
+|KOmeaning = Thread Storm
+|PTname = Turbilhão de Fios
+|PTmeaning = Whirlwind of Threads
+|RUname = Буйство нитей
+|RUromanised = Bujstvo nitej
+|RUmeaning = Thread Rampage
+|TWname = 靈絲風暴
+|TWromanised = Líng sī fēngbào
+|TWmeaning = same
+|ZHname = 灵丝风暴
+|ZHromanised = Líng sī fēngbào
+|ZHmeaning = Soul Silk Storm
+|CODEname=SKILL_SPHERE</code><br><code>THREADSPHERE
+}}
+{{Refs|hr=SS}}
+
+{{SS_Nav_Skills}}
+[[fr:Tisse-tempête]]

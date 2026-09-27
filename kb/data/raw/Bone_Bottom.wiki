@@ -1,0 +1,488 @@
+{{SS Infobox Area
+| tab1 = Acts 1/2
+| image1 = <gallery>
+Bone_Bottom_Map_Marked.png|Marked
+Bone_Bottom_Map_Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Bone_Bottom_Map_Ruin_Marked.png|Marked
+Bone_Bottom_Map_Clean.png|Unmarked
+</gallery>
+|connection = [[Blasted Steps]]<br/>[[The Marrow]]<br/>[[Moss Grotto]]<br/>[[Shellwood]]<br/>[[Wormways]]
+|ambience = [https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]<br>
+[https://www.youtube.com/watch?v=t2k1Ke0f9JQ Atmos Outside Wind Chasm]<br>
+[https://www.youtube.com/watch?v=WcIVBqq2_2k Atmos Boneforest]<br>
+[https://www.youtube.com/watch?v=CUR-P4v2Cyk Atmos Moss Cave]
+|main = [https://www.youtube.com/watch?v=iu-ENkUBzq4&list=RDiu-ENkUBzq4&start_radio=1 Bone Bottom] (Act 1-2)<br>
+[https://www.youtube.com/watch?v=Y55kyikBUcg Tension Two] (Act 3)
+}}
+{{Quote
+|We surely aren't seeing its finest moment, but this place has been serving us passing bugs for as long as any can remember. It's faith, you see! All those pilgrims, now and past. Our devotion holds it together. The camp'll remain, and provide, no matter the troubles.
+|[[Pilby]]
+|Hr=SS}}
+<b>Bone Bottom</b> is an [[Areas (Silksong)|area]] in <i>[[Hollow Knight: Silksong]]</i> containing the first town that can be encountered. It is part of the [[Mosslands]] alongside [[Moss Grotto]].
+
+== Description ==
+Bone Bottom is a small town that leads to [[the Marrow]]. It is inhabited by pilgrims, whose objective is to reach [[the Citadel]]. It is composed of tents and bone pieces.
+
+Bone Bottom introduces the [[Wish]] system, with a [[Wishwall]] that gets continuously updated over the course of the game. The wishwall is maintained by [[Flick the Fixer]], and gets reconstructed after defeating the [[Bell Beast]]. The town also has a small shop owned by [[Pebb]], along with a Bellway Station. Inside the Station resides the [[Fearful Pilgrim]], who leaves the area after Hornet visits the town using the [[Bell Beast]]. The town has a bench, which [[Pilby]] will sit beside and talk to Hornet about various areas as she unlocks them. After certain game events, Pilby will leave his usual spot and be replaced by [[Quiet Pilgrim]].
+
+== History ==
+Bone Bottom features an old settlement formed by pilgrims of Pharloom. It has been serving passing bugs for as long as any can remember.<ref> Pilby dialogue:''"[…] But this place has been serving us passing bugs for as long as any can remember."''</ref> Bone Bottom is located within the peaceful [[Mosslands]] region, one of the only areas in [[Pharloom]] to be mostly untouched by [[the Citadel]]. 
+
+Long ago a Chapel was built in Bone Bottom, possibly by the [[Snail Shamans]].<ref>[[Snail Shamans (Silksong)|Caretaker]]: <i>"Bound yourself a new nature, aye? And from the shells of our ancestors, no less, all those many who've called these lands their own."</i></ref> This chapel was a religious centre with a community dedicated to a faith completely different from [[Grand Mother Silk]]. After the construction of the Citadel, the members of this faith fled or went into hiding.<ref>{{HTalk|What duty binds you to this old chapel, madam? The structure barely stands, and I see no signs of congregation.}}<br>[[Chapel Maid]]: <i>Aye! Gone! The lot'o them, fled and hidden. But I'm not leaving till I've set this place right...<br>...It's that Citadel above, you see. Even now, in Pharloom's long decline, the simple bugs, they're witless before it. Too grand. Too majestic. Too powerful.<br>This building's state is a sad example of those who'd dare suggest another path...</i></ref> Eventually the chapel fell into ruins, leaving only the [[Chapel Maid]] left to maintain it. Bonegrave was a cemetery established in the west as a place to bury the dead inhabitants of Bone Bottom and pilgrims who couldn't make the climb.<ref><i>{{HTalk}} There is a vast grave beyond. I'd assume most bugs died climbing the path, but it seems many fell before their trek had barely commenced?</i><br>[[Chapel Maid]]: <i>Aye! Lost their lives to beasts, or to luck turned rotten. Others were simply formed too frail. At least those poor souls can rest together.</i></ref>
+
+Mosshome was another settlement to the northeast, and served as a place of rest and healing for passing pilgrims.<ref name="moss"><i>[[Lore Tablets (Silksong)|Lore Tablet]]: "Weaver of Pharloom. By grace you warded. By thread you healed. For your favour, eternal, we offer our song."</i></ref> Eventually it too fell into ruin because of the [[Haunting]]. Mosshome is also the [[Weaver Burial Spire|burial site]] of a [[Weavers|Weaver]], presumably Camora, Weaver of Healing, as her effigy is also found nearby.<ref> [[Weaver Effigy]] (Found in Bone Bottom):<i>"Carving of Camora, Weaver of the path. A prayer is etched upon it."</i></ref><ref name="moss"/> 
+
+== How to Access ==
+Bone Bottom can be accessed by climbing through the [[Ruined Chapel]] after defeating the [[Moss Mother]].
+
+{{TabbedPOI
+|Header = true
+
+|NPC1 = Pebb
+|NPC2 = Shakra
+|NPC3 = Flick the Fixer
+|NPC4 = Chapel Maid
+|NPC5 = Pilby
+|NPC6 = Fearful Pilgrim
+|NPC7 = Horned Pilgrim
+|NPC8 = Quiet Pilgrim
+|NPC9 = Solemn Pilgrim
+|NPC10 = Courier Tipp
+|NPC10Note = (during the <i>[[My Missing Courier]]</i> wish)
+|NPC11 = Mister Mushroom (Silksong){{!}}Mister Mushroom
+|NPC11Note = ([[Act 3]] only)
+
+|Enemy1 = Aknid
+|Enemy2 = Caranid
+|Enemy3 = Snitchfly
+|Enemy3Note = ([[Act 3]] only)
+
+|Boss1 = Skull Tyrant
+|Boss1Note = (after defeating Skull Tyrant in [[the Marrow]])
+
+
+|Loot1_FileName = Spool Fragment
+|Loot1_Amount = 1
+|Loot2_FileName = Memory Locket
+|Loot2_Amount = 1
+|Loot2_Description = given for completing the <i>[[Volatile Flintbeetles]]</i> wish
+|Loot3_FileName = Rosary Necklace
+|Loot3_Amount = 1
+|Loot3_Description = given for completing the <i>[[Garb of the Pilgrims]]</i> wish
+|Loot4_FileName = Heavy Rosary Necklace
+|Loot4_Amount = 1
+|Loot4_Description = given for completing the <i>[[The Terrible Tyrant]]</i> wish
+|Loot5_FileName = Hornet Statuette
+|Loot5_Description = given by [[Flick the Fixer]] after completing the <i>[[An Icon of Hope]]</i> wish
+|Loot6_FileName = Weaver Effigy
+|Loot6_Amount = 1
+|Loot7_FileName = Choral Commandment
+|Loot7_Amount = 1
+|Loot8_FileName = Mossberry
+|Loot8_Amount = 1
+|Loot9_FileName = Maiden's Soul
+|Loot9_Description = given by [[Chapel Maid]] during the <i>[[Silk and Soul]]</i> wish
+
+|LoreTabletsSource = SS Bone Bottom
+}}
+
+== Bone Bottom Wishes ==
+<div class="mw-collapsible mw-collapsed" data-expandtext="Show List of Wishes" data-collapsetext="Hide List of Wishes">
+{{TaskEntry
+| top = true
+| header = <b><i>Accessible in [[Act 1]]</i></b>
+| id = The Lost Fleas
+| title = [[The Lost Fleas]]
+| description = I am Mooshka, humble stranger to this land and master of the Flea Caravan! I wish for aid, that all fleas may travel safely together!
+| objective = Seek fleas across the lands of Pharloom and guide them to the Flea Caravan.
+| location = <b><i>[[Bone Bottom]] Wishwall / [[The Marrow]] NPC</i></b>
+[[Mooshka]] of the Flea Caravan
+| reward = [[Flea Brew]]
+}}
+{{TaskEntry
+| id = Berry Picking
+| title = [[Berry Picking]]
+| description = Sweetness! Sourness! Bitterness! I need it all with hastiness! Cruel world, will you not provide me with the fruits I desire?
+| objective = Collect Mossberries from the moss-covered areas of Pharloom's lowlands.
+| location = <b><i>[[Bone Bottom]] Wishwall / [[Mosshome]] NPC</i></b>
+[[Moss Druid]]
+| reward = [[Druid's Eye]]
+}}
+{{TaskEntry
+| id = Garb of the Pilgrims
+| title = [[Garb of the Pilgrims]]
+| description = Those mad, violent pilgrims who haunt the great path... we could make use of their shawls here in Bone Bottom. And felling them would surely be a mercy!
+| objective = Hunt haunted pilgrims of Pharloom and collect [[Pilgrim Shawl]]s from their bodies.
+| location = <b><i>[[Bone Bottom]] Wishwall</i></b>
+Residents of Bone Bottom
+| reward = [[Rosary Necklace]]
+}}
+{{TaskEntry
+| id = Volatile Flintbeetles
+| title = [[Volatile Flintbeetles]]
+| description = Flintbeetles have awoken in the Marrow. The gems that grow in their bellies provide a pure, constant warmth. Harvest these treasures and be rewarded!
+| objective = Track down [[Flintbeetle]]s in the Marrow and defeat them to collect [[Flintgem]]s.
+Flintbeetles can be tracked by their stone-sheddings and their aromatic dung.
+| location = <b><i>[[Bone Bottom]] Wishwall</i></b>
+Residents of Bone Bottom
+| reward = [[Memory Locket]]
+}}
+{{TaskEntry
+| id = The Terrible Tyrant
+| title = [[The Terrible Tyrant]]
+| description = A Skull Tyrant, largest of the Marrow's loathsome bony predators, prowls the caves above the great path. Slay the beast and keep us all safe!
+| objective = Hunt a Skull Tyrant of the Marrow.
+| location = <b><i>[[Bone Bottom]] Wishwall</i></b>
+Residents of Bone Bottom
+| reward = [[Heavy Rosary Necklace]]
+}}
+{{TaskEntry
+| id = Bone Bottom Repairs
+| title = [[Bone Bottom Repairs]]
+| description = A lotta repairs to be done around here, but I need more materials! All I wish for is some shell shards so I can get to work. Not asking too much, am I?
+| objective = Donate shell shards to aid repairs around Bone Bottom.
+| location = <b><i>[[Bone Bottom]] Wishwall</i></b>
+[[Flick]] of Bone Bottom
+| reward = None<br><i>Prerequisite for [[A Lifesaving Bridge]]<br>Prerequisite for [[Silk and Soul]]</i>
+}}
+{{TaskEntry
+| id = A Lifesaving Bridge
+| title = [[A Lifesaving Bridge]]
+| description = I've heard tell pilgrims sometimes fall down that big hole beside the settlement. Nasty way to end your journey, before it even begins. I could build a bridge, if I only had the materials.
+| objective = Donate shell shards to aid the building of a bridge.
+| location = <b><i>[[Bone Bottom]] Wishwall</i></b>
+[[Flick]] of Bone Bottom
+| reward = A destructible bridge is constructed over the hole that leads to [[Moss Grotto]].<br><i>Prerequisite for [[An Icon of Hope]]<br>Prerequisite for [[Silk and Soul]]</i>
+}}
+{{TaskEntry
+| bottom = true
+| header = <b><i>Accessible in [[Act 2]]</i></b>
+| id = An Icon of Hope
+| title = [[An Icon of Hope]]
+| description = The road is hard for we pilgrims. I want to build a beautiful symbol of hope, to stand beside Bone Bottom and welcome all those who are about to begin their long journey.
+| objective = Donate shell shards to aid the construction of an icon of hope.
+| location = <b><i>[[Bone Bottom]] Wishwall</i></b>
+[[Flick]] of Bone Bottom
+| reward = A destructible statue of [[Flick]] is erected in Bone Bottom.
+[[Hornet Statuette]]
+}}
+</div>
+
+== Sub-area: Mosshome ==
+{{SS Infobox Area
+|tab1 = Act 1/2
+| image1 = <gallery>
+Mosshome_Map_Marked.png|Marked
+Mosshome_Map_Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Mosshome_Map_Ruin_Marked.png|Marked
+Mosshome_Map_Clean.png|Unmarked
+</gallery>
+|ambience = [https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+|main = [https://www.youtube.com/watch?v=pKl7yftgaYE Mosstown Main]<br>
+[https://www.youtube.com/watch?v=ywMnEMuXn2c Mosstown Sub]
+}}
+<b>Mosshome</b> is a ruined settlement above the town of Bone Bottom. It is built around the [[Weaver Burial Spire|burial spire]] of a [[Weaver]] who warded and healed its inhabitants with her [[Silk|thread]], earning their reverence.<ref>[[Hornet (Silksong)|Hornet]] dialogue with [[Pilby]]: <i>"I've visited the settlement you speak of. It was built around a burial spire, corpse-home to an ancient Weaver."</i></ref><ref>[[Lore_Tablets_(Silksong)#Bone_Bottom|Lore Tablet]] near the burial spire: <i>"Weaver of Pharloom. By grace you warded. By thread you healed. For your favour, eternal, we offer our song."</i></ref> This Weaver may be [[Weavers#Notable_Weavers|Camora, Weaver of healing]], as an effigy to her can be found near Mosshome.<ref>[[Weaver Effigy]]: <i>"Carving of Camora, Weaver of healing. A prayer is etched upon it. 'Weaver, heal my sons, their fearful hearts, their limbs that shake at the climb to come. We pray, gift but a glimmer of your strength, that when we stand before your divinity, you see bugs shed free of fear.'"</i></ref>
+
+The Weavers introduced the bugs of Mosshome to the religion of [[the Citadel]] and persuaded them to make pilgrimage to it.<ref>A [[:File:Screenshot SS Pilgrim Groveller 01.png|statue]] of the Citadel symbol and several [[:File:Screenshot SS Rosary Shrine Moss.png|Rosary shrines]] can be seen in Mosshome.</ref><ref>[[Lore_Tablets_(Silksong)#Bone_Bottom|Lore Tablet]] near the burial spire: <i>"Sister, spider, husk bound to moss, Watch over these bugs born low, Raised up by fervour fostered, Born and caught within our web unknowing."</i></ref><ref>[[Mask Maker (Silksong)|Mask Maker]]: <i>"Devised by your ancestors that monstrosity, and their wicked, clever minds. A system, or a web they'd likely call it, a way to keep their mother sealed in slumber, and themselves free to lavish in their false rule."</i></ref> Some of the pilgrims of Bone Bottom believe that Mosshome is a holy and safe place.<ref>Pilby: <i>"Must be terrifying out there, beyond the settlement. Nothing but monsters and madness lurking in the darkness. I've heard tales of a safe place, though. Just up above here, where the moss paints the stones green, there's an old village. Bit of a holy place, apparently, well protected."</i></ref>
+
+Mosshome is first accessible from [[the Marrow]]. At the very top, the [[Silkspear]] skill can be acquired, which is necessary for reaching the [[Moss Druid]] residing in a cave in the top right of the area, as well as freeing the [[Bell Beast]].
+
+{{TabbedPOI
+|NPC1 = Moss Druid
+|NPC2 = Garmond and Zaza
+|NPC2Note = ([[Act 3]] only)
+
+|Enemy1 = Aknid
+|Enemy2 = Pilgrim Groveller
+|Enemy3 = Pilgrim Pouncer
+|Enemy4 = Overgrown Pilgrim
+|Enemy5 = Void Mass
+|Enemy5Note = ([[Act 3]] only)
+
+|Loot1_FileName = Silkspear
+|Loot2_FileName = Druid's Eye
+|Loot2_Description = given by [[Moss Druid]] after completing the <i>[[Berry Picking]]</i> wish
+|Loot3_FileName = Druid's Eyes
+|Loot3_Description = given by Moss Druid after bringing them 4 additional [[Mossberries]]
+|Loot4_FileName = Frayed Rosary String
+|Loot4_Amount = 1
+|Loot5_FileName = Mossberry
+|Loot5_Amount = 1
+|Loot6_FileName = Mossberry Stew
+|Loot6_Description = given by Moss Druid during the <i>[[Great Taste of Pharloom]]</i> wish
+}}
+{{Clear}}
+
+== Sub-area: Bonegrave ==
+{{SS Infobox Area
+|tab1 = Act 1/2
+| image1 = <gallery>
+Bonegrave_Map_Marked.png|Marked
+Bonegrave_Map_Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Bonegrave_Map_Ruin_Marked.png|Marked
+Bonegrave_Map_Clean.png|Unmarked
+</gallery>
+|ambience = [https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]<br>
+[https://www.youtube.com/watch?v=CUR-P4v2Cyk Atmos Moss Cave]<br>
+[https://www.youtube.com/watch?v=ZzyCwfkjyCI Lake Atmos Hornet]
+}}
+
+<b>Bonegrave</b> is a vast graveyard beyond the [[Ruined Chapel]], where fallen pilgrims are buried.<ref>Hornet and [[Chapel Maid]] dialogue:<br><i>Hornet: "There is a vast grave beyond. I'd assumed most bugs died climbing the path, but it seems many fell before their trek had barely commenced."<br>Chapel Maid: "Aye! Lost their lives to beasts, or to luck turned rotten. Others were simply formed too frail. At least those poor souls can rest together. Death and death and death, the eternal promise of our eternal kingdom. Eventually, it claims us all."</i></ref><ref> Bonegrave [[Needolin]] dialogue: <i>"...Not worthy... ...Alone, without you... ...Climb and serve... ...Die and serve..."</i></ref> It can be accessed from the [[Wormways]] after opening the [[Simple Key (Silksong)|Simple Key]] door, or from above the Ruined Chapel with [[Cling Grip]].
+
+After the [[Wanderer Crest]] is obtained from the [[Chapel of the Wanderer]], pilgrims will start to spawn from the graves around the chapel when [[Hornet (Silksong)|Hornet]] gets near. There are three possible enemy spawn variants that change after resting on a [[Bench (Silksong)|bench]]:
+<div class="mw-collapsible mw-collapsed">
+{| class="article-table" style="margin-bottom: 64px; width: auto;"
+! 
+! Spawn variants
+|-
+!1
+|
+[[File:HJ_Winged Pilgrim.png|35x35px|link=Winged Pilgrim]] [[Winged Pilgrim]], left<br />
+[[File:HJ_Elder Pilgrim.png|35x35px|link=Elder Pilgrim]] [[Elder Pilgrim]], left<br />
+[[File:HJ_Pilgrim Pouncer.png|35x35px|link=Pilgrim Pouncer]] [[Pilgrim Pouncer]], right<br />
+[[File:HJ_Pilgrim Groveller.png|35x35px|link=Pilgrim Groveller]] [[Pilgrim Groveller]], right
+|-
+!2
+|
+[[File:HJ_Pilgrim Hornfly.png|35x35px|link=Pilgrim Hornfly]] [[Pilgrim Hornfly]], left<br />
+[[File:HJ_Pilgrim Guide.png|35x35px|link=Pilgrim Guide]] [[Pilgrim Guide]], left<br />
+[[File:HJ_Pilgrim Bellbearer.png|35x35px|link=Pilgrim Bellbearer]] [[Pilgrim Bellbearer]], right<br />
+[[File:HJ_Pilgrim Hornfly.png|35x35px|link=Pilgrim Hornfly]] Pilgrim Hornfly, right
+|-
+!3
+|
+[[File:HJ_Pilgrim Bellbearer.png|35x35px|link=Pilgrim Bellbearer]] Pilgrim Bellbearer, left<br />
+[[File:HJ_Elder Pilgrim.png|35x35px|link=Elder Pilgrim]] Elder Pilgrim, left<br />
+[[File:HJ_Pilgrim Hornfly.png|35x35px|link=Pilgrim Hornfly]] Pilgrim Hornfly, right
+|}
+</div>
+At the start of [[Act 3]], a [[Covetous Pilgrim]] appears outside the chapel, taking the place of the normal enemies. Random spawns resume once the Covetous Pilgrim is killed. Hanging blue vines and a [[Plasmium Cocoon]] also appear, hinting at the transformation that has taken place in the Wormways.
+
+{{Steel Soul Icon Mini|SS}} In [[Steel Soul Mode (Silksong)|Steel Soul Mode]], an extra room appears here during the <i>[[A Vassal Lost]]</i> [[wish]], containing [[Sula]] and the [[Summoned Saviour]] boss.
+
+{{TabbedPOI
+|NPC1 = Sula
+|NPC1cp = {{Steel Soul Icon Mini|SS}}
+
+|Enemy1 = Aknid
+|Enemy2 = Pilgrim Groveller
+|Enemy3 = Pilgrim Pouncer
+|Enemy4 = Pilgrim Hornfly
+|Enemy5 = Pilgrim Bellbearer
+|Enemy6 = Winged Pilgrim
+|Enemy7 = Elder Pilgrim
+|Enemy8 = Pilgrim Guide
+|Enemy9 = Overgrown Pilgrim
+|Enemy10 = Covetous Pilgrim
+|Enemy10Note = ([[Act 3]] only)
+|Enemy11 = Winged Lifeseed
+|Enemy11Note = ([[Act 3]] only)
+
+|Boss1 = Summoned Saviour
+|Boss1cp = {{Steel Soul Icon Mini|SS}}
+
+|Loot1_FileName = Mossberry
+|Loot1_Amount = 1
+|Loot2_FileName = Lifeblood Cocoon
+|Loot2_Name = Plasmium Cocoon
+|Loot2_Amount = 1
+|Loot2_Description = [[Act 3]] only; containing 2 [[Winged Lifeseed]]s
+}}
+{{Clear}}
+
+== Sub-area: Chapel of the Wanderer==
+{{SS Infobox Area
+|image1 = <gallery>
+Chapel_of_the_Wanderer_Map_Marked.png|Marked
+Chapel_of_the_Wanderer_Map_Clean.png|Unmarked
+</gallery>
+|ambience = [https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+|main = [https://www.youtube.com/watch?v=O-cYxAOIbVM Chapel Ambience]
+|action = [https://www.youtube.com/watch?v=sBNJLCHwqAY Chapel Ambience Battle Layer]
+}}
+
+The <b>Chapel of the Wanderer</b> is a mausoleum located in Bonegrave. [[Rosaries]] can be found here lying on the ground or hanging on strings, but the path to them is riddled with traps. Further below is an [[Enemy Gauntlets (Silksong)/Bone Bottom|enemy gauntlet]], and upon completing it, [[Hornet (Silksong)|Hornet]] can find and bind a corpse to obtain the [[Wanderer Crest]]. After binding the crest and leaving the sub-area, the door closes permanently.
+
+{{TabbedPOI
+
+|Enemy1 = Pilgrim Groveller
+|Enemy2 = Pilgrim Pouncer
+|Enemy3 = Pilgrim Hornfly
+|Enemy4 = Pilgrim Hulk
+|Enemy5 = Winged Pilgrim
+|Enemy6 = Pilgrim Guide
+
+|Loot1_FileName = Wanderer Crest File
+|Loot1_Name = Wanderer Crest
+
+|EnemyGauntletsSource = Bone Bottom
+}}
+
+{{Clear}}
+
+== Creation and Development ==
+{{Main|Cut Content (Silksong)/Areas#Bone Bottom}}
+[[File:Mosshome April 2021.png|thumb|220px|Mosshome in April 2021]]
+Formerly spelt "Bonebottom", Bone Bottom was conceptualised around February 2019, with the town's layout remaining relatively unchanged since its conception. The layout of the town appeared on earlier maps as part of the "[[Cut Content (Silksong)/Areas#Bonechurch|Bonechurch]]" area. The [[Cut Content (Silksong)/NPCs#Caravantula|Caravantula]] NPC would have also appeared in the town. The town was showcased in the February 2019 <i>Silksong</i> reveal trailer,<ref>[https://www.youtube.com/watch?v=pFAknD_9U7c Hollow Knight: Silksong Reveal Trailer]</ref>  and its theme was released in December 2019.<ref>[https://www.teamcherry.com.au/blog/11xf7azcuebhybgossfhdc0mphiqbs/ Team Cherry Blog Post] of December 13th, 2019.</ref> In June 2019, a screenshot of the town's right-side was released in a [[Team Cherry]] blog post, featuring Flick the Fixer working on a Wishwall. It showcases the same layout as the final game, but with darker visuals.<ref>[https://www.teamcherry.com.au/blog/post-e3-wrap-silksong-systems-update Team Cherry blog post] of June 25th, 2019</ref>
+
+The primary changes throughout development were in the sub-area Mosshome. It used to be double in size, with a large portion of eastern rooms which connected it to the [[Bench (Silksong)|bench]] passage between [[the Marrow]] and [[Shellwood]]. These rooms were removed following the April 2021 map. A second [[Craggler]] could be found in the room just south of the [[Weaver Burial Spire]], it appears to be removed post-September 2021. Additionally, at some point, cut [[Aknid]] eggs were planned to appear in the eastern bench room; they likely had the ability to hatch.<ref><code>collectorEggsHatched</code></ref> Like the town, Mosshome was seen in the reveal trailer, being the focus of multiple clips.<ref>[https://www.youtube.com/watch?v=pFAknD_9U7c Hollow Knight: Silksong Reveal Trailer]</ref>
+{{Clear}}
+{{Gallery|
+|Title = Gallery
+|Image1 = Screenshot SS Moss Grotto 12.png!Ruined Chapel (front)
+|Image2 = Screenshot SS Moss Grotto 11.png!Ruined Chapel (inside)
+|Image3 = Screenshot SS Moss Grotto 10.png!Ruined Chapel (behind)
+|Image4 = Screenshot SS Moss Grotto 13.png!Drop with Bridge
+|Image5 = Screenshot SS Bone Bottom 01.png!Bone Bottom settlement
+|Image6 = Bellway Bonebottom (Entrance).png!Bellway Station Entrance
+|Image7 = Screenshot SS Bone Bottom 03.png!Bellway Station
+|Image8 = Screenshot SS Bone Bottom 02.png!Statue of Hope
+|Image9 = Screenshot SS Moss Grotto 14.png!Moss Druid
+|Image10 = Screenshot SS Moss Grotto 23.png![[Silkspear]] Weaver Spire
+|Image11 = Screenshot SS Moss Grotto 15.png!Cliffside Envoy
+|Image12 = Screenshot SS Moss Grotto 16.png!Chapel of the Wanderer Arena
+|Image13 = Screenshot SS Moss Grotto 18.png!Chapel of the Wanderer Corpse (pre-claiming)
+|Image14 = Screenshot SS Moss Grotto 19.png!Chapel of the Wanderer Corpse (post-claiming)
+|Image15 = Screenshot SS Sula 01.png!Summoned Saviour summoning
+|Image16 = Silksong Early 018.png!<i>Silksong</i> reveal trailer
+|Image17 = Moss Temple Temp.png!Pre-release screenshot
+|Image18=Silksong Early 029.png!Pre-release screenshot}}
+
+== Trivia ==
+* Bone Bottom, being a rural hub town and the first town encountered in the game, is similar to [[Dirtmouth]] from <i>[[Hollow Knight]]</i>.<ref name=edge>[https://pocketmags.com/edge-magazine/february-2021 Edge Magazine February 2021 edition], p. 55.</ref>
+{{Localisation
+|DEname = Knochengrund
+|DEmeaning = Bone Bottom
+|ESname = Valle Óseo
+|ESmeaning = Osseous Valley
+|FRname = Gouffre d'os
+|FRmeaning = Chasm of Bones
+|ITname = Bossopiano
+|ITmeaning = Play on <i>bassopiano</i> (lowlands) with <i>basso</i> (low) turned to bosso with <i>osso</i> (bone).
+|JAname = 骨溜まりの麓
+|JAromanised = Hone tamari no fumoto
+|JAmeaning = Bottom of a Bonepit
+|KOname = 뼈의 바닥
+|KOromanised = Ppyeoui badak
+|KOmeaning = Bottom of Bone
+|PTname = Vale dos Ossos
+|PTmeaning = Valley of Bones
+|RUname = Костяная Низина
+|RUromanised = Kostjanaja Nizina
+|RUmeaning = Bony Bottom or Bony Lowlands
+|ZHname = 骸底镇
+|ZHromanised = Hái dǐ zhèn
+|ZHmeaning = Bone Bottom Town
+|TWname = 骸底鎮
+|TWromanised = Hái dǐ zhèn
+|TWmeaning = same
+|CODEname=BONETOWN
+}}
+
+=== Mosshome ===
+{{Localisation
+|hr=false
+|DEname = Moosheim
+|DEmeaning = Mosshome
+|ESname = Hogar Musgoso
+|ESmeaning = Mossy Home
+|FRname = Verdoison
+|FRmeaning = Portmanteau of <i>verdoyante</i> (verdant) and <i>maison</i> (home).
+|ITname = Borgomuschio
+|ITmeaning = Moss Village
+|JAname = 苔の里
+|JAromanised = Koke no sato
+|JAmeaning = Moss Village
+|KOname = 이끼 집
+|KOromanised = Ikki jib
+|KOmeaning = Moss Home or Moss House
+|PTname = Musgália
+|PTmeaning = From <i>musgo</i> (moss) and <i>-ália</i> (suffix for land or town).
+|RUname = Мохоум
+|RUromanised = Moxoum
+|RUmeaning = Portmanteau of мох <i>mox</i> (moss) and хоум <i>xoum</i> (home).
+|ZHname = 苔栖乡
+|ZHromanised = Tái qī xiāng
+|ZHmeaning = Mossy Village
+|TWname = 苔棲鄉
+|TWromanised = Tái qī xiāng
+|TWmeaning = same
+|CODEname=MOSSTOWN
+}}
+
+=== Bonegrave ===
+{{Localisation
+|hr=false
+|DEname = Knochengrab
+|DEmeaning = Bonegrave
+|ESname = Cementerio Óseo
+|ESmeaning = Bone Cemetery
+|FRname = L'Ossuaire
+|FRmeaning = The Ossuary<br><small>[[wikipedia:Ossuary|Ossuary]] is a container for skeletal remains.</small>
+|ITname = Ossario
+|ITmeaning = Ossuary
+|JAname = 骨の墓所
+|JAromanised = Hone no bosho
+|JAmeaning = Bone Graveyard
+|KOname = 뼈의 무덤
+|KOromanised = Ppyeoui mudeom
+|KOmeaning = Bone Tomb
+|PTname = Necrósseo
+|PTmeaning = Portmanteau of <i>necrópole</i> (necropolis) and <i>ósseo</i> (bone).
+|RUname = Костяной погост
+|RUromanised = Kostjanoj pogost
+|RUmeaning = Bone Cemetery<br><small>In archaic definitions, погост <i>pogost</i> specfically refers to a cemetery adjoined to a church.</small>
+|ZHname = 骸冢
+|ZHromanised = Hái zhǒng
+|ZHmeaning = Bone Grave
+|TWname = 骸骨墓地
+|TWromanised = Háigǔ mùdì
+|TWmeaning = Skeleton Graveyard
+|CODEname=BONETOWN_GRAVEYARD
+}}
+
+=== Chapel of the Wanderer ===
+{{Localisation
+|hr=false
+|DEname = Kapelle des Wanderers
+|DEmeaning = Chapel of the Wanderer
+|ESname = Capilla de la Errante
+|ESmeaning = Chapel of the Wanderer
+|FRname = Chapelle Du Vagabond
+|FRmeaning = Chapel of the Vagabond
+|ITname = Cappella dell'Errante
+|ITmeaning = Chapel of the Wanderer
+|JAname = 放浪者のチャペル
+|JAromanised = Hōrōsha no chaperu
+|JAmeaning = Wanderer's Chapel
+|KOname = 방랑자의 예배당
+|KOromanised = Bangrangjaui yebaedang
+|KOmeaning = Wanderer's Chapel
+|PTname = Capela da Viajante
+|PTmeaning = Chapel of the Traveler
+|RUname = Капелла Странника
+|RUromanised = Kapella Strannika
+|RUmeaning = Chapel of the Wanderer
+|ZHname = 漫游者教堂
+|ZHromanised = Mànyóu zhě jiàotáng
+|ZHmeaning = Wanderer Chapel
+|TWname = 漫遊者教堂
+|TWromanised = Mànyóu zhě jiàotáng
+|TWmeaning = same
+|CODEname=CHAPEL_WANDERER
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav Areas}}
+
+[[fr:Gouffre d'Os]]
+[[zh:骸底镇]]

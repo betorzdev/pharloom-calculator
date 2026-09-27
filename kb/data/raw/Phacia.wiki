@@ -1,0 +1,91 @@
+{{SS Infobox Enemy
+|drops = None
+|numbers_required = 25
+|image1 = <gallery>
+B Phacia.png|Hunter's Journal
+Phacia Extended.png|Attacking
+Phacia Disguised.png|Disguised
+</gallery>
+|health = 15/{{BT|30}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.75|0.75|0.75|0.75}}
+|singnum = 1
+}}
+{{Quote
+| Hr = Journal
+|Drifting bug disguised as a flower. Disperses crackling clouds of pollen if threatened.<hr/>
+Quite a beautiful creature. In my own kingdom's court, it would have been highly favoured as an ornamental pet.
+}}
+
+<b>Phacias</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are white drifting bugs that disguise themselves as flowers and disperse pollen clouds.<ref>Phacia [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Drifting bug disguised as a flower. Disperses crackling clouds of pollen if threatened."</i></ref>
+
+== Behaviour and Tactics ==
+Phacias float in place and slowly return to their original position if they are pushed away from it. They are drawn towards [[Hornet (Silksong)|Hornet]]'s [[Challenge]] ability or any shakes from Hornet colliding with surfaces.
+
+When Hornet is in range, they screech and indicate the area of effect before releasing a large cloud of harmful pollen that combos Hornet for {{Damage|1+1}}.
+
+They may sometimes be found disguised as flowers, only revealing themselves when Hornet approaches.
+
+=== Act 3 ===
+[[Black-threaded]] Phacias have their health doubled. They gain the [[Black-Threading#Movesets|Void Blades]] attack, which replaces their normal pollen cloud.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* Drifting, dancing, falling seeds...
+* Thirsty roots creeping down...
+* Sleeping... Sleeping...
+* Voice! Wake! Voice calls out...
+}}
+
+== Location ==
+Phacias can be found in [[Shellwood]], the [[Memorium]], and the [[Grand Gate]].
+
+{{Gallery
+|Image1 = Mapshot SS Phacia 01.png!Locations in Shellwood
+|Image2 = Mapshot SS Phacia 02.png!Locations in the Memorium
+|Image3 = Mapshot SS Phacia 03.png!Locations in the Grand Gate
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Phacia 01.png!Disguised
+|Image2 = Screenshot SS Phacia 02.png!In Shellwood
+|Image3 = Screenshot SS Phacia 03.png!Reacting to the Needolin
+|Image4 = Screenshot SS Phacia 04.png!Attacking
+|Image5 = Screenshot SS Phacia 05.png!In Memorium
+|Image6 = Screenshot SS Phacia 06.png!In the Grand Gate
+|Image7 = Screenshot SS Phacia 07.png!Disguised while black-threaded
+|Image8 = Screenshot SS Phacia 08.png!Attacking while black-threaded
+|Image9 = Screenshot SS Void Mass 10.jpg![[Void Mass]] of Phacias
+}}
+
+{{Localisation
+|DEname = Phacia
+|DEmeaning = —
+|ESname = Facia
+|ESmeaning = —
+|FRname = Phacia
+|FRmeaning = —
+|ITname = Floralia
+|ITmeaning = From flora and <i>-lia</i> (feminine suffix)
+|JAname = ファシア
+|JAromanised = Fashia
+|JAkatakana = foreignenemy
+|JAmeaning = Phacia
+|KOname = 파시아
+|KOromanised = Pasia
+|KOmeaning = Phacia
+|PTname = Fácia
+|PTmeaning = —
+|RUname = Ложноцвет
+|RUromanised = Ložnocvet
+|RUmeaning = Portmanteau of {{lang|ru|ложный}} <i>ložnyj</i> (false) {{lang|ru|цвет}} <i>cvet</i> (flower or bloom).
+|ZHname = 幻形花虻
+|ZHromanised = Huànxíng huā méng
+|ZHmeaning = Illusory Flower Horsefly
+|CODEname= FLOWER_DRIFTER
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

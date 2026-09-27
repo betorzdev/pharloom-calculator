@@ -1,0 +1,85 @@
+{{SS Infobox Enemy
+| title1 = Massive Mossgrub
+| health = 80
+| damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+| hasdrop = true
+| sh1 = 8-12
+| sh2 = 10-15
+| numbers_required = 3
+|singnum = 1
+}}
+
+{{Quote
+| Unnaturally overgrown Mossgrub, bred within the Citadel's Memorium. <hr/>So close to a perfect furred form... If only they'd been able to breed out the spines.
+| Hr = Journal
+}}
+
+<b>Massive Mossgrubs</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are overgrown [[Mossgrub]]s, bred by the [[Memorium]] to an unnatural size.<ref>Massive Mossgrub [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Unnaturally overgrown Mossgrub, bred within the Citadel's Memorium."</i></ref>
+
+== Behaviour and Tactics ==
+Massive Mossgrubs remain idle until provoked. Once disturbed, they screech and rapidly charge forward, dealing {{damage|2}} on contact, and only stop when they reach a ledge or a wall. After stopping, they turn around and begin crawling slowly in the opposite direction, unless [[Hornet (Silksong)|Hornet]] is still in their line of sight or they take damage, in which case they charge again.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* Mother's voice... distant...
+* Little sisters... hide away...
+* Eat and grow... larger...
+* Change... hidden change...
+}}
+
+== Location ==
+Massive Mossgrubs can be found in the [[Moss Grotto]] section of the [[Memorium]].
+
+{{Gallery
+|Image1 = Mapshot SS Massive Mossgrub 01.png!Locations in the Memorium
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot_SS_Massive_Mossgrub_01.png!Idle with a regular Mossgrub
+|Image2 = Screenshot_SS_Massive_Mossgrub_02.png!Screeching
+|Image3 = Screenshot_SS_Massive_Mossgrub_03.png!Charging
+|Image4 = Screenshot_SS_Massive_Mossgrub_04.png!Reacting to the Needolin
+}}
+
+== Trivia ==
+* Their [[Needolin]] dialogue shows they sense they are far away from their true home.
+* Massive Mossgrubs do not respond to the Needolin once they become hostile. The only way to get them to respond is by staying above them and using the [[Spider Strings]] tool.
+
+{{Localisation
+|DEname = Gewaltige Mooslarve
+|DEmeaning = Enormous Moss Larva
+|ESname = Reptamusgo enorme
+|ESmeaning = Enormous Mossgrub
+|FRname = Ver Verdoyant Colossal
+|FRmeaning = Colossal Verdant Worm
+|ITname = Larvamuschio Gigante
+|ITmeaning = Gigantic Mossgrub
+|JAname = オオコケフサ
+|JAromanised = Ō koke fusa
+|JAkatakana = enemy
+|JAmeaning = Large Mossgrub<br><small>Combination of {{lang|ja|大 <i>ō</i>}} (large), {{lang|ja|苔 <i>koke</i>}} (moss) and {{lang|ja|房 <i>fusa</i>}} (tuft).</small>
+|KOname = 거대 이끼유충
+|KOromanised = Geodae ikkiyuchung
+|KOmeaning = Giant Moss Larva
+|PTname = Musgolarva-gigante
+|PTmeaning = Giant Mosslarva
+|RUname = Огромный выползмшень
+|RUromanised = Ogromnyj vypolzmšen'
+|RUmeaning = Huge Mossgrub
+|TWname = 大型苔蘚蠕蟲
+|TWromanised = Dàxíng táixiǎn rúchóng
+|TWmeaning = same
+|ZHname = 大型苔藓蠕虫
+|ZHromanised = Dàxíng táixiǎn rúchóng
+|ZHmeaning = Large Moss Worm
+|CODEname = MOSSBONE_CRAWLER_FAT
+|CODEmeaning = <code>MOSSBONE_CRAWLER</code> refers to [[Mossgrub]]s.
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[fr:Ver Verdoyant Colossal]]

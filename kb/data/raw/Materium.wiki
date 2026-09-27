@@ -1,0 +1,397 @@
+{{SS Infobox Item
+| title = Materium
+| source = [[Memorium]]
+| description = Tubes and receptacles built for the storing, recording and research of various materials.<hr/>
+The Materium can be assembled in a home.
+}}
+
+{{Quote
+|From the outset, theirs was a hopeless task. Those wild lands could never be replicated within a space so artificial.
+|[[Hornet (Silksong)|Hornet]]
+|Hr = Hornet
+}}
+
+The <b>Materium</b> is an [[Items (Silksong)|item]] in <i>[[Hollow Knight: Silksong]]</i>. It can be used to display various items and materials in Hornet's [[Bellhome]].
+
+== Use ==
+After [[Hornet (Silksong)|Hornet]] acquires the Materium, it can be brought to the [[Bellhome]] and assembled to be used to record various Materials and Mementos Hornet has found throughout her journey.
+
+If both the Materium and the Desk are installed, then the two furnishings combine, allowing the Desk's [[Items (Silksong)#Tradables|Relics]] and [[Psalm Cylinder]]s to be viewable in the same window as the Materium's Materials and Mementos.
+
+{{Gallery
+|Image1 = Mapshot SS Bellhome.png!Location in Bellhart
+|Image2 = Screenshot SS Bellhart 09.png!Materium in Bellhome in Bellhart
+}}
+
+== How to Acquire ==
+The Materium can be found in the upper part of the [[Memorium]], in the room before the room containing the [[Voltvessels]].
+
+{{Gallery
+| Image1 = Mapshot SS Materium.png!Location in the Memorium
+| Image2 = Screenshot SS Materium 01.png!Materium in the Memorium
+}}
+
+== Displayed Items ==
+[[File:SS Materium header.png|center|450px]]
+=== Materium ===
+{| class="article-table formatted-table" width="100%"
+|-
+! style="width: 8rem;" | Appearance 
+! Description
+! style="min-width: 20rem;" |Location
+|-
+| <center>[[File:Silk.png|link=Silk|90px]]<br>[[Silk]]</center>
+| align="center" | <i>Fine thread spun from the soul of its creator. Highly coveted for its remarkable strength and mystical properties. Used to heal wounds, extend life and weave powerful runes.</i>
+| align="center" | Entry unlocked by default.
+|-
+| <center>[[File:Shell Shards large.png|link=Shell Shards|90px]]<br>[[Shell Shards]]</center>
+| align="center" | <i>Hardened fragments of shell and bone, used in the crafting of tools and traps.</i>
+| align="center" | Unlocked after picking up a Shell Shard.
+|-
+| <center>[[File:Rosaries large.png|link=Rosaries|90px]]<br>[[Rosaries]]</center>
+| align="center" | <i>Beads carved from various materials, used as a measure of faith and traded as currency. Each is etched with a fine patterned design.</i>
+| align="center" | Unlocked after picking up a Rosary.
+|-
+| <center>[[File:Shell Rosaries large.png|link=Rosaries|90px]]<br>[[Rosaries|Shell Rosaries]]</center>
+| align="center" | <i>Beads carved from polished shell. The finer material reflects their increased value.</i>
+| align="center" | Unlocked after picking up a Shell Rosary.
+|-
+| <center>[[File:Pearl Rosaries large.png|link=Rosaries|90px]]<br>[[Rosaries|Pearl Rosaries]]</center>
+| align="center" | <i>Gleaming pearl carved over with intricate markings. The rarest and most highly valued rosaries in all of Pharloom.</i>
+| align="center" | Unlocked after picking up a Pearl Rosary.
+|-
+| <center>[[File:Mossberry.png|link=Mossberry|90px]]<br>[[Mossberry]]</center>
+| align="center" | <i>Sweet fruit that grows in moist environments. Its seeds are toxic to most creatures.</i>
+| align="center" | See {{Section link|Mossberry#How to Acquire}}.
+|-
+| <center>[[File:Mossberry Stew.png|link=Mossberry Stew|90px]]<br>[[Mossberry Stew]]</center>
+| align="center" | <i>Thick, syrupy soup of Mossberries and druidic herbs. Sweet and aromatic, but poisonous to most creatures.</i>
+| align="center" | Given by [[Moss Druid]] during the <i>[[Great Taste of Pharloom]]</i> [[wish]].
+|-
+| <center>[[File:Pilgrim Shawl.png|link=Pilgrim Shawl|90px]]<br>[[Pilgrim Shawl]]</center>
+| align="center" | <i>Simple garment worn by several pilgrims over the ages. Torn, tattered and repaired many times over.</i>
+| align="center" | Obtained from the corpses of slain pilgrims during the <i>[[Garb of the Pilgrims]]</i> wish.
+|-
+| <center>[[File:Flintstone.png|link=Flintstone|90px]]<br>[[Flintstone]]</center>
+| align="center" | <i>Long burning rock from the base of Pharloom. Mined and used by the Citadel in its forgings.</i>
+| align="center" | Found in the lower half of [[Deep Docks]].
+|-
+| <center>[[File:Flintgem.png|link=Flintgem|90px]]<br>[[Flintgem]]</center>
+| align="center" | <i>Gem-like organ taken from a Flintbeetle. Produces incendiary sparks when abraded, and may explode if cracked or dropped.</i>
+| align="center" | Dropped by slain [[Flintbeetle]]s, which only appear in [[the Marrow]] during <i>[[Volatile Flintbeetles]]</i> wish.
+|-
+| <center>[[File:Craftmetal.png|link=Craftmetal|90px]]<br>[[Craftmetal]]</center>
+| align="center" | <i>Rare element found naturally within the rock and bone of Pharloom.<br><br>Used by skilled craftsbugs in the construction of tools and trinkets.</i>
+| align="center" | See {{Section link|Craftmetal#How to Acquire}}.
+|-
+| <center>[[File:Spine Core.png|link=Spine Core|80px]]<br>[[Spine Core]]</center>
+| align="center" | <i>Flexible fibre from within a Hoker's spine. Can be woven into garments and accessories by a skilled seamstress.</i>
+| align="center" | Dropped by [[Hoker|Hokers]] during the <i>[[Flexile Spines]]</i> wish.
+|-
+| <center>[[File:Crown Fragment.png|link=Crown Fragment|90px]]<br>[[Crown Fragment]]</center>
+| align="center" | <i>Large spike of bone collected from a defeated Skull Tyrant.</i>
+| align="center" | Dropped by [[Skull Tyrant]] during <i>[[The Terrible Tyrant]]</i> wish.
+|-
+| <center>[[File:Horn Fragment.png|link=Horn Fragment|90px]]<br>[[Horn Fragment]]</center>
+| align="center" | <i>Hardened chunk of horned shell collected from a defeated Savage Beastfly.</i>
+| align="center" | Dropped by [[Savage Beastfly]] during the <i>[[Savage Beastfly (Wish)|Savage Beastfly]]</i> wish.
+|-
+| <center>[[File:Silver Bell.png|link=Silver Bell|90px]]<br>[[Silver Bell]]</center>
+| align="center" | <i>Finely forged bell made from a gleaming metal.</i>
+| align="center" | Found in the bellvein tunnels above and below [[Bellhart]] during the <i>[[Silver Bells]]</i> wish.
+|-
+| <center>[[File:Pale Oil.png|link=Pale Oil|90px]]</center><center>[[Pale Oil]]</center>
+| align="center" | <i>Bile gland of a rare sylphean slug. Talented pinmasters can use the glistening liquid within to improve a blade's sharpness.</i>
+| align="center" | See {{Section link|Pale Oil#How to Acquire}}.
+|-
+| <center>[[File:Plasmium.png|link=Plasmium|90px]]<br>[[Plasmium]]</center>
+| align="center" | <i>Liquid lifeseed, possessed of remarkable regenerative qualities. A substance foreign to Pharloom, introduced by the Alchemist Zylotol.</i>
+| align="center" | Collected using the [[Needle Phial]] during the <i>[[Alchemist's Assistant]]</i> wish. 
+|-
+| <center>[[File:Plasmified Blood.png|link=Plasmified Blood|90px]]<br>[[Plasmified Blood]]</center>
+| align="center" | <i>Blood of a creature merged full with liquid lifeseed. Possesses powerful regenerative qualities.</i>
+| align="center" | Collected using the [[Needle Phial]] during the <i>[[Advanced Alchemy]]</i> wish. 
+|-
+| <center>[[File:Ragpelt.png|link=Ragpelt|90px]]<br>[[Ragpelt]]</center>
+| align="center" | <i>Tattered pelt taken from the body of a Crawbug. Fragile and drab, it is considered to have few practical uses.</i>
+| align="center" | Dropped by [[Craws]] during the <i>[[Crawbug Clearing]]</i> wish. 
+|-
+| <center>[[File:Pollip Heart.png|link=Pollip Heart|70px]]<br>[[Pollip Heart]]</center>
+| align="center" | <i>Core of a flower formed around the body of a consumed Wood Wasp. Secretes a sticky sap that the wasps subsist on.</i>
+| align="center" | See {{Section link|Pollip Heart#How to Acquire}}.
+|-
+| <center>[[File:Roach Guts.png|link=Roach Guts|90px]]<br>[[Roach Guts]]</center>
+| align="center" | <i>Fresh innards of a Muckroach, tough and slimy with a rank odour. Unpalatable to most.</i>
+| align="center" | Dropped by [[Muckroach|Muckroaches]] during the <i>[[Roach Guts (Wish)|Roach Guts]]</i> wish.
+|-
+| <center>[[File:Courier's Swag.png|link=Courier's Swag|90px]]<br>[[Courier's Swag]]</center>
+| align="center" | <i>Heavy cloth sack containing tools, trinkets and medical aids.</i>
+| align="center" | Given by [[Tipp & Pill]] during [[Delivery Wishes]].
+|-
+| <center>[[File:Queen's Egg.png|link=Queen's Egg|90px]]<br>[[Queen's Egg]]</center>
+| align="center" | <i>Fragile egg containing a young Silkeater Queen. Though the Queen cannot gather Silk itself, with time and care it could be raised to breed more Silkeaters.</i>
+| align="center" | Given by [[Tipp & Pill]] during the <i>[[Queen's Egg (Wish)|Queen's Egg]]</i> wish.<br/><i>Unobtainable in {{Steel Soul Icon Mini|SS}} [[Steel Soul Mode (Silksong)|Steel Soul Mode]]</i>.
+|-
+| <center>[[File:Liquid Lacquer.png|link=Liquid Lacquer|90px]]<br>[[Liquid Lacquer]]</center>
+| align="center" | <i>Pale glaze used in the preparation and protection of bone masks.</i>
+| align="center" | Given by [[Tipp & Pill]] during the <i>[[Liquid Lacquer (Wish)|Liquid Lacquer]]</i> wish.
+|-
+| <center>[[File:Courier's Rasher.png|link=Courier's Rasher|90px]]<br>[[Courier's Rasher]]</center>
+| align="center" | <i>Fatty meat of indeterminate origin. Once prepared it will quickly spoil if not stored properly.</i>
+| align="center" | Given by [[Tipp & Pill]] during the <i>[[Great Taste of Pharloom]]</i> wish.
+|-
+| <center>[[File:Vintage Nectar.png|link=Vintage Nectar|90px]]<br>[[Vintage Nectar]]</center>
+| align="center" | <i>High quality nectar of a long-lived aphid, kept in storage over many lifetimes to allow a complex maturation.</i>
+| align="center" | Sold by [[Creige]] during the <i>[[Great Taste of Pharloom]]</i> wish.
+|-
+| <center>[[File:Pickled Muckmaggot.png|link=Pickled Muckmaggot|90px]]<br>[[Pickled Muckmaggot]]</center>
+| align="center" | <i>Pungent delicacy preserved in roach brine. The most famous creation of the disgraced chef Lugoli.</i>
+| align="center" | Dropped by [[Disgraced Chef Lugoli]] when they are defeated.
+|-
+| <center>[[File:Crustnut.png|link=Crustnut|90px]]<br>[[Crustnut]]</center>
+| align="center" | <i>Tough, furred seed from the centre of a corpora cluster. Stale to taste, but strong once ground as seasoning.</i>
+| align="center" | Found in [[Sands of Karak]].
+|-
+| <center>[[File:Steel Spines.png|link=Steel Spines|90px]]<br>[[Steel Spines]]</center>
+| align="center" | <i>Hard forged spines, intended for use in heavy machinery and able to pierce through even the toughest shell.</i>
+| align="center" | Sold by [[Crull and Benjin]] during the <i>[[Infestation Operation]]</i> wish.
+|-
+| <center>[[File:Choir Cloak.png|link=Choir Cloak|90px]]<br>[[Choir Cloak]]</center>
+| align="center" | <i>Garment gifted to pilgrims on admittance to the Citadel. Its thick weave offers additional protection against wind and cold.</i>
+| align="center" | Obtained from the corpses of slain [[choir]]bugs during the <i>[[Cloaks of the Choir]]</i> wish.
+|-
+| <center>[[File:Magnetite.png|link=Magnetite|90px]]<br>[[Magnetite]]</center>
+| align="center" | <i>Brittle levitating rock, found throughout the fringes of Pharloom.</i>
+| align="center" | Found near the [[Brightvein]].
+|-
+| <center>[[File:Broodmother's Eye.png|link=Broodmother's Eye|90px]]<br>[[Broodmother's Eye]]</center>
+| align="center" | <i>Gelatinous organ collected from the defeated Broodmother.</i>
+| align="center" | Dropped after slaying the [[Broodmother]], which only appears in [[the Slab]] during <i>[[The Wailing Mother]]</i> wish.
+|-
+| <center>[[File:Seared Organ.png|link=Seared Organ|90px]]<br>[[Seared Organ]]</center>
+| align="center" | <i>Meat harvested from a defeated creature. It has been seared in a way that noticeably affects the flavour.</i>
+| align="center" | See {{Section link|Seared Organ#How to Acquire}}.
+|-
+| <center>[[File:Shredded Organ.png|link=Shredded Organ|90px]]<br>[[Shredded Organ]]</center>
+| align="center" | <i>Meat harvested from a defeated creature. It has been diced into fine chunks.</i>
+| align="center" | See {{Section link|Shredded Organ#How to Acquire}}.
+|-
+| <center>[[File:Skewered Organ.png|link=Skewered Organ|90px]]<br>[[Skewered Organ]]</center>
+| align="center" | <i>Meat harvested from a defeated creature. It has been cleanly speared through, but is otherwise intact.</i>
+| align="center" | See {{Section link|Skewered Organ#How to Acquire}}.
+|-
+| <center>[[File:Voltridian.png|link=Voltridian|90px]]<br>[[Voltridian]]</center>
+| align="center" | <i>Hard, charged stone that can catch, store and discharge electricity.</i>
+| align="center" | Found in the eastern part of [[Voltnest]].
+|-
+| <center>[[File:Hermit's Soul.png|link=Hermit's Soul|90px]]<br>[[Hermit's Soul]]</center>
+| align="center" | <i>Heavy bell filled with the shimmering soul of the Bell Hermit.</i>
+| align="center" | Given by [[Bell Hermit]] during the <i>[[Silk and Soul]]</i> wish.
+|-
+| <center>[[File:Maiden's Soul.png|link=Maiden's Soul|90px]]<br>[[Maiden's Soul]]</center>
+| align="center" | <i>Vial gifted by the Chapel Maid, filled full with swirling soul.</i>
+| align="center" | Given by [[Chapel Maid]] during the <i>[[Silk and Soul]]</i> wish.
+|-
+| <center>[[File:Seeker's Soul.png|link=Seeker's Soul|90px]]<br>[[Seeker's Soul]]</center>
+| align="center" | <i>Cracked shell containing soul drawn from a long deceased bug.</i>
+| align="center" | Found at [[Bilehaven]] in [[Bilewater]] after defeating [[Groal the Great]].
+|-
+| <center><center>[[File:Encrusted Heart.png|link=Encrusted Heart|90px]]<br>[[Encrusted Heart]]</center>
+| align="center" | <i>Enlivened heart of Crust King Khann. It beats deep and slow.</i>
+| align="center" | Acquired after defeating [[Crust King Khann]] in the [[Coral Tower]].
+|-
+| <center>[[File:Pollen Heart.png|link=Pollen Heart|90px]]<br>[[Pollen Heart]]</center>
+| align="center" | <i>Enlivened heart of Nyleth. It beats faint and fast.</i>
+| align="center" | Acquired after defeating [[Nyleth]] in [[Grand Gate]].
+|-
+| <center>[[File:Hunter's Heart.png|link=Hunter's Heart|90px]]<br>[[Hunter's Heart]]</center>
+| align="center" | <i>Enlivened heart of Skarrsinger Karmelita. Its beat is steady and strong.</i>
+| align="center" | Acquired after defeating [[Skarrsinger Karmelita]] in [[Far Fields]].
+|-
+| <center>[[File:Conjoined Heart.png|link=Conjoined Heart|90px]]<br>[[Conjoined Heart]]</center>
+| align="center" | <i>Enlivened heart of the Green Prince. Its beat is sharp and clear.</i>
+| align="center" | Acquired after defeating the [[Clover Dancers]] in [[Verdania#Lost Verdania|Lost Verdania]].
+|-
+|}
+
+=== Relics ===
+{| class="article-table formatted-table" width="100%"
+|-
+! style="width: 8rem;" | Appearance 
+! Description
+! style="min-width: 20rem;" |Location
+|-
+| rowspan="4" | <center>[[File:Bone Scroll.png|link=Bone Scroll|80px]]<br>[[Bone Scroll]]</center>
+| align="center" | <b><i>Crumpled parchment containing the prayer of a Burning Bug.</i></b><br><br><i>"Hail to your heat! O glorious flame. You who builds and breaks us. Sear our shells. Char them black. That we may rise to join you, wreathed in bright and blazing joy."</i>
+| align="center" | In the [[Wisp Thicket]], room east of the bench
+|-
+| align="center" | <b><i>Singed parchment containing a pilgrim's scrawl.</i></b><br><br><i>"My dear companions, all are gone now, devoured, scorched, fallen to exhaustion, or worse, seduced by the Haunting."</i>
+| align="center" | In the [[Far Fields]], east of [[Seamstress]]'s home, up a tall wind current.
+|-
+| align="center" | <b><i>Faded parchment containing the last words of a lost pilgrim.</i></b><br><br><i>"-ter I die here in the damp dark than join those poor sods, trapped to stumble, aimless and empty, until their limbs fall to dust."</i>
+| align="center" | In [[Greymoor]], east of [[Halfway Home]].
+|-
+| align="center" | <b><i>Filthy rag, marked with the scrawl of an Underworker.</i></b><br><br><i>"So much suffering. Are we truly chosen, or have we sinned unknowing, and now are punished for it?"</i>
+| align="center" | In the western [[Underworks]].
+|-
+| rowspan="3" | <center>[[File:Weaver Effigy.png|link=Weaver Effigy|70px]]<br>[[Weaver Effigy]]</center>
+| align="center" | <b><i>Carving of Camora, Weaver of healing. A prayer is etched upon it.</i></b><br><br><i>"Weaver, heal my sons, their fearful hearts, their limbs that shake at the climb to come. We pray, gift but a glimmer of your strength, that when we stand before your divinity, you see bugs shed free of fear."</i>
+| align="center" |  West of [[Moss Grotto#Sub-area: Mosshome|Mosshome]], below the entrance to the [[Wormways]].
+|-
+| align="center" | <b><i>Carving of Keelal, Weaver of the path. A prayer is etched upon it.</i></b><br><br><i>"Blessed Weaver, lady of grace, you who see our sin, our frail shells, our voices weak, and still offer your protection. How great your mind to care so much for ones so lowly."</i>
+| align="center" | East of [[Chapel of the Witch]].<br> Accessible after completing the [[Quests|Rite of Rebirth]] wish.
+|-
+| align="center" | <b><i>Carving of Atla, Weaver of time. A prayer is etched upon it.</i></b><br><br><i>"By grace of your example, and our history held full in mind, our song is yours, as your name is sacred. Weaver Atla, may you be praised eternal."</i>
+| align="center" | In a room below [[First Sinner]]'s cell (requires [[Key of Apostate]]).
+|-
+| rowspan="4" | <center>[[File:Choral Commandment.png|link=Choral Commandment|80px]]<br>[[Choral Commandment]]</center>
+| align="center" | <b><i>Decree of the Citadel, dirty and worn.</i></b><br><br><i>"Full Chamber to the kingdom of the White Wyrm. Claim the Weaver, in half part. Last of their line. Sensed strong with Silk.<br>Resistance anticipated. Quell with rune cage."</i>
+| align="center" | Western edge of [[Moss Grotto|Mosshome]], behind a breakable wall.
+|-
+| align="center" | <b><i>Surgeon's orders.</i></b><br><br><i>"Devout has succumbed during Silk suture. Refuses to revive. Sin committed. Permit no rites.<br>Husk marked for cremation. Retrieve dregs."</i>
+| align="center" | Western [[Whiteward]].
+|-
+| align="center" | <b><i>Last edict of the Conductors.</i></b><br><br><i>"And lo, is eternity sustained. By Architect's claw, we welcome that final form, of dial and rotor, and soul gladly given.<br><br>The perfect, unfaltering voice."</i>
+| align="center" | Bought from [[Jubilana]] for {{R|180}}.
+|-
+| align="center" | <b><i>Tattered decree of the Citadel.</i></b><br><br><i>"Bug of voice grown hoarse or shell fallen frail, you have been selected for duty most sacred.<br>Become our light, our guide in darkness, that others worthy may climb to join the holy song."</i>
+| align="center" | Eastern [[Whiteward]] (Requires [[Silk Soar]] or a precise jump with [[Faydown Cloak]]).
+|-
+| rowspan="3" | <center>[[File:Rune Harp.png|link=Rune Harp|70px]]<br>[[Rune Harp]]</center>
+| align="center" | <b><i>Words of a Weaver from the nest beneath Bone Bottom.</i></b><br><br><i>"Hide her deep, the despised child, our shame shown in shell of iron. She is a wish cast vain, divinity mimicked in form too frail."</i>
+| align="center" | [[Weavenest Atla]] (requires [[Needolin]] and [[Cling Grip]]).
+|-
+| align="center" | <b><i>Plea of a Weaver from the furthest edge of Pharloom.</i></b><br><br><i>"Flee, sisters. Flee until your strength exhausts, so far you may escape at last her silken sight.<br>To start anew, to sustain, free of web and service eternal."</i>
+| align="center" | [[Far Fields|Weavenest Cindril]], lower level (requires [[Needolin]], [[Silkspeed Anklets]], and [[Flea Brew]]).
+|-
+| align="center" | <b><i>Last words of the Weavers.</i></b><br><br><i>"Sisters, spiders, the burden is passed. These simple bugs shall bear it full. Never to cease. Never to silence.<br>We shall die, and wait, and pray, that one may come of silken strength enough to weave us free."</i>
+| align="center" | [[High Halls]], in the room left of [[High Halls|The Forum]], where [[Conductor Ballador]] can be found in [[Acts|Act 2]] (Exclusive to [[Acts|Act 3]]).
+|-
+| <center>[[File:Arcane Egg Silksong.png|link=Arcane Egg (Silksong)|75px]]<br>[[Arcane Egg (Silksong)|Arcane Egg]]</center>
+| align="center" | <b><i>An artefact almost impossibly old, marked inside with many fine etchings. Most are indecipherable.</i></b><br><br><i>"...No will... No self... Shade..."</i>
+| align="center" | Upper part of [[The Abyss (Silksong)|The Abyss]].
+|}
+
+=== Cylinders ===
+{| class="article-table formatted-table" width="100%"
+|-
+! style="width: 8rem;" | Appearance 
+! Description
+! style="min-width: 20rem;" |Location
+|-
+| rowspan="5" | <center>[[File:Psalm Cylinder.png|link=Psalm Cylinder|90px]]<br>[[Psalm Cylinder]]</center>
+| align="center" | <i>Voices of the Choir, raised in sacred song.</i>
+| align="center" | Found in the [[Whispering Vaults]], in the room with [[Vaultkeeper Cardinius]].
+|-
+| align="center" | <i>Last surgery of Conductor Mizello, performed in Whiteward's operating theatre.</i>
+| align="center" | Found in the [[Underworks]], below the room where [[The Unravelled]] is fought.
+|-
+| align="center" | <i>Guide track for the Choir, with a theme of ascendence.	
+| align="center" | Found in the [[High Halls]], to the northwest of the [[Ventrica]] in a maze of pipes.</i>
+|-
+| align="center" | <i>Guide track for the Choir, with a theme of salvation.</i>
+| align="center" | Bought from [[Grindle]] for {{R|240}}.
+|-
+| align="center" | <i>Sermon of service, delivered by an ordained Vaultkeeper to acolytes in training.</i>
+| align="center" | Found in far east [[Whispering Vaults]] after ascending a large wind shaft and looping around the west
+|-
+| <center>[[File:Sacred Cylinder.png|link=Sacred Cylinder|90px]]<br>[[Psalm Cylinder|Sacred Cylinder]]</center>
+| align="center" | <i>Sacred melody of the Vaultkeepers, coveted and claimed by the pontiff below the Whispering Vaults.</i>
+| align="center" | Found in lower [[Whispering Vaults]] accessible via the [[Underworks]] after beating [[Trobbio]].
+|}
+
+=== Mementos ===
+{| class="article-table formatted-table" width="100%"
+|-
+! style="width: 8rem;" | Appearance
+! Description
+! style="min-width: 20rem;" |Location
+|-
+| <center>[[File:Sprintmaster Memento.png|link=Sprintmaster Memento|90px]]<br>[[Sprintmaster Memento]]</center>
+| align="center" | <i>Gilded trophy awarded by Sprintmaster Swift to the fastest bug in Pharloom.</i>
+| align="center" | Awarded by [[Sprintmaster Swift]] in [[Far Fields]] beating him four times in his races.
+|-
+| <center>[[File:Guardian's Memento.png|link=Guardian's Memento|90px]]<br>[[Guardian's Memento]]</center>
+| align="center" | <i>Aged medallion of the wanderer Seth. A gift given in respect of great skill.</i>
+| align="center" | Awarded by [[Shrine Guardian Seth|Seth]] after beating all of his high scores in the [[Festival of the Flea]] games at [[Fleatopia]].
+|-
+| <center>[[File:Hero's Memento.png|link=Hero's Memento|90px]]<br>[[Hero's Memento]]</center>
+| align="center" | <i>Heirloom of a village lost to Pharloom's Haunting.</i>
+| align="center" | Dropped by [[Lost Garmond]] after defeating him in the [[Blasted Steps]].
+|-
+| <center>[[File:Hunter's Memento.png|link=Hunter's Memento|90px]]<br>[[Hunter's Memento]]</center>
+| align="center" | <i>Seal symbol given in recognition of a true Hunter, stamped in sticky goo.</i>
+| align="center" | Awarded by [[Nuu]] in [[Halfway Home]] after fully completing the [[Hunter's Journal (Silksong)|Hunter's Journal]].
+|-
+| <center>[[File:Grey Memento.png|link=Grey Memento|90px]]<br>[[Grey Memento]]</center>
+| align="center" | <i>Engraved cruststone, worn by sand and blanched by time.<br>..Watch...Remember...Till time... Life anew...</i>
+| align="center" | Dropped by [[Watcher at the Edge]] in [[Sands of Karak]] after defeating them in combat.
+|-
+| <center>[[File:Surface Memento.png|link=Surface Memento|90px]]<br>[[Surface Memento]]</center>
+| align="center" | <i>Worn ornament of the Nameless Town high above Pharloom.</i>
+| align="center" | Obtained by playing the [[Needolin]] at a corpse to the far east of the [[Nameless Town]].
+|-
+| <center>[[File:Craw Memento.png|link=Craw Memento|90px]]<br>[[Craw Memento]]</center>
+| align="center" | <i>Iron emblem of the Court of Craws, absolving the bearer of all crimes past and future.</i>
+| align="center" | Dropped by [[Crawfather]] after defeating him in the [[Court of Craws]].
+|-
+| <center><center>[[File:Encrusted Heart.png|link=Encrusted Heart|90px]]<br>[[Encrusted Heart]]</center>
+| align="center" | <i>Enlivened heart of Crust King Khann. It beats deep and slow.</i>
+| align="center" | Acquired after defeating [[Crust King Khann]] in the [[Coral Tower]].<br>
+Becomes a memento if collected after obtaining the [[Everbloom]] using the other three hearts.
+|- style="border-top: 0.15rem dashed rgba(255, 255, 255, 0.3);"
+| <center>[[File:Pollen Heart.png|link=Pollen Heart|90px]]<br>[[Pollen Heart]]</center>
+| align="center" | <i>Enlivened heart of Nyleth. It beats faint and fast.</i>
+| align="center" | Acquired after defeating [[Nyleth]] in [[Grand Gate]].<br>
+Becomes a memento if collected after obtaining the Everbloom using the other three hearts.
+|- style="border-top: 0.15rem dashed rgba(255, 255, 255, 0.3);"
+| <center>[[File:Hunter's Heart.png|link=Hunter's Heart|90px]]<br>[[Hunter's Heart]]</center>
+| align="center" | <i>Enlivened heart of Skarrsinger Karmelita. Its beat is steady and strong.</i>
+| align="center" | Acquired after defeating [[Skarrsinger Karmelita]] in [[Far Fields]].<br>
+Becomes a memento if collected after obtaining the Everbloom using the other three hearts.
+|- style="border-top: 0.15rem dashed rgba(255, 255, 255, 0.3);"
+| <center>[[File:Conjoined Heart.png|link=Conjoined Heart|90px]]<br>[[Conjoined Heart]]</center>
+| align="center" | <i>Enlivened heart of the Green Prince. Its beat is sharp and clear.</i>
+| align="center" | Acquired after defeating the [[Clover Dancers]] in [[Verdania#Lost Verdania|Lost Verdania]].<br>
+Becomes a memento after obtaining the Everbloom, either by collecting all four hearts beforehand or by collecting it after using the other three.
+|-
+|}
+
+[[File:SS Materium footer.png|center|400px]]
+
+== Trivia ==
+* As there are four Hearts to acquire ([[Encrusted Heart]], [[Pollen Heart]], [[Hunter's Heart]] and [[Conjoined Heart]]) but only three are needed to enter [[Red Memory]], the final unused Heart is instead displayed as the last Memento.
+** If Hornet has all four Hearts before delving into the Red Memory, the Encrusted, Pollen, and Hunter's Heart take priority, leaving the Conjoined Heart to be used as a Memento.
+** If Hornet is substituting the Conjoined Heart for one of the other three to dive into Red Memory, the remaining Heart can still be collected afterwards and is used as a Memento.
+* The [[Farsight]] displays empty entries for items that have not been seen.
+** The [[Flintgem]]s, [[Crown Fragment]], [[Pilgrim Shawl]]s, and [[Roach Guts]] are missable items and do not create empty entries if they were not obtained.
+{{Localisation
+|DEname = Materium
+|DEmeaning = —
+|ESname = Materium
+|ESmeaning = —
+|FRname = Matérium
+|FRmeaning = —
+|ITname = Materium
+|ITmeaning = —
+|JAname = マテリウム
+|JAromanised= Materiumu
+|JAkatakana = foreign
+|JAmeaning = Materium
+|KOname = 마테리움
+|KOromanised = Materium
+|KOmeaning = Materium
+|PTname = Materium
+|PTmeaning = —
+|RUname = Материум
+|RUromanised = Materium
+|RUmeaning = Materium
+|TWname = 物質庫
+|TWromanised = Wùzhì kù
+|TWmeaning = same
+|ZHname = 物质库
+|ZHromanised = Wùzhì kù
+|ZHmeaning = Material Library
+|CODEname = MATERIUM
+}}
+{{SS Nav Items}}

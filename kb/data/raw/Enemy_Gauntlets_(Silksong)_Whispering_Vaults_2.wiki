@@ -1,0 +1,40 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Vaultborn_06.png|400px|center]]
+|[[File:Mapshot_SS_Whispering_Vaults_Arena_1.png|300px|center]]
+|-
+| colspan="2" | Optional enemy gauntlet at the entrance to the Whispering Vaults that reuses the previous gauntlet's arena. It only appears once the [[Vaultborn]] are freed, either by Hornet or in Act 3. If fought in Act 3, some enemies can become [[black-threaded]].
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>Nothing</center>
+| <center>[https://www.youtube.com/watch?v=swPmNk9_fw0 Generic Enemy Battle A]</center>
+|-
+|
+[[File:HJ_Vaultborn.png|35x35px|link=Vaultborn]] [[Vaultborn]] x2, left<br/>
+[[File:HJ_Vaultborn.png|35x35px|link=Vaultborn]] Vaultborn x2, right
+| Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Vaultborn.png|35x35px|link=Vaultborn]] Vaultborn, right
+| Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Vaultborn.png|35x35px|link=Vaultborn]] Vaultborn, left
+| Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Vaultborn.png|35x35px|link=Vaultborn]] Vaultborn, right
+| Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Vaultborn.png|35x35px|link=Vaultborn]] Vaultborn, left
+| Defeating all remaining Vaultborn spawns the next row.
+|-
+|
+[[File:HJ_Vaultkeeper.png|35x35px|link=Vaultkeeper]] Vaultkeeper x2, left and right
+|If fought in Act 3, both Vaultkeepers become black-threaded shortly after arriving.
+|}

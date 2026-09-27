@@ -1,0 +1,98 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Roachfeeder.png|Hunter's Journal
+Roachfeeder Idle.png|Idle
+</gallery>
+| hasdrop = true
+| r1 = 14
+| r2 = 21
+| sh1 = 4-6
+| sh2 = 5-8
+|health = 45/{{BT|90}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.25|1|0.9|0.9|0.9}}
+|numbers_required = 20
+|singnum=2
+}}
+
+{{Quote
+|Hr = Journal
+|Tall roach tender charged to feed Muckroaches on a lean diet of maggot gruel.<hr/>
+The feeder's curled pin looks designed to keep ravenous roaches at bay, and the tender from turning into the meal.
+}}
+
+<b>Roachfeeders</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are thin-necked, hooded [[Roach Tenders]] wielding a short double blade.
+
+== Behaviour and Tactics ==
+Roachfeeders fly up and down until they spot Hornet, after which they chase her through the air.<br>
+Being flying enemies, they attempt to keep their distance from Hornet by being diagonally above her, with a higher focus on being horizontally distanced from her. Once she is in range or they fly close enough, they use any of the following moves:
+* <b>Slash:</b> Performs a outwards slash at a low angle.
+* <b>Frantic Slash:</b> Grunts and perks up before slashing repeatedly at a low angle, comboing Hornet for {{Damage|1+1}} if she is hit by the move at any time.
+* <b>Evade:</b> Does a short aerial dash diagonally up and away from Hornet. Often used if Hornet closes in on them after they miss an attack.
+
+=== Strategy === 
+Roachfeeders only attack downwards, leaving them vulnerable to attacks from above. They can also be lured into spiky walls or knocked into spike balls.
+
+=== Act 3 ===
+[[Black-threaded]] Roachfeeders have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|Void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2|
+* Poke them, slash them...
+* Teach them fear...
+* Locks tight...
+* Sharp jaws, and teeth...
+}}
+
+== Location ==
+Roachfeeders can be found in [[Sinner's Road]].
+
+{{Gallery
+|Image1 = Mapshot SS Roachfeeder 01.png!Locations in Sinner's Road
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Roachfeeder 01.png!In Sinner's Road
+|Image2 = Screenshot SS Roachfeeder 02.png!Slash
+|Image3 = Screenshot SS Roachfeeder 03.png!Frantic Slash
+|Image4 = Screenshot SS Roachfeeder 04.png!Reacting to the Needolin
+|Image5 = Screenshot SS Tipp & Pill 03.png!Harassing [[Pill]] during the <i>[[My Missing Brother]]</i> wish
+|Image6 = Screenshot SS Shard Bundle 09.png!Corpse near a [[Shard Bundle]]
+|Image7 = Screenshot SS Sinner's Road 10.png!Corpses at the entrance to [[the Mist]]
+|Image8 = Screenshot SS Roachfeeder 06.png!Corpse in the Mist
+|Image9 = Screenshot SS Void Mass 28.png!In a [[Void Mass]]
+}}
+
+{{Localisation
+|DEname = Schabenfütterer
+|DEmeaning = Cockroach Feeder
+|ESname = Alimentador de cucarachas
+|ESmeaning = Feeder of Cockroachs
+|FRname = Férosseur
+|FRmeaning = Portmanteau of <i>Férochard</i> (Muckroach) and <i>nourrisseur</i> (feeder).
+|ITname = Nutriblatte
+|ITmeaning = Roachfeeder
+|JAname = ツチゴキブリの飼育者
+|JAromanised = Tsuchiburi no shīkusha
+|JAmeaning = Muckroach Breeder
+|KOname = 바퀴먹이꾼
+|KOromanised = Bakwimeogikkun
+|KOmeaning = Cockroach Feeder
+|PTname = Trata-baratas
+|PTmeaning = Roach Keeper
+|RUname = Тараканий кормилец
+|RUromanised = Tarakanij kormilec
+|RUmeaning = Feeder to the Roach
+|TWname = 蟑螂飼養員
+|TWromanised = Zhāngláng sìyǎngyuán
+|TWmeaning = same
+|ZHname = 蟑螂饲养员
+|ZHromanised = Zhāngláng sìyǎngyuán
+|ZHmeaning = Roach Rearer
+|CODEname=ROACHFEEDER_TALL
+|CODEmeaning=[[Roachcatcher]]s are internally known as <code>ROACHFEEDER_SHORT</code>.
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

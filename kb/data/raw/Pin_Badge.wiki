@@ -1,0 +1,72 @@
+{{SS Infobox Tool
+| type = Blue
+| effect = [[Needle Strike]] charge time reduced by 40%<br>Unlocks a new interaction with the [[Seamstress]]
+| location = [[Mount Fay]]
+| description = Emblem of the Order of the Pinstress, the old blademasters of Pharloom.<hr/>
+Reduces charge time of Needle Strike.
+}}
+
+{{Quote
+| For your talents, needle bug, in blade and strength... and restraint, take this emblem of my order. Hadn't ever thought another'd be joining our slim ranks, but you're as deserving a member as's ever come before. 
+| [[Pinstress]]
+| Hr = SS
+}}
+
+<b>Pin Badge</b> is a {{CrestSlot|Blue|1}} in <i>[[Hollow Knight: Silksong]]</i>. The emblem of the [[Order of the Pinstress]], it reduces the charge time of [[Needle Strike]] by 40%.
+
+== Usefulness ==
+The charge time of [[Needle Strike]] is reduced by 40%, from 1.35 seconds to 0.8 seconds. This substantially improves the viability of Needle Strike in combat, allowing Hornet to perform stronger hits much more quickly.
+
+Pin Badge pairs well with [[Crests]] that have exceptionally powerful charge attacks, such as the [[Wanderer Crest|Wanderer]], [[Witch Crest|Witch]] and [[Architect Crest|Architect]] Crests.
+
+== How to Acquire ==
+Given by [[Pinstress]] after completing the <i>[[Fatal Resolve]]</i> Wish.
+
+{{Gallery
+|Image1 = Mapshot SS Pinstress 02.png!Location in Mount Fay
+|Image2 = Screenshot SS Pinstress 27.png!Pinstress in Mount Fay
+}}
+
+{{TabbedDialogue
+| Title1 = Pin Badge dialogue
+| Title1_Event1 = Seamstress
+| Title1_Dialogue1 = That's a fancy pin you're flaunting upon your cloak there. Here's hoping you didn't have to kill to claim it.<br>
+{{HTalk|The emblem was given freely, Seamstress, as a reward for a fierce duel won fair.}}<br>
+Given freely!? My, my. So my sister's welcomed another to the order... Sounds like age might've softened even her stoic style.<br>
+Can't say I think too fondly on the old ways... but some rituals, and some memories... those are still worth preserving.
+}}
+
+{{Localisation
+|DEname = Nadelabzeichen
+|DEmeaning = Pin Badge
+|ESname = Placa de alfiler
+|ESmeaning = Pin Badge
+|FRname = Insigne de la Pique
+|FRmeaning = Badge of the Pin
+|ITname = Distintivo a spillo
+|ITmeaning = Pin Badge
+|JAname = ピンバッジ
+|JAromanised= Pin bajji
+|JAkatakana = foreign
+|JAmeaning = Pin Badge
+|KOname = 핀 배지
+|KOromanised = Pin baeji
+|KOmeaning = Pin Badge
+|PTname =  Emblema de Pino
+|PTmeaning = Pin Emblem
+|RUname = Значок с булавкой
+|RUromanised = Značok s bulavkoj
+|RUmeaning = Pin Badge
+|TWname = 刺針徽記
+|TWromanised = Cìzhēn huījì
+|TWmeaning = same
+|ZHname = 针徽
+|ZHromanised = Zhēn huī
+|ZHmeaning = Pin Badge
+|CODEname = PINSTRESS</code><br><code>ORDER_BADGE
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Insigne de la Pique]]

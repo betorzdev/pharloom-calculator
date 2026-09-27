@@ -1,0 +1,101 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Lampbearer.png|Hunter's Journal
+Lampbearer Idle.png|Idle
+</gallery>
+| title1 = Lampbearer
+| health = 50/{{BT|100}} 
+| damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+| hasdrop = true
+| r1 = 20
+| r2 = 27
+| sh1 = 4-6
+| sh2 = 5-8
+| numbers_required =20
+|singnum = 1
+}}
+{{Quote
+|Disciple of the Whispering Vaults, tasked to navigate its dim recesses to retrieve old scrolls.<hr/>
+An essential bug if one ever hoped to navigate that dark maze of stacks and scrolls.
+| Hr = Journal
+}}
+
+<b>Lampbearers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are [[Keepers|disciples]] of the [[Whispering Vaults]], tasked to navigate its dark spaces with their lamps to retrieve old scrolls.<ref>Lampbearer [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Disciple of the Whispering Vaults, tasked to navigate its dim recesses to retrieve old scrolls. An essential bug if one ever hoped to navigate that dark maze of stacks and scrolls."</i></ref>
+
+== Behaviour and Tactics ==
+Often found either aiding a [[Scrollreader]]'s studies, or flying up and down patrolling the vaults.<br>
+Being flying enemies, they attempt to keep distance from Hornet whilst targeting her, though they mainly prioritise horizontal distance, and try to fly backwards to avoid her if she begins to close the gap. Lampbearers have 2 moves:
+* <b>Lamp Throw:</b> Throws a lamp at Hornet, which travels slightly slower through the air than most projectiles and has a slight arc. Explodes on impact with a surface, dealing damage in a larger area for a brief moment. Unlike most enemy projectiles, the lamps cannot be deflected, instead exploding on hit.
+* <b>Evade:</b> Does a very short aerial dash backwards away from Hornet, only used if she is very close to the Lampbearer.
+
+Lampbearers deal {{Damage|1}} both with their lamps and on contact.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Lampbearers have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== Location ==
+Lampbearers can be found in the [[Whispering Vaults]].
+
+{{Gallery
+|Image1 = Mapshot SS Lampbearer 01.png!Locations in the Whispering Vaults
+|Image2 = Mapshot SS Lampbearer 02.png!Locations in the Whispering Vaults in Act 3
+}}
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Ours to guard...
+* Ours to keep...
+* Hidden dark and deep...
+* Holy secrets, sacred whispers...
+* Words that only we may speak...
+* Songs that only we may sing!
+}}
+
+== Creation and Development ==
+[[File:Enemy 163 164 165.png|thumb|220px|First reveal image]]
+Lampbearers, alongside [[Scrollreader]]s and [[Vaultkeeper]]s, were first revealed in a blog post released in December 2019, where their silhouette was shown. [[Team Cherry]] described them as being in a <i>"tough later game trio who, when in battle, work closely together, covering for each other's weaknesses."</i><ref>[https://www.teamcherry.com.au/blog/11xf7azcuebhybgossfhdc0mphiqbs Team Cherry blog post] of December 13th, 2019.</ref> 
+
+In the final build, these three enemies do not specifically work together uniquely in combat; however, Lampbearers are often found near Scrollreaders, presumably helping them read.
+{{clear}}
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Scrollreader 01.png!Illuminating a reading Scrollreader
+|Image2 = Screenshot SS Lampbearer 01.png!Idle
+|Image3 = Screenshot SS Lampbearer 02.png!Lamp Throw attack
+|Image4 = Screenshot SS Lampbearer 03.png!Lamp explosion
+|Image5 = Screenshot SS Lampbearer 04.png!Silk Fly freed after the lamp explosion
+|Image6 = Screenshot SS Lampbearer 05.png!Evade
+|Image7 = Screenshot SS Lampbearer 06.png!Responding to the Needolin
+}}
+
+== Trivia ==
+* While a [[Silk Flies|Silk Fly]] is released upon a Lampbearer's lamp being broken, the silhouette of the bug inside an intact lamp does not match a Silk Fly's shape, instead resembling a [[Charged Lumafly|Lumafly]].
+{{Localisation
+|DEname = Lampenträger
+|DEmeaning = Lampholder
+|ESname = Portalámparas
+|ESmeaning = Lampbearer
+|FRname = Porte-lumière
+|FRmeaning = Light Holder
+|ITname = Portalume
+|ITmeaning = Lampbearer
+|JAname= アカリモチ
+|JAromanised= Akarimochi
+|JAkatakana = enemy
+|JAmeaning = Combination of {{lang|ja|明かり}} <i>akari</i> (lamp) and {{lang|ja|持ち}} <i>mochi</i> (holder).
+|KOname = 등불을 가진 자
+|KOromanised = Deungbureul gajin ja
+|KOmeaning = Lantern Possessor
+|PTname = Portalume
+|PTmeaning = Lightbearer
+|RUname = Лампоносец
+|RUromanised = Lamponosec
+|RUmeaning = Lampcarrier
+|ZHname = 执灯者
+|ZHromanised = Zhí dēng zhě
+|ZHmeaning = Lamp Bearer
+|CODEname = LIGHTBEARER
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

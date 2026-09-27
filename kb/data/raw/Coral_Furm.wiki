@@ -1,0 +1,84 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Coral Furm.png|Hunter's Journal
+Coral Furm Idle.png|Idle
+Coral Furm Hidden.png|Hidden
+Coral Furm Without Coral.png|Without coral
+</gallery>
+| hasdrop = true
+| sh1 = 4-6
+| sh2 = 5-8
+|health = 45
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.25|1|1|1|1}}
+|numbers_required = 15
+|singnum=1
+}}
+{{Quote
+|Hr = Journal
+|Dark-furred bug protecting itself with a spiked coral nut.<hr/>
+Its fur is thick and silky. Sadly, lost to its Haunting, I shall never safely be able to touch it.
+}}
+
+<b>Coral Furms</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are dark-furred bugs protecting themselves with spiked coral nuts.<ref>Coral Furm [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Dark-furred bug protecting itself with a spiked coral nut."</i></ref>
+
+== Behaviour and Tactics ==
+Crawls along the floor, turning around once it reaches an edge or a wall. If Hornet approaches, it rears back and rushes forward with its spiked shell, taking much less knockback as it charges.
+
+Sometimes hides inside clusters of similar-looking spiky coral and breaks out when Hornet approaches.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* The crust covers...
+* The crust conceals...
+* Our shells made strong...
+* Our nest made secret...
+}}
+
+== Location ==
+Coral Furms can be found in [[Sands of Karak]].
+{{Gallery
+|Image1 = Mapshot SS Coral Furm 01.png!Locations in Sands of Karak
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Coral Furm 01.png!Hidden
+|Image2 = Screenshot SS Coral Furm 02.png!Idle
+|Image3 = Screenshot SS Coral Furm 03.png!Charging
+|Image4 = Screenshot SS Coral Furm 04.png!Reacting to the Needolin
+}}
+
+{{Localisation
+|DEname = Korallenfurm
+|DEmeaning = Coral Furm
+|ESname = Furmo coralífero
+|ESmeaning = Coral-carrying Furm
+|FRname = Pélu Corallien
+|FRmeaning = Coral Furm
+|ITname = Vellio Corallino
+|ITmeaning = Coral Furm
+|JAname = サンゴファルム
+|JAkatakana = enemy
+|JAromanised = Sango farumu
+|JAmeaning = Combination of {{lang|ja|珊瑚 <i>sango</i>}} (coral) and {{lang|ja|ファルム}} <i>farumu</i> (Furm). 
+|KOname = 산호 털벌레
+|KOromanised = Sanho teolbeolle
+|KOmeaning = Coral Fur Bug
+|PTname = Pelumo-coralino
+|PTmeaning = Furm made of Coral
+|RUname = Коралловый фурм
+|RUromanised = Korallovyj furm
+|RUmeaning = Coral Furm
+|TWname = 珊瑚絨甲蟲
+|TWromanised = Shānhú róng jiǎchóng
+|TWmeaning = same
+|ZHname = 珊瑚绒甲虫
+|ZHromanised = Shānhú róng jiǎchóng
+|ZHmeaning = Coral Velvet Beetle
+|CODEname = CORAL_SPIKE_GOOMBA
+|CODEmeaning = Coral Furms act like [https://www.mariowiki.com/Goomba Goombas] from the <i>Mario</i> franchise  
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

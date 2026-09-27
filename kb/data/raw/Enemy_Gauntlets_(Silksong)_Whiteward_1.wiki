@@ -1,0 +1,29 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Sherma_05.png|400px|center]]
+|[[File:Mapshot_SS_Sherma_08.png|400px|center]]
+|-
+| colspan="2" | Enemy gauntlet part of [[Sherma]]'s wish, requires <i>[[Balm for the Wounded]]</i> to be promised for the entrance to the gauntlet to appear.
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>[[Spool Fragment]]</center>
+| <center>[https://youtu.be/LCcerjly60w&t=92 Cut Through (Percussion + Vocals)]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Surgeon.png|35x35px|link=Surgeon]] [[Surgeon]], left
+|
+|-
+|
+[[File:HJ_Mortician.png|35x35px|link=Mortician]] [[Mortician]] x2, centre and right
+| Right Mortician leaps out a few moments after the first.
+|-
+|
+[[File:HJ_Surgeon.png|35x35px|link=Surgeon]] Surgeon x2, left and right
+|
+|}

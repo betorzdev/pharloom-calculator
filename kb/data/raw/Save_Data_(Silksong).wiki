@@ -1,0 +1,618 @@
+{{Nav Games Header}}
+
+<b>Save data</b> in <i>[[Hollow Knight: Silksong]]</i> records the player's progress in the game, and their preferences in the menu. It includes the four profiles that the player can save (plus their [[Save Data (Silksong)/Save Points#Auto Saves|auto saves]]), as well as [[#Game Preferences|settings]], [[Controls (Silksong)|controls]], [[Achievements (Silksong)|achievements]], [[Menu Styles (Silksong)|menu styles]], and whether [[Steel Soul Mode (Silksong)|Steel Soul mode]] is unlocked.
+
+== Game Progress ==
+* The four save profiles
+* [[Save Data (Silksong)/Save Points#Auto Saves|Auto save]] history for each save profile
+* Shared game state like the [[Map and Quill (Silksong)#Map Pins|Map pin]] visibility mode, whether [[Steel Soul Mode (Silksong)|Steel Soul mode]] is unlocked, and which [[Achievements (Silksong)|achievements]] have been fulfilled
+
+=== Location ===
+{| class="article-table" width="100%"
+|-
+! style="width: 8rem;" | Platform
+! style="min-width: 12rem;" | Location
+|-
+! Windows<ref name="hkss">[https://hollowknightsilksong.com/help PC Save File Locations] on the official help page</ref>
+| <code>%USERPROFILE%\AppData\LocalLow\Team Cherry\Hollow Knight Silksong\</code>
+|-
+! Microsoft Store<ref name="pcgw1">[https://www.pcgamingwiki.com/wiki/Hollow_Knight:_Silksong#Save_game_data_location Save game data location] on PCGamingWiki</ref>
+| <code>%LOCALAPPDATA%\Packages\TeamCherry.HollowKnightSilksong_y4jvztpgccj42\SystemAppData\wgs\</code>
+|-
+! macOS<ref name="hkss"/>
+| <code>~/Library/Application Support/unity.Team-Cherry.Silksong/</code>
+|-
+! Linux<ref name="hkss"/>
+| <code>~/.config/unity3d/Team Cherry/Hollow Knight Silksong/</code>
+|}
+
+=== Files ===
+* <code>shared.dat</code> contains only [[#Shared Keys|shared game state]]
+* <code>user#.dat</code> 1–4 are save profiles
+** <code>user#.dat.bak1</code> 1–4 are backups created before saving a profile
+** <code>user#_1.0.12345.dat</code> 1–4 are created before saving a profile belonging to an earlier patch
+* <code>Restore_Points#</code> 1–4 are folders containing [[Save Data (Silksong)/Save Points#Auto Saves|auto saves]] for the numbered save profile
+** <code>restoreData#.dat</code> 1–99 are auto saves
+** <code>NODELrestoreData#.dat</code> 1–99 are auto saves protected from [[Save Data (Silksong)/Save Points#Auto Saves|auto-deletion]]
+
+=== Shared Keys ===
+Game state shared between all save profiles is stored as a list of named keys inside <code>shared.dat</code>. Each key has a value, which is treated as <code>0</code> by default if the key is missing.
+
+{| class="article-table mw-collapsible mw-collapsed" width="100%"
+| colspan="3" |
+|-
+! style="width: 16rem;" | Key
+! style="width: 24rem;" | Description
+! style="min-width: 12rem;" | Values
+|-
+| <code>MapPinVisibilityState</code>
+| Whether [[Map and Quill (Silksong)#Map Pins|Map pins]] are currently hidden. Updates when saving a profile.
+| <code>0</code> Show Pins and Key<br><code>1</code> Show Pins<br><code>2</code> Show neither
+|-
+| <code>RecPermadeathMode</code>
+| Whether [[Steel Soul Mode (Silksong)|Steel Soul mode]] has been unlocked by reaching the credits (ending <code>A</code>, <code>C</code>, <code>D</code> or <code>E</code>) or by inputting the Steel Soul cheat code.<ref group="Note"><code>up</code>, <code>down</code>, <code>up</code>, <code>down</code>, <code>left</code>, <code>right</code>, <code>left</code>, <code>right</code> on the "Extras" page.</ref>
+| <code>0</code> Hidden<br><code>1</code> Unlocked
+|-
+| <code>ALL_CRESTS</code>
+| [[File:Achievement SS Consumed.png|left|64x64px]]
+<b>Consumed</b><br>
+<i>Claim all crests</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>ALL_MAPS</code>
+| [[File:Achievement SS Cartographer.png|left|64x64px]] <b>Cartographer</b><br><i>Acquire a [[Map and Quill (Silksong)|map]] of each area</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>ALL_MASKS</code>
+| [[File:Achievement SS Masked.png|left|64x64px]] <b>Masked</b><br><i>Acquire all Mask Shards</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>ALL_SILK_HEARTS</code>
+| [[File:Achievement SS Regenerated.png|left|64x64px]] <b>Regenerated</b><br><i>Acquire all Silk Hearts</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>ALL_SILK_SKILLS</code>
+| [[File:Achievement SS Woven.png|left|64x64px]] <b>Woven</b><br><i>Bind all Silk Skills</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>ALL_SILK_SPOOLS</code>
+| [[File:Achievement SS Extended.png|left|64x64px]] <b>Extended</b><br><i>Acquire all Spool Fragments</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>ALL_TOOLS</code>
+| [[File:Achievement SS Arsenal.png|left|64x64px]] <b>Arsenal</b><br><i>Acquire all tools</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>BELLHOME</code>
+| [[File:Achievement SS Resident.png|left|64x64px]] <b>Resident</b><br><i>Acquire your own [[Bellhome]]</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>BELLWAY_MELODY</code>
+| [[File:Achievement SS Bonded.png|left|64x64px]] <b><span class="color-teal achievement-table__tooltip" title="This is a Secret Achievement">{S}</span> Bonded</b><br><i>Learn the [[Beastling Call]]</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>BELLWAYS_FULL</code>
+| [[File:Achievement SS Connected.png|left|64x64px]] <b>Connected</b><br><i>Open all of [[Pharloom]]'s [[Bellways]]</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>CITADEL_SONG</code>
+| [[File:Achievement SS Harmonious.png|left|64x64px]] <b>Harmonious</b><br><i>Learn the Citadel's [[Threefold Melody|Threefold song]]</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>COMPLETED_STEEL</code><br>{{MissingRef}}
+| [[File:Achievement SS Steel Soul.png|left|64x64px]] <b>Steel Soul</b><br><i>Finish the game in [[Steel Soul Mode (Silksong)|Steel Soul mode]]</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>COMPLETION</code>
+| [[File:Achievement SS Completion.png|left|64x64px]] <b>Completion</b><br><i>Achieve 100% game [[Completion (Silksong)|completion]] and finish the game</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>DEFEATED_BELLBEAST</code>
+| [[File:Achievement SS Liberated.png|left|64x64px]] <b>Liberated</b><br><i>Defeat the [[Bell Beast]]</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>DEFEATED_COGWORK_DANCERS</code>
+| [[File:Achievement SS Last Dance.png|left|64x64px]] <b>Last Dance</b><br><i>Defeat the [[Cogwork Dancers]]</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>DEFEATED_CORAL_KING</code>
+| [[File:Achievement SS Tyrant.png|left|64x64px]] <b><span class="color-teal achievement-table__tooltip" title="This is a Secret Achievement">{S}</span> Tyrant</b><br><i>Defeat [[Crust King Khann]]</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>DEFEATED_FIRST_SINNER</code>
+| [[File:Achievement SS Heretic.png|left|64x64px]] <b><span class="color-teal achievement-table__tooltip" title="This is a Secret Achievement">{S}</span> Heretic</b><br><i>Defeat [[First Sinner]]</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>DEFEATED_FLOWER_QUEEN</code>
+| [[File:Achievement SS Seed.png|left|64x64px]] <b><span class="color-teal achievement-table__tooltip" title="This is a Secret Achievement">{S}</span> Seed</b><br><i>Defeat [[Nyleth]]</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>DEFEATED_GREEN_PRINCE</code>
+| [[File:Achievement SS Lamenter.png|left|64x64px]] <b><span class="color-teal achievement-table__tooltip" title="This is a Secret Achievement">{S}</span> Lamenter</b><br><i>Defeat the [[Clover Dancers]]</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>DEFEATED_HUNTER_QUEEN</code>
+| [[File:Achievement SS Diva.png|left|64x64px]] <b><span class="color-teal achievement-table__tooltip" title="This is a Secret Achievement">{S}</span> Diva</b><br><i>Defeat [[Skarrsinger Karmelita]]</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>DEFEATED_LACE_1</code>
+| [[File:Achievement SS Pharloom's Welcome.png|left|64x64px]] <b>Pharloom's Welcome</b><br><i>Defeat [[Lace]] in [[Deep Docks]]</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>DEFEATED_LACE_2</code>
+| [[File:Achievement SS White Knight.png|left|64x64px]] <b><span class="color-teal achievement-table__tooltip" title="This is a Secret Achievement">{S}</span> White Knight</b><br><i>Defeat [[Lace]] in [[the Cradle]]</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>DEFEATED_LAST_JUDGE_1</code>
+| [[File:Achievement SS Judge.png|left|64x64px]] <b>Judge</b><br><i>Defeat the [[Last Judge]]</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>DEFEATED_PHANTOM_1</code>
+| [[File:Achievement SS Grey Ghost.png|left|64x64px]] <b><span class="color-teal achievement-table__tooltip" title="This is a Secret Achievement">{S}</span> Grey Ghost</b><br><i>Defeat [[Phantom]]</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>DEFEATED_SONG_GOLEM</code>
+| [[File:Achievement SS Servant.png|left|64x64px]] <b><span class="color-teal achievement-table__tooltip" title="This is a Secret Achievement">{S}</span> Servant</b><br><i>Defeat [[Fourth Chorus]]</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>DEFEATED_TROBBIO</code>
+| [[File:Achievement SS Tragedian.png|left|64x64px]] <b>Tragedian</b><br><i>Defeat [[Trobbio]]</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>DEFEATED_WIDOW</code>
+| [[File:Achievement SS Fanatic.png|left|64x64px]] <b>Fanatic</b><br><i>Defeat [[Widow]]</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>ENDING_A</code>
+| [[File:Achievement SS Weaver Queen.png|left|64x64px]] <b><span class="color-teal achievement-table__tooltip" title="This is a Secret Achievement">{S}</span> Weaver Queen</b><br><i>Defeat [[Grand Mother Silk]] and bind her power</i>
+{{Clear}}<hr>
+Used to check if the [[Menu Styles (Silksong)#Cradle|Cradle]] menu style is unlocked.
+| <code>0</code> False<br><code>1</code> True
+|-
+| <code>ENDING_B</code>
+| Whether [[Act 2]] has ever been started. Used to check if the [[Menu Styles (Silksong)#Citadel of Song|Citadel of Song]] menu style is unlocked.
+| <code>0</code> False<br><code>1</code> True
+|-
+| <code>ENDING_C</code>
+| [[File:Achievement SS Snared Silk.png|left|64x64px]] <b><span class="color-teal achievement-table__tooltip" title="This is a Secret Achievement">{S}</span> Snared Silk</b><br><i>Defeat Grand Mother Silk and entrap her with the [[Soul Snare]]</i>
+{{Clear}}<hr>
+Used to check if the [[Menu Styles (Silksong)#Abyss|Abyss]] menu style is unlocked.
+| <code>0</code> False<br><code>1</code> True
+|-
+| <code>ENDING_D</code>
+| [[File:Achievement SS Twisted Child.png|left|64x64px]] <b><span class="color-teal achievement-table__tooltip" title="This is a Secret Achievement">{S}</span> Twisted Child</b><br><i>Defeat Grand Mother Silk while [[Witch Crest|cursed]]</i>
+{{Clear}}<hr>
+Used to check if the [[Menu Styles (Silksong)#Greyroot|Greyroot]] menu style is unlocked.
+| <code>0</code> False<br><code>1</code> True
+|-
+| <code>ENDING_E</code>
+| [[File:Achievement SS Sister of the Void.png|left|64x64px]] <b><span class="color-teal achievement-table__tooltip" title="This is a Secret Achievement">{S}</span> Sister of the Void</b><br><i>Defeat [[Lost Lace]] and free Pharloom</i>
+{{Clear}}<hr>
+Used to check if the [[Menu Styles (Silksong)#Surface|Surface]] menu style is unlocked, which causes [[Lace]]'s Pin to appear alongside the [[Needle]] on all menu styles.
+| <code>0</code> False<br><code>1</code> True
+|-
+| <code>EVA_FINAL_QUEST</code>
+| [[File:Achievement SS Entwined.png|left|64x64px]] <b><span class="color-teal achievement-table__tooltip" title="This is a Secret Achievement">{S}</span> Entwined</b><br><i>Bind [[Eva]]</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>FIRST_CREST</code>
+| [[File:Achievement SS Claimed.png|left|64x64px]] <b>Claimed</b><br><i>Claim your first crest</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>FIRST_MASK</code>
+| [[File:Achievement SS Protected.png|left|64x64px]] <b>Protected</b><br><i>Acquire 4 Mask Shards</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>FIRST_SILK_SKILL</code>
+| [[File:Achievement SS Bound.png|left|64x64px]] <b>Bound</b><br><i>Bind your first Silk Skill</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>FIRST_SILK_SPOOL</code>
+| [[File:Achievement SS Restored.png|left|64x64px]] <b>Restored</b><br><i>Acquire 2 Spool Fragments</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>FIRST_TOOL</code>
+| [[File:Achievement SS Equipped.png|left|64x64px]] <b>Equipped</b><br><i>Acquire your first tool</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>FIRST_WISH</code>
+| [[File:Achievement SS Granted.png|left|64x64px]] <b>Granted</b><br><i>Grant your first [[wish]]</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>FLEAS_ALL</code>
+| [[File:Achievement SS Fleafriend.png|left|64x64px]] <b>Fleafriend</b><br><i>Rescue all of Pharloom's lost fleas and receive their final gift</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>FLEAS_HALF</code>
+| [[File:Achievement SS Flea Finder.png|left|64x64px]] <b>Flea Finder</b><br><i>Rescue half of Pharloom's lost fleas</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>GARMOND_FINAL_QUEST</code>
+| [[File:Achievement SS Hero's Call.png|left|64x64px]] <b><span class="color-teal achievement-table__tooltip" title="This is a Secret Achievement">{S}</span> Hero's Call</b><br><i>Defeat [[Lost Garmond]]</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>GOURMAND_WISH</code>
+| [[File:Achievement SS Glutton.png|left|64x64px]] <b>Glutton</b><br><i>Satiate the [[Great Gourmand|Grand Gourmand]]</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>HERALD_WISH</code><br>{{MissingRef}}
+| [[File:Achievement SS Passing of the Age.png|left|64x64px]] <b><span class="color-teal achievement-table__tooltip" title="This is a Secret Achievement">{S}</span> Passing of the Age</b><br><i>Grant the [[Mister Mushroom (Silksong)|herald]]'s [[Passing of the Age (Wish)|wish]] and finish the game</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>JOURNAL_HALF</code>
+| [[File:Achievement SS Keen Hunter.png|left|64x64px]] <b>Keen Hunter</b><br><i>Grant [[Nuu]]'s [[Bugs of Pharloom|Wish]]</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>JOURNAL_FULL</code>
+| [[File:Achievement SS True Hunter.png|left|64x64px]] <b>True Hunter</b><br><i>Receive the [[Hunter's Memento]]</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>PINSTRESS_WISH</code>
+| [[File:Achievement SS Fatal Resolve.png|left|64x64px]] <b><span class="color-teal achievement-table__tooltip" title="This is a Secret Achievement">{S}</span> Fatal Resolve</b><br><i>Defeat [[Pinstress]]</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>SHAKRA_FINAL_QUEST</code>
+| [[File:Achievement SS Trail's End.png|left|64x64px]] <b>Trail's End</b><br><i>Grant [[Shakra]]'s wish</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>SPEED_COMPLETION</code>
+| [[File:Achievement SS Speed Completion.png|left|64x64px]] <b>Speed Completion</b><br><i>Achieve 100% game completion and finish the game in under 30 hours</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>SPEEDRUN_1</code><br>{{MissingRef}}
+| [[File:Achievement SS Speedrunner.png|left|64x64px]] <b>Speedrunner</b><br><i>Complete the game in under 5 hours</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>STEEL_SOUL</code><br>{{MissingRef}}
+| [[File:Achievement SS Steel Soul.png|left|64x64px]] <b>Steel Soul</b><br><i>Finish the game in [[Steel Soul Mode (Silksong)|Steel Soul mode]]</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>STEEL_SOUL_FULL</code>
+| [[File:Achievement SS Steel Heart.png|left|64x64px]] <b>Steel Heart</b><br><i>Achieve 100% game completion and finish the game in Steel Soul mode</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>TUBES_FULL</code>
+| [[File:Achievement SS Transported.png|left|64x64px]] <b>Transported</b><br><i>Open all of the [[Citadel]]'s [[Ventrica]] Stations</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|-
+| <code>WHITE_FLOWER_GAINED</code>
+| [[File:Achievement SS Remembrance.png|left|64x64px]] <b><span class="color-teal achievement-table__tooltip" title="This is a Secret Achievement">{S}</span> Remembrance</b><br><i>Claim the [[Everbloom]] from within a distant memory</i>
+| <code>0</code> Locked<br><code>1</code> Unlocked
+|}
+
+== Game Preferences ==
+* Game, audio, video, controller and keyboard settings
+* The selected [[Menu Styles (Silksong)|menu style]]
+* Which save profile was last loaded
+* Window size, position, and monitor
+
+=== Location ===
+{| class="article-table" width="100%"
+|-
+! style="width: 8rem;" | Platform
+! style="min-width: 12rem;" | Location
+|-
+! Windows<ref name="pcgw2">[https://www.pcgamingwiki.com/wiki/Hollow_Knight:_Silksong#Configuration_file(s)_location Configuration file location] on PCGamingWiki</ref>
+| <code>HKEY_CURRENT_USER\Software\Team Cherry\Hollow Knight Silksong\</code>
+|-
+! Microsoft Store<ref name="pcgw2"/>
+| <code>%LOCALAPPDATA%\Packages\TeamCherry.HollowKnightSilksong_y4jvztpgccj42\SystemAppData\wgs\</code>
+|-
+! macOS<ref name="pcgw2"/>
+| <code>~/Library/Application Support/unity.Team-Cherry.Silksong/</code>
+|-
+! Linux<ref name="pcgw2"/>
+| <code>~/.config/unity3d/Team Cherry/Hollow Knight Silksong/</code>
+|}
+
+=== Preference Keys ===
+Preferences are stored as a list of named keys. They are usually inside a file named <code>prefs</code>, except on Windows, where they are stored in the [https://en.wikipedia.org/wiki/Windows_Registry Registry] instead. Each key has a value which controls a corresponding in-game setting.
+
+{| class="article-table mw-collapsible mw-collapsed" width="100%"
+| colspan="3" |
+|-
+! style="width: 16rem;" | Key
+! style="width: 16rem;" | Description
+! style="min-width: 12rem;" | Values
+|-
+| <code>AppleMFi</code>
+| {{MissingInfo}}
+| <code>0</code> {{MissingInfo}}<br><code>1</code> {{MissingInfo}}
+|-
+| <code>CameraShakeSetting</code>
+| <i>Game → Camera Shake</i>
+| <code>0</code> On<br><code>1</code> Reduced<br><code>2</code> Off
+|-
+| <code>ControllerSWITCH_JOYCON_DUAL</code>
+| <i>Controller → Remap Controls</i><br><small>(with a [https://en.wikipedia.org/wiki/Nintendo_Switch_Pro_Controller Nintendo Switch Pro Controller] connected)</small>
+| JSON string
+|-
+| <code>ControllerXBOX_ONE</code>
+| <i>Controller → Remap Controls</i><br><small>(with an [https://en.wikipedia.org/wiki/Xbox_Wireless_Controller Xbox Wireless Controller] connected)</small>
+| JSON string
+|-
+| <code>GameBackers</code>
+| <i>Game → Backer Credits</i>
+| <code>0</code> Off<br><code>1</code> On
+|-
+| <code>GameLang</code>
+| <i>Game → Language</i>
+| <code>37</code> German<br><code>44</code> English<br><code>57</code> Spanish<br><code>82</code> French<br><code>105</code> Italian<br><code>109</code> Japanese<br><code>117</code> Korean<br><code>147</code> Brazilian Portuguese<br><code>154</code> Russian<br><code>199</code> Simplified Chinese<br>
+|-
+| <code>GameLangSet</code>
+| Whether player has chosen a language on first launch.
+| <code>0</code> No (will ask next launch)<br><code>1</code> Yes
+|-
+| <code>GameNativePopups</code>
+| <i>Game → Show Achievements</i>
+| <code>0</code> Off<br><code>1</code> On
+|-
+| <code>HudScaleSetting</code>
+| <i>Game → HUD Appearance</i><ref group="Note">The "Off" setting is never actually saved, so it resets on game exit.</ref>
+| <code>0</code> Large<br><code>1</code> Small
+|-
+| <code>KeyAttack</code>
+| <i>Keyboard → Attack</i>
+| Keycode (eg. <code>X</code>)
+|-
+| <code>KeyCast</code>
+| <i>Keyboard → Bind</i>
+| Keycode (eg. <code>A</code>)
+|-
+| <code>KeyDash</code>
+| <i>Keyboard → Sprint</i>
+| Keycode (eg. <code>C</code>)
+|-
+| <code>KeyDown</code>
+| <i>Keyboard → Down</i>
+| Keycode (eg. <code>DownArrow</code>)
+|-
+| <code>KeyDreamnail</code>
+| <i>Keyboard → Needolin</i>
+| Keycode (eg. <code>D</code>)
+|-
+| <code>KeyInventory</code>
+| <i>Keyboard → Inventory</i>
+| Keycode (eg. <code>I</code>)
+|-
+| <code>KeyInventoryJournal</code>
+| <i>Keyboard → Journal</i>
+| Keycode (eg. <code>J</code>)
+|-
+| <code>KeyInventoryMap</code>
+| <i>Keyboard → Map</i>
+| Keycode (eg. <code>M</code>)
+|-
+| <code>KeyInventoryQuests</code>
+| <i>Keyboard → Tasks</i>
+| Keycode (eg. <code>T</code>)
+|-
+| <code>KeyInventoryTools</code>
+| <i>Keyboard → Crest</i>
+| Keycode (eg. <code>Q</code>)
+|-
+| <code>KeyJump</code>
+| <i>Keyboard → Jump</i>
+| Keycode (eg. <code>Z</code>)
+|-
+| <code>KeyLeft</code>
+| <i>Keyboard → Left</i>
+| Keycode (eg. <code>LeftArrow</code>)
+|-
+| <code>KeyQuickCast</code>
+| <i>Keyboard → Skill / Tool</i>
+| Keycode (eg. <code>F</code>)
+|-
+| <code>KeyQuickMap</code>
+| <i>Keyboard → Quick Map</i>
+| Keycode (eg. <code>Tab</code>)
+|-
+| <code>KeyRight</code>
+| <i>Keyboard → Right</i>
+| Keycode (eg. <code>RightArrow</code>)
+|-
+| <code>KeySupDash</code>
+| <i>Keyboard → Harpoon</i>
+| Keycode (eg. <code>S</code>)
+|-
+| <code>KeyTaunt</code>
+| <i>Keyboard → Challenge</i>
+| Keycode (eg. <code>V</code>)
+|-
+| <code>KeyUp</code>
+| <i>Keyboard → Up</i>
+| Keycode (eg. <code>UpArrow</code>)
+|-
+| <code>lastProfileIndex</code>
+| The most recent save profile that was loaded.
+| <code>1</code> Profile 1<br><code>2</code> Profile 2<br><code>3</code> Profile 3<br><code>4</code> Profile 4
+|-
+| <code>lastVersion</code>
+| The most recent version update.
+| <code>1.0.0.0</code> Initial value
+|-
+| <code>M2H_lastLanguage</code>
+| <i>Game → Language</i><ref name="instant" group="Note">Saves immediately when changed, instead of waiting until menu is closed.</ref>
+| <code>DE</code> German<br><code>EN</code> English<br><code>ES</code> Spanish<br><code>FR</code> French<br><code>IT</code> Italian<br><code>JA</code> Japanese<br><code>KO</code> Korean<br><code>PT</code> Brazilian Portuguese<br><code>RU</code> Russian<br><code>ZH</code> Simplified Chinese
+|-
+| <code>MasterVolume</code>
+| <i>Audio → Master Volume</i>
+| Floating-point number
+|-
+| <code>menuStyle</code>
+| <i>Extras → [[Menu Styles (Silksong)|Menu Style]]</i><ref name="instant" group="Note"/>
+| <code>0</code> Silksong<br><code>1</code> Citadel of Song<br><code>2</code> Cradle<br><code>3</code> Abyss<br><code>4</code> Greyroot<br><code>5</code> Surface<br><code>6</code> Steel
+|-
+| <code>MusicVolume</code>
+| <i>Audio → Music Volume</i>
+| Floating-point number
+|- id="NativeInput"
+| <code>NativeInput</code>
+| <i>Controls → Advanced Settings → Native Controller Input</i><ref group="Note">Changes are applied on game launch.</ref>
+| <code>0</code> Off<br><code>1</code> On
+|-
+| <code>PlayerVoiceEnabled</code>
+| <i>Audio → Hero Voice</i>
+| <code>0</code> Off<br><code>1</code> On
+|-
+| <code>RumbleSetting</code>
+| <i>Controller → Advanced Settings → Vibration</i>
+| <code>0</code> On<br><code>1</code> Reduced<br><code>2</code> Off
+|-
+| <code>Screenmanager Fullscreen mode Default</code>
+| <small>Default mode of:</small><br><i>Video → Full Screen</i>
+| Defaults to <code>1</code> Borderless
+|-
+| <code>Screenmanager Fullscreen mode</code>
+| <i>Video → Full Screen</i><ref name="instant" group="Note"/>
+| <code>0</code> On<br><code>1</code> Borderless<br><code>2</code> Maximised<ref group="Note">Maximises the game window on launch. The actual game never sets this value.</ref><br><code>3</code> Off
+|-
+| <code>Screenmanager Native RefreshRate Denominator</code>
+| {{MissingInfo}}
+| Number (eg. <code>1000</code>)
+|-
+| <code>Screenmanager Native RefreshRate Numerator</code>
+| {{MissingInfo}}
+| Number (eg. <code>143981</code>)
+|-
+| <code>Screenmanager RefreshRate Denominator</code>
+| {{MissingInfo}}
+| Number (eg. <code>1000</code>)
+|-
+| <code>Screenmanager RefreshRate Numerator</code>
+| {{MissingInfo}}
+| Number (eg. <code>143981</code>)
+|-
+| <code>Screenmanager Resolution Height Default</code>
+| <small>Default height of:</small><br><i>Video → Resolution</i>
+| Defaults to <code>768</code>
+|-
+| <code>Screenmanager Resolution Height</code>
+| <small>Height of:</small><br><i>Video → Resolution</i>
+| Number
+|-
+| <code>Screenmanager Resolution Use Native Default</code>
+| {{MissingInfo}}
+| Defaults to <code>1</code>
+|-
+| <code>Screenmanager Resolution Use Native</code>
+| {{MissingInfo}}
+| {{MissingInfo}}
+|-
+| <code>Screenmanager Resolution Width Default</code>
+| <small>Default width of:</small><br><i>Video → Resolution</i>
+| Defaults to <code>1024</code>
+|-
+| <code>Screenmanager Resolution Width</code>
+| <small>Width of:</small><br><i>Video → Resolution</i>
+| Number
+|-
+| <code>Screenmanager Resolution Window Height</code>
+| Height of game window.
+| Number
+|-
+| <code>Screenmanager Resolution Window Width</code>
+| Width of game window.
+| Number
+|-
+| <code>Screenmanager Stereo 3D</code>
+| {{MissingInfo}}
+| <code>0</code> {{MissingInfo}}<br><code>1</code> {{MissingInfo}}
+|-
+| <code>Screenmanager Window Position X</code>
+| Position of game window's left edge.
+| Number
+|-
+| <code>Screenmanager Window Position Y</code>
+| Position of game window's top edge.
+| Number
+|-
+| <code>ShaderQuality</code>
+| <i>Video → Advanced Settings → Blur Quality</i>
+| <code>0</code> Low<br><code>1</code> High
+|-
+| <code>SoundVolume</code>
+| <i>Audio → Sound Volume</i>
+| Floating-point number
+|-
+| <code>unity.player_session_count</code>
+| Number of times that the game has been launched.
+| Number (as string)
+|-
+| <code>unity.player_sessionid</code>
+| Random ID generated each time the game is launched.
+| Number (as string)
+|-
+| <code>UnitySelectMonitor</code>
+| Which display the game window is on.
+| Number starting at 0
+|-
+| <code>VidBrightSet</code>
+| <i>Video → Brightness</i>
+| <code>0</code> Default value<br><code>1</code> <i>Brightness</i> menu has been opened and closed
+|-
+| <code>VidBrightValue</code>
+| <i>Video → Brightness</i>
+| <code>0</code> 10%<br><code>36</code> 50%<br><code>52</code> 100%<br><code>62</code> 150%<br><code>68</code> 200%
+|-
+| <code>VidDisplay</code>
+| {{MissingInfo}}
+| {{MissingInfo}}
+|-
+| <code>VidDithering</code>
+| <i>Video → Advanced Settings → Dithering</i>
+| <code>0</code> Off<br><code>1</code> Low<br><code>2</code> High
+|-
+| <code>VidFullscreen</code>
+| <i>Video → Full Screen</i>
+| <code>0</code> Off<br><code>1</code> On<br><code>2</code> Borderless
+|-
+| <code>VidNoise</code>
+| <i>Video → Advanced Settings → Film Grain</i>
+| <code>0</code> Off<br><code>1</code> On
+|-
+| <code>VidOSSet</code>
+| <i>Video → Screen Scale</i>
+| <code>0</code> Default value<br><code>1</code> <i>Screen Scale</i> menu has been opened and closed
+|-
+| <code>VidOSValue</code>
+| <i>Video → Screen Scale</i>
+| Floating-point number
+|-
+| <code>VidParticles</code>
+| <i>Video → Advanced Settings → Particle Effects</i>
+| <code>0</code> Low<br><code>1</code> Normal
+|-
+| <code>VidTFR</code>
+| <i>Video → Frame Rate Cap</i>
+| <code>-1</code> Off<br><code>30</code> 30<br><code>60</code> 60<br><code>120</code> 120<br><code>???</code> <ref group="Note">The number of your display's highest refresh rate, eg. <code>144</code></ref>
+|-
+| <code>VidVSync</code>
+| <i>Video → V-Sync</i>
+| <code>0</code> Off<br><code>1</code> On
+|-
+| <code>XInput</code>
+| <i>Controls → Advanced Settings → XInput</i><ref group="Note">Requires <code>[[#NativeInput|NativeInput]]</code> to be "On".</ref><br><small>([https://en.wikipedia.org/wiki/Microsoft_Windows Windows] only)</small>
+| <code>0</code> Off<br><code>1</code> On
+|}
+
+== Save Points ==
+{{Main|Save Data (Silksong)/Save Points}}
+
+<b>Save points</b> refer to any event that saves the game normally, overwriting the current profile. [[Hornet (Silksong)|Hornet]] will respawn at her last save point when she dies, and when the profile is loaded. Whenever a save point is triggered, an animated icon spins in the lower-right corner of the screen for a fraction of a second.
+
+The most obvious save points are the [[Bench (Silksong)|Benches]] throughout [[Pharloom]], but there are many other events that save the game automatically. <i>Silksong</i> features three different types of save points:
+* [[File:Tools Prompt.png|frameless |link=|alt=|24px]] <b>[[Bench (Silksong)|Bench saves]]</b>: Manual save points
+* [[File:Icon SS Auto Save.png|frameless|link=|alt=|24px]] <b>[[Save Data (Silksong)/Save Points#Auto Saves|Auto saves]]</b>: Automatic save points that are recorded on the <i>Auto Saves</i> menu
+* [[File:Icon SS Save.png|frameless|link=|alt=|24px]] <b>Temporary auto saves</b>: Automatic save points that simply save the game
+
+{{Hr|SS}}
+
+== Notes ==
+<references group="Note"/>
+
+{{Refs|hr=false}}
+
+[[Category:Hollow Knight: Silksong]]
+[[fr:Données de sauvegarde (Silksong)]]
+{{DISPLAYTITLE:Save Data (''Silksong'')}}

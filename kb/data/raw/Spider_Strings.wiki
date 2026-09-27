@@ -1,0 +1,71 @@
+{{SS Infobox Tool
+| type = Yellow
+| effect = Increases the range of the Needolin by 25% and increases the time enemies spend singing
+| location = [[Songclave]]
+| description = Sophisticated Weaver device. Resonates with music played to amplify and enhance a performance.<hr>
+Expands and strengthens the effects of the Needolin.
+}}
+
+{{Quote
+| Hold this while makin' music and you'll soon hear its function. Amplifies song, it does! Sends it out full and bright. Ideal if you're ever planning on performing for a crowd.
+| [[Jubilana]]
+| Hr = SS
+}}
+
+<b>Spider Strings</b> is a {{CrestSlot|Yellow|1}} in <i>[[Hollow Knight: Silksong]]</i>. It increases the range of the [[Needolin]] by 25% and increases the time enemies spend singing by 1.25-2.5 seconds.
+
+== Usefulness ==
+Increases the range within which [[NPCs (Silksong)|NPCs]] and [[Enemies (Silksong)|Enemies]] are affected by the Needolin, making it easier to affect multiple of them at once. This also makes it easier to see Needolin dialogue without getting too close to an enemy.
+
+This is most useful when fighting multiple ranged/mobile enemies, as it can lock them in place long enough to get hits in on one enemy without worrying about other attacks. It's particularly helpful in [[the Mist]], where it can be used to safely activate [[Silk Flies]] while simultaneously stunning any nearby [[Wraith]]s.
+
+Spider Strings adds a unique audio layer to the Needolin music.
+
+{| align="center"
+| [[File:Spider Strings Layer.ogg|center|loop|thumb|Spider Strings' layer]]
+|}
+
+== How to Acquire ==
+Purchased from [[Jubilana]] for {{R|320}} after completing the <i>[[The Lost Merchant]]</i> Wish.
+
+{{Gallery
+|Image1 = Mapshot SS Jubilana 01.png!Location in Choral Chambers
+|Image2 = Screenshot SS Jubilana 01.png!Jubilana in Choral Chambers
+}}
+
+== Trivia ==
+* Equipping the Spider Strings adds a unique visual effect when playing the Needolin, appearing to be a circle of sound with the camera zooming out slightly.
+{{Localisation
+|DEname = Spinnenfäden
+|DEmeaning = Spider Strings
+|ESname = Cuerdas arácnidas
+|ESmeaning = Arachnid Strings
+|FRname = Fil d'araignée
+|FRmeaning = Spider String
+|ITname = Aracnocorde
+|ITmeaning = Portmanteau of <i>aracnide</i> (arachnid) and <i>corde</i> (strings).
+|JAname= クモの弦
+|JAromanised = Kumo no tsuru
+|JAkatakana = foreign
+|JAmeaning = Spider Strings
+|KOname = 거미의 현
+|KOromanised = Geomiui hyeon
+|KOmeaning = Spider's Instrument String
+|PTname =  Cordões de Aranha
+|PTmeaning = Spider Cords
+|RUname = Паучьи струны
+|RUromanised = Pauč'i struny
+|RUmeaning = Spider's Strings
+|TWname = 蛛絲弦
+|TWromanised = Zhū sī xián
+|TWmeaning = same
+|ZHname = 蛛丝弦
+|ZHromanised = Zhū sī xián
+|ZHmeaning = Spider Silk Strings
+|CODEname=MUSICIAN_CHARM
+|CODEmeaning=Reference to [[Charm]]s from <i>[[Hollow Knight]]</i>
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Fil d’araignée]]

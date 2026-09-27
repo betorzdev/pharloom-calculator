@@ -1,0 +1,61 @@
+{{SS Infobox Tool
+| image = Dead Bug's Purse.png
+| type = Yellow
+| effect = Allows [[Hornet (Silksong)|Hornet]] to retain half her [[Rosaries]] upon death
+| location = [[Wormways]]
+| description = Discarded purse of a fallen pilgrim.<hr/>
+Allows the bearer to retain some rosaries upon defeat.
+}}
+
+{{Quote
+| What an honour it was to play with you, my lady! I hope you'll think of us whenever you feel those rosaries rattling around in your pockets. 
+| [[Loddie]]
+| Hr = SS
+}}
+
+The <b>Dead Bug's Purse</b> is a {{CrestSlot|Yellow|1}} in <i>[[Hollow Knight: Silksong]]</i>. It allows [[Hornet (Silksong)|Hornet]] to retain half her [[Rosaries]] upon death, rounded to the nearest even number. The rest of the Rosaries will remain in her [[Cocoon]].
+
+== Usefulness ==
+The Dead Bug's Purse allows the [[Rosary Cannon]] to be reloaded between deaths.
+
+== How to Acquire ==
+The Dead Bug's Purse can be found on a corpse in the northeast portion of the [[Wormways]]. The tool is replaced by the {{Steel Soul Icon Mini|SS}} [[Shell Satchel]] in {{Steel Soul Icon Mini|SS}} [[Steel Soul Mode (Silksong)|Steel Soul Mode]].
+
+{{Gallery|
+|Image1 = Mapshot SS Dead Bugs Purse.png!Location in the Wormways
+|Image2 = Screenshot SS Dead Bug's Purse Room.png!Room where the Dead Bug's Purse is acquired
+}}
+
+{{Localisation
+|DEname = Handtasche eines toten Käfers
+|DEmeaning = Purse of a Dead Bug
+|ESname = Bolsa de bicho muerto
+|ESmeaning = Bag of a Dead Bug
+|FRname = Sac d'un insecte mort
+|FRmeaning = Bag of a Dead Insect
+|ITname = Borsa di insetto morto
+|ITmeaning = Dead Bug's Purse
+|JAname= 死んだムシの財布
+|JAromanised= Shinda mushi no saifu
+|JAmeaning = Dead Bug's Purse
+|KOname = 죽은 벌레의 지갑
+|KOromanised = Jugeun beolleui jigap
+|KOmeaning = Dead Bug's Wallet
+|PTname =  Bolsa do Inseto Morto
+|PTmeaning = Bag of a Dead Insect
+|RUname = Кошелёк мёртвого жука
+|RUromanised = Košelëk mërtvogo žuka
+|RUmeaning = Dead Beetle's Wallet
+|TWname = 逝者錢包
+|TWromanised = Shìzhě qiánbāo
+|TWmeaning = Deceased's Purse
+|ZHname = 亡虫囊
+|ZHromanised = Wáng chóng náng
+|ZHmeaning = Dead Bug Pouch
+|CODEname = DEAD_MANS_PURSE
+|CODEmeaning = The Dead Bug's Purse functions similarly to the [https://deadcells.wiki.gg/wiki/Pickups#Dead_Man%E2%80%99s_Bag Dead Man's Bag] item from <i>[https://deadcells.wiki.gg/wiki/Dead_Cells Dead Cells]</i>.
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Sac d’un insecte mort]]

@@ -1,0 +1,95 @@
+{{SS Infobox Tool
+| image = <gallery>
+Tacks.png|Inventory
+Tacks Poison.png|Pollip Pouch
+</gallery>
+| type = Red
+| damage = 2/3/4/6/7 (per tack, 2 hits each) <br> 16/24/32/48/56 (total)
+| max = 5/6/7/8/10
+| refill_type = Repair
+| refill = {{S|8}}
+| effect = Throws tacks on the ground
+| location = [[Sinner's Road]]
+| description = Short pins designed to be scattered along the ground.<hr>The sharp points will pierce any enemy who steps upon them.
+}}
+
+{{Quote
+| Still, maybe this tool is enough for you to 'member us by? A pointed weapon of me own makin', from when I used to wrangle the Muckroaches meself. I bet you'll get some good use from it.
+| [[Crull and Benjin]]
+| Hr = SS
+}}
+
+<b>Tacks</b> are a {{CrestSlot|Red|1}} in <i>[[Hollow Knight: Silksong]]</i>. When used, [[Hornet (Silksong)|Hornet]] throws 4 tacks on the ground that damage enemies who touch them.
+
+== Usefulness ==
+Tacks last for a long time and can deal damage twice before disappearing. They also cannot be destroyed by most enemy attacks. This makes them very useful against swarms of enemies and bosses that are usually grounded.
+
+Tacks are less effective against flying enemies. They become useless if there is no solid ground to place them on.
+
+Up to 4 sets of Tacks may be placed at the same time. Deploying a fifth will cause the oldest set of Tacks to disappear.
+
+== Synergies ==
+Tacks pair somewhat well with [[Pollip Pouch]] as they can repeatedly apply poison over an extended time. However, since only one instance of poison can ever be applied, an enemy which runs over multiple tacks will receive minimal extra damage.
+
+== How to Acquire ==
+Tacks are given by [[Crull and Benjin]] in [[Sinner's Road]] for completing the <i>[[Roach Guts (Wish)|Roach Guts]]</i> [[Wish]]. 
+
+During [[Act 3]], it is instead found near their bodies.
+
+{{Gallery
+|Image1 = Mapshot SS Crull and Benjin 01.png!Location in Sinner's Road
+|Image2 = Screenshot SS Sinner's Road 05.png!Crull and Benjin in Sinner's Road
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Recording SS Tacks.gif!Hornet deploying Tacks
+|Image2 = GIF SS Tacks 01.gif!Moving Tacks with Needle
+|Image3 = GIF SS Tacks 02.gif!Tacks activating
+}}
+
+== Trivia ==
+* Tacks will shake and slightly move when screenshake occurs. Tacks are also slightly moved when [[Hornet (Silksong)|Hornet]] walks over them or attacks them.
+* The small, non-hostile ants found in [[Hunter's March]], upper [[Far Fields]], and the cellar of [[Greymoor#Sub-area: Halfway Home|Halfway Home]] will carry Tacks along and eventually into the ground (like they do with other scattered items like [[Rosaries]]).
+* In the <i>[[Hollow Knight: Silksong]]</i> Edge Magazine issue,<ref name="edge52">[https://pocketmags.com/us/edge-magazine/february-2021 Edge Magazine February 2021 Edition] p. 52.</ref> Xbox trailer,<ref name="xbox" /> and April 2nd Nintendo Direct footage,<ref>[https://www.youtube.com/watch?v=FdHG6bsCf-A Hollow Knight: Silksong Teaser Footage (4/2/25) (Nintendo Switch 2 Direct)]</ref> Tacks were black instead of bronze. 
+** Also in the Xbox trailer, Hornet threw only four tacks per use instead of the five at release, though later they were reduced to four again.<ref name="xbox">[https://www.youtube.com/watch?v=JSfuFlhsxZY Hollow Knight: Silksong - Xbox Game Pass Reveal Trailer - Xbox & Bethesda Games Showcase 2022]</ref>
+
+{{Gallery
+| Image1 = Old Tacks.png!2020 icon
+| Image2 = Caltrops.png!2022 icon
+| Image3 = XboxScreenshot Tacks.png!<i>Silksong</i> Xbox trailer
+}}
+
+{{Localisation
+|DEname = Reißzwecken
+|DEmeaning = Thumbtacks
+|ESname = Tachuelas
+|ESmeaning = Tacks
+|FRname = Pointes d'acier
+|FRmeaning = Points of Steel
+|ITname = Puntine
+|ITmeaning = Pins or Drawing Pins
+|JAname = 足止めの鋲
+|JAromanised = Ashidome no byō
+|JAmeaning = Restraining Tack
+|KOname = 압정
+|KOromanised = Apjeong
+|KOmeaning = Tack
+|PTname = Tachinhas
+|PTmeaning = Tacks
+|RUname = Колючки
+|RUromanised = Koljučki
+|RUmeaning = Thorn
+|TWname = 釘刺
+|TWromanised = Dìngcì
+|TWmeaning = same
+|ZHname = 钉刺
+|ZHromanised = Dìngcì
+|ZHmeaning = Caltrops
+|CODEname = TACK
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Pointes d’acier]]

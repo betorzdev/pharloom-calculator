@@ -1,0 +1,101 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Flintstone Flyer.png|Hunter's Journal
+Flintstone Flyer Idle.png|Idle
+Flintstone Flyer Working.png|Working
+</gallery>
+| hasdrop = true
+| r1 = 8
+| r2 = 12
+| sh1 = 4-6
+| sh2 = 5-8
+|health = 30/{{BT|120}} <br> 20 (Cutscene)<ref group="Note">The one talking to [[Forebrother Signis]] which quickly leaves when the fight starts.</ref>
+|damage_modifiers = {{SS Multiple Damage Modifiers||1.5|1|1|0.85|0.85|Cutscene|1|1|1|1|1}}
+|numbers_required = 25
+|singnum=1
+}}
+
+{{Quote
+|Hr = Journal
+|Aerial worker lost to Pharloom's Haunting. Bears a pouch full with flintstone which they will fling at intruders.<hr/>That incendiary material they carry is a natural wonder, with many potential applications. What a waste to carelessly throw it at me whenever I pass by.
+}}
+
+<b>Flintstone Flyers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are winged [[Dock Workers|workers]] of the [[Deep Docks]] that throw [[Flintstone]] at intruders.
+
+== Behaviour and Tactics ==
+Flintstone Flyers either fly in place or are at work, until [[Hornet (Silksong)|Hornet]] approaches or attacks, at which point they begin targeting her.<br>
+Being flying enemies, Flintstone Flyers try to maintain distance from Hornet, attempting to remain diagonally distanced from her at all times.<br>
+To attack, they throw a Flintstone at Hornet which travels in an arc and bounces off surfaces before fizzling out and becoming harmless.<br>
+Their bell helmets make them completely immune to Needle Bounces, which only stun them momentarily instead of dealing damage.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Flintstone Flyers have their health quadrupled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+A Flintstone Flyer with only 20 HP can be seen listening to [[Forebrothers Signis & Gron|Forebrother Signis]] before his boss fight.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* For grace above...
+* Smelt dug and churned...
+* Toil, and toil, and toil...
+* Tunnel, breach, bore...
+* Seek the shine... find the ore...
+* By holy light...
+}}
+
+== Location ==
+Flintstone Flyers can be found exclusively in the [[Deep Docks]], including the entrance to it from [[the Marrow]]. They can also be summoned by [[Forebrother Signis]].
+
+{{Gallery
+|Image1 = Mapshot SS Flintstone Flyer 01.png!Location in the Marrow
+|Image2 = Mapshot SS Flintstone Flyer 02.png!Locations in the Deep Docks
+|Image3 = Mapshot SS Flintstone Flyer 03.png!Locations in the Deep Docks in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Flintstone Flyer 02.png!In the Marrow
+|Image2 = Screenshot SS Flintstone Flyer 01.png!In the Deep Docks
+|Image3 = Screenshot SS Flintstone Flyer 03.png!Flintstone Throw
+|Image4 = Screenshot SS Flintstone Flyer 04.png!Singing
+|Image5 = Screenshot SS Flintstone Flyer 05.png!Working
+|Image6 = Screenshot SS Deep Docks 10.png!Being instructed by Forebrother Signis alongside a Smelt Shoveller
+|Image7 = Screenshot SS Smokerock Sifter 05.png!Summoned by Forebrother Signis
+}}
+{{Localisation
+|DEname = Feuersteinflieger
+|DEmeaning = Flint Flyer
+|ESname = Portapedernales
+|ESmeaning = Flints Carrier
+|FRname = Volsilex
+|FRmeaning = Flint Flight
+|ITname = Volatore Siliceo
+|ITmeaning = Flinty Flyer
+|JAname = ハッカバエ
+|JAromanised = Hakkabae
+|JAkatakana = foreign
+|JAmeaning = Combination of {{Lang|ja|発火 <i>hakka</i>}} (ignition) and {{Lang|ja|蝿 <i>hae</i>}} (fly)
+|KOname = 부싯돌 비행자
+|KOromanised = Busitdol bihaengja
+|KOmeaning = Flintstone Flyer
+|PTname = Voador-ígneo
+|PTmeaning = Igneous Flyer
+|RUname = Кремнеброс
+|RUromanised = Kremnebros
+|RUmeaning = Flint Thrower
+|TWname = 燧石飛工
+|TWromanised = Suìshí fēi gōng
+|TWmeaning = same
+|ZHname = 燧石飞工
+|ZHromanised = Suìshí fēi gōng
+|ZHmeaning = Flint Stone Flying Worker
+|CODEname=DOCK_FLYER
+|CODEmeaning = <code>DOCK</code> internally refers to Deep Docks.
+}}
+
+== Notes ==
+<references group="Note"/>
+
+{{Refs|hr=false}}
+
+{{SS Nav Enemies}}

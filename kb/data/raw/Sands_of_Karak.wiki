@@ -1,0 +1,295 @@
+{{SS Infobox Area
+| tab1 = Act 2
+| image1= <gallery>
+Sands of Karak Map Marked.png|Marked
+Sands of Karak Map Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Sands of Karak Map Ruin Marked.png|Marked
+Sands of Karak Map Ruin Clean.png|Unmarked
+</gallery>
+| connection = [[Blasted Steps]]
+| ambience = [https://www.youtube.com/watch?v=xmL6HrARoIg Atmos Blasted Steps]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]<br>
+[https://www.youtube.com/watch?v=GivJqT7ml0M Atmos Citadel Outside]<br>
+[https://www.youtube.com/watch?v=t2k1Ke0f9JQ Atmos Outside Wind Chasm]
+| main = [https://youtu.be/CBv-FDIb_DQ Sands of Karak]
+}}
+{{Quote
+|Hr=SS
+|Crusted heights above those howling steps. Signs suggest great warriors once ruled this winding place, though the sand has eroded much of their mark.
+|[[Shakra]]}}
+
+<b>Sands of Karak</b> is an [[Areas (Silksong)|area]] in <i>[[Hollow Knight: Silksong]]</i>. Found at the farthest western edge of [[Pharloom]], it is a desert composed of coral and constant sandstorms.
+
+== Description ==
+[[File:Screenshot SS Sands of Karak 12.png|thumb|200px|left|Coral above Sandcarvers]]
+Sands of Karak consists largely of long, horizontal platforming areas navigated by striking crust tree pearls that spawn short-lived crust trees – linked platforms that can either be flat platforms, hanging walls or crust spike balls – which [[Hornet (Silksong)|Hornet]] must jump and [[Needle#Needle-bouncing|Needle-bounce]] on before they disappear. {{MissingInfo}}
+
+== History ==
+In a bygone era, Sands of Karak was a flourishing land with a clear river, rather than a desert of unending sandstorms.<ref>[[Karaka]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Staunch and skilled bladebug of a once flourishing land lost to time."</i></ref><ref>Sands of Karak [[Lore Tablets (Silksong)#Sands of Karak|Lore Tablet]]:<br><i>"Coral sways,<br>Clear water flows,<br>Upon our river free of time."</i></ref><ref>Coral Tower [[Needolin Locations#Coral Tower|Needolin dialogue]]: <i>"For the river long..."</i></ref> The river originated from Coral Tower,<ref>Coral Tower Lore Tablet:<br><i>"At water's source,<br>And coral's heart,<br>Our lord born last to rule."</i></ref> an immense structure built by the powerful [[Order of Karak]] and their leader [[Crust King Khann]].<ref>[[Shakra]]: <i>"If chance allows, visit the tower above. It is an impressive sight, not overgrown by the crust upon these caverns, but rather formed full of the material itself. If the old tribe of this place were able to guide its growth to such grand degree... then they possessed a power to rival even that Citadel."</i></ref> During this period, the area was populated by far more creatures, especially around the tower, such as the now-extinct [[Kai]]s, [[Yuma]]s, and [[Crustcrawler]]s, who teemed in a bountiful display of life.<ref>Kai Hunter's Journal entry: <i>"They once teemed around their tower, in numbers immense. It is a rare chance to witness such a bountiful display of life."</i></ref> 
+
+At some point, the clear waters stopped flowing, leaving the region to be consumed by crust and sand.<ref>Hornet dialogue with Shakra: <i>"Fair greetings Shakra, in these drifts consumed by crust and sand."</i></ref> Most of the order, including their king, became nothing more than hardened husks within Coral Tower.<ref>Shakra: <i>"A grand tribe they seemed, and strong fighters I'm sure. Alas, they exist now only as hardened husks."</i></ref> The wind and sand eventually eroded much of their mark from the area.<ref>Sands of Karak [[Map and Quill (Silksong)|map]] description: <i>"Crusted heights above those howling steps. Signs suggest great warriors once ruled this winding place, though the sand has eroded much of their mark."</i></ref><ref>[[Snail Shamans (Silksong)|Snail Shamans]]: <i>"Up top of those caves lost to wind and sand rests a crusted old ruler, a once great warrior king."</i></ref> The area is now only populated by coral-adapted creatures, such as [[Driznit]]s, [[Coral Furm]]s, and [[Conchfly|Conchflies]],<ref>Driznit Hunter's Journal entry: <i>"Nesting creature that fuses its face with sharpened coral."</i></ref><ref>Conchfly Hunter's Journal entry: <i>"Small bug that crafts a shell of sharpened coral. Spins its shell at rapid speed to cut through crust and bone."</i></ref> alongside the aggressive [[Sandcarver]]s, which reside within the pools of sand that now dominate the area.<ref>Sandcarver Hunter's Journal entry: <i>"Shell plated worm that lives beneath pools of shifting sand."</i></ref>
+
+== How to Access ==
+The area can be first accessed from the west of the [[Blasted Steps]] past the [[Great Conchflies]] boss. The [[Clawline]] is required so Hornet can jump to a series of hanging rings from the entrance to [[Pinstress]]'s balloon house, which leads upwards and leftwards to a tall vertical room in Sands of Karak. This is the only entry point to Sands of Karak before Hornet opens up shortcuts that link the area to the Blasted Steps. Both of these shortcuts can only be opened from within Sands of Karak: one just west of the Steps' [[Bellway]] station, by dropping a coral stalactite in the main vertical chamber, and another just west of the [[Grand Gate]] by taking the lift beside the Sands' eastern bench and breaking the encrusted coral.
+
+{{TabbedPOI
+|Header = true
+
+|NPC1 = Shakra
+
+|Enemy1 = Coral Furm
+|Enemy2 = Driznit
+|Enemy3 = Driznarga
+|Enemy4 = Pokenabbin
+|Enemy5 = Conchfly
+|Enemy6 = Pharlid
+|Enemy7 = Sandcarver
+|Enemy8 = Shardillard
+
+|Boss1 = Raging Conchfly
+|Boss2 = Watcher at the Edge
+
+|Loot1_FileName = Memory Locket
+|Loot1_Amount = 1
+|Loot2_FileName = Simple Key (Silksong)
+|Loot2_Name = Simple Key (Silksong){{!}}Simple Key
+|Loot2_Amount = 1
+|Loot3_FileName = Flea
+|Loot3_Amount = 1
+|Loot4_FileName = Crustnut
+|Loot5_FileName = Grey Memento
+|Loot5_Description = dropped by [[Watcher at the Edge]]
+
+
+|LoreTabletsSource = SS Sands of Karak
+}}
+
+== Sub-area: Voltnest ==
+{{SS Infobox Area
+| tab1 = Act 2
+| image1= <gallery>
+Voltnest Map Marked.png|Marked
+Voltnest Map Clean.png|Unmarked
+Voltnest Map Interior.png|Interior
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Voltnest Map Ruin Marked.png|Marked
+Voltnest Map Ruin Clean.png|Unmarked
+Voltnest Map Interior.png|Interior
+</gallery>
+|credits = Interior map by [https://x.com/CotlAccount?t=X1s5wS52zTvjMpuVWmIlGw&s=09 Hivedrawer]
+|ambience = [https://www.youtube.com/watch?v=LqSQzABsPH0 Atmos Coral Zap Area]<br>
+[https://youtu.be/-3wPVmsgNe8 Atmos Archives]
+|main = [https://www.youtube.com/watch?v=Y55kyikBUcg Tension Two]
+}}
+
+<b>Voltnest</b> is a sub-area in Sands of Karak. It is made up of tunnels lined by electrified coral. It can be accessed from the Blasted Steps Bellway station – after first opening up the shortcut – by climbing straight up to the bridge at the top of [[Sands of Karak]]. There is a secret path for Hornet to enter in the top right corner of the room. In Act 2, the [[Faydown Cloak]] and the Clawline can be used to reach the entrance; in Act 3, the [[Silk Soar]] can be used for an easier ascent. 
+
+[[Voltvyrm]] can be fought in Voltnest, after which it will drop the [[Volt Filament]] tool. Upon returning to the arena after defeating the boss, [[Nuu]] may be present.
+
+The [[Materium]] entry for [[Voltridian]] can be obtained by inspecting a Voltridian outcrop in Voltnest.
+
+{{TabbedPOI
+|NPC1 = Nuu
+|NPC1Note = (after defeating Voltvyrm)
+
+|Boss1 = Voltvyrm
+
+|Loot1_FileName = Volt Filament
+|Loot1_Description = dropped by [[Voltvyrm]]
+|Loot2_FileName = Voltridian
+|Loot2_Description = [[Materium]] entry
+}}
+
+== Sub-area: Coral Tower ==
+{{SS Infobox Area
+| tab1 = Act 2
+| image1= <gallery>
+Coral Tower Map Marked.png|Marked
+Coral Tower Map Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Coral Tower Map Ruin Marked.png|Marked
+Coral Tower Map Ruin Clean.png|Unmarked
+</gallery>
+|ambience = [https://www.youtube.com/watch?v=xmL6HrARoIg Atmos Blasted Steps]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]<br>
+[https://www.youtube.com/watch?v=agQqLlS20U4 Atmos Coral Gorge] 
+|main = [https://www.youtube.com/watch?v=vSp1UhO0hpc Coral Tower Ambience]
+|action = [https://www.youtube.com/watch?v=YHACfnIFkdY Coral Tower Battle]
+|backer = Brandon Lieu<ref group="Note">While not said in-game, Brandon Lieu backed at the AU$ 880 "Design a Dungeon and Boss!" tier, which allowed the backer to <i>"Design a dungeon with its own unique theme, then fill it with enemies and secrets!"</i> Since the dungeon was also set to include the backer's custom boss, and that Brandon Lieu is credited as Crust King Khann's creator, it can be deduced that he created the Coral Tower, which is Khann's dungeon.</ref>
+}}
+<b>Coral Tower</b> is an area on the west of Sands of Karak. Inside the tower, the dried-up body of [[Crust King Khann]] can be found sitting on a throne surrounded by the desiccated remains of many [[Karaka]]s standing guard over him. In the same area, there is the [[Conchcutter]] lying before the throne, as well as a bench on the far right edge of the room. Once the Conchcutter is acquired, using the [[Elegy of the Deep]] ability in front of the throne transports Hornet to the Coral Tower memory.
+
+Coral Tower pits Hornet against four consecutive combat gauntlet rooms before she can ascend to the final arena to duel Crust King Khann.
+
+After the first gauntlet is completed, a [[Crustcrawler]] and three [[Yuma]]s can be killed for Silk replenishment.
+
+After the second gauntlet is completed, two Crustcrawlers and eight Yumas can be killed for Silk replenishment.
+
+After the third gauntlet is completed, two more Yumas can be killed for Silk replenishment. There is also a breakable stalactite that creates a shortcut linking the final floor with the entrance to the memory.
+
+After all waves are defeated, Khann calls out to Hornet as the centre of the ceiling breaks open. Hornet must then use the [[Silk Soar]] to ascend into Khann's boss arena. Lingering in this room will cause coral spines to slowly encroach from all sides.
+
+{{TabbedPOI
+|Enemy1 = Driznarga
+|Enemy2 = Conchfly
+|Enemy3 = Crustcrawler
+|Enemy4 = Kai
+|Enemy5 = Spinebeak Kai
+|Enemy6 = Steelspine Kai
+|Enemy7 = Yuma
+|Enemy8 = Yumama
+|Enemy9 = Karaka
+|Enemy10 = Kakri
+|Enemy11 = Yago
+|Enemy12 = Karak Gor
+|Enemy13 = Alita
+|Enemy14 = Corrcrust Karaka
+
+|Boss1 = Crust King Khann
+
+|Loot1_FileName = Conchcutter
+|Loot2_FileName = Encrusted Heart
+|Loot2_Description = obtained after defeating [[Crust King Khann]]
+
+|LoreTabletsSource = SS Coral Tower
+
+|EnemyGauntletsSource = Coral Tower 1, Coral Tower 2, Coral Tower 3, Khann
+}}
+
+== Creation and Development ==
+[[File:April 2021 Red Coral Gorge Stitch.png|thumb|220px|April 2021 Red Coral Gorge stitched map created by Min Ferna.]]
+Sands of Karak in its current form was not initially planned for <i>Silksong</i>; originally, in it and the [[Blasted Steps]]' place, was the [[Cut Content (Silksong)/Areas#Red Coral Gorge|Red Coral Gorge]] area, a large area first added to the map around November 2017 and seen in the February 2019 <i>Silksong</i> reveal trailer and in February 2021's <i>EDGE Magazine</i> issue.<ref>[https://www.youtube.com/watch?v=pFAknD_9U7c Hollow Knight: Silksong Reveal Trailer]</ref><ref>[https://pocketmags.com/edge-magazine/february-2021 Edge Magazine February 2021 edition], p. 54.</ref>  The final layout of the Red Coral Gorge was divided into roughly 3 sections: <code>Coral Steps</code>, <code>Coral River</code>, and Voltnest. The Coral River was the segment that became Sands of Karak.
+
+By September 2021, it began getting cut, and, in early 2022, the Sands of Karak was introduced. [[Team Cherry]] stated that the area was removed because having "''beautiful lush" areas "went against the narrative that [they] were trying to tell''" about "''a place where the Citadel has really consumed the lands beneath it''", noting that "''It reduces the drive of the story and the character if the world is beautiful and fine''". It narratively "''exists still''", but was "''brought forward in time and eroded''", becoming the Sands of Karak and Blasted Steps.<ref name="bloomberg2">[https://www.bloomberg.com/news/newsletters/2025-11-28/the-makers-of-hollow-knight-silksong-aren-t-done-just-yet The Makers of 'Silksong' Aren't Done Just Yet] on Bloomberg</ref>
+
+Some rooms from the Coral River section of the Red Coral Gorge, namely <code>Coral_23</code>, <code>Coral_24</code>, and <code>Coral_26</code>, were kept and appear in the Sands of Karak, now being dried up. Following its conception in 2022, the Sands of Karak itself went through some changes. The eastern most room of the area that contains a [[Simple Key]] was [[Cut Content (Silksong)/Ending B: Strung to Serve#Sands of Karak (Red Coral Gorge)|originally planned]] to feature a [[Bellshrine]]; it is still internally referred to as one. As of 2023, the [[Squirrm]] room was also planned to be part of the area, being accessible through [[Cut Content (Silksong)/Areas#Sands of Karak|a room later removed from the game]]. Voltnest's layout also slightly differed. A screenshot of the Sands of Karak's Coral Tower sub-area dated to February 2025<ref>[https://discord.com/channels/283467363729408000/586931790208434203/1357442654543286293 Discord message] showcasing image metadata</ref> also includes coral in the Silk Soar ascent segment that is not there in the release build.<ref>[[:File:Screenshot SS Coral Tower Early.png|Early <i>Silksong</i> screenshot]]</ref>
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Sands of Karak 01.png!Tablet at entrance
+|Image2 = Screenshot SS Sands of Karak 02.png!Pilgrims camp
+|Image3 = Screenshot SS Sands of Karak 03.png!Bench
+|Image4 = Screenshot SS Sands of Karak 04.png!Raging Conchfly arena
+|Image5 = Screenshot SS Sands of Karak 05.png!Voltnest entrance
+|Image6 = Screenshot SS Sands of Karak 06.png!Voltridian outcrop
+|Image7 = Screenshot SS Voltvyrm 03.png!Voltvyrm arena
+|Image8 = Screenshot SS Sands of Karak 10.png!Watcher at the Edge
+|Image9 = Screenshot SS Needolinkarak 1.png!Crust King Khann (pre-heart)
+|Image10 = Screenshot SS Crust King Khann 12.png!Coral Tower entrance
+|Image11 = Screenshot SS Coral Tower Arena 1.png!Coral Tower first arena
+|Image12 = Coralt.png!Coral Tower first floor window
+|Image13 = Screenshot SS Coral Tower Arena 2.png!Coral Tower second arena
+|Image14 = Screenshot SS Coral Tower Arena 3.png!Coral Tower third arena
+|Image15 = Screenshot SS Coral Tower Arena 4.png!Coral Tower fourth arena
+|Image16 = Screenshot SS Crust King Khann 03.png!Crust King Khann arena
+|Image17 = Screenshot SS Sands of Karak 09.png!Crust King Khann (post-heart)
+}}
+
+== Trivia ==
+* Both of the Lore Tablets in Sands of Karak can be broken. They will regrow after roughly three seconds.
+* In Voltnest, when taking damage at the electrified walls, there is a unique animation of Hornet being grabbed by the volt tendrils and pulled in.
+{{Localisation
+|DEname = Sande von Karak
+|DEmeaning = Sands of Karak
+|ESname = Arenas de Karak
+|ESmeaning = Sands of Karak
+|FRname = Sables Karak
+|FRmeaning = Karak Sands
+|ITname = Sabbie di Karak
+|ITmeaning = Sands of Karak
+|JAname = カラクの砂
+|JAromanised = Karaku no suna
+|JAmeaning = Sand of Karak
+|KOname = 카라크의 모래밭
+|KOromanised = Karakeuui moraebat
+|KOmeaning = Sand Field of Karak
+|PTname = Areias de Karak
+|PTmeaning = Sands of Karak
+|RUname = Пески Карака
+|RUromanised = Peski Karaka
+|RUmeaning = Sands of Karak
+|ZHname = 卡拉卡沙川
+|ZHromanised = Kǎlākǎ shāchuān
+|ZHmeaning = Karaka Sand River or Karaka Sand Plains
+|TWname = 卡拉克沙地
+|TWromanised = Kǎlākè shādì
+|TWmeaning = Karak Sand Land
+|CODEname=RED_CORAL_GORGE</code><br><code>CORAL_RIVER
+|CODEmeaning = [[Cut Content (Silksong)/Areas#Red Coral Gorge|Red Coral Gorge]] was an earlier name and concept for Sands of Karak
+}}
+===Voltnest===
+{{Localisation
+|hr=false
+|DEname = Voltnest
+|DEmeaning = —
+|ESname = Nido Volt
+|ESmeaning = Volt Nest
+|FRname = Foudre-Nid
+|FRmeaning = Lightning Nest
+|ITname = Voltnido
+|ITmeaning = Voltnest
+|JAname = 電撃の巣
+|JAromanised = Dengeki no su
+|JAmeaning = Electric Shock Nest
+|KOname = 벼락둥지
+|KOromanised = Byeorakdungji
+|KOmeaning = Lightning Nest
+|PTname = Voltninho
+|PTmeaning = Voltnest
+|RUname = Вольт-нора
+|RUromanised = Vol't-nora
+|RUmeaning = Volt Den or Volt Hole
+|ZHname = 电荷巢穴
+|ZHromanised = Diànhè cháoxué
+|ZHmeaning = Electric Charge Nest
+|TWname = 雷電巢穴
+|TWromanised = Léidiàn cháoxué
+|TWmeaning = Lightning Nest
+|CODEname=VOLTNEST</code><br><code>ZAPNEST
+}}
+===Coral Tower===
+{{Localisation
+|hr=false
+|DEname = Korallenturm
+|DEmeaning = Coral Tower
+|ESname = Torre de Coral
+|ESmeaning = Coral Tower
+|FRname = Tour Corallienne
+|FRmeaning = Coral Tower
+|ITname = Torre Corallo
+|ITmeaning = Coral Tower
+|JAname = 珊瑚の塔
+|JAromanised = Sango no tō
+|JAmeaning = Coral Tower
+|KOname = 산호의 탑
+|KOromanised = Sanhoui tap
+|KOmeaning = Coral Tower
+|PTname = Torre de Corais
+|PTmeaning = Coral Tower
+|RUname = Коралловая башня
+|RUromanised = Korallovaja bašnja
+|RUmeaning = Coral Tower
+|ZHname = 珊瑚尖塔
+|ZHromanised = Shānhú jiāntǎ
+|ZHmeaning = Coral Spire
+|TWname = 珊瑚尖塔
+|TWromanised = Shānhú jiāntǎ
+|TWmeaning = same
+|CODEname=RED_CORAL_TOWER
+}}
+{{Refs|hr=ss}}
+
+== Notes ==
+<references group="Note"/>
+
+{{SS Nav Areas}}
+
+[[zh:卡拉卡沙川]]
+[[fr:Sables Karak]]

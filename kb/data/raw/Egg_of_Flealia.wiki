@@ -1,0 +1,99 @@
+{{SS Infobox Tool
+| type = Blue
+| effect = While at full health, [[Silk Skills]] cost 3 [[Silk]] instead of 4
+| location = [[Flea Caravan]]
+| description = Icon of the mythical mother flea, passed down from caravans of old. A symbol of protection and kinship.<hr>
+Decreases the cost of Silk Skills while health is full.
+}}
+
+{{Quote
+| I would be honoured to bestow one final gift unto you, Miss Hornet, a treasure from fleakind's glorious past. May it mark you forever as a friend to us all. 
+| [[Fleamaster Mooshka]]
+| Hr = SS
+}}
+
+<b>Egg of Flealia</b> is a {{CrestSlot|Blue|1}} in <i>[[Hollow Knight: Silksong]]</i>. It reduces the cost of [[Skills|Silk Skills]] while [[Hornet (Silksong)|Hornet]] is at full health.
+
+== Usefulness ==
+Egg of Flealia reduces the cost of [[Skills]] from 4 strands of [[Silk]] to 3 while [[Hornet (Silksong)|Hornet]] is at full health. 
+
+If Hornet has collected all 3 [[Silk Heart]]s, Egg of Flealia will allow her to use {{CrestSlot|Skill|s}} every 10 seconds without collecting Silk from enemies.
+
+{{Clear}}
+
+== How to Acquire ==
+Given by [[Fleamaster Mooshka]] after finding all the lost [[Flea|Fleas]] throughout Pharloom.
+
+{{Gallery
+|Image1 = Mapshot SS Flea Caravan 01.png!Location in the Marrow
+|Image2 = Screenshot SS Flea Caravan 02.png!Fleamaster Mooshka in the Marrow
+|Image3 = Mapshot SS Flea Caravan 02.png!Location in Greymoor
+|Image4 = Screenshot SS Flea Caravan 03.png!Fleamaster Mooshka in Greymoor
+}}
+
+{{Gallery
+|Image1 = Mapshot SS Flea Caravan 03.png!Location in Blasted Steps
+|Image2 = Screenshot SS Flea Caravan 04.png!Fleamaster Mooshka in Blasted Steps
+|Image3 = Mapshot SS Flea Caravan 04.png!Location in Putrified Ducts
+|Image4 = Screenshot SS Flea Caravan 05.png!Fleamaster Mooshka in Putrified Ducts
+}}
+
+== Tool Combo Tips ==
+{{SS Table Tool Interactions
+| Tool1 = Weavelight
+| Tool1Desc = Only 2 [[Silk Heart]]s are needed to generate enough Silk to use {{CrestSlot|Skill|s}}, and Hornet can do so every 6 seconds instead of 10. 
+| Tool2 = Plasmium Phial
+| Tool2Desc = Can provide a buffer of [[Lifeblood|Plasmium]] Masks over full health, allowing Egg of Flealia to remain active even after taking damage. 
+| Tool3 = Shaman Crest
+| Tool3Img = Shaman Crest File
+| Tool3Desc = Pairs well due to its focus on the use of {{CrestSlot|Skill|s}}.
+| Tool4 = Volt Filament
+| Tool4Desc = Pairs well due to its increased damage of {{CrestSlot|Skill|s}}. 
+| Tool5 = Magnetite Dice
+| Tool5Desc = Pairs well due to the chance to negate incoming damage, helping Hornet stay at max HP which in turn increases her damage output.}}
+{{Gallery
+|Title = Gallery
+|Image1 = Silk Spool HUD Egg of Flealia.png!Hornet's Silk Spool with the<br>Egg of Flealia
+|Image2 = Silk Spool HUD Egg of Flealia Active.png!Hornet's Silk Spool with the<br>Egg of Flealia while it is active
+}}
+
+== Trivia ==
+* There exists a cut NPC known as [[Cut Content (Silksong)/NPCs#Flealia (Flea_Spirit)|Flealia]] (also known as Flea Spirit) in the game files.
+** In the Korean translation of the Egg of Flealia, Flealia is referred to as Flea Spirit.
+{{Gallery
+|Image1 = Flea Spirit Icon.png!Flea Spirit Icon
+}}
+{{Localisation
+|DEname = Flohlia-Ei
+|DEmeaning = Flealia Egg<br><small><i>Flohlia</i> is a combination of <i>floh</i> (flea) and Flealia.</small>
+|ESname = Huevo de Pulgalia
+|ESmeaning = Egg of Flealia<br><small><i>Pulgalia</i> is a combination of <i>pulga</i> (flea) and Flealia.</small>
+|FRname = Œuf de Pucelia
+|FRmeaning = Egg of Flealia<br><small><i>Pucelia</i> is a combination of <i>puce</i> (flea) and Flealia.</small>
+|ITname = Uovo di Pulcinea
+|ITmeaning = Egg of Flealia<br><small><i>Pulcinea</i> is from <i>pulce</i> (flea) and <i>-inea</i> (feminine suffix).</small>
+|JAname = フレアリアの卵
+|JAromanised = Furearia no tamago
+|JAkatakana = foreign
+|JAmeaning = Flealia's Egg
+|KOname = 벼룩 정령의 알
+|KOromanised = Byeoruk jeongnyeongui al
+|KOmeaning = Flea Spirit's Egg
+|PTname = Ovo de Pulgalia
+|PTmeaning = Egg of Flealia<br><small><i>Pulgalia</i> is a combination of <i>pulga</i> (flea) and Flealia.</small>
+|RUname = Яйцо Блохалии
+|RUromanised = Jajco Bloxalii
+|RUmeaning = Flealia Egg<br><small>{{lang|ru|Блохалии}} <i>Bloxalii</i> is a combination of {{lang|ru|блохи}} <i>bloxi</i> (flea) and Flealia.</small>
+|TWname = 蚤母之卵
+|TWromanised = Zǎo mǔ zhī luǎn
+|TWmeaning = Egg of Flea Mother
+|ZHname = 蚤母卵
+|ZHromanised = Zǎo mǔ luǎn
+|ZHmeaning = Flea Mother Egg
+|CODEname=FLEA_CHARM
+|CODEmeaning=Reference to [[Charm]]s from <i>[[Hollow Knight]]</i>.
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Oeuf de Pucelia]]

@@ -1,0 +1,94 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Tarmite.png|Hunter's Journal
+Tarmite Idle.png|Idle
+</gallery>
+| hasdrop = true
+| sh1 = 3-5
+| sh2 = 4-7
+|health = 25/{{BT|50}} <br> 30 ([[Savage Beastfly]])
+| damage_modifiers = {{SS Spaced Damage Modifiers|1|0.9|0.9|0.73|0.73}}
+|numbers_required = 10
+|singnum=1
+}}
+
+{{Quote
+|Hr = Journal
+|Flying bone mite that lives near magma. Roasts its prey by spitting scorching tar.<hr/>Its sticky spit would no doubt make a useful crafting material if moulded fresh. Unfortunately, I cannot stop to experiment.
+}}
+
+<b>Tarmites</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are small, winged bone mites capable of spitting scorching tar at their prey.<ref>Tarmite Hunter's Journal entry: <i>"Flying bone mite that lives near magma. Roasts its prey by spitting scorching tar."</i></ref>
+
+== Behaviour and Tactics ==
+When idle, Tarmites fly idly in place. Once they've spotted Hornet, they begin pursuing her while trying to maintain distance between itself and her.<br>
+Tarmites attempt to at least always be above Hornet, and vary constantly between diagonal distancing and horizontal distancing.
+
+To attack, Tarmites spit a glob of burning tar in her direction which deals {{Damage|2|type=Fire}} ({{Damage|1|type=Fire}} with [[Magma Bell]] equipped), indicated by its eyes and mouth glowing orange beforehand. This tar can stick to surfaces and lingers for 2 seconds before dissipating.<br>
+As they ready to spit, Tarmites move faster than usual in a straight line away from Hornet's general direction.<br>
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Tarmites have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* Feel its burn...
+* Deeper... Hotter...
+* Never enough...
+* Protection in pain...
+}}
+
+== Location ==
+Tarmites can be found in the [[Far Fields]], initially inside the [[Far_Fields#Skull_Cave|Skull Cave]]. Upon the cave's completion, one Tarmite will spawn inside the cave, and two more will spawn outside.
+
+They are also summoned by the [[Savage Beastfly]] encountered in the Far Fields.
+
+{{Gallery
+|Image1 = Mapshot SS Tarmite 02.png!Locations in the Far Fields before completing the Skull Cave
+|Image2 = Mapshot SS Tarmite 01.png!Locations in the Far Fields after completing the Skull Cave
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Tarmite 01.png!In the skull cave
+|Image2 = Screenshot SS Tarmite 02.png!In the skull cave (Platforming)
+|Image3 = Screenshot SS Tarmite 03.png!In Far Fields
+|Image4 = Screenshot_SS_Savage_Beastfly_06.png!Summoned by Savage Beastfly
+|Image5 = Screenshot SS Tarmite 04.png!Attacking
+|Image6 = Screenshot SS Tarmite 05.png!Tar stuck to wall
+|Image7 = Screenshot SS Tarmite 06.png!Reacting to Needolin
+}}
+
+== Trivia ==
+* Their name is a combination of "tar" and "mite", and may also be a play on "termite".
+
+{{Localisation
+|DEname = Teermilbe
+|DEmeaning = Tarmite
+|ESname = Lavácaro
+|ESmeaning = Portmanteau of <i>lava</i> and <i>àcaro</i> (mite)
+|FRname = Tarmite
+|FRmeaning = —
+|ITname = Acaro del Catrame
+|ITmeaning = Tar Mite
+|JAname = ハネダニ
+|JAromanised = Hanedani
+|JAmeaning = Combination of {{lang|ja|羽}} <i>hane</i> (wing) and {{lang|ja|ダニ}} <i>dani</i> (tick).
+|KOname = 타르진드기
+|KOromanised = Tareujindeugi
+|KOmeaning = Tarmite
+|PTname = Ignácaro
+|PTmeaning = Portmanteau of <i>ígneo</i> (igneous) and <i>ácaro</i> (mite).
+|RUname = Тармит
+|RUromanised = Tarmit 
+|RUmeaning = Tarmite
+|ZHname = 焦油螨
+|ZHromanised = Jiāoyóu mǎn
+|ZHmeaning = Tar Mite
+|CODEname= BONE_SPITTER
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

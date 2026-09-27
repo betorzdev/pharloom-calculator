@@ -1,0 +1,82 @@
+{{SS Infobox Tool
+| type = Red
+| damage = 7/11/15/20/24<br>Instant kill<br> ([[Plasmid]]s and [[Plasmidas]]es)<br>250 (to [[Plasmified Zango]])
+| max = Infinite
+| refill_type = Repair
+| refill = N/A
+| effect = Used to collect [[Plasmium]] and [[Plasmified Blood]]
+| location = [[Wormways]]
+| description = Tool designed to extract and store fluids.<hr>To pierce its target, the Needle Phial must first be charged to full tension.
+}}
+
+{{Quote
+| Once you locate a bud, simply charge the Phial until readied, then release its needle into a bud's core. Do it right, and it'll suck out the nectar in one clean pop!
+| [[Alchemist Zylotol]]
+| Hr = SS
+}}
+
+<b>Needle Phial</b> is a {{CrestSlot|Red|1}} in <i>[[Hollow Knight: Silksong]]</i>. It is used to extract [[Plasmium]] from [[Plasmium Bud]]s during the <i>[[Alchemist's Assistant]]</i> [[Wish]], and [[Plasmified Blood]] from [[plasmified]] enemies during the <i>[[Advanced Alchemy]]</i> Wish.
+
+The Needle Phial becomes unobtainable after completing both Wishes. This tool is not required to unlock the <i>Arsenal</i> [[Achievements (Silksong)|Achievement]] and does not count towards the game's [[Completion (Silksong)|completion]] percentage.
+
+== Usefulness ==
+Though this tool can be used to attack enemies and destroy objects,  it is primarily used to complete the <i>[[Alchemist's Assistant]]</i> and <i>[[Advanced Alchemy]]</i> Wishes.
+
+Successful extraction of Plasmified Blood on a non-boss enemy will result in an instant-kill for the enemy that the blood is extracted from. Using this Tool on [[Plasmified Zango]] inflicts 250 damage that Zango cannot regenerate and will persist even if Hornet leaves the arena or dies while fighting him.  
+
+Because of the charge time required to successfully use the Needle Phial, care must be taken when using it on enemies as being damaged during the charge will cancel its use.
+
+== How to Acquire ==
+Given by [[Alchemist Zylotol]] upon starting the <i>[[Alchemist's Assistant]]</i> or <i>[[Advanced Alchemy]]</i> Wishes.
+
+After completing each of the Wishes, Alchemist Zylotol takes back the Needle Phial.
+
+{{Gallery
+|Image1 = Mapshot SS Alchemist Zylotol 01.png!Location of Alchemist Zylotol in the Wormways
+|Image2 = Screenshot SS Wormways 04.png!Alchemist Zylotol in the Wormways
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = GIF SS Needle Phial 01.gif!Siphoning from [[Plasmium Bud]]
+|Image2 = GIF SS Needle Phial 02.gif!Siphoning from [[Zango]]
+|Image3 = Ari SS Sketch 03.jpg!Concept sketches
+}}
+
+== Trivia ==
+* It is the only {{CrestSlot|Red|1}} that is not affected by the [[Pollip Pouch]] in any way.
+* The Needle Phial can be used to harvest [[Skewered Organ|Skewered Organs]] for the <i>[[Broodfeast]]</i> Wish.
+{{Clear}}
+
+{{Localisation
+|DEname = Nadelampulle
+|DEmeaning = Pin Ampoule<br><small>While <i>nadel</i> can mean both needle and pin interchangeably, on its own is only used to refer to pins in game.</small>
+|ESname = Ampolla con aguja
+|ESmeaning = Needle Ampule
+|FRname = Fiollette
+|FRmeaning = 
+|ITname = Agofiala
+|ITmeaning = Needle Phial
+|JAname = フラスコ針
+|JAromanised= Furasuko hari
+|JAmeaning = Flask Needle
+|KOname = 바늘병
+|KOromanised = Baneulbyeong
+|KOmeaning = Needle Bottle
+|PTname = Frasco de Agulha
+|PTmeaning = Needle Flask
+|RUname = Сосуд с иглой
+|RUromanised = Sosud s igloj
+|RUmeaning = Vessel with Needle
+|TWname = 儲液針管
+|TWromanised = Chǔ yè zhēnguǎn
+|TWmeaning = same
+|ZHname = 储液针管
+|ZHromanised = Chǔ yè zhēnguǎn
+|ZHmeaning = Fluid Reserve Syringe
+|CODEname = EXTRACTOR
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Fiollette]]

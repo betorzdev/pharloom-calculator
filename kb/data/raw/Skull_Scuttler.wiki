@@ -1,0 +1,98 @@
+{{For|information on the lore of this species|Skull Scuttlers}}
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Skull Scuttler.png|Hunter's Journal
+Skull Scuttlers Hiding.png|Disguised
+Skull Scuttler No Skull.png|No Skull
+</gallery>
+|health = 15/{{BT|60}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.8|0.8|0.8|0.8}}
+|numbers_required = 35
+| hasdrop = true
+| sh1 = 2-3
+| sh2 = 3-4
+|sing=Mossgrub
+}}
+
+{{Quote
+|Hr = Journal
+|Small, soft bug that uses the hard skulls of the Marrow for protection and disguise.<hr/>In every land, creatures find new and surprising ways to disguise themselves. One must be wary always.
+}}
+
+<b>Skull Scuttlers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are small, soft bugs using the skulls of [[the Marrow]] as protection and disguise.<ref>Skull Scuttler [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Small, soft bug that uses the hard skulls of the Marrow for protection and disguise."</i></ref>
+
+== Behaviour and Tactics ==
+Skull Scuttlers walk back and forth, turning around when they reach a wall or platform edge. They often hide inside the skull they wear, imitating harmless background elements until [[Hornet (Silksong)|Hornet]] comes close.
+
+They deal {{Damage|1}} on contact, even before they have emerged from hiding.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Skull Scuttlers have their health quadrupled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+*Rumbling, crackling...
+*Shells are strong...
+*Scratching, seeking...
+*Warm and dark...
+*Digging, hiding...
+*Claws are sharp...
+}}
+
+== Location ==
+Skull Scuttlers are found primarily in [[the Marrow]], and a few appear in the [[Deep Docks]]. They can also be seen in the [[Memorium]]'s Marrow section.
+
+A Skull Scuttler above the [[Enemy Gauntlets (Silksong)/The Marrow 1|gauntlet]] arena in the Marrow can be permanently removed by dropping a platform on it.
+
+{{Gallery
+|Image1 = Mapshot SS Skull Scuttler 01.png!Locations in the Marrow
+|Image2 = Mapshot SS Skull Scuttler 05.png!Locations in the Marrow in Act 3
+|Image3 = Mapshot SS Skull Scuttler 03.png!Locations in the Deep Docks
+|Image4 = Mapshot SS Skull Scuttler 04.png!Locations in the Deep Docks in Act 3
+|Image5 = Mapshot SS Skull Scuttler 02.png!Location in the Memorium
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Skull Scuttler 01.png!In the Marrow
+|Image2 = Screenshot SS Skull Scuttler 05.png!In the Deep Docks
+|Image3 = Screenshot SS Skull Scuttler 02.png!In the Memorium
+|Image4 = Screenshot SS Skull Scuttler 06.png!Reacting to the Needolin
+|Image5 = Screenshot SS Skull Scuttler 04.png!Disguised
+|Image6 = Screenshot SS Skull Scuttler 03.png!Black-threaded
+}}
+{{Localisation
+|DEname = Schädelkrabbler
+|DEmeaning = Skull crawler
+|ESname = Cráneo escurridizo
+|ESmeaning = Slippery skull
+|FRname = Petit Cornusque
+|FRmeaning = Small horned
+|ITname = Teschio Brulicante
+|ITmeaning = Swarming Skull
+|JAname = ズガイバシリ
+|JAromanised = Zugaibashiri
+|JAmeaning = Skull Running<br><small>Combination of {{lang|ja|頭蓋}} <i>zugai</i> (skull) and {{lang|ja|走り}} <i>hashiri</i> (running).</small>
+|KOname = 해골 종종벌레
+|KOromanised = Haegol jongjongbeolle
+|KOmeaning = Skull Scuttle Bug
+|PTname = Trepanguejo-crânio
+|PTmeaning = Skull Climbcrab, portmanteau of <i>trepar</i> (climb) and <i>caranguejo</i> (crab).
+|RUname = Пугливый череп
+|RUromanised = Puglivyj čerep
+|RUmeaning = Timid Skull
+|TWname = 顱骨竄行蟲
+|TWromanised = Lúgǔ cuàn xíng chóng
+|TWmeaning = Skull-hiding running bug
+|ZHname = 颅潜虫
+|ZHromanised = Lú qián chóng
+|ZHmeaning = Skull sneaking bug
+|CODEname=BONE_GOOMBA
+|CODEmeaning = Skull Scuttlers act like [https://www.mariowiki.com/Goomba Goombas] from the <i>Mario</i> franchise 
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[fr:Petit Cornusque]]

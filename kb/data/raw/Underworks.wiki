@@ -1,0 +1,298 @@
+{{SS Infobox Area
+| tab1 = Acts 1/2
+| image1 = <gallery>
+Underworks_Map_Marked.png|Marked
+Underworks_Map_Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Underworks_Map_Ruin_Marked.png|Marked
+Underworks_Map_Clean.png|Unmarked
+</gallery>
+| connection = [[Choral Chambers]]<br/>[[Bilewater]]<ref group="Note">Connects via the passageway from Bilewater to the Choral Chambers after opening the shortcut.</ref><br/>[[Grand Gate]]<br/>[[Whiteward]]<ref group="Note">Connects via one-way drop from Whiteward.</ref><br/>[[Whispering Vaults]]<br/>[[Wisp Thicket]]
+| ambience = [https://www.youtube.com/watch?v=Qnk8nhLhEXE Atmos Under]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]<br>
+[https://www.youtube.com/watch?v=fWVGhLwoNX4 Atmos Lava Near Big]<br>
+[https://www.youtube.com/watch?v=GeUHAnIixB4 Atmos Lava Far]
+| main = [https://www.youtube.com/watch?v=eDjl6qzwjdI Underworks]
+| action = [https://youtu.be/swPmNk9_fw0?si=u0UZUdRY-EBdPU6W Generic Enemy Battle A]
+}}
+{{Quote
+|Me can not rest. Us works, and Citadel breathes, and thems above do sing, and all is right. And when us works enough, thems see it... Hrrr... thems see it, and us gets us holy reward...
+|[[Loam]]
+|Hr=SS
+}}
+
+The <b>Underworks</b> is an [[Areas (Silksong)|area]] in <i>[[Hollow Knight: Silksong]]</i>. It is one of the first areas available to explore in [[Act 2]], connected to [[the Citadel]] via the [[Choral Chambers]] and [[Whiteward]]. 
+
+== Description ==
+[[File:Screenshot SS Underworks 17.png|thumb|200px|left|Materials falling onto cogs]]
+The Underworks is where most of the Citadel's machinery is maintained. The area is dreary, coated in smog from the machinery; its workers endlessly slave away cleaning and maintaining the place in close proximity to deadly hazards like exposed gears or lava pits, with hopes of one day rising to join those in the Citadel itself.<ref>Loam: "Hrrrrrrr. The harder me work, the sooner it come. Thems above, them watch us, always. Work hard, work hard, and us will go up. Hrrrr."</ref> The local amenities are designed to exploit its workers, as benches must be paid for upon each use, and a confessional exists that plays pre-recorded messages that sentence its faithful workers to more work as penance.<ref>Confessional: "Speak now. Thy confession will be heard. ... You have confessed a sin most grave and must by works cleanse yourself. Return to your task and work off-cycle, neither eating nor supping until new-cycle begins." Note that Hornet does not say a word to prompt this response.</ref>
+{{Clear}}
+== History ==
+The Underworks are essential to the function of the Citadel, being where most of the Citadel's machinery is maintained and handling much of its industrial production. The Underworkers were tasked with cleaning and repairing the area, and were promised that if they labored enough they would be welcomed into the Citadel. The Citadel does not appear to have kept this promise.
+
+It is likely that much of the raw materials the Citadel orders the bugs of [[Deep Docks]] to extract are used to supply the Underworks.<ref>[[Flintstone]] Materium description: <i>"Long burning rock from the base of Pharloom. Mined and used by the Citadel in its forgings."</i></ref> 
+
+The Cauldron was likely built after the Weavers left Pharloom, as a damaged Weaver Burial Spire and a re-located [[Spool Fragment]] base can be found in the area. <ref> [[:File:Screenshot_SS_Underworks_15.png| Screenshot of the Clawline Burial Spire.]]</ref>
+The Underworks is the home base of the [[Architects]]. The [[Twelfth Architect]] can be found in the eastern section of the area alongside many of their deceased kin.
+
+== How to Access ==
+The Underworks is segregated into a west and east half, each part accessible from different points in Act 2.
+
+The western Underworks is commonly accessed from the [[Grand Gate]] after defeating the [[Last Judge]]. Hornet accesses a run-down lift that crashes directly into the Underworks and must find a way to escape into the [[Choral Chambers]] above. Hornet can also access the western Underworks directly through the top of the [[Wisp Thicket]], skipping the Grand Gate. The eastern side is physically obstructed until Hornet unlocks a temporary bridge from that side.
+
+The eastern Underworks houses The Cauldron, and is accessed either from a hidden passage in [[Whiteward]] or from a lift that unlocks after [[Trobbio]]'s defeat. The Cauldron is where Hornet acquires the [[Clawline]] ability, which then must be used to go further east in the Underworks and access the deepest parts of the [[Whispering Vaults]].
+
+{{TabbedPOI
+|Header = true
+
+|NPC1 = Loam
+
+|Enemy1 = Underworker
+|Enemy2 = Underscrub
+|Enemy3 = Undersweep
+|Enemy4 = Underpoke
+|Enemy5 = Underloft
+|Enemy6 = Undercrank
+|Enemy7 = Drapemite
+|Enemy8 = Drapefly
+|Enemy9 = Pharlid
+|Enemy10 = Pharlid Diver
+|Enemy11 = Void Mass
+|Enemy11Note = ([[Act 3]] only)
+
+|Loot1_FileName = Delver's Drill
+|Loot2_FileName = Spool Fragment
+|Loot2_Amount = 2
+|Loot3_FileName = Memory Locket
+|Loot3_Amount = 1
+|Loot4_FileName = Flea
+|Loot4_Amount = 1
+|Loot5_FileName = Bone Scroll
+|Loot5_Amount = 1
+|Loot6_FileName = Psalm Cylinder
+|Loot6_Amount = 1
+|Loot7_FileName = Frayed Rosary String
+|Loot7_Amount = 2
+|Loot8_FileName = Shard Bundle
+|Loot8_Amount = 1
+|Loot9_FileName = Underworks Map
+|Loot9_Name = Map and Quill (Silksong){{!}}Underworks Map
+
+|LoreTabletsSource = SS Underworks
+
+|EnemyGauntletsSource = Underworks 1, Underworks 2
+}}
+
+== Sub-area: The Cauldron ==
+{{SS Infobox Area
+|tab1 = Act 2
+|image1 = <gallery>
+The_Cauldron_Map_Marked.png|Marked
+The_Cauldron_Map_Clean.png|Unmarked
+</gallery>
+|tab2 = Act 3
+|image2 = <gallery>
+The_Cauldron_Map_Ruin_Marked.png|Marked
+The_Cauldron_Map_Clean.png|Unmarked
+</gallery>
+|ambience = [https://www.youtube.com/watch?v=Qnk8nhLhEXE Atmos Under]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]<br>
+[https://www.youtube.com/watch?v=fWVGhLwoNX4 Atmos Lava Near Big]<br>
+[https://www.youtube.com/watch?v=GeUHAnIixB4 Atmos Lava Far]
+|action = [https://youtu.be/swPmNk9_fw0?si=u0UZUdRY-EBdPU6W Enemy Battle A]
+}}
+<b>The Cauldron</b> is a sub-area located on the right side of the Underworks. It is home to the [[Twelfth Architect]]. It is not initially accessible from the [[Choral Chambers]] entrance to the Underworks, but can be accessed from [[Whiteward]] or the [[Whispering Vaults]]. 
+
+The [[Clawline]] ability is found in this area.
+
+{{TabbedPOI
+
+|NPC1 = Twelfth Architect
+
+|Enemy1 = Underscrub
+|Enemy2 = Undersweep
+|Enemy3 = Underpoke
+|Enemy4 = Underloft
+|Enemy5 = Undercrank
+|Enemy6 = Cogwork Underfly
+|Enemy7 = Cogwork Hauler
+|Enemy8 = Void Mass
+|Enemy8Note = ([[Act 3]] only)
+
+|Loot1_FileName = Icon SS Clawline
+|Loot1_Name = Clawline
+|Loot2_FileName = Craftmetal
+|Loot2_Amount = 1
+|Loot3_FileName = Flea
+|Loot3_Amount = 1
+|Loot4_FileName = Shard Bundle
+|Loot4_Amount = 1
+|Loot5_FileName = Pristine Core
+|Loot5_Amount = 1
+|Loot5_Description = found on the body of [[Twelfth Architect]] after they shut down
+
+|EnemyGauntletsSource = Underworks 3
+}}
+{{clear}}
+
+== Sub-area: Chapel of the Architect ==
+{{SS Infobox Area
+|image1 = <gallery>
+Chapel_of_the_Architect_Map_Marked.png|Marked
+Chapel_of_the_Architect_Map_Clean.png|Unmarked
+</gallery>
+|ambience = [https://www.youtube.com/watch?v=Qnk8nhLhEXE Atmos Under]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+|main = [https://www.youtube.com/watch?v=O-cYxAOIbVM Chapel Music]
+}}
+
+The <b>Chapel of the Architect</b> is a small room to the north of the [[Twelfth Architect]], unlocked using the [[Architect's Key]]. Inside, Hornet may bind the [[Architect Crest]], and find a breakable wall in the top right corner with a [[Needolin Locations#Underworks|Needolin location]] that contains the remains of the 11 other Architects. After binding the Architect Crest and leaving the sub-area, the door closes permanently.
+
+{{TabbedPOI
+
+|Loot1_FileName = Architect Crest File
+|Loot1_Name = Architect Crest 
+|Loot1_Description = requires [[Architect's Key]]
+
+}}
+{{clear}}
+{{Gallery|
+| Title = Gallery
+| Image1 = Screenshot SS Underworks 01.png!Entrance Benches (Down)
+| Image2 = Screenshot SS Underworks 02.png!Entrance Benches (Up)
+| Image3 = Screenshot SS Underworks 03.png!Map Board
+| Image4 = Screenshot SS Underworks 04.png![[Delver's Drill]] Room
+| Image5 = Screenshot SS Underworks 05.png!Steam Arena
+| Image6 = Screenshot SS Underworks 06.png!Floorless Arena
+| Image7 = Screenshot SS Underworks 07.png!Spool Fragment Room
+| Image8 = Screenshot SS Underworks 08.png!Break Room Benches (Down)
+| Image9 = Screenshot SS Underworks 09.png!Break Room Benches (Up)
+| Image10 = Screenshot SS Underworks 16.png!Western Underworks
+| Image11 = Screenshot SS Underworks 10.png![[Loam]] Room
+| Image12 = Screenshot SS Underworks 11.png![[Twelfth Architect]] Room
+| Image13 = Screenshot SS Underworks 12.png!Chapel of the Architect Entrance
+| Image14 = Screenshot SS Underworks 13.png!Chapel of the Architect (inside, pre-claiming)
+| Image15 = Screenshot SS Underworks 14.png!Chapel of the Architect (inside, post-claiming)
+| Image16 = Screenshot SS Needolinunderworks 3.png!Chapel of the Architect (hidden room behind breakable wall)
+| Image17 = Screenshot SS Underworks 15.png![[Clawline]] Weaver Spire
+| Image18 = XboxScreenshot Underworks.png!<i>Silksong</i> Xbox trailer
+}}
+
+== Trivia ==
+* Underworks was originally named Understore, as seen in Ari Gibson's sketchbook.<ref>[[:File:Ari SS Sketch 34.png|Ari Gibson sketch]]</ref>
+* While it has direct connections to several parts of the the [[Citadel]], the Underworks is not considered a part of the Citadel proper, as denoted by the [[:File:SS_NavMap.png|zoomed-out map]].
+* The confessional is located next to the room with a row of paid-to-use benches in the upper Underworks. It asks for {{R|25}} per use, and gives the same few lines of dialogue every time. Hornet can get to the confessional's other side via a passage at the top of the room, revealing a cogwork statue that gives the dialogue. The statue can be broken, after which the dialogue becomes distorted, but it still requires {{R|25}} nonetheless. (see its dialogue [[Lore Tablets (Silksong)#Underworks|here]])
+* The large background fan in the [[Enemy Gauntlets (Silksong)/Underworks 1|enemy gauntlet]] arena causes Hornet's cloak to flutter, in the same way as in windy areas.
+* The statues of pilgrims that appear throughout Underworks have golden masks bolted onto them, marked with seal of the Citadel.
+
+{{Gallery
+| Image1 = Screenshot SS Name PilgrimOfferingStatue Underworks BlastedSteps.png!Edited screenshot comparing the Pilgrim Offering statues from Underworks and Blasted Steps}}
+
+{{History
+|game = SS
+|1.0.29909 (Patch 5): Fixed Choruses in Underworks not playing their full Needolin text.
+}}
+{{Localisation
+|DEname = Unterwerk
+|DEmeaning = Underwork
+|ESname = Talleres Inferiores
+|ESmeaning = Lower Workshops
+|FRname = Fonderie
+|FRmeaning = Foundry
+|ITname = Fonderie
+|ITmeaning = Foundries
+|JAname = 聖域の礎
+|JAromanised = Seiiki no ishizue
+|JAmeaning = Foundation of Holy Ground
+|KOname = 지하 작업장
+|KOromanised = Jiha jageobjang
+|KOmeaning = Underground Workshop
+|PTname = Claustroforjas
+|PTmeaning = From <i>claustro-</i> (prefix for enclosed space) and <i>forjas</i> (forge).
+|RUname = Нижние цеха
+|RUromanised = Nižnie cexa
+|RUmeaning = Lower Workshops
+|ZHname = 圣堡工厂
+|ZHromanised = Shèng bǎo gōngchǎng
+|ZHmeaning = Holy Castle Factory<br><small>{{lang|zh-Hans|圣堡}} <i>shèng bǎo</i> (holy castle) is the name of [[the Citadel]] in Simplified Chinese.</small>
+|TWname = 下層工廠
+|TWromanised = Xiàcéng gōngchǎng
+|TWmeaning = Lower-level Factory
+|CODEname = UNDERSTORE
+|CODEmeaning = Underworks was originally named Understore
+}}
+
+=== The Cauldron ===
+{{Localisation
+|hr=false
+|DEname = Der Kessel
+|DEmeaning = The Boiler
+|ESname = El Caldero
+|ESmeaning = The Cauldron
+|FRname = Le Chaudron
+|FRmeaning = The Cauldron
+|ITname = Il Calderone
+|ITmeaning = The Cauldron
+|JAname = 大釜
+|JAromanised = Ōkama
+|JAmeaning = Cauldron
+|KOname = 가마솥
+|KOromanised = Gamasot
+|KOmeaning = Cauldron
+|PTname = O Caldeirão
+|PTmeaning = The Cauldron
+|RUname = Котёл
+|RUromanised = Kotël
+|RUmeaning = Boiler
+|ZHname = 大熔釜
+|ZHromanised = Dà róng fǔ
+|ZHmeaning = Big Melting Cauldron
+|TWname = 大熔釜
+|TWromanised = Dà róng fǔ
+|TWmeaning = same
+|CODEname = CAULDRON
+}}
+
+=== Chapel of the Architect ===
+{{Localisation
+|hr=false
+|DEname = Kapelle des Architekten
+|DEmeaning = Chapel of the Architect
+|ESname = Capilla del Arquitecto
+|ESmeaning = Chapel of the Architect
+|FRname = Chapelle De L'Architecte
+|FRmeaning = Chapel of the Architect
+|ITname = Cappella dell'Artefice
+|ITmeaning = Chapel of the Artificer
+|JAname = 設計者のチャペル
+|JAromanised = Sekkeisha no chaperu
+|JAmeaning = Designer's Chapel
+|KOname = 설계자의 예배당
+|KOromanised = Seolgyejaui yebaedang
+|KOmeaning = Designer's Chapel
+|PTname = Capela do Arquiteto
+|PTmeaning = Chapel of the Architect
+|RUname = Капелла Архитектора
+|RUromanised = Kapella Arxitektora
+|RUmeaning = Chapel of the Architect
+|ZHname = 建筑师教堂
+|ZHromanised = Jiànzhùshī jiàotáng
+|ZHmeaning = Architect Chapel
+|TWname = 建築師教堂
+|TWromanised = Jiànzhùshī jiàotáng
+|TWmeaning = same
+|CODEname = CHAPEL_ARCHITECT
+}}
+
+[[zh:圣堡工厂]]
+
+{{hr|ss}}
+
+== Notes ==
+<references group="Note"/>
+{{Refs|hr=false}}
+{{SS Nav Areas}}
+
+[[Category:Areas (Silksong)]]

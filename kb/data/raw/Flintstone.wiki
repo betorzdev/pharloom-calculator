@@ -1,0 +1,59 @@
+{{SS Infobox Item
+|title = Flintstone
+|image = Flintstone.png
+|type = Material
+|description = Long burning rock from the base of Pharloom. Mined and used by the Citadel in its forgings.
+}}
+
+{{Quote
+| The deposits around here, those long-burning rocks. They're useful to the Citadel, in whatever their shadowy business, but useless if you require tools of us!
+| [[Forge Daughter]]
+| Hr = SS
+}}
+
+<b>Flintstone</b> is a material found in volcanic regions of [[Pharloom]]. It can be displayed in the [[Materium]].
+
+== Use ==
+Flintstone chunks can be found in containers, in rock deposits, or thrown by [[Flintstone Flyer]]s and [[Flintbeetle]]s. They explode on contact with Hornet or other enemies, or {{MissingInfo}} seconds after being thrown by enemies or scattered by the [[Needle]]. Hornet can strike loose chunks with her Needle to knock them away or even toward enemies. Flintstones that are knocked into enemies deal 6 damage on contact, or 5 damage when they explode after {{MissingInfo}} seconds.
+
+Flintstone walls and floors also appear in volcanic areas. These can be walked or climbed on, but deal {{Damage|1|type=Fire}} after 0.7 seconds of continuous contact (2.7 seconds if the [[Magma Bell]] is equipped). Jumping frequently or using the [[Swift Step]] can allow Hornet to safely clear these obstacles.
+Enemies take 3 damage every 0.5 seconds of continuous contact with Flintstone surfaces, and objects such as [[Rosaries]], [[Shell Shards]], and enemy corpses burn after {{MissingInfo}} seconds, turning into ash and becoming unobtainable.
+
+== Location ==
+Flintstone can be found in the [[Deep Docks]], the [[Far Fields]], the [[Whiteward]], the [[Underworks]], and during the climb out of [[The Abyss (Silksong)|the Abyss]]. A Materium entry for Flintstone can be acquired in the lower Deep Docks.
+
+{{Gallery
+|Image1 = Mapshot SS Flintstone 01.png!Location of Materium entry in the Deep Docks
+|Image2 = Screenshot SS Flintstone 01.png!Large bucket of Flintstone in the Materium entry location
+}}
+
+
+{{Localisation
+|DEname = Feuerstein
+|DEmeaning = 
+|ESname = Pedernal
+|ESmeaning = Flint
+|FRname = Silex
+|FRmeaning = 
+|ITname = Selce
+|ITmeaning = Flint
+|JAname=発火石
+|JAromanised= 
+|JAmeaning = 
+|KOname = 부싯돌
+|KOromanised = Busitdol
+|KOmeaning = 
+|PTname =  Rocha Ígnea
+|PTmeaning = Fiery or Igneous Rock
+|RUname = Кремень
+|RUromanised = Kremen'
+|RUmeaning = Flint
+|ZHname = 燧石
+|ZHromanised = Suìshí
+|ZHmeaning = Flint
+|CODEname = SMELTSTONE
+|CODEmeaning = 
+}}
+
+
+{{Refs|hr=SS}}

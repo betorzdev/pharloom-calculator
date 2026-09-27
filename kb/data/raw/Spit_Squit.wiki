@@ -1,0 +1,92 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Spit Squit.png|Hunter's Journal
+Spit Squit Idle.png|Idle
+Spit Squit Resting.png|Resting
+</gallery>
+| hasdrop = true
+| sh1 = 2-3
+| sh2 = 3-4
+|health = 55/{{BT|110}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1.1|1|0.9|0.9}}
+|numbers_required = 20
+|sing=Swamp Squit
+|singnum=2
+}}
+{{Quote
+|Hr = Journal
+|Hovering pest with a hollowed proboscis able to spit gobs of sizzling bile.<hr/>
+To subsist on the sickly water in this fetid environment it spits out the most toxic elements. Over generations, this former survival technique has turned into an effective hunting tool.
+}}
+
+<b>Spit Squits</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are dexterous [[Squits]] adapted to the toxic environment of the [[Putrified Ducts]] and able to spit gobs of sizzling bile.<ref>Spit Squit [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Hovering pest with a hollowed proboscis able to spit gobs of sizzling bile. To subsist on the sickly water in this fetid environment it spits out the most toxic elements."</i></ref>
+
+== Behaviour and Tactics ==
+Spit Squits are initially found clinging to walls. Upon seeing [[Hornet (Silksong)|Hornet]], they take flight and perform 2-3 short dashes through the air in random directions, maintaining distance from Hornet. At the same time as the last dash starts, the Spit Squit spits three arching projectiles in a burst in a cone to its left or right.
+
+Because they cannot fire projectiles directly upwards or downwards, they can be more safely attacked from above or below. Alternatively, [[Cross Stitch]] can be used on the projectiles to secure an easy kill.
+
+Spit Squits can also be killed by luring them into a [[Barnak]], though this does not contribute to the [[Hunter's Journal (Silksong)|Hunter's Journal]].
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Spit Squits have their health doubled. They gain one of the following [[Black-Threading#Movesets|void attacks]]: Void Blades, Void Tendrils, or Void Blobs.
+
+They also lash out into a large circle of Void Blades a short time after being eaten by Barnaks, incapacitating them.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Survive in smog...
+* Choke on bile...
+* Feed... or starve...
+* Resist the rot...
+}}
+
+== Location ==
+Spit Squits can be found in the [[Putrified Ducts]].
+
+{{Gallery
+|Image1 = Mapshot SS Spit Squit 01.png!Locations in the Putrified Ducts
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Spit Squit 02.png!In the Putrified Ducts
+|Image2 = Screenshot SS Spit Squit 01.png!Resting on a wall
+|Image3 = Screenshot SS Spit Squit 03.png!Attacking
+|Image4 = Screenshot SS Spit Squit 04.png!Reacting to the Needolin
+|Image5 = Screenshot_SS_Barnak_06.png!Being dragged into [[Barnak]]'s mouth
+|Image6 = Screenshot SS Barnak 10.png!Barnak after eating a black-threaded Spit Squit
+}}
+
+{{Localisation
+|DEname = Spuckskit
+|DEmeaning = Spit Squit<br><small>Inconsistent with the Squit in <i>Hollow Knight</i>, which was translated as <i>Piekser</i> (piercer).</small>
+|ESname = Escupebilis
+|ESmeaning = Portmanteau of <i>escupe</i> (spitting) and <i>bilis</i> (bile).<br><small>Inconsistent with the Squit in <i>Hollow Knight</i>, which was translated as <i>Mosquito</i> (mosquito).</small>
+|FRname = Squitard
+|FRmeaning = Squit + pejorative suffix <i>-ard</i> (analogous to English -ard in "drunkard" and other words).<br><small>Inconsistent with the [[Squit]] in <i>[[Hollow Knight]]</i>, which was translated as <i>Moustique</i> (mosquito).</small>
+|ITname = Sputafiele
+|ITmeaning = Bile Spitter<br><small>Inconsistent with the Squit in <i>Hollow Knight</i>, which was translated as <i>Tafide</i> (Horsefly-idae).</small>
+|JAname = ハキダシスクイット
+|JAromanised = Gakidashi sukuitto
+|JAmeaning = Squit spitter<br><small>Combination of {{lang|ja|吐き出し <i>hakidashi</i>}} (spitter) and {{lang|ja|スクイット}} <i>sukuitto</i> (squit).</small>
+|JAkatakana = foreignenemy
+|KOname = 타액 모기
+|KOromanised = Taaek mogi
+|KOmeaning = Saliva Mosquito
+|PTname = Mosquito-cuspidor
+|PTmeaning = Spitter Mosquito
+|RUname = Жалень-плевун
+|RUromanised = Žalen'-plevun
+|RUmeaning = Squit Spitter
+|TWname = 酸涎斯奎特
+|TWromanised = Suānxián sīkuítè
+|TWmeaning = Acidic Spit Squit
+|ZHname = 酸涎飞蚋
+|ZHromanised = Suānxián fēiruì
+|ZHmeaning = Acidic Spit Mosquito<br><small>Inconsistent with the Squit in <i>Hollow Knight</i>, which was translated as {{lang|zh-Hans|斯奎特 <i>sīkuítè</i>}}, a phonetic loan.</small>
+|CODEname= SWAMP_MOSQUITO_SKINNY
+|CODEmeaning = Swamp Squits are internally known as "Swamp Mosquitos"}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

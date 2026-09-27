@@ -1,0 +1,155 @@
+{{SS Infobox Tool
+| label = Claw Mirror
+| image = Claw Mirror.png
+| type = Blue
+| damage = 11/18/24/31/37 +5x2 <br> (bind hit + AoE damage, 2 hits) <br> 21/28/34/41/47 (total)
+| effect = Emits a damaging burst after binding
+| location = [[The Stage]]
+| description = Theatrical tool of a vainglorious bug.<hr/>
+When binding, emits a dazzling flash that damages surrounding enemies.
+
+| title2 = Claw Mirrors
+| label2 = Claw Mirrors
+| image2 = Claw Mirrors.png
+| type2 = Blue
+| damage2 = 15/24/33/42/51 +8x2 <br> (bind hit + AoE damage, 2 hits) <br> 31/40/49/58/67 (total)
+| effect2 = Creates a powerful explosion when binding
+| location2 = [[The Stage]]
+| description2 = Twin theatrical tools of a vainglorious bug.<hr/>
+When binding, emits a searing blast that damages surrounding enemies.
+}}
+
+<b>Claw Mirror</b> is a {{CrestSlot|Blue|1}} in <i>[[Hollow Knight: Silksong]]</i>. It damages enemies after casting [[Bind]].
+
+After acquiring the <b>Dark Mirror</b> in [[Act 3]], they combine into the <b>Claw Mirrors</b>, extending its effect.
+
+== Usefulness ==
+<b>Claw Mirror</b> deals 11 base damage (scales with [[Tool Pouch & Crafting Kit|Tool Damage]]) around Hornet after using [[Bind]], as well as an area of effect which deals 2 ticks of 5 damage that don't scale.
+
+The <b>Claw Mirrors</b> increase the base damage to 15, with the 2 ticks of extra damage increasing to 8.
+
+Claw Mirrors work well with the [[Witch Crest]] as it increases the overall damage each Bind, allowing for even more aggressive play, though it is possible for the Claw Mirrors' damage to kill an enemy, preventing the thrashes from healing their full amount.
+
+== How To Acquire ==
+<b>Claw Mirror</b> is dropped by [[Trobbio]] after defeating him in [[The Stage]].
+
+<b>Dark Mirror</b> is dropped by [[Tormented Trobbio]] after defeating him in [[The Stage]] and is combined with the Claw Mirror to form the <b>Claw Mirrors</b>.
+
+{{Gallery
+|Image1 = Mapshot SS Trobbio 01.png!Location in Whispering Vaults
+|Image2 = Screenshot SS Claw Mirror 01.png!Claw Mirror in Whispering Vaults
+|Image3 = Screenshot SS Dark Mirror 01.png!Dark Mirror in Whispering Vaults
+}}
+
+== Tool Synergies ==
+{{SS Table Tool Interactions
+| Tool1 = Multibinder
+| Tool1Desc = Triggers explosion and lingering damage of the Claw Mirror(s) twice. This does not affect the [[Witch Crest]].
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Dark Mirror.png!Dark Mirror pickup sprite
+}}
+
+== Trivia == 
+* With Claw Mirror or Claw Mirrors equipped, Hornet's [[Bind]] animation is changed to add a twirl before Binding.
+** If [[Multibinder]] is also equipped Hornet will twirl twice, ending up facing the opposite direction from when she started the Bind.
+** [[Beast Crest]], [[Shaman Crest]], and [[Witch Crest]] are not affected, as they have unique Bind animations.
+* It is impossible to obtain the Dark Mirror on its own, since it is not actually an item and only upgrades the Claw Mirror, which is also a pre-requisite for accessing the [[Wish]] <i>[[Pain, Anguish and Misery]]</i> in the first place. If the game is modified to be able to fight [[Tormented Trobbio]] without having the Claw Mirror, he will then drop both items and [[Hornet (Silksong)|Hornet]] will pick them up in normal succession.
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Fixed Claw Mirrors leaving Hornet inverted if taking damage during a specific moment while binding.
+|1.0.28891 (Patch 3): Reduced base damage.
+}}
+{{Localisation
+|DEname = Krallenspiegel
+|DEmeaning = Claw Mirror<br><small><i>Spiegel</i> (mirror) can be both singular and plural.</small>
+|ESname = Garra espejo
+|ESmeaning = Claw Mirror
+|FRname = Mirosserre
+|FRmeaning = Portmanteau of <i>miroir</i> (mirror) and <i>serre</i> (claw).
+|ITname = Specchio artiglio
+|ITmeaning = Claw Mirror
+|JAname = 爪鏡
+|JAromanised = Tsumakagami
+|JAmeaning = Claw Mirror
+|KOname = 발톱 거울
+|KOromanised = Baltop geoul
+|KOmeaning = Claw Mirror
+|PTname = Espelho de Garra
+|PTmeaning = Claw Mirror
+|RUname = Когтистое зеркало
+|RUromanised = Kogtistoe zerkalo
+|RUmeaning = Clawed Mirror
+|TWname = 爪鏡
+|TWromanised = Zhuǎjìng
+|TWmeaning = same
+|ZHname = 爪镜
+|ZHromanised = Zhuǎjìng
+|ZHmeaning = Claw Mirror
+|CODEname=DAZZLE_BIND
+}}
+===Dark Mirror===
+{{Localisation
+|hr=false
+|DEname = Dunkler Spiegel
+|DEmeaning = Darker Mirror
+|ESname = Espejo oscuro
+|ESmeaning = Dark Mirror 
+|FRname = Miroir Noir
+|FRmeaning = Black Mirror
+|ITname = Specchio oscuro
+|ITmeaning = Dark Mirror
+|JAname = 黒い鏡
+|JAromanised = Kuroi kagami
+|JAmeaning = Dark Mirror or Black Mirror
+|KOname = 어둠 거울
+|KOromanised = Eodum geouldeul
+|KOmeaning = Dark Mirror
+|PTname = Espelho Escuro
+|PTmeaning = Dark Mirror
+|RUname = Тёмное зеркало
+|RUromanised = Tëmnoe zerkalo
+|RUmeaning = Dark Mirror
+|TWname = 黑色爪鏡
+|TWromanised = Hēisè zhuǎjìng
+|TWmeaning = same
+|ZHname = 黑色爪镜
+|ZHromanised = Hēisè zhuǎjìng
+|ZHmeaning = Black Claw Mirror
+}}
+===Claw Mirrors===
+{{Localisation
+|hr=false
+|DEname = Krallenspiegel
+|DEmeaning = Claw Mirrors<br><small><i>Spiegel</i> (mirror) can be both singular and plural.</small>
+|ESname = Garras espejo
+|ESmeaning = Claws Mirror
+|FRname = Mirosserres
+|FRmeaning = Portmanteau of <i>miroir</i> (mirror) and <i>serre</i> (claw).
+|ITname = Specchi artiglio
+|ITmeaning = Claw Mirrors
+|JAname = ２つの爪鏡
+|JAromanised = Futatsu no tsumakagami
+|JAmeaning = 2 Claw Mirrors
+|KOname = 발톱 거울들
+|KOromanised = Baltop geouldeul
+|KOmeaning = Claw Mirrors
+|PTname = Espelhos de Garra
+|PTmeaning = Claw Mirrors
+|RUname = Когтистые зеркала
+|RUromanised = Kogtistye zerkala
+|RUmeaning = Clawed Mirrors
+|TWname = 雙生爪鏡
+|TWromanised = Shuāngshēng zhuǎjìng
+|TWmeaning = same
+|ZHname = 双生爪镜
+|ZHromanised = Shuāngshēng zhuǎjìng
+|ZHmeaning = Twin-Born Claw Mirrors
+|CODEname=DAZZLE_BIND_UPG
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Mirosserre]]

@@ -1,0 +1,72 @@
+{{SS Infobox Enemy
+|drops = None
+|health = 5
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 16<br>(Instantly completed on [[Crust King Khann]]'s death)
+}}
+{{Quote
+|Hr = Journal
+|Gelatinous coral drifter of simple mind and placid demeanour.<hr/>
+A creature at its most basic. This one is no threat to me, or any other.
+}}
+
+'''Yumas''' are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are gelatinous coral drifters, long lost to time and living on only in memory.
+== Behaviour and Tactics ==
+Yuma is a docile creature and poses no threat to [[Hornet (Silksong)|Hornet]]. It simply floats in the air, dealing no damage if coming into contact with Hornet.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* The crust covers...
+* The crust conceals...
+* Our shells made strong...
+* Our nest made secret...
+}}
+
+== Location ==
+Yumas can only be found in [[Crust King Khann]]'s [[Elegy of the Deep|Memory]] of the [[Coral Tower]] during [[Acts|Act 3]].
+
+{{Gallery
+|Image1 = Mapshot SS Coral Tower.png
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Yuma 01.png!Idle
+|Image2 = Screenshot SS Yuma 02.png!Erupting from [[Yumama]]
+}}
+
+==Trivia==
+* Though Yumas respond to the [[Needolin]] with dialogue, they do not sing or visibly react.
+{{Localisation
+|DEname = Yuma
+|DEmeaning = —
+|ESname = Yuma
+|ESmeaning = —
+|FRname = Yuma
+|FRmeaning = —
+|ITname = Yuma
+|ITmeaning = —
+|JAname = ユマ
+|JAromanised = Yuma
+|JAkatakana = foreignenemy
+|JAmeaning = Yuma
+|KOname = 유마
+|KOromanised = Yuma
+|KOmeaning = Yuma
+|PTname = Yuma
+|PTmeaning = —
+|RUname = Юма
+|RUromanised = Juma
+|RUmeaning = Yuma
+|TWname = 尤瑪
+|TWromanised = Yóumǎ
+|TWmeaning = same
+|ZHname = 尤玛
+|ZHromanised = Yóumǎ
+|ZHmeaning = Yuma
+|CODEname=CORAL_SWIMMER_SMALL
+|CODEmeaning = "Coral Swimmer" internally refers to [[Kai]]s and the cut [[Cut Content (Silksong)/Enemies#Red Coral Gorge|Shillfin]]
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

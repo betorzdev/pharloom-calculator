@@ -1,0 +1,77 @@
+{{SS Infobox Tool
+| image = <gallery>
+Cogwork Wheel.png|Inventory
+Cogwork Wheel Poison.png|Pollip Pouch
+</gallery>
+| type = Red
+| damage = 2/3/4/6/7 (per hit, 7 hits) <br> 14/21/28/42/49 (total)
+| max = 5/6/7/8/10
+| refill_type = Repair
+| refill = {{S|8}}
+| effect = Throws a circular saw
+| location = [[Underworks]]
+| description = Expanding circular blade powered by a cogwork motor.<hr>Propels forward, slicing through foes.
+}}
+
+{{Quote
+| You have affinity for such radial blades? I can b-b-build upon the idea-knowledge. Make them retract. Make them force-store.
+| [[Twelfth Architect]]
+| Hr = SS
+}}
+
+<b>Cogwork Wheel</b> is a {{CrestSlot|Red|1}} in <i>[[Hollow Knight: Silksong]]</i>. When used, [[Hornet (Silksong)|Hornet]] throws a spinning sawblade that moves along surfaces, both horizontally and vertically. 
+
+== Usefulness ==
+Cogwork Wheel deploys stationary before rapidly accelerating across the ground in the direction it was thrown. Upon hitting an enemy, the Cogwork Wheel slows down, allowing it to hit the same enemy multiple times, as (smaller) enemies will be knocked back after each hit. If the wheel collides with a sufficiently flat wall, it will follow this wall upwards, and if it hits a surface that it cannot pass while moving vertically, it will bounce off the wall, allowing for skillful bounceshots when positioned correctly.
+
+Cogwork Wheel deals 7 instances of damage before breaking, allowing it to excel at crowd control and provide moderately good single target damage against smaller foes close to the floor or on walls. It is most effective against a small group of enemies closely packed together, as it will hit all of them at once.
+
+== How to Acquire ==
+Purchased from [[Twelfth Architect]] for {{R|360}} and {{C|1}}.
+
+{{Gallery
+|Image1 = Mapshot SS Twelfth Architect 01.png!Location in Underworks
+|Image2 = Screenshot SS Underworks 11.png!Twelfth Architect in Underworks
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Recording_SS_Cogwork-Wheel.gif!Hornet deploying Cogwork Wheel
+}}
+{{History
+|game = SS
+|1.0.28650 (Patch 2): Reduced max capacity of Cogwork Wheel from 8–16 to 5–10.
+}}
+{{Localisation
+|DEname = Räderwerk-Säge
+|DEmeaning = Cogwork Saw
+|ESname = Rueda mecánica
+|ESmeaning = Mechanical Wheel
+|FRname = Roue mécanique
+|FRmeaning = Mechanical Wheel
+|ITname = Ruota meccanica
+|ITmeaning = Mechanical Wheel
+|JAname= カラクリの円盤
+|JAromanised = Karakuri no enban
+|JAmeaning = Mechanical Disk
+|KOname = 톱니바퀴 톱날
+|KOromanised = Tomnibakwi tomnal
+|KOmeaning = Cogwheel Sawblade
+|PTname = Roda Mecânica
+|PTmeaning = Mechanical Wheel
+|RUname = Заводное колесо
+|RUromanised = Zavodnoe koleso
+|RUmeaning = Clockwork Wheel
+|TWname = 機輪刃
+|TWromanised = Jī lún rèn
+|TWmeaning = same
+|ZHname = 机轮刃
+|ZHromanised = Jī lún rèn
+|ZHmeaning = Mechanical Wheel Blade
+|CODEname = COGWORK_SAW
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Roue mécanique]]

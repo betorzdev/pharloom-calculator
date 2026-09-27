@@ -1,0 +1,153 @@
+{{SS Infobox Area
+| tab1 = Acts 1/2
+| image1 = <gallery>
+Weavenest_Atla_Map_Marked.png|Marked
+Weavenest_Atla_Map_Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Weavenest_Atla_Map_Ruin_Marked.png|Marked
+Weavenest_Atla_Map_Clean.png|Unmarked
+</gallery>
+| connection = [[Moss Grotto]]
+| ambience = [https://www.youtube.com/watch?v=OGDjsXpW7UA Atmos Weavers]<br>
+[https://www.youtube.com/watch?v=ZzyCwfkjyCI Lake Atmos Hornet]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]<br>
+[https://www.youtube.com/watch?v=fWVGhLwoNX4 Atmos Lava Near Big]<br>
+[https://www.youtube.com/watch?v=GeUHAnIixB4 Atmos Lava Far]
+| main = [https://www.youtube.com/watch?v=C0PBjz5nxmY Memories]
+}}
+
+{{Quote|Hr=SS|Tr=SS|There, my mothers built their tools, all traps and bindings. Small things, but tests for larger forms. I still remember their thoughts as they worked, their desperation, and their hunger. Another hopeless attempt to wrest their freedom. All ended in failure, of course.|[[Eva]]}}
+<b>Weavenest Atla</b> is an [[Areas (Silksong)|area]] in <i>[[Hollow Knight: Silksong]]</i>. Found east of [[Moss Grotto]], it is an abandoned area built by the [[Weavers]], named after Atla, Weaver of time.<ref>[[Weaver Effigy]]: <i>"Carving of Atla, Weaver of time. A prayer is etched upon it. 'By grace of your example, and our history held full in mind, our song is yours, as your name is sacred. Weaver Atla, may you be praised eternal.'"</i></ref>
+
+== Description ==
+Weavenest Atla's intricately designed stone corridors are covered with heavy layers of [[Silk]]. All mechanisms here, such as lamps and the lift that connects the higher and lower parts of the Weavenest, are run by a power room that needs to be activated in order to progress through the area.
+
+Unlike the northeast part of Weavenest Atla, which is practically untouched artificial halls, the south-western side resembles the [[Moss Grotto]], with moss overgrown on all surfaces and water covering fossilized floors. Here, normal Moss Grotto enemies can be found, such as [[Mawling]]s, [[Marrowmaw]]s, and [[Mossmirs]]. The latter have even built a nest here, where [[Moss Mother]]s can be fought for the [[Weavelight]] [[Tool]] as a reward.
+
+[[File:Screenshot SS Weavenest Atla 01.png|thumb|200px|Northern lift room]]
+
+On the south-eastern side, behind a few breakable walls, [[Eva]] can be found. She talks to Hornet about her nature as a half-Weaver, and provides the [[Hunter Crest]] upgrades and [[Vesticrest]].
+
+[[Servitor Ignim|Servitors Ignim]] appear throughout the area, running if Hornet gets close.
+
+In the easternmost room of the area, Hornet can break a wall to the east and enter a secret passage to collect a [[Mask Shard (Silksong)|Mask Shard]] after a short platforming challenge. Just before the room with the platforming challenge, there is a room resembling an archive with a [[Rune Harp]] up top.
+
+Hornet can also find a [[Spool Fragment]] by going to the entrance just north of the area's [[Bench (Silksong)|Bench]] and getting past two Marrowmaw. In this same room, near the start of the room (between the water and the light), she can use [[Faydown Cloak]] to double jump and acquire the [[Snare Setter]], a tool required for the <i>[[Silk and Soul]]</i> [[wish]] to unlock [[Act 3]].
+
+== History == 
+Weavenest Atla was the largest of the five known [[Weavenest]]s built by the [[Weavers]] throughout [[Pharloom]].<ref>[[Caretaker]]: <i>"For the base, we'll be needin' a weapon of Weavers past. Search down low, aside the paths of bone, inside their largest nest."</i></ref> It served as a workshop for the Weavers, for their tools, traps, and bindings, all futile attempts to wrest their freedom from [[Grand Mother Silk]].<ref>[[Eva]]: <i>"I may, lady. Search over from here, on side where the moss meets the nest. There, my mothers built their tools, all traps and bindings. Small things, but tests for larger forms. I still remember their thoughts as they worked, their desperation, and their hunger. Another hopeless attempt to wrest their freedom. All ended in failure, of course."</i></ref><ref>Weavenest Atla [[Needolin]] dialogue: <i>"...Is it done? ...Our runes... Our Silk... ...To bind her... tight... ...To keep us free..."</i></ref> The Weavers also built various constructs within Weavenest Atla, including [[Servitor Ignim|Servitors Ignim]] and [[Eva]], who was birthed within an iron shell.<ref>[[Servitor Ignim]] [[Hunter's Journal (Silksong)| Hunter's Journal]] entry: <i>"Small construct built by Weavers past, brought to life through Silk runes threaded within."</i></ref><ref>Eva: <i>"Lady, you mistake. What seems a cage is as much my shell as the form inside. I was born within this space. To leave would be my death, an uninspired end, though one I've sometimes wished would come."</i></ref>
+
+When the Weavers departed Pharloom, they abandoned Weavenest Atla along with the constructs within it, leaving the western portion to be overtaken by the fauna from the Moss Grotto, with even a [[Mossmirs|Mossmir]] nest being formed by [[Moss Mother]]s.<ref>[[:File:Screenshot SS Weavenest Atla 06.png|Screenshot]] of a Mossmir Nest in Weavenest Atla</ref> Servitors Ignim left behind still await the return of their creators.<ref>Servitor Ignim Needolin dialogue: <i>"...await their return..."</i></ref>
+
+== How To Access ==
+[[File:Screenshot SS Moss Grotto 06.png|thumb|200px|Needolin door leading to Weavenest Atla]]
+
+Weavenest Atla can be accessed through a [[Needolin]] door in the east of [[Moss Grotto]]. The Needolin needs to be used to open the door every time it is passed through.
+
+{{TabbedPOI
+|Header = true
+
+|NPC1 = Eva
+
+|Enemy1 = Mossgrub
+|Enemy2 = Mossmir
+|Enemy3 = Skullwing
+|Enemy4 = Mawling
+|Enemy5 = Marrowmaw
+|Enemy6 = Pharlid Diver
+|Enemy7 = Servitor Ignim
+|Enemy8 = Void Mass
+|Enemy8Note = ([[Act 3]] only)
+
+|Boss1 = Moss Mother
+
+|Loot1_FileName = Hunter Crest 2 File
+|Loot1_Name = Hunter Crest{{!}}Hunter Crest (Evolved)
+|Loot1_Description = Hunter Crest can be evolved twice by [[Eva]]
+|Loot2_FileName = Vesticrest Single
+|Loot2_Name = Vesticrest
+|Loot2_Description = given by Eva
+|Loot3_FileName = Icon SS Sylphsong
+|Loot3_Name = Sylphsong
+|Loot3_Description = obtained by [[bind]]ing Eva
+|Loot4_FileName = Snare Setter
+|Loot5_FileName = Weavelight
+|Loot5_Description = dropped after defeating Moss Mothers
+|Loot6_FileName = Mask Shard (Silksong)
+|Loot6_Name = Mask Shard (Silksong){{!}}Mask Shard
+|Loot6_Amount = 1
+|Loot7_FileName = Spool Fragment
+|Loot7_Amount = 1
+|Loot8_FileName = Rune Harp
+|Loot8_Amount = 1
+|Loot9_FileName = Mossberry
+|Loot9_Amount = 1
+|Loot10_FileName = Weavenest Atla Map
+|Loot10_Name = Map and Quill (Silksong){{!}}Weavenest Atla Map
+
+|LoreTabletsSource = SS Weavenest Atla
+}}
+
+== Creation and Development ==
+{{Main|Cut Content (Silksong)/Areas#Weavenest}}
+[[File:Weavnest Atla West.png|thumb|220px|The original larger Weavenest]]
+Weavenest Atla was originally a far bigger area, then simply known as "Weavenest" with "Weaver Shrine" also likely being an early name. Its first iteration was an area roughly three times the size it is in the final release; its first rooms were created around November 2019. It wrapped below and around the [[Moss Grotto]], with an extra Weavenest door at the west end of the area, seen in the 2019 <i>Silksong</i> demo. This iteration also featured the area's own [[Bellway]] in the southern end, with [[Eva]] located beside it.
+
+The Weavenest had a greater purpose for the game's progression, with the [[Needolin]] being planned to be obtained there from a [[Weaver Burial Spire]], which would've trigger a memory sequence and a cut interaction with [[Lace]]. Due to the Needolin being obtained within the area itself, it was likely that the Weavenest had an additional entrance from [[Chapel of the Wanderer]] and [[Bonegrave]].
+
+By April 2022, the Weavenest was majorly downsized and reworked, having its contents split into the five [[Weavenest]]s present in the final game.
+
+{{Gallery|
+| Title = Gallery
+| Image1 = Screenshot SS Weavenest Atla 01.png!Top of the entrance lift
+| Image2 = Screenshot SS Weavenest Atla 02.png!Power room (Off)
+| Image3 = Screenshot SS Weavenest Atla 03.png!Power room (On)
+| Image4 = Screenshot SS Eva 01.png!Eva within her shell
+| Image5 = Screenshot SS Weavenest Atla 04.png!Snare Setter room
+| Image6 = Screenshot SS Weavenest Atla 05.png!Bench
+| Image7 = Screenshot SS Weavenest Atla 06.png!Moss Mothers Arena
+}}
+
+== Trivia ==
+* Weavenest Atla is the only Weavenest with its own separate map; all others share a map with the area they are found in. Additionally, Atla is the only Weavenest whose name is shown on Hornet's map.
+* Despite having a separate map, Weavenest Atla's title card appears in a small font at the bottom-right of the screen when first entered, like the title cards for some sub-areas do.
+* A disassembled Weaver-style version of the bell used in [[Bellshrine]]s can be found in the same room where the [[Snare Setter]] is acquired
+* As the teleporter charges, Hornet's cloak flutters in the same way as in windy areas.
+
+{{Localisation
+|DEname = Webnest Atla
+|DEmeaning = Weavenest Atla
+|ESname = Nido de Tejedora Atla
+|ESmeaning = Nest of Weaver Atla
+|FRname = Tisse-nid d'Alta
+|FRmeaning = Weavenest Atla
+|ITname = Tessinido Atla
+|ITmeaning = Weavenest Atla
+|JAname = 紡ぎの巣アトラ
+|JAromanised = Tsumugi no su atora
+|JAmeaning = Spinning Nest Atla
+|KOname = 방직둥지 아틀라
+|KOromanised = Bangjikdungji ateulla
+|KOmeaning = Weaving Nest Atla
+|PTname = Ninho de Tecelã Atla
+|PTmeaning = Nest of Weaver Atla
+|RUname = Ткачедом Атла
+|RUromanised = Tkačedom Аtla
+|RUmeaning = Weaver House Atla
+|ZHname = 阿特拉织巢
+|ZHromanised = Ātèlā zhī cháo
+|ZHmeaning = Atla Weavenest
+|TWname = 阿特拉織巢
+|TWromanised = Ātèlā zhī cháo
+|TWmeaning = same
+|CODEname=WEAVER_SHRINE
+|CODEmeaning = Atla was originally the only Weavenest
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Areas}}
+
+[[zh:阿特拉织巢]]

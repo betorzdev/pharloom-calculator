@@ -1,0 +1,103 @@
+{{SS Infobox Ability
+|image1 = Icon SS Spell Core.png
+|prompt = false
+|input = BIND
+|location = <i>Starting Ability</i>
+}}
+
+<b>Bind</b> is an [[Skills and Abilities (Silksong)#Other Abilities|ability]] in <i>[[Hollow Knight: Silksong]]</i>. It allows [[Hornet (Silksong)|Hornet]] to heal herself and allies using [[Silk]].
+
+== Function ==
+Hornet can heal herself by Binding. This move can be performed in the air or on the ground. It takes 1.37 seconds to heal by default - 1.2 seconds to heal, and .17 seconds for a "flashing" animation to finish - although this can be changed by several Tools and Crests (see [[#Modifiers|Modifiers]] below).
+
+* Healing requires 9 Strands of Silk and heals 3 Masks. When Hornet has enough Silk to Bind, the Spool glows brightly.
+
+If Hornet gets hit before the healing time is finished, she loses all Silk on her Spool unless she has the [[Warding Bell]] equipped.
+* Getting hit during the final "flashing" animation does not proc this effect.
+
+* Binding will be interrupted if the floor Hornet is standing on disappears in the middle of the animation, such as when a [[Magnetite]] platform breaks.
+
+* Hornet also uses Bind during cutscenes to obtain new [[Crests]], as well as new [[Skills and Abilities (Silksong)|Ancestral Arts and Silk Skills]]. This expends no Silk. Most such Bindings require the button to be pressed three times, although binding [[Rune Rage]] only requires two: one to begin the [[First Sinner]] boss fight, and one after she is defeated. Hornet can also Bind [[Grand Mother Silk]] after defeating her to obtain the Weaver Queen Ending, although this requires 12 Bindings.
+
+* During battles where Hornet fights enemies alongside [[Garmond & Zaza]] or [[Shakra]], if Hornet binds nearby while they are stunned, they will recover immediately.
+
+=== Modifiers ===
+Various Crests and Tools change the way Bind works:
+* [[Reaper Crest]]'s Bind temporarily makes Hornet's attacks release collectable Silk fragments that each replenish one third of a Silk strand.
+* [[Beast Crest]] and [[Witch Crest]] each have different and shorter Bind animations, as well as removing the direct healing in favour of lifesteal. The maximum amount that can be healed by each is the same as a standard Bind.
+** Beast Crest's Bind grants Fury for a few seconds, during which Needle hits are longer range, more damaging, and restore Masks on hit, with a maximum of 3 (or 4 with the Multibinder).
+** Witch Crest's Bind unleashes roots around Hornet that damage enemies and heal Hornet on hit, with a maximum of 3 (or 4 with the Multibinder).
+*** [[Witch Crest|Cursed Crest]] makes Hornet able to "Bind" with only 3 silk strands, but makes Bind useless. If she tries to Bind with it, she gets covered with roots and knocked down. This also happens when Hornet tries to bind a new Crest when cursed.
+* [[Architect Crest]] adds the Craft Bind, performed instead of a standard Bind while holding UP. Instead of healing, it replenishes {{CrestSlot|Red|s}} the same as at a [[Bench (Silksong)|Bench]].
+* [[Shaman Crest]] causes Hornet to slam to the ground before the Binding animation starts, delaying it and preventing healing in mid air. If it takes Hornet too long to reach the ground, the bind will be cancelled, but this can be avoided by holding BIND.
+* Being [[plasmified]] replaces all of Hornet's Masks with regenerating Plasmium Masks, but causes binding to heal 2 less Masks.
+* [[Warding Bell]] protects Hornet from damage while she is Binding, but still cancels Binding after being hit. But if she is hit with perfect timing, she can bind and negate damage.
+* [[Multibinder]] Performs 2 binds lasting 0.8 seconds each. Each bind heals 2 masks instead of 3.
+* [[Injector Band]] reduces binding time by 40%.
+* [[Reserve Bind]] allows Hornet to Bind once for free when she doesn't have enough Silk to do so. This tool is replenished while sitting on a bench. It does not cost [[Shell Shards]].
+* [[Claw Mirror|Claw Mirror(s)]] creates a flash after Binding that damages enemies around Hornet.
+
+* Utilising [[Claw Mirror|Claw Mirror(s)]], [[Injector Band]], [[Multibinder]] and [[Witch Crest]] allows Hornet to deal large amounts of damage while binding.
+
+* Binding while infested with [[Muckmaggot]]s removes the infestation instead of healing Masks.
+** Binding while infested with [[Muckmaggot]]s and [[Multibinder]] equipped uses the first instance of healing to clear the Muckmaggots, and the second instance to heal 2 Masks.
+
+{| class="article-table" style="text-align: center;"
+|+ Bind Duration (seconds)<ref>[https://www.youtube.com/watch?v=TC_evFmHYXQ Silksong Handbook | All Crests Ranked - UncleMumble]<br>33:52 for Beast Crest, 45:22 for Witch and Other Crests</ref>
+|-
+! Crest !! Base !! [[Multibinder]] !! [[Injector Band]] !! Multibinder and<br>Injector Band 
+|-
+! Other
+| 1.37 || 1.94 || 0.89 || 1.3
+|-
+! [[Beast Crest|Beast]]
+| 1 || 1.2 || 0.67 || n/a
+|-
+! [[Witch Crest|Witch]]
+| 1.05 || 1.33 || 0.8 || 1.03
+|}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Bind 01.png!Hornet binding to heal
+}}
+
+== Trivia ==
+* In old footage of <i>Hollow Knight: Silksong</i>, the Bind ability was nearly instant (~0.7 seconds).<ref>[https://youtu.be/Y8lvHT_IQbM?t=163 Hollow Knight: Silksong Gameplay - Nintendo Treehouse: Live | E3 2019]</ref> The ability was later slowed; a change first seen in the Gamescom 2025 demo (~2.3 seconds).<ref>[https://www.youtube.com/watch?v=0O9G6U6n4ts Hollow Knight Silksong Boss Gameplay (Gamescom 2025 Show Floor)]</ref>
+*The Bind ability was formally revealed in a [[Team Cherry]] blog post, where it was given a deep-dive that explained the major differences between it and [[The Knight|the Knight's]] [[Focus]].<ref>[https://www.teamcherry.com.au/blog/post-e3-wrap-silksong-systems-update Team Cherry blog post] of June 25th, 2019</ref>
+{{Gallery
+|Image1=Silksong Early 029.png!Reveal screenshot
+}}
+{{Localisation
+|DEname = Binden
+|DEmeaning = Bind
+|ESname = Enlazar
+|ESmeaning = Bind
+|FRname = Tisser
+|FRmeaning = Weave
+|ITname = Lega
+|ITmeaning = Unite
+|JAname = 力を紡ぐ
+|JAromanised = Chikara o tsumugu
+|JAmeaning = Weaving Power
+|KOname = 엮기
+|KOromanised = Yeokgi
+|KOmeaning = Weave
+|PTname = Vincular
+|PTmeaning = Bind
+|RUname = Связывание
+|RUromanised = Svjazyvanie
+|RUmeaning = Binding
+|TWname = 縛絲
+|TWromanised = Fù sī
+|TWmeaning = same
+|ZHname = 缚丝
+|ZHromanised = Fù sī
+|ZHmeaning = Bind Silk
+|CODEname = BIND
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Skills}}
+[[fr:Tisser]]

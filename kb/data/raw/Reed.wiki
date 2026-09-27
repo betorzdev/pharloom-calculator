@@ -1,0 +1,109 @@
+{{For|the [[NPCs (Silksong)|NPC]] of a similar name|Pondcatcher Reed}}
+{{SS Infobox Enemy
+| hasdrop = true
+| r1 = 20
+| r2 = 27
+| sh1 = 5-8
+| sh2 = 7-10
+| drops = [[Fine Pins]]
+|health = 55/{{BT|110}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|0.8|0.8|0.8}}
+|numbers_required = 30
+|singnum=2
+}}
+{{Quote
+|Hr = Journal
+|Disciple of the Choir, charged to maintain its perfect order, by sharp pin if necessary.<hr/>
+A form well suited for combat, lithe and fast. No surprise it seems to rank so high amongst its cult.
+}}
+
+<b>Reeds</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are disciples of [[the Choir]], charged to maintain its perfect order with their sharp pins.<ref>Reed [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Disciple of the Choir, charged to maintain its perfect order, by sharp pin if necessary."</i></ref>
+
+== Behaviour and Tactics ==
+Reeds either slowly fly around in a small area whilst idle, or are lifeless on a platform and get reanimated by Silk as Hornet comes close. In either case, they pursue Hornet once they have detected her.<br>
+As flying enemies, they always try to be at least slightly above Hornet, and vary between keeping their distance and closing the gap. They try to maintain diagonal aerial distance from Hornet in between attacks, but align themselves more horizontally to her to prepare for melee attacks. Their moves vary depending on their distance from Hornet:
+* <b>Pin Throw:</b> Readies and then throws its pin at Hornet in a straight trajectory. Only used if there is moderate space between them and Hornet.
+* <b>Triple Thrust:</b> Performs three short thrusts, moving forward and down more with each thrust. Only used if Hornet is close enough.
+* <b>Parry:</b> Raises their pin in a defensive stance, blocking any incoming Needle attacks or Tools from that direction. If they or their Parry is struck whilst it is active, they will counterattack with a flurry of slashes, comboing Hornet for {{Damage|1+1}} if she is caught in it at any time. Often used as Hornet approaches the Reed, or as a feint when the Reed approaches Hornet.
+* <b>Backdash:</b> Does an aerial dash backwards, often used to create space if Hornet is extremely close to them.
+
+All of their attacks except Parry, as well as contact, deal {{Damage|1}}.
+
+Playing patiently is the key to defeating Reeds, as they retreat from or Parry any careless attacks. Allowing them to get close before either using [[Cross Stitch]] or just chasing them down can secure easy victories.<br>
+Additionally, as with many other primarily melee flying enemies, staying beneath them and attacking upwards as they try to descend works wonders, as they have no way of covering directly beneath themselves.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Raise your voices, chosen few!
+* The song sustains!
+* Holy call of the Citadel...
+* Fill the chambers, sacred song...
+* Our voices will be heard!
+* For our song, the precious Silk!
+* Waver not! Wither not!
+* All must gather! All must sing!
+}}
+
+== Location ==
+Reeds can be found in the [[Choral Chambers]], on the bridge connecting it to [[the Slab]], and in the [[Whispering Vaults]]. They also appear during [[the Forum]] gauntlet in the [[High Halls]]. During Act 3, several Reeds spawn alongside [[Void Mass]]es, disappearing once the respective mass is destroyed.
+
+{{Gallery
+|Image1 = Mapshot SS Reed 01.png!Locations in the Choral Chambers
+|Image2 = Mapshot SS Reed 02.png!Locations in the Choral Chambers in Act 3
+|Image3 = Mapshot SS Reed 03.png!Locations in the Whispering Vaults
+|Image4 = Mapshot SS Choir Bellbearer 02.png!Location in the High Halls
+|Image5 = Mapshot SS Choristor 03.png!Location in the Slab
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Reed 01.png!In the Choral Chambers
+|Image2 = Screenshot SS Choristor 09.png!On bridge to the Slab
+|Image3 = Screenshot SS Reed 02.png!Corpse in the Whiteward
+|Image4 = Screenshot SS Reed 09.png!In the Forum
+|Image5 = Screenshot SS Reed 03.png!Void Mass spawn
+|Image6 = Screenshot SS Reed 04.png!Dormant
+|Image7 = GIF SS Reed 01.gif!Reanimating
+|Image8 = Screenshot SS Reed 05.png!Pin Throw
+|Image9 = Screenshot SS Reed 06.png!Triple Thrust
+|Image10 = Screenshot SS Reed 07.png!Parry
+|Image11 = Screenshot SS Reed 08.png!Reacting to the Needolin
+|Image12 = Screenshot SS Choristor 10.png!Corpse in the Weaver Queen ending cutscene
+|Image13 = Screenshot SS Needolinbilewater 2.png!Corpses in Bilewater
+|Image14 = Screenshot SS Seth 20.png!Corpses in the Grand Gate
+|Image15 = Ari SS Sketch 25.png!Concept sketches
+}}
+
+== Trivia ==
+* Reeds share their Needolin dialogue with [[Envoy]]s, [[Choir Bellbearer]]s, and [[Choristor]]s.
+
+{{Localisation
+|DEname = Blatt
+|DEmeaning = Reed
+|ESname = Lengüete
+|ESmeaning = From <i>lengüeta</i> (reed).
+|FRname = Reed
+|FRmeaning = —
+|ITname = Ancia
+|ITmeaning = Reed
+|JAname = リード
+|JAromanised = Rīdo
+|JAkatakana = foreign
+|JAmeaning = Reed
+|KOname = 리드
+|KOromanised = Rideu
+|KOmeaning = Reed
+|PTname = Palheta
+|PTmeaning = Reed
+|RUname = Тростина
+|RUromanised = Trostina
+|RUmeaning = Reed<br><small>{{lang|ru|Тростина}} <i>trostina</i> refers to the plant rather than the instrument part.</small>
+|ZHname = 簧片战士
+|ZHromanised = Huángpiàn zhànshì
+|ZHmeaning = Reed Warrior
+|CODEname=SONG_REED
+|CODEmeaning="Song" internally refers to the Citadel
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

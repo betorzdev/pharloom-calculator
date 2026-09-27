@@ -1,0 +1,117 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Scrollreader.png|Hunter's Journal
+Scrollreader Idle.png|Idle
+Scrollreader Reading.png|reading
+</gallery>
+| hasdrop = true
+| r1 = 23
+| r2 = 45
+| sh1 = 6-9
+| sh2 = 8-12
+|health = 100/{{BT|200}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.3|1.1|0.9|0.8|0.8}}
+|numbers_required = 15
+|singnum=1
+}}
+{{Quote
+|Hr = Journal
+|Gilded servant of the Whispering Vaults, born to read and recall the near endless scrolls of prayer.<hr/>
+Did they ever truly understand those inscrutable scrolls? Or is it all merely pretence, an endless act to maintain their order's station within the Citadel?
+}}
+
+<b>Scrollreaders</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are gilded [[Keepers|servants]] of the [[Whispering Vaults]] who were born to read and recall scrolls of prayer.<ref>Scrollreader [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Gilded servant of the Whispering Vaults, born to read and recall the near endless scrolls of prayer."</i></ref> The [[Vaultborn]] are their juvenile form.<ref>[[Vaultborn]] Hunter's Journal entry: <i>"Young acolyte raised in the darkest vaults, destined to ascend to the rank of Scrollreader."</i></ref>
+
+== Behaviour and Tactics ==
+Scrollreaders are often found sitting in place reading or are dead on the floor and get reanimated by silk, but grab their weapon and begin battle once Hornet comes near. Scrollreaders have 4 different attacks and moves they can perform, and walk towards Hornet to pursue her if she gets out of attack range:
+* <b>Thrust:</b> Holds its weapon horizontally behind itself for a moment before thrusting it forwards.
+* <b>Double Swing:</b> Holds its weapon vertically behind itself for a moment, then slashes outwards twice.
+* <b>Crashing Leap:</b> Jumps up, hovering for a moment, before launching itself at Hornet, taking a brief moment to recover once it lands.
+* <b>Retreat:</b> Scuttles backwards to avoid strikes, often used after missing a move – especially Crashing Leap – and if Hornet is close to it.
+
+Scrollreaders deal {{Damage|2}} for all attacks as well as contact damage.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Scrollreaders have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Ours to guard...
+* Ours to keep...
+* Hidden dark and deep...
+* Holy secrets, sacred whispers...
+* Words that only we may speak...
+* Songs that only we may sing!
+}}
+
+== Location ==
+Scrollreaders can be found in the [[Whispering Vaults]].
+
+{{Gallery
+| Image1 = Mapshot SS Scrollreader 01.png! Locations in the Whispering Vaults
+| Image2 = Mapshot SS Scrollreader 02.png! Locations in the Whispering Vaults in Act 3
+}}
+
+== Creation and Development ==
+[[File:Enemy 163 164 165.png|thumb|220px|First reveal image]]
+Scrollreaders, alongside [[Lampbearer]]s and [[Vaultkeeper]]s, were first revealed in a blog post released in December 2019, where their sprite was shown. [[Team Cherry]] described them as being in a <i>"tough later game trio who, when in battle, work closely together, covering for each other's weaknesses."</i><ref>[https://www.teamcherry.com.au/blog/11xf7azcuebhybgossfhdc0mphiqbs Team Cherry blog post] of December 13th, 2019</ref> 
+
+In the final build, these three enemies do not specifically work together, and thus do not cover for each other's weaknesses.
+
+Scrollreaders were also originally planned to be able to block attacks from Hornet.<ref>[[:File:Scrollreader Cut Sprites.png|Scrollreader Cut Sprites]]</ref>
+
+{{Clear}}
+== Gallery ==
+{{Gallery
+| Image1 = Screenshot SS Scrollreader 01.png! Reading with a Lampbearer
+| Image2 = Screenshot SS Scrollreader 09.png! Reaching for a scroll
+| Image3 = Screenshot SS Scrollreader 02.png! Dormant
+| Image4 = GIF SS Scrollreader 01.gif!Reanimating
+| Image5 = Screenshot SS Scrollreader 03.png! Idle
+| Image6 = Screenshot SS Scrollreader 04.png! Thrust
+| Image7 = Screenshot SS Scrollreader 05.png! Double Swing
+| Image8 = Screenshot SS Scrollreader 06.png! Crashing Leap
+| Image9 = Screenshot SS Scrollreader 07.png! Retreat
+| Image10 = Screenshot SS Scrollreader 08.png! Reacting to the Needolin
+| Image11 = Screenshot SS Scrollreader 10.png! Reading alone
+| Image12 = Screenshot SS Scrollreader 11.png! Corpse in Act 3
+| Image13 = Screenshot SS Void Mass 26.jpg! In a [[Void Mass]]
+| Image14 = Screenshot SS Scrollreader 12.png! Corpses in a corridor
+| Image15 = Screenshot SS Scrollreader 13.png! Corpses before the pontiff's chamber
+}}
+
+==Trivia==
+* Scrollreaders share their Needolin dialogue with [[Lampbearer]]s and [[Vaultkeeper]]s.
+
+{{Localisation
+|DEname = Schriftenleser
+|DEmeaning = Scripture-reader
+|ESname = Lector de pergaminos
+|ESmeaning = Scroll Reader
+|FRname = Tisseur de Savoir
+|FRmeaning = Weaver of Knowledge
+|ITname = Rotolettore
+|ITmeaning = Portmanteau of <i>rotolo</i> (scroll) and <i>lettore</i> (reader).
+|JAname= マキモノヨミ
+|JAromanised= Makimonoyomi 
+|JAmeaning = Combination of {{lang|ja|巻物}} <i>makimono</i> (scroll) and {{lang|ja|読み}} <i>yomi</i> (reading).
+|KOname = 두루마리를 읽는 자
+|KOromanised = Durumarireul ingneun ja
+|KOmeaning = Scroll Reader
+|PTname =  Leitor de Pergaminhos
+|PTmeaning = Scroll Reader
+|RUname = Свиткочтец
+|RUromanised = Svitkočtec
+|RUmeaning = Combination of {{lang|ru|свиток}} <i>svitok</i> (scroll) and {{lang|ru|чтец}} <i>čtec</i> (reader).
+|TWname = 誦經使
+|TWromanised = Sòng jīng shǐ
+|TWmeaning = same
+|ZHname = 诵经使
+|ZHromanised = Sòng jīng shǐ
+|ZHmeaning = Scripture Reciter
+|CODEname = SCROLLKEEPER
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

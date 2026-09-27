@@ -1,0 +1,81 @@
+{{SS Infobox Enemy
+| hasdrop = true
+| sh1 = 2-3
+| sh2 = 3-4
+|health = 15/{{BT|30}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.8|0.8|0.8|0.8}}
+|numbers_required = 25
+|sing=Drapemite
+}}
+
+{{Quote
+|Hr = Journal
+|Airborne pest, less common than its grounded siblings. Attacks with sharp fangs if agitated.<hr/>Similar bugs would gnaw away at unguarded food supplies in my homeland. As a child, I would hunt them, eager to make use of myself and test my skills.
+}}
+
+<b>Fluttermites</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are airborne [[Mites|pests]] who are less common than their grounded siblings, the [[Mite]]s.<ref>Fluttermite [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Airborne pest, less common than its grounded siblings."</i></ref>
+
+== Behaviour and Tactics ==
+Fluttermites float up and down aimlessly. When they align horizontally with Hornet, they squeak before lunging forward a short distance in an attempt to deal contact damage.<br>
+Fluttermites deal {{Damage|1}} upon contact.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Fluttermites have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2|
+* Smell it, starving...
+* Deeper, darker...
+* Shriek and scratch them...
+* Claw and fang...
+* Find it. Take it...
+* Hide below them...
+}}
+
+== Location ==
+Fluttermites can be found in [[Greymoor]]. Three of them are located in the cellar of [[Halfway Home]], an area that becomes inaccessible after completing the [[Enemy Gauntlets (Silksong)/Greymoor 4|enemy gauntlet]] that takes place there.
+
+{{Gallery
+|Image1 = Mapshot SS Fluttermite Greymoor 01.png!Locations in Greymoor
+|Image2 = Mapshot SS Fluttermite Greymoor 02.png!Locations in Greymoor in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1=Screenshot SS Fluttermite 01.png!Idle
+|Image2=Screenshot SS Fluttermite 02.png!Attacking
+|Image3=Screenshot SS Fluttermite 03.png!Responding to the Needolin
+}}
+
+{{Localisation
+|DEname = Flattermilbe
+|DEmeaning = Fluttermite
+|ESname = Ácaro volador
+|ESmeaning = Flying mite
+|FRname = Mite Ailée
+|FRmeaning = Winged Mite
+|ITname = Acaro Svolazzante
+|ITmeaning = Fluttering Mite
+|JAname = パタダニ
+|JAromanised = Patadani
+|JAmeaning = Combination of {{lang|ja|パタパタ}} <i>patapata</i> (Japanese onomatopeia for flapping or fluttering) and {{lang|ja|ダニ}} <i>dani</i> (mite).
+|KOname = 파닥진드기
+|KOromanised = Padakjindeugi
+|KOmeaning = Flutter Mite
+|PTname = Ácaro-voador
+|PTmeaning = Flying Mite
+|RUname = Клещ-порхун
+|RUromanised = Klešč-porxun
+|RUmeaning = Mite Flutterer
+|TWname = 飛蝕蟎
+|TWromanised = Fēi shí mǎn
+|TWmeaning = same
+|ZHname = 飞蚀螨
+|ZHromanised = Fēi shí mǎn
+|ZHmeaning = Flying Eater Mite
+|CODEname=MITEFLY
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

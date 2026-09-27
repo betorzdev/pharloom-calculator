@@ -1,0 +1,99 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Cogworker.png|Hunter's Journal
+Cogworker Working.png|Working
+</gallery>
+| hasdrop = true
+| sh1 = 3-5
+| sh2 = 4-7
+|health=28
+|damage_modifiers={{SS Spaced Damage Modifiers|1.25|1|1|1|1}}
+|numbers_required = 15
+|singnum = 1
+}}
+{{Quote
+|Hr = Journal
+|Flighted automaton, responsible for repairing and extending the Core.<hr/>
+More effective an opponent than would be guessed. The precarity of its winding domain can make even its simple assault a challenge.
+}}
+
+<b>Cogworkers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are flighted [[Cogwork Bugs|automatons]] responsible for repairing and extending the [[Cogwork Core]] in [[the Citadel]].<ref>Cogworker Hunter's Journal entry: <i>"Flighted automaton, responsible for repairing and extending the Core."</i></ref>
+
+== Behaviour and Tactics ==
+Cogworkers initially prioritise work and repairs, sometimes flying to another place where they continue their work. During this, they ignore Hornet, but still deal {{Damage|1}} on contact. Upon striking them however, they begin to pursue Hornet over any distance, and any nearby Cogworkers also begin targeting Hornet.
+Once they are in range, they move forwards slightly and slash all around themselves in a small area, comboing Hornet for {{Damage|1+1}} if she is hit by it at any point during the attack animation. After this, they fly backwards a short distance to retreat before their next attack.
+
+Ranged and charged attacks can take them down quickly without getting too close. Counterattacking during their attacks is also effective, due to their short range and inability to move whilst slashing.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* ...Am I...Who?...
+* ...Lift it...Fix it...Me?...
+* ...The Core...Holy...
+* ...Work...Eternal...
+* ...To mend...
+* ...To serve...
+}}
+
+== Location ==
+Cogworkers can be found in the [[Choral Chambers]] and the [[Cogwork Core]]. Two of them appear to repair a [[Cogwork Clapper]] after it is defeated in the lower eastern Cogwork Core, completing their work and departing only when Hornet rests at a [[Bench (Silksong)|bench]] outside the area. This cycle repeats every time the Cogwork Clapper is destroyed, unless the repair is disrupted by knocking its partially reconstructed shell into the pit of active cogs, or until [[Act 3]] begins.
+
+{{Gallery
+|Image1 = Mapshot SS Cogworker 01.png!Locations in the Choral Chambers
+|Image2 = Mapshot SS Cogworker 04.png!Location in the Choral Chambers in Act 3
+|Image3 = Mapshot SS Cogworker 02.png!Locations in the Cogwork Core
+|Image4 = Mapshot SS Cogworker 03.png!Locations in the Cogwork Core in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1=Screenshot SS Cogworker 01.png!In Cogwork Core
+|Image2=Screenshot SS Cogworker 02.png!Slash Attack
+|Image3=Screenshot SS Cogworker 03.png!Singing
+|Image4=Screenshot SS Cogworker 07.png![[Silk Fly]] freed upon death
+|Image5=Screenshot SS Cogworker 04.png!Working in Cogwork Core
+|Image6=Screenshot SS Cogworker 05.png!Working in Choral Chambers
+|Image7=Screenshot SS Cogworker 06.png!Repairing a Silk vending machine
+|Image8=Screenshot SS Cogwork Clapper 03.png!Repairing a Cogwork Clapper
+|Image9=Screenshot SS Cogworker 08.png!Modded shot of Cogworkers in the foreground and background without blur
+}}
+
+== Trivia ==
+* When singing, Cogworkers produce the same chirping sounds as [[Hornet (Silksong)|Hornet]]'s and [[Maestro]]'s Cogflies.
+* In the <i>Silksong</i> reveal trailer, Cogworkers had a different behaviour, being stationary and passive to be used for traversal with the [[Clawline]], similiarly to [[Driftlin]]s.<ref>[https://www.youtube.com/watch?v=pFAknD_9U7c Hollow Knight: Silksong Reveal Trailer]</ref>
+
+{{Localisation
+|DEname = Räderwerker
+|DEmeaning = Cogworker
+|ESname = Obrero mecánico
+|ESmeaning = Mechanical worker
+|FRname = Ouvrier Mécanique
+|FRmeaning = Mechanical Worker
+|ITname = Meccanismo Operaio
+|ITmeaning = Worker Mechanism
+|JAname = カラクリロウドウシャ
+|JAromanised = Karakuri rōdōsha
+|JAmeaning = Combination of {{lang|ja|カラクリ <i>karakuri</i>}} (mechanism) and {{lang|ja|労働者 <i>rōdōsha</i>}} (worker).
+|JAkatakana = enemy
+|KOname = 톱니바퀴 일꾼
+|KOromanised = Tomnibakwi ilkkun
+|KOmeaning = Cogwheel Worker
+|PTname =  Mecanicista
+|PTmeaning = Mechanistic
+|RUname = Заводной работник
+|RUromanised = Zavodnoj rabotnik
+|RUmeaning = Clockwork Worker
+|TWname = 機樞搬運工
+|TWromanised = Jīshū gōngfēng
+|TWmeaning = same
+|ZHname = 机枢工蜂
+|ZHromanised = Jīshū gōngfēng
+|ZHmeaning = Mechanical Worker Bee
+|CODEname = SONG_AUTOMATON_FLY
+|CODEmeaning = "Song" internally refers to the Citadel. Other [[Architects#Creations |Cogwork Bugs]] use the Automaton name internally
+}}
+
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

@@ -1,0 +1,158 @@
+{{SS Infobox Crest
+|image1=<gallery>
+Witch Crest Inventory.png|Inventory
+Witch Crest.png|HUD
+</gallery>
+|description = Whip the needle in sweeping swings. Leech the life of foes through twisted roots.
+|skill = 1
+|red = 1
+|redlock = 1
+|blue = 1
+|bluelock = 2
+|attack = Round sweeps<br>
+Some attacks hit twice <br>
+Slightly slower than other Crests
+|bind= A radial burst of roots which must hit enemies to heal
+|source= [[Infestation Operation]]
+}}
+
+{{Quote
+|The parasite does seem to have been... unbound somewhat. Whatever remnant still lingers in my shell feels calmed, enough for me to claim its power as my own. 
+|Hr=Hornet
+|[[Hornet (Silksong)|Hornet]]
+}}
+
+
+The <b>Witch Crest</b> is a [[Crests|Crest]] in <i>[[Hollow Knight: Silksong]]</i>, created by completing the <i>[[Infestation Operation]]</i> Wish. While equipped, [[Hornet (Silksong)|Hornet]] will attack with long, whip-like slashes. The [[Bind]] will also transform into a large root attack that heals Hornet when it hits nearby enemies.
+
+==Attacks==
+Compared to [[Hunter Crest]], Witch Crest has -10% attack speed and less recoil on hit. Hornet's attacks have greater reach than even [[Reaper Crest]] despite attacking faster. Down-slash and Run-slash allow Hornet to follow up with additional attacks on hit. The Witch Crest shares its attacks with its initial form, the [[Cursed Crest]], but allows Hornet to Bind and use Tools and Skills.
+
+* Neutral Slashes: Hornet whips her Needle forward in a wide, long arc.
+* Up-Slash: Hornet sweeps the Needle diagonally upwards.
+* Down-slash: Hornet whips her Needle slightly diagonally downwards. On hit, she deals 0.55x Needle damage before pulling herself to the target and dealing an extra 0.5x Needle damage hit.
+* [[Swift Step|Run-slash]]: Hornet sweeps her needle twice as she moves, the first swing dealing 1x Needle damage and the second swing dealing 0.5x Needle damage. If she hits something with either hit, she briefly vanishes after the second hit before leaping upwards with a third hit dealing 0.5x Needle damage. Unlike other Run-slashes, this Crest does not have a startup animation, making gauging the initial dash of Swift Step crucial to avoid contact damage.
+* [[Needle Strike]]: Hornet rapidly spins, striking twice in both directions. Tapping the attack button up to twice while spinning will extend the spin and slow Hornet's fall while in the air, striking up to 2 additional times and dealing up to 3.2x damage across 4 hits for a full combo.<ref>[https://www.youtube.com/watch?v=qIPUfl-rEZA I Tested All the Damage Numbers from All Crests in Silksong, Here's What I Found (NO SPOILERS)]</ref>
+
+==Mechanics==
+===Witch Crest===
+
+Witch Crest's Bind is 33% faster than the Hunter Crest's Bind. When Binding, roots thrash out from Hornet's body and attack nearby enemies up to 3 times. Each thrash deals the same damage as a [[Needle]] hit. If the next thrash would miss, it will end prematurely.
+
+* Each root thrash heals one Mask. The Masks that would be healed are briefly outlined in white during the Bind's animation.
+* One thrash can hit multiple enemies to heal multiple Masks, but cannot heal past the cap. If they do not hit an enemy, Hornet does not heal.
+* Both [[Flintslate]] and [[Flea Brew]] do not mechanically affect the bind in any way, but still do apply their respective visual effect to the thrashing roots.
+
+{{Gallery
+|Image1 = Witch Crest Binding.png!Witch Crest special bind ability
+}}
+
+== Usefulness ==
+Witch Crest's unique damaging bind allows Hornet to no longer need to decide between healing and attacking, as she can perform both at once during battle.
+
+Witch Crest has a long attack range without sacrificing as much attack speed as the [[Reaper Crest]].
+* It also has the most {{CrestSlot|Blue|1}} slots out of all Crests, giving room to use [[Tool]] synergies that most other Crests cannot accommodate.
+* Hornet's down-attack and sprint-attack cause her to vanish briefly. 
+** This allows her to phase through certain attacks, though this window is extremely brief.
+** Down-attacks can often be chained into each other, and are easy to platform with.
+* Hornet's sprint-attack hits enemies twice before launching her diagonally upwards. 
+** This allows her to chain into a down-attack, or dash backward to retreat.
+** It deals more damage than any other Crest's sprint-attack.
+* Weaknesses:
+** Witch Crest lacks any innate {{CrestSlot|Yellow|1}} slots.
+** Binding requires nearby enemies to heal. This makes Witch Crest most effective in close combat and against swarms of enemies, and less effective against single targets that can't survive the full 3 hits. Also makes Binding riskier.
+** Because Down-slash's damage is divided into 2 hits, it deals slightly over half damage to non-enemy objects that it only hits once, most notably [[Father of the Flame]].
+** The Needle Strike cannot be canceled immediately with Swift Step, making timing and reading opponent attacks extremely crucial when executing it.
+
+== Synergies ==
+* Obtaining the [[Vesticrest]] from [[Eva]] gives the Witch Crest its only {{CrestSlot|Yellow|1}} slot.
+* [[Bind]]-related Tools benefit from Witch Crest's offensive Bind:
+** [[Injector Band]] speeds up the Bind's attacks, allowing it to be used more aggressively.
+** [[Multibinder]] adds an additional thrash of damage (and healing) and raises the maximum Masks healed to 4.
+*** It increases the Bind's startup time however, making it less safe.
+** [[Warding Bell]] can prevent damage taken from risky Binds, and can also still activate after the healing (and damage) has finished.
+** [[Claw Mirror|Claw Mirror(s)]] is easier to make use of with Witch Crest's already short-range Bind. 
+*** Against weaker enemies, it can kill them before Hornet gets the full heal. Against bosses and stronger regular enemies, however, it is very effective for extra damage.
+*** Having both Multibinder and Claw Mirror(s) does not grant an additional explosion like they do when combined on other Crests.
+* [[Weighted Belt]] completely removes self knockback on this Crest, which is especially useful for landing all hits of extended [[Needle Strike]]s.
+* Using the Down-slash, Hornet can stay in the air for extended periods of time. [[Sawtooth Circlet]] can deal extra damage while fighting mid-air, especially in combination with [[Faydown Cloak]] and [[Needle|Needle Bounces]].
+* [[Plasmium Phial]] is useful for emergency healing. Being [[plasmified]] is uniquely powerful on this Crest as its [[Bind]] will still recover the normal amount of [[Masks]], and it provides passive healing to make up for missed Binds.
+* [[Longclaw]] has a weaker effect on this Crest specifically, only increasing range by ~11% instead of 20%.
+
+==How to Acquire==
+{{Disclaimer|During the events of this quest Hornet becomes cursed, removing and preventing use of Tools, overriding the equipped Crest, disabling all Silk Skills and healing through Bind.}}
+
+The Witch Crest is obtained by completing both the <i>[[Rite of Rebirth]]</i> and <i>[[Infestation Operation]]</i> Wishes.
+===Cursed Crest===
+First, acquire the [[Twisted Bud]] from [[Bilewater]] in the listed location. The room is behind a breakable wall, and the part of Bilewater containing it must first be accessed by falling in from the hidden easternmost section of the [[Whispering Vaults]], which is in turn first accessed through a hidden passage in the top right of the adjacent room. 
+{{Gallery
+|Image1 = Mapshot SS Twisted Bud.png!Twisted Bud Location in Bilewater
+}}
+
+Next, bring the Twisted Bud to [[Greyroot]] in [[Shellwood]]. 
+{{Gallery
+|Image1 = Mapshot SS Greyroot.png!Greyroot Location in Shellwood
+}}
+
+{{Disclaimer|Completion of [[Rite of the Pollip]] is required to start [[Rite of Rebirth]].}}
+
+There, the <i>[[Rite of Rebirth]]</i> Wish begins, in which Greyroot infests Hornet with the Twisted Bud and takes Hornet to the [[Chapel of the Witch]], a secret location connecting [[Shellwood]] and [[the Marrow]]. Hornet will now be [[Cursed Crest|Cursed]], and will stay as such until the <i>[[Infestation Operation]]</i> Wish is completed.
+
+===Witch Crest===
+To become uncursed, Hornet must visit [[Yarnaby]] in [[Greymoor]] to start the <i>[[Infestation Operation]]</i> wish. 
+{{Gallery
+|Image1=Mapshot SS Yarnaby.png!Yarnaby Location on Map
+}}
+
+Yarnaby sends Hornet to get [[Steel Spines]] from [[Crull and Benjin]] in [[Sinner's Road]], for which they charge {{R|160}}. In [[Act 3]], the pair are dead and the spines are free. 
+{{Gallery
+|Image1 = Mapshot SS Crull and Benjin 01.png!Crull and Benjin Location in Sinner's Road}}
+
+Upon acquiring the spines and returning to Yarnaby, she performs the operation to remove the parasite, turning the Cursed Crest into the Witch Crest and completing the Wish.
+
+== Gallery ==
+{| align="center" style="text-align:center"
+| {{#ev:youtube|https://www.youtube.com/watch?v=VJLUgOuHIAM|250|center|Deep Dive}}
+|}
+
+== Trivia ==
+* Aside from the Cloakless Crest, the Witch Crest and Cursed Crest are the only Crests that need to complete a [[Wish]] in order to claim them, rather than only needing to Bind a corpse inside a Chapel.
+* The Cursed and Witch Crests are the only Crests to not heal Hornet to full masks when obtained.
+* Both Witch and Cursed Crest add a subtle green tint to the Needle slashes.
+* The Witch Crest has a unique sound effect when switching to it at a [[Bench_(Silksong)|Bench]], resembling the sound of roots writhing.
+
+{{Localisation
+|DEname = Hexe
+|DEmeaning = Witch
+|ESname = Bruja
+|ESmeaning = Witch
+|FRname = Sorcière
+|FRmeaning = Witch
+|ITname = Strega
+|ITmeaning = Witch
+|JAname= 魔導者
+|JAromanised= Madōsha
+|JAmeaning = Sorcerer
+|KOname = 마녀
+|KOromanised = Manyeo
+|KOmeaning = Witch
+|PTname = Bruxa
+|PTmeaning = Witch
+|RUname = Ведьма
+|RUromanised = Ved'my
+|RUmeaning = Witch
+|TWname = 女巫
+|TWromanised = Nǚwū
+|TWmeaning = same
+|ZHname = 女巫
+|ZHromanised = Nǚwū
+|ZHmeaning = Witch
+|CODEname = CREST_WITCH
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Crests}}
+{{#seo:
+|keywords=silksong, crest, curse, cursed crest, rite of rebirth, twisted child, twisted bud}}
+[[fr:Emblème Sorcière]]

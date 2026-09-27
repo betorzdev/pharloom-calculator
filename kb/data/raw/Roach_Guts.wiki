@@ -1,0 +1,71 @@
+{{For|the [[Hunt Wishes|Hunt Wish]]|Roach Guts (Wish)}}
+
+{{SS Infobox Item
+| max = 10
+| type = [[Items (Silksong)#Deliverable|Deliverable]]
+| source = Dropped by Muckroaches during the wish <i>[[Roach Guts (Wish)|Roach Guts]]</i>.
+| description = Fresh innards of a Muckroach, tough and slimy with a rank odour. Unpalatable to most.
+}}
+
+{{Quote
+| They're wild fast breeders, them Muckroaches. Hard shells and tough meat, if you can even crack 'em open, but options ain't plentiful so we ain't choosy. Ain't so bad to eat, once you're used to it.
+| [[Crull and Benjin]]
+| Hr = SS
+}}
+
+<b>Roach Guts</b> are [[Items (Silksong)#Deliverables|deliverable items]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+10 Roach Guts are required to complete the <i>[[Roach Guts (Wish)|Roach Guts]]</i> Wish, given out by [[Crull and Benjin]] in [[Sinner's Road]].
+
+{{Gallery
+|Image1 = Mapshot SS Crull and Benjin 01.png!Location in Sinner's Road
+|Image2 = Screenshot SS Sinner's Road 05.png!Crull and Benjin in Sinner's Road
+}}
+
+== How to Acquire ==
+Roach Guts are obtained from the corpses of slain [[Muckroach]]es.
+
+[[Hornet (Silksong)|Hornet]] can carry up to 10 Roach Guts, after which they will no longer drop from defeated Muckroaches.
+
+{{Gallery
+|Image1 = Mapshot SS Muckroach 01.png!Location in Sinner's Road
+|Image2 = Screenshot SS Muckroach 07.png!Roach Guts inside Muckroach in Sinner's Road
+}}
+
+==Act 3==
+All Roach Guts will be removed from the inventory at the start of Act 3, as [[Crull and Benjin]] have died. 
+
+{{Localisation
+|DEname = Schabenkaldaunen
+|DEmeaning = Cockroach Guts
+|ESname = Vísceras de cucaracha
+|ESmeaning = Cockroach's Entrails
+|FRname = Entrailles de férochard
+|FRmeaning = Muckroach's Entrails
+|ITname = Viscere di blatta
+|ITmeaning = Roach Bowels
+|JAname = ツチゴキブリのはらわた
+|JAromanised = Tsuchi gokiburi no harawata
+|JAmeaning = Muckroach's Intestines
+|KOname = 바퀴 내장
+|KOromanised = Bakwi naejang
+|KOmeaning = Cockroach Innard
+|PTname = Vísceras de Barata
+|PTmeaning = Roach Guts
+|RUname = Тараканьи потроха
+|RUromanised = Tarakan'i potroxa
+|RUmeaning = Roach's Guts
+|TWname = 淤泥蟑螂內臟
+|TWromanised = Yūní zhāngláng nèizàng
+|TWmeaning = same
+|ZHname = 淤秽蟑螂内脏
+|ZHromanised = Yūhuì zhāngláng nèizàng
+|ZHmeaning = Muckroach Guts
+|CODEname = ROACH_CORPSE_ITEM
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

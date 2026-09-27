@@ -1,0 +1,138 @@
+{{Nav Games Header}}
+
+{{Disclaimer|The Nintendo Switch and Nintendo Switch 2 both lack a universal achievement system. On those platforms, <i>Hollow Knight: Silksong</i> includes the achievements as in-game "Feats".}}
+
+{{Hr|SS}}
+
+<h1>Achievements (PC/Xbox/Nintendo)</h1>
+=== Tools ===
+There are a total of 51 Tools to be found in the game. Refer to the [[Tools]] page for a list of locations.
+
+{{Achievements|allgames=silksong|Equipped|Arsenal}}
+
+=== Silk Skills ===
+There are a total of 6 skills to be found in the game. Refer to the [[Skills and Abilities (Silksong)|Silk Skills]] page for a list of locations.
+
+{{Achievements|allgames=silksong|Bound|Woven}}
+
+=== Mask Shards ===
+There are a total of 20 shards to be found in the game. Refer to the [[Mask Shard (Silksong)|Mask Shard]] page for a list of locations.
+
+{{Achievements|allgames=silksong|Protected|Masked}}
+
+=== Spool Fragments ===
+There are a total of 18 fragments to be found in the game. Refer to the [[Spool Fragment]]s page for list of locations.
+
+{{Achievements|allgames=silksong|Restored|Extended}}
+
+=== Crests ===
+There are a total of 7 crests to be found in the game. Refer to the [[Crests]] page for list of locations.
+
+{{Achievements|allgames=silksong|Claimed|Consumed}}
+
+=== Silk Hearts ===
+There are a total of 3 hearts to be found in the game. Refer to the [[Silk Heart]]s page for list of locations.
+
+{{Achievements|allgames=silksong|Regenerated}}
+
+=== Bosses ===
+{{Achievements|allgames=silksong|Liberated|Pharloom's Welcome|Servant|Fanatic|Judge|Last Dance|Tragedian|White Knight|Grey Ghost|Heretic|Tyrant|Seed|Diva|Lamenter|Hero's Call|Fatal Resolve}}
+
+=== Fleas ===
+There are a total of 30 Fleas to be found in the game. Refer to the [[Fleas]] page for a list of locations.
+
+{{Achievements|allgames=silksong|Flea Finder|Fleafriend}}
+
+=== Bellways & Ventrica Stations ===
+There are a total of 10 Bellways and 6 Ventrica Stations in the game. Refer to the [[Bellway]]s page and [[Ventrica Station]]s page for a list of locations and toll prices.
+
+{{Achievements|allgames=silksong|Connected|Transported}}
+
+=== Miscellaneous ===
+The following Achievements are related to NPCs and their quests. Please see their individual pages for more information.
+
+{{Achievements|allgames=silksong|Bonded|Cartographer|Granted|Glutton|Trail's End|Entwined|Resident|Harmonious|Remembrance}}
+
+=== Challenges ===
+{{Achievements|allgames=silksong|Keen Hunter|True Hunter|Completion|Speed Completion|Speedrunner|Steel Soul|Steel Heart}}
+
+=== Endings ===
+There are five endings to <i>Hollow Knight: Silksong</i>. For more information, please see [[Endings (Silksong)|Endings]].
+
+{{Achievements|allgames=silksong|Weaver Queen|Snared Silk|Twisted Child|Sister of the Void|Passing of the Age}}
+
+{{Hr|SS}}
+
+<h1>Trophies (Playstation)</h1>
+<center style="margin-bottom: 36px; font-size: 1rem;">[[File:Platinum.png|20px|Platinum trophy]] -1 [[File:Gold.png|20px|Gold trophy]] -5 [[File:Silver.png|20px|Silver trophy]] -12 [[File:Bronze.png|20px|Bronze trophy]] -16 (34 total)</center>
+
+{{Achievements|allgames=silksong|alltrophies = true|Pharloom's Heart|Equipped|Arsenal|Bound|Woven|Claimed|Consumed|Protected|Masked|Restored|Extended|Regenerated|Cartographer|Connected|Transported|Keen Hunter|True Hunter|Flea Finder|Fleafriend|Liberated|Pharloom's Welcome|White Knight|Granted|Entwined|Harmonious|Remembrance|Weaver Queen|Snared Silk|Twisted Child|Sister of the Void|Passing of the Age|Completion|Speedrunner|Speed Completion}}
+
+<h1>Full Art</h1>
+The Xbox versions of <i>Hollow Knight: Silksong</i> include higher-resolution art for the achievements.
+
+{{Gallery
+|Image1 = Xbox One Achievement Art Equipped.png!Equipped
+|Image2 = Xbox One Achievement Art Arsenal.png!Arsenal
+|Image3 = Xbox One Achievement Art Bound.png!Bound
+|Image4 = Xbox One Achievement Art Woven.png!Woven
+|Image5 = Xbox One Achievement Art SS Protected.png!Protected
+|Image6 = Xbox One Achievement Art SS Masked.png!Masked
+|Image7 = Xbox One Achievement Art Restored.png!Restored
+|Image8 = Xbox One Achievement Art Extended.png!Extended
+|Image9 = Xbox One Achievement Art Claimed.png!Claimed
+|Image10 = Xbox One Achievement Art Consumed.png!Consumed
+|Image11 = Xbox One Achievement Art Regenerated.png!Regenerated
+|Image12 = Xbox One Achievement Art Liberated.png!Liberated
+|Image13 = Xbox One Achievement Art Pharloom's Welcome.png!Pharloom's Welcome
+|Image14 = Xbox One Achievement Art Servant.png!Servant
+|Image15 = Xbox One Achievement Art Fanatic.png!Fanatic
+|Image16 = Xbox One Achievement Art Judge.png!Judge
+|Image17 = Xbox One Achievement Art Last Dance.png!Last Dance
+|Image18 = Xbox One Achievement Art Tragedian.png!Tragedian
+|Image19 = Xbox One Achievement Art White Knight.png!White Knight
+|Image20 = Xbox One Achievement Art Grey Ghost.png!Grey Ghost
+}}
+{{Gallery
+|Image1 = Xbox One Achievement Art Heretic.png!Heretic
+|Image2 = Xbox One Achievement Art Tyrant.png!Tyrant
+|Image3 = Xbox One Achievement Art Seed.png!Seed
+|Image4 = Xbox One Achievement Art Diva.png!Diva
+|Image5 = Xbox One Achievement Art Lamenter.png!Lamenter
+|Image6 = Xbox One Achievement Art Hero's Call.png!Hero's Call
+|Image7 = Xbox One Achievement Art Fatal Resolve.png!Fatal Resolve
+|Image8 = Xbox One Achievement Art Flea Finder.png!Flea Finder
+|Image9 = Xbox One Achievement Art Fleafriend.png!Fleafriend
+|Image10 = Xbox One Achievement Art Connected.png!Connected
+|Image11 = Xbox One Achievement Art Transported.png!Transported
+|Image12 = Xbox One Achievement Art Bonded.png!Bonded
+|Image13 = Xbox One Achievement Art SS Cartographer.png!Cartographer
+|Image14 = Xbox One Achievement Art Granted.png!Granted
+|Image15 = Xbox One Achievement Art Glutton.png!Glutton
+|Image16 = Xbox One Achievement Art Trail's End.png!Trail's End
+|Image17 = Xbox One Achievement Art Entwined.png!Entwined
+|Image18 = Xbox One Achievement Art Resident.png!Resident
+|Image19 = Xbox One Achievement Art Harmonious.png!Harmonious
+|Image20 = Xbox One Achievement Art Remembrance.png!Remembrance
+}}
+{{Gallery
+|Image1 = Xbox One Achievement Art SS Keen Hunter.png!Keen Hunter
+|Image2 = Xbox One Achievement Art SS True Hunter.png!True Hunter
+|Image3 = Xbox One Achievement Art SS Completion.png!Completion
+|Image4 = Xbox One Achievement Art SS Speed Completion.png!Speed Completion
+|Image5 = Xbox One Achievement Art Speedrunner.png!Speedrunner
+|Image6 = Xbox One Achievement Art SS Steel Soul.png!Steel Soul
+|Image7 = Xbox One Achievement Art SS Steel Heart.png!Steel Heart
+|Image8 = Xbox One Achievement Art Weaver Queen.png!Weaver Queen
+|Image9 = Xbox One Achievement Art Snared Silk.png!Snared Silk
+|Image10 = Xbox One Achievement Art Twisted Child.png!Twisted Child
+|Image11 = Xbox One Achievement Art Sister of the Void.png!Sister of the Void
+|Image12 = Xbox One Achievement Art SS Passing of the Age.png!Passing of the Age
+}}
+{{History
+|game = SS
+|1.0.28650 (Patch 2): Updated [[Mister Mushroom (Silksong)|Herald]]'s Wish achievement description to clarify that players must both complete the wish and finish the game.
+}}
+[[Category:Hollow Knight: Silksong]]
+{{DISPLAYTITLE:Achievements (''Silksong'')}}
+[[fr: Succès (Silksong)]]

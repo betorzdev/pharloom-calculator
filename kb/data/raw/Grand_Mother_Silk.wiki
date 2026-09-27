@@ -1,0 +1,227 @@
+{{SS Infobox Boss
+|image1 = <gallery>
+B Grand Mother Silk.png|Hunter's Journal
+Grand Mother Silk 8 Arms.png|Eight arms
+Grand Mother Silk Stagger.png|Staggered
+Grand Mother Silk Abyss.png|Abyss
+</gallery>
+| theme = [https://youtu.be/WdJ3O7Nrqa4 Awakening A] (Phase 1-3)<br>[https://youtu.be/83Wur1218aw Awakening B] (Phase 4-6)
+| location = [[The Cradle]]
+|drops = [[Weaver Queen]] ending<br>
+[[Snared Silk]] ending<br>
+[[Twisted Child]] ending
+| health = Phases 1/2/3/4/5/6 respectively: 100/192/240/110/242/340
+Total: 1224
+| damage_modifiers = {{SS Spaced Damage Modifiers|1.1|1|1|0.88|0.88}}
+| numbers_required = 1
+| gender = Female
+| singnum=2
+| s1=Once per fight
+| s2=Once per fight alternate
+}}
+
+{{Quote
+|Hr = Journal
+|Monarch of Pharloom, and the primal source of Silk.<hr/>
+Heart of the Haunting, long lulled to slumber and desperate to wake. The higher being's threads stretched throughout Pharloom, snaring its bugs and driving them to madness and discord.
+}}
+
+<b>Grand Mother Silk</b> is the final [[Bosses (Silksong)|boss]] of [[Act 2]] in <i>[[Hollow Knight: Silksong]]</i>. She is central to [[Hornet (Silksong)|Hornet]]'s journey and the story of [[Pharloom]].
+
+== Background ==
+Grand Mother Silk is a pale [[Higher Beings|higher being]] and the primal source of [[Silk]].<ref name=GSMjournal> Grand Mother Silk [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Monarch of Pharloom, and the primal source of Silk."</i></ref><ref name=GreenPrince>[[Hornet (Silksong)|Hornet]] dialogue with the [[Green Prince]]: <i>"You were mortal bugs, caught beneath a being pale... Devotion or destruction... these are the only fates my kind allow."</i></ref> She appeared in the lands of Pharloom sometime in the past and displaced most of the existing kingdoms and tribes.<ref name=SnailShaman> [[Snail Shamans (Silksong)|Snail Shamans]]: <i>"Pharloom was not born of that monarch, Old One. Power existed in these lands even before she bound them beneath her. Grnk. Seek the old hearts of our kingdom and the last successors to bear their strength. They're still out there, hidden away, much faded by the pale one's long dominion."</i></ref><ref> Snail Shamans: <i>"Up top of those caves lost to wind and sand rests a crusted old ruler, a once great warrior king. In their prime, they and their order held half of Pharloom under hardened claw. Some bugs relished that strength. Most lived in fear of it."</i></ref><ref> Snail Shamans: <i>"Through their march, at the far border of these lowlands, seek the last queen of the ant hunters. We can sense her still... just. In youth, her voice united the wild tribes. Gave them the strength to resist the pale monarch's will... longer than most at least."</i></ref><ref>[[Coral Tower]] [[Needolin Locations#Coral Tower|Needolin dialogue]]: <i>"All to bow... All lost to fear... Remember our strength... Remember our rule... Now none to resist... But us... Alone... against the pale light..."</i></ref> Using her thread, she evolved the [[Pharlid]]s,<ref name=FirstSinnerCutscene> [[First Sinner]] post-fight [https://www.youtube.com/watch?v=nAwTNaLtT34 cutscene].</ref> small arachnids driven by instinct, into [[Weavers]]. High above in [[the Cradle]], where her threads could reach all lands below,<ref>[[Skrill]] Hunter's Journal entry: <i>"This surface dweller is free of Silk. Its nature remains its own. The monarch's influence must only have stretched below it."</i></ref><ref name=FirstSinnerCutscene /> the Weavers would sustain the Mother's light eternally by producing song.<ref>Widow post-fight [https://www.youtube.com/watch?v=E86ZUn2Wz6E cutscene].</ref><ref>[[:File:Screenshot SS Widow 02.png|Screenshot]] of the broken harps in the Cradle.</ref> She told the Weavers that they were her daughters and that they were divine.<ref name=FirstSinner> First Sinner post-cutscene dialogue: <i>"...She called us daughters... Called us divine... She lied..."</i></ref> At some point, the Weavers lulled the higher being to sleep and took over rule of Pharloom.<ref name=MaskMaker> Hornet and [[Mask Maker (Silksong)|Mask Maker]] dialogue:<br><i>Hornet: "You speak of the Citadel? Its former function has failed, but I can still sense its purpose, some. It is church and cage both."<br>Mask Maker: "Aye. Devised by your ancestors that monstrosity, and their wicked, clever minds. A system, or a web they'd likely call it, a way to keep their mother sealed in slumber, and themselves free to lavish in their false rule."</i></ref> They kept the Mother in slumber in the Cradle by using [[the Citadel]]'s system of song and prayer and hid her existence from the rest of Pharloom.<ref name=MaskMaker/><ref name=Pontiff>Pontiff [[Needolin Locations#Whispering Vaults|Needolin dialogue]]: <i>"Damned bugs... We prayed a cage... We sang your chains... Divine Silk..."</i></ref><ref name=Conductor1> [[Conductor Ballador]]: <i>"Would you see her, pilgrim? Up there at our Citadel's crown? Reach those heights we'd hoped to hide and bow before this land's true ruler."</i></ref> Now dormant, the higher being was bound in servitude, her threads collected and used by the Citadel.<ref>Pharloom's Folly: <i>"They forget your heart, bound in slumber and servitude,"</i></ref><ref>Hornet dialogue with the [[Caretaker]]: <i>"The Silk has seeded deep into this kingdom's shells, generations deep... No wonder Pharloom's bugs proved such easy prey for that haunted thread. It had only to seek for itself to reach them."</i></ref> Lines of Silk stretch out of the Mother's cocoon, similar to a loom.<ref>[[:File:Cocoon Grand Mother Silk.png|Screenshot]] showing Grand Mother Silk's cocoon in the Cradle.</ref>
+
+The Weavers eventually realised Grand Mother Silk would always be the true monarch of the kingdom and tried to create traps, tools, and bindings to be free of her permanently.<ref name=Conductor2> [[Conductor Ballador]]: <i>""By the will of the Conductors," we once boomed, and this Citadel shook at our decree. But the words... How hollow they echoed. The mantle of rule, claimed greedily from Pharloom's fading first children, those bitter Weavers... it was yoke, not crown. Now, in our Citadel's silence, we share their truth. Only one monarch's claws ever clutched this kingdom, though we raised our voices to cry otherwise."</i></ref><ref name=Eva/><ref>[[Weavenest Atla]] [[Needolin Locations#Weavenest Atla|Needolin dialogue]]: <i>"...Is it done? ...Our runes... Our Silk... ...To bind her... tight... ...To keep us free..."</i></ref> These attempts ended in failure,<ref name=Eva>[[Eva]]: <i>"There, my mothers built their tools, all traps and bindings. Small things, but tests for larger forms. I still remember their thoughts as they worked, their desperation, and their hunger. Another hopeless attempt to wrest their freedom. All ended in failure, of course."</i></ref> and some Weavers decided to leave Pharloom while the ones who remained ultimately died.<ref>[[Rune Harp]]: <i>"Plea of a Weaver from the furthest edge of Pharloom. "Flee, sisters. Flee until your strength exhausts, so far you may escape at last her silken sight. To start anew, to sustain, free of web and service eternal.""</i></ref><ref>Rune Harp near Conductor Ballador in [[Act 3]]: <i>"Last words of the Weavers. "Sisters, spiders, the burden is passed. These simple bugs shall bear it full. Never to cease. Never to silence. We shall die, and wait, and pray, that one may come of silken strength enough to weave us free.""</i></ref> Grand Mother Silk was desperate to wake up and began [[haunting]] the threads of Pharloom, snaring bugs and driving them to madness.<ref name=GSMjournal2> Grand Mother Silk Hunter's Journal entry: <i>"Heart of the Haunting, long lulled to slumber and desperate to wake. The higher being's threads stretched throughout Pharloom, snaring its bugs and driving them to madness and discord."</i></ref> The bugs of the Citadel were some of the first to fall to the Haunting.<ref>[[Choir Pouncer]] Hunter's Journal entry: <i>"Once one of Pharloom's favoured bugs, and yet their domain and their shells would have been the first to fall to the Haunting."</i></ref> The physicians of the [[Whiteward]] had inserted Silk inside the shells of bugs to prolong their lives, which made it easier for Grand Mother Silk to take control of the threads inside them.<ref>Hornet and the [[Caretaker]] dialogue: <br><i>Hornet: "In the ward down below, I saw it clear, the hollowed husks, and the many torturous implements... machines to instill a bug with thread, that would see their life extended." <br>Caretaker: "Aye! That's it, in part! But there's more scale to it than all that. Just think of'em greedily shoving the Silk into their shells, the madness that overcame them, eternal life for mortal bugs! Then think on how long it's all gone on..." <br>Hornet: "...The children born of them, and all the pilgrims after... The Silk has seeded deep into this kingdom's shells, generations deep... No wonder Pharloom's bugs proved such easy prey for that haunted thread. It had only to seek for itself to reach them."</i></ref><ref>[[Surgeon]] Hunter's Journal entry: <i>"Their procedures with Silk may have prolonged life within the Citadel, but they unknowingly gifted many minds to the monarch."</i></ref> Her aim was to bind all the souls and shells of Pharloom together into one mind so they would devote themselves to her eternally.<ref name=SilkHeart>[[Whiteward]] [[Silk Heart]] dialogue: <i>"...Their voices... Their song... ...Their memory... ...Bind their shells... ...Bind their souls... ...Bind them all... ...Raise them... Up... ...To devote... Eternal... ...One mind... One union... ...They are ours... Bound forever..."</i></ref>
+
+Grand Mother Silk spun two children from her threads, [[Lace]] and [[Phantom]].<ref>Hornet dialogue with the [[Caretaker]]: <i>"Child of the monarch, she claimed herself at the end, and her shell suggested it true, a being born purely from Silk woven tight."</i></ref><ref>Phantom Hunter's Journal entry: <i>"Though grey with age, their frayed form suggested a being strung from Silk, one who welcomed a decisive end in combat over a slow decline."</i></ref> At some point, Phantom was discarded by their mother and their Silk started to deteriorate and fray.<ref>[[Phantom]] Needolin dialogue: <i>"Discarded... Silk stretched thin... Shell stiffened..."</i></ref> Lace was created to be a loyal child who would want the Mother to wake up from her slumber, unlike the Weavers.<ref>The Cradle Silk Heart dialogue: <i>"...Better a child spun mad... than none... ...Better a child spun frail... than none... ...Better a child spun pure... than them... ...One to wish our waking... ...From our Silk... A child born loyal..."</i></ref>
+
+The Mother also made the haunted [[The Choir|Choirbugs]] search outside of Pharloom for descendants of the Weavers to trap them and bring them to the Cradle.<ref>The Cradle [[Lore Tablets (Silksong)#The Cradle|Lore Tablets]]: <i>"Weaver, in eighth part, last of their line, frail with age. Tracked and taken in Sandsea Waste. Seven Choristors, nine Envoys lost to task.", "Weaver, in eighth part, last of their line, mortally wounded. Tracked and taken in the Blackbarrens. Four Choristors, one Reed lost to task.", "Weaver, in quarter part, last of their line, staked to service. Tracked and taken beneath the City of Steel. Eight Choristors, twelve Envoys lost to task."</i></ref> She located [[Hornet]] in [[Hallownest]] and sent a party of bugs to capture her for her ability to produce Silk.<ref name=Relic>Choral Commandment: <i>"Full Chamber to the kingdom of the White Wyrm. Claim the Weaver, in half part. Last of their line. Sensed strong with Silk. Resistance anticipated. Quell with rune cage."</i></ref><ref name=Seamstress>Hornet dialogue with the [[Seamstress]]: <i>"I have seen their Citadel and its state, and I have strong suspicion... They hunt me for my nature. For the Silk produced within my shell. Not for themselves but for the one atop it all."</i></ref>
+
+== In-game Events ==
+Grand Mother Silk is now stirring, and her Haunting is causing the kingdom to crumble.<ref name=stirring>Hornet dialogue with the Caretaker: <i>"Change was unavoidable, sir, whether I arrived or not. The monarch stirs. Its threads stretch far. My presence only accelerates the inevitable."</i></ref> Most of the land's bugs, and several corpses, have been possessed. The Citadel's haunted caste has captured Hornet with the intent of bringing her to Grand Mother Silk.<ref name=Relic/> However, when reaching the entrance to the kingdom, the runes on Hornet's cage are broken by a [[Silk Fly]], and she falls to the [[Moss Grotto]]. Hornet's arrival in the kingdom accelerated Grand Mother Silk's waking, and she directly addresses Hornet when she gets her first [[Silk Heart]].<ref>[[Bell Beast]] Silk Heart dialogue: <i>"...Child... Weaver... ...Child... Spider... ...Arrived... At last... ...Our Silk... ...Our strength... ...Our nature... ...We feel it... ...Rise... Rise... ...Come, child... Witness our waking..."</i></ref><ref name=stirring/><ref>[[Mask Maker (Silksong)|Mask Maker]]: <i>"Aye. Well its no great shock to have you visit. I've felt the stirrings of our monarch, even all the way out here, the tremors of her kin brought close."</i></ref>
+
+Upon reaching the peak of Pharloom, Hornet encounters Grand Mother Silk in the Cradle, still slumbering inside her cocoon. She awakens when Hornet challenges her. If Hornet has not acquired the [[Soul Snare]], she binds Grand Mother Silk's power at the end of the fight, taking her place and becoming a [[Weaver Queen]]. Should Hornet be cursed by the [[Twisted Bud]], vines burst out of her shell after defeating Grand Mother Silk and ensnare the higher being. Hornet turns into wood, with wooden roots sprouting from her. A crack appears in the lower part of Grand Mother Silk's body, which then hatches into an unknown being.
+
+If Hornet has created the Soul Snare with the [[Caretaker]], he goes up to the Cradle to set the trap below Grand Mother Silk's cocoon. Once Hornet has defeated Grand Mother Silk, Hornet plays the [[Needolin]] to activate the Soul Snare. The trap binds Grand Mother Silk to the [[Void]], opening a portal to [[the Abyss (Silksong)|the Abyss]] to allow Void Tendrils to pull her in.<ref>Hornet dialogue with the Snail Shamans: <i>"You bound it to that void!"</i></ref> However, Grand Mother Silk holds Hornet tight, threatening to pull her into the Void with her. Lace intervenes, cutting her mother's arm off and stabbing her with her pin to free Hornet. This leads to her falling into the Void along with the higher being. 
+
+As the Void threatens to consume both Grand Mother Silk and Lace, the mother spins a protective cocoon around them to save her daughter.<ref>Snail Shamans: <i>"Oh ho... The quakes, yes? We have felt their force, even here. So the mother resists the dark... to save the child?"</i></ref> This strains her soul thin, since she has to keep spinning the Silk anew while the Void eats away at the outside of the cocoon.<ref>Hornet dialogue with the Snail Shamans: <i>"She will have retreated within her protective form, that cocoon of thread. Even as the dark eats its outer, she will spin its Silk anew. The effort would be immense and it will strain her soul thin, but what other choice remains?"</i></ref> Because Grand Mother Silk's threads stretch throughout Pharloom, the Void has leeched up, possessing her Silk and the inhabitants of the land.<ref>Hornet dialogue with the Snail Shamans: <i>"Surely you've seen them, the black threads that wrack your lands? The dark leeches up, possessed upon the fallen monarch's Silk."</i></ref> Her resistance against the Void also causes periodic quakes, collapsing structures and caverns.<ref>Snail Shamans: <i>"The quakes... This collapse will take Pharloom all."</i></ref>
+
+Eventually, Hornet is able to dive into the Void with the [[Everbloom]] and reaches Grand Mother Silk's cocoon. The Void has possessed Lace, making her fight Hornet as [[Lost Lace]]. As the fight continues, Grand Mother Silk loses more strength and collapses on the ground, enabling more Void to breach the cocoon. At the end of the fight, Hornet manages to defeat Lost Lace, loosening the Void's hold on her. Hornet picks up Lace and asks Grand Mother Silk to give her Silk so she can use the [[Silk Soar]] to get out of the Void. Grand Mother Silk obliges, providing Hornet with enough Silk that she is able to jump up. Hornet and Lace escape, leaving the higher being behind to be consumed by the Void.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+Throughout her fight, Grand Mother Silk floats in the background above Hornet with six scissor blades floating by her sides. She does not deal contact damage, and her torso must be struck to damage her. The blades also do not deal contact damage when not being used for an attack. 
+
+=== Phase 1 ===
+In Phase 1, Grand Mother Silk has only four attacks:
+* <b>Blade Flurry</b>: Grand Mother Silk sends a vertical set of three blades, which hover above Hornet before dropping, and a horizontal set of three blades, which travel across the platform, at Hornet. Horizontal blades always leave a gap to jump through. The direction in which they are fired is random, as is the delay between the waves. Blades only deal damage after they start moving.
+* <b>Blade Walls</b>: Grand Mother Silk sends out a set of three blades to the left side of the arena and a set of three blades to the right side of the arena, which then travel horizontally at Hornet from either side.
+* <b>Blade Rain</b>: All six blades are sent vertically downward. The blades leave gaps between them, but are not uniformly apart.
+* <b>Claw Swipe</b>: Grand Mother Silk winds up a claw before slashing it across the entire floor of the arena, bringing it up at the end and creating a large arc. She always follows this up by immediately using Blade Rain. Blade Rain begins to be telegraphed as the Claw Swipe is being performed.
+* <b>Glide</b>: Grand Mother Silk continually makes small backwards dashes to stay away from Hornet. If Hornet backs Grand Mother Silk against a wall, she can duck down before then making a larger dash across the arena to escape.
+
+=== Phase 2 ===
+After reaching 1124 HP, Grand Mother Silk attacks at a slightly faster rate and gains the following attack:
+* <b>Silk Web</b>: Grand Mother Silk shrieks, after which a random pattern of Silk lines appears across the entire arena. These lines glow for a moment before triggering. If Hornet is caught in one when it triggers, a short cutscene plays in which Grand Mother Silk deals {{Damage|1+1+1}} to her.
+
+=== Phase 3 ===
+Upon reaching 932 HP, Grand Mother Silk stops and shrieks. She attacks at an even faster rate and alters two existing attacks:
+* <b>Blade Flurry</b>: The first set of three blades is sent out again after the second set, repeating its original direction of movement. Occasionally, she still sends out only two sets of blades.
+* <b>Silk Web</b>: Repeats once, immediately after the first ends.
+
+=== Phase 4 ===
+Upon reaching 692 HP, Grand Mother Silk falls off-screen, faking her death. There is a short downtime before Silk lines appear in the middle of the arena and drag down rocks and debris. This then repeats on the sides of the arena. While this second wave of debris happens, Grand Mother Silk reappears and starts Phase 3.
+
+Her attack rate slows down slightly, but she gains a new attack:
+* <b>Debris Rain</b>: Thick sets of Silk lines appear, either in the centre or on the sides of the arena, followed by debris raining down. This continues for a few seconds, and Grand Mother Silk then immediately follows up with a needle-based attack.
+
+=== Phase 5 ===
+After reaching 582 HP, Grand Mother Silk's attack pace speeds up again slightly and she gains a new attack:
+* <b>Spike Pull</b>: 2–3 sets of Silk lines appear in random parts of the arena, which then pull up spiked platforms from beneath the arena. Grand Mother Silk then immediately follows up with a needle-based attack. Spike platforms can be removed early by either hitting them twice with normal attacks, once with [[Heavy Damage]], or taking damage from them. These spikes only deal {{Damage|1}}.
+The Spike Pull and Debris Rain attacks cannot overlap with each other or themselves; each time either attack starts, the previous ongoing Spike Pull/Debris Rain attack ends.
+
+=== Phase 6 ===
+Upon reaching 340 HP, Grand Mother Silk shrieks again, and her attacks come out slightly faster.
+
+All of Grand Mother Silk's attacks deal {{Damage|2}}, with the exceptions of the Silk Web, which deals {{Damage|1+1+1}}, and the Spike Pull, which deals {{Damage|1}}.
+
+<hr />
+
+{{Stagger
+| Grand Mother Silk falls down to the platform, her blades clattering harmlessly down beside her.
+| 19
+| game = SS
+}}
+
+<hr />
+
+{{TabbedDialogue
+|Title1 = After defeating the Bell Beast
+|Title1_Event1 = While climbing up to the Silk Heart
+|Title1_Dialogue1 = 
+...Child... Weaver...<br> 
+...Child... Spider...<br>
+...Arrived... At last...<br>
+...Our Silk...<br>
+...Our strength...<br>
+...Our nature...<br>
+...We feel it...<br>
+...Rise... Rise...
+
+|Title1_Event2 = At the end of the scene
+|Title1_Dialogue2 = 
+...Come, child... Witness our waking...
+
+|Title2 = After defeating the Unravelled
+|Title2_Event1 = While climbing up to the Silk Heart
+|Title2_Dialogue1 = 
+...Their voices... Their song...<br>
+...Their memory...<br>
+...Bind their shells...<br>
+...Bind their souls...<br>
+...Bind them all...<br>
+...Raise them... Up...<br>
+...To devote... Eternal...<br>
+...One mind... One union...
+
+|Title2_Event2 = At the end of the scene
+|Title2_Dialogue2 = 
+...They are ours... Bound forever...
+
+|Title3 = After defeating Lace
+|Title3_Event1 = While climbing up to the Silk Heart
+|Title3_Dialogue1 = 
+...Better a child spun mad... than none...<br>
+...Better a child spun frail... than none...<br>
+...Better a child spun pure... than them...<br>
+...One to wish our waking...
+
+|Title3_Event2 = At the end of the scene
+|Title3_Dialogue2 = 
+...From our Silk... A child born loyal...
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Cradle 07.png!Arena in the Cradle
+|Image2 = Screenshot SS Cradle 11.png!Arena with the Soul Snare
+|Image3 = Screenshot SS Grand Mother Silk 05.png!Awakening
+|Image4 = Screenshot SS Grand Mother Silk 17.png!Idle
+|Image5 = Screenshot SS Grand Mother Silk 04.png!Silk Web
+|Image6 = Screenshot SS Grand Mother Silk 01.png!Eight-arms form
+|Image7 = Screenshot SS Grand Mother Silk 02.png!Claw Swipe
+|Image8 = Screenshot SS Grand Mother Silk 06.png!Blade Flurry
+|Image9 = Screenshot SS Grand Mother Silk 07.png!Debris Rain
+|Image10 = Screenshot SS Grand Mother Silk 08.png!Spike Pull
+|Image11 = Screenshot SS Grand Mother Silk 18.png!Reacting to the Needolin
+|Image12 = Screenshot SS Grand Mother Silk 03.png!Hornet binding Grand Mother Silk
+|Image13 = Screenshot SS Grand Mother Silk 09.png!Grand Mother Silk constricted by Cursed Crest
+|Image14 = Screenshot SS Grand Mother Silk 10.png!Hornet activating the Soul Snare
+|Image15 = Screenshot SS Grand Mother Silk 11.png!Grand Mother Silk pulled into the Void, holding Hornet
+|Image16 = Screenshot SS Grand Mother Silk 12.png!Lace freeing Hornet
+|Image17 = Screenshot SS The Abyss 11.png!In the Abyss during Lost Lace's fight
+|Image18 = Screenshot SS Grand Mother Silk 13.png!During Phase 3 of Lost Lace's fight
+|Image19 = Screenshot SS Grand Mother Silk 14.png!Giving Silk to Hornet
+|Image20 = Cocoon Grand Mother Silk.png!Modded screenshot of Grand Mother Silk's cocoon
+|Image21 = Ari SS Sketch 12.png!Concept sketches
+}}
+
+== Location ==
+Grand Mother Silk is located at the top of the Cradle, which is unlocked after defeating [[Lace]] in her second encounter.
+{{Gallery
+|Image1= Mapshot SS Grand Mother Silk 01.png!Location in the Cradle
+}}
+
+== Achievements ==
+{{Achievements|allgames=silksong|Weaver Queen|Snared Silk|Twisted Child}}
+
+== Trivia ==
+* Grand Mother Silk refers to herself in the [[wikipedia:royal we|royal we]],<ref>[[Bell Beast]] Silk Heart dialogue: <i>"...Child... Weaver... ...Child... Spider... ...Arrived... At last... ...Our Silk... ...Our strength... ...Our nature... ...We feel it... ...Rise... Rise... ...Come, child... Witness our waking..."</i></ref> plural pronouns usually symbolising a connection to divinity.
+* Once per fight, Grand Mother Silk will respond to Hornet playing the Needolin by pausing to throw her head back and scream. No Needolin dialogue appears. After doing this, she no longer responds to the Needolin at all.
+* The spikes Grand Mother Silk pulls up in her fight (also seen in the Cradle and in Silk memories) are of identical shape and design to the spikes seen in [[Weavers' Den]] in <i>Hollow Knight</i>, except they look older and more corroded.
+* Grand Mother Silk's eight-arm attack is referred to as "Beast Slash" in the game's files.
+* Some of the platforms in the Cradle, connected with lines of Silk to Grand Mother Silk's cocoon, are called "loom" in the game's files.
+* A cut [[Endings (Silksong)|ending]] cinematic can be found in the game's files with the name "Strung to Serve", along with an unused achievement icon. The ending shows a character with characteristics of both Grand Mother Silk and Hornet, haunting the citizens of Pharloom with Silk.<br/><i>See: [[Cut Content (Silksong)/Ending B: Strung to Serve]]</i>
+{{Gallery
+|Image1=Achievement SS ending A.png!Cut "Strung to Serve" achievement icon
+|Image2=Screenshot SS Grand Mother Silk 15.png!Grand Mother Silk putting her arms around Hornet
+|Image3=Ending Strung to Serve.png!Character in the cinematic
+}}
+
+{{Localisation
+|DEname = Große Mutter Seide
+|DEmeaning = Grand Mother Silk
+|ESname = Gran Madre Seda
+|ESmeaning = Grand Mother Silk
+|FRname = Mère Supérieure Soie
+|FRmeaning = Mother Superior Silk<br><small>[[wikipedia:Mother superior|Mother superior]] refers to a nun that is a leader of a convent.</small>
+|ITname = Grande Madre Seta
+|ITmeaning = Grand Mother Silk
+|JAname = 大いなる母シルク
+|JAromanised = Ōinaru haha shiruku
+|JAmeaning = Great Mother Silk 
+|KOname = 위대한 어머니 실크
+|KOromanised = Widaehan eomeoni silkeu
+|KOmeaning = Great Mother Silk
+|PTname = Grande Mãe Seda
+|PTmeaning = Grand Mother Silk
+|RUname = Верховная матерь Шёлка
+|RUromanised = Verxovnaja mater' šëlka
+|RUmeaning = Supreme Mother of Silk<br><small>{{lang|ru|Матерь}} <i>mater'</i> is an archanic term for mother associated with divinity and religion (specifically associated with the [[wikipedia:Mary, mother of Jesus|virgin Mary]]).</small>
+|TWname = 聖母靈絲
+|TWromanised = Shèngmǔ líng sī
+|TWmeaning = Holy Mother Soul Silk
+|ZHname = 崇高圣母 灵丝
+|ZHromanised = Chónggāo shèngmǔ líng sī
+|ZHmeaning = Majestic and Holy Mother Soul Silk
+|CODEname = SILK_BOSS
+}}
+
+{{Refs|hr=SS|columns=2|scrollbox=true}}
+
+{{SS Nav Enemies}}
+
+[[pt:Grande Mãe Seda]]
+
+{{#seo:|keywords=GMS, grandmother silk, grandmother, Silksong, mother silk, Silksong final boss}}

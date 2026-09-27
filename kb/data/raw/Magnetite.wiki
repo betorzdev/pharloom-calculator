@@ -1,0 +1,93 @@
+{{SS Infobox Item
+|title = Magnetite
+|image = <gallery>
+Magnetite.png|Materium
+Magnetite Pickup.png|Pickup
+</gallery>
+|type = Material
+|source = [[Brightvein]]
+|description = Brittle levitating rock, found throughout the fringes of Pharloom.
+}}
+
+'''Magnetite''' is a brittle rock with magnetic properties found throughout [[Pharloom]]. It can also be displayed in the [[Materium]].
+
+== Background ==
+Magnetite is a blue coloured, magnetic stone that is usually found in clumps of varying sizes suspended in the air. It has a unique property that allows it to be tuned to attract specific materials.<ref name="brooch">[[Magnetite Brooch]] description: <i>"Holy stone inscribed with a prayer for rosaries. Any loose beads will be pulled toward the wearer."</i></ref> Magnetite platforms are created from a magnetite core attracting bits of bone and stone rubble to form a solid surface, and the [[Magnetite Brooch]] is able to pull [[Rosaries]] towards the bearer from long distances.<ref name="brooch" /><ref name="grindle">Description in [[Grindle]]'s shop for the [[Magnetite Brooch]]: <i>"Very, very lucky little trinket we got 'ere! Pulls 'em little clickie-clackies right into yer waitin' claws!"</i></ref>
+
+Magnetite platforms are brittle and will crumble as soon as [[Hornet]] walks or climbs on them, but their Magnetite core allows them to reform quickly after. They are found primarily in the west end of Pharloom, particularly in [[the Marrow]], [[Wormways]], and [[Mount Fay]]. A few can also be found in [[Deep Docks]] and one on the eastern end of [[Weavenest Atla]], below the Marrow. Numerous can be found in the Skull Cave in [[Far Fields]], as well as during the [[The Abyss (Silksong)|the Abyss]] escape sequence in [[Act 3]] below Deep Docks. Several Magnetite platforms can also be seen in the background in Mount Fay and the space below Deep Docks. 
+
+Magnetite may also have the ability to alter luck or influence accuracy, as seen with the [[Magnetite Dice]]. Both the Magnetite Brooch and the Magnetite Dice are also associated with luck or being lucky in text and dialogue. <ref name="grindle"/><ref>[[Magnetite Dice]] description: <i>"Used in simple games and believed to bring luck to the bearer."</i></ref>
+
+[[The Citadel]] [[The Choir|choir]] bugs studied Magnetite in the [[Memorium]], the [[Memoria|Memoriae]] having several samples stored in transparent cases in the exhibit room in northeastern section. The blue material found inside the Materium in the Memorium, [[Bellhome]] and the Inventory icon appears to be Magnetite.
+
+== Use ==
+The entry can be seen in the [[Bellhome]] after interacting with the [[Materium]].
+
+{{Gallery
+|Image1 = Mapshot SS Bellhome.png!Location of the Bellhome in Bellhart
+|Image2 = Screenshot SS Bellhart 09.png!Bellhome in Bellhart
+}}
+
+== How to Acquire ==
+The Materium entry for Magnetite can be acquired in [[Brightvein]] in [[Act 3]], requiring the [[Silk Soar]] to access. This entry does not count toward 100% completion.
+
+{{Gallery
+|Image1 = Mapshot SS Magnetite.png!Location of the Magnetite Materium entry in Mount Fay
+|Image2 = Screenshot SS Mount Fay 13.png!Magnetite Materium entry in Mount Fay
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Memorium 05.png!Magnetite exhibit in the Memorium
+|Image2 = Screenshot SS Materium 01.png!Magnetite in the Materium in the Memorium
+|Image3 = Screenshot SS Bellhart 09.png!Magnetite in the Materium in Bellhome
+|Image4 = Materium.png!Magnetite in the Materium in the Inventory
+}}
+
+=== Magnetite Platforms ===
+{{Gallery
+|Image1 = Screenshot SS Magnetite Platform 01.png!Magnetite Platform in Weavenest Atla
+|Image2 = Screenshot SS Magnetite Platform 02.png!Magnetite Platforms in the Marrow
+|Image3 = Screenshot SS Magnetite Platform 03.png!Magnetite Platforms in Deep Docks
+|Image4 = Screenshot SS Magnetite Platform 04.png!Magnetite Platforms during the Abyss escape (below Deep Docks)
+|Image5 = Screenshot SS Magnetite Platform 05.png!Magnetite Platforms in Skull Cave (Far Fields)
+|Image6 = Screenshot SS Magnetite Platform 06.png!Magnetite Platforms in Wormways
+|Image7 = Screenshot SS Magnetite Platform 07.png!Magnetite Platforms in Mount Fay
+|Image8 = Screenshot SS Magnetite Platform 08.png!Blurless Magnetite Platforms in the background during the Abyss escape
+|Image9 = Screenshot SS Magnetite Platform 09.png!Blurless Magnetite Platforms in the background in Mount Fay
+|Image10 = GIF SS Magnetite Platform 01.gif!Magnetite Platform crumbling and reassembling itself
+}}
+
+== Trivia ==
+* Magnetite is the name of a [[wikipedia:Magnetite|real-world mineral]] that is ferrimagnetic, meaning it is attracted to magnets and can become magnetic itself. Naturally-magnetic magnetite, traditionally called lodestone, was the source of the original discovery of magnetism.
+
+{{Localisation
+|DEname = Magnetit
+|DEmeaning = Magnetite
+|ESname = Magnetita
+|ESmeaning = Magnetite
+|FRname = Magnétite
+|FRmeaning = Magnetite
+|ITname = Magnetite
+|ITmeaning = —
+|JAname=マグネタイト
+|JAromanised= Magunetaito
+|JAkatakana = foreign
+|JAmeaning = Magnetite
+|KOname = 자철석
+|KOromanised = Jacheolseok
+|KOmeaning = 
+|PTname =  Magnetita
+|PTmeaning = Magnetite
+|RUname = Магнетит
+|RUromanised = Magnetit
+|RUmeaning = Magnetite
+|ZHname = 磁悬岩
+|ZHromanised = Cí xuán yán
+|ZHmeaning = Magnetic Suspension Rock
+|CODEname = MAGNETITE
+|CODEmeaning = 
+}}
+
+{{Refs|hr=SS}}
+[[zh:磁悬岩]]

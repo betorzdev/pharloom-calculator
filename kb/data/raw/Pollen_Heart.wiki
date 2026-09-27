@@ -1,0 +1,85 @@
+{{Navbar|icons=true|page1=Encrusted Heart|page2=Pollen Heart|page3=Hunter's Heart|page4=Conjoined Heart}}
+{{SS Infobox Item
+| label = Item
+| type = [[Items (Silksong)#Deliverable|Deliverable]]
+| image = <gallery>
+Pollen Heart.png|Inventory
+Pollen Heart Shelf.png|Bellhome
+Pollen Heart Pickup.png|Pickup
+</gallery>
+| source = [[Shellwood]]
+| description = Animated heart of Nyleth. It beats faint and fast.
+	
+| label2 = Prompt
+| type2 = [[Items (Silksong)#Deliverable|Deliverable]]
+| title2 = <small>Obtained the</small><br>Pollen Heart
+| image2 = Icon SS Pollen Heart Art.png 
+| source2 = [[Shellwood]]
+| description2 = It beats faint and fast.
+}}
+
+{{Quote|Hr=SS
+|...We are life... We are growth...<br>What world without us?... 
+|[[Nyleth]]
+}}
+
+The <b>Pollen Heart</b> is a [[Items_(Silksong)#Deliverables|deliverable item]] and [[Materium#Mementos|memento]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+
+The Pollen Heart is used along with the [[Encrusted Heart]], the [[Hunter's Heart]], and/or the [[Conjoined Heart]] to complete the <i>[[SEEK: The Old Hearts]]</i> [[Objectives|objective]].
+
+{{Gallery
+|Image1 = Mapshot SS Red Memory.png!Snail Shamans location in Moss Grotto
+|Image2 = Screenshot SS Snail Shamans 01.png!Snail Shamans in the Ruined Chapel in Moss Grotto
+}}
+
+If the Pollen Heart is obtained afterwards, as a fourth heart, then it becomes a [[memento]] that can be displayed on a shelf in the [[Bellhome]]. After interacting with the desk, it appears in the top-middle slot of the shelving.
+
+{{Gallery
+|Image1 = Mapshot SS Bellhome.png!Location in Bellhart
+|Image2 = Screenshot SS Pollen Heart 02.png!Displayed inside Bellhome in Bellhart
+}}
+
+== How to Acquire ==
+The Pollen Heart is acquired after defeating [[Nyleth]] in a hidden area in [[Shellwood]], accessed through a breakable wall in the [[Grand Gate]]'s lift shaft.
+
+{{Gallery
+|Image1 = Mapshot SS Nyleth.png!Location in Grand Gate
+|Image2 = Screenshot SS Pollen Heart 01.png!Pollen Heart on Nyleth's fountain in Grand Gate
+}}
+
+{{Localisation
+|DEname = Pollenherz
+|DEmeaning = Pollen Heart
+|ESname = Corazón de polen
+|ESmeaning = Heart of Pollen
+|FRname = Cœur fleurissant
+|FRmeaning = Blooming Heart  
+|ITname = Cuore di polline
+|ITmeaning = Heart of Pollen
+|JAname = 花の心臓
+|JAromanised = Hana no shinzō
+|JAmeaning = Flower Heart
+|KOname = 꽃의 심장
+|KOromanised = Kkochui simjang
+|KOmeaning = Flower Heart
+|PTname = Coração de Pólen
+|PTmeaning = Heart of Pollen
+|RUname = Сердце из пыльцы
+|RUromanised = Serdce iz pyl'cy
+|RUmeaning = Heart of Pollen
+|TWname = 花粉之心
+|TWromanised = Huāfěn zhī xīn
+|TWmeaning = same
+|ZHname = 花粉之心
+|ZHromanised = Huāfěn zhī xīn
+|ZHmeaning = Heart of Pollen
+|CODEname = HEART_BLOOM
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

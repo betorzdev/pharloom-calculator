@@ -1,0 +1,123 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Envoy.png|Hunter's Journal
+Envoy Idle.png|Idle
+</gallery>
+| hasdrop = true
+| r1 = 13
+| r2 = 22
+| sh1 = 3-5
+| sh2 = 4-7
+|health = 38/{{BT|76}}<br>48/{{BT|96}} (Fighting [[Second Sentinel]])
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|0.9|0.9|0.9}}
+|numbers_required = 20
+|singnum=2
+|va = Beau Fitzgerald<ref>Beau Fitzgerald is credited in Envoy's audio files.</ref>
+}}
+{{Quote
+|Hr = Journal
+|Guide and ofttimes leader within the Citadel's Choir.<hr/>Bugs like these crossed the caves to bring me to Pharloom. I cut down many before my capture. Then I had thought them minded and cunning. Now I can see the  singular will that haunts them all.
+}}
+
+<b>Envoys</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are leaders of [[the Choir]] often found guiding other choirbugs.<ref>Envoy [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Guide and ofttimes leader within the Citadel's Choir."</i></ref>
+==Background==
+Envoys, [[Choristor]]s, and [[Reed]]s were issued by [[the Citadel]] to different parts of the world, tasked with capturing any surviving descendants of the line of [[Weavers]].<ref>[[The Cradle]] lore tablet: <i>"Weaver, in eighth part, last of their line, frail with age. Tracked and taken in Sandsea Waste. Seven Choristors, nine Envoys lost to task."</i></ref><ref>[[The Cradle]] lore tablet: <i>"Weaver, in eighth part, last of their line, mortally wounded. Tracked and taken in the Blackbarrens. Four Choristors, one Reed lost to task."</i></ref>
+
+[[Hornet (Lore)|Hornet]] was captured and escorted to the kingdom of [[Pharloom]] by a troop of Envoys with a rune cage.<ref><i>[[Hollow Knight: Silksong]]</i> opening cutscene</ref><ref>[[Choral Commandment]]: ''"Full Chamber to the kingdom of the White Wyrm. Claim the Weaver, in half part. Last of their line. Sensed strong with Silk. Resistance anticipated. Quell with rune cage."''</ref>
+
+== Behaviour and Tactics ==
+They are often seen leading several other choirbugs throughout the halls of the Choral Chambers. Once Hornet is in range, they use one of two attacks:
+* <b>Overhead Swing:</b> Does a large overhead swing with their staff.
+** A second, larger swing that the Envoy steps forward for may sometimes be performed after the first swing.
+* <b>Charge:</b> Holds their staff like a lance and charges at Hornet, not stopping until she is behind it or it hits a wall. Parrying the attack is quite easy, and often the best choice for preventing damage.
+
+All of their attacks and contact deal {{Damage|1}}.
+
+An Envoy with 48 HP appears west of the [[Bellway]] fighting [[Second Sentinel]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+|columns=2
+|
+* Raise your voices, chosen few!
+* The song sustains!
+* Holy call of the Citadel...
+* Fill the chambers, sacred song...
+* Our voices will be heard!
+* For our song, the precious Silk!
+* Waver not! Wither not!
+* All must gather! All must sing!
+}}
+== Location ==
+Envoys can be mainly found throughout the [[Choral Chambers]], but one appears at the start of [[the Forum]] [[Enemy_Gauntlets_(Silksong)#High_Halls|gauntlet]] in the [[High Halls]].
+
+The Envoy directly west of the [[Grand Bellway]] will only spawn once [[First Shrine]] is activated.
+
+{{Gallery
+|Image1 = Mapshot SS Envoy 01.png!Locations in the Choral Chambers
+|Image2 = Mapshot SS Envoy 02.png!Locations in the Choral Chambers in Act 3
+|Image3 = Mapshot SS Choir Clapper 02.png!Location in the High Halls
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Envoy 01.png!Bodies of Hornet's captors
+|Image2= Screenshot SS Envoy 02.png!Body of one of Hornet's captors
+|Image3= Screenshot SS Envoy 03.png!Body of one of Hornet's captors
+|Image4= Screenshot SS Envoy 04.png!Body of one of Hornet's captors
+|Image5= Screenshot SS Envoy 05.png!Leading a Choir Pouncer and Choristor
+|Image6= Screenshot SS Envoy 06.png!Singing with a Choir Hornhead
+|Image7= Screenshot SS Envoy 07.png!Singing with a Reed
+|Image8= Screenshot SS Envoy 13.png!Corpse in Act 3
+|Image9= Screenshot SS Envoy 08.png!Dormant
+|Image10= GIF SS Envoy 01.gif!Reanimated
+|Image11= Screenshot SS Envoy 09.png!In the Forum
+|Image12= Screenshot SS Envoy 10.png!Overhead Swing
+|Image13= Screenshot SS Envoy 11.png!Charge
+|Image14= Screenshot SS Envoy 12.png!Singing
+|Image15=Screenshot SS Choir 07.png!Memory in the Cradle
+|Image16= Screenshot SS Envoy Cutscene 01.png!Captors carrying Hornet
+|Image17= Screenshot SS Wasteland 02.png!Captors passing through the Wasteland
+|Image18= Screenshot SS Blasted Steps Cutscene.png!Captors passing through the Blasted Steps
+|Image19 = Screenshot SS Choristor 10.png!Corpse in the Weaver Queen ending cutscene
+}}
+
+==Trivia==
+* The opening cutscene features a group of 7-8 Envoys, 4 of whom carry a bell-staff. When the bridge collapses they fall down along with Hornet, and when Hornet gets out of [[Moss Grotto]], their bodies can be found lying around.
+** 6 bodies can be found, 3 on the ground, and 3 higher above [[Bone Bottom]]. Next to one of these is a [[Choral Commandment]] that bears the edict of Hornet's capture.
+*Envoys do not respond to the Needolin once they become hostile.
+* Envoys share their Needolin dialogue with [[Choir Bellbearer]]s, [[Choristor]]s, and [[Reed]]s.
+
+{{Localisation
+|DEname = Gesandter
+|DEmeaning = Envoy
+|ESname = Enviado
+|ESmeaning = Envoy or Messenger
+|FRname = Émissaire
+|FRmeaning = Emissary
+|ITname = Emissario
+|ITmeaning = Envoy or Emissary
+|JAname = 使者
+|JAromanised = Shisha
+|JAmeaning = Envoy or Messenger
+|KOname = 사절
+|KOromanised = Sajeol
+|KOmeaning = Envoy
+|PTname = Emissário
+|PTmeaning = Emissary
+|RUname = Посланник
+|RUromanised = Poslannik
+|RUmeaning = Envoy or Messenger
+|TWname = 聖詠特使
+|TWromanised = Shèngyǒng tèshǐ
+|TWmeaning = same
+|ZHname = 圣咏特使
+|ZHromanised = Shèngyǒng tèshǐ
+|ZHmeaning = Choral Envoy or Psalm Envoy, with reference to {{lang|zh-Hans|圣咏殿}}/{{lang|zh-Hant|聖詠殿}} <i>shèngyǒng diàn</i> which is Choral Chambers in Chinese
+|CODEname=SONG_PILGRIM_01
+|CODEmeaning="Song" internally refers to the Citadel. 02 and 03 are the [[Surgeon]]s and [[Choristor]]s
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

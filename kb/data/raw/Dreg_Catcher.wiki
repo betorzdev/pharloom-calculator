@@ -1,0 +1,107 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Dreg Catcher.png|Hunter's Journal
+Dreg Catcher Idle.png|Idle
+Dreg_Catcher_Catching_Dregs.png|Working
+</gallery>
+| hasdrop = true
+| r1 = 8
+| r2 = 12
+| sh1 = 3-5
+| sh2 = 4-7
+|health = 21/{{BT|42}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|0.75|0.75|0.75}}
+|numbers_required = 20
+|singnum = 2
+}}
+
+{{Quote
+|Hr = Journal
+|Bug charged to catch dregs of Silk that fall from the Citadel. Will attack with its staff if provoked.<hr/>
+These bugs look to have spent every waking moment at their work. Grim, endless labour in service of the unseen Citadel above.
+}}
+
+<b>Dreg Catchers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are [[Moorbugs]] charged to catch dregs of [[Silk]] that fall from [[the Citadel]].<ref>Dreg Catcher [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Bug charged to catch dregs of Silk that fall from the Citadel."</i></ref>
+
+== Behaviour and Tactics ==
+Dreg Catchers are either patrolling an area and pausing on occasion, or standing in place holding their dreg catcher in the air. After becoming aggressive, they perform either of the moves below, depending on their distance from Hornet:
+* <b>Hop:</b> Hops either forwards or backwards, ending their forwards Hop early if it results in contact damage. If they spot Hornet whilst there is distance between them, they always Hop forwards to close the distance.
+** They occasionally follow a forwards Hop up with a backwards Hop as a sort of feint.
+* <b>Staff Swing:</b> Swings their staff at Hornet at a low angle, then quickly follows it up with a large overhead swing. This move is often followed up with 1–2 backwards Hops, or another Staff Swing if Hornet is still in range.
+
+Dreg Catchers deal {{Damage|1}} with their attack and upon contact.
+
+Due to the rather poor range of Staff Swing, the entire attack can be dodged in one jump, which immediately creates an opening for Hornet to get a hit in, as Dreg Catchers have slight cooldowns between attacks. Dashing can easily close the distance if they attempt to Hop backward, so always try to maintain pressure.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Dreg Catchers have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2|
+* Spin it, send it...
+* Catch it, spool it...
+* Why... always this?
+* Even these dregs...
+* The air... the fields...
+* Are we only dregs?
+}}
+
+== Location ==
+Dreg Catchers can be found in western [[Greymoor]]. Two are encountered as part of the [[Enemy Gauntlets (Silksong)/Greymoor 5|enemy gauntlet]] in the [[Chapel of the Reaper]], and another two appear during the [[Enemy Gauntlets (Silksong)/Greymoor 1|gauntlet]] inside the tower west of [[Halfway Home]]. In [[Act 3]], three more are fought during the [[Enemy Gauntlets (Silksong)/Greymoor 2|gauntlet]] that takes place in the same tower.
+
+Additionally, two Dreg Catchers in the room west of the [[Bellway]] station disappear under certain conditions: the first stops spawning after a [[Wardenfly]] captures [[Cursed Crest|cursed]] Hornet and is killed by roots, while the second will no longer appear if the platform they occupy is destroyed by [[Moorwing]] during the boss fight.
+
+{{Gallery
+|Image1 = Mapshot SS Dreg Catcher 01.png!Locations in Greymoor
+|Image2 = Mapshot SS Dreg Catcher 02.png!Locations in Greymoor in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1=Screenshot SS Dreg Catcher 01.png!Catching Silk dregs
+|Image2=Screenshot SS Dreg Catcher 02.png!Idle
+|Image3=Screenshot SS Dreg Catcher 03.png!Hop
+|Image4=Screenshot SS Dreg Catcher 04.png!Staff Swing attack
+|Image5=Screenshot SS Dreg Catcher 05.png!Responding to the Needolin
+|Image6=Screenshot SS Dreg Catcher 06.png!Corpse in lower Greymoor
+|Image7=Screenshot SS Dreg Catcher 07.png!Corpses in Act 3
+|Image8=Ari SS Sketch 08.jpg!Concept Sketches
+}}
+
+==Trivia==
+* Dreg Catchers share their Needolin dialogue with [[Silk Snipper]]s and [[Thread Raker]]s.
+
+{{Localisation
+|DEname = Fetzenfänger
+|DEmeaning = Scrap Catcher
+|ESname = Captador de restos
+|ESmeaning = Catcher of Waste
+|FRname = Collecteur de Résidus
+|FRmeaning = Collector of Residues
+|ITname = Cogliresidui
+|ITmeaning = Combination of <i>cogli</i> (pick) and <i>residui</i> (wastes).
+|JAname = イトクズヒロイ
+|JAromanised = Itokuzu hiroi
+|JAkatakana = foreign
+|JAmeaning = Combination of 糸屑 <i>itokuzu</i> (lint) and 拾い <i>hiroi</i> (gatherer).
+|KOname = 찌꺼기 포획자
+|KOromanised = Jjikkeogi pohoekja
+|KOmeaning = Dreg Catcher
+|PTname = Apanhador-de-resíduos
+|PTmeaning = Catcher of Waste
+|RUname = Ошмётколов
+|RUromanised = Ošmëtkolov
+|RUmeaning =
+|TWname = 靈絲篩工
+|TWromanised = Língsī shāigōng
+|TWmeaning = same
+|ZHname = 灵丝筛工
+|ZHromanised = Língsī shāigōng
+|ZHmeaning = Silk Sifter
+|CODEname=FARMER_CATCHER
+|CODEmeaning=<code>FARMER</code> internally refers to [[Greymoor]] enemies.
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

@@ -1,0 +1,66 @@
+{{SS Infobox Item
+| image = <gallery>
+Sprintmaster Memento.png|Inventory
+Sprintmaster Memento Shelf.png|Bellhome
+</gallery>
+| source = Beat [[Sprintmaster Swift]] 4 times in a race
+| description = Gilded trophy awarded by Sprintmaster Swift to the fastest bug in Pharloom.
+}}
+
+{{Quote|Hr=SS
+|As reward for such an impressive feat of endurance, I have only this small trophy, a memento given by my own speed teacher, now fairly passed to you.
+|[[Sprintmaster Swift]]
+}}
+The <b>Sprintmaster Memento</b> is a [[Materium#Mementos|Memento]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+The memento can be displayed on a shelf in the [[Bellhome]] after interacting with the desk.
+
+It appears in the middle-right slot of the shelving.
+
+{{Gallery
+|Image1 = Mapshot SS Bellhome.png!Location in Bellhart
+|Image2 = Screenshot SS Bellhart 09.png!Displayed inside Bellhome in Bellhart
+}}
+
+== How to Acquire ==
+Given by [[Sprintmaster Swift]] in [[Far Fields]] after beating him four times in his races. Sprintmaster Swift only offers the fourth race after [[Hornet (Silksong)|Hornet]] has acquired the [[Everbloom]].
+
+{{Gallery
+|Image1 = Mapshot SS Sprintmaster Swift 01.png!Location of Sprintmaster Swift in Far Fields
+|Image2 = Screenshot SS Sprintmaster Swift 01.png!Sprintmaster Swift in Far Fields
+}}
+
+{{Localisation
+|DEname = Sprintmeister-Memento
+|DEmeaning = Sprintmaster Memento
+|ESname = Recuerdo del Maestro de Sprints
+|ESmeaning = Memento of the Master of Sprints
+|FRname = Souvenir du maître de la vitesse
+|FRmeaning = Memento of the Master of Speed
+|ITname = Cimelio del Maestro della Corsa
+|ITmeaning = Heirloom of the Race Master
+|JAname = 健脚の師のメメント
+|JAromanised = Kenkaku no shi no memento
+|JAmeaning = Strong Leg Master's Memento
+|KOname = 질주마스터 증표
+|KOromanised = Jiljumaseuteo jeungpyo
+|KOmeaning = Sprintmaster Mark
+|PTname = Memento do Mestre da Corrida
+|PTmeaning = Master of Running's Memento
+|RUname = Сувенир от Ловкача
+|RUromanised = Suvenir ot Lovkača
+|RUmeaning = Souvenir from the Acrobat
+|TWname = 飛毛腿紀念章
+|TWromanised = Fēimáotuǐ jìniànzhāng
+|TWmeaning = Speedster Memento
+|ZHname = 飞毛腿忆痕
+|ZHromanised = Fēimáotuǐ yì hén
+|ZHmeaning = Speedster Memory Mark
+|CODEname = SPRINT_MEMENTO
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

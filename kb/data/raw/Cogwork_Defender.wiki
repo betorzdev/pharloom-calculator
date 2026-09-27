@@ -1,0 +1,113 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Cogwork Defender.png|Hunter's Journal
+Cogwork Defender Idle.png|Idle
+</gallery>
+| hasdrop = true
+| sh1 = 7-11
+| sh2 = 9-14
+|health=55/{{BT|110}} 
+|damage_modifiers={{SS Spaced Damage Modifiers|1.25|1|1|1|1}}
+|numbers_required = 8 
+|sing = Second Sentinel
+|singnum = 2
+}}
+{{Quote
+|Hr = Journal
+|Cogwork construct forged primarily for the Core's protection. Bears a shield and poke-pin, and possesses a lethal understanding of their use. <hr/>
+It has no true mind, and yet fights effectively, adjusting its strategy to my movements. Where exactly are its thoughts written?
+}}
+
+<b>Cogwork Defenders</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are tall [[Cogwork Bugs|automatons]] wielding a shield and poke-pin. 
+
+== Behaviour and Tactics ==
+Stands at attention, shuffling back and forth with its shield raised whilst idle. It tenses up slightly once it has detected Hornet.<br>
+They keep their shields raised until after about 1.5 seconds or Hornet strikes their shield. They also raise their shield above themselves to defend against attacks from above if Hornet jumps above them. To counterattack, Cogwork Defenders have two moves:
+* <b>Double Thrust:</b> Thrusts forwards with its poke-pin twice, moving forwards with each thrust.
+* <b>Overhead Swing:</b> Starting from behind itself, does a large overhead swing that covers its entire body once. Only used if Hornet is above it when it is deciding to attack.
+
+Cogwork Defenders deal {{Damage|1}} with their attacks as well as upon contact.
+
+=== Strategies === 
+The Cogwork Defender is vulnerable to attacks from above during either of its attacks. Hornet can stand in front of it to provoke a Double-Thrust, or she can remain above to provoke an overhead swing. Allowing the Cogwork Defender to start its attack first can make it easier to land a successful blow.
+
+Alternatively, striking its shield and causing it to Double-Thrust, then jumping over it, attacking its uncovered back and repeating can easily dispatch them.
+
+Certain {{CrestSlot|Red|s}} such as the [[Sting Shard]] are not blocked by the shield, and can be used for easy damage.
+
+A cogwork defender and a cogwork cleanser can be hit through the floor in the platforming challenge to get the architect's melody for easy silk.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Cogwork Defenders have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* ...Am I...Who?...
+* ...Lift it...Fix it...Me?...
+* ...The Core...Holy...
+* ...Work...Eternal...
+* ...To mend...
+* ...To serve...
+}}
+== Location ==
+Cogwork Defenders can be found in the [[Cogwork Core]], and two of them are fought as part of the [[Enemy Gauntlets (Silksong)/Cogwork Core 1|enemy gauntlet]] in the southwest of the area. After the fight, one of them can spawn upon each return to the arena.
+{{Gallery
+|Image1 = Mapshot SS Cogwork Defender 01.png!Locations in the Cogwork Core
+|Image2 = Mapshot SS Cogwork Defender 02.png!Locations in the Cogwork Core in Act 3
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Cogwork Defender 01.png!In Cogwork Core
+|Image2 = GIF SS Cogwork Defender 01.gif!Deployed via lift
+|Image3 = Screenshot SS Cogwork Defender 02.png!Raising its shield
+|Image4 = Screenshot SS Cogwork Defender 03.png!Raising its shield overhead
+|Image5 = Screenshot SS Cogwork Defender 04.png!Double Thrust
+|Image6 = Screenshot SS Cogwork Defender 05.png!Overhead Swing
+|Image7 = Screenshot SS Cogwork Defender 06.png!Singing
+|Image8 = Screenshot SS Cogwork Defender 07.png![[Silk Fly]] freed upon death
+|Image9 = Screenshot SS Cogwork Core 07.png!Inactive Cogwork Defenders
+|Image10 = Screenshot SS Underworks 11.png!In Twelfth Architect's workshop
+|Image11 = Ari SS Sketch 25.png!Concept sketches
+}}
+
+== Trivia ==
+* Sprites of deactivated Defenders have a grey tiara-like headpiece similar to [[Fourth Chorus]] and the [[Cogwork Dancers]]. This is also partly visible in their Hunter's Journal entry.
+* Cogwork Defender's poke-pin heavily resembles a [https://en.wikipedia.org/wiki/Seam_ripper seam ripper].
+* Cogwork Defenders share their Needolin dialogue with [[Cogwork Choirbug]]s, [[Cogwork Cleanser]]s, [[Cogwork Clapper]]s, [[Cogworker]]s, [[Cogwork Spine]]s, [[Cogwork Crawler]]s, and [[Cogwork Underfly|Cogwork Underflies]].
+** Additionally, they share their singing audio with [[Second Sentinel]].
+
+{{Localisation
+|DEname = Räderwerk-Verteidiger
+|DEmeaning = Cogwork Defender
+|ESname = Defensor mecánico
+|ESmeaning = Mechanical Defender
+|FRname = Gardien Mécanique
+|FRmeaning = Mechanical Guard
+|ITname = Meccanismo Difensore
+|ITmeaning = Defensive Mechanism
+|JAname = カラクリバンペイ
+|JAromanised = Karakuri banpei
+|JAkatakana = enemy
+|JAmeaning = Combination of {{lang|ja|カラクリ <i>karakuri</i>}} (mechanism) and {{lang|ja|番兵 <i>banpei</i>}} (guard).
+|KOname = 톱니바퀴 방어자
+|KOromanised = Tomnibakwi bangeoja
+|KOmeaning = Cogwheel Defender
+|PTname =  Defensor Mecânico
+|PTmeaning = Mechanical Defender
+|RUname = Заводной защитник
+|RUromanised = Zavodnoj zaščitnik
+|RUmeaning = Clockwork Defender
+|TWname = 機樞守衛
+|TWromanised = Jīshū shǒuwèi
+|TWmeaning = same
+|ZHname = 机枢守卫
+|ZHromanised = Jīshū shǒuwèi
+|ZHmeaning = Mechanical Guard
+|CODEname = SONG_AUTOMATON_SHIELD
+|CODEmeaning = "Song" internally refers to the Citadel. Other [[Architects#Creations |Cogwork Bugs]] use the Automaton name internally
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Enemies}}

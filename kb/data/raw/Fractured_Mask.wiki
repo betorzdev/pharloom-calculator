@@ -1,0 +1,81 @@
+{{SS Infobox Tool
+| type = Blue
+| effect = [[Hornet (Silksong)|Hornet]] is protected from one lethal injury
+| location = [[Hunter's March]]
+| description = Old bug's skull carved for protection. Shields against critical damage but shatters on impact.<hr/>
+If shattered, the mask will be repaired while resting at a bench.
+}}
+
+{{Quote
+|Hr=SS
+|Kha uokn. Krka tih.
+|[[Mottled Skarr]]
+}}
+
+<b>Fractured Mask</b> is a {{CrestSlot|Blue|1}} in <i>[[Hollow Knight: Silksong]]</i>. It protects against one instance of critical damage.
+
+== Usefulness ==
+
+* While the Fractured Mask is equipped, it is overlaid on top of [[Hornet (Silksong)|Hornet]]'s leftmost Mask. If Hornet suffers any attack that would break this final Mask, she instead survives with one Mask remaining, shattering the Fractured Mask in the process. Afterwards, the Fractured Mask must be repaired at a bench to restore its protection.[[File:Fractured Mask Lifebar Overlay.png|center|thumb]]
+* The Fractured Mask's protection will <i>always</i> prevent Hornet's death while it is active, no matter how much damage the lethal attack deals. For attacks that hit multiple times, the Fractured Mask will only break on the last hit.
+** This makes the Fractured Mask a reliable safety net against death, which can be especially helpful with the [[Barbed Bracelet]] equipped or while playing in {{Steel Soul Icon Mini|SS}} [[Steel Soul Mode (Silksong)|Steel Soul Mode]].
+** There are several exceptions to this, namely some damage sources that are not strictly multiattacks, but still cause unavoidable {{Damage|1+1}}. For these damage sources, the Fractured Mask will break on the first hit, and Hornet will still die on the second hit. They include:
+*** The [[Muckroach]]'s Maul attack. 
+*** The [[Wraith]]'s grab attack.
+*** The [[Slubberlug]]'s grab attack.
+*** The claw traps found in [[Greymoor]] and [[the Mist]].
+* Preventing lethal damage with the Fractured Mask will still trigger any effects that may occur when taking damage, such as the [[Druid's Eye]] or the [[Memory Crystal]].
+* Becoming [[plasmified]] does not affect the Fractured Mask; it will still protect Hornet as normal.
+
+== How to Acquire ==
+Purchased from the [[Mottled Skarr]] in [[Hunter's March]] for {{R|260}}. If it was not purchased before he dies, it can be found on his body.
+
+{{Gallery
+|Image1 = Mapshot SS Mottled Skarr.png!Location in Hunter's March
+|Image2 = Screenshot SS Mottled Skarr 02.png!Mottled Skarr in Hunter's March
+}}
+
+== Gallery ==
+{| align="center" style="text-align:center"
+| {{#ev:youtube|https://www.youtube.com/watch?v=u0uDIbxg62A|250|center|Deep Dive}}
+|}
+
+== Trivia ==
+* Repairing the Fractured Mask at a bench does not consume any resources, despite Hornet using her usual crafting animation to reset it.
+
+{{History
+|game = SS
+|1.0.29242 (Patch 4): Fixed Fractured Mask not protecting against volt hazards.
+}}
+{{Localisation
+|DEname = Gebrochene Maske
+|DEmeaning = Broken Mask
+|ESname = Máscara fracturada
+|ESmeaning = Fractured Mask
+|FRname = Masque fissuré
+|FRmeaning = Cracked Mask
+|ITname = Maschera fratturata
+|ITmeaning = Fractured Mask
+|JAname = 割れた仮面
+|JAromanised = Wareta gamen
+|JAmeaning = Broken Mask
+|KOname = 갈라진 가면
+|KOromanised = Gallajin gamyeon
+|KOmeaning = Cracked Mask
+|PTname = Máscara Fraturada
+|PTmeaning = Fractured Mask
+|RUname = Потрескавшаяся маска
+|RUromanised = Potreskavšajasja maska
+|RUmeaning = Cracked Mask
+|TWname = 裂痕面具
+|TWromanised = Lièhén miànjù
+|TWmeaning = same
+|ZHname = 裂痕面具
+|ZHromanised = Lièhén miànjù
+|ZHmeaning = Fractured Mask
+|CODEname = FRACTURED_MASK
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+{{SS Nav Tools}}
+[[fr:Masque fissuré]]

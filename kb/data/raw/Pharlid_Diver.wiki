@@ -1,0 +1,95 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Pharlid Diver.png|Hunter's Journal
+Pharlid Diver Idle.png|Idle
+</gallery>
+| hasdrop = true
+| sh1 = 3-5
+| sh2 = 4-7
+|health = 25
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.25|1|0.9|0.7|0.7}}
+|numbers_required = 10
+|sing = Pharlid
+}}
+
+{{Quote
+|Hr = Journal
+|Arachnid that nestles within dark holes in cavern roofs. Pounces on prey from far above.<hr/>A smart hunter learns to wait long in ambush, always ready to strike the first blow.
+}}
+
+<b>Pharlid Divers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are arachnids that nestle within dark holes in the  cavern roofs and pounce on prey from above.<ref>Pharlid Diver [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Arachnid that nestles within dark holes in cavern roofs. Pounces on prey from far above."</i></ref> [[Pharlid]]s are their relatives.
+
+== Behaviour and Tactics ==
+Pharlid Divers wait patiently on the roof of caves, usually in tight crevices. When Hornet passes below them, they lunge down while wildly slashing their claws, comboing Hornet for {{Damage|1+1}} on hit. They then try to jump back to their original spot; however, they can be knocked back far enough away that they have to perch on a different section of roof.
+
+The windup of their attacks allows for dodging or avoiding by maintaining a constant [[Swift Step|dashing]] or falling speed. There is a slight pause after they return to their perch that allows for a window to attack.  [[Cross Stitch]] is also a safe way to kill them mid-attack.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Our caves...
+* Our darkness...
+* To hide... To nest... To live...
+* Always ours...
+}}
+
+== Location ==
+Pharlid Divers can be found in the outside section of the [[Whispering Vaults]], the eastern [[Underworks]], [[Weavenest Atla]], [[Verdania]], [[Wisp Thicket]], and the [[Border Caves]] above [[the Cradle]].
+{{Gallery
+|Image1 = Mapshot SS Pharlid Diver 01.png!Locations in Weavenest Atla
+|Image2 = Mapshot SS Pharlid Diver 04.png!Location in the Underworks
+|Image3 = Mapshot SS Pharlid 06.png!Location in the Whispering Vaults
+|Image4 = Mapshot SS Pharlid Diver 06.png!Locations in the Wisp Thicket
+|Image5 = Mapshot SS Pharlid Diver 05.png!Location in Verdania
+|Image6 = Mapshot SS Pharlid Diver 02.png!Location in the Border Caves
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Pharlid Diver 01.png!In the Whispering Vaults
+|Image2 = Screenshot SS Pharlid Diver 02.png!In the Underworks
+|Image3 = Screenshot SS Pharlid Diver 03.png!In Weavenest Atla
+|Image4 = Screenshot SS Pharlid Diver 04.png!In Verdania
+|Image5 = Screenshot SS Pharlid Diver 05.png!In the Wisp Thicket
+|Image6 = Screenshot SS Pharlid Diver 06.png!In the Border Caves
+|Image7 = Screenshot SS Pharlid Diver 07.png!Attacking
+|Image8 = Screenshot SS Pharlid Diver 08.png!On the ground after attacking
+|Image9 = Screenshot SS Pharlid Diver 09.png!Going back up
+|Image10 = Screenshot SS Pharlid Diver 10.png!Responding to the Needolin
+}}
+
+{{History
+|game = SS
+|1.0.28891 (Patch 3): Fixed Pharlid Divers sometimes sliding on roofs after ambushing in certain scenes.
+}}
+{{Localisation
+|DEname = Sturzpharlide
+|DEmeaning = Drop Pharlid
+|ESname = Telácnida saltadora
+|ESmeaning = Jumping Pharlid
+|FRname = Fouisse-sombre
+|FRmeaning = Dark Burrower
+|ITname = Lungiragno Tuffatore
+|ITmeaning = Diving Pharlid
+|JAname = トビツキファグモ
+|JAromanised = Tobitsuki fagumo
+|JAmeaning = Combination of {{lang|ja|飛びつく}} <i>tobitsuki</i> (leaping or lunging) and {{lang|ja|ファグモ}} <i>fagumo</i> (Pharlid).
+|KOname = 팔리드 기습자
+|KOromanised = Pallideu giseupja
+|KOmeaning = Pharlid Ambusher
+|PTname = Farlídea-saltadora
+|PTmeaning = Pharlid Hopper
+|RUname = Фарлид-прыгун
+|RUromanised = Farlid-prygun
+|RUmeaning = Pharlid Jumper
+|TWname = 彈跳紡蛛
+|TWromanised = Tántiào fǎng zhū
+|TWmeaning = Bouncing Weave Spider
+|ZHname = 纺络跳蛛
+|ZHromanised = Fǎngluò tiàozhū
+|ZHmeaning = Pharloom Jumping Spider
+|CODEname= BLADE_SPIDER_HANG
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+[[zh:纺络跳蛛]]

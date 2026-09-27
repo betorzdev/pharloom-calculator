@@ -1,0 +1,179 @@
+{{SS Infobox Boss
+|drops =[[Rune Rage]]
+|image1= <gallery>
+B First Sinner.png|Hunter's Journal
+First Sinner weaving outfit.png|Weaving
+First Sinner Scuttle.png|Scuttle
+First Sinner Stagger.png|Staggered
+First Sinner Memory.png|Memory
+</gallery>
+|health = 1300
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.75|1.25|1.1|1|1}}
+|numbers_required = 1
+|va = Lauren Koopowitz<ref>[https://www.imdb.com/title/tt10323784/characters/nm6664826/ Hollow Knight: Silksong] on IMDb</ref>
+|location = [[The Slab]]
+|theme = [https://youtu.be/njUKtnIL6sQ Widow] (Phase 1)<br>[https://youtu.be/nLpxN1rDM7o Widow 2nd Phase] (Phase 2)
+}}
+{{Quote
+|Hr = Journal
+|Ancient Weaver condemned for a transgression lost to time.<hr/>
+This one's husk held a masterful talent, to weave Silk into blazing runes. Throughout my life, I have seen runes woven for many tasks. Was she the first to hone such skills?
+}}
+
+The <b>First Sinner</b> is a [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. She is an ancient [[Weaver]] condemned and imprisoned within [[the Slab]].<ref>First Sinner Hunter's Journal entry: <i>"Ancient Weaver condemned for a transgression lost to time."</i></ref> Defeating her allows [[Hornet (Silksong)|Hornet]] to bind her and her skill, [[Rune Rage]]. 
+
+== Background ==
+First Sinner was one of the [[Pharlid]]s evolved into a [[Weaver]] by [[Grand Mother Silk]]. She was possibly the first Weaver to discover how to weave runes using [[Silk]].<ref name=gender/> She was found guilty of the sin of apostasy, becoming the first penitent to be imprisoned in [[the Slab]], guilty of apostasy and sentenced to constriction.<ref name=inspecttext>First Sinner lock inspect text: <i>"Penitent, First of the First. Guilty of the sin of apostasy. Penance by constriction. Absolution denied."</i></ref> She appears to have died in captivity but was denied absolution by [[the Citadel]].<ref name=inspecttext/><ref name=gender/><ref>First Sinner Needolin dialogue before the fight: <i>"...Wait, and die..."</i></ref> First Sinner knew the truth about the Weavers' creation and how [[Grand Mother Silk]] had lied to them,<ref>First Sinner post-cutscene dialogue: <i>"...She called us daughters... Called us divine... She lied..."</i></ref><ref>First Sinner post-fight [https://www.youtube.com/watch?v=nAwTNaLtT34 cutscene].</ref> with her "sin" likely referring to her knowledge or sharing thereof.
+
+== In-game Events==
+First Sinner's [[Weaver Burial Spire|burial spire]] is found in the lower area of [[the Slab]]. It is accessible after obtaining the [[Key of Apostate]] through a hidden path in the ceiling in the room with a chest right of the [[Bench (Silksong)|Bench]] near the [[Fast Travel (Silksong)#Bellways|Bellway Station]]. [[Hornet (Silksong)|Hornet]] must break four [[Silk]] runes attached to her cell in order to enter. Once inside the cell, Hornet finds a Weaver body that she can [[Bind]], but before she can complete the Bind, she is pulled into a memory sequence,<ref>When attempting to use an item in Hornet's inventory during the fight, the item is not consumed and the game instead displays the text <i>"Cannot use items while in a memory."</i></ref> and the corpse reanimates as First Sinner. This memory functions similarly to memories entered with [[Elegy of the Deep#First_Sinner|Elegy of the Deep]], but with a few key differences.
+
+Upon her defeat, First Sinner will reappear floating in the centre of her prison. Hornet gets a prompt to accept and Bind the Weaver's power. Upon accepting, Hornet is sent into a memory filled with shadowy [[Pharlid]]s. At the end of a platforming section a memory lies on the ground, which when collected Hornet will see a vision of a Pharlid being transformed into First Sinner by a strand of Silk. After completing this sequence, Hornet obtains the [[Rune Rage]] Silk Skill.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+=== Phase 1 ===
+During Phase 1, First Sinner has the following attacks:
+* <b>Needle Weaving</b>: First Sinner channels for a brief moment which pulls up Needles from the background and positions them in the air, before launching them in the following patterns: 
+** 2 needles diagonally downwards in opposing directions centred on where [[Hornet (Silksong)|Hornet]] was, creating a cross shape.
+** 5 needles vertically downwards, spaced evenly apart.
+** 3 needles diagonally downwards, angled slightly left or right depending on Hornet's position. 
+** 2 needles horizontally across the entire arena, spaced vertically with a gap in the centre.
+** First Sinner can, on occasion, send out 2 of the above patterns with a single channel, layering them together. This begins after she reaches 1105 HP and continues into Phase 2.
+* <b>Frenzied Charge</b>: First Sinner charges across the length of the arena towards Hornet while slashing her claws in front of herself.
+* <b>Aerial Lunge</b>: First Sinner teleports into the air near Hornet and performs 2 quick slashes diagonally downwards in Hornet's direction. She can also perform this attack by leaping into the air following a Skitter.
+* <b>Bind</b>: First Sinner channels [[Silk]] for about 2 seconds before healing herself for 130 HP. This ability can be interrupted by damaging her while she is channelling. She gains this attack after reaching 1105 HP.
+* <b>Teleport</b>: First Sinner teleports to a random location in the arena between attacks.
+* <b>Skitter</b>: First Sinner skitters to reposition for an attack – she skitters away from Hornet if she is too close to her, or skitters towards Hornet if she is too far away from her.
+
+=== Phase 2 ===
+After reaching 650 HP, First Sinner fakes a defeat by teleporting out of view before reappearing and shouting, marking the start of Phase 2. During this phase, First Sinner performs her attacks at a much faster pace, and she gains an attack:
+* <b>Rune Rage</b>: First Sinner rises into the air and weaves 12 circles of blazing Silk randomly throughout the arena, covering roughly half of the space. After a short moment, these circles successively explode into runes in the order in which they appeared.
+
+All of First Sinner's attacks deal {{Damage|2}}, with her Frenzied Charge dealing {{Damage|1+1}} if Hornet is caught in a swing.
+<hr />
+
+{{Stagger
+| First Sinner collapses against the ground.
+| 13
+| game = SS
+}}
+
+<hr />
+
+Notes and strategies:
+* Dying in First Sinner's memory places Hornet outside her cell, <b>without</b> replenishing used Tools, and does not end {{Steel Soul Icon Mini|SS}} [[Steel Soul Mode (Silksong)|Steel Soul Mode]].
+* In all phases, First Sinner only deals {{Damage|1}} contact damage. This means if damage is inevitable, Hornet can avoid taking {{Damage|2}} from an attack by initiating contact with First Sinner.
+* First Sinner's ability to rapidly retreat and reposition makes chaining Needle attacks together significantly harder. Rely primarily on hit-and-run tactics as well as running attacks to deal damage, and if using a [[Crest]] that provides an upwards bounce after a running attack, use it to either Needle bounce for more damage or reposition and dodge incoming attacks.
+** First Sinner always teleports twice before launching an attack. Her attack preparation animation is often the best time to get a hit in.
+* The [[Clawline]] is extremely effective for this fight, as it not only lets Hornet cross large distances while striking at the same time, but also launches her into the air, making it easier to dodge First Sinner's horizontal needle attacks. It is especially useful during the Bind move to prevent First Sinner from healing lost damage.
+* A ranged attack like [[Silkspear]], [[Silkshot]], [[Straight Pin]], or [[Threefold Pin]] comes in handy in interrupting First Sinner's Bind should Hornet find herself on the other side of the arena.
+
+{{TabbedDialogue
+|Title1 = General
+|Title1_Event1 = Before attempting to bind
+|Title1_Dialogue1= Half-spawn of a distant land... <br>
+Within this cage I have waited... <br>
+Let my strength be bound to yours... <br>
+Reclaim the future of our accursed kingdom... <br>
+|Title1_Event2 = Needolin dialogue before the fight
+|Title1_Dialogue2 = [n]...Faded...<br>
+...Forgotten...<br>
+...First...<br>
+...Our Silk... Our rage...<br>
+...Wait, and hate...<br>
+...Wait, and die...<br>
+|Title1_Event3 = Needolin dialogue during the fight
+|Title1_Dialogue3= [n]I did not wane!<br>
+I did not forget!<br>
+Sustained by fury!<br>
+Cursed by Silk!<br>
+Cursed with Silk!<br>
+Cursed to know...<br>
+The sin... the truth...
+|Title1_Event4 = After the fight
+|Title1_Dialogue4 = ...She called us daughters... Called us divine... She lied...
+}}
+
+== Location ==
+First Sinner can be found in the lower area of [[the Slab]] accessible after obtaining the [[Slab Keys|Key of Apostate]], behind a locked door that can be opened with [[Slab Keys|Key of Heretic]].
+
+{{Gallery
+|Image1 = Mapshot SS First Sinner.png!Location of the First Sinner in the Slab
+}}
+
+{{Gallery|}
+|Title=Gallery
+|Image1=Screenshot SS First Sinner 14.png!Weaving outfit
+|Image2=Screenshot SS First Sinner 19.png!Idle
+|Image3=Screenshot SS First Sinner 07.png!Needle Weaving (Two crossed needles)
+|Image4=Screenshot SS First Sinner 08.png!Needle Weaving (Five vertical needles)
+|Image5=Screenshot SS First Sinner 09.png!Needle Weaving (Three diagonal needles)
+|Image6=Screenshot SS First Sinner 01.png!Needle Weaving (Two horizontal needles)
+|Image7=Screenshot SS First Sinner 02.png!Frenzied Charge
+|Image8=Screenshot SS First Sinner 03.png!Aerial Lunge
+|Image9=Screenshot SS First Sinner 05.png!Bind
+|Image10=Screenshot SS First Sinner 10.png!Teleport
+|Image11=Screenshot SS First Sinner 11.png!Skitter
+|Image12=Screenshot SS First Sinner 04.png!Rune Rage
+|Image13=Screenshot SS First Sinner 12.png!Staggered
+|Image14=Screenshot SS First Sinner 13.png!About to be bound
+|Image15=Screenshot SS Hornet 13.png!Being bound
+|Image16=First_Sinner_Cutscene.png!First Sinner as a Pharlid being evolved (first phase)
+|Image17=Screenshot SS First Sinner 15.png!First Sinner being evolved (second phase)
+|Image18=Screenshot SS First Sinner 16.png!First Sinner being evolved (third phase)
+|Image19=Screenshot SS First Sinner 17.png!First Sinner being evolved (final phase)
+|Image20=Screenshot SS The Slab 01.png!The lock on First Sinner's cell
+|Image21=Screenshot SS First Sinner 06.png!First Sinner's corpse
+|Image22=Screenshot SS First Sinner 18.png!First Sinner's arena during battle
+|Image23=First Sinner Credits.png! First Sinner in the credits
+|Image24=Ari SS Sketch 14.png!Concept sketches
+}}
+
+== Achievements ==
+{{Achievement|game=silksong|Heretic}}
+
+== Trivia ==
+* Binding First Sinner to start her fight does not count as the binding of an ability – as such, Hornet will not heal to full and will not gain any Silk.
+* First Sinner and [[Widow]] use the same battle theme and share the same voice.
+* First Sinner is not stunned by the [[Needolin]]; her dialogue appears without stopping combat to sing.
+* Several of the translations of First Sinner's name call her "Original Sinner", specifically using wording referencing the [https://en.wikipedia.org/wiki/Original_sin Christian theological term].
+*There is a [[Cut Content (Silksong)#Enemy Behaviours|cut]] sequence where, after defeating her, Hornet would bind the First Sinner similarly to Widow's ending sequence.
+
+{{Localisation
+|DEname = Ursünderin
+|DEmeaning = Original Sinner
+|ESname = Pecadora Original
+|ESmeaning = Original Sinner
+|FRname = Péché Originel
+|FRmeaning = Original Sin
+|ITname = Prima Peccatrice
+|ITmeaning = First Sinner
+|JAname = 最初の罪に問われし者
+|JAromanised = Saisho no tsumi ni towa reshi mono
+|JAmeaning = One Accused of the First Sin
+|KOname = 첫 번째 죄인
+|KOromanised = Cheot beonjjae joein
+|KOmeaning = First Sinner or First Prisoner
+|PTname = Primeira Pecadora 
+|PTmeaning = First Sinner
+|RUname = Первая грешница
+|RUromanised = Pervaja grešnica
+|RUmeaning = First Sinner
+|TWname = 最初罪徒
+|TWromanised = Zuìchū zuì tú
+|TWmeaning = First Sinner
+|ZHname = 原初罪者
+|ZHromanised = Yuánchū zuì zhě
+|ZHmeaning = Original Sinner
+|CODEname = FIRST_WEAVER
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[fr:Péché Originel]]
+[[pt:Primeira Pecadora]]
+[[zh:原初罪者]]

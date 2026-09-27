@@ -1,0 +1,40 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Greymoor Arena 2.png|400px|center]]
+|[[File:Mapshot_SS_Crawfather_01.png|400px|center]]
+|-
+| colspan="2" | Enemy gauntlet in the watermound of Craw Lake. Requires [[Drifter's Cloak]].
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>Lever to inflate balloons across eastern Greymoor<br>Required for [[Thread Storm]], [[Threefold Pin]], a [[Spool Fragment]], a [[Bellshrine]]</center>
+| <center>[https://www.youtube.com/watch?v=swPmNk9_fw0 Generic Enemy Battle A]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Squatcraw.png|35x35px|link=Squatcraw]] [[Squatcraw]], left<br>
+[[File:HJ_Craw.png|35x35px|link=Craw]] [[Craw]], top right<br>
+|
+|-
+|
+[[File:HJ_Craw.png|35x35px|link=Craw]] Craw x2, top left and right<br>
+|
+|-
+|
+[[File:HJ_Tallcraw.png|35x35px|link=Tallcraw]] [[Tallcraw]], right<br>
+[[File:HJ_Craw.png|35x35px|link=Craw]] Craw, top left<br>
+|
+|-
+|
+[[File:HJ_Craw.png|35x35px|link=Craw]] Craw x3, top left, centre, and right<br>
+|
+|-
+|
+[[File:HJ_Tallcraw.png|35x35px|link=Tallcraw]] Tallcraw, left<br>
+[[File:HJ_Squatcraw.png|35x35px|link=Squatcraw]] Squatcraw, right
+|
+|}

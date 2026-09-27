@@ -1,0 +1,85 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Mite.png|Hunter's Journal
+Mite Idle.png|Idle
+</gallery>
+| hasdrop = true
+| sh1 = 2-3
+| sh2 = 3-4
+|health = 15/{{BT|30}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.8|0.8|0.8|0.8}}
+|numbers_required = 30
+|sing=Drapemite
+}}
+
+{{Quote
+|Hr = Journal
+|Verminous pest, common throughout the dark corners of Greymoor.<hr/>Individually they offer little challenge, but their numbers are surely vast, and most remain hidden.
+}}
+
+<b>Mites</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are [[Mites|pests]] that are common in the dark corners of [[Greymoor]].<ref>Mite [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Verminous pest, common throughout the dark corners of Greymoor."</i></ref>
+
+== Behaviour and Tactics ==
+Mites run back and forth along the ground, or cling to walls. When Hornet approaches, Mites scream before leaping at her, dealing {{Damage|1}} on contact. They can be kept at bay with jumps and knockback from Needle strikes. In underground areas of Greymoor, they can get caught in claw traps that defeat them instantly.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Mites have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2|
+* Smell it, starving...
+* Deeper, darker...
+* Shriek and scratch them...
+* Claw and fang...
+* Find it. Take it...
+* Hide below them...
+}}
+
+== Location ==
+Mites can be found in [[Greymoor]] and [[Sinner's Road]]. Four of them are located in the cellar of [[Halfway Home]], an area that becomes inaccessible after completing the [[Enemy Gauntlets (Silksong)/Greymoor 4|enemy gauntlet]] that takes place there.
+
+{{Gallery
+|Image1 = Mapshot SS Mite Greymoor 01.png!Locations in Greymoor
+|Image2 = Mapshot SS Mite Greymoor 02.png!Locations in Greymoor in Act 3
+|Image3 = Mapshot SS Mite Sinner's Road 01.png!Locations in Sinner's Road
+}}
+
+==Gallery==
+{{Gallery
+|Image1=Screenshot SS Mite 01.png!In Greymoor
+|Image2=Screenshot SS Mite 02.png!In Sinner's Road
+|Image4=Screenshot SS Mite 03.png!Attacking
+|Image5=Screenshot SS Mite 04.png!Responding to the Needolin
+|Image6=Screenshot SS Mite 05.png!Corpse stuck in a claw trap
+}}
+
+{{Localisation
+|DEname = Milbe
+|DEmeaning = Mite
+|ESname = Ácaro
+|ESmeaning = Mite
+|FRname = Mite
+|FRmeaning = —
+|ITname = Acaro
+|ITmeaning = Mite
+|JAname = ダニ
+|JAromanised = Dani
+|JAmeaning = Mite
+|KOname = 진드기
+|KOromanised = Jindeugi
+|KOmeaning = Mite
+|PTname = Ácaro
+|PTmeaning = Mite
+|RUname = Клещ
+|RUromanised = Klešč
+|RUmeaning = Mite
+|ZHname = 暗螨
+|ZHromanised = Àn mǎn
+|ZHmeaning = Dark Mite
+|CODEname=MITE
+|CODEmeaning=
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

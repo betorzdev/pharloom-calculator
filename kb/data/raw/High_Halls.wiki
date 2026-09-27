@@ -1,0 +1,245 @@
+{{SS Infobox Area
+| tab1 = Act 2
+| image1 = <gallery>
+High_Halls_Map_Marked.png|Marked
+High_Halls_Map_Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+High_Halls_Map_Ruin_Marked.png|Marked
+High_Halls_Map_Clean.png|Unmarked
+</gallery>
+| connection = [[Choral Chambers]]
+| ambience = [https://www.youtube.com/watch?v=1Hp-MtsK1dg Atmos Hanging Garden]<br>
+[https://www.youtube.com/watch?v=UdcTyq_aXXI Atmos Citadel Halls Pre Wakeup]<br>
+[https://www.youtube.com/watch?v=62rByKODo9A Atmos Citadel Halls]<br>
+[https://www.youtube.com/watch?v=GivJqT7ml0M Atmos Citadel Outside]<br>
+[https://www.youtube.com/watch?v=UZD12AngJKg Atmos Outside Wind]<br>
+[https://www.youtube.com/watch?v=L609URKFP-o Atmos Indoor Air]<br>
+[https://www.youtube.com/watch?v=ZuURJC2fNTk Atmos Creepy]<br>
+[https://www.youtube.com/watch?v=EcGoF3Smik0 Atmos Creepy v2]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+| main = [https://www.youtube.com/watch?v=4mA1mWrlanI High Halls]
+| action = [https://youtu.be/Ml0UVesTc5M?si=MXXdSGH0rSw1M45d The Choir]
+}}
+{{Quote
+|Here we meet, high atop this twisted steel structure. I can sense fierce enemies ahead. It seems you too draw closer to your trail's end. With my own task now resolved, my rings call for combat.
+|[[Shakra]]
+|Hr=SS
+}}
+The <b>High Halls</b> is an [[Areas (Silksong)|area]] in [[the Citadel]] in <i>[[Hollow Knight: Silksong]]</i> where the [[Conductors]] and the highest ranking members of [[the Choir]] used to reside.
+
+== Description ==
+The High Halls are located high atop the Citadel above the [[Choral Chambers]]. The area's interiors are wide and expansive, with waterfalls, streams, and fountains found throughout most of the halls. There are several moving wheels with rings attached to them, as well as suspended rings that allow access along the water to the higher parts of the area. The High Halls contain numerous distinct rooms, such as a [[Cogfly]] workshop where the Cogfly [[Tool]] can be found, and the [[Clawmaiden]] core room that holds the threads that suspend the Clawmaiden automatons. 
+
+The lower part of the area has a Rosary Bank, where many the Citadel's rosaries were stored as well as the [[Rosary Cannon]] tool. To the east of the area is a [[Ventrica]] and another connection to the Choral Chambers. Opposite this room is the Forum, a large open sub-area with a [[Enemy Gauntlets (Silksong)|gauntlet]] where [[Garmond and Zaza]] or [[Shakra]] may assist depending on progression. Past this gauntlet room is [[Conductor Ballador]] in a bedchamber with empty [[Silk]] spools around him, who grants one part of the [[Threefold Melody]].
+
+== History ==
+The High Halls were the centre of the Citadel's government and home to the [[Conductors]], the holy masters of the Citadel.<ref>[[Minister]] and [[Maestro]] [[Needolin]] dialogue: <i>"Grant us resonance! Great Conductors! Holy masters! Your vision guides us... Your devotion compels us! Highest of the high!"</i></ref> The Conductors were given the mantle of rule by the [[Weavers]], the Citadel's original rulers.<ref>[[Rune Harp]]: <i>"Last words of the Weavers. "Sisters, spiders, the burden is passed. These simple bugs shall bear it full. Never to cease. Never to silence. <br>We shall die, and wait, and pray, that one may come of silken strength enough to weave us free.""</i></ref><ref name=ballador>[[Conductor Ballador]]: <i>"The mantle of rule, claimed greedily from Pharloom's fading first children, those bitter Weavers... it was yoke, not crown. Now, in our Citadel's silence, we share their truth. Only one monarch's claws ever clutched this kingdom, though we raised our voices to cry otherwise."</i></ref> From the High Halls, the Conductors issued edicts and decrees to the Citadel.<ref>Conductor Ballador: <i>"Is our state so bare, pilgrim?... "By the will of the Conductors," we once boomed, and this Citadel shook at our decree."</i></ref><ref>[[Choral Commandment]]: <i>"Last edict of the Conductors. "And lo, is eternity sustained. By Architect's claw, we welcome that final form, of dial and rotor, and soul gladly given. The perfect, unfaltering voice."</i></ref> They were the only ones who were aware of the Citadel's true purpose to keep [[Grand Mother Silk]] asleep with song.<ref name=ballador/> The Conductors held one part of the Threefold Melody,<ref>[[Cogwork Statues]]: <i>"Pilgrim of Pharloom eternal, you rare chosen who hath ascended to this final threshold, listen to our wish, deliver it, that you may rise above and see your pilgrimage end. (...) We would hear the melody of the Conductors, high in their gleaming towers. They bearing the heaviest mantle, who would guide our land ever on to greatness. Pilgrim of Pharloom eternal, regale us with our Threefold song, that you may rise above and worship before our kingdom's divine heart."</i></ref> and chosen pilgrims were expected to make their way to the High Halls so they could learn the melody from the Conductors.<ref name=melody>Conductor Ballador: <i>"Whatever you would ask, I have only my melody left to offer. It is a simple thing, the smallest of gifts, but perhaps more special now, for it has been rarely heard in these quietened times. (...) Keep safe our melody, good pilgrim. You shall likely be the last to receive it."</i></ref>
+
+The High Halls contained the highest ranked members of [[the Choir]], the [[Minister]]s and the [[Maestro]]s.<ref name=minister>Minister [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Gold ranked disciple of the Choir and direct servant to the Citadel's Conductors."</i></ref><ref name=maestro>Maestro Hunter's Journal entry: <i>"Choir commander of the High Halls, able to summon and command cogflies at a flick of their baton."</i></ref> The Ministers were the Conductors' direct servants;<ref name=minister/> one of their tasks was collecting and accounting of rosaries in the High Halls' Rosary Bank.<ref>[[Needolin Locations|Needolin dialogue]] in the Rosary Bank in High Halls: <i>"...Count... Collect... Conserve... ...Our wealth... ...Our grace... ...Holy measure..."</i></ref> The Maestros were commanders of the Choir who summoned song from their subjects.<ref name=maestro/> Several [[Cogwork Bugs]] occupied the High Halls as well, such as the [[Second Sentinel|Sentinels]]. They were cogwork knights created by the [[Architects]] to protect pilgrims and bring them to the Citadel to serve.<ref>Twelfth Architect: <i>"A gleaming order, cogwork sentinels, so impressive-majestic in function they were charged-b-b-bound to the highest holy duty. Long before the c-c-creation of the core, the sentinels ventured, even beyond these walls, to see all bugs brought-forced safe to serve the Citadel."</i></ref> The Clawmaidens' core room was in the High Halls, which contained the strings of Silk that suspended the automatons.<ref>[[Clawmaiden]] Hunter's Journal entry: <i>"Puppet servant of the Citadel, suspended on strings of Silk. An early form of automaton, requiring extensive Silk to maintain its service."</i></ref> There was also a workshop nearby where [[Cogfly|Cogflies]] were made and stored.  
+
+When the [[Haunting]] struck the Citadel, the High Halls fell silent.<ref name=ballador/><ref name=melody/> Only Conductor Ballador remained, sickly and unable to rise from his bedchamber.<ref>Conductor Ballador: <i>"After an age spent sickly, I find myself unable to lift from this bedchamber."</i></ref> 
+
+== How to Access ==
+The High Halls are located above the top left portion of the Choral Chambers. The [[Clawline]] ability is required to access and traverse this area.
+
+{{TabbedPOI
+|Header = true
+
+|NPC1 = Jubilana
+|NPC2 = Shakra
+|NPC3 = Garmond and Zaza
+|NPC4 = Second Sentinel
+
+|Enemy1 = Snitchfly
+|Enemy2 = Drapefly
+|Enemy3 = Drapemite
+|Enemy4 = Giant Drapemite
+|Enemy5 = Clawmaiden
+|Enemy6 = Minister
+|Enemy7 = Maestro
+|Enemy8 = Void Mass
+|Enemy8Note = ([[Act 3]] only)
+
+|Boss1 = Second Sentinel
+
+|Loot1_FileName = Conductor Quest Icon
+|Loot1_Name = Conductor's Melody
+|Loot1_Description = given by [[Conductor Ballador]]
+|Loot2_FileName = Cogfly
+|Loot2_Description = crafted using {{C|1}} in the central area of High Halls
+|Loot3_FileName = Rosary Cannon
+|Loot4_FileName = Reserve Bind
+|Loot4_Description = given after defeating [[Second Sentinel]]
+|Loot5_FileName = Spool Fragment
+|Loot5_Amount = 1
+|Loot6_FileName = Rune Harp
+|Loot6_Amount = 1
+|Loot6_Description = found during [[Act 3]] in the area where [[Conductor Ballador]] was previously
+|Loot7_FileName = Psalm Cylinder
+|Loot7_Amount = 1
+|Loot8_FileName = Frayed Rosary String
+|Loot8_Amount = 1
+|Loot9_FileName = Pale Rosary Necklace
+|Loot9_Amount = 1
+}}
+
+== Sub-area: The Forum ==
+{{SS Infobox Area
+|tab1 = Act 2
+|image1 = <gallery>
+The_Forum_Map_Marked.png|Marked
+The_Forum_Map_Clean.png|Unmarked
+</gallery>
+|tab2 = Act 3
+|image2 = <gallery>
+The_Forum_Map_Ruin_Marked.png|Marked
+The_Forum_Map_Clean.png|Unmarked
+</gallery>
+| ambience  = [https://www.youtube.com/watch?v=UdcTyq_aXXI Atmos Citadel Halls Pre Wakeup]<br>
+[https://www.youtube.com/watch?v=62rByKODo9A Atmos Citadel Halls]<br>
+[https://www.youtube.com/watch?v=EcGoF3Smik0 Atmos Creepy v2]
+| action = [https://www.youtube.com/watch?v=Ml0UVesTc5M The Choir]
+}}
+<b>The Forum</b> features a central podium set in front of tiered rows of seating, where the husks of [[the Choir]] members rest. With its tall candelabras, hanging banners, and the grand emblem of [[the Citadel]] in the background, the room resembles Citadel churches.<ref>Modded screenshots of [[:File:Screenshot SS High Halls 20.png|the Forum]], the [[:File:Screenshot SS Vaultkeeper 07.png|Whispering Vaults church]], and the [[:File:Screenshot SS Deep Docks 08.png|Deep Docks shrine]].</ref>
+
+The [[Enemy Gauntlets (Silksong)/High Halls 1|enemy gauntlet]] with eleven waves takes place here. [[Hornet (Silksong)|Hornet]] can receive assistance from allies during this encounter. If she has spoken to [[Garmond and Zaza]] and won a friendly duel against them above the [[Whispering Vaults]], the pair will fight alongside her. Alternatively, if she has purchased all of [[Shakra]]'s maps and completed her <i>[[Trail's End]]</i> [[wish]], Shakra appears near the entrance to offer her help. If both conditions are met, Shakra's appearance takes priority over Garmond and Zaza's.
+
+During the battle, the chandelier illuminating the room lowers slightly with each wave of [[Choir Clapper]]s before falling and shattering once the fight is completed, plunging the Forum into darkness. Hornet can then proceed to the neighboring room where [[Conductor Ballador]] resides and learn the [[Conductor's Melody]] from him.
+
+{{TabbedPOI
+
+|NPC1 = Conductor Ballador
+
+|Enemy1 = Envoy
+|Enemy2 = Choir Bellbearer
+|Enemy3 = Choristor
+|Enemy4 = Reed
+|Enemy5 = Choir Clapper
+|Enemy6 = Clawmaiden
+|Enemy7 = Minister
+|Enemy8 = Maestro
+
+|EnemyGauntletsSource = High Halls 1, High Halls 2
+}}
+
+== Special Rooms ==
+=== Clawmaiden Control Room  ===
+The laundry area above the Rosary Bank, alongside piles of fabric and carts, houses the [[Clawmaiden]] control room, where dozens of them hang suspended on strings of [[Silk]]. The room can be reached via a hidden passage in the ceiling of the preceding room. To access it, [[Hornet (Silksong)|Hornet]] must move a cart by either striking it with her [[Needle]] or running and bumping into it, and then perform a double jump from the cart using the [[Faydown Cloak]].
+
+The Clawmaidens within the control room awaken and begin their assault once Hornet reaches the centre of the room. Only two can be active at the same time. If one is killed, another descends to replace it shortly after, making combat futile. Instead, another cart should be moved to the eastern side of the room to reach a vent through a breakable ceiling, leading to a core of threads. Playing the [[Needolin]] causes this core to pulsate and produce the same Needolin dialogue as the Clawmaidens themselves.
+
+Destroying the core causes all the suspended Clawmaidens in the room below to drop to the floor, with the two that were attacking Hornet also dropping [[Shell Shards]]. This permanently removes all Clawmaidens from [[the Citadel]] and grants their [[Hunter's Journal (Silksong)|Hunter's Journal]] entry.
+
+In [[Act 3]], the hidden ceiling passage to the control room is caved in, though the Clawmaidens vanish entirely regardless of whether the core was previously destroyed or not.
+
+=== Rosary Bank ===
+This room can be found next to the Forum and requires a [[Simple Key (Silksong)|Simple Key]] to unlock and access.<ref>Inspecting the bank door: <i>"An ornate door closed with a simple lock."</i></ref> Inside, several teller booths and desks with abaci can be seen, with the husks of [[Minister]]s who used to work at them lying around. A [[Rosary String|Rosary stringing machine]] can also be found here. The passage to the vault is blocked, and the only way to get inside is through a vent shaft accessible via a breakable ceiling, which can be located by falling particles. The path through the vent shaft is hindered by numerous fans, with a [[Drapefly]], a [[Drapemite]], and a [[Giant Drapemite]] encountered along the way. Inside the vault, a total of {{R|560}} can be found, consisting of loose [[Rosaries]] on the floor or hanging from the ceiling ({{R|151}}), Rosaries inside two chests ({{R|45}} and {{R|24}}), and a [[Pale Rosary Necklace]] found in the third chest. In Act 3, four central hanging Rosary strings are lost in a partial cave-in, reducing the total by {{R|78}}.
+
+Just before entering the vault, there is a breakable wall to the west that leads to a room containing the mechanism for the Rosary stringing machine located above. Breaking it disables the machine but allows acquisition of the [[Rosary Cannon]] [[tool]].
+
+After opening the vault door and resting on a [[Bench (Silksong)|bench]] outside the High Halls, the [[Choral Chambers]], and the [[Cogwork Core]], a [[Snitchfly]] appears inside the bank, found rummaging through a chest. This Snitchfly is not hostile and flees as soon as it spots Hornet, but can be found again in the same spot upon re-entering the room. All remaining Rosaries that were there, including the Pale Rosary Necklace, disappear.
+
+== Creation and Development ==
+{{Main|Cut Content (Silksong)/Areas#High Halls}}
+[[File:Screenshot SS ACMI High Halls.png|thumb|200px|Cut room in 2023]]
+The High Halls were first conceptualised as the later-cut [[Cut Content (Silksong)/Areas#Hanging Gardens & Arborium|Hanging Gardens]]. Following its creation around April 2021, the High Halls went through few changes throughout development. The most notable change being a cut section to the right of the area; it is visible on early maps from February 2023 to August 2025, and is still internally in the area's map. A hole in the wall of the adjacent shaft where its entrance would've been still remains in-game. Additionally, in the entrance room to High Halls, it appears that Hornet would have been able to "exit the Citadel" brieftly in the room during progression, with a small segment of water being below where the Bench is. 
+
+The name "High Halls" was not always used for the area, as the [[Choral Chambers]] originally used the name. Before gaining its current name, and after no longer being the Hanging Gardens, the area likely was called Conductor Quarter, as a wide map that was overwritten to create the map for the Putrified Ducts uses this name.
+
+High Halls was first showcased to the public in the April 2025 Nintendo Switch 2 Direct sizzle reel <i>Silksong</i> clip, around eight months before release, making it one of the last areas to be revealed pre-release. The clip showcased the Forum;<ref>[https://www.youtube.com/watch?v=VrTVeYm4iIM Nintendo Direct: Nintendo Switch 2 – 4.2.2025]</ref> a full version of the footage is in the official press kit, revealing it featured unused Hornet voicelines.
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS High Halls 01.png!Tower base
+|Image2 = Screenshot SS High Halls 02.png!Eyrie with a Spool Fragment
+|Image3 = Screenshot SS High Halls 03.png!Bench
+|Image4 = Screenshot SS High Halls 17.png!Waterworks
+|Image5 = Screenshot SS Cogfly 05.png!Cogfly storage
+|Image6 = Screenshot SS High Halls 18.png!Laundry
+|Image7 = Screenshot SS High Halls 04.png!Clawmaiden control room
+|Image8 = Screenshot SS High Halls 05.png!Clawmaiden core
+|Image9 = Screenshot SS High Halls 19.png!Laundry (Act 3)
+|Image10 = Screenshot SS High Halls 06.png!The Forum
+|Image11 = Screenshot SS Garmond and Zaza 07.png!Garmond and Zaza battling in the Forum
+|Image12 = Screenshot SS High Halls 07.png!The Forum (post-completion)
+|Image13 = Screenshot SS High Halls 08.png!The Forum (Act 3)
+|Image14 = Screenshot SS High Halls 20.png!Modded screenshot of the Forum
+|Image15 = Screenshot SS High Halls 09.png!Conductor Ballador room
+|Image16 = Screenshot SS High Halls 10.png!Conductor Ballador room (Act 3)
+|Image17 = Screenshot SS Silk Fly 01.png!Second Sentinel arena
+|Image18 = Screenshot SS High Halls 12.png!Rosary Bank entrance
+|Image19 = Screenshot SS High Halls 14.png!Bank vault
+|Image20 = Screenshot SS High Halls 16.png!Bank vault (Act 3)
+|Image21 = Screenshot SS High Halls 13.png!Rosary Cannon room
+}}
+{{#ev:youtube|https://www.youtube.com/watch?v=ZRQGq97MZLE|300|center}}
+
+== Trivia ==
+* The background chandelier within the Forum lowers slightly with the appearance of each wave of Choir Clappers.
+{{Localisation
+|DEname = Hohe Hallen
+|DEmeaning = High Halls
+|ESname = Altos Salones
+|ESmeaning = High Halls
+|FRname = Grandes Galeries
+|FRmeaning = Great Galleries
+|ITname = Sale Eccelse
+|ITmeaning = Sublime Halls
+|JAname = 高貴の広間
+|JAromanised = Kōki no hiroma
+|JAmeaning = Noble Halls
+|KOname = 왕의 궁정
+|KOromanised = Wangui gongjeong
+|KOmeaning = King's Court
+|PTname = Salões Supremos
+|PTmeaning = Supreme Halls
+|RUname = Верхние палаты
+|RUromanised = Verxnie palaty
+|RUmeaning = Upper Chambers
+|ZHname = 高庭
+|ZHromanised = Gāo tíng
+|ZHmeaning = High Court
+|TWname = 高庭
+|TWromanised = Gāo tíng
+|TWmeaning = same
+|CODEname = HANG
+|CODEmeaning = "Hanging Garden" is a name seen in [[Cut Content (Silksong)#Gallery|Ari Gibson's sketches]]
+}}
+
+=== The Forum ===
+{{Localisation
+|hr=false
+|DEname = Das Forum
+|DEmeaning = The Forum
+|ESname = El Foro
+|ESmeaning = The Forum
+|FRname = L'Auditoire
+|FRmeaning = The Auditorium
+|ITname = Il Forum
+|ITmeaning = The Forum
+|JAname = 発令の間
+|JAromanised = Hatsurei no ma
+|JAmeaning = Announcement Space
+|KOname = 회의장
+|KOromanised = Hwauijang
+|KOmeaning = Conference Room
+|PTname = O Fórum
+|PTmeaning = The Forum
+|RUname = Форум
+|RUromanised = Forum
+|RUmeaning = Forum
+|ZHname = 大议厅
+|ZHromanised = Dà yì tīng
+|ZHmeaning = Great Council Hall
+|TWname = 大議事廳
+|TWromanised = Dà yìshì tīng
+|TWmeaning = same
+|CODEname = CITADEL_FORUM
+}}
+{{Refs|hr=ss}}
+{{SS Nav Areas}}
+[[Category:The Citadel]]
+
+[[zh:高庭]]

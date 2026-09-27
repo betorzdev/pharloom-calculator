@@ -1,0 +1,153 @@
+{{SS Infobox Tool
+| label = Original
+| image = <gallery>
+Silkshot.png|Inventory
+Silkshot Poison.png|Pollip Pouch
+</gallery>
+| type = Red
+| damage = 10/16/22/28/34
+| max = 8/10/12/14/16
+| refill_type = Repair
+| refill = {{S|5}}
+| effect = Shoots a powerful piercing shot, similar to a railgun
+| location = [[Mount Fay]]
+| description = Ancient weapon of the Weavers, repaired to its original form.<hr>Uses shell canisters and the wielder's own Silk to fire.
+
+| title2 = Silkshot
+| label2 = Twelfth Architect
+| image2 = <gallery>
+Twelfth Architect Silkshot.png|Inventory
+Twelfth Architect Silkshot Poison.png|Pollip Pouch
+</gallery>
+| type2 = Red
+| damage2 = 3+1.5+1 / 5+2.5+1.66 / <br>7+3.5+2.33 / 8+4+2.66 / <br>10+5+3.33
+| max2 = 12/15/18/21/24
+| refill_type2 = Repair
+| refill2 = {{S|3.33}} (Rounded)
+| effect2 = Shoots a 3-round burst of projectiles
+| location2 = [[Twelfth Architect]]
+| description2 = Ancient weapon of the Weavers, repaired and modified by Twelfth Architect.<hr>Uses shell canisters and the wielder's own Silk to fire.
+
+| title3 = Silkshot
+| label3 = Forge Daughter
+| image3 = <gallery>
+Forge Daughter Silkshot.png|Inventory
+Forge Daughter Silkshot Poison.png|Pollip Pouch
+</gallery>
+| type3 = Red
+| damage3 = 6/10/13/17/20
+| refill_type3 = Repair
+| refill3 = {{S|2.66}} (Rounded)
+| max3 = 15/18/22/26/30
+| effect3 = Shoots a single projectile forward
+| location3 = [[Forge Daughter]]
+| description3 = Ancient weapon of the Weavers, repaired and modified by Forge Daughter.<hr>Uses shell canisters and the wielder's own Silk to fire.
+}}
+
+{{Quote|Hr=SS
+|Sister, spider, sat between salt and stone,<br>Build those tools of brilliant mind imagined,<br>Aid us when our Silk has waned.
+|[[Weavenest Murglin]] [[Lore Tablets (Silksong)#Bilewater|Lore Tablet]]
+}}
+
+<b>Silkshot</b> is a {{CrestSlot|Red|1}} in <i>[[Hollow Knight: Silksong]]</i>. Initially found as an unusable [[Ruined Tool]], it has three different usable variants with unique stats and attributes depending on who repairs it. Once it has been repaired, the other variants are unobtainable.
+
+== Usefulness ==
+All three variants of the Silkshot use one strand of [[Silk]] per use, alongside one of their [[Tool]] usages. Each Silkshot variant also slightly pushes [[Hornet (Silksong)|Hornet]] back from its recoil.
+
+===Original===
+The original variant repaired by Hornet fires a focused beam of silklight horizontally after a short windup, dealing high [[Heavy Damage]]. The beam is able to pierce multiple enemies, ignore armour, and deal damage to enemies that are ready to parry attacks. The beam does not have travel time and instantly covers its full range.
+* The original Silkshot's firing delay, recovery time, and tool capacity make it slightly harder to find openings to use than the other variants, but its high damage and piercing abilities helps against groups of multiple enemies.
+** The Silk and Tool resources used to fire are consumed at the start of the windup. If Hornet gets hit during the windup but before firing, the shot will be cancelled while still consuming the resources needed to fire.
+* When used in the air, Hornet will hover in place as it fires.
+
+===Twelfth Architect===
+[[Twelfth Architect]]'s variant shoots three fast projectiles in rapid succession, with each shot progressively fanning upwards. It deals low damage per shot, with decent damage in total. Each hit does 100%, 50%, and 33% base damage respectively.
+* Of the three Silkshots, Twelfth Architect's Silkshot has the shortest cooldown between uses, but rapid use will quickly use up Hornet's Silk. It can be used as a quick burst option or against a crowd of enemies. It deals the least single target damage of the three, while costing the same amount of Silk.
+** The shots' spread make it easier to land every shot while up close, but it still has decent range. Multiple shots hitting the same enemy in one use will progressively deal less damage, similarly to the [[Threefold Pin]].
+* Since it fires three times, Hornet will take recoil from it three times.
+* It costs one Tool use and one Silk despite firing three times.
+
+===Forge Daughter===
+[[Forge Daughter]]'s variant shoots a single fast projectile horizontally which deals decent damage. 
+* Forge Daughter's Silkshot has the highest capacity, deals decent damage, and has decent range, allowing it to function as a consistent ranged attack. It can be a powerful general option during a fight, especially when used with [[Pollip Pouch]]. It is a middle ground between the damage and speed of the other Silkshots.
+** It has similar damage and Tool uses to the [[Straight Pin]].
+* The projectile is affected by gravity, but it falls slowly enough to still be used at a far distance.
+
+== How to Acquire ==
+After obtaining the [[Ruined Tool]], it can be brought to one of three places to be permanently repaired into a variant of the Silkshot.
+
+{| class="article-table"
+! style="width:8rem" | Item
+! style="width:5rem" | Cost
+! Location
+! Map
+|-
+! [[File:Silkshot.png|center|72x72px]]
+Silkshot<br>(Original)
+| align="center" | {{C|1}}.<br>[[File:Ruined Tool.png|20x20px|link=Ruined Tool|Ruined Tool]]
+| Repaired by [[Hornet (Silksong)|Hornet]] in [[Mount Fay]], below the location where the [[Faydown Cloak]] can be obtained.<ref><i>"An old rune displaying the design for a Weaver weapon."</i></ref>
+| [[File:Mapshot SS Silkshot Original.png|150x150px|center]]
+|-
+! [[File:Twelfth Architect Silkshot.png|center|72x72px]]
+Silkshot<br>([[Twelfth Architect]])
+| align="center" | {{r|130}}<br>{{C|1}}.<br>[[File:Ruined Tool.png|20x20px|link=Ruined Tool|Ruined Tool]]
+| Repaired by [[Twelfth Architect]] in the [[Underworks]].<ref>[[Twelfth Architect]]: <i>An intricate implement of Pharloom's first children. I can restore-repair the w-w-weapon, though it will bear some trace of my identity-idiom.</i></ref><ref group="Note">If Hornet has already bought all of the Twelfth Architect's items and acquired the [[Architect's Melody]], (leading to its death) this Silkshot variant becomes unobtainable.</ref>
+| [[File:Mapshot SS Twelfth Architect 01.png|150x150px|center]]
+|-
+! [[File:Forge Daughter Silkshot.png|center|72x72px]]
+Silkshot<br>([[Forge Daughter]])
+| align="center" | {{r|240}}<br>{{C|1}}.<br>[[File:Ruined Tool.png|20x20px|link=Ruined Tool|Ruined Tool]]
+| Repaired by [[Forge Daughter]] in [[Deep Docks]].<ref>[[Forge Daughter]]: <i>A weapon from a long distant past. We can combine the Weaver components with our own mouldings to repair the tool.</i></ref>
+| [[File:Mapshot SS Forge Daughter 01.png|150x150px|center]]
+|}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Silkshot 01.png!Rune on desk<br>in Mount Fay
+|Image2 = Recording SS Silkshot-Original.gif!Hornet firing Silkshot (Original)
+|Image3 = Recording Silkshot Twelfth-Architect.gif!Hornet firing Silkshot (Twelfth Architect)
+|Image4 = Recording SS Silkshot Forge-Daughter.gif!Hornet firing Silkshot (Forge Daughter)
+}}
+
+== Trivia ==
+* The original Silkshot's attack is the same type of silklight attack that [[Servitor Boran|Servitors Boran]] can use to attack; both attacks use the same windup and fire sound.
+
+{{Localisation
+|DEname = Seidenschuss
+|DEmeaning = Silkshot
+|ESname = Honda sedeña
+|ESmeaning = Silken Sling
+|FRname = Tire-soie
+|FRmeaning = Silk Pull
+|ITname = Sparaseta
+|ITmeaning = Silk Shooter
+|JAname= シルクショット
+|JAromanised= Shirukushotto
+|JAkatakana = foreign
+|JAmeaning = Silkshot
+|KOname = 실크샷
+|KOromanised = Silkeusyat
+|KOmeaning = Silkshot
+|PTname = Tiro de Seda
+|PTmeaning = Silk Shot
+|RUname = Шёлкострел
+|RUromanised = Šëlkostrel
+|RUmeaning = Portmanteau of {{lang|ru|шелк}} <i>šelk</i> (silk) and {{lang|ru|стрелять}} <i>streljat'</i> (to shoot or to fire).
+|TWname = 絲彈
+|TWromanised = Sī dàn
+|TWmeaning = same
+|ZHname = 丝弹
+|ZHromanised = Sī dàn
+|ZHmeaning = Silk Bullet
+|CODEname = SILKSHOT
+}}
+{{Hr|SS}}
+
+==Notes==
+<references group="Note" />
+{{Refs|hr=false}}
+
+
+{{SS Nav Tools}}
+{{#seo:|keywords=ruined tool, ruined, tool, gun, silksong}}
+[[fr:Tire-soie]]

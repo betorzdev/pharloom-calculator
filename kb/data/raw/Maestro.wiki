@@ -1,0 +1,106 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Maestro.png|Hunter's Journal
+Maestro Idle.png|Idle
+Maestro's Cogfly.png|Cogfly
+</gallery>
+| hasdrop = true
+| r1 = 27
+| r2 = 38
+| sh1 = 5-8
+| sh2 = 7-10
+|health = 65/{{BT|130}}<br>28 (Cogfly)
+|damage_modifiers = {{SS Spaced Damage Modifiers|}} {{SS Multiple Damage Modifiers|Maestro|1|1|0.8|0.75|0.75|Cogfly|1.25|1|1|1|1}}
+|numbers_required = 6
+|va = [[Matt Trobbiani]]<ref>[https://youtu.be/3p5A7mQDlLg?t=382 Interview with Matt Trobbiani]</ref>
+|singnum = 2
+}}
+{{Quote
+|Hr = Journal
+|Choir commander of the High Halls, able to summon and command cogflies at a flick of their baton.<hr/>
+Once they summoned song from their subjects. Now they rise only to command an end to those unstrung.
+}}
+
+<b>Maestros</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are commanders of [[the Choir]], able to summon Cogflies with their batons.<ref>Maestro [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Choir commander of the High Halls, able to summon and command cogflies at a flick of their baton."</i></ref>
+
+== Behaviour and Tactics ==
+Maestros can be found alive and flying, or dormant, reanimated by [[Silk]] when [[Hornet (Silksong)|Hornet]] approaches. They attack by commanding their Cogflies, and always try to have three of them nearby. Being flying enemies, Maestros attempt to keep aerial distance from Hornet, preferring to stay diagonally above her. They have three moves:
+* <b>Summon Cogflies:</b> Raises its baton and summons 1–3 Cogflies, depending on how many are missing. This move is always used if the Maestro has 0 Cogflies.
+* <b>Command Swoop:</b> Draws its baton back and then sweeps it outwards, commanding a Cogfly to swoop at Hornet. The Cogfly swoops down diagonally, skims across the ground, and swoops back to the Maestro once it passes behind Hornet.
+* <b>Orbit:</b> Moves a short distance forwards or backwards, commanding its Cogflies to revolve around it.
+
+Maestros' Cogflies do not grant Silk when hit and do not drop organs for the <i>[[Broodfeast]]</i> or <i>[[Runtfeast]]</i> [[wishes]]. Additionally, hitting them does not grant focus for the [[Hunter Crest]] or spawn a Silk fragment after a [[Bind]]ing while the [[Reaper Crest]] is equipped, but triggers the special healing of the [[Beast Crest]] and [[Witch Crest]]. Upon a Maestro's death, any surviving Cogflies fly away and disappear.
+
+While the Cogflies summoned by Maestros can be killed, doing so is futile, as the Maestro simply summons more. Maestros have no means of quickly defending the space below them, so attacking from beneath easily deals rapid damage. [[Silk Skill]]s and [[Tools]] can also be useful for attacking them from a distance, as their biggest threat is contact damage.
+
+=== Act 3 ===
+[[Black-threaded]] Maestros have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Grant us resonance!
+* Great Conductors!
+* Holy masters!
+* Your vision guides us...
+* Your devotion compels us!
+* Highest of the high!
+}}
+
+== Location ==
+Maestros can be found in the [[High Halls]], and three of them are fought as part of the [[Enemy_Gauntlets_(Silksong)/High_Halls 1|enemy gauntlet]] in [[the Forum]].
+
+{{Gallery
+|Image1 = Mapshot SS Maestro 01.png!Locations in the High Halls
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Maestro 01.png!Dormant
+|Image2= GIF SS Maestro 01.gif!Reanimating
+|Image3= Screenshot SS Maestro 02.png!Idle
+|Image4= Screenshot SS Maestro 03.png!Summon Cogflies
+|Image5= Screenshot SS Maestro 04.png!Command Swoop
+|Image6= Screenshot SS Maestro 05.png!Orbit
+|Image7= Screenshot SS Maestro 06.png!Reacting to the Needolin
+|Image8= Screenshot SS Maestro 07.png!Corpse in a pool of water
+|Image9= Screenshot SS High Halls 07.png!Corpse in the Forum
+}}
+
+== Trivia ==
+* When singing, Maestro's Cogflies produce the same chirping sounds as [[Cogworker]]s and Hornet's Cogflies.
+* Maestros share their Needolin dialogue with [[Minister]]s.
+
+{{Localisation
+|DEname = Maestro
+|DEmeaning = —
+|ESname = Maestro
+|ESmeaning = Master<br><small>The word <i>maestro</i> already exists in Spanish, meaning a master.
+|FRname = Maestro
+|FRmeaning = —
+|ITname = Maestro
+|ITmeaning = —
+|JAname = マエストロ
+|JAromanised = Maesutoro
+|JAmeaning = Maestro
+|JAkatakana = foreign
+|KOname = 지휘자
+|KOromanised = Jihwija
+|KOmeaning = Conductor
+|PTname = Maestro
+|PTmeaning = —
+|RUname = Маэстро
+|RUromanised = Maèstro
+|RUmeaning = Maestro
+|TWname = 聖詠指揮
+|TWromanised = Shèngyǒng zhǐhuī
+|TWmeaning = same
+|ZHname = 圣咏指挥
+|ZHromanised = Shèngyǒng zhǐhuī
+|ZHmeaning = Psalm Conductor
+|CODEname=SONG_PILGRIM_MAESTRO
+|CODEmeaning="Song Pilgrim" internally refers to [[Envoy|three]] [[Surgeon|different]] [[Choristor|enemies]] located in the Citadel
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

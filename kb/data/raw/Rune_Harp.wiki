@@ -1,0 +1,120 @@
+{{SS Infobox Item
+| description = Old Weaver recording instrument, strung with Silk runes. The faded runes hold a Weaver's words from ages gone. <hr/> 
+A relic of Pharloom's past, interesting to collectors of historical items.
+| effects = Can be sold to [[Relic Seeker Scrounge]] for {{R|210}}
+| type = [[Items (Silksong)#Tradables|Tradable]]
+| source = [[Weavenest Atla]]<br>[[Far Fields]]<br>[[High Halls]]
+| max = 3
+}}
+
+{{Quote
+|Hr=SS
+|This low, her gaze escaped.
+Prepare, sisters. Weave hope anew.
+That we might break free this accursed web born of our naive foundation.
+|[[Lore_Tablets_(Silksong)#Weavenest Atla|Lore Tablet]]}}
+
+<b>Rune Harps</b> are [[Items_(Silksong)#Tradables|tradable items]] in <i>[[Hollow Knight: Silksong]]</i>. Strung with silk runes inscribed by the Weavers, they can be deciphered after being sold to [[Relic Seeker Scrounge]].
+
+== Use ==
+Can be sold to [[Relic Seeker Scrounge]] for {{R|210}}.
+
+After sale, they can be read by visiting Relic Seeker Scrounge, or in the [[Bellhome]] after purchasing the [[Desk]].
+
+{{Gallery
+|Image1 = Mapshot SS Relic Seeker Scrounge 01.png!Location of Relic Seeker Scrounge in Bellhart
+|Image2 = Screenshot SS Bellhart 11.png!Relic Seeker Scrounge in Bellhart
+}}
+
+{| class="article-table" width="100%"
+! style="width:8rem;" | Item
+! Description
+|-
+! [[File:Rune Harp.png|72x72px|center|link=Rune Harp|Rune Harp]] Rune Harp
+| 
+<i>Words of a Weaver from the nest beneath Bone Bottom.<br><br>
+"Hide her deep, the despised child, our shame shown in shell of iron. She is a wish cast vain, divinity mimicked in form too frail."</i>
+|-
+! [[File:Rune Harp.png|72x72px|center|link=Rune Harp|Rune Harp]] Rune Harp
+| 
+<i>Plea of a Weaver from the furthest edge of Pharloom.<br><br>
+"Flee, sisters. Flee until your strength exhausts, so far you may escape at last her silken sight.<br><br>
+To start anew, to sustain, free of web and service eternal."</i>
+|-
+! [[File:Rune Harp.png|72x72px|center|link=Rune Harp|Rune Harp]] Rune Harp
+| 
+<i>Last words of the Weavers.<br><br>
+"Sisters, spiders, the burden is passed. These simple bugs shall bear it full. Never to cease. Never to silence.<br><br>
+We shall die, and wait, and pray, that one may come of silken strength enough to weave us free."</i>
+|}
+
+
+== How to Acquire ==
+There are a total of three Rune Harps that can be obtained.
+
+{| class="article-table" style="text-align: center;" width="100%" data-tpt-table-id="rune-harp"
+! 
+! Area
+! Location
+! Map
+|-
+! 1
+| [[Weavenest Atla]]
+| Upper left ledge of a room accessible from the right side of the lift shaft (requires [[Needolin]]).
+| [[File:Mapshot SS Rune Harp 01.png|200px|center]]
+|-
+! 2
+| [[Far Fields]]
+| [[Far Fields#Sub-area: Weavenest Cindril|Weavenest Cindril]], lower level (requires [[Needolin]], [[Silkspeed Anklets]], and [[Flea Brew]]).
+| [[File:Mapshot SS Rune Harp 02.png|200px|center]]
+|-
+! 3
+| [[High Halls]]
+| Left side of the room where [[Conductor Ballador]] was found in [[Act 2]]. Exclusive to [[Act 3]].
+| [[File:Mapshot SS Rune Harp 03.png|200px|center]]
+|}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Rune Harp 01.png!In Weavenest Atla
+|Image2 = Screenshot SS Rune Harp 02.png!In Weavenest Cindril (Far Fields)
+|Image3 = Screenshot SS Rune Harp 03.png!In High Halls
+}}
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Rune Harps had their value increased from 110 rosaries to 210.
+}}
+{{Localisation
+|DEname = Runenharfe
+|DEmeaning = Runic Harp
+|ESname = Arpa rúnica
+|ESmeaning = Runic Harp
+|FRname = Harpe runique
+|FRmeaning = Runic Harp
+|ITname = Arpa runica
+|ITmeaning = Runic harp
+|JAname = ルーンのハープ
+|JAromanised = Rūn no hāpu
+|JAkatakana = foreign
+|JAmeaning = Rune Harp
+|KOname = 룬 하프
+|KOromanised = Run hapeu
+|KOmeaning = Rune Harp
+|PTname = Harpa Rúnica
+|PTmeaning = Runic Harp
+|RUname = Рунная арфа
+|RUromanised = Runnaja arfa
+|RUmeaning = Runic Harp
+|TWname = 符文豎琴
+|TWromanised = Fúwén shùqín
+|TWmeaning = same
+|ZHname = 符文竖琴
+|ZHromanised = Fúwén shùqín
+|ZHmeaning = Rune Harp
+|CODEname = WEAVER_RECORD
+|CODEmeaning = 
+}}
+
+{{SS Nav Items}}
+
+[[Category:Items (Silksong)]]

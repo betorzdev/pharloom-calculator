@@ -1,0 +1,84 @@
+{{SS Infobox Ability
+| description1 = Advanced Weaver talent. Throw the Silk-strung needle like a harpoon and charge towards it.
+| title2 = <small>Bound the Ancestral Art</small><br>Clawline
+| description2 = Press HARPOON<hr/>
+Fling the needle as a harpoon and launch forcefully towards it. Silk will be expended. Strike enemies to replenish Silk.
+| input = HARPOON
+| location = [[The Cauldron]]
+}}
+
+The <b>Clawline</b> is an [[Abilities (Silksong)|Ability]] that [[Hornet (Silksong)|Hornet]] acquires in <i>[[Hollow Knight: Silksong]]</i>. Hornet can use her [[Needle]] as a harpoon to cross gaps and attack enemies. It consumes 1 strand of [[Silk]] per use, but using it to hit an enemy yields 1 strand back.
+
+== Function ==
+* Press HARPOON to launch Hornet's needle forward, pulling Hornet with it after it stops. The Clawline's path is horizontal from Hornet's position and is not subject to gravity.
+* When it hits certain circular hoops, Hornet remains suspended on that hoop until she manually jumps out. Hornet does not need to perfectly align with the hoops as the Clawline hitbox has a small vertical leeway. Some hoops serve as keys, as Hornet's weight pulls them down to open a nearby locked door or trigger a mechanism.
+* When the Clawline hits an enemy, it does 0.5 x Needle damage. Hornet pulls herself to that enemy and delivers a second hit of 0.5x Needle damage, immediately regaining the strand of Silk used for the Clawline's cost and briefly launching Hornet upwards.
+** Enemies never die on the first hit – they will be left with 1 Health if the hit would have killed them otherwise. This is likely implemented to make the grappling movement more consistent.
+** If an enemy moves after the first hit, Hornet will deliver the second hit where they were, dealing damage and gaining silk as if they didn't move.
+* When the Clawline hits a spike that can be needle bounced off of, Hornet drags herself towards and immediately bounces off it. If it cannot, Hornet takes damage when she impacts it.
+The Clawline is necessary to complete some platforming segments of the game. It is useful for both traversal of rooms as well as helping close the gap to enemies, especially flying ones, with lower risk of taking collision damage.
+
+== Synergies ==
+* Some buffs to the needle affect the Clawline. Buffs to the needle are multiplicative with Clawline's innate 0.5 damage modifier. Clawline's modifier is applied first, and damage is rounded to the nearest even number between calculations if it ends with a .5.
+** The [[Beast Crest]]'s bind buff applies only to the second Clawline hit.
+** [[Barbed Bracelet]] and [[Hunter Crest]] affect both hits of the Clawline. Additionally, hitting an enemy with the second hit of Clawline will charge focus by one Needle hit.
+** The second Clawline hit counts as a Needle hit for the purposes of [[Reaper Crest]]'s bind.
+** Hornet is able to hit [[Wanderer Crest|Wanderer Crests]]'s critical hit with Clawline
+* [[Snitch Pick]] adds an additional hit which deals an additional 0.25 times the base Needle damage. This additional damage cannot be buffed or changed in any way, and it does not grant Silk.
+
+== How to Acquire ==
+Clawline can be found in a [[Weaver Burial Spire]] past a course of lava in the central room of [[the Cauldron]] within the [[Underworks]]. There are two ways to access this area: either through a side passage in [[Whiteward]], or via a lift that unlocks after defeating [[Trobbio]]. The path takes Hornet beneath the [[Twelfth Architect]], and she must traverse the rooms that circumvent the centre of The Cauldron before entering it through a one-way door from the east. After this ability is acquired from a burial spire, Hornet must utilise it to climb up to the room's northeast exit to return to the bench near the Twelfth Architect.
+
+{{Gallery
+| Image1 = File:Mapshot SS Clawline 01.png!Location in the Cauldron
+| Image2 = File:Screenshot SS Underworks 15.png!Weaver Spire
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Icon SS Clawline Splash.png ! Splash Art
+|Image2 = Icon SS Clawline Splash Clear.png ! Splash Art
+}}
+{{History
+|game = SS
+|1.0.28650 (Patch 2): Reduced damage boost that Hunter Crest's Focus applies to Clawline attacks.
+|1.0.28891 (Patch 3): Fixed rare instances of Harpoon sometimes granting 2 Silk instead of 1.
+|1.0.29242 (Patch 4): Fixed issues when using Harpoon to stun or kill certain bosses.
+}}
+
+{{Localisation
+|DEname = Greifschnur
+|DEmeaning = Gripline
+|ESname = Garra elongada
+|ESmeaning = Enlongated Claw
+|FRname = Serrefil
+|FRmeaning = Tightline
+|ITname = Pescartiglio
+|ITmeaning = Portmanteau of <i>pesca</i> (fishing) and <i>artiglio</i> (claw).
+|JAname = シルクの銛
+|JAromanised = Shiruku no mori
+|JAkatakana = foreign
+|JAmeaning = Silk Harpoon
+|KOname = 발톱 실
+|KOromanised = Baltop sil
+|KOmeaning = Claw Line
+|PTname = Garra de Seda
+|PTmeaning = Silk Claw
+|RUname = Цепкая нить
+|RUromanised = Cepkaja nit'
+|RUmeaning = Cling Thread
+|TWname = 飛針衝刺
+|TWromanised = Fēi zhēn chōngcì
+|TWmeaning = same
+|ZHname = 飞针冲刺
+|ZHromanised = Fēi zhēn chōngcì
+|ZHmeaning = Flying Needle Dash or Throwing Needle Dash
+|CODEname = SKILL_HARPOON
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Skills}}
+
+{{#seo:|keywords=silksong, harpoon, clawline, grapple, grappling hook}}
+[[fr:Serrefil]]

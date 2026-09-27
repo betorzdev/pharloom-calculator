@@ -1,0 +1,403 @@
+{{SS Infobox Area
+| tab1 = Acts 1/2
+| image1 = <gallery>
+Far Fields Map Marked.png|Marked
+Far Fields Map Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Far Fields Map Ruin Marked.png|Marked
+Far Fields Map Ruin Clean.png|Unmarked
+</gallery>
+| connection = [[Deep Docks]]<br>[[Greymoor]]<br>[[Hunter's March]]
+| ambience = [https://www.youtube.com/watch?v=OTw391-Yc8Y Atmos Wilds]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]<br>
+[https://www.youtube.com/watch?v=fWVGhLwoNX4 Atmos Lava Near Big]<br>
+[https://www.youtube.com/watch?v=GeUHAnIixB4 Atmos Lava Far]<br>
+[https://www.youtube.com/watch?v=otn24u-d_y4 Umbrella House Exterior Atmos Loop]
+| main = [https://www.youtube.com/watch?v=Kxs674mt2YE Far Fields]<br>
+[https://youtu.be/lV3RGzes6Zs?si=eRE50RVrap2LWAt8 Mini Games] (Sprintmaster Swift)
+| action = [https://www.youtube.com/watch?v=y5O2l_VQI-k Cut Through]
+}}
+
+{{Quote|Hr=SS
+| Poshanka! These scorched fields offer many paths and much combat. To leap from vantage upon the red-shells or to meet them face-front with rings ready? These are decisions to live for!
+| [[Shakra]]
+}}
+
+The <b>Far Fields</b> is an [[Areas (Silksong)|area]] in <i>[[Hollow Knight: Silksong]]</i>. It is characterised by expansive grassy caverns and wind updrafts.
+
+== Description ==
+The Far Fields is a large area in the eastern lowlands of [[Pharloom]], known for grassy caverns and wind updrafts. Many passages are unreachable without the [[Drifter's Cloak]], which allows Hornet to ride the strong currents of air rising through the caverns. The caves give way to treacherous lava pools on the lower floors that deal {{Damage|2|type=Fire}} upon contact.
+
+[[File:Screenshot SS Far Fields 25.png|thumb|200px|left|Room after the Bellshrine]]
+The Far Fields serve as the main route up into [[Greymoor]]. This ascent requires the [[Drifter's Cloak]]. To obtain the Drifter's Cloak, [[Hornet (Silksong)|Hornet]] must aid the [[Seamstress]] and complete the ''[[Flexile Spines]]'' wish. Afterwards, she can leave the area via a wind updraft after defeating or skipping the [[Fourth Chorus]].
+
+In [[Act 3]], a previously inaccessible part of the Far Fields becomes available via the [[Hunter's March]]. This requires using [[Silk Soar]] in the Hunter's March statue room. After venturing east, [[Hornet (Silksong)|Hornet]] meets [[Skarrsinger Karmelita]], who is frail with age. Hornet can challenge her to a battle in memory with [[Elegy of the Deep]] and claim [[CLAIM: Heart of the Wild|her heart]].
+
+To the east, Hornet can meet [[Sprintmaster Swift]], who resides in the skull of a massive bug, and challenge him to a race.
+
+== History ==
+Long ago in [[Pharloom]]'s past, massive creatures roamed the area now known as Far Fields.<ref>[[Sprintmaster Swift]] (referring to a large skeletal structure): <i>"This giant, boney body, so distant from Pharloom's ails. Here, freely, we can test our speed and our sleek shells. Here we may race!"</i></ref>
+
+The Far Fields are home to the [[Skarr]], red-ant hunters who inhabited the land long before [[Grand Mother Silk]].<ref>[[Snail Shamans (Silksong)|Snail Shamans]]: <i>"Pharloom was not born of that monarch, Old One. Power existed in these lands even before she bound them beneath her. Seek the old hearts of our kingdom and the last successors to bear their strength. They're still out there, hidden away, much faded by the pale one's long dominion."</i></ref> The tribe were united in service through the voice and leadership of their last song queen, [[Skarrsinger Karmelita]].<ref>[[Skarrsinger Karmelita]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Song queen of the Skarr and their most talented warrior ... her voice united all Skarr in her service."</i></ref> She protected the Skarr from the [[Haunting]] for many years and gave the tribe the strength to resist it.<ref>[[Snail Shamans (Silksong)|Snail Shamans]]: <i>"In youth, her voice united the wild tribes. Gave them the strength to resist the pale monarch's will... longer than most at least."</i></ref> Her presence was also what caused the vegetation and flora to grow within the area.<ref>[[Gilly]]: <i>"This giant, old ant... Her death seems recent, but her presence here...</i><br><i>Was it her? Could it be? The strength that sustained these caves? If so, what will happen now?"</i><br>{{HTalk|They will wither and fade... And you may sadly know it was my needle that brought her end.}}</ref> The Skarr are known to still hunt other creatures in the land, such as the [[Hardbone Elder]]. 
+
+[[File:Screenshot SS Far Fields 02.png|thumb|200px|right|The Fourth Chorus idle under a pile of rubble]]
+At some point during the reign of [[the Citadel]], the [[Fourth Chorus]], a towering mechanical machine made of cog and iron, was deployed in the area. It is assumed that the Fourth Chorus was sent to hunt down the [[Seamstress]].<ref>[[Pinstress]]: <i>"Our grand Citadel learnt well from the training of Pinstresses past. Then it went and turned those teachings upon us! Despite our superior skills, our numbers have always been few, and their strength overwhelmed."</i></ref> After a battle with her in Far Fields, she left it subdued by impaling her pin in the machine's neck and leaving it behind under the rubble.<ref>Internal name for the lodged Pin is <code>Room_Umbrella_hang_pins</code>; <code>umbrella</code> being the internal name for sprites related to [[Seamstress]] and her airship.</ref><ref>The Pin's design is also identical to the ones used by [[Pinstress]] and the dead sister in [[Putrified Ducts]].</ref> It sits idle in the lava to the present day.
+
+== How to Access ==
+The main entrance to Far Fields is accessed from [[Deep Docks]]. Hornet can reach it by defeating [[Lace]] in the arena directly north of [[Forge Daughter]]. Beyond her arena, a [[bellshrine]] can be rung to open a gate to the Far Fields. [[Swift Step]] is required to leap over a lava gap past the gate.
+
+Lace's battle can be [[Lace#In-game Events|completely skipped]] via an alternative passage. By using a [[Simple Key (Silksong)|Simple Key]] on the door directly south of [[Forge Daughter]] (which also requires a Swift Step jump), Hornet can travel east through a few chambers of enemies to reach the lower entrance to Far Fields.
+
+Additionally, if Hornet has already visited either the [[Blasted Steps]] or [[Sinner's Road]] by going through the [[Wormways]], Lace does not appear in the Deep Docks.
+
+{{TabbedPOI
+|Header = true
+
+| NPC1 = Shakra
+| NPC2 = Seamstress
+| NPC3 = Garmond and Zaza
+| NPC3Note = ([[Act 3]] only)
+| NPC4 = Gilly
+| NPC4Note = ([[Act 3]] only)
+| NPC5 = Mister Mushroom (Silksong){{!}}Mister Mushroom
+| NPC5Note = ([[Act 3]] only)
+| NPC6 = Sprintmaster Swift
+| NPC6Note = ([[Act 3]] only)
+| NPC7 = Karmelita
+| NPC7Note = ([[Act 3]] only)
+| NPC8 = Unnamed Skarr
+| NPC8Note = ([[Act 3]] only)
+
+| Enemy1 = Beastfly
+| Enemy2 = Caranid
+| Enemy3 = Vicious Caranid
+| Enemy4 = Tarmite
+| Enemy5 = Hoker
+| Enemy6 = Rhinogrund
+| Enemy7 = Pilgrim Hornfly
+| Enemy8 = Pilgrim Hulk
+| Enemy9 = Winged Pilgrim
+| Enemy10 = Brushflit
+| Enemy11 = Fertid
+| Enemy12 = Flapping Fertid
+| Enemy13 = Skarr Scout
+| Enemy14 = Skarr Stalker
+| Enemy15 = Spear Skarr
+| Enemy16 = Shardillard
+| Enemy17 = Pilgrim Groveller
+| Enemy17Note = (before [[Act 3]])
+| Enemy18 = Pilgrim Pouncer
+| Enemy18Note = (before [[Act 3]])
+| Enemy19 = Hardbone Hopper
+| Enemy19Note = ([[Act 3]] only)
+| Enemy20 = Hardbone Elder
+| Enemy20Note = ([[Act 3]] only)
+| Enemy21 = Skarrgard
+| Enemy21Note = ([[Act 3]] only)
+| Enemy22 = Last Claw
+| Enemy22Note = ([[Act 3]] only)
+| Enemy23 = Void Mass
+| Enemy23Note = ([[Act 3]] only)
+
+| Boss1 = Savage Beastfly
+| Boss1Note =(during the <i>[[Savage Beastfly (Wish)|Savage Beastfly]]</i> wish)
+| Boss2 = Fourth Chorus
+| Boss3 = Gurr the Outcast
+| Boss3Note = (during the <i>[[The Hidden Hunter]]</i> wish)
+| Boss4 = Skarrsinger Karmelita
+
+| Loot1_FileName = Drifter's Cloak
+| Loot1_Description = Given by [[Seamstress]] after completing the <i>[[Flexile Spines]]</i> [[Wish]]
+| Loot2_FileName = Warding Bell
+| Loot3_FileName = Curvesickle 
+| Loot3_Description = traded for by the Unnamed Skarr
+| Loot4_FileName = Memory Locket
+| Loot4_Amount = 1
+| Loot5_FileName = Mask Shard (Silksong)
+| Loot5_Name = Mask Shard (Silksong){{!}}Mask Shard
+| Loot5_Amount = 3
+| Loot5_Description = 1 shard is given by [[Sprintmaster Swift]] after completing the <i>[[Fastest in Pharloom]]</i> wish
+| Loot6_FileName = Flea
+| Loot6_Amount = 2
+| Loot7_FileName = Bone Scroll
+| Loot7_Amount = 1
+| Loot8_FileName = Rosary String
+| Loot8_Amount = 1
+| Loot9_FileName = Rosary Necklace
+| Loot9_Amount = 1
+|Loot9_Description = given by by Sprintmaster Swift after completing his first race
+| Loot10_FileName = Pale Rosary Necklace
+| Loot10_Amount = 1
+| Loot11_FileName = Beast Shard
+| Loot11_Amount = 1
+| Loot11_Description = * given by Sprintmaster Swift after completing his second race
+* dropped by the [[Rhinogrund]] next to Pilgrim's Rest
+| Loot12_FileName = Horn Fragment
+| Loot12_Description = dropped by [[Savage Beastfly]]
+| Loot13_FileName = Grass Doll
+| Loot13_Description = found after defeating [[Gurr the Outcast]]
+| Loot14_FileName = Hunter's Heart
+| Loot14_Description = found after defeating [[Skarrsinger Karmelita]]
+| Loot15_FileName = Sprintmaster Memento
+| Loot15_Description = found after completing his fourth race
+
+|LoreTabletsSource = SS Far Fields
+
+|EnemyGauntletsSource = Far Fields 1, Karmelita, Far Fields 2
+}}
+
+{{Clear}}
+== Sub-area: Pilgrim's Rest ==
+{{SS Infobox Area
+| tab1 = Acts 1/2
+| image1 = <gallery>
+Pilgrim's Rest Map Marked.png|Marked
+Pilgrim's Rest Map Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Pilgrim's Rest Map Ruin Marked.png|Marked
+Pilgrim's Rest Map Ruin Clean.png|Unmarked
+</gallery>
+| main = [https://www.youtube.com/watch?v=J6hVFLmuC3s Repose]
+| ambience = [https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+}}
+
+<b>Pilgrim's Rest</b> contains a building which can be entered for a price of {{R|30}} each time, within which can be found a bench, and [[Mort]], a merchant. The gears inside the building can be destroyed, preventing the door from closing and thus bypassing the entry cost.
+
+When first entering Pilgrim's Rest, [[Sherma]] can be seen and interacted with, however he is absent upon returning to the area.
+
+During [[Act 3]], Pilgrim's Rest is destroyed, with [[Snitchfly|Snitchflies]] scavenging its remains. The bench remains intact, and can be accessed for free. Any of Mort's unbought stock moves to [[Grindle]]'s inventory, except for [[Weighted Belt]], which instead can be found in the vertical room west of the Far Fields [[Bellway]] station.
+
+{{TabbedPOI
+| NPC1 = Mort
+| NPC2 = Sherma
+| NPC3 = Pilby
+| NPC4 = Weary Pilgrim
+
+| Enemy1 = Rhinogrund
+| Enemy1Note = (breaks in if freed)
+| Enemy2 = Snitchfly
+| Enemy2Note = (Act 3 only)
+
+}}
+
+{{Clear}}
+
+== Sub-area: Weavenest Cindril ==
+{{SS Infobox Area
+| image1 = <gallery>
+Weavenest Cindril Map Marked.png|Marked
+Weavenest Cindril Map Clean.png|Unmarked
+</gallery>
+| ambience = [https://www.youtube.com/watch?v=OGDjsXpW7UA Atmos Weavers]<br>
+[https://www.youtube.com/watch?v=zNcy8lmv3-Q Atmos Cave Misc 4]<br>
+[https://www.youtube.com/watch?v=lpdgBxcuSb8 Dirtmouth Wind Loop A]
+| main = [https://www.youtube.com/watch?v=C0PBjz5nxmY Memories]
+}}
+
+<b>Weavenest Cindril</b> is a sub-area on the far east of Far Fields, accessed through a [[Needolin]] door. A puzzle is found inside, with pressure plates illuminating lights placed above them when pressed. The number of lights lit above each plate increases depending on Hornet's speed.  Sprinting across all the pressure plates without stopping grants the [[Silkspeed Anklets]] tool, which increases Hornet's movement speed at the cost of some silk.
+
+Equipping the Silkspeed Anklets and using [[Flea Brew]] allows Hornet to run across the plates at even higher speeds. Doing so unlocks a trapdoor, allowing entrance to a lower level. A [[Rune Harp]] lies on the ground on the left side of the lower level. On the right side is a viewing area with the [[Wasteland]] outside of Pharloom being visible.
+
+{{TabbedPOI
+
+| Enemy1 = Servitor Ignim
+
+| Loot1_FileName = Silkspeed Anklets
+| Loot2_FileName = Rune Harp
+| Loot2_Amount = 1
+| Loot2_Description = requires using Silkspeed Anklets and [[Flea Brew]]
+
+|LoreTabletsSource = SS Weavenest Cindril
+}}
+{{Clear}}
+
+== Special Rooms ==
+=== Skull Cave ===
+The Skull Cave is a room on the east of Far Fields. The [[Clawline]] ability is needed to be able to grasp the hooks that lead to the entrance. Upon entering, the entrance will be sealed and Hornet will have to proceed downward, avoiding spikes and hitting multiple exploding rocks on the way.
+
+Upon hitting the exploding rock at the bottom, the ground is replaced by lava, with two unstable rock platforms that will sink shortly after contact (from either Hornet or enemies). A 4-wave fight then begins:
+<div class="mw-collapsible mw-collapsed">
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! colspan="2" |Waves
+|-
+|[[File:HJ_Beastfly.png|35x35px|link=Beastfly]] [[Beastfly]] x2, left and right
+|Both enemies charge out of either wall and bonk into each other in the centre.
+|-
+|
+[[File:HJ_Tarmite.png|35x35px|link=Tarmite]] [[Tarmite]], centre
+|
+|-
+|
+[[File:HJ_Vicious Caranid.png|35x35px|link=Vicious Caranid]] [[Vicious Caranid]] x2, top left/right depending on Hornet
+|
+|-
+|
+[[File:HJ_Tarmite.png|35x35px|link=Tarmite]] Tarmite x2, top left and right
+| Defeating both enemies causes the lava to begin to rise.
+|-
+|
+[[File:HJ_Tarmite.png|35x35px|link=Tarmite]] Tarmite x5
+| Appears during the lava escape sequence; will die to the rising lava.
+|}
+</div>
+
+After clearing these four waves, the upper corners of the arena break away as the lava begins rising. Hornet must climb back out of the pit to escape the lava and avoid the [[Tarmite]]s that have also spawned in. The lava stops rising at the entrance as the rubble breaks away to allow Hornet to leave, and a large wind current appears that lets Hornet float up to an upper chamber that holds a [[Mask Shard (Silksong)|Mask Shard]].
+
+The ceiling of the upper chamber has spikes to prevent Hornet from skipping the gauntlet with [[Silk Soar]].
+
+{{Gallery
+|Image1 = Mapshot SS Ember Pit.png ! Location of Skull Cave
+}}
+
+=== Frontier ===
+Frontier<ref>Save profile name when resting on the [[Bench]] next to [[Sprintmaster Swift]]</ref> is a room located on the east side of the Act 3-exclusive segment of Far Fields. Sprintmaster Swift is encountered here, and he can be challenged to a race around the room. He can initially be beaten three times, with each victory making the track more difficult. 
+
+When returning to the Frontier after having completed all three races, Sprintmaster Swift can be raced one final time, granting the [[Sprintmaster Memento]] if he is beaten.
+
+{{Gallery
+|Image1 = Mapshot SS Sprintmaster Swift 01.png!Location of Frontier
+}}
+
+== Creation and Development ==
+{{Main|Cut Content (Silksong)/Areas#Far Fields}}
+[[File:February 2019 Scorchlands.png|thumb|220px|"Scorchlands" in February 2019]]
+Far Fields rooms were first created around August 2017. During this time, Far Fields may have been designed as an 'extension' to the Marrow instead of a fully seperate area, as its room names refer to it as <code>Bone_East</code>. In this iteration, the area featured no greenery, instead being filled with rocky rooms and lava. A possible earlier name for the area is Scorchlands, used in a file name. It contained aspects of the final Far Fields such as the Fourth Chorus and Seamstress hut, but also contained the [[Diving Bell]], due to its [[Cut Content (Silksong)/Areas#Deep Docks|older purpose]]. 
+
+By November 2019, all rooms had vegetation added; this iteration of Far Fields would then be expanded upon, up until being completed in April 2021. While the area's layout has remained mostly identical since then up to release, the [[Act 3]]-exclusive northeastern corner of Far Fields had a completely different design which lacked [[Skarrsinger Karmelita]], [[Gurr the Outcast]], and [[Sprintmaster Swift]]'s rooms. This section was completely reworked following the September 2021 map. 
+
+Far Fields' old "Scorchlands" iteration was showcased in the February 2019 <i>Silksong</i> reveal trailer, which had a clip of the Fourth Chorus.<ref>[https://www.youtube.com/watch?v=pFAknD_9U7c Hollow Knight: Silksong Reveal Trailer]</ref> In June 2020, the riddle revealing [[Huntress]] contained a gif of her room,<ref>The [https://discordapp.com/channels/283467363729408000/586931790208434203/722196291592912906 file] where Huntress was revealed</ref> which was then part of Far Fields, opposite of Pilgrim's Rest. In February 2021's <i>EDGE Magazine</i> issue, a screenshot of the Mottled Skarr in Far Fields was shown.<ref>[https://pocketmags.com/edge-magazine/february-2021 Edge Magazine February 2021 edition], p. 54.</ref> More footage was showcased in the June 2022 <i>Xbox Game Pass Reveal Trailer</i> and surrounding promotional material; the area's name was revealed in a screenshot filename released around then.<ref name="xbox">[https://www.youtube.com/watch?v=JSfuFlhsxZY Hollow Knight: Silksong - Xbox Game Pass Reveal Trailer - Xbox & Bethesda Games Showcase 2022]</ref><ref>[https://web.archive.org/web/20221029084823/https://news.xbox.com/en-us/media/hollow-knight-silksong-xbox-bethesda-showcase-2022/ Hollow Knight: Silksong – Xbox & Bethesda Showcase 2022 - Xbox Wire (archive)]</ref>
+{{clear}}
+
+== Gallery ==
+{{Gallery
+| Image1 = Screenshot SS Far Fields 01.png!Bellway Station
+| Image2 = Screenshot SS Far Fields 02.png![[Fourth Chorus]] Arena (pre-fight)
+| Image3 = Screenshot SS Far Fields 03.png!Fourth Chorus Arena (empty)
+| Image4 = Screenshot SS Far Fields 04.png![[Seamstress]] Hut (Outside)
+| Image5 = Screenshot SS Far Fields 05.png!Seamstress Hut (Inside)
+| Image6 = Screenshot SS Far Fields 06.png!Pilgrim's Rest (Outside, Act 2)
+| Image7 = Screenshot SS Far Fields 07.png!Pilgrim's Rest (Inside, Act 2)
+| Image8 = Screenshot SS Far Fields 08.png!Pilgrim's Rest (Outside, Act 3)
+| Image9 = Screenshot SS Far Fields 09.png!Pilgrim's Rest (Inside, Act 3)
+| Image10 = Screenshot SS Far Fields 10.png!Skull Cave entrance
+| Image11 = Screenshot SS Far Fields Arena 1.png!Skull Cave arena
+| Image12 = Screenshot SS Far Fields 12.png!Weavenest Cindril Bench
+| Image13 = Screenshot SS Far Fields 13.png!Weavenest Cindril Map
+| Image14 = Screenshot SS Far Fields 14.png!Weavenest Cindril Edge
+| Image15 = Screenshot SS Far Fields 15.png![[Gurr the Outcast]] Arena
+| Image16 = Screenshot SS Far Fields 16.png!Bench before [[Karmelita]]
+| Image17 = Screenshot SS Far Fields 17.png!Old Karmelita (pre-Heart)
+| Image18 = Screenshot SS Far Fields 18.png!Old Karmelita (post-Heart)
+| Image19 = Screenshot SS Far Fields 19.png!Corpse on way to <br>[[Sprintmaster Swift]]
+| Image20 = Screenshot SS Far Fields 20.png!Frontier Entrance
+| Image21 = Screenshot SS Far Fields 21.png!Frontier Room
+| Image22 = XboxScreenshot Far Fields.png!Pre-release screenshot
+}}
+
+== Trivia ==
+* The Far Fields section on the zoomed-out map expands once Hornet has started to explore the area east of the tallest room that is unlocked by going through Hunter's March in Act 3.
+** It is the only area to change size on the zoomed-out map, likely due to a significant portion of the area being blocked off for most of the game.
+* A locked door can be seen to the right of Skarrsinger Karmelita's body. This door is never opened throughout the course of the game. 
+* All eight speed levels in the Weavenest Cindril puzzle are achievable. The first requires walking while holding QUICK MAP, whereas subsequent ones can be reached by walking or running with different combinations of the [[Scuttlebrace]], the [[Silkspeed Anklets]], and the [[Flea Brew]], as well as utilising Hornet's gradual deceleration when releasing SPRINT.
+
+{{Localisation
+|DEname = Weite Felder
+|DEmeaning = Far Fields
+|ESname = Campos Lejanos
+|ESmeaning = Far Fields
+|FRname = Terres Lointaines
+|FRmeaning = Far Lands
+|ITname = Campi Ermi
+|ITmeaning = Deserted Fields
+|JAname = 遠景の地
+|JAromanised = Enkei no ji
+|JAmeaning = Ground of Distant Views
+|KOname = 머나먼 들판
+|KOromanised = Meonameon deulpan
+|KOmeaning = Faraway Fields
+|PTname = Campos Longínquos
+|PTmeaning = Far Fields
+|RUname = Дальние поля
+|RUromanised = Dal'nie polja
+|RUmeaning = Far Fields
+|ZHname = 远野
+|ZHromanised = Yuǎn yě
+|ZHmeaning = Far Wilds or Far Fields<br><small>Written this way, it is a near-homophone of {{lang|zh-Hans|原野}} / {{lang|zh-Hant|原野}} <i>yuányě</i> (wilderness).</small>
+|TWname = 遠野
+|TWromanised = Yuǎn yě
+|TWmeaning = same
+|CODEname=WILDS</code><br><code>FIELDS
+}}
+
+=== Pilgrim's Rest ===
+{{Localisation
+|hr=false
+|DEname = Pilgerruh
+|DEmeaning = Pilgrim's Rest
+|ESname = Descanso del Peregrino
+|ESmeaning = Pilgrim's Rest
+|FRname = Repos du Pèlerin
+|FRmeaning = Pilgrim's Rest
+|ITname = Stazione di Posta
+|ITmeaning = Post Station
+|JAname = 巡礼者の休息地
+|JAromanised = Junreisha no kyūsokuchi
+|JAmeaning = Pilgrim's Resting Place
+|KOname = 순례자의 휴식처
+|KOromanised = Sullyejaui hyusikcheo
+|KOmeaning = Pilgrim's Resting Place
+|PTname = Estação de Descanso
+|PTmeaning = Rest Station
+|RUname = Приют пилигрима
+|RUromanised = Prijut piligrima
+|RUmeaning = Pilgrim's Shelter
+|ZHname = 朝圣者憩所
+|ZHromanised = Cháoshèng zhě qì suǒ
+|ZHmeaning = Pilgrim's Resting Area
+|TWname = 朝聖者憩所
+|TWromanised = Cháoshèng zhě qì suǒ
+|TWmeaning = same
+|CODEname=PILGRIMS_REST
+}}
+
+=== Weavenest Cindril ===
+{{Localisation
+|hr=false
+|DEname = Webnest Cindril
+|DEmeaning = Weavenest Cindril
+|ESname = Nido de Tejedora Cindril
+|ESmeaning = Nest of Weaver Cindril
+|FRname = Tisse-nid De Cindril
+|FRmeaning = Weavenest of Cindril
+|ITname = Tessinido Cindril
+|ITmeaning = Weavenest Cindril
+|JAname = 紡ぎの巣シンドリル
+|JAromanised = Tsumugi no su shindoriru
+|JAmeaning = Spinning Nest Cindrill
+|KOname = 방직둥지 신드릴
+|KOromanised = Bangjikdungji sindeulil
+|KOmeaning = Weaving Nest Cindril
+|PTname = Ninho de Tecelã Cindril
+|PTmeaning = Nest of Weaver Cindril
+|RUname = Ткачедом Синдриль
+|RUromanised = Tkačedom Sindril'
+|RUmeaning = Weaver House Cindril
+|ZHname = 辛德里尔织巢
+|ZHromanised = Xīndélǐěr zhī cháo
+|ZHmeaning = Cindril Weavenest
+|TWname = 辛德里爾織巢
+|TWromanised = Xīndélǐěr zhī cháo
+|TWmeaning = same
+|CODEname=WEAVE_FIELDS
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Areas}}
+
+[[fr:Champs Lointains]]
+[[zh:远野]]

@@ -1,0 +1,395 @@
+{{Navbar|page1=Garmond and Zaza|page2=Lost Garmond}}
+{{SS Infobox Boss
+|label1 = NPC
+|title1 = Garmond and Zaza
+|image1 = <gallery>
+Garmond_%26_Zaza_Idle.png|Idle
+Garmond Idle.png|Garmond
+Zaza Idle.png|Zaza
+</gallery>
+|location = Various
+|combat1 = false
+|va = Nic "Bitter Bits" (Garmond)<ref name = va>[https://x.com/Bitter_Bits/status/1963602428843970879 Twitter/X post] by Bitter Bits [[:File:Reference Garmond Voice.png|(Archive)]]</ref>
+|singnum = 2
+|s1 = Garmond
+|s2 = Zaza
+
+|label2 = Boss
+|title2 = Garmond & Zaza
+|image2 = <gallery>
+B_Garmond_%26_Zaza.png|Hunter's Journal
+Garmond & Zaza Combat Idle.png|Idle
+Garmond & Zaza Stagger.png|Staggered
+</gallery>
+|location2 = [[Whispering Vaults]]
+|numbers_required2 = 1
+|health2 = 460
+|damage_modifiers2 = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|drops2 = Ability to help in the [[High Halls]] gauntlet
+|va2 = Nic "Bitter Bits" (Garmond)<ref name = va>[https://x.com/Bitter_Bits/status/1963602428843970879 Twitter/X post] by Bitter Bits [[:File:Reference Garmond Voice.png|(Archive)]]</ref>
+|theme2 = [https://youtube.com/watch?v=swPmNk9_fw0 Generic Enemy Battle A Track]
+|g2 = Garmond and Zaza
+|singnum2 = 2
+|2s1 = Garmond
+|2s2 = Zaza
+}}
+{{Quote
+|Hr = Journal
+|Vigorous old knight and their noble companion, working together to see their lands cut free from haunted madness.<hr/>
+They too seek the spectre at the Haunting's heart, though I fear that foe would pose a challenge beyond their mortal limits.
+}}
+<b>Garmond and Zaza</b> are a pair of [[NPCs (Silksong)|NPCs]] and [[Bosses (Silksong)|bosses]] in <i>[[Hollow Knight: Silksong]]</i>. A vigorous old knight and his noble companion, they are on a quest to [[the Citadel]] to avenge their home village after it was overtaken by the [[Haunting]].<ref>Garmond and Zaza Hunter's Journal entry: <i>"Vigorous old knight and their noble companion, working together to see their lands cut free from haunted madness."</i></ref><ref name=dialog1/><ref name=dialog2/> The pair can be encountered in [[Pharloom]] battling haunted bugs and offering help to [[Hornet (Silksong)|Hornet]], and in [[Act 2]], can optionally be dueled. [[Lost Garmond]] is Garmond's [[Black-Threading|black-threaded]] form.
+
+== Background ==
+Garmond is an old knight travelling with his companion, Zaza. They are the only survivors from their home village after it was overcome by the [[Haunting]].<ref name=dialog1>Garmond: <i>"The fearsome haunting of thread, it overcame our fair folk... We are all that remain, left to carry their memory, and the hope to see some justice paid."</i></ref> They seek [[the Citadel]] and its rulers in their quest for vengeance<ref name=dialog2>Garmond: <i>"We seek that Citadel not for its gifts. Nay, sister! We seek its rulers, to demand their answer! By force if necessary! For our dear village to whom we pledge our shells."</i></ref> while also aiming to defend [[Pharloom]]'s inhabitants from meeting a similar fate to those of their village.<ref>Garmond: <i>"Our fair village may have fallen, but for these fellows... these scared few, our honour charges us to keep them safe."</i></ref>
+
+== In-game Events ==
+After first spotting [[Moorwing]], speaking to Garmond again prompts new dialogue. After this (or after entering Moorwing's arena), the two no longer appear in their original location, instead appearing in the area above the Moorwing fight, where talking to them gives the option to enlist their help in the boss battle.
+
+The duo can also appear in [[Sinner's Road]] in the long room right above where [[Disgraced Chef Lugoli]] can be found, having beaten a [[Roachkeeper]] (permanently preventing that enemy from spawning). They appear here after opening and entering the room to the east of them.
+
+Once [[Hornet (Silksong)|Hornet]] has defeated the [[Cogwork Dancers]], obtained the [[Clawline]], or activated the [[Bellshrine]] at [[Songclave]],<ref group=Source name=code>Flags related to <code>garmond</code> set in <code>GameManager.TimePasses()</code>.</ref> Garmond and Zaza sometimes appear to help fight enemies in hallway rooms in the [[Choral Chambers]].
+
+If Hornet has spoken to Garmond at any point, opening the shortcut to the roof above the [[Whispering Vaults]] makes Garmond able to be met there<ref group=Source name=code/> – he offers to engage in a friendly duel with Hornet. If he is defeated, he and Zaza can be encountered again in [[High Halls]] outside the Forum, and offer to help Hornet do battle inside. It is possible to miss the chance to duel if Hornet does not speak to Garmond at any point during her travels, as once he has entered the Citadel he does not reappear in any rooms that he has been seen in before.
+
+After Hornet has acquired the [[Threefold Melody]] and completed the <i>[[Fine Pins]]</i> [[Wish]],<ref group=Source name=code/> Garmond and Zaza can be found resting at Songclave and no longer ask to duel.
+
+During [[Act 3]], Garmond and Zaza can be found in various areas on the path up to [[the Citadel]] ([[the Marrow]], [[Mosshome]], [[Far Fields]], [[Greymoor]], [[Sinner's Road]], [[Shellwood]], or [[Blasted Steps]]). Sitting at a [[Bench (Silksong)|Bench]] after an encounter causes them to become available to find in another location. After three encounters with them or obtaining the [[Everbloom]],<ref group=Source name=code/> they stop appearing and the <i>[[Hero's Call]]</i> Wish becomes active in [[Bellhart]].
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+Garmond and Zaza have the following moves as both allies and opponents:
+
+* <b>Hornlance Sweep</b>: Zaza stands still while Garmond swings his hornlance back and forth 5 times, making large arcs above him.
+* <b>Gallant Joust</b>: Garmond readies his hornlance and the two charge towards his current opponent, continuing until they reach the edge of the arena platform.
+* <b>Cavalier Drop</b>: Zaza makes a tall leap towards their opponent at a short set distance. At the apex of the jump, Garmond stabs downwards with his hornlance straight into the ground.
+* <b>Charge</b>: Zaza runs towards their opponent to reposition for an attack.
+
+In battle against other foes, Garmond attempts to block enemy attacks or projectiles with his hornlance. After blocking 20 times, both he and Zaza become stunned and fall over. They recover after 6 seconds, or immediately if Hornet [[Bind|Binds]] near them.
+
+While dueling Garmond and Zaza, they can be knocked off the arena platform into the adjacent spikes, which deals 30 damage to them before they leap back onto the platform.
+
+Losing to Garmond and Zaza in their friendly duel does not result in a save file loss in {{Steel Soul Icon Mini|SS}} [[Steel Soul Mode (Silksong)|Steel Soul Mode]]. However, dying by being knocked into the spikes below the arena '''does'''.
+
+<hr />
+
+{{Stagger
+| Garmond falls to the ground as Zaza is flipped upside down. The stagger is cut short if they fall into the spikes.
+| 11
+| game = SS
+}}
+
+<hr />
+
+{{TabbedDialogue
+| Title1 = Greymoor
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = Guurroooo! Scoundrel! Fiend! Who dares wake brave Garmond from his well needed kip?<br>
+{{HTalk|I've no intent to disturb, sir bug. I am merely passing these towers and sought to better understand the lay of the place.}}<br> 
+Hmmph! Knowing the battlefield? A warrior's reason! Just look at you! Your stance and blade, almost alone they declare a fight. <br> As the bravest of knights, if direct challenge were offered, honour would see noble Garmond accept! <br> Fortunate that seems not your intent. In truth, I'm still sleeping off something of an altercation myself. Had our meeting called for a knightly duel, you'd not have had the luck to behold my finest form. 
+| Title1_Event2 = Speaking again
+| Title1_Dialogue2 = {{HTalk|What cause sees you travelling these blighted lands, Garmond? Do you also seek the Citadel above?}} <br>
+Aye! But do not mistake a valorous adventurer for a mere pilgrim. Mine is a sacred quest, shared with my most trusted companion, dear Zaza. <br> We seek that Citadel not for its gifts. Nay, sister! We seek its rulers, to demand their answer! By force if necessary! For our dear village to whom we pledge our shells. <br> The fearsome haunting of thread, it overcame our fair folk... We are all that remain, left to carry their memory, and the hope to see some justice paid.
+| Title1_Event3 = After spotting Moorwing
+| Title1_Dialogue3 = Mind yourself while you travel this grim land. A great winged beast has been stalking the heights, swooping without warning and tearing the life out of unwary travellers! <br>
+{{HTalk|I believe I have seen the creature you speak of. It may have marked me as prey, and followed me down onto the lower roads of the moor.}} <br>
+What what! Gurrrooo! The beast has been spotted! Once Zaza has fully rested, we'll set to tracking it down!
+| Title1_Event4 = Exhausted dialogue
+| Title1_Dialogue4 = {{HTalk|Good luck on your quest Garmond. If you hope to claim justice for your fellows passed, I suspect you've some challenge yet ahead.}} <br>
+Aye! Zaza and I'll fight to cavern's end if it need be, for the bugs held in our hearts, and our honour as knights!
+| Title1_Event5 = Before fighting Moorwing
+| Title1_Dialogue5 = Hold there, sister! A great beast stalks this land, swooping and screeching like an ill-mannered tyrant! <br> Zaza has been following the creature's scent, and now I'm sure we're almost upon it! We're so close my whiskers are bristling! <br> Such a beast is worthy quarry for the valiant, aye? What say you, shall we hunt the creature together? <br>
+| Title1_Event6 = Refusing aid
+| Title1_Dialogue6 = You would fight alone, sister? You would be undefeatable with me by your side! And Zaza also! You need only ask, and our hornlance would be yours.
+| Title1_Event7 = Speaking again
+| Title1_Dialogue7 = What say you, sister? Shall we join together in valiant combat?
+| Title1_Event8 = Accepting aid
+| Title1_Dialogue8 = {{HTalk|The battle ahead may indeed be arduous. I accept your offer of aid, sirs.}} <br>
+Gurrrro! Yes! No force in the kingdom can withstand our might! Lead on, sister! Zaza and I will be close behind!
+| Title1_Event9 = Speaking after accepting aid
+| Title1_Dialogue9 = Lead on, sister! Zaza and I will be close behind!
+| Title1_Event10 = After defeating Moorwing
+| Title1_Dialogue10 = Well fought sister, well fought! Though terrible and tenacious, the beast was no match for us. <br> Be proud! The bugs of this land will sing of our victory to their offspring, and their offspring's offspring, forever more!
+| Title1_Event11 = Exhausted dialogue
+| Title1_Dialogue11 = Though the dust has not yet settled over our battle here, Zaza and I must soon be away. The memory of our village calls us ever onward. Farewell, brave sister!
+| Title1_Event12 = Playing the [[Needolin]]
+| Title1_Dialogue12 = 
+[n] Always in our hearts...<br>
+We shall remember...<br>
+We shall fight...<br>
+For dear friends lost...<br>
+Till the end... together...<br>
+Only our duty... Only our claws...
+
+| Title2 =  Sinner's Road
+| Title2_Event1 = First conversation, if not previously met
+| Title2_Dialogue1 = Gurrroo! Fellow warrior, if you are wishing to lock blades, know you stand before the honoured knight Garmond, and brave companion Zaza. Together we will face bold to any challenge!<br>
+{{HTalk|I have no wish to fight you, sir bug. It is heartening to meet another on these roads of sound mind, and with fortitude enough to fight back against the haunted husks.}}<br>
+Aye! Too many, these unnatural opponents! We did hope Pharloom's vast expanse would still possess some place free of that tainted thread. <br>
+Alas, so far we've encountered only violence and decay. We greatly fear the Haunting afflicts this kingdom all.
+| Title2_Event2 = Speaking again
+| Title2_Dialogue2 = 
+How dank and fetid are these ancient roads, sister! My delicate whiskers are nearly overcome by the stench of evil in the air. <br>
+Woe betide those with delicate senses, such as poor Zaza here. The shadow of that ghastly Citadel falls heavily upon this place! <br>
+{{HTalk|I've seen many mighty structures fall to decay in my time. Such places often become home to predators. Keep your sights trained on what lurks in the fog, sirs.}} <br>
+| Title2_Event3 = Speaking again
+| Title2_Dialogue3 = 
+{{HTalk|Take care, Garmond. Whatever dangers these lands present, I'm sure what waits in that Citadel will be worse.}} <br>
+Aye, sister! Until that Citadel is reached and justice is served, Zaza and I shall not fall. <br>
+
+| Title3 = Choral Chambers
+| Title3_Event1 = After fighting together, if not previously met
+| Title3_Dialogue1 = 
+Gurrroo! A fellow warrior braves this blighted place! Know you stand before the honoured knight Garmond, and brave companion Zaza. <br>
+Together, Zaza and I are wish bound to scale this Citadel, and vanquish the horrors at its heart! <br>
+{{HTalk|Then good luck to you, sir bug. It is heartening to meet another of sound mind and fortitude enough to fight back against the many haunted husks.}} <br>
+Aye! Never-ending, these unnatural opponents! This Citadel seems its twisted source, and honour decrees we must fight on, until we rend the heart of its decay!
+| Title3_Event2 = After fighting together, otherwise
+| Title3_Dialogue2 = Ho, sister! A grand victory achieved, again. The haunted might of this place cannot stand against our pure hearts!
+| Title3_Event3 = Exhausted dialogue
+| Title3_Dialogue3 = Leave us to our noble hunt, sister! The Citadel's twisted bugs still infest these gilded halls. Many are their numbers, but we shall see their life's thread severed.
+
+| Title4 = Songclave
+| Title4_Event1 = First encounter
+| Title4_Dialogue1 = {{HTalk|Fair meeting again, sir knight. I see this bell has drawn you too towards its safety.}}<br>
+Who would have guessed, sister! A safe corner, hidden so high atop Pharloom's cursed crown!<br>
+Our fair village may have fallen, but for these fellows... these scared few, our honour charges us to keep them safe. Our hornlance shall raise for them! After some rest, of course.<br>
+{{HTalk|Hold fast to your new charge, Garmond. See these bugs survive, and know I aim, in time near, to cut down this curse at its core.}}
+| Title4_Event2 = Exhausted dialogue
+| Title4_Dialogue2 = Zaza and I will tarry here a little longer... These pilgrims need watching over, and we are committed to the task.
+
+| Title5 = Whispering Vaults
+| Title5_Event1 = First encounter
+| Title5_Dialogue1 = 
+Ho there, brave sister! What poetry has fate writ, that we should meet here at the peak of this ghastly Citadel! <br>
+Beasts and fiends, all here are lost to that horrid Haunting! And out from this golden corpse it seeps to plague the good bugs of the land below. Well, no more we say! <br>
+{{HTalk|You should beware brave sirs, the creature that commands this curse is a foe far beyond bug. I would not see your lives given in vain.}} <br>
+Pah! We beware nothing! We would give our lives a hundred times over to finally cut away the evil that clutches our kingdom!
+| Title5_Event2 = Second interaction, if Garmond has not previously explained their quest
+| Title5_Dialogue2 = 
+{{HTalk|What cause saw you first ascend to this Citadel, Garmond?}} <br>
+Mine is only the most sacred quest, sister! One shared with my most trusted companion, dear Zaza. <br>
+We sought this Citadel, to stand before its rulers, and demand their answer! By force if necessary! All for our dear village to whom we pledge our shells. <br>
+The fearsome haunting of thread, it overcame our fair folk.... We are all that remain, left to carry their memory, and the hope to see some justice paid.
+| Title5_Event3 = Speaking again
+| Title5_Dialogue3 = Gurro! I have a notion for you, sister. What say we cross our weapons here before we move on? Engage in some rollicking combat together? Have no fear, I will not strike a mortal blow!
+| Title5_Event4 = Turning down the duel
+| Title5_Dialogue4 = 
+Why spurn a little duel, sister? Surely it would put us in good stead for the trials ahead! <br>
+{{HTalk|If we were to duel it would doubtless be illuminating. Unfortunately, I lack the time for such frivolity. Farewell, sirs.}} <br>
+| Title5_Event5 = Speaking after turning down the duel
+| Title5_Dialogue5 = Many foes await us. Shall we duel with one another before moving on?
+| Title5_Event6 = Accepting the duel
+| Title5_Dialogue6 = Gurrrooooo! Gallantly answered, sister! Prepare your weapon!
+| Title5_Event7 = After winning the fight
+| Title5_Dialogue7 = 
+Hooof... let us stop the duel there. <br>
+I... hoof... I hope in my excitement I did not... hoof... bring down my lance too heavy upon you, sister. <br>
+{{HTalk|It was combat honourably conducted, sirs. But now, we should keep moving. It will not remain quiet here for long.}} <br>
+Y-yes, of course. Our good works are never done, and we must press ever on. There is no time to waste! <br>
+| Title5_Event8 = Speaking after being defeated
+| Title5_Dialogue8 = Ahh, sister! You have awoken. I hope that our powerful strikes did not leave you in too weak a condition.<br>
+We would even be willing to duel again, if you still have the strength!
+| Title5_Event9 = Declining the duel after having been defeated at least once
+| Title5_Dialogue9 = Very well, sister. Perhaps it is better that we all just rest here a little longer. <br>
+| Title5_Event10 = Exhausted dialogue
+| Title5_Dialogue10 = 
+{{HTalk|Must you not press on, sirs?}}<br>
+Oh, yes! We will be off at once. Very soon. I fear though, that Zaza must rest a little longer...
+| Title5_Event11 = Playing the [[Needolin]] during the duel
+| Title5_Dialogue11 =
+[n] Keep your hornlance high!<br>
+Meet your enemy's gaze!<br>
+Live or die, make them proud!<br>
+For their sake, fight fiercely on!<br>
+
+| Title6 = High Halls
+| Title6_Event1 = First interaction
+| Title6_Dialogue1 = 
+Ahh, can you feel it too? The thralls of the Citadel are gathered close, in overwhelming numbers! <br>
+Together though, the three of us would be more overwhelming still! Would you allow us to fight by your side, brave sister? <br>
+| Title6_Event2 = Refusing aid
+| Title6_Dialogue2 = You would fight alone, sister? You would be undefeatable with me by your side! And Zaza also! You need only ask, and our hornlance would be yours.
+| Title6_Event3 = Speaking again
+| Title6_Dialogue3 = What say you, sister? Shall we join together in valiant combat? <br>
+| Title6_Event4 = Accepting aid
+| Title6_Dialogue4 = 
+{{HTalk|The battle ahead may indeed be arduous. I accept your offer of aid, sirs.}} <br>
+Gurrrro! Yes! No force in the kingdom can withstand our might! Lead on, sister! Zaza and I will be close behind! <br>
+| Title6_Event5 = Speaking after accepting aid
+| Title6_Dialogue5 = Lead on, sister! Zaza and I will be close behind!
+| Title6_Event6 = After the battle
+| Title6_Dialogue6 = 
+Hoho sister, my whiskers are still quivering! That's how you know you had a rousing battle! <br>
+You go on ahead. Zaza and I will keep guard here and catch any stragglers. <br>
+| Title6_Event7 = Speaking again
+| Title6_Dialogue7 = You go on ahead. Zaza and I will keep guard here and catch any stragglers.
+| Title6_Event8 = Speaking after re-entering the room
+| Title6_Dialogue8 = Snnnrk... Zaza... Snnnrnrrk... Look sharp my lad...
+
+| Title7 = Act 3
+| Title7_Event1 = First meeting, after battle
+| Title7_Dialogue1 = Well met, sister. Though the beastly Citadel has finally been slain, still the lands caught beneath it suffer!<br>
+The evils long done by that cursed place have sunk into the kingdom's very foundations, and now they rise up as a black sickness.<br>
+{{HTalk|This darkness, it is a curse deadlier than the Haunting... a force from far below that will consume all if given the opportunity.}}<br>
+Hmm... Just so! And while wickedness still stalks these lands, our hornlance shall not rest!
+| Title7_Event2 = Exhausted dialogue
+| Title7_Dialogue2 = Zaza and I will fight through these cursed lands until every last one of the black-twisted fiends has been cut down!
+| Title7_Event3 = Second meeting, after battle
+| Title7_Dialogue3 = Hahhh... well met, sister. The task of hunting down these black-twisted fiends is no small one, eh? Still, we must not rest! Not while the cries of the innocent echo from every corner of the kingdom!
+| Title7_Event4 = Third meeting, after battle
+| Title7_Dialogue4 = Hahhh... hahhh... oh, sister. What a toll it exacts on us... this endless combat! Certainly when peace finally comes, we will be in the right mind to appreciate it...
+{{HTalk|You place too much burden upon yourself, sir.}}<br>
+{{HTalk|Though I share your ambition to free this land from its curse, I counsel you to rest, even if only for a short while.}}<br>
+Us, rest? While you, my dear sister, fight on so gallantly? Hahhhh... we cannot.<br>
+What would our old village think of us, were we to quit our charge? No, regardless of what you may believe, there's strength enough still in these old shells!
+| Title7_Event5 = Exhausted dialogue
+| Title7_Dialogue5 = We must press on... There is so much more... for us to do...
+| Title7_Event6 = Playing the [[Needolin]]
+| Title7_Dialogue6 = [n]Cut down the darkness!<br>
+For dear friends gone!<br>
+For family passed!<br>
+Our duty... till the end...<br>
+We remember your light...<br>
+| Title7_Event7 = After battle against Lost Garmond
+| Title7_Dialogue7 = {{HTalk|Sir knight, I am sorry... This was the only means to free you from the cursed threads.}}
+Hohhhh... fret not.... little one...<br>
+Be proud... you've grown so strong!<br>
+Zaza... let us just rest a little... and then we'll be away...<br>
+| Title7_Event8 = Playing the Needolin (Zaza)
+| Title7_Dialogue8 = [n]<b>Before completing [[Hero's Call]]:</b><br>
+Hurry hurry!<br>
+Hunter in red...<br>
+Follow quickly!<br>
+Friend spider...<br>
+<hr/>
+<b>After completing [[Hero's Call]] and returning to the arena:</b><br>
+Old bug... old friend...<br>
+Brave to the end...<br>
+So strong... so kind...<br>
+Let's meet back home...<br>
+Thank you...
+}}
+
+== Locations ==
+They can be first met in [[Greymoor]], in a small outcropping to the upper left of the [[Bellway]] Station. They can also be seen briefly in [[Sinner's Road]], in the long room right above where [[Disgraced Chef Lugoli]] can be found, having beaten a [[Roachkeeper]].
+
+{{Gallery
+|Image1 = Mapshot SS Garmond and Zaza 01.png!Locations in [[Greymoor]]
+|Image2 = Mapshot SS Garmond and Zaza 02.png!Location in [[Sinner's Road]]
+|Image3 = Mapshot SS Garmond and Zaza 03.png!Locations of possible encounters in the [[Choral Chambers]]
+|Image4 = Mapshot SS Garmond and Zaza 04.png!Location in [[Songclave]]
+|Image5 = Mapshot SS Garmond and Zaza 06.png!Location in the [[Whispering Vaults]]
+|Image6 = Mapshot SS Garmond and Zaza 05.png!Location in the [[High Halls]]
+}}
+
+In Act 3, they can be found in [[the Marrow]], [[Mosshome]], [[Far Fields]], [[Greymoor]], [[Sinner's Road]], [[Shellwood]], [[Blasted Steps]] and in [[Deep Docks]] where [[Swift Step]] is found.
+
+{{Gallery
+|Image1 = Mapshot SS Act3Garmond 01.png!Location in the Marrow
+|Image2 = Mapshot SS Act3Garmond 02.png!Location in Mosshome
+|Image3 = Mapshot SS Act3Garmond 03.png!Locations in the Far Fields
+|Image4 = Mapshot SS Act3Garmond 04.png!Location in Greymoor
+|Image5 = Mapshot SS Garmond and Zaza 02.png!Location in Sinner's Road
+|Image6 = Mapshot SS Act3Garmond 06.png!Location in Shellwood
+|Image7 = Mapshot SS Act3Garmond 07.png!Location in the Blasted Steps
+|Image8 = Mapshot SS Act3Garmond 08.png!Location in the Deep Docks
+}}
+
+==Creation and Development==
+[[File:Garmond and Zaza reveal trailer.png|thumb|250px|Garmond and Zaza in the reveal trailer]]
+Garmond and Zaza are inspired by Don Quixote and his horse respectively, characters from the 1600s novel ''Don Quixote''.<ref>[https://www.youtube.com/watch?v=mtCjcqixHTE&t=4511s Hollow Knight: Silksong | Voice of Garmond Plays | Part 14 | 9.22.25] (1:19:15):<i> "When they first gave me the the description of his character, they were like, "He's kind of like a Don Quixote."</i></ref> Initially, Garmond's placeholder name was "Bitterbug", likely in reference to his future voice actor BitterBits.<ref>[https://www.youtube.com/watch?v=FuW_l3_SUVg Origin Stories - EP03 Bitter Bits] (2:09:29): <i>"[...] his name wasn't Garmond at the time. His name was Bitterbug."</i></ref> This name is still used internally in places.<ref><code>Bitterbug</code> sound folder in the game files.</ref> Prior to ''Silksong''<nowiki>'</nowiki>s formal announcement in February 2019, Team Cherry reached out to BitterBits, offering him the role of voicing Garmond, which he accepted.<ref>[https://www.youtube.com/watch?v=FuW_l3_SUVg Origin Stories - EP03 Bitter Bits] (2:08:39): "''I remember them sending me an email and they were like "we'd like you to voice this character."''."</ref> Some of BitterBits' voice lines that he sent became unused outakes.<ref>[https://www.youtube.com/watch?v=ceKT-oNbx_A Hollow Knight: Silksong <nowiki>|</nowiki> Voice of Garmond Plays <nowiki>|</nowiki> Part 1 <nowiki>|</nowiki> 9.04.25] (28:44): "''There's, um, maybe maybe one day we can listen to some of the like based off of what they did end up using and then some of the outtake stuff is probably pretty stupid.''"</ref>
+
+Garmond and Zaza were first revealed in the <i>Silksong</i> reveal trailer, where they appeared in a Greymoor room that they do not appear in currently.<ref>[https://www.youtube.com/watch?v=pFAknD_9U7c Hollow Knight: Silksong Reveal Trailer]</ref> In March 2019, they were formally described in a blog post as "''A rambunctious older bug and his noble steed, on a quest to discover a new home. Garmond may be the chattier of the two, but Zaza could be the real brains of the pair.''"<ref>[https://www.teamcherry.com.au/blog/hk-physical-late-anniversary-celebration-silksong-mini-update Team Cherry blog post] of March 19th, 2019</ref> In February 2021's <i>EDGE Magazine</i> issue, Garmond and Zaza's ability to assist in the Moorwing battle was shown.<ref name="edge58">[https://pocketmags.com/edge-magazine/february-2021 Edge Magazine February 2021 edition], p. 58.</ref> Around June 2025, BitterBits re-recorded his lines in preperation for the upcoming release of ''Silksong''.<ref>[https://www.youtube.com/watch?v=ceKT-oNbx_A Hollow Knight: Silksong <nowiki>|</nowiki> Voice of Garmond Plays <nowiki>|</nowiki> Part 1 <nowiki>|</nowiki> 9.04.25] (36:35): "''The second to last pass on the on Garmond's lines. Uh that was when we were doing AI limit''".</ref><ref>[https://www.youtube.com/watch?v=FuW_l3_SUVg Origin Stories - EP03 Bitter Bits] (2:10:06): "''I actually ended up re-recording all of his lines, I think, in uh, it was like earlier this year. Um, probably around like June or something like that.''"</ref> They were at some point planned to appear in <code>Song_01</code>, a room in the Choral Chambers.<ref><code>garmondInSong01</code></ref><ref><code>garmondSeenInSong01</code></ref>
+
+==Gallery==
+===Act 1-2===
+{{Gallery
+|Image1=Screenshot SS Garmond and Zaza 01.png!Initial appearance in Greymoor
+|Image2=Screenshot SS Garmond and Zaza 02.png!Before fighting Moorwing
+|Image3=Screenshot SS Garmond and Zaza 03.png!Fighting Moorwing
+|Image4=Screenshot SS Garmond and Zaza 04.png!In Sinner's Road
+|Image5=Screenshot SS Garmond and Zaza 05.png!Fighting in the Choral Chambers
+|Image6=Screenshot SS Garmond&Zaza 01.png!Entering the arena in the Whispering Vaults
+|Image7=Screenshot SS Garmond&Zaza 02.png!Idle
+|Image8=Screenshot SS Garmond&Zaza 03.png!Hornlance Sweep
+|Image9=Screenshot SS Garmond&Zaza 04.png!Gallant Joust
+|Image10=Screenshot SS Garmond&Zaza 05.png!Cavalier Drop
+|Image11=Screenshot SS Garmond&Zaza 06.png!Charge
+|Image12=Screenshot SS Garmond&Zaza 07.png!Staggered
+|Image13=Screenshot SS Garmond and Zaza 06.png!In the High Halls
+|Image14=Screenshot SS Garmond and Zaza 07.png!Fighting in the Forum
+|Image15=Screenshot SS Garmond and Zaza 08.png!In Songclave
+|Image16=Screenshot SS Garmond and Zaza 09.png!Singing in Songclave
+}}
+===Act 3===
+{{Gallery
+|Image1=Screenshot SS Garmond and Zaza 10.png!In the Marrow
+|Image2=Screenshot SS Garmond and Zaza 11.png!In Mosshome
+|Image3=Screenshot SS Garmond and Zaza 12.png!In Far Fields west
+|Image4=Screenshot SS Garmond and Zaza 13.png!In Far Fields east
+|Image5=Screenshot SS Garmond and Zaza 14.png!In Greymoor
+|Image6=Screenshot SS Garmond and Zaza 15.png!In Sinner's Road
+|Image7=Screenshot SS Garmond and Zaza 16.png!In Shellwood
+|Image8=Screenshot SS Garmond and Zaza 17.png!In the Blasted Steps
+|Image9=Screenshot SS Garmond and Zaza 18.png!In Deep Docks
+|Image10=Screenshot SS Garmond and Zaza 19.png!Singing in Shellwood
+}}
+===Other===
+{{Gallery
+|Image1=Garmond and Zaza.png!Promotional art
+|Image2=Garmond and Zaza.gif!Official gif
+|Image3=Garmond and Zaza reveal trailer.png!<i>Silksong</i> reveal trailer
+|Image4=Screenshot SS EDGE 06.png!Pre-release screenshot
+}}
+
+== Trivia ==
+* After enlisting Garmond and Zaza's help in the [[Moorwing]] fight, if the game is exited and then re-entered, the two stop appearing, and they need to be spoken with again to rejoin the fight.
+* Garmond and Zaza can defeat Moorwing without outside help from Hornet.
+* If an enemy is lured to Garmond and Zaza outside of when they are fighting, they will remain in place and continuously perform Hornlance Sweep.
+* Despite not being haunted, Garmond still willingly pauses mid-battle (either with enemies or while sparring with Hornet) to sing if the Needolin is played.
+* While this behaviour is not present in their duel, if a projectile hits Garmond, he will block it using his hornlance.
+{{Localisation
+|DEname = Garmond & Zaza
+|DEmeaning = —
+|ESname = Garmond y Zaza
+|ESmeaning = Garmond and Zaza 
+|FRname = Garmond & Zaza
+|FRmeaning = —
+|ITname = Crimondo e Zinzin
+|ITmeaning = Crimondo and Zinzin
+|JAname= ガーモンド&ザザ
+|JAromanised= Gāmondo & zaza
+|JAkatakana = foreignenemy
+|JAmeaning = Garmond & Zaza
+|KOname = 가몬드 & 자자
+|KOromanised = Gamondeu & jaja
+|KOmeaning = Garmond & Zaza
+|PTname = Garmond e Zaza
+|PTmeaning = Garmond and Zaza 
+|RUname = Гармонд и Заза
+|RUromanised = Garmond i Zaza
+|RUmeaning = Garmond and Zaza
+|TWname = 加蒙德 & 扎扎
+|TWromanised = Jiāméngdé & zhāzhā
+|TWmeaning = same
+|ZHname = 加蒙德 & 扎扎
+|ZHromanised = Jiāméngdé & zhāzhā
+|ZHmeaning = Garmond & Zaza
+|CODEname = GARMOND_ZAZA
+}}
+{{Refs|hr=ss}}
+
+== Code References ==
+<references group="Source"/>
+
+{{SS Nav NPCs}}
+{{SS Nav Enemies}}
+
+[[es:Garmond y Zaza]]
+[[fr:Garmond et Zaza]]
+[[pt:Garmond e Zaza]]
+
+[[Category:NPCs (Silksong)]]
+{{#seo:|keywords=garmond and zaza, garmond & zaza, garmond, zaza, garamond, zaza, don quixote, bitterbug, zenzibo}}

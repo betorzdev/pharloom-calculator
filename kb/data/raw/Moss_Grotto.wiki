@@ -1,0 +1,206 @@
+{{SS Infobox Area
+| tab1 = Acts 1/2
+| image1 = <gallery>
+Moss_Grotto_Map_Marked.png|Marked
+Moss_Grotto_Map_Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Moss_Grotto_Map_Ruin_Marked.png|Marked
+Moss_Grotto_Map_Clean.png|Unmarked
+</gallery>
+| connection = [[Bone Bottom]]<br>[[Weavenest Atla]]<br>[[Red Memory]]<ref group="Note">Connects via [[Snail Shamans (Silksong)|Snail Shamans]]</ref>
+| ambience = [https://www.youtube.com/watch?v=CUR-P4v2Cyk Atmos Moss Cave]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]<br>
+[https://www.youtube.com/watch?v=u-j6oEvMQvM Lake Atmos]
+| main = [https://www.youtube.com/watch?v=BkKUOr72KL4& Moss Grotto MAIN]<br>
+[https://www.youtube.com/watch?v=FIUlMOXWbKQ Moss Grotto SUB]
+}}
+{{Quote|These overgrown caves offer little challenge to a skilled warrior. A place for reflection, perhaps.
+|[[Shakra]]
+| Hr = SS
+}}
+The <b>Moss Grotto</b> is the starting [[Areas (Silksong)|area]] of <i>[[Hollow Knight: Silksong]]</i>. Located in the lowlands of [[Pharloom]], it is a secluded, sparsely populated but largely benign cave overtaken by moss. It is part of the [[Mosslands]] alongside [[Bone Bottom]].
+== Description ==
+[[File:Screenshot SS Moss Grotto 25.png|thumb|200px|left|Clear green water]]
+Moss Grotto is a lush, verdant cave overgrown with plant life. Relatively secluded from the rest of the lowlands, it is covered in vivid lime-green moss and plants, with pools of clear water. A large pit in the Grotto's rough centre extends up into the enormous cavern that houses Bone Bottom, continuing past it all the way to the top of the [[Blasted Steps]]. To the left of this pit, the flora and fauna are more prominent, while to the right, the moss gives way to the foundation of bone and rock underneath.  
+
+Moss Grotto's enemies mostly consist of [[Mossmirs]], small, weak creatures with slow and predictable movement that rarely present a threat. The lack of distinct threats that allows young Mossmirs to survive can be the result of the aggression and protectiveness displayed by the [[Moss Mother]]s.<ref>Mossmir [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"This bug is soft and clumsy, but to its fortune its home caves seem relatively free of effective predators. I wonder why that is."</i></ref><ref>Moss Mother Hunter's Journal entry: <i>"Motherhood is an instinct that can push creatures beyond what seems their natural limits. It turns even weaker beasts like these into formidable foes."</i></ref> As such, Moss Grotto serves as a relatively safe starting area, allowing [[Hornet (Silksong)|Hornet]] to regain her bearings before leaving the secluded safety of the mossy caves. In several locations, Hornet can find a few [[Mossberry|Mossberries]] for the [[Moss Druid]], and at the rightmost point of the Grotto is a [[Needolin]] door blocking the entrance to [[Weavenest Atla]]. 
+
+At the start of the game, after destroying the cage trapping her and subsequently plummeting down, Hornet wakes up at the bottom of Moss Grotto, weakened but alive. At several points throughout the area, she suffers bouts of exhaustion as a result of her fall; these go away after she exits Moss Grotto.  
+
+In [[Act 3]], Moss Grotto remains relatively safe, although it is still affected by the devastation caused by black threads: [[Marrowmaw]], in the secret room directly east of Hornet's starting area, is dead, and in the room above and to the left of it, a [[Black-Threading|black-threaded]] Moss Mother can be fought.
+
+== History ==
+Moss Grotto is a calm and secluded area, which may be why the [[Weavers]] chose it as the location for Weavenest Atla, the largest and most complex of the [[Weavenest]]s.<ref>[[Caretaker]]: <i>"For the base, we'll be needin' a weapon of Weavers past. Search down low, aside the paths of bone, inside their largest nest."</i></ref> The Ruined Chapel at the top of the Grotto formerly served as a place of worship; however, the congregation would all eventually leave for [[the Citadel]], leaving only the [[Chapel Maid]] to take care of the building.<ref>Hornet and [[Chapel Maid]] dialogue:<br><i>Hornet: "What duty binds you to this old chapel, madam? The structure barely stands, and I see no signs of congregation."<br>Chapel Maid: "Aye! Gone! The lot'o them, fled and hidden. But I'm not leaving till I've set this place right... ...It's that Citadel above, you see. Even now, in Pharloom's long decline, the simple bugs, they're witless before it. Too grand. Too majestic. Too powerful. This building's state is a sad example of those who'd dare suggest another path..."</i></ref>
+Some time ago, a Moss Mother built a nest in the basement of the Ruined Chapel, much to the Chapel Maid's annoyance.<ref>Hornet and Chapel Maid dialogue:<br><i>Chapel Maid: "Hunter! I'm thinking it was you that cleared my basement?"<br>Hornet: "On first arrival here, the nesting creatures didn't take kindly to my passing."<br>Chapel Maid: "Ohho. They're cranky bugs, alright. And they made an awful mess down here with their hatching and breeding. You've my many thanks for seeing them off!"</i></ref>
+
+== How to Access ==
+Moss Grotto is the starting area of <i>[[Hollow Knight: Silksong]]</i>. Following the opening cinematic, Hornet wakes up at the bottom of the Grotto, at which point she can be controlled for the first time. Re-entering the area can be done by jumping into the pit at the centre of the area, or through the Ruined Chapel.
+
+{{TabbedPOI
+|Header = true
+
+|Enemy1 = Mossgrub 
+|Enemy2 = Mossmir
+|Enemy3 = Mawling
+|Enemy4 = Marrowmaw
+
+|Boss1 = Moss Mother
+|Boss1Note = ([[Act 3]] only)
+
+|Loot1_FileName = Frayed Rosary String
+|Loot1_Amount = 1
+|Loot2_FileName = Beast Shard
+|Loot2_Description = dropped from [[Marrowmaw]]
+|Loot3_FileName = Mossberry
+|Loot3_Amount = 2
+}}
+
+== Sub-area: Ruined Chapel ==
+{{SS Infobox Area
+| tab1 = Act 1/2
+|image1 = <gallery>
+Ruined_Chapel_Map_Marked.png|Marked
+Ruined_Chapel_Map_Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Ruined_Chapel_Map_Ruin_Marked.png|Marked
+Ruined_Chapel_Map_Clean.png|Unmarked
+</gallery>
+|ambience = [https://www.youtube.com/watch?v=CUR-P4v2Cyk Atmos Moss Cave]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]<br>
+[https://www.youtube.com/watch?v=tMCaF1G3fOM Shaman Room Atmos Loop] (Act 3)
+}}
+
+The <b>Ruined Chapel</b> is an abandoned church adorned with spiral symbols and overgrown with moss. The lower floors serve as a nest for the local fauna. Another bout of exhaustion afflicts Hornet when she first enters the Chapel, after which she can rest on a [[bench]] to the left. When she ascends to the upper level of the Chapel, she is locked inside a room and forced to fight the [[Moss Mother]]; upon defeating the creature, Hornet can ascend to the top of the Chapel, entering [[Bone Bottom]].
+
+=== Act 3 ===
+After their role in [[Grand Mother Silk]]'s ensnaring, the [[Snail Shamans (Silksong)|Snail Shamans]] take refuge in a previously closed area of the Ruined Chapel. The Snail Shamans here are a key part of [[Act 3]]'s story, teaching Hornet the [[Elegy of the Deep]], tasking her with retrieving the [[Old Hearts]], and bringing her into an [[Red Memory|old memory]] once she collects three of the hearts. Upon attaining the [[Everbloom]], Hornet wakes up to find the Snail Shamans have disappeared, leaving only their shells behind.
+
+In the newly opened section of the Chapel, to the right of the Snail Shamans, is a hole in the ceiling that requires [[Silk Soar]] to access. From here, Hornet can find the shells of the Shamans' ancestors, which she can bind to attain the [[Shaman Crest]].<ref>Caretaker: <i>"Bound yourself a new nature, aye? And from the shells of our ancestors, no less, all those many who’ve called these lands their own."</i></ref>
+
+{{TabbedPOI
+|NPC1 = Chapel Maid
+|NPC2 = Mister Mushroom (Silksong){{!}}Mister Mushroom
+|NPC2Note = ([[Act 3]] only)
+|NPC3 = Snail Shamans (Silksong){{!}}Snail Shamans
+|NPC3Note = ([[Act 3]] only)
+
+|Enemy1 = Mossgrub 
+|Enemy1Note = (spawned by Moss Mother)
+
+|Boss1 = Moss Mother
+
+|Loot1_FileName = Shaman Crest File
+|Loot1_Name = Shaman Crest
+|Loot2_FileName = Icon SS Elegy of the Deep Art
+|Loot2_Name = Elegy of the Deep
+|Loot2_Description = given by the [[Snail Shamans]] after completing the <i>[[SEEK: Spell Seeker]]</i> [[Acts|objective]]
+
+|LoreTabletsSource = SS Ruined Chapel
+}}
+
+{{Clear}}
+
+== Creation and Development ==
+{{Main|Cut Content (Silksong)/Areas#Moss Grotto}}
+[[File:Cut Western Weavenest Atla door.png|thumb|220px|<i>Silksong</i> 2019 demo screenshot]]
+Following its conception, Moss Grotto went through few changes. Initially, <i>Silksong</i> began in a very small, dark area known as the Bonechurch, which is visible on <i>Silksong</i>'s earliest development maps. Moss Grotto was created around September 2018 and replaced the Bonechurch around February 2019. 
+
+That month, the area was showcased to the public in the <i>Silksong</i> reveal trailer,<ref name="revealtrailer">[https://www.youtube.com/watch?v=pFAknD_9U7c Hollow Knight: Silksong Reveal Trailer]</ref> and was fully playable at the demo first displayed at E3 in June. In its demo iteration, many minor differences to the final game can be seen, most notably a second Weavenest door, due to the large singular [[Cut Content (Silksong)/Areas#Weavenest|Weavenest]] area still existing at the time.<ref name="demo">[https://www.youtube.com/watch?v=YNob8TV-IqY <nowiki>[</nowiki>GAMEPOLIS '19<nowiki>]</nowiki> Demo de Hollow Knight Silksong] on YouTube</ref>  [[Team Cherry]] added Moss Grotto because they identified the need for "<i>a calmer space that allowed players to more easily acquaint themselves with the game's control scheme and Hornet’s agility and relatively complex moveset</i>". They identified this after designing the Marrow, which, at the time, was the first major area in the game, leading Moss Grotto to be added as a sort of tutorial area.<ref name="zine">[https://shop.acmi.net.au/products/acmi-guide-hollow-knight-silk-song-softcover ACMI Guide: Hollow Knight Silksong], p. 35.</ref>
+
+However, [[Ari Gibson]] and [[William Pellen]] tried to avoid didacticism, with Gibson stating "<i>We're trying to be kind of respectful to the player. We're not trying to baby them.</i>" Since under their development philosophy, Moss Grotto could not have been a disconnected tutorial area, Team Cherry needed to make the "tranquil", lush area fit in the world of Pharloom. As they thought of the relationship between the area and Pharloom, the existence of Moss Grotto "<i>naturally suggested the existence of the mosslands</i>", which they intended to sit just outside of The Citadel’s sphere of influence.<ref name="zine" />
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Moss Grotto 01.png!Starting area
+|Image2 = Screenshot SS Moss Grotto 26.png!Starting area (Act 3)
+|Image3 = Screenshot SS Moss Grotto 02.png!Mossgrubs feeding
+|Image4 = Screenshot SS Moss Grotto 03.png!Crossings
+|Image5 = Screenshot SS Moss Grotto 06.png!Weavenest Atla entrance
+|Image6 = Screenshot SS Moss Grotto 05.png!Bench
+|Image7 = Screenshot SS Moss Grotto 04.png!Moss Mother arena
+|Image8 = Screenshot SS Moss Grotto 07.png!Hidden Marrowmaw
+|Image9 = Screenshot SS Moss Grotto 08.png!Snail Shamans' hideout
+|Image10 = Screenshot SS Moss Grotto 21.png!Shamans' tablet
+|Image11 = Screenshot SS Moss Grotto 22.png!Second Shamans' tablet
+|Image12 = Screenshot SS Moss Grotto 20.png!Shaman Crest's corpse<br>(pre-claiming)
+|Image13 = Screenshot SS Moss Grotto 09.png!Shaman Crest's corpse<br>(post-claiming)
+|Image14 = Silksong Early 003.png!Pre-release screenshot
+|Image15 = Old Church Temp.png!Pre-release screenshot
+|Image16 = Screenshot SS EDGE 09.png!Pre-release screenshot
+}}
+{{#ev:youtube|https://www.youtube.com/watch?v=WPRZpTlQO_o|300|center}}
+{{Hr|SS}}
+
+== Trivia ==
+* Technically, the Ruined Chapel exists in both Moss Grotto and Bone Bottom. However, all of the content relevant to the sub-area is found in Moss Grotto, with only the top being located in Bone Bottom.
+*Due to an invisible wall, it is not possible to leave through the loading zone directly above the starting point until defeating Moss Mother.
+{{Localisation
+|DEname = Moosgrotte
+|DEmeaning = Moss Grotto
+|ESname = Gruta Musgosa
+|ESmeaning = Mossy Grotto
+|FRname = Grotte Verdoyante
+|FRmeaning = Verdant Grotto
+|ITname = Grottamuschio
+|ITmeaning = Moss Cave
+|JAname = 苔の洞穴
+|JAromanised = Koke no horaana
+|JAmeaning = Moss Cave
+|KOname = 이끼 동굴
+|KOromanised = Ikki donggul
+|KOmeaning = Moss Cave
+|PTname = Gruta Musgosa
+|PTmeaning = Mossy Grotto
+|RUname = Мшистый грот
+|RUromanised = Mšistyj grot
+|RUmeaning = Mossy Grotto
+|ZHname = 苔藓洞穴
+|ZHromanised = Táixiǎn dòngxué
+|ZHmeaning = Moss Grotto
+|TWname = 苔蘚洞窟
+|TWromanised = Táixiǎn dòngkū
+|TWmeaning = Moss Cave
+|CODEname = MOSS_CAVE</code><br><code>MOSSCAVE
+}}
+===Ruined Chapel===
+{{Localisation
+|hr=false
+|DEname = Ruinierte Kapelle
+|DEmeaning = Destroyed Chapel
+|ESname = Capilla en Ruinas
+|ESmeaning = Ruined Chapel
+|FRname = Ancienne Chapelle
+|FRmeaning = Ancient Chapel
+|ITname = Cappella in Rovina
+|ITmeaning = Chapel in Ruin
+|JAname = 朽ちたチャペル
+|JAromanised = Kuchita chaperu
+|JAmeaning = Decayed Chapel
+|KOname = 황폐한 예배당 
+|KOromanised = Hwangpyehan yebaedang
+|KOmeaning = Desolate Chapel
+|PTname = Capela Arruinada 
+|PTmeaning = Ruined Chapel
+|RUname = Старая капелла
+|RUromanised = Staraja kapella
+|RUmeaning = Ancient Chapel
+|ZHname = 颓败教堂 
+|ZHromanised = Tuíbài jiàotáng
+|ZHmeaning = Ruined Chapel
+|TWname = 頹敗教堂
+|TWromanised = Tuíbài jiàotáng
+|TWmeaning = same
+|CODEname = BONECHURCH
+}}
+
+{{Refs|hr=ss}}
+{{Refs|hr=small|type=note}}
+{{SS Nav Areas}}
+[[es:Gruta del Musgo]]
+[[fr:Grotte Verdoyante]]
+
+[[zh:苔藓洞穴]]

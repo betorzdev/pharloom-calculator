@@ -1,0 +1,77 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_High_Halls_06.png|400px|center]]
+|[[File:Mapshot_SS_High_Halls_Arena_1.png|250px|center]]
+|-
+| colspan="2" | Enemy gauntlet in the Forum, required to reach [[Conductor Ballador]]. Either [[Garmond and Zaza]] or [[Shakra]] can assist in this fight if certain conditions are met.
+
+[[Clawmaiden]]s in this gauntlet can be removed by destroying the Clawmaiden core.
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>[[Conductor's Melody]]</center>
+| <center>[https://www.youtube.com/watch?v=YCZjk270nvQ The Choir]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Choristor.png|35x35px|link=Choristor]] [[Choristor]], left<br/>
+[[File:HJ_Reed.png|35x35px|link=Reed]] [[Reed]], top centre<br/>
+[[File:HJ_Envoy.png|35x35px|link=Envoy]] [[Envoy]], right
+|
+|-
+|
+[[File:HJ_Choristor.png|35x35px|link=Choristor]] Choristor x2, left and right
+| Either Garmond and Zaza or Shakra arrive a few moments after the wave begins.
+|-
+|
+[[File:HJ_Reed.png|35x35px|link=Reed]] Reed, top left<br/>
+[[File:HJ_Choir Bellbearer.png|35x35px|link=Choir Bellbearer]] [[Choir Bellbearer]], top right<br/>
+[[File:HJ_Clawmaiden.png|35x35px|link=Clawmaiden]] [[Clawmaiden]], near Hornet
+| Clawmaiden arrives shortly after.
+|-
+|
+[[File:HJ_Minister.png|35x35px|link=Minister]] [[Minister]] x2, left and right
+| Defeating one enemy spawns the next row.
+|-
+|[[File:HJ_Clawmaiden.png|35x35px|link=Clawmaiden]] Clawmaiden, near Hornet
+|
+|-
+|[[File:HJ_Maestro.png|35x35px|link=Maestro]] [[Maestro]] x2, top left and right
+|
+|-
+|
+[[File:HJ_Choir Clapper.png|35x35px|link=Choir Clapper]] [[Choir Clapper]], centre
+| Drops down from the ceiling.
+|-
+|
+[[File:HJ_Reed.png|35x35px|link=Reed]] Reed x2, top left and right<br/>
+[[File:HJ_Choir Bellbearer.png|35x35px|link=Choir Bellbearer]] Choir Bellbearer, top centre
+|
+|-
+|
+[[File:HJ_Choir Bellbearer.png|35x35px|link=Choir Bellbearer]] Choir Bellbearer x2, top left and right<br/>
+[[File:HJ_Choristor.png|35x35px|link=Choristor]] Choristor, centre
+| Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Clawmaiden.png|35x35px|link=Clawmaiden]] Clawmaiden, near Hornet
+|
+|-
+|
+[[File:HJ_Minister.png|35x35px|link=Minister]] Minister x2, left and right<br/>
+[[File:HJ_Choir Bellbearer.png|35x35px|link=Choir Bellbearer]] Choir Bellbearer, top centre
+|
+|-
+|
+[[File:HJ_Maestro.png|35x35px|link=Maestro]] Maestro, left<br/>
+[[File:HJ_Reed.png|35x35px|link=Reed]] Reed, right
+|
+|-
+|
+[[File:HJ_Choir Clapper.png|35x35px|link=Choir Clapper]] Choir Clapper x2, left and right
+| Both drop down from the ceiling. The duo Choir Clappers have unique behaviour where only one can attack at a time while the other backs away.
+|}

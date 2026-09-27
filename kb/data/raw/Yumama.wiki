@@ -1,0 +1,63 @@
+{{SS Infobox Enemy
+|drops = None
+|health = 75
+|damage_modifiers = {{SS Spaced Damage Modifiers|2|1.25|1|1|1}}
+|numbers_required = 3<br>(Instantly completed on [[Crust King Khann]]'s death)
+}}
+{{Quote
+|Hr = Journal
+|Large, gelatinous drifter. Chases away threats by hurling its bulk around.<hr/>
+When defeated, it splits into many smaller forms. Yet another remarkable creature of this land before the monarch.
+}}
+<b>Yumamas</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are large gelatinous drifters, long lost to time and living on only in memory.
+
+== Behaviour and Tactics ==
+Floats around idly, shaking and then slamming itself at Hornet in a straight line if she is in its general vicinity. <br>
+Deals {{Damage|2}} of contact damage.<br>
+Spawns 5 [[Yuma]]s on death.
+
+== Location ==
+Yumamas can only be found in [[Crust King Khann]]'s [[Elegy of the Deep|Memory]] of the [[Coral Tower]] during [[Acts|Act 3]].
+
+{{Gallery
+|Image1 = Mapshot SS Coral Tower.png
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Yumama 01.png!Idle
+|Image2 = Screenshot SS Yumama 02.png!Attacking
+|Image3 = Screenshot SS Yumama 03.png!Death
+}}
+
+== Trivia ==
+* Yumamas do not respond to the [[Needolin]].
+{{Localisation
+|DEname = Yumama
+|DEmeaning = —
+|ESname = Yumama
+|ESmeaning = —
+|FRname = Yumama
+|FRmeaning = —
+|ITname = Yumama
+|ITmeaning = —
+|JAname = ユママ
+|JAromanised = Yumama
+|JAkatakana = foreignenemy
+|JAmeaning = Yumama
+|KOname = 유마마
+|KOromanised = Yumama
+|KOmeaning = Yumama
+|PTname = Yumama
+|PTmeaning = —
+|RUname = Юмама
+|RUromanised = Jumama
+|RUmeaning = Yumama
+|ZHname = 尤玛玛
+|ZHromanised = Yóumǎmǎ
+|ZHmeaning = Yumama
+|CODEname=CORAL_BIG_JELLYFISH
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

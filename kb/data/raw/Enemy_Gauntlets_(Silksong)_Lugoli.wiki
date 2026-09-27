@@ -1,0 +1,25 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot SS Sinner's Road 13.png|400px|center]]
+|[[File:Mapshot_SS_Disgraced_Chef_Lugoli_01.png|400px|center]]
+|-
+| colspan="2" | [[Disgraced Chef Lugoli]]'s enemy gauntlet as part of their boss encounter. Requires [[Faydown Cloak]].
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>[[Pickled Muckmaggot]]</center>
+| <center>[https://youtu.be/M-z6fPrpg-k Cut Through (Main)] (Enemy Gauntlet)<br>[https://youtu.be/M-z6fPrpg-k?t=92 Cut Through (Main + Percussion)] (Lugoli)</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Roachserver.png|35x35px|link=Roachserver]] [[Roachserver]] x2, left and right
+|
+|-
+|
+[[File:HJ_Disgraced Chef Lugoli.png|35x35px|link=Disgraced Chef Lugoli]] [[Disgraced Chef Lugoli]], centre
+|Slams down from the ceiling, flinging two arcing Muckmaggot Globs on both sides.<br>If fought in Act 3, Lugoli becomes [[Black-Threading|black-threaded]] shortly after arriving.
+|}

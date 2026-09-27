@@ -1,0 +1,63 @@
+{{Navbar|icons=true|page1=Maiden's Soul|page2=Hermit's Soul|page3=Seeker's Soul}}
+{{SS Infobox Item
+| image = [[File:Hermit's Soul.png]]
+| source = Given by the [[Bell Hermit]] after accepting the <i>[[Silk and Soul]]</i> Wish
+| description = Heavy bell filled with the shimmering soul of the Bell Hermit.
+}}
+
+{{Quote
+| Oh no. I'll give it. Not in the hope you'll succeed... Bah! In that, there's slim chance. I give just to see that restless energy unleashed. So much soul, found and formed. Generations of it, all going to waste. Better it's given a chance to blaze.
+| [[Bell Hermit]]
+| Hr = SS
+}}
+
+The <b>Hermit's Soul</b> is a [[Items (Silksong)#Deliverables|deliverable item]] in <i> [[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+The <b>Hermit's Soul</b> can be given to the [[Caretaker]] in [[Songclave]] along with the [[Maiden's Soul]], [[Seeker's Soul]], and [[Snare Setter]] to complete the <i>[[Silk and Soul]]</i> Wish.
+
+{{Gallery
+|Image1 = Mapshot SS Sherma 07.png!Location in Choral Chambers
+|Image2 = Screenshot SS Caretaker 01.png!Caretaker in Choral Chambers
+}}
+
+== How to Acquire ==
+After accepting the <i>[[Silk and Soul]]</i> wish, [[Hornet (Silksong)|Hornet]] must travel to the Bellways underneath [[Bellhart]] and speak with the [[Bell Hermit]] who will give her the <b>Hermit's Soul</b>.
+
+{{Gallery
+|Image1 = Mapshot SS Bell Hermit 01.png!Location in Bellhart
+|Image2 = Screenshot SS Bellhart 06.png!Bell Hermit in Bellhart
+}}
+
+{{Localisation
+|DEname = Einsiedlerseele
+|DEmeaning = Hermit Soul
+|ESname = Alma del Ermitaño
+|ESmeaning = Hermit's Soul
+|FRname = L'âme de l'ermite
+|FRmeaning = The Hermit's Soul
+|ITname = Anima dell'eremita
+|ITmeaning = Hermit's Soul
+|JAname = 隠者の魂
+|JAromanised = Inja no tamashii
+|JAmeaning = Hermit's Soul
+|KOname = 은둔자의 영혼
+|KOromanised = Eundunjaui yeonghon
+|KOmeaning = Hermit's Soul
+|PTname =  Alma do Eremita
+|PTmeaning = Hermit's Soul
+|RUname = Душа отшельника
+|RUromanised = Duša otšel'nika
+|RUmeaning = Hermit's Soul
+|TWname = 隱士之魂
+|TWromanised = Yǐnshì zhī hún
+|TWmeaning = same
+|ZHname = 隐者之魂
+|ZHromanised = Yǐnzhě zhī hún
+|ZHmeaning = Hermit's Soul
+|CODEname = SNARE_SOUL_BELLHERMIT
+|CODEmeaning = 
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Items}}

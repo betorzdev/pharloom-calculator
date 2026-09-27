@@ -1,0 +1,73 @@
+{{SS Infobox Ability
+| description1 = Ancient Weaver technique. Cling to sheer surfaces and leap off to rapidly scale heights.
+| title2 = <small>Bound the Ancestral Art</small><br>Cling Grip
+| description2 = Press JUMP<hr/>
+Cling to sheer surfaces and leap to rapidly scale heights.
+| input = LEFT/RIGHT against a wall
+JUMP while sliding
+| location = [[Shellwood]]
+}}
+
+<b>Cling Grip</b> is an [[Abilities (Silksong)|Ability]] that [[Hornet (Silksong)|Hornet]] acquires in <i>[[Hollow Knight: Silksong]]</i>. With it, Hornet can climb up vertical walls, enabling access to several new areas and items. It functions similarly to the [[Mantis Claw]] in <i>[[Hollow Knight]]</i>.
+
+== Function ==
+When pressing against a vertical wall, Hornet briefly sticks to the surface before slowly sliding down. Downsliding can be prevented with the [[Ascendant's Grip]] tool by holding the directional movement button that goes towards the wall.
+* While clinging to a wall, press JUMP to launch off the wall.
+* Move in the direction of the wall while repeatedly pressing JUMP to climb up the wall.
+* While clinging to a wall and pressing LEFT/RIGHT up against the wall, press SPRINT to climb the wall vertically.
+
+Cling Grip is necessary to complete some platforming segments of the game. 
+
+== How to Acquire ==
+Cling Grip can be found in a [[Weaver Burial Spire]] in [[Shellwood]], past a platforming section, which can be accessed after defeating [[Sister Splinter]] in the room to the right. 
+
+{{Gallery
+| Image1 = Mapshot SS Cling Grip.png!Location in Shellwood
+| Image2 = Screenshot SS Shellwood 01.png!Weaver spire
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Icon SS Cling Grip Splash.png ! Splash Art
+|Image2 = Icon SS Cling Grip Splash Clear.png ! Splash Art
+}}
+
+== Trivia ==
+* The fight with Sister Splinter can be skipped by luring over a [[Phacia]] using [[Challenge]] and bouncing off it with the Needle.
+
+{{Localisation
+|DEname = Klammergriff
+|DEmeaning = Fastening Grip
+|ESname = Agarre de pinza
+|ESmeaning = Pincer Grip
+|FRname = Prise ferme
+|FRmeaning = Firm Grip
+|ITname = Presa Avvinghiante
+|ITmeaning = Grappling Grip
+|JAname = 接着の爪
+|JAromanised = Setchaku no tsume
+|JAmeaning = Fastening Claw
+|KOname = 매달리기
+|KOromanised = Maedalligi
+|KOmeaning = Gripping
+|PTname = Garra Aderente
+|PTmeaning = Clinging Claw
+|RUname = Цепкий захват
+|RUromanised = Cepkij zaxvat
+|RUmeaning = Clingy Grip
+|TWname = 蛛攀術
+|TWromanised = Zhū pān shù
+|TWmeaning = same
+|ZHname = 蛛攀术
+|ZHromanised = Zhū pān shù
+|ZHmeaning = Spider Climbing Technique
+|CODEname = WALLJUMP
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Skills}}
+
+{{#seo:|keywords=silksong, cling grip, mantis claw, wall jump, wall run, climb}}
+[[fr:Prise ferme]]
+[[pt:Garra Aderente]]

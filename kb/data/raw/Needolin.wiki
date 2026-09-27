@@ -1,0 +1,129 @@
+{{Navbar|page1=Needolin|page2=Beastling Call|page3=Elegy of the Deep}}
+{{For|a list of all dialogue that can be seen when the Needolin is used in specific locations|Needolin Locations}}
+{{SS Infobox Ability
+| description1 = Holy Weaver talent. Play ancient melodies by stringing Silk along the needle.
+| title2 = <small>Bound the Ancestral Art</small><br>Needolin
+| description2 = Hold NEEDOLIN<hr/>
+Play ancient melodies by stringing Silk along the needle. Silk will be expended. Strike enemies to replenish Silk.
+| input = NEEDOLIN
+| location = [[Bellhart]]
+| music = [[File:Needolin General.ogg]]
+}}
+
+The <b>Needolin</b> is an [[Abilities (Silksong)|Ability]] that [[Hornet (Silksong)|Hornet]] acquires in <i>[[Hollow Knight: Silksong]]</i>. Using her [[Needle]] and [[Silk]], Hornet plays a melody that can extract unique dialogue from most [[NPCs (Silksong)|NPCs]] and [[Enemies (Silksong)|enemies]] in the game. It can also reveal messages, activate mechanisms, and summon the help of certain creatures.
+
+== Function ==
+Hold down [[Controls (Silksong)|NEEDOLIN]] to begin playing at any point. This can perform several functions:
+
+* Causes nearby NPCs to start singing, prompting unique dialogue if the NPC has any.
+* Stuns enemies in place for several seconds as they sing, revealing unique dialogue.
+** Does not affect [[Black-Threaded]] and [[Lifeblood|plasmified]] enemies.
+* Reveals silk strings above [[Haunting|haunted]] enemies, angled towards [[Grand Mother Silk]].
+** These strings do not appear during Act 3.
+* Reveals unique dialogue for certain [[Bosses (Silksong)|Bosses]].
+** This dialogue is easier to prompt if the Needolin is played while the boss is staggered.
+* Reveals ghostly apparitions near specific areas or corpses (referred to as Memories), along with unique dialogue.
+* Triggers [[Silk Flies]] in [[The Mist]] to fly to the correct path.
+* Activates certain [[Lore Tablets (Silksong)|Lore Tablets]] to reveal messages left by the [[Weavers]].
+* Unlocks doors to Weavenests throughout [[Pharloom]].
+* Transports Hornet to the [[Bellways|Bellway]] which the [[Bell Beast]] is currently at, using the [[Beastling Call]].
+* Summons the [[Bell Beast]] at Bellway stations rather than calling for it.
+* Causes any [[Void]] corrupted Silk in the background of various areas during [[Act 3]] to lash out with tendrils.
+
+Playing the Needolin is also required at specific points for the following quests:
+
+* Opening a Weavenest door in [[Widow]]'s memory immediately after binding the Needolin.
+* Opening the great door in [[Last Judge]]'s arena for the <i>[[Acts#Act_1:_Pharloom|OPEN: Grand Gate]]</i> quest after activating 5 [[Bellshrine]]s.
+* Playing a eulogy for [[Shakra]]'s master at the end of the <i>[[Trail's End]]</i> Wish.
+* Learning and playing the [[Threefold Melody]] for the <i>[[Acts#Act_1:_Pharloom|ASCEND: Pharloom's Crown]]</i> quest.
+* Summoning the [[Fayforn]] at the peak of [[Mount Fay]] in order to acquire the [[Faydown Cloak]].
+* Activating the Soul Snare set by the [[Caretaker]] after defeating Grand Mother Silk for the <i>[[Acts#Act_2:_Citadel_of_Song|DESTROY: Soul Snare]]</i> quest.
+* Learning the [[Beastling Call]] and the [[Elegy of the Deep]].
+* Entering certain memories using the Elegy of the Deep for the <i>[[Acts#Act_3:_Abyss|SEEK: The Old Hearts]]</i> Objective.
+* Finding uncollected memory orbs and activating the shrine in [[Lost Verdania]].
+* Awakening the [[Watcher at the Edge]].
+* Drawing [[Mister Mushroom (Silksong)|Mister Mushroom]] from the ground for the <i>[[Passing of the Age (Wish)|Passing of the Age]]</i> Wish.
+
+<i>For a complete list of all Needolin Dialogue, see [[Needolin Locations]].</i>
+
+Needolin can be amplified by equipping the {{CrestSlot|Yellow}} [[Spider Strings]], which increases its range and the time it effects enemies.
+
+== How to Acquire ==
+The Needolin is acquired after defeating [[Widow]] in [[Bellhart]] and binding her power.
+
+{{Gallery
+| Image1 = File:Mapshot SS Widow 01.png!Location in Bellhart
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Icon SS Needolin Splash.png ! Splash Art
+|Image2 = Icon SS Needolin Splash Clear.png ! Splash Art
+|Image3 = Silksong Early 027.png ! Pre-release screenshot
+|Image4 = Screenshot SS EDGE 01.png ! Pre-release screenshot
+}}
+
+{| align="center"
+| [[File:Needolin General.ogg|center|loop|thumb|Needolin general melody]]
+| [[File:Conductor's Melody Needolin.ogg|center|loop|thumb|Conductor's Melody]]
+| [[File:Vaultkeeper's Melody Needolin.ogg|center|loop|thumb|Vaultkeeper's Melody]]
+|-
+| [[File:Architect's Melody Needolin.ogg|center|loop|thumb|Architect's Melody]]
+| [[File:Threefold Melody Needolin.ogg|center|loop|thumb|Threefold Melody]]
+| [[File:Needolin Beastling Call.ogg|center|loop|thumb|Beastling Call]]
+|-
+| [[File:Needolin Elegy of the Deep.ogg|center|loop|thumb|Elegy of the Deep]]
+| [[File:Shakra sing rite accompaniment loop.ogg|center|loop|thumb|Trail's End]]
+| [[File:Needolin Silk Snare.ogg|center|loop|thumb|Silk Snare]]
+|}
+
+== Trivia ==
+* "Needolin" is a [[wikipedia:Portmanteau|portmanteau]] of [[needle]] and [[wikipedia:Violin|violin]] or [[wikipedia:Mandolin|mandolin]]. 
+* The main melody played by Hornet on the Needolin is a variation of the <i>Dies irae</i> melody, used extensively throughout the game's [[Soundtrack (Silksong)#Trivia|soundtrack]].
+* The Needolin can be played while resting on a [[Bench (Silksong)|bench]], but the [[Beastling Call]] and [[Elegy of the Deep]] can not.
+** After or while playing, [[Sylphsong]] stops regenerating Silk.
+* In certain locations, Hornet can play unique melodies:
+** She plays the eulogy taught by [[Shakra]] in the <i>[[Trail's End]]</i> [[wish]] whenever the Needolin is played in her master's room.
+** She plays the [[Threefold Melody|Conductor's Melody]] whenever the Needolin is played beside [[Conductor Ballador]].
+** She plays the [[Threefold Melody|Vaultkeeper's Melody]] in either [[Vaultkeeper Cardinius|Cardinius]]' room or the Bellhome while the gramophone is playing the [[Sacred Cylinder]].
+** She plays the [[Threefold Melody|Architect's Melody]] whenever she is on the platform that activated the automated choir at the top of the [[Cogwork Core]]. (This, however, is inaccessible during Act 3)
+
+
+
+{{Localisation
+|DEname = Nadoline
+|DEmeaning = Portmanteau of {{lang|de|<i>Nadel</i>}} (needle) and either {{lang|de|<i>mandoline</i>}} (mandolin) or {{lang|de|<i>violine</i>}} (violin).
+|ESname = Agujolín
+|ESmeaning = Portmanteau <i>aguja</i> (needle) and <i>violín</i> (violin).
+|FRname = Aiguilline
+|FRmeaning = Portmanteau <i>aiguille</i> (needle) and <i>mandoline</i> (mandolin).
+|ITname = Aghironda
+|ITmeaning = Portmanteau of <i>ago</i> (needle) and <i>ghironda</i> ([[wikipedia:Hurdy-gurdy|hurdy-gurdy]], a string instrument).
+|JAname = ニードリン
+|JAromanised = Nīdorin
+|JAkatakana = foreign
+|JAmeaning = Needolin
+|KOname = 바늘의 선율
+|KOromanised = Baneului seonyul
+|KOmeaning = Needle's Melody
+|PTname = Agulino
+|PTmeaning = Portmanteau of <i>agulha</i> (needle) and <i>violino</i> (violin). 
+|RUname = Иглончель
+|RUromanised = Iglončel'
+|RUmeaning = Portmanteau of игла <i>igla</i> (needle) and виолончель <i>violončel'</i> (cello).
+|TWname = 織憶弦針
+|TWromanised = Zhī yì xián zhēn
+|TWmeaning = same
+|ZHname = 织忆弦针
+|ZHromanised = Zhī yì xián zhēn
+|ZHmeaning = Memory-weaving String Needle
+|CODEname = NEEDOLIN
+}}
+
+{{Refs|hr=SS}}
+
+
+{{SS Nav Skills}}
+{{#seo:|keywords=silksong, music, needolin, harp, where to find}}
+[[fr:Aiguilline]]
+[[pt:Agulino]]

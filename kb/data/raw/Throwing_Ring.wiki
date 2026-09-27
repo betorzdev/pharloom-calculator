@@ -1,0 +1,79 @@
+{{SS Infobox Tool
+| image = <gallery>
+Throwing Ring.png|Inventory
+Throwing Ring Poison.png|Pollip Pouch
+</gallery>
+| type = Red
+| damage = 4/6/9/11/14
+| max = 10/12/15/17/20
+| refill_type = Repair
+| refill = {{S|4}}
+| effect = Throws a ring that ricochets between enemies and surfaces
+| location = [[Bilewater]]
+| description = Hardened throwing weapon of the warrior Shakra.<hr>Blunt force weapon that rebounds between enemies and hard surfaces.
+}}
+
+{{Quote
+| You would take these rings, and the learnings to make more. They are built of a clever method devised by my master and will crush hard this kingdom's toughest shell. Use them, and she is remembered!
+| [[Shakra]]
+| Hr = SS
+}}
+
+<b>Throwing Ring</b> is a {{CrestSlot|Red|1}} in <i>[[Hollow Knight: Silksong]]</i>. It acts as a ricocheting throwable weapon.
+
+== Usefulness ==
+Throwing Ring is best used in small enclosed spaces with many [[Enemies (Silksong)|enemies]] or one large enemy. Its ability to bounce between enemies allows it to efficiently clean up smaller groups of foes, and its ability to bounce off surfaces can allows it to deal damage multiple times to larger enemies in smaller rooms.
+
+== How to Acquire ==
+Given to [[Hornet (Silksong)|Hornet]] by [[Shakra]] after finishing the <i>[[Trail's End]]</i> [[Wish]].
+
+{{Gallery
+|Image1 = Mapshot SS Shakra Trail's End.png!Location in Bilewater
+|Image2 = Screenshot SS Bilewater 17.png!Shakra in Bilewater during ''Trail's End''
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Recording_SS_Throwing-Rings.gif!Hornet deploying Throwing Rings
+|Image2 = GIF SS Throwing Rings 01.gif!Throwing rings bouncing off enemies
+}}
+
+== Trivia ==
+* When the Throwing Ring is equipped and has at least two uses left, Hornet's usual [[Challenge]] animation will be replaced with Hornet clanging the Throwing Rings together and saying "Poshanka!", similar in manner to [[Shakra]]'s greeting. 
+** This variant of Challenge costs no [[Silk]] (as opposed to taking 1 strand) and will not increase [[Needle]] damage; instead, it increases the damage of the next use of Throwing Ring by 50%.
+** When used next to [[Shakra]], she will respond with "Poshanka!" as well.
+** Additionally, if used next to one of Shakra's calling rings, it will summon her as if it was struck.
+* This tool and the [[Snare Setter]] are the only two tools required for [[Sister of the Void]] Ending.
+
+{{Localisation
+|DEname = Wurfring
+|DEmeaning = Throwing Ring
+|ESname = Anillo arrojadizo
+|ESmeaning = Throwing Ring
+|FRname = Lance-anneaux
+|FRmeaning = Throw Rings
+|ITname = Anello da lancio
+|ITmeaning = Throwing Ring
+|JAname = 投げ輪
+|JAromanised = Nage wa
+|JAmeaning = Throwing Ring
+|KOname = 투척 고리
+|KOromanised = Tucheok gori
+|KOmeaning = Throwing Ring
+|PTname = Anel de Arremesso
+|PTmeaning = Throwing Ring
+|RUname = Метательное кольцо
+|RUromanised = Metatelʹnoe kolʹco
+|RUmeaning = Throwing Ring
+|TWname = 投擲環
+|TWromanised = Tóuzhì huán
+|TWmeaning = same
+|ZHname = 投掷环
+|ZHromanised = Tóuzhì huán
+|ZHmeaning = Throwing Ring
+|CODEname=SHAKRA_RING
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Lance-anneaux]]

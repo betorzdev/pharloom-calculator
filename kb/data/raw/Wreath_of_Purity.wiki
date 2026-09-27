@@ -1,0 +1,84 @@
+{{SS Infobox Tool
+| type = Blue
+| effect = Provides limited immunity to [[Muckmaggot]] infestation
+| location = [[Putrified Ducts]]
+| description = Fragile band woven of reed and leaf, crafted to repel Muckmaggots.<hr>
+If broken, the wreath will be repaired while resting at a bench.
+}}
+
+<b>Wreath of Purity</b> is a {{CrestSlot|Blue|1}} in <i>[[Hollow Knight: Silksong]]</i>. It provides protection against [[Muckmaggot]] infestation.
+
+== Usefulness ==
+Generally grants immunity to 3<ref group = Source><code>MAGGOT_CHARM_MAX_HITS</code></ref> 'hits' from [[Muckmaggot|Muckmaggots]], as indicated by the dwindling status of the Wreath. 
+
+* Infestation from [[Disgraced Chef Lugoli]]'s Muckmaggot Lump attacks counts as 1 'hit' (mask damage is not negated). 
+* Soaking in infested water for 6 seconds accumulates to 1 'hit', 0.5 seconds are added to the timer each time [[Hornet (Silksong)|Hornet]] enters or re-enters the water<ref group = Source><code>maggotCharmHealthLossTime</code> and <code>maggotCharmEnterWaterAddTime</code> in <code>globalsettings_assets_all.bundle</code>.</ref>.
+
+Its HUD icon disappears when broken. Resting at a [[Bench (Silksong)|Bench]] or acquiring a new [[Mask Shard (Silksong)|mask]] fully repairs the Wreath and resets the 'hit' counts.
+
+Despite the time punishment from entering infested water repeatedly, hopping across water quickly still has advantage over swimming through it. The Wreath is able to withstand approximately 27 instant touchings of infested water.
+
+== How to Acquire ==
+Found in [[Putrified Ducts]], in the passage below and to the right of the [[Bellway]] station on the corpse of a bug.
+
+{{Gallery
+| Image1 = Mapshot SS Wreath of Purity.png!Location in Putrified Ducts
+| Image2 = Screenshot SS Wreath of Purity 01.png!Wreath of Purity in Putrified Ducts
+}}
+
+{{Gallery
+| Title = Gallery
+| Image2 = Wreath of Purity HUD.png!Wreath of Purity HUD sprite
+}}
+
+== Trivia ==
+* The Wreath is found next to the corpse of a bug who looks similar to the [[Pinstress]] and [[Seamstress]], possibly a member of the Order of the Pinstress. This is further indicated by the style of the pin in the background, and the hut itself bears a notable resemblance to their huts.
+* Bellway travel resets the Wreath's durability. Despite sharing a description stating it "will be repaired while resting at a bench" [[Fractured Mask]] does not share this quality.
+** Other methods which reset Wreath durability include using the [[Beastling Call]] and gaining a new [[Mask Shard (Silksong)|mask]].
+* While the Tool description states that the Wreath is 'fragile', Muckmaggot exposure is the only thing that damages it.
+* The Wreath is referred to as 'Poultice Pouch' in the game files.
+* Prior to <code>1.0.29120</code>, it only took 3 seconds for the Wreath to get damaged once when in infested water.
+* The Wreath of Purity sheds the same leaves as those dropped by the tall, whitish plants in Bilewater that [[Mothleaf Lagnia]] mimic.
+{{Gallery
+|Image1 = SS Screenshot Wreath of Purity Leaves.png!Mothleaf Lagnia leaves compared to Wreath of Purity
+}}
+{{History
+|game = SS
+|1.0.29242 (Patch 4): Wreath of Purity's durability was increased.
+}}
+{{Localisation
+|DEname = Kranz der Reinheit
+|DEmeaning = Wreath of Purity
+|ESname = Corona de pureza
+|ESmeaning = Wreath of Purity
+|FRname = Couronne de pureté
+|FRmeaning = Crown of Purity
+|ITname = Corona di purezza
+|ITmeaning = Crown of Purity
+|JAname = 浄化のリース
+|JAromanised = Jōka no rīsu
+|JAmeaning = Wreath of Purification
+|KOname = 순수의 화환
+|KOromanised = Sunsuui hwahwan
+|KOmeaning = Wreath of Purity
+|PTname = Guirlanda de Pureza
+|PTmeaning = Wreath of Purity
+|RUname = Венец чистоты
+|RUromanised = Venec čistoty
+|RUmeaning = Wreath of Purity
+|TWname = 純淨花環
+|TWromanised = Chúnjìng huāhuán
+|TWmeaning = same
+|ZHname = 纯净花环
+|ZHromanised = Chúnjìng huāhuán
+|ZHmeaning = Purity Wreath 
+|CODEname=MAGGOT_CHARM
+|CODEmeaning=Reference to [[Charm]]s from <i>[[Hollow Knight]]</i>
+}}
+{{Refs|hr=SS}}
+
+== Code References ==
+<references group="Source"/>
+
+{{SS Nav Tools}}
+[[fr:Couronne de pureté]]

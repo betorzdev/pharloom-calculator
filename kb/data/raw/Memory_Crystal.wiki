@@ -1,0 +1,67 @@
+{{SS Infobox Tool
+| type = Blue
+| damage = 10/16/22/28/34
+| effect = Spawns an explosive ice statue when [[Hornet (Silksong)|Hornet]] takes damage
+| location = Base of [[Mount Fay]]
+| description = Reflective stone with mnemonic properties.<hr/>
+When taking damage, a memory of the bearer is formed of crystal. The memory will shatter into sharp spines if an enemy comes into contact.
+}}
+
+{{Quote
+| The coldshard, even when destroyed it remembers its former shape. A remarkable material, and perhaps even more astonishing there seems life contained within it. 
+| [[Hornet (Silksong)|Hornet]]
+| Hr = SS
+}}
+
+<b>Memory Crystal</b> is a {{CrestSlot|Blue|1}} in <i>[[Hollow Knight: Silksong]]</i>. It creates an explosive ice statue when [[Hornet (Silksong)|Hornet]] takes damage.
+
+== Usefulness ==
+Spawns an ice statue of [[Hornet (Silksong)|Hornet]] after a small delay when taking damage, which then explodes similarly to a [[Mnemonid]] when touched by enemies or hit by one of Hornet's attacks.
+*It may be detrimental when fighting enemies with Parry attacks, because statue explosion during the parry window will trigger their follow-up attack.
+{{Gallery
+| Image1 = GIF SS Memory Crystal activation.gif!Memory Crystal activating
+| Image2 = Memory Crystal Hornet copies.png!Copies created by the Crystal
+}}
+== How to Acquire ==
+Found in a breakable crystal at the end of an icy tunnel on [[Mount Fay]], hidden behind a breakable wall to the right of the lower [[Bench (Silksong)|bench]]. The tunnel is filled with breakable chunks of ice that reform every few seconds.
+
+{{Gallery
+| Image1 = Mapshot SS Memory Crystal.png!Location in Mount Fay
+| Image2 = Screenshot SS Memory Crystal 01.png!The broken wall leading to Memory Crystal
+| Image3 = Screenshot SS Memory Crystal 02.png!Tunnel leading to Memory Crystal
+| Image4 = Screenshot SS Memory Crystal 03.png!Room with the glowing crystal intact
+| Image5 = Screenshot SS Memory Crystal 04.png!Room with the glowing crystal broken
+}}
+{{Localisation
+|DEname = Erinnerungskristall
+|DEmeaning = Memory Crystal
+|ESname = Cristal de memoria
+|ESmeaning = Memory Crystal
+|FRname = Cristal de souvenir
+|FRmeaning = Memory Crystal
+|ITname = Cristallo del ricordo
+|ITmeaning = Crystal of the Memory
+|JAname = 記憶の水晶
+|JAromanised = Kioku no suishō
+|JAmeaning = Memory Crystal
+|KOname = 기억 수정
+|KOromanised = Gieok sujeong
+|KOmeaning = Memory Crystal
+|PTname = Cristal da Memória
+|PTmeaning = Memory Crystal
+|RUname = Кристалл памяти
+|RUromanised = Kristall pamjati
+|RUmeaning = Memory Crystal
+|TWname = 記憶晶石
+|TWromanised = Jìyì jīngshí
+|TWmeaning = same
+|ZHname = 记忆晶石
+|ZHromanised = Jìyì jīngshí
+|ZHmeaning = Memory Crystal
+|CODEname = REVENGE_CRYSTAL
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Cristal de souvenir]]

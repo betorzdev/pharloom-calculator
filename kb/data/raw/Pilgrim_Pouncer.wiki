@@ -1,0 +1,127 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Pilgrim Pouncer.png|Hunter's Journal
+Pilgrim Pouncer Idle.png|Idle
+Pilgrim Pouncer Without Shawl.png|Without Shawl
+</gallery>
+| health = 20/{{BT|80}}
+| damage_modifiers = {{SS Spaced Damage Modifiers|1.4|1.2|1|1|1}}
+| hasdrop = true
+| r1 = 5
+| r2 = 7
+| sh1 = 2-3
+| sh2 = 3-4
+| drops = [[Pilgrim Shawl]]
+| numbers_required = 35
+|va=Lauren Koopowitz<ref name="va">[https://youtu.be/pA7Id7lff6E?t=2788 Interview with Lauren Koopowitz]</ref>
+|singnum=2
+}}
+{{Quote
+| Hr = Journal
+| Agile bug of Pharloom, its higher functions have been lost to the Haunting.<hr/>With a softer shell than most, they would have relied on their athleticism to survive.
+}}
+
+<b>Pilgrim Pouncers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are agile pilgrims with a softer shell than most, their higher functions lost to the [[Haunting]].<ref>Pilgrim Pouncer [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Agile bug of Pharloom, its higher functions have been lost to the Haunting. With a softer shell than most, they would have relied on their athleticism to survive."</i></ref>
+
+== Behaviour and Tactics ==
+Pilgrim Pouncers are usually found slowly walking back and forth or praying in place, but some crawl out of the ground or are reanimated by [[Silk]] when [[Hornet (Silksong)|Hornet]] approaches, ambushing her. When Hornet is near, they leap towards her to attack, then roll a short distance on the ground as they land.<br>
+If a Pilgrim Pouncer falls off a ledge whilst rolling, it will roll again as it lands.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Pilgrim Pouncers have their health quadrupled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* There is no pain, nor fear, nor death...
+* Am I worthy?
+* The path... the holy path...
+* My soul... my shell. For you!
+* My faith... my reward...
+* Raise me higher! Pull me closer!
+* Lives end, journeys begin...
+* Raise my shell! Pull me closer!
+* Shining bright, our Citadel waits...
+* Pull us higher, ever higher...
+* We will climb! Climb! Climb forever!
+}}
+Haunted [[Pebb]] in the easternmost room of [[the Marrow]]:
+{{SS Needolin|columns=2|
+* O shining beads!
+* Blessed am I...
+* Guide my ascent...
+* O holy gleam!
+}}
+
+== Location ==
+Pilgrim Pouncers can be found primarily in [[Mosshome]] and [[the Marrow]], but they also appear in the southeastern [[Far Fields]], the middle of [[Greymoor]], and the [[Blasted Steps]].
+
+In [[Bonegrave]], one Pilgrim Pouncer can appear as a possible enemy spawn variant upon revisiting the area. Inside the [[Chapel of the Wanderer]], one is encountered as part of the [[Enemy_Gauntlets_(Silksong)#Chapel_of_the_Wanderer|gauntlet]]. In the Marrow, once [[Swift Step]] has been acquired, two can be found in the room where [[Shakra]] was previously encountered, and one spawns during the [[Enemy Gauntlets (Silksong)/The Marrow 2|gauntlet]] in the north of the area. Additionally, a unique Pilgrim Pouncer, [[Haunting|haunted]] [[Pebb]], can be encountered in the easternmost room of the Marrow and does not respawn once defeated. Pebb can be identified by her unique [[Needolin]] dialogue, her merchant bag lying nearby, and {{R|55}} she drops upon defeat.
+
+In the Blasted Steps, one of the lifeless Pilgrim Pouncers awakens shortly after the nearby [[Judge]]. However, if the Judge is awakened by parrying a [[Tool]] attack without taking damage, the pilgrim remains dormant.
+
+During [[Act 3]], two Pilgrim Pouncers can be found in [[Shellwood]] attacking [[Pinmaster Plinney]].
+
+{{Gallery
+| Image1 = Mapshot SS Pilgrim Pouncer 03.png!Locations in Bone Bottom
+| Image2 = Mapshot SS Pilgrim Pouncer 07.png!Locations in Bone Bottom in Act 3
+| Image3 = Mapshot SS Pilgrim Pouncer 02.png!Locations in the Marrow
+| Image4 = Mapshot SS Pilgrim Pouncer 01.png!Locations in the Far Fields before Act 3
+| Image5 = Mapshot SS Pilgrim Pouncer 04.png!Locations in Greymoor before Act 3
+| Image6 = Mapshot SS Pilgrim Pouncer 05.png!Locations in the Blasted Steps
+| Image7 = Mapshot SS Pilgrim Pouncer 08.png!Location in the Blasted Steps in Act 3
+| Image8 = Mapshot SS Pilgrim Pouncer 06.png!Location in Shellwood in Act 3
+}}
+
+== Gallery ==
+{{Gallery
+|Image1=Screenshot SS Pilgrim Pouncer 01.png!In Mosshome
+|Image2=Screenshot SS Pilgrim Pouncer 02.png!In the Marrow
+|Image3=Screenshot SS Pilgrim Pouncer 11.png!In the Far Fields
+|Image4=Screenshot SS Pilgrim Pouncer 03.png!In Greymoor with a Pilgrim Guide and Pilgrim Bellbearer
+|Image5=Screenshot SS Pilgrim Pouncer 04.png!In the Blasted Steps
+|Image6=Screenshot SS Pilgrim Pouncer 05.png!In the Chapel of the Wanderer
+|Image7=Screenshot Pinmaster Plinney 01.png!Attacking Plinney in Shellwood in Act 3
+|Image8=GIF SS Pilgrim Pouncer 01.gif!Getting haunted
+|Image9=GIF SS Pilgrim Pouncer 02.gif!Reanimating
+|Image10=Screenshot SS Pilgrim Pouncer 06.png!Leaping
+|Image11=Screenshot SS Pilgrim Pouncer 07.png!Rolling
+|Image12=Screenshot SS Pilgrim Pouncer 08.png!Reacting to the Needolin
+|Image13=Screenshot SS Pilgrim Groveller 09.png!Praying with a Pilgrim Groveller
+|Image14=Screenshot SS Pilgrim Groveller 10.png!Corpse in Mosshome
+|Image15=Screenshot SS Memorium 05.png!Corpse in the Memorium
+|Image16=Screenshot SS Pilgrim Pouncer 09.png!Without shawl during the <i>[[Garb of the Pilgrims]]</i> wish
+}}
+
+{{Localisation
+|DEname = Pilgerstürzer
+|DEmeaning = Pilgrim Faller
+|ESname = Peregrino saltarín
+|ESmeaning = Jumping Pilgrim
+|FRname = Pèlerin Bondisseur
+|FRmeaning = Pilgrim Pouncer
+|ITname = Balzatore Pellegrino
+|ITmeaning = Pilgrim Hopper
+|JAname = 俊敏な巡礼者
+|JAromanised = Shunbin na Junreisha
+|JAmeaning = Agile Pilgrim
+|KOname = 순례자 도약꾼
+|KOromanised = Sullyeja doyakkkun
+|KOmeaning = Pilgrim Jumper
+|PTname = Saltador-peregrino
+|PTmeaning = Hopper Pilgrim
+|RUname = Пилигрим-прыгун
+|RUromanised = Piligrim-prygun
+|RUmeaning = Pilgrim Jumper
+|ZHname = 扑袭朝圣者
+|ZHromanised = Pū xí cháoshèngzhě
+|ZHmeaning = Pouncing Pilgrim
+|CODEname = PILGRIM_01
+|CODEmeaning = Generic name shared with [[Pilgrim Hulk|02]], [[Pilgrim Groveller|03]], [[Pilgrim Hornfly|04]], and [[Elder Pilgrim|05]]
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[fr:Pèlerin Bondisseur]]

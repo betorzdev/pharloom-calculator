@@ -1,0 +1,149 @@
+{{SS Infobox Boss
+| image1 = <gallery>
+B Gurr the Outcast.png|Hunter's Journal
+Gurr the Outcast Idle.png|Idle
+Gurr the Outcast Slide.png|Sliding
+Gurr the Outcast Staggered.png|Staggered
+</gallery>
+| drops = [[Grass Doll]]
+| health = 1000
+| damage_modifiers = {{SS Spaced Damage Modifiers|1.7|1.25|1.1|1|0.95}}
+| numbers_required = 1
+| location = [[Far Fields]]
+| theme = [https://www.youtube.com/watch?v=iqSBa35FOPI&list=RDiqSBa35FOPI&start_radio=1 Incisive Battle]
+}}
+
+{{Quote
+| Huge, yet stealthy Skarr. An expert trapper and master of the undergrowth.<hr/>
+His tracks and traps... It should have been obvious from the start, this old hunter sought to draw me in. But what reason drove him to test himself so brutally? That answer I suspect I shall never know.
+| Hr = Journal
+}}
+
+<b>Gurr the Outcast</b> is a [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. He is a large, stealthy [[Skarr#The Mottled Skarr|Mottled Skarr]] hiding within the [[Far Fields]] with mastery over traps and the undergrowth.<ref name=hj/> His defeat is the objective of the <i>[[The Hidden Hunter]]</i> [[wish]].
+
+== Background ==
+Gurr is a hunter and an outcast of the [[Skarr]] with a mastery over trapping and the undergrowth.<ref name=hj>Gurr the Outcast [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Huge, yet stealthy Skarr. An expert trapper and master of the undergrowth."</i></ref> He holds bodies of various beings throughout [[Pharloom]] within his domain, including a [[Thread Raker]] and [[Squatcraw|Craws]] from [[Greymoor]], a [[Grand Reed]] from [[the Citadel]], and even a [[Last Claw]], another Skarr member.<ref>[[:File:Screenshot SS Gurr the Outcast 01.png|Bodies next to Gurr's arena.]]</ref> The room to the left of Gurr's arena reveals he set out on his final hunt with a pale being as his prey, and prepared a stand to hang their corpse.<ref>[[Needolin]] Dialogue in next to Gurr's arena:<br><i>"...The last...<br>...The hunt...<br>...Pale...prey...<br>...Come to me..."</i></ref> Light pigmentation appears across Gurr's body, a trait shared by the [[Mottled Skarr]] and the [[Unnamed Skarr]]. He is unaffected by the [[Haunting]], something also shared by the other mottled Skarr.
+
+== In-game Events ==
+Gurr is the target of the <i>[[The Hidden Hunter]]</i> [[Wish]], which is only available in [[Act 3]]. He must be tracked by following a trail of bone shards in [[Far Fields]], and along his route he leaves barbed traps in [[Hornet (Silksong)|Hornet's]] path which activate when she gets close. The final bone shard pile is a trap for Hornet which springs when interacted with, trapping Hornet in a cage before pulling her deep underground into Gurr's lair.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+Upon being pulled down into Gurr's arena, [[Hornet (Silksong)|Hornet]] must attack to break free from the bone cage, while Gurr roars and begins the fight. If Hornet does not break free of the cage in time, Gurr will initiate with a <b>Slide</b> attack and break the cage while damaging her.
+
+=== Phase 1 ===
+Gurr remains underground for most of the fight, leaping out to throw barbed traps and perform other attacks:
+* <b>Trap Throw</b>: Gurr leaps into the air, either vertically or diagonally, and spins in place, throwing out 2 barbed traps in rapid succession that float mid-air in random locations throughout the arena. After a few moments, the traps extend their spikes into a large circle, then disappear. If Hornet hits an un-triggered trap, it expands immediately. When this attack is finished, Gurr can either land back on the floor or immediately dive beneath the ground. While there are 7 barbed traps in the arena, Gurr will not throw any more.
+** This attack can be performed while aboveground, but is always used when Gurr leaps out directly from underground. If performed while underground, Gurr's direction of travel is telegraphed by a rumbling column of dust.
+** Traps can be destroyed instantly with a [[Needle Strike]], as well as with some Tools, such as [[Pimpillo]] and [[Silkshot]].
+* <b>Slide</b>: Gurr hunches down and slides across the arena, only stopping when he reaches a wall. Upon reaching a wall, he can either perform another attack or immediately burrow down.
+* <b>Floor Spikes</b>: When Gurr is aboveground, he makes a small jump up and dives downwards into the ground. The ground then rumbles as 3 sets of spikes shoot up in random positions across the floor, retracting after a short time. The positions of the spikes are telegraphed by small puffs of dust.
+* <b>Leap</b>: Gurr makes large leaps around the arena to reposition for attacks.
+* <b>Backroll</b>: If Hornet is too close to Gurr after an attack, he quickly rolls away a set distance.
+
+=== Phase 2 ===
+After reaching 750 HP, Gurr stops in place and roars, indicating the start of Phase 2. His behaviour remains unchanged, but one attack is modified:
+* <b>Trap Throw</b>: While spinning, Gurr will throw out 3 traps instead.
+
+All of Gurr the Outcast's attacks, including contact damage and his barbed traps, deal {{Damage|2}}, except Floor Spikes, which deal {{Damage|1}}.
+
+<hr />
+
+{{Stagger
+| Gurr rolls back slightly and falls to his knees.
+| 19
+| game = SS
+}}
+
+<hr />
+
+== [[Needolin]] Dialogue ==
+Gurr the Outcast does not respond to the [[Needolin]] during battle. The following dialogue can be found in the room to the left of the arena:
+
+{{SS Needolin|columns=2|
+* ...The last...
+* ...The hunt...
+* ...Pale...prey...
+* ...Come to me...
+}}
+
+== Location ==
+Gurr the Outcast can be found in [[Far Fields]] after promising the <i>[[The Hidden Hunter]]</i> [[Wish]]. Hornet can track him down by using the Track action on a small bundle of leaves and spikes, which causes a ghostly path to appear for a short time.
+
+{{Gallery
+| Image1 = Mapshot SS Gurr the Outcast 02.png!Scent trail start location
+| Image2 = Mapshot SS Gurr the Outcast 01.png!Arena location in Far Fields
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Gurr the Outcast 02.png!Hornet tracking Gurr
+|Image2 = Screenshot SS Gurr the Outcast 03.png!Barbed Trap placed by Gurr along the way
+|Image3 = Screenshot SS Gurr the Outcast 04.png!Hornet caught in Gurr's trap
+|Image4 = Screenshot SS Gurr the Outcast 05.png!Hornet falling into the arena
+|Image5 = Screenshot SS Gurr the Outcast 06.png!Gurr entering the arena
+|Image6 = Screenshot SS Gurr the Outcast 07.png!Idle
+|Image7 = Screenshot SS Gurr the Outcast 08.png!Trap Throw
+|Image8 = Screenshot SS Gurr the Outcast 09.png!Burrow & Dive
+|Image9 = Screenshot SS Gurr the Outcast 10.png!Slide
+|Image10 = Screenshot SS Gurr the Outcast 11.png!Floor Spikes
+|Image11 = Screenshot SS Gurr the Outcast 12.png!Leap
+|Image12 = Screenshot SS Gurr the Outcast 13.png!Backroll
+|Image13 = Screenshot SS Gurr the Outcast 14.png!Trap Throw (Phase 2)
+|Image14 = Screenshot SS Gurr the Outcast 15.png!Staggered
+|Image15 = Screenshot SS Far Fields 15.png!Arena
+|Image16 = Screenshot SS Gurr the Outcast 01.png!Gurr's trophy and storage room
+|Image17 = Ari SS Sketch 21.png!Concept sketches
+|Image18 = Ari SS Sketch 27.png!Concept sketches
+}}
+
+== Trivia ==
+* Gurr's arena contains a throne in the background internally labelled <code>Ant_chief_throne_trapmaster</code>. The "trapmaster" is an early concept seen in [[Cut Content (Silksong)#Ari Gibson's Sketchbook|Ari's sketchbook]].<br><i>See: [[Cut_Content_(Silksong)/NPCs#Beastmaster]]</i>
+* Gurr originally had an attack named <b>Trap Flurry</b> where once per fight at 400 HP, Gurr shrieks while underground, and after a moment, leaps out of the ground in the very centre of the arena and throws five barbed traps in succession around the room.
+* A long, thin pole can be found on the floor in the centre of Gurr's arena before the boss battle, leading all the way through the tunnel in the ceiling up to the covered entrance. It can only be seen by no-clipping into the arena.
+{{Gallery
+|Image1 = Screenshot SS Gurr the Outcast 16.png!Arena before the battle
+}}
+{{History
+|game = SS
+|1.0.29242 (Patch 4): <b>Trap Throw</b> was changed from lobbing out one trap at a time to throwing all his traps in succession, and Gurr was given a second phase. Removed <b>Trap Flurry</b> attack.
+}}
+
+{{Localisation
+|DEname = Gurr der Verstoßene
+|DEmeaning = Gurr the Outcast
+|ESname = Gurr el Proscrito
+|ESmeaning = Gurr the Outcast or Gurr the Outlaw
+|FRname = Gurr le Banni
+|FRmeaning = Gurr the Banished
+|ITname = Gurr il Reietto
+|ITmeaning = Gurr the Outcast
+|JAname = 追放されしグルル
+|JAromanised = Tsuihō sareshi gururu
+|JAkatakana = foreign
+|JAmeaning = Exiled Gurr
+|KOname = 추방자 구르
+|KOromanised = Chubangja gureu
+|KOmeaning = Exiled Gurr 
+|PTname = Gurr, o Proscrito
+|PTmeaning = Gurr, the Outcast
+|RUname = Гурр-изгой
+|RUromanised = Gurr-izgoj
+|RUmeaning = Gurr the Outcast
+|TWname = 被放逐的格爾
+|TWromanised = Bèi fàngzhú de géěr
+|TWmeaning = same
+|ZHname = 被放逐的格尔
+|ZHromanised = Bèi fàngzhú de géěr
+|ZHmeaning = Exiled Gurr
+|CODEname = BONE_HUNTER_TRAPPER</code><br/><code>ANT_TRAPPER
+|CODEmeaning = "Bone Hunter" internally refers to the Skarr
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[fr:Gurr le Banni]]
+[[pt:Gurr, o Proscrito]]

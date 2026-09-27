@@ -1,0 +1,105 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Flintbeetle.png|Hunter's Journal
+Flintbeetle Idle.png|Idle
+Flintbeetle Burrowed.png|Burrowed
+</gallery>
+| health = 95
+| damage_modifiers = {{SS Spaced Damage Modifiers|1|0.8|0.8|0.7|0.7}}
+| drops = [[Flintgem]]
+| numbers_required = 3<ref group=Note>Entry becomes unobtainable if the Wish is not accepted or completed before [[Act 3]] however it is not required for the <i>True Hunter</i> [[Achievements (Silksong)|achievement]].</ref>
+| singnum = 1
+}}
+
+{{Quote
+| Hr = Journal
+| Rarely seen beetle that spends most of its life nestled deep in bone and rock. The Flintgems on its shell excrete an explosive powder.<hr/>
+Its bright gems could be used to make beautiful, but short-lived jewellery. An amusing idea for a gift... or a trap.
+}}
+
+<b>Flintbeetles</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are rare beetles who hold a [[Flintgem]] on their shell required for the <i>[[Volatile Flintbeetles]]</i> [[Wish]].<ref>Flintbeetle Hunter's Journal entry: <i>"Rarely seen beetle that spends most of its life nestled deep in bone and rock. The Flintgems on its shell excrete an explosive powder."</i></ref>
+
+== Behaviour and Tactics ==
+Flintbeetles start off half-buried in a wall, and pop out once Hornet comes near or hits it. Flintbeetles have 3 attacks, and often walk backwards or forwards between each attack:
+* <b>Spark Roll:</b> Rolls towards Hornet, leaving a trail of sparks behind itself during the Roll that have a delayed chain-reaction explosion and deal 10 damage to other enemies caught in them.
+* <b>Leaping Roll:</b> Jumps high into the air whilst rolling, leaving a trail of sparks behind itself as it rolls that have a delayed chain-reaction explosion and deal 10 damage to other enemies caught in them.
+* <b>Eject Flintstones:</b> Shakes and shoots out 2 [[Flintstone]]s on either side, which move in an arc before popping, then shoots out 2 more in different trajectories.
+
+On death, Flintbeetles launch out 3 more Flintstones and then explode, dropping a [[Flintgem]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* Crack them... Crunch them...
+* Find the glint... Seek the gleam...
+* Spark bright... Defy the dark...
+* World's breath, distant call...
+}}
+
+== Location ==
+Three Flintbeetles appear in [[the Marrow]] after starting the <i>[[Volatile Flintbeetles]]</i> [[Wish]]. They can be found partially burrowed in walls, emerging and become aggressive when attacked. Two of the Flintbeetles have set spawns but the third can spawn appear in two places, depending on if the shortcut after the [[Bell Beast]] fight has been opened. 
+
+{{Gallery
+|Image1=Mapshot SS Flintbeetle.png!Locations in the Marrow. The starred location will only be used if the shortcut after the Bellshrine is open.
+|Image2=Mapshot SS Flintbeetle Shortcut.png!Location of the shortcut that affects Flintbeetle locations}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Flintbeetle 01.png!Location
+|Image2 = Screenshot SS Flintbeetle 02.png!Location
+|Image3 = Screenshot SS Flintbeetle 03.png!Location (Shortcut Closed)
+|Image4 = Screenshot SS Flintbeetle 04.png!Location (Shortcut Open)
+|Image5 = Screenshot SS Flintbeetle 05.png!Idle
+|Image6 = Screenshot SS Flintbeetle 06.png!Spark Roll
+|Image7 = Screenshot SS Flintbeetle 07.png!Leaping Roll
+|Image8 = Screenshot SS Flintbeetle 08.png!Eject Flintstones
+|Image9 = Screenshot SS Flintbeetle 09.png!Death
+|Image10 = Screenshot SS Flintbeetle 10.png!Reacting to Needolin
+|Image11 = Screenshot SS Flintbeetle Tracking.png!Hornet tracking a Flintbeetle
+|Image12 = Screenshot SS Flintbeetle 11.png!Enemies killed by Flintbeetle
+}}
+
+==Trivia==
+*The 1.0.27535 and 1.0.27776 versions of <i>Silksong</i> playable on PlayStation 4 and Nintendo Switch respectively, which are older than the PC launch version (1.0.28324), have different journal notes from Hornet:<ref>[https://docs.google.com/document/d/1GaNLkTTszFKFv55DZj3Iw1hTUi6gbstSR56WXizrMAI Silksong Switch full text] on Google Docs</ref>
+:"<i>Its shell is crusted with sparking Flintgems and its excretions share similarly explosive properties</i>"
+:*The journal description also lacked the "<i>The Flintgems on its shell excrete an explosive powder.</i>" section in these versions.
+*The Flintbeetle is one of the few enemies that never respawns.
+*Several enemy corpses will show up when tracking the Flintbeetle, disabling any relevant enemy's spawn until the associated Flintbeetle is killed.
+
+{{Localisation
+|DEname = Feuersteinkäfer
+|DEmeaning = Flintbeetle
+|ESname = Pedernajo
+|ESmeaning = Portmanteau of <i>pedernal</i> (flint) and <i>escarabajo</i> (beetle).
+|FRname = Scaralex
+|FRmeaning =Portmanteau of <i>scarabée</i> (beetle) and <i>silex</i> (flint).
+|ITname = Coleoselce
+|ITmeaning = Portmanteau of <i>coleottero</i> (beetle) and <i>selce</i> (flint).
+|JAname = ハッカムシ
+|JAromanised = Hakka mushi 
+|JAkatakana = foreign
+|JAmeaning = Combination of {{lang|ja|発火}} <i>hakka</i> (ignition) and {{lang|ja|虫}} <i>mushi</i> (bug).
+|KOname = 부싯딱정벌레
+|KOromanised = Busitttakjeongbeolle
+|KOmeaning = Flintbeetle
+|PTname = Escaralígneo
+|PTmeaning = Portmanteau of <i>ígneo</i> (igneous) and <i>escaravelho</i> (scarab).
+|RUname = Кремнежук
+|RUromanised = Kremnežuk
+|RUmeaning = Flintbeetle
+|ZHname = 燧甲虫
+|ZHromanised = Suì jiǎchóng
+|ZHmeaning = Flintbeetle
+|CODEname = ROCK_ROLLER
+|CODEmeaning =
+}}
+{{Hr|SS}}
+
+== Notes ==
+<references group="Note"/>
+{{Refs|hr=false}}
+
+{{SS Nav Enemies}}
+
+[[fr:Scaralex]]

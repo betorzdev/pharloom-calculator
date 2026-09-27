@@ -1,0 +1,239 @@
+{{SS Infobox Boss
+|label1 = Boss
+|image1 = <gallery>
+B Skarrsinger Karmelita.png|Hunter's Journal
+Skarrsinger Karmelita Stagger.png|Staggered
+Skarrsinger Karmelita Spin.png|Dress Spin
+</gallery>
+|location = [[Far Fields]]
+|health = 1500
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1.25|1.1|1|0.95}}
+|drops = [[Hunter's Heart]]
+|numbers_required = 1
+|backer = Juan Camus
+|theme = [https://youtu.be/vBMl9h_HRE8?t=79 Skarrsinger Karmelita (Vocals + Background)] (Enemy Gauntlet)<br>[https://www.youtube.com/watch?v=XPZU_xt1XNc Skarrsinger Karmelita (Vocals + Main)] (Skarrsinger Karmelita)<br>[https://youtu.be/XZdfflkcK98?t=79 Skarrsinger Karmelita (Main)] (Staggered)
+|va = Siobhan Owen (singing)<ref name=va/><br>
+Beau Fitzgerald (dialogue)<ref name=va2/>
+|g1 = Skarrsinger Karmelita
+|singnum = 2
+|sing = Skarrsinger Karmelita Boss
+|s1 = When challenging her
+|s2 = Before and during the fight
+
+|label2 = NPC
+|title2 = Skarrsinger Karmelita
+|image2 = <gallery>
+Karmelita.png|Alive
+Karmelita Dead.png|Dead
+</gallery>
+|combat2 = false
+|location2 = [[Far Fields]]
+|backer2 = Juan Camus
+|va2 = Siobhan Owen (singing)<ref name=va>[https://www.facebook.com/SiobhanOwenMusic/posts/pfbid0Dtk6W8pzdE8SstGC1r1LmdZj9cC2qxedT6Jg3z1hBZ2qfC5NwFu1ijXTcdMV13Etl Facebook post] by Siobhan Owen [[:File:Reference karmelita voice.png|(Archive)]]</ref><br>
+Beau Fitzgerald (dialogue)<ref name=va2>Beau Fitzgerald is credited in Skarrsinger Karmelita's audio files.</ref>
+|singnum2=1
+}}
+
+{{Quote
+|Hr = Journal
+|Song queen of the Skarr and their most talented warrior.<hr/>
+This graceful ruler once possessed skill to rival my own. At her youthful peak, her voice united all Skarr in her service.
+}}
+
+<b>Skarrsinger Karmelita</b> is an [[NPCs (Silksong)|NPC]] and main [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. The song queen of the [[Skarr]] and once their most talented warrior,<ref name=gender/><ref>Skarrsinger Karmelita Hunter's Journal entry: <i>"This graceful ruler once possessed skill to rival my own. At her youthful peak, her voice united all Skarr in her service."</i></ref> she can be fought at her youthful peak within her own memory in the [[Far Fields]]. Defeating her grants the [[Hunter's Heart]].
+
+== Background ==
+Skarrsinger Karmelita is the song queen and the most talented warrior of the [[Skarr]]; in her youth, she used her voice to unite all of them in her service.<ref name=gender/> When [[Grand Mother Silk]] appeared, Karmelita's voice was capable of giving the Skarr the strength to resist her for longer than other groups.<ref>[[Snail Shamans (Silksong)|Snail Shamans]]: <i>"In youth, her voice united the wild tribes. Gave them the strength to resist the pale monarch's will... longer than most at least."</i></ref> As time went on, she grew old and her strength faded, leaving the tribe vulnerable to the effects of the [[Haunting]], though her fading strength still offers them some protection.<ref>[[Gilly]]: <i>"The red-shells, hiding through the fields, stalking the boney beasts. They are part of it, somehow, the life that flourishes here. Even haunted, they seem to lose less of themselves... What anchor allows them to retain such strength?"</i></ref>
+
+== In-game Events ==
+The old and tired Karmelita can be found in the northeastern [[Far Fields]] during Act 3. During the <i>[[SEEK: The Old Hearts]]</i> [[Acts|objective]], [[Hornet (Silksong)|Hornet]] can play the [[Elegy of the Deep]] next to the queen and enter her memory, where she must fight Karmelita in her prime.
+
+As with all Elegy of the Deep memories, if Hornet dies in the fight, she wakes up next to Karmelita without losing her [[Rosaries]] and without creating a [[Cocoon]], with all Tool uses refilled at no cost. Dying also does not end {{Steel Soul Icon Mini|SS}} [[Steel Soul Mode (Silksong)|Steel Soul mode]].
+
+Defeating Skarrsinger Karmelita grants Hornet the [[Hunter's Heart]].
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+Before fighting Skarrsinger Karmelita herself, [[Hornet (Silksong)|Hornet]] must first defeat the [[Enemy Gauntlets (Silksong)/Karmelita|enemy gauntlet]].
+
+After her Last Claws have been defeated, Karmelita leaps from the background into the arena and shouts, beginning the fight.
+
+=== Phase 1 ===
+While not actively attacking, Skarrsinger Karmelita glides and dances about the arena while spinning her [[Curvesickle]] weapons. During Phase 1, Skarrsinger Karmelita has the following attacks:
+* <b>Twirl Slash</b>: Strikes a pose with one of her arms raised high before spinning forwards a short distance with her Curvesickles.
+* <b>Triple Slash</b>: Strikes a tall pose with her arms behind her and then performs three slashes with her Curvesickles, travelling forwards with each slash and covering around 60% of the arena. If Hornet is behind Karmelita after the second slash, she can cancel the third into a Backstep, or perform a Twirl Slash in Hornet's direction.
+* <b>Curvesickle Throw</b>: Bows down with her arms behind her before throwing two Curvesickles towards Hornet, one horizontally that curves up slightly and one at an upwards angle that curves sharply. She follows this with a Flourish forwards.
+* <b>Aerial Curvesickles</b>: Leaps upwards into the air while spinning; at the apex of her jump, she throws two Curvesickles downwards. These curve to the left and right, sweeping horizontally across the floor. The force of throwing the Curvesickles pushes her in the direction away from Hornet as she falls back down.
+* <b>Razorspin Dive</b>: Leaps to collide with Hornet while spinning her dress in a saw-like circle. If she does not connect with Hornet, she slams diagonally into the ground, causing bone spines to erupt upwards in Hornet's direction. If Hornet is damaged by her spinning dress, Karmelita leaps away and cancels the bone spines attack.
+* <b>Flourish & Block</b>: Between attacks, Karmelita makes short, twirling dashes. If struck while twirling, Karmelita blocks damage by raising her Curvesickles.
+* <b>Quickstep & Backstep</b>: If Hornet is sufficiently close to her, Karmelita may backstep to reposition for her next attack. She performs a small dash into melee attacks and performs a larger backstep into her ranged and leaping attacks. If Hornet is out of range, Karmelita may dash towards Hornet to perform melee attacks.
+
+=== Phase 2 ===
+After reaching 1000 HP, Skarrsinger Karmelita shouts, marking the beginning of Phase 2. During this phase, the delay between her attacks is reduced, and she gains three new attacks:
+* <b>Curvesickle Throw Combo</b>: After throwing the first set of Curvesickles, Karmelita spins backwards using her blades and then immediately throws out a second set before Flourishing forwards again. The second set of Curvesickles are sent out at an upwards angle but curve downwards as they travel. This attack is used interchangeably with the standard Curvesickle Throw.
+* <b>Aerial Curvesickle Combo</b>: When she throws the Curvesickles at the apex of her jump, Karmelita pushes herself in Hornet's direction and throws a second set of Curvesickles, which pushes her back away again as she lands. This attack is used interchangeably with the standard Aerial Curvesickles.
+* <b>Bone Charge</b>: When near the arena's wall, Karmelita leaps, clinging to it before then charging towards the opposite wall. This causes a trail of tall bone spines to erupt behind her and cover the floor of the entire arena. She ends the charge by spinning in place with her Curvesickles.
+
+=== Phase 3 ===
+After reaching 500 HP, Skarrsinger Karmelita shouts again, marking the beginning of Phase 3. During this phase, Karmelita no longer performs <b>Flourishes</b>, including the Flourish part of Curvesickle Throw. She also has effectively no downtime between attacks; as such, Block is not used unless she is struck in the frame immediately after an attack.
+
+All of Skarrsinger Karmelita's attacks deal {{Damage|2}} except her Curvesickle attacks, Twirl Slash, and spin during Razorspin Dive which deal {{Damage|1+1}}. Making contact with her deals {{Damage|1}}. 
+
+<hr />
+
+{{Stagger
+| Karmelita falls to the ground, and the singing in the background music pauses for the duration of the stagger.
+| 17
+| game = SS
+}}
+
+<hr />
+
+=== Strategy ===
+* In Phase 1 and Phase 2, a hit-and-run strategy can be used to quickly deal damage between attacks. In Phase 3, the window to hit decreases due to Skarrsinger Karmelita attacking at a faster pace. It is recommended to save offensive [[Tools]] for this phase. The [[Tacks]] and the [[Cogfly]] are especially useful since they are easily deployed and deal reliable damage.
+* Another strategy for Phase 1 and 2 is to be conservative and wait for Skarrsinger Karmelita to come closer to Hornet. It is possible to jump over her during Twirl Slash and Triple Slash, which leave her open for attack. It is easy to [[Needle-bounce]] on her after she lands from Razorspin Dive and when she finishes crossing the stage with Bone Charge.
+* With Razorspin Dive, Skarrsinger Karmelita can easily reach any spot of the arena; hence, it is prudent to [[Bind]] in a safe location during one of Skarrsinger Karmelita's attacks, such as above Skarrsinger Karmelita's path during Bone Charge.
+** The [[Beast Crest]] is a good option due to its short Bind animation and the plethora of openings to hit Skarrsinger Karmelita with the [[Needle]] swings between her attacks.
+** It is recommended to avoid the [[Witch Crest]] as its Bind is difficult to execute in this fight. Likewise, the [[Shaman Crest]]'s restriction that Hornet must be grounded to Bind significantly increases the challenge of healing.
+* Aerial Curvesickle and Razorspin Dive make being in the air around Skarrsinger Karmelita very dangerous. Try to stay on the ground as much as possible until Skarrsinger Karmelita has begun an attack other than Razorspin Dive. If cornered, use the [[Swift Step]] to dash under Skarrsinger Karmelita when she jumps into the air towards Hornet, signalling the start of a Razorspin Dive.
+* Curvesickles thrown by Skarrsinger Karmelita can be [[Combat (Silksong)#Projectile Deflection|deflected]] by hitting them with the Needle, which can be a useful means to avoid damage instead of dodging.
+* Karmelita is completely immune to damage from rosaries fired at her with the [[Rosary Cannon]].
+
+{{TabbedDialogue
+| Title1 = Outside the memory
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = <b>If Hornet has not acquired the [[Elegy of the Deep]]:</b><br>
+Pale beast... bringing ruin... we had sensed it... you writing harsh our final fate...<br>
+If power... you come seeking... mine is faded.... mortal... time taken...<br>
+{{HTalk|I seek only to save these lands, great one, to break them free from this fatal sickness born of thread and void.}}<br>
+Kcha! If you may... beast... If you can...
+<hr/>
+<b>If Hornet has acquired the Elegy of the Deep:</b><br>
+Pale beast... bringing ruin... we had sensed it... you writing harsh our final fate...<br>
+If power... you come seeking... mine is faded.... mortal... time taken...<br>
+{{HTalk|Great one, I come not to see you as you are, rather I would have you recall what you were, before the pale monarch, when once your heart beat bright and brave.}}<br>
+{{HTalk|That beating heart I would take, though know my intent is worthy.}}<br>
+{{HTalk|I seek it only to save these lands, to break them free from this fatal sickness born of thread and void.}}<br>
+Kcha! If you may... beast... If you can... Mine once was power... wild... proud...
+<hr/>
+<b>If Hornet has acquired both the Elegy of the Deep and the [[Everbloom]]:</b><br>
+Pale beast... bringing ruin... we had sensed it... you writing, harsh, our final fate...<br>
+If power... you come seeking... mine is faded.... mortal... time taken...<br>
+{{HTalk|Great one, I come not to see you as you are, rather I would know you as were, before the pale monarch, when once your heart beat bright and brave.}}<br>
+Kcha! Then see me... beast... Those distant memories... Mine once was power... wild... proud...
+| Title1_Event2 = Exhausted dialogue
+| Title1_Dialogue2 = <b>If Hornet has not acquired the Elegy of the Deep:</b><br>
+Save them... if you can... pale beast...
+<hr/>
+<b>If Hornet has acquired the Elegy of the Deep:</b><br>
+My strength... my power... Could you claim it, pale beast? Are you so strong?...<br>
+{{HTalk|Let us find out together, great one...}}
+| Title1_Event3 = Playing the [[Needolin]]
+| Title1_Dialogue3 = [n]For the singer...<br>
+For the mother...<br>
+For these hunters bold...<br>
+Stalk proud... Roam far...<br>
+For you, my children...<br>
+For you, I sing...<br>
+| Title1_Event4 = Playing Elegy of the Deep without talking first
+| Title1_Dialogue4 = [n]...All for you, my hunters strong...<br>
+...Remember, my children...<br>
+...Curse the creature pale...<br>
+...Remember the song...
+| Title1_Event5 = After the fight
+| Title1_Dialogue5 = ...How we hunted... How we sang... My children, I saw you glorious...
+
+
+| Title2 = During the fight
+| Title2_Event1 = Playing the [[Needolin]]
+| Title2_Dialogue1 = [n] Know my pride!<br>
+Feel my claws!<br>
+Hear my song!<br>
+My children!<br>
+My hunters!<br>
+My voice will not fade!
+}}
+
+== Location ==
+Skarrsinger Karmelita can be found in the northeastern [[Far Fields]]. The path to her begins at her statue in [[Hunter's March]] via a hidden passage that requires the [[Silk Soar]] to enter.
+
+{{Gallery
+|Image1 = Mapshot SS Skarrsinger Karmelita 01.png!Location in the Far Fields
+|Image2 = Mapshot SS Gilly 02.png!Location of statue in Hunter's March
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Hunter's March 07.png!Statue in Hunter's March
+|Image2 = Screenshot SS Far Fields 17.png!Old Karmelita in the Far Fields
+|Image3 = Screenshot SS Far Fields 22.png!Performing for the Skarr
+|Image4 = Screenshot SS Skarrsinger Karmelita 02.png!Modded clear screenshot
+|Image5 = Screenshot SS Skarrsinger Karmelita 03.png!Twirl Slash
+|Image6 = Screenshot SS Skarrsinger Karmelita 04.png!Triple Slash
+|Image7 = Screenshot SS Skarrsinger Karmelita 05.png!Curvesickle Throw
+|Image8 = Screenshot SS Skarrsinger Karmelita 06.png!Aerial Curvesickles
+|Image9 = Screenshot SS Skarrsinger Karmelita 08.png!Razorspin Dive
+|Image11 = Screenshot SS Skarrsinger Karmelita 09.png!Bone Charge
+|Image12 = Screenshot SS Skarrsinger Karmelita 10.png!Staggered
+|Image13 = Screenshot SS Far Fields 23.png!Arena in Karmelita's memory
+|Image14 = Screenshot SS Skarrsinger Karmelita 01.png!Karmelita's heart ripping
+|Image15= Screenshot SS Far Fields 18.png!After obtaining her heart
+|Image16 = Hunter Queen Carmelita.png!Promotional art
+|Image17 = Silksong Early 001.png!<i>Silksong</i> reveal trailer
+|Image18 = Ari SS Sketch 09.jpg!Concept sketches
+}}
+
+== Achievements ==
+{{Achievement|game=silksong|Diva}}
+
+== Trivia ==
+* Skarrsinger Karmelita was originally named Hunter Queen Carmelitia.<ref>[https://www.teamcherry.com.au/blog/hk-physical-late-anniversary-celebration-silksong-mini-update Team Cherry blog post] of March 19th, 2019: <i>"Hornet and the Hunter Queen Carmelitia begin their deadly dance,"</i></ref>
+**The file name of her promotional art in the <i>[[Hollow Knight: Silksong]]</i> press kit uses the similar name Carmelita.<ref>[https://web.archive.org/web/20251011143957/https://drive.google.com/drive/folders/1gjCKkQww45JAWMvmUXsbODrr-90Jw7pP <i>Hollow Knight: Silksong</i> press kit] as of October 11, 2025</ref>
+* According to the internal file name <code>vikki-carmelita (1).m4a</code>, Karmelita was likely voiced by [[William Pellen]]'s wife, Victoria Pellen, in the <i>Silksong</i> reveal trailer.<ref>[https://docs.google.com/document/d/1FJfFokRdBz2BnjZ-nWcCsaUnlQWSZGH_J9oPgmdkNio/edit?usp=sharing <i>Silksong</i> reveal trailer full metadata]</ref>
+* Unlike other NPCs, NPC Karmelita lacks a name card.
+* Karmelita's present day singing voice is reminiscent of her battle theme.
+* The Challenge prompt can be skipped by using Hornet's [[Challenge]], starting the fight with the same animation and expending no [[Silk]] in the process.
+* While staggered, the lead vocal in Karmelita's boss theme pauses, implying it is [[Wikipedia:Diegetic music|diegetic]] and sung by Karmelita herself.
+* Skarrsinger Karmelita is not stunned by the [[Needolin]]; her dialogue appears without stopping combat to sing.
+* The Clover Dancers' [https://www.youtube.com/watch?v=ko4lxiUA13s theme] closely resembles an instrumental rendition of [[Skarrsinger Karmelita]]'s [https://www.youtube.com/watch?v=XPZU_xt1XNc theme].
+
+{{Localisation
+|DEname = Skarrsängerin Karmelita
+|DEmeaning = Skarrsinger Karmelita (feminine)
+|ESname = Karmelita la Cantante Skarr
+|ESmeaning = Karmelita the Skarr Singer
+|FRname = Chanteuse Skarr Karmelita
+|FRmeaning = Skarr Singer Karmelita (feminine)
+|ITname = Mirmede Cantante Karmelita
+|ITmeaning = Skarr Singer Karmelita<br><small><i>Mirmede</i> is the name of the [[Skarr]] in Italian, from <i>mirmeco-</i> (prefix for ants) and <i>-ede</i> (taxonomic suffix).</small>
+|JAname = スカールの歌い手カーメリタ
+|JAromanised = Sukāru no utai te kāmerita
+|JAkatakana = foreign
+|JAmeaning = Singer of Skarr Karmelita
+|KOname = 스카르싱어 카르멜리타
+|KOromanised = Seukaleusingeo Kaleumellita
+|KOmeaning = Skarrsinger Karmelita
+|PTname = Skarrcantora Carmelita
+|PTmeaning = Skarrsinger Carmelita (feminine)
+|RUname = Поющая Скарру Кармелита
+|RUromanised = Pojuščaja Skarru Karmelita
+|RUmeaning = Singing Skarr Karmelita
+|TWname = 斯卡爾歌后 卡梅莉塔
+|TWromanised = Sīkǎ'ěr gēhòu kǎméilìtǎ
+|TWmeaning = same
+|ZHname = 斯卡尔歌后 卡梅莉塔
+|ZHromanised = Sīkǎ'ěr gēhòu kǎméilìtǎ
+|ZHmeaning = Skarr Singer Queen Karmelita
+|CODEname=HUNTER_QUEEN</code><br><code>CARMELITA
+|CODEmeaning = "Hunter" & "Bone Hunter" internally refer to the [[Skarr]]. Skarrsinger Karmelita was originally named Hunter Queen Carmelita
+}}
+
+{{Refs|hr=ss|columns=2}}
+
+{{SS Nav Enemies}}
+{{SS Nav NPCs}}
+{{#seo:|keywords=skarrsinger karmelita, karmelita, hunter queen carmelita, carmelita, ant queen}}
+[[Category:NPCs (Silksong)]]
+[[es:Carmelita]]
+[[pt:Skarrcantora Carmelita]]

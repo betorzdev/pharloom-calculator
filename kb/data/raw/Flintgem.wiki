@@ -1,0 +1,71 @@
+{{SS Infobox Item
+| description = Gem-like organ taken from a Flintbeetle. Produces incendiary sparks when abraded, and may explode if cracked or dropped.
+| max = 3
+| type = [[Items (Silksong)#Deliverable|Deliverable]]
+| source = Dropped by [[Flintbeetle]]s in [[the Marrow]] during <i>[[Volatile Flintbeetles]]</i>
+}}
+
+{{Quote
+| Flintbeetles have awoken in the Marrow. The gems that grow in their bellies provide a pure, constant warmth. Harvest these treasures and be rewarded!
+| Residents of [[Bone Bottom]]
+| Hr = SS
+}}
+
+<b>Flintgems</b> are [[Items (Silksong)#Deliverables|deliverable items]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+3 Flintgems must be delivered to [[Bone Bottom]] to complete the  <i>[[Volatile Flintbeetles]]</i> Hunt Wish, available from its [[Wishwalls|Wishwall]] after visiting [[Greymoor]] for the first time.
+
+{{Gallery
+|Image1 = Mapshot SS Flick the Fixer 01.png!Location in Bone Bottom
+|Image2 = Screenshot SS Flick the Fixer 02.png!Wishwall in Bone Bottom
+}}
+
+== How to Acquire ==
+Flintgems are dropped by slain [[Flintbeetle]]s, which only appear in [[the Marrow]] while <i>Volatile Flintbeetles</i> is in progress. The location of one of the Flintbeetles varies depending on whether the shortcut after the [[Bell Beast]] fight has been opened.
+
+{{Gallery
+|Image1 = Mapshot SS Flintbeetle.png!Locations in the Marrow. The starred location will only be used if the shortcut after the Bellshrine is open.
+|Image2 = Mapshot SS Flintbeetle Shortcut.png!Location of the shortcut that affects Flintbeetle locations
+|Image3 = Screenshot SS Flintbeetle 05.png!Flintbeetle in the Marrow
+}}
+
+==Act 3==
+All Flintgems will be removed from the inventory at the start of Act 3, as Bone Bottom has been destroyed.
+
+==Trivia==
+*While the method of obtaining it is unrelated, the [[Flintslate]] is described as being made from a cut and polished Flintgem.
+{{Localisation
+|DEname = Feuerjuwel
+|DEmeaning = Fire Jewel<br><small>Portmanteau of <i>feuerstein</i> (flint; lit. fire rock) and <i>juwel</i> (jewel).</small>
+|ESname = Pedergema
+|ESmeaning = Portmanteau of <i>pedernal</i> (flint) amd <i>gema</i> (gem).
+|FRname = Gemme de silex
+|FRmeaning = Flint Gem
+|ITname = Gemmaselce
+|ITmeaning = Flintgem
+|JAname = 発火宝石
+|JAromanised = Hakka hōseki
+|JAmeaning = Ignition Gem
+|KOname = 부싯보석
+|KOromanised = Busitboseok
+|KOmeaning = Flintgem
+|PTname = Gema Ígnea
+|PTmeaning = Igneous Gem
+|RUname = Самоцветный кремень
+|RUromanised = Samocvetnyj kremen'
+|RUmeaning = Gem Flint
+|TWname = 燧晶
+|TWromanised = Suì jīng
+|TWmeaning = same
+|ZHname = 燧晶
+|ZHromanised = Suì jīng
+|ZHmeaning = Flint Crystal
+|CODEname = ROCK_ROLLER_ITEM
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

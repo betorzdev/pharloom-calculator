@@ -1,0 +1,864 @@
+{{For|a list of quests in [[Hollow Knight]]|Quests (Hollow Knight)}}
+
+<b>Wishes</b> are a quest system in <i>[[Hollow Knight: Silksong]]</i> that [[Hornet (Silksong)|Hornet]] may accept from [[NPCs (Silksong)|NPCs]] found across [[Pharloom]] or from [[Wishwall]]s that can be found within [[Bone Bottom]], [[Bellhart]], or [[Songclave]]. They involve Hornet completing a wide variety of objectives, such as killing enemies, collecting items, or tracking down NPCs somewhere in the world. Ongoing wishes appear in the [[Tasks]] menu in the inventory.
+
+Wishes are divided into 7 different categories:
+
+== Wayfarer Wishes ==
+[[File:Wayfarer Quest Icon.png|right|thumb|160x160px]]
+
+Wayfarer Wishes usually involve finding an item or NPC during Hornet's exploration of Pharloom at the request of another NPC. Later in the game, some Wayfarer Wishes are placed that involve defeating optional [[Bosses (Silksong)|bosses]].
+
+<div class="mw-collapsible mw-collapsed" data-expandtext="Show List of Wishes" data-collapsetext="Hide List of Wishes">
+{{TaskEntry
+| top = true
+| header = <b><i>Accessible in [[Act 1]]</i></b>
+| id = The Lost Fleas
+| title = [[The Lost Fleas]]
+| description = I am Mooshka, humble stranger to this land and master of the Flea Caravan! I wish for aid, that all fleas may travel safely together!
+| objective = Seek fleas across the lands of Pharloom and guide them to the Flea Caravan.
+| location = <b><i>[[Bone Bottom]] Wishwall /<br>[[The Marrow]] NPC</i></b>
+[[Fleamaster Mooshka|Mooshka]] of the Flea Caravan
+| reward = [[Flea Brew]]
+}}
+{{TaskEntry
+| id = Pinmaster's Oil
+| title = [[Pinmaster's Oil]]
+| description = "Lost within that fortress above, the fabled oil of my profession... Such sharpness one could achieve..."
+| objective = Retrieve Pale Oil from the Citadel.
+| location = <b><i>[[Bellhart]] NPC</i></b>
+[[Pinmaster Plinney]]
+| reward = [[Needle#Upgrades|Needle Upgrade]]
+}}
+{{TaskEntry
+| id = My Missing Courier
+| title = [[My Missing Courier]]
+| description = My dear little courier was last seen in Shellwood. Please someone, find Tipp and send him home, along with all of his precious stock!
+| objective = Search for traces of the courier, Tipp, and track his location.
+Tipp was last seen in lower Shellwood.
+| location = <b><i>[[Bellhart]] Wishwall</i></b>
+[[Frey]] of Bellhart
+| reward = Opens additional inventory to purchase from [[Frey]].<br><i>Prerequisite for [[My Missing Brother]]</i>
+}}
+{{TaskEntry
+| header = <b><i>Accessible in [[Act 2]]</i></b>
+| id = My Missing Brother
+| title = [[My Missing Brother]]
+| description = Need help-help quick! Me brother Pill is gone missing, vanished somewhere in Greymoor! Please, to help me find-find him!
+| objective = Search for traces of the courier, Pill, and track his location.
+Pill was last seen in lower Greymoor.
+| location = <b><i>[[Bellhart]] Wishwall</i></b>
+[[Couriers Tipp & Pill|Tipp]] of Bellhart
+| reward = Unlocks [[#Delivery Wishes|Delivery Wishes]].
+}}
+{{TaskEntry
+| id = Balm for the Wounded
+| title = [[Balm for the Wounded]]
+| description = For the sake of our ailing brothers and sisters, I will descend into the holy Whiteward and search for healing supplies. If you are able, please join me! Company will make the work much merrier.
+| objective = Search for traces of the pilgrim, Sherma, and track his location.
+Sherma was travelling to the Citadel's Whiteward.
+| location = <b><i>[[Songclave]] Wishwall</i></b>
+[[Sherma]] of Songclave
+| reward = [[Spool Fragment]]<br><i>Prerequisite for [[Silk and Soul]]</i>
+}}
+{{TaskEntry
+| id = The Wandering Merchant
+| title = [[The Wandering Merchant]]
+| description = The old merchant pilgrim, Jubilana, was seen wandering down in the Choral Chambers, but she never made it up here. Has some foul fortune befallen her?
+| objective = Search for traces of the merchant, Jubilana, and track her location.
+Jubilana was last seen in the lower Choral Chambers.
+| location = <b><i>[[Songclave]] Wishwall</i></b>
+Residents of Songclave
+| reward = [[Jubilana]] sets up shop in Songclave.<br><i>Prerequisite for [[The Lost Merchant]]</i>
+}}
+{{TaskEntry
+| id = The Lost Merchant
+| title = [[The Lost Merchant]]
+| description = Our dear merchant left to scavenge treasures from the Citadel's Memorium. She's been gone far too long. Please make sure she's safe!
+| objective = Search for traces of the merchant, Jubilana, and track her location.
+Jubilana was last seen near the Citadel's Memorium.
+| location = <b><i>[[Songclave]] Wishwall</i></b>
+Residents of Songclave
+| reward = Opens additional inventory to purchase from [[Jubilana]].
+}}
+{{TaskEntry
+| id = Rite of Rebirth
+| title = [[Rite of Rebirth]]
+| description = "White shell. Red cloak. Bug strong and old. The time of birth is near. Aid now the final rite."
+| objective = Bind the Twisted Bud.
+| location = <b><i>[[Shellwood]] NPC</i></b>
+[[Greyroot]]
+| reward = [[Cursed Crest]]
+}}
+{{TaskEntry
+| id = Infestation Operation
+| title = [[Infestation Operation]]
+| description = "The great Yarnaby can rid you of those nasty "roots", but to crack your stiff shell my mighty Extricator needs an upgrade!"
+| objective = Acquire Steel Spines from Crull and Benjin in Sinner's Road so Yarnaby can remove the parasite.
+| location = <b><i>[[Greymoor]] NPC</i></b>
+[[Yarnaby]]
+| reward = [[Witch Crest]]
+}}
+{{TaskEntry
+| id = Trail's End
+| title = [[Trail's End]]
+| description = Child Wielding Needle, I have caught fresh scent of my master in those stricken swamps beside the Citadel. I ask you now to follow, to meet together at trail's end.
+| objective = Search for Shakra and her master in Bilewater.
+Shakra can be tracked by her trail of rings.
+| location = <b><i>[[Bellhart]] Wishwall</i></b>
+[[Shakra]]
+| reward = [[Throwing Ring]]<br><i>[[Achievements (Silksong)|Trail's End]]</i><br><i>Prerequisite for [[Silk and Soul]]</i>
+}}
+{{TaskEntry
+| id = Final Audience
+| title = [[Final Audience]]
+| description =  Attend this Sentinel's request, Hunter in Red. Meet in halls high, the chamber of its fellows. The way shall be marked.
+| objective = Track the Second Sentinel by their markers left near Songclave.
+| location = <b><i>[[Songclave]] Wishwall</i></b>
+[[Second Sentinel]]
+| reward = [[Reserve Bind]]
+}}
+{{TaskEntry
+| id = Silk and Soul
+| title = [[Silk and Soul]]
+| description = Oi! I'm wishin' for that bothersome bellringer! That you readin' this? Then head up top beside the shrine. Might be we two should have a little chat...
+| objective = Acquire the necessary components to build a powerful trap.
+* Maiden's Soul
+* Hermit's Soul
+* Seeker's Soul
+* Snare Setter
+| location = <b><i>[[Bellhart]] Wishwall / [[Songclave]] NPC</i></b>
+[[Caretaker]] of Songclave
+| reward = Unlocks the <i>[[DESTROY: Soul Snare]]</i> [[Objectives|objective]].
+}}
+{{TaskEntry
+| header = <b><i>Accessible in [[Act 3]]</i></b>
+| id = Fatal Resolve
+| title = [[Fatal Resolve]]
+| description = If the world is truly ending, I would test my pin in combat one last time. Come to my home at border's edge and accept my challenge!
+| objective = Find Pinstress on the stormward side of Mount Fay and defeat her in battle.
+| location = <b><i>[[Bellhart]] Wishwall / [[Blasted Steps]] Note</i></b>
+[[Pinstress]] of Blasted Steps
+| reward = [[Pin Badge]]<br><i>[[Achievements (Silksong)|Fatal Resolve]]</i>
+}}
+{{TaskEntry
+| id = Pain, Anguish and Misery
+| title = [[Pain, Anguish and Misery]]
+| description = In the darkest of shadows, all is made clear. Pharloom draws its final breath, and we few remaining must bear its dying pain. Come to the Citadel's Stage and let us suffer together.
+| objective = Return to the Citadel's Stage, beside the Whispering Vaults.
+| location = <b><i>[[Songclave]] Wishwall</i></b>
+[[Tormented Trobbio|The Tormented One]]
+| reward = [[Claw Mirrors|Dark Mirror]]
+}}
+{{TaskEntry
+| id = Hero's Call
+| title = [[Hero's Call]]
+| description = A distressed bug was heard calling for help near the Bellway atop the great sandy steps. Will no one come to the sad wretch's aid?
+| objective = Seek out the distressed bug near the Blasted Steps Bellway.
+| location = <b><i>[[Bellhart]] Wishwall</i></b>
+Residents of Bellhart
+| reward = [[Hero's Memento]]<br><i>[[Achievements (Silksong)|Hero's Call]]</i>
+}}
+{{TaskEntry
+| bottom = true
+| id = Ecstasy of the End
+| title = [[Ecstasy of the End]]
+| description = As was warned long ago, the black times have come. There is one last act to perform. Meet us at what was once called Fleatopia.
+| objective = Achieve the high score in all Flea Games and become the Grand Champion.
+* Juggle
+* Dodge
+* Bounce
+| location = <b><i>[[Bellhart]] Wishwall / [[Fleatopia]] NPC</i></b>
+[[Fleamaster Mooshka|Mooshka]] of Fleatopia
+| reward = [[Pale Oil]]
+}}
+</div>
+{{Clear}}
+
+== Gather Wishes ==
+[[File:Gather Quest Icon.png|right|thumb|160x160px]]
+
+Gather Wishes involve exploring a region of the map (or in the case of the <i>[[Great Taste of Pharloom]]</i> wish, the entire map) and finding specific items to turn in to an NPC and complete the wish. Collecting the required items usually does not directly involve killing enemies, with some exceptions.
+
+<div class="mw-collapsible mw-collapsed" data-expandtext="Show List of Wishes" data-collapsetext="Hide List of Wishes">
+{{TaskEntry
+| top = true
+| header = <b><i>Accessible in [[Act 1]]</i></b>
+| id = Berry Picking
+| title = [[Berry Picking]]
+| description = Sweetness! Sourness! Bitterness! I need it all with hastiness! If you have the precious fruits, come to me in Mosshome and share all you have!
+| objective = Collect Mossberries from the moss-covered areas of Pharloom's lowlands.
+| location = <b><i>[[Bone Bottom]] Wishwall / [[Mosshome]] NPC</i></b>
+[[Moss Druid|Druid]] of Mosshome
+| reward = [[Druid's Eye]]
+}}
+{{TaskEntry
+| id = Rite of the Pollip
+| title = [[Rite of the Pollip]]
+| description = "The time of birth approaches. Pollip Hearts are needed. Bring them, bug, and power will be shared."
+| objective = Collect Pollip Hearts from the purple flowers of Shellwood.
+| location = <b><i>[[Shellwood]] NPC</i></b>
+[[Greyroot]]
+| reward = [[Pollip Pouch]]
+}}
+{{TaskEntry
+| id = Silver Bells
+| title = [[Silver Bells]]
+| description = When searching the bellveins carefully, you can sometimes find rare, silver bells. If we can salvage some, the material would be of great use!
+| objective = Collect Silver Bells in the bellvein tunnels above and below Bellhart.
+| location = <b><i>[[Bellhart]] Wishwall</i></b>
+Residents of Bellhart
+| reward = [[Rosary Necklace]]
+}}
+{{TaskEntry
+| id = Alchemist's Assistant
+| title = [[Alchemist's Assistant]]
+| description = "Perhaps, like myself, you have been bewitched by the Plasmium's beautiful glow? Then join me, you must! A new assistant is needed. Together we shall unlock the secrets of this wondrous substance!"
+| objective = Collect Plasmium from Plasmium buds in the lower Wormways.
+Plasmium can be extracted from buds using a fully charged stab from the Needle Phial tool.
+| location = <b><i>[[Wormways]] NPC</i></b>
+[[Alchemist Zylotol]]
+| reward = [[Plasmium Phial]]
+}}
+{{TaskEntry
+| header = <b><i>Accessible in [[Act 2]]</i></b>
+| id = Great Taste of Pharloom
+| title = [[Great Taste of Pharloom]]
+| description = "If your idle claws need work, put them to service for our exalted Great Gourmand! I must remain by my master, so you will need to leave the Citadel and gather the ingredients for their meal in my stead!"
+| objective = Collect rare delicacies of Pharloom.
+* Mossberry Stew
+* Vintage Nectar
+* Courier's Rasher
+* Crustnut
+* Pickled Muckmaggot
+| location = <b><i>[[Choral Chambers]] NPC</i></b>
+[[Loyal Mergwin]]
+| reward = [[Pale Oil]]<br><i>[[Achievements (Silksong)|Glutton]]</i>
+}}
+{{TaskEntry
+| bottom = true
+| header = <b><i>Accessible in [[Act 3]]</i></b>
+| id = Advanced Alchemy
+| title = [[Advanced Alchemy]]
+| description = "Assistant... to learn more of Plasmium's wonders... I know what we must do..."
+| objective = Collect Plasmified Blood from infected creatures in the Wormways.
+Plasmified Blood can be extracted with a fully charged stab from the Needle Phial tool.
+| location = <b><i>[[Wormways]] NPC</i></b>
+[[Alchemist Zylotol]]
+| reward = [[Plasmium Gland]]
+}}
+</div>
+{{Clear}}
+
+== Hunt Wishes ==
+[[File:Hunt Quest Icon.png|right|thumb|160x160px]]
+
+Hunt Wishes involve killing [[Enemies (Silksong)|enemies]] in a specific part of the world and collecting items dropped by them to turn in and complete the wish. The only exception to this is the <i>[[Dark Hearts]]</i> wish, which does not require Hornet to collect any items and whose enemies are found all across Pharloom.
+
+<div class="mw-collapsible mw-collapsed" data-expandtext="Show List of Wishes" data-collapsetext="Hide List of Wishes">
+{{TaskEntry
+| top = true
+| header = <b><i>Accessible in [[Act 1]]</i></b>
+| id = Garb of the Pilgrims
+| title = [[Garb of the Pilgrims]]
+| description = Those mad, violent pilgrims who haunt the great path... we could make use of their shawls here in Bone Bottom. And felling them would surely be a mercy!
+| objective = Hunt haunted pilgrims of Pharloom and collect Pilgrim Shawls from their bodies.
+| location = <b><i>[[Bone Bottom]] Wishwall</i></b>
+Residents of Bone Bottom
+| reward = [[Rosary Necklace]]
+}}
+{{TaskEntry
+| id = Flexile Spines
+| title = [[Flexile Spines]]
+| description = "If you're planning to ascend from these low fields, you'll be needing some lift, and I'm just the bug to help."
+| objective = Hunt Hokers in the Far Fields and collect Spine Cores.
+| location = <b><i>[[Far Fields]] NPC</i></b>
+[[Seamstress]]
+| reward = [[Drifter's Cloak]]<br><i>Prerequisite for [[Silk and Soul]]</i>
+}}
+{{TaskEntry
+| id = Volatile Flintbeetles
+| title = [[Volatile Flintbeetles]]
+| description = Flintbeetles have awoken in the Marrow. The gems that grow in their bellies provide a pure, constant warmth. Harvest these treasures and be rewarded!
+| objective = Track down Flintbeetles in the Marrow and defeat them to collect Flintgems.
+Flintbeetles can be tracked by their stone-sheddings and their aromatic dung.
+| location = <b><i>[[Bone Bottom]] Wishwall</i></b>
+Residents of Bone Bottom
+| reward = [[Memory Locket]]
+}}
+{{TaskEntry
+| id = Crawbug Clearing
+| title = [[Crawbug Clearing]]
+| description = Those blasted crawbugs are fouling up my roof! I've come up with a clever solution to keep them away, but I'll need some help. Enquire at the Halfway Home if you're fit for the task.
+| objective = Hunt Crawbugs in Greymoor and collect their Ragpelt.
+| location = <b><i>[[Bellhart]] Wishwall / [[Halfway Home]] NPC</i></b>
+[[Creige]] of the Halfway Home
+| reward = [[Crafting Kit]]<br><i>Prerequisite for [[Silk and Soul]]</i>
+}}
+{{TaskEntry
+| id = Roach Guts
+| title = [[Roach Guts (Wish)|Roach Guts]]
+| description = "How 'bout you put that poker to good use then, missy? Go poach some of them roaches and get us some tasty guts? There'd be fair trade waitin' for yer!"
+| objective = Hunt the Muckroaches of Sinner's Road and collect Roach Guts from their bodies.
+| location = <b><i>[[Sinner's Road]] NPCs</i></b>
+[[Crull and Benjin]]
+| reward = [[Tacks]]
+}}
+{{TaskEntry
+| header = <b><i>Accessible in [[Act 2]]</i></b>
+| id = Fine Pins
+| title = [[Fine Pins]]
+| description = Our settlement sits defenceless! No more! When the worst comes, we must stand ready. Bring us pins of the choirbugs, those blades still sharp and strong.
+| objective = Hunt pin-wielding choirbugs of the Citadel and collect Fine Pins.
+| location = <b><i>[[Songclave]] Wishwall</i></b>
+Residents of Songclave
+| reward = [[Heavy Rosary Necklace]]
+}}
+{{TaskEntry
+| id = Cloaks of the Choir
+| title = [[Cloaks of the Choir]]
+| description = Our haunted brethren wandering the great halls still wear their fine white cloaks. This settlement would greatly benefit from their protection. Please fetch some for us!
+| objective = Hunt cloaked choirbugs of the Citadel and collect Choir Cloaks from their bodies.
+| location = <b><i>[[Songclave]] Wishwall</i></b>
+Residents of Songclave
+| reward = [[Heavy Rosary Necklace]]
+}}
+{{TaskEntry
+| id = Broodfeast
+| title = [[Broodfeast]]
+| description = "Would you gift organs for my brood, sssppiidderr? Upon first waking my children will be consumed with craving."
+| objective = Use tools to acquire organs of various types so Huntress may feed her brood.
+* Seared Organ
+* Shredded Organ
+* Skewered Organ
+| location = <b><i>[[Putrified Ducts]] NPC</i></b>
+[[Huntress]]
+| reward = [[Longclaw]]<br><i>Exclusive with [[Runtfeast]]</i>
+}}
+{{TaskEntry
+| header = <b><i>Accessible in [[Act 3]]</i></b>
+| id = Runtfeast
+| title = [[Runtfeast]]
+| description = "Us needssss meatsss... hunter... finds... bringsss... So us'sss small does grow like siblingssss..."
+| objective = Use tools to acquire organs of various types so Runt may feed.
+* Seared Organ
+* Shredded Organ
+* Skewered Organ
+| location = <b><i>[[Putrified Ducts]] NPC</i></b>
+[[Runt]]
+| reward = [[Longclaw]]<br><i>Exclusive with [[Broodfeast]]</i>
+}}
+{{TaskEntry
+| bottom = true
+| id = Dark Hearts
+| title = [[Dark Hearts]]
+| description = Such horror upon the roads! Those black mounds formed of husks and bugs, corrupting everything around. If only someone would cut them down and grant the poor souls their rest!
+| objective = Destroy Void Masses throughout Pharloom.
+| location = <b><i>[[Bellhart]] Wishwall</i></b>
+Residents of Bellhart
+| reward = [[Mask Shard (Silksong)|Mask Shard]]
+}}
+</div>
+{{Clear}}
+
+== Grand Hunt Wishes ==
+[[File:Grand Hunt Quest Icon.png|right|thumb|160x160px]]
+Grand Hunt Wishes are always accepted from a [[Wishwall]], and involve finding and killing a unique [[Bosses (Silksong)|boss]] enemy and claiming a trophy item from them to turn in and complete the wish. They carry a high reward, either yielding a [[Heavy Rosary Necklace]] or a [[Mask Shard (Silksong)|Mask Shard]].
+<div class="mw-collapsible mw-collapsed" data-expandtext="Show List of Wishes" data-collapsetext="Hide List of Wishes">
+{{TaskEntry
+| top = true
+| header = <b><i>Accessible in [[Act 1]]</i></b>
+| id = The Terrible Tyrant
+| title = [[The Terrible Tyrant]]
+| description = A Skull Tyrant, largest of the Marrow's loathsome bony predators, prowls the caves above the great path. Slay the beast and keep us all safe!
+| objective = Hunt a Skull Tyrant of the Marrow.
+| location = <b><i>[[Bone Bottom]] Wishwall</i></b>
+Residents of Bone Bottom
+| reward = [[Heavy Rosary Necklace]]
+}}
+{{TaskEntry
+| header = <b><i>Accessible in [[Act 2]]</i></b>
+| id = Savage Beastfly
+| title = [[Savage Beastfly (Wish)|Savage Beastfly]]
+| description = O Beastfly, raging through the scorching wildlands below! May you hinder good pilgrims no longer! May you be struck down by a holy fury!
+| objective = Track down the Savage Beastfly in the Far Fields and defeat it.
+The Beastfly can be tracked by its shell sheddings and claw marks.
+| location = <b><i>[[Bellhart]] Wishwall</i></b>
+Residents of Bellhart
+| reward = [[Mask Shard (Silksong)|Mask Shard]]
+}}
+{{TaskEntry
+| id = The Wailing Mother
+| title = [[The Wailing Mother]]
+| description = Horrible cries have been heard from that prison beside the Citadel. What profanities must be happening within to cause such awful sound?
+| objective = Track down the wailing creature in the Slab and slay it.
+The creature can be tracked by its slime trail.
+| location = <b><i>[[Songclave]] Wishwall</i></b>
+Residents of Songclave
+| reward = [[Heavy Rosary Necklace]]
+}}
+{{TaskEntry
+| bottom = true
+| header = <b><i>Accessible in [[Act 3]]</i></b>
+| id = The Hidden Hunter
+| title = [[The Hidden Hunter]]
+| description = A huge red-shell stole my precious keepsake and disappeared into the fields! Please chase down the thief and recover my treasure!
+| objective = Track the one who stole Gilly's keepsake near the Bellshrine between Deep Docks and Far Fields.
+| location = <b><i>[[Bellhart]] Wishwall</i></b>
+[[Gilly]] of Far Fields
+| reward = [[Mask Shard (Silksong)|Mask Shard]]
+}}
+</div>
+{{Clear}}
+
+== Donate Wishes ==
+[[File:Donate Quest Icon.png|right|thumb|160x160px]]
+Donate Wishes involve donating either {{S|shell shards}} or {{R|rosaries}} to a [[Wishwall]] in order to help out a particular settlement, and cannot be accepted until Hornet has the required amount of resources to donate. Donate Wishes for a settlement must be completed in order, and are usually prerequisites for other wishes or obtaining items.
+<div class="mw-collapsible mw-collapsed" data-expandtext="Show List of Wishes" data-collapsetext="Hide List of Wishes">
+{{TaskEntry
+| top = true
+| header = <b><i>Accessible in [[Act 1]]</i></b>
+| id = Bone Bottom Repairs
+| title = [[Bone Bottom Repairs]]
+| description = A lotta repairs to be done around here, but I need more materials! All I wish for is some shell shards so I can get to work. Not asking too much, am I?
+| objective = Donate shell shards to aid repairs around Bone Bottom.
+| location = <b><i>[[Bone Bottom]] Wishwall</i></b>
+[[Flick]] of Bone Bottom
+| reward = <i>Prerequisite for [[A Lifesaving Bridge]]</i><br><i>Prerequisite for [[Silk and Soul]]</i>
+}}
+{{TaskEntry
+| id = A Lifesaving Bridge
+| title = [[A Lifesaving Bridge]]
+| description = I've heard tell pilgrims sometimes fall down that big hole beside the settlement. Nasty way to end your journey, before it even begins. I could build a bridge, if I only had the materials!
+| objective = Donate shell shards to aid the building of a bridge.
+| location = <b><i>[[Bone Bottom]] Wishwall</i></b>
+[[Flick]] of Bone Bottom
+| reward = A destructible bridge is constructed over the hole that leads to [[Moss Grotto]].<br><i>Prerequisite for [[An Icon of Hope]]</i><br><i>Prerequisite for [[Silk and Soul]]</i>
+}}
+{{TaskEntry
+| id = Restoration of Bellhart
+| title = [[Restoration of Bellhart]]
+| description = Harken, ye holy! Our home has been cleansed of evil, but now we are tasked with restoring its former glory! Share your rosaries with us, that the work may begin.
+| objective = Donate rosaries to aid the rebuilding of Bellhart.
+| location = <b><i>[[Bellhart]] Wishwall</i></b>
+[[Pavo]] of Bellhart
+| reward = <i>Prerequisite for [[Bellhart's Glory]]</i><br><i>Prerequisite for [[Silk and Soul]]</i>
+}}
+{{TaskEntry
+| header = <b><i>Accessible in [[Act 2]]</i></b>
+| id = An Icon of Hope
+| title = [[An Icon of Hope]]
+| description = The road is hard for we pilgrims. I want to build a beautiful symbol of hope, to stand beside Bone Bottom and welcome all those who are about to begin their long journey.
+| objective = Donate shell shards to aid the construction of an icon of hope.
+| location = <b><i>[[Bone Bottom]] Wishwall</i></b>
+[[Flick]] of Bone Bottom
+| reward = A destructible statue of [[Flick]] is erected in Bone Bottom.<br>[[Hornet Statuette]]
+}}
+{{TaskEntry
+| id = Bellhart's Glory
+| title = [[Bellhart's Glory]]
+| description = The work of restoring our sacred home is almost complete! May those blessed with rosaries share them with us for this holy purpose!
+| objective = Donate rosaries to aid the rebuilding of Bellhart.
+| location = <b><i>[[Bellhart]] Wishwall</i></b>
+[[Pavo]] of Bellhart
+| reward = <i>Prerequisite for the [[Bellhome Key]]</i><br><i>Prerequisite for [[Silk and Soul]]</i>
+}}
+{{TaskEntry
+| id = Building Up Songclave
+| title = [[Building Up Songclave]]
+| description = If this place must provide shelter for every ragged bug who wanders in, we'll need supplies and currency. So if you're reading this, empty your pockets!
+| objective = Donate rosaries to aid the growing Songclave.
+| location = <b><i>[[Songclave]] Wishwall</i></b>
+[[Caretaker]] of Songclave
+| reward = <i>Prerequisite for [[Strengthening Songclave]]</i><br><i>Prerequisite for [[Silk and Soul]]</i>
+}}
+{{TaskEntry
+| bottom = true
+| id = Strengthening Songclave
+| title = [[Strengthening Songclave]]
+| description = How do all of these wretched, lost bugs keep finding their way here?! Each hungry and squalling for shelter! We need more rosaries, so empty your pockets.
+| objective = Donate rosaries to aid the Songclave's residents.
+| location = <b><i>[[Songclave]] Wishwall</i></b>
+[[Caretaker]] of Songclave
+| reward = <i>Prerequisite for [[The Lost Merchant]]</i><br><i>Prerequisite for [[Silk and Soul]]</i>
+}}
+</div>
+{{Clear}}
+
+== Delivery Wishes ==
+[[File:Delivery Quest Icon.png|right|thumb|160x160px]]
+
+Delivery Wishes involve accepting a delivery item from the [[Couriers Tipp & Pill]] in Bellhart to give to another NPC somewhere else in Pharloom. Deliveries are fragile and take damage when Hornet does. Making a heavy landing, hitting a ceiling while using [[Silk Soar]], and running into a wall while using [[Swift Step]] also damages the item. If the item takes too much damage (denoted below Hornet's health bar), it breaks, and another one must be acquired from Tipp & Pill to re-attempt the delivery. Travelling with the [[Bellways]], [[Ventrica]], [[Flea Caravan]] or using the [[Beastling Call]] immediately destroys the item.
+
+Although the [[Courier's Rasher]] delivery for the <i>[[Great Taste of Pharloom]]</i> wish functions in the same manner and displays the "Wish Promised" card when it's accepted, it does not count as its own Delivery Wish.
+
+<div class="mw-collapsible mw-collapsed" data-expandtext="Show List of Wishes" data-collapsetext="Hide List of Wishes">
+{{TaskEntry
+| top = true
+| header = <b><i>Accessible in [[Act 2]]</i></b>
+| id = Bone Bottom Supplies
+| title = [[Bone Bottom Supplies]]
+| description = "Goods for the camp at base, where pilgrims' journey starts. We muchly hope this delivering goes well!"
+| objective = Deliver supplies to the fixer Flick in Bone Bottom.
+| location = <b><i>[[Bellhart]] NPCs</i></b>
+[[Couriers Tipp & Pill]]
+| reward = {{R|150}}
+}}
+{{TaskEntry
+| id = Pilgrim's Rest Supplies
+| title = [[Pilgrim's Rest Supplies]]
+| description = "Supplies for the rest-stop in the fields. We is used to like this delivering, when we was young and muchly brave."
+| objective = Deliver supplies to Mort in Pilgrim's Rest.
+| location = <b><i>[[Bellhart]] NPCs</i></b>
+[[Couriers Tipp & Pill]]
+| reward = {{R|180}}
+}}
+{{TaskEntry
+| id = Queen's Egg
+| title = [[Queen's Egg (Wish)|Queen's Egg]]
+| description = <i>"We is got requested times a'many for this, a queeny egg of those eaters of Silk. Wish from big, sticky creature, near many roaches caged. Wants it muchly!"</i>
+| objective = Deliver the Queen's Egg to Styx of Sinner's Road.
+| location = <b><i>[[Bellhart]] NPCs</i></b>
+[[Couriers Tipp & Pill]]
+| reward = {{R|260}} (Act 2)<br>{{R|290}} (Act 3)<br>[[Styx]] expands his nest, allowing for the generation of more [[Silkeater]]s.
+}}
+{{TaskEntry
+| id = Songclave Supplies
+| title = [[Songclave Supplies]]
+| description = "Good-goods for the pilgrims up high! Thems brave ones, settled up on that big-big Citadel. These deliverings they will muchly need, miss courier. Carry them safe-safe, for us!"
+| objective = Deliver supplies to the Caretaker in Songclave.
+| location = <b><i>[[Bellhart]] NPCs</i></b>
+[[Couriers Tipp & Pill]]
+| reward = {{R|360}} (Act 2)<br>{{R|410}} (Act 3)
+}}
+{{TaskEntry
+| id = Fleatopia Supplies
+| title = [[Fleatopia Supplies]]
+| description = "Those good-goods, all packed fresh for the clever fleas. Take thems up for us, miss courier. Maybe new friends you might be making with your service? Yes-yes?"
+| objective = Deliver supplies to the Fleamaster Mooshka in Fleatopia.
+| location = <b><i>[[Bellhart]] NPCs</i></b>
+[[Couriers Tipp & Pill]]
+| reward = {{R|410}} (Act 2)<br>{{R|480}} (Act 3)
+}}
+{{TaskEntry
+| id = Liquid Lacquer
+| title = [[Liquid Lacquer (Wish)|Liquid Lacquer]]
+| description = "A delivery deadly, dangerous, fiercably cold, for old bug up there that does need it much-much! Serves us all he does, so we serve back. And great test for you, miss courier! Most challenging-challenge this. The lacquer to bring is sloshy-slosh. A hard carry even for the best."
+| objective = Deliver Liquid Lacquer to the Mask Maker upon Mount Fay.
+| location = <b><i>[[Bellhart]] NPCs</i></b>
+[[Couriers Tipp & Pill]]
+| reward = {{R|560}} (Act 2)<br>{{R|650}} (Act 3)
+}}
+{{TaskEntry
+| bottom = true
+| header = <b><i>Accessible in [[Act 3]]</i></b>
+| id = Survivor's Camp Supplies
+| title = [[Survivor's Camp Supplies]]
+| description = "A new destination this-this! And desperate these supplies are asked. Deliverings for them-them escaped from the crumbled camp beside the bone, those few still living. Hurting and hungry, those few must be."
+| objective = Deliver supplies to Flick at the Survivors' Camp.
+| location = <b><i>[[Bellhart]] NPCs</i></b>
+[[Couriers Tipp & Pill]]
+| reward = {{R|180}}<br><i>Replaces [[Bone Bottom Supplies]] and [[Pilgrim's Rest Supplies]]</i>
+}}
+</div>
+{{Clear}}<br>
+
+== Unique Wishes ==
+Unique Wishes each have their own unique task icon and subheader, and involve completing objectives that don't fit into any other type of Wish.
+<div class="mw-collapsible mw-collapsed" data-expandtext="Show List of Wishes" data-collapsetext="Hide List of Wishes">
+{{TaskEntry
+| top = true
+| header = <b><i>Accessible in [[Act 1]]</i></b>
+| id = Bugs of Pharloom
+| title = [[File:Learn Quest Icon.png|100px]]<br>[[Bugs of Pharloom|LEARN:<br>Bugs of Pharloom]]
+| description = "Would you help Nuu? Could you take her scroll, and fill its pages with the learnings of your cuts?"
+| objective = Defeat the many creatures of Pharloom and fill out the Hunter's Journal.
+| location = <b><i>[[Halfway Home]] NPC</i></b>
+[[Nuu]]
+| reward = [[Tool Pouch|Tool Pouch Expansion]]<br><i>[[Achievements (Silksong)|Keen Hunter]]</i>
+}}
+{{TaskEntry
+| header = <b><i>Accessible in [[Act 3]]</i></b>
+| id = Fastest in Pharloom
+| title = [[File:Sprint Quest Icon.png|100px]]<br>[[Fastest in Pharloom|SPRINT:<br>Fastest in Pharloom]]
+| description = Be you nimble? Be you quick? If you would prove yourself Pharloom's fastest bug, meet me at the furthest border of the Far Fields! With all haste!
+| objective = Race Sprintmaster Swift to discover Pharloom's fastest bug.
+| location = <b><i>[[Bellhart]] Wishwall / [[Far Fields]] NPC</i></b>
+[[Sprintmaster Swift]]
+| reward = First Race: [[Rosary Necklace]]<br>Second Race: [[Beast Shard]]<br>Third Race: [[Mask Shard (Silksong)|Mask Shard]]
+}}
+{{TaskEntry
+| id = Passing of the Age
+| title = [[File:Witness Quest Icon.png|100px]]<br>[[Passing of the Age (Wish)|WITNESS:<br>Passing of the Age]]
+| description = "We speak the wish of the Master Herald, he who signs an Age's end."
+| objective = Under chapel fallen to the monarch's might,<br>Over camp collapsed to the black thread plight,<br>Scorched field on edge, shells black and burned,<br>Up towers spinning, near the surgeon spurned,<br>Cage of one who raged against the silken lie,<br>Fell heart of frost, who soars on high,<br>Past cradle's peak, last test of fitness,<br>That the age may pass, this shroom its witness.
+| location = <b><i>[[Putrified Ducts]] Riddle Tablet</i></b>
+[[Mister Mushroom (Silksong)|The Herald]]
+| reward = <i>[[Achievements (Silksong)|Passing of the Age]]</i>
+}}
+{{TaskEntry
+| bottom = true
+| header = <b><i>Accessible in {{Steel Soul Icon Mini|SS}} [[Steel Soul Mode (Silksong)| Steel Soul Mode]]</i></b>
+| id = A Vassal Lost
+| title = [[File:Steel Quest Icon.png|100px]]<br>[[A Vassal Lost|STEEL:<br>A Vassal Lost]]
+| description = "Creature, higher... It has been sent... by Masters served... to retrieve Zi's vassal lost?"
+| objective = Investigate the resting sites marked by Steel Seer Zi to uncover the location of her vassal.
+| location = <b><i>[[Blasted Steps]] NPC</i></b>
+[[Steel Seer Zi]]
+| reward = [[Growstone]]
+}}
+</div>
+{{Clear}}<br>
+
+== Gallery ==
+{{Gallery
+| Image1 = Wayfarer Wish Art.png!Splash screen art for [[#Wayfarer Wishes|Wayfarer Wishes]]
+| Image2 = Gather Wish Art.png!Splash screen art for [[#Gather Wishes|Gather Wishes]]
+| Image3 = Hunt Wish Art.png!Splash screen art for [[#Hunt Wishes|Hunt Wishes]]
+| Image4 = Grand Hunt Wish Art.png!Splash screen art for [[#Grand Hunt Wishes|Grand Hunt Wishes]]
+| Image5 = Donate Wish Art.png!Splash screen art for [[#Donate Wishes|Donate Wishes]]
+| Image6 = Delivery Wish Art.png!Splash screen art for [[#Delivery Wishes|Delivery Wishes]]
+| Image7 = Learn Wish Art.png!Splash screen art for [[Bugs of Pharloom]]
+| Image8 = Sprint Wish Art.png!Splash screen art for [[Fastest in Pharloom]]
+| Image9 = Witness Wish Art.png!Splash screen art for [[Passing of the Age (Wish)|Passing of the Age]]
+| Image10 = Steel Wish Art.png!Splash screen art for [[A Vassal Lost]]
+}}
+
+== Achievements ==
+{{Achievements|allgames=silksong
+| Granted
+| Glutton
+| Trail's End
+| Fatal Resolve
+| Hero's Call
+| Resident
+| Keen Hunter
+| Passing of the Age
+}}
+
+{{Localisation
+|DEname = Wunsch
+|DEmeaning = Wish
+|ESname = Deseo
+|ESmeaning = Desire
+|FRname = Souhait
+|FRmeaning = Wish
+|ITname = Desiderio
+|ITmeaning = Desire
+|JAname = 願い
+|JAromanised = Negai
+|JAmeaning = Wish
+|KOname = 소원
+|KOromanised = Sowon
+|KOmeaning = Wish
+|PTname = Desejo 
+|PTmeaning = Desire
+|RUname = Желание
+|RUromanised = Želanie 
+|RUmeaning = Wish
+|TWname = 願望
+|TWromanised = Yuànwàng
+|TWmeaning = Wish
+|ZHname = 祈愿
+|ZHromanised = Qí yuàn
+|ZHmeaning = Prayer
+}}
+=== Wayfarer Wishes ===
+{{Localisation
+|hr=false
+|DEname = Wanderer
+|DEmeaning = —
+|ESname = Caminante
+|ESmeaning = Walker
+|FRname = Exploration
+|FRmeaning = —
+|ITname = Esplorazione
+|ITmeaning = Exploration
+|JAname = 支援
+|JAromanised = Shien
+|JAmeaning = Assistance
+|KOname = 여행자
+|KOromanised = Yeohaengja
+|KOmeaning = Adventurer
+|PTname = Auxílio
+|PTmeaning = Help
+|RUname = Помощь
+|RUromanised = Pomošč'
+|RUmeaning = Help
+|TWname = 尋蹤
+|TWromanised = Xún zōng
+|TWmeaning = Find Trail
+|ZHname = 旅者助行
+|ZHromanised = Lǚzhě zhù xíng
+|ZHmeaning = Traveller Assistance
+|CODEname = TYPE_WAYFARER_1
+|CODEmeaning = 
+}}
+
+=== Gather Wishes ===
+{{Localisation
+|hr=false
+
+|DEname = Sammlung
+|DEmeaning = Gathering or Collection
+|ESname = Reunir
+|ESmeaning = Gather
+|FRname = Récolte
+|FRmeaning = Harvest
+|ITname = Raccolta
+|ITmeaning = Gather
+|JAname = 収集
+|JAromanised = Shūshū
+|JAmeaning = Gathering or Collection
+|KOname = 수집
+|KOromanised = Sujip
+|KOmeaning = Gathering or Collection
+|PTname = Coleta
+|PTmeaning = Gathering or Collecting
+|RUname = Сбор
+|RUromanised = Sbor
+|RUmeaning = Collection
+|TWname = 收集
+|TWromanised = Shōují
+|TWmeaning = same
+|ZHname = 收集
+|ZHromanised = Shōují
+|ZHmeaning = Gather
+|CODEname = TYPE_GATHER_1
+|CODEmeaning = 
+}}
+
+=== Hunt Wishes ===
+{{Localisation
+|hr=false
+|DEname = Jagd
+|DEmeaning = Hunt
+|ESname = Caza
+|ESmeaning = Hunt
+|FRname = Chasse
+|FRmeaning = Hunt
+|ITname = Caccia
+|ITmeaning = Hunt
+|JAname = 討伐
+|JAromanised = Tōbatsu
+|JAmeaning = Subjugation or Subdue
+|KOname = 사냥
+|KOromanised = Sanyang
+|KOmeaning = Hunt
+|PTname = Caçada
+|PTmeaning = Hunt
+|RUname = Охота
+|RUromanised = Oxota
+|RUmeaning = Hunt
+|TWname = 狩獵
+|TWromanised = Shòuliè
+|TWmeaning = same
+|ZHname = 狩猎
+|ZHromanised = Shòuliè
+|ZHmeaning = Hunt
+|CODEname = TYPE_HUNT_1
+|CODEmeaning = 
+}}
+
+=== Grand Hunt Wishes ===
+{{Localisation
+|hr=false
+
+|DEname = Große Jagd
+|DEmeaning = Grand hunt
+|ESname = Gran caza
+|ESmeaning = Great hunt
+|FRname = Grande chasse
+|FRmeaning = Grand Hunt
+|ITname = Caccia grossa
+|ITmeaning = Great hunt
+|JAname = 大討伐
+|JAromanised = Dai tōbatsu
+|JAmeaning = Great Subjugation or Great Subdue
+|KOname = 위대한 사냥
+|KOromanised = Widaehan sanyang
+|KOmeaning = Great Hunt
+|PTname = Grande Caçada
+|PTmeaning = Grand Hunt
+|RUname = Большая охота
+|RUromanised = Bolʹšaja oxota
+|RUmeaning = Big hunt
+|TWname = 大狩獵
+|TWromanised = Dà shòuliè
+|TWmeaning = Grand Hunt
+|ZHname = 狩王试炼
+|ZHromanised = Shòu wáng shìliàn
+|ZHmeaning = Hunt King Trial
+|CODEname = TYPE_HUNT_2
+|CODEmeaning = 
+}}
+
+=== Donate Wishes ===
+{{Localisation
+|hr=false
+
+|DEname = Spenden
+|DEmeaning = Donate
+|ESname = Donar
+|ESmeaning = Donate
+|FRname = Contribution
+|FRmeaning = —
+|ITname = Dona
+|ITmeaning = Donate
+|JAname = 寄付
+|JAromanised = Kifu
+|JAmeaning = Donate or Contribution
+|KOname = 기부
+|KOromanised = Gibu
+|KOmeaning = Donation
+|PTname = Doar
+|PTmeaning = Donate
+|RUname = Дарение
+|RUromanised = Darenie
+|RUmeaning = Donation or Gift
+|TWname = 捐獻
+|TWromanised = Juānxiàn
+|TWmeaning = same
+|ZHname = 捐献
+|ZHromanised = Juānxiàn
+|ZHmeaning = Donate
+|CODEname = TYPE_DONATE_1
+|CODEmeaning = 
+}}
+
+=== Delivery Wishes  ===
+{{Localisation
+|hr=false
+
+|DEname = Lieferung
+|DEmeaning = Delivery
+|ESname = Entrega
+|ESmeaning = Delivery
+|FRname = Livraison
+|FRmeaning = Delivery
+|ITname = Consegna
+|ITmeaning = Delivery
+|JAname = 運搬
+|JAromanised = Unpan
+|JAmeaning = Transport
+|KOname = 전달
+|KOromanised = Jeondal
+|KOmeaning = Delivery
+|PTname = Entregar
+|PTmeaning = Deliver
+|RUname = Доставка
+|RUromanised = Dostavka
+|RUmeaning = Delivery
+|TWname = 遞送
+|TWromanised = Dìsòng
+|TWmeaning = same
+|ZHname = 递送
+|ZHromanised = Dìsòng
+|ZHmeaning = Delivery
+|CODEname = TYPE_COURIER
+|CODEmeaning = 
+}}
+
+[[Category:Wishes]]
+
+[[pt:Desejos]]

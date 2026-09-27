@@ -1,0 +1,93 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Splinterhorn.png|Hunter's Journal
+Splinterhorn Attacking.png|Attacking
+Splinterhorn Hidden.png|Hidden
+</gallery>
+| hasdrop = true
+| sh1 = 4-6
+| sh2 = 5-8
+|health = 25/{{BT|100}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.9|0.9|0.9|0.9}}
+|numbers_required = 10
+|sing = Splinter
+|singnum = 2
+}}
+
+{{Quote
+|Hr = Journal
+|Insect formed to imitate a branch, born with sharp, retractable horns atop its head.<hr/>
+Its shell gives it the advantage of surprise, but also forces it into a slender, brittle shape that cannot withstand a heavy attack.
+}}
+
+<b>Splinterhorns</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are lanky, quadrupedal members of the [[Splinter Tribe]] with bulging eyes and a split-horn head.
+
+== Behaviour and Tactics ==
+Splinterhorns hide as background branches, shaking and popping up once Hornet gets close. They can only walk forwards to close the distance between themselves and Hornet, and are much more aggressive than [[Splinter]]s. Once in range, they use one of two attacks:
+* <b>Whirling Jump:</b> Tenses in place and extends its sharp horns before leaping upwards whilst spinning wildly. Getting hit by this attack at any time causes Hornet to be comboed for {{Damage|1+1}}.
+* <b>Horn Ram:</b> Extends its horns and charges at Hornet, stopping once she is behind it.
+
+Splinterhorns deal {{Damage|1}} with Horn Ram and upon contact.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Splinterhorns have their health quadrupled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* Hidey, hidey, here I lay!
+* Monster, monster, run away!
+* Brother, brother, time to play!
+* Sister, sister, your dismay!
+}}
+
+== Location ==
+Splinterhorns can be found in [[Shellwood]]. One may appear in the room to the top left of the rightmost [[Shellwood]] bench room.
+
+{{Gallery
+|Image1 = Mapshot SS Splinterhorn 01.png!Locations in [[Shellwood]]
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Splinterhorn 01.png!Disguised
+|Image2 = Screenshot SS Splinterhorn 02.png!Splinterhorn in Shellwood
+|Image3 = Screenshot SS Splinterhorn 03.png!Horn Ram
+|Image4 = Screenshot SS Splinterhorn 04.png!Whirling Jump
+|Image5 = Screenshot SS Splinterhorn 05.png!Singing
+|Image6 = Screenshot_SS_Void_Mass_18.jpg![[Void Mass]] of Splinterhorns and [[Splinter|Splinters]]
+}}
+
+==Trivia==
+* Splinterhorns have the same Needolin dialogue as the [[Splinter]].
+* Splinterhorns have the same set of disguised sprites as the [[Splinter]].
+
+{{Localisation
+|DEname = Splitterhorn
+|DEmeaning = Splinter Horn
+|ESname = Vastiguero cornudo
+|ESmeaning = Horned Splinter, <i>Vastiguera</i> are the name for [[Splinter]]s in Spanish, from <i>vástago</i> (plant shoot). 
+|FRname = Écorceuse Cornue
+|FRmeaning = Splinter Horn
+|ITname = Cornostecco
+|ITmeaning = Combination of <i>corno</i> (horn) and <i>stecco</i> (stick).
+|JAname = ツノエダモドキ
+|JAromanised = Tsunoedamodoki
+|JAmeaning = Combination of 角 <i>tsuno</i> (horn), 枝 <i>eda</i> (branch) and もどき <i>modoki</i> (mock or imitate).
+|KOname = 뿔가지충
+|KOromanised = Ppulgajichung
+|KOmeaning = Horn Branch Insect
+|PTname = Cornolasca
+|PTmeaning = Splinterhorn
+|RUname = Лучинорог
+|RUromanised = Lučinorog
+|RUmeaning = Splinterhorn
+|ZHname = 尖角碎裂者
+|ZHromanised = Jiānjiǎo suìliè zhě
+|ZHmeaning = Sharp-Horned Splinterer
+|CODEname= STICK_INSECT_CHARGER
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

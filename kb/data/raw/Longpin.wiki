@@ -1,0 +1,80 @@
+{{SS Infobox Tool
+| image = <gallery>
+Longpin.png|Inventory
+Longpin Poison.png|Pollip Pouch
+Longpin Pickup.png|Pickup
+</gallery>
+| type = Red
+| damage = 5/8/11/14/17
+| max = 10/12/15/17/20
+| refill_type = Repair
+| refill = {{S|4}}
+| effect = Throws a heavy pin that pierces enemies in an arc over a short distance
+| location = [[Shellwood]]
+| description = Weighted pin and haft, formed to pierce tough shells.
+}}
+
+{{Quote
+| At least Shellwood Pond's still full of good meat, 'specially if your aim with a longpin's as good as mine.
+| [[Pondcatcher Reed]]
+| Hr = SS
+}}
+
+<b>Longpin</b> is a {{CrestSlot|Red|1}} in <i>[[Hollow Knight: Silksong]]</i>. Using it throws a heavy pin forwards in an arc.
+
+== Usefulness ==
+The Longpin can be used to damage [[Enemies (Silksong)|enemies]] through shields and heavy plating that block [[Needle]] attacks, such as the skull of the [[Skull Tyrant]]. It can be useful to hit enemies who can parry Needle attacks and to hit foes through their defences.
+
+The arcing throw of the Longpin can be useful to hit airborne enemies.
+
+== How to Acquire ==
+Located in [[Shellwood]], above the connecting entrance to [[Bellhart]]. It can be found in a bell hidden behind a [[Wood Wasp]] nest, besides the corpse of a dead [[Pondcatcher]].
+{{Gallery
+|Image1 = Mapshot SS Longpin.png!Location in Shellwood
+|Image2 = Screenshot SS Longpin Room.png!Room where the Longpin is acquired
+}}
+
+== Gallery ==
+
+{{Gallery
+|Image1 = GIF SS Longpin 01.gif!Hornet throwing Longpin
+|Image2 = GIF SS Longpin 02.gif!Longpin piercing enemy armour
+}}
+
+== Trivia ==
+* [[Phantom]] is exceptionally skilled with a longpin.<ref>[[Phantom]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Mournful creature tasked alone to expel the Citadel's choking refuse. Their talent with a longpin is unmatched."</i></ref>
+* [[Pondcatcher]]s use similar longpins to attack.<ref>[[Pondcatcher]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Old catcher over Shellwood Pond, bearing a longpin and stricken by the Haunting."</i></ref>
+{{Localisation
+|DEname = Langnadel
+|DEmeaning = Long Pin
+|ESname = Alfiler largo
+|ESmeaning = Long Pin
+|FRname = Longue Pique
+|FRmeaning = Long Lance
+|ITname = Spillone
+|ITmeaning = Big Pin
+|JAname= ロングピン
+|JAromanised= Rongupin
+|JAkatakana = foreign
+|JAmeaning = Longpin
+|KOname = 긴 핀
+|KOromanised = Gin pin
+|KOmeaning = Long Pin
+|PTname = Pinolongo
+|PTmeaning = Longpin
+|RUname = Длинная булавка
+|RUromanised = Dlinnaja bulavka
+|RUmeaning = Long Pin
+|TWname = 長針
+|TWromanised = Cháng zhēn
+|TWmeaning = same
+|ZHname = 长针
+|ZHromanised = Cháng zhēn
+|ZHmeaning = Long Pin
+|CODEname = HARPOON
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Longue pique]]

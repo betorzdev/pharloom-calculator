@@ -1,0 +1,175 @@
+{{SS Infobox Area
+| tab1 = Acts 1/2
+| image1 = <gallery>
+The_Slab_Map_Marked.png|Marked
+The_Slab_Map_Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+The_Slab_Map_Ruin_Marked.png|Marked
+The_Slab_Map_Clean.png|Unmarked
+</gallery>
+| connection = [[Choral Chambers]]<br>[[Mount Fay]]
+| ambience = [https://www.youtube.com/watch?v=ow2lwSwqGt0 Atmos Slab]<br>
+[https://www.youtube.com/watch?v=62rByKODo9A Citadel Halls]<br>
+[https://www.youtube.com/watch?v=GivJqT7ml0M Atmos Citadel Outside]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]<br>
+[https://www.youtube.com/watch?v=zNcy8lmv3-Q Atmos Cave Misc 4]<br>
+[https://www.youtube.com/watch?v=qcinZylIRPo Atmos Blizzard High]<br>
+[https://www.youtube.com/watch?v=t2k1Ke0f9JQ Atmos Outside Wind Chasm]
+| main = [https://www.youtube.com/watch?v=yWt2xsEJBLM The Slab]
+| action = [https://www.youtube.com/watch?v=3VoHxtarCwA Boneforest Action]<br>[https://www.youtube.com/watch?v=swPmNk9_fw0 Generic Enemy Battle A]<br>[https://youtu.be/KC9x5rX1rSU?si=yMkXYF6uA8hdYJue Red Maiden]<br>[https://youtu.be/y5O2l_VQI-k?si=-ySU0KPAHesaPM9C Cut Through]
+}}
+
+{{Quote|
+If this place was holy once, no evidence remains. Even as a prison, it has been neglected.
+|[[Hornet (Silksong)|Hornet]]
+|Hr=Hornet}}
+
+<b>The Slab</b> is an [[Areas (Silksong)|area]] located in the cold north of [[Pharloom]]. It is a holy place of forgiveness where sinners and heretics of [[the Citadel]] come to repent.<ref>[[Old Penitent]]: <i>S... song, is it? You have brought song? You are of the Citadel, then? How... how many of you?<br>{{HTalk|I am alone, sir. You needn't fear, I am no servant of the Citadel. Are you a prisoner of theirs?}}<br>P... prisoner? I understand you not. There is no prison here.<br>This is a holy place of forgiveness. Please, speak with reverence.</i></ref> Or, to the common eye, it is a harsh prison where the Citadel sends those who commit any transgression, no matter how small.
+== Description ==
+[[File:Screenshot SS The Slab 14.png|thumb|200px|left|Cell bordering Mount Fay]]
+The Slab consists of a mix of indoor areas, separated by several locked doors that can be unlocked with one of three keys found within the area, and outdoor areas, where [[Hornet (Silksong)|Hornet]] can take frost damage like in [[Mount Fay]]. 
+
+== How to Access ==
+=== Capture by Wardenfly ===
+After defeating the [[Bell Beast]] and acquiring [[Cling Grip]] but prior to acquiring [[Faydown Cloak]], Hornet can be captured by a [[Wardenfly]] in the [[Deep Docks]], [[Greymoor]] or [[Bilewater]] and sent to the Slab. Upon arriving, she will lack all [[Items (Silksong)|equipment]], including her [[Needle]] and [[Hunter's Cloak|cloak]], making her only attacks [[Cloakless Crest|a kick which does little damage]].
+
+While in the Slab, Hornet can encounter [[Grindle]], even if he was not freed earlier. After sneaking around the area, circumventing its frigid exterior, and reaching a bench in the north, Hornet can reclaim her items before fighting an arena of Wardenflies, [[Guardfly|Guardflies]], and [[Scabfly|Scabflies]]. After this, she is able to access the entrance hall, which leads down to a [[Bellway]] station in the south of the area, whence she can exit.
+
+=== Through the Front Door ===
+Alternatively, Hornet can access the Slab by going west from the [[Choral Chambers]]. The linking bridge is one floor above the Citadel Spa bench. If she does so, her ability to explore the Slab is limited to a direct path to the Bellway station and nearby bench, which permits her access to [[Mount Fay]] and little else. The [[Key of Apostate]], obtained from a Wardenfly corpse in the [[Putrified Ducts]], is the only way to unlock the door that leads to the rest of the Slab for exploration without the need to be caught by a Wardenfly.
+
+The Key of Apostate also opens the door to a room that has hidden tunnels leading to the [[First Sinner]]'s cell.
+
+{{TabbedPOI
+|Header = true
+
+|NPC1 = Old Penitent
+|NPC2 = Grindle
+|NPC2Note = (if Hornet has been taken in the Slab by a Wardenfly)
+|NPC3 = Mister Mushroom (Silksong){{!}}Mister Mushroom
+|NPC3Note = (during the <i>[[Passing of the Age (Wish)|Passing of the Age]]</i> [[wish]])
+|NPC4 = Broodling
+|NPC4Note = (after killing the Broodmother)
+
+|Enemy1 = Snitchfly
+|Enemy2 = Drapefly
+|Enemy3 = Drapemite
+|Enemy4 = Choristor
+|Enemy5 = Reed
+|Enemy6 = Penitent
+|Enemy7 = Puny Penitent
+|Enemy8 = Scabfly
+|Enemy9 = Guardfly
+|Enemy10 = Wardenfly
+|Enemy11 = Freshfly
+|Enemy11Note = (during the <i>[[The Wailing Mother]]</i> wish)
+
+|Boss1 = First Sinner
+|Boss2 = Broodmother
+|Boss2Note = (during the <i>The Wailing Mother</i> wish)
+
+|Loot1_FileName = Rune Rage
+|Loot1_Description = bound after defeating [[First Sinner]], requires all [[Slab Keys]]
+|Loot2_FileName = Key of Indolent
+|Loot2_Name = Slab Keys{{!}}Key of Indolent
+|Loot3_FileName = Key of Heretic
+|Loot3_Name = Slab Keys{{!}}Key of Heretic
+|Loot4_FileName = Mask Shard (Silksong)
+|Loot4_Name = Mask Shard (Silksong){{!}}Mask Shard
+|Loot4_Amount = 1
+|Loot4_Description = requires [[Key of Apostate]]
+|Loot5_FileName = Spool Fragment
+|Loot5_Amount = 1
+|Loot6_FileName = Memory Locket
+|Loot6_Description = requires [[Key of Apostate]]
+|Loot7_FileName = Flea
+|Loot7_Amount = 2
+|Loot8_FileName = Weaver Effigy
+|Loot8_Amount = 1
+|Loot8_Description = requires [[Key of Apostate]]
+|Loot9_FileName = Frayed Rosary String
+|Loot9_Amount = 3
+|Loot10_FileName = Shard Bundle
+|Loot10_Amount = 1
+|Loot11_FileName = Broodmother's Eye
+|Loot11_Description = dropped by the [[Broodmother]]
+|Loot12_FileName = The Slab Map
+|Loot12_Name = Map and Quill (Silksong){{!}}The Slab Map
+
+|LoreTabletsSource = SS The Slab
+
+|EnemyGauntletsSource = The Slab 1, The Slab 2, The Slab 3, Broodmother
+}}
+
+== Creation and Development ==
+{{Main|Cut Content (Silksong)/Areas#The Slab}}
+{{#ev:youtube|https://youtube.com/watch?v=A1avf5wudUY|250|right|Cinematic with custom unofficial audio}}
+The Slab was first conceptualised as "Prison" on the early July 2017 sketched map and placed east of [[the Citadel]], being overtop the [[#Early Sketched Map|Song Eater Lair]]. In the maps starting February 2019, the Slab was given a second tentative position west of the Citadel, marked by "The Slab?". In November 2019, the first sketch of the area was added there.
+
+The Slab would see its structure finalized around September 2021 and the area has remained largely consistent up until release, with  notable differences including the [[First Sinner]]'s cell, which appeared to have had an entirely different design with a regular arena before being reworked into its current iteration, and the lack of a [[Bellway]] until the August 2025 map.
+
+Until quite late into development, [[Cut Content (Silksong)/Graphics#Cinematics|a cutscene]] was also planned to play when captured and brought to the Slab. The unused cinematic depicts [[Hornet (Silksong)|Hornet]] waking up inside the cell in the Slab after being captured. Unlike other video files in the game, this cinematic does not have any matching audio files. According to the file's metadata, it was last edited on July 31st, 2025, which suggests that it was added very close to the <i>Silksong</i> release date. It may have gone unused due to time constraints, due to the late removal.
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Choristor 09.png!Bridge to the Choral Chambers
+|Image2 = Screenshot SS The Slab 02.png!Message boards
+|Image3 = Screenshot SS The Slab 03.png!Husk with a map etched upon its shell
+|Image4 = Screenshot SS Old Penitent.png!Old Penitent in his cell
+|Image5 = Screenshot SS The Slab 01.png!First Sinner's cell
+|Image6 = Screenshot SS The Slab 09.png!First Sinner
+|Image7 = Screenshot SS The Slab 12.png!Broodmother arena
+|Image8 = Screenshot SS The Slab 06.png!Bench near the arena
+|Image9 = Screenshot SS The Slab 04.png!Central bench
+|Image10 = Screenshot SS The Slab 05.png!Northwest bench
+|Image11 = Screenshot SS The Slab 15.png!Bench near the Bellway station
+|Image12 = Bellway Slab.png!Bellway station
+|Image13 = Screenshot SS Wardenfly 08.png!Wardenfly patrolling the roof of the Slab
+|Image14 = Screenshot SS The Slab 07.png!Spool Fragment room
+|Image15 = Screenshot SS The Slab 08.png!Weaver Effigy room
+}}
+
+==Trivia==
+*If Hornet has obtained Cling Grip but has skipped Bell Beast, the Wardenflies that bring her to the Slab will not spawn, despite their spawn rooms changing to match their presence. This is to avoid softlocking, as in previous versions of the game, if Hornet was caught and brought to the Slab without having unlocked Bell Beast, she would be unable to escape the area and therefore be imprisoned for all of eternity.
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Fixed situation where players could remain [[Cloakless Crest|cloakless]] after Slab escape sequence.
+}}
+{{Localisation
+|DEname = Der Brocken
+|DEmeaning = The Chunk
+|ESname = La Losa
+|ESmeaning = The Slab
+|FRname = Le Bloc
+|FRmeaning = The Block
+|ITname = La Lastra
+|ITmeaning = The Slab
+|JAname = 巨石の牢
+|JAromanised = Kyoseki no rō
+|JAmeaning = Megalith Prison or Giant Stone Prison
+|KOname = 석판
+|KOromanised = Seokpan
+|KOmeaning = Slab
+|PTname = O Rochedo
+|PTmeaning = The Rock
+|RUname = Плита
+|RUromanised = Plita
+|RUmeaning = Slab
+|ZHname = 罪石牢狱
+|ZHromanised = Zuì shí láoyù
+|ZHmeaning = Sin Stone Jail
+|TWname = 罪石牢獄
+|TWromanised = Zuì shí láoyù
+|TWmeaning = same
+|CODEname = THE_SLAB
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Areas}}
+{{DEFAULTSORT:Slab}}
+
+[[zh:罪石牢狱]]
+[[fr:Le Bloc]]

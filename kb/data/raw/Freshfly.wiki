@@ -1,0 +1,74 @@
+{{SS Infobox Enemy
+|drops = None
+|health = 5
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 20<br>(Instantly completed on [[Broodmother]]'s death)
+|singnum=2
+}}
+{{Quote
+|Hr = Journal
+|Infant fly, freshly hatched. At this age the soft, blind fly is little more than a bother.<hr/>
+The less these gruesome bugs breed, the better.
+}}
+
+<b>Freshflies</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are the freshly-hatched young of the [[Broodmother]], who are still soft and blind but will grow up to be the [[Slab_Penitents#The_Jailers|jailers]] in [[the Slab]].<ref>Freshfly Hunter's Journal entry: <i>"Infant fly, freshly hatched. At this age the soft, blind fly is little more than a bother."</i></ref>
+
+== Behaviour and Tactics ==
+Freshflies fly around the room in straight lines until they hit a wall, at which point they change direction. They deal damage on contact and explode after roughly 0.6 seconds when defeated, dealing additional damage in a radius to both Hornet and other enemies except Broodmother. The explosions deal {{Damage|2}}, and can kill other freshflies, resulting in them exploding as well. Their explosions deal 5 damage to other enemies.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Light! Light!
+* Mother...
+* Eat! Eat!
+* Warm air...
+}}
+
+== Location ==
+Freshflies can be found in the Slab during the Broodmother fight, which requires accepting [[The Wailing Mother]] [[Wish]].
+
+{{Gallery
+|Image1 = Mapshot SS Broodmother 01.png!Location in the Slab
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Freshfly 01.png!Flying around
+|Image2= Screenshot SS Freshfly 02.png!Exploding
+|Image3= Screenshot SS Freshfly 03.png!Singing
+}}
+
+{{Localisation
+|DEname = Frischfliege
+|DEmeaning = Freshfly
+|ESname = Mosquilla
+|ESmeaning = From <i>mosca</i> (fly) and <i>-illa</i> (diminutive suffix).
+|FRname = Mouchetin
+|FRmeaning = 
+|ITname = Mosca Fresca
+|ITmeaning = Fresh Fly
+|JAname= アカゴバエ
+|JAromanised = Akago bae
+|JAkatanana = enemy
+|JAmeaning = Combination of {{lang|ja|赤子}} <i>akago</i> (baby) and {{lang|ja|蠅}} <i>hae</i> (fly).
+|KOname = 파리유충
+|KOromanised = Pariyuchung
+|KOmeaning = Fly Larva
+|PTname = Mosquinídeo
+|PTmeaning = From <i>mosca</i> (fly).
+|RUname = Свежемуха
+|RUromanised = Svežemuxa
+|RUmeaning = Freshfly
+|TWname = 新生蠅
+|TWromanised = Xīnshēng yíng
+|TWmeaning = same
+|ZHname = 新生蝇
+|ZHromanised = Xīnshēng yíng
+|ZHmeaning = Newborn Fly
+|CODEname = SLAB_FLY_SMALL_FRESH
+|CODEmeaning = 	Other Slab Jailers use the Slab Fly name internally
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

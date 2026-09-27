@@ -1,0 +1,85 @@
+{{SS Infobox Item
+|image=<gallery>
+Cocoon.png|Normal
+Cursed Cocoon.gif|While Cursed
+Map Pin Silk Cocoon.png|Map Icon
+</gallery>
+|effects=Stores {{R}}Rosaries and [[Silk]] Spool extensions lost on death.<br>
+Grants 9 Strands of Silk when destroyed.
+}}
+
+{{Quote
+|Death and death and death, the eternal promise of our eternal kingdom. Eventually, it claims us all.
+|[[Chapel Maid]]
+|Hr=SS
+}}
+
+<b>Silk Cocoons</b> are formed when [[Hornet (Silksong)|Hornet]] is defeated, storing all [[Rosaries]] she held upon her death. Until the Cocoon is retrieved, Hornet's [[Spool Fragment|Spool upgrades]] are disabled, limiting her to 9 [[Silk]]. 
+
+The Cocoon can be broken with one hit from any of Hornet's Needle attacks or [[Silk Skills]], but [[Tools]] simply pass through it (except for the [[Delver's Drill]]). When broken, Hornet collects her lost Rosaries, restores the function of her Spool upgrades, and gains 9 Silk.
+
+Dying while [[Cursed Crest|Cursed]] changes the appearance of the cocoon, wrapping it in ashen vines. Breaking an infested cocoon causes the vines to lash out, dealing 4 hits of [[Needle]] damage to nearby enemies.
+
+Cocoons can be retrieved from anywhere on the map by consuming a [[Silkeater]]. This will act as if Hornet just broke her Cocoon.
+
+== Location ==
+The Cocoon spawns at the approximate location<ref group=Note>Each room has several defined locations that a Cocoon can spawn at, with the one nearest to Hornet's death location being used.</ref> of Hornet's most recent death, with its location marked on the [[Map and Quill (Silksong)|Map]]. Only one Cocoon can exist at a time. If Hornet dies before retrieving her Cocoon, a new Cocoon replaces it and all Rosaries stored within the old Cocoon are lost.
+
+== Tactics ==
+* Hornet can bounce on her Cocoon by breaking it with a down-strike, allowing her to enter areas that are otherwise inaccessible without mobility upgrades.
+* Because collecting the Cocoon restores a full spool of silk, leaving the Cocoon unbroken in a difficult [[Bosses (Silksong)|Boss]] arena allows Hornet to strike it when she needs Silk for healing or Skills, acting as a secondary Silk reserve. Note that this strategy is risky, since it is possible to die to the boss before collecting the Cocoon.
+* To remove the risk of losing them, {{R}}Rosaries can be converted into [[Rosary String]]s and [[Rosary Necklace]]s at various merchants or Rosary Stringer machines. However, {{R|20}} are still lost in the transaction, and only 20 of each can be stored.
+** Alternatively, {{R}}Rosaries can be converted into {{S}}[[Shard Bundle]]s at various merchants. 
+* If the Cocoon is in a location that can be reached but is hard to escape from, it can be retrieved without using a [[Silkeater]] by breaking it then quitting to the main menu. Upon reopening the game, Hornet will be at the last used [[Bench (Silksong)|Bench]] or checkpoint with all of her {{R}}Rosaries and an intact Silk Spool.
+
+{{Gallery
+|Title=Gallery
+|Image1=Screenshot SS Silk Cocoon 01.png!The cocoon in the Grand Bellway
+|Image2=Screenshot SS Silk Cocoon 02.png!Breaking the cocoon
+}}
+
+== Trivia ==
+* If a cursed cocoon is still in the world when <i>[[Infestation Operation]]</i> is completed, it remains cursed and can still deal damage to enemies.
+* When the cocoon breaks, a remnant of Hornet can be seen inside before disintegrating. The sprite for this is called "death_spider_core". It is also mentioned on one of [[Cut_Content_(Silksong)#Gallery|Ari Gibson's sketch]] pages, where it is referred to as "foetal Hornet remnant in cocoon".
+{{Gallery
+|Image1=Hornet Cocoon Remnant.png!Remnant sprite
+|Image2=Ari SS Sketch 18.png!Sketch page mentioning the remnant
+}}
+{{History
+|game = SS
+|1.0.28650 (Patch 2): Cocoon positions in some locations updated to prevent it spawning in inaccessible areas.
+}}
+
+{{Localisation
+|DEname = Kokon
+|DEmeaning = Cocoon
+|ESname = Capullo
+|ESmeaning = Cocoon
+|FRname = Cocon
+|FRmeaning = Cocoon
+|ITname = Bozzolo
+|ITmeaning = Cocoon
+|JAname = 繭
+|JAromanised = Mayu
+|JAmeaning = Cocoon
+|KOname = 고치
+|KOromanised = Gochi 
+|KOmeaning = Cocoon
+|PTname = Casulo
+|PTmeaning = Cocoon
+|RUname = Кокон
+|RUromanised = Kokon
+|RUmeaning = Cocoon
+|TWname = 繭
+|TWromanised = Jiǎn 
+|TWmeaning = same
+|ZHname = 茧
+|ZHromanised = Jiǎn
+|ZHmeaning = Cocoon
+}}
+
+== Notes ==
+<references group="Note"/>
+[[fr:Cocon]]
+[[pt:Casulo]]
+[[zh:茧]]

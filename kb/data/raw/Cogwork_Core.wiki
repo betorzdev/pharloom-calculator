@@ -1,0 +1,164 @@
+{{SS Infobox Area
+| tab1 = Act 2
+| image1 = <gallery>
+Cogwork_Core_Map_Marked.png|Marked
+Cogwork_Core_Map_Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Cogwork_Core_Map_Ruin_Marked.png|Marked
+Cogwork_Core_Map_Ruin_Clean.png|Unmarked
+</gallery>
+| connection = [[Choral Chambers]]<br/>[[The Cradle]]<br/>[[Whispering Vaults]]<ref group="Note">Connects via the rotating passageway in the Choral Chambers.</ref>
+| ambience = [https://www.youtube.com/watch?v=YWYwjaVGr_0 Atmos Cogwork Core]<br>
+[https://www.youtube.com/watch?v=L609URKFP-o Atmos Indoor Air]<br>
+[https://www.youtube.com/watch?v=imSH2Pv_sCo Atmos Crumbling World] (Act 3)<br>
+[https://www.youtube.com/watch?v=GivJqT7ml0M Atmos Citadel Outside] (Act 3)<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3] (Act 3)
+| main = [https://www.youtube.com/watch?v=vQim4Fcbwpk Cogwork Core]
+| action = [https://youtu.be/y5O2l_VQI-k?si=-ySU0KPAHesaPM9C Cut Through]<br>
+[https://youtu.be/swPmNk9_fw0?si=u0UZUdRY-EBdPU6W Generic Enemy Battle A]<br>
+[https://www.youtube.com/watch?v=NRJe8xGWGK4 Dark Descent] (Act 3)
+}}
+{{Quote
+| Are you still to c-c-climb our grand core, Bug-Red? Within you may marvel at the work of Architects, my own, and all those passed b-b-before.
+| [[Twelfth Architect]]
+|Hr=SS
+}}
+The <b>Cogwork Core</b>, shortened to <b>Cog Core</b>, is an [[Areas (Silksong)|area]] in [[the Citadel]] in <i>[[Hollow Knight: Silksong]]</i>. It serves as the mechanical heart of the Citadel. It was designed and maintained by the [[Architects]] during the Citadel's prime. The Cogwork Core also serves as the main entry point to [[the Cradle]], where [[Grand Mother Silk]] slumbers.
+
+== Description ==
+The Cogwork Core serves as the heart of [[the Citadel]]. It is a large vertical area containing cogs of multiple sizes arranged into complex machinery, some of which move back and forth in a set rhythm. This area also features Cogwork enemies. [[Hornet (Silksong)|Hornet]] must traverse many platforming challenges to reach the top of the area. There, she must solve the puzzle to learn the Architect's Melody as part of the [[Threefold Melody]] objective. Entrance to the Cogwork Core is accessed by defeating the [[Cogwork Dancers]], twin automated dancers that guard the Citadel's Core with deadly force.<ref>[[Cogwork Dancers]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Automatons of impeccable construction, welcoming entrants to their chamber with a display of deadly dance."</i></ref>
+
+In [[Act 3]], many parts of the Cogwork Core are in ruins. Hornet must make her way through the ruins of the Core to escape the Cradle and return to the rest of Pharloom.
+
+== History ==
+The Cogwork Core was constructed by the Citadel's Architects.<ref name=marvel>[[Twelfth Architect]]: <i>"Are you still to c-c-climb our grand core, Bug-Red? Within you may marvel at the work of Architects, my own, and all those passed b-b-before."</i></ref><ref>Twelfth Architect: <i>"Impressive-industrious... eternal... You have seen a glimpse, Bug-Red, of us-s-s, how once we were. The minds of Architects inspired. What majesty we did create..."</i></ref> Since the Citadel's actual purpose was to keep Grand Mother Silk asleep,<ref>Hornet and [[Mask Maker (Silksong)|Mask Maker]] dialogue: <br><i>Hornet: "You speak of the Citadel? Its former function has failed, but I can still sense its purpose, some. It is church and cage both."<br>Mask Maker: "Aye. Devised by your ancestors that monstrosity, and their wicked, clever minds. A system, or a web they'd likely call it, a way to keep their mother sealed in slumber, and themselves free to lavish in their false rule."</i></ref> the members of [[the Choir]] had to produce the song needed for that task.<ref>Pontiff [[Needolin_Locations#Whispering_Vaults|Needolin dialogue]]: <i>"Damned bugs... We prayed a cage... We sang your chains... Divine Silk..."</i></ref> The main function of the Cogwork Core was to produce music by playing massive [[Psalm Cylinder|song cylinders]] etched with recordings,<ref>[[Cogwork Crawler]] Hunter's Journal entry: <i>"Automaton built in the shape of a scuttling bug. Its back contains retractable pins, intended to cut song cylinders free of any obstruction."</i></ref><ref>[[:File:Screenshot SS Cogwork Core 19.png|Cylinders in the Cogwork Core]].</ref> which, unlike mortal bugs, could sustain the Citadel's song for eternity.<ref name=architectcore>Twelfth Architect: <i>"The core remains to sustain the song, but no more Architects to tend-toil or build anew."</i></ref><ref name=lastedict>[[Choral Commandment]]: <i>"Last edict of the Conductors. "And lo, is eternity sustained. By Architect's claw, we welcome that final form, of dial and rotor, and soul gladly given. The perfect, unfaltering voice."</i></ref> [[Cogwork Bugs]] were built by the Architects to perform certain functions in the Core, such as repairing and cleaning.<ref name=marvel /><ref>[[Cogworker]] Hunter's Journal entry: <i>"Flighted automaton, responsible for repairing and extending the Core."</i></ref><ref>[[Cogwork Cleanser]] Hunter's Journal entry: <i>"Steam shooting automaton, forged to clean the Cogwork Core and keep it free of infestation."</i></ref> 
+
+In a desperate last attempt to keep [[Verdania]] safe, the partner of the [[Green Prince]] made a deal with the Citadel, offering himself up as trade. His body and soul were used as the base for the Cogwork Dancers.<ref>[[Green Prince]]: <i>"The dancers... they were the last free act of my partner... Always hopeful. Always naive. His whole he gave, in desperate trade to see our own caves left safe. His shell and soul became the mould."</i></ref> The Cogwork Dancers guarded three statues in the centre of the Cogwork Core, which gave chosen pilgrims the task to obtain all parts of the Threefold Melody. Once they played it, they could ascend to the Cradle and end their pilgrimage.<ref>[[Grand Reed]] [[Needolin]] dialogue: <i>"Those worthiest may climb... The holy heights of the Citadel..."</i></ref><ref>[[Cogwork Statues]]: <i>"Pilgrim of Pharloom eternal, you rare chosen who hath ascended to this final threshold, listen to our wish, deliver it, that you may rise above and see your pilgrimage end. (...) Pilgrim of Pharloom eternal, regale us with our Threefold song, that you may rise above and worship before our kingdom's divine heart.</i></ref> It was challenging to acquire all parts, as the Vaultkeeper's part of the melody was a closely-guarded secret, and the Architect's part included a climb up the Cogwork Core never intended for regular bugs,<ref>Hornet dialogue with Twelfth Architect: <i>"I have, maker. Clearly it was a climb never intended for regular bugs, and fair fortune that the skills gifted within your lands allowed my ascent."</i></ref> though the latter may have once been acquired from the Architect directly, when they were fully functional.<ref>Twelfth Architect dialogue: <i>"Our melody? I r-r-recall! Yes! There was melody, once, but its sound... that I possess no longer..."</i></ref> The system of constructs that was built to play the Architect's Melody was near complete, only needing to be set to functional form.<ref>Twelfth Architect: <i>"At the height of our core, there is means-s-s-system, near complete... Constructs old-built to sound our song. They need only be set to functional form."</i></ref>
+
+Despite the [[Haunting]] affecting the rest of the Citadel, the Cogwork Core still performs its function in the present day.<ref name=architectcore/>
+
+== How to Access ==
+This area is accessible after coming through the [[Choral Chambers]] from either side, and defeating the [[Cogwork Dancers]].  
+
+To access the upper half of the area, Hornet has to perform a number of platforming challenges to travel down the left side of the lower central area, and back up the right side to find a door to the upper section. Once in the upper part, she can unlock a [[Clawline]] hook that forms a shortcut from the Cogwork Dancers arena. 
+{{Gallery
+|Image1 = Mapshot_SS_Cogwork_Dancers.png!Location of Cogwork Dancers in the Cogwork Core
+}}
+
+
+{{TabbedPOI
+|Header = true
+
+|NPC1 = Green Prince
+|NPC2 = Second Sentinel
+
+|Enemy1 = Drapemite
+|Enemy2 = Cogwork Crawler
+|Enemy3 = Cogworker
+|Enemy4 = Cogwork Spine
+|Enemy5 = Cogwork Choirbug
+|Enemy6 = Cogwork Cleanser
+|Enemy7 = Cogwork Defender
+|Enemy8 = Cogwork Clapper
+|Enemy9 = Underworker
+|Enemy9Note = ([[Act 3]] only)
+|Enemy10 = Underpoke
+|Enemy10Note = (Act 3 only)
+|Enemy11 = Underloft
+|Enemy11Note = (Act 3 only)
+|Enemy12 = Undercrank
+|Enemy12Note = (Act 3 only)
+|Enemy13 = Void Mass
+|Enemy13Note = (Act 3 only)
+
+|Boss1 = Cogwork Dancers
+
+|Loot1_FileName = Architect Quest Icon
+|Loot1_Name = Architect's Melody
+|Loot2_FileName = Mask Shard (Silksong)
+|Loot2_Name = Mask Shard (Silksong){{!}}Mask Shard
+|Loot2_Amount = 1
+|Loot3_FileName = Spool Fragment
+|Loot3_Amount = 1
+|Loot4_FileName = Shard Bundle
+|Loot4_Amount = 1
+|Loot5_FileName = Pristine Core
+|Loot5_Amount = 1
+|Loot6_FileName = Cogwork Core Map
+|Loot6_Name = Map and Quill (Silksong){{!}}Cogwork Core Map
+
+|EnemyGauntletsSource = Cogwork Core 1, Cogwork Core 2, Cogwork Core 3
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Cogwork Core 01.png!Cogwork Dancers Arena
+|Image2 = Screenshot SS Cogwork Core 17.png!Lift Room (w/ Statues)
+|Image3 = Screenshot SS Cogwork Core 02.png!Lift Room (Completed)
+|Image4 = Screenshot SS Cogwork Core 03.png!Lift Room (Act 3)
+|Image5 = Screenshot SS Cogwork Core 04.png!Bench
+|Image6 = Screenshot SS Cogwork Core 07.png!Map Location
+|Image7 = Screenshot SS Cogwork Core 05.png!Arena Room
+|Image8 = Screenshot SS Cogwork Core 06.png!Large Clockface
+|Image9 = Screenshot SS Cogwork Core 18.png!Lower central area
+|Image10 = Screenshot SS Cogwork Core 11.png![[Cogwork Clapper]] Room
+|Image11 = Screenshot SS Cogwork Core 10.png![[Spool Fragment]] Room
+|Image12 = Screenshot SS Cogwork Core 12.png!Dual Clappers Room
+|Image13 = Screenshot SS Cogwork Core 08.png![[Second Sentinel]] Room
+|Image14 = Screenshot SS Cogwork Core 19.png!Upper central area
+|Image15 = Screenshot SS Cogwork Core 20.png!Modded clear screenshot of the upper central area
+|Image16 = Screenshot SS Cogwork Core 13.png!Architect's Melody Room (Puzzle)
+|Image17 = Screenshot SS Cogwork Core 14.png!Architect's Melody Room (Solved)
+|Image18 = Screenshot SS Cogwork Core 15.png!Architect's Melody Room (Full Choir)
+|Image19 = Screenshot SS Cogwork Core 16.png!Architect's Melody Room (Act 3)
+|Image20 = Screenshot SS Cogwork Core Arena 2.png!Act 3 Arena Room
+|Image21 = Silksong Early 015.png!<i>Silksong</i> reveal trailer
+}}
+
+==Trivia==
+*The broken central room in [[Act 3]] does not appear on the map unless the map of [[the Cradle]] is obtained. {{MissingImage}}
+*Multiple rooms around and within the Cogwork Core can be seen being actively reconstructed for the expansion of the Core.
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Cogwork hazards had their damage reduced from 1+1 damage to 1.
+}}
+{{Localisation
+|DEname = Räderwerk-Kern
+|DEmeaning = Cogwork Core
+|ESname = Núcleo Mecánico
+|ESmeaning = Mechanical Core
+|FRname = Noyau Mécanique
+|FRmeaning = Mechanical Core
+|ITname = Nucleo Meccanico
+|ITmeaning = Mechanical Core
+|JAname = カラクリの中枢
+|JAromanised = Karakuri no chūsū
+|JAmeaning = Mechanism Central
+|KOname = 톱니바퀴 핵
+|KOromanised = Tomnibakwi haek
+|KOmeaning = Cogwheel Core
+|PTname = Mecanismo Vital
+|PTmeaning = Vital Mechanism
+|RUname = Главный механизм
+|RUromanised = Glavnyj mexanizm
+|RUmeaning = Main Mechanism
+|ZHname = 机枢核心
+|ZHromanised = Jīshū héxīn
+|ZHmeaning = Mechanical Core
+|TWname = 機樞核心
+|TWromanised = Jīshū héxīn
+|TWmeaning = same
+|CODEname= COG_CORE
+}}
+
+{{Hr|ss}}
+== Notes ==
+<references group="Note"/>
+{{Refs|hr=false}}
+{{SS Nav Areas}}
+{{#seo:|keywords=cogwork core, core, clockwork core, clockwork, cog core, clock core, path of pain, silksong}}
+[[Category:The Citadel]]
+
+[[zh:机枢核心]]

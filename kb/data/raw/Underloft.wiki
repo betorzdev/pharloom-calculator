@@ -1,0 +1,111 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Underloft.png|Hunter's Journal
+Underloft Idle.png|Idle
+</gallery>
+| hasdrop = true
+| r1 = 3
+| r2 = 4
+| sh1 = 6-9
+| sh2 = 8-12
+|health = 40/{{BT|80}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.25|1|1|1|0.9}}
+|numbers_required = 25
+|sing= Underpoke
+|singnum = 1
+}}
+{{Quote
+|Hr = Journal
+|Exhausted bug, grown sickly from the smog of the Underworks. The worker's twistpins, once tools of repair, now serve as spun projectiles.<hr/>
+The cost of so much grandeur... Did I peer closely enough into the foundations of my own kingdom?
+}}
+
+<b>Underlofts</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are sickly [[Underworkers]], bearing two twistpins that were once tools of repair but now serve as spun projectiles.<ref>Underloft [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Exhausted bug, grown sickly from the smog of the Underworks. The worker's twistpins, once tools of repair, now serve as spun projectiles."</i></ref>
+
+== Behaviour and Tactics ==
+Underlofts often cling to walls and other surfaces as they work, but jump off to attack Hornet once she gets near.<br>
+Being flying enemies, they try to remain aerially out of range of Hornet's [[Needle]], and fly back and forth with poor control, preferring horizontal distance over vertical distance. They use one of two attacks depending on Hornet's range from them:
+* <b>Twistpin Throw:</b> Readies and then hurls a spinning projectile at Hornet, which flies in a straight path, dealing {{Damage|1}}. It can be hit with a Needle to disable its hitbox.
+* <b>Cartwheel:</b> If Hornet is very close to or anywhere beneath them, it holds out both its twistpins and begins spinning rapidly, rearing back briefly before flying at Hornet as it spins, bouncing off a surface once before stopping a second after. If Hornet is hit at any part of the attack, it deals {{Damage|1+1}}.
+
+Underlofts deal {{Damage|1}} on contact.
+
+Chasing them down and maintaining pressure is key to defeating them, as well as retreating or dashing away briefly whenever they use Cartwheel, due to its threatening hitbox and damage.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Underlofts have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* For the light, unseen...
+* These halls kept clean...
+* Rest and fade...
+* We... were chosen...
+* See us faithful!
+* Shells bend, shells break...
+* Through duty, purity...
+* The sacred toil...
+}}
+
+== Location ==
+Underlofts can be found primarily in the [[Underworks]], with one encountered as part of the [[Enemy Gauntlets (Silksong)/Underworks 1|enemy gauntlet]] in the northwest of the area, three in the [[Enemy Gauntlets (Silksong)/Underworks 2|gauntlet]] in the middle of the area, and another during the [[Enemy Gauntlets (Silksong)/Underworks 3|gauntlet]] in [[the Cauldron]].
+
+In [[Act 3]], a [[black-threaded]] Underloft is fought during the [[Enemy Gauntlets (Silksong)/Cogwork Core 2|gauntlet]] in the ruined [[Cogwork Core]], and another spawns alongside a [[Void Mass]] in the Cauldron.
+
+{{Gallery
+|Image1 = Mapshot SS Underloft 01.png!Locations in the Underworks
+|Image2 = Mapshot SS Underloft 02.png!Locations in the Underworks in Act 3
+|Image3 = Mapshot SS Underworker 02.png!Location in the Cogwork Core in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Underloft 05.png!In the Underworks
+|Image2 = Screenshot SS Underloft 04.png!In the Cogwork Core during Act 3
+|Image3 = Screenshot SS Underloft 06.png!Twistpin Throw
+|Image4 = Screenshot SS Underloft 07.png!Cartwheel
+|Image5 = Screenshot SS Underloft 08.png!Responding to the Needolin
+|Image6 = Screenshot SS Underloft 03.png!Clinging to a wall
+|Image7 = Screenshot SS Underloft 01.png!Working alongside an Underpoke
+|Image8 = Screenshot SS Underworker 08.png!Sleeping alongside an Underworker
+|Image9 = Screenshot SS Underloft 02.png!Sitting with an Underworker
+|Image10 = Screenshot SS Underworker 10.png!Corpse below a bench room
+|Image11 = Screenshot SS Underworks 08.png!Corpses in a bench room
+|Image12 = Screenshot SS Cogwork Core Arena 2.png!Corpses in the Cogwork Core
+|Image13 = Screenshot SS Underloft 09.png!Corpse in the Whiteward
+|Image14 = Screenshot SS Underloft 10.png!Corpse in the Putrified Ducts 
+}}
+
+{{Localisation
+|DEname = Unterschmeißer
+|DEmeaning = Under Thrower
+|ESname = Lanzador subterráneo
+|ESmeaning = Underground Launcher
+|FRname = Sous-loftin
+|FRmeaning = Under-loft
+|ITname = Fondolancio
+|ITmeaning = Combination of <i>fondo</i> (bottom) and <i>lancio</i> (throw).
+|JAname = 礎の修繕者
+|JAromanised = Ishizumi no Shūzensha
+|JAmeaning = Foundation Repairman
+|KOname = 지하투척꾼
+|KOromanised = Jihatucheokkkun
+|KOmeaning = Underground Thrower
+|PTname = Claustrolido
+|PTmeaning =
+|RUname = Цехоброс
+|RUromanised = Cexobros
+|RUmeaning = Workshop-throw(er)
+|TWname = 下層投擲工
+|TWromanised = Xiàcéng tóuzhí gōng
+|TWmeaning = Lower-level Throw Worker<br><small>{{lang|zh-Hant|下層工廠}} <i>xiàcéng gōngchǎng</i> (Lower-level Factory) is the name of the [[Underworks]] in Traditional Chinese.</small>
+
+|ZHname = 圣厂投掷工
+|ZHromanised = Shèngchǎng tóuzhì gōng
+|ZHmeaning = Holy Factory Throw Worker<br><small>{{lang|zh-Hans|圣堡工厂}} <i>shèng bǎo gōngchǎng</i> (Holy Castle Factory) is the name of the [[Underworks]] in Simplified Chinese.</small>
+|CODEname=UNDERSTORE_THROWER
+|CODEmeaning= <code>UNDERSTORE</code> internally refers to Underworks. 
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

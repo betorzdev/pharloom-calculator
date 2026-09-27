@@ -1,0 +1,114 @@
+{{Navbar|page1=Needolin|page2=Beastling Call|page3=Elegy of the Deep}}
+{{SS Infobox Ability
+|title2 = <small>Learned the</small><br>Elegy of the Deep
+|image1 = Icon SS Needolin.png
+|description1 = Hold DOWN while using the Needolin to enter memories.
+|image2 = Icon SS Elegy of the Deep Art.png
+|description2 = Hold DOWN + NEEDOLIN<hr/>Draw out memories of Pharloom's forgotten past.
+|input = Hold DOWN + NEEDOLIN
+|location = [[Ruined Chapel]]
+|music = [[File:Needolin Elegy of the Deep.ogg]]
+}}
+
+The [[Elegy of the Deep]] is an [[Abilities (Silksong)#Needolin_Melodies|Ability]] in <i>[[Hollow Knight: Silksong]]</i>. It allows [[Hornet (Silksong)|Hornet]] to enter memories.
+
+== Function ==
+When approaching an area where playing the Elegy would have an effect, the screen dims and a faint heartbeat can be heard. Playing the Elegy for a few moments will cause the HUD to disappear, locking Hornet into the Needolin animation. This causes Hornet to collapse and awaken within the Memory of the individual. There are four Memory locations accessible by Elegy of the Deep:
+* [[Verdania#Sub-Area:_Lost_Verdania|Lost Verdania]] - Near the [[Green Prince]] and the shell of a Cogwork Dancer in the initial hallway.
+* [[Sands of Karak#Sub-Area:_Coral_Tower|Coral Tower]] — In the Coral Tower at the end of the Sands of Karak, where the [[Conchcutter]] is found.
+* The room of [[Skarrsinger Karmelita]] in the [[Far Fields]].
+* The shrine in [[Shellwood]], guarded by [[Shrine Guardian Seth]].
+
+Entering a memory will:
+* Heal Hornet fully.
+* Deduct one strand of Silk from her reserve due to playing the Elegy, otherwise preserving Silk.
+** This includes green blobs granted by [[Druid's Eye]]([[Druid's Eyes|s]]).
+* Retain [[Lifeblood|Plasmium]] masks.
+* Remove the Plasmification state.
+
+Exiting a memory will:
+* Revert Hornet to whatever Health she was at when she entered the memory (if exited willingly).
+* Revert Hornet to whatever Silk she was at, except for the one silk spent playing the Elegy, as it is used before she entered the memory. 
+** Druid's Eye blobs are also not retained.
+* Remove [[Lifeblood|Plasmium]] masks.
+* Return all expended [[Tools|Red Tools]] to Hornet. 
+* Return all [[Shell Shards]] expended from the [[Architect Crest]]'s Craft Bind.
+* Return all [[Rosaries]] lost from [[Thief's Mark]]. 
+* Reset the [[Crests|Crest's]] state.
+* Remove any lingering effects, such as the Plasmification state, [[Flea Brew]] or [[Flintslate]].
+
+All consumable items, such as Shard Bundles or Rosary Strings, cannot be used in memories. Attempting to do so will cause a unique tooltip to appear.
+
+If Hornet dies within a Memory, she awakens at the spot where she was playing the Elegy, with her health fully restored. No [[Cocoon]] is created and no Rosaries are lost. Save profiles made in {{Steel Soul Icon Mini|SS}} [[Steel Soul Mode (Silksong)|Steel Soul Mode]] are not lost.
+
+Once Hornet is ejected from a Memory after defeating its boss, the Memory cannot be revisited. All encountered enemies exclusive to that Memory are marked as completed in the [[Hunter's Journal (Silksong)|Journal]], apart from the [[Palestag]] in [[Lost Verdania]], which is not required for full Journal completion.
+
+== First Sinner ==
+[[First Sinner]]'s battle is a unique type of memory not accessed by the Elegy. After Hornet attempts to bind First Sinner, she transports her to a memory where the battle begins. First Sinner's memory is very mechanically similar to the ones accessed by Elegy.
+
+Entering First Sinner's memory will:
+* Retain whatever health Hornet had when entering the memory.
+* Retain whatever Silk she had when entering the memory.
+** This includes green blobs granted by [[Druid's Eye]]([[Druid's Eyes|s]]).
+* Retain [[Lifeblood|Plasmium]] masks.
+* '''NOT''' remove the Plasmification state.
+
+Dying to First Sinner will:
+* Heal Hornet to full, as if she woke up at a bench.
+* Set Hornet's silk to zero, as if she woke up at a bench.
+* Remove the Plasmification state.
+* '''NOT''' return expended Red Tools, Shell Shards, or lost Rosaries.
+
+All consumable items, such as Shard Bundles or Rosary Strings, cannot be used in First Sinner's memory. Attempting to do so will cause a unique tooltip to appear regarding this.
+
+If Hornet die to First Sinner, she awakens outside First Sinner's cage. No [[Cocoon]] is created and no Rosaries are lost. Save profiles made in {{Steel Soul Icon Mini|SS}} [[Steel Soul Mode (Silksong)|Steel Soul Mode]] are not lost.
+
+Once Hornet is ejected from the memory after binding [[Rune Rage]], the cage, and the memory within, cannot be revisited.
+
+== How to Acquire ==
+The Elegy of the Deep is acquired from the [[Snail Shamans (Silksong)|Snail Shamans]] after ascending back up from [[The Abyss (Silksong)|The Abyss]].
+
+{{Gallery
+|Image1=Mapshot SS Red Memory.png!Snail Shamans' location in Moss Grotto
+}}
+
+== Trivia ==
+* When using Elegy of the Deep, Hornet holds her Needolin at a slightly lower angle than she normally does while using the ability.
+
+{{History
+|game = SS
+|1.0.29909 (Patch 5) / 1.0.29909 (Patch 5) / Mar 16, 2026: Plasmium masks are now removed when exiting a memory.
+|1.0.29242 (Patch 4) / 1.0.29242 (Patch 4) / Nov 7, 2025: Crest state is now reset when exiting a memory, and lingering effects, such as the Plasmification state, [[Flea Brew]] or [[Flintslate]] are now removed.
+}}
+{{Localisation
+|DEname = Klagelied der Tiefe
+|DEmeaning = Lament of the Deep
+|ESname = Elegía de las profundidades
+|ESmeaning = Elegy of the Depths
+|FRname = Élégie des Profondeurs
+|FRmeaning = Elegy of the Depths
+|ITname = Elegia del Profondo
+|ITmeaning = Elegy of the Deep
+|JAname = 深淵の哀歌
+|JAromanised = Shinen no aika
+|JAmeaning = Lament of the Deep
+|KOname = 깊은 곳의 애도가
+|KOromanised = Gipeun gosui aedoga
+|KOmeaning = Mourning of the Deep
+|PTname = Elegia das Profundezas
+|PTmeaning = Elegy of the Depths
+|RUname = Элегия глубин
+|RUromanised = Èlegija glubin
+|RUmeaning = Elegy from the Deep
+|TWname = 深邃輓歌
+|TWromanised = Shēnsuì wǎngē
+|TWmeaning = same
+|ZHname = 深邃挽歌
+|ZHromanised = Shēnsuì wǎngē
+|ZHmeaning = Deep Elegy or Profound Elegy
+|CODEname = SKILL_MEMORY_MELODY
+}}
+
+{{SS Nav Skills}}
+[[fr:Élégie des Profondeurs]]
+[[pt:Elegia das Profundezas]]

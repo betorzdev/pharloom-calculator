@@ -1,0 +1,102 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Choir Pouncer.png|Hunter's Journal
+Choir Pouncer Idle.png|Idle
+Choir Pouncer No Cloak.png|Without Cloak
+</gallery>
+| hasdrop = true
+| r1 = 14
+| r2 = 21
+| sh1 = 2-3
+| sh2 = 3-4
+|drops = [[Choir Cloak]]
+|health=30/{{BT|60}}
+|damage_modifiers={{SS Spaced Damage Modifiers|1.5|1|1|0.8|0.8}}
+|numbers_required = 30
+|sing=Pilgrim Pouncer
+|singnum=2
+}}
+{{Quote
+|Hr = Journal
+|Agile bug, and one of few hardy pilgrims to have reached the Citadel.<hr/>
+Once one of Pharloom's favoured bugs, and yet their domain and their shells would have been the first to fall to the Haunting.
+}}
+
+<b>Choir Pouncers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are [[Pilgrim Pouncer]]s who have become part of [[the Choir]], bearing a cleaner, decorated white robe.<ref>Choir Pouncer [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Agile bug, and one of few hardy pilgrims to have reached the Citadel."</i></ref>
+== Behaviour and Tactics ==
+Choir Pouncers behave identically to their Pilgrim counterparts, leaping at Hornet and rolling as they land if she approaches.
+
+Choir Pouncers deal {{Damage|1}} both on contact and with their attack.
+
+Basic outspacing is all that is required to defeat them.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* To live eternal... in the light...
+* I am chosen!
+* Your ringing halls...
+* Your shining walls...
+* The song...
+* Where is the song?
+* When may I rest?
+* Is this the way?
+* None shall starve...
+* None shall die...
+}}
+
+== Location ==
+Choir Pouncers are primariy found throughout the [[Choral Chambers]]. They also appear during enemy gauntlet at the entrance to [[Whispering Vaults]], accessible from [[Cogwork Core]].
+{{Gallery
+|Image1 = Mapshot SS Choir Pouncer 01.png!Location in Choral Chambers
+|Image2 = Mapshot SS Choir Pouncer 02.png!Location in Choral Chambers in Act 3
+|Image3 = Mapshot SS Choir Pouncer 03.png!Location in Whispering Vaults
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Choir Pouncer 01.png!In Choral Chambers
+|Image2 = Screenshot SS Envoy 05.png!Led by [[Envoy]] with [[Choristor]]
+|Image3 = Screenshot SS Choir Pouncer 02.png!Dormant
+|Image4 = GIF SS Choir Pouncer 01.gif!Reanimated
+|Image5 = Screenshot SS Choir Pouncer 03.png!Corpse in Act 3
+|Image6 = Screenshot SS Choir Pouncer 04.png!Attacking
+|Image7 = Screenshot SS Choir Pouncer 05.png!Singing
+|Image8 = Screenshot SS Choir Pouncer 06.png!Without cloak during <i>[[Cloaks of the Choir]]</i>
+}}
+
+==Trivia==
+* Choir Pouncers share their Needolin dialogue with [[Choir Hornhead]]s and [[Choir Flyer]]s.
+
+{{Localisation
+|DEname = Chorstürzer
+|DEmeaning = Choir Faller
+|ESname = Saltador del Coro
+|ESmeaning = Jumper of the Choir
+|FRname = Bondisseur de la Chorale
+|FRmeaning = Pouncer of the Choir
+|ITname = Balzatore Corale
+|ITmeaning = Choral Hopper
+|JAname = 俊敏な合唱者
+|JAromanised = Shunbin na gasshōsha
+|JAmeaning = Agile Chorister
+|KOname = 성가대 도약자
+|KOromanised = Seonggadae doyakja
+|KOmeaning = Choir Jumper
+|PTname = Saltador-coralista
+|PTmeaning = Chorister Hopper
+|RUname = Хоровик-прыгун
+|RUromanised = Xorovik-prygun
+|RUmeaning = Choirbug Jumper
+|TWname = 聖詠撲襲者
+|TWromanised = Shèngyǒng pūxí zhě
+|TWmeaning = same
+|ZHname = 圣咏扑袭者
+|ZHromanised = Shèngyǒng pūxí zhě
+|ZHmeaning = Choir Pouncer or Psalm Pouncer, with reference to {{lang|zh-Hans|圣咏殿}}/{{lang|zh-Hant|聖詠殿}} <i>shèngyǒng diàn</i> which is Choral Chambers in Chinese
+|CODEname = PILGRIM_01_SONG
+|CODEmeaning = "Song" internally refers to the Citadel; this name is shared with [[Choir Hornhead|02]], [[Choir Bellbearer|03]], and [[Choir Flyer|04]]; Pilgrim Pouncers are internally known as "Pilgrim 01"
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

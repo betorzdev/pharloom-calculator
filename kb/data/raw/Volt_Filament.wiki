@@ -1,0 +1,73 @@
+{{SS Infobox Tool
+| type = Blue 
+| effect = Increases {{CrestSlot|Skill|1}} [[Damage Values and Enemy Health (Silksong)|damage]] by 25%
+| location = [[Voltnest]]
+| description = Charged organ from a defeated Voltvyrm.<hr/>
+Can be coiled around thread, imbuing Silk Skills with electric charge.
+}}
+
+<b>Volt Filament</b> is a {{CrestSlot|Blue|1}} in <i>[[Hollow Knight: Silksong]]</i>. It applies electrical damage to {{CrestSlot|Skill|s}}.
+
+== Function ==
+Volt Filament imbues {{CrestSlot|Skill|s}} with electric charge, giving them 25% more [[Damage Values and Enemy Health (Silksong)|damage]], and adds a few ticks of 5 damage depending on the skill:
+* [[Silkspear]] gets 2 ticks.
+* [[Thread Storm]] gets 2 ticks. Extending Thread Storm adds 1 more tick.
+* [[Cross Stitch]] gets 1 tick.
+* [[Sharpdart]] gets 1 tick. Only the damage of the main hit is multiplied.
+* [[Rune Rage]] gets 1 tick when 1-3 runes hit the same enemy, or 2 ticks for 4+ runes.
+* [[Pale Nails]] gets 1 tick per each enemy hit, regardless of how many nails hit them.
+
+This extra damage stacks with [[Shaman Crest]] additively. 
+
+If a charged Skill contacts water, it will send a wave of electricity across the water's surface which hurts any enemies in the water. This wave deals several ticks of 8 damage in quick succession, and will typically hit a stationary enemy 6 times for a total of 48 damage. This bonus damage is unaffected by upgrades and other modifiers.<ref>[https://www.youtube.com/watch?v=QTlwqzpTeKE Volt Filament water interaction damage tests]</ref> This effect is useful for filling out the [[Muckmaggot]] entry in the [[Hunter's Journal (Silksong)|Hunter's Journal]], and may be effective in combat in more water-focused areas.
+
+== How To Acquire == 
+Found after defeating [[Voltvyrm]] in [[Voltnest]].
+
+{{Gallery
+|Image1 = Mapshot SS Voltnest.png!Location in Sands of Karak
+|Image2 = Screenshot SS Volt Filament 01.png!Drifting after defeating Voltvyrm in Voltnest
+|Image3 = Screenshot SS Volt Filament 02.png!In Voltnest in Sands of Karak
+}}
+
+== Trivia ==
+* The Volt Filament does not affect the appearance of the [[Cross Stitch]] animation when Hornet first acquires it from the battle with [[Phantom]].
+
+{{History
+|game = SS
+|1.0.28650 (Patch 2): 
+*Fixed Volt Filament damage multiplier not applying for certain Silk Skills.
+*Increased damage boost that Volt Filament applies to [[Silk Skills]] by 15–40%, depending on the Skill.
+}}
+{{Localisation
+|DEname = Voltfaser
+|DEmeaning = Volt Filament
+|ESname = Filamento voltaico
+|ESmeaning = Voltaic filament
+|FRname = Voltine
+|FRmeaning = From <i>volt</i> and <i>voltinism</i><br><small>[[wikipedia:voltinism|Voltinism]] is the number of annual biological cycles in an insect population, a term frequently used in sericulture and silk farming.</small>
+|ITname = Voltfilamento
+|ITmeaning = Volt Filament
+|JAname = 電撃の繊維
+|JAromanised = Dengeki no sen'i
+|JAmeaning = Electric Shock Fibre
+|KOname = 벼락의 가는 실
+|KOromanised = Byeolagui ganeun sil
+|KOmeaning = Thin Thread of Lightning
+|PTname = Filamento Voltaico
+|PTmeaning = Voltaic Filament
+|RUname = Вольт-жила
+|RUromanised = Volʹt-zhyla
+|RUmeaning = Volt Core
+|TWname = 雷電纖維
+|TWromanised = Léidiàn xiānwéi
+|TWmeaning = Lightning Filament
+|ZHname = 伏特丝
+|ZHromanised = Fútè sī
+|ZHmeaning = Volt Filament<br><small>{{lang|zh-Hans|伏特}} <i>fútè</i> (volt) is an established English loanword in Chinese.</small>
+|CODEname=ZAP_IMBUEMENT
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Voltine]]

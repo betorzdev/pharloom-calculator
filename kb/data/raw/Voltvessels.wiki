@@ -1,0 +1,104 @@
+{{SS Infobox Tool
+| label = Spear Form
+| image = <gallery>
+Voltvessels.png|Inventory
+Voltvessels Poison.png|Pollip Pouch
+</gallery>
+| type = Red
+| damage = 5/8/11/14/17 (spear) <br> 3/5/7/8/10 (zaps, 6 hits) <br> 23/38/53/62/77 (total)
+| refill_type = Repair
+| refill = {{s|8}}
+| max = 5/6/7/8/10
+| effect = Throws a spear that discharges electricity in a column
+| location = [[Memorium]]
+| description = Convertible orbs containing electricity.<hr>
+The vessels can be thrown as a bola for an explosive discharge or staked as a spear to release a column of energy.
+
+| title2 = Voltvessels
+| label2 = Bola Form
+| image2 = <gallery>
+Voltvessels2.png|Inventory
+Voltvessels2 Poison.png|Pollip Pouch
+</gallery>
+| type2 = Red
+| damage2 = 3/5/7/8/10 +5 (zaps, 4 hits + orb) <br> 17/25/33/37/45 (total per orb)
+| refill_type2 = Repair
+| refill2 = {{s|8}}
+| max2 = 5/6/7/8/10
+| effect2 = Throws two orbs that discharges electricity in a circular field
+| location2 = [[Memorium]]
+| description2 = Convertible orbs containing electricity.<hr>
+The vessels can be thrown as a bola for an explosive discharge or staked as a spear to release a column of energy.
+}}
+
+<b>Voltvessels</b> is a {{CrestSlot|Red|1}} in <i>[[Hollow Knight: Silksong]]</i>. It can be used to throw a spear that generates a column of electricity, or thrown as a projectile that bounces before exploding in a circle of electricity.
+
+== Usefulness ==
+The Spear form of Voltvessels throws a stake diagonally downwards that deals damage upon hitting an enemy and, once embedded in a surface, creates a column of electricity in its place. This beam can hit an enemy up to 6 times. Once the Voltvessel has been embedded in a surface, the stake can be struck with the [[Needle]] to angle the beam of electricity diagonally. 
+
+The Bola form throws a projectile that snaps apart on contact with a surface or enemy, turning into 2 bouncing orbs that both explode into a circular electric field after a few seconds which can each hit an enemy up to 4 times. These orbs can be hit with the Needle to redirect them.
+
+Voltvessels can be changed between Spear and Bola form while resting on a [[Bench (Silksong)|Bench]] by pressing [[Controls (Silksong)|ATTACK]] (SPRINT on keyboard) when the tool is selected in the inventory.
+
+* If any electric fields hit a water source, Voltvessels will send out a wave of electricity across the entire surface of the water. This is useful for various water-based enemies, such as [[Groal the Great]], or filling out elusive [[Hunter's Journal (Silksong)|Hunter's Journal]] entries such as [[Muckmaggot]].
+** Voltvessels will activate on impact with a water source, bypassing the charge-up delay.
+
+* The Voltvessels' electricity is not affected by [[Pollip Pouch]]; however, if the tool itself makes contact with an enemy, it will apply the [[Pollip Pouch]]'s poison effect. The tool has to be thrown into the enemy's hitbox to achieve this. {{MissingInfo}}
+
+== How to Acquire ==
+Found behind a breakable wall in the northeast of the [[Memorium]], guarded by 2 [[Memoria]] enemies.
+
+{{Gallery
+| Image1 = Mapshot SS Voltvessels.png!Location in the Memorium
+| Image2 = voltvesselwallhighlight.png!The broken wall leading to Voltvessels
+| Image3 = Screenshot SS Voltvessels Room.png!Room where Voltvessels is acquired
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Voltvessels_Water.png!Voltvessels thrown into water
+|Image2 = Screenshot SS Voltvessels 01.png!Voltvessels thrown into Void
+|Image3 = Recording SS Voltvessel-Spear.gif!Hornet using Spear variant
+|Image4 = Recording SS Volt-Vessel-Bola.gif!Hornet using Bola variant
+}}
+
+== Trivia ==
+* Voltvessels has a unique text prompt for trying to change its form without a bench: "Transform Tools while resting at a bench." It uses the same icon as trying to change Tools without a bench. 
+* NPC allies, such as [[Shakra]], [[Garmond & Zaza]], and [[Second Sentinel]], are also able to hit the spear form of the Voltvessel to angle the beam of electricity produced. Similarly, [[Skarr Scout]] sickles are able to strike the Voltvessel stake.
+{{History
+|game = SS
+|1.0.28891 (Patch 3): Fixed floor between [[Putrified Ducts]] and [[Bilewater]] being breakable from above using a Voltvessels spear, which allowed [[Groal]] to be skipped.
+}}
+{{Localisation
+|DEname = Voltbehälter
+|DEmeaning = Volt Container
+|ESname = Recipientes voltaicos
+|ESmeaning = Volt Vessels
+|FRname = Orbéclair
+|FRmeaning = Lightning Orb
+|ITname = Voltrecipienti
+|ITmeaning = Volt Containers
+|JAname = 電撃の器
+|JAromanised= Dengeki no utsuwa
+|JAmeaning = Electric Shock Vessel
+|KOname = 벼락 그릇
+|KOromanised = Byeorak geureut 
+|KOmeaning = Thunder Vessel
+|PTname = Orbevolts
+|PTmeaning = Voltorb
+|RUname = Вольт-шары
+|RUromanised = Vol't-šary
+|RUmeaning = Volt Ball
+|TWname = 電樞球
+|TWromanised = Diànshū qiú
+|TWmeaning = same
+|ZHname = 电枢球
+|ZHromanised = Diànshū qiú
+|ZHmeaning = Armature Balls
+|CODEname = LIGHTNING_ROD
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Orbéclair]]

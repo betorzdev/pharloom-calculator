@@ -1,0 +1,34 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Hunter's_March_Arena_2.png|400px|center]]
+|[[File:Mapshot_SS_Hunter's March Arena 2.png|400px|center]]
+|-
+| colspan="2" | Enemy gauntlet in the eastern end, accessible through either Hunter's March or [[Deep Docks]].<br>
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>Access to [[Swift Step]]</center>
+| <center>[https://youtu.be/j1GHUxGtueY Hunter's Trail Action]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Skarr Scout.png|35x35px|link=Skarr Scout]] Skarr Scout x2, centre
+| The right Skarr Scout immediately leaves, leaving only one.
+|-
+|
+[[File:HJ_Skarrlid.png|35x35px|link=Skarrlid]] [[Skarrlid]] x2, left and right
+|
+|-
+|
+[[File:HJ_Skarrwing.png|35x35px|link=Skarrwing]] [[Skarrwing]] x2, top left and right
+|
+|-
+|
+[[File:HJ_Skarr Scout.png|35x35px|link=Skarr Scout]] Skarr Scout, centre<br>
+[[File:HJ_Skarrwing.png|35x35px|link=Skarrwing]] Skarrwing, top left
+| Skarrwing arrives shortly after.
+|}

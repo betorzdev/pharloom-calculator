@@ -1,0 +1,34 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Halfway_Home_Arena_1.png|400px|center]]
+|[[File:Mapshot_SS_Creige_01.png|400px|center]]
+|-
+| colspan="2" | Enemy gauntlet beneath Halfway Home, only accesible after promising the <i>[[Great Taste of Pharloom]]</i> wish, and buying the [[Vintage Nectar]] from [[Creige]]. The gauntlet begins after attempting to pick up the Vintage Nectar at the bottom of the arena.
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>[[Vintage Nectar]]</center>
+| <center>[https://www.youtube.com/watch?v=swPmNk9_fw0 Generic Enemy Battle A]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Skarr Stalker.png|35x35px|link=Skarr Stalker]] [[Skarr Stalker]] x2, bottom right, top left<br>
+[[File:HJ_Skarr Scout.png|35x35px|link=Skarr Scout]] [[Skarr Scout]] x2, bottom left, top left<br>
+[[File:HJ_Skarrlid.png|35x35px|link=Skarrlid]] [[Skarrlid]] x4, bottom left, bottom centre, middle left, top centre<br>
+[[File:HJ_Skarrwing.png|35x35px|link=Skarrwing]] [[Skarrwing]] x2, bottom left, top right<br>
+[[File:HJ_Spear Skarr.png|35x35px|link=Spear Skarr]] [[Spear Skarr]], middle right
+| Bottom Skarr Stalker and Skarr Scout burst in from walls, increasing arena size.
+|-
+|
+[[File:HJ_Spear Skarr.png|35x35px|link=Spear Skarr]] Spear Skarr, top centre<br>
+[[File:HJ_Skarr Scout.png|35x35px|link=Skarr Scout]] Skarr Scout, top right<br>
+[[File:HJ_Skarrlid.png|35x35px|link=Skarrlid]] Skarrlid x2, middle left, bottom left<br>
+[[File:HJ_Skarrwing.png|35x35px|link=Skarrwing]] Skarrwing, middle centre<br>
+[[File:HJ_Skarrgard.png|35x35px|link=Skarrgard]] [[Skarrgard]], bottom right<br>
+[[File:HJ_Skarr Stalker.png|35x35px|link=Skarr Stalker]] Skarr Stalker, bottom right
+| Skarrgard bursts in from right wall, increasing arena size. Skarrgard can also destroy any platforms it hits with its swings.
+|}

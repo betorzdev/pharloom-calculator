@@ -1,0 +1,230 @@
+{{SS Infobox Area
+| tab1 = Act 2
+| image1 = <gallery>
+Whispering Vaults Map Marked.png|Marked
+Whispering Vaults Map Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Whispering Vaults Map Ruin Marked.png|Marked
+Whispering Vaults Map Clean.png|Unmarked
+</gallery>
+| connection = [[Bilewater]]<ref group="Note">Connects via one-way drop from the Whispering Vaults.</ref><br/>[[Choral Chambers]]<br/>[[Cogwork Core]]<ref group="Note">Connects via the rotating passageway in the Choral Chambers.</ref><br/>[[Underworks]]
+| ambience = [https://www.youtube.com/watch?v=6QsvQYSeWNE Atmos Library] (Act 2)<br>
+[https://www.youtube.com/watch?v=6tpXmXDOQxk Atmos Interior Crumbling and Wind] (Act 3)<br>
+[https://www.youtube.com/watch?v=62rByKODo9A Atmos Citadel Halls]<br>
+[https://www.youtube.com/watch?v=GivJqT7ml0M Atmos Citadel Outside]<br>
+[https://www.youtube.com/watch?v=UZD12AngJKg Atmos Outside Wind]<br>
+[https://www.youtube.com/watch?v=UdcTyq_aXXI Atmos Citadel Halls Pre Wakeup] (Act 3)<br>
+[https://www.youtube.com/watch?v=imSH2Pv_sCo Atmos Crumbling World] (Act 3)<br>
+[https://www.youtube.com/watch?v=04rQ_V7y02o Atmos Dust]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+| main = [https://www.youtube.com/watch?v=ZVIvNpzTH58 Whispering Vaults]
+| action = [https://youtu.be/Ml0UVesTc5M?si=MXXdSGH0rSw1M45d The Choir]<br>
+[https://youtu.be/swPmNk9_fw0?si=u0UZUdRY-EBdPU6W Generic Enemy Battle A]
+}}
+{{Quote
+|Within our vast store, always more there is to know, the old methods of prayer, to this land, to its rulers, and to the strength at its heart.
+|[[Vaultkeeper Cardinius]]
+|Hr=SS
+}}
+The <b>Whispering Vaults</b>, shortened to <b>Vaults</b>, is an [[Areas (Silksong)|area]] in [[the Citadel]] in <i>[[Hollow Knight: Silksong]]</i>. {{MissingInfo}}
+
+== Description ==
+The Whispering Vaults serves as a library of sorts for the Citadel. [[Psalm Cylinder]]s can be found and played in the Whispering Vaults. To play one, speak to [[Vaultkeeper Cardinius]]. Giving them the [[Sacred Cylinder]] unlocks the [[Vaultkeeper's Melody]].
+
+== History ==
+Before the Haunting, the Vaults contained most of the Citadel's history, prayers, and secrets. The [[Keepers]] were tasked with maintaining and defending the Vaults.<ref>[[Cogwork Statues]]: <i>"We would hear the voice of the Keepers, within their grand vaults. They who guard our history, our prayers and our secrets, across the ages."</i></ref> The Vaults contained all sorts of information, from old methods of prayer to information about [[Pharloom]], its rulers, and the strength at its heart.<ref>Vaultkeeper Cardinius: <i>"Within our vast store, always more there is to know, the old methods of prayer, to this land, to its rulers, and to the strength at its heart."</i></ref> The Vaults were considered a holy place deserving of reverence, and the Keepers did not take kindly to people wandering idly between the shelves.<ref>Vaultkeeper Cardinius: <i>"One must not wander idle between these sacred shelves! This is a holy place. Reverence! It is demanded."</i></ref> 
+
+At some point, the pontiff learnt through the [[Sacred Cylinder]] the true purpose of the Citadel and its songs. This knowledge caused them to fall silent.<ref>Vaultkeeper Cardinius: <i>"A truth they were told to have found... There in the dark. Something within the melody, or the words. Something to set them silent..."</i></ref>
+
+== How to Access ==
+The Whispering Vaults can be found on the eastern side of the Citadel, accessed initially from the south-east side of the [[Cogwork Core]]. 
+
+A passage can be opened between the Whispering Vaults and [[Songclave]], and a lift to the [[Underworks]] is unlocked after defeating [[Trobbio]].
+
+{{TabbedPOI
+|Header = true
+
+|NPC1 = Vaultkeeper Cardinius
+|NPC2 = Garmond & Zaza
+|NPC3 = Pious Isamor
+
+|Enemy1 = Pharlid
+|Enemy2 = Pharlid Diver
+|Enemy3 = Drapefly
+|Enemy4 = Drapemite
+|Enemy5 = Giant Drapemite
+|Enemy6 = Choir Pouncer
+|Enemy7 = Choir Hornhead
+|Enemy8 = Choir Bellbearer
+|Enemy9 = Choir Flyer
+|Enemy10 = Choir Elder
+|Enemy11 = Choristor
+|Enemy12 = Reed
+|Enemy13 = Vaultborn
+|Enemy14 = Lampbearer
+|Enemy15 = Scrollreader
+|Enemy16 = Vaultkeeper
+|Enemy17 = Drapelord
+|Enemy17Note = ([[Act 3]] only)
+|Enemy18 = Void Mass
+|Enemy18Note = (Act 3 only)
+
+|Boss1 = Garmond & Zaza
+
+|Loot1_FileName = Vaultkeeper Quest Icon
+|Loot1_Name = Vaultkeeper's Melody
+|Loot2_FileName = Sacred Cylinder
+|Loot3_FileName = Mask Shard (Silksong)
+|Loot3_Name = Mask Shard (Silksong){{!}}Mask Shard
+|Loot3_Amount = 1
+|Loot4_FileName = Memory Locket
+|Loot4_Amount = 1
+|Loot5_FileName = Flea
+|Loot5_Amount = 2
+|Loot6_FileName = Silkeater
+|Loot6_Amount = 1
+|Loot7_FileName = Psalm Cylinder
+|Loot7_Amount = 2
+|Loot8_FileName = Cogheart Piece 1
+|Loot8_Name = Cogheart Piece
+
+|LoreTabletsSource = SS Whispering Vaults
+
+|EnemyGauntletsSource = Whispering Vaults 1, Whispering Vaults 2
+}}
+
+== Sub-area: The Stage ==
+{{SS Infobox Area
+|tab1= Act 2
+|image1 = <gallery>
+The Stage Map Marked.png|Marked
+The Stage Map Clean.png|Unmarked
+</gallery>
+|tab2= Act 3
+|image2 = <gallery>
+The Stage Map Ruin Marked.png|Marked
+The Stage Map Clean.png|Unmarked
+</gallery>
+|ambience = [https://www.youtube.com/watch?v=62rByKODo9A Atmos Citadel Halls] (Act 2)<br>
+[https://www.youtube.com/watch?v=GivJqT7ml0M Atmos Citadel Outside] (Act 2)<br>
+[https://www.youtube.com/watch?v=UdcTyq_aXXI Atmos Citadel Halls Pre Wakeup] (Act 3)<br>
+[https://www.youtube.com/watch?v=imSH2Pv_sCo Atmos Crumbling World] (Act 3)
+}}
+<b>The Stage</b> is located in the south-west of the Whispering Vaults, connecting the [[Choral Chambers]] and the Whispering Vaults. 
+
+Trobbio's desk and writings can be found in the room above the Stage itself.
+
+A large poster of Trobbio and a sign can be found in the entranceway to the Stage during [[Act 2]], which is replaced with a poster of [[Tormented Trobbio]] during [[Act 3]]. Both times, upon defeating him and {{MissingInfo}}, the current poster gets removed.
+[[File:Citadel Model Stage.png|thumb|center|The model of the Citadel on the Stage]]
+{{TabbedPOI
+| Boss1 = Trobbio
+| Boss2 = Tormented Trobbio
+| Boss2Note=([[Act 3]] only)
+
+|Loot1_FileName = Claw Mirror
+|Loot1_Description = obtained after defeating [[Trobbio]]
+|Loot2_FileName = Claw Mirrors
+|Loot2_Description = obtained after defeating [[Tormented Trobbio]]
+|Loot3_FileName = Quill Red
+|Loot3_Name = Map and Quill (Silksong)#Mapping Tools{{!}}Quill
+|Loot3_Description = taken from Trobbio's desk during Act 2
+|Loot4_FileName = Quill Purple
+|Loot4_Name = Map and Quill (Silksong)#Mapping Tools{{!}}Quill
+|Loot4_Description = taken from Trobbio's desk during Act 3
+
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Whispering Vaults 01.png!Entrance arena
+|Image2 = Screenshot SS Whispering Vaults 02.png!Vaultkeeper Cardinius room
+|Image3 = Screenshot SS Whispering Vaults 03.png!Upper bench
+|Image4 = Screenshot SS Whispering Vaults 04.png!Vaultborn room
+|Image5 = Screenshot SS Whispering Vaults 05.png!Cogheart Piece room
+|Image6 = Screenshot SS Whispering Vaults 06.png!Lower bench
+|Image7 = Screenshot SS Whispering Vaults 07.png!Pontiff
+|Image8 = Screenshot SS Whispering Vaults 08.png!Pious Isamor
+|Image9 = Screenshot SS Whispering Vaults 09.png!Heavy Rosary Necklace location
+|Image10 = Screenshot SS Whispering Vaults 10.png!Psalm Cylinder location
+|Image11 = Screenshot SS EDGE 08.png!Pre-release screenshot
+|Image12 = Ari SS Sketch 10.png!Concept sketches
+}}
+{{#ev:youtube|https://www.youtube.com/watch?v=wuoz3L43XnU|300|center}}
+==Trivia==
+*The Whispering Vaults was [[Cut Content (Silksong)/Graphics#Ventrica Station|originally planned]] to feature a [[Ventrica Station]].
+
+{{History
+|game = SS
+|1.0.28891 (Patch 3): Fixed Whispering Vaults slide blocks incorrectly responding to damage sources other than the needle.
+}}
+{{Localisation
+|DEname = Raunendes Archiv
+|DEmeaning = Whispering Archive
+|ESname = Bóvedas Susurrantes
+|ESmeaning = Whispering Vaults
+|FRname = Voûtes des Murmures
+|FRmeaning = Vaults of the Whispers
+|ITname = Volte dei Sussurri
+|ITmeaning = Vaults of the Whispers
+|JAname = 囁きの貯蔵庫
+|JAromanised = Sasayaki no chozōko
+|JAmeaning = Repository of Whispers
+|KOname = 속삭이는 금고
+|KOromanised = Soksakdlneun geumgo
+|KOmeaning = Whispering Vaults
+|PTname = Câmaras Sussurrantes
+|PTmeaning = Whispering Chambers
+|RUname = Шепчущие катакомбы
+|RUromanised = Šepčuščie katakomby
+|RUmeaning = Whispering Catacombs
+|ZHname = 低语书库
+|ZHromanised = Dīyǔ shūkù
+|ZHmeaning = Whispering Library
+|TWname = 低語書庫
+|TWromanised = Dīyǔ shūkù
+
+|TWmeaning = same
+|CODEname = LIBRARY
+}}
+===The Stage===
+{{Localisation
+|hr=false
+|DEname = Die Bühne
+|DEmeaning = The Stage
+|ESname = El Escenario
+|ESmeaning = The Stage
+|FRname = La Scène
+|FRmeaning = The Stage 
+|ITname = Il Palco
+|ITmeaning = The Stage
+|JAname = 劇場
+|JAromanised = Gekijō
+|JAmeaning = Theater
+|KOname = 무대
+|KOromanised = Mudae 
+|KOmeaning = Stage or Scene
+|PTname = O Palco
+|PTmeaning = The Stage
+|RUname = Сцена
+|RUromanised = Scena
+|RUmeaning = Stage or Scene
+|ZHname = 剧台
+|ZHromanised = Jùtái
+|ZHmeaning = Stage
+|TWname = 劇台
+|TWromanised = Jùtái
+|TWmeaning = same
+|CODEname = CITADEL_STAGE
+}}
+
+{{Hr|ss}}
+
+== Notes ==
+<references group="Note"/>
+{{Refs|hr=false}}
+{{SS Nav Areas}}
+[[Category:The Citadel]]
+
+[[zh:低语书库]]

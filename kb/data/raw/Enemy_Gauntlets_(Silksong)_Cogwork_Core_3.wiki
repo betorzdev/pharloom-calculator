@@ -1,0 +1,21 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Cogwork_Core_Arena_3.png|400px|center]]
+|[[File:Mapshot_SS_Cogwork_Core_Arena_3.png|150px|center]]
+|-
+| colspan="2" | Enemy gauntlet in the southeast of the Cogwork Core, accessible only in [[Act 3]] by using [[Silk Soar]]. Arena walls expand outwards to the left and right once the gauntlet begins.
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>[[Pristine Core]]</center>
+| <center>[https://youtu.be/M-z6fPrpg-k Cut Through (Main)]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Cogwork Clapper.png|35x35px|link=Cogwork Clapper]] [[Cogwork Clapper]] x2, left and right
+|
+|}

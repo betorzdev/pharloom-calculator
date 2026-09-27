@@ -1,0 +1,89 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Gahlia.png|Hunter's Journal
+Gahlia Retracted.png|Retracted
+Gahlia Closed.png|Closed
+</gallery>
+|drops = {{S|5}} (from mask)
+|health = 20/{{BT|40}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|0.75|0.75|0.75}}
+|numbers_required = 20
+|sing=Phacia
+}}
+
+{{Quote
+|Hr = Journal
+|Floral foe with a core shaped to mimic a mask. The core can be thrust forth to bludgeon unwary bugs.<hr/>The false mask alone is frightening enough to scare away smaller pests.
+}}
+
+<b>Gahlias</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are floral foes with mask-like cores that they thrust forward to bludgeon unwary bugs.<ref>Gahlia [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Floral foe with a core shaped to mimic a mask. The core can be thrust forth to bludgeon unwary bugs."</i></ref>
+
+== Behaviour and Tactics ==
+When [[Hornet (Silksong)|Hornet]] enters their attack range, Gahlias open their petals and shortly afterwards launch their mask-like core forward on a long stalk. This extends their hitbox, allowing them to strike Hornet while simultaneously making them an easier target.
+
+On death, a Gahlia's mask drops and can be hit or [[Needle#Needle-bouncing|Needle-bounced]] off. After being struck, the mask shatters into {{S|5}} on its next impact with a surface.
+
+Gahlias deal {{Damage|1}} on contact with their petals and core. However, they do not deal contact damage from behind. This is demonstrated by a specific Gahlia in the eastern [[Bench (Silksong)|bench]] room in [[Shellwood]]: it blocks a passageway, allowing Hornet to attack it safely from behind, though she cannot pass until it is defeated.
+
+=== Act 3 ===
+[[Black-threaded]] Gahlias have their health doubled. They gain one of the following [[Black-Threading#Movesets|Void attacks]]: Void Blades, Void Tendrils, or Void Projectiles.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* Drifting, dancing, falling seeds...
+* Thirsty roots creeping down...
+* Sleeping... Sleeping...
+* Voice! Wake! Voice calls out...
+}}
+
+== Location ==
+Gahlias can be found in [[Shellwood]] and the [[Memorium]].
+
+{{Gallery
+|Image1 = Mapshot SS Gahlia 01.png!Locations in Shellwood
+|Image2 = Mapshot SS Gahlia 02.png!Locations in the Memorium
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Gahlia 01.png!In Shellwood
+|Image2= Screenshot SS Gahlia 02.png!Attacking
+|Image3= Screenshot SS Gahlia 05.png!Mask
+|Image4= Screenshot SS Gahlia 03.png!Reacting to the Needolin
+|Image5= Screenshot SS Gahlia 04.png!In the Memorium
+}}
+
+{{Localisation
+|DEname = Gahlia
+|DEmeaning = —
+|ESname = Gahlia
+|ESmeaning = —
+|FRname = Gallia
+|FRmeaning = —
+|ITname = Galia
+|ITmeaning = —
+|JAname = ガハリア
+|JAromanised = Gaharia
+|JAkatakana = foreignenemy
+|JAmeaning = Gahlia
+|KOname = 가면초
+|KOromanised = Gamyeoncho
+|KOmeaning = Mask Plant
+|PTname = Gália
+|PTmeaning = —
+|RUname = Уфилла
+|RUromanised = Ufilla
+|RUmeaning =
+|TWname = 假面麗花
+|TWromanised = Jiǎmiàn lìhuā
+|TWmeaning = same
+|ZHname = 假面丽花
+|ZHromanised = Jiǎmiàn lìhuā
+|ZHmeaning = Masked Dahlia or False-faced Dahlia
+|CODEname= BLOOM_PUNCHER
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

@@ -1,0 +1,101 @@
+{{Navbar|page1=Delicate Flower|page2=Everbloom}}
+
+{{SS Infobox Item
+| label = Inventory
+|image = <gallery>
+Everbloom.png|Inventory
+Everbloom Held.png|Held 
+</gallery>
+| description = Ethereal flower plucked from a deep and distant memory. Glows with soft, pale light that wards against the void.
+| type = Equipment
+| effects = Unlocks the [[Endings (Silksong)|ending]] to [[Act 3]]<br>Prevents damage from swimming in the [[Void]] in [[the Abyss (Silksong)|the Abyss]]<br>Prevents Void damage from depleting Hornet's [[Silk]]<br>Allows access to [[Lost Lace]]<br>Unlocks new interactions with certain [[NPCs (Silksong)|NPCs]]
+| source = Obtained at the end of the [[Red Memory]]
+
+| label2 = Prompt
+| description2 = Fragile flower taken from a deep and distant memory.<hr>
+Its pale light wards against the void.
+| title2 = <small>Obtained the</small><br>Everbloom
+| image2 = Icon SS Everbloom Art.png
+| type2 = Equipment
+| effects2 = Unlocks the [[Endings (Silksong)|ending]] to [[Act 3]]<br>Prevents damage from swimming in the [[Void]] in [[the Abyss (Silksong)|the Abyss]]<br>Prevents Void damage from depleting Hornet's [[Silk]]<br>Allows access to [[Lost Lace]]<br>Unlocks new interactions with certain [[NPCs (Silksong)|NPCs]]
+| source2 = Obtained at the end of the [[Red Memory]]
+}}
+
+{{Quote
+|Hr=Hornet
+|In the distant past, I knew the flower. My thread still holds its faint memory. If the Everbloom was grasped strongly enough within my Silk, it could be made to manifest.
+|[[Hornet (Silksong)|Hornet]]}}
+
+The <b>Everbloom</b> is an [[Items (Silksong)#Equipment|equipment item]] in <i>[[Hollow Knight: Silksong]]</i>. It is required to be able to complete the <i>[[DESCEND: Last Dive]]</i> Main Objective and achieve the [[Endings (Silksong)#Ending 4: Sister of the Void|ending]] to [[Act 3]].
+
+== Background ==
+Everblooms were brought to [[Hallownest]] from "lands serene" by the [[Five Great Knights|Great Knight]] [[Grey Mourner|Ze'mer]], where they became known as [[Delicate Flower|Delicate Flowers]].<ref>[[White Lady]]: <i>"Not of me that flower, nor of this kingdom. Far it travelled to reach this place, brought by one beloved, fair knight of lands serene. There is rare power hidden in those frail petals. To hold it so close, one must surely be unaware of its nature... "</i></ref> The flowers are rare, sacred objects which have a pure aura.<ref>[[Grey Mourner]]: <i>"A sacred flower is the offering. It is a rare, delicate object."</i></ref><ref>[[Eternal Emilitia]]: <i>"Though even its pure aura is no match for the light of our dear King."</i></ref> They glow with soft, pale light that wards against the [[Void]].<ref>Everbloom inventory description <i>"Glows with soft, pale light that wards against the void."</i></ref> 
+
+The [[Pale King|King]] and [[White Lady|Queen]] of Hallownest had an Everbloom in their possession, referring to it as "the first light" and the only means they had to resist the Void.<ref>[[White Lady]]: <i>"Witness, the first light. The only means we possess to resist that void with which our family is forever linked."</i></ref>
+
+[[Hornet (Silksong)|Hornet]] is able to bring an Everbloom to [[Pharloom]] by entering the [[Red Memory]] and using the power of her [[Silk]] to manifest it physically.
+
+== Function ==
+Allows Hornet to dive into the Void to free [[Lace]] at the end of the DESCEND: Last Dive Main Objective. It also protects Hornet from being damaged while swimming in the sea of Void in [[the Abyss (Silksong)|the Abyss]], and prevents Silk drain when taking Void damage.
+
+[[Void Tendrils (Silksong)|Void Tendrils]] don't thrash when Hornet is nearby if she has the Everbloom. They also avoid her when she's swimming in the Void, only thrashing a certain distance away from her. If [[Grand Mother Silk]] screams when Hornet is submerged in the Void, the Void Tendrils will still thrash about, but won't damage Hornet.
+
+== How to Acquire ==
+Given by the [[White Lady]] during the Red Memory.
+
+{{Gallery
+|Image1 = Mapshot SS Red Memory.png!Location of the Red Memory in [[Moss Grotto]]
+|Image2 = Screenshot SS White Lady 02.png!The White Lady presents the Everbloom to Hornet
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Everbloom 02.png!Hornet holding the Everbloom after the Red Memory
+|Image2 = Screenshot SS Everbloom 03.png!Hornet swimming in the Void with the Everbloom
+|Image3 = Screenshot SS Everbloom 04.png!Hornet leaping into the Void sea with the Everbloom
+|Image4 = Screenshot SS Void Tendrils 09.png!Hornet diving with the Everbloom
+|Image5 = Screenshot SS Void Tendrils 11.png!The Everbloom dissipating attacking Void Tendrils
+|Image6 = Screenshot SS Everbloom 06.png!Hornet holding the Everbloom as it dissipates attacking Void Tendrils
+|Image7 = Screenshot SS Everbloom 01.png!Closeup on the Everbloom during the [[Lost Lace|Last Dive]] cutscene
+|Image8 = Screenshot SS Void Tendrils 14.png!The Everbloom dissipating Void Tendrils blocking the escape route during Hornet's ascent
+|Image9 = Screenshot SS Everbloom 05.png!The Everbloom flickering as it is about to dissipate
+|Image10 = Screenshot SS Void Tendrils 15.png!Void Tendrils stalking Hornet as the Everbloom dissipates
+}}
+
+== Achievements ==
+{{Achievements|allgames=silksong|Remembrance}}
+{{Localisation
+|DEname = Immerblüte
+|DEmeaning = Everbloom
+|ESname = Siempreviva
+|ESmeaning = Everlasting Flower
+|FRname = Flore éternelle
+|FRmeaning = Eternal Flora
+|ITname = Fioreterno
+|ITmeaning = Eternal Flower
+|JAname = 永年花
+|JAromanised = Einen hana
+|JAmeaning = Eternal Flower
+|KOname = 영원의 꽃
+|KOromanised = Yeongwonui kkot
+|KOmeaning = Flower of Eternity
+|PTname = Flor-da-Eternidade
+|PTmeaning = Flower of Eternity
+|RUname = Вечноцвет
+|RUromanised = Večnocvet
+|RUmeaning = Everbloom
+|TWname = 永綻花
+|TWromanised = Yǒng zhàn huā
+|TWmeaning = same
+|ZHname = 永绽花
+|ZHromanised = Yǒng zhàn huā
+|ZHmeaning = Ever-blooming Flower
+|CODEname=WHITE_FLOWER
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Items}}
+{{SS Nav Skills}}
+[[Category:Items (Silksong)]]
+[[Category:Skills and Abilities (Silksong)]]
+[[fr:Flore éternelle]]

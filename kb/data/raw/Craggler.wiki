@@ -1,0 +1,94 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Craggler.png|Hunter's Journal
+Craggler Idle.png|Idle
+</gallery>
+| health = 200/{{BT|400}}
+| damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+| drops = {{S|30}}<br>[[Beast Shard]]
+| numbers_required = 1
+|singnum=1
+}}
+{{Quote
+|Hr = Journal
+|Thick-plated scuttler that prefers high places.<hr/>
+Holds an extensive supply of searing acid in a layered sack within its shell. The acid rains from its mouth upon any creature it sees as food.
+}}
+
+The <b>Craggler</b> is an [[Enemies (Silksong)|enemy]] in <i>[[Hollow Knight: Silksong]]</i>. It is a large grown [[Cragglite]] able to spew searing acid held within its shell.<ref>Craggler [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Holds an extensive supply of searing acid in a layered sack within its shell. The acid rains from its mouth upon any creature it sees as food."</i></ref>
+
+== Behaviour & Tactics ==
+The Craggler quickly scuttles along the ceiling above Hornet, following her across the entire room except for the very entrance. It has one attack, spewing acid, which the Craggler performs either in a back-and-forth motion or while following Hornet if she is far. The acid deals {{Damage|2}} if Hornet is hit by it. The Craggler recharges for a few moments before attacking again.
+
+The Craggler also deals {{Damage|2}} upon contact.
+
+The Craggler is fast, but can be avoided by utilising the platforms in the room, hiding underneath them during its acid attack, and then moving towards the other side of the room while it recharges. The [[Swift Step]] ability is useful here, as Hornet can use it to avoid the acid attacks altogether.
+
+The [[Cogfly]] [[Tools|Tool]] is useful against the Craggler, as Hornet can stay covered while attacking with virtually no risk. Other Tools such as [[Pimpillo]], [[Sting Shard]], and [[Curveclaw]] may also be effective.
+
+Alternatively, the pauses between the acid attacks can be used as openings to jump up and attack. The timing between jumping up and ducking back underneath the platforms before the next attack is short, so it is best to jump up as soon as the acid attack finishes, giving Hornet time to get one or two hits in before hiding underneath the platform again.
+
+=== Act 3 ===
+The Craggler becomes [[Black-Threading|black-threaded]] in Act 3, doubling its health. Instead of acid, it spews [[Void]]. In addition, it gains the void blobs attack. All attacks as well as contact damage now deal {{Damage|2|type=Void}}.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Become like stone...
+* Sear their shells...
+* Larger, greater!
+* All is mine... only mine!
+}}
+
+== Location ==
+The Craggler can be found in the [[Wormways]], in the long passage connecting the area to [[Bone Bottom]]. Once defeated, it does not respawn and is eventually replaced by [[Cragglite]]s.
+
+{{Gallery
+|Image1 = Mapshot SS Craggler 01.png!Location in the Wormways
+}}
+
+==Gallery==
+{{Gallery
+|Image1=Screenshot SS Craggler 02.png!Idle
+|Image2=Screenshot SS Craggler 03.png!Spewing acid
+|Image3=Screenshot SS Craggler 04.png!Reacting to the Needolin
+|Image4=Screenshot SS Craggler 01.png!Black-threaded Craggler
+|Image5=Silksong Early 009.png!<i>Silksong</i> reveal trailer
+}}
+==Trivia==
+*[[Craftmetal]] is described by [[Pebb]] as being harder than the hide of a Craggler.<ref>[[Pebb]]: <i>"A rare find, this. Shinier than faith and harder than a Craggler's hide. A skilled craftsbug could fashion something nice out of it, if they've got the knowledge."</i></ref>
+*During early development a Craggler was planned to appear in the middle room of [[Mosshome]].<ref>[[:File:April 2021 Mosshome.jpg|April 2021 <i>Hollow Knight: Silksong</i> development map screenshot]]</ref>
+
+{{Localisation
+|DEname = Klüfter
+|DEmeaning = From <i>kluft</i> (crag) and <i>-er</i> (agent suffix).
+|ESname = Craggler
+|ESmeaning = —
+|FRname = Craggleur
+|FRmeaning = — 
+|ITname = Granchialto
+|ITmeaning = Portmanteau of <i>granchio</i> (crab) and <i>alto</i> (tall).
+|JAname = クラッグラ
+|JAromanised = Kuraggura
+|JAkatakana = foreignenemy
+|JAmeaning = Craggler
+|KOname = 바위벌레
+|KOromanised = Bawibeolle
+|KOmeaning = Rock Bug
+|PTname = Gárgolo
+|PTmeaning = From <i>gárgola</i> (gargoyle).
+|RUname = Скальнер
+|RUromanised = Skal'ner
+|RUmeaning = From {{lang|ru|скала}} <i>skala</i> (rock or crag).
+|TWname = 懸峭獸
+|TWromanised = Xuán qiào shòu
+|TWmeaning = same
+|ZHname = 悬峭兽
+|ZHromanised = Xuán qiào shòu
+|ZHmeaning = Crag Beast or Hanging Steep Beast<br><small>{{lang|zh-Hans|悬峭兽}} / {{lang|zh-Hant|悬峭兽}} <i>xuán qiào shòu</i> is a play on {{lang|zh-Hans|悬崖峭壁}} / {{lang|zh-Hant|懸崖峭壁}} <i>xuányáqiàobì</i> (sheer cliff or crag).</small>
+|CODEname=ROOF_CRAB
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+[[fr:Craggleur]]
+[[pt:Gárgolo]]

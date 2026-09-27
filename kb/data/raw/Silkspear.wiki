@@ -1,0 +1,79 @@
+{{SS Infobox Skill
+| damage formula = 3x [[Needle]]
+| damage total = 15/27/39/51/63
+| effect = Deals damage in a line in front of Hornet
+| location = [[Mosshome]]
+| image = Icon_SS_Silkspear.png
+| description = Deadly Weaver technique. Throw the needle forward with force amplified by coiled Silk.
+| description2 = Press SKILL/TOOL<hr>Attack by throwing the needle forward. Silk will be expended.<br>Silk Skills can be equipped in the Crest screen of the Menu.
+}}
+
+<b>Silkspear</b> is a [[Skills|Skill]] in <i>[[Hollow Knight: Silksong]]</i>. Using it allows [[Hornet (Silksong)|Hornet]] to throw her [[Needle]] forward to pierce enemies. 
+
+== Function ==
+Hornet throws the [[Needle]] forward, piercing enemies. The Silkspear deals [[Damage Values and Enemy Health (Silksong)#Needle|3x Needle]] [[Heavy Damage]] on hit.
+
+If the spear hits a wall, it is retracted significantly faster. This means that hitting an enemy, followed by a wall, makes the Silkspear much quicker to cast while still dealing the same amount of damage.
+
+Hornet is unable to perform regular Needle attacks until the Needle returns to her, potentially leaving her vulnerable to enemy attacks.
+
+Silkspear is also used to free the [[Bell Beast]] to initiate her boss fight, and to clear a few walls of Silk in [[Mosshome]] located near the Bell Beast fight.
+
+=== Modifiers ===
+* [[Volt Filament]] electrifies Silkspear, increasing the damage by 25% and adding 2 ticks of 5 damage.
+* [[Shaman Crest]] sheathes Silkspear in magical runes, increasing the damage by 40%.
+** Volt Filament and Shaman Crest's damage increases add together to grant +65% damage.
+* [[Egg of Flealia]] reduces the cost of Silkspear to 3 Silk while at full health.
+
+== How to Acquire ==
+Silkspear can be acquired from a [[Weaver Burial Spire]] in [[Mosshome]] of [[Bone Bottom]]. 
+
+{{Gallery
+| Image1 = Mapshot SS Silkspear.png!Location in Bone Bottom
+| Image2 = Screenshot SS Moss Grotto 23.png!Weaver Spire 
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Silkspear.png ! Splash Art
+|Image2 = Icon SS Silkspear Art.png ! Splash Art
+}}
+
+== Trivia ==
+* While Silkspear resembles one of Hornet's attacks [[Hornet Protector|as a boss in Hollow Knight]], it is much faster and flashier, being surrounded by glowing Silk and a magical rune.
+
+{{Localisation
+|DEname = Seidenspeer
+|DEmeaning = Silkspear
+|ESname = Lanza sedeña
+|ESmeaning = Silken Spear or Silken Lance
+|FRname = Lance soyeuse
+|FRmeaning = Silken Lance
+|ITname = Lancia Serica
+|ITmeaning = Silk Lance
+|JAname = シルクの槍
+|JAromanised = Shiruku no yari
+|JAkatakana = foreign
+|JAmeaning = Silk Spear
+|KOname = 실크창
+|KOromanised = Silkeuchang
+|KOmeaning = Silk Spear
+|PTname = Lança de Seda
+|PTmeaning = Silk Spear
+|RUname = Шёлковое копьё
+|RUromanised = Šëlkovoe kop'ë
+|RUmeaning = Silk Spear
+|TWname = 絲之矛
+|TWromanised = Sī zhī máo
+|TWmeaning = same
+|ZHname = 丝之矛
+|ZHromanised = Sī zhī máo
+|ZHmeaning = Spear of Silk
+|CODEname = SKILL_THROW</code><br><code>SILKSPEAR
+}}
+
+{{Refs|hr=SS}}
+
+{{SS_Nav_Skills}}
+
+[[fr:Lance soyeuse]]

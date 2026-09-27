@@ -1,0 +1,76 @@
+{{SS Infobox Enemy
+| hasdrop = true
+| sh1 = 3-5
+| sh2 = 4-7
+|health = 12
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.9|0.8|0.6|0.6}}
+|numbers_required = 4
+|singnum = 3
+}}
+{{Quote
+|Hr = Journal
+|Wriggling young grub that lives in darkness.<hr/>
+If allowed the opportunity, these creatures will grow into a form larger and more oppressive.
+}}
+
+<b>Squirrms</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are the larval form of the [[Judges]] of the [[Blasted Steps]], chosen by [[the Citadel]] to prevent sinners from entering the city.<ref>[[Blasted Steps]] [[Lore Tablets (Silksong)|Lore Tablet]]: <i>"Bug born of Pharloom. You have been chosen. May our Citadel's holy gilding harden your soft shell. Stand eternal as our arbiter, that no bug bearing sin shall step within our sacred halls."</i></ref> 
+
+== Behaviour and Tactics ==
+When approached, Squirrms immediately burrow underneath the sand, leaving an extremely narrow window for [[Hornet (Silksong)|Hornet]] to attack them. For a much simpler method of attacking them, Hornet can play her [[Needolin]], which causes them to re-emerge after expending one strand of silk. Once Hornet stops playing, they burrow back down, causing their health to reset. They also re-emerge when Hornet returns to the top of the room they are found in.
+
+During the [[Needolin]] Dialogue, wait until two or more emerge. After this, immediately use a strong move like Silk Spear to instantly kill as many as possible. This allows for a much larger time window in which to kill them. This can be repeated without having to leave the room. Alternatively, one can stand in the upper chamber on the dais with the lore tablet, and throw a [[Pimpillo]] down the opening to the lower chamber. Since the Squirrms stay exposed while Hornet is in the upper room, each [[Pimpillo]] toss results in one kill. Setting a trap with [[Tacks]] is also effective.
+
+The [[Cogfly]] does not attack them.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Warmly shifting, dancing sands...
+* All together! All together!
+* We are chosen! All are chosen!
+* Let’s grow stronger!
+* Let’s grow holy!
+* We will serve! All will serve!
+}}
+
+== Location ==
+Squirrms can be found within a secret room in [[Blasted Steps]].
+{{Gallery
+|Image1 = Mapshot SS Squirrm.png!Location in Blasted Steps
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Squirrm 01.png!Idle
+|Image2 = Screenshot SS Squirrm 02.png!Singing
+}}
+
+{{Localisation
+|DEname = Krümmwurm
+|DEmeaning = Writhing Worm
+|ESname = Retorzuelo
+|ESmeaning = From <i>retorcerse</i> (to squirm) and <i>-zuelo</i> (diminutive suffix).
+|FRname = Vermille
+|FRmeaning =
+|ITname = Divincolo
+|ITmeaning = Wriggler
+|JAname = モジモジ
+|JAromanised = Mojimoji
+|JAkatakana = foreign
+|JAmeaning = From {{lang|ja|もじもじ}} <i>mojimoji</i> (Japanese onomatopoeia for squirming).
+|KOname = 꿈틀벌레
+|KOromanised = Kkumteulbeolle
+|KOmeaning = Wriggle Bug
+|PTname = Vermuço
+|PTmeaning = From <i>verme</i> (worm or vermin).
+|RUname = Ползёныш
+|RUromanised = Polzënyš
+|RUmeaning =
+|ZHname = 蠕行幼虫
+|ZHromanised = Rúxíng yòuchóng
+|ZHmeaning = Squirming Grub
+|CODEname=CORAL_JUDGE_CHILD
+|CODEmeaning = Judges are internally known as "Coral Judges"
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

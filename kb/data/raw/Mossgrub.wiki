@@ -1,0 +1,96 @@
+{{SS Infobox Enemy
+| title1 = Mossgrub
+| image1 = B Mossgrub.png
+| health = 10/{{BT|20}}
+| damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+| hasdrop = true
+| sh1 = 2-3
+| sh2 = 3-4
+| numbers_required = 25
+|singnum = 1
+}}
+
+{{Quote
+| Fur covered crawler with a series of sharp spikes along its back. <hr/>If not for the spikes, I would think it an appealing bug.
+| Hr = Journal
+}}
+
+<b>Mossgrubs</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are fur covered crawler [[Mossmirs]] that have a series of sharp spikes along their backs.<ref>Mossgrub [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Fur covered crawler with a series of sharp spikes along its back."</i></ref>
+
+== Behaviour and Tactics ==
+Mossgrubs wander aimlessly or stay still on floors or walls, dealing {{Damage|1}} on contact. If provoked, they begin to crawl towards [[Hornet (Silksong)|Hornet]], or in the direction they were initially facing if they are on a wall.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Mossgrubs have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* Protect us, mother!
+* Call for danger, hide away...
+* Young must eat, grow or die...
+* Sleep and change, have no fear...
+}}
+
+== Location ==
+Mossgrubs are found primarily in the [[Moss Grotto]], but can also be seen in the western portion of [[Weavenest Atla]] and the Moss Grotto section of the [[Memorium]]. They can be summoned by [[Moss Mother]]s in the [[Ruined Chapel]] and the western portion of Weavenest Atla.
+
+{{Gallery
+|Image1 = Mapshot SS Mossgrub 01.png!Locations in the Moss Grotto
+|Image2 = Mapshot SS Mossgrub 04.png!Locations in the Moss Grotto in Act 3
+|Image3 = Mapshot SS Mossgrub 02.png!Locations in Weavenest Atla
+|Image4 = Mapshot SS Mossgrub 03.png!Locations in the Memorium
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Mossgrub 02.png!In the Moss Grotto
+|Image2 = Screenshot SS Mossgrub 03.png!In Weavenest Atla
+|Image3 = Screenshot SS Mossgrub 04.png!In the Memorium
+|Image4 = Screenshot SS Mossgrub 06.png!Summoned by Moss Mother
+|Image5 = Screenshot SS Mossgrub 07.png!Reacting to the Needolin
+|Image6 = Screenshot_SS_Moss_Grotto_02.png!Feeding
+|Image7 = Screenshot SS Mossgrub 05.png!Climbing on walls
+|Image8 = Screenshot_SS_Mossgrub_01.png!Black-threaded
+}}
+
+== Trivia == 
+* An incomplete entry for Mossgrub is already unlocked after obtaining the [[Hunter's Journal (Silksong)|Hunter's Journal]], even if none have been defeated.
+
+{{Localisation
+|DEname = Mooslarve
+|DEmeaning = Moss Larva
+|ESname = Reptamusgo
+|ESmeaning = Combination of <i>repta</i> (crawls) and <i>musgo</i> (moss).
+|FRname = Ver Verdoyant
+|FRmeaning=Verdant Worm
+|ITname = Larvamuschio
+|ITmeaning = Mossgrub
+|JAname = コケフサ
+|JAromanised = Koke fusa
+|JAkatakana = enemy
+|JAmeaning = Moss Tuft<br><small>Combination of {{lang|ja|苔 <i>koke</i>}} (moss) and {{lang|ja|房 <i>fusa</i>}} (tuft).</small>
+|KOname = 이끼유충
+|KOromanised = Ikkiyuchung
+|KOmeaning = Moss Larva
+|PTname = Musgolarva
+|PTmeaning = Mosslarva
+|RUname = Выползмшень
+|RUromanised = Vypolzmšen'
+|RUmeaning = Combination of {{lang|ru|выползать <i>vypolzat'</i>}} (crawl out) and {{lang|ru|мшистый <i>mšistyj</i>}} (mossy).
+|TWname = 苔蘚蠕蟲
+|TWromanised = Táixiǎn rúchóng
+|TWmeaning = same
+|ZHname = 苔藓蠕虫
+|ZHromanised = Táixiǎn rúchóng
+|ZHmeaning = Moss Worm
+|CODEname = MOSSBONE_CRAWLER
+|CODEmeaning = <code>MOSSBONE</code> internally refers to [[Mossmirs|Mossmir]] enemies.
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[fr:Ver Verdoyant]]

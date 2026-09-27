@@ -1,0 +1,102 @@
+{{SS Infobox Tool
+| type = Blue
+| effect = Reduces damage from fire-based attacks and hazards
+| location = [[Deep Docks]]
+| description = Forged iron bell, crafted to ward against the intense heat of the Deep Docks.<hr/>
+Reduces the damage taken from flame and magma.
+}}
+
+{{Quote
+| This trinket is our own invention. It wards against the deadly lava and heat around these docks. The workers used to request them of us. Now they've lost the mind to care.
+| [[Forge Daughter]]
+| Hr = SS
+}}
+
+<b>Magma Bell</b> is a {{CrestSlot|Blue|1}} in <i>[[Hollow Knight: Silksong]]</i>. When equipped, it reduces damage from fire-based enemy attacks and environmental hazards.
+
+== Usefulness ==
+[[File:Screenshot SS Magma Bell Effect.png|Hornet being shielded from a pit of hot coals|left|thumb|200px]]
+
+Magma Bell halves the {{Damage|2|type=Fire}} damage dealt by fire-based and lava-based attacks and hazards down to {{Damage|1|type=Fire}}. It also lets [[Hornet (Silksong)|Hornet]] touch hot floors and walls for an additional 2 seconds on top of the usual 0.7 seconds before taking damage. Hornet projects a red circle glowing with runes when Magma Bell is shielding her from a damage source, flashing into a fullscreen burst when it reduces a {{Damage|2|type=Fire}} injury.
+
+Impacts that already deal {{Damage|1|type=Fire}} damage are ignored by the Bell, like small [[Flintstone]] rocks and [[Flintbeetle]] attacks.
+
+It '''does not protect''' against [[Trobbio]]'s pyrotechnics.
+
+When Magma Bell is active, a [[File:Magma Bell HUD Active.png|20x20px]] icon is displayed in the HUD. If Hornet takes protected damage or lingers on a hot surface for too long, the effect stops for a 5-second cooldown, indicated by a [[File:Magma Bell HUD Inactive.png|20x20px]] icon. When Magma Bell is ready again, the runic circle flashes around its icon and around Hornet.
+
+{{Clear|left}}
+
+Magma Bell is best used for situations where fiery attacks or lava hazards are expected:
+
+* Areas full of [[Deep Docks|hot coals]] or [[Far Fields|lava pools]]
+* Explosive ores found in [[the Marrow]] and [[Far Fields]]
+* [[Lavalug]] and [[Lavalarga]]s' eruptions and death explosions
+* [[Tarmite]]s' projectiles
+* [[Flintflame Flyer]]s' projectiles and death explosions
+* [[Cogwork Hauler]]s' explosions
+* [[Lace]]'s lava arena
+* [[Fourth Chorus]] and the second [[Savage Beastfly]]'s lava arena
+* [[Last Judge]]'s flaming thurible attacks and death explosion
+* [[Forebrothers Signis & Gron]]'s spear attacks and falling lava
+* [[Wisp]]s' contact damage
+* [[Burning Bug]]s' staff attacks and death immolation
+* [[Father of the Flame]]'s ring of fire and death explosion
+
+== How to Acquire ==
+Purchased from [[Forge Daughter]] in [[Deep Docks]] for {{R|110}} and {{C|1}}.
+
+{{Gallery
+|Image1 = Mapshot SS Forge Daughter 01.png!Location in Deep Docks
+|Image2 = Screenshot SS Forge Daughter 01.png!Forge Daughter in Deep Docks
+}}
+
+{{Gallery
+| Title = Gallery
+| Image1 = Magma Bell HUD Active.png!Status icon when Magma Bell is active
+| Image2 = Magma Bell Effect.png!Runic circle that surrounds Hornet
+| Image3 = Magma Bell Particles.png!Runic particles emitted by the circle
+| Image4 = Magma Bell Vignette.png!Fullscreen vignette upon taking protected damage
+}}
+{| align="center" style="text-align:center"
+| {{#ev:youtube|https://www.youtube.com/watch?v=hMgoOQlI0g0|250|center|Deep Dive (outdated)}}
+|}
+{{History
+|game = SS
+|1.0.29909 (Patch 5): Magma Bell was changed to protect against "all" types of "fire-type explosions".
+}}
+{{Localisation
+|DEname = Magmaglocke
+|DEmeaning = Magma Bell
+|ESname = Campana magmática
+|ESmeaning = Magmatic Bell
+|FRname = Cloche de magma
+|FRmeaning = Bell of Magma
+|ITname = Campagma
+|ITmeaning = Portmanteau of <i>campana</i> (bell) and <i>magma</i>.
+|JAname = マグマの鈴
+|JAromanised = Maguma no kane
+|JAkatakana = foreign
+|JAmeaning = Magma Bell
+|KOname = 용암 종
+|KOromanised = Yongam jong
+|KOmeaning = Lava Bell
+|PTname = Sino de Magma
+|PTmeaning = Magma Bell
+|RUname = Магмовый колокольчик
+|RUromanised = Magmovyj kolokol'čik
+|RUmeaning = Magma Bell or Magma Handbell
+|TWname = 熔岩鐘
+|TWromanised = Róngyán zhōng
+|TWmeaning = same
+|ZHname = 熔岩钟
+|ZHromanised = Róngyán zhōng
+|ZHmeaning = Magma Bell
+|CODEname= LAVA_CHARM
+|CODEmeaning= Reference to [[Charm]]s from <i>[[Hollow Knight]]</i>.
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Cloche de magma]]

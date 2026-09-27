@@ -1,0 +1,124 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Skarr Scout.png|Hunter's Journal
+Skarr Scout Idle.png|Idle
+Skarr Scout Resting.png|Resting
+</gallery>
+|title1 = Skarr Scout
+| hasdrop = true
+| r1 = 13
+| r2 = 20
+| sh1 = 3-5
+| sh2 = 4-7
+|health = 30/{{BT|90}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.8|0.75|0.75|0.7}}
+|numbers_required = 20<br>(Instantly completed on [[Skarrsinger Karmelita]]'s death)
+|singnum = 2
+}}
+
+{{Quote
+|Hr = Journal
+|Young ant hunter wielding sickles carved from teeth. Will often call for aid if danger comes close.<hr/>
+Despite their youth, they are impressive opponents. It seems likely their tribe were trained for combat from birth.
+}}
+
+<b>Skarr Scouts</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are young members of the [[Skarr]] who sit along the outskirts or join in bands to fight. There is a [[Unnamed Skarr |mottled form]] of the Skarr Scout who upgrades Hornet's [[Curveclaw]], but remains unnamed.
+
+== Behaviour and Tactics ==
+Skarr Scouts often start off resting, and do a short battle cry once Hornet approaches.<br>
+Alternatively, some Skarr will be in the middle of using Sickle Throw at nearby [[Flapping Fertid]]s or [[Hardbone Elder]]s, attempting to kill them. They will, however, prioritise Hornet over the Flapping Fertids.<br>
+Skarr Scouts cannot walk and can only move via their attacks. Skarr Scouts have 5 different moves to dodge and attack Hornet from any distance:
+* <b>Jump:</b> Jumps in an arc and tries to land near or on Hornet.
+* <b>Backdash:</b> Performs a short dash backwards to gain distance.
+* <b>Burrow:</b> Dives into the ground and reappears elsewhere on the platform, as indicated by the dust being kicked up from where they're currently burrowed. If Hornet leaves their platform, they immediately Burrow and don't come back up until Hornet is on their platform again.
+**  If the Skarr Scout gets pushed off their platform and onto another, they use Burrow to get back up to their original spawning platform.
+* <b>Double Slash:</b> If Hornet is close enough, the Skarr Scout performs two short outwards swings that also hit slightly above themselves, moving themselves forward with each swing. This attack has remarkably short foreswing, so caution should be taken when near them.
+* <b>Sickle Throw:</b> Throws one of their blades at Hornet, angling it upwards if she's in the air. Frequently used when Hornet is out of range on the platform.
+**  The Sickle can be struck with the Needle to deflect it and nullify its hitbox.
+**  The Sickle deals 8 damage when it comes in contact with another enemy.
+
+Skarr Scouts deal {{Damage|1}} with all their attcks as well as on contact.
+
+Pay attention to its animations to determine how to approach. Their swings can be easily jumped over and punished with a Needle Bounce, but getting close while the thrown attack is being charged may cause their aim to change and hit Hornet.
+
+Skarr Scouts respawn upon re-entering the room.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Skarr Scouts have their health tripled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+*Strength from her. Strength for her...
+*Strike hard. Strike lethal...
+*All for the singer...
+*To leap, and run, and slay!
+*No nest, no home...
+*The caves call... we listen...
+*...Is this still her song?
+*These lands... always ours...
+}}
+
+== Location ==
+Skarr Scouts are primarily found in [[Hunter's March]] and the [[Far Fields]], but they also appear in the upper [[Deep Docks]] and as part of the [[Enemy Gauntlets (Silksong)/Greymoor 4|gauntlet]] in [[Halfway Home]]'s cellar.
+
+In Hunter's March, clearing the central [[Enemy Gauntlets (Silksong)/Hunter's March 2|gauntlet]] allows two Skarr Scouts to spawn as a random encounter on subsequent visits before [[Act 3]]. Clearing the eastern [[Enemy Gauntlets (Silksong)/Hunter's March 3|gauntlet]] has a similar effect, spawning a Skarr Scout alongside a [[Skarrwing]] under the same conditions. In the [[Deep Docks]], Skarr Scouts near the [[Weaver Burial Spire]] start to spawn only after the [[Drifter's Cloak]] is acquired, and one in the room below appears only once [[Cling Grip]] has been acquired. In the [[Far Fields]], a room containing targets usually holds two Skarr Scouts, but one stops spawning after [[Hornet (Silksong)|Hornet]] defeats the [[Cogwork Dancers]], acquires the [[Clawline]], or visits [[Songclave]].
+
+
+{{Gallery
+|Image1 = Mapshot SS Skarr Scout 02.png!Locations in Hunter's March
+|Image2 = Mapshot SS Skarr Scout 05.png!Locations in Hunter's March in Act 3
+|Image3 = Mapshot SS Skarr Scout 03.png!Locations in the Deep Docks
+|Image4 = Mapshot SS Skarr Scout 07.png!Location in the Deep Docks in Act 3
+|Image5 = Mapshot SS Skarr Scout 01.png!Locations in the Far Fields
+|Image6 = Mapshot SS Skarr Scout 06.png!Locations in the Far Fields in Act 3
+|Image7 = Mapshot SS Skarrwing 03.png!Location in Greymoor
+}}
+
+==Gallery==
+{{Gallery
+|Image1=Screenshot SS Skarr Scout 01.png!At a [[Silk Fly]] jar in Hunter's March
+|Image2=Screenshot SS Skarr Scout 02.png!In Deep Docks with a [[Skarr Stalker]]
+|Image3=Screenshot SS Skarr Scout 03.png!In Far Fields
+|Image4 = Screenshot SS Far Fields 22.png!In the audience during [[Skarrsinger Karmelita]]'s fight
+|Image5 = Screenshot SS Skarrsinger Karmelita 02.png!Modded clear screenshot
+|Image6=Screenshot SS Skarr Scout 09.png!Fighting before Skarrsinger Karmelita's fight
+|Image7=Screenshot SS Skarr Scout 04.png!Jump attack
+|Image8=Screenshot SS Skarr Scout 05.png!Burrow
+|Image9=Screenshot SS Skarr Scout 06.png!Double Slash attack
+|Image10=Screenshot SS Skarr Scout 07.png!Sickle Throw attack
+|Image11=Screenshot SS Skarr Scout 08.png!Singing
+}}
+
+==Trivia==
+* One of the Skarr Scouts in the Deep Docks burrows as soon as Hornet approaches and does not reappear. The same thing happens when approaching one of the two Skarr Scouts at the start of the [[Enemy Gauntlets (Silksong)/Hunter's March 3|enemy gauntlet]] before obtaining [[Swift Step]]. 
+
+{{Localisation
+|DEname = Skarrspäher
+|DEmeaning = Skarr Scout
+|ESname = Skarr batidor
+|ESmeaning = Skarr Scout
+|FRname = Skarralleur
+|FRmeaning =
+|ITname = Mirmede Ricognitore
+|ITmeaning = Scout Skarr<br><small><i>Mirmede</i> is the name of the [[Skarr]] in Italian, from <i>mirmeco-</i> (prefix for ants) and <i>-ede</i> (taxonomic suffix).</small>
+|JAname = スカールの斥候
+|JAromanised = Sukāru no sekkou
+|JAmeaning = Skarr Scout
+|KOname = 스카르 정찰대
+|KOromanised = Seukareu jeongchaldae
+|KOmeaning = Skarr Scout
+|PTname = Skarr-batedor
+|PTmeaning = Skarr Scout
+|RUname = Скарр-разведчик
+|RUromanised = Skarr-razvedčik
+|RUmeaning = Skarr Scout
+|ZHname = 斯卡尔斥候
+|ZHromanised = Sīkǎ'ěr chìhòu
+|ZHmeaning = Skarr Scout
+|CODEname = BONE_HUNTER_CHILD
+|CODEmeaning = "Bone Hunter" internally refers to the Skarr
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

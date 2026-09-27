@@ -1,0 +1,77 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Cogwork Hauler.png|Hunter's Journal
+Cogwork Hauler Idle.png|Idle
+</gallery>
+|drops = None
+|health=20
+|damage_modifiers={{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 12
+}}
+{{Quote
+|Hr = Journal
+|Small automaton with a shielded shell, intended to carry loads of dangerous flintflame.<hr/>
+Born and built only to work until time stiffens its limbs. Perhaps it is mercy this construct knows nothing of the freedom it lacks.
+}}
+
+<b>Cogwork Haulers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are small [[Cogwork Bugs|automaton]] [[Underworkers]] born and built to carry loads of dangerous flintflame.<ref>Cogwork Hauler [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Small automaton with a shielded shell, intended to carry loads of dangerous flintflame. Born and built only to work until time stiffens its limbs."</i></ref>
+
+== Behaviour and Tactics ==
+Floats stationary in the air. If [[Hornet (Silksong)|Hornet]] approaches, it flies towards her, blinking for a few seconds before exploding, dealing {{Damage|2|type=Fire}}.
+
+They also explode when dying, taking much knockback before that if defeated with the [[Needle]] or the [[Clawline]]{{MissingInfo}}. Deal damage quickly before it explodes and be sure that it is not close to both Hornet and a wall, or avoid its slow flight path.
+
+Playing the [[Needolin]] causes it to explode in place.
+
+== Location ==
+Cogwork Haulers can be found in the [[Underworks]], near [[the Cauldron]]. In the room where there are regularly 8 Cogwork Haulers, three more can appear as an ambush after freeing a [[Flea]] that is stuck there.
+
+{{Gallery
+|Image1 = Mapshot SS Cogwork Hauler 01.png!Location in the Underworks
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Cogwork Hauler 01.png!Idle
+|Image2 = Screenshot SS Cogwork Hauler 02.png!Chasing
+|Image3 = Screenshot SS Cogwork Hauler 03.png!Exploding
+|Image4 = Screenshot SS Cogwork Hauler 04.png![[Silk Fly]] freed upon death
+}}
+
+==Trivia==
+* Cogwork Haulers do not have Needolin dialogue.
+
+{{Localisation
+|DEname = Räderwerk-Schlepper
+|DEmeaning = Cogwork Hauler
+|ESname = Transportista mecánico
+|ESmeaning = Mechanical Hauler
+|FRname = Transporteur Mécanique
+|FRmeaning = Mechanical Transporter
+|ITname = Meccanismo Vettore
+|ITmeaning = Carrier Mechanism
+|JAname= カラクリウンパンムシ
+|JAromanised = Karakuri unpan mushi
+|JAmeaning = Combination of {{lang|ja|カラクリ <i>karakuri</i>}} (mechanism), {{lang|ja|運搬 <i>unpan</i>}} (transport) and {{lang|ja|虫 <i>mushi</i>}} (bug).
+|JAkatakana = enemy
+|KOname = 톱니바퀴 운반자
+|KOromanised = Tomnibakwi unbanja
+|KOmeaning = Cogwheel Transporter
+|PTname =  Transportador Mecânico
+|PTmeaning = Mechanical Hauler
+|RUname = Заводной носильщик
+|RUromanised = Zavodnoj nosil'ščik
+|RUmeaning = Clockwork Transporter
+|TWname = 機樞搬運工
+|TWromanised = Jīshū bānyùngōng
+|TWmeaning = same
+|ZHname = 机枢搬运工
+|ZHromanised = Jīshū bānyùngōng
+|ZHmeaning = Mechanical Hauler
+|CODEname = UNDERSTORE_AUTOMATON_EX
+|CODEmeaning = [[Cogwork Underfly|Cogwork Underflies]] are internally known as "Understore Automatons"
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

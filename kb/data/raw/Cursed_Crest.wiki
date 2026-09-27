@@ -1,0 +1,241 @@
+{{Disclaimer|This Crest has no official in-game name; the name used on the wiki is based on internal files, consistency with other Crest names, and developer patch notes.<ref>[[Updates_(Silksong)#1.0.28750_(beta)|v1.0.28750]]: <i>Fixed remaining instance of certain players getting stuck cursed while in the late game.</i></ref>}}
+{{SS Infobox Crest
+|label1 = Cursed Crest
+|title1=Cursed Crest
+|image1=<gallery>
+Cursed Crest Inventory.png|Inventory
+Cursed Crest.png|HUD
+</gallery>
+|slots = None
+|attack = Round sweeps<br>
+Some attacks hit twice <br>
+Slightly slower than other Crests
+|bind = Binding attempts fail
+|other = Cannot swap Crest<br>
+[[Vesticrest]] disabled<br>
+Capped at 3 Silk<br>
+Slower walking speed
+|source= [[Rite of Rebirth]]
+}}
+
+{{Quote
+|A parasite has taken root inside me, one I can not remove through strength alone. 
+|Hr=Hornet
+|[[Hornet (Silksong)|Hornet]]
+}}
+
+The <b>Cursed Crest</b> is a special [[Crests|Crest]] in <i>[[Hollow Knight: Silksong]]</i>. While cursed, [[Hornet (Silksong)|Hornet]] will attack with long, whip-like slashes. The curse prevents Hornet from switching Crests, [[Bind]]ing, or using [[Tools]], and affects other mechanics and interactions throughout the game. After completing the <i>[[Infestation Operation]]</i> Wish, the Cursed Crest is permanently changed into the [[Witch Crest]].
+
+==Attacks==
+The Cursed Crest uses the same attacks as the Witch Crest, its upgraded form. Compared to [[Hunter Crest]], Cursed Crest has -10% attack speed and less recoil on hit. Hornet's attacks have greater reach than even [[Reaper Crest]] despite attacking faster. Down-slash and Run-slash allow Hornet to follow up with additional attacks on hit.
+* Neutral Slashes: Hornet whips her Needle forward in a wide, long arc.
+* Up-Slash: Hornet sweeps the Needle diagonally upwards.
+* Down-slash: Hornet whips her Needle slightly diagonally downwards. On hit, she deals 0.55x Needle damage before pulling herself to the target and dealing an extra 0.5x Needle damage hit.
+* [[Swift Step|Run-slash]]: Hornet sweeps her needle twice as she moves, the first swing dealing 1x Needle damage and the second swing dealing 0.5x Needle damage. If she hits something with either hit, she briefly vanishes after the second hit before leaping upwards with a third hit dealing 0.5x Needle damage. Unlike other Run-slashes, this Crest does not have a startup animation, making gauging the initial dash of Swift Step crucial to avoid contact damage.
+* [[Needle Strike]]: Hornet rapidly spins, striking twice in both directions. Tapping the attack button up to twice while spinning will extend the spin and slow Hornet's fall while in the air, striking 2-4 additional times and dealing up to 4.8x damage across 6 hits for a full combo.<ref>[https://www.youtube.com/watch?v=qIPUfl-rEZA I Tested All the Damage Numbers from All Crests in Silksong, Here's What I Found (NO SPOILERS)]</ref>
+
+==Mechanics==
+[[File:Cursed item prompt.png|right|150x150px]]
+Hornet cannot unequip the Cursed Crest, and cannot use the [[Vesticrest]], meaning she cannot use any [[Tools]] at all.
+
+* Hornet cannot equip any [[Silk Skills]]
+* Hornet cannot gain any more than 3 [[Silk]] maximum.
+* [[Bind]] can be used regardless of the amount of Silk held, but doing so causes her to be covered by roots before falling to the ground without healing any Masks. Hornet can still take damage during this brief animation, and it can still be used to extend the distance of jumps.
+* When not using [[Swift Step]], Hornet moves more slowly than she does when not cursed. While stationary, Hornet leans over as if she is at 1 Mask regardless of health.
+[[File:Cursed Cocoon.gif|right|thumb|50px]]
+* The [[Cocoon]] spawned on death has a unique animated sprite, and when broken deals damage in a small radius equal to the Needle's base damage up to two times to nearby enemies.
+* When attempting to bind a new Crest, Hornet will become covered in roots and knocked to the ground, preventing her from gaining any new Crests.
+* If Hornet is captured by a cage-carrying [[Wardenfly]] while having the Cursed Crest, she is not transported to [[the Slab]]. Instead, roots break the cage and free her, killing the Wardenfly.
+
+{{Gallery
+|Image1 = Silk Spool HUD Cursed.png!Hornet's Silk Spool while Cursed
+|Image2 = Silk Spool HUD Cursed Filled.png!Hornet's Silk Spool while Cursed with max Silk
+}}
+
+== Usefulness ==
+The Cursed Crest has a long attack range without sacrificing as much attack speed as the [[Reaper Crest]].
+* Hornet's down-attack and sprint-attack cause her to vanish briefly. 
+** This allows her to phase through certain attacks, though this window is extremely brief.
+** Down-attacks can often be chained into each other, and are easy to platform with.
+* Hornet's sprint-attack hits enemies twice before launching her diagonally upwards. 
+** This allows her to chain into a down-attack, or dash backward to retreat.
+** It deals more damage than any other Crest's sprint-attack.
+* Weaknesses:
+** Hornet's Bind no longer restores HP, attempting to Bind anyway will knock Hornet to the ground.
+*** It is possible to utilise the knockdown provided by a failed Bind to extend Hornet's jump distance.
+** Hornet's Silk Spool is limited to a maximum of 3 strands.
+*** Because Silk Skills and Tools are not able to be equipped, the only uses for Silk while cursed are [[Challenge]], the [[Needolin]], [[Clawline]], and [[Silk Soar]].
+*** Strategy around retrieving a Cocoon during a fight has diminished impact, as the Silk gained is severely limited in both quantity and use.
+**** However, all Cocoons created while cursed explode into thrashing roots that damage nearby enemies, similar to the Witch Crest's bind.
+** Because Down-slash's damage is divided into 2 hits, it deals slightly over half damage to non-enemy objects that it only hits once, most notably [[Father of the Flame]].
+** The Needle Strike cannot be canceled immediately with Swift Step, making timing and reading opponent attacks extremely crucial when executing it.
+** [[Silkeater]]s cannot be used while cursed.
+
+Several NPCs will not progress or allow Hornet to access their quests:
+* [[Eva]] will refuse to interact with Hornet while she is cursed.
+* The <i>[[Trail's End]]</i> wish with [[Shakra]] will not begin.
+* [[Pavo]] will not give Hornet the [[Bellhome Key]] even if all prerequisites have been completed.
+
+Defeating [[Grand Mother Silk]] with the Cursed Crest grants the [[Endings (Silksong)#Ending 3: Twisted Child|<i>Twisted Child</i> ending]] and [[Achievements (Silksong)|achievement]].
+
+== Synergies ==
+As Hornet cannot equip Tools while cursed, there are no synergies or combos with other items.
+
+==How to Acquire==
+{{Disclaimer|During the events of this quest Hornet becomes cursed, removing and preventing use of Tools, overriding the equipped Crest, disabling all Silk Skills and healing through Bind.}}
+The Cursed Crest is obtained by completing both the <i>[[Rite of Rebirth]]</i> Wish.
+
+First, acquire the [[Twisted Bud]] from [[Bilewater]] in the listed location. The room is behind a breakable wall, and the part of Bilewater containing it must first be accessed by falling in from the hidden easternmost section of the [[Whispering Vaults]], which is in turn first accessed through a hidden passage in the top right of the adjacent room. 
+{{Gallery
+|Image1 = Mapshot SS Twisted Bud.png!Twisted Bud Location in Bilewater
+}}
+
+Next, bring the Twisted Bud to [[Greyroot]] in [[Shellwood]]. 
+{{Gallery
+|Image1 = Mapshot SS Greyroot.png!Greyroot Location in Shellwood
+}}
+
+There, the <i>[[Rite of Rebirth]]</i> Wish begins, in which Greyroot infests Hornet with the Twisted Bud and takes Hornet to the [[Chapel of the Witch]], a secret location connecting [[Shellwood]] and [[the Marrow]].
+
+Hornet will now be Cursed, and will stay as such until the <i>[[Infestation Operation]]</i> Wish is completed. 
+
+==Cursed Crest interactions==
+While Hornet is cursed with the Cursed Crest, certain interactions occur:
+
+* Various NPCs will comment on the infection and some advise Hornet to seek out [[Yarnaby]]. Specifically:
+** [[Frey]] suggests talking to [[Pavo]],<ref>
+[[Frey]]: <i>"Oh my, what a state you're in! You look like you're one breath away from keeling over dead!"</i><br>
+{{HTalk|: "I will continue to live, madam, but I am indeed afflicted. A parasite has taken root within my shell... Perhaps you have something that could help me? A medicine?"}}<br>
+Frey: <i>"Mmm, not so sure I stock anything like that. You should ask Pavo there. It's his job to give directions and such, so he may have some useful advice."<br>
+"In the meantime... shopping itself is a type of medicine, isn't it? You should buy something now. Given your condition, this might be your last chance!"</i>
+</ref> who himself suggests talking to the [[Bell Hermit]],<ref>
+[[Pavo]]: <i>"My sickly friend! Pavo can sense that you are ailing, but fret not! For in Bellhart, pilgrims may rest and recuperate until they are fit to travel once more!"</i><br>
+{{HTalk|: "Your hospitality is appreciated, Pavo, but I fear rest alone will not suffice for this illness. A parasite has taken root inside me, one I can not remove through strength alone.
+Tell me, are there any you know who might help me? A healer, or a physician?"}}<br>
+Pavo: <i>"A physician? Well... we did once have one... A frightening fiend! Callous and crude in her practice. For the health of glorious Bellhart we voted, unanimously, to expel her!"<br>
+"I know not where she buzzed away to, and I prefer to keep it that way! But if you really must seek her out, you might start by speaking to the old hermit skulking beneath the Bellway."<br>
+"Yes... that hermit seems mad, but he has a way of accumulating knowledge. He might be able to tell you where that wretched physician is lurking."</i>
+</ref><ref>[[Pavo]]: <i>"If you really must find that wretched physician, speak to the old hermit lurking beneath Bellhart. He knows much more than he admits of the world.."</i>
+</ref> who tells Hornet to seek out Yarnaby in [[Greymoor]].<ref>
+[[Bell Hermit]]: <i>"What's this... twitching inside of you? A slave within a slave! Given over your shell to grow something greater?"</i><br>
+{{HTalk|: "A parasite has made its home within me. It saps my energy, and I can not purge it with strength alone..."}}<br>
+Bell Hermit: <i>"Grnk. Lie down and die then, for all I care. Allow that wriggling thing its chance at life."<br>
+"Or else... hff. Go seek the one exiled from Bellhart, little Yarnaby. She was chased out, high up into the moors, last I heard."</i></ref><ref>
+[[Bell Hermit]]: <i>"If you insist on surviving your infestation, seek the one exiled from Bellhart, little Yarnaby. She was chased out, high up into the moors, last I heard."</i></ref>
+** The [[Chapel Maid]] also suggests talking to the Bell Hermit.<ref>
+[[Chapel Maid]]: <i>"Oh! Hunter, aren't you in a sorry state. You're all bound up, looking worse than when we first met!"</i><br>
+{{HTalk|: "My shell has become host to a cruel parasite. Though my natural strength keeps it from consuming me entirely, I'm much weakened by its presence."}}<br>
+Chapel Maid: <i>"Well, this just won't do! Pharloom's already in the snare of one fell curse, we can't have another vying to leech what life remains."<br>
+"Best you head quick over to that town of bells, at the core of our kingdom. I've an uncle hidden about there, an old hermit, and a horrid curmudgeon."<br>
+"That hermit's a hard one to befriend, but he holds some knowledge about this kingdom's maladies. If anyone's able to point you to a cure, it'll be him."</i>
+</ref><ref>[[Chapel Maid]]: <i>"Head quick for that vein of bell, and find my uncle hidden there. If anyone's able to point you to a cure for that thing twisting within your shell, it'll be him."</i> </ref>
+** In Act 3, Pavo will instead tell Hornet that Yarnaby is somewhere nearby.<ref>
+[[Pavo]]: <i>"I know not where she buzzed away to, but the world beyond the bells is full of danger. If you must seek her service, I expect she would not have travelled far..."</i></ref>
+** [[Creige]] tells Hornet to seek out Yarnaby at the top of Greymoor.<ref>
+[[Creige]]: <i>"Phew. You're lookin' a bit raw there, miss. I'm thinkin' it'll take more than my nectar to fix you up."</i><br>
+{{HTalk|: "A parasite of your land has twisted itself into my shell. Its writhing is causing some discomfort."}}<br>
+{{HTalk|: "If not for my unique constitution, I suspect it would have already consumed me entirely."}}<br>
+Creige: <i>"Well, don't be bringing such dangerous things in here! Head to the top of the moors. There's an old doctor up there hiding in her bell."<br>
+"Her remedies are said to often hurt more'n they help, but given your state, I'd say it's worth the risk."</i></ref><ref>
+[[Creige]]: <i>"Best be visiting that doctor right quick, miss! She's up there, at the top of the moors, over toward the bellvein."<br>
+"Her methods might be suspect, but you're lookin' sorely in need of service."</i></ref>
+** [[Tipp & Pill]] refuse to accept Hornet's services, fearing that her infection will spread to the deliveries.<ref>
+[[Tipp]]: <i>"Ughhh! What-what is this? Your body is all twisting, creaking! Horrid fiend inside!"</i><br>
+{{HTalk|: "A parasite has lodged deep inside my shell. It has taken some strength of will to keep its thrashing at bay."}}<br>
+[[Pill]]: <i>"With a shell like such, you cannot be taking no deliverings! Infect the goods you would-would!"</i><br>
+{{HTalk|: "Very well, couriers. If I somehow manage to remove the parasite, I may return to offer aid."}}</ref>
+** [[Shakra]] advises Hornet to quickly get the parasite removed, but does not know how.<ref>
+[[Shakra]]: <i>"Gara Takana! What has happened to you, Child Wielding Needle, to cause you such brutal weakening?"</i><br>
+{{HTalk|: "You are seeing the effects of a parasite, Shakra, a writhing entity implanted by force. It will not kill me, not quickly at least, but its presence wears greatly on my shell."}}<br>
+Shakra: <i>"It is a horrid state you suffer. Fight yourself free, or find help with haste. I would not wish to see you defeated by such deceitful strength."</i></ref>
+** In Act 3, when the [[Snail Shamans (Silksong)|Snail Shamans]] have moved to the [[Ruined Chapel]], they will refuse to perform their ritual, and tell Hornet to seek Yarnaby in Greymoor.<ref>
+[[Chapel Maid]]: <i>"Hold it, Old One! That intruder writhing within your shell..."</i><br>
+[[Caretaker]]: <i>"Our ritual ain't gonna work while that cruel creature's present. We'd be tugging at its memories as much as your own."</i><br>
+{{HTalk|: "Then free me of the affliction. Surely you have the skill?"}}<br>
+Caretaker: <i>"Not for this! Our power's all of soul and that thing's all physical. You're gonna need more traditional tools of healing."</i><br>
+[[Bell Hermit]]: <i>"Seek the one exiled from Bellhart, little Yarnaby. She was chased out into those soaked moors, last I heard."<br>
+"She'd have the tools for the task, and the cunning to have survived till now."</i> </ref>
+** [[Eva]] will not allow Hornet to approach her while infected, and creates a barrier to block Hornet.<ref>
+[[Eva]]: <i>"Stay back, twisted leech! Even lodged within another's shell, your ravenous nature shines clear."<br>
+"You shall not defoul this chamber, nor claim my soul. Begone!"</i></ref>
+* If Hornet is captured by a [[Wardenfly]], she will not be transported to [[the Slab]]. Instead, she will wake up in the same spot, with the parasite having killed the Wardenfly. This prevents Hornet from swapping to the [[Cloakless Crest]].
+* When trying to obtain a new Crest, it will cause the parasite to react as if Hornet had tried to Bind and prevent her from obtaining the Crest.
+* Attempting to consume a [[Silkeater]] with a Cocoon in the world has a unique animation of the Silkeater getting wrangled by tentacles.
+* Defeating [[Grand Mother Silk]] while cursed gives the [[Endings (Silksong)#Ending 3: Twisted Child|Twisted Child ending]].
+* In Act 3, attempting to swim in Void with the [[Everbloom]] will cause the parasite to react as if Hornet had tried to Bind, flinging her out of the Void and additionally causing her to take one mask of damage. Attempting to complete the final dive results in the following dialogue:
+**{{HTalk|The parasite writhing within my shell has a violent aversion to the void.}}
+**{{HTalk|Despite the protection granted by the Everbloom, even now I can feel those wretched roots preventing my descent.}}
+**{{HTalk|If I'm to dive, and cut this land from its black thread curse, I must first find means to extract the intruder within.}}
+=== Dialogue ===
+{{TabbedDialogue
+|header = false
+|Title1 = Cursed dialogue
+|Title1_Event1 = Bell Hermit
+|Title1_Dialogue1 = What's this... twitching inside of you? A slave within a slave! Given over your shell to grow something greater?<br>
+{{HTalk|A parasite has made its home within me. It saps my energy, and I can not purge it with strength alone...}}<br>
+Grnk. Lie down and die then, for all I care. Allow that wriggling thing its chance at life.<br>
+Or else... hff. Go seek the one exiled from Bellhart, little [[Yarnaby]]. She was chased out, high up into the moors, last I heard.<br>
+|Title1_Event2 = Chapel Maid
+|Title1_Dialogue2 = Oh! Hunter, aren't you in a sorry state. You're all bound up, looking worse than when we first met!<br>
+{{HTalk|My shell has become host to a cruel parasite. Though my natural strength keeps it from consuming me entirely, I'm much weakened by its presence.}} <br>
+Well, this just won't do! Pharloom's already in the snare of one fell curse, we can't have another vying to leech what life remains. <br>
+Best you head quick over to that town of bells, at the core of our kingdom. I've [[Bell Hermit|an uncle]] hidden about there, an old hermit, and a horrid curmudgeon. <br>
+That hermit's a hard one to befriend, but he holds some knowledge about this kingdom's maladies. If anyone's able to point you to a cure, it'll be him. <br>
+|Title1_Event3 = Creige
+|Title1_Dialogue3 = Phew. You're lookin' a bit raw there, miss. I'm thinkin' it'll take more than my nectar to fix you up.<br>
+{{HTalk|A parasite of your land has twisted itself into my shell. Its writhing is causing some discomfort.}}<br>
+{{HTalk|If not for my unique constitution, I suspect it would have already consumed me entirely.}}<br>
+Well, don't be bringing such dangerous things in here! Head to the top of the moors. There's an old doctor up there hiding in her bell.<br>
+Her remedies are said to often hurt more'n they help, but given your state, I'd say it's worth the risk.
+|Title1_Event4 = Eva
+|Title1_Dialogue4 = Stay back, twisted leech! Even lodged within another's shell, your ravenous nature shines clear.<br>
+You shall not defoul this chamber, nor claim my soul. Begone!<br>
+|Title1_Event5 = Frey
+|Title1_Dialogue5 = Oh my, what a state you're in! You look like you're one breath away from keeling over dead! <br>
+{{HTalk|I will continue to live, madam, but I am indeed afflicted. A parasite has taken root within my shell... Perhaps you have something that could help me? A medicine?}} <br>
+Mmm, not so sure I stock anything like that. You should ask Pavo there. It's his job to give directions and such, so he may have some useful advice. <br>
+In the meantime... shopping itself is a type of medicine, isn't it? You should buy something now. Given your condition, this might be your last chance!<br>
+|Title1_Event6 = Pavo
+|Title1_Dialogue6 = My sickly friend! Pavo can sense that you are ailing, but fret not! For in Bellhart, pilgrims may rest and recuperate until they are fit to travel once more!<br>
+{{HTalk|Your hospitality is appreciated, Pavo, but I fear rest alone will not suffice for this illness. A parasite has taken root inside me, one I can not remove through strength alone.}}<br>
+{{HTalk|Tell me, are there any you know who might help me? A healer, or a physician?}}<br>
+A physician? Well... we did once have one... A frightening fiend! Callous and crude in her practice. For the health of glorious Bellhart we voted, unanimously, to expel her!<br>
+I know not where she buzzed away to, and I prefer to keep it that way! But if you really must seek her out, you might start by speaking to the old hermit skulking beneath the Bellway.<br>
+Yes... that hermit seems mad, but he has a way of accumulating knowledge. He might be able to tell you where that wretched physician is lurking.<br>
+|Title1_Event7 = Shakra
+|Title1_Dialogue7 = Gara Takana! What has happened to you, Child Wielding Needle, to cause you such brutal weakening?<br>
+{{HTalk|You are seeing the effects of a parasite, Shakra, a writhing entity implanted by force. It will not kill me, not quickly at least, but its presence wears greatly on my shell.}}<br>
+It is a horrid state you suffer. Fight yourself free, or find help with haste. I would not wish to see you defeated by such deceitful strength.
+|Title1_Event8 = Snail Shamans
+|Title1_Dialogue8 = <b>Chapel Maid:</b> Hold it, Old One! That intruder writhing within your shell...<br>
+<b>Caretaker:</b> Our ritual ain't gonna work while that cruel creature's present. We'd be tugging at its memories as much as your own.<br>
+{{HTalk|Then free me of the affliction. Surely you have the skill?}}<br>
+<b>Caretaker:</b> Not for this! Our power's all of soul and that thing's all physical. You're gonna need more traditional tools of healing.<br>
+<b>Bell Hermit:</b> Seek the one exiled from Bellhart, little Yarnaby. She was chased out into those soaked moors, last I heard.<br>
+<b>Bell Hermit:</b> She'd have the tools for the task, and the cunning to have survived till now.
+|Title1_Event9 = Tipp & Pill
+|Title1_Dialogue9 = <b>Tipp:</b> Ughhh! What-what is this? Your body is all twisting, creaking! Horrid fiend inside!<br>
+{{HTalk| A parasite has lodged deep inside my shell. It has taken some strength of will to keep its thrashing at bay.}} <br>
+<b>Pill:</b> With a shell like such, you cannot be taking no deliverings! Infect the goods you would-would!<br>
+{{HTalk| Very well, couriers. If I somehow manage to remove the parasite, I may return to offer aid.}}
+}}
+
+==Achievements==
+{{Achievement|game=silksong|Twisted Child}}
+
+== Trivia ==
+* The Cursed Crest and Witch Crest are the only crests obtained after completing a [[Wish]] instead of after binding a corpse inside a Chapel.
+** They are also the only Crests to not heal Hornet when obtained.
+* Hornet's death animation is distinct: the screen slowly darkens and then accompanied by a characteristic crunching sound, a visual effect resembling a [[Greyroot]] attack appears, implying that the parasite is finishing off Hornet.
+{{History
+|game = SS
+|1.0.28650 (Patch 2): Fixed some [[NPCs (Silksong)|NPCs]] not correctly playing cursed hint dialogues in certain instances.
+|1.0.28891 (Patch 3): Fixed remaining instance of certain players getting stuck cursed while in the late game.
+}}
+{{Refs|hr=SS|columns=2|scrollbox=true}}
+
+{{SS Nav Crests}}
+{{#seo:
+|keywords=silksong, crest, curse, cursed crest, rite of rebirth, twisted child, twisted bud}}
+
+[[fr:Emblème Maudit]]

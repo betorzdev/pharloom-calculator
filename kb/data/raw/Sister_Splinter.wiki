@@ -1,0 +1,144 @@
+{{SS Infobox Boss
+|title1= Sister Splinter
+|image1= <gallery>
+B_Sister_Splinter.png|Hunter's Journal
+Sister Splinter Stagger.png|Staggered
+</gallery>
+|location = [[Shellwood]]
+|health = 310
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.675|0.575|0.55|0.5}}
+|drops= Access to [[Cling Grip]]
+|numbers_required = 1
+|theme = [https://youtu.be/qCOGxHLBSzM Sister Splinter (Ambient)] (Pre-fight)<br>[https://youtu.be/dznNLVC0HPo Sister Splinter (Main)] (Sister Splinter)
+|singnum = 1
+|va=Lauren Koopowitz<ref name="va">[https://www.youtube.com/watch?v=pA7Id7lff6E Interview with Lauren Koopowitz]</ref>
+|affiliation = [[Splinter Tribe]] (Leader)
+}}
+
+{{Quote
+|Hr = Journal
+|Imposing old insect nesting in the heights of Shellwood. Her command of twig and branch ensured no pilgrim ever survived within her territory.<hr/>
+This one lived long and fed much. The wood will be much safer for their slaying.
+}}
+
+<b>Sister Splinter</b> is a main [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. She is an old insect nested in the heights of [[Shellwood]] and the leader of the aggressive [[Splinter Tribe]].<ref name=hj>Sister Splinter Hunter's Journal: <i>"Imposing old insect nesting in the heights of Shellwood. Her command of twig and branch ensured no pilgrim ever survived within her territory"</i></ref><ref name=needolin/> She blocks the main path to [[Cling Grip]].
+
+== Background ==
+Sister Splinter is an old insect and the matriarch to the [[Splinter Tribe]].<ref name="needolin">Sister Splinter Needolin dialogue: <i>"Children, children, hide and strike!"</i></ref> At some point after [[Nyleth]]'s presence had gone dormant, Sister Splinter and her kin begin spreading throughout Shellwood, claiming it as their land and rendering it immensely hostile.<ref>Sister Splinter Needolin dialogue:<br><i>"This land is ours, now!"<br>"By our claws, none but us now!"<br>"Other, other, sleeping deep..."</i></ref>
+
+== In-game Events ==
+Sister Splinter is the [[Bosses (Silksong)|boss]] that blocks the main path to the [[Cling Grip]] ability, and is encountered at the north end of [[Shellwood]]. When [[Hornet (Silksong)|Hornet]] enters her arena, twigs wrapped in thorny vines begin blocking off the path behind her as she progresses toward the left; once Hornet is fully in the arena, a thorny twig blocks off the exit in front of her, trapping Hornet in the encounter. Sister Splinter then descends from the ceiling and initiates the fight.
+
+[[Nuu]] appears in her arena later on, inspecting Sister Splinter's corpse.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+=== Phase 1 ===
+Sister Splinter hangs down from the ceiling and has 2 attacks:
+* <b>Triple Swipe</b>: Sister Splinter swipes down quickly from above 3 times in succession, moving to position above Hornet before each swipe. She alternates hands with each strike, covering a slightly different area depending on the hand that attacked. This attack deals {{Damage|2}}.
+* <b>Vine Walls</b>: Sister Splinter retreats into the ceiling and summons 2 breakable twigs wrapped in thorny vines (similar to the ones that block off the arena entrances) that shoot down out of the ceiling in random locations. The vines deal {{Damage|1}} of contact damage and take 3 hits to be broken. <!--hi future editors who have seen the 12 health value in code; any needle upgrade requires three hits, the code lies--> They can be destroyed if caught in any of Sister Splinter's Swipes and are also automatically broken when she is staggered. Most {{CrestSlot|Skill|s}} are also able to instantly destroy the vines.
+Contact with Sister Splinter deals {{Damage|2}}.
+
+=== Phase 2 ===
+After reaching 248 HP, Sister Splinter cackles and disappears into the ceiling, summoning 2 [[Splinterbark]]s which fly down from the ceiling. She then reappears after one is killed or if enough time has passed, at which point she gains a new attack and alters an existing one: 
+* <b>Summon</b>: Sister Splinter moves to a corner before cackling and summoning a Splinterbark from a random location in the ceiling. Sister Splinter's Swipes and Vine Walls can kill any Splinterbarks that are caught in the attack.
+* <b>Vine Walls</b>: Sister Splinter can now summon 2–3 Vine Walls. Once during this phase at 124 HP, Sister Splinter summons 6 evenly spaced Vine Walls at once, covering most of the arena and only leaving small gaps.
+
+<hr />
+
+{{Stagger
+| Sister Splinter falls down to the ground and writhes on her back. She deals contact damage if she falls onto Hornet.
+| 13
+| game = SS
+}}
+
+<hr />
+
+<b>Notes and Strategies:</b>
+* The safest times to attack Sister Splinter are immediately after one of her claw attacks in Triple Swipe and during the scream in her Summon attack. In both of these cases Hornet can Needle swing upwards quickly before [[Swift Step|Swift Stepping]] out of the way to avoid the next attack. Sister Splinter can also be hit rapidly during her stagger.
+* Triple Swipe can be dodged by Swift Stepping to the side opposite whichever hand is glowing. If Sister Splinter's right hand is glowing, move to the left, and vice versa.
+* Using precise movements, Sister Splinter can be hit constantly during Triple Swipe by Needle swinging upwards while on the opposite side of her downward slams. If her right hand is glowing, jump towards her on her left side and attack, and vice versa. This is more challenging to perform without taking damage but will end the fight much faster.
+* Her Vine Walls and Summon locations are telegraphed by rays of light descending from the ceiling. Hitting the vines three times with the [[Needle]] destroys them. After the second stagger, the increased amount of summoned vines can be destroyed quickly using the [[Silkspear]] skill. The vines also break if hit with Sister Splinter's Triple Swipe, but they are not broken if the vine attack is used again. All existing vines are destroyed when she is staggered or defeated.
+* The summoned Splinterbarks can be dealt with most easily by either upslashing from directly underneath them or using the Silkspear skill, which kills them instantly. The Splinterbarks are also killed instantly if hit by Sister Splinter's claws during Triple Swipe or a descending vine, but they can fly through vines that are already in place. It is also possible to parry the Splinterbarks' attacks.
+* The safest times to heal during the fight are when Sister Splinter is staggered, when the vines are being telegraphed during Vine Walls, and directly after Triple Swipe (when there is a short pause). After the first phase of the fight, it is also possible to heal safely during the scream portion of her summon attack.
+* Sister Splinter does not take damage from the venom from the [[Pollip Pouch]]<ref>[https://www.youtube.com/watch?v=JXUtfO6UQXo&t=1123s Video showing Pollip Pouch immunity]</ref>.
+
+== Needolin Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* Children, children, hide and strike!
+* This land is ours, now!
+* By our claws, none but us now!
+* Sisters, sisters, so long gone!
+* Other, other, sleeping deep...
+* Creeping, creaking...
+}}
+
+== Location ==
+Sister Splinter is located in the north part of [[Shellwood]].
+{{Gallery
+|Image1 = Mapshot SS Sister Splinter 01.png!Location in Shellwood}}
+
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Sister Splinter 11.png!Idle
+|Image2 = Screenshot SS Sister Splinter 05.png!Triple Swipe
+|Image3 = Screenshot SS Sister Splinter 07.png!Vine Walls
+|Image4 = Screenshot SS Sister Splinter 08.png!Summoning Splinter
+|Image5 = Screenshot SS Sister Splinter 06.png!Vine Walls at 124 HP
+|Image6 = Screenshot SS Sister Splinter 09.png!Staggered
+|Image7 = Screenshot SS Sister Splinter 10.png!Singing
+|Image8 = Screenshot SS Sister Splinter 01.png!Sister Splinter's corpse
+|Image9 = Screenshot SS Sister Splinter 02.png!Corpse sprouting (Phase 1)
+|Image10 = Screenshot SS Sister Splinter 03.png!Corpse sprouting (Phase 2)
+|Image11 = Screenshot SS Sister Splinter 04.png!Corpse sprouting (Phase 3)
+|Image12 = Ari SS Sketch 03.jpg!Concept sketches
+}}
+{{#ev:youtube|https://www.youtube.com/watch?v=pQd3T3InXeA|300|center}}
+
+== Trivia ==
+* Some time after killing Sister Splinter, a plant sprouts out of her corpse. This plant grows through two stages<ref group="Note">The first stage grows after Hornet rests on a Bench outside Shellwood 25 times; and the second stage after 50 Benches.</ref> before reaching its maximum size in its third stage when [[Act 3]] begins.
+* The fight with Sister Splinter can be skipped by luring over a [[Phacia]] using [[Challenge]] and bouncing off it with the Needle.
+** Like fellow [[Act 1]] boss [[Fourth Chorus]], skipping Sister Splinter's fight does not utilise glitches. Unlike Fourth Chorus, Sister Splinter does not die at the beginning of [[Act 3]] if left alive, and must be fought normally to obtain her [[Hunter's Journal (Silksong)|journal]] entry.
+*In the <i>Silksong</i> Xbox trailer, Sister Splinter had a different voice.<ref>[https://www.youtube.com/watch?v=JSfuFlhsxZY Hollow Knight: Silksong - Xbox Game Pass Reveal Trailer - Xbox & Bethesda Games Showcase 2022]</ref>
+{{Localisation
+|DEname = Schwester Splitter
+|DEmeaning = Sister Splinter
+|ESname = Hermana Vastiguera
+|ESmeaning = Sister Splinter
+|FRname = Sœur Écorceuse
+|FRmeaning = Sister Splinter
+|ITname = Sorella Stecco
+|ITmeaning = Sister Stick
+|JAname= アマエダモドキ
+|JAromanised= Amaedamodoki
+|JAkatakana = enemy
+|JAmeaning= Combination of 尼 <i>ama</i> (religious sister or nun), 枝 <i>eda</i> (branch) and もどき <i>modoki</i> (mock or imitate).
+|KOname = 자매 가지충
+|KOromanised = Jamae gajichung
+|KOmeaning = Sister Branch Insect
+|PTname = Irmã Lasca
+|PTmeaning = Sister Splinter
+|RUname = Сестра Лучина
+|RUromanised = Sestra Lučina
+|RUmeaning = Sister Splinter
+|TWname = 碎裂者長姊
+|TWromanised = Suìliè zhě zhǎngzǐ
+|TWmeaning = same
+|ZHname = 碎裂者长姊
+|ZHromanised = Suìliè zhě zhǎngzǐ
+|ZHmeaning = Splinterer Elder Sister
+|CODEname = SPLINTER_QUEEN</code><br><code>wood_witch</code>
+}}
+
+{{Refs|hr=ss}}
+
+== Notes ==
+<references group="Note"/>
+
+{{SS Nav Enemies}}
+
+[[pt:Irmã Lasca]]

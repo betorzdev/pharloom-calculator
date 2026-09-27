@@ -1,0 +1,104 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Choir Bellbearer.png|Hunter's Journal
+Choir Bellbearers Idle.png |Idle
+</gallery>
+| hasdrop = true
+| r1 = 11
+| r2 = 19
+| sh1 = 2-3
+| sh2 = 3-4
+|health=35/{{BT|70}}
+|damage_modifiers={{SS Spaced Damage Modifiers|1.4|1|1|0.8|0.8}}
+|numbers_required = 25
+|sing=Pilgrim Bellbearer
+|singnum=2
+}}
+{{Quote
+|Hr = Journal
+|Winged devout of the Citadel, carrying a brace of gilded bells.<hr/>
+Pharloom proves often the effectiveness of bells as weapons. Never before had I considered them as such.
+}}
+
+<b>Choir Bellbearers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are [[the Choir]] disciple variants of [[Winged Pilgrim Bellbearer|Winged Pilgrim Bellbearers]]; veiled devouts carrying a brace of gilded bells as weapons.<ref>Choir Bellbearer [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Winged devout of the Citadel, carrying a brace of gilded bells."</i></ref>
+
+== Behaviour and Tactics ==
+Choir Bellbearers start off either flying in a small circular area or as lifeless husks which get reanimated with Silk once Hornet gets close.<br>
+As ranged flying enemies, they always try to maintain diagonal aerial distance between themselves and Hornet. They have two different moves they can perform depending on Hornet's relative position to them:
+* <b>Bell Toss:</b> Tosses a bell at Hornet which travels in a heavy arc and bounces once before breaking on the next impact with a surface.
+* <b>Evade:</b> Dashes backwards away from Hornet to maintain space, only used if she is too close.
+
+Tools are extremely useful in taking Choir Bellbearers down, as they are significantly more evasive than their Pilgrim counterparts, frequently dashing back to avoid any melee attacks from Hornet. Cornering them can also help, ensuring that they won't have anywhere to dash away from Hornet.
+
+Their bells can be hit back at them or any other enemies in the room, dealing the same amount of damage that a needle hit would.
+
+Choir Bellbearers deal {{Damage|1}} both on contact and with their attack.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Raise your voices, chosen few!
+* The song sustains!
+* Holy call of the Citadel...
+* Fill the chambers, sacred song...
+* Our voices will be heard!
+* For our song, the precious Silk!
+* Waver not! Wither not!
+* All must gather! All must sing!
+}}
+== Location ==
+Choir Bellbearers can be found in [[Choral Chambers]] and [[Whispering Vaults]]. They also appear during [[the Forum]] gauntlet in [[High Halls]]. During Act 3, one Bellbearer will spawn alongside a [[Void Mass]], disappearing once the mass is destroyed. 
+
+{{Gallery
+|Image1 = Mapshot SS Choir Bellbearer 01.png!Location in Choral Chambers 
+|Image2 = Mapshot SS Choir Bellbearer 03.png!Location in Choral Chambers (Act 3) including [[Void Mass]] spawns
+|Image3 = Mapshot SS Choir Bellbearer 04.png!Location in Whispering Vaults (Act 2)
+|Image4 = Mapshot SS Choir Bellbearer 02.png!Location in High Halls
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Choir Bellbearer 01.png!In Choral Chambers
+|Image2= Screenshot SS Choir Bellbearer 02.png![[Void Mass]] spawn
+|Image4= Screenshot SS Choir Bellbearer 03.png!Dormant
+|Image5= GIF SS Choir Bellbearer 01.gif!Reanimating
+|Image6= Screenshot SS Choir Bellbearer 04.png!Attacking
+|Image7= Screenshot SS Choir Bellbearer 05.png!Singing
+}}
+
+==Trivia==
+* Choir Bellbearers share their Needolin dialogue with [[Envoy]]s, [[Choristor]]s, and [[Reed]]s.
+* Choir Bellbearers have the exact same audio as the [[Pilgrim Bellbearer|two other]] [[Winged Pilgrim Bellbearer|bellbearer enemies]].
+
+{{Localisation
+|DEname = Chor-Glockenträger
+|DEmeaning = Choir Bell Carrier
+|ESname = Portacampanas del Coro
+|ESmeaning = Bellbearer of the Choir
+|FRname = Porte-cloche de la Chorale
+|FRmeaning = Bell Holder of the Choir
+|ITname = Portacampane Corale
+|ITmeaning = Choral Bellbearer
+|JAname = 鈴持ちの合唱者
+|JAromanised = Suzu mochi no gasshō-sha
+|JAmeaning = Bell Holding Chorister
+|KOname = 성가대 종 소유자
+|KOromanised = Seonggadae jong soyuja
+|KOmeaning = Choir Bell Holder
+|PTname = Porta-sinos Coralista
+|PTmeaning = Bell-bearer Chorister
+|RUname = Хоровик-колокольник
+|RUromanised = Xorovik-kolokol'nik
+|RUmeaning = Choirbug Beller 
+|TWname = 聖詠鐘衛
+|TWromanised = Shèngyǒng zhōng wèi
+|TWmeaning = same
+|ZHname = 圣咏钟卫
+|ZHromanised = Shèngyǒng zhōng wèi
+|ZHmeaning = Choral Bell Guard or Psalm Bell Guard, with reference to {{lang|zh-Hans|圣咏殿}}/{{lang|zh-Hant|聖詠殿}} <i>shèngyǒng diàn</i> which is Choral Chambers in Chinese
+|CODEname=PILGRIM_03_SONG
+|CODEmeaning = "Song" internally refers to the Citadel; this name is shared with [[Choir Pouncer|01]], [[Choir Hornhead|02]], and [[Choir Flyer|04]]
+}}
+{{Refs|hr=ss}}
+
+
+{{SS Nav Enemies}}

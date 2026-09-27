@@ -1,0 +1,90 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Stilkin.png|Hunter's Journal
+Stilkin Idle.png|Idle
+</gallery>
+| hasdrop = true
+| sh1 = 5-8
+| sh2 = 7-10
+|health = 45
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.25|1|1|1|1}}
+|numbers_required = 15
+|singnum = 2
+}}
+
+{{Quote
+|Hr = Journal
+|Cunning bug that hunts with darts fashioned from stake and bile.<hr/>
+They know well their domain, lurking in wait in its byways and bogs, always ready to pounce.
+}}
+
+<b>Stilkins</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are members of the [[Stilkin Tribe]] who hunt with darts fashioned from stake and bile.<ref>Stilkin Hunter's Journal entry: <i>"Cunning bug that hunts with darts fashioned from stake and bile."</i></ref>
+
+== Behaviour and Tactics ==
+Stilkin can be heard muttering, as well as seen in the foregrounds or backgrounds of rooms where at least 1 is currently alive.<br>
+Once Hornet gets near their spawn area, they may either pop out of the ground, a wall, or the infested waters and spit 2 explosive vials at Hornet, which stick to surfaces and explode after a second or so.<br>
+Stilkin are incredibly evasive, and constantly jump away from Hornet as they attack, jumping off of walls if they touch them as well.<br>
+Once Stilkin have attacked 1-2 times, they often back down into the infested waters, or simply dive beneath the ground. They attack again after some time has passed or Hornet moves out of and back into their spawn zone.
+
+An easy way to kill them is to chase them and when darts are fired, use [[Cross Stitch]] to safely punish the enemy.<br>
+[[Delver's Drill]] can also kill them in one go if there is enough space to get above them.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* They fall! We rise!
+* They wither! We survive!
+* Their shadow... our shame...
+* Our land! Their grave!
+* Flowing poison... hidden claw...
+* Dark... twisting... betrayal's heart...
+}}
+
+== Location ==
+Stilkin can be found throughout [[Bilewater]]. They can also be encountered in [[Groal the Great]]'s arena as part of the pre-fight [[Enemy_Gauntlets_(Silksong)#Bilehaven|gauntlet]] and as minions summoned by the boss. 
+{{Gallery
+|Image1 = Mapshot SS Stilkin 01.png!Locations in Bilewater
+}}
+
+==Gallery==
+{{Gallery
+|Image1=Screenshot SS Stilkin 01.png!Appearing
+|Image2=Screenshot SS Stilkin 02.png!Spitting vials
+|Image3=Screenshot SS Stilkin 03.png!Diving
+|Image4=Screenshot SS Stilkin 04.png!During Groal the Great's fight
+|Image5=Screenshot SS Stilkin 06.png!In background in Bilewater
+|Image6=Screenshot SS Stilkin 05.png!Singing
+}}
+
+==Trivia==
+* Stilkin share the same [[Needolin]] dialogue as the [[Stilkin Trapper]].
+
+{{Localisation
+|DEname = Abgestandener
+|DEmeaning =
+|ESname = Estacafín
+|ESmeaning = From <i>estaca</i> (stake).
+|FRname = Forrénin
+|FRmeaning =
+|ITname = Picchetto
+|ITmeaning = Picketer
+|JAname = スティルキン
+|JAromanised = Sutirukin
+|JAkatakana = foreignenemy
+|JAmeaning = Stilkin
+|KOname = 스틸킨
+|KOromanised = Seutilkin
+|KOmeaning = Stilkin
+|PTname = Estaquino
+|PTmeaning = From <i>estaca</i> (stake)
+|RUname = Кольник
+|RUromanised = Kol'nik
+|RUmeaning = From {{lang|ru|кол <i>kol</i>}} (stake).
+|ZHname = 斯提金猎手
+|ZHromanised = Sītíjīn lièshǒu
+|ZHmeaning = Stilkin Hunter
+|CODEname=SWAMP_MUCKMAN
+|CODEmeaning="Swamp" internally refers to Bilewater
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

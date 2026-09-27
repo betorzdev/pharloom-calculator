@@ -1,0 +1,112 @@
+{{For|information on the lore of the group|Underworkers}}
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Underworker.png|Hunter's Journal
+Underworker Idle.png|Idle
+Underworker Blocking.png|Blocking
+</gallery>
+| hasdrop = true
+| r1 = 2
+| r2 = 3
+| sh1 = 4-6
+| sh2 = 5-8
+|health = 30/{{BT|60}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 15
+|sing=Overgrown Pilgrim
+|singnum=2
+}}
+{{Quote
+|Hr = Journal
+|Feeble servant of the Underworks with a long twistpin and hard shell.<hr/>
+With all the refuse collapsing throughout their domain, the worker's stiff shell would be essential if they held any hope to survive.
+}}
+
+<b>Underworkers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are feeble [[Underworkers|workers]] equipped with long twistpins and hard shells which they can retreat into.<ref>Underworker [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Feeble servant of the Underworks with a long twistpin and hard shell."</i></ref>
+
+== Behaviour and Tactics ==
+Underworkers are usually found resting or walking back and forth, pausing occasionally. Once [[Hornet (Silksong)|Hornet]] is in their vicinity, they quickly walk towards her and use any of the following moves when close enough:
+* <b>Swing:</b> Performs an overhead swing at Hornet with their long twistpin, stepping forward as they attack.
+** Sometimes this attack has two additional hits, an upward swing followed by another overhead swing. Underworker steps forwards for the third swing, but not the second.
+* <b>Retreat:</b> Moves a short distance backwards, much faster than their usual walking speed. Rarely used after missing an attack.
+* <b>Shell Retreat:</b> Tucks into their hard shell, becoming immune to [[Needle]] attacks and most [[Tools]].
+** They may occasionally move backwards whilst inside their shell, stopping upon reaching a ledge or wall.
+
+=== Act 3 ===
+[[Black-threaded]] Underworkers have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* For the light, unseen...
+* These halls kept clean...
+* Rest and fade...
+* We... were chosen...
+* See us faithful!
+* Shells bend, shells break...
+* Through duty, purity...
+* The sacred toil...
+}}
+
+== Location ==
+Underworkers can be found primarily in the [[Underworks]], with one encountered as part of the [[Enemy Gauntlets (Silksong)/Underworks 2|enemy gauntlet]] in the middle of the area. 
+
+At the beginning of [[Act 3]], a [[black-threaded]] Underworker can be fought during the [[Enemy Gauntlets (Silksong)/Cogwork Core 2|gauntlet]] in the ruined [[Cogwork Core]].
+
+{{Gallery
+|Image1 = Mapshot SS Underworker 01.png!Locations in the Underworks
+|Image2 = Mapshot SS Underworker 02.png!Location in the Cogwork Core in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Underworker 01.png!In the Underworks
+|Image2 = Screenshot SS Underworker 02.png!In the Cogwork Core in Act 3
+|Image3 = Screenshot SS Underworker 03.png!Swing
+|Image4 = Screenshot SS Underworker 04.png!Shell Retreat
+|Image5 = Screenshot SS Underworker 05.png!Reacting to the Needolin
+|Image6 = Screenshot SS Underworker 06.png!Sleeping in the Underworks
+|Image7 = Screenshot SS Underworker 08.png!Sleeping alongside an Underloft
+|Image8 = Screenshot SS Underloft 02.png!Sitting alongside an Underloft
+|Image9 = Screenshot SS Underworker 09.png!Corpses in the western Underworks
+|Image10 = Screenshot SS Underworker 10.png!Corpses below a bench room
+|Image11 = Screenshot SS Underworks 08.png!Corpses in a bench room
+|Image12 = Screenshot SS Wisp Thicket 06.png!Corpses in Wisp Thicket
+|Image13 = Screenshot SS Underworker 11.png!Corpse in the Whispering Vaults
+|Image14 = Screenshot SS Underworker 07.png!Corpse in the Cogwork Core in Act 3
+|Image15 = Screenshot SS Cogwork Core Arena 2.png!Corpse in the Cogwork Core in Act 3
+|Image16= Ari SS Sketch 28.jpg!Concept sketches
+|Image17= Ari SS Sketch 30.jpg!Concept sketches
+}}
+
+{{Localisation
+|DEname = Unterwerker
+|DEmeaning = Underworker
+|ESname = Obrero subterráneo
+|ESmeaning = Underground Worker
+|FRname = Sous-ouvrier
+|FRmeaning = Under Worker
+|ITname = Fondoperaio
+|ITmeaning = Portmanteau of <i>fondo</i> (bottom) and <i>operaio</i> (worker).
+|JAname = 礎の労働者
+|JAromanised = Ishizue no rōdōsha
+|JAmeaning = Foundation Worker
+|KOname = 지하일꾼
+|KOromanised = Jihailkkun
+|KOmeaning = Underground Worker
+|PTname = Claustroperário
+|PTmeaning = From <i>claustro-</i> (prefix for enclosed space) and <i>operário</i> (worker).
+|RUname = Подсобный рабочий
+|RUromanised = Podsobnyj rabočij
+|RUmeaning = Peripheral Worker
+|TWname = 下層工蟲
+|TWromanised = Xiàcéng gōngchóng
+|TWmeaning = Lower-level Worker Bug<br><small>{{lang|zh-Hant|下層工廠}} <i>xiàcéng gōngchǎng</i> (Lower-level Factory) is the name of the [[Underworks]] in Traditional Chinese.</small>
+|ZHname = 圣厂工虫
+|ZHromanised = Shèngchǎng gōngchóng
+|ZHmeaning = Holy Factory Worker Bug<br><small>{{lang|zh-Hans|圣堡工厂}} <i>shèng bǎo gōngchǎng</i> (Holy Castle Factory) is the name of the [[Underworks]] in Simplified Chinese.</small>
+|CODEname= UNDERSTORE_SMALL
+|CODEmeaning = <code>UNDERSTORE</code> internally refers to Underworks.
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

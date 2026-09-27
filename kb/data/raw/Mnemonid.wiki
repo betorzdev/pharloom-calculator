@@ -1,0 +1,76 @@
+{{SS Infobox Enemy
+|drops = None
+|health = 50
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 10
+|singnum = 1
+}}
+{{Quote
+|Hr = Journal
+|Flighted creature formed from coldshard. If shattered it will quickly reform.<hr/>
+The coldshard, even when destroyed it remembers its former shape. A remarkable material, and perhaps even more astonishing there seems life contained within it.
+}}
+
+<b>Mnemonids</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are flying creatures able to reform after being destroyed, because the coldshard they are formed from remembers its former shape.<ref>Mnemonid [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Flighted creature formed from coldshard. If shattered it will quickly reform. The coldshard, even when destroyed it remembers its former shape."</i></ref>
+
+== Behaviour and Tactics ==
+Mnemonids float in place, dealing {{Damage|1}} on contact. If [[Hornet (Silksong)|Hornet]] approaches, they blink for a brief moment before exploding in a circle of lingering spikes. After a few seconds, they reform in the same location. Mnemonids cannot be destroyed with regular attacks, but count as defeated once they explode. 
+
+They are used primarily for traversal via [[Needle#Needle-bouncing|Needle-bouncing]] or the [[Clawline]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Mem... remem...
+* Rem... mem...
+* Memem... rem... mem...
+* Mem...
+}}
+
+== Location ==
+Mnemonids can be found in the central sections of [[Mount Fay]].
+
+{{Gallery
+|Image1 = Mapshot SS Mnemonid 01.png!Locations in Mount Fay
+|Image2 = Mapshot SS Mnemonid 02.png!Locations in Mount Fay in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Mnemonid 01.png!Idle
+|Image2= Screenshot SS Mnemonid 02.png!Exploding
+|Image3= Screenshot SS Mnemonid 03.png!Reacting to the Needolin
+}}
+
+==Trivia==
+*The 1.0.27535 and 1.0.27776 versions of <i>Silksong</i> playable on PlayStation 4 and Nintendo Switch respectively, which are older than the PC launch version (1.0.28324), have the word "iceshard" instead of "coldshard" in the journal description.<ref>[https://docs.google.com/document/d/1GaNLkTTszFKFv55DZj3Iw1hTUi6gbstSR56WXizrMAI Silksong Switch full text] on Google Docs</ref>
+* The Mnemonid's name is derived from the term "mnemonic", which refers to things related to memory.
+
+{{Localisation
+|DEname = Mnemonide
+|DEmeaning = —
+|ESname = Mnemonido
+|ESmeaning = —
+|FRname = Mnémonide
+|FRmeaning = —
+|ITname = Mnemoide
+|ITmeaning = —
+|JAname = ニモニド
+|JAromanised = Nimonido
+|JAkatakana = foreignenemy
+|JAmeaning = Mnemonid
+|KOname = 결정충
+|KOromanised = Gyeoljeongchung
+|KOmeaning = Crystal Bug
+|PTname = Mnemonide
+|PTmeaning = —
+|RUname = Мнемонид
+|RUromanised = Mnemonid
+|RUmeaning = Mnemonid
+|ZHname = 冰晶虫
+|ZHromanised = Bīngjīng chóng
+|ZHmeaning = Ice Crystal Bug
+|CODEname = CRYSTAL_DRIFTER
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

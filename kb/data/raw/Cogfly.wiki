@@ -1,0 +1,107 @@
+{{For|the enemy that summons Cogflies|Maestro}}
+{{SS Infobox Tool
+| image = <gallery>
+Cogfly.png|Inventory
+Cogfly Poison.png|Pollip Pouch
+</gallery>
+| type = Red
+| damage = 3/5/7/8/10 (per hit, 5 hits) <br> 15/25/35/40/50 (total)
+| max = 4/5/6/7/8
+| refill_type = Repair
+| refill = {{S|10}}
+| effect = Throws a winged companion that attacks nearby enemies
+| location = [[High Halls]]
+| description = Winged cogwork companion that will seek nearby foes and attack.
+}}
+
+{{Quote
+| Its form is certainly based on bugs found outside the Citadel. In my own craftwork, I too often look to nature for inspiration.
+| [[Hornet (Silksong)|Hornet]]
+| Hr = SS
+}}
+
+<b>Cogfly</b> is a {{CrestSlot|Red|1}} in <i>[[Hollow Knight: Silksong]].</i> When used, [[Hornet (Silksong)|Hornet]] throws a Cogfly that then follows her. When Cogflies are near an [[Enemies (Silksong)|enemy]], they attack it by repeatedly flying into it. 
+
+== Usefulness ==
+After being thrown, Cogflies follow Hornet and will attack [[Enemies (Silksong)|enemies]] autonomously. Cogflies follow Hornet between rooms, allowing them to be activated before fights begin, and letting Hornet prepare extra Cogflies at [[Bench (Silksong)|Benches]]. They do not follow her through any means of [[Fast Travel (Silksong)|Fast Travel]].
+
+Up to four Cogflies may be active at the same time, and any more thrown will replace an active Cogfly. The maximum is not changed by [[Quick Sling]]. They break after hitting an enemy five times.
+
+* They are especially useful against evasive enemies that are harder to hit with the [[Needle]].
+* They can be used for protection while exploring or making [[Wishes#Delivery_Wishes|Delivery Wishes]].
+* It is best to avoid using Cogflies when attempting platforming challenges that utilise hovering enemies like [[Driftlin]]s or [[Skullwing]]s as targets for Needle bounces or the [[Clawline]], since Cogflies will often attempt to target and defeat those enemies before Hornet can reach them. {{MissingInfo}}
+
+Previously deployed Cogflies remain affected by [[Pollip Pouch]] even after the latter is unequipped, and are not affected if deployed before equipping Pollip Pouch.
+
+== How to Acquire ==
+Cogflies are acquired by interacting with a crafting bench in [[High Halls]], costing {{C|1}}.
+{{Gallery
+|Image1 = Mapshot SS Cogfly.png!Location in High Halls
+|Image2 = Screenshot SS Cogfly Room.png!Room where the Cogfly is crafted
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = GIF SS Cogfly 02.gif!Hornet deploying Cogfly
+|Image2 = Screenshot SS Cogfly 01.png!Cogflies following Hornet
+|Image3 = Screenshot SS Cogfly 02.png!Cogflies resting near a bench
+|Image4 = Screenshot SS Cogfly 03.png!Cogflies singing
+|Image5 = Screenshot SS Cogfly 04.png!Cogflies when the Pollip Pouch is equipped
+|Image6 = Screenshot_SS_Barnak_04.png!Cogfly eaten by [[Barnak]]
+|Image7 = Screenshot SS Cogfly 05.png!Stored Cogflies near the crafting bench
+|Image8 = Cogworker Sing.ogg!Singing audio
+}}
+
+== Trivia ==
+* When Hornet plays the [[Needolin]], Cogflies use an animation that mimics singing, though they have no dialogue for it.
+* When singing, Hornet's Cogflies produce the same chirping sounds as [[Cogworker]]s and [[Maestro]]'s Cogflies.
+* When Hornet rests on a [[Bench (Silksong)|Bench]], Cogflies land on the floor and rest as well, though this does not heal them.
+* Cogflies can be eaten by [[Barnak]]s. If [[Pollip Pouch]] is equipped, they become poisoned after eating them.
+* Hornet's Cogflies differ visually from the [[Enemies (Silksong)|enemy]] Cogflies summoned by [[Maestro]]s, with a face shaped like Hornet's mask and a default colour resembling Hornet's [[Hunter's Cloak|cloak]].
+* Cogflies will attempt to attack the phantom prince in the [[Clover Dancers]] boss fight, despite the phantom prince not being able to take any damage.
+* After being eaten by Barnaks, Cogflies shatter into pieces identical to those of Maestro's Cogflies, despite having a different colour and design. The game files contain unused sprites for Hornet's Cogfly pieces, which are named <code>hornet_hatchling_cog_particle</code>.
+* Cogflies with one remaining hit appear to have falling fragments.
+{{Gallery
+|Image1=GIF SS Cogfly 01.gif!Cogfly on its last hit
+|Image2=Cog Particle.png!Cog particles
+}}
+{{History
+|game = SS
+|1.0.28650 (Patch 2): 
+*Fixed Cogflies incorrectly resetting their HP to full on scene change.
+*Fixed Cogflies inappropriately targeting [[Skullwing]]s.
+*Reduced number of hits that a Cogfly can take from 6 to 5.
+|1.0.28891 (Patch 3): Fixed Cogflies sometimes appearing from odd locations after scene transition and, in rare cases, having their active quantity reduced by 1.
+}}
+{{Localisation
+|DEname = Räderfliege
+|DEmeaning = Cogwork Fly
+|ESname = Mosca mecánica
+|ESmeaning = Mechanical Fly
+|FRname = Mouchetille
+|FRmeaning = Portmanteau of <i>mouche</i> (fly) and <i>outille</i> (tool).
+|ITname = Mosca Meccanica
+|ITmeaning = Mechanic Fly
+|JAname=カラクリバエ
+|JAromanised= Karakuri bae
+|JAmeaning = Mechanism Fly
+|KOname = 톱니파리
+|KOromanised = Tobnipali
+|KOmeaning = Cogfly
+|PTname = Mosca Mecânica
+|PTmeaning = Mechanical Fly
+|RUname = Заводная муха
+|RUromanised = Zavodnaya mukha
+|RUmeaning = Clockwork Fly
+|TWname = 齒輪蜂
+|TWromanised = Chǐlún fēng
+|TWmeaning = same
+|ZHname = 齿轮蜂
+|ZHromanised = Chǐlún fēng
+|ZHmeaning = Gear Bee
+|CODEname=COGWORK_FLIER
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Mouchetille]]

@@ -1,0 +1,115 @@
+{{SS Infobox Boss
+|image1=<gallery>
+B Palestag.png|Hunter's Journal
+Palestag Idle.png|Idle
+</gallery>
+|theme = [https://youtube.com/watch?v=sBNJLCHwqAY Chapel Ambience Battle Layer]
+|location = [[Lost Verdania]]
+|drops = 5 memory orbs
+|health = 480
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1.2|1.15|1|1}}
+|numbers_required = 1
+|va = 
+}}
+{{Quote
+|Hr = Journal
+|Fabled first Cloverstag of Verdania's wilds. Commands the grass and leaves to aid its attack.<hr/>
+Myth made real in memory. The creature seemed completely at one with the flora around it. Did it ever truly exist as I have seen it? 
+}}
+
+The <b>Palestag</b> is a [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. She is the first [[Cloverstag]] of [[Verdania]], found within the memory of the [[Green Prince]].<ref name=firstcloverstag>Palestag Hunter's Journal entry: <i>"Fabled first Cloverstag of Verdania's wilds. Commands the grass and leaves to aid its attack."</i></ref>
+
+== Background ==
+The Palestag is a figure from myth, made real in the [[Green Prince]]'s memory.<ref>Palestag [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Myth made real in memory."</i></ref> She was described as being a "stag touched pale".<ref>[[Green Prince]]: <i>"Here, the trail of the stag touched pale..."</i></ref> According to fable, she was the first Cloverstag of [[Verdania]]'s wilds, and could command grass and leaves to aid her attacks.<ref name=firstcloverstag/> The Green Prince and his partner hunted and felled her, which nobody else had been able to do before.<ref name=gender/> This became proof of their majesty and the mark of their divine right.<ref>Green Prince: <i>"Proof it became, of our majesty... mark of our divine right..."</i></ref> It is unknown if the Palestag truly existed the way she appears in the memory.<ref>Palestag Hunter's Journal entry: <i>"Did it ever truly exist as I have seen it?"</i></ref>
+
+== In-game Events ==
+The Palestag is encountered in [[Lost Verdania]] after following a trail of pale, glowing leaves. She can be first encountered along the trail in the room above her arena, though she quickly teleports away. Following the trail to its end leads into the Palestag's arena, where she can be fought. The arena, like much of Lost Verdania, is built atop water, with two mid-air platforms and a floor that extends a little over halfway from the left side of the room; the right side of the room, where Hornet enters, is uncovered water containing a single lily pad.
+
+Defeating the Palestag gives five memory orbs that contribute to unlocking the [[Clover Dancers]] fight and the [[Lore Tablets (Silksong)|Lore Tablet]] beside the Clover Dancers.
+
+If not defeated, the Palestag does not appear in the [[Hunter's Journal (Silksong)|Hunter's Journal]] when the [[Clover Dancers]] are defeated, unlike every other enemy in [[Lost Verdania]].
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+The Palestag is found lying on the floor of her arena, and when approached, she rises and screams before vanishing and beginning the fight.
+
+The Palestag has one attack, which is altered later into the fight:
+* <b>Leaf Vortexes</b>: The Palestag bleats and summons 2 pairs of bright, swirling leaf projectiles positioned at the top, centre, or bottom of the arena and spaced evenly to [[Hornet (Silksong)|Hornet's]] left or right. The projectiles then launch horizontally, one after the other, across the entire arena. While travelling, each projectile angles slightly towards Hornet's direction and can pass through platforms. They deal {{Damage|1+1}}. After the Palestag reaches 216 HP, Leaf Vortexes summons 3 pairs of leaf projectiles.
+* <b>Escape Prance</b>: Between summoning Leaf Vortexes, the Palestag pauses for a moment before then leaping while teleporting away. If she is approached before she initiates an attack, she can immediately leap away and cancel the attack. The positions the Palestag can teleport to are: the left and right of the arena floor, the lily pad, or either of the mid-air platforms.
+
+<hr>
+
+<b>Notes and Strategies:</b>
+* Due to her elusive behaviour, it can be difficult to land more than one Needle attack at a time. [[Tools]] and [[Silk Skills]] that provide ranged options can make the fight easier.
+** [[Cogfly|Cogflies]] can chase down the Palestag as long as Hornet is close enough for them to track her.
+** [[Tacks]] and [[Sting Shard]]s can be laid at the few positions that the Palestag teleports between, causing her to take damage when she warps to those positions.
+** [[Silkshot]] (Original) or Silkshot (Forge Daughter) can provide damage at range.
+** [[Pale Nails]] can track the Palestag's location if Hornet is sufficiently close for the projectiles to lock on to her.
+* With certain [[Crests]], the [[Longclaw]] can give Hornet's Needle attacks enough reach to hit the Palestag from underneath a mid-air platform while she is atop it.
+* It is recommended to push the lily pad closer to the arena floor so that the Palestag is more easily reached when she teleports onto it.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* May echoes gather...
+* Lonely specks, adrift...
+* Forgotten or lost...
+* Winding ways meet again...
+* What is remembered...
+* Facets many, shining apart...
+}}
+
+== Location ==
+The Palestag can be found in [[Lost Verdania]] after following a trail of pale, glowing leaves.
+
+{{Gallery
+|Image1 = Mapshot SS Palestag 01.png!Location in Lost Verdania
+}}
+
+==Gallery==
+{{Gallery|
+|Image1 = Screenshot SS Palestag 01.png!The Palestag resting on the floor of her arena
+|Image2 = Screenshot SS Palestag 02.png!Idle
+|Image3 = Screenshot SS Palestag 03.png!Summoning Leaf Vortexes
+|Image4 = Screenshot SS Palestag 04.png!Leaf Vortexes
+|Image5 = Screenshot SS Palestag 05.png!Escape Prance
+|Image6 = Screenshot SS Lost Verdania 15.png!Arena in Lost Verdania
+}}
+
+== Trivia ==
+* The Palestag is not stunned by the [[Needolin]]; her dialogue appears without stopping combat to sing.
+{{Localisation
+|DEname = Bleichhirsch
+|DEmeaning = Pale Stag
+|ESname = Palicierva
+|ESmeaning = Portmanteau of <i>pálida</i> (pale) and <i>cierva</i> (deer).
+|FRname = Cerf Pâle
+|FRmeaning = Pale Deer
+|ITname = Cervide Pallida
+|ITmeaning = Pale Deer
+|JAname=蒼白のスタグ
+|JAromanised= Sōhaku no sutagu
+|JAkatakana = foreignenemy
+|JAmeaning = Pale Stag 
+|KOname = 창백한 수사슴
+|KOromanised = Changbaekan susaseum
+|KOmeaning = Pale Stag
+|PTname = Cervo-pálido
+|PTmeaning = Pale Deer (masculine)
+|RUname =  Светлорожка<br>Бледнорожка
+|RUromanised = Svetlorožka<br>Blednorožka
+|RUmeaning = Portmanteau of {{lang|ru|светлая <i>svetlaja</i>}} (bright) and {{lang|ru|рожка <i>rožka</i>}} (horn) <small>(Used in dialogue and Hunter's Journal)</small><br>Portmanteau of {{lang|ru|бледная <i>blednaja</i>}} (pale) and {{lang|ru|рожка <i>rožka</i>}} (horn) <small>(Used as the boss title card)</small>
+|TWname = 蒼白苜鹿
+|TWromanised = Cāngbái mù lù
+|TWmeaning = same
+|ZHname = 苍白苜鹿
+|ZHromanised = Cāngbái mù lù
+|ZHmeaning = Pale Clover Deer
+|CODEname = CLOVERSTAG_WHITE</code><br><code>WHITE_CLOVERSTAG
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Enemies}}
+
+[[pt:Cervo-pálido]]

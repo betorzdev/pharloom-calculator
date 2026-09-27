@@ -1,0 +1,80 @@
+{{SS Infobox Tool
+| image = <gallery>
+Threefold Pin.png|Inventory
+Threefold Pin Poison.png|Pollip Pouch
+Threefold Pin Pickup.png|Pickup
+</gallery>
+| type = Red
+| damage = 4/6/9/11/14 (first hit) <br> 2/3/4.5/5.5/7 (second hit) <br> 1.33/2/3/3.66/4.66 (third hit) <br> 6/9/13.5/16.5/21 (first two hits, one enemy) <br> 7.33/11/16.5/20.16/25.66 (total, one enemy) <br> 12/18/27/33/42 (total, three enemies)
+| max = 10/12/15/17/20
+| refill_type = Repair
+| refill = {{S|4}}
+| effect = Throws 3 pins in a spread
+| location = [[Greymoor]]
+| description = Flat, layered weapon, crafted to be thrown in a set.
+}}
+
+<b>Threefold Pin</b> is a {{CrestSlot|Red|1}} in <i>[[Hollow Knight: Silksong]]</i>. When used, [[Hornet (Silksong)|Hornet]] throws three pins forwards in a spreading fan pattern. Damage per pin decreases when a single enemy is hit by multiple pins at once, with each pin dealing 100%, 50%, and 33% base damage respectively.
+
+== Usefulness ==
+Similar to the [[Straight Pin]], the Threefold Pin can be thrown quickly, has a relatively high maximum capacity, and costs few [[Shell Shards]] per use, making it easy to spam without consequence. 
+
+The Threefold Pin has higher burst and spread damage than the Straight Pin, but is less effective at range. Its reduced damage from multiple pins hitting the same enemy at once makes it most effective against crowds of enemies. However, it still does respectable damage to single targets.
+
+== How to Acquire ==
+Found in a hidden cave above [[Craw Lake]], on the eastern edge of [[Greymoor]].
+
+{{Gallery
+|Image1 = Mapshot SS Threefold Pin.png!Location in Greymoor
+|Image2 = Mapshot SS Threefold Pin Cave.jpg!Entrance to the room
+|Image3 = Screenshot SS Threefold Pin Room.png!Room with the Threefold Pin
+}}
+
+== Gallery ==
+
+{{Gallery
+|Image1 = GIF SS Threefold Pin 01.gif!Hornet throwing Threefold Pin
+}}
+
+==Trivia==
+*The Threefold Pins were originally called Tri-Pins, and were a modified version of the Straight Pins.<ref>[https://pocketmags.com/edge-magazine/february-2021 Edge Magazine February 2021 edition], p. 57.</ref> They also had a different icon.<ref>[https://pocketmags.com/edge-magazine/february-2021 Edge Magazine February 2021 edition], p. 53.</ref>
+*[[Squatcraw]]s throw their pins in a similar fashion. Additionally, before picking up the item, it looks identical to their pins.
+
+{{Gallery
+|Image1= Early Tri-Pins icon.png!Tri-Pins icon
+}}
+
+{{Localisation
+|DEname = Dreifach-Nadel
+|DEmeaning = Threefold Pin
+|ESname = Alfiler triple
+|ESmeaning = Threefold Pin
+|FRname = Lame trifoldée
+|FRmeaning = Trifold Blade
+|ITname = Spillo triplo
+|ITmeaning = Triple Pin
+|JAname = 三連ピン
+|JAromanised = San-ren pin
+|JAmeaning = Threefold Pin
+|KOname = 삼중 핀
+|KOromanised = Samjung pin
+|KOmeaning = Threefold Pin
+|PTname = Pino Tríplice
+|PTmeaning = Threefold Pin
+|RUname = Тройная булавка
+|RUromanised = Trojnaja bulavka
+|RUmeaning = Threefold Pin
+|TWname = 三重釘
+|TWromanised = Sānchóng dīng
+|TWmeaning = Threefold Nail
+|ZHname = 三重镖
+|ZHromanised = Sānchóng biāo
+|ZHmeaning = Threefold Dart
+|CODEname= TRI_PIN
+|CODEmeaning= Threefold Pins were originally called Tri-Pins
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Lame trifoldée]]

@@ -1,0 +1,81 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Karaka.png|Hunter's Journal
+Karaka Idle.png|Idle
+Karaka Corpse.png|Husk
+</gallery>
+|drops =None
+|health = 90
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1.2|1.1|1|1}}
+|numbers_required = 10<br>(Instantly completed on [[Crust King Khann]]'s death)
+}}
+{{Quote
+|Hr = Journal
+|Staunch and skilled bladebug of a once flourishing land lost to time.<hr/>
+The core member of a powerful order, trained fearless and faithful. Theirs was a kingdom of warriors, one built upon their blades.
+}}
+
+<b>Karakas</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are members of the [[Order of Karak]], long lost to time and living on only in memory.
+
+== Behaviour and Tactics ==
+Karakas cannot walk and can only move or reposition themselves with the moves below.<br>
+* <b>Sprint:</b> Sprints towards Hornet for a set distance, though it will shorten it to prevent making contact with her. Only used to pursue Hornet if she's out of range for all other attacks.
+* <b>Dash:</b> Dashes either forward or backwards a set distance to reposition or get closer to Hornet.
+* <b>Jump:</b> Jumps either forwards or backwards, performing a downwards slash as they land from a forwards jump if Hornet is in range. The forwards jump is often used to pursue Hornet.
+* <b>Slash:</b> Readies their blade horizontally, then slashes outwards.
+* <b>Overhead Slash:</b> Readies their blade above their head, then does a large overhead slash.
+* <b>Block:</b> Holds their blade in front of themselves, and blocks any [[Needle]] attack from that side. Immediately retaliates with any of the attacks above if their guard is struck.
+
+All of the their blade attacks deal {{Damage|2}}, while contact damage deals only {{Damage|1}}.
+
+== Location ==
+Karakas can only be found in [[Crust King Khann]]'s [[Elegy of the Deep|Memory]] of the [[Coral Tower]] during [[Acts|Act 3]].
+
+{{Gallery
+|Image1 = Mapshot SS Coral Tower.png
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Karaka 01.png!Idle
+|Image2= Screenshot SS Karaka 02.png!Blocking
+|Image3= Screenshot SS Karaka 03.png!Jump
+|Image4= Screenshot SS Karaka 04.png!Overhead Slash
+|Image5= Screenshot SS Karaka 05.png!Slash
+|Image6= Screenshot SS Sands of Karak 08.png!Husks of Karakas surrounding Crust King Khann
+}}
+
+== Trivia ==
+* Karakas do not respond to the [[Needolin]].
+{{Localisation
+|DEname = Karaka
+|DEmeaning = —
+|ESname = Karaka
+|ESmeaning = —
+|FRname = Karaka
+|FRmeaning = —
+|ITname = Karaka
+|ITmeaning = —
+|JAname = カラカ
+|JAromanised = Karaka
+|JAkatakana = foreignenemy
+|JAmeaning = Karaka
+|KOname = 카라카
+|KOromanised = Karaka
+|KOmeaning = Karaka
+|PTname = Karaka
+|PTmeaning = —
+|RUname = Карака
+|RUromanised = Karaka
+|RUmeaning = Karaka
+|TWname = 卡拉卡
+|TWromanised = Kǎlākǎ
+|TWmeaning = same
+|ZHname = 卡拉卡
+|ZHromanised = Kǎlākǎ
+|ZHmeaning = Karaka
+|CODEname=CORAL_WARRIOR
+|CODEmeaning=Other Order of Karak internal names begin with "Coral"
+}}
+{{Refs|hr=SS}}
+{{SS Nav Enemies}}

@@ -1,0 +1,38 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Far_Fields_Arena_1.png|400px|center]]
+|[[File:Mapshot_SS_Mask_Shard_11.png|400px|center]]
+|-
+| colspan="2" | Enemy gauntlet in the [[Far Fields#Skull Cave|Skull Cave]]. Requires [[Clawline]]. Hornet begins the gauntlet by striking the explosive Flintflame in the arena. Doing so breaks the floor and leaves 2 platforms floating on lava. Once Hornet defeats the penultimate wave, the lava begins to rise, which can kill the enemies in the Final wave.
+
+If Hornet, an enemy, or a projectile touches a platform, it is destroyed temporarily. If Hornet falls into the lava, she is transported onto an additional temporary platform in the very centre.
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+|<center>[[Mask Shard (Silksong)|Mask Shard]]</center>
+|<center>[https://youtu.be/M-z6fPrpg-k Cut Through (Main)] (Enemy Gauntlet)<br/>[https://youtu.be/M-z6fPrpg-k?t=92 Cut Through (Main + Percussion)] (Lava Escape)</center>
+|-
+! colspan="2" |Waves
+|-
+|[[File:HJ_Beastfly.png|35x35px|link=Beastfly]] [[Beastfly]] x2, left and right
+|Both enemies charge out of either wall and bonk into each other in the centre.
+|-
+|
+[[File:HJ_Tarmite.png|35x35px|link=Tarmite]] [[Tarmite]], centre
+|
+|-
+|
+[[File:HJ_Vicious Caranid.png|35x35px|link=Vicious Caranid]] [[Vicious Caranid]] x2, top left/right depending on Hornet
+|
+|-
+|
+[[File:HJ_Tarmite.png|35x35px|link=Tarmite]] Tarmite x2, top left and right
+| Defeating both enemies causes the lava to begin to rise.
+|-
+|
+[[File:HJ_Tarmite.png|35x35px|link=Tarmite]] Tarmite x5
+| Appears during the lava escape sequence; will die to the rising lava.
+|}

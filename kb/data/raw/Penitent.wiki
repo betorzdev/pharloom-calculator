@@ -1,0 +1,79 @@
+{{For|the [[NPCs (Silksong)|NPC]] of a similar name|Old Penitent}}
+
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Penitent.png|Hunter's Journal
+Penitent Idle.png|Idle
+Penitent Resting.png|Resting
+</gallery>
+| hasdrop = true
+| sh1 = 6-9
+| sh2 = 8-12
+|health = 50
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1.25|1|1|1}}
+|numbers_required = 8
+|singnum=1
+
+}}
+{{Quote
+|Hr = Journal
+|Humbled prisoner serving their sentence for sin committed within the Citadel.<hr/>
+All are haunted here, the jailers and the jailed. Do they realise they will never leave this place? Or how long they have stayed already?
+}}
+
+<b>Penitents</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are [[Slab Penitents#The Penitents|prisoners]] in [[the Slab]] who are serving their sentence for sin committed within [[the Citadel]].<ref>Penitent [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Humbled prisoner serving their sentence for sin committed within the Citadel."</i></ref>
+
+== Behaviour and Tactics ==
+Penitents do not move outside of attacking, and attack as soon as Hornet is in their vicinity. To attack, Penitents lunge at Hornet, sliding on the ground for a moment before stopping.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Chastise us... o shame!
+* Shame! Shame!
+* Punish us... cleanse us...
+* Holy silence... swallow our shame...
+}}
+
+== Location ==
+Penitents can be found in [[the Slab]].
+
+{{Gallery
+|Image1 = Mapshot SS Penitent 01.png!Locations in the Slab
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Penitent 01.png!Resting
+|Image2= Screenshot SS Penitent 02.png!Lunging
+|Image3= Screenshot SS Penitent 03.png!Reacting to the Needolin
+}}
+
+{{Localisation
+|DEname = Büßer
+|DEmeaning = Penitent
+|ESname = Penitente
+|ESmeaning = Penitent
+|FRname = Pénitent
+|FRmeaning = Penitent
+|ITname = Penitente
+|ITmeaning = Penitent
+|JAname= 悔悟者
+|JAromanised = Kaigo-sha
+|JAmeaning = Penitent
+|KOname = 회개자
+|KOromanised = Hoegaeja
+|KOmeaning = Penitent
+|PTname =  Penitente
+|PTmeaning = Penitent
+|RUname = Покаянник
+|RUromanised = Pokajannik
+|RUmeaning = Penitent
+|ZHname = 悔罪者
+|ZHromanised = Huǐzuì zhě
+|ZHmeaning = Penitent
+|CODEname = SLAB_PRISONER_LEAPER_NEW
+|CODEmeaning = [[Puny Penitent]]s are also labelled as "new" 
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

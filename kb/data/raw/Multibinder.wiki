@@ -1,0 +1,99 @@
+{{SS Infobox Tool
+| type = Blue
+| effect = Allows [[Bind|BIND]] to heal up to 4 Masks
+| location = [[Bellhart]]
+| description = Elaborate, etched Weaver spindle, usable only by wielders of Silk.<hr/>Extends the act of binding, but increases its healing effect.
+}}
+
+{{Quote
+| I rarely sell objects as intriguing as this. Supposed to improve a bug's natural ability to heal! Can't say I've felt its effects myself, but then I keep more healthy than most.
+| [[Frey]]
+| Hr = SS
+}}
+
+<b>Multibinder</b> is a {{CrestSlot|Blue|1}} in <i>[[Hollow Knight: Silksong]]</i>. It extends the duration of [[Hornet (Silksong)|Hornet]]'s [[Bind]], but makes Binding heal an additional Mask.
+
+== Usefulness ==
+With Multibinder equipped, [[Bind]]ing consists of 2 consecutive Binding animations, each lasting 0.8 seconds, with each part healing 2 Masks. This heals 4 total Masks compared to the usual 3, but takes ~40% longer to complete the Bind.<ref group="Note" name="Duration">The increase to Bind duration varies based on Crest and whether [[Injector Band]] is also equipped; see [[Bind#Modifiers|table of Bind durations]]</ref>
+* During [[Beast Crest]] Bind, it instead slows the initial bind speed and allows Hornet to heal up to 4 Masks during Fury rather than 3.
+* Hornet can still benefit from the first half of the healing if the Bind is interrupted afterwards.
+* If Hornet is infested with [[Muckmaggot]]s, the first Bind will remove the Muckmaggots then the second bind will heal as normal, healing 2 Masks in total.
+* Useful during tricky platforming sections or during exploration, where the increased Binding time is not an issue.
+
+== How to Acquire ==
+Purchased from [[Frey]] in [[Bellhart]] for {{R|880}} after completing the <i>[[My Missing Courier]]</i> Wish.
+
+{{Gallery
+|Image1 = Mapshot SS Frey 01.png!Location in Bellhart
+|Image2 = Screenshot SS Frey 01.png!Frey in Bellhart
+}}
+
+== Tool/Crest Synergies ==
+{{SS Table Tool Interactions
+| Tool1 = Claw Mirror
+| Tool1Desc = Triggers Claw Mirror's explosion and its lingering damage twice.
+| Tool2 = Claw Mirrors
+| Tool2Desc = Triggers Claw Mirrors' explosion and its lingering damage twice.
+| Tool3 = Injector Band
+| Tool3Desc = Both bind durations are shortened by 52%. The total [[Bind]] duration is slightly faster than normal Bind.<ref group="Note" name="Duration"/>
+| Tool4 = Plasmium Phial
+| Tool4Desc = Heal 2 Masks in total when [[Bind]]ing while plasmified.
+| Tool5 = Beast Crest
+| Tool5Img = Beast Crest File
+| Tool5Desc = Bind is not split into two segments. Heal up to 4 Masks by hitting enemies during Fury.
+| Tool6 = Witch Crest
+| Tool6Img = Witch Crest File
+| Tool6Desc = Thrash an additional time and heal up to 4 Masks by hitting enemies while Binding.
+}}
+
+== Tool Combo Tips ==
+{{SS Table Tool Interactions
+| Tool1 = Warding Bell
+| Tool1Desc = Protects Hornet during the longer Bind.
+}}
+
+== Gallery ==
+{| align="center" style="text-align:center"
+| {{#ev:youtube|https://www.youtube.com/watch?v=mMPlQRO0Ego|250|center|Deep Dive}}
+|}
+
+{{History
+|game = SS
+|1.0.29242 (Patch 4):
+*Reduced unintentionally long bind time when using Multibinder with the Shaman crest.
+*Updated Multibinder's initial bind to clear maggots, per community comments.
+}}
+{{Localisation
+|DEname = Multibinder
+|DEmeaning = —
+|ESname = Multihuso
+|ESmeaning = Multi Spindle
+|FRname = Multisoie
+|FRmeaning = Multi Silk
+|ITname = Multilegante
+|ITmeaning = Multibinder
+|JAname = 紡ぎの触媒
+|JAromanised= Tsumugi no shokubai
+|JAmeaning = Spinning Catalyst
+|KOname = 다중 감개
+|KOromanised = Dajung gamgae
+|KOmeaning = Multilayered Reeler
+|PTname = Multivinculador
+|PTmeaning = Multibinder
+|RUname = Мультисвязыватель
+|RUromanised = Mul'tisvjazyvatel' 
+|RUmeaning = Multibinder
+|TWname = 多重縛絲器
+|TWromanised = Duōzhòng fù sī qì
+|TWmeaning = same
+|ZHname = 多重缚丝器
+|ZHromanised = Duōzhòng fù sī qì
+|ZHmeaning = Multibinder or Multi Silk-binder
+|CODEname = MULTIBIND
+}}
+
+== Notes ==
+<references group="Note"/> 
+
+{{SS Nav Tools}}
+[[fr:Multisoie]]

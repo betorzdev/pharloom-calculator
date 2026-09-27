@@ -1,0 +1,83 @@
+{{Navbar|icons=true|page1=Encrusted Heart|page2=Pollen Heart|page3=Hunter's Heart|page4=Conjoined Heart}}
+{{SS Infobox Item
+| label = Item
+| type = [[Items (Silksong)#Deliverable|Deliverable]]
+| image = <gallery>
+Conjoined Heart.png|Inventory
+Conjoined Heart Shelf.png|Bellhome
+</gallery>
+| source = [[Verdania]]
+| description = Enlivened heart of the Green Prince. Its beat is sharp and clear.
+| label2 = Prompt
+| type2 = [[Items (Silksong)#Deliverable|Deliverable]]
+| title2 = <small>Obtained the</small><br>Conjoined Heart
+| image2 = Icon SS Conjoined Heart Art.png 
+| source2 = [[Verdania]]
+| description2 = Enlivened heart of the Green Prince. Its beat is sharp and clear.
+}}
+
+{{Quote|Hr=SS
+|...To dance... And love...<br>And end... Together... 
+|[[Green Prince]]
+}}
+
+The <b>Conjoined Heart</b> is a [[Items_(Silksong)#Deliverables|deliverable item]] and [[Materium#Mementos|memento]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+
+The Conjoined Heart may be used along with the [[Pollen Heart]], the [[Hunter's Heart]], and/or the [[Encrusted Heart]] to complete the <i>[[SEEK: The Old Hearts]]</i> [[Objectives|objective]].
+
+{{Gallery
+|Image1 = Mapshot SS Red Memory.png!Snail Shamans location in Moss Grotto
+|Image2 = Screenshot SS Snail Shamans 01.png!Snail Shamans in the Ruined Chapel in Moss Grotto
+}}
+
+If the Conjoined Heart is obtained afterwards, as a fourth heart, or if all 4 hearts are collected before completing <i>[[SEEK: The Old Hearts]]</i>, then it becomes a [[memento]] that can be displayed on a shelf in the [[Bellhome]]. After interacting with the desk, it appears in the top-middle slot of the shelving.
+
+{{Gallery
+|Image1 = Mapshot SS Bellhome.png!Location in Bellhart
+|Image2 = Screenshot SS Bellhart 09.png!Displayed inside Bellhome in Bellhart
+}}
+
+== How to Acquire ==
+The Conjoined Heart is acquired after defeating the [[Clover Dancers]] in [[Lost Verdania]].
+
+{{Gallery
+|Image1 = Mapshot SS Clover Dancers.png!Conjoined Heart location in Lost Verdania
+|Image2 = Screenshot SS Conjoined Heart 01.png!Conjoined Heart in Lost Verdania
+}}
+
+{{Localisation
+|DEname = Verbundenes Herz
+|DEmeaning = Connected Heart
+|ESname = Corazón siamés
+|ESmeaning = Siamese Heart<br><small><i>Siamese</i> refers to [[wikipedia:Siamese twins|Siamese twins]], an alternate term for conjoined twins.</small>
+|FRname = Cœur conjoint
+|FRmeaning = Conjoined Heart
+|ITname = Cuore congiunto
+|ITmeaning = Conjoined Heart
+|JAname=結合した心臓
+|JAromanised= Ketsugō shita shinzou
+|JAmeaning = Joined Heart
+|KOname = 결합된 심장
+|KOromanised = Gyeolhapdoen simjang
+|KOmeaning = Fused Heart
+|PTname =  Coração Confluído
+|PTmeaning = Merged Heart
+|RUname = Сросшееся сердце
+|RUromanised = Srosšeesja serdce
+|RUmeaning = Fused Heart
+|TWname = 雙生之心
+|TWromanised = Shuāngshēng zhīxīn
+|TWmeaning = same
+|ZHname = 双生之心
+|ZHromanised = Shuāngshēng zhīxīn
+|ZHmeaning = Twin-born Heart
+|CODEname = HEART_CLOVER
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

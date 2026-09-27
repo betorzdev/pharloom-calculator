@@ -1,0 +1,143 @@
+{{For|the [[Acts|objective]]|OPEN: Grand Gate}}
+
+{{SS Infobox Area
+| tab1 = Act 2
+| image1 = <gallery>
+Grand Gate Map Marked.png|Marked
+Grand Gate Map Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Grand Gate Map Ruin Marked.png|Marked
+Grand Gate Map Ruin Clean.png|Unmarked
+</gallery>
+| connection = [[Blasted Steps]] <br/> [[Choral Chambers]] <br/> [[Underworks]]
+| ambience = [https://www.youtube.com/watch?v=UdcTyq_aXXI Atmos Citadel Halls Pre Wakeup] (before awakening + Act 3)<br>
+[https://www.youtube.com/watch?v=62rByKODo9A Citadel Halls] (after awakening, Act 2)<br>
+[https://www.youtube.com/watch?v=GivJqT7ml0M Atmos Citadel Outside] (after awakening, Act 2)<br>
+[https://www.youtube.com/watch?v=imSH2Pv_sCo Atmos Crumbling World] (Act 3)<br>
+[https://www.youtube.com/watch?v=gcHfV2KKIBk Atmos Shellwood] (Act 3)<br>
+[https://www.youtube.com/watch?v=blGkSVGGKSI Atmos Shellwood No Wind] (Act 3)<br>
+[https://www.youtube.com/watch?v=ZzyCwfkjyCI Lake Atmos Hornet] (Act 3)<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+| main = [https://www.youtube.com/watch?v=Vhw-hTtuo8A Ambient Citadel Surrounds] (before awakening)
+}}
+
+{{Quote
+|The gate... the gate! O, the Grand Gate to the Citadel stands before us! We are so close! O mighty ones beyond the gate, we beg you! Open the way and let we poor, insignificant little pilgrims crawl into the light...
+|[[Tall Pilgrim]]
+|Hr=SS
+}}
+
+The <b>Grand Gate</b> is a small [[Areas (Silksong)|area]] in [[the Citadel]] in <i>[[Hollow Knight: Silksong]]</i>. It serves as the main entrance into the Citadel and is guarded by the [[Last Judge]]. 
+ 
+== Description ==
+The Grand Gate is the gate between the [[Blasted Steps]] and the Citadel. Once a lavish, gilded entry point, it has fallen into ruin in the wake of the [[Haunting]]. From the gate, a long bridge leads to a tall, open hall containing moveable scales. These scales can be used as platforms to access a breakable wall to enter the [[Choral Chambers]]. The scales can be tipped either by standing on the elevated ends or striking them from below with an upward attack.
+
+The hall also leads to a lift that used to go down to the [[Underworks]]. It has become dilapidated and gets stuck in the lift shaft shortly after it is activated, crashing to the ground once its lever is repeatedly switched. After obtaining the [[Silk Soar]], the lift shaft allows passage to a shrine dedicated to [[Nyleth]]. It is guarded by [[Shrine Guardian Seth]].
+
+== History ==
+The Grand Gate was the main destination for pilgrims on their way to the Citadel. To open the gate, the five bells in the [[Bellshrine]]s around [[Pharloom]] had to be rung, and the bells at the gate itself attuned with music.<ref>Hornet and [[Tall Pilgrim]] dialogue: <br><i>Tall Pilgrim: "We are so close! O mighty ones beyond the gate, we beg you! Open the way and let we poor, insignificant little pilgrims crawl into the light..." <br> Hornet: "I see no gatekeepers to heed your plea, pilgrim, though I too seek entry to the Citadel. Have you heard of a means to open this gateway?" <br> Tall Pilgrim: "Ahh... Weapons blunt it not. No holes for keys. 'Tis the bells, they say! The holy bells upon the path that open the way!"</i></ref> The Last Judge was the final arbiter, ensuring only those without sin were allowed entry into the Citadel.<ref>[[Last Judge]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Final arbiter of the Blasted Steps, tasked to ensure only the sinless ever step beyond the Grand Gate."</i></ref> Once inside the Grand Gate's hall, pilgrims were either sent up to the Choral Chambers to join [[the Choir]],<ref>[[Choir Pouncer]] Hunter's Journal entry: <i>"Agile bug, and one of few hardy pilgrims to have reached the Citadel."</i></ref><ref>[[Choir Cloak]] description: <i>"Garment gifted to pilgrims on admittance to the Citadel. Its thick weave offers additional protection against wind and cold."</i></ref> or sent down the lift to the Underworks to become [[Underworkers]].<ref>[[Bone Scroll]]: <i>"Filthy rag, marked with the scrawl of an Underworker. "So much suffering. Are we truly chosen, or have we sinned unknowing, and now are punished for it?"</i></ref> Some time after the Haunting struck the Citadel, the main path connecting the Grand Gate to the Choral Chambers was blocked off, preventing regular access.
+
+The base of the lift shaft had a gate to a shrine to Nyleth, the [[Old Hearts|old heart]] of [[Shellwood]].<ref>Nyleth Hunter's Journal entry: <i>"Ancient heart of Shellwood, connected to all its living things."</i></ref> The Citadel had made an accord with her to build the shrine and send their servants in reverence.<ref>[[Snail Shamans (Silksong)|Chapel Maid]]: <i>"We'd heard the Citadel once made grudging accord with that creature, sent their servants in reverence, even built a shrine up there somewhere. Maybe it's worth you searching for it?"</i></ref> [[Shrine Guardian Seth]] was charged to guard the shrine, with many [[The Choir|choirbugs]] falling to his blade.<ref>Shrine Guardian Seth: <i>"Halt, stranger. I am charged forever to guard the sacred shrine beyond. Any who wish to pass must cross their weapon with my own."</i></ref><ref>[[Shrine Guardian Seth]]: <i>"The shrine remains to remember the wood's first seed, her that once was and always is. I am the last bound to protect it. Sadly, in that service, many have fallen to my blade."</i></ref> Vines eventually covered the gate to the shrine, leaving it mostly inaccessible.
+
+== How to Access ==
+The great door that bars access to the Grand Gate at the end of the [[Blasted Steps]] must first be opened by playing the [[Needolin]] after Hornet has rung five bells at large bench stations across Pharloom. This causes the [[Last Judge]] to appear and challenge Hornet. Defeating the Last Judge finally allows the door to open, granting access to the Grand Gate and the start of [[Act 2]].
+
+Alternatively, if Hornet entered the Citadel from the east side via [[Sinner's Road]] and [[Exhaust Organ]], it can be reached from the far southwest corner of the [[Choral Chambers]].
+
+{{TabbedPOI
+|Header = true
+
+|NPC1 = Sherma
+|NPC2 = Seth
+
+|Enemy1 = Phacia
+|Enemy1Note = ([[Act 3]] only)
+|Enemy2 = Pollenica
+|Enemy2Note = (Act 3 only)
+|Enemy3 = Drapefly
+|Enemy3Note = (Act 3 only)
+|Enemy4 = Drapemite
+|Enemy4Note = (Act 3 only)
+|Enemy5 = Void Mass
+|Enemy5Note = (Act 3 only)
+
+|Boss1 = Shrine Guardian Seth
+|Boss2 = Nyleth
+
+|Loot1_FileName = Spool Fragment
+|Loot1_Amount = 1
+|Loot2_FileName = Pollen Heart
+|Loot2_Description = obtained after defeating [[Nyleth]]
+
+|LoreTabletsSource = SS Grand Gate
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Grand Gate 01.png!Grand bridge (Last Judge end)
+|Image2 = Screenshot SS Grand Gate 02.png!Grand bridge (Citadel end)
+|Image3 = Screenshot SS Grand Gate 03.png!Grand bridge (Act 3)
+|Image4 = Screenshot SS Grand Gate 06.png!Great scales
+|Image5 = Screenshot SS Grand Gate 04.png!Large lift
+|Image6 = Screenshot SS Grand Gate 05.png!Large lift (Crashed)
+|Image7 = Screenshot SS Shellwood 14.png!Shrine Guardian Seth arena
+|Image8 = Screenshot SS Shellwood 15.png!Nyleth shrine entrance
+|Image9 = Screenshot SS Shellwood 16.png!Nyleth statue
+|Image10 = Screenshot SS Shellwood 18.png!Nyleth memory entrance
+|Image11 = Screenshot SS Shellwood 19.png!Nyleth in her memory
+|Image12 = Screenshot SS Shellwood 20.png!Nyleth arena (Phase 1)
+|Image13 = Screenshot SS Shellwood 21.png!Nyleth arena (Phase 2)
+|Image14 = XboxScreenshot Grand Gate.png!Pre-release screenshot
+}}
+
+==Trivia==
+*In early footage of <i>Silksong</i>, it is shown that ringing the five bells was not needed to enter the Grand Gate.<ref>[https://www.youtube.com/watch?v=ehvStZ4r1Kk Hollow Knight: Silksong Teaser Footage (6/14/22) (Xbox Game Pass Promo)]</ref> This is due to them originally having a [[Cut Content (Silksong)/Ending B: Strung to Serve|different purpose]]. 
+{{Gallery
+|Image1=Grand Gate 2022.png!June 2022 Grand Gate
+|Image2=Screenshot SS Last Judge 03.png!Current Grand Gate
+}}
+*[[Cut Content (Silksong)/Areas#Grand Gate|Earlier in development]], the upper half of the lift room only required the [[Faydown Cloak]] to access.
+* Grand Gate is the only permanent area in the game to not have any benches.
+* In [[Act 2]], Grand Gate is the smallest area, at only four total rooms.
+** In [[Act 3]], this is beaten out by [[Verdania]] at only two rooms.
+{{History
+|game = SS
+|1.0.28891 (Patch 3): Fixed a soft-lock during the Grand Gate opening sequence, if the Citadel had been visited and some bellshrines remained inactive.
+|1.0.29242 (Patch 4): [[Beast Crest]]'s [[Needle Strike]] no longer gives unintended height, preventing Grand Gate's Shellwood Shrine from being accessible before Act 3.
+}}
+{{Localisation
+|DEname = Großes Tor
+|DEmeaning = Grand Gate
+|ESname = Gran Puerta
+|ESmeaning = Grand Door
+|FRname = Grand Portail
+|FRmeaning = Grand Portal
+|ITname = Gran Portale
+|ITmeaning = Grand Portal
+|JAname = 偉大なる門
+|JAromanised = Idainaru mon
+|JAmeaning = Great Gate
+|KOname = 장엄한 문
+|KOromanised = Jangeomhan mun
+|KOmeaning = Majestic Door
+|PTname = Grande Portão
+|PTmeaning = Grand Gate
+|RUname = Большие врата
+|RUromanised = Bol'šie vrata
+|RUmeaning = Great Gate
+|ZHname = 巨扉圣门
+|ZHromanised = Jù fēi shèng mén
+|ZHmeaning = Giant Door Sacred Gate
+|TWname = 宏偉聖門
+|TWromanised = Hóngwěi shèng mén
+|TWmeaning = Grand Scared Gate
+|CODEname=FRONT_GATE
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Areas}}
+[[Category:The Citadel]]
+
+[[zh:巨扉圣门]]

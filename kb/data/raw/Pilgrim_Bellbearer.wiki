@@ -1,0 +1,108 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Pilgrim Bellbearer.png|Hunter's Journal
+Pilgrim Bellbearer Idle.png|Idle
+Pilgrim Bellbearer Without Shawl.png|Without Shawl
+</gallery>
+|health = 20/{{BT|80}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.4|1.2|1|1|1}}
+| hasdrop = true
+| r1 = 9
+| r2 = 16
+| sh1 = 3-5
+| sh2 = 4-7
+|drops = [[Pilgrim Shawl]]
+|numbers_required = 10
+| void = 60%
+|singnum=2
+}}
+{{Quote
+|Hr = Journal
+|Common bug wielding a set of old bells. The bug will fling the bells at anyone it deems still free.<hr/>
+Their bells would once have rung with hope and mirth, lifting the spirits of any climbing companions. Sadly, those instruments have turned purely to combative use.
+}}
+
+<b>Pilgrim Bellbearers</b> are ranged Pilgrim [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are common bugs wielding a set of old bells, which they fling at anyone who is not [[Haunting|haunted]].<ref>Pilgrim Bellbearer [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Common bug wielding a set of old bells. The bug will fling the bells at anyone it deems still free."</i></ref>
+
+== Behaviour and Tactics ==
+Pilgrim Bellbearers naturally wander, slowly walking and turning around when they reach an edge or a wall.<br>
+When Hornet gets within range, they jump backwards and toss a bell at her, which travels in a heavy arc and bounces off a surface once before breaking on the next impact. If there is no space left to jump backwards, they jump forwards instead.
+
+The bell can easily be dodged by simply walking under the initial throw, and maintaining pressure on the Pilgrim Bellbearer prevents them from evading Hornet's strikes. Hornet can also deflect the bells with needle attacks, and can even knock them back at enemies to deal the same amount of damage that a needle hit would.
+
+Their attacks and contact damage both deal {{Damage|1}}
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Pilgrim Bellbearers have their health quadrupled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* There is no pain, nor fear, nor death...
+* Am I worthy?
+* The path... the holy path...
+* My soul... my shell. For you!
+* My faith... my reward...
+* Raise me higher! Pull me closer!
+* Lives end, journeys begin...
+* Raise my shell! Pull me closer!
+* Shining bright, our Citadel waits...
+* Pull us higher, ever higher...
+* We will climb! Climb! Climb forever!
+}}
+
+== Location ==
+Two Pilgrim Bellbearers can be found primarily in the middle of [[Greymoor]], in the cave east of Halfway Home in Act 1-2.<br>
+One Pilgrim Bellbearer can be found in the [[Blasted Steps]].<br>
+They can also be found alongside a [[Pilgrim Guide]] in a room in Shellwood, provided that the [[Covetous Pilgrim]] previously residing there has been defeated.<br>
+During [[Act 3]], Pilgrim Bellbearers can be found in [[Shellwood]] attacking Plinney, and in [[Bonegrave]] outside the [[Chapel of the Wanderer]] depending on the RNG layout.
+
+{{Gallery
+|Image1 = Mapshot SS Pilgrim Bellbearer 01.png!Location in Greymoor only in Act 1-2
+|Image2 = Mapshot SS Pilgrim Bellbearer 02.png!Location in the Blasted Steps
+|Image3 = Mapshot SS Covetous Pilgrim 01.png!Location in Shellwood in Act 1-2
+|Image4 = Mapshot SS Pilgrim Pouncer 06.png!Location in Shellwood in Act 3
+|Image5= Moss Grotto Piligrim Bellbearer Location.png!Location in [[Bone Bottom]] in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1=Screenshot SS Pilgrim Pouncer 03.png!In Greymoor with a Pilgrim Pouncer and Pilgrim Guide
+|Image2=Screenshot SS Pilgrim Bellbearer 01.png!In the Blasted Steps
+|Image3=Screenshot SS Pilgrim Bellbearer 02.png!Outside the Chapel of the Wanderer in Act 3
+|Image4=Screenshot SS Pilgrim Bellbearer 03.png!In Shellwood with a Pilgrim Guide
+|Image5=Screenshot SS Pilgrim Bellbearer 04.png!Attacking Plinney in Shellwood in Act 3
+|Image6=Screenshot SS Pilgrim Bellbearer 05.png!Throwing a bell
+|Image7=Screenshot SS Pilgrim Bellbearer 06.png!Responding to the Needolin
+|Image8=Screenshot SS Pilgrim Bellbearer 07.png!Without shawl during <i>[[Garb of the Pilgrims]]</i>
+}}
+
+{{Localisation
+|DEname = Pilger-Glockenträger
+|DEmeaning = Pilgrim Bell Carrier
+|ESname = Peregrino portacampanas
+|ESmeaning = Bell-bearing Pilgrim
+|FRname = Pèlerin Porte-cloche
+|FRmeaning = Pilgrim Bell Holder
+|ITname = Portacampane Pellegrino
+|ITmeaning = Bellbearer Pilgrim
+|JAname = 鈴持ちの巡礼者
+|JAromanised = Suzu mochi no junreisha
+|JAmeaning = Bell-bearing Pilgrim
+|KOname = 순례자 종 소유자
+|KOromanised = Sullyeja jong soyuja
+|KOmeaning = Pilgrim Bell Holder
+|PTname = Porta-sinos Peregrino
+|PTmeaning = Bellbearer Pilgrim 
+|RUname = Пилигрим-колокольник
+|RUromanised = Piligrim-kolokolʹnik
+|RUmeaning = Pilgrim Beller
+|ZHname = 朝圣钟卫
+|ZHromanised = Cháoshèng zhōng wèi
+|ZHmeaning = Pilgrim Bell Guard
+|CODEname = PILGRIM_BELL_THROWER
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

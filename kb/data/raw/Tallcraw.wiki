@@ -1,0 +1,109 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Tallcraw.png|Hunter's Journal
+Tallcraw Idle.png|Grounded
+Tallcraw Perched.png|Perched
+</gallery>
+| hasdrop = true
+| r1 = 18
+| r2 = 24
+| sh1 = 3-5
+| sh2 = 4-7
+| drops = [[Ragpelt]]
+|health = 50/{{BT|100}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.25|1|0.9|0.9|0.9}}
+|numbers_required = 20
+|singnum = 2
+}}
+
+{{Quote
+|Hr = Journal
+|Rag-winged adult crawbug bearing a scavenged pin.<hr />Far more hostile than their younger companions but seemingly less likely to roam far from their nest.}}
+
+<b>Tallcraws</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are lanky, pin-wielding [[Craws|crawbugs]] with shawl-like wings.
+
+== Behaviour and Tactics ==
+A Tallcraw sits in place until angered, at which point it either flies into the air or hops around on the ground, preparing for an attack. It occasionally switches between its grounded and aerial states, both of which have different attacks.
+
+The Tallcraw has 5 attacks:
+
+* <b>Jab:</b> Performs a short jab at Hornet.
+* <b>Dash:</b> Raises its pin before performing a long dash at Hornet, covering much more area.
+* <b>Arcing Slashes:</b> The Tallcraw hops into the air, spinning its pin around itself repeatedly. If caught in this attack, it comboes Hornet for {{Damage|1+1}}.
+* <b>Aerial Jab:</b> The Tallcraw flies into position above Hornet before pointing its pin downwards, trying to drop down on top of her.
+* <b>Aerial Dash:</b> The Tallcraw raises its pin towards Hornet before dashing straight at her, bouncing off the first surface it hits. The angle of the dash is not static and changes so that they go in a straight line towards Hornet.
+
+Tallcraws deal {{Damage|1}} on contact and with all attacks except Arcing Slashes.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Tallcraws have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* Shiny, shiny, all for us!
+* Our nest! Our clan!
+* Swoop and scratch...
+* Crack their shells...
+* Our caves! Our land!
+* Take their treasures!
+}}
+
+== Location ==
+Tallcraws are exclusively found in eastern [[Greymoor]] near Craw Lake.
+
+{{Gallery
+|Image1 = Mapshot SS Tallcraw Greymoor 01.png!Location in Greymoor
+|Image2 = Mapshot SS Tallcraw Greymoor 02.png!Location in Greymoor Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1=Screenshot SS Tallcraw 01.png!Sitting
+|Image2=Screenshot SS Tallcraw 02.png!Flying idle
+|Image3=Screenshot SS Tallcraw 03.png!Jab attack
+|Image4=Screenshot SS Tallcraw 04.png!Dash attack
+|Image5=Screenshot SS Tallcraw 05.png!Arcing Slashes attack
+|Image6=Screenshot SS Tallcraw 07.png!Aerial Jab attack
+|Image7=Screenshot SS Tallcraw 06.png!Aerial Dash attack
+|Image8=Screenshot SS Tallcraw 08.png!Singing
+|Image9=Screenshot SS Memorium 06.png!Corpses in the Memorium aviary
+|Image10=Screenshot SS Gurr the Outcast 01.png!Corpse next to Gurr the Outcast's arena
+|Image11=Screenshot SS Sinner's Road 15.png!Pickled Tallcraw corpses above Disgraced Chef Lugoli's arena
+|Image12 = Ari SS Sketch 08.jpg!Concept Sketches
+}}
+
+{{Localisation
+|DEname = Schlakskrähfer
+|DEmeaning = Lanky Craw<br><small><i>Krähfer</i> is the name of the [[Craws]] in German, a portmanteau of <i>krähe</i> (crow) and <i>käfer</i> (bug).</small>
+|ESname = Cuervón alto
+|ESmeaning = Tall Craw<br><small><i>Cuervón</i> is the name of the [[Craws]] in Spanish, from <i>cuervo</i> (crow) and <i>-ón</i> (augmentative suffix).</small>
+|FRname = Grand Corbotère
+|FRmeaning = Tall Craw<br><small><i>Corbotère</i> is the name of the [[Craws]] in French, from <i>corbeau</i> (crow).</small>
+|ITname = Corvide Alto
+|ITmeaning = Tall Corvid
+|JAname = セイタカボロガワ
+|JAromanised = Seitaka borogawa
+|JAkatakana = enemy
+|JAmeaning = Tall Craw<br><small>{{lang|ja|ボロガワ}} <i>borogawa</i> is the name of the [[Craws]] in Japanese, a combination of {{lang|ja|襤}} <i>boro</i> (rag) and {{lang|ja|皮}} <i>kawa</i> (skin).</small>
+|KOname = 큰까마귀
+|KOromanised = Keunkkamagwi
+|KOmeaning = Big Crow
+|PTname = Corbisco-alto
+|PTmeaning = From <i>Corbo</i> (Craw) and <i>-isco</i> (diminutive suffix) combined with <i>alto</i> (tall).
+|RUname = Высокар
+|RUromanised = Vysokar
+|RUmeaning = Tall Craw<br><small>{{lang|ru|Кар}} <i>kar</i> is the name of the [[Craws]] in Russian, from {{lang|ru|кар}} <i>kar</i> (Russian onomatopoeia for a crow's call).</small>
+|TWname = 高鴉蟲
+|TWromanised = Gāo yā chóng
+|TWmeaning = same
+|ZHname = 高鸦虫
+|ZHromanised = Gāo yā chóng
+|ZHmeaning = Tall Crow Bug
+|CODEname=CROWMAN
+|CODEmeaning=The basic Craws are internally known as "Crows"
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Enemies}}

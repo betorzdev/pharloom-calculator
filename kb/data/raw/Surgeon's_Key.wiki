@@ -1,0 +1,69 @@
+{{SS Infobox Item
+|image = Surgeon's Key.png
+|type = [[Items (Silksong)#Keys|Key]]
+|effects = Unlocks the sluice gate in the [[Whiteward]]
+|source = Found on the corpse of a [[Surgeon]] in the Whiteward
+|description = Discarded key of the Whiteward. <hr/>
+Opens the sluice beneath the operating theatre.
+}}
+
+{{Quote
+|Their procedures with Silk may have prolonged life within the Citadel, but they unknowingly gifted many minds to the monarch.
+|[[Hornet (Silksong)|Hornet]]
+|Hr = Hornet
+}}
+
+The <b>Surgeon's Key</b> is an [[Items (Silksong)#Keys|item]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+Used to open the sluice gate located west of the bottom of the [[Whiteward]] lift, allowing access to [[the Unravelled]].<ref>Inspecting the lock: <i>"An ornate lock mechanism with a keyhole at its centre."</i></ref>
+
+{{Gallery
+|Image1 = Mapshot SS Surgeon Key Use.png!Location in the Whiteward where the Surgeon's Key can be used
+|Image2 = Screenshot SS Surgeon's Key 01.png!Lock location
+}}
+
+== How to Acquire ==
+Found in the Whiteward, past a hidden path in the ceiling above the area with the [[Mortician]]s. In the western room of this area, [[Clawline]] must be used to open a shaft, which releases debris and a [[Surgeon]]'s corpse holding the key.
+
+{{Gallery
+|Image1 = Mapshot SS Surgeon's Key 01.png!Location in the Whiteward
+|Image2 = Screenshot SS Surgeon's Key 02.png!Room before activation
+|Image3 = Screenshot SS Surgeon's Key 03.png!Room after activation
+}}
+
+{{Localisation
+|DEname = Chirurgenschlüssel
+|DEmeaning = Surgeon Key
+|ESname = Llave del cirujano
+|ESmeaning = Surgeon's Key
+|FRname = Clé du chirurgien
+|FRmeaning = Key of the Surgeon
+|ITname = Chiave del Chirurgo
+|ITmeaning = Key of the Surgeon
+|JAname=外科医の鍵
+|JAromanised= Gekai no kagi
+|JAmeaning = Surgeon's Key
+|KOname = 외과의사의 열쇠
+|KOromanised = Oegwauisaui yeolsoe
+|KOmeaning = Surgeon's Key
+|PTname =  Chave do Cirurgião.{{sic}}
+|PTmeaning = Surgeon's Key.
+|RUname = Ключ Хирурга
+|RUromanised = Ključ Xirurga
+|RUmeaning = Surgeon's Key
+|TWname = 醫師鑰匙
+|TWromanised = Yīshī yàoshi
+|TWmeaning = same
+|ZHname = 医师钥匙
+|ZHromanised = Yīshī yàoshi
+|ZHmeaning = Doctor's Key
+|CODEname = WARD_BOSS_KEY
+|CODEmeaning = <code>BOSS</code> refers to [[The Unravelled]]
+}}
+
+{{Refs}}
+
+{{SS Nav Items}}
+
+[[Category:Items (Silksong)]]

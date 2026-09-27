@@ -1,0 +1,146 @@
+{{SS Infobox Boss
+|label1= Boss
+|image1 = B Bell Beast.png
+|theme = [https://youtu.be/S2W-Ec6lmy0 Bell Beast]
+|health = 150
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|drops = [[Silk Heart]]<br>[[Fast Travel (Silksong)|Fast travel]] via Bellways
+|numbers_required = 1
+|location = [[The Marrow]]
+
+|label2 = NPC
+|location2 = [[Bellways]]
+|title2= Bell Beast
+|combat2 = false
+|image2 = <gallery>
+Bell Beast.png|Idle
+Bell Beast Asleep.png|Asleep
+</gallery>
+|singnum2 = 2
+|2s1= Reacting to the Needolin
+|2s2= Teaching the Beastling Call
+|g2 = Bell Beast
+}}
+
+{{Quote
+|Hr = Journal
+|Huge, hardbone bug that lives within and travels through the veins of old bells across Pharloom.<hr/>
+This one has allied themself with me, either as thanks for their saving or respect for one judged as equal. Whichever the reason, their fellowship is welcome.
+}}
+
+The <b>Bell Beast</b> is a main [[Bosses (Silksong)|boss]] and [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. She is a huge, hardbone bug that lives within the [[Bellways]] of [[Pharloom]].<ref name="hj">Bell Beast [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Huge, hardbone bug that lives within and travels through the veins of old bells across Pharloom."</i></ref> Once freed and defeated, the Bell Beast can be used as transport across the kingdom.
+
+== In-game Events ==
+The Bell Beast is first found in [[the Marrow]], ensnared by strands of [[Silk]]. She can be freed using the [[Silkspear]], but then attacks [[Hornet (Silksong)|Hornet]]. Defeating the boss rewards Hornet with the [[Silk Heart]]. After she consumes it and ascends the platform to the right of the arena, the Bell Beast returns, now allied with Hornet and ready to transport her across [[Pharloom]].
+
+The Bell Beast can be summoned to any unlocked [[Bellway]] station, not only via the "CALL" prompt but also by playing the [[Needolin]] or using the [[Challenge]] ability. If Hornet is standing atop the spot where the Bell Beast emerges, she will be knocked slightly to the side.
+
+While idle at a station, the Bell Beast can perform several actions:
+* She stomps after not being interacted with for 5-15 seconds or after Hornet hits her 3-5 times. The hit counter resets after every stomp.
+* She purrs while Hornet plays the Needolin and in response to loud noises. She also purrs before setting off and the first time Hornet approaches her after entering the station.
+* She has a 20% chance of being asleep each time Hornet enters a Bellway station and can be awoken by any action that would normally summon her, as well as by being hit or by loud noises. She is always asleep at the Bone Bottom Bellway station and is always awake if travelled to using the [[Beastling Call]].
+
+In [[Act 3]], the Bell Beast disappears from the station she was left at, and attempting to call her instead causes [[Bell Eater]] to emerge. Hornet can then descend into the Bellway to fight the creature.
+
+Once Bell Eater has taken enough damage, the Bell Beast returns to deliver the final blow, forcing the boss underground and finishing it off-screen. She then returns and can be interacted with, but instead of the usual "TRAVEL" prompt, the "SPEAK" prompt appears, and Hornet talks to her in a softer voice than usual. The Bell Beast then begins calling her children, and Hornet starts playing the Needolin alongside her. Shortly after, four [[Beastlings]] emerge to sing with their mother, and Hornet finishes learning the Beastling Call. Following this, the Bell Beast and her children lead Hornet back to the station.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+The Bell Beast spends most of the fight underground, emerging only to attack. Her breach points are telegraphed by dust clouds.
+
+=== Phase 1 ===
+The Bell Beast has three attacks:
+* <b>Charge</b>: Bursts out of the ground at one end of the arena and charges to the other.
+* <b>Leap</b>: Growls underground before leaping from one end of the arena to the other. She pauses for a moment before burrowing again. The initial dust cloud is notably taller and reaches the ceiling.
+* <b>Bell Burst</b>: Bursts her upper body out of the ground in the centre of the arena, sending out two rolling bells, one in each direction, before going underground again. She gains this attack after reaching 120 HP.
+
+Contact with the Bell Beast or falling bells deals {{Damage|2}}.
+
+Phase 1 always starts with <b>Charge</b>. After this, <b>Leap</b> and <b>Charge</b> each have a 50% chance of being selected, and the boss cannot attack from the same side of the arena more than twice in a row.
+
+Once <b>Bell Burst</b> becomes available, it has a 40% chance of occurring, dropping the probability of the other two moves to 30% each. No attack can be performed more than twice in a row, and <b>Bell Burst</b> is guaranteed to trigger after three other attacks.
+
+=== Phase 2 ===
+After reaching 75 HP, the Bell Beast bursts her upper body out of the ground in the centre of the arena to roar before burrowing again. The arena then rumbles as eight bells fall from the ceiling at random locations. These bells bounce once and sink into the floor upon landing.
+
+From then on, every time the Bell Beast performs a <b>Bell Burst</b> or <b>Leap</b>, a bell falls from the ceiling in the centre of the arena.
+
+== Locations ==
+The Bell Beast is initially found trapped in [[Silk]] at [[the Marrow]]'s [[Bellway]] station. Once defeated, she becomes a friendly mount and is always found at the last Bellway station that Hornet travelled to.
+{{Gallery
+|Image1 = Mapshot SS Bell Beast 01.png!Location in the Marrow
+|Image2 = Mapshot SS Bell Beast 02.png!Locations throughout Pharloom
+}}
+
+== Creation and Development ==
+The Bell Beast was first shown in the <i>Silksong</i> reveal trailer, which showcased her boss fight and fast travel cutscene.<ref>[https://youtu.be/pFAknD_9U7c?t=46 Hollow Knight: Silksong Reveal Trailer] (0:46)</ref><ref>[https://youtu.be/pFAknD_9U7c?t=67 Hollow Knight: Silksong Reveal Trailer] (1:07)</ref> The February 2021 issue of <i>EDGE Magazine</i> revealed new details about the first encounter with the Bell Beast, including the original concept of her escaping upon defeat instead of allying with Hornet.<ref name=edge>[https://pocketmags.com/edge-magazine/february-2021 Edge Magazine February 2021 edition], p. 62. ([[:File: Reference Edge Bell Beast.png|Archive]])</ref> In the same issue, [[Ari Gibson]] described this boss as <i>"your exam fight to get out into the real wide world"</i>. Footage of Hornet arriving at the station on the Bell Beast was included in the June 2022 <i>Xbox Game Pass Reveal Trailer</i>, and in September 2022, a screenshot of the reworked fast travel cutscene was added to the PlayStation Store page.<ref>[https://youtu.be/JSfuFlhsxZY?t=13 Hollow Knight: Silksong - Xbox Game Pass Reveal Trailer - Xbox & Bethesda Games Showcase 2022] (0:13)</ref><ref>[https://www.reddit.com/r/HollowKnight/s/ZU8XjvrhBq New Silksong screenshots from the PS Mobile App!] on Reddit</ref>
+
+The Bell Beast has a [[Cut Content (Silksong)/Graphics#Prompts|cut prompt icon]], as well as [[Cut Content (Silksong)/Text#Bell Beast|cut Needolin dialogue]] for when she is strung up and during the fight.
+
+{{Gallery
+|Image1 = Silksong Early 007.png!<i>Silksong</i> reveal trailer
+|Image2 = Screenshot SS Bell Beast 05.jpeg!Pre-release screenshot
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Bell Beast 01.png!Trapped in Silk
+|Image2 = Screenshot SS Sherma 12.png!Visited by Sherma
+|Image3 = Screenshot SS Bell Beast 09.png!Roaring
+|Image4 = Screenshot SS Bell Beast 03.png!Charge
+|Image5 = Screenshot SS Bell Beast 02.png!Leap
+|Image6 = Screenshot SS Bell Beast 04.png!Bell Burst
+|Image7 = Bellway Marrow.png!Arena in the Marrow
+|Image8 = Screenshot SS Bell Beast 06.png!Idle
+|Image9 = Screenshot SS Bell Beast 10.png!Stomping
+|Image10 = Screenshot SS Bell Beast 07.png!Asleep
+|Image11 = Screenshot SS Bell Eater 15.png!Attacking Bell Eater
+|Image12 = Screenshot SS Bell Beast 08.png!Singing with her children
+|Image13 = Bellbeast Travel Normal.mp4!Travelling
+}}
+
+== Achievements ==
+{{Achievement|game=silksong|Liberated}}
+{{Achievement|game=silksong|Connected}}
+{{Achievement|game=silksong|Bonded|S}}
+
+== Trivia ==
+* When [[Matthew Griffin]] was asked for the option to pet the Bell Beast, he replied that attacking her functions as petting and later confirmed that he was serious.<ref>{{Cite tweet|author=[[Matthew Griffin]]|user=griffinmatta |number=1964016769237909832|title=Attack to pet}} ([[:File: Reference Leth Bell Beast.png|Archive]])</ref><ref>[https://www.twitch.tv/videos/2877545723?t=0h42m48s NEO TITAN | Q&A and Demo going LIVE!] (42:48): <i>"After, uh, you know, Silksong came out, people were like, 'How do you pet the Bell Beast?' And I said, 'Attack to pet.' But I believe that! I wasn't joking."</i></ref>
+{{Localisation
+|DEname = Glockenbestie
+|DEmeaning = Bell Beast
+|ESname = Bestia Campana
+|ESmeaning = Bell Beast
+|FRname = Bête des Cloches
+|FRmeaning = Beast of the Bells
+|ITname = Bestia Campana
+|ITmeaning = Bell Beast
+|JAname = 鐘脈の獣
+|JAromanised= Kane myaku no shishi
+|JAmeaning = Beast of the Bell Vein
+|KOname = 종 야수
+|KOromanised = Jong yasu
+|KOmeaning = Bell Beast
+|PTname = Besta dos Sinos
+|PTmeaning = Beast of the Bells
+|RUname = Колокольный зверь
+|RUromanised = Kolokolʹnyj zverʹ
+|RUmeaning = Bell Beast
+|TWname = 鐘道獸
+|TWromanised = Zhōngdào shòu
+|TWmeaning = same
+|ZHname = 钟道兽
+|ZHromanised = Zhōngdào shòu
+|ZHmeaning = Bellways Beast
+|CODEname = BONE_BEAST
+}}
+
+{{Refs|hr=ss}}
+
+[[pt:Besta dos Sinos]]
+
+{{SS Nav Enemies}}
+{{SS Nav NPCs}}
+[[Category:NPCs (Silksong)]]
+[[Category:Enemies (Silksong)]]
+[[Category:Bosses (Silksong)]]

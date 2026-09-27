@@ -1,0 +1,109 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Thread Raker.png|Hunter's Journal
+Thread Raker Idle.png|Idle
+Thread Raker Working.png|Working
+</gallery>
+| hasdrop = true
+| r1 = 19
+| r2 = 26
+| sh1 = 5-8
+| sh2 = 7-10
+|health = 50/{{BT|100}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.75|0.6|0.55|0.55}}
+|numbers_required = 15
+|singnum = 2
+}}
+
+{{Quote
+|Hr = Journal
+|Tall bug charged to pile Silk dregs in preparation for respooling. Their sharp rake now doubles equally well as a stabbing weapon.<hr/>
+Theirs seems a sad, grueling task, serving their lifetime for a Citadel unseen.
+}}
+
+<b>Thread Rakers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are tall [[Moorbugs]], charged to pile [[Silk]] dregs with their rakes to prepare them for respooling by [[Silk Snipper]]s.<ref>Thread Raker [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Tall bug charged to pile Silk dregs in preparation for respooling. Their sharp rake now doubles equally well as a stabbing weapon."</i></ref><ref>[[Silk Snipper]] Hunter's Journal entry: <i>"Scissor-wielding bug charged to cut and spool fallen dregs of Silk for return to the Citadel above."</i></ref>
+
+== Behaviour and Tactics ==
+Thread Rakers can perform 3 different attacks, and often move backwards or forwards between each attack.
+* <b>Rake Throw:</b> Leaps back slightly and pauses in the air, then throws its rake at Hornet before falling back to the ground.
+* <b>Double Thrust:</b> Thrusts towards Hornet with its rake twice, though it cannot turn around or end the attack before the second thrust, leading to easy counterattacks from Hornet.
+* <b>Burrow:</b> Burrows into the ground and tunnels away from or towards Hornet, indicated by a dust cloud where they are currently burrowing.
+
+Thread Rakers deal {{Damage|1}} with all of their attacks and on contact.
+
+Being able to jump away from Hornet means that Thread Rakers can punish her if she attacks carelessly, so be patient and get hits in at safe moments, such as when they are finishing a Double Thrust, or immediately after they Burrow.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Thread Rakers have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2|
+* Spin it, send it...
+* Catch it, spool it...
+* Why... always this?
+* Even these dregs...
+* The air... the fields...
+* Are we only dregs?
+}}
+
+== Location ==
+One Thread Raker can be found in the room outside [[Greymoor]] Bellway station, holding its Rake up towards the falling dregs.<br>
+Another Thread Raker can be found patrolling the elevated hall between the two Windmills.
+
+A non-respawning Thread Raker can be found once in the small battle arena inside the base of the right windmill.
+In [[Act 3]], two more non-respawning Thread Rakers can be found there.
+
+{{Gallery
+|Image1 = Mapshot SS Thread Raker Greymoor 01.png!Location in Greymoor
+|Image2 = Mapshot SS Thread Raker Greymoor 02.png!Location in Greymoor Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1=Screenshot SS Thread Raker 01.png!Working
+|Image2=Screenshot SS Thread Raker 02.png!Idle
+|Image3=Screenshot SS Thread Raker 03.png!Rake Throw attack
+|Image4=Screenshot SS Thread Raker 04.png!Double Thrust attack
+|Image5=Screenshot SS Thread Raker 05.png!Burrow
+|Image6=Screenshot SS Thread Raker 06.png!Responding to the Needolin
+|Image7=Screenshot SS Thread Raker 07.png!Corpse in Act 3
+}}
+
+{{History
+|game = SS
+|1.0.29909 (Patch 5): Fixed an instance of Thread Rakers being able to get stuck out of bounds.
+}}
+{{Localisation
+|DEname = Fadenharker
+|DEmeaning = Thread Rake
+|ESname = Hilador
+|ESmeaning = Spinner
+|FRname = Démêleur de soie
+|FRmeaning = Detangler of Silk
+|ITname = Filastrello
+|ITmeaning = Portmanteau of <i>filo</i> (thread) and <i>rastrello</i> (rake).
+|JAname = イトアツメ
+|JAromanised = Ito-atsume
+|JAkatakana = enemy
+|JAmeaning = Thread Collector<br><small>Combination of {{lang|ja|糸 <i>ito</i>}} (thread) and {{lang|ja|集め <i>atsume</i>}} (collector)
+|KOname = 실 갈퀴꾼
+|KOromanised = Sil galkwikkun
+|KOmeaning = Thread Raker
+|PTname = Rastelador-de-seda
+|PTmeaning = Silk-raker
+|RUname = Нитехват
+|RUromanised = Nitexvat
+|RUmeaning = Thread Grabber
+|TWname = 殘絲耙工
+|TWromanised = Cánsī págōng
+|TWmeaning = same
+|ZHname = 残丝耙工
+|ZHromanised = Cánsī págōng
+|ZHmeaning = Dreg Silk Raker
+|CODEname=FARMER_CENTIPEDE
+|CODEmeaning=<code>FARMER</code> internally refers to [[Greymoor]] enemies.
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

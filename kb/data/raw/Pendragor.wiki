@@ -1,0 +1,70 @@
+{{SS Infobox Enemy
+|drops = None
+|health = 70
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 10<br>(Instantly completed on [[Clover Dancers]]' death)
+}}
+{{Quote
+|Hr = Journal
+|Heavy insect that lives near large bodies of water. Its weighty body is best avoided.<hr/>
+When they do not hinder my path, I find their simple motion rather pleasant.
+}}
+
+<b>Pendragors</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are heavy insects from [[Verdania]] that live near large bodies of water.<ref>Pendragor Hunter's Journal entry: <i>"Heavy insect that lives near large bodies of water."</i></ref> Pendragors are larger variants of the [[Pendra]].
+
+== Behaviour and Tactics ==
+Pendragors are non-hostile flying enemies that hover over bodies of water and fly horizontally in periodic bursts. Despite their lack of hostility, they still deal {{Damage|1}} contact damage.
+
+Often usable for platforming.
+
+Respawns upon re-entering the room.
+
+== Location ==
+Pendragors can be found in [[Lost Verdania]].
+
+{{Gallery
+|Image1 = Mapshot SS Pendragor 01.png!Locations in Lost Verdania
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Pendragor 01.png!Near thorns
+|Image2 = Screenshot SS Pendragor 02.png!Above water near Leaf Gliders
+}}
+
+== Trivia ==
+* Pendragors do not respond to the [[Needolin]].
+{{Localisation
+|DEname = Pendragor
+|DEmeaning = —
+|ESname = Pendragor
+|ESmeaning = —
+|FRname = Pendragore
+|FRmeaning = —
+|ITname = Pendragor
+|ITmeaning = —
+|JAname = ペンドラゴル
+|JAromanised= Pendoragoru
+|JAkatakana = foreignenemy
+|JAmeaning = Pendragor
+|KOname = 펜드라고르
+|KOromanised = Pendeuragoreu
+|KOmeaning = Pendragor
+|PTname =  Pendragor
+|PTmeaning = —
+|RUname = Пендрагор
+|RUromanised = Pendragor
+|RUmeaning = Pendragor
+|TWname = 潘德拉戈
+|TWromanised = Pāndélágē
+|TWmeaning = same
+|ZHname = 潘德拉戈
+|ZHromanised = Pāndélágē
+|ZHmeaning = Pendragor
+|CODEname=DRAGONFLY_LARGE
+|CODEmeaning=Pendras are internally known as "Hornet Dragonflies"
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

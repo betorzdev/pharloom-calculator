@@ -1,0 +1,197 @@
+{{SS Infobox Area
+| tab1 = Acts 1/2
+| image1 = <gallery>
+Deep Docks Map Marked.png|Marked
+Deep Docks Map Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Deep Docks Map Ruin Marked.png|Marked
+Deep Docks Map Ruin Clean.png|Unmarked
+</gallery>
+| connection = [[The Marrow]]<br>[[Far Fields]]<br>[[Hunter's March]]<br>[[The Abyss (Silksong)|The Abyss]]
+| ambience = [https://www.youtube.com/watch?v=Gv6P4_cWnDc Atmos Deep Docks Exterior]<br>
+[https://www.youtube.com/watch?v=Ql4E5i_ladg Atmos Deep Docks Interior]<br>
+[https://www.youtube.com/watch?v=WcIVBqq2_2k Atmos Boneforest]<br>
+[https://www.youtube.com/watch?v=OTw391-Yc8Y Atmos Wilds]<br>
+[https://www.youtube.com/watch?v=fWVGhLwoNX4 Atmos Lava Near Big]<br>
+[https://www.youtube.com/watch?v=GeUHAnIixB4 Atmos Lava Far]
+| main = [https://www.youtube.com/watch?v=Z_NlJ5Un3kk Deep] (Upper Deep Docks)
+[https://www.youtube.com/watch?v=7QbU0ohlEWA Deep Docks] (Lower Deep Docks)
+| action = [https://youtu.be/swPmNk9_fw0?si=u0UZUdRY-EBdPU6W Generic Enemy Battle A]
+}}
+{{Quote
+|These docks, I thought them small when first I passed. Now I feel the structure's true bulk hides below the molten lake.
+|[[Shakra]]
+|Hr=SS}}
+The <b>Deep Docks</b> is an [[Areas (Silksong)|area]] in <i>[[Hollow Knight: Silksong]]</i>. It is a heavily industrialised forge built atop and within a lake of lava.
+
+== Description ==
+The Deep Docks is an industrialised forge area in the lowlands of [[Pharloom]]. Built by [[the Citadel]],<ref>A statue of the [[:File:Seek Quest Icon.png|Citadel symbol]] can be seen in the background of the Lace arena</ref><ref>Hornet and [[Shakra]] dialogue: <br><i>Hornet: "The scale of it all impresses me. If this is merely an outpost of the Citadel above, then their capital must be grand beyond measure."<br>Shakra: "Yokkala... Perhaps so. They must have prized indeed the work done here, to build something so vast in such a dangerous place."</i></ref> the facility was designed to harvest and deliver rare supplies found only in the volcanic depths of the land. Its main inhabitants are [[Dock Workers]], equipped with bell-shaped helmets, protecting them from falling rubble and attacks from above.
+
+[[File:Screenshot SS Deep Docks 05.png|thumb|200px|left|A typical room in the Deep Docks, featuring hanging platforms with [[Flintstone]]]]
+True to its name, the area features platforms and docks suspended over lakes of lava and beds of burning Flintstone. The lava deals {{Damage|2|type=Fire}} upon contact, while the hot Flintstone will gradually burn [[Hornet (Silksong)|Hornet]] for {{Damage|1|type=Fire}} every few seconds. This damage can be negated with the [[Magma Bell]], a useful tool purchased from [[Forge Daughter]].
+
+In the northernmost room lies a [[Weaver Burial Spire]], where Hornet can obtain the [[Swift Step]] ability, granting her the power to dash for the first time.
+
+Hornet can first encounter [[Lace]] here and can initiate a duel with her. Lace guards the entrance to the [[Far Fields]], and after the battle, a [[Bellshrine]] can be rung to open a gate beyond her arena. The [[Swift Step]] is required to leap over a lava gap past the gate. Her fight can be [[Lace#In-game Events|completely skipped]] via an alternate passage through the lower Deep Docks.
+
+The lower portion of the Deep Docks is first accessible by using a [[Simple Key (Silksong)|Simple Key]] on a locked door directly south of [[Forge Daughter]]. However, as the room connecting to the [[Far Fields]] can be opened from the other side, the entire lower Docks can be accessed with the [[Clawline]] without ever unlocking the Simple Key door.
+
+[[File:Screenshot SS Deep Docks 14.png|thumb|200px|right|The diving bell used to access the Abyss, located deep within the forge]]
+The lowest reaches of the Deep Docks house a [[Diving Bell|diving bell]] that Hornet uses to access [[The Abyss (Silksong)|the Abyss]], once she finds someone who can operate it in [[Act 3]].
+
+== History ==
+The Deep Docks was built by [[the Citadel]] to extract and process resources. Most of Pharloom's metal was smelted here,<ref>[[Smelt Shoveller]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"This kingdom appears more advanced in metalwork than my own ever was, in great part due to the natural heat source at its base."</i></ref> and it was also the mining site for the long-burning [[Flintstone]], which the Citadel used for forging in the [[Underworks]] and as fuel throughout the kingdom.<ref>[[Forge Daughter]]: <i>"The deposits around here, those long-burning rocks. They're useful to the Citadel, in whatever their shadowy business, but useless if you require tools of us!"</i></ref><ref>Flintstone [[Materium]] entry: <i>"Long burning rock from the base of Pharloom. Mined and used by the Citadel in its forgings."</i></ref><ref>[[Cogwork Hauler]] Hunter's Journal entry: <i>"Small automaton with a shielded shell, intended to carry loads of dangerous flintflame."</i></ref> Additionally, the Deep Docks supplied Smokerock and Sweetsmelt.<ref>Deep Docks [[Lore Tablets (Silksong)#Deep Docks|Lore Tablet]]:<br> <i>"At the seventh bell toll, send:<br> Thirty measures, four beats Smokerock,<br> Eight beats Sweetsmelt,<br> Mark of fealty, all workers.<br><br>At the ninth bell toll, send:<br> Twenty measures, two beats Smokerock,<br> Seven beats Sweetsmelt,<br> Mark of fealty, all workers."</i></ref> The [[Dock Workers|workforce]] is commanded by [[Forebrothers Signis & Gron]].
+
+Forge Daughter, a bug of an ancient line of smiths, was appointed to the area by the Citadel.<ref>Hornet and Forge Daughter dialogue: <br><i>Hornet: "The Citadel dwellers? The veiled bugs? They ordered you here?"<br>Forge Daughter: "Yes! An age ago that. Such is duty! We Forge Daughters live to hone the craft, and aid the line."</i></ref><ref>Forge Daughter: <i>"Sent from our Forgehome we were, at request of those holy bugs above."</i></ref> She serves the Docks in exchange for holy esteem for her Forgehome.<ref>Forge Daughter: <i>"By the Citadel's patronage, and our long duty upon these docks, our Forgehome would swell in holy esteem."</i></ref>
+
+The workers have now fallen to the [[Haunting]], leaving only Forge Daughter and [[Ballow]] unaffected.<ref>Forge Daughter: <i>"It's only ourselves and young Ballow with any sense left."</i></ref>
+
+== How to Access ==
+The Deep Docks is located directly east of [[the Marrow]], but is inaccessible until Hornet acquires the [[Silkspear]] and frees the [[Bell Beast]], which allows her to traverse the northern Marrow to the southeast exit that connects directly to the Deep Docks.
+
+{{TabbedPOI
+|Header = true
+
+|NPC1 = Forge Daughter
+|NPC2 = Shakra
+|NPC3 = Gilly
+|NPC4 = Ballow
+|NPC5 = Garmond and Zaza
+|NPC5Note = ([[Act 3]] only)
+
+|Enemy1 = Skull Scuttler
+|Enemy2 = Skull Brute
+|Enemy3 = Beastfly
+|Enemy4 = Caranid
+|Enemy5 = Vicious Caranid
+|Enemy6 = Hardbone Hopper
+|Enemy7 = Pilgrim Hulk
+|Enemy8 = Lavalug
+|Enemy9 = Lavalarga
+|Enemy10 = Smelt Shoveller
+|Enemy11 = Flintstone Flyer
+|Enemy12 = Flintflame Flyer
+|Enemy13 = Smokerock Sifter
+|Enemy14 = Deep Diver
+|Enemy15 = Fertid
+|Enemy16 = Flapping Fertid
+|Enemy17 = Skarrlid
+|Enemy18 = Skarrwing
+|Enemy19 = Skarr Scout
+|Enemy20 = Skarr Stalker
+|Enemy21 = Spear Skarr
+|Enemy22 = Shardillard
+|Enemy23 = Wardenfly
+|Enemy23Note = (With Rune Cage)
+|Enemy24 = Skullwing
+|Enemy24Note = ([[Act 3]] only)
+|Enemy25 = Void Mass
+|Enemy25Note = ([[Act 3]] only)
+
+|Boss1 = Forebrothers Signis & Gron
+|Boss2 = Lace
+
+|Loot1_FileName = Icon_SS_Swift_Step
+|Loot1_Name = Swift Step
+|Loot2_FileName = Diving Bell Key
+|Loot2_Description = Given by [[Ballow]] during the <i>[[SEEK: The Dark Below]]</i> objective
+|Loot3_FileName = Flintslate
+|Loot4_FileName = Mask Shard (Silksong)
+|Loot4_Name = Mask Shard (Silksong){{!}}Mask Shard
+|Loot4_Amount = 1
+|Loot5_FileName = Spool Fragment
+|Loot5_Amount = 2
+|Loot6_FileName = Memory Locket
+|Loot6_Amount = 1
+|Loot7_FileName = Craftmetal
+|Loot7_Amount = 1
+|Loot8_FileName = Silkeater
+|Loot8_Amount = 1
+|Loot9_FileName = Flea
+|Loot9_Amount = 3
+|Loot10_FileName = Frayed Rosary String
+|Loot10_Amount = 1
+|Loot11_FileName = Shard Bundle
+|Loot11_Amount = 2
+|Loot12_FileName = Beast Shard
+|Loot12_Amount = 1
+|Loot13_FileName = Flintstone
+|Loot13_Description = [[Materium]] entry
+
+|LoreTabletsSource = SS Deep Docks
+
+|EnemyGauntletsSource = Deep Docks 1, Deep Docks 2, Deep Docks 3
+}}
+
+
+== Creation and Development ==
+{{Main|Cut Content (Silksong)/Areas#Deep Docks}}
+[[File:Deep Docks 2017.png|thumb|220px|Portion of 2017 Boneforest sketch]]
+On the 2017 sketch map, Deep Docks is listed within the large Boneforest zone as two minor areas: Old Dock and Under the Lava. Its earliest content was created  around August 2017. As of then, Deep Docks only existed as a single room. "Old Dock" would become this single Deep Docks room, and served a literal purpose as a dock for the [[Diving Bell]] in the adjacent Far Fields room. "Under the Lava" would, later on, become the large southern caverns of Deep Docks. The position of this old Diving Bell would have roughly lined up with these "Under the Lava" rooms and was likely intended to fast travel to them.
+
+[[Lace]]'s arena and the northern [[Weaver Burial Spire]] rooms are still labelled "Bone East" and thus were seemingly considered part of Far Fields earlier in development. Other "Dock" rooms were only added around the time of the <i>Silksong</i> demo's release in mid 2019. Among these additions are the above-mentioned, "Under the Lava" southern rooms, which coincided with the removal of the old Diving Bell as it was no longer required to reach them. [[Forge Daughter]] was also added at this time and could be seen in the reveal trailer released in February 2019.<ref>[https://www.youtube.com/watch?v=pFAknD_9U7c Hollow Knight: Silksong Reveal Trailer]</ref> In the aformentioned June 2019-released demo, the initially accessible portion of Deep Docks could be explored, with some changes compared to the final game; most notably the existence of the [[Cut Content (Silksong)/Items#Dock Key|Dock Key]] item, which was required to be found and used before accessing Lace's arena.<ref name="treehouse">[https://www.youtube.com/watch?v=Y8lvHT_IQbM Hollow Knight: Silksong Gameplay - Nintendo Treehouse: Live | E3 2019]</ref> Also in the demo, the room to the left of the [[Bellway]] station was not behind a breakable wall,<ref name="treehouse" /> and the Deep Docks Bellshrine was a sub-area named "Wild Songshrine".<ref>[https://www.youtube.com/watch?v=ZMRD2McAmrU Lace - Hollow Knight: Silksong - E3 demo - Moscow, Level Up Nintendo 2019]</ref> In a June 2019 blog post, [[Team Cherry]] described the Deep Docks as "a groaning structure atop (and within) a lake of lava."<ref>[https://www.teamcherry.com.au/blog/post-e3-wrap-silksong-systems-update Team Cherry blog post] of June 25th, 2019</ref>
+
+{{Gallery
+|Title = Gallery
+|Image1 = Bellway, Deep Docks.png!Bellway station
+|Image2 = Screenshot SS Deep Docks Arena 1.png!Bell arena room
+|Image3 = Screenshot SS Deep Docks 03.png![[Forge Daughter]] with [[Ballow]]
+|Image4 = Screenshot SS Deep Docks 04.png!Door with a simple lock
+|Image5=Screenshot SS Deep Docks 05.png!Flintstone floor room
+|Image6=Screenshot SS Deep Docks 01.png!Weaver burial spire
+|Image7=Screenshot SS Deep Docks 02.png!Lace's arena
+|Image8=Screenshot SS Deep Docks 06.png!Bellshrine
+|Image9=Screenshot SS Deep Docks 07.png!Skarr camp near [[Hunter's March]]
+|Image10=Screenshot SS Deep Docks 08.png!Church
+|Image11=Screenshot SS Deep Docks Arena 2.png!Upper arena room
+|Image12=Screenshot SS Deep Docks Arena 3.png!Southeast arena room
+|Image13=Screenshot SS Deep Docks 09.png![[Memory Locket]] location
+|Image14=Screenshot SS Deep Docks 10.png![[Forebrothers Signis & Gron | Forebrothers]] arena (pre-fight)
+|Image15=Screenshot SS Deep Docks 11.png!Forebrothers arena (post-fight)
+|Image16=Screenshot SS Deep Docks 12.png!Sauna bench
+|Image17=Screenshot SS Deep Docks 14.png!Diving bell (first encounter)
+|Image18=Screenshot SS Deep Docks 13.png!Diving bell (fixed by Ballow)
+|Image19=Screenshot SS Deep Docks 15.png!Diving bell (inside, open door)
+|Image20=Screenshot SS Deep Docks 16.png!Diving bell (inside, closed door)
+|Image21=Screenshot SS Deep Docks 18.png!Ballow with machinery
+|Image22=Screenshot SS Deep Docks 17.png!Abyss escape location
+|Image23=Screenshot SS EDGE 02.png!Pre-release screenshot
+|Image24 = Ari SS Sketch 16.png!Concept sketches
+}}
+
+{{Localisation
+|DEname = Tiefenkai
+|DEmeaning = Deep Dock
+|ESname = Muelles Profundos
+|ESmeaning = Deep Docks
+|FRname = Quais Profonds
+|FRmeaning = Deep Docks
+|ITname = Piattafonde
+|ITmeaning = Play on <i>piattaforme</i> (platforms) with <i>forme</i> (forms) replaced with <i>fonde</i> (deep).
+|JAname = 深層の港
+|JAromanised = Shinsō no minato
+|JAmeaning = Harbour of the Depths
+|KOname = 깊은 부두
+|KOromanised = Gipeun budu
+|KOmeaning = Deep Dock
+|PTname = Docas Profundas
+|PTmeaning = Deep Docks
+|RUname = Глубокие доки
+|RUromanised = Glubokie doki
+|RUmeaning = Deep Docks
+|ZHname = 深坞
+|ZHromanised = Shēn wù
+|ZHmeaning = Deep Dock
+|TWname = 深塢
+|TWromanised = Shēn wù
+|TWmeaning = same
+|CODEname=DOCKS
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Areas}}
+[[fr:Quais Profonds]]
+[[es:Muelles Profundos]]
+[[zh:深坞]]

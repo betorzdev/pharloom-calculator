@@ -1,0 +1,108 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Shellwood Gnat.png|Hunter's Journal
+Shellwood Gnat Winged.png|Winged
+Shellwood Gnat Wingless.png|Wingless
+Shellwood Gnat Inner Bug.png|Without Shell
+Shellwood Gnat Winged Hidden.png|Hidden
+Shellwood Gnat Wingless Hidden.png|Hidden alt.
+</gallery>
+| hasdrop = true
+| sh1 = 3-5
+| sh2 = 4-7
+|health = 15/{{BT|30}} (shell) <br> 10/{{BT|20}} (inner bug)
+|damage_modifiers = {{SS Multiple Damage Modifiers|Shell|1|0.8|0.8|0.8|0.8|Inner Bug|1|1|1|1|1}}
+|numbers_required = 15
+|singnum=1
+}}
+
+{{Quote
+|Hr = Journal
+|Tiny, soft creature that armours itself using the hard, hollow growths of Shellwood.<hr/>
+If the woody hide is shattered, the bug will still bravely, foolishly try to attack.
+}}
+
+<b>Shellwood Gnats</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are tiny, green flying bugs encased in dark Shellwood, with a flying and a crawling variant.
+
+== Behaviour and Tactics ==
+<b>Winged Variant:</b> Hangs from the ceiling, shaking and chirping before popping off it once Hornet gets near. Attacks by slowly flying towards Hornet, attempting to deal contact damage.<br>
+If Hornet gets out of its range for a few seconds, it flies up and re-nestles into the nearest ceiling.
+
+<b>Wingless Variant:</b> Disguises itself either on the ground or on the ceiling, shaking and chirping before popping out once Hornet gets near. Simply walks back and forth, turning around once it reaches an edge or a wall.<br>
+If Hornet gets out of its range for a few seconds, it disguises itself on the ground again.
+
+In either case, once their protective shell is broken, it shatters into [[Shell Shards]], and the inner winged bug pops out of it and begins or continues flying.<br>
+Their unarmoured self moves a lot faster than their flying shelled version, but with significantly poorer control and traction.
+Despite being unprotected, they still attempt to fly into Hornet to deal contact damage.
+
+Both variants of the Shellwood Gnat deal {{Damage|1}} on contact.
+
+The entry for the Hunter's Journal will only be successfully completed if the true form of the [[Shellwood Gnat]] is eliminated.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Shellwood Gnats have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Shifting root... grasping branch...
+* Creeping, creeping...
+* High and low, all around...
+* Climbing, climbing...
+}}
+
+== Location ==
+Shellwood Gnats can be found primarily in [[Shellwood]], but they can also be found in the [[Memorium]].
+
+{{Gallery
+|Image1 = Mapshot SS Shellwood Gnat 01.png!Locations in Shellwood
+|Image2 = Mapshot SS Shellwood Gnat 03.png!Locations in Shellwood in Act 3
+|Image3 = Mapshot SS Shellwood Gnat 02.png!Locations in the Memorium
+}}
+
+== Gallery ==
+{{Gallery
+|Image1= Screenshot SS Shellwood Gnat 01.png!Disguised (Ground)
+|Image2= Screenshot SS Shellwood Gnat 02.png!Disguised (Winged)
+|Image3= Screenshot SS Shellwood Gnat 03.png!Singing
+|Image4= Screenshot SS Shellwood Gnat 04.png!Shellwood Gnat in Memorium (Ground)
+|Image5= Screenshot SS Shellwood Gnat 05.png!Shellwood Gnat in Memorium (Winged)
+}}
+
+== Trivia ==
+* Some [[Shell Shard]] deposits within Shellwood resemble the shell of winged Shellwood Gnats.
+{{Gallery
+| Image1 = Shellwood Gnat Shell Shard Deposit.png
+}}
+
+{{Localisation
+|DEname = Schalenwald-Schnake
+|DEmeaning = Shellwood Cranefly
+|ESname = Jején de Bosque Coraza
+|ESmeaning = Gnat of Shellwood
+|FRname = Moucheron de Coquibois
+|FRmeaning = Gnat of Shellwood
+|ITname = Moscerino di Carapiano
+|ITmeaning = Shellwood Midge
+|JAname = カラキブヨ
+|JAromanised = Karaki buyo
+|JAkatakana = enemy
+|JAmeaning = Combination of {{lang|ja|殻木 <i>karaki</i>}} (shell wood) and {{lang|ja|蚋 <i>buyo</i>}} ([[wikipedia:Black fly|blackflies]])
+|KOname = 갑목 각다귀
+|KOromanised = Gammok gakdagwi
+|KOmeaning = Shellwood Gnat
+|PTname = Casquilho
+|PTmeaning = From <i>casca</i> (shell) and <i>-ilho</i> (diminutive suffix).
+|RUname = Гнус из Панцирного леса
+|RUromanised = Gnus iz Pancirnogo lesa
+|RUmeaning = Gnat from Armoured Forest 
+|TWname = 殼木蚋蟲
+|TWromanised = Kémù ruìchóng
+|TWmeaning = same
+|ZHname = 壳木蚋虫
+|ZHromanised = Kémù ruìchóng
+|ZHmeaning = Shellwood Gnat
+|CODEname= SHELLWOOD_GNAT
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

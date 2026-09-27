@@ -1,0 +1,475 @@
+{{SS Infobox Area
+| tab1 = Acts 1/2
+| image1 = <gallery>
+Greymoor_Map_Marked.png|Marked
+Greymoor_Map_Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Greymoor_Map_Ruin_Marked.png|Marked
+Greymoor_Map_Ruin_Clean.png|Unmarked
+</gallery>
+| connection = [[Far Fields]]<br>[[Bellhart]]<br>[[Sinner's Road]]<br>[[Wisp Thicket]]<br>[[Verdania]]
+| ambience = [https://www.youtube.com/watch?v=yCBJwSeYl1U Atmos Greymoor]<br>
+[https://www.youtube.com/watch?v=SxLt0-RW43k Atmos Greymoor Interior]<br>
+[https://www.youtube.com/watch?v=X-KW08PART0 Atmos Greymoor Cave]<br>
+[https://www.youtube.com/watch?v=-pnwSouW5Po Atmos Rain]<br>
+[https://www.youtube.com/watch?v=yjK6Ym8cDxE Atmos Rain Indoors]<br>
+[https://www.youtube.com/watch?v=u-j6oEvMQvM Lake Atmos]<br>
+[https://www.youtube.com/watch?v=ZzyCwfkjyCI Lake Atmos Hornet]
+| main = [https://www.youtube.com/watch?v=Qb7x-NGfUg0 Sub] (Interior rooms)<br>
+[https://www.youtube.com/watch?v=V9gyd1O5clw Main] (+ Sub, Open rooms)<br>
+[https://www.youtube.com/watch?v=iBlPiGByuWs Greymoor] (Main + Sub)
+|action = [https://youtu.be/swPmNk9_fw0?si=u0UZUdRY-EBdPU6W Generic Enemy Battle A]<br>
+[https://www.youtube.com/watch?v=NRJe8xGWGK4 Dark Descent] (Act 3)
+}}
+{{Quote|Hr=SS
+|As Hornet ascends from the foundations of Pharloom towards the citadel at its crest, she may pass through the wasted caverns of Greymoor. The misted fields and dilapidated towers are now infested with Crawbugs, devious nesting types, and the former tenders of the land have become haunted. 
+|[https://www.teamcherry.com.au/blog/post-e3-wrap-silksong-systems-update Team Cherry]
+}}
+<b>Greymoor</b> is an [[Areas (Silksong)|area]] in <i>[[Hollow Knight: Silksong]]</i>. Its expansive caverns are comprised of damp and dreary fields beset by a constant rainfall, making bodies of water abundant in the area. 
+== Description ==
+Greymoor is a large area with a gloomy, dark atmosphere. Constant rainfall leaves the entire region sodden and damp.
+[[Craws]] and [[Mites]] can be found all throughout the area.
+
+The tenders of the area: [[Thread Raker]]s, [[Dreg Catcher]]s, and [[Silk Snipper]]s, continue to perform their jobs under the influence of the [[Haunting]].
+Dilapidated towers used by the tenders of the moors can be found in its western reaches. The towers themselves resemble massive windmills, though only two can be entered; many more can be seen spinning slowly in the background.
+
+[[Hornet (Silksong)|Hornet]] can choose to either defeat the [[Moorwing]] to enter [[Bellhart]] or travel with the [[Flea Caravan]] to Greymoor if at least five fleas have been found, allowing access to Bellhart without defeating Moorwing first. If skipped via the Caravan, Moorwing can be found in a separate location outside of the Bellway station.
+
+Hornet can bind the Silk Skill [[Thread Storm]] after defeating an arena of [[Craw]]s, [[Tallcraw]]s, and [[Squatcraw]]s. A lever can be struck to deploy a series of balloons that provide access to the Skill. The [[Threefold Pin]] can also be found in a hidden room along the area's eastern wall.
+
+In [[Act 3]], Hornet is able to access [[Verdania]] through a breakable wall in the east. This is only if she's freed the [[Green Prince]] in [[Sinner's Road]] and later talked to him in the room of the [[Cogwork Dancers]].
+
+The lower part of Greymoor, which supposedly serves as storage as evidenced by the numerous silk spools and bags, is infested with [[Mite]]s, [[Fluttermite]]s and [[Mitemother]]s. The area is filled with traps placed in an attempt to control the Mite population. The traps instantly kill Mites and Fluttermites, and combo Hornet for {{Damage|1+1}} if she gets caught in them.
+* The traps can be safely disarmed by striking them with the [[Needle]], the end hit of [[Clawline]], and {{CrestSlot|Red|s}}.
+* The initial hit from the traps can be parried with [[Cross Stitch]] or a perfectly-timed [[Needle-bounce]].
+* While Hornet's base [[Sprint]] speed is not fast enough to dodge the traps, they can be avoided by the initial boost of speed at the beginning of a sprint, as well as the enhanced sprint speed provided by [[Silkspeed Anklets]] and [[Flea Brew]].
+* The [[Fractured Mask]] breaks on the <b>first</b> hit of the traps.
+
+== History ==
+In the past, Greymoor was less dangerous before the Haunting, and pilgrims passed through the land more frequently.<ref>[[Creige]]: <i>"Aye. It's a damp climb through these parts. Used to be just pilgrims trekkin' my way, but odd times these are, and you ain't even the strangest shell wandering about."</i></ref> It is also stated that it was used as farmland before [[The Citadel]] ordered the keepers to catch silk.<ref>[[Crull and Benjin|Benjin]]: <i>"It's said that the moors used to grow a bounty of fresh food, way back before that Citadel set us about catchin' their fallin' thread."</i></ref>
+
+After the Citadel's construction, many bugs were tasked to work as tenders of the moors, catching and processing the silk dregs that fell from the Citadel above.<ref>[[Lore Tablets (Silksong)|Lore Tablet]]: <i>Litany of the Worker. May we catch the dregs and never tire, May we clean the dregs and never hunger, May we spool the dregs and never falter.</i></ref> [[Dreg Catcher]]s catch silk dregs with a spiked staff,<ref name="dreg">[[Dreg Catcher]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Bug charged to catch dregs of Silk that fall from the Citadel. Will attack with its staff if provoked. (...) These bugs look to have spent every waking moment at their work. Grim, endless labour in service of the unseen Citadel above."</i></ref> [[Thread Raker]]s roll the silk up with long rakes in preparation for respooling,<ref name="raker">[[Thread Raker]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Tall bug charged to pile Silk dregs in preparation for respooling. Their sharp rake now doubles equally well as a stabbing weapon. (...) Theirs seems a sad, grueling task, serving their lifetime for a Citadel unseen."</i></ref> and [[Silk Snipper]]s would cut the silk into spools inside the towers to return it to the Citadel above.<ref>[[Silk Snipper]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Scissor-wielding bug charged to cut and spool fallen dregs of Silk for return to the Citadel above."</i></ref> 
+
+Eventually, these bugs would fall to the [[Haunting]] by [[Grand Mother Silk]], performing their jobs endlessly in service to a Citadel they will never see.<ref name="dreg">[[Dreg Catcher]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Bug charged to catch dregs of Silk that fall from the Citadel. Will attack with its staff if provoked. (...) These bugs look to have spent every waking moment at their work. Grim, endless labour in service of the unseen Citadel above."</i></ref><ref name="raker">[[Thread Raker]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Tall bug charged to pile Silk dregs in preparation for respooling. Their sharp rake now doubles equally well as a stabbing weapon. (...) Theirs seems a sad, grueling task, serving their lifetime for a Citadel unseen."</i></ref>
+
+The [[Moorwing]] is a winged [[mite]]-beast that was bred to be large by the bugs of The Citadel, who used it to catch workers who tried to flee their tasks. After the death of its wranglers, the Moorwing stalked the towers of Greymoor, feasting on passing pilgrims and tenders alike.<ref>[[Moorwing]] [[Hunter's Journal (Silksong)|Journal Entry]]:<i> "Winged mite-beast, bred large to catch workers who once tried to flee their tasks. With its wranglers long dead, the Moorwing stalked the towers of Greymoor, feasting on passing pilgrims and tenders alike."</i></ref>
+
+The bugs of [[Sinner's Road]] bred [[Muckroach]]es for the purpose of feeding the workers of Greymoor.<ref>[[Creige]]:<i> "You visited them pens up above here, miss? Horrid place, once all about growing meat or some such. Meant to keep us moorbugs livin', and working, it's told..."</i></ref>
+
+== How to Access ==
+Greymoor can first be reached via the long vertical tunnel in [[Far Fields]] after acquiring the [[Drifter's Cloak]]. 
+
+Alternatively, Hornet can travel to Greymoor with the [[Flea Caravan]] after finding five [[Flea]]s.
+
+If Hornet uses a [[Simple Key (Silksong)|Simple Key]] to open the [[Wormways]], she can use [[Swift Step]] to scale it, reach [[Shellwood]], then enter through [[Bellhart]].
+
+{{TabbedPOI
+|Header = true
+
+|NPC1 = Shakra
+|NPC2 = Garmond and Zaza
+|NPC3 = Kratt
+|NPC4 = Flea Caravan
+|NPC5 = Yarnaby
+|NPC6 = Seth
+|NPC6Note = ([[Act 3]] only)
+|NPC7 = Mister Mushroom (Silksong){{!}}Mister Mushroom
+
+|Enemy1 = Pilgrim Groveller
+|Enemy2 = Pilgrim Pouncer
+|Enemy3 = Pilgrim Bellbearer
+|Enemy4 = Winged Pilgrim Bellbearer
+|Enemy4Note = ([[Act 3]] only)
+|Enemy5 = Pilgrim Guide
+|Enemy6 = Mite
+|Enemy7 = Fluttermite
+|Enemy8 = Mitemother
+|Enemy9 = Dreg Catcher
+|Enemy10 = Silk Snipper
+|Enemy11 = Thread Raker
+|Enemy12 = Craw
+|Enemy13 = Tallcraw
+|Enemy14 = Squatcraw
+|Enemy15 = Roachcatcher
+|Enemy16 = Furm
+|Enemy17 = Shardillard
+|Enemy18 = Wardenfly
+|Enemy18Note = (With Rune Cage)
+|Enemy19 = Void Mass
+|Enemy19Note = (Act 3 only)
+
+|Boss1 = Moorwing
+|Boss2 = Shakra
+|Boss2Note = (After completing <i>[[Trail's End]]</i> [[wish]], [[Act 2]] only)
+
+|Loot1_FileName = Witch Crest File
+|Loot1_Name = Witch Crest
+|Loot1_Description = bound after completing the <i>[[Infestation Operation]]</i> wish
+|Loot2_FileName = Pimpillo
+|Loot2_Description = crafted using {{C|1}} in the room above [[Yarnaby]]'s bellhome
+|Loot3_FileName = Flea Brew
+|Loot3_Description = given by [[Grishkin]] after completing the <i>[[The Lost Fleas]]</i> wish
+|Loot4_FileName = Spool Fragment
+|Loot4_Amount = 1
+|Loot5_FileName = Memory Locket
+|Loot5_Amount = 1
+|Loot6_FileName = Flea
+|Loot6_Amount = 2
+|Loot6_Description = including [[Kratt]]
+|Loot7_FileName = Bone Scroll
+|Loot7_Amount = 1
+|Loot8_FileName = Silkeater
+|Loot8_Amount = 1
+|Loot9_FileName = Frayed Rosary String
+|Loot9_Amount = 1
+|Loot10_FileName = Shard Bundle
+|Loot10_Amount = 2
+
+|LoreTabletsSource = SS Greymoor
+
+|EnemyGauntletsSource = Greymoor 1, Greymoor 2
+}}
+
+== Sub-area: Halfway Home ==
+{{SS Infobox Area
+|image1 = <gallery>
+Halfway_Home_Map_Marked.png|Marked
+Halfway_Home_Map_Clean.png|Unmarked
+</gallery>
+|ambience = [https://www.youtube.com/watch?v=7z3lYC0A6Ek Atmos Halfway]<br>
+[https://www.youtube.com/watch?v=X-KW08PART0 Atmos Greymoor Cave]<br>
+[https://www.youtube.com/watch?v=yjK6Ym8cDxE Atmos Rain Indoors]
+|main = [https://www.youtube.com/watch?v=di5fLHRIGCg Repose]
+|action = [https://youtu.be/swPmNk9_fw0?si=u0UZUdRY-EBdPU6W Generic Enemy Battle A]
+}}
+<b>Halfway Home</b> is a tavern located in the central area of Greymoor. It is initially accessible only via the western door. The eastern door must be unlocked by standing on a pressure plate inside the building, after which it will remain unlocked.
+
+A bench can be found inside, as well as the [[NPCs (Silksong)|NPCs]] [[Creige]] (the bartender), and [[Nuu]], who gives the [[Hunter's Journal (Silksong)|Hunter's Journal]]. Creige sells a drink of Nectar for {{R|10}}, which fully heals Hornet and restores 6 [[Silk]].
+
+After fulfilling the <i>[[Crawbug Clearing]]</i> [[wish]] for Creige, a giant scarecraw will appear on top of the Halfway Home, and the [[Craw]]s that used to be around will be gone.
+
+As part of the <i>[[Great Taste of Pharloom]]</i> wish, Hornet can pay Creige {{R|480}} for the [[Vintage Nectar]] from the Halfway Home's cellar, which is infested with Skarr.
+
+{{TabbedPOI
+|NPC1 = Creige
+|NPC2 = Nuu
+|NPC3 = Aged Pilgrim
+|NPC4 = Exhausted Pilgrim
+
+|Enemy1 = Mite
+|Enemy1Note = (During the <i>[[Great Taste of Pharloom]]</i> wish)
+|Enemy2 = Fluttermite
+|Enemy2Note = (During the <i>Great Taste of Pharloom</i> wish)
+|Enemy3 = Skarrlid
+|Enemy3Note = (During the <i>Great Taste of Pharloom</i> wish)
+|Enemy4 = Skarrwing
+|Enemy4Note = (During the <i>Great Taste of Pharloom</i> wish)
+|Enemy5 = Skarr Scout
+|Enemy5Note = (During the <i>Great Taste of Pharloom</i> wish)
+|Enemy6 = Skarr Stalker
+|Enemy6Note = (During the <i>Great Taste of Pharloom</i> wish)
+|Enemy7 = Spear Skarr
+|Enemy7Note = (During the <i>Great Taste of Pharloom</i> wish)
+|Enemy8 = Skarrgard
+|Enemy8Note = (During the <i>Great Taste of Pharloom</i> wish)
+
+|Loot1_FileName = Hunters Journal Silksong
+|Loot1_Name = Hunter's Journal (Silksong){{!}}Hunter's Journal
+|Loot2_FileName = Tool Pouch
+|Loot2_Amount = 1
+|Loot2_Description = given by [[Nuu]] after completing the <i>[[Bugs of Pharloom]]</i> wish
+|Loot3_FileName = Hunter's Memento
+|Loot3_Description = given by [[Nuu]] after filling the [[Hunter's Journal (Silksong)|Hunter's Journal]]
+|Loot4_FileName = Memory Locket
+|Loot4_Amount = 1
+|Loot5_FileName = Crafting Kit
+|Loot5_Amount = 1
+|Loot5_Description = given by [[Creige]] after completing the <i>[[Crawbug Clearing]]</i> wish
+|Loot6_FileName = Vintage Nectar
+|Loot6_Description = sold by [[Creige]] for {{R|460}} during the <i>[[Great Taste of Pharloom]]</i> wish
+
+|LoreTabletsSource = SS Halfway Home
+
+|EnemyGauntletsSource = Greymoor 4
+}}
+
+== Sub-area: Craw Lake ==
+{{SS Infobox Area
+|tab1= Acts 1/2
+|image1= <gallery>
+Craw_Lake_Map_Marked.png|Marked
+Craw_Lake_Map_Clean.png|Unmarked
+</gallery>
+|tab2= Act 3
+|image2= <gallery>
+Craw_Lake_Map_Ruin_Marked.png|Marked
+Craw_Lake_Map_Ruin_Clean.png|Unmarked
+</gallery>
+|ambience = [https://www.youtube.com/watch?v=yCBJwSeYl1U Atmos Greymoor]<br>
+[https://www.youtube.com/watch?v=SxLt0-RW43k Atmos Greymoor Interior]<br>
+[https://www.youtube.com/watch?v=X-KW08PART0 Atmos Greymoor Cave]
+|main = [https://www.youtube.com/watch?v=iBlPiGByuWs Greymoor]
+|action = [https://www.youtube.com/watch?v=swPmNk9_fw0 Generic Enemy Battle A]<br>
+[https://www.youtube.com/watch?v=y5O2l_VQI-k Cut Through] (Act 3)
+}}
+
+<b>Craw Lake</b> is a large lake in the east of Greymoor. It is frequented by [[Craw]]s, [[Tallcraw]]s, and [[Squatcraw]]s.
+
+[[Shakra]] will temporarily camp at the entrance to Craw Lake, providing Hornet a place to rest. Shakra will leave if Hornet progresses too much further{{MissingInfo}}, removing the most convenient [[Bench (Silksong)|Bench]] for the area. 
+
+A dilapidated building within the lake contains two [[Mite]]s and an arena.
+* Round 1: [[Craw]] and [[Squatcraw]]
+* Round 2: 2 [[Craw]]s
+* Round 3: [[Craw]] and [[Tallcraw]]
+* Round 4: 3 [[Craw]]s
+* Round 5: [[Squatcraw]] and [[Tallcraw]]
+
+Upon completing the arena, a lever will be revealed that deploys a series of balloons around the lake, allowing Hornet to access the areas above and around it.
+
+In the room above the lake, the skill [[Thread Storm]] can be found, and to the to right of the lake a [[Flea]] can be found, guarded by a Tallcraw.
+
+=== Court of Craws ===
+During [[Act 3]], the [[Craw Summons]] has a chance of being delivered when sitting in certain benches in the areas near Greymoor. Taking the Summons to the locked door in the Craw Lake house will unlock the door, and going inside, Hornet will be confronted by the Court of Craws, consisting of a jury of Craws and their lord and justice, the [[Crawfather]].<ref>[[Crawfather]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Lord and justice of Pharloom's craws. Delivers death to condemned bugs with his steel-plated beak."</i></ref> 
+
+After an arena fight, Hornet is rewarded with the [[Craw Memento]] and [[Crawbell]]. 
+
+{{TabbedPOI
+|Enemy1 = Mite
+|Enemy2 = Craw
+|Enemy3 = Tallcraw
+|Enemy4 = Squatcraw
+|Enemy5 = Craw Juror
+|Enemy5Note = ([[Act 3]] only) 
+|Enemy6 = Tallcraw Juror
+|Enemy6Note = ([[Act 3]] only) 
+|Enemy7 = Squatcraw Juror
+|Enemy7Note = ([[Act 3]] only) 
+
+|Boss1 = Crawfather
+|Boss1Note = ([[Act 3]] only) 
+
+|Loot1_FileName = Thread Storm
+|Loot2_FileName = Threefold Pin
+|Loot3_FileName = Flea
+|Loot3_Amount = 1
+|Loot4_FileName = Frayed Rosary String
+|Loot4_Amount = 2
+|Loot5_FileName = Craw Memento
+|Loot5_Description = dropped by [[Crawfather]]
+|Loot6_FileName = Crawbell
+|Loot6_Description = requires defeating Crawfather
+
+|EnemyGauntletsSource = Greymoor 3, Crawfather
+}}
+{{Hr|SS}}
+
+== Sub-area: Chapel of the Reaper ==
+{{SS Infobox Area
+|image1 = <gallery>
+Chapel_of_the_Reaper_Map_Marked.png|Marked
+Chapel_of_the_Reaper_Map_Clean.png|Unmarked
+</gallery>
+|ambience = [https://www.youtube.com/watch?v=X-KW08PART0 Atmos Greymoor Cave]
+|main = [https://www.youtube.com/watch?v=O-cYxAOIbVM Chapel Ambience]
+|action = [https://www.youtube.com/watch?v=sBNJLCHwqAY Chapel Ambience Battle Layer]
+}}
+
+The <b>Chapel of the Reaper</b> is a sub-area located in the west of Greymoor. It can be accessed on the left of the massive windmill guarded by several [[Silk Snipper]]s.
+
+It contains a short platforming section with an [[Enemy Gauntlets (Silksong)|enemy gauntlet]] at the end.
+
+Upon completion, Hornet can bind the [[Reaper Crest]]. After binding the Crest and leaving the sub-area, the door closes permanently.
+
+{{TabbedPOI
+
+|Enemy1 = Dreg Catcher
+|Enemy2 = Silk Snipper
+|Enemy3 = Thread Raker
+
+|Loot1_FileName = Reaper Crest File
+|Loot1_Name = Reaper Crest
+
+|EnemyGauntletsSource = Greymoor 5
+}}
+{{Hr|SS}}
+
+== Creation and Development ==
+{{Main|Cut Content (Silksong)/Areas#Greymoor}}
+[[File:September 2019 Greymoor 17.jpeg|thumb|220px|Gilded segment, September 2019]]
+Greymoor rooms were first created around October 2017. Its layout remained relatively the same throughout development, with mostly additions instead of removals or reworks. The most major rework to the main area was the removal of gilded [[Citadel]] structuring in the room <code>Greymoor_17</code> around September 2021. According to the unused save file flags, the room had a [[Spool Extender]] locked behind a "battle". Greymoor also formerly contained a second Bellway station, cut by February 2024. 
+
+Prior to around April 2022, Greymoor also connected to the later-cut [[Cut Content (Silksong)/Areas#Pharloom Bay|Pharloom Bay]] and [[Cut Content (Silksong)#Hunters' Nest|Hunters' Nest]], the latter through the then-larger [[Creige]]'s cellar. [[Chapel of the Reaper]] was also not originally a sub-area, and contained a cut [[Cut Content (Silksong)#Crest Shrine|Crest Shrine]]. Sinner's Road, then known as [[Cut Content (Silksong)/Areas#Dustroach Pens|Dustroach Pens]], was also a sub-area of Greymoor.
+
+Greymoor was showcased in the February 2019 <i>Silksong</i> reveal trailer, which notably displayed a [[Burning Bug]] in the area near a [[Silk Snipper]], though it may have been placed there for the purposes of the trailer as [[Wisp Thicket]] had yet to be created. Garmond and Zaza were also seen assistinng in a Greymoor room that they do not appear in currently.<ref name="revealtrailer">[https://www.youtube.com/watch?v=pFAknD_9U7c Hollow Knight: Silksong Reveal Trailer]</ref>
+
+More screenshots were revealed in a June 2019 blog post, in which [[Team Cherry]] discussed Greymoor. They noted how "<i>In the pens at this land’s height, keepers wrangle swarms of Dustroaches, rapid-breeding pests with insatiable appetites.</i>", alluding to Dustroach Pens, and also called it "<i>a huge area, one of the biggest we’ve ever created</i>", likely due to Dustroach Pens existing then. Lastly, they teased that "<i>Hornet will uncover many mysteries, make several new friends and duel with a lethal, lunging foe</i>". This "lunging foe" may be referring to the Moorwing or Phantom.<ref name="blog">[https://www.teamcherry.com.au/blog/post-e3-wrap-silksong-systems-update Team Cherry blog post] of June 25th, 2019</ref>
+
+Greymoor's theme is internally known as "Greymoor v4", implying that there were three revisions of the song previously composed.<ref>[https://www.youtube.com/watch?v=V9gyd1O5clw&list=PLfUKr9nPvx8CUsUvpEVTGCXZ4nnzUm0wz&index=21 Silksong Ambience - Greymoor v4 MAIN (loopable)]</ref> 
+
+{{Gallery|
+|Title= Gallery
+|Image1 = Bellway Greymoor (Entrance).png!Bellway Station Entrance
+|Image2 = Bellway Greymoor.png!Bellway Station
+|Image3 = Screenshot SS Greymoor 17.png!Main Room
+|Image4 = Screenshot SS Greymoor 03.png![[Shakra]]'s Camp (empty)
+|Image5 = Screenshot SS Greymoor 04.png!Bell Shrine
+|Image6 = Screenshot SS Greymoor 05.png!Arena Encounter
+|Image7 = Screenshot SS Greymoor 01.png!Halfway Home
+|Image8 = Screenshot SS Greymoor 06.png![[Nuu]] in her Room at<br>Halfway Home
+|Image9 = Screenshot SS Greymoor 07.png!Nuu's Room empty in<br>Halfway Home
+|Image10 = Screenshot SS Craw 06.png!Craw-like weather vane above Halfway Home
+|Image11 = Screenshot SS Greymoor 14.png!Scarecraw above<br>Halfway Home
+|Image12 = Screenshot SS Greymoor 08.png!Message Board
+|Image13 = Screenshot SS Greymoor 02.png!Chapel of the Reaper Corpse (pre-claiming)
+|Image14 = Screenshot SS Greymoor 12.png!Chapel of the Reaper Corpse (post-claiming)
+|Image15 = Screenshot SS Greymoor 09.png![[Silkeater]] location
+|Image16 = Screenshot SS Greymoor 10.png![[Moorwing]] Arena ([[Bellhart]] end)
+|Image17 = Screenshot SS Greymoor 11.png![[Yarnaby]]'s Bellhome
+|Image18 = Screenshot SS Greymoor 15.png!Yarnaby's Bellhome (inside)
+}}
+
+{{Gallery
+|Image1 = Screenshot SS Greymoor 13.png![[Pimpillo]] room
+|Image2 = Screenshot SS Greymoor 20.png![[Thread Storm]] Weaver Spire
+|Image3 = Screenshot SS Greymoor 16.png!Court of Craws
+|Image4 = Silksong Early 013.png!<i>Silksong</i> reveal trailer
+|Image6 = Screenshot SS EDGE 07.png!Pre-release screenshot
+|Image7 = Ari SS Sketch 26.png!Concept sketches
+}}
+
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Reduced chance of [[Silk Snipper]]s in Chapel of the Reaper sometimes getting stuck out of bounds.
+|1.0.28650 (Patch 2): Further reduced chance of Silk Snippers getting stuck out of bounds in Chapel of the Reaper battle.
+}}
+{{Localisation
+|DEname = Graumoor
+|DEmeaning = Greymoor
+|ESname = Páramo Gris
+|ESmeaning = Grey Moor 
+|FRname = Sombrevale
+|FRmeaning=Dark Valley
+|ITname = Terruggiosa
+|ITmeaning = Portmanteau of <i>terra</i> (land) and <i>uggiosa</i> (gloomy).
+|JAname = 灰色の丘陵
+|JAromanised = Haiiro no kyūryō
+|JAmeaning = Grey Hill
+|KOname = 회색 황야
+|KOromanised = Hoesaek hwangya
+|KOmeaning = Grey Wild
+|PTname = Pântano Cinzento
+|PTmeaning = Greymoor or Grey Swamp
+|RUname = Мрачная топь
+|RUromanised = Mračnaja top'
+|RUmeaning = Gloomy Marsh
+|ZHname = 灰沼
+|ZHromanised = Huī zhǎo
+|ZHmeaning = Grey Swamp 
+|TWname = 灰沼
+|TWromanised = Huī zhǎo
+|TWmeaning = same
+|CODEname=GREYMOOR
+}}
+
+=== Halfway Home ===
+{{Localisation
+|hr=false
+|DEname = Übergangshaus
+|DEmeaning = Transitional House
+|ESname = Hogar a medio camino
+|ESmeaning = Halfway Home
+|FRname= Mi-Chemin
+|FRmeaning= Halfway
+|ITname = Mezzastrada
+|ITmeaning = Halfway
+|JAname = 途上の家
+|JAromanised = Tojō no ie
+|JAmeaning = Home on the Way
+|KOname = 집까지 반걸음
+|KOromanised = Jipkkaji bangeoreum
+|KOmeaning = Halfway to Home
+|PTname = Quase Lar
+|PTmeaning = Almost Home<br><small>Nearly identical to <i>quase lá</i> (almost there).</small>
+|RUname = На полпути к дому
+|RUromanised = Na polputi k domu
+|RUmeaning = Halfway Home
+|TWname = 中途酒館
+|TWromanised = Zhōngtú jiǔguǎn
+|TWmeaning = same
+|ZHname = 中途酒馆
+|ZHromanised = Zhōngtú jiǔguǎn
+|ZHmeaning = Halfway Tavern
+|CODEname=HALFWAY_HOUSE
+}}
+
+=== Craw Lake ===
+{{Localisation
+|hr=false
+|DEname = Krähfersee
+|DEmeaning = Craw Lake<br><small><i>Krähfer</i> is the name of the [[Craws]] in German, a portmanteau of <i>krähe</i> (crow) and <i>käfer</i> (bug).</small>
+|ESname = Lago Cuervón
+|ESmeaning = Craw Lake<br><small><i>Cuervón</i> is the name of the [[Craws]] in Spanish, from <i>cuervo</i> (crow) and <i>-ón</i> (augmentative suffix).</small>
+|FRname = Lac Corbo
+|FRmeaning = Craw Lake<br><small><i>Corbotère</i> is the name of the [[Craws]] in French, from <i>corbeau</i> (crow).</small>
+|ITname = Lago dei Corvidi
+|ITmeaning = Lake of the Corvids
+|JAname = ボロガワの湖
+|JAromanised = Borogawa no mizūmi
+|JAmeaning = Craw's Lake<br><small>{{lang|ja|ボロガワ}} <i>borogawa</i> is the name of the [[Craws]] in Japanese, a combination of {{lang|ja|襤}} <i>boro</i> (rag) and {{lang|ja|皮}} <i>kawa</i> (skin).</small>
+|KOname = 까마귀 호수
+|KOromanised = Kkamagwi hosu
+|KOmeaning = Crow's Lake
+|PTname = Lago dos Corbos
+|PTmeaning = Craw Lake<br><small><i>Corbo</i> is the name of the [[Craws]] in Brazilian Portuguese, from <i>corvo</i> (crow).</small>
+|RUname = Кар-озеро
+|RUromanised = Kar-ozero
+|RUmeaning = Craw Lake<br><small>{{lang|ru|Кар}} <i>kar</i> is the name of the [[Craws]] in Russian, from {{lang|ru|кар}} <i>kar</i> (Russian onomatopoeia for a crow's call).</small>
+|TWname = 鴉蟲湖
+|TWromanised = Yā chóng hú
+|TWmeaning = same
+|ZHname = 鸦虫湖
+|ZHromanised = Yā chóng hú
+|ZHmeaning = Crow Bug Lake
+|CODEname=CRAW_LAKE
+}}
+
+=== Chapel of the Reaper ===
+{{Localisation
+|hr=false
+|DEname = Kapelle des Schnitters
+|DEmeaning = Chapel of the Reaper
+|ESname = Capilla de la Parca
+|ESmeaning = Chapel of the Reaper
+|FRname = Chapelle Du Faucheur
+|FRmeaning = Chapel of the Reaper
+|ITname = Cappella dell'Agreste
+|ITmeaning = Chapel of the Rural
+|JAname = 収奪者のチャペル
+|JAromanised = Shūdatsusha no chaperu
+|JAmeaning = Plunderer's Chapel
+|KOname = 사신의 예배당
+|KOromanised = Sasinui yebaedang
+|KOmeaning = Grim Reaper's Chapel<br><small>{{lang|ko|사신}} <i>sasin</i> is a Sino-Korean word literally meaning "death god" and has nothing to do with the act of reaping.</small>
+|PTname = Capela do Ceifador
+|PTmeaning = Chapel of the Reaper
+|RUname = Капелла Жнеца
+|RUromanised = Kapella Žneca
+|RUmeaning = Chapel of the Reaper
+|TWname = 收割者教堂
+|TWromanised = Shōugē zhě jiàotáng
+|TWmeaning = same
+|ZHname = 收割者教堂
+|ZHromanised = Shōugē zhě jiàotáng
+|ZHmeaning = Reaper Chapel
+|CODEname=CHAPEL_REAPER
+}}
+
+{{Refs|columns=2|hr=ss}}
+{{SS Nav Areas}}
+[[Category: Areas (Silksong)]]
+
+[[fr:Sombrevale]]
+[[es:Páramo Gris]]
+[[zh:灰沼]]

@@ -1,0 +1,73 @@
+{{SS Infobox Item
+| type = [[Items (Silksong)#Deliverables|Deliverable]]
+| source = Extracted from [[Lifeblood#Mutation|plasmified]] enemies in the [[Wormways]]
+| description = Blood of a creature merged full with liquid lifeseed. Possesses powerful regenerative qualities.
+}}
+
+{{Quote
+| This blood you have collected... sparkles... I see it!<br>A glorious form... a glorious future, shimmering back at us...<br>Through consumption of the blood... we shall at last attain enlightenment...
+| [[Alchemist Zylotol]]
+| Hr = SS
+}}
+
+<b>Plasmified Blood</b> is a [[Items (Silksong)#Deliverables|deliverable item]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+Ten samples of Plasmified Blood are required to complete the <i>[[Advanced Alchemy]]</i> [[wish]], given by [[Alchemist Zylotol]] in the [[Wormways]].
+
+{{Gallery
+|Image1 = Mapshot SS Alchemist Zylotol 01.png!Location of Alchemist Zylotol in the Wormways
+|Image2 = Screenshot SS Wormways 04.png!Alchemist Zylotol in the Wormways
+}}
+
+== How to Acquire ==
+Plasmified Blood can be extracted from [[Lifeblood#Mutation|plasmified]] enemies in the Wormways with a fully charged stab from the [[Needle Phial]]. [[Plasmid]]s and [[Plasmidas]]es are instantly killed by the Needle Phial. Stabbing [[Plasmified Zango]] does not instantly kill him, but instead permanently reduces his max HP by 250 (this reduction persists even if [[Hornet (Silksong)|Hornet]] leaves the arena and returns). Thus, 4 samples of Plasmified Blood can be extracted from him before he dies.
+
+{{Gallery
+|Image1 = Mapshot SS Plasmid 01.png!Location of Plasmids in the Wormways
+|Image2 = Screenshot SS Plasmid 02.png!Plasmid in the Wormways
+|Image3 = Mapshot SS Plasmidas 01.png!Location of Plasmidases in the Wormways
+|Image4 = Screenshot SS Plasmidas 03.png!Plasmidas in the Wormways
+}}
+
+{{Gallery
+|Image1 = Mapshot SS Plasmified Zango 01.png!Location of Plasmified Zango in the Wormways
+|Image2 = Screenshot SS Plasmified Zango 02.png!Plasmified Zango in the Wormways
+}}
+
+== Trivia ==
+* While Plasmified Blood is typically obtained during the <i>Advanced Alchemy</i> wish, it can also be collected if the <i>[[Alchemist's Assistant]]</i> wish is active in Act 3, as it also grants the Needle Phial. This allows both Plasmified Blood and [[Plasmium]] to be held in the inventory at the same time.
+
+{{Localisation
+|DEname = Plasmifiziertes Blut
+|DEmeaning = Plasmified Blood
+|ESname = Sangre plasmificada
+|ESmeaning = Plasmified Blood
+|FRname = Sang plasmifié
+|FRmeaning = Plasmified Blood
+|ITname = Sangue plasmificato
+|ITmeaning = Plasmified Blood
+|JAname = プラスミウム化した血液
+|JAromanised = Purasumiumu-kashita ketsueki
+|JAkatakana = foreign
+|JAmeaning = Plasmium Transformed Blood
+|KOname = 플라스미움 피
+|KOromanised = Peullaseumium pi
+|KOmeaning = Plasmium Blood
+|PTname = Sangue Plasmificado
+|PTmeaning = Plasmified Blood
+|RUname = Разжижённая кровь
+|RUromanised = Razžižënnaja krov'
+|RUmeaning = Thin blood
+|TWname = 原質血
+|TWromanised = Yuán zhì xuè
+|TWmeaning = Protoplasm Blood<br><small> {{lang|zh-Hant|原質液 <i>yuánzhìyè</i>}} (protoplasm fluid) is [[Plasmium]] in Traditional Chinese.</small>
+|ZHname = 生质血
+|ZHromanised = Shēng zhì xuè
+|ZHmeaning = Life Substance Blood<br><small> {{lang|zh-Hans|生质液 <i>shēngzhìyè</i>}} (life substance fluid) is [[Plasmium]] in Simplified Chinese.</small>
+|CODEname = PLASMIUM_BLOOD
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}

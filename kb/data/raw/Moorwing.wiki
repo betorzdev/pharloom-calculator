@@ -1,0 +1,152 @@
+{{SS Infobox Boss
+|image1 = <gallery>
+B Moorwing.png|Hunter's Journal
+Moorwing Idle.png|Idle
+Moorwing Stagger.png|Staggered
+Moorwing Corpse.png|Corpse
+</gallery>
+|health = 600/{{BT|1200}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|2|1.3|1|0.9|0.85}}
+|drops = Access to [[Bellhart]] (if fought in front of Bellhart) <br> [[Beast Shard]] (if fought in front of Greymoor Bellway)
+|location = [[Greymoor]]
+|numbers_required = 1
+|theme = [https://www.youtube.com/watch?v=vick40gW0mE&list=RDvick40gW0mE&start_radio=1 Strive]
+|singnum = 1
+}}
+
+{{Quote
+| Winged mite-beast, bred large to catch workers who once tried to flee their tasks.<hr/>
+With its wranglers long dead, the Moorwing stalked the towers of Greymoor, feasting on passing pilgrims and tenders alike.
+| Hr = Journal
+}}
+
+<b>Moorwing</b> is a [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. It is a giant winged [[Mites|mite]]-beast that blocks the east entrance to [[Bellhart]].<ref name="journal1">Moorwing [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Winged mite-beast, bred large to catch workers who once tried to flee their tasks."</i></ref> If left alive by [[Act 2]], it moves near the [[Greymoor]] [[Bellway]].
+
+== Background==
+Moorwing is a winged [[mites|mite]]-beast that was bred to be large by the bugs of [[The Citadel]] and used to catch Dreg workers in [[Greymoor]] who tried to flee from their tasks.<ref name="journal1" /> After the death of its wranglers, Moorwing stalked the towers of Greymoor, feasting on both pilgrims and tenders alike.<ref name="journal2">Moorwing [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"With its wranglers long dead, the Moorwing stalked the towers of Greymoor, feasting on passing pilgrims and tenders alike."</i></ref>
+
+== In-game Events ==
+Moorwing can first be spotted flying in the background three rooms west of the Greymoor [[Bellways|Bellway]]. Moorwing is then typically encountered at the east entrance to [[Bellhart]] in [[Greymoor]], where it can be defeated to gain entry to the town. If [[Garmond and Zaza]] have been encountered in Greymoor prior to the fight, they can appear on the way to the boss. They offer their help with killing Moorwing, and if Hornet accepts, they appear and assist in the fight shortly after it starts.
+
+The fight is skipped if [[The Lost Fleas]] [[Wish]] is completed before Hornet defeats Moorwing, as the [[Flea Caravan]] travels to the Moorwing's battle-arena. The fight is also skipped if Hornet enters the room in Bellhart where the door is blocked by Moorwing, which is possible if Hornet goes through the [[Simple Key (Silksong)|Simple Key]] lock in the [[Wormways]] and enters Bellhart through its west [[Shellwood]] entrance. The door can be opened from the other side, but simply entering the room behind the door will skip Moorwing.
+
+If Moorwing was skipped, it can be fought again once Act 2 begins, northeast of its first arena, in front of the Greymoor [[Bellways|Bellway]]. However, Garmond and Zaza no longer have the option of offering assistance. If this fight is encountered during [[Act 3]] instead, it is [[Black-Threading|black-threaded]].
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+=== Phase 1 ===
+Moorwing floats above the ground and has 3 attacks:
+
+* <b>Swoop</b>: Moorwing swoops down across the ground in Hornet's direction and rises back into the air only after it has passed Hornet and she is behind it. If Hornet is far away, it continues flying along the ground until it catches up to her. If Moorwing hits certain platforms in either of its arenas, they will be permanently destroyed.
+* <b>Quick Swipes</b>: Moorwing screeches and then moves forward slightly, using its legs to unleash a flurry of slashing attacks  aimed diagonally downwards in Hornet's direction. Getting caught in its swipes deals {{Damage|1+1}}. Moorwing will only do this attack if Hornet is close enough, or if Garmond and Zaza are fighting and they are close enough.
+* <b>Blade Toss</b>: Moorwing throws a spinning blade, which travels on the ground for a certain distance before taking off into the air.
+
+Contact damage with Moorwing deals {{Damage|2}}.
+
+=== Phase 2 ===
+After reaching 65% health (390/{{BT|780}} HP), Moorwing stops and screeches, and it gains a new attack and augments 2 of its previous attacks:
+* <b>Inverted Blade Toss</b>: Moorwing roars and flips upside down, throwing spinning blades to the right and left which arc downwards and converge towards the middle, crossing paths. The blades make a metallic clink when colliding. These blades then continue traveling on the ground until they reach the end of the arena.
+* <b>Swoop</b>: Moorwing now follows this attack up with a single regular Blade Toss in Hornet's direction.
+* <b>Blade Toss</b>: Rather than 1 spinning blade, Moorwing now throws 2 in succession, the second of which circles back towards Moorwing in a large loop and disappears after it hits the ground. Moorwing can change directions when firing the second blade to aim at Hornet if she is behind it.
+
+{{Hr|small}}
+
+=== Act 3 ===
+If Moorwing is initially skipped and then later encountered in Act 3 by the Bellway, it becomes [[Black-Threading|black-threaded]], doubling its HP and gaining the <b>Void Blades</b> attack. All of its physical and Void attacks now deal {{Damage|2|type=Void}} and Quick Swipes deals {{Damage|1+1|type=Void}}.
+
+<hr />
+
+{{Stagger
+| Moorwing collapses to the ground and writhes on its back. If it lands in the pool of water east of its arena, it will be offscreen for the remainder of the stagger, before then reemerging.
+| 13
+| game = SS
+}}
+
+<hr />
+
+<b>Notes and Strategies:</b>
+* Hornet is not locked into either of Moorwing's arenas for the fight, and she can escape at any time by running away and leaving the rooms. The walls and platforms in the arenas can help a lot, especially in Act 1, where Hornet can repeatedly [[Needle|down-slash]] at Moorwing on the platform below the top exit while equipped with the [[Reaper Crest]].
+
+== Needolin Dialogue ==
+{{SS Needolin|columns=2|
+* Free to feed...
+* Free to fly...
+* Scratch and slash...
+* Kill the captors!
+}}
+
+== Location ==
+Moorwing can be first fought at the west edge of [[Greymoor]], where it guards the entrance to [[Bellhart]]. Moorwing will disappear from the arena and cannot be fought there once the cutscene has been triggered by entering [[Haunted Bellhart]] for the first time. If skipped this way, it can be found and fought west of the Greymoor [[Bellway]] instead. 
+
+{{Gallery
+|Image1=Mapshot SS Moorwing 01.png!1st location in Greymoor
+|Image2=Mapshot SS Moorwing 02.png!Post-Bellhart cutscene location in Greymoor
+}}
+
+{{Gallery
+|Title=Gallery
+|Image1 = Screenshot SS Moorwing 02.png!Quick Swipes
+|Image2 = Screenshot SS Moorwing 03.png!Blade Toss
+|Image3 = Screenshot SS Moorwing 05.png!Lunge attack
+|Image4 = Screenshot SS Moorwing 04.png!Inverted Blade Toss
+|Image5 = Screenshot SS Moorwing 06.png!Stagger
+|Image6 = Screenshot_SS_Moorwing_10.png!Singing
+|Image7 = Screenshot SS Greymoor 10.png!Initial arena in Greymoor
+|Image8 = Screenshot SS Moorwing 01.png! Garmond and Zaza assistance
+|Image9 = Screenshot SS Moorwing 11.png! Moorwing perched
+|Image10 = Screenshot SS Moorwing 09.png!Moorwing [[Black-Threaded]]
+|Image11 = Screenshot SS Moorwing 07.png! Moorwing's corpse sacked
+|Image12 = Screenshot_SS_Putrified_Ducts_08.png! Moorwing's corpse cooked
+|Image13 = Screenshot SS EDGE 06.png!Pre-release screenshot
+}}
+
+== Trivia ==
+* Moorwing was first teased in a [[Team Cherry]] blog post, as a <i>"lethal, lunging foe"</i> located in Greymoor.<ref>[https://www.teamcherry.com.au/blog/post-e3-wrap-silksong-systems-update Team Cherry blog post] of June 25th, 2019</ref>
+* Hornet is seen battling Moorwing alongside [[Garmond and Zaza]] in the Xbox Trailer,<ref name="xbox">[https://www.youtube.com/watch?v=JSfuFlhsxZY Hollow Knight: Silksong - Xbox Game Pass Reveal Trailer - Xbox & Bethesda Games Showcase 2022]</ref> and in the EDGE magazine.<ref>[https://pocketmags.com/edge-magazine/february-2021 Edge Magazine February 2021 edition] p. 58.</ref> 
+* The hood that Moorwing wears is similar to [https://en.wikipedia.org/wiki/Falconry_training_and_technique the hoods used in falconry]. 
+* During the fight, Moorwing sometimes swoops in the air instead of at ground level, often at the left edge of the screen. {{MissingInfo}} This is most likely a glitch.
+* If Moorwing was defeated before the Flea Caravan moves into Greymoor, its corpse can be spotted tied up on top of one of their vehicles. This corpse is carried around by the Caravan to any future areas they travel to. Upon reaching [[Fleatopia]] they place this corpse upon a spit to be cooked, if the Fleas did not bring Moorwing's corpse they will roast a [[Muckroach]]'s instead.
+** If Moorwing's body falls into the pool of water upon defeat, the Flea Caravan will not retrieve its corpse.
+* A wooden platform to the right of the arena can be permanently destroyed if Moorwing swoops into it.
+** While fighting Moorwing in [[Act 2]] outside the Bellway, Moorwing can permanently destroy platforms there as well.
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Moorwing's <b>Blade Toss</b> attack was changed to do 1 damage instead of 1+1.
+}}
+{{Localisation
+|DEname = Moorschwinge
+|DEmeaning = Moorwing
+|ESname = Bestia alada del Páramo
+|ESmeaning = Winged Beast of the Moor
+|FRname = Ailebrume
+|FRmeaning= Mist Wing
+|ITname = Voliterrio
+|ITmeaning = Portmanteau of <i>volante</i> (flying) and <i>terra</i> (land)<br><small><i>Terruggiosa</i> (Gloomy Land) is the name of [[Greymoor]] in Italian</small>.
+|JAname = ヌレガラス
+|JAromanised = Nuregarasu
+|JAkatakana = enemy
+|JAmeaning= Combination of 濡れ <i>nure</i> (wet) and カラス <i>karasu</i> (raven or crow).
+|KOname = 황야날개
+|KOromanised = Hwangyanalgae
+|KOmeaning = Wild Wings<br><small>{{lang|ko|회색 황야}} <i>hoesaek hwangya</i> (Grey Wild) is the name of [[Greymoor]] in Korean</small>.
+|PTname = Asa do Pântano
+|PTmeaning = Moorwing
+|RUname = Топекрыл
+|RUromanised = Topekryl
+|RUmeaning = From топь <i>top'</i> (marsh) and крыл <i>kryl</i> (wing).
+|TWname = 荒沼翼主
+|TWromanised = Hāngzhǎo yì zhǔ
+|TWmeaning = same
+|ZHname = 荒沼翼主
+|ZHromanised = Hāngzhǎo yì zhǔ
+|ZHmeaning = Wing Lord of the Moor Swamp
+|CODEname = VAMPIRE_GNAT
+|CODEmeaning = A [[wikipedia:Gnat|gnat]] refers to many species of tiny flying insects.
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Enemies}}
+
+[[pt:Asa do Pântano]]

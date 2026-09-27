@@ -1,0 +1,155 @@
+{{SS Infobox Boss
+|image1 = <gallery>
+B Broodmother.png|Hunter's Journal
+Broodmother_Idle.png|Idle
+Broodmother Staggered.png|Staggered
+</gallery>
+|drops = [[Broodmother's Eye]]
+|health = 700
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.35|1.1|1|1|1}}
+|gender = Female
+|numbers_required = 1
+|theme = [https://youtu.be/M-z6fPrpg-k Cut Through (Main)] (Enemy Gauntlet)<br>[https://youtu.be/y5O2l_VQI-k Cut Through (Main + Vocals)] (Broodmother)
+|location = [[The Slab]]
+|singnum = 1
+|va = Lauren Koopowitz<ref>[https://www.youtube.com/watch?v=pA7Id7lff6E Interview with Lauren Koopowitz]</ref>
+}}
+{{Quote
+|Hr = Journal
+|Mad matriarch of the Slab rarely seen outside her warren. From her all jailers are born and bred.<hr/>
+With this one vanquished, I hope to have sped the end for that jail and its distasteful order.
+}}
+
+The <b>Broodmother</b> is a [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. She is the mad matriarch of [[the Slab]] and its [[Slab Penitents#The Jailers|jailers]].<ref name=hj/> Her defeat is the objective of <i>[[The Wailing Mother]]</i> [[Wishes|wish]].
+
+== Background ==
+Broodmother is the mad matriarch of [[the Slab]], and is the source of all the [[Slab Penitents#The Jailers|jailers]] within it.<ref name=hj>Broodmother Hunter's Journal entry: <i>Mad matriarch of the Slab rarely seen outside her warren. From her all jailers are born and bred.</i></ref> She carries and passes on the guilt of a long forgotten sin to her offspring, which makes the jailers serve within the Slab in the hopes of their caste's absolution.<ref>[[Old Penitent]]: <i>{{HTalk|Will you tell me of those who guard this structure? They are servants of the Citadel, are they not?}}<br>Servants...? They too are penitents. In a past age, that caste committed their own sacrilege against the Citadel.<br>A sin long forgotten, but so grave that their offspring and the offspring of their offspring carry the guilt with them still. To serve here is their only hope of absolution.</i></ref>
+
+== In-game Events ==
+Broodmother is found in a cave behind a secret passage in [[the Slab]]. The passage entrance only opens after accepting <i>[[The Wailing Mother]]</i> [[Wish]] from the Wishwall in [[Songclave]].
+
+After killing the Broodmother and leaving the arena, a [[Broodling]] can be found upon returning.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+Upon entering the arena, Hornet is locked in and must first fight through the following waves of enemies:
+<div class="mw-collapsible mw-collapsed">
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Freshfly.png|35x35px|link=Freshfly]] [[Freshfly]] x2, left<br/>
+[[File:HJ_Freshfly.png|35x35px|link=Freshfly]] Freshfly x2, right
+|
+|-
+|
+[[File:HJ_Freshfly.png|35x35px|link=Freshfly]] Freshfly x3, top left, centre, and right<br/>
+[[File:HJ_Guardfly.png|35x35px|link=Guardfly]] Guardfly, left
+|
+|-
+|
+[[File:HJ_Freshfly.png|35x35px|link=Freshfly]] Freshfly x3, top left, centre, and right<br/>
+[[File:HJ_Wardenfly.png|35x35px|link=Wardenfly]] Wardenfly, top centre
+|
+|}
+
+</div>
+Afterwards, Broodmother erupts from the ground and flies into the centre of the arena, wailing to signal the beginning of the boss fight.
+
+=== Phase 1 ===
+Broodmother hovers around the top half of the arena and uses the following attacks:
+* <b>Broodspawn</b>: Broodmother spawns 1–2 [[Freshfly|Freshflies]] in a row diagonally below her from the end of her abdomen. The death-explosion of these flies does not damage her. While there are 4 Freshflies in the arena, Broodmother will not spawn any more.
+* <b>Spit</b>: Broodmother spits 1–2 globs of muck in succession diagonally downwards towards [[Hornet (Silksong)|Hornet]]. The globs stick to the ground and can be attacked and destroyed. The muck deals no damage, but if Hornet gets caught, she is immobilised and must remove the muck by pressing ATTACK 4 times.
+* <b>Grabbing Leap</b>: Broodmother rears back before launching herself at Hornet, crossing roughly half the arena and landing on the ground. If Hornet is close to the ground where she lands, Broodmother can turn around and leap towards her again. This can be repeated up to 2 times.
+* <b>Buzz Away</b>: After an attack, Broodmother flies backwards a short distance away from Hornet if she is too close to her.
+
+=== Phase 2 ===
+After reaching 385 HP, Broomother roars and immediately performs the Wild Slam attack. For the duration of the fight, it is added to her arsenal:
+* <b>Wild Slam</b>: Broodmother wails and then slams her body between the floor and ceiling 5 times, slowly moving a short distance forwards with every slam and turning without stopping when reaching a wall. She always slams downwards first and thus also ends the attack with a ground slam.
+
+Broodmother deals {{Damage|2}} on contact.
+
+<hr />
+
+{{Stagger
+| Broodmother falls to the ground, wailing.
+| 15
+| game = SS
+}}
+
+<hr />
+
+* The largest threat in Phase 1 is getting hit with Spit, as it is difficult to break free in time to avoid her Grabbing Leap. Watch for Spit's telegraph and jump or move away to avoid it, as she always aims low.
+* Most of Broodmother's attacks can be avoided in the air. Avoid staying above her after the last Grabbing Leap, as she flies directly upward after the attack.
+* It is best to kill the Freshflies on summon to limit the number of hazards in the arena. Since they explode on death, they can be especially troublesome in the small arena.
+* The Freshflies can be used to gain Silk or as a target of Needle bounce to stay in the air.
+* While her Phase 1 can seem difficult, Broodmother is extremely predictable. She nearly always spits and shoots and Freshflies first, followed by her Grabbing Leap attacks. Knowing this means that, for example, Hornet can always heal in mid-air once she has spat twice and shot out two Freshflies.
+* When Broodmother begins her Wild Slam, stay as close as possible and dash under her as soon as she rushes upward. Avoid staying near the walls during this attack, as she can move in unpredictable ways if she hits the corner of the ceiling.
+* Staying under Broodmother and attacking upwards avoids Spit and kills most Freshflies as soon as they're spawned, in addition to dealing many hits to Broodmother when she flies low.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Hatchy, hatchy!
+* Eggy, eggy...
+* Warmly, safely...
+* Yummy! Yummy!
+* Grow the brood...
+* Eat the food...
+}}
+
+== Location ==
+Broodmother can be found in a cave in [[the Slab]] after accepting the <i>[[The Wailing Mother]]</i> [[Wish]] in [[Songclave]].
+
+{{Gallery
+|Image1 = Mapshot SS Broodmother 01.png!Location in the Slab
+}}
+
+== Gallery==
+{{Gallery|
+|Image1=Screenshot SS Broodmother 01.png!Entering the arena
+|Image2=Screenshot SS Broodmother 02.png!Idle
+|Image3=Screenshot SS Broodmother 03.png!Broodspawn
+|Image4=Screenshot SS Broodmother 04.png!Spit
+|Image5=Screenshot SS Broodmother 05.png!Grabbing Leap
+|Image6=Screenshot SS Broodmother 06.png!Buzz Away
+|Image7=Screenshot SS Broodmother 07.png!Wild Slam
+|Image8=Screenshot SS Broodmother 08.png!Stagger
+|Image9=Screenshot SS Broodmother 09.png!Reacting to Needolin
+|Image10=Screenshot SS The Slab 12.png!Arena in the Slab
+}}
+
+{{Localisation
+|DEname = Brutmutter
+|DEmeaning = Broodmother 
+|ESname = Madre Ponedora
+|ESmeaning = Egg Laying Mother
+|FRname = Mère Nourricière
+|FRmeaning = Nourishing Mother
+|ITname = Madre Nutrice
+|ITmeaning = Nursing Mother
+|JAname=排卵の母
+|JAromanised= Hairan no haha
+|JAmeaning= Mother of Ovulation
+|KOname = 무리어미
+|KOromanised = Murieomi 
+|KOmeaning = Swarm Mother
+|PTname = Progenitora
+|PTmeaning = Progenitor
+|RUname = Матерь рода
+|RUromanised = Mater' roda
+|RUmeaning = Swarm Mother
+|TWname = 育母
+|TWromanised = Yù mǔ
+|TWmeaning = same
+|ZHname = 育母
+|ZHromanised = Yù mǔ
+|ZHmeaning = Nurser Mother
+|CODEname = SLAB_FLY_BROODMOTHER
+|CODEmeaning = Other Slab Jailers use the Slab Fly name internally}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[pt:Progenitora]]

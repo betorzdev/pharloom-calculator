@@ -1,0 +1,82 @@
+{{Navbar|icons=true|page1=Encrusted Heart|page2=Pollen Heart|page3=Hunter's Heart|page4=Conjoined Heart}}
+{{SS Infobox Item
+| label = Item
+| type = [[Items (Silksong)#Deliverable|Deliverable]]
+| image = <gallery>
+Hunter's Heart.png|Inventory
+Hunter's Heart Shelf.png|Bellhome
+</gallery>
+| source = [[Far Fields]]
+| description = Enlivened heart of Skarrsinger Karmelita. Its beat is steady and strong.
+| label2 = Prompt
+| type2 = [[Items (Silksong)#Deliverable|Deliverable]]
+| title2 = <small>Obtained the</small><br>Hunter's Heart
+| image2 = Icon SS Hunter's Heart Art.png 
+| source2 = [[Far Fields]]
+| description2 = Its beat is steady and strong.
+}}
+
+{{Quote|Hr=SS
+|...How we hunted... How we sang...<br>My children, I saw you glorious... 
+|[[Skarrsinger Karmelita]]
+}}
+
+The <b>Hunter's Heart</b> is a [[Items (Silksong)#Deliverables|deliverable item]] and [[Materium#Mementos|memento]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+
+The Hunter's Heart is used along with the [[Pollen Heart]], the [[Encrusted Heart]], and/or the [[Conjoined Heart]] to complete the <i>[[SEEK: The Old Hearts]]</i> [[Objectives|objective]].
+
+{{Gallery
+|Image1 = Mapshot SS Red Memory.png!Snail Shamans location in Moss Grotto
+|Image2 = Screenshot SS Snail Shamans 01.png!Snail Shamans in the Ruined Chapel in Moss Grotto
+}}
+
+If the Hunter's Heart is obtained afterwards, as a fourth heart, then it becomes a [[memento]] that can be displayed on a shelf in the [[Bellhome]]. After interacting with the desk, it appears in the top-middle slot of the shelving.
+
+{{Gallery
+|Image1 = Mapshot SS Bellhome.png!Location in Bellhart
+|Image2 = Screenshot SS Hunter's Heart 02.png!Displayed inside Bellhome in Bellhart
+}}
+
+== How to Acquire ==
+The Hunter's Heart is acquired after defeating [[Skarrsinger Karmelita]] in [[Far Fields]]. This requires entering her memory using the [[Elegy of the Deep]].
+
+{{Gallery
+|Image1 = Mapshot SS Skarrsinger Karmelita 01.png!Location in Far Fields
+|Image2 = Screenshot SS Hunter's Heart 01.png!Hunter's Heart next to Skarrsinger Karmelita's corpse in Far Fields
+}}
+
+{{Localisation
+|DEname = Herz der Jägerin
+|DEmeaning = Heart of the Huntress
+|ESname = Corazón de cazadora
+|ESmeaning = Heart of Huntress
+|FRname = Coeur de Skarr
+|FRmeaning = Heart of Skarr
+|ITname = Cuore della cacciatrice
+|ITmeaning = Heart of the Huntress
+|JAname = 狩猟者の心臓
+|JAromanised = Hoshokusha no shinzō
+|JAmeaning = Hunter's Heart
+|KOname = 사냥꾼의 심장
+|KOromanised = Sanyangkkunui simjang
+|KOmeaning = Hunter's Heart
+|PTname = Coração de Skarr
+|PTmeaning = Heart of Skarr
+|RUname = Сердце Поющей
+|RUromanised = Serdce Pojuščej
+|RUmeaning = Singing Heart
+|TWname = 獵手之心
+|TWromanised = Lièshǒu zhī xīn
+|TWmeaning = same
+|ZHname = 猎手之心
+|ZHromanised = Lièshǒu zhī xīn
+|ZHmeaning = Hunter's Heart
+|CODEname = HEART_HUNTER
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

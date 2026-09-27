@@ -1,0 +1,131 @@
+{{Navbar
+|page1 = Void Tendrils (Hollow Knight)
+|title1 = Hollow Knight
+|page2 = Void Tendrils (Silksong)
+|title2 = Silksong
+}}
+
+{{SS Infobox Enemy
+| title1 = Void Tendrils
+| image1 = <gallery>
+B Void Tendrils (Silksong).png|thumb|Void Tendrils
+Last Dive Void Tendril Small.png|Dive Tendril S
+Last Dive Void Tendril Large.png|Dive Tendril L
+</gallery>
+| drops = —
+| health = —
+| numbers_required = Entry
+}}
+
+{{Quote
+|Hr = Journal
+|Lashing fragments of pure darkness, shaped into sharpened tentacles.<hr/>
+The void that will claim all things... In the barbed forms it chooses its nature can be seen clear.
+}}
+
+<b>Void Tendrils</b> are [[Void Tendrils (Hollow Knight)|returning]] [[Enemies (Silksong)|enemies]]  in <i>[[Hollow Knight: Silksong]]</i>. They are fragments of [[Void]] that violently lash out as sharpened tentacles once approached.<ref name=tendrilssilksong>[[Void Tendrils (Silksong)|Void Tendrils]] Hunter's Journal entry: <i>"Lashing fragments of pure darkness, shaped into sharpened tentacles."</i></ref>
+
+== Background ==
+Void Tendrils are the chosen form liquid Void assumes, and as such are described as Void given form.<ref name=tendrilssilksong/><ref>Void Tendrils Hunter's Journal entry: <i>"The void that will claim all things... In the barbed forms it chooses its nature can be seen clear."</i></ref><ref name=runescroll>Void Tendrils inspect text: <i>"A rune-scroll depicting void given form."</i></ref> If they sense [[Soul]] nearby, usually inside living creatures, Void Tendrils thrash wildly in an attempt to catch it.<ref>Hornet dialogue with [[Shakra]]: <i>"I know it well, that force, its nature. If it senses soul, it will drive voracious towards it."</i></ref><ref name=blackthreads>Hornet dialogue with the Snail Shamans: <i>"Surely you've seen them, the black threads that wrack your lands? The dark leeches up, possessed upon the fallen monarch's Silk."</i>, <br><i>"She will have retreated within her protective form, that cocoon of thread. Even as the dark eats its outer, she will spin its Silk anew."</i></ref><ref name=wanderersjournal>[[Hollow Knight: Wanderer's Journal|Wanderer's Journal]], p. 158.</ref> In some cases they go so far as to alter the surrounding terrain to bring the source of Soul within their reach. Void Tendrils are found wherever liquid Void forms into pools, and in massive quantities inside the Void sea in the [[the Abyss (Silksong)|Abyss]] that exists at the base of the world.<ref name=wanderersjournal/><ref>[[Hornet (Silksong)|Hornet]] dialogue with the [[Snail Shamans (Silksong)|Snail Shamans]]: <i>"I must descend to the void below, and see clear that truth for myself. (...) For those depths, I am more prepared than most. I will reach the base of this land, and know the truth of the new disaster we, together have wrought."</i></ref><ref>Hornet dialogue with [[Lace]]: <i>"And the void below all things, that darkness I will fear no longer..."</i></ref>
+
+At some point in [[Pharloom]]'s history, [[Weavers]] were studying the Void in [[Weavenest Absolom]], leaving behind a [[Lore Tablets (Silksong)|Silk rune-scroll]] depicting and containing their research on Void Tendrils.<ref name=runescroll/>
+
+== In-Game Events ==
+While seeking out [[Steel Seer Zi]]'s missing vassal [[Sula]], [[Hornet (Silksong)|Hornet]] encounters [[Summoned Saviour]]. A void entity summoned by the vassal, Summoned Saviour is composed of pilgrim corpses and animated by Void Tendrils.<ref name=summonedsaviour>[[Summoned Saviour]] Hunter's Journal entry: "<i>Mass of old masks swollen and animated by writhing void.</i></ref> It is subsequently fought and vanquished by Hornet.
+
+When Hornet triggers the [[Soul Snare]] trap, a couple of Void Tendrils latch onto [[Grand Mother Silk]]'s abdomen and eventually pull her and [[Lace]] through the opened portal and into the Void sea.
+
+Several Void Tendrils attempt to pull Hornet into the pools of Void along with platforms she's on when traversing a narrow passage in the Abyss. They attempt this again in Weavenest Absolom after Hornet binds the [[Silk Soar]] ability from an enshrined Weaver corpse that had fallen along with part of her shrine into a pool of Void, but not before Hornet escapes their grasp with the help of her newly bound [[Skills and Abilities (Silksong)|Silk skill]].
+
+Numerous Void Tendrils thrash in response to Grand Mother Silk's scream and quakes when Hornet approaches and kneels at the shore of the Void Sea for the first time, right before a projection of Lace appears with whom Hornet has a conversation with.
+
+When Hornet returns to the Abyss with the [[Everbloom]], a powerful object capable of resisting the Void, she dives into the Void sea, now able to defend herself from the Void Tendrils' attacks.<ref>Everbloom inventory description <i>"Glows with soft, pale light that wards against the void."</i></ref> Numerous Void Tendrils of various sizes can be seen swimming around Hornet and in the background. Groups of Void Tendrils attempt to attack Hornet on several occasions during her descent but are dissipated by the Everbloom, and she is able to make it safely to Grand Mother Silk's cocoon deep in the Void sea.
+
+Inside Grand Mother Silk's cocoon, Hornet fights Lace possessed by the Void.<ref>[[Lost Lace]] Hunter Journal's description <i>"Silk-spun child possessed by the void."</i></ref> [[Lost Lace]] makes extensive use of the Void during their duel, summoning Void Tendrils as part of several of her attacks. Halfway through the fight Grand Mother Silk collapses from the strain, unable to continue spinning the cocoon's Silk anew. Void Tendrils quickly break into the cocoon in large masses that resemble tidal waves of thrashing tendrils before leaving from the other end. They periodically break in again in two waves for the remainder of the fight, moving quicker and appearing more frequently as the fight draws closer to an end.
+
+After saving Lace and receiving a boost of [[Silk]] from Grand Mother Silk, Hornet is able to use Silk Soar to escape the crumbling cocoon with an unconscious Lace. During her ascent, Hornet encounters hoards of thrashing Void Tendrils. Several groups form barriers with their bodies in an attempt to stop her from escaping, but all are dissipated by the deteriorating Everbloom. However, before she can make it to the surface, Hornet is rendered unconscious too, and is stalked by Void Tendrils waiting for the Everbloom to fully dissipate. As they are about to attack a now defenseless Hornet, the Void Tendrils are violently torn apart by [[the Knight]], who saves their sister and Lace, safely carrying them to the shore of the Void sea.
+
+== Behaviour and Tactics ==
+Void Tendrils swim passively in pools of Void, briefly rising to the surface on occasion. If approached by Hornet, they start to swarm as close to her as possible while remaining in their idle state. If Hornet gets close enough, they begin flailing violently in an attempt to reach her. Being struck by the writhing Void Tendrils will deal {{Damage|1+1|type=Void}}. If the Everbloom has been obtained, Void Tendrils will still swarm around Hornet if she's close enough, but not attack her. They also avoid her if she dives into pools of Void, allowing Hornet to safely swim in it.
+
+If Hornet is [[Cursed Crest|Cursed]], she will be flung out of the Void and take {{Damage|1}} damage regardless if she has the Everbloom or not.
+
+Upon obtaining the [[Silk Soar]] skill, Void Tendrils will gradually pull the platform Hornet is standing on into the Void below. This is a timed event, and Hornet has to use her new ability to escape quickly, before the Void Tendrils submerge the platform. 
+If Hornet fails to escape in time, the platform disappears beneath the pool of Void and she is damaged by the Void Tendrils, re-spawning on the platform.
+
+== Location ==
+Void Tendrils are found in the lowest points of [[The Abyss (Silksong)|the Abyss]]. Their [[Hunter's Journal (Silksong)|Hunter's Journal]] entry can be found in [[The Abyss (Silksong)#Sub-area: Weavenest Absolom|Weavenest Absolom]], in the lower eastern section of [[The Abyss (Silksong)|the Abyss]].
+
+{{Gallery
+| Image1 = Mapshot SS Void Tendrils 01.png!Location in the Abyss
+| Image2 = Mapshot SS Void Tendrils.png!Hunter's Journal entry location
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Void Tendrils 01.png!Idle
+|Image2 = Screenshot SS Void Tendrils 02.png!Swarming
+|Image3 = Screenshot SS Void Tendrils 03.png!Thrashing
+|Image4 = Screenshot SS Void Tendrils 04.png!Pulling down a platform
+|Image5 = Screenshot SS Void Tendrils 05.png!Reacting to Grand Mother Silk's scream
+|Image6 = Screenshot SS Void Tendrils 06.png!In the void sea
+|Image7 = Screenshot SS Void Tendrils 07.png!Reacting to Needolin
+|Image8 = Screenshot SS Void Tendrils 08.png!Pulling down the platform in Weavenest Absolom
+|Image9 = Screenshot SS Void Tendrils 09.png!Swimming in the void sea during the Last Dive
+|Image10 = Screenshot SS Void Tendrils 10.png!Attacking Hornet during the Last Dive
+|Image11 = Screenshot SS Void Tendrils 11.png!Dissipated by the Everbloom during the Last Dive
+|Image12 = Screenshot SS Void Tendrils 12.png!Swimming around Grand Mother Silk's cocoon
+|Image13 = Screenshot SS Void Tendrils 13.png!Swimming as Hornet ascends with Lace
+|Image14 = Screenshot SS Void Tendrils 14.png!Dissipated by the Everbloom as Hornet ascends
+|Image15 = Screenshot SS Void Tendrils 15.png!Surrounding Hornet and Lace while the Everbloom dissipates
+|Image16 = Screenshot SS Void Tendrils 16.png!Attacking Hornet and Lace
+|Image17 = Screenshot SS Void Tendrils 17.png!Being shredded by the Knight
+|Image18 = Screenshot SS Summoned Saviour 01.png!Void Tendrils as part of Summoned Saviour
+|Image19 = Screenshot SS Grand Mother Silk 11.png!Void Tendrils pulling Grand Mother Silk into the Void
+|Image20 = Screenshot SS Void Tendrils 18.png!Void Tendrils summoned by Lost Lace
+|Image21 = Screenshot SS Lost Lace 10.png!Lost Lace attacking with Void Tendrils
+|Image22 = Screenshot SS Void Tendrils 19.png!Masses of Void Tendrils breaking into Grand Mother Silk's cocoon
+|Image23 = Screenshot SS The Abyss 09.png!Rune-scroll that unlocks the Hunter Journal's entry
+}}
+
+== Trivia ==
+* Void Tendrils will become agitated and begin thrashing for varying durations in response to various things:
+** While the [[Needolin]] is played near them.
+** During Grand Mother Silk's screams.
+** If Hornet hard lands near to them.
+* Void Tendrils do not have dialogue in response to the Needolin.
+* Void Tendrils, alongside [[Wingmould (Silksong)|Wingmoulds]] and [[Shadow Creeper (Silksong)|Shadow Creepers]], are one of the 3 [[Enemies (Silksong)|enemy]] types that [[Enemies (Hollow Knight)|first appeared]] in <i>[[Hollow Knight]]</i>. 
+** Despite this, they deal {{Damage|1}}+{{Damage|1}} in Silksong instead of {{Damage|1}} like they dealt in Hollow Knight.
+
+{{Localisation
+|DEname = Ranken der Leere
+|DEmeaning = Tendrils of the Void
+|ESname = Tentáculos del vacío
+|ESmeaning = Tentacles of the Void
+|FRname = Tentacules du Néant
+|FRmeaning = Tentacles of the Void
+|ITname = Tentacoli del Vuoto
+|ITmeaning = Tendrils of the Void
+|JAname = 虚無の触手
+|JAromanised = Kyomu no shokushu
+|JAmeaning = Nothingness Tentacles
+|KOname = 공허의 덩굴손
+|KOromanised = Gongheoui deonggulson
+|KOmeaning = Tendril of Void
+|PTname = Tentáculos do Vazio
+|PTmeaning = Tentacles of the Void
+|RUname = Щупальца Пустоты
+|RUromanised = Ščupal'ca Pustoty
+|RUmeaning = Tentacles of Void
+|TWname = 虛空卷鬚
+|TWromanised = Xūkōng juǎnxū
+|TWmeaning = same
+|ZHname = 虚空卷须
+|ZHromanised = Xūkōng juǎnxū
+|ZHmeaning = Void Tendrils
+|CODEname= ABYSS_TENDRIL
+}}
+
+{{Refs|hr=ss|columns=2|scrollbox=true}}
+
+{{SS Nav Enemies}}

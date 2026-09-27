@@ -1,0 +1,73 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Cloverstag.png|Hunter's Journal
+Cloverstag Idle.png|Idle
+</gallery>
+|drops = None
+|health=62
+|damage_modifiers={{SS Spaced Damage Modifiers|1.5|1.5|1|1|1}}
+|numbers_required = 10<br>(Instantly completed on [[Clover Dancers]]' death)
+|singnum=1
+}}
+{{Quote
+|Hr = Journal
+|Placid native of Verdania. Its hide closely mimics the flora of its territory.<hr/>
+An impressive act of mimicry. To match so closely with its land, their clover caves must have sustained through generations uncounted.
+}}
+
+<b>Cloverstags</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are placid natives of [[Verdania]], with their hide closely mimicking the flora of the land.<ref>Cloverstag Hunter's Journal entry: <i>"Placid native of Verdania. Its hide closely mimics the flora of its territory."</i></ref>
+
+== Behaviour and Tactics ==
+Wanders a set path in rooms of Lost Verdania, doing short hops over the landscape and lilypads, making no effort to attack Hornet even if struck.
+
+Despite their lack of hostility, Cloverstags still deal {{Damage|1}} contact damage.
+
+== Location ==
+Cloverstags can be found in [[Lost Verdania]].
+
+{{Gallery
+|Image1 = Mapshot SS Cloverstag 01.png!Locations in Lost Verdania
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Cloverstag 01.png!Near the water
+|Image2= Screenshot SS Cloverstag 02.png!Jumping around
+|Image3= Screenshot SS Cloverstag 03.png!Near the Green Prince and Palestag
+|Image4= Screenshot SS Cloverstag 04.png!Singing
+}}
+
+== Trivia ==
+* Cloverstags do not have [[Needolin]] dialogue, but do respond to it being played by shivering in place and chirping.
+{{Localisation
+|DEname = Kleehirsch
+|DEmeaning = Cloverstag
+|ESname = Trebicierva
+|ESmeaning = Portmanteau of <i>trébol</i> (clover) and <i>cierva</i> (doe)
+|FRname = Cerf Fleur
+|FRmeaning = Flower Deer
+|ITname = Cervide Trifoglio
+|ITmeaning = Clover Cervid
+|JAname=クローバースタグ
+|JAromanised = Kurōbāsutagu
+|JAkatakana = foreignenemy
+|JAmeaning = Cloverstag
+|KOname = 클로버 수사슴
+|KOromanised = Keullobeo susaseum
+|KOmeaning = Clover Stag
+|PTname = Cervo-trifólio
+|PTmeaning = Trefoil Deer
+|RUname = Клеверожка
+|RUromanised = Kleverožka
+|RUmeaning = Cloverhorn
+|TWname = 苜鹿
+|TWromanised = Mù lù
+|TWmeaning = same
+|ZHname = 苜鹿
+|ZHromanised = Mù lù
+|ZHmeaning = Clover Deer
+|CODEname=CLOVERSTAG
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

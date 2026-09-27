@@ -1,0 +1,21 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Memoria_02.png|400px|center]]
+|[[File:Mapshot_SS_Voltvessels.png|400px|center]]
+|-
+| colspan="2" | Enemy Gauntlet in the northeast corner of the Memorium.
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>[[Voltvessels]]</center>
+| <center>[https://www.youtube.com/watch?v=swPmNk9_fw0 Generic Enemy Battle A]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Memoria.png|35x35px|link=Memoria]] [[Memoria]] x2, left and right
+| Left Memoria arrives shortly after the first.
+|}

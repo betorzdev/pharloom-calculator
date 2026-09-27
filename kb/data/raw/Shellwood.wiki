@@ -1,0 +1,237 @@
+{{SS Infobox Area
+| tab1 = Acts 1/2
+| image1 = <gallery>
+Shellwood Map Marked.png|Marked
+Shellwood Map Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Shellwood Map Ruin Marked.png|Marked
+Shellwood Map Clean.png|Unmarked
+</gallery>
+| connection = [[Bellhart]]<br>[[Bone Bottom]]<br>[[Blasted Steps]]<br>[[The Marrow]]
+| ambience = [https://www.youtube.com/watch?v=gcHfV2KKIBk Atmos Shellwood]<br>
+[https://www.youtube.com/watch?v=blGkSVGGKSI Atmos Shellwood No Wind]<br>
+[https://www.youtube.com/watch?v=u-j6oEvMQvM Lake Atmos]<br>
+[https://www.youtube.com/watch?v=ZzyCwfkjyCI Lake Atmos Hornet]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+| main = [https://youtu.be/wt9f1d8XMQ8 Shellwood]
+| action = [https://www.youtube.com/watch?v=3VoHxtarCwA Boneforest Action]
+}}
+
+{{Quote
+|Tangled roads choked beneath bramble and root. The flora is often as deadly as the creatures who call this place home.
+|[[Shakra]]
+|Hr=SS
+}}
+
+<b>Shellwood</b> is an [[Areas (Silksong)|area]] in <i>[[Hollow Knight: Silksong]]</i>. It is a uniquely lush subterranean forest, doubling as part of the pilgrim's path to [[the Citadel]] and as a habitat for a variety of dangerous fauna and flora.
+
+== Description ==
+[[File:Screenshot SS Shellwood 24.png|thumb|200px|left|Section of Shellwood Pond]]
+Shellwood is a medium-sized area in the mid-western half of Pharloom's midlands, bordering the [[Blasted Steps]] to the west and [[Bellhart]] to the east. The lower portion, known as Shellwood Pond, is a vast but shallow pond that intermittently spans most of the woods' width.<ref name=":0">[[Pond Skipper]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Hard-shelled insect common upon the surface of Shellwood Pond. Once a staple food for passing pilgrims."</i></ref> While the west side primarily consists of two parallel roads connected by a vertical shaft, the eastern portion is more vertical and contains significantly more platforming, especially compared to preceding areas. 
+
+The eastern portion is occupied by, among other threatening flora and fauna, the [[Splinter Tribe|Splinters]], bugs with the appearance of branches, which they mimic in order to ambush enemies.<ref>[[Splinter]] Hunter's Journal entry: <i>"Insect formed to imitate a branch, capable of remaining perfectly still for long periods, but unexpectedly swift when roused."</i></ref> White flowers are commonly found all over Shellwood, which [[Hornet (Silksong)|Hornet]] can [[Needle#Needle-bouncing|Needle-bounce]] off to navigate the woods' heights; these, too, are mimicked, both by creatures and other, more hostile plants. Shellwood is also home to the [[Wood Wasp]]s, which both subsist on and are the source of purple flowers that contain the [[Pollip Heart]]s required for the <i>[[Rite of the Pollip]]</i> [[wish]].<ref>Pollip Heart description: <i>"Core of a flower formed around the body of a consumed Wood Wasp. Secretes a sticky sap that the wasps subsist on."</i></ref>
+
+The west side's upper area, leading to the Blasted Steps, is only accessible with the [[Cling Grip]], climbing up a lift shaft with several [[Winged Pilgrim]]s. This section also has one of the five [[Bellshrine]]s that need to be rung as part of the <i>[[OPEN: Grand Gate]]</i> objective, and to the right of this, the Shellwood [[Bellway]]. At the connection between [[Bone Bottom]] and Shellwood, a [[Bench (Silksong)|bench]] and a [[Rosary String|Rosary stringing machine]] are found. On the lower western section, a pilgrim burial site can be found, inhabited by a [[Covetous Pilgrim]].
+
+After completing the <i>Rite of Rebirth</i> wish, Hornet is transported to a place below the lower western road. This section contains the connection between [[the Marrow]] and Shellwood, and can be connected to the rest of the area by breaking several vines. 
+
+During [[Act 3]], the Shellwood entrance to Bellhart is attacked by [[black-threaded]] pilgrims; the settlement is saved by the warrior [[Shakra]], who defends against the onslaughts of enemies.<ref>Shakra: <i>"The dark-spun bugs, they besiege the town, relentless. I have defended against each wave anew, but they are empowered in foul ways, and I am much fatigued."</i></ref>
+
+== History ==
+Originally, Shellwood was created and ruled by [[Nyleth]], and was a relatively safe, vibrant forest, courtesy of Nyleth's protection of bugs passing through her land.<ref>Nyleth Hunter's Journal entry: <i>"Her presence would once have maintained the wood's fragile order, allowing the safe passage of bugs across its branches."</i></ref><ref>[[Snail Shamans (Silksong)|Snail Shamans]]: <i>"In the heights of the great wood, nestled deep in its roots, vines and branches, find the one who sowed the first seed."</i></ref> Nyleth was powerful enough to keep Shellwood safe even during the rise of [[the Citadel]], which begrudgingly agreed to build a shrine near the [[Grand Gate]] in reverence to her.<ref>Snail Shamans: <i>"We'd heard the Citadel once made grudging accord with that creature, sent their servants in reverence, even built a shrine up there somewhere. Maybe it's worth you searching for it?"</i></ref> After Nyleth's presence waned, [[Sister Splinter]] and [[Splinter Tribe|her kin]] spread throughout Shellwood and claimed it as their own.<ref>Sister Splinter [[Needolin]] dialogue: <i>"Children, children, hide and strike! This land is ours, now!"</i></ref> Sister Splinter ended up as the last of the Sisters,<ref>Sister Splinter Needolin dialogue: <i>"Sisters, sisters, so long gone!"</i></ref> having lived long and grown to a large size from feeding, presumably, on numerous bugs.<ref>Sister Splinter Hunter's Journal entry: <i>"This one lived long and fed much. The wood will be much safer for their slaying."</i></ref>
+
+Shellwood neighbours the town of Bellhart, a settlement of pilgrims acting as the last stop before the Citadel. The [[Pond Skipper]]s of Shellwood Pond were hunted as food for Bellhart by the Pondcatchers, though all but [[Pondcatcher Reed]] would end up stricken by the [[Haunting]].<ref name=":0" /><ref>Hornet and Pondcatcher Reed dialogue: <br><i>Hornet: "You seem hard at work, good bug. Are you a hunter, of a sort?" <br>Pondcatcher Reed: "Of a simple sort, aye. I'm a pondcatcher around these parts. The last remaining, in fact! Us few Bellharters are badly needing for fresh food, so my lone shell's carrying quite the responsibility. At least Shellwood Pond's still full of good meat, 'specially if your aim with a longpin's as good as mine."</i></ref> At some other unknown point in the past, [[Greyroot]] appeared in the core of Shellwood. Travellers would sometimes pass through Bellhart, bringing a [[Twisted Bud]] as an offering to the figure of root; none of these travellers, nor their offerings, would return from their journey.<ref>[[Pavo]]: <i>"Aye, yes! Not your own specimen, surely, but way back, other travellers did sometimes carry similar. Odd types they all were. Offerings they'd call the crying things, and towards the core of Shellwood they would trek. Never I did see one again, not the buds nor the bugs that brought the gift..."</i></ref>
+
+Shellwood is the burial site of a [[Weaver]], presumably Keelal, Weaver of the path, who offered protection to bugs, even to those who had sinned or were weak.<ref>[[Weaver Effigy]]: <i>"Carving of Keelal, Weaver of the path. A prayer is etched upon it. "Blessed Weaver, lady of grace, you who see our sin, our frail shells, our voices weak, and still offer your protection. How great your mind to care so much for ones so lowly.""</i></ref> Her effigy is found within the wood, and a Lore Tablet below the burial spire mentions how the Weaver there should watch over the bugs passing through the area.<ref>Shellwood [[Lore Tablets (Silksong)#Shellwood|Lore Tablet]]: <i>"Sister, spider, husk bound to branch, Watch over these bugs, passing safe, Warded by fear, No longer your meal."</i></ref> When bound, she gives the ancient Weaver technique of the [[Cling Grip]], allowing Hornet to cling onto flat walls and rapidly scale the heights of Pharloom.<ref>Cling Grip description: <i>Ancient Weaver technique. Cling to sheer surfaces and leap off to rapidly scale heights.</i></ref>
+
+== How to Access ==
+Shellwood is typically accessible by passing through [[Bellhart]]'s western entrance, which requires accessing Bellhart from [[Greymoor]].
+
+An alternative way to access the area is from the top of Bone Bottom, through a path in the [[Wormways]]; this requires the [[Swift Step]] ability and the use of a [[Simple Key (Silksong)|Simple Key]] at the locked door to the west of [[Mosshome]]. This path skips the fight with the [[Moorwing]], who can be fought later in Act 2, and the first fight with [[Lace]].
+
+{{TabbedPOI
+|Header = true
+
+|NPC1 = Shakra
+|NPC2 = Greyroot
+|NPC3 = Nuu
+|NPC4 = Pinmaster Plinney
+|NPC4Note = ([[Act 3]] only)
+|NPC5 = Garmond and Zaza
+|NPC5Note = (Act 3 only)
+
+|Enemy1 = Pond Skipper
+|Enemy2 = Pondcatcher
+|Enemy3 = Shellwood Gnat
+|Enemy4 = Wood Wasp
+|Enemy5 = Splinter
+|Enemy6 = Splinterhorn
+|Enemy7 = Splinterbark
+|Enemy8 = Phacia
+|Enemy9 = Pollenica
+|Enemy10 = Gahlia
+|Enemy11 = Winged Pilgrim
+|Enemy12 = Winged Pilgrim Bellbearer	
+|Enemy13 = Covetous Pilgrim
+|Enemy14 = Pilgrim Groveller
+|Enemy14Note = (Act 3 only)
+|Enemy15 = Pilgrim Pouncer
+|Enemy15Note = (Act 3 only)
+|Enemy16 = Pilgrim Hulk
+|Enemy16Note = (Act 3 only)
+|Enemy17 = Pilgrim Hornfly
+|Enemy17Note = (Act 3 only)
+|Enemy18 = Pilgrim Bellbearer
+|Enemy18Note = (Act 3 or after defeating Covetous Pilgrim)
+|Enemy19 = Pilgrim Guide
+|Enemy19Note = (Act 3 or after defeating Covetous Pilgrim)
+|Enemy20 = Void Mass
+|Enemy20Note = (Act 3 only)
+
+|Boss1 = Sister Splinter
+
+|Loot1_FileName = Icon SS Cling Grip
+|Loot1_Name = Cling Grip
+|Loot2_FileName = Longpin
+|Loot3_FileName = Pollip Pouch
+|Loot3_Description = given by [[Greyroot]] after completing the <i>[[Rite of the Pollip]]</i> wish
+|Loot4_FileName = Mask Shard (Silksong)
+|Loot4_Name = Mask Shard (Silksong){{!}}Mask Shard
+|Loot4_Amount = 1
+|Loot5_FileName = Flea
+|Loot5_Amount = 1
+|Loot6_FileName = Weaver Effigy
+|loot6_Amount = 1
+|Loot7_FileName = Frayed Rosary String
+|Loot7_Amount = 1
+|Loot8_FileName = Rosary String
+|Loot8_Amount = 2
+|Loot9_FileName = Shard Bundle
+|Loot9_Amount  = 1
+|Loot10_FileName = Pollip Heart
+|Loot10_Amount = 6
+
+|LoreTabletsSource = SS Shellwood
+
+|EnemyGauntletsSource = Shellwood 1, Shellwood 2
+}}
+
+== Sub-area: Chapel of the Witch ==
+{{SS Infobox Area
+|image1 = <gallery>
+Chapel of the Witch Map Marked.png|Marked
+Chapel of the Witch Map Clean.png|Unmarked
+</gallery>
+|ambience = [https://www.youtube.com/watch?v=EcGoF3Smik0 Atmos Creepy v2]
+[https://www.youtube.com/watch?v=blGkSVGGKSI Atmos Shellwood No Wind]<br>
+[https://www.youtube.com/watch?v=ZzyCwfkjyCI Lake Atmos Hornet]
+}}
+The <b>Chapel of the Witch</b> is an area below eastern Shellwood that can be accessed by completing the <i>[[Rite of Rebirth]]</i> wish. Upon arrival, Hornet finds herself stuck behind roots on the wall of the chapel after being kidnapped by [[Greyroot]]. After breaking free, she is revealed to have been [[Cursed Crest|cursed]], being infested with the [[Twisted Bud]]. The curse is in the form of a Crest, which cannot be removed and prevents Hornet from having any [[Tools]] or [[Silk Skills]] equipped. A previously inaccessible section of Shellwood, containing the connection to the Marrow, is found when exiting the chapel.
+
+{{TabbedPOI
+
+|Loot1_FileName = Cursed Crest File
+|Loot1_Name = Cursed Crest
+}}
+{{clear}}
+
+== Creation and Development==
+[[File:Shellwood april 2021.webp|thumb|220px|Shellwood in April 2021]]
+{{Main|Cut Content (Silksong)/Areas#Shellwood}}
+Shellwood rooms were first created around October 2017. Its original planned name was "Shellwood Thicket", which was changed by June 2019. Its initial layout stayed mostly consistent until it received a minor rework prior to April 2021, which changed some passages and added Sister Splinter's arena. As of April 2021, Shellwood was larger than its current iteration, featuring more connections to other areas such as the Underworks. Nyleth's Shrine also connected to the main part of Shellwood.
+
+The area was first shown to the public through a screenshot in February 2021's <i>EDGE Magazine</i> issue, showcasing [[Hornet (Silksong)|Hornet]] fighting a [[Pondcatcher]] in a room that had minimal changes throughout development.<ref>[https://pocketmags.com/edge-magazine/february-2021 Edge Magazine February 2021 edition], p. 61.</ref> In the June 2022 <i>Xbox Game Pass Reveal Trailer</i>, more footage of it was shown, which notably featured a larger amount of flower decoration sprites than it has currently.<ref name="xbox">[https://www.youtube.com/watch?v=JSfuFlhsxZY Hollow Knight: Silksong - Xbox Game Pass Reveal Trailer - Xbox & Bethesda Games Showcase 2022]</ref> This difference in aesthetic is also shown in the area's save profile artwork.<ref>[[:File:Save SS Shellwood.png|Save profile artwork]]</ref> A 2022 screenshot filename revealed Shellwood's name.<ref>[https://web.archive.org/web/20221029084823/https://news.xbox.com/en-us/media/hollow-knight-silksong-xbox-bethesda-showcase-2022/ Hollow Knight: Silksong – Xbox & Bethesda Showcase 2022 - Xbox Wire (archive)]</ref>
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Shellwood 03.png!Bellway station
+|Image2 = Screenshot SS Shellwood 04.png!Longpin room
+|Image3 = Screenshot SS Shellwood 05.png!Small pond
+|Image4 = Screenshot SS Shellwood 13.png!Bottom of Weaver burial spire
+|Image5 = Screenshot SS Shellwood 01.png!Cling Grip Weaver burial spire
+|Image6 = Screenshot SS Shellwood 02.png!Bellshrine
+|Image7 = Screenshot SS Shellwood 06.png!Greyroot hut (Outside)
+|Image8 = Screenshot SS Shellwood 07.png!Greyroot hut (Inside, Empty)
+|Image9 = Screenshot SS Shellwood 08.png!Greyroot hut (Inside, Petrified)
+|Image10 = Screenshot SS Shellwood 09.png!Chapel of the Witch (Captured)
+|Image11 = Screenshot SS Shellwood 10.png!Chapel of the Witch (Inside)
+|Image12 = Screenshot SS Shellwood 11.png!Chapel of the Witch (Outside)
+|Image13 = Screenshot SS Shellwood 12.png!Lower bench
+|Image14 = Screenshot SS Shellwood Pre-Release.png!Pre-release screenshot
+|Image15 = XboxScreenshot Shell Wood.png!Pre-release screenshot
+}}
+
+==Trivia==
+* The word "shellwood" was first mentioned in <i>[[Hollow Knight]]</i>, in [[Zote the Mighty|Zote]]'s Hunter's Journal entry, as being what his weapon is carved from.<ref>[[Zote the Mighty|Zote]] [[Hunter's Journal (Hollow Knight)|Hunter's Journal]] entry: <i>"A self-proclaimed Knight, of no renown. Wields a nail he carved from shellwood, named 'Life Ender.'"</i></ref> It is unknown if this is connected to the <i>Silksong</i> area, or if the material "shellwood" is simply the eponym of said area.
+* The very small room in which the Longpin is located has the colouration of Bellhart on the map, despite being considered by the Quick Map as being in Shellwood. Conversely, the Shellwood Shrine, accessible only in Act 3, has the colouration of Shellwood, despite being part of [[Grand Gate]]. In [[Steel Soul Mode (Silksong)|Steel Soul]], the room where [[Steel Seer Zi]] is found is also a part of Shellwood, despite being part of the [[Blasted Steps]]. These inconsistencies are present throughout the game, though they are likely intentional.
+* The room of graves where the [[Covetous Pilgrim]] and [[Pinmaster Plinney]] are found has an unused Sub-Area title card which would have named it <b>Shellgrave</b>.
+
+{{Localisation
+|DEname = Schalenwald
+|DEmeaning = Shellwood
+|ESname = Bosque Coraza
+|ESmeaning = Shell Forest
+|FRname = Coquibois
+|FRmeaning = Shellwood
+|ITname = Carapiano
+|ITmeaning = Portmanteau of <i>carapace</i> (shell) and <i>piano</i> (plain).
+|JAname = 殻木の森
+|JAromanised = Karaki no mori
+|JAmeaning = Shellwood Forest
+|KOname = 갑목의 숲
+|KOromanised = Gammogui sup
+|KOmeaning = Shellwood Forest
+|PTname = Cascomadeira
+|PTmeaning = Shellwood
+|RUname = Панцирный лес
+|RUromanised = Pancirnyj les
+|RUmeaning = Armoured Forest
+|ZHname = 壳木林
+|ZHromanised = Kémù lín
+|ZHmeaning = Shellwood Forest
+|TWname = 殼木林
+|TWromanised = Kémù lín
+|TWmeaning = same
+|CODEname = SHELLWOOD_THICKET
+|CODEmeaning = Shellwood was originally known as Shellwood Thicket.<ref>[[:File:Pharloom Map 03 (November 2017).png|<i>Hollow Knight: Silksong</i> November 2017 map]]</ref>
+}}
+===Chapel of the Witch===
+{{Localisation
+|hr=false
+|DEname = Kapelle der Hexe
+|DEmeaning = Chapel of the Witch
+|ESname = Capilla de la Bruja
+|ESmeaning = Chapel of the Witch
+|FRname = Chapelle De La Sorcière
+|FRmeaning = Chapel of the Witch
+|ITname = Cappella della Strega
+|ITmeaning = Chapel of the Witch
+|JAname = 魔導者のチャペル
+|JAromanised = Madōsha no chaperu
+|JAmeaning = Sorcerer's Chapel
+|JAkatakana = foreign
+|KOname = 마녀의 예배당
+|KOromanised = Manyeoui yebaedang
+|KOmeaning = Witch's Chapel
+|PTname = Capela da Bruxa
+|PTmeaning = Chapel of the Witch
+|RUname = Капелла Ведьмы
+|RUromanised = Kapella Ved'my
+|RUmeaning = Chapel of the Witch
+|ZHname = 女巫教堂
+|ZHromanised = Nǚwū jiàotáng
+|ZHmeaning = Witch Chapel
+|TWname = 女巫教堂
+|TWromanised = Nǚwū jiàotáng
+|TWmeaning = same
+|CODEname=CHAPEL_WITCH
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Areas}}
+
+[[zh:壳木林]]
+[[fr:Coquibois]]

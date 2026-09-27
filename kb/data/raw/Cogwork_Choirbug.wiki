@@ -1,0 +1,96 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Cogwork Choirbug.png|Hunter's Journal
+Cogwork Choirbug Idle.png|Idle
+</gallery>
+| hasdrop = true
+| sh1 = 4-6
+| sh2 = 5-8
+|health=35/{{BT|70}} 
+|damage_modifiers={{SS Spaced Damage Modifiers|1.25|1|1|1|1}}
+|numbers_required = 20
+|singnum = 2
+}}
+{{Quote
+|Hr = Journal
+|Bug forged of iron, rotor and cog. The automaton works tirelessly to maintain the Core that houses it. <hr/>
+Its core is filled with fine mechanisms, but that alone should not produce such a convincing mimic of life. Silk must also be used to animate this artifice, though exactly how I am not sure.
+}}
+
+<b>Cogwork Choirbugs</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are finely forged [[Cogwork Bugs|automatons]] who work tirelessly to maintain the [[Cogwork Core]].<ref>Cogwork Choirbug [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Bug forged of iron, rotor and cog. The automaton works tirelessly to maintain the Core that houses it. Its core is filled with fine mechanisms, but that alone should not produce such a convincing mimic of life."</i></ref>
+
+== Behaviour and Tactics ==
+Cogwork Choirbugs walk back and forth on a platform, pausing frequently. If one spots [[Hornet (Silksong)|Hornet]], it extends its sharp claws and begins to walk forwards whilst slashing in front of itself wildly, not stopping until it reaches an edge or Hornet gets behind it. This attack comboes Hornet for {{Damage|1+1}} if she gets hit by the slashes. If a Cogwork Choirbug bumps into another enemy during the attack, both are knocked back slightly and stunned for a brief moment.
+
+Cogwork Choirbugs can be easily defeated by luring them to the edge of a platform and then pushing them off into cogs.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Cogwork Choirbugs have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* ...Am I...Who?...
+* ...Lift it...Fix it...Me?...
+* ...The Core...Holy...
+* ...Work...Eternal...
+* ...To mend...
+* ...To serve...
+}}
+== Location ==
+Cogwork Choirbugs can be found throughout the [[Cogwork Core]], and three of them are fought as part of the [[Enemy Gauntlets (Silksong)/Cogwork Core 1|enemy gauntlet]] in the southwest of the area. After the fight, up to two of them can spawn upon each return to the arena.
+{{Gallery
+|Image1 = Mapshot SS Cogwork Choirbug 01.png!Locations in the Cogwork Core
+|Image2 = Mapshot SS Cogwork Choirbug 02.png!Locations in the Cogwork Core in Act 3
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Cogwork Choirbug 01.png!In the Cogwork Core
+|Image2 = GIF SS Cogwork Choirbug 01.gif!Deployed via lift
+|Image3 = Screenshot SS Cogwork Choirbug 02.png!Flurry Slash
+|Image4 = Screenshot SS Cogwork Choirbug 03.png!Bumping into another Cogwork Choirbug
+|Image5 = Screenshot SS Cogwork Choirbug 04.png!Reacting to the Needolin
+|Image6 = Screenshot SS Cogwork Choirbug 05.png![[Silk Fly]] freed upon death
+|Image7 = Screenshot SS Cogwork Core 07.png!Inactive Cogwork Choirbugs
+|Image8 = Screenshot SS Underworks 11.png!Being worked on by [[Twelfth Architect]]
+|Image9 = Screenshot SS Cogwork Choirbug 06.png!Broken Cogwork Choirbugs in Act 3
+|Image10 = Screenshot SS Void Mass 06.jpg!Forming a [[Void Mass]]
+}}
+
+== Trivia ==
+* Cogwork Choirbugs share their Needolin dialogue with [[Cogwork Cleanser]]s, [[Cogwork Defender]]s, [[Cogwork Clapper]]s, [[Cogworker]]s, [[Cogwork Spine]]s, [[Cogwork Crawler|Cogwork Crawler]]s, and [[Cogwork Underfly|Cogwork Underflies]].
+** They also share their singing audio with Cogwork Cleansers.
+
+{{Localisation
+|DEname = Räderwerk-Chorkäfer
+|DEmeaning = Cogwork Choir Bug
+|ESname = Bicho mecánico del Coro
+|ESmeaning = Mechanical Bug of the Choir
+|FRname = Créature Mécanique de la Chorale
+|FRmeaning = Mechanical Creature of the Choir
+|ITname = Meccanismo Corale
+|ITmeaning = Choral Mechanism
+|JAname = カラクリウタイ
+|JAromanised = Karakuri utai
+|JAmeaning = Combination of {{lang|ja|カラクリ <i>karakuri</i>}} (mechanism) and {{lang|ja|歌い <i>utai</i>}} (singing).
+|KOname = 톱니바퀴 성가대벌레
+|KOromanised = Tomnibakwi seonggadaebeolle
+|KOmeaning = Cogwheel Choirbug
+|PTname = Inseto do Coro Mecânico
+|PTmeaning = Mechanical Insect of the Choir
+|RUname = Заводной хорный жук
+|RUromanised = Zavodnoj xornyj žuk
+|RUmeaning = Clockwork Choir Bug
+|TWname = 機樞詠者
+|TWromanised = Jīshū yǒng zhě
+|TWmeaning = same
+|ZHname = 机枢咏者
+|ZHromanised = Jīshū yǒng zhě
+|ZHmeaning = Mechanical Chanter or Mechanical Choir Member
+|CODEname = SONG_AUTOMATON_01
+|CODEmeaning = "Song" internally refers to the Citadel; 02 is the [[Cogwork Cleanser]]; other [[Architects#Creations |Cogwork Bugs]] use the Automaton name internally
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

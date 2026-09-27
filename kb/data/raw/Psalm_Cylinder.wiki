@@ -1,0 +1,189 @@
+{{SS Infobox Item
+| label = Psalm
+| title = Psalm Cylinder
+| image = <gallery>
+Psalm Cylinder.png|Inventory
+Psalm Cylinder Shimmering.png|Gramophone
+</gallery>
+| description = Metallic cylinder of Citadel make, etched with a recording of sound. <hr/>
+The cylinder can be played in a gramophone.
+| effects = Can be sold to [[Vaultkeeper Cardinius]] for {{R|200}}<br>Listen to sound recordings
+| type = [[Items (Silksong)#Tradables|Tradable]]
+| source = [[The Citadel]]<br>Purchased from [[Grindle]]
+| buy = {{R|240}}
+| max = 5
+
+| label2 = Sacred
+| title2 = Sacred Cylinder
+| image2 = <gallery>
+Sacred Cylinder.png|Inventory
+Sacred Cylinder Shimmering.png|Gramophone
+</gallery>
+| description2 = Metallic cylinder of Citadel make, etched with the melody of the Vaultkeepers. <hr/>
+The cylinder can be played in a gramophone.
+| effects2 = Can be sold to [[Vaultkeeper Cardinius]] for {{R|320}}<br>Learn [[Vaultkeeper's Melody]]
+| type2 = [[Items (Silksong)#Tradables|Tradable]]
+| source2 = [[Whispering Vaults]]
+| max2 = 1
+}}
+
+{{Quote|Hr=SS
+|Never! States our law. Never must our melody pass to a bug not Keeper! But you, fool Weaver, would shatter those tenants with reckless ease.
+|[[Vaultkeeper Cardinius]]}}
+
+<b>Psalm Cylinders</b> are [[Items (Silksong)#Tradables|tradable items]] in <i>[[Hollow Knight: Silksong]]</i>. They are metallic cylinders found throughout [[the Citadel]] inscribed with recordings that can be heard by bringing them to [[Vaultkeeper Cardinius]]. 
+
+The <b>Sacred Cylinder</b> is a unique cylinder that is apart of the <i>[[LEARN: Vaultkeeper's Melody]]</i> objective, that will teach [[Hornet (Silksong)|Hornet]] the [[Vaultkeeper's Melody]].
+
+
+== Use ==
+Can be sold to [[Vaultkeeper Cardinius]] for {{R|200}}, or {{R|320}} for the Sacred Cylinder, which is also required to learn the [[Vaultkeeper's Melody]], and complete the wish.
+
+The recordings on the Cylinders can be listened to after selling them by visiting Vaultkeeper Cardinius. After all Psalm Cylinders have been sold to Vaultkeeper Cardinius, and the [[Desk]] has been purchased, the [[Gramophone]] may be purchased from [[Frey]] and installed in the [[Bellhome]]. The Cylinders can then be listened to from the [[Desk]].
+
+{| class="article-table" width="100%"
+! Item
+! Description
+! width="40%" | Audio
+|-
+! rowspan=5 | [[File:Psalm Cylinder.png|72x72px|center]] Psalm Cylinder
+| <i>Voices of the Choir, raised in sacred song.</i>
+| [[File:cylinder singing.ogg|center|loop]]
+|-
+| <i>Last surgery of Conductor Mizello, performed in Whiteward's operating theatre.</i>
+| [[File:cylinder surgery.ogg|center|loop]]
+|-
+| <i>Guide track for the Choir, with a theme of ascendence.</i>
+| [[File:cylinder music box hang.ogg|center|loop]]
+|-
+| <i>Guide track for the Choir, with a theme of salvation.</i>
+| [[File:cylinder music box citadel halls.ogg|center|loop]]
+|-
+| <i>Sermon of service, delivered by an ordained Vaultkeeper to acolytes in training.</i>
+| [[File:cylinder hearing.ogg|center|loop]]
+|-
+! [[File:Sacred Cylinder.png|72x72px|center]] Sacred Cylinder
+| <i>Sacred melody of the Vaultkeepers, coveted and claimed by the pontiff below the Whispering Vaults.</i>
+| [[File:melody b musicbox gramaphone.ogg|center|loop]]
+|}
+
+
+== How to Acquire ==
+There are a total of six Psalm Cylinders that can be obtained, including the Sacred Cylinder.
+
+{| class="article-table" width="100%"
+! Item
+! Location
+! Map
+|-
+! rowspan=5 | [[File:Psalm Cylinder.png|72x72px|center]] Psalm Cylinder
+| Found in [[Whispering Vaults]], in the room with [[Vaultkeeper Cardinius]].
+| [[File:Mapshot SS Psalm Cylinder 01.png|150px|center]]
+|-
+| Found in [[Underworks]], below the room where [[The Unravelled]] is fought.
+| [[File:Mapshot SS The Unravelled 02.png|150px|center]]
+|-
+| Found in [[High Halls]], to the northwest of the [[Ventrica]] in a maze of pipes.
+| [[File:Mapshot SS Psalm Cylinder 03.png|150px|center]]
+|-
+| Bought from [[Grindle]] for {{R|240}}.
+| [[File:Mapshot SS Grindle 01.png|150px|center]]
+|-
+| Found in far east [[Whispering Vaults]] after ascending a large wind shaft and looping around the west.
+| [[File:Mapshot SS Psalm Cylinder 05.png|150px|center]]
+|-
+! [[File:Sacred Cylinder.png|72x72px|center]] Sacred Cylinder
+| Found in lower [[Whispering Vaults]] accessible via the [[Underworks]] after beating [[Trobbio]]. 
+| [[File:Mapshot SS Sacred Cylinder.png|150px|center]]
+|}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Psalm Cylinder 01.png!Near Vaultkeeper Cardinius in Whispering Vaults
+|Image2 = Screenshot SS Psalm Cylinder 02.png!In Underworks
+|Image3 = Screenshot SS Psalm Cylinder 03.png!In High Halls
+|Image4 = Screenshot SS Psalm Cylinder 04.png!Near Songclave In Whispering Vaults
+|Image5 = Screenshot SS Psalm Cylinder 05.png!Near Vaultkeeper Pontiff in Whispering Vaults
+}}
+
+{{Gallery
+|Image1 = Screenshot SS Vaultkeeper Cardinius 01.png!Gramophone near Vaultkeeper Cardinius
+|Image2 = Screenshot SS Psalm Cylinder 06.png!Hornet learning the Vaultkeeper's Melody
+|Image3 = Screenshot SS Bellhart 09.png!Gramophone in Hornet's Bellhome
+}}
+
+==Trivia==
+* The Cylinders took inspiration from the [[Wikipedia:phonograph cylinder|phonograph cylinder]]s, the earliest medium to record and replay sounds in real life.
+**They also resemble [[Wikipedia:music box|music box]] cylinders, as pegs are visible on the cylinder's surface.
+* The Cylinders described as guide tracks for the choir with themes of ascendence and salvation feature music box orchestrations of the [[Soundtrack (Silksong)|music]] to [[High Halls]] and [[Choral Chambers]], respectively.
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Psalm Cylinders had their value increased from 100 rosaries to 200; the Sacred Cylinder increased from 200 to 320.
+}}
+{{Localisation
+|DEname = Psalmenwalze
+|DEmeaning = Psalm Roll
+|ESname = Cilindro de salmo
+|ESmeaning = Psalm Cylinder
+|FRname = Cylindre de psaume
+|FRmeaning = Psalm Cylinder
+|ITname = Cilindro dei salmi
+|ITmeaning = Cylinder of the Psalms
+|JAname = 聖歌のシリンダー
+|JAromanised = Seika no shirinda 
+|JAkatakana = foreign
+|JAmeaning = Hymn Cylinder 
+|KOname = 찬송가 실린더
+|KOromanised = Chansongga sillindeo
+|KOmeaning = Hymn Cylinder
+|PTname = Cilindro dos Salmos
+|PTmeaning = Psalm Cylinder
+|RUname = Псалмовый цилиндр
+|RUromanised = Psalmovyj cilindr
+|RUmeaning = Psalm Cylinder
+|TWname = 聖詠音筒
+|TWromanised = Shèngyǒng yīn tǒng
+|TWmeaning = same
+|ZHname = 圣咏音筒
+|ZHromanised = Shèngyǒng yīn tǒng
+|ZHmeaning = Psalm Music Cylinder
+|CODEname = PSALM_CYL
+|CODEmeaning = 
+}}
+
+=== Sacred Cylinder ===
+{{Localisation
+|hr=false
+|DEname = Heilige Walze
+|DEmeaning = Sacred Roll 
+|ESname = Cilindro sagrado
+|ESmeaning = Sacred Cylinder
+|FRname = Cylindre sacré
+|FRmeaning = Sacred Cylinder
+|ITname = Cilindro sacro
+|ITmeaning = Sacred Cylinder
+|JAname = 聖なるシリンダー
+|JAromanised = Seinaru shirinda 
+|JAkatakana = foreign
+|JAmeaning = Sacred Cylinder 
+|KOname = 신성한 실린더
+|KOromanised = Sinseonghan sillindeo
+|KOmeaning = Sacred Cylinder
+|PTname = Cilindro Sagrado
+|PTmeaning = Sacred Cylinder
+|RUname = Священный цилиндр
+|RUromanised = Svjaščennyj cilindr
+|RUmeaning = Sacred Cylinder
+|TWname = 聖歌音筒
+|TWromanised = Shènggē yīn tǒng
+|TWmeaning = same
+|ZHname = 圣歌音筒
+|ZHromanised = Shènggē yīn tǒng
+|ZHmeaning = Hymn Music Cylinder
+|CODEname = PSALM_CYL_MELODY
+|CODEmeaning = 
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}

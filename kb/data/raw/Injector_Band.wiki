@@ -1,0 +1,74 @@
+{{SS Infobox Tool
+| type = Blue
+| effect = Speeds up the act of binding by 40%
+| location = [[Whiteward]]
+| description = Brace of surgical pins from the Whiteward. Used to forcefully insert Silk deep inside a bug's shell.<hr/>
+Increases the speed of binding.
+}}
+
+{{Quote
+| In the ward down below, I saw it clear, the hollowed husks, and the many torturous implements... machines to instill a bug with thread, that would see their life extended.
+| [[Hornet (Silksong)|Hornet]]
+| Hr = SS
+}}
+
+<b>Injector Band</b> is a {{CrestSlot|Blue|1}} in <i>[[Hollow Knight: Silksong]]</i>. It speeds up the act of Binding.
+
+== Usefulness ==
+Speeds up [[Hornet (Silksong)|Hornet]]'s [[Bind]] by 40%, reducing the chance of it being interrupted in combat and providing more windows to do so safely.
+* Increases the speed of the [[Beast Crest]] and [[Witch Crest]]'s Binds, but does not increase the speed of the [[Architect Crest]]'s Craft Bind.
+* It can be used to mitigate the longer Binding time from [[Multibinder]], resulting in increased healing with a slightly faster than normal Binding time.
+
+== How to Acquire ==
+Found in the lower eastern section of [[Whiteward]], above the passage with the [[Mortician]]s.
+
+{{Gallery
+|Image1 = Mapshot SS Injector Band.png!Location on map
+|Image2 = Screenshot SS Injector Band Room.png!On furniture in Whiteward
+}}
+
+== Tool Synergies ==
+{{SS Table Tool Interactions
+| Tool1 = Multibinder
+| Tool1Desc = Both bind durations are shortened by 52%.
+}}
+
+== Gallery ==
+{| align="center" style="text-align:center"
+| {{#ev:youtube|https://www.youtube.com/watch?v=TMV-zstOvK0|250|center|Deep Dive}}
+|}
+
+{{Localisation
+|DEname = Injektorenband
+|DEmeaning = Injector Band
+|ESname = Banda inyectora
+|ESmeaning = Injector Band
+|FRname = Ceinture d'injection
+|FRmeaning = Belt of Injection
+|ITname = Fascia di iniettori
+|ITmeaning = Band of Injectors
+|JAname = 注入バンド
+|JAromanised = Chūnyū bando
+|JAkatakana = foreign
+|JAmeaning = Injection Band
+|KOname = 주사기 끈
+|KOromanised = Jusagi kkeun
+|KOmeaning = Syringe Band
+|PTname = Conjunto Injetor
+|PTmeaning = Injector Kit
+|RUname = Инъекторная повязка
+|RUromanised = In"ektornaja povjazka
+|RUmeaning = Injector Band
+|TWname = 注絲套針
+|TWromanised = Zhù sī tàozhēn
+|TWmeaning = same
+|ZHname = 注丝套针
+|ZHromanised = Zhù sī tàozhēn
+|ZHmeaning = Silk Injection Trocar<br><small>[[wikipedia:trocar|Trocar]] is a medical device used to implant therapeutics.</small>
+|CODEname = QUICKBIND
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Ceinture d’injection]]

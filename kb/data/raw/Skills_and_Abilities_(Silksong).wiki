@@ -1,0 +1,151 @@
+{{Nav Games Header|Spells and Abilities (Hollow Knight)|Skills and Abilities (Silksong)}}
+
+== Silk Skills ==
+[[File:Silk Skills Heading.png|center]]
+
+<b>{{CrestSlot|Skill|s}}</b> are abilities that are equipped within [[Hornet (Silksong)|Hornet's]] [[Crest]] which deplete 4 [[Silk]] when used.<ref group="Note">Lowered to 3 Silk when at full health with [[Egg of Flealia]] equipped.</ref> Their damage scales with the upgrade level of the [[Needle]], and can be increased further with [[Volt Filament]] and the [[Shaman Crest]].
+
+{| class="article-table" width="100%" data-tracking-id="skills-table"
+! style="width: 8rem;" | [[File:Silkspear.png|link=Silkspear|72x72px]]
+[[Silkspear]]
+| <i>Attack by throwing the needle forward. Silk will be expended.</i>
+| 3x [[Needle]]
+|-
+! [[File:Thread Storm.png|link=Thread Storm|72x72px]]
+[[Thread Storm]]
+| <i>Attack by whipping a storm of Silk around oneself.</i>
+| (0.75x [[Needle]]) x 4 + (0.25x [[Needle]]) + ([[Damage Values and Enemy Health (Silksong)#Needle|Needle Level]]) x 6
+|-
+! [[File:Cross Stitch.png|link=Cross Stitch|72x72px]]
+[[Cross Stitch]]
+| <i>Bind Silk around the needle to deflect enemy attacks and instantly strike back.</i>
+| (0.75 x [[Needle]]) x 4
+|-
+! [[File:Sharpdart.png|link=Sharpdart|72x72px]]
+[[Sharpdart]]
+| <i>Pierce through enemies in a blur of blade and Silk.</i>
+| (2.75x [[Needle]]) + <br> (0.25x [[Needle]]) x3
+|-
+! [[File:Rune Rage.png|link=Rune Rage|72x72px]]
+[[Rune Rage]]
+| <i>Weave runes of blazing Silk upon enemies.</i>
+| <math>\frac{\text{2.1x Needle Damage}}{n}</math><br>For n<sup>th</sup> rune on the same enemy
+|-
+! [[File:Pale Nails.png|link=Pale Nails|72x72px]]
+[[Pale Nails]]
+| <i>Spin lethal talons from thread that seek out enemies.</i>
+| 1x [[Needle]] per projectile
+|}
+
+== Ancestral Arts ==
+<b>Ancestral Arts</b> are skills Hornet can acquire throughout the game to make traversing [[Pharloom]] easier.
+
+{| class="article-table" width="100%"
+! style="width: 8rem;" | [[File:Icon SS Swift Step Splash.png|link=Swift Step|72x72px]]
+[[Swift Step]]
+| <i>Sprint at blinding speed, beyond one's natural limits.<br>
+Chase down prey and leap great distances.</i>
+|-
+! [[File:Icon SS Cling Grip Splash.png|link=Cling Grip|72x72px]]
+[[Cling Grip]]
+| <i>Cling to sheer surfaces and leap to rapidly scale heights.</i>
+|-
+! [[File:Icon SS Needolin Splash.png|link=Needolin|72x72px]]
+[[Needolin]]
+| <i>Play ancient melodies by stringing Silk along the needle.<br>
+Silk will be expended. Strike enemies to replenish Silk.</i>
+|-
+! [[File:Icon SS Clawline Splash.png|link=Clawline|72x72px]]
+[[Clawline]]
+| <i>Fling the needle as a harpoon and launch forcefully towards it.<br>
+Silk will be expended. Strike enemies to replenish Silk.</i>
+|-
+! [[File:Icon SS Silk Soar Splash.png|link=Silk Soar|72x72px]]
+[[Silk Soar]]
+| <i>Fling the needle upwards and launch to tremendous heights.<br>
+Silk will be expended. Strike enemies to replenish Silk.</i>
+|-
+! [[File:Icon SS Sylphsong Splash.png|link=Sylphsong|72x72px]]
+[[Sylphsong]]
+| <i>Eva's soul and strength reside within.<br>
+Silk will regenerate when resting at a [[Bench (Silksong)|bench]].</i>
+|}
+
+== Needolin Melodies ==
+Songs Hornet can learn for the Needolin to progress or that give her additional abilities.
+
+{| class="article-table" width="100%"
+! style="width: 8rem;" | [[File:Icon SS Conductor's Melody Art.png|link=Threefold Melody|72x72px]]
+[[Threefold Melody|Conductor's Melody]]
+| <i>One part of the Threefold Melody, entrusted to the Conductors.</i>
+|-
+! style="width: 8rem;" | [[File:Icon SS Architect's Melody Art.png|link=Threefold Melody|72x72px]]
+[[Threefold Melody|Architect's Melody]]
+| <i>One part of the Threefold Melody, entrusted to the industrious Architects.</i>
+|-
+! style="width: 8rem;" | [[File:Icon SS Vaultkeeper's Melody Art.png|link=Threefold Melody|72x72px]]
+[[Threefold Melody|Vaultkeeper's Melody]]
+| <i>One part of the Threefold Melody, entrusted to the secretive Vaultkeepers.</i>
+|-
+! style="width: 8rem;" | [[File:Icon SS Beastling Call Art.png|link=Beastling Call|72x72px]]
+[[Beastling Call]]
+| <i>Mimic the song of the Bell Beast.<br>
+Summon the Beastlings and return together to their mother.</i>
+|-
+! [[File:Icon SS Elegy of the Deep Art.png|link=Elegy of the Deep|72x72px]]
+[[Elegy of the Deep]]
+| <i>Draw out memories of Pharloom's forgotten past.</i>
+|}
+
+== Other Abilities ==
+Other abilities or upgrades Hornet can obtain, other than Bind which is innate.
+{| class="article-table" width="100%"
+! style="width: 8rem;" | [[File:Icon SS Spell Core.png|link=Bind|72x72px]]
+[[Bind]]
+| <i>Attack enemies to replenish Silk.<br>
+Press BIND to bind your wounds.</i>
+|-
+! [[File:Icon SS Silk Heart Art.png|link=Silk Heart|72x72px]]
+[[Silk Heart]]
+| <i>Regained the power to regenerate Silk within one's shell.</i>
+|-
+! [[File:Icon SS Needle Strike Art.png|link=Needle Strike|72px]]
+[[Needle Strike]]
+| <i>Charge power in the needle, then release as a deadly attack.</i>
+|-
+! [[File:Icon SS Drifter's Cloak Art.png|link=Drifter's Cloak|72x72px]]
+[[Drifter's Cloak]]
+| <i>Flare the cloak to ride strong winds or glide gracefully.</i>
+|-
+! [[File:Icon SS Faydown Cloak Art.png|link=Faydown Cloak|72x72px]]
+[[Faydown Cloak]]
+| <i>Fabled feather down, layered within the cloak. Leap again while airborne.<br>
+Soar above foes. Reach new heights. Strike from above.</i>
+|-
+! [[File:Icon SS Farsight Art.png|link=Farsight|72x72px]]
+[[Farsight]]
+| <i>Completion quantities will be displayed in Menus.</i>
+|-
+! [[File:Icon SS Everbloom Art.png|link=Everbloom|72x72px]]
+[[Everbloom]]
+| <i>Fragile flower taken from a deep and distant memory.<br>
+Its pale light wards against the void.</i>
+|}
+
+== Achievements ==
+{{Achievement|game=silksong|Bound}}
+{{Achievement|game=silksong|Woven}}
+{{Achievement|game=silksong|Regenerated}}
+{{Achievement|game=silksong|Bonded}}
+{{Achievement|game=silksong|Entwined}}
+{{Achievement|game=silksong|Remembrance}}
+
+{{Hr|SS}}
+
+== Notes ==
+<references group="Note" />
+
+[[Category:Skills and Abilities (Silksong)| ]]
+
+[[fr:Compétences et Capacités (Silksong)]]
+[[pt:Técnicas e Habilidades (Silksong)]]

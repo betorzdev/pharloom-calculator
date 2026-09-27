@@ -1,0 +1,110 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Underpoke.png|Hunter's Journal
+Underpoke Idle.png|Idle
+</gallery>
+| hasdrop = true
+| r1 = 3
+| r2 = 4
+| sh1 = 5-8
+| sh2 = 7-10
+|health = 40/{{BT|80}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.25|1|1|1|0.9}}
+|numbers_required = 25
+|singnum = 1
+}}
+{{Quote
+|Hr = Journal
+|Drained worker on the verge of collapse. Consumed by the Haunting, they continue to work far beyond their mortal limits.<hr/>
+They toiled incessantly for the Citadel, their shells bent and greyed, and now the kingdom's curse means not even death can relieve them.
+}}
+
+<b>Underpokes</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are extremely drained [[Underworkers]], only kept alive beyond their mortal limits by the [[Haunting]].<ref>Underpoke Hunter's Journal entry: <i>"Drained worker on the verge of collapse. Consumed by the Haunting, they continue to work far beyond their mortal limits."</i></ref>
+
+== Behaviour and Tactics ==
+Underpokes often start off stationary, chipping away at objects, but take flight once Hornet approaches.<br>
+Being flying enemies, they attempt to keep distance between themselves and Hornet, but fly closer to attack with either of their two attacks:
+* <b>Triple Thrust:</b> Does three short thrusts in quick succession. Telegraphed by the Underpoke coming in more diagonally towards Hornet.
+* <b>Flying Joust:</b> Rears back before performing a straight horizontal dash with their pin out, stopping once they hit a wall or Hornet is behind them. Telegraphed by them getting more distance and vertically aligning themselves with Hornet.
+
+Underpokes deal {{Damage|1}} with both of their attacks, as well as on contact.
+
+Due to their complete inability to attack below themselves, staying below them and constantly hitting them upwards is a viable and easy strategy. Additionally, they do not have any moves or AI to dash away if Hornet is too close, so they just keep flying downwards and getting hit back up.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Underpokes have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+*For the light, unseen...
+*These halls kept clean...
+*Rest and fade...
+*We... were chosen...
+*See us faithful!
+*Shells bend, shells break...
+*Through duty, purity...
+*The sacred toil...
+}}
+
+== Location ==
+Underpokes can be found primarily in the [[Underworks]], with one encountered as part of the [[Enemy Gauntlets (Silksong)/Underworks 1|enemy gauntlet]] in the northwest of the area, two in the [[Enemy Gauntlets (Silksong)/Underworks 2|gauntlet]] in the middle of the area, and another during the [[Enemy Gauntlets (Silksong)/Underworks 3|gauntlet]] in [[the Cauldron]].
+
+In [[Act 3]], a [[black-threaded]] Underpoke is fought during the [[Enemy Gauntlets (Silksong)/Cogwork Core 2|gauntlet]] in the ruined [[Cogwork Core]], and another spawns alongside a [[Void Mass]] in the Cauldron.
+{{Gallery
+|Image1 = Mapshot SS Underpoke 01.png!Locations in the Underworks
+|Image2 = Mapshot SS Underpoke 03.png!Locations in the Underworks in Act 3
+|Image3 = Mapshot SS Underworker 02.png!Location in the Cogwork Core in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Underpoke 01.png!In the Underworks
+|Image2 = Screenshot SS Underpoke 02.png!In the Cogwork Core during Act 3
+|Image3 = Screenshot SS Underpoke 03.png!Triple Thrust
+|Image4 = Screenshot SS Underpoke 04.png!Flying Joust
+|Image5 = Screenshot SS Underpoke 05.png!Responding to the Needolin
+|Image6 = Screenshot SS Underpoke 08.png!Clinging to a Wall in the Underworks
+|Image7 = Screenshot SS Underpoke 06.png!Working in eastern the Underworks
+|Image8 = Screenshot SS Underloft_01.png!Working alongisde an Underloft
+|Image9 = Screenshot SS Underpoke 07.png!Sitting in the Cauldron
+|Image10 = Screenshot SS Underworker 10.png!Corpse below a bench room
+|Image11= Screenshot SS Underworks 08.png!Corpses in a bench room
+|Image12 = Screenshot SS Wisp Thicket 06.png!Corpses in the Wisp Thicket
+|Image13 = Screenshot SS Cogwork Core Arena 2.png!Corpses in the Cogwork Core
+|Image14 = Screenshot SS Underpoke 09.png!Corpse in Shellwood
+}}
+
+{{Localisation
+|DEname = Unterstecher
+|DEmeaning = Under Shover
+|ESname = Pinchón subterráneo
+|ESmeaning = Underground Stabber<br><small><i>Pinchón</i> is not a real word in Spanish and is derived from the verb <i>pinchar</i> (to stab).</small>
+|FRname = Sous-piqueur
+|FRmeaning = Under Whipper
+|ITname = Fondofiacco
+|ITmeaning = Combination of <i>fondo</i> (bottom) and <i>fiacco</i> (limp).
+|JAname = 礎の突刺者
+|JAromanised = Ishizue no tsukisasha
+|JAmeaning = Foundation Piercer
+|KOname = 지하부지깽이
+|KOromanised = Jihabujikkaengi
+|KOmeaning = Underground Poker
+|PTname = Claustroservo
+|PTmeaning = From <i>claustro-</i> (prefix for enclosed space) and <i>servo</i> (servant).
+|RUname = Цеховой работяжка
+|RUromanised = Cexovoj rabotjažka
+|RUmeaning = Hard Worker to the Workshop
+|TWname = 下層戳刺工
+|TWromanised = Xiàcéng chuōcì gōng
+|TWmeaning = Lower-level Poke Worker<br><small>{{lang|zh-Hant|下層工廠}} <i>xiàcéng gōngchǎng</i> (Lower-level Factory) is the name of the [[Underworks]] in Traditional Chinese.</small>
+
+|ZHname = 圣厂戳刺工
+|ZHromanised = Shèngchǎng chuōcì gōng
+|ZHmeaning = Holy Factory Poke Worker<br><small>{{lang|zh-Hans|圣堡工厂}} <i>shèng bǎo gōngchǎng</i> (Holy Castle Factory) is the name of the [[Underworks]] in Simplified Chinese.</small>
+|CODEname=UNDERSTORE_POKER
+|CODEmeaning=<code>UNDERSTORE</code> internally refers to Underworks.
+}}
+{{Refs|hr=ss}}
+
+[[zh:圣厂戳刺工]]
+{{SS Nav Enemies}}

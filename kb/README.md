@@ -1,19 +1,39 @@
 # Combat knowledge base — Hollow Knight: Silksong
 
-For answering combat questions without going back to the wiki. It isn't part of the site
-(`index.html` doesn't load it); it's reference material. **Empty until phase 1** of the plan
-(`design/00-study.md` §9): the batch fetch of the Tools, Crests, bosses, enemies, the damage
-page, the Journal, the gauntlets and the Wishes, as `hallownest-calculator/kb/` was built.
+The wiki's knowledge, kept here so the site's data can be regenerated without going back to the
+wiki by hand. It isn't part of the site (`index.html` doesn't load it). Built in phase 1 of the
+plan (`design/00-study.md` §9).
 
 ## `data/`
 
 | File | What it is |
 |---|---|
-| `fetch-wiki.py` | Downloads raw wikitext into `raw/`: `python3 fetch-wiki.py "Page name" list.txt`. Same API as for Hollow Knight (`https://hollowknight.wiki/mw/api.php`); the Silksong categories are `Bosses (Silksong)`, `Enemies (Silksong)`, `Tools`, `Crests`, `Skills and Abilities (Silksong)`, `Areas (Silksong)`, `Items (Silksong)` |
+| `pages.txt` | The pages `kb/` is built from: the Silksong categories (Tools, Crests, bosses, enemies, skills, areas, items), the gauntlets' subpages, the damage page, the Journal, Completion, Save Data and the rest. `Category:` and `Prefix:` lines expand |
+| `fetch-wiki.py` | Downloads the raw wikitext into `raw/`: `npm run kb` (every page in `pages.txt`), or `python3 kb/data/fetch-wiki.py "Page name"`. Redirects are saved under the title asked for |
+| `raw/` | 522 pages of wikitext, `<Title>.wiki` with `/` and spaces as `_`. Committed, so the generators run offline and a re-fetch after a patch shows up as a diff |
 | `all_text.json` | The game's text dump, downloaded by `npm run text` (not committed; `.gitignore`) |
+| `art/` | The sprites `npm run palette` measures for `design/02-silksong.md` (not committed: Team Cherry's art) |
+
+## From here to the site
+
+`npm run data` runs the three generators in `tools/`, which read `raw/` and the dump and write
+the site's data files. None is edited by hand:
+
+| Generator | Writes | From |
+|---|---|---|
+| `tools/gen-data.js` | `js/data.js` | The Tools page and each Tool's infobox, each Crest's infobox, Eva's page, the damage page's Needle, Needle Strike, Tools, Silk Skills and Modifiers tables |
+| `tools/gen-enemies.js` | `js/enemies.js` | The damage page's two master tables (health, black-threaded health, five modifiers per row) and each boss page's *Behaviour and Tactics* (attacks, `{{Damage}}`, `{{Stagger}}`) |
+| `tools/gen-journal.js` | `js/journal.js` | The *Hunter's Journal (Silksong)* table (order, kills, notes) and the game's `NAME_`, `DESC_`, `NOTE_` texts |
+
+Shared by them: `tools/wiki.js` (pages, templates, `{{Localisation}}`, tables with rowspans),
+`tools/names.js` (the game's names by key, by English, and a page's Journal key) and
+`tools/emit.js` (the output files).
 
 ## Source and reliability
 
-Everything will come from **`hollowknight.wiki`** as raw wikitext, patch 1.0.30000 (the wiki
-disagrees with itself in a few places: `design/00-study.md` §8 lists them). The Spanish names
-are the game's own (`npm run text`), not the wiki's, where they differ.
+Everything comes from **`hollowknight.wiki`** as raw wikitext, fetched on 27 September 2026 for
+patch 1.0.30000. The wiki disagrees with itself in a few places (`design/00-study.md` §8): the
+generators take the damage page's numbers. Its own disclaimer applies to the master tables:
+enemies with several health values (a summon inside a boss fight) aren't fully explored. The
+Spanish names are the game's own, by key, not the wiki's `ESname` where they differ (Moss
+Mother: «Madremusgo», not «Madre Musgo»).

@@ -1,0 +1,191 @@
+{{SS Infobox Boss
+| image1 = <gallery>
+B Groal the Great.png|Hunter's Journal
+Groal the Great Stagger.png|Staggered
+Groal the Great Inhale.png|Great Inhale
+Groal the Great Charging.png|Charging Soul
+</gallery>
+| location = [[Bilewater]]
+| health = 650
+| damage_modifiers = {{SS Spaced Damage Modifiers|1.8|1.2|1|0.9|0.9}}
+| numbers_required = 1
+| drops = A [[Bench (Silksong)|Bench]]<br/>[[Seeker's Soul]]
+| theme = [https://youtu.be/M-z6fPrpg-k?t=92 Cut Through (Main + Percussion)] (Enemy Gauntlet)<br>[https://youtu.be/M-z6fPrpg-k?t=184 Cut Through (Main + Percussion + Vocals)] (Groal the Great)
+| singnum = 2
+|affiliation = [[Stilkin Tribe]] (Leader)
+}}
+
+{{Quote
+|Hr = Journal
+|Chief and chaplain of the Stilkin, forever raging against the Citadel that chokes their caves and sees them suffer.<hr/>
+This one's strength was much enhanced by stolen soul. They are not the first who tried to hoard it, or to mould it towards such violent ends.
+}}
+
+<b>Groal the Great</b> is a main [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. They are the hate-filled chief of the [[Stilkin Tribe]].<ref name=hj/> They guard the [[Seeker's Soul]] required for the <i>[[Silk and Soul]]</i> [[Wishes|wish]].
+
+== Background ==
+Groal the Great is the leader of the [[Stilkin Tribe]] that lives in [[Bilewater]], known for their strong hatred towards the [[Citadel]] for polluting their home environment.<ref name=hj>Groal the Great [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Chief and chaplain of the Stilkin, forever raging against the Citadel that chokes their caves and sees them suffer."</i></ref> At an unknown point in the past, Groal was approached by a [[Snail Shamans|Snail Shaman]] who hoped to forge an alliance with Bilewater against the Citadel.<ref>[[Caretaker]]: <i>"Went seekin' alliance with those basic bugs of the swamps. Thought they'd both gain from the union... Scheming defiance, or some such stupidity!"</i></ref> Instead of choosing to work together, Groal killed the Shaman and took his [[Soul]] to strengthen themself.<ref>[[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"This one's strength was much enhanced by stolen soul."</i></ref>
+
+== In-game Events ==
+Groal the Great can be found in [[Bilewater#Sub-area:_Bilehaven|Bilehaven]], at the top of [[Bilewater]]. [[Hornet (Silksong)|Hornet]] first must defeat an [[Enemy Gauntlets (Silksong)|enemy guantlet]] before Groal appears for the boss fight.
+
+After defeating Groal, [[Stilkin Trapper|Stilkin Trappers]] start to appear across Bilewater alongside [[Stilkin]].
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+Prior to fighting Groal, [[Hornet (Silksong)|Hornet]] must first fight through 5 waves of enemies consisting of:
+<div class="mw-collapsible mw-collapsed">
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Stilkin.png|35x35px|link=Stilkin]] [[Stilkin]] x2, left and right<br>
+|
+|-
+|
+[[File:HJ_Stilkin Trapper.png|35x35px|link=Stilkin Trapper]] [[Stilkin Trapper]] x2, left and right<br>
+| Defeating both enemies triggers a Spike Ball trap which swings right to left.
+|-
+|
+[[File:HJ_Swamp Squit.png|35x35px|link=Swamp Squit]] [[Swamp Squit]] x3, left, centre, and right
+|
+|-
+|
+[[File:HJ_Stilkin Trapper.png|35x35px|link=Stilkin Trapper]] Stilkin Trapper, left<br/>
+[[File:HJ_Stilkin.png|35x35px|link=Stilkin]] Stilkin, right
+|Defeating both enemies triggers 2 consecutive Spike Ball traps, the first swings left to right then vice versa.
+|-
+|
+[[File:HJ_Swamp Squit.png|35x35px|link=Swamp Squit]] Swamp Squit x2, left and right<br/>
+[[File:HJ_Stilkin Trapper.png|35x35px|link=Stilkin Trapper]] Stilkin Trapper, centre
+|
+|}
+</div>
+After this, Groal rises up from the centre of the [[Muckmaggot]] pool and roars, beginning the fight.
+
+=== Phase 1 ===
+Groal the Great dives underwater between most attacks. After emerging, they hover some distance away from Hornet and perform 1–2 attacks before diving again. Groal has the following attacks at their disposal:
+
+* <b>Acid Spit</b>: Groal the Great's stomach glows green and rumbles. They then spit out 2 arcing acid orbs towards Hornet that bounce once before stopping and exploding. If an orb lands in water, it disappears. This is the only attack they can occasionally perform twice in a row.
+* <b>Great Inhale</b>: Groal the Great gapes their mouth open towards Hornet and inhales air in a large, horizontal cone, attempting to swallow her. If successful, Hornet continuously takes damage in their stomach until she struggles out by pressing ATTACK 4–6 times. There is a minimum {{Damage|1+1}} dealt before Hornet can escape, and attacking within Groal's stomach deals damage to them while also giving Hornet Silk. Groal stops this attack early if Hornet gets behind them.
+** [[Pimpillo]] or [[Voltvessels]] can be thrown into Groal's mouth during this attack, causing the Tool to explode in their stomach and deal damage.
+* <b>Spike Ball Ambush</b>: Groal the Great remains underwater while bringing down a large Spike Ball trap that swings in an arc across the entire arena. The arc covers both lower middle platforms, but does not reach the platforms at the edges. There is also a sound cue to indicate when the trap is triggered.
+* <b>Stilkin Ambush</b>: Groal the Great remains underwater and summons 2 random Stilkin or Stilkin Trappers that emerge from the water beneath the middle platforms. These enemies attack once before dropping back into the water and do not have to be killed.
+** Groal can sometimes immediately follow this up with a Spike Ball Ambush, which also kills any Stilkin caught by it.
+
+=== Phase 2 ===
+Upon reaching 390 HP, Groal roars and their body glows white – they gain one new attack, performing it immediately:
+* <b>Vengeful Soul</b>:  Groal's eyes and insides emit white light, and they charge up before unleashing blasts of [[Soul]] in Hornet's direction. They fire 2–3 blasts in a row, pausing to line up with Hornet before each one. The first time they perform this attack, they always fire out 3 blasts.
+Contact with Groal and all of their attacks, excluding <b>Great Inhale</b>, deal {{Damage|2}}. 
+Rumbling splashes indicate where Groal and their Stilkin minions are about to rise up from below the Muckmaggot-infested water.
+<hr />
+
+{{Stagger
+| Groal the Great falls down, bounces once off a platform, and then splashes into the Muckmaggot-infested water. They stay submerged for the remainder of their stagger, making them un-targetable for most of its duration.
+
+While staggered underwater, they will trigger either a <b>Spike Ball Ambush</b> attack or a <b>Stilkin Ambush</b> attack.
+|15
+| game = SS
+}}
+
+<hr />
+
+[[Wreath of Purity]] is recommended for this fight, as it prevents Muckmaggot infestation.
+
+The <b>Spike Ball</b> can be avoided without jumping by standing against the wall on the platforms to either side of the arena, or by entering the water anywhere. 
+
+Staying on one side of the arena and avoiding the middle allows Hornet to bait Stilkins into throwing projectiles towards the water, negating their explosion. She can also easily dodge Stilkin Trappers by staying on the lower platforms, waiting until they attack, and then moving onto the higher platforms to strike them. Staying on the upper platforms can often cause the Stilkins to land on the platform when attempting to dive down, giving Hornet a few more moments to attack them before they escape.
+
+If needed, the safest opportunity to heal is to wait until <b>Spike Ball</b> triggers. Even with enemies present, Hornet has enough downtime to heal, as Stilkins are either killed off or disappear into the water.
+
+It is important to note that Hornet can hit, and push away, the projectiles of Groal's <b>Acid Spit</b> attack. Keep in mind that they explode shortly after. Usually, the safest place to avoid this attack is going underneath Groal. 
+
+Both Groal themself and the Stilkins they summon telegraph where they come out of the water. Preparing a [[Needle Strike]] and waiting near where they appear can be a safe way to get in easy damage. 
+* The [[Reaper Crest]] is especially good at this, due to its large up- and forwards hitbox on both regular Needle swings and Needle Strike. The Needle Strike being a single hit ensures it deals full damage, unlike a multi-hit Needle Strike which can lose damage if some hits don't connect
+
+[[Clawline]] followed by a quick Needle swing is an efficient means of dealing damage before retreating to a safe distance. Clawline can also be used to move over Groal's head and get behind them when they use Acid Spit, Great Inhale, or Vengeful Soul, rendering those attacks incapable of damaging Hornet.
+
+One strategy involves equipping the [[Multibinder]] tool, and purposefully getting swallowed by Groal. Great Inhale deals {{Damage|2}}, but lets Hornet hit Groal at least 4 times. Therefore, getting swallowed twice gives Hornet enough Silk to heal back the 4 lost Masks. Using this strategy, Hornet can safely, albeit slowly, damage Groal, while focusing on dodging their other attacks. However, it does not give Hornet much Silk to spare, and therefore requires careful dodging of attacks to avoid being whittled down. [[Druid's Eye]] can help with this, generating 2 extra strands of silk every time Hornet gets swallowed.
+
+Multibinder has another powerful utility in this fight. Although binding while infested with [[Muckmaggot]]s usually purges the infestation without providing a heal, Multibinder [[Bind]]s in two separate instances: the first will clear the infestation, and the second will heal Hornet for {{Damage|2}}. This allows Hornet to regain Masks from a Bind even when infested with Muckmaggots.
+
+Instead of avoiding the Muckmaggots, Hornet can fight Groal by staying in the water, where their attacks are easy to avoid, making healing unnecessary. Staying near Groal protects Hornet from every attack except for them diving into the water, and going in the corners under the side-platforms completely protects Hornet from <b>Stilkin Ambush</b>. While doing this, Hornet can safely hop out to attack with her Needle during <b>Acid Spit</b>, and {{CrestSlot|Red|s}} such as [[Curveclaw]], [[Cogfly|Cogflies]] and [[Conchcutter]] can be used to defeat Groal faster. Becoming plasmified with the [[Plasmium Phial]] also allows Hornet to heal while infested.
+<hr />
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Behold! True strength!
+* All are subject to my rule!
+* Swirling, pale flame...
+* Obey me! Obey me!
+* This power is ours!
+* No truce... No bargain...
+}}
+
+== Location ==
+Groal the Great is located in [[Bilewater#Sub-area: Bilehaven|Bilehaven]], in the upper area of [[Bilewater]].
+
+{{Gallery|
+|Image1=Mapshot SS Groal the Great 01.png!Location in Bilewater
+}}
+
+{{Gallery|
+|Title=Gallery
+|Image1=Screenshot SS Groal the Great 07.png!Pre-battle enemy gauntlet
+|Image2=Screenshot SS Groal the Great 04.png!Acid Spit
+|Image3=Screenshot SS Groal the Great 02.png!Great Inhale
+|Image4=Screenshot SS Groal the Great 03.png!Dive
+|Image5=Screenshot SS Groal the Great 01.png!Spike Ball Ambush
+|Image6=Screenshot SS Groal the Great 05.png!Vengeful Soul
+|Image7=Screenshot SS Groal the Great 06.png!Stagger
+|Image8=Screenshot SS Groal the Great 08.png!Singing
+|Image9=Screenshot SS Bilewater Arena 1.png!Arena in Bilewater
+}}
+
+== Trivia ==
+* Groal's Vengeful Soul attack is identical to a scaled-up version of the [[Vengeful Spirit]] spell from <i>[[Hollow Knight]]</i>, minus the "eyes".
+{{Gallery
+|Image1 = Shaman_spell_comparison.gif!Comparison
+}}
+*When Hornet dies to Groal, they roar until the screen fades to black.
+*The wings on Groal's back are similar to those of a [[Bloatroach]].
+* Groal shares the same singing voice file with the [[Choir Clapper]].
+{{History
+|game = SS
+|1.0.28891 (Patch 3): Fixed floor between [[Putrified Ducts]] and [[Bilewater]] being breakable from above using a [[Voltvessels]] spear, which allowed Groal to be skipped.
+}}
+{{Localisation
+|DEname = Groal der Große
+|DEmeaning = Groal the Great
+|ESname = Groal el Grande
+|ESmeaning = Groal the Great
+|FRname = Grolo le Grand<br>Groal le Grand
+|FRmeaning = Grolo the Great<small> (Used as the boss title card)</small><br>Groal the Great<small> (Used in Hunter's Journal)
+|ITname = Craal il Grande
+|ITmeaning = Craal the Great<br><small><i>Craal</i> is a portmanteau of <i>cra</i> (onomatopeia of frogs croaking) and <i>Groal</i>.</small>
+|JAname = 偉大なるグロウル
+|JAromanised = Idai naru gurouru
+|JAmeaning = Great Groal
+|KOname = 위대한 그롤
+|KOromanised = Widaehan geurol
+|KOmeaning = Great Groal
+|PTname = Groal, o Magnífico
+|PTmeaning = Groal, the Magnificent
+|RUname = Великий Гроал
+|RUromanised = Velikij Groal
+|RUmeaning = Great Groal
+|TWname = 格洛大酋長
+|TWromanised = Géluò dà qiúzhǎng
+|TWmeaning = Great Chieftain Groal
+|ZHname = 伟大的格洛
+|ZHromanised = Wěidà de Géluò
+|ZHmeaning = Great Groal
+|CODEname = SWAMP_SHAMAN
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Enemies}}
+
+[[pt:Groal, o Magnífico]]

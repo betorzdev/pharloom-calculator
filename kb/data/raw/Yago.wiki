@@ -1,0 +1,71 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Yago.png|Hunter's Journal
+Yago Idle.png|Idle
+</gallery>
+|drops = None
+|health = 60
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.4|1.2|1|1|1}}
+|numbers_required = 12<br>(Instantly completed on [[Crust King Khann]]'s death)
+}}
+{{Quote
+|Hr = Journal
+|Wide-masked aerial attacker trained to act as support for its grounded companions while remaining at range.<hr/>
+Not a frontline force, but in my assault upon their tower all emerge to see me stilled.
+}}
+
+<b>Yagos</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. Fierce flying warriors that throw blades with expert precision, they are members of the [[Order of Karak]], long lost to time and living on only in memory.
+
+== Behaviour and Tactics ==
+Yagos naturally attempt to maintain a large, diagonal aerial distance from Hornet, and backs away as she moves closer.
+* <b>Spinning Spike Throw:</b> The Yago throws a spinning projectile at Hornet in a heavy arc. It can be destroyed by [[Tools]] such as the [[Pimpillo]] or [[Voltvessels]], or deflected with a [[Needle]] attack or [[Silk Skill]]. The deflected projectile can hit enemies, dealing the same amount of damage that a needle hit would.
+* <b>Spinning Slash:</b> The Yago spins its blade around itself and does a short, downwards-diagonal dash towards Hornet dealing {{Damage|1+1}}. This attack only happens if Hornet is very close to the Yago.
+* <b> Follow-up Dash:</b> After either of the two moves above, the Yago may perform a short dash backwards and hold for a moment, and then perform either of the two moves above with much less warning.
+* <b>Evade:</b> Dashes backwards away from Hornet.
+
+== Location ==
+Yagos can only be found in [[Crust King Khann]]'s [[Elegy of the Deep|Memory]] of the [[Coral Tower]] during [[Acts|Act 3]].
+
+{{Gallery
+|Image1 = Mapshot SS Coral Tower.png
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Yago 01.png!Idle
+|Image2 = Screenshot SS Yago 02.png!Spinning Spike Throw
+|Image3 = Screenshot SS Yago 03.png!Spinning Slash
+}}
+
+== Trivia ==
+* Yagos do not respond to the [[Needolin]].
+{{Localisation
+|DEname = Yago
+|DEmeaning = —
+|ESname = Yago
+|ESmeaning = —
+|FRname = Yago
+|FRmeaning = —
+|ITname = Yago
+|ITmeaning = —
+|JAname = ヤゴ
+|JAromanised = Yago
+|JAkatakana = foreignenemy
+|JAmeaning = Yago
+|KOname = 야고
+|KOromanised = Yago
+|KOmeaning = Yago
+|PTname = Yago
+|PTmeaning = —
+|RUname = Яго
+|RUromanised = Jago
+|RUmeaning = Yago
+|ZHname = 雅戈
+|ZHromanised = Yǎgē
+|ZHmeaning = Yago
+|CODEname=CORAL_FLYER_THROW
+|CODEmeaning=[[Kakri]]s are internally known as "Coral Flyers"
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

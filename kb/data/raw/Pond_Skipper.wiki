@@ -1,0 +1,83 @@
+{{SS Infobox Enemy
+| hasdrop = true
+| sh1 = 3-5
+| sh2 = 4-7
+|health = 15/{{BT|30}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.8|0.8|0.8|0.8}}
+|numbers_required = 15
+|singnum=1
+}}
+
+{{Quote
+|Hr = Journal
+|Hard-shelled insect common upon the surface of Shellwood Pond. Once a staple food for passing pilgrims.<hr/>
+The way they skate along the water's surface is so elegant. Surely it is a skill that can be learned? When time permits, I should attempt the task.
+}}
+
+<b>Pond Skippers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are dark-bodied bugs that skim across the surface of the water on all fours.
+
+== Behaviour and Tactics ==
+The Pond Skipper does not attack directly, only dealing contact damage. It glides left and right across the water randomly. If Hornet gets too close, they may let out a small growl before moving again, sometimes diving under the water to reappear later. 
+
+Pond Skippers can sometimes be encountered being hunted by [[Pondcatcher]]s. The Pondcatchers defeat these enemies on their own unless they spot Hornet.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Pond Skippers have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Shifting root... grasping branch...
+* Creeping, creeping...
+* High and low, all around...
+* Climbing, climbing...
+}}
+
+== Location ==
+Pond Skippers can be found primarily in [[Shellwood]], where they randomly appear on any body of water. They can also be found in a section of the [[Memorium]], where they do the same.
+
+{{Gallery
+|Image1 = Mapshot SS Pond Skipper 01.png!Location in Shellwood
+|Image2 = Mapshot SS Pond Skipper 02.png!Location in the Memorium
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Pond Skipper 01.png!Pond Skipper in Shellwood
+|Image2 = Screenshot SS Pond Skipper 02.png!Growling
+|Image3 = Screenshot SS Pond Skipper 03.png!Singing
+|Image4 = Screenshot SS Pond Skipper 04.png!Diving and Emerging
+|Image5 = Screenshot SS Pond Skipper 06.png!Being hunted
+|Image6 = Screenshot SS Pond Skipper 05.png!Pond Skipper in Memorium
+}}
+{{Localisation
+|DEname = Teichhüpfer
+|DEmeaning = Pond Skipper
+|ESname = Patinador de estanque
+|ESmeaning = Pond Skater
+|FRname = Coquillard d'Étang
+|FRmeaning =
+|ITname = Flottante Lacustre
+|ITmeaning = Lake Floater
+|JAname = イケトビムシ
+|JAromanised = Ike tobi mushi
+|JAmeaning = Pond Jump Bug<br><small>Combination of {{lang|ja|池}} <i>ike</i> (pond), {{lang|ja|飛び}} <i>tobi</i> (jump) and {{lang|ja|虫}} <i>mushi</i> (bug)</small>
+|JAkatakana = enemy
+|KOname = 연못 소금쟁이
+|KOromanised = Yeonmot sogeumjaengi
+|KOmeaning = Pond Water Strider
+|PTname = Patinador-do-lago
+|PTmeaning = Pond Skater
+|RUname = Прудопляс
+|RUromanised = Prudopljas
+|RUmeaning =
+|TWname = 滑水者
+|TWromanised = Huáshuǐ zhě
+|TWmeaning = same
+|ZHname = 滑水者
+|ZHromanised = Huáshuǐ zhě
+|ZHmeaning = Water Skater
+|CODEname= POND_SKATER
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

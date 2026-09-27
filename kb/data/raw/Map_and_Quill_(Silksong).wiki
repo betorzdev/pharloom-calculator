@@ -1,0 +1,563 @@
+{{Nav Games Header|Map and Quill}}
+: <i>{{About|the in-game item and mechanics|a full map of <i>Hollow Knight: Silksong</i>|Areas (Silksong){{!}}Areas}}</i>
+{{SS Infobox Item
+| label = Map and Quill
+| title = Map and Quill
+| image = <gallery>
+Map & Quill (Silksong).png|White
+Map & Quill Red.png|Red
+Map & Quill Purple.png|Purple
+</gallery>
+| effects = Allows map completion
+| buy = Map: {{R|40–90}} / Free <br> Quill: {{R|50}} / Free
+| source = [[Shakra]] / [[The Stage]]
+| description = Map of Pharloom and a quill for recording one's travels. When resting at a bench or elsewhere, the map will be updated with newly discovered areas.
+
+| label2 = Map
+| title2 = Map
+| image2 = Map (Silksong).png
+| effects2 = Allows map completion
+| buy2 = {{R|40–90}} / Free
+| source2 = [[Shakra]], map machines in the Citadel, various points of interest
+| description2 = Map of Pharloom, partially filled out. Without a quill it cannot be updated.
+
+| label3 = Prompt
+| title3 = Obtained a<br>Map
+| image3 = Map Silksong Art.png
+| description3 = Hold QUICK MAP<br>
+to view a map of the current area.<hr>
+View a detailed map of the world in the Map pane of the Menu.
+
+| label4 = Quill
+| title4 = Quill
+| image4 = <gallery>
+Quill (Silksong).png|White
+Quill Red.png|Red
+Quill Purple.png|Purple
+</gallery>
+| buy4 = {{R|50}} / Free
+| source4 = [[Shakra]] / [[The Stage]]
+| description4 = Writing implement for recording one's travels. Can be used to update any acquired maps.
+}}
+
+{{Quote
+|The charting of caverns, the memory of travel, the knowing of one's place within the kingdom, an engaging task for a warrior's mind.
+An unfortunate thing that my great mentor never learnt the skill. Her talent at getting lost... I should almost be impressed...
+|[[Shakra]]
+|Hr=SS
+}}
+
+The <b>Map</b> and <b>Quill</b> are [[Items (Silksong)|Items]] in <i>[[Hollow Knight: Silksong]]</i>. The Map charts the various rooms, passages, and chambers within [[Pharloom]], while the Quill is used to update the Map as new areas are discovered.
+
+__TOC__
+
+To start mapping an [[Areas (Silksong)|area]], an incomplete area map must first be obtained. Most of these are purchased from [[Shakra]], and if she is missed in an area (usually by defeating the area [[Bosses (Silksong)|boss]]), she can be found in [[Bone Bottom]] or, later, [[Bellhart]], and the map purchased there. However, for areas in [[the Citadel]], maps instead must be purchased from machines located in the area, and a handful of other areas have maps that must be found rather than purchased.
+
+The entire world map can be viewed by pressing [[Controls (Silksong)|INVENTORY]] and scrolling to the Map page. This can also be accessed by double-tapping QUICK MAP instead of navigating through the menu. Holding down QUICK MAP opens an overlaid map of the current area, allowing [[Hornet (Silksong)|Hornet]] to walk around while reading the map.
+
+To complete the map, the Quill must be purchased from Shakra, or taken from [[Trobbio]]'s desk in the [[Whispering Vaults]]. After uncharted areas have been explored, resting at a [[Bench (Silksong)|Bench]] will update the map. Explored areas of the map appear as coloured segments with solid outlines. Most of the time, entering a room fills the entire room on the map; however, some rooms will only be partially revealed until the room is explored fully.
+
+== Mapping Tools ==
+{| class="article-table" width="100%" style="margin-bottom: 2.25rem;"
+! style="width: 8rem;" | Item
+! style="width: 5rem;" | Cost
+! style="width: 10rem;" | Obtain
+! Description
+|-
+! [[File:Quill (Silksong).png|72x72px|center]]
+Quill (White)
+| align="center" | {{R|50}}
+| align="center" | Purchase from Shakra
+| <i>Writing implement for recording one's travels. Can be used to update any acquired maps.
+|-
+! [[File:Quill Red.png|72x72px|center]]
+Quill (Red)
+| align="center" | Free
+| align="center" | Take from Trobbio's desk in [[Act 2]] if a Quill is not already owned
+| <i>Writing implement for recording one's travels. Can be used to update any acquired maps.
+|-
+! [[File:Quill Purple.png|72x72px|center]]
+Quill (Purple)
+| align="center" | Free
+| align="center" | Take from Trobbio's desk in [[Act 3]] if a Quill is not already owned
+| <i>Writing implement for recording one's travels. Can be used to update any acquired maps.
+|-
+! [[File:Map (Silksong).png|72x72px|center]]
+Map
+| align="center" | [[#Maps|Varies]]
+| align="center" | Obtain any Map
+| <i>Map of Pharloom, partially filled out. Without a quill it cannot be updated.
+|-
+! [[File:Map & Quill (Silksong).png|72x72px|center]]
+[[File:Map & Quill Red.png|72x72px|center]]
+[[File:Map & Quill Purple.png|72x72px|center]]
+Map & Quill
+| align="center" | [[#Maps|Varies]]
+| align="center" | When both Map and Quill are obtained
+| <i>Map of Pharloom and a quill for recording one's travels. When resting at a bench or elsewhere, the map will be updated with newly discovered areas.
+|-
+! [[File:Compass.png|72x72px|center|link=Compass]]
+[[Compass]]
+| align="center" | {{R|70}}
+| Purchase from Shakra
+| <i>Intricate tracking device, carved from shell.<br>
+When equipped, the bearer's location will be marked on their map.
+|}
+
+== Maps ==
+{{MapEntry
+|top=true
+|area=Mosslands
+|description=These overgrown caves offer little challenge to a skilled warrior. A place for reflection, perhaps.
+|cost=40|obtain=Purchase from Shakra<ref group="Note">Grants maps for [[Moss Grotto]] and [[Bone Bottom]].</ref>
+|map=Mapshot SS Map and Quill (Silksong) 01.png
+}}
+{{MapEntry
+|area=The Marrow
+|description=Crumbling roads built upon the shells of ancient bugs. All of Pharloom rests upon these fragile foundations.
+|cost=50
+|obtain=Purchase from Shakra
+|map=Mapshot SS Map and Quill (Silksong) 02.png
+}}
+{{MapEntry
+|area=Deep Docks
+|description=These docks, I thought them small when first I passed. Now I feel the structure's true bulk hides below the molten lake.
+|cost=50
+|obtain=Purchase from Shakra
+|map=Mapshot SS Map and Quill (Silksong) 03.png
+}}
+{{MapEntry
+|area=Far Fields
+|description=Fierce red-shells nest across these wide caverns. Battle with them is most intense. Impressive are the warriors of Pharloom.
+|cost=50
+|obtain=Purchase from Shakra
+|map=Mapshot SS Map and Quill (Silksong) 04.png
+}}
+{{MapEntry
+|area=Wormways
+|description=Worm-ridden caverns, shaking and unstable. There remain faint signs that pilgrims once travelled these tight paths.
+|cost=70
+|obtain=Purchase from Shakra
+|map=Mapshot SS Map and Quill (Silksong) 05.png
+}}
+{{MapEntry
+|area=Hunter's March
+|description=Burrowed paths of the red-shells. Their stores and shrines are frequent throughout. These tunnels must grant them swift passage about the fields below.
+|cost=70
+|obtain=Purchase from Shakra
+|map=Mapshot SS Map and Quill (Silksong) 06.png
+|map2=Mapshot SS Map and Quill (Silksong) 07.png
+}}
+{{MapEntry
+|area=Greymoor
+|description=Wide, dim hollows, choked by rag and dust. The bugs who once tended these lands have clearly lost their way.
+|cost=70
+|obtain=Purchase from Shakra
+|map=Mapshot SS Map and Quill (Silksong) 08.png
+}}
+{{MapEntry
+|area=Bellhart
+|description=A town built within the thick vein of bells that runs through Pharloom's core. One wonders who would craft so many, and for what purpose?
+|cost=40
+|obtain=Purchase from Shakra
+|map=Mapshot SS Map and Quill (Silksong) 09.png
+}}
+{{MapEntry
+|area=Shellwood
+|description=Tangled roads choked beneath bramble and root. The flora is often as deadly as the creatures who call this place home.
+|cost=70
+|obtain=Purchase from Shakra
+|map=Mapshot SS Map and Quill (Silksong) 10.png
+}}
+{{MapEntry
+|area=Blasted Steps
+|description=Huge caves ascending to Pharloom's Citadel. The roads are slowly being devoured by sand and howling wind.
+|cost=70
+|obtain=Purchase from Shakra
+|map=Mapshot SS Map and Quill (Silksong) 11.png
+}}
+{{MapEntry
+|area=Sinner's Road
+|description=Old roads and passages overrun by roaches and their keepers. The ways are covered thick with filth.
+|cost=90
+|obtain=Purchase from Shakra
+|map=Mapshot SS Map and Quill (Silksong) 12.png
+}}
+{{MapEntry
+|area=Mount Fay
+|description=The jagged crest looming over all of Pharloom. Its whipping winds and bitter cold would pierce the strongest shell.
+|cost=40
+|obtain=Purchase from Shakra
+|map=Mapshot SS Map and Quill (Silksong) 13.png
+}}
+{{MapEntry
+|area=Sands of Karak
+|description=Crusted heights above those howling steps. Signs suggest great warriors once ruled this winding place, though the sand has eroded much of their mark.
+|cost=90
+|obtain=Purchase from Shakra
+|map=Mapshot SS Map and Quill (Silksong) 14.png
+}}
+{{MapEntry
+|area=Bilewater
+|description=Swamps born in the Citadel's shadow. There is evidence the waters here once ran clear.
+|cost=90
+|obtain=Purchase from Shakra
+|map=Mapshot SS Map and Quill (Silksong) 15.png
+}}
+{{MapEntry
+|area=Grand Gate
+|description=A machine displaying a model of the Citadel.
+|altfile=Choral Chambers Map.png
+|cost=40
+|obtain=Obtained from a map machine
+|map=Mapshot SS Map and Quill (Silksong) 31.png
+}}
+{{MapEntry
+|area=Choral Chambers
+|description=A machine displaying a model of the Citadel.
+|cost=70
+|obtain=Obtained from a map machine
+|map=Mapshot SS Map and Quill (Silksong) 16.png
+|map2=Mapshot SS Map and Quill (Silksong) 17.png
+}}
+{{MapEntry
+|area=Whispering Vaults
+|description=A machine displaying a model of the Citadel.
+|cost=70
+|obtain=Obtained from a map machine
+|map=Mapshot SS Map and Quill (Silksong) 18.png
+}}
+{{MapEntry
+|area=Whiteward
+|description=A machine displaying a model of the Citadel.
+|cost=70
+|obtain=Obtained from a map machine
+|map=Mapshot SS Map and Quill (Silksong) 19.png
+}}
+{{MapEntry
+|area=High Halls
+|description=A machine displaying a model of the Citadel.
+|cost=70
+|obtain=Obtained from a map machine
+|map=Mapshot SS Map and Quill (Silksong) 20.png
+}}
+{{MapEntry
+|area=Memorium
+|description=A machine displaying a model of the Citadel.
+|cost=70
+|obtain=Obtained from a map machine
+|map=Mapshot SS Map and Quill (Silksong) 21.png
+}}
+{{MapEntry
+|area=The Cradle
+|description=A machine displaying a model of the Citadel. </i>(Act 2)<i>
+|altname=[[The Cradle|Cradle]] Map
+|cost=70 (Act 2)<br>Free (Act 3)
+|obtain1=Obtained from a map machine in Act 2
+|obtain2=Found next to a broken map machine in Act 3
+|map=Mapshot SS Map and Quill (Silksong) 22.png
+|map2=Mapshot SS Map and Quill (Silksong) 23.png
+}}
+{{MapEntry
+|area=Underworks
+|description=A crude map of the Underworks.
+|obtain=Obtained from a map board
+|map=Mapshot SS Map and Quill (Silksong) 24.png
+}}
+{{MapEntry
+|area=Putrified Ducts
+|description=An old map of the Putrified Ducts.
+|altfile=Underworks Map.png
+|obtain=Obtained from a desk
+|map=Mapshot SS Map and Quill (Silksong) 25.png
+}}
+{{MapEntry
+|area=Verdania
+|obtain=Obtained from an abandoned camp
+|map=Mapshot SS Map and Quill (Silksong) 26.png
+}}
+{{MapEntry
+|area=Cogwork Core
+|obtain=Obtained from a mechanism
+|map=Mapshot SS Map and Quill (Silksong) 27.png
+}}
+{{MapEntry
+|area=The Slab
+|altname=[[The Slab|Slab]] Map
+|description = A husk with a map of the Slab etched upon its shell.
+|obtain=Obtained from the shell of a dead bug; requires [[Key of Indolent]] to enter room
+|map=Mapshot SS Map and Quill (Silksong) 28.png
+}}
+{{MapEntry
+|area=Weavenest Atla
+|description = A rune depicting the Weavenest.
+|obtain=Obtained from a tablet
+|map=Mapshot SS Map and Quill (Silksong) 29.png
+}}
+{{MapEntry
+|bottom=true
+|area=The Abyss
+|altname=[[The Abyss (Silksong)|Abyss]] Map
+|description = A rune depicting the Abyss.
+|altfile=Weavenest Atla Map.png
+|obtain=Obtained from a tablet
+|map=Mapshot SS Map and Quill (Silksong) 30.png
+}}
+
+== Map Pins ==
+These pins, purchased from [[Shakra]], automatically mark the location of landmarks on the Map once they have been found.
+{| class="article-table" width="100%" style="margin-bottom: 2.25rem;"
+! style="width: 8rem;" | Shop Item
+! style="width: 5rem;" | Cost
+! Description
+! Map Pin
+|-
+! [[File:Bench Pins.png|72x72px|center]]
+[[Bench (Silksong)|Bench]] Pins
+| align="center" | {{R|60}}
+| <i>When travelling in unfriendly lands, it is important to remember safe places to camp.<br>These pins will mark benches and other rest spots on your map.
+| [[File:Icon SS Bench Pin.png|72x72px|center]]
+|-
+! [[File:Bellway Pins.png|72x72px|center]]
+[[Bellways|Bellway]] Pins
+| align="center" | {{R|60}}
+| <i>The bellways, gilded veins that run throughout the lands. Supposedly, they were once used for travel?<br>These pins will mark stations on your map.
+| [[File:Map Pin Bellway.png|72x72px|center]]
+|-
+! [[File:Ventrica Pins.png|72x72px|center]]
+[[Ventrica]] Pins
+| align="center" | {{R|80}}
+| <i>As you requested, these pins will mark the travel stations within that hideous structure of steel and steam.</i>
+| [[File:Map Pin Ventrica.png|72x72px|center]]
+|-
+! [[File:Vendor Pins (Silksong).png|72x72px|center]]
+[[NPCs (Silksong)#Merchants|Vendor]] Pins
+| align="center" | {{R|60}}
+| <i>Many of Pharloom's bugs have useful equipment and items to trade. It would do you well to keep track of their locations with this pin.<br>These pins will mark vendors on your map.</i><ref group="Note">Available after visiting [[Deep Docks]], [[Wormways]], or [[Greymoor]].</ref>
+| [[File:Map Pin Merchant.png|72x72px|center]]
+|-
+! [[Flea Caravan]] Pin
+| align="center" | Free with Vendor Pins
+| &mdash;
+| [[File:Map Pin Flea Caravan.png|72x72px|center]]
+|-
+| colspan="5" | The 5 markers sold by Shakra can be placed anywhere on the map from the inventory screen.<br>Each set contains 9 markers.
+|-
+! [[File:Shell Marker (Silksong).png|72x72px|center]]
+Shell Marker
+| align="center" | {{R|40}}
+| <i>You can use these to mark places of importance or reminders on your map.<br>These markers I have modelled after the sheen of my own shell. Perhaps you will think of me when you use them.
+| [[File:Map Pin Shell.png|72x72px|center]]
+|-
+! [[File:Ring Marker.png|72x72px|center]]
+Ring Marker
+| align="center" | {{R|40}}
+| <i>You can use these to mark places of importance or reminders on your map.<br>With these I often mark the locations of worthy foes.<ref group="Note">Available after visiting [[Deep Docks]] or [[Wormways]].</ref>
+| [[File:Map Pin Ring.png|72x72px|center]]
+|-
+! [[File:Hunt Marker.png|72x72px|center]]
+Hunt Marker
+| align="center" | {{R|60}}
+| <i>You can use these to mark places of importance or reminders on your map.<br>The shell of the red-hunters makes for a vivid marker indeed.<ref group="Note">Available after seeing her in [[Hunter's March]], or defeating [[Widow]].</ref>
+| [[File:Map Pin Hunt.png|72x72px|center]]
+|-
+! [[File:Dark Marker.png|72x72px|center]]
+Dark Marker
+| align="center" | {{R|90}}
+| <i>You can use these to mark places of importance or reminders on your map.<br>This dark-shell material is cold to the touch, and more resilient than it looks.<ref group="Note" name="citadel">Available after visiting [[the Citadel]].</ref>
+| [[File:Map Pin Dark.png|72x72px|center]]
+|-
+! [[File:Bronze Marker.png|72x72px|center]]
+Bronze Marker
+| align="center" | {{R|120}}
+| <i>You can use these to mark places of importance or reminders on your map.<br>These I have fashioned from the husks of old bells. A hard task to make, so the cost reflects the extra effort.<ref group="Note" name="citadel" />
+| [[File:Map Pin Bronze.png|72x72px|center]]
+|}
+
+== Objective Pins ==
+These pins mark the locations of [[Hornet (Silksong)|Hornet]]'s main [[objectives]] as she progresses through the story.
+
+{| class="article-table" width="100%" style="margin-bottom: 2.25rem;"
+! style="width: 8rem;" | Map Pin
+! style="width: 25rem;" | Description
+! Condition
+|-
+! [[File:Map Pin Citadel.png|72x72px|center]]
+[[The Citadel|Citadel]] Pin
+| Marks the objectives of:
+* <i>[[SEEK: The Great Citadel]]</i>
+* <i>[[SEARCH: Silent Halls]]</i>
+* <i>[[ASCEND: Pharloom's Crown]]</i>
+| Start each objective:
+* Speak to [[Chapel Maid]]
+* Enter the [[Grand Gate]]
+* Meet [[Lace]] in the [[Choral Chambers]]
+|-
+! colspan="3" | {{Typography|type=h3|text=[[Act 1]] Objectives}}
+|-
+! [[File:Map Pin Bellhart.png|72x72px|center]]
+[[Bellhart]] Pin
+| Marks the objective of <i>[[SAVE: The Threadspun Town]]</i>, that being [[Widow]].
+| Enter Haunted Bellhart
+|-
+! [[File:Map Pin Grand Gate.png|72x72px|center]]
+[[Grand Gate]] Pin
+| Marks the objective of <i>[[OPEN: Grand Gate]]</i>.
+| Speak to the [[Tall Pilgrim]] outside the Grand Gate
+|-
+! [[File:Map Pin Bellshrine.png|72x72px|center]]
+[[Bellshrine]] Pin
+| Marks any Bellshrines which must be rung to complete <i>OPEN: Grand Gate</i>.
+| Begin the objective <i>OPEN: Grand Gate</i>
+|-
+! colspan="3" | {{Typography|type=h3|text=[[Act 2]] Objectives}}
+|-
+! [[File:Map Pin Soul Snare.png|72x72px|center]]
+[[Soul Snare]] Pin
+| Marks the objective of <i>[[DESTROY: Soul Snare]]</i>.
+| Complete the <i>[[Silk and Soul]]</i> wish
+|-
+! colspan="3" | {{Typography|type=h3|text=[[Act 3]] Objectives}}
+|-
+! [[File:Map Pin Shaman.png|72x72px|center]]
+[[Snail Shamans|Shaman]] Pin
+| Marks the objectives of:
+* <i>[[SEEK: After the Fall]]</i>
+* <i>[[SEEK: Awaiting the End]]</i>
+* <i>[[SEEK: The Dark Below]]</i>
+* <i>[[ASCEND: Return to Pharloom]]</i>
+* <i>[[SEEK: Spell Seeker]]</i>
+* <i>[[SEEK: The Old Hearts]]</i>
+| Start each objective:
+* Begin Act 3
+* Escape [[the Cradle]]
+* Speak to the Snail Shamans
+* Meet Lace in [[The Abyss (Silksong)|the Abyss]]
+* Return to [[Deep Docks]]
+* Speak to the Snail Shamans again
+|-
+! [[File:Map Pin Bell Beast.png|72x72px|center]]
+[[Bell Beast]] Pin
+| Marks the objective of <i>[[DEFEAT: Beast in the Bells]]</i>.
+| Summon the Bell Beast at any [[Bellway]] during Act 3
+|-
+! [[File:Map Pin Crust King Khann.png|72x72px|center]]
+[[Crust King Khann]] Pin
+| Marks the objective of <i>[[CLAIM: Heart of Might]]</i>.
+| rowspan="3"  | Begin the objective <i>SEEK: The Old Hearts</i>
+|-
+! [[File:Map Pin Nyleth.png|72x72px|center]]
+[[Nyleth]] Pin
+| Marks the objective of <i>[[CLAIM: Heart of the Woods]]</i>.
+|-
+! [[File:Map Pin Karmelita.png|72x72px|center]]
+[[Skarrsinger Karmelita]] Pin
+| Marks the objective of <i>[[CLAIM: Heart of the Wild]]</i>.
+|-
+! [[File:Map Pin Abyss.png|72x72px|center]]
+[[The Abyss (Silksong)|Abyss]] Pin
+| Marks the objective of <i>[[DESCEND: Last Dive]]</i>.
+| Complete the objective <i>SEEK: The Old Hearts</i>
+|}
+
+== Other Pins ==
+These pins are placed on the Map to track other, often dynamic locations.
+
+{| class="article-table" width="100%" style="margin-bottom: 2.25rem;"
+! style="width: 8rem;" | Map Pin
+! style="width: 17rem;" | Description
+! Condition
+|-
+! [[File:Map Pin Hornet.png|72x72px|center]]
+[[Hornet (Silksong)|Hornet]] Pin
+| Marks Hornet's current location.
+| Equip the [[Compass]]
+|-
+! [[File:Map Pin Silk Cocoon.png|72x72px|center]]
+[[Cocoon]] Pin
+| Marks the location of Hornet's cocoon in the spot where she last died.
+| When Hornet has not retrieved her last [[Cocoon]]
+|-
+! [[File:Map Pin Flea.png|72x72px|center]]
+[[Flea|Lost Flea]] Pin
+| Marks the location of a lost Flea.
+| Purchase Flea Findings from [[Vog]]
+|-
+! [[File:Map Pin Delivery.png|64x64px|center]]
+[[Delivery Wishes|Delivery]] Pin
+| Marks the destination of a [[Delivery Wishes|Delivery Wish]].
+| Accept a delivery wish from [[Couriers Tipp & Pill]]
+|-
+! [[File:Map Pin Steel.png|72x72px|center]]
+{{Steel Soul Icon Mini|SS}} [[Steel Seer Zi|Steel Seer]] Pin
+| {{Steel Soul Icon Mini|SS}} Marks destinations during the <i>[[A Vassal Lost]]</i> [[wish]].
+| Accept the wish from {{Steel Soul Icon Mini|SS}} [[Steel Seer Zi]]
+|}
+
+== Achievements ==
+{{Achievement|game=silksong|Cartographer}}
+
+== Gallery ==
+{{Gallery
+|Image1 = SS-No-Map-Icon.png!Icon displayed in places that Hornet lacks a Map for
+|Image2 = Screenshot SS Map and Quill (Silksong) 01.png!Grand Gate map location
+|Image3 = Screenshot SS Map and Quill (Silksong) 02.png!Choral Chambers (west) map location
+|Image4 = Screenshot SS Map and Quill (Silksong) 03.png!Choral Chambers (Grand Bellway) map location
+|Image5 = Screenshot SS Map and Quill (Silksong) 04.png!Whispering Vaults map location
+|Image6 = Screenshot SS Map and Quill (Silksong) 05.png!Whiteward map location
+|Image7 = Screenshot SS Map and Quill (Silksong) 06.png!High Halls map location
+|Image8 = Screenshot SS Map and Quill (Silksong) 07.png!Memorium map location
+|Image9 = Screenshot SS Map and Quill (Silksong) 08.png!Cradle map location in Acts 1/2
+|Image10 = Screenshot SS Map and Quill (Silksong) 15.png!Cradle map location in Act 3
+|Image11 = Screenshot SS Underworks 03.png!Underworks map location
+|Image12 = Screenshot SS Map and Quill (Silksong) 09.png!Putrified Ducts map location
+|Image13 = Screenshot SS Map and Quill (Silksong) 10.png!Verdania map location
+|Image14 = Screenshot SS Map and Quill (Silksong) 11.png!Cogwork Core map location
+|Image15 = Screenshot SS Map and Quill (Silksong) 12.png!Slab map location
+|Image16 = Screenshot SS Map and Quill (Silksong) 13.png!Weavenest Atla map location
+|Image17 = Screenshot SS Map and Quill (Silksong) 14.png!Abyss map location
+}}
+
+== Trivia ==
+* It is impossible to obtain the Purple Quill without having purchased a map, as [[Trail's End]] is a prerequisite for entering [[Acts|Act 3]].
+* According to [[Shakra]], the white quill is plucked from a creature known as a Golpeni.<ref>Quill Shop Description: <i>"With this quill, you can add any new areas you discover to the maps that you own. We pluck these quills from Golpeni hunted by my tribe. Their hollowed shafts make the perfect charting tool."</i></ref>
+{{Localisation
+|DEname = Karte und Federkiel
+|DEmeaning = Map and Quill
+|ESname = Mapa y pluma
+|ESmeaning = Map and Quill
+|FRname = Carte & Plume
+|FRmeaning = Map & Quill
+|ITname = Mappa e piuma
+|ITmeaning = Map and Quill
+|JAname= 地図と羽ペン
+|JAromanised= Chizu to Hanepen
+|JAmeaning = Map and Quill
+|KOname = 지도와 깃펜
+|KOromanised = Jidowa gitpen
+|KOmeaning = Map and Quill
+|PTname =  Mapa e Pena
+|PTmeaning = Map and Quill
+|RUname = Карта и перо
+|RUromanised = Karta i pero
+|RUmeaning = Map and Quill
+|TWname = 地圖 & 羽毛筆
+|TWromanised = Dìtú & yǔmáobǐ
+|TWmeaning = same
+|ZHname = 地图 & 羽毛笔
+|ZHromanised = Dìtú & yǔmáobǐ
+|ZHmeaning = Map & Quill
+|CODEname = MAPANDQUILL
+}}
+{{Hr|SS}}
+
+== Notes ==
+<references group="Note"/>
+{{Refs|hr=false}}
+
+{{SS Nav Items}}
+
+[[pt:Mapa e Pena (Silksong)]]
+
+[[Category:Exploration (Silksong)]]
+[[Category:Items (Silksong)]]

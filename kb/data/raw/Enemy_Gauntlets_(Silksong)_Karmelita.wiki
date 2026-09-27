@@ -1,0 +1,37 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Far_Fields_22.png|400px|center]]
+|[[File:Mapshot_SS_Skarrsinger_Karmelita_01.png|400px|center]]
+|-
+| colspan="2" | [[Skarrsinger Karmelita]]'s enemy gauntlet as part of her boss encounter. Requires [[Elegy of the Deep]].
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+|<center>[[Hunter's Heart]]</center>
+|<center>[https://youtu.be/vBMl9h_HRE8?t=79 Skarrsinger Karmelita (Vocals + Background)] (Enemy Gauntlet)<br>[https://www.youtube.com/watch?v=XPZU_xt1XNc Skarrsinger Karmelita (Vocals + Main)] (Skarrsinger Karmelita)</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Skarr Scout.png|35x35px|link=Skarr Scout]] [[Skarr Scout]] x2, far left and right<br />
+[[File:HJ_Skarr Stalker.png|35x35px|link=Skarr Stalker]] [[Skarr Stalker]], left
+|Defeating two enemies spawns the next row.
+|-
+|
+[[File:HJ_Spear Skarr.png|35x35px|link=Spear Skarr]] [[Spear Skarr]], top left
+|Defeating one enemy spawns the next row.
+|-
+|[[File:HJ_Skarr Stalker.png|35x35px|link=Skarr Stalker]] Skarr Stalker, left
+|
+|-
+|
+[[File:HJ_Last Claw.png|35x35px|link=Last Claw]] [[Last Claw]] x2, top left and right<br />
+|
+|-
+|
+[[File:HJ_Skarrsinger Karmelita.png|35x35px|link=Skarrsinger Karmelita]] [[Skarrsinger Karmelita]], centre left or right depending on Hornet's position
+|
+|}

@@ -1,0 +1,100 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Caranid.png|Hunter's Journal
+Caranid Idle.png |Idle
+</gallery>
+|health=14/{{BT|56}}
+|damage_modifiers={{SS Spaced Damage Modifiers|1|0.75|0.75|0.75|0.75}}
+|numbers_required = 25
+| hasdrop = true
+| sh1 = 3-5
+| sh2 = 4-7
+|singnum = 1
+}}
+{{Quote
+|Hr = Journal
+|Common winged bug of the lowlands. Generally docile, but will attack if threats come close.<hr/>Their plump, round shape makes them well-suited for target practice. Difficult to resist testing my aim on them...
+}}
+
+<b>Caranids</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are weak fliers that are common throughout the lowlands of [[Pharloom]].<ref>Caranid [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Common winged bug of the lowlands. Generally docile, but will attack if threats come close."</i></ref>
+
+== Behaviour and Tactics ==
+Flies aimlessly and slowly until they spot [[Hornet (Silksong)|Hornet]], at which point they fly towards her at slow speed, trying to fly into her and deal {{Damage|1}} on contact. If Hornet moves sufficiently far away or moves for long enough, they stop following her.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Caranids have their health quadrupled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+*Rumbling, crackling...
+*Shells are strong...
+*Scratching, seeking...
+*Warm and dark...
+*Digging, hiding...
+*Claws are sharp...
+}}
+
+== Location ==
+Caranids can be mainly found throughout [[the Marrow]], [[Deep Docks]], and [[Far Fields]]. They also appear in the upper portion of [[Bone Bottom]], [[Memorium]], and the [[Chapel of the Beast]] within [[Hunter's March]], where they can also be summoned by a [[Savage Beastfly]]. Once the Savage Beastfly is defeated, one Caranid starts to spawn in the corridor below its arena.
+
+After [[Forebrothers Signis & Gron]] are defeated, three Caranids appear in the southeastern area of the Deep Docks, in the room where [[Forebrother Gron]] could previously be encountered. Two Caranids can be found harassing [[Tipp]] in the upper portion of Bone Bottom during the <i>[[My Missing Courier]]</i> [[wish]].
+
+{{Gallery
+|Image1 = Mapshot SS Caranid 01.png!Location in Bone Bottom
+|Image2 = Mapshot SS Caranid 04.png!Locations in the Marrow
+|Image3 = Mapshot SS Caranid 08.png!Locations in the Marrow in Act 3
+|Image4 = Mapshot SS Caranid 05.png!Locations in Deep Docks
+|Image5 = Mapshot SS Caranid 07.png!Locations in Deep Docks in Act 3
+|Image6 = Mapshot SS Savage Beastfly 01.png!Location in Hunter's March
+|Image7 = Mapshot SS Caranid 03.png!Locations in Far Fields
+|Image8 = Mapshot SS Caranid 06.png!Locations in Far Fields in Act 3
+|Image9 = Mapshot SS Caranid 02.png!Location in the Memorium
+}}
+
+==Gallery==
+{{Gallery
+|Image1=Screenshot SS Caranid 01.png!In Bone Bottom
+|Image2=Screenshot SS Caranid 02.png!In the Marrow
+|Image3=Screenshot SS Caranid 03.png!In Deep Docks
+|Image4=Screenshot SS Caranid 04.png!In Far Fields
+|Image5=Screenshot SS Caranid 05.png!In the Memorium
+|Image6=Screenshot SS Caranid 06.png!Attacking
+|Image7=Screenshot SS Caranid 07.png!Reacting to Needolin
+}}
+==Trivia==
+*Caranids had less HP as of 2019, taking 2 hits to kill at base Needle (~10 HP).<ref name="e3">[https://www.youtube.com/watch?v=Y8lvHT_IQbM Hollow Knight: Silksong Gameplay - Nintendo Treehouse: Live <nowiki>|</nowiki> E3 2019]</ref>
+{{Localisation
+|DEname = Caranide
+|DEmeaning = —
+|ESname = Caránido
+|ESmeaning = —
+|FRname = Caranide
+|FRmeaning = —
+|ITname = Carranide
+|ITmeaning = —
+|JAname = カラニド
+|JAromanised = Karanido
+|JAkatakana = foreignenemy
+|JAmeaning = Caranid
+|KOname = 카라니드
+|KOromanised = Karanideu
+|KOmeaning = Caranid
+|PTname = Caranídeo
+|PTmeaning = —
+|RUname = Каранид
+|RUromanised = Karanid
+|RUmeaning = Caranid
+|TWname = 刃尾蜂
+|TWromanised = Rèn wěi fēng
+|TWmeaning = same
+|ZHname = 刃尾蜂
+|ZHromanised = Rèn wěi fēng
+|ZHmeaning = Blade-tailed Bee
+|CODEname= BONE_CIRCLER
+|CODEmeaning =  
+}}
+
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

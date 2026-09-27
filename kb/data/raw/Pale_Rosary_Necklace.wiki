@@ -1,0 +1,86 @@
+{{Navbar|icons=true
+|page1=Frayed Rosary String
+|page2=Rosary String
+|page3=Rosary Necklace
+|page4=Heavy Rosary Necklace
+|page5=Pale Rosary Necklace}}
+
+{{SS Infobox Item
+| description = Heavy necklace laden with pearl rosaries. Can be broken and the rosaries used to trade.<hr>Contains 340 rosaries.
+| effects = Provides {{R|340}}
+| type = [[Items (Silksong)#Consumables|Consumable]]
+| source = Glowing item spots
+| max = 2
+}}
+
+{{Quote|Hr=SS
+|...Our wealth...<br>...Our grace...<br>...Holy measure...
+|[[Needolin Locations#High Halls|Rosary Bank Needolin Dialogue]]
+}}
+
+<b>Pale Rosary Necklaces</b> are [[Items (Silksong)#Consumables|consumable items]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+Pale Rosary Necklaces can be used from the inventory to gain {{R|340}}.
+
+Strung Rosaries are not dropped upon death.
+
+== How to Acquire ==
+There are two Pale Rosary Necklaces that can be found by interacting with glowing spots across [[Pharloom]].
+
+{| class="article-table" width="100%" data-tpt-table-id="pale-rosary-necklace"
+!
+! Area
+! Location
+! Map
+|-
+! 1
+| [[High Halls]]
+| Found inside a chest in the [[High Halls#Rosary Bank|Rosary Bank]], an area unlocked with a [[Simple Key]]. Can be stolen by a [[Snitchfly]] if Hornet does not pick it up before opening the vault door and resting at a [[Bench (Silksong)|bench]] outside the High Halls, the [[Choral Chambers]], and the [[Cogwork Core]].
+| [[File:Mapshot SS Simple Key Use High Halls.png|center|150x150px]]
+|-
+! 2
+| [[Far Fields]]
+| In [[Act 3]], on a ledge above the door to [[Karmelita]], guarded by a [[Skarr Stalker]].
+| [[File:Mapshot SS Pale Rosary Necklace 01.png|center|150x150px]]
+|}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Pale Rosary Necklace 01.png!In the High Halls
+|Image2 = Screenshot SS Pale Rosary Necklace 02.png!In the Far Fields
+}}
+
+{{Localisation
+|DEname = Bleicher Rosenkranz
+|DEmeaning = Pale Rosary<br><small>Individual Rosaries are <i>rosenkranzperlen</i> (rosary beads) in German.</small>
+|ESname = Collar de rosarios pálido
+|ESmeaning = Pale Rosary Necklace
+|FRname = Pâle collier de perles
+|FRmeaning = Pale Necklace of Pearls<br><small><i>Perles</i> (pearls) are the name of Rosaries in Italian.</small>
+|ITname = Collana di grani pallida
+|ITmeaning = Pale Beads Necklace<br><small><i>Grani</i> (beads) are the name of Rosaries in Italian.</small>
+|JAname = 蒼白のロザリーの首飾り
+|JAromanised = Sōhaku no rozarī no kubikazari
+|JAkatakana = foreign
+|JAmeaning = Pale Rosary Necklace
+|KOname = 창백한 묵주 목걸이
+|KOromanised = Changbaekan mukju mokgeori
+|KOmeaning = Pale Rosary Necklace
+|PTname = Colar de Rosários Pálido
+|PTmeaning = Pale Rosary Necklace
+|RUname = Бледные чётки-ожерелье
+|RUromanised = Blednye čëtki-ožerel'e
+|RUmeaning = Pale Rosary Necklace
+|TWname = 蒼白念珠項鍊
+|TWromanised = Cāngbái niànzhū xiàngliàn
+|TWmeaning = same
+|ZHname = 苍白念珠项链
+|ZHromanised = Cāngbái niànzhū xiàngliàn
+|ZHmeaning = Pale Rosary Necklace
+|CODEname = COIN_SET_L
+|CODEmeaning = 
+}}
+
+{{SS Nav Items}}
+[[Category: Items (Silksong)]]

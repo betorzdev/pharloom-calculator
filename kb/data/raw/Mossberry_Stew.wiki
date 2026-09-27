@@ -1,0 +1,58 @@
+{{Navbar|icons=true|page1=Mossberry Stew|page2=Vintage Nectar|page3=Courier's Rasher|page4=Crustnut|page5=Pickled Muckmaggot}}
+{{SS Infobox Item
+| type = [[Items (Silksong)#Deliverables|Deliverable]]
+| source = Given by [[Moss Druid]]
+| description = Thick, syrupy soup of Mossberries and druidic herbs. Sweet and aromatic, but poisonous to most creatures.
+}}
+{{Quote|Hr=SS|For our base, we require the gelatinous Mossberry Stew. Its concoction is a druidic art, a jealously guarded secret of the moss-painted caverns deep below us.|[[Loyal Mergwin]]}}
+
+<b>Mossberry Stew</b> is a [[Items (Silksong)#Deliverables|deliverable item]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+Mossberry Stew is one of the five ingredients required for the <i>[[Great Taste of Pharloom]]</i> wish. It is given to [[Loyal Mergwin]] in the [[Choral Chambers]].
+
+{{Gallery
+|Image1 = Mapshot SS Loyal Mergwin 01.png!Location in the Choral Chambers
+|Image2 = Screenshot SS Loyal Mergwin 02.png!Loyal Mergwin in the Choral Chambers
+}}
+
+== How to Acquire ==
+During <i>Great Taste of Pharloom</i>, [[Moss Druid]] freely hands over Mossberry Stew to [[Hornet (Silksong)|Hornet]].
+
+{{Gallery
+|Image1 = Mapshot SS Moss Druid.png!Location in Bone Bottom
+|Image2 = Screenshot SS Moss Grotto 14.png!Moss Druid in Bone Bottom
+}}
+
+{{Localisation
+|DEname = Moosbeeren-Eintopf
+|DEmeaning = Mossberry Stew
+|ESname = Guiso de bayas musgosas
+|ESmeaning = Mossy Berry Stew
+|FRname = Soupe de baies verdissantes
+|FRmeaning = Greening Berry Soup
+|ITname = Zuppa di baccamuschio
+|ITmeaning = Mossberry Soup
+|JAname = 苔の実のシチュー
+|JAromanised = Koke no mi no shichū
+|JAmeaning = Mossberry Stew
+|KOname = 이끼베리 스튜
+|KOromanised = Ikkiberi seutyu
+|KOmeaning = Mossberry Stew
+|PTname = Ensopado de Musgogaba
+|PTmeaning = Mossberry Stew
+|RUname = Суп из болотной ягоды
+|RUromanised = Sup iz bolotnoj jagody
+|RUmeaning = Swamp Berry Soup
+|TWname = 苔蘚漿果濃湯
+|TWromanised = Táixiǎn jiāngguǒ nóngtāng
+|TWmeaning = same
+|ZHname = 苔莓浓汤
+|ZHromanised = Tái méi nóngtāng
+|ZHmeaning = Moss Berry Thick Soup
+|CODEname = GOURMAND_MOSSBERRY_STEW
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}

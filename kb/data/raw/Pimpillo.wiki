@@ -1,0 +1,82 @@
+{{SS Infobox Tool
+| image = <gallery>
+Pimpillo.png|Inventory
+Pimpillo Poison.png|Pollip Pouch
+</gallery>
+| type = Red
+| damage = 15/24/33/42/51
+| max = 4/5/6/7/8
+| refill_type = Repair
+| refill = {{S|10}}
+| effect = Throws a bomb that explodes on contact with an enemy
+| location = [[Greymoor]]
+| description = Fabric pouch filled with volatile material. <hr /> Explodes on impact with enemies or when ignited by its fuse.
+}}
+
+<b>Pimpillo</b> is a {{CrestSlot|Red|1}} in <i>[[Hollow Knight: Silksong]]</i>. Using it throws a bouncing projectile.
+
+== Usefulness ==
+The Pimpillo explodes either on contact with an [[Enemies (Silksong)|enemy]] or after its fuse has expended after 1.2 seconds, dealing [[Heavy Damage]].
+
+The Pimpillo is a powerful explosive that works well at clearing out groups of enemies or dealing great damage within a small time span. However, due to its low capacity, it has a relatively low total damage output and can struggle to do meaningful damage to [[Bosses (Silksong)|bosses]].
+
+Being in contact with the Pimpillo's explosion will immediately reverse the frosting effect on [[Mount Fay]] by 35%
+
+== Tool Synergies ==
+{{SS Table Tool Interactions
+| Tool1 = Pollip Pouch
+| Tool1Desc = Prevents Pimpillo from causing [[Seared Organ]]s to drop while the [[Broodfeast]] or [[Runtfeast]] [[Wish]] is active.
+}}
+
+== How to Acquire ==
+Crafted at a crafting bench in [[Greymoor]] above [[Yarnaby|Yarnaby's]] home at a cost of {{C|1}}.
+
+{{Gallery
+| Image1 = Mapshot SS Pimpillo.png!Location in Greymoor
+| Image2 = Mapshot SS Pimpillo Crafting Bench.png!Room with the crafting bench
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Recording SS Pimpillo.gif!Hornet throwing Pimpillo
+|Image2 = GIF SS Pimpillo 01.gif!Pimpillo killing enemy
+}}
+
+== Trivia ==
+* Pimpillos can be used to obtain the [[Hunter's Journal (Silksong)|Hunter's Journal]] entries of [[Muckmaggot]]s and [[Sandcarver]]s.
+* If thrown into [[Groal the Great]]'s mouth during their <b>Great Inhale</b> attack, they will instead swallow the Pimpillo which explodes inside them.
+* In the [https://www.youtube.com/watch?v=pFAknD_9U7c <i>Hollow Knight: Silksong</i> reveal trailer], the Pimpillo's description noted that it is "dangerous to friends and foes alike"; however, the tool cannot harm any friends in the final game.
+* The room which the Pimpillo is crafted has the same bags and red tents from [[Wisp Thicket]].
+{{Localisation
+|DEname = Pimpillo
+|DEmeaning = —
+|ESname = Alfimohada
+|ESmeaning = Portmanteau of <i>alfiler</i> (pin) and <i>almohada</i> (pillow).
+|FRname = Pompillo
+|FRmeaning = —
+|ITname = Foschinnolo
+|ITmeaning = Portmanteau of <i>foschia</i> (mist) and <i>ninnolo</i> (trinket).
+|JAname = ピンピロー
+|JAromanised= Pinpirō
+|JAkatakana = foreign
+|JAmeaning = Pimpillo
+|KOname = 발화 자루
+|KOromanised = Balhwa jaru
+|KOmeaning = Ignition Bag
+|PTname = Almofapino
+|PTmeaning = Portmanteau of <i>almofada</i> (pillow) and <i>pino</i> (pin).
+|RUname = Бумдушка
+|RUromanised = Bumduška
+|RUmeaning = Portmanteau {{lang|ru|бум}} <i>bum</i> (boom) {{lang|ru|подушка}} <i>poduška</i> (pillow).
+|TWname = 爆彈囊
+|TWromanised = Bào dàn náng
+|TWmeaning = Bomb Pouch
+|ZHname = 爆燃囊
+|ZHromanised = Bàorán náng
+|ZHmeaning = Deflagration Pouch<br><small>[[wikipedia:deflagration|Deflagration]] is the action of heating a substance until it burns away rapidly.</small>
+|CODEname=PIMPILO
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Pompillo]]

@@ -1,0 +1,426 @@
+{{SS Infobox Area
+| tab1 = Acts 1/2
+| image1 = <gallery>
+Bellhart Map Marked.png|Marked
+Bellhart Map Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Bellhart Map Ruin Marked.png|Marked
+Bellhart Map Clean.png|Unmarked
+</gallery>
+| connection = [[Greymoor]]<br>[[Shellwood]]<br>[[The Marrow]]
+| ambience = [https://www.youtube.com/watch?v=VhZ65Rklk0Y Atmos Bells]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+| main = [https://www.youtube.com/watch?v=x9GPH24dkD4 Bellhart Cursed] (Haunted Bellhart)<br>
+[https://www.youtube.com/watch?v=vR2zqX7hijo Bellhart] (Not haunted, Acts 1-2)<br>
+[https://www.youtube.com/watch?v=RQWC8R7f-MU Bell Ambient] (Act 3)
+}}
+{{Quote
+|Welcome, welcome, weary pilgrim! Though glorious Bellhart may be past its finest shine, it still remains the last friendly stop before the Citadel. It is the task of I, fair Pavo, to extend the warmest of welcome to those passing devout.
+|[[Pavo]]
+|Hr=SS
+}}
+
+<b>Bellhart</b> is a town and an [[Areas (Silksong)|area]] in <i>[[Hollow Knight: Silksong]]</i>. It is a town almost exclusively built from the numerous bells, both large and small, of the bellvein it resides within. Bellhart serves as a safe spot for pilgrims to rest at before continuing on their pilgrimage to [[the Citadel]]. 
+
+== Description ==
+Bellhart is a settlement that neighbours [[Greymoor]] to the east and [[Shellwood]] to the west, and is connected to [[the Marrow]] via its bottom bellvein. It is the last settlement pilgrims can rest at before their final ascent to [[the Citadel]] through [[Shellwood]] and the [[Blasted Steps]].<ref name="friendly-stop">[[Pavo]]: <i>"Welcome, welcome, weary pilgrim! Though glorious Bellhart may be past its finest shine, it still remains the last friendly stop before the Citadel."</i></ref>  
+
+If the town is entered before defeating [[Widow]], Hornet finds its residents strung in Silk threads hanging from the ceiling, and all the buildings closed except for the [[Bellway]]. The town's name card appears as <b>Haunted Bellhart</b>, and the objective <i>[[SAVE: The Threadspun Town]]</i> is automatically gained.
+
+After Widow is defeated Bellhart will be freed from the haunted thread. The shops will be opened, and a [[Wishwall]] will appear. The area's name card now appears as <b>Bellhart</b>.
+
+Bellhart is composed almost entirely out of large bells, with larger bells being repurposed into homes for the residents, often referred to as "bellhomes". <ref>Pavo: <i>"In recognition of your noble efforts, and as one small step to solving the problem, I have decreed a grand gift should be given! A bellhome of your very own! A place to reflect. A bed to lay in. It's hanging up there at the top, beside our good pinmaster."</i></ref> The settlement has been built within the bellvein that runs through the core of [[Pharloom]].<ref name="map"></ref> This vein of gilded bells creates an effectively defended settlement, once granting its bugs a long time of peace.<ref>[[Shakra]]: <i>"This vein of gilded bells creates an effectively defended settlement. I can see it once gave a long time of peace to its bugs."</i></ref> 
+ 
+<br><hr>
+After completing the <i>[[Bellhart's Glory]]</i> wish and 2 of the following 4 wishes:
+* <i>[[Silver Bells]]</i>
+* <i>[[My Missing Courier]]</i>
+* <i>[[My Missing Brother]]</i>
+* <i>[[Savage Beastfly (Wish)|Savage Beastfly]]</i>
+
+A new bellhome appears at the top of the area, which Hornet can access by speaking to [[Pavo]]. He will inform her that he decreed that Hornet shall be given [[Bellhome|her own bellhome]] in appreciation of her efforts and gives her the [[Bellhome Key]]. Hornet can furnish her bellhome through purchasing furniture from [[Frey]].
+
+In [[Act 3]], Bellhart is greatly damaged, with many bellhomes in the background getting destroyed, though all interactable bellhomes are safe from the destruction.<ref>''[https://hollowknight.wiki/w/Bellhart#/media/File:Screenshot_SS_Bellhart_05.png Act 3 Bellhart screenshot]''</ref>
+
+== How to Access ==
+Bellhart is accessible through [[Greymoor]]'s western entrance after defeating [[Moorwing]].
+
+Alternatively, Bellhart can be accessed before defeating Moorwing via [[Shellwood]]'s eastern entrance (if Shellwood was accessed via [[Wormways]] instead), or by saving five [[Fleas]] and travelling with the [[Flea Caravan]]. Accessing Bellhart using either of these methods skips the Moorwing boss fight, preventing the fight from happening until [[Act 2]].
+
+== History ==
+In the past Bellhart was a settlement founded on the path to [[the Citadel]] between [[Shellwood]] and [[Greymoor]], serving as a place for pilgrims to rest before continuing their climb. Some bugs would choose to not continue their pilgrimage and instead settled down in Bellhart indefinitely. <ref name="bell-hermit">[[Bell Hermit]]: <i>"Those bugs, cowering in their gleaming bells. Grnk. They claim a common calling, to serve the pilgrims as they make their path upwards. Such a crucial role they award themselves, surely worthy of praise! A sweet lie, of course. They, like their predecessors, are simply too weak and fearful to venture any farther. A settlement born from indolence."</i></ref> Over generations these residents would build Bellhart up into a bustling town and a safe haven for passing pilgrims. <ref name="bustling">[[Frey]]: <i>"Of once bustling Bellhart, only a few residents now remain."</i></ref><ref>Pavo:<i> "Welcome, welcome, travellers all! Rest your weary shell and revive your flagging spirit! Bellhart! Glorious, gleaming, and very very safe! Stay a while before you begin your final climb!"</i></ref>
+
+The residents of Bellhart would devote themselves to the task of serving the pilgrims passing through, making the town into a safe place for them to rest before their final climb towards [[the Citadel]]. <ref>Bellhart [[Needolin Locations#Bellhart|Needolin dialogue]]: <i>"Gleaming rest... Almost there... Still alive... For the pilgrims, many... We serve, selfless... We serve, safe..."</i></ref>
+
+Being built inside a bellvein afforded Bellhart easy access to bells of all sizes and kinds.<ref name="map">Bellhart [[Shakra#Maps|map]] description: <i>"A town built within the thick vein of bells that runs through Pharloom's core."</i></ref> Larger bells were used to create bellhomes that would house the bugs, while smaller bells could be used for raw materials, particularly silver bells.<ref> [[Silver Bells]] [[Wishwall]] text: <i>"When searching the bellveins carefully, you can sometimes find rare, silver bells. If we can salvage some, the material would be of great use!"</i></ref>
+
+At some point during the [[Haunting]], [[Widow]] would find Bellhart and guide Silk inside the town, ensnaring all but a few bugs as a gift for [[Grand Mother Silk]].<ref>[[Widow]]: <i>"They shall join... Union upon your thread... A gift, for your waking. A world strung to serve..."</i></ref> Upon being freed from the thread by [[Hornet (Silksong)|Hornet]], many residents would die, leaving Bellhart's numbers greatly reduced.<ref>Hornet and Pavo dialogue: <br><i>Hornet: "Your town seems returned to healthy form, good bug. I had some concern that, upon cutting you free, I'd find only husks"<br>Pavo: "Yes, well, many ahh... err... most of our residents did not fare so well... Still, it's no good to dwell on dark things! We shall build, and grow, and welcome! As is any good bellbug's task."</i></ref><ref>[[Pondcatcher Reed]]: <i>"Us few Bellharters are badly needing for fresh food, so my lone shell's carrying quite the responsibility."</i></ref><ref name="bustling"></ref>
+
+{{TabbedPOI
+|Header = true
+
+|NPC1 = Frey
+|NPC2 = Pinmaster Plinney
+|NPC3 = Relic Seeker Scrounge
+|NPC4 = Shakra
+|NPC5 = Sherma
+|NPC6 = Couriers Tipp & Pill
+|NPC7 = Pavo
+|NPC8 = Bell Hermit
+|NPC9 = Pondcatcher Reed
+
+|Enemy1 = Furm
+|Enemy2 = Winged Furm
+
+|Boss1 = Widow
+
+|Loot1_FileName = Memory Locket
+|Loot1_Amount = 1
+|Loot2_FileName = Flea
+|Loot2_Amount = 1
+|Loot3_FileName = Silver Bell
+|Loot3_Description = found during the <i>[[Silver Bells]]</i> wish
+|Loot4_FileName = Rosary Necklace
+|Loot4_Amount = 1
+|Loot4_Description = given for completing the <i>Silver Bells</i> wish
+|Loot5_FileName = Mask Shard
+|Loot5_Amount = 3
+|Loot5_Description = * given for completing the <i>[[Savage Beastfly (Wish)|Savage Beastfly]]</i> wish
+* given for completing the <i>[[Dark Hearts]]</i> wish
+* given for completing the <i>[[The Hidden Hunter]]</i> wish
+|Loot6_FileName = Courier's Swag
+|Loot7_FileName = Queen's Egg
+|Loot8_FileName = Liquid Lacquer
+|Loot9_FileName = Courier's Rasher
+
+
+|LoreTabletsSource = SS Bellhart
+}}
+
+== Bellhart Wishes ==
+<div class="mw-collapsible mw-collapsed" data-expandtext="Show List of Wishes" data-collapsetext="Hide List of Wishes">
+{{TaskEntry
+| top = true
+| header = <b><i>Accessible in [[Act 1]]</i></b>
+| id = Pinmaster's Oil
+| title = [[Pinmaster's Oil]]
+| description = "Lost within that fortress above, the fabled oil of my profession... Such sharpness one could achieve..."
+| objective = Retrieve Pale Oil from the Citadel.
+| location = <b><i>[[Bellhart]] NPC</i></b>
+[[Pinmaster Plinney]]
+| reward = [[Needle#Upgrades|Needle Upgrade]]
+}}
+{{TaskEntry
+| id = My Missing Courier
+| title = [[My Missing Courier]]
+| description = My dear little courier was last seen in Shellwood. Please someone, find Tipp and send him home, along with all of his precious stock!
+| objective = Search for traces of the courier, Tipp, and track his location. Tipp was last seen in lower Shellwood.
+| location = <b><i>[[Bellhart]] Wishwall</i></b>
+[[Frey]] of Bellhart
+| reward = Opens additional inventory to purchase from Frey.<br><i>Prerequisite for [[My Missing Brother]]</i>
+}}
+{{TaskEntry
+| id = Silver Bells
+| title = [[Silver Bells]]
+| description = When searching the bellveins carefully, you can sometimes find rare, silver bells. If we can salvage some, the material would be of great use!
+| objective = Collect Silver Bells in the bellvein tunnels above and below Bellhart.
+| location = <b><i>[[Bellhart]] Wishwall</i></b>
+Residents of Bellhart
+| reward = [[Rosary Necklace]]
+}}
+{{TaskEntry
+| id = Crawbug Clearing
+| title = [[Crawbug Clearing]]
+| description = Those blasted crawbugs are fouling up my roof! I've come up with a clever solution to keep them away, but I'll need some help. Enquire at the Halfway Home if you're fit for the task.
+| objective = Hunt Crawbugs in [[Greymoor]] and collect their [[Ragpelt]].
+| location = <b><i>[[Bellhart]] Wishwall / [[Halfway Home]] NPC</i></b>
+[[Creige]] of the Halfway Home
+| reward = [[Crafting Kit]]<br><i>Prerequisite for [[Silk and Soul]]</i>
+}}
+{{TaskEntry
+| id = Restoration of Bellhart
+| title = [[Restoration of Bellhart]]
+| description = Harken, ye holy! Our home has been cleansed of evil, but now we are tasked with restoring its former glory! Share your rosaries with us, that the work may begin.
+| objective = Donate rosaries to aid the rebuilding of Bellhart.
+| location = <b><i>[[Bellhart]] Wishwall</i></b>
+[[Pavo]] of Bellhart
+| reward = None<br><i>Prerequisite for [[Bellhart's Glory]]<br>Prerequisite for [[Silk and Soul]]</i>
+}}
+{{TaskEntry
+| header = <b><i>Accessible in [[Act 2]]</i></b>
+| id = My Missing Brother
+| title = [[My Missing Brother]]
+| description = Need help-help quick! Me brother Pill is gone missing, vanished somewhere in Greymoor! Please, to help me find-find him!
+| objective = Search for traces of the courier, Pill, and track his location. Pill was last seen in lower Greymoor.
+| location = <b><i>[[Bellhart]] Wishwall</i></b>
+[[Tipp & Pill|Tipp]] of Bellhart
+| reward = Unlocks [[Delivery Wishes]]
+}}
+{{TaskEntry
+| id = Trail's End
+| title = [[Trail's End]]
+| description = Child Wielding Needle, I have caught fresh scent of my master in those stricken swamps beside the Citadel. I ask you now to follow, to meet together at trail's end.
+| objective = Search for Shakra and her master in Bilewater.
+Shakra can be tracked by her trail of rings.
+| location = <b><i>[[Bellhart]] Wishwall</i></b>
+[[Shakra]]
+| reward = [[Throwing Ring]]<br><i>[[Achievements (Silksong)|Trail's End]]</i><br><i>Prerequisite for [[Silk and Soul]]</i>
+}}
+{{TaskEntry
+| id = Silk and Soul
+| title = [[Silk and Soul]]
+| description = Oi! I'm wishin' for that bothersome bellringer! That you readin' this? Then head up top beside the shrine. Might be we two should have a little chat...
+| objective = Acquire the necessary components to build a powerful trap.
+* Maiden's Soul
+* Hermit's Soul
+* Seeker's Soul
+* Snare Setter
+| location = <b><i>[[Bellhart]] Wishwall / [[Songclave]] NPC</i></b>
+[[Caretaker]] of Songclave
+| reward = Unlocks the <i>[[DESTROY: Soul Snare]]</i> objective.
+}}
+{{TaskEntry
+| id = Savage Beastfly
+| title = [[Savage Beastfly (Wish)|Savage Beastfly]]
+| description = O Beastfly, raging through the scorching wildlands below! May you hinder good pilgrims no longer! May you be struck down by a holy fury!
+| objective = Track down the Savage Beastfly in the Far Fields and defeat it.
+The Beastfly can be tracked by its shell sheddings and claw marks.
+| location = <b><i>[[Bellhart]] Wishwall</i></b>
+Residents of Bellhart
+| reward = [[Mask Shard (Silksong)|Mask Shard]]
+}}
+{{TaskEntry
+| id = Bellhart's Glory
+| title = [[Bellhart's Glory]]
+| description = The work of restoring our sacred home is almost complete! May those blessed with rosaries share them with us for this holy purpose!
+| objective = Donate rosaries to aid the rebuilding of Bellhart.
+| location = <b><i>[[Bellhart]] Wishwall</i></b>
+[[Pavo]] of Bellhart
+| reward = [[Bellhome Key]]<br><i>[[Achievements (Silksong)|Resident]]<br>Prerequisite for [[Silk and Soul]]</i>
+}}
+{{TaskEntry
+| id = Bone Bottom Supplies
+| title = [[Bone Bottom Supplies]]
+| description = "Goods for the camp at base, where pilgrims' journey starts. We muchly hope this delivering goes well!"
+| objective = Deliver supplies to the fixer Flick in Bone Bottom.
+| location = <b><i>[[Bellhart]] NPCs</i></b>
+[[Tipp & Pill]]
+| reward = {{R|150}}
+}}
+{{TaskEntry
+| id = Pilgrim's Rest Supplies
+| title = [[Pilgrim's Rest Supplies]]
+| description = "Supplies for the rest-stop in the fields. We is used to like this delivering, when we was young and muchly brave."
+| objective = Deliver supplies to Mort in Pilgrim's Rest.
+| location = <b><i>[[Bellhart]] NPCs</i></b>
+[[Tipp & Pill]]
+| reward = {{R|180}}
+}}
+{{TaskEntry
+| id = Queen's Egg
+| title = [[Queen's Egg (Wish)|Queen's Egg]]
+| description = <i>"We is got requested times a'many for this, a queeny egg of those eaters of Silk. Wish from big, sticky creature, near many roaches caged. Wants it muchly!"</i>
+Deliver the Queen's Egg to Styx of Sinner's Road.
+| objective = Deliver a fragile [[Queen's Egg]] to [[Sinner's Road]].
+| location = <b><i>[[Bellhart]] NPCs</i></b>
+[[Tipp & Pill]]
+| reward = {{R|260}} (Act 2)<br>{{R|290}} (Act 3)<br>[[Styx]] expands his nest, allowing for the generation of more [[Silkeater]]s.
+}}
+{{TaskEntry
+| id = Songclave Supplies
+| title = [[Songclave Supplies]]
+| description = "Good-goods for the pilgrims up high! Thems brave ones, settled up on that big-big Citadel. These deliverings they will muchly need, miss courier. Carry them safe-safe, for us!"
+| objective = Deliver supplies to the Caretaker in Songclave.
+| location = <b><i>[[Bellhart]] NPCs</i></b>
+[[Tipp & Pill]]
+| reward = {{R|360}} (Act 2)<br>{{R|410}} (Act 3)
+}}
+{{TaskEntry
+| id = Fleatopia Supplies
+| title = [[Fleatopia Supplies]]
+| description = "Those good-goods, all packed fresh for the clever fleas. Take thems up for us, miss courier. Maybe new friends you might be making with your service? Yes-yes?"
+| objective = Deliver supplies to the Fleamaster Mooshka in Fleatopia.
+| location = <b><i>[[Bellhart]] NPCs</i></b>
+[[Tipp & Pill]]
+| reward = {{R|410}} (Act 2)<br>{{R|480}} (Act 3)
+}}
+{{TaskEntry
+| id = Liquid Lacquer
+| title = [[Liquid Lacquer (Wish)|Liquid Lacquer]]
+| description = "A delivery deadly, dangerous, fiercably cold, for old bug up there that does need it much-much! Serves us all he does, so we serve back. And great test for you, miss courier! Most challenging-challenge this. The lacquer to bring is sloshy-slosh. A hard carry even for the best."
+| objective = Deliver Liquid Lacquer to the Mask Maker upon Mount Fay.
+| location = <b><i>[[Bellhart]] NPCs</i></b>
+[[Tipp & Pill]]
+| reward = {{R|560}} (Act 2)<br>{{R|650}} (Act 3)
+}}
+{{TaskEntry
+| header = <b><i>Accessible in [[Act 3]]</i></b>
+| id = Fatal Resolve
+| title = [[Fatal Resolve]]
+| description = If the world is truly ending, I would test my pin in combat one last time. Come to my home at border's edge and accept my challenge!
+| objective = Find Pinstress on the stormward side of Mount Fay and defeat her in battle.
+| location = <b><i>[[Bellhart]] Wishwall / [[Blasted Steps]] Lore Tablet</i></b>
+[[Pinstress]] of Blasted Steps
+| reward = [[Pin Badge]]<br><i>[[Achievements (Silksong)|Fatal Resolve]]</i>
+}}
+{{TaskEntry
+| id = Hero's Call
+| title = [[Hero's Call]]
+| description = A distressed bug was heard calling for help near the Bellway atop the great sandy steps. Will no one come to the sad wretch's aid?
+| objective = Seek out the distressed bug near the Blasted Steps Bellway.
+| location = <b><i>[[Bellhart]] Wishwall</i></b>
+Residents of Bellhart
+| reward = [[Memento|Hero's Memento]]<br><i>[[Achievements (Silksong)|Hero's Call]]</i>
+}}
+{{TaskEntry
+| id = Dark Hearts
+| title = [[Dark Hearts]]
+| description = Such horror upon the roads! Those black mounds formed of husks and bugs, corrupting everything around. If only someone would cut them down and grant the poor souls their rest!
+| objective = Destroy [[Void Mass|Void Masses]] throughout Pharloom.
+| location = <b><i>[[Bellhart]] Wishwall</i></b>
+Residents of Bellhart
+| reward = [[Mask Shard (Silksong)|Mask Shard]]
+}}
+{{TaskEntry
+| id = The Hidden Hunter
+| title = [[The Hidden Hunter]]
+| description = A huge red-shell stole my precious keepsake and disappeared into the fields! Please chase down the thief and recover my treasure!
+| objective = Track the one who stole Gilly's keepsake near the Bellshrine between Deep Docks and Far Fields.
+| location = <b><i>[[Bellhart]] Wishwall</i></b>
+[[Gilly]] of Far Fields
+| reward = [[Mask Shard (Silksong)|Mask Shard]]
+}}
+{{TaskEntry
+| id = Survivor's Camp Supplies
+| title = [[Survivor's Camp Supplies]]
+| description = "A new destination this-this! And desperate these supplies are asked. Deliverings for them-them escaped from the crumbled camp beside the bone, those few still living. Hurting and hungry, those few must be."
+| objective = Deliver supplies to Flick at the Survivor's Camp.
+| location = <b><i>[[Bellhart]] NPCs</i></b>
+[[Tipp & Pill]]
+| reward = {{R|180}}<br><i>Replaces [[Bone Bottom Supplies]] and [[Pilgrim's Rest Supplies]]</i>
+}}
+{{TaskEntry
+| bottom = true
+| id = Fastest in Pharloom
+| title = [[Fastest in Pharloom|SPRINT:<br>Fastest in Pharloom]]
+| description = Be you nimble? Be you quick? If you would prove yourself Pharloom's fastest bug, meet me at the furthest border of the Far Fields! With all haste!
+| objective = Race Sprintmaster Swift to discover Pharloom's fastest bug.
+| location = <b><i>[[Bellhart]] Wishwall / [[Far Fields]] NPC</i></b>
+[[Sprintmaster Swift]]
+| reward = First Race: [[Rosary Necklace]]<br>Second Race: [[Beast Shard]]<br>Third Race: [[Mask Shard (Silksong)|Mask Shard]]
+}}
+</div>
+
+== Special Rooms ==
+=== Bellhome ===
+{{Main|Bellhome}}
+[[File:Screenshot_SS_Bellhome 01.png|alt=Hornet's Bellhome Hanging Above Bellhart|thumb|Hornet's bellhome hanging above Bellhart]]
+Located above Scrounge's residence after the <i>[[Bellhart's Glory]]</i> [[Wishes|wish]] is completed is a locked bellhome. Pavo gives Hornet the key to this bellhome as a sign of appreciation after the completion of several wishes around Bellhart. The bellhome serves as a residence where Hornet can rest, and additional functions can be installed by purchasing furniture from [[Frey]] along with items Hornet finds throughout [[Pharloom]]. 
+
+Available by default is a bed that functions as a [[Bench (Silksong)|Bench]], which Hornet lies down on if no input is made for 4 seconds while resting, or when loading the [[Save Data (Silksong)|save profile]] after resting on the bed.
+{{Clear}}
+
+== Creation and Development ==
+{{Main|Cut Content (Silksong)/Areas#Bellhart}}
+[[File:Bellhart April 2021.webp|thumb|100px|Bellhart in April 2021]]
+Bellhart's main room was created around August 2017. Following its addition on the map, Bellhart continued to be worked on up until April 2021. In the April 2021 iteration, it was a much larger area than now, having extensive tunnel systems both north and south of the town. Both tunnels connected to two areas each, with the upper ones also leading through the [[Father of the Flame]]'s arena. In the town itself, the leftmost accessible bellhome housed [[Yarnaby]] instead of [[Relic Seeker Scrounge]]. 
+
+By April 2022, Bellhart had its tunnels greatly reduced in size, similar to their current iteration. Bellhart also formerly contained the cut [[Cut Content (Silksong)/NPCs#Bugpipers|Bugpipers]] NPCs. Additionally, the [[Cut Content (Silksong)/NPCs|Caravantula]] could bring Hornet to Haunted Bellhart prior to his removal, and there was also a "[[#Bellhart (Fisher Room)|Fisher Room]]"; it required [[Silk Soar]] to access, making it a likely later development addition.
+
+Bellhart was first showcased to the public in the February 2019 <i>Silksong</i> reveal trailer, which depicted the town as being brighter and livelier than its current state.<ref>[https://www.youtube.com/watch?v=pFAknD_9U7c Hollow Knight: Silksong Reveal Trailer]</ref> A room within Bellhart's cut tunnels below the town could be seen in the June <i>E3 2019 Nintendo Direct</i> ending sizzle reel, showing Hornet pogoing off bells suspended on chains.<ref>[https://www.youtube.com/watch?v=Zr9eAtwcYlo Nintendo Direct for E3 2019] on YouTube</ref> In February 2021's <i>EDGE Magazine</i> issue, another screenshot of Bellhart was shown, showcasing the cut [[Cut Content (Silksong)/NPCs#Pin Pilgrim|Pin Pilgrim]] NPC resting near Pinmaster Plinney's bellhome.<ref>[https://pocketmags.com/edge-magazine/february-2021 Edge Magazine February 2021 edition], p. 51.</ref> A May 2025-released screenshot also showcases visual differences.<ref>[https://www.ign.com/articles/hollow-knight-silksong-will-be-playable-in-september-2025-at-an-australian-museum Hollow Knight: Silksong Will Be Playable in September 2025… at an Australian Museum] on IGN</ref>
+{{clear}}
+
+== Gallery ==
+{{Gallery
+| Image1 = Screenshot SS Bellhart 01.png ! Haunted Bellhart
+| Image2 = Screenshot SS Bellhart 02.png ! Restored Bellhart
+| Image3 = Screenshot SS Bellhart 03.png ! Bellway Station
+| Image4 = Screenshot SS Bellhart 05.png ! Destroyed Bellhart (Act 3)
+| Image5 = Screenshot SS Bellhart 07.png ! Bell Shrine (Clear)
+| Image6 = Screenshot SS Bellhart 08.png ! Bell Shrine (Act 3)
+| Image7 = Screenshot SS Bellhart 06.png ! Bell Hermit
+| Image8 = Bellhart North Composite Map.png ! Composite map of upper bellveins by [https://scripterswar.com/silksong/map RainingChain]
+| Image9 = Bellhart South Composite Map.png ! Composite map of lower bellveins by [https://scripterswar.com/silksong/map RainingChain]
+| Image10 = Screenshot SS Bellhart 10.png ! Pinmaster Plinney Room
+| Image11 = Screenshot SS Bellhart 11.png ! Relic Seeker Scrounge Room
+| Image12 = Silksong Early 017.png ! <i>Silksong</i> reveal trailer
+| Image13 = Pin Pilgrim.png ! Pre-release screenshot
+}}
+
+== Trivia ==
+* If the save is exited and reloaded while resting on the bench of Haunted Bellhart or during the Widow fight, there is a 40% chance for Hornet to be suspended in the air, strung by Silk threads.<ref>FSM <code>Webbed Hero</code> in <code>belltown.bundle</code>.</ref> Some text appears while trapped:
+{{SS Needolin|columns=2|
+* Bound together...
+* Awoken together...
+* Your Silk... our Silk...
+* Your shell... our shell...
+}}
+* The [[Bellshrine]] in Bellhart is the largest of all the Bellshrines, and is the only one with the bell set in a background layer, where Hornet is unable to hit it.
+* After defeating [[Widow]], if Hornet does not break the Silk on the Bellshrine after obtaining the [[Needolin]], it breaks by itself after a few seconds and reveals the lever.
+* Hornet has a unique animation if she checks her map after lying down in the bed in her bellhome.
+{{Localisation
+|DEname = Glockenherz
+|DEmeaning = Bell-heart
+|ESname = Campanilla
+|ESmeaning = Portmanteau of {{lang|es|<i>campana</i>}} (bell) and {{lang|es|<i>villa</i>}} (town).
+|FRname = Clochelle
+|FRmeaning = Portmanteau of {{lang|fr|<i>cloche</i>}} (bell) and {{lang|fr|<i>ville</i>}} (town).
+|ITname = Cuorcampana
+|ITmeaning = Portmanteau of {{lang|it|<i>cuore</i>}} (heart) and {{lang|it|<i>campana</i>}} (bell).
+|JAname = ベルハート
+|JAromanised = Beruhāto
+|JAmeaning = Bellhart
+|KOname = 종의 심장부
+|KOromanised = Jongui simjangbu
+|KOmeaning = Bell Heart
+|PTname = Campânula
+|PTmeaning = Bell or Bellflower
+|RUname = Звонвилль
+|RUromanised = Zvonvill'
+|RUmeaning = Combination of either {{lang|ru|звонок <i>zvonok</i>}} (bell) or {{lang|ru|звон <i>zvon</i>}} (chime), and <i>ville</i>.
+|ZHname = 钟心镇
+|ZHromanised = Zhōng xīn zhèn
+|ZHmeaning = Bell Heart Town<br><small>The name is a play on {{lang|zh-Hans|中心镇 <i>zhōngxīn zhèn</i>}} (central town), {{lang|zh-Hans|钟}} / {{lang|zh-Hant|鐘 <i>zhōng</i>}} (bell) and {{lang|zh-Hans|中 <i>zhōng</i>}} (central) are homophones.</small>
+|TWname = 鐘心鎮
+|TWromanised = Zhōng xīn zhèn
+|TWmeaning = same
+|CODEname = BELLTOWN
+}}
+===Haunted Bellhart===
+{{Localisation
+|hr=false
+|DEname = Verwunschenes Glockenherz
+|DEmeaning = Enchanted Bell-heart
+|ESname = Campanilla Embrujada
+|ESmeaning = Haunted Bell-town
+|FRname = Clochelle Maudite
+|FRmeaning = Cursed Bell-town
+|ITname = Cuorcampana Infestata
+|ITmeaning = Infested Bell-heart
+|JAname = 呪われし ベルハート
+|JAromanised = Norowareshi beruhāto
+|JAmeaning = Cursed Bellhart
+|KOname = 저주받은 종의 심장부
+|KOromanised = Jeojubatoeun jongui simjangbu
+|KOmeaning = Cursed Bell Heart
+|PTname = Campânula Assombrada
+|PTmeaning = Haunted Bell
+|RUname = Проклятый Звонвилль
+|RUromanised = Prokljatyj Zvonvill'
+|RUmeaning = Cursed Bellhart
+|ZHname = 丝咒侵蚀的钟心镇
+|ZHromanised = Sī zhòu qīnshí de zhōng xīn zhèn
+|ZHmeaning = Silk Curse Eroded Bell Heart Town
+|TWname = 絲咒侵蝕的鐘心鎮
+|TWromanised = Sī zhòu qīnshí de zhōng xīn zhèn
+|TWmeaning = same
+|CODEname = BELLTOWN_HAUNTED
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Areas}}
+[[Category:Areas (Silksong)]]
+[[fr:Clochelle]]
+[[zh:钟心镇]]

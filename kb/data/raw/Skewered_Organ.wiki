@@ -1,0 +1,59 @@
+{{Navbar|page1=Seared Organ|page2=Shredded Organ|page3=Skewered Organ}}
+{{SS Infobox Item
+| max = 10
+| type = [[Items (Silksong)#Deliverable|Deliverable]]
+| source = Any enemies killed with the [[Longpin]], [[Sting Shard]], or [[Needle Phial]] during <i>[[Broodfeast]]</i> or <i>[[Runtfeast]]</i>
+| description = Meat harvested from a defeated creature. It has been cleanly speared through, but is otherwise intact.
+}}
+
+{{Quote
+| Would you gift organs for my brood, sssppiidderr? Upon first waking my children will be consumed with craving.
+| [[Huntress]]
+| Hr = SS
+}}
+
+<b>Skewered Organs</b> are [[Items (Silksong)#Deliverables|deliverable items]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+15 [[Seared Organ]]s, 35 [[Shredded Organ]]s, and 10 Skewered Organs are required to complete the <i>[[Broodfeast]]</i> Wish, given by [[Huntress]] at [[Putrified Ducts]] (or the <i>[[Runtfeast]]</i> Wish, given by [[Runt]] in the same location after [[Act 3]] begins).
+
+== How to Acquire ==
+Only obtainable while <i>Broodfeast</i> or <i>Runtfeast</i> is active. Skewered Organs drop from most enemies killed by the following sources:
+* [[Sting Shard]] 
+* [[Longpin]]
+* [[Needle Phial]]
+
+[[Hornet (Silksong)|Hornet]] may carry up to 10 Skewered Organs, after which they are no longer obtainable.
+{{Localisation
+|DEname = Aufgespießtes Organ
+|DEmeaning = Skewered organ
+|ESname = Órgano en brocheta
+|ESmeaning = Brochette Organ
+|FRname = Brochette d'organe
+|FRmeaning = Organ Brochette
+|ITname = Organo trafitto
+|ITmeaning = Pierced organ
+|JAname = 串刺しの肉
+|JAromanised = Kushizashi no niku
+|JAmeaning = Skewered Meat
+|KOname = 꿰어진 장기
+|KOromanised = Kkweeojin janggi
+|KOmeaning = Skewered Organ
+|PTname = Órgão Espetado
+|PTmeaning = Pierced Organ
+|RUname = Пронзённый орган
+|RUromanised = Pronzënnyj organ
+|RUmeaning = Impaled Meat
+|TWname = 穿透內臟
+|TWromanised = Chuāntòu nèizàng
+|TWmeaning = same
+|ZHname = 穿透的内脏
+|ZHromanised = Chuāntòu de nèizàng
+|ZHmeaning = Skewered Organs
+|CODEname = MORSEL_SPEARED
+|CODEmeaning = All other organs for <i>[[Broodfeast]]</i>/<i>[[Runtfeast]]</i> are also called <code>MORSEL</code>
+}}
+{{Refs|hr=SS}}
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

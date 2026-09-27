@@ -1,0 +1,126 @@
+{{SS Infobox Crest
+|image1 = <gallery>
+Wanderer Crest Inventory.png|Inventory
+Wanderer Crest.png|HUD
+Wanderer Crest Activated.png|Activated
+</gallery>
+|description = Cut swiftly and nimbly with short, precise strikes.
+|skill = 1
+|red = 1
+|redlock = 0
+|blue = 0
+|bluelock = 2
+|yellow = 2
+|yellowlock = 1
+|attack = Narrow strikes <br> Faster than other Crests
+|effects = 2% chance to deal a critical hit while [[Bind]] is ready
+|location = [[Chapel of the Wanderer]]
+}}
+
+{{Quote
+|...Not worthy... ...Alone, without you... <br />...Climb and serve... ...Die and serve...
+|Hr=SS
+|[[Needolin Locations|Needolin Dialogue]]
+}}
+
+The <b>Wanderer Crest</b> is a [[Crests|Crest]] in <i>[[Hollow Knight: Silksong]]</i>. While equipped, [[Hornet (Silksong)|Hornet]]'s attack speed increases greatly, but her slashes become narrower. When at least a [[Bind]]'s worth of [[Silk]] is held, Hornet gains a 2% chance to deal a critical hit.
+
+== Attacks ==
+Compared to [[Hunter Crest]], Wanderer Crest has +34% attack speed. Width is traded for speed and combo damage output.
+* Neutral Slashes: Hornet swings the Needle in a narrow arc. Despite the Crest's description and appearance of the strikes, it has slightly more horizontal range than the Hunter Crest.<ref group="Source">[[:File:Hunter Wanderer neutral comparison.png|The hitboxes of the Hunter and Wanderer Crests' neutral slashes overlaid.]]</ref>
+* Down-slash: Hornet performs a quick, wide slash directly beneath herself, lacking sideways movement on a miss or delay before bouncing on a hit.
+* [[Swift Step|Run-slash]]: Hornet performs a quick, short-range slash, which does not stop movement on a miss. On hit, Hornet will dart up and back. Another attack input shortly after a hit results in a followup attack where Hornet dashes back in.
+* [[Needle Strike]]: Hornet springs forward a short distance and performs a series of rapid thrusts, hitting up to 5 times for roughly 3x a normal strike's damage in total.
+
+== Mechanics ==
+When Hornet has at least 9 strands of [[Silk]] (the same amount needed to [[Bind]]), and is not infested by [[Muckmaggot]]s, [[Needle]] and [[Clawline]] attacks have a 2% chance to deal critical hits for 3x damage, indicated with a flash and sound effect.<ref group=Source>Values viewable in UE. In-code, default values are 100% and 2x damage.</ref> This state is indicated by the HUD Crest expanding into a harp. Critical Hits average out to a 4% increase in Needle damage while the Silk requirement is met.
+
+* The chance for critical hits is increased to 2.2% when [[Magnetite Dice]] is equipped, raising the average damage increase to 4.4%.
+* Despite making a Bind available for use, [[Reserve Bind]] does <i>not</i> grant access to critical hits while below 9 strands of Silk.
+
+Wanderer can be identified by the golden yellow colour of Hornet's slash attacks.
+
+== Usefulness ==
+* The Wanderer Crest's attack speed is about 34% higher than [[Hunter Crest]]'s<ref name="math">[https://docs.google.com/spreadsheets/d/1K8jX9ilyOOePLrOR_YCdNyror3sxbQyC75TpIYEQ_jc/edit?usp=sharing Skong Math]</ref>, giving it a very high damage potential.
+** Hornet can gain [[Silk]] very quickly, enabling more frequent [[Bind]]s and [[Silk Skill]]s.
+** Certain enemy attacks can be [[Combat (Silksong)#Parrying|parried]] by hitting them with the Needle. This can be done with any Crest, but Wanderer Crest's high attack speed makes them much easier to perform. This can even completely negate rapid flurries of attacks with precise timing or luck. 
+*** The rapid hits of the [[Needle Strike]] are especially easy to parry with.
+* Critical hits are too rare to be relied upon, but do have a noticeable impact when they happen and can sometimes instantly kill enemies.
+* The down-slash is excellent for bouncing off enemies and objects.
+** Unlike the [[Reaper Crest]], there is no delay or movement other than the bounce itself.
+** The smaller hitbox can make the Down-slash require more skill to use compared to Reaper's.
+* The abundant {{CrestSlot|Yellow|1}} slots make this Crest ideal for exploration.
+** It can help with gathering [[Shell Shards]] and [[Rosaries]] with [[Shard Pendant]], [[Magnetite Brooch]], and [[Thief's Mark]]. 
+** [[Silkspeed Anklets]] and [[Ascendant's Grip]] can further improve Hornet's traversal.
+
+* Weaknesses:
+** Wanderer Crest's narrow attacks cover approximately 40% less area than Hunter Crest's<ref name=math/>.
+*** This can make it harder to hit flying enemies.
+*** This gives the Crest a slightly higher skill floor than the other early game Crests.
+** Wanderer Crest only has 1 {{CrestSlot|Red|1}} slot, limiting how much they can be used.
+*** This makes [[Pollip Pouch]] and [[Quick Sling]] less effective.
+*** It is advised to use this slot for utility or specific situations rather than relying on it for damage.
+
+== Synergies ==
+* [[Magnetite Dice]] multiplies the chance of a critical hit by 1.1, increasing it to 2.2%.
+* [[Longclaw]] greatly helps to alleviate the Crest's short range.
+* [[Flintslate]] increases the damage of melee attacks by 50% for 8 seconds. The Crest's attack speed allows for more hits within the tool's duration, giving more value per use.
+* [[Flea Brew]] increases the speed of melee attacks by 50% for 10 seconds. Combined with the Crest's already high attack speed, this allows for Hornet to quickly gather great amounts of [[Silk]].
+* If one is confident in their ability to avoid damage, the [[Barbed Bracelet]]'s needle damage boost pairs well with the increased attack speed.
+* [[Wispfire Lantern]] passively augments DPS while being easily sustained by the increased Silk generation of the Crest's faster attacks.
+* [[Snitch Pick]]'s bonus damage can be helpful as the Crest's low range encourages making use of Clawline's gap-closing ability
+* [[Pin Badge]] reduces the charge-up time of Needle Strikes considerably, which helps take advantage of the Crest's uniquely powerful Needle Strike, especially in conjunction with Flintslate.
+* [[Weavelight]] and [[Spool Extender]] both allow for simplified silk management, which makes critical hits easier to achieve.
+* [[Weighted Belt]] reduces knockback from being struck and strucking an enemy by half, and increases invincibility time to 1.3s after taking damage. It can be used to increase the amount of strikes you can perform before needing to move forward.
+
+== How to Acquire ==
+The Wanderer Crest is found inside the [[Chapel of the Wanderer]] in [[Bonegrave]]. 
+
+{{Gallery
+|Image1 = Mapshot SS Wanderer Crest.png!Location
+|Image2 = WandererCrestBind.png!Hornet binding the Wanderer Crest
+}}
+
+== Gallery ==
+{| align="center" style="text-align:center"
+| {{#ev:youtube|https://www.youtube.com/watch?v=z_yAdHlcORI|250|center|Deep Dive}}
+|}
+
+== Trivia ==
+* The crest is likely a reference to [[the Knight]], which was called "Wanderer" in interviews and official promo material,<ref>[[Ari Gibson]] in a [https://mixer.com/TeamCherryGames?vod=57373184 Q&A stream] (01:35:15): "<i>Arguably, yeah, like 'Wanderer' is more accurate.</i>"</ref><ref>[https://www.fangamer.com/products/hollow-knight-pin?_pos=1&_psq=wanderer&_ss=e&_v=1.0 Fangamer Merch]: "<i>The Wanderer Lapel Pin</i>", currently "<i>The Knight Lapel Pin</i>"</ref> and who has a very similar moveset in <i>[[Hollow Knight]]</i>.
+{{Localisation
+|DEname = Wanderer
+|DEmeaning = Wanderer (masculine)
+|ESname = Errante
+|ESmeaning = Wanderer
+|FRname = Vagabond
+|FRmeaning = Vagabond
+|ITname = Errante
+|ITmeaning = Wanderer
+|JAname= 放浪者
+|JAromanised= Hōrōsha
+|JAmeaning = Wanderer
+|KOname = 방랑자
+|KOromanised = Bangnangja
+|KOmeaning = Wanderer
+|PTname = Viajante
+|PTmeaning = Traveler
+|RUname = Странница
+|RUromanised = Strannica
+|RUmeaning = Wanderer (feminine)
+|TWname = 漫遊者
+|TWromanised = Mànyóuzhě
+|TWmeaning = same
+|ZHname = 漫游者
+|ZHromanised = Mànyóuzhě
+|ZHmeaning = Wanderer
+|CODEname = CREST_PILGRIM</code><br><code>WANDERER
+|CODEmeaning = The Crest is obtained by binding a Pilgrim corpse.
+}}
+{{Refs|hr=SS}}
+
+== Code References ==
+<references group="Source"/>
+
+{{SS Nav Crests}}
+[[fr:Emblème Vagabond]]

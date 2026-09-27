@@ -1,0 +1,217 @@
+{{SS Infobox Area
+| tab1 = Acts 1/2
+| image1 = <gallery>
+Mount Fay Map Marked.png|Marked
+Mount_Fay Map Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Mount Fay Map Ruin Marked.png|Marked
+Mount Fay Map Ruin Clean.png|Unmarked
+</gallery>
+| connection = [[The Slab]]
+| ambience = [https://www.youtube.com/watch?v=TktPhR-3MTU Atmos Blizzard Low Alt]<br>
+[https://www.youtube.com/watch?v=qcinZylIRPo Atmos Blizzard High]<br>
+[https://www.youtube.com/watch?v=RyjOcppVD8g Atmos Blizzard Intense]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]<br>
+[https://www.youtube.com/watch?v=ZzyCwfkjyCI Lake Atmos Hornet]<br>
+[https://www.youtube.com/watch?v=k7hTbKnM56s Atmos Peak Interior Crystal]
+| main = [https://www.youtube.com/watch?v=JYRQRo58mDk Mount Fay]
+}}
+
+{{Quote
+|Hr=SS
+|Sister, spider, if seeking commune with the creature atop this mount, take the climb above as a test, a challenge beyond even our setting.<hr/ >
+Upon that summit gained, and creature hailed, know it shall choose what gift to grant, with death as likely as insight.|[[Lore Tablets (Silksong)#Mount Fay|Scroll at the base of Mount Fay]]}}
+
+<b>Mount Fay</b> is an [[Areas (Silksong)|area]] in <i>[[Hollow Knight: Silksong]]</i>. Mount Fay is a mountain with near vertical cliffs to the east and slopes to the west. Mount Fay is a cold and icy area accessible only via [[the Slab]].
+
+== Description ==
+[[File:Screenshot SS Mount Fay 15.png|thumb|200px|left|Halfway up the mountain]]
+Mount Fay is nearly devoid of enemies to fight, and consists almost entirely of platforming challenges, requiring both [[Clawline]] and [[Drifter's Cloak]] to traverse.
+
+While in Mount Fay, [[Hornet (Silksong)|Hornet]] slowly frosts from the cold when not near a heat source, indicated by Hornet's sprite flashing light blue, the edges of the screen getting increasingly coated in ice, and the Masks in her healthbar turning blue and quivering. Safely traversing the area requires quickly moving between heat sources which are scattered around the area. Hornet normally takes 15 seconds to fully frost over, but certain effects can slow this:
+* Being in contact with a [[Pimpillo]] explosion will immediately reverse the timer by {{MissingInfo}}%, and will slow the timer by {{MissingInfo}}%.
+* Using [[Flintslate]] will immediately reverse the timer by {{MissingInfo}}%, and will slow the timer by 30% while its effect is active.
+* Entering [[Beast Crest]]'s Fury state will immediately reverse the timer by 15%, and will slow the timer by 10% while in the Fury state.<ref group=Source name="frosting">From the code, TickFrostEffect() and GetTotalFrostSpeed() functions in HeroCotroller class</ref>
+* Combining both effects gives a 37% slowdown.
+
+Once fully frosted, Hornet takes {{Damage|1|type=Ice}} of damage every 1.75 seconds. Damage cannot be slowed once it begins, but frosting can still be reversed, stopping damage until Hornet is fully frosted again. <ref group =Source name="frosting" />
+
+Hornet starts flashing blue to indicate that she is about to take frost damage. The first blue flash indicates that the timer has started, and after 10 flashes, the frost effect begins.
+
+The waters in Mount Fay are also freezing, and will immediately deal {{Damage|1|type=Ice}} of damage when Hornet lands in them, and an additional {{Damage|1|type=Ice}} every {{MissingInfo}} seconds she remains in the water. This damage cannot be slowed or reduced, and does not affect the progress of Hornet frosting over from the ambient cold.{{MissingInfo}}
+
+At the top of Mount Fay, Hornet unlocks the [[Faydown Cloak]], which grants her immunity to frostbite from its cold weather. However, icy water remains damaging.
+
+The [[Ascendant's Grip]], [[Weavelight]] and [[Plasmium Phial]] Tools can make the trek easier, though they aren't required.
+Caution should be exercised with certain heat sources, as they are destructible and can render certain sections impassable without resetting.
+
+The [[Mask Maker (Silksong)|Mask Maker]]'s home can be found on a side path off of the western slopes, accessible after obtaining the Faydown Cloak.
+
+== History ==
+Mount Fay was likely a natural formation in [[Pharloom]] existing long before [[the Citadel]]. The [[Weavers]] built passages and a tuning fork into the mountain for the purpose of communing with the [[Fayforn]],<ref name=weavers>[[Mask Maker (Silksong)|Mask Maker]]:<i>"Your legged ancestors once found her company compelling, enough to build their chambers and their calling device at the height of this perilous peak."</i></ref> a large winged creature at the mountain's peak. The [[Weavers]] also constructed a small Weavenest at the top of the mountain and used it to build tools.<ref>When crafting the [[Silkshot]] on Mount Fay: <i>"An old rune displaying a design for a Weaver weapon"</i></ref>
+Weavers were challenged to make the difficult climb to the top, though hailing the Fayforn was dangerous, as she could equally grant insight or death.<ref>Mount Fay Lore Tablet: <i>"Sister, spider, if seeking commune with the creature atop this mount, take the climb above as test, a challenge beyond even our setting. Upon that summit gained, and creature hailed, know it shall choose what gift to grant, with death as likely as insight.</i></ref>
+
+Other structures can be seen on the western side of the mountain slope, including a [[Bench (Silksong)|Bench]] surrounded by bells similar to many built by the Citadel. There is also a contraption resembling an old gondola, though its true purpose is unknown.
+
+== How to Access ==
+Mount Fay is west of [[the Slab]], accessible from the west side of its [[Bellway]]. The [[Clawline]] is needed to access it.
+
+{{TabbedPOI
+|Header = true
+
+|NPC1 = Shakra
+|NPC2 = Mask Maker (Silksong){{!}}Mask Maker
+|NPC3 = Fayforn
+|NPC4 = Mister Mushroom (Silksong){{!}}Mister Mushroom
+|NPC5 = Pinstress
+
+|Enemy1 = Driftlin
+|Enemy2 = Mnemonid
+|Enemy3 = Servitor Boran
+
+|Boss1 = Pinstress
+|Boss1Note = ([[Act 3]] only)
+
+|Loot1_FileName = Icon SS Faydown Cloak Art
+|Loot1_Name = Faydown Cloak
+|Loot1_Description = requires playing the [[Needolin]] by the Tuning Fork
+|Loot2_FileName = Silkshot
+|Loot2_Description = crafted using the [[Ruined Tool]] and {{C|1}}
+|Loot3_FileName = Memory Crystal
+|Loot4_FileName = Pin Badge
+|Loot4_Description = reward for defeating [[Pinstress]]
+|Loot5_FileName = Mask Shard (Silksong)
+|Loot5_Name = Mask Shard (Silksong){{!}}Mask Shard
+|Loot5_Amount = 1
+|Loot6_FileName = Flea
+|Loot6_Amount = 1
+|Loot7_FileName = Magnetite
+|Loot7_Description = [[Materium]] entry
+
+|LoreTabletsSource = SS Mount Fay
+}}
+
+== Sub-area: Brightvein ==
+{{SS Infobox Area
+|image1 = <gallery>
+Brightvein_Map_Marked.png|Marked
+Brightvein_Map_Clean.png|Unmarked
+</gallery>
+|ambience = [https://www.youtube.com/watch?v=k7hTbKnM56s Atmos Peak Interior Crystal]<br>
+[https://www.youtube.com/watch?v=TktPhR-3MTU Atmos Blizzard Low Alt]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+|main = [https://www.youtube.com/watch?v=m6z1G-OQZCo Fae Mountain Peak Crystal]
+}}
+<b>Brightvein</b> is a bright, icy cave inside Mount Fay. It is accessed by going south and west from the south-eastern [[Bench (Silksong)|Bench]], then using [[Silk Soar]] on a rock floating in the ice water in the room to the west of the large chasm.
+While in Brightvein, [[Hornet (Silksong)|Hornet]] can do a platforming challenge by bouncing off [[Mnemonord]] enemies to obtain a [[Mask Shard (Silksong)|Mask Shard]].
+
+{{TabbedPOI
+|Enemy1 = Mnemonid
+|Enemy2 = Mnemonord
+
+|Loot1_FileName = Mask Shard (Silksong)
+|Loot1_Name = Mask Shard (Silksong){{!}}Mask Shard
+|Loot1_Amount = 1
+}}
+
+{{Clear}}
+
+== Creation and Development ==
+{{Main|Cut Content (Silksong)/Areas#Mount Fay}}
+[[File:Mount Fay 2021.webp|thumb|200px|Mount Fay in April 2021]]
+Mount Fay rooms were first created around Jaunary 2020. Upon its conception on the map, it connected to the Red Coral Gorge and had a large crystalline room in its south end until around September 2021. The area also featured a [[Bellway]] within the large western [[Bench (Silksong)|toll bench]] structure. It remained relatively unchanged up until around May 2022, after which its interior rooms were entirely overhauled: notable changes being the Bellway and its structure getting removed, and the [[Brightvein]] being introduced, as it was part of the main area formerly. Notably, prior to the rework, Mount Fay's interior rooms were far more jagged and twisting; lacking the straight Weaver-made tunnels seen in the final game.  
+
+Evidence suggests that a functioning [[Weavenest]] named <b>Weavenest Askar</b> was planned for the area at some point, which may have been replaced by the current broken-down [[Silkshot]] Weavenest. A disabled Weavenest door can be found in the room containing the [[Lore Tablets (Silksong)|lore tablet]] at the base of the mountain.
+
+Mount Fay was first showcased to the public in the April 2025 Nintendo Switch 2 Direct sizzle reel <i>Silksong</i> clip, around eight months before release, making it one of the last areas to be revealed pre-release. The clip contained Hornet sliding down a slope, additionally revealing the sliding mechanic for the first time.<ref>[https://www.youtube.com/watch?v=VrTVeYm4iIM Nintendo Direct: Nintendo Switch 2 – 4.2.2025]</ref>
+{{clear}}
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Mount Fay 01.png!Shakra Camp
+|Image2 = Screenshot SS Mount Fay 02.png!Weaver Tablet
+|Image3 = Screenshot SS Mount Fay 03.png!Left-side Bench
+|Image4 = Screenshot SS Mount Fay 14.png!Aerial Lift
+|Image5 = Screenshot SS Mount Fay 04.png!Middle Right Bench
+|Image6 = Screenshot SS Mount Fay 05.png![[Pinstress]] Arena
+|Image7 = Screenshot SS Mount Fay 06.png!Upper Right Bench
+|Image8 = Screenshot SS Mount Fay 07.png!Tuner at Peak
+|Image9 = Screenshot SS Mount Fay 08.png!Tuner at Peak (ringing)
+|Image10 = Screenshot SS Mount Fay 09.png!Fayforn
+|Image11 = Screenshot SS Mount Fay 10.png!Mask Maker Hut (Outside)
+|Image12 = Screenshot SS Mount Fay 11.png!Mask Maker Hut (Inside)
+|Image13 = Screenshot SS Mount Fay 12.png!Brightvein Entrance
+|Image14 = Screenshot SS Mount Fay 13.png!Magnetite Ore}}
+
+== Trivia ==
+[[File:Hornet Frost Death.png|right]]
+* The toll [[Bench (Silksong)|bench]] in this area produces a unique sound when its bells are rung, resembling sleigh bells.
+* Despite only being normally accessible after receiving the [[Faydown Cloak]], the [[Wispfire Lantern]] tool lowers frosting rate by 20% while equipped. Stacking this with the effects of Flintslate and the fury state would slow the frosting rate down by almost a half. Because Faydown Cloak completely shields Hornet from the effect, this cannot be noticed in a normal game.
+* Dying to frost damage will trigger a unique death animation where Hornet is slowly covered by ice crystals which then shatter, leaving behind a single crystal in the shape of Hornet.
+* While sliding down a slope, pressing LEFT or RIGHT will cause Hornet to speed up or slow down her descent, depending on the direction of movement. She will lean in whichever direction is being held.
+{{Localisation
+|DEname = Feiberg
+|DEmeaning = Fay Mountain
+|ESname = Monte Fay
+|ESmeaning = Mount Fay
+|FRname = Mont Fay
+|FRmeaning = Mount Fay
+|ITname = Monte Fatato
+|ITmeaning = Fairy Mountain
+|JAname = フェイの山
+|JAromanised = Fei no yama
+|JAmeaning = Mountain of Fay
+|KOname = 페이 산지
+|KOromanised = Pei sanji
+|KOmeaning = Fay Mountain Area
+|PTname = Monte Plumídio
+|PTmeaning = Fayforn Mountain
+|RUname = Гора Фей
+|RUromanised = Gora Fej
+|RUmeaning = Mount Fay or Mount Fairy
+|ZHname = 雪灵山
+|ZHromanised = Xuělíng shān
+|ZHmeaning = Snow Fairy Mountain
+|TWname = 雪靈山
+|TWromanised = Xuělíng shān
+|TWmeaning = same
+|CODEname=PEAK
+}}
+===Brightvein===
+{{Localisation
+|hr=false
+|DEname = Lichtader
+|DEmeaning = Lightvein
+|ESname = Vía Fulgente
+|ESmeaning = Gleaming Road
+|FRname = Givreglace
+|FRmeaning = Frosted Ice
+|ITname = Venaviva
+|ITmeaning = Brightvein
+|JAname = 光輝の壁
+|JAromanised = Kōki no kabe
+|JAmeaning = Wall of Brilliance
+|KOname = 밝은 광맥
+|KOromanised = Balgeun gwangmaek
+|KOmeaning = Bright Vein
+|PTname = Veio Brilhoso
+|PTmeaning = Shiny Vein
+|RUname = Ярконит
+|RUromanised = Jarkonit
+|RUmeaning = From {{lang|ru|ярко}} <i>jarko</i> (bright) and {{lang|ru|-ит}} <i>-ite</i> (suffix for rocks and minerals).
+|ZHname = 冰晶脉窟
+|ZHromanised = Bīngjīng mài kū
+|ZHmeaning = Shining Ice Vein or Shining Ice Cave
+|TWname = 霜輝支脈
+|TWromanised = Shuāng huī zhīmài
+|TWmeaning = Frosty Glow Mountain Vein
+|CODEname=ICECORE
+}}
+
+{{Refs|hr=ss}}
+{{Refs|hr=small|type=code}}
+{{SS Nav Areas}}
+
+[[zh:雪灵山]]
+[[fr:Mont Fay]]

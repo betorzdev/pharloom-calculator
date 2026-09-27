@@ -1,0 +1,219 @@
+{{SS Infobox Area
+| tab1 = Act 2
+| image1 = <gallery>
+The_Cradle_Map_Marked.png|Marked
+The_Cradle_Map_Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+The_Cradle_Map_Ruin_Marked.png|Marked
+The_Cradle_Map_Ruin_Clean.png|Unmarked
+</gallery>
+| connection = [[Cogwork Core]]
+| ambience = [https://www.youtube.com/watch?v=GivJqT7ml0M Atmos Citadel Outside]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]<br>
+[https://www.youtube.com/watch?v=45Fvlap9-pM Silk Cradle Beat] (Act 2)<br>
+[https://www.youtube.com/watch?v=qKuRpZMRSDg Silk Cradle Beat Distant Loop] (Act 2)<br>
+[https://www.youtube.com/watch?v=imSH2Pv_sCo Atmos Crumbling World] (Act 3)
+| main = [https://youtu.be/NMXF1rKPHmM Ambient Silk] (Act 2)<br>
+[https://youtu.be/UXoK1bPe9js Ambient Silk Escalates] (Act 2) <i>(Starts during the climb)</i><br>
+[https://www.youtube.com/watch?v=Ylk8yhMxXuI Ambient Silk Tension SUB] (Act 2) <i>(Starts during the climb)</i>
+}}
+
+{{Quote
+|Head on. Climb up, up and away. You've earned your audience with the divine.
+|[[Lace]]
+|Hr=SS
+}}
+
+<b>The Cradle</b> is an [[Areas (Silksong)|area]] in <i>[[Hollow Knight: Silksong]]</i>. It is the highest peak of [[Pharloom]], the crown of [[the Citadel]], and where [[Grand Mother Silk]] lies.
+
+== Description ==
+[[File:Screenshot SS Cradle 01.png|left|thumb|200px|Entrance to the Cradle]]
+The Cradle is an area located above the Citadel in which Grand Mother Silk resides, asleep. Below her, there is an area which contains several cages that were used to capture descendants of the Weavers, similar to how [[Hornet (Silksong)|Hornet]] was captured at the beginning of the game. The Cradle also features a small field of white flowers, where Lace guards the Citadel lift's rise to the top.
+
+When [[Act 3]] is initiated, Hornet awakens in the Cradle after it is destroyed by the Void, with only her [[Hunter Crest]], [[Silkspear]] ability, and no Tools to aid her escape. Rubble blocks many paths that were once open to her, and she returns to Pharloom through a newly-opened side path that circumvents the destroyed upper [[Cogwork Core]].
+
+Returning to the ruined Cradle requires the [[Silk Soar]] ability, acquired from [[The Abyss (Silksong)|the Abyss]]. Ascending to its peak where Grand Mother Silk was once fought allows Hornet to obtain the [[Pale Nails]] skill by binding Grand Mother Silk's cut arm that is left in the area.
+
+== History ==
+The Cradle is where [[Grand Mother Silk]] resides, a place from which her threads can reach all the lands below.<ref>[[Skrill]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"This surface dweller is free of Silk. Its nature remains its own. The monarch's influence must only have stretched below it."</i></ref><ref>[[First Sinner]] post-fight [https://www.youtube.com/watch?v=nAwTNaLtT34 cutscene].</ref> There, the [[Weavers]] sustained her light by producing song.<ref>[[Widow]] post-fight [https://www.youtube.com/watch?v=E86ZUn2Wz6E cutscene].</ref><ref>[[:File:Screenshot SS Widow 02.png|Screenshot]] of the broken harps room in the Cradle.</ref> At some point, they decided to lull Grand Mother Silk to sleep and take over the rule of [[Pharloom]].<ref>[[Grand Mother Silk]] Hunter's Journal entry: <i>"Heart of the Haunting, long lulled to slumber and desperate to wake."</i></ref><ref>Hornet and [[Mask Maker (Silksong)|Mask Maker]] dialogue: <br><i>Hornet: "You speak of the Citadel? Its former function has failed, but I can still sense its purpose, some. It is church and cage both."<br>Mask Maker: "Aye. Devised by your ancestors that monstrosity, and their wicked, clever minds. A system, or a web they'd likely call it, a way to keep their mother sealed in slumber, and themselves free to lavish in their false rule."</i></ref> The Weavers kept her in slumber using [[the Citadel]]'s system of song and prayer, hiding her existence from the rest of the kingdom.<ref>[[The Choir#Disciples|Disciple of the Choir]] Needolin dialogue: <i>"Raise your voices, chosen few! The song sustains! Holy call of the Citadel... Fill the chambers, sacred song..."</i></ref><ref>Pontiff [[Needolin Locations#Whispering Vaults|Needolin dialogue]]: <i>"Damned bugs... We prayed a cage... We sang your chains... Divine Silk..."</i></ref><ref>Mask Maker: <i>"Aye. But isn't it always such for those snared to serve your higher caste? Our mortal mob did once act some defiance, unawares maybe, but successful in part, goaded towards it by Weavers' will'n all."</i></ref> While the [[Higher Beings#Pale higher beings|higher being]] slept, her [[Silk]] was harvested for use in the Citadel, with threads stretching out from her cocoon like a loom.<ref>Pharloom's Folly: <i>"They forget your heart, bound in slumber and servitude,"</i></ref><ref>[[:File:Cocoon Grand Mother Silk.png|Screenshot]] showing Grand Mother Silk's cocoon in the Cradle.</ref>
+
+The cocoon became a symbol of the Citadel and was considered the powerful and divine heart of Pharloom.<ref>[[Vaultkeeper Cardinius]]: <i>"Within our vast store, always more there is to know, the old methods of prayer, to this land, to its rulers, and to the strength at its heart."</i></ref> To end their pilgrimages, the worthiest pilgrims were chosen to ascend the Cradle and worship before it.<ref>[[Grand Reed]] [[Needolin]] dialogue: <i>"Those worthiest may climb... The holy heights of the Citadel..."</i></ref><ref>[[Cogwork Statues]]: <i>"Pilgrim of Pharloom eternal, you rare chosen who hath ascended to this final threshold, listen to our wish, deliver it, that you may rise above and see your pilgrimage end. (...) Pilgrim of Pharloom eternal, regale us with our Threefold song, that you may rise above and worship before our kingdom's divine heart."</i></ref>
+
+After beginning the [[Haunting]], Grand Mother Silk started to send out haunted [[The Choir|Choirbugs]] of the Citadel to capture Weaver descendants and bring them to the Cradle, seeking their silken strength.<ref>The Cradle [[Lore Tablets (Silksong)#The Cradle|Lore Tablets]]: <i>"Weaver, in eighth part, last of their line, frail with age. Tracked and taken in Sandsea Waste. Seven Choristors, nine Envoys lost to task.", "Weaver, in eighth part, last of their line, mortally wounded. Tracked and taken in the Blackbarrens. Four Choristors, one Reed lost to task.", "Weaver, in quarter part, last of their line, staked to service. Tracked and taken beneath the City of Steel. Eight Choristors, twelve Envoys lost to task."</i></ref><ref>Hornet dialogue with the [[Seamstress]]: <i>"I have seen their Citadel and its state, and I have strong suspicion...They hunt me for my nature. For the Silk produced within my shell. Not for themselves but for the one atop it all."</i></ref><ref>[[Lace]]: <i>"Letting you live was my rebellion, spider. I've denied my mother your silken strength. I've won."</i></ref>
+
+== How to Access ==
+The Cradle can be first accessed from the [[Cogwork Core]] after obtaining the [[Threefold Melody]] and playing it for the [[Cogwork Statues]] at the centre of the Cogwork Core. Doing so will allow the lift to be used to enter the Cradle.
+
+In [[Act 3]], the lift to the Cradle can no longer be used. A recess of the ruined Cogwork Core accessible from the upper right hallway of [[Choral Chambers]] via the [[Silk Soar]] must be used to enter the Cradle.
+{{Gallery
+|Image1 = Screenshot SS Cogwork Core 17.png!Lift to the Cradle
+|Image2 = Screenshot SS Choral Chambers 25.png!Entrance to the recess of Cogwork Core in Act 3
+}}
+
+{{TabbedPOI
+|Header = true
+
+|NPC1 = Caretaker
+
+|Boss1 = Lace
+|Boss2 = Grand Mother Silk
+
+|Loot1_FileName = Silkeater
+|Loot1_Amount = 1
+|Loot2_FileName = Pale Nails
+|Loot3_FileName = Icon SS Silk Heart
+|Loot3_Name = Silk Heart
+|Loot3_Description = dropped by [[Lace]]
+
+|LoreTabletsSource = SS The Cradle
+}}
+{{clear}}
+== Sub-area: Nameless Town ==
+{{SS Infobox Area
+|image1 = <gallery>
+Border_Caves_Map_Marked.png|Marked
+Border_Caves_Map_Clean.png|Unmarked
+</gallery>
+|credits = Unofficial map by esau
+|ambience = [https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]<br>
+[https://www.youtube.com/watch?v=hu44aJ9Sukg Cave Atmosphere Misc.]<br>
+[https://www.youtube.com/watch?v=imSH2Pv_sCo Atmos Crumbling World]<br>
+[https://www.youtube.com/watch?v=nnnt8BhsX0o Atmos Lonely Planes Wind]
+|main = [https://www.youtube.com/watch?v=_u92xsHi2qs Weaver Experiment 2] (During the climb up)
+|connection = [[Wasteland]]
+}}
+The <b>Nameless Town</b> is a secret area above the Cradle that can be accessed in [[Act 3]]. By using [[Silk Soar]] near the point where Hornet can obtain the [[Pale Nails]] she can enter an area known as the Border Caves, a calm, secluded, and sparsely populated environment that leads to the surface.<ref>[[Imoba]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"The poor creature has lived a life too calm and coddled. It would not fare well in the world beyond its walls."</i></ref> Its inhabitants, except for the [[Pharlid]]s and [[Pharlid Diver]]s found in the first room, are unaffected by the [[Haunting]].<ref>[[Skrill]] Hunter's Journal entry: <i>"This surface dweller is free of Silk. Its nature remains its own. The monarch's influence must only have stretched below it."</i></ref> Perhaps due to their proximity to the surface,<ref group="Note">[[Howling Cliffs]] and the surface above [[Pharloom]] share the same sprites, suggesting that it is a similar environment.</ref> the bugs found there resemble certain creatures from [[Hallownest]]: [[Imoba]]s look and behave similarly to [[Duranda]]s,<ref>Imoba Hunter's Journal entry: <i>"Slow drifting bug with a heavy top shell. The bug reacts little to threats, even those that could claim its life."</i></ref><ref>[[Duranda]] [[Hunter's Journal (Hollow Knight)|Hunter's Journal]] entry: <i>"Simple flying creature protected by a spikey shell. Thinks itself fully protected and so is unconcerned by passers by."</i></ref> while [[Garpid]]s resemble the larger, more resilient [[Garpede]]s. The husks of the Nameless Town residents<ref>[[:File:Screenshot SS Cradle 08.png|Screenshot]] of the husks found in the Border Caves.</ref><ref group="Note">They are called <code>surface_corpses</code> internally and are roughly the same size as the [[:File:Screenshot SS Needolincradle 4.png|memory of the Nameless Town dweller]].</ref> found near the [[Bench (Silksong)|bench]] share similarities with the citizens of Hallownest, particularly [[Wandering Husk]]s.
+
+The path to the surface is a challenging platforming gauntlet lined with thorns, requiring precision with both [[Needle#Needle-bouncing|Needle-bouncing]] and the [[Clawline]]. Near the end lies the final location where [[Mister Mushroom (Silksong)|Mister Mushroom]] can be encountered during the <i>[[Passing of the Age]]</i> [[wish]].
+
+On the surface can be found timid [[Skrill]]s and the Nameless Town, whose residents were convinced by the [[Weavers]] to descend into Pharloom, lured down with promises.<ref>Nameless Town [[Needolin_Locations#Nameless_Town|Needolin dialogue]]: <i>"The weaving ones beckon... Sweet promises whispered... From depths below... Friends seduced... Now only the wind..."</i></ref> Playing the [[Needolin]] in a decaying house at the far eastern edge of the Nameless Town causes the [[Surface Memento]] to drop from the ceiling<ref>The memento drops after releasing the Needolin button as opposed to while actively playing it.</ref>. There is a shortcut near the town that links back to the bench for a convenient return trip.<ref>Inspecting the passage: <i>"A small tunnel leading downward. Descend to Pharloom?"</i></ref>
+
+{{Clear|right}}
+
+If Hornet attempts to leave Pharloom from this location, she delivers a unique monologue:
+
+{{TabbedDialogue
+| header = false
+| Title1 = Dialogue
+| Title1_Event1 = When attempting to leave Pharloom for the first time
+| Title1_Dialogue1 = {{HTalk|Out there lie the endless wastes... If I cross them now, Pharloom shall fall to a black fate of my making.}}<br>
+{{HTalk|My choice is made. I will not abandon its bugs to that grim end. I must descend again, and cut them free.}}
+| Title1_Event2 = Trying to leave Pharloom again
+| Title1_Dialogue2 = {{HTalk|My choice is made. I cannot leave. I must descend again, and see Pharloom freed.}}
+}}
+
+{{TabbedPOI
+|NPC1 = Mister Mushroom (Silksong){{!}}Mister Mushroom
+
+|Enemy1 = Pharlid
+|Enemy2 = Pharlid Diver
+|Enemy3 = Garpid
+|Enemy4 = Imoba
+|Enemy5 = Skrill
+
+|Loot1_FileName = Surface Memento
+}}
+
+{{clear}}
+
+== Special Rooms ==
+=== Terminus ===
+The Terminus is a [[Ventrica]] station that can be travelled to without needing to be unlocked first. Before [[Lace]] is defeated, it is locked from the outside and is effectively a dead end. Traversing the Cradle to its southeast corner allows Hornet to clear away the rubble that obstructs access to the Terminus, providing a convenient [[Bench (Silksong)|Bench]] and fast travel route to and from the [[Act 2]] boss.
+
+During [[Act 3]], the Terminus is cut off from the rest of the Cradle by debris.
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Cradle 02.png!Terminus bench
+|Image2 = Screenshot SS Cradle 12.png!Terminus bench (Act 3)
+|Image3 = Screenshot SS Cradle 05.png!Lace arena
+|Image4 = Screenshot SS Cradle 06.png!Lace arena (Act 3)
+|Image5 = Screenshot SS Cradle 03.png!Lower cages room
+|Image6 = Screenshot SS Cradle 04.png!Upper cages room
+|Image7 = Screenshot SS Cradle 13.png!Loom room
+|Image8 = Screenshot SS Cradle 14.png!Loom room (Act 3)
+|Image9 = Screenshot SS Cradle 07.png!Grand Mother Silk arena
+|Image10= Screenshot SS Widow 02.png!Harps room
+|Image11 = Screenshot SS Cradle 08.png!Border Caves bench
+|Image12 = Screenshot SS Cradle 15.png!Ascent tunnel to the surface
+|Image13 = Screenshot SS Cradle 09.png!Nameless Town
+|Image14 = Screenshot SS Cradle 10.png!Surface Memento location
+|Image15 = Screenshot SS Cradle 16.png!Descent tunnel to Pharloom
+|Image16 = SilksongPromo7.png!Promotional art
+|Image17 = Silksong Early 002.png!<i>Silksong</i> reveal trailer
+}}
+
+{{History
+|game = SS
+|1.0.29909 (Patch 5): Fixed Border Caves bounce-pods giving Silk & Health for certain Crests.
+}}
+{{Localisation
+|DEname = Die Wiege
+|DEmeaning = The Cradle
+|ESname = La Cuna
+|ESmeaning = The Cradle
+|FRname = Le Berceau
+|FRmeaning = The Cradle
+|ITname = La Culla
+|ITmeaning = The Cradle
+|JAname = 揺り籠
+|JAromanised = Yurigo
+|JAmeaning = Cradle
+|KOname = 요람
+|KOromanised = Yolam 
+|KOmeaning = Cradle
+|PTname = O Berço
+|PTmeaning = The Cradle
+|RUname = Колыбель
+|RUromanised = Kolybel'
+|RUmeaning = Cradle
+|ZHname = 摇篮圣所
+|ZHromanised = Yáolán shèng suǒ
+|ZHmeaning = Cradle Sanctuary 
+|TWname = 搖籃聖所
+|TWromanised = Yáolán shèng suǒ
+|TWmeaning = same
+|CODEname=CRADLE
+}}
+
+=== Nameless Town ===
+{{Localisation
+|hr=false
+|DEname = Namenlose Stadt
+|DEmeaning = Nameless Town
+|ESname = Aldea sin Nombre
+|ESmeaning = Village without a Name
+|FRname = Village Sans Nom
+|FRmeaning = Village without a Name
+|ITname = Città Senza Nome
+|ITmeaning = City without a Name
+|JAname = 名もなき町
+|JAromanised = Na mo naki machi
+|JAmeaning = Town without Name
+|KOname = 이름 없는 마을
+|KOromanised = Ireum eomneun maeul
+|KOmeaning = Village without Name
+|PTname = Aldeia Sem Nome
+|PTmeaning = Village without a Name
+|RUname = Безымянный город
+|RUromanised = Bezymjannyj gorod
+|RUmeaning = Nameless City
+|ZHname = 无名镇
+|ZHromanised = Wúmíng zhèn
+|ZHmeaning = Nameless Town
+|TWname = 無名鎮
+|TWromanised = Wúmíng zhèn
+|TWmeaning = same
+|CODEname = ABANDONED_TOWN
+}}
+
+== Notes ==
+<references group="Note"/>
+
+{{Refs|hr=ss}}
+{{SS Nav Areas}}
+{{DEFAULTSORT:Cradle}}
+
+[[zh:摇篮圣所]]

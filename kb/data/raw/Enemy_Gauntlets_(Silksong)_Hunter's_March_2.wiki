@@ -1,0 +1,39 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot SS Hunter's March 03.png|400px|center]]
+|[[File:Mapshot SS Hunter's March Arena 3.png|400px|center]]
+|-
+| colspan="2" | Enemy gauntlet in the centre of Hunter's March. [[Shakra]] can assist in this challenge if Hornet has not visited [[Greymoor]], [[Bellhart]], or [[Shellwood]].
+|-
+! Reward
+! [[Soundtrack (Silksong)|Theme]]
+|-
+| <center>Access to the east half of Hunter's March</center>
+| <center>[https://youtu.be/j1GHUxGtueY Hunter's Trail Action]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ Skarr Stalker.png|35x35px|link=Skarr Stalker]] [[Skarr Stalker]], right
+| Shakra arrives to assist once this enemy is defeated.
+|-
+|
+[[File:HJ Skarrwing.png|35x35px|link=Skarrwing]] [[Skarrwing]] x2, top left and right
+|
+|-
+|
+[[File:HJ Skarr Scout.png|35x35px|link=Skarr Scout]] [[Skarr Scout]], left<br/>
+[[File:HJ Spear Skarr.png|35x35px|link=Spear Skarr]] [[Spear Skarr]], top right
+|
+|-
+|
+[[File:HJ Skarr Scout.png|35x35px|link=Skarr Scout]] Skarr Scout x2, left and right
+|
+|-
+|
+[[File:HJ Spear Skarr.png|35x35px|link=Spear Skarr]] Spear Skarr, top left<br/>
+[[File:HJ Skarr Stalker.png|35x35px|link=Skarr Stalker]] Skarr Stalker, right
+|
+|}

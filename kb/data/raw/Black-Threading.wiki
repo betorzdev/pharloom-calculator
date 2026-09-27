@@ -1,0 +1,228 @@
+[[File:Black_Threading.gif|300px|right|thumb|A [[Choristor]] becoming black-threaded<ref group="Note">Before the animation, enemies still do the usual amount of damage.</ref>]]
+{{Quote
+|Those void soaked threads... Their physical might is nothing compared to the corruption they wreak upon a soul.
+|[[Hornet (Silksong)|Hornet]]
+|Hr=Hornet
+}}
+In [[Act 3]] of <i>[[Hollow Knight: Silksong]]</i>, [[Enemies (Silksong)|enemies]] and [[Bosses (Silksong)|bosses]] can undergo <b>black-threading</b>,<ref>{{HTalk|Shakra, you pit yourself against the black-threaded bugs?}}</ref> which enhances their moveset, health, and damage, but corrupts their soul and makes them possessed by the [[Void]].<ref>[[Lost Lace]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Silk-spun child possessed by the void."</i></ref><ref>[[Lost Garmond]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"A tragic fate for a once honourable bug. Those void soaked threads... Their physical might is nothing compared to the corruption they wreak upon a soul."</i></ref>
+
+==Changes to Black-Threaded Enemies==
+===Health===
+Health is multiplied 2-4 times their base, [[Damage Values and Enemy Health (Silksong)#Health Values and Damage Modifiers|depending on the enemy]], with exception to [[Lost Garmond]] and [[Lost Lace]], as these two are technically unique standard bosses with no "base" HP value.
+
+===Movesets===
+Most enemies will gain a single void attack, which is chosen from a set unique to the enemy when they become black-threaded. When using any of these abilities, the enemy will first pause and turn black, giving Hornet time to react. Some attacks have stronger versions reserved for larger enemies and bosses.
+
+* <b>Void Blades:</b> The enemy exudes void energy in all directions before lashing out into a large circle of blades, dealing {{Damage|1+1|type=Void}}.
+* <b>Void Tendrils:</b> The enemy whips void tendrils in Hornet's direction before greatly extending and whipping them linearly in Hornet's direction, dealing {{Damage|1+1|type=Void}}.
+* <b>Void Projectiles:</b> The enemy charges up with void energy in Hornet's current direction before shooting 3 slightly arcing void projectiles in Hornet's direction. Some stronger enemies have a variant of this that launches 4 projectiles. The projectiles all deal {{Damage|2|type=Void}}.
+** <b>Rapidfire Void Projectiles:</b> This variation rapidly launches 5 projectiles instead, fanning upwards in an arc instead of aiming for Hornet.
+* <b>Void Blobs:</b> The enemy exudes void energy and particles from the top of itself, before launching 3 arcing void droplets to the left and right. Upon hitting the ground, each droplet will pause for a moment and then lash out with void blades in a small radius. Contact with the droplets or blades at any time deals {{Damage|2|type=Void}}.
+** <b>Heavy Void Blobs:</b> This is the same attack as the standard attack, but launches 4 droplets instead of 3.
+
+===Damage===
+Damage from contact, single-hit attacks and projectiles is set to 2. Attacks that hit multiple times quickly still only do 1 Mask of damage per hit.
+Damage from void sources ({{Damage|1|type=Void}}) eats away at Silk for 0.8 seconds, removing 2 strands, unless Hornet has obtained the [[Everbloom]]. This timer restarts if more void damage is taken.
+
+==Mechanics==
+Corruption occurs as soon as a room is entered, with the visual effect of the enemy getting black-threaded occurring later; typically after Hornet has drawn the enemy's attention. After this effect, the enemy (as well as its corpse when defeated) will appear blackened. Before this visual effect, the enemy's attacks still do the usual amount of damage. It is possible to defeat the enemy before the visual effect appears or during the effect, and the corpse will not appear blackened either.
+
+Some enemies are corrupted by default (see the lists below), and if a [[Void Mass]] is present in a room all enemies inside vulnerable to black-threading will be black-threaded with some exceptions. Most of these enemies will be visibly blackened on room entry.
+
+Randomly assigned corruption does not become visible until 2 seconds after the afflicted enemy is approached, or immediately after it is hit. Whether an enemy is black-threaded or not is determined when they first spawn, and the chances are not static. Every time an enemy's void status is determined, the probability that the next generated enemy's corruption status will be the opposite is increased.
+
+===Affected Enemies===
+The following non-boss enemies are capable of becoming black-threaded. {{MissingInfo|this list was constructed by checking for bt values on the wiki, not sure how that data was collected, so this list may be inaccurate}}
+<div class="mw-collapsible mw-collapsed">
+* [[Aknid]]
+* [[Beastfly]]
+* [[Bloatroach]]
+* [[Caranid]]
+* [[Choir Bellbearer]]
+* [[Choir Clapper]]
+* [[Choir Elder]]
+* [[Choir Flyer]]
+* [[Choir Hornhead]]
+* [[Choir Pouncer]]
+* [[Choristor]]
+* [[Cogwork Choirbug]]
+* [[Cogwork Cleanser]]
+* [[Cogwork Crawler]]
+* [[Cogwork Defender]]
+* [[Cogwork Spine]]
+* [[Craggler]]
+* [[Cragglite]]
+* [[Craw]]
+* [[Deep Diver]]
+* [[Drapefly]]
+* [[Drapelord]]
+* [[Drapemite]]
+* [[Dreg Catcher]]
+* [[Driftlin]]
+* [[Driznarga]]
+* [[Elder Pilgrim]]
+* [[Envoy]]
+* [[Fertid]]
+* [[Flapping Fertid]]
+* [[Flintflame Flyer]]
+* [[Flintstone Flyer]]
+* [[Fluttermite]]
+* [[Furm]]
+* [[Gahlia]]
+* [[Giant Drapemite]]
+* [[Grand Reed]]
+* [[Guardfly]]
+* [[Hardbone Elder]]
+* [[Hardbone Hopper]]
+* [[Judge]]
+* [[Kilik]]
+* [[Lampbearer]]
+* [[Lavalarga]]
+* [[Lavalug]]
+* [[Maestro]]
+* [[Marrowmaw]]
+* [[Mawling]]
+* [[Memoria]]
+* [[Minister]]
+* [[Mite]]
+* [[Mitemother]]
+* [[Mortician]]
+* [[Mossgrub]]
+* [[Mossmir]]
+* [[Muckroach]]
+* [[Overgrown Pilgrim]]
+* [[Phacia]]
+* [[Pharlid]]
+* [[Pilgrim Bellbearer]]
+* [[Pilgrim Groveller]]
+* [[Pilgrim Guide]]
+* [[Pilgrim Hiker]]
+* [[Pilgrim Hornfly]]
+* [[Pilgrim Hulk]]
+* [[Pilgrim Pouncer]]
+* [[Pokenabbin]]
+* [[Pollenica]]
+* [[Pond Skipper]]
+* [[Pondcatcher]]
+* [[Reed]]
+* [[Rhinogrund]]
+* [[Roachcatcher]]
+* [[Roachfeeder]]
+* [[Roachkeeper]]
+* [[Scabfly]]
+* [[Scrollreader]]
+* [[Shellwood Gnat]]
+* [[Silk Snipper]]
+* [[Skarr Scout]]
+* [[Skarr Stalker]]
+* [[Skarrgard]]
+* [[Skull Brute]]
+* [[Skull Scuttler]]
+* [[Smelt Shoveller]]
+* [[Smokerock Sifter]]
+* [[Spear Skarr]]
+* [[Spit Squit]]
+* [[Splinter]]
+* [[Splinterbark]]
+* [[Splinterhorn]]
+* [[Squatcraw]]
+* [[Tallcraw]]
+* [[Tarmite]]
+* [[Thread Raker]]
+* [[Undercrank]]
+* [[Underloft]]
+* [[Underpoke]]
+* [[Underscrub]]
+* [[Undersweep]]
+* [[Underworker]]
+* [[Vaultborn]]
+* [[Vaultkeeper]]
+* [[Vicious Caranid]]
+* [[Wardenfly]]
+* [[Winged Furm]]
+* [[Winged Pilgrim Bellbearer]]
+* [[Winged Pilgrim]]
+* [[Wood Wasp]]
+</div>
+
+Additionally, some [[Bosses (Silksong)|Bosses]] and unique enemies will <i>always</i> be black-threaded in Act 3. Most of them appear visually blackened on room entry or reanimation, with some noted exceptions. The following is a list of affected enemies and bosses (not including enemies black-threaded due to nearby Void Masses): 
+* Various enemy gauntlets exclusive to Act 3 (enemies become visually blackened a few seconds after arrival)
+* [[Weavenest Atla]]
+** The double [[Moss Mother]] fight
+* [[Moss Grotto]]
+** A single Moss Mother exclusive to Act 3
+* [[Bone Bottom]]
+** An [[Aknid]] in the room west of the Marrow [[Bellway]] station
+* [[The Marrow]]
+** The [[Skull Tyrant]]
+** A [[Skull Brute]] at the top of the room east of the [[Bellshrine]]
+** The rightmost [[Caranid]] in the room east of the previous one
+** A [[Spear Skarr]] west of the entrance to Hunter's March
+** A [[Smelt Shoveller]] west of the entrance to Deep Docks
+* [[Deep Docks]]
+** The Smelt Shoveller, [[Flintstone Flyer]]s, and [[Smokerock Sifter]] in the fight with [[Forebrothers Signis & Gron]] (enemies become visually blackened a few seconds after arriving)
+* [[Far Fields]]
+** The [[Savage Beastfly]]
+** A [[Rhinogrund]] in the southwest of the area
+** A [[Skarrgard]] in the northeast of the area
+* [[Hunter's March]]
+** The Savage Beastfly
+** A [[Skarr Stalker]] in the room under the [[Bench (Silksong)|bench]] room
+* [[Wormways]]
+** The [[Craggler]]
+* [[Greymoor]]
+** [[Moorwing]] if it was skipped initially
+** A [[Tallcraw]] and a [[Squatcraw]] at the top of the room east of the Bellshrine, near the location of a [[Spool Fragment]]
+** A [[Thread Raker]] in the room west of the Bellway station
+* [[Sinner's Road]]
+** [[Disgraced Chef Lugoli]]
+* [[Choral Chambers]]
+** A [[Choristor]] in the room west of the [[Grand Bellway]]
+** A Choristor in the room adjacent to the [[Grand Gate]]
+* [[Whispering Vaults]]
+** The lower [[Scrollreader]] in the room where the western [[Flea]] is found
+* [[High Halls]]
+** A [[Choir Clapper]] and [[Minister]] in [[the Forum]]
+* [[Memorium]]
+** A [[Memoria]] in the room east of the [[Ventrica]] station
+* [[Mount Fay]]
+** The rightmost [[Driftlin]] in the first room of the area
+
+The enemies below may be black-threaded and if so, always appear blackened on room entry:
+* Far Fields
+** Two [[Vicious Caranid]]s southeast of the upper entrance to Hunter's March
+* Greymoor
+** A [[Mite]] and a [[Pilgrim Guide]] in the room east of [[Halfway Home]]
+{{MissingInfo|add more cases of automatic black-threaded enemies}}
+
+===Unique Enemies===
+The following enemies and bosses can only be found in a black-threaded state or otherwise corrupted by the Void, despite being considered unique entities. {{MissingInfo|someone please finish this list I just added the ones I knew off of the top of my head}}
+<div class="mw-collapsible mw-collapsed">
+* [[Lost Garmond]]
+* [[Lost Lace]]
+* {{Steel Soul Icon Mini|SS}} [[Summoned Saviour]]
+* [[Void Mass]]
+</div>
+
+Black-threading is persistent through leaving and reentering a room, except with enemies black-threaded due to Void Masses, which will have their states redetermined if the Void Mass is destroyed and the room is exited and reentered. Another exception is enemies that respawn on room reentry. However, unkilled black-threaded enemies or black-threaded enemies that respawn on room reentry may alter their void attack by reentering the room. Resting at a [[Bench (Silksong)|Bench]] or saving and reloading entirely will change whether an enemy is corrupted by void or not.<ref group=Source><code>BlackThreadState.setupThreaded(bool)</code></ref>
+
+Black-threaded enemies stop being affected by the [[Needolin]] once they become visibly blackened.
+
+In several rooms with Void Masses, enemies may have the black-threading visual effect played when already being visually blackened. This is probably an oversight.
+
+== Gallery ==
+{{Gallery
+|Image1=Screenshot SS Black Threading 01.png!Void Blades 
+|Image2=Screenshot SS Black Threading 03.png!Void Tendrils
+|Image3=Screenshot SS Black Threading 04.png!Void Projectiles
+|Image4=Screenshot SS Black Threading 02.png!Void Blobs
+}}
+
+{{Refs|hr=ss}}
+== Notes ==
+<references group="Note"/>
+== Code References ==
+<references group="Source"/>
+
+[[fr:Corruption lié au Fil noir]]
+[[Category:Combat (Silksong)]]

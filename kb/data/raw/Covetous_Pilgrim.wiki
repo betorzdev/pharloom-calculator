@@ -1,0 +1,104 @@
+{{SS Infobox Enemy
+| title1 = Covetous Pilgrim
+|image1 = <gallery>
+B Covetous Pilgrim.png|Hunter's Journal
+Covetous Pilgrim Idle.png|Idle
+Covetous Pilgrim Without Shawl.png|Without Shawl
+</gallery>
+| health = 85 <br> 130 ([[Bilewater]])
+| hasdrop = true
+| r1 = 55
+| r2 = 60<br>[[Pilgrim Shawl]]
+| damage_modifiers = {{SS Spaced Damage Modifiers|1|0.8|0.7|0.6|0.6}}
+| numbers_required = 2
+|singnum=1
+| va = Matthew Fitzgerald<ref>Matthew Fitzgerald is credited in Covetous Pilgrim's audio files.</ref>
+}}
+
+{{Quote
+|Strong bug replete with rosaries. If angered they will whip their strings in a ceaseless onslaught.<hr/>Is this abundance a sign of purity or greed? The way faith is measured in this land is curious indeed.
+|Hr = Journal
+}}
+
+<b>Covetous Pilgrims</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are strong pilgrims holding an abudance of strung up [[Rosary|Rosaries]] that they use as a whip.<ref>Covetous Pilgrim [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Strong bug replete with rosaries. If angered they will whip their strings in a ceaseless onslaught."</i></ref>
+
+== Behaviour and Tactics ==
+Covetous Pilgrims do not naturally wander, and start out crouched and muttering to themselves. Once they notice Hornet, they yell and will now attack her when she is within range.<br>
+Covetous Pilgrims walk towards Hornet in between attacks, and have 4 moves:
+
+* <b>Charge:</b> The Covetous Pilgrim charges towards Hornet, stopping once she is behind it or it hits a wall.
+* <b>Leaping Lash:</b> Jumps towards Hornet, then lashes with its Rosary string in an overhead swing in front of itself as it lands, covering a large area. A Rosary may fly off the Covetous Pilgrim during the lash of this attack.
+* <b>String Flail:</b> It spins its Rosary strings before whipping them ahead of and behind itself 3 times. Rosaries may fly off the Covetous Pilgrim during this attack.
+* <b>Retreat:</b> Slides backwards a set distance, often used after missing an attack and when Hornet is close to it.
+
+All the Covetous Pilgrim's attacks, including contact damage, deal {{Damage|2}}.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Holy, holy, gather it up!
+* All is mine... for me, for me!
+* A little more... ‘tis all I need...
+* To ascend... triumphantly...
+}}
+
+== Location ==
+A total of three Covetous Pilgrims can be found throughout [[Pharloom]] but only two can exist at a time. One can be found in [[Shellwood]]'s grave west of the area. Another can be found at [[Shakra]]'s former camp in [[Bilewater]] once [[Groal the Great]] has been defeated. The last only appears in [[Act 3]] at [[Bonegrave]] in [[Bone Bottom]].
+{{Gallery
+|Image1 = Mapshot SS Covetous Pilgrim 01.png!Location in Shellwood
+|Image2 = Mapshot SS Covetous Pilgrim 02.png!Location in Bilewater
+|Image3 = Mapshot SS Covetous Pilgrim 03.png!Location in Bone Bottom
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Covetous Pilgrim 01.png!In Shellwood
+|Image2 = Screenshot SS Covetous Pilgrim 02.png!In Bilewater
+|Image3 = Screenshot SS Covetous Pilgrim 03.png!In Bone Bottom in Act 3
+|Image4 = Screenshot SS Covetous Pilgrim 04.png!Charge attack
+|Image5 = Screenshot SS Covetous Pilgrim 05.png!Leaping Lash attack
+|Image6 = Screenshot SS Covetous Pilgrim 06.png!String Flail attack
+|Image7 = Screenshot SS Covetous Pilgrim 07.png!Retreat
+|Image8 = Screenshot SS Covetous Pilgrim 08.png!Responding to the Needolin
+|Image9 = Screenshot SS Covetous Pilgrim 09.png!Without shawl during <i>[[Garb of the Pilgrims]]</i>
+}}
+
+== Trivia ==
+*The 1.0.27535 and 1.0.27776 versions of <i>Silksong</i> playable on PlayStation 4 and Nintendo Switch respectively, which are older than the PC launch version (1.0.28324), have different journal notes from Hornet:<ref>[https://docs.google.com/document/d/1GaNLkTTszFKFv55DZj3Iw1hTUi6gbstSR56WXizrMAI Silksong Switch full text] on Google Docs</ref>
+:"<i>Is their wealth a sign of purity or greed? Surely most would see it as sin to horde so much?</i>"
+* Covetous Pilgrims are unable to become [[Black-Threaded]] during Act 3.
+* Covetous Pilgrims are one of the few enemies that never respawns.
+* Rosaries dropped by Covetous Pilgrims always drop in single Rosaries instead of Shell or Pearl Rosaries.
+
+{{Localisation
+|DEname = Habgierige Pilgerin
+|DEmeaning = Greedy Pilgrim
+|ESname = Peregrino codicioso
+|ESmeaning = Greedy Pilgrim
+|FRname = Pèlerin cupide
+|FRmeaning = Greedy Pilgrim
+|ITname = Pellegrino Bramoso
+|ITmeaning = Covetous Pilgrim
+|JAname = 強欲な巡礼者
+|JAromanised = Gōyokuna junreisha
+|JAmeaning = Greedy Pilgrim
+|KOname = 욕심 많은 순례자
+|KOromanised = Yoksim maneun sullyeja
+|KOmeaning = Pilgrim with lots of Greed 
+|PTname = Peregrino Cobiçoso
+|PTmeaning = Covetous Pilgrim 
+|RUname = Алчный пилигрим
+|RUromanised = Alčnyj piligrim
+|RUmeaning = Greedy Pilgrim
+|TWname = 貪婪朝聖者
+|TWromanised = Tānlán cháoshèngzhě
+|TWmeaning = Greedy Pilgrim
+|ZHname = 念珠朝圣者
+|ZHromanised = Niànzhū cháoshèngzhě
+|ZHmeaning = Rosary Pilgrim
+|CODEname = ROSARY_PILGRIM
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[fr:Pèlerin cupide]]

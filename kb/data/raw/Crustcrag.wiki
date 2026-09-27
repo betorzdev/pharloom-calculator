@@ -1,0 +1,79 @@
+{{SS Infobox Enemy
+| hasdrop = true
+| sh1 = 7-11
+| sh2 = 9-14
+|health = 80
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.25|1|1|1|1}}
+|numbers_required = 6
+|singnum=1
+}}
+{{Quote
+|Hr = Journal
+|Coral hulk with a dense shell, bred to immense size by the Citadel's Memorium.<hr/>
+Nature distorted... This bug was born tiny and mild. The Citadel deformed it in futile hope it may sustain.
+}}
+
+<b>Crustcrags</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are giant [[Crustcrawler]]s that have been bred to immense size by [[the Citadel]]'s [[Memorium]].<ref>Crustcrag [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Coral hulk with a dense shell, bred to immense size by the Citadel's Memorium."</i></ref>
+
+== Behaviour and Tactics ==
+Crustcrags walk back and forth, dealing {{Damage|2}} on contact. When [[Hornet (Silksong)|Hornet]] approaches, they charge towards her, turning around if she jumps over them.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Crackling, growing, stretching shell...
+* Water's source... hidden... lost...
+* False chambers... long teeth...
+* Poison light... painful lash...
+}}
+
+== Location ==
+Crustcrags can be found in the [[Sands of Karak]] section of the [[Memorium]].
+
+{{Gallery
+|Image1 = Mapshot SS Crustcrag 01.png!Locations in the Memorium
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Crustcrag 01.png!Idle
+|Image2 = Screenshot SS Crustcrag 02.png!Charging
+|Image3 = Screenshot SS Crustcrag 03.png!Reacting to the Needolin
+}}
+
+== Trivia ==
+* The Crustcrag's [[Needolin]] dialogue implies that they have been removed from their natural environment and treated harshly, and that they are aware, if only slightly, that the Memorium is not their true home.
+
+{{Localisation
+|DEname = Krustenfels
+|DEmeaning = Crust Rock
+|ESname = Mazacote encostrado
+|ESmeaning = Encrusted Concrete
+|FRname = Rocorail
+|FRmeaning =
+|ITname = Granchio Corallino
+|ITmeaning = Coral Crab
+|JAname = オオサンゴムシ
+|JAromanised = Ō sango mushi
+|JAkatakana = enemy
+|JAmeaning = Combination of {{lang|ja|大 <i>ō</i>}} (large), {{lang|ja|珊瑚 <i>sango</i>}} (coral) and {{lang|ja|虫 <i>mushi</i>}} (bug).
+|KOname = 산호바위
+|KOromanised = Sanhobawi
+|KOmeaning = Coral Rock
+|PTname = Crostalosso
+|PTmeaning = Portmanteau of <i>crosta</i> (crust) and <i>colosso</i> (colossus).
+|RUname = Коралловый скальнер
+|RUromanised = Korallovyj skal'ner
+|RUmeaning = Coral Rock or Coral Crag
+|TWname = 珊瑚巨怪
+|TWromanised = Shānhú jù guài
+|TWmeaning = same
+|ZHname = 珊瑚巨怪
+|ZHromanised = Shānhú jù guài
+|ZHmeaning = Coral Giant
+|CODEname=CORAL_GOOMBA_LARGE
+|CODEmeaning = Crustcrawlers are internally known as "Coral Goombas"
+}}
+{{Refs|hr=ss}}
+
+
+{{SS Nav Enemies}}

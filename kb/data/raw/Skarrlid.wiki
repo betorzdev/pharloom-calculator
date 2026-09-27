@@ -1,0 +1,86 @@
+{{SS Infobox Enemy
+|title1 = Skarrlid
+|image1 = B Skarrlid.png
+| hasdrop = true
+| sh1 = 3-5
+| sh2 = 4-7
+|health = 20
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 25
+|singnum = 2
+}}
+
+{{Quote
+|Hr = Journal
+|Small burrowing ant, servant to the larger Skarr.<hr/>
+These bugs work mainly as finders and foragers for the warriors of their tribe. Combat has not long been their nature.
+}}
+
+<b>Skarrlids</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are small [[Skarr]] that work as finders and foragers for the warriors of their tribe.<ref>Skarrlid [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Small burrowing ant, servant to the larger Skarr. These bugs work mainly as finders and foragers for the warriors of their tribe."</i></ref>
+
+== Behaviour and Tactics ==
+Skarrlids walk back and forth, turning around when they reach a wall or platform edge. If they spot [[Hornet (Silksong)|Hornet]], they chase her at double speed, but return to their normal patrol once she is out of sight.
+
+During enemy gauntlets, Skarrlids walk 1.5 times faster. The ones encountered in the [[Enemy Gauntlets (Silksong)/Hunter's March 3|gauntlet]] at the eastern end of [[Hunter's March]] also burrow if damaged while not chasing Hornet, either submerging instantly or after a brief sprint. They reappear a few seconds later near Hornet or at a random spot.
+
+One Skarrlid, found near the [[Shell Shard]] strings in the middle of the area, ambushes Hornet, emerging from underground only when she walks past it toward a dead end.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* For her! For her!
+* Away... toward...
+* Find it... take it...
+* Strong together! Strong forever!
+}}
+
+== Location ==
+Skarrlids can be found primarily in [[Hunter's March]], with two encountered as part of the [[Enemy Gauntlets (Silksong)/Hunter's March 3|enemy gauntlet]]. They also appear in the upper [[Deep Docks]] and during the [[Enemy Gauntlets (Silksong)/Greymoor 4|gauntlet]] in the [[Halfway Home]]'s cellar.
+
+{{Gallery
+|Image1 = Mapshot SS Skarrlid 01.png!Locations in Hunter's March
+|Image2 = Mapshot SS Skarrlid 04.png!Locations in Hunter's March in Act 3
+|Image3 = Mapshot SS Skarrlid 02.png!Locations in the Deep Docks
+|Image4 = Mapshot SS Skarrlid 03.png!Location in Greymoor
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Skarrlid 01.png!In Hunter's March
+|Image2 = Screenshot SS Skarrlid 02.png!In the Deep Docks
+|Image3 = Screenshot SS Skarrlid 04.png!In Greymoor
+|Image4 = Screenshot SS Skarrlid 03.png!Reacting to the Needolin
+}}
+
+{{Localisation
+|DEname = Skarrlide
+|DEmeaning = —
+|ESname = Skarr recolector
+|ESmeaning = Skarr Gatherer
+|FRname = Skarranard
+|FRmeaning =
+|ITname = Mirmede Minore
+|ITmeaning = Minor Skarr<br><small><i>Mirmede</i> is the name of the [[Skarr]] in Italian, from <i>mirmeco-</i> (prefix for ants) and <i>-ede</i> (taxonomic suffix).</small>
+|JAname = コスカール
+|JAromanised = Kosukāru 
+|JAmeaning = Combination of {{lang|ja|小 <i>ko</i>}} (small) and {{lang|ja|スカール}} <i>sukāru</i> (Skarr).
+|KOname = 스카르 일꾼
+|KOromanised = Seukareu ilkkun
+|KOmeaning = Skarr Worker
+|PTname = Skarr-operário
+|PTmeaning = Skarr Worker
+|RUname = Скаррлид
+|RUromanised = Skarrlid
+|RUmeaning = Skarrlid
+|TWname = 斯卡爾工蟻
+|TWromanised = Sīkǎ'ěr gōngyǐ
+|TWmeaning = same
+|ZHname = 斯卡尔工蚁
+|ZHromanised = Sīkǎ'ěr gōngyǐ
+|ZHmeaning = Skarr Worker Ant
+|CODEname = BONE_HUNTER_TINY
+|CODEmeaning = "Bone Hunter" internally refers to the Skarr
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

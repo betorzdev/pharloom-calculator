@@ -1,0 +1,105 @@
+{{For|more information on the lore of the Burning Bugs group|Burning Bugs}}
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Burning Bug.png|Hunter's Journal
+Burning Bug Idle.png|Idle
+</gallery>
+| hasdrop = true
+| r1 = 24
+| r2 = 33
+| sh1 = 3-5
+| sh2 = 4-7
+|health = 90
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1.15|1|1|1}}
+|numbers_required = 8<br>(Instantly completed on [[Father of the Flame]]'s death)
+|singnum=1
+}}
+
+{{Quote
+|Hr = Journal
+|Many-legged insect fanatically obsessed with flame.<hr/>
+These ones somehow learnt to call and guide the scorching Wisps that share their thicket. Whether through dominance or reverence is unclear.
+}}
+
+<b>Burning Bugs</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are vocal, six-legged, hooded fanatics who learnt to call and guide the scorching [[Wisp]]s in the [[Wisp Thicket]].<ref>Burning Bug Hunter's Journal entry: <i>"Many-legged insect fanatically obsessed with flame. These ones somehow learnt to call and guide the scorching Wisps that share their thicket."</i></ref>
+
+== Behaviour and Tactics ==
+Burning Bugs naturally wander, pausing frequently; they walk slowly until they reach an edge or a wall, at which point they turn around.<br>
+The 3 Burning Bugs around the middle to right half of the Wisp Thicket are accompanied by 2 Wisps, which will constantly follow them and alert the Burning Bug of Hornet's presence if she gets in the Wisps' detection range. The 2 Burning Bugs in the left half will both Teleport in on either side of Hornet once she reaches a certain point, and they will begin their attack from there.
+Burning Bugs often slowly walk forwards between attacks, and have 3 different moves once Hornet is in their vicinity:
+* <b>Wisp Summon:</b> Raises its staff and summons 2 Wisps with an incantation, with a short delay between each Wisp.
+* <b>Staff Rush:</b> Runs at Hornet for a set distance whilst waving its staff at her, dealing {{Damage|2|type=Fire}} with the staff. Only used if Hornet is close enough to them. This move cannot be used twice in a row.
+* <b>Teleport:</b> Disappears into a haze of harmless fire, then reappears a moment later in the same fashion, often on the opposite side of Hornet. They will also use this move to pursue her if she attempts to flee.
+** If knocked off a ledge, they will immediately teleport away before they can fall.
+
+A few seconds after dying, Burning Bugs' corpses explode into flames, dealing {{Damage|2|type=Fire}}, and disappear.
+
+After [[Father of the Flame]] has been defeated, Burning Bugs will have no Wisps following them and will be standing in place, catatonic.<br>
+Once Hornet comes near, they will awaken and immediately begin to focus whilst cackling for 4 seconds, before combusting into 3 Wisps which all attack at once, as opposed to on a delay. The combustion deals {{Damage|2|type=Fire}}. Once a Burning Bug has self-immolated, they are gone forever and will never respawn in that spot. They cannot be killed during their self-immolation.<br>
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+|columns=2
+|* Father, father!
+* Sear us, scold us!
+* All is fire!
+* Fire is all!
+}}
+
+== Location ==
+Five Burning Bugs can be found throughout the Wisp Thicket. After defeating [[Father of the Flame]], they permanently disappear after their self-immolation is triggered.
+{{Gallery
+|Image1 = Mapshot SS Burning Bug 01.png!Locations in the Wisp Thicket
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Burning Bug 05.png!Idle
+|Image2 = Screenshot SS Burning Bug 01.png!Wisp Summon
+|Image3 = Screenshot SS Burning Bug 02.png!Staff Rush attack
+|Image4 = Screenshot SS Burning Bug 03.png!Teleport
+|Image5 = Screenshot SS Burning Bug 06.png!Singing
+|Image6 = Screenshot SS Burning Bug 04.png!Immolating after Father of the Flame fight
+|Image7 = Screenshot SS Burning Bug 07.png!Corpse east of the bench in Wisp Thicket
+|Image8 = Ari SS Sketch 08.jpg!Concept Sketches
+}}
+
+== Trivia ==
+*The 1.0.27535 and 1.0.27776 versions of <i>Silksong</i> playable on PlayStation 4 and Nintendo Switch respectively, which are older than the PC launch version (1.0.28324), have different journal notes from Hornet:<ref>[https://docs.google.com/document/d/1GaNLkTTszFKFv55DZj3Iw1hTUi6gbstSR56WXizrMAI Silksong Switch full text] on Google Docs</ref>
+:"<i>These ones somehow learnt mastery over the scorching Wisps that share their thicket. They can summon and command them at will.</i>"
+* A Burning Bug is seen in [[Greymoor]] alongside other [[Moorbugs]] in the <i>Silksong</i> reveal trailer.<ref>[https://www.youtube.com/watch?v=pFAknD_9U7c Hollow Knight: Silksong Reveal Trailer]</ref>
+* In a concept sketch, a Burning Bug can be seen holding a staff that resembles the [[Nightmare Lantern]].
+
+{{Localisation
+|DEname = Brandkäfer
+|DEmeaning = Fire Bug
+|ESname = Bicho ardiente
+|ESmeaning = Burning bug
+|FRname = Insecte Ardent
+|FRmeaning = Burning Insect
+|ITname = Insetto Ardente
+|ITmeaning = Burning Bug
+|JAname = エンジョウムシ
+|JAromanised = Enjō mushi
+|JAkatakana = enemy
+|JAmeaning = Combination of {{lang|ja|炎上}} <i>enjō</i> (consumed by flames) and {{lang|ja|虫}} <i>mushi</i> (bug).
+|KOname = 불타는 벌레
+|KOromanised = Bultaneun beolle
+|KOmeaning = Burning Bug
+|PTname = Inseto Flamejante
+|PTmeaning = Flaming Insect
+|RUname = Огненный жук
+|RUromanised = Ognennyj žuk
+|RUmeaning = Fiery bug
+|TWname = 焚身信徒
+|TWromanised = Fénshēn xìntú
+|TWmeaning = same
+|ZHname = 焚身信徒
+|ZHromanised = Fénshēn xìntú
+|ZHmeaning = Self-burning Disciple
+|CODEname=FARMER_WISP
+|CODEmeaning= <code>FARMER</code> internally refers to [[Greymoor]] enemies, and Burning Bugs were originally situated in Greymoor.
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

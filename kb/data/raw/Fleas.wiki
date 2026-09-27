@@ -1,0 +1,334 @@
+
+{{SS Infobox NPC
+|image1 = <gallery>
+Flea.png|Idle
+Flea Howl.png|Howling
+Flea_Sleep.png|Sleeping
+Flea_Festival.png|Festival
+</gallery>
+| area = Various
+| role = Quest
+| quest = [[The Lost Fleas]]<br>[[Ecstasy of the End]]
+| affiliation = [[Flea Caravan]]
+| va = Makoto Koji<ref name="va">[https://www.youtube.com/watch?v=pA7Id7lff6E Interview with Lauren Koopowitz]</ref>
+| hidegender = true
+| singnum=1
+}}
+
+{{Quote
+| Look here! All these lively fleas flocked to our caravan. Thanks to you and your hunting, our numbers grow grand.
+| [[Fleamaster Mooshka]]
+| Hr = SS
+}}
+
+<b>Fleas</b> are winged, furry bugs scattered throughout most of [[Pharloom]]. They can be found caged, stuck, or resting in precarious locations. 
+
+== In-game Events ==
+When near a Flea's location, they can make sounds such as snoring or whimpering, or they can be silent. Fleas communicate through high pitched barking and howls. When freed or awoken, Fleas let out a characteristic "awoo", and fly off screen, presumably to the [[Flea Caravan]].
+
+There are 30 Fleas that can be found in total, which includes [[Kratt]], [[Vog]], and the [[Huge Flea]].
+
+[[Vog]] provides the locations of missing Fleas for [[Rosaries]] once she has been found.
+
+* After 5 Fleas are found, [[Fleamaster Mooshka]] moves the Caravan to [[Greymoor]], skipping the [[Moorwing]] fight if it hasn't already been defeated, and rewards Hornet with the [[Flea Brew]].
+* After 12 Fleas are found, they move to [[Blasted Steps]] if the [[Last Judge]] has been defeated, and reward Hornet with a [[Spool Fragment]].
+* After 22 Fleas are found, they move to the Pale Lake in [[Putrified Ducts]] if Hornet has visited that location, and reward Hornet with a [[Tool Pouch]].
+* After all 30 Fleas are found, Hornet can receive the [[Egg of Flealia]] and gain access to [[Festival of the Flea]] in [[Act 3]].
+
+== Locations ==
+[[File:Map Pin Flea.png|right]]
+Lost Fleas can be found all across Pharloom. They may be found in any order.
+
+{| class="article-table" data-tpt-table-id="ss-fleas"
+! #
+! Area
+! class="unsortable" | Location
+! class="unsortable" | Requires
+! class="unsortable" | Map
+|- data-tpt-row-id="flea-the-marrow"
+! 1
+| data-sort-value="Marrow" | [[The Marrow]]
+| Can be reached after some platforming from the beginning of the room.
+| Defeat [[Bell Beast]] and activate the [[bellshrine]]
+| [[File:Flea Marrow Location 1.png|center|150x150px]]
+|- data-tpt-row-id="flea-deep-docks-1"
+! 2
+| [[Deep Docks]]
+| Behind a breakable wall on the left side of the [[Deep Docks]] Bellway station.
+| —
+| [[File:Flea Deep Docks Location 1.png|center|150x150px]]
+|- data-tpt-row-id="flea-deep-docks-2"
+! 3
+| [[Deep Docks]]
+| Run left from where [[Swift Step]] is obtained and hit the lever in the upper right corner of the room.
+| [[Swift Step]]
+| [[File:Flea Deep Docks Location 2.png|center|150x150px]]
+|- data-tpt-row-id="flea-deep-docks-3"
+! 4
+| [[Deep Docks]]
+| [[Clawline]] is required to open the door to the lower section of [[Deep Docks]]. The Flea is guarded behind an enemy gauntlet.
+| [[Clawline]]
+| [[File:Flea Deep Docks Location 3.png|center|150x150px]]
+|- data-tpt-row-id="flea-hunters-march"
+! 5
+| [[Hunter's March]]
+| Can be reached after a small platforming challenge.
+| Defeat the [[Skarrgard]] at the entrance of [[Hunter's March]]
+| [[File:Flea Hunter's March Location 1.png|center|150x150px]]
+|- data-tpt-row-id="flea-far-fields-1"
+! 6
+| [[Far Fields]]
+| Guarded by a [[Skarr Scout]] that spawns if Hornet hits the Flea's cage or steps on the pressure plate trap next to it
+| —
+| [[File:Flea Far Fields Location 1.png|center|150x150px]]
+|- data-tpt-row-id="flea-far-fields-2"
+! 7
+| [[Far Fields]]
+| Can't be accessed through [[Pilgrim's Rest]] because of a locked gate; Hornet must instead access a secret area in [[Far Fields]]'s Bellway station to reach it.
+| [[Drifter's Cloak]] and [[Cling Grip]]
+| [[File:Flea Far Fields Location 2.png|center|150x150px]]
+|- data-tpt-row-id="flea-wormways"
+! 8
+| [[Wormways]]
+| The Flea is being carried by an [[Aknid]]. Defeat it to rescue the Flea.
+| —
+| [[File:Flea Wormways Location 1.png|center|150x150px]]
+|- data-tpt-row-id="flea-greymoor-1"
+! 9
+| [[Greymoor]]
+| Pogo off of the balloons and hug the right side wall.
+| Defeat the enemy gauntlet in [[Craw Lake]]
+| [[File:Flea Greymoor Location 1.png|center|150x150px]]
+|- data-tpt-row-id="flea-greymoor-2"
+! 10
+| [[Greymoor]]
+| Reach the top of the left tower in [[Greymoor]].
+| [[Cling Grip]]
+| [[File:Flea Greymoor Location 2.png|center|150x150px]]
+|- data-tpt-row-id="flea-greymoor-3"
+! 11
+| [[Greymoor]]
+| This Flea is [[Kratt]], who is an [[NPCs (Silksong)|NPC]] rather than a normal lost Flea.
+Once freed, he shows up later in the [[Flea Caravan]] and opens up a spa.
+Found behind a breakable wall above [[Greymoor|Halfway Home]].
+| [[Cling Grip]]
+| [[File:Flea Greymoor Location 3.png|center|150x150px]]
+|- data-tpt-row-id="flea-bellheart"
+! 12
+| [[Bellhart]]
+| Defeat [[Sister Splinter]] and head right. Located in the upper most tunnel of the Bellveins in bellhart.
+| [[Cling Grip]]
+| [[File:Flea Bellhart Location 1.png|center|150x150px]]
+|- data-tpt-row-id="flea-shellwood"
+! 13
+| [[Shellwood]]
+| Located below a section with a series of [[Gahlia]]s. Requires going from the top of the room first.
+| —
+| [[File:Flea Shellwood Location 1.png|center|150x150px]]
+|- data-tpt-row-id="flea-blasted-steps"
+! 14
+| [[Blasted Steps]]
+| Located at the top of the room to the left of [[Blasted Steps]]'s bellway station.
+| [[Cling Grip]]
+| [[File:Flea Blasted Steps Location 1.png|center|150x150px]]
+|- data-tpt-row-id="flea-sinners-road"
+! 15
+| [[Sinner's Road]]
+| A [[Muckroach]] is wandering nearby and will attack when Hornet approaches to rescue the Flea.
+| —
+| [[File:Flea Sinner's Road Location 1.png|center|150x150px]]
+|- data-tpt-row-id="flea-bilewater-1"
+! 16
+| [[Bilewater]]
+| Located behind a breakable wall. Two [[Snitchfly|Snitchflies]] must be defeated before the Flea can be rescued. 
+| —
+| [[File:Flea Bilewater Location 1.png|center|150x150px]]
+|- data-tpt-row-id="flea-bilewater-2"
+! 17
+| [[Bilewater]]
+| Located left of the upper entrance to the [[Exhaust Organ]]. Can be reached by going through a secret passage inside the Exhaust Organ.
+| Complete traversing [[the Mist]]
+| [[File:Flea Bilewater Location 2.png|center|150x150px]]
+|- data-tpt-row-id="flea-bilewater-3"
+! 18
+| [[Bilewater]]
+| Located above of the secret bench room in [[Bilewater]].
+| [[Cling Grip]]
+| [[File:Flea Bilewater Location 3.png|center|150x150px]]
+|- data-tpt-row-id="flea-underworks-1"
+! 19
+| [[Underworks]]
+| Can't be initially reached from [[Underworks]]. Reachable from [[Wisp Thicket]] behind a breakable ceiling followed by some short platforming challenges.
+| [[Cling Grip]], [[Faydown Cloak]]
+| [[File:Flea Underworks Location 1.png|center|150x150px]]
+|- data-tpt-row-id="flea-underworks-2"
+! 20
+| [[Underworks]]
+| Across the room with a series of [[Cogwork Hauler]]s.
+| —
+| [[File:Flea Underworks Location 2.png|center|150x150px]]
+|- data-tpt-row-id="flea-choral-chambers-1"
+! 21
+| [[Choral Chambers]]
+| Can be reached after a platforming section.
+| —
+| [[File:Flea Choral Chambers Location 1.png|center|150x150px]]
+|- data-tpt-row-id="flea-choral-chambers-2"
+! 22
+| [[Choral Chambers]]
+| Behind a breakable wall. 
+With [[Drifter's Cloak]], it can be reached by activating a mechanism below (accessible through another breakable wall, below the previous one).
+Can be reached otherwise by pogoing off of the sawblades.
+| [[Drifter's Cloak]] or Needle-bounce
+| [[File:Flea Choral Chambers Location 2.png|center|150x150px]]
+|- data-tpt-row-id="flea-memorium"
+! 23
+| [[Memorium]]
+| [[Huge Flea]] fight. Must be defeated after being freed.
+Once defeated, the [[Huge Flea]] will show up at the Caravan.
+| [[Faydown Cloak]]
+| [[File:Flea Memorium Location 1.png|center|150x150px]]
+|- data-tpt-row-id="flea-the-slab-1"
+! 24
+| data-sort-value="Slab" | [[The Slab]]
+| Inside a door covered by mist, with the option to enter. The Flea can be heard barking from the outside.
+| —
+| [[File:Flea Slab Location 1.png|center|150x150px]]
+|- data-tpt-row-id="flea-the-slab-2"
+! 25
+| data-sort-value="Slab" | [[The Slab]]
+| The Flea is above the rest bench, in a small chamber to the top-left of the opening. 
+| [[Faydown Cloak]]
+| [[File:Flea Slab Location 2.png|center|150x150px]]
+|- data-tpt-row-id="flea-mount-fay"
+! 26
+| [[Mount Fay]]
+| The Flea is frozen within ice and must be broken free by hitting it with the Needle.
+| [[Cling Grip]]
+| [[File:Flea Mount Fay Location 1.png|center|150x150px]]
+|- data-tpt-row-id="flea-sands-of-karak"
+! 27
+| [[Sands of Karak]]
+| Located at the top of the room, reachable behind encrusted coral in the right side of it.
+Can alternatively be reached by using [[Silk Soar]].
+| —
+| [[File:Flea Sands of Karak Location 1.png|center|150x150px]]
+|- data-tpt-row-id="flea-putrified-ducts"
+! 28
+| [[Putrified Ducts]]
+| Can be reached after getting pulled up by several [[Barnak]], along with some platforming.
+Similar to [[Kratt]], [[Vog]] is not a normal lost Flea, but an [[NPCs (Silksong)|NPC]].
+Once spoken with, she shows up later at the [[Flea Caravan]].
+| —
+| [[File:Flea Putrified Ducts Location 1.png|center|150x150px]]
+|- data-tpt-row-id="flea-whispering-vaults-1"
+! 29
+| [[Whispering Vaults]]
+| Can be reached after a long platforming section.
+Section can be reached after passing a hidden passage by jumping behind the curtains in the room below [[Vaultkeeper Cardinius]]'s room.
+| [[Clawline]] and [[Cling Grip]]
+| [[File:Flea Choral Chambers Location 3.png|center|150x150px]]
+|- data-tpt-row-id="flea-whispering-vaults-2"
+! 30
+| [[Whispering Vaults]]
+| At the top of the room, can be reached by pushing a box located in the middle-left of the room.
+| [[Cling Grip]]
+| [[File:Flea Whispering Vaults Location 1.png|center|150x150px]]
+|}
+
+{{Gallery
+|Image1 = Mapshot SS Fleas Small.png ! Locations of all Fleas
+}}
+
+== Achievements ==
+{{Achievements|allgames=silksong
+| Flea Finder
+| Fleafriend
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Flea 01.png!Trapped within vines in the Marrow
+|Image2 = Screenshot SS Flea 02.png!Sleeping in western Deep Docks
+|Image3 = Screenshot SS Flea 03.png!Trapped in a container in Deep Docks 
+|Image4 = Screenshot SS Flea 04.png!Sleeping in eastern Deep Docks
+|Image5 = Screenshot SS Flea 05.png!Caged in Hunter's March
+|Image6 = Screenshot SS Flea 06.png!Caged in Far Fields
+|Image7 = Screenshot SS Flea 07.png!Sleeping in Far Fields
+|Image8 = Screenshot SS Flea 08.png!Grabbed by an Aknid in Wormways
+|Image9 = Screenshot SS Flea 09.png!Trapped in a container in Greymoor
+|Image10 = Screenshot SS Flea 10.png!Sleeping inside a windmill in Greymoor
+|Image11 = Screenshot SS Kratt 07.png!Kratt stuck in Silk in Greymoor
+|Image12 = Screenshot SS Flea 12.png!Stuck among bells in Bellhart
+|Image13 = Screenshot SS Flea 13.png!Stuck within vines in Shellwood
+|Image14 = Screenshot SS Flea 14.png!Sleeping in northen Blasted Steps
+|Image15 = Screenshot SS Flea 15.png!Sleeping in a cage in Sinner's Road
+|Image16 = Screenshot SS Flea 16.png!Scared by Snitchflies in Bilewater
+|Image17 = Screenshot SS Flea 17.png!Stuck within vines in western Bilewater
+|Image18 = Screenshot SS Flea 18.png!Stuck within vines in northern Bilewater
+|Image19 = Screenshot SS Flea 19.png!Stuck in a container in western Underworks
+|Image20 = Screenshot SS Flea 20.png!Stuck in a container in central Underworks
+|Image21 = Screenshot SS Flea 21.png!Sleeping in a cage in Choral Chambers
+|Image22 = Screenshot SS Flea 22.png!Sleeping near saws in Choral Chambers
+|Image23 = Screenshot SS Memorium 06.png!Huge Flea caged within the Memorium
+}}
+{{Gallery
+|Image1 = Screenshot SS Flea 24.png!Caged within the Slab
+|Image2 = Screenshot SS Flea 25.png!Sleeping in the Slab
+|Image3 = Screenshot SS Flea 26.png!Frozen in ice in Mount Fay
+|Image4 = Screenshot SS Flea 27.png!Stuck within crust in Sands of Karak
+|Image5 = Screenshot SS Putrified Ducts 04.png!Vog in Putrified Ducts
+|Image6 = Screenshot SS Flea 29.png!Sleeping in Whispering Vaults
+|Image7 = Screenshot SS Flea 30.png!Sleeping in a cage in Whispering Vaults
+|Image8 = Screenshot SS Flea Caravan 08.png!Travelling with the Caravan
+|Image9 = Screenshot SS Putrified Ducts 08.png!During Festival of the Flea
+|Image10 = Screenshot SS Flea Juggle 01.png!Appearing during Flea Juggle
+|Image11 = Screenshot SS Flea Dodge 01.png!Appearing during Flea Dodge
+|Image12 = Screenshot SS Flea Bounce 01.png!Appearing during Flea Bounce
+|Image13 = Screenshot SS Festival of the Flea 03.png!During the conclusion of Festival of the Flea
+|Image14 = Caravan.png!Flea Caravan promotional art
+|Image15 = Ari SS Sketch 16.png!Concept sketches
+}}
+
+== Trivia ==
+* If the [[Huge Flea]], [[Kratt]], or [[Vog]] are among the first 5 Fleas rescued in <i>[[The Lost Fleas]]</i> [[wish]], they have unique icons in the [[Tasks]] menu screen.
+{{Gallery
+| Image1 = Screenshot SS Flea 01.webp ! The icons for the Huge Flea, Vog, and Kratt, alongside two regular Fleas
+}}
+* During [[Act 3]] several Fleas can become trapped in [[Void]] soaked [[Silk]]. 
+{{Gallery
+| Image1 = Screenshot SS Flea 31.png!Flea in Deep Docks trapped in Void soaked Silk
+}}
+{{Localisation
+|DEname = Floh
+|DEmeaning = Flea
+|ESname = Pulgo
+|ESmeaning = Flea
+|FRname = Puce
+|FRmeaning = Flea
+|ITname = Pulce
+|ITmeaning = Flea
+|JAname = ノミ
+|JAromanised = Nomi
+|JAmeaning = Flea
+|KOname = 벼룩
+|KOromanised = Byeorug
+|KOmeaning = Flea
+|PTname = Pulga
+|PTmeaning = Flea
+|RUname = Блоха
+|RUromanised = Bloxa
+|RUmeaning = Flea
+|TWname = 跳蚤
+|TWromanised = Tiàozǎo
+|TWmeaning = same
+|ZHname = 跳蚤
+|ZHromanised = Tiàozǎo
+|ZHmeaning = Flea
+|CODEname = FLEA
+|CODEmeaning = 
+}}
+
+{{Refs|hr=SS}}
+[[fr:Puce]]
+[[Category:Points of Interest (Silksong)]]

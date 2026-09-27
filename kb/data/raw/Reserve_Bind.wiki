@@ -1,0 +1,76 @@
+{{SS Infobox Tool
+| type = Blue
+| effect = Allows one [[Bind]] without depleting [[Silk]]
+| location = [[High Halls]]
+| description = Ornate artefact of the Citadel, able to hold a Bind's worth of Silk. Used when healing is needed and one's natural resources run low.<hr/>
+The Reserve Bind will be restored when resting at a bench.
+}}
+
+{{Quote
+| Accept, a t-t-token of the sentinel's order. As friends... let us p-part. 
+| [[Second Sentinel]]
+| Hr = SS
+}}
+
+<b>Reserve Bind</b> is a {{CrestSlot|Blue|1}} in <i>[[Hollow Knight: Silksong]]</i>. It can be used to perform a single [[Bind]] without consuming [[Silk]], replenished at [[Bench (Silksong)|benches]].
+
+== Usefulness ==
+Allows for a single [[Bind]] to be performed without consuming [[Silk]]. When doing so, no Silk from the spool will be used, but the Tool's reserve will be fully used up. The Reserve Bind can be replenished only by resting at a [[Bench (Silksong)|Bench]].
+
+When using the Reserve Bind, Hornet will quickly pull the Silk from its reserve before she begins Binding. This slightly lengthens the extra Bind's animation.
+* Having a reserve ready does <i>not</i> activate [[Wanderer Crest]]'s ability to critically hit; 9 Silk is required as usual.
+* If the [[Architect Crest]] is equipped, a Craft Bind can also be performed using the reserve. Its animation will still be lengthened by Reserve Bind.
+* It can serve as an emergency heal for situations where Silk is scarce, like tricky platforming sections.
+* Useful for shaking off [[Muckmaggot]]s while traversing [[Sinner's Road]], [[Bilewater]] or the [[Putrified Ducts]], especially if Hornet runs low on Silk. The Silk drainage from Muckmaggots also will not affect the Reserve Bind.
+
+== How to Acquire ==
+Given by the [[Second Sentinel]] in the [[High Halls]] after defeating it and completing the <i>[[Final Audience]]</i> [[Wish]].
+
+{{Gallery
+|Image1 = Mapshot SS Second Sentinel 03.png!Location of Second Sentinel in High Halls
+|Image2 = Screenshot SS Silk Fly 01.png!Second Sentinel in High Halls
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Reserve Bind HUD.png!Reserve Bind HUD sprite
+}}
+
+== Trivia ==
+* Replenishing the Reserve Bind at a bench does not consume any resources, despite Hornet using her usual crafting animation to reset it.
+* When using the Reserve Bind, a white flash resembling the tool briefly appears over hornet.
+{{Localisation
+|DEname = Reservebinde
+|DEmeaning = Reserve Bind
+|ESname = Reserva sedeña
+|ESmeaning = Silken Reserve
+|FRname = Réserve de soie
+|FRmeaning = Reserve of Silk
+|ITname = Legatura di riserva
+|ITmeaning = Reserve Bind
+|JAname = 予備のシルク
+|JAromanised= Yobi no shiruku
+|JAkatakana = foreign
+|JAmeaning = Reserve of Silk
+|KOname = 결속의 비축구
+|KOromanised = Gyeolsogui bichukgu
+|KOmeaning = Reserve Bind
+|PTname = Vínculo Reserva
+|PTmeaning = Reserve Bind
+|RUname = Резерв для связывания
+|RUromanised = Rezerv dlja svjazyvanija
+|RUmeaning = Reserve for Binding
+|TWname = 儲備縛絲
+|TWromanised = Chǔbèi fù sī
+|TWmeaning = same
+|ZHname = 储备缚丝
+|ZHromanised = Chǔbèi fù sī
+|ZHmeaning = Reserve Bind or Reserve Bind Silk
+|CODEname = RESERVE_BIND
+|CODEmeaning = 
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Réserve de soie]]

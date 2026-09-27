@@ -1,0 +1,87 @@
+{{For|information on the lore of this species|Groms}}
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Grom.png|Hunter's Journal
+Grom Without Shell.png|Without Shell
+</gallery>
+| hasdrop = true
+| sh1 = 4-6
+| sh2 = 5-8
+|health = 30
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.8|0.8|0.8|0.8}}
+|numbers_required = 10
+}}
+
+{{Quote
+|Hr = Journal
+|Burrowing worm that uses its many blunted teeth to dig through even the hardest bone.<hr/>They ceaselessly churn through rock and bone without ever seeming to rest. Do they have a destination? Or are they compelled to dig forever deeper?
+}}
+
+<b>Groms</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are adult [[Gromling]]s that ceaselessly burrow through bone and rock in aligned groups.<ref>Grom [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Burrowing worm that uses its many blunted teeth to dig through even the hardest bone. They ceaselessly churn through rock and bone without ever seeming to rest."</i></ref><ref>[[Gromling]] Hunter's Journal entry: <i>"Young masked worm that delights in ambushing intruders within its tunnels."</i></ref>
+
+== Behaviour and Tactics ==
+Groms are usually found in narrow passageways, constantly emerging from the ceiling and falling downwards before burrowing into the floor. They deal {{Damage|1}} on contact, but touching their mouths triggers a {{Damage|1+1}} combo.
+
+Due to their speed, Groms can be difficult to defeat with the [[Needle]], so [[Tools]] and {{CrestSlot|Skill|s}} that deal high burst damage can be used instead. Additionally, the [[Sharpdart]] always kills them instantly.
+
+== Location ==
+Groms can be found throughout the [[Wormways]]. 
+
+In [[Act 3]], the majority of them are killed by [[Lifeblood|Plasmium]], while several mutate into [[Plasmidas]]es. Only a few remain in the northeastern section of the area and in [[Weavenest Karn]].
+
+{{Gallery
+|Image1 = Mapshot SS Grom 01.png!Locations in the Wormways
+|Image2 = Mapshot SS Grom 02.png!Locations in the Wormways in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Grom 01.png!In the Wormways
+|Image2 = Screenshot SS Grom 03.png!In Weavenest Karn
+|Image3 = Screenshot SS Grom 04.png!Burrowing
+|Image4 = Screenshot SS Grom 05.png!Chewing on Hornet
+|Image5 = Screenshot SS Grom 07.png!Modded screenshot of Groms burrowing in the background
+|Image6 = Screenshot SS Grom 06.png!Corpses in Act 3
+|Image7 = Screenshot SS Memorium 05.png!Corpse in the Memorium
+}}
+
+==Trivia==
+* Groms do not react to the [[Needolin]].
+* [[wiktionary:grom|Grom]] is an Australian slang term for a young or amateur surfer.
+* Groms have a unique animation when killed by the [[Sharpdart]].
+{{Gallery
+|Image1 = GIF SS Grom 01.gif!!Grom killed by the Sharpdart
+}}
+
+{{Localisation
+|DEname = Grom
+|DEmeaning = —
+|ESname = Grom
+|ESmeaning = —
+|FRname = Grom
+|FRmeaning = —
+|ITname = Gigantoverme
+|ITmeaning = Portmanteau of <i>gigantesco</i> (gigantic) and <i>verme</i> (worm).
+|JAname = グロム
+|JAromanised = Guromu
+|JAkatakana = foreignenemy
+|JAmeaning = Grom
+|KOname = 그롬
+|KOromanised = Geurom
+|KOmeaning = Grom
+|PTname = Grom
+|PTmeaning = —
+|RUname = Жрак
+|RUromanised = Žrak
+|RUmeaning = From {{lang|ru|жрать <i>žrat'</i>}} (devour).
+|TWname = 戈魯姆
+|TWromanised = Gēlǔmǔ
+|TWmeaning = same
+|ZHname = 戈鲁姆
+|ZHromanised = Gēlǔmǔ
+|ZHmeaning = Grom
+|CODEname = BONE_WORM
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

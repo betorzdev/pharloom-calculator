@@ -1,0 +1,89 @@
+{{SS Infobox Enemy
+| hasdrop = true
+|image1 = <gallery>
+B Gargant Gloom.png|Hunter's Journal
+Gargant Gloom Idle.png|Idle
+</gallery>
+| sh1 = 9-14
+| sh2 = 12-18
+|health = 200
+|damage_modifiers = {{SS Spaced Damage Modifiers|2|1.5|1.1|1|1}}
+|numbers_required = 4
+}}
+{{Quote
+|Hr = Journal
+|Enormous tubular beast uniquely suited to living close to the void below.<hr/>
+Amazingly, the creature carries the void's black liquid in its stomach, violently spraying it forth if threatened.
+}}
+
+<b>Gargant Glooms</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are massive, eight-legged beasts that carry the [[Void]] within their shells and can weaponise it.<ref>Gargant Gloom [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Enormous tubular beast uniquely suited to living close to the void below. Amazingly, the creature carries the void's black liquid in its stomach, violently spraying it forth if threatened."</i></ref>
+
+== Behaviour and Tactics ==
+Gargant Glooms walk back and forth, pausing occasionally. When [[Hornet (Silksong)|Hornet]] approaches or attacks them, they run towards her and perform any of the following attacks once close enough:
+* <b>Charging Flail:</b> Moves backwards, then rushes towards Hornet while wildly flailing its head up and down, stopping once it passes her.
+* <b>Void Spray:</b> Rears its head back and, after a brief buildup, sprays out harmful Void blobs in a large arc. There is a small safe zone beneath the Gargant Gloom's head that no Void reaches. This attack deals {{Damage|2|type=Void}}.
+* <b>Eject Gloomsacs:</b> Opens up to reveal numerous black holes along its body, trembling slightly while ejecting two [[Gloomsac]]s. Initially appearing as small spheres, they uncurl on contact with the floor or the Gargant Gloom's back and begin targeting Hornet. While there are three of its Gloomsacs alive in the room, the Gargant Gloom does not spawn any more.
+** Gloomsacs spawned by the Gargant Gloom disappear once Hornet moves a sufficient distance away.
+** As long as Hornet is swallowed by a Gloomsac, the Gargant Gloom does not attack, instead pacing back and forth nearby while maintaining a short distance.
+
+Gargant Glooms deal {{Damage|2}} on contact.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|
+* ...
+}}
+
+== Location ==
+Gargant Glooms can be found in [[The Abyss (Silksong)|the Abyss]].
+
+{{Gallery
+|Image1 = Mapshot SS Gargant Gloom 01.png!Locations in the Abyss
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Gargant Gloom 01.png!Idle
+|Image2 = Screenshot SS Gargant Gloom 03.png!Void Spray
+|Image3 = Screenshot SS Gargant Gloom 02.png!Charging Flail
+|Image4 = Screenshot SS Gargant Gloom 04.png!Eject Gloomsacs
+|Image5 = Ari SS Sketch 12.png!Concept sketches
+}}
+
+==Trivia==
+* Gargant Glooms are not stunned by the [[Needolin]]. Their dialogue appears without them stopping combat to sing.
+* Gargant Glooms were originally located in the cut area "[[Cut Content (Silksong)/Areas#The Gloom|The Gloom]]", and spat out purple acid instead of the Void.
+{{Gallery
+|Image1=Silksong Early 023.png!<i>Silksong</i> reveal trailer
+}}
+{{Localisation
+|DEname = Düstergigant
+|DEmeaning = Gloom Giant
+|ESname = Glum gargante
+|ESmeaning = —
+|FRname = Garganomble
+|FRmeaning = Portmanteau of <i>gargantuesque</i> (gargantuan) and <i>sombre</i> (dark).
+|ITname = Gargantombra
+|ITmeaning = Portmanteau of <i>gargantuesco</i> (gargantuan) and <i>ombra</i> (shadow).
+|JAname = オオヤミ
+|JAromanised = Ōyami 
+|JAmeaning = Combination of {{lang|ja|大 <i>ō</i>}} (large) and {{lang|ja|闇 <i>yami</i>}} (dark).
+|KOname = 거대한 어둠
+|KOromanised = Geodaehan eodum
+|KOmeaning = Giant Darkness
+|PTname = Gargântua
+|PTmeaning = From gargant.
+|RUname = Сумрачный великан
+|RUromanised = Sumračnyj velikan
+|RUmeaning = Gloomy Giant
+|TWname = 幽暗巨獸
+|TWromanised = Yōuàn jùshòu
+|TWmeaning = same
+|ZHname = 幽暗巨兽
+|ZHromanised = Yōuàn jùshòu
+|ZHmeaning = Giant Gloom Beast
+|CODEname = GLOOM_BEAST
+|CODEmeaning = Gargant Glooms were originally located in [[Cut Content (Silksong)/Areas#The Gloom|the Gloom]]
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Enemies}}

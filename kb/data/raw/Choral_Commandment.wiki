@@ -1,0 +1,135 @@
+{{SS Infobox Item
+| description = Order issued by the Citadel. The once gleaming seal has worn with time. <hr/> 
+A relic of Pharloom's past, interesting to collectors of historical items.
+| effects = Can be sold to [[Relic Seeker Scrounge]] for {{R|180}}
+| type = [[Items (Silksong)#Tradables|Tradable]]
+| source = [[Bone Bottom]]<br>[[Whiteward]]<br>Purchased from [[Jubilana]]
+| buy = {{R|180}}
+| max = 4
+}}
+
+{{Quote|A precious order passed down by the holy conductors. Rare now to find these old texts, and rarer still to find a bug able to read 'em.
+|[[Jubilana]]|Hr=SS}}
+
+<b>Choral Commandments</b> are [[Items_(Silksong)#Tradables|tradable items]] in <i>[[Hollow Knight: Silksong]]</i>. They carry orders and decrees from [[the Citadel]], and their text can be deciphered after selling them to [[Relic Seeker Scrounge]].
+
+
+== Use ==
+Can be sold to [[Relic Seeker Scrounge]] for {{R|180}}.
+
+After sale, they can be read by visiting Relic Seeker Scrounge, or in the [[Bellhome]] after purchasing the [[Desk]].
+
+{{Gallery
+|Image1 = Mapshot SS Relic Seeker Scrounge 01.png!Location of Relic Seeker Scrounge in Bellhart
+|Image2 = Screenshot SS Bellhart 11.png!Relic Seeker Scrounge in Bellhart
+}}
+
+{| class="article-table" width="100%"
+! style="width: 8rem;" | Item
+! Description
+|-
+! [[File:Choral Commandment.png|72x72px|center|link=Choral Commandment|Choral Commandment]] Choral Commandment
+| 
+<i>Decree of the Citadel, dirty and worn.<br><br>
+"Full Chamber to the kingdom of the White Wyrm. Claim the Weaver, in half part. Last of their line. Sensed strong with Silk.<br><br>
+Resistance anticipated. Quell with rune cage."</i>
+|-
+! [[File:Choral Commandment.png|72x72px|center|link=Choral Commandment|Choral Commandment]] Choral Commandment
+| 
+<i>Surgeon's orders.<br><br>
+"Devout has succumbed during Silk suture. Refuses to revive. Sin committed. Permit no rites.<br><br>
+Husk marked for cremation. Retrieve dregs."</i>
+|-
+! [[File:Choral Commandment.png|72x72px|center|link=Choral Commandment|Choral Commandment]] Choral Commandment
+| 
+<i>Last edict of the Conductors.<br><br>
+"And lo, is eternity sustained. By Architect's claw, we welcome that final form, of dial and rotor, and soul gladly given.<br><br>
+The perfect, unfaltering voice."</i>
+|-
+! [[File:Choral Commandment.png|72x72px|center|link=Choral Commandment|Choral Commandment]] Choral Commandment
+| 
+<i>Tattered decree of the Citadel.<br><br>
+"Bug of voice grown hoarse or shell fallen frail, you have been selected for duty most sacred.<br><br>
+Become our light, our guide in darkness, that others worthy may climb to join the holy song."</i>
+|}
+
+== How to Acquire ==
+There are a total of four Choral Commandments that can be obtained.
+
+{| class="article-table" style="text-align: center;" width="100%" data-tpt-table-id="choral-commandment"
+! 
+! Area
+! Location
+! Map
+|-
+! 1
+| [[Bone Bottom]]
+| On a ledge on the east side of the shaft above [[Bone Bottom]]. Accessible from the western edge of [[Mosshome]], behind a breakable wall.
+| [[File:Mapshot SS Choral Commandment 01.png|200px|center]]
+|-
+! 2
+| [[Whiteward]]
+| Left side of the room. Picking it up leads to getting ambushed by a [[Dreg Husk]].
+| [[File:Mapshot SS Choral Commandment 02.png|200px|center]]
+|-
+! 3
+| [[Choral Chambers]]
+| Bought from [[Jubilana]] in [[Choral Chambers|Songclave]] for {{R|180}} after completing [[The Lost Merchant]].
+| [[File:Mapshot SS Jubilana 01.png|200px|center]]
+|-
+! 4
+| [[Whiteward]]
+| Right side of the room among corpses. Requires [[Silk Soar]] or a precise jump with [[Faydown Cloak]]. Access to the right side is hidden by a breakable wall.
+| [[File:Mapshot SS Choral Commandment 03.png|200px|center]]
+|}
+
+== Gallery ==
+{{Gallery
+|Image1=Screenshot SS Choral Commandment 01.png!In Bone Bottom
+|Image2=Screenshot SS Choral Commandment 02.png!In west Whiteward
+|Image3=Screenshot SS Choral Commandment 03.png!In east Whiteward
+}}
+
+== Trivia ==
+* There is [[Cut Content (Silksong)/Text#Items|unused text]] in the game for two Choral Commandments.
+** One was a report of the Citadel's [[Memorium]], later replaced by a [[Lore Tablets (Silksong)#Memorium|lore tablet]] in the area.
+*: <i>Report of the Memorium and its maintenance.<br>"Containment fails. Memory lost. Excise outer.<br>Maintain inner.<br>Shellwood stasis sustained - Remember.<br>Marrowlands stasis critical - Remember.<br>Verdanian environment exceeded - Destined to forget."</i>
+** Another is an issue by the [[Minister]]s addressed to [[the Slab]] that would've originally been found on a Minister corpse in the area.
+*:<i>Sentence issued by the Citadel Ministers.<br>"Chosen of the Choir, by grace of our magnanimous Conductors you are granted mercy. When you exit that cage, an elder bug of sins absolved, you may rejoin our flock and feel our light, and never again shall your voice fall silent."</i>
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Choral Commandments had their value increased from 90 rosaries to 180.
+}}
+{{Localisation
+|DEname = Chorgebot
+|DEmeaning = Choral Commandment
+|ESname = Mandamiento coral
+|ESmeaning = Choral Commandment
+|FRname = Commandement de la chorale
+|FRmeaning = Commadment of the Choir
+|ITname = Comandamento corale
+|ITmeaning = Choral Commandment
+|JAname = 合唱者への指令
+|JAromanised = Gasshōsha e no shirei
+|JAmeaning = Commandment to the Choristers
+|KOname = 합창 계명
+|KOromanised = Hapchang gyemyeong
+|KOmeaning = Choir Commandment
+|PTname = Decreto Harmônico
+|PTmeaning = Harmonic Decree
+|RUname = Приказ для Хора
+|RUromanised = Prikaz dlja Xora
+|RUmeaning = Commandment for the Choir
+|TWname = 聖詠誡律
+|TWromanised = Shèngyǒng jiè lǜ
+|TWmeaning = same
+|ZHname = 圣咏诫律
+|ZHromanised = Shèngyǒng jiè lǜ
+|ZHmeaning = Psalm Commandment
+|CODEname = SEAL_CHIT
+}}
+{{Refs|hr=ss}}
+
+
+{{SS Nav Items}}
+[[Category:Items (Silksong)]]

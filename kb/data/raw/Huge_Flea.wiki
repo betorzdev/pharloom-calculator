@@ -1,0 +1,101 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Huge Flea.png|Hunter's Journal
+Huge Flea Roar.png|Roaring
+Huge Flea Sleeping.png|Sleeping
+Huge Flea Caged.png|Caged
+Huge Flea Festival.png|Festival
+</gallery>
+| health = 200
+| drops = None
+| damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1.2|1.1|1|1}}
+| numbers_required = 1
+| affiliation = [[Flea]]s
+| singnum=1
+}}
+
+{{Quote|Hr=Journal
+|Oversized bug, briefly consumed by anger after its long time caged.<hr/>
+I would not have guessed so large and marvellous a flea existed. I am pleased it saw sense before I had to strike a killing blow.}}
+
+The <b>Huge Flea</b> is an [[Enemies (Silksong)|enemy]] in <i>[[Hollow Knight: Silksong]]</i>. It is a large [[Flea]] initially consumed with anger that is later tamed.<ref>Huge Flea Hunter's Journal entry: <i>"Oversized bug, briefly consumed by anger after its long time caged."</i></ref>
+
+== Behaviour and Tactics ==
+Huge Flea flies about the arena, charging horizontally at [[Hornet (Silksong)|Hornet]] in a straight line when it sees her. It charges until colliding with a wall or the environment, and briefly rolls back before preparing to charge again.
+
+Huge Flea's charge and contact damage deals {{Damage|2}}.
+
+== Location ==
+The Huge Flea can initially be found in the [[Memorium]], trapped inside a cage much too small for it. Once the cage is broken, it will fight Hornet until defeated but not killed, and fly away.
+
+After being rescued, Huge Flea joins the [[Flea Caravan]] and travels with them at [[the Marrow]], [[Greymoor]], [[Blasted Steps]] or [[Fleatopia]], depending on the amount of Fleas found. It can be seen flying or sleeping among the other fleas of the caravan.
+{{Gallery
+|Image1 = Mapshot SS Huge Flea.png!Location in the Memorium.
+|Image2 = Mapshot SS Flea Caravan 01.png!Location in the Marrow
+|Image3 = Mapshot SS Flea Caravan 02.png!Location in Greymoor
+|Image4 = Mapshot SS Flea Caravan 03.png!Location in Blasted Steps
+|Image5 = Mapshot SS Flea Caravan 04.png!Location in Putrified Ducts
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Memorium 06.png!Caged in the Memorium
+|Image2 = Screenshot SS Huge Flea 02.png!Roaring
+|Image3 = Screenshot SS Huge Flea 03.png!Idle
+|Image4 = Screenshot SS Huge Flea 04.png!Charging
+|Image5 = Screenshot SS Huge Flea 05.png!Rolling
+|Image6 = Screenshot SS Huge Flea 06.png!With the Flea Caravan in the Marrow
+|Image7 = Screenshot SS Flea Caravan 02.png!Sleeping in the Marrow
+|Image8 = Screenshot SS Huge Flea 07.png!With the Flea Caravan in Greymoor
+|Image9 = Screenshot SS Flea Caravan 04.png!With the Flea Caravan in Blasted Steps
+|Image10 = Screenshot SS Huge Flea 01.png!With the Flea Caravan in Fleatopia
+|Image11 = Screenshot SS Huge Flea 08.png!During Festival of the Flea
+|Image12 = Screenshot SS Vog 05.png!In the background
+|Image13 = Screenshot SS Flea Juggle 05.png!Appearing during Flea Juggle
+|Image14 = Screenshot SS Flea Dodge 04.png!Appearing during Flea Dodge
+|Image15 = Screenshot SS Huge Flea 10.png!Appearing during Flea Bounce
+|Image16 = Screenshot SS Huge Flea 09.png!Singing to Needolin
+|Image17 = Screenshot SS Flea Caravan 08.png!Travelling with the Caravan
+}}
+
+== Trivia ==
+* Does not respond to the [[Needolin]] in enemy form. When with the Caravan, it will respond much like the other rescued fleas.
+* If the Huge Flea is among the first 5 Fleas rescued during <i>[[The Lost Fleas]]</i> [[wish]], it has a unique icon in the [[Tasks]] menu screen.
+
+{{Gallery
+| Image1 = Icon SS Flea Huge.png ! Huge Flea's icon during <i>The Lost Fleas</i>
+| Image2 = Screenshot SS Flea 01.webp ! The icons for the Huge Flea, [[Vog]], and [[Kratt]], alongside two regular Fleas
+}}
+
+{{Localisation
+|DEname = Riesenfloh
+|DEmeaning = Flea Giant
+|ESname = Pulga enorme
+|ESmeaning = Giant Flea
+|FRname = Puce Colossal
+|FRmeaning = Colossal Flea
+|ITname = Pulce Gigante
+|ITmeaning = Giant Flea
+|JAname = 巨大なノミ
+|JAromanised = Kyodaina nomi
+|JAmeaning = Giant Flea
+|KOname = 거대 벼룩
+|KOromanised = Geodae byeoruk
+|KOmeaning = Giant Flea
+|PTname = Pulga Gigante
+|PTmeaning = Giant Flea
+|RUname = Гигантская блоха
+|RUromanised = Gigantskaja bloxa
+|RUmeaning = Gigantic Flea
+|TWname = 巨大跳蚤
+|TWromanised = Jùdà tiàozǎo
+|TWmeaning = Enormous Flea
+|ZHname = 巨蚤
+|ZHromanised = Jù zǎo
+|ZHmeaning = Giant Flea
+|CODEname = GIANT_FLEA
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Enemies}}

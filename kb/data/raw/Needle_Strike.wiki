@@ -1,0 +1,89 @@
+{{SS Infobox Ability
+| title2 = <small>Learned the</small><br>Needle Strike
+| description2 = Hold ATTACK<hr/>
+Charge power in the needle, then release as a deadly attack.
+| input = Hold ATTACK
+| inventory = false
+| location = [[Blasted Steps]]
+}}
+
+The <b>Needle Strike</b> is an [[Abilities (Silksong)|Ability]] that [[Hornet (Silksong)|Hornet]] acquires in <i>[[Hollow Knight: Silksong]]</i>. It allows Hornet to charge up and release a stronger version of her regular attack based on her equipped [[Crests|Crest]].
+
+== Function ==
+{{MissingImage}}
+
+Needle Strike is charged by holding down ATTACK. White particles appear around Hornet when it is charging, and a glowing effect once it is ready. It can be held indefinitely, including between rooms, unless Hornet takes damage or is otherwise interrupted, like by entering a body of water. 
+Releasing Needle Strike in the air suspends Hornet at the same height until the animation ends. This attack can only be aimed left or right. Needle Strike generates 1 strand of [[Silk]] when most enemies are struck. For the Hunter Crest specifically, 2 strands of Silk are generated if both hits connect with an enemy.
+
+Needle Strike changes depending on the equipped [[Crest]]:
+* [[Hunter Crest]]: Hornet attacks with 2 consecutive strikes forward. Deals 1.4x [[Needle]] damage per swing, for 2.8x damage in total, granting 1 [[Silk]] each.
+* [[Reaper Crest]]: Hornet jumps up slightly and attacks above herself in a wide arc. Deals 2.5x Needle damage.
+* [[Wanderer Crest]]: Hornet dashes forward and makes 5 quick jabs forward. Deals 0.6x Needle damage per hit, for 3x Needle damage in total.
+* [[Beast Crest]]: Hornet leaps forward, and attacks above and in front of herself. Deals 2.5x Needle damage, or 3x Needle damage in fury state.
+* [[Witch Crest]]: Hornet spins and attacks all around herself, similar to [[Cyclone Slash]] in [[Hollow Knight]]. Starting at 2 hits, it can be extended to 6 hits by tapping the ATTACK button. Deals roughly 0.8x Needle damage per hit, up to 4.8x Needle damage in total if all hits of the extended attack land.
+* [[Architect Crest]]: Hornet moves forward, then attacks with a large drill-like strike that hits 5 times. Deals 0.6x Needle damage per hit, for 3x Needle damage in total.
+* [[Shaman Crest]]: Hornet fires a large wave that travels a moderate distance forward. Deals 2.3x Needle damage.
+
+The damage of Needle Strikes multiplies with other Needle damage increases, such as the Evolved Hunter Crest's Focus, Beast Crest's Fury, and [[Flintslate]].
+
+Needle Strike can instantly destroy [[Gurr the Outcast]]'s traps, and most breakable walls.
+
+[[Pin Badge]] lowers the charge time of Needle Strikes by 40%, from 1.35 seconds to 0.8 seconds.{{MissingRef}}
+
+== How to Acquire ==
+The Needle Strike can be acquired after speaking with [[Pinstress]] in [[Blasted Steps]]. When Hornet first meets the Pinstress, she asks Hornet to train with her, after which Hornet gains the ability.
+
+{{Gallery
+| Image1 = Mapshot SS Pinstress 01.png!Location in the Blasted Steps
+}}
+
+==Trivia==
+*The 1.0.27535 and 1.0.27776 versions of <i>Silksong</i> playable on PlayStation 4 and Nintendo Switch respectively, which are older than the PC launch version (1.0.28324), have the Needle Strike be named Focus Strike.<ref>[https://docs.google.com/document/d/1GaNLkTTszFKFv55DZj3Iw1hTUi6gbstSR56WXizrMAI Silksong Switch full text] on Google Docs</ref>
+*Despite not initially being done, Needle Strikes gave Silk in the <i>Hollow Knight: Silksong</i> Xbox trailer.<ref>[https://www.youtube.com/watch?v=JSfuFlhsxZY Hollow Knight: Silksong - Xbox Game Pass Reveal Trailer - Xbox & Bethesda Games Showcase 2022]</ref>
+{{Gallery
+|Image1=XboxScreenshot Needle Strike.png!<i>Silksong</i> Xbox trailer
+}}
+{{History
+|game = SS
+|1.0.28650 (Patch 2): 
+*The Needle Strike was changed to give Silk upon hitting an enemy; 1 strand for most, 2 if both [[Hunter Crest]] strikes land.
+*Adjusted damage boost that [[Flintslate]] applies to Needle Strikes from +10 per hit to +50% per hit.
+*Reduced number of hits dealt by the [[Architect Crest]]'s Needle Strike from 7 to 5.
+|1.0.28891 (Patch 3): Adjusted Needle Strike damage depending on Crest.
+|1.0.29280 (Patch 4): Fixed [[Beast Crest]]'s Needle Strike sometimes gaining unintended height when performed in the air.
+}}
+{{Localisation
+|DEname = Nadelstreich
+|DEmeaning = Needle Strike
+|ESname = Golpe concentrado
+|ESmeaning = Concentrated Strike
+|FRname = Attaque de précision
+|FRmeaning = Precision Attack
+|ITname = Attacco Concentrato
+|ITmeaning = Concentrated Attack
+|JAname = 強針撃
+|JAromanised = Tsuyo hari geki
+|JAmeaning = Strong Needle Attack
+|KOname = 집중 타격
+|KOromanised = Jipjung tagyeok
+|KOmeaning = Concentrated Strike
+|PTname = Ataque de Foco
+|PTmeaning = Focus Attack
+|RUname = Сфокусированный удар
+|RUromanised = Sfokusirovannyj udar
+|RUmeaning = Focused Strike
+|TWname = 蓄力斬
+|TWromanised = Xùlì zhǎn
+|TWmeaning = same
+|ZHname = 蓄力斩
+|ZHromanised = Xùlì zhǎn
+|ZHmeaning = Charged Slash
+|CODEname = SKILL_CHARGESLASH
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Skills}}
+
+{{#seo:|keywords=silksong, needle strike, charge attack, needle, nail art}}
+[[fr:Attaque de précision]]

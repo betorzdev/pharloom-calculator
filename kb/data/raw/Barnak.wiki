@@ -1,0 +1,101 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Barnak.png|Hunter's Journal
+Barnak Defeated.png|Defeated
+</gallery>
+|drops = None
+|health=35
+|damage_modifiers={{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 8
+|singnum=1
+}}
+{{Quote
+|Hr = Journal
+|Toothy growth that lives on cave roofs. Wraps wayward bugs with its long tongue and drags them up to be consumed.<hr/>
+Hiding its tongue amongst fronds so similar... There is impressive style to this one's trickery.
+}}
+
+<b>Barnaks</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are growths with long, vine-disguised tongues that they use to catch prey.<ref>Barnak [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Toothy growth that lives on cave roofs. Wraps wayward bugs with its long tongue and drags them up to be consumed."</i></ref>
+
+== Behaviour and Tactics ==
+Barnaks are ceiling-dwelling creatures that disguise themselves as regular vines, dangling their long tongues to ensnare anything beneath them. If [[Hornet (Silksong)|Hornet]] is caught by a Barnak's tongue, it slowly drags her upwards, though she only gets damaged once she reaches its mouth. Hornet can struggle against the Barnak's grip by attacking, jumping, or trying to move, which slows down the rate at which she is pulled up. Struggling several times (at least four times, if done in quick succession) or being attacked by another enemy breaks her free entirely. If the Barnak succeeds in pulling Hornet into its mouth, she will be damaged for {{Damage|1}} roughly every second. Performing the same struggling actions three times will free Hornet from this, but she will be damaged for at least {{Damage|1+1}} before she can escape.
+
+Barnaks deal {{Damage|1}} on direct contact with their bodies.
+
+In order to reach [[Vog]] above the [[Putrified Ducts]] [[Bellway]] station, or the room containing the area map, Hornet must intentionally get snared and pulled up by Barnaks. The [[Weighted Belt]] reduces the speed at which Barnaks drag Hornet upwards by ~33%, which can help with timing escapes during these platforming sections.
+
+Attacking the Barnak causes it to retract its tongue for a short time. The same happens when hitting its tongue directly, though this does not damage its actual body or grant any [[Silk]]. Its body can only be temporarily defeated, recovering after about 15 seconds.
+
+Barnaks can capture and eat [[Spit Squit]]s, but this does not count as a kill for the [[Hunter's Journal (Silksong)|Hunter's Journal]]. [[Black-threaded]] Spit Squits unleash a large circle of [[Black-Threading#Movesets|Void Blades]] a short time after being eaten, incapacitating the Barnaks that consumed them. Although [[Cogflies]] do not attempt to attack Barnaks, they can still be ensnared and eaten. If this happens, they will damage the enemy for 3 to 10 HP, depending on the [[Crafting Kit]] level, and apply a venom effect if the [[Pollip Pouch]] is equipped. Barnaks also eat [[Tools]] that explode on contact, such as the [[Pimpillo]] or the Bola form of [[Voltvessels]], which incapacitates them. Defeating Barnaks forces them to drop any explosive tools they are holding, but Cogflies simply disappear and Spit Squits are released as corpses, unless they are black-threaded, in which case they also disappear.
+
+Since Barnaks cannot be truly killed, the best course of action is usually to simply hit their tongues to disable them and secure a safe path. The [[Clawline]] can be used to traverse Barnak territory safely, as the Clawline's attack hits their tongues and prevents them from grabbing Hornet as she grapples past.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Eating... eat...
+* Swallow... suffer...
+* Swallow... swell...
+* Touching... tasting...
+* Slime... Slick...
+* Sliding... wet...
+}}
+
+== Location ==
+Barnaks can be found in the [[Putrified Ducts]].
+{{Gallery
+|Image1 = Mapshot SS Barnak 01.png!Locations in the Putrified Ducts
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Barnak 01.png!In the Putrified Ducts
+|Image2 = Screenshot SS Barnak 02.png!Dead
+|Image3 = Screenshot SS Barnak 09.png!Eating Hornet
+|Image4 = Screenshot SS Barnak 08.png!Reacting to the Needolin
+|Image5 = Screenshot SS Barnak 07.png!Barnak platforming
+|Image6 = Screenshot SS Barnak 03.png!Eating a [[Pimpillo]]
+|Image7 = Screenshot SS Barnak 05.png!Eating a [[Voltvessels|Voltvessel Bola]]
+|Image8 = Screenshot SS Barnak 04.png!Eating a [[Cogfly]]
+|Image9 = Screenshot SS Barnak 06.png!Eating a [[Spit Squit]]
+|Image10 = Screenshot SS Barnak 10.png!Eating a black-threaded Spit Squit
+|Image11 = Screenshot SS Putrified Ducts 10.png!Eating a [[Wardenfly]]
+}}
+
+== Trivia ==
+* Barnaks do not drop organs for the <i>[[Broodfeast]]</i> or <i>[[Runtfeast]]</i> [[wishes]].
+* The Barnak's name and function might be inspired by the [https://combineoverwiki.net/wiki/Barnacle Barnacle] enemy from the <i>[https://en.wikipedia.org/wiki/Half-Life_(series) Half-Life]</i> video game series.
+* There is a glitch where if a room containing a Barnak is left right after incapacitating a Barnak, it can properly die until Hornet rests again at a Bench.{{MissingInfo}} 
+
+{{Localisation
+|DEname = Rankepock
+|DEmeaning = From <i>ranke</i> (tendril).
+|ESname = Balanok
+|ESmeaning = From [[wikipedia:Balanus|Balano]], a plant genus of barnacles.
+|FRname = Barnak
+|FRmeaning = —
+|ITname = Balano
+|ITmeaning = From [[wikipedia:Balanus|Balano]], a plant genus of barnacles.
+|JAname = バルナク
+|JAromanised = Barunaku
+|JAkatakana = foreignenemy
+|JAmeaning = Barnak
+|KOname = 바르나크
+|KOromanised = Bareunakeu
+|KOmeaning = Barnak
+|PTname = Barnak
+|PTmeaning = —
+|RUname = Прилипал
+|RUromanised = Prilipal
+|RUmeaning = From {{lang|ru|прилипать <i>prilipat'</i>}} (to stick) and {{lang|ru|-л <i>-l</i>}} (agent suffix).
+|TWname = 巴納克
+|TWromanised = Bānàkè
+|TWmeaning = same
+|ZHname = 巴纳克
+|ZHromanised = Bānàkè
+|ZHmeaning = Barnak
+|CODEname = SWAMP_BARNACLE
+|CODEmeaning = "Swamp" sometimes internally refers to Putrified Ducts
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

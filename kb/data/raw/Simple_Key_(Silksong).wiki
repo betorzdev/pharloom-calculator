@@ -1,0 +1,145 @@
+{{Nav Games Header}}
+{{SS Infobox Item
+| title = Simple Key
+| description = Rusted key of common design. Can be used to open a range of simple locks.<hr>
+Degraded by time, it will break after a single use.
+| effects = Opens simple locks.
+| type = [[Items (Silksong)#Keys|Key]]
+| source = [[NPCs (Silksong)#Merchants|Merchants]]<br>Unique [[Roachkeeper]] drop<br>Glowing spot in [[Sands of Karak]]
+| buy = {{R|500}} (from [[Pebb]])<br>
+{{R|600}} (from [[Grindle]])<br>
+{{R|650}} (from [[Jubilana]])
+| max = 4
+}}
+
+{{Quote|Hr=SS
+|Simply forged, and simply styled. Designed to open all sorts of different locks, if they be basic enough.
+|[[Jubilana]]
+}}
+
+<b>Simple Keys</b> are [[Items (Silksong)#Keys|items]] in <i>[[Hollow Knight: Silksong]]</i>. They can be used to open simple locks. Each key can only be used once.
+
+__TOC__
+{{Clear}}
+
+== Use ==
+There are four locations where a Simple Key can be used:
+
+{| class="article-table" width="100%" data-tpt-table-id="ss-simple-keys-uses"
+! #
+! Location
+! Effect
+! Map
+|- data-tpt-row-id="key-use-bone-bottom"
+! 1
+| The lower entrance to the [[Wormways]] from [[Bone Bottom]].<ref><i>"An old stone gate with a simple keyhole."</i></ref>
+| Access to the west side of the Wormways.
+| [[File:Mapshot SS Simple Key Use Wormways.png|150x150px|center]]
+|- data-tpt-row-id="key-use-deep-docks"
+! 2
+| Central [[Deep Docks]], to the south of [[Forge Daughter]].<ref><i>"A heavy door chained with a simple padlock."</i></ref>
+| Access to the lower part of the Deep Docks without the [[Clawline]].<ref group="Note">The lower Docks can be opened from Far Fields and fully explored with Clawline without using a Simple Key.</ref>
+| [[File:Mapshot SS Simple Key Use Deep Docks.png|150x150px|center]]
+|- data-tpt-row-id="key-use-sinners-road"
+! 3
+| The [[Green Prince]]'s cell in [[Sinner's Road]]. <ref><i>"A cage with a simple lock."</i></ref>
+| The Green Prince can be encountered in [[the Citadel]].<br>In [[Act 3]], access to [[Lost Verdania]].
+| [[File:Mapshot SS Green Prince 01.png|150x150px|center]]
+|- data-tpt-row-id="key-use-high-halls"
+! 4
+| [[High Halls]], west of the [[Ventrica Station]]. <ref><i>"An ornate door closed with a simple lock."</i></ref>
+| Access to the [[High Halls#Rosary Bank|Rosary Bank]].
+| [[File:Mapshot SS Simple Key Use High Halls.png|150x150px|center]]
+|-
+|}
+
+== How to Acquire ==
+There are four Simple Keys that can be obtained.
+
+{| class="article-table" width="100%" data-tpt-table-id="ss-simple-keys-locations"
+! #
+! Location
+! Map
+|- data-tpt-row-id="key-bone-bottom" data-tpt-rowspan="2"
+! rowspan="2" | 1
+| Bought from [[Pebb]] in [[Bone Bottom]] for {{R|500}}. <ref>[[Pebb]]: <i>"Seems like just a key, but who knows what it'll unlock? I reckon it's come from the Citadel, so it must open the way to something holy!"</i></ref>
+| [[File:Mapshot SS Pebb 01.png|150x150px|center]]
+|- style="border-top: 0.1rem dashed rgba(255,255,255,0.5);"
+| In [[Act 3]], bought from [[Grindle]] in [[Blasted Steps]] for {{R|600}}. <ref>[[Grindle]]: <i>"Us snitchbugs can wriggle into any place we want, but with this key even a big oafy bug like you can get through a locked door!"</i></ref>
+| [[File:Mapshot SS Grindle 01.png|150x150px|center]]
+|- data-tpt-row-id="key-sinners-road"
+! 2
+| At the northeast of [[Sinner's Road]], dropped by a [[Roachkeeper]] after defeating it.
+| [[File:Mapshot SS Simple Key 02.png|150x150px|center]]
+|- data-tpt-row-id="key-songclave"
+! 3
+| Bought from [[Jubilana]] in [[Songclave]] for {{R|650}}, after completing <i>[[The Wandering Merchant]]</i> [[Wish]]. <ref>[[Jubilana]]: <i>"Simply forged, and simply styled. Designed to open all sorts of different locks, if they be basic enough."</i></ref>
+| [[File:Mapshot SS Jubilana 01.png|150x150px|center]]
+|- data-tpt-row-id="key-sands-of-karak"
+! 4
+| Found on a corpse at the [[Bench (Silksong)|bench]] on the eastern tip of [[Sands of Karak]].
+| [[File:Mapshot SS Simple Key 04.png|150x150px|center]]
+|}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Simple Key 01.png!Locked door in Wormways
+|Image2 = Screenshot SS Deep Docks 04.png!Locked door in Deep Docks
+|Image3 = Screenshot SS Simple Key 02.png!Green Prince's cage in Sinner's Road
+|Image4 = Screenshot SS Simple Key 03.png!Locked door of the Rosary Bank in High Halls
+}}
+
+{{Gallery
+|Image1 = Screenshot SS Pebb 01.png!Pebb in Bone Bottom
+|Image2 = Screenshot SS BlastedSteps 06.png!Grindle in Blasted Steps
+|Image3 = Screenshot SS Roachkeeper 06.png!Roachkeeper carrying a Simple Key in Sinner's Road
+|Image4 = Screenshot SS Jubilana 01.png!Jubilana in Songclave
+|Image5 = Screenshot SS Simple Key 04.png!Corpse with a Simple Key in Sands of Karak
+}}
+
+== Trivia ==
+* There's an unused sprite in the game files called [[Cut Content (Silksong)/Items#Keys|Rusted Cage Key]] which bears a strong resemblance to the Simple Key.
+
+{{Gallery
+|Image1 = Rusted Cage Key.png!Rusted Cage Key
+}}
+
+{{Localisation
+|DEname = Einfacher Schlüssel
+|DEmeaning = Simple Key
+|ESname = Llave sencilla
+|ESmeaning = Simple Key
+|FRname = Clé simple
+|FRmeaning = Simple Key
+|ITname = Chiave semplice
+|ITmeaning = Simple Key
+|JAname=単純な鍵
+|JAromanised= Tanjun na kagi
+|JAmeaning = Simple Key
+|KOname = 단순한 열쇠
+|KOromanised = Dansunhan yeolsoe
+|KOmeaning = Simple Key
+|PTname =  Chave Simples
+|PTmeaning = Simple Key
+|RUname = Простой ключ
+|RUromanised = Prostoj ključ
+|RUmeaning = Simple Key
+|TWname = 簡易鑰匙
+|TWromanised = Jiǎnyì yàoshi
+|TWmeaning = same
+|ZHname = 简易钥匙
+|ZHromanised = Jiǎnyì yàoshi
+|ZHmeaning = Simple Easy Key
+|CODEname = TOKEN_FAITH
+}}
+
+{{Hr|SS}}
+
+== Notes ==
+<references group="Note" />
+{{Refs|hr=false}}
+
+
+{{SS Nav Items}}
+[[Category:Items (Silksong)]]
+{{DISPLAYTITLE:Simple Key (''Silksong'')}}

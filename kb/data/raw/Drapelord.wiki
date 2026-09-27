@@ -1,0 +1,93 @@
+{{SS Infobox Enemy
+| hasdrop = true
+| sh1 = 6-9
+| sh2 = 8-12
+|health = 50/{{BT|100}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.9|0.9|0.7|0.7}}
+|numbers_required = 4
+|singnum=1
+}}
+{{Quote
+|Hr = Journal
+|Elder Drapefly grown big from age and consumption. Its heavy body allows it to hit much harder than its younger companions.<hr/>
+Greed will always see some bugs swell above their kin.
+}}
+
+<b>Drapelords</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are [[Drapefly|Drapeflies]] that have grown larger by eating plenty and living longer than their smaller kin.<ref>Drapelord [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Elder Drapefly grown big from age and consumption. Its heavy body allows it to hit much harder than its younger companions."</i></ref>
+
+== Behaviour and Tactics ==
+Drapelords attempt to constantly keep distance from [[Hornet (Silksong)|Hornet]] in between attacks, and fly to slightly different positions depending on the attack they are about to use:
+* <b>Swoop:</b> Flies farther away horizontally or diagonally from Hornet first, then rears back slightly before swooping in a straight line at her, pulling upwards as it nears the ground.
+* <b>Divebomb:</b> Flies high above Hornet, then dives downwards towards her.
+
+Drapelords deal contact damage of {{Damage|2}} for all attacks.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Drapelords have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Swooping and feeding...
+* Hiding, hiding...
+* Larger, hide away!
+* Smaller, catch the prey!
+}}
+
+== Location ==
+Drapelords can be found in the eastern part of the [[Memorium]], on the bridge leading to the [[Putrified Ducts]] during and after the <i>[[The Lost Merchant]]</i> wish has been promised. Outside of this wish, these enemies have a random chance to spawn upon re-entering the room; however, resting at a [[Bench (Silksong)|bench]] is not required to reset them. One also spawns every time the room is entered and the flock is triggered in the open area above the [[Whispering Vaults]] in [[Act 3]].
+
+{{Gallery
+|Image1 = Mapshot SS Drapelord 01.png!Location in the Memorium during the <i>The Lost Merchant</i> wish
+|Image2 = Mapshot SS Drapefly 10.png!Locations in the Memorium after the <i>The Lost Merchant</i> wish<br>(0-1 spawn per location)
+|Image3 = Mapshot SS Drapelord 02.png!Location in the Whispering Vaults in Act 3
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Drapelord 01.png!Emerging from a flock of Drapeflies
+|Image2 = Screenshot SS Drapelord 02.png!Idle
+|Image3 = Screenshot SS Drapelord 03.png!Swoop
+|Image4 = Screenshot SS Drapelord 04.png!Divebomb
+|Image5 = Screenshot SS Drapelord 05.png!Reacting to the Needolin
+|Image6 = Screenshot SS Jubilana 03.png!Harassing Jubilana during the <i>The Lost Merchant</i> wish
+|Image7 = Screenshot SS Drapelord 06.png!Appearing in the second wave while rescuing Jubilana
+|Image8 = Screenshot SS Drapefly 17.png!With a Drapefly in the Memorium
+|Image9 = Screenshot SS Drapefly 18.png!With a Drapefly in the Whispering Vaults in Act 3
+}}
+
+== Trivia ==
+*Drapelords are heavily inspired by bats, and are named large Citadel bats internally.
+*Drapelords constantly shed particles while flying, which are the same particles that curtains and rags break into when destroyed.
+
+{{Localisation
+|DEname = Gardinenfürst
+|DEmeaning = Drape Ruler
+|ESname = Moscardo
+|ESmeaning = From <i>mosca</i> (fly) and <i>-ardo</i> (augmentative suffix).
+|FRname = Seigneur Voletissier
+|FRmeaning = 
+|ITname = Signore dei Cenci
+|ITmeaning = Rags Lord
+|JAname = ヌノバエの長
+|JAromanised = Nunabae no osa
+|JAmeaning = Cloth Fly Lord
+|KOname = 장막군주
+|KOromanised = Jangmakgunju
+|KOmeaning = Curtain Lord
+|PTname = Trapo-mestre
+|PTmeaning = Master Rag
+|RUname = Полотняный лорд
+|RUromanised = Polotnjanyj lord
+|RUmeaning = Linen Lord
+|TWname = 帷蟲領主
+|TWromanised = Wéi chóng lǐngzhǔ
+|TWmeaning = same
+|ZHname = 帷虫之主
+|ZHromanised = Wéi chóng zhī zhǔ
+|ZHmeaning = Lord of Drape Bugs
+|CODEname = CITADEL_BAT_LARGE
+|CODEmeaning = Drapeflies are referred to as <code>CITADEL_BAT</code>
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

@@ -1,0 +1,93 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Flintflame Flyer.png|Hunter's Journal
+Flintflame Flyer Idle.png|Idle
+Flintflame Flyer Blocking.png|Blocking
+</gallery>
+| hasdrop = true
+| r1 = 14
+| r2 = 21
+| sh1 = 5-8
+| sh2 = 7-10
+|health = 60/{{BT|120}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1|0.9|0.85|0.85}}
+|numbers_required = 10
+|sing=Flintstone Flyer
+}}
+
+{{Quote
+| Hr = Journal|Brave worker carrying unstable flintflame and wearing a heavy bell to protect against potential ignition.<hr/>
+Theirs would be a high risk life, followed by a short, searing end.
+}}
+
+<b>Flintflame Flyers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are [[Dock Workers|workers]] of the [[Deep Docks]] that throw highly explosive flintflame.
+
+== Behaviour and Tactics ==
+Flintflame Flyers fly in place when idle and begin targeting Hornet once she comes near.<br>
+Being flying enemies, Flintflame Flyers attempt to keep their distance from Hornet. They attempt to be diagonally or horizontally distanced from her, though they are somewhat sluggish fliers and prioritise attacking over distancing.<br>
+Flintflame Flyers attack by hurling volatile flintflame at Hornet, which travel in an arc and bounces off surfaces. After a few seconds, or after making contact with Hornet or another enemy, the flintflame explodes in a large radius. These projectiles can also be deflected by [[Hornet (Silksong)|Hornet]]'s attacks.
+After a Flintflame Flyer is killed, its body shakes and explodes after a few seconds. All of their explosions deal {{Damage|2|type=Fire}}.
+
+Flintflame Flyers' bells make them immune to Needle bounces and their own explosions. When caught in an explosion, Flintflame Flyers cower inside their bells for a moment, making them invulnerable to Hornet's attacks as well. Other enemies still take damage from the explosion.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Flintflame Flyers have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* For grace above...
+* Smelt dug and churned...
+* Toil, and toil, and toil...
+* Tunnel, breach, bore...
+* Seek the shine... find the ore...
+* By holy light...
+}}
+
+== Location ==
+Flintflame Flyers can be found in the southeast [[Deep Docks]], in the area unlocked using a [[Simple Key (Silksong)|Simple Key]].
+
+{{Gallery
+|Image1 = Mapshot SS Flintflame Flyer 01.png!Locations in the Deep Docks
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Flintflame Flyer 01.png!In the Deep Docks
+|Image2 = Screenshot SS Flintflame Flyer 02.png!Flintflame Throw
+|Image3 = Screenshot SS Flintflame Flyer 03.png!Resulting explosion
+|Image4 = Screenshot SS Flintflame Flyer 04.png!Blocking
+|Image5 = Screenshot SS Flintflame Flyer 05.png!Singing
+}}
+{{Localisation
+|DEname = Feuerflammen-Flieger
+|DEmeaning = Flintflame Flyer
+|ESname = Portallamas
+|ESmeaning = Flame Bearer
+|FRname = Silex Ardent Ailé
+|FRmeaning = Burning Flint Wing
+|ITname = Volatore Siligneo
+|ITmeaning = Portmanteau of <i>silice</i> (flint) and <i>igneo</i> (igneous) with <i>volatore</i> (flyer).
+|JAname = エンセキバエ
+|JAromanised = Enseki bae
+|JAkatakana = enemy
+|JAmeaning = Combination of {{lang|ja|炎石 <i>enseki</i>}} (flame rock) and {{lang|ja|蝿 <i>hae</i>}} (fly).
+|KOname = 부싯불 비행자
+|KOromanised = Busitbul bihaengja
+|KOmeaning = Flintflame Flyer
+|PTname = Voador-incandescente
+|PTmeaning = Incandescent Flyer
+|RUname = Кремнепламенный летун
+|RUromanised = Kremneplamennyj letun
+|RUmeaning = Flintflame Flyer
+|TWname = 燧焰飛工
+|TWromanised = Suì yàn fēi gōng
+|TWmeaning = same
+|ZHname = 燧焰飞工
+|ZHromanised = Suì yàn fēi gōng
+|ZHmeaning = Flint Flame Flying Worker
+|CODEname=DOCK_BOMBER
+|CODEmeaning = <code>DOCK</code> internally refers to Deep Docks.
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

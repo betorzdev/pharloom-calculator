@@ -1,0 +1,94 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Servitor Boran.png|Hunter's Journal
+Servitor Boran Idle.png|Idle
+Servitor Boran Dormant.png|Dormant
+</gallery>
+| hasdrop = true
+| sh1 = 8-12
+| sh2 = 10-15
+|health = 70
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.25|1|1|1|1}}
+|numbers_required = 5
+|singnum=1
+}}
+{{Quote
+|Hr = Journal
+|Broken construct built by Weavers past, able to fire a focused beam of silklight to carve halls and chambers through ice and bone.<hr/>
+The servitor has been heavily damaged by time and the elements. Its actions have grown erratic. It seems no longer able to discern friend from foe.
+}}
+
+<b>Servitors Boran</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are broken constructs built by the [[Weavers]] to carve halls and chambers through ice and bone, and are no longer able to discern friend from foe due to heavy damage.<ref>Servitor Boran [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Broken construct built by Weavers past, able to fire a focused beam of silklight to carve halls and chambers through ice and bone. The servitor has been heavily damaged by time and the elements. Its actions have grown erratic. It seems no longer able to discern friend from foe."</i></ref>
+
+== Behaviour and Tactics ==
+Servitors Boran always start deactivated, but light up and begin their confused assault once [[Hornet (Silksong)|Hornet]] gets near. They behave erratically, skittering back and forth constantly and often missing their attacks altogether. To keep their distance from Hornet, they will back away if she gets too close. Servitors Boran have two moves:
+* <b>Bore Laser:</b> Charges up a laser for roughly 1.5 seconds, indicated by a harmless targeting beam. It tries to aim at Hornet during this time but often malfunctions, facing the wrong direction or aiming at the heat lamps. Once charged, the targeting beam blinks five times before the laser fires, causing the Servitor to recoil. This laser deals {{Damage|2}} if it hits Hornet. It also deals 100 damage to any other enemy it hits.
+** If it chooses to aim at a heat lamp, it may target a lamp that has already been broken.
+* <b>Reposition:</b> Tucks into a ball and rolls either towards or away from Hornet, unfolding once it has finished rolling. It frequently aims its Bore Laser at the lamps after using this move. It also deals 100 damage to any other enemy it rolls into.
+
+Servitors Boran often create openings for attack by aiming in the wrong direction. Hornet can easily dodge the laser by jumping over it with the right timing.
+
+Upon destruction, both broken and functional Servitors Boran drop fragments of their bodies, which can be destroyed for a total of {{S|8}} from broken Servitors Boran and {{S|9-12}} from functional ones. This total depends directly on the number of hits the fragments take, so fast destruction with [[Tools]], [[Silk Skills]], or the [[Needle Strike]] decreases the yield.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+*...keep... IMPULSELOST...
+*...peak... ascent...
+*...REFORMINSTINCT...
+*...ENEMY...
+*...obey... LOSTORHIDDEN...
+*...WAKE... guard... WAKE...
+}}
+
+== Location ==
+Servitors Boran can be found in [[Mount Fay]], in the Weaver-made passages through the mountain.
+{{Gallery
+|Image1 = Mapshot SS Servitor Boran 01.png!Locations in Mount Fay
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Servitor Boran 02.png!Inactive
+|Image2 = Screenshot SS Servitor Boran 06.png!Activation
+|Image3 = Screenshot SS Servitor Boran 03.png!Bore Laser
+|Image4 = Screenshot SS Servitor Boran 08.png!Bore Laser rune
+|Image5 = Screenshot SS Servitor Boran 04.png!Reposition
+|Image6 = Screenshot SS Servitor Boran 05.png!Destroying a heat lamp
+|Image7 = Screenshot SS Servitor Boran 07.png!Singing
+|Image8 = Screenshot SS Servitor Boran 01.png!Broken Servitors Boran
+|Image9 = Screenshot SS Servitor Boran 09.png!Breakable wall containing broken Servitors Boran
+}}
+
+==Trivia==
+* The silklight beam fired by Servitors Boran uses the same windup and firing sound, as well as the sprites of the original [[Silkshot]]'s laser.
+* The head-orb design of Servitors Boran is used for the Weaver heat lamps in [[Mount Fay]].
+
+{{Localisation
+|DEname = Servitor Boran
+|DEmeaning = —
+|ESname = Servidor Boran
+|ESmeaning = Servitor Boran
+|FRname = Serviteur Boran
+|FRmeaning = Servitor Boran
+|ITname = Servitore Foram
+|ITmeaning = Servitor Boran
+|JAname= 従事者ボラン
+|JAromanised= Jūjisha boran
+|JAmeaning = Worker Boran
+|KOname = 시종 보란
+|KOromanised = Sijong boran 
+|KOmeaning = Servant Boran
+|PTname = Servitor Boran
+|PTmeaning = —
+|RUname = Служитель Боран
+|RUromanised = Služitel' Boran
+|RUmeaning = Servant Boran
+|ZHname = 仆从博兰
+|ZHromanised = Púcóng bólán
+|ZHmeaning = Servitor Boran
+|CODEname = WEAVER_SERVITOR_LARGE
+|CODEmeaning = 
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

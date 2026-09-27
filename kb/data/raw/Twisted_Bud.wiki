@@ -1,0 +1,88 @@
+{{SS Infobox Item
+| image = <gallery>
+Twisted Bud Idle.png|Unselected
+Twisted Bud Selected.png|Selected
+</gallery>
+| source = [[Bilewater]]
+| type = [[Items (Silksong)#Deliverable|Deliverable]]
+| description = Contorted mass of ashen vine. Cries out incessantly.
+}}
+{{Quote
+|Hr=SS
+|The time... the time of birth approaches. The bud cries. Yearning. The final rite may begin. 
+|[[Greyroot]]
+}}
+The <b>Twisted Bud</b> is a [[Items (Silksong)#Deliverable|deliverable item]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+The <b>Twisted Bud</b> can be given to [[Greyroot]] in [[Shellwood]] to start and complete the <i>[[Rite of Rebirth]]</i> wish. 
+
+Completing this wish leads to the <i>[[Infestation Operation]]</i> wish, begun by speaking to [[Yarnaby]] in [[Greymoor]].
+
+The Twisted Bud produces a constant cry while the inventory is open, which can also be heard on adjacent screens of the menu.
+
+{{Gallery
+|Image1 = Mapshot SS Greyroot.png!Location in Shellwood
+|Image2 = Screenshot SS Greyroot 02.png!Greyroot in Shellwood
+}}
+
+== Curse ==
+{{Main|Cursed Crest}}
+After finishing the <i>[[Rite of Rebirth]]</i> wish by giving [[Greyroot]] the Twisted Bud, the bud subsequently infests Hornet's shell and curses her. 
+
+While [[Hornet (Silksong)|Hornet]] is cursed, the Silk Spool is limited to 3 strands, preventing the usage of [[Bind]] and [[Silk Skills]]. She is also forced to use the [[Cursed Crest]] and cannot change it. The Cursed Crest prevents usage of any tools at all, including ones equipped in the [[Vesticrest]].
+
+Completing the <i>[[Infestation Operation]]</i> wish frees Hornet from the curse and grants the [[Witch Crest]].
+
+The [[Achievements (Silksong)|Twisted Child Achievement]] is awarded for defeating [[Grand Mother Silk]] while cursed.
+
+== How to Acquire ==
+The Twisted Bud can be found in [[Bilewater]], in a crib-like root. This area is accessed by falling from a hidden passage in the easternmost side of [[Whispering Vaults]]. This area cannot be accessed from other entrances into Bilewater, as the room has a gate that is opened from above.
+
+{{Gallery
+|Image1 = Mapshot SS Twisted Bud.png!Location in Bilewater
+|Image2 = Screenshot SS Twisted Bud 01.png!Crib-like Root
+}}
+
+== Achievements ==
+{{Achievement|game=silksong|Twisted Child}}
+
+== Trivia ==
+* Going off its internal name, the Twisted Bud is based on a [[wikipedia:Mandrake|mandrake]], a real life species of toxic plants.
+** In European folklore, mandrakes are believed to be sentient, and would cry if uprooted from the ground, similarly to the Twisted Bud.
+* If the [[Needolin]] is played for the Twisted Bud while it is still in its "crib," the Bud whimpers quietly instead of loudly crying. Once the playing stops, it resumes wailing.
+
+{{Localisation
+|DEname = Verdrehte Knospe
+|DEmeaning = Twisted Bud
+|ESname = Cogollo Retorcido
+|ESmeaning = Twisted Bud
+|FRname = Mandrago
+|FRmeaning = From <i>Mandragora</i><br><small><i>[[wikipedia:Mandragora_(genus)|Mandragora]]</i> a plant genus which mandrakes belong to.</small>
+|ITname = Bocciotorto
+|ITmeaning = Portmanteau of <i>bocciolo</i> (bud) and <i>ritorto</i> (twisted).
+|JAname =ねじれた芽
+|JAromanised = Nejiretame
+|JAmeaning = Twisted Bud
+|KOname = 뒤틀린 싹
+|KOromanised = Dwiteullin ssag
+|KOmeaning = Twisted Sprout
+|PTname = Broto Retorcido
+|PTmeaning = Twisted Sprout
+|RUname = Искривлённый бутон
+|RUromanised = Iskrivlënnyj buton
+|RUmeaning = Curved Bud
+|TWname = 畸芽
+|TWromanised = Jī yá
+|TWmeaning = same
+|ZHname = 畸芽
+|ZHromanised = Jī yá
+|ZHmeaning = Malformed Bud
+|CODEname = MANDRAKE</code><br><code>WITCH_ITEM
+|CODEmeaning = Refers to [[wikipedia:Mandrake|mandrakes]], a real life species of toxic plants. 
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Items}}
+[[fr:Mandrago]]

@@ -1,0 +1,73 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Kakri.png|Hunter's Journal
+Kakri Idle.png|Idle
+</gallery>
+|drops = None
+|health = 60
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.4|1.2|1|1|1}}
+|numbers_required = 10<br>(Instantly completed on [[Crust King Khann]]'s death)
+}}
+{{Quote
+|Hr = Journal
+|Lithe, winged scouts frequently paired with their heavier brethren.<hr/>
+Its training resembles my own, favouring fast strikes and rapid movement. Once a hunter, perhaps?
+}}
+
+<b>Kakris</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. Dexterous flying scouts wielding blades, they are members of the [[Order of Karak]], long lost to time and living on only in memory.
+
+== Behaviour and Tactics ==
+Kakris are flying enemies and frequently dart between aerial positions. They often flit about before darting just out of Hornet's horizontal range and performing one of two attacks:
+* <b>Triple Slash:</b> Rears back slightly before slashing thrice, moving forward slightly on the first slash. Deals {{Damage|1+1|}} if Hornet is hit by any of the slashes.
+* <b>Corkscrew Dash:</b> Charges up briefly and does a horizontal dive towards Hornet whilst spinning with their blades, going in a very slight upwards arc. If Hornet is hit by this attack at any time, it deals {{Damage|1+1}}.
+
+== Location ==
+Kakris can only be found in [[Crust King Khann]]'s [[Elegy of the Deep|Memory]] of the [[Coral Tower]] during [[Acts|Act 3]].
+
+{{Gallery
+|Image1 = Mapshot SS Coral Tower.png
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Kakri 01.png!Idle
+|Image2 = Screenshot SS Kakri 02.png!Corkscrew Dash
+|Image3 = Screenshot SS Kakri 03.png!Triple Slash
+}}
+
+== Trivia ==
+* Kakris do not respond to the [[Needolin]].
+{{Localisation
+|DEname = Kakri
+|DEmeaning = —
+|ESname = Kakri
+|ESmeaning = —
+|FRname = Kakri
+|FRmeaning = —
+|ITname = Kakri
+|ITmeaning = —
+|JAname = カクリ
+|JAromanised = Kakuri
+|JAkatakana = foreignenemy
+|JAmeaning = Kakri
+|KOname = 카크리
+|KOromanised = Kakeuri
+|KOmeaning = Kakri
+|PTname = Kakri
+|PTmeaning = —
+|RUname = Кэкри
+|RUromanised = Kèkri
+|RUmeaning = Kakri
+|TWname = 卡卡利
+|TWromanised = Kǎkǎlì
+|TWmeaning = same
+|ZHname = 卡卡利
+|ZHromanised = Kǎkǎlì
+|ZHmeaning = Kakri
+|CODEname=CORAL_FLYER
+|CODEmeaning=Other Order of Karak internal names begin with "Coral"
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+[[zh:卡卡利]]

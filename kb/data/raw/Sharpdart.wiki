@@ -1,0 +1,74 @@
+{{SS Infobox Skill
+| damage formula = (2.75x [[Needle]]) + <br> (0.25x [[Needle]]) x3
+| damage total = 14/25/36/47/58 <br> (main hit) <br> 1/2/3/4/5 (small 3 hits) <br> 17/31/45/59/73 (total)
+| effect =  Dashes through and damages enemies while being unable to be hit by them.
+| location = [[Weavenest Karn]]
+| image = Icon_SS_Sharpdart.png
+| description = Deadly Weaver technique. Pierce through enemies in a blur of blade and Silk.
+| description2 = Pierce through enemies in a blur of blade and Silk.<hr/>Silk Skills can be equipped in the Crest screen of the Menu.
+}}
+
+<b>Sharpdart</b> is a [[Skills|Skill]] in <i>[[Hollow Knight: Silksong]]</i>. It allows [[Hornet (Silksong)|Hornet]] to dash forward in a blur of blade and [[Silk]] that pierces [[Enemies (Silksong)|enemies]].
+
+== Function ==
+Hornet dashes forward with the [[Needle]] extended, passing through and damaging enemies, followed by a set of 3 small slashes on each enemy hit. Sharpdart deals [[Damage Values and Enemy Health (Silksong)#Needle|2.75x Needle]] [[Heavy Damage]] on the dash and 0.25x Needle Damage on the smaller strikes, rounding up, resulting in a total of 3.5x Needle Damage. The three extra hits are not affected by [[Shaman Crest]] or [[Volt Filament]].
+
+During the dash and for a brief period afterwards, Hornet cannot be hit by enemy attacks or take contact damage from enemies. However, she can still be hit by environmental hazards such as spikes. Furthermore, there is a brief delay between the button for the skill being input and the dash occurring where Hornet is still fully vulnerable and the dash can be interrupted.
+
+=== Modifiers ===
+* [[Volt Filament]] electrifies Sharpdart, increasing the damage of the initial hit by 25% and adding a tick of 5 damage.
+* [[Shaman Crest]] sheathes Sharpdart in Soul, increasing the damage of the initial hit by 40%.
+** Volt Filament and Shaman Crest's damage increases add together to grant +65% damage.
+* [[Egg of Flealia]] reduces the cost of Sharpdart to 3 [[Silk]] while at full health.
+
+== How to Acquire ==
+Sharpdart can be acquired from a [[Weaver Burial Spire]] in [[Weavenest Karn]] of the [[Wormways]], which requires the [[Needolin]] to enter. [[Clawline]] is recommended to reach the Needolin door, though reaching it with just [[Drifter's Cloak]] and [[Swift Step]] is possible.<ref>[https://www.youtube.com/watch?v=FMh-vYr3VO0 Silksong – Early Weavenest Karn Sharpdart No Clawline, Act 1]</ref>
+
+{{Gallery
+| Image1 = Mapshot SS Sharpdart.png!Location in the Wormways
+| Image2 = Screenshot SS Wormways 10.png!Weaver Spire
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Sharpdart.png ! Splash Art
+|Image2 = Icon SS Sharpdart Art.png ! Splash Art
+}}
+{{History
+|game = SS
+|1.0.28891 (Patch 3): Sharpdart's damage was slightly increased.
+}}
+{{Localisation
+|DEname = Scharfpfeil
+|DEmeaning = Sharp Arrow
+|ESname = Dardo veloz
+|ESmeaning = Swift Dart
+|FRname = Dard aiguisé
+|FRmeaning = Sharpened Dart
+|ITname = Dardo Affilato
+|ITmeaning = Sharp Dart
+|JAname = シャープダート
+|JAromanised = Shāpudāto
+|JAkatakana = foreign
+|JAmeaning = Sharpdart
+|KOname = 날카로운 찌르기
+|KOromanised = Nalkaroun jjireugi
+|KOmeaning = Sharp Sting
+|PTname = Dardo Afiado
+|PTmeaning = Sharp Dart
+|RUname = Острожал
+|RUromanised = Ostrožal
+|RUmeaning = Sharpsting
+|TWname = 絲刃衝刺
+|TWromanised = Sī rèn chōngcì
+|TWmeaning = same
+|ZHname = 丝刃冲刺
+|ZHromanised = Sī rèn chōngcì
+|ZHmeaning = Silk Blade Dash
+|CODEname = SKILL_SILKDASH</code><br><code>SILKCHARGE
+}}
+
+{{Refs|hr=SS}}
+
+{{SS_Nav_Skills}}
+[[fr:Dard aiguisé]]

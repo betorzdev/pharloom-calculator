@@ -1,0 +1,107 @@
+{{Navbar
+|icons=true
+|page1=Hornet Statuette
+|page2=Shard Bundle
+|page3=Beast Shard
+|page4=Pristine Core
+|icon5={{Steel Soul Icon Mini|SS}} 
+|page5=Growstone
+}}
+{{Steel Soul Header|SS}}
+{{SS Infobox Item
+| image = <gallery>
+Growstone 4.png|Stage 4
+Growstone 3.png|Stage 3
+Growstone 2.png|Stage 2
+Growstone 1.png|Stage 1
+</gallery>
+| description = Cold, steely stone with remarkable regrowth capacity.<hr>
+If shattered into shell shards, it will reform over time.
+| effects = Provides {{S|[[Shell Shards]]}} in slowly growing quantities
+| type = [[Items (Silksong)#Consumables|Consumable]]
+| source = [[Steel Seer Zi]]
+}}
+
+{{Quote
+|Hr=SS
+|A small gift for you, pale It... for the thought, complex... rock of the home spear... and of Zi's birth. May it aid your further action in this land.
+|[[Steel Seer Zi]]
+}}
+
+The <b>Growstone</b> is a [[Items (Silksong)#Consumables|consumable item]] in <i>[[Hollow Knight: Silksong]]</i>. It is exclusive to [[Steel Soul Mode (Silksong)|Steel Soul Mode]].
+
+== Use ==
+The Growstone generates [[Shell Shards]] over time, indicated visually by four growth stages. It will grow by one stage when [[Hornet (Silksong)|Hornet]] rests at a [[Bench (Silksong)|bench]] after 20 minutes of active gameplay have passed (not while paused, in the inventory, or loading).<ref group=Code><code>GrowstoneState</code> incremented in <code>Gamemanager.TimePasses()</code>.</ref>
+
+Shell Shards can be collected by using the Growstone from the inventory, which shatters and reverts back to growth stage 1. The item is reusable and cannot be destroyed.
+
+{| class="article-table"
+! Growth
+! Time
+! Shards<ref group=Code><code>Growstone</code> in <code>collectableitems.bundle</code>.</ref>
+|-
+! Stage 1
+| 0m - 20m
+| None
+|-
+! Stage 2
+| 20m - 40m
+| {{S|30 – 45}}
+|-
+! Stage 3
+| 40m - 60m
+| {{S|75 – 95}}
+|-
+! Stage 4
+| 60m+
+| {{S|120 – 140}}
+|}
+
+
+== How to Acquire ==
+The Growstone can only be acquired in [[Steel Soul Mode (Silksong)|Steel Soul Mode]] by finding [[Steel Seer Zi]] inside a hidden cave within [[Blasted Steps]], and completing her [[Wishes#Unique Wishes|Wish]] <i>[[A Vassal Lost]]</i>.
+
+{{Gallery
+|Image1 = Mapshot SS Steel Seer Zi.png!Location of Steel Seer Zi in Blasted Steps
+|Image2 = Screenshot SS Steel Seer Zi 01.png!Steel Seer Zi in Blasted Steps
+}}
+
+{{Localisation
+|DEname = Wuchsstein
+|DEmeaning = Growstone
+|ESname = Piedra de brote
+|ESmeaning = Sprout Stone
+|FRname = Pierre régénérante
+|FRmeaning = Regeneration Stone
+|ITname = Pietra della crescita
+|ITmeaning = Stone of Growth
+|JAname = 成長する石
+|JAromanised = Seichō suru ishi
+|JAmeaning = Growing Stone
+|KOname = 성장의 돌
+|KOromanised = Seongjangui dol
+|KOmeaning = Stone of Growth
+|PTname = Regenelita
+|PTmeaning = Portmanteau of <i>regenerar</i> (regenerate) and <i>-lita</i> (suffix for rocks or minerals).
+|RUname = Камень роста
+|RUromanised = Kamen' rosta
+|RUmeaning = Stone of Growth
+|TWname = 生衍石
+|TWromanised = Shēng yǎn shí
+|TWmeaning = same
+|ZHname = 生衍石
+|ZHromanised = Shēng yǎn shí
+|ZHmeaning = Grow Stone or Multiply Stone
+|CODEname = GROWSTONE
+|CODEmeaning = 
+}}
+
+{{Refs|hr=SS}}
+
+== Code References ==
+<references group="Code"/>
+
+
+{{SS Nav Items}}
+[[Category: Items (Silksong)]]
+[[Category:Steel Soul Mode (Silksong)]]

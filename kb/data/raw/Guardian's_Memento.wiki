@@ -1,0 +1,75 @@
+{{SS Infobox Item
+| image = <gallery>
+Guardian's Memento.png|Inventory
+Guardian's Memento Shelf.png|Bellhome
+</gallery>
+| source = Beat [[Shrine Guardian Seth|Seth]]'s scores in all the [[Festival of the Flea]] games
+| description = Aged medallion of the wanderer Seth. A gift given in respect of great skill.
+}}
+
+{{Quote|Hr=SS
+|In fact, for my deep respect I insist you take this small medallion. I found it within my belongings, and know not where I came upon it, but it has a most pleasant sense.
+Let it serve as marker of a friendship I feel has only just begun.
+|[[Seth]]
+}}
+The <b>Guardian's Memento</b> is a [[Materium#Mementos|Memento]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+
+The memento can be displayed on a shelf in the [[Bellhome]] after interacting with the desk.
+
+It appears in the middle-left slot of the shelving.
+
+{{Gallery
+|Image1 = Mapshot SS Bellhome.png!Location in Bellhart
+|Image2 = Screenshot SS Bellhart 09.png!Displayed inside Bellhome in Bellhart
+}}
+
+== How to Acquire ==
+Given by [[Shrine Guardian Seth|Seth]] after beating all of his high scores in the [[Festival of the Flea]] games at [[Fleatopia]]. Note that Hornet tying her score with Seth's does not count as a victory.
+
+{{Gallery
+|Image1 = Mapshot SS Seth 05.png!Location in Fleatopia
+|Image2 = Screenshot SS Seth 05.png!Seth in Fleatopia
+}}
+
+== Trivia ==
+* The Guardian's Memento is a recoloured sprite of the [[Cut_Content_(Silksong)/Items#Materium|unused Flea Spirit Memento]], while its sprite while displayed in the Bellhome is a recoloured sprite of the unused Fleatopia Memento.
+{{Gallery
+|Image1 = Flea spirit memento.png!Flea Spirit Memento
+|Image2 = Flea Memento Shelf.png!Fleatopia Memento
+}}
+
+{{Localisation
+|DEname = Wächter-Memento
+|DEmeaning = Guardian Memento
+|ESname = Recuerdo del guardián
+|ESmeaning = Memento of the Guardian
+|FRname = Souvenir du gardien
+|FRmeaning = Memento of the Guardian
+|ITname = Cimelio del guardiano
+|ITmeaning = Heirloom of the Guardian
+|JAname = 守護者のメメント
+|JAromanised= Shugosha no memento
+|JAmeaning = Guardian's Memento
+|KOname = 수호자의 증표
+|KOromanised = Suhojaui jeungpyo 
+|KOmeaning = Guardian's Mark
+|PTname = Memento do Guardião
+|PTmeaning = Guardian's Memento 
+|RUname = Сувенир от Стража
+|RUromanised = Suvenir ot Straža 
+|RUmeaning = Souvenir from the Guardian
+|TWname = 守衛者紀念章
+|TWromanised = Shǒuwèi zhě jìniànzhāng
+|TWmeaning = Guardian's Memento
+|ZHname = 守卫者忆痕
+|ZHromanised = Shǒuwèi zhě yì hén
+|ZHmeaning = Guardian's Memory Mark
+|CODEname = SETH_MEMENTO
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

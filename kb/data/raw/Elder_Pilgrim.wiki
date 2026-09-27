@@ -1,0 +1,115 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Elder Pilgrim.png|Hunter's Journal
+Elder Pilgrim Idle.png|Idle
+Elder Pilgrim Without Shawl.png|Without Shawl
+</gallery>
+| hasdrop = true
+| r1 = 12
+| r2 = 20
+| sh1 = 4-6
+| sh2 = 5-8
+| drops = [[Pilgrim Shawl]]
+| health = 30/{{BT|120}} 
+| damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1.2|1|1|1}}
+| numbers_required = 5
+|singnum=1
+}}
+
+{{Quote
+| Thick-set bug consumed by haunted thread. Uses their solid frame to crush others.<hr/>
+A lucky bug to be able to grow old. Pharloom's roads take most much earlier.
+| Hr = Journal
+}}
+
+<b>Elder Pilgrims</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are older pilgrims consumed by the [[Haunting]] who use their solid frame to crush others.<ref>Elder Pilgrim [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Thick-set bug consumed by haunted thread. Uses their solid frame to crush others. A lucky bug to be able to grow old."</i></ref> They are incredibly rare, with most appearances either being one-time events or RNG-based.
+
+== Behaviour and Tactics ==
+Elder Pilgrims naturally wander around slowly, pausing on occasion.<br>
+Once they detect [[Hornet (Silksong)|Hornet]], they jump into the air above where she was first detected, hover for a brief moment, and then slam themselves directly down to the ground to deal contact damage.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Elder Pilgrims have their health quadrupled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* There is no pain, nor fear, nor death...
+* Am I worthy?
+* The path... the holy path...
+* My soul... my shell. For you!
+* My faith... my reward...
+* Raise me higher! Pull me closer!
+* Lives end, journeys begin...
+* Raise my shell! Pull me closer!
+* Shining bright, our Citadel waits...
+* Pull us higher, ever higher...
+* We will climb! Climb! Climb forever!
+}}
+
+Unique Elder Pilgrim in [[the Marrow]]:
+{{SS Needolin|columns=2|
+* What haunts us?
+* Thread... holds memory...
+* Whose whispers do I hear?
+* Song... thread... resonates...
+}}
+
+== Location ==
+Elder Pilgrims have a 1/3 chance of spawning on the left side of the entrance to [[Chapel of the Wanderer]] in [[Bone Bottom]] during [[Acts|Acts 1 and 2]], and a 2/3 chance during [[Act 3]].
+
+After acquiring [[Cling Grip]], a unique non-respawning Elder Pilgrim can be found in a small room near the top of [[the Marrow]].
+
+In Act 3, they can always be found in [[Lumble the Lucky|Lumble the Lucky's]] room at the [[Blasted Steps]], up until the [[Lost Garmond]] fight.<br>
+There is also a chance for one of them to be fighting [[Shakra]] outside the [[Shellwood]] exit of [[Bellhart]], or outside the [[Greymoor]] exit.
+
+{{Gallery
+|Image1 = Mapshot SS Elder Pilgrim 01.png!Location in Bone Bottom
+|Image2 = Mapshot SS Elder Pilgrim 03.png!Location in the Marrow after Cling Grip, does not respawn
+|Image3 = Mapshot SS Elder Pilgrim 02.png!Location in the Blasted Steps in Act 3, only before <i>[[Hero's Call]]</i>
+|Image4 = Mapshot SS Elder Pilgrim 04.png!Location in Shellwood in Act 3, only while fighting Shakra
+|Image5 = Mapshot SS Elder Pilgrim 05.png!Location in Greymoor in Act 3, only while fighting Shakra
+}}
+
+== Gallery ==
+{{Gallery
+|Image1=Screenshot SS Elder Pilgrim 01.png!In the Marrow
+|Image2=Screenshot SS Elder Pilgrim 02.png!Outside the Chapel of the Wanderer
+|Image3=Screenshot SS Elder Pilgrim 03.png!In the Blasted Steps in Act 3
+|Image4=Screenshot SS Elder Pilgrim 04.png!Fighting Shakra in Shellwood in Act 3
+|Image5=GIF SS Elder Pilgrim 01.gif!Getting haunted
+|Image6=Screenshot SS Elder Pilgrim 05.png!Attacking
+|Image7=Screenshot SS Elder Pilgrim 06.png!Responding to the Needolin
+|Image8=Screenshot SS Elder Pilgrim 07.png!Without shawl during <i>[[Garb of the Pilgrims]]</i>
+}}
+
+== Trivia ==
+* The unique Elder Pilgrim found in the Marrow is a leftover from a cut NPC called [[Cut Content (Silksong)/NPCs#Learned Pilgrim|Learned Pilgrim]].
+
+{{Localisation
+|DEname = Pilgerältester
+|DEmeaning = Eldest Pilgrim
+|ESname = Peregrino anciano
+|ESmeaning = Elder pilgrim
+|FRname = Pèlerin Ancien
+|FRmeaning = Elder Pilgrim
+|ITname = Pellegrino Anziano
+|ITmeaning = Elder Pilgrim
+|JAname = 老いた巡礼者
+|JAromanised = Oita junrei-sha
+|JAmeaning = Aged Pilgrim
+|KOname = 장로 순례자
+|KOromanised = Jangno sullyeja
+|KOmeaning = Elder Pilgrim
+|PTname = Peregrino-ancião
+|PTmeaning = Elder Pilgrim
+|RUname = Пожилой пилигрим
+|RUromanised = Požiloj piligrim
+|RUmeaning = Elder Pilgrim
+|ZHname = 年迈朝圣者
+|ZHromanised = Niánmài cháoshèngzhě
+|ZHmeaning = Elderly Pilgrim
+|CODEname=PILGRIM_05
+|CODEmeaning = Generic name shared with [[Pilgrim Pouncer|01]], [[Pilgrim Hulk|02]], [[Pilgrim Groveller|03]], and [[Pilgrim Hornfly|04]]
+}}
+{{Refs|hr=ss}}
+{{SS Nav Enemies}}

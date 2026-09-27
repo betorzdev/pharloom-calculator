@@ -1,0 +1,77 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Steelspine Kai.png|Hunter's Journal
+Steelspine Kai Attacking.png|Attacking
+</gallery>
+|drops = None
+|health = 5
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 15<br>(Instantly completed on [[Crust King Khann]]'s death)
+}}
+{{Quote
+|Hr = Journal
+|Toughened Kai capable of extending sharp spikes from within its shellsack.<hr/>
+Seeming soft, but hiding a sharp surprise. Any larger predator attempting a bite would learn a pointed and painful lesson.
+}}
+
+<b>Steelspine Kais</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are plump floaters able to extend sharp spikes from within their bodies, long lost to time and living on only in memory. 
+
+== Behaviour and Tactics ==
+Floats around back and forth slowly.<br>
+Suddenly extends spines all over its body, as well as moving towards Hornet slightly if she gets too close.<br>
+Deals {{Damage|1}} of contact damage for all attacks.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* The crust covers...
+* The crust conceals...
+* Our shells made strong...
+* Our nest made secret...
+}}
+
+== Location ==
+Steelspine Kais can only be found in [[Crust King Khann]]'s [[Elegy of the Deep|Memory]] of the [[Coral Tower]] during [[Acts|Act 3]].
+
+{{Gallery
+| Image1 = Mapshot SS Coral Tower.png
+}}
+
+== Gallery ==
+{{Gallery
+| Image1 = Screenshot SS Steelspine Kai 01.png!Idle
+| Image2 = Screenshot SS Steelspine Kai 02.png!Attacking
+}}
+
+{{Localisation
+|DEname = Stahlstachel-Kai
+|DEmeaning = Steel Spike Kai
+|ESname = Kai de púas de acero
+|ESmeaning = Spikes of Steel Kai
+|FRname = Kai Épine-d'acier
+|FRmeaning = Spine of Steel Kai
+|ITname = Kai Spinacciaio
+|ITmeaning = Steelspine Kai
+|JAname = トゲカイ
+|JAromanised = Toge kai
+|JAmeaning = Combination of {{lang|ja|刺}} <i>toge</i> (thorn) and {{lang|ja|カイ}} <i>kai</i> (Kai).
+|KOname = 강철가시 카이
+|KOromanised = Gangcheolgasi kai
+|KOmeaning = Steel Thorn Kai
+|PTname = Kai Espinha-de-aço
+|PTmeaning = Steelspine Kai
+|RUname = Кай-железоспин
+|RUromanised = Kaj-železospin
+|RUmeaning = Ironspine Kai
+|TWname = 鋼棘凱蟲
+|TWromanised = Gāng jí kǎi chóng
+|TWmeaning = same
+|ZHname = 钢棘凯虫
+|ZHromanised = Gāng jí kǎi chóng
+|ZHmeaning = Steel Spine Kai Bug
+|CODEname=SPIKE_SWIMMER
+|CODEmeaning=[[Spinebeak Kai]]s are internally known as "Poke Swimmers"
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

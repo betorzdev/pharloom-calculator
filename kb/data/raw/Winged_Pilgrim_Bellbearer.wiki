@@ -1,0 +1,108 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Winged Pilgrim Bellbearer.png|Hunter's Journal
+Winged Pilgrim Bellbearer Without Shawl.png|Without Shawl
+</gallery>
+| hasdrop = true
+| r1 = 6
+| r2 = 9
+| sh1 = 4-6
+| sh2 = 5-8
+|drops = [[Pilgrim Shawl]]
+|health = 20/{{BT|40}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.4|1.2|1|1|1}}
+|numbers_required = 10
+|sing=Pilgrim Bellbearer
+|singnum=2
+}}
+{{Quote
+|Hr = Journal
+|Pilgrim endowed with large wings, carrying a brace of iron bells. <hr/>On uneven terrain their union of flight and range can prove a challenge even for me.
+}}
+
+<b>Winged Pilgrim Bellbearers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are pilgrims possessing large wings along with carrying a brace of bells.<ref>Winged Pilgrim Bellbearer [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Pilgrim endowed with large wings, carrying a brace of iron bells."</i></ref>
+
+== Behaviour and Tactics ==
+Winged Pilgrim Bellbearers either start off flying back and forth in a small area, or clinging to a wall and taking flight once Hornet comes near.<br>
+Once they are targeting Hornet, they try to fly so they are diagonally above and away from Hornet, flying further away to keep their distance if she gets close. 
+
+Once Hornet is in range, Winged Pilgrim Bellbearers toss an iron bell at her that travels in a heavy arc, bouncing off a surface once before breaking on the next impact. The bell can be hit back at the Pilgrim or any other enemies in the room, dealing the same amount of damage that a needle hit would.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Winged Pilgrim Bellbearers have their health doubled. They gain one of the following [[Black-Threading#Movesets|void attacks]]: Void Blades, Void Tendrils, or Void Projectiles.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* There is no pain, nor fear, nor death...
+* Am I worthy?
+* The path... the holy path...
+* My soul... my shell. For you!
+* My faith... my reward...
+* Raise me higher! Pull me closer!
+* Lives end, journeys begin...
+* Raise my shell! Pull me closer!
+* Shining bright, our Citadel waits...
+* Pull us higher, ever higher...
+* We will climb! Climb! Climb forever!
+}}
+
+== Location ==
+Winged Pilgrim Bellbearers can mainly be found in the western areas of Pharloom, appearing twice in the vertical corridor west of the [[Shellwood]] Bellway, twice in a vertical area in the [[Wormways]], and again in the [[Blasted Steps]].<br>
+During [[Act 3]], a Winged Pilgrim Bellbearer can be found in [[Greymoor]] in the tunnel east of [[Halfway Home]].
+
+{{Gallery
+|Image1 = Mapshot SS Winged Pilgrim Bellbearer 03.png!Location in Shellwood
+|Image2 = Mapshot SS Winged Pilgrim Bellbearer 01.png!Location in the Wormways
+|Image3 = Mapshot SS Winged Pilgrim Bellbearer 04.png!Location in the Blasted Steps
+|Image4 = Mapshot SS Winged Pilgrim Bellbearer 02.png!Location in Greymoor in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Winged Pilgrim Bellbearer 01.png!In Shellwood
+|Image2 = Screenshot SS Winged Pilgrim Bellbearer 02.png!In the Wormways
+|Image3 = Screenshot SS Winged Pilgrim Bellbearer 03.png!In the Blasted Steps
+|Image4 = Screenshot SS Winged Pilgrim Bellbearer 04.png!In Greymoor in Act 3
+|Image5 = Screenshot SS Winged Pilgrim Bellbearer 05.png!On the wall
+|Image6 = Screenshot SS Winged Pilgrim Bellbearer 06.png!Throwing a bell
+|Image7 = Screenshot SS Winged Pilgrim Bellbearer 07.png!Responding to the Needolin
+|Image8=Screenshot SS Memorium 05.png!Corpses in the Memorium
+|Image9 = Screenshot SS Winged Pilgrim Bellbearer 08.png!Without shawl during <i>[[Garb of the Pilgrims]]</i>
+}}
+
+==Trivia==
+* Winged Pilgrim Bellbearer is the longest enemy name in both <i>Hollow Knight: Silksong</i> and <i>[[Hollow Knight]]</i>, at 23 letters excluding spaces, tied with [[Forebrothers Signis & Gron]].
+* Winged Pilgrim Bellbearers and their [[Choir Bellbearer|choir disciple counterparts]] have the same voicelines as the ground [[Pilgrim Bellbearer|Pilgrim Bellbearers]].
+
+{{Localisation
+|DEname = Geflügelter Pilger-Glockenträger
+|DEmeaning = Winged Pilgrim Bell Carrier
+|ESname = Peregrino portacampanas alado
+|ESmeaning = Winged Bell-bearing pilgrim
+|FRname = Pèlerin Ailé Porte-cloche
+|FRmeaning = Winged Pilgrim Bell Holder
+|ITname = Portacampane Pellegrino Alato
+|ITmeaning = Winged Bellbearer Pilgrim 
+|JAname = 羽根の生えた鈴持ちの巡礼者
+|JAromanised = Hane no haeta suzu mochi no junrei-sha
+|JAmeaning = Wing-sprouted Bell-holding Pilgrim
+|KOname = 날개 달린 순례 종 소유자
+|KOromanised = Nalgae dallin sullye jong soyuja
+|KOmeaning = Winged Pilgrim Bell Holder
+|PTname = Porta-sinos Peregrino Alado
+|PTmeaning = Bellbearer Winged Pilgrim 
+|RUname = Крылатый пилигрим-колокольник
+|RUromanised = Krylatyj piligrim-kolokolʹnik
+|RUmeaning = Winged Pilgrim Beller
+|TWname = 有翼朝聖鐘衛
+|TWromanised = Yǒu yì cháoshèng zhōng wèi
+|TWmeaning = same
+|ZHname = 有翼朝圣钟卫
+|ZHromanised = Yǒu yì cháoshèng zhōng wèi
+|ZHmeaning = Winged Pilgrim Bell Guard
+|CODEname = PILGRIM_BELLTHROWER_FLY
+|CODEmeaning = [[Winged Pilgrim]]s are internally known as "Pilgrim Flies", while [[Pilgrim Bellbearer]]s are "Pilgrim Bell Throwers"
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

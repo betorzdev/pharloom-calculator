@@ -1,0 +1,68 @@
+{{SS Infobox Item
+| image = <gallery>
+Hero's Memento.png|Inventory
+Hero's Memento Shelf.png|Bellhome
+</gallery>
+| source = Drop from [[Lost Garmond]]
+| description = Heirloom of a village lost to Pharloom's Haunting.
+}}
+
+{{Quote|Hr=SS
+|Hohhhh... fret not.... little one...<br>Be proud... you've grown so strong!<br>Zaza... let us just rest a little... and then we'll be away...
+|[[Garmond & Zaza|Garmond]]
+}}
+
+The <b>Hero's Memento</b> is a [[Materium#Mementos|Memento]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+
+The memento can be displayed on a shelf in the [[Bellhome]] after interacting with the desk.
+
+It appears in the bottom-middle slot of the shelving.
+
+{{Gallery
+|Image1 = Mapshot SS Bellhome.png!Location in Bellhart
+|Image2 = Screenshot SS Bellhart 09.png!Displayed inside Bellhome in Bellhart
+}}
+
+== How to Acquire ==
+Dropped by [[Lost Garmond]] after defeating him in [[Blasted Steps]] during the <i>[[Hero's Call]]</i> [[wish]].
+
+{{Gallery
+|Image1 = Mapshot SS Lost Garmond 01.png!Lost Garmond location in Blasted Steps
+|Image2 = Screenshot SS BlastedSteps 14.png!Lost Garmond in Blasted Steps
+}}
+
+{{Localisation
+|DEname = Helden-Memento
+|DEmeaning = Heroes Memento
+|ESname = Recuerdo de héroe
+|ESmeaning = Hero Memento
+|FRname = Souvenir du héros
+|FRmeaning = Memento of the Heroes
+|ITname = Cimelio dell'eroe
+|ITmeaning = Heirloom of the Hero
+|JAname = 英雄のメメント
+|JAromanised = Eiyū no memento
+|JAmeaning = Hero's Memento
+|KOname = 영웅의 증표
+|KOromanised = Yeongungui jeungpyo
+|KOmeaning = Hero's Mark
+|PTname = Memento Heroico
+|PTmeaning = Heroic Memento
+|RUname = Сувенир от Героя
+|RUromanised = Suvenir ot Geroja
+|RUmeaning = Souvenir from the Hero
+|TWname = 英雄紀念章
+|TWromanised = Yīngxióng jìniànzhāng
+|TWmeaning = Hero's Memento
+|ZHname = 英雄忆痕
+|ZHromanised = Yīngxióng yì hén
+|ZHmeaning = Hero's Memory Mark
+|CODEname = MEMENTO_GARMOND
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

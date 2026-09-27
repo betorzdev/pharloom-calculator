@@ -1,0 +1,118 @@
+{{SS Infobox Tool
+| image = <gallery>
+Flea Brew.png|Inventory
+Flea Brew Poison.png|Pollip Pouch
+Flea Brew Empty.png|Empty
+Flea Brew Broken.png|Broken
+Flea Brew Reserve.png|HUD
+</gallery>
+| type = Red
+| damage = 3/3/3/3/3 (Thrown empty bottle)
+| max = 3/3/4/5/6
+| refill_type = Repair
+| refill = [[File:Icon SS Flea Brew Reserve.png|20x20px|Flea Brew Reserve]] 1<br>{{S|10}} (broken bottle)
+| effect = Increases movement speed and attack speed for 10 seconds
+| location = [[Greymoor]]
+| description = Invigorating beverage prepared by the Flea Caravan.<hr />Temporarily increases the speed of movement and attacks.
+}}
+
+{{Quote
+| Is no better way to revive spirit than to drink the famous Flea Brew! I'm have just finished a batch, bubbling and warm!
+| [[Grishkin]]
+| Hr = SS
+}}
+
+<b>Flea Brew</b> is a {{CrestSlot|Red|1}} in <i>[[Hollow Knight: Silksong]]</i>. When used, it temporarily increases Hornet's movement speed and the speed and cooldown of her [[Needle]] attacks.
+
+== Usefulness ==
+When consumed, Flea Brew increases the speed of [[Hornet (Silksong)|Hornet]]'s walking by 36%, sprinting by 34%, the speed of her [[Needle]] attack swings by 50%, and decreases the cooldown time between her attacks by 50% for 10 seconds. The exception is the [[Beast Crest]]'s Fury state, where cooldown time is only decreased by 40%. [[Crafting Kit]]s do not affect this Tool in any way. 
+
+When it is refilled at a [[Bench (Silksong)|bench]] it draws from a reserve of 30 uses. The reserve can be refilled at the [[Flea Caravan]] at a cost of {{R|30}} (or for free during the [[Festival of the Flea]]), regardless of how much of the reserve has been used.
+
+After using the last charge of Flea Brew, using the tool again causes Hornet to throw the empty bottle. This deals a small amount of damage and breaks the bottle, requiring Hornet to spend {{S|10}} to repair it at a bench, or nothing if the Flea Brew is refilled at the Flea Caravan.
+
+* Flea Brew is mainly useful against bosses or large enemies, though it can also be used for the additional speed in exploration and delivering [[Courier's Rasher]].
+* The increased attack speed allows for greater damage and [[Silk]] generation, and the movement speed helps with avoiding attacks and chasing down foes.
+* It is especially useful in combination with [[Flintslate]], as you will be able to attack more while [[Flintslate]]'s damage multiplier is active.
+
+== Tool Synergies ==
+{{SS Table Tool Interactions
+| Tool1 = Pollip Pouch
+| Tool1Desc =  Causes Hornet to leave behind clouds of venom as she moves. Enemies that touch the cloud take 2 ticks of the venom's damage.
+}}
+
+== Tool Combo Tips ==
+{{SS Table Tool Interactions
+| Tool1 = Silkspeed Anklets
+| Tool1Desc = Movement speed increases add together to a total of a ~57% increase.
+Using this combination in [[Weavenest Cindril]], [[Far Fields]] to cross the pressure plates that originally granted the Silkspeed Anklets will open a trapdoor, leading to a [[Rune Harp]].
+| Tool2=Flintslate
+| Tool2Desc=Increases the damage of Needle swings, increasing the total damage dealt from the faster attacks.
+| Tool3=Volt Filament
+| Tool3Desc=Allows Hornet to cast more powerful [[skills]] using the extra silk generated from this tool.
+| Tool4= Hunter Crest
+| Tool4Img= Hunter Crest 3 File
+| Tool4Desc= Allows hornet to build focus faster, as well as use the increased damage with faster strikes.
+}}
+
+== How to Acquire ==
+After finding five [[Flea]]s and moving the [[Flea Caravan]] to [[Greymoor]], talking to [[Grishkin]] will reward Hornet with the Flea Brew. Hornet can refill her reserve of the brew at the caravan for {{r|30}}. After starting the <i>[[Ecstasy of the End]]</i> Wish, the reserve can be refilled for free.
+
+{{Gallery
+|Image1 = Mapshot SS Flea Caravan 02.png!Location in Greymoor
+|Image2 = Screenshot SS Flea Caravan 03.png!In Greymoor
+|Image3 = Mapshot SS Flea Caravan 03.png!Location in Blasted Steps
+|Image4 = Screenshot SS Flea Caravan 04.png!In Blasted Steps
+|Image5 = Mapshot SS Flea Caravan 04.png!Location in Fleatopia
+|Image6 = Screenshot SS Flea Caravan 05.png!In Fleatopia
+|Image7 = Screenshot SS Putrified Ducts 08.png!During the Festival of the Flea in Act 3
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = GIF SS Flea Brew 01.gif!Hornet using Flea Brew
+|Image2 = GIF SS Flea Brew 02.gif!Flea shaking off Flea Brew
+}}
+
+==Trivia==
+*As seen in the <i>EDGE Magazine</i> issue and 2022 pre-release materials, Flea Brew originally had a slightly different icon.<ref>[https://pocketmags.com/edge-magazine/february-2021 Edge Magazine February 2021 edition], p. 53.</ref><ref>[https://www.youtube.com/watch?v=JSfuFlhsxZY Hollow Knight: Silksong - Xbox Game Pass Reveal Trailer - Xbox & Bethesda Games Showcase 2022]</ref>
+{{Gallery
+|Image1= Early Flea Brew icon.png!Early icon
+}}
+{{History
+|game = SS
+|1.0.28650 (Patch 2): Fixed Flea Brew sometimes not restoring as intended at [[Bench (Silksong)|benches]].
+}}
+{{Localisation
+|DEname = Flohgebräu
+|DEmeaning = Flea Brew
+|ESname = Brebaje pulgoso
+|ESmeaning = Flea Concoction
+|FRname = Breuvage des puces
+|FRmeaning = Beverage of the Fleas
+|ITname = Infuso delle pulci
+|ITmeaning = Fleas' Infusion
+|JAname = ノミ酒
+|JAromanised = Nomi shu
+|JAmeaning = Flea Alcohol
+|KOname = 벼룩주
+|KOromanised = Byeorul ju
+|KOmeaning = Flea Booze
+|PTname = Cerveja de Pulga
+|PTmeaning = Flea Beer
+|RUname = Блошиный отвар
+|RUromanised = Blošinyj otvar
+|RUmeaning = Flea Decoction
+|TWname = 跳蚤祕釀
+|TWromanised = Tiàozao mì niàng
+|TWmeaning = same
+|ZHname = 跳蚤秘酿
+|ZHromanised = Tiàozao mì niàng
+|ZHmeaning = Flea Secret Brew
+|CODEname = FLEA_BREW
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Breuvage des puces]]

@@ -1,0 +1,107 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Clawmaiden.png|Hunter's Journal
+Clawmaiden Idle.png|Idle
+Clawmaiden Core.png|Corpse
+</gallery>
+| hasdrop = true
+| sh1 = 4-6
+| sh2 = 5-8
+|health=48
+|damage_modifiers={{SS Spaced Damage Modifiers|1.25|1|0.9|0.9|0.9}}
+|numbers_required = 10<br>(Instantly completed after destroying thread in control room or by entering [[Act 3]])
+}}
+{{Quote
+|Hr = Journal
+|Puppet servant of the Citadel, suspended on strings of Silk. An early form of automaton, requiring extensive Silk to maintain its service.<hr/>
+If given a chance, this one will steal Silk from any significant source, including my own shell.
+}}
+
+<b>Clawmaidens</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are basic automatons of [[the Citadel]] veiled in a pointed white cloth capable of stealing [[Silk]] from nearby sources.<ref>Clawmaiden [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Puppet servant of the Citadel, suspended on strings of Silk. An early form of automaton, requiring extensive Silk to maintain its service."</i></ref><ref>Clawmaiden Hunter's Journal entry: <i>"If given a chance, this one will steal Silk from any significant source, including my own shell."</i></ref>
+
+== In-game Events ==
+Clawmaidens have a 25% chance to be called during encounters with [[Envoy|Envoys]], [[Grand Reed|Grand Reeds]], [[Maestro|Maestros]], and [[Reed|Reeds]] in certain rooms. Their spawning can be permanently disabled by cutting the threads of the Clawmaiden core, which controls them. It is located in a secret room in the [[High Halls]]. They will also be disabled by beginning Act 3 (after which the secret room will be inaccessible). Before Act 3, the room is accessible by pushing carts with blows from the Needle and using them as platforms to reach a hole in the ceiling with the [[Faydown Cloak]].
+
+Disabling the Clawmaidens, either by cutting the threads or beginning Act 3, also completes their entry in the [[Hunter's Journal (Silksong)|Hunter's Journal]] if it has not been completed already. Disabling them also destroys any currently alive Clawmaidens, dropping [[Shell Shards]] as usual.
+
+== Behaviour and Tactics ==
+Being flying Enemies, Clawmaidens attempt to keep diagonal aerial distance from Hornet, flying mainly horizontally away from her, but always trying to be vertically above her as well.
+Clawmaidens have 3 different moves they can perform:
+* <b>Claw Slash:</b> Screeches and slashes at Hornet twice. Only used if she's very close to it.
+* <b>Silk Siphon & Silken Arrow:</b> Begins to siphon Silk from Hornet if she has at least 3 strands of silk, floating away from her all the while. Once it has taken a total of 3 strands of silk, it creates a giant arrow of silk which, after aiming, flies at Hornet and homes in very slightly, bursting on impact with a surface and dealing {{Damage|2}} if it hits.
+* <b>Reposition:</b> Flies upwards offscreen and drops back down somewhere near Hornet. Mainly used if she attempts to flee out of range. This move is also how they are summoned into rooms.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* ...Your Silk...
+* ...Your strength...
+* ...Ours by birth...
+* ...Ours by right...
+}}
+
+== Location ==
+Clawmaidens can be found in the [[Choral Chambers]] and [[High Halls]], and during the [[the Forum]] gauntlet, randomly descending from the ceilings. Once the thread in their control room is cut, or by entering [[Act 3]], they will stop appearing completely.
+
+{{Gallery
+|Image1 = Mapshot SS Clawmaiden 02.png!Locations in Choral Chambers
+|Image2 = Mapshot SS Clawmaiden 01.png!Locations in High Halls
+|Image3 = Mapshot SS Clawmaiden Spawn Room.png!Control room in High Halls
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Clawmaiden 01.png!In High Halls
+|Image2= Screenshot SS Clawmaiden 02.png!Claw Slash
+|Image3= Screenshot SS Clawmaiden 03.png!Silk Siphon
+|Image4= Screenshot SS Clawmaiden 04.png!Silken Arrow
+|Image5= Screenshot SS Clawmaiden 05.png!Reposition
+|Image6= Screenshot SS Clawmaiden 07.png!Singing
+|Image7= Screenshot SS Clawmaiden 06.png!Called during Choirbug encounter
+|Image8= Screenshot SS High Halls 04.png!Clawmaiden core room
+|Image9= Screenshot SS High Halls 05.png!Threads in Clawmaiden core room
+|Image10=Ari SS Sketch 05.jpg!Concept sketches
+|Image11= Ari SS Sketch 06.jpg!Concept Sketches
+}}
+
+== Trivia ==
+* Clawmaidens used to be able to drop organs for the <i>[[Broodfeast]]</i> [[Wishes|Wish]]. This was patched in an [[Updates (Silksong)|update]].{{MissingInfo}}.
+* The [[Needolin]] can be used on the Clawmaiden core in the High Halls causing it to vibrate and producing the same Needolin dialogue as the Clawmaidens themselves.
+* After disabling the Clawmaidens by cutting the threads, the icon for a completed [[Hunter's Journal (Silksong)|journal entry]] appears, even if the entry has already been completed.
+* As seen in their concept sketches, their name is a play on [[wikipedia:Handmaiden|handmaiden]].
+**The 1.0.27535 version of <i>Silksong</i> playable on PlayStation 4, which is older than the PC launch version (1.0.28324), has the Clawmaiden be named Handmaiden.<ref>[https://www.diffchecker.com/Nu85hOJA/ Comparison of 1.0.27535 (PlayStation 4) and 1.0.27776 (Early Nintendo Switch build)]</ref>
+
+
+{{Localisation
+|DEname = Krallenjungfer
+|DEmeaning = Clawmaiden
+|ESname = Doncella de garras
+|ESmeaning = Maiden of Claws
+|FRname = Serrevaine
+|FRmeaning =
+|ITname = Ancilla
+|ITmeaning = From <i>ancilla</i> (Latin for maid or slave).
+|JAname = ツメオトメ
+|JAromanised = Tsume otome
+|JAmeaning = Combination of {{lang|ja|爪}} <i>tsume</i> (claw) and {{lang|ja|乙女}} <i>otome</i> (maiden).
+|KOname = 발톱하녀
+|KOromanised = Baltopanyeo
+|KOmeaning = Claw Maid
+|PTname = Donzela de Garras
+|PTmeaning = Maiden of Claws
+|RUname = Клешнедева
+|RUromanised = Klešnedeva
+|RUmeaning = Clawmaiden
+|TWname = 絲偶侍女
+|TWromanised = Sī ǒu shìnǚ
+|TWmeaning = same
+|ZHname = 丝偶侍女
+|ZHromanised = Sī ǒu shìnǚ
+|ZHmeaning = Silk Puppet Handmaiden, with {{lang|zh-Hans|偶}}/{{lang|zh-Hant|偶}} <i>ǒu</i> from {{lang|zh-Hans|木偶}}/{{lang|zh-Hant|木偶}} <i>mù'ǒu</i> (puppet).
+|CODEname=SONG_HANDMAIDEN
+|CODEmeaning="Song" internally refers to the Citadel
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Enemies}}

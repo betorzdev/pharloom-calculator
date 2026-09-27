@@ -1,0 +1,83 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Mitemother.png|Hunter's Journal
+Mitemother Idle.png|Idle
+</gallery>
+| hasdrop = true
+| sh1 = 8-12
+| sh2 = 10-15
+|health = 60/{{BT|120}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.2|0.95|0.95|0.95|0.95}}
+|numbers_required = 10
+|sing=Moorwing
+}}
+{{Quote
+|Hr = Journal
+|Aged female mite, grown larger and stronger than most of its kin.<hr/>
+Poor of sight but possessing a keen sense of smell, it uses its bulk to charge at foreign scents. Remaining fierce so far into old age is an admirable trait.
+}}
+
+<b>Mitemothers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are female [[Mites]] that have grown especially large and powerful with age.<ref>[[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>Aged female mite, grown larger and stronger than most of its kin.</i></ref>
+
+== Behaviour and Tactics ==
+Mitemothers generally hop back and forth across a flat area, turning around upon reaching the edge. When one spots Hornet, it screams, then hops towards her at greater speed. It deals {{Damage|2}} upon contact.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Mitemothers have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2|
+* Screech and smash them...
+* Rip and rend...
+* Raise the many...
+* Darker, quieter... more...
+}}
+
+== Location ==
+Mitemothers can be found in [[Greymoor]], in a room southwest of the [[Bellway]] station.
+
+{{Gallery
+|Image1 = Mapshot SS Mitemother 01.png!Locations in Greymoor
+}}
+
+==Gallery==
+{{Gallery
+|Image1=Screenshot SS Mitemother 01.png!Idle
+|Image2=Screenshot SS Mitemother 02.png!Screaming
+|Image3=Screenshot SS Mitemother 03.png!Attacking
+|Image4=Screenshot SS Mitemother 04.png!Responding to the Needolin
+}}
+
+{{Localisation
+|DEname = Milbenmutter
+|DEmeaning = Mitemother
+|ESname = Ácaro madre
+|ESmeaning = Mite Mother
+|FRname = Mite Nourricière
+|FRmeaning = Nourisher Mite (feminine)
+|ITname = Acaro Madre
+|ITmeaning = Mother Mite
+|JAname = ハハダニ
+|JAromanised = Haha dani
+|JAmeaning = Mite Mother<br><small>Combination of {{lang|ja|母}} <i>haha</i> (mother) and {{lang|ja|壁蝨}} <i>dani</i> (mite).</small>
+|KOname = 진드기어미
+|KOromanised = Jindeugieomi
+|KOmeaning = Mitemother
+|PTname = Matriácara
+|PTmeaning = Portmanteau of <i>matriarca</i> (matriarch) and <i>ácaro</i> (mite).
+|RUname = Клещемать
+|RUromanised = Kleščemat'
+|RUmeaning = Mitemother
+|TWname = 蟎母
+|TWromanised = Mǎn mǔ
+|TWmeaning = same
+|ZHname = 螨母
+|ZHromanised = Mǎn mǔ
+|ZHmeaning = Mite Mother
+|CODEname = GNAT_GIANT
+|CODEmeaning = 
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

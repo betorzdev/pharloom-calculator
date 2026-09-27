@@ -1,0 +1,27 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Cogwork_Core_Arena_2.png|400px|center]]
+|[[File:Mapshot_SS_Cogwork_Core_Arena_2.png|150px|center]]
+|-
+| colspan="2" | Enemy gauntlet in the northeast of the Cogwork Core, encountered at the beginning of [[Act 3]] and required for progression. All enemies are [[black-threaded]].
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>Exit to the [[Choral Chambers]]</center>
+| <center>[https://www.youtube.com/watch?v=NRJe8xGWGK4 Dark Descent]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Underworker.png|35x35px|link=Underworker]] [[Underworker]], left<br/>
+[[File:HJ_Underpoke.png|35x35px|link=Underpoke]] [[Underpoke]], right
+|
+|-
+|
+[[File:HJ_Undercrank.png|35x35px|link=Undercrank]] [[Undercrank]], left<br/>
+[[File:HJ_Underloft.png|35x35px|link=Underloft]] [[Underloft]], right
+| Undercrank slams down from the ceiling.
+|}

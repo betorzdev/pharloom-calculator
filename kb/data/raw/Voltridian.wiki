@@ -1,0 +1,76 @@
+{{SS Infobox Item
+|title = Voltridian
+|image = <gallery>
+Voltridian.png|Materium
+Voltridian Pickup.png|Pickup
+</gallery>
+|type = Material
+|source = [[Voltnest]]
+|description = Hard, charged stone that can catch, store and discharge electricity.
+}}
+
+'''Voltridian''' is a hard stone with electric properties found close to [[Voltvyrm]]s. It can be displayed in the [[Materium]].
+
+== Background ==
+Voltridian is a pink coloured, glowing crystalline stone that is found embedded in rock in proximity to [[Voltvyrm]] colonies. It has the ability to catch, store and release electricity.<ref>Voltridian description: <i>"Hard, charged stone that can catch, store and discharge electricity."</i></ref> Voltridian pulses with a soft white light under certain circumstances, like when being charged by Voltvyrms. When not charged with electricity, it is a dull violet and greyish white, and doesn't glow. 
+
+Voltvyrms either actively make use of or unknowingly benefit from Voltridian by emitting bioelectricity that the stones collect, then either triggering or causing them to overload, releasing the stored energy in bursts or columns of much greater range and power than what Voltvyrms can accomplish without them. It is unknown whether Voltridian is naturally occurring or produced by Voltvyrms.
+
+[[The Citadel]] [[The Choir|choir]] bugs kept Voltvyrms and Voltridian in the northern section of the [[Memorium]]. The [[Memoria|Memoriae]] studied and experimented with Voltvyrms, using their research to create [[Voltvessels]], the effects of which greatly resemble the Voltridian-boosted attacks of Voltvyrms. Despite the resemblance, it is unknown if Voltridian was studied or played a role in the [[Tools|tool]]'s development.
+
+== Use ==
+The entry can be seen in the [[Bellhome]] after interacting with the [[Materium]].
+
+{{Gallery
+|Image1 = Mapshot SS Bellhome.png!Location of the Bellhome in Bellhart
+|Image2 = Screenshot SS Bellhart 09.png!Bellhome in Bellhart
+}}
+
+== How to acquire ==
+A Materium entry for Voltridian can be acquired in [[Voltnest]] in [[Sands of Karak]], east of the [[Voltvyrm]]'s arena.
+
+{{Gallery
+|Image1 = Mapshot SS Voltnest.png!Location of Voltnest in Sands of Karak
+|Image2 = Mapshot SS Voltridian 01.png!Location of the Voltridian Materium entry in Voltnest
+|Image3 = Screenshot SS Sands of Karak 06.png!!Voltridian Materium entry in Voltnest
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Sands of Karak 05.png!Voltridian at the entrance of Voltnest in Sands of Karak
+|Image2 = Screenshot SS Voltridian 02.png!Voltridian in Voltnest
+|Image3 = Screenshot SS Voltvyrm 03.png!Voltvyrm with inactive Voltridian in Voltnest
+|Image4 = Screenshot SS Voltvyrm 05.png!Voltvyrm burst attack with Voltridian
+|Image5 = Screenshot SS Voltvyrm 02.png!Voltvyrm charging column attack with Voltridian
+|Image6 = Screenshot SS Voltridian 03.png!Voltvyrm column attack with Voltridian
+|Image7 = Screenshot SS Voltridian 01.png!Voltvyrm with Voltridian in the Memorium
+}}
+
+{{Localisation
+|DEname = Voltridian
+|DEmeaning = —
+|ESname = Voltridiana
+|ESmeaning = Voltridian
+|FRname = Voltridique
+|FRmeaning = 
+|ITname = Voltridiana
+|ITmeaning = Voltridian
+|JAname= 電塊石
+|JAromanised= 
+|JAmeaning = 
+|KOname = 벼락의 돌
+|KOromanised = 
+|KOmeaning = 
+|PTname =  Voltridiana
+|PTmeaning = Voltridian
+|RUname = Вольтридиан
+|RUromanised = 
+|RUmeaning = 
+|ZHname = 电核石
+|ZHromanised = Diàn hé shí
+|ZHmeaning = Electric Core Stone
+|CODEname = VOLTSTONE
+|CODEmeaning = 
+}}
+
+{{Refs|hr=SS}}

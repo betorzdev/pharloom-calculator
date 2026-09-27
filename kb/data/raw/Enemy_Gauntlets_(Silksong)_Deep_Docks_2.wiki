@@ -1,0 +1,42 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Deep_Docks_Arena_2.png|400px|center]]
+|[[File:Mapshot_SS_Mask_Shard_03.png|400px|center]]
+|-
+| colspan="2" | Enemy gauntlet above the west entrance to the Deep Docks, accessed from [[the Marrow]] using [[Cling Grip]]. The arena platform is bordered by hot [[Flintstone]], which can damage enemies.
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>[[Mask Shard (Silksong)|Mask Shard]]</center>
+| <center>[https://www.youtube.com/watch?v=swPmNk9_fw0 Generic Enemy Battle A]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Beastfly.png|35x35px|link=Beastfly]] [[Beastfly]] x2, top left and right<br>
+[[File:HJ_Smelt Shoveller.png|35x35px|link=Smelt Shoveller]] [[Smelt Shoveller]], centre
+|Both Beastflies charge out of opposite walls and bonk into each other in the centre.
+|-
+|
+[[File:HJ_Pilgrim Hulk.png|35x35px|link=Pilgrim Hulk]] [[Pilgrim Hulk]], left<br/>
+[[File:HJ_Flintstone Flyer.png|35x35px|link=Flintstone Flyer]] [[Flintstone Flyer]], top right
+| Pilgrim Hulk leaps out and bounces towards the centre. Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Beastfly.png|35x35px|link=Beastfly]] Beastfly x2, top left and right
+|Both Beastflies charge out of opposite walls and bonk into each other in the centre.
+|-
+|
+[[File:HJ_Beastfly.png|35x35px|link=Beastfly]] Beastfly, top left<br/>
+[[File:HJ_Flintstone Flyer.png|35x35px|link=Flintstone Flyer]] Flintstone Flyer, top left<br/>
+[[File:HJ_Smokerock Sifter.png|35x35px|link=Smokerock Sifter]] [[Smokerock Sifter]], right
+|Beastfly charges out of the wall and travels across the arena.
+|-
+|
+[[File:HJ_Beastfly.png|35x35px|link=Beastfly]] Beastfly x2, top left and right<br/>
+[[File:HJ_Beastfly.png|35x35px|link=Beastfly]] Beastfly x2, top left and right
+|Both sets of Beastflies charge out of opposite walls and bonk into each other in the centre. Second set appears shortly after the first.
+|}

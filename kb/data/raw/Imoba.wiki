@@ -1,0 +1,66 @@
+{{SS Infobox Enemy
+| health = 50
+| hasdrop = true
+| sh1 = 3-5
+| sh2 = 4-7
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.25|1.1|1|1|1}}
+|numbers_required = 4
+}}
+{{Quote
+|Hr = Journal
+|Slow drifting bug with a heavy top shell. The bug reacts little to threats, even those that could claim its life.<hr/>
+The poor creature has lived a life too calm and coddled. It would not fare well in the world beyond its walls.
+}}
+
+<b>Imobas</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are drifting bugs that are accustomed to their calm environment and react little to threats.<ref>Imoba [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Slow drifting bug with a heavy top shell. The bug reacts little to threats, even those that could claim its life."</i></ref>
+
+== Behaviour and Tactics ==
+Imobas drift idly back and forth in the area they inhabit, dealing {{Damage|1}} on contact. They are less of an enemy to fight and more of an obstacle to [[Needle#Needle-bouncing|Needle-bounce]] off during the ascent to the surface. Imobas' backs are armoured and cannot be damaged from above with [[Needle]] strikes or most [[Tools]], meaning they must be attacked from below or from the sides. If one is killed, another will drift in to replace it.
+
+== Location ==
+Imobas can be found in the upper part of the [[Border Caves]].
+
+{{Gallery
+|Image1 = Mapshot SS Imoba 01.png!Locations in the Border Caves
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Imoba 01.png!In the Border Caves
+|Image2 = Screenshot SS Imoba 02.png!Drifting between thorny vines
+|Image3 = Screenshot SS Imoba 03.png!Corpse
+|Image4 = GIF SS Imoba 01.gif!Drifting in to replace a previously slain Imoba
+}}
+
+==Trivia==
+*Imobas do not react to the [[Needolin]]. 
+
+{{Localisation
+|DEname = Imoba
+|DEmeaning = —
+|ESname = Imoba
+|ESmeaning = —
+|FRname = Imoba
+|FRmeaning = —
+|ITname = Flemmar
+|ITmeaning = From <i>flemma</i> (calmness or laziness).
+|JAname = イモバ
+|JAromanised = Imoba
+|JAkatakana = foreignenemy
+|JAmeaning = Imoba
+|KOname = 이모바
+|KOromanised = Imoba
+|KOmeaning = Imoba
+|PTname = Imoba
+|PTmeaning = —
+|RUname = Спокер
+|RUromanised = Spoker
+|RUmeaning = From {{lang|ru|спокойный <i>spokojnyj</i>}} (calm).
+|ZHname = 伊莫巴
+|ZHromanised = Yīmòbā
+|ZHmeaning = Imoba
+|CODEname= SPIKE_LAZY_FLYER
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Enemies}}

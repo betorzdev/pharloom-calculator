@@ -1,0 +1,128 @@
+{{SS Infobox Crest
+|title1 = Shaman Crest<br>
+|image1 = <gallery>
+Shaman Crest Inventory.png|Inventory
+Shaman Crest.png|HUD
+</gallery>
+|description = Cast the blade forward and strengthen Silk Skills with powerful runes.
+|skill = 3
+|blue = 0
+|bluelock = 2
+|attack = Fire energy waves with each swing<br>Slower than other Crests
+|other = {{CrestSlot|Skill|s}} deal 40% more damage
+|bind = Slam to the ground before binding
+|location= [[Moss_Grotto#Sub-area:_Ruined_Chapel|Ruined Chapel]]
+}}
+
+{{Quote
+|Bound yourself a new nature, aye? And from the shells of our ancestors, no less, all those many who've called these lands their own. You make it seem so simple-like. All o'that learning, all o'that strength... sucked up in a whirl of Silk.
+|Hr=SS
+|[[Snail Shamans (Silksong)|Snail Shamans]] ([[Caretaker]])
+}}
+
+The <b>Shaman Crest</b> is a [[Crest]] in <i>[[Hollow Knight: Silksong]]</i>. It is focused around the use of {{CrestSlot|Skill|s}} and safely gathering [[Silk]]. While equipped, [[Hornet (Silksong)|Hornet]] can equip multiple {{CrestSlot|Skill|s}}, and they will also deal increased damage.
+
+== Attacks ==
+Compared to the [[Hunter Crest]], Shaman Crest has roughly -22% attack speed. Shaman Crest replaces Hornet's [[Needle]] attacks with a ranged energy wave. These attacks deal standard knockback and do not nudge Hornet back, barring point-blank range. All energy waves vanish after the first enemy they hit.
+* Neutral Slashes: Hornet fires an energy wave forwards with her Needle.
+* Down-slash: Hornet fires an energy wave downward. This causes Hornet to move up slightly even if it does not hit a target, although hitting a target moves her further. 
+* [[Swift Step|Run-slash]]: Hornet hops forwards and shoots a circular energy wave that pushes her back. This always pushes Hornet back the same amount, but has a small blind spot directly in front of her, meaning it can miss smaller enemies at close range. 
+* [[Needle Strike]]: Hornet fires a large energy wave directly forward after a short delay, dealing 2.3 x Needle damage. If she is grounded, she hops slightly upwards. Inflicts [[Heavy Damage]].
+
+== Mechanics ==
+The Shaman Crest increases the [[Damage Values and Enemy Health (Silksong)|Damage]] of {{CrestSlot|Skill|s}} by <b>40%</b>.
+
+When Hornet starts a [[Bind]], she slams downward first and only continues the Bind upon touching the ground. This prevents her from healing mid-air. 
+
+* This occurs even if Hornet uses Bind starting from the ground, which lengthens the time needed to Bind. 
+* If Hornet takes too long to reach the ground or gets hit, she cancels Bind, though the former can be prevented by holding BIND. 
+* Hornet cannot move or attack while descending. The speed that Hornet falls while holding BIND increases over time, and appears to be uncapped, leading to ludicrous speeds over long falls.
+
+== Usefulness ==
+The Shaman Crest's increased range, multiple{{CrestSlot|Skill|s}}, and damage increase for {{CrestSlot|Skill|s}} allow it to be a powerful offensive option, with good versatility.
+* The ability to equip multiple {{CrestSlot|Skill|s}} grants extra flexibility, such as being able to use [[Thread Storm]] for damage and [[Cross Stitch]] for emergency counters.
+** This flexibility also helps each {{CrestSlot|Skill|1}} make the most of the increased damage.
+* The neutral slash of the Shaman Crest has approximately 109% more range than the Hunter Crest's.<ref>[https://docs.google.com/spreadsheets/d/1K8jX9ilyOOePLrOR_YCdNyror3sxbQyC75TpIYEQ_jc/edit?usp=sharing Skong Math]</ref>
+** The extra range allows Hornet to easily collect [[Silk]] for {{CrestSlot|Skill|s}}.
+** The Shaman Crest's [[Needle Strike]] has by far the longest range of any Crest attack, making it a safe and versatile attack.
+*** The long range combined with the somewhat awkward grounded Bind, makes this Crest fit a hit-and-run playstyle, gaining Silk at a distance while avoiding damage, before unleashing empowered {{CrestSlot|Skill|s}}. 
+* Weaknesses:
+** Shaman Crest lacks any innate {{CrestSlot|Red|1}} or {{CrestSlot|Yellow|1}} slots.
+** Shaman Crest's [[Bind]] forces Hornet to be grounded, increasing the risk and time needed to Bind.
+** The energy waves of this Crest can only hit a single target, severely limiting the damage potential of Needle attacks against multiple targets.
+** The energy wave from Shaman Crest's Needle Strike can sometimes accidentally hit protruding floor terrain with elevated hitboxes (such as metal platforms and cages) and disappear.
+
+== Synergies ==
+* [[Volt Filament]]'s 25% damage bonus stacks additively with Shaman Crest's, for a total of +65% damage.
+** [[Silkspear]]'s niche as a long-range horizontal attack is arguably already filled by the Crest's Needle Strike, but can be turned to as a "higher level" attack as desired. In Act 3, its damage and narrow precision makes it extremely useful for dealing with [[Void Mass]]es from afar, some which may be positioned in spots too tight or at a strategic disadvantage for Shaman's Needle Strike.
+* [[Druid's Eye|Druid's Eye(s)]], [[Weavelight]], and [[Egg of Flealia]] allow {{CrestSlot|Skill|s}} to be used more often.
+** Weavelight combined with three [[Silk Heart|Silk Hearts]] allows Hornet to regenerate 4 [[Silk]] strands passively; enough to perform a {{CrestSlot|Skill|1}}. The increase in regeneration speed also means Hornet can recover more silk threads by the time she begins striking enemies, reducing the number of hits needed to cast skills or bind.
+** Egg of Flealia with three [[Silk Heart|Silk Hearts]] allows Hornet to regenerate and use 3-cost {{CrestSlot|Skill|s}} at full health without needing extra [[Silk]].
+* [[Pin Badge]] can be used to generate [[Silk]] via Needle Strikes from a safe distance.
+* [[Longclaw]]  increases the energy wave's range, allowing Hornet to attack even more safely. It does not increase the size of the energy waves though.
+* [[Injector Band]] can help mitigate the risk from the grounded [[Bind]] by making it shorter; however, it does not speed up the slam time.
+** [[Warding Bell]] activates immediately while Binding in the air, which helps with the increased risk of being forced to slam and Bind on the ground.
+* [[Reserve Bind]] can allow Hornet to spend the majority of her Silk on {{CrestSlot|Skill|s}}, while still having a heal when needed.
+* Due to the Crest's inability to Bind in the air, [[Ascendant's Grip]] can make combat in rooms without floors much safer.
+
+
+[[Sharpdart]]'s 3 extra hits do not get their damage increased, only the main one.
+
+[[Barbed Bracelet]]'s increased Needle damage does not apply to {{CrestSlot|Skill|s}}, resulting in its increased damage taken being too costly.
+
+[[Wispfire Lantern]] consumes Silk to deal less damage per Silk than the {{CrestSlot|Skill|s}} that the Crest should be focused on, making it an overall detriment.
+
+[[Pollip Pouch]], [[Quick Sling]], and {{Steel Soul Icon Mini|SS}} [[Shell Satchel]] have no effect on Shaman Crest as it cannot use {{CrestSlot|Red|s}}. [[Shard Pendant]] is not very useful for the same reason, though the extra [[Shell Shards]] can be used for other Crests. Using a different {{CrestSlot|Yellow|1}} will still generally be more useful.
+
+== How to Acquire ==
+The Shaman Crest can be obtained from the Ruined Chapel in [[Moss Grotto]] during [[Act 3]], requiring the [[Silk Soar]] ability to reach. Enter the Shaman's council room and just before the Flickering Flame lore tablet, use Silk Soar to access a hidden area above. There are several breakable walls blocking the path, and at the end is a large snail shell which can be claimed for the Crest.
+
+{{Gallery
+|Image1 = Mapshot SS Red Memory.png!Location
+|Image2 = ShamanCrestBind.png!Hornet binding the Shaman Crest
+}}
+
+== Gallery ==
+{| align="center" style="text-align:center"
+| {{#ev:youtube|https://www.youtube.com/watch?v=wDp5lE6B0vk|250|center|Deep Dive}}
+|}
+
+== Trivia ==
+* The Shaman Crest adds a bright blue tint and special effects to Needle slashes on contact. Enemies defeated by Silk Skills with the Crest equipped will glow with white particles upon death.
+{{History
+|game = SS
+|1.0.28650 (Patch 2): Fixed Shaman Binding into a bottom transition causing a softlock.
+|1.0.29242 (Patch 4): Reduced unintentionally long bind time when using Multibinder with the Shaman crest.
+}}
+{{Localisation
+|DEname = Schamane
+|DEmeaning = Shaman (masculine)
+|ESname = Chamana
+|ESmeaning = Shaman (feminine)
+|FRname = Chaman
+|FRmeaning = Shaman
+|ITname = Augure
+|ITmeaning = Prophet
+|JAname= 憑依者
+|JAromanised= Hyōisha
+|JAmeaning = Possessed Person
+|KOname = 주술사
+|KOromanised = Jusulsa
+|KOmeaning = Sorcerer
+|PTname = Xamã
+|PTmeaning = Shaman
+|RUname = Шаманка
+|RUromanised = Šamanka
+|RUmeaning = Shaman (feminine)
+|TWname = 薩滿
+|TWromanised = Sàmǎn
+|TWmeaning = same
+|ZHname = 萨满
+|ZHromanised = Sàmǎn
+|ZHmeaning = Shaman
+|CODEname = CREST_SPELL</code> <br> <code>SHAMAN
+|CODEmeaning = 
+}}
+{{Refs|hr=ss}}
+{{SS Nav Crests}}
+[[fr:Emblème Chaman]]

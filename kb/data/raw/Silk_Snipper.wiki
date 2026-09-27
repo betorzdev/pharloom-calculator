@@ -1,0 +1,112 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Silk Snipper.png|Hunter's Journal
+Silk Snipper Idle.png|Idle
+</gallery>
+| hasdrop = true
+| r1 = 18
+| r2 = 27
+| sh1 = 4-6
+| sh2 = 5-8
+|health = 29/{{BT|58}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.8|0.7|0.55|0.55}}
+|numbers_required = 25
+|singnum = 2
+}}
+
+{{Quote
+|Hr = Journal
+|Scissor-wielding bug charged to cut and spool fallen dregs of Silk for return to the Citadel above.<hr/>
+Is it the Haunting that drove them to cackling madness, or was their unending toil the cause even before that?
+}}
+
+<b>Silk Snippers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are scissor-wielding [[Moorbugs]] who are charged to cut and spool fallen dregs of [[Silk]] for return to [[the Citadel]].<ref>Silk Snipper [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Scissor-wielding bug charged to cut and spool fallen dregs of Silk for return to the Citadel above."</i></ref>
+
+== Behaviour and Tactics ==
+Silk Snippers naturally wander back and forth, and stay alert once Hornet has entered their range, taking a stance with their scissors out and ready to attack. They also walk backwards or forwards in between attacks to reposition. Silk Snippers have 5 moves:
+* <b>Dash Cut:</b> Opens their scissors wide for a moment before lunging at Hornet and snipping her. They can block attacks during the foreswing, but doing so resets their foreswing. Mindlessly attacking them only leads to them blocking every attack, so make sure to wait for openings. They always follow this move up with Backdash.
+* <b>Snip Flurry:</b> Rears their scissors back and does a small dash forwards whilst snipping repeatedly. If Hornet is caught in the attack at any time, they combo her for {{Damage|1+1}}. They always follow this move up with Backdash.
+* <b>Scissor Parry:</b> Holds their scissors up in front of themselves for 1.5 seconds, blocking any attack from that direction. If Hornet strikes the scissors whilst they are Parrying, they immediately follow up with either of the two attacks listed above.
+* <b>Backdash:</b> Does a short dash backwards; almost always used as a follow-up.
+* <b>Jump/Dive Burst:</b> Readies their scissors and cuts through any of the wooden platforms to get to Hornet. This move can be used to either get up or down to the layer Hornet is on.
+** During the enemy gauntlet fight in [[Chapel of the Reaper]], they can burrow into the ceiling out of the arena, before burrowing down attempting to drop directly onto Hornet's position.
+
+Silk Snippers deal {{Damage|1}} with all attacks except Snip Flurry, and upon contact.
+
+It is easy to stay on top of them with needle bounces, as none of their attacks have vertical hitboxes and they can only attack in front of themselves. Be careful that they don't dash backwards out of Hornet's range, however.<br>
+Also be wary when they're on a different elevation level than Hornet, as they can suddenly get to her platform even when seemingly idle.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Silk Snippers have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2|
+* Spin it, send it...
+* Catch it, spool it...
+* Why... always this?
+* Even these dregs...
+* The air... the fields...
+* Are we only dregs?
+}}
+
+== Location ==
+Silk Snippers can be found in the western towers of [[Greymoor]].
+
+{{Gallery
+|Image1 = Mapshot SS Silk Snipper 03.png!Location in Greymoor
+|Image2 = Mapshot SS Silk Sniper 02.png!Location in Greymoor Act 3
+}}
+
+==Creation and Development==
+Silk Snippers were first revealed in the February 2019 <i>Silksong</i> reveal trailer, where one was seen battling [[Hornet (Silksong)|Hornet]] in Greymoor;<ref>[https://www.youtube.com/watch?v=pFAknD_9U7c Hollow Knight: Silksong Reveal Trailer]</ref> it still appears in this location in the final game. [[Matt Trobbiani]], the voice actor of [[Trobbio]] and some other characters, voiced the Silk Snipper in the trailer, but its voice actor was later changed to an unknown person.<ref>[https://www.youtube.com/watch?v=3p5A7mQDlLg Trobbio Voice Actor Matt Trobbiani talks Hollow Knight Silksong, Team Cherry & Secrets of Game Dev] (1:02:48): "''So, in the in the first Silkong trailer, I was the I was the guy with the scissors in Greymoor as well'' [...] I I'm kind of kind of glad they changed my voice. I'm not I'm not him anymore."</ref> In March 2024, when met by a fan at the year's Day of the Devs event, [[Matthew Griffin|Matthew 'Leth' Griffin]] revealed the Silk Snipper's ability to block Needle Strikes alongside other minor info;<ref>[https://www.reddit.com/r/Silksong/comments/1bhhpf4/i_was_at_day_of_the_devs_today_i_found_someone/ I was at Day of the Devs today! I found someone!] on Reddit.</ref> Griffin had been playtesting <i>Silksong</i> by August 2023 and thus likely knew this via encountering one in-game.<ref>[https://www.youtube.com/watch?v=pDSVnMEV3K8 Interviewing Leth from Team Cherry (August 2023)] (1:49:45:): "''I started another playthrough earlier this week''."</ref>
+
+==Gallery==
+{{Gallery
+|Image1=Screenshot SS Silk Snipper 01.png!Idle
+|Image2=Screenshot SS Silk Snipper 02.png!Dash Cut attack
+|Image3=Screenshot SS Silk Snipper 03.png!Snip Flurry attack
+|Image4=Screenshot SS Silk Snipper 04.png!Scissor Parry
+|Image5=Screenshot SS Silk Snipper 05.png!Striking during Scissor Parry
+|Image6=Screenshot SS Silk Snipper 06.png!Backdash
+|Image7=Screenshot SS Silk Snipper 07.png!Jump/Dive burst
+|Image8=Screenshot SS Silk Snipper 08.png!Responding to the Needolin
+|Image9=Screenshot SS Memorium 05.png!Corpses in the Memorium
+|Image10 = Ari SS Sketch 08.jpg!Concept Sketches
+}}
+
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Reduced chance of Silk Snippers in [[Chapel of the Reaper]] sometimes getting stuck out of bounds.
+|1.0.28650 (Patch 2): Further reduced chance of Silk Snippers getting stuck out of bounds in Chapel of the Reaper battle.
+}}
+{{Localisation
+|DEname = Seidenschneider
+|DEmeaning = Silk Cutter
+|ESname = Cortador de seda
+|ESmeaning = Cutter of Silk
+|FRname = Coupe-soie
+|FRmeaning = Silk Cutter
+|ITname = Tagliaseta
+|ITmeaning = Silk Cutter
+|JAname = シルクチョッキン
+|JAromanised = Shirukuchokkin
+|JAkatakana = foreign
+|JAmeaning = Combination of シルク <i>shiruku</i> (silk) and チョキチョキ <i>chokichoki</i> (Japanese onomatopoeia for scissor cutting).
+|KOname = 실크 자름이
+|KOromanised = Silkeu jareumi
+|KOmeaning = Silk Cutting
+|PTname = Corta-seda
+|PTmeaning = Silk Cutter
+|RUname = Шелкорез
+|RUromanised = Šelkorez
+|RUmeaning = Silkcutter
+|ZHname = 裁丝疯匠
+|ZHromanised = Cái sī fēng jiàng
+|ZHmeaning = Crazed Silk Snipper
+|CODEname=FARMER_SCISSORS
+|CODEmeaning=<code>FARMER</code> internally refers to [[Greymoor]] enemies.
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

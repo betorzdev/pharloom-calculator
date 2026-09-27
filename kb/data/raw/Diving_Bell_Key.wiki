@@ -1,0 +1,73 @@
+{{SS Infobox Item
+| effects = Unlocks the diving bell in Deep Docks
+| source = [[Deep Docks]]
+| description = Small worker's key.<hr>
+Unlocks the door to the diving bell in Deep Docks.
+| type = [[Items (Silksong)#Keys|Key]]
+}}
+
+{{Quote
+| Here's the key that'll see you inside its metal belly. Pop in there once you're feelin' good and ready. In the meantime, I'll get to seeing things set up here.
+| [[Ballow]]
+| Hr = SS
+}}
+
+The <b>Diving Bell Key</b> is an [[Items (Silksong)#Keys|item]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+Used to open the [[Diving Bell|diving bell]] found at the very bottom of Deep Docks, in order to enter [[The Abyss (Silksong)|the Abyss]].<ref><i>"An old diving bell. Its door is shut tight by an ornate clamp."</i></ref>
+
+{{Gallery
+|Image1 = Mapshot SS Diving Bell 01.png!Diving Bell location in Deep Docks
+|Image2 = Screenshot SS Deep Docks 14.png!Diving Bell in Deep Docks
+}}
+
+== How to Acquire ==
+After speaking to the [[Snail Shamans (Silksong)|Snail Shamans]] and beginning the Main Objective <i>[[Acts#The Dark Below|SEEK: The Dark Below]]</i>, Hornet will be directed to use the diving bell in Deep Docks to reach the Abyss.<ref>[[Ballow]]: <i>"Here's the key that'll see you inside its metal belly. Pop in there once you're feelin' good and ready. In the meantime, I'll get to seeing things set up here."</i></ref>
+
+After speaking to [[Ballow]], he will agree to pilot the diving bell and will give Hornet the key to the submersible when meeting him in the room directly above it.
+
+{{Gallery
+|Image1 = Mapshot SS Diving Bell Key.png!Diving Bell Key location in Deep Docks
+|Image2 = Screenshot SS Ballow 01.png!Ballow in Deep Docks
+}}
+
+== Trivia ==
+* In the 2025 pre-release demo, the Diving Bell Key sprite was used for the [[Cut Content (Silksong)/Items#Keys|Gate Key]], which was used to unlock the gate before [[Lace]]'s fight in [[Deep Docks]]. 
+** This item was a reworked version of the [[Cut Content (Silksong)/Items#Keys|Dock Key]], an item with the same function that appeared in the 2019 demo and had a different sprite.
+
+{{Localisation
+|DEname = Taucherglocken-Schlüssel
+|DEmeaning = Diver Bell Key
+|ESname = Llave de campana de buceo
+|ESmeaning = Diving Bell key
+|FRname = Clé de la cloche de plongée
+|FRmeaning = Diving Bell Key
+|ITname = Chiave della campana mobile
+|ITmeaning = Moving Bell Key
+|JAname = 潜水鐘の鍵
+|JAromanised = Sensuishō no kagi
+|JAmeaning = Diving Bell Key
+|KOname = 잠수종 열쇠
+|KOromanised = Jamsujong yeolsoe
+|KOmeaning = Diving Bell Key
+|PTname = Chave do Sino de Mergulho
+|PTmeaning = Diving Bell Key
+|RUname = Ключ от водолазного колокола
+|RUromanised = Ključ ot vodolaznogo kolokola
+|RUmeaning = Key from the Diving Bell
+|TWname = 潛鐘鑰匙
+|TWromanised = Qián zhōng yàoshi
+|TWmeaning = same
+|ZHname = 潜钟钥匙
+|ZHromanised = Qián zhōng yàoshi
+|ZHmeaning = Diving Bell Key
+|CODEname = DOCK_KEY
+|CODEmeaning = See <b>Trivia</b>
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

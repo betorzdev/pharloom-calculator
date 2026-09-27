@@ -1,0 +1,91 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Splinter.png|Hunter's Journal
+Splinter Idle.png|Idle
+Splinter Hidden.png|Hidden
+</gallery>
+| hasdrop = true
+| sh1 = 4-6
+| sh2 = 5-8
+|health = 25/{{BT|100}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.9|0.9|0.9|0.9}}
+|numbers_required = 12
+|singnum = 2
+}}
+
+{{Quote
+|Hr = Journal
+|Insect formed to imitate a branch, capable of remaining perfectly still for long periods, but unexpectedly swift when roused.<hr/>
+Avoiding their ambush is a good test of my senses, and my ability to rapidly retaliate.
+}}
+
+<b>Splinters</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are members of the [[Splinter Tribe]] with sharp forearms and bulging eyes.
+
+== Behaviour and Tactics ==
+Splinters hide as background objects until Hornet gets close, at which point they shake and then pop out to begin their attack. Splinters are much more cautious than Splinterhorns.
+
+Splinters frequently move backwards and forwards between attacks, and slash horizontally at Hornet once she is in range, rapidly hitting for {{Damage|1+1}}.
+
+Splinters deal {{Damage|1}} upon contact.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Splinters have their health quadrupled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2
+|
+* Hidey, hidey, here I lay!
+* Monster, monster, run away!
+* Brother, brother, time to play!
+* Sister, sister, your dismay!
+}}
+
+== Location ==
+Splinters can be found in [[Shellwood]]. Two can be found in the long room to the right of [[Shellwood]]'s rightmost bench.
+
+{{Gallery
+|Image1 = Mapshot SS Splinter 01.png!Locations in Shellwood
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Splinter 01.png!Disguised
+|Image2 = Screenshot SS Splinter 02.png!Splinter in Shellwood
+|Image3 = Screenshot SS Splinter 03.png!Attacking
+|Image4 = Screenshot SS Splinter 04.png!Singing
+|Image5 = Screenshot_SS_Void_Mass_18.jpg![[Void Mass]] of [[Splinterhorn|Splinterhorns]] and Splinters
+
+}}
+
+==Trivia==
+* Splinters have the same Needolin dialogue as the [[Splinterhorn]].
+* Splinters have the same set of disguised sprites as the [[Splinterhorn]].
+
+{{Localisation
+|DEname = Splitter
+|DEmeaning = Splinter
+|ESname = Vastiguero
+|ESmeaning = From <i>vástago</i> (plant shoot).
+|FRname = Écorceuse
+|FRmeaning = Splinter
+|ITname = Stecco
+|ITmeaning = Stick
+|JAname = エダモドキ
+|JAromanised = Edamodoki
+|JAmeaning = Combination of 枝 <i>eda</i> (branch) and もどき <i>modoki</i> (mock or imitate).
+|KOname = 가지충
+|KOromanised = Gajichung
+|KOmeaning = Branch Insect
+|PTname = Lasca
+|PTmeaning = Splinter
+|RUname = Лучина
+|RUromanised = Lučina
+|RUmeaning = Splinter
+|ZHname = 碎裂者
+|ZHromanised = Suìliè zhě
+|ZHmeaning = Splinterer
+|CODEname = STICK_INSECT
+}}
+{{Refs|hr=ss}}
+{{SS Nav Enemies}}

@@ -1,0 +1,96 @@
+{{Navbar|icons=true|page1=Mossberry Stew|page2=Vintage Nectar|page3=Courier's Rasher|page4=Crustnut|page5=Pickled Muckmaggot}}
+{{SS Infobox Item
+| type = [[Items (Silksong)#Deliverables|Deliverable]]
+| source = [[Creige]]'s basement in the [[Halfway Home]].
+| description = High quality nectar of a long-lived aphid, kept in storage over many lifetimes to allow a complex maturation.
+}}
+{{Quote
+|For a sweet simmer, find me some Vintage Nectar. A rare brew, treasured by bugs with a keen scent for excellence.<br>
+There's slim chance such an old yield might still exist. Alas! Its depth of flavour is a necessity for the holy dish!
+|Loyal Mergwin
+|Hr=SS}}
+
+<b>Vintage Nectar</b> is a [[Items (Silksong)#Deliverables|deliverable item]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+Vintage Nectar is one of the five ingredients required for the <i>[[Great Taste of Pharloom]]</i> wish. It is given to [[Loyal Mergwin]] in the [[Choral Chambers]].
+
+{{Gallery
+|Image1 = Mapshot SS Loyal Mergwin 01.png!Location in Choral Chambers
+|Image2 = Screenshot SS Loyal Mergwin 02.png!Loyal Mergwin in Choral Chambers
+}}
+
+== How to Acquire ==
+During <i>Great Taste of Pharloom</i>, Hornet can ask [[Creige]] in the [[Halfway Home]] for the Vintage Nectar, unless when Hornet is [[Cursed Crest|Cursed]]. He charges {{R|480}} for the Nectar, and asks Hornet to retrieve it herself. However, he neglects to mention that his basement is infested with the Skarr: when attempting to pick up the item, the room shakes and suddenly is filled with various Skarr enemies, starting an [[Enemy Gauntlets (Silksong)|enemy gauntlet]]; the small Skarr ants that crawl across the ground in [[Hunter's March]] are also present. The door leading back upstairs locks.
+
+The following enemies in the gauntlet:
+<div class="mw-collapsible mw-collapsed">
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Skarr Stalker.png|35x35px|link=Skarr Stalker]] [[Skarr Stalker]] x2, bottom right, top left<br>
+[[File:HJ_Skarr Scout.png|35x35px|link=Skarr Scout]] [[Skarr Scout]] x2, bottom left, top left<br>
+[[File:HJ_Skarrlid.png|35x35px|link=Skarrlid]] [[Skarrlid]] x4, bottom left, bottom centre, middle left, top centre<br>
+[[File:HJ_Skarrwing.png|35x35px|link=Skarrwing]] [[Skarrwing]] x2, bottom left, top right<br>
+[[File:HJ_Spear Skarr.png|35x35px|link=Spear Skarr]] [[Spear Skarr]], middle right
+| Bottom Skarr Stalker and Skarr Scout burst in from walls, increasing arena size.
+|-
+|
+[[File:HJ_Spear Skarr.png|35x35px|link=Spear Skarr]] Spear Skarr, top centre<br>
+[[File:HJ_Skarr Scout.png|35x35px|link=Skarr Scout]] Skarr Scout, top right<br>
+[[File:HJ_Skarrlid.png|35x35px|link=Skarrlid]] Skarrlid x2, middle left, bottom left<br>
+[[File:HJ_Skarrwing.png|35x35px|link=Skarrwing]] Skarrwing, middle centre<br>
+[[File:HJ_Skarrgard.png|35x35px|link=Skarrgard]] [[Skarrgard]], bottom right<br>
+[[File:HJ_Skarr Stalker.png|35x35px|link=Skarr Stalker]] Skarr Stalker, bottom right
+| Skarrgard bursts in from right wall, increasing arena size. Skarrgard can also destroy any platforms it hits with its swings.
+|}
+</div>
+After these have all been killed, Hornet can actually pick up the Vintage Nectar and leave the basement.
+
+{{Gallery
+|Image1 = Mapshot_SS_Creige_01.png!Creige location in [[Greymoor]]
+|Image2 = Screenshot SS Creige 01.png!Creige in Greymoor
+}}
+
+{{Gallery
+| Title = Gallery
+| Image1 = Screenshot SS Vintage Nectar 01.png!Vintage Nectar pickup
+| Image2 = Screenshot SS Vintage Nectar 02.png!Cellar before Skarr ambush
+| Image3 = Screenshot SS Vintage Nectar 04.png!Cellar during Skarr ambush
+| Image4 = Screenshot SS Vintage Nectar 03.png!Vintage Nectar pickup after Skarr ambush
+}}
+
+{{Localisation
+|DEname = Alter Nektar
+|DEmeaning = Old Nectar
+|ESname = Néctar añejo
+|ESmeaning = Old Nectar
+|FRname = Nectar millésimé
+|FRmeaning = Vintage Nectar
+|ITname = Nettare d'annata
+|ITmeaning = Vintage Nectar or Vintage Wine
+|JAname = 熟成された乳蜜
+|JAromanised = Jukusei sa reta chichi mitsu
+|JAmeaning = Aged Milk Nectar
+|KOname = 오래된 꿀
+|KOromanised = Oraedoen kkul
+|KOmeaning = Aged Honey
+|PTname = Néctar Ancestral
+|PTmeaning = Ancient Nectar
+|RUname = Древний нектар
+|RUromanised = Drevnij nektar
+|RUmeaning = Ancient Nectar
+|TWname = 陳年蜜露
+|TWromanised = Chénnián mìlù
+|TWmeaning = same
+|ZHname = 陈年蜜露
+|ZHromanised = Chénnián mìlù
+|ZHmeaning = Vintage Honeydew
+|CODEname = GOURMAND_VINTAGE_NECTAR
+|CODEmeaning = 
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}

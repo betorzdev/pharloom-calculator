@@ -1,0 +1,95 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Splinterbark.png|Hunter's Journal
+Splinterbark Resting.png|Resting
+</gallery>
+| hasdrop = true
+| sh1 = 4-6
+| sh2 = 5-8
+|health = 15/{{BT|30}}
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|0.8|0.8|0.8|0.8}}
+|numbers_required = 10
+|va=Lauren Koopowitz<ref name="va">[https://www.youtube.com/watch?v=pA7Id7lff6E Interview with Lauren Koopowitz]</ref>
+|sing=Splinter
+|singnum=2
+}}
+
+{{Quote
+|Hr = Journal
+|Winged insect with a flaky shell that perfectly mimics its environment.<hr/>Its assault... like a young bug's toy turned deadly. Could I, in time, fashion a spinning tool to match?
+}}
+
+<b>Splinterbarks</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are winged members of the [[Splinter Tribe]] with bulging eyes, large arms, and a flaky shell.
+
+== Behaviour and Tactics ==
+Splinterbarks can normally be found sticking to walls throughout [[Shellwood]], being passive in this state unless [[Hornet (Silksong)|Hornet]] gets too close or attacks.<br>
+After waking up, Splinterbarks take flight and maintain slight distance from Hornet before flying towards her to close the gap for an attack.<br>
+To attack, Splinterbarks become a whirlwind of slashes and swoop down at Hornet.
+
+Splinterbarks deal {{Damage|1}} both with their attack and on contact.
+
+Splinterbarks' attacks can be parried by Hornet's Needle to deflect their momentum and send them away. [[Silkspear]] kills Splinterbarks in a single shot, making it a great way to deal with them before they become a problem.
+
+Up to two Splinterbarks can be summoned by [[Sister Splinter]], and if one dies, she can summon another.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Splinterbarks have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Hidey, hidey, here I lay!
+* Monster, monster, run away!
+* Brother, brother, time to play!
+* Sister, sister, your dismay!
+}}
+
+== Location ==
+
+Splinterbarks can be found in [[Shellwood]].
+
+{{Gallery
+|Image1 = Mapshot_SS_Splinterbark_01.png!Locations in [[Shellwood]]
+}}
+
+{{Gallery
+|Title=Gallery
+|Image1= Screenshot SS Splinterbark 01.png!Resting
+|Image2= Screenshot SS Splinterbark 02.png!Splinterbark in Shellwood
+|Image3= Screenshot SS Splinterbark 03.png!Attacking
+|Image4= Screenshot SS Splinterbark 04.png!Singing
+|Image5= Screenshot_SS_Void_Mass_19.jpg![[Void Mass]] of Splinterbarks
+|Image6= Ari SS Sketch 03.jpg!Concept sketches
+}}
+
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Splinterbarks' spin attack was changed to do 1 damage instead of 1+1.
+}}
+{{Localisation
+|DEname = Splitterrinde
+|DEmeaning = Splinter bark
+|ESname = Vastiguero cortezoso
+|ESmeaning = Barky Splinter, <i>Vastiguera</i> are the name for [[Splinter]]s in Spanish, from <i>vástago</i> (plant shoot).
+|FRname = Écorcine
+|FRmeaning =
+|ITname = Scorzastecco
+|ITmeaning = Cominbation of <i>scorza</i> (rind) and <i>stecco</i> (stick).
+|JAname = エダガワモドキ
+|JAromanised = Edagawamodoki
+|JAmeaning = Combination of 枝 <i>eda</i> (branch), 皮 <i>kawa</i> (bark) and もどき <i>modoki</i> (mock or imitate).
+|KOname = 나무껍질가지충
+|KOromanised = Namukkeopjilgajichung
+|KOmeaning = Wood Bark Branch Insect
+|PTname = Casca Lascada
+|PTmeaning = Splintered Shell or Splintered Bark
+|RUname = Лесная Лучина
+|RUromanised = Lesnaja Lučina
+|RUmeaning = Forest Splinter
+|ZHname = 裂皮碎裂者
+|ZHromanised = Lièpí suìliè zhě
+|ZHmeaning = Cracked Bark Splinterer, with 皮 from 树皮 (bark)
+|CODEname= STICK_INSECT_FLYER
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

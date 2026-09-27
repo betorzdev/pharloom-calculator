@@ -1,0 +1,162 @@
+{{SS Infobox Boss
+|image1 = <gallery>
+B Nyleth.png|Hunter's Journal
+Nyleth Stagger.png|Staggered
+Nyleth Pollen.png|Pollen Attack
+Nyleth resting.png|Dormant
+</gallery>
+|theme = [https://youtu.be/L4VhBh681kI Nyleth (Petals)]
+|health = 1250
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1.25|1.1|1|0.91}}
+|drops = [[Pollen Heart]]
+|numbers_required = 1
+|location = [[Grand Gate]]
+}}
+{{Quote
+| Hr = Journal
+|Ancient heart of Shellwood, connected to all its living things.<hr/>
+Her presence would once have maintained the wood's fragile order, allowing the safe passage of bugs across its branches.
+}}
+
+<b>Nyleth</b> is a main [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. The ancient heart of [[Shellwood]] connected to all its living things,<ref>Nyleth Hunter's Journal entry: <i>"Ancient heart of Shellwood, connected to all its living things."</i></ref> she is found within a memory inside the hidden shrine of the [[Grand Gate]]. Defeating her grants the [[Pollen Heart]].
+
+==Background==
+Nyleth is the ancient heart of [[Shellwood]], being the seed that the area sprouted from.<ref>[[Grand Gate]] [[Lore Tablets (Silksong)|Lore Tablet]]: <i>"Here we honour the seed that sprung the wood. By her grace may all bugs pass safe to join us and our song."</i></ref> At one point, [[the Citadel]] made a reluctant deal with her, sending servants as a sign of respect and building a shrine with a statue in her likeness.<ref>[[Snail Shamans (Silksong)|Snail Shamans]]: <i>"We'd heard the Citadel once made grudging accord with that creature, sent their servants in reverence, even built a shrine up there somewhere."</i></ref> [[Shrine Guardian Seth]] was then given the role of defending the shrine for eternity.<ref>[[Shrine Guardian Seth]]: <i>"I am charged forever to guard the sacred shrine beyond. Any who wish to pass must cross their weapon with my own."</i></ref>
+
+== In-game Events ==
+The statue of Nyleth can be found in a hidden shrine in the [[Grand Gate]]. During the <i>[[SEEK: The Old Hearts|The Old Hearts]]</i> [[wish]], [[Hornet (Silksong)|Hornet]] can play the [[Elegy of the Deep]] at the shrine of Nyleth and enter her memory, where Hornet can fight her when she was still in her prime. Defeating her grants Hornet the [[Pollen Heart]].
+
+As with all [[Elegy of the Deep]] memories, if Hornet dies in the fight, she reappears outside Nyleth's fountain without losing her [[Rosaries]] and without creating a [[Cocoon]], with all Tool uses refilled at no cost. Dying also does <b>not</b> end {{Steel Soul Icon Mini|SS}} [[Steel Soul Mode (Silksong)|Steel Soul mode]].
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+When Nyleth is first approached by [[Hornet (Silksong)|Hornet]], she screams, destroying the floor and dropping Hornet into the arena. Nyleth then descends the left wall and begins the fight.
+
+=== Phase 1 ===
+In Phase 1, Hornet fights on a platform surrounded by small pits of thorns to either side. For the duration of the fight, Nyleth is grappled to the walls, and she will dash across the arena to change the wall she clings to regularly. While she clings to a wall, it becomes completely covered in thorny vines. Making contact with any of the thorns deals {{Damage|1}} and transports Hornet back to the platform.
+
+During this phase, Nyleth sticks to the bottom corner of the wall and has the following attacks:
+* <b>Wall Leap</b>: Nyleth crouches in her petals and the thorny vines disappear from her wall. After a moment, she leaps across the entire room horizontally, landing on the opposite wall. The vines then reappear on the wall she lands on.
+* <b>Petal Blades</b>: Nyleth displays a brief white light telegraph and tucks her head in before quickly slashing up and down with it, making large sweeps that cover the area above and below her.
+* <b>Pollen Barrage</b>: Nyleth opens her mouth before spewing 4 waves of evenly spaced pollen projectiles, switching between 3 and 4 projectiles with each wave. The projectiles are fired in alternating patterns and also slightly arc as they travel. These projectiles can be struck by the Needle; however, it only slightly pushes the pollen back. If Hornet is too close, Nyleth cannot perform this attack and uses Petal Blades instead.
+* <b>Pollen Screech</b>: Nyleth screeches and creates a large yellow circle of pollen that covers roughly three quarters of the room, including the entire platform. After a moment, the pollen explodes, dealing damage if Hornet is caught in the circle. Nyleth only performs this attack if Hornet is in range of the circle.
+* <b>Thorn Balls</b>: Nyleth summons 3 evenly spaced spiked balls which shoot up from the ground below the platform, with the position of each ball telegraphed by a pillar of rumbling smoke. Each ball reaches a random set height before then falling back down. The spiked balls can be hit into Nyleth, dealing 15 damage to her, or into another spiked ball, breaking both. 
+
+Wall Leap and contact with Nyleth deal {{Damage|2}}. The pollen-based attacks and Petal Blades deal {{Damage|1+1}}. Thorn Balls deals {{Damage|1}}.
+
+=== Phase 2 ===
+After reaching 875 HP Nyleth stops to scream, which destroys the entire floor, including the platform, and roughly doubles the height of the arena. The bottom of the arena is now completely covered in thorns, and Hornet must cling to a wall to avoid damage.
+
+Nyleth is now able to slither randomly up and down the wall in-between attacks. She also modifies 2 attacks:
+* <b>Petal Blades</b>: Nyleth no longer performs this attack normally; she only uses it if Hornet is too close and prevents Nyleth from performing a Pollen Barrage.
+* <b>Thorn Balls</b>: Shortly after the first 3 spiked balls are launched, 2 additional spiked balls are shot out in the gaps of the first set.
+
+If Hornet falls into the thorny vines on the floor or walls in this phase, she is transported to a small platform at the bottom of the arena, which shakes before disappearing after a few seconds.
+<hr />
+
+{{Stagger
+| Nyleth's body and head droop down limply while still hanging from the wall.
+| 19
+| game = SS
+}}
+
+<hr />
+
+<b>Notes and Strategies:</b>
+* [[Clawline]] provides important utility, allowing Hornet to close the distance to Nyleth and escape attacks such as the Pollen Screech.
+* [[Ascendant's Grip]] is perfect for this [[Bosses (Silksong)|boss]] as it allows Hornet to remain completely still while holding onto the wall. This makes it easier to navigate some of her attacks like Pollen Barrage, Pollen Screech, and Thorn Balls, and throw [[Tools]] at Nyleth more accurately.
+* [[Cross Stitch]] can also be used in combination with [[Needle]] bounces, as every attack has a clear telegraph and can be parried. However, this poses significant risk, as failing the timing of Cross Stitch will cause Hornet to take damage from the attack and possibly fall into the thorns below. The high amount of [[Silk]] needed to make this strategy viable may also make it more difficult to cast Cross Stitch and [[Bind]]. For this, [[Weavelight]], [[Druid's Eyes]], and [[Reserve Bind]] may come in handy.
+* The Spear form of [[Voltvessels]] is particularly powerful in this fight since Nyleth clings to walls and cannot avoid taking the full brunt of the Tool without using Wall Leap. [[Cogfly]], [[Conchcutter]], [[Pimpillo]], and [[Silkshot]] are other useful options.
+* Due to being a large, often stationary enemy, [[Thread Storm]] is highly effective at dealing damage. Boosting it with [[Shaman Crest]] can significantly shorten the fight. However, due to the Crest's requirement of a floor to Bind, healing becomes much more difficult, and as such it is best to complete the fight as quickly as possible.
+
+{{TabbedDialogue
+|Title1 = General
+|Title1_Event1= Needolin dialogue in front of her statue before obtaining [[Elegy of the Deep]]
+|Title1_Dialogue1=[n] ...Spirit of the wood...<br>
+...Health of the heart...<br>
+...To seed... To grow...<br>
+...Distant reach... distant life...
+|Title1_Event2= Needolin dialogue outside the combat area, inside the memory
+|Title1_Dialogue2=[n]Grow... Settle... Seed...<br> 
+Twist... Wind... Protect...<br>
+Serve... Eat... Sustain... <br>
+Bramble... Root... Branch...
+|Title1_Event3= Needolin dialogue inside the combat area
+|Title1_Dialogue3=[n]...the form... a memory...<br>
+...wandering seed...<br>
+...it longs... the whole...<br>
+...reaching... forward and out...<br>
+...you too, distant shape...<br>
+...convened within... lost without...
+|Title1_Event4 = After her defeat
+|Title1_Dialogue4 = ...We are life... We are growth... What world without us?...
+}}
+
+== Location ==
+Nyleth is found in a section behind a breakable wall on the left of the lift shaft of the [[Grand Gate]]. To access her, [[Hornet (Silksong)|Hornet]] must defeat [[Shrine Guardian Seth]].
+
+{{Gallery
+|Image1 = Mapshot SS Nyleth 01.png!Location in the Grand Gate
+}}
+
+{{Gallery
+|Title=Gallery
+|Image1 = Screenshot SS Shellwood 15.png!Shrine exterior
+|Image2 = Screenshot SS Shellwood 16.png!Nyleth statue
+|Image3 = Screenshot SS Shellwood 17.png!Statue after obtaining the heart
+|Image4 = Screenshot SS Shellwood 18.png!Entrance in Nyleth's memory
+|Image5 = Screenshot SS Shellwood 19.png!Nyleth in her chambers
+|Image6 = Screenshot SS Shellwood 20.png!Arena (Phase 1)
+|Image7 = Screenshot SS Shellwood 21.png!Arena (Phase 2)
+|Image8 = Screenshot SS Nyleth 01.png!Arena (Phase 2 zoomed out)
+|Image9 = Screenshot SS Nyleth 02.png!Hazard Respawn Platform
+|Image10 = Screenshot SS Nyleth 03.png!Thorn Balls (Phase 1)
+|Image11 = Screenshot SS Nyleth 04.png!Thorn Balls (Phase 2)
+|Image12 = Screenshot SS Nyleth 05.png!Pollen Barrage
+|Image13 = Screenshot SS Nyleth 06.png!Pollen Screech
+|Image14 = Screenshot SS Nyleth 07.png!Petal Blades
+|Image15 = Screenshot SS Nyleth 08.png!Wall Leap
+|Image16 = Screenshot SS Nyleth 09.png!Stagger
+|Image17 = Screenshot SS Nyleth 10.png!Nyleth's heart ripping
+}}
+
+== Achievements ==
+{{Achievement|game=silksong|Seed}}
+
+== Trivia ==
+* Nyleth is not stunned by the [[Needolin]]; her dialogue appears without stopping combat to sing.
+* Despite being located in the Grand Gate, Nyleth's Objective icon does not appear when using the Quick Map there, and instead appears in the Shellwood Quick Map.
+{{Localisation
+|DEname = Nyleth
+|DEmeaning = —
+|ESname = Nyleth
+|ESmeaning = —
+|FRname = Florinelle
+|FRmeaning = Combination of <i>floral</i> and <i>-elle</i> (feminine suffix).
+|ITname = Nyleth
+|ITmeaning = —
+|JAname = ニュレス
+|JAromanised = Nyuresu
+|JAkatakana = foreign
+|JAmeaning = Nyleth
+|KOname = 나이레스
+|KOromanised = Naileseu
+|KOmeaning = Nyleth
+|PTname = Nyleth
+|PTmeaning = —
+|RUname = Найлет
+|RUromanised = Najlet
+|RUmeaning = Nyleth
+|TWname = 尼萊斯
+|TWromanised = Níláisī
+|TWmeaning = same
+|ZHname = 尼莱斯
+|ZHromanised = Níláisī
+|ZHmeaning = Nyleth
+|CODEname=FLOWER_QUEEN
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[pt:Nyleth]]

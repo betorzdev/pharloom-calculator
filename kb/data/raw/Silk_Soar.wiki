@@ -1,0 +1,95 @@
+{{SS Infobox Ability
+| description1 = Ancient Weaver talent. Throw the needle upward und launch to tremendous heights.
+| title2 = <small>Bound the Ancestral Art</small><br>Silk Soar
+| description2 = Hold DOWN + HARPOON<hr/>Fling the needle upwards and launch to tremendous heights.<br>Silk will be expended. Strike enemies to replenish Silk.
+| input = Hold DOWN + HARPOON
+| location = [[Weavenest Absolom]] in [[The Abyss (Silksong)|the Abyss]]
+}}
+
+The <b>Silk Soar</b> is an [[Abilities (Silksong)|Ability]] that [[Hornet (Silksong)|Hornet]] acquires in [[Act 3]] of <i>[[Hollow Knight: Silksong]]</i>. Hornet flings her [[Needle]] into the sky on a thread of [[Silk]], then rockets up to where the Needle sticks. It costs 1 strand of Silk per use.
+
+== Function ==
+* Hold DOWN + HARPOON to begin charging the Silk Soar. Hornet can cancel the charge early without expending Silk.
+* After about a second, release to have Hornet throw her Needle.
+* When the Needle hits the nearest ceiling, Hornet shoots up to it.
+** Higher ceilings create more of a delay between throw and jump.
+** Hornet's flight can be cancelled early by pressing JUMP, ATTACK, HARPOON, or by being attacked.
+** The Needle can pass through room transitions, and will bring Hornet through them as long as it eventually hits a ceiling
+=== Damage ===
+* Silk Soar is not very useful for combat purposes, but it does deal damage to enemies. 
+** When the thrown Needle hits an enemy, it deals the normal damage of the Needle.
+** If Hornet subsequently hits an enemy, it deals 5 damage, regardless of the level of the Needle. Hornet will still take contact damage with the enemy if it is not killed.
+** Both hitting the enemy with the Needle and making contact with the enemy give [[Silk]], resulting in 1 extra silk than was started with before the Silk Soar if both hits land.
+** Both parts of the damage are affected by enemy damage modifiers.
+** Both parts of the damage increase the Focus of the [[Hunter Crest]] and are affected by its multiplier. The second hit deals 5, 6, and 8 damage at Focus level 0, 1, and 2 respectively.
+*** If Hornet takes damage however, this Focus is instantly reset regardless.
+** Neither part of the damage is affected by the [[Beast Crest]] [[Bind]].
+** Neither part of the damage counts as attacking for the purposes of the Beast Crest Bind, unlike the [[Clawline]]. However, taking damage by contacting an enemy will count as damage for reducing the duration of the Bind.
+** Neither part has its damage increased by the [[Snitch Pick]].
+
+== How to Acquire ==
+Silk Soar is one of the last Abilities Hornet acquires, only being obtainable in [[Act 3]]. It can be found on her first visit to [[The Abyss (Silksong)|the Abyss]], in a [[Weaver Burial Spire]] behind a [[Needolin]] door in [[Weavenest Absolom]].
+
+{{Gallery
+| Image1 = Mapshot SS Silk Soar.png!Location in the Abyss
+| Image2 = Screenshot SS The Abyss 13.png!Weaver Spire
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Icon SS Silk Soar Splash.png ! Splash Art
+|Image2 = Icon SS Silk Soar Splash Clear.png ! Splash Art
+}}
+
+== Trivia ==
+* The Abyss and subsequent escape sequence back up to [[Deep Docks]] contain several broken or unusable [[Weavers|Weaver]] lifts similar to the one in [[Weavenest Atla]]. These indicate where Silk Soar can be used to go up.
+
+* It is possible to travel all the way from the bottom of [[Moss Grotto]] up to the top of the [[Blasted Steps]] using a single Silk Soar.
+
+{{Gallery
+|Image1= Screenshot SS Silk Soar 04.png!Broken lift at the bottom of the Abyss
+|Image2= Screenshot SS Silk Soar 05.png!Broken lift above the [[Diving Bell]]
+|Image3= Screenshot SS Silk Soar 06.png!Broken lift close to Deep Docks
+|Image4= Screenshot SS Weavenest Atla 01.png!The functioning lift in Weavenest Atla
+}}
+{{History
+|game = SS
+|1.0.29909 (Patch 5): Allowed Silk Soar to travel between rooms if it eventually would reach a ceiling.
+}}
+{{Localisation
+|DEname = Seidenaufschwung
+|DEmeaning = Silk Ascent
+|ESname = Vuelo sedeño
+|ESmeaning = Silken Flight
+|FRname = Élan de soie
+|FRmeaning = Silken Burst
+|ITname = Seta Planante
+|ITmeaning = Silk Glide
+|JAname = シルクの跳躍
+|JAromanised = Shiruku no chōyaku
+|JAkatakana = foreign
+|JAmeaning = Silk Leap
+|KOname = 솟구치는 실크
+|KOromanised = Sotguchineun silkeu
+|KOmeaning = Soaring Silk
+|PTname = Impulso de Seda
+|PTmeaning = Silk Boost
+|RUname = Окрыляющий Шёлк
+|RUromanised = Okryljajuščij Šëlk
+|RUmeaning = Silk Lifting Wings
+|TWname = 靈絲升騰
+|TWromanised = Língsī shēngténg
+|TWmeaning = same
+|ZHname = 灵丝升腾
+|ZHromanised = Língsī shēngténg
+|ZHmeaning = Silk Ascent
+|CODEname = SKILL_ASCENT
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Skills}}
+
+{{#seo:|keywords=silksong, silk soar, super jump, traversal, high jump, grapple}}
+[[fr:Élan de soie]]
+[[zh:灵丝升腾]]

@@ -1,0 +1,62 @@
+{{SS Infobox Item
+| type = [[Items (Silksong)#Deliverables|Deliverable]]
+| image = <gallery>
+Courier's Swag.png|Intact
+Courier's Swag Broken.png|Broken
+</gallery>
+| source = [[Tipp & Pill]]
+| description = Heavy cloth sack containing tools, trinkets and medical aids.
+}}
+
+{{Quote
+| But hold, miss courier! Before depart you mustly know, all deliverings are in needing of great-great care!<br>
+No bump! No shake! No taking funny transport! Only leg, claw, wing must be used to see them where they need be going.
+| Couriers Tipp & Pill
+| Hr = SS
+}}
+
+<b>Courier's Swag</b> is a [[Items (Silksong)#Deliverables|deliverable item]] in <i>[[Hollow Knight: Silksong]]</i>. It can be delivered to settlements across [[Pharloom]].
+
+== Use ==
+Courier's Swag  is a fragile item given by [[Couriers Tipp & Pill]] that needs to be transported for the [[Delivery Wishes]] <i>[[Bone Bottom Supplies]]</i>, <i>[[Pilgrim's Rest Supplies]]</i>, <i>[[Songclave Supplies]]</i>, <i>[[Fleatopia Supplies]]</i>, and <i>[[Survivor's Camp Supplies]]</i>. It has 5 hit points, which decrease when [[Hornet (Silksong)|Hornet]] takes damage, makes a hard landing, runs into a wall using [[Swift Step]], or hits a ceiling using [[Silk Soar]]. It breaks instantly when using [[Fast Travel (Silksong)|Fast Travel]]  including [[Bellway]]s, the [[Beastling Call]], [[Ventrica]]s or travelling with the [[Flea Caravan]].
+
+== How to Acquire ==
+After unlocking Delivery Wishes through Tipp and Pill, Courier's Swag becomes available as one of the delivery options to the various settlements throughout [[Pharloom]]. If the currently held one is destroyed, Hornet can return to Tipp and Pill to obtain another and try again.
+
+{{Gallery
+|Image1 = Mapshot SS Tipp & Pill 01.png!Couriers Tipp & Pill's location in Bellhart
+|Image2 = Screenshot SS Tipp & Pill 04.png!Couriers Tipp & Pill in Bellhart
+}}
+
+{{Localisation
+|DEname = Kurier-Beute
+|DEmeaning = Courier Loot
+|ESname = Petate de mensajero
+|ESmeaning = Messenger's Backpack
+|FRname = L'élégance du coursier
+|FRmeaning = The Courier's Elegance
+|ITname = Fagotto del corriere
+|ITmeaning = Courier's Bundle
+|JAname= 運び屋の袋
+|JAromanised= Hakobiya no fukuro
+|JAmeaning = Courier's Bag
+|KOname = 배달부의 짐 보따리
+|KOromanised = baedalbuui jim bottari
+|KOmeaning = Deliverer's Package
+|PTname =  Trouxinha do Entregador
+|PTmeaning = Courier's Little Bundle
+|RUname = Курьерская поклажа
+|RUromanised = Kur'erskaja poklaža
+|RUmeaning = Courier's Parcel
+|TWname = 送貨員行囊
+|TWromanised = Sònghuòyuán xíngnáng
+|TWmeaning = same
+|ZHname = 送货员行囊
+|ZHromanised = Sònghuòyuán xíngnáng
+|ZHmeaning = Courier's Knapsack
+|CODEname=COURIER_SUPPLIES_ITEM
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}

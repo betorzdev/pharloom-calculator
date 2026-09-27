@@ -1,0 +1,93 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Stilkin Trapper.png|Hunter's Journal
+Stilkin Trapper Idle.png|Idle
+</gallery>
+| hasdrop = true
+| sh1 = 5-8
+| sh2 = 7-10
+|health = 45
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.25|1|1|1|1}}
+|numbers_required = 12
+|singnum = 3
+}}
+
+{{Quote
+|Hr = Journal
+|Trap setting bug carrying a pouch of sharpened long-stakes.<hr/>
+More bother than the bug themself are the countless traps they have already laid throughout their caves.
+}}
+
+<b>Stilkin Trappers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are trap setting members of the [[Stilkin Tribe|Stilkin]] who carry a pouch of sharpened long-stakes.<ref>Stilkin Trapper Hunter's Journal entry: <i>"Trap setting bug carrying a pouch of sharpened long-stakes."</i></ref>
+
+== Behaviour and Tactics ==
+Stilkin Trappers always start off hidden, and may leap out of the infested waters when Hornet comes near, indicated by droplets being kicked up from where they are.<br>
+Stilkin Trappers will jump out of the water and perform a long, fluttering jump. If Hornet is beneath them at any point of the flutter, they will throw 3 stakes directly downwards, jumping up very slightly with each one.<br>
+Once they land from a flutter jump, they will either dive down if they land in infested waters, or, if they land on a platform, they will jump away from Hornet and then dive to reappear again later.
+
+Stilkin Trappers deal 50 damage to enemies that are hit with their stakes.  
+
+An easy way to kill them is to jump to their height and use [[Cross Stitch]] as they make contact with Hornet, or using [[Delver's Drill]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* They fall! We rise!
+* They wither! We survive!
+* Their shadow... our shame...
+* Our land! Their grave!
+* Flowing poison... hidden claw...
+* Dark... twisting... betrayal's heart...
+}}
+
+== Location ==
+Stilkin Trappers can initially be encountered in [[Groal the Great]]'s arena as part of the pre-fight [[Enemy_Gauntlets_(Silksong)#Bilehaven|gauntlet]] and as minions summoned by the boss. After Groal the Great is defeated, they start to spawn in northern Bilewater.
+
+{{Gallery
+|Image1 = Mapshot SS Stilkin Trapper 01.png!Locations in Bilewater
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Stilkin Trapper 01.png!Appearing
+|Image2 = Screenshot SS Stilkin Trapper 02.png!Throwing stakes
+|Image3 = Screenshot SS Stilkin Trapper 03.png!During Groal the Great's fight
+|Image4 = Screenshot SS Stilkin Trapper 04.png!Singing
+|Image5 = Screenshot SS Memorium 05.png!Corpse in the Memorium
+}}
+
+==Trivia==
+* The Stilkin Trapper shares the same [[Needolin]] dialogue as the [[Stilkin]].
+* The Stilkin Trapper has the same voice as the [[Roachcatcher]].
+
+{{Localisation
+|DEname = Abgestandener-Fallenleger
+|DEmeaning = Stilkin Trapper
+|ESname = Estacafín trampero
+|ESmeaning = Stilkin Trapper
+|FRname = Trappeur Forrénin
+|FRmeaning = Trapper Stilkin
+|ITname = Trapicchetto
+|ITmeaning = Portmanteau of <i>trappola</i> (trap) and ''picchetto'' (picketer).
+|JAname = スティルキンの罠師
+|JAromanised = Sutirukin no wanashi
+|JAmeaning = Stilkin Trap Master
+|KOname = 스틸킨 덫 사냥꾼
+|KOromanised = Seutilkin deot sanyangkkun
+|KOmeaning = Stilkin Trap Hunter
+|PTname = Estaquino Ardiloso
+|PTmeaning = Cunning Stilkin
+|RUname = Кольник-ловец
+|RUromanised = Kol'nik-lovec
+|RUmeaning =  Stilkin Hunter or Stilkin Trapper
+|TWname = 斯提金捕手
+|TWromanised = Sītíjīn bǔshǒu
+|TWmeaning = same
+|ZHname = 斯提金捕手
+|ZHromanised = Sītíjīn bǔshǒu
+|ZHmeaning = Stilkin Trapper
+|CODEname = SWAMP_MUCKMAN_TALL
+|CODEmeaning = Stilkin are internally known as "Swamp Muckmen"
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

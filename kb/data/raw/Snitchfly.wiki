@@ -1,0 +1,106 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Snitchfly.png|Hunter's Journal
+Snitchfly Idle.png|Idle
+</gallery>
+| hasdrop = true
+| r1 = 12
+| r2 = 18
+| sh1 = 2-3
+| sh2 = 3-4
+|health = 35
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.2|0.9|0.8|0.65|0.65}}
+|numbers_required = 4
+|singnum = 2
+}}
+{{Quote
+|Hr = Journal
+|Pernicious looter found all over Pharloom.<hr/>
+While these bothersome bugs are left free to forage, no loose rosary or trinket is safe.
+}}
+
+<b>Snitchflies</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. Members of the [[Snitchbugs|Snitchbug]] species, they are looters almost always found in pairs all over [[Pharloom]],<ref>Snitchfly [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Pernicious looter found all over Pharloom."</i></ref> who prioritise stealing [[Rosaries]] from [[Hornet (Silksong)|Hornet]] over fighting her.
+
+== Behaviour and Tactics ==
+Snitchflies often come in pairs and may call in allies from the foreground to try and pincer Hornet between them.<br>
+Snitchflies are rummaging through things whilst idle, not wandering at all. If Hornet gets at a certain distance, they stop to look back at her, tensing up. If she moves any closer, all Snitchflies in the area begin their assault.<br>
+Snitchflies perform high, evasive jumps back and forth between attacks, and have three moves:
+* <b>Leaping Rummage:</b> Leaps at Hornet. If it makes contact during the leap, it briefly latches onto her, scratching {{R|20-30}} and dealing {{Damage|1+1}}.
+* <b>Gather:</b> Runs along the ground and collects any loose Rosaries. This move is always used if there are any loose Rosaries in its vicinity, taking priority over all other moves. If the Snitchfly is defeated, it drops all Rosaries it has stolen in addition to its base drops.
+* <b>Flee:</b> Tenses up for a moment and then flies offscreen and leaves the room if the Snitchfly has gathered at least {{R|25-30}} and there are no Rosaries nearby. Keeps its contact damage hitbox throughout the whole animation. Also used if fleeing from the ones in the [[Choral Chambers]] and when approaching the one inside the ruins of [[Pilgrim's Rest]] in [[Act 3]].
+
+If Hornet has the [[Thief's Mark]] equipped, Snitchflies stay passive until attacked. The [[Magnetite Brooch]] works on Rosaries dropped from Snitchfly attacks, helping to quickly retrieve many before they can be stolen.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* What you got there, matey matey?
+* Show me, show me...
+* ...give me, give me!
+* Click clacky, lovely lovely!
+* Shiny shiny, takey takey!
+* Drop it now, naughty naughty!
+}}
+
+== Location ==
+Two Snitchflies can be found in [[Bilewater]], scavenging corpses near a [[Flea]]. After the Flea is rescued, one Snitchfly continues to respawn in this room.<br>
+Two Snitchflies can be found in the lower part of [[the Slab]] after obtaining [[Key of Apostate]].<br>
+Another two can be found in the room directly to the west of [[Grand Bellway]], in the Choral Chambers. Only appear after defeating the [[Cogwork Dancers]] or obtaining the [[Clawline]], replacing a [[Choristor]] that could previously be found in the room.<br>
+During [[Act 3]], they can be found scavenging the wrecked ruins of [[Bone Bottom]] and [[Pilgrim's Rest]]. 
+
+{{Gallery
+|Image1 = Mapshot SS Snitchfly 04.png!Location in Bilewater
+|Image2 = Mapshot SS Snitchfly 02.png!Location in the Slab
+|Image3 = Mapshot SS Snitchfly 03.png!Location in the Choral Chambers
+|Image4 = Mapshot SS Snitchfly 05.png!Location in the High Halls
+|Image5 = Mapshot SS Flick the Fixer 01.png!Location in Bone Bottom in Act 3
+|Image6 = Mapshot SS Snitchfly 01.png!Location in the Far Fields in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Snitchfly 03.png!In Bilewater
+|Image2 = Screenshot SS Snitchfly 04.png!In the Slab
+|Image3 = Screenshot SS Snitchfly 06.png!In the Choral Chambers
+|Image4 = Screenshot SS Snitchfly 05.png!In the High Halls
+|Image5 = Screenshot SS Snitchfly 01.png!In Bone Bottom
+|Image6 = Screenshot SS Snitchfly 02.png!In front of Pilgrim's Rest
+|Image7 = Screenshot SS BlastedSteps 06.png!In Grindle's shop
+|Image8 = Screenshot SS Snitchfly 07.png!Idle
+|Image9 = GIF Snitchfly steal attack.gif!Leaping Rummage
+|Image10 = Screenshot SS Snitchfly 08.png!Gather
+|Image11 = Screenshot SS Snitchfly 09.png!Flee
+|Image12 = Screenshot SS Snitchfly 10.png!Reacting to the Needolin
+}}
+
+==Trivia==
+*The 1.0.27535 and 1.0.27776 versions of <i>Silksong</i> playable on PlayStation 4 and Nintendo Switch respectively, which are older than the PC launch version (1.0.28324), have the Snitchfly be named Rosary Thief.<ref>[https://docs.google.com/document/d/1GaNLkTTszFKFv55DZj3Iw1hTUi6gbstSR56WXizrMAI Silksong Switch full text] on Google Docs</ref>
+{{Localisation
+|DEname = Stibitzling
+|DEmeaning = From <i>stibitzen</i> (to pilfer) and <i>-ling</i> (diminutive suffix). 
+|ESname = Ladrón de rosarios
+|ESmeaning = Rosary Thief
+|FRname = Mouchardon
+|FRmeaning = From <i>mouche</i> (fly) and <i>mouchard</i> (snitch).
+|ITname = Ladro di Grani
+|ITmeaning = Beads Thief
+|JAname = コソドロバエ
+|JAromanised = Kosodoro-bae
+|JAmeaning = Combination of {{lang|ja|こそ泥}} <i>kosodoro</i> (sneaky thief) and {{lang|ja|蝿}} <i>hae</i> (fly)
+|KOname = 묵주 도둑
+|KOromanised = Mukju doduk
+|KOmeaning = Rosary Thief
+|PTname = Ladrão de Rosários
+|PTmeaning = Rosary Thief
+|RUname = Бусинокрад
+|RUromanised = Businokrad
+|RUmeaning = Rosary Thief
+|TWname = 念珠竊賊
+|TWromanised = Niànzhū qièzéi
+|TWmeaning = same
+|ZHname = 念珠窃贼
+|ZHromanised = Niànzhū qièzéi
+|ZHmeaning = Rosary Thief
+|CODEname = ROSARY_THIEF
+}}
+{{Refs|hr=ss}}
+{{SS Nav Enemies}}

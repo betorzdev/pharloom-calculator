@@ -1,0 +1,84 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Wisp.png|Hunter's Journal
+Wisp Lantern.png|Lantern
+</gallery>
+|drops = None
+|health = —
+|numbers_required = 15<br>(Instantly completed on [[Father of the Flame]]'s death)
+}}
+{{Quote
+|Hr = Journal
+|Short-lived sprite born of flickering flame.<hr/>
+To live only a single, bright moment... What would one feel? Is it glorious, or only despair? Or could it be both, mixed equal?
+}}
+
+<b>Wisps</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are short-lived sprites that explode into flames on impact summoned from lanterns. 
+
+== Behaviour and Tactics ==
+After a Wisp spawns, it flies away from Hornet. 2 seconds after spawning, if within range and line of sight, it flies towards Hornet and rapidly builds up speed, exploding into flame on impact with Hornet or a surface. If they touch water, they simply fizzle out. <br>
+If a Wisp doesn't attack for around 8 seconds, the Wisp dissipates.<br>
+If multiple Wisps are present, there is a delay between each Wisp's attacks, as opposed to all of them attacking at once.
+
+Wisps deal {{Damage|2|type=Fire}} on contact. Equipping the [[Magma Bell]] reduces it to {{Damage|1|type=Fire}}.
+
+The lanterns that spawn Wisps can be destroyed, preventing any more Wisps from spawning. Lanterns always take 4 hits to destroy, regardless of Needle or Tool upgrades, or are destroyed instantly with [[Heavy Damage]]. The lanterns ignore damage-over-time effects like [[Pollip Pouch]] and [[Flintslate]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Burning shape, all together...
+* Call us, call us...
+* Burn it! Burn it!
+* Swoop... Burn... Seek!
+}}
+
+== Location ==
+Wisps can be exclusively found in the [[Wisp Thicket]]. They only spawn from a Wisp Lantern, a [[Burning Bug]], or the [[Father of the Flame]], with Burning Bugs always being accompanied by two Wisps before being initiated. Their journal entry counter increases when a Wisp Lantern is destroyed.
+{{Gallery
+|Image1 = Mapshot SS Wisp 01.png!Location in the Wisp Thicket
+|Image2 = Mapshot SS Burning Bug 01.png!Burning Bug location in the Wisp Thicket
+|Image3 = Mapshot SS Father of the Flame 01.png!Father of the Flame location in the Wisp Thicket
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Wisp 01.png!Spawned from a lantern
+|Image2 = Screenshot SS Burning Bug 01.png!Burning Bug summoning Wisp
+|Image3 = Screenshot SS Father of the Flame 02.png!During Father of the Flame fight
+}}
+
+==Trivia==
+* Their Needolin dialogue only appears when playing the Needolin close to a Lantern, presumably to not conflict with the other enemies' Needolin dialogue. Additionally, their Needolin dialogue appears without them stopping to sing.
+
+{{Localisation
+|DEname = Irrwisch
+|DEmeaning = Will o' Wisp
+|ESname = Fatuo
+|ESmeaning = From <i>fuego fatuo</i> (will o' wisp)
+|FRname = Feu Follet
+|FRmeaning = Will o' Wisp
+|ITname = Fuoco Fatuo
+|ITmeaning = Will o' Wisp
+|JAname = ウィスプ
+|JAromanised = Wisupu
+|JAkatakana = foreignenemy
+|JAmeaning = Wisp
+|KOname = 정령
+|KOromanised = Jeongnyeong
+|KOmeaning = Spirit
+|PTname = Lume
+|PTmeaning = Fire or light
+|RUname = Трутик
+|RUromanised = Trutik
+|RUmeaning = Tinder
+|TWname = 火靈
+|TWromanised = Huǒ líng
+|TWmeaning = same
+|ZHname = 火灵
+|ZHromanised = Huǒ líng
+|ZHmeaning = Fire Wisp
+|CODEname = WISP
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

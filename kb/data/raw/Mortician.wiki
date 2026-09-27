@@ -1,0 +1,99 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Mortician.png|Hunter's Journal
+Mortician Idle.png|Idle
+Mortician Dormant.png|Dormant
+</gallery>
+| hasdrop = true
+| r1 = 30
+| r2 = 52
+| sh1 = 4-6
+| sh2 = 5-8
+|health = 95/{{BT|190}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.25|1|1|1|1}}
+|numbers_required = 10
+|singnum = 1
+}}
+{{Quote
+|Hr = Journal
+|Altered servant of the Citadel's Whiteward, responsible for the cremation of husks and the recycling of Silk from their shells.<hr/>It lies low to the ground, perhaps out of reverence for its task, but can spring up suddenly to attack. Its shear makes for a deadly weapon with surprising reach.
+}}
+
+<b>Morticians</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are altered servants of [[the Citadel]]'s [[Whiteward]] that wield gigantic pairs of scissors.<ref>Mortician [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Altered servant of the Citadel's Whiteward, responsible for the cremation of husks and the recycling of Silk from their shells."</i></ref><ref name="edge" />
+
+== Behaviour and Tactics ==
+Morticians start out inactive, but suddenly awaken and yell once [[Hornet (Silksong)|Hornet]] approaches them. Their awakening animation can be exploited to land 2–3 hits. All of their attacks and contact damage deal {{Damage|2}}.
+
+Morticians have three moves they can perform, and they frequently walk backwards or forwards slightly between each move.
+* <b>Overhead Block:</b> Raises its shear above itself in a defensive stance, blocking damage specifically from [[Needle#Needle-bouncing|Needle bounces]]. This move only occurs if Hornet lingers above the Mortician.
+* <b>Charging Harvest:</b> Shakes its shear above its head before charging forward, swinging it wildly in front. It stops a second or so after Hornet gets behind it.
+* <b>Leaping Cleave:</b> Crouches down briefly before leaping towards Hornet and swinging its shear outwards upon landing. The distance of the jump varies depending on how far Hornet is, occasionally resulting in sudden lunges.
+
+Dashing during their charge attack avoids the overhead swings. Jumping shortly after they leap creates a safe window to land multiple hits, preventing the fight from dragging on. Additionally, Morticians cannot cross spike pits, allowing Hornet to safely attack them from an adjacent platform using the [[Clawline]] or [[Tools]].
+
+=== Act 3 ===
+[[Black-threaded]] Morticians have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Save the Silk...
+* The beautiful Silk...
+* Holy, wonder... Preserved through flame...
+* Even these dregs...
+* Let nothing be wasted...
+* Even these husks...
+* All are holy...
+* All is needed!
+}}
+
+== Location ==
+Three Morticians can be found in the [[Whiteward]]'s crematorium, and two of them are fought as part of the [[Enemy_Gauntlets_(Silksong)/Whiteward 1|enemy gauntlet]] during the <i>[[Balm for the Wounded]]</i> [[wish]].
+
+{{Gallery
+|Image1 = Mapshot SS Mortician 01.png!Locations in the Whiteward
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Mortician 01.png!Dormant
+|Image2 = Screenshot SS Mortician 02.png!Idle
+|Image3 = Screenshot SS Mortician 03.png!Overhead Block
+|Image4 = Screenshot SS Mortician 04.png!Charged Harvest
+|Image5 = Screenshot SS Mortician 05.png!Leaping Cleave
+|Image6 = Screenshot SS Mortician 06.png!Reacting to the Needolin
+}}
+
+== Trivia ==
+* Morticians were described in <i>EDGE Magazine</i>, where [[Ari Gibson]] said "those late-game enemies holding gigantic pairs of scissors are going to spell disaster for our girl's [[Clawline|grappling ability]]".<ref name="edge">[https://pocketmags.com/edge-magazine/february-2021 Edge Magazine February 2021 edition] p. 59.</ref> 
+*Morticians have a [[Cut Content (Silksong)#Enemy Behaviours|cut]] "Spin Attack". 
+
+{{Localisation
+|DEname = Bestatter
+|DEmeaning = Mortician
+|ESname = Funerario
+|ESmeaning = Funerary
+|FRname = Morticien
+|FRmeaning = Mortician
+|ITname = Beccamorti
+|ITmeaning = Portmanteau of <i>becchino</i> (mortician) and <i>morti</i> (the deads).
+|JAname = ソウギヤ
+|JAromanised = Sougiya
+|JAmeaning = Mortician<br><small>From {{lang|ja|葬儀屋}} <i>sougiya</i> (mortician).</small>
+|KOname = 장의사
+|KOromanised = Janguisa
+|KOmeaning = Mortician
+|PTname = Funesto
+|PTmeaning = Baneful
+|RUname = Похоронщик
+|RUromanised = Poxoronŝik
+|RUmeaning = Mortician
+|ZHname = 殡葬师
+|ZHromanised = Bìnzàng shī
+|ZHmeaning = Mortician
+|CODEname = SONG_CREEPER
+|CODEmeaning = "Song" internally refers to the Citadel, which Whiteward is normally considered part of
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

@@ -1,0 +1,88 @@
+{{SS Infobox Tool
+| image = <gallery>
+Snare Setter.png|Inventory
+Snare Setter Poison.png|Pollip Pouch
+</gallery>
+| type = Red
+| damage = 25/40/55/70/85 (snare)<br>7/11/15/20/24 (direct hit)
+| max = 5/6/7/8/10
+| refill_type = Repair
+| refill = {{S|8}}
+| effect = Places an explosive rune on the ground.
+| location = [[Weavenest Atla]]
+| description = Trap-setting tool of the Weavers. Lays a Silk rune that ignites when foes come into contact.<hr>
+Uses shell canisters and the wielder's own Silk.
+}}
+
+{{Quote
+| There, my mothers built their tools, all traps and bindings. Small things, but tests for larger forms. I still remember their thoughts as they worked, their desperation, and their hunger. Another hopeless attempt to wrest their freedom. All ended in failure, of course.
+| [[Eva]]
+| Hr = SS
+}}
+
+<b>Snare Setter</b> is a {{CrestSlot|Red|1}} and Quest Item in <i>[[Hollow Knight: Silksong]]</i>. It sets a rune on the ground that explodes when an enemy moves close to it.
+
+== Usefulness ==
+The SKILL input must be '''held''' to use the Snare Setter. When used, [[Hornet (Silksong)|Hornet]] places a rune on the ground where she is standing, costing one thread of Silk alongside one use of this Tool. This is not instantaneous and can be interrupted by enemy attacks. If Hornet is in the air, she will be drawn downwards. If the Snare Setter is used while above an enemy, when drawn downwards Hornet will deal some damage to the enemy and bounce off them. In this case, one strand of Silk and one use of the Snare Setter will be expended anyways.
+
+Up to 4 runes can be active at the same time. If a fifth is placed, the oldest rune will fade away.
+
+When an enemy moves close enough to activate it, the rune will flicker for 1 second before exploding, dealing damage to the surrounding area, in a semicircle slightly larger than the rune's activation radius.
+
+The rune can be triggered by enemies above it without them coming into direct contact with it, and runes can be overlapped to deal additional damage. The rune is persistent and will not disappear until it is either triggered, a fifth is placed, or if Hornet either leaves the room or rests on a bench.
+
+The Snare Setter is also used to complete the <i>[[Silk and Soul]]</i> Wish by handing it to the [[Caretaker]] in [[Songclave]] along with the [[Seeker's Soul]], [[Maiden's Soul]], and [[Hermit's Soul]]. After handing it to the Caretaker, the Snare Setter disappears from Hornet's inventory, and is not possible to get back.
+
+== How to Acquire ==
+The Snare Setter can be found within a hidden room in [[Weavenest Atla]] once Hornet has the [[Faydown Cloak]]. After climbing the wall above [[Eva]]'s tunnel entrance, a path leads west to the edge of a green pond. Hornet can double jump here to reach the Snare Setter's chamber.
+
+{{Gallery
+|Image1 = Mapshot SS Snare Setter 01.png!Location in Weavenest Atla
+|Image2 = Screenshot SS Snare Setter 01.png!On desk in Weavenest Atla
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Recording SS Snare-Setter.gif!Hornet deploying Snare Setter
+|Image2 = GIF SS Snare Setter 01.gif!Failing to deploy Snare Setter
+|Image3 = GIF SS Snare Setter 02.gif!Killing enemy
+|Image4 = Screenshot_SS_Cradle_11.png!As part of the Soul Snare
+}}
+
+== Trivia ==
+* A [[Needolin Locations#Weavenest Atla|Needolin scene]] between three [[Weavers]] can be triggered in front of the Snare Setter's desk.
+* Most enemies killed by the Snare Setter will become charred and release white particles. This effect is similar to the one used in <i>[[Hollow Knight]]</i> when [[The Knight]] has killed an enemy using spells.
+
+{{Localisation
+|DEname = Schlingensetzer
+|DEmeaning = Snares Setter
+|ESname = Fijatrampas
+|ESmeaning = Trapsetter
+|FRname = Piège runique
+|FRmeaning = Runic Trap
+|ITname = Piantatrappole
+|ITmeaning = Traps Planter
+|JAname = 罠の土台 
+|JAromanised = Wana no dodai
+|JAmeaning = Trap Base
+|KOname = 덫 설치기
+|KOromanised = Deot seolchigi
+|KOmeaning = Trap Setter
+|PTname = Aranhol
+|PTmeaning = Spider Den<br><small><i>Aranhol</i> can also refer to a bird trap.</small>
+|RUname = Установщик ловушек
+|RUromanised = Ustanovščik lovušek
+|RUmeaning = Traps Setter
+|TWname = 陷阱機關
+|TWromanised = Xiànjǐng jīguān
+|TWmeaning = Snare Mechanism or Snare Scheme
+|ZHname = 陷阱设置器
+|ZHromanised = Xiànjǐng shèzhì qì
+|ZHmeaning = Snare Setter
+|CODEname=SNARE
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Tools}}
+[[fr:Piège runique]]

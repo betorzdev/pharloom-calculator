@@ -1,0 +1,73 @@
+{{SS Infobox Enemy
+| hasdrop = true
+| sh1 = 3-5
+| sh2 = 4-7
+|health = 45/{{BT|90}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1|1|1|1}}
+|numbers_required = 16
+|singnum = 1
+}}
+{{Quote
+|Hr = Journal
+|Drifting creature with a wide coral mask and hard proboscis to stab its prey.<hr/>
+Passively waits for prey to blunder into its path. A technique that should not necessarily be derided. Whatever is effective is best.
+}}
+
+<b>Pokenabbins</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are flying creatures with sharp proboscis.
+
+== Behaviour and Tactics ==
+Pokenabbins fly from side to side and perform a short diagonal-only dash at Hornet when she approaches. After attacking, they return to their original flying behaviour.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Pokenabbins have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* The crust covers...
+* The crust conceals...
+* Our shells made strong...
+* Our nest made secret...
+}}
+
+== Location ==
+Pokenabbins are primarily found in the [[Sands of Karak]]. Three of them can be found in the tall room directly above the entrance from the [[Blasted Steps]]. The others are located in the platforming areas to the east.
+{{Gallery
+|Image1 = Mapshot SS Pokenabbin 01.png!Location in the Sands of Karak.
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Pokenabbin 01.png!Pokenabbin in Sands of Karak
+|Image2 = Screenshot SS Pokenabbin 02.png!Attacking
+|Image3 = Screenshot SS Pokenabbin 03.png!Singing
+}}
+
+{{Localisation
+|DEname = Schnappschubser
+|DEmeaning = Snap Shover
+|ESname = Aguijonino
+|ESmeaning = From <i>aguijón</i> (stinger)
+|FRname = Pokonabbine
+|FRmeaning = —
+|ITname = Punzecchio
+|ITmeaning = Stinger
+|JAname = ポケナッビン
+|JAromanised = Pokenabbin
+|JAkatakana = foreignenemy
+|JAmeaning = Pokenabbin
+|KOname = 찌르가면
+|KOromanised = Jjireugamyeon
+|KOmeaning = Poke Mask
+|PTname = Furtivoso
+|PTmeaning = From <i>furtivo</i> (stealthy).
+|RUname = Хватокол
+|RUromanised = Xvatokol
+|RUmeaning =
+|ZHname = 刺螺虫
+|ZHromanised = Cì luó chóng
+|ZHmeaning = Spike Conch Bug
+|CODEname= CORAL_CONCH_STABBER
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

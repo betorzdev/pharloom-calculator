@@ -1,0 +1,166 @@
+{{SS Infobox Item
+| image = <gallery>
+Silkeater Idle.png|Inventory
+Silkeater Eating.png|Consuming
+Silkeater No Cocoon.png|No Cocoon
+Silkeater Cursed Animation.png|Cursed
+</gallery>
+| description = Grub that lives within and feeds upon Pharloom's lingering Silk, born with the ability to sense Silk over great distances.<hr>
+Consume the Silkeater to retrieve a cocoon after falling in battle.
+| effects = Immediately retrieves a [[Cocoon]]
+| type = [[Items (Silksong)#Consumables|Consumable]]
+| source = Found hanging from ceilings<br>Grown by [[Styx]]
+| buy = 
+| max = 10
+}}
+
+{{Quote|Hr=SS
+| Ssss! Mistress, is the morsss-sssel I grew worthy? You must conss-sume... conssss-sume and become sss-stronger.
+| [[Styx]]
+}}
+
+<b>Silkeaters</b> are [[Items (Silksong)#Consumables|consumable items]] in <i>[[Hollow Knight: Silksong]]</i>. They are mostly found in places with plentiful [[Silk]], recognisable by their white cocoons.
+
+== Use ==
+Silkeaters may be consumed from the inventory to immediately retrieve Hornet's [[Cocoon]], regardless of where it is in the world. If a Silkeater is consumed while no Cocoon exists, it does nothing.
+
+{{Steel Soul Icon Mini|SS}} In [[Steel Soul Mode (Silksong)|Steel Soul Mode]], Silkeaters can be sold to [[Skynx]] for {{R|46–154}}.<ref group="Note">Skynx gives either {{R|50}}, {{R|100}}, or {{R|150}}, with a variation of up to {{R|4}}.</ref>
+
+{{Gallery
+|Image1 = Mapshot SS Skynx.png!{{Steel Soul Icon Mini|SS}} Location in Sinner's Road
+|Image2 = Screenshot SS Skynx 02.png!Skynx in Sinner's Road
+}}
+
+== How to Acquire ==
+Silkeaters are grown by [[Styx]] in [[Sinner's Road]], at a rate of one every hour. He will hold one Silkeater at a time in his nest until the <i>[[Queen's Egg (Wish)|Queen's Egg]]</i> [[wish]] is completed, after which he will hold up to two Silkeaters. Styx is not available in {{Steel Soul Icon Mini|SS}} [[Steel Soul Mode (Silksong)|Steel Soul Mode]].
+
+{{Gallery
+|Image1 = Mapshot SS Styx.png!Location in Sinner's Road
+|Image2 = Screenshot SS Sinner's Road 08.png!Styx in Sinner's Road
+}}
+
+Silkeaters are also found by breaking their cocoons in various locations across [[Pharloom]].
+
+{| class="article-table" style="text-align: center;" width="100%"
+! 
+! Area
+! Location
+! Map
+|-
+! 1
+| [[Greymoor]]
+| At the top of the tower west of the [[Halfway Home]].
+| [[File:Mapshot SS Silkeater 01.png|center|200x200px]]
+|-
+! 2
+| [[Blasted Steps]]
+| East of where [[Shakra]] appears.
+Not available in {{Steel Soul Icon Mini|SS}}[[Steel Soul Mode (Silksong)|Steel Soul Mode]], as it is replaced by [[Steel Seer Zi]].
+| [[File:Mapshot SS Silkeater 02.png|center|200x200px]]
+|-
+! 3
+| [[Deep Docks]]
+| In the room southeast of the sauna [[Bench (Silksong)|bench]].
+| [[File:Mapshot SS Silkeater 03.png|center|200x200px]]
+|-
+! 4
+| [[Bilewater]]
+| Inside [[Exhaust Organ]].
+| [[File:Mapshot SS Exhaust Organ.png|center|200x200px]]
+|-
+! 5
+| [[Whiteward]]
+| In the centre.
+| [[File:Mapshot SS Silkeater 05.png|center|200x200px]]
+|-
+! 6
+| [[Choral Chambers]]
+| West of [[Grand Bellway]].
+| [[File:Mapshot SS Silkeater 06.png|center|200x200px]]
+|-
+! 7
+| [[Choral Chambers]]
+| East of the [[Great Gourmand]]'s dining chamber.
+| [[File:Mapshot SS Silkeater 07.png|center|200x200px]]
+|-
+! 8
+| [[Whispering Vaults]]
+| In the room directly north of [[Vaultkeeper Cardinius]]'s chambers.
+| [[File:Mapshot SS Silkeater 08.png|center|200x200px]]
+|-
+! 9
+| [[The Cradle]]
+| South of [[Terminus]].
+| [[File:Mapshot SS Silkeater 09.png|center|200x200px]]
+|}
+
+== Gallery ==
+{{Disclaimer|Some images have been altered from their appearance in-game. Foreground objects that obscure Silkeaters have been removed.}}
+{{Gallery
+|Image1 = Screenshot SS Greymoor 09.png!In Greymoor
+|Image2 = Screenshot SS Silkeater 01.png!In the Blasted Steps
+|Image3 = Screenshot SS Silkeater 02.png!In the Deep Docks
+|Image4 = Screenshot SS Silkeater 03.png!In Exhaust Organ
+|Image5 = Screenshot SS Silkeater 04.png!In the Whiteward
+|Image6 = Screenshot SS Silkeater 05.png!In the room west of Grand Bellway in the Choral Chambers
+|Image7 = Screenshot SS Silkeater 06.png!In the kitchen east of the Great Gourmand in the Choral Chambers
+|Image8 = Screenshot SS Silkeater 07.png!In the Whispering Vaults
+|Image9 = Screenshot SS Silkeater 08.png!In the Cradle
+|Image10 = Screenshot SS Styx 04.png!Young Silkeater being tended to by Styx
+|Image11 = Screenshot SS Styx 05.png!Styx with a Silkeater
+|Image12 = Screenshot SS Styx 07.png!Young Silkeater being tended to by Styx while another is ready
+|Image13 = Screenshot SS Styx 08.png!Styx with two Silkeaters
+|Image14 = Screenshot SS Void Mass 21.png!Silkeater Void Masses in Act 3
+}}
+
+== Trivia ==
+* Silkeater cocoons occasionally pulse, similarly to [[Grand Mother Silk]]'s cocoon and [[Silk Heart]]s.
+* Young Silkeater cocoons are usually found close to fully formed cocoons throughout Pharloom. Just like on the Styx's farm, striking them does not produce a Silkeater, only a bar or two of Silk.
+* There is an [[Cut Content (Silksong)/Graphics#Sprites|unused]] animation of Silkeater singing. Hornet cannot access her inventory while playing the [[Needolin]], so it is unknown how it would have appeared.
+
+{{Gallery
+|Image1 = Silkeater Singing.png!Singing
+}}
+
+{{History
+|game = SS
+|1.0.28891 (Patch 3): Fixed issues when consuming a Silkeater while in water.
+}}
+{{Localisation
+|DEname = Seidenfresser
+|DEmeaning = Silkeater or Silk Glutton
+|ESname = Devoraseda
+|ESmeaning = Silkeater
+|FRname = Dévoreur de Soie
+|FRmeaning = Devourer of Silk
+|ITname = Mangiaseta
+|ITmeaning = Silkeater
+|JAname= シルクグライ
+|JAromanised= Shiruku gurai
+|JAkatakana = enemy
+|JAmeaning = Combination of {{lang|ja|シルク}} shiruku (silk) and {{lang|ja|食らい}} <i>kurai</i> (eater).
+|KOname = 실크벌레
+|KOromanised = Silkeubeolle
+|KOmeaning = Silk Bug or Silk Worm
+|PTname =  Devora-seda
+|PTmeaning = Silk Eater
+|RUname = Шелкоед
+|RUromanised = Šelkoed
+|RUmeaning = Silkeater
+|TWname = 噬絲蟲
+|TWromanised = Shì sī chóng
+|TWmeaning = same
+|ZHname = 噬丝虫
+|ZHromanised = Shì sī chóng
+|ZHmeaning = Silk Eater Bug
+|CODEname = SILK_GRUB
+}}
+
+{{Hr|SS}}
+
+== Notes ==
+<references group="Note"/>
+{{Refs|hr=false}}
+
+{{SS Nav Items}}
+[[Category:Items (Silksong)]]

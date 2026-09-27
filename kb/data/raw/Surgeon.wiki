@@ -1,0 +1,102 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Surgeon.png|Hunter's Journal
+Surgeon Idle.png|Idle
+</gallery>
+| hasdrop = true
+| r1 = 25
+| r2 = 36
+| sh1 = 3-5
+| sh2 = 4-7
+| health = 75
+| damage_modifiers = {{SS Spaced Damage Modifiers|1.2|1|1|1|1}}
+| numbers_required = 3
+|singnum=2
+| va = Matthew Fitzgerald<ref>Matthew Fitzgerald is credited in Surgeon's audio files.</ref>
+}}
+
+{{Quote
+| Hr = Journal
+| Cruel physician of Whiteward, responsible for operations and modifications on the Citadel's bugs.<hr/>
+Their procedures with Silk may have prolonged life within the Citadel, but they unknowingly gifted many minds to the monarch.
+}}
+<b>Surgeons</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are physicians of the [[Whiteward]], responsible for operations and modifications on the [[Citadel]]'s bugs.<ref>Surgeon [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Cruel physician of Whiteward, responsible for operations and modifications on the Citadel's bugs."</i></ref>
+
+== Behaviour and Tactics ==
+Surgeons do not walk, and can only reposition using the following moves:
+* <b>Jump:</b> Performs a slow, floaty jump towards [[Hornet (Silksong)|Hornet]]. The Surgeon can suddenly use Pin Flurry whilst midair during this move.
+* <b>Pin Flurry:</b> Briefly extends pins attached to its body by [[Silk]] threads, then lashes out with them in a large semicircle around itself, comboing Hornet for {{Damage|1+1}} if she is caught at any point during the attack.
+* <b>Reposition:</b> Sinks into the ground, and after a second, a dust cloud indicates where it reappears as it shoots its pins upwards to pull itself out, emerging either near or beneath Hornet.
+
+Due to their predictable attacks and slow movement, Surgeons can simply be baited into attacking and then quickly counterattacked.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* O death! O sinful waste!
+* We banish you!
+* We cut you away!
+* Silk... holy life...
+* None may rest or idly lie...
+* None may die! None may die!
+}}
+
+== Location ==
+Surgeons can be found in the [[Whiteward]], specifically in a room unlocked during the <i>[[Balm for the Wounded]]</i> [[wish]]. Three of them are fought alongside two [[Mortician]]s as part of the [[Enemy_Gauntlets_(Silksong)/Whiteward 1|enemy gauntlet]]. In [[Act 3]], two Surgeons can be found there. They respawn upon leaving and re-entering the room, making them one of the rare enemies that drop rosaries but don't require resting at a [[Bench (Silksong)|bench]] to respawn.
+
+{{Gallery
+|Image1 = Mapshot SS Surgeon 01.png!Location in the Whiteward
+|Image2 = Mapshot SS Surgeon 02.png!Location in the Whiteward in Act 3
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Surgeon 01.png!Idle
+|Image2 = Screenshot SS Surgeon 02.png!Attacking
+|Image3 = Screenshot SS Surgeon 03.png!Reacting to the Needolin
+|Image4 = Screenshot SS White Key 02.png!Surgeon's corpse with the [[White Key]]
+|Image5 = Screenshot SS Surgeon's Key 03.png!Surgeon's corpse with the [[Surgeon's Key]]
+|Image6 = Screenshot SS Whiteward 04.png!Surgeon corpses around the Surgeon's Key lock
+|Image7 = Screenshot SS Reed 02.png!Surgeon corpses around a [[Reed]] corpse
+}}
+
+== Trivia ==
+* The voice of a Surgeon can be heard on the [[Psalm Cylinder]] that records the last surgery of [[Conductors#Mizello|Conductor Mizello]].
+* In the <i>Silksong</i> reveal trailer, Surgeons can be seen wandering rooms in the [[Choral Chambers]].<ref>[https://youtu.be/pFAknD_9U7c?t=102 Hollow Knight: Silksong Reveal Trailer]</ref> However, in the final release, they are relegated to a single enemy gauntlet within the Whiteward.
+{{Gallery
+|Image1=Silksong Early 032.png!<i>Silksong</i> reveal trailer
+}}
+
+{{History
+|game = SS
+|1.0.28891 (Patch 3): Fixed Surgeon enemies sometimes pulling Hornet out of bounds.
+}}
+{{Localisation
+|DEname = Chirurg
+|DEmeaning = Surgeon
+|ESname = Cirujano
+|ESmeaning = Surgeon
+|FRname = Chirurgien
+|FRmeaning = Surgeon
+|ITname = Chirurgo
+|ITmeaning = Surgeon
+|JAname = 外科医
+|JAromanised = Gekai
+|JAmeaning = Surgeon
+|KOname = 외과의
+|KOromanised = Oegwaui
+|KOmeaning = Surgeon
+|PTname = Cirurgião
+|PTmeaning = Surgeon
+|RUname = Хирург
+|RUromanised = Xirurg
+|RUmeaning = Surgeon
+|ZHname = 医师
+|ZHromanised = Yīshī
+|ZHmeaning = Doctor
+|CODEname=SONG_PILGRIM_02
+|CODEmeaning="Song" internally refers to the Citadel. 01 and 03 are the [[Envoy]]s and [[Choristor]]s
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Enemies}}

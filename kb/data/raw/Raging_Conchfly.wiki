@@ -1,0 +1,124 @@
+{{Navbar|page1=Great Conchflies|page2=Raging Conchfly}}
+{{SS Infobox Boss
+|title1 = Great Conchfly
+|image1 = <gallery>
+B Great Conchfly.png|Hunter's Journal
+Great Conchfly Drill.png|Drilling
+Great Conchfly Corpse.png|Dead
+</gallery>
+|theme = [https://youtu.be/iqSBa35FOPI Incisive Battle]
+|health = 820
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1.2|1.05|0.85|0.75}}
+|drops = Access to [[Coral Tower]] and [[Conchcutter]]
+|numbers_required = 2<ref group=Note>Entry shared with [[Great Conchflies]].</ref>
+|location = [[Sands of Karak]]
+|sing = Great Conchflies
+|singnum = 1
+}}
+{{Quote
+| Hr = Journal
+|Elder Conchfly crowned with a huge coral horn. Once partnered with a mate, they will rarely be seen alone.<hr/>
+To pair with another is a base instinct, and one that brings some bugs great joy. I once sought similar union, but of my own mates none could match my lifespan.
+}}
+
+The <b>Raging Conchfly</b> is a main [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. It is the sole enraged [[Great Conchflies|Great Conchfly]] that survived its initial battle, now blocking the path to the [[Coral Tower]].
+
+==Background==
+<b>Raging Conchfly</b> is the [[Great Conchflies|Great Conchfly]] that fled after the defeat of its partner in its initial battle with [[Hornet (Silksong)|Hornet]].
+
+== In-game Events ==
+In the northwest section of the [[Sands of Karak]], [[Hornet (Silksong)|Hornet]] encounters another room filled with pinkish conch shells. This arena is shorter than the [[Great Conchflies]]' arena—about half its height—but is also slightly wider. Entering this room locks Hornet in and begins the Raging Conchfly fight.
+
+Defeating Raging Conchfly allows Hornet to reach the [[Coral Tower]] and acquire the [[Conchcutter]] [[Tool]] within.
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+=== Phase 1 ===
+When entering Raging Conchfly's arena, it emerges from the ground, roars, and then burrows back in before beginning the fight. Raging Conchfly has a move set similar to [[Great Conchflies]]', but with some major alterations:
+* <b>Drill Dash</b>: Raging Conchfly bursts out of the walls, ground, or ceiling, travels directly across the arena, and then burrows back out of the arena. In comparison to the Great Conchflies fight, Raging Conchfly's Drill Dash is performed at a much quicker pace and travels much faster; it also now always targets [[Hornet (Silksong)|Hornet's]] location.
+* <b>Greater Conch Spit</b>: Raging Conchfly descends from the ceiling, hovers in either the upper half or lower half of the arena, and then spits a big conch projectile that deals {{Damage|1+1}} in a diagonal direction towards Hornet. The conch ricochets 4 times before breaking. After spitting the conch, it then follows up with one of three options: 
+** Moves slightly backwards to descend to the lower half of the arena (if it is not already there), then rotates itself to Drill Dash horizontally towards Hornet.
+** Makes a quick dash backwards and immediately spits out a second conch projectile towards Hornet before burrowing down into the ground.
+** Immediately burrows down into the ground.
+
+=== Phase 2 ===
+After reaching 574 HP, Raging Conchfly burrows to the centre of the arena and lets out a roar which summons 3 [[Conchfly|Conchflies]] that appear in the backdrop before tunnelling away. Raging Conchfly itself burrows down into the ground and remains absent as 5 Conchflies then burrow through the room vertically at random locations from the floor or ceiling. 
+
+After this series of events, Phase 2 properly starts with Raging Conchfly gaining the following two attacks:
+* <b>Drill Hoard</b>: Raging Conchfly descends to the ground at one end of the arena before roaring and summoning 5 Conchflies to burrow through the room vertically at random locations from the floor or ceiling. While the Conchflies attack, Raging Conchfly Drill Dashes towards Hornet.
+* <b>Drill Barrage</b>: Raging Conchfly descends to the ground at one end of the arena alongside 3 Conchflies which are lined up vertically in front of it, top to bottom. Each Conchfly then drills horizontally towards Hornet one after the other in a random order. Afterwards, Raging Conchfly can either Drill Dash towards Hornet following after the last Conchfly, or just burrow back down into the ground.
+* If Hornet ends up behind the Raging Conchfly during this phase, it will automatically turn around and perform a Drill Dash in her direction.
+* The Conchfly enemies spawned in this phase are treated essentially as projectiles and do not need to be killed. They disappear once they burrow away after each attack.
+
+<hr />
+
+The conch projectiles can be hit back towards Raging Conchfly to deal 15 damage to it.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* That scent... carried still...
+* Alone! Alone!
+* Empty... nest...
+* Crush! Crush!
+* Pierce your shell!
+* Lost! Lost!
+}}
+
+==Location ==
+Raging Conchfly can be found in the northwest area of the [[Sands of Karak]], blocking the path to the [[Coral Tower]].
+{{Gallery|
+|Image1 = Mapshot SS Raging Conchfly 01.png!Location in the Sands of Karak
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Raging Conchfly 01.png!Drill Dash
+|Image2 = Screenshot SS Raging Conchfly 02.png!Greater Conch Spit
+|Image3 = Screenshot SS Raging Conchfly 03.png!Phase transition
+|Image4 = Screenshot SS Raging Conchfly 04.png!Drill Hoard
+|Image5 = Screenshot SS Raging Conchfly 05.png!Drill Barrage
+|Image6 = Screenshot SS Raging Conchfly 07.png!Singing
+|Image7 = Screenshot SS Sands of Karak 04.png!Arena in the Sands of Karak
+}}
+
+{{Localisation
+|DEname = Zornige Muschelfliege
+|DEmeaning = Furious Conchfly or Furious Shell Fly
+|ESname = Moscarola Furiosa
+|ESmeaning = Furious Conchfly (feminine)<br><small><i>Moscarola</i> is the name of [[Conchfly|Conchflies]] in Spanish, a portmanteau of <i>mosca</i> (fly) and <i>caracola</i> (conch).</small>
+|FRname = Volucorne En Furie
+|FRmeaning = Horn Flyer of Fury
+|ITname = Mosconchiglia Scatenata
+|ITmeaning = Unleashed Conchfly<br><small><i>Mosconchiglia</i> is the name of [[Conchfly|Conchflies]] in Italian, a portmanteau of <i>mosca</i> (fly) and <i>conchiglia</i> (conch).</small>
+|JAname = 怒れるオオホラガイバエ
+|JAromanised = Ikareru oohoragaibae
+|JAkatakana = enemy
+|JAmeaning = Angry Great Conchfly<br><small>{{lang|ja|オオホラガイバエ}} is the name of the [[Great Conchflies]] in Japanese, a combination of {{lang|ja|大}} <i>ō</i> (large), {{lang|ja|ほら貝}} <i>horagai</i> (conch) and {{lang|ja|蝿}} <i>hae</i> (fly).</small>
+|KOname = 격노한 고둥파리
+|KOromanised = Gyeongnohan godungpari
+|KOmeaning = Furious Conchfly or Furious Snail Fly
+|PTname = Mosquicórnio Furioso
+|PTmeaning = Furious Horn Fly
+|RUname = Разъярённая ракушечная муха
+|RUromanised = Raz"jarënnaja rakušečnaja muxa
+|RUmeaning = Enraged Seashell Fly
+|TWname = 狂暴的螺蠅
+|TWromanised = Kuángbào de luó yíng
+|TWmeaning = same
+|ZHname = 狂暴的螺蝇
+|ZHromanised = Kuángbào de luó yíng
+|ZHmeaning = Berserked Conch Fly
+|CODEname = CORAL_CONCH_DRILLER_GIANT</code><br><code>CORAL_DRILLER_LONE</code><br><code>DRILLER_SOLO
+|CODEmeaning = [[Conchfly]] is refered to as <code>CORAL_CONCH_DRILLER</code>
+}}
+{{hr|SS}}
+== Notes ==
+<references group="Note"/>
+{{Refs|hr=false}}
+
+{{SS Nav Enemies}}
+[[Category:Enemies (Silksong)]]
+[[Category:Bosses (Silksong)]]
+
+[[pt:Mosquicórnio Furioso]]

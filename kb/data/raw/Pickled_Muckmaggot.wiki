@@ -1,0 +1,66 @@
+{{Navbar|icons=true|page1=Mossberry Stew|page2=Vintage Nectar|page3=Courier's Rasher|page4=Crustnut|page5=Pickled Muckmaggot}}
+{{SS Infobox Item
+| type = [[Items (Silksong)#Deliverables|Deliverable]]
+| source = [[Disgraced Chef Lugoli]]
+| description = Pungent delicacy preserved in roach brine. The most famous creation of the disgraced chef Lugoli.
+}}
+{{Quote
+|Seek out a Pickled Muckmaggot, the sacred treat revered and reviled for its intensity. It was a specialty of the chef Lugoli, long ago banished for culinary sacrilege.<br>
+Rumours sing that the great chef retreated to their home-caves in the dank midlands below...
+|Loyal Mergwin
+|Hr=SS
+}}
+
+<b>Pickled Muckmaggot</b> is a [[Items (Silksong)#Deliverables|deliverable item]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+Pickled Muckmaggot is one of the five ingredients required for the <i>[[Great Taste of Pharloom]]</i> wish. It is given to [[Loyal Mergwin]] in the [[Choral Chambers]].
+
+{{Gallery
+|Image1 = Mapshot SS Loyal Mergwin 01.png!Loyal Mergwin's location in Choral Chambers
+|Image2 = Screenshot SS Loyal Mergwin 02.png!Loyal Mergwin in Choral Chambers
+}}
+
+== How to Acquire ==
+The Pickled Muckmaggot is dropped by [[Disgraced Chef Lugoli]] when they are defeated. Reaching the boss requires the [[Faydown Cloak]]. 
+
+{{Gallery
+|Image1 = Mapshot SS Disgraced Chef Lugoli 01.png!Location in Sinner's Road
+|Image2 = Screenshot SS Disgraced Chef Lugoli 10.png! Disgraced Chef Lugoli in Sinner's Road
+}}
+
+== Trivia ==
+* The internal name for the graphic of the Pickled Muckmaggot, <code>century_maggot_icon</code>, is likely a reference to [https://en.wikipedia.org/wiki/Century_egg| Century Eggs], which are aged fowl eggs. 
+
+{{Localisation
+|DEname = Eingelegte Mistmade
+|DEmeaning = Pickled Muckmaggot
+|ESname = Gusasucio en escabeche
+|ESmeaning = Pickled Muckmaggot<br><small><i>Gusasucio</i> is the name of the [[Muckmaggot]]s in Spanish, a portmanteau of <i>gusano</i> (worm) and <i>sucio</i> (dirty).<small>
+|FRname = Bouefrasse marinée
+|FRmeaning = Marinated Muckmaggot
+|ITname = Bacofango sottaceto
+|ITmeaning = Pickled Mud Maggot
+|JAname = ドロウジの漬け物
+|JAromanised = Doro uji no tsukemono
+|JAmeaning = Pickled Muckmaggot<br><small>{{lang|ja|ドロウジ}} <i>doro uji</i> is the name of the [[Muckmaggot]]s in Japanese, a combination of {{lang|ja|泥}} <i>doro</i> (mud) and {{lang|ja|蛆}} <i>uji</i> (maggot).</small>
+|KOname = 절인 진흙구더기
+|KOromanised = jeorin jinheulgudeogi
+|KOmeaning = Pickled Mud Maggot
+|PTname = Larva-do-Lodo em Conserva
+|PTmeaning = Preserved Larva of the Sludge
+|RUname = Маринованная навозная личинка
+|RUromanised = Marinovannaja navoznaja ličinka
+|RUmeaning = Pickled Dung Maggot or Marinated Dung Maggot
+|TWname = 醃製泥蛆
+|TWromanised = Yān zhì ní qū
+|TWmeaning = same
+|ZHname = 腌淤秽蛆
+|ZHromanised = Yān yū huì qū
+|ZHmeaning = Pickled Muck Maggot
+|CODEname = PICKLEDEGG
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}

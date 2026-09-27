@@ -1,0 +1,120 @@
+{{SS Infobox Item
+| image = Shell Shards large.png
+| description = Hardened fragments of shell and bone, used in the crafting of tools and traps.
+| effects = Used to replenish {{CrestSlot|Red|s}}<br>Used for [[Bone Bottom]] donations
+| type = Crafting material
+}}
+
+{{Quote|Hr=SS
+|Those shards are valuable, alright. Brilliant for crafting and fixing, very versatile.
+|[[Flick the Fixer]]
+}}
+
+<b>Shell Shards</b> are a collectible in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+=== Tools ===
+Shell Shards are used to replenish the stock of {{CrestSlot|Red|s}} that [[Hornet (Silksong)|Hornet]] uses alongside her [[Needle]]. The number of Shell Shards needed varies by Tool.
+
+Unless the [[Architect Crest]] is equipped, [[Tools]] can only be replenished when resting at a [[Bench (Silksong)|Bench]]. With the Architect Crest, Hornet can Craft Bind to replenish tools anywhere, for the same number of Shell Shards they would normally cost.
+
+Hornet begins the game with a maximum capacity of {{S|400}}, which can be increased to a maximum of {{S|800}} by collecting [[Tool Pouch]] upgrades.
+
+=== Wishes ===
+Shell Shards are used to complete three [[Donate Wishes]] in [[Bone Bottom]]:
+
+* [[Bone Bottom Repairs]] {{S|200}}
+* [[A Lifesaving Bridge]] {{S|300}}
+* [[An Icon of Hope]] {{S|440}}
+
+== How to Acquire ==
+[[File:Shard deposit.png|right|150x150px]]
+Shell Shards can be gained in several different ways:
+* Most [[Enemies (Silksong)|enemies]] drop Shell Shards upon death. 
+** A random 0%/25%/50% bonus (rounding up, with a maximum of 8 shards)<ref name=logic><code>HealthManager.Die()</code>.</ref> is added. The chances are 37.5%/37.5%/25% respectively.<ref><code>HealthManager._shellShardMultiplierArray</code>.</ref>
+** The [[Shard Pendant]] tool increases yield (including the bonus)<ref name=logic /> by 25%.
+
+* Shell Shards can be found in natural deposits.
+** Alongside breakable fossils, many deposits feature fossilised surfaces that can be hit with a chance to get {{S|0-2}}. The chances are 80%/15%/5% respectively.<ref><code>ShardRegion.dropChances</code>.</ref> When the [[Architect Crest]] is equipped, the chances are 80%/5%/1.6%.<ref><code>ShardRegion.architectProbabilities</code>.</ref>
+** Destroying small, round fossils often found in clusters grants {{S|5}}.
+** Destroying large, ammonite-like fossils found individually grants {{S|33}}, excluding those in [[Wisp Thicket]], where they drop only {{S|24}}.
+** Destroying fossilised coral conches found in [[Sands of Karak]] and in its section in the [[Memorium]] grants {{S|8}}. The speleothems in the eastern [[Underworks]] and on the roof of the [[Pale Lake]] drop the same amount of shards.
+** Hitting fossilised growths in [[Shellwood]] causes them to drop and scatter into {{S|9}}.
+** Destroying fossils merged with [[Flintstone]] found in the [[Deep Docks]] grants {{S|12}}.
+* Shell Shards can be found in containers and artificial structures.
+** Destroying Shell Shard barrels in the [[Deep Docks]], the [[Underworks]], the [[Grand Gate]], the [[Choral Chambers]], and above [[the Stage]] grants {{S|16}}.
+** Destroying Shell Shard chests in the [[Underworks]], the [[Whispering Vaults]], and the [[High Halls]] grants {{S|15}}.
+** Destroying Shell Shard strings in [[Hunter's March]] and the [[Far Fields]] grants {{S|9}}.
+** Destroying regular heat lamps in [[Mount Fay]] grants {{S|0-2}}, while large ones grant {{S|3-4}}.
+** The statue built by [[Flick the Fixer]] after completing the <i>[[An Icon of Hope]]</i> [[wish]] can be broken for {{S|38}}. Once destroyed, the ground below it can be hit to get {{S|0-2}}, functioning similarly to the fossilised surfaces of natural deposits.
+* Several items can be broken into Shell Shards.
+** Breaking a [[Shard Bundle]] grants {{S|80}}.
+** Breaking a [[Beast Shard]] grants {{S|140}}.
+** Breaking a [[Pristine Core]] grants {{S|220}}.
+** Breaking the [[Hornet Statuette]] grants {{S|60}}.
+** Breaking the {{Steel Soul Icon Mini|SS}} [[Growstone]] grants {{S|30-45}} (Growth Stage 2), {{S|75-95}} (Growth Stage 3), or {{S|120-140}} (Growth Stage 4).
+* After installing the [[Crawbell]] in the [[Bellhome]], [[Craws]] start to bring {{S|5-20}} every 300 seconds that pass in-game, with a maximum capacity of {{S|300-500}}. The maximum capacity is randomly selected again every time the nest's contents are collected.
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Shell Shard Deposit 01.png!Deposit in the [[Moss Grotto]]
+|Image2 = Screenshot SS Shell Shard Deposit 02.png!Deposit in [[the Marrow]]
+|Image3 = Screenshot SS Shell Shard Deposit 03.png!Deposit in the [[Deep Docks]]
+|Image4 = Screenshot SS Shell Shard Deposit 04.png!Deposit in the [[Far Fields]]
+|Image5 = Screenshot SS Shell Shard Deposit 05.png!Deposit in [[Greymoor]]
+|Image6 = Screenshot SS Shell Shard Deposit 06.png!Deposit in [[Wisp Thicket]]
+|Image7 = Screenshot SS Shell Shard Deposit 07.png!Deposit in [[Sinner's Road]]
+|Image8 = Screenshot SS Shell Shard Deposit 08.png!Deposit in [[Bilewater]]
+|Image9 = Screenshot SS Shell Shard Deposit 09.png!Deposit in [[Shellwood]]
+|Image10 = Screenshot SS Shell Shard Deposit 10.png!Deposit in the [[Blasted Steps]]
+|Image11 = Screenshot SS Shell Shard Deposit 11.png!Deposit in [[Sands of Karak]]
+|Image12 = Screenshot SS Shell Shard Deposit 12.png!Deposit in the [[Underworks]]
+|Image13 = Screenshot SS Shell Shard Deposit 13.png!Deposit in [[the Slab]]
+|Image14 = Screenshot SS Shell Shard Deposit 14.png!Deposit in [[Mount Fay]]
+|Image15 = Screenshot SS Shell Shard Deposit 15.png!Deposit in [[the Cradle]]
+|Image16 = Screenshot SS Shell Shard Deposit 16.png!Deposit in [[the Abyss (Silksong)|the Abyss]]
+|Image17 = Screenshot SS Shell Shard Deposit 17.png!Fossilised coral conch in the [[Memorium]]
+|Image18 = Screenshot SS Shell Shard Deposit 18.png!Stalactites in the [[Pale Lake]]
+|Image19 = Screenshot SS Shell Shard Deposit 19.png!Barrel in the [[Choral Chambers]]
+|Image20 = Screenshot SS Shell Shard Deposit 20.png!Barrel above [[the Stage]]
+|Image21 = Screenshot SS Shell Shard Deposit 21.png!Barrel in the [[Grand Gate]]
+|Image22 = Screenshot SS Shell Shard Deposit 22.png!Chest in the [[High Halls]]
+|Image23 = Screenshot SS Shell Shard Deposit 23.png!Strings in [[Hunter's March]]
+}}
+
+==Trivia==
+*If left within bodies of water, Shell Shards sink and disappear after a few seconds.
+*In the 2019 <i>Silksong</i> demo, Shell Shards had the description of <i>"Fossilised fragments of shell and bone. Useful for crafting tools."</i><ref>[https://www.youtube.com/watch?v=Y8lvHT_IQbM Hollow Knight: Silksong Gameplay - Nintendo Treehouse: Live | E3 2019]</ref>
+{{Localisation
+|DEname = Panzersplitter
+|DEmeaning = Shell Shard
+|ESname = Fragmentos de coraza
+|ESmeaning = Shell Shards
+|FRname = Fragments de carapace
+|FRmeaning = Shell Fragments
+|ITname = Schegge di carapace
+|ITmeaning = Shell Shards
+|JAname=殻の破片
+|JAromanised= Kara no hahen
+|JAmeaning = Shell Fragments
+|KOname = 껍질 조각
+|KOromanised = Kkeopjil jogak
+|KOmeaning = Shell Shard
+|PTname =  Fragmentos de Carapaça
+|PTmeaning = Shell Fragments
+|RUname = Осколки панциря
+|RUromanised = Oskolki pancirja
+|RUmeaning = Shell Shards
+|TWname = 甲殼碎片
+|TWromanised = Jiǎqiào suìpiàn
+|TWmeaning = same
+|ZHname = 甲壳碎片
+|ZHromanised = Jiǎqiào suìpiàn
+|ZHmeaning = Shell Shards
+|CODEname = SHARD
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+[[Category: Points of Interest (Silksong)]]
+[[fr:Fragments de carapace]]

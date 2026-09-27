@@ -1,0 +1,88 @@
+{{SS Infobox Enemy
+| hasdrop = true
+| sh1 = 3-5
+| sh2 = 4-7
+|health = 25/{{BT|50}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.25|1|0.9|0.7|0.7}}
+|numbers_required = 20
+|singnum = 1
+}}
+
+{{Quote
+|Hr = Journal
+|Small arachnid found in many crevices and caves throughout Pharloom.<hr/>Something in their assault reminds me of my own skill, though their talents are born purely of instinct. My technique is formed from hard training.
+}}
+
+<b>Pharlids</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are small arachnids driven by instinct which are found throughout [[Pharloom]].<ref>Pharlid Hunter's Journal entry: <i>"Small arachnid found in many crevices and caves throughout Pharloom (...) their talents are born purely of instinct."</i></ref> Numerous Pharlids were evolved into [[Weavers]] by [[Grand Mother Silk]].<ref>First Sinner post-fight [https://www.youtube.com/watch?v=nAwTNaLtT34 cutscene].</ref>
+
+== Behaviour and Tactics ==
+Pharlids move back and forth across floors and walls, dealing {{Damage|1}} on contact. When [[Hornet (Silksong)|Hornet]] comes close, they prepare an attack where they swipe and slice their claws in a large range around their bodies, dealing {{Damage|1+1}} if Hornet gets caught.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Pharlids have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Our caves...
+* Our darkness...
+* To hide... To nest... To live...
+* Always ours...
+}}
+
+== Location ==
+Pharlids are most numerous in the [[Blasted Steps]]. They can also be found in many out-of-the-way portions of other areas, including the caves of [[Verdania]], parts of the [[Wisp Thicket]], the entrance to [[Sands of Karak]], the eastern [[Underworks]], the outside section of the [[Whispering Vaults]], and the [[Border Caves]] above [[the Cradle]].
+{{Gallery
+|Image2 = Mapshot SS Pharlid 01.png!Location in the Blasted Steps
+|Image3 = Mapshot SS Pharlid 05.png!Location in the Underworks
+|Image4 = Mapshot SS Pharlid 06.png!Location in the Whispering Vaults
+|Image5 = Mapshot SS Pharlid 04.png!Location in the Sands of Karak
+|Image6 = Mapshot SS Pharlid 03.png!Location in the Wisp Thicket
+|Image7 = Mapshot SS Pharlid 07.png!Location in Verdania
+|Image8 = Mapshot SS Pharlid 02.png!Location in Border Caves
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Pharlid 01.png!In the Blasted Steps
+|Image2 = Screenshot SS Pharlid 02.png!In Verdania
+|Image3 = Screenshot SS Pharlid 03.png!In the Wisp Thicket
+|Image4 = Screenshot SS Pharlid 04.png!In the Sands of Karak
+|Image5 = Screenshot SS Pharlid 05.png!In the Underworks
+|Image6 = Screenshot SS Pharlid 06.png!In the Whispering Vaults
+|Image7 = Screenshot SS Pharlid 07.png!In the Border Caves
+|Image8 = Screenshot SS Pharlid 08.png!Attacking
+|Image9 = Screenshot SS Pharlid 09.png!Responding to the Needolin
+}}
+
+{{Localisation
+|DEname = Pharlide
+|DEmeaning = —
+|ESname = Telácnida
+|ESmeaning = From <i>Telalejana</i> (Pharloom) and <i>-nida</i> (taxonomic suffix).
+|FRname = Fouisseuse
+|FRmeaning = Burrower (feminine)
+|ITname = Lungiragno
+|ITmeaning = Portmanteau of <i>Lungitela</i> (Pharloom) and <i>ragno</i> (spider).
+|JAname = ファグモ
+|JAromanised = Fagumo
+|JAkatakana = foreignenemy
+|JAmeaning = Portmanteau of {{lang|ja|ファールーム}} <i>fārūmu</i> (Pharloom) and {{lang|ja|蜘蛛 <i>kumo</i>}} (spider).
+|KOname = 팔리드
+|KOromanised = Pallideu
+|KOmeaning = Pharlid
+|PTname = Farlídea
+|PTmeaning = —
+|RUname = Фарлид
+|RUromanised = Farlid
+|RUmeaning = Pharlid
+|TWname = 紡蛛
+|TWromanised = Fǎng zhū
+|TWmeaning = Weave Spider
+|ZHname = 纺络蛛
+|ZHromanised = Fǎngluò zhū
+|ZHmeaning = Pharloom Spider
+|CODEname= BLADE_SPIDER
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

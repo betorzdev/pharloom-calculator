@@ -1,0 +1,114 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Vaultborn.png|Hunter's Journal
+Vaultborn Idle.png|Idle
+</gallery>
+| hasdrop = true
+| r1 = 5
+| r2 = 7
+| sh1 = 3-5
+| sh2 = 4-7
+|health = 40/{{BT|80}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 20
+|singnum = 2
+|s1 = Needolin
+|s2 = Sermon after being freed
+}}
+
+<tabber>
+|-|Released by Hornet=
+{{Quote
+|Hr = Journal
+|Young acolyte raised in the darkest vaults, destined to ascend to the rank of Scrollreader.<hr/>
+In entering their domain, I freed these bugs to infest the greater vaults. They are a nuisance, and I have only myself to blame.
+}}
+|-|Released in Act 3=
+{{Quote
+|Hr = Journal
+|Young acolyte raised in the darkest vaults, destined to ascend to the rank of Scrollreader.<hr/>
+These bugs have been driven out of their vault's recesses by Pharloom's black collapse. They are a nuisance, and I have only myself to blame.
+}}
+</tabber>
+
+<b>Vaultborn</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are young [[Keepers|acolytes]] raised in the darkest parts of the [[Whispering Vaults]], destined to become [[Scrollreader]]s.<ref>Vaultborn [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Young acolyte raised in the darkest vaults, destined to ascend to the rank of Scrollreader."</i></ref>
+
+== Behaviour and Tactics ==
+Vaultborn are often found clinging to walls or ceilings, or simply wandering back and forth. 
+Vaultborn have 2 different moves:
+* <b>Headbutt:</b> Tenses up and then throws itself at Hornet headfirst. Its hardy headwear prevents any damage to its head during the attack, meaning counterattacking only results in a parry.
+* <b>Flutter Jump:</b> Jumps up and then swoops slightly before landing again. If they touch a wall whilst airborne, they cling to it for a moment before jumping off.
+
+Vaultborn deal {{Damage|1}} both with their attacks and on contact.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Vaultborn have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* We are blessed! We are chosen!
+* The scrolls have spoken!
+* Holy words for us to speak!
+* Secret songs for us to keep!
+}}
+
+== Location ==
+Vaultborn can be found in the [[Whispering Vaults]], unleashed upon the area after the activation of a switch in a hidden room west of the chambers of [[Vaultkeeper Cardinius]]. If this is not done by [[Act 3]], a cave-in destroys the room and releases them regardless.
+
+The number of Vaultborn and their locations change upon each entry into the room, except for the one where they were originally held, which always contains exactly three. In three further rooms to the east, their numbers can vary within the ranges of 4–5, 6–8, and 2–3, respectively. Eight Vaultborn can be fought in the [[Enemy_Gauntlets_(Silksong)/Whispering_Vaults_2|optional enemy gauntlet]] at the entrance to the Whispering Vaults, which becomes available once the [[Enemy_Gauntlets_(Silksong)/Whispering_Vaults_1|previous gauntlet]] is cleared. Upon re-entering the gauntlet arena, 1–3 Vaultborn can be found.
+
+{{Gallery
+|Image1 = Mapshot SS Vaultborn 01.png!Locations in the Whispering Vaults
+|Image2 = Mapshot SS Vaultborn 03.png!Locations in the Whispering Vaults in Act 3
+|Image3 = Mapshot SS Vaultborn 02.png!Location of the switch that unleashes them in Act 2
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Vaultborn 01.png!In hidden room
+|Image2 = Screenshot SS Vaultborn 02.png!Being released
+|Image3 = Screenshot SS Vaultborn 10.png!Sitting
+|Image4 = Screenshot SS Vaultborn 08.png!Clinging to a wall
+|Image5 = Screenshot SS Vaultborn 03.png!Idle
+|Image6 = Screenshot SS Vaultborn 04.png!Headbutt
+|Image7 = Screenshot SS Vaultborn 05.png!Flutter Jump
+|Image8 = Screenshot SS Vaultborn 09.png!Responding to the Needolin
+|Image9 = Screenshot SS Vaultborn 06.png!Giving a sermon to other Vaultborn
+|Image10 = Screenshot SS Vaultborn 07.png!Modded screenshot of sermon without blur
+|Image11 = Ari SS Sketch 18.png!Concept sketches
+}}
+
+==Trivia==
+* Vaultborn is the only enemy in <i>[[Hollow Knight: Silksong]]</i> to have two variants of their [[Hunter's Journal (Silksong)|Hunter's Journal]] entry.
+
+{{Localisation
+|DEname = Archivbrut
+|DEmeaning = Archive Brood
+|ESname = Engendro de las Bóvedas
+|ESmeaning = Freak of the Vaults or Fetus of the Vaults
+|FRname = Enfant des Voûtes
+|FRmeaning = Child of the Vaults
+|ITname = Voltenato
+|ITmeaning = Vaultborn
+|JAname = 貯蔵庫の子
+|JAromanised = Chozōko no ko
+|JAmeaning = Child of the Repository
+|KOname = 금고에서 태어난 자
+|KOromanised = Geumgoeseo taeeonan ja
+|KOmeaning = One Born in the Vaults
+|PTname = Camarólito
+|PTmeaning = Portmanteau of <i>câmaras</i> (chambers) and <i>acólito</i> (acolyte).
+|RUname = Отпрыск катакомб
+|RUromanised = Otprysk katakomb
+|RUmeaning = Offspring of the Catacombs
+|TWname = 書庫之子
+|TWromanised = Shūkù zhī zǐ
+|TWmeaning = same
+|ZHname = 书库之子
+|ZHromanised = Shūkù zhī zǐ
+|ZHmeaning = Child of the Library
+|CODEname= SONG_SCHOLAR_ACOLYTE
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

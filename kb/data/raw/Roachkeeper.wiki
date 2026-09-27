@@ -1,0 +1,103 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Roachkeeper.png|Hunter's Journal
+Roachkeeper Idle.png|Idle
+</gallery>
+| hasdrop = true
+| r1 = 24
+| r2 = 36
+| sh1 = 6-9
+| sh2 = 8-12
+|health = 100/{{BT|200}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.3|1.1|0.9|0.9|0.9}}
+|numbers_required = 10
+|singnum = 2
+}}
+
+{{Quote
+|Hr = Journal
+|Grizzled older roach tender weighted with a lasso of heavy chain.<hr/>
+Though their mind is largely lost their skill with a chain has not been forgotten. Does the Haunting eternally bind a bug to the task it had in life?
+}}
+
+<b>Roachkeepers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are bulky, hooded [[Roach Tenders]] wearing spiked headgear and wielding large chains.
+
+== Behaviour and Tactics ==
+Roachkeepers walk back and forth, occasionally stopping before resuming their walking.
+A Roachkeeper has three attacks that can be chosen at random:
+* <b>Chain Punch:</b> They wrap their chain around their fist for half a second and lunge forward with a punch. The hitbox on their fist remains until they fully end the attack, giving it a deceptively lingering hitbox.
+* <b>Chain Whip:</b> They swing their chain around themselves wildly in a semi-circle, covering both sides. Combos Hornet, dealing {{Damage|1+1}} if she is caught in it at any time.
+* <b>Jump:</b> They can jump in a forward or backward arc, and are entirely invincible during the jump.
+
+Roachkeepers deal {{Damage|2}} on all attacks and upon contact. They wear spikes on their back and head that protect them from attacks from above. 
+
+Staying on the ground makes it easier to evade a Roachkeeper's jump attacks. They are most vulnerable to Needle attacks after throwing a punch. Hornet can jump or needle-bounce over them and attack from behind, or stand just outside of their lunging distance to attack them from the front.
+
+=== Act 3 ===
+[[Black-threaded]] Roachkeepers have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|Void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2|
+* Herd them...
+* Bind them...
+* Feed the many...
+* None shall starve...
+}}
+
+== Location ==
+Roachcatchers can be found in the northern sections of [[Sinner's Road]]. The Roachkeeper at the east end of the top hallway can be permanently killed by [[Garmond and Zaza]].
+
+The Roachkeeper in the northeast drops a [[Simple Key (Silksong)|Simple Key]] when killed.
+
+{{Gallery
+|Image1 = Mapshot SS Roachkeeper 01.png!Locations in Sinner's Road
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Roachkeeper 01.png!In Sinner's Road
+|Image2 = Screenshot SS Roachkeeper 02.png!Chain Punch
+|Image3 = Screenshot SS Roachkeeper 05.png!Chain Whip
+|Image4 = Screenshot SS Roachkeeper 03.png!Jump
+|Image5 = Screenshot SS Roachkeeper 04.png!Reacting to the Needolin
+|Image6 = Screenshot SS Roachkeeper 06.png!Carrying a Simple Key
+|Image7 = Screenshot SS Garmond and Zaza 04.png!Killed by Garmond and Zaza
+|Image8 = Screenshot SS Sinner's Road 10.png!Corpse at the entrance to [[the Mist]]
+}}
+
+== Trivia ==
+*Roachkeepers share the same voice as [[Choir Clapper]]s.
+*Roachkeepers singing voice is very similar to [[Groal the Great]]'s.
+
+{{Localisation
+|DEname = Schabenhüter
+|DEmeaning = Cockroach Keeper
+|ESname = Pastor de cucarachas
+|ESmeaning = Shepherd of Cockroaches
+|FRname = Férogarde
+|FRmeaning = Portmanteau of <i>Férochard</i> (Muckroach) and <i>garde</i> (guard).
+|ITname = Guardablatte
+|ITmeaning = Roachwatcher
+|JAname = ツチゴキブリの管理者
+|JAromanised = Tsuchigokiburi no kanrisha
+|JAmeaning = Muckroach Manager
+|KOname = 바퀴관리자
+|KOromanised = Bakwigwallija
+|KOmeaning = Cockroach Manager
+|PTname = Guarda-baratas
+|PTmeaning = Roach Watcher or Roach Keeper
+|RUname = Тараканий смотритель
+|RUromanised = Tarakanij smotritel'
+|RUmeaning = Keeper to the Roach
+|TWname = 蟑螂監管者
+|TWromanised = Zhāngláng jiānguǎnzhě
+|TWmeaning = same
+|ZHname = 蟑螂监管者
+|ZHromanised = Zhāngláng jiānguǎnzhě
+|ZHmeaning = Roach Overseer
+|CODEname=ROACHKEEPER
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

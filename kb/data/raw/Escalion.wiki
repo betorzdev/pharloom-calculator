@@ -1,0 +1,83 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Escalion.png|Hunter's Journal
+Escalion Idle.png|Idle
+Escalion Hanging.png|Hanging
+</gallery>
+|drops = None
+|health = 100
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.35|1.15|1|1|1}}
+|numbers_required = 10<br>(Instantly completed on [[Clover Dancers]]' death)
+}}
+{{Quote
+|Hr = Journal
+|Blindingly fast, winged warrior able to launch pointed pinions from its forelimbs.<hr/>
+Born with many tools I would once have desired for myself. Fortunately, I have trained hard around those limits.
+}}
+
+<b>Escalions</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are winged [[Verdanians|Verdanian]] warriors able to launch pointed pinions from their forelimbs.<ref>Escalion Hunter's Journal entry: <i>"Blindingly fast, winged warrior able to launch pointed pinions from its forelimbs."</i></ref>
+
+== Behaviour and Tactics ==
+Escalions can be found patiently perched on the ceiling until engaged, upon which they drop down and dart erratically around Hornet.<br>
+Escalions zip around Hornet to reposition and keep their distance, but can counterattack if she gets too close. They dart to be either be directly horizontal of Hornet, slightly closer but more vertically distanced, or diagonally above her.<br> 
+Escalions have 3 moves:
+* <b>Triple Darts:</b> Rapidly throws 3 darts at Hornet which have slightly different trajectories and may arc slightly. It cannot use this attack twice in a row, and must zip 1-3 times before it can use this attack again. The darts can be hit to disable their hitbox, though this may often prove useless due to them being thrown in a volley.
+* <b>Flurry Slashes:</b> Tenses up briefly and then slashes wildly in all directions whilst doing a short dash towards Hornet, dealing {{Damage|1+1}} on hit. Only used when Hornet is close to the Escalion. This move may occasionally be done twice in a row if Hornet is still within close proximity after the first one.
+* <b>Evade:</b> Performs a short aerial dash backwards and up slightly, always following this move up with Triple Darts. Only used if Hornet is very close, more commonly after missing an attack.
+
+Escalions can be incredibly hard to hit due to their constant movement, but they do leave a brief opening after Triple Darts and Flurry Slashes. They also have short cooldowns between Zips. Ranged [[Tools]] can be very effective. [[Clawline]] can also be used to close the gap for attack.
+
+== Location ==
+{{MissingInfo}}
+Escalions can be found exclusively in [[Lost Verdania]].
+
+{{Gallery
+|Image1 = Mapshot SS Escalion 01.png!Location in Lost Verdania
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Escalion 01.png!Perching on the ceiling
+|Image2= Screenshot SS Escalion 02.png!Idle
+|Image3= Screenshot SS Escalion 03.png!Triple Darts attack
+|Image4= Screenshot SS Escalion 04.png!Flurry Slashes attack
+|Image5= Screenshot SS Escalion 05.png!Zipping around
+|Image6 = Ari SS Sketch 07.jpg!Concept Sketches
+}}
+
+== Trivia ==
+* Escalions do not respond to the [[Needolin]].
+
+{{Localisation
+|DEname = Escalion
+|DEmeaning = —
+|ESname = Escalionte
+|ESmeaning = —
+|FRname = Éscalion
+|FRmeaning = —
+|ITname = Scaliere
+|ITmeaning = —
+|JAname = エスカリオン
+|JAromanised = Esukarion
+|JAkatakana = foreignenemy
+|JAmeaning = Escalion
+|KOname = 에스칼리온
+|KOromanised = Eseukallion
+|KOmeaning = Escalion
+|PTname = Escalionte
+|PTmeaning = —
+|RUname = Скоробой
+|RUromanised = Skoroboj
+|RUmeaning = Combination of {{lang|ru|скорый <i>skoryj</i>}} (swift) and {{lang|ru|бой}} <i>boj</i> (fight).
+|TWname = 埃斯卡里昂
+|TWromanised = Āisīkǎlǐáng
+|TWmeaning = same
+|ZHname = 埃斯卡里昂
+|ZHromanised = Āisīkǎlǐáng
+|ZHmeaning = Escalion
+|CODEname=GRASSHOPPER_FLY
+|CODEmeaning = [[Verdanir]]s and [[Kindanir]]s are internally known as "Grasshoppers"
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Enemies}}

@@ -1,0 +1,156 @@
+{{SS Infobox Area
+| tab1 = Acts 1/2
+| image1 = <gallery>
+Sinner's Road Map Marked.png|Marked
+Sinner's Road Map Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Sinner's Road Map Ruin Marked.png|Marked
+Sinner's Road Map Clean.png|Unmarked
+</gallery>
+| connection = [[Bilewater]]<br/>[[Greymoor]]<br/>[[The Mist]]<ref group="Note">After defeating Phantom, becomes a connection to Bilewater.</ref>
+| ambience = [https://www.youtube.com/watch?v=04rQ_V7y02o Atmos Dust]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+| main = [https://www.youtube.com/watch?v=gXLZRiF8VN8 Sinner's Road]
+| action = [https://youtu.be/swPmNk9_fw0?si=u0UZUdRY-EBdPU6W Generic Enemy Battle A]<br>
+[https://youtu.be/y5O2l_VQI-k?si=-ySU0KPAHesaPM9C Cut Through]
+}}
+
+{{Quote
+|Old roads and passages overrun by roaches and their keepers. The ways are covered thick with filth.
+|[[Shakra]]
+|Hr=SS
+}}
+
+<b>Sinner's Road</b> is an [[Areas (Silksong)|area]] in <i>[[Hollow Knight: Silksong]]</i>. Located between [[Greymoor]] and [[Bilewater]], it formerly served as a breeding ground for [[Muckroach]]es, where they were cooked and prepared as food for the [[moorbugs]] below.<ref name=dustpens>[[Creige]]: <i>"You visited them pens up above here, miss? Horrid place, once all about growing meat or some such. Meant to keep us moorbugs livin', and working, it's told..."</i></ref> It is heavily polluted and heavily populated with roaches and their former keepers, who have been ensnared by the [[Haunting]].<ref>[[Shakra]]: <i>"There is fair combat here against the roach-beasts and their keepers, but the air is sickly and the water writhes with parasites."</i></ref><ref>Creige: <i>"That damned place's long gone to the Haunting. Now the meat's running feral and free."</i></ref> 
+
+== Description ==
+[[File:Screenshot SS Sinner's Road 17.png|thumb|200px|left|Cages near infested water]]
+Sinner's Road is a run-down, boggish area situated beneath [[the Citadel]]. Muckroaches run rampant and free through the area, with the keepers who used to keep them corralled and caged now [[Haunting|haunted]].
+The area is lined with cages used to keep the tenacious muckroaches in captivity, along with spikes and swinging spike balls to deter their escape and tame them with force, all of which hangs over [[Muckmaggot]]-tainted water. 
+Sinner's Road is described as filthy and its waters are infested with [[Muckmaggot]]s, similarly to the area that neighbours it, [[Bilewater]].
+
+== History ==
+Before the Haunting, Muckroaches were bred in Sinner's Road to feed the bugs of [[Greymoor]].<ref name=dustpens />
+[[Muckroach]]es were chosen despite their tough and pungent meat, voracious appetite, and hostility because they could rapidly breed, making them a steady supply of meat.<ref>Muckroach [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Starved pack bug with an insatiable appetite. Despite their tough hide and pungent meat, roaches breed rapidly so are sometimes farmed for food."</i></ref> [[Roachserver]]s would then prepare the Muckroach meat for consumption.<ref>Roachserver Hunter's Journal entry: <i>"Brutish cook responsible for dicing Muckroach meat into edible portions."</i></ref>
+
+At some point, vines started to grow around the mechanisms of a [[Bench (Silksong)#Paid Benches|toll bench]] in that area, eventually jamming them, and forcing [[Hornet (Silksong)|Hornet]] to go through a hidden platforming section in order to sit on it, in addition for payment.
+
+== How to Access ==
+The main entrance to Sinner's Road is located north-east of the [[Halfway Home]] in [[Greymoor]]. There is also a shortcut that links eastern Greymoor to [[Styx]]'s nest, but the rest of Sinner's Road cannot be accessed directly from that side. Sinner's Road can only be accessed after obtaining the [[Cling Grip]], as most of northeast Greymoor's upper portion requires this ability to be accessed.
+
+{{TabbedPOI
+|Header = true
+
+|NPC4 = Green Prince
+|NPC7 = Crull and Benjin
+|NPC8 = Styx
+|NPC2 = Skynx
+|NPC2cp = {{Steel Soul Icon Mini|SS}}
+|NPC3 = Garmond and Zaza
+|NPC1 = Shakra
+|NPC6 = Courier Pill
+|NPC6Note = (during the <i>[[My Missing Brother]]</i> wish)
+|NPC5 = Lace
+|NPC5Note = (if not encountered in the [[Deep Docks]] or the [[Blasted Steps]])
+
+|Enemy1 = Muckmaggot
+|Enemy2 = Muckroach
+|Enemy3 = Roachcatcher
+|Enemy4 = Roachfeeder
+|Enemy5 = Roachkeeper
+|Enemy6 = Roachserver
+|Enemy7 = Mite
+|Enemy8 = Void Mass
+|Enemy8Note = ([[Act 3]] only) 
+
+|Boss1 = Disgraced Chef Lugoli
+
+|Loot1_FileName = Barbed Bracelet
+|Loot2_FileName = Tacks
+|Loot2_Description = given by [[Crull and Benjin]] after completing the <i>[[Roach Guts (Wish)|Roach Guts]]</i> wish, or looted from their corpses in [[Act 3]]
+|Loot3_FileName = Simple Key (Silksong)
+|Loot3_Name = Simple Key (Silksong){{!}}Simple Key
+|Loot3_Amount = 1
+|Loot4_FileName = Flea
+|Loot4_Amount = 1
+|Loot5_FileName = Frayed Rosary String
+|Loot5_Amount = 1
+|Loot6_FileName = Silkeater
+|Loot6_Description = produced infinitely by [[Styx]] 
+|Loot7_FileName = Pickled Muckmaggot
+|Loot7_Description = dropped by [[Disgraced Chef Lugoli]]
+|Loot8_FileName = Steel Spines
+|Loot8_Description = sold by [[Crull and Benjin]] during the <i>[[Infestation Operation]]</i> wish, or looted from their corpses in Act 3
+
+|EnemyGauntletsSource = Sinner's Road 1, Lugoli
+}}
+
+
+== Creation and Development ==
+{{Main|Cut Content (Silksong)/Areas#Dustroach Pens}}
+[[File:Dustroach Pens Water.png|thumb|220px|Dustroach Pens featuring clear waters]]
+Sinner's Road was originally conceptualised as a sub-area for [[Greymoor]], known then as the "Dustroach Pens" (Dustroach being the original name for the [[Muckroach]]es). First appearing on development maps around October 2017, its first rooms were created around June 2019, and it was offhandedly mentioned in blog post released that month.<ref name="blog">[https://www.teamcherry.com.au/blog/post-e3-wrap-silksong-systems-update Team Cherry blog post] of June 25th, 2019</ref>
+
+While the layout of Dustroach Pens remained mostly intact until its reworking into Sinner's Road, its visuals were much more different. The original Dustroach Pens lacked the [[Muckmaggot]]-infested waters, instead having clear waters and being filled with white dust similar to [[the Mist]], befitting its original name. While cut-early in development, an area known as the "Mansion of the Moor" was also planned to be connected to the Dustroach Pens. 
+
+Dustroach Pens was reworked into Sinner's Road around 2022, with its colours and the Muckmaggots being added as it began to shape up into its iteration in the final release of the game. Despite no longer being a dust-themed area, Sinner's Road contained the later-cut [[Cut Content (Silksong)/Items#Tools|Dustpillo]] tool until very late into development.
+{{Clear}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Sinner's Road 01.png!Entrance
+|Image2 = Screenshot SS Sinner's Road 02.png!Green Prince in cage
+|Image3 = Screenshot SS Sinner's Road 03.png!Shakra near broken bench
+|Image4 = Screenshot SS Sinner's Road 04.png!Crull and Benjin hut (Outside)
+|Image5 = Screenshot SS Sinner's Road 05.png!Crull and Benjin hut (Inside)
+|Image6 = Screenshot SS Sinner's Road 06.png!Crull and Benjin hut (Outside, Act 3)
+|Image7 = Screenshot SS Sinner's Road 07.png!Crull and Benjin hut (Inside, Act 3)
+|Image8 = Screenshot SS Sinner's Road 08.png!Styx room
+|Image9 = Screenshot SS Sinner's Road 09.png!Styx secret room
+|Image10 = Screenshot SS Sinner's Road 12.png!Entrance to Exhaust Organ after the Mist disappears
+|Image11 = Screenshot SS Sinner's Road Arena 1.png!Upper arena room
+|Image12 = Screenshot SS Sinner's Road 13.png!Disgraced Chef Lugoli arena (pre-fight)
+|Image13 = Screenshot SS Disgraced Chef Lugoli 06.png!Lugoli arena (post-fight)
+|Image14 = Screenshot SS Sinner's Road 15.png!Lugoli secret room
+}}
+
+{{Localisation
+|DEname = Sündenstraße
+|DEmeaning = Road of Sin
+|ESname = Camino del Pecador
+|ESmeaning = Sinner's Road 
+|FRname = Chemin du Pécheur
+|FRmeaning = Sinner's Road
+|ITname = Via del Peccato
+|ITmeaning = Way of Sin
+|JAname = 罪深き者の道
+|JAromanised = Tsumibukaki mono no michi
+|JAmeaning = Road of the Sinful
+|KOname = 죄인의 길
+|KOromanised = Joeinui gil
+|KOmeaning = Sinner's Road
+|PTname = Caminho dos Pecadores
+|PTmeaning = Road of the Sinners
+|RUname = Дорога грешников
+|RUromanised = Doroga grešnikov
+|RUmeaning = Road of Sinners
+|ZHname = 罪途
+|ZHromanised = Zuìtú
+|ZHmeaning = Sin Road<br><small>The name is a homophone of {{lang|zh-hans|罪徒}} <i>zuìtú</i> (sinner).</small>
+|TWname = 罪途
+|TWromanised = Zuìtú
+|TWmeaning = same
+|CODEname = DUSTPENS
+|CODEmeaning = [[Cut Content (Silksong)/Areas#Dustroach Pens|Dustroach Pens]] was an earlier name and concept for Sinner's Road.
+}}
+
+{{hr|ss}}
+== Notes ==
+<references group="Note"/>
+{{Refs|hr=false}}
+{{SS Nav Areas}}
+
+[[zh:罪途]]
+[[fr:Chemin du Pécheur]]

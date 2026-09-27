@@ -1,0 +1,87 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Roachserver.png|Hunter's Journal
+Roachserver Idle.png|Idle
+Roachserver Passive.png|Passive
+Roachserver Alerted.png|Alerted
+</gallery>
+|drops = None
+|health = 60
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 10<br> (Instantly completed on [[Disgraced Chef Lugoli]]'s death)
+|singnum = 1
+}}
+
+{{Quote
+|Hr = Journal
+|Brutish cook responsible for dicing Muckroach meat into edible portions.<hr/>
+Could their actions be called skill? I see only a crude mangling of meat. Yet I wonder, before the Haunting snared their minds was it any different?
+}}
+
+<b>Roachservers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are brutish [[Roach Tenders]] of the [[Sinner's Road]] responsible for dicing up [[Muckroach]]es.<ref>Roachserver Hunter's Journal entry: <i>"Brutish cook responsible for dicing Muckroach meat into edible portions."</i></ref>
+
+== Behaviour and Tactics ==
+Roachservers are flying enemies, and try to maintain distance between themselves and Hornet before closing in for an attack.<br>
+Once Hornet is in range, Roachservers chop diagonally downwards with their knife twice, moving diagonally downwards more with each slice, then flying backwards.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Is this enough? Is it ever enough?
+* A holy gift...
+* For the work to sustain...
+* Carve it! Sear it! Stew it!
+}}
+
+== Location ==
+Two Roachservers appear in [[Disgraced Chef Lugoli]]'s arena in [[Sinner's Road]], and must be defeated before the boss arrives.
+
+{{Gallery
+|Image1 = Mapshot SS Roachserver 01.png!Location in Sinner's Road
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Roachserver 01.png!Cooking
+|Image2 = Screenshot SS Disgraced Chef Lugoli 12.png!Roachserver enemy gauntlet before Lugoli's battle
+|Image3 = Screenshot SS Roachserver 02.png!Idle
+|Image4 = Screenshot SS Roachserver 03.png!Attacking
+|Image5 = Screenshot SS Roachserver 04.png!Singing
+|Image6 = Screenshot SS Disgraced Chef Lugoli 06.png!Preparing [[Disgraced Chef Lugoli]]'s body
+|Image7= Ari SS Sketch 28.jpg!Concept sketches
+}}
+
+==Trivia==
+*Roachservers have the same Needolin dialogue as [[Disgraced Chef Lugoli]].
+
+{{Localisation
+|DEname = Schabenmetzger
+|DEmeaning = Cockroach Butcher
+|ESname = Servidor de cucarachas
+|ESmeaning = Server of Cockroachs
+|FRname = Férochef
+|FRmeaning = Portmanteau of <i>Férochard</i> (Muckroach) and <i>chef</i>.
+|ITname = Serviblatte
+|ITmeaning = Roachserver
+|JAname = ツチゴキブリの提供者
+|JAromanised = Tsuchigokiburi no teikyōsha
+|JAmeaning = Muckroach Provider
+|KOname = 바퀴요리사
+|KOromanised = Bakwiyorisa
+|KOmeaning = Cockroach Chef
+|PTname = Mestre-barateiro
+|PTmeaning = Master Roacher
+|RUname = Тараканорез
+|RUromanised = Tarakanorez
+|RUmeaning = Roachcutter
+|TWname = 蟑螂廚師
+|TWromanised = Zhāngláng chúshī
+|TWmeaning = same
+|ZHname = 蟑螂厨师
+|ZHromanised = Zhāngláng chúshī
+|ZHmeaning = Roach Chef
+|CODEname = ROACHKEEPER_CHEF_TINY
+|CODEmeaning = <code>ROACHKEEPER_CHEF</code> refers to [[Disgraced Chef Lugoli]].
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

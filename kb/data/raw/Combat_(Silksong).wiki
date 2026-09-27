@@ -1,0 +1,124 @@
+{{Nav Games Header}}
+
+{| style="padding:5px; text-align:center;" width="100%"
+| colspan="3" style="font-size:125%; font-family:TrajanPro" align="center" | <b>Combat</b>
+|-
+| width="33%" | [[Enemies (Silksong)|Enemies]]
+| width="33%" | [[Bosses (Silksong)|Bosses]]
+| width="33%" | [[Enemy Gauntlets (Silksong)|Enemy Gauntlets]]
+|-
+| width="33%" | [[Damage Values and Enemy Health (Silksong)|Damage Values]]
+| width="33%" |
+| width="33%" | [[Skills and Abilities (Silksong)|Skills and Abilities]]
+|-
+| width="33%" | [[Needle]]
+| width="33%" | [[Crests]]
+| width="33%" | [[Tools]]
+<!--
+|-
+| width="33%" |
+| width="33%" |
+| width="33%" |
+-->
+|}
+
+{{Hr|SS}}
+
+The kingdom of [[Pharloom]] and its [[the Citadel|Citadel]] have an array of bizarre creatures to hunt, with most being [[Haunting|Haunted]] and the rest just as determined to kill any intruders. The [[Hunter's Journal (Silksong)|Hunter's Journal]] is a compendium of all these creatures, and defeating a specified number of a certain enemy reveals additional information about them.
+
+[[Bosses (Silksong)|Bosses]] are unique enemies in <i>[[Hollow Knight: Silksong]]</i> that typically have larger health pools and often deal more damage than the standard enemies in the same area. A boss may need to be defeated to access a new [[Areas (Silksong)|area]], acquire an [[Items (Silksong)|item]], complete a [[Wish]], or simply further the main story of the game.
+
+Usually, when a boss is encountered, their name appears on-screen, and the music changes into a battle theme.
+
+In addition to bosses, <i>Silksong</i> features a variety of unique combat encounters in the form of Enemy Gauntlets (the arena gets locked and enemies spawn) and Special Enemies (such as [[Shardillard]]s and the [[Craggler]]).
+{{MissingInfo}}
+
+[[Silk]] is the resource used by [[Hornet (Silksong)]] in place of [[SOUL]] that is used in <i>[[Hollow Knight]]</i>, and is primarily obtained from striking enemies. Hornet can also passively regenerate Silk after obtaining [[Silk Heart]]s. Silk is represented on the HUD by notches on a spool. When there are at least nine Silk on the spool, that portion of the spool lights up along with the [[Crests|Crest]] circle, indicating that Hornet can [[Bind]], which is the ability that allows Hornet to heal. Silk can also be used during combat to perform {{CrestSlot|Skill|s}} and certain [[Skills and Abilities (Silksong)|Ancestral Arts]].
+
+== Health and Silk ==
+[[Hornet (Silksong)|Hornet]]'s health is represented as {{Mask|SS}} masks in the upper-left corner of the screen. She starts with five masks, and can obtain up to ten by collecting [[Mask Shard (Silksong)|Mask Shards]]. Masks are lost by taking damage, usually from either enemies or environmental hazards. Masks are regained by resting at either a [[Bench (Silksong)|Bench]] or [[Hot Spring]], or by [[Bind]]ing.
+Some hazards will deal only {{Mask|SS}} damage, including basic enemies and spikes. Others, like bulkier enemies or falling boulders, will deal {{Mask|SS}}{{Mask|SS}} damage. Some hazards will deal {{Mask|SS}}+{{Mask|SS}} damage, where one mask is lost and another is lost in quick succession. Examples of this are flurry slash attacks and steam.
+
+[[File:Icon SS Spell Core.png|left|link=Silk|48px]] [[Silk]] is represented as a spool of thread under the {{Mask|SS}} masks. Silk is used to cast {{CrestSlot|Skill|s}} and Bind. Striking enemies with the [[Needle]] is the main way of gaining Silk, though other tools and objects like [[Silk Heart]]s also grant Silk. Binding costs nine Silk, which is also the default limit. Each time Hornet collects two [[Spool Fragment]]s, this limit increases by one.
+
+{{Clear}}
+
+[[File:SS Mask Lifeblood.png|left|link=Lifeblood|48px]] [[Lifeblood|Plasmium]] masks are temporary masks that cannot be healed by Binding, unless Hornet is [[plasmified]]. They can be obtained using [[Plasmium Phial]] or by killing [[Winged Lifeseed]]s. Obtaining nine {{Mask|SS|Lifeblood}} masks induces Plasmification. These masks disappear when sitting at a bench.
+
+{{Hr|small}}
+[[File:Cocoon.png|left|link=Cocoon|48px]] When Hornet's masks deplete to zero, her body unravels and leaves a [[Cocoon]] behind, storing all [[Rosaries]] she held upon her death. Until the cocoon is destroyed, Hornet's [[Spool Fragment|Spool upgrades]] are disabled, and dying again will cause the original Cocoon and all of its stored Rosaries to be lost. The cocoon can be destroyed with the [[Needle]] and [[Silk Skill]]s.{{MissingInfo}}
+
+Destroying the cocoon or using a [[Silkeater]] will retrieve all stored rosaries, re-enable all unlocked Spool upgrades, and restore nine Silk.
+
+{{Clear}}
+
+== Challenge ==
+Challenge is an innate ability that [[Hornet (Silksong)|Hornet]] begins with. When Hornet uses Challenge, she swings her [[Needle]] behind and swirls a thread of [[Silk]] around herself, which consumes 1 strand of Silk. The swing of Hornet's Needle deals 2 damage, which increases by 2 for each Needle upgrade. Challenge will gain silk on hit, and Hornet's next strike with the Needle will deal 50% more damage until the effect wears off. Challenge is affected by the [[Beast Crest]]'s Fury bind, the [[Wanderer Crest]] crit chance, the [[Hunter Crest]]'s Focus and [[Barbed Bracelet]]. However, it is not affected by [[Flintslate]].
+
+If used while Hornet has no Silk, she will still swing her Needle, but not swirl thread around; the damage boost to her Needle will not be applied.
+
+Challenge also has the following effects:
+
+* Draws in nearby [[Enemies (Silksong)|enemies]] towards Hornet and causes them to become aggressive if they have not already
+** This works repeatedly and through walls, allowing Hornet to draw enemies closer to allow for unintended platforming opportunities.
+* Can be used in place of the "Challenge" prompt for bosses such as [[Grand Mother Silk]] and [[Skarrsinger Karmelita]]
+* Skips some bosses' intros (and intro dialogue) and immediately triggers the fight for bosses such as [[Widow]] and [[Shrine Guardian Seth]]
+* Summons the [[Bell Beast]] to a [[Bellway]]
+* Causes some reaction in all nearby [[NPCs (Silksong)|NPCs]]
+
+When [[Beast Crest]] is equipped, Hornet uses an alternate animation and deeper pitched voice line when using Challenge. This changes the Challenge hitbox to hit behind Hornet.
+
+While [[Throwing Ring]]s are equipped and at least 2 charges remain, Challenge has slightly different effects: It no longer consumes Silk, and the damage of the next Throwing Ring is increased by 50%. The voiceline is also changed to imitate Shakra's "Poshanka". Shakra will respond to this in kind if nearby, and it can also be used near any of her calling rings in place of striking them with the needle.
+
+== Projectile Deflection ==
+Certain enemy projectiles can be hit with [[Hornet (Silksong)|Hornet's]] [[Needle]], causing them to be deflected. Deflected projectiles will no longer deal damage, even if they pass directly through Hornet. Deflecting a projectile with the Needle also resets Hornet's attack cooldown, allowing her to attack again immediately. This does not happen with [[Enemies (Silksong)|enemy]] projectiles that can be destroyed or hit back.
+
+Enemy projectiles deflected by Hornet can damage the enemies that they hit.
+
+Some enemies are able to deflect Hornet's projectiles from her [[Tools]] with their own attacks.
+
+== Parrying ==
+While some bosses have a parry move, it is also possible for [[Hornet (Silksong)|Hornet]] to parry certain attacks of enemies and bosses.
+
+Most attacks that have a white line trailing them can be parried. These attacks can be parried with regular [[Needle]] swings, but not with [[Tools]] or any other form of damage. Parrying an attack grants 0.25 seconds of invulnerability.
+
+Hornet can also parry [[Enemies (Silksong)|enemies']] and [[Bosses (Silksong)|bosses']] multi-hit attacks, in which she will automatically strike multiple times in turn to parry every hit as long as she continues attacking after parrying the first hit.
+
+This mechanic is not to be confused with [[Cross Stitch]] which is a separate [[Skills and Abilities (Silksong)|Silk Skill]] that can parry all forms of damage.
+
+== Boss Staggers ==
+Staggering is the event of stunning a [[Bosses (Silksong)|boss]] and causing them to be incapacitated for a couple seconds, giving [[Hornet (Silksong)|Hornet]] time to either [[Bind]] or use a stronger attack such as a [[Silk Skill]] or [[Needle Strike]].
+
+* Most of the time, the trigger for staggering a boss is not damage but rather the number of hits it takes. Hits can be applied through:
+** [[Needle]]
+** [[Silk Skills]]
+** [[Tools]]
+** [[Garmond and Zaza]] ([[Moorwing]] fight only)
+** Environmental hazards (in fights such as [[Lace]] in [[Deep Docks]] and [[The Cradle]])
+* Not all bosses stagger.
+
+Staggering in <i>[[Hollow Knight: Silksong]]</i> is slightly different compared to its iteration in <i>[[Hollow Knight]]</i>. Hitting bosses while they are staggered does not cancel the stagger. Rather, bosses have a limit of 75 damage they can take while staggered before it immediately ends. Stagger Combos and Combo Time no longer exist, and different [[Tools]] (appear to) contribute different amounts to a boss's stagger counter.
+
+There are four cases of staggering that do not follow the rules stated above and are based on damage, but are still considered "staggering" due to the resulting animation and sound effect. These are [[Fourth Chorus]], [[The Unravelled]], [[Cogwork Dancers]], and [[Clover Dancers]]. Related effects are listed on their pages.
+
+== Heavy Damage ==
+Certain abilities and items can inflict <b>Heavy Damage</b>, which has various effects on different enemies and environmental objects:
+* Breakable walls and ceilings are destroyed instantly
+* [[Wisp]] lanterns in [[Wisp Thicket]] are destroyed instantly.
+* [[Shell Shard]] and [[Rosary]] deposits are destroyed instantly.
+* [[Garpid]] swarms are destroyed instantly, and add 4 kills to the completed amount for their [[Hunter's Journal (Silksong)|Hunter's Journal]] entry.
+* The [[Mask Maker (Silksong)|Mask Maker]]'s mask is removed.
+* The spiked platforms created by [[Grand Mother Silk]] are removed in a single hit.
+
+=== Heavy Damage List ===
+The following inflict Heavy Damage:
+* The [[Needle Strike]] of the [[Hunter Crest|Hunter]], [[Reaper Crest|Reaper]], [[Beast Crest|Beast]], and [[Shaman Crest|Shaman]] [[Crests]]
+* The [[Silkspear]], [[Sharpdart]], and [[Rune Rage]] [[Silk Skills]]
+** This effect is <b>removed</b> when the [[Shaman Crest]] is equipped<ref group=Source><code>HeroShamanRuneEffect.Refresh()</code></ref>
+* The {{CrestSlot|Red|s}} [[Pimpillo]] and [[Silkshot#Original|Silkshot (Original)]]
+
+== Code References ==
+<references group="Source"/>
+
+[[fr:Combat (Silksong)]]
+[[Category:Combat (Silksong)| ]]

@@ -1,0 +1,84 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Plasmid.png|Hunter's Journal
+Plasmid Attacking.png|Attacking
+Plasmid Idle.png|Buried
+</gallery>
+|drops = None
+|health = 60
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.25|1|1|1|0.9}}
+|numbers_required = 15
+}}
+{{Quote
+|Hr = Journal
+|Mutated young worm infected with Plasmium. The new form displays potent regenerative skill.<hr/>
+Pharloom shall quickly learn the curse of this substance. What benefits it provides can be swiftly outweighed.
+}}
+
+<b>Plasmids</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are the [[Lifeblood#Mutation|plasmified]] form of [[Gromling]]s, displaying a potent regenerative ability.<ref>Plasmid [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Mutated young worm infected with Plasmium. The new form displays potent regenerative skill."</i></ref>
+
+== Behaviour and Tactics ==
+Plasmids remain stationary underground, partly visible. When [[Hornet (Silksong)|Hornet]] approaches or attacks them from a distance, Plasmids emerge, perform an attack, and then burrow back down. Playing the [[Needolin]] or using the [[Challenge]] ability alerts Plasmids from a greater distance than simply approaching them. While underground, they can reposition before attacking again, giving away their movement with a trail of kicked-up dust. Plasmids have two attacks:
+* <b>Plasmium Spit:</b> Rears back and, after a brief build-up, spits a gob of [[Plasmium]] that travels in an arc.
+* <b>Charge:</b> Moves backward, then charges toward Hornet, stopping only when it reaches a ledge, a wall, or goes past her. If the Plasmid fails to perform this attack because Hornet is far enough away or gets behind it right after it emerges, it performs Plasmium Spit instead.
+
+Plasmids deal {{Damage|2}} with their attacks and on contact.
+
+After a short period of not taking damage, Plasmids rapidly heal themselves at a rate of 10 health every 0.75 seconds while they are not underground. Extracting [[Plasmified Blood]] from Plasmids using the [[Needle Phial]], obtained by initiating the <i>[[Alchemist's Assistant]]</i> or <i>[[Advanced Alchemy]]</i> [[wish]]es, kills them immediately.
+
+== Location ==
+Plasmids can be found in the [[Wormways]] during [[Act 3]].
+
+{{Gallery
+|Image1 = Mapshot SS Plasmid 01.png!Locations in the Wormways in Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Plasmid 01.png!Hidden
+|Image2 = Screenshot SS Plasmid 02.png!Idle
+|Image3 = Screenshot SS Plasmid 03.png!Burrowing
+|Image4 = Screenshot SS Plasmid 04.png!Underground
+|Image5 = Screenshot SS Plasmid 05.png!Emerging
+|Image6 = Screenshot SS Plasmid 06.png!Plasmium Spit
+|Image7 = Screenshot SS Plasmid 07.png!Charge
+|Image8 = Screenshot SS Plasmid 08.png!Regeneration
+}}
+
+== Trivia ==
+* Though Plasmids do not respond to the [[Needolin]], they "sing" on their own until alerted.
+* Piercing Plasmids with the [[Needle Phial]] instantly counts as a kill for the [[Hunter's Journal (Silksong)|Hunter's Journal]], even if the extraction is interrupted by taking damage. This makes it possible to complete the entry without actually killing any Plasmids.
+
+{{Localisation
+|DEname = Plasmide
+|DEmeaning = — 
+|ESname = Plásmido
+|ESmeaning = — 
+|FRname = Plasmide
+|FRmeaning = — 
+|ITname = Plasmide
+|ITmeaning = — 
+|JAname= プラスミド
+|JAromanised= Purasumido
+|JAkatakana = foreignenemy
+|JAmeaning = Plasmid
+|KOname = 플라스미드
+|KOromanised = Peullaseumideu
+|KOmeaning = Plasmid
+|PTname =  Plasmídeo
+|PTmeaning = — 
+|RUname = Плазмид
+|RUromanised = Plazmid
+|RUmeaning = Plasmid
+|TWname = 原質幼蟲
+|TWromanised = Yuánzhì yòuchóng
+|TWmeaning = Protoplasm Larva<br><small>{{lang|zh-Hant|原質液 <i>yuánzhìyè</i>}} (protoplasm fluid) is [[Plasmium]] in Traditional Chinese.</small>
+|ZHname = 生质幼虫
+|ZHromanised = Shēngzhì yòuchóng
+|ZHmeaning = Life Substance Larva<br><small>{{lang|zh-Hans|生质液 <i>shēngzhìyè</i>}} (life substance fluid) is [[Plasmium]] in Simplified Chinese.</small>
+|CODEname=BONE_WORM_BLUEBLOOD
+|CODEmeaning="Bone Worm" internally refers to [[Grom]]s
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

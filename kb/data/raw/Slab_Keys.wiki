@@ -1,0 +1,277 @@
+{{SS Infobox Item
+| label = Slab Keys
+| title = Slab Keys
+| image = Slab Keys.png
+| description = Keys to the cells and passages of the Slab.<hr>
+- Key of Indolent<br>
+- Key of Heretic<br>
+- Key of Apostate
+| effects = Open locks in [[the Slab]]
+| type = [[Items (Silksong)#Keys|Keys]]
+| source = Found in [[the Slab]] and the [[Putrified Ducts]]
+
+| label2 = Indolent
+| title2 = Key of Indolent
+| image2 = Key of Indolent.png
+| description2 = Key with the mark of 'Indolent'. Opens the way to certain cells and passages of the Slab.
+| effects2 = Opens locks with the mark of 'Indolent'
+| type2 = [[Items (Silksong)#Keys|Key]]
+| source2 = Found in [[the Slab]]
+
+| label3 = Heretic
+| title3 = Key of Heretic
+| image3 = Key of Heretic.png
+| description3 = <ref group = Note>Cannot be obtained without first acquiring Key of Indolent, and thus has no inventory description.</ref>
+| effects3 = Opens locks with the mark of 'Heretic'
+| type3 = [[Items (Silksong)#Keys|Key]]
+| source3 = Dropped by the final enemy of the [[Enemy Gauntlets (Silksong)#The Slab|gauntlet]] in [[the Slab]]
+
+| label4 = Apostate
+| title4 = Key of Apostate
+| image4 = Key of Apostate.png
+| description4 = Key with the mark of 'Apostate'. Opens the way to certain cells and passages of the Slab.
+| effects4 = Opens locks with the mark of 'Apostate'
+| type4 = [[Items (Silksong)#Keys|Key]]
+| source4 = Found in the [[Putrified Ducts]]
+}}
+
+{{Quote|Hr=SS
+|Escape! A little jailbug like you ain't ever escapin' anything!
+|[[Grindle]]
+}}
+
+The <b>Slab Keys</b> are [[Items (Silksong)#Keys|items]] in <i>[[Hollow Knight: Silksong]]</i>. They consist of three keys that are obtained separately, all of which are used to open locks in [[the Slab]].
+
+== Use ==
+Each of the Slab Keys can be used on specific doors with locks bearing their corresponding marks: 'Indolent', 'Heretic', and 'Apostate'.<ref>Inspecting the lock: <i>"A lock with the mark of 'Indolent'."</i></ref><ref>Inspecting the lock: <i>"A lock with the mark of 'Heretic'."</i></ref><ref>Inspecting the lock: <i>"A lock with the mark of 'Apostate'."</i></ref>
+
+{{Gallery
+| Image1 = Mapshot SS Slab Locks.png ! Locations of all locks in the Slab
+}}
+
+{| class="article-table" width="100%"
+! style="width: 8rem;" | Item
+! Location
+! Map
+|-
+! rowspan=3 | [[File:Key of Indolent.png|center|72x72px]] Key of Indolent
+| 
+On the west side, to the right of the room where the key is found, leading into the main central area.
+| rowspan=3 | [[File:Mapshot SS Key of Indolent Locks.png|center|150x150px]]
+|- style="border-top:0.1rem dashed rgba(255,255,255,0.5);"
+| 
+In the room on the west just above the previous one, leading back to the upper western outdoor area.
+|- style="border-top:0.1rem dashed rgba(255,255,255,0.5);"
+| 
+In a room on the east side, leading to a room with the [[Enemy Gauntlets (Silksong)/The Slab 1|enemy gauntlet]], and subsequently to the eastern outdoor area.
+|-
+! rowspan=3 | [[File:Key of Heretic.png|center|72x72px]] Key of Heretic
+| 
+On the northwest side, to the right of the room where the key is found, leading into the main central area.
+| rowspan=3 | [[File:Mapshot SS Key of Heretic Locks.png|center|150x150px]]
+|- style="border-top:0.1rem dashed rgba(255,255,255,0.5);"
+| 
+In a locked mechanism in the middle of the central area, leading to the southern side.
+|- style="border-top:0.1rem dashed rgba(255,255,255,0.5);"
+| 
+On the right side of the south-central area, leading to a room containing a chest with [[Rosaries]] and a secret pathway to [[First Sinner]]'s cell.<ref group="Note">Key of Apostate is needed to access this door.</ref>
+|-
+! rowspan=2 | [[File:Key of Apostate.png|center|72x72px]] Key of Apostate
+| 
+In a large room to the northeast, featuring a platforming challenge with a [[Mask Shard (Silksong)|Mask Shard]] at the end.
+| rowspan=2 | [[File:Mapshot SS Key of Apostate Locks.png|center|150x150px]]
+|- style="border-top:0.1rem dashed rgba(255,255,255,0.5);"
+| 
+In the room north of the [[Bellway]] station, leading to the southernmost part of the region.<ref group="Note">If [[Hornet (Silksong)|Hornet]] has exhausted all means to get [[The Slab#Capture by Wardenfly|captured]], opening this door is the only way she can access the rest of the region and acquire the [[Map and Quill (Silksong)|map]].</ref>
+|}
+
+== How to Acquire ==
+The three Slab Keys are obtained separately: two are found in [[the Slab]], and the third in the [[Putrified Ducts]]. After acquiring a second key, [[Hornet (Silksong)|Hornet]] places the keys together on a keyring.
+
+{| class="article-table"
+! style="width: 8rem;" | Item
+! Location
+! Map
+|-
+! [[File:Key of Indolent.png|center|72x72px]] Key of Indolent
+| 
+Found hanging from a chain inside a room in the western part of the Slab. A [[Penitent]] and a [[Puny Penitent]] appear after breaking the key from its chain.
+| [[File:Mapshot SS Key of Indolent.png|center|150x150px]]
+|-
+! [[File:Key of Heretic.png|center|72x72px]] Key of Heretic
+| 
+Dropped by the final enemy of the [[Enemy Gauntlets (Silksong)#The Slab|gauntlet]] in the northwest corner of the Slab.
+| [[File:Mapshot SS Key of Heretic.png|center|150x150px]]
+|-
+! [[File:Key of Apostate.png|center|72x72px]] Key of Apostate
+| 
+Found in the [[Putrified Ducts]], in an area to the west of [[Huntress]]'s home, next to the corpse of a Wardenfly.
+| [[File:Mapshot SS Key of Apostate.png|center|150x150px]]
+|}
+
+== Gallery ==
+=== Locks ===
+{{Gallery
+|Image1 = Screenshot SS Key of Indolent 01.png!First lock with the mark of 'Indolent'
+|Image2 = Screenshot SS Key of Indolent 02.png!Second lock with the mark of 'Indolent'
+|Image3 = Screenshot SS Key of Indolent 03.png!Third lock with the mark of 'Indolent'
+|Image4 = Screenshot SS Key of Heretic 01.png!First lock with the mark of 'Heretic'
+|Image5 = Screenshot SS Key of Heretic 02.png!Second lock with the mark of 'Heretic'
+|Image6 = Screenshot SS Key of Heretic 03.png!Third lock with the mark of 'Heretic'
+|Image7 = Screenshot SS Key of Apostate 01.png!First lock with the mark of 'Apostate'
+|Image8 = Screenshot SS Key of Apostate 02.png!Second lock with the mark of 'Apostate'
+}}
+
+=== Keys ===
+{{Gallery
+|Image1 = Screenshot SS The Slab 10.png!Key of Indolent hanging from chain
+|Image2 = Screenshot SS The Slab 11.png!Key of Heretic dropped by a jailer
+|Image3 = Screenshot SS Putrified Ducts 10.png!Key of Apostate in the cage
+}}
+
+=== Sprites ===
+{{Gallery
+|Image1 = Slab Keys 2A.png ! Keyring sprite with Key of Indolent and Key of Heretic
+|Image2 = Slab Keys 2B.png ! Keyring sprite with Key of Indolent and Key of Apostate
+}}
+
+== Trivia ==
+* There is an [[Cut Content (Silksong)/Items#Keys|unused sprite]] in the game files that depicts a keyring with four keys. [[Cut Content (Silksong)/Text#Miscellaneous|Unused text]] suggests the fourth key would have been called "Key of First Sin", presumably used to open the way to [[First Sinner]]'s cell.
+* The sprite depicting only Key of Heretic and Key of Apostate is impossible to obtain through normal gameplay, as acquiring Key of Heretic requires Key of Indolent. However, if they are obtained together through other means, the game will still use the combined sprite and update their item description accordingly.
+{{Gallery
+|Image1 = Slab Keys 4.png ! Keyring sprite with four keys
+|Image2 = Slab Keys 2C.png ! Keyring sprite with Key of Heretic and Key of Apostate
+}}
+
+{{Localisation
+|DEname = Brockenschlüssel
+|DEmeaning = Chunk Key
+|ESname = Llaves de la Losa
+|ESmeaning = Keys of the Slab
+|FRname = Clés du Bloc
+|FRmeaning = Keys to the Block
+|ITname = Chiavi della Lastra
+|ITmeaning = Slab Keys
+|JAname = 巨石の牢の鍵
+|JAromanised = Kyoseki no rō no kagi
+|JAmeaning = Megalith Prison Key
+|KOname = 석판 열쇠
+|KOromanised = Seokpan yeolsoe
+|KOmeaning = Slab Key
+|PTname =  Chaves do Rochedo
+|PTmeaning = Slab Keys
+|RUname = Ключи из Плиты
+|RUromanised = Ključi iz Plity
+|RUmeaning = Keys from the Slab
+|TWname = 罪石鑰匙
+|TWromanised = Zuì shí yàoshi
+|TWmeaning = same
+|ZHname = 罪石钥匙
+|ZHromanised = Zuì shí yàoshi
+|ZHmeaning = Sin Stone Keys<br><small>{{lang|zh-Hant|罪石牢獄}} / {{lang|zh-Hans|罪石牢狱 <i>zuì shí láoyù</i>}} (Sin Stone Jail) is [[the Slab]] in Chinese.</small>
+|CODEname = SLAB_KEYRING
+|CODEmeaning = 
+}}
+
+=== Key of Indolent ===
+{{Localisation
+|hr=false
+|DEname = Schlüssel des Trägen
+|DEmeaning = Key of Indolent
+|ESname = Llave del Indolente
+|ESmeaning = Key of the Indolent
+|FRname = Clé de l'Indolent
+|FRmeaning = Key of the Indolent
+|ITname = Chiave dell'Indolente
+|ITmeaning = Key of the Indolent
+|JAname=怠惰者の鍵
+|JAromanised= Taidasha no kagi
+|JAmeaning = Indolent's Key
+|KOname = 나태의 열쇠
+|KOromanised = Nataeui yeolsoe
+|KOmeaning = Indolence Key
+|PTname =  Chave de Indolente
+|PTmeaning = Key of Indolent
+|RUname = Ключ «Лентяй»
+|RUromanised = Ključ «Lentjaj»
+|RUmeaning = Indolent Key
+|TWname = 怠惰之鑰
+|TWromanised = Dàiduò zhī yào
+|TWmeaning = same
+|ZHname = 怠惰之钥
+|ZHromanised = Dàiduò zhī yào
+|ZHmeaning = Key of Indolence
+|CODEname = SLAB_KEY_A
+|CODEmeaning = 
+}}
+
+=== Key of Heretic ===
+{{Localisation
+|hr=false
+|DEname = Schlüssel des Ketzers
+|DEmeaning = Key of Heretic
+|ESname = Llave del Hereje
+|ESmeaning = Key of the Heretic
+|FRname = Clé de l'Hérétique
+|FRmeaning = Key of the Heretic
+|ITname = Chiave dell'Eretico
+|ITmeaning = Key of the Heretic
+|JAname = 異端者の鍵
+|JAromanised = Itansha no kagi
+|JAmeaning = Heretic's Key
+|KOname = 이단의 열쇠
+|KOromanised = Idanui yeolsoe
+|KOmeaning = Heresy Key
+|PTname = Chave de Herege
+|PTmeaning = Key of Heretic
+|RUname = Ключ «Еретик»
+|RUromanised = Ključ «Eretik»
+|RUmeaning = Heretic Key
+|TWname = 異端之鑰
+|TWromanised = Yìduān zhī yào
+|TWmeaning = same
+|ZHname = 异端之钥
+|ZHromanised = Yìduān zhī yào
+|ZHmeaning = Key of Heresy
+|CODEname = SLAB_KEY_B
+|CODEmeaning = 
+}}
+
+=== Key of Apostate ===
+{{Localisation
+|hr=false
+|DEname = Schlüssel des Abtrünnigen
+|DEmeaning = Key of Renegade
+|ESname = Llave del Apóstata
+|ESmeaning = Key of the Apostate
+|FRname = Clé de l'Apostat
+|FRmeaning = Key of the Apostate
+|ITname = Chiave dell'Apostata
+|ITmeaning = Key of the Apostate
+|JAname = 背教者の鍵
+|JAromanised = Haikyōsha no kagi
+|JAmeaning = Apostate's Key
+|KOname = 변절의 열쇠
+|KOromanised = Byeonjeorui yeolsoe
+|KOmeaning = Apostasy Key 
+|PTname = Chave de Apóstata
+|PTmeaning = Key of Apostate
+|RUname = Ключ «Отступник»
+|RUromanised = Ključ «Otstupnik»
+|RUmeaning = Apostate Key
+|TWname = 叛教之鑰
+|TWromanised = Pànjiào zhī yào
+|TWmeaning = same
+|ZHname = 叛教之钥
+|ZHromanised = Pànjiào zhī yào
+|ZHmeaning = Key of Apostasy
+|CODEname = SLAB_KEY_C
+|CODEmeaning = 
+}}
+
+== Notes ==
+<references group="Note"/>
+{{Refs|hr=false}}
+
+{{SS Nav Items}}
+[[Category:Items (Silksong)]]

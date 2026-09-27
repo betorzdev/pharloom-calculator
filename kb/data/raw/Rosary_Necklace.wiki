@@ -1,0 +1,129 @@
+{{Navbar|icons=true
+|page1=Frayed Rosary String
+|page2=Rosary String
+|page3=Rosary Necklace
+|page4=Heavy Rosary Necklace
+|page5=Pale Rosary Necklace}}
+
+{{SS Infobox Item
+| description = Adornment strung with a large quantity of rosaries. Can be broken and the rosaries used to trade.<hr>Contains 120 rosaries.
+| effects = Provides {{R|120}}
+| type = [[Items (Silksong)#Consumables|Consumable]]
+| source = [[Frey]]<br>[[Wish]] reward<br>Glowing item spots
+| max = 20
+}}
+
+{{Quote|Hr=SS
+|Holy, holy, gather it up!
+|[[Covetous Pilgrim]]
+}}
+
+<b>Rosary Necklaces</b> are [[Items (Silksong)#Consumables|consumable items]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+Can be used from the inventory to gain {{R|120}}.
+
+Strung Rosaries are not dropped upon death.
+
+== How to Acquire ==
+Rosary Necklaces can be purchased for {{R|140}} from [[Frey]], who has an unlimited supply.
+
+They may also be found by interacting with glowing item spots across [[Pharloom]], and as a reward for completing [[Wishes]].
+
+{| class="article-table" width="100%"
+! 
+! Location
+! Map
+|-
+!
+! Purchasable
+!
+|-
+! 1
+| Purchased from [[Frey]] in [[Bellhart]] for {{R|140}}.<ref>[[Frey]]: <i>Loose rosaries will escape your pockets at the worst of times, and I'm a deft claw at stringing them tight! I can string you a whole necklace, safe and stylish.</i></ref>
+| [[File:Mapshot SS Frey 01.png|center|200x200px]]
+|-
+!
+! Rewards
+!
+|-
+! 2
+| Rewarded after completing the Wish <i>[[Silver Bells]]</i>.
+| [[File:Mapshot SS Frey 01.png|center|200x200px]]
+|-
+! 3
+| Rewarded after completing the Wish <i>[[Garb of the Pilgrims]]</i>.
+| [[File:Mapshot_SS_Bone_Bottom_Wishwall.png|center|200x200px]]
+|-
+! 4
+| Rewarded after completing the First Race of <i>[[Fastest in Pharloom]]</i>.
+| [[File:Mapshot_SS_Sprintmaster_Swift_01.png|center|200x200px]]
+|-
+!
+! Glowing Spots
+!
+|-
+! 5
+| In [[Hunter's March]], in the top right of the room to the left of the area's gauntlet.
+| [[File:Mapshot SS Rosary Necklace 01.png|center|200x200px]]
+|-
+! 6
+| In [[Choral Chambers]], at [[Jubilana]]'s first rescue location during <i>[[The Wandering Merchant]]</i>.
+| [[File:Mapshot SS Rosary Necklace 02.png|center|200x200px]]
+|-
+! 7
+| In [[Choral Chambers]], in the room above the [[Great Gourmand]]'s dining room.
+| [[File:Mapshot SS Rosary Necklace 03.png|center|200x200px]]
+|-
+! 8
+| In [[Wisp Thicket]], at the top of the tower in the room left of the bench.
+| [[File:Mapshot SS Rosary Necklace 04.png|center|200x200px]]
+|}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Rosary Necklace 01.png!Hunter's March left of gauntlet
+|Image2 = Screenshot SS Rosary Necklace 02.png!Choral Chambers Jubilana's rescue location
+|Image3 = Screenshot SS Rosary Necklace 03.png!Choral Chambers above Gourmand's dining room
+|Image4 = Screenshot SS Rosary Necklace 04.png!Wisp Thicket left of bench
+}}
+
+==Trivia==
+* Rosary Necklaces were likely originally valued at {{R|100}}; <i>EDGE Magazine</i> mentions a {{R|100}}-worth item that is sold by [[Pebb]];<ref name="edge55">[https://pocketmags.com/us/edge-magazine/february-2021 Edge Magazine February 2021 Edition] p. 55.</ref> none currently exists, but as the [[Rosary String]]'s value is known to have increased by {{R|20}} throughout development, it is likely that the Rosary Necklace's did as well. Additionally, Necklaces are not sold by Pebb currently, which they seem to have been previously.
+
+{{Localisation
+|DEname = Rosenkranz
+|DEmeaning = Rosary<br><small>Individual Rosaries are <i>rosenkranzperlen</i> (rosary beads) in German.</small>
+|ESname = Collar de rosarios
+|ESmeaning = Rosary Necklace
+|FRname = Collier de perles
+|FRmeaning = Necklace of Pearls<br><small><i>Perles</i> (pearls) are the name of Rosaries in Italian.</small>
+|ITname = Collana di grani
+|ITmeaning = Necklace of Beads<br><small><i>Grani</i> (beads) are the name of Rosaries in Italian.</small>
+|JAname = ロザリーの首飾り
+|JAromanised = Rozarī no kubikazari
+|JAkatakana = foreign
+|JAmeaning = Rosary Necklace
+|KOname = 묵주 목걸이
+|KOromanised = Mukju mokgeori
+|KOmeaning = Rosary Necklace
+|PTname = Colar de Rosários
+|PTmeaning = Rosary Necklace
+|RUname = Чётки-ожерелье
+|RUromanised = Čëtki-ožerel'e
+|RUmeaning = Rosary Necklace
+|TWname = 念珠項鍊
+|TWromanised = Niànzhū xiàngliàn
+|TWmeaning = same
+|ZHname = 念珠项链
+|ZHromanised = Niànzhū xiàngliàn
+|ZHmeaning = Rosary Necklace
+|CODEname = COIN_SET_M
+|CODEmeaning = 
+}}
+
+{{Refs|hr=SS}}
+
+
+{{SS Nav Items}}
+[[Category: Items (Silksong)]]

@@ -1,0 +1,822 @@
+__NOTOC__
+{{Nav Games Header}}
+
+{{Disclaimer|This is a complete list of all enemies in <i>Hollow Knight: Silksong</i>. See [[Bosses (Silksong)|Bosses]] for a list of only boss enemies. See [[Damage Values and Enemy Health (Silksong)|Damage Values and Enemy Health]] for a complete list of enemies' health values.}}
+
+The kingdom of [[Pharloom]] boasts a vast array of bizarre creatures and constructs alike, most of which are [[Haunting|haunted]]. All enemies can be listed in the [[Hunter's Journal (Silksong)|Hunter's Journal]].
+
+== Compendium ==
+{| class="table mw-collapsible" style="width: 100%; text-align: center;"
+! colspan="5"|
+
+<h3>Main Game</h3>
+|-
+| colspan="5" |<hr/>
+|-
+| width="20%" |[[File:HJ Mossgrub.png|60x60px|center|link=Mossgrub|center]]
+| width="20%" |[[File:HJ Massive Mossgrub.png|60x60px|center|link=Massive Mossgrub|center]]
+| width="20%" |[[File:HJ Mossmir.png|60x60px|center|link=Mossmir|center]]
+| width="20%" |[[File:HJ Moss Mother.png|60x60px|center|link=Moss Mother|center]]
+| width="20%" |[[File:HJ Aknid.png|60x60px|center|link=Aknid|center]]
+
+|-
+|[[Mossgrub]]
+|[[Massive Mossgrub]]
+|[[Mossmir]]
+|[[Moss Mother]]
+|[[Aknid]]
+
+|-
+| colspan="5" |<hr/>
+|-
+| width="20%" |[[File:HJ Skull Scuttler.png|60x60px|center|link=Skull Scuttler|center]]
+| width="20%" |[[File:HJ Skullwing.png|60x60px|center|link=Skullwing|center]]
+| width="20%" |[[File:HJ Skull Brute.png|60x60px|center|link=Skull Brute|center]]
+| width="20%" |[[File:HJ Skull Tyrant.png|60x60px|center|link=Skull Tyrant|center]]
+| width="20%" |[[File:HJ Kilik.png|60x60px|center|link=Kilik|center]]
+
+|-
+|[[Skull Scuttler]]
+|[[Skullwing]]
+|[[Skull Brute]]
+|[[Skull Tyrant]]
+|[[Kilik]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Beastfly.png|60x60px|center|link=Beastfly|center]]
+| width="20%" |[[File:HJ Savage Beastfly.png|60x60px|center|link=Savage Beastfly|center]]
+| width="20%" |[[File:HJ Caranid.png|60x60px|center|link=Caranid|center]]
+| width="20%" |[[File:HJ Vicious Caranid.png|60x60px|center|link=Vicious Caranid|center]]
+| width="20%" |[[File:HJ Hardbone Hopper.png|60x60px|center|link=Hardbone Hopper|center]]
+
+|-
+|[[Beastfly]]
+|[[Savage Beastfly]]
+|[[Caranid]]
+|[[Vicious Caranid]]
+|[[Hardbone Hopper]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Hardbone Elder.png|60x60px|center|link=Hardbone Elder|center]]
+| width="20%" |[[File:HJ Tarmite.png|60x60px|center|link=Tarmite|center]]
+| width="20%" |[[File:HJ Mawling.png|60x60px|center|link=Mawling|center]]
+| width="20%" |[[File:HJ Marrowmaw.png|60x60px|center|link=Marrowmaw|center]]
+| width="20%" |[[File:HJ Hoker.png|60x60px|center|link=Hoker|center]]
+
+|-
+|[[Hardbone Elder]]
+|[[Tarmite]]
+|[[Mawling]]
+|[[Marrowmaw]]
+|[[Hoker]]
+
+|-
+| colspan="5" |<hr/>
+|-
+| width="20%" |[[File:HJ Flintbeetle.png|60x60px|center|link=Flintbeetle|center]]
+| width="20%" |[[File:HJ Rhinogrund.png|60x60px|center|link=Rhinogrund|center]]
+| width="20%" |[[File:HJ Gromling.png|60x60px|center|link=Gromling|center]]
+| width="20%" |[[File:HJ Grom.png|60x60px|center|link=Grom|center]]
+| width="20%" |[[File:HJ Bell Beast.png|60x60px|center|link=Bell Beast|center]]
+
+|-
+|[[Flintbeetle]]
+|[[Rhinogrund]]
+|[[Gromling]]
+|[[Grom]]
+|[[Bell Beast]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Pilgrim Groveller.png|60x60px|center|link=Pilgrim Groveller|center]]
+| width="20%" |[[File:HJ Pilgrim Pouncer.png|60x60px|center|link=Pilgrim Pouncer|center]]
+| width="20%" |[[File:HJ Pilgrim Hornfly.png|60x60px|center|link=Pilgrim Hornfly|center]]
+| width="20%" |[[File:HJ Pilgrim Hulk.png|60x60px|center|link=Pilgrim Hulk|center]]
+| width="20%" |[[File:HJ Pilgrim Bellbearer.png|60x60px|center|link=Pilgrim Bellbearer|center]]
+
+|-
+|[[Pilgrim Groveller]]
+|[[Pilgrim Pouncer]]
+|[[Pilgrim Hornfly]]
+|[[Pilgrim Hulk]]
+|[[Pilgrim Bellbearer]]
+
+|-
+| colspan="5" |<hr/>
+|-
+| width="20%" |[[File:HJ Winged Pilgrim.png|60x60px|center|link=Winged Pilgrim|center]]
+| width="20%" |[[File:HJ Elder Pilgrim.png|60x60px|center|link=Elder Pilgrim|center]]
+| width="20%" |[[File:HJ Winged Pilgrim Bellbearer.png|60x60px|center|link=Winged Pilgrim Bellbearer|center]]
+| width="20%" |[[File:HJ Pilgrim Hiker.png|60x60px|center|link=Pilgrim Hiker|center]]
+| width="20%" |[[File:HJ Pilgrim Guide.png|60x60px|center|link=Pilgrim Guide|center]]
+
+|-
+|[[Winged Pilgrim]]
+|[[Elder Pilgrim]]
+|[[Winged Pilgrim Bellbearer]]
+|[[Pilgrim Hiker]]
+|[[Pilgrim Guide]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Overgrown Pilgrim.png|60x60px|center|link=Overgrown Pilgrim|center]]
+| width="20%" |[[File:HJ Covetous Pilgrim.png|60x60px|center|link=Covetous Pilgrim|center]]
+| width="20%" |[[File:HJ Snitchfly.png|60x60px|center|link=Snitchfly|center]]
+| width="20%" |[[File:HJ Lavalug.png|60x60px|center|link=Lavalug|center]]
+| width="20%" |[[File:HJ Lavalarga.png|60x60px|center|link=Lavalarga|center]]
+
+|-
+|[[Overgrown Pilgrim]]
+|[[Covetous Pilgrim]]
+|[[Snitchfly]]
+|[[Lavalug]]
+|[[Lavalarga]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Smelt Shoveller.png|60x60px|center|link=Smelt Shoveller|center]]
+| width="20%" |[[File:HJ Flintstone Flyer.png|60x60px|center|link=Flintstone Flyer|center]]
+| width="20%" |[[File:HJ Flintflame Flyer.png|60x60px|center|link=Flintflame Flyer|center]]
+| width="20%" |[[File:HJ Smokerock Sifter.png|60x60px|center|link=Smokerock Sifter|center]]
+| width="20%" |[[File:HJ Deep Diver.png|60x60px|center|link=Deep Diver|center]]
+
+|-
+|[[Smelt Shoveller]]
+|[[Flintstone Flyer]]
+|[[Flintflame Flyer]]
+|[[Smokerock Sifter]]
+|[[Deep Diver]]
+
+|-
+| colspan="5" |<hr/>
+|-
+| width="20%" |[[File:HJ Forebrothers Signis & Gron.png|60x60px|center|link=Forebrothers Signis & Gron|center]]
+| width="20%" |[[File:HJ Cragglite.png|60x60px|center|link=Cragglite|center]]
+| width="20%" |[[File:HJ Craggler.png|60x60px|center|link=Craggler|center]]
+| width="20%" |[[File:HJ Brushflit.png|60x60px|center|link=Brushflit|center]]
+| width="20%" |[[File:HJ Fertid.png|60x60px|center|link=Fertid|center]]
+
+|-
+|[[Forebrothers Signis & Gron]]
+|[[Cragglite]]
+|[[Craggler]]
+|[[Brushflit]]
+|[[Fertid]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Flapping Fertid.png|60x60px|center|link=Flapping Fertid|center]]
+| width="20%" |[[File:HJ Fourth Chorus.png|60x60px|center|link=Fourth Chorus|center]]
+| width="20%" |[[File:HJ Skarrlid.png|60x60px|center|link=Skarrlid|center]]
+| width="20%" |[[File:HJ Skarrwing.png|60x60px|center|link=Skarrwing|center]]
+| width="20%" |[[File:HJ Skarr Scout.png|60x60px|center|link=Skarr Scout|center]]
+
+|-
+|[[Flapping Fertid]]
+|[[Fourth Chorus]]
+|[[Skarrlid]]
+|[[Skarrwing]]
+|[[Skarr Scout]]
+
+|-
+| colspan="5" |<hr/>
+|-
+| width="20%" |[[File:HJ Skarr Stalker.png|60x60px|center|link=Skarr Stalker|center]]
+| width="20%" |[[File:HJ Spear Skarr.png|60x60px|center|link=Spear Skarr|center]]
+| width="20%" |[[File:HJ Skarrgard.png|60x60px|center|link=Skarrgard|center]]
+| width="20%" |[[File:HJ Gurr the Outcast.png|60x60px|center|link=Gurr the Outcast|center]]
+| width="20%" |[[File:HJ Last Claw.png|60x60px|center|link=Last Claw|center]]
+
+|-
+|[[Skarr Stalker]]
+|[[Spear Skarr]]
+|[[Skarrgard]]
+|[[Gurr the Outcast]]
+|[[Last Claw]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Skarrsinger Karmelita.png|60x60px|center|link=Skarrsinger Karmelita|center]]
+| width="20%" |[[File:HJ Mite.png|60x60px|center|link=Mite|center]]
+| width="20%" |[[File:HJ Fluttermite.png|60x60px|center|link=Fluttermite|center]]
+| width="20%" |[[File:HJ Mitemother.png|60x60px|center|link=Mitemother|center]]
+| width="20%" |[[File:HJ Dreg Catcher.png|60x60px|center|link=Dreg Catcher|center]]
+
+|-
+|[[Skarrsinger Karmelita]]
+|[[Mite]]
+|[[Fluttermite]]
+|[[Mitemother]]
+|[[Dreg Catcher]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Silk Snipper.png|60x60px|center|link=Silk Snipper|center]]
+| width="20%" |[[File:HJ Thread Raker.png|60x60px|center|link=Thread Raker|center]]
+| width="20%" |[[File:HJ Moorwing.png|60x60px|center|link=Moorwing|center]]
+| width="20%" |[[File:HJ Wisp.png|60x60px|center|link=Wisp|center]]
+| width="20%" |[[File:HJ Burning Bug.png|60x60px|center|link=Burning Bug|center]]
+
+|-
+|[[Silk Snipper]]
+|[[Thread Raker]]
+|[[Moorwing]]
+|[[Wisp]]
+|[[Burning Bug]]
+
+|-
+| colspan="5" |<hr/>
+|-
+| width="20%" |[[File:HJ Father of the Flame.png|60x60px|center|link=Father of the Flame|center]]
+| width="20%" |[[File:HJ Craw.png|60x60px|center|link=Craw|center]]
+| width="20%" |[[File:HJ Tallcraw.png|60x60px|center|link=Tallcraw|center]]
+| width="20%" |[[File:HJ Squatcraw.png|60x60px|center|link=Squatcraw|center]]
+| width="20%" |[[File:HJ Craw Juror.png|60x60px|center|link=Craw Juror|center]]
+
+|-
+|[[Father of the Flame]]
+|[[Craw]]
+|[[Tallcraw]]
+|[[Squatcraw]]
+|[[Craw Juror]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Tallcraw Juror.png|60x60px|center|link=Tallcraw Juror|center]]
+| width="20%" |[[File:HJ Squatcraw Juror.png|60x60px|center|link=Squatcraw Juror|center]]
+| width="20%" |[[File:HJ Crawfather.png|60x60px|center|link=Crawfather|center]]
+| width="20%" |[[File:HJ Muckmaggot.png|60x60px|center|link=Muckmaggot|center]]
+| width="20%" |[[File:HJ Slubberlug.png|60x60px|center|link=Slubberlug|center]]
+
+|-
+|[[Tallcraw Juror]]
+|[[Squatcraw Juror]]
+|[[Crawfather]]
+|[[Muckmaggot]]
+|[[Slubberlug]]
+
+|-
+| colspan="5" |<hr/>
+|-
+| width="20%" |[[File:HJ Muckroach.png|60x60px|center|link=Muckroach|center]]
+| width="20%" |[[File:HJ Bloatroach.png|60x60px|center|link=Bloatroach|center]]
+| width="20%" |[[File:HJ Roachcatcher.png|60x60px|center|link=Roachcatcher|center]]
+| width="20%" |[[File:HJ Roachfeeder.png|60x60px|center|link=Roachfeeder|center]]
+| width="20%" |[[File:HJ Roachkeeper.png|60x60px|center|link=Roachkeeper|center]]
+
+|-
+|[[Muckroach]]
+|[[Bloatroach]]
+|[[Roachcatcher]]
+|[[Roachfeeder]]
+|[[Roachkeeper]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Roachserver.png|60x60px|center|link=Roachserver|center]]
+| width="20%" |[[File:HJ Disgraced Chef Lugoli.png|60x60px|center|link=Disgraced Chef Lugoli|center]]
+| width="20%" |[[File:HJ Wraith.png|60x60px|center|link=Wraith|center]]
+| width="20%" |[[File:HJ Mothleaf Lagnia.png|60x60px|center|link=Mothleaf Lagnia|center]]
+| width="20%" |[[File:HJ Miremite.png|60x60px|center|link=Miremite|center]]
+
+|-
+|[[Roachserver]]
+|[[Disgraced Chef Lugoli]]
+|[[Wraith]]
+|[[Mothleaf Lagnia]]
+|[[Miremite]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Swamp Squit.png|60x60px|center|link=Swamp Squit|center]]
+| width="20%" |[[File:HJ Spit Squit.png|60x60px|center|link=Spit Squit|center]]
+| width="20%" |[[File:HJ Stilkin.png|60x60px|center|link=Stilkin|center]]
+| width="20%" |[[File:HJ Stilkin Trapper.png|60x60px|center|link=Stilkin Trapper|center]]
+| width="20%" |[[File:HJ Groal the Great.png|60x60px|center|link=Groal the Great|center]]
+
+|-
+|[[Swamp Squit]]
+|[[Spit Squit]]
+|[[Stilkin]]
+|[[Stilkin Trapper]]
+|[[Groal the Great]]
+
+|-
+| colspan="5" |<hr/>
+|-
+| width="20%" |[[File:HJ Barnak.png|60x60px|center|link=Barnak|center]]
+| width="20%" |[[File:HJ Ductsucker.png|60x60px|center|link=Ductsucker|center]]
+| width="20%" |[[File:HJ Pond Skipper.png|60x60px|center|link=Pond Skipper|center]]
+| width="20%" |[[File:HJ Pondcatcher.png|60x60px|center|link=Pondcatcher|center]]
+| width="20%" |[[File:HJ Shellwood Gnat.png|60x60px|center|link=Shellwood Gnat|center]]
+
+|-
+|[[Barnak]]
+|[[Ductsucker]]
+|[[Pond Skipper]]
+|[[Pondcatcher]]
+|[[Shellwood Gnat]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Wood Wasp.png|60x60px|center|link=Wood Wasp|center]]
+| width="20%" |[[File:HJ Splinter.png|60x60px|center|link=Splinter|center]]
+| width="20%" |[[File:HJ Splinterhorn.png|60x60px|center|link=Splinterhorn|center]]
+| width="20%" |[[File:HJ Splinterbark.png|60x60px|center|link=Splinterbark|center]]
+| width="20%" |[[File:HJ Sister Splinter.png|60x60px|center|link=Sister Splinter|center]]
+
+|-
+|[[Wood Wasp]]
+|[[Splinter]]
+|[[Splinterhorn]]
+|[[Splinterbark]]
+|[[Sister Splinter]]
+
+|-
+| colspan="5" |<hr/>
+|-
+| width="20%" |[[File:HJ Phacia.png|60x60px|center|link=Phacia|center]]
+| width="20%" |[[File:HJ Pollenica.png|60x60px|center|link=Pollenica|center]]
+| width="20%" |[[File:HJ Gahlia.png|60x60px|center|link=Gahlia|center]]
+| width="20%" |[[File:HJ Shrine Guardian Seth.png|60x60px|center|link=Shrine Guardian Seth|center]]
+| width="20%" |[[File:HJ Nyleth.png|60x60px|center|link=Nyleth|center]]
+
+|-
+|[[Phacia]]
+|[[Pollenica]]
+|[[Gahlia]]
+|[[Shrine Guardian Seth]]
+|[[Nyleth]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Furm.png|60x60px|center|link=Furm|center]]
+| width="20%" |[[File:HJ Winged Furm.png|60x60px|center|link=Winged Furm|center]]
+| width="20%" |[[File:HJ Pharlid.png|60x60px|center|link=Pharlid|center]]
+| width="20%" |[[File:HJ Pharlid Diver.png|60x60px|center|link=Pharlid Diver|center]]
+| width="20%" |[[File:HJ Shardillard.png|60x60px|center|link=Shardillard|center]]
+
+|-
+|[[Furm]]
+|[[Winged Furm]]
+|[[Pharlid]]
+|[[Pharlid Diver]]
+|[[Shardillard]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Sandcarver.png|60x60px|center|link=Sandcarver|center]]
+| width="20%" |[[File:HJ Squirrm.png|60x60px|center|link=Squirrm|center]]
+| width="20%" |[[File:HJ Judge.png|60x60px|center|link=Judge|center]]
+| width="20%" |[[File:HJ Last Judge.png|60x60px|center|link=Last Judge|center]]
+| width="20%" |[[File:HJ Coral Furm.png|60x60px|center|link=Coral Furm|center]]
+
+|-
+|[[Sandcarver]]
+|[[Squirrm]]
+|[[Judge]]
+|[[Last Judge]]
+|[[Coral Furm]]
+
+|-
+| colspan="5" |<hr/>
+|-
+| width="20%" |[[File:HJ Driznit.png|60x60px|center|link=Driznit|center]]
+| width="20%" |[[File:HJ Driznarga.png|60x60px|center|link=Driznarga|center]]
+| width="20%" |[[File:HJ Pokenabbin.png|60x60px|center|link=Pokenabbin|center]]
+| width="20%" |[[File:HJ Conchfly.png|60x60px|center|link=Conchfly|center]]
+| width="20%" |[[File:HJ Great Conchfly.png|60x60px|center|link=Great Conchfly|center]]
+
+|-
+|[[Driznit]]
+|[[Driznarga]]
+|[[Pokenabbin]]
+|[[Conchfly]]
+|[[Great Conchfly]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Crustcrawler.png|60x60px|center|link=Crustcrawler|center]]
+| width="20%" |[[File:HJ Crustcrag.png|60x60px|center|link=Crustcrag|center]]
+| width="20%" |[[File:HJ Kai.png|60x60px|center|link=Kai|center]]
+| width="20%" |[[File:HJ Spinebeak Kai.png|60x60px|center|link=Spinebeak Kai|center]]
+| width="20%" |[[File:HJ Steelspine Kai.png|60x60px|center|link=Steelspine Kai|center]]
+
+|-
+|[[Crustcrawler]]
+|[[Crustcrag]]
+|[[Kai]]
+|[[Spinebeak Kai]]
+|[[Steelspine Kai]]
+
+|-
+| colspan="5" |<hr/>
+|-
+| width="20%" |[[File:HJ Yuma.png|60x60px|center|link=Yuma|center]]
+| width="20%" |[[File:HJ Yumama.png|60x60px|center|link=Yumama|center]]
+| width="20%" |[[File:HJ Karaka.png|60x60px|center|link=Karaka|center]]
+| width="20%" |[[File:HJ Kakri.png|60x60px|center|link=Kakri|center]]
+| width="20%" |[[File:HJ Yago.png|60x60px|center|link=Yago|center]]
+
+|-
+|[[Yuma]]
+|[[Yumama]]
+|[[Karaka]]
+|[[Kakri]]
+|[[Yago]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Karak Gor.png|60x60px|center|link=Karak Gor|center]]
+| width="20%" |[[File:HJ Alita.png|60x60px|center|link=Alita|center]]
+| width="20%" |[[File:HJ Corrcrust Karaka.png|60x60px|center|link=Corrcrust Karaka|center]]
+| width="20%" |[[File:HJ Crust King Khann.png|60x60px|center|link=Crust King Khann|center]]
+| width="20%" |[[File:HJ Watcher at the Edge.png|60x60px|center|link=Watcher at the Edge|center]]
+
+|-
+|[[Karak Gor]]
+|[[Alita]]
+|[[Corrcrust Karaka]]
+|[[Crust King Khann]]
+|[[Watcher at the Edge]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Voltvyrm.png|60x60px|center|link=Voltvyrm|center]]
+| width="20%" |[[File:HJ Drapefly.png|60x60px|center|link=Drapefly|center]]
+| width="20%" |[[File:HJ Drapelord.png|60x60px|center|link=Drapelord|center]]
+| width="20%" |[[File:HJ Drapemite.png|60x60px|center|link=Drapemite|center]]
+| width="20%" |[[File:HJ Giant Drapemite.png|60x60px|center|link=Giant Drapemite|center]]
+
+|-
+|[[Voltvyrm]]
+|[[Drapefly]]
+|[[Drapelord]]
+|[[Drapemite]]
+|[[Giant Drapemite]]
+
+|-
+| colspan="5" |<hr/>
+|-
+| width="20%" |[[File:HJ Underworker.png|60x60px|center|link=Underworker|center]]
+| width="20%" |[[File:HJ Underscrub.png|60x60px|center|link=Underscrub|center]]
+| width="20%" |[[File:HJ Undersweep.png|60x60px|center|link=Undersweep|center]]
+| width="20%" |[[File:HJ Underpoke.png|60x60px|center|link=Underpoke|center]]
+| width="20%" |[[File:HJ Underloft.png|60x60px|center|link=Underloft|center]]
+
+|-
+|[[Underworker]]
+|[[Underscrub]]
+|[[Undersweep]]
+|[[Underpoke]]
+|[[Underloft]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Undercrank.png|60x60px|center|link=Undercrank|center]]
+| width="20%" |[[File:HJ Envoy.png|60x60px|center|link=Envoy|center]]
+| width="20%" |[[File:HJ Choir Pouncer.png|60x60px|center|link=Choir Pouncer|center]]
+| width="20%" |[[File:HJ Choir Hornhead.png|60x60px|center|link=Choir Hornhead|center]]
+| width="20%" |[[File:HJ Choir Bellbearer.png|60x60px|center|link=Choir Bellbearer|center]]
+
+|-
+|[[Undercrank]]
+|[[Envoy]]
+|[[Choir Pouncer]]
+|[[Choir Hornhead]]
+|[[Choir Bellbearer]]
+
+|-
+| colspan="5" |<hr/>
+|-
+| width="20%" |[[File:HJ Choir Flyer.png|60x60px|center|link=Choir Flyer|center]]
+| width="20%" |[[File:HJ Choir Elder.png|60x60px|center|link=Choir Elder|center]]
+| width="20%" |[[File:HJ Choristor.png|60x60px|center|link=Choristor|center]]
+| width="20%" |[[File:HJ Reed.png|60x60px|center|link=Reed|center]]
+| width="20%" |[[File:HJ Grand Reed.png|60x60px|center|link=Grand Reed|center]]
+
+|-
+|[[Choir Flyer]]
+|[[Choir Elder]]
+|[[Choristor]]
+|[[Reed]]
+|[[Grand Reed]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Choir Clapper.png|60x60px|center|link=Choir Clapper|center]]
+| width="20%" |[[File:HJ Clawmaiden.png|60x60px|center|link=Clawmaiden|center]]
+| width="20%" |[[File:HJ Memoria.png|60x60px|center|link=Memoria|center]]
+| width="20%" |[[File:HJ Minister.png|60x60px|center|link=Minister|center]]
+| width="20%" |[[File:HJ Maestro.png|60x60px|center|link=Maestro|center]]
+
+|-
+|[[Choir Clapper]]
+|[[Clawmaiden]]
+|[[Memoria]]
+|[[Minister]]
+|[[Maestro]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Second Sentinel.png|60x60px|center|link=Second Sentinel|center]]
+| width="20%" |[[File:HJ Dreg Husk.png|60x60px|center|link=Dreg Husk|center]]
+| width="20%" |[[File:HJ Dregwheel.png|60x60px|center|link=Dregwheel|center]]
+| width="20%" |[[File:HJ Surgeon.png|60x60px|center|link=Surgeon|center]]
+| width="20%" |[[File:HJ Mortician.png|60x60px|center|link=Mortician|center]]
+
+|-
+|[[Second Sentinel]]
+|[[Dreg Husk]]
+|[[Dregwheel]]
+|[[Surgeon]]
+|[[Mortician]]
+
+|-
+| colspan="5" |<hr/>
+|-
+| width="20%" |[[File:HJ The Unravelled.png|60x60px|center|link=The Unravelled|center]]
+| width="20%" |[[File:HJ Cogwork Underfly.png|60x60px|center|link=Cogwork Underfly|center]]
+| width="20%" |[[File:HJ Cogwork Hauler.png|60x60px|center|link=Cogwork Hauler|center]]
+| width="20%" |[[File:HJ Cogwork Crawler.png|60x60px|center|link=Cogwork Crawler|center]]
+| width="20%" |[[File:HJ Cogworker.png|60x60px|center|link=Cogworker|center]]
+
+|-
+|[[The Unravelled]]
+|[[Cogwork Underfly]]
+|[[Cogwork Hauler]]
+|[[Cogwork Crawler]]
+|[[Cogworker]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Cogwork Spine.png|60x60px|center|link=Cogwork Spine|center]]
+| width="20%" |[[File:HJ Cogwork Choirbug.png|60x60px|center|link=Cogwork Choirbug|center]]
+| width="20%" |[[File:HJ Cogwork Cleanser.png|60x60px|center|link=Cogwork Cleanser|center]]
+| width="20%" |[[File:HJ Cogwork Defender.png|60x60px|center|link=Cogwork Defender|center]]
+| width="20%" |[[File:HJ Cogwork Clapper.png|60x60px|center|link=Cogwork Clapper|center]]
+
+|-
+|[[Cogwork Spine]]
+|[[Cogwork Choirbug]]
+|[[Cogwork Cleanser]]
+|[[Cogwork Defender]]
+|[[Cogwork Clapper]]
+
+|-
+| colspan="5" |<hr/>
+|-
+| width="20%" |[[File:HJ Cogwork Dancers.png|60x60px|center|link=Cogwork Dancers|center]]
+| width="20%" |[[File:HJ Vaultborn.png|60x60px|center|link=Vaultborn|center]]
+| width="20%" |[[File:HJ Lampbearer.png|60x60px|center|link=Lampbearer|center]]
+| width="20%" |[[File:HJ Scrollreader.png|60x60px|center|link=Scrollreader|center]]
+| width="20%" |[[File:HJ Vaultkeeper.png|60x60px|center|link=Vaultkeeper|center]]
+
+|-
+|[[Cogwork Dancers]]
+|[[Vaultborn]]
+|[[Lampbearer]]
+|[[Scrollreader]]
+|[[Vaultkeeper]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Trobbio.png|60x60px|center|link=Trobbio|center]]
+| width="20%" |[[File:HJ Tormented Trobbio.png|60x60px|center|link=Tormented Trobbio|center]]
+| width="20%" |[[File:HJ Penitent.png|60x60px|center|link=Penitent|center]]
+| width="20%" |[[File:HJ Puny Penitent.png|60x60px|center|link=Puny Penitent|center]]
+| width="20%" |[[File:HJ Freshfly.png|60x60px|center|link=Freshfly|center]]
+
+|-
+|[[Trobbio]]
+|[[Tormented Trobbio]]
+|[[Penitent]]
+|[[Puny Penitent]]
+|[[Freshfly]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Scabfly.png|60x60px|center|link=Scabfly|center]]
+| width="20%" |[[File:HJ Guardfly.png|60x60px|center|link=Guardfly|center]]
+| width="20%" |[[File:HJ Wardenfly.png|60x60px|center|link=Wardenfly|center]]
+| width="20%" |[[File:HJ Broodmother.png|60x60px|center|link=Broodmother|center]]
+| width="20%" |[[File:HJ Driftlin.png|60x60px|center|link=Driftlin|center]]
+
+|-
+|[[Scabfly]]
+|[[Guardfly]]
+|[[Wardenfly]]
+|[[Broodmother]]
+|[[Driftlin]]
+
+|-
+| colspan="5" |<hr/>
+|-
+| width="20%" |[[File:HJ Mnemonid.png|60x60px|center|link=Mnemonid|center]]
+| width="20%" |[[File:HJ Mnemonord.png|60x60px|center|link=Mnemonord|center]]
+| width="20%" |[[File:HJ Servitor Ignim.png|60x60px|center|link=Servitor Ignim|center]]
+| width="20%" |[[File:HJ Servitor Boran.png|60x60px|center|link=Servitor Boran|center]]
+| width="20%" |[[File:HJ Winged Lifeseed.png|60x60px|center|link=Winged Lifeseed|center]]
+
+|-
+|[[Mnemonid]]
+|[[Mnemonord]]
+|[[Servitor Ignim]]
+|[[Servitor Boran]]
+|[[Winged Lifeseed]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Plasmid.png|60x60px|center|link=Plasmid|center]]
+| width="20%" |[[File:HJ Plasmidas.png|60x60px|center|link=Plasmidas|center]]
+| width="20%" |[[File:HJ Plasmified Zango.png|60x60px|center|link=Plasmified Zango|center]]
+| width="20%" |[[File:HJ Leaf Glider.png|60x60px|center|link=Leaf Glider|center]]
+| width="20%" |[[File:HJ Leaf Roller.png|60x60px|center|link=Leaf Roller|center]]
+
+|-
+|[[Plasmid]]
+|[[Plasmidas]]
+|[[Plasmified Zango]]
+|[[Leaf Glider]]
+|[[Leaf Roller]]
+
+|-
+| colspan="5" |<hr/>
+|-
+| width="20%" |[[File:HJ Pendra.png|60x60px|center|link=Pendra|center]]
+| width="20%" |[[File:HJ Pendragor.png|60x60px|center|link=Pendragor|center]]
+| width="20%" |[[File:HJ Nuphar.png|60x60px|center|link=Nuphar|center]]
+| width="20%" |[[File:HJ Cloverstag.png|60x60px|center|link=Cloverstag|center]]
+| width="20%" |[[File:HJ Palestag.png|60x60px|center|link=Palestag|center]]
+
+|-
+|[[Pendra]]
+|[[Pendragor]]
+|[[Nuphar]]
+|[[Cloverstag]]
+|[[Palestag]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Kindanir.png|60x60px|center|link=Kindanir|center]]
+| width="20%" |[[File:HJ Verdanir.png|60x60px|center|link=Verdanir|center]]
+| width="20%" |[[File:HJ Escalion.png|60x60px|center|link=Escalion|center]]
+| width="20%" |[[File:HJ Clover Dancers.png|60x60px|center|link=Clover Dancers|center]]
+| width="20%" |[[File:HJ SS Shadow Creeper.png|60x60px|center|link=Shadow Creeper (Silksong)|center]]
+
+|-
+|[[Kindanir]]
+|[[Verdanir]]
+|[[Escalion]]
+|[[Clover Dancers]]
+|[[Shadow Creeper (Silksong)|Shadow Creeper]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Shadow Charger.png|60x60px|center|link=Shadow Charger|center]]
+| width="20%" |[[File:HJ Gloomsac.png|60x60px|center|link=Gloomsac|center]]
+| width="20%" |[[File:HJ Gargant Gloom.png|60x60px|center|link=Gargant Gloom|center]]
+| width="20%" |[[File:HJ SS Void Tendrils.png|60x60px|center|link=Void Tendrils (Silksong)|center]]
+| width="20%" |[[File:HJ Void Mass.png|60x60px|center|link=Void Mass|center]]
+
+|-
+|[[Shadow Charger]]
+|[[Gloomsac]]
+|[[Gargant Gloom]]
+|[[Void Tendrils (Silksong)|Void Tendrils]]
+|[[Void Mass]]
+
+|-
+| colspan="5" |<hr/>
+|-
+| width="20%" |[[File:HJ Summoned Saviour.png|60x60px|center|link=Summoned Saviour|center]]
+| width="20%" |[[File:HJ SS Wingmould.png|60x60px|center|link=Wingmould (Silksong)|center]]
+| width="20%" |[[File:HJ Garpid.png|60x60px|center|link=Garpid|center]]
+| width="20%" |[[File:HJ Imoba.png|60x60px|center|link=Imoba|center]]
+| width="20%" |[[File:HJ Skrill.png|60x60px|center|link=Skrill|center]]
+
+|-
+|{{Steel Soul Icon Mini|SS}} [[Summoned Saviour]]
+|[[Wingmould (Silksong)|Wingmould]]
+|[[Garpid]]
+|[[Imoba]]
+|[[Skrill]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Bell Eater.png|60x60px|center|link=Bell Eater|center]]
+| width="20%" |[[File:HJ Huge Flea.png|60x60px|center|link=Huge Flea|center]]
+| width="20%" |[[File:HJ Shakra.png|60x60px|center|link=Shakra|center]]
+| width="20%" |[[File:HJ Garmond & Zaza.png|60x60px|center|link=Garmond & Zaza|center]]
+| width="20%" |[[File:HJ Lost Garmond.png|60x60px|center|link=Lost Garmond|center]]
+
+|-
+|[[Bell Eater]]
+|[[Huge Flea]]
+|[[Shakra]]
+|[[Garmond & Zaza]]
+|[[Lost Garmond]]
+
+|-
+| colspan="5" |<hr/>
+|-
+
+| width="20%" |[[File:HJ Pinstress.png|60x60px|center|link=Pinstress|center]]
+| width="20%" |[[File:HJ Widow.png|60x60px|center|link=Widow|center]]
+| width="20%" |[[File:HJ First Sinner.png|60x60px|center|link=First Sinner|center]]
+| width="20%" |[[File:HJ Phantom.png|60x60px|center|link=Phantom|center]]
+| width="20%" |[[File:HJ Lace.png|60x60px|center|link=Lace|center]]
+
+|-
+|[[Pinstress]]
+|[[Widow]]
+|[[First Sinner]]
+|[[Phantom]]
+|[[Lace]]
+
+|-
+| colspan="5" |<hr/>
+|-
+| width="20%" |[[File:HJ Grand Mother Silk.png|60x60px|center|link=Grand Mother Silk|center]]
+| width="20%" |[[File:HJ Lost Lace.png|60x60px|center|link=Lost Lace|center]]
+
+|-
+|[[Grand Mother Silk]]
+|[[Lost Lace]]
+
+|-
+
+|-
+
+|}
+{{Hr|SS}}
+
+==Trivia==
+*Multiple voice actors for <i>Silksong</i> are known to have voiced multiple unknown minor enemies:
+**Matthew Fitzgerald, voice actor of [[Kratt]], [[Old Penitent]], and multiple [[Pilgrims]].<ref>{{Cite tweet|author=Matthew Fitzgerald|user=toborprime|number=2019272549956194762|title=Sure - Old Penitent, Kratt, and a handful (something like 4-5) of the "Pilgrim" category NPCs/enemies. Also a ton of little insect and enemy noises, not sure on what/where they used those.|access-date=5 February 2026}}</ref>
+**Ned Rogers, voice actor of [[Creige]].<ref>Email by [https://x.com/silksongsoon/status/2020558788827246996 Ned Rogers]: <i>"I voice the bartender in Halfway Home and a few other random enemies..."</i> ([[:File:Reference Ned Rogers.png|Archive]])</ref>
+**Lauren Koopowitz, voice actor of [[Shakra]] in addition to other roles.<ref>[https://www.youtube.com/watch?v=pA7Id7lff6E Interview with Lauren Koopowitz] (45:53): <i>"The only problem with [this list of characters I voiced] is that it's not everyone because they had so many [...] there are a lot of like little like NPC creatures that go around."</i></ref>
+*Several large or high-health enemies have a unique effect when being killed. 
+*[[Furm]]s, [[Skull Scuttler]]s, [[Crustcrawler]]s, [[Coral Furm]]s, [[Fertid]]s, [[Leaf Roller]]s, [[Cogwork Crawler]]s and [[Miremite]]s are all internally referred to as a [[mariowiki:Goomba|Goomba]], in reference to the enemy from the <i>Mario</i> franchise.
+{{Refs|hr=SS}}
+[[Category:Enemies (Silksong)| ]]
+
+[[fr:Ennemis (Silksong)]]
+[[es:Enemigos (Silksong)]]
+{{DISPLAYTITLE:Enemies (''Silksong'')}}

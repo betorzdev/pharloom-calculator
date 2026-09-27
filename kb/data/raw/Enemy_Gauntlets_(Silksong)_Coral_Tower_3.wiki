@@ -1,0 +1,96 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Coral_Tower_Arena_3.png|400px|center]]
+|[[File:Mapshot_SS_Coral_Tower.png|400px|center]]
+|-
+| colspan="2" | Third floor enemy gauntlet of the Coral Tower.
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>Progress to floor 4<br>Shortcut to skip the first 3 floors</center>
+| <center>[https://youtube.com/watch?v=YHACfnIFkdY Coral Tower Battle]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Karaka.png|35x35px|link=Karaka]] Karaka x2, left and right<br/>
+[[File:HJ_Alita.png|35x35px|link=Alita]] Alita, centre
+| Defeating two enemies spawns the next row.
+|-
+| colspan="2" | Coral spikes emerge to cover the centre.
+|-
+|
+[[File:HJ_Yago.png|35x35px|link=Yago]] Yago, top left
+| Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Kakri.png|35x35px|link=Kakri]] Kakri, top right
+| Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Conchfly.png|35x35px|link=Conchfly]] Conchfly, top left
+| Defeating one enemy spawns the next row.
+|-
+|
+[[File:HJ_Conchfly.png|35x35px|link=Conchfly]] Conchfly, top right
+| Defeating one enemy spawns the next row.
+|-
+| colspan="2" | Centre coral spikes disappear; new spikes emerge to cover left and right edges of the arena and both entire walls.
+|-
+|
+[[File:HJ_Karaka.png|35x35px|link=Karaka]] Karaka x2, centre left and right
+|
+|-
+|
+[[File:HJ_Yumama.png|35x35px|link=Yumama]] Yumama, top centre
+| [[Yuma]]s spawned are not counted towards, and do not affect wave progression.
+|-
+|
+[[File:HJ_Corrcrust Karaka.png|35x35px|link=Corrcrust Karaka]] [[Corrcrust Karaka]], top centre
+| Corrcrust Karaka are not damaged by the coral spikes.
+|-
+|
+[[File:HJ_Kai.png|35x35px|link=Kai]] Kai x3, centre<br/>
+[[File:HJ_Spinebeak Kai.png|35x35px|link=Spinebeak Kai]] [[Spinebeak Kai]] x2, top centre
+|
+|-
+|
+[[File:HJ_Karak Gor.png|35x35px|link=Karak Gor]] Karak Gor, left<br/>
+[[File:HJ_Alita.png|35x35px|link=Alita]] Alita, right
+| Karak Gor will destroy any coral spikes they run into. Alita arrives only after the right spikes have been cleared.
+|-
+| colspan="2" | Any remaining coral spikes disappear; new spikes emerge to cover the entire floor of the arena.
+|-
+|
+[[File:HJ_Kai.png|35x35px|link=Kai]] Kai x4, top centre<br/>
+[[File:HJ_Steelspine Kai.png|35x35px|link=Steelspine Kai]] Steelspine Kai, top centre
+| Defeating three enemies spawns the next row.
+|-
+|
+[[File:HJ_Yago.png|35x35px|link=Yago]] Yago, top centre
+|
+|-
+|
+[[File:HJ_Karak Gor.png|35x35px|link=Karak Gor]] Karak Gor, centre<br/>
+[[File:HJ_Kakri.png|35x35px|link=Kakri]] Kakri, top right
+| Karak Gor will destroy any coral spikes they run into. Kakri arrives a few moments after.
+|-
+|
+[[File:HJ_Corrcrust Karaka.png|35x35px|link=Corrcrust Karaka]] Corrcrust Karaka, top left<br/>
+[[File:HJ_Karaka.png|35x35px|link=Karaka]] Karaka, right
+|
+|-
+|
+[[File:HJ_Alita.png|35x35px|link=Alita]] Alita x2, left and right<br/>
+[[File:HJ_Karaka.png|35x35px|link=Karaka]] Karaka, centre
+|
+|-
+| colspan="2" | Coral spikes emerge to cover both walls and ceiling.
+|-
+|
+[[File:HJ_Yumama.png|35x35px|link=Yumama]] Yumama x2, top left and right
+| Yumas spawned are not counted towards, and do not affect wave progression. Yumamas are also not affected by coral spikes.
+|}

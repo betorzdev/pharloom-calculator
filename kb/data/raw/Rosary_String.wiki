@@ -1,0 +1,135 @@
+{{Navbar|icons=true
+|page1=Frayed Rosary String
+|page2=Rosary String
+|page3=Rosary Necklace
+|page4=Heavy Rosary Necklace
+|page5=Pale Rosary Necklace}}
+
+{{SS Infobox Item
+| description = Short string of rosaries. Can be broken and the rosaries used to trade.<hr>Contains 60 rosaries.
+| effects = Provides {{R|60}}
+| type = [[Items (Silksong)#Consumables|Consumable]]
+| source = [[NPCs (Silksong)#Merchants|Merchants]]<br>Glowing item spots
+| max = 20
+}}
+
+{{Quote|Hr=SS
+|All is mine... for me, for me!
+|[[Covetous Pilgrim]]
+}}
+
+<b>Rosary Strings</b> are [[Items (Silksong)#Consumables|consumable items]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+Can be used from the inventory to gain {{R|60}}.
+
+Strung Rosaries are not dropped upon death.
+
+== How to Acquire ==
+Rosary Strings can be purchased for {{R|80}} from various [[NPCs (Silksong)#Merchants|merchants]] and [[Rosary]] stringing machines found across [[Pharloom]], both of which have unlimited supplies.
+
+Three Rosary Strings may also be found by interacting with glowing item spots.
+
+{| class="article-table" width="100%"
+! 
+! Location
+! Map
+|-
+!
+! Purchasable
+!
+|-
+! 1
+| Purchased from [[Pebb]] in [[Bone Bottom]].<ref>[[Pebb]]: <i>Loose rosaries filling your pockets? I can string 'em up safe, so you won't go losing them. Might seem a simple art, but it takes some talent to keep 'em properly secure.</i></ref>
+| [[File:Mapshot SS Pebb 01.png|center|200x200px]]
+|-
+! 2
+| Purchased from [[Mort]] in [[Pilgrim's Rest]].<ref>[[Mort]]: <i>I'll string your rosaries tight, for a modest fee. It's the safest way to keep them close.</i></ref>
+| [[File:Mapshot SS Pilgrim's Rest.png|center|200x200px]]
+|-
+! 3
+| Purchased from [[Jubilana]] in [[Songclave]].<ref>[[Jubilana]]: <i>How about we get your loose beads all strung up safe? I'll pinch a few for their braiding, but that's surely worth it for the peace of mind.</i></ref>
+| [[File:Mapshot SS Jubilana 01.png|center|200x200px]]
+|-
+! 4
+| Purchased from [[Grindle]] in [[Blasted Steps]].<ref>[[Grindle]]: <i>Want yer clicky-clackies threaded nice and tight? Old Grindle will do it gladly, if you let 'im snitch a few for hisself...</i></ref>
+| [[File:Mapshot SS Grindle 01.png|center|200x200px]]
+|-
+! 5
+| Purchased from a Rosary stringing machine in [[Greymoor]], beside the entrance from [[Far Fields]].
+| [[File:Mapshot SS Rosary Machine 01.png|center|200x200px]]
+|-
+! 6
+| Purchased from a Rosary stringing machine in [[Shellwood]], beside the entrance to [[Moss Grotto]].
+| [[File:Mapshot SS Rosary Machine 02.png|center|200x200px]]
+|-
+! 7
+| Purchased from a Rosary stringing machine in the [[High Halls#Rosary Bank|Rosary Bank]] in [[High Halls]].
+Not available if the mechanism in the room below has been destroyed to obtain the [[Rosary Cannon]].
+| [[File:Mapshot SS Simple Key Use High Halls.png|center|200x200px]]
+|-
+!
+! Glowing Spots
+!
+|-
+! 8
+| In [[Far Fields]], in the lower passage right of [[Seamstress]]'s hut.
+| [[File:Mapshot SS Rosary String 01.png|center|200x200px]]
+|-
+! 9
+| In [[Shellwood]], on a ledge above the bench in the central area of Shellwood.
+| [[File:Mapshot SS Rosary String 02.png|center|200x200px]]
+|-
+! 10
+| In [[Shellwood]], to the left of the [[Chapel of the Witch]].
+| [[File:Mapshot SS Rosary String 03.png|center|200x200px]]
+|}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Rosary String 01.png!Far Fields right of Seamstress
+|Image2 = Screenshot SS Rosary String 02.png!Central Shellwood
+|Image3 = Screenshot SS Rosary String 03.png!Shellwood near Chapel of the Witch
+}}
+
+== Trivia ==
+* While having 20 Rosary Strings in the inventory, attempting to buy more from a machine will cause the {{R|80}} to be spent, but no additional strings will be received. Merchants will not sell them while at max capacity.
+* In the 2019 <i>Silksong</i> demo, Rosary Strings had the description of <i>"Short string of rosaries. The string can be broken and the rosaries used to trade."</i><ref name="doc">[https://docs.google.com/document/d/10wyWpWJAtbRUSrOstN4e1l09mtx-vrjU_IiqdB2QGyc Everything we know about Hollow Knight: Silksong] (June 13th, 2022)</ref>
+** According to a player of the demo, they gave {{R|40}} instead of {{R|60}} when broken in that build,<ref> [https://discord.com/channels/283467363729408000/484683488503529472/598886444504711188 Discord message] (July 2019)</ref> aligning with the [[Rosaries#Trivia|lower value Rosary item discussed in ''EDGE'' Magazine]].
+
+{{Localisation
+|DEname = Rosenkranzschnur
+|DEmeaning = Rosary String
+|ESname = Ristra de rosarios
+|ESmeaning = Rosary String
+|FRname = Chapelet
+|FRmeaning = Rosary<br><small>Individual Rosaries are <i>perles</i> (pearls) in French.</small>
+|ITname = Filo di grani
+|ITmeaning = Beads String<br><small><i>Grani</i> (beads) are the name of Rosaries in Italian.</small>
+|JAname = ロザリーの紐
+|JAromanised= Rozarī no himo
+|JAkatakana = foreign
+|JAmeaning = Rosary String
+|KOname = 묵주 줄
+|KOromanised = Mukju jul
+|KOmeaning = Rosary String
+|PTname = Cordão de Rosários
+|PTmeaning = Rosary Strings
+|RUname = Чётки
+|RUromanised = Čëtki
+|RUmeaning = Rosary<br><small>Individual Rosaries are {{lang|ru|бусины}} <i>businy</i> (beads) in Russian.</small>
+|TWname = 念珠串
+|TWromanised = Niànzhū chuàn
+|TWmeaning = same
+|ZHname = 念珠串
+|ZHromanised = Niànzhū chuàn
+|ZHmeaning = Rosary String
+|CODEname = COIN_SET_S
+|CODEmeaning = 
+}}
+
+{{Refs|hr=SS}}
+
+
+{{SS Nav Items}}
+[[Category: Items (Silksong)]]

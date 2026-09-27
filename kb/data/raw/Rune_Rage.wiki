@@ -1,0 +1,77 @@
+{{SS Infobox Skill
+| damage formula = <math>\frac{\text{2.1x Needle Damage}}{n}</math><br>
+For n<sup>th</sup> rune on the same enemy
+| damage total = 10/19/27/36/44 <br> (first rune)
+| effect = Scatters 9 exploding runes in a massive radius around [[Hornet (Silksong)|Hornet]], concentrated near enemies
+| location = [[The Slab]]
+| image = Icon_SS_Rune_Rage.png
+| description = Forgotten Weaver technique. Sew rending runes upon one's enemies.
+| description2 = Press SKILL/TOOL<hr>Weave runes of blazing Silk upon enemies.<br>Silk Skills can be equipped in the Crest screen of the Menu.
+}}
+
+<b>Rune Rage</b> is a [[Skills|Skill]] in <i>[[Hollow Knight: Silksong]]</i>. It is the Skill of the [[First Sinner]] that allows [[Hornet (Silksong)|Hornet]] to summon blazing runes upon her [[Enemies (Silksong)|enemies]].   
+
+== Function ==
+Hornet charges up and releases an array of 9 runes semi-randomly around herself that explode after a brief moment. The first rune deals 10 base damage. Subsequent runes hitting the same enemy deal less damage, with the second hit dealing half damage, the third dealing a third, and so on. This means that 4 runes are required to achieve double the damage of 1 rune, and that all 9 runes hitting the same enemy deals less than 3x the damage of hitting them with 1. Each rune hit deals [[Heavy Damage]].
+
+The runes tend to appear near enemies in line of sight of Hornet. If Hornet is hiding behind cover, the runes appear randomly and may miss all enemies entirely. Enemies may also move out of the way of runes while they are appearing.
+
+Rune Rage's charge up acts like that of [[Bind]] in terms of length and behaviour. Getting hit while casting stops the cast. [[Tools]] and [[Crests]] that modify Bind do not affect Rune Rage.
+
+=== Modifiers ===
+* [[Volt Filament]] electrifies Rune Rage, increasing the damage by 25% and adding a tick of 5 damage when 1–3 Runes hit the same enemy, or 2 ticks when 4 or more do.
+* [[Shaman Crest]] sheathes Rune Rage in Soul, increasing the damage by 40%.
+** Volt Filament and Shaman Crest's damage increases add together to grant +65% damage.
+* [[Egg of Flealia]] reduces the cost of Rune Rage to 3 Silk while at full health.
+
+== How to Acquire ==
+Rune Rage can be acquired by defeating [[First Sinner]], who is found in the lower area of [[the Slab]] accessible after obtaining the [[Slab Keys|Key of Apostate]], behind a locked door that can be opened with [[Slab Keys|Key of Heretic]].
+
+{{Gallery
+| Image1 = Mapshot SS First Sinner.png!Location in the Slab
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Rune Rage.png ! Splash Art
+|Image2 = Icon SS Rune Rage Art.png ! Splash Art
+}}
+{{History
+|game = SS
+|1.0.28891 (Patch 3): Updated damage scaling to match other Silk Skills.
+|1.0.29242 (Patch 4): Fixed Rune Rage damage scaling incorrectly.
+}}
+{{Localisation
+|DEname = Runenzorn
+|DEmeaning = Rune Rage
+|ESname = Furia rúnica
+|ESmeaning = Runic Fury
+|FRname = Furie runique
+|FRmeaning = Rune Fury
+|ITname = Collera Runica
+|ITmeaning = Runic Wrath
+|JAname = ルーンの憤怒
+|JAromanised = Rūn no fundo
+|JAkatakana = foreign
+|JAmeaning = Rune Anger
+|KOname = 룬 격노
+|KOromanised = Run gyeongno
+|KOmeaning = Rune Fury
+|PTname = Fúria de Runas
+|PTmeaning = Rune Fury
+|RUname = Ярость рун
+|RUromanised = Jarost' run
+|RUmeaning = Fury of Runes
+|TWname = 符文之怒
+|TWromanised = Fúwén zhī nù
+|TWmeaning = same
+|ZHname = 符文之怒
+|ZHromanised = Fúwén zhī nù
+|ZHmeaning = Rage of Rune
+|CODEname = SKILL_SILKBOMB</code><br><code>RUNE_BOMB
+}}
+
+{{Refs|hr=SS}}
+
+{{SS_Nav_Skills}}
+[[fr:Furie runique]]

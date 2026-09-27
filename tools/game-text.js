@@ -92,6 +92,25 @@ function audit(dump) {
   if (J) (J.BOOK || []).forEach((r) => r.name && add('BOOK.' + r.id, r.name));
 
   let bad = 0, none = 0;
+
+  /* The generated data carries each game text with its key, { es, en, key } ("A_SUPER+A_MAIN"
+     for a split title): every one has to say what that key says, in both languages. */
+  let keyedData = 0;
+  const walk = (v, where) => {
+    if (!v || typeof v !== 'object') return;
+    if (typeof v.key === 'string' && typeof v.es === 'string' && typeof v.en === 'string') {
+      keyedData += 1;
+      const ks = v.key.split('+');
+      if (ks.some((k) => !(k in dump.EN))) { bad += 1; console.log(`✗  ${where.padEnd(30)} the key ${v.key} isn't in the dump`); return; }
+      const say = (L) => ks.map((k) => norm(L[k] != null ? L[k] : dump.EN[k])).join(' ');
+      if (norm(v.en) !== say(dump.EN)) { bad += 1; console.log(`✗  ${where.padEnd(30)} en "${v.en}" ≠ ${v.key} "${say(dump.EN)}"`); }
+      if (norm(v.es) !== say(dump.ES)) { bad += 1; console.log(`✗  ${where.padEnd(30)} es "${v.es}" ≠ ${v.key} "${say(dump.ES)}"`); }
+      return;
+    }
+    for (const [k, x] of Object.entries(v)) walk(x, where + '.' + k);
+  };
+  for (const [f, M] of [['data.js', D], ['enemies.js', F], ['journal.js', J]]) if (M) walk(M, f);
+
   for (const p of pairs) {
     const es = map.get(low(p.en));
     if (!es) { none += 1; console.log(`?  ${p.where.padEnd(30)} "${p.en}" isn't in the game: its source is the wiki (site: "${p.es}")`); continue; }
@@ -113,9 +132,12 @@ function audit(dump) {
     if (low(unesc(en)) !== low(dump.EN[key])) { bad += 1; console.log(`✗  UI.${id.padEnd(27)} en "${unesc(en)}" ≠ ${key} "${norm(dump.EN[key])}"`); }
     if (low(unesc(es)) !== low(dump.ES[key])) { bad += 1; console.log(`✗  UI.${id.padEnd(27)} es "${unesc(es)}" ≠ ${key} "${norm(dump.ES[key])}"`); }
   }
-  console.log(`${pairs.length} names and ${keyed} keyed strings: ${bad} that don't say what the game says, ${none} with no game text`);
+  console.log(`${pairs.length} names, ${keyedData} keyed data texts and ${keyed} keyed strings: ${bad} that don't say what the game says, ${none} with no game text`);
   return bad;
 }
+
+module.exports = { load, norm };
+if (require.main !== module) return;
 
 (async () => {
   const args = process.argv.slice(2);

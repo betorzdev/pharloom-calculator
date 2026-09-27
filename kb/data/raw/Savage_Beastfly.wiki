@@ -1,0 +1,175 @@
+{{For|the [[Grand Hunt Wishes|Grand Hunt Wish]]|Savage Beastfly (Wish)}}
+{{SS Infobox Boss
+|title1= Savage Beastfly
+|image1=<gallery>
+B_Savage_Beastfly.png|Hunter's Journal
+Savage Beastfly Stagger.png|Staggered
+</gallery>
+|location = [[Hunter's March|Chapel of the Beast]]<br>[[Far Fields]]
+|drops = [[Beast Crest]] (Chapel of the Beast)<br>[[Horn Fragment]] (Far Fields)
+|health = 550/{{BT|1100}} <br> ([[Chapel of the Beast]]) <br> 650/{{BT|1300}} ([[Far Fields]])   
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.7|1.2|1|0.9|0.8}}
+|numbers_required = 2
+|theme = [https://www.youtube.com/watch?v=iqSBa35FOPI&list=RDiqSBa35FOPI&start_radio=1 Incisive Battle]
+|singnum = 1
+}}
+
+{{Quote
+|Angered, adult Beastfly with a weighty body and a thickened hardshell mask.<hr/>Civilisation encroaches from this kingdom's crown, but the lowlands are still ruled by great beasts. Its roar stirs something deep within me, some primal instinct.
+|Hr = Journal
+}}
+
+The <b>Savage Beastfly</b> is a [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. It is an angered adult [[Beastfly]] with a weighted body and hardshell mask.<ref name=hj/> It is first encountered in the [[Chapel of the Beast]] blocking the [[Beast Crest]]. A second one can be found in [[Far Fields]] during the <i>[[Savage Beastfly (Wish)|Savage Beastfly]]</i> [[Wishes|wish]].
+
+== Background ==
+Savage Beastflies are the angered, adult form of [[Beastfly|Beastflies]].<ref name="hj">Savage Beastfly [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Angered, adult Beastfly with a weighty body and a thickened hardshell mask."</i></ref> One of them was kept in the Chapel of the Beast and tried to escape by continuously charging at the gate. A second Savage Beastfly is found in the Far Fields, raging through the wildlands and hindering pilgrims.<ref>[[Savage Beastfly (Wish)|Savage Beastfly]] [[Wishes|Wish]] description: <i>"O Beastfly, raging through the scorching wildlands below! May you hinder good pilgrims no longer!"</i></ref>
+
+== In-game Events ==
+Two Savage Beastflies can be encountered in total.
+
+Once [[Hornet (Silksong)|Hornet]] has acquired the [[Drifter's Cloak]], she can soar on the upward drafts of wind in the [[Chapel of the Beast]] to access the first Savage Beastfly. 
+
+After promising the <i>[[Savage Beastfly (Wish)|Savage Beastfly]]</i> [[Savage Beastfly (Wish)|Wish]] in [[Bellhart]], the second Savage Beastfly can be fought in [[Far Fields]] in the same arena as [[Fourth Chorus]]. If Hornet has not defeated [[Fourth Chorus]], the Wish does not appear.
+
+When [[Acts|Act 3]] begins, both encounters become [[Black-Threaded|black-threaded]].
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+=== Phase 1 ===
+Savage Beastfly floats about the arena, staying near [[Hornet (Silksong)|Hornet]], and has two attacks:
+
+* <b>Sweep</b>: Savage Beastfly charges horizontally across the arena three times in a row. It moves vertically to line up with Hornet for the first charge; then adjusts its height either up or down depending on if it has space above or below, and makes a second charge; it once again lines up with Hornet for the third charge.  
+** When Savage Beastfly travels past Hornet during the first two charges, it begins to slow to a stop and turn around for the next sweep; the third and final charge will always travel across the entire arena instead, only stopping once it hits a wall. If Savage Beastfly hits a wall at any point, it will cancel the rest of the attack.
+* <b>Slam</b>: Savage Beastfly moves up to the top of the arena, then slams down into the ground three consecutive times, attempting to position itself above Hornet before each slam.
+
+Savage Beastfly deals {{Damage|2}} on contact.
+
+=== Phase 2 ===
+After reaching 440/{{BT|880}} HP, Savage Beastfly enters Phase 2, gaining a third attack:
+
+* <b>Summon</b>: Savage Beastfly stays in place and screeches. A cage then drops from the ceiling on the left and/or right sides of the arena, spawning a [[Beastfly]], [[Kilik]], or [[Vicious Caranid]] upon hitting the ground. Once the Savage Beastfly reaches 248/{{BT|495}} HP, it can sometimes spawn two cages at once. There can be at most four summoned enemies at once, and they die if caught by the Savage Beastfly's Slam attack near the point of impact. The falling cages can deal {{Damage|1}} through contact damage.
+
+{{Hr|small}}
+
+=== Far Fields ===
+The second encounter is fought in the same arena as Fourth Chorus and inherits its platform mechanic. If not used during the Fourth Chorus fight, the boulder at the top of the arena can be dropped to deal 100 damage to the Beastfly and stun it if it hits.
+
+The Savage Beastfly begins the fight by bursting out from the lava, immediately destroying the centre third of the platforms. It also has the following changes to its patterns:
+* <b>Sweep</b>: As this arena is no longer enclosed, Savage Beastfly will almost always perform three charges during this attack. However, if Hornet lures the boss high enough, there are still walls near the top of the arena which will interrupt the Savage Beastfly's Sweep attack if it hits one.
+* <b>Slam</b>: Savage Beastfly destroys a sixth of the platforms when it slams down, temporarily leaving a gap. If it slams down through one of these gaps and into the lava, it disappears for a short moment before charging up from beneath the platform Hornet is currently on, destroying it in the process. The Savage Beastfly's imminent re-emergence is indicated by a plume of lava erupting from beneath Hornet.
+
+=== Phase 2 ===
+After reaching 520/{{BT|1140}} HP, Savage Beastfly enters Phase 2, gaining a third attack:
+* <b>Summon</b>: The Savage Beastfly calls in a [[Tarmite]] – these enemies float in from the left and/or right sides of the arena instead of being dropped down from cages. When at 292/{{BT|585}} HP, the Savage Beastfly can sometimes summon 2 Tarmites at once.
+
+Platforms re-emerge after a short time; it is not possible for the Savage Beastfly to destroy all platforms before at least one emerges again.
+
+{{Hr|small}}
+
+=== Act 3 ===
+When Act 3 begins, both encounters become [[Black-Threaded|black-threaded]], doubling their HP and adding attacks common to other black-threaded enemies. 
+
+The first Savage Beastfly gains the <b>Void Blobs</b> attack, and the second Savage Beastfly gains the <b>Void Projectiles</b> attack. All of their physical and Void attacks now deal {{Damage|2|type=Void}}.
+<hr />
+
+{{Stagger
+| The Savage Beastfly floats in place, stunned.
+| 11
+| game = SS
+}}
+
+<hr />
+
+In the Far Fields encounter, Hornet is not locked in the arena and can leave at any time to the left or to the right. Any summoned Tarmites despawn if Hornet moves out of their maximum range; the Savage Beastfly does not despawn.
+
+<b>Notes and Strategies:</b>
+* If Savage Beastfly is hovering low, it is telegraphing its Sweep. Jump over it ([[Needle]] bounce if possible) if it is close to the ground, or remain still and let it sail over Hornet if it is elevated above her (and hit with an upward attack as it passes over). Always be prepared for it to Sweep three times, unless it bumps into the wall (in the Chapel of the Beast).
+* If Savage Beastfly is hovering higher, it is telegraphing its Slam. The safest opportunity to deal damage during this sequence is right after its third Slam, but Hornet can also hit the Savage Beastfly when each Slam hits the ground by moving to the left or the right and swinging in the Savage Beastfly's direction. Hornet can also swing her Needle upwards between Slams while the Savage Beastfly repositions.
+** In the Far Fields encounter, the Savage Beastfly has limited horizontal adjustment, as its subsequent Slams after the first, at most, hit a platform two spaces away from the last one it struck. This can be manipulated to influence which platforms it eliminates to avoid Hornet getting stranded, and even force the Savage Beastfly to Slam into lava to interrupt this attack.
+* Eliminate the minions it summons at first opportunity to decrease potential damage sources.
+** [[Silkspear]] and [[Silkshot|Silkshot (Original/Twelfth Architect)]] can dispatch minions from a safe distance, while [[Thread Storm]] can hit multiple enemies in an area around Hornet.
+** [[Curveclaw]] can hit large airborne targets like the Vicious Caranid or the Savage Beastfly itself, allowing Hornet to rack up multiple hits with good spacing.
+** Savage Beastfly's Slam attack can instantly kill any minions it comes into contact with, although this can be difficult to take advantage of.
+* For the Far Fields fight, [[Magma Bell]] reduces damage from lava and the Tarmites' projectiles.
+
+== Needolin Dialogue ==
+{{SS Needolin | columns = 2 | 
+* Ancestor's echo, rumbling cry!
+* Scars and cracks and stolen lives...
+* Break through, break through...
+* Distant dark, vivid red...
+* Hunt the weak, devour the dead!
+* Fly far, fly far!
+}}
+
+== Location ==
+The first Savage Beastfly can be found at the eastern end of [[Hunter's March]] in the Chapel of the Beast. After the <i>Savage Beastfly</i> Wish is promised, the second Savage Beastfly can be found in Far Fields in the same arena as [[Fourth Chorus]].
+
+{{Gallery
+|Image1 = Mapshot SS Savage Beastfly 01.png!Location in Hunter's March
+|Image2 = Mapshot SS Savage Beastfly 02.png!Location in Far Fields
+}}
+
+== Gallery ==
+{{Gallery
+|Image1= Screenshot SS Savage Beastfly 08.png!Charging at the gate in the Chapel of the Beast
+|Image2= Screenshot SS Savage Beastfly 01.png!Sweep
+|Image3= Screenshot SS Savage Beastfly 02.png!Slam
+|Image4= Screenshot SS Savage Beastfly 03.png!Summon
+|Image5= Screenshot SS Savage Beastfly 04.png!Stagger
+|Image6= Screenshot SS Savage Beastfly 05.png!Emerging from lava
+|Image7= Screenshot_SS_Savage_Beastfly_06.png!Summon (Far Fields)
+|Image8= Screenshot SS Savage Beastfly 07.png!Reacting to Needolin
+|Image9= Screenshot SS Memorium 05.png!Dead Savage Beastfly in the [[Memorium]]
+|Image10= Screenshot SS Hunter's March 11.png!Arena in [[Hunter's March]]
+|Image11= Screenshot SS Far Fields 03.png!Arena in [[Far Fields]]
+}}
+
+== Trivia ==
+* The corpse of a third Savage Beastfly can be seen in the [[Memorium]] alongside other taxidermied enemies.<ref>[[:File:Screenshot_SS_Memorium_05.png|Screenshot of Memorium exhibits]]</ref>
+* The shell of the Savage Beastfly is strong enough to survive being engulfed in molten lava. However, Beastflies cannot survive contact with lava, showing how they grow to become resistant to it. 
+{{History
+|game = SS
+|1.0.28650 (Patch 2): Fixed Savage Beastfly in Far Fields sometimes remaining below the lava.
+|1.0.29909 (Patch 5): 
+*Savage Beastfly's summoned minions now die when the boss is killed.
+*Far Fields Savage Beastfly is now stunned when hit by the hanging bomb rock.
+}}
+{{Localisation
+|DEname = Wilde Biestfliege
+|DEmeaning = Wild Beastfly
+|ESname = Moscabestia salvaje
+|ESmeaning = Savage Beastfly 
+|FRname = Volpeste Enragée
+|FRmeaning = Enranged Beastfly
+|ITname = Moscabestia Brutale
+|ITmeaning = Brutal Beastfly
+|JAname = オオケモノバエ
+|JAromanised= Oo kemono-bae
+|JAkatakana = enemy
+|JAmeaning = Large Beastfly<br><small>Combination of {{lang|ja|大}} <i>ō</i> (large) {{lang|ja|獣}} <i>kemono</i> (beast) and {{lang|ja|蠅}} <i>hae</i> (fly).</small>
+|KOname = 흉포한 야수파리
+|KOromanised = Hyungpohan yasupali
+|KOmeaning = Ferocious Beastfly
+|PTname = Besta-alada Selvagem
+|PTmeaning = Savage Winged Beast or Savage Beastfly
+|RUname = Дикая зверомуха
+|RUromanised = Dikaya zveromukha
+|RUmeaning = Wild Beastfly
+|TWname = 殘暴的獸虻
+|TWromanised = Cánbào de shòu méng
+|TWmeaning = Brutal Beast Horsefly
+|ZHname = 残暴的兽蝇
+|ZHromanised = Cánbào de shòu yíng
+|ZHmeaning = Brutal Beast Fly
+|CODEname = BONE_FLYER_GIANT
+|CODEmeaning = Beastflies are internally known as "Bone Flyers".
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[fr:Volpeste Enragée]]
+[[pt:Besta-alada Selvagem]]

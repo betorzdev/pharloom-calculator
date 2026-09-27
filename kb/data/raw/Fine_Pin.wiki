@@ -1,0 +1,86 @@
+{{SS Infobox Item
+| image = <gallery>
+Fine Pin.png|Inventory
+Fine Pin Pickup.png|Pickup
+</gallery>
+| type = [[Items (Silksong)#Deliverable|Deliverable]]
+| max = 12
+| source = Dropped by [[Choristor|Choristors]] and [[Reed|Reeds]] in the [[Choral Chambers]] during <i>[[Fine Pins]]</i>.
+| description = Common weapon of Pharloom, still in good condition despite long use. An expertly crafted metal rod with a sharpened tip.
+}}
+
+{{Quote
+| Our settlement sits defenceless! No more! When the worst comes, we must stand ready. Bring us pins of the choirbugs, those blades still sharp and strong.
+| Residents of [[Songclave]]
+| Hr = SS
+}}
+
+<b>Fine Pins</b> are [[Items (Silksong)#Deliverables|deliverable items]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+12 Fine Pins are required to complete the <i>[[Fine Pins]]</i> [[Wish]], given out by the [[Wishwalls|Wishwall]] at [[Songclave]].
+
+{{Gallery
+|Image1 = Mapshot SS Jubilana 01.png!Location in Choral Chambers
+|Image2 = Screenshot SS Jubilana 01.png!Wishwall in Choral Chambers
+}}
+
+== How to Acquire ==
+Fine Pins are dropped by defeated [[Choristor]]s and [[Reed]]s.
+
+[[Hornet (Silksong)|Hornet]] can carry up to 12 Fine Pins, after which they will no longer drop from defeated Choirbugs.
+
+{{Gallery
+|Image1 = Mapshot SS Choristor 01.png!Choristor locations in Choral Chambers
+|Image2 = Screenshot SS Choristor 01.png!Choristor in Choral Chambers
+}}
+
+{{Gallery
+|Image1 = Mapshot SS Reed 01.png!Reed locations in Choral Chambers
+|Image2 = Screenshot SS Reed 01.png!Reed in Choral Chambers
+}}
+
+== Trivia ==
+* Fine Pins have a unique appearance before being picked up.
+
+{{Gallery
+|Image1=Screenshot SS Fine Pin 01.png!Fine Pin before being picked up
+}}
+{{History
+|game = SS
+|1.0.28891 (Patch 3): Changed Fine Pins drop rate from 50% chance to 100%, but raised wish required quantity from 10 to 12.
+}}
+{{Localisation
+|DEname = Edle Nadel
+|DEmeaning = Elegent Pin
+|ESname = Alfiler fino
+|ESmeaning = Fine Pin
+|FRname = Pique de qualité
+|FRmeaning = Quality Pin
+|ITname = Spillo di qualità
+|ITmeaning = Quality pin
+|JAname = 上質なピン
+|JAromanised = Jōshitsu na pin
+|JAmeaning = High-quality Pin
+|KOname = 가는 핀
+|KOromanised = Ganeun pin
+|KOmeaning = Fine Pin
+|PTname = Pino Fino
+|PTmeaning = Fine Pin
+|RUname = Изящная булавка
+|RUromanised = Izjaščnaja bulavka
+|RUmeaning = Fine Pin
+|TWname = 精製刺針
+|TWromanised = Jīngzhì cìzhēn
+|TWmeaning = same
+|ZHname = 精制刺针
+|ZHromanised = Jīngzhì cìzhēn
+|ZHmeaning = Refined Pierce-pin<br><small>{{lang|zh-Hant|刺針}} / {{lang|zh-Hans|刺针 <i>cìzhēn</i>}} refers to Pharloom's traditional pins in Chinese.</small>
+|CODEname = FINEPIN
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

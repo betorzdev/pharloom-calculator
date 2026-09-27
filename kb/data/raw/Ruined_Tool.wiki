@@ -1,0 +1,102 @@
+{{SS Infobox Item
+| image = <gallery>
+Ruined Tool.png|Inventory
+Ruined Tool Desk.png|Pickup
+</gallery>
+| description = Remains of an ancient Weaver implement, broken and inoperable.<hr/>
+A craftsbug of high skill may be able to repair it.
+| effects = Used to craft [[Silkshot]]
+| type = [[Items (Silksong)#Deliverables|Deliverable]]
+| source = [[Weavenest Murglin]]
+}}
+
+{{Quote|Hr=SS
+|...To build... To hope...<br>...Strength beyond our Silk...<br>...Strength enough...<br>...To keep us free...
+|[[Weavenest Murglin]] [[Needolin Locations#Bilewater|Needolin Dialogue]]
+}}
+
+<b>Ruined Tool</b> is a [[Items (Silksong)#Deliverables|deliverable item]] in <i>[[Hollow Knight: Silksong]]</i>. It can be brought to one of three places to be permanently repaired into a variant of the [[Silkshot]].
+
+== Use ==
+The Ruined Tool can be repaired and crafted into one of the three different variants of the [[Silkshot]], with each variant having unique stats and attributes depending on who repairs it. Once repaired, the other variants are unobtainable.
+
+{| class="article-table"
+! style="width:8rem" | Item
+! style="width:5rem" | Cost
+! Location
+! Map
+|-
+! [[File:Silkshot.png|center|72x72px]]
+[[Silkshot]]<br>(Original)
+| align="center" | [[File:Craftmetal.png|20x20px|link=Craftmetal]] 1 <br>[[File:Ruined Tool.png|20x20px|link=Ruined Tool|Ruined Tool]]
+| Repaired by [[Hornet (Silksong)|Hornet]] in [[Mount Fay]], below the location where the [[Faydown Cloak]] can be obtained.<ref><i>"An old rune displaying the design for a Weaver weapon."</i></ref>
+| [[File:Mapshot SS Silkshot Original.png|150x150px|center]]
+|-
+! [[File:Twelfth Architect Silkshot.png|center|72x72px]]
+[[Silkshot]]<br>([[Twelfth Architect]])
+| align="center" | {{r|130}}<br>[[File:Craftmetal.png|20x20px|link=Craftmetal]] 1 <br>[[File:Ruined Tool.png|20x20px|link=Ruined Tool|Ruined Tool]]
+| Repaired by [[Twelfth Architect]] in the [[Underworks]].<ref>[[Twelfth Architect]]: <i>An intricate implement of Pharloom's first children. I can restore-repair the w-w-weapon, though it will bear some trace of my identity-idiom.</i></ref><ref group="Note">If Hornet has already bought all of the Twelfth Architect's items and acquired the [[Architect's Melody]], this Silkshot variant becomes unobtainable.</ref>
+| [[File:Mapshot SS Twelfth Architect 01.png|150x150px|center]]
+|-
+! [[File:Forge Daughter Silkshot.png|center|72x72px]]
+[[Silkshot]]<br>([[Forge Daughter]])
+| align="center" | {{r|240}}<br>[[File:Craftmetal.png|20x20px|link=Craftmetal]] 1 <br>[[File:Ruined Tool.png|20x20px|link=Ruined Tool|Ruined Tool]]
+| Repaired by [[Forge Daughter]] in [[Deep Docks]].<ref>[[Forge Daughter]]: <i>A weapon from a long distant past. We can combine the Weaver components with our own mouldings to repair the tool.</i></ref>
+| [[File:Mapshot SS Forge Daughter 01.png|150x150px|center]]
+|}
+
+== How to Acquire ==
+The Ruined Tool can be found in [[Weavenest Murglin]], behind a [[Needolin]] door in the southeastern corner of [[Bilewater]]. Bilewater can be entered through a breakable wall connected to eastern [[Sinner's Road]], allowing the Ruined Tool to be obtainable in [[Act 1]].
+
+{{Gallery
+|Image1 = Mapshot SS Ruined Tool.png!Location in Weavenest Murglin
+|Image2 = Screenshot SS Ruined Tool 01.png!Ruined Tool in Weavenest Murglin
+}}
+
+== Gallery ==
+{{MissingImage}}
+
+{{Gallery
+|Image1 = Screenshot SS Silkshot 01.png!Rune on desk in Mount Fay
+}}
+
+{{Localisation
+|DEname = Ramponiertes Werkzeug
+|DEmeaning = Destroyed Tool
+|ESname = Herramienta estropeada
+|ESmeaning = Broken Tool
+|FRname = Outil endommagé
+|FRmeaning = Damaged Tool
+|ITname = Strumento rovinato
+|ITmeaning = Ruined Tool
+|JAname = 壊れた道具
+|JAromanised = Kowareta dōgu
+|JAmeaning = Broken Tool
+|KOname = 망가진 도구
+|KOromanised = Manggajin dogu
+|KOmeaning = Broken Tool
+|PTname = Ferramenta Arruinada
+|PTmeaning = Ruined Tool
+|RUname = Испорченный инструмент
+|RUromanised = Isporčennyj instrument
+|RUmeaning = Ruined Instrument
+|TWname = 損壞的工具
+|TWromanised = Sǔnhuài de gōngjù
+|TWmeaning = same
+|ZHname = 损坏的工具
+|ZHromanised = Sǔnhuài de gōngjù
+|ZHmeaning = Ruined Tool
+|CODEname = BROKEN_SILKSHOT
+|CODEmeaning = 
+}}
+
+{{Hr|SS}}
+
+== Notes ==
+<references group="Note" />
+{{Refs|hr=false}}
+
+
+{{SS Nav Items}}
+[[fr:Outil endommagé]]
+[[zh:损坏的工具]]

@@ -1,0 +1,76 @@
+{{SS Infobox Enemy
+|drops = None
+|health = 999999 (1 per Garpid)
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 30
+}}
+{{Quote
+|Hr = Journal
+|Sightless burrower that reacts violently to the slightest sound.<hr/>
+A common enough bug, though not to be underestimated. The acuteness of their other senses more than makes up for their lack of vision.
+}}
+
+<b>Garpids</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are sightless burrowing bugs found in the [[Border Caves]].<ref>Garpid [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Sightless burrower that reacts violently to the slightest sound."</i></ref>
+
+== Behaviour and Tactics ==
+Garpids periodically burrow out of the ground, walls, and ceilings in a linear swarm to cross narrow sections of tunnels. They begin burrowing when [[Hornet (Silksong)|Hornet]] approaches and will continue to do so as long as she remains close. Garpids can be avoided by stalling in corners and junctions where they do not emerge, then moving through the areas where they do emerge during the gaps between swarms. Attacking them defeats individual Garpids but not the swarm as a whole; however, it can still be useful both for completing their [[Hunter's Journal (Silksong)|Hunter's Journal]] entry and for replenishing [[Silk]]. 
+
+Garpids are destroyed instantly by [[Heavy Damage]]. This also adds 4 kills to the total count for their [[Hunter's Journal (Silksong)|Hunter's Journal]] entry. 
+
+Garpids cannot be damaged by the cloud of venom spawned after using the [[Plasmium Phial]] or the [[Flea Brew]] while the [[Pollip Pouch]] is equipped, nor do they trigger the ignition of runes placed using the [[Snare Setter]].
+
+If their attack is successful, Garpids combo Hornet for {{Damage|1+1}}.
+
+== Location ==
+Garpids can be found in the [[Border Caves]].
+
+{{Gallery
+|Image1 = Mapshot SS Garpid 01.png!Locations in the Border Caves
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Garpid 01.png!In the Border Caves
+|Image2= Screenshot SS Garpid 02.png!Burrowing in a vertical tunnel
+|Image3= Screenshot SS Garpid 03.png!Rolling away after being hit
+|Image4= Screenshot SS Garpid 04.png!Landing after rolling
+}}
+
+==Trivia==
+* Although Garpid swarms have a set HP value, they cannot be completely defeated, as continued attacks simply drive their health into negative numbers.
+** When this happens, they begin to drop organs for the <i>[[Broodfeast]]</i> or the <i>[[Runtfeast]]</i> [[wish]]es, doing so upon every hit.
+* Garpids do not react to the [[Needolin]].
+* The name and appearance of Garpids suggest they are related to the larger, more resilient [[Garpede]]s from <i>[[Hollow Knight]]</i>.
+
+{{Localisation
+|DEname = Garpide
+|DEmeaning = —
+|ESname = Garpiecito
+|ESmeaning = From <i>Garpiés</i> (Garpede) and <i>-cito</i> (diminutive suffix).
+|FRname = Garipide
+|FRmeaning = —
+|ITname = Garipide
+|ITmeaning = —
+|JAname = ガーピッド
+|JAromanised = Gāpiddo
+|JAkatakana = foreignenemy
+|JAmeaning = Garpid
+|KOname = 대형 지네
+|KOromanised = Daehyeong jine
+|KOmeaning = Large Centipede 
+|PTname = Sensopéia
+|PTmeaning = Portmanteau of <i>senso</i> (sense) and <i>centopéia</i> (centipede).
+|RUname = Гарпит
+|RUromanised = Garpit
+|RUmeaning = Garpid
+|TWname = 加爾皮德
+|TWromanised = Jiāěrpídé
+|TWmeaning = same
+|ZHname = 加尔皮德
+|ZHromanised = Jiāěrpídé
+|ZHmeaning = Garpid
+|CODEname=CENTIPEDE_TRAP
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Enemies}}

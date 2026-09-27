@@ -1,0 +1,91 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Last Claw.png|Hunter's Journal
+Last Claw Idle.png|Idle
+Last Claw Guard.png|Standing Guard
+</gallery>
+|drops = None
+|health = 130
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1.2|1.1|1|1}}
+|numbers_required = 6<br>(Instantly completed on [[Skarrsinger Karmelita]]'s death)
+}}
+
+{{Quote
+|Hr = Journal
+|Elite former hunter acting as the final line of defence before their mother.<hr/>
+Their skill once saw them chosen, and I can plainly see why. They would have lived and trained only for this duty.
+}}
+
+<b>Last Claws</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They were [[Skarr]] who were the last line of defence for [[Skarrsinger Karmelita]], and are only found as enemies in her memory.
+
+== Behaviour and Tactics ==
+Being flying enemies, Last Claws will always attempt to distance themselves diagonally from Hornet, however they may often close in or change their positioning for certain attacks:
+* <b>Double Slash:</b> Slashes outwards twice, also hitting slightly behind itself. It will close in on Hornet before using this move if there is distance.
+* <b>Divebomb:</b> Holds its spear beneath itself and plunges directly downwards. Only used if Hornet is at least moderately horizontally aligned with it.
+* <b>Flying Charge:</b> Charges directly horizontally at Hornet across the arena until it hits a wall. The Last Claw may sometimes preface this move by horizontally distancing itself from Hornet more and vertically aligning itself beforehand.
+* <b>Evade:</b> Performs an aerial dash backwards to gain distance from Hornet, often used after missing a move and she's close to it.
+
+Last Claws deal {{Damage|2}} for all spear attacks, but only {{Damage|1}} for contact damage.
+
+== Location ==
+Two Last Claws can be found in [[Skarrsinger Karmelita|Skarrsinger Karmelita's]] arena, acting as her last line of defence.
+
+{{Gallery
+|Image1 = Mapshot SS Skarrsinger Karmelita 01.png!Location in the Far Fields, in Skarrsinger Karmelita's [[Elegy of the Deep|memory]]
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Far Fields 22.png!Guarding Skarrsinger Karmelita
+|Image2 = Screenshot SS Skarrsinger Karmelita 02.png!Modded clear screenshot
+|Image3 = Screenshot SS Last Claw 01.png!Idle
+|Image4 = Screenshot SS Last Claw 02.png!Double Slash attack
+|Image5 = Screenshot SS Last Claw 03.png!Divebomb attack
+|Image6 = Screenshot SS Last Claw 04.png!Flying Charge attack
+|Image7 = Screenshot SS Last Claw 05.png!Evade
+|Image8 = Screenshot SS Gurr the Outcast 01.png!Last Claw corpse next to Gurr the Outcast's arena
+|Image9 = Ari SS Sketch 19.jpg!Concept sketches
+}}
+
+== Trivia ==
+* Last Claws do not respond to the [[Needolin]].
+*Last Claws have numerous [[Cut Content (Silksong)#Enemy Behaviours|cut]] attacks such as "Throw" and "Block" attacks.
+* The body of a Last Claw is found alongside the bodies of various other enemies to the left of [[Gurr the Outcast|Gurr the Outcast's]] boss arena after defeating him. This is notably its only appearance in the present.
+** There is another unused sprite of a Last Claw corpse, covered in moss.
+{{Gallery
+|Image1=BHC stun death0011 overgrown.png!Unused sprite
+}}
+
+{{Localisation
+|DEname = Letzte Kralle
+|DEmeaning = Last Claw
+|ESname = Última garra
+|ESmeaning = Last Claw
+|FRname = Griffe-lame Ultime
+|FRmeaning = Ultimate Blade Claw
+|ITname = Ultimo Artiglio
+|ITmeaning = Last Claw
+|JAname = 最後の爪
+|JAromanised = Saigo no tsume
+|JAmeaning = Last Claw
+|KOname = 마지막 발톱
+|KOromanised = Majimak baltop
+|KOmeaning = Last Claw
+|PTname = Última Garra
+|PTmeaning = Last Claw
+|RUname = Последняя клешня
+|RUromanised = Poslednjaja klešnja
+|RUmeaning = Last Claw
+|TWname = 最終之爪
+|TWromanised = Zuìzhōng zhī zhǎo
+|TWmeaning = same
+|ZHname = 最终之爪
+|ZHromanised = Zuìzhōng zhī zhǎo
+|ZHmeaning = Last Claw
+|CODEname = BONE_HUNTER_CHIEF
+|CODEmeaning = "Bone Hunter" internally refers to the Skarr
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

@@ -1,0 +1,75 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Leaf Roller.png|Hunter's Journal
+Leaf Roller Flying.png|Flying
+Leaf Roller Hidden.png|Hidden
+</gallery>
+|drops = None
+|health = 42
+|damage_modifiers = {{SS Spaced Damage Modifiers|2|1.25|1|1|1}}
+|numbers_required = 10<br>(Instantly completed on [[Clover Dancers]]' death)
+}}
+{{Quote
+|Hr = Journal
+|Pointed scurrier posing as plant life.<hr/>
+Simple. Graceful. Another fine bug lost forever from these lands.
+}}
+
+<b>Leaf Rollers</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are pointed bugs from [[Verdania]] that pose as plant life.<ref>Leaf Roller Hunter's Journal entry: <i>"Pointed scurrier posing as plant life."</i></ref>
+
+== Behaviour and Tactics ==
+Leaf Rollers naturally walk back and forth, turning around once they reach a wall or an edge. Some may be found posing as leaves in the ground, and will unburrow once Hornet comes near.<br>
+Once Hornet gets near, Leaf Rollers fly into the air slightly and hover for a brief moment, before darting at Hornet at a low angle, bouncing once and then getting back up.<br>
+If one falls off an edge, it flutters to slow its fall before gracefully landing on the ground and continuing its aimless wandering.
+
+Leaf Rollers make no attempt to pursue Hornet.
+
+== Location ==
+Leaf Rollers can be found in [[Lost Verdania]].
+
+{{Gallery
+|Image1 = Mapshot SS Leaf Roller 01.png!Locations in Lost Verdania
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Leaf Roller 01.png!Hidden
+|Image2 = Screenshot SS Leaf Roller 02.png!Walking around
+|Image3 = Screenshot SS Leaf Roller 03.png!Flying
+|Image4 = Screenshot SS Leaf Roller 04.png!Darting
+|Image5 = Screenshot SS Leaf Roller 05.png!Corpses in the [[Memorium]]
+|Image6 = Leaf Roller Dead.png!Dead Leaf Roller sprite found in the Memorium
+}}
+
+== Trivia ==
+* Leaf Rollers do not respond to the [[Needolin]].
+{{Localisation
+|DEname = Blattroller
+|DEmeaning = Leaf Roller
+|ESname = Volteabriznas
+|ESmeaning = Portmanteau of <i>voltear</i> (to flip) and <i>briznas</i> (strands or blades).
+|FRname = Virefeuille
+|FRmeaning = Turning Leaf
+|ITname = Rotolafoglia
+|ITmeaning = Leaf Roll
+|JAname = ハコロガシ
+|JAromanised = Ha korogashi
+|JAkatakana = enemy
+|JAmeaning = Combination of {{lang|ja|葉 <i>ha</i>}} (leaf) and {{lang|ja|転がし <i>korogashi</i>}} (rolling)
+|KOname = 잎 압축충
+|KOromanised = Ip apchukchung
+|KOmeaning = Leaf Compression Bug
+|PTname =  Rolafolha
+|PTmeaning = Portmanteau of <i>rolar</i> (roll) and <i>folha</i> (leaf).
+|RUname = Листовёрт
+|RUromanised = Listovërt
+|RUmeaning = Combination of {{lang|ru|лист <i>list</i>}} (leaf) and {{lang|ru|вертеть <i>vertet'</i>}} (to roll).
+|ZHname = 卷叶虫
+|ZHromanised = Juǎn yè chóng
+|ZHmeaning = Rolled Leaf Bug
+|CODEname=GRASS_GOOMBA
+|CODEmeaning = Leaf Rollers act like [https://www.mariowiki.com/Goomba Goombas] from the <i>Mario</i> franchise 
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

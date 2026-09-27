@@ -1,0 +1,115 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Choristor.png|Hunter's Journal
+Choristor Battle Idle.png|Battle Idle
+Choristor Idle.png|Idle
+</gallery>
+| hasdrop = true
+| r1 = 16
+| r2 = 24
+| sh1 = 3-5
+| sh2 = 4-7
+|drops = [[Silk#Silk Spools|Silk Spool]] (25%)<br>[[Fine Pins]]
+|health = 55/{{BT|110}} <br> 5 (Fighting [[Garmond]])
+|damage_modifiers = {{SS Multiple Damage Modifiers||1|1|0.8|0.8|0.8| Fighting [[Garmond]]|1|1|1|1|1}}
+|numbers_required = 25
+|singnum=2
+}}
+
+{{Quote
+|Hr = Journal
+|Disciple of the Choir, elevated above other pilgrims, and forced to cowl their face forever more.<hr/>Their use of a pin shows hard training. Their use of Silk, unfurled from a spool held close, shows skill far beyond standard bugs.
+}}
+
+<b>Choristors</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are disciples of [[the Choir]], cowled behind white veils and proficient in using their pins with [[Silk]].<ref>Choristor [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Disciple of the Choir, elevated above other pilgrims, and forced to cowl their face forever more. Their use of a pin shows hard training. Their use of Silk, unfurled from a spool held close, shows skill far beyond standard bugs."</i></ref>
+== Behaviour and Tactics ==
+Choristors either patrol the Choral Chambers or start off lifeless and get reanimated with Silk as soon as Hornet approaches.<br>
+Choristors hop back and forth between attacks to retreat or advance, attacking once they are in range with any of the following attacks:
+* <b>Delay Slash:</b> Performs a large outwards slash with their pin, waits a moment, then performs another slash. The slashes can be jumped over and they can be counterattacked during the openings easily, especially with [[Needle-bounce]]s.
+* <b>Pinwheel Leap:</b> Jumps up and spins midair with their pin, creating a circular hitbox around them, then slams their pin down as they land.
+* <b>Silk Whip:</b> Silk whirls around them before they throw their pin out like a harpoon, then whip it upwards back towards themself by the Silk, covering a large area. If Hornet is hit by any part of the whip, the Choristor flurries Silk all around themself, dealing {{Damage|1+1}}.
+
+When defeated, they may drop a small spool of [[Silk]] that Hornet can hit twice to restore up to two strands of Silk.
+
+They can easily be defeated by simply jumping over their Delay Slash and hitting them during their pauses; jumping backwards whenever they perform either of the other two moves works as well.<br>
+Hitting them with ranged attacks is most effective. Jumping over the Silk Whip and immediately doing basic slashes or Needle-bounces is also effective.
+
+A Choristor with only 5 HP can be found on the northeastern edge of the [[Whispering Vaults]]. [[Garmond and Zaza]] can be seen quickly defeating said Choristor as soon as they appear on screen.
+
+=== Act 3 ===
+[[Black-threaded]] Choristors have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|Void attacks]], but cannot perform Silk Whip and do not drop Silk spools.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Raise your voices, chosen few!
+* The song sustains!
+* Holy call of the Citadel...
+* Fill the chambers, sacred song...
+* Our voices will be heard!
+* For our song, the precious Silk!
+* Waver not! Wither not!
+* All must gather! All must sing!
+}}
+
+== Location ==
+Choristors can be found in the [[Choral Chambers]], on the bridge connecting it to [[the Slab]], and in the [[Whispering Vaults]]. They also appear during the [[Enemy Gauntlets (Silksong)/High Halls 1|enemy gauntlet]] in [[the Forum]].
+{{Gallery
+|Image1 = Mapshot SS Choristor 01.png!Locations in the Choral Chambers
+|Image2 = Mapshot SS Choristor 04.png!Locations in the Choral Chambers in Act 3
+|Image3 = Mapshot SS Choristor 03.png!Location in the Slab
+|Image4 = Mapshot SS Choristor 05.png!Locations in the Whispering Vaults
+|Image5 = Mapshot SS Choristor 06.png!Location in the Whispering Vaults in Act 3
+|Image6 = Mapshot SS Choristor 02.png!Location in the High Halls
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Choristor 01.png!In the Choral Chambers
+|Image2 = Screenshot SS Choristor 02.png!In the Forum
+|Image3 = Screenshot SS Choristor 09.png!On the bridge leading to the Slab
+|Image4 = Screenshot SS Choristor 03.png!Corpse in the Whiteward
+|Image5 = Screenshot SS Choristor 04.png!Dormant
+|Image6 = GIF SS Choristor 01.gif!Reanimating
+|Image7 = Screenshot SS Choristor 05.png!Delay Slash
+|Image8 = Screenshot SS Choristor 06.png!Pinwheel Leap
+|Image9 = Screenshot SS Choristor 07.png!Silk Whip
+|Image10 = Screenshot SS Choristor 08.png!Reacting to the Needolin
+|Image11 = Screenshot SS Choristor 10.png!Corpse in the Weaver Queen ending cutscene
+}}
+
+== Trivia ==
+* Choristors share their Needolin dialogue with [[Envoy]]s, [[Choir Bellbearer]]s, and [[Reed]]s.
+
+{{Localisation
+|DEname = Chorist
+|DEmeaning = Chorister
+|ESname = Corista
+|ESmeaning = Chorister
+|FRname = Choristair
+|FRmeaning = Chorister
+|ITname = Corista
+|ITmeaning = Chorister
+|JAname = 聖歌の歌い手
+|JAromanised = Seika no utaite
+|JAmeaning = Singer of the Sacred Song
+|KOname = 성가대원
+|KOromanised = Seonggadaewon
+|KOmeaning = Chorister
+|PTname = Corista
+|PTmeaning = Chorister
+|RUname = Подпевала
+|RUromanised = Podpevala
+|RUmeaning = Supporting Singer of the Choir
+|TWname = 聖詠使徒
+|TWromanised = Shèngyǒng shǐtú
+|TWmeaning = same
+|ZHname = 圣咏使徒
+|ZHromanised = Shèngyǒng shǐtú
+|ZHmeaning = Choral Apostle or Psalm Apostle, with reference to {{lang|zh-Hans|圣咏殿}}/{{lang|zh-Hant|聖詠殿}} <i>shèngyǒng diàn</i> which is Choral Chambers in Chinese
+|CODEname=SONG_PILGRIM_03
+|CODEmeaning="Song" internally refers to the Citadel. 01 is [[Envoy]]s, and 02 is [[Surgeon]]s.
+}}
+
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

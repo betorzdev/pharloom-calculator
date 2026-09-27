@@ -1,0 +1,336 @@
+{{SS Infobox Area
+| tab1 = Acts 1/2
+| image1 = <gallery>
+Bilewater Map Marked.png|Marked
+Bilewater Map Clean.png|Unmarked
+</gallery>
+| tab2 = Act 3
+| image2 = <gallery>
+Bilewater Map Ruin Marked.png|Marked
+Bilewater Map Clean.png|Unmarked
+</gallery>
+| connection = [[Choral Chambers]]<ref group="Note">Connects via a passageway through the Underworks.</ref><br/>[[The Mist]]<ref group="Note">After defeating Phantom, becomes a connection to Sinner's Road.</ref><br/>[[Putrified Ducts]]<br/>[[Sinner's Road]]<br/>[[Underworks]]<br/>[[Whispering Vaults]]<ref group="Note">Connects via one-way drop from the Whispering Vaults.</ref>
+| ambience = [https://www.youtube.com/watch?v=QAjaUN_3zT4 Atmos Swamp]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+| main = [https://www.youtube.com/watch?v=74Umb1tu5tU Bilewater]
+}}
+{{Quote
+|Hate for their light. Hate for their pins. For their waste poured thick and endless. Fill your hearts with hate, for power has now been claimed, and with it we shall punish.
+|[[Lore Tablets (Silksong)#Bilewater|Lore Tablet]] by the [[Stilkin Tribe]]
+|Hr=SS
+}}
+<b>Bilewater</b> is an [[Areas (Silksong)|area]] in <i>[[Hollow Knight: Silksong]]</i>. It is a series of noxious and choking byways and swamps located within the heights of [[Pharloom]] in the shadow of [[the Citadel]].
+
+== Description ==
+[[File:Screenshot SS Bilewater 18.png|thumb|left|200px|Muckmaggots-infested waters]]
+Lying in the heights of [[Pharloom]], Bilewater is a dark, noxious swamp made up of a series of tight caves and large vertical caverns overgrown with murky roots and thorns. Both wooden and stone structures from a time before [[the Citadel]] majorly permeate the area, providing platforms and walls for [[Hornet (Silksong)|Hornet]] to navigate the swamp with, alongside orbs of bile that allow Hornet to [[Needle#Needle-bouncing|Needle-bounce]] off. Like [[Sinner's Road]] and the [[Putrified Ducts]], the waters of Bilewater are tainted with [[Muckmaggot]]s, with some bodies of water even holding the young [[Slubberlug]]s that lash out at their prey from the polluted waters. As it is the home of the [[Stilkin Tribe]], the area is scattered with their hidden traps and spikes that activate once Hornet goes past their tripwires.
+
+The very eastern portion of Bilewater holds an abandoned [[Weavenest]], in disrepair and overtaken by the Muckmaggots and flora of the nearby environment. The Weavenest only contains a [[Ruined Tool]]. On the opposite end of Bilewater, surrounded by [[the Mist]], exists the massive Exhaust Organ of the Citadel, a series of pipes and vents that stretch into the [[Underworks]] above. Exhaust Organ also holds a lift that connects to the Underworks that leads to the [[Choral Chambers]].
+
+The upper portion of the area requires the [[Faydown Cloak]] to be accessed, and nestled at its heights lies Bilehaven, a small village of the Stilkins where their leader, [[Groal the Great]], lies. West to Bilehaven also holds a connection to the Putrified Ducts.
+
+Below its connection to the [[Whispering Vaults]], a small portion of Bilewater has been overtaken by the ashen vines of the [[Twisted Bud]], which can be found nestled in a small cradle within its own vines, incessantly crying out.
+
+The furthest corners of Bilewater, accessible during the <i>[[Trail's End]]</i> wish, hold the only section of the swamp untainted by the Citadel's actions: a series of serene, clear waters flowing from [[Pale Lake]] above.
+
+== History ==
+Bilewater is the native land of the [[Stilkin Tribe]], who have existed within the area before the establishment of [[the Citadel]]. During this time, the area flowed with clear, unpolluted waters.<ref name=shakra1>[[Shakra]]: <i>"The stone structures of this place suggest clear waters once ran throughout. What fantasy that now seems! Even this swamp's inhabitants seem spawned of its noxious nature."</i></ref> Once the Citadel established itself within [[Pharloom]], Exhaust Organ began expelling its waste and exhaust smog throughout the nearby environments, including Bilewater, beginning its pollution and transformation into a noxious swamp under the gilded city's shadow.<ref>[[Phantom]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Mournful creature tasked alone to expel the Citadel's choking refuse. Their talent with a longpin is unmatched."</i></ref><ref>[[Shakra]]: <i>"That Citadel's shadow falls heavy here. I can sense its horrid bulk besides. It is no surprise to see it choke these caverns dank and stagnant. That monstrosity of metal and stone cares not for the lands it consumes."</i></ref>
+
+The native fauna of the area began to adapt to the noxious nature of the bile and exhaust smog in order to survive.<ref name=shakra1/><ref>[[Miremite]] and [[Swamp Squit]] Needolin dialogue: <i>"Survive in smog... Choke on bile... Feed... or starve... Resist the rot..."</i></ref> Bugs such as the [[Miremite]]s and [[Swamp Squit]]s have adapted to carry the bile itself within their stomachs, which explode into sizzling and corrosive liquid as a deterrent to predators,<ref>Miremite Hunter's Journal entry: <i>"Crawling insect with a sizzling bile sack in its abdomen. The threat of its exploding rear is an effective deterrent to predators, but the slightest jolt or fall can cause its premature end."</i></ref><ref>Swamp Squit Hunter's Journal entry: <i>"Plentiful pest with a sharp proboscis and a belly full of bile. More dangerous in the moment of its explosive and corrosive death than it ever was in life."</i></ref> with even the [[Bloatroach]]es, an obese offshoot of the [[Muckroach]]es, having adapted to use the area's noxious gas to hold themselves within the air.<ref>Bloatroach Hunter's Journal entry: <i>"Obese offshoot of Muckroaches, born of the Citadel's exhaust smog. The winged roach's sagging stomach is filled with sizzling bile. Its form is absurd... Surely it should not be able to hold itself in the air? The noxious gases in its stomach must provide its levity."</i></ref> 
+
+Due to the pollution of their homes, the Stilkin Tribe and their chief, [[Groal the Great]], began to grow an immense hatred for the Citadel for choking them in its shadow.<ref>Groal the Great Hunter's Journal entry: <i>"Chief and chaplain of the Stilkin, forever raging against the Citadel that chokes their caves and sees them suffer."</i></ref><ref name=lore1>Bilewater [[Lore Tablets (Silksong)#Bilewater|Lore Tablet]]:<i>"Hate for their light. Hate for their pins. For their waste poured thick and endless. Fill your hearts with hate, for power has now been claimed, and with it we shall punish."</i></ref> Their chief began hoarding and stealing the [[Soul]] of unfortunate bugs who wandered into their domain in order to strengthen themselves to punish the Citadel.<ref>Groal the Great Hunter's Journal entry: <i>"This one's strength was much enhanced by stolen soul. They are not the first who tried to hoard it, or to mould it towards such violent ends."</i></ref><ref>Bilewater Lore Tablet:<i>"Their shells are ours. Their souls are ours. Our hate is forever."</i></ref><ref name=lore1/> This included a [[Snail Shamans|Snail Shaman]] who shared the tribe's disdain for the Citadel and travelled to Bilewater to form an alliance and union with the Stilkin. Instead, he was killed and had his soul taken to strengthen the hateful chief.<ref>[[Caretaker]]: <i>"Aye, they was that. I knew the bug, in 'is prime, long time back. Braver'n most, and as little a fan of this Citadel as you yourself. Went seekin' alliance with those basic bugs of the swamps. Thought they'd both gain from the union... Scheming defiance, or some such stupidity! Now he's as dead as he was daft! Don't go tryin' ta make friends in Pharloom, bellringer. Nothin' good comes of it."</i></ref>
+
+== How to Access ==
+Bilewater can first be accessed from [[Sinner's Road]] by breaking a wall in the vertical passage east of the area.
+
+Bilewater can also be accessed via the eastern section of the [[Whispering Vaults]]. The [[Clawline]] is required to open the passage leading to Bilewater.
+
+{{TabbedPOI
+|Header = true
+
+|NPC1 = Shakra
+
+|Enemy1 = Covetous Pilgrim
+|Enemy2 = Snitchfly
+|Enemy3 = Muckmaggot
+|Enemy4 = Slubberlug
+|Enemy5 = Bloatroach
+|Enemy6 = Mothleaf Lagnia
+|Enemy7 = Miremite
+|Enemy8 = Swamp Squit
+|Enemy9 = Stilkin
+|Enemy10 = Stilkin Trapper
+|Enemy11 = Wardenfly
+|Enemy11Note = (with rune cage)
+|Enemy12 = Void Mass
+|Enemy12Note = ([[Act 3]] only)
+
+|Loot1_FileName = Throwing Ring
+|Loot1_Description = Given by [[Shakra]] after completing the <i>[[Trail's End]]</i> wish
+|Loot2_FileName = Quick Sling
+|Loot3_FileName = Twisted Bud
+|Loot4_FileName = Mask Shard (Silksong)
+|Loot4_Name = Mask Shard (Silksong){{!}}Mask Shard
+|Loot4_Amount = 1
+|Loot5_FileName = Memory Locket
+|Loot5_Amount = 2
+|Loot6_FileName = Flea
+|Loot6_Amount = 2
+|Loot7_FileName = Frayed Rosary String
+|Loot7_Amount = 1
+
+|LoreTabletsSource = SS Bilewater
+}}
+
+== Sub-area: Exhaust Organ ==
+{{SS Infobox Area
+|image1 = <gallery> 
+Exhaust Organ Map Marked.png|Marked
+Exhaust Organ Map Clean.png|Unmarked
+</gallery>
+|ambience = [https://www.youtube.com/watch?v=1j-1WP9HS4Q Atmos Organ Interior]<br>
+[https://www.youtube.com/watch?v=BjhsUao-tqo Atmos Exhaust Organ Outside]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+|main = [https://www.youtube.com/watch?v=U8vkHtZRLDY The Mist]
+}}
+<b>Exhaust Organ</b> is a sub-area located in the westernmost portion of Bilewater, only accessible after passing through [[the Mist]] as the alternate route through [[Act 1]].
+
+It is a massive groaning structure that expels the waste of [[the Citadel]] to the surrounding areas. [[Phantom]] can be fought here, and Hornet learns the [[Cross Stitch]] skill after defeating them. Their defeat also allows Hornet to access a lift to a small portion of the [[Underworks]] and into the [[Choral Chambers]], which begins [[Act 2]].
+{{TabbedPOI
+|Enemy1 = Muckmaggot
+|Enemy2 = Drapefly
+
+|Boss1 = Phantom
+
+|Loot1_FileName = Cross Stitch
+|Loot1_Description = Learned after defeating [[Phantom]]
+|Loot2_FileName = Silkeater
+|Loot2_Amount = 1
+|Loot3_FileName = Flea
+|Loot3_Amount = 1
+|Loot3_Description = Found by exiting Exhaust Organ through a hidden passage
+}}
+
+== Sub-area: Bilehaven ==
+{{SS Infobox Area
+|tab1 = Act 1/2
+|image1 = <gallery>
+Bilehaven Map Marked.png|Marked
+Bilehaven Map Clean.png|Unmarked
+</gallery>
+|tab2 = Act 3
+|image2 = <gallery>
+Bilehaven Map Ruin Marked.png|Marked
+Bilehaven Map Clean.png|Unmarked
+</gallery>
+|ambience = [https://www.youtube.com/watch?v=QAjaUN_3zT4 Atmos Swamp]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+|main = [https://www.youtube.com/watch?v=74Umb1tu5tU Bilewater]
+}}
+<b>Bilehaven</b> is a sub-area located at the top of Bilewater. The [[Faydown Cloak]] is required to reach this section. It is a small settlement of the [[Stilkin Tribe]], and its leader, [[Groal the Great]], can be fought after clearing a short [[Enemy Gauntlets (Silksong)/Groal|enemy gauntlet]].
+
+After defeating Groal the Great, the [[Seeker's Soul]] can be acquired within a home for the <i>[[Silk and Soul]]</i> wish.
+
+{{TabbedPOI
+|Enemy1= Muckmaggot
+|Enemy2 = Swamp Squit
+|Enemy3 = Stilkin
+|Enemy4 = Stilkin Trapper
+
+|Boss1 = Groal the Great
+
+|Loot1_FileName = Seeker's Soul
+
+|EnemyGauntletsSource = Groal
+}}
+
+== Sub-area: Weavenest Murglin ==
+{{SS Infobox Area
+|image1 = <gallery>
+Weavenest Murglin Map Marked.png|Marked
+Weavenest Murglin Map Clean.png|Unmarked
+</gallery>
+|ambience = [https://www.youtube.com/watch?v=QAjaUN_3zT4 Atmos Swamp]<br>
+[https://www.youtube.com/watch?v=OGDjsXpW7UA Atmos Weavers]<br>
+[https://www.youtube.com/watch?v=ZzyCwfkjyCI Lake Atmos Hornet]<br>
+[https://www.youtube.com/watch?v=DnQ_iHifu3U Ocean Wave Atmos]
+|main = [https://www.youtube.com/watch?v=C0PBjz5nxmY Memories]
+}}
+<b>Weavenest Murglin</b> is a sub-area located in the far southeast of Bilewater. Like other [[Weavenest]]s, it is accessed via a door that only opens after playing the [[Needolin]]. Unlike other Weavenests, Weavenest Murglin is in a far worse condition, having been infested by [[Muckmaggot]]s and nearby flora. At its centre lies the [[Ruined Tool]] item that can be repaired into the [[Silkshot]] tool. 
+
+{{TabbedPOI
+|Enemy1 = Muckmaggot
+|Enemy2 = Servitor Ignim
+
+|Loot1_FileName = Ruined Tool
+
+|LoreTabletsSource = SS Weavenest Murglin
+}}
+
+== Creation and Development ==
+[[File:April 2021 The Gloom Stitch.png|thumb|220px|The Gloom in April 2021]]
+[[File:Bilewater Cut Bellshrine Location.png|thumb|200px|Bilewater's Bellshrine in 2022]]
+Bilewater was not originally planned for <i>Silksong</i>; its spot on the map was originally taken up by [[Cut Content (Silksong)/Areas#The Gloom|The Gloom]], a dark area with rooms first created around September 2018. In its final September 2021 iteration, the Gloom was unfinished, but some of its rooms resembled lower-Bilewater rooms. By April 2022, The Gloom was removed and replaced by Bilewater, which continued to be developed in the following years. Despite it being removed on the map prior to April 2022, numerous aspects imply Bilewater was planned to connect to the cut [[Cut Content (Silksong)/Areas#Pharloom Bay|Pharloom Bay]] area, including an unused map segment that shows them connect, and cut dialogue from [[Alchemist Zylotol]] describing Bilewater as being near the sea.
+
+Following its implementation in 2022, Bilewater received multiple changes. Between May 2022 and February 2023, its middle section was shrunk, and the location of Shakra's master was added. The secret bench closer to Groal the Great's arena was also not added until February 2024. Prior to the [[Strung to Serve]] ending's removal around mid to late 2023, it also included a Bellshrine; it appeared to be destroyed, with Groal stealing the Bell, as unused code reveals it would be rung following their defeat.
+
+When asked about the idea and vision behind Bilewater and its high difficulty, [[William Pellen]] responded with "<i>We just love a big swamp. We wanted some kind of poison status for ages</i>". [[Ari Gibson]] also stated that the area was intended to "<i>[act] as something of a final test in Act 2</i>", since  "<i>it’s the hardest challenge that act presents, but it’s also the primary gateway into Act 3. If players manage to overcome the enormous challenge that Bilewater presents, they’re probably quite capable of overcoming the challenges that Act 3 will now bring</i>". Pellen noted that the pressure Bilewater brings is unique when compared to other areas in <i>Silksong</i>, describing it as "<i>distinct from the Citadel, push[ing] back in a different sort of way</i>".<ref name="bloomberg" />
+
+[[Christopher Larkin]] was asked by [[Team Cherry]] to create a "wistful" song for Bilewater. Pellen believed that the track he composed was "effective", since "<i>there’s at least one element that’s not exerting constant pressure on you</i>", and compared the juxtaposition between the area's song and difficulty to the [[White Palace]] in <i>[[Hollow Knight]]</i>.<ref name="bloomberg">[https://www.bloomberg.com/news/newsletters/2025-11-28/the-makers-of-hollow-knight-silksong-aren-t-done-just-yet The Makers of 'Silksong' Aren't Done Just Yet]</ref> Bilewater was first showcased in the June 2022 <i>Xbox Game Pass Reveal Trailer</i>, which featured footage of a lower room in the area, it then had a slightly different layout to the one it has currently.<ref name="xbox">[https://www.youtube.com/watch?v=JSfuFlhsxZY Hollow Knight: Silksong - Xbox Game Pass Reveal Trailer - Xbox & Bethesda Games Showcase 2022]</ref>
+
+{{Gallery
+|Title = Gallery
+|Image1 = Bellway Bilewater.png!Bellway station
+|Image2 = Screenshot SS Bilewater 02.png!Rotten bench
+|Image3 = Screenshot SS Bilewater 03.png!Secret room bench
+|Image4 = Screenshot SS Bilewater 01.png!Bilehaven bench
+|Image5 = Screenshot SS Bilewater 04.png!Shaman hut (with Shaman)
+|Image6 = Screenshot SS Bilewater 05.png!Shaman hut (empty)
+|Image7 = Screenshot SS Bilewater 06.png!Small camp
+|Image8 = Screenshot SS Bilewater 09.png!Exhaust Organ entrance
+|Image9 = Screenshot SS Bilewater 10.png!Exhaust Organ top exit
+|Image10 = Screenshot SS Bilewater 07.png!Exhaust Organ bench (silken)
+|Image11 = Screenshot SS Bilewater 08.png!Exhaust Organ bench (free)
+|Image12 = Screenshot SS Bilewater 11.png!Phantom tube
+|Image13 = Screenshot SS Bilewater 12.png!Phantom tube (Needolin)
+|Image14 = Screenshot SS Bilewater 13.png!Phantom arena
+|Image15 = Screenshot SS Bilewater 14.png!Twisted Bud cradle
+|Image16 = Screenshot SS Bilewater 15.png!Room with Shakra's Master
+|Image17 = Screenshot SS Needolinbilewater 1.png!Room containing the Ruined Tool in Weavenest Murglin
+|Image18 = Screenshot SS Needolinbilewater 4.png!Room containing the Ruined Tool in Weavenest Murglin (Needolin)
+|Image19 = XboxScreenshot Bilewater.png!<i>Silksong</i> Xbox trailer
+}}
+
+{{History
+|game = SS
+|1.0.28891 (Patch 3): Fixed floor between [[Putrified Ducts]] and Bilewater being breakable from above using a [[Voltvessels]] spear, which allowed [[Groal]] to be skipped.
+}}
+{{Localisation
+|DEname = Gallwasser
+|DEmeaning = Bilewater
+|ESname = Aguas Biliares
+|ESmeaning = Biliary Waters
+|FRname = Bilesac
+|FRmeaning = Bile Sack
+|ITname = Acquafiele
+|ITmeaning = Bilewater
+|JAname = 胆液の沼
+|JAromanised = Taneki no numa
+|JAmeaning = Bile Swamp
+|KOname = 담즙의 늪
+|KOromanised = Damjeubui neup
+|KOmeaning = Bile Swamp
+|PTname = Bilebrejo
+|PTmeaning = Bile Swamp
+|RUname = Желчноводье
+|RUromanised = Želčnovod'e
+|RUmeaning = Bilewater
+|ZHname = 腐汁泽
+|ZHromanised = Fǔ zhī zé
+|ZHmeaning = Rotten Juice Swamp
+|TWname = 腐汁澤
+|TWromanised = Fǔ zhī zé
+|TWmeaning = same
+|CODEname = SWAMP</code><br><code>SHADOW
+|CODEmeaning = The area that became Bilewater was much darker, resembling [[Cut Content (Silksong)/Areas#The Gloom|the Gloom]]
+}}
+=== Exhaust Organ ===
+{{Localisation
+|hr=false
+|DEname = Abluft-Orgel
+|DEmeaning = Exhaust Organ
+|ESname = Órgano de Escape
+|ESmeaning = Exhaust Organ
+|FRname = Orgue de Ventilation
+|FRmeaning = Ventilation Organ
+|ITname = Organo di Scarico
+|ITmeaning = Exhaust Organ
+|JAname = 朽ちたオルガン
+|JAromanised = Kuchita orugan
+|JAmeaning = Decayed Organ
+|KOname = 배기 오르간
+|KOromanised = Baegi oleugan
+|KOmeaning = Exhaust Organ
+|PTname = Órgão Exaustor
+|PTmeaning = Exhaust Organ
+|RUname = Выпускной орган
+|RUromanised = Vypusknoj organ
+|RUmeaning = Exhaust Organ
+|ZHname = 废鸣管风琴
+|ZHromanised = Fèi míng guǎnfēngqín
+|ZHmeaning = Abandoned Pipe Organ
+|TWname = 廢鳴管風琴
+|TWromanised = Fèi míng guǎnfēngqín
+|TWmeaning = same
+|CODEname = ORGAN
+}}
+
+=== Bilehaven ===
+{{Localisation
+|hr=false
+|DEname = Gallhafen
+|DEmeaning = Bilehaven
+|ESname = Cobijo Biliar
+|ESmeaning = Biliary Refuge
+|FRname = Havre de Bile
+|FRmeaning = Bile Haven
+|ITname = Portofiele
+|ITmeaning = Bile Port
+|JAname = 胆液の園
+|JAromanised = Taneki no en
+|JAmeaning = Bile Garden
+|KOname = 담즙의 안식처
+|KOromanised = Damjeubui ansikcheo
+|KOmeaning = Bile Sanctuary 
+|PTname = Bilefúgio
+|PTmeaning = Portmanteau of <i>bile</i> and <i>refúgio</i> (refuge).
+|RUname = Желчеград
+|RUromanised = Želčegrad
+|RUmeaning = Bile Town
+|ZHname = 腐安乡
+|ZHromanised = Fǔ ān xiāng
+|ZHmeaning = Rotten Haven
+|TWname = 腐安鄉
+|TWromanised = Fǔ ān xiāng
+|TWmeaning = same
+|CODEname = MUCKVILLAGE
+}}
+=== Weavenest Murglin ===
+{{Localisation
+|hr=false
+|DEname = Webnest Murglin
+|DEmeaning = Weavenest Murglin
+|ESname = Nido de Tejedora Murglin
+|ESmeaning = Nest of Weaver Murglin
+|FRname = Tisse-nid De Murglin
+|FRmeaning = Weavenest of Murglin
+|ITname = Tessinido Murglin
+|ITmeaning = Weavenest Murglin
+|JAname = 紡ぎの巣マーグリン
+|JAromanised = Tsumugi no su māgurin
+|JAmeaning = Spinning Nest Murglin
+|KOname = 방직둥지 머글린
+|KOromanised = Bangjikdungji meogeullin
+|KOmeaning = Weaving Nest Murglin
+|PTname = Ninho de Tecelã Murglin
+|PTmeaning = Nest of Weaver Murglin
+|RUname = Ткачедом Мурглин
+|RUromanised = Tkačedom Murglin
+|RUmeaning = Weaver House Murglin
+|ZHname = 默格林织巢
+|ZHromanised = Mògélín zhī cháo
+|ZHmeaning = Murglin Weavenest
+|TWname = 默格林織巢
+|TWromanised = Mògélín zhī cháo
+|TWmeaning = same
+|CODEname = WEAVE_SWAMP
+}}
+
+{{hr|ss}}
+== Notes ==
+<references group="Note"/>
+{{Refs|hr=false|columns=2}}
+{{SS Nav Areas}}
+
+[[zh:腐汁泽]]
+[[fr:Bilesac]]

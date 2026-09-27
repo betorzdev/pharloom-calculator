@@ -1,0 +1,25 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_Greymoor_Arena_1.png|400px|center]]
+|[[File:Mapshot_SS_Greymoor Arena 1.png|400px|center]]
+|-
+| colspan="2" | Enemy gauntlet in the tower west of [[Halfway Home]]. Required to access the western portion of Greymoor if entering from the [[Far Fields]] entrance; optional if entering from the [[Bellhart]] entrance.
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>Nothing</center>
+| <center>[https://www.youtube.com/watch?v=swPmNk9_fw0 Generic Enemy Battle A]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Dreg Catcher.png|35x35px|link=Dreg Catcher]] [[Dreg Catcher]] x2, left and right
+|
+|-
+|
+[[File:HJ_Thread Raker.png|35x35px|link=Thread Raker]] [[Thread Raker]], centre
+|
+|}

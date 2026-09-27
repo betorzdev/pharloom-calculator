@@ -1,0 +1,121 @@
+{{SS Infobox Tool
+| image = <gallery>
+Flintslate.png|Inventory
+Flintslate Poison.png|Pollip Pouch
+</gallery>
+| type = Red
+| damage = 1.5x <br> (Needle Damage) <br> 1/2/3/3/4 x 3 <br>(Burning Damage)<ref group = Note>Burning damage increases based on the Needle level, not the level of the [[Crafting Kit]].</ref>
+| max = 3/3/4/5/6
+| refill_type = Repair
+| refill = {{S|13}}
+| effect = Increases Needle damage for 8 seconds
+| location = [[Deep Docks]]
+| description = Sharpening slate made from cut and polished Flintgem.<hr>Temporarily super heats the needle's blade, imbuing each slash with flame and increasing lethality.
+}}
+
+<b>Flintslate</b> is a {{CrestSlot|Red|1}} in <i>[[Hollow Knight: Silksong]]</i>. When used, it briefly increases the damage of Hornet's [[Needle]].
+
+== Usefulness ==
+Using Flintslate imbues [[Hornet (Silksong)|Hornet]]'s [[Needle]] with fire, causing it to deal 50% extra damage for 8 seconds. Activating the Flintslate briefly pauses Hornet's movement even if she's in the air, similarly to [[Bind]]ing. 
+
+After Hornet hits an enemy between 2-5 times in a row while Flintslate is active, the enemy will catch on fire and take 3 ticks of burning damage. There is a 20% chance for it to take between 2-5 blows; otherwise it will take between 3-4. <ref group=Source><code>DamageEnemies.DoEnemyDamageNailImbuement()</code> in <code>Assembly-CSharp.dll</code>.</ref>
+
+[[Crafting Kit]]s do not affect this Tool in any way.
+
+* Burning damage scales with Needle upgrades: it deals 1 damage per tick when Hornet has no Needle upgrades, 2 damage when she has one, 3 damage when she has two or three, and 4 damage when she has four. Successfully reigniting an already burning enemy resets the duration of the burning effect to the maximum.
+* Upon use, Flintslate immediately removes 25% of the frosting effect from [[Mount Fay]], and then slows the effect down by 30% while the buff is active.
+* The Flintslate's buff instantly ends if Hornet falls into water.
+* It is especially useful in combination with [[Flea Brew]], as you will be able to attack more while Flintslate's damage multiplier is active.
+
+== Tool Synergies ==
+{{SS Table Tool Interactions
+| Tool1 = Pollip Pouch
+| Tool1Desc = Every Needle swing inflicts [[Pollip Pouch#Usefulness|venom]], but enemies no longer catch fire and the damage increase is reduced to ~30%. The effect is no longer removed upon falling into water, {{MissingInfo}} and the duration is increased to 10 seconds.
+| Tool2 = Magnetite Dice
+| Tool2Desc = Increases the chances of a "lucky hit" (which has a chance to take fewer hits to ignite an enemy) by 2%.<ref group=Source><code>DamageEnemies.DoEnemyDamageNailImbuement()</code> in <code>Assembly-CSharp.dll</code></ref> 
+| Tool3 = Wispfire Lantern
+| Tool3Desc = Flintslate and Wispfire Lantern both contribute to the combined chance of setting enemies on fire.
+}}
+
+== Tool Combo Tips ==
+{{SS Table Tool Interactions
+| Tool1 = Flea Brew
+| Tool1Desc = Decreases the cooldown between Needle swings, increasing the maximum number of swings possible while Flintslate is active.
+| Tool2  = Barbed Bracelet
+| Tool2Desc = The 25% Damage buff from barbed bracelet stacks additively with the damage increase from flintslate.
+| Tool3 = Hunter Crest
+| Tool3Img= Hunter Crest 3 File
+| Tool3Desc= The damage Buff from the focus mechanic stacks additively with the damage increase from flintslate.
+| Tool4 = Wanderer Crest
+| Tool4Img= Wanderer Crest File
+| Tool4Desc= The naturally fast swing speed of this crest allows for high DPS when combined with filntslate.
+}}
+
+== How to Acquire ==
+Found in [[Deep Docks]], to the west of the lowest entrance from [[Far Fields]]. The Flintslate sits on a workbench in a small room, at the top of a tall chamber of hanging platforms.
+
+{{Gallery
+| Image1 = Mapshot SS Flintslate.png!Location in Deep Docks
+| Image2 = Screenshot SS Flintslate Room.png!Room containing the Flintslate
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = GIF SS Flintslate 01.gif!Hornet activating Flintslate
+|Image2 = GIF SS Flintslate 03.gif!Hitting enemy
+|Image3 = GIF SS Flintslate 02.gif!Extinguished in water
+|Image4 = GIF SS Flintslate 04.gif!Steaming in shower
+|Image5= Ari SS Sketch 30.jpg!Concept sketches
+}}
+
+== Trivia ==
+* Flintslate has a unique interaction while standing in the showers left of the [[Citadel Spa]], where Hornet's needle will release water vapour when the Tool's effect is active.
+** This interaction is disabled if Pollip Pouch is applied.
+* According to its item description, the Flintslate is made out of cut and polished [[Flintgem]].
+* The [[Clawline]], last 3 hits of the [[Architect Crest]]'s down-slash and sprint-slash, the second hit of the [[Witch Crest]]'s down slash as well as the third extra hit of its sprint-slash, are all unaffected by the Flintslate.
+** However, these things are affected by other damage modifiers.
+{{History
+|game = SS
+|1.0.28650 (Patch 2): Adjusted damage boost that Flintslate applies to Needle Strikes from +10 per hit to +50% per hit.
+}}
+{{Localisation
+|DEname = Feuerwetzstein
+|DEmeaning = From <i>feuerstein</i> (flint) with <i>wetz</i> (to sharpen) inserted to form <i>wetzstein</i> (whetstone).
+|ESname = Piedra de pedernal
+|ESmeaning = Flint Stone
+|FRname = Silexium
+|FRmeaning = From <i>silex</i> (flint) and <i>-ium</i> (element forming suffix).
+|ITname = Lastra focaia
+|ITmeaning = Flint Slab
+|JAname = 発火棘
+|JAromanised= Hakka toge
+|JAmeaning = Ignition Thorn
+|KOname = 부싯석판
+|KOromanised = Busitseokpan
+|KOmeaning = Flintslate
+|PTname = Placa Ígnea
+|PTmeaning = Igneous Plate
+|RUname = Кремнёвая пластина
+|RUromanised = Kremnëvaja plastina
+|RUmeaning = Flint Plate
+|TWname = 燧石板
+|TWromanised = Suì shíbǎn
+|TWmeaning = same
+|ZHname = 燧石板
+|ZHromanised = Suì shíbǎn
+|ZHmeaning = Flintslate
+|CODEname = FLINTSTONE
+|CODEmeaning = 
+}}
+{{Hr|SS}}
+
+== Notes ==
+<references group="Note"/>
+
+{{Refs|hr=false}}
+
+== Code References ==
+<references group="Source"/>
+
+{{SS Nav Tools}}
+[[fr:Silexium]]

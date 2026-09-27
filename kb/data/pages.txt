@@ -1,0 +1,38 @@
+# The wiki pages kb/ is built from (npm run kb). Categories expand to their articles,
+# Prefix: to a page's subpages. Checked on 27 September 2026 (design/00-study.md, Sources).
+Category:Bosses (Silksong)
+Category:Enemies (Silksong)
+Category:Tools
+Category:Crests
+Category:Skills and Abilities (Silksong)
+Category:Areas (Silksong)
+Category:Items (Silksong)
+Prefix:Enemy Gauntlets (Silksong)/
+Damage Values and Enemy Health (Silksong)
+Tool Pouch & Crafting Kit
+Needle
+Needle Strike
+Silk
+Bind
+Combat (Silksong)
+Black-Threading
+Hornet (Silksong)
+Hunter's Journal (Silksong)
+Completion (Silksong)
+Save Data (Silksong)
+Enemy Gauntlets (Silksong)
+Elegy of the Deep
+Wishes
+Fleas
+Acts
+Steel Soul Mode (Silksong)
+Achievements (Silksong)
+Updates (Silksong)
+Mask Shard (Silksong)
+Spool Fragment
+Memory Locket
+Silk Heart
+Hollow Knight: Silksong
+# Redirects the damage page links to (saved under the linked title)
+Garmond & Zaza
+Great Conchfly

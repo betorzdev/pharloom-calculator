@@ -1,0 +1,73 @@
+{{Navbar|page1=Needolin|page2=Beastling Call|page3=Elegy of the Deep}}
+
+{{SS Infobox Ability
+|title2 = <small>Learned the</small><br>Beastling Call
+|image1 = Icon SS Needolin.png
+|description2 = Hold UP + NEEDOLIN<hr/>Mimic the song of the Bell Beast. Summon the Beastlings and return together to their mother.
+|input = Hold UP + NEEDOLIN
+|location = Any [[Bellway]]
+|music = [[File:Needolin Beastling Call.ogg]]
+}}
+
+The <b>Beastling Call</b> is an [[Skills and Abilities (Silksong)#Needolin Melodies|ability]] in <i>[[Hollow Knight: Silksong]]</i>. It allows [[Hornet (Silksong)|Hornet]] to return to the [[Bell Beast]]'s current location.
+
+== Function ==
+Hornet can play the Beastling Call to summon the Bell Beast's [[Beastlings]]. After playing for a second or two (enough to drain one strand of [[Silk]]), the Beastlings dig out of the ground around Hornet and take her back to the last Bellway station she arrived at, where the Bell Beast is.
+
+As the Beastlings have to tunnel through the ground to reach Hornet, and Hornet needs to jump to enter the hole they dig, they cannot appear in certain scenarios, including:
+* Floating platforms
+* Thin platforms such as metal gratings and trapdoors
+* Corridors with low ceilings
+* Certain rooms and areas flagged as inaccessible:
+** [[The Abyss (Silksong)|The Abyss]]
+** [[Border Caves]] and the surface
+** [[First Sinner]]'s cage
+** Hanging bellhomes in [[Bellhart]]
+** The [[Diving Bell|diving bell]]
+** The room with a [[Bench (Silksong)|bench]] and a [[Map and Quill (Silksong)|map]] station in the [[Cogwork Core]]
+** Greyroot's hut 
+** The room where Hornet awakens after becoming [[cursed]]
+{{MissingInfo}}
+
+If Hornet attempts to play the Beastling Call but fails, she looks around as a Beastling's cry echoes in the distance. The failure animation triggers before any Silk can be deducted.
+
+Using the Beastling Call cures Hornet of a [[Muckmaggot]] infestation.
+
+== How to Acquire ==
+The Beastling Call can be acquired during Act 3 after defeating [[Bell Eater]] in any Bellway.
+
+== Trivia == 
+* When Hornet plays the Beastling Call, she holds her Needolin at a higher angle than usual.
+* The melody of the Beastling Call is a version of the Bell Beast's theme.
+* In the [[Blasted Steps]] and [[Sands of Karak]], using the Beastling Call near [[Sandcarver]] pits may cause Hornet to dive into the Sandcarvers and continuously take damage. This will result in Hornet's death unless the game is quit.
+{{Localisation
+|DEname = Biestlingsruf
+|DEmeaning = Beastling Call 
+|ESname = Reclamo de bestezuelas
+|ESmeaning = Claim of the Beastlings
+|FRname = Mélodie des Bestiots
+|FRmeaning = Melody of the Beastlings
+|ITname = Richiamo delle Bestiole
+|ITmeaning = Call of the Beastling
+|JAname = 獣の呼び声
+|JAromanised = Kemono no yobigoe
+|JAmeaning = Call of the Beast
+|KOname = 비스틀링 부르기
+|KOromanised = Biseuteulling bureugi
+|KOmeaning = Beastling Calling
+|PTname = Chamado dos Bestiotes
+|PTmeaning = Call of the Beastlings
+|RUname = Звериный зов
+|RUromanised = Zverinyj zov
+|RUmeaning = Beast's Call
+|TWname = 喚獸曲
+|TWromanised = Huàn shòu qǔ
+|TWmeaning = same
+|ZHname = 唤兽曲
+|ZHromanised = Huàn shòu qǔ
+|ZHmeaning = Call Beast Melody
+|CODEname= SKILL_BELLBEAST_MELODY</code><br><code>BELLWAY_MELODY
+}}
+{{SS Nav Skills}}
+[[fr:Mélodie des Bestiots]]
+[[pt:Chamado dos Bestiotes]]

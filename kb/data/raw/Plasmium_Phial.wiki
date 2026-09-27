@@ -1,0 +1,144 @@
+{{SS Infobox Tool
+| image = <gallery>
+Plasmium Phial.png|Inventory
+Plasmium Phial Poison.png|Pollip Pouch
+Plasmium Phial Empty.png|Empty
+Plasmium Reserve.png|HUD
+</gallery>
+| type = Red
+| max = 3/3/4/5/6
+| refill_type = Repair
+| refill = [[File:Icon SS Plasmium Reserve.png|20x20px|Plasmium Reserve]] 1 or [[File:Icon SS Plasmium Gland Small.png|link=Plasmium Gland]]<br>{{S|13.33}}
+| effect = Gives a single [[Lifeblood|Plasmium]] Mask when used
+| location = [[Wormways]]
+| description = Spear-phial containing Plasmium.<hr>Injecting the liquid allows one to gain health beyond their natural limits.
+}}
+
+{{Quote
+| Since you have proven yourself a capable assistant, take this delightful implement of my own invention, a Plasmium Phial. With it, you can inject precious Plasmium straight into your body. Almost painlessly!
+| [[Alchemist Zylotol]]
+| Hr = SS
+}}
+
+<b>Plasmium Phial</b> is a {{CrestSlot|Red|1}} in <i>[[Hollow Knight: Silksong]]</i>. When used, [[Hornet (Silksong)|Hornet]] injects herself with Plasmium, giving her one [[Lifeblood|Plasmium]] mask.
+
+== Usefulness ==
+When Plasmium Phial is used, [[Hornet (Silksong)|Hornet]] stops all movement (including in mid-air) and injects herself with Plasmium, giving her one [[Lifeblood|Plasmium]] Mask. Plasmium functions nearly identically to [[Lifeblood]] from <i>[[Hollow Knight]]</i>, granting extra temporary Masks that are removed when resting at a [[Bench (Silksong)|Bench]].
+
+When refilled at a Bench, the phials drain a reserve that holds 20 uses, as well as consuming [[Shell Shards]] to refill each phial. The reserve can be refilled by [[Alchemist Zylotol]] in the [[Wormways]] at a cost of {{R|50}}. After completing the <i>[[Advanced Alchemy]]</i> [[wish]] and obtaining the [[Plasmium Gland]], this Tool no longer needs a reserve and only requires Shell Shards to refill.
+
+If Hornet does not have enough Shell Shards, or her Plasmium reserve runs dry, she cannot craft new phials.
+
+* Plasmium Phial can be used for extra Masks before fighting a boss or a difficult trial. However, it can be more useful to conserve the Phials, allowing Hornet to heal early damage with [[Bind]] and use Plasmium when she starts running low on [[Silk]].
+* This Tool is also helpful for retrieving a [[Cocoon]] if Hornet is at risk of dying on the way back.
+* Plasmium Phial can be especially effective for long platforming challenges, such as climbing [[Mount Fay]].
+* Since resting at a Bench removes Plasmium Masks, Hornet's maximum number is limited by the phials she can carry at once. However, this limitation can be circumvented by either using the [[Architect Crest]]'s Craft Bind to craft phials without a Bench, or by killing [[Winged Lifeseed]]s to gain Plasmium Masks.
+* Entering a memory sequance does not remove Plasmium Masks, but exiting does.
+=== Plasmification ===
+If Hornet manages to gain 9 Plasmium Masks, she enters a plasmified state. This can be achieved through Craft Binding phials with the [[Architect Crest]], or from [[Plasmium Cocoon]]s in the [[Wormways]] and [[Bonegrave]]. It is not possible to become plasmified without the Plasmium Phial, as there are at most only 3 Plasmium Cocoons in Pharloom, for a total of 6 [[Winged Lifeseed]]s.
+
+* Entering the plasmified state involves a brief animation where Hornet convulses and groans in pain. If she takes damage during this animation, <i>all</i> Plasmium Masks are lost and the Plasmification fails.
+** When the animation finishes, Hornet's normal Masks visually transform into Plasmium, any Plasmium Masks above her maximum health disappear, and the Crest on the HUD tints and drips blue.
+Plasmified Hornet passively recovers one Mask every 6 seconds, but the regeneration progress resets whenever she heals or takes damage. [[Bind]]ing becomes less effective, as it only heals one Mask rather than three. However, the unique Bind of the [[Witch Crest]] remains unaffected, and the unique Bind of the [[Beast Crest]] retains its normal effects while also healing one Mask immediately. Plasmium Phials and Winged Lifeseeds will restore the transformed Masks rather than adding any above Hornet's maximum Health.
+
+* Using the [[Architect Crest]] without using a Plasmium Cocoon requires {{S|120}} in total to obtain the plasmified state.
+* Dying, resting at a Bench, going through a cutscene, binding a new ability, or [[Mask Shard (Silksong)|obtaining a new Mask]] will remove the plasmified state. This can limit the usability of plasmification, given that everytime that a Bench is used or after dying, the plasmification effects needs to be activated again.
+** Even so, the passive health regeneration it provides is helpful, reducing the need to heal and allowing Hornet to use her [[Silk]] more aggressively,<ref group="Note">In theory, the [[Cursed Crest]] and [[Shaman Crest]] would benefit the most from Plasmification, but they cannot due to neither having any {{CrestSlot|Red|1}} slots.</ref> and mitigating the threat of death in prolonged situations where Silk is scarce.
+* Entering or exiting memories removes the plasmified state. 
+
+== Tool Synergies ==
+{{SS Table Tool Interactions
+| Tool1 = Pollip Pouch
+| Tool1Desc = Using the Plasmium Phial creates a purple Mask that breaks on its own after 3 seconds, making it impossible to achieve Plasmification without additional Plasmium sources. On the Mask breaking, Hornet releases a cloud of venom. 
+This effect does not happen while plasmified.
+| Tool2 = Multibinder
+| Tool2Desc = Binding heals 2 total Masks instead of 1 while plasmified.
+| Tool3 = Beast Crest
+| Tool3Img = Beast Crest File
+| Tool3Desc = Fury's healing cap is not reduced while plasmified, and [[Bind]]ing also heals 1 Mask immediately.
+| Tool4 = Witch Crest
+| Tool4Img = Witch Crest File
+| Tool4Desc = Bind's healing cap is not reduced while plasmified.
+}}
+
+== Tool Combo Tips ==
+{{SS Table Tool Interactions
+| Tool1 = Architect Crest
+| Tool1Img = Architect Crest File
+| Tool1Desc = Craft Binding can be used to become plasmified without needing [[Winged Lifeseed]]s.
+Hornet can use the same amount of [[Silk]] to 'heal' more Masks by Craft Binding Plasmium Phials compared to normal [[Bind]]ing, at the cost of [[Shell Shards]] and speed. 
+| Tool2 = Wispfire Lantern
+| Tool2Desc = If paired with the Architect Crest and the plasmified state, [[Skills and Abilities (Silksong) |Silk Skills]] will be unavailable and [[Bind |Binding]] will be severely nerfed, making the Wispfire Lantern the best use of [[Silk]] by default.
+| Tool3 = Shell Satchel
+| Tool3Steel = True
+| Tool3Desc = With 4 [[Tool Pouch]] upgrades, Hornet can hold 7 Plasmium Phials, which is enough to become plasmified by destroying and killing the Winged Lifeseeds of only 1 [[Plasmium Cocoon]]. This makes it possible to become plasmified without using the Architect Crest in Act 2.
+}}
+
+
+== How to Acquire ==
+Given by [[Alchemist Zylotol]] after completing the <i>[[Alchemist's Assistant]]</i> [[wish]]. Hornet can refill her reserve of Plasmium by paying Alchemist Zylotol {{R|50}}. After completing the <i>[[Advanced Alchemy]]</i> wish and obtaining the [[Plasmium Gland]], the Tool no longer needs its reserve to be refilled.
+
+{{Gallery
+|Image1 = Mapshot SS Alchemist Zylotol 01.png!Location of Alchemist Zylotol in the Wormways
+|Image2 = Screenshot SS Wormways 04.png!Alchemist Zylotol in the Wormways
+}}
+
+== Gallery ==
+{{Gallery
+| Image1 = SS Mask Lifeblood.png!Plasmium Masks<br>as they appear on Hornet's HUD
+| Image2 = Plasmium Phial HUD Poison.png!Plasmium Masks while having [[Pollip Pouch]] equipped
+| Image3 = GIF SS Plasmium Phial 01.gif!Hornet injecting Plasmium Phial
+| Image4 = GIF SS Plasmium Phial 02.gif!Plasmification
+}}
+
+== Trivia ==
+* Plasmification visually resembles the effects of [[Joni's Blessing]] in <i>[[Hollow Knight]]</i>. Functionally, it behaves similarly to [[Hiveblood]] on its own, but faster and without the restriction of only healing the last Mask that was lost.
+* NPCs will startle if Hornet uses the Plasmium Phial while very close to them.
+* There is a unique effect which removes Plasmification during the [[Endings (Silksong)#Ending 1: Weaver Queen|Weaver Queen]] ending sequence.
+* In the <i>Silksong</i> reveal trailer, the Plasmium Phial had a slightly different sprite and granted 2 Plasmium Masks instead of 1.<ref>[https://www.youtube.com/watch?v=pFAknD_9U7c Hollow Knight: Silksong Reveal Trailer]</ref>
+
+{{History
+|game = SS
+|1.0.29909 (Patch 5) / 1.0.29909 (Patch 5) / Mar 16, 2026: Plasmium masks are now removed when exiting a dream.
+|1.0.29242 (Patch 4) / 1.0.29242 (Patch 4) / Nov 7, 2025: 
+* Plasmified state is now removed when exiting a dream.
+* Fixed a glitch where, if the 9th Plasmium mask was gained by killing a [[Winged Lifeseed]], Plasmification would occur in a bugged state: The 9 masks become invisible but are not removed, [[Bind]] correctly heals only 1 Mask but health does not regenerate, and the Plasmium Phial and Winged Lifeseeds do not heal any Mask.
+|1.0.28650 (Patch 2) / 1.0.28650 (Patch 2) / Sep 18, 2025: Fixed Plasmium Phial sometimes not restoring as intended at [[Bench (Silksong)|benches]].
+}}
+{{Localisation
+|DEname = Plasmium-Ampulle
+|DEmeaning = Plasmium Ampoule
+|ESname = Ampolla de plasmio
+|ESmeaning = Ampoule of Plasmium
+|FRname = Fiole de plasmonium
+|FRmeaning = Phial of Plasmium
+|ITname = Fiala di plasmio
+|ITmeaning = Phial of Plasmium
+|JAname = プラスミフラスコ
+|JAromanised = Purasumi furasuko
+|JAkatakana = foreign
+|JAmeaning = Plasmi Flask
+|KOname = 플라스미움 유리병
+|KOromanised = Peullaseumium yuribyeong
+|KOmeaning = Plasmium Vial
+|PTname = Frasco de Plásmio
+|PTmeaning = Plasmium Flask
+|RUname = Сосуд с плазмиумом
+|RUromanised = Sosud s plazmiumom
+|RUmeaning = Vessel with Plasmium
+|TWname = 原質液瓶
+|TWromanised = Yuánzhíyè píng
+|TWmeaning = Protoplasm Fluid Bottle<br><small>{{lang|zh-Hant|原質液 <i>yuánzhìyè</i>}} (protoplasm fluid) is [[Plasmium]] in Traditional Chinese.</small>
+|ZHname = 生质液瓶
+|ZHromanised = Shēngzhìyè píng
+|ZHmeaning = Life Subtance Fluid Bottle<br><small>{{lang|zh-Hans|生质液 <i>shēngzhìyè</i>}} (life substance fluid) is [[Plasmium]] in Simplified Chinese.</small>
+|CODEname = SYRINGE_LIFEBLOOD
+}}
+
+{{Refs|hr=SS}}
+
+== Notes ==
+<references group="Note"/>
+
+{{SS Nav Tools}}
+[[fr:Fiole de plasmonium]]

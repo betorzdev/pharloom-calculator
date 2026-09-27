@@ -1,0 +1,173 @@
+{{SS Infobox Boss
+|image1 = <gallery>
+B Crust King Khann.png|Hunter's Journal
+Crust King Khann.png|Idle
+Crust King Khann Stagger.png|Staggered
+Crust King Khann Husk.png|Shell
+</gallery>
+|drops = [[Encrusted Heart]]
+|location = [[Sands_of_Karak#Sub-area:_Coral_Tower|Coral Tower]]
+|health = 1650
+|damage_modifiers = {{SS Spaced Damage Modifiers|2|1.35|1.15|1|0.95}}
+|backer = Brandon Lieu
+|va = Nassim "Simo" Gebrail<ref>[[:File:Discord_Simo voice actors.png|Messages from Simo]] on Discord.</ref>
+|numbers_required = 1
+|theme = [https://youtube.com/watch?v=YHACfnIFkdY Coral Tower Battle] (enemy gauntlet)<br/>[https://youtu.be/bOWu5AXLFwQ Crust King Khann] (Crust King Khann)
+|affiliation = [[Order of Karak]] (Leader)
+}}
+{{Quote
+|Hr = Journal
+|Hardened warrior lord of a bygone age, able to command the coral crust to his bidding.<hr/>
+For his stern stewardship his legions seemed utterly loyal. For less combative bugs his would have been a hard rule.
+}}
+
+<b>Crust King Khann</b> is a main [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. The hardened warrior lord of the bygone [[Order of Karak]],<ref name=gender/> he is fought at the peak of the memory of the [[Coral Tower]]. Defeating him grants the [[Encrusted Heart]].
+
+== Background ==
+Crust King Khann was the tyrannical king of the bygone order of the Karak.<ref>Achievement obtained upon defeating Crust King Khann named "Tyrant".</ref> A hardened warrior who believed the weak should crumble away, he kept his legion strong, fierce, and loyal through stern stewardship wrought by claw and blade.<ref>[[Needolin]] dialogue: <i>"Let the weak crumble away!"</i></ref><ref name="journal2">[[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"For his stern stewardship his legions seemed utterly loyal. For less combative bugs his would have been a hard rule."</i></ref> In the order's prime, half of Pharloom was under its influence.<ref>[[Snail Shamans (Silksong)|Snail Shamans]]: <i>"Up top of those caves lost to wind and sand rests a crusted old ruler, a once great warrior king. In their prime, they and their order held half of Pharloom under hardened claw."</i></ref> He and his legion were the last civilisation to resist the rule of [[Grand Mother Silk]].<ref>[[Needolin]] dialogue of the body of Khann: <i>"Now none to resist... But us... Alone... against the pale light... "</i></ref>
+
+When the [[Sands of Karak]] became a desert wasteland, most of his [[Karaka]] soldiers' shells hardened and died in the Coral Tower; his rule and his people became lost to time.
+
+== In-game Events == 
+The dormant body of Crust King Khann can be found in the [[Coral Tower]] of the [[Sands of Karak]] surrounded by the shells of many Karaka. [[Hornet (Silksong)|Hornet]] can play the [[Elegy of the Deep]] at his body and enter the memory of the ancient Coral Tower, where she can fight Khann at its peak. Defeating him grants her the [[Encrusted Heart]] and causes Khann's body to crumble away.
+
+As with all [[Elegy of the Deep]] memories, if Hornet dies in the fight, she wakes up next to Khann's body without losing her [[Rosaries]] and without creating a [[Cocoon]], with all Tool uses refilled at no cost. Dying also does not end {{Steel Soul Icon Mini|SS}} [[Steel Soul Mode (Silksong)|Steel Soul mode]].
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+Prior to fighting Crust King Khann, the final enemy gauntlet of the [[Coral Tower]] must be defeated. After finishing the last wave, Khann roars as coral starts to consume the room, forcing [[Hornet (Silksong)|Hornet]] to [[Silk Soar]] through a passage in the ceiling and arrive in Khann's arena. Khann then leaps up from his throne in the background to confront Hornet and begin the fight.
+
+=== Phase 1 ===
+Crust King Khann summons various sized coral growths for all of his attacks. Each coral's position is telegraphed by rumbling dust before the pillar or growth shoots out. Khann remains immobile for a moment while each coral attack is spawning.
+
+In Phase 1, Crust King Khann has the following attacks:
+* <b>Coral Pillar</b>: Crust King Khann summons a slightly-slanted, vertical coral pillar at Hornet's position.
+* <b>Coral Strike</b>: Crust King Khann summons a horizontal coral pillar across the width of the arena, covering the floor and forcing Hornet airborne.
+* <b>Aerial Coral Strike</b>: Crust King Khann leaps into the air and summons a coral pillar diagonally downwards towards Hornet. He drops backwards to the ground after the pillar vanishes.
+* <b>Coral Cross</b>: Crust King Khann summons 2 diagonal coral pillars from the ground to his left and right, which cross to form an x-shape above him.
+* <b>Coral Overgrowth</b>: Crust King Khann shouts and causes 6 coral growths to erupt, 3 from the ceiling and 3 from the ground. The coral growths across the ground are always spaced out roughly evenly. He gains this attack at 1238 HP.
+* <b>Quickdash</b>: Crust King Khann makes a quick dash forwards or backwards to reposition for attacks and avoid Hornet if she is too close to him.
+* <b>Leap</b>: Crust King Khann makes large leaps across the arena to reposition for attacks. He often leaps to the centre of the arena when he is too close to a wall.
+
+=== Phase 2 ===
+After reaching 660 HP, Crust King Khann stops and shouts, marking the beginning of Phase 2. During this phase, his attack pace greatly increases, he alters one attack, and he gains a new one:
+* <b>Spike Rain</b>: Crust King Khann slams the ground, summoning 6 evenly spaced coral spikes that fall one at a time from the ceiling. He performs this attack immediately at the start of this phase.
+* <b>Coral Cross</b>: After summoning the first set of pillars, Crust King Khann no longer waits for the pillars to spawn before following it up by summoning a second set diagonally downwards from the ceiling in a Ʌ-shape. If Hornet is too far away when he starts this attack, Crust King Khann cancels the second set of pillars and instead immediately performs another attack.
+
+All of Crust King Khann's attacks, including contact with him, deal {{Damage|2}}.
+<hr>
+
+{{Stagger
+| Crust King Khann falls to the ground, taking a knee.
+| 21
+| game = SS
+}}
+
+<hr>
+
+* The difficulty with Khann lies more in the [[Coral Tower]] combat gauntlets leading up to him than the fight himself. Prioritise flying enemies, as grounded ones are easier to deal with alone. [[Clawline]] can catch them in the air and set up Hornet for a follow-up strike. Knockback from Hornet's melee attacks can push non-flying enemies into the spikes to speed up the progress of the gauntlet.
+* The best times to strike Khann are when he is using Coral Pillar or shortly after Aerial Coral Strike, as there are safe zones near him that his attacks do not cover.
+* While he is in the air preparing for Aerial Coral Strike, stand directly under him, as launching the attack has a backwards recoil on him and he lands directly in front of Hornet. Going too far forward risks contact damage.
+
+{{TabbedDialogue
+|Title1 = General
+|Title1_Event1 = Needolin dialogue at Khann's body, before receiving the [[Elegy of the Deep]]
+|Title1_Dialogue1 = [n]All to bow...<br>
+All lost to fear...<br>
+Remember our strength...<br>
+Remember our rule...<br>
+Now none to resist... But us...<br>
+Alone... against the pale light...
+|Title1_Event2 = Needolin dialogue inside the memory, at the entrance
+|Title1_Dialogue2 = [n]...The river...<br>
+...The tower... tall...<br>
+...Beat... flow...<br>
+...Might...<br>
+...By claw... By us...<br>
+...Great lord...
+|Title1_Event3 = Needolin dialogue inside the memory, anywhere in the gauntlet area
+|Title1_Dialogue3 = [n]For the river long...<br>
+For the lord born strong...<br>
+For life... its beat, its flow...<br>
+For order brought by claw and blade...
+|Title1_Event4 = Needolin dialogue after Crust King Khann appears
+|Title1_Dialogue4 = [n]Hone yourself!<br>
+By strength, overwhelm!<br>
+Serve and die!<br>
+Let the weak crumble away!<br>
+In my name, conquer all!<br>
+Defy your limits!
+|Title1_Event5 = After his defeat
+|Title1_Dialogue5 = ...Our claws to crush... Our claws to rule... Our claws to save them all...
+}}
+
+== Location ==
+Crust King Khann can be found atop the [[Coral Tower]] after using Elegy of the Deep on his dormant body in northwest [[Sands of Karak]].
+
+{{Gallery
+|Image1 = Mapshot SS Coral Tower.png!Location in Sands of Karak
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Sands of Karak 08.png!Shell in the Coral Tower
+|Image2 = Screenshot SS Crust King Khann 12.png!Silk Soar to Coral Tower
+|Image3 = Screenshot SS Crust King Khann 13.png!Silk Soar to Khann's Arena
+|Image4 = Screenshot SS Crust King Khann 03.png!Arena in the Coral Tower
+|Image5 = Screenshot SS Crust King Khann 04.png!Coral Pillar
+|Image6 = Screenshot SS Crust King Khann 05.png!Coral Strike
+|Image7 = Screenshot SS Crust King Khann 06.png!Aerial Coral Strike
+|Image8 = Screenshot SS Crust King Khann 07.png!Coral Cross (Phase 1)
+|Image9 = Screenshot SS Crust King Khann 08.png!Coral Cross (Phase 2)
+|Image10 = Screenshot SS Crust King Khann 09.png!Coral Overgrowth
+|Image11 = Screenshot SS Crust King Khann 10.png!Spike Rain
+|Image12 = Screenshot SS Crust King Khann 11.png!Stagger
+|Image13 = Screenshot SS Crust King Khann 02.png!Khann's heart ripping
+|Image14 = Silksong Early 004.png!<i>Silksong</i> reveal trailer
+|Image15 = Screenshot SS Crust King Khann 01.png!Pre-release screenshot
+}}
+
+== Achievements ==
+{{Achievement|game=silksong|Tyrant}}
+
+== Trivia ==
+* Crust King Khann is not stunned by the [[Needolin]]; his dialogue appears without stopping combat to sing.
+
+{{History
+|game = SS
+|1.0.28891 (Patch 3): Fixed Crust King Khann sometimes falling out of bounds during entry, when fought on low-end systems.
+}}
+{{Localisation
+|DEname = Krustenkönig Khann
+|DEmeaning = King of Crust Khann
+|ESname = Rey de la Corteza Khann
+|ESmeaning = King of the Crust Khann
+|FRname = Roi Corail Khann
+|FRmeaning = Coral King Khann
+|ITname = Re Corallo Khann
+|ITmeaning = Coral King Khann
+|JAname = 珊瑚殻の王カーン
+|JAromanised = Sango kara no ō kān
+|JAmeaning = King of Coral Shell Khann
+|KOname = 산호의 왕 칸
+|KOromanised = Sanhoui wang kan
+|KOmeaning = King of Coral Khann
+|PTname = Rei Coral Khann
+|PTmeaning = Coral King Khann
+|RUname = Коралловый король Хан
+|RUromanised = Korallovyj korol' Xan
+|RUmeaning = Coral King Khann
+|TWname = 殼王 卡汗
+|TWromanised = Ké wáng kǎhàn
+|TWmeaning = same
+|ZHname = 壳王 卡汗
+|ZHromanised = Ké wáng kǎhàn
+|ZHmeaning = Shell King Khann
+|CODEname = CORAL_KING
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}
+
+[[pt:Rei Coral Khann]]

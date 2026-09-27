@@ -1,0 +1,78 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Brushflit.png|Hunter's Journal
+Brushflit Idle.png|Idle
+Brushflit Idle 2.png|Alt. Version
+</gallery>
+|drops = None
+|health=1
+|damage_modifiers={{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 15
+|singnum = 1
+}}
+
+{{Quote
+|Hr = Journal
+|Tiny, timid creatures that huddle in flocks and flee at the first hint of danger.<hr/>
+They call out to warn their fellows at the smallest sense of threat. A successful hunt here means staying silent and hidden right up until the decisive strike.
+}}
+
+<b>Brushflits</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are small flying creatures who live in flocks and flee at the first sign of danger.<ref>Brushflit [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Tiny, timid creatures that huddle in flocks and flee at the first hint of danger."</i></ref>
+
+== Behaviour and Tactics ==
+Brushflits sit in flocks and fly away when Hornet approaches. They are unable to damage Hornet in any way.
+
+Brushflits respawn upon re-entering a room in slightly varying numbers and positions. Due to their speed, [[Tools]] or [[Skills|Silk Skills]] may be more effective at defeating them than [[Needle]] attacks.
+
+A good location for filling their [[Hunter's Journal (Silksong)|Hunter's Journal]] entry is west of the Far Fields Bellway. 
+
+== Location ==
+Brushflits can be found in the [[Far Fields]]. Their number and location in the room change upon re-entering.
+
+{{Gallery
+| Image1 = File:Mapshot SS Brushflit 01.png!Locations in the Far Fields
+| Image2 = File:Mapshot SS Brushflit 02.png!Locations in the Far Fields in Act 3
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Brushflit 01.png!Idle
+|Image2 = Screenshot SS Brushflit 02.png!Flying away
+|Image3 = Screenshot SS Brushflit 03.png!Singing
+}}
+
+== Trivia ==
+* Brushflits have no [[Needolin]] dialogue, but they do start singing when it is played.
+
+{{Localisation
+|DEname = Buschflitzer
+|DEmeaning = Bush Streaker
+|ESname = Cepiflito
+|ESmeaning = Brushflit
+|FRname = Zéphyrin
+|FRmeaning = From <i>zéphyr</i> (zephyr or light wind) and <i>-in</i> (diminutive suffix).
+|ITname = Guizzoschivo
+|ITmeaning = Portmanteau of <i>guizzo</i> (wriggle) and <i>oschivo</i> (shy)
+|JAname = バタバタ
+|JAromanised = Batabata
+|JAmeaning = From {{lang|ja|バタバタ}} <i>batabata</i> (Japanese onomatopeia for flapping or fluttering).
+|KOname = 무리도주자
+|KOromanised = Muridojuja
+|KOmeaning = Swarm Escaper
+|PTname = Fugisco
+|PTmeaning = From <i>fugir</i> (escape) and <i>-isco</i> (diminutive suffix).
+|RUname = Быстропуг
+|RUromanised = Bystropug
+|RUmeaning = Portmanteau of {{lang|ru|быстро <i>bystro</i>}} (quickly) and {{lang|ru|пугаться <i>pugat'sya</i>}} (to get scared).
+|TWname = 驚叫蟲
+|TWromanised = Jīngjiào chóng
+|TWmeaning = same
+|ZHname = 惊叫虫
+|ZHromanised = Jīngjiào chóng
+|ZHmeaning = Alarmed Calling Bug or Screaming Bug
+|CODEname = FIELDS_FLOCK_FLYERS
+|CODEmeaning="Fields" internally refers to Far Fields
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

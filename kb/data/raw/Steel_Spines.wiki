@@ -1,0 +1,77 @@
+{{SS Infobox Item
+| image = <gallery>
+Steel Spines.png|Inventory
+Steel Spines Pickup.png|Pickup
+</gallery>
+| type = [[Items (Silksong)#Deliverable|Deliverable]]
+| source = [[Crull and Benjin]] during <i>[[Infestation Operation]]</i>
+| description = Hard forged spines, intended for use in heavy machinery and able to pierce through even the toughest shell.
+}}
+
+{{Quote
+| It's Steel Spines I need. A full bundle of them, forged hard and sharp. Tougher than I've ever had. Tough enough to crack stone! And to pierce your thick shell, bzzt!
+| [[Yarnaby]]
+| Hr = SS
+}}
+
+<b>Steel Spines</b> are a [[Items (Silksong)#Deliverables|deliverable item]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Use ==
+The Steel Spines can be brought to [[Yarnaby]] in [[Greymoor]] to complete the <i>[[Infestation Operation]]</i> [[Wish]]. After that, they are added to the [[Materium]].
+
+{{Gallery
+|Image1 = Mapshot SS Yarnaby.png!Location in Greymoor
+|Image2 = Screenshot SS Yarnaby 03.png!Yarnaby in Greymoor
+}}
+
+== How to Acquire ==
+The Steel Spines are acquired by paying [[Crull and Benjin]] {{R|160}} during the <i>[[Infestation Operation]]</i> [[Wish]].
+
+If the Wish is being completed in [[Act 3]], the Steel Spines can be collected from Crull and Benjin's bodies at no cost.
+
+{{Gallery
+|Image1 = Mapshot SS Crull and Benjin 01.png!Location in Sinner's Road
+|Image2 = Screenshot SS Sinner's Road 05.png!Crull and Benjin in Sinner's Road
+}}
+
+== Trivia ==
+* In older versions of the game, if the Steel Spines were acquired in Act 3, the room could be reentered to respawn them allowing Hornet to acquire more. The Steel Spines have no use outside of the <i>Infestation Operation</i> wish.
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Steel Spines' cost were reduced from 260 rosaries to 160.
+}}
+{{Localisation
+|DEname = Stahlstachel
+|DEmeaning = Steel Spike
+|ESname = Púas de acero
+|ESmeaning = Steel Spines
+|FRname = Épines d'acier
+|FRmeaning = Steel Spines
+|ITname = Spine d'acciaio
+|ITmeaning = Steel Spines
+|JAname = 鋼鉄のトゲ
+|JAromanised = Kōtetsu no toge
+|JAmeaning = Steel Spike
+|KOname = 강철 가시 
+|KOromanised = Gangcheol gasi 
+|KOmeaning = Steel Thorns
+|PTname = Espinhas de Aço
+|PTmeaning = Steel Spines
+|RUname = Стальные шипы
+|RUromanised = Stal'nye šipy
+|RUmeaning = Steel Spines
+|TWname = 鋼棘
+|TWromanised = Gāng jí
+|TWmeaning = same
+|ZHname = 钢棘
+|ZHromanised = Gāng jí
+|ZHmeaning = Steel Thorns
+|CODEname = EXTRACTOR_PINS
+|CODEmeaning = 
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Items}}
+
+[[Category: Items (Silksong)]]

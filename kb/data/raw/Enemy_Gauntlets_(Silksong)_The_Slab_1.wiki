@@ -1,0 +1,30 @@
+{| class="article-table typography" width="100%" style="margin-bottom: 64px; max-width: 100%;"
+! style="width: 50%; |Arena
+! style="width: 50%; |Location
+|-
+|[[File:Screenshot_SS_The_Slab_Arena_1.png|400px|center]]
+|[[File:Mapshot_SS_The_Slab_Arena_1.png|300px|center]]
+|-
+| colspan="2" | Enemy gauntlet in the east end of the Slab. The arena has three pressure plates which can be triggered by Hornet or enemies to release rail-guided spike traps. These spike traps can kill enemies. The [[Key of Indolent]] is required for access.
+|-
+! Reward
+! [[Soundtrack_(Silksong)|Theme]]
+|-
+| <center>Progress through the Slab</center>
+| <center>[https://www.youtube.com/watch?v=3VoHxtarCwA Boneforest Action]</center>
+|-
+! colspan="2" |Waves
+|-
+|
+[[File:HJ_Scabfly.png|35x35px|link=Scabfly]] [[Scabfly]] x2, centre and right<br/>
+[[File:HJ_Guardfly.png|35x35px|link=Guardfly]] [[Guardfly]], right
+| 
+|-
+|
+[[File:HJ_Scabfly.png|35x35px|link=Scabfly]] Scabfly x4, left, centre and right
+|
+|-
+|
+[[File:HJ_Guardfly.png|35x35px|link=Guardfly]] Guardfly x2, centre
+|
+|}

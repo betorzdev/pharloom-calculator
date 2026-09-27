@@ -1,0 +1,136 @@
+{{SS Infobox Boss
+|image1 = <gallery>
+B Bell Eater.png|Hunter's Journal
+Bell Eater Head.png|Head Idle
+Bell Eater Tail.png|Tail Idle
+</gallery>
+|theme = [https://youtu.be/S2W-Ec6lmy0 Bell Beast]
+|location = [[Bellways]] ([[Acts#Act 3: Abyss|Act 3]])<ref group = Note>See {{Section link|#In-game Events}} for more details.</ref>
+|drops = Travel via Bellways<br>[[Beastling Call]]
+|health = 800
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.75|1.35|1.2|1|1}}
+|numbers_required = 1
+|singnum = 1
+}}
+{{Quote
+|Hr = Journal
+|Long dormant centipede, awoken and enraged by Pharloom's crumbling collapse.<hr/>
+A monster in the classic form of tales from youth. Its slaying was done as much by my fierce travelling companion as by myself.
+}}
+
+The <b>Bell Eater</b> is a main [[Bosses (Silksong)|boss]] in <i>[[Hollow Knight: Silksong]]</i>. It is a massive centipede awakened and enraged by the collapse of [[Pharloom]].<ref>Bell Eater Hunter's Journal entry: <i>"Long dormant centipede, awoken and enraged by Pharloom's crumbling collapse."</i></ref> It invades the [[Bellways]], causing them to be unusable until it is defeated.
+
+== In-game Events ==
+Upon starting [[Act 3]], visiting and calling out in any [[Bellways|Bellway]] causes the Bell Eater to burst out and roar instead of the [[Bell Beast]]. Hornet can then follow the Bell Eater down a hole into the tunnels, where it can be fought as a boss. After calling the Bell Eater to a Bellway, it cannot be summoned to another, and all other Bellways are disabled until the Bell Eater is defeated.
+
+Upon defeat, the Bell Eater is finished off by the Bell Beast, who returns to deliver the final blow. The Bell Beast is now accompanied by her [[Beastlings]], who teach Hornet the [[Beastling Call]].
+
+== Behaviour and Tactics ==
+{{AttackDisclaimer}}
+
+When [[Hornet (Silksong)|Hornet]] approaches, the Bell Eater first uses its body to wall off her left and right sides, creating a small arena. In this fight, the Bell Eater's grey-plated body is immune to damage, and it must be attacked by hitting its soft beige rear, or its red head section.
+
+The head and rear technically count as <b>two separate entities</b>, each with 400 HP. These values can <b>go into the negatives</b>, but are added together to determine the phase change and defeat condition, meaning they effectively share one health pool of 800 HP.
+
+=== Phase 1 ===
+The Bell Eater stays burrowed for most of the battle:
+* <b>Lash Out</b>: If Hornet gets too close to or strikes one of the Bell Eater's legs at the edges of the arena, it slices wildly at her. Each leg can attack separately.
+* <b>Spit</b>: The Bell Eater pokes its head out, either up from the ground or down from the ceiling. It then spits out a spray of arcing red projectiles that fall to the ground. These projectiles can be destroyed. The Bell Eater loosely tracks Hornet when firing projectiles. 
+* <b>Flail</b>: If the Bell Eater pokes its head out, it can wind up before swinging its 4 front legs wildly. It performs this attack more often if Hornet is close to its head.
+* <b>Bombardment</b>: The Bell Eater pokes its rear end out, either up from the ground or down from the ceiling, and fires 2 bouncing red explosives, one to either side. The rear is angled slightly to indicate which direction it is going to shoot the explosives towards. Its bombs explode after bouncing around 3 times or upon hitting a target or wall. They can also be deflected by [[Needle]] swings.
+
+=== Phase 2 ===
+After the Bell Eater reaches 600 HP, the walls move outwards to expand the arena to about twice its previous width. It then gains the Bell Bulldoze attack, which it immediately performs:
+* <b>Bell Bulldoze</b>: The Bell Eater rushes forwards across the entire arena, either against the ground or sticking to the ceiling, before switching surfaces and rushing in the opposite direction. When it burrows agains the ground, 2 bells fall in random locations and bounce once; 3 bells fall when it digs through the ceiling. While the Bell Eater usually performs this attack twice, rushing along both ceiling and floor, occasionally it only performs one rush against either surface. Hornet can Needle bounce off of its head and body while it bulldozes across the ground, but damage dealt to its head during this attack does not change the HP
+** On subsequent uses of this attack, it is often preceded by a solo <b>Bombardment</b> attack from the ceiling.
+In this phase, the Bell Eater's head and rear can now appear simultaneously to each perform an attack - with the rear always emerging shortly before the head. It also modifies two previous attacks:
+* <b>Spit</b>: The head spits more projectiles.
+* <b>Bombardment</b>: The rear end fires 3 bombs, alternating sides with each.
+All of the Bell Eater's attacks, including contact damage, deal {{Damage|2}}, except its swiping leg attacks, which deal {{Damage|1+1}}.
+
+Upon reaching 0 HP, the Bell Eater pokes its head up from the ground and roars, as if to announce another phase of the fight, before the [[Bell Beast]] leaps in to finish off the creature.
+
+<hr />
+* {{CrestSlot|Red|s}} with mobility or AOE damage, such as [[Cogfly]] and [[Voltvessels]], are ideal for this fight. Voltvessels is particularly strong, since a single deployment can deal full damage to both the head and the rear, doubling its usual maximum single-target damage.
+* {{CrestSlot|Blue|s}} such as [[Reserve Bind]], [[Fractured Mask]], and [[Injector Band]] are good options for this encounter, as it is quite slow to acquire [[Silk]] to heal, and openings for healing are brief, if you do not hide in the top corner. If using a Tool-focused build, [[Pollip Pouch]] and [[Quick Sling]] are good options. 
+
+If Bell Bulldoze occurs along the ground, Hornet must stay in the air to avoid taking damage. This can be done using Drifter's Cloak, Bind, or Needle bounces. Using [[Bind]] is dangerous because of the falling bells.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Long slumber...
+* Wake now...
+* We must... feed...
+* World trembles...
+* Great noise... louder...
+* Feed... eat...
+}}
+
+== Locations ==
+The Bell Eater can be found in any [[Bellway]] Station after the beginning of Act 3. When calling the [[Bell Beast]], the Bell Eater instead pops its head out of the ground before returning to the Bellways. Hornet then has the option to enter the Bellways to fight the Bell Eater.
+
+Once the Bell Eater has been called, the entrance to its arena will be locked to that station. Attempting to summon it at another station will cause the ground to rumble, but neither it nor the entrance will appear. Therefore, it is optimal to summon it at a station with a bench nearby to save time on a return trip if Hornet dies during the fight.
+
+{{Gallery
+|Image1 = Mapshot SS Bell Beast 02.png!Possible locations throughout Pharloom
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Bell Eater 01.png!Bell Eater emerging from a Bellway station
+|Image2= Screenshot SS Bell Eater 02.png!Hole left behind by Bell Eater
+|Image3= Screenshot SS Bell Eater 03.png!Entering the arena
+|Image4= Screenshot SS Bell Eater 04.png!Head Idle
+|Image5= Screenshot SS Bell Eater 05.png!Tail Idle
+|Image6= Screenshot SS Bell Eater 06.png!Lash Out
+|Image7= Screenshot SS Bell Eater 07.png!Spit
+|Image8= Screenshot SS Bell Eater 08.png!Flail
+|Image9= Screenshot SS Bell Eater 09.png!Bombardment
+|Image10= Screenshot SS Bell Eater 10.png!Bell Bulldoze (Floor)
+|Image11= Screenshot SS Bell Eater 11.png!Bell Bulldoze (Ceiling)
+|Image12= Screenshot SS Bell Eater 12.png!Spit and Bombardment (Phase 2)
+|Image13= Screenshot SS Bell Eater 14.png!Reacting to Needolin
+|Image14= Screenshot SS Bell Eater 15.png!Attacked by Bell Beast
+|Image15= Screenshot SS Bell Eater 16.png!Arena
+|Image16= Screenshot SS Bell Eater 17.png!Modded screenshot of Bell Eater
+|Image17= Screenshot SS Bell Eater 18.png!Modded screenshot of the arena
+}}
+
+==Trivia==
+*The Bell Eater's intro animation and design are likely references to the [https://www.metroidwiki.org/wiki/Deorem Deorem] boss from <i>[https://www.metroidwiki.org/wiki/Metroid:_Zero_Mission Metroid: Zero Mission]</i>.
+*The Bell Eater has a [[Cut Content (Silksong)#Enemy Behaviours|cut]] traditional death animation that lacks the Bell Beast attacking it.
+{{Localisation
+|DEname = Glockenfresser
+|DEmeaning = Bell Eater
+|ESname = Tragacampanas
+|ESmeaning = Bell Swallower
+|FRname = Dévoreur De Cloches
+|FRmeaning = Devourer of Bells (masculine)
+|ITname = Mangiacampane
+|ITmeaning = Bell Eater
+|JAname= 鐘を喰らう者
+|JAromanised= Kane o kurau mono
+|JAmeaning = Bell Devourer
+|KOname = 종 포식자
+|KOromanised = Jong posikja
+|KOmeaning = Bell Eater or Bell Predator
+|PTname = Devoradora de Sinos
+|PTmeaning = Devourer of Bells (feminine)
+|RUname = Пожиратель колоколов
+|RUromanised = Požiratel' kolokolov
+|RUmeaning = Bell Devourer
+|TWname = 噬鐘獸<br>噬鐘者
+|TWromanised = Shì zhōng shòu<br>Shì zhōng zhě
+|TWmeaning = Bell-eating Beast <small>(Used as the boss title card)</small><br>Bell Eater <small>(Used in the Hunter's Journal)</small>
+|ZHname = 噬钟者
+|ZHromanised = Shì zhōng zhě
+|ZHmeaning = Bell Eater
+|CODEname = GIANT_CENTIPEDE
+}}
+== Notes ==
+<references group="Note"/>
+{{Refs|hr=false}}
+
+{{SS Nav Enemies}}
+
+[[pt:Devoradora de Sinos]]

@@ -1,0 +1,107 @@
+{{SS Infobox Area
+| image1 = The Mist Map Clean.png
+| connection = [[Bilewater]]<br/>[[Sinner's Road]]
+| ambience = [https://www.youtube.com/watch?v=jhkdrYBQl7k Atmos Mistmaze]<br>
+[https://youtu.be/LPe1Y0OKl0c Cave Atmosphere Misc. 3]
+| main = [https://www.youtube.com/watch?v=T4JVUxhfNMg Mist Maze Ambient] (First two rooms)<br>
+[https://www.youtube.com/watch?v=nH1GtdwMqBw Mist Maze Sub] (+ Ambient, third room onwards)<br>
+[https://www.youtube.com/watch?v=R5jlfUqTq_A Mist Maze Main] (+ Ambient + Sub, midpoint room onwards)<br>
+[https://www.youtube.com/watch?v=5-5OCXWoBRU Mist Maze Single Note] (Constant)<br>
+[https://www.youtube.com/watch?v=U8vkHtZRLDY The Mist] (Ambient + Sub + Main)
+|credits = Unofficial map by esau
+}}
+{{Quote
+|Leave this place...<br>Those who wander... will die...
+|[[Wraith]]
+|Hr=SS
+}}
+
+<b>The Mist</b> is an [[Areas (Silksong)|area]] in <i>[[Hollow Knight: Silksong]]</i>. It is a hazy, maze-like area that blocks the path to [[Exhaust Organ]]. It is a required area to navigate in order to finish the alternate route through [[Act 1]].
+
+== Description ==
+The Mist is a foggy, cloudy cavern blocking the path to [[Exhaust Organ]]. The area heavily resembles [[Sinner's Road]], featuring the same steel cages, wooden architecture, and natural environments. The area and its entrances are lined with the corpses of enemies found within Sinner's Road, such as [[Roachfeeder]]s and [[Roachcatcher]]s. Unlike Sinner's Road, the Mist is lined with various hidden traps, such as falling spikes, plate-activated barbs, and floor traps. However, spools with small amounts of [[Silk]] can occasionally be found as well. The area is implied to have high amounts of Silk in the air as a result of the Silk expelled from Exhaust Organ. This results in the creation of the ghostly [[Wraith]]s, the only enemies found in the Mist, which increase in number as Hornet traverses deeper into the area. The only other inhabitants are [[Silk Flies]], which passively float in place until the [[Needolin]] is played.
+
+The Mist defies physical geometry, with rooms lining up in impossible ways. Rooms are randomly chosen from seven possible options upon entry, and the maze can theoretically go on forever if the Mist is not properly navigated. Each room has 3-5 exits, with only one leading closer to Exhaust Organ. The only way to know which one is correct is by playing the Needolin near the Silk Flies present within the room; once it is played for a few seconds, the Silk Flies fly in the direction of the correct exit. If [[Hornet (Silksong)|Hornet]] takes an incorrect exit, falls, or enters the fog surrounding the room, she returns to the Mist's starting hallway and must traverse the maze from the beginning. The latter causes her to wake up in the hallway instead of walking into it.
+
+After Hornet takes four correct exits from the beginning, she enters a hallway that acts as the midpoint of the Mist. After this point, Silk spools no longer spawn, leaving Wraiths and certain [[Tools]] as the only remaining sources of Silk. After successfully navigating the rest of the Mist, the final hallway begins to resemble [[Bilewater]], and Hornet ends up on either side of the room containing Exhaust Organ, depending on whether she entered the Mist through Bilewater or Sinner's Road.
+
+After the defeat of [[Phantom]], the Mist completely dissipates, revealing its true form as a single room in Sinner's Road heading to Exhaust Organ.
+=== Score Calculation ===
+The Mist follows a scoring system to determine which kind of room Hornet will enter. Hornet is given a score ranging from 0 to 8, increasing as she takes correct exits, and decreasing when she takes an incorrect exit.
+{{Gallery
+|Image1 = The Mist Score Calculation.png!The Mist score calculation process
+}}
+== History ==
+The Mist was formed by the [[Silk]] and smog expelled into [[Sinner's Road]] and [[Bilewater]] by [[Exhaust Organ]]. The Organ is operated by [[Phantom]], a creature strung from [[Grand Mother Silk]]'s thread who was tasked with expelling the Citadel's refuse into the surrounding areas.<ref>Phantom [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Mournful creature tasked alone to expel the Citadel's choking refuse. Their talent with a longpin is unmatched."</i></ref> The [[Wraith]]s found throughout the Mist are likely projections of Phantom's will as lingering thread.<ref>Wraith Hunter's Journal entry: <i>"Anguished spectre of lingering thread. Despite its ephemeral nature, strong strikes can dispel the Wraith for a time. Not a bug but a projection of another's will cast in smog and Silk."</i></ref>
+
+== How to Access ==
+There are two ways into the Mist: one through [[Sinner's Road]] and the other through [[Bilewater]]. The Sinner's Road entrance is accessed by a breakable wall found at the north-west section of the area. If this entrance is taken, it will lead to the west side of Exhaust Organ's room. The Bilewater entrance is accessed directly west from the area's [[Bellway]] found south-west of the area, behind a breakable wall. If this entrance is taken, it will lead to the east side of Exhaust Organ's room.
+
+Once [[Phantom]] has been defeated, the Mist vanishes and its entrances become a clear path to Exhaust Organ. A new room appears in Sinner's Road to allow the western entrance to line up, which can be entered from both sides, regardless of whether the wall in Sinner's Road was broken or not. However, the eastern entrance must still be broken in Bilewater unless it was already broken beforehand.
+{{Gallery
+|Image1 = The Mist Map Sinner's Road.png!Room created in Sinner's Road
+}}
+
+==Area Features==
+{{TabbedPOI
+|Enemy1 = Wraith
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Sinner's Road 10.png!Entrance
+|Image2 = Screenshot SS The Mist 04.png!Floor spike
+|Image3 = Screenshot SS The Mist 05.png!Silk Flies heading towards an exit
+|Image4 = Screenshot SS Sinner's Road 11.png!Midpoint
+|Image5 = Screenshot SS The Mist 02.png!Inactive Wraith
+|Image6 = Screenshot SS The Mist 03.png!Agitated Wraiths
+|Image7 = Screenshot SS The Mist 01.png!Exit
+}}
+
+== Trivia ==
+* It is possible to go back into the Mist from the final hallway and, after going through several room transitions, end up on the wrong side of Exhaust Organ's room. If the Mist was first entered from Sinner's Road, one may end up on the eastern side of Exhaust Organ's room and get stuck behind a breakable wall which can only be broken from the Bilewater entrance.
+** When approaching the exit of the Mist, the music played from Exhaust Organ increases in intensity and volume.
+* While seemingly possible, successfully navigating the Mist without having obtained the Needolin is impossible. The game prevents Hornet from progressing further unless she has first obtained the Needolin. This is likely done to prevent accessing [[the Citadel]] without the Needolin.
+** However, if the Needolin has been obtained, it is possible, by luck, to reach Exhaust Organ without using it.
+* There is an unused [[Save Data (Silksong)|save profile]] that depicts the Mist's starting room with a [[Bench (Silksong)|bench]] that is not present in the game. The bench itself is not used anywhere else.
+** The bench is still present within the scene of the room, and reactivating it allows the unused save profile artwork to be seen.
+* A small section of the room internally labelled <code>dust_maze_08</code> lines up with the room revealed in Sinner's Road after the Mist dissipates, with this room even being internally labelled <code>dust_maze_08_completed</code>.
+{{Gallery
+| Image1 = Area Art Dust Maze.png!Unused save profile art
+| Image2 = Mist Room Comparison.png!Comparison of the two rooms
+}}
+{{Localisation
+|DEname = Der Nebel
+|DEmeaning = The Fog
+|ESname = La Niebla
+|ESmeaning = The Fog
+|FRname = Les Brumes
+|FRmeaning = The Mists
+|ITname = La Bruma
+|ITmeaning = The Mist
+|JAname = 迷いの霧
+|JAromanised = Mayoi no kiri
+|JAmeaning = Fog of Being Lost or Fog of Illusions
+|KOname = 안개
+|KOromanised = Angae
+|KOmeaning = Fog
+|PTname = A Bruma
+|PTmeaning = The Mist
+|RUname = Мгла
+|RUromanised = Mgla
+|RUmeaning = Mist
+|ZHname = 迷瘴
+|ZHromanised = Mí zhàng
+|ZHmeaning = Combination of {{lang|zh-Hans|迷}}/{{lang|zh-Hant|迷}} <i>mí</i> (to get lost or to be confused) and {{lang|zh-Hans|瘴}}/{{lang|zh-Hant|瘴}} <i>zhàng</i> (miasma).
+|TWname = 迷瘴
+|TWromanised = Mí zhàng
+|TWmeaning = same
+|CODEname = DUST_MAZE
+|CODEmeaning = Refers to [[Cut Content (Silksong)/Areas#Dustroach Pens|Dustroach Pens]], an eariler version of [[Sinner's Road]].
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav Areas}}
+[[Category:Areas (Silksong)|Mist]]
+
+[[zh:迷瘴]]

@@ -1,0 +1,80 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Gloomsac.png|Hunter's Journal
+Gloomsac Dormant.png|Dormant
+Gloomsac Dormant 2.png|Dormant (Double)
+</gallery>
+|drops = None
+|health = 50
+|damage_modifiers = {{SS Spaced Damage Modifiers|2|1.2|1|1|1}}
+|numbers_required = 15
+}}
+{{Quote
+|Hr = Journal
+|Tiny empty creature, barely a bug. Swallows its prey whole and sucks their nutrients until nothing remains.<hr/>
+This one disturbs me... There is something in its simplicity. Do I almost feel fear?
+}}
+
+<b>Gloomsacs</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are small, flying creatures native to [[The Abyss (Silksong)|the Abyss]] able to suck nutrients out of their prey.<ref>Gloomsac Hunter's Journal entry: <i>"Tiny empty creature, barely a bug. Swallows its prey whole and sucks their nutrients until nothing remains."</i></ref>
+
+== Behaviour and Tactics ==
+When they are not summoned by a [[Gargant Gloom]], Gloomsacs start off inactive and hanging from the ceiling in specific locations around the upper parts of [[The Abyss (Silksong)|the Abyss]]. Once Hornet gets near, they shake and burst off the ceiling, spinning before they begin to target Hornet. They fly any distance to get in range to attack Hornet. 
+To attack, the Gloomsac rears back slightly, dashes at Hornet in a slghtly curved trajectory, and latches onto her top half if any contact is made during the dash, stopping if Hornet gets behind it or it hits a wall. It deals {{Damage|1}} every 1.2 seconds that it remains latched onto Hornet, and ATTACK or movement inputs must be pressed three times to escape. Gloomsacs deal at least {{Damage|1+1}} before Hornet can escape. Mashing out of a Gloomsac's attack instantly kills it.
+
+When not attacking, Gloomsacs deal {{Damage|1}} on contact.
+
+== Location ==
+Gloomsacs can be found exclusively in [[The Abyss (Silksong)|the Abyss]]. They can also be summoned by [[Gargant Gloom]]s.
+
+{{Gallery
+|Image1 = Mapshot SS Gloomsac 01.png!Location in the Abyss
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Gloomsac 01.png!Double Cocoon
+|Image2= Screenshot SS Gloomsac 02.png!Single Cocoon
+|Image3= Screenshot SS Gloomsac 03.png!Eating Hornet
+|Image4= Screenshot SS Gloomsac 04.png!Charging
+}}
+
+== Trivia ==
+* Gloomsacs do not respond to the Needolin.
+* If Hornet enters another room while latched onto by a Gloomsac, the Gloomsac will disappear after the room transition.
+
+{{History
+|game = SS
+|1.0.29280 (Patch 4): Fixed Gloomsacs not damaging the player on impact, when on one mask.
+}}
+{{Localisation
+|DEname = Düstersack
+|DEmeaning = Gloom Sack
+|ESname = Saco lúgubre
+|ESmeaning = Gloomy Sack
+|FRname = Gloomsac
+|FRmeaning = —
+|ITname = Saccomesto
+|ITmeaning = Rueful Sack
+|JAname = ヤミブクロ
+|JAromanised = Yami bukuro
+|JAmeaning = Combination of {{lang|ja|闇 <i>yami</i>}} (darkness) and {{lang|ja|袋 <i>fukuro</i>}} (sack).
+|JAkatakana = enemy
+|KOname = 어둠주머니
+|KOromanised = Eodumjumeoni
+|KOmeaning = Dark Pocket or Dark Sack
+|PTname = Sacatroz
+|PTmeaning = Portmanteau of <i>saco</i> (sack) and <i>atroz<i> (atrocious).
+|RUname = Мрачнобрюх
+|RUromanised = Mračnobrjux
+|RUmeaning = Portmanteau of {{lang|ru|мрачный <i>mračnyj</i>}} (gloomy) and {{lang|ru|брюхо <i>brjuxo</i>}} (belly).
+|TWname = 幽暗囊
+|TWromanised = Yōuàn náng
+|TWmeaning = same
+|ZHname = 幽暗囊
+|ZHromanised = Yōuàn náng
+|ZHmeaning = Gloom Sack
+|CODEname= GLOOMFLY
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Enemies}}

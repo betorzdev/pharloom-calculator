@@ -1,0 +1,102 @@
+{{SS Infobox Enemy
+|image1 = <gallery>
+B Squatcraw.png|Hunter's Journal
+Squatcraw Airborne.png|Airborne
+Squatcraw Idle.png|Grounded
+Squatcraw Perched.png|Perched
+</gallery>
+| hasdrop = true
+| r1 = 16
+| r2 = 25
+| sh1 = 5-8
+| sh2 = 7-10
+| drops = [[Ragpelt]]
+|health = 50/{{BT|100}} 
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.25|1|0.9|0.9|0.9}}
+|numbers_required = 15
+|sing=Tallcraw
+|singnum=2
+}}
+
+{{Quote
+|Hr = Journal
+|Stout adult crawbug bearing several short pins.<hr />A cowardly sort. They will try to remain at range to throw their sharp weapons. Best to rush them down and cut quick.}}
+
+<b>Squatcraws</b> are an [[Enemies (Silksong)|enemy]] in <i>[[Hollow Knight: Silksong]]</i>. They are short, rounded [[Craws|crawbugs]] with hood-like wings, wielding short pins as throwing weapons.
+
+== Behaviour and Tactics ==
+Squatcraws do not naturally wander; they start off resting, but begin to pursue Hornet once she gets close. They can frequently switch between flying and being grounded at any time.
+Squatcraws' only attack is to launch three pins in an 80° fan formation, similar to the [[Threefold Pin]]. Whilst flying, they change the angle of throwing but still can cover an 80-degree area. Dodging between the pins is often necessary, so it is important to get used to the angles. Despite their stature, they are highly mobile and always attempt to fly out of Hornet's reach. They remain stationary when preparing to attack, so this is a good moment to get close and strike.
+
+Squatcraws deal {{Damage|1}} with their attack and upon contact.
+
+Whilst flying, remaining directly below them can allow Hornet to easily strike them with the Needle, as well as always dodge their Pins, since they cannot attack directly beneath themselves whilst airborne.
+
+Whilst they are grounded, always be ready to do a small jump to avoid the lowest Pin that they throw, then capitalise on the opening.
+
+=== Act 3 ===
+[[Black-Threading|Black-threaded]] Squatcraws have their health doubled. They can gain any of the standard [[Black-Threading#Movesets|void attacks]].
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin
+| columns = 2|
+* Shiny, shiny, all for us!
+* Our nest! Our clan!
+* Swoop and scratch...
+* Crack their shells...
+* Our caves! Our land!
+* Take their treasures!
+}}
+
+== Location ==
+Squatcraws are exclusively found in eastern [[Greymoor]] near Craw Lake.
+
+{{Gallery
+|Image1 = Mapshot SS Squatcraw Greymoor 01.png!Location in Greymoor
+|Image2 = Mapshot SS Squatcraw Greymoor 02.png!Location in Greymoor Act 3
+}}
+
+==Gallery==
+{{Gallery
+|Image1=Screenshot SS Squatcraw 01.png!Sitting next to a Craw
+|Image2=Screenshot SS Squatcraw 02.png!Flying
+|Image3=Screenshot SS Squatcraw 03.png!About to throw pins
+|Image4=Screenshot SS Squatcraw 04.png!Throwing pins from the ground
+|Image5=Screenshot SS Squatcraw 05.png!Singing
+|Image6=Screenshot SS Memorium 06.png!Corpses in the Memorium aviary
+|Image7=Screenshot SS Gurr the Outcast 01.png!Corpse next to Gurr the Outcast's arena
+}}
+
+{{Localisation
+|DEname = Feistkrähfer
+|DEmeaning = Fat Craw<br><small><i>Krähfer</i> is the name of the [[Craws]] in German, a portmanteau of <i>krähe</i> (crow) and <i>käfer</i> (bug).</small>
+|ESname = Cuervón recio
+|ESmeaning = Thick Craw<br><small><i>Cuervón</i> is the name of the [[Craws]] in Spanish, from <i>cuervo</i> (crow) and <i>-ón</i> (augmentative suffix).</small>
+|FRname = Corbotère Robuste
+|FRmeaning = Robust Craw<br><small><i>Corbotère</i> is the name of the [[Craws]] in French, from <i>corbeau</i> (crow).</small>
+|ITname = Corvide Tozzo
+|ITmeaning = Stubby Corvid
+|JAname = ズングリボロガワ
+|JAromanised = Zunguri borogawa
+|JAkatakana = enemy
+|JAmeaning = Stocky Craw<br><small>{{lang|ja|ボロガワ}} <i>borogawa</i> is the name of the [[Craws]] in Japanese, a combination of {{lang|ja|襤}} <i>boro</i> (rag) and {{lang|ja|皮}} <i>kawa</i> (skin).</small>
+|KOname = 땅딸막까마귀
+|KOromanised = Ttangttalmakkkamagwi
+|KOmeaning = Squat Crow
+|PTname = Corbisco-robusto
+|PTmeaning = Robust Craw (diminutive)<br><small><i>Corbo</i> is the name of the [[Craws]] in Portuguese, from <i>corvo</i> (crow)</small>
+|RUname = Широкар
+|RUromanised = Širokar
+|RUmeaning = Wide Craw<br><small>{{lang|ru|Кар}} <i>kar</i> is the name of the [[Craws]] in Russian, from {{lang|ru|кар}} <i>kar</i> (Russian onomatopoeia for a crow's call).</small>
+|TWname = 矮鴉蟲
+|TWromanised = Ăi yā chóng
+|TWmeaning = same
+|ZHname = 矮鸦虫
+|ZHromanised = Ăi yā chóng
+|ZHmeaning = Squat Crow Bug
+|CODEname=CROWMAN_DAGGER
+|CODEmeaning=[[Tallcraw]]s are internally known as "Crowmen"
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Enemies}}

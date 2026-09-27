@@ -1,0 +1,72 @@
+{{SS Infobox Enemy
+|drops = None
+|health = 105
+|damage_modifiers = {{SS Spaced Damage Modifiers|1.5|1.2|1.1|1|0.9}}
+|numbers_required = 6<br>(Instantly completed on [[Crust King Khann]]'s death)
+}}
+{{Quote
+|Hr = Journal
+|Overgrown elder, able to spawn burning bubbles from within its coral-cased shell.<hr/>
+This bug's fusion with the crust-growth... It seems intentional, though I imagine the union is far from comfortable.
+}}
+
+<b>Corrcrust Karakas</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are members of the [[Order of Karak]] with head and shoulders covered in crust-growth, which they use to shoot out orange bubbles. Now extinct in modern [[Pharloom]], they live on only in memory.
+
+== Behaviour and Tactics ==
+Being flying enemies, Corrcrust Karakas try to maintain a position diagonally above Hornet between attacks. Once they can, they use any of the following attacks:
+* <b>Bubble Spray:</b> Ejects harmful orange bubbles in all directions. The bubbles begin to rapidly pop around 1 second after the last bubble has been ejected. 
+* <b>Ground Slam:</b> Quickly flies above Hornet and slams down vertically, leaving a thin trail of bubbles during their descent and ejecting a few to the sides as they land. The bubbles all rapidly pop around 1 second after the last bubble is spawned by the attack.
+* <b>Flying Slam:</b> Flies down if necessary to be more horizontally aligned with Hornet and charges towards her until it hits a wall, leaving a trail of bubbles as they charge and ejecting more on the impact with said wall. The bubbles rapidly pop in sequence around 1 second after the Corrcrust Karaka hits the wall.
+
+It should be noted that the bubbles' hitboxes do not increase in size when they pop, and that the bubbles immediately pop upon being hit by any attack or [[Tool]].<br>
+Due to the sheer amount of area denial Corrcrust Karakas are capable of, Hornet should make sure not to corner herself and always have an escape option.
+
+== Location ==
+Corrcrust Karakas can only be found in [[Crust King Khann]]'s [[Elegy of the Deep|Memory]] of the [[Coral Tower]] during [[Acts|Act 3]].
+
+{{Gallery
+|Image1 = Mapshot SS Coral Tower.png
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Corrcrust Karaka 01.png!Idle
+|Image2 = Screenshot SS Corrcrust Karaka 02.png!Bubble Spray
+|Image3 = Screenshot SS Corrcrust Karaka 03.png!Flying Slam
+|Image4 = Screenshot SS Corrcrust Karaka 04.png!Ground Slam
+}}
+
+== Trivia ==
+* Corrcrust Karakas do not respond to the [[Needolin]].
+{{Localisation
+|DEname = Korkrusten-Karaka
+|DEmeaning = Corrcrust Karaka
+|ESname = Karaka cortezudo
+|ESmeaning = Heavily Encrusted karaka
+|FRname = Brute-corail Karaka
+|FRmeaning = Coral Brute Karaka
+|ITname = Karaka Corallino
+|ITmeaning = Coral Karaka
+|JAname = 浸食のカラカ
+|JAromanised = Shinsoku no karaka
+|JAmeaning = Corrosion Karaka
+|KOname = 산호 카라카
+|KOromanised = Sanho karaka
+|KOmeaning = Coral Karaka
+|PTname = Karaka Crostocoral
+|PTmeaning = Coral Crust Karaka
+|RUname = Коралловый карака
+|RUromanised = Korallovyj karaka
+|RUmeaning = Coral Karaka
+|TWname = 珊瑚卡拉克
+|TWromanised = Shānhú kǎlākè
+|TWmeaning = same
+|ZHname = 珊瑚卡拉卡
+|ZHromanised = Shānhú kǎlākǎ
+|ZHmeaning = Coral Karaka
+|CODEname=CORAL_BUBBLE_BRUTE
+|CODEmeaning=Other Order of Karak internal names begin with "Coral"
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

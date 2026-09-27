@@ -1,0 +1,79 @@
+{{SS Infobox Enemy
+|drops = 1 {{Mask|SS|Lifeblood}}
+|health = 1
+|numbers_required = 8
+}}
+{{Quote
+|Hr = Journal 
+|Mindless sack filled with Plasmium. When broken the Plasmium can be consumed for its temporary benefits to health.<hr/>
+My unique shell can resist the darker deformations of this substance, but even I have limits...
+}}
+
+<b>Winged Lifeseeds</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are mindless sacks filled with [[Lifeblood|Plasmium]].<ref>Winged Lifeseed [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Mindless sack filled with Plasmium. When broken the Plasmium can be consumed for its temporary benefits to health."</i></ref>
+
+== Behaviour and Tactics ==
+Winged Lifeseeds are released from destroyed [[Plasmium Cocoon]]s and fly aimlessly or try to fly away from [[Hornet (Silksong)|Hornet]] if she is near. When killed, they grant 1 {{Mask|SS|Lifeblood}}.
+
+Winged Lifeseeds cannot be damaged by using the [[Challenge]] ability near them. They also cannot be damaged by the cloud of venom spawned after using [[Plasmium Phial]] or [[Flea Brew]] while [[Pollip Pouch]] is equipped, or by throwing the empty bottle after using the last charge of Flea Brew. [[Cogflies]] cannot kill Winged Lifeseeds, although they still try to attack them. [[Wispfire Lantern]] does not spawn [[Wisp]]s to kill Winged Lifeseeds.
+
+Unlike [[Lifeseed]]s from <i>[[Hollow Knight]]</i>, Winged Lifeseeds are not immune to spike pits, though they do not give {{Mask|SS|Lifeblood}} if killed this way. They do not give {{Mask|SS|Lifeblood}} if drowned, either. Winged Lifeseeds also do not give {{Mask|SS|Lifeblood}} if killed by [[Pimpillo]], the [[Needle Phial]], or the [[Voltvessels]]' electricity (but killing them while placing the Spear form of the Voltvessels still counts). Winged Lifeseeds do not give {{Mask|SS|Lifeblood}} if killed with [[Silkspear]], [[Sharpdart]], or [[Rune Rage]], unless the [[Shaman Crest]] is equipped.
+
+Killing Winged Lifeseeds does not give [[Silk]]. Additionally, it does not build focus for the [[Hunter Crest]], does not spawn a [[Silk]] fragment when killed after a [[Bind]]ing while the [[Reaper Crest]] is equipped, and does not give {{Mask|SS}} during the special healing of the [[Beast Crest]] and [[Witch Crest]].
+
+Having more than 8 {{Mask|SS|Lifeblood}} results in Hornet becoming [[plasmified]]. There are not enough Winged Lifeseeds in [[Pharloom]] to do this without also using the [[Plasmium Phial]].
+
+== Location ==
+Winged Lifeseeds are released when a [[Plasmium Cocoon]] is broken. One can be found in the [[Wormways]], below [[Alchemist Zylotol]]'s room, after completing the <i>[[Alchemist's Assistant]]</i> [[wish]] and resting at a [[Bench (Silksong)|bench]] outside the Wormways. In [[Act 3]], two more can be found: one southwest of the Wormways, and one to the left of the [[Chapel of the Wanderer]] in [[Bonegrave]].
+
+{{Gallery
+|Image1 = Mapshot SS Winged Lifeseed 01.png!Locations in the Wormways
+|Image2 = Mapshot SS Winged Lifeseed 02.png!Location in Bone Bottom
+}}
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Winged Lifeseed 01.png!In the Wormways
+|Image2= Screenshot SS Winged Lifeseed 02.png!In Bone Bottom
+}}
+
+== Trivia ==
+* Winged Lifeseeds do not respond to the [[Needolin]].
+* Winged Lifeseeds were originally [[Cut Content (Hollow Knight)|cut content]] in <i>Hollow Knight</i>.
+
+{{History
+|game = SS
+|1.0.29242 (Patch 4): Fixed bugged plasmification if the 9<sup>th</sup> Plasmium Mask was acquired by killing a Winged Lifeseed instead of using the [[Plasmium Phial]]. The bugged plasmification meant that Hornet would not lose her Plasmium Masks (though the 9<sup>th</sup> mask would not show up on the HUD) and her normal Masks would not turn into Plasmium. The Crest would be tinted blue and [[Bind]] would only grant 1 Mask, but Hornet's Masks would not regenerate, and the Plasmium Phial and Winged Lifeseeds would not grant either type of Mask.
+}}
+
+{{Localisation
+|DEname = Geflügelter Lebenskeim
+|DEmeaning = Winged Lifeseed
+|ESname = Germen de vida alado
+|ESmeaning = Winged Germ of Life
+|FRname = Graine de Vie Ailée
+|FRmeaning = Winged Seed of Life
+|ITname = Seme Vitale Alato
+|ITmeaning = Winged Vital Seed
+|JAname = 羽根を持つ命の種
+|JAromanised = Hane o motsu inochi no tane
+|JAmeaning = Winged Life Seed
+|KOname = 날개 달린 생명씨앗
+|KOromanised = Nalgae dallin saengmyeongssiat
+|KOmeaning = Winged Lifeseed
+|PTname =  Germe de Vida Alado
+|PTmeaning = Winged Life Germ
+|RUname = Крылатый живень
+|RUromanised = Krylatyj živen'
+|RUmeaning = Winged Lifeseed
+|TWname = 有翼生命籽
+|TWromanised = Yǒu yì shēngmìng zǐ
+|TWmeaning = Winged Lifeseed
+|ZHname = 生质飞籽
+|ZHromanised = Shēngzhì fēi zǐ
+|ZHmeaning = Life Substance Flying Seed<br><small>{{lang|zh-Hans|生质液 <i>shēngzhìyè</i>}} (life substance fluid) is [[Plasmium]] in Simplified Chinese.</small>
+|CODEname = LIFEBLOOD_FLY
+|CODEmeaning = 
+}}
+{{Refs|hr=ss}}
+
+{{SS Nav Enemies}}

@@ -1,0 +1,81 @@
+{{SS Infobox Enemy
+|drops = None
+|health = 1
+|damage_modifiers = {{SS Spaced Damage Modifiers|1|1|1|1|1}}
+|numbers_required = 25
+|singnum=1
+}}
+
+{{Quote
+|Hr = Journal
+|A rare, calmer bug of Bilewater, survives its hazardous surroundings by hiding as a plant.<hr/>
+This one is pretty, but not as soft as first it seems. The plant it mimics is flaked and coarse, and the bug's coat shares similar texture.
+}}
+
+<b>Mothleaf Lagnia</b> are [[Enemies (Silksong)|enemies]] in <i>[[Hollow Knight: Silksong]]</i>. They are floating bugs that disguise themselves as plants to avoid danger.<ref>Mothleaf Lagnia [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"A rare, calmer bug of Bilewater, survives its hazardous surroundings by hiding as a plant."</i></ref>
+
+== Behaviour and Tactics ==
+Mothleaf Lagnia are not hostile and float aimlessly but unpredictably up and down. 
+Some may be obstructed by plants that have a similar colour to them, but they rise up as soon as [[Hornet (Silksong)|Hornet]] approaches.
+
+Despite their non-aggression, they deal {{Damage|1}} on contact.
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* Air... so warm...
+* Water... so nourishing...
+* Land... so fertile...
+* Life... light... threads...
+}}
+
+== Location ==
+Mothleaf Lagnia can be found in the upper area of [[Bilewater]].
+
+{{Gallery
+|Image1 = Mapshot SS Mothleaf Lagnia 01.png!Locations in Bilewater
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Mothleaf Lagnia 02.png!In Bilewater
+|Image2 = Screenshot SS Mothleaf Lagnia 01.png!Disguised
+|Image3 = Screenshot SS Mothleaf Lagnia 03.png!Reacting to the Needolin
+}}
+
+==Trivia==
+* The plant that Mothleaf Lagnia mimic appears to be the white grass commonly found throughout [[Bilewater]]. When they die and hit the ground, their bodies shatter into the exact same particles as the plant does when broken.
+** Their [[Needolin]] dialogue, praising Bilewater's conditions, might also be a form of mimicry, as this same plant can be found in other polluted areas such as the [[Putrified Ducts]] and [[Sinner's Road]], having seemingly adapted to those environments.
+* Mothleaf Lagnia do not drop organs for the <i>[[Broodfeast]]</i> or <i>[[Runtfeast]]</i> [[wishes]].
+
+{{Localisation
+|DEname = Mottenblatt-Lagnia
+|DEmeaning = Mothleaf Lagnia
+|ESname = Polilla briznosa Lagnia
+|ESmeaning = Moth Leaf Lagnia
+|FRname = Chrysaline Lagnia
+|FRmeaning = Chrysaline Lagnia
+|ITname = Falefoglia Mimia
+|ITmeaning = Mothleaf Mimic<br><small><i>Falefoglia</i> is a portmanteau of <i>falena</i> (moth) and <i>foglia</i> (leaf), <i>Mimia</i> is from <i>mimic</i>.</small>
+|JAname = ラグニア
+|JAromanised = Ragunia
+|JAkatakana = foreignenemy
+|JAmeaning = Lagnia
+|KOname = 나방잎 라그니아
+|KOromanised = Nabangip rageunia
+|KOmeaning = Mothleaf Lagnia
+|PTname = Leviscama Mimea
+|PTmeaning = Light Leaf Mimic<br><small><i>Leviscama</i> is a portmanteau of <i>leve</i> (light) and <i>escama</i> (scale of a leaf), <i>Mimea</i> is from <i>mimetizar</i> (to mimic).</small>
+|RUname = Мотылист Лагния
+|RUromanised = Motylist Lagnija
+|RUmeaning = Mothleaf Lagnia
+|ZHname = 娥叶虫
+|ZHromanised = Éyè chóng
+|ZHmeaning = Moth Leaf Bug
+|TWname = 娥葉蟲
+|TWromanised = Éyè chóng
+|TWmeaning = same
+|CODEname=SWAMP_DRIFTER
+|CODEmeaning="Swamp" internally refers to Bilewater
+}}
+{{Refs|hr=ss}}
+{{SS Nav Enemies}}
