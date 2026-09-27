@@ -115,3 +115,18 @@ test("a real enemy's modifier at the level of what hits: Lace in the Cradle", ()
   assert.equal(c.tools[0].attacks[0].total, 9);
   assert.equal(c.foe.hp, 800);
 });
+
+test('the fight as a whole: loads first, then the fewest slashes with the Skills silk pays for', () => {
+  const foe = { id: 'z', hp: 300, mods: [1, 1, 1, 1, 1] };
+  // Needle 0 (5), Silkspear 15 for 4 silk, a spool of 9 to start; no Tools.
+  const r = E.compute({ needle: 0, skill: 'silkspear' }, { foe });
+  // s slashes pay floor((9+s)/4) casts: 30 give 39 silk, 9 casts, 150 + 135 = 285, short; 31 give
+  // 40 silk, 10 casts: 155 + 150 = 305.
+  assert.deepEqual(E.plan(r, 300), { slashes: 31, casts: 10, throws: [], dealt: 305 });
+  // With Straight Pins (12 × 5 = 60 at Kit 0, Pouch 0) spent first: 240 left → 24 slashes + 8 casts.
+  const r2 = E.compute({ needle: 0, skill: 'silkspear', tools: ['straight-pin'] }, { foe });
+  assert.deepEqual(E.plan(r2, 300), { slashes: 24, casts: 8, throws: [{ id: 'straight-pin', n: 12 }], dealt: 300 });
+  // A small enemy the pins alone kill: only the throws it takes.
+  assert.deepEqual(E.plan(r2, 23), { slashes: 0, casts: 0, throws: [{ id: 'straight-pin', n: 5 }], dealt: 25 });
+  assert.equal(E.plan(r2, null), null);
+});

@@ -204,6 +204,38 @@
       mods: { needle: nm.active, skill: sm.active }, foe: foe ? { id: foe.id, hp, black: !!opts.black, needle: eN, kit: eK } : null };
   }
 
-  SS.engine = { roundHalfEven, normalize, modsFor, hitsOf, usesToKill, compute };
+  /* The fight as a whole against hp: the fewest slashes, spending first every red Tool's full load
+     and every cast of the Silk Skill equipped that silk pays for. Silk: the spool full to start
+     (as leaving a bench) and one strand per slash that lands; no Bind (no damage taken). When the
+     loads alone kill it, only the throws needed, the Tools in their order. → { slashes, casts,
+     throws: [{ id, n }], dealt } or null (no health: nothing to kill). */
+  function plan(r, hp) {
+    if (!hp) return null;
+    const slash = r.needle.attacks[0].rest || r.needle.slash;
+    const skill = r.skills.find((x) => x.equipped);
+    const red = r.tools.filter((x) => x.ammo && x.attacks.length && !x.attacks[0].bonus);
+    const throws = [];
+    let dealt = 0;
+    for (const x of red) {
+      const per = x.attacks[0].rest || x.attacks[0].total;
+      const n = Math.min(x.ammo, Math.ceil((hp - dealt) / per));
+      if (n <= 0) break;
+      throws.push({ id: x.id, n });
+      dealt += n * per;
+    }
+    if (dealt >= hp) return { slashes: 0, casts: 0, throws, dealt };
+    for (let s = 0; s <= 100000; s++) {
+      const casts = skill && skill.rest ? Math.floor((r.silk.spool + s) / skill.silk) : 0;
+      // Only the casts that are needed: the last slash counts first, then Skills top it up.
+      const need = hp - dealt - s * slash;
+      const used = skill && need > 0 ? Math.min(casts, Math.ceil(need / skill.rest)) : 0;
+      if (dealt + s * slash + used * (skill ? skill.rest : 0) >= hp) {
+        return { slashes: s, casts: used, throws, dealt: dealt + s * slash + used * (skill ? skill.rest : 0) };
+      }
+    }
+    return null;
+  }
+
+  SS.engine = { roundHalfEven, normalize, modsFor, hitsOf, usesToKill, compute, plan };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.engine;
 })();

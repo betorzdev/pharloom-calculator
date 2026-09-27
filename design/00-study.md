@@ -772,8 +772,11 @@ what hits × Hornet's bracket), bonus damage takes neither, and each attack says
 it. Checked against the damage page's own two examples, which it reproduces: 9 for the first, and
 80 then 65 for the second, which showed that the Challenge only reaches an attack's first hit (the
 engine gave it to every hit until then). The Combat screen puts it on a page: the enemy picked,
-its card, what you do to it and what it does to you. Left: the fight over time (silk gained,
-Binds, Tool ammo spent, the phases' bars one by one), the per-boss pages and the gauntlets.
+its card, what you do to it and what it does to you, and the quickest way to kill it
+(`engine.plan`: the red loads first, then the fewest slashes with the Skill casts their silk pays
+for, from a full spool, no Bind; minimal by construction, tested). Left: Binds and the damage
+taken over a fight, the phases' bars one by one (only the Forebrothers carry them in the data),
+the per-boss pages (phase 8's) and the gauntlets (phase 7's).
 
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about

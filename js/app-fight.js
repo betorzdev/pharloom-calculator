@@ -82,6 +82,20 @@
       <p class="pg-note">${esc(t('ftYoursNote'))}</p></section>`;
   }
 
+  /* The fight as a whole (js/engine.js, plan): the red Tools' loads first, then the fewest slashes
+     with the Skill casts their silk pays for, the spool full to start and no Bind. */
+  function planHtml(r) {
+    const p = E.plan(r, r.foe && r.foe.hp);
+    if (!p) return '';
+    const parts = p.throws.map((x) => t('ftPlanThrows', { n: num(x.n), name: pick(D.TOOLS.find((y) => y.id === x.id).name) }));
+    if (p.slashes) parts.push(t(p.slashes === 1 ? 'ftPlanSlash' : 'ftPlanSlashes', { n: num(p.slashes) }));
+    const sk = r.skills.find((x) => x.equipped);
+    if (p.casts) parts.push(t('ftPlanCasts', { n: num(p.casts), name: pick(D.SKILLS.find((y) => y.id === sk.id).name) }));
+    const list = parts.length > 1 ? parts.slice(0, -1).join(', ') + ' ' + t('ftAnd') + ' ' + parts.at(-1) : parts[0];
+    return `<section class="ct-block ft-plan"><h3 class="ct-h">${esc(t('ftPlan'))}</h3>
+      <p class="ft-plan-line">${esc(list)}</p><p class="pg-note">${esc(t('ftPlanNote', { s: num(r.silk.spool) }))}</p></section>`;
+  }
+
   // A boss's attacks against you: how many of each take your masks (Barbed Bracelet: double damage).
   function theirs(f, r) {
     const a = EN.ATTACKS[f.page];
@@ -104,7 +118,7 @@
     const build = `<p class="saves-note">${esc(t('ftBuild', { crest: pick(D.CRESTS.find((c) => c.id === st.crest).name), needle: pick(D.NEEDLES[st.needle].name), kit: num(st.kit) }))}
       <a class="text-btn" href="${App.here(App.hashFor('tools'))}" data-act="view" data-value="tools">${esc(t('navTools'))}</a></p>`;
     sec.innerHTML = `<div class="ft">${brackets}${screenHead(esc(t('navFight')), build)}
-      <div class="ft-body">${picker(f)}${card(f, r)}<div class="ct-figs">${against(f, r)}${theirs(f, r)}</div></div></div>`;
+      <div class="ft-body">${picker(f)}${card(f, r)}<div class="ct-figs">${planHtml(r)}${against(f, r)}${theirs(f, r)}</div></div></div>`;
   };
 
   Object.assign(actions, {

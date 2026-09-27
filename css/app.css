@@ -1209,3 +1209,4 @@ kbd {
   .ft-body { grid-template-columns: minmax(0, 1fr); }
   .ft-foes { max-height: 40vh; }
 }
+.ft-plan-line { margin: 0; font-size: var(--fs-lg); color: var(--ink-strong); text-wrap: balance; }
