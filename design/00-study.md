@@ -700,6 +700,19 @@ common enemies' contact damage (the wiki has it in prose only), and the Journal'
 entries with no health row (Wisp, Muckmaggot, Sandcarver, Winged Lifeseed, Shadow Creeper,
 Void Tendrils, Wingmould).
 
+**Phase 2 has started** (the same day), with the author's saves (Steam Cloud brought them
+to `~/.config/unity3d/Team Cherry/Hollow Knight Silksong/`): 92 of them, `user#.dat`, the
+per-patch copies and every restore point (a `restoreData#.dat` wraps a whole `user#.dat` in
+base64, one level down as `saveGameData`, labelled with the event that wrote it), from 0% to
+100%, patches 1.0.28891 to 1.0.30000, one Steel Soul game among them. The 100% is solved:
+`js/completion.js` matches the game's own figure in **all 92** (`npm run check-pack`). The
+game counts whole masks and spools (`maxHealthBase − 5`, `silkMax − 9`), not loose pieces as the
+trackers do, and the Silk Skills by their `has*` flags. `js/collectibles.js` is generated from
+the completionist's dictionary (`npm run collectibles`, pinned) and joins the save's names to the
+site's ids; its Mask Shards and Spool Fragments, found one by one, match the game's counters in
+all 92 too. `savefile.game()` gives the Act (`act2Started`, `blackThreadWorld`) and the bench.
+Left: the slot's snapshot, the Saves and Your game screens, `progress.js` and `changes.js`.
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).

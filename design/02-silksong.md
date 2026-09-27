@@ -163,10 +163,16 @@ Done with this document (the values are one-to-one with a sprite):
 2. **The accent: bone.** `#F1EBDC`, the Crest screen's cream, with a line `#A69D93` (4.5:1 on
    `--card-on`) and the glow as the "on" state. Bone is also the figures' ink, so what's
    interactive is told by its shape (the four kinds of button) and its glow, as in the game.
-3. **The section tints**: Bellhart's `#FCE5B9` for the Crest screen, Sands of Karak's
-   `#F1A1B4` for combat, Mount Fay's `#BAC4D2` for the Journal, Moss Grotto's `#A9CB99` for
-   Your game, Progress and the map. On `--card-on`, the lightest raised surface: 9.7, 6.0,
-   6.8 and 6.6:1.
+3. **The frame is white; the tint is the title's.** Every screen is framed in the pause menu's
+   white filigree (`--filigree` `#F6F6F6`): the corner brackets, the rule under the title and
+   the line under the screen bar, the same for all, with the Crest screen's warm bone as their
+   light. A first version lit them in each section's hue at a forced chroma (oklch 0.8 / 0.1):
+   on the red it turned Mount Fay's grey slate into an electric blue and Moss Grotto into a
+   cold mint, both at odds with the atmosphere; and the game frames with white, never a hue.
+   The section tints colour only the titles: Bellhart's `#FCE5B9` for the Crest screen, Sands
+   of Karak's `#F1A1B4` for combat, Mount Fay's `#BAC4D2` for the Journal, Moss Grotto's
+   `#A9CB99` for Your game, Progress and the map. On `--card-on`, the lightest raised surface:
+   9.7, 6.0, 6.8 and 6.6:1.
 
 Every ink step was re-checked on the new surfaces: the lowest is `--muted` at 5.05:1 on
 `--card-on` (`--medal-off-ink` 4.93:1), all above AA.

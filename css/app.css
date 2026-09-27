@@ -74,33 +74,28 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
 .bk.br { bottom: -1px; right: -1px; border-bottom: 2px solid var(--bracket); border-right: 2px solid var(--bracket); }
 
 /* ── Tinted sections ─────────────────────────────────────────────────────
-   Each screen carries the pale tint of its area on the game's map (tokens.css). The title goes
-   in the tint; the corner brackets, the rule under the title and the lights in its lamp. */
+   Each screen is a pause-menu screen: its frame is the game's white filigree, the same for all
+   (the corner brackets, the rule under the title, the line under the screen bar), and its light
+   the warm bone of the Crest screen's spotlight. What tells the sections apart is the title,
+   in its area's tint on the game's map (tokens.css): the game selects and frames with white,
+   never with a hue (design/02-silksong.md §3 and §5). */
 .screen { --tint: var(--tint-sheet); }
 .screen[data-view="fight"] { --tint: var(--tint-combat); }
 .screen[data-view="journal"] { --tint: var(--tint-journal); }
 .screen:is([data-view="home"], [data-view="progress"], [data-view="map"]) { --tint: var(--tint-progress); }
-/* The page's chrome takes the tint of the screen in view. */
+/* A title outside the screens takes the tint of the screen in view. */
 .page { --tint: var(--tint-sheet); }
 .page:has(.screen[data-view="fight"]:not([hidden])) { --tint: var(--tint-combat); }
 .page:has(.screen[data-view="journal"]:not([hidden])) { --tint: var(--tint-journal); }
 .page:has(.screen:is([data-view="home"], [data-view="progress"], [data-view="map"]):not([hidden])) { --tint: var(--tint-progress); }
-/* Declared again on every element that sets --tint, because a custom property is resolved where
-   it's declared. Without relative colour, the lamp is the tint itself. */
 .page, .screen {
-  --lamp: var(--tint);
-  --lamp-light: var(--tint);
+  --lamp: var(--filigree);
+  --lamp-light: var(--spotlight);
   --bracket: color-mix(in oklab, var(--lamp) var(--lamp-line), transparent);
   --scene-glow: color-mix(in oklab, var(--lamp-light) var(--lamp-glow), transparent);
   --scene-glow-low: color-mix(in oklab, var(--lamp-light) var(--lamp-glow-low), transparent);
   --halo-plate: radial-gradient(closest-side, color-mix(in oklab, var(--lamp-light) var(--lamp-plate), transparent),
     color-mix(in oklab, var(--lamp-light) var(--lamp-plate-edge), transparent) 58%, transparent);
-}
-@supports (color: oklch(from red l c h)) {
-  .page, .screen {
-    --lamp: oklch(from var(--tint) var(--lamp-l) var(--lamp-c) h);
-    --lamp-light: oklch(from var(--tint) var(--lamp-light-c) h);
-  }
 }
 .sec-title {
   font-family: var(--font-display); text-transform: uppercase; letter-spacing: var(--track-caps);

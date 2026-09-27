@@ -1,7 +1,7 @@
 /* js/savefile.js — a real game, imported: the game's save file turned into what the site keeps.
    Pure: bytes in, the save's JSON out, no DOM and no language. The interface picks the error's
-   words. The mapping from playerData to a slot's snapshot (toSnapshot) arrives in phase 2,
-   with js/completion.js and js/progress.js; for now read() and meta().
+   words. read() opens the file, meta() says what the game's profile screen says, and game()
+   sums up the save in the site's own ids (js/collectibles.js has the save's names).
 
    The file. Silksong saves each profile as user1.dat … user4.dat, exactly as Hollow Knight
    does: a .NET BinaryFormatter header (22 bytes), the string's length (7 bits per byte), the
@@ -11,7 +11,8 @@
    silksong-save-decrypt; see design/00-study.md §4.3). AES is written here, not taken from
    crypto.subtle: that one doesn't do ECB and isn't there over file://. A save that is already
    JSON (a Switch dump, or one decrypted with an editor) is read as it is. Beside user#.dat the
-   game keeps user#.dat.bak1, restoreData#.dat autosaves and shared.dat; all four read the same.
+   game keeps user#.dat.bak1, user#_<patch>.dat (the save as it was before a patch), shared.dat
+   and, in Restore_Points#/, restoreData#.dat: a restore point wraps a whole user#.dat (below).
 
    The JSON is { playerData, sceneData }. playerData's scalars (playTime, completionPercentage,
    geo —the rosaries—, ShellShards, permadeathMode, silk, maxHealth, silkMax, nailUpgrades) sit
@@ -19,12 +20,12 @@
    Collectables, Relics, MateriumCollected, QuestCompletionData, MementosDeposited); the Journal
    is EnemyJournalKillData.list[{ Name, Record: { Kills } }]; scenesVisited lists scene names;
    sceneData.persistentBools / persistentInts / geoRocks .serializedList[{ SceneName, ID, Value }]
-   hold the rooms' state. The field names come from the trackers' source (th3r3dfox's
-   save-data.ts, Br3zzly's saveValidation.ts), not from a real save yet: check-pack (phase 2)
-   confirms them against the game's own figures. */
+   hold the rooms' state. All of it checked on 92 real saves (the author's, 0% to 100%, patches
+   1.0.28891 to 1.0.30000, Steel Soul among them): npm run check-pack. */
 (() => {
   'use strict';
   const SS = globalThis.SS || (globalThis.SS = {});
+  const CO = SS.collectibles || require('./collectibles.js');
 
   const KEY = 'UKu52ePUBwetZ9wNX88o54dnfKRu0T1l';
   const HEADER = [0, 1, 0, 0, 0, 255, 255, 255, 255, 1, 0, 0, 0, 0, 0, 0, 0, 6, 1, 0, 0, 0];
@@ -131,17 +132,35 @@
   /* The file → { ok: true, pd, sd } or { ok: false, error }, error being 'unreadable' (not a save
      from the game: it can't be decrypted or isn't JSON) or 'notSave' (JSON, but without a
      playerData that looks like Hornet's: silk is the one number every Silksong save carries). */
-  function read(bytes) {
+  function read(bytes, depth = 0) {
     const text = unwrap(bytes);
     let json = null;
     try { json = text && JSON.parse(text); } catch (e) { json = null; }
     if (!json || typeof json !== 'object') return { ok: false, error: 'unreadable' };
+    /* A restore point (restoreData#.dat) wraps a whole user#.dat: { data, date, version, number,
+       identifier }, data being that file's bytes in base64 and identifier the event that wrote
+       it (GAINED_MELODY_CONDUCTOR…). Seen on real saves, 27-Sep-2026. */
+    if (typeof json.data === 'string' && !json.playerData && depth === 0) {
+      const inner = base64(json.data);
+      if (!inner) return { ok: false, error: 'unreadable' };
+      const r = read(inner, 1);
+      return r.ok ? { ...r, restore: restoreOf(json) } : r;
+    }
+    // Inside a restore point the save comes one level down, as { saveGameData: { playerData, sceneData } }.
+    if (json.saveGameData && typeof json.saveGameData === 'object' && !json.playerData) json = json.saveGameData;
     const pd = json.playerData;
     if (!pd || typeof pd !== 'object' || typeof pd.silk !== 'number') return { ok: false, error: 'notSave' };
     // The rooms' state (what's been picked up, broken, opened): the collectibles are read from it.
     const sd = json.sceneData && typeof json.sceneData === 'object' ? json.sceneData : null;
     return { ok: true, pd, sd };
   }
+
+  // A restore point's label: its number, the day it was written (yyyy/mm/dd) and the event.
+  const restoreOf = (j) => ({
+    number: Number.isInteger(j.number) ? j.number : null,
+    date: typeof j.date === 'string' && /^\d{4}\/\d{2}\/\d{2}$/.test(j.date) ? j.date : '',
+    event: typeof j.identifier === 'string' && /^[A-Z0-9_]{1,64}$/.test(j.identifier) ? j.identifier : '',
+  });
 
   const int = (v) => (typeof v === 'number' && Number.isFinite(v) ? Math.round(v) : 0);
   /* What the game's own profile screen shows of a save: the time played (playTime, in seconds),
@@ -157,6 +176,69 @@
     steel: int(pd.permadeathMode) > 0,
   });
 
-  SS.savefile = { decrypt, unwrap, read, meta };
+  /* ── The save in the site's ids ────────────────────────────────────────── */
+  // The flags the game keeps per Silk Skill and per ability (playerData.has*), by the site's ids
+  // (js/data.js). The Silk Skills are counted by these and not by the Tools list, which a
+  // restore point can write a moment before the Skill is in it.
+  const SKILL_PD = { silkspear: 'hasNeedleThrow', 'thread-storm': 'hasThreadSphere', 'cross-stitch': 'hasParry',
+    sharpdart: 'hasSilkCharge', 'rune-rage': 'hasSilkBomb', 'pale-nails': 'hasSilkBossNeedle' };
+  const ART_PD = { 'needle-strike': 'hasChargeSlash', 'swift-step': 'hasDash', 'cling-grip': 'hasWalljump',
+    clawline: 'hasHarpoonDash', 'silk-soar': 'hasSuperJump', sylphsong: 'HasBoundCrestUpgrader', needolin: 'hasNeedolin',
+    'drifters-cloak': 'hasBrolly', 'faydown-cloak': 'hasDoubleJump' };
+
+  const list = (v) => (v && Array.isArray(v.savedData) ? v.savedData : []);
+  const named = (v) => { const m = new Map(); for (const e of list(v)) if (e && !m.has(e.Name)) m.set(e.Name, e.Data || {}); return m; };
+
+  /* playerData and sceneData → what the site keeps of a game, in its own ids:
+       tools, crests      owned (IsUnlocked), by js/collectibles.js's names
+       skills, arts       the has* flags above
+       masks, spools      whole ones gained (maxHealthBase − 5, silkMax − 9), as the game counts them
+       hearts             Silk Hearts (silkRegenMax); needle, kit, pouch: the three upgrade ladders
+       everbloom          the White Flower in Collectables
+       pieces             the indices of js/collectibles.js's PIECES found
+       journal            { entry id: kills } for every entry the save lists
+       act                1, 2 from act2Started, 3 once the world is black-threaded (blackThreadWorld)
+       bench, area        where Hornet rests (respawnScene) and the area she's in (currentArea) */
+  function game(pd, sd = null) {
+    const tools = named(pd.Tools), crests = named(pd.ToolEquips), quests = named(pd.QuestCompletionData);
+    const bools = new Map();
+    for (const e of (sd && sd.persistentBools && Array.isArray(sd.persistentBools.serializedList) ? sd.persistentBools.serializedList : [])) {
+      const k = e.SceneName + '\u0000' + e.ID;
+      if (!bools.has(k)) bools.set(k, e.Value);
+    }
+    const has = (c) => {
+      switch (c[0]) {
+        case 'flag': return !!pd[c[1]];
+        case 'min': return (Number(pd[c[1]]) || 0) >= c[2];
+        case 'quest': return !!(quests.get(c[1]) || {}).IsCompleted;
+        case 'bool': return !!bools.get(c[1] + '\u0000' + c[2]);
+        case 'any': return c.slice(1).some(has);
+        default: return false;
+      }
+    };
+    const whole = (v, base) => Math.max(0, int(v) - base);
+    const journal = {};
+    const kills = new Map((pd.EnemyJournalKillData && Array.isArray(pd.EnemyJournalKillData.list) ? pd.EnemyJournalKillData.list : [])
+      .map((e) => [e.Name, e.Record ? int(e.Record.Kills) : 0]));
+    for (const [id, name] of Object.entries(CO.JOURNAL)) if (kills.has(name)) journal[id] = Math.max(0, kills.get(name));
+    const flower = (named(pd.Collectables).get('White Flower') || {}).Amount;
+    return {
+      tools: Object.keys(CO.TOOLS).filter((id) => CO.TOOLS[id].some((n) => (tools.get(n) || {}).IsUnlocked)),
+      crests: Object.keys(CO.CRESTS).filter((id) => (crests.get(CO.CRESTS[id]) || {}).IsUnlocked),
+      skills: Object.keys(SKILL_PD).filter((id) => pd[SKILL_PD[id]] === true),
+      arts: Object.keys(ART_PD).filter((id) => pd[ART_PD[id]] === true),
+      masks: whole(pd.maxHealthBase, 5), spools: whole(pd.silkMax, 9), hearts: whole(pd.silkRegenMax, 0),
+      needle: Math.min(4, whole(pd.nailUpgrades, 0)), kit: Math.min(4, whole(pd.ToolKitUpgrades, 0)),
+      pouch: Math.min(4, whole(pd.ToolPouchUpgrades, 0)),
+      everbloom: int(flower) > 0,
+      pieces: CO.PIECES.map((p, i) => (has(p[2]) ? i : -1)).filter((i) => i >= 0),
+      journal,
+      act: pd.blackThreadWorld === true ? 3 : pd.act2Started === true ? 2 : 1,
+      bench: typeof pd.respawnScene === 'string' && /^[\w ()-]{1,64}$/.test(pd.respawnScene) ? pd.respawnScene : '',
+      area: typeof pd.currentArea === 'string' && /^[A-Z_]{1,32}$/.test(pd.currentArea) ? pd.currentArea : '',
+    };
+  }
+
+  SS.savefile = { SKILL_PD, ART_PD, decrypt, unwrap, read, meta, game };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.savefile;
 })();

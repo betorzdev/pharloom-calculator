@@ -46,3 +46,15 @@ test("the profile's figures: time, completion, rosaries, shards, Steel Soul and 
   assert.deepEqual(m, { version: '1.0.30000', time: 3661.5, completion: 93, rosaries: 2100, shards: 350, steel: true });
   assert.deepEqual(F.meta({}), { version: '', time: 0, completion: 0, rosaries: 0, shards: 0, steel: false });
 });
+
+test('a restore point wraps a whole .dat, with the save one level down, and says when and why', () => {
+  const inner = datOf({ saveGameData: { playerData: { ...BASE, geo: 77 }, sceneData: { persistentBools: { serializedList: [] } } } });
+  const wrap = datOf({ data: Buffer.from(inner).toString('base64'), date: '2025/10/18', version: '1.0.28891',
+    number: 16, identifier: 'GAINED_MELODY_CONDUCTOR' });
+  const r = F.read(wrap);
+  assert.equal(r.ok, true);
+  assert.equal(r.pd.geo, 77);
+  assert.deepEqual(r.sd, { persistentBools: { serializedList: [] } });
+  assert.deepEqual(r.restore, { number: 16, date: '2025/10/18', event: 'GAINED_MELODY_CONDUCTOR' });
+  assert.equal(F.read(datOf({ data: 'not base64!' })).ok, false);
+});
