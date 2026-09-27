@@ -54,6 +54,24 @@ and the game's own text of what you point at or tap. What you don't have yet is 
 silhouette; in Free mode everything is there. On a phone the description sits on the bottom
 edge while you go through the grids.
 
+### Crest
+
+The game's Crest screen («Blasón»): the Crest with its text and its slots, each in its colour,
+filled with the Tools and the Silk Skill (a dashed slot is one a Memory Locket opens; the
+Vesticrest adds a yellow and a blue one); what makes the build (the Crest, the Hunter's
+evolution, the Needle, Crafting Kit and Tool Pouch levels, the Tools and the Skill); and the
+figures: the Needle's slash with the modifiers that apply now, the Wanderer's critical hit, the
+Needle Strike, each Tool equipped that deals damage (per hit, uses at the Pouch's level, a full
+load, the shell shards to refill it), the six Silk Skills, masks, silk and the Bind. "Right now"
+switches what depends on the moment: the Hunter's focus, the Beast's fury, Flintslate's buff, the
+hit after a Challenge.
+
+The damage is the wiki's model: the weapon's damage at its level times (1 + the player's
+modifiers, which add) rounded half to even, per hit; Tools scale with the Crafting Kit, the rest
+with the Needle; no player modifier reaches a Tool. In a save, the build is what Hornet wears in
+the game, at its levels, and it's read, not changed (the moment can still be switched): to try
+builds, Free mode, where the build is kept in this browser.
+
 ### Progress
 
 What's missing for 100%, in the wiki's ten categories: the Tools (with their slot colour),

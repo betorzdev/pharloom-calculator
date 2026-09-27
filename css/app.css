@@ -1040,3 +1040,79 @@ kbd {
   .inv-pair { grid-template-columns: minmax(0, 1fr); }
   .inv-grid { grid-template-columns: repeat(auto-fill, minmax(48px, 1fr)); }
 }
+
+/* ── The Crest screen (js/app-tools.js) ─────────────────────────────────────
+   Three columns: the Crest with its slots (each slot the game's colour, data), what makes the
+   build, and the figures. A slot filled holds its Tool's icon; a locked one is dashed. What you
+   pick has the pause menu's white frame, as everywhere. Figures in --font-num. */
+.ct-body { display: grid; grid-template-columns: 240px minmax(0, 1fr) 320px; gap: var(--sp-8); align-items: start; margin-top: var(--sp-6); }
+.ct-side { display: grid; gap: var(--sp-6); justify-items: center; text-align: center; }
+.ct-crest { display: grid; justify-items: center; gap: var(--sp-2); }
+.ct-crest-img { width: 128px; height: 128px; object-fit: contain; filter: drop-shadow(0 0 16px color-mix(in oklab, var(--spotlight) 22%, transparent)); }
+.ct-crest-name { margin: 0; font-family: var(--font-display); font-size: var(--fs-xl); font-weight: 600; letter-spacing: var(--track-title); color: var(--ink-strong); }
+.ct-stage { font-family: var(--font-body); font-size: var(--fs-sm); font-weight: 400; letter-spacing: 0; color: var(--ink-2); }
+.ct-crest-desc { margin: 0; font-size: var(--fs-sm); color: var(--ink-2); text-wrap: pretty; }
+.ct-slots { display: grid; gap: var(--sp-2); width: 100%; }
+.ct-row { display: grid; grid-template-columns: 1fr; gap: var(--sp-1); justify-items: center; }
+.ct-row-k { font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
+/* The slots are diamonds, squares turned 45°: they reach ~21% past their box, so the row gives them
+   that room around (and between) them. */
+.ct-row-v { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-6); padding: var(--sp-3) var(--sp-2); }
+.ct-slot {
+  display: grid; place-items: center; width: 48px; height: 48px; padding: var(--sp-1); transform: rotate(45deg);
+  border: 2px solid var(--slot-locked); background: var(--well);
+}
+.ct-slot img { width: 130%; height: 130%; object-fit: contain; transform: rotate(-45deg); }
+.ct-slot.is-red { border-color: var(--slot-red); }
+.ct-slot.is-blue { border-color: var(--slot-blue); }
+.ct-slot.is-yellow { border-color: var(--slot-yellow); }
+.ct-slot.is-skill { border-color: var(--slot-skill); }
+.ct-slot.is-locked { border-style: dashed; opacity: 0.55; }
+.ct-over { font-size: var(--fs-xs); color: var(--cond); }
+.ct-controls { display: grid; gap: var(--sp-4); min-width: 0; }
+.ct-field { display: grid; gap: var(--sp-2); }
+.ct-k { font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
+.ct-crests, .ct-tools { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--sp-1); }
+.ct-tools + .ct-tools { margin-top: var(--sp-2); }
+.ct-pick, .ct-tool {
+  display: grid; place-items: center; width: 52px; height: 52px; padding: var(--sp-1); border: 1px solid transparent; background: none; cursor: pointer;
+  transition: border-color var(--dur) var(--ease), background-color var(--dur) var(--ease);
+}
+.ct-tool { width: 44px; height: 44px; }
+.ct-pick img, .ct-tool img { max-width: 100%; max-height: 100%; object-fit: contain; opacity: 0.55; filter: grayscale(0.6); transition: opacity var(--dur) var(--ease), filter var(--dur) var(--ease); }
+.ct-pick:is(:hover, :focus-visible):not(:disabled), .ct-tool:is(:hover, :focus-visible) { border-color: color-mix(in oklab, var(--filigree) 40%, transparent); background: var(--veil); outline: none; }
+.ct-pick:is(:hover, :focus-visible) img, .ct-tool:is(:hover, :focus-visible) img { opacity: 0.9; filter: none; }
+.ct-pick.is-on, .ct-tool.is-on { border-color: var(--filigree); background: var(--veil); }
+.ct-pick.is-on img, .ct-tool.is-on img { opacity: 1; filter: drop-shadow(0 0 6px color-mix(in oklab, var(--spotlight) 45%, transparent)); }
+.ct-pick:disabled { cursor: default; }
+.ct-tool.is-red { box-shadow: inset 0 -2px 0 color-mix(in oklab, var(--slot-red) 70%, transparent); }
+.ct-tool.is-blue { box-shadow: inset 0 -2px 0 color-mix(in oklab, var(--slot-blue) 70%, transparent); }
+.ct-tool.is-yellow { box-shadow: inset 0 -2px 0 color-mix(in oklab, var(--slot-yellow) 70%, transparent); }
+.ct-checks { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-4); }
+.ct-figs { display: grid; gap: var(--sp-6); position: sticky; top: calc(var(--sticky-h) + var(--sp-4)); }
+.ct-block { display: grid; gap: var(--sp-2); }
+.ct-h {
+  margin: 0; padding-bottom: var(--sp-1); border-bottom: 1px solid var(--line);
+  font-family: var(--font-display); font-size: var(--fs-sm); font-weight: 600; letter-spacing: var(--track-title); color: var(--filigree);
+}
+.ct-fig { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; column-gap: var(--sp-3); }
+.ct-fig-k { font-size: var(--fs-sm); color: var(--ink); }
+.ct-fig-v b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-xl); color: var(--ink-strong); }
+.ct-fig-sub { grid-column: 1 / -1; font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-xs); color: var(--muted); }
+.ct-mods { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--sp-1) var(--sp-3); font-size: var(--fs-xs); color: var(--ink-2); }
+.ct-mods li::before { content: '+ '; color: var(--muted); }
+.ct-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-1); }
+.ct-list li { display: grid; grid-template-columns: 28px minmax(0, 1fr) auto; grid-template-areas: "i n v" "i s v"; align-items: center; column-gap: var(--sp-2); color: var(--ink-2); }
+.ct-list li.is-on { color: var(--ink-strong); }
+.ct-list img { grid-area: i; width: 28px; height: 28px; object-fit: contain; }
+.ct-list-name { grid-area: n; font-size: var(--fs-sm); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ct-list-sub { grid-area: s; font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-2xs); color: var(--muted); }
+.ct-list b { grid-area: v; font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-md); color: var(--ink-strong); }
+.ct-list li:not(.is-on) b { color: var(--ink-2); }
+@media (max-width: 1100px) {
+  .ct-body { grid-template-columns: 200px minmax(0, 1fr); }
+  .ct-figs { grid-column: 1 / -1; position: static; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); }
+}
+@media (max-width: 640px) {
+  .ct-body { grid-template-columns: minmax(0, 1fr); }
+}

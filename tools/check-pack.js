@@ -9,6 +9,8 @@
                  Mask Shards (4 per whole mask plus heartPieces), the Spool Fragments (2 per
                  whole spool plus silkSpoolParts), the Needle, Tool Pouch and Crafting Kit
                  upgrades and the Silk Hearts (must match: exit code 1 if not)
+     build       what Hornet wears (savefile's buildOf) fits her Crest's slots with the
+                 Vesticrest's, as js/engine.js counts them (must: exit code 1 if not)
    On Linux the game's folder is ~/.config/unity3d/Team Cherry/Hollow Knight Silksong/<id>/.
    The saves stay where they are: they're somebody's games and don't go in the repo. */
 'use strict';
@@ -17,6 +19,7 @@ const path = require('path');
 const CO = require('../js/collectibles.js');
 const F = require('../js/savefile.js');
 const CP = require('../js/completion.js');
+const E = require('../js/engine.js');
 
 const root = process.argv[2];
 if (!root || !fs.existsSync(root)) {
@@ -56,6 +59,10 @@ for (const file of files) {
   const game = Math.round(Number(r.pd.completionPercentage) || 0);
   const ok = c.total === game;
   const pd = pieceDiffs(r.pd, g);
+  if (g.build.crest) {
+    const sl = E.compute(g.build).slots;
+    for (const c of ['red', 'blue', 'yellow']) if (sl[c].over) pd.push(`build ${c} +${sl[c].over}`);
+  }
   if (!ok) bad++;
   if (pd.length) badP++;
   const parts = ok ? '' : '  ' + c.categories.map((k) => `${k.id} ${k.got}/${k.max}`).join(', ');

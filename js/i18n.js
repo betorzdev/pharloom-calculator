@@ -156,6 +156,36 @@
     chMore:         { es: 'y {n} más', en: 'and {n} more' },
     chToast:        { es: 'Tu partida: {list}', en: 'Your game: {list}' },
 
+    /* The Crest screen (js/app-tools.js, js/engine.js) */
+    ctLocked:       { es: 'Lo que llevas en la Partida {n}, tal como lo guardó el juego: aquí se ve, no se cambia. Para probar builds:', en: 'What you wear in Save {n}, as the game saved it: it shows here, it isn\'t changed. To try builds:' },
+    ct_red:         { es: 'Rojas', en: 'Red' },
+    ct_blue:        { es: 'Azules', en: 'Blue' },
+    ct_yellow:      { es: 'Amarillas', en: 'Yellow' },
+    ctOver:         { es: '{n} de más', en: '{n} too many' },
+    ctFull:         { es: 'No quedan huecos para herramientas {c}', en: 'No {c} slots left' },
+    ctStage:        { es: 'evolución {n}', en: 'evolution {n}' },
+    ctEvolution:    { es: 'Evolución', en: 'Evolution' },
+    ctSituation:    { es: 'En este momento', en: 'Right now' },
+    ctFocus:        { es: 'Concentración de la Cazadora', en: 'Hunter\'s focus' },
+    ctFocusFull:    { es: 'Concentración plena', en: 'Full focus' },
+    ctFury:         { es: 'Furia de la Bestia', en: 'Beast\'s fury' },
+    ctFlint:        { es: 'Pedernal activo', en: 'Flintslate active' },
+    ctChallenge:    { es: 'Tras desafiar (primer golpe)', en: 'After a Challenge (first hit)' },
+    ctNeedle:       { es: 'La aguja', en: 'The Needle' },
+    ctSlash:        { es: 'Tajo', en: 'Slash' },
+    ctBracket:      { es: '{base} × {x}', en: '{base} × {x}' },
+    ctCrit:         { es: 'Golpe crítico', en: 'Critical hit' },
+    ctCritChance:   { es: '{p} % de los golpes', en: '{p}% of hits' },
+    ctStrike:       { es: 'Golpe concentrado', en: 'Needle Strike' },   // INV_NAME_SKILL_CHARGESLASH
+    ctToolsDmg:     { es: 'Herramientas que dañan', en: 'Tools that deal damage' },
+    ctAmmo:         { es: '{n} usos', en: '{n} uses' },
+    ctLoad:         { es: '{n} por carga', en: '{n} a load' },
+    ctRefill:       { es: '{n} fragmentos de coraza', en: '{n} shell shards' },   // as INV_NAME_SHARD says them
+    ctBody:         { es: 'Hornet', en: 'Hornet' },
+    ctCasts:        { es: '{n} habilidades de {c} de seda', en: '{n} Skills of {c} silk' },
+    ctBind:         { es: 'Enlazar', en: 'Bind' },   // BUTTON_CAST
+    ctBindSub:      { es: 'cura {parts} máscaras en {s} s', en: 'heals {parts} masks in {s} s' },
+
     /* The Inventory (js/app-game.js) */
     invFree:        { es: 'Modo libre: todo desbloqueado. Elige una partida para ver lo que llevas.', en: 'Free mode: everything unlocked. Pick a save to see what you carry.' },
     invItems:       { es: 'Objetos', en: 'Items' },

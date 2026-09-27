@@ -160,8 +160,9 @@ Mirrors, Dead Bug's Purse → Shell Satchel in Steel Soul). Three colours:
 
 - **Red (20)**: active, thrown or placed, with **ammo** (`max`, five values, one per Tool Pouch
   level: Straight Pin 12/15/18/21/24) and a **refill cost in Shell Shards** at a bench, 40 ÷ base
-  capacity per unit, so any red Tool costs 80 shards from empty (the shard cap is 400, +100 per
-  Pouch level). Damage per Crafting Kit level: Straight Pin and Longpin 5/8/11/14/17, Pimpillo
+  capacity per unit, so any red Tool costs 40 shards from empty at the base capacity and about 80
+  with the Pouch at its top, as the capacity doubles (the shard cap is 400, +100 per Pouch
+  level). An earlier version of this study said 80 for both: `js/engine.js` and its test settle it. Damage per Crafting Kit level: Straight Pin and Longpin 5/8/11/14/17, Pimpillo
   15/24/33/42/51, Silkshot 10/16/22/28/34 (three mutually exclusive variants), Cogwork Wheel
   2 → 7 × 7 hits, Delver's Drill 4 → 14 × 6, Snare Setter 25/40/55/70/85, Voltvessels' spear
   17 + 10 × 6 at the top, Rosary Cannon spends rosaries, Flintslate ×1.5 Needle damage for 8 s
@@ -738,6 +739,18 @@ alone (the restore points go to `Restore_Points#/` and aren't followed), which s
 bench its unit, as in Hollow Knight: whether Silksong writes `user#.dat` only on resting and
 quitting (§4.3's open question) is still to see by hand. **Phase 2 is done** but for that: trying
 the live link in Chrome with the game running, which a headless browser can't.
+
+**Phase 3 has started** (the same day). `js/engine.js` computes a build's figures on the model of
+§2.1 (the Needle, the Needle Strike, the six Silk Skills, the Tools with ammo, load and refill,
+silk, masks, the Bind, the slots with the Vesticrest's), tested against the wiki's own examples
+and the study's §2.5 table, which it matches level by level. The save gives the build worn
+(`CurrentCrestID`, each Crest's slots in `ToolEquips`, `ExtraToolEquips`), and on the 89 real
+saves that have one it always fits its Crest (`check-pack` checks it). The Crest screen shows it:
+in a save, read-only as on the Hollow Knight site (decided with the author), the moment
+switchable; in Free mode, every choice at hand, kept in `pharloom.build`. Found on the way: §2.4
+said a red Tool costs 80 shards from empty at any Pouch level; it's 40 at the base capacity and
+80 at the top. Left in phase 3: the Crests' own attacks (the Witch's and Architect's split hits),
+the Effects plates for the passive Tools, the URL codec and Share.
 
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about

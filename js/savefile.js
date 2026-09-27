@@ -189,6 +189,34 @@
     // Found on the restore points GAINED_MELODY_BEAST and GAINED_MELODY_DEEP (27-Sep-2026).
     'beastling-call': 'UnlockedFastTravelTeleport', 'elegy-of-the-deep': 'hasNeedolinMemoryPowerup' };
 
+  /* The Silk Skills by their names in the save's Tools and Crest slots (the completionist's
+     abilities: "Thread Sphere" is Thread Storm), for the build equipped. */
+  const SKILL_SAVE = { 'Silk Spear': 'silkspear', 'Thread Sphere': 'thread-storm', Parry: 'cross-stitch',
+    'Silk Charge': 'sharpdart', 'Silk Bomb': 'rune-rage', 'Silk Boss Needle': 'pale-nails' };
+  const TOOL_OF = new Map();
+  for (const [id, names] of Object.entries(CO.TOOLS)) for (const n of names) TOOL_OF.set(n, id);
+  const CREST_OF = new Map(Object.entries(CO.CRESTS).map(([id, n]) => [n, id]));
+
+  /* What Hornet wears now: playerData.CurrentCrestID ("Hunter_v2": the Hunter at its second
+     stage), that Crest's slots in ToolEquips (each { EquippedTool, IsUnlocked }; the Tools and
+     the Silk Skill in them) and the Vesticrest's (ExtraToolEquips). Checked on the author's
+     saves, 27-Sep-2026. */
+  function buildOf(pd) {
+    const cur = typeof pd.CurrentCrestID === 'string' ? pd.CurrentCrestID : '';
+    const m = /^(.*?)(?:_v(\d))?$/.exec(cur);
+    const crest = CREST_OF.get(m[1]) || null;
+    if (!crest) return null;
+    const slots = (list(pd.ToolEquips).find((e) => e.Name === cur) || { Data: {} }).Data.Slots;
+    const worn = [...(Array.isArray(slots) ? slots : []), ...list(pd.ExtraToolEquips).map((e) => e.Data || {})]
+      .map((x) => (x && typeof x.EquippedTool === 'string' ? x.EquippedTool : '')).filter(Boolean);
+    return {
+      crest, hunterStage: crest === 'hunter' ? Number(m[2]) || 1 : 1,
+      tools: [...new Set(worn.map((n) => TOOL_OF.get(n)).filter(Boolean))],
+      skill: worn.map((n) => SKILL_SAVE[n]).find(Boolean) || null,
+      vest: { yellow: pd.UnlockedExtraYellowSlot === true, blue: pd.UnlockedExtraBlueSlot === true },
+    };
+  }
+
   const list = (v) => (v && Array.isArray(v.savedData) ? v.savedData : []);
   const named = (v) => { const m = new Map(); for (const e of list(v)) if (e && !m.has(e.Name)) m.set(e.Name, e.Data || {}); return m; };
 
@@ -201,7 +229,8 @@
        pieces             the indices of js/collectibles.js's PIECES found
        journal            { entry id: kills } for every entry the save lists
        act                1, 2 from act2Started, 3 once the world is black-threaded (blackThreadWorld)
-       bench, area        where Hornet rests (respawnScene) and the area she's in (currentArea) */
+       bench, area        where Hornet rests (respawnScene) and the area she's in (currentArea)
+       build              what she wears (buildOf): { crest, hunterStage, tools, skill, vest }, or null */
   function game(pd, sd = null) {
     const tools = named(pd.Tools), crests = named(pd.ToolEquips), quests = named(pd.QuestCompletionData);
     const bools = new Map();
@@ -241,6 +270,7 @@
       act: pd.blackThreadWorld === true ? 3 : pd.act2Started === true ? 2 : 1,
       bench: typeof pd.respawnScene === 'string' && /^[\w ()-]{1,64}$/.test(pd.respawnScene) ? pd.respawnScene : '',
       area: typeof pd.currentArea === 'string' && /^[A-Z_]{1,32}$/.test(pd.currentArea) ? pd.currentArea : '',
+      build: buildOf(pd) || {},
     };
   }
 
@@ -272,7 +302,7 @@
     };
   }
   const EMPTY = Object.freeze({ tools: [], crests: [], skills: [], arts: [], journal: {}, masks: 0, spools: 0, hearts: 0,
-    needle: 0, kit: 0, pouch: 0, everbloom: false, pieces: [], act: 1, bench: '', area: '' });
+    needle: 0, kit: 0, pouch: 0, everbloom: false, pieces: [], act: 1, bench: '', area: '', build: {} });
   const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
   // Each field only if it has the type an empty game gives it.
   function gameOf(snap) {
