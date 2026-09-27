@@ -787,9 +787,15 @@ taken over a fight, the phases' bars one by one (only the Forebrothers carry the
 the per-boss pages (phase 8's) and the gauntlets (phase 7's).
 
 **Phase 6's spike is done** (the same day): the map comes out of the game's files (§4.7), so the
-fallback (a schematic map from the randomizer's room graph) isn't needed. Left for the phase:
-the icons, the rooms with two states, the scene names joined to the collectibles, Hornet walking
-between benches, and deciding what the site publishes of it.
+fallback (a schematic map from the randomizer's room graph) isn't needed. The author decided to
+publish it as the Hollow Knight site does, and the Map screen followed: `tools/extract-map.py`
+draws the 770 rooms with each one's full drawing (the component's `fullSprite`; the renderer holds
+the rough sketch until the map is bought) into `assets/map/rooms.webp` (478 KB) and writes
+`js/map.js` (827 scenes with their box, 57 of them points: rooms with no drawing of their own);
+`js/rooms.js` places a scene, falling back to its name without the last part for the interiors
+the map doesn't draw. Every floor piece but one has its room, and every bench of the author's 92
+saves but a tutorial one. Left: the icons (the site's own, by what the game has found), the
+rooms with two states, Hornet walking between benches.
 
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about

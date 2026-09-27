@@ -195,6 +195,15 @@
     ctBind:         { es: 'Enlazar', en: 'Bind' },   // BUTTON_CAST
     ctBindSub:      { es: 'cura {parts} máscaras en {s} s', en: 'heals {parts} masks in {s} s' },
 
+    /* The Map (js/app-map.js) */
+    mapLead:        { es: 'El mapa del juego, con Hornet en tu banco y lo que te falta en su sala.', en: 'The game\'s map, with Hornet at your bench and what you\'re missing in its room.' },
+    mapFree:        { es: 'Modo libre: el mapa con todas las piezas. Elige una partida para ver solo las que te faltan.', en: 'Free mode: the map with every piece. Pick a save to see only the ones you\'re missing.' },
+    mapBench:       { es: 'Tu banco', en: 'Your bench' },
+    mapZoom:        { es: 'Tamaño del mapa', en: 'Map size' },
+    mapFit:         { es: 'Entero', en: 'Whole' },
+    mapAlt:         { es: 'El mapa de Telalejana', en: 'The map of Pharloom' },
+    mapNote:        { es: 'Cada pieza, en su sala; varias en la misma sala se ven en fila. Las que dan un deseo o una compra no tienen sala en la partida y no se marcan: están en Progreso.', en: 'Each piece in its room; several in one room show in a row. The ones a wish or a purchase gives have no room in the save and aren\'t marked: they\'re in Progress.' },
+
     /* Combat: your build against one enemy (js/app-fight.js) */
     ftBuild:        { es: 'Tu build: {crest}, {needle}, kit de fabricación {kit}. Se cambia en', en: 'Your build: {crest}, {needle}, Crafting Kit {kit}. It\'s changed in' },
     ftSearch:       { es: 'Buscar un enemigo', en: 'Find an enemy' },

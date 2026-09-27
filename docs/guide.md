@@ -114,6 +114,16 @@ casts of your Silk Skill that their silk pays for (a strand per slash, starting 
 full, as leaving a bench, and no Bind): "7 × Cogfly" against Lace, "12 × Straight Pin, 24 slashes
 and 8 × Silkspear" against something bigger.
 
+### Map
+
+Pharloom as the game's own map screen draws it, taken from the game's files (every room in its
+area's tint, the full drawing, as once the area's map is bought), and on it Hornet at the bench
+you rest at and a dot for each loose piece you're missing, in its room: Mask Shards, Spool
+Fragments, Memory Lockets, Craftmetal, Pale Oil and fleas, each kind switched on or off. The
+pieces a wish or a purchase gives have no room in the save and aren't marked (Progress lists
+them). "Whole" fits it to the page; ×1,5 and ×2,5 enlarge it, and it scrolls to your bench. In
+Free mode, every piece.
+
 ### Progress
 
 What's missing for 100%, in the wiki's ten categories: the Tools (with their slot colour),
@@ -162,6 +172,9 @@ texts and names are © Team Cherry; they're used here only to show the game's ow
 - **Sprites and icons**: Hornet, the masks, the spool, the five Needles (`npm run art`) and the
   inventory icons of the Tools, Crests, Silk Skills, abilities and items and the Journal's 237
   portraits (`npm run icons`, fitted into 256 px as WebP) are the game's, downloaded from the wiki and shown as a fan project.
+- **The map**: the rooms of the game's own map screen, extracted from the installed game's files
+  by `tools/extract-map.py` (`assets/map/rooms.webp`, `js/map.js`), shown as the Hollow Knight
+  site shows its map, as a fan project.
 - **Fonts**: Cinzel, Spectral and Patrick Hand SC, under the
   [SIL Open Font License 1.1](../assets/fonts/OFL.txt).
 - **Code**: MIT ([`LICENSE`](../LICENSE)). It covers only the code, not any of the above.

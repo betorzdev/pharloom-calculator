@@ -1210,3 +1210,26 @@ kbd {
   .ft-foes { max-height: 40vh; }
 }
 .ft-plan-line { margin: 0; font-size: var(--fs-lg); color: var(--ink-strong); text-wrap: balance; }
+
+/* ── The Map (js/app-map.js) ──────────────────────────────────────────────
+   The game's map on the pause menu's black, which scrolls when zoomed; on it, Hornet at your bench
+   and a dot per piece missing, each kind in its own colour (the map's own tints are the areas';
+   the dots take the HUD's: bone for shards, silk white for fragments, the slots' for the rest). */
+.mp-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--sp-3); margin: var(--sp-6) 0 var(--sp-3); }
+.mp-kinds { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-4); }
+.mp-kind b { font-family: var(--font-num); font-variant-numeric: tabular-nums; color: var(--ink-strong); }
+.mp-view { overflow: auto; max-height: 75vh; border: 1px solid var(--line); background: var(--scene-bg); }
+.mp-map { position: relative; min-width: 100%; }
+.mp-rooms { display: block; width: 100%; height: auto; }
+.mp-dot {
+  position: absolute; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%;
+  border: 1px solid var(--scene-bg); box-shadow: 0 0 6px currentColor; background: currentColor;
+}
+.mp-kind .mp-dot { position: static; display: inline-block; margin: 0; vertical-align: middle; }
+.mp-dot.is-mask-shard { color: var(--mask); }
+.mp-dot.is-spool-fragment { color: var(--silk); }
+.mp-dot.is-memory-locket { color: var(--slot-blue); }
+.mp-dot.is-craftmetal { color: var(--slot-yellow); }
+.mp-dot.is-pale-oil { color: var(--slot-red); }
+.mp-dot.is-flea { color: var(--plasmium-line); }
+.mp-hornet { position: absolute; width: 40px; height: auto; transform: translate(-50%, -80%); filter: drop-shadow(0 0 8px color-mix(in oklab, var(--spotlight) 60%, transparent)); }
