@@ -906,3 +906,51 @@ kbd {
 @media (max-width: 640px) {
   .hm-cats { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* ── Progress (js/app-progress.js): what's missing, piece by piece ────────
+   Two parts, the 100% and what lies beyond it, each a grid of groups: the category's name and
+   its count in the title, then its things, one per line: a tick when you have it, a Tool's
+   slot colour (data, the slot tokens), the name, and its Act and area on the right, quiet.
+   What belongs to a later Act than yours dims. */
+.pg-seg { justify-content: center; margin-top: var(--sp-4); }
+.pg-part {
+  display: flex; align-items: baseline; justify-content: center; gap: var(--sp-3); margin: var(--sp-8) 0 var(--sp-2);
+  font-family: var(--font-display); font-size: var(--fs-xl); font-weight: 600; letter-spacing: var(--track-title); color: var(--filigree);
+}
+.pg-part b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-lg); color: var(--ink-2); }
+.pg > .pg-note { text-align: center; }
+.pg-groups { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: var(--sp-6) var(--sp-8); margin-top: var(--sp-4); }
+.pg-group { min-width: 0; }
+.pg-head {
+  display: flex; align-items: baseline; justify-content: space-between; gap: var(--sp-3); margin: 0 0 var(--sp-2);
+  padding-bottom: var(--sp-2); border-bottom: 1px solid var(--line);
+  font-family: var(--font-display); font-size: var(--fs-md); font-weight: 600; letter-spacing: var(--track-title); color: var(--ink-strong);
+}
+.pg-group.is-done .pg-head { border-bottom-color: color-mix(in oklab, var(--filigree) 45%, transparent); }
+.pg-count { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-md); color: var(--ink-strong); white-space: nowrap; }
+.pg-count .u { font-size: var(--fs-xs); font-style: normal; color: var(--muted); }
+.pg-note { margin: 0 0 var(--sp-2); font-size: var(--fs-xs); color: var(--muted); }
+.pg-list { list-style: none; margin: 0; padding: 0; }
+.pg-item {
+  display: grid; grid-template-columns: var(--sp-4) auto minmax(0, 1fr) auto; align-items: baseline; gap: var(--sp-2);
+  padding: var(--sp-1) 0; border-bottom: 1px solid var(--line-row); font-size: var(--fs-sm); color: var(--ink);
+}
+.pg-item:not(:has(.pg-slot)) { grid-template-columns: var(--sp-4) minmax(0, 1fr) auto; }
+.pg-mark { color: var(--ink-strong); }
+.pg-mark .ic { width: var(--icon-sm); height: var(--icon-sm); }
+.pg-slot { width: var(--sp-2); height: var(--sp-2); transform: rotate(45deg) translateY(-1px); }
+.pg-slot.is-red { background: var(--slot-red); }
+.pg-slot.is-blue { background: var(--slot-blue); }
+.pg-slot.is-yellow { background: var(--slot-yellow); }
+.pg-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pg-where { display: flex; gap: var(--sp-2); font-size: var(--fs-xs); color: var(--muted); white-space: nowrap; }
+.pg-where span + span::before { content: '·'; margin-right: var(--sp-2); }
+.pg-item.is-got .pg-name { color: var(--ink-2); }
+.pg-item.is-later { opacity: 0.55; }
+.pg-done { display: flex; align-items: center; gap: var(--sp-2); margin: var(--sp-2) 0 0; font-size: var(--fs-sm); color: var(--ink-2); }
+@media (max-width: 640px) {
+  .pg-item { grid-template-columns: var(--sp-4) auto minmax(0, 1fr); }
+  .pg-item:not(:has(.pg-slot)) { grid-template-columns: var(--sp-4) minmax(0, 1fr); }
+  .pg-where { grid-column: 2 / -1; }
+  .pg-item:not(:has(.pg-slot)) .pg-where { grid-column: 2; }
+}

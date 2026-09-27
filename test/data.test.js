@@ -9,6 +9,7 @@ const assert = require('node:assert');
 const D = require('../js/data.js');
 const E = require('../js/enemies.js');
 const J = require('../js/journal.js');
+const CO = require('../js/collectibles.js');
 
 /* Every { es, en } in a module, with where it is. */
 function pairs(v, where, out = []) {
@@ -20,7 +21,7 @@ function pairs(v, where, out = []) {
 const SPANISH_CHARS = /[áéíóúñ¿¡]/i;
 
 test('every text in the data has both languages, and the English carries no Spanish letter', () => {
-  const all = [...pairs(D, 'data'), ...pairs(E, 'enemies'), ...pairs(J, 'journal')];
+  const all = [...pairs(D, 'data'), ...pairs(E, 'enemies'), ...pairs(J, 'journal'), ...pairs(CO.AREAS, 'areas')];
   assert.ok(all.length > 1000);
   for (const [where, v] of all) {
     assert.equal(typeof v.es, 'string', `${where} has no Spanish`);
@@ -117,4 +118,13 @@ test('the Journal: 236 entries (237 in Steel Soul), 230 needed for Nuu\'s reward
   assert.equal(J.BOOK[0].id, 'mossgrub');
   assert.ok(J.BOOK[0].start);
   assert.ok(J.BOOK.every((e) => e.desc && e.note), 'every entry has the game\'s description and the Hunter\'s note');
+});
+
+test("the save's pieces and areas: every piece's area is one of the game's, and the save's zones all have a name", () => {
+  for (const p of CO.PIECES) assert.ok(p[3] === null || CO.AREAS[p[3]], `piece ${p[0]} in an unknown area ${p[3]}`);
+  // The currentArea values seen on the author's 92 saves.
+  for (const z of ['ABYSS', 'BELLHART', 'BONEBOTTOM', 'COGWORK_CORE', 'CORAL_TOWER', 'CRADLE', 'CRAWL', 'DOCKS', 'GRANDGATE',
+    'GREYMOOR', 'GROVE', 'HALLS', 'HANG', 'HUNTERS_MARCH', 'LIBRARY', 'MEMORY_RED', 'MISTMAZE', 'MOSSCAVE', 'MOSSTOWN',
+    'MOUNTAIN', 'SHELLWOOD', 'SLAB', 'UNDERSTORE', 'WILDS']) assert.ok(CO.AREAS[z], `no name for ${z}`);
+  assert.equal(CO.AREAS.CORAL_STEPS.es, 'Escalones Ajados');
 });

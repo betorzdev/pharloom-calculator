@@ -37,6 +37,18 @@ patches, Steel Soul): whole masks and spools, not loose shards and fragments (tw
 still 0%), and a Tool and its upgrade (Curveclaw and Curvesickle) are one point. And the
 Journal: the required entries with their kills done, out of 230 (231 in Steel Soul).
 
+### Progress
+
+What's missing for 100%, in the wiki's ten categories: the Tools (with their slot colour),
+Crests, Silk Skills and abilities by name, and the Mask Shards, Spool Fragments, Crafting Kit
+and Tool Pouch upgrades, Needle upgrades and Silk Hearts one by one. Each thing says its Act and
+the area it's in, with the game's names; what belongs to a later Act than yours is dimmed. Then
+what doesn't count but opens things: Memory Lockets, Craftmetal, Pale Oil and the Lost Fleas.
+In a save it shows what's missing, or everything with a tick where you have it; without a save,
+the whole list, as a guide. Which piece you have is read from the save one by one, and on the
+92 real saves it agrees with the game's own counters (masks, spools, the three upgrade ladders,
+the Silk Hearts). The exact room comes with the map (phase 6).
+
 ## Where the numbers come from
 
 From the community wiki (`hollowknight.wiki`), page by page, with the game's rounding (half to

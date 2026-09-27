@@ -61,8 +61,9 @@ test("a save in the site's ids: Tools and Crests by their save names, whole mask
   assert.equal(g.everbloom, false);
   assert.deepEqual(g.journal, { mossgrub: 29 });
   assert.deepEqual([g.act, g.bench, g.area], [2, 'Bellway_City', 'GRANDGATE']);
-  // Two pieces found: the shard on the floor in Crawl_02 and the one from the Beastfly Hunt wish.
-  assert.deepEqual(g.pieces.map((i) => CO.PIECES[i][0]), ['mask-shard', 'mask-shard']);
+  // Three pieces found: the shard on the floor in Crawl_02, the one from the Beastfly Hunt wish
+  // and the first Needle upgrade (nailUpgrades 1).
+  assert.deepEqual(g.pieces.map((i) => CO.PIECES[i][0]), ['mask-shard', 'mask-shard', 'needle']);
   // The loose pieces (2 shards, 1 fragment) don't count: only the whole mask and spool do.
   assert.equal(CP.count(g).total, 2 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1);
 });

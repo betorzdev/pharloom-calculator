@@ -70,3 +70,14 @@ test("a game goes into a slot's four keys and comes back whole; a damaged key fa
   assert.deepEqual([hurt.tools, hurt.masks, hurt.act], [[], 0, 1]);
   assert.deepEqual(F.gameOf(null).journal, {});
 });
+
+test("a slot keeps its pieces by what they are, so a regenerated list still finds them", () => {
+  const CO = require('../js/collectibles.js');
+  const i = CO.PIECES.findIndex((p) => p[2][0] === 'bool' && p[2][1] === 'Crawl_02');
+  const snap = F.toSnapshot({ ...BASE }, { persistentBools: { serializedList: [{ SceneName: 'Crawl_02', ID: 'Heart Piece', Value: true }] } });
+  const kept = JSON.parse(snap['pharloom.progress']).pieces;
+  assert.deepEqual(kept, ['mask-shard ["bool","Crawl_02","Heart Piece"]']);
+  assert.deepEqual(F.gameOf(snap).pieces, [i]);
+  const gone = { ...snap, 'pharloom.progress': JSON.stringify({ pieces: ['flea ["flag","NoSuchFlea"]', kept[0]] }) };
+  assert.deepEqual(F.gameOf(gone).pieces, [i]);
+});

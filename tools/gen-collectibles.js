@@ -11,9 +11,14 @@
                 upgrade (Curveclaw and Curvesickle) are one point
      CRESTS     the site's Crest id → its name in playerData.ToolEquips (the Beast is "Warrior")
      JOURNAL    the site's Journal id → its name in playerData.EnemyJournalKillData
-     PIECES     each loose piece with its Act and its check: [kind, act, check], the check being
-                ['bool', scene, id] (sceneData.persistentBools), ['flag', name], ['min', name, n],
-                ['quest', name] (QuestCompletionData completed), ['any', check…]
+     PIECES     each loose piece with its Act, its check and its area: [kind, act, check, area], the
+                check being ['bool', scene, id] (sceneData.persistentBools), ['flag', name],
+                ['min', name, n], ['quest', name] (QuestCompletionData completed), ['any', check…]
+     AREAS      the game's areas by their own ids (playerData.currentArea: CRADLE, HUNTERS_MARCH…)
+                with the game's name: the id's text, or its title split in <X>_SUPER + <X>_MAIN
+                ("Hunter's" + "March"). A piece's area is the one its entry is filed under in the
+                completionist ("Wormways (Bottom-right): …"), joined by that name: only the area is
+                taken, not the sentence.
    The 100% itself isn't counted from PIECES: the game counts whole masks and spools, and its
    counters (js/completion.js, checked on 92 real saves). The pieces say which one is missing. */
 'use strict';
@@ -22,6 +27,8 @@ const path = require('path');
 const { write } = require('./emit.js');
 require('../js/data.js');
 require('../js/journal.js');
+const { names } = require('./names.js');
+const { load: loadText } = require('./game-text.js');
 const D = globalThis.SS.data;
 const J = globalThis.SS.journal;
 
@@ -30,19 +37,23 @@ const OUT = path.join(__dirname, '..', 'js', 'collectibles.js');
 function fail(msg) { throw new Error('gen-collectibles: ' + msg); }
 
 // A category file is one object literal after its type import: read it as such.
-function load(file) {
+function sections(file) {
   const src = fs.readFileSync(path.join(SRC, file), 'utf8')
     .replace(/^import .*$/mg, '')
     .replace(/export const \w+: \w+ =/, 'module.exports =');
   const m = { exports: {} };
   new Function('module', src)(m);
-  return m.exports.sections.flatMap((s) => s.items);
+  return m.exports.sections;
 }
+const load = (file) => sections(file).flatMap((s) => s.items);
 
 // The completionist's typos in names, against the game's own (its "Wispfire Latern").
 const ALIAS = { 'wispfire latern': 'wispfire lantern' };
 const norm = (s) => { const n = s.toLowerCase().replace(/[’']/g, "'").trim(); return ALIAS[n] || n; };
 
+(async () => {
+const N = await names();
+const { EN } = await loadText();
 /* ── Tools ── */
 const toolByName = new Map(D.TOOLS.map((t) => [norm(t.name.en), t.id]));
 const TOOLS = {}, COUNTED = [];
@@ -79,6 +90,54 @@ for (const it of load('huntersJournal.ts')) {
 const lost = J.BOOK.filter((e) => !JOURNAL[e.id]).map((e) => e.id);
 if (lost.length) fail(`Journal entries with no save name: ${lost.join(', ')}`);
 
+/* ── Areas ── */
+// The ids the save uses (currentArea), and every title the game splits for an area card.
+const ZONES = new Set(['ABYSS', 'BELLHART', 'BONEBOTTOM', 'COGWORK_CORE', 'CORAL_TOWER', 'CRADLE', 'CRAWL', 'DOCKS',
+  'GRANDGATE', 'GREYMOOR', 'GROVE', 'HALLS', 'HANG', 'HUNTERS_MARCH', 'LIBRARY', 'MEMORY_RED', 'MISTMAZE', 'MOSSCAVE',
+  'MOSSTOWN', 'MOUNTAIN', 'SHELLWOOD', 'SLAB', 'UNDERSTORE', 'WILDS']);
+for (const k of Object.keys(EN)) { const m = /^([A-Z][A-Z_]*)_MAIN$/.exec(k); if (m) ZONES.add(m[1]); }
+/* An area's name, the game's own: the id's text; or else, for a title the map card splits in
+   <X>_SUPER + <X>_MAIN, the whole title under another key that says the same in English (the
+   Spanish dump lacks many _SUPER halves, and the halves go the other way round in Spanish:
+   "Blasted" + "Steps" is «Escalones Ajados», JUDGE_STEPS); plain keys before the ones of a
+   station, a courier or a quest. Only if the game has none, the two halves (Lost Verdania: the
+   Spanish lacks "Lost", so it stays in English, CLAUDE.md rule 3). */
+const { ES } = N;
+const PREFIXED = /^(STATION_NAME_|QUEST_|THUNTER_|SQ_|MQ_|TUBE_NAME_)/;
+function zoneText(z) {
+  if (EN[z] != null && !/\n/.test(EN[z])) return N.text(z);
+  if (EN[z + '_MAIN'] == null) return null;
+  if (EN[z + '_SUPER'] == null) return N.text(z + '_MAIN');
+  const whole = norm(EN[z + '_SUPER'] + ' ' + EN[z + '_MAIN']);
+  const same = Object.keys(EN).filter((k) => norm(EN[k]) === whole && ES[k] != null)
+    .sort((a, b) => PREFIXED.test(a) - PREFIXED.test(b) || a.localeCompare(b));
+  if (same.length) return N.text(same[0]);
+  const t = N.text(z + '_SUPER+' + z + '_MAIN');
+  return ES[z + '_SUPER'] == null ? { es: t.en, en: t.en, key: t.key } : t;
+}
+const zoneByEn = new Map();
+for (const z of [...ZONES].sort()) {
+  const x = zoneText(z);
+  if (!x) continue;
+  const en = norm(x.en);
+  // The save's own ids first: CRADLE before a map card that says the same.
+  if (!zoneByEn.has(en) || ['ABYSS', 'BELLHART', 'BONEBOTTOM', 'CRADLE', 'CRAWL', 'DOCKS', 'GRANDGATE', 'GREYMOOR', 'HANG',
+    'HUNTERS_MARCH', 'LIBRARY', 'MOSSCAVE', 'MOSSTOWN', 'MOUNTAIN', 'SHELLWOOD', 'SLAB', 'UNDERSTORE', 'WILDS'].includes(z)) zoneByEn.set(en, z);
+}
+// The completionist's spellings that aren't the game's.
+const AREA_ALIAS = { 'weavnest atla': 'weavenest atla' };
+const AREAS = {};
+function areaOf(details) {
+  const head = /^([^:]{2,60}):/.exec(details || '');
+  if (!head) return null;
+  let en = norm(head[1].split(' (')[0].split(' / ')[0]);
+  en = AREA_ALIAS[en] || en;
+  const z = zoneByEn.get(en);
+  if (!z) fail(`no area of the game named "${head[1]}"`);
+  AREAS[z] = zoneText(z);
+  return z;
+}
+
 /* ── Loose pieces ── */
 function check(p) {
   if (Array.isArray(p)) return ['any', ...p.map(check)];
@@ -88,6 +147,7 @@ function check(p) {
     case 'flagMin': return ['min', id[0], id[1]];
     case 'quest': return ['quest', id];
     case 'sceneDataBool': return ['bool', id[0], id[1]];
+    case 'sceneVisited': return ['visited', id];
     default: return fail(`check type ${p.type} not read yet`);
   }
 }
@@ -97,12 +157,44 @@ const KINDS = [
   ['flea', 'fleas.ts'],
 ];
 const PIECES = [];
-for (const [kind, file] of KINDS) for (const it of load(file)) PIECES.push([kind, it.whichAct, check(it.parsingInfo)]);
+for (const [kind, file] of KINDS) for (const it of load(file)) PIECES.push([kind, it.whichAct, check(it.parsingInfo), areaOf(it.completionDetails)]);
+// The upgrades one by one, and the Silk Hearts: their sections of the dictionary.
+const SECTION_KINDS = [['upgrades.ts', 'Needle Upgrades', 'needle'], ['upgrades.ts', 'Tool Pouch Upgrades', 'tool-pouch'],
+  ['upgrades.ts', 'Crafting Kit Upgrades', 'crafting-kit'], ['abilities.ts', 'Silk Hearts', 'silk-heart']];
+for (const [file, name, kind] of SECTION_KINDS) {
+  const sec = sections(file).find((x) => x.name === name) || fail(`no section ${name} in ${file}`);
+  for (const it of sec.items) PIECES.push([kind, it.whichAct, check(it.parsingInfo), areaOf(it.completionDetails)]);
+}
+
+/* ── Where the rest of the 100% is: Tools, Crests, Silk Skills, abilities, the Everbloom ──
+   site id → [act, area], by the game's English name ("Swift Step (Dash / Sprint)" is Swift
+   Step; "Curveclaw / Curvesickle" both). */
+const bare = (x) => norm(x.replace(/\s*\(.*\)$/, '').replace(/ Crest$/, ''));
+const WHERE = { tools: {}, crests: {}, skills: {}, arts: {} };
+for (const it of load('tools.ts')) for (const n of it.name.split(' / ')) WHERE.tools[toolByName.get(norm(n))] = [it.whichAct, areaOf(it.completionDetails)];
+const byName = (list) => new Map(list.map((x) => [bare(x.name.en), x.id]));
+const skillBy = byName(D.SKILLS), artBy = byName(D.ARTS);
+for (const it of load('crests.ts')) { const id = crestByName.get(bare(it.name)); if (id && it.completionPercent) WHERE.crests[id] = [it.whichAct, areaOf(it.completionDetails)]; }
+for (const it of load('abilities.ts')) {
+  const k = bare(it.name);
+  if (skillBy.has(k)) WHERE.skills[skillBy.get(k)] = [it.whichAct, areaOf(it.completionDetails)];
+  else if (artBy.has(k)) WHERE.arts[artBy.get(k)] = [it.whichAct, areaOf(it.completionDetails)];
+  else if (k === 'everbloom') WHERE.everbloom = [it.whichAct, areaOf(it.completionDetails)];
+}
+for (const [k, want] of [['tools', Object.keys(TOOLS).length], ['crests', 6], ['skills', 6], ['arts', 9]]) {
+  const got = Object.keys(WHERE[k]).length;
+  if (got < want) fail(`WHERE.${k}: ${got} of ${want} (${(k === 'tools' ? Object.keys(TOOLS) : []).filter((id) => !WHERE.tools[id]).join(', ')})`);
+}
 const n = (k) => PIECES.filter((p) => p[0] === k).length;
 // The wiki's counts (design/00-study.md §3.5).
-for (const [k, want] of [['mask-shard', 20], ['spool-fragment', 18], ['memory-locket', 20], ['craftmetal', 8], ['pale-oil', 3], ['flea', 30]]) {
+for (const [k, want] of [['mask-shard', 20], ['spool-fragment', 18], ['memory-locket', 20], ['craftmetal', 8], ['pale-oil', 3], ['flea', 30],
+  ['needle', 4], ['tool-pouch', 4], ['crafting-kit', 4], ['silk-heart', 3]]) {
   if (n(k) !== want) fail(`${n(k)} ${k}, the wiki says ${want}`);
 }
+
+for (const z of ['ABYSS', 'BELLHART', 'BONEBOTTOM', 'COGWORK_CORE', 'CORAL_TOWER', 'CRADLE', 'CRAWL', 'DOCKS', 'GRANDGATE',
+  'GREYMOOR', 'GROVE', 'HALLS', 'HANG', 'HUNTERS_MARCH', 'LIBRARY', 'MEMORY_RED', 'MISTMAZE', 'MOSSCAVE', 'MOSSTOWN',
+  'MOUNTAIN', 'SHELLWOOD', 'SLAB', 'UNDERSTORE', 'WILDS']) if (!AREAS[z]) AREAS[z] = zoneText(z) || fail(`no name for the area ${z}`);
 
 const src = fs.readFileSync(path.join(SRC, 'SOURCE'), 'utf8').trim();
 const size = write(OUT, `js/collectibles.js — where each thing lives in Silksong's save.
@@ -114,9 +206,13 @@ const size = write(OUT, `js/collectibles.js — where each thing lives in Silkso
      COUNTED   the 51 Tools of the 100%, as groups of site ids (a Tool and its upgrade: one point)
      CRESTS    site Crest id → its name in playerData.ToolEquips.savedData (owned when IsUnlocked)
      JOURNAL   site Journal id → its name in playerData.EnemyJournalKillData.list
-     PIECES    [kind, act, check]: check is ['bool', scene, id] (sceneData.persistentBools),
+     AREAS     the game's area ids (playerData.currentArea) → the game's name for them
+     WHERE     { tools, crests, skills, arts: { site id: [act, area] }, everbloom: [act, area] }
+     PIECES    [kind, act, check, area]: area is an AREAS id (or null), check is ['bool', scene, id] (sceneData.persistentBools),
                ['flag', name], ['min', name, n], ['quest', name] (QuestCompletionData
-               IsCompleted) or ['any', check…]. Act 0 = there from the start.`,
-'collectibles', [['TOOLS', TOOLS], ['COUNTED', COUNTED], ['CRESTS', CRESTS], ['JOURNAL', JOURNAL], ['PIECES', PIECES]]);
+               IsCompleted), ['visited', scene] (playerData.scenesVisited) or ['any', check…].
+               Act 0 = there from the start.`,
+'collectibles', [['TOOLS', TOOLS], ['COUNTED', COUNTED], ['CRESTS', CRESTS], ['JOURNAL', JOURNAL], ['AREAS', AREAS], ['WHERE', WHERE], ['PIECES', PIECES]]);
 console.log(`js/collectibles.js  ${Object.keys(TOOLS).length} Tools (${COUNTED.length} counted), ${Object.keys(CRESTS).length} Crests, `
-  + `${Object.keys(JOURNAL).length} Journal entries, ${PIECES.length} pieces  (${size} bytes)`);
+  + `${Object.keys(JOURNAL).length} Journal entries, ${Object.keys(AREAS).length} areas, ${PIECES.length} pieces  (${size} bytes)`);
+})().catch((e) => { console.error(e.message); process.exit(1); });

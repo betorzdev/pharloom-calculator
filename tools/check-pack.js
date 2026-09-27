@@ -5,9 +5,10 @@
    restoreData#.dat), is read as the site reads it (js/savefile.js → game()), and what the site
    counts is set against what the game itself saved:
      completion  js/completion.js vs playerData.completionPercentage (must match: exit code 1 if not)
-     pieces      the Mask Shards and Spool Fragments js/collectibles.js finds vs the game's own
-                 count: 4 per whole mask plus heartPieces, 2 per whole spool plus silkSpoolParts
-                 (must match: exit code 1 if not)
+     pieces      the pieces js/collectibles.js finds one by one vs the game's own counters: the
+                 Mask Shards (4 per whole mask plus heartPieces), the Spool Fragments (2 per
+                 whole spool plus silkSpoolParts), the Needle, Tool Pouch and Crafting Kit
+                 upgrades and the Silk Hearts (must match: exit code 1 if not)
    On Linux the game's folder is ~/.config/unity3d/Team Cherry/Hollow Knight Silksong/<id>/.
    The saves stay where they are: they're somebody's games and don't go in the repo. */
 'use strict';
@@ -40,6 +41,7 @@ function pieceDiffs(pd, g) {
   const want = {
     'mask-shard': 4 * g.masks + (Number(pd.heartPieces) || 0),
     'spool-fragment': 2 * g.spools + (Number(pd.silkSpoolParts) || 0),
+    needle: g.needle, 'tool-pouch': g.pouch, 'crafting-kit': g.kit, 'silk-heart': g.hearts,
   };
   return Object.entries(want).filter(([k, v]) => n(k) !== v).map(([k, v]) => `${k} ${n(k)}≠${v}`);
 }

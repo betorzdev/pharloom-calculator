@@ -207,12 +207,14 @@
       const k = e.SceneName + '\u0000' + e.ID;
       if (!bools.has(k)) bools.set(k, e.Value);
     }
+    const visited = new Set(Array.isArray(pd.scenesVisited) ? pd.scenesVisited : []);
     const has = (c) => {
       switch (c[0]) {
         case 'flag': return !!pd[c[1]];
         case 'min': return (Number(pd[c[1]]) || 0) >= c[2];
         case 'quest': return !!(quests.get(c[1]) || {}).IsCompleted;
         case 'bool': return !!bools.get(c[1] + '\u0000' + c[2]);
+        case 'visited': return visited.has(c[1]);
         case 'any': return c.slice(1).some(has);
         default: return false;
       }
@@ -250,9 +252,14 @@
      toSnapshot() writes them; gameOf() reads them back into one game, with the same defaults as
      an empty game for anything missing or damaged. */
   const OWNED = ['tools', 'crests', 'skills', 'arts'];
+  /* The pieces go into a slot by a key that says what they are (the kind and where the save
+     keeps them), not by their place in js/collectibles.js: a list regenerated after a patch
+     (new pieces, another order) still finds the ones a slot saved before it. */
+  const pieceKey = (p) => p[0] + ' ' + JSON.stringify(p[2]);
+  const KEY_AT = new Map(CO.PIECES.map((p, i) => [pieceKey(p), i]));
   function toSnapshot(pd, sd = null, saved = null) {
     const g = game(pd, sd);
-    const progress = { ...g };
+    const progress = { ...g, pieces: g.pieces.map((i) => pieceKey(CO.PIECES[i])) };
     for (const k of [...OWNED, 'journal']) delete progress[k];
     const m = meta(pd);
     return {
@@ -275,6 +282,8 @@
       const ok = Array.isArray(def) ? Array.isArray(v) : typeof v === typeof def && v !== null;
       out[k] = ok ? v : (Array.isArray(def) ? [] : typeof def === 'object' ? {} : def);
     }
+    // The pieces by their keys → today's places in the list; a key the list no longer has is dropped.
+    out.pieces = out.pieces.map((k) => KEY_AT.get(k)).filter((i) => i !== undefined);
     return out;
   }
   const metaOf = (snap) => ({ version: '', time: 0, completion: 0, rosaries: 0, shards: 0, steel: false, dead: false, saved: null,

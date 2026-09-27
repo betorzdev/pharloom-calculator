@@ -143,6 +143,24 @@
     cat_hearts:     { es: 'Corazones de seda', en: 'Silk Hearts' },   // INV_DESC_SPOOL_SILKHEARTS
     cat_items:      { es: 'Siempreviva', en: 'Everbloom' },   // INV_NAME_WHITE_FLOWER
 
+    /* Progress: what's missing, piece by piece (js/app-progress.js) */
+    pgShow:         { es: 'Mostrar', en: 'Show' },
+    pgMissing:      { es: 'Lo que falta', en: 'What\'s missing' },
+    pgAll:          { es: 'Todo', en: 'Everything' },
+    pg100:          { es: 'Para el 100 %', en: 'For 100%' },
+    pgBeyond:       { es: 'Más allá del 100 %', en: 'Beyond 100%' },
+    pgBeyondNote:   { es: 'No cuentan para la finalización, pero abren huecos, mejoras y deseos.', en: 'They don\'t count for completion, but they open slots, upgrades and wishes.' },
+    pgDone:         { es: 'Completo', en: 'Complete' },
+    pgGot:          { es: 'Conseguido', en: 'Got' },
+    pgLater:        { es: 'Más adelante: acto {n}', en: 'Later: Act {n}' },
+    pgFree:         { es: 'Sin partida, esta es la lista entera. Importa la tuya y verás solo lo que te falta, marcado donde lo tienes.',
+                      en: 'Without a save, this is the whole list. Import yours and you\'ll see only what you\'re missing, ticked where you have it.' },
+    pgWholeNote:    { es: 'Cuentan las máscaras enteras: cada cuatro fragmentos, un 1 %.', en: 'Whole masks count: every four shards, 1%.' },
+    pgSpoolNote:    { es: 'Cuentan los carretes enteros: cada dos fragmentos, un 1 %.', en: 'Whole spools count: every two fragments, 1%.' },
+    kind_flea:      { es: 'Pulga perdida', en: 'Lost Flea' },   // KEY_FLEA
+    kind_silkHeart: { es: 'Corazón de seda', en: 'Silk Heart' },   // MEMORY_MSG_TITLE_SILKHEART
+    kind_fleas:     { es: 'Pulgas perdidas', en: 'Lost Fleas' },
+
     /* Footer: the fan-project notice, the sources and the author (docs/guide.md, "Credits and licences") */
     footLabel:      { es: 'Aviso, fuentes y contacto', en: 'Notice, sources and contact' },
     footFan:        { es: 'Proyecto de fans no oficial, gratuito y sin ánimo de lucro, sin relación con {tc}. Hollow Knight: Silksong y su arte son © Team Cherry.',

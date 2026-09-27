@@ -715,8 +715,14 @@ The same day, the **Saves screen** (ported from the Hollow Knight site: the impo
 system, the preview, following the file, Clear with the game's own question; restore points
 import too) and **Your game** (the 100% by category against the game's figure, the Act, the
 Journal), with the game's sprites from the wiki (`npm run art`). Driven end to end in headless
-Chrome with a real restore point. Left: Progress (the pieces one by one, which needs the
-scene → area names), `changes.js` ("since last time") and the per-bench unit for the live link.
+Chrome with a real restore point. Then **Progress**: every thing of the 100% by name or one by
+one, and the collectibles beyond it, each with its Act and its area. The areas are the game's
+own ids (`currentArea`: `CRADLE`, `HUNTERS_MARCH`…) with the game's names (the id's text, or the
+whole title under another key where the map card splits it: «Escalones Ajados», not «Blasted
+Escalones»), and a slot keeps its pieces by what they are, not by their place in the list, so a
+regenerated list still reads an old slot. The upgrades and Silk Hearts one by one match the
+game's counters on the 92 saves too. Left: `changes.js` ("since last time") and the
+per-bench unit for the live link.
 
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
