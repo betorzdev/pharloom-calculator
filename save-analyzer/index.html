@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Generated from index.html by tools/pages.js (npm run pages): do not edit by hand. -->
+<html lang="en" data-view="home">
 <head>
 <meta charset="utf-8">
+<base href="../">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Silksong save tracker, 100% checklist, map and Tools · Pharloom Calculator</title>
-<meta name="description" content="Import your Hollow Knight: Silksong save and see what's missing for 100%, on the game's own map, and how many hits each enemy takes with your Tools and Crests.">
-<link rel="canonical" href="https://betorzdev.github.io/pharloom-calculator/">
-<link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/">
-<link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/">
-<link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/">
+<title>Silksong save analyzer: your 100% and what's missing · Pharloom Calculator</title>
+<meta name="description" content="Drop your Hollow Knight: Silksong save file and see your 100% by category, the same the game shows, and what's missing. Following your game live.">
+<link rel="canonical" href="https://betorzdev.github.io/pharloom-calculator/save-analyzer/">
+<link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/save-analyzer/">
+<link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/analizador-partida/">
+<link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/save-analyzer/">
 <link rel="icon" href="assets/site/icon-48.png" sizes="48x48">
 <link rel="icon" href="assets/site/icon-192.png" sizes="192x192">
 <link rel="apple-touch-icon" href="assets/site/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pharloom Calculator">
-<meta property="og:title" content="Silksong save tracker, 100% checklist, map and Tools · Pharloom Calculator">
-<meta property="og:description" content="Import your Hollow Knight: Silksong save and see what's missing for 100%, on the game's own map, and how many hits each enemy takes with your Tools and Crests.">
-<meta property="og:url" content="https://betorzdev.github.io/pharloom-calculator/">
+<meta property="og:title" content="Silksong save analyzer: your 100% and what's missing · Pharloom Calculator">
+<meta property="og:description" content="Drop your Hollow Knight: Silksong save file and see your 100% by category, the same the game shows, and what's missing. Following your game live.">
+<meta property="og:url" content="https://betorzdev.github.io/pharloom-calculator/save-analyzer/">
 <meta property="og:image" content="https://betorzdev.github.io/pharloom-calculator/assets/site/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -37,19 +39,39 @@
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "Where is my save file?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On Windows, in %USERPROFILE%\\AppData\\LocalLow\\Team Cherry\\Hollow Knight Silksong; on macOS, in ~/Library/Application Support/unity.Team-Cherry.Silksong; on Linux and Steam Deck, in ~/.config/unity3d/Team Cherry/Hollow Knight Silksong. Inside, a folder named with a number and the files user1.dat to user4.dat. The site walks you through it when importing."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Is it free? Do I need an account?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Free, no account and no ads. Your save never leaves your browser: it's read there and kept there."
       }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Pharloom Calculator",
+      "item": "https://betorzdev.github.io/pharloom-calculator/"
     },
     {
-      "@type": "Question",
-      "name": "Does it work with the console version?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Reading the save needs the file, and only the computer version (Windows, macOS, Linux, Steam Deck) keeps it where you can reach it. Without a save, the calculator, the map and the Journal work all the same."
-      }
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Save analyzer",
+      "item": "https://betorzdev.github.io/pharloom-calculator/save-analyzer/"
     }
   ]
 }
@@ -87,20 +109,20 @@
     </main>
     <!-- about -->
     <section class="about" id="about" lang="en" aria-labelledby="about-h">
-      <h1 id="about-h">Your Hollow Knight: Silksong game, live</h1>
-      <p>Pharloom Calculator reads your Silksong save file and shows what the game doesn't tell you: what's missing for 100%, piece by piece, where every Mask Shard, Spool Fragment and Tool you don't have yet is, on the game's own map, and how many Hunter's Journal entries are left. Its 100% is the game's own: checked on 92 real saves. In Chrome and Edge it follows the file while you play.</p>
-      <p>It works without a save too: the Crest screen tells you how each of Hornet's stats changes with each Tool, Crest and upgrade, and Combat takes your build against every enemy, boss and enemy gauntlet, through each one's own modifiers. Every number comes from the wiki, with the game's rounding, and every name from its official translation.</p>
+      <h1 id="about-h">Silksong save analyzer: your 100% and what's missing</h1>
+      <p>Import your save file and the site tells you your completion split into the game's ten categories (Tools, Silk Spools, upgrades, abilities, Crests, masks, the Needle…), and each thing you're missing, with its Act and its area. It counts as the game does: whole masks and spools, not loose shards, and a Tool and its upgrade as one point.</p>
+      <p>Four saves, as in the game, and their restore points too. In Chrome and Edge it can follow the file: when the game saves, the site catches up and tells you what you got since the previous save.</p>
       <div class="about-faq">
         <h2>Questions</h2>
+        <h3>Where is my save file?</h3>
+        <p>On Windows, in <code>%USERPROFILE%\AppData\LocalLow\Team Cherry\Hollow Knight Silksong</code>; on macOS, in <code>~/Library/Application Support/unity.Team-Cherry.Silksong</code>; on Linux and Steam Deck, in <code>~/.config/unity3d/Team Cherry/Hollow Knight Silksong</code>. Inside, a folder named with a number and the files <code>user1.dat</code> to <code>user4.dat</code>. The site walks you through it when importing.</p>
         <h3>Is it free? Do I need an account?</h3>
         <p>Free, no account and no ads. Your save never leaves your browser: it's read there and kept there.</p>
-        <h3>Does it work with the console version?</h3>
-        <p>Reading the save needs the file, and only the computer version (Windows, macOS, Linux, Steam Deck) keeps it where you can reach it. Without a save, the calculator, the map and the Journal work all the same.</p>
       </div>
       <nav class="about-more" aria-label="More on the site">
         <h2>More on the site</h2>
         <ul>
-          <li><a href="save-analyzer/" data-page>Save analyzer</a></li>
+          <li><a href="./" data-page>Home</a></li>
           <li><a href="100-percent-checklist/" data-page>100% checklist</a></li>
           <li><a href="map/" data-page>Map</a></li>
           <li><a href="hunters-journal/" data-page>Hunter's Journal</a></li>

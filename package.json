@@ -13,6 +13,7 @@
     "collectibles": "node tools/fetch-collectibles.js",
     "check-pack": "node tools/check-pack.js",
     "art": "node tools/fetch-art.js",
-    "icons": "node tools/fetch-icons.js"
+    "icons": "node tools/fetch-icons.js",
+    "pages": "node tools/pages.js"
   }
 }

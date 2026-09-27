@@ -9,10 +9,12 @@ item, the game's own map with what you're missing, the Hunter's Journal; keep pl
 time you sit on a bench it catches up. Then try builds (a Crest, its Tools, the Needle's level)
 and take them into a fight where the answer is different for each enemy.
 
-**Status (27 September 2026): phase 1 of the plan, the data.** Nothing is published yet.
-The study of the game and the plan by value and cost are in
-[`design/00-study.md`](design/00-study.md); the rules for working on it, in
-[`CLAUDE.md`](CLAUDE.md).
+**Status (27 September 2026): the plan's eight phases are built**, ready to publish: your game
+from its save (the 100% equal to the game's on 92 real saves), the Inventory, Progress with the
+Tasks, the game's own map, the Hunter's Journal, the Crest screen with the build engine, and
+Combat against every enemy and gauntlet; one page per search in each language. The study and
+the plan are in [`design/00-study.md`](design/00-study.md); the rules for working on it, in
+[`CLAUDE.md`](CLAUDE.md); what's on the page, in the [guide](docs/guide.md).
 
 ## Run it
 
@@ -23,8 +25,14 @@ python3 -m http.server 8000    # then http://localhost:8000
 npm test                       # node --test, no dependencies
 npm run text -- "Straight Pin" # the game's own text, in every language it ships
 npm run kb                     # downloads the wiki's wikitext into kb/data/raw/
-npm run data                  # regenerates js/data.js, js/enemies.js and js/journal.js from it
+npm run data                   # regenerates js/data.js, enemies, journal, collectibles, gauntlets
+npm run collectibles           # the completionist's dictionary, pinned (the save's fields)
+npm run art                    # the game's sprites from the wiki; npm run icons, its icons
+npm run pages                  # one page per search, in each language, and sitemap.xml
+npm run check-pack -- <folder> # the site against a folder of real saves: the 100% must match
 ```
+
+The map is extracted from the installed game: `tools/extract-map.py` (see its header).
 
 ## Credits
 

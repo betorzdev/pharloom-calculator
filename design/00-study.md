@@ -810,6 +810,14 @@ names, the Crests by `js/data.js`, the wiki's sentences left out), run in Combat
 as a whole. **Phase 7 is done.** Not done: which gauntlets a save has cleared (the save's scene
 flags, to find), and their black-threaded Act 3 variants.
 
+**Phase 8 is built** (the same day): `tools/pages.js` from the Hollow Knight site as it was (the
+address changed) and `tools/pages-text.js` written for Silksong, seven pages in each language
+(the home, the save analyzer, the 100% checklist, the map, the Journal, the Tools and Crests
+calculator, the damage calculator: §7's two Spanish ones first), `sitemap.xml`, the preview card
+and the icons, all checked by `test/pages.test.js` and opened over file:// from their subfolders.
+Left, and the author's to do: publishing (GitHub Pages) and Search Console; and trying the live
+link by hand with the game running.
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).

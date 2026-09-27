@@ -16,9 +16,9 @@
     title:          { es: 'Calculadora de Telalejana', en: 'Pharloom Calculator' },
     goHome:         { es: 'Ir a Tu partida, la pantalla de inicio', en: 'Go to Your game, the home screen' },
     langGroup:      { es: 'Idioma', en: 'Language' },
-    docTitle:       { es: 'Calculadora de Telalejana · Hollow Knight: Silksong', en: 'Pharloom Calculator · Hollow Knight: Silksong' },
-    metaDescription:{ es: 'Cómo cambia cada estadística de Hornet con cada herramienta, blasón y mejora en Hollow Knight: Silksong, y tu partida real seguida desde su archivo de guardado. En español e inglés. En construcción.',
-                      en: 'How each of Hornet\'s stats changes with each Tool, Crest and upgrade in Hollow Knight: Silksong, and your real game followed from its save. In English and Spanish. In the making.' },
+    docTitle:       { es: 'Tu partida de Silksong: el 100 %, el mapa y las herramientas · Calculadora de Telalejana', en: 'Silksong save tracker, 100% checklist, map and Tools · Pharloom Calculator' },
+    metaDescription:{ es: 'Importa tu partida de Hollow Knight: Silksong y mira qué te falta para el 100 %, en el mapa del propio juego, y cuántos golpes necesita cada enemigo con tus herramientas y blasones.',
+                      en: 'Import your Hollow Knight: Silksong save and see what\'s missing for 100%, on the game\'s own map, and how many hits each enemy takes with your Tools and Crests.' },
 
     /* The screen bar: the pages of the game's pause menu, with the game's own names where it has them. */
     navLabel:       { es: 'Pantallas', en: 'Screens' },

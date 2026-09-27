@@ -1,6 +1,6 @@
 # Pharloom Calculator — the full guide
 
-*Phase 2 under way: your game from its save. This guide grows with the page (CLAUDE.md: keep it up to date).*
+*Every screen of the plan is built. This guide grows with the page (CLAUDE.md: keep it up to date).*
 
 ## What's on the page
 
@@ -148,6 +148,15 @@ In a save it shows what's missing, or everything with a tick where you have it; 
 the whole list, as a guide. Which piece you have is read from the save one by one, and on the
 92 real saves it agrees with the game's own counters (masks, spools, the three upgrade ladders,
 the Silk Hearts). The exact room comes with the map (phase 6).
+
+### Pages
+
+The site is one page, and each search it answers has an address of its own, in each language:
+the save analyzer, the 100% checklist, the map, the Hunter's Journal, the Tools and Crests
+calculator and the damage calculator (`save-analyzer/`, `es/analizador-partida/`…). Each is the
+whole site opened on its screen, with its own title, description and a short text with
+questions, and `sitemap.xml` lists them. `npm run pages` writes them from `index.html` and
+`tools/pages-text.js`; `npm test` fails if one falls behind.
 
 ## Where the numbers come from
 
