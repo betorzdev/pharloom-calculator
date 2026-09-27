@@ -109,6 +109,12 @@ landing; after a Challenge, only the first hit takes it. And what it does to you
 attacks (the wiki's names, the game doesn't name them), how many masks it takes (the Barbed
 Bracelet doubles them) and how many kill you. The build is the Crest screen's.
 
+**Enemy gauntlets**: the other half of the screen, the game's 49 arenas of waves, each named by
+its place or its area, with its reward (the game's name for it, when it gives something the game
+names). For each wave, its enemies with their health, your slash's damage against each and how
+many kill it; for the whole arena, its health and the quickest way through, silk and loads
+carried from wave to wave (an estimate: each enemy's damage at your Needle's level).
+
 On top, **the quickest way**: your red Tools' full loads first, then the fewest slashes with the
 casts of your Silk Skill that their silk pays for (a strand per slash, starting with the spool
 full, as leaving a bench, and no Bind): "7 × Cogfly" against Lace, "12 × Straight Pin, 24 slashes

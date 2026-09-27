@@ -803,7 +803,12 @@ among its quest titles (`QUEST_<X>_TITLE`, `MQ_<X>_NAME`, `SQ_<X>_NAME`; compare
 the completionist's "Pain, Anguish, and Misery" is the game's "Pain, Anguish and Misery"), all 74
 named; the types by `TYPE_<X>_TITLE`. They show in Progress as a third part and in "since the
 previous save"; the author's 100% game has 64 done (two are one mode's only, a few one path's).
-The fleas were already in Progress and on the Map. Left: the 49 enemy gauntlets.
+The fleas were already in Progress and on the Map. Then the **49 enemy gauntlets**
+(`tools/gen-gauntlets.js`: the wiki's index page for each one's area and place, each subpage's
+reward and waves, 220 waves and 454 enemies all joined to `js/enemies.js`; the rewards the game
+names, the Crests by `js/data.js`, the wiki's sentences left out), run in Combat wave by wave and
+as a whole. **Phase 7 is done.** Not done: which gauntlets a save has cleared (the save's scene
+flags, to find), and their black-threaded Act 3 variants.
 
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about

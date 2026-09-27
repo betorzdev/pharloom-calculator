@@ -110,20 +110,84 @@
       <p class="pg-note">${esc(t('ftTheirsNote'))}</p></section>`;
   }
 
+  /* ── The enemy gauntlets (js/gauntlets.js): an arena's waves, one after another ──
+     Named by the place the wiki files it under, or its area (with a number when an area has
+     several); its reward, the game's name for it, when it gives something the game names. */
+  const G = SS.gauntlets.GAUNTLETS;
+  const CO = SS.collectibles;
+  // Its place's name, or its area's; numbered when several share it (Craw Lake has two).
+  const baseName = (g) => (g.place ? pick(g.place) : g.area && CO.AREAS[g.area] ? pick(CO.AREAS[g.area]) : g.id);
+  const gauntletName = (g) => {
+    const same = G.filter((x) => baseName(x) === baseName(g));
+    return same.length > 1 ? `${baseName(g)} ${num(same.indexOf(g) + 1)}` : baseName(g);
+  };
+  const gHp = (g) => g.waves.reduce((a, w) => a + w.reduce((b, [id, n]) => b + ((FOE.get(id) || {}).hp || 0) * n, 0), 0);
+
+  function gauntletPicker(cur) {
+    return `<div class="ft-pick"><ul class="ft-foes is-gauntlets">${G.map((g) => `<li><button type="button" class="ft-foe${g === cur ? ' is-on' : ''}"
+        data-act="ftGauntlet" data-value="${g.id}" aria-pressed="${g === cur}"${NT}><img src="${portrait(FOE.get(g.waves[g.waves.length - 1][0][0]))}" alt="" loading="lazy">
+        <span>${esc(gauntletName(g))}</span><i class="ft-boss">${esc(t('ftWaves', { n: num(g.waves.length) }))}</i></button></li>`).join('')}</ul></div>`;
+  }
+  function gauntletCard(g) {
+    const area = g.area && CO.AREAS[g.area] ? pick(CO.AREAS[g.area]) : '';
+    return `<div class="ft-card">
+        <h3 class="inv-name"${NT}>${esc(gauntletName(g))}</h3>
+        ${g.place && area ? `<p class="ft-hp"${NT}>${esc(area)}</p>` : ''}
+        <p class="ft-hp"><span class="save-k">${esc(t('ftHp'))}</span> <b>${num(gHp(g))}</b></p>
+        ${g.reward ? `<p class="ft-stagger"><span class="save-k">${esc(t('ftReward'))}</span> <span${NT}>${esc(pick(g.reward))}</span></p>` : ''}
+        <p class="pg-note">${esc(t('ftGauntletNote'))}</p>
+      </div>`;
+  }
+  function gauntletWaves(g, st) {
+    return g.waves.map((w, i) => {
+      const rows = w.map(([id, n]) => {
+        const f = FOE.get(id), r = E.compute(st, { foe: f });
+        const a = r.needle.attacks[0];
+        return `<li><img src="${portrait(f)}" alt=""><span class="ct-list-name"${NT}>${esc(pick(f.name))}${n > 1 ? ` ×${num(n)}` : ''}</span>
+          <span class="ct-list-sub">${esc(t('ftHp') + ' ' + (f.hp == null ? '?' : num(f.hp)))}</span><b>${num(a.total)}</b>
+          <span class="ft-uses">${a.uses == null ? '' : esc(t('ftUses', { n: num(a.uses) }))}</span></li>`;
+      }).join('');
+      return `<section class="ct-block"><h3 class="ct-h">${esc(t('ftWave', { n: num(i + 1) }))}</h3><ul class="ct-list ft-list">${rows}</ul></section>`;
+    }).join('');
+  }
+
   App.screens.fight = (sec) => {
+    const mode = prefs.ftMode === 'gauntlets' ? 'gauntlets' : 'foe';
+    const modes = `<div class="seg pg-seg" role="group" aria-label="${esc(t('ftModes'))}">
+        <button type="button" data-act="ftMode" data-value="foe" aria-pressed="${mode === 'foe'}">${esc(t('ftModeFoe'))}</button>
+        <button type="button" data-act="ftMode" data-value="gauntlets" aria-pressed="${mode === 'gauntlets'}">${esc(t('ftModeGauntlets'))}</button></div>`;
+    if (mode === 'gauntlets') {
+      const g = G.find((x) => x.id === prefs.gauntlet) || G[0];
+      const st = App.currentBuild();
+      /* The whole arena at once, silk and loads carrying over: its health as your Needle's level
+         sees it (each enemy's health over its modifier at that level), against the plan. The Tools
+         hit at the Kit's level, where the modifiers can differ: an estimate, and it says so. */
+      const lvl = E.normalize(st).needle;
+      const hpAll = Math.ceil(g.waves.reduce((a, w) => a + w.reduce((b, [id, n]) => {
+        const f = FOE.get(id) || {};
+        return b + (f.hp ? (f.hp / (f.mods ? f.mods[lvl] : 1)) * n : 0);
+      }, 0), 0));
+      const whole = E.compute(st, { foe: { id: g.id, hp: hpAll, mods: [1, 1, 1, 1, 1] } });
+      const p = planHtml(whole);
+      sec.innerHTML = `<div class="ft">${brackets}${screenHead(esc(t('navFight')), modes)}
+        <div class="ft-body">${gauntletPicker(g)}${gauntletCard(g)}<div class="ct-figs">${p}${gauntletWaves(g, st)}</div></div></div>`;
+      return;
+    }
     const f = FOE.get(prefs.foe) || FOE.get('lace');
     const black = !!prefs.ftBlack && !!f.bt;
     const r = E.compute(App.currentBuild(), { foe: f, black });
     const st = r.state;
     const build = `<p class="saves-note">${esc(t('ftBuild', { crest: pick(D.CRESTS.find((c) => c.id === st.crest).name), needle: pick(D.NEEDLES[st.needle].name), kit: num(st.kit) }))}
       <a class="text-btn" href="${App.here(App.hashFor('tools'))}" data-act="view" data-value="tools">${esc(t('navTools'))}</a></p>`;
-    sec.innerHTML = `<div class="ft">${brackets}${screenHead(esc(t('navFight')), build)}
+    sec.innerHTML = `<div class="ft">${brackets}${screenHead(esc(t('navFight')), modes + build)}
       <div class="ft-body">${picker(f)}${card(f, r)}<div class="ct-figs">${planHtml(r)}${against(f, r)}${theirs(f, r)}</div></div></div>`;
   };
 
   Object.assign(actions, {
     ftFoe(node) { prefs.foe = node.dataset.value; savePrefs(); render(); },
     ftBlack() { prefs.ftBlack = !prefs.ftBlack; savePrefs(); render(); },
+    ftMode(node) { prefs.ftMode = node.dataset.value; savePrefs(); render(); },
+    ftGauntlet(node) { prefs.gauntlet = node.dataset.value; savePrefs(); render(); },
   });
   // The search filters as you type; only the list is repainted, so the field keeps its focus.
   document.addEventListener('input', (e) => {

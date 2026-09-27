@@ -231,6 +231,13 @@
     ftTheirs:       { es: 'Lo que te hace, con tus {n} máscaras', en: 'What it does to you, with your {n} masks' },
     ftTheirsNote:   { es: 'Máscaras por golpe según la wiki (1 cuando no lo dice); los nombres de los ataques son de la wiki: el juego no los nombra.', en: 'Masks per hit as the wiki gives them (1 when it doesn\'t); the attacks\' names are the wiki\'s: the game doesn\'t name them.' },
     ftToDie:        { es: '{n} te matan', en: '{n} kill you' },
+    ftModes:        { es: 'Contra qué', en: 'Against what' },
+    ftModeFoe:      { es: 'Un enemigo', en: 'One enemy' },
+    ftModeGauntlets:{ es: 'Desafíos de enemigos', en: 'Enemy gauntlets' },
+    ftWaves:        { es: '{n} oleadas', en: '{n} waves' },
+    ftWave:         { es: 'Oleada {n}', en: 'Wave {n}' },
+    ftReward:       { es: 'Recompensa', en: 'Reward' },
+    ftGauntletNote: { es: 'La vida de todas sus oleadas. Lo más rápido es una estimación: cuenta la seda y las cargas de una oleada a otra, con el daño de cada enemigo a tu nivel de aguja. Con hilo negro (acto 3) algunas cambian.', en: 'The health of all its waves. The quickest way is an estimate: it carries silk and loads from one wave to the next, with each enemy\'s damage at your Needle\'s level. Black-threaded (Act 3), some change.' },
     ftType_fire:    { es: 'fuego', en: 'fire' },
     ftType_void:    { es: 'vacío', en: 'void' },
 

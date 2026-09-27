@@ -128,3 +128,15 @@ test("the save's pieces and areas: every piece's area is one of the game's, and 
     'MOUNTAIN', 'SHELLWOOD', 'SLAB', 'UNDERSTORE', 'WILDS']) assert.ok(CO.AREAS[z], `no name for ${z}`);
   assert.equal(CO.AREAS.CORAL_STEPS.es, 'Escalones Ajados');
 });
+
+test('the 49 enemy gauntlets: every wave\'s enemies are in js/enemies.js, every area is the game\'s', () => {
+  const G = require('../js/gauntlets.js').GAUNTLETS;
+  const CO = require('../js/collectibles.js');
+  assert.equal(G.length, 49);
+  const ids = new Set(E.FOES.map((f) => f.id));
+  for (const g of G) {
+    assert.ok(g.waves.length > 0, g.id);
+    for (const w of g.waves) for (const [id, n] of w) assert.ok(ids.has(id) && n >= 1, `${g.id}: ${id}`);
+    assert.ok(CO.AREAS[g.area], `${g.id}: area ${g.area}`);
+  }
+});
