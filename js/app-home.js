@@ -42,7 +42,7 @@
         return { name: t({ masks: 'chMasks', spools: 'chSpools', hearts: 'chHearts', kit: 'chKit', pouch: 'chPouch' }[c.id], { n: num(c.id === 'masks' ? 5 + c.to : c.to) }) };
       case 'piece': {
         const p = CO.PIECES[c.i];
-        const name = p[0] === 'flea' ? t('kind_flea') : itemName(KIND_ITEM[p[0]]);
+        const name = p[4] ? pick(p[4]) : p[0] === 'flea' ? t('kind_flea') : itemName(KIND_ITEM[p[0]]);
         return { name, where: p[3] && CO.AREAS[p[3]] ? pick(CO.AREAS[p[3]]) : '', nt: true };
       }
       default: return null;

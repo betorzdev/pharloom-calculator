@@ -156,6 +156,14 @@
     chMore:         { es: 'y {n} más', en: 'and {n} more' },
     chToast:        { es: 'Tu partida: {list}', en: 'Your game: {list}' },
 
+    /* The Inventory (js/app-game.js) */
+    invFree:        { es: 'Modo libre: todo desbloqueado. Elige una partida para ver lo que llevas.', en: 'Free mode: everything unlocked. Pick a save to see what you carry.' },
+    invItems:       { es: 'Objetos', en: 'Items' },
+    invMissing:     { es: 'Aún no lo tienes', en: 'You don\'t have it yet' },
+    invHint:        { es: 'Señala algo para leer su descripción.', en: 'Point at something to read its description.' },
+    invDamage:      { es: 'Daño', en: 'Damage' },
+    invSilk:        { es: 'Seda', en: 'Silk' },   // INV_NAME_THREAD
+
     /* Progress: what's missing, piece by piece (js/app-progress.js) */
     pgShow:         { es: 'Mostrar', en: 'Show' },
     pgMissing:      { es: 'Lo que falta', en: 'What\'s missing' },
@@ -173,6 +181,9 @@
     kind_flea:      { es: 'Pulga perdida', en: 'Lost Flea' },   // KEY_FLEA
     kind_silkHeart: { es: 'Corazón de seda', en: 'Silk Heart' },   // MEMORY_MSG_TITLE_SILKHEART
     kind_fleas:     { es: 'Pulgas perdidas', en: 'Lost Fleas' },
+    kind_oldHearts: { es: 'Viejos corazones', en: 'Old Hearts' },   // as the wish MQ_BLACKTHREAD_5_NAME says them
+    kind_melodies:  { es: 'Melodías', en: 'Melodies' },
+    pgOtherArts:    { es: 'Otras habilidades', en: 'Other abilities' },
 
     /* Footer: the fan-project notice, the sources and the author (docs/guide.md, "Credits and licences") */
     footLabel:      { es: 'Aviso, fuentes y contacto', en: 'Notice, sources and contact' },

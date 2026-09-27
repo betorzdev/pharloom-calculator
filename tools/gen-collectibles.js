@@ -166,6 +166,22 @@ for (const [file, name, kind] of SECTION_KINDS) {
   for (const it of sec.items) PIECES.push([kind, it.whichAct, check(it.parsingInfo), areaOf(it.completionDetails)]);
 }
 
+/* The pieces the completionist doesn't list and the save keeps as flags, each with its own name:
+   the four Old Hearts that open the Red Memory (the Everbloom) and the three melodies that open
+   the Cradle. Their flags and Acts were found on the author's restore points (GAINED_HEART_*,
+   GAINED_MELODY_*: the flag that turned true, in the Act the event happened); no area: nothing
+   says where, and the flag isn't a place. */
+for (const [flag, key, kind, act] of [
+  ['CollectedHeartFlower', 'INV_NAME_HEART_BLOOM', 'old-heart', 3], ['CollectedHeartCoral', 'INV_NAME_HEART_CORAL', 'old-heart', 3],
+  ['CollectedHeartHunter', 'INV_NAME_HEART_HUNTER', 'old-heart', 3], ['CollectedHeartClover', 'INV_NAME_HEART_CLOVER', 'old-heart', 3],
+  ['HasMelodyArchitect', 'SQ_MELODY_ARCHITECT_NAME', 'melody', 2], ['HasMelodyLibrarian', 'SQ_MELODY_LIBRARIAN_NAME', 'melody', 2],
+  ['HasMelodyConductor', 'SQ_MELODY_CONDUCTOR_NAME', 'melody', 2],
+]) {
+  // Their description, the game's: the heart's inventory text, or the melody's wish ("Search the…").
+  const desc = N.text(key.startsWith('INV_NAME_') ? key.replace('INV_NAME_', 'INV_DESC_') : key.replace(/_NAME$/, '_DESC'));
+  PIECES.push([kind, act, ['flag', flag], null, N.text(key), desc]);
+}
+
 /* ── Where the rest of the 100% is: Tools, Crests, Silk Skills, abilities, the Everbloom ──
    site id → [act, area], by the game's English name ("Swift Step (Dash / Sprint)" is Swift
    Step; "Curveclaw / Curvesickle" both). */
@@ -208,7 +224,9 @@ const size = write(OUT, `js/collectibles.js — where each thing lives in Silkso
      JOURNAL   site Journal id → its name in playerData.EnemyJournalKillData.list
      AREAS     the game's area ids (playerData.currentArea) → the game's name for them
      WHERE     { tools, crests, skills, arts: { site id: [act, area] }, everbloom: [act, area] }
-     PIECES    [kind, act, check, area]: area is an AREAS id (or null), check is ['bool', scene, id] (sceneData.persistentBools),
+     PIECES    [kind, act, check, area, name?, desc?]: a piece's own name and text (an Old Heart,
+               a melody); area
+               an AREAS id (or null); check is ['bool', scene, id] (sceneData.persistentBools),
                ['flag', name], ['min', name, n], ['quest', name] (QuestCompletionData
                IsCompleted), ['visited', scene] (playerData.scenesVisited) or ['any', check…].
                Act 0 = there from the start.`,

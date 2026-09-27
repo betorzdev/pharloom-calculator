@@ -305,7 +305,7 @@ function buildNeedles() {
   return rows.map((r, i) => {
     const name = text('INV_NAME_NAIL' + (i + 1));
     if (W.plain(r[1]) !== name.en) fail(`Needle level ${i}: wiki "${W.plain(r[1])}", game "${name.en}"`);
-    return { level: i, name, damage: num(W.plain(r[2])) };
+    return { level: i, name, desc: text('INV_DESC_NAIL' + (i + 1)), damage: num(W.plain(r[2])) };
   });
 }
 
@@ -376,7 +376,11 @@ const ITEMS = [
   ['craftmetal', 'INV_NAME_TOOL_METAL'], ['everbloom', 'INV_NAME_WHITE_FLOWER'],
   ['farsight', 'INV_NAME_FARSIGHT'], ['hunters-journal', 'INV_NAME_JOURNAL'],
 ];
-const buildItems = () => ITEMS.map(([id, key]) => ({ id, key, name: text(key) }));
+/* Their description, the inventory's: INV_DESC_ for INV_NAME_; the Crafting Kit has none of its
+   own, and shares the Tool Pouch's pane text (INV_DESC_POUCHANDTOOLKIT); the Journal has none. */
+const ITEM_DESC = { 'crafting-kit': 'INV_DESC_POUCHANDTOOLKIT' };
+const buildItems = () => ITEMS.map(([id, key]) => ({ id, key, name: text(key),
+  desc: (ITEM_DESC[id] ? text(ITEM_DESC[id], true) : text(key.replace('INV_NAME_', 'INV_DESC_'), true)) || undefined }));
 
 /* Hornet's numbers (design/00-study.md §1, §2.6, from the wiki's Mask Shard, Spool Fragment,
    Silk, Bind and Tool Pouch & Crafting Kit pages). */

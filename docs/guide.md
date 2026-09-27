@@ -43,13 +43,26 @@ the previous save**: the new Act, Crests, Tools, Silk Skills and abilities by na
 with their new value, each piece found with its area, the Journal entries new or completed as a
 count, and what the completion went up by. The notice at the top says the same in one line.
 
+### Inventory
+
+The game's own pane: the Needle with its damage, the masks and the silk on the left; in the
+middle the game's icons in grids, the Tools by colour (a thin rule in their slot's colour), the
+Crests, the Silk Skills, the abilities and the items (the Crafting Kit and Tool Pouch with their
+level, the loose Mask Shards and Spool Fragments, the Memory Lockets, Craftmetal, Pale Oil, the
+Everbloom, the Silk Hearts, the Old Hearts, the melodies and the fleas); on the right the name
+and the game's own text of what you point at or tap. What you don't have yet is a dimmed
+silhouette; in Free mode everything is there. On a phone the description sits on the bottom
+edge while you go through the grids.
+
 ### Progress
 
 What's missing for 100%, in the wiki's ten categories: the Tools (with their slot colour),
 Crests, Silk Skills and abilities by name, and the Mask Shards, Spool Fragments, Crafting Kit
 and Tool Pouch upgrades, Needle upgrades and Silk Hearts one by one. Each thing says its Act and
 the area it's in, with the game's names; what belongs to a later Act than yours is dimmed. Then
-what doesn't count but opens things: Memory Lockets, Craftmetal, Pale Oil and the Lost Fleas.
+what doesn't count but opens things: Memory Lockets, Craftmetal, Pale Oil, the Lost Fleas, the
+four Old Hearts (the Red Memory), the three melodies (the Cradle) and the abilities outside the
+100% (the two cloaks, Beastling Call, Elegy of the Deep).
 In a save it shows what's missing, or everything with a tick where you have it; without a save,
 the whole list, as a guide. Which piece you have is read from the save one by one, and on the
 92 real saves it agrees with the game's own counters (masks, spools, the three upgrade ladders,
@@ -86,8 +99,9 @@ texts and names are © Team Cherry; they're used here only to show the game's ow
   only the facts (the header, the key, the field names) are taken. Where each Tool, Crest,
   Journal entry and loose piece lives in the save comes from the completionist's dictionary,
   pinned in `kb/data/completionist/` with its licence (`npm run collectibles`).
-- **Sprites**: Hornet, the masks, the spool and the five Needles are the game's, downloaded
-  from the wiki (`npm run art`) and shown as a fan project.
+- **Sprites and icons**: Hornet, the masks, the spool, the five Needles (`npm run art`) and the
+  inventory icons of the Tools, Crests, Silk Skills, abilities and items (`npm run icons`, fitted
+  into 256 px as WebP) are the game's, downloaded from the wiki and shown as a fan project.
 - **Fonts**: Cinzel, Spectral and Patrick Hand SC, under the
   [SIL Open Font License 1.1](../assets/fonts/OFL.txt).
 - **Code**: MIT ([`LICENSE`](../LICENSE)). It covers only the code, not any of the above.

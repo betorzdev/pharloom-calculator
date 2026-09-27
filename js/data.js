@@ -22,25 +22,54 @@
   const SS = globalThis.SS || (globalThis.SS = {});
 
   const NEEDLES = [
-    { level: 0, name: { es: 'Aguja', en: 'Needle', key: 'INV_NAME_NAIL1' }, damage: 5 },
+    {
+      level: 0,
+      name: { es: 'Aguja', en: 'Needle', key: 'INV_NAME_NAIL1' },
+      desc: {
+        es: 'Herramienta de costura larga, equilibrada de forma singular para el combate. La hoja está marcada por el tiempo y el uso.',
+        en: 'Long sewing tool, uniquely balanced for combat. The blade is marked by time and use.',
+        key: 'INV_DESC_NAIL1',
+      },
+      damage: 5,
+    },
     {
       level: 1,
       name: { es: 'Aguja afilada', en: 'Sharpened Needle', key: 'INV_NAME_NAIL2' },
+      desc: {
+        es: 'Herramienta de costura larga, equilibrada de forma singular para el combate. La hoja está afilada hasta obtener un filo fino.',
+        en: 'Long sewing tool, uniquely balanced for combat. The blade is honed to a fine edge.',
+        key: 'INV_DESC_NAIL2',
+      },
       damage: 9,
     },
     {
       level: 2,
       name: { es: 'Aguja resplandeciente', en: 'Shining Needle', key: 'INV_NAME_NAIL3' },
+      desc: {
+        es: 'Herramienta de costura larga, equilibrada de forma singular para el combate. La hoja reluce más afilada que nunca.',
+        en: 'Long sewing tool, uniquely balanced for combat. The blade gleams sharper than ever before.',
+        key: 'INV_DESC_NAIL3',
+      },
       damage: 13,
     },
     {
       level: 3,
       name: { es: 'Aguja de acerocolmena', en: 'Hivesteel Needle', key: 'INV_NAME_NAIL4' },
+      desc: {
+        es: 'Herramienta de costura larga, equilibrada de forma singular para el combate. La hoja, muy refinada, muestra bandas de acerocolmena.',
+        en: 'Long sewing tool, uniquely balanced for combat. The highly refined blade reveals its hivesteel banding.',
+        key: 'INV_DESC_NAIL4',
+      },
       damage: 17,
     },
     {
       level: 4,
       name: { es: 'Aguja de acero pálido', en: 'Pale Steel Needle', key: 'INV_NAME_NAIL5' },
+      desc: {
+        es: 'Herramienta de costura larga, equilibrada de forma singular para el combate. La hoja de acerocolmena ha sido afilada hasta su forma suprema.',
+        en: 'Long sewing tool, uniquely balanced for combat. The Hivesteel blade has been sharpened to its ultimate form.',
+        key: 'INV_DESC_NAIL5',
+      },
       damage: 21,
     },
   ];
@@ -1257,46 +1286,91 @@
       id: 'mask-shard',
       key: 'INV_NAME_HEART_PIECE_1',
       name: { es: 'Fragmento de máscara', en: 'Mask Shard', key: 'INV_NAME_HEART_PIECE_1' },
+      desc: {
+        es: 'Fragmento de una antigua máscara que se usaba para protegerse del daño. Completa una máscara para reforzar la coraza y protegerte del daño.',
+        en: 'Shard of an ancient mask worn to protect oneself from harm. Complete a mask to strengthen the shell and protect against damage.',
+        key: 'INV_DESC_HEART_PIECE_1',
+      },
     },
     {
       id: 'spool-fragment',
       key: 'INV_NAME_SPOOL_PIECE_HALF',
       name: { es: 'Fragmento de carrete', en: 'Spool Fragment', key: 'INV_NAME_SPOOL_PIECE_HALF' },
+      desc: {
+        es: 'La mitad de un artefacto abandonado por las Tejedoras diseñado para recoger y guardar la seda. Un carrete completo te permitirá guardar más seda dentro de la coraza.',
+        en: 'One half of an artefact left behind by the Weavers, designed to collect and hold Silk. A completed spool will allow one to hold more Silk within their shell.',
+        key: 'INV_DESC_SPOOL_PIECE_HALF',
+      },
     },
     {
       id: 'memory-locket',
       key: 'INV_NAME_CREST_SOCKET',
       name: { es: 'Relicario de memorias', en: 'Memory Locket', key: 'INV_NAME_CREST_SOCKET' },
+      desc: {
+        es: 'Contiene una querida memoria. Se puede utilizar para ampliar un blasón. Amplía los blasones en el panel Blasón del menú.',
+        en: 'Keepsake containing a precious memory. Can be used to expand a Crest. Expand Crests in the Crest pane of the Menu.',
+        key: 'INV_DESC_CREST_SOCKET',
+      },
     },
     {
       id: 'tool-pouch',
       key: 'INV_NAME_TOOLPOUCH',
       name: { es: 'Bolsa de herramientas', en: 'Tool Pouch', key: 'INV_NAME_TOOLPOUCH' },
+      desc: {
+        es: 'Bolsa básica diseñada para guardar herramientas, trampas y materiales de fabricación.',
+        en: 'Basic pouch designed for holding tools, traps and crafting materials.',
+        key: 'INV_DESC_TOOLPOUCH',
+      },
     },
     {
       id: 'crafting-kit',
       key: 'INV_MSG_TOOLKIT',
       name: { es: 'Kit de fabricación', en: 'Crafting Kit', key: 'INV_MSG_TOOLKIT' },
+      desc: {
+        es: 'Bolsa para guardar trampas y herramientas, así como utensilios de fabricación para aumentar su letalidad.',
+        en: 'A pouch for holding traps and tools, and fine crafting implements to increase their lethality.',
+        key: 'INV_DESC_POUCHANDTOOLKIT',
+      },
     },
     {
       id: 'pale-oil',
       key: 'INV_NAME_PLINNEY_TOOLS',
       name: { es: 'Aceite pálido', en: 'Pale Oil', key: 'INV_NAME_PLINNEY_TOOLS' },
+      desc: {
+        es: 'Glándula biliar de una extraña babosílfide. Los maestros alfileros con talento pueden utilizar el líquido brillante que contiene para mejorar el filo de una hoja.',
+        en: 'Bile gland of a rare sylphean slug. Talented pinmasters can use the glistening liquid within to improve a blade\'s sharpness.',
+        key: 'INV_DESC_PLINNEY_TOOLS',
+      },
     },
     {
       id: 'craftmetal',
       key: 'INV_NAME_TOOL_METAL',
       name: { es: 'Metal artesano', en: 'Craftmetal', key: 'INV_NAME_TOOL_METAL' },
+      desc: {
+        es: 'Elemento poco común que se encuentra de forma natural en la roca y el hueso de Telalejana. Los artesanos expertos lo usan para fabricar herramientas y baratijas.',
+        en: 'Rare element found naturally within the rock and bone of Pharloom. Used by skilled craftsbugs in the construction of tools and trinkets.',
+        key: 'INV_DESC_TOOL_METAL',
+      },
     },
     {
       id: 'everbloom',
       key: 'INV_NAME_WHITE_FLOWER',
       name: { es: 'Siempreviva', en: 'Everbloom', key: 'INV_NAME_WHITE_FLOWER' },
+      desc: {
+        es: 'Flor etérea arrancada de una memoria profunda y lejana. Brilla con una luz suave y pálida que protege del vacío.',
+        en: 'Ethereal flower plucked from a deep and distant memory. Glows with soft, pale light that wards against the void.',
+        key: 'INV_DESC_WHITE_FLOWER',
+      },
     },
     {
       id: 'farsight',
       key: 'INV_NAME_FARSIGHT',
       name: { es: 'Vistalejana', en: 'Farsight', key: 'INV_NAME_FARSIGHT' },
+      desc: {
+        es: 'Instrumento de vigilancia retráctil de las Tejedoras. Una vez montado, el dispositivo permite la observación a grandes distancias. El Vistalejana puede montarse en un hogar.',
+        en: 'Retracted Weaver surveillance instrument. Once assembled, the device will allow observation over vast distances. The Farsight can be assembled in a home.',
+        key: 'INV_DESC_FARSIGHT',
+      },
     },
     {
       id: 'hunters-journal',

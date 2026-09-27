@@ -859,7 +859,6 @@ kbd {
    first empty save. In a save: the profile's line (the Act, the time, the rosaries), your 100%
    large with the game's own figure under it, and the wiki's ten categories as bars in bone,
    full ones lit. Figures in --font-num, as everywhere. */
-.hm { position: relative; }
 .hm-invite {
   display: grid; justify-items: center; gap: var(--sp-3); max-width: var(--measure); margin: 0 auto;
   padding: var(--sp-8) var(--sp-4); text-align: center; border: 1px dashed transparent;
@@ -968,3 +967,76 @@ kbd {
 .hm-gain { display: flex; align-items: baseline; gap: var(--sp-2); min-width: 0; font-size: var(--fs-sm); color: var(--ink); }
 .hm-gain::before { content: ''; flex: none; width: var(--diamond); height: var(--diamond); border: 1px solid var(--ink-2); transform: rotate(45deg) translateY(-2px); }
 .hm-gain-where { font-size: var(--fs-xs); color: var(--muted); white-space: nowrap; }
+
+/* ── The Inventory (js/app-game.js): the game's pane ──────────────────────
+   Three columns as the game's: the Needle and the HUD on the left, the icons in grids in the
+   middle, the description on the right. An icon you don't have is a dimmed silhouette; the one
+   picked has the pause menu's white frame. A Tool carries a thin rule in its slot colour (data). */
+.inv-body { display: grid; grid-template-columns: 180px minmax(0, 1fr) 260px; gap: var(--sp-8); align-items: start; margin-top: var(--sp-6); }
+.inv-side { display: grid; justify-items: center; gap: var(--sp-6); text-align: center; }
+.inv-needle img { height: calc(var(--sp-16) * 3); width: auto; filter: drop-shadow(0 0 12px color-mix(in oklab, var(--spotlight) 22%, transparent)); }
+.inv-needle-name { margin: var(--sp-2) 0 0; font-family: var(--font-display); font-size: var(--fs-sm); letter-spacing: var(--track-title); color: var(--ink-strong); }
+.inv-needle-dmg { margin: var(--sp-1) 0 0; font-size: var(--fs-sm); color: var(--ink-2); }
+.inv-needle-dmg b, .inv-silk b { font-family: var(--font-num); font-variant-numeric: tabular-nums; color: var(--ink-strong); }
+.inv-hud { display: grid; gap: var(--sp-3); justify-items: center; }
+.inv-masks { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-half); margin: 0; }
+.inv-masks img { height: var(--sp-6); width: auto; }
+.inv-silk { display: grid; justify-items: center; gap: var(--sp-1); margin: 0; font-size: var(--fs-sm); color: var(--ink-2); }
+.inv-silk img { width: 140px; height: auto; }
+.inv-main { display: grid; gap: var(--sp-6); min-width: 0; }
+.inv-pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: var(--sp-6); }
+.inv-h {
+  margin: 0 0 var(--sp-2); padding-bottom: var(--sp-1); border-bottom: 1px solid var(--line);
+  font-family: var(--font-display); font-size: var(--fs-sm); font-weight: 600; letter-spacing: var(--track-title); color: var(--filigree);
+}
+.inv-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(56px, 1fr)); gap: var(--sp-2); }
+.inv-cell {
+  position: relative; display: grid; place-items: center; width: 100%; aspect-ratio: 1; padding: var(--sp-1);
+  border: 1px solid transparent; background: none; cursor: pointer;
+  transition: border-color var(--dur) var(--ease), background-color var(--dur) var(--ease);
+}
+.inv-cell img { max-width: 100%; max-height: 100%; object-fit: contain; transition: filter var(--dur) var(--ease), opacity var(--dur) var(--ease); }
+.inv-cell.is-missing img { filter: grayscale(1) brightness(0.35); opacity: 0.6; }
+.inv-cell:is(:hover, :focus-visible) { border-color: color-mix(in oklab, var(--filigree) 40%, transparent); background: var(--veil); outline: none; }
+.inv-cell:is(:hover, :focus-visible) img { filter: drop-shadow(0 0 6px color-mix(in oklab, var(--spotlight) 45%, transparent)); }
+.inv-cell.is-missing:is(:hover, :focus-visible) img { filter: grayscale(1) brightness(0.55); }
+.inv-cell.is-picked { border-color: var(--filigree); background: var(--veil); }
+.inv-cell.is-red { box-shadow: inset 0 -2px 0 color-mix(in oklab, var(--slot-red) 70%, transparent); }
+.inv-cell.is-blue { box-shadow: inset 0 -2px 0 color-mix(in oklab, var(--slot-blue) 70%, transparent); }
+.inv-cell.is-yellow { box-shadow: inset 0 -2px 0 color-mix(in oklab, var(--slot-yellow) 70%, transparent); }
+.inv-count {
+  position: absolute; right: var(--sp-half); bottom: var(--sp-half); padding: 0 var(--sp-1);
+  font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-2xs); line-height: 1.4;
+  color: var(--ink-strong); background: color-mix(in oklab, var(--scene-bg) 80%, transparent);
+}
+.inv-detail {
+  position: sticky; top: calc(var(--sticky-h) + var(--sp-4)); display: grid; justify-items: center; gap: var(--sp-2);
+  min-height: 280px; padding: var(--sp-4); text-align: center; border-left: 1px solid var(--line);
+}
+.inv-big { width: 128px; height: 128px; object-fit: contain; filter: drop-shadow(0 0 16px color-mix(in oklab, var(--spotlight) 25%, transparent)); }
+.inv-big.is-missing { filter: grayscale(1) brightness(0.45); }
+.inv-name { margin: 0; font-family: var(--font-display); font-size: var(--fs-lg); font-weight: 600; letter-spacing: var(--track-title); color: var(--ink-strong); text-wrap: balance; }
+.inv-have { margin: 0; font-family: var(--font-num); font-variant-numeric: tabular-nums; color: var(--ink-2); }
+.inv-not { margin: 0; font-size: var(--fs-xs); letter-spacing: var(--track-label); text-transform: uppercase; color: var(--muted); }
+.inv-desc { margin: 0; font-size: var(--fs-sm); line-height: 1.55; color: var(--ink-2); text-wrap: pretty; }
+.inv-hint { margin: auto 0; font-size: var(--fs-sm); color: var(--muted); }
+/* Narrower, the description sits on the bottom edge of the window while you go through the grids,
+   so what you tap reads where you are; with nothing picked, only the hint. */
+@media (max-width: 1100px) {
+  .inv-body { grid-template-columns: 150px minmax(0, 1fr); }
+  .inv-detail {
+    grid-column: 1 / -1; position: sticky; top: auto; bottom: 0; z-index: 2; min-height: 0; max-height: 45vh; overflow: auto;
+    grid-template-columns: auto minmax(0, 1fr); justify-items: start; align-items: center; text-align: left; column-gap: var(--sp-4);
+    border-left: 0; border-top: 1px solid var(--filigree); background: var(--scene-bg); box-shadow: 0 -12px 24px var(--scene-bg);
+  }
+  .inv-detail > :not(.inv-big) { grid-column: 2; }
+  .inv-detail .inv-big { grid-row: 1 / span 4; width: 72px; height: 72px; }
+  .inv-detail .inv-hint { grid-column: 1 / -1; margin: 0; }
+}
+@media (max-width: 640px) {
+  .inv-body { grid-template-columns: minmax(0, 1fr); }
+  .inv-side { grid-template-columns: auto minmax(0, 1fr); justify-items: start; text-align: left; }
+  .inv-needle img { height: calc(var(--sp-16) * 1.5); }
+  .inv-pair { grid-template-columns: minmax(0, 1fr); }
+  .inv-grid { grid-template-columns: repeat(auto-fill, minmax(48px, 1fr)); }
+}

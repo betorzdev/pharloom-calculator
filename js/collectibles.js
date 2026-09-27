@@ -9,7 +9,9 @@
      JOURNAL   site Journal id → its name in playerData.EnemyJournalKillData.list
      AREAS     the game's area ids (playerData.currentArea) → the game's name for them
      WHERE     { tools, crests, skills, arts: { site id: [act, area] }, everbloom: [act, area] }
-     PIECES    [kind, act, check, area]: area is an AREAS id (or null), check is ['bool', scene, id] (sceneData.persistentBools),
+     PIECES    [kind, act, check, area, name?, desc?]: a piece's own name and text (an Old Heart,
+               a melody); area
+               an AREAS id (or null); check is ['bool', scene, id] (sceneData.persistentBools),
                ['flag', name], ['min', name, n], ['quest', name] (QuestCompletionData
                IsCompleted), ['visited', scene] (playerData.scenesVisited) or ['any', check…].
                Act 0 = there from the start. */
@@ -630,6 +632,102 @@
     ['silk-heart', 1, ['visited', 'Memory_Silk_Heart_BellBeast'], 'BONEFOREST'],
     ['silk-heart', 2, ['visited', 'Memory_Silk_Heart_WardBoss'], 'WARD'],
     ['silk-heart', 2, ['visited', 'Memory_Silk_Heart_LaceTower'], 'CRADLE'],
+    [
+      'old-heart',
+      3,
+      ['flag', 'CollectedHeartFlower'],
+      null,
+      { es: 'Corazón de polen', en: 'Pollen Heart', key: 'INV_NAME_HEART_BLOOM' },
+      {
+        es: 'Corazón animado de Nyleth. Su latido es tenue y rápido.',
+        en: 'Enlivened heart of Nyleth. It beats faint and fast.',
+        key: 'INV_DESC_HEART_BLOOM',
+      },
+    ],
+    [
+      'old-heart',
+      3,
+      ['flag', 'CollectedHeartCoral'],
+      null,
+      { es: 'Corazón de corteza', en: 'Encrusted Heart', key: 'INV_NAME_HEART_CORAL' },
+      {
+        es: 'Corazón animado de Khan, Rey de la Corteza. Su latido es profundo y lento.',
+        en: 'Enlivened heart of Crust King Khann. It beats deep and slow.',
+        key: 'INV_DESC_HEART_CORAL',
+      },
+    ],
+    [
+      'old-heart',
+      3,
+      ['flag', 'CollectedHeartHunter'],
+      null,
+      { es: 'Corazón de cazadora', en: 'Hunter\'s Heart', key: 'INV_NAME_HEART_HUNTER' },
+      {
+        es: 'Corazón animado de Karmelita, la Cantante Skarr. Su latido es firme y fuerte.',
+        en: 'Enlivened heart of Skarrsinger Karmelita. Its beat is steady and strong.',
+        key: 'INV_DESC_HEART_HUNTER',
+      },
+    ],
+    [
+      'old-heart',
+      3,
+      ['flag', 'CollectedHeartClover'],
+      null,
+      { es: 'Corazón siamés', en: 'Conjoined Heart', key: 'INV_NAME_HEART_CLOVER' },
+      {
+        es: 'Corazón animado del Príncipe Verde. Su latido es nítido y claro.',
+        en: 'Enlivened heart of the Green Prince. Its beat is sharp and clear.',
+        key: 'INV_DESC_HEART_CLOVER',
+      },
+    ],
+    [
+      'melody',
+      2,
+      ['flag', 'HasMelodyArchitect'],
+      null,
+      {
+        es: 'Melodía de los Arquitectos',
+        en: 'Architect\'s Melody',
+        key: 'SQ_MELODY_ARCHITECT_NAME',
+      },
+      {
+        es: 'Busca en el núcleo mecanizado de la Ciudadela la Melodía de los Arquitectos.',
+        en: 'Search the mechanised core of the Citadel for the melody of the Architects.',
+        key: 'SQ_MELODY_ARCHITECT_DESC',
+      },
+    ],
+    [
+      'melody',
+      2,
+      ['flag', 'HasMelodyLibrarian'],
+      null,
+      {
+        es: 'Melodía de los Guardianes de las Bóvedas',
+        en: 'Vaultkeeper\'s Melody',
+        key: 'SQ_MELODY_LIBRARIAN_NAME',
+      },
+      {
+        es: 'Busca en el ala enclaustrada de la Ciudadela la Melodía de los Guardianes de las Bóvedas.',
+        en: 'Search the cloistered wing of the Citadel for the melody of the Vaultkeepers.',
+        key: 'SQ_MELODY_LIBRARIAN_DESC',
+      },
+    ],
+    [
+      'melody',
+      2,
+      ['flag', 'HasMelodyConductor'],
+      null,
+      {
+        es: 'Melodía de los Directores',
+        en: 'Conductor\'s Melody',
+        key: 'SQ_MELODY_CONDUCTOR_NAME',
+      },
+      {
+        es: 'Busca en las doradas alturas de la Ciudadela la Melodía de los Directores.',
+        en: 'Search the gilded heights of the Citadel for the melody of the Conductors.',
+        key: 'SQ_MELODY_CONDUCTOR_DESC',
+      },
+    ],
   ];
 
   SS.collectibles = { TOOLS, COUNTED, CRESTS, JOURNAL, AREAS, WHERE, PIECES };

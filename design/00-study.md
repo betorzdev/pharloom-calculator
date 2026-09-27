@@ -724,8 +724,16 @@ regenerated list still reads an old slot. The upgrades and Silk Hearts one by on
 game's counters on the 92 saves too. And **"Since the previous save"** (`js/changes.js`, on Your
 game and in the live notice), checked on the restore points: between two of the same game, the
 event that wrote the second (`GAINED_BEAST`, `GAINED_DOUBLE_JUMP`, `ACT_3`…) is always among
-what's new, but three kinds the site doesn't track yet (the Cursed Crest, the three Needolin
-melodies, the four Old Hearts): they're Progress's next rows. The live link follows `user#.dat`
+what's new. Three kinds weren't tracked at first and now are: the four Old Hearts
+(`CollectedHeart*`), the three melodies (`HasMelody*`) and the two abilities outside the 100%
+(Beastling Call is `UnlockedFastTravelTeleport`, Elegy of the Deep `hasNeedolinMemoryPowerup`),
+all found as the flag that turned true between two restore points. The Cursed Crest
+(`gainedCurse`) isn't shown: the game has no name for it, nor for the Cloakless one.
+Last, the **Inventory**, as the game's pane, with the wiki's inventory icons (`npm run icons`:
+100, each thing's infobox image, the "Icon SS <Name> Art" family for the Skills, abilities,
+hearts and melodies; fitted into 256 px and saved as WebP, 0.9 MB instead of 3.4) and the game's
+own descriptions (the Needles' and items' added to `js/data.js`). That closes phase 2's screens;
+what's left of it is trying the live link by hand. The live link follows `user#.dat`
 alone (the restore points go to `Restore_Points#/` and aren't followed), which should make the
 bench its unit, as in Hollow Knight: whether Silksong writes `user#.dat` only on resting and
 quitting (§4.3's open question) is still to see by hand. **Phase 2 is done** but for that: trying

@@ -66,7 +66,9 @@
   }
   // A category's own note: masks and spools count whole, not by piece.
   const NOTE = { masks: 'pgWholeNote', spools: 'pgSpoolNote' };
-  const BEYOND = [['memory-locket'], ['craftmetal'], ['pale-oil'], ['flea', 'kind_fleas']];
+  const BEYOND = [['memory-locket'], ['craftmetal'], ['pale-oil'], ['flea', 'kind_fleas'], ['old-heart', 'kind_oldHearts'], ['melody', 'kind_melodies']];
+  // The abilities that aren't in the 100%: the two cloaks, Beastling Call and Elegy of the Deep.
+  const OTHER_ARTS = ['drifters-cloak', 'faydown-cloak', 'beastling-call', 'elegy-of-the-deep'];
 
   function group(id, title, list, g, got, max) {
     const all = prefs.pgAll || !g;
@@ -96,9 +98,13 @@
     }).join('');
     const beyond = BEYOND.map(([kind, key]) => {
       const list = CO.PIECES.map((p, i) => ({ p, i })).filter(({ p }) => p[0] === kind)
-        .map(({ p, i }) => ({ name: KIND_NAME[kind](), got: !!g && g.pieces.includes(i), act: p[1], area: p[3] })).sort(byAct);
+        .map(({ p, i }) => ({ name: p[4] ? pick(p[4]) : KIND_NAME[kind](), got: !!g && g.pieces.includes(i), act: p[1], area: p[3] })).sort(byAct);
       return group(kind, key ? t(key) : KIND_NAME[kind](), list, g, list.filter((x) => x.got).length, list.length);
-    }).join('');
+    }).join('') + (() => {
+      const list = OTHER_ARTS.map((id) => { const w = CO.WHERE.arts[id] || [];
+        return { name: pick(D.ARTS.find((x) => x.id === id).name), got: !!g && g.arts.includes(id), act: w[0] || 0, area: w[1] || null }; });
+      return group('other-arts', t('pgOtherArts'), list, g, list.filter((x) => x.got).length, list.length);
+    })();
     sec.innerHTML = `<div class="pg">${brackets}${screenHead(esc(t('navProgress')), seg)}
         <h3 class="pg-part">${esc(t('pg100'))}${c ? ` <b>${num(c.total)}${App.pctSpace()}</b>` : ''}</h3>
         <div class="pg-groups">${hundred}</div>

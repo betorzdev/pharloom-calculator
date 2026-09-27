@@ -185,7 +185,9 @@
     sharpdart: 'hasSilkCharge', 'rune-rage': 'hasSilkBomb', 'pale-nails': 'hasSilkBossNeedle' };
   const ART_PD = { 'needle-strike': 'hasChargeSlash', 'swift-step': 'hasDash', 'cling-grip': 'hasWalljump',
     clawline: 'hasHarpoonDash', 'silk-soar': 'hasSuperJump', sylphsong: 'HasBoundCrestUpgrader', needolin: 'hasNeedolin',
-    'drifters-cloak': 'hasBrolly', 'faydown-cloak': 'hasDoubleJump' };
+    'drifters-cloak': 'hasBrolly', 'faydown-cloak': 'hasDoubleJump',
+    // Found on the restore points GAINED_MELODY_BEAST and GAINED_MELODY_DEEP (27-Sep-2026).
+    'beastling-call': 'UnlockedFastTravelTeleport', 'elegy-of-the-deep': 'hasNeedolinMemoryPowerup' };
 
   const list = (v) => (v && Array.isArray(v.savedData) ? v.savedData : []);
   const named = (v) => { const m = new Map(); for (const e of list(v)) if (e && !m.has(e.Name)) m.set(e.Name, e.Data || {}); return m; };
