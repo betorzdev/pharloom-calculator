@@ -66,7 +66,7 @@ test('Act 1: the Bellshrines, the Grand Gate and the Last Judge; the Phantom goe
 // for Act 3 but Pavo's talk. Its fields as game() reads them.
 const RP25 = {
   act: 2, caravan: 3, doubleJump: true, laceTower: true, bellhomeKey: false, snareOffered: false, snareReady: false,
-  snarePieces: ['Snare Soul Swamp Bug'], bellshrines: Q.BELLSHRINES.map((b) => b.field), grandGate: true, lastJudge: true, phantom: true,
+  snarePieces: ['Snare Soul Swamp Bug'], bellshrines: Q.BELLSHRINES.map((b) => b.field), lastJudge: true, phantom: true,
   quests: ['A Pinsmiths Tools', 'Beastfly Hunt', 'Belltown House Mid', 'Belltown House Start', 'Brolly Get', 'Broodmother Hunt',
     'Building Materials', 'Building Materials (Bridge)', 'Building Materials (Statue)', 'Citadel Ascent', 'Citadel Ascent Lift',
     'Citadel Ascent Melodies', 'Citadel Investigate', 'Citadel Seeker', 'Crow Feathers', 'Crow Feathers Pre', 'Doctor Curse Cure',
@@ -128,10 +128,50 @@ test('game() reads the fields of the road, and a slot keeps them', () => {
     Tools: { savedData: [{ Name: 'Silk Snare', Data: { IsUnlocked: true } }] },
     QuestCompletionData: { savedData: [{ Name: 'Journal', Data: { IsCompleted: true } }, { Name: 'Skull King', Data: { IsAccepted: true } }] } };
   const g = F.game(pd);
-  assert.deepEqual([g.caravan, g.doubleJump, g.laceTower, g.bellhomeKey, g.snareOffered, g.snareReady, g.grandGate, g.phantom, g.lastJudge],
-    [3, true, true, true, true, false, true, true, false]);
+  assert.deepEqual([g.caravan, g.doubleJump, g.laceTower, g.bellhomeKey, g.snareOffered, g.snareReady, g.phantom, g.lastJudge],
+    [3, true, true, true, true, false, true, false]);
   assert.deepEqual(g.snarePieces, ['Snare Soul Churchkeeper', 'Silk Snare']);
   assert.deepEqual(g.bellshrines, ['bellShrineWilds']);
   assert.deepEqual(g.quests, ['Journal']);
   assert.deepEqual(F.gameOf(F.toSnapshot(pd)), g);
+});
+
+test('where each wish is taken: the game\'s Wishwalls and the NPCs who offer them, as the wiki says', () => {
+  const R = require('../js/rooms.js');
+  const W = require('../tools/wiki.js');
+  const quests = (w) => (w[2][0] === 'quest' ? [w[2][1]] : w[2][0] === 'any' ? w[2].slice(1).filter((c) => c[0] === 'quest').map((c) => c[1]) : []);
+  const chain = (q) => { const out = []; for (let x = q; x; x = Q.CHAIN[x] && Q.CHAIN[x].prev) out.unshift(x); return out; };
+  // Every scene is a room the graph knows, so it has rooms from a bench.
+  for (const [q, f] of Object.entries(Q.FROM)) {
+    assert.ok(Q.CHAIN[q] && !Q.CHAIN[q].main, `${q}: not a wish`);
+    for (const s of [f.board, ...(f.npc || [])].filter(Boolean)) assert.ok(R.graphScene(s), `${q}: ${s} isn't in js/graph.js`);
+  }
+  // The three Wishwalls: Bellhart's, Bone Bottom's, Songclave's.
+  assert.deepEqual([...new Set(Object.values(Q.FROM).map((f) => f.board).filter(Boolean))].sort(), ['Belltown', 'Bonetown', 'Song_Enclave']);
+  // Every wish that isn't a main objective is taken somewhere, itself or the wish before it.
+  const wishes = CO.WISHES.filter((w) => w[0] !== 'main-objectives').flatMap(quests);
+  for (const q of wishes) assert.ok(chain(q).some((x) => Q.FROM[x]), `${q}: taken nowhere`);
+  // The wiki's "location": a Wishwall exactly when the game's board lists the wish or its Pre.
+  const low = (s) => String(s || '').toLowerCase().replace(/’/g, "'");
+  const byTitle = new Map(CO.WISHES.map((w) => [low(w[4].en), w]));
+  const extra = { Runtfeast: ['Huntress Quest Runt'] };
+  let checked = 0;
+  for (const b of W.templates(W.page('Wishes'), 'TaskEntry')) {
+    const f = W.fields(b);
+    const w = byTitle.get(low(f.id));
+    for (const q of extra[f.id] || (w ? quests(w).slice(0, 1) : [])) {
+      checked += 1;
+      const board = chain(q).some((x) => Q.FROM[x] && Q.FROM[x].board);
+      assert.equal(board, /Wishwall/.test(f.location), `${f.id} (${q}): ${f.location}`);
+    }
+  }
+  assert.equal(checked, 54);   // the wiki's 53 entries that are the pane's, and Runtfeast
+  // A few by name: Creige after Bellhart's board; Zylotol's two, through his FSM template; the
+  // Huntress's through hers; the couriers' deliveries; Mergwin's, not the couriers'.
+  assert.deepEqual(Q.FROM['Crow Feathers Pre'], { board: 'Belltown' });
+  assert.deepEqual(Q.FROM['Crow Feathers'], { npc: ['Halfway_01'] });
+  assert.deepEqual(Q.FROM['Extractor Blue'], { npc: ['Crawl_08'] });
+  assert.deepEqual(Q.FROM['Huntress Quest'], { npc: ['Room_Huntress'] });
+  assert.deepEqual(Q.FROM['Courier Delivery Songclave'], { npc: ['Belltown'] });
+  assert.deepEqual(Q.FROM['Great Gourmand'], { npc: ['Song_09b'] });
 });

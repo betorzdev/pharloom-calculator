@@ -64,10 +64,19 @@ const W = {
   phaseAfter: { es: 'fase {n} tras {x} de daño', en: 'phase {n} after {x} damage' },
   // The shares of one of the fight's bars (Signis's 720 of the Forebrothers' 720 + 520).
   phaseAtOf: { es: 'fase {n} con {x} de vida de {o}', en: 'phase {n} at {x} of {o} health' },
-  phasePieces: { es: 'La fase {n} son {k} piezas de {x} de vida, y cada una se rompe a 0 o tras {h} golpes.',
-    en: 'Phase {n} is {k} pieces of {x} health, each broken at 0 or after {h} hits.' },
-  phasePiece: { es: 'La fase {n} es una pieza de {x} de vida, que se rompe a 0 o tras {h} golpes.',
-    en: 'Phase {n} is one piece of {x} health, broken at 0 or after {h} hits.' },
+  phasePieces: { es: 'La fase {n} son {k} piezas de {x} de vida, y cada una se rompe a 0 o tras {h} golpes contados.',
+    en: 'Phase {n} is {k} pieces of {x} health, each broken at 0 or after {h} counted hits.' },
+  phasePiece: { es: 'La fase {n} es una pieza de {x} de vida, que se rompe a 0 o tras {h} golpes contados.',
+    en: 'Phase {n} is one piece of {x} health, broken at 0 or after {h} counted hits.' },
+  // A piece's counted hits: the cooldown, run while still, and the Hunter's pace (js/engine.js, pieces).
+  pieceCount: { es: 'Un golpe solo cuenta si la pieza lleva {c} s quieta tras los {r} s que tarda en recuperarse: uno cada {g} s como pronto. {pace}',
+    en: 'A hit counts only once the piece has been still {c} s after its {r} s recovery: one every {g} s at the soonest. {pace}' },
+  paceFirst: { es: 'Tajeando sin parar al ritmo del blasón de cazadora ({i} s), solo cuenta el primero, y lo que la rompe es el daño.',
+    en: 'Slashing nonstop at the Hunter Crest\'s pace ({i} s), only the first counts, and damage is what breaks it.' },
+  pace: { es: 'Tajeando sin parar al ritmo del blasón de cazadora ({i} s), cuenta uno de cada {e}.',
+    en: 'Slashing nonstop at the Hunter Crest\'s pace ({i} s), one hit in {e} counts.' },
+  phaseBelow: { es: 'Algunas el juego las compara con un «menor que» estricto: cambia por debajo de su cifra, no al llegar a ella, y la que se da aquí ya es una menos.',
+    en: 'Some the game compares with a strict "less than": it moves on below its number, not at it, and the figure given here is already one under.' },
   phaseHeal: { es: 'Cuando cae uno, el otro, si tiene {x} de vida o menos, recupera {a}, hasta {m} como mucho.',
     en: 'When one falls, the other, at {x} health or less, heals {a}, to {m} at most.' },
   phaseReset: { es: 'A 0 de vida, si se falla el remate, vuelve a {x}.', en: 'At 0 health, if the finishing prompt is missed, it goes back to {x}.' },
@@ -141,15 +150,20 @@ function bossPage(page) {
   if (atk.staggers.length) body.push(both(W.stagger, (lang) => ({ x: list([...new Set(atk.staggers)].map((k) => num(k, lang)), lang) })));
   // Each fight's phases (js/phases.js), where the game's FSM moves on.
   const ph = fought.map((f) => [f, E.phases(PH[f.id], f.hp)]).filter(([, l]) => l.length);
+  const hunter = E.interval(E.normalize({ crest: 'hunter', needle: 4 }));
   if (ph.length) body.push(both(W.phases, (lang) => ({ x: ph.map(([f, l]) => (ph.length > 1 || fought.length > 1 ? fightName(f, lang) + ': ' : '')
     + list(l.map((x) => (PH[f.id].bars ? fill(W.phaseAfter[lang], { n: num(x.n, lang), x: num(x.dealt, lang) })
       : fill(W[x.of ? 'phaseAtOf' : 'phaseAt'][lang], { n: num(x.n, lang), x: num(x.left, lang), o: num(x.of || 0, lang) })
         + (x.share ? fill(W.phaseShare[lang], { p: num(Math.round(x.share * 100), lang) }) : ''))), lang)).join('; ') })));
+  if (ph.some(([, l]) => l.some((x) => x.below))) body.push(W.phaseBelow);
   // What js/phases.js says past the thresholds: bars in pieces, a heal, a reset.
   for (const [f] of ph) {
     const P = PH[f.id];
-    (P.pieces || []).forEach((k, i) => body.push(both(k > 1 ? W.phasePieces : W.phasePiece,
-      (lang) => ({ n: num(i + 1, lang), k: num(k, lang), x: num(P.bars[i] / k, lang), h: num(P.hits[i], lang) }))));
+    for (const p of E.pieces(P, null, hunter)) {
+      body.push(both(p.k > 1 ? W.phasePieces : W.phasePiece, (lang) => ({ n: num(p.n, lang), k: num(p.k, lang), x: num(p.hp, lang), h: num(p.hits, lang) })));
+      if (p.gap != null) body.push(both(W.pieceCount, (lang) => ({ c: num(p.cooldown, lang), r: num(p.recover, lang), g: num(p.gap, lang),
+        pace: fill(W[p.each == null ? 'paceFirst' : 'pace'][lang], { i: num(hunter, lang), e: num(p.each || 0, lang) }) })));
+    }
     if (P.heal) body.push(both(W.phaseHeal, (lang) => ({ x: num(P.heal[0], lang), a: num(P.heal[1], lang), m: num(P.heal[2], lang) })));
     if (P.reset) body.push(both(W.phaseReset, (lang) => ({ x: num(P.reset, lang) })));
   }

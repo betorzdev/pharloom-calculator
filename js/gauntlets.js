@@ -587,7 +587,7 @@
     {
       id: 'verdania',
       area: 'GROVE',
-      place: { es: 'Lost Verdania', en: 'Lost Verdania', key: 'GROVE_SUPER+GROVE_MAIN' },
+      place: { es: 'Verdania Perdida', en: 'Lost Verdania', key: 'GROVE_SUPER+GROVE_MAIN+GROVE_SUB' },
       waves: [
         [['verdanir', 2]],
         [['kindanir', 1]],

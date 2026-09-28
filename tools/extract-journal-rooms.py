@@ -79,7 +79,13 @@ RUNTIME = {
     'NAME_SAND_CENTIPEDE': ('record', 'Sand Centipede Attacker', None),    # Sandcarver: each pit's attacker
     'NAME_SWAMP_MUCKMAN': ('record', 'Swamp Muckman.*', None),             # Stilkin: each burrow
     'NAME_CENTIPEDE_TRAP': ('record', 'Centipede Trap', None),             # Garpid, Border Caves
-    'NAME_BLACK_THREAD_CORE': ('record', 'Black_Thread_Core.*', None),     # Void Mass: each core
+    # Void Mass: each core (Black_Thread_Core, _Citadel), 47 in 45 scenes, all of them Act 3's: each
+    # carries a DeactivateIfPlayerdataFalse on blackThreadWorld, and all but one (Bone_East_26's)
+    # sit under a Black Thread World object off by default, which a TestGameObjectActivator turns
+    # on when blackThreadWorld is true. Styx's two (Dust_11) are in a battle scene under Steel Soul
+    # States, only with permadeathMode off: Classic. Area by area the wiki's Location list agrees
+    # (47, 45 in Steel Soul), read on 28-Sep-2026.
+    'NAME_BLACK_THREAD_CORE': ('record', 'Black_Thread_Core.*', None),
     'NAME_ABYSS_TENDRIL': ('record', 'Inspect Region - Void Tendrils', None),  # their tablet, Abyss_08
     'NAME_WISP': ('record', 'Wisp Flame Lantern', None),                   # the lanterns that let them out
     # Summoned: what lets them out (a cocoon, a Gargant Gloom, a corpse).

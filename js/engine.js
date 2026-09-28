@@ -29,6 +29,9 @@
   const D = SS.data || require('./data.js');
   const HERO = SS.hero || require('./hero.js');
   const CO = SS.collectibles || require('./collectibles.js');
+  /* The Bind's times, from the Hero's Bind FSM (fsmtemplates_assets_shared, read on 28-Sep-2026):
+     Multi Bind's Bind Time, Quick Bind?'s multiplier (the Injector Band) and Bind Burst's time. */
+  const BIND = { multi: 0.8, quick: 0.6, burst: 0.17 };
 
   /* Half to the even integer, as the game rounds (0.5 → 0, 1.5 → 2, 2.5 → 2). The products are
      floats: a value within 1e-9 of .5 counts as .5 (29 × 2.75 = 79.75 is exact; 5 × 1.3 isn't). */
@@ -204,13 +207,17 @@
     const skillCost = has('egg-of-flealia') ? 3 : H.silk.skill;
     const silk = { spool, bind: H.silk.bind, skill: skillCost, casts: Math.floor(spool / skillCost), hearts: st.hearts };
 
-    /* Health and the Bind: masks, what a Bind heals (Multibinder: two of 2) and how long it takes
-       (Injector Band: 40% less). */
+    /* Health and the Bind: masks, what a Bind heals (Multibinder: two of 2) and how long it takes.
+       The time is the Hero's Bind FSM's (read on 28-Sep-2026): it heals when its Bind Time runs
+       out (1.2 s; Multibinder 0.8 s, twice) and a burst of 0.17 s ends it; the Injector Band
+       multiplies only the Bind Time (×0.6). So 1.37, 1.94, 0.89 and, both, 1.3 s: the Bind page's
+       table, not 1.37 × 0.6. */
     const multi = has('multibinder');
+    const bindTime = (multi ? BIND.multi : H.bind.seconds - BIND.burst) * (has('injector-band') ? BIND.quick : 1);
     const health = {
       masks: H.masks.base + st.masks,
       bind: { heals: multi ? 4 : H.bind.heals, parts: multi ? [2, 2] : [H.bind.heals],
-        seconds: Math.round(H.bind.seconds * (has('injector-band') ? 0.6 : 1) * 100) / 100 },
+        seconds: Math.round((multi ? 2 : 1) * (bindTime + BIND.burst) * 100) / 100 },
     };
 
     /* The slots: the Crest's per colour, open and locked (Memory Lockets open them), the
@@ -232,9 +239,11 @@
 
   /* The fight as a whole against hp: the fewest slashes, spending first every red Tool's full load
      and every cast of the Silk Skill equipped that silk pays for. Silk: the spool full to start
-     (as leaving a bench) and one strand per slash that lands; no Bind (no damage taken). When the
-     loads alone kill it, only the throws needed, the Tools in their order. → { slashes, casts,
-     throws: [{ id, n }], dealt } or null (no health: nothing to kill). */
+     (as leaving a bench) and one strand per slash that lands; no Bind (no damage taken). The
+     spool's cap (PlayerData.AddSilk: what's past it is lost) takes nothing here: a cast as soon
+     as its silk is there keeps the spool below its cost, never full. When the loads alone kill
+     it, only the throws needed, the Tools in their order. → { slashes, casts, throws: [{ id, n }],
+     dealt } or null (no health: nothing to kill). */
   function plan(r, hp) {
     if (!hp) return null;
     const slash = r.needle.attacks[0].rest || r.needle.slash;
@@ -291,76 +300,138 @@
     return { cap, first: Math.round(first * 1e4) / 1e4, next: Math.round(next * 1e4) / 1e4, strands };
   }
 
-  /* What the plan's fight leaves for Binds: its silk (the spool full to start, one strand per
-     slash, less the Skill casts, plus what Silk Hearts regenerate over the seconds the slash
-     takes to kill at the Crest's pace: needle.speed), a Bind's cost each, and the Reserve Bind's
-     free one. Starting full and slashing nonstop, the Hearts give nothing (regen). */
+  /* The plan's fight, for the Binds: its slashes and Skill casts in order, the spool (full to
+     start) and the Reserve Bind's free one; endure() plays it. Silk Hearts regenerate over the
+     seconds the slash takes to kill at the Crest's pace (needle.speed), from a full spool and
+     slashing nonstop: nothing (regen), and the Bind blocks it while it lasts (the Bind FSM's
+     SetSilkRegenBlocked, then a fresh delay), so they aren't in the fight; `hearts` is for the
+     page. → { spool, slashes, casts, skill, reserve, hearts } */
   function binds(r, p) {
     const skill = r.skills.find((x) => x.equipped);
     const sp = r.needle.speed || {};
     const hearts = { ...regen(r, sp.seconds, sp.interval, r.silk.spool), seconds: sp.seconds == null ? null : sp.seconds };
-    const silk = r.silk.spool + (p ? p.slashes - p.casts * (skill ? skill.silk : 0) : 0) + hearts.strands;
-    return { silk, paid: Math.floor(silk / r.silk.bind), reserve: r.state.tools.includes('reserve-bind') ? 1 : 0, hearts };
+    return { spool: r.silk.spool, slashes: p ? p.slashes : 0, casts: p && skill ? p.casts : 0, skill: skill ? skill.silk : 0,
+      reserve: r.state.tools.includes('reserve-bind') ? 1 : 0, hearts };
   }
 
-  /* How many hits of per masks Hornet takes before dying, with the Binds b pays for (binds(),
-     Silk Hearts' strands in): she binds as soon as one heals in full, or when the next hit would
-     kill her. Druid's Eye adds a strand every two hits taken (its upgrade, two), which may pay
-     for another. The spool's cap on what comes in is left out. → { hits, binds } */
-  function endure(r, per, b) {
-    const max = r.health.masks, heals = r.health.bind.heals, cost = r.silk.bind;
+  /* One fight (b, binds()) with n hits of per masks spread evenly over it: the i-th after
+     ⌊(i − ½)·slashes / n⌋ slashes, so all before the last, which kills. The spool starts full and
+     holds what it holds (PlayerData.AddSilk: past it, a strand is lost); a slash that lands adds
+     one, each Skill cast spends its silk as soon as it's there. After a hit she binds as soon as
+     one heals in full, or when the next hit would kill her, with silk or the Reserve Bind's.
+     Druid's Eye (HeroController.DoMossToolHit): a hit taken below a full spool counts, and every
+     second one adds a strand (Druid's Eyes, two); a hit at full doesn't count, and the count
+     starts over when the spool fills. → { dead, binds } */
+  function fight(r, per, b, n) {
+    const max = r.health.masks, heals = r.health.bind.heals, cost = r.silk.bind, cap = b.spool, S = b.slashes;
     const has = (id) => r.state.tools.includes(id);
-    const eye = has('druids-eyes') ? 1 : has('druids-eye') ? 0.5 : 0;
-    let h = max, silk = b ? b.silk : 0, free = b ? b.reserve : 0, hits = 0, used = 0;
-    if (!(per > 0)) return null;
-    for (;;) {
-      h -= per;
-      hits++;
-      if (h <= 0) return { hits, binds: used };
-      silk += eye;
-      while (h < max && (h <= per || max - h >= heals)) {
-        if (silk >= cost) silk -= cost;
-        else if (free) free--;
-        else break;
-        h = Math.min(max, h + heals);
-        used++;
+    const eye = has('druids-eyes') ? 2 : has('druids-eye') ? 1 : 0;
+    let h = max, silk = cap, casts = b.casts, free = b.reserve, counted = 0, used = 0, i = 0;
+    const add = (k) => { silk = Math.min(cap, silk + k); if (silk === cap) counted = 0; };
+    const cast = () => { while (casts > 0 && b.skill && silk >= b.skill) { silk -= b.skill; casts--; } };
+    cast();
+    for (let s = 0; s <= S; s++) {
+      if (s) { add(1); cast(); }
+      for (; i < n && Math.floor((i + 0.5) * S / n) <= s; i++) {
+        h -= per;
+        if (h <= 0) return { dead: true, binds: used };
+        if (eye && silk < cap && ++counted === 2) { counted = 0; add(eye); }
+        while (h < max && (h <= per || max - h >= heals)) {
+          if (silk >= cost) silk -= cost;
+          else if (free) free--;
+          else break;
+          h = Math.min(max, h + heals);
+          used++;
+        }
+        cast();
       }
     }
+    return { dead: false, binds: used };
+  }
+
+  /* How many hits of per masks kill Hornet in the plan's fight, with its Binds (fight()): the
+     fewest, spread evenly over it, she doesn't live through. With no slash (no plan, or the red
+     loads kill), they all come at once, on the spool alone. → { hits, binds } */
+  function endure(r, per, b) {
+    if (!(per > 0) || !b) return null;
+    for (let n = Math.ceil(r.health.masks / per); n < 100000; n++) {
+      const f = fight(r, per, b, n);
+      if (f.dead) return { hits: n, binds: f.binds };
+    }
+    return null;
   }
 
   /* A boss's phases (js/phases.js, from the game's FSMs) against hp: each one from the second,
      with the health it starts at, the damage it takes to get there, and the slashes (h: an attack
      of compute(), its uses as usesToKill counts them). The FSM moves on when the health is at or
-     below the threshold, a share of the health it started with or a number. The share is the
+     below the threshold, a share of the health it started with or a number; or, for those in
+     `below`, only below it, as the game compares them with a strict < (the Bell Eater's 75% of
+     800 is 600, so it moves on at 599: `below` true, `left` one less). The share is the
      game's MultiplyIntByFloat: the health times a single-precision float, truncated (its
      forceRoundUp is off in every boss), so 45% of 550 is 247, not 248. `of`: the shares are of
      one of the fight's bars, not of hp (Signis's 720 of the Forebrothers' 1,240), and the damage
      is to that one. Bars: each phase with its own health, all together the fight's; with another
      health (black-threaded) they no longer add up, and aren't used. With `pieces`, a bar is made
-     of so many pieces, each with its own share of it, and damage past one's 0 is lost: the
-     slashes are each piece's. → [{ n, left, share, dealt, of, uses }] */
+     of so many pieces (pieces()), and the slashes are each piece's, at `every` seconds apart
+     (needle.speed.interval): by damage or by the hit count, whichever comes first.
+     → [{ n, left, share, below, dealt, of, uses }] */
   const share = (hp, a) => Math.trunc(Math.fround(hp * Math.fround(a)));
-  function phases(P, hp, h) {
+  function phases(P, hp, h, every) {
     if (!P || !hp) return [];
     const out = [];
     if (P.bars && P.bars.reduce((a, b) => a + b, 0) === hp) {
+      const ps = P.pieces ? pieces(P, h, every) : null;
       let dealt = 0, uses = 0;
       P.bars.slice(0, -1).forEach((b, i) => {
         dealt += b;
-        const k = P.pieces && P.pieces[i], each = k && h ? usesToKill(h, b / k) : null;
-        uses = !h ? null : !P.pieces ? usesToKill(h, dealt) : uses != null && each != null ? uses + k * each : null;
-        out.push({ n: i + 2, left: hp - dealt, share: null, dealt, of: null, uses });
+        const each = ps && ps[i] ? ps[i].uses : null;
+        uses = !h ? null : !ps ? usesToKill(h, dealt) : uses != null && each != null ? uses + ps[i].k * each : null;
+        out.push({ n: i + 2, left: hp - dealt, share: null, below: false, dealt, of: null, uses });
       });
       return out;
     }
     const of = P.of || hp;
     for (const a of P.at || []) {
-      const left = a < 1 ? share(of, a) : a;
-      if (left > 0 && left < of) out.push({ n: out.length + 2, left, share: a < 1 ? a : null, dealt: of - left, of: P.of || null });
+      const below = (P.below || []).includes(a);
+      const left = (a < 1 ? share(of, a) : a) - (below ? 1 : 0);
+      if (left > 0 && left < of) out.push({ n: out.length + 2, left, share: a < 1 ? a : null, below, dealt: of - left, of: P.of || null });
     }
     return out.map((x) => ({ ...x, uses: h ? usesToKill(h, x.dealt) : null }));
   }
 
-  SS.engine = { roundHalfEven, normalize, modsFor, hitsOf, usesToKill, interval, compute, plan, regen, binds, endure, phases };
+  /* The pieces a bar is made of (P.pieces, Father of the Flame's four lanterns and then its core),
+     each with its share of the bar's health: it breaks at 0, damage past it lost, or after its
+     `hits` counted hits. Every hit takes its damage, but one counts only after `cooldown` seconds
+     still, which run once it has recovered from the last hit (`recover` seconds; a lantern hit
+     meanwhile starts it again): `gap` apart at the fastest. At `every` seconds a slash (the
+     Crest's pace), each is still every − recover seconds, so one slash in `each` counts (null:
+     only the first, as with every Crest's pace against a lantern, 0.55 s to recover); `uses`, the
+     slashes that break it, `by` 'damage' or 'hits'; and `spaced`, the hits that break it spaced
+     `gap` apart, when that's fewer than the slashes by damage. → [{ n, k, hp, hits, cooldown,
+     recover, gap, each, uses, by, spaced }] */
+  function pieces(P, h, every) {
+    if (!P || !P.pieces) return [];
+    return P.pieces.map((k, i) => {
+      const hp = P.bars[i] / k, hits = (P.hits || [])[i], cool = (P.cooldown || [])[i], rec = (P.recover || [])[i];
+      const timed = cool != null && rec != null;
+      const gap = timed ? Math.round((cool + rec) * 1e4) / 1e4 : null;
+      const still = every > 0 && timed ? every - rec : 0;
+      const each = still > 1e-9 ? Math.ceil(cool / still - 1e-9) : null;
+      const dmg = h ? usesToKill(h, hp) : null;
+      let uses = dmg, by = dmg == null ? null : 'damage';
+      if (dmg != null && every > 0 && timed && hits) {
+        // Slash by slash: the first counts; then the cooldown runs for what each is still.
+        for (let u = 1, timer = 0, counted = 0; u < dmg; u++) {
+          if (u > 1) timer -= Math.max(0, still);
+          if (timer <= 1e-9) { counted++; timer = cool; }
+          if (counted >= hits) { uses = u; by = 'hits'; break; }
+        }
+      }
+      return { n: i + 1, k, hp, hits, cooldown: cool == null ? null : cool, recover: rec == null ? null : rec, gap, each,
+        uses, by, spaced: dmg != null && hits < dmg ? hits : null };
+    });
+  }
+
+  SS.engine = { roundHalfEven, normalize, modsFor, hitsOf, usesToKill, interval, compute, plan, regen, binds, endure, phases, pieces };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.engine;
 })();

@@ -42,7 +42,40 @@ test('an interior the map does not draw goes where its door is; every gauntlet a
     kinds[kind] = (kinds[kind] || 0) + 1;
     assert.ok(x >= 0 && x <= M.W && y >= 0 && y <= M.H && R.roomOf(scene), `${kind} in ${scene}`);
   }
-  assert.deepEqual(kinds, { bench: 76, bellway: 12, ventrica: 7 });
+  // Each state shows its own: the Ventrica hub's bench and station, and the diving bell's bench.
+  assert.deepEqual(kinds, { bench: 78, bellway: 12, ventrica: 8 });
+  const count = (flags) => R.pinsOn(flags).reduce((o, p) => ({ ...o, [p[0]]: (o[p[0]] || 0) + 1 }), {});
+  assert.deepEqual(count(R.mapFlags(null)), { bench: 76, bellway: 12, ventrica: 7 });
+  assert.deepEqual(count(['act3MapUpdated', 'SeenDivingBellGoneAbyss']), { bench: 75, bellway: 12, ventrica: 7 });
+  assert.deepEqual(count(['act3MapUpdated', 'SeenDivingBellGoneAbyss', 'HasWhiteFlower']), { bench: 76, bellway: 12, ventrica: 7 });
+});
+
+test('the map\'s state: the rooms Act 3 destroys and the diving bell, by the game\'s own conditions', () => {
+  const on = (flags) => new Set(R.layersOn(flags).flatMap((l) => l[6]));
+  // Free mode and before Act 3: the Cradle, Cogwork Core and the Ventrica hub standing, the bell broken.
+  for (const flags of [R.mapFlags(null), R.mapFlags({ act: 2, mapFlags: [] })]) {
+    const s = on(flags);
+    for (const x of ['Cradle_01', 'Cog_Dancers', 'Tube_Hub', 'Song_Tower_01', 'Abyss_03_bell_broken']) assert.ok(s.has(x), x);
+    for (const x of ['Cradle_01_Destroyed', 'Tube_Hub_Destroyed', 'Abyss_03_bell_fixed']) assert.ok(!s.has(x), x);
+  }
+  // Act 3: the 14 rooms the game hides, and their destroyed rooms in their place.
+  const a3 = on(['act3MapUpdated', 'SeenDivingBellGoneAbyss']);
+  assert.equal(M.LAYERS.find((l) => JSON.stringify(l[0]) === '["not",["flag","act3MapUpdated"]]')[6].length, 14);
+  for (const x of ['Cradle_01_Destroyed', 'Cog_Dancers_Destroyed', 'Tube_Hub_Destroyed', 'Song_Tower_Destroyed']) assert.ok(a3.has(x), x);
+  for (const x of ['Cradle_01', 'Tube_Hub', 'Abyss_03_bell_broken', 'Abyss_03_bell_fixed']) assert.ok(!a3.has(x), x);
+  assert.ok(on(['act3MapUpdated', 'HasWhiteFlower']).has('Abyss_03_bell_fixed'));
+  // A save's own flags; one kept before the site read them, in Act 3, is taken as fallen.
+  assert.deepEqual(R.mapFlags({ act: 3, mapFlags: ['act3MapUpdated'] }), ['act3MapUpdated']);
+  assert.deepEqual(R.mapFlags({ act: 3, mapFlags: [], everbloom: true }), ['act3MapUpdated', 'HasWhiteFlower']);
+  // A game read with the flags, just in Act 3 before the game updates its map: as it is.
+  assert.deepEqual(R.mapFlags({ act: 3, mapRead: true, mapFlags: [] }), []);
+  // Each layer is inside the map and its row inside states.webp; the rows don't overlap.
+  let row = 0;
+  for (const [, x, y, w, h, top, scenes] of M.LAYERS) {
+    assert.ok(x >= 0 && y >= 0 && x + w <= M.W && y + h <= M.H && w <= M.SW && top >= row && top + h <= M.SH, scenes.join());
+    for (const s of scenes) assert.ok(M.ROOMS[s], s);
+    row = top + h;
+  }
 });
 
 test('getting around: the game\'s doors, and the stations a save has opened; every piece can be reached', () => {

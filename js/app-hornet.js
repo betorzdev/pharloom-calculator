@@ -129,9 +129,10 @@
   const mapPin = () => { const s = mapScreen(); return s ? s.querySelector('.mp-hornet') : null; };
   let walking = null;    // the way under way, { key }
   function syncMap() {
-    if (walking) return;
-    const w = App.mapWay ? App.mapWay() : null;
-    if (w && prefs.walked !== w.key && mapPin()) mapWalk(w);
+    // The key first, cheap: the way (a path between the benches) only when it's still to walk.
+    if (walking || !App.mapWayKey || prefs.walked === App.mapWayKey() || !mapPin()) return;
+    const w = App.mapWay();
+    if (w) mapWalk(w);
   }
   const pct = (v, of) => (v / of * 100).toFixed(3) + '%';
   /* From the old bench to the new one: the bench's point, the rooms' middles, the other bench's

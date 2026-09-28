@@ -824,9 +824,23 @@ Every water names the Muckmaggots' record, and only the MaggotRegions that are o
 (overrideActive, or the scene's MapZone in the region's mask), which leaves the wiki's four areas
 exactly. Lost Lace's cocoon and the Bell Eater's arena aren't on the map, so they count as the scenes
 that load them (Abyss_05's dive, every Bellway station), and the nearest from the bench covers all
-237. The one disagreement is the Void Mass: the game has cores in 45 scenes and the wiki counts 34.
-The extras in Greymoor, Shellwood and Choral Chambers sit under the same Act 3 object, and the site
-keeps the game's.
+237. The Void Mass looked like a disagreement (45 scenes against 34), but it isn't one: see the
+next paragraph.
+
+Then (28 September) **the Journal entries with no health row.** The game keeps an enemy's health
+and its five modifiers on its HealthManager (`hp` and `damageScaling`), with the same figures as
+the wiki's tables (Skull Brute 1/0.8/0.75/0.6/0.6). None of the five entries the tables lack
+carries one:
+- The Wisp (what the lanterns let out, a Wisp Fireball whose FSM explodes on any damage) and the
+  Winged Lifeseed (a HealthFlyer, dead on its first hit; the wiki's infobox says 1) die to the first
+  hit. `tools/gen-enemies.js` adds them to FOES from the game's files (`src: 'game'`, health 1, no
+  modifiers), so Combat can pick them, and the card says so.
+- The Muckmaggots (the water), the Sandcarver (each pit's attacker, which some Tools kill, 5 to 8
+  kills each) and the Void Tendrils (a tablet) have no health at all and stay out.
+
+**The Void Mass has no disagreement:** the game's 47 cores in 45 scenes are the wiki's 47, area by
+area (the 34 read before was a mistake). Every core turns on with `blackThreadWorld` (Act 3), and
+Styx's two only with Steel Soul off, the wiki's 45 in Steel Soul.
 
 **Phase 5 has started** (the same day): `js/engine.js` takes an enemy (`compute(state, { foe,
 black })`): each hit is one product rounded once (weapon × the enemy's modifier at the level of
@@ -895,6 +909,24 @@ black-threaded numbers confirm; the absolute ones (the Widow's 150, the Fourth C
 bosses never black-threaded. Still open: IntCompare's strict "<" (the Bell Eater's) is taken as
 "at or below", and the lanterns' hit count, with a cooldown of its own, isn't in the slashes.
 
+**The phases, exact** (28 September): the two left open above, read in the game's code and FSMs.
+
+- **Strict or "at or below".** CompareHP, CompareHPBool, IntCompare, IntTestToBool and
+  IntCompareToBool all compare the same way: equal, then less than, then greater than, each with its
+  own event or bool. So it's each FSM that makes a threshold "at or below" (equal goes where less
+  than goes) or strict (only less than). `tools/extract-phases.py` tells them apart (`strict()`),
+  and `js/phases.js` carries `below` where every comparison is strict: 18 bosses, whose phase comes
+  one HP later. The Bell Eater's are at 599 and 319, and the Fourth Chorus's at 450, 325 and 200.
+  The mixed ones (the Widow's 70%, Pinstress's 85%, Gurr's 60%) stay "at or below".
+- **Father of the Flame's counted hits.** A hit counts only when its cooldown has run out: 1 s for
+  a lantern, 0.5 s for the core. The cooldown runs only while the piece is still, after its
+  recovery (a lantern's 0.55 s, restarted by each hit; the core's 0.1 s, with its collider off).
+  These are `cooldown` and `recover` in the file, used by `engine.pieces()`. At every Crest's pace
+  a lantern never gets still, so damage breaks it. The count comes first only with hits spaced out,
+  as with a weak Needle.
+
+**Phase 5's phases are exact now.**
+
 **Silk Hearts in the Binds** (28 September), from the game's code (HeroController and the Hero
 prefab, read into `js/hero.js` REGEN by `tools/extract-hero.py`). A strand comes after 0.65 + 0.8 =
 1.45 s from an empty spool and 2.0 + 1.9 = 3.9 s otherwise, so the Silk page is right and the Silk
@@ -903,6 +935,26 @@ more, and ×0.65 on both times), and any silk change restarts it, the landing sl
 the seconds the slash takes to kill (`needle.speed`), starting from a full spool and slashing every
 0.5 s or faster, it adds nothing with any Crest, and the page says so (`engine.regen`,
 `binds().hearts`). Pauses (dodging, the Bind itself) aren't modelled.
+
+**The Binds in a fight's order** (28 September), from the game's code and the Hero's Bind FSM (a
+template in `fsmtemplates_assets_shared`).
+- **The spool caps what comes in** (PlayerData.AddSilk: past CurrentSilkMax a strand is lost), so
+  the fight's silk is no longer one total. `engine.binds` gives its slashes and casts, and `endure`
+  plays n hits spread evenly over them:
+  - the spool starts full, and a slash at full gives nothing;
+  - casts are spent as soon as their silk is there;
+  - a Bind comes as soon as it heals in full or the next hit would kill;
+  - Druid's Eye counts only hits taken below a full spool (DoMossToolHit), its count starting
+    over when the spool fills.
+- **What it changes:** Lace with the Needle at 1 goes from 18 to 15 hits of 1, and Grand Mother Silk
+  from 54 to 49 (27 to 20 of 2).
+- **The Bind's times, from the FSM:** 1.2 s to heal (Multibinder: 0.8 s, twice), then a 0.17 s
+  burst, and the Injector Band multiplies only the first. That gives 1.37, 1.94, 0.89 and 1.3 s,
+  the Bind page's table; the site had 1.37 × 0.6 and missed the Multibinder.
+- **No pause model:** it wouldn't change a number. The Bind blocks Silk Hearts' regeneration while
+  it lasts (SetSilkRegenBlocked) and restarts its delay afterwards.
+- **Still open:** dodging pauses; the Beast's, the Witch's and the Shaman's own Binds; and the
+  Egg of Flealia's Skill cost of 3, which the game gives only at full health.
 
 **What enemies do to Hornet, from the game's files** (28 September). `tools/extract-damage.py`
 reads the DamageHero hitboxes on every enemy placed in the 590 scenes, joined to its Journal key as
@@ -915,6 +967,25 @@ settings (2.0, floored). Against the wiki's `{{damage}}`, the highest hit agrees
 contact for 99 of 102: projectiles spawned at run time aren't read, a few enemies are placed with
 two values, and three bosses' contact changes with the phase. `test/data.test.js` pins the counts
 and lists each disagreement.
+
+**What enemies spawn, from the game's files** (28 September). `tools/extract-damage.py` now also
+reads what each enemy makes at run time:
+- its FSMs' spawn actions (pool spawns, flings, CreateObject, AddPersonalObjectPool,
+  SpawnProjectile, and the actions that choose the prefab);
+- its corpse.
+
+Each prefab is read from the bundles outside the scenes, with its children and whatever it spawns
+in turn, down to an enemy with a Journal record of its own, and becomes an attack named by its
+prefab: 64 entries have one. A prefab only a black-threaded enemy throws (`threaded`) is left out
+of the checks and of Combat for an enemy that isn't threaded. That makes 220 entries, 215 with
+contact damage.
+
+Against the wiki's `{{damage}}`, the highest hit now agrees for 166 of 172 (it was 143 of 154), and
+contact for 105 of 110. Of the 45 bosses with a wiki figure, 43 agree on the max hit: Raging
+Conchfly (game 2) and Moss Mother (game 1) don't. Lampbearer opened a new disagreement: its
+globe's pop is 2 in the game and 1 on the wiki. Left without game data: Garpid, the Bell Eater, the
+Cogwork Dancers, Father of the Flame, Lost Lace, Fourth Chorus, and the Wisp, whose fireball a
+lantern lets out.
 
 **Phase 6's spike is done** (the same day): the map comes out of the game's files (§4.7), so the
 fallback (a schematic map from the randomizer's room graph) isn't needed. The author decided to
@@ -964,6 +1035,22 @@ motion she only sits; she's hidden from screen readers. On the Map, when the pre
 elsewhere, she runs once from that bench to this one, room by room along `js/rooms.js`'s path,
 with the view following her. `test/hornet.test.js` checks the strips, the tokens, the script order
 on every page and a path between benches.
+
+**The map in Act 3** (28 September): the game's own conditions say which rooms change, and only
+five flags do.
+- `act3MapUpdated` hides 14 rooms of the Cradle, the Ventrica hub and Cogwork Core. The 11
+  destroyed rooms over them have no condition of their own, and stand in their place.
+- The Abyss's diving bell is broken, gone (`SeenDivingBellGoneAbyss`) or mended (`HasWhiteFlower`).
+- Verdania and Whiteward stay as they are once their bosses are beaten.
+
+`tools/extract-map.py` works out each room's condition over the three flags a save changes
+(`VARY`). The rooms that are there in every state go into `rooms.webp` (508 KB); the others go
+into `assets/map/states.webp` (22 KB, four layers, one per condition), which `js/map.js` LAYERS
+places on the map. Their pins show only while their room does: 98 pins, three of them Act 3's or
+the mended bell's. The save gives the flags it has set (`mapFlags`); in the saves,
+`act3MapUpdated` comes a little after `blackThreadWorld`, and the bell's later. The Map draws the
+layers whose condition the save meets, and in Free mode the world before Act 3. The walk graph
+doesn't yet know the fallen Cradle.
 
 **Phase 7 has started** (the same day): the Tasks. The completionist's 74 (21 main objectives and
 53 wishes in 11 types) with their save field, joined to the game's own names by their English
@@ -1041,6 +1128,59 @@ Phantom, which goes round the first two. Broodfeast done the Runt's way gives no
 **A fix on the way:** the game counts a Tool only when it's unlocked and not hidden
 (`ToolItemManager`, IsUnlockedNotHidden), and `savefile.game()` now does too; the 92 saves still
 match.
+
+**Progress's last holes** (28 September).
+- **Where each wish is taken.** `tools/extract-quests.py` reads it from the game's files: the three
+  Wishwalls and the scene that places each one, the NPCs who offer a wish (their FSM actions, and
+  the templates those run), and Bellhart's couriers. `js/quests.js` `FROM` covers 62 quests: every
+  wish outside the main objectives. The wiki's Wishes page agrees on all 54 entries ("Wishwall"
+  exactly when a board lists the wish or the one before it). The road's wishes and Tasks count
+  rooms from the bench to where the wish is taken: the board, then the NPC it sends you to.
+- **Keys.** The same pass reads the game's key locks (`LOCKS`), and its four Simple Key doors are
+  the wiki's four. `js/how.js` `NEEDS` puts nine things of the 100% behind their keys, named as
+  the inventory names them: the Architect Crest, the Rosary Cannon, the Flintslate unless you have
+  the Clawline, the Whiteward's three, its Silk Heart, and the Slab's Mask Shard and Rune Rage.
+- **The Spanish we took to be missing** from the dump was under another key: Spanish puts a
+  title's second half under `_SUB`, not `_SUPER`. So the Forge Daughter is «Hija de la Forja», the
+  Mottled Skarr «Skarr Moteado», and Lost Verdania «Verdania Perdida».
+- **Still open.** A wish's area is still the completionist's, so a wish whose NPC lives elsewhere
+  counts rooms to the NPC. The keys and doors a save already has aren't read yet.
+
+**A review before the commit** (28 September), of everything since `2f09e3f`: 29 findings, 2
+already fixed by the work after them.
+
+**Fixed:**
+- `tools/extract-phases.py`:
+  - its second pass starts from the variables' own values, so an in-place share can't
+    compound;
+  - an IntOperator on a share only divides, and a health divides as the game's ints do;
+  - a literal compared with IntCompare isn't a phase;
+  - the comparisons written the other way round count;
+  - `below` is cleared when a later FSM compares at or below;
+  - the name filter ignores case and says what it leaves out.
+
+  `js/phases.js` came out identical: these guard against a patch, they didn't change a number.
+- `tools/extract-damage.py`: a prefab reached first through a black-threaded branch is walked
+  again through a plain one (the output was identical too).
+- Black-threaded bosses: their wiki attacks now take 2 masks each, as the game makes every hit
+  void.
+- The map: a save just in Act 3, whose map the game hasn't updated yet, no longer shows the Cradle
+  fallen (`mapRead`).
+- Progress: the Flintslate's Simple Key isn't asked for once you have the Clawline.
+- Hornet's walk: its key includes when the save was written, so a later return between the same
+  two benches walks again, and the way is only computed while still to walk.
+- Smaller:
+  - `phases()` has guards for a partial `pieces`;
+  - the one-hit note reads `oneHit`;
+  - the dead `grandGate` field and the unused `App.mapAt` are gone;
+  - a `--column` token replaces three loose 720px values;
+  - the phases test checks that its pages exist.
+
+**Left as they are:**
+- three evaluators of the same condition form (`savefile`, `rooms`, `extract-map`);
+- `endure()`'s linear scan (a few ms a row);
+- the regeneration figure, which always says 0 while slashing nonstop, as it should;
+- the boss pages' phase texts, which are written apart from Combat's.
 
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about

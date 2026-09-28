@@ -100,8 +100,9 @@ for (const k of Object.keys(EN)) { const m = /^([A-Z][A-Z_]*)_MAIN$/.exec(k); if
    <X>_SUPER + <X>_MAIN, the whole title under another key that says the same in English (the
    Spanish dump lacks many _SUPER halves, and the halves go the other way round in Spanish:
    "Blasted" + "Steps" is «Escalones Ajados», JUDGE_STEPS); plain keys before the ones of a
-   station, a courier or a quest. Only if the game has none, the two halves (Lost Verdania: the
-   Spanish lacks "Lost", so it stays in English, CLAUDE.md rule 3). */
+   station, a courier or a quest. Only if the game has none, the title's own halves, each
+   language's (tools/names.js text(): Lost Verdania is GROVE_SUPER + GROVE_MAIN in English and
+   GROVE_MAIN + GROVE_SUB in Spanish, «Verdania Perdida»). */
 const { ES } = N;
 const PREFIXED = /^(STATION_NAME_|QUEST_|THUNTER_|SQ_|MQ_|TUBE_NAME_)/;
 function zoneText(z) {
@@ -112,8 +113,8 @@ function zoneText(z) {
   const same = Object.keys(EN).filter((k) => norm(EN[k]) === whole && ES[k] != null)
     .sort((a, b) => PREFIXED.test(a) - PREFIXED.test(b) || a.localeCompare(b));
   if (same.length) return N.text(same[0]);
-  const t = N.text(z + '_SUPER+' + z + '_MAIN');
-  return ES[z + '_SUPER'] == null ? { es: t.en, en: t.en, key: t.key } : t;
+  const sub = EN[z + '_SUB'] != null || ES[z + '_SUB'] != null;
+  return N.text(z + '_SUPER+' + z + '_MAIN' + (sub ? '+' + z + '_SUB' : ''));
 }
 const zoneByEn = new Map();
 for (const z of [...ZONES].sort()) {

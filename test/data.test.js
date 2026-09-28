@@ -93,9 +93,10 @@ test('the modifiers add, and the Wanderer\'s critical multiplies after them', ()
 });
 
 test('the enemies: 201 standard rows and 61 boss rows, five modifiers each, joined to the Journal', () => {
-  assert.equal(E.FOES.filter((f) => !f.boss).length, 201);
-  assert.equal(E.FOES.filter((f) => f.boss).length, 61);
-  for (const f of E.FOES) assert.equal(f.mods.length, 5, f.id);
+  const wiki = E.FOES.filter((f) => f.src !== 'game');
+  assert.equal(wiki.filter((f) => !f.boss).length, 201);
+  assert.equal(wiki.filter((f) => f.boss).length, 61);
+  for (const f of wiki) assert.equal(f.mods.length, 5, f.id);
   const alita = E.FOES.find((f) => f.id === 'alita');
   assert.deepEqual(alita.mods, [1.5, 1.2, 1.1, 1, 1]);
   const lace = E.FOES.filter((f) => f.page === 'lace');
@@ -107,6 +108,25 @@ test('the enemies: 201 standard rows and 61 boss rows, five modifiers each, join
   const byId = new Map(J.BOOK.map((e) => [e.id, e.n]));
   for (const f of E.FOES) if (byId.has(f.page)) assert.equal(f.hj, byId.get(f.page), f.id);
   assert.deepEqual(E.ATTACKS.lace.staggers, [11, 16]);
+});
+
+test('the enemies the tables lack, from the game: Wisp and Winged Lifeseed, one hit, no modifiers', () => {
+  const game = E.FOES.filter((f) => f.src === 'game');
+  assert.deepEqual(game.map((f) => f.key), ['NAME_WISP', 'NAME_LIFEBLOOD_FLY']);
+  for (const f of game) {
+    assert.equal(f.hp, 1, f.id);
+    assert.equal(f.oneHit, true, f.id);
+    assert.equal(f.mods, undefined, f.id);
+    assert.equal(f.boss, undefined, f.id);
+  }
+  // The engine takes a foe with no modifiers as ×1: one slash kills it.
+  require('../js/hero.js');
+  const EG = require('../js/engine.js');
+  assert.equal(EG.compute({ needle: 0 }, { foe: game[0] }).needle.attacks[0].uses, 1);
+  // Every Journal entry has a row but those with no health in the game: the Muckmaggots, the
+  // Sandcarver and the Void Tendrils.
+  const rows = new Set(E.FOES.map((f) => f.key));
+  assert.deepEqual(J.BOOK.filter((e) => !rows.has(e.key)).map((e) => e.key), ['NAME_MAGGOTS', 'NAME_SAND_CENTIPEDE', 'NAME_ABYSS_TENDRIL']);
 });
 
 test('the Journal: 236 entries (237 in Steel Soul), 230 needed for Nuu\'s reward, six optional', () => {
@@ -176,8 +196,13 @@ test('each boss\'s phases, from the game, against the wiki\'s phase labels', () 
     else { assert.equal(got[1], got[0], `${page}: ${got[0]} phases on the wiki, ${got[1]} from the game`); if (wiki) same++; }
   }
   assert.equal(same, 15);   // with Father of the Flame's two bars and Phantom's rage
-  // Every boss in js/phases.js is one of js/enemies.js.
+  // Every boss in js/phases.js is one of js/enemies.js, and every page MORE names is one the loop
+  // above reads (a page renamed away would leave its line unchecked).
   for (const id of Object.keys(P)) assert.ok(E.FOES.some((f) => f.id === id && f.boss), id);
+  for (const page of Object.keys(MORE)) assert.ok(E.ATTACKS[page], `${page} isn't a page with attacks`);
+  // A boss with phases whose page has no attack list can't be set against the wiki: known ones only.
+  const unchecked = [...new Set(Object.keys(P).map((id) => E.FOES.find((f) => f.id === id).page))].filter((pg) => !E.ATTACKS[pg]).sort();
+  assert.deepEqual(unchecked, []);
 });
 
 test('what enemies do to Hornet (js/enemy-damage.js, the game\'s files): its shape, and the wiki\'s {{damage}} for the same enemies', () => {
@@ -186,7 +211,7 @@ test('what enemies do to Hornet (js/enemy-damage.js, the game\'s files): its sha
   const path = require('path');
   const W = require('../tools/wiki.js');
   const keys = Object.keys(DMG.BY_KEY);
-  assert.equal(keys.length, 199);
+  assert.equal(keys.length, 220);
   assert.equal(DMG.BARBED, 2);   // the Gameplay settings' barbedWireDamageTakenMultiplier
   const journal = new Set(J.BOOK.map((e) => e.key));
   const masks = (l) => Array.isArray(l) && l.length && l.every((m, i) => Number.isInteger(m) && m >= 1 && m <= 4 && (!i || m > l[i - 1]));
@@ -200,15 +225,20 @@ test('what enemies do to Hornet (js/enemy-damage.js, the game\'s files): its sha
       assert.ok(['fire', 'void'].includes(v) && d.attacks[g], `${k} ${g}`);
       assert.ok(d.attacks[g].every((m) => m === 2), `${k} ${g}: fire and void hits are 2 masks`);
     }
+    // What it spawns at run time and what only a black-threaded one does: attacks of its own.
+    for (const g of [...(d.spawned || []), ...(d.threaded || [])]) assert.ok(d.attacks[g], `${k} ${g}`);
   }
-  assert.equal(keys.filter((k) => DMG.BY_KEY[k].body).length, 198);
-  assert.equal(keys.filter((k) => Math.max(...(DMG.BY_KEY[k].body || [0])) === 2).length, 47);
+  assert.equal(keys.filter((k) => DMG.BY_KEY[k].body).length, 215);
+  assert.equal(keys.filter((k) => Math.max(...(DMG.BY_KEY[k].body || [0])) === 2).length, 56);
+  assert.equal(keys.filter((k) => DMG.BY_KEY[k].spawned).length, 64);
+  assert.deepEqual(keys.filter((k) => DMG.BY_KEY[k].threaded).sort(), ['NAME_BLOAT_ROACH', 'NAME_CORAL_CONCH_SHOOTER_HEAVY',
+    'NAME_PILGRIM_MOSS_SPITTER', 'NAME_SWAMP_MOSQUITO_SKINNY', 'NAME_TAR_SLUG', 'NAME_TAR_SLUG_HUGE']);
 
   /* Against the wiki: each enemy page's {{damage|n}} before its Act 3 section (a void hit left
-     out when there's another), the highest per hit against the highest the game has, and the
-     one nearest each "contact" against the body. The disagreements are pinned: in the game
-     they're projectiles spawned at run time (not under the enemy, so not read), enemies placed
-     with two values, and bosses whose contact changes with the phase. */
+     out when there's another), the highest per hit against the highest the game has (what only
+     a black-threaded one does left out too), and the one nearest each "contact" against the
+     body. The disagreements are pinned: hitboxes the wiki doesn't give, enemies placed with two
+     values, and bosses whose contact changes with the phase. */
   const files = new Map(fs.readdirSync(W.RAW).map((f) => [W.slug(f.replace(/\.wiki$/, '').replace(/_/g, ' ')), f]));
   const perHit = (x) => Math.max(...x.split('+').map(Number).filter((n) => n > 0));
   const DAMAGE = /\{\{damage\|([^}|]*)(\|[^}]*)?\}\}/gi;
@@ -226,7 +256,7 @@ test('what enemies do to Hornet (js/enemy-damage.js, the game\'s files): its sha
     if (!g) { missing.push(f.key); continue; }
     const plain = all.filter((d) => !d.void);
     const wikiMax = Math.max(...(plain.length ? plain : all).map((d) => d.v));
-    const gameMax = Math.max(...(g.body || []), ...Object.values(g.attacks || {}).flat());
+    const gameMax = Math.max(...(g.body || []), ...Object.entries(g.attacks || {}).filter(([a]) => !(g.threaded || []).includes(a)).map(([, v]) => v).flat());
     if (wikiMax === gameMax) agree.max++; else differ.max.push(f.key);
     const contact = new Set();
     for (const s of body.split(/(?<=[.!?])\s+|\n|[,;]|\bwhile\b|\bbut\b/)) {
@@ -241,26 +271,29 @@ test('what enemies do to Hornet (js/enemy-damage.js, the game\'s files): its sha
       if ([...contact].every((c) => (g.body || []).includes(c))) agree.contact++; else differ.contact.push(f.key);
     }
   }
-  assert.equal(agree.max, 143);
+  // Before what's spawned was read (28 September): 143 of 154. The spit, bombs and bursts made at
+  // run time closed Bone Spitter, Dock Bomber, Swamp Goomba, Swamp Mosquito, Slab Fly Small Fresh
+  // and Second Sentinel, and opened Lightbearer; the enemies the game makes at run time (named by
+  // their fight, a prefab or their corpse) added 18, all agreeing. Of the 45 bosses, 43 agree.
+  assert.equal(agree.max, 166);
   assert.deepEqual(differ.max.sort(), [
-    'NAME_BONE_CIRCLER_VICIOUS',        // wiki 1, game 2: its Attack Circle
-    'NAME_BONE_SPITTER',                // wiki 2, game 1: its spit is spawned at run time
-    'NAME_CORAL_CONCH_DRILLER_GIANT',   // boss: wiki 1, game 2
-    'NAME_DOCK_BOMBER',                 // wiki 2, game 1: its bombs are spawned
-    'NAME_MOSSBONE_MOTHER',             // boss: wiki 2, game 1
+    'NAME_BONE_CIRCLER_VICIOUS',        // wiki 1, game 2: its Attack Circle (the summoned one's)
+    'NAME_CORAL_CONCH_DRILLER_GIANT',   // boss: wiki 1, game 2 (its body and drill)
+    'NAME_LIGHTBEARER',                 // wiki 1, game 2: its globe's Pop Damager
+    'NAME_MOSSBONE_MOTHER',             // boss: wiki 2, game 1 (only the ambient one is placed)
     'NAME_SLAB_FLY_MID',                // wiki 1, game 1 and 2 (placed with both)
-    'NAME_SLAB_FLY_SMALL_FRESH',        // wiki 2, game 1
-    'NAME_SONG_KNIGHT',                 // boss: wiki 2, game 1
     'NAME_SONG_THREADED_HUSK',          // wiki 1, game 2
-    'NAME_SWAMP_GOOMBA',                // wiki 2, game 1: its explosion is spawned
-    'NAME_SWAMP_MOSQUITO',              // wiki 2, game 1
   ]);
-  assert.equal(agree.contact, 99);
-  // Bosses whose wiki gives 1 and 2 on contact (by phase); the game places them at 2.
-  assert.deepEqual(differ.contact.sort(), ['NAME_BONE_FLYER_GIANT', 'NAME_FLOWER_QUEEN', 'NAME_SPLINTER_QUEEN']);
-  // With a {{damage}} on the wiki and nothing here: bosses and enemies the game spawns at run
-  // time (no placed record to read).
-  assert.equal(missing.length, 24);
+  assert.equal(agree.contact, 105);
+  // Bosses whose wiki gives 1 and 2 on contact (by phase); the game places them at 2. First Sinner
+  // and Widow: a {{damage|2}} in the same sentence as "contact" is another attack's (the wiki
+  // says contact is 1; Widow's debris "on contact").
+  assert.deepEqual(differ.contact.sort(), ['NAME_BONE_FLYER_GIANT', 'NAME_FIRST_WEAVER', 'NAME_FLOWER_QUEEN', 'NAME_SPINNER_BOSS', 'NAME_SPLINTER_QUEEN']);
+  // With a {{damage}} on the wiki and nothing here: Garpid, the Bell Eater, the Cogwork Dancers,
+  // Father of the Flame, Lost Lace (no hitbox the game places or spawns is read for them) and
+  // Fourth Chorus (its record is on its head, with no hitbox under it); and the Wisp, whose row is
+  // the game's (js/enemies.js src) and whose fireball a lantern lets out, not an enemy.
+  assert.equal(missing.length, 7);
 });
 
 test('the shops, from the game: nine vendors, prices in rosaries, every piece bought joined to its flag', () => {
@@ -333,4 +366,38 @@ test('the traps: Curveclaw handed over, Silkshot\'s three repairs, Broodfeast do
   assert.deepEqual(silk.variants.map((v) => v.way.kind), ['shop', 'shop', 'craft']);
   assert.ok(JSON.stringify(CO.WISHES[runt.wish][2]).includes(runt.instead));
   assert.ok(H.HOW.tools.longclaw.some((w) => w.quest === runt.instead && w.act === 3));
+});
+
+test('the keys a thing of the 100% lies behind, and the two NPCs whose names the game splits', () => {
+  const H = require('../js/how.js');
+  const Q = require('../js/quests.js');
+  const CP = require('../js/completion.js');
+  for (const [id, k] of Object.entries(H.KEYS)) {
+    assert.ok(k.name.es && k.name.en && /^INV_NAME_/.test(k.name.key), id);
+    // Every key with an ItemReceptacle in the game carries its doors, as js/quests.js LOCKS reads them.
+    assert.deepEqual(k.locks, Q.LOCKS[k.save], id);
+  }
+  // The game's four Simple Key doors are the wiki's four: the Wormways, the Green Prince's cell,
+  // the Rosary Bank, the lower Deep Docks.
+  assert.deepEqual(H.KEYS.simple.locks, ['Crawl_02', 'Dust_02', 'Hang_06', 'Room_Forge']);
+  assert.deepEqual(H.KEYS.architect.locks, ['Under_17']);
+  const needs = [];
+  for (const [cat, m] of Object.entries(H.NEEDS)) {
+    for (const [id, n] of Object.entries(m)) {
+      assert.ok(H.HOW[cat][id], `${cat}.${id} isn't a thing of the 100%`);
+      n.keys.forEach((k) => assert.ok(H.KEYS[k], `${cat}.${id}: no key ${k}`));
+      if (n.or) assert.ok(D.ARTS.some((x) => x.id === n.or), `${cat}.${id}: no ability ${n.or}`);
+      needs.push(`${cat}.${id}`);
+    }
+  }
+  assert.deepEqual(H.NEEDS.crests.architect, { keys: ['architect'] });
+  assert.deepEqual(H.NEEDS.tools['rosary-cannon'], { keys: ['simple'] });
+  assert.ok(CP.SKILLS.includes('rune-rage') && H.NEEDS.skills['rune-rage'].keys.length === 3);
+  const heart = CO.PIECES.findIndex((p) => JSON.stringify(p[2]) === JSON.stringify(['visited', 'Memory_Silk_Heart_WardBoss']));
+  assert.deepEqual(H.NEEDS.pieces[heart].keys, ['white', 'surgeon']);
+  assert.equal(needs.length, 9);
+  // The Spanish puts the title's other half under _SUB: «Hija de la Forja», «Skarr Moteado».
+  assert.deepEqual([H.NPCS['forge-daughter'].es, H.NPCS['forge-daughter'].en], ['Hija de la Forja', 'Forge Daughter']);
+  assert.deepEqual([H.NPCS['mottled-skarr'].es, H.NPCS['mottled-skarr'].en], ['Skarr Moteado', 'Mottled Skarr']);
+  assert.equal(CO.AREAS.GROVE.es, 'Verdania Perdida');
 });

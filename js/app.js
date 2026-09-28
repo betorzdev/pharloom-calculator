@@ -1,5 +1,5 @@
 /* js/app.js — Pharloom's core: preferences, URL, header, screen bar, general render and events.
-   The page is made of screens, like the game's pause menu: a one-row header, the screen bar
+   The page is made of screens, like the game's pause menu: the header, the screen bar
    and, one at a time, the screens (design/00-study.md §9 says which and in what order they're
    built). The screen travels in the URL ("view="), and so does the language ("lang=") when it
    isn't the page's own; the build will travel there too (phase 3), and splitHash keeps its
@@ -148,6 +148,11 @@
   }).join('');
   el.page.insertAdjacentHTML('afterbegin', `<div class="atmos" aria-hidden="true">${MOTES}</div>`);
 
+  /* The filigree over the title, in the pause menu's white: two curls either side of the
+     needle's diamond. The sibling crowns its title with the Hall of Gods tablet; Silksong has no
+     such piece, so it's drawn (design/03-redesign.md, step 1). */
+  const CROWN_HALF = '<path d="M93 14 C84 14 78 7 69 7 C61 7 58 13 62 16.5 C65 19 69.5 16.5 68 13.5"/><path d="M62 16.5 C50 22 30 21 10 14"/><path d="M10 14 C6 12 5.5 8.5 9 8 C11.5 7.8 12 10.5 10.5 11.5"/><path d="M78 9 C74 3 66 1.5 58 3.5"/>';
+  const CROWN = `<svg class="mh-crown" width="200" height="28" viewBox="0 0 200 28" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" aria-hidden="true">${CROWN_HALF}<g transform="translate(200 0) scale(-1 1)">${CROWN_HALF}</g><path d="M100 5 L105 14 L100 23 L95 14 Z"/><path d="M100 1 V5 M100 23 V27"/></svg>`;
   function renderMasthead() {
     const own = prefs.lang === PAGE_LANG && prefs.view === (PAGE_VIEW || 'home');
     document.title = own ? PAGE_HEAD.title : prefs.view === 'home' ? t('docTitle') : t(VIEW_KEY[prefs.view]) + ' · ' + t('title');
@@ -160,6 +165,7 @@
         <div class="seg langsel" role="group" aria-label="${esc(t('langGroup'))}">${langBtn('en', 'English')}${langBtn('es', 'Español')}</div>
       </div>
       <a class="brand" href="${here(hashFor('home'))}" data-act="view" data-value="home" title="${esc(t('goHome'))}">
+        ${CROWN}
         <p class="title">${esc(t('title'))}</p>
       </a>
       ${App.saveLink ? App.saveLink() : ''}`;
@@ -206,20 +212,46 @@
         <a class="gh" href="https://github.com/betorzdev/pharloom-calculator" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">${GITHUB}</a></p>`;
   }
 
-  /* The screen bar lives in index.html and here only its texts and which one is active change:
-     repainted whole, the focus would be lost when switching screens. */
+  /* The screen bar, in two groups: your game (Your game, the Inventory, Progress, the Map, the
+     Journal) and, after a thin rule, the tools (the Crest screen, Combat). On a phone the seven
+     don't fit in a row, so they fold as the sibling's do: the tools into one tab, Build, which
+     opens the last one used, and while you're in one a second row switches between them
+     (#nav-sub); the Inventory folds under Your game the same way (#nav-sub-game). With a save,
+     Progress carries your completion and the Journal the entries Nuu counts. It lives in
+     index.html and here only its texts and which one is active change: repainted whole, the
+     focus would be lost when switching screens. */
   function renderNav() {
     el.nav.setAttribute('aria-label', t('navLabel'));
+    const fold = el.nav.querySelector('#nav-tools');
+    if (fold) fold.dataset.value = prefs.tool;
     for (const a of el.nav.querySelectorAll('[data-act="view"]')) {
       const v = a.dataset.value;
-      a.textContent = t(VIEW_KEY[v]);
+      const lbl = a.querySelector('.nav-lbl');
+      (lbl || a).textContent = a === fold ? t('navBuild') : t(VIEW_KEY[v]);
       a.setAttribute('href', here(hashFor(v)));
-      if (v === prefs.view) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+      const on = a === fold ? TOOLS.includes(prefs.view) : v === prefs.view;
+      if (on) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
     }
+    const home = el.nav.querySelector('#nav-home');
+    if (home) home.classList.toggle('is-parent', prefs.view === 'game');
+    const sub = el.nav.querySelector('#nav-sub'), subGame = el.nav.querySelector('#nav-sub-game');
+    if (sub) { sub.hidden = !TOOLS.includes(prefs.view); sub.setAttribute('aria-label', t('navBuild')); }
+    if (subGame) { subGame.hidden = prefs.view !== 'home' && prefs.view !== 'game'; subGame.setAttribute('aria-label', t('navHome')); }
+    paintNavNums();
+  }
+  // The figures on the bar: only with a save, empty in free mode.
+  function paintNavNums() {
+    const g = App.game ? App.game() : null, m = g && App.gameMeta ? App.gameMeta() : null;
+    const pg = el.nav.querySelector('#nav-pg .nav-num'), hj = el.nav.querySelector('#nav-hj .nav-num');
+    if (pg) pg.textContent = g ? App.NF[0].format(Math.floor(SS.completion.count(g).total)) + pctSpace() : '';
+    if (hj) hj.textContent = g && m ? App.bookDone(g.journal, m.steel) + '/' + App.bookTotal(m.steel) : '';
   }
 
   /* ── Ornaments ───────────────────────────────────────────────────────── */
-  const brackets = '<span class="bk tl"></span><span class="bk tr"></span><span class="bk bl"></span><span class="bk br"></span>';
+  /* Every screen's frame, the pause menu's (design/03-redesign.md, step 1): a thin filigree line
+     inset all round and a curl at each corner (one drawing, mirrored by css). */
+  const CORNER = '<svg class="bk-art" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><path d="M4 46 V18 C4 10 10 4 18 4 H46"/><path d="M10 30 C10 16 16 10 30 10"/><path d="M18 18 C21 14 26 15 25 19 C24 22 20 21 21 18.5"/><path d="M4 4 L8 8"/></svg>';
+  const brackets = '<span class="frame-line" aria-hidden="true"></span>' + ['tl', 'tr', 'bl', 'br'].map((c) => `<span class="bk ${c}" aria-hidden="true">${CORNER}</span>`).join('');
   const chevron = (up) => `<svg class="ic chev ${up ? 'up' : ''}" width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1.5 L6 6 L11 1.5"/></svg>`;
   const lens = '<svg class="ic" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="5" r="3.6"/><path d="M7.8 7.8 L10.8 10.8"/></svg>';
   const tick = '<svg class="ic" width="12" height="10" viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 5.2 L4.6 8.2 L10.5 1.8"/></svg>';
@@ -238,9 +270,10 @@
   // An empty state (css: .empty): the rule, the text and, if there is one, the action that solves it.
   const emptyHtml = (text, act = '', { tag = 'p', cls = '' } = {}) =>
     `<${tag} class="empty${cls ? ' ' + cls : ''}"${tag === 'li' ? ' role="presentation"' : ''}>${rule}<span>${text}</span>${act}</${tag}>`;
-  /* Each screen's header: the title in Cinzel, centred, with its rule and the diamond, inside
-     the black. The title gets focus when arriving from another screen. */
-  const screenHead = (title, after = '') => `<header class="screen-head"><h2 class="sec-title screen-title" tabindex="-1">${title}</h2>${rule}${after}</header>`;
+  /* Each screen's header: the title in Cinzel, set into the frame's top edge between two
+     diamonds, as the pause menu titles its panes; what goes with it (a note, a choice, Share)
+     under it, centred, inside the black. The title gets focus when arriving from another screen. */
+  const screenHead = (title, after = '') => `<header class="screen-head"><h2 class="sec-title screen-title" tabindex="-1">${title}</h2></header>${after ? `<div class="screen-lead">${after}</div>` : ''}`;
 
   /* ── The screens ─────────────────────────────────────────────────────── */
   App.screens = {};   // view → painter, registered by each screen's script (js/app-*.js)

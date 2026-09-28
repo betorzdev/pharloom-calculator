@@ -92,12 +92,21 @@
     <header class="masthead" id="masthead"></header>
     <nav class="nav" id="nav" aria-label="Screens">
       <div class="nav-tabs">
+        <a class="nav-tab nav-home" id="nav-home" data-act="view" data-value="home" href="#view=home">Your game</a>
+        <a class="nav-tab nav-inv" data-act="view" data-value="game" href="#view=game">Inventory</a>
+        <a class="nav-tab" id="nav-pg" data-act="view" data-value="progress" href="#view=progress"><span class="nav-lbl">Progress</span><span class="nav-num"></span></a>
+        <a class="nav-tab" data-act="view" data-value="map" href="#view=map">Map</a>
+        <a class="nav-tab" id="nav-hj" data-act="view" data-value="journal" href="#view=journal"><span class="nav-lbl">Journal</span><span class="nav-num"></span></a>
+        <span class="nav-sep" aria-hidden="true"></span>
+        <a class="nav-tab nav-tool" data-act="view" data-value="tools" href="#view=tools">Crest</a>
+        <a class="nav-tab nav-tool" data-act="view" data-value="fight" href="#view=fight">Combat</a>
+        <a class="nav-tab nav-tools" id="nav-tools" data-act="view" data-value="tools" href="#view=tools">Build</a>
+      </div>
+      <div class="nav-sub" id="nav-sub-game" hidden>
         <a class="nav-tab" data-act="view" data-value="home" href="#view=home">Your game</a>
         <a class="nav-tab" data-act="view" data-value="game" href="#view=game">Inventory</a>
-        <a class="nav-tab" data-act="view" data-value="progress" href="#view=progress">Progress</a>
-        <a class="nav-tab" data-act="view" data-value="map" href="#view=map">Map</a>
-        <a class="nav-tab" data-act="view" data-value="journal" href="#view=journal">Journal</a>
-        <span class="nav-sep" aria-hidden="true"></span>
+      </div>
+      <div class="nav-sub" id="nav-sub" hidden>
         <a class="nav-tab" data-act="view" data-value="tools" href="#view=tools">Crest</a>
         <a class="nav-tab" data-act="view" data-value="fight" href="#view=fight">Combat</a>
       </div>
@@ -122,8 +131,10 @@
       <p>With the Hunter's Crest, a slash every 0.41 s (the game's own pace, from its files): with the Pale Steel Needle, 12.3 s of nonstop slashing.</p>
       <p>Attacks, as the wiki names them (the game doesn't): Wisp Summoning, Ring of Fire, Final Immolation (2 masks).</p>
       <p>Phases, from the game's own files: phase 2 after 400 damage.</p>
-      <p>Phase 1 is 4 pieces of 100 health, each broken at 0 or after 12 hits.</p>
-      <p>Phase 2 is one piece of 250 health, broken at 0 or after 30 hits.</p>
+      <p>Phase 1 is 4 pieces of 100 health, each broken at 0 or after 12 counted hits.</p>
+      <p>A hit counts only once the piece has been still 1 s after its 0.55 s recovery: one every 1.55 s at the soonest. Slashing nonstop at the Hunter Crest's pace (0.41 s), only the first counts, and damage is what breaks it.</p>
+      <p>Phase 2 is one piece of 250 health, broken at 0 or after 30 counted hits.</p>
+      <p>A hit counts only once the piece has been still 0.5 s after its 0.1 s recovery: one every 0.6 s at the soonest. Slashing nonstop at the Hunter Crest's pace (0.41 s), one hit in 2 counts.</p>
       <p>Reward: Wispfire Lantern.</p>
       <p>This page opens the damage calculator with this boss picked: with your save or your build, each of your attacks' damage, how many it takes, and what each of its attacks does to you.</p>
       <div class="about-faq">

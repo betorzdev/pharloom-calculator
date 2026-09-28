@@ -97,7 +97,7 @@ function audit(dump) {
 
   let bad = 0, none = 0;
 
-  /* The generated data carries each game text with its key, { es, en, key } ("A_SUPER+A_MAIN"
+  /* The generated data carries each game text with its key, { es, en, key } ("A_SUPER+A_MAIN(+A_SUB)"
      for a split title): every one has to say what that key says, in both languages. */
   let keyedData = 0;
   const walk = (v, where) => {
@@ -105,8 +105,10 @@ function audit(dump) {
     if (typeof v.key === 'string' && typeof v.es === 'string' && typeof v.en === 'string') {
       keyedData += 1;
       const ks = v.key.split('+');
-      if (ks.some((k) => !(k in dump.EN))) { bad += 1; console.log(`✗  ${where.padEnd(30)} the key ${v.key} isn't in the dump`); return; }
-      const say = (L) => ks.map((k) => norm(L[k] != null ? L[k] : dump.EN[k])).join(' ');
+      // A split title (tools/names.js text()): each language joins the parts it has.
+      const split = ks.length > 1;
+      if (ks.some((k) => !(k in dump.EN) && !(split && k in dump.ES))) { bad += 1; console.log(`✗  ${where.padEnd(30)} the key ${v.key} isn't in the dump`); return; }
+      const say = (L) => (split ? ks.filter((k) => L[k] != null).map((k) => norm(L[k])) : [norm(L[v.key] != null ? L[v.key] : dump.EN[v.key])]).join(' ');
       if (norm(v.en) !== say(dump.EN)) { bad += 1; console.log(`✗  ${where.padEnd(30)} en "${v.en}" ≠ ${v.key} "${say(dump.EN)}"`); }
       if (norm(v.es) !== say(dump.ES)) { bad += 1; console.log(`✗  ${where.padEnd(30)} es "${v.es}" ≠ ${v.key} "${say(dump.ES)}"`); }
       return;

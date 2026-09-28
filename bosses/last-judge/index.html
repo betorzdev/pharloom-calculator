@@ -92,12 +92,21 @@
     <header class="masthead" id="masthead"></header>
     <nav class="nav" id="nav" aria-label="Screens">
       <div class="nav-tabs">
+        <a class="nav-tab nav-home" id="nav-home" data-act="view" data-value="home" href="#view=home">Your game</a>
+        <a class="nav-tab nav-inv" data-act="view" data-value="game" href="#view=game">Inventory</a>
+        <a class="nav-tab" id="nav-pg" data-act="view" data-value="progress" href="#view=progress"><span class="nav-lbl">Progress</span><span class="nav-num"></span></a>
+        <a class="nav-tab" data-act="view" data-value="map" href="#view=map">Map</a>
+        <a class="nav-tab" id="nav-hj" data-act="view" data-value="journal" href="#view=journal"><span class="nav-lbl">Journal</span><span class="nav-num"></span></a>
+        <span class="nav-sep" aria-hidden="true"></span>
+        <a class="nav-tab nav-tool" data-act="view" data-value="tools" href="#view=tools">Crest</a>
+        <a class="nav-tab nav-tool" data-act="view" data-value="fight" href="#view=fight">Combat</a>
+        <a class="nav-tab nav-tools" id="nav-tools" data-act="view" data-value="tools" href="#view=tools">Build</a>
+      </div>
+      <div class="nav-sub" id="nav-sub-game" hidden>
         <a class="nav-tab" data-act="view" data-value="home" href="#view=home">Your game</a>
         <a class="nav-tab" data-act="view" data-value="game" href="#view=game">Inventory</a>
-        <a class="nav-tab" data-act="view" data-value="progress" href="#view=progress">Progress</a>
-        <a class="nav-tab" data-act="view" data-value="map" href="#view=map">Map</a>
-        <a class="nav-tab" data-act="view" data-value="journal" href="#view=journal">Journal</a>
-        <span class="nav-sep" aria-hidden="true"></span>
+      </div>
+      <div class="nav-sub" id="nav-sub" hidden>
         <a class="nav-tab" data-act="view" data-value="tools" href="#view=tools">Crest</a>
         <a class="nav-tab" data-act="view" data-value="fight" href="#view=fight">Combat</a>
       </div>
@@ -122,7 +131,8 @@
       <p>With the Hunter's Crest, a slash every 0.41 s (the game's own pace, from its files): with the Pale Steel Needle, 19.3 s of nonstop slashing.</p>
       <p>Attacks, as the wiki names them (the game doesn't): Slam, Thurible Throw, Thurible Spin, Adjust, Leap, Blazing Rings, Exploding Thurible Throw, Searing Slam, Pillar Charge, Judgement, Retributive Explosion (2 masks).</p>
       <p>Staggered after 14 hits.</p>
-      <p>Phases, from the game's own files: phase 2 at 540 health (75%) and phase 3 at 216 health (30%).</p>
+      <p>Phases, from the game's own files: phase 2 at 539 health (75%) and phase 3 at 215 health (30%).</p>
+      <p>Some the game compares with a strict "less than": it moves on below its number, not at it, and the figure given here is already one under.</p>
       <p>This page opens the damage calculator with this boss picked: with your save or your build, each of your attacks' damage, how many it takes, and what each of its attacks does to you.</p>
       <div class="about-faq">
         <h2>Questions</h2>

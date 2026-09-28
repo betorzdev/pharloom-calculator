@@ -198,6 +198,7 @@
   /* What the screen bar stuck at the top takes up. */
   --sticky-h: 64px;
   --measure: 68ch;    /* maximum measure for long prose */
+  --column: 720px;    /* a single column of lists: Your game's categories, its changes, the road */
 
 
   /* The screens are the game's inventory: almost pure black, and the light behind a plate is
@@ -231,6 +232,11 @@
   --lamp-glow-low: 8%;
   --lamp-plate: 24%;
   --lamp-plate-edge: 7%;
+  /* The frame's own pieces (design/03-redesign.md, step 1): the thin filigree line inset all
+     round, its share of the filigree, and the curled corner that crowns each end. */
+  --lamp-frame: 24%;
+  --frame-inset: var(--sp-2);
+  --frame-corner: var(--sp-12);
   --dur-flash: 900ms;                   /* the glow of a figure that just changed */
   --dur-delta: 4s;                      /* how long your last change's chip stays in view */
   /* What's touched on that black goes unboxed: on hover, a veil of ink; the chosen one, a
