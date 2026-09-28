@@ -30,6 +30,7 @@ Reference material for deciding how this site looks and behaves. It isn't part o
 | [`22-static-pages-variants.html`](22-static-pages-variants.html) | Step 10's options: the static pages' own block (text, questions, links) as a screen of its own, editorial, or folded, over Lace's boss page |
 | [`23-static-pages-round2.html`](23-static-pages-round2.html) | Step 10, second round: the block more attractive and with no box: the boss's guide page, laid out as the Journal, or lit cards |
 | [`24-shell-round2-variants.html`](24-shell-round2-variants.html) | Step 1, second round: the real site with each idea laid over it (no box, an atmosphere per tab, the box only on the game's panes, a light box); `?sv=a` and the tab in the hash |
+| [`25-progress-lists-variants.html`](25-progress-lists-variants.html) | Step 5, second retouch: inside an open Progress category: cards, clean rows, or by area |
 | [`18-bench-variants.html`](18-bench-variants.html) | Step 3's retouch: Hornet sat on nothing on Your game's bench card; every Silksong bench the wiki draws, with her on it, shown on the card lit and unlit (hotlinked, needs the network). Albert chose the save's own bench (`js/benches.js`) |
 
 The design system itself (the black page, one card, filigree only in the corners, figures in a

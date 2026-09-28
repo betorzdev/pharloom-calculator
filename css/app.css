@@ -1199,23 +1199,38 @@ kbd {
 .pg-count { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-md); color: var(--ink-strong); white-space: nowrap; }
 .pg-count .u { font-size: var(--fs-xs); font-style: normal; color: var(--muted); }
 .pg-note { margin: 0 0 var(--sp-2); font-size: var(--fs-xs); color: var(--muted); }
+/* An open category's rows (design/25-progress-lists-variants.html, B): the picture, the name in
+   the game's face and how to get it under it, then how far and where, and a pin to the Map. */
 .pg-list { list-style: none; margin: 0; padding: 0; }
+.pg-act { margin: var(--sp-4) 0 var(--sp-1); font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
+.pg-act:first-child { margin-top: var(--sp-2); }
 .pg-item {
-  display: grid; grid-template-columns: var(--sp-4) auto minmax(0, 1fr) auto; align-items: baseline; gap: var(--sp-2);
-  padding: var(--sp-1) 0; border-bottom: 1px solid var(--line-row); font-size: var(--fs-sm); color: var(--ink);
+  display: grid; grid-template-columns: var(--sp-4) 40px minmax(0, 1fr) auto 28px; align-items: center; gap: 0 var(--sp-3);
+  padding: var(--sp-2) var(--sp-1); border-bottom: 1px solid color-mix(in oklab, var(--filigree) 10%, transparent); color: var(--ink);
+  transition: background-color var(--dur-fast) var(--ease);
 }
-.pg-item:not(:has(.pg-slot)) { grid-template-columns: var(--sp-4) minmax(0, 1fr) auto; }
+.pg-item:hover { background: var(--veil); }
+.pg-item.is-plain { grid-template-columns: var(--sp-4) minmax(0, 1fr) auto 28px; }
 .pg-mark { color: var(--ink-strong); }
 .pg-mark .ic { width: var(--icon-sm); height: var(--icon-sm); }
-.pg-slot { width: var(--sp-2); height: var(--sp-2); transform: rotate(45deg) translateY(-1px); }
+.pg-art { display: grid; place-items: center; width: 40px; height: 40px; }
+.pg-art img { max-width: 36px; max-height: 36px; object-fit: contain; }
+.pg-item.is-got .pg-art img { opacity: 0.55; }
+.pg-main { display: grid; gap: var(--sp-half); min-width: 0; }
+.pg-name { display: flex; align-items: center; gap: var(--sp-2); min-width: 0; font-family: var(--font-display); font-size: var(--fs-md); color: var(--ink-strong); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pg-slot { flex: none; width: 7px; height: 7px; transform: rotate(45deg); }
 .pg-slot.is-red { background: var(--slot-red); }
 .pg-slot.is-blue { background: var(--slot-blue); }
 .pg-slot.is-yellow { background: var(--slot-yellow); }
-.pg-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.pg-where { display: flex; gap: var(--sp-2); font-size: var(--fs-xs); color: var(--muted); white-space: nowrap; }
+.pg-how { font-size: var(--fs-xs); color: var(--ink-2); }
+.pg-place { display: grid; justify-items: end; gap: var(--sp-half); text-align: right; }
+.pg-place b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-sm); font-weight: 600; color: var(--ink); white-space: nowrap; }
+.pg-where { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0 var(--sp-2); font-size: var(--fs-xs); color: var(--muted); }
 .pg-where span + span::before { content: '·'; margin-right: var(--sp-2); }
-.pg-how { grid-column: 2 / -1; font-size: var(--fs-xs); color: var(--muted); }
-.pg-item:has(.pg-slot) .pg-how { grid-column: 3 / -1; }
+.pg-item .pg-onmap { display: grid; place-items: center; width: 28px; height: 28px; padding: 0; border: 1px solid var(--line-ctl); border-radius: 50%; background: none; color: var(--ink-2); cursor: pointer; transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease); }
+.pg-item .pg-onmap.is-none { border: 0; cursor: default; }
+.pg-item .pg-onmap .ic { width: 10px; }
+.pg-item .pg-onmap:is(:hover, :focus-visible) { color: var(--accent); border-color: var(--accent); outline: none; }
 .pg > .pg-buy { text-align: center; }
 .pg-item.is-got .pg-name { color: var(--ink-2); }
 .pg-item.is-later { opacity: 0.55; }
@@ -1241,10 +1256,14 @@ kbd {
 }
 .pg-sub .pg-count { font-size: var(--fs-sm); letter-spacing: normal; text-transform: none; }
 @media (max-width: 640px) {
-  .pg-item { grid-template-columns: var(--sp-4) auto minmax(0, 1fr); }
-  .pg-item:not(:has(.pg-slot)) { grid-template-columns: var(--sp-4) minmax(0, 1fr); }
-  .pg-where { grid-column: 2 / -1; }
-  .pg-item:not(:has(.pg-slot)) .pg-where { grid-column: 2; }
+  /* The place goes under the name; the pin stays on the right. */
+  .pg-item { grid-template-columns: var(--sp-4) 36px minmax(0, 1fr) 28px; }
+  .pg-item.is-plain { grid-template-columns: var(--sp-4) minmax(0, 1fr) 28px; }
+  .pg-place { grid-column: 3; grid-row: 2; justify-items: start; text-align: left; display: flex; flex-wrap: wrap; gap: 0 var(--sp-2); }
+  .pg-item.is-plain .pg-place { grid-column: 2; }
+  .pg-where { justify-content: flex-start; }
+  .pg-item .pg-onmap { grid-row: 1 / span 2; grid-column: -2; }
+  .pg-name { white-space: normal; }
 }
 
 /* Since the previous save (js/app-home.js, js/changes.js): a column under the bench card, each
@@ -1835,6 +1854,8 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 .mp-found { list-style: none; margin: var(--sp-1) 0 0; padding: var(--sp-1) 0; background: color-mix(in oklab, var(--scene-bg) 94%, transparent); border: 1px solid var(--line-ctl); }
 .mp-found button { width: 100%; padding: var(--sp-1) var(--sp-3); min-height: var(--ctl-sm); text-align: left; font-size: var(--fs-sm); color: var(--ink); }
 .mp-found button:is(:hover, :focus-visible) { background: var(--veil); color: var(--ink-strong); }
+.mp-found button { display: flex; flex-direction: column; align-items: flex-start; gap: 0; }
+.mp-found small { font-size: var(--fs-2xs); color: var(--muted); }
 .mp-found-none { padding: var(--sp-1) var(--sp-3); font-size: var(--fs-sm); color: var(--muted); }
 .mp-tools { position: absolute; z-index: 4; top: var(--sp-3); right: var(--sp-3); display: flex; border: 1px solid var(--line-ctl); background: color-mix(in oklab, var(--scene-bg) 88%, transparent); }
 .mp-tools button { width: var(--ctl-sm); height: var(--ctl-sm); font-family: var(--font-num); font-size: var(--fs-md); color: var(--ink-2); }
@@ -1842,6 +1863,18 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 .mp-tools button:is(:hover, :focus-visible):not(:disabled) { color: var(--ink-strong); background: var(--veil); }
 .mp-legend { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: var(--sp-1) var(--sp-6); padding: var(--sp-4) 0; border-bottom: 1px solid var(--inv-line); }
 .mp-legend-k { margin: 0; color: var(--muted); }
+/* The legend in groups, each folded or open, with a switch for all of it. */
+.mp-legend:has(.mp-grp) { display: flex; flex-direction: column; align-items: stretch; gap: var(--sp-2); }
+.mp-filters { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-2) var(--sp-6); padding-bottom: var(--sp-2); }
+.mp-grp { border-top: 1px solid var(--inv-line); padding-top: var(--sp-2); }
+.mp-grp-h { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4); }
+.mp-grp-t { display: inline-flex; align-items: center; gap: var(--sp-2); min-height: var(--ctl-sm); color: var(--ink); }
+.mp-grp-t .lbl { color: inherit; }
+.mp-grp-t b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-xs); color: var(--ink-2); }
+.mp-grp-c { width: var(--sp-3); color: var(--muted); }
+.mp-grp-all { font-size: var(--fs-sm); }
+.mp-grp .mp-sws { display: flex; flex-wrap: wrap; gap: 0 var(--sp-6); padding: var(--sp-1) 0 var(--sp-2) var(--sp-6); }
+.mp-sw .check-box { flex: none; }
 .mp-legend .mp-sws { display: flex; flex-wrap: wrap; gap: 0 var(--sp-6); }
 .mp-sws { list-style: none; margin: 0; padding: 0; }
 /* A layer's switch: its own dot or glyph, its name and count; off, all of it dims. */
@@ -1854,7 +1887,7 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 .mp-sw:is(:hover, :focus-visible) { color: var(--ink-strong); }
 .mp-aa { display: inline-grid; place-items: center; width: 18px; font-family: var(--font-display); font-size: var(--fs-2xs); color: var(--ink); }
 /* The area names, on the map in the game's capitals, lit only enough to read. */
-.mp-name { position: absolute; z-index: 1; transform: translate(-50%, -50%); pointer-events: none; white-space: nowrap;
+.mp-name { position: absolute; z-index: 1; transform: translate(-50%, -50%); cursor: pointer; white-space: nowrap;
   font-family: var(--font-display); font-size: var(--fs-2xs); letter-spacing: var(--track-caps); text-transform: uppercase;
   color: color-mix(in oklab, var(--ink) 72%, transparent); text-shadow: 0 0 4px var(--scene-bg), 0 0 8px var(--scene-bg); }
 /* A mark is tappable: a finger's cursor, and the one whose card is open ringed in the accent. */
@@ -1878,6 +1911,10 @@ img.mp-pin.is-sel { box-shadow: none; filter: drop-shadow(0 0 4px var(--accent))
 .mp-card > .text-btn, .mp-card-state { grid-column: 2; justify-self: start; font-size: var(--fs-sm); }
 .mp-card-state { color: var(--muted); }
 .mp-card-x { grid-column: 3; grid-row: 1; align-self: start; }
+.mp-card-acts { grid-column: 2; display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-1) var(--sp-4); font-size: var(--fs-sm); }
+.mp-card-acts .mp-card-state { grid-column: auto; }
+/* Another screen's way onto the Map. */
+.pg-onmap, .hj-onmap { justify-self: start; font-size: var(--fs-xs); }
 
 /* Where a search result is: a ring that swells and fades. */
 .mp-ping { position: absolute; z-index: 3; width: var(--sp-12); height: var(--sp-12); margin: calc(var(--sp-6) * -1) 0 0 calc(var(--sp-6) * -1); border: 2px solid var(--accent); border-radius: 50%; opacity: 0; pointer-events: none; }
@@ -1910,13 +1947,42 @@ img.mp-pin.is-sel { box-shadow: none; filter: drop-shadow(0 0 4px var(--accent))
   margin: calc(var(--mp-s, 22px) / -2) 0 0 calc(var(--mp-s, 22px) / -2); border-radius: 50%;
   background: var(--badge); border: 1.5px solid var(--c); box-shadow: 0 0 0 1px var(--badge-shadow), 0 2px 4px var(--badge-shadow);
 }
-.mp-dot img { width: 72%; height: 72%; object-fit: contain; }
+.mp-dot img { width: calc(var(--mp-s, 22px) * 0.72); height: calc(var(--mp-s, 22px) * 0.72); object-fit: contain; }
 .mp-dot.is-mask-shard { --c: var(--mask); }
 .mp-dot.is-spool-fragment { --c: var(--silk); }
 .mp-dot.is-memory-locket { --c: var(--slot-blue); }
 .mp-dot.is-craftmetal { --c: var(--slot-yellow); }
 .mp-dot.is-pale-oil { --c: var(--slot-red); }
 .mp-dot.is-flea { --c: var(--plasmium-line); }
+.mp-dot.is-needle { --c: var(--medal-line); }
+.mp-dot:is(.is-tool-pouch, .is-crafting-kit) { --c: var(--cond); }
+.mp-dot.is-silk-heart { --c: var(--silk-rim); }
+.mp-dot.is-old-heart { --c: var(--area-coral-river-line); }
+.mp-dot.is-melody { --c: var(--area-halls-line); }
+.mp-dot.is-tools { --c: var(--slot-red); }
+.mp-dot.is-crests { --c: var(--hud-frame); }
+.mp-dot.is-skills { --c: var(--slot-skill); }
+.mp-dot.is-arts { --c: var(--accent-line); }
+.mp-dot.is-everbloom { --c: var(--good); }
+.mp-dot:is(.is-bone-scroll, .is-weaver-effigy, .is-choral-commandment, .is-rune-harp, .is-psalm-cylinder, .is-arcane-egg) { --c: var(--area-library-line); }
+.mp-dot.is-mossberry { --c: var(--area-mosscave-line); }
+.mp-dot.is-memento { --c: var(--mask-line); }
+.mp-dot.is-rosary-cache { --c: var(--slot-yellow); }
+.mp-dot.is-shard-cache { --c: var(--silk-rim); }
+/* The rooms not visited: a veil with the visited ones cut out of it. */
+.mp-fog { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.mp-fog > rect { fill: var(--map-fog); }
+/* The caches and walls: so many they're drawn close up only; from afar, a count per room. */
+.mp-view:not(.is-close) .is-fine { display: none; }
+.mp-view.is-close .mp-cluster { display: none; }
+.mp-cluster {
+  position: absolute; z-index: 1; min-width: var(--sp-6); height: var(--sp-6); margin: calc(var(--sp-3) * -1) 0 0 calc(var(--sp-3) * -1); padding: 0 var(--sp-1);
+  display: grid; place-items: center; border-radius: var(--sp-3); background: var(--badge); border: 1px solid var(--line-ctl);
+  font-family: var(--font-num); font-size: var(--fs-2xs); color: var(--ink-2); pointer-events: none; scale: var(--k, 1);
+}
+/* An area whose map isn't bought yet. */
+.mp-name.is-unmapped { color: color-mix(in oklab, var(--muted) 70%, transparent); text-decoration: line-through; text-decoration-color: var(--line-ctl); }
+.mp-name.is-sel { color: var(--ink-strong); }
 /* Hornet's way from the previous bench: a silk thread over the rooms, from a hollow ring. */
 .mp-way { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
 .mp-way polyline { fill: none; stroke: var(--silk); stroke-width: 4; stroke-dasharray: 10 8; stroke-linecap: round; stroke-linejoin: round; opacity: 0.75; vector-effect: non-scaling-stroke; }
@@ -1941,6 +2007,14 @@ span.mp-pin { border-radius: 50%; background: var(--badge); border: 1.5px solid 
 .mp-pin svg { width: 55%; height: 55%; }
 .mp-pin.is-gauntlet img { width: 80%; height: 80%; object-fit: contain; }
 .mp-pin.is-gauntlet { color: var(--slot-red); }
+.mp-pin.is-badge img { width: calc(var(--mp-s, 22px) * 0.8); height: calc(var(--mp-s, 22px) * 0.8); object-fit: contain; }
+.mp-pin.is-boss { color: var(--bad); }
+.mp-pin.is-lock { color: var(--cond); }
+.mp-pin:is(.is-shakra, .is-wishwall, .is-giver, .is-person) { color: var(--accent); }
+.mp-pin.is-spawn { color: var(--area-hunters-march-line); }
+.mp-pin.is-journal { color: var(--ink-2); }
+.mp-pin.is-bellhome { color: var(--area-bellhart-line); }
+.mp-pin:is(.is-wall, .is-fog, .is-maps) { color: var(--muted); }
 .mp-pin.is-off { filter: var(--missing-soft) drop-shadow(0 1px 2px var(--badge-shadow)); opacity: var(--missing-soft-opacity); }
 /* Hornet at her bench: the .hn sprite (sitting; running while js/app-hornet.js walks her from the
    previous bench), her feet and her middle on the point. */

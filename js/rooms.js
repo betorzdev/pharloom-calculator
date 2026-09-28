@@ -14,7 +14,7 @@
 
   const ENTRANCE = {
     Bellway_01: 'Bonetown', Bone_East_LavaChallenge: 'Bone_East_14b', Room_CrowCourt: 'Greymoor_15b', Room_CrowCourt_02: 'Greymoor_15b',
-    Memory_Ant_Queen: 'Ant_Queen', Memory_Coral_Tower: 'Coral_Tower_01',
+    Memory_Ant_Queen: 'Ant_Queen', Memory_Coral_Tower: 'Coral_Tower_01', Room_Witch: 'Shellwood_Witch',
   };
 
   /* Scene names by their lower case too: a scene nobody enters by a door (a boss's arena, a memory)

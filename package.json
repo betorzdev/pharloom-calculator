@@ -9,7 +9,7 @@
     "text": "node tools/game-text.js",
     "kb": "python3 kb/data/fetch-wiki.py",
     "palette": "python3 tools/measure-palette.py",
-    "data": "node tools/gen-data.js && node tools/gen-enemies.js && node tools/gen-journal.js && node tools/gen-collectibles.js && node tools/gen-gauntlets.js && node tools/gen-how.js",
+    "data": "node tools/gen-data.js && node tools/gen-enemies.js && node tools/gen-journal.js && node tools/gen-collectibles.js && node tools/gen-gauntlets.js && node tools/gen-how.js && node tools/gen-spots.js",
     "collectibles": "node tools/fetch-collectibles.js",
     "check-pack": "node tools/check-pack.js",
     "art": "node tools/fetch-art.js",

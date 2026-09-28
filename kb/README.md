@@ -12,6 +12,7 @@ plan (`design/00-study.md` §9).
 | `fetch-wiki.py` | Downloads the raw wikitext into `raw/`: `npm run kb` (every page in `pages.txt`), or `python3 kb/data/fetch-wiki.py "Page name"`. Redirects are saved under the title asked for |
 | `raw/` | 522 pages of wikitext, `<Title>.wiki` with `/` and spaces as `_`. Committed, so the generators run offline and a re-fetch after a patch shows up as a diff |
 | `completionist/` | Br3zzly/silksong-completionist's dictionary (MIT, its `LICENSE` beside it), at the commit in `SOURCE`: `npm run collectibles`. Only its facts are used (each thing's save field and Act), not its prose |
+| `game/pickups.json` | Where the game has each item picked up or given, which scenes' scripts name an ability's flag, and where each NPC stands: `tools/extract-pickups.py` from the game's own scene bundles (needs the game installed; committed, so `npm run data` runs offline). `tools/gen-spots.js` reads it |
 | `all_text.json` | The game's text dump, downloaded by `npm run text` (not committed; `.gitignore`) |
 | `art/` | The sprites `npm run palette` measures for `design/02-silksong.md` (not committed: Team Cherry's art) |
 
@@ -26,6 +27,7 @@ the site's data files. None is edited by hand:
 | `tools/gen-enemies.js` | `js/enemies.js` | The damage page's two master tables (health, black-threaded health, five modifiers per row) and each boss page's *Behaviour and Tactics* (attacks, `{{Damage}}`, `{{Stagger}}`) |
 | `tools/gen-journal.js` | `js/journal.js` | The *Hunter's Journal (Silksong)* table (order, kills, notes) and the game's `NAME_`, `DESC_`, `NOTE_` texts |
 | `tools/gen-collectibles.js` | `js/collectibles.js` | `completionist/`, joined to `js/data.js` and `js/journal.js` by the game's English name: the save's names for the Tools, Crests and Journal entries, and the loose pieces with their checks |
+| `tools/gen-spots.js` | `js/spots.js` | `game/pickups.json`, `completionist/` and the site's generated data: the room where the Map draws each thing, the extras beyond the 100% with their checks, the bosses, vendors, people, Bellshrines and maps |
 
 Shared by them: `tools/wiki.js` (pages, templates, `{{Localisation}}`, tables with rowspans),
 `tools/names.js` (the game's names by key, by English, and a page's Journal key) and

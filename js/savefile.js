@@ -352,8 +352,8 @@
        pharloom.owned     { tools, crests, skills, arts }: what the Crest screen can equip
        pharloom.journal   { entry id: kills }
        pharloom.progress  the rest of game(): masks, spools, hearts, needle, kit, pouch,
-                          everbloom, pieces, wishes, gauntlets, lit, act, mapFlags, bench, area, build and
-                          the road's fields (quests … snareReady)
+                          everbloom, pieces, wishes, gauntlets, lit, act, mapFlags, bench, area, build,
+                          the road's fields (quests … snareReady) and the Map's (visited … bosses)
        pharloom.meta      what the profile screen shows (meta()) and when the file was saved
      toSnapshot() writes them; gameOf() reads them back into one game, with the same defaults as
      an empty game for anything missing or damaged. */

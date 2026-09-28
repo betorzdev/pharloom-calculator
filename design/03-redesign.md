@@ -41,7 +41,6 @@ the work up reads it first, then the step it's on.
 | 8 | Crest (`tools`) | **Built** (28 Sep) | [`18-crest-variants.html`](18-crest-variants.html) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
 | 10 | **Built** (28 Sep) · The static pages (`tools/pages*.js`: `bosses/`, `es/jefes/`, the landing folders): they inherit steps 1 and 2; only what's theirs | To do | |
-| 11 | **Next** · **Everything on the map**: each Tool, Crest, Silk Skill, ability, boss, NPC, vendor, wish and Journal enemy in its room (data from the game's files or the wiki; today only the loose pieces, the stations and the gauntlets have a room), new layers grouped as mapgenie's, the rest of the game's pins. After the tabs (Albert, 28 Sep) | To do | |
 
 ## Step 1 · The shell
 
@@ -450,6 +449,16 @@ Albert chose **road 1 · the journey**. Built (`js/app-progress.js`, `css/app.cs
   (`freeView`), and a missing row's box marks it (`pgOwn` through `App.freeMark`); ladder pieces
   are set in the Inventory, not here.
 
+### Retouch: inside the categories (28 September 2026)
+
+Albert: the inside of the drop-downs is awful (a squeezed «See on the map» link breaking each
+row, plain small text, no pictures). `25-progress-lists-variants.html`, over Save 4's rows:
+A cards, **B clean rows** (chosen), C by area. Built: each row the thing's picture, its name in
+Cinzel (a Tool with its slot's diamond) and how to get it under it, how far large with the area
+under it on the right, and a round pin button to the Map (`mapShow`); the Acts as small heads
+over their rows (`listHtml`), the Act beside the area when sorted by nearest. On a phone the place
+goes under the name and the pin stays on the right.
+
 ### Retouch: the completion figure (28 September 2026)
 
 Albert: the percentage could be more attractive. Today it's a plain system-font figure with
@@ -528,7 +537,7 @@ Albert also noted many things are missing from the map (Tools, Crests, bosses, N
 wishes…). He chose **C · the game's round badge**, and the missing content as **a step of its
 own (11), after the tabs**. Built: the game's own map pins in `assets/map/pins/`
 (`tools/extract-map-pins.py`, 24 of them: the three places use `pin_bench`, `pin_stag_station`
-and `pin_tube_station`, the rest wait for step 11); in `js/app-map.js` `mark()` draws a piece as
+and `pin_tube_station`, the rest are for the map's own work, outside this review); in `js/app-map.js` `mark()` draws a piece as
 the badge (`--badge`, the kind's colour as its rim, the item's own picture inside) and
 `placeMark()` a place as the game's pin, a gauntlet as the badge with its needles; the legend
 and the closest list use the same marks. `--mp-s` sets their size (22 px whole, 28 zoomed, 14 on a

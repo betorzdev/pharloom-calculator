@@ -221,7 +221,7 @@
     mapFurther:     { es: 'Alejar', en: 'Further' },
     mapFull:        { es: 'Mapa grande', en: 'Large map' },
     mapSmall:       { es: 'Mapa normal', en: 'Normal map' },
-    mapFind:        { es: 'Busca en el mapa: una zona, un desafío', en: 'Search the map: an area, a gauntlet' },
+    mapFind:        { es: 'Busca en el mapa: una zona, una pieza, un jefe', en: 'Search the map: an area, a piece, a boss' },
     mapFindNone:    { es: 'Nada con ese nombre en el mapa.', en: 'Nothing by that name on the map.' },
     mapMark:        { es: 'Marcar como conseguido', en: 'Mark as had' },
     mapUnmark:      { es: 'Desmarcar', en: 'Unmark' },
@@ -244,7 +244,75 @@
     mapFrom:        { es: 'Tu banco anterior', en: 'Your previous bench' },
     mapClosed:      { es: 'sin abrir', en: 'not open yet' },
     mapToll:        { es: 'sin pagar el peaje', en: 'toll not paid' },
-    mapNote:        { es: 'Cada pieza, en su sala; varias en la misma sala se ven en fila. Las que dan un deseo o una compra no tienen sala en la partida y no se marcan: están en Progreso. Los bancos y las estaciones están donde el juego pone sus alfileres; atenuadas, las que tu partida aún no ha abierto. Los desafíos, los que te faltan.', en: 'Each piece in its room; several in one room show in a row. The ones a wish or a purchase gives have no room in the save and aren\'t marked: they\'re in Progress. The benches and stations are where the game puts its pins; dimmed, the ones your game hasn\'t opened yet. The gauntlets, the ones you haven\'t cleared.' },
+    mapNote:        { es: 'Cada cosa, en la sala donde se consigue: tirada en el suelo, en la tienda que la vende, en el muro de deseos o con quien da el deseo, en la arena de su jefe. Varias en la misma sala se ven en fila. Con una partida, solo lo que te falta; en el modo libre, todo. Los bancos y las estaciones están donde el juego pone sus alfileres; atenuadas, las que tu partida aún no ha abierto.', en: 'Each thing in the room where it\'s had: lying there, at the shop that sells it, at the Wishwall or with whoever gives the wish, in its boss\'s arena. Several in one room show in a row. With a save, only what you\'re missing; in Free mode, everything. The benches and stations are where the game puts its pins; dimmed, the ones your game hasn\'t opened yet.' },
+    mapGroup_hundred: { es: 'Falta para el 100 %', en: 'Missing for 100%' },
+    mapGroup_places:  { es: 'Lugares', en: 'Places' },
+    mapGroup_people:  { es: 'Gente', en: 'People' },
+    mapGroup_extras:  { es: 'Otros coleccionables', en: 'Other collectibles' },
+    mapGroup_game:    { es: 'Tu partida', en: 'Your game' },
+    mapAll:         { es: 'Todo', en: 'All' },
+    mapNone:        { es: 'Nada', en: 'None' },
+    mapActs:        { es: 'Por acto', en: 'By Act' },
+    mapActAll:      { es: 'Todos', en: 'All' },
+    mapReachNow:    { es: 'Solo lo que puedo coger ya', en: 'Only what I can reach now' },
+    mapArea:        { es: 'Zona', en: 'Area' },
+    mapOnMap:       { es: 'Ver en el mapa', en: 'See on the map' },
+    mapMore:        { es: 'y {n} más', en: 'and {n} more' },
+    mapLayer_boss:  { es: 'Jefes', en: 'Bosses' },
+    mapLayer_bells: { es: 'Santuarios de campana', en: 'Bellshrines' },
+    mapLayer_locks: { es: 'Puertas con llave', en: 'Locked doors' },
+    mapLayer_shops: { es: 'Tiendas', en: 'Shops' },
+    mapLayer_shakra:{ es: 'Shakra', en: 'Shakra' },   // MAPPER_MAIN
+    mapLayer_wishwalls: { es: 'Muros de deseos', en: 'Wishwalls' },
+    mapLayer_wishwall1: { es: 'Muro de deseos', en: 'Wishwall' },   // QUESTBOARD_TITLE
+    mapLayer_givers:{ es: 'Quien pide un deseo', en: 'Who asks for a wish' },
+    mapLayer_giver1:{ es: 'Pide un deseo', en: 'Asks for a wish' },
+    mapLayer_people:{ es: 'Quien da algo del 100 %', en: 'Who gives a 100% thing' },
+    mapLayer_fog:   { es: 'Salas sin visitar', en: 'Rooms not visited' },
+    mapLayer_cocoon:{ es: 'Tu capullo', en: 'Your cocoon' },
+    mapLayer_journal: { es: 'Diario: lo que falta', en: 'Journal: what\'s missing' },
+    mapLayer_maps:  { es: 'Mapas sin comprar', en: 'Maps not bought' },
+    'mapExtra_bone-scroll':        { es: 'Pergamino óseo', en: 'Bone Scroll' },   // INV_NAME_R_BONE_RECORD
+    'mapExtra_weaver-effigy':      { es: 'Efigie de Tejedora', en: 'Weaver Effigy' },   // INV_NAME_R_WEAVER_TOTEM
+    'mapExtra_choral-commandment': { es: 'Mandamiento coral', en: 'Choral Commandment' },   // INV_NAME_R_SEAL_CHIT
+    'mapExtra_rune-harp':          { es: 'Arpa rúnica', en: 'Rune Harp' },   // INV_NAME_R_WEAVER_RECORD
+    'mapExtra_psalm-cylinder':     { es: 'Cilindro de salmo', en: 'Psalm Cylinder' },   // INV_NAME_R_PSALM_CYL
+    'mapExtra_arcane-egg':         { es: 'Huevo arcano', en: 'Arcane Egg' },   // INV_NAME_R_ANCIENT_EGG
+    mapExtra_mossberry: { es: 'Baya musgosa', en: 'Mossberry' },   // INV_NAME_MOSSBERRY
+    mapExtra_silkeater: { es: 'Devoraseda', en: 'Silkeater' },   // INV_NAME_SILK_GRUB
+    mapExtra_memento:   { es: 'Recuerdos', en: 'Mementos' },   // COLLECTION_HEADING_MOMENTOS
+    mapExtra_bellhome:  { es: 'Hogar campana', en: 'Bellhome' },   // BELLHOME
+    mapExtra_spawn:     { es: 'Enemigos únicos', en: 'Unique enemies' },
+    mapExtra_rosary:    { es: 'Alijos de rosarios', en: 'Rosary caches' },
+    mapExtra_shard:     { es: 'Alijos de fragmentos', en: 'Shell shard caches' },
+    mapExtra_wall:      { es: 'Paredes rompibles', en: 'Breakable walls' },
+    mapBell:        { es: 'Santuario de Campana de {area}', en: '{area} Bellshrine' },
+    mapLock:        { es: 'Puerta cerrada', en: 'Locked door' },
+    mapLockKey:     { es: 'Se abre con: {key}', en: 'Opened with: {key}' },
+    mapScrounge:    { es: 'Scrounge', en: 'Scrounge' },   // BELLHART_RELICDEALER_MAIN
+    mapScroungeNote:{ es: 'Compra las reliquias.', en: 'Buys the relics.' },
+    mapCocoonNote:  { es: 'Donde caíste por última vez: tus rosarios te esperan ahí.', en: 'Where you last fell: your rosaries wait there.' },
+    mapUnmapped:    { es: 'Aún no tienes su mapa', en: 'You don\'t have its map yet' },
+    mapAreaRooms:   { es: '{n} de {m} salas visitadas', en: '{n} of {m} rooms visited' },
+    mapAreaRoomsAll:{ es: '{m} salas', en: '{m} rooms' },
+    mapAreaHundred: { es: 'Del 100 %: {n}', en: 'For 100%: {n}' },
+    mapAreaJournal: { es: 'Del Diario: {n}', en: 'Journal: {n}' },
+    mapAreaGauntlets: { es: 'Desafíos: {n}', en: 'Gauntlets: {n}' },
+    mapBeaten:      { es: 'Derrotado', en: 'Defeated' },
+    mapNotBeaten:   { es: 'Sin derrotar', en: 'Not defeated yet' },
+    mapToJournal:   { es: 'Ver en el Diario', en: 'See in the Journal' },
+    mapRung:        { es: 'Ya suena', en: 'Rung' },
+    mapNotRung:     { es: 'Aún sin tocar', en: 'Not rung yet' },
+    mapShakraNote:  { es: 'Vende los mapas de cada zona, y se mueve por Telalejana.', en: 'Sells each area\'s map, and moves around Pharloom.' },
+    mapShakraLeft:  { es: 'Te faltan los mapas de: {list}', en: 'Maps you don\'t have: {list}' },
+    mapShakraAll:   { es: 'Tienes todos sus mapas.', en: 'You have all her maps.' },
+    mapSells:       { es: 'Del 100 %: {list}', en: 'For 100%: {list}' },
+    mapSellsLeft:   { es: 'Te falta de aquí: {list}', en: 'Still here for you: {list}' },
+    mapSellsNone:   { es: 'Ya tienes todo lo que da del 100 %.', en: 'You have everything of the 100% it gives.' },
+    mapWishes:      { es: 'Deseos: {list}', en: 'Wishes: {list}' },
+    mapWishesLeft:  { es: 'Deseos sin cumplir: {list}', en: 'Wishes still open: {list}' },
+    mapWishesNone:  { es: 'No quedan deseos por cumplir.', en: 'No wishes left open.' },
+    mapKills:       { es: '{n} de {m} derrotados', en: '{n} of {m} defeated' },
 
     /* Combat: your build against one enemy (js/app-fight.js) */
     ftToWin:        { es: 'tajos para ganar', en: 'slashes to win' },

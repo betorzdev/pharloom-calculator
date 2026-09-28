@@ -1182,6 +1182,30 @@ already fixed by the work after them.
 - the regeneration figure, which always says 0 while slashing nonstop, as it should;
 - the boss pages' phase texts, which are written apart from Combat's.
 
+**The whole map** (28 September). The Map drew six kinds of loose piece, the benches, stations
+and gauntlets; 21 pieces of the 100% (the ones a shop or a wish gives) had no room, so its
+counts didn't match what it showed. Now everything the game has for a room is on it, in layers
+grouped under the map (Missing for 100%, Places, People, Other collectibles, Your game):
+- `tools/extract-pickups.py` reads every scene for what points at an item asset (the Tools,
+  Crests, Collectables, Relics, Mementos of the data bundles: a CollectableItemPickup lies there,
+  an FSM gives it), the FSMs that name an ability's playerData flag, and where each NPC stands,
+  into `kb/data/game/pickups.json`.
+- `tools/gen-spots.js` (in `npm run data`) writes `js/spots.js`: each thing of the 100% by its
+  first way with a room (`js/how.js`: lying there, its vendor, its Wishwall or giver, its boss's
+  arena, the person who gives it), all 194 placed; a short HAND table for what a script gives
+  (the Crests' chapels, the Weaver shrines, the abilities), checked against the scenes the game
+  names. The completionist's extras (800: relics, Mossberries, Silkeaters, Mementos, the
+  Bellhome, unique spawns, rosary and shell shard caches, breakable walls), 44 bosses, the
+  vendors, the people, the Bellshrines, the keys and the 28 maps. Four walls sit in rooms the
+  map doesn't draw and are left out. Its caches' checks aren't the completionist's word for
+  word: a shell shard cache's int is its hits left (0 once broken, never -1), and a Geo Rock not
+  in the save is a room never entered, not a rock broken.
+- `savefile.game()` adds the rooms visited, the maps bought, the cocoon (`HeroCorpseScene`), the
+  extras had and the bosses beaten; the 92 saves still match the game.
+- The screen: the Act filter and «only what I can reach now» (the completionist's prereqs), the
+  rooms not visited dimmed, an area's card, a card for each kind, a search over everything, and
+  «See on the map» from Progress, the Journal and Your game (`App.mapShow`).
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).

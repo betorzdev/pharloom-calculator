@@ -67,20 +67,45 @@
   }
 
   /* One row: its name, whether you have it, its Act and its area; how to get it, when it's missing. */
-  function row({ name, got, act, area, color, scene, sub = [], how, mark }, g) {
+  // Where the Map has a thing (js/spots.js AT), for its distance when its check names no room.
+  const SPOT = SS.spots ? SS.spots.AT : null;
+  const spotScene = (mark) => {
+    if (!SPOT || !mark) return null;
+    if (mark === 'everbloom') return SPOT.everbloom;
+    const [cat, id] = mark.split(':');
+    return (SPOT[cat === 'piece' ? 'pieces' : cat] || {})[id] || null;
+  };
+  /* One row (design/25-progress-lists-variants.html, B): the thing's picture, its name in the
+     game's face (a Tool with its slot's diamond) and how to get it under it; on the right how far
+     it is, large, with its area under, and a pin to see it on the Map. Its Act heads the list
+     (listHtml); sorted by nearest, it goes with the area instead. */
+  const PIN = '<svg class="ic" width="12" height="16" viewBox="0 0 12 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 15 C6 15 11 9 11 6 A5 5 0 0 0 1 6 C1 9 6 15 6 15 Z"/><circle cx="6" cy="6" r="1.8"/></svg>';
+  function row({ name, got, act, area, color, scene, sub = [], how, mark, icon }, g) {
+    scene = scene || spotScene(mark);
     const later = g && !got && act > g.act;
     const n = !got && scene ? away(scene) : null;
     const steps = n == null ? '' : n === 0 ? t('mapHere') : t(n === 1 ? 'mapSteps1' : 'mapSteps', { n: num(n) });
-    const where = [act ? t('saveAct', { n: act }) : '', areaName(area), steps, ...sub].filter(Boolean);
-    return `<li class="pg-item${got ? ' is-got' : ''}${later ? ' is-later' : ''}"${later ? ` title="${esc(t('pgLater', { n: act }))}"` : ''}>
+    const place = [prefs.pgNear && act ? t('saveAct', { n: act }) : '', areaName(area), ...sub].filter(Boolean);
+    const onMap = !got && mark && App.mapHas && App.mapHas(mark);
+    return `<li class="pg-item${got ? ' is-got' : ''}${later ? ' is-later' : ''}${icon ? '' : ' is-plain'}"${later ? ` title="${esc(t('pgLater', { n: act }))}"` : ''}>
         ${marking && mark && !(mark.startsWith('piece:') && LADDER[CO.PIECES[+mark.slice(6)][0]]) ? `<button type="button" class="pg-mark check is-own" data-act="pgOwn" data-value="${esc(mark)}" aria-pressed="${!!got}" aria-label="${esc(name)}"><span class="check-box" aria-hidden="true"></span></button>`
           : `<span class="pg-mark" aria-hidden="true">${got ? App.tick : ''}</span>`}
-        ${color ? `<span class="pg-slot is-${color}" aria-hidden="true"></span>` : ''}
-        <span class="pg-name"${NT}>${esc(name)}</span>
-        ${got ? `<span class="sr-only">${esc(t('pgGot'))}</span>` : ''}
-        <span class="pg-where">${where.map((w, i) => `<span${i ? NT : ''}>${esc(w)}</span>`).join('')}</span>
-        ${!got && how ? `<span class="pg-how">${esc(how)}</span>` : ''}
+        ${icon ? `<span class="pg-art"><img src="${icon}" alt="" loading="lazy"></span>` : ''}
+        <span class="pg-main"><span class="pg-name"${NT}>${color ? `<span class="pg-slot is-${color}" aria-hidden="true"></span>` : ''}${esc(name)}</span>
+          ${got ? `<span class="sr-only">${esc(t('pgGot'))}</span>` : ''}${!got && how ? `<span class="pg-how">${esc(how)}</span>` : ''}</span>
+        <span class="pg-place">${steps ? `<b>${esc(steps)}</b>` : ''}<span class="pg-where">${place.map((w, i) => `<span${i || prefs.pgNear ? NT : ''}>${esc(w)}</span>`).join('')}</span></span>
+        ${onMap ? `<button type="button" class="pg-onmap" data-act="mapShow" data-value="${esc(mark)}" aria-label="${esc(t('mapOnMap') + ': ' + name)}" title="${esc(t('mapOnMap'))}">${PIN}</button>` : '<span class="pg-onmap is-none" aria-hidden="true"></span>'}
       </li>`;
+  }
+  // A list of rows; in the Act's order, each Act a small head over its rows.
+  function listHtml(shown, g) {
+    let last = null;
+    const acts = !prefs.pgNear && new Set(shown.map((x) => x.act || 0)).size > 1;
+    return `<ul class="pg-list">${shown.map((x) => {
+      const head = acts && (x.act || 0) !== last ? `<li class="pg-act" aria-hidden="true">${x.act ? esc(t('saveAct', { n: x.act })) : '·'}</li>` : '';
+      last = x.act || 0;
+      return head + row(x, g);
+    }).join('')}</ul>`;
   }
 
   /* The game's picture for a piece of a kind, for the ledger's strip (the k-th of its kind: the
@@ -155,7 +180,7 @@
     const open = isOpen(id);
     const done = g && got >= max;
     const shown = open ? nearFirst(all ? list : list.filter((x) => !x.got)) : [];
-    const body = !open ? '' : shown.length ? `<ul class="pg-list">${shown.map((x) => row(x, g)).join('')}</ul>`
+    const body = !open ? '' : shown.length ? listHtml(shown, g)
       : `<p class="pg-done">${App.tick}${esc(t('pgDone'))}</p>`;
     return `<section class="pg-group${done ? ' is-done' : ''}${open ? ' is-open' : ''}" aria-labelledby="pg-${id}">
         <h3 class="pg-head" id="pg-${id}"><button type="button" class="pg-open" data-act="pgOpen" data-value="${id}" aria-expanded="${open}">
@@ -225,7 +250,7 @@
   const list = (rows, g, met) => {
     if (met && g && !prefs.pgAll) return '';
     const shown = nearFirst(prefs.pgAll || !g ? rows : rows.filter((x) => !x.got));
-    return shown.length ? `<ul class="pg-list">${shown.map((x) => row(x, g)).join('')}</ul>` : '';
+    return shown.length ? listHtml(shown, g) : '';
   };
   const count = (got, max) => `<span class="pg-count"><b>${num(got)}</b><i class="u">/${num(max)}</i></span>`;
   // A count past its target (21 points of 17) shows the target met, with a tick.
@@ -359,6 +384,11 @@
   }
 
   App.howPiece = (i) => howText(HW.HOW.pieces[i], HW.NEEDS.pieces[i]);   // the Map's card
+  App.howOf = (key) => {   // the Map's card, for a Tool, Crest, Silk Skill, ability or the Everbloom
+    if (key === 'everbloom') return howText(HW.HOW.everbloom);
+    const [cat, id] = key.split(':');
+    return HW.HOW[cat] && HW.HOW[cat][id] ? howText(HW.HOW[cat][id], (HW.NEEDS[cat] || {})[id]) : '';
+  };
   App.freeView = () => { const f = App.freeGame(); return f ? freeView(f) : null; };   // the Map's too
 
   App.screens.progress = (sec) => {

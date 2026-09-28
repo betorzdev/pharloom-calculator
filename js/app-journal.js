@@ -98,6 +98,7 @@
       <div class="hj-art is-${state}"><img src="${art(e)}" alt="" decoding="async"></div>
       <div class="hj-entry">
       <h3 class="hj-name">${esc(name)}</h3>
+      ${state !== 'done' && App.mapHas && App.mapHas('journal:' + e.id) ? `<button type="button" class="text-btn hj-onmap" data-act="mapShow" data-value="journal:${e.id}">${esc(t('mapOnMap'))}</button>` : ''}
       <p class="hj-kills"><b>${num(Math.min(kills, 9999))}</b><i class="u">/${num(e.kills)}</i></p>
       ${whereHtml(e, state)}
       ${e.optional ? `<p class="inv-not">${esc(t('hjOptional'))}</p>` : ''}
@@ -224,6 +225,9 @@
     area: '<svg class="ic" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 4h12M2 8h5M2 12h12"/></svg>',
     book: '<svg class="ic" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="2" y="2" width="3" height="3"/><rect x="6.5" y="2" width="3" height="3"/><rect x="11" y="2" width="3" height="3"/><rect x="2" y="6.5" width="3" height="3"/><rect x="6.5" y="6.5" width="3" height="3"/><rect x="11" y="6.5" width="3" height="3"/><rect x="2" y="11" width="3" height="3"/><rect x="6.5" y="11" width="3" height="3"/></svg>',
   };
+
+  // The Map's "See in the Journal": that entry open when the screen shows.
+  App.journalOpen = (id) => { picked = id; };
 
   Object.assign(actions, {
     hjPick(node) {

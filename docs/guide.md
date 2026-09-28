@@ -261,36 +261,67 @@ and 8 × Silkspear" against something bigger.
 
 The map fills the screen. Drag it to move it; the wheel, a pinch or a double click zoom where you
 point, + and − at the middle, and ⤢ opens it large, the window's whole width (⤡ back). Close up
-it swaps to twice the resolution. On it: a search at the top left (an area or an enemy gauntlet
-by name: pick one and the map goes there, with a ring where it is) and the zoom at the top
-right. Under it the legend in two rows (what's missing, the places): each layer's own mark is its
-switch, dimmed when off, with its count, and the last one turns the area names on or off; the
-benches start off (there are 76). Tap any mark for its card: what it is, where, how it's had (in
-Free mode, «Mark as had»), and for a gauntlet its waves, its reward and «Fight it in Combat». On a
-phone the names show only zoomed in. In Free mode with things marked in the Inventory, the map
-shows what those marks say is missing.
+it swaps to twice the resolution. On it: a search at the top left and the zoom at the top right.
+The search finds any area and anything on the map by name (a piece, a Tool, a boss, a shop, an
+NPC, a Journal entry), each with its layer and area under it: pick one and the map goes there,
+with its layer switched on, its card open and a ring where it is. On a phone the area names show
+only zoomed in.
+
+Under the map, the filters and the legend. The filters: the Act (all, or only Act 1, 2 or 3's
+things), «Only what I can reach now» with a save (hides what asks for an ability or Silk Skill you
+don't have yet: the Faydown Cloak, Clawline, Silk Soar, as the completionist lists them), and the
+area names on or off. The legend is five groups, each folded or open as you left it, with its
+count and a switch for the whole group («All», or «None» when it's all on); inside, each layer's
+own mark is its switch, dimmed when off, with its count:
+
+- **Missing for 100%**: every piece, each kind a layer (Mask Shards, Spool Fragments, Memory
+  Lockets, Craftmetal, Pale Oil, fleas, Needle upgrades, Tool Pouch, Crafting Kit, Silk Hearts,
+  Old Hearts, melodies), the Tools, Crests, Silk Skills, abilities and the Everbloom. Each in the
+  room where it's had: lying there, at the shop that sells it, at the Wishwall or with whoever
+  gives the wish, in its boss's arena, with the person who gives it. All on at first.
+- **Places**: benches (off at first: there are 76), Bellway and Ventrica stations (dimmed while
+  your game hasn't opened them: a station not unlocked, a toll not paid), the enemy gauntlets and
+  bosses not beaten yet, the five Bellshrines of the Grand Gate, the locked doors (with the key
+  each takes) and the shops.
+- **People**: Shakra's spots, the Wishwalls and who asks for a wish (with a save, only while one
+  is still open there), and who gives something of the 100% (Plinney, Eva, Pinstress, Loddie,
+  Lumble, Mooshka) and Scrounge, who buys the relics.
+- **Other collectibles**, off at first: the relics (Bone Scrolls, Weaver Effigies, Choral
+  Commandments, Rune Harps, Psalm Cylinders, the Arcane Egg), Mossberries, Silkeaters, Mementos,
+  the Bellhome's furnishings, unique enemies (Rhinogrunds, Covetous Pilgrims, Shardillards, Void
+  Masses), and the rosary and shell shard caches and the breakable walls: so many that they're
+  drawn one by one only close up; from afar, a count per room.
+- **Your game**, with a save: the rooms you haven't visited, dimmed (on at first); your cocoon,
+  where you last fell; the Journal's entries still missing, in the room where each is found; and
+  the areas whose map you haven't bought, their names struck through.
+
+With a save the map shows only what you're missing; in Free mode, everything, as a guide (with
+things marked in the Inventory, what those marks say is missing). Tap any mark for its card: what
+it is, where, how many rooms from your bench, how it's had, and what it says of your game. A
+shop's says what of the 100% it still has for you, Shakra's which maps you lack, a Wishwall's or a
+wish giver's the wishes still open, a boss's whether it's beaten, with «Fight it in Combat» and
+«See in the Journal»; a gauntlet's its waves and reward; a Journal entry's its kills. In Free mode
+a piece's card marks it had. Tap an area's name for its card: the rooms of it you've visited,
+and what's left there of the 100%, the Journal and the gauntlets.
+
+Other screens open the map on a thing: «See on the map» on each missing row of Progress and on a
+Journal entry, and each line of «Closest to your bench» in Your game.
 
 Pharloom as the game's own map screen draws it, taken from the game's files (every room in its
-area's tint, the full drawing, as once the area's map is bought), and on it Hornet at the bench
-you rest at and a dot for each loose piece you're missing, in its room: Mask Shards, Spool
-Fragments, Memory Lockets, Craftmetal, Pale Oil and fleas, each kind switched on or off. The
-pieces a wish or a purchase gives have no room in the save and aren't marked (Progress lists
-them). Below, the places, each with a glyph of its own and switched on or off too: the benches,
-the Bellway stations and the Ventrica stations where the game puts its own pins, dimmed while
-your game hasn't opened them (a station not unlocked, a toll bench not paid; the counter says how
-many are open), and the enemy gauntlets you haven't cleared, in their arena's room. Hornet sits
-on her bench's pin, as the game draws her sitting. The map shows the whole world explored, in your
-game's state, by the game's own conditions: in Act 3 the Cradle, Cogwork Core and the Ventrica
-hub are drawn destroyed, as the game redraws them then (with their benches and station), and the
-Abyss's diving bell is broken, gone or mended with the Everbloom, as your save has it. In Free
-mode it's the world before Act 3. Verdania and Whiteward are always as they are once their
-bosses are beaten.
+area's tint, the full drawing, as once the area's map is bought), with Hornet on her bench's pin,
+as the game draws her sitting. Where each thing is comes from the game's files too: the pickups
+lying in each room, the vendors, the Wishwalls and their givers, the bosses' arenas, the scripts
+that give an ability. The map shows the whole world explored, in your game's state, by the
+game's own conditions: in Act 3 the Cradle, Cogwork Core and the Ventrica hub are drawn
+destroyed, as the game redraws them then (with their benches and station), and the Abyss's
+diving bell is broken, gone or mended with the Everbloom, as your save has it. In Free mode it's
+the world before Act 3. Verdania and Whiteward are always as they are once their bosses are
+beaten.
 
 When your previous save rested at another bench, a dashed thread draws Hornet's way from it to
 this one, and the first time the map comes into view she runs it, room by room, from the old
 bench to the new one (two to eight seconds; the view follows her when it's enlarged), and sits.
-She runs each way once; with reduced motion she's simply at her bench. Progress says the same for each missing piece that sits in a room. "Whole" fits it to the page; ×1,5 and ×2,5 enlarge it, and it scrolls to your bench. In
-Free mode, every piece.
+She runs each way once; with reduced motion she's simply at her bench.
 
 ### Progress
 
@@ -304,6 +335,10 @@ into it («2 of 15»); «The whole road» opens it in full. Then each category i
 its things as the game's pictures (what you lack dimmed) or as pips, its count and a ring that
 opens its list; the rows you open stay open. «What's missing · Everything» and «By Act ·
 Nearest first» sit just above the rows.
+
+Opened, a category lists its things by Act: each with its picture, its name (a Tool with its
+slot's colour) and how to get it, how many rooms away it is from your bench and its area on the
+right, and a pin that shows it on the Map.
 
 In **Free mode** with things marked in the Inventory, Progress counts from those marks and
 each missing row has a box to mark it here too; masks, silk, the Silk Hearts, the Needle, the

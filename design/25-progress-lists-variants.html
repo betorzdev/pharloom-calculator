@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Progress lists: variants</title>
+<!-- Design material, not part of the site (design/03-redesign.md, step 5, second retouch). What a
+     Progress group shows when opened, drawn three ways over Save 4's real rows (Tools and Masks,
+     read from the site). ?v=a|b|c&w=1440|390 -->
+<base href="../">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/app.css">
+<style>
+.mk-bar { position: fixed; z-index: 90; left: 50%; bottom: var(--sp-2); transform: translateX(-50%); display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--sp-1) var(--sp-3); width: max-content; max-width: calc(100vw - var(--sp-4)); padding: var(--sp-2) var(--sp-3); background: color-mix(in oklab, var(--scene-bg) 94%, transparent); border: 1px solid var(--line-panel); font-family: var(--font-num); font-size: var(--fs-xs); color: var(--muted); }
+.mk-bar b { color: var(--label); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; font-size: var(--fs-2xs); }
+.mk-bar button { padding: var(--sp-1) var(--sp-2); border: 1px solid var(--line-ctl); color: var(--ink-2); font: inherit; }
+.mk-bar button[aria-pressed="true"] { color: var(--ink-strong); border-color: var(--accent-line); background: var(--picked); }
+.mk-note { flex-basis: 100%; text-align: center; color: var(--ink-2); }
+html.is-framed body { background: var(--scene-bg); }
+.mk-phone { display: block; margin: var(--sp-4) auto calc(var(--sp-16) * 2); width: 390px; height: calc(100vh - var(--sp-16) * 2 - var(--sp-8)); border: 1px solid var(--line-panel); }
+html.is-inner .mk-bar { display: none; }
+.page { padding-top: var(--sp-8); padding-bottom: calc(var(--sp-16) * 2.5); }
+.screen { --tab: var(--tab-progress); }
+.head { display: flex; align-items: center; gap: var(--sp-4); padding: var(--sp-3) 0; border-bottom: 1px solid var(--line); }
+.head b { font-family: var(--font-display); font-weight: 400; color: var(--ink-strong); font-size: var(--fs-md); }
+.head .n { margin-left: auto; font-family: var(--font-num); color: var(--ink-strong); }
+.note { margin: var(--sp-3) 0; font-size: var(--fs-xs); color: var(--muted); }
+.grp { margin-bottom: var(--sp-8); }
+.slot { --c: var(--slot-red); }
+.is-blue { --c: var(--slot-blue); } .is-yellow { --c: var(--slot-yellow); }
+.pin { display: inline-grid; place-items: center; width: 26px; height: 26px; border: 1px solid var(--line-ctl); border-radius: 50%; color: var(--ink-2); }
+.pin svg { width: 12px; }
+.pin:hover { border-color: var(--accent); color: var(--accent); }
+/* A · cards */
+.a-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: var(--sp-3); }
+.a-card { position: relative; display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: var(--sp-1) var(--sp-3); align-items: center; padding: var(--sp-3); border: 1px solid var(--line); background: color-mix(in oklab, var(--tab) 5%, transparent); }
+.a-card .ic2 { grid-row: span 3; position: relative; display: grid; place-items: center; width: 52px; height: 52px; }
+.a-card .ic2::before { content: ''; position: absolute; inset: 9px; transform: rotate(45deg); border: 1.5px solid var(--c, var(--line-ctl)); background: color-mix(in oklab, var(--c, #000) 10%, var(--scene-bg)); }
+.a-card .ic2 img { position: relative; width: 34px; height: 34px; object-fit: contain; }
+.a-card b { font-family: var(--font-display); font-weight: 400; color: var(--ink-strong); font-size: var(--fs-sm); }
+.a-card .w { font-size: var(--fs-xs); color: var(--muted); }
+.a-card .h { font-size: var(--fs-xs); color: var(--ink-2); }
+.a-card .pin { position: absolute; top: var(--sp-2); right: var(--sp-2); }
+.a-card .d { position: absolute; bottom: var(--sp-2); right: var(--sp-3); font-family: var(--font-num); font-size: var(--fs-2xs); color: var(--label); }
+/* B · clean rows: icon, name and how on the left; place, distance and a pin on the right */
+.b-list { list-style: none; margin: 0; padding: 0; }
+.b-row { display: grid; grid-template-columns: 40px minmax(0, 1fr) auto auto; gap: 0 var(--sp-4); align-items: center; padding: var(--sp-3) var(--sp-2); border-bottom: 1px solid color-mix(in oklab, var(--filigree) 10%, transparent); }
+.b-row:hover { background: var(--veil); }
+.b-row img { width: 36px; height: 36px; object-fit: contain; grid-row: span 2; }
+.b-row b { font-family: var(--font-display); font-weight: 400; color: var(--ink-strong); font-size: var(--fs-md); }
+.b-row .h { grid-column: 2; font-size: var(--fs-xs); color: var(--ink-2); }
+.b-row .place { grid-row: span 2; text-align: right; font-size: var(--fs-xs); color: var(--muted); line-height: 1.4; }
+.b-row .place strong { display: block; font-family: var(--font-num); font-weight: 600; color: var(--ink); font-size: var(--fs-sm); }
+.b-row .pin { grid-row: span 2; }
+.b-row .dot { display: inline-block; width: 7px; height: 7px; transform: rotate(45deg); background: var(--c); margin-right: var(--sp-2); vertical-align: 2px; }
+.acts { margin: var(--sp-6) 0 var(--sp-2); font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
+/* C · by area: area heads with their pieces as tiles */
+.c-area { margin-top: var(--sp-6); }
+.c-area h4 { display: flex; align-items: center; gap: var(--sp-2); margin: 0 0 var(--sp-3); font-family: var(--font-display); font-weight: 400; font-size: var(--fs-sm); color: var(--ink); }
+.c-area h4::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, color-mix(in oklab, var(--filigree) 35%, transparent), transparent); }
+.c-area h4 span { font-family: var(--font-num); font-size: var(--fs-2xs); color: var(--muted); }
+.c-tiles { display: flex; flex-wrap: wrap; gap: var(--sp-3); }
+.c-tile { width: 150px; display: grid; justify-items: center; gap: var(--sp-1); padding: var(--sp-3) var(--sp-2); border: 1px solid var(--line); text-align: center; }
+.c-tile img { width: 44px; height: 44px; object-fit: contain; }
+.c-tile b { font-family: var(--font-display); font-weight: 400; font-size: var(--fs-sm); color: var(--ink-strong); }
+.c-tile span { font-size: var(--fs-2xs); color: var(--muted); }
+.c-tile em { font-style: normal; font-size: var(--fs-2xs); color: var(--ink-2); }
+@media (max-width: 599px) { .b-row { grid-template-columns: 36px minmax(0, 1fr) auto; } .b-row .place { display: none; } .b-row .h::after { content: attr(data-place); display: block; color: var(--muted); } .c-tile { width: calc(50% - var(--sp-2)); } }
+</style>
+</head>
+<body>
+<div class="page"><div class="shell"><main class="screens">
+<section class="screen" data-view="progress" id="scr"><span class="frame-line"></span>
+  <header class="screen-head"><h2 class="sec-title screen-title">Progreso</h2></header>
+  <div id="mk"></div>
+</section></main></div></div>
+<div class="mk-bar"><b>Variant</b><button data-key="v" data-val="a">A · tarjetas</button><button data-key="v" data-val="b">B · filas limpias</button><button data-key="v" data-val="c">C · por zonas</button>
+  <b>Width</b><button data-key="w" data-val="1440">desktop</button><button data-key="w" data-val="390">390</button><span class="mk-note" id="note"></span></div>
+<script>
+const TOOLS = [{"name":"Longpin","where":["Act 1","Bellhart","9 rooms away"],"how":"","color":"red","got":false,"icon":"assets/icons/tools/longpin.webp","kind":"tool"},{"name":"Multibinder","where":["Act 1","Bellhart","6 rooms away"],"how":"Frey: 880 rosaries","color":"blue","got":false,"icon":"assets/icons/tools/multibinder.webp","kind":"tool"},{"name":"Magma Bell","where":["Act 1","Deep Docks","9 rooms away"],"how":"Forge Daughter: 110 rosaries · 1 Craftmetal","color":"blue","got":false,"icon":"assets/icons/tools/magma-bell.webp","kind":"tool"},{"name":"Weighted Belt","where":["Act 1","Far Fields","9 rooms away"],"how":"Mort: 160 rosaries","color":"yellow","got":false,"icon":"assets/icons/tools/weighted-belt.webp","kind":"tool"},{"name":"Silkspeed Anklets","where":["Act 1","Far Fields","11 rooms away"],"how":"","color":"yellow","got":false,"icon":"assets/icons/tools/silkspeed-anklets.webp","kind":"tool"},{"name":"Pimpillo","where":["Act 1","Greymoor","10 rooms away"],"how":"Crafted · 1 Craftmetal","color":"red","got":false,"icon":"assets/icons/tools/pimpillo.webp","kind":"tool"},{"name":"Flea Brew","where":["Act 1","Greymoor","9 rooms away"],"how":"Wish: The Lost Fleas","color":"red","got":false,"icon":"assets/icons/tools/flea-brew.webp","kind":"tool"},{"name":"Pollip Pouch","where":["Act 1","Shellwood","11 rooms away"],"how":"Wish: Rite of the Pollip","color":"blue","got":false,"icon":"assets/icons/tools/pollip-pouch.webp","kind":"tool"}];
+const MASKS = [{"name":"Mask Shard","where":["Act 2","10 rooms away"],"how":"","color":"","got":false,"icon":"assets/icons/items/mask-shard.webp","kind":"piece"},{"name":"Mask Shard","where":["Act 2","Bilewater","12 rooms away"],"how":"","color":"","got":false,"icon":"assets/icons/items/mask-shard.webp","kind":"piece"},{"name":"Mask Shard","where":["Act 2","Blasted Steps","8 rooms away"],"how":"","color":"","got":false,"icon":"assets/icons/items/mask-shard.webp","kind":"piece"},{"name":"Mask Shard","where":["Act 2","Cogwork Core","10 rooms away"],"how":"","color":"","got":false,"icon":"assets/icons/items/mask-shard.webp","kind":"piece"},{"name":"Mask Shard","where":["Act 2","Far Fields","11 rooms away"],"how":"","color":"","got":false,"icon":"assets/icons/items/mask-shard.webp","kind":"piece"},{"name":"Mask Shard","where":["Act 2","Mount Fay","12 rooms away"],"how":"","color":"","got":false,"icon":"assets/icons/items/mask-shard.webp","kind":"piece"},{"name":"Mask Shard","where":["Act 2","The Slab","9 rooms away"],"how":"Needs: Key of Apostate","color":"","got":false,"icon":"assets/icons/items/mask-shard.webp","kind":"piece"},{"name":"Mask Shard","where":["Act 3","Bellhart","6 rooms away"],"how":"Wish: The Hidden Hunter","color":"","got":false,"icon":"assets/icons/items/mask-shard.webp","kind":"piece"}];
+const NOTES = {"tools":"Hand the Curveclaw to a Skarr in Act 3 and its point is gone until you get it back as the Curvesickle. The Silkshot comes in three versions depending on who repairs it, and one counts: the first repair closes the other two.","masks":"Whole masks count: every four shards, 1%."};
+(function () {
+  const DEF = { v: 'b', w: '1440' };
+  const q = new URLSearchParams(location.search);
+  const st = Object.fromEntries(Object.keys(DEF).map((k) => [k, q.get(k) || DEF[k]]));
+  const inner = q.has('inner'), html = document.documentElement;
+  const PIN = '<svg viewBox="0 0 12 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 15 C6 15 11 9 11 6 A5 5 0 0 0 1 6 C1 9 6 15 6 15 Z"/><circle cx="6" cy="6" r="1.8"/></svg>';
+  const pin = '<a class="pin" href="#" title="Ver en el mapa">' + PIN + '</a>';
+  const dist = (x) => (x.where[2] || '').replace(' rooms away', ' salas').replace('in your room', 'aquí');
+  const head = (n, got, max) => '<div class="head"><b>' + n + '</b><span class="n">' + got + '/' + max + '</span></div>';
+  const LBL = { a: 'A · tarjetas: cada cosa en una tarjeta con su dibujo sobre su ranura de color, el nombre, el acto y la zona, cómo conseguirla, lo lejos que está y un alfiler para verla en el mapa.', b: 'B · filas limpias: agrupadas por acto; el dibujo a la izquierda, el nombre en la letra del juego y cómo conseguirla debajo; a la derecha la zona con la distancia en grande y un alfiler para el mapa.', c: 'C · por zonas: agrupadas por zona (como el Diario), cada cosa como una ficha pequeña con su dibujo, nombre, distancia y cómo conseguirla.' };
+  function group(title, list, got, max, note) {
+    if (st.v === 'a') return '<div class="grp">' + head(title, got, max) + '<p class="note">' + note + '</p><ul class="a-grid">' + list.map((x) => '<li class="a-card ' + (x.color ? 'is-' + x.color : '') + '"><span class="ic2" style="' + (x.color ? '--c:var(--slot-' + x.color + ')' : '') + '"><img src="' + x.icon + '" alt=""></span><b>' + x.name + '</b><span class="w">' + x.where[0] + ' · ' + x.where[1] + '</span><span class="h">' + (x.how || '&nbsp;') + '</span>' + pin + '<span class="d">' + dist(x) + '</span></li>').join('') + '</ul></div>';
+    if (st.v === 'b') { const acts = {}; for (const x of list) (acts[x.where[0]] = acts[x.where[0]] || []).push(x);
+      return '<div class="grp">' + head(title, got, max) + '<p class="note">' + note + '</p>' + Object.entries(acts).map(([a, xs]) => '<p class="acts">' + a.replace('Act', 'Acto') + '</p><ul class="b-list">' + xs.map((x) => '<li class="b-row"><img src="' + x.icon + '" alt=""><b>' + (x.color ? '<span class="dot" style="--c:var(--slot-' + x.color + ')"></span>' : '') + x.name + '</b><span class="place"><strong>' + dist(x) + '</strong>' + x.where[1] + '</span>' + pin + '<span class="h" data-place="' + x.where[1] + ' · ' + dist(x) + '">' + (x.how || '') + '</span></li>').join('') + '</ul>').join('') + '</div>'; }
+    const areas = {}; for (const x of list) (areas[x.where[1]] = areas[x.where[1]] || []).push(x);
+    return '<div class="grp">' + head(title, got, max) + '<p class="note">' + note + '</p>' + Object.entries(areas).map(([a, xs]) => '<div class="c-area"><h4>' + a + ' <span>' + xs.length + '</span></h4><div class="c-tiles">' + xs.map((x) => '<div class="c-tile"><img src="' + x.icon + '" alt=""><b>' + x.name + '</b><span>' + x.where[0] + ' · ' + dist(x) + '</span>' + (x.how ? '<em>' + x.how + '</em>' : '') + '</div>').join('') + '</div></div>').join('') + '</div>';
+  }
+  function render() { document.getElementById('mk').innerHTML = group('Herramientas', TOOLS, 31, 51, NOTES.tools) + group('Máscaras', MASKS, 2, 5, NOTES.masks); }
+  const url = (over) => '?' + new URLSearchParams(Object.assign({}, st, over)).toString();
+  if (st.w === '390' && !inner) { html.classList.add('is-framed'); document.querySelector('.page').remove(); const f = document.createElement('iframe'); f.className = 'mk-phone'; f.src = location.pathname + url({ inner: 1 }); document.body.prepend(f); }
+  if (inner) html.classList.add('is-inner');
+  for (const b of document.querySelectorAll('.mk-bar button')) b.setAttribute('aria-pressed', String(st[b.dataset.key] === b.dataset.val));
+  document.getElementById('note').textContent = LBL[st.v];
+  if (document.getElementById('mk')) render();
+  document.addEventListener('click', (ev) => { const b = ev.target.closest('.mk-bar button'); if (b) location.search = url({ [b.dataset.key]: b.dataset.val }); });
+})();
+</script>
+</body>
+</html>
