@@ -802,9 +802,13 @@ one by rooms from the bench (`js/graph.js`); with nothing picked, what's missing
 pass read each enemy's health in the game (HealthManager): **the wiki's matches it for 202 of the
 208**; Overgrown Pilgrim (20 in the game, 23 on the wiki) and Pondcatcher (30, 25) differ, the
 rest are scripted cases (an untouchable Skarr Scout, the Second Sentinel's 99,999, the Clover
-Dancers counted as one fight). The site keeps the wiki's numbers (CLAUDE.md). Known gap: the
-graph has doors, not lifts or memories, so Verdania, the Cradle, the Mist and the caravan's
-insides are islands in it.
+Dancers counted as one fight). The site keeps the wiki's numbers (CLAUDE.md). The gap it had (Verdania,
+the Mist and the caravan were islands) was closed the same day: their doors say `[dynamic]`, and
+the game's data says where they lead (a DoorTargetCondition or a PlayerDataTestResponse on the
+door, the Mist's MazeController, a scene loaded on top of another, a memory's FSM;
+`tools/extract-graph.py`'s header), so every scene is now reached from the first room. The
+Cradle was already reached. The scenes a boss fight, a cutscene or the Bellway's ride loads on
+top are left out, so the stations still need the save's.
 
 **Phase 5 has started** (the same day): `js/engine.js` takes an enemy (`compute(state, { foe,
 black })`): each hit is one product rounded once (weapon × the enemy's modifier at the level of
