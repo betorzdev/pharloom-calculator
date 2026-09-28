@@ -1248,6 +1248,18 @@ kbd {
 .mp-dot.is-pale-oil { color: var(--slot-red); }
 .mp-dot.is-flea { color: var(--plasmium-line); }
 .mp-bar.is-places { margin-top: 0; }
+/* Hornet's way from the previous bench: a silk thread over the rooms, from a hollow ring. */
+.mp-way { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.mp-way polyline { fill: none; stroke: var(--silk); stroke-width: 4; stroke-dasharray: 10 8; stroke-linecap: round; stroke-linejoin: round; opacity: 0.75; vector-effect: non-scaling-stroke; }
+.mp-from { position: absolute; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; border: 2px solid var(--silk); background: var(--scene-bg); }
+/* What's missing closest to your bench: a short list under the map. */
+.mp-near { margin-top: var(--sp-6); max-width: 560px; }
+.mp-near-list { list-style: none; margin: var(--sp-3) 0 0; padding: 0; display: grid; gap: var(--sp-1); }
+.mp-near-list li { display: grid; grid-template-columns: 18px minmax(0, 1fr) auto auto; align-items: center; gap: var(--sp-3); font-size: var(--fs-sm); color: var(--ink); }
+.mp-near-list .mp-dot, .mp-near-list .mp-pin { position: static; margin: 0; }
+.mp-near-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mp-near-area { font-size: var(--fs-xs); color: var(--muted); white-space: nowrap; }
+.mp-near-list b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-xs); font-weight: 500; color: var(--ink-strong); white-space: nowrap; }
 /* The places: a glyph on a black disc, bone for the pins the game draws, the slots' red for a
    gauntlet; dimmed while your game hasn't opened it. */
 .mp-pin {

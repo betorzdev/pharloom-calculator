@@ -147,7 +147,13 @@ the Bellway stations and the Ventrica stations where the game puts its own pins,
 your game hasn't opened them (a station not unlocked, a toll bench not paid; the counter says how
 many are open), and the enemy gauntlets you haven't cleared, in their arena's room. Hornet sits
 on her bench's pin. The map shows the world explored before Act 3, with Verdania and Whiteward
-as they are once their bosses are beaten. "Whole" fits it to the page; ×1,5 and ×2,5 enlarge it, and it scrolls to your bench. In
+as they are once their bosses are beaten.
+
+When your previous save rested at another bench, a dashed thread draws Hornet's way from it to
+this one. Under the map, **Closest to your bench**: the pieces and gauntlets you're missing that
+are fewest rooms away, counting each door and each ride between the Bellway and Ventrica stations
+you've opened (the rooms and doors are the game's own, from its files; a count of rooms, not a
+distance on foot). Progress says the same for each missing piece that sits in a room. "Whole" fits it to the page; ×1,5 and ×2,5 enlarge it, and it scrolls to your bench. In
 Free mode, every piece.
 
 ### Progress

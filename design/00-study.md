@@ -834,7 +834,13 @@ Bellshrine and Swamp Shaman ones, 12 Bellway and 7 Ventrica stations; the carava
 and the vendors' left out), each with what lights it in the game (the station unlocked, the toll
 paid), which `savefile.game().lit` reads; the gauntlets not cleared go in their arena's room
 (`js/gauntlets.js`'s scene, an interior by its door: `js/rooms.js`'s ENTRANCE, read from the
-scenes' doors), and the fleas, which weren't drawn, by the room their flag names.
+scenes' doors), and the fleas, which weren't drawn, by the room their flag names. And **how the
+rooms connect** (28 September): `tools/extract-graph.py` reads every scene's TransitionPoints
+(its ways out, directed, since a drop leads one way) into `js/graph.js`, 536 scenes and 1,277
+ways; from the first room every piece's room is reached. `js/rooms.js` walks it with the
+stations a save has opened: Hornet's way from the previous bench to this one is drawn on the Map,
+and what's missing is ordered by rooms from your bench, on the Map and in Progress. That closes
+phase 6.
 
 **Phase 7 has started** (the same day): the Tasks. The completionist's 74 (21 main objectives and
 53 wishes in 11 types) with their save field, joined to the game's own names by their English

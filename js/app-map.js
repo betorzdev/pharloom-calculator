@@ -5,8 +5,11 @@
    mode, every piece, as a guide. Then the places, each a glyph of its own: the benches, Bellway
    and Ventrica stations where the game's own pins are (js/map.js PINS), dimmed while your game
    hasn't opened them (a station not unlocked, a toll not paid: savefile's lit), and the enemy
-   gauntlets you haven't cleared, in their arena's room. The marks are placed in percentages of
-   the image, so they follow its zoom. Shares SS.app with js/app.js (see there). */
+   gauntlets you haven't cleared, in their arena's room. In a save, Hornet's way from the previous
+   save's bench when it was another, and under the map what's missing closest to your bench, in
+   rooms (js/rooms.js walks js/graph.js, the game's doors, and the stations your game has opened).
+   The marks are placed in percentages of the image, so they follow its zoom. Shares SS.app with
+   js/app.js (see there). */
 (() => {
   'use strict';
   const SS = globalThis.SS;
@@ -30,6 +33,50 @@
     gauntlet: svg('<path d="M2.5 2.5l9 9M11.5 2.5l-9 9"/>'),
   };
   const pinKey = SS.savefile.pinKey;
+  const NEAR = 12;
+  const areaName = (a) => (a && CO.AREAS[a] ? pick(CO.AREAS[a]) : '');
+  const stepsText = (n) => (n === 0 ? t('mapHere') : t('mapSteps', { n: num(n) }));
+  // The previous save's game (js/app-home.js keeps it for "Since the previous save"), or null.
+  function before() {
+    let prev = null;
+    try { prev = JSON.parse(App.load('pharloom.prev') || 'null'); } catch (e) { prev = null; }
+    return prev && prev.snap ? SS.savefile.gameOf(prev.snap) : null;
+  }
+  /* Hornet's way from the previous bench to this one: a line through the rooms' middles, drawn in
+     the image's own pixels (the SVG stretches with it). */
+  function wayHtml(g) {
+    const b = before();
+    if (!b || !b.bench || !g.bench || b.bench === g.bench) return '';
+    const way = R.path(b.bench, g.bench, g.lit);
+    const pts = (way || []).map((s) => R.roomOf(s)).filter(Boolean);
+    if (pts.length < 2) return '';
+    const start = pts[0];
+    return `<svg class="mp-way" viewBox="0 0 ${M.W} ${M.H}" preserveAspectRatio="none" aria-hidden="true">
+        <polyline points="${pts.map((p) => `${Math.round(p.x)},${Math.round(p.y)}`).join(' ')}"/></svg>
+      <i class="mp-from" style="${at(start.x, start.y)}" title="${esc(t('mapFrom'))}"></i>`;
+  }
+  /* What's missing nearest your bench: the pieces of the kinds shown and the gauntlets, by rooms. */
+  function nearHtml(g, shown, places) {
+    if (!g || !g.bench) return '';
+    const w = R.walk(g.bench, g.lit);
+    const list = [];
+    CO.PIECES.forEach((p, i) => {
+      if (!KINDS.includes(p[0]) || !shown.includes(p[0]) || g.pieces.includes(i)) return;
+      const n = R.steps(g.bench, R.sceneOf(p[2]), g.lit, w);
+      if (n != null) list.push({ n, mark: `<i class="mp-dot is-${p[0]}" aria-hidden="true"></i>`, name: p[4] ? pick(p[4]) : kindName(p[0]), area: p[3] });
+    });
+    if (places.includes('gauntlet')) for (const x of SS.gauntlets.GAUNTLETS) {
+      if (g.gauntlets.includes(x.id)) continue;
+      const n = R.steps(g.bench, x.scene, g.lit, w);
+      if (n != null) list.push({ n, mark: `<span class="mp-pin is-gauntlet" aria-hidden="true">${GLYPH.gauntlet}</span>`, name: App.gauntletName(x.id), area: x.area });
+    }
+    if (!list.length) return '';
+    list.sort((a, b) => a.n - b.n);
+    return `<section class="mp-near" aria-labelledby="mp-near-h"><h3 class="ct-h" id="mp-near-h">${esc(t('mapNear'))}</h3>
+      <ol class="mp-near-list">${list.slice(0, NEAR).map((x) => `<li>${x.mark}<span class="mp-near-name"${NT}>${esc(x.name)}</span>
+        <span class="mp-near-area"${NT}>${esc(areaName(x.area))}</span><b>${esc(stepsText(x.n))}</b></li>`).join('')}</ol>
+      <p class="pg-note">${esc(t('mapNearNote'))}</p></section>`;
+  }
   const at = (x, y) => `left:${(x / M.W * 100).toFixed(3)}%;top:${(y / M.H * 100).toFixed(3)}%`;
 
   App.screens.map = (sec) => {
@@ -97,9 +144,9 @@
       <div class="mp-bar is-places"><div class="mp-kinds">${placeChips}</div></div>
       <div class="mp-view"><div class="mp-map" style="width:${z * 100}%">
         <img class="mp-rooms" src="assets/map/rooms.webp" alt="${esc(t('mapAlt'))}" width="${M.W}" height="${M.H}">
-        ${pins}${gauntlets}${dots}${hornet}
+        ${g ? wayHtml(g) : ''}${pins}${gauntlets}${dots}${hornet}
       </div></div>
-      <p class="pg-note">${esc(t('mapNote'))}</p></div>`;
+      <p class="pg-note">${esc(t('mapNote'))}</p>${nearHtml(g, shown, places)}</div>`;
     // The bench in view once the map is drawn, at a zoom that scrolls.
     if (bench && z > 1) requestAnimationFrame(() => {
       const v = sec.querySelector('.mp-view'), h = sec.querySelector('.mp-hornet');

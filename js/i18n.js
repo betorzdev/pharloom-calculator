@@ -215,6 +215,12 @@
     mapPlace_bench1:{ es: 'Banco', en: 'Bench' },
     mapPlace_bellway:{ es: 'Vías campana', en: 'Bellways' },
     mapPlace_ventrica:{ es: 'Ventrica', en: 'Ventrica' },   // KEY_TUBE
+    mapNear:        { es: 'Lo más cerca de tu banco', en: 'Closest to your bench' },
+    mapNearNote:    { es: 'Por salas: cuenta cada puerta y cada viaje entre las estaciones que tienes abiertas, sea cual sea su tamaño. No es la distancia a pie.', en: 'By rooms: each door and each ride between the stations you\'ve opened counts one, whatever its size. It isn\'t the distance on foot.' },
+    mapSteps:       { es: 'a {n} salas', en: '{n} rooms away' },
+    mapSteps1:      { es: 'a {n} sala', en: '{n} room away' },
+    mapHere:        { es: 'en tu sala', en: 'in your room' },
+    mapFrom:        { es: 'Tu banco anterior', en: 'Your previous bench' },
     mapClosed:      { es: 'sin abrir', en: 'not open yet' },
     mapToll:        { es: 'sin pagar el peaje', en: 'toll not paid' },
     mapNote:        { es: 'Cada pieza, en su sala; varias en la misma sala se ven en fila. Las que dan un deseo o una compra no tienen sala en la partida y no se marcan: están en Progreso. Los bancos y las estaciones están donde el juego pone sus alfileres; atenuadas, las que tu partida aún no ha abierto. Los desafíos, los que te faltan.', en: 'Each piece in its room; several in one room show in a row. The ones a wish or a purchase gives have no room in the save and aren\'t marked: they\'re in Progress. The benches and stations are where the game puts its pins; dimmed, the ones your game hasn\'t opened yet. The gauntlets, the ones you haven\'t cleared.' },

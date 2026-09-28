@@ -44,3 +44,24 @@ test('an interior the map does not draw goes where its door is; every gauntlet a
   }
   assert.deepEqual(kinds, { bench: 76, bellway: 12, ventrica: 7 });
 });
+
+test('getting around: the game\'s doors, and the stations a save has opened; every piece can be reached', () => {
+  const G = require('../js/graph.js');
+  const CO = require('../js/collectibles.js');
+  assert.ok(Object.keys(G).length > 500, 'the graph has the scenes');
+  // A map piece of a room walks as its room; an interior as its door.
+  assert.strictEqual(R.graphScene('Bone_05_right'), 'Bone_05');
+  assert.strictEqual(R.graphScene('Nowhere'), null);
+  // From the first room, on foot, every loose piece's room can be reached.
+  const w = R.walk('Tut_01', []);
+  const pieces = [...new Set(CO.PIECES.map((p) => R.sceneOf(p[2])).filter(Boolean))];
+  assert.deepEqual(pieces.filter((s) => !w.has(R.graphScene(s))), []);
+  // The path starts and ends where asked and each step is a door or a ride; stations shorten it.
+  const lit = M.PINS.filter((p) => p[4] && p[0] !== 'bench').map((p) => p[0] + ' ' + p[3]);
+  const foot = R.steps('Tut_01', 'Bellway_City', []), ride = R.steps('Tut_01', 'Bellway_City', lit);
+  assert.ok(foot > ride && ride >= 1, `${foot} on foot, ${ride} riding`);
+  const way = R.path('Tut_01', 'Bellway_City', []);
+  assert.deepEqual([way[0], way[way.length - 1], way.length - 1], ['Tut_01', 'Bellway_City', foot]);
+  for (let i = 1; i < way.length; i++) assert.ok((G[way[i - 1]] || []).includes(way[i]), `${way[i - 1]} → ${way[i]}`);
+  assert.strictEqual(R.steps('Tut_01', 'Tut_01', []), 0);
+});

@@ -23,11 +23,16 @@
     'crafting-kit': () => pick(item('crafting-kit').name), flea: () => t('kind_flea'), 'silk-heart': () => t('kind_silkHeart'),
   };
   const areaName = (a) => (a && CO.AREAS[a] ? pick(CO.AREAS[a]) : '');
+  const R = SS.rooms;
+  /* How far a missing piece is from your bench, in rooms (js/rooms.js: the game's doors and the
+     stations you've opened), for the pieces the save keeps in a room; set per render. */
+  let away = () => null;
 
   /* One row: its name, whether you have it, its Act and its area. */
-  function row({ name, got, act, area, color }, g) {
+  function row({ name, got, act, area, color, scene }, g) {
     const later = g && !got && act > g.act;
-    const where = [act ? t('saveAct', { n: act }) : '', areaName(area)].filter(Boolean);
+    const n = !got && scene ? away(scene) : null;
+    const where = [act ? t('saveAct', { n: act }) : '', areaName(area), n == null ? '' : n === 0 ? t('mapHere') : t('mapSteps', { n: num(n) })].filter(Boolean);
     return `<li class="pg-item${got ? ' is-got' : ''}${later ? ' is-later' : ''}"${later ? ` title="${esc(t('pgLater', { n: act }))}"` : ''}>
         <span class="pg-mark" aria-hidden="true">${got ? App.tick : ''}</span>
         ${color ? `<span class="pg-slot is-${color}" aria-hidden="true"></span>` : ''}
@@ -43,7 +48,7 @@
     const has = (list, id) => !!g && list.includes(id);
     const where = (map, id) => { const w = map[id] || []; return { act: w[0] || 0, area: w[1] || null }; };
     const pieces = (kind, name) => CO.PIECES.map((p, i) => ({ p, i })).filter(({ p }) => p[0] === kind)
-      .map(({ p, i }, k) => ({ name: name ? name(k) : KIND_NAME[kind](), got: !!g && g.pieces.includes(i), act: p[1], area: p[3] }));
+      .map(({ p, i }, k) => ({ name: name ? name(k) : KIND_NAME[kind](), got: !!g && g.pieces.includes(i), act: p[1], area: p[3], scene: R.sceneOf(p[2]) }));
     const tools = CO.COUNTED.map((ids) => {
       const tool = D.TOOLS.find((x) => x.id === ids[0]);
       const got = !!g && ids.some((id) => g.tools.includes(id));
@@ -100,6 +105,8 @@
 
   App.screens.progress = (sec) => {
     const g = App.game();
+    const w = g && g.bench ? R.walk(g.bench, g.lit) : null;
+    away = (scene) => (w ? R.steps(g.bench, scene, g.lit, w) : null);
     const all = things(g);
     const c = g ? CP.count(g) : null;
     const seg = g ? `<div class="seg pg-seg" role="group" aria-label="${esc(t('pgShow'))}">
@@ -112,7 +119,7 @@
     }).join('');
     const beyond = BEYOND.map(([kind, key]) => {
       const list = CO.PIECES.map((p, i) => ({ p, i })).filter(({ p }) => p[0] === kind)
-        .map(({ p, i }) => ({ name: p[4] ? pick(p[4]) : KIND_NAME[kind](), got: !!g && g.pieces.includes(i), act: p[1], area: p[3] })).sort(byAct);
+        .map(({ p, i }) => ({ name: p[4] ? pick(p[4]) : KIND_NAME[kind](), got: !!g && g.pieces.includes(i), act: p[1], area: p[3], scene: R.sceneOf(p[2]) })).sort(byAct);
       return group(kind, key ? t(key) : KIND_NAME[kind](), list, g, list.filter((x) => x.got).length, list.length);
     }).join('') + (() => {
       const list = OTHER_ARTS.map((id) => { const w = CO.WHERE.arts[id] || [];
