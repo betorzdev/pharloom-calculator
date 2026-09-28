@@ -1206,6 +1206,23 @@ grouped under the map (Missing for 100%, Places, People, Other collectibles, You
   rooms not visited dimmed, an area's card, a card for each kind, a search over everything, and
   «See on the map» from Progress, the Journal and Your game (`App.mapShow`).
 
+**The map as the Hollow Knight site draws it** (28 September). Set side by side, the sibling's map
+read better: each thing's own picture filling a dark disc, each on its spot, all in SVG. Ours had
+a coloured rim round a small picture, every thing in its room's middle in rows, and the map scaled
+as an HTML layer. Now:
+- **Each thing on its own point.** `tools/extract-pickups.py` also keeps each object's place in
+  its scene (its Transforms composed), each scene's size (its tk2dTileMap) and each RestBench;
+  `tools/spots-wanted.js` names the objects a save's checks point at (their ids are the objects'
+  names). `tools/gen-spots.js` puts a scene's point on its room's drawing as x / width across and
+  y / height up, and stops unless the benches fall by the map's own bench pins (median about
+  3 px over 49 benches; Bone Bottom's and Bellhart's are the worst, 25 and 36 px, their pins set
+  by hand in the game). 820 things have a point of their own.
+  `js/spots.js` XY holds each point.
+- **The map in SVG**, its view the viewBox, as the sibling's: the marks a dark disc with a thin
+  rim and the picture at 0.92, about 22 px on screen (18 on a phone), up to a quarter more close
+  up; things on one point in a small grid round it. Hornet stays the page's sprite, placed over
+  the map at her point (`App.mapHornetAt`).
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).

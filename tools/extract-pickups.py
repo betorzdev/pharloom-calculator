@@ -18,7 +18,15 @@ What it writes (read on 28-Sep-2026, patch 1.0.30000):
   fields  a playerData field the site reads (the abilities', the Bellshrines') → [scene, object]:
           every PlayMakerFSM whose raw data names it (a set or a test: gen-spots picks).
   npcs    an object name the NPCS pattern list matches → [scene, object]: where each of them is.
-Scene names are the bundles', lower case; js/rooms.js finds them on the map either way. """
+  objects the objects kb/data/game/wanted.json asks for (tools/spots-wanted.js: the ones a save's
+          sceneData check names) → { scene: { name: [x, y] } }, the first of each name.
+  benches each scene's RestBench → [x, y], which tools/gen-spots.js sets against the map's own
+          bench pins to check how a point is placed on the map.
+  sizes   each scene's size in world units, its tk2dTileMap's width and height: the game places a
+          point on its room's drawing by it (x / width across, y / height up).
+Every [scene, …] above ends with the object's place in the world, [x, y] (its Transforms composed
+from the scene's root), where there's one. Scene names are the bundles', lower case; js/rooms.js
+finds them on the map either way. """
 import json, os, pickle, re, struct, sys
 from collections import defaultdict
 import UnityPy
@@ -26,6 +34,7 @@ import UnityPy
 UnityPy.config.FALLBACK_UNITY_VERSION = '6000.0.50f1'
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, '..', 'kb', 'data', 'game', 'pickups.json')
+WANTED = os.path.join(HERE, '..', 'kb', 'data', 'game', 'wanted.json')
 BUNDLES = ['tools/toolitems.bundle', 'tools/crestitems.bundle', 'collectables/collectableitems.bundle',
            'collectables/relics.bundle', 'collectables/materium.bundle']
 # The components that only drop, pay or show an item: not where it's had.
@@ -46,15 +55,19 @@ NPCS = r'Pinsmith.*|Seamstress.*|Pinstress.*|Crest Upgrade Shrine|Ladybug.*|Dice
 
 def main(game, cache):
     if cache and os.path.exists(cache):
-        items, fields, npcs = pickle.load(open(cache, 'rb'))
+        items, fields, npcs, objects, benches, sizes = pickle.load(open(cache, 'rb'))
     else:
-        items, fields, npcs = scan(game)
+        items, fields, npcs, objects, benches, sizes = scan(game)
         if cache:
-            pickle.dump((items, fields, npcs), open(cache, 'wb'))
-    srt = lambda v: sorted(set(v))
+            pickle.dump((items, fields, npcs, objects, benches, sizes), open(cache, 'wb'))
+    r2 = lambda v: [round(x, 2) if isinstance(x, float) else x for x in v]
+    srt = lambda v: sorted({tuple(r2(x)) for x in v}, key=lambda x: tuple(str(y) for y in x))
     out = {'items': {k: {'class': c, 'at': srt(v)} for (k, c), v in sorted(items.items())},
            'fields': {k: srt(v) for k, v in sorted(fields.items())},
-           'npcs': {k: srt(v) for k, v in sorted(npcs.items())}}
+           'npcs': {k: srt(v) for k, v in sorted(npcs.items())},
+           'objects': {s: {n: r2(p) for n, p in sorted(v.items())} for s, v in sorted(objects.items())},
+           'benches': {s: r2(p) for s, p in sorted(benches.items())},
+           'sizes': {s: list(v) for s, v in sorted(sizes.items())}}
     for f in FIELDS[:11]:   # the abilities; a Bellshrine's flag is named where only some of them are
         if f not in out['fields']:
             sys.exit(f'extract-pickups: no scene names {f} any more: FIELDS needs reading again')
@@ -62,7 +75,8 @@ def main(game, cache):
     with open(OUT, 'w') as fh:
         json.dump(out, fh, indent=1, sort_keys=True)
         fh.write('\n')
-    print(f"{len(out['items'])} items, {len(out['fields'])} fields, {len(out['npcs'])} people → {os.path.relpath(OUT)} "
+    print(f"{len(out['items'])} items, {len(out['fields'])} fields, {len(out['npcs'])} people, "
+          f"{sum(len(v) for v in out['objects'].values())} objects, {len(out['benches'])} benches, {len(out['sizes'])} scene sizes → {os.path.relpath(OUT)} "
           f"({os.path.getsize(OUT) // 1024} KB)")
 
 
@@ -112,32 +126,68 @@ def scan(game):
     npc_re = re.compile(NPCS)
     copy = lambda n: re.sub(r'\s*\(\d+\)$', '', n or '').strip()
     items, fields, npcs = defaultdict(list), defaultdict(list), defaultdict(list)
+    objects, benches, sizes = defaultdict(dict), {}, {}
+    wanted = {s: set(v) for s, v in json.load(open(WANTED)).items()} if os.path.exists(WANTED) else {}
     sdir = os.path.join(aa, 'scenes_scenes_scenes')
     names = sorted(f[:-7] for f in os.listdir(sdir) if f.endswith('.bundle'))
     for i, scene in enumerate(names):
         if scene in NOT_SCENES:
             continue
-        for o in UnityPy.load(os.path.join(sdir, scene + '.bundle')).objects:
+        env = UnityPy.load(os.path.join(sdir, scene + '.bundle'))
+        # Each object's place in the world: its Transforms composed from the root.
+        T = {o.path_id: o.read() for o in env.objects if o.type.name == 'Transform'}
+        of_go = {t.m_GameObject.m_PathID: t for t in T.values()}
+        def world(gid):
+            t, chain = of_go.get(gid), []
+            while t is not None:
+                chain.append(t)
+                f = t.m_Father.m_PathID
+                t = T.get(f) if f else None
+            x = y = 0.0
+            sx = sy = 1.0
+            for t in reversed(chain):
+                lp, ls = t.m_LocalPosition, t.m_LocalScale
+                x, y = x + lp.x * sx, y + lp.y * sy
+                sx, sy = sx * ls.x, sy * ls.y
+            return [x, y] if chain else []
+        want = wanted.get(scene, set())
+        if want:
+            for o in env.objects:
+                if o.type.name == 'GameObject':
+                    n = o.read().m_Name
+                    if n in want and n not in objects[scene]:
+                        objects[scene][n] = world(o.path_id)
+        for o in env.objects:
             if o.type.name != 'MonoBehaviour':
                 continue
             comp = CLS.get(script(o))
+            if comp == 'tk2dTileMap' and scene not in sizes:
+                d = o.read_typetree()
+                if d.get('width') and d.get('height'):
+                    sizes[scene] = (d['width'], d['height'])
+                continue
             got = set(refs(o)) if comp not in NOISE else set()
             hit = comp == 'PlayMakerFSM' and field_re.findall(o.get_raw_data())
-            if not got and not hit and comp not in ('PlayMakerFSM', 'BasicNPC'):
+            if not got and not hit and comp not in ('PlayMakerFSM', 'BasicNPC', 'RestBench'):
                 continue
             try:
-                go = o.read().m_GameObject.read().m_Name
+                ref = o.read().m_GameObject
+                gid, go = ref.m_PathID, ref.read().m_Name
             except Exception:
-                go = None
+                gid, go = None, None
+            at = world(gid) if gid else []
+            if comp == 'RestBench':
+                benches.setdefault(scene, at)
+                continue
             for name, cls in got:
-                items[(name, cls)].append((scene, comp, go))
+                items[(name, cls)].append((scene, comp, go, *at))
             for f in set(hit or ()):
-                fields[f.decode()].append((scene, go))
+                fields[f.decode()].append((scene, go, *at))
             if npc_re.fullmatch(copy(go)):
-                npcs[copy(go)].append((scene, go))
+                npcs[copy(go)].append((scene, go, *at))
         if i % 50 == 0:
             print(f'{i}/{len(names)} {scene}', file=sys.stderr, flush=True)
-    return dict(items), dict(fields), dict(npcs)
+    return dict(items), dict(fields), dict(npcs), dict(objects), benches, sizes
 
 
 if __name__ == '__main__':

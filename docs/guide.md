@@ -295,6 +295,14 @@ own mark is its switch, dimmed when off, with its count:
   where you last fell; the Journal's entries still missing, in the room where each is found; and
   the areas whose map you haven't bought, their names struck through.
 
+Each mark is the thing's own picture on a dark disc with a thin rim, as the Hollow Knight site
+draws them, about the same size at any zoom, a little bigger close up. It sits where the game
+has the thing in its room: the pickup lying there, the NPC, the shrine, the cache (the object's
+place in its scene, put on the room's drawing as the game places Hornet on its map; checked
+against the benches, which fall by the game's own bench pins). What has no place of its own (a
+shop's stock, a boss's arena) sits in its room's middle, and things on one point gather in a small
+grid around it. The map is drawn in SVG, so it stays sharp as you zoom.
+
 With a save the map shows only what you're missing; in Free mode, everything, as a guide (with
 things marked in the Inventory, what those marks say is missing). Tap any mark for its card: what
 it is, where, how many rooms from your bench, how it's had, and what it says of your game. A

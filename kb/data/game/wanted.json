@@ -1,0 +1,1340 @@
+{
+ "abyss_03": [
+  "Shaman_Collapse_Wall",
+  "Shell Shard Fossil Tiny Bumpy",
+  "Shell Shard Fossil Tiny Egg",
+  "Shell Shard Fossil Tiny Front",
+  "Shell Shard Fossil Tiny Front (1)"
+ ],
+ "abyss_05": [
+  "Shell Shard Fossil Mid Variant",
+  "Shell Shard Fossil Tiny Bumpy",
+  "Shell Shard Fossil Tiny Egg",
+  "Shell Shard Fossil Tiny Egg (1)",
+  "Shell Shard Fossil Tiny Front"
+ ],
+ "abyss_09": [
+  "Abyss_Collapse_Wall",
+  "explode_wall (3)",
+  "explode_wall (4)",
+  "explode_wall 4"
+ ],
+ "abyss_11": [
+  "Abyss_Collapse_Wall_bot"
+ ],
+ "abyss_13": [
+  "Abyss_Collapse_Wall"
+ ],
+ "ant_02": [
+  "Shell Shard Fossil Tiny Egg",
+  "Shell Shard Fossil Tiny Front"
+ ],
+ "ant_04": [
+  "ant_shell_shard_string (1)",
+  "ant_shell_shard_string (2)"
+ ],
+ "ant_04_left": [
+  "Black_Thread_Core",
+  "ant_item_string",
+  "ant_rosary_string",
+  "ant_rosary_string (1)"
+ ],
+ "ant_05b": [
+  "Black_Thread_Core",
+  "One Way Wall"
+ ],
+ "ant_20": [
+  "Collectable Item Pickup"
+ ],
+ "ant_21": [
+  "Ant Chest",
+  "ant_item_string",
+  "ant_rosary_string",
+  "ant_rosary_string (3)",
+  "ant_rosary_string_large",
+  "ant_rosary_string_large (1)",
+  "ant_rosary_string_medium (1)",
+  "ant_rosary_string_medium (3)",
+  "ant_rosary_string_medium Variant"
+ ],
+ "ant_merchant": [
+  "ant_shell_shard_string",
+  "ant_shell_shard_string (1)",
+  "ant_shell_shard_string (2)",
+  "ant_shell_shard_string (3)"
+ ],
+ "aqueduct_01": [
+  "Breakable Wall Aqueduct Start",
+  "Shell Shard Fossil Tiny Egg",
+  "Shell Shard Fossil Tiny Front"
+ ],
+ "aqueduct_02": [
+  "Breakable Wall"
+ ],
+ "aqueduct_03": [
+  "Breakable Wall"
+ ],
+ "aqueduct_04": [
+  "Breakable Wall bot mid",
+  "One Way Wall",
+  "Shell Shard Fossil Tiny Egg",
+  "Shell Shard Fossil Tiny Egg (1)",
+  "Shell Shard Fossil Tiny Egg (2)",
+  "Shell Shard Fossil Tiny Front",
+  "Shell Shard Fossil Tiny Front (1)"
+ ],
+ "aqueduct_05": [
+  "Caravan Troupe Leader Fleatopia NPC",
+  "Collectable Item Pickup - Tool Metal",
+  "Shell Shard Fossil Dustpen Short",
+  "Shell Shard Fossil Dustpen Tall",
+  "Shell Shard Fossil Dustpen Tall (1)",
+  "Shell Shard Fossil Dustpen Tall (2)"
+ ],
+ "aqueduct_08": [
+  "Breakable Wall_Silhouette",
+  "Geo Rock 1",
+  "Geo Rock 1 (1)",
+  "Geo Rock 3"
+ ],
+ "arborium_02": [
+  "Rhino"
+ ],
+ "arborium_04": [
+  "moss_berry_fruit"
+ ],
+ "arborium_05": [
+  "Collectable Item Pickup",
+  "Coral Crust Wall Sphere"
+ ],
+ "arborium_06": [
+  "Coral Crust Wall Mid (1)",
+  "Coral Crust Wall Small",
+  "Coral Crust Wall Small (1)",
+  "Coral Crust Wall Tall",
+  "Coral Crust Wall Tall (1)",
+  "Coral Crust Wall Tall (3)",
+  "Crust Wall",
+  "Shell Shard Fossil Coral Conch",
+  "Shell Shard Fossil Coral Conch (1)"
+ ],
+ "arborium_07": [
+  "Breakable Wall"
+ ],
+ "arborium_08": [
+  "One Way Wall"
+ ],
+ "arborium_09": [
+  "Silk Spool"
+ ],
+ "aspid_01": [
+  "Geo Rock 2"
+ ],
+ "bellshrine_coral": [
+  "Coral Crust Wall Sphere (2)",
+  "Coral Crust Wall Sphere (3)",
+  "Coral Crust Wall Sphere (4)"
+ ],
+ "belltown": [
+  "Collectable Item Pickup"
+ ],
+ "belltown_04": [
+  "Bell Wall Tall",
+  "Bell Wall Tall (1)",
+  "Bell Wall Tall (2)",
+  "Bell Wall Tall (3)",
+  "Bell Wall Tall (4)",
+  "rosary_cache_bell_ground",
+  "rosary_string_medium",
+  "rosary_string_small"
+ ],
+ "belltown_07": [
+  "rosary_cache_hang_bell"
+ ],
+ "belltown_basement_03": [
+  "One Way Wall (1)",
+  "One Way Wall (3)",
+  "One Way Wall (4)",
+  "One Way Wall (5)",
+  "rosary_cache_bell_ground",
+  "rosary_cache_bell_ground (1)",
+  "rosary_cache_hang_bell"
+ ],
+ "bellway_01": [
+  "Act3_Bellway_01_Breakable_wall"
+ ],
+ "bellway_02": [
+  "Breakable Wall"
+ ],
+ "bellway_04": [
+  "plank_wall_cluster"
+ ],
+ "bellway_city": [
+  "Collectable Item Pickup"
+ ],
+ "bellway_peak": [
+  "Breakable Wall",
+  "rosary_string_medium",
+  "rosary_string_medium (1)",
+  "rosary_string_small_mixed"
+ ],
+ "bellway_peak_02": [
+  "One Way Wall Crystal (2)",
+  "charm_break_wall",
+  "rosary_cache_hang"
+ ],
+ "bone_01": [
+  "Breakable Wall",
+  "Shell Shard Fossil Tiny Egg",
+  "rosary_string_small",
+  "rosary_string_small_half (2)"
+ ],
+ "bone_01b": [
+  "Breakable Wall",
+  "rosary_string_small",
+  "rosary_string_small_half"
+ ],
+ "bone_01c": [
+  "Geo Rock 1 (1)",
+  "Geo Rock 3",
+  "rosary_string_medium",
+  "rosary_string_small_half (1)"
+ ],
+ "bone_02": [
+  "Black_Thread_Core"
+ ],
+ "bone_04": [
+  "Black_Thread_Core",
+  "Geo Rock 3",
+  "Shell Shard Fossil Tiny Front (2)",
+  "Shell Shard Fossil Tiny Front (3)"
+ ],
+ "bone_06": [
+  "Shell Fossil Mimic AppearVariant"
+ ],
+ "bone_07": [
+  "Black_Thread_Core",
+  "Collectable Item Pickup - Tool Metal",
+  "Shell Shard Fossil Large Uni",
+  "explode_wall",
+  "explode_wall (2)",
+  "explode_wall (3)",
+  "explode_wall fake",
+  "explode_wall fake (1)",
+  "explode_wall fake (2)",
+  "explode_wall fake (3)"
+ ],
+ "bone_08": [
+  "Geo Rock 1",
+  "Geo Rock 2"
+ ],
+ "bone_09": [
+  "Black_Thread_Core"
+ ],
+ "bone_10": [
+  "Breakable Wall"
+ ],
+ "bone_11": [
+  "rosary_string_small",
+  "rosary_string_small_mixed"
+ ],
+ "bone_11b": [
+  "Silk Spool"
+ ],
+ "bone_12": [
+  "Ladybug Craft Pickup"
+ ],
+ "bone_14": [
+  "Geo Rock 1",
+  "Shell Fossil Mimic",
+  "Shell Shard Fossil Tiny Bumpy",
+  "Shell Shard Fossil Tiny Front"
+ ],
+ "bone_16": [
+  "Breakable Wall",
+  "Breakable Wall (1)",
+  "Breakable Wall (2)",
+  "Geo Rock 1",
+  "Geo Rock 2",
+  "Geo Rock 2 (1)"
+ ],
+ "bone_18": [
+  "Collectable Item Pickup"
+ ],
+ "bone_19": [
+  "Bone Chest",
+  "Breakable Wall",
+  "rosary_string_small",
+  "rosary_string_small_half",
+  "rosary_string_small_half (1)"
+ ],
+ "bone_east_02b": [
+  "Black_Thread_Core",
+  "Rhino",
+  "Shell Shard Fossil Mid"
+ ],
+ "bone_east_03": [
+  "Black_Thread_Core",
+  "Shell Fossil Mimic"
+ ],
+ "bone_east_04": [
+  "explode_wall"
+ ],
+ "bone_east_04b": [
+  "Breakable Wall (1)"
+ ],
+ "bone_east_05": [
+  "Black_Thread_Core"
+ ],
+ "bone_east_07": [
+  "explode_wall",
+  "explode_wall (1)",
+  "explode_wall (2)",
+  "explode_wall (3)",
+  "explode_wall (5)",
+  "rosary_string_small_half"
+ ],
+ "bone_east_08": [
+  "Geo Rock 2"
+ ],
+ "bone_east_09b": [
+  "ant_rosary_string",
+  "ant_rosary_string (1)"
+ ],
+ "bone_east_11": [
+  "explode_wall"
+ ],
+ "bone_east_13": [
+  "Shell Shard Fossil Dock (1)",
+  "Shell Shard Fossil Dock (2)",
+  "Shell Shard Fossil Dock (3)",
+  "Silk Spool"
+ ],
+ "bone_east_14": [
+  "Shell Fossil Mimic",
+  "explode_wall",
+  "explode_wall (1)",
+  "explode_wall (3)",
+  "explode_wall (4)",
+  "rosary_string_medium",
+  "rosary_string_small"
+ ],
+ "bone_east_14b": [
+  "rosary_string_small",
+  "rosary_string_small_half"
+ ],
+ "bone_east_15": [
+  "Geo Rock 1",
+  "Geo Rock 2"
+ ],
+ "bone_east_16": [
+  "Breakable Wall",
+  "ant_rosary_string",
+  "ant_rosary_string (1)",
+  "ant_rosary_string (2)"
+ ],
+ "bone_east_17": [
+  "Ant Chest",
+  "Black_Thread_Core",
+  "ant_rosary_string",
+  "ant_rosary_string (1)"
+ ],
+ "bone_east_17b": [
+  "Breakable Wall",
+  "ant_rosary_string",
+  "ant_rosary_string (1)"
+ ],
+ "bone_east_18": [
+  "Ant Chest",
+  "ant_rosary_string",
+  "ant_shell_shard_string",
+  "ant_shell_shard_string (1)"
+ ],
+ "bone_east_18b": [
+  "ant_item_string"
+ ],
+ "bone_east_20": [
+  "Heart Piece",
+  "explode_wall_norck"
+ ],
+ "bone_east_24": [
+  "Shell Shard Fossil Mid Variant",
+  "Shell Shard Fossil Tiny Bumpy",
+  "Shell Shard Fossil Tiny Egg",
+  "Shell Shard Fossil Tiny Front",
+  "ant_item_string",
+  "ant_rosary_string (1)",
+  "ant_rosary_string_large",
+  "explode_wall_norck"
+ ],
+ "bone_east_25": [
+  "Collectable Item Pickup"
+ ],
+ "bone_east_26": [
+  "Black_Thread_Core_Citadel"
+ ],
+ "bone_east_lavachallenge": [
+  "Heart Piece (1)",
+  "Shell Shard Fossil Mid",
+  "explode_wall (1)",
+  "explode_wall (2)",
+  "explode_wall (3)"
+ ],
+ "bonegrave": [
+  "One Way Wall",
+  "Rosary Pilgrim",
+  "rosary_string_small",
+  "rosary_string_small_half"
+ ],
+ "bonetown": [
+  "Shell Shard Fossil Big",
+  "rosary_string_medium",
+  "rosary_string_small_half"
+ ],
+ "chapel_wanderer": [
+  "One Way Wall",
+  "rosary_string_medium",
+  "rosary_string_small_half (1)",
+  "rosary_string_small_half (4)",
+  "rosary_string_small_half (5)"
+ ],
+ "clover_01": [
+  "Breakable Wall_Silhouette"
+ ],
+ "clover_16": [
+  "Breakable Wall",
+  "Breakable Wall (1)"
+ ],
+ "cog_04": [
+  "Black_Thread_Core"
+ ],
+ "cog_07": [
+  "Silk Spool"
+ ],
+ "cog_10_destroyed": [
+  "plank_wall_cluster_metal",
+  "plank_wall_cluster_metal (1)",
+  "plank_wall_cluster_metal (2)"
+ ],
+ "coral_02": [
+  "Collectable Item Pickup (1)",
+  "Shell Shard Fossil Tiny Bumpy",
+  "Shell Shard Fossil Tiny Egg",
+  "Shell Shard Fossil Tiny Front"
+ ],
+ "coral_11": [
+  "Black_Thread_Core"
+ ],
+ "coral_12": [
+  "Black_Thread_Core",
+  "Breakable Wall",
+  "Geo Rock Deepnest"
+ ],
+ "coral_19b": [
+  "Heart Piece"
+ ],
+ "coral_23": [
+  "Breakable Wall",
+  "Collectable Item Pickup"
+ ],
+ "coral_24": [
+  "Coral Crust Wall Tall",
+  "Coral Crust Wall Tall (1)",
+  "Coral Crust Wall Tall (2)",
+  "Coral Crust Wall Tall (3)",
+  "Coral Crust Wall Tall (4)",
+  "Coral Crust Wall Tall (5)",
+  "Shell Shard Fossil Tiny Bumpy",
+  "Shell Shard Fossil Tiny Egg"
+ ],
+ "coral_26": [
+  "Coral Crust Wall Tall"
+ ],
+ "coral_27": [
+  "Shell Shard Fossil Tiny Egg",
+  "Shell Shard Fossil Tiny Front"
+ ],
+ "coral_32": [
+  "Black_Thread_Core",
+  "Collectable Item Pickup - Tool Metal",
+  "Coral Crust Wall Tall"
+ ],
+ "coral_35": [
+  "Breakable Wall"
+ ],
+ "coral_35b": [
+  "Coral Crust Wall Tall (1)",
+  "Coral Crust Wall Tall (2)"
+ ],
+ "coral_36": [
+  "Shell Shard Collectable Item Pickup Instant",
+  "Shell Shard Fossil Beast",
+  "Shell Shard Fossil Tiny Egg"
+ ],
+ "coral_37": [
+  "Silk Grub Large Cocoon"
+ ],
+ "coral_38": [
+  "Coral Crust Wall Mid",
+  "Coral Crust Wall Sphere",
+  "Coral Crust Wall Tall",
+  "Coral Crust Wall Tall (1)",
+  "Coral Crust Wall Tall (2)",
+  "Shell Fossil Mimic",
+  "Shell Shard Fossil Tiny Egg",
+  "Shell Shard Fossil Tiny Front",
+  "Shell Shard Fossil Tiny Front (1)",
+  "Shell Shard Fossil Tiny Front (2)"
+ ],
+ "coral_40": [
+  "Shell Shard Fossil Coral Conch",
+  "Shell Shard Fossil Coral Conch (1)"
+ ],
+ "coral_41": [
+  "Coral Crust Wall Mid",
+  "Coral Crust Wall Mid (1)",
+  "Coral Crust Wall Mid (10)",
+  "Coral Crust Wall Mid (11)",
+  "Coral Crust Wall Mid (12)",
+  "Coral Crust Wall Mid (13)",
+  "Coral Crust Wall Mid (15)",
+  "Coral Crust Wall Mid (16)",
+  "Coral Crust Wall Mid (2)",
+  "Coral Crust Wall Mid (20)",
+  "Coral Crust Wall Mid (21)",
+  "Coral Crust Wall Mid (23)",
+  "Coral Crust Wall Mid (24)",
+  "Coral Crust Wall Mid (26)",
+  "Coral Crust Wall Mid (27)",
+  "Coral Crust Wall Mid (28)",
+  "Coral Crust Wall Mid (3)",
+  "Coral Crust Wall Mid (31)",
+  "Coral Crust Wall Mid (33)",
+  "Coral Crust Wall Mid (35)",
+  "Coral Crust Wall Mid (36)",
+  "Coral Crust Wall Mid (37)",
+  "Coral Crust Wall Mid (38)",
+  "Coral Crust Wall Mid (39)",
+  "Coral Crust Wall Mid (4)",
+  "Coral Crust Wall Mid (40)",
+  "Coral Crust Wall Mid (41)",
+  "Coral Crust Wall Mid (44)",
+  "Coral Crust Wall Mid (45)",
+  "Coral Crust Wall Mid (46)",
+  "Coral Crust Wall Mid (7)",
+  "Coral Crust Wall Mid (8)",
+  "Coral Crust Wall Mid (9)",
+  "Coral Crust Wall Small",
+  "Coral Crust Wall Sphere",
+  "Coral Crust Wall Sphere (1)",
+  "Coral Crust Wall Sphere (3)",
+  "Coral Crust Wall Sphere (4)",
+  "Coral Crust Wall Sphere (5)",
+  "Coral Crust Wall Sphere (6)",
+  "Coral Crust Wall Sphere (7)",
+  "Coral Crust Wall Sphere (9)",
+  "Coral Crust Wall Tall",
+  "Coral Crust Wall Tall (1)",
+  "Coral Crust Wall Tall (3)",
+  "Coral Crust Wall Tall (6)",
+  "Coral Crust Wall Tall (7)",
+  "Coral Crust Wall Tall (8)",
+  "Shell Shard Fossil Coral Conch"
+ ],
+ "coral_44": [
+  "Coral Crust Wall Mid",
+  "Coral Crust Wall Mid (1)"
+ ],
+ "cradle_03": [
+  "Abyss_Collapse_Wall",
+  "Shell Shard Fossil Mid Variant"
+ ],
+ "cradle_destroyed_challenge_bench": [
+  "plank_wall_cluster"
+ ],
+ "crawl_02": [
+  "Breakable Wall",
+  "Breakable Wall (1)",
+  "Heart Piece"
+ ],
+ "crawl_03": [
+  "Breakable Wall (1)"
+ ],
+ "crawl_09": [
+  "Breakable Wall",
+  "Breakable Wall (1)",
+  "Collectable Item Pickup"
+ ],
+ "dock_01": [
+  "Song Shard Barrel"
+ ],
+ "dock_02": [
+  "One Way Wall",
+  "Song Shard Barrel",
+  "rosary_string_small_half (1)",
+  "rosary_string_small_half (2)"
+ ],
+ "dock_02b": [
+  "Shell Shard 02 Persistent",
+  "Shell Shard 03 Persistent",
+  "Shell Shard Fossil Tiny Bumpy",
+  "Shell Shard Fossil Tiny Egg",
+  "Shell Shard Fossil Tiny Front",
+  "Song Shard Barrel"
+ ],
+ "dock_03": [
+  "Breakable Wall_Silhouette",
+  "City Shard Chest",
+  "Collectable Item Pickup",
+  "One Way Wall"
+ ],
+ "dock_03b": [
+  "Breakable Wall"
+ ],
+ "dock_03c": [
+  "Breakable Wall_Silhouette",
+  "Silk Spool",
+  "explode_wall",
+  "explode_wall (2)",
+  "explode_wall (3)",
+  "explode_wall (4)",
+  "explode_wall (5)"
+ ],
+ "dock_03d": [
+  "Breakable Wall_Silhouette"
+ ],
+ "dock_04": [
+  "Black_Thread_Core"
+ ],
+ "dock_06_church": [
+  "City Shard Chest",
+  "rosary_string_small",
+  "rosary_string_small (1)",
+  "rosary_string_small_half",
+  "rosary_string_small_half (1)"
+ ],
+ "dock_08": [
+  "Heart Piece"
+ ],
+ "dock_11": [
+  "explode_wall",
+  "explode_wall (2)",
+  "explode_wall (4)",
+  "explode_wall (5)"
+ ],
+ "dock_13": [
+  "Collectable Item Pickup"
+ ],
+ "dock_14": [
+  "Silk Grub Large Cocoon"
+ ],
+ "dock_15": [
+  "Breakable Wall"
+ ],
+ "dust_01": [
+  "Breakable Wall"
+ ],
+ "dust_02": [
+  "Geo Rock Deepnest",
+  "rosary_string_small_half",
+  "rosary_string_small_half (1)"
+ ],
+ "dust_03": [
+  "Black_Thread_Core",
+  "Shell Shard Fossil Tiny Bumpy",
+  "Shell Shard Fossil Tiny Egg",
+  "Shell Shard Fossil Tiny Front",
+  "rosary_string_small_half"
+ ],
+ "dust_04": [
+  "Shell Shard Fossil Tiny Bumpy (1)",
+  "Shell Shard Fossil Tiny Front"
+ ],
+ "dust_05": [
+  "Breakable Wall",
+  "Pilgrim Chest",
+  "Shell Shard Fossil Tiny Egg",
+  "Shell Shard Fossil Tiny Front"
+ ],
+ "dust_06": [
+  "One Way Wall",
+  "rosary_string_medium",
+  "rosary_string_small",
+  "rosary_string_small_half"
+ ],
+ "dust_10": [
+  "Breakable Wall",
+  "Geo Rock Deepnest",
+  "One Way Wall"
+ ],
+ "dust_11": [
+  "Breakable Wall",
+  "One Way Wall (1)",
+  "One Way Wall (2)"
+ ],
+ "dust_12": [
+  "Break Wall Dustpen Cage"
+ ],
+ "greymoor_01": [
+  "Geo Rock Deepnest"
+ ],
+ "greymoor_02": [
+  "Black_Thread_Core",
+  "Breakable Wall",
+  "Silk Spool",
+  "rosary_string_small",
+  "rosary_string_small_half"
+ ],
+ "greymoor_03": [
+  "Breakable Wall",
+  "rosary_string_small",
+  "rosary_string_small_half"
+ ],
+ "greymoor_04": [
+  "Geo Rock Deepnest",
+  "Silk Grub Large Cocoon"
+ ],
+ "greymoor_05": [
+  "Geo Rock Deepnest",
+  "rosary_string_small_half",
+  "rosary_string_small_half (1)"
+ ],
+ "greymoor_06": [
+  "Geo Rock Deepnest"
+ ],
+ "greymoor_07": [
+  "Black_Thread_Core",
+  "Geo Rock Deepnest",
+  "One Way Wall",
+  "rosary_string_small",
+  "rosary_string_small_half (1)"
+ ],
+ "greymoor_08": [
+  "rosary_string_small_half"
+ ],
+ "greymoor_11": [
+  "Black_Thread_Core",
+  "Geo Rock Deepnest (1)",
+  "rosary_string_small",
+  "rosary_string_small_half"
+ ],
+ "greymoor_12": [
+  "Black_Thread_Core"
+ ],
+ "greymoor_15": [
+  "Geo Rock 1"
+ ],
+ "greymoor_15b": [
+  "rosary_string_small",
+  "rosary_string_small_half (1)",
+  "rosary_string_small_half (2)",
+  "rosary_string_small_half (3)"
+ ],
+ "greymoor_16": [
+  "Black_Thread_Core",
+  "Breakable Wall",
+  "Collectable Item Pickup",
+  "Shell Shard Fossil Tiny Bumpy",
+  "Shell Shard Fossil Tiny Egg (1)",
+  "plank_wall_cluster",
+  "rosary_string_medium",
+  "rosary_string_small",
+  "rosary_string_small_half"
+ ],
+ "greymoor_17": [
+  "Shell Fossil Mimic",
+  "Shell Shard Fossil Tiny Egg (1)",
+  "Shell Shard Fossil Tiny Egg (3)",
+  "Shell Shard Fossil Tiny Front",
+  "Shell Shard Fossil Tiny Front (1)",
+  "Shell Shard Fossil Tiny Front (2)",
+  "plank_wall_cluster"
+ ],
+ "greymoor_22": [
+  "One Way Wall (2)",
+  "rosary_string_small",
+  "rosary_string_small_half"
+ ],
+ "halfway_01": [
+  "Collectable Item Pickup"
+ ],
+ "hang_03": [
+  "Black_Thread_Core_Citadel"
+ ],
+ "hang_03_top": [
+  "Silk Spool"
+ ],
+ "hang_06_bank": [
+  "Breakable Wall",
+  "Breakable Wall (1)",
+  "Chest",
+  "Chest (1)",
+  "Chest (2)",
+  "rosary_string_large_full Variant",
+  "rosary_string_large_mixed Variant",
+  "rosary_string_medium",
+  "rosary_string_small",
+  "rosary_string_small_half",
+  "rosary_string_small_half (1)"
+ ],
+ "hang_08": [
+  "Breakable Wall",
+  "Chest"
+ ],
+ "hang_09": [
+  "Song Shard Under Chest"
+ ],
+ "hang_10": [
+  "Breakable Wall (1)"
+ ],
+ "hang_13": [
+  "Black_Thread_Core"
+ ],
+ "hang_14": [
+  "Breakable Wall"
+ ],
+ "hang_15": [
+  "Song Shard Under Chest"
+ ],
+ "library_01": [
+  "Breakable Wall"
+ ],
+ "library_03": [
+  "Collectable Item Pickup"
+ ],
+ "library_04": [
+  "Black_Thread_Core_Citadel",
+  "Black_Thread_Core_Citadel (1)",
+  "rosary_bucket_library"
+ ],
+ "library_05": [
+  "Heart Piece"
+ ],
+ "library_06": [
+  "Black_Thread_Core_Citadel",
+  "rosary_bucket_library",
+  "rosary_string_small",
+  "rosary_string_small_half"
+ ],
+ "library_07": [
+  "Song Shard Under Chest",
+  "rosary_cache_bell_ground"
+ ],
+ "library_08": [
+  "Collectable Item Pickup",
+  "rosary_string_small",
+  "rosary_string_small_half"
+ ],
+ "library_10": [
+  "Breakable Wall"
+ ],
+ "library_11b": [
+  "Shell Shard Fossil Tiny Bumpy",
+  "Shell Shard Fossil Tiny Egg",
+  "Shell Shard Fossil Tiny Egg (2)",
+  "Shell Shard Fossil Tiny Front",
+  "Silk Spool",
+  "Song Shard Barrel",
+  "Song Shard Barrel (1)",
+  "plank_wall_cluster_metal (1)"
+ ],
+ "library_12": [
+  "One Way Wall",
+  "Shell Shard Fossil Dustpen Short",
+  "Shell Shard Fossil Dustpen Tall",
+  "Shell Shard Fossil Tiny Egg",
+  "Shell Shard Fossil Tiny Front"
+ ],
+ "library_12b": [
+  "Shell Shard 02 Persistent",
+  "Shell Shard 03 Persistent",
+  "Song Shard Under Chest"
+ ],
+ "library_13": [
+  "Shell Shard 02 Persistent",
+  "Shell Shard 03 Persistent",
+  "Song Shard Barrel"
+ ],
+ "library_14": [
+  "Breakable Wall",
+  "Silk Grub Large Cocoon"
+ ],
+ "mosstown_01": [
+  "rosary_string_small (1)",
+  "rosary_string_small (2)"
+ ],
+ "mosstown_02": [
+  "Black_Thread_Core",
+  "Breakable Wall",
+  "rosary_string_small",
+  "rosary_string_small_half"
+ ],
+ "mosstown_03": [
+  "Shell Shard Fossil Tiny Bumpy",
+  "Shell Shard Fossil Tiny Egg",
+  "Shell Shard Fossil Tiny Front",
+  "Shellwood Twig Wall"
+ ],
+ "organ_01": [
+  "Silk Grub Large Cocoon"
+ ],
+ "peak_01": [
+  "One Way Wall Crystal",
+  "Shell Shard Fossil Tiny Bumpy (1)",
+  "Shell Shard Fossil Tiny Egg",
+  "Silk Spool"
+ ],
+ "peak_04c": [
+  "Heart Piece",
+  "One Way Wall Crystal"
+ ],
+ "peak_06": [
+  "Heart Piece",
+  "Shell Shard Fossil Tiny Egg",
+  "Shell Shard Fossil Tiny Front",
+  "charm_break_wall"
+ ],
+ "peak_07": [
+  "Shell Shard Fossil Tiny Bumpy",
+  "Shell Shard Fossil Tiny Egg",
+  "Shell Shard Fossil Tiny Front"
+ ],
+ "room_crowcourt": [
+  "rosary_string_medium",
+  "rosary_string_small",
+  "rosary_string_small_half",
+  "rosary_string_small_half (1)",
+  "rosary_string_small_half (6)",
+  "rosary_string_small_half (7)",
+  "rosary_string_small_half (8)"
+ ],
+ "room_crowcourt_02": [
+  "One Way Wall",
+  "rosary_string_small",
+  "rosary_string_small_half (2)",
+  "rosary_string_small_half (3)"
+ ],
+ "room_forge": [
+  "Shell Shard 01 Persistent",
+  "Shell Shard 02 Persistent",
+  "Song Shard Barrel"
+ ],
+ "shadow_01": [
+  "Breakable Wall"
+ ],
+ "shadow_04": [
+  "Breakable Wall"
+ ],
+ "shadow_05": [
+  "Black_Thread_Core",
+  "Breakable Wall",
+  "Geo Rock Deepnest",
+  "rosary_string_small_half"
+ ],
+ "shadow_08": [
+  "Breakable Wall",
+  "BreakableWallSwampBenchShortcut"
+ ],
+ "shadow_09": [
+  "Breakable Wall"
+ ],
+ "shadow_10": [
+  "Breakable Wall",
+  "Shell Shard Fossil Tiny Egg",
+  "Shell Shard Fossil Tiny Front"
+ ],
+ "shadow_11": [
+  "Shell Shard Fossil Tiny Bumpy",
+  "Shell Shard Fossil Tiny Egg",
+  "plank_wall_cluster_swamp",
+  "plank_wall_cluster_swamp (1)",
+  "plank_wall_cluster_swamp (2)"
+ ],
+ "shadow_13": [
+  "Heart Piece"
+ ],
+ "shadow_14": [
+  "Geo Rock 1"
+ ],
+ "shadow_19": [
+  "Geo Rock 1",
+  "Geo Rock 3"
+ ],
+ "shadow_20": [
+  "Breakable Wall",
+  "Collectable Item Pickup",
+  "Geo Rock 1",
+  "Geo Rock 3",
+  "plank_wall_cluster"
+ ],
+ "shadow_23": [
+  "Rosary Pilgrim"
+ ],
+ "shadow_25": [
+  "Shell Shard Fossil Mid Variant",
+  "Shell Shard Fossil Tiny Egg",
+  "Shell Shard Fossil Tiny Front"
+ ],
+ "shadow_27": [
+  "Sack Corpse Pickup"
+ ],
+ "shellgrave": [
+  "Rosary Pilgrim"
+ ],
+ "shellwood_01": [
+  "Shell Shard Fossil Shellwood",
+  "Shell Shard Fossil Shellwood (1)",
+  "Shell Shard Fossil Tiny Bumpy",
+  "Shell Shard Fossil Tiny Bumpy (1)",
+  "Shell Shard Fossil Tiny Front"
+ ],
+ "shellwood_01b": [
+  "Black_Thread_Core"
+ ],
+ "shellwood_02": [
+  "Black_Thread_Core"
+ ],
+ "shellwood_04b": [
+  "Black_Thread_Core",
+  "Shellwood Twig Wall (1)"
+ ],
+ "shellwood_08c": [
+  "Shellwood Twig Wall"
+ ],
+ "shellwood_11": [
+  "Remasker New Twig Wall",
+  "Shell Shard Fossil Mid",
+  "Shell Shard Fossil Tiny Bumpy",
+  "Shell Shard Fossil Tiny Bumpy (1)",
+  "Shell Shard Fossil Tiny Bumpy (2)",
+  "Shell Shard Fossil Tiny Egg",
+  "Shellwood Twig Wall (3)",
+  "Shellwood Twig Wall start",
+  "Shellwood Twig Wall top"
+ ],
+ "shellwood_13": [
+  "Bell Wall Tall",
+  "Bell Wall Tall (1)",
+  "Bell Wall Tall (2)"
+ ],
+ "shellwood_14": [
+  "Heart Piece",
+  "Shellwood Twig Wall",
+  "Shellwood Twig Wall (1)"
+ ],
+ "shellwood_15": [
+  "Black_Thread_Core",
+  "Shellwood Twig Wall",
+  "Shellwood Twig Wall (1)"
+ ],
+ "shellwood_25": [
+  "Shell Shard Fossil Tiny Egg (1)",
+  "Shellwood Twig Wall",
+  "Shellwood Twig Wall (1)",
+  "Shellwood Twig Wall (2)",
+  "Shellwood Twig Wall (3)",
+  "Shellwood Twig Wall (4)",
+  "Shellwood Twig Wall (5)",
+  "Shellwood Twig Wall (6)"
+ ],
+ "shellwood_26": [
+  "Black_Thread_Core",
+  "Geo Rock 3",
+  "Shell Shard Fossil Shellwood (2)",
+  "Shellwood Twig Wall (2)"
+ ],
+ "slab_03": [
+  "Coral Crust Wall Tall (2)",
+  "One Way Wall",
+  "One Way Wall (1)"
+ ],
+ "slab_05": [
+  "Shell Shard Fossil Tiny Egg",
+  "Shell Shard Fossil Tiny Front",
+  "Shell Shard Fossil Tiny Front (1)"
+ ],
+ "slab_07": [
+  "Coral Crust Wall Mid (3)",
+  "Coral Crust Wall Mid (5)",
+  "Coral Crust Wall Mid (6)",
+  "Coral Crust Wall Mid (7)",
+  "Coral Crust Wall Mid (9)",
+  "Coral Crust Wall Tall",
+  "Coral Crust Wall Tall (1)",
+  "Coral Crust Wall Tall (2)"
+ ],
+ "slab_12": [
+  "Coral Crust Wall Mid",
+  "Coral Crust Wall Mid (1)",
+  "Coral Crust Wall Sphere",
+  "Coral Crust Wall Tall",
+  "Coral Crust Wall Tall (1)",
+  "Coral Crust Wall Tall (2)",
+  "Shell Shard Fossil Tiny Bumpy",
+  "Shell Shard Fossil Tiny Egg"
+ ],
+ "slab_15": [
+  "Breakable Wall Waterways"
+ ],
+ "slab_17": [
+  "Heart Piece"
+ ],
+ "slab_18": [
+  "One Way Wall",
+  "Shell Shard Fossil Tiny Bumpy",
+  "Shell Shard Fossil Tiny Front",
+  "rosary_string_small_half"
+ ],
+ "slab_19b": [
+  "City Shard Chest",
+  "rosary_string_medium",
+  "rosary_string_small",
+  "rosary_string_small (1)",
+  "rosary_string_small_half"
+ ],
+ "slab_21": [
+  "Breakable Wall"
+ ],
+ "slab_23": [
+  "One Way Wall"
+ ],
+ "slab_cell_quiet": [
+  "Breakable Wall",
+  "Collectable Item Pickup",
+  "One Way Wall"
+ ],
+ "song_01": [
+  "Black_Thread_Core_Citadel",
+  "Breakable Wall",
+  "Song Shard Barrel",
+  "rosary_string_medium",
+  "rosary_string_small",
+  "rosary_string_small (1)",
+  "rosary_string_small_half"
+ ],
+ "song_01b": [
+  "rosary_string_medium",
+  "rosary_string_small",
+  "rosary_string_small_mixed"
+ ],
+ "song_03": [
+  "Chest",
+  "rosary_string_small",
+  "rosary_string_small_half (1)"
+ ],
+ "song_04": [
+  "Black_Thread_Core",
+  "Breakable Wall"
+ ],
+ "song_05": [
+  "Black_Thread_Core_Citadel"
+ ],
+ "song_07": [
+  "rosary_string_medium"
+ ],
+ "song_09": [
+  "Breakable Wall Ruin Lift",
+  "Heart Piece",
+  "rosary_string_small",
+  "rosary_string_small_half",
+  "rosary_string_small_half (1)"
+ ],
+ "song_09b": [
+  "Silk Grub Large Cocoon"
+ ],
+ "song_10": [
+  "Breakable Wall",
+  "Breakable Wall second"
+ ],
+ "song_11": [
+  "Breakable Wall",
+  "Breakable Wall (1)",
+  "rosary_string_small",
+  "rosary_string_small_half",
+  "rosary_string_small_half (1)"
+ ],
+ "song_15": [
+  "Black_Thread_Core_Citadel",
+  "rosary_string_medium",
+  "rosary_string_small",
+  "rosary_string_small_half"
+ ],
+ "song_17": [
+  "Black_Thread_Core_Citadel",
+  "Chest"
+ ],
+ "song_19_entrance": [
+  "Breakable Wall Entrance Secret",
+  "Silk Spool"
+ ],
+ "song_24": [
+  "Chest",
+  "Silk Grub Large Cocoon"
+ ],
+ "song_27": [
+  "Black_Thread_Core_Citadel"
+ ],
+ "song_enclave_tube": [
+  "One Way Wall"
+ ],
+ "tube_hub": [
+  "Breakable Wall",
+  "Breakable Wall_Silhouette",
+  "Silk Grub Large Cocoon"
+ ],
+ "tut_01": [
+  "Bone Chest",
+  "Shell Shard Fossil Large Uni"
+ ],
+ "tut_01b": [
+  "Shell Shard Fossil Mid (1)",
+  "Shell Shard Fossil Tiny Egg",
+  "Shell Shard Fossil Tiny Front",
+  "moss_berry_fruit"
+ ],
+ "tut_02": [
+  "One Way VineWall",
+  "Shell Shard Fossil Tiny Bumpy",
+  "Shell Shard Fossil Tiny Egg",
+  "Shell Shard Fossil Tiny Front",
+  "moss_berry_fruit"
+ ],
+ "tut_04": [
+  "churchkeeper_rosary"
+ ],
+ "tut_05": [
+  "Snail_Collapse_wall",
+  "Snail_Collapse_wall (1)",
+  "Snail_Collapse_wall (2)"
+ ],
+ "under_01": [
+  "Breakable Wall",
+  "Breakable Wall (1)",
+  "Shellwood Twig Wall"
+ ],
+ "under_02": [
+  "Black_Thread_Core"
+ ],
+ "under_03": [
+  "Breakable Wall"
+ ],
+ "under_03b": [
+  "Song Shard Under Chest"
+ ],
+ "under_03d": [
+  "Hero Treadmill Rosaries Paid"
+ ],
+ "under_04": [
+  "Breakable Wall",
+  "Song Shard Under Chest"
+ ],
+ "under_05": [
+  "Black_Thread_Core"
+ ],
+ "under_07": [
+  "rosary_string_small_half"
+ ],
+ "under_07c": [
+  "Breakable Wall",
+  "Song Shard Under Chest (1)",
+  "rosary_string_small_half",
+  "rosary_string_small_half (1)"
+ ],
+ "under_08": [
+  "Breakable Wall",
+  "Collectable Item Pickup",
+  "One Way Wall",
+  "Song Shard Under Chest"
+ ],
+ "under_10": [
+  "Silk Spool"
+ ],
+ "under_11": [
+  "Breakable Wall"
+ ],
+ "under_14": [
+  "Breakable Wall (1)"
+ ],
+ "under_16": [
+  "Breakable Wall"
+ ],
+ "under_17": [
+  "Shell Shard 01 Persistent",
+  "Shell Shard 01 Persistent (1)",
+  "Shell Shard 03 Persistent",
+  "Song Shard Under Chest"
+ ],
+ "under_18": [
+  "Black_Thread_Core"
+ ],
+ "under_19b": [
+  "Collectable Item Pickup - Tool Metal"
+ ],
+ "under_20": [
+  "Breakable Wall"
+ ],
+ "under_23": [
+  "rosary_string_small_half"
+ ],
+ "under_27": [
+  "Black_Thread_Core",
+  "Shellwood Twig Wall",
+  "Shellwood Twig Wall (1)",
+  "Shellwood Twig Wall (2)",
+  "Song Shard Barrel"
+ ],
+ "ward_01": [
+  "Breakable Wall",
+  "Breakable Wall (1)",
+  "Silk Spool"
+ ],
+ "ward_04": [
+  "Silk Grub Large Cocoon"
+ ],
+ "ward_05": [
+  "Breakable Wall"
+ ],
+ "ward_06": [
+  "Breakable Wall",
+  "rosary_string_medium",
+  "rosary_string_small_half"
+ ],
+ "weave_03": [
+  "Black_Thread_Core",
+  "moss_berry_fruit"
+ ],
+ "weave_05b": [
+  "Heart Piece"
+ ],
+ "weave_08": [
+  "Breakable Wall"
+ ],
+ "weave_11": [
+  "Silk Spool"
+ ],
+ "wisp_02": [
+  "plank_wall_cluster_swamp"
+ ],
+ "wisp_03": [
+  "plank_wall_cluster"
+ ],
+ "wisp_05": [
+  "Breakable Wall",
+  "Collectable Item Pickup - Tool Metal"
+ ],
+ "wisp_07": [
+  "Breakable Wall",
+  "Heart Piece"
+ ],
+ "wisp_09": [
+  "Breakable Wall",
+  "Breakable Wall (1)",
+  "Shell Shard Fossil Mid Variant",
+  "Shell Shard Fossil Tiny Bumpy",
+  "Shell Shard Fossil Tiny Bumpy (1)",
+  "Shell Shard Fossil Tiny Egg",
+  "Shell Shard Fossil Tiny Egg (1)",
+  "Shell Shard Fossil Tiny Egg (2)",
+  "Shell Shard Fossil Tiny Egg (3)"
+ ]
+}

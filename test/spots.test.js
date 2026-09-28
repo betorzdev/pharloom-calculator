@@ -66,3 +66,12 @@ test('a save gives the Map its rooms visited, maps, cocoon, extras and bosses, a
   const back = F.gameOf(F.toSnapshot(pd, sd));
   for (const k of ['visited', 'maps', 'cocoon', 'extras', 'bosses']) assert.deepEqual(back[k], g[k], k);
 });
+
+test('each thing with a point of its own sits in (or at the edge of) its room\'s drawing', () => {
+  const M = globalThis.SS.map;
+  const boxes = Object.values(M.ROOMS).filter((r) => r[2]);
+  assert.ok(Object.keys(SP.XY).length > 300, 'most things have their point');
+  for (const [key, [x, y]] of Object.entries(SP.XY)) {
+    assert.ok(boxes.some((r) => x >= r[0] - 12 && x <= r[0] + r[2] + 12 && y >= r[1] - 12 && y <= r[1] + r[3] + 12), `${key} at ${x},${y} is in no room`);
+  }
+});

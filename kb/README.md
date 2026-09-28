@@ -12,7 +12,8 @@ plan (`design/00-study.md` §9).
 | `fetch-wiki.py` | Downloads the raw wikitext into `raw/`: `npm run kb` (every page in `pages.txt`), or `python3 kb/data/fetch-wiki.py "Page name"`. Redirects are saved under the title asked for |
 | `raw/` | 522 pages of wikitext, `<Title>.wiki` with `/` and spaces as `_`. Committed, so the generators run offline and a re-fetch after a patch shows up as a diff |
 | `completionist/` | Br3zzly/silksong-completionist's dictionary (MIT, its `LICENSE` beside it), at the commit in `SOURCE`: `npm run collectibles`. Only its facts are used (each thing's save field and Act), not its prose |
-| `game/pickups.json` | Where the game has each item picked up or given, which scenes' scripts name an ability's flag, and where each NPC stands: `tools/extract-pickups.py` from the game's own scene bundles (needs the game installed; committed, so `npm run data` runs offline). `tools/gen-spots.js` reads it |
+| `game/pickups.json` | Where the game has each item picked up or given, which scenes' scripts name an ability's flag, where each NPC stands, each of those objects' place in its scene, each scene's size and each bench: `tools/extract-pickups.py` from the game's own scene bundles (needs the game installed; committed, so `npm run data` runs offline). `tools/gen-spots.js` reads it |
+| `game/wanted.json` | The scene objects a save's checks name, whose place the extractor keeps: `node tools/spots-wanted.js`, run before the extractor |
 | `all_text.json` | The game's text dump, downloaded by `npm run text` (not committed; `.gitignore`) |
 | `art/` | The sprites `npm run palette` measures for `design/02-silksong.md` (not committed: Team Cherry's art) |
 

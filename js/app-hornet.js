@@ -17,7 +17,6 @@
   'use strict';
   const SS = globalThis.SS;
   const App = SS.app;
-  const M = SS.map;
   const { el, track, prefs, savePrefs } = App;
 
   const still = matchMedia('(prefers-reduced-motion: reduce)');
@@ -134,7 +133,6 @@
     const w = App.mapWay();
     if (w) mapWalk(w);
   }
-  const pct = (v, of) => (v / of * 100).toFixed(3) + '%';
   /* From the old bench to the new one: the bench's point, the rooms' middles, the other bench's
      point, at a steady pace (300 ms a room, the whole way in 2 to 8 s), her run's frames stepping
      (css) and turning where the way turns. When the view scrolls, it keeps her in sight.
@@ -145,7 +143,7 @@
     const done = () => {
       walking = null; prefs.walked = w.key; savePrefs();
       const pin = mapPin(), end = pts[pts.length - 1];
-      if (pin) { clip(pin, 'sit'); pin.classList.remove('is-right'); pin.style.left = pct(end.x, M.W); pin.style.top = pct(end.y, M.H); }
+      if (pin) { clip(pin, 'sit'); pin.classList.remove('is-right'); App.mapHornetAt(pin, end.x, end.y); }
     };
     if (still.matches || document.hidden) { done(); return; }
     const segs = []; let len = 0;
@@ -161,7 +159,7 @@
       const x = pts[i].x + (pts[i + 1].x - pts[i].x) * f, y = pts[i].y + (pts[i + 1].y - pts[i].y) * f;
       const pin = mapPin();
       if (pin) {
-        pin.style.left = pct(x, M.W); pin.style.top = pct(y, M.H);
+        App.mapHornetAt(pin, x, y);   // over the map's SVG, at that point (js/app-map.js)
         clip(pin, 'run'); face(pin, pts[i + 1].x - pts[i].x);
         if (App.mapKeep) App.mapKeep(x, y);   // the view follows her when she walks out of it
       }
