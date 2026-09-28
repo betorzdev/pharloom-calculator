@@ -74,11 +74,21 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
 .bk.tr { top: calc(var(--sp-1) * -1); right: calc(var(--sp-1) * -1); scale: -1 1; }
 .bk.bl { bottom: calc(var(--sp-1) * -1); left: calc(var(--sp-1) * -1); scale: 1 -1; }
 .bk.br { bottom: calc(var(--sp-1) * -1); right: calc(var(--sp-1) * -1); scale: -1 -1; }
-/* The thin filigree line inset all round, between the corners. */
+/* The thin filigree line inset all round, between the corners, and the plate's black inside it
+   only (the plate itself is clear: nothing black shows past the line). The top line stops either
+   side of the title's plaque (--title-half, js/app.js sizeTitles). */
 .frame-line {
-  position: absolute; inset: var(--frame-inset); pointer-events: none;
+  position: absolute; inset: var(--frame-inset); z-index: -1; pointer-events: none; background: var(--inv-bg);
   border: 1px solid color-mix(in oklab, var(--lamp) var(--lamp-frame), transparent);
 }
+:is(.screen, .saves-body):has(.screen-head) .frame-line { border-top-color: transparent; }
+:is(.screen, .saves-body):has(.screen-head) .frame-line::before,
+:is(.screen, .saves-body):has(.screen-head) .frame-line::after {
+  content: ''; position: absolute; top: -1px; width: calc(50% - var(--title-half, 6rem) + 1px); height: 1px;
+  background: color-mix(in oklab, var(--lamp) var(--lamp-frame), transparent);
+}
+:is(.screen, .saves-body):has(.screen-head) .frame-line::before { left: -1px; }
+:is(.screen, .saves-body):has(.screen-head) .frame-line::after { right: -1px; }
 
 /* ── The screens' frame ─────────────────────────────────────────────────
    Each screen is a pause-menu screen, framed and titled in the game's white filigree, the same
@@ -110,18 +120,18 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
 /* ── A screen ──────────────────────────────────────────────────────────
    Every screen is a page of the game's inventory: the black field with the corner brackets in
    the filigree, and its title centred in Cinzel over the rule with the diamond (App.screenHead). */
-.screen { position: relative; padding: var(--sp-8); background: var(--inv-bg); --inv-pad: var(--sp-8); }
+.screen { position: relative; isolation: isolate; padding: var(--sp-8); --inv-pad: var(--sp-8); }
 /* The title sits on the frame's line, centred on it, the black knocked out behind it and a
    hollow diamond either side; it reaches a little above the plate, onto the page. What goes
    with it (.screen-lead) opens the screen, centred. */
 .screen-head {
   position: absolute; z-index: 1; top: var(--frame-inset); left: 50%; transform: translate(-50%, -50%);
-  display: flex; align-items: center; gap: var(--sp-3); max-width: calc(100% - var(--frame-corner) * 2);
-  padding: 0 var(--sp-4); background: var(--inv-bg); white-space: nowrap;
+  display: flex; align-items: center; max-width: calc(100% - var(--frame-corner) * 2);
+  padding: var(--sp-2) var(--sp-8); white-space: nowrap;
 }
-.screen-head::before, .screen-head::after {
-  content: ''; flex: none; width: var(--diamond); height: var(--diamond); border: 1px solid var(--lamp); transform: rotate(45deg);
-}
+/* The plaque: a thin double outline with pointed ends, stretched to the title. */
+.screen-plaque { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; color: color-mix(in oklab, var(--filigree) 80%, transparent); pointer-events: none; }
+.screen-plaque .is-inner { opacity: 0.4; }
 .screen-head .sec-title { overflow: hidden; text-overflow: ellipsis; }
 .screen-lead { display: flex; flex-direction: column; align-items: center; gap: var(--sp-2); margin-bottom: var(--sp-6); text-align: center; }
 
@@ -533,7 +543,7 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
 .saves-body {
   --inv-pad: var(--sp-8);
   --inv-line: color-mix(in oklab, var(--spotlight) 13%, transparent);
-  position: relative; background: var(--inv-bg); padding: var(--inv-pad);
+  position: relative; isolation: isolate; padding: var(--inv-pad);
 }
 .saves-note { max-width: var(--measure); margin: 0; font-size: var(--fs-sm); color: var(--muted); text-wrap: pretty; }
 /* Free mode and the four share their columns (subgrid): the slot, then its buttons, stacked as a
@@ -1019,26 +1029,73 @@ kbd {
   .hm-next ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-/* ── Progress (js/app-progress.js): what's missing, piece by piece ────────
-   Two parts, the 100% and what lies beyond it, each a grid of groups: the category's name and
-   its count in the title, then its things, one per line: a tick when you have it, a Tool's
-   slot colour (data, the slot tokens), the name, and its Act and area on the right, quiet.
-   What belongs to a later Act than yours dims. */
-.pg-seg { justify-content: center; margin-top: var(--sp-4); }
+/* ── Progress (js/app-progress.js): the ledger ────────────────────────────
+   The sibling's (design/03-redesign.md, step 5): the 100% large, the road to the next Act at a
+   glance, then each category as a row: its name, its things as the game's pictures or as pips,
+   its count and the disclosure's ring; open, its things one per line: a tick when you have it,
+   a Tool's slot colour (data, the slot tokens), the name, and its Act and area on the right,
+   quiet. What belongs to a later Act than yours dims. */
+.pg-total { display: grid; justify-items: center; gap: var(--sp-1); margin: var(--sp-6) 0 var(--sp-4); text-align: center; }
+.pg-total .lbl { margin: 0; }
+.pg-total-n { margin: 0; font-family: var(--font-num); font-variant-numeric: tabular-nums; line-height: 1; color: var(--ink-strong); }
+.pg-total-n b { font-size: var(--fs-hero); font-weight: 600; }
+.pg-total-n .u { font-size: var(--fs-2xl); color: var(--ink-2); margin-left: 0.08em; }
+/* The journey: the road's steps as diamonds on one silk thread, lit up to where you are. */
+.pg-journey { display: grid; justify-items: center; gap: var(--sp-3); max-width: var(--column); margin: var(--sp-6) auto var(--sp-2); text-align: center; }
+.pg-journey-sup { margin: 0; font-family: var(--font-display); font-size: var(--fs-sm); letter-spacing: var(--track-wide); text-transform: uppercase; color: var(--ink-2); }
+.pg-journey-steps { position: relative; display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); width: 100%; margin: 0; padding: 0; list-style: none; }
+.pg-journey-steps::before {
+  content: ''; position: absolute; top: calc(var(--sp-3) - 0.5px); left: calc(50% / var(--n)); right: calc(50% / var(--n)); height: 1px;
+  background: linear-gradient(90deg, var(--silk) var(--f), color-mix(in oklab, var(--silk-rim) 35%, transparent) var(--f));
+}
+.pg-journey-steps li { position: relative; display: grid; justify-items: center; align-content: start; gap: var(--sp-2); }
+.pg-journey-steps i { display: grid; place-items: center; width: var(--sp-6); height: var(--sp-6); }
+.pg-journey-steps i::before { content: ''; width: var(--sp-3); height: var(--sp-3); transform: rotate(45deg); border: 1px solid var(--silk-rim); background: var(--scene-bg); }
+.pg-journey-steps li.is-done i::before { background: var(--silk); border-color: var(--silk); box-shadow: 0 0 8px color-mix(in oklab, var(--silk) 60%, transparent); }
+.pg-journey-steps li.is-cur i::before { width: calc(var(--sp-4) + var(--sp-half)); height: calc(var(--sp-4) + var(--sp-half)); border-color: var(--accent); box-shadow: var(--glow); }
+.pg-journey-steps span { font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; color: var(--muted); line-height: 1.3; }
+.pg-journey-steps li.is-cur span { color: var(--ink-strong); }
+.pg-journey-now { margin: var(--sp-2) 0 0; font-family: var(--font-display); font-size: var(--fs-lg); letter-spacing: var(--track-title); color: var(--ink-strong); text-wrap: balance; }
+.pg-journey-now b { margin-left: var(--sp-2); font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-sm); color: var(--ink-2); white-space: nowrap; }
+.pg-journey.is-guide { margin-bottom: 0; }
+.pg-seg { justify-content: center; }
+.pg-controls { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-2) var(--sp-12); margin-bottom: var(--sp-2); }
 .pg-part {
   display: flex; align-items: baseline; justify-content: center; gap: var(--sp-3); margin: var(--sp-8) 0 var(--sp-2);
   font-family: var(--font-display); font-size: var(--fs-xl); font-weight: 600; letter-spacing: var(--track-title); color: var(--filigree);
 }
 .pg-part b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-lg); color: var(--ink-2); }
 .pg > .pg-note { text-align: center; }
-.pg-groups { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: var(--sp-6) var(--sp-8); margin-top: var(--sp-4); }
-.pg-group { min-width: 0; }
-.pg-head {
-  display: flex; align-items: baseline; justify-content: space-between; gap: var(--sp-3); margin: 0 0 var(--sp-2);
-  padding-bottom: var(--sp-2); border-bottom: 1px solid var(--line);
-  font-family: var(--font-display); font-size: var(--fs-md); font-weight: 600; letter-spacing: var(--track-title); color: var(--ink-strong);
+.pg-groups { display: grid; max-width: calc(var(--column) + var(--sp-16) * 2); margin: var(--sp-4) auto 0; border-top: 1px solid var(--line-row); }
+.pg-group { min-width: 0; border-bottom: 1px solid var(--line-row); }
+.pg-head { margin: 0; font-size: var(--fs-md); font-weight: 400; }
+.pg-open {
+  display: grid; grid-template-columns: minmax(0, 13rem) minmax(0, 1fr) auto auto; align-items: center; gap: var(--sp-4);
+  width: 100%; min-height: var(--sp-12); padding: var(--sp-2) 0; text-align: left; color: var(--ink);
+  transition: color var(--dur) var(--ease);
 }
-.pg-group.is-done .pg-head { border-bottom-color: color-mix(in oklab, var(--filigree) 45%, transparent); }
+.pg-open:is(:hover, :focus-visible) { color: var(--ink-strong); }
+.pg-open:is(:hover, :focus-visible) .disc-ring, .pg-group.is-open .disc-ring { color: var(--ink-strong); border-color: var(--accent); background-color: var(--accent-soft); }
+.pg-title { font-family: var(--font-body); font-size: var(--fs-md); }
+.pg-group.is-done .pg-title { color: var(--ink-2); }
+.pg-group.is-done .pg-count b { color: var(--good); }
+.pg-strip { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-half); min-width: 0; }
+.pg-strip img { width: var(--sp-6); height: var(--sp-6); object-fit: contain; }
+.pg-strip img.is-missing { filter: var(--missing-soft); opacity: var(--missing-soft-opacity); }
+.pg-pips { gap: 3px; }
+.pg-pips i { width: var(--diamond); height: var(--diamond); transform: rotate(45deg); border: 1px solid var(--accent-line); }
+.pg-pips i.is-on { background: var(--accent); border-color: var(--accent); }
+.pg-group.is-open > :not(.pg-head) { margin-left: calc(13rem + var(--sp-4)); }
+.pg-group.is-open > :last-child { margin-bottom: var(--sp-4); }
+/* Free mode: a missing row's box marks it had (the Inventory's marks). */
+.pg-mark.is-own { min-height: 0; }
+@media (max-width: 599px) {
+  .pg-open { grid-template-columns: minmax(0, 1fr) auto auto; }
+  .pg-strip { display: none; }
+  .pg-group.is-open > :not(.pg-head) { margin-left: 0; }
+  /* No room for five names: only the one you are on. */
+  .pg-journey-steps li:not(.is-cur) span { visibility: hidden; }
+}
 .pg-count { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-md); color: var(--ink-strong); white-space: nowrap; }
 .pg-count .u { font-size: var(--fs-xs); font-style: normal; color: var(--muted); }
 .pg-note { margin: 0 0 var(--sp-2); font-size: var(--fs-xs); color: var(--muted); }

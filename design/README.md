@@ -15,6 +15,8 @@ Reference material for deciding how this site looks and behaves. It isn't part o
 | [`07-inventory-variants.html`](07-inventory-variants.html) | Step 4's options: the Inventory tidied, as the game's pane (one section at a time) or as shelves, over a real save's inventory |
 | [`08-missing-variants.html`](08-missing-variants.html) | Step 4's retouch: four ways to tell what you have from what you lack in the Inventory, over a real save |
 | [`09-locked-tool-variants.html`](09-locked-tool-variants.html) | Step 4's retouch: five ways to draw a Tool you don't have yet on its slot |
+| [`10-progress-variants.html`](10-progress-variants.html) | Step 5's options: Progress as the sibling's ledger, as a board of cards, or in three tabs, over a real save |
+| [`11-title-variants.html`](11-title-variants.html) | Step 1's retouch: five ways to set the screen's title on its frame without the black box behind it |
 
 The design system itself (the black page, one card, filigree only in the corners, figures in a
 sans with tabular figures, the accent only on what's interactive, tints from the game's map

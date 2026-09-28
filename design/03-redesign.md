@@ -35,8 +35,8 @@ the work up reads it first, then the step it's on.
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep) | [`06-home-variants.html`](06-home-variants.html) |
 | 4 | Inventory (`game`) | **Built** (28 Sep) | [`07-inventory-variants.html`](07-inventory-variants.html) |
-| 5 | Progress (`progress`) | **Next** | |
-| 6 | Map (`map`) | To do | |
+| 5 | Progress (`progress`) | **Built** (28 Sep) | [`10-progress-variants.html`](10-progress-variants.html) |
+| 6 | Map (`map`) | **Next** | |
 | 7 | Journal (`journal`) | To do | |
 | 8 | Crest (`tools`) | To do | |
 | 9 | Combat (`fight`) | To do | |
@@ -113,6 +113,28 @@ Albert chose **header A**, **frame C**, **phone bar B** and **figures on**. Buil
 
 Left for later steps: the footer and the About block weren't touched (step 3, Your game, is
 where the About shows); the gap between the header and the bar could still shrink.
+
+### Retouch, the screen's title (28 September 2026)
+
+Albert likes the title on the frame's line, but it reads as sitting on a black rectangle: its
+knock-out box (the plate's black, to cut the line) shows its upper half on the page's red, and
+the plate itself runs a few pixels past the line, a black band above it. Drawn in
+[`11-title-variants.html`](11-title-variants.html), all with the plate only inside the line:
+A · the line cut, no box; B · inside the plate, under the whole line; C · a cartouche (the title
+in its own small filigree frame); D · the soft cut (the box fading out); E · on the page, above
+the frame, with its rule.
+
+Albert liked A but wants it with a frame of its own; a second round on A's base, in the same page:
+A1 · the needle's ends (the cut line ends in the button's filled diamonds); A2 · the curls (a
+small filigree curl either side, the crown's); A3 · the plaque (a thin double outline with
+pointed ends, the line meeting its points); A4 · the arch (the line rises over the title and
+back down); A5 · the pointers (the game's menu fleurs either side).
+
+Albert chose **A3 · the plaque**. Built: `App.screenHead` carries the plaque (an inline SVG, two
+hexagon outlines stretched to the title); the plate's black is drawn by `.frame-line` itself, so
+nothing black shows past the line; the top line is two halves stopping at the plaque's points,
+`--title-half` measured per shown screen by `sizeTitles()` in `js/app.js` (on render, resize and
+font load). Saves' own plate (`.saves-body`) works the same way.
 
 ## Step 2 · The components
 
@@ -363,4 +385,56 @@ Albert chose **silk 2 · beads on a thread**. Built:
   (the text open under the shelf says which one). A Tool you lack sits on **the game's locked
   slot** (solid grey with its pale rim, `design/02-silksong.md` §3), its picture grey on it; chosen
   from [`09-locked-tool-variants.html`](09-locked-tool-variants.html) (B).
+
+## Step 5 · Progress
+
+### What there is (28 September 2026)
+
+One long column: the road to the next Act (every step with its full lists of wishes, points and
+conditions), then the ten categories of the 100% as lists of every piece with its Act, area and
+how to get it (three columns on a computer), then the other collectibles and the gauntlets.
+With a save, «What's missing · Everything» and «By Act · Nearest first»; without one, the whole
+list as a guide. There's no total on the screen, and nothing says at a glance which category is
+closest to done: with Save 2 the road alone is two screens before the first category.
+
+### What the sibling has
+
+Its Progress is a ledger: the completion large («65% / 112»), then one row per category with
+its pieces as small pictures (or pips), the count and the disclosure's ring; a row opens its
+list, where you mark what you get (in Free mode).
+
+### The options (drawn in `10-progress-variants.html`, over Save 2's real 100%)
+
+- **A · the ledger** (the sibling's): the total, the road to the next Act short (its steps and
+  counts, «The whole road» opens it), then a row per category with its pictures or pips, its
+  count and the disclosure; a row opens its list.
+- **B · the board**: the total and the road, then the ten as cards (picture, count, pips and the
+  next three missing); a card opens its whole list under the grid.
+- **C · three tabs**: the road, the 100% (today's lists in two columns) and the other
+  collectibles, one at a time.
+
+### Decision, and the road round (28 September 2026)
+
+Albert likes **A · the ledger**, but not its road summary (the numbered list in a veiled box).
+In Free mode, Progress uses the Inventory's marks and lets you mark from its lists too. Three
+road summaries were added to `10-progress-variants.html` (the "Road (A)" switch):
+
+- **1 · the journey**: the five steps as diamonds on one thread, the current one larger and lit,
+  their names under them, and the current step with its count («2 of 15»).
+- **2 · the quest card**: as the game's Tasks pane: «The road to Act 3 · step 1 of 5», the step as
+  a headline, its pips and count, and the next step.
+- **3 · a ledger row**: the road as the ledger's first row, opening to the whole road.
+
+Albert chose **road 1 · the journey**. Built (`js/app-progress.js`, `css/app.css`):
+
+- The total with the game's check, the journey (`journey()`: step names from the game's text,
+  `roadBellshrine`, `roadCitadelName`, `roadSnare`, the wish's and the foes' names; the current
+  step's full title with «n of m»), «The whole road» toggling today's full road (`prefs.pgRoad`).
+- Every category, the other collectibles and the Tasks as ledger rows (`group()`): the strip of
+  the game's pictures (twelve or fewer) or pips, the count, the disclosure; open rows kept in
+  `prefs.pgOpen`. The show and order choices sit just above the rows.
+- Free mode with the Inventory's marks counts from them (`App.freeGame`), its ladders (masks,
+  silk, Silk Hearts, Needle, Kit, Pouch) from the free build so lists and counts agree
+  (`freeView`), and a missing row's box marks it (`pgOwn` through `App.freeMark`); ladder pieces
+  are set in the Inventory, not here.
 

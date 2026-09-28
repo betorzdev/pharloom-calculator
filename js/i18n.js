@@ -359,6 +359,7 @@
     pgOrder:        { es: 'Orden', en: 'Order' },
     pgByAct:        { es: 'Por acto', en: 'By Act' },
     pgNear:         { es: 'Más cerca', en: 'Nearest first' },
+    pgFreeMarks:    { es: 'Modo libre: cuenta lo que marcaste en el Inventario, y aquí también se marca. Máscaras, seda, aguja, kit y bolsa se ponen en el Inventario.', en: 'Free mode: it counts what you marked in the Inventory, and you can mark here too. Masks, silk, the Needle, the Kit and the Pouch are set in the Inventory.' },
     pg100:          { es: 'Para el 100 %', en: 'For 100%' },
     pgBeyond:       { es: 'Otros coleccionables', en: 'Other collectibles' },
     pgBeyondNote:   { es: 'No cuentan para la finalización. Bajo cada grupo, para qué sirve.', en: 'They don\'t count for completion. Under each group, what it\'s for.' },
@@ -382,6 +383,15 @@
 
     /* Progress: the road to the next Act (js/acts.js, the game's own rules) */
     roadTitle:      { es: 'Camino al Acto {n}', en: 'The road to Act {n}' },
+    /* The road at a glance (js/app-progress.js, journey): each step by a name of the game's. */
+    roadBellshrine: { es: 'Santuario de Campana', en: 'Bellshrine' },   // BELLSHRINE
+    roadCitadelName:{ es: 'CIUDADELA MELODIOSA', en: 'CITADEL OF SONG' },   // ACT_2_NAME
+    roadSnare:      { es: 'Trampa anímica', en: 'Soul Snare' },   // MQ_SILK_SNARE_NAME
+    roadWishwall:   { es: 'Muro de deseos', en: 'Wishwall' },   // the game says it in BB_FIXER_Q1_INTRO; no name of its own
+    roadOf:         { es: '{n} de {of}', en: '{n} of {of}' },
+    roadWhole:      { es: 'El camino entero', en: 'The whole road' },
+    roadLess:       { es: 'Cerrar el camino', en: 'Close the road' },
+    roadBoth:       { es: 'Los caminos a los Actos 2 y 3', en: 'The roads to Acts 2 and 3' },
     roadNote2:      { es: 'Lo que pide el juego para entrar en la Ciudadela, paso a paso.', en: 'What the game asks before you walk into the Citadel, step by step.' },
     roadNote3:      { es: 'Lo que pide el juego para abrir el Acto 3, leído de sus propios archivos. Las guías suelen dar solo seis deseos: cuentan también los que van antes de ellos, un mínimo de puntos de deseos y cuatro condiciones más.',
                       en: 'What the game asks before Act 3 opens, read from its own files. Guides usually give six wishes: the ones before them count too, and so do a minimum of wish points and four more conditions.' },

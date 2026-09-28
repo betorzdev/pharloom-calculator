@@ -28,8 +28,12 @@
   function topLevel() {
     try { return window.top === window || !!window.top.location.href; } catch (e) { return false; }
   }
+  /* Chrome's file picker refuses ~/.config on Linux ("it contains system files"), and that's where
+     the game keeps its saves there, so on Linux the file is read once through the plain file input,
+     which has no such rule, and isn't followed. */
+  const linux = () => { try { return /Linux|X11/i.test(navigator.userAgent) && !/Android|CrOS/i.test(navigator.userAgent); } catch (e) { return false; } };
   function canLive() {
-    try { return 'showOpenFilePicker' in window && 'indexedDB' in window && topLevel(); } catch (e) { return false; }
+    try { return 'showOpenFilePicker' in window && 'indexedDB' in window && topLevel() && !linux(); } catch (e) { return false; }
   }
 
   /* ── The handles, in IndexedDB ────────────────────────────────────────

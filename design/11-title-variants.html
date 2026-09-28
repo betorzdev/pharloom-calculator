@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Screen title: variants</title>
+<!-- Design material, not part of the site (design/03-redesign.md, a retouch of step 1). The
+     screen's title sits on the frame's top line; to cut the line it has a black box behind it,
+     and the half of it above the plate shows as a black rectangle on the page's red. Five ways,
+     each on the real frame over the real page. -->
+<base href="../">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/app.css">
+<style>
+.mk { max-width: var(--page-max); margin: 0 auto; padding: var(--sp-8) var(--page-pad) var(--sp-16); display: grid; gap: var(--sp-12); }
+.mk > p.lead { max-width: var(--measure); color: var(--ink-2); font-size: var(--fs-sm); }
+.mk-v > b { display: block; margin-bottom: var(--sp-6); font-family: var(--font-num); font-size: var(--fs-2xs); letter-spacing: var(--track-label); text-transform: uppercase; color: var(--label); }
+.mk-v > i { display: block; margin-top: var(--sp-3); font-style: normal; font-size: var(--fs-xs); color: var(--muted); }
+.mk-v .screen { min-height: 150px; }
+.mk-v .screen p.body { color: var(--ink-2); font-size: var(--fs-sm); text-align: center; margin-top: var(--sp-6); }
+
+/* The plate itself ran a few pixels past the frame's line, so a black band showed above the
+   line on the page too. Every option but Today draws the plate only inside the line. */
+.mk-v:not(.v-now) .screen { background: none; }
+.mk-v:not(.v-now) .frame-line { background: var(--inv-bg); z-index: -1; }
+.mk-v:not(.v-now) .screen { isolation: isolate; }
+
+/* A · the line cut, no box: the frame's top line stops either side of the title (a mask on
+   the line), and the title floats on the page and the plate alike. */
+.v-a .screen-head { background: none; }
+.v-a .frame-line { border-top-color: transparent; }
+.v-a .frame-line::before, .v-a .frame-line::after { content: ''; position: absolute; top: -1px; height: 1px; width: calc(50% - var(--half)); background: color-mix(in oklab, var(--lamp) var(--lamp-frame), transparent); }
+.v-a .frame-line::before { left: 0; }
+.v-a .frame-line::after { right: 0; }
+
+
+/* B · inside the plate: the title just under the top line, on the plate's own black, so its
+   box can't show. The line runs whole above it. */
+.v-b .screen-head { top: calc(var(--frame-inset) + var(--sp-6)); background: none; }
+.v-b .screen { padding-top: calc(var(--sp-12) + var(--sp-4)); }
+
+/* C · a cartouche: the title on the line inside its own small frame, the same filigree line
+   round it, with the plate's black inside; framed, the box reads as meant. */
+.v-c .screen-head { padding: var(--sp-1) var(--sp-6); border: 1px solid color-mix(in oklab, var(--lamp) var(--lamp-frame), transparent); box-shadow: 0 0 0 var(--sp-1) var(--inv-bg) inset; }
+.v-c .screen-head::before, .v-c .screen-head::after { display: none; }
+
+/* D · the soft cut: the box fades to transparent at its ends and its top half to the page, so
+   there is no edge to see. */
+.v-d .screen-head { background: radial-gradient(ellipse 60% 55% at 50% 60%, var(--inv-bg) 55%, transparent 100%); padding: var(--sp-2) var(--sp-12); }
+
+/* E · on the page, over the plate: the title stands above the frame on the page's own light,
+   the rule with its diamond under it, and the frame starts whole below. */
+.v-e .screen-head { position: static; transform: none; background: none; max-width: none; justify-content: center; }
+.v-e .mk-wrap { margin-bottom: var(--sp-4); }
+.v-e .mk-wrap { display: grid; gap: var(--sp-2); justify-items: center; }
+.v-e .screen-head::before, .v-e .screen-head::after { display: none; }
+.v-e .mk-wrap .rule { color: var(--filigree); }
+
+/* ════ Second round: A with a frame of its own (Albert) ════════════════════════════════════
+   Every one on A's base: the line cut either side, nothing behind the title, the plate inside
+   the line. The cut's half-width (--half) is measured from the head. */
+.r2 .screen-head { background: none; }
+.r2 .frame-line { border-top-color: transparent; }
+.r2 .frame-line::before, .r2 .frame-line::after { content: ''; position: absolute; top: -1px; height: 1px; width: calc(50% - var(--half, 8rem)); background: color-mix(in oklab, var(--lamp) var(--lamp-frame), transparent); }
+.r2 .frame-line::before { left: 0; }
+.r2 .frame-line::after { right: 0; }
+.r2 .orn { position: absolute; pointer-events: none; color: color-mix(in oklab, var(--filigree) 80%, transparent); overflow: visible; }
+/* A1 · the needle's ends: the line ends in the button's diamonds, filled. */
+.a1 .screen-head::before, .a1 .screen-head::after { display: none; }
+.a1 .orn { top: 50%; width: 7px; height: 7px; border: 1px solid currentColor; background: currentColor; transform: translate(-50%, -50%) rotate(45deg); }
+.a1 .orn.l { left: calc(var(--sp-2) * -1); } .a1 .orn.r { left: calc(100% + var(--sp-2)); }
+/* A2 · the curls: a small filigree curl either side, turning away from the title. */
+.a2 .orn { top: 50%; width: 44px; height: 18px; transform: translateY(-50%); }
+.a2 .orn.l { right: 100%; } .a2 .orn.r { left: 100%; transform: translateY(-50%) scaleX(-1); }
+/* A3 · the plaque: a thin outline round the title with pointed ends; the line meets its points. */
+.a3 .screen-head { padding: var(--sp-2) var(--sp-8); }
+.a3 .screen-head::before, .a3 .screen-head::after { display: none; }
+.a3 .orn { inset: 0; width: 100%; height: 100%; }
+/* A4 · the arch: the line rises over the title and comes back down, a diamond at its crown. */
+.a4 .orn { left: calc(var(--sp-4) * -1); right: calc(var(--sp-4) * -1); bottom: 50%; width: calc(100% + var(--sp-8)); height: 26px; }
+.a4 .screen-head::before, .a4 .screen-head::after { display: none; }
+.a4 .screen-head { padding: 0 var(--sp-8); }
+/* A5 · the pointers: the game's menu pointers either side, pointing at the title. */
+.a5 .screen-head::before, .a5 .screen-head::after { display: none; }
+.a5 .orn { top: 50%; width: 12px; height: 20px; transform: translateY(-50%); color: var(--filigree); }
+.a5 .orn.l { left: calc(var(--sp-2) * -1); transform: translateY(-50%) scaleX(-1); } .a5 .orn.r { right: calc(var(--sp-2) * -1); }
+.mk-round { font-family: var(--font-display); font-size: var(--fs-lg); letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--filigree); }
+</style>
+</head>
+<body>
+<div class="page"><div class="mk">
+  <p class="lead">Today the title's black box cuts the frame's line, and the plate itself runs past the line: a black band and box show on the page's red. In every option below the plate is drawn only inside the line; then five ways for the title.</p>
+  <div id="list" style="display:grid;gap:var(--sp-12)"></div>
+</div></div>
+<script>
+(function () {
+  const CORNER = '<svg class="bk-art" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M4 46 V18 C4 10 10 4 18 4 H46"/><path d="M10 30 C10 16 16 10 30 10"/><path d="M18 18 C21 14 26 15 25 19 C24 22 20 21 21 18.5"/><path d="M4 4 L8 8"/></svg>';
+  const frame = '<span class="frame-line"></span>' + ['tl', 'tr', 'bl', 'br'].map((c) => '<span class="bk ' + c + '">' + CORNER + '</span>').join('');
+  const RULE = '<svg class="rule" width="220" height="12" viewBox="0 0 220 12" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 6 H92"/><path d="M128 6 H220"/><path d="M110 1 L116 6 L110 11 L104 6 Z"/></svg>';
+  const V = [['v-now', 'Today', 'the box shows above the plate.'],
+    ['v-a', 'A · the line cut, no box', 'the frame\'s top line stops either side of the title; nothing behind it.'],
+    ['v-b', 'B · inside the plate', 'the title just under the whole line, on the plate\'s own black.'],
+    ['v-c', 'C · a cartouche', 'the title in its own small filigree frame on the line: the box is meant.'],
+    ['v-d', 'D · the soft cut', 'the box fades out at its edges: no edge to see.'],
+    ['v-e', 'E · on the page', 'the title above the frame, on the page\'s light, with its rule; the frame whole below.']];
+  document.getElementById('list').innerHTML = V.map(([cls, name, note]) => {
+    const head = '<header class="screen-head"><h2 class="sec-title screen-title">Progress</h2></header>';
+    const screen = cls === 'v-e' ? '<div class="mk-wrap">' + head + RULE + '</div><section class="screen">' + frame + '<p class="body">What the screen holds…</p></section>'
+      : '<section class="screen">' + frame + head + '<p class="body">What the screen holds…</p></section>';
+    return '<div class="mk-v ' + cls + '"><b>' + name + '</b>' + screen + '<i>' + note + '</i></div>';
+  }).join('');
+
+  // Second round.
+  const CURL = '<path d="M42 9 C30 9 26 3 18 3 C11 3 9 8 12 11 C15 13.5 19 11 17.5 8.5"/><path d="M12 11 C8 14 4 13 1 9"/>';
+  const FLEUR = '<path d="M1 10 C4.5 9.4 7.2 7.2 8.6 2.4 C9 6.4 10 8.8 11.6 10 C10 11.2 9 13.6 8.6 17.6 C7.2 12.8 4.5 10.6 1 10 Z" fill="currentColor" stroke="none"/><circle cx="2.4" cy="10" r="1.3" fill="currentColor" stroke="none"/>';
+  const ORN = {
+    a1: '<i class="orn l"></i><i class="orn r"></i>',
+    a2: '<svg class="orn l" viewBox="0 0 44 18" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">' + CURL + '</svg><svg class="orn r" viewBox="0 0 44 18" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">' + CURL + '</svg>',
+    a3: '<svg class="orn" viewBox="0 0 100 30" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="1"><polygon points="6,1 94,1 99.5,15 94,29 6,29 0.5,15" vector-effect="non-scaling-stroke"/><polygon points="8,4 92,4 96.5,15 92,26 8,26 3.5,15" vector-effect="non-scaling-stroke" opacity="0.4"/></svg>',
+    a4: '<svg class="orn" viewBox="0 0 100 26" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 25.5 C12 25.5 14 3 50 3 C86 3 88 25.5 100 25.5" vector-effect="non-scaling-stroke"/></svg>',
+    a5: '<svg class="orn l" viewBox="0 0 12 20">' + FLEUR + '</svg><svg class="orn r" viewBox="0 0 12 20">' + FLEUR + '</svg>',
+  };
+  const V2 = [['a1', 'A1 · the needle\'s ends', 'the line ends in the menu button\'s diamonds, the title between them.'],
+    ['a2', 'A2 · the curls', 'a small filigree curl either side, turning away from the title (the crown\'s curl).'],
+    ['a3', 'A3 · the plaque', 'a thin double outline round the title with pointed ends; the line meets its points.'],
+    ['a4', 'A4 · the arch', 'the line rises in a shallow arch over the title and comes back down.'],
+    ['a5', 'A5 · the pointers', 'the game\'s menu pointers either side, pointing at the title.']];
+  document.getElementById('list').insertAdjacentHTML('beforeend', '<p class="mk-round">Second round: A with a frame of its own</p>' + V2.map(([cls, name, note]) =>
+    '<div class="mk-v r2 ' + cls + '"><b>' + name + '</b><section class="screen">' + frame + '<header class="screen-head"><h2 class="sec-title screen-title">Progress</h2>' + ORN[cls] + '</header><p class="body">What the screen holds…</p></section><i>' + note + '</i></div>').join(''));
+  // The cut: half the head's width and a breath more.
+  for (const sc of document.querySelectorAll('.r2 .screen, .v-a .screen')) { const h = sc.querySelector('.screen-head'); sc.style.setProperty('--half', (h.offsetWidth / 2 + 10) + 'px'); }
+})();
+</script>
+</body>
+</html>

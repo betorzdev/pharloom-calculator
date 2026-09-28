@@ -205,6 +205,7 @@
       if (!m.crests.includes(st.crest)) st.crest = 'hunter';
     });
   }
+  App.freeMark = mark;   // Progress marks from its lists too (js/app-progress.js)
   const toggle = (arr, id) => (arr.includes(id) ? arr.filter((x) => x !== id) : [...arr, id]);
   // The pieces of one kind, the first n in the list's order (and the rest of that kind off).
   const KIND = { 'mask-shard': 'mask-shard', 'spool-fragment': 'spool-fragment', 'memory-locket': 'memory-locket', craftmetal: 'craftmetal', 'pale-oil': 'pale-oil', flea: 'flea' };

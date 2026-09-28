@@ -284,7 +284,20 @@
   /* Each screen's header: the title in Cinzel, set into the frame's top edge between two
      diamonds, as the pause menu titles its panes; what goes with it (a note, a choice, Share)
      under it, centred, inside the black. The title gets focus when arriving from another screen. */
-  const screenHead = (title, after = '') => `<header class="screen-head"><h2 class="sec-title screen-title" tabindex="-1">${title}</h2></header>${after ? `<div class="screen-lead">${after}</div>` : ''}`;
+  /* The plaque round the title (design/11-title-variants.html, A3): a thin double outline with
+     pointed ends, stretched to the title; the frame's top line stops at its points (sizeTitles). */
+  const PLAQUE = '<svg class="screen-plaque" viewBox="0 0 100 30" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><polygon points="6,1 94,1 99.5,15 94,29 6,29 0.5,15" vector-effect="non-scaling-stroke"/><polygon class="is-inner" points="8,4 92,4 96.5,15 92,26 8,26 3.5,15" vector-effect="non-scaling-stroke"/></svg>';
+  const screenHead = (title, after = '') => `<header class="screen-head">${PLAQUE}<h2 class="sec-title screen-title" tabindex="-1">${title}</h2></header>${after ? `<div class="screen-lead">${after}</div>` : ''}`;
+  /* Where the frame's top line stops either side of the title: half the plaque's width, set on
+     the screen that shows (the others have no width while hidden). */
+  function sizeTitles() {
+    for (const h of el.screens.querySelectorAll('.screen:not([hidden]) .screen-head')) {
+      const box = h.parentElement.closest('.saves-body, .screen');
+      if (box && h.offsetWidth) box.style.setProperty('--title-half', Math.ceil(h.offsetWidth / 2) + 'px');
+    }
+  }
+  addEventListener('resize', sizeTitles);
+  try { document.fonts.ready.then(sizeTitles); } catch (e) { /* no font loading API: the CSS fallback holds */ }
 
   /* ── The screens ─────────────────────────────────────────────────────── */
   App.screens = {};   // view → painter, registered by each screen's script (js/app-*.js)
@@ -300,6 +313,7 @@
   }
   function showScreen() {
     for (const v of VIEWS) { const sec = screenOf(v); if (sec) sec.hidden = v !== prefs.view; }
+    sizeTitles();
   }
 
   /* ── General render ──────────────────────────────────────────────────── */

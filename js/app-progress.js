@@ -41,6 +41,8 @@
   // The game on screen, set per render: a need its other way already meets (the Clawline for the
   // Flintslate) isn't shown.
   let cur = null;
+  // Free mode with the Inventory's marks: a missing row's box marks it had (App.freeMark, js/app-game.js).
+  let marking = false;
   function needText(need) {
     if (!need || (need.or && cur && cur.arts.includes(need.or))) return '';
     const keys = need.keys.map((k) => pick(HW.KEYS[k].name)).join(', ');
@@ -65,13 +67,14 @@
   }
 
   /* One row: its name, whether you have it, its Act and its area; how to get it, when it's missing. */
-  function row({ name, got, act, area, color, scene, sub = [], how }, g) {
+  function row({ name, got, act, area, color, scene, sub = [], how, mark }, g) {
     const later = g && !got && act > g.act;
     const n = !got && scene ? away(scene) : null;
     const steps = n == null ? '' : n === 0 ? t('mapHere') : t(n === 1 ? 'mapSteps1' : 'mapSteps', { n: num(n) });
     const where = [act ? t('saveAct', { n: act }) : '', areaName(area), steps, ...sub].filter(Boolean);
     return `<li class="pg-item${got ? ' is-got' : ''}${later ? ' is-later' : ''}"${later ? ` title="${esc(t('pgLater', { n: act }))}"` : ''}>
-        <span class="pg-mark" aria-hidden="true">${got ? App.tick : ''}</span>
+        ${marking && mark && !(mark.startsWith('piece:') && LADDER[CO.PIECES[+mark.slice(6)][0]]) ? `<button type="button" class="pg-mark check is-own" data-act="pgOwn" data-value="${esc(mark)}" aria-pressed="${!!got}" aria-label="${esc(name)}"><span class="check-box" aria-hidden="true"></span></button>`
+          : `<span class="pg-mark" aria-hidden="true">${got ? App.tick : ''}</span>`}
         ${color ? `<span class="pg-slot is-${color}" aria-hidden="true"></span>` : ''}
         <span class="pg-name"${NT}>${esc(name)}</span>
         ${got ? `<span class="sr-only">${esc(t('pgGot'))}</span>` : ''}
@@ -80,21 +83,33 @@
       </li>`;
   }
 
-  /* The things of a category: [{ name, got, act, area, color }] in the order to show them. */
+  /* The game's picture for a piece of a kind, for the ledger's strip (the k-th of its kind: the
+     Needles each their own). */
+  const PIECE_ICON = { 'mask-shard': 'items/mask-shard', 'spool-fragment': 'items/spool-fragment', 'crafting-kit': 'items/crafting-kit',
+    'tool-pouch': 'items/tool-pouch', 'silk-heart': 'pieces/silk-heart', 'memory-locket': 'items/memory-locket', craftmetal: 'items/craftmetal',
+    'pale-oil': 'items/pale-oil', flea: 'pieces/flea' };
+  const HEART_ICON = { CollectedHeartFlower: 'heart-bloom', CollectedHeartCoral: 'heart-coral', CollectedHeartHunter: 'heart-hunter', CollectedHeartClover: 'heart-clover',
+    HasMelodyArchitect: 'melody-architect', HasMelodyLibrarian: 'melody-librarian', HasMelodyConductor: 'melody-conductor' };
+  const pieceIcon = (kind, k, p) => (kind === 'needle' ? ART_NEEDLE(k + 1) : p && HEART_ICON[p[2][1]] ? `assets/icons/pieces/${HEART_ICON[p[2][1]]}.webp`
+    : PIECE_ICON[kind] ? `assets/icons/${PIECE_ICON[kind]}.webp` : null);
+  const ART_NEEDLE = (n) => App.ART.needle(n);
+
+  /* The things of a category: [{ name, got, act, area, color, icon, mark }] in the order to show them. */
   const byAct = (a, b) => (a.act || 9) - (b.act || 9) || areaName(a.area).localeCompare(areaName(b.area));
   function things(g) {
     const has = (list, id) => !!g && list.includes(id);
     const where = (map, id) => { const w = map[id] || []; return { act: w[0] || 0, area: w[1] || null }; };
     const pieces = (kind, name) => CO.PIECES.map((p, i) => ({ p, i })).filter(({ p }) => p[0] === kind)
       .map(({ p, i }, k) => ({ name: name ? name(k) : KIND_NAME[kind](), got: !!g && g.pieces.includes(i), act: p[1], area: p[3], scene: R.sceneOf(p[2]),
-        how: howText(HW.HOW.pieces[i], HW.NEEDS.pieces[i]), ways: HW.HOW.pieces[i] }));
+        how: howText(HW.HOW.pieces[i], HW.NEEDS.pieces[i]), ways: HW.HOW.pieces[i], icon: pieceIcon(kind, k), mark: 'piece:' + i }));
     const tools = CO.COUNTED.map((ids) => {
       const tool = D.TOOLS.find((x) => x.id === ids[0]);
       const got = !!g && ids.some((id) => g.tools.includes(id));
-      return { name: pick(tool.name), got, color: tool.color, ...where(CO.WHERE.tools, ids[0]), how: howText(HW.HOW.tools[ids[0]], HW.NEEDS.tools[ids[0]]), ways: HW.HOW.tools[ids[0]] };
+      return { name: pick(tool.name), got, color: tool.color, ...where(CO.WHERE.tools, ids[0]), how: howText(HW.HOW.tools[ids[0]], HW.NEEDS.tools[ids[0]]), ways: HW.HOW.tools[ids[0]],
+        icon: `assets/icons/tools/${ids[0]}.webp`, mark: 'tools:' + ids[0] };
     });
     const named = (list, ids, map, key) => ids.map((id) => ({ name: pick(list.find((x) => x.id === id).name), got: has(g ? g[key] : [], id), ...where(map, id),
-      how: howText(HW.HOW[key][id], HW.NEEDS[key][id]), ways: HW.HOW[key][id] }));
+      how: howText(HW.HOW[key][id], HW.NEEDS[key][id]), ways: HW.HOW[key][id], icon: `assets/icons/${key}/${id}.webp`, mark: key + ':' + id }));
     const ev = CO.WHERE.everbloom || [];
     return {
       tools: tools.sort(byAct),
@@ -106,7 +121,8 @@
       masks: pieces('mask-shard').sort(byAct),
       needle: pieces('needle', (k) => pick(D.NEEDLES[k + 1].name)),
       hearts: pieces('silk-heart').sort(byAct),
-      items: [{ name: pick(item('everbloom').name), got: !!g && g.everbloom, act: ev[0] || 3, area: ev[1] || null, how: howText(HW.HOW.everbloom), ways: HW.HOW.everbloom }],
+      items: [{ name: pick(item('everbloom').name), got: !!g && g.everbloom, act: ev[0] || 3, area: ev[1] || null, how: howText(HW.HOW.everbloom), ways: HW.HOW.everbloom,
+        icon: 'assets/icons/items/everbloom.webp', mark: 'everbloom' }],
     };
   }
   /* A group's own note: masks and spools count whole, not by piece; the Tools' traps (js/how.js
@@ -122,17 +138,31 @@
   // The abilities that aren't in the 100%: the two cloaks, Beastling Call and Elegy of the Deep.
   const OTHER_ARTS = ['drifters-cloak', 'faydown-cloak', 'beastling-call', 'elegy-of-the-deep'];
 
+  /* A category as a row of the ledger (the sibling's Progress, design/03-redesign.md step 5):
+     its name, its things as the game's pictures (up to twelve, what you lack dimmed) or as pips,
+     its count and the disclosure's ring; open, its list. Which rows are open is kept (prefs.pgOpen). */
+  const MAX_PIPS = 60;
+  const isOpen = (id) => (prefs.pgOpen || []).includes(id);
+  function strip(list, g, got, max) {
+    if (list.length <= 12 && list.every((x) => x.icon)) {
+      return `<span class="pg-strip" aria-hidden="true">${list.map((x) => `<img class="${!g || x.got ? '' : 'is-missing'}" src="${x.icon}" alt="" loading="lazy">`).join('')}</span>`;
+    }
+    if (max > MAX_PIPS) return '<span class="pg-strip" aria-hidden="true"></span>';
+    return `<span class="pg-strip pg-pips" aria-hidden="true">${Array.from({ length: max }, (_, i) => `<i class="${g && i < got ? 'is-on' : ''}"></i>`).join('')}</span>`;
+  }
   function group(id, title, list, g, got, max) {
     const all = prefs.pgAll || !g;
-    const shown = nearFirst(all ? list : list.filter((x) => !x.got));
+    const open = isOpen(id);
     const done = g && got >= max;
-    const body = shown.length ? `<ul class="pg-list">${shown.map((x) => row(x, g)).join('')}</ul>`
+    const shown = open ? nearFirst(all ? list : list.filter((x) => !x.got)) : [];
+    const body = !open ? '' : shown.length ? `<ul class="pg-list">${shown.map((x) => row(x, g)).join('')}</ul>`
       : `<p class="pg-done">${App.tick}${esc(t('pgDone'))}</p>`;
-    return `<section class="pg-group${done ? ' is-done' : ''}" aria-labelledby="pg-${id}">
-        <h3 class="pg-head" id="pg-${id}"><span class="pg-title">${esc(title)}</span>
-          ${g ? `<span class="pg-count"><b>${num(got)}</b><i class="u">/${num(max)}</i></span>` : `<span class="pg-count"><i class="u">${num(max)}</i></span>`}</h3>
-        ${NOTE[id] ? `<p class="pg-note">${esc(NOTE[id]())}</p>` : ''}
-        ${body}
+    return `<section class="pg-group${done ? ' is-done' : ''}${open ? ' is-open' : ''}" aria-labelledby="pg-${id}">
+        <h3 class="pg-head" id="pg-${id}"><button type="button" class="pg-open" data-act="pgOpen" data-value="${id}" aria-expanded="${open}">
+          <span class="pg-title">${esc(title)}</span>${strip(list, g, got, max)}
+          ${g ? `<span class="pg-count"><b>${num(got)}</b><i class="u">/${num(max)}</i></span>` : `<span class="pg-count"><i class="u">${num(max)}</i></span>`}
+          <span class="disc-ring">${App.chevron(open)}</span></button></h3>
+        ${open ? `${NOTE[id] ? `<p class="pg-note">${esc(NOTE[id]())}</p>` : ''}${body}` : ''}
       </section>`;
   }
 
@@ -253,6 +283,35 @@
     ];
   }
 
+  /* The road at a glance (design/03-redesign.md, step 5, "the journey"): its steps as the game's
+     diamonds on one thread, done ones lit, the one you're on larger; their names under them in
+     the game's words; and the step you're on as a headline with how far into it. The whole road
+     opens under it. */
+  function journey(r) {
+    const at = r.steps.findIndex((x) => !x.ok && !x.bypassed);
+    const on = at < 0 ? r.steps.length : at;
+    const names = r.act === 3
+      ? [wishName(r.steps[1].quest), t('roadWishwall'), t('roadSnare'), t('roadCaretaker'), foeName('grand-mother-silk')]
+      : [t('roadBellshrine'), pick(QU.CHAIN[r.steps[1].quest].name), foeName('last-judge'), t('roadCitadelName')];
+    const titles = r.act === 3 ? toAct3Titles(r) : toAct2Titles(r);
+    const s = r.steps[at];
+    const f = ((on + (s && s.total > 1 ? s.done / s.total : 0)) / Math.max(1, r.steps.length - 1)) * 100;
+    const open = !!prefs.pgRoad;
+    return `<div class="pg-journey" style="--n:${r.steps.length};--f:${Math.min(100, f).toFixed(1)}%">
+        <p class="pg-journey-sup">${esc(t('roadTitle', { n: num(r.act) }))}</p>
+        <ol class="pg-journey-steps">${r.steps.map((x, i) => `<li class="${x.ok || x.bypassed ? 'is-done' : ''}${i === at ? ' is-cur' : ''}" title="${esc(titles[i])}">
+          <i aria-hidden="true"></i><span${NT}>${esc(names[i])}</span></li>`).join('')}</ol>
+        ${s ? `<p class="pg-journey-now">${esc(titles[at])}${s.total > 1 ? ` <b>${esc(t('roadOf', { n: num(s.done), of: num(s.total) }))}</b>` : ''}</p>` : ''}
+        <button type="button" class="text-btn" data-act="pgRoad" aria-expanded="${open}">${esc(t(open ? 'roadLess' : 'roadWhole'))}</button>
+      </div>`;
+  }
+  // Each step's title, as the whole road names it.
+  const toAct2Titles = (r) => [t('roadBells'), t('roadGate', { gate: pick(QU.CHAIN[r.steps[1].quest].name) }),
+    t('roadJudge', { judge: foeName('last-judge'), phantom: foeName('phantom') }), t('roadCitadel')];
+  const toAct3Titles = (r) => { const wish = wishName(r.steps[1].quest);
+    return [t('roadUnlock', { wish }), t('roadOffer', { wish, caretaker: t('roadCaretaker'), town: areaName('BELLHART'), clave: areaName('ENCLAVE') }),
+      t('roadPieces'), t('roadReady', { caretaker: t('roadCaretaker') }), t('roadSilk')]; };
+
   function roadHtml(g) {
     const roads = g ? [A.next(g)].filter(Boolean) : [A.next({ act: 1 }), A.next({ act: 2 })];
     if (!roads.length) return '';
@@ -281,41 +340,75 @@
     return `<p class="pg-note pg-buy">${esc(t('pgBuy', { price: num(price), have: num(m.rosaries || 0), extra }))}</p>`;
   }
 
+  /* Free mode's game for Progress: the Inventory's marks, and its ladders (masks, silk, Silk
+     Hearts, Needle, Kit, Pouch) from the free build, as the Inventory sets them: their pieces had
+     in order up to the build's level, so the lists and the counts agree. In Act 3, so nothing
+     reads as later. */
+  const LADDER = { 'mask-shard': (b) => 4 * b.masks, 'spool-fragment': (b) => 2 * b.spools, 'silk-heart': (b) => b.hearts,
+    needle: (b) => b.needle, 'crafting-kit': (b) => b.kit, 'tool-pouch': (b) => b.pouch };
+  function freeView(free) {
+    const b = App.currentBuild();
+    const pieces = free.pieces.filter((i) => !LADDER[CO.PIECES[i][0]]);
+    for (const [kind, n] of Object.entries(LADDER)) {
+      CO.PIECES.forEach((p, i) => { if (p[0] === kind) pieces.push(i); });
+      const mine = pieces.filter((i) => CO.PIECES[i][0] === kind);
+      for (const i of mine.slice(n(b))) pieces.splice(pieces.indexOf(i), 1);
+    }
+    return { ...free, act: 3, pieces, masks: b.masks, spools: b.spools, hearts: b.hearts, needle: b.needle, kit: b.kit, pouch: b.pouch };
+  }
+
   App.screens.progress = (sec) => {
-    const g = App.game();
+    const own = App.game();
+    /* Free mode with marks counts from them (the Inventory's, js/app-saves.js App.freeGame), as a
+       game in Act 3 so nothing reads as later; its road stays the guide, as no save told it. */
+    const free = own ? null : App.freeGame();
+    const g = own || (free ? freeView(free) : null);
+    marking = !!free;
     const w = g && g.bench ? R.walk(g.bench, g.lit) : null;
     away = (scene) => (w ? R.steps(g.bench, scene, g.lit, w) : null);
     cur = g;
     const all = things(g);
     const c = g ? CP.count(g) : null;
-    const seg = g ? `<div class="seg pg-seg" role="group" aria-label="${esc(t('pgShow'))}">
+    const seg = g ? `${own ? '' : `<p class="saves-note">${esc(t('pgFreeMarks'))}</p>`}<div class="seg pg-seg" role="group" aria-label="${esc(t('pgShow'))}">
         <button type="button" data-act="pgShow" data-value="missing" aria-pressed="${!prefs.pgAll}">${esc(t('pgMissing'))}</button>
         <button type="button" data-act="pgShow" data-value="all" aria-pressed="${!!prefs.pgAll}">${esc(t('pgAll'))}</button>
       </div>${w ? `<div class="seg pg-seg" role="group" aria-label="${esc(t('pgOrder'))}">
         <button type="button" data-act="pgSort" data-value="act" aria-pressed="${!prefs.pgNear}">${esc(t('pgByAct'))}</button>
         <button type="button" data-act="pgSort" data-value="near" aria-pressed="${!!prefs.pgNear}">${esc(t('pgNear'))}</button>
       </div>` : ''}` : `<p class="saves-note">${esc(t('pgFree'))}</p>`;
+    const theirs = own ? Math.round((App.gameMeta() || {}).completion || 0) : null;
+    const total = c ? `<div class="pg-total"><p class="lbl">${esc(t('homeCompletion'))}</p><p class="pg-total-n"><b>${num(c.total)}</b><span class="u">${esc(App.pctSpace().trim() || '%')}</span></p>
+        ${own && theirs != null ? `<p class="hm-check${theirs === c.total ? '' : ' is-off'}">${esc(t(theirs === c.total ? 'homeMatches' : 'homeDiffers', { pct: num(theirs) + App.pctSpace() }))}</p>` : ''}</div>` : '';
+    const next = own ? A.next(own) : null;
+    const road = next ? journey(next) + (prefs.pgRoad ? roadHtml(own) : '')
+      : `<div class="pg-journey is-guide"><button type="button" class="text-btn" data-act="pgRoad" aria-expanded="${!!prefs.pgRoad}">${esc(t(prefs.pgRoad ? 'roadLess' : 'roadBoth'))}</button></div>${prefs.pgRoad ? roadHtml(null) : ''}`;
     const hundred = CP.CATEGORIES.map((k, i) => {
       const cat = c ? c.categories[i] : { got: 0, max: k.max };
       return group(k.id, t('cat_' + k.id), all[k.id], g, cat.got, cat.max);
     }).join('');
     const beyond = BEYOND.map(([kind, key]) => {
       const list = CO.PIECES.map((p, i) => ({ p, i })).filter(({ p }) => p[0] === kind)
-        .map(({ p, i }) => ({ name: p[4] ? pick(p[4]) : KIND_NAME[kind](), got: !!g && g.pieces.includes(i), act: p[1], area: p[3], scene: R.sceneOf(p[2]) })).sort(byAct);
+        .map(({ p, i }, k) => ({ name: p[4] ? pick(p[4]) : KIND_NAME[kind](), got: !!g && g.pieces.includes(i), act: p[1], area: p[3], scene: R.sceneOf(p[2]),
+          icon: pieceIcon(kind, k, p), mark: 'piece:' + i })).sort(byAct);
       return group(kind, key ? t(key) : KIND_NAME[kind](), list, g, list.filter((x) => x.got).length, list.length);
     }).join('') + (() => {
       const list = OTHER_ARTS.map((id) => { const w = CO.WHERE.arts[id] || [];
-        return { name: pick(D.ARTS.find((x) => x.id === id).name), got: !!g && g.arts.includes(id), act: w[0] || 0, area: w[1] || null }; });
+        return { name: pick(D.ARTS.find((x) => x.id === id).name), got: !!g && g.arts.includes(id), act: w[0] || 0, area: w[1] || null, icon: `assets/icons/arts/${id}.webp`, mark: 'arts:' + id }; });
       return group('other-arts', t('pgOtherArts'), list, g, list.filter((x) => x.got).length, list.length);
     })() + (() => {
       // The enemy gauntlets, in the wiki's order (by area), named as Combat names them.
       const list = SS.gauntlets.GAUNTLETS.map((x) => ({ name: App.gauntletName(x.id), got: !!g && g.gauntlets.includes(x.id), act: 0, area: x.area }));
       return group('gauntlets', t('ftModeGauntlets'), list, g, list.filter((x) => x.got).length, list.length);
     })();
-    sec.innerHTML = `<div class="pg">${brackets}${screenHead(esc(t('navProgress')), seg)}
-        ${roadHtml(g)}
-        <h3 class="pg-part">${esc(t('pg100'))}${c ? ` <b>${num(c.total)}${App.pctSpace()}</b>` : ''}</h3>
-        ${g ? buyHtml(all) : ''}
+    // The total and the road lead; how to show the lists goes just over them.
+    const lead = g ? (own ? '' : `<p class="saves-note">${esc(t('pgFreeMarks'))}</p>`) : seg;
+    const controls = g ? `<div class="pg-controls">${own ? seg : seg.replace(/^<p class="saves-note">.*?<\/p>/, '')}</div>` : '';
+    sec.innerHTML = `<div class="pg">${brackets}${screenHead(esc(t('navProgress')), lead)}
+        ${total}
+        ${own && !next ? '' : road}
+        <h3 class="pg-part">${esc(t('pg100'))}</h3>
+        ${controls}
+        ${own ? buyHtml(all) : ''}
         <div class="pg-groups">${hundred}</div>
         <h3 class="pg-part">${esc(t('pgBeyond'))}</h3>
         <p class="pg-note">${esc(t('pgBeyondNote'))}</p>
@@ -327,6 +420,23 @@
   };
 
   Object.assign(actions, {
+    pgOpen(node) {
+      const id = node.dataset.value, list = prefs.pgOpen || [];
+      prefs.pgOpen = list.includes(id) ? list.filter((x) => x !== id) : [...list, id];
+      savePrefs();
+      render();
+    },
+    pgRoad() { prefs.pgRoad = !prefs.pgRoad; savePrefs(); render(); },
+    // Free mode: a row's box marks it had or not (the Inventory's own marks).
+    pgOwn(node) {
+      const [kind, id] = node.dataset.value.split(':');
+      App.freeMark((m) => {
+        const flip = (arr, x) => (arr.includes(x) ? arr.filter((y) => y !== x) : [...arr, x]);
+        if (kind === 'piece') m.pieces = flip(m.pieces, Number(id));
+        else if (kind === 'everbloom') m.everbloom = !m.everbloom;
+        else m[kind] = flip(m[kind], id);
+      });
+    },
     pgSort(node) {
       prefs.pgNear = node.dataset.value === 'near';
       savePrefs();

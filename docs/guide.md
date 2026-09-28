@@ -14,8 +14,8 @@ tab, **Build**, which opens the last one you used, and Inventory under Your game
 in either pair, a second row under the bar switches between its two.
 
 Every screen is framed as the game's pause menu frames its panes: a thin filigree line all
-round with a curl at each corner, and the screen's name set into its top edge between two
-diamonds. The study and the plan are in `design/00-study.md`; the UI and UX review, step by
+round with a curl at each corner, and the screen's name on its top edge in a small plaque with
+pointed ends, where the line stops. The study and the plan are in `design/00-study.md`; the UI and UX review, step by
 step, in `design/03-redesign.md`.
 
 On a computer, Hornet sits on the screen bar under the tab you're on: she is its mark, where a
@@ -38,7 +38,9 @@ and isn't sent anywhere.
 
 Where the browser can (Chrome and Edge: File System Access), an imported save can **follow the
 game**: the site keeps a link to the file and catches up each time the game writes it. After a
-reload the browser asks for permission again, and a notice above the screen says so. **Clear**
+reload the browser asks for permission again, and a notice above the screen says so. Not on
+Linux: Chrome's picker refuses `~/.config` («it contains system files»), where the game keeps its
+saves, so there the file is read once through the plain file dialog and isn't followed. **Clear**
 asks the game's own question («Clear Profile?») and only clears the site's copy.
 
 ### Your game
@@ -248,8 +250,21 @@ Free mode, every piece.
 
 ### Progress
 
-First, before Act 3, **the road to the next Act**, as the game's own rules have it (read from its
-files, not from a guide), in numbered steps, each with its count or a tick:
+A ledger. At the top, **your 100%** large, with the game's own figure checked. Before Act 3,
+**the road to the next Act** at a glance: its steps as diamonds on one thread, the ones done lit
+and the one you're on larger, named with the game's words, and that step's title with how far
+into it («2 of 15»); «The whole road» opens it in full. Then each category is a row: its name,
+its things as the game's pictures (what you lack dimmed) or as pips, its count and a ring that
+opens its list; the rows you open stay open. «What's missing · Everything» and «By Act ·
+Nearest first» sit just above the rows.
+
+In **Free mode** with things marked in the Inventory, Progress counts from those marks and
+each missing row has a box to mark it here too; masks, silk, the Silk Hearts, the Needle, the
+Kit and the Pouch follow what the Inventory sets. With nothing marked, it's the whole list as a
+guide, and both roads behind «The roads to Acts 2 and 3».
+
+The whole road, as the game's own rules have it (read from its files, not from a guide), in
+numbered steps, each with its count or a tick:
 
 - **To Act 2**: ring the five Bellshrines, open the Grand Gate, defeat the Last Judge, and walk into
   the Citadel. Defeating the Phantom opens another way in, and the first two steps then say
