@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The shell: variants</title>
+<!-- Design material, not part of the site (design/03-redesign.md, step 1). The shell (header,
+     screen bar, the screen's frame and title, footer) drawn with the site's real CSS, each
+     decision with its options. The bar at the bottom switches them, and the URL carries them:
+     ?header=a|b|c&frame=a|b|c&phone=a|b|c|d&figs=on|off&w=1440|390. At 390 the page is drawn
+     inside a 390 px frame, so the site's own media queries apply. The tabs can be clicked.
+     The screen's content is a placeholder (the Crest screen's shape): only the shell is on trial.
+     Hornet walking the bar isn't drawn: she stays in every option. -->
+<base href="../">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/app.css">
+<style>
+/* ════ The mockup's bar: none of this goes into the site ═══════════════════════════════ */
+.mk-bar {
+  position: fixed; z-index: 90; left: 50%; bottom: var(--sp-2); transform: translateX(-50%);
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--sp-1) var(--sp-3);
+  width: max-content; max-width: calc(100vw - var(--sp-4)); padding: var(--sp-2) var(--sp-3);
+  background: color-mix(in oklab, var(--scene-bg) 94%, transparent); border: 1px solid var(--line-panel);
+  font-family: var(--font-num); font-size: var(--fs-xs); color: var(--muted); box-shadow: var(--shadow-md);
+}
+.mk-bar b { color: var(--label); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; font-size: var(--fs-2xs); }
+.mk-bar button { padding: var(--sp-1) var(--sp-2); border: 1px solid var(--line-ctl); color: var(--ink-2); font: inherit; }
+.mk-bar button[aria-pressed="true"] { color: var(--ink-strong); border-color: var(--accent-line); background: var(--picked); }
+.mk-bar button:hover { color: var(--accent); }
+.mk-grp { display: inline-flex; align-items: center; gap: var(--sp-1); }
+.mk-sep { width: 1px; align-self: stretch; background: var(--line); }
+.mk-note { flex-basis: 100%; text-align: center; color: var(--ink-2); }
+html.is-framed body { background: var(--scene-bg); }
+.mk-phone { display: block; margin: var(--sp-4) auto calc(var(--sp-16) * 2); width: 390px; height: calc(100vh - var(--sp-16) * 2 - var(--sp-8)); border: 1px solid var(--line-panel); box-shadow: var(--shadow-lg); }
+html.is-inner .mk-bar { display: none; }
+.page { padding-bottom: calc(var(--sp-16) * 2); }
+
+/* ════ Placeholder content (the Crest screen's shape) ═══════════════════════════════════ */
+.mk-body { display: grid; grid-template-columns: 1fr 1.3fr 1fr; gap: var(--sp-8); }
+.mk-col { display: flex; flex-direction: column; gap: var(--sp-3); }
+.mk-crest { display: flex; flex-direction: column; align-items: center; gap: var(--sp-2); text-align: center; color: var(--ink-2); font-size: var(--fs-sm); }
+.mk-crest img { width: 120px; }
+.mk-crest b { font-family: var(--font-display); font-size: var(--fs-xl); color: var(--ink-strong); }
+.mk-icons { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.mk-icons img { width: var(--sp-8); height: var(--sp-8); object-fit: contain; }
+.mk-row { display: flex; justify-content: space-between; align-items: baseline; padding: var(--sp-2) 0; border-bottom: 1px solid var(--line-row); font-size: var(--fs-sm); }
+.mk-row .val { font-family: var(--font-num); font-size: var(--fs-xl); font-weight: 600; color: var(--ink-strong); }
+.mk-sec { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-sm); letter-spacing: var(--track-title); color: var(--ink-strong); border-bottom: 1px solid var(--line-card); padding-bottom: var(--sp-1); }
+@media (max-width: 899px) { .mk-body { grid-template-columns: 1fr; gap: var(--sp-6); } .mk-body > :nth-child(2) { display: none; } }
+
+/* The screen's own controls: in every option they sit in the head, under the title or alone. */
+.mk-ctl { display: flex; align-items: center; justify-content: center; gap: var(--sp-6); flex-wrap: wrap; }
+
+/* ════ Figures on the bar (the sibling's) ═══════════════════════════════════════════════ */
+html:not(.figs-on) .nav-num { display: none; }
+
+/* ════ HEADER A · as now, tighter, with a filigree over the title ═══════════════════════════
+   The sibling crowns its title with the Hall of Gods tablet; Silksong has no such piece on the
+   wiki, so it's drawn: the pause menu's white filigree, two curls and the needle's diamond. */
+.mk-crown { display: none; width: 200px; height: auto; color: color-mix(in oklab, var(--filigree) 80%, transparent); transition: color var(--dur) var(--ease); }
+.hd-a .mk-crown { display: block; }
+.hd-a .brand:hover .mk-crown { color: var(--filigree); }
+.hd-a .masthead { padding-top: var(--sp-4); row-gap: 0; }
+.hd-a .masthead .mh-tools, .hd-a .masthead .mh-save { align-self: end; }
+.hd-a .mk-lnk { display: inline-flex; }
+
+/* ════ HEADER B · one bar ════════════════════════════════════════════════════════════════
+   Everything in one sticky row: the title small on the left, the tabs, the language and the
+   save on the right. The whole header is the bar: 64 px, and the title never scrolls away. */
+.hd-b .masthead { display: none; }
+.mk-one { display: none; }
+.hd-b .mk-one { display: contents; }
+.hd-b .nav { flex-wrap: nowrap; gap: var(--sp-8); }
+.hd-b .nav-tabs { margin-inline: auto; }
+.mk-one-title { font-family: var(--font-display); font-weight: 900; font-size: var(--fs-md); letter-spacing: var(--track-title); color: var(--ink-strong); text-decoration: none; white-space: nowrap; line-height: 1.1; }
+.mk-one-end { display: flex; align-items: center; gap: var(--sp-4); }
+.hd-b .mk-one-end .mh-save-fig { width: var(--sp-8); height: var(--sp-8); }
+.hd-b .mk-one-end .mh-save-fig img { height: var(--sp-8); }
+.hd-b .nav-tab { font-size: var(--fs-md); }
+.hd-b .shell { gap: var(--sp-6); }
+
+/* ════ HEADER C · the pause menu ═════════════════════════════════════════════════════════
+   The game's pause menu names its panes across the top, the current one lit and the others
+   dim, with the shoulder buttons at the ends. The bar does the same: Cinzel capitals, centred,
+   the current one between the menu's pointers (the save selector's .save-fleur). */
+.hd-c .masthead { padding-top: var(--sp-3); }
+.hd-c .title { font-size: var(--fs-lg); }
+.hd-c .nav { justify-content: center; }
+.hd-c .nav-tabs { gap: var(--sp-8); justify-content: center; }
+.hd-c .nav-tab {
+  position: relative; font-family: var(--font-display); font-weight: 600; font-size: var(--fs-sm);
+  letter-spacing: var(--track-caps); text-transform: uppercase; color: color-mix(in oklab, var(--ink) 55%, transparent);
+}
+.hd-c .nav-tab[aria-current="page"] { color: var(--ink-strong); box-shadow: none; text-shadow: 0 0 12px color-mix(in oklab, var(--spotlight) 45%, transparent); }
+.hd-c .nav-tab .save-fleur { display: none; }
+.hd-c .nav-tab[aria-current="page"] .save-fleur { display: flex; opacity: 1; transform: translateY(-50%) scaleX(1); }
+.hd-c .nav-tab .save-fleur.is-l { left: calc(var(--sp-4) * -1); }
+.hd-c .nav-tab .save-fleur.is-r { right: calc(var(--sp-4) * -1); }
+.hd-c .nav-sep { width: var(--diamond); height: var(--diamond); border: 1px solid var(--line-ctl); background: none; transform: rotate(45deg); }
+.mk-shoulder { display: none; }
+.hd-c .mk-shoulder { display: inline-flex; align-items: center; color: var(--muted); font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-label); gap: var(--sp-1); }
+.hd-c .mk-shoulder kbd { padding: 0 var(--sp-1); border: 1px solid var(--line-ctl); font: inherit; }
+@media (hover: hover) { .hd-c .nav-tab:hover:not([aria-current="page"]) { box-shadow: none; color: var(--ink); } }
+.nav-tab .save-fleur { display: none; }
+
+/* ════ FRAME B · no repeated title ═══════════════════════════════════════════════════════
+   The bar already names the screen: the title goes (kept for screen readers) and the head only
+   holds the screen's own controls. */
+.fr-b .screen-head > .sec-title { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.fr-b .screen-head > .rule { display: none; }
+.fr-b .screen { padding-top: var(--sp-6); }
+
+/* ════ FRAME C · the pause menu's filigree ═══════════════════════════════════════════════
+   A thin filigree line all round with curled corners, and the title set into its top edge,
+   as the pause menu frames its panes. */
+.mk-corner { display: none; position: absolute; width: var(--sp-12); height: var(--sp-12); color: var(--bracket); pointer-events: none; }
+.fr-c .mk-corner { display: block; }
+.fr-c .bk { display: none; }
+.mk-corner.tl { top: calc(var(--sp-1) * -1); left: calc(var(--sp-1) * -1); }
+.mk-corner.tr { top: calc(var(--sp-1) * -1); right: calc(var(--sp-1) * -1); scale: -1 1; }
+.mk-corner.bl { bottom: calc(var(--sp-1) * -1); left: calc(var(--sp-1) * -1); scale: 1 -1; }
+.mk-corner.br { bottom: calc(var(--sp-1) * -1); right: calc(var(--sp-1) * -1); scale: -1 -1; }
+.fr-c .screen { outline: 1px solid color-mix(in oklab, var(--filigree) 22%, transparent); outline-offset: calc(var(--sp-2) * -1); margin-top: var(--sp-3); }
+.fr-c .screen-head { position: absolute; top: calc(var(--sp-3) * -1 - var(--sp-half)); left: 50%; transform: translateX(-50%); margin: 0; flex-direction: row; gap: var(--sp-3); padding: 0 var(--sp-4); background: var(--inv-bg); }
+.fr-c .screen-head > .rule { display: none; }
+.fr-c .screen-head::before, .fr-c .screen-head::after { content: ''; width: var(--diamond); height: var(--diamond); border: 1px solid var(--filigree); transform: rotate(45deg); }
+.fr-c .screen { padding-top: var(--sp-12); }
+
+/* ════ PHONE A · wrap (as now) needs nothing ═══════════════════════════════════════════════ */
+.mk-fold, .mk-sub, .mk-dock { display: none; }
+@media (max-width: 599px) {
+  /* B · the tools folded into one tab, and a second row for the pair you're in (the sibling). */
+  .ph-b .nav-tab.is-fold-hide { display: none; }
+  .ph-b .mk-fold { display: inline-flex; }
+  .ph-b .nav-tabs { flex-wrap: nowrap; }
+  .ph-b .mk-sub:not([hidden]) { display: flex; justify-content: center; gap: var(--sp-8); border-top: 1px solid var(--line-row); }
+  .ph-b .mk-sub .nav-tab { min-height: var(--ctl); font-size: var(--fs-md); }
+  .mk-fold[aria-current="page"] { color: var(--ink-strong); box-shadow: inset 0 -2px 0 var(--accent); }
+
+  /* C · a bar at the bottom, the game's pictures over short names, in reach of the thumb; the
+     pair you're in on a row under the header. */
+  .ph-c .nav-tabs { display: none; }
+  .ph-c .nav { min-height: 0; }
+  .ph-c .mk-sub:not([hidden]) { display: flex; justify-content: center; gap: var(--sp-8); width: 100%; }
+  .ph-c .mk-sub .nav-tab { min-height: var(--ctl); font-size: var(--fs-md); }
+  .ph-c .mk-dock {
+    display: grid; grid-template-columns: repeat(5, 1fr); position: fixed; z-index: 40; left: 0; right: 0; bottom: 0;
+    padding: var(--sp-1) 0 calc(var(--sp-1) + env(safe-area-inset-bottom)); background: var(--scene-bg);
+    border-top: 1px solid color-mix(in oklab, var(--filigree) 22%, transparent);
+  }
+  .mk-dock a { display: flex; flex-direction: column; align-items: center; gap: var(--sp-half); min-height: 52px; justify-content: center; font-size: var(--fs-2xs); letter-spacing: var(--track-label); color: var(--muted); text-decoration: none; }
+  .mk-dock img { width: var(--sp-6); height: var(--sp-6); object-fit: contain; filter: grayscale(1) brightness(0.7); }
+  .mk-dock a[aria-current="page"] { color: var(--ink-strong); }
+  .mk-dock a[aria-current="page"] img { filter: drop-shadow(0 0 6px color-mix(in oklab, var(--spotlight) 50%, transparent)); }
+
+  /* D · one row that scrolls sideways, faded at the edges. */
+  .ph-d .nav-tabs { flex-wrap: nowrap; justify-content: flex-start; gap: var(--sp-6); overflow-x: auto; scrollbar-width: none; margin-inline: calc(var(--page-pad) * -1); padding-inline: var(--page-pad);
+    mask-image: linear-gradient(90deg, transparent, #000 var(--sp-6), #000 calc(100% - var(--sp-8)), transparent); }
+  .ph-d .nav-tab { flex: none; white-space: nowrap; font-size: var(--fs-md); }
+  .ph-d .nav-sep { display: block; flex: none; }
+
+  /* Header B and C on a phone fall back to the site's own phone header. */
+  .hd-b .masthead { display: flex; }
+  .hd-b .mk-one-title, .hd-b .mk-one-end { display: none; }
+  .hd-c .nav-tabs { gap: var(--sp-1) var(--sp-3); }
+  .hd-c .nav-tab .save-fleur { display: none !important; }
+  .hd-c .mk-shoulder { display: none; }
+  .fr-c .screen-head { padding: 0 var(--sp-2); }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="atmos" aria-hidden="true">
+    <i style="--x:12%;--s:2px;--t:26s;--d:-3s;--o:.7;--dx:40px;--tilt:3deg"></i><i style="--x:28%;--s:3px;--t:31s;--d:-12s;--o:.5;--dx:-30px;--tilt:-2deg"></i>
+    <i style="--x:47%;--s:2px;--t:24s;--d:-8s;--o:.8;--dx:20px;--tilt:2deg"></i><i style="--x:63%;--s:2.5px;--t:35s;--d:-20s;--o:.6;--dx:-50px;--tilt:-4deg"></i>
+    <i style="--x:78%;--s:2px;--t:28s;--d:-15s;--o:.7;--dx:60px;--tilt:5deg"></i><i style="--x:91%;--s:3px;--t:39s;--d:-2s;--o:.5;--dx:-20px;--tilt:-1deg"></i>
+  </div>
+  <div class="shell">
+    <header class="masthead">
+      <div class="mh-tools">
+        <div class="seg langsel" role="group"><button type="button" aria-pressed="true">EN</button><button type="button" aria-pressed="false">ES</button></div>
+      </div>
+      <a class="brand" href="#" data-view="home">
+        <svg class="mk-crown" viewBox="0 0 200 28" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" aria-hidden="true">
+          <g id="mk-half">
+            <path d="M93 14 C84 14 78 7 69 7 C61 7 58 13 62 16.5 C65 19 69.5 16.5 68 13.5"/>
+            <path d="M62 16.5 C50 22 30 21 10 14"/>
+            <path d="M10 14 C6 12 5.5 8.5 9 8 C11.5 7.8 12 10.5 10.5 11.5"/>
+            <path d="M78 9 C74 3 66 1.5 58 3.5"/>
+          </g>
+          <use href="#mk-half" transform="translate(200 0) scale(-1 1)"/>
+          <path d="M100 5 L105 14 L100 23 L95 14 Z"/><path d="M100 1 V5 M100 23 V27"/>
+        </svg>
+        <p class="title">Pharloom Calculator</p>
+      </a>
+      <a class="mh-save" href="#"><span class="mh-save-fig"><span class="mh-save-light" aria-hidden="true"></span><img src="assets/hornet/resting.png" alt=""></span><span class="mh-save-lbl">SELECT SAVE</span></a>
+    </header>
+    <nav class="nav" id="nav" aria-label="Screens">
+      <span class="mk-one"><a class="mk-one-title" href="#" data-view="home">Pharloom<br>Calculator</a></span>
+      <span class="mk-shoulder"><kbd>Q</kbd></span>
+      <div class="nav-tabs">
+        <a class="nav-tab" href="#" data-view="home">Your game</a>
+        <a class="nav-tab is-fold-hide" href="#" data-view="game">Inventory</a>
+        <a class="nav-tab" href="#" data-view="progress">Progress <span class="nav-num">63%</span></a>
+        <a class="nav-tab" href="#" data-view="map">Map</a>
+        <a class="nav-tab" href="#" data-view="journal">Journal <span class="nav-num">120/236</span></a>
+        <span class="nav-sep" aria-hidden="true"></span>
+        <a class="nav-tab is-fold-hide" href="#" data-view="tools">Crest</a>
+        <a class="nav-tab is-fold-hide" href="#" data-view="fight">Combat</a>
+        <a class="nav-tab mk-fold" href="#" data-view="tools" data-fold="tools">Tools</a>
+      </div>
+      <span class="mk-shoulder"><kbd>E</kbd></span>
+      <span class="mk-one"><span class="mk-one-end">
+        <div class="seg langsel" role="group"><button type="button" aria-pressed="true">EN</button><button type="button" aria-pressed="false">ES</button></div>
+        <a class="mh-save" href="#"><span class="mh-save-fig"><span class="mh-save-light" aria-hidden="true"></span><img src="assets/hornet/resting.png" alt=""></span><span class="mh-save-lbl">SELECT SAVE</span></a>
+      </span></span>
+      <div class="mk-sub" data-pair="tools" hidden><a class="nav-tab" href="#" data-view="tools">Crest</a><a class="nav-tab" href="#" data-view="fight">Combat</a></div>
+      <div class="mk-sub" data-pair="home" hidden><a class="nav-tab" href="#" data-view="home">Your game</a><a class="nav-tab" href="#" data-view="game">Inventory</a></div>
+    </nav>
+    <main class="screens">
+      <section class="screen">
+        <span class="bk tl"></span><span class="bk tr"></span><span class="bk bl"></span><span class="bk br"></span>
+        <svg class="mk-corner tl" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><path d="M4 46 V18 C4 10 10 4 18 4 H46"/><path d="M10 30 C10 16 16 10 30 10"/><path d="M18 18 C21 14 26 15 25 19 C24 22 20 21 21 18.5"/><path d="M4 4 L8 8"/></svg>
+        <svg class="mk-corner tr" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><path d="M4 46 V18 C4 10 10 4 18 4 H46"/><path d="M10 30 C10 16 16 10 30 10"/><path d="M18 18 C21 14 26 15 25 19 C24 22 20 21 21 18.5"/><path d="M4 4 L8 8"/></svg>
+        <svg class="mk-corner bl" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><path d="M4 46 V18 C4 10 10 4 18 4 H46"/><path d="M10 30 C10 16 16 10 30 10"/><path d="M18 18 C21 14 26 15 25 19 C24 22 20 21 21 18.5"/><path d="M4 4 L8 8"/></svg>
+        <svg class="mk-corner br" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><path d="M4 46 V18 C4 10 10 4 18 4 H46"/><path d="M10 30 C10 16 16 10 30 10"/><path d="M18 18 C21 14 26 15 25 19 C24 22 20 21 21 18.5"/><path d="M4 4 L8 8"/></svg>
+        <header class="screen-head">
+          <h2 class="sec-title screen-title" id="mk-title">Crest</h2>
+          <svg class="rule" width="220" height="12" viewBox="0 0 220 12" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M0 6 H92"/><path d="M128 6 H220"/><path d="M110 1 L116 6 L110 11 L104 6 Z"/></svg>
+        </header>
+        <div class="mk-ctl" style="margin-bottom: var(--sp-6)">
+          <div class="seg"><button type="button" aria-pressed="true">Build</button><button type="button" aria-pressed="false">Compare</button></div>
+          <button type="button" class="btn">Share</button>
+        </div>
+        <div class="mk-body">
+          <div class="mk-col mk-crest">
+            <img src="assets/icons/crests/hunter.webp" alt="">
+            <b>Hunter</b>
+            <span>Stalk prey and attack with lethal strikes. Build focus with successive strikes.</span>
+          </div>
+          <div class="mk-col">
+            <span class="lbl">Crests</span>
+            <div class="mk-icons"><img src="assets/icons/crests/hunter.webp" alt=""><img src="assets/icons/crests/reaper.webp" alt=""><img src="assets/icons/crests/wanderer.webp" alt=""><img src="assets/icons/crests/beast.webp" alt=""><img src="assets/icons/crests/witch.webp" alt=""><img src="assets/icons/crests/architect.webp" alt=""><img src="assets/icons/crests/shaman.webp" alt=""></div>
+            <span class="lbl">Tools</span>
+            <div class="mk-icons"><img src="assets/icons/tools/claw-mirror.webp" alt=""><img src="assets/icons/tools/barbed-bracelet.webp" alt=""><img src="assets/icons/tools/cogfly.webp" alt=""><img src="assets/icons/tools/longclaw.webp" alt=""><img src="assets/icons/tools/ascendants-grip.webp" alt=""><img src="assets/icons/items/tool-pouch.webp" alt=""><img src="assets/icons/items/crafting-kit.webp" alt=""></div>
+          </div>
+          <div class="mk-col">
+            <p class="mk-sec">The Needle</p>
+            <div class="mk-row"><span>Slash</span><span class="val">21</span></div>
+            <div class="mk-row"><span>Damage per second</span><span class="val">51.2</span></div>
+            <div class="mk-row"><span>Needle Strike</span><span class="val">58</span></div>
+            <p class="mk-sec">Hornet</p>
+            <div class="mk-row"><span>Masks</span><span class="val">10</span></div>
+            <div class="mk-row"><span>Silk</span><span class="val">18</span></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="colophon">
+      <p>Unofficial fan project, free and non-commercial, not affiliated with <a href="#">Team Cherry</a>. Hollow Knight: Silksong and its artwork are © Team Cherry.</p>
+      <p>Data from <a href="#">hollowknight.wiki</a>, under <a href="#">CC BY-SA 3.0</a>; game texts from its official translation.</p>
+    </footer>
+  </div>
+  <nav class="mk-dock" aria-label="Screens">
+    <a href="#" data-view="home" data-dock="home"><img src="assets/hornet/resting.png" alt="">Game</a>
+    <a href="#" data-view="progress" data-dock="progress"><img src="assets/icons/items/mask-shard.webp" alt="">Progress</a>
+    <a href="#" data-view="map" data-dock="map"><img src="assets/icons/items/farsight.webp" alt="">Map</a>
+    <a href="#" data-view="journal" data-dock="journal"><img src="assets/icons/items/hunters-journal.webp" alt="">Journal</a>
+    <a href="#" data-view="tools" data-dock="tools"><img src="assets/icons/crests/hunter.webp" alt="">Tools</a>
+  </nav>
+</div>
+
+<div class="mk-bar" id="mk-bar">
+  <span class="mk-grp"><b>Header</b><button data-k="header" data-v="a">A · crown</button><button data-k="header" data-v="b">B · one bar</button><button data-k="header" data-v="c">C · pause menu</button></span>
+  <span class="mk-sep"></span>
+  <span class="mk-grp"><b>Frame</b><button data-k="frame" data-v="a">A · as now</button><button data-k="frame" data-v="b">B · no title</button><button data-k="frame" data-v="c">C · filigree</button></span>
+  <span class="mk-sep"></span>
+  <span class="mk-grp"><b>Phone bar</b><button data-k="phone" data-v="a">A · wrap</button><button data-k="phone" data-v="b">B · fold</button><button data-k="phone" data-v="c">C · bottom</button><button data-k="phone" data-v="d">D · scroll</button></span>
+  <span class="mk-sep"></span>
+  <span class="mk-grp"><b>Figures</b><button data-k="figs" data-v="on">on</button><button data-k="figs" data-v="off">off</button></span>
+  <span class="mk-sep"></span>
+  <span class="mk-grp"><b>Width</b><button data-k="w" data-v="1440">desktop</button><button data-k="w" data-v="390">390</button></span>
+  <span class="mk-note" id="mk-note"></span>
+</div>
+
+<script>
+(function () {
+  const DEF = { header: 'a', frame: 'a', phone: 'b', figs: 'on', w: '1440', view: 'tools' };
+  const q = new URLSearchParams(location.search);
+  const st = Object.fromEntries(Object.keys(DEF).map((k) => [k, q.get(k) || DEF[k]]));
+  const inner = q.has('inner');
+  const html = document.documentElement;
+  const NAMES = { home: 'Your game', game: 'Inventory', progress: 'Progress', map: 'Map', journal: 'Journal', tools: 'Crest', fight: 'Combat' };
+  const PAIR = { tools: 'tools', fight: 'tools', home: 'home', game: 'home' };
+  const NOTES = {
+    header: { a: 'A · as now, tighter: a drawn filigree crowns the title (the sibling uses the Hall of Gods tablet).',
+              b: 'B · one sticky row of 64 px: title, tabs, language and save. The title never scrolls away.',
+              c: 'C · the pause menu: pane names in capitals, the current one lit between the pointers, Q / E at the ends.' },
+    frame: { a: 'A · as now: brackets, the title repeated under the bar, the rule.',
+             b: 'B · no repeated title (kept for screen readers): the head only holds the screen\'s own controls.',
+             c: 'C · a filigree line with curled corners, the title set into its top edge.' },
+    phone: { a: 'A · wrap (as now): Combat drops to a second row.', b: 'B · the sibling: Crest and Combat fold into Tools, Your game and Inventory into Your game, with a second row for the pair.',
+             c: 'C · a bar at the bottom with the game\'s pictures; the pair on a row under the header.', d: 'D · one row that scrolls sideways, faded at the edges.' },
+  };
+  const url = (over) => '?' + new URLSearchParams(Object.assign({}, st, over)).toString();
+
+  function apply() {
+    html.className = `hd-${st.header} fr-${st.frame} ph-${st.phone}${st.figs === 'on' ? ' figs-on' : ''}${inner ? ' is-inner' : ''}`;
+    for (const a of document.querySelectorAll('[data-view]')) {
+      const on = a.dataset.fold ? PAIR[st.view] === 'tools' : a.dataset.dock ? (PAIR[st.view] || st.view) === a.dataset.dock : a.dataset.view === st.view;
+      if (on) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    }
+    // Your game's pair is folded in B and C only: its first tab stays lit for Inventory too.
+    const home = document.querySelector('.nav-tabs > [data-view="home"]');
+    if (st.view === 'game') home.setAttribute('aria-current', 'page');
+    for (const s of document.querySelectorAll('.mk-sub')) s.hidden = s.dataset.pair !== PAIR[st.view];
+    document.getElementById('mk-title').textContent = NAMES[st.view];
+    // Header C: the menu's pointers either side of the current tab.
+    const F = '<svg viewBox="0 0 12 20" fill="currentColor" aria-hidden="true"><path d="M1 10 C4.5 9.4 7.2 7.2 8.6 2.4 C9 6.4 10 8.8 11.6 10 C10 11.2 9 13.6 8.6 17.6 C7.2 12.8 4.5 10.6 1 10 Z"/><circle cx="2.4" cy="10" r="1.3"/></svg>';
+    for (const a of document.querySelectorAll('.nav-tabs > .nav-tab')) {
+      if (!a.querySelector('.save-fleur')) a.insertAdjacentHTML('beforeend', `<span class="save-fleur is-l">${F}</span><span class="save-fleur is-r">${F}</span>`);
+    }
+    for (const b of document.querySelectorAll('.mk-bar button')) b.setAttribute('aria-pressed', String(st[b.dataset.k] === b.dataset.v));
+    document.getElementById('mk-note').textContent = [NOTES.header[st.header], NOTES.frame[st.frame], st.w === '390' ? NOTES.phone[st.phone] : 'Phone bar: switch the width to 390 to see it.'].join('   ');
+  }
+
+  if (st.w === '390' && !inner) {
+    html.classList.add('is-framed');
+    document.querySelector('.page').remove();
+    const f = document.createElement('iframe');
+    f.className = 'mk-phone'; f.title = 'The page at 390 px'; f.src = location.pathname + url({ inner: 1 });
+    document.body.prepend(f);
+  }
+  apply();
+  if (inner) html.classList.add('is-inner');
+  // Phone D: the current tab scrolled into view, as the site would.
+  const cur = document.querySelector('.nav-tabs > [aria-current="page"]');
+  if (cur && st.phone === 'd') cur.scrollIntoView({ inline: 'center', block: 'nearest' });
+
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('.mk-bar button');
+    if (b) { location.search = url({ [b.dataset.k]: b.dataset.v }); return; }
+    const a = e.target.closest('[data-view]');
+    if (a) { e.preventDefault(); st.view = a.dataset.view; history.replaceState(null, '', url(inner ? { inner: 1 } : {})); apply(); }
+  });
+})();
+</script>
+</body>
+</html>

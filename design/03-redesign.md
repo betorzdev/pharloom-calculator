@@ -1,0 +1,115 @@
+# The UI and UX review: plan and status
+
+A review of the whole site's look and behaviour, started on 28 September 2026 at Albert's
+request. It goes **from the most global to each tab**, one step at a time, and every step is
+decided by Albert between options, never assumed. This file is the thread: any agent picking
+the work up reads it first, then the step it's on.
+
+## How each step goes
+
+1. **Look at the site as it is.** Screenshots of the step's screens at 1440 px and 390 px
+   (headless Chrome over `file://`: `google-chrome --headless=new --window-size=1440,2200
+   --screenshot=… "file://…/index.html#view=<v>"`), and the code behind them (`css/app.css`,
+   `js/app*.js`).
+2. **Think the redesign through**: what's wrong or weak, against `01-web.md` (the rules) and
+   `02-silksong.md` (the game's measured visual language), and what the game itself does on the
+   equivalent screen.
+3. **Look at the sibling**, hallownest-calculator (`../hollownest-calculator/`, live at
+   betorzdev.github.io/hallownest-calculator/): what it solved on the same piece, and whether it's
+   worth bringing over. Its `design/` has the earlier rounds (`10-restructure.md`,
+   `11-components.md` and the `*-variants.html`).
+4. **Draw the options** in `design/NN-<step>-variants.html`: the site's real CSS
+   (`<base href="../">`, `css/tokens.css`, `css/app.css`) plus the mockup's own rules, a bar at the
+   bottom to switch between options and widths, and the choice in the URL (`?header=b&w=390`).
+   Not part of the site: `index.html` doesn't load it, as `kb/` and the rest of `design/`.
+5. **Propose in plan mode**, with the options and a recommendation, and pointing at the variants
+   page. Albert decides.
+6. **Build what was decided**, update `docs/guide.md` if the page changed, `npm test`, and mark
+   the step here (status, decision and date). Albert commits.
+
+## The steps
+
+| # | Step | Status | Variants |
+|---|---|---|---|
+| 1 | **The shell**: header, screen bar (desktop and phone), the screen's frame and title, footer and About, the atmosphere | **Built** (28 Sep) | [`04-shell-variants.html`](04-shell-variants.html) |
+| 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Next** | |
+| 3 | Your game (`home`) and Saves (`saves`) | To do | |
+| 4 | Inventory (`game`) | To do | |
+| 5 | Progress (`progress`) | To do | |
+| 6 | Map (`map`) | To do | |
+| 7 | Journal (`journal`) | To do | |
+| 8 | Crest (`tools`) | To do | |
+| 9 | Combat (`fight`) | To do | |
+| 10 | The static pages (`tools/pages*.js`: `bosses/`, `es/jefes/`, the landing folders): they inherit steps 1 and 2; only what's theirs | To do | |
+
+## Step 1 · The shell
+
+### What there is (28 September 2026)
+
+- **Header**: the language on the left (EN ES), the title centred in Cinzel 900, the save
+  selector on the right (Hornet at a bench and «Select save»). Nothing above the title. About
+  150 px of header and bar before any content.
+- **Screen bar**: seven tabs in Spectral, lowercase, `Your game · Inventory · Progress · Map ·
+  Journal | Crest · Combat`, sticky, Hornet walking to the current one. No figures on it.
+- **The screen**: a black plate (`--inv-bg`) with four L-shaped corner brackets, and the tab's
+  own name repeated as its title (Cinzel caps over the rule with the diamond): about 90 px on
+  every screen that the bar already says.
+- **Footer**: three centred lines under a hairline. **About** (only on the page's own screen
+  and language): the SEO text, the FAQ and the links to the landing pages.
+- **Atmosphere**: the main menu's red light from the bottom, the vignette, 40 embers, the grain.
+- **Phone (390 px)**: the title on the left, Hornet with «Saves» and the language on the right;
+  the seven tabs wrap into two rows and **Combat is left alone on the second one**
+  (`css/app.css` already says the fold into one tab "waits for the screens to exist": they
+  exist now).
+
+### What the sibling has that this doesn't
+
+- A **filigree over the title** (the Hall of Gods tablet's header, the game's own art) that
+  lights up on hover: the header has a crown and the title reads as the way home.
+- **Share** next to the language, in the header, instead of inside one screen.
+- **Figures on the bar**: `Progress 65%`, `Journal 2/146`, when a save is loaded.
+- **On a phone, the tools fold into one tab** with a second row for its screens (and Your game
+  / Inventory the same way), so the bar is always one row.
+
+### What's weak
+
+1. The header spends a lot of height and says little; the title has no ornament where every
+   screen below is framed in filigree.
+2. The screen's title repeats the tab. The frame's L brackets are the generic ones; the game's
+   pause menu frame is a filigree, not a bracket.
+3. The phone bar wraps; one tab alone on a second row reads as a bug.
+4. The bar doesn't tell you anything about your game (the sibling's figures).
+
+### The options (drawn in `04-shell-variants.html`)
+
+- **Header**: A · as now, tighter, with a drawn filigree over the title (the sibling's crown in
+  the pause menu's white); B · one row, the title small on the left, the tabs, the language and
+  the save on the right: one sticky bar of 64 px; C · the pause menu: the tabs as the game's
+  pane names, in Cinzel capitals, centred, the current one lit between the menu's pointers.
+- **The screen's frame and title**: A · as now; B · no repeated title (the bar says it): the
+  frame keeps its corners and the head only holds the screen's own controls; C · a drawn
+  filigree frame with the title set into its top edge, as the pause menu's.
+- **The phone's bar**: A · wrap (as now); B · the tools folded into one tab with a second row
+  (the sibling); C · a bar at the bottom with the game's icons, in reach of the thumb;
+  D · one row that scrolls sideways, faded at the edges.
+- **Figures on the bar** (the sibling's): on or off.
+
+### Decision (28 September 2026)
+
+Albert chose **header A**, **frame C**, **phone bar B** and **figures on**. Built:
+
+- **Header**: the drawn crown (`CROWN` in `js/app.js`, `.mh-crown`) over the title, in two rows
+  as the sibling's (the brand spans both, subgrid); it lights up on hover and hides on a phone.
+- **Frame**: `App.brackets` is now the inset filigree line (`.frame-line`) and the curl at each
+  corner (`.bk`, one drawing mirrored with `scale`); `App.screenHead` sets the title on the line
+  between two diamonds, and what went under the title (notes, choices, Share) opens the screen in
+  `.screen-lead`. Tokens: `--lamp-frame`, `--frame-inset`, `--frame-corner`. Saves draws its own
+  plate, so its `.screen` has no padding.
+- **Phone bar**: the sibling's fold, ported (`index.html`, `renderNav`): `#nav-tools` («Build»:
+  "Tools" would be the game's Tools; the site already says «build» in both languages),
+  `#nav-sub` and `#nav-sub-game`, `--sticky-h` by `:has()` while a second row shows.
+- **Figures**: `paintNavNums` in `js/app.js`, from `SS.completion.count` and `App.bookDone` /
+  `App.bookTotal`; empty (and hidden) in Free mode.
+
+Left for later steps: the footer and the About block weren't touched (step 3, Your game, is
+where the About shows); the gap between the header and the bar could still shrink.
