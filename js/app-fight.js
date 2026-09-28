@@ -52,7 +52,24 @@
         <div class="ft-mods"><span class="save-k">${esc(t('ftMods'))}</span><ol>${mods}</ol>
           <p class="pg-note">${esc(t('ftModsNote', { n: num(lv), k: num(kit) }))}</p></div>
         ${st.length ? `<p class="ft-stagger"><span class="save-k">${esc(t('ftStagger'))}</span> ${esc(st.map((x) => t('ftHits', { n: num(x) })).join(' · '))}</p>` : ''}
+        ${phasesHtml(f, r, hp)}
       </div>`;
+  }
+
+  /* Its phases (js/phases.js, the game's own FSMs): where each one starts, and how many slashes
+     of yours get there from full health (js/engine.js, phases). */
+  function phasesHtml(f, r, hp) {
+    const list = E.phases(SS.phases[f.id], hp, r.needle.attacks[0]);
+    if (!list.length) return '';
+    const bars = !!(SS.phases[f.id] || {}).bars;
+    const items = list.map((x) => {
+      const where = bars ? t('ftPhaseAfter', { n: num(x.n), x: num(x.dealt) })
+        : t(x.share ? 'ftPhaseAt' : 'ftPhaseAtHp', { n: num(x.n), x: num(x.left), p: num(Math.round(x.share * 100)) });
+      const u = x.uses == null ? '' : ' · ' + t(x.uses === 1 ? 'ftPlanSlash' : 'ftPlanSlashes', { n: num(x.uses) });
+      return `<li>${esc(where + u)}</li>`;
+    }).join('');
+    return `<div class="ft-phases"><span class="save-k">${esc(t('ftPhases'))}</span><ul>${items}</ul>
+      <p class="pg-note">${esc(t(bars ? 'ftPhasesBarsNote' : 'ftPhasesNote'))}</p></div>`;
   }
 
   // One row: what, the hits of one use, what a use does, and the uses that kill.

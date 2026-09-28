@@ -822,9 +822,17 @@ for, from a full spool, no Bind; minimal by construction, tested). Then (28 Sept
 Binds**: what that fight's silk leaves (`engine.binds`: the spool, a strand a slash, less the
 casts; the Reserve Bind's free one) and how many hits of each boss attack Hornet takes with them
 (`engine.endure`: a Bind when it heals in full or the next hit would kill; Druid's Eye's silk per
-hit taken; Silk Hearts' regeneration left out, since it needs the fight's length). Left: the
-phases' bars one by one (only the Forebrothers carry them in the data),
-the per-boss pages (phase 8's) and the gauntlets (phase 7's).
+hit taken; Silk Hearts' regeneration left out, since it needs the fight's length). Then (28 September) **the
+phases**, from the game's own files: a boss's FSM takes its health when the fight starts
+(GetHP), makes a share of it (MultiplyIntByFloat: Lace's second fight at 0.75 and 0.4) and a
+CompareHP moves it on at or below that; or each phase has a health of its own (P1 HP…, which add
+up to the fight's: Grand Mother Silk's six, 1,224; the Dancers'). `tools/extract-phases.py` runs
+those actions over each FSM and joins it to its boss by the object's journal record (a table by
+scene for the seven whose FSM isn't on it, and Lace's two fights): `js/phases.js`, 23 bosses, on
+the Combat card with the slashes to reach each phase and on the boss pages. The others change
+phase some other way, or not at all; the share's rounding (MultiplyIntByFloat's) isn't read, so
+the site rounds to the nearest. With the per-boss pages (phase 8's) and the gauntlets (phase
+7's), **phase 5 is done**.
 
 **Phase 6's spike is done** (the same day): the map comes out of the game's files (§4.7), so the
 fallback (a schematic map from the randomizer's room graph) isn't needed. The author decided to

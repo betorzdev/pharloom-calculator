@@ -295,6 +295,28 @@
     }
   }
 
-  SS.engine = { roundHalfEven, normalize, modsFor, hitsOf, usesToKill, interval, compute, plan, binds, endure };
+  /* A boss's phases (js/phases.js, from the game's FSMs) against hp: each one from the second,
+     with the health it starts at, the damage it takes to get there, and the slashes (h: an attack
+     of compute(), its uses as usesToKill counts them). The FSM moves on when the health is at or
+     below the threshold, a share of the health it started with (rounded to the nearest: the
+     game's MultiplyIntByFloat isn't read) or a number. Bars: each phase with its own health, all
+     together the fight's; with another health (black-threaded) they no longer add up, and aren't
+     used. → [{ n, left, share, dealt, uses }] */
+  function phases(P, hp, h) {
+    if (!P || !hp) return [];
+    const out = [];
+    if (P.bars && P.bars.reduce((a, b) => a + b, 0) === hp) {
+      let dealt = 0;
+      P.bars.slice(0, -1).forEach((b, i) => { dealt += b; out.push({ n: i + 2, left: hp - dealt, share: null, dealt }); });
+    } else {
+      for (const a of P.at || []) {
+        const left = a < 1 ? Math.round(hp * a) : a;
+        if (left > 0 && left < hp) out.push({ n: out.length + 2, left, share: a < 1 ? a : null, dealt: hp - left });
+      }
+    }
+    return out.map((x) => ({ ...x, uses: h ? usesToKill(h, x.dealt) : null }));
+  }
+
+  SS.engine = { roundHalfEven, normalize, modsFor, hitsOf, usesToKill, interval, compute, plan, binds, endure, phases };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.engine;
 })();

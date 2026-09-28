@@ -14,6 +14,7 @@
 'use strict';
 require('../js/data.js');
 require('../js/enemies.js');
+const PH = require('../js/phases.js');
 require('../js/journal.js');
 require('../js/engine.js');
 const { data: D, enemies: EN, journal: J, engine: E } = globalThis.SS;
@@ -57,6 +58,10 @@ const W = {
   attacks: { es: 'Ataques, con los nombres de la wiki (el juego no los nombra): {x}.', en: 'Attacks, as the wiki names them (the game doesn\'t): {x}.' },
   masks: { es: '{k} máscaras', en: '{k} masks' },
   stagger: { es: 'Aturdimiento tras {x} golpes.', en: 'Staggered after {x} hits.' },
+  phases: { es: 'Fases, sacadas de los archivos del juego: {x}.', en: 'Phases, from the game\'s own files: {x}.' },
+  phaseAt: { es: 'fase {n} con {x} de vida', en: 'phase {n} at {x} health' },
+  phaseShare: { es: ' ({p} %)', en: ' ({p}%)' },
+  phaseAfter: { es: 'fase {n} tras {x} de daño', en: 'phase {n} after {x} damage' },
   drops: { es: 'Recompensa: {x}.', en: 'Reward: {x}.' },
   more: { es: 'Esta página abre la calculadora de daño con este jefe elegido: con tu partida o tu build, el daño de cada uno de tus ataques, cuántos hacen falta y lo que te hace a ti cada uno de los suyos.',
     en: 'This page opens the damage calculator with this boss picked: with your save or your build, each of your attacks\' damage, how many it takes, and what each of its attacks does to you.' },
@@ -125,6 +130,11 @@ function bossPage(page) {
     return a.name.en + (m > 1 ? ` (${fill(W.masks[lang], { k: num(m, lang) })})` : '');
   }).join(', ') })));
   if (atk.staggers.length) body.push(both(W.stagger, (lang) => ({ x: list([...new Set(atk.staggers)].map((k) => num(k, lang)), lang) })));
+  // Each fight's phases (js/phases.js), where the game's FSM moves on.
+  const ph = fought.map((f) => [f, E.phases(PH[f.id], f.hp)]).filter(([, l]) => l.length);
+  if (ph.length) body.push(both(W.phases, (lang) => ({ x: ph.map(([f, l]) => (ph.length > 1 || fought.length > 1 ? fightName(f, lang) + ': ' : '')
+    + list(l.map((x) => (PH[f.id].bars ? fill(W.phaseAfter[lang], { n: num(x.n, lang), x: num(x.dealt, lang) })
+      : fill(W.phaseAt[lang], { n: num(x.n, lang), x: num(x.left, lang) }) + (x.share ? fill(W.phaseShare[lang], { p: num(Math.round(x.share * 100), lang) }) : ''))), lang)).join('; ') })));
   if (info.drops) body.push(both(W.drops, (lang) => ({ x: list(info.drops.map((d) => d[lang]), lang) })));
   body.push(both(W.more, (lang) => ({ n: n(lang) })));
 

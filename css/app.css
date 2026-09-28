@@ -1212,6 +1212,9 @@ kbd {
 .ft-mods li.is-needle b, .ft-mods li.is-kit b { color: var(--ink-strong); }
 .ft-mods li.is-kit:not(.is-needle) { border-style: dashed; border-color: var(--ink-2); }
 .ft-stagger { margin: 0; font-size: var(--fs-sm); color: var(--ink-2); }
+.ft-phases { font-size: var(--fs-sm); color: var(--ink-2); }
+.ft-phases ul { margin: var(--sp-1) 0 0; padding: 0; list-style: none; }
+.ft-phases li { font-variant-numeric: tabular-nums; }
 .ft-list li { grid-template-columns: 28px minmax(0, 1fr) auto auto; grid-template-areas: "i n v u" "i s v u"; column-gap: var(--sp-3); }
 .ft-list.is-theirs li { grid-template-columns: minmax(0, 1fr) auto auto; grid-template-areas: "n v u" "s v u"; }
 .ft-uses { grid-area: u; min-width: 8ch; text-align: right; font-size: var(--fs-xs); color: var(--ink-2); }

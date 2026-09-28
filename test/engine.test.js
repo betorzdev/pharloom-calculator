@@ -155,6 +155,23 @@ test('the Binds a fight pays for, and the hits they let you take', () => {
   assert.deepEqual(E.endure(r2, 5, b2), { hits: 1, binds: 0 });
 });
 
+test('a boss\'s phases: a share of its health or a number, or bars of their own', () => {
+  const h = { total: 21, rest: 21 };
+  // Lace in the Cradle: 800, phases at 75% and 40% → 600 and 320 left, 200 and 480 dealt.
+  assert.deepEqual(E.phases({ at: [0.75, 0.4] }, 800, h), [
+    { n: 2, left: 600, share: 0.75, dealt: 200, uses: 10 }, { n: 3, left: 320, share: 0.4, dealt: 480, uses: 23 }]);
+  // Widow: 70% of 360 and a plain 150.
+  assert.deepEqual(E.phases({ at: [0.7, 150] }, 360).map((x) => x.left), [252, 150]);
+  // Grand Mother Silk's six bars, 1224 in all: each phase after the ones before.
+  const gms = { bars: [100, 192, 240, 110, 242, 340] };
+  assert.deepEqual(E.phases(gms, 1224).map((x) => x.dealt), [100, 292, 532, 642, 884]);
+  // With another health the bars don't add up: none.
+  assert.deepEqual(E.phases(gms, 2448), []);
+  assert.deepEqual(E.phases(null, 800), []);
+  // The file itself: Lace's second fight, the game's own shares.
+  assert.deepEqual(require('../js/phases.js')['lace-the-cradle'], { at: [0.75, 0.4] });
+});
+
 test('how fast: each Crest\'s slash interval from the game\'s own timings, fury, Flea Brew, the seconds to kill', () => {
   const H = require('../js/hero.js');
   const every = (crest, x = {}) => E.compute({ crest, needle: 4, ...x }).needle.speed.interval;

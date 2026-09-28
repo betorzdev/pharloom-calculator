@@ -119,7 +119,10 @@ hits it (Moorwing takes ×2 from a level-0 weapon and ×0.85 from a level-4 one)
 kill it is a question per enemy. Pick it from the list (search in either language, accents
 optional; bosses first, with their Journal portrait); its card shows its health, the
 black-threaded one when it has it (Act 3), its five modifiers with the level your Needle hits at
-and your Crafting Kit's marked, and the hits that stagger it. Beside it, what you do to it: each
+and your Crafting Kit's marked, the hits that stagger it, and a boss's phases (read from the
+game's own files: where each one starts, as a health or a share of it, or after how much damage
+when each phase has a bar of its own, as Grand Mother Silk's six; and the slashes of yours that
+get there from full health). Beside it, what you do to it: each
 of your attacks (the slash, with its product: Needle × your modifiers × its modifier; the
 Crest's own attacks; the Needle Strike; the Silk Skill equipped; each Tool that deals damage,
 with what share of its health a full load takes) and how many uses kill it, counting every hit

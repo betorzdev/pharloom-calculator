@@ -37,7 +37,8 @@ The map is extracted from the installed game: `tools/extract-map.py` (see its he
 game's arenas, which say how a save marks each gauntlet cleared, are listed by
 `tools/extract-battles.py`; each Crest's slash timings, into `js/hero.js`, by
 `tools/extract-hero.py`; how the rooms connect, into `js/graph.js`, by `tools/extract-graph.py`; and where each Journal
-entry's enemies are placed, into `js/journal-rooms.js`, by `tools/extract-journal-rooms.py`.
+entry's enemies are placed, into `js/journal-rooms.js`, by `tools/extract-journal-rooms.py`; and each boss's phases,
+into `js/phases.js`, by `tools/extract-phases.py`.
 
 ## Credits
 
