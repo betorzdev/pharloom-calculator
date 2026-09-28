@@ -23,6 +23,11 @@ Reference material for deciding how this site looks and behaves. It isn't part o
 | [`15-journal-variants.html`](15-journal-variants.html) | Step 7's options: the Journal as the game's pane, the sibling's list, or by area, over a real save |
 | [`16-journal-top-variants.html`](16-journal-top-variants.html) | Step 7, second round: what the Journal shows first, with less text: quiet, next hunts, or areas at a glance |
 | [`17-journal-entry-variants.html`](17-journal-entry-variants.html) | Step 7, third round: an entry's whole drawing, from the game's files: the game's page, the drawing in the sheet, or full screen on a tap |
+| [`18-crest-variants.html`](18-crest-variants.html) | Step 8's options: the Crest with its slots as the game places them, in the game's pane, the sibling's layout, or slot first |
+| [`19-crest-figures-variants.html`](19-crest-figures-variants.html) | Step 8, second round: the top of the Crest screen (figures and levels): the game's HUD, a centred ledger, or the figures under the Crest |
+| [`20-progress-total-variants.html`](20-progress-total-variants.html) | Step 5, retouch: Progress's completion figure: in a ring, engraved between crowns, or over the silk spool |
+| [`21-combat-variants.html`](21-combat-variants.html) | Step 9's options: the duel (the sibling's), the enemy's page, or choose then fight, with Hornet and the Journal's drawings |
+| [`18-bench-variants.html`](18-bench-variants.html) | Step 3's retouch: Hornet sat on nothing on Your game's bench card; every Silksong bench the wiki draws, with her on it, shown on the card lit and unlit (hotlinked, needs the network). Albert chose the save's own bench (`js/benches.js`) |
 
 The design system itself (the black page, one card, filigree only in the corners, figures in a
 sans with tabular figures, the accent only on what's interactive, tints from the game's map

@@ -401,3 +401,23 @@ test('the keys a thing of the 100% lies behind, and the two NPCs whose names the
   assert.deepEqual([H.NPCS['mottled-skarr'].es, H.NPCS['mottled-skarr'].en], ['Skarr Moteado', 'Mottled Skarr']);
   assert.equal(CO.AREAS.GROVE.es, 'Verdania Perdida');
 });
+
+// The Crests as the game's pane draws them (js/crest-slots.js, tools/extract-crests.py): each
+// Crest's slots, per colour open and locked, are the wiki's (js/data.js), and its art is there.
+test('each Crest\'s slots from the game match js/data.js, and each has its art', () => {
+  require('../js/crest-slots.js');
+  const { crestSlots, crestArt } = globalThis.SS;
+  const fs = require('node:fs'), path = require('node:path');
+  const TYPE = ['red', 'blue', 'yellow', 'skill'];
+  for (const c of D.CRESTS) {
+    const rows = c.id === 'hunter' ? crestSlots.hunter : [crestSlots[c.id]];
+    assert.ok(rows && rows.every(Boolean), c.id);
+    rows.forEach((row, i) => {
+      const n = (t, lk) => row.filter((s) => TYPE[s[2]] === t && s[3] === lk).length;
+      for (const t of ['red', 'blue', 'yellow']) assert.deepEqual([n(t, 0), n(t, 1)], c.slots[t], `${c.id} ${t}`);
+      assert.equal(n('skill', 0) + n('skill', 1), c.slots.skill, `${c.id} skill`);
+      const art = c.id === 'hunter' ? `hunter-${i + 1}` : c.id;
+      assert.ok(crestArt[art] && fs.existsSync(path.join(__dirname, '..', 'assets', 'crests', art + '.webp')), art);
+    });
+  }
+});

@@ -1,8 +1,9 @@
 /* js/app-tools.js — the Crest screen («Blasón», PANE_TOOLS): a build and Hornet's figures for it
-   (js/engine.js). On the left the Crest, its text and its slots, filled with the Tools and the
-   Silk Skill; in the middle what makes the build; on the right the figures: the Needle's slash
-   with its modifiers, the Needle Strike, the six Silk Skills, the Tools equipped (damage, ammo,
-   a full load, the refill), silk, masks and the Bind.
+   (js/engine.js), laid out as the game's pane (design/18-crest-variants.html, A): the figures as
+   big numbers and the levels as − N + steppers on top; the Crest drawn as the game draws it, its
+   slots where the game puts them (js/crest-slots.js), filled with the Tools and the Silk Skill
+   worn; beside it every Tool by colour and the Silk Skills, and the one pointed at described
+   with its numbers.
    In a save, the build is what Hornet wears in the game (js/savefile.js, buildOf) at its levels,
    and it's read, not changed, as the Hollow Knight site does: to try builds there's Free mode,
    where everything is at hand and the build is kept in pharloom.build. Shares SS.app with
@@ -63,73 +64,104 @@
       return { st, locked: false, have };
     }
     const b = g.build || {};
-    return { locked: true, st: E.normalize({ ...b, needle: g.needle, kit: g.kit, pouch: g.pouch, masks: g.masks, spools: g.spools, hearts: g.hearts,
+    return { locked: true, have: g, st: E.normalize({ ...b, needle: g.needle, kit: g.kit, pouch: g.pouch, masks: g.masks, spools: g.spools, hearts: g.hearts,
       ...moment }) };
   }
 
   // The build on screen, for the other screens too (Combat, js/app-fight.js).
   App.currentBuild = () => current().st;
 
-  /* ── The Crest and its slots ── */
-  function slotsHtml(st, r) {
+  /* ── The Crest and its slots, as the game's pane draws them (js/crest-slots.js) ──
+     Each colour's Tools go into its slots in the game's order, the open ones first and then those
+     a Memory Locket opens; a locked slot left empty shows the game's locked frame. The
+     Vesticrest's slots float beside the Crest, as the game's "Floating Slots". */
+  const TYPE = ['red', 'blue', 'yellow', 'skill'];
+  const slotName = (kind, id) => pick((kind === 'skill' ? D.SKILLS.find((x) => x.id === id) : TOOL.get(id)).name);
+  function slot(kind, frame, id, x, y) {
+    const style = ` style="--g:url(${SS.crestFrames[frame === 'locked' ? 'locked' : kind]})${x == null ? '' : `;--x:${x};--y:${y}`}"`;
+    if (!id) return `<span class="ct-slot is-${kind}${frame === 'locked' ? ' is-locked' : ''}"${style} aria-hidden="true"></span>`;
+    const name = slotName(kind, id);
+    return `<button type="button" class="ct-slot is-${kind} is-full" data-act="ctDescribe" data-kind="${kind === 'skill' ? 'skill' : 'tool'}" data-value="${id}"${style}
+        title="${esc(name)}" aria-label="${esc(name)}"${NT}><img src="${icon(kind === 'skill' ? 'skills' : 'tools', id)}" alt=""></button>`;
+  }
+  function crestHtml(st, r, locked, have) {
     const crest = D.CRESTS.find((c) => c.id === st.crest);
-    const worn = COLORS.map((c) => st.tools.filter((id) => TOOL.get(id).color === c));
-    const box = (c, id, lockedSlot) => `<span class="ct-slot is-${c}${id ? ' is-full' : ''}${lockedSlot ? ' is-locked' : ''}"${id ? ` title="${esc(pick(TOOL.get(id).name))}"` : ''}>${id ? `<img src="${icon('tools', id)}" alt="${esc(pick(TOOL.get(id).name))}">` : ''}</span>`;
-    const rows = COLORS.map((c, i) => {
-      const s = r.slots[c];
-      const n = Math.max(s.open + s.locked + s.extra, worn[i].length);
-      if (!n) return '';
-      const cells = Array.from({ length: n }, (_, k) => box(c, worn[i][k], k >= s.open && k < s.open + s.locked && !worn[i][k])).join('');
-      return `<div class="ct-row"><span class="ct-row-k">${esc(t('ct_' + c))}</span><span class="ct-row-v">${cells}</span>${s.over ? `<span class="ct-over">${esc(t('ctOver', { n: s.over }))}</span>` : ''}</div>`;
+    const art = st.crest === 'hunter' ? `hunter-${st.hunterStage}` : st.crest;
+    const pos = st.crest === 'hunter' ? SS.crestSlots.hunter[st.hunterStage - 1] : SS.crestSlots[st.crest];
+    const [w, h] = SS.crestArt[art];
+    const worn = Object.fromEntries(COLORS.map((c) => [c, st.tools.filter((id) => TOOL.get(id).color === c)]));
+    worn.skill = st.skill ? [st.skill] : [];
+    const order = pos.map((p, i) => ({ p, i })).sort((a, b) => a.p[2] - b.p[2] || a.p[3] - b.p[3] || a.i - b.i);
+    const used = { red: 0, blue: 0, yellow: 0, skill: 0 };
+    const placed = order.map(({ p }) => {
+      const kind = TYPE[p[2]], id = worn[kind][used[kind]++];
+      return slot(kind, p[3] && !id ? 'locked' : kind, id, p[0], p[1]);
     }).join('');
-    const skill = crest.slots.skill ? `<div class="ct-row"><span class="ct-row-k">${esc(t('cat_skills'))}</span><span class="ct-row-v">
-        <span class="ct-slot is-skill${st.skill ? ' is-full' : ''}">${st.skill ? `<img src="${icon('skills', st.skill)}" alt="${esc(pick(D.SKILLS.find((s) => s.id === st.skill).name))}">` : ''}</span></span></div>` : '';
-    return `<div class="ct-crest">
-        <img class="ct-crest-img" src="${icon('crests', crest.id)}" alt="">
-        <h3 class="ct-crest-name"${NT}>${esc(pick(crest.name))}${st.crest === 'hunter' && st.hunterStage > 1 ? ` <span class="ct-stage">${esc(t('ctStage', { n: st.hunterStage }))}</span>` : ''}</h3>
-        <p class="ct-crest-desc">${esc(pick(st.crest === 'hunter' && st.hunterStage > 1 && crest.evolved ? crest.evolved : crest.desc))}</p>
+    // What doesn't fit the Crest goes on the Vesticrest's slots.
+    const float = COLORS.filter((c) => r.slots[c].extra).map((c) => Array.from({ length: r.slots[c].extra }, () => slot(c, c, worn[c][used[c]++])).join('')).join('');
+    // ‹ › change the Crest (Free mode), past the ones the Inventory's marks say you don't have.
+    const had = D.CRESTS.filter((c) => c.id === 'hunter' || !have || have.crests.includes(c.id));
+    const step = (d) => { const i = had.findIndex((c) => c.id === st.crest); return had[(i + d + had.length) % had.length].id; };
+    const arrow = (d, label) => (locked || had.length < 2 ? '' : `<button type="button" class="icon-btn ct-arrow" data-act="ctCrest" data-value="${step(d)}" aria-label="${esc(label)}" title="${esc(label)}">${d < 0 ? '‹' : '›'}</button>`);
+    return `<div class="ct-crest" style="--w:${w};--h:${h}">
+        <div class="ct-crest-art"><img src="assets/crests/${art}.webp" alt="">${placed}</div>
+        ${float ? `<div class="ct-float">${float}</div>` : ''}
       </div>
-      <div class="ct-slots">${skill}${rows}</div>`;
+      <div class="ct-crest-name">${arrow(-1, t('ctPrev'))}<div><h3${NT}>${esc(pick(crest.name))}</h3>
+        ${st.crest === 'hunter' ? `<span class="ct-stage">${esc(t('ctStage', { n: num(st.hunterStage) }))}</span>` : ''}</div>${arrow(1, t('ctNext'))}</div>`;
   }
 
-  /* ── What makes the build (Free mode: buttons; a save: the same, read) ── */
-  // A row of choices (data-key says which field) and an on/off (data-value says which situation).
-  const seg = (act, key, value, opts, dis) => `<div class="seg sm" role="group">${opts.map(([v, label]) =>
-    `<button type="button" data-act="${act}" data-key="${key}" data-value="${v}" aria-pressed="${String(v) === String(value)}"${dis ? ' disabled' : ''}>${label}</button>`).join('')}</div>`;
+  /* ── The levels: − N + for the Needle, the Kit, the Pouch and the Hunter's evolution (read
+     in a save), and the moment's switches, which a save can switch too. ── */
   const check = (which, on, label) => `<button type="button" class="check" role="switch" aria-checked="${on}" data-act="ctToggle" data-value="${which}">
       <span class="check-box" aria-hidden="true">${App.tick}</span><span>${esc(label)}</span></button>`;
-
-  /* In Free mode with the Inventory's marks, what you don't have yet is a silhouette and can't
-     be put on (the sibling's charms found); the Hunter Crest is always had. */
-  function controls(st, locked, have) {
-    const lacks = (list, id) => !!have && !(list === 'crests' && id === 'hunter') && !have[list].includes(id);
-    const off = (list, id) => (lacks(list, id) ? ' is-missing' : '');
-    const dis = (list, id) => (lacks(list, id) ? ` disabled aria-description="${esc(t('invMissing'))}"` : '');
-    const crests = D.CRESTS.map((c) => `<li><button type="button" class="ct-pick${st.crest === c.id ? ' is-on' : ''}${off('crests', c.id)}"${dis('crests', c.id)} data-act="ctCrest" data-value="${c.id}"
-        aria-pressed="${st.crest === c.id}" title="${esc(pick(c.name))}"${locked ? ' disabled' : ''}${NT}><img src="${icon('crests', c.id)}" alt="${esc(pick(c.name))}"></button></li>`).join('');
-    const lv = (n) => [0, 1, 2, 3, 4].map((v) => [v, num(v)]);
+  // The game's upgrade pips, lit up to the level: − and + either side, and in Free mode a pip sets it.
+  function stepper(key, v, min, max, label, img, locked) {
+    const btn = (d, sign, what) => (locked ? '' : `<button type="button" class="icon-btn" data-act="ctLevel" data-key="${key}" data-value="${v + d}"
+        ${v + d < min || v + d > max ? 'disabled' : ''} aria-label="${esc(t(what, { what: label }))}" title="${esc(t(what, { what: label }))}">${sign}</button>`);
+    const pips = Array.from({ length: max - min + (min ? 1 : 0) }, (_, i) => {
+      const level = min ? min + i : i + 1, on = level <= v;
+      return locked ? `<i class="ct-pip${on ? ' is-on' : ''}"></i>`
+        : `<button type="button" class="ct-pip${on ? ' is-on' : ''}" data-act="ctLevel" data-key="${key}" data-value="${level === v && !min ? v - 1 : level}" aria-label="${esc(label + ' ' + num(level))}"></button>`;
+    }).join('');
+    return `<span class="ct-lv" role="group" aria-label="${esc(label + ': ' + num(v))}">${img ? `<img src="${img}" alt="">` : ''}<span class="ct-lv-k"${NT}>${esc(label)}</span>
+        ${btn(-1, '−', 'invLess')}<span class="ct-pips">${pips}</span>${btn(1, '+', 'invMore')}</span>`;
+  }
+  function levels(st, locked) {
+    const item = (id) => pick(D.ITEMS.find((x) => x.id === id).name);
     const situ = [
       st.crest === 'hunter' && st.hunterStage >= 2 ? check('focus', st.focus, t('ctFocus')) : '',
       st.crest === 'beast' ? check('fury', st.fury, t('ctFury')) : '',
       st.tools.includes('flintslate') ? check('flint', st.flint, t('ctFlint')) : '',
       check('challenge', st.challenge, t('ctChallenge')),
     ].join('');
-    const tools = locked ? '' : COLORS.map((c) => `<ul class="ct-tools">${D.TOOLS.filter((x) => x.color === c).map((x) => {
-      const on = st.tools.includes(x.id);
-      return `<li><button type="button" class="ct-tool is-${c}${on ? ' is-on' : ''}${off('tools', x.id)}"${dis('tools', x.id)} data-act="ctTool" data-value="${x.id}" aria-pressed="${on}" title="${esc(pick(x.name))}"${NT}>
-        <img src="${icon('tools', x.id)}" alt="${esc(pick(x.name))}" loading="lazy"></button></li>`; }).join('')}</ul>`).join('');
-    const skills = locked ? '' : `<ul class="ct-tools">${D.SKILLS.map((x) => `<li><button type="button" class="ct-tool is-skill${st.skill === x.id ? ' is-on' : ''}${off('skills', x.id)}"${dis('skills', x.id)}
-        data-act="ctSkill" data-value="${x.id}" aria-pressed="${st.skill === x.id}" title="${esc(pick(x.name))}"${NT}><img src="${icon('skills', x.id)}" alt="${esc(pick(x.name))}"></button></li>`).join('')}</ul>`;
-    return `<div class="ct-controls">
-        <div class="ct-field"><span class="lbl">${esc(t('cat_crests'))}</span><ul class="ct-crests">${crests}</ul></div>
-        ${st.crest === 'hunter' ? `<div class="ct-field"><span class="lbl">${esc(t('ctEvolution'))}</span>${seg('ctLevel', 'hunterStage', st.hunterStage, [[1, num(1)], [2, num(2)], [3, num(3)]], locked)}</div>` : ''}
-        <div class="ct-field"><span class="lbl"${NT}>${esc(pick(D.NEEDLES[st.needle].name))}</span>${seg('ctLevel', 'needle', st.needle, lv(), locked)}</div>
-        <div class="ct-field"><span class="lbl"${NT}>${esc(pick(D.ITEMS.find((x) => x.id === 'crafting-kit').name))}</span>${seg('ctLevel', 'kit', st.kit, lv(), locked)}</div>
-        <div class="ct-field"><span class="lbl"${NT}>${esc(pick(D.ITEMS.find((x) => x.id === 'tool-pouch').name))}</span>${seg('ctLevel', 'pouch', st.pouch, lv(), locked)}</div>
-        <div class="ct-field"><span class="lbl">${esc(t('ctSituation'))}</span><div class="ct-checks">${situ}</div></div>
-        ${locked ? '' : `<div class="ct-field is-wide"><span class="lbl">${esc(t('cat_tools'))}</span>${tools}</div>
-        <div class="ct-field is-wide"><span class="lbl">${esc(t('cat_skills'))}</span>${skills}</div>`}
-      </div>`;
+    return `<div class="ct-levels">
+        ${stepper('needle', st.needle, 0, 4, pick(D.NEEDLES[st.needle].name), `assets/needles/${st.needle}.png`, locked)}
+        ${stepper('kit', st.kit, 0, 4, item('crafting-kit'), icon('items', 'crafting-kit'), locked)}
+        ${stepper('pouch', st.pouch, 0, 4, item('tool-pouch'), icon('items', 'tool-pouch'), locked)}
+        ${st.crest === 'hunter' ? stepper('hunterStage', st.hunterStage, 1, 3, t('ctEvolution'), '', locked) : ''}
+        <span class="ct-checks">${situ}</span></div>`;
+  }
+
+  /* ── The Tool list, by colour, and the Silk Skills, each on its slot as the Inventory draws it
+     (js/app-game.js, cell: the diamond in the slot's colour), filled and lit when worn: a tap puts
+     one on or takes it off (Free mode) and describes it below; in a save it's read. Only what you
+     have, as the game's own pane lists them: a save's, or Free mode's marks (everything without
+     them); what you lack is the Inventory's and Progress's. A colour with none is left out. ── */
+  function toolList(st, locked, have) {
+    const had = (list, id, on) => on || !have || have[list].includes(id);
+    const btn = (kind, x, on) => {
+      const name = pick(x.name);
+      const act = locked ? 'ctDescribe' : kind === 'skill' ? 'ctSkill' : 'ctTool';
+      return `<li><button type="button" class="inv-cell is-slot ct-tool${on ? ' is-on' : ''}" style="--c: var(--slot-${kind})" data-act="${act}" data-kind="${kind === 'skill' ? 'skill' : 'tool'}" data-value="${x.id}"
+          ${locked ? '' : `aria-pressed="${on}"`} title="${esc(name)}" aria-label="${esc(name)}"${NT}>
+          <img src="${icon(kind === 'skill' ? 'skills' : 'tools', x.id)}" alt="" loading="lazy"></button></li>`;
+    };
+    const row = (label, cells) => (cells ? `<ul class="inv-grid ct-tools" aria-label="${esc(label)}">${cells}</ul>` : '');
+    const rows = COLORS.map((c) => row(t('ct_' + c), D.TOOLS.filter((x) => x.color === c && had('tools', x.id, st.tools.includes(x.id)))
+      .map((x) => btn(c, x, st.tools.includes(x.id))).join(''))).join('');
+    const skills = row(t('cat_skills'), D.SKILLS.filter((x) => had('skills', x.id, st.skill === x.id)).map((x) => btn('skill', x, st.skill === x.id)).join(''));
+    return `<div class="ct-shelf">${rows}${skills}</div>`;
   }
 
   /* ── The figures ── */
@@ -139,51 +171,58 @@
   };
   const modName = (id) => (MOD_NAME[id] ? MOD_NAME[id]() : TOOL.has(id) ? pick(TOOL.get(id).name)
     : pick((D.CRESTS.find((c) => c.id === id) || { name: { es: id, en: id } }).name));
-  const fig = (k, v, sub = '') => `<div class="ct-fig"><span class="ct-fig-k">${k}</span><span class="ct-fig-v">${v}</span>${sub ? `<span class="ct-fig-sub">${sub}</span>` : ''}</div>`;
   const hitsText = (each) => (each.length > 1 ? each.map((x) => num(x)).join(' + ') : '');
 
-  /* Damage per second with the slash: its interval from the game's own timings (js/hero.js), and
-     under Flea Brew when it's worn, for the seconds it lasts. */
-  const brewName = () => pick(TOOL.get('flea-brew').name);
-  const dps = (s) => fig(esc(t('ctDps')), `<b>${num(s.dps, 1)}</b>`,
-    esc([t('ctEvery', { s: num(s.interval, 2) }), s.brew ? t('ctBrew', { name: brewName(), d: num(s.brew.dps, 1), s: num(s.brew.interval, 2), l: num(s.brew.lasts) }) : ''].filter(Boolean).join(' · ')));
-
-  function figures(r) {
+  /* The figures as big numbers: the slash (each attack, for the Crests that split them), damage
+     per second, the critical, the Needle Strike, masks, silk and what a Bind heals. */
+  function band(r, st) {
     const n = r.needle;
-    // The Crests that split their slashes show all three; the rest, the one slash.
     const own = !!D.CRESTS.find((c) => c.id === r.state.crest).attacks;
-    const mods = r.mods.needle.map((id) => `<li${NT}>${esc(modName(id))}</li>`).join('');
-    const needle = `<section class="ct-block"><h3 class="ct-h">${esc(t('ctNeedle'))}</h3>
-        ${own ? n.attacks.map((a) => fig(esc(t('ctAtt_' + a.id)), `<b>${num(a.total)}</b>`,
-          esc([hitsText(a.each), a.charged ? t('ctCharged', { n: num(a.charged) }) : '', a.onHit ? t('ctOnHit', { n: num(a.onHit) }) : ''].filter(Boolean).join(' · ')))).join('')
-        : fig(esc(t('ctSlash')), `<b>${num(n.slash)}</b>`, n.bracket !== 1 ? esc(t('ctBracket', { base: num(n.base), x: num(n.bracket, 2) })) : '')}
-        ${mods ? `<ul class="ct-mods">${mods}</ul>` : ''}
-        ${dps(n.speed)}
-        ${n.crit ? fig(esc(t('ctCrit')), `<b>${num(n.crit.damage)}</b>`, esc(t('ctCritChance', { p: num(n.crit.chance * 100, 1) }))) : ''}
-        ${r.strike ? fig(esc(t('ctStrike')), `<b>${num(r.strike.total)}</b>`, esc(hitsText(r.strike.each))) : ''}
-      </section>`;
-    const skills = `<section class="ct-block"><h3 class="ct-h">${esc(t('cat_skills'))}</h3><ul class="ct-list">${r.skills.map((s) => `
-        <li class="${s.equipped ? 'is-on' : ''}"><img src="${icon('skills', s.id)}" alt=""><span class="ct-list-name"${NT}>${esc(pick(D.SKILLS.find((x) => x.id === s.id).name))}</span>
-        <span class="ct-list-sub">${esc(hitsText(s.each))}</span><b>${num(s.total)}</b></li>`).join('')}</ul>
-        ${r.mods.skill.length ? `<ul class="ct-mods">${r.mods.skill.map((id) => `<li${NT}>${esc(modName(id))}</li>`).join('')}</ul>` : ''}</section>`;
-    const dmgTools = r.tools.filter((x) => x.attacks.length);
-    const tools = dmgTools.length ? `<section class="ct-block"><h3 class="ct-h">${esc(t('ctToolsDmg'))}</h3><ul class="ct-list">${dmgTools.map((x) => {
-      const a = x.attacks[0];
-      const extra = [x.ammo ? t('ctAmmo', { n: num(x.ammo) }) : '', x.load ? t('ctLoad', { n: num(x.load) }) : '', x.refill ? t('ctRefill', { n: num(x.refill) }) : ''].filter(Boolean).join(' · ');
-      return `<li><img src="${icon('tools', x.id)}" alt=""><span class="ct-list-name"${NT}>${esc(pick(TOOL.get(x.id).name))}</span>
-        <span class="ct-list-sub">${esc([hitsText(a.each), extra].filter(Boolean).join(' · '))}</span><b>${num(a.total)}</b></li>`; }).join('')}</ul></section>` : '';
-    const body = `<section class="ct-block"><h3 class="ct-h">${esc(t('ctBody'))}</h3>
-        ${fig(esc(t('cat_masks')), `<b>${num(r.health.masks)}</b>`)}
-        ${fig(esc(t('invSilk')), `<b>${num(r.silk.spool)}</b>`, esc(t('ctCasts', { n: num(r.silk.casts), c: num(r.silk.skill) })))}
-        ${fig(esc(t('ctBind')), `<b>${num(r.health.bind.heals)}</b>`, esc(t('ctBindSub', { parts: r.health.bind.parts.map((p) => num(p)).join(' + '), s: num(r.health.bind.seconds, 2) })))}
-      </section>`;
-    /* The Tools equipped that deal no damage: what each does, in the game's words (their numbers,
-       where the engine has them, are in the figures above: the Bind, silk, the modifiers). */
-    const passive = r.tools.filter((x) => !x.attacks.length);
-    const effects = passive.length ? `<section class="ct-block"><h3 class="ct-h">${esc(t('ctEffects'))}</h3><ul class="ct-effects">${passive.map((x) => {
-      const tool = TOOL.get(x.id);
-      return `<li><img src="${icon('tools', x.id)}" alt=""><div><p class="ct-eff-name"${NT}>${esc(pick(tool.name))}</p>${tool.desc ? `<p class="ct-eff-desc">${esc(pick(tool.desc))}</p>` : ''}</div></li>`; }).join('')}</ul></section>` : '';
-    return `<div class="ct-figs">${needle}${tools}${skills}${body}${effects}</div>`;
+    const fig = (v, k, title = '') => `<div class="ct-fig2"${title ? ` title="${esc(title)}"` : ''}><b>${v}</b><span>${esc(k)}</span></div>`;
+    const mods = r.mods.needle.map((id) => modName(id)).join(' + ');
+    // The slash large beside the Needle; for the Crests that split theirs, the others go in the middle.
+    const [first, ...rest] = own ? n.attacks : [];
+    const slash = own ? { v: first.total, k: t('ctAtt_' + first.id), title: hitsText(first.each) }
+      : { v: n.slash, k: t('ctSlash'), title: [n.bracket !== 1 ? t('ctBracket', { base: num(n.base), x: num(n.bracket, 2) }) : '', mods].filter(Boolean).join(' · ') };
+    const middle = [
+      ...rest.map((a) => fig(num(a.total), t('ctAtt_' + a.id), hitsText(a.each))),
+      fig(num(n.speed.dps, 1), t('ctDpsShort'), [t('ctEvery', { s: num(n.speed.interval, 2) }),
+        n.speed.brew ? t('ctBrew', { name: pick(TOOL.get('flea-brew').name), d: num(n.speed.brew.dps, 1), s: num(n.speed.brew.interval, 2), l: num(n.speed.brew.lasts) }) : ''].filter(Boolean).join(' · ')),
+      n.crit ? fig(num(n.crit.damage), t('ctCrit'), t('ctCritChance', { p: num(n.crit.chance * 100, 1) })) : '',
+      r.strike ? fig(num(r.strike.total), t('ctStrike'), hitsText(r.strike.each)) : '',
+    ].join('');
+    // Hornet as the HUD shows her: her masks drawn, the spool with its silk, what a Bind heals.
+    const masks = r.health.masks, silk = r.silk.spool, heals = r.health.bind.heals;
+    const hud = `<div class="ct-hud">
+        <span class="ct-masks" role="img" aria-label="${esc(num(masks) + ' ' + t('cat_masks'))}">${'<img src="assets/hud/mask.png" alt="">'.repeat(masks)}</span>
+        <span class="ct-spool" title="${esc(t('ctCasts', { n: num(r.silk.casts), c: num(r.silk.skill) }))}"><img src="assets/hud/spool.png" alt=""><b>${num(silk)}</b><span class="sr-only">${esc(t('invSilk'))}</span></span>
+        <span class="ct-heal" title="${esc(t('ctBindSub', { parts: r.health.bind.parts.map((p) => num(p)).join(' + '), s: num(r.health.bind.seconds, 2) }))}">${esc(t('ctBindHeals', { n: num(heals) }))}</span></div>`;
+    return `<div class="ct-band">
+        <div class="ct-slash"${slash.title ? ` title="${esc(slash.title)}"` : ''}><img src="assets/needles/${st.needle}.png" alt=""><div><b>${num(slash.v)}</b><span>${esc(slash.k)}</span></div></div>
+        <div class="ct-mid">${middle}</div>${hud}</div>`;
+  }
+
+  /* The Tool or Silk Skill pointed at, or tapped: its name, the game's words, and its numbers (a
+     Tool not worn, as if it were). With nothing pointed at, the first thing worn. */
+  let described = null;
+  function descHtml(st, r, what) {
+    const w = what || (st.tools[0] ? { kind: 'tool', id: st.tools[0] } : st.skill ? { kind: 'skill', id: st.skill } : null);
+    if (!w) return `<p class="ct-desc-none">${esc(t('ctPoint'))}</p>`;
+    const x = w.kind === 'skill' ? D.SKILLS.find((k) => k.id === w.id) : TOOL.get(w.id);
+    let nums = '';
+    if (w.kind === 'skill') {
+      const k = r.skills.find((s) => s.id === w.id);
+      nums = `<b>${num(k.total)}</b>${[hitsText(k.each), t('ctSilkCost', { n: num(x.silk) })].filter(Boolean).map((v) => `<span>${esc(v)}</span>`).join('')}`;
+    } else {
+      const worn = r.tools.find((k) => k.id === w.id) || E.compute(E.normalize({ ...st, tools: [...st.tools, w.id] })).tools.find((k) => k.id === w.id);
+      const a = worn && worn.attacks[0];
+      const extra = worn ? [a ? hitsText(a.each) : '', worn.ammo ? t(worn.ammo === 1 ? 'ctAmmo1' : 'ctAmmo', { n: num(worn.ammo) }) : '', worn.load ? t('ctLoad', { n: num(worn.load) }) : '',
+        worn.refill ? t('ctRefill', { n: num(worn.refill) }) : ''].filter(Boolean) : [];
+      nums = (a ? `<b>${num(a.total)}</b>` : '') + extra.map((v) => `<span>${esc(v)}</span>`).join('');
+    }
+    return `<h3 class="ct-desc-name is-${w.kind === 'skill' ? 'skill' : x.color}"${NT}>${esc(pick(x.name))}</h3>
+      ${x.desc ? `<p class="ct-desc-text">${esc(pick(x.desc))}</p>` : ''}
+      ${nums ? `<p class="ct-desc-nums">${nums}</p>` : ''}`;
   }
 
   /* The figures in one strip, for a narrow window, where the full list goes below the controls:
@@ -206,18 +245,37 @@
     return `<div class="ct-sum" aria-label="${esc(t('ctSummary'))}">${cells}</div>`;
   }
 
+  let shown = null;
   App.screens.tools = (sec) => {
     const { st, locked, have } = current();
     const r = E.compute(st);
+    shown = { st, r };
     const share = `<button type="button" class="btn ct-share" data-act="ctShare">${esc(t('ctShare'))}</button>`;
-    const note = locked ? `<p class="saves-note">${esc(t('ctLocked', { n: App.activeSlot() }))} <a class="text-btn" href="${App.here(App.hashFor('saves'))}" data-act="view" data-value="saves">${esc(t('freeMode'))}</a></p>` : '';
-    sec.innerHTML = `<div class="ct">${brackets}${screenHead(esc(t('navTools')), note + share)}
+    sec.innerHTML = `<div class="ct">${brackets}${screenHead(esc(t('navTools')), share)}
+      ${band(r, st)}${levels(st, locked)}
       <div class="ct-body">
-        <aside class="ct-side">${slotsHtml(st, r)}</aside>
-        ${controls(st, locked, have)}
-        ${figures(r)}
+        <div class="ct-side">${crestHtml(st, r, locked, have)}</div>
+        <div class="ct-pick">${toolList(st, locked, have)}<div class="ct-desc" aria-live="polite">${descHtml(st, r, described)}</div></div>
       </div>${summary(r)}</div>`;
   };
+  // Pointing at a Tool, a Silk Skill or a slot describes it; leaving goes back to the one tapped.
+  const paintDesc = (what) => {
+    const p = document.querySelector('.screen[data-view="tools"] .ct-desc');
+    if (p && shown) p.innerHTML = descHtml(shown.st, shown.r, what);
+  };
+  const pointed = (e) => e.target.closest && e.target.closest('.ct-tool, .ct-slot.is-full');
+  document.addEventListener('pointerover', (e) => {
+    const b = pointed(e);
+    if (b && App.prefs.view === 'tools') paintDesc({ kind: b.dataset.kind, id: b.dataset.value });
+  });
+  document.addEventListener('pointerout', (e) => {
+    const b = pointed(e);
+    if (b && !b.contains(e.relatedTarget) && App.prefs.view === 'tools') paintDesc(described);
+  });
+  document.addEventListener('focusin', (e) => {
+    const b = pointed(e);
+    if (b && App.prefs.view === 'tools') paintDesc({ kind: b.dataset.kind, id: b.dataset.value });
+  });
 
   /* ── Changing the build (Free mode only) ── */
   function change(f) {
@@ -262,9 +320,14 @@
       if (App.game()) { moment[k] = !moment[k]; render(); return; }
       change((st) => { st[k] = !st[k]; });
     },
-    ctSkill(node) { change((st) => { st.skill = st.skill === node.dataset.value ? null : node.dataset.value; }); },
+    ctDescribe(node) { described = { kind: node.dataset.kind, id: node.dataset.value }; paintDesc(described); },
+    ctSkill(node) {
+      described = { kind: 'skill', id: node.dataset.value };
+      change((st) => { st.skill = st.skill === node.dataset.value ? null : node.dataset.value; });
+    },
     ctTool(node) {
       const id = node.dataset.value;
+      described = { kind: 'tool', id };
       change((st) => {
         if (st.tools.includes(id)) { st.tools = st.tools.filter((x) => x !== id); return; }
         // Room in its colour: the Crest's slots, open and locked, and the Vesticrest's.

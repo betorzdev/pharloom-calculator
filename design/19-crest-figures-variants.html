@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Crest figures: variants</title>
+<!-- Design material, not part of the site (design/03-redesign.md, step 8, second round). The top
+     of the Crest screen (the figures and the levels) drawn three ways over Save 4's build.
+     ?v=now|a|b|c&w=1440|390 -->
+<base href="../">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/app.css">
+<style>
+.mk-bar { position: fixed; z-index: 90; left: 50%; bottom: var(--sp-2); transform: translateX(-50%); display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--sp-1) var(--sp-3); width: max-content; max-width: calc(100vw - var(--sp-4)); padding: var(--sp-2) var(--sp-3); background: color-mix(in oklab, var(--scene-bg) 94%, transparent); border: 1px solid var(--line-panel); font-family: var(--font-num); font-size: var(--fs-xs); color: var(--muted); }
+.mk-bar b { color: var(--label); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; font-size: var(--fs-2xs); }
+.mk-bar button { padding: var(--sp-1) var(--sp-2); border: 1px solid var(--line-ctl); color: var(--ink-2); font: inherit; }
+.mk-bar button[aria-pressed="true"] { color: var(--ink-strong); border-color: var(--accent-line); background: var(--picked); }
+.mk-note { flex-basis: 100%; text-align: center; color: var(--ink-2); }
+html.is-framed body { background: var(--scene-bg); }
+.mk-phone { display: block; margin: var(--sp-4) auto calc(var(--sp-16) * 2); width: 390px; height: calc(100vh - var(--sp-16) * 2 - var(--sp-8)); border: 1px solid var(--line-panel); }
+html.is-inner .mk-bar { display: none; }
+.page { padding-top: var(--sp-8); padding-bottom: calc(var(--sp-16) * 2.5); }
+.n { font-family: var(--font-num); font-variant-numeric: tabular-nums; color: var(--ink-strong); }
+.lbl { font-size: var(--fs-2xs); letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
+.ghost { margin-top: var(--sp-8); height: 220px; border-top: 1px solid var(--line); display: grid; place-items: center; color: var(--muted); font-size: var(--fs-xs); }
+
+/* A · the game's HUD: the Needle drawn with the slash, masks as masks, silk as the spool. */
+.a { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: var(--sp-8); align-items: center; margin-top: var(--sp-4); }
+.a-needle { display: flex; align-items: center; gap: var(--sp-4); }
+.a-needle img { height: 120px; transform: rotate(35deg); }
+.a-needle b { font-size: calc(var(--fs-2xl) * 1.7); line-height: 1; }
+.a-needle span { display: block; }
+.a-mid { display: flex; gap: var(--sp-8); }
+.a-mid div { display: grid; gap: var(--sp-1); }
+.a-mid b { font-size: var(--fs-2xl); }
+.a-hud { display: grid; gap: var(--sp-2); justify-items: start; }
+.masks { display: flex; gap: 3px; } .masks img { height: 26px; }
+.spool { display: flex; align-items: center; gap: var(--sp-2); } .spool img { height: 20px; }
+.a-hud small { color: var(--muted); font-size: var(--fs-xs); }
+.levels { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-2) var(--sp-4); margin-top: var(--sp-6); padding-top: var(--sp-4); border-top: 1px solid var(--line); }
+.lv { display: inline-flex; align-items: center; gap: var(--sp-2); font-size: var(--fs-xs); color: var(--ink-2); }
+.lv img { width: 22px; height: 22px; object-fit: contain; }
+.lv .pips { display: inline-flex; gap: 4px; } .lv .pips i { width: 6px; height: 6px; transform: rotate(45deg); border: 1px solid var(--accent-line); } .lv .pips i.on { background: var(--accent); border-color: var(--accent); }
+.lv button { color: var(--muted); width: 18px; }
+.chk { display: inline-flex; align-items: center; gap: var(--sp-2); font-size: var(--fs-xs); color: var(--ink-2); } .chk i { width: 9px; height: 9px; transform: rotate(45deg); border: 1px solid var(--accent-line); } .chk i.on { background: var(--accent); }
+
+/* B · a centred ledger: the slash large in the middle, the rest either side, thin rules between. */
+.b { display: flex; justify-content: center; align-items: flex-end; margin-top: var(--sp-6); }
+.b > div { display: grid; justify-items: center; gap: var(--sp-1); padding: 0 var(--sp-6); text-align: center; }
+.b > div + div { border-left: 1px solid color-mix(in oklab, var(--filigree) 25%, transparent); }
+.b b { font-size: var(--fs-2xl); line-height: 1; }
+.b .is-hero b { font-size: calc(var(--fs-2xl) * 1.8); }
+.b .is-hero { padding: 0 var(--sp-8); }
+
+/* C · figures under the Crest: the top keeps only the levels; the numbers in a small table below the Crest's name. */
+.c { display: grid; grid-template-columns: 420px minmax(0, 1fr); gap: var(--sp-8); margin-top: var(--sp-6); }
+.c-crest { height: 260px; display: grid; place-items: center; color: var(--muted); border: 1px dashed var(--line); font-size: var(--fs-xs); }
+.c-name { text-align: center; font-family: var(--font-display); font-size: var(--fs-xl); color: var(--ink-strong); margin: var(--sp-3) 0; }
+.c-table { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
+.c-table div { display: grid; justify-items: center; gap: 2px; padding: var(--sp-3) 0; border-bottom: 1px solid var(--line); }
+.c-table div:not(:nth-child(3n)) { border-right: 1px solid var(--line); }
+.c-table b { font-size: var(--fs-xl); }
+.c-tools { border: 1px dashed var(--line); display: grid; place-items: center; color: var(--muted); font-size: var(--fs-xs); min-height: 300px; }
+@media (max-width: 899px) {
+  .a { grid-template-columns: 1fr; justify-items: center; gap: var(--sp-4); }
+  .a-mid { gap: var(--sp-6); }
+  .b { flex-wrap: wrap; row-gap: var(--sp-4); }
+  .b > div { padding: 0 var(--sp-3); }
+  .b .is-hero { flex-basis: 100%; border: 0 !important; }
+  .c { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="page"><div class="shell"><main class="screens">
+<section class="screen" id="scr"><span class="frame-line"></span>
+  <header class="screen-head"><h2 class="sec-title screen-title">Crest</h2></header>
+  <div id="mk"></div>
+</section></main></div></div>
+<div class="mk-bar"><b>Variant</b><button data-key="v" data-val="a">A · the game's HUD</button><button data-key="v" data-val="b">B · centred ledger</button><button data-key="v" data-val="c">C · under the Crest</button>
+  <b>Width</b><button data-key="w" data-val="1440">desktop</button><button data-key="w" data-val="390">390</button><span class="mk-note" id="note"></span></div>
+<script>
+(function () {
+  const DEF = { v: 'a', w: '1440' };
+  const q = new URLSearchParams(location.search);
+  const st = Object.fromEntries(Object.keys(DEF).map((k) => [k, q.get(k) || DEF[k]]));
+  const inner = q.has('inner'), html = document.documentElement;
+  const pips = (n, max) => '<span class="pips">' + Array.from({ length: max }, (_, i) => '<i class="' + (i < n ? 'on' : '') + '"></i>').join('') + '</span>';
+  const lv = (img, name, n, max) => '<span class="lv">' + (img ? '<img src="' + img + '" alt="">' : '') + '<span>' + name + '</span><button>−</button>' + pips(n, max) + '<button>+</button></span>';
+  const levels = '<div class="levels">' + lv('assets/needles/3.png', 'Hivesteel Needle', 3, 4) + lv('assets/icons/items/crafting-kit.webp', 'Crafting Kit', 3, 4) + lv('assets/icons/items/tool-pouch.webp', 'Tool Pouch', 3, 4) + lv('', 'Evolution', 2, 3) +
+    '<span class="chk"><i class="on"></i>Hunter\'s focus</span><span class="chk"><i></i>After a Challenge</span></div>';
+  const NOTES = {
+    a: 'A · the game\'s HUD: the Needle drawn with its slash large beside it; damage a second and the Needle Strike in the middle; on the right Hornet as the game shows her: her masks as masks, her silk as the spool with its number, what a Bind heals. The levels below as the game\'s upgrade pips, − and + either side.',
+    b: 'B · centred ledger: one row centred under the title, the slash large in the middle, the others either side, thin filigree rules between; the levels below with pips.',
+    c: 'C · under the Crest: the top keeps only the levels; the figures become a small table under the Crest\'s name (three by two), next to what makes them.' };
+  function render() {
+    let h = '';
+    if (st.v === 'a') h = '<div class="a"><div class="a-needle"><img src="assets/needles/3.png" alt=""><div><b class="n">22</b><span class="lbl">Slash</span></div></div>' +
+      '<div class="a-mid"><div><b class="n">53.7</b><span class="lbl">a second</span></div><div><b class="n">62</b><span class="lbl">Needle Strike</span></div></div>' +
+      '<div class="a-hud"><div class="masks">' + '<img src="assets/hud/mask.png" alt="">'.repeat(7) + '</div><div class="spool"><img src="assets/hud/spool.png" alt=""><b class="n">16</b></div><small>a Bind heals 3</small></div></div>' + levels + '<div class="ghost">the Crest and the Tools</div>';
+    if (st.v === 'b') h = '<div class="b"><div><b class="n">7</b><span class="lbl">Masks</span></div><div><b class="n">53.7</b><span class="lbl">a second</span></div><div class="is-hero"><b class="n">22</b><span class="lbl">Slash</span></div><div><b class="n">62</b><span class="lbl">Needle Strike</span></div><div><b class="n">16</b><span class="lbl">Silk</span></div><div><b class="n">3</b><span class="lbl">a Bind</span></div></div>' + levels + '<div class="ghost">the Crest and the Tools</div>';
+    if (st.v === 'c') h = levels + '<div class="c"><div><div class="c-crest">the Crest and its slots</div><p class="c-name">Hunter</p><div class="c-table">' +
+      [['22', 'Slash'], ['53.7', 'a second'], ['62', 'Needle Strike'], ['7', 'Masks'], ['16', 'Silk'], ['3', 'a Bind']].map(([n, l]) => '<div><b class="n">' + n + '</b><span class="lbl">' + l + '</span></div>').join('') + '</div></div><div class="c-tools">the Tools and the description</div></div>';
+    document.getElementById('mk').innerHTML = h;
+  }
+  const url = (over) => '?' + new URLSearchParams(Object.assign({}, st, over)).toString();
+  if (st.w === '390' && !inner) { html.classList.add('is-framed'); document.querySelector('.page').remove(); const f = document.createElement('iframe'); f.className = 'mk-phone'; f.src = location.pathname + url({ inner: 1 }); document.body.prepend(f); }
+  if (inner) html.classList.add('is-inner');
+  for (const b of document.querySelectorAll('.mk-bar button')) b.setAttribute('aria-pressed', String(st[b.dataset.key] === b.dataset.val));
+  document.getElementById('note').textContent = NOTES[st.v];
+  if (document.getElementById('mk')) render();
+  document.addEventListener('click', (ev) => { const b = ev.target.closest('.mk-bar button'); if (b) location.search = url({ [b.dataset.key]: b.dataset.val }); });
+})();
+</script>
+</body>
+</html>

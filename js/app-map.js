@@ -8,8 +8,8 @@
    and Ventrica stations where the game's own pins are (js/map.js PINS), dimmed while your game
    hasn't opened them (a station not unlocked, a toll not paid: savefile's lit), and the enemy
    gauntlets you haven't cleared, in their arena's room. In a save, Hornet's way from the previous
-   save's bench when it was another, and under the map what's missing closest to your bench, in
-   rooms (js/rooms.js walks js/graph.js, the game's doors, and the stations your game has opened).
+   save's bench when it was another. What's missing closest to your bench, in rooms (js/rooms.js
+   walks js/graph.js, the game's doors, and the stations your game has opened), is Your game's.
    The marks are placed in percentages of the image, so they follow its zoom. Shares SS.app with
    js/app.js (see there). */
 (() => {
@@ -53,7 +53,6 @@
     ? `<span class="mp-pin is-gauntlet${off ? ' is-off' : ''}${key && key === picked ? ' is-sel' : ''}"${style ? ` style="${style}"` : ''}${title ? ` title="${esc(title)}"` : ' aria-hidden="true"'}${tap(key, title)}>${champion(x) ? `<img src="assets/icons/journal/${champion(x)}.webp" alt="" loading="lazy">` : GLYPH.gauntlet}</span>`
     : `<img class="mp-pin is-${k}${off ? ' is-off' : ''}${key && key === picked ? ' is-sel' : ''}" src="assets/map/pins/${PIN_ART[k]}.webp" alt=""${style ? ` style="${style}"` : ''}${title ? ` title="${esc(title)}"` : ' aria-hidden="true"'}${tap(key, title)}>`;
   let picked = '';   // the mark whose card is open: 'piece:<i>', 'pin:<i>' or 'gaunt:<id>'
-  const NEAR = 12;
   const areaName = (a) => (a && CO.AREAS[a] ? pick(CO.AREAS[a]) : '');
   const stepsText = (n) => (n === 0 ? t('mapHere') : t('mapSteps', { n: num(n) }));
   // The previous save's game (js/app-home.js keeps it for "Since the previous save"), or null.
@@ -101,7 +100,7 @@
       <i class="mp-from" style="${at(start.x, start.y)}" title="${esc(t('mapFrom'))}"></i>`;
   }
   /* What's missing nearest your bench: the pieces of the kinds shown and the gauntlets, by rooms,
-     nearest first. Your game shows the first few too (App.nearList, App.nearRow). */
+     nearest first. Your game shows the first few (App.nearList, App.nearRow). */
   function nearList(g, shown = KINDS, places = PLACES) {
     if (!g || !g.bench) return [];
     const w = R.walk(g.bench, g.lit);
@@ -120,13 +119,6 @@
   }
   const nearRow = (x) => `<li>${x.mark}<span class="mp-near-name"${NT}>${esc(x.name)}</span>
         <span class="mp-near-area"${NT}>${esc(areaName(x.area))}</span><b>${esc(stepsText(x.n))}</b></li>`;
-  function nearHtml(g, shown, places) {
-    const list = nearList(g, shown, places);
-    if (!list.length) return '';
-    return `<section class="mp-near" aria-labelledby="mp-near-h"><h3 class="ct-h" id="mp-near-h">${esc(t('mapNear'))}</h3>
-      <ol class="mp-near-list">${list.slice(0, NEAR).map(nearRow).join('')}</ol>
-      <p class="pg-note">${esc(t('mapNearNote'))}</p></section>`;
-  }
   App.nearList = nearList;
   App.nearRow = nearRow;
   const at = (x, y) => `left:${(x / M.W * 100).toFixed(3)}%;top:${(y / M.H * 100).toFixed(3)}%`;
@@ -244,7 +236,7 @@
         ${search}${tools}
       </div>
       ${legend}
-      ${nearHtml(App.game(), shown, places)}<p class="pg-note">${esc(t('mapNote'))}</p></div>`;
+      <p class="pg-note">${esc(t('mapNote'))}</p></div>`;
     cardCtx = { g, shownPins, lit };
     // The view as it was, once the screen shows (render shows it after painting it).
     requestAnimationFrame(applyView);

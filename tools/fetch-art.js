@@ -21,6 +21,14 @@ const ART = [
   ['Hornet Corpse.png', 'hornet/corpse.png'],
   // The five Needles, as the inventory draws them (80 × 600).
   ...[1, 2, 3, 4, 5].map((n) => [`Needle ${n} ${['Needle', 'Sharpened Needle', 'Shining Needle', 'Hivesteel Needle', 'Pale Steel Needle'][n - 1]}.png`, `needles/${n - 1}.png`]),
+  // The benches Hornet rests on in Your game's card: the ones tools/extract-benches.py's STYLE
+  // and SCENE name (the wiki's «Bench (Silksong)» draws each; its id is the wiki's name in lower case).
+  ...['Ant', 'Bellhart', 'Bellhome', 'Bilehaven', 'Bilewater', 'Bone Bottom', 'Bone Bottom Repaired', 'Caravan',
+    'Choral Chambers', 'Cog Retractor', 'Coral', 'Coral Tower', 'Cradle', 'Deep Docks', 'Diving Bell', 'Diving Bell Broken',
+    'Halfway Home', 'High Halls', 'Huntress', 'Jail', 'Memorium', 'Mosshome', 'Mount Fay', 'Organ', "Pilgrim's Rest",
+    'Pinstress', 'Ruined Chapel', 'Songclave', 'Sprintmaster', 'Terminus', 'Toll', 'Toll Underworks', 'Umbrella',
+    'Weavenest', 'Weavenest Moss', 'Whispering Vaults', 'Whiteward', 'Wisp Thicket']
+    .map((b) => [`Bench SS ${b}.png`, `benches/${b.toLowerCase().replace(/'/g, '').replace(/ /g, '-')}.png`]),
 ];
 
 const OUT = path.join(__dirname, '..', 'assets');

@@ -45,16 +45,17 @@ asks the game's own question («Clear Profile?») and only clears the site's cop
 
 ### Your game
 
-In Free mode, the card a save shows, unlit: «Resting at Pharloom», Hornet in silhouette and the
-four figures waiting, with Import. Drag your save's file onto it and it goes into the first
+In Free mode, the card a save shows, unlit: «Resting at Pharloom», Hornet in silhouette on
+Bone Bottom's bench (the first one) and the four figures waiting, with Import. Drag your save's file onto it and it goes into the first
 empty save.
 
 In a save, the game's area title card: **Resting at** the area of the bench Hornet sits at, lit by
 that area's own colour on the game's map, the room's area under it when it's another (Coral
-Tower in the Sands of Karak), the Act and the time played; Hornet at the bench; and four
+Tower in the Sands of Karak), the Act and the time played; Hornet sitting on that very bench (each room's bench is read
+from the game's files; one it doesn't know shows Bone Bottom's); and four
 figures: **your 100%**, the Journal, the masks and the rosaries. Under it, the road to the next
 Act when there is one, then three columns: what changed since the previous save (below), what's
-missing **closest to your bench** (the Map's own list, its first five), and your 100% split into
+missing **closest to your bench** (the first five, in rooms: each door and each ride between the stations you've opened counts one), and your 100% split into
 the wiki's ten categories (Tools, Silk Spools, the Crafting Kit and Tool Pouch, abilities, Silk Skills, Crests,
 masks, the Needle, Silk Hearts, the Everbloom), with the figure the game itself shows under it:
 they're the same. The site counts as the game does, checked on 92 real saves (0% to 100%, four
@@ -96,15 +97,25 @@ save the Inventory shows what the game saved, and changes only as you play.
 
 ### Crest
 
-The game's Crest screen («Blasón»): the Crest with its text and its slots, each in its colour,
-filled with the Tools and the Silk Skill (a dashed slot is one a Memory Locket opens; the
-Vesticrest adds a yellow and a blue one); what makes the build (the Crest, the Hunter's
-evolution, the Needle, Crafting Kit and Tool Pouch levels, the Tools and the Skill); and the
-figures: the Needle's slash with the modifiers that apply now, the Wanderer's critical hit, the
-Needle Strike, each Tool equipped that deals damage (per hit, uses at the Pouch's level, a full
-load, the shell shards to refill it), the six Silk Skills, masks, silk and the Bind. "Right now"
-switches what depends on the moment: the Hunter's focus, the Beast's fury, Flintslate's buff, the
-hit after a Challenge.
+The game's Crest screen («Blasón»), laid out as the game's pane. On top, the figures as the game's
+HUD: the Needle at its level with the slash large beside it (each attack, for the Crests that
+split them); damage per second, the Wanderer's critical hit and the Needle Strike; and Hornet as
+the HUD shows her, her masks drawn, the spool with her silk, and what a Bind heals. Pointing at a
+figure shows how it's made. Under them the levels as the game's upgrade pips, − and + either side
+(a pip sets it): the Needle, the Crafting Kit, the Tool Pouch and the Hunter's evolution; and
+beside them what depends on the moment: the Hunter's focus, the Beast's fury, Flintslate's buff,
+the hit after a Challenge.
+
+Below, the Crest drawn as the game draws it, with its slots where the game puts them (read from
+its files, per Crest and per evolution of the Hunter), each the game's frame in its colour and
+holding the Tool or Silk Skill worn; a slot a Memory Locket opens, left empty, shows the game's
+locked frame, and the Vesticrest's slots sit in the corner of the Crest's box. ‹ › change the Crest. Beside it,
+the Tools and Silk Skills you have (as the game lists them; in Free mode, what the Inventory's
+marks say, or all of them), by colour, each on its slot as the Inventory draws it, the
+slot filled and lit when it's worn: a tap puts one on or takes it off,
+and pointing at one (or at a slot) describes it underneath with the game's words and its numbers
+(damage per hit, uses at the Pouch's level, a full load, the shell shards to refill it; a Silk
+Skill's damage and silk), as if it were worn when it isn't.
 
 The damage is the wiki's model: the weapon's damage at its level times (1 + the player's
 modifiers, which add) rounded half to even, per hit; Tools scale with the Crafting Kit, the rest
@@ -113,14 +124,12 @@ the game, at its levels, and it's read, not changed (the moment can still be swi
 builds, Free mode, where the build is kept in this browser.
 
 The Architect and the Witch split their slashes (the Architect drills: 0.9× + 0.1× + 0.1× the
-Needle; both have their own down- and run-slashes), and the screen shows all three attacks with
-their hits, what holding adds and what a landed hit adds; the others slash once at the Needle's
-damage. The Tools equipped that deal no damage are listed with the game's text of what they do.
-On a narrow screen, where the figures go below the controls, a strip on the bottom edge keeps
-the main ones in view while you pick: the slash, your Silk Skill and your first Tool that hurts
+Needle; both have their own down- and run-slashes), and the band shows all three attacks; the
+others slash once at the Needle's damage. On a narrow screen a strip on the bottom edge keeps the
+main figures in view while you pick: the slash, your Silk Skill and your first Tool that hurts
 (by their icons), masks and silk.
 
-**Damage per second**, under the slash: the slash's damage over the time between two slashes,
+**Damage per second**: the slash's damage over the time between two slashes,
 which is each Crest's own, read from the game's files: 0.41 s for the Hunter, 0.30 s for the
 Wanderer, 0.39 s for the Beast (0.32 s in fury), 0.45 s for the Witch and the Architect, 0.50 s
 for the Reaper and the Shaman. With Flea Brew worn, what it gives for its 10 seconds: it halves
@@ -139,7 +148,9 @@ in Steel Soul; the bright arc is what's complete, the dim one what you've seen),
 four entries you're missing closest to your bench, with how many rooms away and how many kills to
 go. Under it, the 236 portraits (237 in Steel Soul) **by area**, the areas with the most missing
 first and each with its count (6/20), or **in the Journal's order**; entries with no place go last,
-under "Elsewhere". Two small toggles switch that and "What's missing / Everything". Each portrait
+under "Elsewhere". Two small toggles switch that and "What's missing / Everything", and a search
+beside them finds entries by name or by area, in either language and with or without accents; while
+it has text it looks through the whole Journal, what's complete included. Each portrait
 sits in a ring that fills with its kills and lights up once complete; one not seen yet is in
 shadow in a dashed ring («???»), and the six optional ones carry a small diamond. Tapping one
 opens its page as the game's Journal shows it (from the foot on a phone; Esc or a tap outside
@@ -166,12 +177,26 @@ lift, the maze), so their entries say where, not how far.
 
 ### Combat
 
-Your build against one enemy. Every enemy has five damage modifiers, one per level of what
+Your build against one enemy, as a duel: Hornet and the enemy face to face, each on the
+Journal's light (the enemy as the Journal draws it whole), between them the slashes that win and
+the fewest of its hits that take you down, under Hornet her masks and under the enemy its health
+as a bar, with a tick where each phase starts; then the quickest way in one line, your attacks as
+cards (the one that needs fewest framed; pointing at one shows how its damage is made) and its
+attacks with their masks drawn. The enemy is picked in a dropdown over the duel (search in either
+language, accents optional; bosses first). Everything else is folded under «How it's worked out».
+
+The fight can be played out, as on the Hollow Knight site: tap one of your attacks and its damage
+comes off the enemy's bar; tap one of its attacks and its masks come off yours. Silk counts as
+the game counts it for the quickest way: the spool starts full, a slash that lands adds one, your
+Silk Skill spends its cost, and the Bind button spends its silk and heals. Each Tool has its uses
+at your Pouch's level. A move that can't be made (no silk, no uses, the fight over) is greyed
+out. The log under the duel says what each move did, when a phase starts and who falls; Undo
+steps back one move and Start over begins again. A different enemy or build starts it over.
+
+Every enemy has five damage modifiers, one per level of what
 hits it (Moorwing takes ×2 from a level-0 weapon and ×0.85 from a level-4 one), so how many hits
-kill it is a question per enemy. Pick it from the list (search in either language, accents
-optional; bosses first, with their Journal portrait); its card shows its health, the
-black-threaded one when it has it (Act 3), its five modifiers with the level your Needle hits at
-and your Crafting Kit's marked, the hits that stagger it, and a boss's phases (read from the
+kill it is a question per enemy. The folded part shows its five modifiers with the level your
+Needle hits at and your Crafting Kit's marked, the hits that stagger it, and a boss's phases (read from the
 game's own files: where each one starts, as a health or a share of it, or after how much damage
 when each phase has a bar of its own, as Grand Mother Silk's six; and the slashes of yours that
 get there from full health; where the game moves on only below its number, not at it (a strict
@@ -261,16 +286,13 @@ bosses are beaten.
 When your previous save rested at another bench, a dashed thread draws Hornet's way from it to
 this one, and the first time the map comes into view she runs it, room by room, from the old
 bench to the new one (two to eight seconds; the view follows her when it's enlarged), and sits.
-She runs each way once; with reduced motion she's simply at her bench. Under the map, **Closest to your bench**: the pieces and gauntlets you're missing that
-are fewest rooms away, counting each door and each ride between the Bellway and Ventrica stations
-you've opened (the rooms and doors are the game's own, from its files; a count of rooms, not a
-distance on foot). Progress says the same for each missing piece that sits in a room. "Whole" fits it to the page; ×1,5 and ×2,5 enlarge it, and it scrolls to your bench. In
+She runs each way once; with reduced motion she's simply at her bench. Progress says the same for each missing piece that sits in a room. "Whole" fits it to the page; ×1,5 and ×2,5 enlarge it, and it scrolls to your bench. In
 Free mode, every piece.
 
 ### Progress
 
-A ledger. At the top, **your 100%** large (a line under it only if the game's own figure is
-another). In Act 3, the whole game at a glance: Act 1, Act 2 and Act 3 on one thread, then the four
+A ledger. At the top, **your 100%** in a ring that fills with it, as the Journal's Memento, with
+the game's word, «Finalización» (a line under it only if the game's own figure is another). In Act 3, the whole game at a glance: Act 1, Act 2 and Act 3 on one thread, then the four
 endings, lit the ones your save has seen (the game keeps them: Weaver Queen, Snared Silk, Twisted
 Child, Sister of the Void), and «Act 3 · n of 4 endings». Before Act 3,
 **the road to the next Act** at a glance: its steps as diamonds on one thread, the ones done lit
@@ -402,7 +424,10 @@ texts and names are © Team Cherry; they're used here only to show the game's ow
 - **Hornet's frames**: running, sitting and standing, extracted from the installed game's own
   sprites by `tools/extract-hornet.py` (`assets/hornet/run.png`, `sit.png`, `stand.png`), shown
   as the rest of the sprites, as a fan project.
-- **Sprites and icons**: Hornet, the masks, the spool, the five Needles (`npm run art`) and the
+- **The benches**: which bench each room has, read from the installed game's files by
+  `tools/extract-benches.py` (`js/benches.js`); their pictures are the wiki's
+  (`assets/benches/`, `npm run art`).
+- **Sprites and icons**: Hornet, the masks, the spool, the five Needles, the benches (`npm run art`) and the
   inventory icons of the Tools, Crests, Silk Skills, abilities and items and the Journal's 237
   portraits (`npm run icons`, fitted into 256 px as WebP) are the game's, downloaded from the wiki and shown as a fan project.
 - **The map**: the rooms of the game's own map screen, extracted from the installed game's files

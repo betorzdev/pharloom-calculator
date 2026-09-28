@@ -42,7 +42,9 @@ where each Journal entry is found (its enemies, or what makes them), into `js/jo
 `tools/extract-phases.py`; what each common enemy does to Hornet, into `js/enemy-damage.js`, by
 `tools/extract-damage.py`; the frames of the Hornet who walks the page, into `assets/hornet/`, by
 `tools/extract-hornet.py`; each Journal entry's whole drawing, into `assets/journal/`, by
-`tools/extract-journal-art.py`; the wishes' rules (what opens Act 3, and which wish comes before
+`tools/extract-journal-art.py`; each Crest's art and where its slots sit, into `assets/crests/`
+and `js/crest-slots.js`, by `tools/extract-crests.py`; which bench each bench room has, into
+`js/benches.js`, by `tools/extract-benches.py`; the wishes' rules (what opens Act 3, and which wish comes before
 which), into `js/quests.js`, by `tools/extract-quests.py`; and what each vendor sells, for how
 much, and what each wish gives, into `js/shop.js`, by `tools/extract-shops.py` (`npm run data`
 then joins it into `js/how.js`: how to get each thing of the 100%).

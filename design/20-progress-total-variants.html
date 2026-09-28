@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Progress total: variants</title>
+<!-- Design material, not part of the site (design/03-redesign.md, step 5, retouch). Progress's
+     completion figure drawn three ways, at 63 % (Save 4) and at 100 % (Save 1). ?v=a|b|c&p=63|100&w=1440|390 -->
+<base href="../">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/app.css">
+<style>
+.mk-bar { position: fixed; z-index: 90; left: 50%; bottom: var(--sp-2); transform: translateX(-50%); display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--sp-1) var(--sp-3); width: max-content; max-width: calc(100vw - var(--sp-4)); padding: var(--sp-2) var(--sp-3); background: color-mix(in oklab, var(--scene-bg) 94%, transparent); border: 1px solid var(--line-panel); font-family: var(--font-num); font-size: var(--fs-xs); color: var(--muted); }
+.mk-bar b { color: var(--label); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; font-size: var(--fs-2xs); }
+.mk-bar button { padding: var(--sp-1) var(--sp-2); border: 1px solid var(--line-ctl); color: var(--ink-2); font: inherit; }
+.mk-bar button[aria-pressed="true"] { color: var(--ink-strong); border-color: var(--accent-line); background: var(--picked); }
+.mk-note { flex-basis: 100%; text-align: center; color: var(--ink-2); }
+html.is-framed body { background: var(--scene-bg); }
+.mk-phone { display: block; margin: var(--sp-4) auto calc(var(--sp-16) * 2); width: 390px; height: calc(100vh - var(--sp-16) * 2 - var(--sp-8)); border: 1px solid var(--line-panel); }
+html.is-inner .mk-bar { display: none; }
+.page { padding-top: var(--sp-8); padding-bottom: calc(var(--sp-16) * 2.5); }
+.stage { display: grid; justify-items: center; gap: var(--sp-3); margin: var(--sp-8) 0; text-align: center; }
+.lbl { margin: 0; font-size: var(--fs-2xs); letter-spacing: var(--track-wide); text-transform: uppercase; color: var(--label); }
+.after { margin-top: var(--sp-8); color: var(--muted); font-size: var(--fs-xs); }
+
+/* A · the ring: the figure inside a large ring that fills with it, as the Journal's Memento. */
+.ring { position: relative; display: grid; place-items: center; width: 220px; aspect-ratio: 1; border-radius: 50%; }
+.ring::before { content: ''; position: absolute; inset: 0; border-radius: 50%; background: conic-gradient(var(--accent) calc(var(--p) * 3.6deg), var(--ring-track) 0);
+  -webkit-mask: radial-gradient(closest-side, transparent calc(100% - 7px), var(--ring-mask) calc(100% - 6px)); mask: radial-gradient(closest-side, transparent calc(100% - 7px), var(--ring-mask) calc(100% - 6px)); filter: drop-shadow(0 0 8px color-mix(in oklab, var(--spotlight) 40%, transparent)); }
+.ring::after { content: ''; position: absolute; inset: 18px; border-radius: 50%; border: 1px solid color-mix(in oklab, var(--filigree) 25%, transparent); }
+.ring div { display: grid; justify-items: center; gap: var(--sp-1); }
+.ring b { font-family: var(--font-display); font-weight: 400; font-size: 72px; line-height: 1; color: var(--ink-strong); text-shadow: 0 0 24px color-mix(in oklab, var(--spotlight) 35%, transparent); }
+.ring b small { font-size: 0.4em; color: var(--ink-2); margin-left: 2px; }
+
+/* B · engraved: the figure in the display face, lit, between the site's crown flourishes. */
+.eng { display: grid; justify-items: center; gap: var(--sp-2); }
+.eng .crown { color: var(--filigree); opacity: .8; }
+.eng .crown.is-down { transform: scaleY(-1); }
+.eng b { font-family: var(--font-display); font-weight: 400; font-size: 112px; line-height: .95; letter-spacing: 0.02em; color: var(--ink-strong);
+  text-shadow: 0 0 30px color-mix(in oklab, var(--spotlight) 45%, transparent), 0 0 2px color-mix(in oklab, var(--spotlight) 60%, transparent); }
+.eng b small { font-size: 0.35em; color: var(--ink-2); margin-left: 4px; vertical-align: 0.9em; }
+
+/* C · the spool: the figure over the game's silk spool, filled as far as the game is done. */
+.spool { display: grid; justify-items: center; gap: var(--sp-3); }
+.spool b { font-family: var(--font-display); font-weight: 400; font-size: 96px; line-height: 1; color: var(--ink-strong); text-shadow: 0 0 24px color-mix(in oklab, var(--spotlight) 35%, transparent); }
+.spool b small { font-size: 0.38em; color: var(--ink-2); margin-left: 2px; }
+.bar { position: relative; width: 360px; height: 34px; }
+.bar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; }
+.bar .dim { filter: brightness(.25) grayscale(1); }
+.bar .lit { clip-path: inset(0 calc(100% - var(--p) * 1%) 0 0); filter: drop-shadow(0 0 6px color-mix(in oklab, var(--spotlight) 55%, transparent)); }
+@media (max-width: 599px) { .eng b { font-size: 84px; } .bar { width: 280px; height: 26px; } .ring { width: 180px; } .ring b { font-size: 58px; } }
+</style>
+</head>
+<body>
+<div class="page"><div class="shell"><main class="screens">
+<section class="screen" id="scr"><span class="frame-line"></span>
+  <header class="screen-head"><h2 class="sec-title screen-title">Progreso</h2></header>
+  <div id="mk"></div>
+</section></main></div></div>
+<div class="mk-bar"><b>Variant</b><button data-key="v" data-val="a">A · el anillo</button><button data-key="v" data-val="b">B · grabado</button><button data-key="v" data-val="c">C · el carrete</button>
+  <b>%</b><button data-key="p" data-val="63">63</button><button data-key="p" data-val="100">100</button>
+  <b>Width</b><button data-key="w" data-val="1440">desktop</button><button data-key="w" data-val="390">390</button><span class="mk-note" id="note"></span></div>
+<script>
+(function () {
+  const CROWN = '<svg class="crown" width="200" height="28" viewBox="0 0 200 28" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" aria-hidden="true"><path d="M93 14 C84 14 78 7 69 7 C61 7 58 13 62 16.5 C65 19 69.5 16.5 68 13.5"/><path d="M62 16.5 C50 22 30 21 10 14"/><path d="M10 14 C6 12 5.5 8.5 9 8 C11.5 7.8 12 10.5 10.5 11.5"/><path d="M78 9 C74 3 66 1.5 58 3.5"/><g transform="translate(200 0) scale(-1 1)"><path d="M93 14 C84 14 78 7 69 7 C61 7 58 13 62 16.5 C65 19 69.5 16.5 68 13.5"/><path d="M62 16.5 C50 22 30 21 10 14"/><path d="M10 14 C6 12 5.5 8.5 9 8 C11.5 7.8 12 10.5 10.5 11.5"/><path d="M78 9 C74 3 66 1.5 58 3.5"/></g><path d="M100 5 L105 14 L100 23 L95 14 Z"/><path d="M100 1 V5 M100 23 V27"/></svg>';
+  const DEF = { v: 'a', p: '63', w: '1440' };
+  const q = new URLSearchParams(location.search);
+  const st = Object.fromEntries(Object.keys(DEF).map((k) => [k, q.get(k) || DEF[k]]));
+  const inner = q.has('inner'), html = document.documentElement;
+  const NOTES = {
+    a: 'A · el anillo: la cifra dentro de un anillo grande que se llena con ella, como el Recuerdo del Diario; en letra del juego (Cinzel), con un halo suave.',
+    b: 'B · grabado: la cifra grande en la letra del juego, encendida, entre las dos coronas de filigrana de la web (la de la cabecera), como una placa.',
+    c: 'C · el carrete: la cifra en la letra del juego sobre el carrete de seda del HUD, lleno hasta donde vas.' };
+  function render() {
+    const p = +st.p, fig = '<b>' + p + '<small>%</small></b>', lbl = '<p class="lbl">Finalización</p>';
+    let h = '';
+    if (st.v === 'a') h = '<div class="stage"><div class="ring" style="--p:' + p + '"><div>' + fig + lbl + '</div></div></div>';
+    if (st.v === 'b') h = '<div class="stage"><div class="eng">' + CROWN + fig + CROWN.replace('class="crown"', 'class="crown is-down"') + lbl + '</div></div>';
+    if (st.v === 'c') h = '<div class="stage"><div class="spool">' + fig + '<div class="bar" style="--p:' + p + '"><img class="dim" src="assets/hud/spool.png" alt=""><img class="lit" src="assets/hud/spool.png" alt=""></div>' + lbl + '</div></div>';
+    document.getElementById('mk').innerHTML = h + '<p class="after" style="text-align:center">(debajo: la línea de los actos y los finales, y el desglose, como ahora)</p>';
+  }
+  const url = (over) => '?' + new URLSearchParams(Object.assign({}, st, over)).toString();
+  if (st.w === '390' && !inner) { html.classList.add('is-framed'); document.querySelector('.page').remove(); const f = document.createElement('iframe'); f.className = 'mk-phone'; f.src = location.pathname + url({ inner: 1 }); document.body.prepend(f); }
+  if (inner) html.classList.add('is-inner');
+  for (const b of document.querySelectorAll('.mk-bar button')) b.setAttribute('aria-pressed', String(st[b.dataset.key] === b.dataset.val));
+  document.getElementById('note').textContent = NOTES[st.v];
+  if (document.getElementById('mk')) render();
+  document.addEventListener('click', (ev) => { const b = ev.target.closest('.mk-bar button'); if (b) location.search = url({ [b.dataset.key]: b.dataset.val }); });
+})();
+</script>
+</body>
+</html>

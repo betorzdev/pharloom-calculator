@@ -487,7 +487,7 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
 
 /* ── Responsive ──────────────────────────────────────────────────────── */
 @media (max-width: 899px) {
-  :root { --page-pad: var(--sp-4); --sticky-h: 60px; }
+  :root { --page-pad: var(--sp-4); --sticky-h: 60px; --pg-ring: 180px; }
   .shell { gap: var(--sp-6); }
   .screen { padding: var(--sp-6); --inv-pad: var(--sp-6); }
   .nav { flex-direction: column; align-items: stretch; gap: 0; }
@@ -956,7 +956,11 @@ kbd {
    In free mode, the ghost bench: the card a save shows, unlit, and the file dropped here goes
    into the first empty save. In a save: the bench card, three columns and the ways on (design/03-redesign.md,
    step 3). Figures in --font-num, as everywhere. */
-.hm-figure { height: calc(var(--sp-16) * 1.5); width: auto; filter: drop-shadow(0 0 18px color-mix(in oklab, var(--spotlight) 18%, transparent)); }
+/* Hornet on the bench she rests at (js/benches.js, from the game's files): both of the wiki's
+   sprites at one scale (--hn-rest), her hem on the bench's seat; the box is theirs together
+   (--w, its width in the sprites' pixels, and its aspect ratio, set inline with the places). */
+.hm-rest { position: relative; display: block; width: calc(var(--w) * var(--hn-rest) * 1px); max-width: 100%; margin-block: var(--sp-2); filter: drop-shadow(0 0 18px color-mix(in oklab, var(--spotlight) 18%, transparent)); }
+.hm-rest img { position: absolute; max-width: none; height: auto; }
 .hm-invite-acts { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--sp-6); margin-top: var(--sp-1); }
 /* Free mode (the ghost bench): the card unlit, the kingdom's name in faint ink, Hornet a
    silhouette with a faint rim and the figures waiting. Dropping a file on it lights it. */
@@ -964,7 +968,8 @@ kbd {
 .hm-card.is-ghost::before { background: radial-gradient(ellipse 50% 70% at 50% 45%, var(--scene-glow-low), transparent 75%); }
 .is-ghost .hm-sup { color: var(--muted); }
 .is-ghost .hm-area { color: color-mix(in oklab, var(--ink) 30%, transparent); text-shadow: none; }
-.is-ghost .hm-figure { filter: brightness(0) drop-shadow(0 0 1px color-mix(in oklab, var(--ink) 45%, transparent)); opacity: 0.85; }
+/* The bench and Hornet one silhouette. */
+.is-ghost .hm-rest { filter: brightness(0) drop-shadow(0 0 1px color-mix(in oklab, var(--ink) 45%, transparent)); opacity: 0.85; }
 .is-ghost .hm-fig b { color: var(--line-ctl); }
 .hm-ghost { margin: var(--sp-2) 0 0; font-family: var(--font-display); font-size: var(--fs-lg); letter-spacing: var(--track-title); color: var(--ink-strong); }
 .hm-invite.is-drag { border-color: var(--accent-line); background-color: var(--accent-soft); }
@@ -990,7 +995,6 @@ kbd {
   text-shadow: 0 0 24px color-mix(in oklab, var(--area-line) 35%, transparent);
 }
 .hm-sub { margin: 0; font-size: var(--fs-sm); color: var(--ink-2); }
-.hm-card .hm-figure { height: calc(var(--sp-16) * 1.2); margin-block: var(--sp-2); }
 .hm-figs { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-4) var(--sp-12); }
 .hm-fig { display: grid; justify-items: center; gap: var(--sp-1); }
 .hm-fig-k { font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; color: var(--label); }
@@ -1037,9 +1041,21 @@ kbd {
    quiet. What belongs to a later Act than yours dims. */
 .pg-total { display: grid; justify-items: center; gap: var(--sp-1); margin: var(--sp-6) 0 var(--sp-4); text-align: center; }
 .pg-total .lbl { margin: 0; }
-.pg-total-n { margin: 0; font-family: var(--font-num); font-variant-numeric: tabular-nums; line-height: 1; color: var(--ink-strong); }
-.pg-total-n b { font-size: var(--fs-hero); font-weight: 600; }
-.pg-total-n .u { font-size: var(--fs-2xl); color: var(--ink-2); margin-left: 0.08em; }
+/* The figure in a ring that fills with it (design/20-progress-total-variants.html, A): the
+   Journal's Memento made larger, a thin filigree circle inside, the figure in the game's face. */
+.pg-ring { position: relative; display: grid; place-content: center; justify-items: center; gap: var(--sp-1); width: var(--pg-ring); aspect-ratio: 1; border-radius: 50%; }
+.pg-ring::before {
+  content: ''; position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(var(--accent) calc(var(--p) * 3.6deg), var(--ring-track) 0);
+  -webkit-mask: radial-gradient(closest-side, transparent calc(100% - var(--ring) * 2), var(--ring-mask) calc(100% - var(--ring) * 2 + 1px));
+  mask: radial-gradient(closest-side, transparent calc(100% - var(--ring) * 2), var(--ring-mask) calc(100% - var(--ring) * 2 + 1px));
+  filter: drop-shadow(0 0 8px color-mix(in oklab, var(--spotlight) 40%, transparent));
+}
+.pg-ring::after { content: ''; position: absolute; inset: var(--sp-4); border-radius: 50%; border: 1px solid color-mix(in oklab, var(--filigree) 25%, transparent); }
+.pg-total-n { margin: 0; font-family: var(--font-display); line-height: 1; color: var(--ink-strong); text-shadow: 0 0 24px color-mix(in oklab, var(--spotlight) 35%, transparent); }
+.pg-total-n b { font-size: calc(var(--pg-ring) / 3); font-weight: 400; }
+.pg-total-n .u { font-size: calc(var(--pg-ring) / 8); color: var(--ink-2); margin-left: 0.08em; }
+.pg-ring-k { margin: 0; font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
 /* The journey: the road's steps as diamonds on one silk thread, lit up to where you are. */
 .pg-journey { display: grid; justify-items: center; gap: var(--sp-3); max-width: var(--column); margin: var(--sp-6) auto var(--sp-2); text-align: center; }
 .pg-journey-sup { margin: 0; font-family: var(--font-display); font-size: var(--fs-sm); letter-spacing: var(--track-wide); text-transform: uppercase; color: var(--ink-2); }
@@ -1300,57 +1316,95 @@ kbd {
 }
 
 /* ── The Crest screen (js/app-tools.js) ─────────────────────────────────────
-   Three columns: the Crest with its slots (each slot the game's colour, data), what makes the
-   build, and the figures. A slot filled holds its Tool's icon; a locked one is dashed. What you
-   pick has the pause menu's white frame, as everywhere. Figures in --font-num. */
-.ct-body { display: grid; grid-template-columns: 240px minmax(0, 1fr) 320px; gap: var(--sp-8); align-items: start; margin-top: var(--sp-6); }
-.ct-side { display: grid; gap: var(--sp-6); justify-items: center; text-align: center; }
-.ct-crest { display: grid; justify-items: center; gap: var(--sp-2); }
-.ct-crest-img { width: 128px; height: 128px; object-fit: contain; filter: drop-shadow(0 0 16px color-mix(in oklab, var(--spotlight) 22%, transparent)); }
-.ct-crest-name { margin: 0; font-family: var(--font-display); font-size: var(--fs-xl); font-weight: 600; letter-spacing: var(--track-title); color: var(--ink-strong); }
-.ct-stage { font-family: var(--font-body); font-size: var(--fs-sm); font-weight: 400; letter-spacing: 0; color: var(--ink-2); }
-.ct-crest-desc { margin: 0; font-size: var(--fs-sm); color: var(--ink-2); text-wrap: pretty; }
-.ct-slots { display: grid; gap: var(--sp-2); width: 100%; }
-.ct-row { display: grid; grid-template-columns: 1fr; gap: var(--sp-1); justify-items: center; }
-.ct-row-k { font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
-/* The slots are diamonds, squares turned 45°: they reach ~21% past their box, so the row gives them
-   that room around (and between) them. */
-.ct-row-v { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-6); padding: var(--sp-3) var(--sp-2); }
-.ct-slot {
-  display: grid; place-items: center; width: 48px; height: 48px; padding: var(--sp-1); transform: rotate(45deg);
-  border: 2px solid var(--slot-locked); background: var(--well);
-}
-.ct-slot img { width: 130%; height: 130%; object-fit: contain; transform: rotate(-45deg); }
-.ct-slot.is-red { border-color: var(--slot-red); }
-.ct-slot.is-blue { border-color: var(--slot-blue); }
-.ct-slot.is-yellow { border-color: var(--slot-yellow); }
-.ct-slot.is-skill { border-color: var(--slot-skill); }
-.ct-slot.is-locked { border-style: dashed; opacity: 0.55; }
-.ct-over { font-size: var(--fs-xs); color: var(--cond); }
-.ct-controls { display: grid; gap: var(--sp-4); min-width: 0; }
-.ct-field { display: grid; gap: var(--sp-2); }
-.ct-crests, .ct-tools { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--sp-1); }
-.ct-tools + .ct-tools { margin-top: var(--sp-2); }
-.ct-pick, .ct-tool {
-  display: grid; place-items: center; width: 52px; height: 52px; padding: var(--sp-1); border: 1px solid transparent; background: none; cursor: pointer;
-  transition: border-color var(--dur) var(--ease), background-color var(--dur) var(--ease);
-}
-.ct-tool { width: 44px; height: 44px; }
-.ct-pick img, .ct-tool img { max-width: 100%; max-height: 100%; object-fit: contain; opacity: 0.55; filter: grayscale(0.6); transition: opacity var(--dur) var(--ease), filter var(--dur) var(--ease); }
-.ct-pick:is(:hover, :focus-visible):not(:disabled), .ct-tool:is(:hover, :focus-visible) { border-color: color-mix(in oklab, var(--filigree) 40%, transparent); background: var(--veil); outline: none; }
-.ct-pick:is(:hover, :focus-visible) img, .ct-tool:is(:hover, :focus-visible) img { opacity: 0.9; filter: none; }
-.ct-pick.is-on, .ct-tool.is-on { border-color: var(--filigree); background: var(--veil); }
-.ct-pick.is-on img, .ct-tool.is-on img { opacity: 1; filter: drop-shadow(0 0 6px color-mix(in oklab, var(--spotlight) 45%, transparent)); }
-.ct-pick:disabled { cursor: default; }
-/* Free mode, what the Inventory's marks say you don't have yet: a silhouette, and it can't be put on. */
-:is(.ct-pick, .ct-tool).is-missing { opacity: 1; cursor: default; }
-:is(.ct-pick, .ct-tool).is-missing img { filter: var(--missing-art); }
-:is(.ct-pick, .ct-tool).is-missing:is(:hover, :focus-visible) { background: none; border-color: transparent; }
-.ct-tool.is-red { box-shadow: inset 0 -2px 0 color-mix(in oklab, var(--slot-red) 70%, transparent); }
-.ct-tool.is-blue { box-shadow: inset 0 -2px 0 color-mix(in oklab, var(--slot-blue) 70%, transparent); }
-.ct-tool.is-yellow { box-shadow: inset 0 -2px 0 color-mix(in oklab, var(--slot-yellow) 70%, transparent); }
+   design/18-crest-variants.html, A (the game's pane): the figures as big numbers, the levels as
+   − N + steppers; then the Crest drawn as the game draws it, its slots where the game puts them
+   (js/crest-slots.js: units from its centre, --k px to the unit), each slot the game's frame
+   (inline in that file, --g, as a mask won't take a file over file://) tinted by its colour; beside it the Tool list by colour and the one pointed at,
+   described. Figures in --font-num. */
+/* The figures as the game's HUD (design/19-crest-figures-variants.html, A): the Needle at its
+   level with the slash large beside it; damage a second and the Needle Strike in the middle;
+   Hornet as the HUD shows her on the right, her masks drawn and the spool with its silk. */
+.ct-band { display: flex; justify-content: center; align-items: flex-end; margin-top: var(--sp-4); }
+/* One centred block, its three parts on one baseline, a thin filigree rule between them. */
+.ct-band > * { padding: 0 var(--sp-8); }
+.ct-band > * + * { border-left: 1px solid color-mix(in oklab, var(--filigree) 22%, transparent); }
+.ct-slash { display: flex; align-items: flex-end; gap: var(--sp-3); }
+.ct-slash img { height: calc(var(--sp-16) + var(--sp-8)); width: auto; filter: drop-shadow(0 0 10px color-mix(in oklab, var(--spotlight) 30%, transparent)); }
+.ct-slash b { display: block; font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: calc(var(--fs-2xl) * 1.7); line-height: 1; color: var(--ink-strong); }
+.ct-fig2 span, .ct-slash span { display: block; margin-top: var(--sp-1); font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
+.ct-mid { display: flex; align-items: flex-end; gap: var(--sp-8); }
+.ct-fig2 b { display: block; font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-2xl); line-height: 1.1; color: var(--ink-strong); }
+/* Hornet as the HUD draws her: the masks in a row, the spool under them with its silk. */
+.ct-hud { display: grid; justify-items: start; gap: var(--sp-2); }
+.ct-masks { display: flex; gap: var(--sp-1); }
+.ct-masks img { height: calc(var(--sp-6) + var(--sp-1)); width: auto; }
+.ct-spool { display: flex; align-items: center; gap: var(--sp-2); }
+.ct-spool img { height: calc(var(--sp-4) + var(--sp-1)); width: auto; }
+.ct-spool b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-lg); line-height: 1; color: var(--ink-strong); }
+.ct-heal { font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
+/* The levels as the game's upgrade pips, on one centred row with the moment's switches. */
+.ct-levels { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--sp-3) var(--sp-6); margin-top: var(--sp-6); padding: var(--sp-4) 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.ct-lv { display: inline-flex; align-items: center; gap: var(--sp-2); font-size: var(--fs-xs); color: var(--ink-2); }
+.ct-lv img { width: var(--sp-6); height: var(--sp-6); object-fit: contain; }
+.ct-lv .icon-btn { width: var(--ctl-sm); height: var(--ctl-sm); }
+.ct-lv .icon-btn:disabled { visibility: hidden; }
+.ct-pips { display: inline-flex; align-items: center; gap: var(--sp-1); }
+.ct-pip { display: block; width: calc(var(--diamond) + 3px); height: calc(var(--diamond) + 3px); padding: 0; transform: rotate(45deg); border: 1px solid color-mix(in oklab, var(--accent-line) 80%, transparent); background: none; }
+button.ct-pip { cursor: pointer; }
+button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline: none; }
+.ct-pip.is-on { background: var(--accent); border-color: var(--accent); box-shadow: var(--glow); }
 .ct-checks { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-4); }
-.ct-figs { display: grid; gap: var(--sp-6); position: sticky; top: calc(var(--sticky-h) + var(--sp-4)); }
+.ct-body { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--sp-8); align-items: start; margin-top: var(--sp-8); }
+.ct-side { display: grid; justify-items: center; gap: var(--sp-3); }
+.ct-crest { --k: var(--crest-k); position: relative; }
+/* The art's box is the slots' reach (every Crest's slots sit within ±2.7 units, ±3 up), the art centred in it. */
+.ct-crest-art { position: relative; width: calc(var(--k) * 6.2); height: calc(var(--k) * 6.4); }
+.ct-crest-art > img {
+  position: absolute; left: 50%; top: 50%; width: calc(var(--k) * var(--w)); height: calc(var(--k) * var(--h)); transform: translate(-50%, -50%);
+  filter: drop-shadow(0 0 14px color-mix(in oklab, var(--silk) 22%, transparent));
+}
+.ct-slot {
+  --c: var(--slot-red);
+  position: absolute; left: calc(50% + var(--x) * var(--k)); top: calc(50% - var(--y) * var(--k)); transform: translate(-50%, -50%);
+  display: grid; place-items: center; width: calc(var(--k) * 0.95); height: calc(var(--k) * 0.95); padding: 0; border: 0; background: none;
+}
+.ct-float .ct-slot { position: relative; left: auto; top: auto; transform: none; }
+/* The Vesticrest's slots in the box's bottom-right corner, which no Crest's slots reach: the art stays centred over its name. */
+.ct-float { position: absolute; right: 0; bottom: 0; display: flex; gap: var(--sp-1); }
+.ct-slot::before { content: ''; position: absolute; inset: 0; background: var(--c); -webkit-mask: var(--g) center / contain no-repeat; mask: var(--g) center / contain no-repeat; opacity: 0.9; }
+.ct-slot.is-blue { --c: var(--slot-blue); }
+.ct-slot.is-yellow { --c: var(--slot-yellow); }
+.ct-slot.is-skill { --c: var(--slot-skill); }
+.ct-slot.is-locked::before { background: var(--slot-locked); opacity: 0.7; }
+.ct-slot.is-full { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.ct-slot.is-full::before { opacity: 0.3; }
+.ct-slot.is-skill.is-full::before { opacity: 0.12; }
+.ct-slot img { position: relative; width: 84%; height: 84%; object-fit: contain; filter: drop-shadow(0 0 6px color-mix(in oklab, var(--c) 55%, transparent)); transition: transform var(--dur) var(--ease); }
+.ct-slot.is-full:is(:hover, :focus-visible) { outline: none; }
+.ct-slot.is-full:is(:hover, :focus-visible) img { transform: scale(1.1); }
+.ct-crest-name { display: flex; align-items: center; gap: var(--sp-4); text-align: center; }
+.ct-crest-name h3 { margin: 0; font-family: var(--font-display); font-size: var(--fs-xl); font-weight: 400; letter-spacing: var(--track-title); color: var(--ink-strong); }
+.ct-stage { font-size: var(--fs-xs); color: var(--muted); }
+.ct-arrow { font-size: var(--fs-lg); }
+/* The Tool list: a row per colour and the Silk Skills, each on its slot as the Inventory draws it
+   (.inv-cell.is-slot: the diamond in the slot's colour), only the ones you have, as the game
+   lists them. Only the diamond here, no pip under it (Albert): a worn one's diamond is filled
+   with its colour and lit. */
+.ct-pick { display: grid; gap: var(--sp-4); min-width: 0; }
+.ct-shelf { display: grid; gap: var(--sp-2); }
+.ct-tools > li { padding-bottom: 0; }
+.ct-tools .inv-cell::after { content: none; }
+.ct-tools .inv-cell.is-on::before { border-width: 2px; background: color-mix(in oklab, var(--c) 32%, var(--scene-bg)); box-shadow: 0 0 12px color-mix(in oklab, var(--c) 45%, transparent); }
+.ct-tools .inv-cell:focus { outline: none; }
+.ct-tools .inv-cell:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+/* The one pointed at: name in its colour's rule, the game's words, its numbers. */
+.ct-desc { display: grid; gap: var(--sp-2); min-height: calc(var(--sp-16) * 1.5); padding-top: var(--sp-4); border-top: 1px solid var(--line); }
+.ct-desc-name { margin: 0; font-family: var(--font-display); font-size: var(--fs-lg); font-weight: 400; color: var(--ink-strong); }
+.ct-desc-text { margin: 0; font-size: var(--fs-sm); color: var(--ink-2); text-wrap: pretty; }
+.ct-desc-nums { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--sp-1) var(--sp-3); margin: 0; font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-xs); color: var(--muted); }
+.ct-desc-nums b { font-size: var(--fs-xl); color: var(--ink-strong); }
+.ct-desc-none { margin: 0; font-size: var(--fs-sm); color: var(--muted); }
+.ct-figs { display: grid; gap: var(--sp-6); position: sticky; top: calc(var(--sticky-h) + var(--sp-4)); }   /* Combat's figures (js/app-fight.js) */
 .ct-block { display: grid; gap: var(--sp-2); }
 /* A block's title (design/03-redesign.md, step 2): the screen title's mark one level down, a
    hollow diamond in front and a rule that fades out to the right. */
@@ -1375,11 +1429,20 @@ kbd {
 .ct-list b { grid-area: v; font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-md); color: var(--ink-strong); }
 .ct-list li:not(.is-on) b { color: var(--ink-2); }
 @media (max-width: 1100px) {
-  .ct-body { grid-template-columns: 200px minmax(0, 1fr); }
+  .ct-body { grid-template-columns: minmax(0, 1fr); justify-items: center; }
+  .ct-pick { width: 100%; }
   .ct-figs { grid-column: 1 / -1; position: static; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); }
 }
-@media (max-width: 640px) {
-  .ct-body { grid-template-columns: minmax(0, 1fr); }
+@media (max-width: 599px) {
+  .ct-crest { --k: var(--crest-k-sm); }
+  .ct-band { flex-direction: column; align-items: center; gap: var(--sp-4); text-align: center; }
+  .ct-band > * { padding: 0; }
+  .ct-band > * + * { border-left: 0; padding-top: var(--sp-4); border-top: 1px solid color-mix(in oklab, var(--filigree) 22%, transparent); }
+  .ct-mid { justify-content: center; gap: var(--sp-6); }
+  .ct-hud { justify-items: center; }
+  .ct-masks { justify-content: center; }
+  .ct-lv { width: 100%; }
+  .ct-lv-k { margin-right: auto; }
 }
 /* The figures in one strip on the window's bottom edge, only where the full list has gone below
    the controls: the Inventory's detail bar, the same frame. */
@@ -1397,11 +1460,6 @@ kbd {
   .ct-sum-cell img + .ct-sum-k { display: none; }
 }
 /* The passive Tools' effects: icon and the game's own text, quiet. */
-.ct-effects { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-3); }
-.ct-effects li { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: var(--sp-3); align-items: start; }
-.ct-effects img { width: 32px; height: 32px; object-fit: contain; }
-.ct-eff-name { margin: 0; font-size: var(--fs-sm); color: var(--ink-strong); }
-.ct-eff-desc { margin: var(--sp-half) 0 0; font-size: var(--fs-xs); line-height: 1.5; color: var(--ink-2); }
 .ct-share { margin-top: var(--sp-3); }
 
 /* ── The Hunter's Journal (js/app-journal.js) ─────────────────────────────
@@ -1438,7 +1496,8 @@ kbd {
 .hj-hunt-left { font-size: var(--fs-xs); color: var(--muted); }
 .hj-hunt:focus { outline: none; }
 .hj-hunt:is(:hover, :focus-visible), .hj-hunt.is-picked { border-color: var(--accent-line); background: var(--veil); }
-.hj-tools { display: flex; justify-content: flex-end; gap: var(--sp-6); margin: var(--sp-4) 0 var(--sp-2); }
+.hj-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: var(--sp-6); margin: var(--sp-4) 0 var(--sp-2); }
+.hj-find { flex: 1 1 16rem; max-width: 24rem; margin-right: auto; }
 .hj-tog { gap: var(--sp-2); }
 .hj-shelf { display: grid; gap: var(--sp-6); min-width: 0; }
 .hj-area-group { display: grid; gap: var(--sp-3); }
@@ -1516,7 +1575,8 @@ kbd {
   .hj-hunt .hj-ring { width: 56px; }
   .hj-hunt b { font-size: var(--fs-xs); }
   .hj-hunt-left { display: none; }
-  .hj-tools { justify-content: center; }
+  .hj-tools { justify-content: center; gap: var(--sp-3) var(--sp-6); }
+  .hj-find { flex-basis: 100%; max-width: none; margin-right: 0; }
   .hj-sheet { inset: auto 0 0 0; margin: 0; width: auto; max-height: 90vh; grid-template-columns: minmax(0, 1fr); gap: var(--sp-4); padding: var(--sp-8) var(--sp-4) var(--sp-6); border-width: 1px 0 0; animation-name: hj-sheet-up; }
   .hj-art { min-height: 200px; }
   .hj-art img { max-height: 260px; }
@@ -1528,11 +1588,28 @@ kbd {
 }
 }
 
-/* ── Combat (js/app-fight.js): the enemy, its card, and the two lists ─────
-   Three columns: the enemies to pick (a search and portraits), the one picked with its health
-   and its five modifiers (the level your Needle hits at, and your Kit's, marked), and what you do
-   to it and it to you, as the Crest screen's lists. */
-.ft-body { display: grid; grid-template-columns: 260px 240px minmax(0, 1fr); gap: var(--sp-8); align-items: start; margin-top: var(--sp-6); }
+/* ── Combat (js/app-fight.js): the duel ────────────────────────────────────
+   design/21-combat-variants.html, A (the sibling's): the enemy in a dropdown; Hornet and the
+   enemy face to face on the Journal's light, the slashes that win and the hits that take you down
+   between them, its health as a bar; the quickest way in one line; your attacks as cards and its
+   with their masks; how it's worked out, folded. */
+.ft-choose { position: relative; z-index: 3; max-width: 560px; margin: var(--sp-4) auto 0; }
+.ft-choose > summary {
+  display: flex; align-items: center; gap: var(--sp-3); padding: var(--sp-2) var(--sp-3); list-style: none; cursor: pointer;
+  border-bottom: 1px solid var(--line-ctl); -webkit-tap-highlight-color: transparent;
+}
+.ft-choose > summary::-webkit-details-marker { display: none; }
+.ft-choose > summary:focus { outline: none; }
+.ft-choose > summary:focus-visible { border-color: var(--accent); }
+.ft-choose > summary img { width: var(--sp-8); height: var(--sp-8); object-fit: contain; }
+.ft-choose-name { flex: 1; min-width: 0; font-family: var(--font-display); color: var(--ink-strong); }
+.ft-choose-v { color: var(--ink-2); transition: transform var(--dur) var(--ease); }
+.ft-choose[open] .ft-choose-v { transform: rotate(180deg); }
+/* A <details>' content doesn't take its box as the containing block (Chrome slots it), so the
+   list hangs from a zero-height relative wrapper instead. */
+.ft-choose-body { position: relative; z-index: 5; height: 0; }
+.ft-choose-body > * { position: absolute; left: 0; right: 0; top: 0; padding: var(--sp-3); background: var(--scene-floor); border: 1px solid var(--line-ctl); box-shadow: var(--shadow-md); }
+.ft-choose-body .ft-foes { max-height: 50vh; }
 .ft-pick { display: grid; gap: var(--sp-3); }
 .ft-foes { list-style: none; margin: 0; padding: 0; max-height: 70vh; overflow: auto; display: grid; gap: var(--sp-half); }
 .ft-foe {
@@ -1543,11 +1620,86 @@ kbd {
 .ft-foe:is(:hover, :focus-visible) { border-color: color-mix(in oklab, var(--filigree) 40%, transparent); background: var(--veil); color: var(--ink); outline: none; }
 .ft-foe.is-on { border-color: var(--filigree); background: var(--veil); color: var(--ink-strong); }
 .ft-boss { font-style: normal; font-size: var(--fs-2xs); letter-spacing: var(--track-label); text-transform: uppercase; color: var(--muted); }
-.ft-card { display: grid; justify-items: center; gap: var(--sp-3); text-align: center; position: sticky; top: calc(var(--sticky-h) + var(--sp-4)); }
-.ft-big { width: 144px; height: 162px; object-fit: contain; }
-.ft-hp b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-2xl); color: var(--ink-strong); }
+/* The duel: Hornet · the figures · the enemy, on one baseline. */
+.ft-duel { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: var(--sp-6); align-items: end; margin-top: var(--sp-8); }
+.ft-fighter { display: grid; justify-items: center; gap: var(--sp-2); text-align: center; }
+.ft-fighter h3 { margin: 0; font-family: var(--font-display); font-size: var(--fs-xl); font-weight: 400; letter-spacing: var(--track-title); color: var(--ink-strong); }
+.ft-duel { --ft-art: calc(var(--sp-16) * 3.5); }
+.ft-art { position: relative; display: grid; place-items: center; width: 100%; height: var(--ft-art); }
+.ft-art::before { content: ''; position: absolute; inset: -6% 10%; background: var(--journal-light); pointer-events: none; }
+.ft-art img { position: relative; max-width: 100%; max-height: var(--ft-art); object-fit: contain; }
+.ft-masks { display: flex; flex-wrap: wrap; justify-content: center; gap: 3px; }
+.ft-masks img { height: var(--sp-6); width: auto; }
+.ft-hpbar { position: relative; display: block; width: min(100%, 320px); height: 6px; background: linear-gradient(90deg, color-mix(in oklab, var(--slot-red) 75%, transparent) var(--h, 100%), var(--ring-track) 0); box-shadow: 0 0 10px color-mix(in oklab, var(--slot-red) 35%, transparent); transition: background var(--dur) var(--ease); }
+.ft-masks img.is-off { filter: brightness(0.25) grayscale(1); }
+/* Her silk: the HUD's spool, lit as far as it's full. */
+.ft-silk { display: flex; align-items: center; gap: var(--sp-2); }
+.ft-silk > span { position: relative; display: block; width: calc(var(--sp-16) * 1.6); height: var(--sp-4); }
+.ft-silk img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ft-silk .is-dim { filter: brightness(0.25) grayscale(1); }
+.ft-silk .is-lit { clip-path: inset(0 calc(100% - var(--s)) 0 0); }
+.ft-silk b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-md); color: var(--ink-strong); }
+.ft-bind { margin-top: var(--sp-1); }
+.ft-fighter.is-down .ft-art img { filter: grayscale(1) brightness(0.45); transform: rotate(-8deg); transition: filter var(--dur-slow) var(--ease), transform var(--dur-slow) var(--ease); }
+.ft-hpbar i { position: absolute; top: -3px; bottom: -3px; width: 2px; margin-left: -1px; background: var(--ink-strong); }
+.ft-hpn { font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
+.ft-mid { display: grid; justify-items: center; gap: var(--sp-6); padding-bottom: var(--sp-12); text-align: center; }
+.ft-mid p { margin: 0; display: grid; justify-items: center; gap: var(--sp-1); }
+.ft-mid b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: calc(var(--fs-2xl) * 2); line-height: 1; color: var(--ink-strong); }
+.ft-mid .is-sub b { font-size: var(--fs-2xl); }
+.ft-mid span { font-size: var(--fs-xs); color: var(--muted); }
+.ft-plan { max-width: 640px; margin: var(--sp-4) auto 0; text-align: center; font-size: var(--fs-sm); color: var(--ink-2); text-wrap: balance; }
+.ft-plan b { font-family: var(--font-display); font-weight: 400; color: var(--ink-strong); }
+/* Your attacks as cards, the one that needs fewest framed; its attacks with their masks. */
+.ft-two { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: var(--sp-8); align-items: start; margin-top: var(--sp-8); }
+.ft-side { display: grid; gap: var(--sp-4); }
+.ft-cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(128px, 1fr)); gap: var(--sp-3); }
+.ft-cardx {
+  display: grid; justify-items: center; align-content: start; gap: var(--sp-1); width: 100%; height: 100%; padding: var(--sp-3) var(--sp-2);
+  border: 1px solid transparent; background: none; text-align: center; cursor: pointer; -webkit-tap-highlight-color: transparent;
+  transition: background-color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+}
+.ft-cardx:is(:hover, :focus-visible):not(:disabled) { background: var(--veil); outline: none; }
+.ft-cardx:active:not(:disabled) { transform: scale(0.96); }
+.ft-cardx:disabled { cursor: default; opacity: 0.4; }
+.ft-cardx small { font-family: var(--font-num); font-size: var(--fs-2xs); color: var(--label); }
+.ft-cardx img { width: var(--sp-12); height: var(--sp-12); object-fit: contain; }
+.ft-cardx img.is-needle { transform: rotate(35deg); }
+.ft-cardx span { font-size: var(--fs-sm); color: var(--ink-2); }
+.ft-cardx b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-xl); color: var(--ink-strong); }
+.ft-cardx em { font-style: normal; font-size: var(--fs-xs); color: var(--muted); }
+.ft-cardx.is-best { border-color: var(--accent-line); background: var(--picked); }
+.ft-hits { list-style: none; margin: 0; padding: 0; display: grid; }
+.ft-hits li { border-bottom: 1px solid var(--line); }
+.ft-hit {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "n m" "e e"; gap: 0 var(--sp-3); width: 100%; padding: var(--sp-2) var(--sp-1);
+  border: 0; background: none; text-align: left; cursor: pointer; -webkit-tap-highlight-color: transparent; transition: background-color var(--dur-fast) var(--ease);
+}
+.ft-hit:is(:hover, :focus-visible):not(:disabled) { background: color-mix(in oklab, var(--slot-red) 10%, transparent); outline: none; }
+.ft-hit:disabled { cursor: default; opacity: 0.4; }
+.ft-hit-name { grid-area: n; font-size: var(--fs-sm); color: var(--ink); }
+.ft-hit-masks { grid-area: m; display: inline-flex; align-items: center; gap: 2px; }
+.ft-hit-masks img { height: var(--sp-4); width: auto; }
+.ft-hit-masks b { font-family: var(--font-num); font-size: var(--fs-xs); color: var(--ink-2); }
+.ft-hits em { grid-area: e; font-style: normal; font-size: var(--fs-xs); color: var(--muted); }
+/* Enemy gauntlets: the arena's summary centred, then its waves. */
+.ft-summary { display: grid; justify-items: center; gap: var(--sp-2); margin-top: var(--sp-6); text-align: center; }
+.ft-summary .inv-name { margin: 0; }
 .ft-hp { margin: 0; color: var(--ink-2); }
-.ft-bars { display: block; font-family: var(--font-num); font-size: var(--fs-xs); color: var(--muted); }
+.ft-hp b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-2xl); color: var(--ink-strong); }
+.ft .ct-figs.ft-waves { position: static; margin-top: var(--sp-6); }
+/* The fight's log, newest first, with undo and start over. */
+.ft-log { display: grid; gap: var(--sp-2); max-width: 640px; min-height: calc(var(--sp-16) + var(--sp-4)); margin: var(--sp-4) auto 0; }
+.ft-log-tools { display: flex; justify-content: center; gap: var(--sp-6); }
+.ft-log-lines { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-1); text-align: center; font-family: var(--font-num); font-size: var(--fs-xs); color: var(--muted); }
+.ft-log-lines li:first-child { font-size: var(--fs-sm); color: var(--ink-strong); }
+.ft-log-lines li.is-phase, .ft-log-lines li.is-win, .ft-log-lines li.is-lose { font-family: var(--font-display); letter-spacing: var(--track-title); color: var(--ink); }
+.ft-log .pg-note { text-align: center; }
+/* How it's worked out, folded. */
+.ft-how { margin-top: var(--sp-8); }
+.ft-how > summary { list-style: none; cursor: pointer; }
+.ft-how > summary::-webkit-details-marker { display: none; }
+.ft-how-body { display: grid; gap: var(--sp-3); padding-top: var(--sp-4); }
 .ft-mods { display: grid; gap: var(--sp-1); width: 100%; }
 .ft-mods ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--sp-1); }
 .ft-mods li { display: grid; gap: var(--sp-half); padding: var(--sp-1) 0; border: 1px solid var(--line); font-family: var(--font-num); font-variant-numeric: tabular-nums; }
@@ -1563,16 +1715,14 @@ kbd {
 .ft-list li { grid-template-columns: 28px minmax(0, 1fr) auto auto; grid-template-areas: "i n v u" "i s v u"; column-gap: var(--sp-3); }
 .ft-list.is-theirs li { grid-template-columns: minmax(0, 1fr) auto auto; grid-template-areas: "n v u" "s v u"; }
 .ft-uses { grid-area: u; min-width: 8ch; text-align: right; font-size: var(--fs-xs); color: var(--ink-2); }
-@media (max-width: 1100px) {
-  .ft-body { grid-template-columns: 240px minmax(0, 1fr); }
-  .ft-body > .ct-figs { grid-column: 1 / -1; }
-  .ft-card { position: static; }
+@media (max-width: 899px) {
+  .ft-duel { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--sp-4); }
+  .ft-mid { grid-column: 1 / -1; grid-row: 2; grid-auto-flow: column; justify-content: center; align-items: end; gap: var(--sp-8); padding: 0; }
+  .ft-duel { --ft-art: calc(var(--sp-16) * 2.2); }
+  .ft-two { grid-template-columns: minmax(0, 1fr); }
+  .ft-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ft-masks img { height: var(--sp-4); }
 }
-@media (max-width: 640px) {
-  .ft-body { grid-template-columns: minmax(0, 1fr); }
-  .ft-foes { max-height: 40vh; }
-}
-.ft-plan-line { margin: 0; font-size: var(--fs-lg); color: var(--ink-strong); text-wrap: balance; }
 
 /* ── The Map (js/app-map.js) ──────────────────────────────────────────────
    The game's map on the pause menu's black, which scrolls when zoomed; on it, Hornet at your bench
@@ -1692,7 +1842,6 @@ img.mp-pin.is-sel { box-shadow: none; filter: drop-shadow(0 0 4px var(--accent))
 .mp-way polyline { fill: none; stroke: var(--silk); stroke-width: 4; stroke-dasharray: 10 8; stroke-linecap: round; stroke-linejoin: round; opacity: 0.75; vector-effect: non-scaling-stroke; }
 .mp-from { position: absolute; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; border: 2px solid var(--silk); background: var(--scene-bg); }
 /* What's missing closest to your bench: a short list under the map. */
-.mp-near { margin-top: var(--sp-6); max-width: 560px; }
 .mp-near-list { list-style: none; margin: var(--sp-3) 0 0; padding: 0; display: grid; gap: var(--sp-1); }
 .mp-near-list li { display: grid; grid-template-columns: var(--sp-6) minmax(0, 1fr) auto auto; align-items: center; gap: var(--sp-3); font-size: var(--fs-sm); color: var(--ink); }
 .mp-near-list .mp-dot, .mp-near-list .mp-pin { position: static; margin: 0; --mp-s: 20px; }

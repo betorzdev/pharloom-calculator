@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Your game: the bench</title>
+<!-- Design material, not part of the site (design/03-redesign.md, step 3). Your game's bench
+     card says «Resting at» but Hornet sits on nothing: every Silksong bench the wiki draws
+     (Bench_SS_*.png, hotlinked from hollowknight.wiki, so this page needs the network), with
+     Hornet on it, to pick one. The picked one shows on the real card, lit (a save, on the
+     bench's own area light where it has one) and unlit (Free mode). The URL carries it:
+     ?bench=Bone_Bottom. Each bench's seat is measured on its sprite (its first row at least 80%
+     as wide as its widest), so a few sit high; the one picked gets its seat set by hand. -->
+<base href="../">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/app.css">
+<style>
+html, body { background: var(--scene-bg); }
+.mk-wrap { max-width: 1200px; margin: 0 auto; padding: var(--sp-6) var(--sp-4) var(--sp-16); }
+.mk-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--sp-6); }
+.mk-cap { margin: 0 0 var(--sp-2); text-align: center; font-family: var(--font-num); font-size: var(--fs-2xs); letter-spacing: var(--track-label); text-transform: uppercase; color: var(--label); }
+/* Hornet on her bench: both sprites at one scale, her skirt's hem (y 154 of 186) on the seat. */
+.mk-rest { position: relative; margin-block: var(--sp-2); filter: drop-shadow(0 0 18px color-mix(in oklab, var(--spotlight) 18%, transparent)); }
+.mk-rest img { position: absolute; max-width: none; }
+.is-ghost .mk-rest { filter: brightness(0) drop-shadow(0 0 1px color-mix(in oklab, var(--ink) 45%, transparent)); opacity: 0.85; }
+.mk-h { margin: var(--sp-12) 0 var(--sp-2); }
+.mk-lead { margin: 0 0 var(--sp-4); font-size: var(--fs-sm); color: var(--ink-2); }
+.mk-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--sp-2); }
+.mk-tile { display: grid; justify-items: center; align-content: end; gap: var(--sp-1); min-height: 150px; padding: var(--sp-2); border: 1px solid var(--line); color: var(--ink-2); font-size: var(--fs-xs); text-align: center; }
+.mk-tile:hover { border-color: var(--line-ctl); color: var(--ink-strong); }
+.mk-tile[aria-pressed="true"] { border-color: var(--accent-line); background: var(--picked); color: var(--ink-strong); }
+.mk-tile .mk-rest { filter: none; margin: 0; }
+</style>
+</head>
+<body>
+<div class="mk-wrap">
+  <header class="screen-head"><h2 class="sec-title screen-title">Your game</h2></header>
+  <div class="mk-cards">
+    <div>
+      <p class="mk-cap">With a save</p>
+      <div class="hm-card" id="lit">
+        <p class="hm-sup">Resting at</p><p class="hm-area" id="lit-area"></p>
+        <p class="hm-sub">Act 3 · 15 h 41 min</p>
+        <div id="lit-rest"></div>
+        <div class="hm-figs">
+          <span class="hm-fig"><span class="hm-fig-k">Completion</span><b>63<span class="u">%</span></b></span>
+          <span class="hm-fig"><span class="hm-fig-k">Journal</span><b>54<span class="u">/230</span></b></span>
+          <span class="hm-fig"><span class="hm-fig-k">Masks</span><b>7</b></span>
+          <span class="hm-fig"><span class="hm-fig-k">Rosaries</span><b>0</b></span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="mk-cap">Free mode</p>
+      <div class="hm-card is-ghost">
+        <p class="hm-sup">Resting at</p><p class="hm-area">Pharloom</p>
+        <div id="ghost-rest"></div>
+        <div class="hm-figs">
+          <span class="hm-fig"><span class="hm-fig-k">Completion</span><b>?</b></span>
+          <span class="hm-fig"><span class="hm-fig-k">Journal</span><b>?<span class="u">/230</span></b></span>
+          <span class="hm-fig"><span class="hm-fig-k">Masks</span><b>?</b></span>
+          <span class="hm-fig"><span class="hm-fig-k">Rosaries</span><b>?</b></span>
+        </div>
+        <p class="hm-ghost">Your game goes here</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="ct-h mk-h">Every bench in Pharloom</h3>
+  <p class="mk-lead">The wiki's 54 bench sprites, Hornet sitting on each. Pick one to see it on the cards above.</p>
+  <div class="mk-grid" id="grid"></div>
+</div>
+<script>
+(function () {
+  // [the wiki's name after Bench_SS_, width, height, the seat's row], measured on the sprites.
+  const BENCHES = [["Ant",212,111,55],["Architect",273,460,372],["Bellhart",211,147,47],["Bellhome",242,92,20],["Bilehaven",208,184,96],["Bilewater",178,174,99],["Bone_Bottom",210,139,78],["Bone_Bottom_Repaired",213,139,78],["Caravan",228,164,88],["Choral_Chambers",281,209,113],["Choral_Chambers_Cloth",288,230,105],["Cog_Retractor",274,264,154],["Coral",283,225,136],["Coral_Tower",291,146,43],["Cradle",243,100,29],["Deep_Docks",201,109,52],["Diving_Bell",136,186,119],["Diving_Bell_Broken",137,175,108],["Halfway_Home",220,123,53],["High_Halls",284,226,137],["High_Halls_Cloth",298,223,133],["Huntress",198,101,57],["Huntress_Broken",198,95,50],["Jail",224,182,109],["Jail_Ladybug",249,182,109],["Jail_Snow",224,182,109],["Memorium",284,226,134],["Mosshome",205,148,69],["Mount_Fay",206,112,9],["Organ",215,132,74],["Pale_Lake",223,64,42],["Pilgrim's_Rest",221,142,64],["Pinstress",127,101,13],["Ruined_Chapel",231,138,68],["Sauna",582,145,13],["Shaman",336,111,41],["Shellwood",208,135,74],["Songclave",140,221,139],["Songclave_Broken",140,188,106],["Sprintmaster",193,137,61],["Styx",257,114,38],["Tent_Greymoor",148,98,55],["Tent_Mount_Fay",184,105,29],["Terminus",431,216,88],["Toll",188,245,172],["Toll_Underworks",196,108,7],["Umbrella",145,86,21],["Verdania",312,156,70],["Weavenest",292,152,57],["Weavenest_Moss",275,152,57],["Whispering_Vaults",218,164,70],["Whiteward",328,227,137],["Wisp_Thicket",225,123,61],["Zylotol",219,167,88]];
+  // The bench's area, for the lit card's light (css/tokens.css --area-*): a sample, where it's plain.
+  const AREA = { Bone_Bottom: ['bonebottom', 'Bone Bottom'], Bone_Bottom_Repaired: ['bonebottom', 'Bone Bottom'], Mosshome: ['mosscave', 'Moss Grotto'],
+    Shellwood: ['shellwood', 'Shellwood'], Deep_Docks: ['docks', 'Deep Docks'], Bellhart: ['bellhart', 'Bellhart'], Bellhome: ['bellhart', 'Bellhart'],
+    Tent_Greymoor: ['greymoor', 'Greymoor'], Halfway_Home: ['greymoor', 'Greymoor'], Mount_Fay: ['mountain', 'Mount Fay'], Tent_Mount_Fay: ['mountain', 'Mount Fay'],
+    Coral: ['coral-tower', 'Sands of Karak'], Coral_Tower: ['coral-tower', 'Sands of Karak'], Cradle: ['cradle', 'The Cradle'], High_Halls: ['hang', 'High Halls'],
+    High_Halls_Cloth: ['hang', 'High Halls'], Choral_Chambers: ['halls', 'Choral Chambers'], Choral_Chambers_Cloth: ['halls', 'Choral Chambers'],
+    Whispering_Vaults: ['library', 'Whispering Vaults'], Memorium: ['arborium', 'Memorium'], Whiteward: ['ward', 'Whiteward'], Bilewater: ['shadow', 'Bilewater'],
+    Bilehaven: ['shadow', 'Bilewater'], "Pilgrim's_Rest": ['wilds', 'Far Fields'], Jail: ['slab', 'The Slab'], Jail_Snow: ['slab', 'The Slab'], Jail_Ladybug: ['slab', 'The Slab'],
+    Toll_Underworks: ['understore', 'Underworks'], Weavenest: ['weave-prime', 'Weavenest Atla'], Weavenest_Moss: ['weave-prime', 'Weavenest Atla'],
+    Cog_Retractor: ['cogwork-core', 'Cogwork Core'], Huntress: ['hunters-march', "Hunter's March"], Huntress_Broken: ['hunters-march', "Hunter's March"] };
+  const HORNET = { w: 207, h: 186, hem: 154 };
+  const src = (n) => 'https://hollowknight.wiki/w/Special:FilePath/Bench_SS_' + encodeURIComponent(n) + '.png';
+  // Hornet on the bench at scale s: the box holds both, her hem on its seat, both centred.
+  function rest(b, s) {
+    const [n, w, h, seat] = b;
+    const top = Math.max(0, HORNET.hem - seat), W = Math.max(w, HORNET.w), H = Math.max(top + h, top + seat - HORNET.hem + HORNET.h);
+    const px = (v) => (v * s).toFixed(1) + 'px';
+    return `<div class="mk-rest" style="width:${px(W)};height:${px(H)}">
+      <img src="${src(n)}" alt="" style="left:${px((W - w) / 2)};top:${px(top)};width:${px(w)}">
+      <img src="assets/hornet/resting.png" alt="" style="left:${px((W - HORNET.w) / 2)};top:${px(top + seat - HORNET.hem)};width:${px(HORNET.w)}"></div>`;
+  }
+  const q = new URLSearchParams(location.search);
+  let cur = q.get('bench') || 'Bone_Bottom';
+  const grid = document.getElementById('grid');
+  grid.innerHTML = BENCHES.map((b) => `<button type="button" class="mk-tile" data-b="${b[0]}">${rest(b, Math.min(0.5, 130 / Math.max(b[1], HORNET.w)))}<span>${b[0].replace(/_/g, ' ')}</span></button>`).join('');
+  function show() {
+    const b = BENCHES.find((x) => x[0] === cur) || BENCHES[6];
+    const s = Math.min(0.6, 300 / Math.max(b[1], HORNET.w));
+    document.getElementById('lit-rest').innerHTML = rest(b, s);
+    document.getElementById('ghost-rest').innerHTML = rest(b, s);
+    const [id, name] = AREA[b[0]] || ['', 'Pharloom'];
+    const lit = document.getElementById('lit');
+    lit.style.cssText = id ? `--area-line:var(--area-${id}-line);--area-fill:var(--area-${id}-fill)` : '';
+    document.getElementById('lit-area').textContent = name;
+    grid.querySelectorAll('.mk-tile').forEach((t) => t.setAttribute('aria-pressed', String(t.dataset.b === b[0])));
+  }
+  grid.addEventListener('click', (e) => {
+    const t = e.target.closest('.mk-tile'); if (!t) return;
+    cur = t.dataset.b; show();
+    history.replaceState(null, '', '?bench=' + encodeURIComponent(cur));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  show();
+})();
+</script>
+</body>
+</html>

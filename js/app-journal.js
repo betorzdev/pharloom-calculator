@@ -147,6 +147,25 @@
       .filter((a) => a.xs.length);
   }
 
+  /* The search: in both languages and without accents («polilla» finds it in English too), by name
+     or by area. While it has text it looks through the whole Journal, what's complete included. */
+  let query = '';
+  const fold = (x) => String(x).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const HAY = new Map(J.BOOK.map((e) => [e.id, fold(e.name.es + ' ' + e.name.en)]));
+  const matches = (x, q) => HAY.get(x.e.id).includes(q) || whereOf(x.e).some((a) => fold(a).includes(q));
+  // The portraits, by area or in the Journal's order, with what the toggles and the search keep.
+  function shelf(list, g) {
+    const q = fold(query.trim());
+    const missing = !!g && !prefs.hjAll && !q;
+    const keep = (x) => (!missing || x.state !== 'done') && (!q || matches(x, q));
+    const groups = prefs.hjBy !== 'book' ? byArea(list, keep) : [{ name: '', xs: list.filter(keep) }];
+    const grid = groups.map((a) => (a.name ? `<section class="hj-area-group"><h3 class="ct-h"><span${NT}>${esc(a.name)}</span>
+        <span class="hj-area-n">${num(a.done)}/${num(a.all)}</span></h3>` : '')
+      + `<ul class="hj-grid">${a.xs.map(cell).join('')}</ul>${a.name ? '</section>' : ''}`).join('');
+    const empty = q ? `<p class="pg-note">${esc(t('hjNone'))}</p>` : `<p class="pg-done">${App.tick}${esc(t('pgDone'))}</p>`;
+    return `<div class="hj-shelf">${groups.some((a) => a.xs.length) ? grid : empty}</div>`;
+  }
+
   App.screens.journal = (sec) => {
     const { g, steel, list } = states();
     shown = list;
@@ -155,17 +174,13 @@
     const need = J.REQUIRED[steel ? 'steel' : 'classic'];
     const seen = list.filter((x) => x.state !== 'unseen').length;
     const missing = !!g && !prefs.hjAll;
-    const keep = (x) => !missing || x.state !== 'done';
     const area = prefs.hjBy !== 'book';
-    const groups = area ? byArea(list, keep) : [{ name: '', xs: list.filter(keep) }];
-    const order = groups.flatMap((a) => a.xs);
-    const grid = groups.map((a) => (a.name ? `<section class="hj-area-group"><h3 class="ct-h"><span${NT}>${esc(a.name)}</span>
-        <span class="hj-area-n">${num(a.done)}/${num(a.all)}</span></h3>` : '')
-      + `<ul class="hj-grid">${a.xs.map(cell).join('')}</ul>${a.name ? '</section>' : ''}`).join('');
     // Two small toggles: an icon each, the words in their title.
     const tog = (act, pairs, label) => `<div class="seg hj-tog" role="group" aria-label="${esc(label)}">${pairs.map(([v, on, text, icon]) =>
       `<button type="button" data-act="${act}" data-value="${v}" aria-pressed="${on}" aria-label="${esc(text)}" title="${esc(text)}">${icon}</button>`).join('')}</div>`;
-    const tools = `<div class="hj-tools">${g ? tog('hjShow', [['missing', missing, t('pgMissing'), ICON.missing], ['all', !missing, t('pgAll'), ICON.all]], t('pgShow')) : ''}
+    const search = `<label class="search hj-find"><span class="sr-only">${esc(t('hjFind'))}</span>${App.lens}
+        <input type="search" data-act="hjQuery" value="${esc(query)}" placeholder="${esc(t('hjFind'))}" autocomplete="off"></label>`;
+    const tools = `<div class="hj-tools">${search}${g ? tog('hjShow', [['missing', missing, t('pgMissing'), ICON.missing], ['all', !missing, t('pgAll'), ICON.all]], t('pgShow')) : ''}
         ${tog('hjBy', [['area', area, t('hjByArea'), ICON.area], ['book', !area, t('hjByBook'), ICON.book]], t('hjOrder'))}</div>`;
     // The Memento as a ring: complete, and a dimmer arc for what's seen and not yet complete.
     const memento = `<div class="hj-memento" role="img" style="--d:${(done / need).toFixed(3)};--s:${(seen / list.length).toFixed(3)}"
@@ -175,7 +190,7 @@
     sec.innerHTML = `<div class="hj">${brackets}${screenHead(esc(t('navJournal')))}
       ${g ? `<div class="hj-hero">${memento}${hunts(list, g)}</div>` : ''}
       ${tools}
-      <div class="hj-shelf">${order.length ? grid : `<p class="pg-done">${App.tick}${esc(t('pgDone'))}</p>`}</div>
+      ${shelf(list, g)}
       ${sheet(current)}</div>`;
     const d = sec.querySelector('dialog.hj-sheet');
     if (d) {
@@ -219,5 +234,16 @@
     },
     hjShow(node) { prefs.hjAll = node.dataset.value === 'all'; savePrefs(); render(); },
     hjBy(node) { prefs.hjBy = node.dataset.value; savePrefs(); render(); },
+  });
+  // The search filters as you type; only the portraits are repainted, so the field keeps its focus.
+  document.addEventListener('input', (e) => {
+    if (!e.target.matches || !e.target.matches('[data-act="hjQuery"]')) return;
+    query = e.target.value;
+    const old = document.querySelector('.hj-shelf');
+    if (!old) return;
+    const { g, list } = states();
+    const box = document.createElement('div');
+    box.innerHTML = shelf(list, g);
+    old.replaceWith(box.firstElementChild);
   });
 })();

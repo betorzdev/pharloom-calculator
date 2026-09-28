@@ -382,7 +382,9 @@
       </div>` : ''}` : '';
     const theirs = own ? Math.round((App.gameMeta() || {}).completion || 0) : null;
     // The figure alone (Albert: no label, no «it matches»); a line only when the game's figure differs.
-    const total = c ? `<div class="pg-total"><p class="pg-total-n"><b>${num(c.total)}</b><span class="u">${esc(App.pctSpace().trim() || '%')}</span></p>
+    // In a ring that fills with it, as the Journal's Memento (design/20-progress-total-variants.html, A).
+    const total = c ? `<div class="pg-total"><div class="pg-ring" style="--p:${Math.min(100, c.total)}"><p class="pg-total-n"><b>${num(c.total)}</b><span class="u">${esc(App.pctSpace().trim() || '%')}</span></p>
+        <p class="pg-ring-k">${esc(t('pgCompletion'))}</p></div>
         ${own && theirs != null && theirs !== c.total ? `<p class="hm-check is-off">${esc(t('homeDiffers', { pct: num(theirs) + App.pctSpace() }))}</p>` : ''}</div>` : '';
     const next = own ? A.next(own) : null;
     const road = next ? journey(next) + (prefs.pgRoad ? roadHtml(own) : '')

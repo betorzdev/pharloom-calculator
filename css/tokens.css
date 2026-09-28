@@ -229,6 +229,7 @@
   --dur-run: 500ms;
   --hn-bar: 28px;      /* sitting under a tab's title without touching its letters */
   --hn-map: 44px;      /* at her bench on the Map, as big as the old still */
+  --hn-rest: 0.5;      /* resting on her bench in Your game's card: the wiki's sprites at half (her 186 px → 93) */
 
   --page-max: 1216px;
   --page-pad: var(--sp-8);
@@ -301,6 +302,12 @@
   --unseen-art: grayscale(1) brightness(0.32);
   /* The light the Journal's pane sets each drawing on (light_effect_v02 at 0.81 grey, measured
      in its files): a soft white disc fading to nothing. */
+  /* The Crest screen's Crest: px to the game's unit (its art is 100 px to the unit, 4.3 to 6.1
+     units wide), smaller on a phone. */
+  --crest-k: 64px;
+  --crest-k-sm: 48px;
+  /* Progress's completion ring (design/20-progress-total-variants.html, A); smaller on a phone. */
+  --pg-ring: 220px;
   --journal-light: radial-gradient(closest-side, color-mix(in oklab, var(--silk) 20%, transparent), color-mix(in oklab, var(--silk) 6%, transparent) 55%, transparent);
 
   color-scheme: dark;

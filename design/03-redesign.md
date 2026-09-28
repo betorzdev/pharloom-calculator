@@ -38,9 +38,9 @@ the work up reads it first, then the step it's on.
 | 5 | Progress (`progress`) | **Built** (28 Sep) | [`10-progress-variants.html`](10-progress-variants.html) |
 | 6 | Map (`map`) | **Built** (28 Sep) | [`12-map-variants.html`](12-map-variants.html) |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds) | [`15-journal-variants.html`](15-journal-variants.html) |
-| 8 | Crest (`tools`) | **Next** | |
-| 9 | Combat (`fight`) | To do | |
-| 10 | The static pages (`tools/pages*.js`: `bosses/`, `es/jefes/`, the landing folders): they inherit steps 1 and 2; only what's theirs | To do | |
+| 8 | Crest (`tools`) | **Built** (28 Sep) | [`18-crest-variants.html`](18-crest-variants.html) |
+| 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
+| 10 | **Next** · The static pages (`tools/pages*.js`: `bosses/`, `es/jefes/`, the landing folders): they inherit steps 1 and 2; only what's theirs | To do | |
 | 11 | **Everything on the map**: each Tool, Crest, Silk Skill, ability, boss, NPC, vendor, wish and Journal enemy in its room (data from the game's files or the wiki; today only the loose pieces, the stations and the gauntlets have a room), new layers grouped as mapgenie's, the rest of the game's pins. After the tabs (Albert, 28 Sep) | To do | |
 
 ## Step 1 · The shell
@@ -272,6 +272,17 @@ Spanish; Hornet as a silhouette; the four figures as «?»; «Your game goes her
 Saves). It keeps `.hm-invite`, so the dropped file still lights it. The long invitation line is
 gone.
 
+### Retouch, Hornet's bench (28 September 2026)
+
+The card said «Resting at» and Hornet sat on nothing (`resting.png` has no bench). Every
+Silksong bench the wiki draws was put under her in `18-bench-variants.html`; Albert asked for
+**the very bench the save rests at**, only on Your game (the header's selector stays as it is).
+It can be known: each bench room in the game's files has a `RestBench` whose sprite names its
+style. Built: `tools/extract-benches.py` reads them into `js/benches.js` (the room → the wiki's
+picture in `assets/benches/`, with the row of its seat), `rest()` in `js/app-home.js` sits her hem
+on that seat (`.hm-rest`, `--hn-rest`); a room it doesn't know, and Free mode, get Bone Bottom's,
+the first bench. The bench's states (broken in Act 3, under cloth, snowed) aren't told apart.
+
 ## Step 4 · Inventory
 
 ### What there is (28 September 2026)
@@ -438,6 +449,20 @@ Albert chose **road 1 · the journey**. Built (`js/app-progress.js`, `css/app.cs
   silk, Silk Hearts, Needle, Kit, Pouch) from the free build so lists and counts agree
   (`freeView`), and a missing row's box marks it (`pgOwn` through `App.freeMark`); ladder pieces
   are set in the Inventory, not here.
+
+### Retouch: the completion figure (28 September 2026)
+
+Albert: the percentage could be more attractive. Today it's a plain system-font figure with
+«Your game» under it. `20-progress-total-variants.html`, at 63 % and 100 %, all in the game's face
+(Cinzel) and labelled «Finalización» (`COMPLETION`, the game's word):
+
+- **A · the ring**: inside a large ring that fills with it, as the Journal's Memento.
+- **B · engraved**: large and lit between the header's two crown flourishes, as a plaque.
+- **C · the spool**: over the HUD's silk spool, filled as far as the game is done.
+
+Decision: **A · the ring**, built: `.pg-ring` (`--pg-ring` 220 px, 180 on a phone), the
+Journal's Memento arc (`--ring`, `--ring-track`, `--ring-mask`) doubled, a thin filigree circle
+inside, the figure in Cinzel with a soft halo, `pgCompletion` («Finalización», `COMPLETION`) under it.
 
 ## Step 6 · Map
 
@@ -654,4 +679,142 @@ to `assets/journal/art/<name_key>.webp` (3.4 MB, one loaded per tap) and `hunter
 and centred: the drawing at its own pixels (capped at 440 px) on `--journal-light`, the text
 beside it; on a phone from the foot, drawing above. Not seen yet: the drawing in shadow
 (`--unseen-art`), so its shape can be learnt. `hjNotesDefeat` is `NOTES_DEFEAT` with its `{0}`.
+
+
+## Step 8 · Crest
+
+### What there is (28 September 2026)
+
+Three columns. On the left, the Crest's icon, name and description, and its slots as rows of
+diamonds by colour. In the middle, every control as a list of small-caps labels over pip rows:
+Crests, evolution, Needle, Kit, Pouch, «Right now», and in Free mode the 60 Tools and six Silk
+Skills in one mass. On the right, a long text column of figures with their formulas (17 × 1.3,
+13 + 13 + 13…) and «What the others do», every other Tool's description in full. In a save, an
+intro line («What you wear in Save 4…», «To try builds: Free mode») opens it. On a phone it runs
+to five screens.
+
+### What the sibling has
+
+A hero band of big figures (the Nail drawn large with its damage, then DPS, range, strongest
+attack, hits until you die, soul per hit, healing), the equipped charms and the notches, the charm
+grid («one tap equips or removes»), spells and Nail Arts as large art with their damage, effects
+as cards, and «See every stat» folded.
+
+### How the game shows it (read from its files)
+
+Each `ToolCrest` in `dataassets/tools/crestitems.bundle` lists its slots: a position in units from
+the Crest's centre, a type (0 red, 1 blue, 2 yellow, 3 Silk Skill) and `IsLocked` (a Memory
+Locket opens it). The Hunter has three versions (`Hunter`, `Hunter_v2`, `Hunter_v3`, one per
+evolution, the slots moving out a little). The art is each Crest's `crestSprite`
+(`crest.spriteatlas`: white line art, 430 to 610 px at 100 px to the unit), and the slots are the
+game's own frames (`inventory.spriteatlas`: `UI_tool_slot_attack` / `defend` / `explore` /
+`weave`, and `UI_tool_slot_locked_fill`), white, tinted by colour. The pane
+(`coremanagers_assets__gamecameras.bundle`, «Tools»): the Crest with its slots on the left, the
+Vesticrest's extra slots floating beside it, the Crest list and ‹ › to change it, the Tool list
+scrolling on the right by colour, and the pointed Tool's description.
+
+### The options (`18-crest-variants.html`, Save 4's build)
+
+In all three: the Crest drawn as the game draws it, its slots where the game puts them; figures as
+big numbers without formulas; no intro text; the levels as compact steppers.
+
+- **A · the game's pane**: figures and levels on top; the Crest with its slots, and beside it the
+  Tool list by colour with the pointed Tool described under it.
+- **B · the sibling's**: a hero band with the Needle large, the Crest and the Tools to tap, the
+  Silk Skills as large art with their damage, the rest under «Every figure».
+- **C · slot first**: the Crest large; tap a slot and only its colour's Tools open to choose from;
+  figures in a column beside it.
+
+### Decision (28 September 2026)
+
+**A · the game's pane**, built. `tools/extract-crests.py` writes each Crest's art to
+`assets/crests/<id>.webp` (the Hunter's per evolution, `hunter-1/2/3`) and `js/crest-slots.js`:
+the slots (`SS.crestSlots`), each art's size in units (`SS.crestArt`) and the five slot frames
+inline (`SS.crestFrames`: a CSS mask won't take an image file over `file://`, it needs CORS). It
+stops if a Crest's slots disagree with `js/data.js`, and `test/data.test.js` checks the same.
+
+- The band (`.ct-band`): big numbers, their make-up in the `title`; the levels (`.ct-lv`) as
+  − N + steppers, their buttons hidden in a save; the moment's switches beside them.
+- The Crest (`.ct-crest`, `--crest-k` 64 px to the unit, 48 on a phone): slots placed at their
+  (x, y), each colour's Tools in the game's slot order (open, then locked), a locked slot left
+  empty with the locked frame, the Vesticrest's in `.ct-float`, in the box's bottom-right corner
+  (no Crest's slots reach it) so the art stays centred over its name; ‹ › cycle the Crests you have.
+- The list (`.ct-tools`) by colour and the Silk Skills, each on the Inventory's slot cell
+  (`.inv-cell.is-slot`, Albert), only the diamond (no pip), filled and lit when worn; shown in a save too (read); the
+  description (`.ct-desc`) of the one pointed at or tapped, else the first worn, with its numbers
+  (a Tool not worn computed as if worn).
+- Only the Tools and Silk Skills you have in the list (Albert), as the game's pane: a save's,
+  or Free mode's marks (all without them); a colour with none is left out.
+- Gone: the intro line (`ctLocked`), the formulas, «What the others do», the Silk Skills table.
+
+### Second round: the figures on top (28 September 2026)
+
+Albert: the band of numbers on top looks ugly (six loose figures left-aligned across the width,
+tiny labels, steppers of uneven widths under them). `19-crest-figures-variants.html`:
+
+- **A · the game's HUD**: the Needle drawn with the slash large beside it, damage a second and the
+  Needle Strike, and Hornet as the HUD shows her (masks as masks, the spool with its silk).
+- **B · centred ledger**: one centred row, the slash large in the middle, thin filigree rules.
+- **C · under the Crest**: the top keeps only the levels; the figures as a 3 × 2 table under
+  the Crest's name.
+
+In all three, the levels as the game's upgrade pips with − and + either side.
+
+Decision: **A · the game's HUD**, built (a second pass, Albert: "badly integrated": the three groups had been pushed to the edges with a hole between, the needle tilted into the figure; now one centred block on one baseline, the Needle upright, thin filigree rules between the groups). `.ct-band` is three groups: `.ct-slash` (the Needle's
+art at its level, tilted, the slash at 1.7 × `--fs-2xl`), `.ct-mid` (the split Crests' other
+attacks, damage a second, the critical, the Needle Strike) and `.ct-hud` (`assets/hud/mask.png`
+per mask, the spool with the silk, «a Bind heals n»). The levels are `.ct-pips`, a pip a level
+(Free mode: a pip sets it, the lit top one steps down), − and + only in Free mode.
+
+
+## Step 9 · Combat
+
+### What there is (28 September 2026)
+
+A choose-one (one enemy · enemy gauntlets), a line about your build, a search and then the list of
+every enemy, 1,300 px tall, before any fight shows. Under it, the enemy's card (portrait, health,
+damage by level, stagger, phases) and three text blocks: the quickest way, what you do to it
+(a row per attack with its make-up and the uses to kill), what it does to you (a row per attack,
+«7 kill you · 10 if you Bind»), and two long paragraphs of how it's worked out. On a desktop the
+card is sticky over the lists and covers them (a layout bug: `.ft-body`'s three columns collapse).
+
+### What the sibling has
+
+The duel: the Knight and the enemy face to face, each on its light (the enemy's Journal art), the
+hits to win large in the middle and the hits to fall under it, the enemy's health as a bar; the
+enemy in a picker; «your attacks» as cards with their art and damage, tappable to play the fight
+out (a log, undo); «its attacks» with masks.
+
+### The options (`21-combat-variants.html`, Save 4 against Lace)
+
+In all three: the enemy in a picker with a search (not the long list), Hornet's own frame and the
+enemy's whole drawing from the Journal, figures without formulas, the long notes folded.
+
+- **A · the duel**: Hornet and the enemy face to face, slashes to win and its hits you take in
+  the middle, the quickest way in one line, your attacks as cards (the quickest marked), its
+  attacks with masks.
+- **B · the enemy's page**: its drawing large on the Journal's light, beside it its name, health,
+  stagger, phases, and your attacks as bars of hits to kill; what it does to you under it.
+- **C · choose, then fight**: every enemy as a ringed portrait by area (as the Journal); a tap
+  opens the duel in a sheet.
+
+### Decision (28 September 2026)
+
+**A · the duel**, built. The enemy in a dropdown (`<details class="ft-choose">`: the list hangs
+from a zero-height relative wrapper, since Chrome doesn't give a `<details>`' content its box as
+the containing block); the duel (`.ft-duel`: Hornet's
+`ART.idle` and the enemy's `assets/journal/art/<key>.webp` on `--journal-light`, the slash's uses
+and the fewest of its hits in the middle, the health bar with a tick per phase from `E.phases`,
+the black-thread switch under it); the plan in one line (`.ft-plan`); your attacks as cards
+(`.ft-cards`, the fewest uses framed, the make-up in `title`) and its with masks drawn
+(`.ft-hits`); the damage-by-level, stagger, phases and every note folded (`.ft-how`). The
+gauntlets use the same frame (the dropdown of arenas, a centred summary, the plan, the waves).
+The sticky card and the three columns that covered the lists are gone.
+
+Then (Albert: «it should be clickable to simulate the fight, as the sibling»), the basic fight:
+`js/sim.js`, pure and tested (`test/sim.test.js`), plays moves on a kit the screen builds from
+`E.compute`: damage per use (`rest`), masks, silk (full spool, +1 a landed slash, the Skill's cost,
+the Bind's cost and heal), each Tool's uses, the phase thresholds; the cards, its rows and a Bind
+button act (`ftAct`), greyed when they can't; a four-line log under the duel with Undo and Start
+over. No clock and no stagger, unlike the sibling's arena. Gauntlets aren't played.
 

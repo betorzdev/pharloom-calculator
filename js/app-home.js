@@ -92,6 +92,23 @@
     return t('chToast', { list: text });
   };
 
+  /* Hornet on the bench she rests at: the room's bench (js/benches.js, from the game's files: the
+     wiki's picture of it and the row of its seat), Bone Bottom's, the first one, for a room it
+     doesn't know and in Free mode. Her hem (row 154 of ART.resting's 186) sits on the seat; the
+     box holds both, the places in percents of it so it scales as one (css: .hm-rest). */
+  const HORNET = [207, 186, 154];
+  function rest(scene) {
+    const B = SS.benches;
+    const id = (scene && B.scenes[scene.toLowerCase()]) || 'bone-bottom';
+    const [w, h, seat] = B.art[id];
+    const [hw, hh, hem] = HORNET;
+    const top = Math.max(0, hem - seat), W = Math.max(w, hw), H = Math.max(top + h, top + seat - hem + hh);
+    const at = (x, y, width) => `left:${+(x / W * 100).toFixed(2)}%;top:${+(y / H * 100).toFixed(2)}%;width:${+(width / W * 100).toFixed(2)}%`;
+    return `<span class="hm-rest" style="--w:${W};aspect-ratio:${W} / ${H}" aria-hidden="true">
+          <img src="assets/benches/${id}.png" alt="" style="${at((W - w) / 2, top, w)}">
+          <img src="${ART.resting}" alt="" style="${at((W - hw) / 2, top + seat - hem, hw)}"></span>`;
+  }
+
   /* Free mode: the bench card a save shows, unlit (design/03-redesign.md, step 3, "the ghost
      bench"): «Resting at» over the kingdom, Hornet in silhouette, the four figures waiting, and
      the one thing to do. The card takes the file dropped on the screen (js/app-saves.js). */
@@ -100,7 +117,7 @@
     const fig = (k, v, nt = false) => `<span class="hm-fig"><span class="hm-fig-k"${nt ? NT : ''}>${esc(k)}</span><b>${v}</b></span>`;
     return `<div class="hm-card is-ghost hm-invite">
         <p class="hm-sup">${esc(t('homeRest'))}</p><p class="hm-area"${NT}>${esc(t('homeKingdom'))}</p>
-        <img class="hm-figure" src="${ART.resting}" alt="" width="207" height="186">
+        ${rest('')}
         <div class="hm-figs">
           ${fig(t('homeCompletion'), unknown)}
           ${fig(t('homeJournal'), `${unknown}<span class="u">/${num(App.bookTotal(false))}</span>`, true)}
@@ -110,7 +127,6 @@
         <p class="hm-ghost">${esc(t('homeGhost'))}</p>
         <div class="hm-invite-acts">
           <button type="button" class="btn btn-primary" data-act="homeImport">${esc(t('homeInviteBtn'))}</button>
-          <a class="text-btn" href="${App.here(App.hashFor('saves'))}" data-act="view" data-value="saves">${esc(t('savesTitle'))}</a>
         </div>
       </div>`;
   }
@@ -118,7 +134,7 @@
   /* A save: the game's area title card, where Hornet rests (design/03-redesign.md, step 3, the
      sibling's "bench"): «Resting at» over the area of her bench, lit by that area's own light
      from the game's map (css/tokens.css, --area-*), Hornet at the bench and four figures. Under
-     it what changed since the previous save, what's missing closest to the bench (the Map's own
+     it what changed since the previous save, what's missing closest to the bench (js/app-map.js's
      list, App.nearList) and the 100% by part, each a way into Progress; then the ways on. */
   const areaId = (a) => a.toLowerCase().replace(/_/g, '-');
   const NEAR = 5;
@@ -139,7 +155,7 @@
     const card = `<div class="hm-card"${light ? ` style="${light}"` : ''}>
         ${areaName ? `<p class="hm-sup">${esc(t('homeRest'))}</p><p class="hm-area"${NT}>${esc(areaName)}</p>` : ''}
         <p class="hm-sub">${sub}</p>
-        <img class="hm-figure" src="${ART.resting}" alt="" width="207" height="186">
+        ${rest(g.bench)}
         <div class="hm-figs">
           ${fig(t('homeCompletion'), num(c.total), esc(pctSpace().trim() || '%'))}
           ${fig(t('homeJournal'), num(book), '/' + num(bookMax), true)}

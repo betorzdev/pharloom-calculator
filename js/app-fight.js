@@ -1,4 +1,8 @@
-/* js/app-fight.js — Combat: your build against one enemy. Every enemy carries five damage
+/* js/app-fight.js — Combat: your build against one enemy, as a duel (design/21-combat-variants.html,
+   A, the sibling's): Hornet and the enemy's whole Journal drawing face to face, the slashes that
+   win and the hits that take you down between them; your attacks as cards and its with their
+   masks, all of them tappable to play the fight out (js/sim.js: damage, masks, silk, uses, the
+   Bind, a log, undo); the rest folded under «How it's worked out». Every enemy carries five damage
    modifiers, one per level of what hits (js/enemies.js, the wiki's master tables), so how many
    hits kill it is a question per enemy: the engine (js/engine.js, compute(state, { foe })) takes
    the enemy's modifier at the Needle's level for the Needle, its Strike and the Silk Skills, and at
@@ -39,23 +43,17 @@
       </div>`;
   }
 
-  function card(f, r) {
-    const black = !!prefs.ftBlack && f.bt;
-    const hp = black ? f.bt : f.hp;
+  // What the duel leaves out, folded under «Cómo se calcula»: the damage it takes by level, the stagger, its phases.
+  function about(f, r, hp) {
     const lv = r.state.needle, kit = r.state.kit;
     // An entry from the game's files (js/enemies.js src) has no modifiers: its first hit kills it.
     const mods = (f.mods || []).map((m, i) => `<li class="${i === lv ? 'is-needle' : ''}${i === kit ? ' is-kit' : ''}"><span>${num(i)}</span><b>×${num(m, 2)}</b></li>`).join('');
     const st = (EN.ATTACKS[f.page] || { staggers: [] }).staggers;
-    return `<div class="ft-card">
-        <img class="ft-big" src="${portrait(f)}" alt="">
-        <h3 class="inv-name"${NT}>${esc(foeName(f))}</h3>
-        <p class="ft-hp"><span class="save-k">${esc(t('ftHp'))}</span> <b>${hp == null ? '?' : num(hp)}</b>${f.bars ? ` <span class="ft-bars">${esc(f.bars.map((b) => num(b)).join(' + '))}</span>` : ''}</p>
-        ${f.bt ? `<button type="button" class="check" role="switch" aria-checked="${black}" data-act="ftBlack"><span class="check-box" aria-hidden="true">${App.tick}</span><span>${esc(t('ftBlack', { n: num(f.bt) }))}</span></button>` : ''}
+    return `${f.bars ? `<p class="ft-stagger"><span class="save-k">${esc(t('ftHp'))}</span> ${esc(f.bars.map((b) => num(b)).join(' + '))}</p>` : ''}
         ${f.mods ? `<div class="ft-mods"><span class="save-k">${esc(t('ftMods'))}</span><ol>${mods}</ol>
           <p class="pg-note">${esc(t('ftModsNote', { n: num(lv), k: num(kit) }))}</p></div>` : f.oneHit ? `<p class="pg-note">${esc(t('ftOneHit'))}</p>` : ''}
         ${st.length ? `<p class="ft-stagger"><span class="save-k">${esc(t('ftStagger'))}</span> ${esc(st.map((x) => t('ftHits', { n: num(x) })).join(' · '))}</p>` : ''}
-        ${phasesHtml(f, r, hp)}
-      </div>`;
+        ${phasesHtml(f, r, hp)}`;
   }
 
   /* Its phases (js/phases.js, the game's own FSMs): where each one starts, and how many slashes
@@ -92,33 +90,41 @@
       <p class="pg-note">${esc(note)}</p></div>`;
   }
 
-  // One row: what, the hits of one use, what a use does, and the uses that kill.
-  const row = (img, name, each, total, uses, extra = '') => `<li>${img ? `<img src="${img}" alt="">` : '<span></span>'}
-      <span class="ct-list-name"${NT}>${esc(name)}</span>
-      <span class="ct-list-sub">${esc([each.length > 1 ? each.map((x) => num(x)).join(' + ') : '', extra].filter(Boolean).join(' · '))}</span>
-      <b>${num(total)}</b><span class="ft-uses">${uses == null ? '' : esc(t('ftUses', { n: num(uses) }))}</span></li>`;
   const icon = (list, id) => `assets/icons/${list}/${id}.webp`;
+  const hitsText = (each) => (each.length > 1 ? each.map((x) => num(x)).join(' + ') : '');
 
-  function against(f, r) {
-    const n = r.needle;
-    const rows = [];
+  // What you do to it: each attack, its damage, the uses that kill it, and how it's made (its title).
+  function yours(r) {
+    const n = r.needle, out = [];
     // The slash says its product: the Needle × Hornet's bracket × the enemy's modifier at its level.
     const formula = t('ftFormula', { base: num(n.base), x: num(n.bracket, 2), m: num(n.enemy, 2) });
     for (const a of n.attacks.filter((x) => x.id === 'slash' || D.CRESTS.find((c) => c.id === r.state.crest).attacks)) {
       // The slash also says how long slashing nonstop takes, at the Crest's own pace (js/hero.js).
       const time = a.id === 'slash' && n.speed.seconds != null ? t('ftSeconds', { s: num(n.speed.seconds, 1) }) : '';
-      rows.push(row(`assets/needles/${n.level}.png`, t('ctAtt_' + a.id), a.each, a.total, a.uses, a.id === 'slash' ? [formula, time].filter(Boolean).join(' · ') : ''));
+      out.push({ id: 'att:' + a.id, dmg: a.rest ?? a.total, gain: 1, img: `assets/needles/${n.level}.png`, name: t('ctAtt_' + a.id), total: a.total, uses: a.uses,
+        how: [hitsText(a.each), a.id === 'slash' ? formula : '', time].filter(Boolean).join(' · '), needle: true });
     }
-    if (r.strike) rows.push(row(icon('arts', 'needle-strike'), t('ctStrike'), r.strike.each, r.strike.total, r.strike.uses));
+    if (r.strike) out.push({ id: 'strike', dmg: r.strike.rest ?? r.strike.total, img: icon('arts', 'needle-strike'), name: t('ctStrike'), total: r.strike.total, uses: r.strike.uses, how: hitsText(r.strike.each) });
     const sk = r.skills.find((s) => s.equipped);
-    if (sk) rows.push(row(icon('skills', sk.id), pick(D.SKILLS.find((x) => x.id === sk.id).name), sk.each, sk.total, sk.uses));
+    if (sk) out.push({ id: 'skill', dmg: sk.rest ?? sk.total, cost: r.silk.skill, img: icon('skills', sk.id), name: pick(D.SKILLS.find((x) => x.id === sk.id).name), total: sk.total, uses: sk.uses, how: hitsText(sk.each) });
     for (const x of r.tools.filter((y) => y.attacks.length)) {
       const a = x.attacks[0];
       const load = x.loadShare != null ? t('ftLoad', { p: num(Math.min(999, x.loadShare * 100)) }) : '';
-      rows.push(row(icon('tools', x.id), pick(D.TOOLS.find((y) => y.id === x.id).name), a.each, a.total, a.uses, load));
+      out.push({ id: 'tool:' + x.id, dmg: a.rest ?? a.total, ammo: x.ammo, img: icon('tools', x.id), name: pick(D.TOOLS.find((y) => y.id === x.id).name), total: a.total, uses: a.uses, how: [hitsText(a.each), load].filter(Boolean).join(' · ') });
     }
-    return `<section class="ct-block"><h3 class="ct-h">${esc(t('ftYours'))}</h3><ul class="ct-list ft-list">${rows.join('')}</ul>
-      <p class="pg-note">${esc(t('ftYoursNote'))}</p></section>`;
+    return out;
+  }
+  /* As cards: art, name, damage, the uses that kill it; the one that needs fewest, marked. A tap
+     plays it on the fight (js/sim.js); under it what it costs or has left, and it can't be played
+     without the silk or the uses. */
+  function yoursHtml(list, kit, fs) {
+    const best = Math.min(...list.map((x) => (x.uses == null ? Infinity : x.uses)));
+    return `<section class="ft-side"><h3 class="ct-h">${esc(t('ftYours'))}</h3><ul class="ft-cards">${list.map((x) => {
+      const left = x.ammo != null ? t('ftLeft', { n: num(fs.ammo[x.id]), m: num(x.ammo) }) : x.cost ? t('ctSilkCost', { n: num(x.cost) }) : '';
+      return `<li><button type="button" class="ft-cardx${x.uses === best ? ' is-best' : ''}" data-act="ftAct" data-value="${x.id}"${SIM.can(kit, fs, x.id) ? '' : ' disabled'}${x.how ? ` title="${esc(x.how)}"` : ''}>
+        <img class="${x.needle ? 'is-needle' : ''}" src="${x.img}" alt=""><span${NT}>${esc(x.name)}</span><b>${num(x.total)}</b>
+        <em>${x.uses == null ? '' : esc(t('ftUses', { n: num(x.uses) }))}</em>${left ? `<small>${esc(left)}</small>` : ''}</button></li>`;
+    }).join('')}</ul></section>`;
   }
 
   /* The fight as a whole (js/engine.js, plan): the red Tools' loads first, then the fewest slashes
@@ -131,8 +137,7 @@
     const sk = r.skills.find((x) => x.equipped);
     if (p.casts) parts.push(t('ftPlanCasts', { n: num(p.casts), name: pick(D.SKILLS.find((y) => y.id === sk.id).name) }));
     const list = parts.length > 1 ? parts.slice(0, -1).join(', ') + ' ' + t('ftAnd') + ' ' + parts.at(-1) : parts[0];
-    return `<section class="ct-block ft-plan"><h3 class="ct-h">${esc(t('ftPlan'))}</h3>
-      <p class="ft-plan-line">${esc(list)}</p><p class="pg-note">${esc(t('ftPlanNote', { s: num(r.silk.spool) }))}</p></section>`;
+    return `<p class="ft-plan"><span class="save-k">${esc(t('ftPlan'))}</span> <b${NT}>${esc(list)}</b></p>`;
   }
 
   /* What it does to you: how many hits of each take your masks, and how many if you Bind in the
@@ -168,17 +173,13 @@
       // Black-threaded, every hit is void and takes 2 masks (the game sets them, js/enemy-damage.js).
       : a.attacks.map((x) => ({ name: pick(x.name), masks: (x.masks || [1]).map((m) => (black ? 2 : m)),
         sub: [x.where ? pick(x.where) : '', black ? t('ftType_void') : x.type ? t('ftType_' + x.type) : ''].filter(Boolean).join(' · ') }));
-    if (!hits.length) return '';
     const masks = r.health.masks, barbed = r.state.tools.includes('barbed-bracelet');
     const b = E.binds(r, E.plan(r, r.foe && r.foe.hp));
     const list = hits.map((x) => {
       const per = x.masks.reduce((s, m) => s + (barbed ? Math.floor(m * DMG.BARBED) : m), 0);
       const bare = Math.ceil(masks / per), end = E.endure(r, per, b);
-      const uses = [t(bare === 1 ? 'ftToDie1' : 'ftToDie', { n: num(bare) })];
-      if (end && end.hits > bare) uses.push(t('ftIfBind', { n: num(end.hits) }));
-      return `<li><span class="ct-list-name"${fromGame ? '' : NT}>${esc(x.name)}</span><span class="ct-list-sub">${esc(x.sub)}</span>
-        <b>${num(per)}</b><span class="ft-uses">${esc(uses.join(' · '))}</span></li>`;
-    }).join('');
+      return { ...x, per, bare, bind: end && end.hits > bare ? end.hits : null };
+    });
     const tool = (id) => pick(D.TOOLS.find((y) => y.id === id).name);
     /* Silk Hearts (js/engine.js, regen): up to their cap, and only while the silk doesn't change,
        over the seconds the slash takes to kill (the figure on the slash's row). */
@@ -188,10 +189,51 @@
     const extra = [b.reserve ? t('ftBindReserve', { name: tool('reserve-bind') }) : '',
       ['druids-eyes', 'druids-eye'].filter((id) => r.state.tools.includes(id)).map((id) => t('ftBindEye', { name: tool(id) }))[0] || '',
       hearts, ring && H.cap ? t('ftBindRing', { name: tool('weavelight'), k: num(SS.hero.REGEN.weavelight.time, 2) }) : ''];
-    const bindNote = [t('ftBindNote', { s: num(b.spool), c: num(r.silk.bind), h: num(r.health.bind.heals) }), ...extra].filter(Boolean).join(' ');
-    const note = black ? t('ftTheirsBlackNote') : fromGame ? t('ftTheirsGameNote') : t('ftTheirsNote');
-    return `<section class="ct-block"><h3 class="ct-h">${esc(t('ftTheirs', { n: num(masks) }))}</h3><ul class="ct-list ft-list is-theirs">${list}</ul>
-      <p class="pg-note">${esc(note)}</p><p class="pg-note">${esc(bindNote)}</p></section>`;
+    const notes = [black ? t('ftTheirsBlackNote') : fromGame ? t('ftTheirsGameNote') : t('ftTheirsNote'),
+      [t('ftBindNote', { s: num(b.spool), c: num(r.silk.bind), h: num(r.health.bind.heals) }), ...extra].filter(Boolean).join(' ')];
+    return { list, fromGame, notes };
+  }
+  // Its attacks: the name, its masks drawn, and how many take yours.
+  const MASK = '<img src="assets/hud/mask.png" alt="">';
+  function theirsHtml(th, kit, fs) {
+    if (!th.list.length) return '';
+    return `<section class="ft-side"><h3 class="ct-h">${esc(t('ftTheirsShort'))}</h3><ul class="ft-hits">${th.list.map((x, i) => `<li><button type="button" class="ft-hit" data-act="ftAct" data-value="hit:${i}"${SIM.can(kit, fs, 'hit:' + i) ? '' : ' disabled'}${x.sub ? ` title="${esc(x.sub)}"` : ''}>
+        <span class="ft-hit-name"${th.fromGame ? '' : NT}>${esc(x.name)}</span>
+        <span class="ft-hit-masks" role="img" aria-label="${esc(t('ftMasksN', { n: num(x.per) }))}">${x.per > 6 ? `${MASK}<b>×${num(x.per)}</b>` : MASK.repeat(x.per)}</span>
+        <em>${esc([t(x.bare === 1 ? 'ftToDie1' : 'ftToDie', { n: num(x.bare) }), x.bind ? t('ftIfBind', { n: num(x.bind) }) : ''].filter(Boolean).join(' · '))}</em></button></li>`).join('')}</ul></section>`;
+  }
+
+  /* ── The fight played out (js/sim.js): the screen describes it as a kit, from what the engine
+     computes; the state lives here while the page is open, for this enemy and this build (a
+     change of either starts it over). ── */
+  const SIM = SS.sim;
+  let fight = null;
+  function kitOf(f, r, hp, moves, th, ticks) {
+    return { hp: hp || 0, masks: r.health.masks, spool: r.silk.spool, bind: { cost: r.silk.bind, heals: r.health.bind.heals },
+      moves: Object.fromEntries(moves.map((x) => [x.id, { dmg: x.dmg, gain: x.gain || 0, cost: x.cost || 0, ammo: x.ammo }])),
+      hits: Object.fromEntries(th.list.map((x, i) => ['hit:' + i, x.per])), phases: ticks };
+  }
+  // Where each phase starts, in health left (js/phases.js through the engine).
+  function phaseMarks(f, r, hp) {
+    const P = SS.phases[f.id] || {};
+    if (!hp) return [];
+    return E.phases(P, hp, r.needle.attacks[0], r.needle.speed && r.needle.speed.interval)
+      .map((x) => ({ n: x.n, at: P.bars ? hp - x.dealt : x.left })).filter((x) => x.at > 0 && x.at < hp);
+  }
+  // The log, newest first: what each move did.
+  function logHtml(fs, moves, th, f) {
+    const name = (id) => (moves.find((x) => x.id === id) || {}).name || id;
+    const line = (e) => (e.k === 'you' ? t('ftLogYou', { name: name(e.id), n: num(e.dmg), hp: num(e.hp) })
+      : e.k === 'hit' ? t('ftLogHit', { name: th.list[+e.id.split(':')[1]].name, n: num(e.m), m: num(e.masks) })
+      : e.k === 'bind' ? t('ftLogBind', { n: num(e.h) })
+      : e.k === 'phase' ? t('ftLogPhase', { n: num(e.n) })
+      : e.k === 'win' ? t('ftLogWin', { name: pick(f.name), n: num(e.n) }) : t('ftLogLose'));
+    const lines = fs.log.slice(-4).reverse();
+    return `<div class="ft-log">
+        <div class="ft-log-tools"><button type="button" class="text-btn" data-act="ftUndo"${fs.past ? '' : ' disabled'}>↶ ${esc(t('ftUndo'))}</button>
+          <button type="button" class="text-btn" data-act="ftReset"${fs.past ? '' : ' disabled'}>⟲ ${esc(t('ftReset'))}</button></div>
+        ${lines.length ? `<ol class="ft-log-lines">${lines.map((e) => `<li class="is-${e.k}"${NT}>${esc(line(e))}</li>`).join('')}</ol>` : `<p class="pg-note">${esc(t('ftLogStart'))}</p>`}
+      </div>`;
   }
 
   /* ── The enemy gauntlets (js/gauntlets.js): an arena's waves, one after another ──
@@ -217,13 +259,12 @@
   }
   function gauntletCard(g, game) {
     const area = g.area && CO.AREAS[g.area] ? pick(CO.AREAS[g.area]) : '';
-    return `<div class="ft-card">
+    return `<div class="ft-summary">
         <h3 class="inv-name"${NT}>${esc(gauntletName(g))}</h3>
         ${g.place && area ? `<p class="ft-hp"${NT}>${esc(area)}</p>` : ''}
         <p class="ft-hp"><span class="save-k">${esc(t('ftHp'))}</span> <b>${num(gHp(g))}</b></p>
         ${g.reward ? `<p class="ft-stagger"><span class="save-k">${esc(t('ftReward'))}</span> <span${NT}>${esc(pick(g.reward))}</span></p>` : ''}
         ${game ? `<p class="ft-stagger">${game.gauntlets.includes(g.id) ? `${App.tick} ${esc(t('ftCleared'))}` : esc(t('ftNotCleared'))}</p>` : ''}
-        <p class="pg-note">${esc(t('ftGauntletNote'))}</p>
       </div>`;
   }
   function gauntletWaves(g, st) {
@@ -239,16 +280,52 @@
     }).join('');
   }
 
+  /* The dropdown the enemy (or the arena) is chosen in: closed, the one on screen; open, the
+     search and the list. Picking re-renders, which closes it. */
+  const choose = (label, face, body) => `<details class="ft-choose"><summary><span class="sr-only">${esc(label)}</span>${face}
+      <svg class="ic ft-choose-v" width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M1 1.5 L6 6.5 L11 1.5"/></svg></summary>
+      <div class="ft-choose-body">${body}</div></details>`;
+  const foeFace = (f) => `<img src="${portrait(f)}" alt=""><span class="ft-choose-name"${NT}>${esc(foeName(f))}</span>${f.boss ? `<i class="ft-boss">${esc(t('ftBoss'))}</i>` : ''}`;
+  // The enemy's whole drawing (the Journal's, assets/journal/art/), else its portrait.
+  const drawing = (f) => { const e = BOOK_BY_N.get(f.hj); return e ? `assets/journal/art/${e.key.toLowerCase()}.webp` : portrait(f); };
+
+  /* The duel (design/21-combat-variants.html, A, the sibling's): Hornet and the enemy face to
+     face, each on the Journal's light; between them, the slashes that still win and the fewest of
+     its hits that still take you down; her masks and silk and its health as the fight stands, a
+     tick on its bar where each phase starts. */
+  function duel(f, r, hp, th, kit, fs, marks) {
+    const slash = r.needle.attacks[0], per = slash.rest ?? slash.total;
+    const worst = th.list.reduce((m, x) => (!m || x.per > m.per ? x : m), null);
+    const toWin = hp == null || !per ? null : Math.ceil(fs.hp / per);
+    const toFall = worst ? Math.ceil(fs.masks / worst.per) : null;
+    const ticks = marks.map((x) => `<i style="left:${(x.at / hp * 100).toFixed(1)}%"></i>`).join('');
+    const black = !!prefs.ftBlack && f.bt;
+    const masks = Array.from({ length: kit.masks }, (_, i) => `<img src="assets/hud/mask.png" alt=""${i < fs.masks ? '' : ' class="is-off"'}>`).join('');
+    return `<div class="ft-duel">
+        <div class="ft-fighter"><div class="ft-art"><img src="${App.ART.idle}" alt=""></div><h3>Hornet</h3>
+          <span class="ft-masks" role="img" aria-label="${esc(t('ftMasksN', { n: num(fs.masks) }))}">${masks}</span>
+          <span class="ft-silk" role="img" aria-label="${esc(t('invSilk') + ' ' + num(fs.silk))}" style="--s:${(fs.silk / kit.spool * 100).toFixed(1)}%"><span><img class="is-dim" src="assets/hud/spool.png" alt=""><img class="is-lit" src="assets/hud/spool.png" alt=""></span><b>${num(fs.silk)}</b></span>
+          <button type="button" class="btn ft-bind" data-act="ftAct" data-value="bind"${SIM.can(kit, fs, 'bind') ? '' : ' disabled'}>${esc(t('ftBindBtn', { n: num(kit.bind.heals), c: num(kit.bind.cost) }))}</button></div>
+        <div class="ft-mid">
+          <p><b>${toWin == null ? '?' : num(toWin)}</b><span>${esc(t('ftToWin'))}</span></p>
+          ${worst ? `<p class="is-sub"><b>${num(toFall)}</b><span>${esc(t('ftToFall'))}</span></p>` : ''}
+        </div>
+        <div class="ft-fighter${fs.over === 'win' ? ' is-down' : ''}"><div class="ft-art"><img src="${drawing(f)}" alt="" onerror="this.src='${portrait(f)}'"></div><h3${NT}>${esc(pick(f.name))}</h3>
+          <span class="ft-hpbar" style="--h:${hp ? (fs.hp / hp * 100).toFixed(1) : 100}%">${ticks}</span><span class="ft-hpn">${esc(hp == null ? t('ftHpN', { n: '?' }) : t('ftHpLeft', { n: num(fs.hp), m: num(hp) }))}</span>
+          ${f.bt ? `<button type="button" class="check" role="switch" aria-checked="${!!black}" data-act="ftBlack"><span class="check-box" aria-hidden="true">${App.tick}</span><span>${esc(t('ftBlack', { n: num(f.bt) }))}</span></button>` : ''}</div>
+      </div>`;
+  }
+
   App.screens.fight = (sec) => {
     const mode = prefs.ftMode === 'gauntlets' ? 'gauntlets' : 'foe';
     const modes = `<div class="seg pg-seg" role="group" aria-label="${esc(t('ftModes'))}">
         <button type="button" data-act="ftMode" data-value="foe" aria-pressed="${mode === 'foe'}">${esc(t('ftModeFoe'))}</button>
         <button type="button" data-act="ftMode" data-value="gauntlets" aria-pressed="${mode === 'gauntlets'}">${esc(t('ftModeGauntlets'))}</button></div>`;
+    const how = (body) => `<details class="ft-how"><summary class="ct-h">${esc(t('ftHow'))}</summary><div class="ft-how-body">${body}</div></details>`;
     if (mode === 'gauntlets') {
       const g = G.find((x) => x.id === prefs.gauntlet) || G[0];
       const st = App.currentBuild();
       const game = App.game(), done = new Set(game ? game.gauntlets : []);
-      const count = game ? `<p class="saves-note">${esc(t('ftClearedCount', { n: num(done.size), of: num(G.length) }))}</p>` : '';
       /* The whole arena at once, silk and loads carrying over: its health as your Needle's level
          sees it (each enemy's health over its modifier at that level), against the plan. The Tools
          hit at the Kit's level, where the modifiers can differ: an estimate, and it says so. */
@@ -258,19 +335,33 @@
         return b + (f.hp ? (f.hp / (f.mods ? f.mods[lvl] : 1)) * n : 0);
       }, 0), 0));
       const whole = E.compute(st, { foe: { id: g.id, hp: hpAll, mods: [1, 1, 1, 1, 1] } });
-      const p = planHtml(whole);
-      sec.innerHTML = `<div class="ft">${brackets}${screenHead(esc(t('navFight')), modes + count)}
-        <div class="ft-body">${gauntletPicker(g, done)}${gauntletCard(g, game)}<div class="ct-figs">${p}${gauntletWaves(g, st)}</div></div></div>`;
+      const face = `<img src="${portrait(FOE.get(g.waves[g.waves.length - 1][0][0]))}" alt=""><span class="ft-choose-name"${NT}>${esc(gauntletName(g))}</span>
+          <i class="ft-boss">${done.has(g.id) ? App.tick + ' ' : ''}${esc(t('ftWaves', { n: num(g.waves.length) }))}</i>`;
+      sec.innerHTML = `<div class="ft">${brackets}${screenHead(esc(t('navFight')), modes)}
+        ${choose(t('ftModeGauntlets'), face, gauntletPicker(g, done))}
+        ${gauntletCard(g, game)}${planHtml(whole)}
+        <div class="ct-figs ft-waves">${gauntletWaves(g, st)}</div>
+        ${how(`<p class="pg-note">${esc(t('ftGauntletNote'))}</p>${game ? `<p class="pg-note">${esc(t('ftClearedCount', { n: num(done.size), of: num(G.length) }))}</p>` : ''}`)}</div>`;
       return;
     }
     const f = FOE.get(prefs.foe) || FOE.get('lace');
     const black = !!prefs.ftBlack && !!f.bt;
     const r = E.compute(App.currentBuild(), { foe: f, black });
-    const st = r.state;
-    const build = `<p class="saves-note">${esc(t('ftBuild', { crest: pick(D.CRESTS.find((c) => c.id === st.crest).name), needle: pick(D.NEEDLES[st.needle].name), kit: num(st.kit) }))}
-      <a class="text-btn" href="${App.here(App.hashFor('tools'))}" data-act="view" data-value="tools">${esc(t('navTools'))}</a></p>`;
-    sec.innerHTML = `<div class="ft">${brackets}${screenHead(esc(t('navFight')), modes + build)}
-      <div class="ft-body">${picker(f)}${card(f, r)}<div class="ct-figs">${planHtml(r)}${against(f, r)}${theirs(f, r)}</div></div></div>`;
+    const hp = black ? f.bt : f.hp;
+    const th = theirs(f, r);
+    const moves = yours(r), marks = phaseMarks(f, r, hp);
+    const kit = kitOf(f, r, hp, moves, th, marks);
+    // A new enemy, black thread or build starts the fight over.
+    const key = [f.id, black, SS.codec.encode(r.state)].join('|');
+    if (!fight || fight.key !== key) fight = { key, kit, s: SIM.start(kit) };
+    fight.kit = kit;
+    const fs = fight.s;
+    sec.innerHTML = `<div class="ft">${brackets}${screenHead(esc(t('navFight')), modes)}
+      ${choose(t('ftSearch'), foeFace(f), picker(f))}
+      ${duel(f, r, hp, th, kit, fs, marks)}${planHtml(r)}${logHtml(fs, moves, th, f)}
+      <div class="ft-two">${yoursHtml(moves, kit, fs)}${theirsHtml(th, kit, fs)}</div>
+      ${how(`${about(f, r, hp)}<p class="pg-note">${esc(t('ftYoursNote'))}</p><p class="pg-note">${esc(t('ftPlanNote', { s: num(r.silk.spool) }))}</p>
+        ${th.notes.map((n) => `<p class="pg-note">${esc(n)}</p>`).join('')}`)}</div>`;
   };
 
   /* A boss's page (tools/pages-bosses.js) opens on that boss: <html data-foe>, applied at boot
@@ -288,6 +379,10 @@
     ftBlack() { prefs.ftBlack = !prefs.ftBlack; savePrefs(); render(); },
     ftMode(node) { prefs.ftMode = node.dataset.value; savePrefs(); render(); },
     ftGauntlet(node) { prefs.gauntlet = node.dataset.value; savePrefs(); render(); },
+    // The fight played out: a move, one back, from the start.
+    ftAct(node) { if (fight) { fight.s = SIM.act(fight.kit, fight.s, node.dataset.value); render(); } },
+    ftUndo() { if (fight) { fight.s = SIM.undo(fight.s); render(); } },
+    ftReset() { if (fight) { fight.s = SIM.start(fight.kit); render(); } },
   });
   // The search filters as you type; only the list is repainted, so the field keeps its focus.
   document.addEventListener('input', (e) => {
