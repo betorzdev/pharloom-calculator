@@ -258,7 +258,8 @@
        snareOffered       the Caretaker has offered the wish Silk and Soul (CaretakerOfferedSnareQuest)
        snarePieces        the Soul Snare's pieces held, by their save names (js/quests.js SNARE): a
                           Collectable with Amount above 0, or the Tool unlocked. Given, they're 0.
-       snareReady         the Soul Snare built (soulSnareReady) */
+       snareReady         the Soul Snare built (soulSnareReady)
+       endings            the endings seen, by ENDINGS' ids (CompletedEndings, a bit each) */
   function game(pd, sd = null) {
     const tools = named(pd.Tools), crests = named(pd.ToolEquips), quests = named(pd.QuestCompletionData);
     const bools = new Map();
@@ -322,6 +323,7 @@
       snareOffered: pd.CaretakerOfferedSnareQuest === true,
       snarePieces: QU.SNARE.filter(held).map((x) => x.save),
       snareReady: pd.soulSnareReady === true,
+      endings: ENDINGS.filter((e) => (int(pd.CompletedEndings) & e.bit) !== 0).map((e) => e.id),
     };
   }
 
@@ -336,6 +338,13 @@
      toSnapshot() writes them; gameOf() reads them back into one game, with the same defaults as
      an empty game for anything missing or damaged. */
   const OWNED = ['tools', 'crests', 'skills', 'arts'];
+  /* The endings, as the game keeps them seen in playerData.CompletedEndings: its CompletionState
+     flags (Assembly-CSharp, read on 28-Sep-2026: Act2Regular 1, Act2Cursed 2, Act2SoulSnare 4,
+     Act3Ending 8), in the wiki's order (Endings (Silksong)) and named by the game's text
+     (ENDING_<letter>_NAME). ENDING_B, «Strung to Serve», is a cut ending: no flag, not here. */
+  const ENDINGS = Object.freeze([
+    { id: 'weaver-queen', bit: 1, key: 'A' }, { id: 'snared-silk', bit: 4, key: 'C' },
+    { id: 'twisted-child', bit: 2, key: 'D' }, { id: 'sister-of-the-void', bit: 8, key: 'E' }]);
   /* The pieces go into a slot by a key that says what they are (the kind and where the save
      keeps them), not by their place in js/collectibles.js: a list regenerated after a patch
      (new pieces, another order) still finds the ones a slot saved before it. */
@@ -357,7 +366,7 @@
   const EMPTY = Object.freeze({ tools: [], crests: [], skills: [], arts: [], journal: {}, masks: 0, spools: 0, hearts: 0,
     needle: 0, kit: 0, pouch: 0, everbloom: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, bench: '', area: '', build: {},
     quests: [], bellshrines: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
-    bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false });
+    bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [] });
   const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
   // Each field only if it has the type an empty game gives it.
   function gameOf(snap) {
@@ -381,6 +390,6 @@
   const metaOf = (snap) => ({ version: '', time: 0, completion: 0, rosaries: 0, shards: 0, steel: false, dead: false, saved: null,
     ...parse((snap || {})['pharloom.meta']) });
 
-  SS.savefile = { pinKey, pieceKey, SKILL_PD, ART_PD, decrypt, unwrap, read, meta, game, toSnapshot, gameOf, metaOf };
+  SS.savefile = { ENDINGS, pinKey, pieceKey, SKILL_PD, ART_PD, decrypt, unwrap, read, meta, game, toSnapshot, gameOf, metaOf };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.savefile;
 })();

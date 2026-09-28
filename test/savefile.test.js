@@ -127,3 +127,10 @@ test('Free mode\'s marks (the Inventory) read back through the same keys a save 
   assert.deepEqual(g.pieces, [i]);
   assert.equal(g.masks, 0, 'the ladders stay the free build\'s, not the marks\'');
 });
+
+test('the endings seen: CompletedEndings, a bit each (the game\'s CompletionState flags)', () => {
+  const g = F.game({ ...BASE, CompletedEndings: 5 });
+  assert.deepEqual(g.endings, ['weaver-queen', 'snared-silk']);
+  assert.deepEqual(F.game({ ...BASE, CompletedEndings: 15 }).endings.length, 4);
+  assert.deepEqual(F.gameOf(F.toSnapshot({ ...BASE, CompletedEndings: 8 })).endings, ['sister-of-the-void']);
+});

@@ -261,7 +261,10 @@ Free mode, every piece.
 
 ### Progress
 
-A ledger. At the top, **your 100%** large, with the game's own figure checked. Before Act 3,
+A ledger. At the top, **your 100%** large (a line under it only if the game's own figure is
+another). In Act 3, the whole game at a glance: Act 1, Act 2 and Act 3 on one thread, then the four
+endings, lit the ones your save has seen (the game keeps them: Weaver Queen, Snared Silk, Twisted
+Child, Sister of the Void), and «Act 3 · n of 4 endings». Before Act 3,
 **the road to the next Act** at a glance: its steps as diamonds on one thread, the ones done lit
 and the one you're on larger, named with the game's words, and that step's title with how far
 into it («2 of 15»); «The whole road» opens it in full. Then each category is a row: its name,

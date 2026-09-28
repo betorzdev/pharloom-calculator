@@ -305,6 +305,20 @@
         <button type="button" class="text-btn" data-act="pgRoad" aria-expanded="${open}">${esc(t(open ? 'roadLess' : 'roadWhole'))}</button>
       </div>`;
   }
+  /* In Act 3, the whole game at a glance (Albert): the three Acts, the last one where you are,
+     then the endings, lit the ones this save has seen (js/savefile.js ENDINGS), named as the game
+     names them; the headline counts them. */
+  function journeyAll(g) {
+    const E = SS.savefile.ENDINGS, seen = new Set(g.endings || []);
+    const acts = [1, 2, 3].map((n) => ({ name: t('saveAct', { n: num(n) }), cls: n < 3 ? 'is-done' : 'is-cur' }));
+    const ends = E.map((e) => ({ name: t('ending_' + e.key), cls: 'is-ending' + (seen.has(e.id) ? ' is-done' : '') }));
+    const all = [...acts, ...ends];
+    return `<div class="pg-journey is-game" style="--n:${all.length};--f:${((2 + [...seen].length) / (all.length - 1) * 100).toFixed(1)}%">
+        <p class="pg-journey-sup">${esc(t('roadGame'))}</p>
+        <ol class="pg-journey-steps">${all.map((x) => `<li class="${x.cls}"><i aria-hidden="true"></i><span${NT}>${esc(x.name)}</span></li>`).join('')}</ol>
+        <p class="pg-journey-now">${esc(t('saveAct', { n: num(3) }))} <b>${esc(t('roadEndings', { n: num(seen.size), of: num(E.length) }))}</b></p>
+      </div>`;
+  }
   // Each step's title, as the whole road names it.
   const toAct2Titles = (r) => [t('roadBells'), t('roadGate', { gate: pick(QU.CHAIN[r.steps[1].quest].name) }),
     t('roadJudge', { judge: foeName('last-judge'), phantom: foeName('phantom') }), t('roadCitadel')];
@@ -325,20 +339,7 @@
       </section>`).join('');
   }
 
-  /* What the missing things of the 100% cost where the first way is a shop or crafting: rosaries,
-     Pale Oil and Craftmetal, against the rosaries the save carries. */
-  function buyHtml(all) {
-    let price = 0, oil = 0, metal = 0;
-    for (const x of Object.values(all).flat()) {
-      const w = !x.got && x.ways && x.ways[0];
-      if (!w || (w.kind !== 'shop' && w.kind !== 'craft')) continue;
-      price += w.price || 0; oil += w.paleOil || 0; metal += w.craftmetal || 0;
-    }
-    if (!price && !oil && !metal) return '';
-    const m = App.gameMeta() || {};
-    const extra = [oil ? t('pgBuyExtra', { n: num(oil), name: itemName('pale-oil') }) : '', metal ? t('pgBuyExtra', { n: num(metal), name: itemName('craftmetal') }) : ''].join('');
-    return `<p class="pg-note pg-buy">${esc(t('pgBuy', { price: num(price), have: num(m.rosaries || 0), extra }))}</p>`;
-  }
+
 
   /* Free mode's game for Progress: the Inventory's marks, and its ladders (masks, silk, Silk
      Hearts, Needle, Kit, Pouch) from the free build, as the Inventory sets them: their pieces had
@@ -380,8 +381,9 @@
         <button type="button" data-act="pgSort" data-value="near" aria-pressed="${!!prefs.pgNear}">${esc(t('pgNear'))}</button>
       </div>` : ''}` : '';
     const theirs = own ? Math.round((App.gameMeta() || {}).completion || 0) : null;
-    const total = c ? `<div class="pg-total"><p class="lbl">${esc(t('homeCompletion'))}</p><p class="pg-total-n"><b>${num(c.total)}</b><span class="u">${esc(App.pctSpace().trim() || '%')}</span></p>
-        ${own && theirs != null ? `<p class="hm-check${theirs === c.total ? '' : ' is-off'}">${esc(t(theirs === c.total ? 'homeMatches' : 'homeDiffers', { pct: num(theirs) + App.pctSpace() }))}</p>` : ''}</div>` : '';
+    // The figure alone (Albert: no label, no «it matches»); a line only when the game's figure differs.
+    const total = c ? `<div class="pg-total"><p class="pg-total-n"><b>${num(c.total)}</b><span class="u">${esc(App.pctSpace().trim() || '%')}</span></p>
+        ${own && theirs != null && theirs !== c.total ? `<p class="hm-check is-off">${esc(t('homeDiffers', { pct: num(theirs) + App.pctSpace() }))}</p>` : ''}</div>` : '';
     const next = own ? A.next(own) : null;
     const road = next ? journey(next) + (prefs.pgRoad ? roadHtml(own) : '')
       : `<div class="pg-journey is-guide"><button type="button" class="text-btn" data-act="pgRoad" aria-expanded="${!!prefs.pgRoad}">${esc(t(prefs.pgRoad ? 'roadLess' : 'roadBoth'))}</button></div>${prefs.pgRoad ? roadHtml(null) : ''}`;
@@ -407,10 +409,9 @@
     const controls = g ? `<div class="pg-controls">${seg}</div>` : '';
     sec.innerHTML = `<div class="pg">${brackets}${screenHead(esc(t('navProgress')))}
         ${total}
-        ${own && !next ? '' : road}
+        ${own && !next ? (own.act >= 3 ? journeyAll(own) : '') : road}
         <h3 class="pg-part">${esc(t('pg100'))}</h3>
         ${controls}
-        ${own ? buyHtml(all) : ''}
         <div class="pg-groups">${hundred}</div>
         <h3 class="pg-part">${esc(t('pgBeyond'))}</h3>
         <p class="pg-note">${esc(t('pgBeyondNote'))}</p>

@@ -540,3 +540,14 @@ reward and «Fight it in Combat» (`mapFight`: Combat's gauntlets, that one chos
 its mark as the map moves; ×, Escape or a tap on the empty map close it; a drag isn't a tap.
 The floating legend was in the way (Albert): it's under the map now, in two rows, no fold.
 
+### Progress, retouched (28 September 2026)
+
+Albert missed the timeline: it only showed before Act 3. In Act 3 now the whole game at a glance
+(`journeyAll` in `js/app-progress.js`): Act 1, Act 2, Act 3, then the four endings, lit the ones
+the save has seen. The save keeps them in `playerData.CompletedEndings`, the game's
+`CompletionState` flags (read from `Assembly-CSharp.dll`: Act2Regular 1 = Weaver Queen,
+Act2Cursed 2 = Twisted Child, Act2SoulSnare 4 = Snared Silk, Act3Ending 8 = Sister of the Void;
+the wiki's Endings page agrees; ENDING_B «Strung to Serve» is cut), read as `g.endings`
+(`js/savefile.js` ENDINGS). He also found dull, and so removed: the «Your 100%» label, «It matches
+the 63% the game shows» (the line stays only when the figures differ) and the purchase-cost line.
+

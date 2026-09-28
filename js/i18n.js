@@ -393,6 +393,12 @@
     roadSnare:      { es: 'Trampa anímica', en: 'Soul Snare' },   // MQ_SILK_SNARE_NAME
     roadWishwall:   { es: 'Muro de deseos', en: 'Wishwall' },   // the game says it in BB_FIXER_Q1_INTRO; no name of its own
     roadOf:         { es: '{n} de {of}', en: '{n} of {of}' },
+    ending_A:       { es: 'Reina Tejedora', en: 'Weaver Queen' },   // ENDING_A_NAME
+    ending_C:       { es: 'Atadura de seda', en: 'Snared Silk' },   // ENDING_C_NAME
+    ending_D:       { es: 'Niña retorcida', en: 'Twisted Child' },   // ENDING_D_NAME
+    ending_E:       { es: 'Hermana del vacío', en: 'Sister of the Void' },   // ENDING_E_NAME
+    roadGame:       { es: 'Tu partida', en: 'Your game' },
+    roadEndings:    { es: '{n} de {of} finales', en: '{n} of {of} endings' },
     roadWhole:      { es: 'El camino entero', en: 'The whole road' },
     roadLess:       { es: 'Cerrar el camino', en: 'Close the road' },
     roadBoth:       { es: 'Los caminos a los Actos 2 y 3', en: 'The roads to Acts 2 and 3' },
@@ -441,8 +447,6 @@
     howNeedsOr:     { es: 'Hace falta: {keys} (o {alt})', en: 'Needs: {keys} (or {alt})' },
     pgToolsTrap:    { es: 'Si entregas la {curveclaw} a un skarr en el Acto 3, pierdes su punto hasta recuperarla como {curvesickle}. La {silkshot} tiene tres versiones según quién la repare y cuenta una sola: la primera reparación cierra las otras dos.',
                       en: 'Hand the {curveclaw} to a Skarr in Act 3 and its point is gone until you get it back as the {curvesickle}. The {silkshot} comes in three versions depending on who repairs it, and one counts: the first repair closes the other two.' },
-    pgBuy:          { es: 'Lo que falta y se compra: {price} rosarios (llevas {have}){extra}.', en: 'What\'s missing and bought: {price} rosaries (you carry {have}){extra}.' },
-    pgBuyExtra:     { es: ', {n} {name}', en: ', {n} {name}' },
     pgNote_memoryLocket: { es: 'Abren ranuras extra en los Blasones.', en: 'They open extra slots on the Crests.' },
     pgNote_craftmetal:   { es: 'Con él se fabrican herramientas; algunas cuentan para el 100 %.', en: 'Tools are crafted with it; some count for 100%.' },
     pgNote_paleOil:      { es: 'Plinney lo pide para mejorar la Aguja: sin él no hay mejoras de la 2 a la 4.', en: 'Plinney asks for it to upgrade the Needle: without it, no upgrades 2 to 4.' },
