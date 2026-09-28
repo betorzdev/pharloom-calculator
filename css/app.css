@@ -1099,77 +1099,143 @@ kbd {
 .hm-gain::before { content: ''; flex: none; width: var(--diamond); height: var(--diamond); border: 1px solid var(--ink-2); transform: rotate(45deg) translateY(-2px); }
 .hm-gain-where { font-size: var(--fs-xs); color: var(--muted); white-space: nowrap; }
 
-/* ── The Inventory (js/app-game.js): the game's pane ──────────────────────
-   Three columns as the game's: the Needle and the HUD on the left, the icons in grids in the
-   middle, the description on the right. An icon you don't have is a dimmed silhouette; the one
-   picked has the pause menu's white frame. A Tool carries a thin rule in its slot colour (data). */
-.inv-body { display: grid; grid-template-columns: 180px minmax(0, 1fr) 260px; gap: var(--sp-8); align-items: start; margin-top: var(--sp-6); }
-.inv-side { display: grid; justify-items: center; gap: var(--sp-6); text-align: center; }
-.inv-needle img { height: calc(var(--sp-16) * 3); width: auto; filter: drop-shadow(0 0 12px color-mix(in oklab, var(--spotlight) 22%, transparent)); }
-.inv-needle-name { margin: var(--sp-2) 0 0; font-family: var(--font-display); font-size: var(--fs-sm); letter-spacing: var(--track-title); color: var(--ink-strong); }
-.inv-needle-dmg { margin: var(--sp-1) 0 0; font-size: var(--fs-sm); color: var(--ink-2); }
-.inv-needle-dmg b, .inv-silk b { font-family: var(--font-num); font-variant-numeric: tabular-nums; color: var(--ink-strong); }
-.inv-hud { display: grid; gap: var(--sp-3); justify-items: center; }
-.inv-masks { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-half); margin: 0; }
-.inv-masks img { height: var(--sp-6); width: auto; }
-.inv-silk { display: grid; justify-items: center; gap: var(--sp-1); margin: 0; font-size: var(--fs-sm); color: var(--ink-2); }
-.inv-silk img { width: 140px; height: auto; }
-.inv-main { display: grid; gap: var(--sp-6); min-width: 0; }
-.inv-pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: var(--sp-6); }
-.inv-h {
-  margin: 0 0 var(--sp-2); padding-bottom: var(--sp-1); border-bottom: 1px solid var(--line);
-  font-family: var(--font-display); font-size: var(--fs-sm); font-weight: 600; letter-spacing: var(--track-title); color: var(--filigree);
+/* ── The Inventory (js/app-game.js): the sibling's sheet ─────────────────
+   Two columns (design/03-redesign.md, step 4): what Hornet is on the left, what she carries on
+   the right. The Needle is the focal point; the body, rows of the game's own pieces; the Tools sit
+   on their slots. In a save the controls are still but at full light (read, not greyed). */
+.inv-presets { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: var(--sp-1) var(--sp-3); margin: 0; }
+.inv-presets .lbl { color: var(--muted); }
+.inv-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: var(--sp-12); align-items: start; }
+.inv-col { display: grid; gap: var(--sp-8); min-width: 0; }
+.inv-sec { display: grid; gap: var(--sp-2); align-content: start; min-width: 0; }
+.inv-n { margin-left: var(--sp-1); font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-xs); letter-spacing: 0; color: var(--ink-2); }
+.inv-n i { font-style: normal; font-weight: 400; color: var(--muted); }
+.inv :is(button:disabled) { opacity: 1; cursor: default; }
+/* The Needle: five upright, the one carried taller, lit by the spotlight, its damage larger. */
+.inv-needles { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); align-items: end; gap: var(--sp-1); }
+.inv-np { position: relative; isolation: isolate; display: grid; justify-items: center; gap: var(--sp-2); padding: var(--sp-2) 0 var(--sp-1); }
+.inv-np::before { content: ''; position: absolute; z-index: -1; inset: 0 8%; background: var(--halo-plate); opacity: 0; transition: opacity var(--dur) var(--ease); }
+.inv-np.is-on::before { opacity: 1; }
+.inv-np img { height: calc(var(--sp-16) * 1.5); width: auto; opacity: 0.38; filter: grayscale(0.5); transition: opacity var(--dur) var(--ease), filter var(--dur) var(--ease), height var(--dur) var(--ease); }
+.inv-np.is-on img { height: calc(var(--sp-16) * 2); opacity: 1; filter: none; }
+.inv-np:is(:hover, :focus-visible):not(:disabled) img { opacity: 0.85; filter: none; }
+.inv-np b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-lg); color: var(--muted); padding-bottom: var(--sp-1); border-bottom: 2px solid transparent; }
+.inv-np.is-on b { font-size: var(--fs-xl); color: var(--ink-strong); border-bottom-color: var(--accent-line); }
+.inv-caption { margin: var(--sp-1) 0 0; text-align: center; font-family: var(--font-display); font-size: var(--fs-md); letter-spacing: var(--track-title); color: var(--ink-strong); }
+/* The body: a row per ladder, the figure on the right, the pieces under it. */
+.inv-field { display: grid; gap: var(--sp-2); padding: var(--sp-3) 0; }
+.inv-field + .inv-field { border-top: 1px solid var(--inv-line); }
+.inv-frow { display: flex; align-items: baseline; justify-content: space-between; gap: var(--sp-3); }
+.inv-fname { font-size: var(--fs-md); color: var(--ink); }
+.inv-fnote { display: block; font-size: var(--fs-xs); color: var(--muted); }
+.inv-fnum { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-xl); font-weight: 600; color: var(--ink-strong); }
+.inv-fnum i { font-style: normal; font-size: var(--fs-xs); font-weight: 400; color: var(--muted); }
+.inv-pieces { display: flex; flex-wrap: wrap; gap: var(--sp-1); }
+.inv-pc { display: grid; place-items: center; min-width: var(--ctl-sm); min-height: var(--ctl-sm); padding: 0; transition: transform var(--dur) var(--ease); }
+.inv-pc img { height: calc(var(--sp-6) + var(--sp-half)); width: auto; filter: var(--missing-art); transition: filter var(--dur) var(--ease); }
+.inv-pc.is-on img { filter: none; }
+.inv-pc:is(:hover, :focus-visible):not(:disabled) { transform: translateY(calc(var(--sp-half) * -1)); }
+/* The silk: one thread across, a bead per silk strung on it (the game's diamond), lit up to yours. */
+.inv-pieces.is-masks { display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); justify-items: start; }
+.inv-pieces.is-masks .inv-pc { min-width: 0; width: 100%; max-width: var(--ctl-sm); }
+.inv-pieces.is-spools { position: relative; display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: 0; }
+.inv-pieces.is-spools::before {
+  content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1px;
+  background: linear-gradient(90deg, var(--silk) var(--f), color-mix(in oklab, var(--silk-rim) 35%, transparent) var(--f));
 }
-.inv-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(56px, 1fr)); gap: var(--sp-2); }
+.inv-pieces.is-spools .inv-pc { position: relative; min-width: 0; }
+.inv-bead { width: 10px; height: 10px; transform: rotate(45deg); border: 1px solid var(--silk-rim); background: var(--scene-bg); transition: background-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease); }
+.inv-pc.is-on .inv-bead { background: var(--silk); border-color: var(--silk); box-shadow: 0 0 8px color-mix(in oklab, var(--silk) 60%, transparent); }
+.inv-pc.is-base .inv-bead { width: 8px; height: 8px; }
+@keyframes inv-lit { 0% { filter: brightness(2.2) drop-shadow(0 0 10px var(--focus-glow)); } 100% { filter: none; } }
+@media (prefers-reduced-motion: no-preference) {
+  .inv .is-lit :is(img, .inv-bead) { animation: inv-lit var(--dur-flash) var(--ease-fade); }
+}
+.inv-levels { display: grid; gap: var(--sp-3); padding-top: var(--sp-3); border-top: 1px solid var(--inv-line); }
+.inv-level { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: var(--sp-1) var(--sp-3); }
+.inv-level img { grid-row: span 2; width: var(--sp-12); height: var(--sp-12); object-fit: contain; }
+.inv-level img.is-missing { filter: var(--missing-soft); opacity: var(--missing-soft-opacity); }
+.inv-level .seg { gap: var(--sp-1); flex-wrap: nowrap; }
+/* Plates: the art, the name, what it gives. */
+.inv-plates { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: var(--sp-3) var(--sp-2); }
+.inv-plate { display: grid; justify-items: center; align-content: start; gap: var(--sp-1); width: 100%; padding: 0; text-align: center; }
+.inv-plate-art { position: relative; isolation: isolate; display: grid; place-items: center; width: 100%; height: calc(var(--sp-12) + var(--sp-2)); }
+.inv-plate-art::before { content: ''; position: absolute; z-index: -1; inset: -8% 12%; background: var(--halo-plate); opacity: 0; transition: opacity var(--dur) var(--ease); }
+.inv-plate:is(:hover, :focus-visible, .is-picked) .inv-plate-art::before { opacity: 1; }
+.inv-plate img { max-height: calc(var(--sp-12) - var(--sp-1)); max-width: calc(var(--sp-16) + var(--sp-2)); object-fit: contain; }
+.inv-plate.is-missing img { filter: var(--missing-soft); opacity: var(--missing-soft-opacity); }
+/* Had or missing, said twice (design/08-missing-variants.html, A + C): what you have stands in the
+   spotlight's glow, and under every picture the game's diamond, lit had, hollow missing. */
+.inv-plate-art { order: 0; }
+.inv-plate::after {
+  content: ''; order: 1; width: var(--diamond); height: var(--diamond); transform: rotate(45deg);
+  border: 1px solid var(--accent-line); transition: background-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+.inv-plate:not(.is-missing)::after { background: var(--accent); border-color: var(--accent); box-shadow: var(--glow); }
+.inv-plate-name { order: 2; }
+.inv-plate-v { order: 3; }
+.inv-plate:not(.is-missing) .inv-plate-art::before { opacity: 0.8; }
+.inv-plate:not(.is-missing) img { filter: drop-shadow(0 0 6px color-mix(in oklab, var(--spotlight) 35%, transparent)); }
+.inv-plate-name { font-size: var(--fs-xs); line-height: 1.25; color: var(--ink-2); }
+.inv-plate:not(.is-missing) .inv-plate-name { color: var(--ink); }
+.inv-plate-v { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-md); font-weight: 700; color: var(--ink-strong); }
+.inv-plate-v.is-none { font-family: var(--font-body); font-size: var(--fs-xs); font-weight: 400; color: var(--muted); }
+/* The grids: one fixed square per cell, so every row lines up. */
+.inv-sub { display: flex; align-items: center; gap: var(--sp-2); margin: var(--sp-2) 0 0; font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; color: var(--label); }
+.inv-sub::before { content: ''; width: var(--sp-2); height: var(--sp-2); transform: rotate(45deg); background: var(--c); }
+.inv-sub b { color: var(--ink-2); }
+.inv-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, calc(var(--sp-12) + var(--sp-2))); gap: var(--sp-2); }
+.inv-grid > li { display: grid; justify-items: center; gap: var(--sp-half); }
 .inv-cell {
-  position: relative; display: grid; place-items: center; width: 100%; aspect-ratio: 1; padding: var(--sp-1);
-  border: 1px solid transparent; background: none; cursor: pointer;
-  transition: border-color var(--dur) var(--ease), background-color var(--dur) var(--ease);
+  position: relative; display: grid; place-items: center; width: calc(var(--sp-12) + var(--sp-2)); height: calc(var(--sp-12) + var(--sp-2)); padding: 0;
+  border: 1px solid transparent; background: none; cursor: pointer; transition: border-color var(--dur) var(--ease), background-color var(--dur) var(--ease);
 }
-.inv-cell img { max-width: 100%; max-height: 100%; object-fit: contain; transition: filter var(--dur) var(--ease), opacity var(--dur) var(--ease); }
-.inv-cell.is-missing img { filter: grayscale(1) brightness(0.35); opacity: 0.6; }
-.inv-cell:is(:hover, :focus-visible) { border-color: color-mix(in oklab, var(--filigree) 40%, transparent); background: var(--veil); outline: none; }
+.inv-cell img { position: relative; z-index: 1; width: var(--sp-8); height: var(--sp-8); object-fit: contain; transition: filter var(--dur) var(--ease); }
+.inv-cell:not(.is-slot) img { width: calc(var(--sp-8) + var(--sp-2)); height: calc(var(--sp-8) + var(--sp-2)); }
+.inv-cell.is-missing img { filter: var(--missing-soft); opacity: var(--missing-soft-opacity); }
+.inv-cell:not(.is-missing):not(.is-slot) { background: radial-gradient(closest-side, color-mix(in oklab, var(--spotlight) 22%, transparent), transparent); }
+.inv-cell:not(.is-missing) img { filter: drop-shadow(0 0 6px color-mix(in oklab, var(--spotlight) 40%, transparent)); }
+.inv-cell::after {
+  content: ''; position: absolute; left: 50%; bottom: calc(var(--sp-2) * -1); width: var(--diamond); height: var(--diamond);
+  transform: translateX(-50%) rotate(45deg); border: 1px solid var(--accent-line);
+}
+.inv-cell:not(.is-missing)::after { background: var(--accent); border-color: var(--accent); box-shadow: var(--glow); }
+.inv-grid > li { padding-bottom: var(--sp-3); row-gap: var(--sp-4); }
+/* Under the pointer only the picture lights up: no square behind it (Albert). The keyboard keeps its focus ring. */
 .inv-cell:is(:hover, :focus-visible) img { filter: drop-shadow(0 0 6px color-mix(in oklab, var(--spotlight) 45%, transparent)); }
-.inv-cell.is-missing:is(:hover, :focus-visible) img { filter: grayscale(1) brightness(0.55); }
-.inv-cell.is-picked { border-color: var(--filigree); background: var(--veil); }
-.inv-cell.is-red { box-shadow: inset 0 -2px 0 color-mix(in oklab, var(--slot-red) 70%, transparent); }
-.inv-cell.is-blue { box-shadow: inset 0 -2px 0 color-mix(in oklab, var(--slot-blue) 70%, transparent); }
-.inv-cell.is-yellow { box-shadow: inset 0 -2px 0 color-mix(in oklab, var(--slot-yellow) 70%, transparent); }
-.inv-count {
-  position: absolute; right: var(--sp-half); bottom: var(--sp-half); padding: 0 var(--sp-1);
-  font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-2xs); line-height: 1.4;
-  color: var(--ink-strong); background: color-mix(in oklab, var(--scene-bg) 80%, transparent);
+.inv-cell.is-missing:is(:hover, :focus-visible) img { filter: grayscale(1) brightness(0.8); }
+/* The one whose text is open needs no frame: the text under its shelf says it (Albert: the white square was too much). */
+/* A Tool on its slot: the Crest screen's diamond in the slot's colour; lacking it, the game's locked slot: solid grey with its pale rim. */
+.inv-cell.is-slot::before {
+  content: ''; position: absolute; inset: calc(var(--sp-2) + var(--sp-half)); transform: rotate(45deg);
+  border: 1.5px solid var(--c); background: color-mix(in oklab, var(--c) 8%, var(--scene-bg));
 }
-.inv-detail {
-  position: sticky; top: calc(var(--sticky-h) + var(--sp-4)); display: grid; justify-items: center; gap: var(--sp-2);
-  min-height: 280px; padding: var(--sp-4); text-align: center; border-left: 1px solid var(--line);
-}
-.inv-big { width: 128px; height: 128px; object-fit: contain; filter: drop-shadow(0 0 16px color-mix(in oklab, var(--spotlight) 25%, transparent)); }
-.inv-big.is-missing { filter: grayscale(1) brightness(0.45); }
+.inv-cell.is-slot.is-missing::before { border: 1px solid var(--slot-locked-rim); background: color-mix(in oklab, var(--slot-locked) 45%, var(--scene-bg)); }
+/* On the grey slot the picture a touch brighter than elsewhere, so it still reads (design/09-locked-tool-variants.html, B). */
+.inv-cell.is-slot.is-missing img { filter: grayscale(1) brightness(0.75); opacity: 0.6; }
+/* Free mode's marks: All · None on a shelf's head, and − N + under a counted item. */
+.inv-all { display: inline-flex; align-items: baseline; gap: var(--sp-2); margin-left: auto; padding-left: var(--sp-3); order: 3; font-family: var(--font-body); font-size: var(--fs-xs); font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--muted); }
+.inv-all .text-btn { font-size: var(--fs-xs); min-height: 0; }
+.inv-h:has(.inv-all)::after { order: 2; }
+.inv-grid.is-items { grid-template-columns: repeat(auto-fill, calc(var(--sp-16) + var(--sp-6))); }
+.inv-step { display: inline-flex; align-items: center; gap: var(--sp-half); }
+.inv-step b { min-width: var(--sp-6); text-align: center; font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-sm); color: var(--ink-strong); }
+.inv-step .icon-btn { width: var(--sp-8); height: var(--sp-8); }
+.inv-count { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-2xs); color: var(--ink-2); }
+/* What's open under a shelf: the accent's bar on the left over the chosen veil (the open row). */
+.inv-open { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--sp-1) var(--sp-6); align-items: center; margin-top: var(--sp-2); padding: var(--sp-4) var(--sp-6); border-left: 2px solid var(--accent); background: var(--picked); }
+.inv-open img { grid-row: 1 / span 3; width: calc(var(--sp-16) + var(--sp-2)); height: calc(var(--sp-16) + var(--sp-2)); object-fit: contain; }
+.inv-open img.is-missing { filter: var(--missing-soft); opacity: var(--missing-soft-opacity); }
 .inv-name { margin: 0; font-family: var(--font-display); font-size: var(--fs-lg); font-weight: 600; letter-spacing: var(--track-title); color: var(--ink-strong); text-wrap: balance; }
-.inv-have { margin: 0; font-family: var(--font-num); font-variant-numeric: tabular-nums; color: var(--ink-2); }
-.inv-not { margin: 0; font-size: var(--fs-xs); letter-spacing: var(--track-label); text-transform: uppercase; color: var(--muted); }
+.inv-not { margin: 0; font-family: var(--font-num); font-size: var(--fs-2xs); letter-spacing: var(--track-label); text-transform: uppercase; color: var(--muted); }
 .inv-desc { margin: 0; font-size: var(--fs-sm); line-height: 1.55; color: var(--ink-2); text-wrap: pretty; }
-.inv-hint { margin: auto 0; font-size: var(--fs-sm); color: var(--muted); }
-/* Narrower, the description sits on the bottom edge of the window while you go through the grids,
-   so what you tap reads where you are; with nothing picked, only the hint. */
-@media (max-width: 1100px) {
-  .inv-body { grid-template-columns: 150px minmax(0, 1fr); }
-  .inv-detail {
-    grid-column: 1 / -1; position: sticky; top: auto; bottom: 0; z-index: 2; min-height: 0; max-height: 45vh; overflow: auto;
-    grid-template-columns: auto minmax(0, 1fr); justify-items: start; align-items: center; text-align: left; column-gap: var(--sp-4);
-    border-left: 0; border-top: 1px solid var(--filigree); background: var(--scene-bg); box-shadow: 0 -12px 24px var(--scene-bg);
-  }
-  .inv-detail > :not(.inv-big) { grid-column: 2; }
-  .inv-detail .inv-big { grid-row: 1 / span 4; width: 72px; height: 72px; }
-  .inv-detail .inv-hint { grid-column: 1 / -1; margin: 0; }
+@media (max-width: 899px) {
+  .inv-body { grid-template-columns: minmax(0, 1fr); gap: var(--sp-8); }
 }
-@media (max-width: 640px) {
-  .inv-body { grid-template-columns: minmax(0, 1fr); }
-  .inv-side { grid-template-columns: auto minmax(0, 1fr); justify-items: start; text-align: left; }
-  .inv-needle img { height: calc(var(--sp-16) * 1.5); }
-  .inv-pair { grid-template-columns: minmax(0, 1fr); }
-  .inv-grid { grid-template-columns: repeat(auto-fill, minmax(48px, 1fr)); }
+@media (max-width: 599px) {
+  .inv-open { grid-template-columns: minmax(0, 1fr); padding: var(--sp-3) var(--sp-4); }
+  .inv-open img { grid-row: auto; width: var(--sp-12); height: var(--sp-12); }
+  .inv-pieces.is-spools .inv-bead { width: 8px; height: 8px; }
 }
 
 /* ── The Crest screen (js/app-tools.js) ─────────────────────────────────────
@@ -1215,6 +1281,10 @@ kbd {
 .ct-pick.is-on, .ct-tool.is-on { border-color: var(--filigree); background: var(--veil); }
 .ct-pick.is-on img, .ct-tool.is-on img { opacity: 1; filter: drop-shadow(0 0 6px color-mix(in oklab, var(--spotlight) 45%, transparent)); }
 .ct-pick:disabled { cursor: default; }
+/* Free mode, what the Inventory's marks say you don't have yet: a silhouette, and it can't be put on. */
+:is(.ct-pick, .ct-tool).is-missing { opacity: 1; cursor: default; }
+:is(.ct-pick, .ct-tool).is-missing img { filter: var(--missing-art); }
+:is(.ct-pick, .ct-tool).is-missing:is(:hover, :focus-visible) { background: none; border-color: transparent; }
 .ct-tool.is-red { box-shadow: inset 0 -2px 0 color-mix(in oklab, var(--slot-red) 70%, transparent); }
 .ct-tool.is-blue { box-shadow: inset 0 -2px 0 color-mix(in oklab, var(--slot-blue) 70%, transparent); }
 .ct-tool.is-yellow { box-shadow: inset 0 -2px 0 color-mix(in oklab, var(--slot-yellow) 70%, transparent); }

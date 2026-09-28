@@ -113,3 +113,17 @@ test('the map\'s pins lit: a Bellway station unlocked, a toll bench paid; kept i
   const old = JSON.parse(snap['pharloom.progress']);
   assert.deepEqual(F.gameOf({ ...snap, 'pharloom.progress': JSON.stringify({ ...old, lit: ['bellway Nowhere', 'bench Dock_01'] }) }).lit, ['bench Dock_01']);
 });
+
+test('Free mode\'s marks (the Inventory) read back through the same keys a save uses', () => {
+  const CO = require('../js/collectibles.js');
+  const i = CO.PIECES.findIndex((p) => p[0] === 'memory-locket');
+  const g = F.gameOf({
+    'pharloom.owned': JSON.stringify({ tools: ['straight-pin'], crests: ['hunter'], skills: [], arts: ['needle-strike'] }),
+    'pharloom.progress': JSON.stringify({ everbloom: true, pieces: [F.pieceKey(CO.PIECES[i])] }),
+  });
+  assert.deepEqual(g.tools, ['straight-pin']);
+  assert.deepEqual(g.arts, ['needle-strike']);
+  assert.equal(g.everbloom, true);
+  assert.deepEqual(g.pieces, [i]);
+  assert.equal(g.masks, 0, 'the ladders stay the free build\'s, not the marks\'');
+});

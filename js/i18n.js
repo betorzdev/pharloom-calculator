@@ -336,11 +336,20 @@
     hjState_unseen: { es: 'aún no vista', en: 'not seen yet' },
 
     /* The Inventory (js/app-game.js) */
-    invFree:        { es: 'Modo libre: todo desbloqueado. Elige una partida para ver lo que llevas.', en: 'Free mode: everything unlocked. Pick a save to see what you carry.' },
     invItems:       { es: 'Objetos', en: 'Items' },
     invMissing:     { es: 'Aún no lo tienes', en: 'You don\'t have it yet' },
-    invHint:        { es: 'Señala algo para leer su descripción.', en: 'Point at something to read its description.' },
-    invDamage:      { es: 'Daño', en: 'Damage' },
+    invAll:         { es: 'Todo', en: 'All' },
+    invNone:        { es: 'Nada', en: 'None' },
+    invLess:        { es: 'Uno menos: {what}', en: 'One less: {what}' },
+    invMore:        { es: 'Uno más: {what}', en: 'One more: {what}' },
+    invNeedle:      { es: 'La aguja', en: 'The Needle' },
+    invFromTo:      { es: 'de {a} a {b}', en: 'from {a} to {b}' },
+    invLearnt:      { es: 'Aprendida', en: 'Learnt' },
+    invNotLearnt:   { es: 'Sin aprender', en: 'Not learnt' },
+    invStart:       { es: 'Empezar desde', en: 'Start from' },
+    invBase:        { es: 'Hornet al empezar', en: 'Base Hornet' },
+    invMax:         { es: 'Todo al máximo', en: 'Everything maxed' },
+    invSave:        { es: 'Como lo guardó el juego en la Partida {n}: se cambia jugando.', en: 'As the game saved it in Save {n}: it changes as you play.' },
     invSilk:        { es: 'Seda', en: 'Silk' },   // INV_NAME_THREAD
 
     /* Progress: what's missing, piece by piece (js/app-progress.js) */

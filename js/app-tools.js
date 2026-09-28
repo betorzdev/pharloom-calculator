@@ -52,7 +52,16 @@
   const moment = { focus: true, fury: false, flint: false, challenge: false };
   function current() {
     const g = App.game();
-    if (!g) return { st: freeBuild(), locked: false };
+    if (!g) {
+      // Free mode with marks (the Inventory): what you don't have isn't worn.
+      const st = freeBuild(), have = App.freeGame ? App.freeGame() : null;
+      if (have) {
+        st.tools = st.tools.filter((id) => have.tools.includes(id));
+        if (st.skill && !have.skills.includes(st.skill)) st.skill = null;
+        if (st.crest !== 'hunter' && !have.crests.includes(st.crest)) st.crest = 'hunter';
+      }
+      return { st, locked: false, have };
+    }
     const b = g.build || {};
     return { locked: true, st: E.normalize({ ...b, needle: g.needle, kit: g.kit, pouch: g.pouch, masks: g.masks, spools: g.spools, hearts: g.hearts,
       ...moment }) };
@@ -90,8 +99,13 @@
   const check = (which, on, label) => `<button type="button" class="check" role="switch" aria-checked="${on}" data-act="ctToggle" data-value="${which}">
       <span class="check-box" aria-hidden="true">${App.tick}</span><span>${esc(label)}</span></button>`;
 
-  function controls(st, locked) {
-    const crests = D.CRESTS.map((c) => `<li><button type="button" class="ct-pick${st.crest === c.id ? ' is-on' : ''}" data-act="ctCrest" data-value="${c.id}"
+  /* In Free mode with the Inventory's marks, what you don't have yet is a silhouette and can't
+     be put on (the sibling's charms found); the Hunter Crest is always had. */
+  function controls(st, locked, have) {
+    const lacks = (list, id) => !!have && !(list === 'crests' && id === 'hunter') && !have[list].includes(id);
+    const off = (list, id) => (lacks(list, id) ? ' is-missing' : '');
+    const dis = (list, id) => (lacks(list, id) ? ` disabled aria-description="${esc(t('invMissing'))}"` : '');
+    const crests = D.CRESTS.map((c) => `<li><button type="button" class="ct-pick${st.crest === c.id ? ' is-on' : ''}${off('crests', c.id)}"${dis('crests', c.id)} data-act="ctCrest" data-value="${c.id}"
         aria-pressed="${st.crest === c.id}" title="${esc(pick(c.name))}"${locked ? ' disabled' : ''}${NT}><img src="${icon('crests', c.id)}" alt="${esc(pick(c.name))}"></button></li>`).join('');
     const lv = (n) => [0, 1, 2, 3, 4].map((v) => [v, num(v)]);
     const situ = [
@@ -102,9 +116,9 @@
     ].join('');
     const tools = locked ? '' : COLORS.map((c) => `<ul class="ct-tools">${D.TOOLS.filter((x) => x.color === c).map((x) => {
       const on = st.tools.includes(x.id);
-      return `<li><button type="button" class="ct-tool is-${c}${on ? ' is-on' : ''}" data-act="ctTool" data-value="${x.id}" aria-pressed="${on}" title="${esc(pick(x.name))}"${NT}>
+      return `<li><button type="button" class="ct-tool is-${c}${on ? ' is-on' : ''}${off('tools', x.id)}"${dis('tools', x.id)} data-act="ctTool" data-value="${x.id}" aria-pressed="${on}" title="${esc(pick(x.name))}"${NT}>
         <img src="${icon('tools', x.id)}" alt="${esc(pick(x.name))}" loading="lazy"></button></li>`; }).join('')}</ul>`).join('');
-    const skills = locked ? '' : `<ul class="ct-tools">${D.SKILLS.map((x) => `<li><button type="button" class="ct-tool is-skill${st.skill === x.id ? ' is-on' : ''}"
+    const skills = locked ? '' : `<ul class="ct-tools">${D.SKILLS.map((x) => `<li><button type="button" class="ct-tool is-skill${st.skill === x.id ? ' is-on' : ''}${off('skills', x.id)}"${dis('skills', x.id)}
         data-act="ctSkill" data-value="${x.id}" aria-pressed="${st.skill === x.id}" title="${esc(pick(x.name))}"${NT}><img src="${icon('skills', x.id)}" alt="${esc(pick(x.name))}"></button></li>`).join('')}</ul>`;
     return `<div class="ct-controls">
         <div class="ct-field"><span class="lbl">${esc(t('cat_crests'))}</span><ul class="ct-crests">${crests}</ul></div>
@@ -193,14 +207,14 @@
   }
 
   App.screens.tools = (sec) => {
-    const { st, locked } = current();
+    const { st, locked, have } = current();
     const r = E.compute(st);
     const share = `<button type="button" class="btn ct-share" data-act="ctShare">${esc(t('ctShare'))}</button>`;
     const note = locked ? `<p class="saves-note">${esc(t('ctLocked', { n: App.activeSlot() }))} <a class="text-btn" href="${App.here(App.hashFor('saves'))}" data-act="view" data-value="saves">${esc(t('freeMode'))}</a></p>` : '';
     sec.innerHTML = `<div class="ct">${brackets}${screenHead(esc(t('navTools')), note + share)}
       <div class="ct-body">
         <aside class="ct-side">${slotsHtml(st, r)}</aside>
-        ${controls(st, locked)}
+        ${controls(st, locked, have)}
         ${figures(r)}
       </div>${summary(r)}</div>`;
   };
@@ -222,7 +236,19 @@
     u.hash = C.encode(st) + (App.prefs.lang !== App.PAGE_LANG ? '&lang=' + App.prefs.lang : '') + '&view=tools';
     return u.href;
   }
+  /* Start from (the Inventory, Free mode): Hornet as the game starts her (every ladder at the
+     bottom, nothing had but the Hunter Crest, so nothing equipped), or everything (the marks
+     cleared: Free mode's everything-unlocked sheet). */
+  const PRESET = { base: { needle: 0, kit: 0, pouch: 0, masks: 0, spools: 0, hearts: 0 }, max: { needle: 4, kit: 4, pouch: 4, masks: 5, spools: 9, hearts: 3 } };
+  const BASE_GAME = { tools: [], crests: ['hunter'], skills: [], arts: [], everbloom: false, pieces: [] };
+  // Free mode's build changed from the Inventory (js/app-game.js): a mark taken off takes it off Hornet too.
+  App.editFree = change;
   Object.assign(actions, {
+    ctPreset(node) {
+      const base = node.dataset.value === 'base';
+      App.setFreeGame(base ? BASE_GAME : null);
+      change((st) => { Object.assign(st, PRESET[node.dataset.value] || {}); });
+    },
     ctShare() {
       const link = shareLink();
       App.track('share');

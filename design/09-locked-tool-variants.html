@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Missing Tools: variants</title>
+<!-- Design material, not part of the site (design/03-redesign.md, step 4, a retouch). How a Tool
+     you don't have sits on its slot, over Save 4's real red, blue and yellow Tools. Albert didn't
+     like today's (a dashed grey diamond and the dimmed picture). Every option keeps the pip of
+     08-missing-variants.html under each Tool. -->
+<base href="../">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/app.css">
+<script src="js/i18n.js"></script>
+<script src="js/data.js"></script>
+<style>
+.mk { max-width: var(--page-max); margin: 0 auto; padding: var(--sp-8) var(--page-pad) var(--sp-16); display: grid; gap: var(--sp-6); }
+.mk h1 { font-family: var(--font-display); font-size: var(--fs-xl); color: var(--ink-strong); letter-spacing: var(--track-title); }
+.mk > p { max-width: var(--measure); color: var(--ink-2); font-size: var(--fs-sm); }
+.mk-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-4); }
+.mk-col { display: grid; align-content: start; gap: var(--sp-3); padding: var(--sp-4); background: var(--inv-bg); border: 1px solid var(--inv-line); }
+.mk-col > b { font-family: var(--font-num); font-size: var(--fs-2xs); letter-spacing: var(--track-label); text-transform: uppercase; color: var(--label); }
+.mk-col > i { font-style: normal; font-size: var(--fs-xs); color: var(--muted); }
+.sub { display: flex; align-items: center; gap: var(--sp-2); font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; color: var(--label); }
+.sub::before { content: ''; width: var(--sp-2); height: var(--sp-2); transform: rotate(45deg); background: var(--c); }
+.row { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+@media (max-width: 1100px) { .mk-cols { grid-template-columns: 1fr; } }
+
+/* The cell as the site draws a had one (step 4): the slot's diamond, the glow, the lit pip. */
+.c { position: relative; display: grid; place-items: center; width: 56px; height: 56px; margin-bottom: var(--sp-3); }
+.c::before { content: ''; position: absolute; inset: 10px; transform: rotate(45deg); border: 1.5px solid var(--c); background: color-mix(in oklab, var(--c) 8%, var(--scene-bg)); }
+.c img { position: relative; z-index: 1; width: 32px; height: 32px; object-fit: contain; filter: drop-shadow(0 0 6px color-mix(in oklab, var(--spotlight) 40%, transparent)); }
+.c::after { content: ''; position: absolute; left: 50%; bottom: -8px; width: var(--diamond); height: var(--diamond); transform: translateX(-50%) rotate(45deg); border: 1px solid var(--accent); background: var(--accent); box-shadow: var(--glow); }
+.c.miss::after { background: none; border-color: var(--accent-line); box-shadow: none; }
+
+/* TODAY: the locked slot's grey, dashed; the picture grey. */
+.v-now .miss::before { border-color: var(--slot-locked); border-style: dashed; background: none; }
+.v-now .miss img { filter: grayscale(1) brightness(0.6); opacity: 0.55; }
+
+/* A · the empty slot: the slot in its own colour, faint and solid, nothing on it but the
+   Tool's shape, a quiet shadow. The row stays red, blue or yellow; what's had is lit. */
+.v-a .miss::before { border-color: color-mix(in oklab, var(--c) 35%, transparent); background: none; }
+.v-a .miss img { filter: brightness(0) drop-shadow(0 0 0.6px color-mix(in oklab, var(--c) 55%, transparent)); opacity: 0.8; }
+
+/* B · the game's locked slot: the Crest screen's own drawing for a slot not yet open, a solid
+   grey diamond with its pale rim (design/02-silksong.md §3), and the Tool's picture grey on it. */
+.v-b .miss::before { border-color: var(--slot-locked-rim); border-width: 1px; background: color-mix(in oklab, var(--slot-locked) 45%, var(--scene-bg)); }
+.v-b .miss img { filter: grayscale(1) brightness(0.75); opacity: 0.6; }
+
+/* C · no slot until it's yours: what you lack is only its picture, grey, loose on the black;
+   the diamond in the slot's colour appears when you get it, as a slot filling. */
+.v-c .miss::before { display: none; }
+.v-c .miss img { width: 36px; height: 36px; filter: grayscale(1) brightness(0.7); opacity: 0.5; }
+
+/* D · the slot's colour, the picture in shadow: the diamond as today's had one but dimmed, and
+   the Tool a dark silhouette tinted by its slot. */
+.v-d .miss::before { border-color: color-mix(in oklab, var(--c) 55%, transparent); background: color-mix(in oklab, var(--c) 4%, var(--scene-bg)); }
+.v-d .miss img { filter: grayscale(1) brightness(0.35) sepia(1) hue-rotate(var(--h)) saturate(2); opacity: 0.75; }
+</style>
+</head>
+<body>
+<div class="page"><div class="mk">
+  <h1>Missing Tools</h1>
+  <p>Save 4's real Tools. Today's first, then four ways for a Tool you don't have yet; what you have stays as it is (the slot in its colour, the glow, the lit pip).</p>
+  <div class="mk-cols" id="cols"></div>
+</div></div>
+<script>
+(function () {
+  const G = ['straight-pin', 'threefold-pin', 'sting-shard', 'tacks', 'curveclaw', 'throwing-ring', 'conchcutter', 'delvers-drill', 'cogwork-wheel', 'cogfly', 'voltvessels', 'flintslate', 'druids-eye', 'warding-bell', 'fractured-mask', 'weavelight', 'sawtooth-circlet', 'injector-band', 'claw-mirror', 'memory-crystal', 'wreath-of-purity', 'wispfire-lantern', 'compass', 'shard-pendant', 'magnetite-brooch', 'barbed-bracelet', 'dead-bugs-purse', 'magnetite-dice', 'scuttlebrace', 'ascendants-grip', 'thiefs-mark'];
+  const D = SS.data;
+  const HUE = { red: '-30deg', blue: '160deg', yellow: '5deg' };
+  const V = [['v-now', 'Today', 'the locked slot\'s grey, dashed; the picture grey.'],
+    ['v-a', 'A · the empty slot', 'the slot in its own colour, faint; the Tool only a quiet shadow on it.'],
+    ['v-b', 'B · the game\'s locked slot', 'the Crest screen\'s own drawing for a slot not yet open: solid grey with its pale rim, the picture grey on it.'],
+    ['v-c', 'C · no slot until it\'s yours', 'only the grey picture, loose; the coloured diamond appears when you get it.'],
+    ['v-d', 'D · the slot\'s colour in shadow', 'the diamond dimmed, the Tool a dark silhouette tinted by its slot.']];
+  const rows = ['red', 'blue', 'yellow'].map((c) => [c, D.TOOLS.filter((x) => x.color === c).slice(0, 14)]);
+  document.getElementById('cols').innerHTML = V.map(([cls, name, note]) => `<div class="mk-col ${cls}"><b>${name}</b><i>${note}</i>${rows.map(([c, xs]) =>
+    `<p class="sub" style="--c: var(--slot-${c})">${c}</p><div class="row" style="--c: var(--slot-${c}); --h: ${HUE[c]}">${xs.map((x) => `<span class="c${G.includes(x.id) ? '' : ' miss'}" title="${x.name.en}"><img src="assets/icons/tools/${x.id}.webp" alt=""></span>`).join('')}</div>`).join('')}</div>`).join('');
+})();
+</script>
+</body>
+</html>

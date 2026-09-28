@@ -71,14 +71,26 @@ count, and what the completion went up by. The notice at the top says the same i
 
 ### Inventory
 
-The game's own pane: the Needle with its damage, the masks and the silk on the left; in the
-middle the game's icons in grids, the Tools by colour (a thin rule in their slot's colour), the
-Crests, the Silk Skills, the abilities and the items (the Crafting Kit and Tool Pouch with their
-level, the loose Mask Shards and Spool Fragments, the Memory Lockets, Craftmetal, Pale Oil, the
-Everbloom, the Silk Hearts, the Old Hearts, the melodies and the fleas); on the right the name
-and the game's own text of what you point at or tap. What you don't have yet is a dimmed
-silhouette; in Free mode everything is there. On a phone the description sits on the bottom
-edge while you go through the grids.
+A sheet in two columns. On the left, what Hornet is: **the Needle**, the five upright with their
+damage, the one she carries taller and lit; then **Hornet**: the masks (5 to 10) as the game's
+masks, the silk (9 to 18) as beads on one thread, the Silk Hearts, and the Crafting Kit and Tool
+Pouch with their level; then the **Silk Skills** with what each deals at this build, and the
+**abilities** (Needle Strike with its damage). On the right, what she carries: the **Tools** by
+colour, each on its slot's diamond (dashed and grey while you lack it), the **Crests** and the
+**items** with their counts (the loose Mask Shards and Spool Fragments, the Memory Lockets,
+Craftmetal, Pale Oil, the Everbloom, the Old Hearts, the melodies and the fleas). The heads count
+as the 100% does (Tools of 51). Tap anything to read the game's own text under its shelf.
+
+In **Free mode** everything on it is yours to set. On the left, tap a Needle, a mask, a bead of
+silk, a Silk Heart or a level (tap the last one lit to take it back). On the right, tap a Tool,
+Crest, Silk Skill, ability, the Everbloom, an Old Heart or a melody to mark it had or not (its
+text opens under the shelf); each shelf has «All · None», and what comes in numbers (loose Mask
+Shards and Spool Fragments, Memory Lockets, Craftmetal, Pale Oil, fleas) has − N +. «Base
+Hornet» starts from nothing but the Hunter Crest; «Everything maxed» from everything. Until you
+mark something, Free mode has everything. What you mark reaches the Crest screen: only what you
+have can be put on, the rest shows as a silhouette, and taking a mark off something Hornet
+wears takes it off her. Combat fights with that build; the other screens stay Free mode's. In a
+save the Inventory shows what the game saved, and changes only as you play.
 
 ### Crest
 

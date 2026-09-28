@@ -12,6 +12,9 @@ Reference material for deciding how this site looks and behaves. It isn't part o
 | [`04-shell-variants.html`](04-shell-variants.html) | Step 1's options drawn with the site's real CSS: the header, the frame and title of a screen, the phone's bar, the figures on the bar |
 | [`05-components-variants.html`](05-components-variants.html) | Step 2's options: the shared controls (choose one, on/off, the menu button, section heads), today's next to two alternatives each, with the site's real CSS |
 | [`06-home-variants.html`](06-home-variants.html) | Step 3's options: Your game with a save (profile, bench, HUD) and without (as now, with an example, with the ways in), the cards into other screens and the About block |
+| [`07-inventory-variants.html`](07-inventory-variants.html) | Step 4's options: the Inventory tidied, as the game's pane (one section at a time) or as shelves, over a real save's inventory |
+| [`08-missing-variants.html`](08-missing-variants.html) | Step 4's retouch: four ways to tell what you have from what you lack in the Inventory, over a real save |
+| [`09-locked-tool-variants.html`](09-locked-tool-variants.html) | Step 4's retouch: five ways to draw a Tool you don't have yet on its slot |
 
 The design system itself (the black page, one card, filigree only in the corners, figures in a
 sans with tabular figures, the accent only on what's interactive, tints from the game's map

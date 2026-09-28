@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Had and missing: variants</title>
+<!-- Design material, not part of the site (design/03-redesign.md, step 4, a retouch). How the
+     Inventory tells what you have from what you lack, over Save 4's real Crests, abilities, items
+     and a row of red Tools. Albert: the missing ones are hard to tell apart, and on the pale
+     pictures (Crests, abilities, items) had and missing look almost the same. One column per
+     option, today's first. -->
+<base href="../">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/app.css">
+<style>
+.mk { max-width: var(--page-max); margin: 0 auto; padding: var(--sp-8) var(--page-pad) var(--sp-16); display: grid; gap: var(--sp-6); }
+.mk h1 { font-family: var(--font-display); font-size: var(--fs-xl); color: var(--ink-strong); letter-spacing: var(--track-title); }
+.mk > p { max-width: var(--measure); color: var(--ink-2); font-size: var(--fs-sm); }
+.mk-cols { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--sp-4); }
+.mk-col { display: grid; align-content: start; gap: var(--sp-4); padding: var(--sp-4); background: var(--inv-bg); border: 1px solid var(--inv-line); }
+.mk-col > b { font-family: var(--font-num); font-size: var(--fs-2xs); letter-spacing: var(--track-label); text-transform: uppercase; color: var(--label); }
+.mk-col > i { font-style: normal; font-size: var(--fs-xs); color: var(--muted); }
+.mk-k { font-family: var(--font-num); font-size: var(--fs-2xs); letter-spacing: var(--track-label); text-transform: uppercase; color: var(--muted); }
+.row { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.c { position: relative; display: grid; place-items: center; width: 52px; height: 52px; }
+.c img { position: relative; z-index: 1; width: 40px; height: 40px; object-fit: contain; }
+.c.slot img { width: 30px; height: 30px; }
+.c.slot::before { content: ''; position: absolute; inset: 10px; transform: rotate(45deg); border: 1.5px solid var(--slot-red); background: color-mix(in oklab, var(--slot-red) 8%, var(--scene-bg)); }
+.c.slot.miss::before { border-color: var(--slot-locked); border-style: dashed; background: none; }
+@media (max-width: 1100px) { .mk-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* NOW · grayscale(1) brightness(0.4). */
+.v-now .miss img { filter: grayscale(1) brightness(0.4); }
+
+/* A · lit and dimmed: what you have stands in the spotlight's glow; what you lack is grey but
+   bright enough to read its shape. */
+.v-a .c:not(.miss)::after { content: ''; position: absolute; inset: 0; background: radial-gradient(closest-side, color-mix(in oklab, var(--spotlight) 22%, transparent), transparent); }
+.v-a .c:not(.miss) img { filter: drop-shadow(0 0 6px color-mix(in oklab, var(--spotlight) 40%, transparent)); }
+.v-a .miss img { filter: grayscale(1) brightness(0.6); opacity: 0.55; }
+
+/* B · the ghost: what you lack is its outline only (a flat black shape with a thin bone rim),
+   so the shape reads and can't be taken for a had one. */
+.v-b .miss img { filter: brightness(0) drop-shadow(0 0 0.6px color-mix(in oklab, var(--ink) 80%, transparent)) drop-shadow(0 0 0.6px color-mix(in oklab, var(--ink) 80%, transparent)); opacity: 0.9; }
+.v-b .c:not(.miss) img { filter: drop-shadow(0 0 5px color-mix(in oklab, var(--spotlight) 35%, transparent)); }
+
+/* C · the pip: a lighter grey for what you lack, and under every picture the game's diamond,
+   lit for what you have and hollow for what you don't: the state said, not guessed. */
+.v-c .c { height: 62px; align-content: start; }
+.v-c .c::after { content: ''; position: absolute; bottom: 2px; left: 50%; width: var(--diamond); height: var(--diamond); transform: translateX(-50%) rotate(45deg); border: 1px solid var(--accent-line); }
+.v-c .c:not(.miss)::after { background: var(--accent); border-color: var(--accent); box-shadow: var(--glow); }
+.v-c .miss img { filter: grayscale(1) brightness(0.6); opacity: 0.6; }
+.v-c .c.slot::before { top: 10px; bottom: auto; height: 32px; width: 32px; left: 10px; }
+</style>
+</head>
+<body>
+<div class="page"><div class="mk">
+  <h1>Had and missing</h1>
+  <p>Save 4's real state. Albert: the missing ones are hard to tell apart, and on the pale pictures (Crests, abilities, items) had and missing look almost the same. Today's first, then three ways.</p>
+  <div class="mk-cols" id="cols"></div>
+</div></div>
+<script>
+(function () {
+  const ROWS = [
+    ['Crests', 'crests', [['hunter', 1], ['reaper', 0], ['wanderer', 1], ['beast', 1], ['witch', 0], ['architect', 0], ['shaman', 0]]],
+    ['Abilities', 'arts', [['needle-strike', 1], ['swift-step', 1], ['cling-grip', 1], ['clawline', 1], ['silk-soar', 1], ['sylphsong', 0], ['needolin', 1], ['faydown-cloak', 1]]],
+    ['Silk Skills', 'skills', [['silkspear', 1], ['thread-storm', 1], ['cross-stitch', 1], ['sharpdart', 0], ['rune-rage', 0], ['pale-nails', 0]]],
+    ['Items', 'items', [['memory-locket', 1], ['craftmetal', 1], ['pale-oil', 1], ['everbloom', 0]]],
+    ['Old Hearts and melodies', 'pieces', [['heart-bloom', 0], ['heart-clover', 0], ['heart-coral', 0], ['heart-hunter', 0], ['melody-architect', 1], ['melody-conductor', 1], ['melody-librarian', 1]]],
+    ['Red Tools', 'tools', [['straight-pin', 1], ['threefold-pin', 1], ['sting-shard', 1], ['tacks', 1], ['longpin', 0], ['curveclaw', 1], ['curvesickle', 0], ['throwing-ring', 1]]],
+  ];
+  const V = [['v-now', 'Today', 'grey at 40% light: shapes lost, pale pictures barely change.'],
+    ['v-a', 'A · lit and dimmed', 'what you have in the spotlight\'s glow; what you lack grey, lighter, at half opacity.'],
+    ['v-b', 'B · the ghost', 'what you lack as its outline only: a black shape with a thin bone rim.'],
+    ['v-c', 'C · the pip', 'the lighter grey, and the game\'s diamond under every picture: lit had, hollow missing.']];
+  document.getElementById('cols').innerHTML = V.map(([cls, name, note]) => `<div class="mk-col ${cls}"><b>${name}</b><i>${note}</i>${ROWS.map(([h, list, xs]) =>
+    `<span class="mk-k">${h}</span><div class="row">${xs.map(([id, got]) => `<span class="c${got ? '' : ' miss'}${list === 'tools' ? ' slot' : ''}"><img src="assets/icons/${list}/${id}.webp" alt="" title="${id}"></span>`).join('')}</div>`).join('')}</div>`).join('');
+})();
+</script>
+</body>
+</html>

@@ -628,6 +628,21 @@
   const activeSlot = () => (store ? S.read(store).active : S.FREE);
   App.game = () => (store && activeSlot() ? F.gameOf(S.snapshot(store)) : null);
   App.gameMeta = () => (store && activeSlot() ? F.metaOf(S.snapshot(store)) : null);
+  /* Free mode's own marks (design/03-redesign.md, step 4): what you set as had in the Inventory,
+     in the same keys a save uses (slot 0's, so they stay with Free mode): pharloom.owned for the
+     Tools, Crests, Silk Skills and abilities, pharloom.progress for the Everbloom and the pieces.
+     No marks yet is null: everything, as Free mode always was. It only reaches the Inventory and
+     the Crest screen; App.game() stays null, so every other screen is Free mode's. */
+  const FREE_KEYS = ['pharloom.owned', 'pharloom.progress'];
+  App.freeGame = () => (store && activeSlot() === S.FREE && store.getItem('pharloom.owned') != null ? F.gameOf(S.snapshot(store)) : null);
+  App.setFreeGame = (g) => {
+    if (!store || activeSlot() !== S.FREE) return;
+    try {
+      if (!g) { for (const k of FREE_KEYS) store.removeItem(k); return; }
+      store.setItem('pharloom.owned', JSON.stringify({ tools: g.tools, crests: g.crests, skills: g.skills, arts: g.arts }));
+      store.setItem('pharloom.progress', JSON.stringify({ everbloom: !!g.everbloom, pieces: g.pieces.map((i) => F.pieceKey(SS.collectibles.PIECES[i])) }));
+    } catch (e) { /* no storage: the marks aren't kept */ }
+  };
 
   /* ── Following the game ───────────────────────────────────────────────
      Only the slot you're in watches its file; another linked one catches up on entering it.

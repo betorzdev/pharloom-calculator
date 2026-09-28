@@ -381,6 +381,6 @@
   const metaOf = (snap) => ({ version: '', time: 0, completion: 0, rosaries: 0, shards: 0, steel: false, dead: false, saved: null,
     ...parse((snap || {})['pharloom.meta']) });
 
-  SS.savefile = { pinKey, SKILL_PD, ART_PD, decrypt, unwrap, read, meta, game, toSnapshot, gameOf, metaOf };
+  SS.savefile = { pinKey, pieceKey, SKILL_PD, ART_PD, decrypt, unwrap, read, meta, game, toSnapshot, gameOf, metaOf };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.savefile;
 })();

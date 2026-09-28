@@ -96,16 +96,16 @@
      bench"): «Resting at» over the kingdom, Hornet in silhouette, the four figures waiting, and
      the one thing to do. The card takes the file dropped on the screen (js/app-saves.js). */
   function invite() {
-    const dash = '—';
+    const unknown = '?';   // what no save has told yet
     const fig = (k, v, nt = false) => `<span class="hm-fig"><span class="hm-fig-k"${nt ? NT : ''}>${esc(k)}</span><b>${v}</b></span>`;
     return `<div class="hm-card is-ghost hm-invite">
         <p class="hm-sup">${esc(t('homeRest'))}</p><p class="hm-area"${NT}>${esc(t('homeKingdom'))}</p>
         <img class="hm-figure" src="${ART.resting}" alt="" width="207" height="186">
         <div class="hm-figs">
-          ${fig(t('homeCompletion'), dash)}
-          ${fig(t('homeJournal'), `${dash}<span class="u">/${num(App.bookTotal(false))}</span>`, true)}
-          ${fig(t('cat_masks'), dash)}
-          ${fig(t('rosaries'), dash, true)}
+          ${fig(t('homeCompletion'), unknown)}
+          ${fig(t('homeJournal'), `${unknown}<span class="u">/${num(App.bookTotal(false))}</span>`, true)}
+          ${fig(t('cat_masks'), unknown)}
+          ${fig(t('rosaries'), unknown, true)}
         </div>
         <p class="hm-ghost">${esc(t('homeGhost'))}</p>
         <div class="hm-invite-acts">

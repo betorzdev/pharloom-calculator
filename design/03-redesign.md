@@ -34,8 +34,8 @@ the work up reads it first, then the step it's on.
 | 1 | **The shell**: header, screen bar (desktop and phone), the screen's frame and title, footer and About, the atmosphere | **Built** (28 Sep) | [`04-shell-variants.html`](04-shell-variants.html) |
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep) | [`06-home-variants.html`](06-home-variants.html) |
-| 4 | Inventory (`game`) | **Next** | |
-| 5 | Progress (`progress`) | To do | |
+| 4 | Inventory (`game`) | **Built** (28 Sep) | [`07-inventory-variants.html`](07-inventory-variants.html) |
+| 5 | Progress (`progress`) | **Next** | |
 | 6 | Map (`map`) | To do | |
 | 7 | Journal (`journal`) | To do | |
 | 8 | Crest (`tools`) | To do | |
@@ -245,7 +245,122 @@ Built (with a save):
 
 Albert chose **E · the ghost bench**. Built: `invite()` in `js/app-home.js` is the bench card
 with `.is-ghost` («Resting at» over «Pharloom», the game's `MQ_BELLSHRINES_LOC`, «Telalejana» in
-Spanish; Hornet as a silhouette; the four figures as dashes; «Your game goes here», Import and
+Spanish; Hornet as a silhouette; the four figures as «?»; «Your game goes here», Import and
 Saves). It keeps `.hm-invite`, so the dropped file still lights it. The long invitation line is
 gone.
+
+## Step 4 · Inventory
+
+### What there is (28 September 2026)
+
+Three columns, as the game's pane: the Needle, the masks and the spool on the left; the icons in
+grids in the middle (Tools, Crests, Silk Skills beside the abilities, items); the description of
+what you point at on the right (under 1100 px, stuck to the bottom of the window). What you
+lack is a dimmed silhouette; each Tool carries its slot colour as a thin rule.
+
+### What the sibling has
+
+Its Inventory ("Your Knight") is a sheet, not a pane: the nail's five levels with their
+damage, spells and arts with their levels, masks, vessels and notches as rows of figures, the
+charms found with All · None, and the items by name with "Not found" or a stepper.
+
+### What's weak
+
+1. The section heads (`.inv-h`) are the old full hairline, not step 2's diamond heads, and say
+   no count: nowhere does it say 31 of 51 Tools.
+2. The Tools are one grid of 57 sorted by colour, told apart only by the thin rule.
+3. The abilities' icons fill their cells and look twice the size of the rest.
+4. The items' counts sit over the icons.
+5. The description column stays empty until you point at something: a quarter of the width
+   says «Point at something…».
+
+### The options (drawn in `07-inventory-variants.html`, over Save 4's real inventory)
+
+- **A · tidy**: today's three columns with step 2's heads and their counts, the Tools in three
+  labelled rows by slot colour (red 12/21, blue 10/23, yellow 9/13), the items' counts under
+  them, the abilities at the size of the rest.
+- **B · the game's pane**: the HUD as a strip on top, one section at a time behind the pips
+  (Tools · Crests · Silk Skills · Abilities · Items), larger icons, the description as large as
+  the game's beside them.
+- **C · shelves**: no fixed description column; the sections full width, and what you tap opens
+  under its own shelf.
+
+The mockup counts the 57 Tools in the data; the site would count as the 100% does (51).
+
+### Second round (28 September 2026)
+
+Albert chose none of the three and raised two things: each Tool's colour rule isn't aligned (the
+cells grow with their picture, so the rules sit at different heights), and **the sibling's
+Inventory in Free mode is editable and very well done**: bring that. The sibling's
+`renderGear` (its `js/app-game.js`): «Start from» Base Knight · Everything maxed; the nail as the
+focal point (five upright with their damage, the one carried taller and lit, its name under the
+row); plates with the art, the name and what each gives; the body as rows of the game's pieces
+you tap to set («Masks 9/9 · from 5 to 9»); levels with their own art; what you just got lights
+up. In a save the same screen, read-only.
+
+Pharloom's free build (`pharloom.build`) already carries the Needle, the Kit, the Pouch, the
+masks, the spools and the Silk Hearts, so all of those can be set from the Inventory. Marking
+which Tools, Crests, Skills and abilities you own would need the Crest screen to respect an owned
+list: not in this step.
+
+`07-inventory-variants.html` was redrawn with it: Free mode editable (start from Base Hornet or
+everything maxed, the five Needles, masks 5 to 10, silk 9 to 18, Silk Hearts, Kit and Pouch as
+pips, the Silk Skills with their damage from `js/engine.js`), the same read-only over Save 4;
+every cell one fixed square; and a switch for the Tool slot:
+
+- **1 · the aligned rule**: the slot colour at the bottom of one fixed square.
+- **2 · the diamond**: each Tool on its slot outlined in the slot colour, as the Crest screen
+  draws its slots; what you lack, the locked grey, dashed.
+- **3 · the round well**: a medal with a rim in the slot colour.
+- **4 · by row**: plain cells, the colour in the row's label and a rule down its side.
+
+The layouts: **A · the sibling's sheet** (what Hornet is on the left, what she carries on the
+right), **B · the game's pane** (the Needle and the body on top, one section at a time below),
+**C · shelves** (the Needle and the body in a narrow column, every shelf beside it). What you
+tap opens its description under its own shelf.
+
+### Decision, and the silk round (28 September 2026)
+
+Albert chose **layout A · the sibling's sheet**, **Tool slot 2 · the diamond** and the editable
+Free mode. The silk row as plain white rectangles didn't work for him, so four ways were added
+to `07-inventory-variants.html` (the "Silk" switch):
+
+- **1 · the spool**: the HUD's spool, as long as the silk it holds, the rest of the way to 18 a
+  dashed outline; tap along it. The sprite stretched shows its own lit and grey halves.
+- **2 · beads on a thread**: one silk thread across with eighteen diamonds, lit up to your silk.
+- **3 · the Spool Fragments**: the nine fixed as «9 +», the upgrades as the game's Spool
+  Fragment pictures.
+- **4 · skeins**: a small wound skein per silk, empty ones faint.
+
+Albert chose **silk 2 · beads on a thread**. Built:
+
+- **`js/app-game.js`**: the sheet. Left: the five Needles, Hornet's rows (masks as the game's
+  masks, silk as beads on one thread, Silk Hearts, Kit and Pouch as pips), the Silk Skills with
+  their totals from `SS.engine.compute` and the abilities (Needle Strike's figure). Right: the
+  Tools by colour on the diamond slot, the Crests, the items. The heads count as the 100%
+  (`SS.completion.count`). What you tap opens under its shelf (`.inv-open`); the old side pane and
+  its hover are gone.
+- **Editable in Free mode** through the Crest screen's own `ctLevel` (`js/app-tools.js`), so the
+  Crest screen and Combat follow; «Start from» sets every ladder at once (`ctPreset`). In a save
+  the controls are still, at full light. `App.currentBuild` gives the build on screen.
+- **Follow-up, the same day**: Albert: the Inventory is where you see and set what you've got,
+  so in Free mode **everything** is editable, and what you mark reaches the Crest screen. Built:
+  Free mode's marks live in slot 0's own `pharloom.owned` and `pharloom.progress` (the shape a save
+  uses, `App.freeGame` / `App.setFreeGame` in `js/app-saves.js`; no marks = everything). A tap on
+  a Tool, Crest, Skill, ability, the Everbloom, an Old Heart or a melody marks it and opens its
+  text; «All · None» per shelf; − N + for what comes in numbers; «Base Hornet» keeps only the
+  Hunter Crest, «Everything maxed» clears the marks. The Crest screen shows what you lack as a
+  silhouette, disabled, and a mark taken off something worn takes it off the build
+  (`App.editFree`). `App.game()` stays null, so Your game, Progress, the Map and the Journal
+  stay Free mode's.
+- **Retouch, had and missing**: what you lacked (`--missing-art`, 40% light) lost its shape, and on
+  the pale pictures had and missing looked alike. Compared in
+  [`08-missing-variants.html`](08-missing-variants.html); Albert chose **A + C, light and pip**:
+  what you lack a lighter grey at half opacity (`--missing-soft`, `--missing-soft-opacity`), what
+  you have in the spotlight's glow, and the game's diamond under every picture, lit had, hollow
+  missing.
+- **Retouch, the Tools you lack and the click**: the white square on the Tool you tapped is gone
+  (the text open under the shelf says which one). A Tool you lack sits on **the game's locked
+  slot** (solid grey with its pale rim, `design/02-silksong.md` §3), its picture grey on it; chosen
+  from [`09-locked-tool-variants.html`](09-locked-tool-variants.html) (B).
 

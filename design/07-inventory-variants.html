@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Inventory: variants</title>
+<!-- Design material, not part of the site (design/03-redesign.md, step 4, second round). The
+     Inventory over a real save (Save 4, 63%, read from the file on 28 September 2026 and inlined
+     below, read-only) or in Free mode, where it's editable the sibling's way: start from Base
+     Hornet or everything maxed, pick the Needle, tap the masks, the silk, the Silk Hearts, the
+     Kit and the Pouch. The figures under the Silk Skills come from the site's own engine
+     (js/engine.js) for that build. The bar picks the layout, the Tool slot, the state and the
+     width; the URL carries them: ?v=a|b|c&slot=1|2|3|4&state=save|free&w=1440|390. -->
+<base href="../">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/app.css">
+<script src="js/i18n.js"></script>
+<script src="js/data.js"></script>
+<script src="js/collectibles.js"></script>
+<script src="js/hero.js"></script>
+<script src="js/engine.js"></script>
+<script>window.MK_G = {"tools":["straight-pin","threefold-pin","sting-shard","tacks","curveclaw","throwing-ring","conchcutter","delvers-drill","cogwork-wheel","cogfly","voltvessels","flintslate","druids-eye","warding-bell","fractured-mask","weavelight","sawtooth-circlet","injector-band","claw-mirror","memory-crystal","wreath-of-purity","wispfire-lantern","compass","shard-pendant","magnetite-brooch","barbed-bracelet","dead-bugs-purse","magnetite-dice","scuttlebrace","ascendants-grip","thiefs-mark"],"crests":["hunter","wanderer","beast"],"skills":["silkspear","thread-storm","cross-stitch"],"arts":["needle-strike","swift-step","cling-grip","clawline","silk-soar","needolin","drifters-cloak","faydown-cloak","beastling-call","elegy-of-the-deep"],"masks":2,"spools":7,"hearts":3,"needle":3,"kit":3,"pouch":3,"everbloom":false,"counts":{"mask-shard":[9,20],"spool-fragment":[14,18],"memory-locket":[14,20],"craftmetal":[6,8],"pale-oil":[2,3],"flea":[27,30]}};</script>
+<style>
+.mk-bar { position: fixed; z-index: 90; left: 50%; bottom: var(--sp-2); transform: translateX(-50%); display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--sp-1) var(--sp-3); width: max-content; max-width: calc(100vw - var(--sp-4)); padding: var(--sp-2) var(--sp-3); background: color-mix(in oklab, var(--scene-bg) 94%, transparent); border: 1px solid var(--line-panel); font-family: var(--font-num); font-size: var(--fs-xs); color: var(--muted); box-shadow: var(--shadow-md); }
+.mk-bar b { color: var(--label); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; font-size: var(--fs-2xs); }
+.mk-bar button { padding: var(--sp-1) var(--sp-2); border: 1px solid var(--line-ctl); color: var(--ink-2); font: inherit; }
+.mk-bar button[aria-pressed="true"] { color: var(--ink-strong); border-color: var(--accent-line); background: var(--picked); }
+.mk-grp { display: inline-flex; align-items: center; gap: var(--sp-1); }
+.mk-sep { width: 1px; align-self: stretch; background: var(--line); }
+.mk-note { flex-basis: 100%; text-align: center; color: var(--ink-2); }
+html.is-framed body { background: var(--scene-bg); }
+.mk-phone { display: block; margin: var(--sp-4) auto calc(var(--sp-16) * 2); width: 390px; height: calc(100vh - var(--sp-16) * 2 - var(--sp-8)); border: 1px solid var(--line-panel); }
+html.is-inner .mk-bar { display: none; }
+.page { padding-top: var(--sp-8); padding-bottom: calc(var(--sp-16) * 2.5); }
+
+/* ── The editor, the sibling's way ──────────────────────────────────────────────────────── */
+.x-presets { display: flex; justify-content: center; align-items: baseline; gap: var(--sp-1) var(--sp-3); margin-bottom: var(--sp-6); }
+.x-presets .lbl { color: var(--muted); }
+/* The Needle as the focal point: five upright, the one carried taller and lit. */
+.x-needles { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); align-items: end; gap: var(--sp-1); }
+.x-np { position: relative; isolation: isolate; display: grid; justify-items: center; gap: var(--sp-2); padding: var(--sp-2) 0 var(--sp-1); }
+.x-np::before { content: ''; position: absolute; z-index: -1; inset: 0 8%; background: var(--halo-plate); opacity: 0; transition: opacity var(--dur) var(--ease); }
+.x-np.is-on::before { opacity: 1; }
+.x-np img { height: 96px; width: auto; opacity: 0.38; filter: grayscale(0.5); transition: opacity var(--dur) var(--ease), filter var(--dur) var(--ease), height var(--dur) var(--ease); }
+.x-np.is-on img { height: 128px; opacity: 1; filter: none; }
+.x-np:is(:hover, :focus-visible):not(:disabled) img { opacity: 0.85; filter: none; }
+.x-np b { font-family: var(--font-num); font-size: var(--fs-lg); color: var(--muted); padding-bottom: var(--sp-1); border-bottom: 2px solid transparent; }
+.x-np.is-on b { font-size: var(--fs-xl); color: var(--ink-strong); border-bottom-color: var(--accent-line); }
+.x-np:disabled { cursor: default; }
+.x-caption { margin-top: var(--sp-2); text-align: center; font-family: var(--font-display); font-size: var(--fs-md); letter-spacing: var(--track-title); color: var(--ink-strong); }
+/* Body rows: the game's pieces, tap one to set the count. */
+.x-field { display: grid; gap: var(--sp-2); padding: var(--sp-3) 0; }
+.x-field + .x-field { border-top: 1px solid var(--inv-line); }
+.x-frow { display: flex; align-items: baseline; justify-content: space-between; gap: var(--sp-3); }
+.x-fname { font-size: var(--fs-md); color: var(--ink); }
+.x-fnote { display: block; font-size: var(--fs-xs); color: var(--muted); }
+.x-fnum { font-family: var(--font-num); font-size: var(--fs-xl); font-weight: 600; color: var(--ink-strong); }
+.x-fnum i { font-style: normal; font-size: var(--fs-xs); font-weight: 400; color: var(--muted); }
+.x-pieces { display: flex; flex-wrap: wrap; gap: var(--sp-1); }
+.x-pc { display: grid; place-items: center; min-width: var(--ctl-sm); min-height: var(--ctl-sm); padding: 0; transition: transform var(--dur) var(--ease); }
+.x-pc img { height: 26px; width: auto; transition: filter var(--dur) var(--ease), opacity var(--dur) var(--ease); }
+.x-pc.is-off img { filter: var(--missing-art); opacity: 0.8; }
+.x-pc.is-base { cursor: default; }
+.x-pc:is(:hover, :focus-visible):not(:disabled):not(.is-base) { transform: translateY(-2px); }
+.x-pc i.silk { display: block; width: 8px; height: 26px; border: 1px solid var(--silk-rim); background: var(--silk); box-shadow: 0 0 6px color-mix(in oklab, var(--silk) 45%, transparent); }
+.x-pc.is-off i.silk { background: var(--silk-well); box-shadow: none; border-color: var(--line-ctl); }
+.x-pc:disabled, .x-np:disabled, .x-level .seg button:disabled { cursor: default; opacity: 1; }
+.x-pc:has(i.silk) { min-width: 18px; }
+@keyframes x-lit { 0% { filter: brightness(2.2) drop-shadow(0 0 10px var(--focus-glow)); } 100% { filter: none; } }
+.is-lit img, .is-lit i.silk { animation: x-lit var(--dur-flash) var(--ease-fade); }
+/* Kit and Pouch: the item's art and its level as pips (step 2's choose one). */
+.x-levels { display: grid; gap: var(--sp-3); padding-top: var(--sp-3); border-top: 1px solid var(--inv-line); }
+.x-level .seg { gap: var(--sp-1); flex-wrap: nowrap; }
+.x-level { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: var(--sp-1) var(--sp-3); }
+.x-level img { grid-row: span 2; width: 44px; height: 44px; object-fit: contain; }
+.x-level span { font-size: var(--fs-sm); color: var(--ink); }
+/* Plates: the art, the name, what it gives. */
+.x-plates { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: var(--sp-3) var(--sp-2); }
+.x-plate { display: grid; justify-items: center; align-content: start; gap: var(--sp-1); text-align: center; padding: 0; }
+.x-plate .art { position: relative; isolation: isolate; display: grid; place-items: center; width: 100%; height: 56px; }
+.x-plate .art::before { content: ''; position: absolute; z-index: -1; inset: -8% 12%; background: var(--halo-plate); opacity: 0; transition: opacity var(--dur) var(--ease); }
+.x-plate:is(:hover, :focus-visible) .art::before { opacity: 1; }
+.x-plate img { max-height: 44px; max-width: 72px; object-fit: contain; }
+.x-plate.is-off img { filter: var(--missing-art); }
+.x-plate .nm { font-size: var(--fs-xs); line-height: 1.25; color: var(--ink-2); }
+.x-plate:not(.is-off) .nm { color: var(--ink); }
+.x-plate .v { font-family: var(--font-num); font-size: var(--fs-md); font-weight: 700; color: var(--ink-strong); }
+.x-plate .v.is-none { font-family: var(--font-body); font-size: var(--fs-xs); font-weight: 400; color: var(--muted); }
+
+/* ── The Tool slot: four ways, all one fixed square so every row aligns ────────────────── */
+.x-grid { display: grid; grid-template-columns: repeat(auto-fill, 56px); justify-content: start; gap: var(--sp-2); }
+.x-cell { position: relative; display: grid; place-items: center; width: 56px; height: 56px; padding: 0; border: 1px solid transparent; cursor: pointer; transition: border-color var(--dur) var(--ease), background-color var(--dur) var(--ease); }
+.x-cell img { position: relative; z-index: 1; width: 40px; height: 40px; object-fit: contain; }
+.x-cell.is-missing img { filter: var(--missing-art); opacity: 0.8; }
+.x-cell:hover { background: var(--veil); }
+.x-cell.is-picked { border-color: var(--filigree); }
+/* 1 · the aligned rule: the slot colour at the very bottom of the fixed square. */
+.sl-1 .x-cell[data-c]::after { content: ''; position: absolute; left: var(--sp-1); right: var(--sp-1); bottom: 0; height: 2px; background: color-mix(in oklab, var(--c) 75%, transparent); }
+.sl-1 .x-cell.is-missing[data-c]::after { background: color-mix(in oklab, var(--c) 30%, transparent); }
+/* 2 · the Crest screen's diamond: the Tool on its slot, outlined in the slot colour. */
+.sl-2 .x-cell[data-c]::before { content: ''; position: absolute; inset: 9px; transform: rotate(45deg); border: 1.5px solid var(--c); background: color-mix(in oklab, var(--c) 8%, var(--scene-bg)); }
+.sl-2 .x-cell.is-missing[data-c]::before { border-color: var(--slot-locked); border-style: dashed; background: none; }
+.sl-2 .x-cell img { width: 34px; height: 34px; }
+/* 3 · the round well: a medal with a rim in the slot colour. */
+.sl-3 .x-cell[data-c]::before { content: ''; position: absolute; inset: 4px; border-radius: 50%; border: 1.5px solid var(--c); background: radial-gradient(circle at 50% 40%, var(--medal), var(--scene-bg)); }
+.sl-3 .x-cell.is-missing[data-c]::before { border-color: var(--medal-off-line); background: var(--medal-off); }
+.sl-3 .x-cell img { width: 36px; height: 36px; }
+/* 4 · colour by row only: the cell plain; the row's label carries the colour. */
+.x-sub { display: flex; align-items: center; gap: var(--sp-2); margin: var(--sp-3) 0 var(--sp-2); font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; color: var(--label); }
+.x-sub::before { content: ''; width: var(--sp-2); height: var(--sp-2); transform: rotate(45deg); background: var(--c); }
+.x-sub b { color: var(--ink-2); }
+.sl-4 .x-grid.is-tools { padding-left: var(--sp-3); border-left: 2px solid color-mix(in oklab, var(--c) 60%, transparent); }
+.x-h .n { margin-left: var(--sp-1); font-family: var(--font-num); font-size: var(--fs-xs); font-weight: 600; color: var(--ink-2); letter-spacing: 0; }
+.x-h .n i { font-style: normal; color: var(--muted); font-weight: 400; }
+.x-items { display: grid; grid-template-columns: repeat(auto-fill, 64px); gap: var(--sp-3) var(--sp-2); }
+.x-item { display: grid; justify-items: center; gap: var(--sp-half); }
+.x-item span { font-family: var(--font-num); font-size: var(--fs-2xs); color: var(--ink-2); }
+.x-open { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--sp-1) var(--sp-6); align-items: center; margin-top: var(--sp-3); padding: var(--sp-4) var(--sp-6); border-left: 2px solid var(--accent); background: var(--picked); }
+.x-open img { grid-row: 1 / span 3; width: 72px; height: 72px; object-fit: contain; }
+.x-open img.is-missing { filter: var(--missing-art); }
+.x-open h4 { font-family: var(--font-display); font-size: var(--fs-lg); letter-spacing: var(--track-title); color: var(--ink-strong); }
+.x-open p { font-size: var(--fs-sm); color: var(--ink-2); }
+.x-open .x-not { font-family: var(--font-num); font-size: var(--fs-2xs); letter-spacing: var(--track-label); text-transform: uppercase; color: var(--muted); }
+section.x-sec { display: grid; gap: var(--sp-2); align-content: start; }
+
+
+/* ── Silk, four ways (Albert: the plain white rectangles don't work) ────────────────────── */
+/* 1 · the spool itself: the HUD's spool, as long as the silk it holds; the rest of the way to 18
+   a faint outline of it; tap along it to set. */
+.sk1 { position: relative; height: 34px; cursor: pointer; }
+.sk1-max { position: absolute; inset: 6px 0; border: 1px dashed color-mix(in oklab, var(--silk-rim) 35%, transparent); border-radius: 12px; }
+.sk1-spool { position: absolute; left: 0; top: 0; bottom: 0; width: var(--w); background: url(assets/hud/spool.png) left center / 100% 100% no-repeat; filter: drop-shadow(0 0 8px color-mix(in oklab, var(--silk) 35%, transparent)); transition: width var(--dur-slow) var(--ease); }
+.sk1-ticks { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(18, 1fr); }
+.sk1-ticks i { border-right: 1px solid color-mix(in oklab, var(--scene-bg) 55%, transparent); }
+.sk1-ticks i:nth-child(9) { border-right-color: color-mix(in oklab, var(--ink) 35%, transparent); }
+/* 2 · beads on a thread: one silk thread across, eighteen diamonds strung on it. */
+.sk2 { position: relative; display: grid; grid-template-columns: repeat(18, 1fr); align-items: center; height: 32px; }
+.sk2::before { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: linear-gradient(90deg, var(--silk) var(--f), color-mix(in oklab, var(--silk-rim) 35%, transparent) var(--f)); }
+.sk2 button { position: relative; display: grid; place-items: center; height: 32px; padding: 0; }
+.sk2 button i { width: 10px; height: 10px; transform: rotate(45deg); border: 1px solid var(--silk-rim); background: var(--scene-bg); transition: background-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease); }
+.sk2 button.on i { background: var(--silk); border-color: var(--silk); box-shadow: 0 0 8px color-mix(in oklab, var(--silk) 60%, transparent); }
+.sk2 button.base i { width: 8px; height: 8px; }
+/* 3 · the Spool Fragments: the nine fixed as a figure, then the upgrades as the game's pieces. */
+.sk3 { display: flex; align-items: center; gap: var(--sp-2); flex-wrap: wrap; }
+.sk3 .base { font-family: var(--font-num); font-size: var(--fs-sm); color: var(--ink-2); margin-right: var(--sp-1); }
+.sk3 button { display: grid; place-items: center; width: 30px; height: 30px; padding: 0; }
+.sk3 img { width: 26px; height: 26px; object-fit: contain; }
+.sk3 button:not(.on) img { filter: var(--missing-art); }
+/* 4 · wound thread: each silk a small skein, empty ones a faint outline. */
+.sk4 { display: flex; flex-wrap: wrap; gap: 2px; }
+.sk4 button { display: grid; place-items: center; width: 18px; height: 34px; padding: 0; color: var(--silk); }
+.sk4 svg { width: 12px; height: 28px; overflow: visible; }
+.sk4 button.on svg { filter: drop-shadow(0 0 4px color-mix(in oklab, var(--silk) 55%, transparent)); }
+.sk4 button:not(.on) { color: var(--line-ctl); }
+.sk4 button.base { cursor: default; }
+.sk2 button:disabled, .sk3 button:disabled, .sk4 button:disabled { opacity: 1; cursor: default; }
+
+/* ── Layouts ───────────────────────────────────────────────────────────────────────────── */
+/* A · the sibling's sheet: what Hornet is on the left (the Needle, the body, the Kit and the
+   Pouch, the Silk Skills, the abilities), what she carries on the right (Tools, Crests, items). */
+.a-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: var(--sp-12); align-items: start; }
+.a-col { display: grid; gap: var(--sp-8); min-width: 0; }
+/* B · the game's pane: the Needle and the body on top, one section at a time below. */
+.b-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--sp-12); padding-bottom: var(--sp-6); margin-bottom: var(--sp-6); border-bottom: 1px solid var(--inv-line); }
+.b-tabs { display: flex; justify-content: center; margin-bottom: var(--sp-4); }
+/* C · shelves: the Needle and the body in a narrow column, the shelves beside it. */
+.c-body { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: var(--sp-8); align-items: start; }
+.c-side { position: sticky; top: var(--sp-4); display: grid; gap: var(--sp-6); }
+.c-main { display: grid; gap: var(--sp-8); min-width: 0; }
+@media (max-width: 899px) { .a-body, .b-top, .c-body { grid-template-columns: 1fr; gap: var(--sp-8); } .c-side { position: static; } .x-levels { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="page"><div class="shell"><main class="screens">
+<section class="screen" id="scr">
+  <span class="frame-line"></span>
+  <header class="screen-head"><h2 class="sec-title screen-title">Inventory</h2></header>
+  <div id="mk"></div>
+</section>
+</main></div></div>
+<div class="mk-bar">
+  <span class="mk-grp"><b>Layout</b><button data-key="v" data-val="a">A · the sibling's sheet</button><button data-key="v" data-val="b">B · the game's pane</button><button data-key="v" data-val="c">C · shelves</button></span>
+  <span class="mk-sep"></span>
+  <span class="mk-grp"><b>Tool slot</b><button data-key="slot" data-val="1">1 · aligned rule</button><button data-key="slot" data-val="2">2 · diamond</button><button data-key="slot" data-val="3">3 · round well</button><button data-key="slot" data-val="4">4 · by row</button></span>
+  <span class="mk-sep"></span>
+  <span class="mk-grp"><b>Silk</b><button data-key="silk" data-val="1">1 · the spool</button><button data-key="silk" data-val="2">2 · beads</button><button data-key="silk" data-val="3">3 · fragments</button><button data-key="silk" data-val="4">4 · skeins</button></span>
+  <span class="mk-sep"></span>
+  <span class="mk-grp"><b>State</b><button data-key="state" data-val="free">Free mode (editable)</button><button data-key="state" data-val="save">Save 4 (63%)</button></span>
+  <span class="mk-grp"><b>Width</b><button data-key="w" data-val="1440">desktop</button><button data-key="w" data-val="390">390</button></span>
+  <span class="mk-note" id="mk-note"></span>
+</div>
+<script>
+(function () {
+  const DEF = { v: 'a', slot: '2', silk: '1', state: 'free', w: '1440', tab: 'tools' };
+  const q = new URLSearchParams(location.search);
+  const st = Object.fromEntries(Object.keys(DEF).map((k) => [k, q.get(k) || DEF[k]]));
+  const inner = q.has('inner'), html = document.documentElement;
+  const D = SS.data, E = SS.engine, en = (x) => (x && x.en) || '';
+  const CORNER = '<svg class="bk-art" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M4 46 V18 C4 10 10 4 18 4 H46"/><path d="M10 30 C10 16 16 10 30 10"/><path d="M18 18 C21 14 26 15 25 19 C24 22 20 21 21 18.5"/><path d="M4 4 L8 8"/></svg>';
+  document.getElementById('scr').insertAdjacentHTML('afterbegin', ['tl', 'tr', 'bl', 'br'].map((c) => '<span class="bk ' + c + '">' + CORNER + '</span>').join(''));
+  const free = st.state === 'free';
+  const MAX = { needle: 4, kit: 4, pouch: 4, masks: 5, spools: 9, hearts: 3 };
+  const BASE = { needle: 0, kit: 0, pouch: 0, masks: 0, spools: 0, hearts: 0 };
+  // The editable build (Free mode) or the save's (read-only).
+  const B = free ? { ...MAX } : { needle: MK_G.needle, kit: MK_G.kit, pouch: MK_G.pouch, masks: MK_G.masks, spools: MK_G.spools, hearts: MK_G.hearts };
+  let lit = '';
+  const G = free ? { tools: D.TOOLS.map((x) => x.id), crests: D.CRESTS.map((x) => x.id), skills: D.SKILLS.map((x) => x.id), arts: D.ARTS.map((x) => x.id), everbloom: true, counts: {} } : MK_G;
+  const has = (list, id) => G[list].includes(id);
+  const dis = free ? '' : ' disabled';
+  let picked = null;
+  const keyOf = (l, id) => l + '/' + id;
+  const cur = () => { if (!picked) return null; const [l, id] = picked.split('/'); const list = { tools: D.TOOLS, crests: D.CRESTS, skills: D.SKILLS, arts: D.ARTS, items: D.ITEMS }[l]; const x = list.find((y) => y.id === id); return { l, id, x, got: l === 'items' ? true : has(l, id) }; };
+
+  // ── The editor pieces ──
+  const needles = () => '<div class="x-needles" role="group" aria-label="Needle">' + D.NEEDLES.map((n, i) => '<button type="button" class="x-np' + (B.needle === i ? ' is-on' : '') + (lit === 'needle' && B.needle === i ? ' is-lit' : '') + '" data-set="needle" data-v="' + i + '"' + dis + ' title="' + en(n.name) + '"><img src="assets/needles/' + i + '.png" alt=""><b>' + n.damage + '</b></button>').join('') + '</div><p class="x-caption">' + en(D.NEEDLES[B.needle].name) + '</p>';
+  const row = (key, name, note, base, max, piece) => {
+    const v = base + B[key];
+    const pcs = Array.from({ length: base + max }, (_, i) => { const on = i < v, isBase = i < base; return '<button type="button" class="x-pc' + (on ? '' : ' is-off') + (isBase ? ' is-base' : '') + (lit === key && i === v - 1 ? ' is-lit' : '') + '" data-set="' + key + '" data-v="' + (isBase ? B[key] : (i + 1 - base === B[key] ? i - base : i + 1 - base)) + '"' + (isBase ? ' disabled' : dis) + '>' + piece + '</button>'; }).join('');
+    return '<div class="x-field"><div class="x-frow"><span><span class="x-fname">' + name + '</span><span class="x-fnote">' + note + '</span></span><span class="x-fnum">' + v + '<i>/' + (base + max) + '</i></span></div><div class="x-pieces">' + pcs + '</div></div>';
+  };
+  const body = () => row('masks', 'Masks', 'from 5 to 10', 5, 5, '<img src="assets/hud/mask.png" alt="">')
+    + silkRow()
+    + row('hearts', 'Silk Hearts', 'from 0 to 3', 0, 3, '<img src="assets/icons/pieces/silk-heart.webp" alt="">');
+
+  // The silk row, four ways: B.spools 0–9 over the fixed nine.
+  const SKEIN = '<svg viewBox="0 0 12 28" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M6 1 V27"/><path d="M1.5 7 C4 5 8 9 10.5 7 M1.5 11 C4 9 8 13 10.5 11 M1.5 15 C4 13 8 17 10.5 15 M1.5 19 C4 17 8 21 10.5 19"/><path d="M3 4 H9 M3 24 H9"/></svg>';
+  function silkRow() {
+    const v = 9 + B.spools, set = (i) => (i + 1 - 9 === B.spools ? i - 9 : i + 1 - 9);
+    let w = '';
+    if (st.silk === '1') w = '<div class="sk1" data-spool style="--w:' + (v / 18 * 100).toFixed(2) + '%"><span class="sk1-max"></span><span class="sk1-spool"></span><span class="sk1-ticks">' + '<i></i>'.repeat(18) + '</span></div>';
+    if (st.silk === '2') w = '<div class="sk2" style="--f:' + (v / 18 * 100).toFixed(2) + '%">' + Array.from({ length: 18 }, (_, i) => '<button type="button" class="' + (i < v ? 'on' : '') + (i < 9 ? ' base' : '') + '"' + (i < 9 ? ' disabled' : ' data-set="spools" data-v="' + set(i) + '"' + dis) + '><i></i></button>').join('') + '</div>';
+    if (st.silk === '3') w = '<div class="sk3"><span class="base">9 +</span>' + Array.from({ length: 9 }, (_, i) => '<button type="button" class="' + (i < B.spools ? 'on' : '') + '" data-set="spools" data-v="' + (i + 1 === B.spools ? i : i + 1) + '"' + dis + '><img src="assets/icons/items/spool-fragment.webp" alt=""></button>').join('') + '</div>';
+    if (st.silk === '4') w = '<div class="sk4">' + Array.from({ length: 18 }, (_, i) => '<button type="button" class="' + (i < v ? 'on' : '') + (i < 9 ? ' base' : '') + '"' + (i < 9 ? ' disabled' : ' data-set="spools" data-v="' + set(i) + '"' + dis) + '>' + SKEIN + '</button>').join('') + '</div>';
+    return '<div class="x-field"><div class="x-frow"><span><span class="x-fname">Silk</span><span class="x-fnote">from 9 to 18</span></span><span class="x-fnum">' + v + '<i>/18</i></span></div>' + w + '</div>';
+  }
+  const level = (key, id) => { const it = D.ITEMS.find((x) => x.id === id); return '<div class="x-level"><img src="assets/icons/items/' + id + '.webp" alt=""' + (B[key] ? '' : ' style="filter:var(--missing-art)"') + '><span>' + en(it.name) + '</span><div class="seg sm" role="group">' + [0, 1, 2, 3, 4].map((n) => '<button type="button" data-set="' + key + '" data-v="' + n + '" aria-pressed="' + (B[key] === n) + '"' + dis + '>' + n + '</button>').join('') + '</div></div>'; };
+  const levels = () => '<div class="x-levels">' + level('kit', 'crafting-kit') + level('pouch', 'tool-pouch') + '</div>';
+  const res = () => E.compute(E.normalize({ crest: 'hunter', ...B }), 'en');
+  const skillPlates = () => { const r = res(); return '<div class="x-plates">' + D.SKILLS.map((s) => { const on = has('skills', s.id); const f = r.skills.find((y) => y.id === s.id); return '<button type="button" class="x-plate' + (on ? '' : ' is-off') + '" data-pick="' + keyOf('skills', s.id) + '"><span class="art"><img src="assets/icons/skills/' + s.id + '.webp" alt=""></span><span class="nm">' + en(s.name) + '</span><span class="v' + (on ? '' : ' is-none') + '">' + (on ? f.total : 'Not learnt') + '</span></button>'; }).join('') + '</div>'; };
+  const artPlates = () => { const r = res(); return '<div class="x-plates">' + D.ARTS.map((a) => { const on = has('arts', a.id); const v = a.id === 'needle-strike' ? r.strike && (r.strike.total || (r.strike.each || []).reduce((s, n) => s + n, 0)) : null; return '<button type="button" class="x-plate' + (on ? '' : ' is-off') + '" data-pick="' + keyOf('arts', a.id) + '"><span class="art"><img src="assets/icons/arts/' + a.id + '.webp" alt=""></span><span class="nm">' + en(a.name) + '</span><span class="v' + (on && v ? '' : ' is-none') + '">' + (on ? (v || 'Learnt') : 'Not learnt') + '</span></button>'; }).join('') + '</div>'; };
+  const presets = () => free ? '<p class="x-presets"><span class="lbl">Start from</span><button type="button" class="text-btn" data-preset="base">Base Hornet</button><span class="lbl">·</span><button type="button" class="text-btn" data-preset="max">Everything maxed</button></p>' : '<p class="x-presets"><span class="lbl">As Save 4 has it: it changes in the game</span></p>';
+
+  // ── The grids ──
+  const cell = (l, x, c) => { const got = l === 'items' ? true : has(l, x.id); return '<button type="button" class="x-cell' + (got ? '' : ' is-missing') + (picked === keyOf(l, x.id) ? ' is-picked' : '') + '"' + (c ? ' data-c style="--c: var(--slot-' + c + ')"' : '') + ' data-pick="' + keyOf(l, x.id) + '" title="' + en(x.name) + '"><img src="assets/icons/' + l + '/' + x.id + '.webp" alt=""></button>'; };
+  const open = (l) => { const c = cur(); if (!c || c.l !== l) return ''; return '<div class="x-open"><img class="' + (c.got ? '' : 'is-missing') + '" src="assets/icons/' + c.l + '/' + c.id + '.webp" alt=""><h4>' + en(c.x.name) + '</h4>' + (c.got ? '' : '<p class="x-not">You don\'t have it yet</p>') + '<p>' + en(c.x.desc) + '</p></div>'; };
+  const head = (name, got, of) => '<h3 class="ct-h x-h">' + name + (free ? '' : '<span class="n">' + got + '<i>/' + of + '</i></span>') + '</h3>';
+  const tools = () => '<section class="x-sec">' + head('Tools', G.tools.length, 51) + ['red', 'blue', 'yellow'].map((c) => { const l = D.TOOLS.filter((t) => t.color === c); return '<p class="x-sub" style="--c: var(--slot-' + c + ')">' + c + (free ? '' : ' <b>' + l.filter((t) => has('tools', t.id)).length + '/' + l.length + '</b>') + '</p><div class="x-grid is-tools" style="--c: var(--slot-' + c + ')">' + l.map((t) => cell('tools', t, c)).join('') + '</div>'; }).join('') + open('tools') + '</section>';
+  const crests = () => '<section class="x-sec">' + head('Crests', G.crests.length, D.CRESTS.length) + '<div class="x-grid">' + D.CRESTS.map((x) => cell('crests', x)).join('') + '</div>' + open('crests') + '</section>';
+  const skills = () => '<section class="x-sec">' + head('Silk Skills', G.skills.length, D.SKILLS.length) + skillPlates() + open('skills') + '</section>';
+  const arts = () => '<section class="x-sec">' + head('Abilities', G.arts.length, D.ARTS.length) + artPlates() + open('arts') + '</section>';
+  const items = () => '<section class="x-sec"><h3 class="ct-h x-h">Items</h3><div class="x-items">' + ['memory-locket', 'craftmetal', 'pale-oil', 'everbloom'].map((id) => { const it = D.ITEMS.find((x) => x.id === id); const c = (MK_G.counts[id] || [0, 0]); return '<span class="x-item">' + cell('items', it) + (id === 'everbloom' ? '' : '<span>' + (free ? c[1] : c[0]) + '/' + c[1] + '</span>') + '</span>'; }).join('') + '</div>' + open('items') + '</section>';
+  const hornet = () => '<section class="x-sec"><h3 class="ct-h x-h">The Needle</h3>' + needles() + '</section><section class="x-sec"><h3 class="ct-h x-h">Hornet</h3>' + body() + levels() + '</section>';
+
+  const NOTES = { a: 'A · the sibling\'s sheet: what Hornet is on the left (Needle, body, Kit and Pouch, Silk Skills, abilities), what she carries on the right; what you tap opens under its shelf.',
+    b: 'B · the game\'s pane: the Needle and the body on top, one section at a time below behind the pips.',
+    c: 'C · shelves: the Needle and the body in a narrow column, every shelf beside it.' };
+  const SLOTS = { 1: '1 · the aligned rule: the slot colour at the bottom of one fixed square.', 2: '2 · the Crest screen\'s diamond: each Tool on its slot, outlined in the slot colour; missing, the locked grey.', 3: '3 · the round well: a medal with a rim in the slot colour.', 4: '4 · by row only: plain cells; the colour lives in the row\'s label and a rule down its side.' };
+  function render() {
+    let h = presets();
+    if (st.v === 'a') h += '<div class="a-body"><div class="a-col">' + hornet() + skills() + arts() + '</div><div class="a-col">' + tools() + crests() + items() + '</div></div>';
+    if (st.v === 'b') { const T = { tools, crests, skills, arts, items }; h += '<div class="b-top"><section class="x-sec"><h3 class="ct-h x-h">The Needle</h3>' + needles() + '</section><section class="x-sec"><h3 class="ct-h x-h">Hornet</h3>' + body() + levels() + '</section></div><div class="b-tabs"><div class="seg">' + ['tools', 'crests', 'skills', 'arts', 'items'].map((l) => '<button type="button" data-tab="' + l + '" aria-pressed="' + (st.tab === l) + '">' + { tools: 'Tools', crests: 'Crests', skills: 'Silk Skills', arts: 'Abilities', items: 'Items' }[l] + '</button>').join('') + '</div></div>' + T[st.tab](); }
+    if (st.v === 'c') h += '<div class="c-body"><aside class="c-side">' + hornet() + '</aside><div class="c-main">' + tools() + crests() + skills() + arts() + items() + '</div></div>';
+    const m = document.getElementById('mk'); m.className = 'sl-' + st.slot; m.innerHTML = h;
+    lit = '';
+  }
+  const url = (over) => '?' + new URLSearchParams(Object.assign({}, st, over)).toString();
+  if (st.w === '390' && !inner) { html.classList.add('is-framed'); document.querySelector('.page').remove(); const f = document.createElement('iframe'); f.className = 'mk-phone'; f.src = location.pathname + url({ inner: 1 }); document.body.prepend(f); }
+  if (inner) html.classList.add('is-inner');
+  for (const b of document.querySelectorAll('.mk-bar button')) b.setAttribute('aria-pressed', String(st[b.dataset.key] === b.dataset.val));
+  const SILKS = { 1: 'Silk 1 · the HUD\'s spool, as long as the silk it holds; tap along it.', 2: 'Silk 2 · beads on one thread: eighteen diamonds, lit up to your silk.', 3: 'Silk 3 · nine fixed as a figure, the upgrades as the game\'s Spool Fragments.', 4: 'Silk 4 · wound thread: a small skein per silk.' };
+  document.getElementById('mk-note').textContent = SILKS[st.silk] + '   ' + SLOTS[st.slot];
+  if (document.getElementById('mk')) render();
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('.mk-bar button'); if (b) { location.search = url({ [b.dataset.key]: b.dataset.val }); return; }
+    const tab = e.target.closest('[data-tab]'); if (tab) { st.tab = tab.dataset.tab; render(); return; }
+    const p = e.target.closest('[data-preset]'); if (p) { Object.assign(B, p.dataset.preset === 'base' ? BASE : MAX); lit = 'needle'; render(); return; }
+    const sp = e.target.closest('[data-spool]'); if (sp && free) { const r = sp.getBoundingClientRect(); B.spools = Math.max(0, Math.min(9, Math.round((e.clientX - r.left) / r.width * 18) - 9)); lit = 'spools'; render(); return; }
+    const s = e.target.closest('[data-set]'); if (s && !s.disabled) { B[s.dataset.set] = +s.dataset.v; lit = s.dataset.set; render(); return; }
+    const c = e.target.closest('[data-pick]'); if (c) { picked = picked === c.dataset.pick ? null : c.dataset.pick; render(); }
+  });
+})();
+</script>
+</body>
+</html>
