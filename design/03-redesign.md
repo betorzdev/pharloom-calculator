@@ -36,11 +36,12 @@ the work up reads it first, then the step it's on.
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep) | [`06-home-variants.html`](06-home-variants.html) |
 | 4 | Inventory (`game`) | **Built** (28 Sep) | [`07-inventory-variants.html`](07-inventory-variants.html) |
 | 5 | Progress (`progress`) | **Built** (28 Sep) | [`10-progress-variants.html`](10-progress-variants.html) |
-| 6 | Map (`map`) | **Next** | |
-| 7 | Journal (`journal`) | To do | |
+| 6 | Map (`map`) | **Built** (28 Sep) | [`12-map-variants.html`](12-map-variants.html) |
+| 7 | Journal (`journal`) | **Next** | |
 | 8 | Crest (`tools`) | To do | |
 | 9 | Combat (`fight`) | To do | |
 | 10 | The static pages (`tools/pages*.js`: `bosses/`, `es/jefes/`, the landing folders): they inherit steps 1 and 2; only what's theirs | To do | |
+| 11 | **Everything on the map**: each Tool, Crest, Silk Skill, ability, boss, NPC, vendor, wish and Journal enemy in its room (data from the game's files or the wiki; today only the loose pieces, the stations and the gauntlets have a room), new layers grouped as mapgenie's, the rest of the game's pins. After the tabs (Albert, 28 Sep) | To do | |
 
 ## Step 1 · The shell
 
@@ -437,4 +438,105 @@ Albert chose **road 1 · the journey**. Built (`js/app-progress.js`, `css/app.cs
   silk, Silk Hearts, Needle, Kit, Pouch) from the free build so lists and counts agree
   (`freeView`), and a missing row's box marks it (`pgOwn` through `App.freeMark`); ladder pieces
   are set in the Inventory, not here.
+
+## Step 6 · Map
+
+### What there is (28 September 2026)
+
+The game's map with every missing piece in its room, the benches, Bellways, Ventrica stations and
+gauntlets as the game's pins, Hornet at the bench and her way from the previous one; above it two
+rows of switches (the step 2 diamond, then the kind's dot or glyph, its name and count) and the
+zoom as a choose-one (Whole · ×1.5 · ×2.5); under it a long note and *Closest to your bench*.
+On a phone the switches take a screen before a small map. With the 76 benches on, the map is
+covered in rings. No search, no area names.
+
+### What the sibling has
+
+A search above the map; the zoom as a boxed toolbar floating on the map (+ − full screen); the
+area names on the map; the layers under it in groups (Collectibles, Towards 112%, Places, Your
+game) with «Show all · Hide all» and «Always show the whole map», «Also show what you have»,
+«Show the area names».
+
+### The options (drawn in `12-map-variants.html`, the real map and pins)
+
+In all three the layer's own picture is the switch (off, it dims) instead of a box beside it,
+the area names can be on, and the benches start off.
+
+- **A · the sibling's**: the search above, the map with its floating zoom and the area names,
+  the layers grouped under it, then what's closest.
+- **B · side panel**: the map wide on the left; on the right the search, the layers one per line
+  and what's closest.
+- **C · the map first**: the map fills the plate, the layers a compact legend floating on its
+  corner, the search and zoom on its top edge; the list under it.
+
+### Decision (28 September 2026)
+
+Albert chose **C · the map first**, **area names on, with a switch**, and **Free mode's marks** on
+the Map too. Built (`js/app-map.js`, `css/app.css`):
+
+- `.mp-stage`: the view bleeds to the frame's inner edge; whole it's the map's own height, closer
+  (`.is-zoomed`, ×1.5 · ×2.5 · ×4) a window that scrolls. On it the search (`.mp-find`), the zoom
+  toolbar (`.mp-tools`: +, −, full screen through `requestFullscreen`) and the legend
+  (`.mp-legend`, folds, `prefs.mapLegendOff`), whose switches are each layer's own mark
+  (`.mp-sw`, `aria-pressed`). Benches start off (`PLACES_ON`).
+- Area names (`AREA_NAMES()`: each area's name at the middle of its drawn rooms, those with more
+  than three), `prefs.mapNames`; on a phone only when zoomed.
+- The search matches areas and gauntlets (accents folded); a result zooms to ×2.5, scrolls there
+  and pulses `.mp-ping`.
+- Free mode: `App.freeView()` (js/app-progress.js) says what's missing; Hornet, her way and the
+  lit pins only with a real save.
+
+### The symbols (28 September 2026)
+
+Albert: the sibling draws each thing as the game does, and mapgenie.io's Silksong map is
+attractive (teardrop pins, a colour per group, a white glyph; seen 28 Sep: groups Points of
+Interest, Collectibles, Items, Equipment, Enemies, Quests, Other, some 50 categories). The game's
+own map pins were read from its files (`hornet_map.spriteatlas.bundle`: `pin_bench`,
+`pin_stag_station`, `pin_tube_station`, `pin_flea`, `pin_shop`, `pin_steel_servant`, the quest
+icons, the markers), kept for the mockup in `design/map-pins/`. Drawn in
+[`13-map-symbols-variants.html`](13-map-symbols-variants.html) on the real map zoomed in: A · as
+the game draws it (each piece its own picture, the places the game's pins: the sibling's way);
+B · mapgenie's pins; C · the game's round badge (a dark disc with a rim in the kind's colour, the
+picture inside).
+
+Albert also noted many things are missing from the map (Tools, Crests, bosses, NPCs, vendors,
+wishes…). He chose **C · the game's round badge**, and the missing content as **a step of its
+own (11), after the tabs**. Built: the game's own map pins in `assets/map/pins/`
+(`tools/extract-map-pins.py`, 24 of them: the three places use `pin_bench`, `pin_stag_station`
+and `pin_tube_station`, the rest wait for step 11); in `js/app-map.js` `mark()` draws a piece as
+the badge (`--badge`, the kind's colour as its rim, the item's own picture inside) and
+`placeMark()` a place as the game's pin, a gauntlet as the badge with its needles; the legend
+and the closest list use the same marks. `--mp-s` sets their size (22 px whole, 28 zoomed, 14 on a
+phone whole).
+
+### Moving around, the intros, the gauntlets' mark (28 September 2026)
+
+Albert: the map was a still picture; it should move as the sibling's does. Built: the map and its
+marks are one layer moved and scaled by a transform (`applyView`, `zoomAt` in `js/app-map.js`):
+drag, the wheel and a pinch zoom at the pointer, a double click zooms in, + and − at the middle,
+and ⤢ the large map (the window's width and height, `prefs.mapBig`, the sibling's). Marks and
+names keep their size on screen (`--k`). Close up the images swap to twice the resolution
+(`rooms-hd.webp`, `states-hd.webp`, 5488 × 4369, written by `tools/extract-map.py` at 96 px a
+unit; the game draws at 100), and the layer has no `will-change`, which blurred it. Hornet's walk
+keeps her in view (`App.mapKeep`).
+
+He also asked to drop the screens' introductory lines («The game's map, with Hornet at your
+bench…»): gone from the Map, Saves, Inventory, Progress and the Journal (their keys too). Kept:
+the lines that say something about your state or lead somewhere (the Crest screen's note on a
+save's build with its Free mode link, Combat's build line, the gauntlets cleared, the import's
+steps).
+
+The gauntlets' mark (two strokes crossed, read as an «x»: «queda horroroso»): options in
+[`14-gauntlet-mark-variants.html`](14-gauntlet-mark-variants.html): A · the arena's champion (the
+Journal's portrait of its last wave's enemy on the red badge), B · the needles drawn, C · a
+challenge shield. Albert chose **A · the arena's champion**: built (`placeMark` in
+`js/app-map.js`, `champion()`: every one of the 49 has its portrait).
+
+The marks are tappable, as the sibling's (Albert asked): a tap opens a card over the map
+(`cardHtml`, `paintCard` in `js/app-map.js`) with the mark's picture, its name, its area and Act,
+the rooms from your bench and how it's had (`App.howPiece`, js/app-progress.js); in Free mode a
+piece's card marks it had (`mapMark`, the Inventory's marks); a gauntlet's card gives its waves, its
+reward and «Fight it in Combat» (`mapFight`: Combat's gauntlets, that one chosen). The card follows
+its mark as the map moves; ×, Escape or a tap on the empty map close it; a drag isn't a tap.
+The floating legend was in the way (Albert): it's under the map now, in two rows, no fold.
 

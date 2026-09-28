@@ -174,7 +174,13 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.join(HERE, '..')
 
 
-def main(game):
+def main(game, ppu=48):
+    """ppu 48: rooms.webp, states.webp and js/map.js (the site's positions); any other: only the
+    two images at that resolution, as rooms-hd.webp and states-hd.webp, which the Map swaps in close
+    up (the game draws its map at 100 pixels a unit; 96 is twice the site's). The same layout, only
+    scaled: the marks go by percentages."""
+    global PPU_OUT
+    PPU_OUT = ppu
     aa = os.path.join(game, 'Hollow Knight Silksong_Data', 'StreamingAssets', 'aa', 'StandaloneLinux64')
     atl = os.path.join(aa, 'atlases_assets_assets', 'sprites', '_atlases')
     mono = next(f for f in os.listdir(aa) if f.endswith('_monoscripts.bundle'))   # the scripts' class names
@@ -362,6 +368,11 @@ def main(game):
 
     out = os.path.join(ROOT, 'assets', 'map')
     os.makedirs(out, exist_ok=True)
+    if ppu != 48:
+        canvas.save(os.path.join(out, 'rooms-hd.webp'), 'WEBP', quality=80, method=6)
+        sheet.save(os.path.join(out, 'states-hd.webp'), 'WEBP', quality=80, method=6)
+        print(f'{W} × {H} px → assets/map/rooms-hd.webp ({os.path.getsize(os.path.join(out, "rooms-hd.webp")) // 1024} KB), states-hd.webp')
+        return
     canvas.save(os.path.join(out, 'rooms.webp'), 'WEBP', quality=85, method=6)
     sheet.save(os.path.join(out, 'states.webp'), 'WEBP', quality=85, method=6)
     data = {'W': W, 'H': H, 'PPU': PPU_OUT, 'ROOMS': dict(sorted(boxes.items())), 'PINS': PINS,
@@ -395,3 +406,4 @@ if __name__ == '__main__':
     if len(sys.argv) < 2:
         sys.exit('usage: extract-map.py "<Steam>/steamapps/common/Hollow Knight Silksong"')
     main(sys.argv[1])
+    main(sys.argv[1], 96)   # the close-up images (rooms-hd.webp, states-hd.webp)

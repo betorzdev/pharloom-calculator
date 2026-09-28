@@ -170,7 +170,7 @@
       return `<p class="inv-sub" style="--c: var(--slot-${c})">${esc(t('ct_' + c))}${own || have ? ` <b>${num(l.filter((x) => x.got).length)}</b>` : ''}</p><ul class="inv-grid">${l.map(cell).join('')}</ul>`;
     }).join('');
     const items = [...by('items').filter((x) => x.id !== 'crafting-kit' && x.id !== 'tool-pouch'), ...by('pieces').filter((x) => x.id !== 'silk-heart')];
-    const start = own ? `<p class="saves-note">${esc(t('invSave', { n: App.activeSlot() }))}</p>`
+    const start = own ? ''
       : `<p class="inv-presets"><span class="lbl">${esc(t('invStart'))}</span><button type="button" class="text-btn" data-act="ctPreset" data-value="base">${esc(t('invBase'))}</button>
           <span class="lbl" aria-hidden="true">·</span><button type="button" class="text-btn" data-act="ctPreset" data-value="max">${esc(t('invMax'))}</button></p>`;
     sec.innerHTML = `<div class="inv">${brackets}${screenHead(esc(t('navGame')), start)}

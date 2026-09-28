@@ -357,6 +357,9 @@
     return { ...free, act: 3, pieces, masks: b.masks, spools: b.spools, hearts: b.hearts, needle: b.needle, kit: b.kit, pouch: b.pouch };
   }
 
+  App.howPiece = (i) => howText(HW.HOW.pieces[i], HW.NEEDS.pieces[i]);   // the Map's card
+  App.freeView = () => { const f = App.freeGame(); return f ? freeView(f) : null; };   // the Map's too
+
   App.screens.progress = (sec) => {
     const own = App.game();
     /* Free mode with marks counts from them (the Inventory's, js/app-saves.js App.freeGame), as a
@@ -369,13 +372,13 @@
     cur = g;
     const all = things(g);
     const c = g ? CP.count(g) : null;
-    const seg = g ? `${own ? '' : `<p class="saves-note">${esc(t('pgFreeMarks'))}</p>`}<div class="seg pg-seg" role="group" aria-label="${esc(t('pgShow'))}">
+    const seg = g ? `<div class="seg pg-seg" role="group" aria-label="${esc(t('pgShow'))}">
         <button type="button" data-act="pgShow" data-value="missing" aria-pressed="${!prefs.pgAll}">${esc(t('pgMissing'))}</button>
         <button type="button" data-act="pgShow" data-value="all" aria-pressed="${!!prefs.pgAll}">${esc(t('pgAll'))}</button>
       </div>${w ? `<div class="seg pg-seg" role="group" aria-label="${esc(t('pgOrder'))}">
         <button type="button" data-act="pgSort" data-value="act" aria-pressed="${!prefs.pgNear}">${esc(t('pgByAct'))}</button>
         <button type="button" data-act="pgSort" data-value="near" aria-pressed="${!!prefs.pgNear}">${esc(t('pgNear'))}</button>
-      </div>` : ''}` : `<p class="saves-note">${esc(t('pgFree'))}</p>`;
+      </div>` : ''}` : '';
     const theirs = own ? Math.round((App.gameMeta() || {}).completion || 0) : null;
     const total = c ? `<div class="pg-total"><p class="lbl">${esc(t('homeCompletion'))}</p><p class="pg-total-n"><b>${num(c.total)}</b><span class="u">${esc(App.pctSpace().trim() || '%')}</span></p>
         ${own && theirs != null ? `<p class="hm-check${theirs === c.total ? '' : ' is-off'}">${esc(t(theirs === c.total ? 'homeMatches' : 'homeDiffers', { pct: num(theirs) + App.pctSpace() }))}</p>` : ''}</div>` : '';
@@ -401,9 +404,8 @@
       return group('gauntlets', t('ftModeGauntlets'), list, g, list.filter((x) => x.got).length, list.length);
     })();
     // The total and the road lead; how to show the lists goes just over them.
-    const lead = g ? (own ? '' : `<p class="saves-note">${esc(t('pgFreeMarks'))}</p>`) : seg;
-    const controls = g ? `<div class="pg-controls">${own ? seg : seg.replace(/^<p class="saves-note">.*?<\/p>/, '')}</div>` : '';
-    sec.innerHTML = `<div class="pg">${brackets}${screenHead(esc(t('navProgress')), lead)}
+    const controls = g ? `<div class="pg-controls">${seg}</div>` : '';
+    sec.innerHTML = `<div class="pg">${brackets}${screenHead(esc(t('navProgress')))}
         ${total}
         ${own && !next ? '' : road}
         <h3 class="pg-part">${esc(t('pg100'))}</h3>

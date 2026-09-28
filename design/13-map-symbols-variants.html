@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Map symbols: variants</title>
+<!-- Design material, not part of the site (design/03-redesign.md, step 6, the symbols). Today the
+     pieces are small coloured dots and the places a thin ring with a drawn glyph. Albert: the
+     sibling draws each thing as in the game, and mapgenie.io's Silksong map (teardrop pins, a
+     colour per group, a white glyph) is attractive. Three ways, on the real map zoomed on the
+     middle of Pharloom (every piece and pin in its real room, as Free mode shows them). The game's
+     own map pins (assets/map/pins/, tools/extract-map-pins.py) were read from its files (hornet_map.spriteatlas.bundle,
+     28 September 2026). ?v=now|a|b|c -->
+<base href="../">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/app.css">
+<script src="js/i18n.js"></script><script src="js/data.js"></script><script src="js/collectibles.js"></script>
+<script src="js/map.js"></script><script src="js/graph.js"></script><script src="js/rooms.js"></script><script src="js/gauntlets.js"></script>
+<style>
+.mk-bar { position: fixed; z-index: 90; left: 50%; bottom: var(--sp-2); transform: translateX(-50%); display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--sp-1) var(--sp-3); width: max-content; max-width: calc(100vw - var(--sp-4)); padding: var(--sp-2) var(--sp-3); background: color-mix(in oklab, var(--scene-bg) 94%, transparent); border: 1px solid var(--line-panel); font-family: var(--font-num); font-size: var(--fs-xs); color: var(--muted); }
+.mk-bar b { color: var(--label); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; font-size: var(--fs-2xs); }
+.mk-bar button { padding: var(--sp-1) var(--sp-2); border: 1px solid var(--line-ctl); color: var(--ink-2); font: inherit; }
+.mk-bar button[aria-pressed="true"] { color: var(--ink-strong); border-color: var(--accent-line); background: var(--picked); }
+.mk-note { flex-basis: 100%; text-align: center; color: var(--ink-2); }
+.mk { max-width: var(--page-max); margin: 0 auto; padding: var(--sp-6) var(--page-pad) calc(var(--sp-16) * 2); display: grid; gap: var(--sp-4); }
+.view { position: relative; height: 70vh; overflow: hidden; background: var(--scene-bg); border: 1px solid var(--line); }
+.map { position: absolute; width: 400%; }
+.map img.rooms { display: block; width: 100%; height: auto; }
+.legend { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-6); font-size: var(--fs-sm); color: var(--ink); }
+.legend span { display: inline-flex; align-items: center; gap: var(--sp-2); }
+.legend .s { position: relative; }
+.m { position: absolute; transform: translate(-50%, -50%); }
+.legend .m { position: relative; transform: none; }
+
+/* TODAY: a coloured dot, a thin ring with a glyph. */
+.v-now .m.piece { width: 10px; height: 10px; border-radius: 50%; background: var(--c); box-shadow: 0 0 6px var(--c); }
+.v-now .m.place { display: grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; border: 1px solid var(--c); background: var(--scene-bg); color: var(--c); }
+.v-now .m.place img { display: none; }
+.v-now .m.piece img { display: none; }
+
+/* A · as the game draws it (the sibling's): the piece's own picture, the places the game's own pins. */
+.v-a .m img { display: block; width: 26px; height: 26px; object-fit: contain; filter: drop-shadow(0 0 3px #000) drop-shadow(0 0 5px color-mix(in oklab, var(--c) 60%, transparent)); }
+.v-a .m.place img { width: 24px; height: 24px; filter: drop-shadow(0 0 3px #000); }
+.v-a .m svg { display: none; }
+
+/* B · mapgenie's pins: a teardrop in the group's colour, its tip on the spot, the thing's
+   picture in white inside. Colours by group: collectibles bone-rose, materials ochre, places slate. */
+.v-b .m { transform: translate(-50%, -100%); width: 26px; height: 32px; }
+.v-b .m::before { content: ''; position: absolute; left: 0; top: 0; width: 26px; height: 26px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: var(--g); box-shadow: 0 2px 4px #000; border: 1px solid color-mix(in oklab, var(--g) 60%, #fff); }
+.v-b .m img { position: absolute; left: 4px; top: 4px; width: 18px; height: 18px; object-fit: contain; filter: brightness(0) invert(1); }
+.v-b .m svg { display: none; }
+
+/* C · the game's round badge: every mark a dark disc with a bone rim, like the game's own
+   pin_flea and pin_bench, the thing's picture inside in its colours; the rim takes the kind's hue. */
+.v-c .m { width: 28px; height: 28px; border-radius: 50%; background: radial-gradient(circle at 50% 40%, #2a2322, #0b0909); border: 2px solid var(--c); box-shadow: 0 0 0 1px #000, 0 2px 5px #000; display: grid; place-items: center; }
+.v-c .m img { width: 20px; height: 20px; object-fit: contain; }
+.v-c .m.place { border-color: var(--hud-frame); background: none; border: 0; box-shadow: none; }
+.v-c .m.place img { width: 28px; height: 28px; filter: drop-shadow(0 0 3px #000); }
+.v-c .m svg { display: none; }
+</style>
+</head>
+<body>
+<div class="page"><div class="mk">
+  <p class="lbl" id="title"></p>
+  <div class="legend" id="legend"></div>
+  <div class="view" id="view"><div class="map" id="map"></div></div>
+</div></div>
+<div class="mk-bar"><b>Symbols</b>
+  <button data-v="now">Today</button><button data-v="a">A · as the game draws it</button><button data-v="b">B · mapgenie's pins</button><button data-v="c">C · the game's round badge</button>
+  <span class="mk-note" id="note"></span></div>
+<script>
+(function () {
+  const v = new URLSearchParams(location.search).get('v') || 'a';
+  document.documentElement.className = 'v-' + v;
+  document.querySelector('.page').className = 'page v-' + v;
+  const M = SS.map, R = SS.rooms, CO = SS.collectibles;
+  const K = {
+    'mask-shard': ['Mask Shard', 'assets/icons/items/mask-shard.webp', 'var(--mask)', '#9a5e6e'],
+    'spool-fragment': ['Spool Fragment', 'assets/icons/items/spool-fragment.webp', 'var(--silk)', '#9a5e6e'],
+    'memory-locket': ['Memory Locket', 'assets/icons/items/memory-locket.webp', 'var(--slot-blue)', '#9a5e6e'],
+    craftmetal: ['Craftmetal', 'assets/icons/items/craftmetal.webp', 'var(--slot-yellow)', '#a07a3c'],
+    'pale-oil': ['Pale Oil', 'assets/icons/items/pale-oil.webp', 'var(--slot-red)', '#a07a3c'],
+    flea: ['Lost Flea', 'assets/map/pins/pin_flea.webp', 'var(--plasmium-line)', '#9a5e6e'],
+    bench: ['Bench', 'assets/map/pins/pin_bench.webp', 'var(--hud-frame)', '#50677f'],
+    bellway: ['Bellway', 'assets/map/pins/pin_stag_station.webp', 'var(--hud-frame)', '#50677f'],
+    ventrica: ['Ventrica', 'assets/map/pins/pin_tube_station.webp', 'var(--hud-frame)', '#50677f'],
+  };
+  const at = (x, y) => 'left:' + (x / M.W * 100).toFixed(3) + '%;top:' + (y / M.H * 100).toFixed(3) + '%';
+  const mark = (k, place, style) => '<span class="m ' + (place ? 'place' : 'piece') + '" style="--c:' + K[k][2] + ';--g:' + K[k][3] + ';' + (style || '') + '" title="' + K[k][0] + '"><img src="' + K[k][1] + '" alt=""></span>';
+  let h = '<img class="rooms" src="assets/map/rooms.webp" alt="">';
+  const seen = new Map();
+  CO.PIECES.forEach((p) => { if (!K[p[0]]) return; const r = R.roomOf(R.sceneOf(p[2])); if (!r) return; const n = seen.get(r.scene) || 0; seen.set(r.scene, n + 1); h += mark(p[0], false, at(r.x + n * 30, r.y)); });
+  for (const p of R.pinsOn(R.mapFlags(null))) if (K[p[0]]) h += mark(p[0], true, at(p[1], p[2]));
+  const map = document.getElementById('map'); map.innerHTML = h;
+  // Centre on Bellhart and Greymoor.
+  const view = document.getElementById('view');
+  requestAnimationFrame(() => { map.style.left = (-0.40 * map.offsetWidth + view.clientWidth / 2) + 'px'; map.style.top = (-0.42 * map.offsetHeight + view.clientHeight / 2) + 'px'; });
+  document.getElementById('legend').innerHTML = Object.keys(K).map((k) => '<span>' + mark(k, ['bench', 'bellway', 'ventrica'].includes(k)) + K[k][0] + '</span>').join('');
+  const NOTES = { now: 'Today: a coloured dot per piece, a thin ring with a drawn glyph per place.',
+    a: 'A · as the game draws it (the sibling\'s way): each piece its own picture, the places the game\'s own map pins.',
+    b: 'B · mapgenie\'s pins: a teardrop in its group\'s colour, the tip on the spot, the picture in white inside.',
+    c: 'C · the game\'s round badge: a dark disc with a rim in the kind\'s colour, the picture inside; places the game\'s pins.' };
+  document.getElementById('note').textContent = NOTES[v];
+  for (const b of document.querySelectorAll('.mk-bar button')) { b.setAttribute('aria-pressed', String(b.dataset.v === v)); b.onclick = () => { location.search = '?v=' + b.dataset.v; }; }
+})();
+</script>
+</body>
+</html>

@@ -17,6 +17,9 @@ Reference material for deciding how this site looks and behaves. It isn't part o
 | [`09-locked-tool-variants.html`](09-locked-tool-variants.html) | Step 4's retouch: five ways to draw a Tool you don't have yet on its slot |
 | [`10-progress-variants.html`](10-progress-variants.html) | Step 5's options: Progress as the sibling's ledger, as a board of cards, or in three tabs, over a real save |
 | [`11-title-variants.html`](11-title-variants.html) | Step 1's retouch: five ways to set the screen's title on its frame without the black box behind it |
+| [`12-map-variants.html`](12-map-variants.html) | Step 6's options: the Map as the sibling's, with a side panel, or the map first with a floating legend, over the real map |
+| [`13-map-symbols-variants.html`](13-map-symbols-variants.html) | Step 6's symbols: the map's marks as the game draws them, as mapgenie's pins, or as the game's round badges (`map-pins/`: the game's own map pins, for the mockup) |
+| [`14-gauntlet-mark-variants.html`](14-gauntlet-mark-variants.html) | Step 6: three marks for the enemy gauntlets on the Map, instead of the «x» |
 
 The design system itself (the black page, one card, filigree only in the corners, figures in a
 sans with tabular figures, the accent only on what's interactive, tints from the game's map

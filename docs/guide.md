@@ -223,6 +223,17 @@ and 8 × Silkspear" against something bigger.
 
 ### Map
 
+The map fills the screen. Drag it to move it; the wheel, a pinch or a double click zoom where you
+point, + and − at the middle, and ⤢ opens it large, the window's whole width (⤡ back). Close up
+it swaps to twice the resolution. On it: a search at the top left (an area or an enemy gauntlet
+by name: pick one and the map goes there, with a ring where it is) and the zoom at the top
+right. Under it the legend in two rows (what's missing, the places): each layer's own mark is its
+switch, dimmed when off, with its count, and the last one turns the area names on or off; the
+benches start off (there are 76). Tap any mark for its card: what it is, where, how it's had (in
+Free mode, «Mark as had»), and for a gauntlet its waves, its reward and «Fight it in Combat». On a
+phone the names show only zoomed in. In Free mode with things marked in the Inventory, the map
+shows what those marks say is missing.
+
 Pharloom as the game's own map screen draws it, taken from the game's files (every room in its
 area's tint, the full drawing, as once the area's map is bought), and on it Hornet at the bench
 you rest at and a dot for each loose piece you're missing, in its room: Mask Shards, Spool

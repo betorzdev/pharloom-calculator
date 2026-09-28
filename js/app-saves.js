@@ -288,7 +288,7 @@
     if (imp.n) { sec.innerHTML = importView(); return; }
     const [free, ...slots] = store ? S.list(store) : [{ n: S.FREE, active: true, snap: {} }];
     sec.innerHTML = `<div class="saves-body">${brackets}
-      ${screenHead(esc(t('savesTitle')), `<p class="saves-note">${esc(t('savesNote'))}</p>`)}
+      ${screenHead(esc(t('savesTitle')))}
       <div class="saves-lists">
         <ul class="saves-list is-free">${card(free)}</ul>
         ${slots.length ? `<ol class="saves-list">${slots.map(card).join('')}</ol>` : ''}

@@ -283,6 +283,10 @@
 
   /* What you don't have yet, everywhere: colourless and half-lit. */
   --missing-art: grayscale(1) brightness(0.4);
+  /* The Map's round badge (design/13-map-symbols-variants.html, C): the dark disc under a piece's
+     picture, as the game's own pin_flea and pin_bench, and the black that sets it off the map. */
+  --badge: radial-gradient(circle at 50% 40%, #2a2322, #0b0909);
+  --badge-shadow: #000;
   /* The Inventory's, lighter so the shape still reads (design/08-missing-variants.html): with it
      half opacity, and the diamond pip under each picture says had or missing outright. */
   --missing-soft: grayscale(1) brightness(0.6);

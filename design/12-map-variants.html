@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Map: variants</title>
+<!-- Design material, not part of the site (design/03-redesign.md, step 6). The Map drawn three
+     ways around the real map (assets/map/rooms.webp, the game's pins from js/map.js, every piece
+     in its room from js/rooms.js, as Free mode shows them). What's on trial is the frame round
+     the map: the layers, the zoom, the search, the area names, the list under it.
+     ?v=a|b|c&names=on|off&w=1440|390 -->
+<base href="../">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/app.css">
+<script src="js/i18n.js"></script><script src="js/data.js"></script><script src="js/collectibles.js"></script>
+<script src="js/map.js"></script><script src="js/graph.js"></script><script src="js/rooms.js"></script><script src="js/gauntlets.js"></script>
+<style>
+.mk-bar { position: fixed; z-index: 90; left: 50%; bottom: var(--sp-2); transform: translateX(-50%); display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--sp-1) var(--sp-3); width: max-content; max-width: calc(100vw - var(--sp-4)); padding: var(--sp-2) var(--sp-3); background: color-mix(in oklab, var(--scene-bg) 94%, transparent); border: 1px solid var(--line-panel); font-family: var(--font-num); font-size: var(--fs-xs); color: var(--muted); }
+.mk-bar b { color: var(--label); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; font-size: var(--fs-2xs); }
+.mk-bar button { padding: var(--sp-1) var(--sp-2); border: 1px solid var(--line-ctl); color: var(--ink-2); font: inherit; }
+.mk-bar button[aria-pressed="true"] { color: var(--ink-strong); border-color: var(--accent-line); background: var(--picked); }
+.mk-grp { display: inline-flex; align-items: center; gap: var(--sp-1); }
+.mk-sep { width: 1px; align-self: stretch; background: var(--line); }
+.mk-note { flex-basis: 100%; text-align: center; color: var(--ink-2); }
+html.is-framed body { background: var(--scene-bg); }
+.mk-phone { display: block; margin: var(--sp-4) auto calc(var(--sp-16) * 2); width: 390px; height: calc(100vh - var(--sp-16) * 2 - var(--sp-8)); border: 1px solid var(--line-panel); }
+html.is-inner .mk-bar { display: none; }
+.page { padding-top: var(--sp-8); padding-bottom: calc(var(--sp-16) * 2.5); }
+
+/* The map, as the site draws it (its .mp-* rules), plus the area names. */
+.mk-view { position: relative; overflow: auto; background: var(--scene-bg); }
+.mk-map { position: relative; min-width: 100%; }
+.mk-name { position: absolute; transform: translate(-50%, -50%); font-family: var(--font-display); font-size: var(--fs-2xs); letter-spacing: var(--track-caps); text-transform: uppercase; white-space: nowrap; color: color-mix(in oklab, var(--ink) 70%, transparent); text-shadow: 0 0 4px var(--scene-bg), 0 0 8px var(--scene-bg); pointer-events: none; }
+html.names-off .mk-name { display: none; }
+/* The zoom as the sibling floats it on the map: + − and full screen, a boxed toolbar. */
+.mk-zoom { position: absolute; top: var(--sp-3); right: var(--sp-3); z-index: 3; display: flex; border: 1px solid var(--line-ctl); background: color-mix(in oklab, var(--scene-bg) 85%, transparent); }
+.mk-zoom button { width: var(--ctl-sm); height: var(--ctl-sm); color: var(--ink-2); font-family: var(--font-num); }
+.mk-zoom button + button { border-left: 1px solid var(--line-ctl); }
+.mk-zoom button:hover { color: var(--ink-strong); background: var(--veil); }
+/* The layers: the picture itself is the switch; off, it dims and its name goes quiet (no box). */
+.lay { display: inline-flex; align-items: center; gap: var(--sp-2); min-height: var(--ctl-sm); font-size: var(--fs-sm); color: var(--ink); }
+.lay b { font-family: var(--font-num); font-size: var(--fs-xs); color: var(--ink-2); }
+.lay .mp-dot, .lay .mp-pin { position: static; margin: 0; }
+.lay[aria-pressed="false"] { color: var(--muted); }
+.lay[aria-pressed="false"] :is(.mp-dot, .mp-pin) { opacity: 0.3; }
+.lay[aria-pressed="false"] b { color: var(--line-ctl); }
+.lays { display: flex; flex-wrap: wrap; gap: var(--sp-1) var(--sp-6); }
+.lay-h { display: flex; justify-content: space-between; align-items: baseline; gap: var(--sp-3); }
+.near { display: grid; gap: var(--sp-2); }
+.near p { display: grid; grid-template-columns: 18px minmax(0, 1fr) auto auto; align-items: center; gap: var(--sp-3); font-size: var(--fs-sm); color: var(--ink); }
+.near p span { font-size: var(--fs-xs); color: var(--muted); }
+.near p b { font-family: var(--font-num); font-size: var(--fs-xs); color: var(--ink-strong); font-weight: 500; }
+.near .mp-dot, .near .mp-pin { position: static; margin: 0; }
+
+/* A · the sibling's: search above, the map with its floating zoom and area names, the layers
+   in groups under it (Show all · Hide all), then what's closest. */
+.a-search { max-width: 360px; margin-bottom: var(--sp-3); }
+.a-view { max-height: 70vh; border: 1px solid var(--line); }
+.a-layers { display: grid; gap: var(--sp-4); margin: var(--sp-6) 0; padding-top: var(--sp-4); border-top: 1px solid var(--inv-line); }
+/* B · the side panel: the map wide on the left, a column on the right with the search, the
+   layers one per line with their counts, and what's closest. */
+.b-body { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: var(--sp-6); align-items: start; }
+.b-view { height: 72vh; border: 1px solid var(--line); }
+.b-side { display: grid; gap: var(--sp-6); align-content: start; }
+.b-side .lays { flex-direction: column; gap: 0; }
+/* C · the map first: the map fills the plate, the layers a compact legend floating on its
+   lower-left corner (it folds), the search and zoom on its top edge; the list under it. */
+.c-view { height: 78vh; margin: 0 calc(var(--inv-pad) * -1 + var(--sp-2)); }
+.c-legend { position: absolute; left: var(--sp-3); bottom: var(--sp-3); z-index: 3; display: grid; gap: var(--sp-2); max-width: 300px; padding: var(--sp-3) var(--sp-4); background: color-mix(in oklab, var(--scene-bg) 88%, transparent); border: 1px solid var(--line-ctl); }
+.c-legend .lays { flex-direction: column; gap: 0; }
+.c-search { position: absolute; top: var(--sp-3); left: var(--sp-3); z-index: 3; width: min(320px, 60%); }
+.c-near { margin-top: var(--sp-6); }
+@media (max-width: 899px) { .b-body { grid-template-columns: 1fr; } .b-view { height: 55vh; } .c-legend { position: static; max-width: none; margin-top: var(--sp-3); } }
+</style>
+</head>
+<body>
+<div class="page"><div class="shell"><main class="screens">
+<section class="screen" id="scr"><span class="frame-line"></span>
+  <header class="screen-head"><svg class="screen-plaque" viewBox="0 0 100 30" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="1"><polygon points="6,1 94,1 99.5,15 94,29 6,29 0.5,15" vector-effect="non-scaling-stroke"/><polygon class="is-inner" points="8,4 92,4 96.5,15 92,26 8,26 3.5,15" vector-effect="non-scaling-stroke"/></svg><h2 class="sec-title screen-title">Map</h2></header>
+  <div class="screen-lead"><p class="saves-note">The game's map, with Hornet at your bench and what you're missing in its room.</p></div>
+  <div id="mk"></div>
+</section></main></div></div>
+<div class="mk-bar">
+  <span class="mk-grp"><b>Variant</b><button data-key="v" data-val="a">A · the sibling's</button><button data-key="v" data-val="b">B · side panel</button><button data-key="v" data-val="c">C · the map first</button></span>
+  <span class="mk-sep"></span>
+  <span class="mk-grp"><b>Area names</b><button data-key="names" data-val="on">on</button><button data-key="names" data-val="off">off</button></span>
+  <span class="mk-sep"></span>
+  <span class="mk-grp"><b>Width</b><button data-key="w" data-val="1440">desktop</button><button data-key="w" data-val="390">390</button></span>
+  <span class="mk-note" id="mk-note"></span>
+</div>
+<script>
+(function () {
+  const DEF = { v: 'a', names: 'on', w: '1440' };
+  const q = new URLSearchParams(location.search);
+  const st = Object.fromEntries(Object.keys(DEF).map((k) => [k, q.get(k) || DEF[k]]));
+  const inner = q.has('inner'), html = document.documentElement;
+  const M = SS.map, R = SS.rooms, CO = SS.collectibles, D = SS.data;
+  const CORNER = '<svg class="bk-art" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M4 46 V18 C4 10 10 4 18 4 H46"/><path d="M10 30 C10 16 16 10 30 10"/><path d="M18 18 C21 14 26 15 25 19 C24 22 20 21 21 18.5"/><path d="M4 4 L8 8"/></svg>';
+  document.getElementById('scr').insertAdjacentHTML('afterbegin', ['tl', 'tr', 'bl', 'br'].map((c) => '<span class="bk ' + c + '">' + CORNER + '</span>').join(''));
+  const svg = (d) => '<svg viewBox="0 0 14 14" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' + d + '</svg>';
+  const GLYPH = { bench: svg('<path d="M2 8h10M3.5 8v3.5M10.5 8v3.5M3 4.5h8"/>'), bellway: svg('<path d="M7 2.2c-2.4 0-3.4 1.9-3.4 4.3v2.3L2.4 10.4h9.2L10.4 8.8V6.5C10.4 4.1 9.4 2.2 7 2.2zM6 12h2"/>'),
+    ventrica: svg('<rect x="3" y="3" width="8" height="8" rx="2.6"/><path d="M7 1v2M7 11v2"/>'), gauntlet: svg('<path d="M2.5 2.5l9 9M11.5 2.5l-9 9"/>') };
+  const KINDS = [['mask-shard', 'Mask Shard'], ['spool-fragment', 'Spool Fragment'], ['memory-locket', 'Memory Locket'], ['craftmetal', 'Craftmetal'], ['pale-oil', 'Pale Oil'], ['flea', 'Lost Flea']];
+  const PLACES = [['bench', 'Benches'], ['bellway', 'Bellways'], ['ventrica', 'Ventrica'], ['gauntlet', 'Enemy gauntlets']];
+  const off = new Set(['bench']);
+  const at = (x, y) => 'left:' + (x / M.W * 100).toFixed(3) + '%;top:' + (y / M.H * 100).toFixed(3) + '%';
+  function mapHtml() {
+    const count = {}; const seen = new Map(); let dots = '';
+    CO.PIECES.forEach((p) => { const k = p[0]; if (!KINDS.some((x) => x[0] === k)) return; const room = R.roomOf(R.sceneOf(p[2])); if (!room) return;
+      count[k] = (count[k] || 0) + 1; if (off.has(k)) return; const n = seen.get(room.scene) || 0; seen.set(room.scene, n + 1); dots += '<i class="mp-dot is-' + k + '" style="' + at(room.x + n * 14, room.y) + '"></i>'; });
+    let pins = ''; for (const p of R.pinsOn(R.mapFlags(null))) { count[p[0]] = (count[p[0]] || 0) + 1; if (!off.has(p[0])) pins += '<span class="mp-pin is-' + p[0] + '" style="' + at(p[1], p[2]) + '">' + GLYPH[p[0]] + '</span>'; }
+    const ins = new Map(); for (const x of SS.gauntlets.GAUNTLETS) { const room = R.roomOf(x.scene); if (!room) continue; count.gauntlet = (count.gauntlet || 0) + 1; if (off.has('gauntlet')) continue; const n = ins.get(room.scene) || 0; ins.set(room.scene, n + 1); pins += '<span class="mp-pin is-gauntlet" style="' + at(room.x + n * 16, room.y - 16) + '">' + GLYPH.gauntlet + '</span>'; }
+    // Each area's name at the middle of its rooms.
+    const sum = {}; for (const [scene, r] of Object.entries(M.ROOMS)) { const a = R.areaOf(scene); if (!a || !r[2]) continue; const s = sum[a] || (sum[a] = [0, 0, 0]); s[0] += r[0] + r[2] / 2; s[1] += r[1] + r[3] / 2; s[2]++; }
+    const names = Object.entries(sum).filter(([, s]) => s[2] > 3).map(([a, s]) => '<span class="mk-name" style="' + at(s[0] / s[2], s[1] / s[2]) + '">' + CO.AREAS[a].en + '</span>').join('');
+    window.MK_COUNT = count;
+    return '<div class="mk-map"><img class="mp-rooms" src="assets/map/rooms.webp" alt="" width="' + M.W + '" height="' + M.H + '">' + pins + dots + names + '</div>';
+  }
+  const zoom = '<div class="mk-zoom"><button type="button" title="Closer">+</button><button type="button" title="Further">−</button><button type="button" title="Full screen">⤢</button></div>';
+  const search = (cls) => '<label class="search ' + cls + '"><svg class="ic" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="5" cy="5" r="3.6"/><path d="M7.8 7.8 L10.8 10.8"/></svg><input type="search" placeholder="Search the map: a room, an area, a piece"></label>';
+  const lay = (k, name, place) => '<button type="button" class="lay" data-k="' + k + '" aria-pressed="' + !off.has(k) + '">' + (place ? '<span class="mp-pin is-' + k + '">' + GLYPH[k] + '</span>' : '<i class="mp-dot is-' + k + '"></i>') + name + ' <b>' + (MK_COUNT[k] || 0) + '</b></button>';
+  const layers = () => '<p class="lay-h"><span class="lbl">Missing</span></p><div class="lays">' + KINDS.map(([k, n]) => lay(k, n)).join('') + '</div><p class="lay-h"><span class="lbl">Places</span></p><div class="lays">' + PLACES.map(([k, n]) => lay(k, n, 1)).join('') + '</div>';
+  const near = '<section class="near"><h3 class="ct-h">Closest to your bench</h3>' + [['gauntlet', 'Coral Tower 1', 'Sands of Karak', 'in your room'], ['memory-locket', 'Memory Locket', 'Bellhart', '6 rooms away'], ['craftmetal', 'Craftmetal', 'Blasted Steps', '7 rooms away'], ['mask-shard', 'Mask Shard', 'Blasted Steps', '8 rooms away']].map(([k, a, b, c]) => '<p>' + (k === 'gauntlet' ? '<span class="mp-pin is-gauntlet">' + GLYPH.gauntlet + '</span>' : '<i class="mp-dot is-' + k + '"></i>') + a + '<span>' + b + '</span><b>' + c + '</b></p>').join('') + '</section>';
+  const NOTES = { a: 'A · the sibling\'s: search above, the map with its floating zoom (+ − full screen) and the area names, the layers grouped under it (the picture is the switch), then what\'s closest.',
+    b: 'B · side panel: the map wide on the left; on the right the search, the layers one per line with their counts, and what\'s closest.',
+    c: 'C · the map first: the map fills the plate, the layers a compact legend floating on its corner, the search and zoom on its top edge; the list under it.' };
+  function render() {
+    const m = mapHtml(); let h = '';
+    if (st.v === 'a') h = search('a-search') + '<div class="mk-view a-view">' + zoom + m + '</div><div class="a-layers">' + layers() + '</div>' + near;
+    if (st.v === 'b') h = '<div class="b-body"><div class="mk-view b-view">' + zoom + m + '</div><aside class="b-side">' + search('') + '<div>' + layers() + '</div>' + near + '</aside></div>';
+    if (st.v === 'c') h = '<div class="mk-view c-view">' + search('c-search') + zoom + m + '<div class="c-legend">' + layers() + '</div></div><div class="c-near">' + near + '</div>';
+    document.getElementById('mk').innerHTML = h;
+  }
+  const url = (over) => '?' + new URLSearchParams(Object.assign({}, st, over)).toString();
+  html.classList.toggle('names-off', st.names === 'off');
+  if (st.w === '390' && !inner) { html.classList.add('is-framed'); document.querySelector('.page').remove(); const f = document.createElement('iframe'); f.className = 'mk-phone'; f.src = location.pathname + url({ inner: 1 }); document.body.prepend(f); }
+  if (inner) html.classList.add('is-inner');
+  for (const b of document.querySelectorAll('.mk-bar button')) b.setAttribute('aria-pressed', String(st[b.dataset.key] === b.dataset.val));
+  document.getElementById('mk-note').textContent = NOTES[st.v];
+  if (document.getElementById('mk')) render();
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('.mk-bar button'); if (b) { location.search = url({ [b.dataset.key]: b.dataset.val }); return; }
+    const l = e.target.closest('.lay'); if (l) { const k = l.dataset.k; if (off.has(k)) off.delete(k); else off.add(k); render(); }
+  });
+})();
+</script>
+</body>
+</html>

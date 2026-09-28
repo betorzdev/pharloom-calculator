@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gauntlet mark: variants</title>
+<!-- Design material, not part of the site (design/03-redesign.md, step 6). The enemy gauntlets'
+     mark on the Map: today two strokes crossed in a red-rimmed badge, which reads as an "x"
+     (Albert: it looks awful). Three ways, over the real map around Bellhart and Greymoor, with the
+     other marks as the site draws them. -->
+<base href="../">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/app.css">
+<script src="js/i18n.js"></script><script src="js/data.js"></script><script src="js/collectibles.js"></script>
+<script src="js/map.js"></script><script src="js/graph.js"></script><script src="js/rooms.js"></script><script src="js/gauntlets.js"></script>
+<style>
+.mk { max-width: var(--page-max); margin: 0 auto; padding: var(--sp-6) var(--page-pad) var(--sp-16); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-6); }
+.mk-v > b { display: block; margin-bottom: var(--sp-2); font-family: var(--font-num); font-size: var(--fs-2xs); letter-spacing: var(--track-label); text-transform: uppercase; color: var(--label); }
+.mk-v > i { display: block; margin-top: var(--sp-2); font-style: normal; font-size: var(--fs-xs); color: var(--muted); }
+.view { position: relative; height: 380px; overflow: hidden; background: var(--scene-bg); border: 1px solid var(--line); }
+.map { position: absolute; width: 330%; }
+.map img.rooms { display: block; width: 100%; height: auto; }
+.g { position: absolute; z-index: 3; display: grid; place-items: center; width: 26px; height: 26px; margin: -13px 0 0 -13px; border-radius: 50%; background: var(--badge); border: 1.5px solid var(--slot-red); box-shadow: 0 0 0 1px var(--badge-shadow), 0 2px 4px var(--badge-shadow); color: var(--slot-red); }
+.g img { width: 80%; height: 80%; object-fit: contain; }
+.g svg { width: 70%; height: 70%; }
+/* A · the arena's champion: the portrait of its last wave's enemy (the Journal's picture). */
+/* B · Hornet's needles crossed, drawn as needles (a thread's eye, a blade), not two strokes. */
+/* C · a banner of crossed needles over a shield, bigger, a medal of its own (no badge). */
+.v-c .g { width: 30px; height: 30px; margin: -15px 0 0 -15px; border-radius: 0; background: none; border: 0; box-shadow: none; filter: drop-shadow(0 1px 2px #000); }
+.v-c .g svg { width: 100%; height: 100%; }
+@media (max-width: 899px) { .mk { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="page"><div class="mk" id="mk"></div></div>
+<script>
+(function () {
+  const M = SS.map, R = SS.rooms, G = SS.gauntlets.GAUNTLETS;
+  const at = (x, y) => 'left:' + (x / M.W * 100).toFixed(3) + '%;top:' + (y / M.H * 100).toFixed(3) + '%';
+  const X = '<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2.5 2.5l9 9M11.5 2.5l-9 9"/></svg>';
+  const NEEDLES = '<svg viewBox="0 0 24 24" fill="currentColor"><g transform="rotate(45 12 12)"><path d="M12 1.5 L13.3 5 L12.8 19 L12 22.5 L11.2 19 L10.7 5 Z"/><circle cx="12" cy="4" r="0.9" fill="#0b0909"/></g><g transform="rotate(-45 12 12)"><path d="M12 1.5 L13.3 5 L12.8 19 L12 22.5 L11.2 19 L10.7 5 Z"/><circle cx="12" cy="4" r="0.9" fill="#0b0909"/></g></svg>';
+  const SHIELD = '<svg viewBox="0 0 30 30"><path d="M15 4 L25 7.5 V14 C25 20 20.5 24.5 15 26.5 C9.5 24.5 5 20 5 14 V7.5 Z" fill="#150d0d" stroke="var(--slot-red)" stroke-width="1.4"/><path d="M15 7 L22 9.5 V14 C22 18.4 19 21.8 15 23.4 C11 21.8 8 18.4 8 14 V9.5 Z" fill="none" stroke="var(--slot-red)" stroke-width="0.6" opacity="0.5"/><g fill="var(--hud-frame)"><g transform="rotate(40 15 15)"><path d="M15 6.5 L15.9 9 L15.5 22 L15 24 L14.5 22 L14.1 9 Z"/></g><g transform="rotate(-40 15 15)"><path d="M15 6.5 L15.9 9 L15.5 22 L15 24 L14.5 22 L14.1 9 Z"/></g></g></svg>';
+  const champ = (x) => { const w = x.waves[x.waves.length - 1]; return w && w[0] ? w[0][0] : null; };
+  const V = [['v-now', 'Today', 'two strokes crossed: reads as an "x".', () => X],
+    ['v-a', 'A · the arena\'s champion', 'the Journal\'s portrait of its last wave\'s enemy, on the red-rimmed badge: what you\'ll fight, at a glance.', (x) => champ(x) ? '<img src="assets/icons/journal/' + champ(x) + '.webp" alt="" onerror="this.replaceWith(document.createTextNode(\'\'))">' : NEEDLES],
+    ['v-b', 'B · the needles, drawn', 'Hornet\'s needles crossed, each with its thread\'s eye and blade, on the badge.', () => NEEDLES],
+    ['v-c', 'C · the challenge shield', 'a small shield in the slots\' red with the needles crossed over it: a medal of its own, no badge.', () => SHIELD]];
+  document.getElementById('mk').innerHTML = V.map(([cls, name, note, art]) => {
+    let h = '<img class="rooms" src="assets/map/rooms.webp" alt="">';
+    const ins = new Map();
+    for (const x of G) { const r = R.roomOf(x.scene); if (!r) continue; const n = ins.get(r.scene) || 0; ins.set(r.scene, n + 1); h += '<span class="g" style="' + at(r.x + n * 30, r.y) + '" title="' + x.id + '">' + art(x) + '</span>'; }
+    return '<div class="mk-v ' + cls + '"><b>' + name + '</b><div class="view"><div class="map" style="left:-110%;top:-95%">' + h + '</div></div><i>' + note + '</i></div>';
+  }).join('');
+})();
+</script>
+</body>
+</html>

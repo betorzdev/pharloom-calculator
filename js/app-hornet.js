@@ -163,13 +163,7 @@
       if (pin) {
         pin.style.left = pct(x, M.W); pin.style.top = pct(y, M.H);
         clip(pin, 'run'); face(pin, pts[i + 1].x - pts[i].x);
-        const v = pin.closest('.mp-view');
-        if (v && (v.scrollWidth > v.clientWidth || v.scrollHeight > v.clientHeight)) {
-          const px = pin.offsetLeft, py = pin.offsetTop;
-          if (px < v.scrollLeft || px > v.scrollLeft + v.clientWidth || py < v.scrollTop || py > v.scrollTop + v.clientHeight) {
-            v.scrollTo({ left: px - v.clientWidth / 2, top: py - v.clientHeight / 2 });
-          }
-        }
+        if (App.mapKeep) App.mapKeep(x, y);   // the view follows her when she walks out of it
       }
       if (u < 1 && !document.hidden) requestAnimationFrame(step); else done();
     };

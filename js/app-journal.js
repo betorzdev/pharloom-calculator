@@ -133,7 +133,7 @@
         <div class="seg pg-seg" role="group" aria-label="${esc(t('pgShow'))}">
           <button type="button" data-act="hjShow" data-value="missing" aria-pressed="${missing}">${esc(t('pgMissing'))}</button>
           <button type="button" data-act="hjShow" data-value="all" aria-pressed="${!missing}">${esc(t('pgAll'))}</button></div>`
-      : `<p class="saves-note">${esc(t('hjFree'))}</p>`;
+      : '';
     const current = list.find((x) => x.e.id === picked) || null;
     sec.innerHTML = `<div class="hj">${brackets}${screenHead(esc(t('navJournal')), head)}
       <div class="hj-body">
