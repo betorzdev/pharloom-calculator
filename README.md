@@ -36,7 +36,8 @@ npm run check-pack -- <folder> # the site against a folder of real saves: the 10
 The map is extracted from the installed game: `tools/extract-map.py` (see its header); and the
 game's arenas, which say how a save marks each gauntlet cleared, are listed by
 `tools/extract-battles.py`; each Crest's slash timings, into `js/hero.js`, by
-`tools/extract-hero.py`; and how the rooms connect, into `js/graph.js`, by `tools/extract-graph.py`.
+`tools/extract-hero.py`; how the rooms connect, into `js/graph.js`, by `tools/extract-graph.py`; and where each Journal
+entry's enemies are placed, into `js/journal-rooms.js`, by `tools/extract-journal-rooms.py`.
 
 ## Credits
 

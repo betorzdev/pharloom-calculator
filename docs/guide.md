@@ -104,6 +104,14 @@ ones. An entry is complete when the save lists it with its kills done: the game 
 for the entries it completes another way, and on the saves where Nuu has given the Memento the
 site counts all 230. In Free mode, the whole Journal.
 
+**Where**: each entry says the areas its enemies are placed in, the most first, from the game's
+own files (208 of the 237; a boss the game summons instead says its fight's places). In a save,
+also the nearest one from your bench, in rooms, and with no entry picked the pane lists what's
+missing closest, with the kills each still needs; tap one to read it. The rooms are counted by the
+game's doors and the stations you've opened. Verdania, the Cradle, the Mist and the caravan's
+insides are reached some other way (a memory, a lift, the maze), so their entries say where, not
+how far.
+
 ### Combat
 
 Your build against one enemy. Every enemy has five damage modifiers, one per level of what

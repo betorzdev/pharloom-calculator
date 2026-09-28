@@ -792,6 +792,19 @@ boss's minions, the Void Tendrils' tablet), so "listed with its kills done" is t
 function (`completion.journalDone`) for every screen, and `check-pack` checks it against Nuu's
 Memento (`nuuMementoAwarded`: 230 of 230). Found on the way: the Void Tendrils, with no kill
 count, were counted complete before being seen (`0 >= null`), on Your game and in `check-pack`.
+Then (28 September) **where to find each entry**: an enemy placed in a scene carries an
+EnemyDeathEffects that points at its EnemyJournalRecord (237 in `journalrecords.bundle`, each
+with its NAME_ key), so `tools/extract-journal-rooms.py` counts them per scene into
+`js/journal-rooms.js`: 208 entries, 2,622 enemies in 366 scenes (the other 29 are summoned at run
+time: bosses, a hive's). The Journal says each entry's areas (a scene's area comes from the data:
+each map branch takes the area its pieces, wishes and gauntlets carry) and, in a save, the nearest
+one by rooms from the bench (`js/graph.js`); with nothing picked, what's missing closest. The same
+pass read each enemy's health in the game (HealthManager): **the wiki's matches it for 202 of the
+208**; Overgrown Pilgrim (20 in the game, 23 on the wiki) and Pondcatcher (30, 25) differ, the
+rest are scripted cases (an untouchable Skarr Scout, the Second Sentinel's 99,999, the Clover
+Dancers counted as one fight). The site keeps the wiki's numbers (CLAUDE.md). Known gap: the
+graph has doors, not lifts or memories, so Verdania, the Cradle, the Mist and the caravan's
+insides are islands in it.
 
 **Phase 5 has started** (the same day): `js/engine.js` takes an enemy (`compute(state, { foe,
 black })`): each hit is one product rounded once (weapon × the enemy's modifier at the level of

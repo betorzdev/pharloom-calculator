@@ -1257,6 +1257,13 @@ kbd {
 .mp-near-list { list-style: none; margin: var(--sp-3) 0 0; padding: 0; display: grid; gap: var(--sp-1); }
 .mp-near-list li { display: grid; grid-template-columns: 18px minmax(0, 1fr) auto auto; align-items: center; gap: var(--sp-3); font-size: var(--fs-sm); color: var(--ink); }
 .mp-near-list .mp-dot, .mp-near-list .mp-pin { position: static; margin: 0; }
+.mp-near-list img { width: 18px; height: 20px; object-fit: contain; }
+.mp-near-list .text-btn { justify-self: start; text-align: left; font-size: var(--fs-sm); }
+.hj-where { margin: 0; font-size: var(--fs-sm); color: var(--ink-2); }
+.hj-near { margin-top: var(--sp-4); width: 100%; text-align: left; }
+.hj-near .mp-near-list { gap: var(--sp-3); }
+.hj-near .mp-near-list li { grid-template-columns: 18px minmax(0, 1fr) auto; row-gap: 0; }
+.hj-near .mp-near-area { grid-column: 2 / -1; grid-row: 2; white-space: normal; }
 .mp-near-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .mp-near-area { font-size: var(--fs-xs); color: var(--muted); white-space: nowrap; }
 .mp-near-list b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-xs); font-weight: 500; color: var(--ink-strong); white-space: nowrap; }

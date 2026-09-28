@@ -268,6 +268,11 @@
     ftType_void:    { es: 'vacío', en: 'void' },
 
     /* The Hunter's Journal (js/app-journal.js) */
+    hjWhere:        { es: 'Dónde', en: 'Where' },
+    hjNearest:      { es: 'Lo más cerca', en: 'Nearest' },
+    hjNear:         { es: 'Lo que te falta, más cerca de tu banco', en: 'What\'s missing, closest to your bench' },
+    hjLeft:         { es: 'faltan {n}', en: '{n} to go' },
+    hjLeft1:        { es: 'falta {n}', en: '{n} to go' },
     hjMemento:      { es: 'Para el Recuerdo de cazadora', en: 'For the Hunter\'s Memento' },   // as INV_NAME_HUNTER_MEMENTO names it
     hjSeen:         { es: '{n} de {m} vistas', en: '{n} of {m} seen' },
     hjKills:        { es: 'Derrotados', en: 'Defeated' },

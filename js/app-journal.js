@@ -6,7 +6,11 @@
    the Void Tendrils' tablet), as the author's full Journal shows, and npm run check-pack checks
    it against Nuu's Memento (230 required, 231 in Steel Soul; six optional). An entry not yet
    seen is a dark silhouette; one seen and not complete, half-lit with its kills. In Free mode,
-   the whole Journal, complete. Shares SS.app with js/app.js (see there). */
+   the whole Journal, complete.
+   Where to find each one: js/journal-rooms.js, the enemies the game places in each scene (its own
+   files), named by area; a boss the game spawns instead, by its wiki infobox (js/enemies.js
+   BOSSES). In a save, the nearest place from your bench in rooms (js/rooms.js), and in the pane,
+   while nothing is picked, what's missing closest. Shares SS.app with js/app.js (see there). */
 (() => {
   'use strict';
   const SS = globalThis.SS;
@@ -18,6 +22,34 @@
   const portrait = (id) => `assets/icons/journal/${id}.webp`;
   const NAME = new Map(J.BOOK.map((e) => [e.id, e]));
   let picked = null;
+  const R = SS.rooms, CO = SS.collectibles, EN = SS.enemies, JR = SS.journalRooms || {};
+  const NEAR = 10;
+  const areaName = (a) => (a && CO.AREAS[a] ? pick(CO.AREAS[a]) : '');
+  // Where an entry is: its areas, the one with the most first; a boss that isn't placed, its infobox's places.
+  function whereOf(e) {
+    const placed = JR[e.key] || [];
+    if (placed.length) {
+      const by = new Map();
+      for (const [scene, n] of placed) { const a = R.areaOf(scene); if (a) by.set(a, (by.get(a) || 0) + n); }
+      return [...by].sort((a, b) => b[1] - a[1]).map(([a]) => areaName(a));
+    }
+    const foe = EN.FOES.find((f) => f.key === e.key && f.boss);
+    const info = foe && EN.BOSSES[foe.page];
+    return info && info.where ? info.where.map((w) => pick(w)) : [];
+  }
+  // The nearest place it's in from your bench: { area, n } or null.
+  let walked = null;
+  function nearest(e, g) {
+    if (!g || !g.bench) return null;
+    if (!walked || walked.bench !== g.bench) walked = { bench: g.bench, w: R.walk(g.bench, g.lit) };
+    let best = null;
+    for (const [scene] of JR[e.key] || []) {
+      const n = R.steps(g.bench, scene, g.lit, walked.w);
+      if (n != null && (!best || n < best.n)) best = { n, area: R.areaOf(scene) };
+    }
+    return best;
+  }
+  const stepsText = (n) => (n === 0 ? t('mapHere') : t('mapSteps', { n: num(n) }));
 
   // Each entry's state in a game: 'done', 'seen' (listed, kills short) or 'unseen'.
   function states() {
@@ -35,7 +67,8 @@
   }
 
   function detail(x) {
-    if (!x) return `<p class="inv-hint">${esc(t('hjHint'))}</p>`;
+    // With nothing picked, the pane offers what's missing closest to your bench.
+    if (!x) return `<p class="inv-hint">${esc(t('hjHint'))}</p>${nearList(shown, App.game())}`;
     const { e, kills, state } = x;
     const by = (e.by || []).map((id) => (NAME.get(id) ? pick(NAME.get(id).name) : null)).filter(Boolean);
     return `<img class="hj-big is-${state}" src="${portrait(e.id)}" alt="">
@@ -46,7 +79,28 @@
       ${state !== 'unseen' && e.desc ? `<p class="inv-desc">${esc(pick(e.desc))}</p>` : ''}
       ${state === 'done' && e.note ? `<p class="hj-note">${esc(pick(e.note))}</p>` : ''}
       ${state !== 'done' && by.length ? `<p class="hj-by">${esc(t('hjBy', { names: by.join(', ') }))}</p>` : ''}
-      ${state !== 'done' && e.inspect ? `<p class="hj-by">${esc(t('hjInspect'))}</p>` : ''}`;
+      ${state !== 'done' && e.inspect ? `<p class="hj-by">${esc(t('hjInspect'))}</p>` : ''}
+      ${whereHtml(e, state)}`;
+  }
+
+  function whereHtml(e, state) {
+    const where = whereOf(e);
+    const near = state !== 'done' ? nearest(e, App.game()) : null;
+    return (where.length ? `<p class="hj-where"><span class="save-k">${esc(t('hjWhere'))}</span> <span${NT}>${esc(where.slice(0, 4).join(', '))}</span></p>` : '')
+      + (near ? `<p class="hj-where"><span class="save-k">${esc(t('hjNearest'))}</span> <span${NT}>${esc(areaName(near.area))}</span>, ${esc(stepsText(near.n))}</p>` : '');
+  }
+  // What's missing closest to your bench: the entries not complete, by rooms, with the kills left.
+  function nearList(list, g) {
+    if (!g || !g.bench) return '';
+    const rows = list.filter((x) => x.state !== 'done' && !x.e.optional).map((x) => ({ x, near: nearest(x.e, g) }))
+      .filter((r) => r.near).sort((a, b) => a.near.n - b.near.n).slice(0, NEAR);
+    if (!rows.length) return '';
+    return `<section class="mp-near hj-near" aria-labelledby="hj-near-h"><h3 class="ct-h" id="hj-near-h">${esc(t('hjNear'))}</h3>
+      <ol class="mp-near-list">${rows.map(({ x, near }) => `<li><img src="${portrait(x.e.id)}" alt="">
+        <button type="button" class="text-btn mp-near-name" data-act="hjPick" data-key="${x.e.id}"${NT}>${esc(pick(x.e.name))}</button>
+        <span class="mp-near-area"><span${NT}>${esc(areaName(near.area))}</span> · ${esc(t('hjLeft', { n: num(Math.max(0, x.e.kills - x.kills)) }))}</span>
+        <b>${esc(stepsText(near.n))}</b></li>`).join('')}</ol>
+      <p class="pg-note">${esc(t('mapNearNote'))}</p></section>`;
   }
 
   let shown = [];

@@ -17,13 +17,19 @@
     Memory_Ant_Queen: 'Ant_Queen', Memory_Coral_Tower: 'Coral_Tower_01',
   };
 
+  /* Scene names by their lower case too: a scene nobody enters by a door (a boss's arena, a memory)
+     keeps the bundle's lower-case name in js/graph.js and js/journal-rooms.js, as Unity doesn't care. */
+  const LOWER = new Map(Object.keys(M.ROOMS).map((k) => [k.toLowerCase(), k]));
+  const ENTRANCE_LOWER = new Map(Object.entries(ENTRANCE).map(([k, v]) => [k.toLowerCase(), v]));
   function roomOf(scene) {
     if (typeof scene !== 'string' || !scene) return null;
-    if (ENTRANCE[scene]) { const r = roomOf(ENTRANCE[scene]); return r && { ...r, exact: false }; }
+    const door = ENTRANCE[scene] || ENTRANCE_LOWER.get(scene.toLowerCase());
+    if (door) { const r = roomOf(door); return r && { ...r, exact: false }; }
     let s = scene;
     for (;;) {
-      const r = M.ROOMS[s];
-      if (r) return { scene: s, x: r[0] + r[2] / 2, y: r[1] + r[3] / 2, area: r[4], exact: s === scene };
+      const key = M.ROOMS[s] ? s : LOWER.get(s.toLowerCase());
+      const r = key && M.ROOMS[key];
+      if (r) return { scene: key, x: r[0] + r[2] / 2, y: r[1] + r[3] / 2, area: r[4], exact: s === scene };
       const cut = s.lastIndexOf('_');
       if (cut <= 0) return null;
       s = s.slice(0, cut);
@@ -96,6 +102,27 @@
     return out;
   }
 
-  SS.rooms = { ENTRANCE, roomOf, sceneOf, graphScene, walk, steps, path };
+  /* A scene's area as the game names it (js/collectibles.js AREAS, the save's currentArea ids).
+     The map's branches (Bone, Crawl…) aren't those ids; the join comes from the data: every piece,
+     wish and gauntlet has its scene and its area, and each branch takes the area most of its own
+     carry. Four branches carry none and are named here; Surface has no area of its own. */
+  const AREA_FALLBACK = { Abyss: 'ABYSS', Cradle: 'CRADLE', 'Dust Maze': 'MISTMAZE', Tut: 'MOSSCAVE' };
+  let AREA_OF = null;
+  function areaOf(scene) {
+    if (!AREA_OF) {
+      const CO = SS.collectibles || require('./collectibles.js');
+      const GA = SS.gauntlets || require('./gauntlets.js');
+      const vote = {};
+      const add = (sc, area) => { const r = sc && area && roomOf(sc); if (r) (vote[r.area] = vote[r.area] || {})[area] = (vote[r.area][area] || 0) + 1; };
+      for (const p of [...CO.PIECES, ...CO.WISHES]) add(sceneOf(p[2]), p[3]);
+      for (const g of GA.GAUNTLETS) add(g.scene, g.area);
+      AREA_OF = { ...AREA_FALLBACK };
+      for (const [branch, v] of Object.entries(vote)) AREA_OF[branch] = Object.entries(v).sort((a, b) => b[1] - a[1])[0][0];
+    }
+    const r = roomOf(scene);
+    return r ? AREA_OF[r.area] || null : null;
+  }
+
+  SS.rooms = { ENTRANCE, roomOf, sceneOf, graphScene, walk, steps, path, areaOf };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.rooms;
 })();

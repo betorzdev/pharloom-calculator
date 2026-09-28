@@ -280,7 +280,8 @@ def main(game):
 
     # The pins in the image's pixels; one of a kind per spot (a room's two states draw it twice).
     PINS = []
-    for p in sorted(pins, key=lambda p: (p['kind'], p['scene'], p['x'], p['y'])):
+    # An Act 3 room's pin gives way to the one it replaces (the map shows the world before Act 3).
+    for p in sorted(pins, key=lambda p: (p['kind'], '_Destroyed' in p['scene'], p['scene'], p['x'], p['y'])):
         px, py = round((p['x'] - minx) * PPU_OUT), round((maxy - p['y']) * PPU_OUT)
         if any(q[0] == p['kind'] and abs(q[1] - px) < 12 and abs(q[2] - py) < 12 for q in PINS):
             continue

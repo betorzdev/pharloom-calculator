@@ -65,3 +65,21 @@ test('getting around: the game\'s doors, and the stations a save has opened; eve
   for (let i = 1; i < way.length; i++) assert.ok((G[way[i - 1]] || []).includes(way[i]), `${way[i - 1]} → ${way[i]}`);
   assert.strictEqual(R.steps('Tut_01', 'Tut_01', []), 0);
 });
+
+test('where each Journal entry is: the game\'s own placements, each scene in one of the game\'s areas', () => {
+  const JR = require('../js/journal-rooms.js');
+  const J = require('../js/journal.js');
+  const CO = require('../js/collectibles.js');
+  const keys = new Set(J.BOOK.map((e) => e.key));
+  assert.ok(Object.keys(JR).length >= 200, `${Object.keys(JR).length} entries placed`);
+  for (const k of Object.keys(JR)) assert.ok(keys.has(k), `${k} isn't a Journal entry`);
+  /* Every placement's scene is named by an area the game names, but the map's Surface (it has no
+     area of its own) and the Red Memory (not on the map); a boss's arena or a memory by its lower
+     case name, as the bundles have it. */
+  const scenes = [...new Set(Object.values(JR).flat().map(([s]) => s))];
+  const noArea = scenes.filter((s) => !CO.AREAS[R.areaOf(s)]);
+  assert.ok(noArea.every((s) => s === 'memory_red' || (R.roomOf(s) || {}).area === 'Surface'), `no area: ${noArea.join(' ')}`);
+  assert.strictEqual(R.roomOf('bone_05_boss').scene, 'Bone_05');
+  assert.strictEqual(R.areaOf('Greymoor_04'), 'GREYMOOR');
+  assert.strictEqual(R.areaOf('Tut_01'), 'MOSSCAVE');
+});
