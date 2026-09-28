@@ -165,6 +165,26 @@
     return `<div class="ct-figs">${needle}${tools}${skills}${body}${effects}</div>`;
   }
 
+  /* The figures in one strip, for a narrow window, where the full list goes below the controls:
+     the slash, the Silk Skill and the first Tool that hurts (by their icon), masks and silk. It
+     sits on the window's bottom edge while you pick (the CSS shows it only there). */
+  function summary(r) {
+    const n = r.needle;
+    const own = !!D.CRESTS.find((c) => c.id === r.state.crest).attacks;
+    const cell = (k, v, img = '') => `<div class="ct-sum-cell">${img}<span class="ct-sum-k"${img ? NT : ''}>${k}</span><b>${v}</b></div>`;
+    const pic = (list, id, name) => `<img src="${icon(list, id)}" alt="" title="${esc(name)}">`;
+    const skill = r.skills.find((s) => s.equipped);
+    const tool = r.tools.find((x) => x.attacks.length);
+    const cells = [
+      cell(esc(own ? t('ctAtt_' + n.attacks[0].id) : t('ctSlash')), num(own ? n.attacks[0].total : n.slash)),
+      skill ? (() => { const nm = pick(D.SKILLS.find((x) => x.id === skill.id).name); return cell(esc(nm), num(skill.total), pic('skills', skill.id, nm)); })() : '',
+      tool ? (() => { const nm = pick(TOOL.get(tool.id).name); return cell(esc(nm), num(tool.attacks[0].total), pic('tools', tool.id, nm)); })() : '',
+      cell(esc(t('cat_masks')), num(r.health.masks)),
+      cell(esc(t('invSilk')), num(r.silk.spool)),
+    ].filter(Boolean).join('');
+    return `<div class="ct-sum" aria-label="${esc(t('ctSummary'))}">${cells}</div>`;
+  }
+
   App.screens.tools = (sec) => {
     const { st, locked } = current();
     const r = E.compute(st);
@@ -175,7 +195,7 @@
         <aside class="ct-side">${slotsHtml(st, r)}</aside>
         ${controls(st, locked)}
         ${figures(r)}
-      </div></div>`;
+      </div>${summary(r)}</div>`;
   };
 
   /* ── Changing the build (Free mode only) ── */

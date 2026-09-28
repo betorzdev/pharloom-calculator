@@ -76,6 +76,9 @@ The Architect and the Witch split their slashes (the Architect drills: 0.9× + 0
 Needle; both have their own down- and run-slashes), and the screen shows all three attacks with
 their hits, what holding adds and what a landed hit adds; the others slash once at the Needle's
 damage. The Tools equipped that deal no damage are listed with the game's text of what they do.
+On a narrow screen, where the figures go below the controls, a strip on the bottom edge keeps
+the main ones in view while you pick: the slash, your Silk Skill and your first Tool that hurts
+(by their icons), masks and silk.
 
 **Share** copies a link that opens the build on screen as it is (yours from a save too). The
 link is readable (`#v=1&crest=architect&needle=4&tools=straight-pin,compass…`) and carries only

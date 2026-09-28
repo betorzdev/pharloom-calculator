@@ -163,6 +163,7 @@
     ct_red:         { es: 'Rojas', en: 'Red' },
     ct_blue:        { es: 'Azules', en: 'Blue' },
     ct_yellow:      { es: 'Amarillas', en: 'Yellow' },
+    ctSummary:      { es: 'Resumen de tus cifras', en: 'Your figures at a glance' },
     ctOver:         { es: '{n} de más', en: '{n} too many' },
     ctFull:         { es: 'No quedan huecos para herramientas {c}', en: 'No {c} slots left' },
     ctStage:        { es: 'evolución {n}', en: 'evolution {n}' },

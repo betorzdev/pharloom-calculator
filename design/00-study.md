@@ -763,7 +763,8 @@ multipliers and checks each one against its sentence, failing if the wiki change
 of the passive Tools in the game's words, and the build in the URL (`js/codec.js`, readable, only
 what differs from the base, the Tools by id so a patch that reorders the lists doesn't break a
 link) with Share. **Phase 3 is done** but for the DPS figure, which still waits for the attack
-speed per Crest (§2.3's gap), and a figures summary that stays in view on a phone.
+speed per Crest (§2.3's gap). The figures summary on a phone came on 28 September: a strip on
+the window's bottom edge (the Inventory's detail bar, the same frame), below 1,100 px.
 
 **Phase 4 is done** (the same day): the Journal screen, with the wiki's 237 portraits paired to the
 entries by the page each links to (pairing by the table's order shifted every row after the
