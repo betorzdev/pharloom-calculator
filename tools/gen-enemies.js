@@ -15,7 +15,10 @@
                            written from the game's names for the place or the boss it names.
      · attacks, staggers   each boss page's "Behaviour and Tactics": the bold attack names
                            (the wiki's, in English: the game doesn't name attacks), the masks
-                           from {{Damage|…}} (1 when the wiki gives none) and {{Stagger|…|hits}}. */
+                           from {{Damage|…}} (1 when the wiki gives none) and {{Stagger|…|hits}}.
+     · where, drops        each boss page's infobox ({{SS Infobox Boss}}): its location's links
+                           and its drops' links, by the game's names; a drop the game doesn't name
+                           (the wiki's "Access to…", "Fast travel via Bellways") isn't taken. */
 'use strict';
 const path = require('path');
 const W = require('./wiki.js');
@@ -149,8 +152,34 @@ function tactics(title) {
   return { attacks, staggers };
 }
 
+/* A boss page's infobox: where it's fought and what it gives, by the game's names. A link's
+   label goes first ("[[Sands_of_Karak#…|Coral Tower]]" is Coral Tower). A place the game doesn't
+   name keeps the wiki's English, as CLAUDE.md's third source says; a drop it doesn't name is left
+   out. A Crest is named as js/data.js names it. */
+function infobox(title, crests) {
+  const box = W.templates(W.page(title), 'SS Infobox Boss')[0];
+  if (!box) return null;
+  const f = W.fields(box);
+  const links = (v) => [...String(v || '').matchAll(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g)]
+    .map((m) => (m[2] || m[1]).replace(/ \(Silksong\)$/, '').trim()).filter((x) => !/^(File|Category):/i.test(x));
+  const uniq = (list) => list.filter((x, i) => list.findIndex((y) => y.en === x.en) === i);
+  // Not a place: an Act, or one of the game's titles in capitals (MAP_LIST_TITLE, «VÍAS CAMPANA»).
+  const place = (x) => !/^ACT_/.test(x.key || '') && x.es !== x.es.toUpperCase();
+  const where = uniq(links(f.location).map((en) => gameName(en) || { es: en, en }).filter(place));
+  /* Not a thing it gives: a place it opens (the wiki's "Access to [[Bone Bottom]]": an area's
+     title, a Bellshrine, the Citadel, a bench), an ending (Grand Mother Silk's), a boss it leads to. */
+  const NOT_A_DROP = /_MAIN$|_SUPER$|^ENDING_|^(BELLSHRINE|CITY_OF_SONG|COG_CORE|WEAVER_SHRINE|KEY_BENCH|NAME_)/;
+  const drops = uniq(links(f.drops).map((en) => {
+    const c = crests.find((x) => x.name.en + ' Crest' === en || x.name.en === en);
+    return c ? c.name : gameName(en);
+  }).filter((x) => x && !NOT_A_DROP.test(x.key)));
+  return { where: where.length ? where : undefined, drops: drops.length ? drops : undefined };
+}
+
 (async () => {
   N = await names();
+  require('../js/data.js');
+  const CRESTS = globalThis.SS.data.CRESTS;
 
   const rows = masterRows('=== Standard Enemies ===', false).concat(masterRows('=== Bosses and Minibosses ===', true));
   const ids = new Set();
@@ -173,6 +202,13 @@ function tactics(title) {
     const t = tactics(page);
     if (t && (t.attacks.length || t.staggers.length)) ATTACKS[W.slug(page)] = t;
   }
+  // Where each boss is fought and what it gives, per boss page.
+  const BOSSES = {};
+  for (const page of [...new Set(rows.filter((r) => r.boss).map((r) => r.page))].sort()) {
+    let b = null;
+    try { b = infobox(page, CRESTS); } catch (e) { b = null; }   // a page not fetched: no infobox
+    if (b && (b.where || b.drops)) BOSSES[W.slug(page)] = b;
+  }
 
   const std = foes.filter((f) => !f.boss).length;
   const header = `js/enemies.js — every enemy and boss: health, black-threaded health, the five damage
@@ -192,7 +228,9 @@ function tactics(title) {
        page      the wiki page, the key into ATTACKS.
      ATTACKS   per boss page: attacks (name in the wiki's English, the game doesn't name attacks;
                masks = [1] per hit when the wiki gives none, [1, 1] is two masks; type = 'void',
-               'fire'…; where = the fight or phase) and staggers (hits to stagger, in page order).`;
-  const size = write(OUT, header, 'enemies', [['FOES', foes], ['ATTACKS', ATTACKS]]);
-  console.log(`js/enemies.js: ${std} enemy rows, ${foes.length - std} boss rows, ${Object.keys(ATTACKS).length} boss pages with attacks (${(size / 1024).toFixed(1)} KB)`);
+               'fire'…; where = the fight or phase) and staggers (hits to stagger, in page order).
+     BOSSES    per boss page: where (the places it's fought, the game's names) and drops (what
+               it gives that the game names), from its infobox.`;
+  const size = write(OUT, header, 'enemies', [['FOES', foes], ['ATTACKS', ATTACKS], ['BOSSES', BOSSES]]);
+  console.log(`js/enemies.js: ${std} enemy rows, ${foes.length - std} boss rows, ${Object.keys(ATTACKS).length} boss pages with attacks, ${Object.keys(BOSSES).length} with where and drops (${(size / 1024).toFixed(1)} KB)`);
 })().catch((e) => { console.error(e.message); process.exitCode = 1; });

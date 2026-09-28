@@ -15,7 +15,9 @@
        page      the wiki page, the key into ATTACKS.
      ATTACKS   per boss page: attacks (name in the wiki's English, the game doesn't name attacks;
                masks = [1] per hit when the wiki gives none, [1, 1] is two masks; type = 'void',
-               'fire'…; where = the fight or phase) and staggers (hits to stagger, in page order). */
+               'fire'…; where = the fight or phase) and staggers (hits to stagger, in page order).
+     BOSSES    per boss page: where (the places it's fought, the game's names) and drops (what
+               it gives that the game names), from its infobox. */
 (() => {
   'use strict';
   const SS = globalThis.SS || (globalThis.SS = {});
@@ -3456,6 +3458,191 @@
     },
   };
 
-  SS.enemies = { FOES, ATTACKS };
+  const BOSSES = {
+    'bell-beast': {
+      where: [{ es: 'La Médula', en: 'The Marrow', key: 'PATH_OF_BONE' }],
+      drops: [{ es: 'Corazón de seda', en: 'Silk Heart', key: 'MEMORY_MSG_TITLE_SILKHEART' }],
+    },
+    'bell-eater': {
+      drops: [
+        {
+          es: 'Reclamo de bestezuelas',
+          en: 'Beastling Call',
+          key: 'INV_NAME_SKILL_BELLBEAST_MELODY',
+        },
+      ],
+    },
+    broodmother: {
+      where: [{ es: 'La Losa', en: 'The Slab', key: 'STATION_NAME_PEAK' }],
+      drops: [
+        {
+          es: 'Ojo de la Madre Ponedora',
+          en: 'Broodmother\'s Eye',
+          key: 'INV_NAME_BROODMOTHER_REMAINS',
+        },
+      ],
+    },
+    'clover-dancers': {
+      where: [{ es: 'Lost Verdania', en: 'Lost Verdania', key: 'GROVE_SUPER+GROVE_MAIN' }],
+      drops: [{ es: 'Corazón siamés', en: 'Conjoined Heart', key: 'INV_NAME_HEART_CLOVER' }],
+    },
+    'cogwork-dancers': { where: [{ es: 'Núcleo Mecánico', en: 'Cogwork Core', key: 'COG_CORE' }] },
+    crawfather: {
+      where: [{ es: 'Lago Cuervón', en: 'Craw Lake', key: 'CROW_LAKE_MAIN' }],
+      drops: [
+        { es: 'Recuerdo cuervón', en: 'Craw Memento', key: 'INV_NAME_MEMENTO_CROWMAN' },
+        { es: 'Nido campana', en: 'Crawbell', key: 'INV_NAME_CRAWBELL' },
+      ],
+    },
+    'crust-king-khann': {
+      where: [{ es: 'Torre de Coral', en: 'Coral Tower', key: 'CORAL_TOWER_MAIN' }],
+      drops: [{ es: 'Corazón de corteza', en: 'Encrusted Heart', key: 'INV_NAME_HEART_CORAL' }],
+    },
+    'disgraced-chef-lugoli': {
+      where: [{ es: 'Camino del Pecador', en: 'Sinner\'s Road', key: 'DUSTPENS_MAIN' }],
+      drops: [{ es: 'Gusasucio en escabeche', en: 'Pickled Muckmaggot', key: 'INV_NAME_PICKLEDEGG' }],
+    },
+    'father-of-the-flame': {
+      where: [{ es: 'Espesura Fatua', en: 'Wisp Thicket', key: 'WISP' }],
+      drops: [{ es: 'Farol de fuego fatuo', en: 'Wispfire Lantern', key: 'WISP_LANTERN_NAME' }],
+    },
+    'first-sinner': {
+      where: [{ es: 'La Losa', en: 'The Slab', key: 'STATION_NAME_PEAK' }],
+      drops: [{ es: 'Furia rúnica', en: 'Rune Rage', key: 'INV_NAME_SKILL_SILKBOMB' }],
+    },
+    'forebrothers-signis-and-gron': { where: [{ es: 'Muelles Profundos', en: 'Deep Docks', key: 'DOCKS' }] },
+    'fourth-chorus': { where: [{ es: 'Campos Lejanos', en: 'Far Fields', key: 'WILDS_MAIN' }] },
+    'grand-mother-silk': { where: [{ es: 'La Cuna', en: 'The Cradle', key: 'CRADLE' }] },
+    'groal-the-great': {
+      where: [{ es: 'Aguas Biliares', en: 'Bilewater', key: 'SHADOW_MAIN' }],
+      drops: [{ es: 'Alma del buscador', en: 'Seeker\'s Soul', key: 'INV_NAME_SNARE_SOUL_SWAMP' }],
+    },
+    'gurr-the-outcast': {
+      where: [{ es: 'Campos Lejanos', en: 'Far Fields', key: 'WILDS_MAIN' }],
+      drops: [{ es: 'Muñeca de hierba', en: 'Grass Doll', key: 'INV_NAME_ANT_TRAPPER_ITEM' }],
+    },
+    lace: {
+      where: [
+        { es: 'Muelles Profundos', en: 'Deep Docks', key: 'DOCKS' },
+        { es: 'La Cuna', en: 'The Cradle', key: 'CRADLE' },
+      ],
+      drops: [{ es: 'Corazón de seda', en: 'Silk Heart', key: 'MEMORY_MSG_TITLE_SILKHEART' }],
+    },
+    'last-judge': { where: [{ es: 'Escalones Ajados', en: 'Blasted Steps', key: 'JUDGE_STEPS' }] },
+    'lost-garmond': {
+      where: [{ es: 'Escalones Ajados', en: 'Blasted Steps', key: 'JUDGE_STEPS' }],
+      drops: [{ es: 'Recuerdo de héroe', en: 'Hero\'s Memento', key: 'INV_NAME_MEMENTO_GARMOND' }],
+    },
+    'lost-lace': { where: [{ es: 'El Abismo', en: 'The Abyss', key: 'ABYSS' }] },
+    moorwing: {
+      where: [{ es: 'Páramo Gris', en: 'Greymoor', key: 'GREYMOOR_MAIN' }],
+      drops: [{ es: 'Fragmento de bestia', en: 'Beast Shard', key: 'INV_NAME_GREAT_SHARD' }],
+    },
+    'moss-mother': {
+      where: [
+        { es: 'Capilla en Ruinas', en: 'Ruined Chapel', key: 'BONECHURCH' },
+        { es: 'Nido de Tejedora Atla', en: 'Weavenest Atla', key: 'WEAVER_SHRINE' },
+        { es: 'Gruta Musgosa', en: 'Moss Grotto', key: 'MOSSCAVE_MAIN' },
+      ],
+      drops: [{ es: 'Tejeluz', en: 'Weavelight', key: 'WHITE_RING_NAME' }],
+    },
+    nyleth: {
+      where: [{ es: 'Gran Puerta', en: 'Grand Gate', key: 'GRANDGATE_MAIN' }],
+      drops: [{ es: 'Corazón de polen', en: 'Pollen Heart', key: 'INV_NAME_HEART_BLOOM' }],
+    },
+    palestag: { where: [{ es: 'Lost Verdania', en: 'Lost Verdania', key: 'GROVE_SUPER+GROVE_MAIN' }] },
+    phantom: {
+      where: [{ es: 'Órgano de Escape', en: 'Exhaust Organ', key: 'ORGAN' }],
+      drops: [{ es: 'Punto de cruz', en: 'Cross Stitch', key: 'INV_NAME_SKILL_PARRY' }],
+    },
+    pinstress: {
+      where: [
+        { es: 'Escalones Ajados', en: 'Blasted Steps', key: 'JUDGE_STEPS' },
+        { es: 'Monte Fay', en: 'Mount Fay', key: 'PEAK' },
+      ],
+    },
+    'plasmified-zango': { where: [{ es: 'Gusaneras', en: 'Wormways', key: 'CRAWL_MAIN' }] },
+    'raging-conchfly': {
+      where: [{ es: 'Arenas de Karak', en: 'Sands of Karak', key: 'RED_CORAL_GORGE' }],
+      drops: [{ es: 'Cortaconcha', en: 'Conchcutter', key: 'CONCH_DRILL_NAME' }],
+    },
+    'savage-beastfly': {
+      where: [
+        {
+          es: 'Capilla de la Bestia',
+          en: 'Chapel of the Beast',
+          key: 'CHAPEL_WARRIOR_SUPER+CHAPEL_WARRIOR_MAIN',
+        },
+        { es: 'Campos Lejanos', en: 'Far Fields', key: 'WILDS_MAIN' },
+      ],
+      drops: [
+        { es: 'Bestia', en: 'Beast', key: 'CREST_WARRIOR_NAME' },
+        { es: 'Fragmento de cuerno', en: 'Horn Fragment', key: 'INV_NAME_BEASTFLY_REMAINS' },
+      ],
+    },
+    'second-sentinel': {
+      where: [
+        { es: 'Núcleo Mecánico', en: 'Cogwork Core', key: 'COG_CORE' },
+        { es: 'Cámaras Corales', en: 'Choral Chambers', key: 'HIGH_HALLS' },
+        { es: 'Altos Salones', en: 'High Halls', key: 'HANG_MAIN' },
+      ],
+    },
+    'shrine-guardian-seth': { where: [{ es: 'Gran Puerta', en: 'Grand Gate', key: 'GRANDGATE_MAIN' }] },
+    'sister-splinter': {
+      where: [{ es: 'Bosque Coraza', en: 'Shellwood', key: 'SHELLWOOD_MAIN' }],
+      drops: [{ es: 'Agarre de pinza', en: 'Cling Grip', key: 'INV_NAME_WALLJUMP' }],
+    },
+    'skarrsinger-karmelita': {
+      where: [{ es: 'Campos Lejanos', en: 'Far Fields', key: 'WILDS_MAIN' }],
+      drops: [{ es: 'Corazón de cazadora', en: 'Hunter\'s Heart', key: 'INV_NAME_HEART_HUNTER' }],
+    },
+    'skull-tyrant': {
+      where: [
+        { es: 'La Médula', en: 'The Marrow', key: 'PATH_OF_BONE' },
+        { es: 'Valle Óseo', en: 'Bone Bottom', key: 'BONEBOTTOM_MAIN' },
+      ],
+      drops: [
+        { es: 'Fragmento de corona', en: 'Crown Fragment', key: 'INV_NAME_SK_FRAGMENT' },
+        { es: 'Fragmento de bestia', en: 'Beast Shard', key: 'INV_NAME_GREAT_SHARD' },
+      ],
+    },
+    'summoned-saviour': { where: [{ es: 'Cementerio Óseo', en: 'Bonegrave', key: 'BONETOWN_GRAVEYARD' }] },
+    'the-unravelled': {
+      where: [{ es: 'Ala Blanca', en: 'Whiteward', key: 'WARD_MAIN' }],
+      drops: [
+        { es: 'Corazón de seda', en: 'Silk Heart', key: 'MEMORY_MSG_TITLE_SILKHEART' },
+        { es: 'Cilindro de salmo', en: 'Psalm Cylinder', key: 'INV_NAME_R_PSALM_CYL' },
+      ],
+    },
+    'tormented-trobbio': {
+      where: [{ es: 'El Escenario', en: 'The Stage', key: 'CITADEL_STAGE' }],
+      drops: [{ es: 'Espejo oscuro', en: 'Dark Mirror', key: 'DAZZLE_BIND_DESC_DARK' }],
+    },
+    trobbio: {
+      where: [{ es: 'El Escenario', en: 'The Stage', key: 'CITADEL_STAGE' }],
+      drops: [
+        { es: 'Garra espejo', en: 'Claw Mirror', key: 'DAZZLE_BIND_NAME' },
+        {
+          es: 'Melodía de los Guardianes de las Bóvedas',
+          en: 'Vaultkeeper\'s Melody',
+          key: 'SQ_MELODY_LIBRARIAN_NAME',
+        },
+      ],
+    },
+    voltvyrm: {
+      where: [{ es: 'Nido Volt', en: 'Voltnest', key: 'ZAPNEST_MAIN' }],
+      drops: [{ es: 'Filamento voltaico', en: 'Volt Filament', key: 'ZAP_IMBUEMENT_NAME' }],
+    },
+    'watcher-at-the-edge': {
+      where: [{ es: 'Arenas de Karak', en: 'Sands of Karak', key: 'RED_CORAL_GORGE' }],
+      drops: [{ es: 'Recuerdo gris', en: 'Grey Memento', key: 'INV_NAME_MEMENTO_GREY' }],
+    },
+    widow: {
+      where: [{ es: 'Campanilla', en: 'Bellhart', key: 'BELLHART_HAUNTED_MAIN' }],
+      drops: [{ es: 'Agujolín', en: 'Needolin', key: 'BUTTON_DREAM_NAIL' }],
+    },
+  };
+
+  SS.enemies = { FOES, ATTACKS, BOSSES };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.enemies;
 })();

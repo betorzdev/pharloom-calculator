@@ -172,6 +172,14 @@ whole site opened on its screen, with its own title, description and a short tex
 questions, and `sitemap.xml` lists them. `npm run pages` writes them from `index.html` and
 `tools/pages-text.js`; `npm test` fails if one falls behind.
 
+And one page per boss, 51 in each language (`bosses/lace/`, `es/jefes/lace/`): the site opened on
+Combat with that boss picked, and a text written from the data, so a patch changes it with
+`npm run data && npm run pages`. Its health in each fight (and black-threaded), how many slashes
+kill it with the Needle alone at each upgrade (the engine, through the boss's own modifiers),
+its attacks with the masks they take, its staggers, where it's fought and what it gives (the
+wiki's infobox, by the game's names) and the Journal's description. The damage calculator's
+page and every boss page list them all (`tools/pages-bosses.js`).
+
 ## Where the numbers come from
 
 From the community wiki (`hollowknight.wiki`), page by page, with the game's rounding (half to

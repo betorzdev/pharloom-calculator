@@ -11,12 +11,17 @@
    index.html is the source and is edited by hand, except what this writes in it too: its <head>
    fields and the regions between <!-- about --> / <!-- /about --> and <!-- page-ld --> /
    <!-- /page-ld -->. Every other page is generated, never edited by hand; so is sitemap.xml.
-   test/pages.test.js fails if any of them falls behind. The texts are tools/pages-text.js's.
+   test/pages.test.js fails if any of them falls behind. The texts are tools/pages-text.js's, and
+   the bosses' pages (one per boss, opened on Combat with it picked: <html data-foe>) are written
+   from the data by tools/pages-bosses.js; the damage calculator and each boss page list them all.
    Usage: node tools/pages.js          (npm run pages) */
 'use strict';
 const fs = require('fs');
 const path = require('path');
-const { BRAND, LABELS, PAGES, OG_ALT } = require('./pages-text.js');
+const T = require('./pages-text.js');
+const { BRAND, LABELS, OG_ALT } = T;
+const { BOSS_PAGES } = require('./pages-bosses.js');
+const PAGES = [...T.PAGES, ...BOSS_PAGES];
 
 const ROOT = path.join(__dirname, '..');
 const SITE = 'https://betorzdev.github.io/pharloom-calculator/';
@@ -33,8 +38,16 @@ const fullTitle = (page, lang) => page.title[lang] + ' · ' + BRAND[lang];
 /* The About block: the heading with the query, the text, the questions and the other pages. */
 function about(page, lang) {
   const faq = page.faq.map((f) => `    <h3>${f.q[lang]}</h3>\n    <p>${f.a[lang]}</p>`).join('\n');
-  const more = PAGES.filter((p) => p !== page)
-    .map((p) => `      <li><a href="${rel(p, lang) || './'}" data-page>${p.link[lang]}</a></li>`).join('\n');
+  const li = (p) => `      <li><a href="${rel(p, lang) || './'}" data-page>${p.link[lang]}</a></li>`;
+  const more = T.PAGES.filter((p) => p !== page).map(li).join('\n');
+  // Combat's pages, the calculator's and each boss's, list the bosses.
+  const bosses = page.view === 'fight' ? `
+  <nav class="about-more" aria-label="${attr(LABELS.bosses[lang])}">
+    <h2>${LABELS.bosses[lang]}</h2>
+    <ul>
+${BOSS_PAGES.filter((p) => p !== page).map(li).join('\n')}
+    </ul>
+  </nav>` : '';
   // Indented to sit in index.html's .shell, where the region's markers are.
   return `<!-- about -->
 <section class="about" id="about" lang="${lang}" aria-labelledby="about-h">
@@ -49,7 +62,7 @@ ${faq}
     <ul>
 ${more}
     </ul>
-  </nav>
+  </nav>${bosses}
 </section>
 <!-- /about -->`.replace(/\n/g, '\n    ');
 }
@@ -61,12 +74,11 @@ function pageLd(page, lang) {
     mainEntity: page.faq.map((f) => ({ '@type': 'Question', name: plain(f.q[lang]),
       acceptedAnswer: { '@type': 'Answer', text: plain(f.a[lang]) } })),
   }];
+  // Where it sits: the home, then (for a boss) the damage calculator, then the page.
+  const trail = [PAGES[0], ...(page.boss ? [PAGES.find((p) => p.id === 'damage')] : []), page];
   if (page.view) blocks.push({
     '@context': 'https://schema.org', '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: BRAND[lang], item: url(PAGES[0], lang) },
-      { '@type': 'ListItem', position: 2, name: page.link[lang], item: url(page, lang) },
-    ],
+    itemListElement: trail.map((p, i) => ({ '@type': 'ListItem', position: i + 1, name: i ? p.link[lang] : BRAND[lang], item: url(p, lang) })),
   });
   return `<!-- page-ld -->\n${blocks.map((b) => `<script type="application/ld+json">\n${JSON.stringify(b, null, 2)}\n</script>`).join('\n')}\n<!-- /page-ld -->`;
 }
@@ -77,7 +89,8 @@ function build(html, page, lang) {
   const depth = rel(page, lang).split('/').length - 1;
   const other = lang === 'en' ? 'es' : 'en';
   const swaps = [
-    [/<html lang="[a-z]+"( data-view="[a-z]+")?>/, `<html lang="${lang}"${page.view ? ` data-view="${page.view}"` : ''}>`],
+    [/<html lang="[a-z]+"( data-view="[a-z]+")?( data-foe="[a-z0-9-]+")?>/,
+      `<html lang="${lang}"${page.view ? ` data-view="${page.view}"` : ''}${page.foe ? ` data-foe="${page.foe}"` : ''}>`],
     [/(<meta charset="utf-8">\n)(<base href="[^"]*">\n)?/, (m, meta) => meta + (depth ? `<base href="${'../'.repeat(depth)}">\n` : '')],
     [/<title>[^<]*<\/title>/, `<title>${attr(fullTitle(page, lang))}</title>`],
     [/<meta name="description" content="[^"]*">/, `<meta name="description" content="${attr(page.description[lang])}">`],
@@ -133,4 +146,4 @@ if (require.main === module) {
   console.log(`${PAGES.length * LANGS.length} pages and sitemap.xml written`);
 }
 
-module.exports = { build, all, sitemap, rel, url, file, fullTitle, SITE, LANGS };
+module.exports = { build, all, sitemap, rel, url, file, fullTitle, SITE, LANGS, PAGES };

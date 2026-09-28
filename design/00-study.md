@@ -850,6 +850,14 @@ address changed) and `tools/pages-text.js` written for Silksong, seven pages in 
 (the home, the save analyzer, the 100% checklist, the map, the Journal, the Tools and Crests
 calculator, the damage calculator: §7's two Spanish ones first), `sitemap.xml`, the preview card
 and the icons, all checked by `test/pages.test.js` and opened over file:// from their subfolders.
+Then (28 September) **the per-boss pages** that phase 5 left: 51 in each language, 116 pages in
+all, written from the data by `tools/pages-bosses.js` (each boss's fights, the engine's slashes
+at each Needle level, its attacks and staggers, and where it's fought and what it gives, which
+`tools/gen-enemies.js` now reads from each boss page's infobox by the game's names:
+`js/enemies.js` BOSSES, 40 of the 51, all through `--audit`). Each opens Combat on its boss
+(`<html data-foe>`, applied at boot unless the link names another screen); the texts are written
+with no pronoun and no verb on the boss's name, since Spanish would have to agree with Lace,
+Khann or the Forebrothers.
 Left, and the author's to do: publishing (GitHub Pages) and Search Console; and trying the live
 link by hand with the game running.
 

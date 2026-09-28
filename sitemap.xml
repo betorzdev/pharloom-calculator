@@ -85,4 +85,616 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/calculadora-de-danio/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/damage-calculator/"/>
   </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/moss-mother/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/moss-mother/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/moss-mother/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/moss-mother/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/moss-mother/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/moss-mother/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/moss-mother/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/moss-mother/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/skull-tyrant/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/skull-tyrant/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/skull-tyrant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/skull-tyrant/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/skull-tyrant/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/skull-tyrant/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/skull-tyrant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/skull-tyrant/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/savage-beastfly/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/savage-beastfly/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/savage-beastfly/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/savage-beastfly/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/savage-beastfly/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/savage-beastfly/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/savage-beastfly/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/savage-beastfly/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/flintbeetle/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/flintbeetle/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/flintbeetle/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/flintbeetle/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/flintbeetle/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/flintbeetle/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/flintbeetle/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/flintbeetle/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/rhinogrund/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/rhinogrund/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/rhinogrund/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/rhinogrund/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/rhinogrund/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/rhinogrund/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/rhinogrund/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/rhinogrund/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/bell-beast/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/bell-beast/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/bell-beast/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/bell-beast/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/bell-beast/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/bell-beast/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/bell-beast/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/bell-beast/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/covetous-pilgrim/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/covetous-pilgrim/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/covetous-pilgrim/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/covetous-pilgrim/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/covetous-pilgrim/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/covetous-pilgrim/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/covetous-pilgrim/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/covetous-pilgrim/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/forebrothers-signis-and-gron/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/forebrothers-signis-and-gron/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/forebrothers-signis-and-gron/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/forebrothers-signis-and-gron/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/forebrothers-signis-and-gron/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/forebrothers-signis-and-gron/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/forebrothers-signis-and-gron/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/forebrothers-signis-and-gron/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/fourth-chorus/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/fourth-chorus/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/fourth-chorus/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/fourth-chorus/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/fourth-chorus/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/fourth-chorus/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/fourth-chorus/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/fourth-chorus/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/skarrgard/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/skarrgard/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/skarrgard/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/skarrgard/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/skarrgard/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/skarrgard/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/skarrgard/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/skarrgard/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/gurr-the-outcast/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/gurr-the-outcast/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/gurr-the-outcast/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/gurr-the-outcast/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/gurr-the-outcast/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/gurr-the-outcast/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/gurr-the-outcast/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/gurr-the-outcast/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/last-claw/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/last-claw/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/last-claw/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/last-claw/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/last-claw/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/last-claw/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/last-claw/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/last-claw/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/skarrsinger-karmelita/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/skarrsinger-karmelita/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/skarrsinger-karmelita/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/skarrsinger-karmelita/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/skarrsinger-karmelita/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/skarrsinger-karmelita/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/skarrsinger-karmelita/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/skarrsinger-karmelita/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/moorwing/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/moorwing/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/moorwing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/moorwing/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/moorwing/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/moorwing/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/moorwing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/moorwing/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/father-of-the-flame/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/father-of-the-flame/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/father-of-the-flame/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/father-of-the-flame/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/father-of-the-flame/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/father-of-the-flame/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/father-of-the-flame/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/father-of-the-flame/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/crawfather/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/crawfather/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/crawfather/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/crawfather/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/crawfather/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/crawfather/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/crawfather/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/crawfather/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/disgraced-chef-lugoli/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/disgraced-chef-lugoli/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/disgraced-chef-lugoli/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/disgraced-chef-lugoli/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/disgraced-chef-lugoli/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/disgraced-chef-lugoli/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/disgraced-chef-lugoli/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/disgraced-chef-lugoli/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/groal-the-great/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/groal-the-great/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/groal-the-great/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/groal-the-great/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/groal-the-great/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/groal-the-great/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/groal-the-great/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/groal-the-great/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/sister-splinter/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/sister-splinter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/sister-splinter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/sister-splinter/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/sister-splinter/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/sister-splinter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/sister-splinter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/sister-splinter/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/shrine-guardian-seth/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/shrine-guardian-seth/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/shrine-guardian-seth/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/shrine-guardian-seth/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/shrine-guardian-seth/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/shrine-guardian-seth/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/shrine-guardian-seth/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/shrine-guardian-seth/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/nyleth/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/nyleth/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/nyleth/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/nyleth/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/nyleth/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/nyleth/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/nyleth/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/nyleth/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/last-judge/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/last-judge/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/last-judge/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/last-judge/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/last-judge/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/last-judge/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/last-judge/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/last-judge/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/raging-conchfly/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/raging-conchfly/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/raging-conchfly/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/raging-conchfly/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/raging-conchfly/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/raging-conchfly/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/raging-conchfly/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/raging-conchfly/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/karak-gor/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/karak-gor/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/karak-gor/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/karak-gor/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/karak-gor/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/karak-gor/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/karak-gor/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/karak-gor/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/corrcrust-karaka/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/corrcrust-karaka/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/corrcrust-karaka/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/corrcrust-karaka/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/corrcrust-karaka/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/corrcrust-karaka/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/corrcrust-karaka/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/corrcrust-karaka/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/crust-king-khann/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/crust-king-khann/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/crust-king-khann/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/crust-king-khann/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/crust-king-khann/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/crust-king-khann/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/crust-king-khann/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/crust-king-khann/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/watcher-at-the-edge/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/watcher-at-the-edge/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/watcher-at-the-edge/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/watcher-at-the-edge/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/watcher-at-the-edge/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/watcher-at-the-edge/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/watcher-at-the-edge/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/watcher-at-the-edge/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/voltvyrm/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/voltvyrm/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/voltvyrm/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/voltvyrm/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/voltvyrm/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/voltvyrm/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/voltvyrm/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/voltvyrm/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/choir-clapper/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/choir-clapper/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/choir-clapper/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/choir-clapper/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/choir-clapper/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/choir-clapper/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/choir-clapper/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/choir-clapper/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/second-sentinel/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/second-sentinel/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/second-sentinel/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/second-sentinel/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/second-sentinel/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/second-sentinel/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/second-sentinel/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/second-sentinel/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/the-unravelled/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/the-unravelled/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/the-unravelled/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/the-unravelled/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/the-unravelled/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/the-unravelled/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/the-unravelled/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/the-unravelled/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/cogwork-clapper/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/cogwork-clapper/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/cogwork-clapper/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/cogwork-clapper/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/cogwork-clapper/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/cogwork-clapper/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/cogwork-clapper/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/cogwork-clapper/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/cogwork-dancers/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/cogwork-dancers/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/cogwork-dancers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/cogwork-dancers/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/cogwork-dancers/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/cogwork-dancers/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/cogwork-dancers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/cogwork-dancers/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/trobbio/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/trobbio/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/trobbio/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/trobbio/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/trobbio/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/trobbio/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/trobbio/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/trobbio/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/tormented-trobbio/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/tormented-trobbio/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/tormented-trobbio/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/tormented-trobbio/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/tormented-trobbio/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/tormented-trobbio/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/tormented-trobbio/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/tormented-trobbio/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/broodmother/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/broodmother/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/broodmother/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/broodmother/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/broodmother/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/broodmother/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/broodmother/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/broodmother/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/plasmified-zango/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/plasmified-zango/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/plasmified-zango/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/plasmified-zango/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/plasmified-zango/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/plasmified-zango/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/plasmified-zango/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/plasmified-zango/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/palestag/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/palestag/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/palestag/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/palestag/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/palestag/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/palestag/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/palestag/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/palestag/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/clover-dancers/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/clover-dancers/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/clover-dancers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/clover-dancers/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/clover-dancers/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/clover-dancers/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/clover-dancers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/clover-dancers/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/summoned-saviour/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/summoned-saviour/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/summoned-saviour/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/summoned-saviour/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/summoned-saviour/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/summoned-saviour/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/summoned-saviour/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/summoned-saviour/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/bell-eater/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/bell-eater/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/bell-eater/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/bell-eater/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/bell-eater/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/bell-eater/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/bell-eater/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/bell-eater/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/shakra/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/shakra/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/shakra/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/shakra/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/shakra/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/shakra/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/shakra/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/shakra/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/garmond-and-zaza/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/garmond-and-zaza/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/garmond-and-zaza/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/garmond-and-zaza/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/garmond-and-zaza/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/garmond-and-zaza/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/garmond-and-zaza/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/garmond-and-zaza/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/lost-garmond/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/lost-garmond/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/lost-garmond/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/lost-garmond/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/lost-garmond/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/lost-garmond/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/lost-garmond/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/lost-garmond/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/pinstress/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/pinstress/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/pinstress/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/pinstress/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/pinstress/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/pinstress/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/pinstress/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/pinstress/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/widow/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/widow/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/widow/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/widow/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/widow/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/widow/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/widow/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/widow/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/first-sinner/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/first-sinner/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/first-sinner/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/first-sinner/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/first-sinner/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/first-sinner/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/first-sinner/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/first-sinner/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/phantom/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/phantom/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/phantom/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/phantom/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/phantom/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/phantom/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/phantom/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/phantom/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/lace/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/lace/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/lace/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/lace/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/lace/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/lace/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/lace/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/lace/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/grand-mother-silk/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/grand-mother-silk/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/grand-mother-silk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/grand-mother-silk/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/grand-mother-silk/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/grand-mother-silk/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/grand-mother-silk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/grand-mother-silk/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/bosses/lost-lace/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/lost-lace/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/lost-lace/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/lost-lace/"/>
+  </url>
+  <url>
+    <loc>https://betorzdev.github.io/pharloom-calculator/es/jefes/lost-lace/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/bosses/lost-lace/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/jefes/lost-lace/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://betorzdev.github.io/pharloom-calculator/bosses/lost-lace/"/>
+  </url>
 </urlset>

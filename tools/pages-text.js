@@ -20,6 +20,7 @@ const BRAND = { es: 'Calculadora de Telalejana', en: 'Pharloom Calculator' };
 const LABELS = {
   faq:   { es: 'Preguntas frecuentes', en: 'Questions' },
   more:  { es: 'Más en el sitio', en: 'More on the site' },
+  bosses: { es: 'Jefes', en: 'Bosses' },
 };
 
 /* The preview card's image (assets/site/og.jpg) is the same on every page; its description. */

@@ -20,6 +20,8 @@
   rebuildNF();
   // A build in the link goes to Free mode (js/app-tools.js); without one, Free mode's own shows in the URL.
   if (App.adoptBuild) App.adoptBuild();
+  // A boss's page opens Combat on that boss (js/app-fight.js).
+  if (App.adoptFoe) App.adoptFoe(urlHash.view);
   persist();
   render();
   // The save you're in, if it follows the game's file, starts watching it (js/app-saves.js).

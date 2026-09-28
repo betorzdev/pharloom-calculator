@@ -7,7 +7,8 @@ const assert = require('node:assert');
 const fs = require('fs');
 const path = require('path');
 const P = require('../tools/pages.js');
-const { PAGES, BRAND } = require('../tools/pages-text.js');
+const { BRAND } = require('../tools/pages-text.js');
+const { PAGES } = P;   // the intents' pages and the bosses'
 const I = require('../js/i18n.js');
 
 const ROOT = path.join(__dirname, '..');
@@ -77,4 +78,29 @@ test('the texts carry only the tags they may, and their links go to real pages',
 test('the sitemap lists every page', () => {
   const xml = read('sitemap.xml');
   for (const { page, lang } of EVERY) assert.ok(xml.includes(`<loc>${P.url(page, lang)}</loc>`), P.url(page, lang));
+});
+
+test('a page per boss, in each language: it opens Combat on that boss, and the calculator lists them all', () => {
+  const EN = require('../js/enemies.js');
+  const bosses = PAGES.filter((p) => p.boss);
+  assert.strictEqual(bosses.length, Object.keys(EN.ATTACKS).length, 'one page per boss page of the wiki');
+  const damage = PAGES.find((p) => p.id === 'damage');
+  for (const lang of P.LANGS) {
+    const calc = read(P.file(damage, lang));
+    for (const b of bosses) {
+      const html = read(P.file(b, lang));
+      const foe = (html.match(/<html [^>]*data-foe="([a-z0-9-]+)"/) || [])[1];
+      assert.ok(foe && EN.FOES.some((f) => f.id === foe && f.boss), `${P.file(b, lang)}: data-foe ${foe}`);
+      assert.match(html, /data-view="fight"/, P.file(b, lang));
+      assert.ok(calc.includes(`href="${P.rel(b, lang)}" data-page`), `the calculator (${lang}) links to ${b.id}`);
+    }
+  }
+  // The figures are the engine's: Lace's 250 health takes 50 bare slashes, 12 with the last Needle.
+  const lace = bosses.find((p) => p.id === 'boss-lace');
+  assert.match(lace.body.map((x) => x.en).join(' '), /Lace: 50, 28, 20, 15 and 12 slashes/);
+  assert.match(lace.faq[1].a.es, /de 50 tajos con la Aguja a 12 con la Aguja de acero pálido/);
+  // No Spanish in the English: accents and «» only in the Spanish.
+  for (const b of bosses) for (const x of [b.title, b.description, b.h1, ...b.body, ...b.faq.flatMap((f) => [f.q, f.a])]) {
+    assert.ok(!/[áéíóúñ¿¡«»]/i.test(x.en.replace(/Hunter's Journal says: "[^"]*"/, '')), `${b.id}: ${x.en}`);
+  }
 });

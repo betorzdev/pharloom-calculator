@@ -189,6 +189,16 @@
       <div class="ft-body">${picker(f)}${card(f, r)}<div class="ct-figs">${planHtml(r)}${against(f, r)}${theirs(f, r)}</div></div></div>`;
   };
 
+  /* A boss's page (tools/pages-bosses.js) opens on that boss: <html data-foe>, applied at boot
+     once the preferences are read, unless the link names another screen. Not saved: going back
+     to the calculator's own page keeps the enemy you had. */
+  App.adoptFoe = (linkedView) => {
+    const id = document.documentElement.dataset.foe;
+    if (!id || !FOE.has(id) || (linkedView && linkedView !== 'fight')) return;
+    prefs.foe = id;
+    prefs.ftMode = 'foe';
+  };
+
   Object.assign(actions, {
     ftFoe(node) { prefs.foe = node.dataset.value; savePrefs(); render(); },
     ftBlack() { prefs.ftBlack = !prefs.ftBlack; savePrefs(); render(); },
