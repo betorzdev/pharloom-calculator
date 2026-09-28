@@ -68,7 +68,9 @@
     // The slash says its product: the Needle × Hornet's bracket × the enemy's modifier at its level.
     const formula = t('ftFormula', { base: num(n.base), x: num(n.bracket, 2), m: num(n.enemy, 2) });
     for (const a of n.attacks.filter((x) => x.id === 'slash' || D.CRESTS.find((c) => c.id === r.state.crest).attacks)) {
-      rows.push(row(`assets/needles/${n.level}.png`, t('ctAtt_' + a.id), a.each, a.total, a.uses, a.id === 'slash' ? formula : ''));
+      // The slash also says how long slashing nonstop takes, at the Crest's own pace (js/hero.js).
+      const time = a.id === 'slash' && n.speed.seconds != null ? t('ftSeconds', { s: num(n.speed.seconds, 1) }) : '';
+      rows.push(row(`assets/needles/${n.level}.png`, t('ctAtt_' + a.id), a.each, a.total, a.uses, a.id === 'slash' ? [formula, time].filter(Boolean).join(' · ') : ''));
     }
     if (r.strike) rows.push(row(icon('arts', 'needle-strike'), t('ctStrike'), r.strike.each, r.strike.total, r.strike.uses));
     const sk = r.skills.find((s) => s.equipped);

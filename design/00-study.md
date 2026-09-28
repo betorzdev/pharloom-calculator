@@ -145,11 +145,27 @@ Crest** (the story's Witch: silk capped at 3, Bind fails, no Tools or Skills) an
 Hunter's, a blue one at 20, the Hunter's second evolution at 27 and Sylphsong at 32; its Tools
 stay equipped whatever Crest is worn. There are exactly 20 Memory Lockets, enough for every slot.
 
-**The gap**: the wiki gives attack speed only relative to the Hunter Crest (and Flea Brew's
-+50%, and Beast fury's +20%). For a DPS figure the site needs the Hunter Crest's slash interval
-in seconds, and each Crest's. Nobody tabulates it; it has to be measured from footage or from
-the game's animation clips (the Hollow Knight site had the wiki's 0.41 s). Until then, DPS is
-"per Hunter Crest hit" and the Crest comparison is qualitative.
+**The gap**, closed on 28 September: the wiki gives attack speed only relative to the Hunter
+Crest (and Flea Brew's +50%, and Beast fury's +20%), and a DPS figure needs seconds. The game's
+code says how it works (HeroController, read with ILSpy): a slash sets a cooldown of its Crest's
+`attackCooldownTime`, never below its `attackDuration`, and the next waits for it; Flea Brew's
+"quickening" swaps in `quickAttackCooldownTime` for 10 s, but the floor stays, so it speeds the
+Hunter up by 17%, not the 50% the wiki reads off `quickAttackSpeedMult` (the animation's). Each
+Crest's values are in its `HeroControllerConfig` (`tools/extract-hero.py` → `js/hero.js`):
+
+| Crest | A slash every | Under Flea Brew | vs the Hunter (the wiki's) |
+|---|---|---|---|
+| Hunter (all three stages) | 0.41 s | 0.35 s | – |
+| Wanderer | 0.30 s | 0.25 s | +37% (+34%) |
+| Beast | 0.39 s, **0.32 s in fury** | 0.30 s | +5%, +28% in fury (fury +20%) |
+| Witch | 0.45 s | 0.40 s | −9% (−10%) |
+| Architect | 0.45 s | 0.35 s | −9% |
+| Reaper | 0.50 s | 0.35 s | −18% (−23%) |
+| Shaman | 0.50 s | 0.35 s | −18% (−22%) |
+
+At 60 fps a slash starts the frame the cooldown runs out, up to one frame (0.017 s) later; the
+wiki's percentages, measured by eye, sit within that and a bit. The Hunter's 0.41 s is Hollow
+Knight's too.
 
 ### 2.4 The Tools
 
@@ -670,7 +686,8 @@ damage calculator: the two pages to have indexed first are `es/analizador-partid
   backer bosses are still owed. Pin the dump by commit, keep the patch in `CLAUDE.md`, and keep
   `kb/` and every generated file regenerable in one command each: the expansion will be a
   re-fetch, not a rewrite, if the tooling is right.
-- **Attack speed** per Crest isn't tabulated anywhere found. Without it there's no DPS.
+- **Attack speed** per Crest isn't tabulated anywhere found. Without it there's no DPS. *(Closed
+  on 28 September from the game's own files: §2.3.)*
 - **The wiki disagrees with itself in places** (Silk Heart regeneration 1.45 or 1.5 s; Longclaw
   +20% or +27%; the Witch's Needle Strike 4 or 6 hits). Take the damage page's number, note the
   other, as the guide does for Hollow Knight's `~` values.
@@ -762,8 +779,9 @@ Witch's down- and run-slashes: in prose on their pages, so `tools/gen-data.js` c
 multipliers and checks each one against its sentence, failing if the wiki changes), the effects
 of the passive Tools in the game's words, and the build in the URL (`js/codec.js`, readable, only
 what differs from the base, the Tools by id so a patch that reorders the lists doesn't break a
-link) with Share. **Phase 3 is done** but for the DPS figure, which still waits for the attack
-speed per Crest (§2.3's gap). The figures summary on a phone came on 28 September: a strip on
+link) with Share. **Phase 3 is done**; the DPS figure came last (28 September), once the game's
+own files gave each Crest's pace (§2.3): damage per second on the Crest screen, with Flea Brew's,
+the seconds to kill in Combat and on the boss pages. The figures summary on a phone came on 28 September: a strip on
 the window's bottom edge (the Inventory's detail bar, the same frame), below 1,100 px.
 
 **Phase 4 is done** (the same day): the Journal screen, with the wiki's 237 portraits paired to the

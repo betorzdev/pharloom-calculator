@@ -80,6 +80,13 @@ On a narrow screen, where the figures go below the controls, a strip on the bott
 the main ones in view while you pick: the slash, your Silk Skill and your first Tool that hurts
 (by their icons), masks and silk.
 
+**Damage per second**, under the slash: the slash's damage over the time between two slashes,
+which is each Crest's own, read from the game's files: 0.41 s for the Hunter, 0.30 s for the
+Wanderer, 0.39 s for the Beast (0.32 s in fury), 0.45 s for the Witch and the Architect, 0.50 s
+for the Reaper and the Shaman. With Flea Brew worn, what it gives for its 10 seconds: it halves
+the wait, but a slash never comes faster than the slash itself lasts (0.35 s for the Hunter).
+Combat says how long slashing nonstop takes to kill the enemy.
+
 **Share** copies a link that opens the build on screen as it is (yours from a save too). The
 link is readable (`#v=1&crest=architect&needle=4&tools=straight-pin,compass…`) and carries only
 what differs from a Hunter with nothing: in Free mode the address always says the build. A link

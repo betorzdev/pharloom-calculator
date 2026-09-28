@@ -7,7 +7,7 @@
                         Lace's two, Moss Mother's three), its attacks and staggers (ATTACKS), and
                         where it's fought and what it gives (BOSSES)
      · the hits         js/engine.js: a bare Hunter's slash at each Needle level against the boss's
-                        own modifiers, and how many kill it
+                        own modifiers, how many kill it, and how long at the game's pace (js/hero.js)
      · the text         the Journal's description (js/journal.js), the game's names everywhere;
                         the attacks' names are the wiki's English (the game doesn't name them).
    The text may carry <strong>, as tools/pages-text.js's. */
@@ -52,6 +52,8 @@ const W = {
   hitsFight: { es: '{f}: {uses} tajos', en: '{f}: {uses} slashes' },
   hitsMany: { es: 'Con la aguja sola (un blasón de cazadora sin herramientas ni modificadores), con la {needles}, hacen falta: {x}.',
     en: 'With the Needle alone (a Hunter\'s Crest with no Tools or modifiers), with the {needles}: {x}.' },
+  time: { es: 'Con el blasón de cazadora, un tajo cada {i} s (el ritmo del juego, sacado de sus archivos): con la {last}, {t} s tajando sin parar.',
+    en: 'With the Hunter\'s Crest, a slash every {i} s (the game\'s own pace, from its files): with the {last}, {t} s of nonstop slashing.' },
   attacks: { es: 'Ataques, con los nombres de la wiki (el juego no los nombra): {x}.', en: 'Attacks, as the wiki names them (the game doesn\'t): {x}.' },
   masks: { es: '{k} máscaras', en: '{k} masks' },
   stagger: { es: 'Aturdimiento tras {x} golpes.', en: 'Staggered after {x} hits.' },
@@ -108,6 +110,12 @@ function bossPage(page) {
   } else if (fought.length > 1) {
     body.push(both(W.hitsMany, (lang) => ({ needles: needles(lang),
       x: fought.map((f) => fill(W.hitsFight[lang], { f: fightName(f, lang), uses: list(slashes(f).map((x) => num(x.uses, lang)), lang) })).join('; ') })));
+  }
+  // How long, at the Hunter's pace with the last Needle, against the first fight.
+  if (fought.length) {
+    const sp = E.compute(E.normalize({ crest: 'hunter', needle: 4 }), { foe: fought[0] }).needle.speed;
+    if (sp.seconds != null) body.push(both(W.time, (lang) => ({ i: new Intl.NumberFormat(lang === 'es' ? 'es-ES' : 'en-GB', { maximumFractionDigits: 2 }).format(sp.interval),
+      last: NEEDLES[4][lang], t: new Intl.NumberFormat(lang === 'es' ? 'es-ES' : 'en-GB', { maximumFractionDigits: 1 }).format(sp.seconds) })));
   }
   // The attacks once each, with the masks they take when more than one.
   const seen = new Set();

@@ -128,6 +128,12 @@
   const fig = (k, v, sub = '') => `<div class="ct-fig"><span class="ct-fig-k">${k}</span><span class="ct-fig-v">${v}</span>${sub ? `<span class="ct-fig-sub">${sub}</span>` : ''}</div>`;
   const hitsText = (each) => (each.length > 1 ? each.map((x) => num(x)).join(' + ') : '');
 
+  /* Damage per second with the slash: its interval from the game's own timings (js/hero.js), and
+     under Flea Brew when it's worn, for the seconds it lasts. */
+  const brewName = () => pick(TOOL.get('flea-brew').name);
+  const dps = (s) => fig(esc(t('ctDps')), `<b>${num(s.dps, 1)}</b>`,
+    esc([t('ctEvery', { s: num(s.interval, 2) }), s.brew ? t('ctBrew', { name: brewName(), d: num(s.brew.dps, 1), s: num(s.brew.interval, 2), l: num(s.brew.lasts) }) : ''].filter(Boolean).join(' · ')));
+
   function figures(r) {
     const n = r.needle;
     // The Crests that split their slashes show all three; the rest, the one slash.
@@ -138,6 +144,7 @@
           esc([hitsText(a.each), a.charged ? t('ctCharged', { n: num(a.charged) }) : '', a.onHit ? t('ctOnHit', { n: num(a.onHit) }) : ''].filter(Boolean).join(' · ')))).join('')
         : fig(esc(t('ctSlash')), `<b>${num(n.slash)}</b>`, n.bracket !== 1 ? esc(t('ctBracket', { base: num(n.base), x: num(n.bracket, 2) })) : '')}
         ${mods ? `<ul class="ct-mods">${mods}</ul>` : ''}
+        ${dps(n.speed)}
         ${n.crit ? fig(esc(t('ctCrit')), `<b>${num(n.crit.damage)}</b>`, esc(t('ctCritChance', { p: num(n.crit.chance * 100, 1) }))) : ''}
         ${r.strike ? fig(esc(t('ctStrike')), `<b>${num(r.strike.total)}</b>`, esc(hitsText(r.strike.each))) : ''}
       </section>`;

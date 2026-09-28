@@ -122,6 +122,9 @@ From the study (`design/00-study.md`) and the wiki's damage page:
   Needle Strike hits): take the damage page's number and note the other.
 - **Pharloom is «Telalejana»** in the game, and the Tools screen is «Blasón» (`PANE_TOOLS`).
 - **The Barbed Bracelet («Cilicio») is a yellow Tool**, not blue, though it's a combat one.
+- **A slash waits max(cooldown, duration)**, each Crest's own (`js/hero.js`, from the game's
+  files): 0.41 s for the Hunter. Flea Brew only shortens the cooldown, so the Hunter's 0.35 s is
+  its floor: +17%, not the wiki's +50%.
 - **Six wiki pages carry a `CODEname` that isn't their Journal key** (`CORAL_GOOMBA` for
   `NAME_CORAL_GOOMBAS`); `tools/names.js` falls back to the title.
 - **The game selects with white on grey, with no selection hue**: don't invent one from

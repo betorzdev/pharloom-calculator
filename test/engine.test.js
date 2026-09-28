@@ -130,3 +130,21 @@ test('the fight as a whole: loads first, then the fewest slashes with the Skills
   assert.deepEqual(E.plan(r2, 23), { slashes: 0, casts: 0, throws: [{ id: 'straight-pin', n: 5 }], dealt: 25 });
   assert.equal(E.plan(r2, null), null);
 });
+
+test('how fast: each Crest\'s slash interval from the game\'s own timings, fury, Flea Brew, the seconds to kill', () => {
+  const H = require('../js/hero.js');
+  const every = (crest, x = {}) => E.compute({ crest, needle: 4, ...x }).needle.speed.interval;
+  // The game's figures (tools/extract-hero.py): max(cooldown, duration).
+  assert.deepEqual(['hunter', 'wanderer', 'beast', 'witch', 'architect', 'reaper', 'shaman'].map((c) => every(c)), [0.41, 0.3, 0.39, 0.45, 0.45, 0.5, 0.5]);
+  assert.strictEqual(every('beast', { fury: true }), 0.32);
+  assert.strictEqual(every('hunter', { hunterStage: 3 }), 0.41, 'the evolved Hunter slashes as fast');
+  // Flea Brew halves the cooldown, but a slash never outpaces its own duration: 0.35 s, not 0.205.
+  const brew = E.compute({ crest: 'hunter', needle: 4, tools: ['flea-brew'] }).needle.speed.brew;
+  assert.deepEqual([brew.interval, brew.lasts], [0.35, H.QUICKENING]);
+  assert.strictEqual(E.compute({ crest: 'hunter', needle: 4 }).needle.speed.brew, null, 'no Flea Brew worn');
+  // DPS is the slash over its interval; the kill lands at (uses − 1) intervals: Lace, 12 slashes of 21.
+  const lace = require('../js/enemies.js').FOES.find((f) => f.id === 'lace');
+  const s = E.compute({ crest: 'hunter', needle: 4 }, { foe: lace }).needle.speed;
+  assert.strictEqual(Math.round(s.dps * 100) / 100, Math.round((21 / 0.41) * 100) / 100);
+  assert.strictEqual(s.seconds, 4.51);
+});

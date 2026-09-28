@@ -18,11 +18,17 @@
      focus       the Hunter's focus is up (its full stage: +0.3, or +0.5 evolved)
      fury        the Beast's fury is up                flint        Flintslate's buff is up
      challenge   the next hit after a Challenge (+0.5)
-   compute() → { needle, strike, skills, tools, silk, health, slots, mods } (see each below). */
+   compute() → { needle, strike, skills, tools, silk, health, slots, mods } (see each below).
+
+   How fast: js/hero.js, each Crest's timings from the game's files. A slash waits max(cooldown,
+   duration) after the one before (the game's HeroController.DidAttack); the Beast in fury has
+   its own; Flea Brew's cooldown is shorter, but never below the slash itself. needle.speed. */
 (() => {
   'use strict';
   const SS = globalThis.SS || (globalThis.SS = {});
   const D = SS.data || require('./data.js');
+  const HERO = SS.hero || require('./hero.js');
+  const CO = SS.collectibles || require('./collectibles.js');
 
   /* Half to the even integer, as the game rounds (0.5 → 0, 1.5 → 2, 2.5 → 2). The products are
      floats: a value within 1e-9 of .5 counts as .5 (29 × 2.75 = 79.75 is exact; 5 × 1.3 isn't). */
@@ -98,6 +104,15 @@
   // Uses of an attack to take hp: the first use as it is (with the Challenge), the rest plain.
   const usesToKill = (h, hp) => (!hp || !h.rest ? null : h.total >= hp ? 1 : 1 + Math.ceil((hp - h.total) / h.rest));
 
+  /* Seconds between two slashes: the Crest's config by its name in the save (the Hunter's stages
+     are Hunter_v2, Hunter_v3), the Beast's fury values while it rages; brew, under Flea Brew. */
+  function interval(st, brew = false) {
+    const name = CO.CRESTS[st.crest] + (st.crest === 'hunter' && st.hunterStage > 1 ? '_v' + st.hunterStage : '');
+    const cfg = HERO.SLASH[name] || HERO.SLASH.Hunter;
+    const c = st.crest === 'beast' && st.fury && cfg.rage ? cfg.rage : cfg;
+    return Math.max(brew ? c.quickAttackCooldownTime : c.attackCooldownTime, c.attackDuration);
+  }
+
   /* compute(state, { foe, black }): with an enemy (js/enemies.js FOES), every hit takes its
      modifier at the level of what hits, and each attack says how many uses kill it (black: its
      black-threaded health, Act 3). */
@@ -137,6 +152,17 @@
       return { id, ...h, charged: a.charged ? at(a.charged).total : null, onHit: a.onHit ? at(a.onHit).total : null };
     };
     needle.attacks = ['slash', 'down', 'run'].map(attack);
+
+    /* How fast the slash kills: its interval, damage per second (every hit landing, the enemy's
+       modifier in; the Wanderer's criticals left out), under Flea Brew when it's equipped (for its
+       QUICKENING seconds), and against an enemy the seconds until the killing slash: the first
+       lands at 0, so (uses − 1) intervals. */
+    const sl = needle.attacks[0], every = interval(st), brewEvery = has('flea-brew') ? interval(st, true) : null;
+    const secs = (n, t) => (n ? Math.round((n - 1) * t * 100) / 100 : null);
+    needle.speed = {
+      interval: every, dps: sl.total / every, seconds: secs(sl.uses, every),
+      brew: brewEvery ? { interval: brewEvery, dps: sl.total / brewEvery, seconds: secs(sl.uses, brewEvery), lasts: HERO.QUICKENING } : null,
+    };
 
     // The Needle Strike: the Crest's own, at the Needle's level, through the same bracket.
     const sHits = crest.strike ? crest.strike.hits[st.needle] : null;
@@ -236,6 +262,6 @@
     return null;
   }
 
-  SS.engine = { roundHalfEven, normalize, modsFor, hitsOf, usesToKill, compute, plan };
+  SS.engine = { roundHalfEven, normalize, modsFor, hitsOf, usesToKill, interval, compute, plan };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.engine;
 })();
