@@ -361,6 +361,9 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
 .about h2 { margin-top: var(--sp-4); font-family: var(--font-display); font-size: var(--fs-2xs); letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--muted); }
 .about h3 { margin-top: var(--sp-2); font-size: var(--fs-sm); font-weight: 600; color: var(--ink); }
 .about-faq { display: flex; flex-direction: column; gap: var(--sp-1); }
+/* Folded with a save loaded (js/app.js, renderAbout): only its disclosure shows. */
+.about.is-folded > :not(.about-fold) { display: none; }
+.about.is-folded { padding-top: 0; border-top: 0; }
 .about code { font-family: var(--font-num); font-size: var(--fs-xs); color: var(--ink); overflow-wrap: anywhere; }
 .about strong { color: var(--ink); font-weight: 600; }
 .about-more ul { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-6); margin-top: var(--sp-2); padding: 0; list-style: none; }
@@ -940,56 +943,80 @@ kbd {
 }
 
 /* ── Your game, the start screen (js/app-home.js) ─────────────────────────
-   In free mode, the invitation: Hornet at a bench, and the file dropped here goes into the
-   first empty save. In a save: the profile's line (the Act, the time, the rosaries), your 100%
-   large with the game's own figure under it, and the wiki's ten categories as bars in bone,
-   full ones lit. Figures in --font-num, as everywhere. */
-.hm-invite {
-  display: grid; justify-items: center; gap: var(--sp-3); max-width: var(--measure); margin: 0 auto;
-  padding: var(--sp-8) var(--sp-4); text-align: center; border: 1px dashed transparent;
-  transition: border-color var(--dur) var(--ease), background-color var(--dur) var(--ease);
-}
-.hm-invite.is-drag { border-color: var(--accent-line); background: var(--accent-soft); }
+   In free mode, the ghost bench: the card a save shows, unlit, and the file dropped here goes
+   into the first empty save. In a save: the bench card, three columns and the ways on (design/03-redesign.md,
+   step 3). Figures in --font-num, as everywhere. */
 .hm-figure { height: calc(var(--sp-16) * 1.5); width: auto; filter: drop-shadow(0 0 18px color-mix(in oklab, var(--spotlight) 18%, transparent)); }
-.hm-invite-title { margin: 0; font-family: var(--font-display); font-size: var(--fs-xl); letter-spacing: var(--track-title); color: var(--ink-strong); }
-.hm-invite-lead { margin: 0; font-size: var(--fs-lg); color: var(--ink-2); text-wrap: pretty; }
-.hm-invite-acts { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--sp-4); margin-top: var(--sp-2); }
-
-.hm-meta {
-  display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-2) var(--sp-6); margin: 0 0 var(--sp-6);
-  font-size: var(--fs-sm); color: var(--ink-2);
-}
-.hm-meta b { font-family: var(--font-num); font-variant-numeric: tabular-nums; color: var(--ink-strong); }
-.hm-act { font-family: var(--font-display); letter-spacing: var(--track-title); color: var(--ink); }
-.hm-road { margin: calc(var(--sp-2) * -1) 0 var(--sp-6); text-align: center; font-size: var(--fs-sm); }
-.hm-total { display: grid; justify-items: center; gap: var(--sp-1); margin-bottom: var(--sp-8); }
-.hm-total-k { margin: 0; font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
-.hm-total-n { margin: 0; font-family: var(--font-num); font-variant-numeric: tabular-nums; line-height: 1; color: var(--ink-strong); }
-.hm-total-n b { font-size: var(--fs-hero); font-weight: 600; }
-.hm-total-n .u { font-size: var(--fs-2xl); color: var(--ink-2); margin-left: 0.08em; }
-.hm-check { margin: var(--sp-2) 0 0; font-size: var(--fs-sm); color: var(--muted); text-align: center; }
+.hm-invite-acts { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--sp-6); margin-top: var(--sp-1); }
+/* Free mode (the ghost bench): the card unlit, the kingdom's name in faint ink, Hornet a
+   silhouette with a faint rim and the figures waiting. Dropping a file on it lights it. */
+.hm-card.is-ghost { border: 1px dashed transparent; transition: border-color var(--dur) var(--ease), background-color var(--dur) var(--ease); }
+.hm-card.is-ghost::before { background: radial-gradient(ellipse 50% 70% at 50% 45%, var(--scene-glow-low), transparent 75%); }
+.is-ghost .hm-sup { color: var(--muted); }
+.is-ghost .hm-area { color: color-mix(in oklab, var(--ink) 30%, transparent); text-shadow: none; }
+.is-ghost .hm-figure { filter: brightness(0) drop-shadow(0 0 1px color-mix(in oklab, var(--ink) 45%, transparent)); opacity: 0.85; }
+.is-ghost .hm-fig b { color: var(--line-ctl); }
+.hm-ghost { margin: var(--sp-2) 0 0; font-family: var(--font-display); font-size: var(--fs-lg); letter-spacing: var(--track-title); color: var(--ink-strong); }
+.hm-invite.is-drag { border-color: var(--accent-line); background-color: var(--accent-soft); }
+.hm-check { margin: var(--sp-1) 0 0; font-size: var(--fs-xs); color: var(--muted); text-align: center; }
 .hm-check.is-off { color: var(--cond); }
-
-.hm-cats {
-  list-style: none; margin: 0 auto; padding: 0; max-width: var(--column);
-  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-3) var(--sp-8);
+/* The bench card: the game's area title (a small «Resting at» over the area's name in its capitals),
+   on the area's own light from the map screen (--area-line, --area-fill: set inline from the
+   area's tokens, js/app-home.js). The name is the area's line; the light its fill, rising
+   behind Hornet. */
+.hm-card {
+  --area-line: var(--spotlight); --area-fill: var(--scene-glow);
+  position: relative; isolation: isolate; display: grid; justify-items: center; gap: var(--sp-2);
+  padding: var(--sp-6) var(--sp-4) var(--sp-4); margin: 0 0 var(--sp-6); text-align: center;
 }
-.hm-cat { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "name n" "bar bar"; gap: var(--sp-1) var(--sp-3); align-items: baseline; }
-.hm-cat-name { grid-area: name; font-size: var(--fs-md); color: var(--ink); }
-.hm-cat-n { grid-area: n; font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-md); color: var(--ink-strong); }
-.hm-cat-n .u { font-size: var(--fs-xs); font-style: normal; color: var(--muted); }
-.hm-cat-bar { grid-area: bar; position: relative; height: 2px; background: var(--line); }
-.hm-cat-bar i {
-  position: absolute; inset: 0 auto 0 0; width: calc(var(--f) * 100%);
-  background: color-mix(in oklab, var(--spotlight) 70%, transparent);
+.hm-card::before {
+  content: ''; position: absolute; inset: calc(var(--sp-4) * -1) 0 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(ellipse 60% 75% at 50% 40%, color-mix(in oklab, var(--area-fill) 85%, transparent), transparent 75%);
 }
-.hm-cat.is-full .hm-cat-bar i { background: var(--ink-strong); box-shadow: 0 0 8px color-mix(in oklab, var(--ink-strong) 45%, transparent); }
-.hm-cat.is-full .hm-cat-name { color: var(--ink-strong); }
-.hm-journal { margin: var(--sp-8) 0 0; text-align: center; font-size: var(--fs-md); color: var(--ink-2); }
-.hm-journal b { font-family: var(--font-num); font-variant-numeric: tabular-nums; color: var(--ink-strong); margin-left: var(--sp-2); }
-.hm-journal .u { font-family: var(--font-num); font-size: var(--fs-xs); font-style: normal; color: var(--muted); }
-@media (max-width: 640px) {
-  .hm-cats { grid-template-columns: minmax(0, 1fr); }
+.hm-sup { margin: 0; font-family: var(--font-display); font-size: var(--fs-sm); letter-spacing: var(--track-wide); text-transform: uppercase; color: color-mix(in oklab, var(--area-line) 70%, var(--ink-2)); }
+.hm-area {
+  margin: 0; font-family: var(--font-display); font-weight: 400; font-size: var(--fs-hero); line-height: 1; letter-spacing: var(--track-title);
+  text-transform: uppercase; color: var(--area-line); text-wrap: balance;
+  text-shadow: 0 0 24px color-mix(in oklab, var(--area-line) 35%, transparent);
+}
+.hm-sub { margin: 0; font-size: var(--fs-sm); color: var(--ink-2); }
+.hm-card .hm-figure { height: calc(var(--sp-16) * 1.2); margin-block: var(--sp-2); }
+.hm-figs { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-4) var(--sp-12); }
+.hm-fig { display: grid; justify-items: center; gap: var(--sp-1); }
+.hm-fig-k { font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; color: var(--label); }
+.hm-fig b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-xl); font-weight: 600; line-height: 1; color: var(--ink-strong); }
+.hm-fig:first-child b { font-size: var(--fs-2xl); }
+.hm-fig .u { font-size: var(--fs-xs); color: var(--muted); }
+.hm-road { margin: 0 0 var(--sp-6); text-align: center; font-size: var(--fs-sm); }
+/* Three columns under the card: since the previous save, closest to the bench, the 100% by part. */
+.hm-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: var(--sp-8); }
+.hm-col { display: grid; gap: var(--sp-3); align-content: start; }
+/* One column alone (no previous save, a bench off the room graph) keeps a list's measure. */
+.hm-cols:has(> :only-child) { max-width: var(--column); margin-inline: auto; }
+.hm-col > .text-btn { justify-self: start; font-size: var(--fs-sm); }
+.hm-col .mp-near-list { margin: 0; gap: var(--sp-2); }
+.hm-col .mp-near-list li { grid-template-columns: 18px minmax(0, 1fr) auto; row-gap: 0; }
+.hm-col .mp-near-area { grid-column: 2 / -1; grid-row: 2; white-space: normal; }
+.hm-parts { display: grid; gap: var(--sp-1); }
+.hm-parts a { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: var(--sp-3); padding: var(--sp-half) 0; font-size: var(--fs-sm); color: var(--ink); text-decoration: none; transition: color var(--dur) var(--ease); }
+.hm-parts a:is(:hover, :focus-visible) { color: var(--accent); }
+.hm-part.is-full a { color: var(--muted); }
+.hm-part-n { font-family: var(--font-num); font-variant-numeric: tabular-nums; color: var(--ink-strong); }
+.hm-part-n .u { font-size: var(--fs-2xs); font-style: normal; color: var(--muted); }
+/* The ways on: the game's pictures over the screen's name with the accent's arrow, stepping
+   forward under the finger (the sibling's). */
+.hm-next { margin-top: var(--sp-8); padding-top: var(--sp-6); border-top: 1px solid var(--inv-line); }
+.hm-next ul { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--sp-4); }
+.hm-go { display: grid; justify-items: center; gap: var(--sp-1); padding: var(--sp-3); text-align: center; text-decoration: none; font-size: var(--fs-xs); color: var(--ink-2); }
+.hm-go img { width: var(--sp-12); height: var(--sp-12); object-fit: contain; transition: filter var(--dur) var(--ease); }
+.hm-go b { font-size: var(--fs-md); font-weight: 600; color: var(--ink-strong); }
+.hm-go b::after { content: ' →'; display: inline-block; color: var(--accent); transition: transform var(--dur) var(--ease); }
+.hm-go:is(:hover, :focus-visible) b::after { transform: translateX(var(--sp-1)); }
+.hm-go:is(:hover, :focus-visible) img { filter: drop-shadow(0 0 8px color-mix(in oklab, var(--spotlight) 45%, transparent)); }
+@media (max-width: 599px) {
+  .hm-area { font-size: var(--fs-2xl); }
+  .hm-figs { gap: var(--sp-4) var(--sp-8); }
+  .hm-next ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 /* ── Progress (js/app-progress.js): what's missing, piece by piece ────────
@@ -1063,16 +1090,11 @@ kbd {
   .pg-item:not(:has(.pg-slot)) .pg-where { grid-column: 2; }
 }
 
-/* Since the previous save (js/app-home.js, js/changes.js): a short list under the profile's line,
-   each thing by name with its area quiet beside it, and what the completion went up by. */
-.hm-since { max-width: var(--column); margin: 0 auto var(--sp-8); padding: var(--sp-4) var(--sp-6); border: 1px solid var(--line); background: var(--well); }
-.hm-since-h {
-  display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--sp-1) var(--sp-3); margin: 0 0 var(--sp-3);
-  font-family: var(--font-display); font-size: var(--fs-md); font-weight: 600; letter-spacing: var(--track-title); color: var(--filigree);
-}
-.hm-since-at { font-family: var(--font-body); font-size: var(--fs-xs); font-weight: 400; letter-spacing: 0; color: var(--muted); }
-.hm-since-pct { margin-left: auto; font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-lg); color: var(--ink-strong); }
-.hm-gains { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: var(--sp-1) var(--sp-6); }
+/* Since the previous save (js/app-home.js, js/changes.js): a column under the bench card, each
+   thing by name with its area quiet beside it, and what the completion went up by. */
+.hm-since-at { margin: 0; font-size: var(--fs-xs); color: var(--muted); }
+.hm-since-pct { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-sm); color: var(--ink-strong); }
+.hm-gains { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-2); }
 .hm-gain { display: flex; align-items: baseline; gap: var(--sp-2); min-width: 0; font-size: var(--fs-sm); color: var(--ink); }
 .hm-gain::before { content: ''; flex: none; width: var(--diamond); height: var(--diamond); border: 1px solid var(--ink-2); transform: rotate(45deg) translateY(-2px); }
 .hm-gain-where { font-size: var(--fs-xs); color: var(--muted); white-space: nowrap; }

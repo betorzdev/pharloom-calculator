@@ -125,8 +125,44 @@
   --area-spot-off: rgba(236, 236, 236, 0.04);
   --scene-cold: rgba(94, 84, 74, 0.3);
   --scene-cold-off: rgba(94, 84, 74, 0.1);
-  /* Each area's ramp (--area-<id>-mid / -deep / -light) goes here once design/02-silksong.md
-     measures the 33 areas: the enemy's stage takes its area's ambience. */
+  /* Each area's light (design/02-silksong.md §4, measured on the wiki's area maps): the fill and
+     the line the game's map screen draws it in, by the save's area ids (js/collectibles.js
+     AREAS). Your game's bench card is lit by its area (js/app-home.js); an area not measured
+     (Songclave, the Exhaust Organ, the Red Memory, Wisp Thicket's line) falls back to the
+     spotlight's bone. Coral Tower is drawn inside the Sands of Karak. */
+  --area-bonebottom-fill: #2d4125; --area-bonebottom-line: #94bf81;   /* Bone Bottom */
+  --area-crawl-fill: #2b251c; --area-crawl-line: #988873;   /* Wormways */
+  --area-wilds-fill: #262a11; --area-wilds-line: #87924e;   /* Far Fields */
+  --area-shellwood-fill: #3a3d2d; --area-shellwood-line: #b6bd9b;   /* Shellwood */
+  --area-docks-fill: #4d3213; --area-docks-line: #daa254;   /* Deep Docks */
+  --area-weave-prime-fill: #242638; --area-weave-prime-line: #9da0bc;   /* Weavenest Atla */
+  --area-bellhart-fill: #634e34; --area-bellhart-line: #fce5b9;   /* Bellhart */
+  --area-cogwork-core-fill: #3b3e2f; --area-cogwork-core-line: #aaae90;   /* Cogwork Core */
+  --area-shadow-fill: #3d3a16; --area-shadow-line: #e9e7ca;   /* Bilewater */
+  --area-slab-fill: #3a3e43; --area-slab-line: #b0b8c2;   /* The Slab */
+  --area-mountain-fill: #111b2a; --area-mountain-line: #bac4d2;   /* Mount Fay */
+  --area-coral-steps-fill: #3b2f1f; --area-coral-steps-line: #b9a075;   /* Blasted Steps */
+  --area-greymoor-fill: #172729; --area-greymoor-line: #6e8f93;   /* Greymoor */
+  --area-understore-fill: #242527; --area-understore-line: #7d8087;   /* Underworks */
+  --area-grandgate-fill: #4b453a; --area-grandgate-line: #d7ccb5;   /* Grand Gate */
+  --area-ward-fill: #474747; --area-ward-line: #cfcfcf;   /* Whiteward */
+  --area-hang-fill: #47301c; --area-hang-line: #ca9d6e;   /* High Halls */
+  --area-hunters-march-fill: #472119; --area-hunters-march-line: #c47461;   /* Hunter's March */
+  --area-halls-fill: #554e30; --area-halls-line: #f0e5ab;   /* Choral Chambers */
+  --area-library-fill: #5d411d; --area-library-line: #e9b96f;   /* Whispering Vaults */
+  --area-arborium-fill: #4e493f; --area-arborium-line: #e4daca;   /* Memorium */
+  --area-coral-river-fill: #583038; --area-coral-river-line: #f1a1b4;   /* Sands of Karak */
+  --area-coral-tower-fill: #583038; --area-coral-tower-line: #f1a1b4;   /* Sands of Karak */
+  --area-boneforest-fill: #4a4a4a; --area-boneforest-line: #d8d8d8;   /* The Marrow */
+  --area-aqueducts-fill: #1d2d35; --area-aqueducts-line: #729bad;   /* Putrified Ducts */
+  --area-dustpens-fill: #30251d; --area-dustpens-line: #b08772;   /* Sinner's Road */
+  --area-cradle-fill: #242537; --area-cradle-line: #8183ae;   /* The Cradle */
+  --area-abyss-fill: #202020; --area-abyss-line: #bdbdbd;   /* The Abyss */
+  --area-mosscave-fill: #2d4125; --area-mosscave-line: #a9cb99;   /* Moss Grotto */
+  --area-mosstown-fill: #2b4124; --area-mosstown-line: #92bd7f;   /* Mosslands */
+  --area-grove-fill: #163420; --area-grove-line: #5fa879;   /* Verdania */
+  --area-mistmaze-fill: #494949; --area-mistmaze-line: #9d9d9d;   /* The Mist */
+  --area-wisp-fill: #132f1b;   /* Wisp Thicket */
 
   /* Traffic light for the deltas and conditional notices */
   --good: #7fc7a0;

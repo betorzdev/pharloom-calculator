@@ -43,14 +43,25 @@ asks the game's own question («Clear Profile?») and only clears the site's cop
 
 ### Your game
 
-In Free mode, an invitation: drag your save's file there and it goes into the first empty save.
-In a save: the Act, the time played, the rosaries and **your 100%**, split into the wiki's ten
-categories (Tools, Silk Spools, the Crafting Kit and Tool Pouch, abilities, Silk Skills, Crests,
+In Free mode, the card a save shows, unlit: «Resting at Pharloom», Hornet in silhouette and the
+four figures waiting, with Import. Drag your save's file onto it and it goes into the first
+empty save.
+
+In a save, the game's area title card: **Resting at** the area of the bench Hornet sits at, lit by
+that area's own colour on the game's map, the room's area under it when it's another (Coral
+Tower in the Sands of Karak), the Act and the time played; Hornet at the bench; and four
+figures: **your 100%**, the Journal, the masks and the rosaries. Under it, the road to the next
+Act when there is one, then three columns: what changed since the previous save (below), what's
+missing **closest to your bench** (the Map's own list, its first five), and your 100% split into
+the wiki's ten categories (Tools, Silk Spools, the Crafting Kit and Tool Pouch, abilities, Silk Skills, Crests,
 masks, the Needle, Silk Hearts, the Everbloom), with the figure the game itself shows under it:
 they're the same. The site counts as the game does, checked on 92 real saves (0% to 100%, four
 patches, Steel Soul): whole masks and spools, not loose shards and fragments (two shards are
 still 0%), and a Tool and its upgrade (Curveclaw and Curvesickle) are one point. And the
-Journal: the required entries with their kills done, out of 230 (231 in Steel Soul).
+Journal: the required entries with their kills done, out of 230 (231 in Steel Soul). Each
+category opens Progress. At the foot, the ways on: Progress, the Map, the Journal (with the
+entries still to go) and the Crest screen. With a save loaded, the text about the site under
+the screen folds into «About this site».
 
 When the save follows the game's file, each new save the game writes to it (the restore points
 go to their own folder and aren't followed) brings a block **Since

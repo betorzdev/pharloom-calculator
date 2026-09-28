@@ -126,15 +126,27 @@
     liveTag:        { es: 'Tu partida real', en: 'Your real game' },
 
     /* Your game: the start screen (js/app-home.js) */
-    homeInvite:     { es: 'Trae tu partida', en: 'Bring your game' },
-    homeInviteLead: { es: 'Arrastra aquí el archivo de tu partida, o elige una de las cuatro: la web te dice qué te falta para el 100 %, pieza a pieza.',
-                      en: 'Drag your save\'s file here, or pick one of the four: the site tells you what\'s missing for 100%, piece by piece.' },
     homeInviteBtn:  { es: 'Importar del juego', en: 'Import from the game' },
     homeCompletion: { es: 'Tu 100 %', en: 'Your 100%' },
     homeMatches:    { es: 'Coincide con el {pct} que muestra el juego.', en: 'It matches the {pct} the game shows.' },
     homeDiffers:    { es: 'El juego muestra {pct}: tu archivo es de una versión que cuenta distinto, o hay un fallo. Escríbenos.',
                       en: 'The game shows {pct}: your file is from a version that counts differently, or there\'s a bug. Write to us.' },
     homeJournal:    { es: 'Diario', en: 'Journal' },   // PANE_JOURNAL
+    /* The bench card (design/03-redesign.md, step 3): the game has no «Resting at» of its own. */
+    homeRest:       { es: 'Descansando en', en: 'Resting at' },
+    homeKingdom:    { es: 'Telalejana', en: 'Pharloom' },   // MQ_BELLSHRINES_LOC
+    homeGhost:      { es: 'Aquí irá tu partida', en: 'Your game goes here' },
+    homeNearMap:    { es: 'En el mapa', en: 'On the map' },
+    homeParts:      { es: 'Tu 100 %, por partes', en: 'Your 100%, by part' },
+    homeAllParts:   { es: 'Todo en Progreso', en: 'Everything in Progress' },
+    homeGoLabel:    { es: 'Sigue por', en: 'Where next' },
+    homeGoProgress: { es: 'Lo que te falta para el 100 %', en: 'What\'s missing for 100%' },
+    homeGoMap:      { es: 'Dónde está, en el mapa del juego', en: 'Where it is, on the game\'s map' },
+    homeGoJournal:  { es: 'Te quedan {n} entradas', en: '{n} entries to go' },
+    homeGoJournal1: { es: 'Te queda {n} entrada', en: '{n} entry to go' },
+    homeGoJournal0: { es: 'Completo para Nuu', en: 'Complete for Nuu' },
+    homeGoCrest:    { es: 'Tu build, cifra a cifra', en: 'Your build, figure by figure' },
+    aboutFold:      { es: 'Sobre esta web', en: 'About this site' },
     cat_tools:      { es: 'Herramientas', en: 'Tools' },
     cat_spools:     { es: 'Carretes de seda', en: 'Silk Spools' },
     cat_upgrades:   { es: 'Kit de fabricación y bolsa de herramientas', en: 'Crafting Kit and Tool Pouch' },

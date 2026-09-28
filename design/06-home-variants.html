@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Your game: variants</title>
+<!-- Design material, not part of the site (design/03-redesign.md, step 3). The start screen,
+     Your game, drawn three ways with a save (sample figures from a real save: Save 4, 63%,
+     resting at Coral Tower in the Sands of Karak) and three ways without one (Free mode). The
+     bar at the bottom picks them; the URL carries them:
+     ?state=save|free&save=a|b|c&free=a|b|c&area=karak|bellhart|greymoor&next=on|off&about=open|fold&w=1440|390.
+     The site's real CSS draws the frame, the controls and the heads; the rules below are the
+     mockup's. The lists are samples, not computed. -->
+<base href="../">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/app.css">
+<style>
+/* ════ The mockup's bar ═══════════════════════════════════════════════════════════════════ */
+.mk-bar { position: fixed; z-index: 90; left: 50%; bottom: var(--sp-2); transform: translateX(-50%); display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--sp-1) var(--sp-3); width: max-content; max-width: calc(100vw - var(--sp-4)); padding: var(--sp-2) var(--sp-3); background: color-mix(in oklab, var(--scene-bg) 94%, transparent); border: 1px solid var(--line-panel); font-family: var(--font-num); font-size: var(--fs-xs); color: var(--muted); box-shadow: var(--shadow-md); }
+.mk-bar b { color: var(--label); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; font-size: var(--fs-2xs); }
+.mk-bar button { padding: var(--sp-1) var(--sp-2); border: 1px solid var(--line-ctl); color: var(--ink-2); font: inherit; }
+.mk-bar button[aria-pressed="true"] { color: var(--ink-strong); border-color: var(--accent-line); background: var(--picked); }
+.mk-grp { display: inline-flex; align-items: center; gap: var(--sp-1); }
+.mk-sep { width: 1px; align-self: stretch; background: var(--line); }
+.mk-note { flex-basis: 100%; text-align: center; color: var(--ink-2); }
+html.is-framed body { background: var(--scene-bg); }
+.mk-phone { display: block; margin: var(--sp-4) auto calc(var(--sp-16) * 2); width: 390px; height: calc(100vh - var(--sp-16) * 2 - var(--sp-8)); border: 1px solid var(--line-panel); }
+html.is-inner .mk-bar { display: none; }
+.page { padding-top: var(--sp-8); padding-bottom: calc(var(--sp-16) * 2.5); }
+[data-v] { display: none; }
+html.st-save.sv-a [data-v="save-a"], html.st-save.sv-b [data-v="save-b"], html.st-save.sv-c [data-v="save-c"],
+html.st-free.fr-a [data-v="free-a"], html.st-free.fr-b [data-v="free-b"], html.st-free.fr-c [data-v="free-c"],
+html.st-free.fr-d [data-v="free-d"], html.st-free.fr-e [data-v="free-e"], html.st-free.fr-f [data-v="free-f"] { display: block; }
+html:not(.nx-on) .mk-next { display: none; }
+
+/* The area's light: its map line (design/02-silksong.md §4), one per sample. */
+html.ar-karak { --area-line: #f1a1b4; --area-fill: #583038; --area-name: 'Sands of Karak'; }
+html.ar-bellhart { --area-line: #fce5b9; --area-fill: #634e34; }
+html.ar-greymoor { --area-line: #6e8f93; --area-fill: #172729; }
+
+/* Shared pieces */
+.mk-k { font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; color: var(--label); }
+.mk-fig { display: grid; justify-items: center; gap: var(--sp-1); }
+.mk-fig b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-xl); font-weight: 600; color: var(--ink-strong); line-height: 1; }
+.mk-fig .u { font-size: var(--fs-xs); }
+.mk-list { display: grid; gap: var(--sp-2); }
+.mk-li { display: flex; align-items: baseline; gap: var(--sp-2); font-size: var(--fs-sm); color: var(--ink); }
+.mk-li::before { content: ''; width: var(--diamond); height: var(--diamond); border: 1px solid var(--ink-2); transform: rotate(45deg) translateY(-2px); }
+.mk-li span { margin-left: auto; font-size: var(--fs-xs); color: var(--muted); }
+.mk-li b { font-family: var(--font-num); font-size: var(--fs-xs); font-weight: 600; color: var(--ink-2); }
+.mk-cols3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-8); }
+.mk-cols2 { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: var(--sp-12); align-items: start; }
+.mk-block { display: grid; gap: var(--sp-3); align-content: start; }
+@media (max-width: 899px) { .mk-cols3, .mk-cols2 { grid-template-columns: 1fr; gap: var(--sp-8); } }
+
+/* The way on to another screen (the sibling's round 6): a title with the accent's arrow. */
+.mk-next { margin-top: var(--sp-8); padding-top: var(--sp-6); border-top: 1px solid var(--inv-line); }
+.mk-next ul { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--sp-4); }
+.mk-go { display: grid; justify-items: center; gap: var(--sp-1); padding: var(--sp-3); text-align: center; text-decoration: none; color: var(--ink-2); font-size: var(--fs-xs); }
+.mk-go img { width: var(--sp-12); height: var(--sp-12); object-fit: contain; }
+.mk-go b { font-family: var(--font-body); font-size: var(--fs-md); font-weight: 600; color: var(--ink-strong); }
+.mk-go b::after { content: ' →'; color: var(--accent); display: inline-block; transition: transform var(--dur) var(--ease); }
+.mk-go:hover b::after { transform: translateX(var(--sp-1)); }
+@media (max-width: 599px) { .mk-next ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* ════ SAVE A · the profile, refined ═══════════════════════════════════════════════════════
+   Today's screen with what it lacks: each category a way into Progress with what's missing,
+   and beside the total, the two lists (since last time, near your bench). */
+.a-cat { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "n v" "bar bar" "s s"; gap: var(--sp-1) var(--sp-3); padding: var(--sp-2) 0; text-decoration: none; color: var(--ink); }
+.a-cat .n { grid-area: n; }
+.a-cat .n::after { content: ' →'; color: var(--accent); opacity: 0; transition: opacity var(--dur) var(--ease); }
+.a-cat:hover .n::after { opacity: 1; }
+.a-cat .v { grid-area: v; font-family: var(--font-num); font-variant-numeric: tabular-nums; color: var(--ink-strong); }
+.a-cat .v i { font-style: normal; font-size: var(--fs-xs); color: var(--muted); }
+.a-cat .bar { grid-area: bar; height: 2px; background: var(--line); position: relative; }
+.a-cat .bar i { position: absolute; inset: 0 auto 0 0; width: calc(var(--f) * 100%); background: var(--ink-2); }
+.a-cat.is-full .bar i { background: var(--ink-strong); box-shadow: 0 0 8px color-mix(in oklab, var(--ink-strong) 45%, transparent); }
+.a-cat .s { grid-area: s; font-size: var(--fs-xs); color: var(--muted); }
+.a-top { display: grid; justify-items: center; gap: var(--sp-1); margin-bottom: var(--sp-6); }
+
+/* ════ SAVE B · the bench ═══════════════════════════════════════════════════════════════════
+   The game's area title card: "Resting at" over the area's name, on the area's own light,
+   Hornet at her bench under it and the four figures. */
+.b-card { position: relative; isolation: isolate; display: grid; justify-items: center; gap: var(--sp-2); padding: var(--sp-8) var(--sp-4) var(--sp-6); margin: calc(var(--sp-2) * -1) calc(var(--sp-4) * -1) var(--sp-8); text-align: center; }
+.b-card::before { content: ''; position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse 60% 75% at 50% 40%, color-mix(in oklab, var(--area-fill) 85%, transparent), transparent 75%); }
+.b-sup { font-family: var(--font-display); font-size: var(--fs-sm); letter-spacing: var(--track-wide); text-transform: uppercase; color: color-mix(in oklab, var(--area-line) 70%, var(--ink-2)); }
+.b-name { font-family: var(--font-display); font-weight: 400; font-size: var(--fs-hero); line-height: 1; letter-spacing: var(--track-title); color: var(--area-line); text-transform: uppercase; text-shadow: 0 0 24px color-mix(in oklab, var(--area-line) 35%, transparent); text-wrap: balance; }
+.b-sub { font-size: var(--fs-sm); color: var(--ink-2); }
+.b-hornet { height: calc(var(--sp-16) * 1.2); width: auto; margin-block: var(--sp-2); }
+.b-figs { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-6) var(--sp-12); margin-top: var(--sp-2); }
+.b-figs .mk-fig b.is-big { font-size: var(--fs-2xl); }
+.b-cats { display: grid; gap: var(--sp-2); }
+.b-cat { display: grid; grid-template-columns: minmax(0, 1fr) auto; font-size: var(--fs-sm); color: var(--ink); text-decoration: none; }
+.b-cat b { font-family: var(--font-num); color: var(--ink-strong); }
+.b-cat b i { font-style: normal; font-size: var(--fs-2xs); color: var(--muted); }
+.b-cat.is-full { color: var(--muted); }
+@media (max-width: 599px) { .b-name { font-size: var(--fs-2xl); } }
+
+/* ════ SAVE C · the HUD ═════════════════════════════════════════════════════════════════════
+   The game's own HUD on top (the Crest wheel, the masks, the spool, the rosaries), and the
+   100% as ten tiles with the game's pictures, each opening its category in Progress. */
+.c-hud { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-4) var(--sp-8); padding-bottom: var(--sp-6); margin-bottom: var(--sp-6); border-bottom: 1px solid var(--inv-line); }
+.c-wheel { display: grid; place-items: center; width: calc(var(--sp-16) + var(--sp-4)); height: calc(var(--sp-16) + var(--sp-4)); border: 2px solid var(--hud-frame); border-radius: 50%; box-shadow: inset 0 0 0 var(--sp-1) var(--silk-well); }
+.c-wheel img { width: 70%; }
+.c-bars { display: grid; gap: var(--sp-2); }
+.c-masks { display: flex; gap: var(--sp-1); }
+.c-masks img { height: var(--sp-8); width: auto; }
+.c-masks img.is-off { filter: var(--missing-art); }
+.c-spool { display: flex; align-items: center; gap: var(--sp-2); }
+.c-spool i { width: calc(var(--sp-16) * 2.5); height: var(--sp-2); background: var(--silk-well); border: 1px solid var(--silk-rim); position: relative; }
+.c-spool i::after { content: ''; position: absolute; inset: 0 auto 0 0; width: 70%; background: var(--silk); }
+.c-side { margin-left: auto; display: flex; gap: var(--sp-8); }
+.c-total { display: flex; align-items: baseline; justify-content: center; gap: var(--sp-4); margin-bottom: var(--sp-6); }
+.c-total b { font-family: var(--font-num); font-size: var(--fs-hero); font-weight: 600; line-height: 1; color: var(--ink-strong); }
+.c-total .u { font-size: var(--fs-2xl); }
+.c-tiles { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--sp-3); }
+.c-tile { position: relative; display: grid; justify-items: center; gap: var(--sp-1); padding: var(--sp-4) var(--sp-2); text-align: center; text-decoration: none; color: var(--ink); border: 1px solid var(--inv-line); transition: background-color var(--dur) var(--ease), border-color var(--dur) var(--ease); }
+.c-tile:hover { background: var(--veil); border-color: var(--accent-line); }
+.c-tile img { width: var(--sp-12); height: var(--sp-12); object-fit: contain; }
+.c-tile.is-full img { filter: drop-shadow(0 0 8px color-mix(in oklab, var(--spotlight) 45%, transparent)); }
+.c-tile span { font-size: var(--fs-xs); color: var(--ink-2); line-height: 1.3; }
+.c-tile b { font-family: var(--font-num); font-size: var(--fs-lg); color: var(--ink-strong); }
+.c-tile b i { font-style: normal; font-size: var(--fs-xs); color: var(--muted); }
+.c-pips { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-1); max-width: 100%; }
+.c-pips i { width: var(--diamond); height: var(--diamond); border: 1px solid var(--accent-line); transform: rotate(45deg); }
+.c-pips i.on { background: var(--accent); border-color: var(--accent); }
+@media (max-width: 899px) { .c-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } .c-side { margin-left: 0; } }
+
+/* ════ FREE · no save ═══════════════════════════════════════════════════════════════════════ */
+.f-inv { display: grid; justify-items: center; gap: var(--sp-3); text-align: center; }
+.f-inv img { height: calc(var(--sp-16) * 1.5); width: auto; }
+.f-inv h3 { font-family: var(--font-display); font-weight: 400; font-size: var(--fs-xl); letter-spacing: var(--track-title); color: var(--ink-strong); }
+.f-inv p { max-width: 48ch; font-size: var(--fs-lg); color: var(--ink-2); }
+.f-acts { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: var(--sp-6); margin-top: var(--sp-2); }
+.f-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--sp-12); align-items: center; }
+.f-example { position: relative; opacity: 0.9; }
+.f-example .tag { position: absolute; top: 0; left: 50%; transform: translateX(-50%); }
+.f-example .b-card { margin: 0; padding-top: var(--sp-8); }
+.f-steps { display: grid; gap: var(--sp-2); max-width: 44ch; margin: var(--sp-2) auto 0; text-align: left; font-size: var(--fs-sm); color: var(--ink-2); counter-reset: s; }
+.f-steps li { position: relative; padding-left: var(--sp-6); counter-increment: s; }
+.f-steps li::before { position: absolute; left: 0; content: counter(s); font-family: var(--font-num); font-weight: 600; color: var(--ink-strong); }
+.f-steps code { font-family: var(--font-num); font-size: var(--fs-xs); color: var(--ink); overflow-wrap: anywhere; }
+@media (max-width: 899px) { .f-split { grid-template-columns: 1fr; } }
+
+
+/* ════ FREE, second round (Albert: «Bring your game» is too much text and not attractive) ═══
+   D · the empty slot: the game's profile slot with nothing in it; the whole slot is the drop zone. */
+.d-slot { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: var(--sp-6); max-width: var(--column); margin: var(--sp-6) auto; padding: var(--sp-6) var(--sp-8);
+  border: 1px dashed color-mix(in oklab, var(--accent-line) 70%, transparent); background: linear-gradient(90deg, var(--veil), transparent 70%); }
+.d-slot:hover { border-color: var(--accent); background: linear-gradient(90deg, var(--accent-soft), transparent 70%); }
+.d-slot img { height: calc(var(--sp-16) * 1.1); width: auto; filter: drop-shadow(0 0 14px color-mix(in oklab, var(--spotlight) 30%, transparent)); }
+.d-slot b { display: block; font-family: var(--font-display); font-weight: 600; font-size: var(--fs-lg); letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--ink-strong); }
+.d-slot span { font-size: var(--fs-sm); color: var(--muted); }
+.d-slot code { font-family: var(--font-num); font-size: var(--fs-xs); color: var(--ink-2); }
+.d-alt { text-align: center; font-size: var(--fs-sm); color: var(--muted); }
+@media (max-width: 599px) { .d-slot { grid-template-columns: 1fr; justify-items: center; text-align: center; padding: var(--sp-6) var(--sp-4); } }
+/* E · the ghost bench: the bench card itself, unlit, waiting for a game. */
+.e-card .b-name { color: color-mix(in oklab, var(--ink) 30%, transparent); text-shadow: none; }
+.e-card .b-sup { color: var(--muted); }
+.e-card::before { background: radial-gradient(ellipse 50% 70% at 50% 45%, var(--scene-glow-low), transparent 75%); }
+.e-card .b-hornet { filter: brightness(0) drop-shadow(0 0 1px color-mix(in oklab, var(--ink) 45%, transparent)); opacity: 0.85; }
+.e-card .mk-fig b { color: var(--line-ctl); }
+.e-cta { display: grid; justify-items: center; gap: var(--sp-3); margin-top: var(--sp-2); }
+.e-cta p { font-family: var(--font-display); font-size: var(--fs-lg); letter-spacing: var(--track-title); color: var(--ink-strong); }
+/* F · behind glass: a sample game under a veil, one call over it. */
+.f-glass { position: relative; }
+.f-glass-bg { filter: blur(2px) brightness(0.45) saturate(0.8); pointer-events: none; user-select: none; }
+.f-glass-cta { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: var(--sp-4); text-align: center;
+  background: radial-gradient(ellipse 45% 40% at 50% 38%, color-mix(in oklab, var(--scene-bg) 85%, transparent), transparent 80%); }
+.f-glass-cta p { font-family: var(--font-display); font-size: var(--fs-2xl); letter-spacing: var(--track-title); color: var(--ink-strong); text-wrap: balance; }
+.f-glass-cta .tag { color: var(--ink-2); }
+
+/* The About block folded: a disclosure under the screen. */
+html.ab-fold .about > :not(h1, .mk-about-btn) { display: none; }
+html.ab-fold .about h1 { display: none; }
+.mk-about-btn { display: none; }
+html.ab-fold .mk-about-btn { display: flex; }
+</style>
+</head>
+<body>
+<div class="page">
+<div class="shell">
+<main class="screens">
+<section class="screen">
+  <span class="frame-line" aria-hidden="true"></span>
+  <span class="bk tl"><svg class="bk-art" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M4 46 V18 C4 10 10 4 18 4 H46"/><path d="M10 30 C10 16 16 10 30 10"/><path d="M18 18 C21 14 26 15 25 19 C24 22 20 21 21 18.5"/><path d="M4 4 L8 8"/></svg></span>
+  <span class="bk tr"><svg class="bk-art" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M4 46 V18 C4 10 10 4 18 4 H46"/><path d="M10 30 C10 16 16 10 30 10"/><path d="M18 18 C21 14 26 15 25 19 C24 22 20 21 21 18.5"/><path d="M4 4 L8 8"/></svg></span>
+  <span class="bk bl"><svg class="bk-art" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M4 46 V18 C4 10 10 4 18 4 H46"/><path d="M10 30 C10 16 16 10 30 10"/><path d="M18 18 C21 14 26 15 25 19 C24 22 20 21 21 18.5"/><path d="M4 4 L8 8"/></svg></span>
+  <span class="bk br"><svg class="bk-art" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M4 46 V18 C4 10 10 4 18 4 H46"/><path d="M10 30 C10 16 16 10 30 10"/><path d="M18 18 C21 14 26 15 25 19 C24 22 20 21 21 18.5"/><path d="M4 4 L8 8"/></svg></span>
+  <header class="screen-head"><h2 class="sec-title screen-title">Your game</h2></header>
+
+  <!-- ═══ SAVE A ═══ -->
+  <div data-v="save-a">
+    <p class="hm-meta"><span class="hm-act">Act 3</span><span>15 h 41 min</span><span><span class="save-k">Rosaries</span> <b>0</b></span></p>
+    <div class="mk-cols2">
+      <div>
+        <div class="a-top"><p class="hm-total-k">Your 100%</p><p class="hm-total-n"><b>63</b><span class="u">%</span></p><p class="hm-check">It matches the 63% the game shows.</p></div>
+        <div class="mk-list" id="a-cats"></div>
+      </div>
+      <div class="mk-block" style="gap: var(--sp-8)">
+        <section class="mk-block"><h3 class="ct-h">Since the previous save</h3>
+          <div class="mk-list"><p class="mk-li">The Forum 2 <span>gauntlet cleared</span><b></b></p><p class="mk-li">Mask Shard <span>Shellwood</span><b>+1%</b></p></div></section>
+        <section class="mk-block"><h3 class="ct-h">Missing near your bench</h3>
+          <div class="mk-list" id="near-a"></div>
+          <a class="text-btn" href="#">On the map</a></section>
+        <section class="mk-block"><h3 class="ct-h">Journal</h3>
+          <p class="mk-li">For the Hunter's Memento <span></span><b style="font-size:var(--fs-md);color:var(--ink-strong)">54/230</b></p></section>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SAVE B ═══ -->
+  <div data-v="save-b">
+    <div class="b-card">
+      <p class="b-sup">Resting at</p>
+      <p class="b-name" id="b-area">Sands of Karak</p>
+      <p class="b-sub" id="b-room">Coral Tower · Act 3 · 15 h 41 min</p>
+      <img class="b-hornet" src="assets/hornet/resting.png" alt="">
+      <div class="b-figs">
+        <span class="mk-fig"><span class="mk-k">Your 100%</span><b class="is-big">63<span class="u">%</span></b></span>
+        <span class="mk-fig"><span class="mk-k">Journal</span><b>54<span class="u">/230</span></b></span>
+        <span class="mk-fig"><span class="mk-k">Masks</span><b>7</b></span>
+        <span class="mk-fig"><span class="mk-k">Rosaries</span><b>0</b></span>
+      </div>
+    </div>
+    <div class="mk-cols3">
+      <section class="mk-block"><h3 class="ct-h">Since the previous save</h3>
+        <div class="mk-list"><p class="mk-li">The Forum 2 <span>gauntlet cleared</span><b></b></p><p class="mk-li">Mask Shard <span>Shellwood</span><b>+1%</b></p></div></section>
+      <section class="mk-block"><h3 class="ct-h">Missing near your bench</h3><div class="mk-list" id="near-b"></div><a class="text-btn" href="#">On the map</a></section>
+      <section class="mk-block"><h3 class="ct-h">Your 100%, by part</h3><div class="b-cats" id="b-cats"></div><a class="text-btn" href="#">Everything in Progress</a></section>
+    </div>
+  </div>
+
+  <!-- ═══ SAVE C ═══ -->
+  <div data-v="save-c">
+    <div class="c-hud">
+      <span class="c-wheel"><img src="assets/icons/crests/hunter.webp" alt=""></span>
+      <span class="c-bars">
+        <span class="c-masks" id="c-masks"></span>
+        <span class="c-spool"><img src="assets/hud/spool.png" alt="" style="height:var(--sp-6)"><i></i></span>
+      </span>
+      <span class="c-side">
+        <span class="mk-fig"><span class="mk-k">Act</span><b>3</b></span>
+        <span class="mk-fig"><span class="mk-k">Time</span><b>15<span class="u">h</span> 41<span class="u">min</span></b></span>
+        <span class="mk-fig"><span class="mk-k">Rosaries</span><b>0</b></span>
+        <span class="mk-fig"><span class="mk-k">Journal</span><b>54<span class="u">/230</span></b></span>
+      </span>
+    </div>
+    <div class="c-total"><span class="mk-k">Your 100%</span><b>63<span class="u">%</span></b><span class="hm-check">matches the game</span></div>
+    <div class="c-tiles" id="c-tiles"></div>
+  </div>
+
+  <!-- ═══ FREE A ═══ -->
+  <div data-v="free-a">
+    <div class="f-inv">
+      <img src="assets/hornet/resting.png" alt="">
+      <h3>Bring your game</h3>
+      <p>Drag your save's file here, or pick one of the four: the site tells you what's missing for 100%, piece by piece.</p>
+      <div class="f-acts"><button type="button" class="btn btn-primary">Import from the game</button><a class="text-btn" href="#">Saves</a></div>
+    </div>
+  </div>
+
+  <!-- ═══ FREE B ═══ -->
+  <div data-v="free-b">
+    <div class="f-split">
+      <div class="f-inv">
+        <h3>Bring your game</h3>
+        <p>Import your save and, in Chrome or Edge, the site catches up by itself every time you sit on a bench.</p>
+        <ol class="f-steps"><li>Open the game's save folder: <code>%USERPROFILE%\AppData\LocalLow\Team Cherry\Hollow Knight Silksong</code></li><li>Drag <code>user1.dat</code> (or 2, 3, 4) here.</li><li>Play: the site follows the file.</li></ol>
+        <div class="f-acts"><button type="button" class="btn btn-primary">Import from the game</button><a class="text-btn" href="#">Saves</a></div>
+      </div>
+      <div class="f-example">
+        <span class="tag">Example</span>
+        <div class="b-card">
+          <p class="b-sup">Resting at</p><p class="b-name" style="font-size:var(--fs-2xl)">Sands of Karak</p>
+          <img class="b-hornet" src="assets/hornet/resting.png" alt="">
+          <div class="b-figs"><span class="mk-fig"><span class="mk-k">Your 100%</span><b class="is-big">63<span class="u">%</span></b></span><span class="mk-fig"><span class="mk-k">Journal</span><b>54<span class="u">/230</span></b></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ FREE C ═══ -->
+  <div data-v="free-c">
+    <div class="f-inv">
+      <img src="assets/hornet/resting.png" alt="">
+      <h3>Bring your game</h3>
+      <p>Drag your save's file here, or pick one of the four: the site tells you what's missing for 100%, piece by piece.</p>
+      <div class="f-acts"><button type="button" class="btn btn-primary">Import from the game</button><a class="text-btn" href="#">Saves</a></div>
+    </div>
+    <div class="mk-next" style="display:block">
+      <h3 class="ct-h" style="margin-bottom:var(--sp-4)">Without a save</h3>
+      <ul>
+        <li><a class="mk-go" href="#"><img src="assets/icons/crests/hunter.webp" alt=""><b>Crest</b>Every Tool and Crest, every stat</a></li>
+        <li><a class="mk-go" href="#"><img src="assets/icons/tools/claw-mirror.webp" alt=""><b>Combat</b>Hits to kill any enemy or boss</a></li>
+        <li><a class="mk-go" href="#"><img src="assets/icons/items/farsight.webp" alt=""><b>Map</b>Every piece on the game's map</a></li>
+        <li><a class="mk-go" href="#"><img src="assets/icons/items/hunters-journal.webp" alt=""><b>Journal</b>All 236 entries</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- ═══ FREE D · the empty slot ═══ -->
+  <div data-v="free-d">
+    <div class="d-slot">
+      <img src="assets/hornet/resting.png" alt="">
+      <div><b>Drop your save here</b><span><code>user1.dat</code> … <code>user4.dat</code>, from the game's folder</span></div>
+      <button type="button" class="btn btn-primary">Import</button>
+    </div>
+    <p class="d-alt">or try <a class="text-btn" href="#">Crest</a> and <a class="text-btn" href="#">Combat</a> without one</p>
+  </div>
+
+  <!-- ═══ FREE E · the ghost bench ═══ -->
+  <div data-v="free-e">
+    <div class="b-card e-card">
+      <p class="b-sup">Resting at</p>
+      <p class="b-name">Pharloom</p>
+      <img class="b-hornet" src="assets/hornet/resting.png" alt="">
+      <div class="b-figs">
+        <span class="mk-fig"><span class="mk-k">Your 100%</span><b class="is-big">—</b></span>
+        <span class="mk-fig"><span class="mk-k">Journal</span><b>—<span class="u">/230</span></b></span>
+        <span class="mk-fig"><span class="mk-k">Masks</span><b>—</b></span>
+        <span class="mk-fig"><span class="mk-k">Rosaries</span><b>—</b></span>
+      </div>
+      <div class="e-cta"><p>Your game goes here</p><div class="f-acts"><button type="button" class="btn btn-primary">Import from the game</button><a class="text-btn" href="#">Saves</a></div></div>
+    </div>
+  </div>
+
+  <!-- ═══ FREE F · behind glass ═══ -->
+  <div data-v="free-f">
+    <div class="f-glass">
+      <div class="f-glass-bg" aria-hidden="true">
+        <div class="b-card"><p class="b-sup">Resting at</p><p class="b-name">Sands of Karak</p><p class="b-sub">Coral Tower · Act 3 · 15 h 41 min</p><img class="b-hornet" src="assets/hornet/resting.png" alt="">
+          <div class="b-figs"><span class="mk-fig"><span class="mk-k">Your 100%</span><b class="is-big">63<span class="u">%</span></b></span><span class="mk-fig"><span class="mk-k">Journal</span><b>54<span class="u">/230</span></b></span><span class="mk-fig"><span class="mk-k">Masks</span><b>7</b></span><span class="mk-fig"><span class="mk-k">Rosaries</span><b>0</b></span></div></div>
+        <div class="mk-cols3"><section class="mk-block"><h3 class="ct-h">Since the previous save</h3><div class="mk-list"><p class="mk-li">The Forum 2 <span>gauntlet cleared</span></p></div></section>
+          <section class="mk-block"><h3 class="ct-h">Closest to your bench</h3><div class="mk-list"><p class="mk-li">Mask Shard <span>Sands of Karak</span></p><p class="mk-li">Craftmetal <span>Sands of Karak</span></p></div></section>
+          <section class="mk-block"><h3 class="ct-h">Your 100%, by part</h3><div class="mk-list"><p class="mk-li">Tools <span>31/51</span></p><p class="mk-li">Silk Spools <span>7/9</span></p></div></section></div>
+      </div>
+      <div class="f-glass-cta"><span class="tag">Example</span><p>This could be your game</p><div class="f-acts"><button type="button" class="btn btn-primary">Import from the game</button><a class="text-btn" href="#">Saves</a></div></div>
+    </div>
+  </div>
+
+  <!-- ═══ Where next (with a save) ═══ -->
+  <nav class="mk-next" aria-label="Where next">
+    <ul>
+      <li><a class="mk-go" href="#"><img src="assets/icons/items/mask-shard.webp" alt=""><b>Progress</b>What's missing for 100%</a></li>
+      <li><a class="mk-go" href="#"><img src="assets/icons/items/farsight.webp" alt=""><b>Map</b>Where it is, on the game's map</a></li>
+      <li><a class="mk-go" href="#"><img src="assets/icons/items/hunters-journal.webp" alt=""><b>Journal</b>176 entries to go</a></li>
+      <li><a class="mk-go" href="#"><img src="assets/icons/crests/hunter.webp" alt=""><b>Crest</b>Your build, stat by stat</a></li>
+    </ul>
+  </nav>
+</section>
+</main>
+
+<section class="about">
+  <button type="button" class="disc-btn mk-about-btn">About Pharloom Calculator<span class="disc-ring"><svg class="ic chev" width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1.5 L6 6 L11 1.5"/></svg></span></button>
+  <h1>Your Hollow Knight: Silksong game, live</h1>
+  <p>Pharloom Calculator reads your Silksong save file and shows what the game doesn't tell you: what's missing for 100%, piece by piece, where every Mask Shard, Spool Fragment and Tool you don't have yet is, on the game's own map, and how many Hunter's Journal entries are left.</p>
+  <div class="about-faq"><h2>Questions</h2><h3>Is it free? Do I need an account?</h3><p>Free, no account and no ads. Your save never leaves your browser.</p></div>
+</section>
+</div>
+</div>
+
+<div class="mk-bar" id="mk-bar">
+  <span class="mk-grp"><b>State</b><button data-key="state" data-val="save">a save</button><button data-key="state" data-val="free">no save</button></span>
+  <span class="mk-sep"></span>
+  <span class="mk-grp"><b>With a save</b><button data-key="save" data-val="a">A · profile</button><button data-key="save" data-val="b">B · bench</button><button data-key="save" data-val="c">C · HUD</button></span>
+  <span class="mk-sep"></span>
+  <span class="mk-grp"><b>Without</b><button data-key="free" data-val="a">A · as now</button><button data-key="free" data-val="b">B · example</button><button data-key="free" data-val="c">C · ways in</button><button data-key="free" data-val="d">D · empty slot</button><button data-key="free" data-val="e">E · ghost bench</button><button data-key="free" data-val="f">F · behind glass</button></span>
+  <span class="mk-sep"></span>
+  <span class="mk-grp"><b>Area</b><button data-key="area" data-val="karak">Karak</button><button data-key="area" data-val="bellhart">Bellhart</button><button data-key="area" data-val="greymoor">Greymoor</button></span>
+  <span class="mk-sep"></span>
+  <span class="mk-grp"><b>Where next</b><button data-key="next" data-val="on">on</button><button data-key="next" data-val="off">off</button></span>
+  <span class="mk-grp"><b>About</b><button data-key="about" data-val="open">open</button><button data-key="about" data-val="fold">folded</button></span>
+  <span class="mk-sep"></span>
+  <span class="mk-grp"><b>Width</b><button data-key="w" data-val="1440">desktop</button><button data-key="w" data-val="390">390</button></span>
+  <span class="mk-note" id="mk-note"></span>
+</div>
+
+<script>
+(function () {
+  const DEF = { state: 'save', save: 'b', free: 'e', area: 'karak', next: 'on', about: 'fold', w: '1440' };
+  const q = new URLSearchParams(location.search);
+  const st = Object.fromEntries(Object.keys(DEF).map((k) => [k, q.get(k) || DEF[k]]));
+  const inner = q.has('inner');
+  const html = document.documentElement;
+  // Save 4's categories (js/completion.js on the real file) and what each lacks, in words.
+  const CATS = [['Tools', 31, 51, 'assets/icons/tools/claw-mirror.webp', '20 missing'], ['Silk Spools', 7, 9, 'assets/icons/items/spool-fragment.webp', '4 fragments'],
+    ['Crafting Kit and Tool Pouch', 6, 8, 'assets/icons/items/crafting-kit.webp', '2 upgrades'], ['Abilities', 6, 7, 'assets/icons/arts/clawline.webp', '1 missing'],
+    ['Silk Skills', 3, 6, 'assets/icons/skills/silkspear.webp', '3 missing'], ['Crests', 2, 6, 'assets/icons/crests/witch.webp', '4 missing'],
+    ['Masks', 2, 5, 'assets/icons/items/mask-shard.webp', '12 shards'], ['Needle upgrades', 3, 4, 'assets/needles/4.png', '1 upgrade'],
+    ['Silk Hearts', 3, 3, 'assets/icons/pieces/silk-heart.webp', ''], ['Everbloom', 0, 1, 'assets/icons/items/everbloom.webp', 'the Everbloom']];
+  const NEAR = [['Mask Shard', 'Sands of Karak', '2 rooms'], ['Craftmetal', 'Sands of Karak', '3 rooms'], ['Lost Flea', 'Coral Tower', '4 rooms'], ['Spool Fragment', 'Blasted Steps', '6 rooms'], ['Memory Locket', 'Blasted Steps', '7 rooms']];
+  const AREAS = { karak: ['Sands of Karak', 'Coral Tower'], bellhart: ['Bellhart', 'Bellhart'], greymoor: ['Greymoor', 'Halfway Home'] };
+  document.getElementById('a-cats').innerHTML = CATS.map(([n, g, m, , s]) => `<a class="a-cat${g >= m ? ' is-full' : ''}" href="#" style="--f:${g / m}"><span class="n">${n}</span><span class="v">${g}<i>/${m}</i></span><span class="bar"><i></i></span><span class="s">${g >= m ? 'complete' : s}</span></a>`).join('');
+  document.getElementById('b-cats').innerHTML = CATS.map(([n, g, m]) => `<a class="b-cat${g >= m ? ' is-full' : ''}" href="#"><span>${n}</span><b>${g}<i>/${m}</i></b></a>`).join('');
+  document.getElementById('c-tiles').innerHTML = CATS.map(([n, g, m, img]) => `<a class="c-tile${g >= m ? ' is-full' : ''}" href="#"><img src="${img}" alt="" style="${g >= m ? '' : ''}"><span>${n}</span><b>${g}<i>/${m}</i></b>${m <= 9 ? `<span class="c-pips">${Array.from({ length: m }, (_, i) => `<i class="${i < g ? 'on' : ''}"></i>`).join('')}</span>` : ''}</a>`).join('');
+  document.getElementById('c-masks').innerHTML = Array.from({ length: 10 }, (_, i) => `<img src="assets/hud/mask.png" alt=""${i >= 7 ? ' class="is-off"' : ''}>`).join('');
+  const near = NEAR.map(([a, b, c]) => `<p class="mk-li">${a} <span>${b}</span><b>${c}</b></p>`).join('');
+  document.getElementById('near-a').innerHTML = near; document.getElementById('near-b').innerHTML = near;
+  const [ar, room] = AREAS[st.area];
+  document.getElementById('b-area').textContent = ar;
+  document.getElementById('b-room').textContent = `${room} · Act 3 · 15 h 41 min`;
+  const NOTES = {
+    save: { a: 'A · the profile, refined: today\'s screen, each category a way into Progress with what it lacks, and the two lists beside it.',
+            b: 'B · the bench: the game\'s area title card on the area\'s own light, Hornet at her bench, four figures; then since last time, near your bench, the 100% by part.',
+            c: 'C · the HUD: the Crest wheel, the masks and the spool as the game draws them; the 100% as ten tiles with the game\'s pictures.' },
+    free: { a: 'A · as now: Hornet, the invitation and Import.', b: 'B · the invitation in three steps next to an example of what a save shows (the sibling\'s).',
+            c: 'C · the invitation, and under it the ways in that need no save.',
+            d: 'D · the empty slot: the game\'s profile slot with nothing in it, one line, Import; the whole slot takes the dropped file.',
+            e: 'E · the ghost bench: the bench card unlit, Hornet in silhouette and the figures waiting, «Your game goes here».',
+            f: 'F · behind glass: a sample game under a veil and one call over it, «This could be your game».' },
+  };
+  function apply() {
+    html.className = `st-${st.state} sv-${st.save} fr-${st.free} ar-${st.area}${st.next === 'on' && st.state === 'save' ? ' nx-on' : ''} ab-${st.about}${inner ? ' is-inner' : ''}${html.classList.contains('is-framed') ? ' is-framed' : ''}`;
+    for (const b of document.querySelectorAll('.mk-bar button')) b.setAttribute('aria-pressed', String(st[b.dataset.key] === b.dataset.val));
+    document.getElementById('mk-note').textContent = st.state === 'save' ? NOTES.save[st.save] : NOTES.free[st.free];
+  }
+  const url = (over) => '?' + new URLSearchParams(Object.assign({}, st, over)).toString();
+  if (st.w === '390' && !inner) {
+    html.classList.add('is-framed');
+    document.querySelector('.page').remove();
+    const f = document.createElement('iframe'); f.className = 'mk-phone'; f.src = location.pathname + url({ inner: 1 }); document.body.prepend(f);
+  }
+  apply();
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('.mk-bar button');
+    if (b) { location.search = url({ [b.dataset.key]: b.dataset.val }); return; }
+    if (e.target.closest('.mk-about-btn')) { st.about = 'open'; apply(); return; }
+    if (e.target.closest('a[href="#"]')) e.preventDefault();
+  });
+})();
+</script>
+</body>
+</html>

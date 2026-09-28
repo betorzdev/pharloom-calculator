@@ -33,8 +33,8 @@ the work up reads it first, then the step it's on.
 |---|---|---|---|
 | 1 | **The shell**: header, screen bar (desktop and phone), the screen's frame and title, footer and About, the atmosphere | **Built** (28 Sep) | [`04-shell-variants.html`](04-shell-variants.html) |
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
-| 3 | Your game (`home`) and Saves (`saves`) | **Next** | |
-| 4 | Inventory (`game`) | To do | |
+| 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep) | [`06-home-variants.html`](06-home-variants.html) |
+| 4 | Inventory (`game`) | **Next** | |
 | 5 | Progress (`progress`) | To do | |
 | 6 | Map (`map`) | To do | |
 | 7 | Journal (`journal`) | To do | |
@@ -170,3 +170,82 @@ all in `css/app.css` on the existing classes:
 Seen after building: with every Map layer on, the ten lit diamonds are still the brightest thing
 over the map, though smaller than the squares were; step 6 (the Map) can decide whether the
 layers' row wants less glow.
+
+## Step 3 · Your game and Saves
+
+### What there is (28 September 2026)
+
+Seen with the author's four real saves loaded (15% to 100%, one Steel Soul) and in Free mode.
+
+- **Your game, with a save**: a line with the Act, the time and the rosaries; the 100% large,
+  checked against the game's own figure; the ten categories as bars; the Journal count; "Since
+  the previous save" when the followed file brought a new one; the road to the next Act as a
+  link. Under the screen, the About block (the page's SEO text) always shows on this screen.
+- **Your game, Free mode**: Hornet resting, «Bring your game», Import and Saves.
+- **Saves**: the game's profile screen, four slots and Free mode; each slot with its masks, Act,
+  completion, Journal, Needle and its two actions. It reads well and follows the game.
+
+### What the sibling has
+
+The start screen was rebuilt around the save (`design/10-restructure.md`, variant C, "the
+bench"): the area's title card ("Resting at City of Tears") on the area's own light, the Knight
+at the bench, four figures, *Since last time*, the shade, *missing near your bench*, and cards
+into the other screens; with no game, the invitation beside an example of what a save shows.
+
+### What's weak
+
+1. With a save the screen is only figures: no Hornet, no place, no way on. The data is there
+   (`g.bench`, `g.area`, `SS.rooms.areaOf`, the Map's *missing near you*, `CO.AREAS` for the
+   names, the area lines measured in `02-silksong.md` §4) and unused here.
+2. The ten categories are bars that lead nowhere and don't say what's missing.
+3. The About block (long SEO text) sits under your own game every visit.
+4. Free mode says what to do but not what you'll get, nor what works without a save.
+
+### The options (drawn in `06-home-variants.html`, sample figures from Save 4)
+
+- **With a save**: A · the profile, refined (the categories as ways into Progress with what
+  each lacks; *since last time*, *near your bench* and the Journal beside); B · the bench (the
+  sibling's: the area's title card on its map light, Hornet, four figures, then three columns);
+  C · the HUD (the Crest wheel, masks and spool as the game draws them, the 100% as ten tiles
+  with the game's pictures and pips).
+- **Without a save**: A · as now; B · the invitation in three steps beside an example (the
+  sibling's); C · the invitation and the four ways in that need no save.
+- **Where next** (cards into Progress, Map, Journal, Crest): on or off.
+- **About**: always open, or folded behind a disclosure when a save is loaded.
+
+### Decision (28 September 2026)
+
+Albert chose **with a save B · the bench**, **where next on** and **About folded with a save**.
+For Free mode none of the three: «Bring your game» is too much text and not attractive, so a
+second round was drawn (below). Saves reads well and stays as it is.
+
+Built (with a save):
+
+- **Area light**: `--area-<id>-fill` / `--area-<id>-line` in `css/tokens.css` for the save's area
+  ids, from `02-silksong.md` §4; Coral Tower takes the Sands of Karak's; Songclave, the Exhaust
+  Organ, the Red Memory and Wisp Thicket's line (not measured) fall back to the spotlight.
+- **`js/app-home.js`**: the card («Resting at», the area of the bench by `SS.rooms.areaOf`, the
+  room's own area under it when it differs, the Act, the time, Hornet, four figures and the
+  game's own figure checked), the road to the next Act, then three columns (*since the
+  previous save*, *closest to your bench*, *your 100% by part*, each part a link to Progress)
+  and the four ways on. The Map's list is shared: `App.nearList` / `App.nearRow` in
+  `js/app-map.js`. A lone column keeps a list's measure.
+- **About**: folded behind a `.disc-btn` («About this site») while a save is loaded
+  (`renderAbout` in `js/app.js`); open without one, as search engines see it.
+- Seen: Save 2 (The Cradle) gets no *closest to your bench*: its bench (`Tube_Hub`) finds
+  nothing on the room graph. For step 6 (the Map).
+
+### Free mode, second round (in `06-home-variants.html`, D to F)
+
+- **D · the empty slot**: the game's profile slot with nothing in it: Hornet, «Drop your save
+  here», the file names, Import; the whole slot takes the file.
+- **E · the ghost bench**: the bench card unlit, «Resting at Pharloom», Hornet in silhouette,
+  the four figures waiting, «Your game goes here» and Import.
+- **F · behind glass**: a sample game's bench screen under a veil, «This could be your game».
+
+Albert chose **E · the ghost bench**. Built: `invite()` in `js/app-home.js` is the bench card
+with `.is-ghost` («Resting at» over «Pharloom», the game's `MQ_BELLSHRINES_LOC`, «Telalejana» in
+Spanish; Hornet as a silhouette; the four figures as dashes; «Your game goes here», Import and
+Saves). It keeps `.hm-invite`, so the dropped file still lights it. The long invitation line is
+gone.
+

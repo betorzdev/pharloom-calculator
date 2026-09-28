@@ -174,9 +174,20 @@
   /* The About block: the page's text for search engines. It's in the page's language and about
      its own screen, so it only shows there. */
   let aboutLinks = false;
+  /* With a save loaded, the block folds behind a disclosure (design/03-redesign.md, step 3): it
+     stays in the page, and opens in place. Search engines have no save, so they read it open. */
+  let aboutOpen = false;
   function renderAbout() {
     if (!el.about) return;
     el.about.hidden = prefs.lang !== PAGE_LANG || prefs.view !== (PAGE_VIEW || 'home');
+    const folded = !aboutOpen && !!(App.activeSlot && App.activeSlot());
+    let btn = el.about.querySelector(':scope > .about-fold');
+    if (folded && !btn) {
+      el.about.insertAdjacentHTML('afterbegin', `<button type="button" class="disc-btn about-fold" aria-expanded="false" data-act="aboutFold"><span></span><span class="disc-ring">${chevron(false)}</span></button>`);
+      btn = el.about.firstElementChild;
+    }
+    if (btn) { btn.hidden = !folded; btn.firstElementChild.textContent = t('aboutFold'); }
+    el.about.classList.toggle('is-folded', folded);
     if (aboutLinks || location.protocol !== 'file:') return;
     aboutLinks = true;
     for (const a of el.about.querySelectorAll('a[data-page]')) a.setAttribute('href', a.getAttribute('href').replace(/\.\/$/, '') + 'index.html');
@@ -384,6 +395,7 @@
       render();
     },
     view(node) { go(node.dataset.value, !node.closest('#nav, .masthead')); },
+    aboutFold() { aboutOpen = true; renderAbout(); const h = el.about.querySelector('h1'); if (h) { h.setAttribute('tabindex', '-1'); h.focus(); } },
   };
   document.addEventListener('click', (ev) => {
     const node = ev.target.closest('[data-act]');
@@ -416,5 +428,5 @@
 
   Object.assign(App, { t, pick, KEY, PAGE_LANG, PAGE_VIEW, $, el, hoverable, VIEWS, TOOLS, NT, esc, load, save, rebuildNF, pctSpace,
     prefs, loadPrefs, savePrefs, splitHash, hashFor, here, persist, navNow, applyNav, writeUrl, navTo, track,
-    brackets, chevron, lens, tick, cross, rule, FLEURS, ART, emptyHtml, screenHead, screenOf, render, go, toast, actions, restoreFocus, focusDescriptor });
+    brackets, chevron, lens, tick, cross, rule, FLEURS, ART, emptyHtml, screenHead, screenOf, VIEW_KEY, render, go, toast, actions, restoreFocus, focusDescriptor });
 })();

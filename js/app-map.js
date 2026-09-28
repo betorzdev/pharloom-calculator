@@ -82,9 +82,10 @@
         <polyline points="${w.pts.map((p) => `${Math.round(p.x)},${Math.round(p.y)}`).join(' ')}"/></svg>
       <i class="mp-from" style="${at(start.x, start.y)}" title="${esc(t('mapFrom'))}"></i>`;
   }
-  /* What's missing nearest your bench: the pieces of the kinds shown and the gauntlets, by rooms. */
-  function nearHtml(g, shown, places) {
-    if (!g || !g.bench) return '';
+  /* What's missing nearest your bench: the pieces of the kinds shown and the gauntlets, by rooms,
+     nearest first. Your game shows the first few too (App.nearList, App.nearRow). */
+  function nearList(g, shown = KINDS, places = PLACES) {
+    if (!g || !g.bench) return [];
     const w = R.walk(g.bench, g.lit);
     const list = [];
     CO.PIECES.forEach((p, i) => {
@@ -97,13 +98,19 @@
       const n = R.steps(g.bench, x.scene, g.lit, w);
       if (n != null) list.push({ n, mark: `<span class="mp-pin is-gauntlet" aria-hidden="true">${GLYPH.gauntlet}</span>`, name: App.gauntletName(x.id), area: x.area });
     }
+    return list.sort((a, b) => a.n - b.n);
+  }
+  const nearRow = (x) => `<li>${x.mark}<span class="mp-near-name"${NT}>${esc(x.name)}</span>
+        <span class="mp-near-area"${NT}>${esc(areaName(x.area))}</span><b>${esc(stepsText(x.n))}</b></li>`;
+  function nearHtml(g, shown, places) {
+    const list = nearList(g, shown, places);
     if (!list.length) return '';
-    list.sort((a, b) => a.n - b.n);
     return `<section class="mp-near" aria-labelledby="mp-near-h"><h3 class="ct-h" id="mp-near-h">${esc(t('mapNear'))}</h3>
-      <ol class="mp-near-list">${list.slice(0, NEAR).map((x) => `<li>${x.mark}<span class="mp-near-name"${NT}>${esc(x.name)}</span>
-        <span class="mp-near-area"${NT}>${esc(areaName(x.area))}</span><b>${esc(stepsText(x.n))}</b></li>`).join('')}</ol>
+      <ol class="mp-near-list">${list.slice(0, NEAR).map(nearRow).join('')}</ol>
       <p class="pg-note">${esc(t('mapNearNote'))}</p></section>`;
   }
+  App.nearList = nearList;
+  App.nearRow = nearRow;
   const at = (x, y) => `left:${(x / M.W * 100).toFixed(3)}%;top:${(y / M.H * 100).toFixed(3)}%`;
   /* The rooms that change with the game (js/map.js LAYERS), those this game has: each a window on
      the map, placed in percentages as the marks are, onto its row of assets/map/states.webp. */
