@@ -22,7 +22,10 @@
     let prev = null;
     try { prev = JSON.parse(App.load('pharloom.prev') || 'null'); } catch (e) { prev = null; }
     if (!now || !prev || !prev.snap) return { list: [], saved: null };
-    return { list: CH.diff(F.gameOf(prev.snap), now), saved: prev.saved || null };
+    const before = F.gameOf(prev.snap);
+    // A slot kept before the site read the gauntlets has none: they aren't new, just unread then.
+    if (!/"gauntlets"/.test(prev.snap['pharloom.progress'] || '')) before.gauntlets = now.gauntlets;
+    return { list: CH.diff(before, now), saved: prev.saved || null };
   }
   const nameIn = (list, id) => { const x = list.find((y) => y.id === id); return x ? pick(x.name) : id; };
   const itemName = (id) => nameIn(D.ITEMS, id);
@@ -41,6 +44,7 @@
         if (c.id === 'needle') return { name: pick(D.NEEDLES[c.to].name), nt: true };
         return { name: t({ masks: 'chMasks', spools: 'chSpools', hearts: 'chHearts', kit: 'chKit', pouch: 'chPouch' }[c.id], { n: num(c.id === 'masks' ? 5 + c.to : c.to) }) };
       case 'wish': return { name: pick(CO.WISHES[c.i][4]), where: t('chWish'), nt: true };
+      case 'gauntlet': return { name: App.gauntletName(c.id), where: t('chGauntlet'), nt: true };
       case 'piece': {
         const p = CO.PIECES[c.i];
         const name = p[4] ? pick(p[4]) : p[0] === 'flea' ? t('kind_flea') : itemName(KIND_ITEM[p[0]]);

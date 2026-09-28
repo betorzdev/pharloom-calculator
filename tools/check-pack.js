@@ -11,6 +11,9 @@
                  upgrades and the Silk Hearts (must match: exit code 1 if not)
      build       what Hornet wears (savefile's buildOf) fits her Crest's slots with the
                  Vesticrest's, as js/engine.js counts them (must: exit code 1 if not)
+     gauntlets   the enemy gauntlets cleared (js/gauntlets.js's done), never fewer in a later save
+                 of the same game (its folder and profileID, by playTime) than in an earlier one
+                 (must: exit code 1 if not)
      journal     once Nuu has given the Hunter's Memento (nuuMementoAwarded), the required
                  entries complete by their kills are all of them: 230, or 231 in Steel Soul
                  (must: exit code 1 if not)
@@ -54,6 +57,7 @@ function pieceDiffs(pd, g) {
 }
 
 let bad = 0, badP = 0, unreadable = 0;
+const cleared = new Map();   // game → [[playTime, Set of gauntlets, file]]
 for (const file of files) {
   const name = path.relative(root, file);
   const r = F.read(fs.readFileSync(file));
@@ -73,13 +77,23 @@ for (const file of files) {
     const sl = E.compute(g.build).slots;
     for (const c of ['red', 'blue', 'yellow']) if (sl[c].over) pd.push(`build ${c} +${sl[c].over}`);
   }
+  const key = path.dirname(path.relative(root, file)).split(path.sep)[0] + '#' + r.pd.profileID;
+  (cleared.get(key) || cleared.set(key, []).get(key)).push([Number(r.pd.playTime) || 0, new Set(g.gauntlets), name]);
   if (!ok) bad++;
   if (pd.length) badP++;
   const parts = ok ? '' : '  ' + c.categories.map((k) => `${k.id} ${k.got}/${k.max}`).join(', ');
   const at = r.restore ? `  (${r.restore.date} ${r.restore.event})` : '';
-  console.log(`${ok ? 'ok' : 'XX'}  ${String(c.total).padStart(3)}% (game ${String(game).padStart(3)}%)  act ${g.act}  `
+  console.log(`${ok ? 'ok' : 'XX'}  ${String(c.total).padStart(3)}% (game ${String(game).padStart(3)}%)  act ${g.act}  gauntlets ${String(g.gauntlets.length).padStart(2)}  `
     + `${name}  v${r.pd.version || '?'}${F.meta(r.pd).steel ? ' Steel Soul' : ''}${at}${parts}${pd.length ? '  pieces: ' + pd.join(', ') : ''}`);
 }
+let lost = 0;
+for (const list of cleared.values()) {
+  list.sort((a, b) => a[0] - b[0]);
+  for (let i = 1; i < list.length; i++) {
+    const gone = [...list[i - 1][1]].filter((id) => !list[i][1].has(id));
+    if (gone.length) { lost++; console.log(`XX  ${list[i][2]}: gauntlets cleared before and not now: ${gone.join(', ')}`); }
+  }
+}
 console.log(`\n${files.length} saves · completion: ${files.length - bad - unreadable} match, ${bad} differ`
-  + ` · pieces: ${badP} differ · ${unreadable} unreadable`);
-process.exit(bad || badP || unreadable ? 1 : 0);
+  + ` · pieces: ${badP} differ · gauntlets: ${lost} lost · ${unreadable} unreadable`);
+process.exit(bad || badP || lost || unreadable ? 1 : 0);

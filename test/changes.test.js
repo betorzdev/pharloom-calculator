@@ -38,3 +38,8 @@ test('a wish done is told too', () => {
   const a = { ...empty(), wishes: [] }, b = { ...empty(), wishes: [3] };
   assert.deepEqual(CH.diff(a, b), [{ kind: 'wish', i: 3 }]);
 });
+
+test('a gauntlet cleared is told too, by its id', () => {
+  const a = { ...empty(), gauntlets: ['groal'] }, b = { ...empty(), gauntlets: ['groal', 'the-marrow-1'] };
+  assert.deepEqual(CH.diff(a, b), [{ kind: 'gauntlet', id: 'the-marrow-1' }]);
+});

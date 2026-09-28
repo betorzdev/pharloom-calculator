@@ -807,8 +807,22 @@ The fleas were already in Progress and on the Map. Then the **49 enemy gauntlets
 (`tools/gen-gauntlets.js`: the wiki's index page for each one's area and place, each subpage's
 reward and waves, 220 waves and 454 enemies all joined to `js/enemies.js`; the rewards the game
 names, the Crests by `js/data.js`, the wiki's sentences left out), run in Combat wave by wave and
-as a whole. **Phase 7 is done.** Not done: which gauntlets a save has cleared (the save's scene
-flags, to find), and their black-threaded Act 3 variants.
+as a whole. **Phase 7 is done.** Then (28 September) **which gauntlets a save has cleared**, the
+Colosseum's marks: the game's arenas are BattleScene components in its scene bundles
+(`tools/extract-battles.py`: 59, each with its waves, the playerData flag it sets and the
+sceneData flag it saves), paired by hand to the wiki's 49 by area and waves. 39 are an arena's
+flag; the rest take what the fight leaves: the boss defeated (Karmelita, Khann, the Unravelled,
+whose gauntlets are memories or boss fights), the lava challenge's own flag, the Vintage Nectar
+picked up in Ant_08, Sherma's wish, the Simple Key in Dust_06 (the Roachkeeper's, not an arena
+at all). The Coral Tower's four floors are a memory that saves nothing: Khann counts for them.
+The Slab's two arenas set the same flag; which was fought is whether Hornet was caught
+(`door_slabCaged`). The conditions live in `tools/gen-gauntlets.js`, the save's list in
+`savefile.game().gauntlets`, and they show in Combat, Progress and "since the previous save";
+`check-pack` checks that no game loses one from a save to a later one (0 in the 92). Found on
+the way: the black-threaded Act 3 variants were already three of the wiki's 49 (Greymoor 2,
+Hunter's March 6, High Halls 2), each with an arena of its own; the Marrow's shares its flag
+with the Act 1 one. Not seen in any save yet: the Simple Key's gauntlet and the Whispering
+Vaults' second (the Acolytes').
 
 **Phase 8 is built** (the same day): `tools/pages.js` from the Hollow Knight site as it was (the
 address changed) and `tools/pages-text.js` written for Silksong, seven pages in each language

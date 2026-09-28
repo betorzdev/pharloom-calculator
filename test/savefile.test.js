@@ -81,3 +81,21 @@ test("a slot keeps its pieces by what they are, so a regenerated list still find
   const gone = { ...snap, 'pharloom.progress': JSON.stringify({ pieces: ['flea ["flag","NoSuchFlea"]', kept[0]] }) };
   assert.deepEqual(F.gameOf(gone).pieces, [i]);
 });
+
+test('the gauntlets cleared: the arena\'s flag in sceneData or playerData, or what the fight leaves', () => {
+  const bools = (...l) => ({ persistentBools: { serializedList: l.map(([s, id, v]) => ({ SceneName: s, ID: id, Value: v })) } });
+  const pd = { ...BASE, song_04_battleCompleted: true, slab_cloak_battle_completed: true,
+    QuestCompletionData: { savedData: [{ Name: 'Save Sherma', Data: { IsCompleted: true } }] } };
+  const g = F.game(pd, bools(['Bone_01', 'Battle Scene', true], ['Cog_05', 'Battle Scene', false]));
+  // Slab_16's two arenas set the same flag: not caged is the Choral Chambers way in.
+  assert.deepEqual(g.gauntlets.sort(), ['choral-chambers', 'the-marrow-1', 'the-slab-3', 'whiteward-1']);
+  const caged = F.game(pd, bools(['Slab_03', 'door_slabCaged', true]));
+  assert.ok(caged.gauntlets.includes('the-slab-2') && !caged.gauntlets.includes('the-slab-3'));
+  // Into a slot by id and back; an id the list no longer has is dropped, an old slot has none.
+  const snap = F.toSnapshot(pd, null);
+  assert.deepEqual(F.gameOf(snap).gauntlets, F.game(pd, null).gauntlets);
+  const old = JSON.parse(snap['pharloom.progress']);
+  assert.deepEqual(F.gameOf({ ...snap, 'pharloom.progress': JSON.stringify({ ...old, gauntlets: ['gone', 'groal'] }) }).gauntlets, ['groal']);
+  delete old.gauntlets;
+  assert.deepEqual(F.gameOf({ ...snap, 'pharloom.progress': JSON.stringify(old) }).gauntlets, []);
+});

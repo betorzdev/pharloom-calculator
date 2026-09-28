@@ -113,7 +113,12 @@ Bracelet doubles them) and how many kill you. The build is the Crest screen's.
 its place or its area, with its reward (the game's name for it, when it gives something the game
 names). For each wave, its enemies with their health, your slash's damage against each and how
 many kill it; for the whole arena, its health and the quickest way through, silk and loads
-carried from wave to wave (an estimate: each enemy's damage at your Needle's level).
+carried from wave to wave (an estimate: each enemy's damage at your Needle's level). In a save,
+a tick on each one you've cleared and how many of the 49; a gauntlet cleared also shows in
+"Since the previous save". Most are read from the arena's own flag in the save; the bosses'
+from the boss defeated, and a few that save nothing from what the fight leaves (the lava
+challenge's flag, the Vintage Nectar picked up, Sherma's wish). The four Coral Tower floors
+count as cleared once Crust King Khann is: the tower is a memory and doesn't save its floors.
 
 On top, **the quickest way**: your red Tools' full loads first, then the fewest slashes with the
 casts of your Silk Skill that their silk pays for (a strand per slash, starting with the spool
@@ -138,7 +143,8 @@ and Tool Pouch upgrades, Needle upgrades and Silk Hearts one by one. Each thing 
 the area it's in, with the game's names; what belongs to a later Act than yours is dimmed. Then
 what doesn't count but opens things: Memory Lockets, Craftmetal, Pale Oil, the Lost Fleas, the
 four Old Hearts (the Red Memory), the three melodies (the Cradle) and the abilities outside the
-100% (the two cloaks, Beastling Call, Elegy of the Deep).
+100% (the two cloaks, Beastling Call, Elegy of the Deep), and the 49 enemy gauntlets, named as
+Combat names them.
 
 Last, **Tasks** («Tareas», the game's pane): the main objectives and the wishes on the boards by
 type (Wayfarer, Gather, Donate, Hunt, Grand Hunt, Delivery…), 74 in all, each with the game's own

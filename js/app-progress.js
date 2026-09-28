@@ -3,7 +3,7 @@
    Tools, Crests, Silk Skills and abilities— or one by one —which Mask Shard, which Crafting Kit—,
    each with its Act and the area it's in (js/collectibles.js: the area its entry is filed
    under, named as the game names it). Then the collectibles that don't count but open things:
-   Memory Lockets, Craftmetal, Pale Oil and the Lost Fleas. In a save, only what's missing by
+   Memory Lockets, Craftmetal, Pale Oil and the Lost Fleas, and the enemy gauntlets. In a save, only what's missing by
    default (or everything, ticked where you have it), and what belongs to a later Act than
    yours dimmed; without one, the whole list, as a guide. The exact spot (which room) comes with
    the map. Shares SS.app with js/app.js (see there). */
@@ -118,6 +118,10 @@
       const list = OTHER_ARTS.map((id) => { const w = CO.WHERE.arts[id] || [];
         return { name: pick(D.ARTS.find((x) => x.id === id).name), got: !!g && g.arts.includes(id), act: w[0] || 0, area: w[1] || null }; });
       return group('other-arts', t('pgOtherArts'), list, g, list.filter((x) => x.got).length, list.length);
+    })() + (() => {
+      // The enemy gauntlets, in the wiki's order (by area), named as Combat names them.
+      const list = SS.gauntlets.GAUNTLETS.map((x) => ({ name: App.gauntletName(x.id), got: !!g && g.gauntlets.includes(x.id), act: 0, area: x.area }));
+      return group('gauntlets', t('ftModeGauntlets'), list, g, list.filter((x) => x.got).length, list.length);
     })();
     sec.innerHTML = `<div class="pg">${brackets}${screenHead(esc(t('navProgress')), seg)}
         <h3 class="pg-part">${esc(t('pg100'))}${c ? ` <b>${num(c.total)}${App.pctSpace()}</b>` : ''}</h3>

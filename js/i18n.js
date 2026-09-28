@@ -155,6 +155,7 @@
     chJournalOne:   { es: 'Diario: una entrada nueva o completada', en: 'Journal: one entry new or completed' },
     chMore:         { es: 'y {n} más', en: 'and {n} more' },
     chWish:         { es: 'tarea cumplida', en: 'task done' },
+    chGauntlet:     { es: 'desafío superado', en: 'gauntlet cleared' },
     chToast:        { es: 'Tu partida: {list}', en: 'Your game: {list}' },
 
     /* The Crest screen (js/app-tools.js, js/engine.js) */
@@ -237,6 +238,9 @@
     ftWaves:        { es: '{n} oleadas', en: '{n} waves' },
     ftWave:         { es: 'Oleada {n}', en: 'Wave {n}' },
     ftReward:       { es: 'Recompensa', en: 'Reward' },
+    ftCleared:      { es: 'Superado', en: 'Cleared' },
+    ftNotCleared:   { es: 'Sin superar en esta partida', en: 'Not cleared in this game' },
+    ftClearedCount: { es: 'Has superado {n} de {of} en esta partida.', en: 'You\'ve cleared {n} of {of} in this game.' },
     ftGauntletNote: { es: 'La vida de todas sus oleadas. Lo más rápido es una estimación: cuenta la seda y las cargas de una oleada a otra, con el daño de cada enemigo a tu nivel de aguja. Con hilo negro (acto 3) algunas cambian.', en: 'The health of all its waves. The quickest way is an estimate: it carries silk and loads from one wave to the next, with each enemy\'s damage at your Needle\'s level. Black-threaded (Act 3), some change.' },
     ftType_fire:    { es: 'fuego', en: 'fire' },
     ftType_void:    { es: 'vacío', en: 'void' },

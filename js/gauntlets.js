@@ -6,7 +6,8 @@
      id        the wiki's subpage, as a slug          area    js/collectibles.js's AREAS id
      place     the game's name for where it is, when the wiki names one
      reward    the game's name for what it gives, when it gives something
-     waves     [[enemy id (js/enemies.js FOES), how many], …] per wave, in order */
+     waves     [[enemy id (js/enemies.js FOES), how many], …] per wave, in order
+     done      how a save says it's cleared, as js/collectibles.js's conditions (js/savefile.js) */
 (() => {
   'use strict';
   const SS = globalThis.SS || (globalThis.SS = {});
@@ -25,6 +26,7 @@
         [['swamp-squit', 2], ['stilkin-trapper', 1]],
         [['groal-the-great', 1]],
       ],
+      done: ['flag', 'DefeatedSwampShaman'],
     },
     {
       id: 'bone-bottom',
@@ -41,6 +43,7 @@
         [['pilgrim-guide', 1], ['pilgrim-hornfly', 1]],
         [['pilgrim-hornfly', 1], ['winged-pilgrim', 1], ['pilgrim-hulk', 1]],
       ],
+      done: ['bool', 'Chapel_Wanderer', 'Battle Scene'],
     },
     {
       id: 'choral-chambers',
@@ -53,6 +56,7 @@
         [['reed', 2]],
         [['clawmaiden', 1]],
       ],
+      done: ['flag', 'song_04_battleCompleted'],
     },
     {
       id: 'cogwork-core-1',
@@ -66,18 +70,21 @@
         [['cogworker', 2]],
         [['cogwork-defender', 1]],
       ],
+      done: ['bool', 'Cog_05', 'Battle Scene'],
     },
     {
       id: 'cogwork-core-2',
       area: 'COGWORK_CORE',
       reward: { es: 'Cámaras Corales', en: 'Choral Chambers', key: 'HIGH_HALLS' },
       waves: [[['underworker', 1], ['underpoke', 1]], [['undercrank', 1], ['underloft', 1]]],
+      done: ['flag', 'completedCog10_abyssBattle'],
     },
     {
       id: 'cogwork-core-3',
       area: 'COGWORK_CORE',
       reward: { es: 'Núcleo prístino', en: 'Pristine Core', key: 'INV_NAME_PRISTINE_CORE' },
       waves: [[['cogwork-clapper', 2]]],
+      done: ['bool', 'Cog_07', 'Battle Scene'],
     },
     {
       id: 'deep-docks-1',
@@ -90,6 +97,7 @@
         [['flintstone-flyer', 1], ['smokerock-sifter', 1]],
         [['smelt-shoveller', 1], ['smokerock-sifter', 1]],
       ],
+      done: ['bool', 'Room_Forge', 'Battle Scene'],
     },
     {
       id: 'deep-docks-2',
@@ -102,6 +110,7 @@
         [['beastfly', 1], ['flintstone-flyer', 1], ['smokerock-sifter', 1]],
         [['beastfly', 4]],
       ],
+      done: ['bool', 'Dock_08', 'Battle Scene'],
     },
     {
       id: 'deep-docks-3',
@@ -114,6 +123,7 @@
         [['flintstone-flyer', 1]],
         [['flintflame-flyer', 2]],
       ],
+      done: ['bool', 'Dock_03c', 'Battle Scene'],
     },
     {
       id: 'far-fields-1',
@@ -126,6 +136,7 @@
         [['tarmite', 2]],
         [['tarmite', 5]],
       ],
+      done: ['flag', 'completedLavaChallenge'],
     },
     {
       id: 'karmelita',
@@ -138,18 +149,26 @@
         [['last-claw', 2]],
         [['skarrsinger-karmelita', 1]],
       ],
+      done: ['flag', 'defeatedAntQueen'],
     },
     {
       id: 'far-fields-2',
       area: 'WILDS',
       reward: { es: 'Relicario de memorias', en: 'Memory Locket', key: 'INV_NAME_CREST_SOCKET' },
       waves: [[['skarrgard', 1]]],
+      done: ['bool', 'Bone_East_25', 'Battle Scene'],
     },
-    { id: 'greymoor-1', area: 'GREYMOOR', waves: [[['dreg-catcher', 2]], [['thread-raker', 1]]] },
+    {
+      id: 'greymoor-1',
+      area: 'GREYMOOR',
+      waves: [[['dreg-catcher', 2]], [['thread-raker', 1]]],
+      done: ['flag', 'greymoor_04_battleCompleted'],
+    },
     {
       id: 'greymoor-2',
       area: 'GREYMOOR',
       waves: [[['dreg-catcher', 2]], [['dreg-catcher', 1], ['roachcatcher', 1]], [['thread-raker', 2]]],
+      done: ['bool', 'Greymoor_04', 'Black Thread Battle Scene'],
     },
     {
       id: 'greymoor-3',
@@ -163,6 +182,7 @@
         [['craw', 3]],
         [['tallcraw', 1], ['squatcraw', 1]],
       ],
+      done: ['bool', 'Room_CrowCourt', 'Battle Scene'],
     },
     {
       id: 'crawfather',
@@ -177,6 +197,7 @@
         [['tallcraw-juror', 2]],
         [['crawfather', 1]],
       ],
+      done: ['flag', 'defeatedCrowCourt'],
     },
     {
       id: 'greymoor-4',
@@ -200,6 +221,7 @@
           ['skarr-stalker', 1],
         ],
       ],
+      done: ['bool', 'Ant_08', 'Collectable Item Pickup'],
     },
     {
       id: 'greymoor-5',
@@ -211,6 +233,7 @@
       },
       reward: { es: 'Parca', en: 'Reaper', key: 'CREST_REAPER_NAME' },
       waves: [[['silk-snipper', 1]], [['dreg-catcher', 2]], [['thread-raker', 1]], [['silk-snipper', 2]]],
+      done: ['bool', 'Greymoor_20c', 'Battle Scene'],
     },
     {
       id: 'high-halls-1',
@@ -236,6 +259,7 @@
         [['maestro', 1], ['reed', 1]],
         [['choir-clapper', 2]],
       ],
+      done: ['flag', 'hang04Battle'],
     },
     {
       id: 'high-halls-2',
@@ -243,8 +267,14 @@
       place: { es: 'El Foro', en: 'The Forum', key: 'CITADEL_FORUM' },
       reward: { es: 'Arpa rúnica', en: 'Rune Harp', key: 'INV_NAME_R_WEAVER_RECORD' },
       waves: [[['choir-clapper', 1], ['minister', 1]]],
+      done: ['bool', 'Hang_04', 'Battle Scene Act3'],
     },
-    { id: 'hunters-march-1', area: 'HUNTERS_MARCH', waves: [[['skarrgard', 1]]] },
+    {
+      id: 'hunters-march-1',
+      area: 'HUNTERS_MARCH',
+      waves: [[['skarrgard', 1]]],
+      done: ['bool', 'Ant_02', 'Battle Scene'],
+    },
     {
       id: 'hunters-march-2',
       area: 'HUNTERS_MARCH',
@@ -255,6 +285,7 @@
         [['skarr-scout', 2]],
         [['spear-skarr', 1], ['skarr-stalker', 1]],
       ],
+      done: ['flag', 'ant04_battleCompleted'],
     },
     {
       id: 'hunters-march-3',
@@ -266,18 +297,21 @@
         [['skarrwing', 2]],
         [['skarr-scout', 1], ['skarrwing', 1]],
       ],
+      done: ['bool', 'Ant_05b', 'Battle Scene'],
     },
     {
       id: 'hunters-march-4',
       area: 'HUNTERS_MARCH',
       reward: { es: 'Garracurva', en: 'Curveclaw', key: 'CURVE_CLAWS_NAME' },
       waves: [[['skarrgard', 1], ['spear-skarr', 1]]],
+      done: ['flag', 'ant21_InitBattleCompleted'],
     },
     {
       id: 'hunters-march-5',
       area: 'HUNTERS_MARCH',
       reward: { es: 'Garracurva', en: 'Curveclaw', key: 'CURVE_CLAWS_NAME' },
       waves: [[['spear-skarr', 2]]],
+      done: ['bool', 'Ant_21', 'Battle Scene Extra'],
     },
     {
       id: 'hunters-march-6',
@@ -287,11 +321,13 @@
         [['spear-skarr', 2]],
         [['spear-skarr', 1], ['skarr-stalker', 1]],
       ],
+      done: ['bool', 'Ant_04_mid', 'Battle Scene Black Thread'],
     },
     {
       id: 'the-marrow-1',
       area: 'BONEFOREST',
       waves: [[['beastfly', 1]], [['skull-scuttler', 2]], [['beastfly', 2]], [['skull-brute', 1]]],
+      done: ['bool', 'Bone_01', 'Battle Scene'],
     },
     {
       id: 'the-marrow-2',
@@ -302,12 +338,14 @@
         [['pilgrim-groveller', 1], ['winged-pilgrim', 1]],
         [['pilgrim-groveller', 1], ['pilgrim-pouncer', 1]],
       ],
+      done: ['bool', 'Bone_18', 'Battle Scene'],
     },
     {
       id: 'memorium',
       area: 'ARBORIUM',
       reward: { es: 'Recipientes voltaicos', en: 'Voltvessels', key: 'LIGHTNING_ROD_NAME' },
       waves: [[['memoria', 2]]],
+      done: ['bool', 'Arborium_07', 'Battle Scene'],
     },
     {
       id: 'coral-tower-1',
@@ -322,6 +360,7 @@
         [['kakri', 1]],
         [['karaka', 1], ['yago', 1]],
       ],
+      done: ['flag', 'defeatedCoralKing'],
     },
     {
       id: 'coral-tower-2',
@@ -340,6 +379,7 @@
         [['conchfly', 2]],
         [['karak-gor', 2]],
       ],
+      done: ['flag', 'defeatedCoralKing'],
     },
     {
       id: 'coral-tower-3',
@@ -363,6 +403,7 @@
         [['alita', 2], ['karaka', 1]],
         [['yumama', 2]],
       ],
+      done: ['flag', 'defeatedCoralKing'],
     },
     {
       id: 'khann',
@@ -381,6 +422,7 @@
         [['yago', 1], ['karaka', 1], ['kakri', 1]],
         [['crust-king-khann', 1]],
       ],
+      done: ['flag', 'defeatedCoralKing'],
     },
     {
       id: 'shellwood-1',
@@ -390,6 +432,7 @@
         [['splinterhorn', 1], ['splinter', 1]],
         [['phacia', 1], ['splinter', 1], ['splinterhorn', 1]],
       ],
+      done: ['bool', 'Shellwood_01b', 'Battle Scene'],
     },
     {
       id: 'shellwood-2',
@@ -399,23 +442,27 @@
         [['pilgrim-bellbearer', 1], ['pilgrim-hulk', 1], ['pilgrim-pouncer', 1]],
         [['pilgrim-groveller', 1], ['pilgrim-guide', 1], ['pilgrim-hulk', 1]],
       ],
+      done: ['flag', 'savedPlinney'],
     },
     {
       id: 'sinners-road-1',
       area: 'DUSTPENS',
       reward: { es: 'Llave sencilla', en: 'Simple Key', key: 'INV_NAME_TOKEN_FAITH' },
       waves: [[['roachkeeper', 1]]],
+      done: ['bool', 'Dust_06', 'Collectable Item SimpleKey'],
     },
     {
       id: 'lugoli',
       area: 'DUSTPENS',
       reward: { es: 'Gusasucio en escabeche', en: 'Pickled Muckmaggot', key: 'INV_NAME_PICKLEDEGG' },
       waves: [[['roachserver', 2]], [['disgraced-chef-lugoli', 1]]],
+      done: ['flag', 'defeatedRoachkeeperChef'],
     },
     {
       id: 'the-slab-1',
       area: 'SLAB',
       waves: [[['scabfly', 2], ['guardfly', 1]], [['scabfly', 4]], [['guardfly', 2]]],
+      done: ['bool', 'Slab_23', 'Battle Scene'],
     },
     {
       id: 'the-slab-2',
@@ -428,12 +475,18 @@
         [['scabfly', 4]],
         [['wardenfly', 1], ['guardfly', 1]],
       ],
+      done: ['all', ['flag', 'slab_cloak_battle_completed'], ['bool', 'Slab_03', 'door_slabCaged']],
     },
     {
       id: 'the-slab-3',
       area: 'SLAB',
       reward: { es: 'Llave del Hereje', en: 'Key of Heretic', key: 'INV_NAME_SLAB_KEY_B' },
       waves: [[['guardfly', 1], ['wardenfly', 1]], [['guardfly', 2]], [['scabfly', 4]], [['wardenfly', 2]]],
+      done: [
+        'all',
+        ['flag', 'slab_cloak_battle_completed'],
+        ['not', ['bool', 'Slab_03', 'door_slabCaged']],
+      ],
     },
     {
       id: 'broodmother',
@@ -449,12 +502,14 @@
         [['freshfly', 3], ['wardenfly', 1]],
         [['broodmother', 1]],
       ],
+      done: ['flag', 'defeatedBroodMother'],
     },
     {
       id: 'underworks-1',
       area: 'UNDERSTORE',
       reward: { es: 'Taladro de excavador', en: 'Delver\'s Drill', key: 'SCREWATTACK_NAME' },
       waves: [[['undercrank', 1], ['underloft', 1]], [['undercrank', 1], ['underpoke', 1]]],
+      done: ['flag', 'under07_battleCompleted'],
     },
     {
       id: 'underworks-2',
@@ -467,6 +522,7 @@
         [['undercrank', 1]],
         [['underloft', 1], ['underpoke', 1]],
       ],
+      done: ['bool', 'Under_10', 'Battle Scene'],
     },
     {
       id: 'underworks-3',
@@ -481,6 +537,7 @@
         [['undercrank', 1]],
         [['cogwork-hauler', 2]],
       ],
+      done: ['bool', 'Under_18', 'Battle Scene'],
     },
     {
       id: 'verdania',
@@ -494,6 +551,7 @@
         [['verdanir', 1]],
         [['escalion', 1]],
       ],
+      done: ['flag', 'aspid06_battleComplete'],
     },
     {
       id: 'whispering-vaults-1',
@@ -505,6 +563,7 @@
         [['choir-bellbearer', 1], ['choir-pouncer', 1], ['choristor', 1], ['choir-flyer', 1]],
         [['vaultkeeper', 1]],
       ],
+      done: ['flag', 'completedLibraryEntryBattle'],
     },
     {
       id: 'whispering-vaults-2',
@@ -517,12 +576,14 @@
         [['vaultborn', 1]],
         [['vaultkeeper', 2]],
       ],
+      done: ['flag', 'completedLibraryAcolyteBattle'],
     },
     {
       id: 'whiteward-1',
       area: 'WARD',
       reward: { es: 'Fragmento de carrete', en: 'Spool Fragment', key: 'INV_NAME_SPOOL_PIECE_HALF' },
       waves: [[['surgeon', 1]], [['mortician', 2]], [['surgeon', 2]]],
+      done: ['quest', 'Save Sherma'],
     },
     {
       id: 'unravelled',
@@ -538,6 +599,7 @@
         [['dregwheel', 1]],
         [['the-unravelled', 1]],
       ],
+      done: ['flag', 'wardBossDefeated'],
     },
   ];
 

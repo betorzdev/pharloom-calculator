@@ -121,20 +121,24 @@
     const same = G.filter((x) => baseName(x) === baseName(g));
     return same.length > 1 ? `${baseName(g)} ${num(same.indexOf(g) + 1)}` : baseName(g);
   };
+  // By id, for the screens before this one ("since the previous save" on Your game).
+  App.gauntletName = (id) => { const g = G.find((x) => x.id === id); return g ? gauntletName(g) : id; };
   const gHp = (g) => g.waves.reduce((a, w) => a + w.reduce((b, [id, n]) => b + ((FOE.get(id) || {}).hp || 0) * n, 0), 0);
 
-  function gauntletPicker(cur) {
+  // In a save, the ones it has cleared (js/savefile.js reads each one's condition), ticked.
+  function gauntletPicker(cur, done) {
     return `<div class="ft-pick"><ul class="ft-foes is-gauntlets">${G.map((g) => `<li><button type="button" class="ft-foe${g === cur ? ' is-on' : ''}"
         data-act="ftGauntlet" data-value="${g.id}" aria-pressed="${g === cur}"${NT}><img src="${portrait(FOE.get(g.waves[g.waves.length - 1][0][0]))}" alt="" loading="lazy">
-        <span>${esc(gauntletName(g))}</span><i class="ft-boss">${esc(t('ftWaves', { n: num(g.waves.length) }))}</i></button></li>`).join('')}</ul></div>`;
+        <span>${esc(gauntletName(g))}</span><i class="ft-boss">${done.has(g.id) ? `${App.tick}<span class="sr-only">${esc(t('ftCleared'))}</span> ` : ''}${esc(t('ftWaves', { n: num(g.waves.length) }))}</i></button></li>`).join('')}</ul></div>`;
   }
-  function gauntletCard(g) {
+  function gauntletCard(g, game) {
     const area = g.area && CO.AREAS[g.area] ? pick(CO.AREAS[g.area]) : '';
     return `<div class="ft-card">
         <h3 class="inv-name"${NT}>${esc(gauntletName(g))}</h3>
         ${g.place && area ? `<p class="ft-hp"${NT}>${esc(area)}</p>` : ''}
         <p class="ft-hp"><span class="save-k">${esc(t('ftHp'))}</span> <b>${num(gHp(g))}</b></p>
         ${g.reward ? `<p class="ft-stagger"><span class="save-k">${esc(t('ftReward'))}</span> <span${NT}>${esc(pick(g.reward))}</span></p>` : ''}
+        ${game ? `<p class="ft-stagger">${game.gauntlets.includes(g.id) ? `${App.tick} ${esc(t('ftCleared'))}` : esc(t('ftNotCleared'))}</p>` : ''}
         <p class="pg-note">${esc(t('ftGauntletNote'))}</p>
       </div>`;
   }
@@ -159,6 +163,8 @@
     if (mode === 'gauntlets') {
       const g = G.find((x) => x.id === prefs.gauntlet) || G[0];
       const st = App.currentBuild();
+      const game = App.game(), done = new Set(game ? game.gauntlets : []);
+      const count = game ? `<p class="saves-note">${esc(t('ftClearedCount', { n: num(done.size), of: num(G.length) }))}</p>` : '';
       /* The whole arena at once, silk and loads carrying over: its health as your Needle's level
          sees it (each enemy's health over its modifier at that level), against the plan. The Tools
          hit at the Kit's level, where the modifiers can differ: an estimate, and it says so. */
@@ -169,8 +175,8 @@
       }, 0), 0));
       const whole = E.compute(st, { foe: { id: g.id, hp: hpAll, mods: [1, 1, 1, 1, 1] } });
       const p = planHtml(whole);
-      sec.innerHTML = `<div class="ft">${brackets}${screenHead(esc(t('navFight')), modes)}
-        <div class="ft-body">${gauntletPicker(g)}${gauntletCard(g)}<div class="ct-figs">${p}${gauntletWaves(g, st)}</div></div></div>`;
+      sec.innerHTML = `<div class="ft">${brackets}${screenHead(esc(t('navFight')), modes + count)}
+        <div class="ft-body">${gauntletPicker(g, done)}${gauntletCard(g, game)}<div class="ct-figs">${p}${gauntletWaves(g, st)}</div></div></div>`;
       return;
     }
     const f = FOE.get(prefs.foe) || FOE.get('lace');

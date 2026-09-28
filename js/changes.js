@@ -12,6 +12,7 @@
                                       shard, a fragment, a locket, Craftmetal, Pale Oil, a flea.
                                       Not the upgrades and Silk Hearts one by one: 'upgrade' says those
      { kind: 'wish', i }              a wish or objective done (js/collectibles.js's WISHES index)
+     { kind: 'gauntlet', id }         an enemy gauntlet cleared (js/gauntlets.js's id)
      { kind: 'journal', id, done }    a Journal entry: new (done if already complete), or
                                       completed now (done: true, was: true)
      { kind: 'pct', from, to }        the completion went up (js/completion.js)
@@ -41,6 +42,7 @@
     if (b.everbloom && !a.everbloom) out.push({ kind: 'everbloom' });
     for (const i of b.pieces) if (!a.pieces.includes(i) && !BY_UPGRADE.has(CO.PIECES[i][0])) out.push({ kind: 'piece', i });
     for (const i of b.wishes || []) if (!(a.wishes || []).includes(i)) out.push({ kind: 'wish', i });
+    for (const id of b.gauntlets || []) if (!(a.gauntlets || []).includes(id)) out.push({ kind: 'gauntlet', id });
     // The Journal, in its own order: an entry the save didn't list, or one completed now.
     for (const e of J.BOOK) {
       if (b.journal[e.id] === undefined) continue;
