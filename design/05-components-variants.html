@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The components: variants</title>
+<!-- Design material, not part of the site (design/03-redesign.md, step 2). The site's shared
+     controls, each in a row: A is the site as it is (its real CSS and markup), B and C the
+     options, drawn with the mockup's rules below scoped to .v-b / .v-c. Everything can be
+     clicked. The samples are real ones: the Map's zoom and layers, the Crest screen's levels and
+     "Right now", Combat's modes, Your game's import, the Crest screen's blocks. -->
+<base href="../">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/app.css">
+<style>
+/* ════ The catalogue's layout: none of this goes into the site ═══════════════════════════ */
+.mk { max-width: var(--page-max); margin: 0 auto; padding: var(--sp-8) var(--page-pad) var(--sp-16); display: grid; gap: var(--sp-12); }
+.mk-intro { max-width: var(--measure); color: var(--ink-2); font-size: var(--fs-sm); }
+.mk-intro h1 { font-family: var(--font-display); font-size: var(--fs-xl); color: var(--ink-strong); letter-spacing: var(--track-title); margin-bottom: var(--sp-2); }
+.mk-row { display: grid; gap: var(--sp-4); }
+.mk-row > h2 { font-family: var(--font-display); font-size: var(--fs-lg); letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--filigree); }
+.mk-row > p { max-width: var(--measure); font-size: var(--fs-sm); color: var(--ink-2); }
+.mk-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-4); }
+.mk-cell { position: relative; display: grid; align-content: start; gap: var(--sp-4); padding: var(--sp-6) var(--sp-4); background: var(--inv-bg); border: 1px solid var(--inv-line); }
+.mk-cell > b { font-family: var(--font-num); font-size: var(--fs-2xs); letter-spacing: var(--track-label); text-transform: uppercase; color: var(--label); }
+.mk-cell > i { font-style: normal; font-size: var(--fs-xs); color: var(--muted); }
+.mk-field { display: grid; gap: var(--sp-2); }
+.mk-inline { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-2) var(--sp-4); }
+.mk-ico { width: var(--sp-3); height: var(--sp-3); border-radius: 50%; display: inline-block; }
+.mk-cnt { font-family: var(--font-num); font-weight: 600; font-size: var(--fs-xs); color: var(--ink-strong); }
+@media (max-width: 899px) { .mk-cols { grid-template-columns: 1fr; } }
+
+/* ════ 1 · Choose one ════════════════════════════════════════════════════════════════════
+   B · the game's selection: white on a grey plate, no hue and no line (design/02-silksong.md §3). */
+.v-b .seg { gap: var(--sp-1); }
+.v-b .seg button { padding: var(--sp-1) var(--sp-3); border-bottom: 0; color: var(--ink-2); }
+.v-b .seg button:is(:hover, :focus-visible):not([aria-pressed="true"]) { color: var(--ink-strong); background: var(--veil); border-bottom: 0; }
+.v-b .seg button[aria-pressed="true"] { color: var(--scene-bg); background: color-mix(in oklab, var(--ink-strong) 82%, transparent); box-shadow: none; }
+.v-b .seg.sm button { min-width: var(--ctl-sm); padding-inline: var(--sp-2); }
+/* C · the upgrade pips: a hollow diamond under each, filled and lit on the chosen one. */
+.v-c .seg { gap: var(--sp-3); }
+.v-c .seg button { display: inline-flex; flex-direction: column; align-items: center; gap: var(--sp-1); min-width: var(--ctl-sm); border-bottom: 0; color: var(--ink-2); }
+.v-c .seg button::after { content: ''; width: var(--diamond); height: var(--diamond); border: 1px solid color-mix(in oklab, var(--accent-line) 80%, transparent); transform: rotate(45deg); transition: background-color var(--dur) var(--ease), border-color var(--dur) var(--ease); }
+.v-c .seg button:is(:hover, :focus-visible):not([aria-pressed="true"]) { color: var(--accent); border-bottom: 0; }
+.v-c .seg button:is(:hover, :focus-visible)::after { border-color: var(--accent); }
+.v-c .seg button[aria-pressed="true"] { color: var(--ink-strong); box-shadow: none; }
+.v-c .seg button[aria-pressed="true"]::after { background: var(--accent); border-color: var(--accent); box-shadow: var(--glow); }
+
+/* ════ 2 · On/off ════════════════════════════════════════════════════════════════════════
+   B · the game's diamond: hollow off, filled bone on, no tick. */
+.v-b .check-box { width: calc(var(--sp-3) - var(--sp-half)); height: calc(var(--sp-3) - var(--sp-half)); margin-inline: var(--sp-half); transform: rotate(45deg); background: none; }
+.v-b .check-box > svg { display: none; }
+.v-b [aria-pressed="true"] > .check-box { background: var(--accent); box-shadow: var(--glow); }
+/* C · quiet: the box's line only, and on, the tick in bone with no fill (ten of them over the
+   map stop being ten white squares). */
+.v-c .check-box { background: none; border-color: color-mix(in oklab, var(--accent-line) 60%, transparent); color: var(--accent); }
+.v-c [aria-pressed="true"] > .check-box { background: none; border-color: var(--accent-line); }
+
+/* ════ 3 · Menu button ═══════════════════════════════════════════════════════════════════
+   B · the game's menu item: no box; capitals with the menu's pointers, small at rest and open
+   under the finger (the save selector's and the slots' .save-act, made general). The primary
+   one carries a hairline under it. */
+.v-b .btn { border-color: transparent; background: none; padding-inline: var(--sp-6); }
+.v-b .btn::before { display: none; }
+.v-b .btn .save-fleur { opacity: 0.55; transform: translateY(-50%) scaleX(0.6); }
+.v-b .btn:is(:hover, :focus-visible) { background: none; border-color: transparent; }
+.v-b .btn:is(:hover, :focus-visible) .save-fleur { opacity: 1; transform: translateY(-50%) scaleX(1); }
+.v-b .btn.btn-primary { background: none; box-shadow: inset 0 -1px 0 var(--accent-line); }
+.v-b .btn.is-danger .save-fleur { color: var(--bad); }
+/* C · the needle's frame: two rules, top and bottom, closed by a diamond at each end. */
+.v-c .btn { border-inline-color: transparent; background: none; padding-inline: var(--sp-6); }
+.v-c .btn::before { inset: -1px auto; left: 0; right: 0; background:
+  linear-gradient(45deg, transparent 45%, var(--bk) 45% 55%, transparent 55%) 0 50% / 0 0 no-repeat; }
+.v-c .btn .mk-cap { position: absolute; top: 50%; width: calc(var(--diamond) + var(--sp-half)); height: calc(var(--diamond) + var(--sp-half)); border: 1px solid var(--bk); background: var(--inv-bg); transform: translate(-50%, -50%) rotate(45deg); transition: background-color var(--dur) var(--ease); }
+.v-c .btn .mk-cap.is-r { left: 100%; }
+.v-c .btn .mk-cap.is-l { left: 0; }
+.v-c .btn:is(:hover, :focus-visible) .mk-cap, .v-c .btn-primary .mk-cap { background: var(--bk); }
+.v-c .btn-primary { background: color-mix(in oklab, var(--accent) 6%, transparent); }
+.mk-cap { display: none; }
+.v-c .mk-cap { display: block; }
+
+/* ════ 4 · Section heads ═════════════════════════════════════════════════════════════════
+   The block title (.ct-h, THE NEEDLE) and the label over a control (.ct-k / .lbl, CRESTS).
+   B · led by the diamond, the rule fading to the right. */
+.v-b .ct-h { display: flex; align-items: center; gap: var(--sp-2); border-bottom: 0; padding-bottom: 0; }
+.v-b .ct-h::before { content: ''; flex: none; width: var(--diamond); height: var(--diamond); border: 1px solid var(--filigree); transform: rotate(45deg); }
+.v-b .ct-h::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, color-mix(in oklab, var(--filigree) 40%, transparent), transparent); }
+/* C · centred between two short rules, as the game's inventory titles its columns. */
+.v-c .ct-h { display: flex; align-items: center; justify-content: center; gap: var(--sp-3); border-bottom: 0; padding-bottom: 0; text-align: center; }
+.v-c .ct-h::before, .v-c .ct-h::after { content: ''; width: var(--sp-8); height: 1px; background: color-mix(in oklab, var(--filigree) 45%, transparent); }
+.mk-heads .v-c .ct-k { text-align: center; }
+</style>
+</head>
+<body>
+<div class="page">
+<div class="mk">
+  <div class="mk-intro">
+    <h1>The components</h1>
+    <p>Step 2 of the review (design/03-redesign.md). Each row is one of the site's shared controls: A as it is today, with the site's own CSS; B and C, the options. Click anything: they respond as they would on the page.</p>
+  </div>
+
+  <!-- 1 · Choose one -->
+  <section class="mk-row">
+    <h2>1 · Choose one (.seg)</h2>
+    <p>The Map's zoom, the Crest screen's levels, Combat's modes. Today the words sit on a faint line and the chosen one on the accent's; small, the levels are four thin marks that barely read as controls.</p>
+    <div class="mk-cols">
+      <div class="mk-cell v-a"><b>A · as now</b>
+        <div class="mk-field"><span class="ct-k">Pale Steel Needle</span><div class="seg sm" role="group"><button type="button" aria-pressed="false">0</button><button type="button" aria-pressed="false">1</button><button type="button" aria-pressed="false">2</button><button type="button" aria-pressed="false">3</button><button type="button" aria-pressed="true">4</button></div></div>
+        <div class="seg sm" role="group"><button type="button" aria-pressed="true">Whole</button><button type="button" aria-pressed="false">×1.5</button><button type="button" aria-pressed="false">×2.5</button></div>
+        <div class="seg" role="group"><button type="button" aria-pressed="true">One enemy</button><button type="button" aria-pressed="false">Enemy gauntlets</button></div>
+        <i>Underlines: quiet, but thin and hard to hit when small.</i>
+      </div>
+      <div class="mk-cell v-b"><b>B · white on grey</b>
+        <div class="mk-field"><span class="ct-k">Pale Steel Needle</span><div class="seg sm" role="group"><button type="button" aria-pressed="false">0</button><button type="button" aria-pressed="false">1</button><button type="button" aria-pressed="false">2</button><button type="button" aria-pressed="false">3</button><button type="button" aria-pressed="true">4</button></div></div>
+        <div class="seg sm" role="group"><button type="button" aria-pressed="true">Whole</button><button type="button" aria-pressed="false">×1.5</button><button type="button" aria-pressed="false">×2.5</button></div>
+        <div class="seg" role="group"><button type="button" aria-pressed="true">One enemy</button><button type="button" aria-pressed="false">Enemy gauntlets</button></div>
+        <i>How the game marks a choice: the chosen one inverted on a bone plate. Loudest of the three.</i>
+      </div>
+      <div class="mk-cell v-c"><b>C · the upgrade pips</b>
+        <div class="mk-field"><span class="ct-k">Pale Steel Needle</span><div class="seg sm" role="group"><button type="button" aria-pressed="false">0</button><button type="button" aria-pressed="false">1</button><button type="button" aria-pressed="false">2</button><button type="button" aria-pressed="false">3</button><button type="button" aria-pressed="true">4</button></div></div>
+        <div class="seg sm" role="group"><button type="button" aria-pressed="true">Whole</button><button type="button" aria-pressed="false">×1.5</button><button type="button" aria-pressed="false">×2.5</button></div>
+        <div class="seg" role="group"><button type="button" aria-pressed="true">One enemy</button><button type="button" aria-pressed="false">Enemy gauntlets</button></div>
+        <i>A hollow diamond under each, filled and lit on the chosen one: the game's small diamond, as a pip.</i>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · On/off -->
+  <section class="mk-row">
+    <h2>2 · On/off (.check)</h2>
+    <p>The Map's layers (ten in a row, over the map) and the Crest screen's "Right now". Today, on is a filled bone square with a dark tick: ten of them are the brightest thing above the map.</p>
+    <div class="mk-cols">
+      <div class="mk-cell v-a"><b>A · as now</b>
+        <div class="mk-inline">
+          <button type="button" class="check" aria-pressed="true"><span class="check-box"><svg class="ic" width="12" height="10" viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 5.2 L4.6 8.2 L10.5 1.8"/></svg></span><span class="mk-ico" style="background:var(--mask)"></span>Mask Shard <span class="mk-cnt">14</span></button>
+          <button type="button" class="check" aria-pressed="true"><span class="check-box"><svg class="ic" width="12" height="10" viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 5.2 L4.6 8.2 L10.5 1.8"/></svg></span><span class="mk-ico" style="background:var(--slot-blue)"></span>Memory Locket <span class="mk-cnt">17</span></button>
+          <button type="button" class="check" aria-pressed="false"><span class="check-box"><svg class="ic" width="12" height="10" viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 5.2 L4.6 8.2 L10.5 1.8"/></svg></span>Hunter's focus</button>
+        </div>
+        <i>Clear, but loud in a row.</i>
+      </div>
+      <div class="mk-cell v-b"><b>B · the diamond</b>
+        <div class="mk-inline">
+          <button type="button" class="check" aria-pressed="true"><span class="check-box"><svg class="ic" width="12" height="10" viewBox="0 0 12 10" aria-hidden="true"></svg></span><span class="mk-ico" style="background:var(--mask)"></span>Mask Shard <span class="mk-cnt">14</span></button>
+          <button type="button" class="check" aria-pressed="true"><span class="check-box"><svg class="ic" width="12" height="10" viewBox="0 0 12 10" aria-hidden="true"></svg></span><span class="mk-ico" style="background:var(--slot-blue)"></span>Memory Locket <span class="mk-cnt">17</span></button>
+          <button type="button" class="check" aria-pressed="false"><span class="check-box"><svg class="ic" width="12" height="10" viewBox="0 0 12 10" aria-hidden="true"></svg></span>Hunter's focus</button>
+        </div>
+        <i>Hollow off, a lit bone diamond on: the same mark as the pips, the tags and the rules.</i>
+      </div>
+      <div class="mk-cell v-c"><b>C · quiet tick</b>
+        <div class="mk-inline">
+          <button type="button" class="check" aria-pressed="true"><span class="check-box"><svg class="ic" width="12" height="10" viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 5.2 L4.6 8.2 L10.5 1.8"/></svg></span><span class="mk-ico" style="background:var(--mask)"></span>Mask Shard <span class="mk-cnt">14</span></button>
+          <button type="button" class="check" aria-pressed="true"><span class="check-box"><svg class="ic" width="12" height="10" viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 5.2 L4.6 8.2 L10.5 1.8"/></svg></span><span class="mk-ico" style="background:var(--slot-blue)"></span>Memory Locket <span class="mk-cnt">17</span></button>
+          <button type="button" class="check" aria-pressed="false"><span class="check-box"><svg class="ic" width="12" height="10" viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 5.2 L4.6 8.2 L10.5 1.8"/></svg></span>Hunter's focus</button>
+        </div>
+        <i>The same square, unfilled: on is only the bone tick.</i>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · Menu button -->
+  <section class="mk-row">
+    <h2>3 · Menu button (.btn)</h2>
+    <p>A screen's actions: import (primary, one per screen), Share, Clear (danger). Today a thin frame with the sibling's corner brackets: Hollow Knight's box, not Silksong's.</p>
+    <div class="mk-cols">
+      <div class="mk-cell v-a"><b>A · as now</b>
+        <div class="mk-inline"><button type="button" class="btn btn-primary">Import from the game</button></div>
+        <div class="mk-inline"><button type="button" class="btn">Share</button><button type="button" class="btn is-danger">Clear</button></div>
+        <i>Reads as a button everywhere; the brackets are the sibling's.</i>
+      </div>
+      <div class="mk-cell v-b"><b>B · the game's menu item</b>
+        <div class="mk-inline"><button type="button" class="btn btn-primary"><span class="save-fleur is-l"></span>Import from the game<span class="save-fleur is-r"></span></button></div>
+        <div class="mk-inline"><button type="button" class="btn"><span class="save-fleur is-l"></span>Share<span class="save-fleur is-r"></span></button><button type="button" class="btn is-danger"><span class="save-fleur is-l"></span>Clear<span class="save-fleur is-r"></span></button></div>
+        <i>No box: capitals between the menu's pointers, which open under the finger (the save selector's look, made general). The most Silksong; the least "button" at rest.</i>
+      </div>
+      <div class="mk-cell v-c"><b>C · the needle's frame</b>
+        <div class="mk-inline"><button type="button" class="btn btn-primary"><span class="mk-cap is-l"></span>Import from the game<span class="mk-cap is-r"></span></button></div>
+        <div class="mk-inline"><button type="button" class="btn"><span class="mk-cap is-l"></span>Share<span class="mk-cap is-r"></span></button><button type="button" class="btn is-danger"><span class="mk-cap is-l"></span>Clear<span class="mk-cap is-r"></span></button></div>
+        <i>Two rules closed by a diamond at each end, filled on the primary and under the finger: still a button at rest, in the frame's own language.</i>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · Section heads -->
+  <section class="mk-row mk-heads">
+    <h2>4 · Section heads (.ct-h, .ct-k)</h2>
+    <p>Inside a screen: the block title (THE NEEDLE, WHAT YOU DO TO IT, NEAR YOU) and the label over a control (CRESTS). Today the title is Cinzel over a full hairline, in every screen.</p>
+    <div class="mk-cols">
+      <div class="mk-cell v-a"><b>A · as now</b>
+        <section class="ct-block"><h3 class="ct-h">The Needle</h3>
+          <div class="ct-fig"><span class="ct-fig-k">Slash</span><span class="ct-fig-v"><b>21</b></span></div>
+          <div class="ct-fig"><span class="ct-fig-k">Needle Strike</span><span class="ct-fig-v"><b>58</b></span></div></section>
+        <div class="mk-field"><span class="ct-k">Crests</span></div>
+      </div>
+      <div class="mk-cell v-b"><b>B · led by the diamond</b>
+        <section class="ct-block"><h3 class="ct-h">The Needle</h3>
+          <div class="ct-fig"><span class="ct-fig-k">Slash</span><span class="ct-fig-v"><b>21</b></span></div>
+          <div class="ct-fig"><span class="ct-fig-k">Needle Strike</span><span class="ct-fig-v"><b>58</b></span></div></section>
+        <div class="mk-field"><span class="ct-k">Crests</span></div>
+        <i>The hollow diamond in front and a rule that fades out: the screen title's mark, one level down.</i>
+      </div>
+      <div class="mk-cell v-c"><b>C · centred</b>
+        <section class="ct-block"><h3 class="ct-h">The Needle</h3>
+          <div class="ct-fig"><span class="ct-fig-k">Slash</span><span class="ct-fig-v"><b>21</b></span></div>
+          <div class="ct-fig"><span class="ct-fig-k">Needle Strike</span><span class="ct-fig-v"><b>58</b></span></div></section>
+        <div class="mk-field"><span class="ct-k">Crests</span></div>
+        <i>Between two short rules, as the game's inventory titles its columns. Formal; weaker for scanning a long column.</i>
+      </div>
+    </div>
+  </section>
+</div>
+</div>
+<script>
+(function () {
+  const F = '<svg viewBox="0 0 12 20" fill="currentColor" aria-hidden="true"><path d="M1 10 C4.5 9.4 7.2 7.2 8.6 2.4 C9 6.4 10 8.8 11.6 10 C10 11.2 9 13.6 8.6 17.6 C7.2 12.8 4.5 10.6 1 10 Z"/><circle cx="2.4" cy="10" r="1.3"/></svg>';
+  for (const f of document.querySelectorAll('.save-fleur')) f.innerHTML = F;
+  document.addEventListener('click', (e) => {
+    const s = e.target.closest('.seg button');
+    if (s) { for (const b of s.parentNode.children) b.setAttribute('aria-pressed', String(b === s)); return; }
+    const c = e.target.closest('button.check');
+    if (c) c.setAttribute('aria-pressed', String(c.getAttribute('aria-pressed') !== 'true'));
+  });
+})();
+</script>
+</body>
+</html>

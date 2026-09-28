@@ -107,14 +107,14 @@
     const skills = locked ? '' : `<ul class="ct-tools">${D.SKILLS.map((x) => `<li><button type="button" class="ct-tool is-skill${st.skill === x.id ? ' is-on' : ''}"
         data-act="ctSkill" data-value="${x.id}" aria-pressed="${st.skill === x.id}" title="${esc(pick(x.name))}"${NT}><img src="${icon('skills', x.id)}" alt="${esc(pick(x.name))}"></button></li>`).join('')}</ul>`;
     return `<div class="ct-controls">
-        <div class="ct-field"><span class="ct-k">${esc(t('cat_crests'))}</span><ul class="ct-crests">${crests}</ul></div>
-        ${st.crest === 'hunter' ? `<div class="ct-field"><span class="ct-k">${esc(t('ctEvolution'))}</span>${seg('ctLevel', 'hunterStage', st.hunterStage, [[1, num(1)], [2, num(2)], [3, num(3)]], locked)}</div>` : ''}
-        <div class="ct-field"><span class="ct-k"${NT}>${esc(pick(D.NEEDLES[st.needle].name))}</span>${seg('ctLevel', 'needle', st.needle, lv(), locked)}</div>
-        <div class="ct-field"><span class="ct-k"${NT}>${esc(pick(D.ITEMS.find((x) => x.id === 'crafting-kit').name))}</span>${seg('ctLevel', 'kit', st.kit, lv(), locked)}</div>
-        <div class="ct-field"><span class="ct-k"${NT}>${esc(pick(D.ITEMS.find((x) => x.id === 'tool-pouch').name))}</span>${seg('ctLevel', 'pouch', st.pouch, lv(), locked)}</div>
-        <div class="ct-field"><span class="ct-k">${esc(t('ctSituation'))}</span><div class="ct-checks">${situ}</div></div>
-        ${locked ? '' : `<div class="ct-field is-wide"><span class="ct-k">${esc(t('cat_tools'))}</span>${tools}</div>
-        <div class="ct-field is-wide"><span class="ct-k">${esc(t('cat_skills'))}</span>${skills}</div>`}
+        <div class="ct-field"><span class="lbl">${esc(t('cat_crests'))}</span><ul class="ct-crests">${crests}</ul></div>
+        ${st.crest === 'hunter' ? `<div class="ct-field"><span class="lbl">${esc(t('ctEvolution'))}</span>${seg('ctLevel', 'hunterStage', st.hunterStage, [[1, num(1)], [2, num(2)], [3, num(3)]], locked)}</div>` : ''}
+        <div class="ct-field"><span class="lbl"${NT}>${esc(pick(D.NEEDLES[st.needle].name))}</span>${seg('ctLevel', 'needle', st.needle, lv(), locked)}</div>
+        <div class="ct-field"><span class="lbl"${NT}>${esc(pick(D.ITEMS.find((x) => x.id === 'crafting-kit').name))}</span>${seg('ctLevel', 'kit', st.kit, lv(), locked)}</div>
+        <div class="ct-field"><span class="lbl"${NT}>${esc(pick(D.ITEMS.find((x) => x.id === 'tool-pouch').name))}</span>${seg('ctLevel', 'pouch', st.pouch, lv(), locked)}</div>
+        <div class="ct-field"><span class="lbl">${esc(t('ctSituation'))}</span><div class="ct-checks">${situ}</div></div>
+        ${locked ? '' : `<div class="ct-field is-wide"><span class="lbl">${esc(t('cat_tools'))}</span>${tools}</div>
+        <div class="ct-field is-wide"><span class="lbl">${esc(t('cat_skills'))}</span>${skills}</div>`}
       </div>`;
   }
 

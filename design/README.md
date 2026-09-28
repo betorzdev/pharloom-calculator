@@ -10,6 +10,7 @@ Reference material for deciding how this site looks and behaves. It isn't part o
 | [`02-silksong.md`](02-silksong.md) | The game's visual language, measured on the wiki's sprites (`npm run palette`): the HUD (bone, and silk is white), the three slot colours, the Crest screen (it selects with white on grey, not a hue), the 32 areas' map tints; and what's still to decide for `tokens.css` |
 | [`03-redesign.md`](03-redesign.md) | **The UI and UX review, step by step** (from 28 September 2026): how each step goes, the steps with their status, and each one's analysis, options and decision. Resume the review from here |
 | [`04-shell-variants.html`](04-shell-variants.html) | Step 1's options drawn with the site's real CSS: the header, the frame and title of a screen, the phone's bar, the figures on the bar |
+| [`05-components-variants.html`](05-components-variants.html) | Step 2's options: the shared controls (choose one, on/off, the menu button, section heads), today's next to two alternatives each, with the site's real CSS |
 
 The design system itself (the black page, one card, filigree only in the corners, figures in a
 sans with tabular figures, the accent only on what's interactive, tints from the game's map

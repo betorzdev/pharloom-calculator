@@ -32,8 +32,8 @@ the work up reads it first, then the step it's on.
 | # | Step | Status | Variants |
 |---|---|---|---|
 | 1 | **The shell**: header, screen bar (desktop and phone), the screen's frame and title, footer and About, the atmosphere | **Built** (28 Sep) | [`04-shell-variants.html`](04-shell-variants.html) |
-| 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Next** | |
-| 3 | Your game (`home`) and Saves (`saves`) | To do | |
+| 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
+| 3 | Your game (`home`) and Saves (`saves`) | **Next** | |
 | 4 | Inventory (`game`) | To do | |
 | 5 | Progress (`progress`) | To do | |
 | 6 | Map (`map`) | To do | |
@@ -113,3 +113,60 @@ Albert chose **header A**, **frame C**, **phone bar B** and **figures on**. Buil
 
 Left for later steps: the footer and the About block weren't touched (step 3, Your game, is
 where the About shows); the gap between the header and the bar could still shrink.
+
+## Step 2 · The components
+
+### What there is (28 September 2026)
+
+The component system came over from the sibling as it was (its `design/11-components.md`, six
+rounds): four buttons (`.btn`, `.text-btn`, `.icon-btn`, `.disc-btn`), choose one (`.seg`),
+on/off (`.check`), search (`.search`), tag (`.tag`), notice (`.banner`), empty (`.empty`) and the
+toast. The tokens hold: no loose colour, tracking or font size in `css/app.css`. In use:
+`.btn` 15 times, `.check` 11, `.text-btn` 10, `.seg` 8; `.icon-btn`, `.disc-btn` and `.chip`
+never.
+
+### What's weak
+
+1. **Choose one, small**: the Crest screen's levels (0 1 2 3 4, five of them in a column) and the
+   Map's zoom are words over four-pixel marks: they barely read as controls and are small to hit.
+2. **On/off in a row**: the Map's ten layers are ten filled bone squares, the brightest thing
+   above the map.
+3. **The menu button** is Hollow Knight's box with its corner brackets. Silksong's menus are
+   unboxed capitals between pointers (the site already does it for the save selector and the
+   slots) and its frames end in diamonds.
+4. **Section heads**: the block title (`.ct-h`) is used on every screen, and the label over a
+   control has two classes that say the same (`.lbl` at `--track-label`, `.ct-k` at
+   `--track-caps`).
+
+### The options (drawn in `05-components-variants.html`)
+
+- **Choose one**: A · as now; B · the game's selection, white on a bone plate; C · the upgrade
+  pips, a hollow diamond under each, filled and lit on the chosen one.
+- **On/off**: A · as now; B · the diamond, hollow off and lit on; C · a quiet tick, the square
+  unfilled.
+- **Menu button**: A · as now; B · the game's menu item (no box, the pointers); C · the needle's
+  frame (two rules closed by a diamond at each end).
+- **Section heads**: A · as now; B · led by the diamond, the rule fading out; C · centred between
+  two short rules.
+
+Whatever is chosen, two fixes go with it: `.ct-k` becomes `.lbl` (one label class, one tracking),
+and the small choose-one gets a `--ctl-sm` wide hit area.
+
+### Decision (28 September 2026)
+
+Albert chose **choose one C**, **on/off B**, **menu button C** and **section heads B**. Built,
+all in `css/app.css` on the existing classes:
+
+- **`.seg`**: the pip is each button's `::after` (`--diamond` on the accent's line), filled with
+  `--accent` and `--glow` on the chosen one; `min-width: var(--ctl-sm)` for the hit area. The
+  header's language (`.langsel`) keeps the plain underline.
+- **`.check`**: `.check-box` is the diamond (12 px, rotated), no tick (its `svg` is hidden), filled
+  and lit when on.
+- **`.btn`**: rules above and below only; `::before` / `::after` are the end diamonds on `--bk`,
+  filled on `.btn-primary` and under the finger. The corner brackets (`--bk-len`) are gone.
+- **`.ct-h`**: the hollow diamond in front and the rule fading out (`::before`, `::after`).
+- **One label class**: the Crest screen's `.ct-k` is `.lbl` now.
+
+Seen after building: with every Map layer on, the ten lit diamonds are still the brightest thing
+over the map, though smaller than the squares were; step 6 (the Map) can decide whether the
+layers' row wants less glow.
