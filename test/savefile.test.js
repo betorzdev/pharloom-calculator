@@ -99,3 +99,17 @@ test('the gauntlets cleared: the arena\'s flag in sceneData or playerData, or wh
   delete old.gauntlets;
   assert.deepEqual(F.gameOf({ ...snap, 'pharloom.progress': JSON.stringify(old) }).gauntlets, []);
 });
+
+test('the map\'s pins lit: a Bellway station unlocked, a toll bench paid; kept in the slot by what they are', () => {
+  const pd = { ...BASE, UnlockedFastTravel: true, UnlockedDocksStation: true };
+  const sd = { persistentBools: { serializedList: [{ SceneName: 'Dock_01', ID: 'bell_toll_machine', Value: true }] } };
+  const g = F.game(pd, sd);
+  assert.ok(g.lit.includes('bellway Bellway_02'), 'the Deep Docks station');
+  assert.ok(g.lit.includes('bench Dock_01'), 'the toll paid');
+  assert.ok(!g.lit.includes('bellway Bellway_City'), 'a station not unlocked');
+  assert.ok(g.lit.includes('bellway Bonetown'), 'Bone Bottom\'s needs only the Bellways');
+  const snap = F.toSnapshot(pd, sd);
+  assert.deepEqual(F.gameOf(snap).lit, g.lit);
+  const old = JSON.parse(snap['pharloom.progress']);
+  assert.deepEqual(F.gameOf({ ...snap, 'pharloom.progress': JSON.stringify({ ...old, lit: ['bellway Nowhere', 'bench Dock_01'] }) }).lit, ['bench Dock_01']);
+});

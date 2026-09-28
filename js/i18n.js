@@ -206,7 +206,13 @@
     mapZoom:        { es: 'Tamaño del mapa', en: 'Map size' },
     mapFit:         { es: 'Entero', en: 'Whole' },
     mapAlt:         { es: 'El mapa de Telalejana', en: 'The map of Pharloom' },
-    mapNote:        { es: 'Cada pieza, en su sala; varias en la misma sala se ven en fila. Las que dan un deseo o una compra no tienen sala en la partida y no se marcan: están en Progreso.', en: 'Each piece in its room; several in one room show in a row. The ones a wish or a purchase gives have no room in the save and aren\'t marked: they\'re in Progress.' },
+    mapPlace_bench: { es: 'Bancos', en: 'Benches' },
+    mapPlace_bench1:{ es: 'Banco', en: 'Bench' },
+    mapPlace_bellway:{ es: 'Vías campana', en: 'Bellways' },
+    mapPlace_ventrica:{ es: 'Ventrica', en: 'Ventrica' },   // KEY_TUBE
+    mapClosed:      { es: 'sin abrir', en: 'not open yet' },
+    mapToll:        { es: 'sin pagar el peaje', en: 'toll not paid' },
+    mapNote:        { es: 'Cada pieza, en su sala; varias en la misma sala se ven en fila. Las que dan un deseo o una compra no tienen sala en la partida y no se marcan: están en Progreso. Los bancos y las estaciones están donde el juego pone sus alfileres; atenuadas, las que tu partida aún no ha abierto. Los desafíos, los que te faltan.', en: 'Each piece in its room; several in one room show in a row. The ones a wish or a purchase gives have no room in the save and aren\'t marked: they\'re in Progress. The benches and stations are where the game puts its pins; dimmed, the ones your game hasn\'t opened yet. The gauntlets, the ones you haven\'t cleared.' },
 
     /* Combat: your build against one enemy (js/app-fight.js) */
     ftBuild:        { es: 'Tu build: {crest}, {needle}, kit de fabricación {kit}. Se cambia en', en: 'Your build: {crest}, {needle}, Crafting Kit {kit}. It\'s changed in' },

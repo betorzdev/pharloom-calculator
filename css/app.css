@@ -1232,4 +1232,15 @@ kbd {
 .mp-dot.is-craftmetal { color: var(--slot-yellow); }
 .mp-dot.is-pale-oil { color: var(--slot-red); }
 .mp-dot.is-flea { color: var(--plasmium-line); }
+.mp-bar.is-places { margin-top: 0; }
+/* The places: a glyph on a black disc, bone for the pins the game draws, the slots' red for a
+   gauntlet; dimmed while your game hasn't opened it. */
+.mp-pin {
+  position: absolute; display: grid; place-items: center; width: 18px; height: 18px; margin: -9px 0 0 -9px; border-radius: 50%;
+  background: var(--scene-bg); border: 1px solid currentColor; color: var(--hud-frame);
+}
+.mp-pin svg { width: 12px; height: 12px; }
+.mp-pin.is-gauntlet { color: var(--slot-red); }
+.mp-pin.is-off { color: var(--slot-locked); border-style: dashed; }
+.mp-kind .mp-pin { position: static; display: inline-grid; margin: 0; vertical-align: middle; }
 .mp-hornet { position: absolute; width: 40px; height: auto; transform: translate(-50%, -80%); filter: drop-shadow(0 0 8px color-mix(in oklab, var(--spotlight) 60%, transparent)); }

@@ -810,6 +810,12 @@ their destroyed versions (both were drawn, one over the other), Verdania's colou
 its drawings once the Dancers are beaten, Whiteward's pit after the Unravelled, the Abyss's
 diving bell. The image now shows one state, written in `extract-map.py`'s STATE: the world
 explored before Act 3, with those bosses beaten; a patch that adds a condition stops the run.
+Then **the places**: the game's own pins come out of the same tree (95: 76 benches with the toll,
+Bellshrine and Swamp Shaman ones, 12 Bellway and 7 Ventrica stations; the caravan's, which move,
+and the vendors' left out), each with what lights it in the game (the station unlocked, the toll
+paid), which `savefile.game().lit` reads; the gauntlets not cleared go in their arena's room
+(`js/gauntlets.js`'s scene, an interior by its door: `js/rooms.js`'s ENTRANCE, read from the
+scenes' doors), and the fleas, which weren't drawn, by the room their flag names.
 
 **Phase 7 has started** (the same day): the Tasks. The completionist's 74 (21 main objectives and
 53 wishes in 11 types) with their save field, joined to the game's own names by their English

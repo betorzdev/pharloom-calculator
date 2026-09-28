@@ -132,7 +132,12 @@ area's tint, the full drawing, as once the area's map is bought), and on it Horn
 you rest at and a dot for each loose piece you're missing, in its room: Mask Shards, Spool
 Fragments, Memory Lockets, Craftmetal, Pale Oil and fleas, each kind switched on or off. The
 pieces a wish or a purchase gives have no room in the save and aren't marked (Progress lists
-them). "Whole" fits it to the page; ×1,5 and ×2,5 enlarge it, and it scrolls to your bench. In
+them). Below, the places, each with a glyph of its own and switched on or off too: the benches,
+the Bellway stations and the Ventrica stations where the game puts its own pins, dimmed while
+your game hasn't opened them (a station not unlocked, a toll bench not paid; the counter says how
+many are open), and the enemy gauntlets you haven't cleared, in their arena's room. Hornet sits
+on her bench's pin. The map shows the world explored before Act 3, with Verdania and Whiteward
+as they are once their bosses are beaten. "Whole" fits it to the page; ×1,5 and ×2,5 enlarge it, and it scrolls to your bench. In
 Free mode, every piece.
 
 ### Progress
