@@ -98,25 +98,33 @@
     </main>
     <!-- about -->
     <section class="about" id="about" lang="es" aria-labelledby="about-h">
-      <h1 id="about-h">Tu partida de Hollow Knight: Silksong, en vivo</h1>
-      <p>La Calculadora de Telalejana lee el archivo de tu partida de Silksong y te enseña lo que el juego no te dice: qué te falta para el 100 %, pieza a pieza, dónde está cada fragmento de máscara, fragmento de carrete y herramienta que no tienes, en el mapa del propio juego, y cuántas entradas del Diario de caza te quedan. Su 100 % es el mismo que el del juego: comprobado en 92 partidas reales. En Chrome y Edge sigue el archivo mientras juegas.</p>
-      <p>Y sin partida también sirve: la pantalla del Blasón te dice cómo cambia cada estadística de Hornet con cada herramienta, blasón y mejora, y Combate lleva tu build contra cada enemigo, jefe y desafío de enemigos, con los modificadores de cada uno. Todos los números salen de la wiki, con el redondeo del juego, y todos los nombres, de su traducción oficial.</p>
+      <header class="about-hero">
+        <div class="about-art"><img src="assets/hornet/idle.png" alt="" loading="lazy"></div>
+        <div class="about-head">
+          <h1 id="about-h"><span class="about-name is-long">Tu partida de Hollow Knight: Silksong, en vivo</span></h1>
+          
+          <p>La Calculadora de Telalejana lee el archivo de tu partida de Silksong y te enseña lo que el juego no te dice: qué te falta para el 100 %, pieza a pieza, dónde está cada fragmento de máscara, fragmento de carrete y herramienta que no tienes, en el mapa del propio juego, y cuántas entradas del Diario de caza te quedan. Su 100 % es el mismo que el del juego: comprobado en 92 partidas reales. En Chrome y Edge sigue el archivo mientras juegas.</p>
+          <a class="about-cta" href="#" data-act="aboutUp">Importa tu partida ›</a>
+        </div>
+      </header>
+      <div class="about-text">
+        <p>Y sin partida también sirve: la pantalla del Blasón te dice cómo cambia cada estadística de Hornet con cada herramienta, blasón y mejora, y Combate lleva tu build contra cada enemigo, jefe y desafío de enemigos, con los modificadores de cada uno. Todos los números salen de la wiki, con el redondeo del juego, y todos los nombres, de su traducción oficial.</p>
+      </div>
+      <svg class="about-crown" width="200" height="28" viewBox="0 0 200 28" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" aria-hidden="true"><path d="M93 14 C84 14 78 7 69 7 C61 7 58 13 62 16.5 C65 19 69.5 16.5 68 13.5"/><path d="M62 16.5 C50 22 30 21 10 14"/><path d="M10 14 C6 12 5.5 8.5 9 8 C11.5 7.8 12 10.5 10.5 11.5"/><path d="M78 9 C74 3 66 1.5 58 3.5"/><g transform="translate(200 0) scale(-1 1)"><path d="M93 14 C84 14 78 7 69 7 C61 7 58 13 62 16.5 C65 19 69.5 16.5 68 13.5"/><path d="M62 16.5 C50 22 30 21 10 14"/><path d="M10 14 C6 12 5.5 8.5 9 8 C11.5 7.8 12 10.5 10.5 11.5"/><path d="M78 9 C74 3 66 1.5 58 3.5"/></g><path d="M100 5 L105 14 L100 23 L95 14 Z"/><path d="M100 1 V5 M100 23 V27"/></svg>
       <div class="about-faq">
         <h2>Preguntas frecuentes</h2>
-        <h3>¿Es gratis? ¿Hace falta cuenta?</h3>
-        <p>Es gratis, sin cuenta y sin anuncios. Tu partida no sale de tu navegador: se lee ahí y se guarda ahí.</p>
-        <h3>¿Funciona con la versión de consola?</h3>
-        <p>Leer la partida necesita el archivo, y solo el juego de ordenador (Windows, macOS, Linux, Steam Deck) lo deja a mano. Sin partida, la calculadora, el mapa y el Diario funcionan igual.</p>
+        <details open><summary><h3>¿Es gratis? ¿Hace falta cuenta?</h3></summary><p>Es gratis, sin cuenta y sin anuncios. Tu partida no sale de tu navegador: se lee ahí y se guarda ahí.</p></details>
+        <details><summary><h3>¿Funciona con la versión de consola?</h3></summary><p>Leer la partida necesita el archivo, y solo el juego de ordenador (Windows, macOS, Linux, Steam Deck) lo deja a mano. Sin partida, la calculadora, el mapa y el Diario funcionan igual.</p></details>
       </div>
       <nav class="about-more" aria-label="Más en el sitio">
         <h2>Más en el sitio</h2>
         <ul>
-          <li><a href="es/analizador-partida/" data-page>Analizador de partida</a></li>
-          <li><a href="es/guia-100/" data-page>Lista del 100 %</a></li>
-          <li><a href="es/mapa/" data-page>Mapa</a></li>
-          <li><a href="es/diario-de-caza/" data-page>Diario de caza</a></li>
-          <li><a href="es/herramientas-y-blasones/" data-page>Herramientas y blasones</a></li>
-          <li><a href="es/calculadora-de-danio/" data-page>Calculadora de daño</a></li>
+          <li><a href="es/analizador-partida/" data-page><img src="assets/hornet/sit.png" alt="" loading="lazy"><span>Analizador de partida</span></a></li>
+          <li><a href="es/guia-100/" data-page><img src="assets/icons/items/mask-shard.webp" alt="" loading="lazy"><span>Lista del 100 %</span></a></li>
+          <li><a href="es/mapa/" data-page><img src="assets/icons/items/farsight.webp" alt="" loading="lazy"><span>Mapa</span></a></li>
+          <li><a href="es/diario-de-caza/" data-page><img src="assets/icons/items/hunters-journal.webp" alt="" loading="lazy"><span>Diario de caza</span></a></li>
+          <li><a href="es/herramientas-y-blasones/" data-page><img src="assets/icons/crests/hunter.webp" alt="" loading="lazy"><span>Herramientas y blasones</span></a></li>
+          <li><a href="es/calculadora-de-danio/" data-page><img src="assets/icons/tools/straight-pin.webp" alt="" loading="lazy"><span>Calculadora de daño</span></a></li>
         </ul>
       </nav>
     </section>

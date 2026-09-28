@@ -118,24 +118,30 @@
     </main>
     <!-- about -->
     <section class="about" id="about" lang="en" aria-labelledby="about-h">
-      <h1 id="about-h">Silksong map: the game's own, with what you're missing</h1>
-      <p>It isn't a map drawn again: it's the rooms of the game's own map, each in its area's colour, taken from its files. On it, Hornet at the bench you rest at and a dot for each piece you're missing in its room: Mask Shards, Spool Fragments, Memory Lockets, Craftmetal, Pale Oil and fleas. Without a save, all of them, as a guide.</p>
+      <header class="about-hero">
+        <div class="about-art"><img src="assets/icons/items/farsight.webp" alt="" loading="lazy"></div>
+        <div class="about-head">
+          <h1 id="about-h"><span class="about-name">Silksong map</span><span class="about-sub"><span class="about-colon">: </span>the game's own, with what you're missing</span></h1>
+          
+          <p>It isn't a map drawn again: it's the rooms of the game's own map, each in its area's colour, taken from its files. On it, Hornet at the bench you rest at and a dot for each piece you're missing in its room: Mask Shards, Spool Fragments, Memory Lockets, Craftmetal, Pale Oil and fleas. Without a save, all of them, as a guide.</p>
+          <a class="about-cta" href="#" data-act="aboutUp">Open the map ›</a>
+        </div>
+      </header>
+      <svg class="about-crown" width="200" height="28" viewBox="0 0 200 28" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" aria-hidden="true"><path d="M93 14 C84 14 78 7 69 7 C61 7 58 13 62 16.5 C65 19 69.5 16.5 68 13.5"/><path d="M62 16.5 C50 22 30 21 10 14"/><path d="M10 14 C6 12 5.5 8.5 9 8 C11.5 7.8 12 10.5 10.5 11.5"/><path d="M78 9 C74 3 66 1.5 58 3.5"/><g transform="translate(200 0) scale(-1 1)"><path d="M93 14 C84 14 78 7 69 7 C61 7 58 13 62 16.5 C65 19 69.5 16.5 68 13.5"/><path d="M62 16.5 C50 22 30 21 10 14"/><path d="M10 14 C6 12 5.5 8.5 9 8 C11.5 7.8 12 10.5 10.5 11.5"/><path d="M78 9 C74 3 66 1.5 58 3.5"/></g><path d="M100 5 L105 14 L100 23 L95 14 Z"/><path d="M100 1 V5 M100 23 V27"/></svg>
       <div class="about-faq">
         <h2>Questions</h2>
-        <h3>Where is my save file?</h3>
-        <p>On Windows, in <code>%USERPROFILE%\AppData\LocalLow\Team Cherry\Hollow Knight Silksong</code>; on macOS, in <code>~/Library/Application Support/unity.Team-Cherry.Silksong</code>; on Linux and Steam Deck, in <code>~/.config/unity3d/Team Cherry/Hollow Knight Silksong</code>. Inside, a folder named with a number and the files <code>user1.dat</code> to <code>user4.dat</code>. The site walks you through it when importing.</p>
-        <h3>Is it free? Do I need an account?</h3>
-        <p>Free, no account and no ads. Your save never leaves your browser: it's read there and kept there.</p>
+        <details open><summary><h3>Where is my save file?</h3></summary><p>On Windows, in <code>%USERPROFILE%\AppData\LocalLow\Team Cherry\Hollow Knight Silksong</code>; on macOS, in <code>~/Library/Application Support/unity.Team-Cherry.Silksong</code>; on Linux and Steam Deck, in <code>~/.config/unity3d/Team Cherry/Hollow Knight Silksong</code>. Inside, a folder named with a number and the files <code>user1.dat</code> to <code>user4.dat</code>. The site walks you through it when importing.</p></details>
+        <details><summary><h3>Is it free? Do I need an account?</h3></summary><p>Free, no account and no ads. Your save never leaves your browser: it's read there and kept there.</p></details>
       </div>
       <nav class="about-more" aria-label="More on the site">
         <h2>More on the site</h2>
         <ul>
-          <li><a href="./" data-page>Home</a></li>
-          <li><a href="save-analyzer/" data-page>Save analyzer</a></li>
-          <li><a href="100-percent-checklist/" data-page>100% checklist</a></li>
-          <li><a href="hunters-journal/" data-page>Hunter's Journal</a></li>
-          <li><a href="tools-and-crests/" data-page>Tools and Crests</a></li>
-          <li><a href="damage-calculator/" data-page>Damage calculator</a></li>
+          <li><a href="./" data-page><img src="assets/hornet/stand.png" alt="" loading="lazy"><span>Home</span></a></li>
+          <li><a href="save-analyzer/" data-page><img src="assets/hornet/sit.png" alt="" loading="lazy"><span>Save analyzer</span></a></li>
+          <li><a href="100-percent-checklist/" data-page><img src="assets/icons/items/mask-shard.webp" alt="" loading="lazy"><span>100% checklist</span></a></li>
+          <li><a href="hunters-journal/" data-page><img src="assets/icons/items/hunters-journal.webp" alt="" loading="lazy"><span>Hunter's Journal</span></a></li>
+          <li><a href="tools-and-crests/" data-page><img src="assets/icons/crests/hunter.webp" alt="" loading="lazy"><span>Tools and Crests</span></a></li>
+          <li><a href="damage-calculator/" data-page><img src="assets/icons/tools/straight-pin.webp" alt="" loading="lazy"><span>Damage calculator</span></a></li>
         </ul>
       </nav>
     </section>

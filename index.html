@@ -96,25 +96,33 @@
     </main>
     <!-- about -->
     <section class="about" id="about" lang="en" aria-labelledby="about-h">
-      <h1 id="about-h">Your Hollow Knight: Silksong game, live</h1>
-      <p>Pharloom Calculator reads your Silksong save file and shows what the game doesn't tell you: what's missing for 100%, piece by piece, where every Mask Shard, Spool Fragment and Tool you don't have yet is, on the game's own map, and how many Hunter's Journal entries are left. Its 100% is the game's own: checked on 92 real saves. In Chrome and Edge it follows the file while you play.</p>
-      <p>It works without a save too: the Crest screen tells you how each of Hornet's stats changes with each Tool, Crest and upgrade, and Combat takes your build against every enemy, boss and enemy gauntlet, through each one's own modifiers. Every number comes from the wiki, with the game's rounding, and every name from its official translation.</p>
+      <header class="about-hero">
+        <div class="about-art"><img src="assets/hornet/idle.png" alt="" loading="lazy"></div>
+        <div class="about-head">
+          <h1 id="about-h"><span class="about-name is-long">Your Hollow Knight: Silksong game, live</span></h1>
+          
+          <p>Pharloom Calculator reads your Silksong save file and shows what the game doesn't tell you: what's missing for 100%, piece by piece, where every Mask Shard, Spool Fragment and Tool you don't have yet is, on the game's own map, and how many Hunter's Journal entries are left. Its 100% is the game's own: checked on 92 real saves. In Chrome and Edge it follows the file while you play.</p>
+          <a class="about-cta" href="#" data-act="aboutUp">Import your save ›</a>
+        </div>
+      </header>
+      <div class="about-text">
+        <p>It works without a save too: the Crest screen tells you how each of Hornet's stats changes with each Tool, Crest and upgrade, and Combat takes your build against every enemy, boss and enemy gauntlet, through each one's own modifiers. Every number comes from the wiki, with the game's rounding, and every name from its official translation.</p>
+      </div>
+      <svg class="about-crown" width="200" height="28" viewBox="0 0 200 28" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" aria-hidden="true"><path d="M93 14 C84 14 78 7 69 7 C61 7 58 13 62 16.5 C65 19 69.5 16.5 68 13.5"/><path d="M62 16.5 C50 22 30 21 10 14"/><path d="M10 14 C6 12 5.5 8.5 9 8 C11.5 7.8 12 10.5 10.5 11.5"/><path d="M78 9 C74 3 66 1.5 58 3.5"/><g transform="translate(200 0) scale(-1 1)"><path d="M93 14 C84 14 78 7 69 7 C61 7 58 13 62 16.5 C65 19 69.5 16.5 68 13.5"/><path d="M62 16.5 C50 22 30 21 10 14"/><path d="M10 14 C6 12 5.5 8.5 9 8 C11.5 7.8 12 10.5 10.5 11.5"/><path d="M78 9 C74 3 66 1.5 58 3.5"/></g><path d="M100 5 L105 14 L100 23 L95 14 Z"/><path d="M100 1 V5 M100 23 V27"/></svg>
       <div class="about-faq">
         <h2>Questions</h2>
-        <h3>Is it free? Do I need an account?</h3>
-        <p>Free, no account and no ads. Your save never leaves your browser: it's read there and kept there.</p>
-        <h3>Does it work with the console version?</h3>
-        <p>Reading the save needs the file, and only the computer version (Windows, macOS, Linux, Steam Deck) keeps it where you can reach it. Without a save, the calculator, the map and the Journal work all the same.</p>
+        <details open><summary><h3>Is it free? Do I need an account?</h3></summary><p>Free, no account and no ads. Your save never leaves your browser: it's read there and kept there.</p></details>
+        <details><summary><h3>Does it work with the console version?</h3></summary><p>Reading the save needs the file, and only the computer version (Windows, macOS, Linux, Steam Deck) keeps it where you can reach it. Without a save, the calculator, the map and the Journal work all the same.</p></details>
       </div>
       <nav class="about-more" aria-label="More on the site">
         <h2>More on the site</h2>
         <ul>
-          <li><a href="save-analyzer/" data-page>Save analyzer</a></li>
-          <li><a href="100-percent-checklist/" data-page>100% checklist</a></li>
-          <li><a href="map/" data-page>Map</a></li>
-          <li><a href="hunters-journal/" data-page>Hunter's Journal</a></li>
-          <li><a href="tools-and-crests/" data-page>Tools and Crests</a></li>
-          <li><a href="damage-calculator/" data-page>Damage calculator</a></li>
+          <li><a href="save-analyzer/" data-page><img src="assets/hornet/sit.png" alt="" loading="lazy"><span>Save analyzer</span></a></li>
+          <li><a href="100-percent-checklist/" data-page><img src="assets/icons/items/mask-shard.webp" alt="" loading="lazy"><span>100% checklist</span></a></li>
+          <li><a href="map/" data-page><img src="assets/icons/items/farsight.webp" alt="" loading="lazy"><span>Map</span></a></li>
+          <li><a href="hunters-journal/" data-page><img src="assets/icons/items/hunters-journal.webp" alt="" loading="lazy"><span>Hunter's Journal</span></a></li>
+          <li><a href="tools-and-crests/" data-page><img src="assets/icons/crests/hunter.webp" alt="" loading="lazy"><span>Tools and Crests</span></a></li>
+          <li><a href="damage-calculator/" data-page><img src="assets/icons/tools/straight-pin.webp" alt="" loading="lazy"><span>Damage calculator</span></a></li>
         </ul>
       </nav>
     </section>

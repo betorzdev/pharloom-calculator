@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<base href="../">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shell: variants, round 2</title>
+<meta name="description" content="Import your Hollow Knight: Silksong save and see what's missing for 100%, on the game's own map, and how many hits each enemy takes with your Tools and Crests.">
+<link rel="icon" href="assets/site/icon-48.png" sizes="48x48">
+<link rel="icon" href="assets/site/icon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="assets/site/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pharloom Calculator">
+<meta property="og:title" content="Silksong save tracker, 100% checklist, map and Tools · Pharloom Calculator">
+<meta property="og:description" content="Import your Hollow Knight: Silksong save and see what's missing for 100%, on the game's own map, and how many hits each enemy takes with your Tools and Crests.">
+<meta property="og:url" content="https://betorzdev.github.io/pharloom-calculator/">
+<meta property="og:image" content="https://betorzdev.github.io/pharloom-calculator/assets/site/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Your game screen: a 63% split by category, matching the one the game shows">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<!-- Visit counts (GoatCounter: no cookies, doesn't count file://, localhost or iframes). Explicit
+     https: a protocol-relative src would become file:// when opened locally. -->
+<script data-goatcounter="https://betorzdev.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<meta name="theme-color" content="#0f0604">
+<!-- page-ld -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is it free? Do I need an account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Free, no account and no ads. Your save never leaves your browser: it's read there and kept there."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work with the console version?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reading the save needs the file, and only the computer version (Windows, macOS, Linux, Steam Deck) keeps it where you can reach it. Without a save, the calculator, the map and the Journal work all the same."
+      }
+    }
+  ]
+}
+</script>
+<!-- /page-ld -->
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/app.css">
+
+<style>
+/* Design material, not part of the site (design/03-redesign.md, step 1, second round): the real
+   site with each idea laid over it, to compare every tab. ?sv=now|a|b|c|d, the tab in the hash. */
+/* A · no box: the screens straight on the red; the plaque title and its flourish stay. */
+html.sv-a .frame-line, html.sv-b .frame-line { background: transparent; border-color: transparent; }
+html.sv-a .frame-line::before, html.sv-a .frame-line::after, html.sv-b .frame-line::before, html.sv-b .frame-line::after { display: none; }
+html.sv-a .bk, html.sv-b .bk { display: none; }
+html.sv-a .screen, html.sv-b .screen { padding-left: 0; padding-right: 0; }
+html.sv-a .screen-head::after, html.sv-b .screen-head::after { content: ''; position: absolute; left: 50%; top: 100%; width: 60vw; max-width: 900px; height: 1px; transform: translateX(-50%); background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--filigree) 35%, transparent), transparent); }
+/* B · an atmosphere per tab: no box, and the page's light takes the colour of the tab's place. */
+html.sv-b body:has(.screen[data-view="journal"]:not([hidden])) .atmos { background: var(--vignette), radial-gradient(ellipse 80% 85% at 50% 100%, color-mix(in oklab, var(--area-mountain-line) 30%, var(--area-mountain-fill)) 0%, var(--area-mountain-fill) 40%, #0b0d12 75%); }
+html.sv-b body:has(.screen[data-view="map"]:not([hidden])) .atmos { background: var(--vignette), radial-gradient(ellipse 80% 85% at 50% 100%, color-mix(in oklab, var(--area-greymoor-line) 30%, var(--area-greymoor-fill)) 0%, var(--area-greymoor-fill) 40%, #0a1011 75%); }
+html.sv-b body:has(.screen[data-view="progress"]:not([hidden])) .atmos { background: var(--vignette), radial-gradient(ellipse 80% 85% at 50% 100%, color-mix(in oklab, var(--area-bonebottom-line) 25%, var(--area-bonebottom-fill)) 0%, var(--area-bonebottom-fill) 40%, #0b100a 75%); }
+html.sv-b body:has(.screen[data-view="tools"]:not([hidden])) .atmos { background: var(--vignette), radial-gradient(ellipse 80% 85% at 50% 100%, color-mix(in oklab, var(--area-bellhart-line) 22%, var(--area-bellhart-fill)) 0%, var(--area-bellhart-fill) 40%, #120e09 75%); }
+html.sv-b body:has(.screen[data-view="game"]:not([hidden])) .atmos { background: var(--vignette), radial-gradient(ellipse 80% 85% at 50% 100%, color-mix(in oklab, var(--area-library-line) 25%, var(--area-library-fill)) 0%, var(--area-library-fill) 40%, #120c06 75%); }
+html.sv-b body:has(.screen[data-view="fight"]:not([hidden])) .atmos { background: var(--vignette), radial-gradient(ellipse 80% 85% at 50% 100%, color-mix(in oklab, var(--area-docks-line) 28%, var(--area-docks-fill)) 0%, var(--area-docks-fill) 40%, #120a05 75%); }
+/* C · the box only where it's the game's own pane: Inventory, Journal and Crest keep it; Your
+   game, Progress, the Map and Combat go on the red. */
+html.sv-c .screen:is([data-view="home"], [data-view="progress"], [data-view="map"], [data-view="fight"]) .frame-line { background: transparent; border-color: transparent; }
+html.sv-c .screen:is([data-view="home"], [data-view="progress"], [data-view="map"], [data-view="fight"]) .frame-line::before,
+html.sv-c .screen:is([data-view="home"], [data-view="progress"], [data-view="map"], [data-view="fight"]) .frame-line::after,
+html.sv-c .screen:is([data-view="home"], [data-view="progress"], [data-view="map"], [data-view="fight"]) .bk { display: none; }
+/* D · a light box: the black at half, blurred, the red showing through; the frame fainter. */
+html.sv-d .frame-line { background: color-mix(in oklab, var(--inv-bg) 55%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-color: color-mix(in oklab, var(--filigree) 14%, transparent); }
+html.sv-d .frame-line::before, html.sv-d .frame-line::after { background: color-mix(in oklab, var(--filigree) 14%, transparent); }
+html.sv-d .bk { opacity: 0.45; }
+.sv-bar { position: fixed; z-index: 200; left: 50%; bottom: 8px; transform: translateX(-50%); display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px 10px; max-width: calc(100vw - 16px);
+  padding: 8px 12px; background: rgba(12, 6, 5, 0.94); border: 1px solid #5a3a36; font: 13px system-ui, sans-serif; color: #b8a9a3; }
+.sv-bar b { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: #d8c9c3; }
+.sv-bar button { padding: 4px 8px; border: 1px solid #503a38; background: none; color: #d8c9c3; font: inherit; cursor: pointer; }
+.sv-bar button[aria-pressed="true"] { border-color: #f1ebdc; color: #fff; }
+.sv-bar .note { flex-basis: 100%; text-align: center; font-size: 12px; }
+
+/* ── Round 3: with a box (Albert: none without one) ── */
+/* E · the box lit in its tab's colour: the frame, the corners and a light from the top inside
+   take the colour of the tab's place; the black stays. */
+html.sv-e .screen[data-view="journal"] { --lamp: var(--area-mountain-line); --lampc: color-mix(in oklab, var(--area-mountain-line) 55%, var(--area-mountain-fill)); }
+html.sv-e .screen[data-view="map"] { --lamp: var(--area-greymoor-line); --lampc: color-mix(in oklab, var(--area-greymoor-line) 55%, var(--area-greymoor-fill)); }
+html.sv-e .screen[data-view="progress"] { --lamp: var(--area-bonebottom-line); --lampc: color-mix(in oklab, var(--area-bonebottom-line) 55%, var(--area-bonebottom-fill)); }
+html.sv-e .screen[data-view="tools"] { --lamp: var(--area-bellhart-line); --lampc: color-mix(in oklab, var(--area-bellhart-line) 55%, var(--area-bellhart-fill)); }
+html.sv-e .screen[data-view="game"] { --lamp: var(--area-library-line); --lampc: color-mix(in oklab, var(--area-library-line) 55%, var(--area-library-fill)); }
+html.sv-e .screen[data-view="fight"] { --lamp: var(--area-docks-line); --lampc: color-mix(in oklab, var(--area-docks-line) 55%, var(--area-docks-fill)); }
+html.sv-e .screen[data-view="home"], html.sv-e .screen[data-view="saves"] { --lamp: #e8a39a; --lampc: #b0463b; }
+html.sv-e .frame-line { background: radial-gradient(ellipse 80% 320px at 50% 0%, color-mix(in oklab, var(--lampc) 38%, transparent), transparent), var(--inv-bg); border-color: color-mix(in oklab, var(--lampc) 70%, transparent); box-shadow: 0 0 40px -10px color-mix(in oklab, var(--lampc) 50%, transparent); }
+html.sv-e .frame-line::before, html.sv-e .frame-line::after { background: color-mix(in oklab, var(--lampc) 70%, transparent); }
+html.sv-e .bk { color: color-mix(in oklab, var(--lamp) 80%, transparent); }
+html.sv-e .screen-plaque { color: var(--lamp); }
+/* F · the game's panel: a double frame (an inner line inset), the top of the black lit like the
+   pause menu's header, the corners larger. */
+html.sv-f .frame-line { background: linear-gradient(180deg, color-mix(in oklab, var(--filigree) 7%, #000) 0, #000 140px), var(--inv-bg);
+  box-shadow: inset 0 0 0 7px #000, inset 0 0 0 8px color-mix(in oklab, var(--filigree) 22%, transparent); }
+html.sv-f .bk { scale: 1.35; transform-origin: center; }
+html.sv-f .bk.tr { scale: -1.35 1.35; } html.sv-f .bk.bl { scale: 1.35 -1.35; } html.sv-f .bk.br { scale: -1.35 -1.35; }
+/* G · a lit plate: the box a warm near-black lit from above, lifted off the red by a deep shadow
+   and a faint red glow, its frame fading at the sides. */
+html.sv-g .frame-line { background: radial-gradient(ellipse 90% 55% at 50% 0%, #1d0f0c, #070303 70%);
+  border-color: transparent; box-shadow: 0 40px 90px -30px rgba(0, 0, 0, 0.95), 0 0 70px -20px rgba(150, 50, 40, 0.45), inset 0 1px 0 color-mix(in oklab, var(--filigree) 30%, transparent); }
+html.sv-g .frame-line::before, html.sv-g .frame-line::after { background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--filigree) 40%, transparent)); }
+html.sv-g .frame-line::after { background: linear-gradient(270deg, transparent, color-mix(in oklab, var(--filigree) 40%, transparent)); }
+/* H · the box as a window: translucent black with the red showing faintly, a doubled frame and
+   the tab's colour in its light (D and E together). */
+html.sv-h .screen[data-view="journal"] { --lamp: var(--area-mountain-line); }
+html.sv-h .screen[data-view="map"] { --lamp: var(--area-greymoor-line); }
+html.sv-h .screen[data-view="progress"] { --lamp: var(--area-bonebottom-line); }
+html.sv-h .screen[data-view="tools"] { --lamp: var(--area-bellhart-line); }
+html.sv-h .screen[data-view="game"] { --lamp: var(--area-library-line); }
+html.sv-h .screen[data-view="fight"] { --lamp: var(--area-docks-line); }
+html.sv-h .frame-line { background: radial-gradient(ellipse 70% 260px at 50% 0%, color-mix(in oklab, var(--lamp) 12%, transparent), transparent), color-mix(in oklab, #000 72%, transparent);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: inset 0 0 0 6px color-mix(in oklab, #000 40%, transparent), inset 0 0 0 7px color-mix(in oklab, var(--lamp) 18%, transparent); }
+</style>
+<script>
+/* The idea is read before the site boots (it rewrites the address and drops ?sv=) and kept for the tab's session. */
+(function () {
+  let v = new URLSearchParams(location.search).get('sv');
+  try { if (v) sessionStorage.setItem('pharloom.design.sv', v); else v = sessionStorage.getItem('pharloom.design.sv'); } catch (e) { /* no storage */ }
+  window.SV = v || 'e';
+  document.documentElement.classList.add('sv-' + window.SV);
+})();
+</script>
+</head>
+<body>
+<div class="page">
+  <div class="shell">
+    <header class="masthead" id="masthead"></header>
+    <nav class="nav" id="nav" aria-label="Screens">
+      <div class="nav-tabs">
+        <a class="nav-tab nav-home" id="nav-home" data-act="view" data-value="home" href="#view=home">Your game</a>
+        <a class="nav-tab nav-inv" data-act="view" data-value="game" href="#view=game">Inventory</a>
+        <a class="nav-tab" id="nav-pg" data-act="view" data-value="progress" href="#view=progress"><span class="nav-lbl">Progress</span><span class="nav-num"></span></a>
+        <a class="nav-tab" data-act="view" data-value="map" href="#view=map">Map</a>
+        <a class="nav-tab" id="nav-hj" data-act="view" data-value="journal" href="#view=journal"><span class="nav-lbl">Journal</span><span class="nav-num"></span></a>
+        <span class="nav-sep" aria-hidden="true"></span>
+        <a class="nav-tab nav-tool" data-act="view" data-value="tools" href="#view=tools">Crest</a>
+        <a class="nav-tab nav-tool" data-act="view" data-value="fight" href="#view=fight">Combat</a>
+        <a class="nav-tab nav-tools" id="nav-tools" data-act="view" data-value="tools" href="#view=tools">Build</a>
+      </div>
+      <div class="nav-sub" id="nav-sub-game" hidden>
+        <a class="nav-tab" data-act="view" data-value="home" href="#view=home">Your game</a>
+        <a class="nav-tab" data-act="view" data-value="game" href="#view=game">Inventory</a>
+      </div>
+      <div class="nav-sub" id="nav-sub" hidden>
+        <a class="nav-tab" data-act="view" data-value="tools" href="#view=tools">Crest</a>
+        <a class="nav-tab" data-act="view" data-value="fight" href="#view=fight">Combat</a>
+      </div>
+    </nav>
+    <main class="screens">
+      <div id="banner"></div>
+      <section class="screen" data-view="home" id="home" aria-label="Your game" hidden></section>
+      <section class="screen" data-view="game" id="game" aria-label="Inventory" hidden></section>
+      <section class="screen" data-view="progress" id="progress" aria-label="Progress" hidden></section>
+      <section class="screen" data-view="map" id="map" aria-label="Map" hidden></section>
+      <section class="screen" data-view="journal" id="journal" aria-label="Journal" hidden></section>
+      <section class="screen" data-view="tools" id="tools" aria-label="Crest" hidden></section>
+      <section class="screen" data-view="fight" id="fight" aria-label="Combat" hidden></section>
+      <section class="screen" data-view="saves" id="saves" aria-label="Saves" hidden></section>
+    </main>
+    <!-- about -->
+    <section class="about" id="about" lang="en" aria-labelledby="about-h">
+      <header class="about-hero">
+        <div class="about-art"><img src="assets/hornet/idle.png" alt="" loading="lazy"></div>
+        <div class="about-head">
+          <h1 id="about-h"><span class="about-name is-long">Your Hollow Knight: Silksong game, live</span></h1>
+          
+          <p>Pharloom Calculator reads your Silksong save file and shows what the game doesn't tell you: what's missing for 100%, piece by piece, where every Mask Shard, Spool Fragment and Tool you don't have yet is, on the game's own map, and how many Hunter's Journal entries are left. Its 100% is the game's own: checked on 92 real saves. In Chrome and Edge it follows the file while you play.</p>
+          <a class="about-cta" href="#" data-act="aboutUp">Import your save ›</a>
+        </div>
+      </header>
+      <div class="about-text">
+        <p>It works without a save too: the Crest screen tells you how each of Hornet's stats changes with each Tool, Crest and upgrade, and Combat takes your build against every enemy, boss and enemy gauntlet, through each one's own modifiers. Every number comes from the wiki, with the game's rounding, and every name from its official translation.</p>
+      </div>
+      <svg class="about-crown" width="200" height="28" viewBox="0 0 200 28" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" aria-hidden="true"><path d="M93 14 C84 14 78 7 69 7 C61 7 58 13 62 16.5 C65 19 69.5 16.5 68 13.5"/><path d="M62 16.5 C50 22 30 21 10 14"/><path d="M10 14 C6 12 5.5 8.5 9 8 C11.5 7.8 12 10.5 10.5 11.5"/><path d="M78 9 C74 3 66 1.5 58 3.5"/><g transform="translate(200 0) scale(-1 1)"><path d="M93 14 C84 14 78 7 69 7 C61 7 58 13 62 16.5 C65 19 69.5 16.5 68 13.5"/><path d="M62 16.5 C50 22 30 21 10 14"/><path d="M10 14 C6 12 5.5 8.5 9 8 C11.5 7.8 12 10.5 10.5 11.5"/><path d="M78 9 C74 3 66 1.5 58 3.5"/></g><path d="M100 5 L105 14 L100 23 L95 14 Z"/><path d="M100 1 V5 M100 23 V27"/></svg>
+      <div class="about-faq">
+        <h2>Questions</h2>
+        <details open><summary><h3>Is it free? Do I need an account?</h3></summary><p>Free, no account and no ads. Your save never leaves your browser: it's read there and kept there.</p></details>
+        <details><summary><h3>Does it work with the console version?</h3></summary><p>Reading the save needs the file, and only the computer version (Windows, macOS, Linux, Steam Deck) keeps it where you can reach it. Without a save, the calculator, the map and the Journal work all the same.</p></details>
+      </div>
+      <nav class="about-more" aria-label="More on the site">
+        <h2>More on the site</h2>
+        <ul>
+          <li><a href="save-analyzer/" data-page><img src="assets/hornet/sit.png" alt="" loading="lazy"><span>Save analyzer</span></a></li>
+          <li><a href="100-percent-checklist/" data-page><img src="assets/icons/items/mask-shard.webp" alt="" loading="lazy"><span>100% checklist</span></a></li>
+          <li><a href="map/" data-page><img src="assets/icons/items/farsight.webp" alt="" loading="lazy"><span>Map</span></a></li>
+          <li><a href="hunters-journal/" data-page><img src="assets/icons/items/hunters-journal.webp" alt="" loading="lazy"><span>Hunter's Journal</span></a></li>
+          <li><a href="tools-and-crests/" data-page><img src="assets/icons/crests/hunter.webp" alt="" loading="lazy"><span>Tools and Crests</span></a></li>
+          <li><a href="damage-calculator/" data-page><img src="assets/icons/tools/straight-pin.webp" alt="" loading="lazy"><span>Damage calculator</span></a></li>
+        </ul>
+      </nav>
+    </section>
+    <!-- /about -->
+    <footer class="colophon" id="colophon"></footer>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script>try { if (sessionStorage.getItem('pharloom.cleared') || sessionStorage.getItem('pharloom.entered')) document.documentElement.classList.add('is-landing'); } catch (e) { /* no veil */ }</script>
+<script src="js/i18n.js"></script>
+<script src="js/data.js"></script>
+<script src="js/journal.js"></script>
+<script src="js/journal-rooms.js"></script>
+<script src="js/enemies.js"></script>
+<script src="js/enemy-damage.js"></script>
+<script src="js/phases.js"></script>
+<script src="js/gauntlets.js"></script>
+<script src="js/collectibles.js"></script>
+<script src="js/map.js"></script>
+<script src="js/graph.js"></script>
+<script src="js/rooms.js"></script>
+<script src="js/benches.js"></script>
+<script src="js/completion.js"></script>
+<script src="js/changes.js"></script>
+<script src="js/hero.js"></script>
+<script src="js/crest-slots.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/sim.js"></script>
+<script src="js/codec.js"></script>
+<script src="js/saves.js"></script>
+<script src="js/quests.js"></script>
+<script src="js/acts.js"></script>
+<script src="js/how.js"></script>
+<script src="js/savefile.js"></script>
+<script src="js/live.js"></script>
+<script src="js/app.js"></script>
+<script src="js/app-saves.js"></script>
+<script src="js/app-home.js"></script>
+<script src="js/app-game.js"></script>
+<script src="js/app-progress.js"></script>
+<script src="js/app-tools.js"></script>
+<script src="js/app-journal.js"></script>
+<script src="js/app-fight.js"></script>
+<script src="js/app-map.js"></script>
+<script src="js/app-hornet.js"></script>
+<script src="js/app-boot.js"></script>
+
+<div class="sv-bar"><b>Idea</b><button data-sv="now">hoy</button><button data-sv="d">D · caja ligera</button><button data-sv="e">E · caja con la luz de su pestaña</button><button data-sv="f">F · panel del juego</button><button data-sv="g">G · placa iluminada</button><button data-sv="h">H · ventana con su luz</button><span class="note" id="sv-note"></span></div>
+<script>
+(function () {
+  const NOTES = { now: 'Hoy: el fondo rojo y, encima, la caja negra con marcos en todas las pestañas.',
+    a: 'A · sin caja: el contenido directamente sobre el rojo; queda la placa del título con una línea de filigrana debajo.',
+    b: 'B · un ambiente por pestaña: sin caja, y la luz del fondo toma el color del lugar de cada pestaña (el Diario, el azul de Monte Fay; el Mapa, Páramo Gris; Progreso, el verde de Fondo Óseo; Blasón, el oro de Campanaria; Inventario, las Bóvedas; Combate, los Muelles; Tu partida, el rojo).',
+    c: 'C · caja solo en las del juego: Inventario, Diario y Blasón, que imitan paneles del juego, conservan la caja; Tu partida, Progreso, Mapa y Combate van sobre el rojo.',
+    d: 'D · caja ligera: la caja se queda, pero translúcida y difuminada, con el rojo asomando y los marcos más tenues.',
+    e: 'E · caja con la luz de su pestaña: el negro se queda, pero el marco, las esquinas, la placa y una luz desde arriba toman el color del lugar de cada pestaña (Diario azul, Mapa gris verdoso, Progreso verde, Blasón oro, Inventario ámbar, Combate los Muelles, Tu partida rojo).',
+    f: 'F · panel del juego: doble marco (una línea interior), la parte de arriba del negro iluminada como la cabecera del menú de pausa y las esquinas más grandes.',
+    g: 'G · placa iluminada: la caja en un casi negro cálido, iluminada desde arriba, despegada del rojo con una sombra profunda y un halo rojo; el marco se difumina hacia los lados.',
+    h: 'H · ventana con su luz: la caja translúcida (el rojo asoma), con doble marco y la luz del color de su pestaña: D y E juntas.' };
+  const v = window.SV;
+  for (const b of document.querySelectorAll('.sv-bar button')) b.setAttribute('aria-pressed', String(b.dataset.sv === v));
+  document.getElementById('sv-note').textContent = NOTES[v];
+  // Switching needs no reload: the class on <html> is all an idea is.
+  document.querySelector('.sv-bar').addEventListener('click', (e) => {
+    const b = e.target.closest('button');
+    if (!b) return;
+    e.stopPropagation();
+    const html = document.documentElement;
+    html.classList.remove('sv-' + window.SV);
+    window.SV = b.dataset.sv;
+    html.classList.add('sv-' + window.SV);
+    try { sessionStorage.setItem('pharloom.design.sv', window.SV); } catch (err) { /* no storage */ }
+    for (const x of document.querySelectorAll('.sv-bar button')) x.setAttribute('aria-pressed', String(x.dataset.sv === window.SV));
+    document.getElementById('sv-note').textContent = NOTES[window.SV];
+  });
+})();
+</script>
+</body>
+</html>

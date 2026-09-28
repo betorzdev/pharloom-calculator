@@ -15,7 +15,10 @@ in either pair, a second row under the bar switches between its two.
 
 Every screen is framed as the game's pause menu frames its panes: a thin filigree line all
 round with a curl at each corner, and the screen's name on its top edge in a small plaque with
-pointed ends, where the line stops. The study and the plan are in `design/00-study.md`; the UI and UX review, step by
+pointed ends, where the line stops. The frame is lit in the colour of the tab's place in the
+game (the Journal Mount Fay's blue, Progress Bone Bottom's green, Crest Bellhart's gold, the Map
+Greymoor, the Inventory the Whispering Vaults, Combat Deep Docks, Your game the red), with a
+light from its top, so each tab reads at a glance; inside, the black and the white stay. The study and the plan are in `design/00-study.md`; the UI and UX review, step by
 step, in `design/03-redesign.md`.
 
 On a computer, Hornet sits on the screen bar under the tab you're on: she is its mark, where a
@@ -389,6 +392,15 @@ kill it with the Needle alone at each upgrade (the engine, through the boss's ow
 its attacks with the masks they take, its staggers, where it's fought and what it gives (the
 wiki's infobox, by the game's names) and the Journal's description. The damage calculator's
 page and every boss page list them all (`tools/pages-bosses.js`).
+
+Under the screen, each page's text reads as a guide page on the main menu's red: at the top its
+art on a soft light (a boss's whole Journal drawing; Hornet, the Farsight, the Crest… for the
+others), the heading with the name large, the Journal's words for a boss, the first paragraph
+and a button up to the screen. A boss's page then shows its figures in a row (health per fight,
+slashes with the Needle alone, staggers), its attacks with their masks drawn, its phases as
+marks on a health bar and its reward, with the rest of the text folded under «Every detail».
+The questions fold, every boss shows as a portrait on Combat's pages, and the other pages come
+with their icon. With a save loaded the whole block folds, as before.
 
 ## Where the numbers come from
 

@@ -21,6 +21,12 @@ const LABELS = {
   faq:   { es: 'Preguntas frecuentes', en: 'Questions' },
   more:  { es: 'Más en el sitio', en: 'More on the site' },
   bosses: { es: 'Jefes', en: 'Bosses' },
+  // The guide page's (tools/pages.js, about; design/23-static-pages-round2.html, D).
+  attacks: { es: 'Sus ataques', en: 'Its attacks' },
+  phases: { es: 'Fases', en: 'Phases' },
+  reward: { es: 'Recompensa', en: 'Reward' },
+  details: { es: 'Todos los detalles', en: 'Every detail' },
+  bossCta: { es: 'Pruébalo con tu build', en: 'Try it with your build' },
 };
 
 /* The preview card's image (assets/site/og.jpg) is the same on every page; its description. */
@@ -167,5 +173,18 @@ const PAGES = [
     ],
   },
 ];
+
+/* Each page's guide (tools/pages.js, about): the art at the top of its block, the button up to
+   its screen, and the icon it carries in the other pages' links. */
+const GUIDE = {
+  home: { art: 'assets/hornet/idle.png', icon: 'assets/hornet/stand.png', cta: { es: 'Importa tu partida', en: 'Import your save' } },
+  analyzer: { art: 'assets/hornet/resting.png', icon: 'assets/hornet/sit.png', cta: { es: 'Importa tu partida', en: 'Import your save' } },
+  completion: { art: 'assets/icons/items/mask-shard.webp', icon: 'assets/icons/items/mask-shard.webp', cta: { es: 'Mira lo que te falta', en: 'See what\'s missing' } },
+  map: { art: 'assets/icons/items/farsight.webp', icon: 'assets/icons/items/farsight.webp', cta: { es: 'Abre el mapa', en: 'Open the map' } },
+  journal: { art: 'assets/journal/art/name_mossbone_crawler.webp', icon: 'assets/icons/items/hunters-journal.webp', cta: { es: 'Abre el Diario', en: 'Open the Journal' } },
+  crest: { art: 'assets/crests/hunter-3.webp', icon: 'assets/icons/crests/hunter.webp', cta: { es: 'Prueba builds', en: 'Try builds' } },
+  damage: { art: 'assets/hornet/idle.png', icon: 'assets/icons/tools/straight-pin.webp', cta: { es: 'Calcula con tu build', en: 'Work it out with your build' } },
+};
+for (const page of PAGES) Object.assign(page, GUIDE[page.id]);
 
 module.exports = { BRAND, LABELS, OG_ALT, PAGES };

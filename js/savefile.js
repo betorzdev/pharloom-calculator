@@ -29,6 +29,8 @@
   const GA = SS.gauntlets || require('./gauntlets.js');
   const MAP = SS.map || require('./map.js');
   const QU = SS.quests || require('./quests.js');
+  // js/spots.js, the Map's extras and bosses; a page without it reads none.
+  const SP = SS.spots || (() => { try { return require('./spots.js'); } catch (e) { return { EXTRAS: [], BOSSES: [] }; } })();
   // The map's pins that light up (a station, a toll bench), by what they are: "bellway Bellway_02".
   const pinKey = (p) => p[0] + ' ' + p[3];
   const LIGHTS = MAP.PINS.filter((p) => p[4]);
@@ -262,11 +264,18 @@
        endings            the endings seen, by ENDINGS' ids (CompletedEndings, a bit each) */
   function game(pd, sd = null) {
     const tools = named(pd.Tools), crests = named(pd.ToolEquips), quests = named(pd.QuestCompletionData);
-    const bools = new Map();
-    for (const e of (sd && sd.persistentBools && Array.isArray(sd.persistentBools.serializedList) ? sd.persistentBools.serializedList : [])) {
-      const k = e.SceneName + '\u0000' + e.ID;
-      if (!bools.has(k)) bools.set(k, e.Value);
-    }
+    // The rooms' state (sceneData), each list by room and id; the first of a repeated one.
+    const rooms = (list) => {
+      const m = new Map();
+      for (const e of (sd && sd[list] && Array.isArray(sd[list].serializedList) ? sd[list].serializedList : [])) {
+        const k = e.SceneName + '\u0000' + e.ID;
+        if (!m.has(k)) m.set(k, e.Value);
+      }
+      return m;
+    };
+    const bools = rooms('persistentBools'), ints = rooms('persistentInts'), rocks = rooms('geoRocks');
+    const relics = named(pd.Relics), items = named(pd.Collectables);
+    const deposited = new Set(list(pd.MementosDeposited).filter((e) => e && e.Data && e.Data.IsDeposited).map((e) => e.Name));
     const visited = new Set(Array.isArray(pd.scenesVisited) ? pd.scenesVisited : []);
     const kills = new Map((pd.EnemyJournalKillData && Array.isArray(pd.EnemyJournalKillData.list) ? pd.EnemyJournalKillData.list : [])
       .map((e) => [e.Name, e.Record ? int(e.Record.Kills) : 0]));
@@ -278,6 +287,10 @@
         case 'bool': return !!bools.get(c[1] + '\u0000' + c[2]);
         case 'visited': return visited.has(c[1]);
         case 'journal': return kills.has(c[1]);   // the entry is listed (seen)
+        case 'relic': return !!(relics.get(c[1]) || {}).IsCollected;
+        case 'memento': return deposited.has(c[1]) || int((items.get(c[1]) || {}).Amount) > 0;
+        case 'int': return ints.get(c[1] + '\u0000' + c[2]) === c[3];
+        case 'geo': return rocks.get(c[1] + '\u0000' + c[2]) === 0;   // listed, with no hits left
         case 'any': return c.slice(1).some(has);
         case 'all': return c.slice(1).every(has);
         case 'not': return !has(c[1]);
@@ -287,7 +300,6 @@
     const whole = (v, base) => Math.max(0, int(v) - base);
     const journal = {};
     for (const [id, name] of Object.entries(CO.JOURNAL)) if (kills.has(name)) journal[id] = Math.max(0, kills.get(name));
-    const items = named(pd.Collectables);
     const flower = (items.get('White Flower') || {}).Amount;
     const held = (x) => (x.kind === 'tool' ? !!(tools.get(x.save) || {}).IsUnlocked : int((items.get(x.save) || {}).Amount) > 0);
     return {
@@ -324,6 +336,14 @@
       snarePieces: QU.SNARE.filter(held).map((x) => x.save),
       snareReady: pd.soulSnareReady === true,
       endings: ENDINGS.filter((e) => (int(pd.CompletedEndings) & e.bit) !== 0).map((e) => e.id),
+      // For the Map: the rooms entered, the areas whose map is bought (Has<Area>Map, by the
+      // area's name in the flag), where the cocoon lies (the scene Hornet last fell in, while
+      // it's there), the things beyond the 100% had (js/spots.js EXTRAS) and the bosses beaten.
+      visited: [...visited].filter((x) => typeof x === 'string' && /^[\w ()-]{1,64}$/.test(x)).sort(),
+      maps: MAP_FLAGS.filter((f) => pd[f] === true).map((f) => f.slice(3, -3)),
+      cocoon: typeof pd.HeroCorpseScene === 'string' && /^[\w ()-]{1,64}$/.test(pd.HeroCorpseScene) ? pd.HeroCorpseScene : '',
+      extras: SP.EXTRAS.map((x, i) => (has(x[2]) ? i : -1)).filter((i) => i >= 0),
+      bosses: SP.BOSSES.filter((b) => has(b[2])).map((b) => b[0]),
     };
   }
 
@@ -338,6 +358,12 @@
      toSnapshot() writes them; gameOf() reads them back into one game, with the same defaults as
      an empty game for anything missing or damaged. */
   const OWNED = ['tools', 'crests', 'skills', 'arts'];
+  // The 28 maps Shakra sells, as the save flags them (checked on the author's saves).
+  const MAP_FLAGS = Object.freeze(['HasMossGrottoMap', 'HasWildsMap', 'HasBoneforestMap', 'HasDocksMap', 'HasGreymoorMap',
+    'HasBellhartMap', 'HasShellwoodMap', 'HasCrawlMap', 'HasHuntersNestMap', 'HasJudgeStepsMap', 'HasDustpensMap', 'HasSlabMap',
+    'HasPeakMap', 'HasCitadelUnderstoreMap', 'HasCoralMap', 'HasSwampMap', 'HasCloverMap', 'HasAbyssMap', 'HasHangMap',
+    'HasSongGateMap', 'HasHallsMap', 'HasWardMap', 'HasCogMap', 'HasLibraryMap', 'HasCradleMap', 'HasArboriumMap',
+    'HasAqueductMap', 'HasWeavehomeMap']);
   /* The endings, as the game keeps them seen in playerData.CompletedEndings: its CompletionState
      flags (Assembly-CSharp, read on 28-Sep-2026: Act2Regular 1, Act2Cursed 2, Act2SoulSnare 4,
      Act3Ending 8), in the wiki's order (Endings (Silksong)) and named by the game's text
@@ -351,9 +377,11 @@
   const pieceKey = (p) => p[0] + ' ' + JSON.stringify(p[2]);
   const KEY_AT = new Map(CO.PIECES.map((p, i) => [pieceKey(p), i]));
   const WISH_AT = new Map(CO.WISHES.map((w, i) => [pieceKey(w), i]));
+  const EXTRA_AT = new Map(SP.EXTRAS.map((x, i) => [pieceKey(x), i]));
   function toSnapshot(pd, sd = null, saved = null) {
     const g = game(pd, sd);
-    const progress = { ...g, pieces: g.pieces.map((i) => pieceKey(CO.PIECES[i])), wishes: g.wishes.map((i) => pieceKey(CO.WISHES[i])) };
+    const progress = { ...g, pieces: g.pieces.map((i) => pieceKey(CO.PIECES[i])), wishes: g.wishes.map((i) => pieceKey(CO.WISHES[i])),
+      extras: g.extras.map((i) => pieceKey(SP.EXTRAS[i])) };
     for (const k of [...OWNED, 'journal']) delete progress[k];
     const m = meta(pd);
     return {
@@ -366,7 +394,8 @@
   const EMPTY = Object.freeze({ tools: [], crests: [], skills: [], arts: [], journal: {}, masks: 0, spools: 0, hearts: 0,
     needle: 0, kit: 0, pouch: 0, everbloom: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, bench: '', area: '', build: {},
     quests: [], bellshrines: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
-    bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [] });
+    bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [],
+    visited: [], maps: [], cocoon: '', extras: [], bosses: [] });
   const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
   // Each field only if it has the type an empty game gives it.
   function gameOf(snap) {
@@ -381,6 +410,8 @@
     // The pieces by their keys → today's places in the list; a key the list no longer has is dropped.
     out.pieces = out.pieces.map((k) => KEY_AT.get(k)).filter((i) => i !== undefined);
     out.wishes = out.wishes.map((k) => WISH_AT.get(k)).filter((i) => i !== undefined);
+    out.extras = out.extras.map((k) => EXTRA_AT.get(k)).filter((i) => i !== undefined);
+    out.bosses = out.bosses.filter((id) => SP.BOSSES.some((b) => b[0] === id));
     // The gauntlets go by their ids, the wiki's subpages: one the list no longer has is dropped.
     out.gauntlets = out.gauntlets.filter((id) => GA.GAUNTLETS.some((x) => x.id === id));
     out.lit = out.lit.filter((k) => LIGHTS.some((p) => pinKey(p) === k));

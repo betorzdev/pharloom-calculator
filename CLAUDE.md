@@ -41,7 +41,9 @@ Neither folder is part of the page: `index.html` doesn't load them.
   The HUD and the slot colours are measured (`design/02-silksong.md`); the surfaces, the accent
   and the frames were decided on them (its §5, and the tokens' header). The page is the
   main menu (its red light and embers), the screens the pause menu (black, framed and titled in white
-  filigree, with no colour per section): the
+  filigree). Each screen's frame, corners, plaque and a light from its top take the colour of its
+  tab's place in the game (`--tab-*`, from the area tokens; design/03-redesign.md, step 1, third
+  round, Albert's choice): only the frame's light, never the accent, a figure or text. The
   red is atmosphere only, never the accent, a figure or text.
 - **`js/data.js`, `js/enemies.js` and `js/journal.js` are generated** (`npm run data`, from
   `kb/data/raw/` and the dump, offline): change `tools/gen-*.js`, never the output. Every game

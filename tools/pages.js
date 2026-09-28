@@ -35,34 +35,82 @@ const url = (page, lang) => SITE + rel(page, lang);
 const file = (page, lang) => rel(page, lang) + 'index.html';
 const fullTitle = (page, lang) => page.title[lang] + ' · ' + BRAND[lang];
 
-/* The About block: the heading with the query, the text, the questions and the other pages. */
+/* The About block, as a guide page on the main menu's red (design/23-static-pages-round2.html,
+   D): at the top the page's art on the Journal's light, the heading (the name large, the rest of
+   the query under it), the Journal's words on a boss's page, the first paragraph and a button up
+   to the screen; a boss's figures in a row, its attacks with their masks and its phases on a
+   bar; the rest of the text (folded on a boss's page, whose figures say it); the questions,
+   folded; on Combat's pages every boss as a portrait; the other pages with their icon. The text
+   is all there for search engines; only how it shows changed. */
+const HALF = '<path d="M93 14 C84 14 78 7 69 7 C61 7 58 13 62 16.5 C65 19 69.5 16.5 68 13.5"/><path d="M62 16.5 C50 22 30 21 10 14"/><path d="M10 14 C6 12 5.5 8.5 9 8 C11.5 7.8 12 10.5 10.5 11.5"/><path d="M78 9 C74 3 66 1.5 58 3.5"/>';
+const CROWN = `<svg class="about-crown" width="200" height="28" viewBox="0 0 200 28" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" aria-hidden="true">${HALF}<g transform="translate(200 0) scale(-1 1)">${HALF}</g><path d="M100 5 L105 14 L100 23 L95 14 Z"/><path d="M100 1 V5 M100 23 V27"/></svg>`;
+const MASKS = { es: '{n} máscaras', en: '{n} masks' };
+const PHASE = { es: 'fase {n}', en: 'phase {n}' };
 function about(page, lang) {
-  const faq = page.faq.map((f) => `    <h3>${f.q[lang]}</h3>\n    <p>${f.a[lang]}</p>`).join('\n');
-  const li = (p) => `      <li><a href="${rel(p, lang) || './'}" data-page>${p.link[lang]}</a></li>`;
+  const g = page.guide || {};
+  const art = g.art || page.art;
+  const h1 = (page.h1 || page.title)[lang];
+  // Not inside the game's own name, «Hollow Knight: Silksong».
+  const cut = /Hollow Knight$/.test(h1.slice(0, h1.indexOf(': '))) ? -1 : h1.indexOf(': ');
+  // The name large and the rest of the query under it; the colon stays in the heading's text.
+  const heading = cut < 0 ? `<span class="about-name${h1.length > 24 ? ' is-long' : ''}">${h1}</span>`
+    : `<span class="about-name">${h1.slice(0, cut)}</span><span class="about-sub"><span class="about-colon">: </span>${h1.slice(cut + 2)}</span>`;
+  const [lead, ...rest] = page.body;
+  const cta = (page.boss ? LABELS.bossCta : page.cta || LABELS.bossCta)[lang];
+  const hero = `  <header class="about-hero">
+    ${art ? `<div class="about-art"><img src="${art}" alt="" loading="lazy"></div>` : ''}
+    <div class="about-head">
+      <h1 id="about-h">${heading}</h1>
+      ${g.quote ? `<p class="about-quote">${g.quote[lang]}</p>` : ''}
+      <p>${lead[lang]}</p>
+      <a class="about-cta" href="#" data-act="aboutUp">${cta} ›</a>
+    </div>
+  </header>`;
+  const figs = g.figs && g.figs.length ? `
+  <dl class="about-figs">${g.figs.map((f) => `<div><dt>${f.k[lang]}</dt><dd>${f.v[lang]}</dd></div>`).join('')}</dl>` : '';
+  const mask = (n) => `<span class="about-masks" role="img" aria-label="${attr(MASKS[lang].replace('{n}', n))}">${'<img src="assets/hud/mask.png" alt="">'.repeat(n)}</span>`;
+  const attacks = g.attacks && g.attacks.length ? `<section><h2>${LABELS.attacks[lang]}</h2><ul class="about-attacks">${g.attacks.map((x) => `<li><span>${x.name}</span>${mask(x.masks)}</li>`).join('')}</ul></section>` : '';
+  const phases = g.phases && g.phases.length ? `<section><h2>${LABELS.phases[lang]}</h2>${g.phases.map((ph) => `
+      ${g.phases.length > 1 ? `<p class="about-fight">${ph.name[lang]}</p>` : ''}<div class="about-bar">${ph.marks.map((m) => `<i style="left:${(m.at / ph.hp * 100).toFixed(1)}%"><span>${PHASE[lang].replace('{n}', m.n)} · ${new Intl.NumberFormat(lang === 'es' ? 'es-ES' : 'en-GB').format(m.at)}</span></i>`).join('')}</div>`).join('')}
+      ${g.reward ? `<h2>${LABELS.reward[lang]}</h2><p class="about-reward">${g.reward[lang]}</p>` : ''}</section>`
+    : g.reward ? `<section><h2>${LABELS.reward[lang]}</h2><p class="about-reward">${g.reward[lang]}</p></section>` : '';
+  const two = attacks || phases ? `
+  <div class="about-two">${attacks}${phases}</div>` : '';
+  const text = rest.length ? (page.boss ? `
+  <details class="about-details"><summary>${LABELS.details[lang]}</summary>
+${rest.map((p) => `    <p>${p[lang]}</p>`).join('\n')}
+  </details>` : `
+  <div class="about-text">
+${rest.map((p) => `    <p>${p[lang]}</p>`).join('\n')}
+  </div>`) : '';
+  const faq = page.faq.map((f, i) => `    <details${i ? '' : ' open'}><summary><h3>${f.q[lang]}</h3></summary><p>${f.a[lang]}</p></details>`).join('\n');
+  const li = (p) => `      <li><a href="${rel(p, lang) || './'}" data-page>${p.icon ? `<img src="${p.icon}" alt="" loading="lazy">` : ''}<span>${p.link[lang]}</span></a></li>`;
+  const face = (p) => `      <li><a href="${rel(p, lang)}" data-page title="${attr(p.link[lang])}"><span class="hj-ring is-done" style="--f:1"><img src="${p.guide.icon}" alt="" loading="lazy"></span><span>${p.link[lang]}</span></a></li>`;
   const more = T.PAGES.filter((p) => p !== page).map(li).join('\n');
-  // Combat's pages, the calculator's and each boss's, list the bosses.
+  // Combat's pages, the calculator's and each boss's, show every boss.
   const bosses = page.view === 'fight' ? `
-  <nav class="about-more" aria-label="${attr(LABELS.bosses[lang])}">
+  ${CROWN}
+  <nav class="about-bosses" aria-label="${attr(LABELS.bosses[lang])}">
     <h2>${LABELS.bosses[lang]}</h2>
     <ul>
-${BOSS_PAGES.filter((p) => p !== page).map(li).join('\n')}
+${BOSS_PAGES.filter((p) => p !== page).map(face).join('\n')}
     </ul>
   </nav>` : '';
   // Indented to sit in index.html's .shell, where the region's markers are.
   return `<!-- about -->
 <section class="about" id="about" lang="${lang}" aria-labelledby="about-h">
-  <h1 id="about-h">${(page.h1 || page.title)[lang]}</h1>
-${page.body.map((p) => `  <p>${p[lang]}</p>`).join('\n')}
+${hero}${figs}${two}${text}
+  ${CROWN}
   <div class="about-faq">
     <h2>${LABELS.faq[lang]}</h2>
 ${faq}
-  </div>
+  </div>${bosses}
   <nav class="about-more" aria-label="${attr(LABELS.more[lang])}">
     <h2>${LABELS.more[lang]}</h2>
     <ul>
 ${more}
     </ul>
-  </nav>${bosses}
+  </nav>
 </section>
 <!-- /about -->`.replace(/\n/g, '\n    ');
 }

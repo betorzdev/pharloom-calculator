@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Static pages: variants, round 2</title>
+<!-- Design material, not part of the site (design/03-redesign.md, step 10, second round). The
+     static pages' own block drawn again, more attractive and with no black box, over Lace's boss
+     page (its text inlined as the page has it). ?v=d|e|f&w=1440|390 -->
+<base href="../">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/app.css">
+<style>
+.mk-bar { position: fixed; z-index: 90; left: 50%; bottom: var(--sp-2); transform: translateX(-50%); display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--sp-1) var(--sp-3); width: max-content; max-width: calc(100vw - var(--sp-4)); padding: var(--sp-2) var(--sp-3); background: color-mix(in oklab, var(--scene-bg) 94%, transparent); border: 1px solid var(--line-panel); font-family: var(--font-num); font-size: var(--fs-xs); color: var(--muted); }
+.mk-bar b { color: var(--label); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; font-size: var(--fs-2xs); }
+.mk-bar button { padding: var(--sp-1) var(--sp-2); border: 1px solid var(--line-ctl); color: var(--ink-2); font: inherit; }
+.mk-bar button[aria-pressed="true"] { color: var(--ink-strong); border-color: var(--accent-line); background: var(--picked); }
+.mk-note { flex-basis: 100%; text-align: center; color: var(--ink-2); }
+html.is-framed body { background: var(--scene-bg); }
+.mk-phone { display: block; margin: var(--sp-4) auto calc(var(--sp-16) * 2); width: 390px; height: calc(100vh - var(--sp-16) * 2 - var(--sp-8)); border: 1px solid var(--line-panel); }
+html.is-inner .mk-bar { display: none; }
+.page { padding-top: var(--sp-8); padding-bottom: calc(var(--sp-16) * 2.5); }
+.ghost { height: 90px; display: grid; place-items: center; border: 1px dashed var(--line); color: var(--muted); font-size: var(--fs-xs); margin-bottom: var(--sp-12); }
+.lbl { margin: 0 0 var(--sp-3); font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
+.n { font-family: var(--font-num); font-variant-numeric: tabular-nums; color: var(--ink-strong); }
+.crown { color: var(--filigree); opacity: .75; display: block; margin: 0 auto; }
+.lit { position: relative; display: grid; place-items: center; }
+.lit::before { content: ''; position: absolute; inset: -12%; background: var(--journal-light); pointer-events: none; }
+.lit img { position: relative; }
+.mask { height: 16px; vertical-align: -3px; }
+.faq details { border-bottom: 1px solid color-mix(in oklab, var(--filigree) 18%, transparent); }
+.faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: var(--sp-3); padding: var(--sp-3) 0; font-size: var(--fs-md); color: var(--ink); }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '◇'; color: var(--filigree); }
+.faq details[open] summary::after { content: '◆'; }
+.faq p { margin: 0 0 var(--sp-3); color: var(--ink-2); }
+.bgrid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: var(--sp-3) var(--sp-2); }
+.bgrid a { display: grid; justify-items: center; gap: var(--sp-1); text-decoration: none; font-size: var(--fs-2xs); color: var(--ink-2); text-align: center; line-height: 1.25; }
+.bgrid .hj-ring { width: 52px; transition: transform var(--dur) var(--ease); }
+.bgrid a:hover .hj-ring { transform: scale(1.08); } .bgrid a:hover { color: var(--accent); }
+.go { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-3) var(--sp-6); }
+.go a { display: grid; justify-items: center; gap: var(--sp-1); width: 120px; text-decoration: none; font-size: var(--fs-xs); color: var(--ink-2); text-align: center; }
+.go img { width: 48px; height: 48px; object-fit: contain; filter: drop-shadow(0 0 8px color-mix(in oklab, var(--spotlight) 30%, transparent)); }
+.go a:hover { color: var(--accent); }
+
+/* D · the boss's page: its drawing large on the main menu's red, the title over it, the facts as
+   figures, its attacks with masks, phases on a bar; a guide page, not a box. */
+.d-hero { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--sp-8); align-items: center; }
+.d-hero .art { height: 360px; } .d-hero .art img { max-height: 340px; filter: drop-shadow(0 12px 30px rgba(0,0,0,.6)); }
+.d-hero h1 { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: var(--fs-hero); line-height: .95; color: var(--ink-strong); text-shadow: 0 0 40px color-mix(in oklab, var(--spotlight) 25%, transparent); }
+.d-hero .sub { margin: var(--sp-3) 0 0; font-family: var(--font-display); font-size: var(--fs-lg); color: var(--ink-2); letter-spacing: var(--track-title); }
+.d-hero q { display: block; margin-top: var(--sp-4); font-family: var(--font-hand); font-size: var(--fs-lg); color: var(--ink); quotes: none; }
+.d-figs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: var(--sp-8) 0; border-top: 1px solid color-mix(in oklab, var(--filigree) 25%, transparent); border-bottom: 1px solid color-mix(in oklab, var(--filigree) 25%, transparent); }
+.d-figs div { display: grid; justify-items: center; gap: var(--sp-1); padding: var(--sp-4) var(--sp-2); text-align: center; }
+.d-figs div + div { border-left: 1px solid color-mix(in oklab, var(--filigree) 18%, transparent); }
+.d-figs b { font-size: var(--fs-2xl); }
+.d-figs span { font-size: var(--fs-xs); color: var(--muted); }
+.d-two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--sp-12); }
+.d-att { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: var(--sp-6); }
+.d-att li { break-inside: avoid; display: flex; justify-content: space-between; padding: var(--sp-2) 0; border-bottom: 1px solid color-mix(in oklab, var(--filigree) 12%, transparent); color: var(--ink-2); font-size: var(--fs-sm); }
+.d-phase { position: relative; height: 8px; margin: var(--sp-6) 0 var(--sp-2); background: color-mix(in oklab, var(--slot-red) 70%, transparent); }
+.d-phase i { position: absolute; top: -4px; bottom: -4px; width: 2px; background: var(--ink-strong); }
+.d-phase-k { display: flex; justify-content: space-between; font-size: var(--fs-xs); color: var(--muted); }
+.cta { display: inline-flex; align-items: center; gap: var(--sp-2); margin-top: var(--sp-6); padding: var(--sp-3) var(--sp-6); border: 1px solid var(--filigree); color: var(--ink-strong); font-family: var(--font-display); letter-spacing: var(--track-caps); text-transform: uppercase; font-size: var(--fs-sm); text-decoration: none; box-shadow: var(--glow); }
+section.s { margin-top: var(--sp-12); }
+section.s > .crown { margin-bottom: var(--sp-6); }
+
+/* E · the Journal's page: laid out as the game's Journal entry (drawing on its light, the name
+   under the filigree, the text, the Hunter's symbol), the questions as the Hunter's notes. */
+.e { max-width: 980px; margin: 0 auto; }
+.e-entry { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: var(--sp-8); align-items: center; }
+.e-entry .art { height: 380px; } .e-entry .art img { max-height: 340px; }
+.e-entry h1 { margin: 0 0 var(--sp-2); font-family: var(--font-display); font-weight: 400; font-size: var(--fs-2xl); color: var(--ink-strong); text-align: center; }
+.e-entry .rule { width: 60%; height: 1px; margin: 0 auto var(--sp-4); background: linear-gradient(90deg, transparent, var(--filigree), transparent); }
+.e-entry p { margin: 0 0 var(--sp-3); color: var(--ink-2); line-height: 1.65; }
+.e-sym { display: block; width: 180px; margin: var(--sp-8) auto var(--sp-4); opacity: .8; }
+.e-notes { max-width: 720px; margin: 0 auto; }
+.e-notes h3 { margin: var(--sp-4) 0 var(--sp-1); font-family: var(--font-display); font-weight: 400; font-size: var(--fs-md); color: var(--ink-strong); }
+.e-notes p { margin: 0; font-family: var(--font-hand); font-size: var(--fs-lg); color: var(--ink); }
+
+/* F · lit cards: each part a card of the main menu's glass over the red, an icon to each. */
+.f { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--sp-4); }
+.card { position: relative; padding: var(--sp-6); background: color-mix(in oklab, var(--scene-floor) 55%, transparent); border: 1px solid color-mix(in oklab, var(--filigree) 18%, transparent); backdrop-filter: blur(6px); }
+.card h2, .card h1 { margin: 0 0 var(--sp-3); font-family: var(--font-display); font-weight: 400; color: var(--ink-strong); }
+.card h1 { font-size: var(--fs-2xl); }
+.card h2 { font-size: var(--fs-md); letter-spacing: var(--track-title); }
+.card p { margin: 0 0 var(--sp-2); color: var(--ink-2); line-height: 1.6; font-size: var(--fs-sm); }
+.f .c1 { grid-column: span 8; } .f .c2 { grid-column: span 4; display: grid; place-items: center; }
+.f .c3, .f .c4, .f .c5 { grid-column: span 4; }
+.f .c6, .f .c7 { grid-column: span 6; } .f .c8 { grid-column: span 12; }
+.card .big { font-family: var(--font-num); font-size: calc(var(--fs-2xl) * 1.4); color: var(--ink-strong); }
+@media (max-width: 899px) {
+  .d-hero, .d-two, .e-entry { grid-template-columns: 1fr; text-align: center; }
+  .d-hero .art { height: 240px; } .d-hero .art img { max-height: 230px; }
+  .d-hero h1 { font-size: var(--fs-2xl); }
+  .d-figs { grid-template-columns: repeat(2, 1fr); } .d-figs div:nth-child(3) { border-left: 0; }
+  .d-att { columns: 1; }
+  .f .c1, .f .c2, .f .c3, .f .c4, .f .c5, .f .c6, .f .c7, .f .c8 { grid-column: span 12; }
+}
+</style>
+</head>
+<body>
+<div class="page"><div class="shell"><div id="mk"></div></div></div>
+<div class="mk-bar"><b>Variant</b><button data-key="v" data-val="d">D · la página del jefe</button><button data-key="v" data-val="e">E · como el Diario</button><button data-key="v" data-val="f">F · tarjetas encendidas</button>
+  <b>Width</b><button data-key="w" data-val="1440">desktop</button><button data-key="w" data-val="390">390</button><span class="mk-note" id="note"></span></div>
+<script>
+const ABOUT = "<section class=\"about\" id=\"about\" lang=\"en\" aria-labelledby=\"about-h\">\n      <h1 id=\"about-h\">Lace: health, attacks and hits to kill</h1>\n      <p>A boss fight in Hollow Knight: Silksong against <strong>Lace</strong>, in Deep Docks and The Cradle. The Hunter's Journal says: \"Manic fencer who delights in battle.\"</p>\n      <p>Fought 2 times: Lace, 250 health; Lace (The Cradle), 800 health.</p>\n      <p>With the Needle alone (a Hunter's Crest with no Tools or modifiers), with the Needle, Sharpened Needle, Shining Needle, Hivesteel Needle and Pale Steel Needle: Lace: 50, 28, 20, 15 and 12 slashes; Lace (The Cradle): 89, 73, 62, 58 and 45 slashes.</p>\n      <p>With the Hunter's Crest, a slash every 0.41 s (the game's own pace, from its files): with the Pale Steel Needle, 4.5 s of nonstop slashing.</p>\n      <p>Attacks, as the wiki names them (the game doesn't): Lunge, Double Cut, Balestra, Parry & Riposte (2 masks), Flourish, Retreat, Advance, Moulinet (2 masks), Triple Cut, Double Lunge.</p>\n      <p>Staggered after 11 and 16 hits.</p>\n      <p>Phases, from the game's own files: Lace: phase 2 at 125 health (50%); Lace (The Cradle): phase 2 at 600 health (75%) and phase 3 at 320 health (40%).</p>\n      <p>Reward: Silk Heart.</p>\n      <p>This page opens the damage calculator with this boss picked: with your save or your build, each of your attacks' damage, how many it takes, and what each of its attacks does to you.</p>\n      <div class=\"about-faq\">\n        <h2>Questions</h2>\n        <h3>What is Lace's health in Silksong?</h3>\n        <p>Fought 2 times: Lace, 250 health; Lace (The Cradle), 800 health.</p>\n        <h3>How many hits does it take to beat Lace?</h3>\n        <p>It depends on your Needle and your Tools: with the Needle alone, from 50 slashes with the Needle to 12 with the Pale Steel Needle. For your exact build, open the calculator on this page.</p>\n      </div>\n      <nav class=\"about-more\" aria-label=\"More on the site\">\n        <h2>More on the site</h2>\n        <ul>\n          <li><a href=\"./\" data-page>Home</a></li>\n          <li><a href=\"save-analyzer/\" data-page>Save analyzer</a></li>\n          <li><a href=\"100-percent-checklist/\" data-page>100% checklist</a></li>\n          <li><a href=\"map/\" data-page>Map</a></li>\n          <li><a href=\"hunters-journal/\" data-page>Hunter's Journal</a></li>\n          <li><a href=\"tools-and-crests/\" data-page>Tools and Crests</a></li>\n          <li><a href=\"damage-calculator/\" data-page>Damage calculator</a></li>\n        </ul>\n      </nav>\n      <nav class=\"about-more\" aria-label=\"Bosses\">\n        <h2>Bosses</h2>\n        <ul>\n          <li><a href=\"bosses/moss-mother/\" data-page>Moss Mother</a></li>\n          <li><a href=\"bosses/skull-tyrant/\" data-page>Skull Tyrant</a></li>\n          <li><a href=\"bosses/savage-beastfly/\" data-page>Savage Beastfly</a></li>\n          <li><a href=\"bosses/flintbeetle/\" data-page>Flintbeetle</a></li>\n          <li><a href=\"bosses/rhinogrund/\" data-page>Rhinogrund</a></li>\n          <li><a href=\"bosses/bell-beast/\" data-page>Bell Beast</a></li>\n          <li><a href=\"bosses/covetous-pilgrim/\" data-page>Covetous Pilgrim</a></li>\n          <li><a href=\"bosses/forebrothers-signis-and-gron/\" data-page>Forebrothers Signis & Gron</a></li>\n          <li><a href=\"bosses/fourth-chorus/\" data-page>Fourth Chorus</a></li>\n          <li><a href=\"bosses/skarrgard/\" data-page>Skarrgard</a></li>\n          <li><a href=\"bosses/gurr-the-outcast/\" data-page>Gurr the Outcast</a></li>\n          <li><a href=\"bosses/last-claw/\" data-page>Last Claw</a></li>\n          <li><a href=\"bosses/skarrsinger-karmelita/\" data-page>Skarrsinger Karmelita</a></li>\n          <li><a href=\"bosses/moorwing/\" data-page>Moorwing</a></li>\n          <li><a href=\"bosses/father-of-the-flame/\" data-page>Father of the Flame</a></li>\n          <li><a href=\"bosses/crawfather/\" data-page>Crawfather</a></li>\n          <li><a href=\"bosses/disgraced-chef-lugoli/\" data-page>Disgraced Chef Lugoli</a></li>\n          <li><a href=\"bosses/groal-the-great/\" data-page>Groal the Great</a></li>\n          <li><a href=\"bosses/sister-splinter/\" data-page>Sister Splinter</a></li>\n          <li><a href=\"bosses/shrine-guardian-seth/\" data-page>Shrine Guardian Seth</a></li>\n          <li><a href=\"bosses/nyleth/\" data-page>Nyleth</a></li>\n          <li><a href=\"bosses/last-judge/\" data-page>Last Judge</a></li>\n          <li><a href=\"bosses/raging-conchfly/\" data-page>Great Conchfly</a></li>\n          <li><a href=\"bosses/karak-gor/\" data-page>Karak Gor</a></li>\n          <li><a href=\"bosses/corrcrust-karaka/\" data-page>Corrcrust Karaka</a></li>\n          <li><a href=\"bosses/crust-king-khann/\" data-page>Crust King Khann</a></li>\n          <li><a href=\"bosses/watcher-at-the-edge/\" data-page>Watcher at the Edge</a></li>\n          <li><a href=\"bosses/voltvyrm/\" data-page>Voltvyrm</a></li>\n          <li><a href=\"bosses/choir-clapper/\" data-page>Choir Clapper</a></li>\n          <li><a href=\"bosses/second-sentinel/\" data-page>Second Sentinel</a></li>\n          <li><a href=\"bosses/the-unravelled/\" data-page>The Unravelled</a></li>\n          <li><a href=\"bosses/cogwork-clapper/\" data-page>Cogwork Clapper</a></li>\n          <li><a href=\"bosses/cogwork-dancers/\" data-page>Cogwork Dancers</a></li>\n          <li><a href=\"bosses/trobbio/\" data-page>Trobbio</a></li>\n          <li><a href=\"bosses/tormented-trobbio/\" data-page>Tormented Trobbio</a></li>\n          <li><a href=\"bosses/broodmother/\" data-page>Broodmother</a></li>\n          <li><a href=\"bosses/plasmified-zango/\" data-page>Plasmified Zango</a></li>\n          <li><a href=\"bosses/palestag/\" data-page>Palestag</a></li>\n          <li><a href=\"bosses/clover-dancers/\" data-page>Clover Dancers</a></li>\n          <li><a href=\"bosses/summoned-saviour/\" data-page>Summoned Saviour</a></li>\n          <li><a href=\"bosses/bell-eater/\" data-page>Bell Eater</a></li>\n          <li><a href=\"bosses/shakra/\" data-page>Shakra</a></li>\n          <li><a href=\"bosses/garmond-and-zaza/\" data-page>Garmond & Zaza</a></li>\n          <li><a href=\"bosses/lost-garmond/\" data-page>Lost Garmond</a></li>\n          <li><a href=\"bosses/pinstress/\" data-page>Pinstress</a></li>\n          <li><a href=\"bosses/widow/\" data-page>Widow</a></li>\n          <li><a href=\"bosses/first-sinner/\" data-page>First Sinner</a></li>\n          <li><a href=\"bosses/phantom/\" data-page>Phantom</a></li>\n          <li><a href=\"bosses/grand-mother-silk/\" data-page>Grand Mother Silk</a></li>\n          <li><a href=\"bosses/lost-lace/\" data-page>Lost Lace</a></li>\n        </ul>\n      </nav>\n    </section>";
+const BOSSES = [["bosses/moss-mother/","Moss Mother","assets/icons/journal/moss-mother.webp"],["bosses/skull-tyrant/","Skull Tyrant","assets/icons/journal/skull-tyrant.webp"],["bosses/savage-beastfly/","Savage Beastfly","assets/icons/journal/savage-beastfly.webp"],["bosses/flintbeetle/","Flintbeetle","assets/icons/journal/flintbeetle.webp"],["bosses/rhinogrund/","Rhinogrund","assets/icons/journal/rhinogrund.webp"],["bosses/bell-beast/","Bell Beast","assets/icons/journal/bell-beast.webp"],["bosses/covetous-pilgrim/","Covetous Pilgrim","assets/icons/journal/covetous-pilgrim.webp"],["bosses/forebrothers-signis-and-gron/","Forebrothers Signis & Gron","assets/icons/journal/forebrothers-signis-and-gron.webp"],["bosses/fourth-chorus/","Fourth Chorus","assets/icons/journal/fourth-chorus.webp"],["bosses/skarrgard/","Skarrgard","assets/icons/journal/skarrgard.webp"],["bosses/gurr-the-outcast/","Gurr the Outcast","assets/icons/journal/gurr-the-outcast.webp"],["bosses/last-claw/","Last Claw","assets/icons/journal/last-claw.webp"],["bosses/skarrsinger-karmelita/","Skarrsinger Karmelita","assets/icons/journal/skarrsinger-karmelita.webp"],["bosses/moorwing/","Moorwing","assets/icons/journal/moorwing.webp"],["bosses/father-of-the-flame/","Father of the Flame","assets/icons/journal/father-of-the-flame.webp"],["bosses/crawfather/","Crawfather","assets/icons/journal/crawfather.webp"],["bosses/disgraced-chef-lugoli/","Disgraced Chef Lugoli","assets/icons/journal/disgraced-chef-lugoli.webp"],["bosses/groal-the-great/","Groal the Great","assets/icons/journal/groal-the-great.webp"],["bosses/sister-splinter/","Sister Splinter","assets/icons/journal/sister-splinter.webp"],["bosses/shrine-guardian-seth/","Shrine Guardian Seth","assets/icons/journal/shrine-guardian-seth.webp"],["bosses/nyleth/","Nyleth","assets/icons/journal/nyleth.webp"],["bosses/last-judge/","Last Judge","assets/icons/journal/last-judge.webp"],["bosses/raging-conchfly/","Great Conchfly","assets/icons/journal/great-conchfly.webp"],["bosses/karak-gor/","Karak Gor","assets/icons/journal/karak-gor.webp"],["bosses/corrcrust-karaka/","Corrcrust Karaka","assets/icons/journal/corrcrust-karaka.webp"],["bosses/crust-king-khann/","Crust King Khann","assets/icons/journal/crust-king-khann.webp"],["bosses/watcher-at-the-edge/","Watcher at the Edge","assets/icons/journal/watcher-at-the-edge.webp"],["bosses/voltvyrm/","Voltvyrm","assets/icons/journal/voltvyrm.webp"],["bosses/choir-clapper/","Choir Clapper","assets/icons/journal/choir-clapper.webp"],["bosses/second-sentinel/","Second Sentinel","assets/icons/journal/second-sentinel.webp"],["bosses/the-unravelled/","The Unravelled","assets/icons/journal/the-unravelled.webp"],["bosses/cogwork-clapper/","Cogwork Clapper","assets/icons/journal/cogwork-clapper.webp"],["bosses/cogwork-dancers/","Cogwork Dancers","assets/icons/journal/cogwork-dancers.webp"],["bosses/trobbio/","Trobbio","assets/icons/journal/trobbio.webp"],["bosses/tormented-trobbio/","Tormented Trobbio","assets/icons/journal/tormented-trobbio.webp"],["bosses/broodmother/","Broodmother","assets/icons/journal/broodmother.webp"],["bosses/plasmified-zango/","Plasmified Zango","assets/icons/journal/plasmified-zango.webp"],["bosses/palestag/","Palestag","assets/icons/journal/palestag.webp"],["bosses/clover-dancers/","Clover Dancers","assets/icons/journal/clover-dancers.webp"],["bosses/summoned-saviour/","Summoned Saviour","assets/icons/journal/summoned-saviour.webp"],["bosses/bell-eater/","Bell Eater","assets/icons/journal/bell-eater.webp"],["bosses/shakra/","Shakra","assets/icons/journal/shakra.webp"],["bosses/garmond-and-zaza/","Garmond & Zaza","assets/icons/journal/garmond-and-zaza.webp"],["bosses/lost-garmond/","Lost Garmond","assets/icons/journal/lost-garmond.webp"],["bosses/pinstress/","Pinstress","assets/icons/journal/pinstress.webp"],["bosses/widow/","Widow","assets/icons/journal/widow.webp"],["bosses/first-sinner/","First Sinner","assets/icons/journal/first-sinner.webp"],["bosses/phantom/","Phantom","assets/icons/journal/phantom.webp"],["bosses/grand-mother-silk/","Grand Mother Silk","assets/icons/journal/grand-mother-silk.webp"],["bosses/lost-lace/","Lost Lace","assets/icons/journal/lost-lace.webp"]];
+const CROWN = '<svg class="crown" width="200" height="28" viewBox="0 0 200 28" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" aria-hidden="true"><path d="M93 14 C84 14 78 7 69 7 C61 7 58 13 62 16.5 C65 19 69.5 16.5 68 13.5"/><path d="M62 16.5 C50 22 30 21 10 14"/><path d="M10 14 C6 12 5.5 8.5 9 8 C11.5 7.8 12 10.5 10.5 11.5"/><path d="M78 9 C74 3 66 1.5 58 3.5"/><g transform="translate(200 0) scale(-1 1)"><path d="M93 14 C84 14 78 7 69 7 C61 7 58 13 62 16.5 C65 19 69.5 16.5 68 13.5"/><path d="M62 16.5 C50 22 30 21 10 14"/><path d="M10 14 C6 12 5.5 8.5 9 8 C11.5 7.8 12 10.5 10.5 11.5"/><path d="M78 9 C74 3 66 1.5 58 3.5"/></g><path d="M100 5 L105 14 L100 23 L95 14 Z"/><path d="M100 1 V5 M100 23 V27"/></svg>';
+(function () {
+  const DEF = { v: 'd', w: '1440' };
+  const q = new URLSearchParams(location.search);
+  const st = Object.fromEntries(Object.keys(DEF).map((k) => [k, q.get(k) || DEF[k]]));
+  const inner = q.has('inner'), html = document.documentElement;
+  const box = document.createElement('div'); box.innerHTML = ABOUT;
+  const paras = [...box.querySelectorAll('section > p')].map((p) => p.innerHTML);
+  const qs = [...box.querySelectorAll('.about-faq h3')].map((h) => [h.textContent, h.nextElementSibling.innerHTML]);
+  const M = '<img class="mask" src="assets/hud/mask.png" alt="">';
+  const ATT = [['Lunge', 1], ['Double Cut', 1], ['Balestra', 1], ['Parry & Riposte', 2], ['Flourish', 1], ['Retreat', 1], ['Advance', 1], ['Moulinet', 2], ['Triple Cut', 1], ['Double Lunge', 1]];
+  const att = '<ul class="d-att">' + ATT.map(([n, m]) => '<li><span>' + n + '</span><span>' + M.repeat(m) + '</span></li>').join('') + '</ul>';
+  const faq = '<div class="faq">' + qs.map(([q, a], i) => '<details' + (i ? '' : ' open') + '><summary>' + q + '</summary><p>' + a + '</p></details>').join('') + '</div>';
+  const grid = '<ul class="bgrid">' + BOSSES.map(([h, n, p]) => '<li><a href="#" title="' + n + '"><span class="hj-ring is-done" style="--f:1"><img src="' + p + '" alt=""></span><span>' + n + '</span></a></li>').join('') + '</ul>';
+  const GO = [['Save analyzer', 'assets/icons/items/hunters-journal.webp'], ['100% checklist', 'assets/icons/items/mask-shard.webp'], ['Map', 'assets/icons/items/farsight.webp'], ["Hunter's Journal", 'assets/icons/items/hunters-journal.webp'], ['Tools and Crests', 'assets/icons/crests/hunter.webp'], ['Damage calculator', 'assets/icons/tools/straight-pin.webp']];
+  const go = '<div class="go">' + GO.map(([n, i]) => '<a href="#"><img src="' + i + '" alt="">' + n + '</a>').join('') + '</div>';
+  const ghost = '<div class="ghost">(la pantalla de Combate, arriba)</div>';
+  const NOTES = {
+    d: 'D · la página del jefe: una página de guía sobre el rojo del menú, sin caja: su dibujo grande con el título encima y la cita del Diario; sus cifras en una fila entre filigrana; sus ataques con las máscaras; las fases sobre una barra; las preguntas plegables; los demás jefes en retratos y las páginas con su icono. «Pruébalo con tu build» sube a la calculadora.',
+    e: 'E · como el Diario: maquetado como la entrada del Diario del juego (el dibujo sobre su luz, el nombre bajo la filigrana, el texto) y las preguntas como las notas de la cazadora, bajo su símbolo y con su letra.',
+    f: 'F · tarjetas encendidas: cada parte en una tarjeta de cristal oscuro sobre el rojo, en una rejilla: el texto, el dibujo, las cifras sueltas, los ataques, las preguntas, los jefes.' };
+  function render() {
+    let h = ghost;
+    if (st.v === 'd') h += '<div class="d-hero"><div class="art lit"><img src="assets/journal/art/name_lace.webp" alt=""></div><div><h1>Lace</h1><p class="sub">Health, attacks and hits to kill</p><q>Manic fencer who delights in battle.</q><p style="color:var(--ink-2);margin-top:var(--sp-4)">' + paras[0] + '</p><a class="cta" href="#">⚔ Try it with your build</a></div></div>' +
+      '<div class="d-figs"><div><b class="n">250</b><span>health · Deep Docks</span></div><div><b class="n">800</b><span>health · The Cradle</span></div><div><b class="n">50 → 12</b><span>slashes, Needle alone</span></div><div><b class="n">11 · 16</b><span>hits to stagger</span></div></div>' +
+      '<div class="d-two"><section><p class="lbl">Its attacks</p>' + att + '</section><section><p class="lbl">Phases · The Cradle</p><div class="d-phase"><i style="left:75%"></i><i style="left:40%"></i></div><div class="d-phase-k"><span>0</span><span>phase 3 · 320</span><span>phase 2 · 600</span><span>800</span></div><p class="lbl" style="margin-top:var(--sp-8)">Reward</p><p style="color:var(--ink)">Silk Heart</p></section></div>' +
+      '<section class="s">' + CROWN + '<p class="lbl" style="text-align:center">Questions</p>' + faq + '</section>' +
+      '<section class="s">' + CROWN + '<p class="lbl" style="text-align:center">Every boss</p>' + grid + '</section>' +
+      '<section class="s">' + go + '</section>';
+    if (st.v === 'e') h += '<div class="e"><div class="e-entry"><div class="art lit"><img src="assets/journal/art/name_lace.webp" alt=""></div><div><h1>Lace</h1><div class="rule"></div>' + paras.slice(0, 4).map((p) => '<p>' + p + '</p>').join('') + '</div></div>' +
+      '<img class="e-sym" src="assets/journal/hunter-symbol.webp" alt=""><div class="e-notes">' + qs.map(([q, a]) => '<h3>' + q + '</h3><p>' + a + '</p>').join('') + '</div>' +
+      '<section class="s">' + CROWN + '<p class="lbl" style="text-align:center">Every boss</p>' + grid + '</section><section class="s">' + go + '</section></div>';
+    if (st.v === 'f') h += '<div class="f"><div class="card c1"><h1>Lace: health, attacks and hits to kill</h1>' + paras.slice(0, 3).map((p) => '<p>' + p + '</p>').join('') + '</div>' +
+      '<div class="card c2"><div class="lit" style="height:220px"><img src="assets/journal/art/name_lace.webp" alt="" style="max-height:200px"></div></div>' +
+      '<div class="card c3"><h2>Health</h2><span class="big">250 · 800</span></div><div class="card c4"><h2>With the Needle alone</h2><span class="big">50 → 12</span></div><div class="card c5"><h2>Staggers after</h2><span class="big">11 · 16</span></div>' +
+      '<div class="card c6"><h2>Its attacks</h2>' + att + '</div><div class="card c7"><h2>Questions</h2>' + faq + '</div><div class="card c8"><h2>Every boss</h2>' + grid + '</div></div><section class="s">' + go + '</section>';
+    document.getElementById('mk').innerHTML = h;
+  }
+  const url = (over) => '?' + new URLSearchParams(Object.assign({}, st, over)).toString();
+  if (st.w === '390' && !inner) { html.classList.add('is-framed'); document.querySelector('.page').remove(); const f = document.createElement('iframe'); f.className = 'mk-phone'; f.src = location.pathname + url({ inner: 1 }); document.body.prepend(f); }
+  if (inner) html.classList.add('is-inner');
+  for (const b of document.querySelectorAll('.mk-bar button')) b.setAttribute('aria-pressed', String(st[b.dataset.key] === b.dataset.val));
+  document.getElementById('note').textContent = NOTES[st.v];
+  if (document.getElementById('mk')) render();
+  document.addEventListener('click', (ev) => { const b = ev.target.closest('.mk-bar button'); if (b) location.search = url({ [b.dataset.key]: b.dataset.val }); });
+})();
+</script>
+</body>
+</html>

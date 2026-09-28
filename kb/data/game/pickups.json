@@ -1,0 +1,4967 @@
+{
+ "fields": {
+  "HasBoundCrestUpgrader": [
+   [
+    "abyss_09",
+    "RestBench"
+   ],
+   [
+    "abyss_12",
+    "RestBench"
+   ],
+   [
+    "ant_17",
+    "RestBench"
+   ],
+   [
+    "aqueduct_05_caravan",
+    "RestBench"
+   ],
+   [
+    "aqueduct_05_festival",
+    "RestBench Festival"
+   ],
+   [
+    "aqueduct_05_pre",
+    "RestBench"
+   ],
+   [
+    "arborium_04",
+    "RestBench"
+   ],
+   [
+    "bellshrine",
+    "RestBench"
+   ],
+   [
+    "bellshrine_02",
+    "RestBench"
+   ],
+   [
+    "bellshrine_03",
+    "RestBench"
+   ],
+   [
+    "bellshrine_05",
+    "RestBench"
+   ],
+   [
+    "bellshrine_coral",
+    "RestBench"
+   ],
+   [
+    "bellshrine_enclave",
+    "RestBench"
+   ],
+   [
+    "belltown",
+    "RestBench"
+   ],
+   [
+    "belltown_room_spare",
+    "RestBench"
+   ],
+   [
+    "belltown_shrine",
+    "RestBench"
+   ],
+   [
+    "bellway_03",
+    "RestBench"
+   ],
+   [
+    "bellway_08",
+    "RestBench"
+   ],
+   [
+    "bellway_aqueduct",
+    "RestBench"
+   ],
+   [
+    "bellway_city",
+    "RestBench"
+   ],
+   [
+    "bellway_peak",
+    "RestBench"
+   ],
+   [
+    "bellway_shadow",
+    "RestBench"
+   ],
+   [
+    "bone_01c",
+    "RestBench"
+   ],
+   [
+    "bone_04",
+    "RestBench"
+   ],
+   [
+    "bone_10",
+    "RestBench"
+   ],
+   [
+    "bone_12",
+    "RestBench"
+   ],
+   [
+    "bone_12",
+    "RestBench (1)"
+   ],
+   [
+    "bone_east_10_room",
+    "RestBench"
+   ],
+   [
+    "bone_east_15",
+    "RestBench"
+   ],
+   [
+    "bone_east_27",
+    "RestBench"
+   ],
+   [
+    "bone_east_umbrella",
+    "RestBench"
+   ],
+   [
+    "bone_east_weavehome",
+    "RestBench"
+   ],
+   [
+    "bonetown",
+    "RestBench"
+   ],
+   [
+    "clover_20",
+    "RestBench"
+   ],
+   [
+    "cog_bench",
+    "RestBench"
+   ],
+   [
+    "coral_02",
+    "RestBench"
+   ],
+   [
+    "coral_judge_arena",
+    "RestBench"
+   ],
+   [
+    "coral_tower_01",
+    "RestBench"
+   ],
+   [
+    "cradle_destroyed_challenge_bench",
+    "RestBench"
+   ],
+   [
+    "crawl_08",
+    "RestBench"
+   ],
+   [
+    "dock_01",
+    "RestBench"
+   ],
+   [
+    "dock_06_church",
+    "RestBench (1)"
+   ],
+   [
+    "dock_10",
+    "RestBench"
+   ],
+   [
+    "dust_10",
+    "RestBench"
+   ],
+   [
+    "dust_11",
+    "RestBench"
+   ],
+   [
+    "dust_11",
+    "RestBench (1)"
+   ],
+   [
+    "dust_maze_09_entrance",
+    "RestBench"
+   ],
+   [
+    "greymoor_02",
+    "RestBench"
+   ],
+   [
+    "greymoor_08_caravan",
+    "RestBench"
+   ],
+   [
+    "halfway_01",
+    "RestBench"
+   ],
+   [
+    "hang_01",
+    "RestBench"
+   ],
+   [
+    "hang_06b",
+    "RestBench"
+   ],
+   [
+    "library_08",
+    "RestBench"
+   ],
+   [
+    "library_10",
+    "RestBench"
+   ],
+   [
+    "mosstown_02c",
+    "RestBench"
+   ],
+   [
+    "mosstown_03",
+    "RestBench"
+   ],
+   [
+    "organ_01",
+    "RestBench"
+   ],
+   [
+    "peak_02",
+    "RestBench"
+   ],
+   [
+    "peak_07",
+    "RestBench"
+   ],
+   [
+    "peak_12",
+    "RestBench (1)"
+   ],
+   [
+    "room_diving_bell",
+    "RestBench"
+   ],
+   [
+    "room_diving_bell_abyss",
+    "RestBench"
+   ],
+   [
+    "room_diving_bell_abyss_fixed",
+    "RestBench"
+   ],
+   [
+    "room_forge",
+    "RestBench"
+   ],
+   [
+    "room_huntress",
+    "RestBench"
+   ],
+   [
+    "room_pinstress",
+    "RestBench"
+   ],
+   [
+    "shadow_08",
+    "RestBench"
+   ],
+   [
+    "shadow_15",
+    "RestBench"
+   ],
+   [
+    "shadow_18",
+    "RestBench"
+   ],
+   [
+    "shellwood_01b",
+    "RestBench"
+   ],
+   [
+    "shellwood_08c",
+    "RestBench"
+   ],
+   [
+    "slab_06",
+    "RestBench"
+   ],
+   [
+    "slab_16",
+    "RestBench"
+   ],
+   [
+    "slab_16",
+    "RestBench (1)"
+   ],
+   [
+    "slab_20",
+    "RestBench"
+   ],
+   [
+    "song_01b",
+    "RestBench"
+   ],
+   [
+    "song_10",
+    "RestBench"
+   ],
+   [
+    "song_18",
+    "RestBench"
+   ],
+   [
+    "song_enclave",
+    "RestBench"
+   ],
+   [
+    "sprintmaster_cave",
+    "RestBench"
+   ],
+   [
+    "tube_hub",
+    "RestBench"
+   ],
+   [
+    "tut_03",
+    "RestBench"
+   ],
+   [
+    "tut_04",
+    "RestBench"
+   ],
+   [
+    "under_01b",
+    "RestBench"
+   ],
+   [
+    "under_07b",
+    "RestBench"
+   ],
+   [
+    "under_08",
+    "RestBench"
+   ],
+   [
+    "under_08",
+    "RestBench (1)"
+   ],
+   [
+    "under_08",
+    "RestBench (2)"
+   ],
+   [
+    "under_17",
+    "RestBench"
+   ],
+   [
+    "ward_01",
+    "RestBench"
+   ],
+   [
+    "weave_07",
+    "RestBench"
+   ],
+   [
+    "weave_10",
+    "Crest Upgrade Shrine"
+   ],
+   [
+    "wisp_04",
+    "RestBench"
+   ]
+  ],
+  "UnlockedFastTravelTeleport": [
+   [
+    "belltown_basement",
+    "Bellbeast Children"
+   ],
+   [
+    "belltown_basement",
+    "Bone Beast NPC"
+   ],
+   [
+    "belltown_basement",
+    "Music Control Bellway"
+   ],
+   [
+    "bellway_01_boss",
+    "Bellbeast Children"
+   ],
+   [
+    "bellway_01_boss",
+    "Bone Beast NPC"
+   ],
+   [
+    "bellway_02",
+    "Music Control Bellway"
+   ],
+   [
+    "bellway_02_boss",
+    "Bellbeast Children"
+   ],
+   [
+    "bellway_02_boss",
+    "Bone Beast NPC"
+   ],
+   [
+    "bellway_03",
+    "Music Control Bellway"
+   ],
+   [
+    "bellway_03_boss",
+    "Bellbeast Children"
+   ],
+   [
+    "bellway_03_boss",
+    "Bone Beast NPC"
+   ],
+   [
+    "bellway_04",
+    "Music Control Bellway"
+   ],
+   [
+    "bellway_04_boss",
+    "Bellbeast Children"
+   ],
+   [
+    "bellway_04_boss",
+    "Bone Beast NPC"
+   ],
+   [
+    "bellway_08",
+    "Bellbeast Children"
+   ],
+   [
+    "bellway_08",
+    "Bone Beast NPC"
+   ],
+   [
+    "bellway_08",
+    "Music Control Bellway"
+   ],
+   [
+    "bellway_aqueduct",
+    "Bellbeast Children"
+   ],
+   [
+    "bellway_aqueduct",
+    "Bone Beast NPC"
+   ],
+   [
+    "bellway_aqueduct",
+    "Music Control Bellway"
+   ],
+   [
+    "bellway_centipede_arena",
+    "Bell Beast DefeatedCentipede NPC"
+   ],
+   [
+    "bellway_city",
+    "Bellbeast Children (1)"
+   ],
+   [
+    "bellway_city",
+    "Bone Beast NPC"
+   ],
+   [
+    "bellway_city",
+    "Music Control Bellway"
+   ],
+   [
+    "bellway_shadow",
+    "Bellbeast Children"
+   ],
+   [
+    "bellway_shadow",
+    "Bone Beast NPC"
+   ],
+   [
+    "bellway_shadow",
+    "Music Control Bellway"
+   ],
+   [
+    "bone_05_bellway",
+    "Bellbeast Children"
+   ],
+   [
+    "bone_05_bellway",
+    "Bone Beast NPC"
+   ],
+   [
+    "shellwood_19",
+    "Bellbeast Children (1)"
+   ],
+   [
+    "shellwood_19",
+    "Bone Beast NPC"
+   ],
+   [
+    "shellwood_19",
+    "Music Control Bellway"
+   ],
+   [
+    "slab_06",
+    "Bellbeast Children"
+   ],
+   [
+    "slab_06",
+    "Bone Beast NPC"
+   ],
+   [
+    "slab_06",
+    "Music Control Bellway"
+   ]
+  ],
+  "bellShrineBellhart": [
+   [
+    "belltown_shrine",
+    "Battle Gate (2)"
+   ],
+   [
+    "belltown_shrine",
+    "Boss Scene"
+   ]
+  ],
+  "bellShrineWilds": [
+   [
+    "bellshrine_05",
+    "Whole Scene"
+   ]
+  ],
+  "hasBrolly": [
+   [
+    "bone_east_08",
+    "Boss Scene"
+   ],
+   [
+    "bone_east_10",
+    "Pilgrim NPC Scene"
+   ],
+   [
+    "bone_east_umbrella",
+    "Seamstress"
+   ]
+  ],
+  "hasChargeSlash": [
+   [
+    "bone_east_umbrella",
+    "Seamstress"
+   ],
+   [
+    "room_pinstress",
+    "Pinstress Interior Ground Sit"
+   ],
+   [
+    "room_pinstress",
+    "Pinstress States"
+   ]
+  ],
+  "hasDash": [
+   [
+    "abyss_08",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "ant_02",
+    "Bone Hunter Throw"
+   ],
+   [
+    "ant_08",
+    "Bone Hunter Throw"
+   ],
+   [
+    "ant_21",
+    "Bone Hunter Throw"
+   ],
+   [
+    "belltown_basement",
+    "Bone Beast NPC"
+   ],
+   [
+    "bellway_01_boss",
+    "Bone Beast NPC"
+   ],
+   [
+    "bellway_02_boss",
+    "Bone Beast NPC"
+   ],
+   [
+    "bellway_03_boss",
+    "Bone Beast NPC"
+   ],
+   [
+    "bellway_04_boss",
+    "Bone Beast NPC"
+   ],
+   [
+    "bellway_08",
+    "Bone Beast NPC"
+   ],
+   [
+    "bellway_aqueduct",
+    "Bone Beast NPC"
+   ],
+   [
+    "bellway_city",
+    "Bone Beast NPC"
+   ],
+   [
+    "bellway_shadow",
+    "Bone Beast NPC"
+   ],
+   [
+    "bone_05_bellway",
+    "Bone Beast NPC"
+   ],
+   [
+    "bone_east_05",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "bone_east_10",
+    "Bonetown Resident"
+   ],
+   [
+    "bone_east_10_room",
+    "Bonetown Resident PilgrimsRest Variant"
+   ],
+   [
+    "bone_east_25",
+    "Bone Hunter Throw"
+   ],
+   [
+    "bonetown",
+    "Bonetown Resident"
+   ],
+   [
+    "crawl_05",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "greymoor_22",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "mosstown_02",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "shellwood_10",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "shellwood_19",
+    "Bone Beast NPC"
+   ],
+   [
+    "slab_06",
+    "Bone Beast NPC"
+   ],
+   [
+    "slab_10b",
+    "Shrine First Weaver NPC"
+   ],
+   [
+    "under_18",
+    "Shrine Weaver Ability"
+   ]
+  ],
+  "hasDoubleJump": [
+   [
+    "peak_08b",
+    "DJ Get Sequence"
+   ],
+   [
+    "peak_mask_maker",
+    "Peak Mask Maker"
+   ]
+  ],
+  "hasHarpoonDash": [
+   [
+    "abyss_08",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "belltown_basement",
+    "Bone Beast NPC"
+   ],
+   [
+    "bellway_01_boss",
+    "Bone Beast NPC"
+   ],
+   [
+    "bellway_02_boss",
+    "Bone Beast NPC"
+   ],
+   [
+    "bellway_03_boss",
+    "Bone Beast NPC"
+   ],
+   [
+    "bellway_04_boss",
+    "Bone Beast NPC"
+   ],
+   [
+    "bellway_08",
+    "Bone Beast NPC"
+   ],
+   [
+    "bellway_aqueduct",
+    "Bone Beast NPC"
+   ],
+   [
+    "bellway_city",
+    "Bone Beast NPC"
+   ],
+   [
+    "bellway_shadow",
+    "Bone Beast NPC"
+   ],
+   [
+    "bone_05_bellway",
+    "Bone Beast NPC"
+   ],
+   [
+    "bone_east_05",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "crawl_05",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "greymoor_22",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "mosstown_02",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "shellwood_10",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "shellwood_19",
+    "Bone Beast NPC"
+   ],
+   [
+    "slab_06",
+    "Bone Beast NPC"
+   ],
+   [
+    "slab_10b",
+    "Shrine First Weaver NPC"
+   ],
+   [
+    "song_02",
+    "Song Pilgrim 01"
+   ],
+   [
+    "song_02",
+    "Song Pilgrim 01 (1)"
+   ],
+   [
+    "song_27",
+    "Song Pilgrim 01"
+   ],
+   [
+    "song_27",
+    "Song Pilgrim 01 (1)"
+   ],
+   [
+    "under_18",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "under_18",
+    "Shrine Weaver HarpoonDash"
+   ]
+  ],
+  "hasNeedolin": [
+   [
+    "abyss_08",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "belltown_shrine",
+    "Boss Scene"
+   ],
+   [
+    "belltown_shrine",
+    "Spinner Boss"
+   ],
+   [
+    "bone_east_05",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "crawl_05",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "greymoor_22",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "memory_first_sinner",
+    "Memory Control"
+   ],
+   [
+    "memory_needolin",
+    "Memory Control"
+   ],
+   [
+    "mosstown_02",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "peak_08b",
+    "DJ Get Sequence"
+   ],
+   [
+    "room_caravan_interior_travel",
+    "Hornet Spider Travel"
+   ],
+   [
+    "shellwood_10",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "slab_10b",
+    "Shrine First Weaver NPC"
+   ],
+   [
+    "tut_05",
+    "Memory Control"
+   ],
+   [
+    "under_18",
+    "Shrine Weaver Ability"
+   ]
+  ],
+  "hasNeedolinMemoryPowerup": [
+   [
+    "ant_queen",
+    "Ant Queen BG NPC"
+   ],
+   [
+    "belltown",
+    "Belltown Greeter Act3"
+   ],
+   [
+    "coral_tower_01",
+    "before"
+   ],
+   [
+    "song_enclave",
+    "Sherma Caretaker"
+   ],
+   [
+    "tut_04",
+    "Snail Shamans Set"
+   ]
+  ],
+  "hasSuperJump": [
+   [
+    "abyss_08",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "abyss_08",
+    "weaver_spire_base control"
+   ],
+   [
+    "bone_east_05",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "crawl_05",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "dock_04",
+    "left1"
+   ],
+   [
+    "dock_12",
+    "Ballow Diving Bell NPC"
+   ],
+   [
+    "greymoor_22",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "mosstown_02",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "peak_07",
+    "NPC"
+   ],
+   [
+    "room_diving_bell",
+    "Gramaphone Interact"
+   ],
+   [
+    "room_diving_bell",
+    "Travel Sequence Control"
+   ],
+   [
+    "room_diving_bell_abyss_fixed",
+    "Gramaphone Interact"
+   ],
+   [
+    "room_diving_bell_abyss_fixed",
+    "Travel Sequence Control"
+   ],
+   [
+    "room_forge",
+    "Forge Daughter"
+   ],
+   [
+    "shellwood_10",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "slab_10b",
+    "Shrine First Weaver NPC"
+   ],
+   [
+    "tut_04",
+    "Snail Shamans Set"
+   ],
+   [
+    "under_18",
+    "Shrine Weaver Ability"
+   ]
+  ],
+  "hasWalljump": [
+   [
+    "abyss_08",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "bone_east_04c",
+    "Slab Fly Large Cage"
+   ],
+   [
+    "bone_east_05",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "bone_east_12",
+    "Lace Boss1"
+   ],
+   [
+    "crawl_05",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "greymoor_05",
+    "Scene Control"
+   ],
+   [
+    "greymoor_05",
+    "Slab Fly Large Cage"
+   ],
+   [
+    "greymoor_22",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "mosstown_02",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "shadow_21",
+    "Slab Fly Large Cage"
+   ],
+   [
+    "shellwood_10",
+    "Shrine Weaver Ability"
+   ],
+   [
+    "slab_10b",
+    "Shrine First Weaver NPC"
+   ],
+   [
+    "under_18",
+    "Shrine Weaver Ability"
+   ]
+  ]
+ },
+ "items": {
+  "Ancient Egg Abyss Middle": {
+   "at": [
+    [
+     "abyss_04",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "CollectableRelic"
+  },
+  "Ant Trapper Item": {
+   "at": [
+    [
+     "bone_east_18b",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Architect Key": {
+   "at": [
+    [
+     "under_17",
+     "ItemReceptacle",
+     "Architect Shrine Door"
+    ],
+    [
+     "under_17",
+     "PlayMakerFSM",
+     "Architect NPC"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Barbed Wire": {
+   "at": [
+    [
+     "dust_barb",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Beastfly Remains": {
+   "at": [
+    [
+     "bone_east_08_boss_beastfly",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Bell Bind": {
+   "at": [
+    [
+     "dock_03b",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Belltown House Key": {
+   "at": [
+    [
+     "belltown",
+     "ItemReceptacle",
+     "Door Lock"
+    ],
+    [
+     "belltown",
+     "PlayMakerFSM",
+     "Belltown Greeter NPC"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Bone Necklace": {
+   "at": [
+    [
+     "bone_17",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Bone Record Bone_East_14": {
+   "at": [
+    [
+     "bone_east_14",
+     "CollectableItemPickup",
+     "Collectable Item Pickup (1)"
+    ]
+   ],
+   "class": "CollectableRelic"
+  },
+  "Bone Record Greymoor_flooded_corridor": {
+   "at": [
+    [
+     "greymoor_21",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "CollectableRelic"
+  },
+  "Bone Record Understore_Map_Room": {
+   "at": [
+    [
+     "under_16",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "CollectableRelic"
+  },
+  "Bone Record Wisp Top": {
+   "at": [
+    [
+     "wisp_08",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "CollectableRelic"
+  },
+  "Broken SilkShot": {
+   "at": [
+    [
+     "peak_12",
+     "PlayMakerFSM",
+     "Webshot Scene"
+    ],
+    [
+     "room_forge",
+     "PlayMakerFSM",
+     "Forge Daughter"
+    ],
+    [
+     "shadow_weavehome",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "under_17",
+     "PlayMakerFSM",
+     "Architect NPC"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Brolly Spike": {
+   "at": [
+    [
+     "under_17",
+     "PlayMakerFSM",
+     "Architect NPC"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Broodmother Remains": {
+   "at": [
+    [
+     "slab_16b",
+     "CollectableItemPickup",
+     "Collectable Item Pickup - Broodmother Eye"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Cloakless": {
+   "at": [
+    [
+     "slab_03",
+     "PlayMakerFSM",
+     "Audio Loop Slab_16 flies distant"
+    ],
+    [
+     "slab_03",
+     "PlayMakerFSM",
+     "Thief NPC Slab Hopaway 2"
+    ],
+    [
+     "slab_14",
+     "PlayMakerFSM",
+     "Thief NPC Slab Hopaway"
+    ],
+    [
+     "slab_16",
+     "PlayMakerFSM",
+     "Audio Loop Slab_16 flies distant"
+    ],
+    [
+     "slab_16",
+     "PlayMakerFSM",
+     "Event Control"
+    ],
+    [
+     "slab_16",
+     "PlayMakerFSM",
+     "Start Inspect"
+    ],
+    [
+     "slab_20",
+     "PlayMakerFSM",
+     "Thief NPC Slab Saferoom"
+    ],
+    [
+     "slab_22",
+     "PlayMakerFSM",
+     "Music Control"
+    ]
+   ],
+   "class": "ToolCrest"
+  },
+  "Clover Heart": {
+   "at": [
+    [
+     "clover_01",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "tut_04",
+     "PlayMakerFSM",
+     "Snail Shamans Set"
+    ]
+   ],
+   "class": "CollectableItemMemento"
+  },
+  "Cog Heart Pieces": {
+   "at": [
+    [
+     "arborium_10",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "cog_10",
+     "PlayMakerFSM",
+     "Song Knight Sleeping"
+    ],
+    [
+     "library_16",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "song_26",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "under_17",
+     "PlayMakerFSM",
+     "Architect NPC"
+    ]
+   ],
+   "class": "CollectableItemStack"
+  },
+  "Cogwork Flier": {
+   "at": [
+    [
+     "hang_09",
+     "PlayMakerFSM",
+     "Craft Pickup"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Cogwork Saw": {
+   "at": [
+    [
+     "under_17",
+     "PlayMakerFSM",
+     "Architect NPC"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Conch Drill": {
+   "at": [
+    [
+     "coral_tower_01",
+     "CollectableItemPickup",
+     "Collectable Item Pickup Fling"
+    ],
+    [
+     "coral_tower_01",
+     "CollectableItemPickup",
+     "Collectable Item Pickup Stand"
+    ],
+    [
+     "coral_tower_01",
+     "TestGameObjectActivator",
+     "Breaker"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Coral Heart": {
+   "at": [
+    [
+     "coral_tower_01",
+     "CollectableItemPickup",
+     "Collectable Item Pickup Heart"
+    ],
+    [
+     "memory_coral_tower",
+     "PlayMakerFSM",
+     "Coral King"
+    ],
+    [
+     "tut_04",
+     "PlayMakerFSM",
+     "Snail Shamans Set"
+    ]
+   ],
+   "class": "CollectableItemMemento"
+  },
+  "Coral Ingredient": {
+   "at": [
+    [
+     "coral_41",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "song_09b",
+     "PlayMakerFSM",
+     "Gourmand Servant"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Courier Supplies Gourmand": {
+   "at": [
+    [
+     "belltown",
+     "PlayMakerFSM",
+     "Couriers Quest Giver"
+    ],
+    [
+     "belltown",
+     "SimpleQuestsShopOwner",
+     "Couriers Quest Giver"
+    ],
+    [
+     "song_09b",
+     "PlayMakerFSM",
+     "Gourmand Servant"
+    ]
+   ],
+   "class": "DeliveryQuestItemStandalone"
+  },
+  "Craw Summons": {
+   "at": [
+    [
+     "belltown",
+     "PlayMakerFSM",
+     "craw_court_summons_pin"
+    ],
+    [
+     "bellway_03",
+     "PlayMakerFSM",
+     "craw_court_summons_pin"
+    ],
+    [
+     "bellway_shadow",
+     "PlayMakerFSM",
+     "craw_court_summons_pin"
+    ],
+    [
+     "bone_east_27",
+     "PlayMakerFSM",
+     "craw_court_summons_pin"
+    ],
+    [
+     "dust_10",
+     "PlayMakerFSM",
+     "craw_court_summons_pin"
+    ],
+    [
+     "dust_11",
+     "PlayMakerFSM",
+     "craw_court_summons_pin"
+    ],
+    [
+     "dust_11",
+     "PlayMakerFSM",
+     "craw_court_summons_pin (1)"
+    ],
+    [
+     "mosstown_03",
+     "PlayMakerFSM",
+     "craw_court_summons_pin"
+    ],
+    [
+     "room_crowcourt",
+     "PlayMakerFSM",
+     "court_door"
+    ],
+    [
+     "shellwood_01b",
+     "PlayMakerFSM",
+     "craw_court_summons_pin"
+    ],
+    [
+     "shellwood_08c",
+     "PlayMakerFSM",
+     "craw_court_summons_pin"
+    ],
+    [
+     "wisp_04",
+     "PlayMakerFSM",
+     "craw_court_summons_pin"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Crawbell": {
+   "at": [
+    [
+     "belltown",
+     "PlayMakerFSM",
+     "Crawbell (1)"
+    ],
+    [
+     "belltown_room_spare",
+     "PlayMakerFSM",
+     "Crawbell"
+    ],
+    [
+     "room_crowcourt_02",
+     "CollectableItemPickup",
+     "Collectable Item Pickup Crawbell"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Crest Socket Unlocker": {
+   "at": [
+    [
+     "ant_20",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "arborium_05",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "belltown",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "bellway_city",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "bone_10",
+     "CollectableItemPickup",
+     "Collectable Item Pickup Locket"
+    ],
+    [
+     "bone_18",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "bone_east_25",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "coral_02",
+     "CollectableItemPickup",
+     "Collectable Item Pickup (1)"
+    ],
+    [
+     "coral_23",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "crawl_09",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "dock_13",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "greymoor_16",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "halfway_01",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "library_08",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "shadow_20",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "shadow_27",
+     "CollectableItemPickup",
+     "Sack Corpse Pickup"
+    ],
+    [
+     "slab_cell_quiet",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "under_08",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Crowman Memento": {
+   "at": [
+    [
+     "room_crowcourt_02",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "CollectableItemMemento"
+  },
+  "Cursed": {
+   "at": [
+    [
+     "abyss_05",
+     "PlayMakerFSM",
+     "Abyss Water Control"
+    ],
+    [
+     "abyss_07",
+     "PlayMakerFSM",
+     "Abyss Water Control"
+    ],
+    [
+     "abyss_08",
+     "PlayMakerFSM",
+     "Abyss Water Control"
+    ],
+    [
+     "belltown",
+     "PlayMakerFSM",
+     "Belltown Shop NPC"
+    ],
+    [
+     "belltown",
+     "PlayMakerFSM",
+     "Couriers Quest Giver"
+    ],
+    [
+     "belltown_basement_03",
+     "PlayMakerFSM",
+     "Bell Hermit"
+    ],
+    [
+     "bone_east_18b",
+     "PlayMakerFSM",
+     "Bone Hunter Trapper"
+    ],
+    [
+     "bonetown",
+     "PlayMakerFSM",
+     "Churchkeeper"
+    ],
+    [
+     "coral_39",
+     "PlayMakerFSM",
+     "Coral Warrior Grey"
+    ],
+    [
+     "cradle_03",
+     "PlayMakerFSM",
+     "Silk Boss"
+    ],
+    [
+     "halfway_01",
+     "PlayMakerFSM",
+     "HH Bartender"
+    ],
+    [
+     "organ_01",
+     "PlayMakerFSM",
+     "Phantom"
+    ],
+    [
+     "shellwood_25b",
+     "PlayMakerFSM",
+     "door_curseSequenceEnd"
+    ],
+    [
+     "tut_05",
+     "PlayMakerFSM",
+     "Memory Control"
+    ],
+    [
+     "weave_10",
+     "PlayMakerFSM",
+     "Crest Upgrade Shrine"
+    ],
+    [
+     "wisp_02",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern"
+    ],
+    [
+     "wisp_02",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (1)"
+    ],
+    [
+     "wisp_07",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (1)"
+    ],
+    [
+     "wisp_07",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (2)"
+    ],
+    [
+     "wisp_08",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern"
+    ],
+    [
+     "wisp_08",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (1)"
+    ],
+    [
+     "wisp_08",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (2)"
+    ]
+   ],
+   "class": "ToolCrest"
+  },
+  "Curve Claws": {
+   "at": [
+    [
+     "ant_21",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "ant_21",
+     "ToolGameObjectActivator",
+     "ant_item_string"
+    ],
+    [
+     "bone_east_22",
+     "HitSequence",
+     "Target Sequence"
+    ],
+    [
+     "bone_east_22",
+     "PlayMakerFSM",
+     "Mottled Ant Child NPC"
+    ],
+    [
+     "bone_east_22",
+     "PlayMakerFSM",
+     "Mottled Ant Child NPC Hiding"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Curve Claws Upgraded": {
+   "at": [
+    [
+     "bone_east_22",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Dazzle Bind": {
+   "at": [
+    [
+     "library_13",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "library_13",
+     "CollectableItemPickup",
+     "Re-Entry Pickup"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Dazzle Bind Upgraded": {
+   "at": [
+    [
+     "library_13",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "library_13",
+     "CollectableItemPickup",
+     "Re-Entry Pickup Upgrade"
+    ],
+    [
+     "library_13",
+     "PlayMakerFSM",
+     "Tormented Trobbio TrapdoorWatch"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Dead Mans Purse": {
+   "at": [
+    [
+     "crawl_01",
+     "CollectableItemPickup",
+     "Collectable Item Pickup - Purse"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Dock Demo Key": {
+   "at": [
+    [
+     "bone_east_12",
+     "DeactivateSavedItemCondition",
+     "Silkflies w/o Sprint"
+    ],
+    [
+     "bone_east_12",
+     "ItemReceptacle",
+     "Dock Key Receptacle"
+    ],
+    [
+     "room_forge",
+     "CollectableItemPickup",
+     "Collectable Item Pickup (1)"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Dock Key": {
+   "at": [
+    [
+     "dock_12",
+     "ItemReceptacle",
+     "lock"
+    ],
+    [
+     "dock_12",
+     "PlayMakerFSM",
+     "Ballow Diving Bell NPC"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Extractor Machine Pins": {
+   "at": [
+    [
+     "dust_shack",
+     "PlayMakerFSM",
+     "Dust Traders"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Farsight": {
+   "at": [
+    [
+     "abyss_08",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "belltown_room_spare",
+     "CollectionViewerDesk",
+     "Inspect Region Floor"
+    ],
+    [
+     "belltown_room_spare",
+     "CollectionViewerDesk",
+     "desk"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Fixer Idol": {
+   "at": [
+    [
+     "bonetown",
+     "PlayMakerFSM",
+     "Fixer NPC Standing"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Flea Brew": {
+   "at": [
+    [
+     "aqueduct_05_caravan",
+     "PlayMakerFSM",
+     "Caravan Troup Member Short Pot"
+    ],
+    [
+     "aqueduct_05_festival",
+     "PlayMakerFSM",
+     "Refill Inspect"
+    ],
+    [
+     "coral_judge_arena",
+     "PlayMakerFSM",
+     "Caravan Troup Member Short Pot"
+    ],
+    [
+     "greymoor_08_caravan",
+     "PlayMakerFSM",
+     "Caravan Troup Member Short Greymoor"
+    ]
+   ],
+   "class": "ToolItemStatesLiquid"
+  },
+  "Flea Charm": {
+   "at": [
+    [
+     "aqueduct_05_caravan",
+     "PlayMakerFSM",
+     "Caravan Troupe Leader Fleatopia NPC"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Flintstone": {
+   "at": [
+    [
+     "dock_02b",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Flower Heart": {
+   "at": [
+    [
+     "shellwood_11b",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "tut_04",
+     "PlayMakerFSM",
+     "Snail Shamans Set"
+    ]
+   ],
+   "class": "CollectableItemMemento"
+  },
+  "Fractured Mask": {
+   "at": [
+    [
+     "ant_merchant",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Great Shard": {
+   "at": [
+    [
+     "coral_36",
+     "CollectableItemPickup",
+     "Shell Shard Collectable Item Pickup Instant"
+    ],
+    [
+     "dock_11",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "sprintmaster_cave",
+     "SprintRaceController",
+     "Track 2 Race Control"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Grey Memento": {
+   "at": [
+    [
+     "coral_39",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "coral_39",
+     "CollectableItemPickup",
+     "Pit Pickup"
+    ]
+   ],
+   "class": "CollectableItemMemento"
+  },
+  "Harpoon": {
+   "at": [
+    [
+     "belltown_room_shellwood",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Hunter": {
+   "at": [
+    [
+     "memory_red",
+     "PlayMakerFSM",
+     "Memory Control"
+    ]
+   ],
+   "class": "ToolCrest"
+  },
+  "Hunter Heart": {
+   "at": [
+    [
+     "ant_queen",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "tut_04",
+     "PlayMakerFSM",
+     "Snail Shamans Set"
+    ]
+   ],
+   "class": "CollectableItemMemento"
+  },
+  "Hunter Memento": {
+   "at": [
+    [
+     "halfway_01",
+     "PlayMakerFSM",
+     "Nuu"
+    ]
+   ],
+   "class": "CollectableItemMemento"
+  },
+  "Hunter_v2": {
+   "at": [
+    [
+     "weave_10",
+     "PlayMakerFSM",
+     "Crest Upgrade Shrine"
+    ]
+   ],
+   "class": "ToolCrest"
+  },
+  "Hunter_v3": {
+   "at": [
+    [
+     "weave_10",
+     "PlayMakerFSM",
+     "Crest Upgrade Shrine"
+    ]
+   ],
+   "class": "ToolCrest"
+  },
+  "Librarian Melody Cylinder": {
+   "at": [
+    [
+     "library_08",
+     "PlayMakerFSM",
+     "Librarian"
+    ],
+    [
+     "library_10",
+     "CollectableItemPickup",
+     "Collectable Item Pickup - Melody"
+    ]
+   ],
+   "class": "CollectableRelic"
+  },
+  "Lightning Rod": {
+   "at": [
+    [
+     "arborium_07",
+     "CollectableItemPickup",
+     "Collectable Item Pickup Battle"
+    ]
+   ],
+   "class": "ToolItemToggleState"
+  },
+  "Maggot Charm": {
+   "at": [
+    [
+     "aqueduct_06",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Magnetite": {
+   "at": [
+    [
+     "peak_05e",
+     "BasicNPC",
+     "Inspect Region"
+    ]
+   ],
+   "class": "MateriumItem"
+  },
+  "Magnetite Dice": {
+   "at": [
+    [
+     "belltown_04",
+     "PlayMakerFSM",
+     "Quest Bell Dropper"
+    ],
+    [
+     "belltown_04",
+     "PlayMakerFSM",
+     "Quest Bell Dropper (1)"
+    ],
+    [
+     "belltown_04",
+     "PlayMakerFSM",
+     "Quest Bell Dropper (2)"
+    ],
+    [
+     "belltown_04",
+     "PlayMakerFSM",
+     "Quest Bell Dropper (3)"
+    ],
+    [
+     "belltown_04",
+     "PlayMakerFSM",
+     "Quest Bell Dropper (4)"
+    ],
+    [
+     "belltown_04",
+     "PlayMakerFSM",
+     "Quest Bell Dropper (5)"
+    ],
+    [
+     "belltown_04",
+     "PlayMakerFSM",
+     "Quest Bell Dropper (6)"
+    ],
+    [
+     "belltown_basement_03",
+     "PlayMakerFSM",
+     "Quest Bell Dropper"
+    ],
+    [
+     "belltown_basement_03",
+     "PlayMakerFSM",
+     "Quest Bell Dropper (1)"
+    ],
+    [
+     "belltown_basement_03",
+     "PlayMakerFSM",
+     "Quest Bell Dropper (2)"
+    ],
+    [
+     "belltown_basement_03",
+     "PlayMakerFSM",
+     "Quest Bell Dropper (3)"
+    ],
+    [
+     "belltown_basement_03",
+     "PlayMakerFSM",
+     "Quest Bell Dropper (4)"
+    ],
+    [
+     "belltown_basement_03",
+     "PlayMakerFSM",
+     "Quest Bell Dropper (5)"
+    ],
+    [
+     "belltown_basement_03",
+     "PlayMakerFSM",
+     "Quest Bell Dropper (6)"
+    ],
+    [
+     "coral_33",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "coral_33",
+     "PlayMakerFSM",
+     "Play Point"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Materium": {
+   "at": [
+    [
+     "arborium_07",
+     "CollectableItemPickup",
+     "Collectable Item Pickup Materium"
+    ],
+    [
+     "belltown_room_spare",
+     "CollectionViewerDesk",
+     "Inspect Region Floor"
+    ],
+    [
+     "belltown_room_spare",
+     "CollectionViewerDesk",
+     "desk"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Memento Garmond": {
+   "at": [
+    [
+     "bellway_08",
+     "CollectableItemPickup",
+     "Memento Pickup"
+    ],
+    [
+     "coral_33",
+     "CollectableItemPickup",
+     "Memento Pickup"
+    ],
+    [
+     "coral_35",
+     "CollectableItemPickup",
+     "Memento Pickup"
+    ],
+    [
+     "coral_43",
+     "CollectableItemPickup",
+     "Memento Pickup"
+    ]
+   ],
+   "class": "CollectableItemMemento"
+  },
+  "Memento Seth": {
+   "at": [
+    [
+     "aqueduct_05_caravan",
+     "PlayMakerFSM",
+     "Caravan Troupe Leader Fleatopia NPC"
+    ],
+    [
+     "aqueduct_05_festival",
+     "PlayMakerFSM",
+     "Seth Sit NPC Fleatopia"
+    ]
+   ],
+   "class": "CollectableItemMemento"
+  },
+  "Memento Surface": {
+   "at": [
+    [
+     "abandoned_town",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "CollectableItemMemento"
+  },
+  "Mossberry": {
+   "at": [
+    [
+     "arborium_04",
+     "SavedItemTrackerMarker",
+     "moss_berry_fruit"
+    ],
+    [
+     "bone_01b",
+     "PlayMakerFSM",
+     "Mossberry Pickup"
+    ],
+    [
+     "bone_01b",
+     "SavedItemTrackerMarker",
+     "Berry Sprite"
+    ],
+    [
+     "bone_05b",
+     "PlayMakerFSM",
+     "Mossberry Pickup"
+    ],
+    [
+     "bone_05b",
+     "SavedItemTrackerMarker",
+     "Berry Sprite"
+    ],
+    [
+     "bonegrave",
+     "PlayMakerFSM",
+     "Mossberry Pickup"
+    ],
+    [
+     "bonegrave",
+     "SavedItemTrackerMarker",
+     "Berry Sprite"
+    ],
+    [
+     "bonetown",
+     "PlayMakerFSM",
+     "Mossberry Pickup"
+    ],
+    [
+     "bonetown",
+     "SavedItemTrackerMarker",
+     "Berry Sprite"
+    ],
+    [
+     "mosstown_02c",
+     "PlayMakerFSM",
+     "Moss Creep NPC"
+    ],
+    [
+     "tut_01b",
+     "SavedItemTrackerMarker",
+     "moss_berry_fruit"
+    ],
+    [
+     "tut_02",
+     "SavedItemTrackerMarker",
+     "moss_berry_fruit"
+    ],
+    [
+     "weave_03",
+     "SavedItemTrackerMarker",
+     "moss_berry_fruit"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Mossberry Stew": {
+   "at": [
+    [
+     "mosstown_02c",
+     "PlayMakerFSM",
+     "Moss Creep NPC"
+    ],
+    [
+     "song_09b",
+     "PlayMakerFSM",
+     "Gourmand Servant"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Mosscreep Tool 1": {
+   "at": [
+    [
+     "mosstown_02c",
+     "PlayMakerFSM",
+     "Hero Burner"
+    ],
+    [
+     "mosstown_02c",
+     "PlayMakerFSM",
+     "Moss Creep NPC"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Mosscreep Tool 2": {
+   "at": [
+    [
+     "mosstown_02c",
+     "PlayMakerFSM",
+     "Hero Burner"
+    ],
+    [
+     "mosstown_02c",
+     "PlayMakerFSM",
+     "Moss Creep NPC"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Pale_Oil": {
+   "at": [
+    [
+     "aqueduct_05_festival",
+     "CollectableItemPickup",
+     "Collectable Item Pickup Reward 3"
+    ],
+    [
+     "belltown_room_pinsmith",
+     "PlayMakerFSM",
+     "Plinney Inside"
+    ],
+    [
+     "library_03",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Parry": {
+   "at": [
+    [
+     "organ_01",
+     "PlayMakerFSM",
+     "Phantom"
+    ]
+   ],
+   "class": "ToolItemSkill"
+  },
+  "Pickled Roach Egg": {
+   "at": [
+    [
+     "dust_chef",
+     "CollectableItemPickup",
+     "Return Pickup"
+    ],
+    [
+     "song_09b",
+     "PlayMakerFSM",
+     "Gourmand Servant"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Pimpilo": {
+   "at": [
+    [
+     "wisp_06",
+     "PlayMakerFSM",
+     "Craft Pickup"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Pinstress Tool": {
+   "at": [
+    [
+     "bone_east_umbrella",
+     "PlayMakerFSM",
+     "Seamstress"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Plasmium Gland": {
+   "at": [
+    [
+     "crawl_08",
+     "PlayMakerFSM",
+     "Blue Scientist Sit"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Poison Pouch": {
+   "at": [
+    [
+     "aqueduct_01",
+     "PlayMakerFSM",
+     "Swamp Barnacle (1)"
+    ],
+    [
+     "aqueduct_01",
+     "PlayMakerFSM",
+     "Swamp Barnacle (2)"
+    ],
+    [
+     "aqueduct_01",
+     "PlayMakerFSM",
+     "Swamp Barnacle (3)"
+    ],
+    [
+     "aqueduct_01",
+     "PlayMakerFSM",
+     "Swamp Barnacle (4)"
+    ],
+    [
+     "aqueduct_01",
+     "PlayMakerFSM",
+     "Swamp Barnacle (5)"
+    ],
+    [
+     "aqueduct_02",
+     "PlayMakerFSM",
+     "Swamp Barnacle"
+    ],
+    [
+     "aqueduct_02",
+     "PlayMakerFSM",
+     "Swamp Barnacle (1)"
+    ],
+    [
+     "aqueduct_03",
+     "PlayMakerFSM",
+     "Swamp Barnacle (1)"
+    ],
+    [
+     "aqueduct_03",
+     "PlayMakerFSM",
+     "Swamp Barnacle (3)"
+    ],
+    [
+     "aqueduct_03",
+     "PlayMakerFSM",
+     "Swamp Barnacle (6)"
+    ],
+    [
+     "aqueduct_03",
+     "PlayMakerFSM",
+     "Swamp Barnacle (7)"
+    ],
+    [
+     "aqueduct_04",
+     "PlayMakerFSM",
+     "Swamp Barnacle"
+    ],
+    [
+     "aqueduct_04",
+     "PlayMakerFSM",
+     "Swamp Barnacle (2)"
+    ],
+    [
+     "aqueduct_04",
+     "PlayMakerFSM",
+     "Swamp Barnacle (3)"
+    ],
+    [
+     "aqueduct_06",
+     "PlayMakerFSM",
+     "Swamp Barnacle"
+    ],
+    [
+     "aqueduct_06",
+     "PlayMakerFSM",
+     "Swamp Barnacle (2)"
+    ],
+    [
+     "aqueduct_06",
+     "PlayMakerFSM",
+     "Swamp Barnacle (3)"
+    ],
+    [
+     "aqueduct_06",
+     "PlayMakerFSM",
+     "Swamp Barnacle (4)"
+    ],
+    [
+     "aqueduct_06",
+     "PlayMakerFSM",
+     "Swamp Barnacle (5)"
+    ],
+    [
+     "aqueduct_07",
+     "PlayMakerFSM",
+     "Swamp Barnacle"
+    ],
+    [
+     "aqueduct_07",
+     "PlayMakerFSM",
+     "Swamp Barnacle (1)"
+    ],
+    [
+     "aqueduct_08",
+     "PlayMakerFSM",
+     "Swamp Barnacle (1)"
+    ],
+    [
+     "room_witch",
+     "PlayMakerFSM",
+     "Wood Witch"
+    ],
+    [
+     "shadow_18",
+     "PlayMakerFSM",
+     "Swamp Shaman"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Pristine Core": {
+   "at": [
+    [
+     "cog_07",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "under_17",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Psalm Cylinder Hang": {
+   "at": [
+    [
+     "hang_10",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "CollectableRelic"
+  },
+  "Psalm Cylinder Librarian": {
+   "at": [
+    [
+     "library_08",
+     "CollectableItemPickup",
+     "Collectable Item Pickup Librarian"
+    ]
+   ],
+   "class": "CollectableRelic"
+  },
+  "Psalm Cylinder Library Roof": {
+   "at": [
+    [
+     "library_09",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "CollectableRelic"
+  },
+  "Psalm Cylinder Ward": {
+   "at": [
+    [
+     "under_08",
+     "CollectableItemPickup",
+     "Collectable Item Pickup (1)"
+    ]
+   ],
+   "class": "CollectableRelic"
+  },
+  "Quick Sling": {
+   "at": [
+    [
+     "shadow_11",
+     "CollectableItemPickup",
+     "Collectable Item Pickup (1)"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Quickbind": {
+   "at": [
+    [
+     "ward_03",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Reaper": {
+   "at": [
+    [
+     "ant_19",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "ant_20",
+     "PlayMakerFSM",
+     "Chapel Door Control"
+    ],
+    [
+     "bonegrave",
+     "PlayMakerFSM",
+     "Chapel Door Control"
+    ],
+    [
+     "chapel_wanderer",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "greymoor_20b",
+     "PlayMakerFSM",
+     "Chapel Door Control"
+    ],
+    [
+     "greymoor_20c",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "greymoor_20c",
+     "PlayMakerFSM",
+     "Music Control"
+    ],
+    [
+     "tut_04",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "tut_05",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "tut_05",
+     "PlayMakerFSM",
+     "Memory Control"
+    ],
+    [
+     "under_20",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "wisp_02",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern"
+    ],
+    [
+     "wisp_02",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (1)"
+    ],
+    [
+     "wisp_07",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (1)"
+    ],
+    [
+     "wisp_07",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (2)"
+    ],
+    [
+     "wisp_08",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern"
+    ],
+    [
+     "wisp_08",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (1)"
+    ],
+    [
+     "wisp_08",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (2)"
+    ]
+   ],
+   "class": "ToolCrest"
+  },
+  "Reserve Bind": {
+   "at": [
+    [
+     "hang_17b",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Revenge Crystal": {
+   "at": [
+    [
+     "bellway_peak_02",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Roach Corpse Item": {
+   "at": [
+    [
+     "dust_05",
+     "BasicNPC",
+     "Inspect Region"
+    ]
+   ],
+   "class": "MateriumItem"
+  },
+  "Rosary Cannon": {
+   "at": [
+    [
+     "hang_06_bank",
+     "CollectableItemPickup",
+     "Rosary Cannon Pickup"
+    ]
+   ],
+   "class": "ToolItemLerpStates"
+  },
+  "Rosary_Set_Frayed": {
+   "at": [
+    [
+     "aqueduct_01",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "bone_10",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "bone_east_04b",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "coral_03",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "crawl_02",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "dust_01",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "greymoor_15",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "greymoor_15b",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "hang_16",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "mosstown_02",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "shadow_02",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "shellwood_01",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "slab_02",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "slab_18",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "slab_22",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "tut_01",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "under_07c",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "under_12",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "wisp_03",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Rosary_Set_Huge_White": {
+   "at": [
+    [
+     "bone_east_24",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "hang_06_bank",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Rosary_Set_Large": {
+   "at": [
+    [
+     "bone_12",
+     "PlayMakerFSM",
+     "Lady Bug Large"
+    ],
+    [
+     "library_02",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "library_09",
+     "CollectableItemPickup",
+     "Collectable Item Pickup (1)"
+    ],
+    [
+     "room_witch",
+     "PlayMakerFSM",
+     "Wood Witch"
+    ],
+    [
+     "song_04",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Rosary_Set_Medium": {
+   "at": [
+    [
+     "ant_04_left",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "aqueduct_05_festival",
+     "CollectableItemPickup",
+     "Collectable Item Pickup Reward 2"
+    ],
+    [
+     "song_07",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "song_09",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "sprintmaster_cave",
+     "SprintRaceController",
+     "Track 1 Race Control"
+    ],
+    [
+     "wisp_02",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Rosary_Set_Small": {
+   "at": [
+    [
+     "aqueduct_05_festival",
+     "CollectableItemPickup",
+     "Collectable Item Pickup Reward 1"
+    ],
+    [
+     "bellway_03",
+     "PlayMakerFSM",
+     "rosary_string_machine"
+    ],
+    [
+     "bellway_08",
+     "PlayMakerFSM",
+     "rosary_string_machine"
+    ],
+    [
+     "bellway_aqueduct",
+     "PlayMakerFSM",
+     "rosary_string_machine"
+    ],
+    [
+     "bellway_peak",
+     "PlayMakerFSM",
+     "rosary_string_machine"
+    ],
+    [
+     "bellway_shadow",
+     "PlayMakerFSM",
+     "rosary_string_machine"
+    ],
+    [
+     "bone_01c",
+     "PlayMakerFSM",
+     "rosary_string_machine"
+    ],
+    [
+     "bone_east_14",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "bone_east_15",
+     "PlayMakerFSM",
+     "rosary_string_machine"
+    ],
+    [
+     "coral_02",
+     "PlayMakerFSM",
+     "rosary_string_machine"
+    ],
+    [
+     "dock_01",
+     "PlayMakerFSM",
+     "rosary_string_machine"
+    ],
+    [
+     "dust_10",
+     "PlayMakerFSM",
+     "rosary_string_machine"
+    ],
+    [
+     "greymoor_01",
+     "PlayMakerFSM",
+     "rosary_string_machine"
+    ],
+    [
+     "hang_06_bank",
+     "PlayMakerFSM",
+     "rosary_string_machine"
+    ],
+    [
+     "shellwood_01b",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "shellwood_01b",
+     "PlayMakerFSM",
+     "rosary_string_machine"
+    ],
+    [
+     "shellwood_08c",
+     "PlayMakerFSM",
+     "rosary_string_machine"
+    ],
+    [
+     "shellwood_25",
+     "CollectableItemPickup",
+     "Collectable Item Pickup (1)"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Screw Attack": {
+   "at": [
+    [
+     "under_14",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Scuttlebrace": {
+   "at": [
+    [
+     "under_17",
+     "PlayMakerFSM",
+     "Architect NPC"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Seal Chit Aspid_01": {
+   "at": [
+    [
+     "aspid_01",
+     "CollectableItemPickup",
+     "Collectable Item Pickup (2)"
+    ]
+   ],
+   "class": "CollectableRelic"
+  },
+  "Seal Chit Silk Siphon": {
+   "at": [
+    [
+     "ward_05",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "CollectableRelic"
+  },
+  "Seal Chit Ward Corpse": {
+   "at": [
+    [
+     "ward_02b",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "CollectableRelic"
+  },
+  "Shakra Ring": {
+   "at": [
+    [
+     "bone_east_04c",
+     "PlayMakerFSM",
+     "Slab Fly Large Cage"
+    ],
+    [
+     "greymoor_05",
+     "PlayMakerFSM",
+     "Slab Fly Large Cage"
+    ],
+    [
+     "shadow_21",
+     "PlayMakerFSM",
+     "Slab Fly Large Cage"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Shard Pouch": {
+   "at": [
+    [
+     "arborium_11",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "bone_east_01",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "cog_10",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "dock_02",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "dust_06",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "greymoor_05",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "greymoor_12",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "library_12",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "room_forge",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "shellwood_13",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "slab_04",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "under_03",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "under_18",
+     "CollectableItemPickup",
+     "Collectable Item Pickup (1)"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Shell Flower": {
+   "at": [
+    [
+     "room_witch",
+     "PlayMakerFSM",
+     "Wood Witch"
+    ],
+    [
+     "shellwood_01",
+     "PlayMakerFSM",
+     "Nectar Pickup"
+    ],
+    [
+     "shellwood_02",
+     "PlayMakerFSM",
+     "Nectar Pickup"
+    ],
+    [
+     "shellwood_10",
+     "PlayMakerFSM",
+     "Nectar Pickup"
+    ],
+    [
+     "shellwood_15",
+     "PlayMakerFSM",
+     "Nectar Pickup"
+    ],
+    [
+     "shellwood_20",
+     "PlayMakerFSM",
+     "Nectar Pickup"
+    ],
+    [
+     "shellwood_26",
+     "PlayMakerFSM",
+     "Nectar Pickup"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Shell Satchel": {
+   "at": [
+    [
+     "crawl_01",
+     "CollectableItemPickup",
+     "Collectable Item Pickup - Satchel"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Silk Bomb": {
+   "at": [
+    [
+     "memory_first_sinner",
+     "PlayMakerFSM",
+     "Memory Control"
+    ],
+    [
+     "slab_10b",
+     "PlayMakerFSM",
+     "Shrine First Weaver NPC"
+    ]
+   ],
+   "class": "ToolItemSkill"
+  },
+  "Silk Boss Needle": {
+   "at": [
+    [
+     "cradle_03_destroyed",
+     "PlayMakerFSM",
+     "Silk Needle Spell Get"
+    ]
+   ],
+   "class": "ToolItemSkill"
+  },
+  "Silk Charge": {
+   "at": [
+    [
+     "abyss_08",
+     "PlayMakerFSM",
+     "Shrine Weaver Ability"
+    ],
+    [
+     "bone_east_05",
+     "PlayMakerFSM",
+     "Shrine Weaver Ability"
+    ],
+    [
+     "crawl_05",
+     "PlayMakerFSM",
+     "Shrine Weaver Ability"
+    ],
+    [
+     "greymoor_22",
+     "PlayMakerFSM",
+     "Shrine Weaver Ability"
+    ],
+    [
+     "mosstown_02",
+     "PlayMakerFSM",
+     "Shrine Weaver Ability"
+    ],
+    [
+     "shellwood_10",
+     "PlayMakerFSM",
+     "Shrine Weaver Ability"
+    ],
+    [
+     "slab_10b",
+     "PlayMakerFSM",
+     "Shrine First Weaver NPC"
+    ],
+    [
+     "under_18",
+     "PlayMakerFSM",
+     "Shrine Weaver Ability"
+    ]
+   ],
+   "class": "ToolItemSkill"
+  },
+  "Silk Grub": {
+   "at": [
+    [
+     "coral_37",
+     "SilkGrubCocoon",
+     "Silk Grub Large Cocoon"
+    ],
+    [
+     "dock_14",
+     "SilkGrubCocoon",
+     "Silk Grub Large Cocoon"
+    ],
+    [
+     "dust_11",
+     "PlayMakerFSM",
+     "Grub Farmer Mimic"
+    ],
+    [
+     "dust_11",
+     "SilkGrubCocoon",
+     "Large Cocoon 1"
+    ],
+    [
+     "dust_11",
+     "SilkGrubCocoon",
+     "Large Cocoon 2"
+    ],
+    [
+     "dust_11",
+     "SilkGrubCocoon",
+     "Large Cocoon 3"
+    ],
+    [
+     "greymoor_04",
+     "SilkGrubCocoon",
+     "Silk Grub Large Cocoon"
+    ],
+    [
+     "library_14",
+     "SilkGrubCocoon",
+     "Silk Grub Large Cocoon"
+    ],
+    [
+     "organ_01",
+     "SilkGrubCocoon",
+     "Silk Grub Large Cocoon"
+    ],
+    [
+     "song_09b",
+     "SilkGrubCocoon",
+     "Silk Grub Large Cocoon"
+    ],
+    [
+     "song_24",
+     "SilkGrubCocoon",
+     "Silk Grub Large Cocoon"
+    ],
+    [
+     "tube_hub",
+     "SilkGrubCocoon",
+     "Silk Grub Large Cocoon"
+    ],
+    [
+     "under_20",
+     "SilkGrubCocoon",
+     "Silk Grub Large Cocoon"
+    ],
+    [
+     "ward_04",
+     "SilkGrubCocoon",
+     "Silk Grub Large Cocoon"
+    ]
+   ],
+   "class": "CollectableItemStates"
+  },
+  "Silk Snare": {
+   "at": [
+    [
+     "song_enclave",
+     "PlayMakerFSM",
+     "Enclave Caretaker"
+    ],
+    [
+     "weave_10",
+     "PlayMakerFSM",
+     "Crest Upgrade Shrine"
+    ],
+    [
+     "weave_14",
+     "CollectableItemPickup",
+     "Collectable Item Pickup (1)"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Silk Spear": {
+   "at": [
+    [
+     "abyss_08",
+     "PlayMakerFSM",
+     "Shrine Weaver Ability"
+    ],
+    [
+     "bone_east_05",
+     "PlayMakerFSM",
+     "Shrine Weaver Ability"
+    ],
+    [
+     "crawl_05",
+     "PlayMakerFSM",
+     "Shrine Weaver Ability"
+    ],
+    [
+     "greymoor_22",
+     "PlayMakerFSM",
+     "Shrine Weaver Ability"
+    ],
+    [
+     "mosstown_02",
+     "PlayMakerFSM",
+     "Shrine Weaver Ability"
+    ],
+    [
+     "shellwood_10",
+     "PlayMakerFSM",
+     "Shrine Weaver Ability"
+    ],
+    [
+     "slab_10b",
+     "PlayMakerFSM",
+     "Shrine First Weaver NPC"
+    ],
+    [
+     "under_18",
+     "PlayMakerFSM",
+     "Shrine Weaver Ability"
+    ]
+   ],
+   "class": "ToolItemSkill"
+  },
+  "Simple Key": {
+   "at": [
+    [
+     "bellshrine_coral",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "crawl_02",
+     "ItemReceptacle",
+     "lock"
+    ],
+    [
+     "dust_02",
+     "ItemReceptacle",
+     "Key Receptactle"
+    ],
+    [
+     "dust_06",
+     "CollectableItemPickup",
+     "Collectable Item SimpleKey"
+    ],
+    [
+     "hang_06",
+     "ItemReceptacle",
+     "bank_door"
+    ],
+    [
+     "room_forge",
+     "ItemReceptacle",
+     "song_knight_lock"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Skull King Fragment": {
+   "at": [
+    [
+     "bone_15",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Smeltstone": {
+   "at": [
+    [
+     "dock_02",
+     "BasicNPC",
+     "Inspect Region"
+    ]
+   ],
+   "class": "MateriumItem"
+  },
+  "Snare Soul Bell Hermit": {
+   "at": [
+    [
+     "belltown_basement_03",
+     "PlayMakerFSM",
+     "Bell Hermit"
+    ],
+    [
+     "song_enclave",
+     "PlayMakerFSM",
+     "Enclave Caretaker"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Snare Soul Churchkeeper": {
+   "at": [
+    [
+     "bonetown",
+     "PlayMakerFSM",
+     "Churchkeeper"
+    ],
+    [
+     "song_enclave",
+     "PlayMakerFSM",
+     "Enclave Caretaker"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Snare Soul Swamp Bug": {
+   "at": [
+    [
+     "shadow_bilehaven_room",
+     "CollectableItemPickup",
+     "Collectable Item Pickup (1)"
+    ],
+    [
+     "song_enclave",
+     "PlayMakerFSM",
+     "Enclave Caretaker"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Spell": {
+   "at": [
+    [
+     "ant_19",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "ant_20",
+     "PlayMakerFSM",
+     "Chapel Door Control"
+    ],
+    [
+     "bonegrave",
+     "PlayMakerFSM",
+     "Chapel Door Control"
+    ],
+    [
+     "chapel_wanderer",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "greymoor_20b",
+     "PlayMakerFSM",
+     "Chapel Door Control"
+    ],
+    [
+     "greymoor_20c",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "tut_04",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "tut_04",
+     "PlayMakerFSM",
+     "Snail Shamans Set"
+    ],
+    [
+     "tut_05",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "tut_05",
+     "PlayMakerFSM",
+     "Memory Control"
+    ],
+    [
+     "tut_05",
+     "PlayMakerFSM",
+     "Music Control"
+    ],
+    [
+     "under_20",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "wisp_02",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern"
+    ],
+    [
+     "wisp_02",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (1)"
+    ],
+    [
+     "wisp_07",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (1)"
+    ],
+    [
+     "wisp_07",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (2)"
+    ],
+    [
+     "wisp_08",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern"
+    ],
+    [
+     "wisp_08",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (1)"
+    ],
+    [
+     "wisp_08",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (2)"
+    ]
+   ],
+   "class": "ToolCrest"
+  },
+  "Sprintmaster": {
+   "at": [
+    [
+     "bone_east_weavehome",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Sprintmaster Memento": {
+   "at": [
+    [
+     "sprintmaster_cave",
+     "SprintRaceController",
+     "Track Extra Race Control"
+    ]
+   ],
+   "class": "CollectableItemMemento"
+  },
+  "Straight Pin": {
+   "at": [
+    [
+     "bone_12",
+     "CollectableItemPickup",
+     "Collectable Item Pickup Pin"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Tack": {
+   "at": [
+    [
+     "dust_shack",
+     "CollectableItemPickup",
+     "Collectable Item Dustpilo"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Thief Charm": {
+   "at": [
+    [
+     "bone_east_10",
+     "PlayMakerFSM",
+     "Rosary Thief"
+    ],
+    [
+     "bone_east_10",
+     "PlayMakerFSM",
+     "Rosary Thief (1)"
+    ],
+    [
+     "bone_east_10_room",
+     "PlayMakerFSM",
+     "Rosary Thief"
+    ],
+    [
+     "bonetown",
+     "PlayMakerFSM",
+     "Rosary Thief"
+    ],
+    [
+     "bonetown",
+     "PlayMakerFSM",
+     "Rosary Thief (1)"
+    ],
+    [
+     "bonetown",
+     "PlayMakerFSM",
+     "Rosary Thief (2)"
+    ],
+    [
+     "coral_42",
+     "PlayMakerFSM",
+     "Rosary Thief"
+    ],
+    [
+     "coral_42",
+     "PlayMakerFSM",
+     "Rosary Thief Crowd"
+    ],
+    [
+     "coral_42",
+     "PlayMakerFSM",
+     "Rosary Thief Crowd (1)"
+    ],
+    [
+     "coral_42",
+     "PlayMakerFSM",
+     "Rosary Thief Crowd (2)"
+    ],
+    [
+     "coral_42",
+     "PlayMakerFSM",
+     "Rosary Thief Crowd (3)"
+    ],
+    [
+     "coral_42",
+     "PlayMakerFSM",
+     "Rosary Thief Crowd (4)"
+    ],
+    [
+     "coral_42",
+     "PlayMakerFSM",
+     "Rosary Thief Crowd (5)"
+    ],
+    [
+     "hang_06_bank",
+     "PlayMakerFSM",
+     "Rosary Thief"
+    ],
+    [
+     "shadow_28",
+     "PlayMakerFSM",
+     "Rosary Thief"
+    ],
+    [
+     "shadow_28",
+     "PlayMakerFSM",
+     "Rosary Thief (2)"
+    ],
+    [
+     "shadow_28",
+     "PlayMakerFSM",
+     "Rosary Thief Crowd"
+    ],
+    [
+     "slab_07",
+     "PlayMakerFSM",
+     "Rosary Thief"
+    ],
+    [
+     "slab_07",
+     "PlayMakerFSM",
+     "Rosary Thief (2)"
+    ],
+    [
+     "song_24",
+     "PlayMakerFSM",
+     "Rosary Thief"
+    ],
+    [
+     "song_24",
+     "PlayMakerFSM",
+     "Rosary Thief (1)"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Thread Sphere": {
+   "at": [
+    [
+     "abyss_08",
+     "PlayMakerFSM",
+     "Shrine Weaver Ability"
+    ],
+    [
+     "bone_east_05",
+     "PlayMakerFSM",
+     "Shrine Weaver Ability"
+    ],
+    [
+     "crawl_05",
+     "PlayMakerFSM",
+     "Shrine Weaver Ability"
+    ],
+    [
+     "greymoor_22",
+     "PlayMakerFSM",
+     "Shrine Weaver Ability"
+    ],
+    [
+     "mosstown_02",
+     "PlayMakerFSM",
+     "Shrine Weaver Ability"
+    ],
+    [
+     "shellwood_10",
+     "PlayMakerFSM",
+     "Shrine Weaver Ability"
+    ],
+    [
+     "slab_10b",
+     "PlayMakerFSM",
+     "Shrine First Weaver NPC"
+    ],
+    [
+     "under_18",
+     "PlayMakerFSM",
+     "Shrine Weaver Ability"
+    ]
+   ],
+   "class": "ToolItemSkill"
+  },
+  "Tool Metal": {
+   "at": [
+    [
+     "aqueduct_05",
+     "CollectableItemPickup",
+     "Collectable Item Pickup - Tool Metal"
+    ],
+    [
+     "bone_07",
+     "CollectableItemPickup",
+     "Collectable Item Pickup - Tool Metal"
+    ],
+    [
+     "bone_12",
+     "PlayMakerFSM",
+     "Ladybug Craft Pickup"
+    ],
+    [
+     "coral_32",
+     "CollectableItemPickup",
+     "Collectable Item Pickup - Tool Metal"
+    ],
+    [
+     "dock_03",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "hang_09",
+     "PlayMakerFSM",
+     "Craft Pickup"
+    ],
+    [
+     "peak_12",
+     "PlayMakerFSM",
+     "Webshot Scene"
+    ],
+    [
+     "room_forge",
+     "PlayMakerFSM",
+     "Forge Daughter"
+    ],
+    [
+     "under_19b",
+     "CollectableItemPickup",
+     "Collectable Item Pickup - Tool Metal"
+    ],
+    [
+     "wisp_05",
+     "CollectableItemPickup",
+     "Collectable Item Pickup - Tool Metal"
+    ],
+    [
+     "wisp_06",
+     "PlayMakerFSM",
+     "Craft Pickup"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Toolmaster": {
+   "at": [
+    [
+     "ant_19",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "ant_20",
+     "PlayMakerFSM",
+     "Chapel Door Control"
+    ],
+    [
+     "bonegrave",
+     "PlayMakerFSM",
+     "Chapel Door Control"
+    ],
+    [
+     "chapel_wanderer",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "greymoor_20b",
+     "PlayMakerFSM",
+     "Chapel Door Control"
+    ],
+    [
+     "greymoor_20c",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "tut_04",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "tut_05",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "tut_05",
+     "PlayMakerFSM",
+     "Memory Control"
+    ],
+    [
+     "under_17",
+     "PlayMakerFSM",
+     "Architect NPC"
+    ],
+    [
+     "under_17",
+     "PlayMakerFSM",
+     "Architect Shrine Door"
+    ],
+    [
+     "under_20",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "under_20",
+     "PlayMakerFSM",
+     "Music Control"
+    ],
+    [
+     "wisp_02",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern"
+    ],
+    [
+     "wisp_02",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (1)"
+    ],
+    [
+     "wisp_07",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (1)"
+    ],
+    [
+     "wisp_07",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (2)"
+    ],
+    [
+     "wisp_08",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern"
+    ],
+    [
+     "wisp_08",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (1)"
+    ],
+    [
+     "wisp_08",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (2)"
+    ]
+   ],
+   "class": "ToolCrest"
+  },
+  "Tri Pin": {
+   "at": [
+    [
+     "greymoor_15b",
+     "CollectableItemPickup",
+     "Collectable Item Pickup (1)"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Vintage Nectar": {
+   "at": [
+    [
+     "ant_08",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "halfway_01",
+     "PlayMakerFSM",
+     "HH Bartender"
+    ],
+    [
+     "halfway_01",
+     "PlayMakerFSM",
+     "cellar trapdoor set"
+    ],
+    [
+     "song_09b",
+     "PlayMakerFSM",
+     "Gourmand Servant"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Voltstone": {
+   "at": [
+    [
+     "coral_29",
+     "BasicNPC",
+     "Inspect Region"
+    ]
+   ],
+   "class": "MateriumItem"
+  },
+  "Wanderer": {
+   "at": [
+    [
+     "ant_19",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "ant_20",
+     "PlayMakerFSM",
+     "Chapel Door Control"
+    ],
+    [
+     "bonegrave",
+     "PlayMakerFSM",
+     "Chapel Door Control"
+    ],
+    [
+     "chapel_wanderer",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "chapel_wanderer",
+     "PlayMakerFSM",
+     "Music Control"
+    ],
+    [
+     "greymoor_20b",
+     "PlayMakerFSM",
+     "Chapel Door Control"
+    ],
+    [
+     "greymoor_20c",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "tut_04",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "tut_05",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "tut_05",
+     "PlayMakerFSM",
+     "Memory Control"
+    ],
+    [
+     "under_20",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ]
+   ],
+   "class": "ToolCrest"
+  },
+  "Ward Boss Key": {
+   "at": [
+    [
+     "ward_02",
+     "ItemReceptacle",
+     "lock_machine"
+    ],
+    [
+     "ward_07",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Ward Key": {
+   "at": [
+    [
+     "song_enclave",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "ward_01",
+     "ItemReceptacle",
+     "key_machine"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Warrior": {
+   "at": [
+    [
+     "ant_19",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "ant_19",
+     "PlayMakerFSM",
+     "Music Control"
+    ],
+    [
+     "ant_20",
+     "PlayMakerFSM",
+     "Chapel Door Control"
+    ],
+    [
+     "bone_east_18b",
+     "PlayMakerFSM",
+     "Bone Hunter Trapper"
+    ],
+    [
+     "bonegrave",
+     "PlayMakerFSM",
+     "Chapel Door Control"
+    ],
+    [
+     "chapel_wanderer",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "coral_39",
+     "PlayMakerFSM",
+     "Coral Warrior Grey"
+    ],
+    [
+     "greymoor_20b",
+     "PlayMakerFSM",
+     "Chapel Door Control"
+    ],
+    [
+     "greymoor_20c",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "organ_01",
+     "PlayMakerFSM",
+     "Phantom"
+    ],
+    [
+     "tut_04",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "tut_05",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "tut_05",
+     "PlayMakerFSM",
+     "Memory Control"
+    ],
+    [
+     "under_20",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "wisp_02",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern"
+    ],
+    [
+     "wisp_02",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (1)"
+    ],
+    [
+     "wisp_07",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (1)"
+    ],
+    [
+     "wisp_07",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (2)"
+    ],
+    [
+     "wisp_08",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern"
+    ],
+    [
+     "wisp_08",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (1)"
+    ],
+    [
+     "wisp_08",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (2)"
+    ]
+   ],
+   "class": "ToolCrest"
+  },
+  "Weaver Record Conductor": {
+   "at": [
+    [
+     "hang_12",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "CollectableRelic"
+  },
+  "Weaver Record Sprint_Challenge": {
+   "at": [
+    [
+     "bone_east_weavehome",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "CollectableRelic"
+  },
+  "Weaver Record Weave_08": {
+   "at": [
+    [
+     "weave_08",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "CollectableRelic"
+  },
+  "Weaver Totem Bonetown_upper_room": {
+   "at": [
+    [
+     "bonetown",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "CollectableRelic"
+  },
+  "Weaver Totem Slab_Bottom": {
+   "at": [
+    [
+     "slab_12",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "CollectableRelic"
+  },
+  "Weaver Totem Witch": {
+   "at": [
+    [
+     "shellwood_25",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "CollectableRelic"
+  },
+  "WebShot Weaver": {
+   "at": [
+    [
+     "peak_12",
+     "PlayMakerFSM",
+     "Webshot Scene"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Weighted Anklet": {
+   "at": [
+    [
+     "aqueduct_01",
+     "PlayMakerFSM",
+     "Swamp Barnacle (1)"
+    ],
+    [
+     "aqueduct_01",
+     "PlayMakerFSM",
+     "Swamp Barnacle (2)"
+    ],
+    [
+     "aqueduct_01",
+     "PlayMakerFSM",
+     "Swamp Barnacle (3)"
+    ],
+    [
+     "aqueduct_01",
+     "PlayMakerFSM",
+     "Swamp Barnacle (4)"
+    ],
+    [
+     "aqueduct_01",
+     "PlayMakerFSM",
+     "Swamp Barnacle (5)"
+    ],
+    [
+     "aqueduct_02",
+     "PlayMakerFSM",
+     "Swamp Barnacle"
+    ],
+    [
+     "aqueduct_02",
+     "PlayMakerFSM",
+     "Swamp Barnacle (1)"
+    ],
+    [
+     "aqueduct_03",
+     "PlayMakerFSM",
+     "Swamp Barnacle (1)"
+    ],
+    [
+     "aqueduct_03",
+     "PlayMakerFSM",
+     "Swamp Barnacle (3)"
+    ],
+    [
+     "aqueduct_03",
+     "PlayMakerFSM",
+     "Swamp Barnacle (6)"
+    ],
+    [
+     "aqueduct_03",
+     "PlayMakerFSM",
+     "Swamp Barnacle (7)"
+    ],
+    [
+     "aqueduct_04",
+     "PlayMakerFSM",
+     "Swamp Barnacle"
+    ],
+    [
+     "aqueduct_04",
+     "PlayMakerFSM",
+     "Swamp Barnacle (2)"
+    ],
+    [
+     "aqueduct_04",
+     "PlayMakerFSM",
+     "Swamp Barnacle (3)"
+    ],
+    [
+     "aqueduct_06",
+     "PlayMakerFSM",
+     "Swamp Barnacle"
+    ],
+    [
+     "aqueduct_06",
+     "PlayMakerFSM",
+     "Swamp Barnacle (2)"
+    ],
+    [
+     "aqueduct_06",
+     "PlayMakerFSM",
+     "Swamp Barnacle (3)"
+    ],
+    [
+     "aqueduct_06",
+     "PlayMakerFSM",
+     "Swamp Barnacle (4)"
+    ],
+    [
+     "aqueduct_06",
+     "PlayMakerFSM",
+     "Swamp Barnacle (5)"
+    ],
+    [
+     "aqueduct_07",
+     "PlayMakerFSM",
+     "Swamp Barnacle"
+    ],
+    [
+     "aqueduct_07",
+     "PlayMakerFSM",
+     "Swamp Barnacle (1)"
+    ],
+    [
+     "aqueduct_08",
+     "PlayMakerFSM",
+     "Swamp Barnacle (1)"
+    ],
+    [
+     "bone_east_07",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ],
+    [
+     "shadow_18",
+     "PlayMakerFSM",
+     "Swamp Shaman"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "White Flower": {
+   "at": [
+    [
+     "abyss_05",
+     "PlayMakerFSM",
+     "Abyss Water Control"
+    ],
+    [
+     "abyss_07",
+     "PlayMakerFSM",
+     "Abyss Water Control"
+    ],
+    [
+     "abyss_08",
+     "PlayMakerFSM",
+     "Abyss Water Control"
+    ],
+    [
+     "memory_red",
+     "PlayMakerFSM",
+     "door_wakeInRedMemory Beast"
+    ],
+    [
+     "memory_red",
+     "PlayMakerFSM",
+     "door_wakeInRedMemory Hive"
+    ],
+    [
+     "memory_red",
+     "PlayMakerFSM",
+     "door_wakeInRedMemory Root"
+    ],
+    [
+     "memory_red",
+     "PlayMakerFSM",
+     "door_wakeInRedMemory Weaver"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "White Ring": {
+   "at": [
+    [
+     "weave_03",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Wisp Lantern": {
+   "at": [
+    [
+     "belltown_08",
+     "CollectableItemPickup",
+     "Lantern Item"
+    ],
+    [
+     "wisp_02",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern"
+    ],
+    [
+     "wisp_02",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (1)"
+    ],
+    [
+     "wisp_07",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (1)"
+    ],
+    [
+     "wisp_07",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (2)"
+    ],
+    [
+     "wisp_08",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern"
+    ],
+    [
+     "wisp_08",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (1)"
+    ],
+    [
+     "wisp_08",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (2)"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  },
+  "Witch": {
+   "at": [
+    [
+     "ant_19",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "ant_20",
+     "PlayMakerFSM",
+     "Chapel Door Control"
+    ],
+    [
+     "belltown_room_doctor",
+     "PlayMakerFSM",
+     "Doctor Fly"
+    ],
+    [
+     "bone_east_18b",
+     "PlayMakerFSM",
+     "Bone Hunter Trapper"
+    ],
+    [
+     "bonegrave",
+     "PlayMakerFSM",
+     "Chapel Door Control"
+    ],
+    [
+     "chapel_wanderer",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "coral_39",
+     "PlayMakerFSM",
+     "Coral Warrior Grey"
+    ],
+    [
+     "greymoor_20b",
+     "PlayMakerFSM",
+     "Chapel Door Control"
+    ],
+    [
+     "greymoor_20c",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "organ_01",
+     "PlayMakerFSM",
+     "Phantom"
+    ],
+    [
+     "tut_04",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "tut_05",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "under_20",
+     "PlayMakerFSM",
+     "Crest Get Shrine"
+    ],
+    [
+     "wisp_02",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern"
+    ],
+    [
+     "wisp_02",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (1)"
+    ],
+    [
+     "wisp_07",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (1)"
+    ],
+    [
+     "wisp_07",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (2)"
+    ],
+    [
+     "wisp_08",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern"
+    ],
+    [
+     "wisp_08",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (1)"
+    ],
+    [
+     "wisp_08",
+     "PlayMakerFSM",
+     "Wisp Flame Lantern (2)"
+    ]
+   ],
+   "class": "ToolCrest"
+  },
+  "Wood Witch Item": {
+   "at": [
+    [
+     "belltown",
+     "PlayMakerFSM",
+     "Belltown Greeter NPC"
+    ],
+    [
+     "room_witch",
+     "PlayMakerFSM",
+     "Wood Witch"
+    ],
+    [
+     "shadow_20",
+     "CollectableItemPickup",
+     "Collectable Item Pickup (1)"
+    ]
+   ],
+   "class": "CollectableItemBasic"
+  },
+  "Zap Imbuement": {
+   "at": [
+    [
+     "coral_29",
+     "CollectableItemPickup",
+     "Collectable Item Pickup"
+    ]
+   ],
+   "class": "ToolItemBasic"
+  }
+ },
+ "npcs": {
+  "Architect NPC": [
+   [
+    "under_17",
+    "Architect NPC"
+   ]
+  ],
+  "Belltown Shop NPC": [
+   [
+    "belltown",
+    "Belltown Shop NPC"
+   ]
+  ],
+  "Caravan Troupe Leader Bone NPC": [
+   [
+    "bone_10",
+    "Caravan Troupe Leader Bone NPC"
+   ]
+  ],
+  "Caravan Troupe Leader Festival Intro": [
+   [
+    "aqueduct_05_festival",
+    "Caravan Troupe Leader Festival Intro"
+   ]
+  ],
+  "Caravan Troupe Leader Fleatopia NPC": [
+   [
+    "aqueduct_05_caravan",
+    "Caravan Troupe Leader Fleatopia NPC"
+   ]
+  ],
+  "Caravan Troupe Leader Greymoor NPC": [
+   [
+    "greymoor_08_caravan",
+    "Caravan Troupe Leader Greymoor NPC"
+   ]
+  ],
+  "Caravan Troupe Leader Judge NPC": [
+   [
+    "coral_judge_arena",
+    "Caravan Troupe Leader Judge NPC"
+   ]
+  ],
+  "City Merchant Bridge": [
+   [
+    "arborium_11",
+    "City Merchant Bridge"
+   ]
+  ],
+  "City Merchant Enclave": [
+   [
+    "song_enclave",
+    "City Merchant Enclave"
+   ]
+  ],
+  "City Merchant Meet": [
+   [
+    "song_07",
+    "City Merchant Meet"
+   ]
+  ],
+  "City Merchant Scavenge Generic": [
+   [
+    "hang_04",
+    "City Merchant Scavenge Generic"
+   ],
+   [
+    "library_03",
+    "City Merchant Scavenge Generic"
+   ]
+  ],
+  "Couriers Quest Giver": [
+   [
+    "belltown",
+    "Couriers Quest Giver"
+   ]
+  ],
+  "Crest Upgrade Shrine": [
+   [
+    "weave_10",
+    "Crest Upgrade Shrine"
+   ]
+  ],
+  "Dice Pilgrim": [
+   [
+    "coral_33",
+    "Dice Pilgrim"
+   ]
+  ],
+  "Forge Daughter": [
+   [
+    "room_forge",
+    "Forge Daughter"
+   ]
+  ],
+  "Grindle Chest Thief": [
+   [
+    "hang_08",
+    "Grindle Chest Thief"
+   ],
+   [
+    "song_03",
+    "Grindle Chest Thief"
+   ],
+   [
+    "song_17",
+    "Grindle Chest Thief"
+   ]
+  ],
+  "Grindle Citadel Barrel Meet": [
+   [
+    "song_08",
+    "Grindle Citadel Barrel Meet"
+   ]
+  ],
+  "Ladybug Craft Pickup": [
+   [
+    "bone_12",
+    "Ladybug Craft Pickup"
+   ]
+  ],
+  "Mapper Call Pole": [
+   [
+    "belltown",
+    "Mapper Call Pole"
+   ],
+   [
+    "bonetown",
+    "Mapper Call Pole"
+   ],
+   [
+    "greymoor_08_mapper",
+    "Mapper Call Pole"
+   ]
+  ],
+  "Mapper Control": [
+   [
+    "belltown",
+    "Mapper Control"
+   ],
+   [
+    "bonetown",
+    "Mapper Control"
+   ]
+  ],
+  "Mapper Master NPC": [
+   [
+    "shadow_24",
+    "Mapper Master NPC"
+   ]
+  ],
+  "Mapper NPC": [
+   [
+    "ant_04_mid",
+    "Mapper NPC"
+   ],
+   [
+    "belltown",
+    "Mapper NPC"
+   ],
+   [
+    "bone_04",
+    "Mapper NPC"
+   ],
+   [
+    "bone_east_01",
+    "Mapper NPC"
+   ],
+   [
+    "bonetown",
+    "Mapper NPC"
+   ],
+   [
+    "coral_12",
+    "Mapper NPC (1)"
+   ],
+   [
+    "crawl_01",
+    "Mapper NPC"
+   ],
+   [
+    "peak_02",
+    "Mapper NPC"
+   ],
+   [
+    "shellwood_16",
+    "Mapper NPC"
+   ]
+  ],
+  "Mapper Rest NPC": [
+   [
+    "belltown",
+    "Mapper Rest NPC"
+   ]
+  ],
+  "Mapper Sit NPC": [
+   [
+    "ant_20",
+    "Mapper Sit NPC"
+   ],
+   [
+    "belltown",
+    "Mapper Sit NPC"
+   ],
+   [
+    "bone_east_21",
+    "Mapper Sit NPC"
+   ],
+   [
+    "bonetown",
+    "Mapper Sit NPC"
+   ],
+   [
+    "coral_40",
+    "Mapper Sit NPC"
+   ],
+   [
+    "dust_10",
+    "Mapper Sit NPC"
+   ],
+   [
+    "greymoor_02",
+    "Mapper Sit NPC"
+   ],
+   [
+    "shadow_23",
+    "Mapper Sit NPC"
+   ]
+  ],
+  "Mapper Spar NPC": [
+   [
+    "greymoor_08_mapper",
+    "Mapper Spar NPC"
+   ]
+  ],
+  "Mapper StandGuard NPC": [
+   [
+    "greymoor_08",
+    "Mapper StandGuard NPC"
+   ],
+   [
+    "shellwood_01",
+    "Mapper StandGuard NPC"
+   ]
+  ],
+  "Mottled Ant Child NPC": [
+   [
+    "bone_east_22",
+    "Mottled Ant Child NPC"
+   ]
+  ],
+  "Mottled Ant Child NPC Hiding": [
+   [
+    "bone_east_22",
+    "Mottled Ant Child NPC Hiding"
+   ]
+  ],
+  "Nuu": [
+   [
+    "halfway_01",
+    "Nuu"
+   ]
+  ],
+  "Pinstress Boss": [
+   [
+    "peak_07",
+    "Pinstress Boss"
+   ]
+  ],
+  "Pinstress Control": [
+   [
+    "peak_07",
+    "Pinstress Control"
+   ]
+  ],
+  "Pinstress Interior Ground Sit": [
+   [
+    "room_pinstress",
+    "Pinstress Interior Ground Sit"
+   ]
+  ],
+  "Pinstress Interior NPC": [
+   [
+    "room_pinstress",
+    "Pinstress Interior NPC"
+   ]
+  ],
+  "Pinstress States": [
+   [
+    "room_pinstress",
+    "Pinstress States"
+   ]
+  ],
+  "Quest Board Covered Pivot": [
+   [
+    "belltown",
+    "Quest Board Covered Pivot"
+   ]
+  ],
+  "Quest Board Pivot": [
+   [
+    "belltown",
+    "Quest Board Pivot"
+   ],
+   [
+    "bonetown",
+    "Quest Board Pivot"
+   ],
+   [
+    "song_enclave",
+    "Quest Board Pivot"
+   ]
+  ],
+  "Relic Dealer NPC": [
+   [
+    "belltown_room_relic",
+    "Relic Dealer NPC"
+   ]
+  ],
+  "Seamstress": [
+   [
+    "bone_east_umbrella",
+    "Seamstress"
+   ]
+  ],
+  "Shakra Aid NPC": [
+   [
+    "hang_06",
+    "Shakra Aid NPC"
+   ]
+  ],
+  "Shakra Fighter": [
+   [
+    "ant_04_mid",
+    "Shakra Fighter"
+   ],
+   [
+    "hang_04_boss",
+    "Shakra Fighter"
+   ]
+  ]
+ }
+}

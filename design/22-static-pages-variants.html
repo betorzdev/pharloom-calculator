@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Static pages: variants</title>
+<!-- Design material, not part of the site (design/03-redesign.md, step 10). The block the static
+     pages carry under the screens (tools/pages.js, «about»: the text a search engine reads, its
+     questions and the links to the other pages), drawn three ways over Lace's boss page, whose
+     text is inlined as the page has it. ?v=now|a|b|c&w=1440|390 -->
+<base href="../">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/app.css">
+<style>
+.mk-bar { position: fixed; z-index: 90; left: 50%; bottom: var(--sp-2); transform: translateX(-50%); display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--sp-1) var(--sp-3); width: max-content; max-width: calc(100vw - var(--sp-4)); padding: var(--sp-2) var(--sp-3); background: color-mix(in oklab, var(--scene-bg) 94%, transparent); border: 1px solid var(--line-panel); font-family: var(--font-num); font-size: var(--fs-xs); color: var(--muted); }
+.mk-bar b { color: var(--label); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; font-size: var(--fs-2xs); }
+.mk-bar button { padding: var(--sp-1) var(--sp-2); border: 1px solid var(--line-ctl); color: var(--ink-2); font: inherit; }
+.mk-bar button[aria-pressed="true"] { color: var(--ink-strong); border-color: var(--accent-line); background: var(--picked); }
+.mk-note { flex-basis: 100%; text-align: center; color: var(--ink-2); }
+html.is-framed body { background: var(--scene-bg); }
+.mk-phone { display: block; margin: var(--sp-4) auto calc(var(--sp-16) * 2); width: 390px; height: calc(100vh - var(--sp-16) * 2 - var(--sp-8)); border: 1px solid var(--line-panel); }
+html.is-inner .mk-bar { display: none; }
+.page { padding-top: var(--sp-8); padding-bottom: calc(var(--sp-16) * 2.5); }
+.ghost { height: 120px; display: grid; place-items: center; border: 1px dashed var(--line); color: var(--muted); font-size: var(--fs-xs); margin-bottom: var(--sp-8); }
+.lbl { margin: 0 0 var(--sp-3); font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
+/* Shared: questions as folds, the bosses as ringed portraits. */
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: var(--sp-3); padding: var(--sp-3) 0; font-size: var(--fs-sm); color: var(--ink); }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '+'; color: var(--muted); }
+.faq details[open] summary::after { content: '−'; }
+.faq p { margin: 0 0 var(--sp-3); font-size: var(--fs-sm); color: var(--ink-2); }
+.bgrid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: var(--sp-3) var(--sp-2); }
+.bgrid a { display: grid; justify-items: center; gap: var(--sp-1); text-decoration: none; font-size: var(--fs-2xs); color: var(--ink-2); text-align: center; line-height: 1.25; }
+.bgrid .hj-ring { width: 52px; }
+.bgrid a:hover { color: var(--accent); }
+.chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.chips a { display: inline-block; padding: var(--sp-1) var(--sp-3); border: 1px solid var(--line-ctl); font-size: var(--fs-xs); color: var(--ink-2); text-decoration: none; }
+.chips a:hover { border-color: var(--accent-line); color: var(--ink-strong); }
+.read { max-width: 68ch; }
+.read p { margin: 0 0 var(--sp-3); font-size: var(--fs-md); line-height: 1.65; color: var(--ink-2); text-wrap: pretty; }
+.read h1 { margin: 0 0 var(--sp-4); font-family: var(--font-display); font-size: var(--fs-xl); color: var(--ink-strong); }
+
+/* A · a screen of its own: the pause menu's frame, the plaque title, facts as a card. */
+.a { position: relative; margin-top: var(--sp-8); padding: var(--sp-12) var(--sp-8) var(--sp-8); background: var(--scene-floor); border: 1px solid var(--line-panel); }
+.a .plaque { position: absolute; left: 50%; top: 0; transform: translate(-50%, -50%); padding: var(--sp-2) var(--sp-6); background: var(--scene-floor); border: 1px solid var(--filigree); font-family: var(--font-display); letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--ink-strong); font-size: var(--fs-sm); white-space: nowrap; }
+.a-top { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: var(--sp-8); }
+.facts { display: grid; gap: var(--sp-2); align-content: start; padding: var(--sp-4); border: 1px solid var(--line); }
+.facts div { display: flex; justify-content: space-between; gap: var(--sp-3); font-size: var(--fs-sm); color: var(--ink-2); border-bottom: 1px solid var(--line); padding-bottom: var(--sp-2); }
+.facts b { font-family: var(--font-num); color: var(--ink-strong); }
+.a section { margin-top: var(--sp-8); }
+
+/* B · editorial: text and questions in two columns on the page's red, links as chips. */
+.b { margin-top: var(--sp-8); padding-top: var(--sp-8); border-top: 1px solid var(--line); display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: var(--sp-12); }
+.b section + section { margin-top: var(--sp-8); }
+
+/* C · folded: title, the first line and «Read more»; the lists compact. */
+.c { margin-top: var(--sp-8); padding-top: var(--sp-6); border-top: 1px solid var(--line); text-align: center; }
+.c h1 { margin: 0 0 var(--sp-2); font-family: var(--font-display); font-size: var(--fs-lg); color: var(--ink-strong); }
+.c > p { max-width: 68ch; margin: 0 auto; color: var(--ink-2); font-size: var(--fs-sm); }
+.c .more { display: inline-block; margin-top: var(--sp-3); font-size: var(--fs-xs); color: var(--ink-2); border-bottom: 1px solid var(--accent-line); }
+.c .chips { justify-content: center; margin-top: var(--sp-6); }
+.c .bgrid { margin-top: var(--sp-6); grid-template-columns: repeat(auto-fill, minmax(44px, 1fr)); }
+.c .bgrid a > span:last-child { display: none; }
+.c .bgrid .hj-ring { width: 40px; }
+@media (max-width: 899px) { .a-top, .b { grid-template-columns: 1fr; } .a { padding: var(--sp-12) var(--sp-4) var(--sp-6); } }
+</style>
+</head>
+<body>
+<div class="page"><div class="shell"><div id="mk"></div></div></div>
+<div class="mk-bar"><b>Variant</b><button data-key="v" data-val="now">today</button><button data-key="v" data-val="a">A · pantalla propia</button><button data-key="v" data-val="b">B · editorial</button><button data-key="v" data-val="c">C · plegado</button>
+  <b>Width</b><button data-key="w" data-val="1440">desktop</button><button data-key="w" data-val="390">390</button><span class="mk-note" id="note"></span></div>
+<script>
+const ABOUT = "<section class=\"about\" id=\"about\" lang=\"en\" aria-labelledby=\"about-h\">\n      <h1 id=\"about-h\">Lace: health, attacks and hits to kill</h1>\n      <p>A boss fight in Hollow Knight: Silksong against <strong>Lace</strong>, in Deep Docks and The Cradle. The Hunter's Journal says: \"Manic fencer who delights in battle.\"</p>\n      <p>Fought 2 times: Lace, 250 health; Lace (The Cradle), 800 health.</p>\n      <p>With the Needle alone (a Hunter's Crest with no Tools or modifiers), with the Needle, Sharpened Needle, Shining Needle, Hivesteel Needle and Pale Steel Needle: Lace: 50, 28, 20, 15 and 12 slashes; Lace (The Cradle): 89, 73, 62, 58 and 45 slashes.</p>\n      <p>With the Hunter's Crest, a slash every 0.41 s (the game's own pace, from its files): with the Pale Steel Needle, 4.5 s of nonstop slashing.</p>\n      <p>Attacks, as the wiki names them (the game doesn't): Lunge, Double Cut, Balestra, Parry & Riposte (2 masks), Flourish, Retreat, Advance, Moulinet (2 masks), Triple Cut, Double Lunge.</p>\n      <p>Staggered after 11 and 16 hits.</p>\n      <p>Phases, from the game's own files: Lace: phase 2 at 125 health (50%); Lace (The Cradle): phase 2 at 600 health (75%) and phase 3 at 320 health (40%).</p>\n      <p>Reward: Silk Heart.</p>\n      <p>This page opens the damage calculator with this boss picked: with your save or your build, each of your attacks' damage, how many it takes, and what each of its attacks does to you.</p>\n      <div class=\"about-faq\">\n        <h2>Questions</h2>\n        <h3>What is Lace's health in Silksong?</h3>\n        <p>Fought 2 times: Lace, 250 health; Lace (The Cradle), 800 health.</p>\n        <h3>How many hits does it take to beat Lace?</h3>\n        <p>It depends on your Needle and your Tools: with the Needle alone, from 50 slashes with the Needle to 12 with the Pale Steel Needle. For your exact build, open the calculator on this page.</p>\n      </div>\n      <nav class=\"about-more\" aria-label=\"More on the site\">\n        <h2>More on the site</h2>\n        <ul>\n          <li><a href=\"./\" data-page>Home</a></li>\n          <li><a href=\"save-analyzer/\" data-page>Save analyzer</a></li>\n          <li><a href=\"100-percent-checklist/\" data-page>100% checklist</a></li>\n          <li><a href=\"map/\" data-page>Map</a></li>\n          <li><a href=\"hunters-journal/\" data-page>Hunter's Journal</a></li>\n          <li><a href=\"tools-and-crests/\" data-page>Tools and Crests</a></li>\n          <li><a href=\"damage-calculator/\" data-page>Damage calculator</a></li>\n        </ul>\n      </nav>\n      <nav class=\"about-more\" aria-label=\"Bosses\">\n        <h2>Bosses</h2>\n        <ul>\n          <li><a href=\"bosses/moss-mother/\" data-page>Moss Mother</a></li>\n          <li><a href=\"bosses/skull-tyrant/\" data-page>Skull Tyrant</a></li>\n          <li><a href=\"bosses/savage-beastfly/\" data-page>Savage Beastfly</a></li>\n          <li><a href=\"bosses/flintbeetle/\" data-page>Flintbeetle</a></li>\n          <li><a href=\"bosses/rhinogrund/\" data-page>Rhinogrund</a></li>\n          <li><a href=\"bosses/bell-beast/\" data-page>Bell Beast</a></li>\n          <li><a href=\"bosses/covetous-pilgrim/\" data-page>Covetous Pilgrim</a></li>\n          <li><a href=\"bosses/forebrothers-signis-and-gron/\" data-page>Forebrothers Signis & Gron</a></li>\n          <li><a href=\"bosses/fourth-chorus/\" data-page>Fourth Chorus</a></li>\n          <li><a href=\"bosses/skarrgard/\" data-page>Skarrgard</a></li>\n          <li><a href=\"bosses/gurr-the-outcast/\" data-page>Gurr the Outcast</a></li>\n          <li><a href=\"bosses/last-claw/\" data-page>Last Claw</a></li>\n          <li><a href=\"bosses/skarrsinger-karmelita/\" data-page>Skarrsinger Karmelita</a></li>\n          <li><a href=\"bosses/moorwing/\" data-page>Moorwing</a></li>\n          <li><a href=\"bosses/father-of-the-flame/\" data-page>Father of the Flame</a></li>\n          <li><a href=\"bosses/crawfather/\" data-page>Crawfather</a></li>\n          <li><a href=\"bosses/disgraced-chef-lugoli/\" data-page>Disgraced Chef Lugoli</a></li>\n          <li><a href=\"bosses/groal-the-great/\" data-page>Groal the Great</a></li>\n          <li><a href=\"bosses/sister-splinter/\" data-page>Sister Splinter</a></li>\n          <li><a href=\"bosses/shrine-guardian-seth/\" data-page>Shrine Guardian Seth</a></li>\n          <li><a href=\"bosses/nyleth/\" data-page>Nyleth</a></li>\n          <li><a href=\"bosses/last-judge/\" data-page>Last Judge</a></li>\n          <li><a href=\"bosses/raging-conchfly/\" data-page>Great Conchfly</a></li>\n          <li><a href=\"bosses/karak-gor/\" data-page>Karak Gor</a></li>\n          <li><a href=\"bosses/corrcrust-karaka/\" data-page>Corrcrust Karaka</a></li>\n          <li><a href=\"bosses/crust-king-khann/\" data-page>Crust King Khann</a></li>\n          <li><a href=\"bosses/watcher-at-the-edge/\" data-page>Watcher at the Edge</a></li>\n          <li><a href=\"bosses/voltvyrm/\" data-page>Voltvyrm</a></li>\n          <li><a href=\"bosses/choir-clapper/\" data-page>Choir Clapper</a></li>\n          <li><a href=\"bosses/second-sentinel/\" data-page>Second Sentinel</a></li>\n          <li><a href=\"bosses/the-unravelled/\" data-page>The Unravelled</a></li>\n          <li><a href=\"bosses/cogwork-clapper/\" data-page>Cogwork Clapper</a></li>\n          <li><a href=\"bosses/cogwork-dancers/\" data-page>Cogwork Dancers</a></li>\n          <li><a href=\"bosses/trobbio/\" data-page>Trobbio</a></li>\n          <li><a href=\"bosses/tormented-trobbio/\" data-page>Tormented Trobbio</a></li>\n          <li><a href=\"bosses/broodmother/\" data-page>Broodmother</a></li>\n          <li><a href=\"bosses/plasmified-zango/\" data-page>Plasmified Zango</a></li>\n          <li><a href=\"bosses/palestag/\" data-page>Palestag</a></li>\n          <li><a href=\"bosses/clover-dancers/\" data-page>Clover Dancers</a></li>\n          <li><a href=\"bosses/summoned-saviour/\" data-page>Summoned Saviour</a></li>\n          <li><a href=\"bosses/bell-eater/\" data-page>Bell Eater</a></li>\n          <li><a href=\"bosses/shakra/\" data-page>Shakra</a></li>\n          <li><a href=\"bosses/garmond-and-zaza/\" data-page>Garmond & Zaza</a></li>\n          <li><a href=\"bosses/lost-garmond/\" data-page>Lost Garmond</a></li>\n          <li><a href=\"bosses/pinstress/\" data-page>Pinstress</a></li>\n          <li><a href=\"bosses/widow/\" data-page>Widow</a></li>\n          <li><a href=\"bosses/first-sinner/\" data-page>First Sinner</a></li>\n          <li><a href=\"bosses/phantom/\" data-page>Phantom</a></li>\n          <li><a href=\"bosses/grand-mother-silk/\" data-page>Grand Mother Silk</a></li>\n          <li><a href=\"bosses/lost-lace/\" data-page>Lost Lace</a></li>\n        </ul>\n      </nav>\n    </section>";
+const BOSSES = [["bosses/moss-mother/","Moss Mother","assets/icons/journal/moss-mother.webp"],["bosses/skull-tyrant/","Skull Tyrant","assets/icons/journal/skull-tyrant.webp"],["bosses/savage-beastfly/","Savage Beastfly","assets/icons/journal/savage-beastfly.webp"],["bosses/flintbeetle/","Flintbeetle","assets/icons/journal/flintbeetle.webp"],["bosses/rhinogrund/","Rhinogrund","assets/icons/journal/rhinogrund.webp"],["bosses/bell-beast/","Bell Beast","assets/icons/journal/bell-beast.webp"],["bosses/covetous-pilgrim/","Covetous Pilgrim","assets/icons/journal/covetous-pilgrim.webp"],["bosses/forebrothers-signis-and-gron/","Forebrothers Signis & Gron","assets/icons/journal/forebrothers-signis-and-gron.webp"],["bosses/fourth-chorus/","Fourth Chorus","assets/icons/journal/fourth-chorus.webp"],["bosses/skarrgard/","Skarrgard","assets/icons/journal/skarrgard.webp"],["bosses/gurr-the-outcast/","Gurr the Outcast","assets/icons/journal/gurr-the-outcast.webp"],["bosses/last-claw/","Last Claw","assets/icons/journal/last-claw.webp"],["bosses/skarrsinger-karmelita/","Skarrsinger Karmelita","assets/icons/journal/skarrsinger-karmelita.webp"],["bosses/moorwing/","Moorwing","assets/icons/journal/moorwing.webp"],["bosses/father-of-the-flame/","Father of the Flame","assets/icons/journal/father-of-the-flame.webp"],["bosses/crawfather/","Crawfather","assets/icons/journal/crawfather.webp"],["bosses/disgraced-chef-lugoli/","Disgraced Chef Lugoli","assets/icons/journal/disgraced-chef-lugoli.webp"],["bosses/groal-the-great/","Groal the Great","assets/icons/journal/groal-the-great.webp"],["bosses/sister-splinter/","Sister Splinter","assets/icons/journal/sister-splinter.webp"],["bosses/shrine-guardian-seth/","Shrine Guardian Seth","assets/icons/journal/shrine-guardian-seth.webp"],["bosses/nyleth/","Nyleth","assets/icons/journal/nyleth.webp"],["bosses/last-judge/","Last Judge","assets/icons/journal/last-judge.webp"],["bosses/raging-conchfly/","Great Conchfly","assets/icons/journal/great-conchfly.webp"],["bosses/karak-gor/","Karak Gor","assets/icons/journal/karak-gor.webp"],["bosses/corrcrust-karaka/","Corrcrust Karaka","assets/icons/journal/corrcrust-karaka.webp"],["bosses/crust-king-khann/","Crust King Khann","assets/icons/journal/crust-king-khann.webp"],["bosses/watcher-at-the-edge/","Watcher at the Edge","assets/icons/journal/watcher-at-the-edge.webp"],["bosses/voltvyrm/","Voltvyrm","assets/icons/journal/voltvyrm.webp"],["bosses/choir-clapper/","Choir Clapper","assets/icons/journal/choir-clapper.webp"],["bosses/second-sentinel/","Second Sentinel","assets/icons/journal/second-sentinel.webp"],["bosses/the-unravelled/","The Unravelled","assets/icons/journal/the-unravelled.webp"],["bosses/cogwork-clapper/","Cogwork Clapper","assets/icons/journal/cogwork-clapper.webp"],["bosses/cogwork-dancers/","Cogwork Dancers","assets/icons/journal/cogwork-dancers.webp"],["bosses/trobbio/","Trobbio","assets/icons/journal/trobbio.webp"],["bosses/tormented-trobbio/","Tormented Trobbio","assets/icons/journal/tormented-trobbio.webp"],["bosses/broodmother/","Broodmother","assets/icons/journal/broodmother.webp"],["bosses/plasmified-zango/","Plasmified Zango","assets/icons/journal/plasmified-zango.webp"],["bosses/palestag/","Palestag","assets/icons/journal/palestag.webp"],["bosses/clover-dancers/","Clover Dancers","assets/icons/journal/clover-dancers.webp"],["bosses/summoned-saviour/","Summoned Saviour","assets/icons/journal/summoned-saviour.webp"],["bosses/bell-eater/","Bell Eater","assets/icons/journal/bell-eater.webp"],["bosses/shakra/","Shakra","assets/icons/journal/shakra.webp"],["bosses/garmond-and-zaza/","Garmond & Zaza","assets/icons/journal/garmond-and-zaza.webp"],["bosses/lost-garmond/","Lost Garmond","assets/icons/journal/lost-garmond.webp"],["bosses/pinstress/","Pinstress","assets/icons/journal/pinstress.webp"],["bosses/widow/","Widow","assets/icons/journal/widow.webp"],["bosses/first-sinner/","First Sinner","assets/icons/journal/first-sinner.webp"],["bosses/phantom/","Phantom","assets/icons/journal/phantom.webp"],["bosses/grand-mother-silk/","Grand Mother Silk","assets/icons/journal/grand-mother-silk.webp"],["bosses/lost-lace/","Lost Lace","assets/icons/journal/lost-lace.webp"]];
+(function () {
+  const DEF = { v: 'a', w: '1440' };
+  const q = new URLSearchParams(location.search);
+  const st = Object.fromEntries(Object.keys(DEF).map((k) => [k, q.get(k) || DEF[k]]));
+  const inner = q.has('inner'), html = document.documentElement;
+  const box = document.createElement('div'); box.innerHTML = ABOUT;
+  const h1 = box.querySelector('h1').textContent;
+  const paras = [...box.querySelectorAll('section > p')].map((p) => p.innerHTML);
+  const qs = [...box.querySelectorAll('.about-faq h3')].map((h) => [h.textContent, h.nextElementSibling.innerHTML]);
+  const more = [...box.querySelectorAll('.about-more')[0].querySelectorAll('a')].map((a) => a.textContent);
+  const faq = '<div class="faq">' + qs.map(([q, a], i) => '<details' + (i ? '' : ' open') + '><summary>' + q + '</summary><p>' + a + '</p></details>').join('') + '</div>';
+  const chips = '<ul class="chips">' + more.map((m) => '<li><a href="#">' + m + '</a></li>').join('') + '</ul>';
+  const grid = '<ul class="bgrid">' + BOSSES.map(([h, n, p]) => '<li><a href="#" title="' + n + '"><span class="hj-ring is-done" style="--f:1"><img src="' + p + '" alt=""></span><span>' + n + '</span></a></li>').join('') + '</ul>';
+  const ghost = '<div class="ghost">(la pantalla de Combate, arriba)</div>';
+  const NOTES = {
+    now: 'Hoy: el texto sobre el fondo rojo, los datos repetidos en párrafos largos, las preguntas abiertas y 50 nombres de jefes subrayados en fila.',
+    a: 'A · pantalla propia: el bloque dentro del mismo marco negro que las pantallas, con su título en la placa; los datos del jefe como una ficha al lado del texto; las preguntas plegables; los jefes como retratos en anillo (como el Diario) y las demás páginas como botones.',
+    b: 'B · editorial: sobre el fondo, en dos columnas: el texto a una medida cómoda de lectura a la izquierda, las preguntas plegables a la derecha; debajo, las páginas como botones y los jefes como retratos.',
+    c: 'C · plegado: solo el título y la primera frase, con «Leer más» para el resto; las páginas como botones y los jefes como una tira de retratos pequeños sin nombre (el nombre al pasar el ratón).' };
+  function render() {
+    let h = ghost;
+    if (st.v === 'now') h += ABOUT;
+    if (st.v === 'a') h += '<section class="a"><span class="plaque">Lace</span><div class="a-top"><div class="read"><h1>' + h1 + '</h1>' + paras.slice(0, 2).map((p) => '<p>' + p + '</p>').join('') + '</div>' +
+      '<div class="facts"><p class="lbl">De un vistazo</p><div><span>Vida</span><b>250 · 800</b></div><div><span>Se aturde tras</span><b>11 · 16</b></div><div><span>Fases</span><b>2 · 3</b></div><div><span>Recompensa</span><b>Corazón de seda</b></div><div><span>Con la Aguja sola</span><b>50 → 12 tajos</b></div></div></div>' +
+      '<section><p class="lbl">Preguntas</p>' + faq + '</section><section><p class="lbl">Jefes</p>' + grid + '</section><section><p class="lbl">Más en el sitio</p>' + chips + '</section></section>';
+    if (st.v === 'b') h += '<div class="b"><div class="read"><h1>' + h1 + '</h1>' + paras.map((p) => '<p>' + p + '</p>').join('') + '</div><div><section><p class="lbl">Preguntas</p>' + faq + '</section><section><p class="lbl">Más en el sitio</p>' + chips + '</section></div></div><section style="margin-top:var(--sp-8)"><p class="lbl">Jefes</p>' + grid + '</section>';
+    if (st.v === 'c') h += '<div class="c"><h1>' + h1 + '</h1><p>' + paras[0] + '</p><span class="more">Leer más ⌄</span>' + chips + grid + '</div>';
+    document.getElementById('mk').innerHTML = h;
+  }
+  const url = (over) => '?' + new URLSearchParams(Object.assign({}, st, over)).toString();
+  if (st.w === '390' && !inner) { html.classList.add('is-framed'); document.querySelector('.page').remove(); const f = document.createElement('iframe'); f.className = 'mk-phone'; f.src = location.pathname + url({ inner: 1 }); document.body.prepend(f); }
+  if (inner) html.classList.add('is-inner');
+  for (const b of document.querySelectorAll('.mk-bar button')) b.setAttribute('aria-pressed', String(st[b.dataset.key] === b.dataset.val));
+  document.getElementById('note').textContent = NOTES[st.v];
+  if (document.getElementById('mk')) render();
+  document.addEventListener('click', (ev) => { const b = ev.target.closest('.mk-bar button'); if (b) location.search = url({ [b.dataset.key]: b.dataset.val }); });
+})();
+</script>
+</body>
+</html>

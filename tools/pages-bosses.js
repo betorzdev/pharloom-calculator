@@ -83,6 +83,12 @@ const W = {
   drops: { es: 'Recompensa: {x}.', en: 'Reward: {x}.' },
   more: { es: 'Esta página abre la calculadora de daño con este jefe elegido: con tu partida o tu build, el daño de cada uno de tus ataques, cuántos hacen falta y lo que te hace a ti cada uno de los suyos.',
     en: 'This page opens the damage calculator with this boss picked: with your save or your build, each of your attacks\' damage, how many it takes, and what each of its attacks does to you.' },
+  // The guide page's parts (tools/pages.js, about): the figures' labels.
+  figHp: { es: 'de vida', en: 'health' },
+  figHpOf: { es: 'de vida · {f}', en: 'health · {f}' },
+  figSlashes: { es: 'tajos, con la aguja sola', en: 'slashes, Needle alone' },
+  figStagger: { es: 'golpes para aturdir', en: 'hits to stagger' },
+  phaseMark: { es: 'fase {n}', en: 'phase {n}' },
   qHp: { es: '{n} en Silksong: ¿cuánta vida?', en: 'What is {n}\'s health in Silksong?' },
   qHits: { es: '¿Cuántos golpes hacen falta para vencer a {n}?', en: 'How many hits does it take to beat {n}?' },
   aHits: { es: 'Depende de tu aguja y de tus herramientas: con la aguja sola, de {most} tajos con la {first} a {fewest} con la {last}. Con tu build exacta, abre la calculadora en esta página.',
@@ -184,8 +190,25 @@ function bossPage(page) {
     faq.push({ q: both(W.qHits, (lang) => ({ n: n(lang) })), a: both(W.aHits, (lang) => ({ most: num(s[0].uses, lang), fewest: num(s[4].uses, lang),
       first: NEEDLES[0][lang], last: NEEDLES[4][lang] })) });
   }
+  /* The guide page's parts, from the same figures: the Journal's drawing and words, the figures
+     in a row, each attack once with its masks, each fight's phases as marks on its health. */
+  const figs = fought.slice(0, 2).map((f) => ({ v: { es: num(f.hp, 'es'), en: num(f.hp, 'en') },
+    k: fought.length > 1 ? both(W.figHpOf, (lang) => ({ f: fightName(f, lang) })) : W.figHp }));
+  if (fought.length) {
+    const s = slashes(fought[0]);
+    figs.push({ v: both({ es: '{a} → {b}', en: '{a} → {b}' }, (lang) => ({ a: num(s[0].uses, lang), b: num(s[4].uses, lang) })), k: W.figSlashes });
+  }
+  if (atk.staggers.length) figs.push({ v: both({ es: '{x}', en: '{x}' }, (lang) => ({ x: [...new Set(atk.staggers)].map((k) => num(k, lang)).join(' · ') })), k: W.figStagger });
+  const guide = {
+    name, art: entry ? `assets/journal/art/${entry.key.toLowerCase()}.webp` : null, quote: entry ? entry.desc : null, figs,
+    attacks: attacks.map((a) => ({ name: a.name.en, masks: (a.masks || [1]).reduce((t, k) => t + k, 0) })),
+    phases: ph.map(([f, l]) => ({ name: { es: fightName(f, 'es'), en: fightName(f, 'en') }, hp: f.hp,
+      marks: l.map((x) => ({ n: x.n, at: PH[f.id].bars ? f.hp - x.dealt : x.left })).filter((x) => x.at > 0 && x.at < f.hp) })).filter((x) => x.marks.length),
+    reward: info.drops ? { es: list(info.drops.map((d) => d.es), 'es'), en: list(info.drops.map((d) => d.en), 'en') } : null,
+    icon: entry ? `assets/icons/journal/${entry.id}.webp` : null,
+  };
   return {
-    id: 'boss-' + page, view: 'fight', foe: main.id, boss: true,
+    id: 'boss-' + page, view: 'fight', foe: main.id, boss: true, guide,
     slug: { es: 'jefes/' + page, en: 'bosses/' + page },
     link: { es: name.es, en: name.en },
     title, h1: both(W.h1, (lang) => ({ n: n(lang) })),

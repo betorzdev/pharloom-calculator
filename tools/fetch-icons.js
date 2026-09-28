@@ -21,7 +21,18 @@ const TWINS = { curvesickle: 'Curveclaw', 'druids-eyes': "Druid's Eye", 'claw-mi
 const FILE = {
   'items/tool-pouch': 'Tool Pouch.png', 'items/crafting-kit': 'Crafting Kit.png',
   'items/mask-shard': 'Mask Shard.png', 'items/spool-fragment': 'Spool Fragment.png',
+  'extras/rosary-cache': 'Rosaries large.png', 'extras/shard-cache': 'Shell Shards large.png',
+  'extras/arcane-egg': 'Arcane Egg Silksong.png', 'items/needle': 'Needle 1 Needle.png',
 };
+/* The Map's things beyond the 100% (js/spots.js EXTRAS), by their wiki pages: the relics, the
+   Mossberry, the Silkeater, each Memento, and the caches' currencies. */
+const EXTRAS = [['bone-scroll', 'Bone Scroll'], ['weaver-effigy', 'Weaver Effigy'], ['choral-commandment', 'Choral Commandment'],
+  ['rune-harp', 'Rune Harp'], ['psalm-cylinder', 'Psalm Cylinder'], ['arcane-egg', 'Arcane Egg'], ['mossberry', 'Mossberry'],
+  ['silkeater', 'Silkeater'], ['rosary-cache', 'Rosaries'], ['shard-cache', 'Shell Shards'],
+  ['grey-memento', 'Grey Memento'], ['heros-memento', "Hero's Memento"], ['surface-memento', 'Surface Memento'],
+  ['hunters-memento', "Hunter's Memento"], ['craw-memento', 'Craw Memento'], ['sprintmaster-memento', 'Sprintmaster Memento'],
+  ['guardians-memento', "Guardian's Memento"]];
+const ONLY = (process.argv.find((a) => a.startsWith('--only=')) || '').slice(7).split(',').filter(Boolean);
 
 const has = (t) => fs.existsSync(path.join(W.RAW, t.replace(/[/ ]/g, '_') + '.wiki'));
 const titleOf = (en, extra = []) => [en, ...extra.map((x) => x.replace('%', en)), en + ' (Silksong)'].find(has);
@@ -58,6 +69,8 @@ function get(url, hops = 5) {
     const t = titleOf(en, extra);
     jobs.push([key, t ? imageOf(W.page(t), '', t) : null]);
   };
+  for (const [id, en] of EXTRAS) add('extras', id, en);
+  jobs.push(['items/needle', FILE['items/needle']]);
   for (const x of D.TOOLS) add('tools', x.id, x.name.en);
   for (const x of D.CRESTS) add('crests', x.id, x.name.en, ['% Crest']);
   /* The Silk Skills and abilities: the inventory's art, one family on the wiki, "Icon SS <Name>
@@ -87,7 +100,7 @@ function get(url, hops = 5) {
   if (missing.length) console.log('no picture found for:', missing.join(', '));
   let n = 0;
   for (const [key, file] of jobs) {
-    if (!file) continue;
+    if (!file || (ONLY.length && !ONLY.includes(key.split('/')[0]) && !ONLY.includes(key))) continue;
     try {
       const buf = await get('https://hollowknight.wiki/w/Special:FilePath/' + encodeURIComponent(file.replace(/ /g, '_')));
       const to = path.join(OUT, key + '.png');

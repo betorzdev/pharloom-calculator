@@ -409,6 +409,8 @@
       render();
     },
     view(node) { go(node.dataset.value, !node.closest('#nav, .masthead')); },
+    // The About block's button (tools/pages.js): up to the screen it's about.
+    aboutUp() { const m = document.querySelector('.screens'); if (m) m.scrollIntoView({ behavior: 'smooth', block: 'start' }); },
     aboutFold() { aboutOpen = true; renderAbout(); const h = el.about.querySelector('h1'); if (h) { h.setAttribute('tabindex', '-1'); h.focus(); } },
   };
   document.addEventListener('click', (ev) => {

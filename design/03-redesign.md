@@ -40,8 +40,8 @@ the work up reads it first, then the step it's on.
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds) | [`15-journal-variants.html`](15-journal-variants.html) |
 | 8 | Crest (`tools`) | **Built** (28 Sep) | [`18-crest-variants.html`](18-crest-variants.html) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
-| 10 | **Next** · The static pages (`tools/pages*.js`: `bosses/`, `es/jefes/`, the landing folders): they inherit steps 1 and 2; only what's theirs | To do | |
-| 11 | **Everything on the map**: each Tool, Crest, Silk Skill, ability, boss, NPC, vendor, wish and Journal enemy in its room (data from the game's files or the wiki; today only the loose pieces, the stations and the gauntlets have a room), new layers grouped as mapgenie's, the rest of the game's pins. After the tabs (Albert, 28 Sep) | To do | |
+| 10 | **Built** (28 Sep) · The static pages (`tools/pages*.js`: `bosses/`, `es/jefes/`, the landing folders): they inherit steps 1 and 2; only what's theirs | To do | |
+| 11 | **Next** · **Everything on the map**: each Tool, Crest, Silk Skill, ability, boss, NPC, vendor, wish and Journal enemy in its room (data from the game's files or the wiki; today only the loose pieces, the stations and the gauntlets have a room), new layers grouped as mapgenie's, the rest of the game's pins. After the tabs (Albert, 28 Sep) | To do | |
 
 ## Step 1 · The shell
 
@@ -817,4 +817,93 @@ Then (Albert: «it should be clickable to simulate the fight, as the sibling»),
 the Bind's cost and heal), each Tool's uses, the phase thresholds; the cards, its rows and a Bind
 button act (`ftAct`), greyed when they can't; a four-line log under the duel with Undo and Start
 over. No clock and no stagger, unlike the sibling's arena. Gauntlets aren't played.
+
+## Step 10 · The static pages
+
+### What there is (28 September 2026)
+
+The 116 generated pages (`tools/pages.js`: the landing folders and one per boss, in each
+language) are `index.html` again, opened on their screen; steps 1 to 9 reach them as they are.
+What's theirs is the block under the screens (`.about`): the text a search engine reads, on the
+page's red with no frame, the boss's facts repeated in long paragraphs, the questions open, the
+other pages as underlined links and, on Combat's pages, the 50 bosses as a wrapped row of
+underlined names. The sibling has the same block, unchanged.
+
+### The options (`22-static-pages-variants.html`, Lace's page)
+
+The text stays in the page (it's what the search engine reads); only how it shows changes.
+
+- **A · a screen of its own**: the block in the screens' black frame with its plaque title, the
+  boss's facts as a card beside the text, the questions folded, the bosses as ringed portraits,
+  the other pages as buttons.
+- **B · editorial**: on the page's red in two columns (the text at a reading measure; the
+  questions folded and the pages as buttons), the bosses as portraits under them.
+- **C · folded**: the title, the first line and «Read more»; the pages as buttons and the bosses
+  as a strip of small portraits, named on hover.
+
+### Second round (28 September 2026)
+
+Albert: none of the three; more attractive alternatives (another black box isn't it).
+`23-static-pages-round2.html`, Lace's page again:
+
+- **D · the boss's page**: a guide page on the main menu's red, no box: its drawing large with
+  the title over it and the Journal's quote, a «Try it with your build» button up to the
+  calculator, its figures in a row between filigree, its attacks with masks, the phases on a
+  bar, the questions folded, every boss as portraits, the other pages with their icon.
+- **E · as the Journal**: laid out as the game's Journal entry (the drawing on its light, the
+  name under the filigree, the text), the questions as the Hunter's notes under her symbol.
+- **F · lit cards**: each part a card of dark glass over the red, in a grid.
+
+Decision: **D · the boss's page**, built. `tools/pages-bosses.js` adds `guide` (the Journal's
+drawing and words, the figures, each attack with its masks, each fight's phase marks, the reward,
+the portrait); `tools/pages-text.js` gives each landing page `art`, `icon` and `cta`;
+`tools/pages.js` `about()` writes the hero (`.about-hero`: art on `--journal-light`, the h1 as
+`.about-name` + `.about-sub`, the colon kept in the text but hidden, never split inside «Hollow
+Knight: Silksong»), `.about-figs`, `.about-two` (attacks, phase bars, reward), the rest folded in
+`.about-details` on boss pages (shown on the others), the questions as `<details>`, every boss as
+a ringed portrait, the other pages with their icon, crown flourishes between. The button is
+`data-act="aboutUp"` (`js/app.js`: scrolls to the screens; with no script, the top). The body,
+questions, one h1 and JSON-LD are unchanged for search engines.
+
+## Step 1, second round · The screens' box
+
+### What there is (28 September 2026)
+
+Albert: every tab has the same shape, the main menu's red and on it a black box with frames
+(step 1's pause-menu screen, `.frame-line` and the `.bk` corners), so the tabs look alike and
+only what's inside changes.
+
+### The ideas (`24-shell-round2-variants.html`: the real site with each laid over it)
+
+- **A · no box**: the screens straight on the red; the plaque title stays, a filigree line under it.
+- **B · an atmosphere per tab**: no box, and the page's light takes the colour of each tab's
+  place (the area tokens: the Journal Mount Fay's blue, the Map Greymoor, Progress Bone Bottom's
+  green, Crest Bellhart's gold, Inventory the Whispering Vaults, Combat Deep Docks; Your game red).
+- **C · the box only on the game's panes**: Inventory, Journal and Crest keep it; Your game,
+  Progress, the Map and Combat go on the red.
+- **D · a light box**: the box stays, translucent and blurred, the red through it, the frame fainter.
+
+### Round 3: with a box (28 September 2026)
+
+Albert: none of the ones without a box; styles with a box, or close to one. The same page, the
+bar now switches in place (the site rewrites the address on boot and dropped `?sv=`, so the idea
+is kept in `sessionStorage`):
+
+- **D · a light box** (kept from round 2).
+- **E · the box lit in its tab's colour**: the black stays; the frame, the corners, the plaque
+  and a light from the top inside take the colour of each tab's place (the area tokens).
+- **F · the game's panel**: a double frame (an inner line inset), the top of the black lit as the
+  pause menu's header, larger corners.
+- **G · a lit plate**: a warm near-black lit from above, lifted off the red by a deep shadow and
+  a faint red glow, the frame fading to the sides.
+- **H · a window with its light**: D and E together (translucent, doubled frame, the tab's colour).
+
+### Decision (28 September 2026)
+
+**E · the box lit in its tab's colour**, built. `css/tokens.css` `--tab-home … --tab-fight` (each
+area's line mixed 55% into its fill; Your game and Saves the red, `#b0463b`), `--tab-light`
+(38%) and `--tab-frame` (70%); `css/app.css` gives each `.screen[data-view]` its `--tab` and
+tints `.frame-line` (a radial light from the top, the border, a soft glow), its top-edge halves,
+the `.bk` corners and the `.screen-plaque`. `CLAUDE.md`'s rule ("no colour per section") now
+says the frame's light takes the tab's colour, and only that.
 

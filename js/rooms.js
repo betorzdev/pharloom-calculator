@@ -41,7 +41,7 @@
      (SavedFlea_Bone_East_10_Church). A piece a wish or a shop gives has none. */
   function sceneOf(c) {
     if (!Array.isArray(c)) return null;
-    if (c[0] === 'bool') return c[1];
+    if (c[0] === 'bool' || c[0] === 'int' || c[0] === 'geo') return c[1];
     if (c[0] === 'flag' && /^SavedFlea_/.test(c[1])) return c[1].slice(10);
     if (c[0] === 'any') for (const x of c.slice(1)) { const s = sceneOf(x); if (s) return s; }
     return null;

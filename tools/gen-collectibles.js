@@ -32,20 +32,11 @@ const { load: loadText } = require('./game-text.js');
 const D = globalThis.SS.data;
 const J = globalThis.SS.journal;
 
-const SRC = path.join(__dirname, '..', 'kb', 'data', 'completionist');
+const C = require('./completionist.js');
+const SRC = C.SRC;
 const OUT = path.join(__dirname, '..', 'js', 'collectibles.js');
 function fail(msg) { throw new Error('gen-collectibles: ' + msg); }
-
-// A category file is one object literal after its type import: read it as such.
-function sections(file) {
-  const src = fs.readFileSync(path.join(SRC, file), 'utf8')
-    .replace(/^import .*$/mg, '')
-    .replace(/export const \w+: \w+ =/, 'module.exports =');
-  const m = { exports: {} };
-  new Function('module', src)(m);
-  return m.exports.sections;
-}
-const load = (file) => sections(file).flatMap((s) => s.items);
+const { sections, load } = C;
 
 // The completionist's typos in names, against the game's own (its "Wispfire Latern").
 const ALIAS = { 'wispfire latern': 'wispfire lantern' };
@@ -143,19 +134,7 @@ function areaOf(details, strict = true) {
 }
 
 /* ── Loose pieces ── */
-function check(p) {
-  if (Array.isArray(p)) return ['any', ...p.map(check)];
-  const id = p.internalId;
-  switch (p.type) {
-    case 'flag': return ['flag', id];
-    case 'flagMin': return ['min', id[0], id[1]];
-    case 'quest': return ['quest', id];
-    case 'sceneDataBool': return ['bool', id[0], id[1]];
-    case 'sceneVisited': return ['visited', id];
-    case 'journal': return ['journal', id];
-    default: return fail(`check type ${p.type} not read yet`);
-  }
-}
+const check = (p) => C.check(p, fail);
 const KINDS = [
   ['mask-shard', 'maskShards.ts'], ['spool-fragment', 'spoolFragments.ts'],
   ['memory-locket', 'memoryLockets.ts'], ['craftmetal', 'craftmetals.ts'], ['pale-oil', 'paleOil.ts'],
