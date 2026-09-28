@@ -20,6 +20,9 @@ Reference material for deciding how this site looks and behaves. It isn't part o
 | [`12-map-variants.html`](12-map-variants.html) | Step 6's options: the Map as the sibling's, with a side panel, or the map first with a floating legend, over the real map |
 | [`13-map-symbols-variants.html`](13-map-symbols-variants.html) | Step 6's symbols: the map's marks as the game draws them, as mapgenie's pins, or as the game's round badges (`map-pins/`: the game's own map pins, for the mockup) |
 | [`14-gauntlet-mark-variants.html`](14-gauntlet-mark-variants.html) | Step 6: three marks for the enemy gauntlets on the Map, instead of the «x» |
+| [`15-journal-variants.html`](15-journal-variants.html) | Step 7's options: the Journal as the game's pane, the sibling's list, or by area, over a real save |
+| [`16-journal-top-variants.html`](16-journal-top-variants.html) | Step 7, second round: what the Journal shows first, with less text: quiet, next hunts, or areas at a glance |
+| [`17-journal-entry-variants.html`](17-journal-entry-variants.html) | Step 7, third round: an entry's whole drawing, from the game's files: the game's page, the drawing in the sheet, or full screen on a tap |
 
 The design system itself (the black page, one card, filigree only in the corners, figures in a
 sans with tabular figures, the accent only on what's interactive, tints from the game's map

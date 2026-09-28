@@ -134,15 +134,23 @@ with a build opens it in Free mode; if you were in a save, the page goes to Free
 
 ### Journal
 
-The Hunter's Journal as the game's pane: the 236 portraits (237 in Steel Soul) in its order, and
-beside them the one you point at or tap, with its portrait, name, description, the kills against
-what the full entry needs and, once complete, the Hunter's note. A complete entry is at full
-light, one seen and not complete half-lit with its kills (12/25), one not seen a grey silhouette,
-and the six optional ones carry a small diamond. On top, the count for Nuu's Hunter's Memento
-(230 required, 231 in Steel Soul) and how many you've seen; "What's missing" hides the complete
-ones. An entry is complete when the save lists it with its kills done: the game writes them even
-for the entries it completes another way, and on the saves where Nuu has given the Memento the
-site counts all 230. In Free mode, the whole Journal.
+The Hunter's Journal. On top, the count for Nuu's Hunter's Memento as a ring (230 required, 231
+in Steel Soul; the bright arc is what's complete, the dim one what you've seen), and beside it the
+four entries you're missing closest to your bench, with how many rooms away and how many kills to
+go. Under it, the 236 portraits (237 in Steel Soul) **by area**, the areas with the most missing
+first and each with its count (6/20), or **in the Journal's order**; entries with no place go last,
+under "Elsewhere". Two small toggles switch that and "What's missing / Everything". Each portrait
+sits in a ring that fills with its kills and lights up once complete; one not seen yet is in
+shadow in a dashed ring («???»), and the six optional ones carry a small diamond. Tapping one
+opens its page as the game's Journal shows it (from the foot on a phone; Esc or a tap outside
+closes it): the whole drawing, from the game's files, on a soft light and at the size the game
+draws it (a Mossgrub small, the Bell Beast filling it), so you know the bug when you meet it; one
+not seen yet is in shadow. Beside it the name, the kills, its areas and the nearest from your
+bench, the description, and under the Hunter's symbol the Hunter's note once complete, or the
+game's «Defeat 11 more to complete the hunter's notes.». An entry is complete when the save lists it
+with its kills done: the game writes them even for the entries it completes another way, and on
+the saves where Nuu has given the Memento the site counts all 230. In Free mode, the whole
+Journal.
 
 **Where**: each entry says the places it's found, the most first, from the game's own files: for
 208 of the 237, the areas its enemies are placed in; for the other 29, which the game makes as you

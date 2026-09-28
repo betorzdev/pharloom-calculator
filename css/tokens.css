@@ -291,6 +291,17 @@
      half opacity, and the diamond pip under each picture says had or missing outright. */
   --missing-soft: grayscale(1) brightness(0.6);
   --missing-soft-opacity: 0.55;
+  /* The Journal's kill ring (design/15-journal-variants.html, A): the kills as an arc of the
+     silk's white round each portrait, over a faint track of its rim; the mask keeps the ring's
+     width (--ring) and cuts out the middle. Not seen: the portrait in shadow (they're drawn on a dark
+     disc, so a flat silhouette would be a blank disc). */
+  --ring: 3px;
+  --ring-track: color-mix(in oklab, var(--silk-rim) 18%, transparent);
+  --ring-mask: #000;
+  --unseen-art: grayscale(1) brightness(0.32);
+  /* The light the Journal's pane sets each drawing on (light_effect_v02 at 0.81 grey, measured
+     in its files): a soft white disc fading to nothing. */
+  --journal-light: radial-gradient(closest-side, color-mix(in oklab, var(--silk) 20%, transparent), color-mix(in oklab, var(--silk) 6%, transparent) 55%, transparent);
 
   color-scheme: dark;
 }

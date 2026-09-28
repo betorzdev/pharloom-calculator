@@ -327,18 +327,21 @@
     ftType_void:    { es: 'vacío', en: 'void' },
 
     /* The Hunter's Journal (js/app-journal.js) */
-    hjWhere:        { es: 'Dónde', en: 'Where' },
     hjNearest:      { es: 'Lo más cerca', en: 'Nearest' },
-    hjNear:         { es: 'Lo que te falta, más cerca de tu banco', en: 'What\'s missing, closest to your bench' },
+    hjNear:         { es: 'Lo más cerca de tu banco', en: 'Closest to your bench' },
     hjLeft:         { es: 'faltan {n}', en: '{n} to go' },
     hjLeft1:        { es: 'falta {n}', en: '{n} to go' },
     hjMemento:      { es: 'Para el Recuerdo de cazadora', en: 'For the Hunter\'s Memento' },   // as INV_NAME_HUNTER_MEMENTO names it
+    hjMementoShort: { es: 'Recuerdo', en: 'Memento' },   // the Hunter's Memento, shortened under its ring
     hjSeen:         { es: '{n} de {m} vistas', en: '{n} of {m} seen' },
-    hjKills:        { es: 'Derrotados', en: 'Defeated' },
     hjOptional:     { es: 'Opcional: no cuenta para el Recuerdo', en: 'Optional: not needed for the Memento' },
     hjBy:           { es: 'También se completa al derrotar a: {names}', en: 'Also completed by defeating: {names}' },
     hjInspect:      { es: 'Se completa al leer su lápida.', en: 'Completed by reading its tablet.' },
-    hjHint:         { es: 'Señala una entrada para leerla.', en: 'Point at an entry to read it.' },
+    hjOrder:        { es: 'Orden', en: 'Order' },
+    hjByArea:       { es: 'Por zonas', en: 'By area' },
+    hjByBook:       { es: 'Como el Diario', en: 'Journal order' },
+    hjNotesDefeat:  { es: 'Derrota {0} más para completar las notas de caza.', en: 'Defeat {0} more to complete the hunter\'s notes.' },   // NOTES_DEFEAT
+    hjElsewhere:    { es: 'En otros sitios', en: 'Elsewhere' },
     hjState_done:   { es: 'completa', en: 'complete' },
     hjState_seen:   { es: 'vista, sin completar', en: 'seen, not complete' },
     hjState_unseen: { es: 'aún no vista', en: 'not seen yet' },

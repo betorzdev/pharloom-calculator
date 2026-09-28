@@ -37,8 +37,8 @@ the work up reads it first, then the step it's on.
 | 4 | Inventory (`game`) | **Built** (28 Sep) | [`07-inventory-variants.html`](07-inventory-variants.html) |
 | 5 | Progress (`progress`) | **Built** (28 Sep) | [`10-progress-variants.html`](10-progress-variants.html) |
 | 6 | Map (`map`) | **Built** (28 Sep) | [`12-map-variants.html`](12-map-variants.html) |
-| 7 | Journal (`journal`) | **Next** | |
-| 8 | Crest (`tools`) | To do | |
+| 7 | Journal (`journal`) | **Built** (28 Sep, three rounds) | [`15-journal-variants.html`](15-journal-variants.html) |
+| 8 | Crest (`tools`) | **Next** | |
 | 9 | Combat (`fight`) | To do | |
 | 10 | The static pages (`tools/pages*.js`: `bosses/`, `es/jefes/`, the landing folders): they inherit steps 1 and 2; only what's theirs | To do | |
 | 11 | **Everything on the map**: each Tool, Crest, Silk Skill, ability, boss, NPC, vendor, wish and Journal enemy in its room (data from the game's files or the wiki; today only the loose pieces, the stations and the gauntlets have a room), new layers grouped as mapgenie's, the rest of the game's pins. After the tabs (Albert, 28 Sep) | To do | |
@@ -550,4 +550,108 @@ Act2Cursed 2 = Twisted Child, Act2SoulSnare 4 = Snared Silk, Act3Ending 8 = Sist
 the wiki's Endings page agrees; ENDING_B «Strung to Serve» is cut), read as `g.endings`
 (`js/savefile.js` ENDINGS). He also found dull, and so removed: the «Your 100%» label, «It matches
 the 63% the game shows» (the line stays only when the figures differ) and the purchase-cost line.
+
+## Step 7 · Journal
+
+### What there is (28 September 2026)
+
+A grid of every portrait with its kills under it as «10/20», and a side pane that says «Point at
+an entry» until you do, with *what's missing closest to your bench*. The entries not seen are
+empty dark discs (the silhouette too dark to read); the portraits look alike, and nothing says
+at a glance which are complete.
+
+### What the sibling has
+
+A list (search, filters by state with counts, a row per entry with portrait and name) beside a
+large entry pane (the portrait on its light, the name, where, the state as a choose-one, and in
+Free mode you mark each entry).
+
+### The options (`15-journal-variants.html`, over Save 4's real Journal)
+
+In all three: the kills as a ring round the portrait (lit bone when complete), the entries not
+seen as grey silhouettes, the Hunter's note in his hand once complete.
+
+- **A · the game's pane**: the grid with rings, the entry large and always shown beside it.
+- **B · the sibling's list**: search, filters, a row per entry (portrait, name, area, kills), the
+  entry beside it.
+- **C · by area**: a ledger row per area (its portraits and count, as Progress); open, its
+  entries and the one picked.
+
+### Decision (28 September 2026)
+
+**A's style, grouped by area** (Albert: A's look, but seeing it by area is very useful). Built:
+
+- Each portrait in a ring that fills with its kills (`--f` = kills / needed, a conic arc of the
+  silk's white over `--ring-track`), lit bone with `--glow` once complete. Not seen: the portrait
+  in shadow (`--unseen-art`, `grayscale(1) brightness(0.32)`: the portraits are drawn on a dark
+  disc, so the flat silhouette of the variants page read as a blank disc) in a dashed ring,
+  «???» as its name. No «10/20» under each: the kills are in the entry.
+- A choose-one **By area · Journal order** (`prefs.hjBy`, by area by default) beside «What's
+  missing · Everything». By area: a `.ct-h` head per area with its count (6/20), the areas with
+  the most missing first, «Elsewhere» last for entries with no place. An entry's area is the first
+  of its places (`whereOf`, from `js/journal-rooms.js`).
+- The entry always shown: the one picked or pointed at, else the first missing in the grid's
+  order. The portrait large in its ring, name, its areas, the nearest from your bench, kills,
+  description, and the Hunter's note once complete (a quiet line saying so before). *What's
+  missing closest to your bench* goes under it. On desktop the pane is sticky (scrolls inside
+  when taller than the screen); in one column it sits above the grid with only the three closest,
+  and a tap scrolls it into view.
+- Free mode unchanged: the whole Journal, complete, with the order choice only.
+
+### Second round: the first view (28 September 2026)
+
+Albert: what you see first on opening the Journal is unattractive and too much text (the count in
+words, four word buttons, the entry's long pane, ten closest in text with a paragraph under
+them). `16-journal-top-variants.html`, over Save 4:
+
+- **A · quiet**: one figure over a three-length bar (complete, seen, not seen) with a dot legend;
+  the switches as two small icon toggles; the entry lean (ring with the kills on it, name, area,
+  description); the five closest as portraits with their rooms.
+- **B · next hunts**: the Memento as a large ring beside the four closest missing as cards; the
+  grid full width, the entry only on a tap.
+- **C · areas at a glance**: the Memento and every area as a tile with its ring and count; a tap
+  goes to that area; the lean entry beside the grid.
+
+Decision: **B · next hunts**, built. The Memento ring (`.hj-memento`: complete in bone, seen
+dimmer) beside the four closest missing (`.hj-hunt`, from `nearest()`); the toggles as icons with
+the step 2 pips (`.seg.hj-tog`, the words in `title` and `aria-label`); the grid full width; the
+entry in a modal `<dialog>` (`.hj-sheet`: in the top layer, so over the sticky header, which the
+screen's `isolation` would otherwise put it under), closed by its ×, Esc, a tap on the dim, or
+leaving the screen. Gone: the «of 236 seen» line (in the ring's `aria-label`), the ten-row list
+and its paragraph, «Defeated», the «note appears once complete» line. With no bench or nothing
+missing, the ring alone, centred.
+
+### Third round: the whole drawing (28 September 2026)
+
+Albert: on tapping an entry, see its whole drawing, to know the bug when you meet it.
+
+**How the game shows an entry** (read from its files): each `EnemyJournalRecord`
+(`journalrecords.bundle`) carries an `iconSprite` (the round portrait the site already has) and an
+`enemySprite`, the whole drawing, in the `journal_enemy_images` sprite atlas: 237 of them, one per
+entry and all matched to the site's keys, transparent, all at 64 px to the unit, from 32 px to
+787 px (a Mossgrub 125 × 103, a Pilgrim Guide 257 × 238, the Bell Beast 507 × 352), 2.9 MB as WebP
+in all. The pane (`coremanagers_assets__gamecameras.bundle`, "Journal", `PANE_BESTIARY`) is three
+columns: the scrolling list of round icons (a frame for complete, `bestiary_icon__0000_frame_full`,
+another for not, `__0001_frame_empty`); the drawing as it is (no scaling) on a soft light
+(`light_effect_v02`, grey 0.81); then the name, a divider (`Inv_0017_divider`), the description,
+and the notes under `hunter_symbol` (Hornet's mask between two filigree strokes), or, until
+complete, `NOTES_DEFEAT` «Defeat {0} more to complete the hunter's notes.» / «Derrota {0} más para
+completar las notas de caza.». Two counts over the pane: `ENCOUNTERED` and `COMPLETED`, each
+amount / total.
+
+`17-journal-entry-variants.html`, seven real drawings inlined, Save 4's kills:
+
+- **A · the game's page**: a wide sheet in the middle, the drawing on its light at the game's
+  size (capped), beside it name, divider, kills, description, the notes under the symbol or
+  `NOTES_DEFEAT`. On a phone, drawing above text.
+- **B · drawing in the sheet**: the side sheet, the drawing in place of the round portrait, every
+  drawing fitted to one box; the kills as a thin bar.
+- **C · full screen on a tap**: the sheet as it is; a tap on its portrait opens the drawing large.
+
+Decision: **A · the game's page**, built. `tools/extract-journal-art.py` writes the 237 drawings
+to `assets/journal/art/<name_key>.webp` (3.4 MB, one loaded per tap) and `hunter_symbol` to
+`assets/journal/hunter-symbol.webp`. The sheet (`.hj-sheet`, still the modal `<dialog>`) is wide
+and centred: the drawing at its own pixels (capped at 440 px) on `--journal-light`, the text
+beside it; on a phone from the foot, drawing above. Not seen yet: the drawing in shadow
+(`--unseen-art`), so its shape can be learnt. `hjNotesDefeat` is `NOTES_DEFEAT` with its `{0}`.
 
