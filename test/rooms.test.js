@@ -18,8 +18,29 @@ test('a scene the map draws is its room; one it does not, the room without its l
   assert.equal(R.roomOf(''), null);
 });
 
-test('every loose piece on the floor has its room but one (the lava challenge\'s)', () => {
+test('every loose piece on the floor has its room, the fleas by the room their flag names', () => {
   const CO = require('../js/collectibles.js');
-  const lost = CO.PIECES.filter((p) => p[2][0] === 'bool' && !R.roomOf(p[2][1])).map((p) => p[2][1]);
-  assert.deepEqual(lost, ['Bone_East_LavaChallenge']);
+  const lost = CO.PIECES.filter((p) => R.sceneOf(p[2]) && !R.roomOf(R.sceneOf(p[2]))).map((p) => R.sceneOf(p[2]));
+  assert.deepEqual(lost, []);
+  // The fleas saved where they're found; three aren't (the giant one, Lech, the troupe's hunt).
+  const fleas = CO.PIECES.filter((p) => p[0] === 'flea');
+  assert.deepEqual(fleas.filter((p) => !R.sceneOf(p[2])).map((p) => p[2][1]), ['tamedGiantFlea', 'CaravanLechReturnedToCaravan', 'MetTroupeHunterWild']);
+  assert.ok(fleas.length > 20);
+  assert.equal(R.sceneOf(['flag', 'SavedFlea_Bone_East_10_Church']), 'Bone_East_10_Church');
+  assert.equal(R.sceneOf(['quest', 'Save Sherma']), null);
+});
+
+test('an interior the map does not draw goes where its door is; every gauntlet and pin has its room', () => {
+  for (const [inside, door] of Object.entries(R.ENTRANCE)) {
+    assert.ok(M.ROOMS[door], `${inside}: its door ${door} is not on the map`);
+    assert.deepEqual(R.roomOf(inside), { ...R.roomOf(door), exact: false });
+  }
+  const G = require('../js/gauntlets.js').GAUNTLETS;
+  assert.deepEqual(G.filter((g) => !R.roomOf(g.scene)).map((g) => g.id), []);
+  const kinds = {};
+  for (const [kind, x, y, scene] of M.PINS) {
+    kinds[kind] = (kinds[kind] || 0) + 1;
+    assert.ok(x >= 0 && x <= M.W && y >= 0 && y <= M.H && R.roomOf(scene), `${kind} in ${scene}`);
+  }
+  assert.deepEqual(kinds, { bench: 76, bellway: 12, ventrica: 7 });
 });

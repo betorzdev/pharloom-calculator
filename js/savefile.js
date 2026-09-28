@@ -27,6 +27,10 @@
   const SS = globalThis.SS || (globalThis.SS = {});
   const CO = SS.collectibles || require('./collectibles.js');
   const GA = SS.gauntlets || require('./gauntlets.js');
+  const MAP = SS.map || require('./map.js');
+  // The map's pins that light up (a station, a toll bench), by what they are: "bellway Bellway_02".
+  const pinKey = (p) => p[0] + ' ' + p[3];
+  const LIGHTS = MAP.PINS.filter((p) => p[4]);
 
   const KEY = 'UKu52ePUBwetZ9wNX88o54dnfKRu0T1l';
   const HEADER = [0, 1, 0, 0, 0, 255, 255, 255, 255, 1, 0, 0, 0, 0, 0, 0, 0, 6, 1, 0, 0, 0];
@@ -230,6 +234,8 @@
        pieces             the indices of js/collectibles.js's PIECES found
        wishes             the indices of its WISHES done (the pane «Tareas»)
        gauntlets          the ids of js/gauntlets.js's enemy gauntlets cleared (each one's done)
+       lit                the map's pins lit (js/map.js PINS with a condition that holds: a
+                          Bellway or Ventrica station unlocked, a toll bench paid), by pinKey
        journal            { entry id: kills } for every entry the save lists
        act                1, 2 from act2Started, 3 once the world is black-threaded (blackThreadWorld)
        bench, area        where Hornet rests (respawnScene) and the area she's in (currentArea)
@@ -274,6 +280,7 @@
       pieces: CO.PIECES.map((p, i) => (has(p[2]) ? i : -1)).filter((i) => i >= 0),
       wishes: CO.WISHES.map((w, i) => (has(w[2]) ? i : -1)).filter((i) => i >= 0),
       gauntlets: GA.GAUNTLETS.filter((x) => has(x.done)).map((x) => x.id),
+      lit: LIGHTS.filter((p) => has(p[4])).map(pinKey),
       journal,
       act: pd.blackThreadWorld === true ? 3 : pd.act2Started === true ? 2 : 1,
       bench: typeof pd.respawnScene === 'string' && /^[\w ()-]{1,64}$/.test(pd.respawnScene) ? pd.respawnScene : '',
@@ -287,7 +294,7 @@
        pharloom.owned     { tools, crests, skills, arts }: what the Crest screen can equip
        pharloom.journal   { entry id: kills }
        pharloom.progress  the rest of game(): masks, spools, hearts, needle, kit, pouch,
-                          everbloom, pieces, wishes, gauntlets, act, bench, area
+                          everbloom, pieces, wishes, gauntlets, lit, act, bench, area
        pharloom.meta      what the profile screen shows (meta()) and when the file was saved
      toSnapshot() writes them; gameOf() reads them back into one game, with the same defaults as
      an empty game for anything missing or damaged. */
@@ -311,7 +318,7 @@
     };
   }
   const EMPTY = Object.freeze({ tools: [], crests: [], skills: [], arts: [], journal: {}, masks: 0, spools: 0, hearts: 0,
-    needle: 0, kit: 0, pouch: 0, everbloom: false, pieces: [], wishes: [], gauntlets: [], act: 1, bench: '', area: '', build: {} });
+    needle: 0, kit: 0, pouch: 0, everbloom: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, bench: '', area: '', build: {} });
   const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
   // Each field only if it has the type an empty game gives it.
   function gameOf(snap) {
@@ -328,11 +335,12 @@
     out.wishes = out.wishes.map((k) => WISH_AT.get(k)).filter((i) => i !== undefined);
     // The gauntlets go by their ids, the wiki's subpages: one the list no longer has is dropped.
     out.gauntlets = out.gauntlets.filter((id) => GA.GAUNTLETS.some((x) => x.id === id));
+    out.lit = out.lit.filter((k) => LIGHTS.some((p) => pinKey(p) === k));
     return out;
   }
   const metaOf = (snap) => ({ version: '', time: 0, completion: 0, rosaries: 0, shards: 0, steel: false, dead: false, saved: null,
     ...parse((snap || {})['pharloom.meta']) });
 
-  SS.savefile = { SKILL_PD, ART_PD, decrypt, unwrap, read, meta, game, toSnapshot, gameOf, metaOf };
+  SS.savefile = { pinKey, SKILL_PD, ART_PD, decrypt, unwrap, read, meta, game, toSnapshot, gameOf, metaOf };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.savefile;
 })();

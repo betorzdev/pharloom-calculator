@@ -190,10 +190,12 @@
     ctShared:       { es: 'Enlace copiado: abre esta build tal cual', en: 'Link copied: it opens this build as it is' },
     ctLinkFree:     { es: 'El enlace traía una build: está en el Modo libre', en: 'The link had a build: it\'s in Free mode' },
     ctAmmo:         { es: '{n} usos', en: '{n} uses' },
+    ctAmmo1:        { es: '{n} uso', en: '{n} use' },
     ctLoad:         { es: '{n} por carga', en: '{n} a load' },
     ctRefill:       { es: '{n} fragmentos de coraza', en: '{n} shell shards' },   // as INV_NAME_SHARD says them
     ctBody:         { es: 'Hornet', en: 'Hornet' },
     ctCasts:        { es: '{n} habilidades de {c} de seda', en: '{n} Skills of {c} silk' },
+    ctCasts1:       { es: '{n} habilidad de {c} de seda', en: '{n} Skill of {c} silk' },
     ctBind:         { es: 'Enlazar', en: 'Bind' },   // BUTTON_CAST
     ctBindSub:      { es: 'cura {parts} máscaras en {s} s', en: 'heals {parts} masks in {s} s' },
 
@@ -217,6 +219,7 @@
     ftModsNote:     { es: 'Tu aguja, tu golpe concentrado y tus habilidades usan el nivel {n}; tus herramientas, el {k}.', en: 'Your Needle, Needle Strike and Skills use level {n}; your Tools, level {k}.' },
     ftStagger:      { es: 'Se aturde tras', en: 'Staggers after' },
     ftHits:         { es: '{n} golpes', en: '{n} hits' },
+    ftHits1:        { es: '{n} golpe', en: '{n} hit' },
     ftYours:        { es: 'Lo que le haces', en: 'What you do to it' },
     ftYoursNote:    { es: 'Cada golpe ya lleva su modificador a tu nivel; los usos, contando con que todos aciertan.', en: 'Each hit already carries its modifier at your level; the uses, counting every hit landing.' },
     ftUses:         { es: '{n} para matarlo', en: '{n} to kill it' },
@@ -232,10 +235,12 @@
     ftTheirs:       { es: 'Lo que te hace, con tus {n} máscaras', en: 'What it does to you, with your {n} masks' },
     ftTheirsNote:   { es: 'Máscaras por golpe según la wiki (1 cuando no lo dice); los nombres de los ataques son de la wiki: el juego no los nombra.', en: 'Masks per hit as the wiki gives them (1 when it doesn\'t); the attacks\' names are the wiki\'s: the game doesn\'t name them.' },
     ftToDie:        { es: '{n} te matan', en: '{n} kill you' },
+    ftToDie1:       { es: '{n} te mata', en: '{n} kills you' },
     ftModes:        { es: 'Contra qué', en: 'Against what' },
     ftModeFoe:      { es: 'Un enemigo', en: 'One enemy' },
     ftModeGauntlets:{ es: 'Desafíos de enemigos', en: 'Enemy gauntlets' },
     ftWaves:        { es: '{n} oleadas', en: '{n} waves' },
+    ftWaves1:       { es: '{n} oleada', en: '{n} wave' },
     ftWave:         { es: 'Oleada {n}', en: 'Wave {n}' },
     ftReward:       { es: 'Recompensa', en: 'Reward' },
     ftCleared:      { es: 'Superado', en: 'Cleared' },
@@ -305,8 +310,10 @@
 
   const pick = (v) => (v && typeof v === 'object' && !Array.isArray(v) ? (v[lang] !== undefined ? v[lang] : v.es) : v);
 
+  /* A count of one takes the key's singular when it has one (ftWaves1 for ftWaves): the
+     figures come formatted, and 1 is "1" in both languages. */
   function t(key, vars) {
-    const entry = UI[key];
+    const entry = (vars && String(vars.n) === '1' && UI[key + '1']) || UI[key];
     let s = entry ? pick(entry) : key;
     if (vars) for (const k of Object.keys(vars)) s = s.split('{' + k + '}').join(vars[k]);
     return s;

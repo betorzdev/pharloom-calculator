@@ -39,7 +39,12 @@ test('i18n: t() fills the placeholders and pick() chooses the language', () => {
   assert.equal(i18n.pick({ es: 'solo español' }), 'solo español');   // with no en, it falls back to es
   assert.equal(i18n.pick('texto plano'), 'texto plano');
   assert.equal(i18n.t('missingKey'), 'missingKey');
+  // A count of one takes the singular where the key has one, and only then.
+  assert.equal(i18n.t('ftWaves', { n: '1' }), '1 wave');
+  assert.equal(i18n.t('ftWaves', { n: '12' }), '12 waves');
+  assert.equal(i18n.t('ftUses', { n: '1' }), '1 to kill it');
   i18n.setLang('es');
+  assert.equal(i18n.t('ftToDie', { n: 1 }), '1 te mata');
 });
 
 /* The game's own names in the dictionary: the strings that carry their key (// KEY) are checked

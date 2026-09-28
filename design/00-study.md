@@ -790,12 +790,26 @@ the per-boss pages (phase 8's) and the gauntlets (phase 7's).
 fallback (a schematic map from the randomizer's room graph) isn't needed. The author decided to
 publish it as the Hollow Knight site does, and the Map screen followed: `tools/extract-map.py`
 draws the 770 rooms with each one's full drawing (the component's `fullSprite`; the renderer holds
-the rough sketch until the map is bought) into `assets/map/rooms.webp` (478 KB) and writes
+the rough sketch until the map is bought) into `assets/map/rooms.webp` (507 KB) and writes
 `js/map.js` (827 scenes with their box, 57 of them points: rooms with no drawing of their own);
 `js/rooms.js` places a scene, falling back to its name without the last part for the interiors
 the map doesn't draw. Every floor piece but one has its room, and every bench of the author's 92
 saves but a tutorial one. Left: the icons (the site's own, by what the game has found), the
-rooms with two states, Hornet walking between benches.
+rooms with two states, Hornet walking between benches. **The first drawing was wrong** (found by
+the author, 28 September): the atlas trims the transparent margins of 869 of the map's 1,204
+sprites, UnityPy gives the trimmed texture, and each room was placed by a pivot that is a
+fraction of the whole rectangle, so every trimmed room sat off its place by what it had lost and
+the corridors didn't meet. `extract-map.py` now puts the texture back in its rectangle
+(`textureRectOffset`) before placing it. Ruled out on the way: no room is mirrored, two are
+turned half a degree, and each room's full drawing is the right sprite. The author then found
+what was still wrong (the Abyss, Verdania, Cogwork Core, Grand Gate, Whiteward), and the game's own
+code (`GameMapScene`, read with ILSpy) said why: a room is Hidden, Rough or Full, only a Rough
+one takes its full drawing (Hidden halves and secrets that point at their main room's were drawn
+with it, out of place), and some rooms change with the game's state: 14 hidden in Act 3 under
+their destroyed versions (both were drawn, one over the other), Verdania's colours and two of
+its drawings once the Dancers are beaten, Whiteward's pit after the Unravelled, the Abyss's
+diving bell. The image now shows one state, written in `extract-map.py`'s STATE: the world
+explored before Act 3, with those bosses beaten; a patch that adds a condition stops the run.
 
 **Phase 7 has started** (the same day): the Tasks. The completionist's 74 (21 main objectives and
 53 wishes in 11 types) with their save field, joined to the game's own names by their English
