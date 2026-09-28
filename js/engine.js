@@ -262,6 +262,39 @@
     return null;
   }
 
-  SS.engine = { roundHalfEven, normalize, modsFor, hitsOf, usesToKill, interval, compute, plan };
+  /* What the plan's fight leaves for Binds: its silk (the spool full to start, one strand per
+     slash, less the Skill casts), a Bind's cost each, and the Reserve Bind's free one. */
+  function binds(r, p) {
+    const skill = r.skills.find((x) => x.equipped);
+    const silk = r.silk.spool + (p ? p.slashes - p.casts * (skill ? skill.silk : 0) : 0);
+    return { silk, paid: Math.floor(silk / r.silk.bind), reserve: r.state.tools.includes('reserve-bind') ? 1 : 0 };
+  }
+
+  /* How many hits of per masks Hornet takes before dying, with the Binds b pays for (binds()):
+     she binds as soon as one heals in full, or when the next hit would kill her. Druid's Eye adds
+     a strand every two hits taken (its upgrade, two), which may pay for another. Silk Hearts'
+     regeneration and the spool's cap on what comes in are left out. → { hits, binds } */
+  function endure(r, per, b) {
+    const max = r.health.masks, heals = r.health.bind.heals, cost = r.silk.bind;
+    const has = (id) => r.state.tools.includes(id);
+    const eye = has('druids-eyes') ? 1 : has('druids-eye') ? 0.5 : 0;
+    let h = max, silk = b ? b.silk : 0, free = b ? b.reserve : 0, hits = 0, used = 0;
+    if (!(per > 0)) return null;
+    for (;;) {
+      h -= per;
+      hits++;
+      if (h <= 0) return { hits, binds: used };
+      silk += eye;
+      while (h < max && (h <= per || max - h >= heals)) {
+        if (silk >= cost) silk -= cost;
+        else if (free) free--;
+        else break;
+        h = Math.min(max, h + heals);
+        used++;
+      }
+    }
+  }
+
+  SS.engine = { roundHalfEven, normalize, modsFor, hitsOf, usesToKill, interval, compute, plan, binds, endure };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.engine;
 })();

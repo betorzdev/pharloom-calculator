@@ -98,18 +98,27 @@
       <p class="ft-plan-line">${esc(list)}</p><p class="pg-note">${esc(t('ftPlanNote', { s: num(r.silk.spool) }))}</p></section>`;
   }
 
-  // A boss's attacks against you: how many of each take your masks (Barbed Bracelet: double damage).
+  /* A boss's attacks against you: how many of each take your masks (Barbed Bracelet: double
+     damage), and how many with the Binds the quickest fight's silk leaves (js/engine.js, endure). */
   function theirs(f, r) {
     const a = EN.ATTACKS[f.page];
     if (!a || !a.attacks.length) return '';
     const masks = r.health.masks, twice = r.state.tools.includes('barbed-bracelet');
+    const b = E.binds(r, E.plan(r, r.foe && r.foe.hp));
     const list = a.attacks.map((x) => {
       const per = (x.masks || [1]).reduce((s, m) => s + m, 0) * (twice ? 2 : 1);
+      const bare = Math.ceil(masks / per), end = E.endure(r, per, b);
+      const uses = [t(bare === 1 ? 'ftToDie1' : 'ftToDie', { n: num(bare) })];
+      if (end && end.hits > bare) uses.push(t('ftIfBind', { n: num(end.hits) }));
       return `<li><span class="ct-list-name"${NT}>${esc(pick(x.name))}</span><span class="ct-list-sub">${esc([x.where ? pick(x.where) : '', x.type ? t('ftType_' + x.type) : ''].filter(Boolean).join(' · '))}</span>
-        <b>${num(per)}</b><span class="ft-uses">${esc(t('ftToDie', { n: num(Math.ceil(masks / per)) }))}</span></li>`;
+        <b>${num(per)}</b><span class="ft-uses">${esc(uses.join(' · '))}</span></li>`;
     }).join('');
+    const tool = (id) => pick(D.TOOLS.find((y) => y.id === id).name);
+    const extra = [b.reserve ? t('ftBindReserve', { name: tool('reserve-bind') }) : '',
+      ['druids-eyes', 'druids-eye'].filter((id) => r.state.tools.includes(id)).map((id) => t('ftBindEye', { name: tool(id) }))[0] || ''];
+    const bindNote = [t('ftBindNote', { s: num(b.silk), c: num(r.silk.bind), h: num(r.health.bind.heals) }), ...extra].filter(Boolean).join(' ');
     return `<section class="ct-block"><h3 class="ct-h">${esc(t('ftTheirs', { n: num(masks) }))}</h3><ul class="ct-list ft-list is-theirs">${list}</ul>
-      <p class="pg-note">${esc(t('ftTheirsNote'))}</p></section>`;
+      <p class="pg-note">${esc(t('ftTheirsNote'))}</p><p class="pg-note">${esc(bindNote)}</p></section>`;
   }
 
   /* ── The enemy gauntlets (js/gauntlets.js): an arena's waves, one after another ──

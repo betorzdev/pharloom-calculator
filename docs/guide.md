@@ -125,7 +125,10 @@ Crest's own attacks; the Needle Strike; the Silk Skill equipped; each Tool that 
 with what share of its health a full load takes) and how many uses kill it, counting every hit
 landing; after a Challenge, only the first hit takes it. And what it does to you: each of its
 attacks (the wiki's names, the game doesn't name them), how many masks it takes (the Barbed
-Bracelet doubles them) and how many kill you. The build is the Crest screen's.
+Bracelet doubles them) and how many kill you, then how many if you Bind with the silk the
+quickest fight leaves (the full spool and one strand a slash, less its Skill casts; a Bind as
+soon as it heals in full or the next hit would kill you; the Reserve Bind's free one and Druid's
+Eye's silk count, Silk Hearts' regeneration doesn't). The build is the Crest screen's.
 
 **Enemy gauntlets**: the other half of the screen, the game's 49 arenas of waves, each named by
 its place or its area, with its reward (the game's name for it, when it gives something the game

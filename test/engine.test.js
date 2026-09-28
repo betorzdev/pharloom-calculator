@@ -131,6 +131,30 @@ test('the fight as a whole: loads first, then the fewest slashes with the Skills
   assert.equal(E.plan(r2, null), null);
 });
 
+test('the Binds a fight pays for, and the hits they let you take', () => {
+  const foe = { id: 'z', hp: 300, mods: [1, 1, 1, 1, 1] };
+  const r = E.compute({ needle: 0, skill: 'silkspear' }, { foe });
+  // 31 slashes and 10 casts of 4: 9 + 31 − 40 = 0 silk left, no Bind.
+  const p = E.plan(r, 300);
+  assert.deepEqual(E.binds(r, p), { silk: 0, paid: 0, reserve: 0 });
+  assert.deepEqual(E.endure(r, 1, E.binds(r, p)), { hits: 5, binds: 0 });
+  // No Skill: 60 slashes, 69 silk, 7 Binds of 3. Hits of 1: down to 2, bind (3 heals in full),
+  // 7 times, 21 masks more: 26 hits.
+  const r2 = E.compute({ needle: 0 }, { foe });
+  const b2 = E.binds(r2, E.plan(r2, 300));
+  assert.deepEqual(b2, { silk: 69, paid: 7, reserve: 0 });
+  assert.deepEqual(E.endure(r2, 1, b2), { hits: 26, binds: 7 });
+  // Hits of 2: 5 → 3, bind? 2 lost, no; 3 → 1, bind to 4 (the next would kill); 4 → 2, bind to 5 …
+  const two = E.endure(r2, 2, b2);
+  assert.equal(two.binds, 7);
+  assert.equal(two.hits, Math.ceil((5 + 21) / 2));
+  // The Reserve Bind: one more, with no silk at all.
+  const r3 = E.compute({ needle: 0, tools: ['reserve-bind'] }, { foe });
+  assert.deepEqual(E.endure(r3, 1, { silk: 0, paid: 0, reserve: 1 }), { hits: 8, binds: 1 });
+  // A hit that takes every mask: Binds don't help.
+  assert.deepEqual(E.endure(r2, 5, b2), { hits: 1, binds: 0 });
+});
+
 test('how fast: each Crest\'s slash interval from the game\'s own timings, fury, Flea Brew, the seconds to kill', () => {
   const H = require('../js/hero.js');
   const every = (crest, x = {}) => E.compute({ crest, needle: 4, ...x }).needle.speed.interval;
