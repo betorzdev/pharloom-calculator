@@ -28,6 +28,7 @@
   const CO = SS.collectibles || require('./collectibles.js');
   const GA = SS.gauntlets || require('./gauntlets.js');
   const MAP = SS.map || require('./map.js');
+  const QU = SS.quests || require('./quests.js');
   // The map's pins that light up (a station, a toll bench), by what they are: "bellway Bellway_02".
   const pinKey = (p) => p[0] + ' ' + p[3];
   const LIGHTS = MAP.PINS.filter((p) => p[4]);
@@ -226,7 +227,7 @@
   const named = (v) => { const m = new Map(); for (const e of list(v)) if (e && !m.has(e.Name)) m.set(e.Name, e.Data || {}); return m; };
 
   /* playerData and sceneData → what the site keeps of a game, in its own ids:
-       tools, crests      owned (IsUnlocked), by js/collectibles.js's names
+       tools, crests      owned (IsUnlocked; a Tool also not IsHidden), by js/collectibles.js's names
        skills, arts       the has* flags above
        masks, spools      whole ones gained (maxHealthBase − 5, silkMax − 9), as the game counts them
        hearts             Silk Hearts (silkRegenMax); needle, kit, pouch: the three upgrade ladders
@@ -239,7 +240,22 @@
        journal            { entry id: kills } for every entry the save lists
        act                1, 2 from act2Started, 3 once the world is black-threaded (blackThreadWorld)
        bench, area        where Hornet rests (respawnScene) and the area she's in (currentArea)
-       build              what she wears (buildOf): { crest, hunterStage, tools, skill, vest }, or null */
+       build              what she wears (buildOf): { crest, hunterStage, tools, skill, vest }, or null
+     and what js/acts.js reads for the road to the next Act (js/quests.js has the game's rules):
+       quests             the save names of the quests complete (QuestCompletionData IsCompleted),
+                          sorted: Broodfeast done the Runt's way is "Huntress Quest Runt", which no
+                          group counts
+       bellshrines        the Bellshrines rung, by their playerData field (js/quests.js BELLSHRINES)
+       grandGate          the Grand Gate reached (visitedGrandGate)
+       lastJudge, phantom the two bosses either of which opens the Citadel (defeated*)
+       caravan            where the flea caravan is (CaravanTroupeLocation: 3 is Fleatopia)
+       doubleJump         the Faydown Cloak (hasDoubleJump); laceTower: Lace beaten atop the
+                          Cradle's tower (defeatedLaceTower)
+       bellhomeKey        Pavo has given the Bellhome's key (BelltownGreeterHouseFullDlg)
+       snareOffered       the Caretaker has offered the wish Silk and Soul (CaretakerOfferedSnareQuest)
+       snarePieces        the Soul Snare's pieces held, by their save names (js/quests.js SNARE): a
+                          Collectable with Amount above 0, or the Tool unlocked. Given, they're 0.
+       snareReady         the Soul Snare built (soulSnareReady) */
   function game(pd, sd = null) {
     const tools = named(pd.Tools), crests = named(pd.ToolEquips), quests = named(pd.QuestCompletionData);
     const bools = new Map();
@@ -267,9 +283,13 @@
     const whole = (v, base) => Math.max(0, int(v) - base);
     const journal = {};
     for (const [id, name] of Object.entries(CO.JOURNAL)) if (kills.has(name)) journal[id] = Math.max(0, kills.get(name));
-    const flower = (named(pd.Collectables).get('White Flower') || {}).Amount;
+    const items = named(pd.Collectables);
+    const flower = (items.get('White Flower') || {}).Amount;
+    const held = (x) => (x.kind === 'tool' ? !!(tools.get(x.save) || {}).IsUnlocked : int((items.get(x.save) || {}).Amount) > 0);
     return {
-      tools: Object.keys(CO.TOOLS).filter((id) => CO.TOOLS[id].some((n) => (tools.get(n) || {}).IsUnlocked)),
+      // Unlocked and not hidden, as the game's ToolItemManager counts them (IsUnlockedNotHidden):
+      // the Curveclaw handed to the Unnamed Skarr stays unlocked but hidden, and isn't Hornet's.
+      tools: Object.keys(CO.TOOLS).filter((id) => CO.TOOLS[id].some((n) => { const x = tools.get(n) || {}; return x.IsUnlocked && !x.IsHidden; })),
       crests: Object.keys(CO.CRESTS).filter((id) => (crests.get(CO.CRESTS[id]) || {}).IsUnlocked),
       skills: Object.keys(SKILL_PD).filter((id) => pd[SKILL_PD[id]] === true),
       arts: Object.keys(ART_PD).filter((id) => pd[ART_PD[id]] === true),
@@ -286,6 +306,18 @@
       bench: typeof pd.respawnScene === 'string' && /^[\w ()-]{1,64}$/.test(pd.respawnScene) ? pd.respawnScene : '',
       area: typeof pd.currentArea === 'string' && /^[A-Z_]{1,32}$/.test(pd.currentArea) ? pd.currentArea : '',
       build: buildOf(pd) || {},
+      quests: [...quests].filter(([, d]) => !!d.IsCompleted).map(([n]) => n).sort(),
+      bellshrines: QU.BELLSHRINES.map((b) => b.field).filter((f) => pd[f] === true),
+      grandGate: pd.visitedGrandGate === true,
+      lastJudge: pd.defeatedLastJudge === true,
+      phantom: pd.defeatedPhantom === true,
+      caravan: int(pd.CaravanTroupeLocation),
+      doubleJump: pd.hasDoubleJump === true,
+      laceTower: pd.defeatedLaceTower === true,
+      bellhomeKey: pd.BelltownGreeterHouseFullDlg === true,
+      snareOffered: pd.CaretakerOfferedSnareQuest === true,
+      snarePieces: QU.SNARE.filter(held).map((x) => x.save),
+      snareReady: pd.soulSnareReady === true,
     };
   }
 
@@ -294,7 +326,8 @@
        pharloom.owned     { tools, crests, skills, arts }: what the Crest screen can equip
        pharloom.journal   { entry id: kills }
        pharloom.progress  the rest of game(): masks, spools, hearts, needle, kit, pouch,
-                          everbloom, pieces, wishes, gauntlets, lit, act, bench, area
+                          everbloom, pieces, wishes, gauntlets, lit, act, bench, area, build and
+                          the road's fields (quests … snareReady)
        pharloom.meta      what the profile screen shows (meta()) and when the file was saved
      toSnapshot() writes them; gameOf() reads them back into one game, with the same defaults as
      an empty game for anything missing or damaged. */
@@ -318,7 +351,9 @@
     };
   }
   const EMPTY = Object.freeze({ tools: [], crests: [], skills: [], arts: [], journal: {}, masks: 0, spools: 0, hearts: 0,
-    needle: 0, kit: 0, pouch: 0, everbloom: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, bench: '', area: '', build: {} });
+    needle: 0, kit: 0, pouch: 0, everbloom: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, bench: '', area: '', build: {},
+    quests: [], bellshrines: [], grandGate: false, lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
+    bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false });
   const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
   // Each field only if it has the type an empty game gives it.
   function gameOf(snap) {

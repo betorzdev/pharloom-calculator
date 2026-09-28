@@ -348,11 +348,41 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
   transition: color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
 .nav-tab:hover { color: var(--accent); }
-/* The current tab: until Hornet walks the bar (phase 6), an accent rule on its bottom edge. */
+/* The current tab: an accent rule on its bottom edge, while Hornet isn't on the bar to mark it
+   (a phone's width, or before the script runs). */
 .nav-tab[aria-current="page"] { color: var(--ink-strong); box-shadow: inset 0 -2px 0 var(--accent); }
+.nav-tabs.has-hn > .nav-tab[aria-current="page"] { box-shadow: none; }
 .nav-num { font-size: var(--fs-xs); font-weight: 600; color: var(--ink-2); white-space: nowrap; }
 /* The two groups: your game, then the tools after a thin rule. */
 .nav-sep { width: 1px; height: 1.4em; align-self: center; background: var(--line-ctl); }
+
+/* ── The Hornet who walks the page (js/app-hornet.js) ─────────────────
+   One sprite, drawn from strips of 120 × 120 cells (assets/hornet/, tools/extract-hornet.py):
+   standing, running (ten frames, stepped at --dur-step) or sitting; her feet at 116 of the cell
+   and her middle at 62. She faces left, as the game draws her, and turns with a mirror. On the
+   screen bar she's --hn-bar tall, her feet on its bottom edge; on the Map (.mp-hornet) she's
+   --hn-map tall, her feet on her bench. Reduced motion leaves her on her first frame and, from
+   the JS, only standing or sitting. Decorative: the button only exists for the click (a Bind). */
+.hn {
+  --n: 1; --hn-h: var(--hn-bar);
+  position: absolute; z-index: 1; width: var(--hn-h); height: var(--hn-h); padding: 0; border: 0; margin: 0;
+  background: url(../assets/hornet/stand.png) 0 0 / auto 100% no-repeat; cursor: default;
+  opacity: 1; transition: opacity var(--dur-slow) var(--ease-fade);
+}
+.hn:focus { outline: none; }
+.hn.is-run { background-image: url(../assets/hornet/run.png); --n: 10; }
+.hn.is-sit { background-image: url(../assets/hornet/sit.png); }
+.hn.is-right { scale: -1 1; }
+.hn.is-out { opacity: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .hn.is-run { animation: hn-cycle calc(var(--dur-step) * var(--n)) steps(var(--n)) infinite; }
+  /* A Bind (a click): standing still, a white light swells around her and fades. */
+  .hn.is-bind { animation: hn-bind var(--dur-flash) var(--ease-fade); }
+}
+@keyframes hn-cycle { to { background-position-x: calc(-1 * var(--hn-h) * var(--n)); } }
+@keyframes hn-bind { 40% { filter: drop-shadow(0 0 3px var(--focus-glow)) drop-shadow(0 0 14px var(--focus-glow)); } }
+/* On the screen bar: sitting at its bottom edge, under the current tab's title. */
+.nav-tabs > .hn { bottom: 0; left: 0; }
 
 /* ── Atmosphere ──────────────────────────────────────────────────────────
    The main menu behind the whole page (tokens.css): fixed to the window and behind everything.
@@ -409,6 +439,8 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
   .screen { padding: var(--sp-6); --inv-pad: var(--sp-6); }
   .nav { flex-direction: column; align-items: stretch; gap: 0; }
   .nav-tabs { gap: var(--sp-1) var(--sp-4); }
+  /* No room beside a tab for Hornet here (js/app-hornet.js): the rule marks the tab. */
+  .nav-tabs > .hn { display: none; }
 }
 @media (max-width: 599px) {
   .screen { padding: var(--sp-4); --inv-pad: var(--sp-4); }
@@ -876,6 +908,7 @@ kbd {
 }
 .hm-meta b { font-family: var(--font-num); font-variant-numeric: tabular-nums; color: var(--ink-strong); }
 .hm-act { font-family: var(--font-display); letter-spacing: var(--track-title); color: var(--ink); }
+.hm-road { margin: calc(var(--sp-2) * -1) 0 var(--sp-6); text-align: center; font-size: var(--fs-sm); }
 .hm-total { display: grid; justify-items: center; gap: var(--sp-1); margin-bottom: var(--sp-8); }
 .hm-total-k { margin: 0; font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
 .hm-total-n { margin: 0; font-family: var(--font-num); font-variant-numeric: tabular-nums; line-height: 1; color: var(--ink-strong); }
@@ -944,9 +977,32 @@ kbd {
 .pg-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .pg-where { display: flex; gap: var(--sp-2); font-size: var(--fs-xs); color: var(--muted); white-space: nowrap; }
 .pg-where span + span::before { content: '·'; margin-right: var(--sp-2); }
+.pg-how { grid-column: 2 / -1; font-size: var(--fs-xs); color: var(--muted); }
+.pg-item:has(.pg-slot) .pg-how { grid-column: 3 / -1; }
+.pg > .pg-buy { text-align: center; }
 .pg-item.is-got .pg-name { color: var(--ink-2); }
 .pg-item.is-later { opacity: 0.55; }
 .pg-done { display: flex; align-items: center; gap: var(--sp-2); margin: var(--sp-2) 0 0; font-size: var(--fs-sm); color: var(--ink-2); }
+/* The road to the next Act: numbered steps in one column, as the game's objectives read, each
+   titled with its count or a tick; a step done goes quiet, one the Phantom's way skips too. */
+.pg-road { max-width: 720px; margin: 0 auto; }
+.pg-road > .pg-note { text-align: center; }
+.pg-road > .pg-note.is-warn { color: var(--cond); }
+.pg-steps { list-style: none; margin: var(--sp-4) 0 0; padding: 0; display: grid; gap: var(--sp-6); }
+.pg-step { min-width: 0; }
+.pg-step-h {
+  display: flex; align-items: baseline; gap: var(--sp-3); margin: 0 0 var(--sp-2);
+  padding-bottom: var(--sp-2); border-bottom: 1px solid var(--line);
+  font-family: var(--font-display); font-size: var(--fs-md); font-weight: 600; letter-spacing: var(--track-title); color: var(--ink-strong);
+}
+.pg-step-n { font-family: var(--font-num); font-variant-numeric: tabular-nums; color: var(--muted); }
+.pg-step-t { flex: 1; min-width: 0; text-wrap: pretty; }
+.pg-step.is-ok .pg-step-h, .pg-step.is-bypassed .pg-step-h { color: var(--ink-2); border-bottom-color: color-mix(in oklab, var(--filigree) 45%, transparent); }
+.pg-sub {
+  display: flex; align-items: baseline; justify-content: space-between; gap: var(--sp-3); margin: var(--sp-4) 0 var(--sp-1);
+  font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label);
+}
+.pg-sub .pg-count { font-size: var(--fs-sm); letter-spacing: normal; text-transform: none; }
 @media (max-width: 640px) {
   .pg-item { grid-template-columns: var(--sp-4) auto minmax(0, 1fr); }
   .pg-item:not(:has(.pg-slot)) { grid-template-columns: var(--sp-4) minmax(0, 1fr); }
@@ -1280,4 +1336,9 @@ kbd {
 .mp-pin.is-gauntlet { color: var(--slot-red); }
 .mp-pin.is-off { color: var(--slot-locked); border-style: dashed; }
 .mp-kind .mp-pin { position: static; display: inline-grid; margin: 0; vertical-align: middle; }
-.mp-hornet { position: absolute; width: 40px; height: auto; transform: translate(-50%, -80%); filter: drop-shadow(0 0 8px color-mix(in oklab, var(--spotlight) 60%, transparent)); }
+/* Hornet at her bench: the .hn sprite (sitting; running while js/app-hornet.js walks her from the
+   previous bench), her feet and her middle on the point. */
+.mp-hornet.hn {
+  --hn-h: var(--hn-map); z-index: 2; translate: calc(-1 * var(--hn-map) * 62 / 120) calc(-1 * var(--hn-map) * 116 / 120);
+  filter: drop-shadow(0 0 8px color-mix(in oklab, var(--spotlight) 60%, transparent)); transition: none;
+}

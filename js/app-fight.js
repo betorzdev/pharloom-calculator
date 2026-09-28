@@ -6,7 +6,8 @@
    or black-threaded (Act 3). The build is the Crest screen's: in a save, what Hornet wears; in
    Free mode, the one being tried. And the other way: how many hits of each of a boss's attacks
    take your masks (the wiki's figures, one mask when it gives none; the attacks' names are the
-   wiki's, the game doesn't name them). Shares SS.app with js/app.js (see there). */
+   wiki's, the game doesn't name them), and for any other enemy what its body and its strongest
+   hitbox take, from the game's own files (js/enemy-damage.js). Shares SS.app with js/app.js (see there). */
 (() => {
   'use strict';
   const SS = globalThis.SS;
@@ -57,19 +58,25 @@
   }
 
   /* Its phases (js/phases.js, the game's own FSMs): where each one starts, and how many slashes
-     of yours get there from full health (js/engine.js, phases). */
+     of yours get there from full health (js/engine.js, phases); then what the file says past the
+     thresholds: a bar made of pieces (Father of the Flame), a heal (the Forebrothers), a reset
+     (Phantom). */
   function phasesHtml(f, r, hp) {
-    const list = E.phases(SS.phases[f.id], hp, r.needle.attacks[0]);
+    const P = SS.phases[f.id] || {};
+    const list = E.phases(P, hp, r.needle.attacks[0]);
     if (!list.length) return '';
-    const bars = !!(SS.phases[f.id] || {}).bars;
     const items = list.map((x) => {
-      const where = bars ? t('ftPhaseAfter', { n: num(x.n), x: num(x.dealt) })
-        : t(x.share ? 'ftPhaseAt' : 'ftPhaseAtHp', { n: num(x.n), x: num(x.left), p: num(Math.round(x.share * 100)) });
+      const where = P.bars ? t('ftPhaseAfter', { n: num(x.n), x: num(x.dealt) })
+        : t(x.of ? 'ftPhaseAtOf' : x.share ? 'ftPhaseAt' : 'ftPhaseAtHp', { n: num(x.n), x: num(x.left), o: num(x.of || 0), p: num(Math.round(x.share * 100)) });
       const u = x.uses == null ? '' : ' · ' + t(x.uses === 1 ? 'ftPlanSlash' : 'ftPlanSlashes', { n: num(x.uses) });
       return `<li>${esc(where + u)}</li>`;
-    }).join('');
-    return `<div class="ft-phases"><span class="save-k">${esc(t('ftPhases'))}</span><ul>${items}</ul>
-      <p class="pg-note">${esc(t(bars ? 'ftPhasesBarsNote' : 'ftPhasesNote'))}</p></div>`;
+    });
+    (P.pieces || []).forEach((k, i) => items.push(`<li>${esc(t(k > 1 ? 'ftPhasePieces' : 'ftPhasePiece',
+      { n: num(i + 1), k: num(k), x: num(P.bars[i] / k), h: num(P.hits[i]) }))}</li>`));
+    if (P.heal) items.push(`<li>${esc(t('ftPhaseHeal', { x: num(P.heal[0]), a: num(P.heal[1]), m: num(P.heal[2]) }))}</li>`);
+    if (P.reset) items.push(`<li>${esc(t('ftPhaseReset', { x: num(P.reset) }))}</li>`);
+    return `<div class="ft-phases"><span class="save-k">${esc(t('ftPhases'))}</span><ul>${items.join('')}</ul>
+      <p class="pg-note">${esc(t(P.bars ? 'ftPhasesBarsNote' : 'ftPhasesNote'))}</p></div>`;
   }
 
   // One row: what, the hits of one use, what a use does, and the uses that kill.
@@ -115,27 +122,58 @@
       <p class="ft-plan-line">${esc(list)}</p><p class="pg-note">${esc(t('ftPlanNote', { s: num(r.silk.spool) }))}</p></section>`;
   }
 
-  /* A boss's attacks against you: how many of each take your masks (Barbed Bracelet: double
-     damage), and how many with the Binds the quickest fight's silk leaves (js/engine.js, endure). */
+  /* What it does to you: how many hits of each take your masks, and how many with the Binds the
+     quickest fight's silk leaves, Silk Hearts' regeneration in (js/engine.js, binds and endure).
+     A boss's attacks are the wiki's (js/enemies.js ATTACKS); any other enemy's come from the game's
+     own files (js/enemy-damage.js): its body on contact and the strongest hitbox it carries, and
+     black-threaded every hit is 2 masks (the game sets the Void flag on all of them). The Barbed
+     Bracelet multiplies each hit, floored, by the game's own figure (BARBED). */
+  const DMG = SS.enemyDamage;
+  function gameAttacks(f, black) {
+    const d = DMG.BY_KEY[f.key];
+    if (!d) return [];
+    const max = (l) => Math.max(...l);
+    const rows = [];
+    if (d.body) rows.push({ name: t('ftContact'), masks: [black ? 2 : max(d.body)], sub: d.body.length > 1 && !black ? t('ftMixed', { a: num(d.body[0]), b: num(max(d.body)) }) : '' });
+    const att = Object.entries(d.attacks || {});
+    if (att.length && !black) {
+      const top = max(att.map(([, v]) => max(v)));
+      const type = att.filter(([, v]) => max(v) === top).map(([g]) => (d.types || {})[g]).find(Boolean);
+      if (!d.body || top > max(d.body)) rows.push({ name: t('ftStrongest'), masks: [top], sub: type ? t('ftType_' + type) : '' });
+    }
+    return rows;
+  }
+
   function theirs(f, r) {
     const a = EN.ATTACKS[f.page];
-    if (!a || !a.attacks.length) return '';
-    const masks = r.health.masks, twice = r.state.tools.includes('barbed-bracelet');
+    const black = !!prefs.ftBlack && !!f.bt;
+    const fromGame = !a || !a.attacks.length;
+    const hits = fromGame ? gameAttacks(f, black)
+      : a.attacks.map((x) => ({ name: pick(x.name), masks: x.masks || [1], sub: [x.where ? pick(x.where) : '', x.type ? t('ftType_' + x.type) : ''].filter(Boolean).join(' · ') }));
+    if (!hits.length) return '';
+    const masks = r.health.masks, barbed = r.state.tools.includes('barbed-bracelet');
     const b = E.binds(r, E.plan(r, r.foe && r.foe.hp));
-    const list = a.attacks.map((x) => {
-      const per = (x.masks || [1]).reduce((s, m) => s + m, 0) * (twice ? 2 : 1);
+    const list = hits.map((x) => {
+      const per = x.masks.reduce((s, m) => s + (barbed ? Math.floor(m * DMG.BARBED) : m), 0);
       const bare = Math.ceil(masks / per), end = E.endure(r, per, b);
       const uses = [t(bare === 1 ? 'ftToDie1' : 'ftToDie', { n: num(bare) })];
       if (end && end.hits > bare) uses.push(t('ftIfBind', { n: num(end.hits) }));
-      return `<li><span class="ct-list-name"${NT}>${esc(pick(x.name))}</span><span class="ct-list-sub">${esc([x.where ? pick(x.where) : '', x.type ? t('ftType_' + x.type) : ''].filter(Boolean).join(' · '))}</span>
+      return `<li><span class="ct-list-name"${fromGame ? '' : NT}>${esc(x.name)}</span><span class="ct-list-sub">${esc(x.sub)}</span>
         <b>${num(per)}</b><span class="ft-uses">${esc(uses.join(' · '))}</span></li>`;
     }).join('');
     const tool = (id) => pick(D.TOOLS.find((y) => y.id === id).name);
+    /* Silk Hearts (js/engine.js, regen): up to their cap, and only while the silk doesn't change,
+       over the seconds the slash takes to kill (the figure on the slash's row). */
+    const H = b.hearts, ring = r.state.tools.includes('weavelight');
+    const hearts = !H.cap ? t('ftBindNoHearts') : H.seconds == null ? ''
+      : t('ftBindHearts', { n: num(H.cap), b: num(H.next, 2), a: num(H.first, 2), t: num(H.seconds, 1), i: num(r.needle.speed.interval, 2), x: num(H.strands) });
     const extra = [b.reserve ? t('ftBindReserve', { name: tool('reserve-bind') }) : '',
-      ['druids-eyes', 'druids-eye'].filter((id) => r.state.tools.includes(id)).map((id) => t('ftBindEye', { name: tool(id) }))[0] || ''];
+      ['druids-eyes', 'druids-eye'].filter((id) => r.state.tools.includes(id)).map((id) => t('ftBindEye', { name: tool(id) }))[0] || '',
+      hearts, ring && H.cap ? t('ftBindRing', { name: tool('weavelight'), k: num(SS.hero.REGEN.weavelight.time, 2) }) : ''];
     const bindNote = [t('ftBindNote', { s: num(b.silk), c: num(r.silk.bind), h: num(r.health.bind.heals) }), ...extra].filter(Boolean).join(' ');
+    const note = fromGame ? t(black ? 'ftTheirsBlackNote' : 'ftTheirsGameNote') : t('ftTheirsNote');
     return `<section class="ct-block"><h3 class="ct-h">${esc(t('ftTheirs', { n: num(masks) }))}</h3><ul class="ct-list ft-list is-theirs">${list}</ul>
-      <p class="pg-note">${esc(t('ftTheirsNote'))}</p><p class="pg-note">${esc(bindNote)}</p></section>`;
+      <p class="pg-note">${esc(note)}</p><p class="pg-note">${esc(bindNote)}</p></section>`;
   }
 
   /* ── The enemy gauntlets (js/gauntlets.js): an arena's waves, one after another ──

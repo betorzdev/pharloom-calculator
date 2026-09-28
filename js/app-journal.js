@@ -7,10 +7,14 @@
    it against Nuu's Memento (230 required, 231 in Steel Soul; six optional). An entry not yet
    seen is a dark silhouette; one seen and not complete, half-lit with its kills. In Free mode,
    the whole Journal, complete.
-   Where to find each one: js/journal-rooms.js, the enemies the game places in each scene (its own
-   files), named by area; a boss the game spawns instead, by its wiki infobox (js/enemies.js
-   BOSSES). In a save, the nearest place from your bench in rooms (js/rooms.js), and in the pane,
-   while nothing is picked, what's missing closest. Shares SS.app with js/app.js (see there). */
+   Where to find each one: js/journal-rooms.js, from the game's own files: the enemies it places in
+   each scene, and for the 29 it makes at run time (bosses, a hive's, a corpse's, a hazard's) the
+   scenes whose objects name or spawn them; an arena off the map (Lost Lace's, the Bell Eater's)
+   as the scenes that load it. Named by area; the Border Caves, which the site's areas don't
+   have, by the game's name, and the Bell Eater by the Bellways it's met from; with no scene, a
+   boss by its wiki infobox (js/enemies.js BOSSES). In a save, the nearest place from your bench in
+   rooms (js/rooms.js), and in the pane, while nothing is picked, what's missing closest.
+   Shares SS.app with js/app.js (see there). */
 (() => {
   'use strict';
   const SS = globalThis.SS;
@@ -22,22 +26,26 @@
   const portrait = (id) => `assets/icons/journal/${id}.webp`;
   const NAME = new Map(J.BOOK.map((e) => [e.id, e]));
   let picked = null;
-  const R = SS.rooms, CO = SS.collectibles, EN = SS.enemies, JR = SS.journalRooms || {};
+  const R = SS.rooms, CO = SS.collectibles, EN = SS.enemies, JR = SS.journalRooms || {}, LOADS = SS.journalLoads || {};
   const NEAR = 10;
   const areaName = (a) => (a && CO.AREAS[a] ? pick(CO.AREAS[a]) : '');
-  // Where an entry is: its areas, the one with the most first; a boss that isn't placed, its infobox's places.
+  /* Places the site's areas don't name: the map's Surface branch holds the Border Caves (their
+     scenes, Cradle_Destroyed_Challenge_*, by the game's name for them), and the Bell Eater's arena
+     is loaded by every Bellway station, so it's met on the Bellways. */
+  const PLACE = [[/^Cradle_Destroyed_Challenge/i, { es: 'Cuevas Fronterizas', en: 'Border Caves' }]];   // ABOVE_CRADLE
+  const LOADED_PLACE = { bellway_centipede_arena: () => t('mapPlace_bellway') };
+  const placeOf = (scene) => areaName(R.areaOf(scene)) || pick((PLACE.find(([re]) => re.test(scene)) || [])[1] || { es: '', en: '' });
+  // Where an entry is: its places, the one with the most first; with no scene, its boss infobox's.
   function whereOf(e) {
-    const placed = JR[e.key] || [];
-    if (placed.length) {
-      const by = new Map();
-      for (const [scene, n] of placed) { const a = R.areaOf(scene); if (a) by.set(a, (by.get(a) || 0) + n); }
-      return [...by].sort((a, b) => b[1] - a[1]).map(([a]) => areaName(a));
-    }
+    if (LOADED_PLACE[LOADS[e.key]]) return [LOADED_PLACE[LOADS[e.key]]()];
+    const by = new Map();
+    for (const [scene, n] of JR[e.key] || []) { const a = placeOf(scene); if (a) by.set(a, (by.get(a) || 0) + n); }
+    if (by.size) return [...by].sort((a, b) => b[1] - a[1]).map(([a]) => a);
     const foe = EN.FOES.find((f) => f.key === e.key && f.boss);
     const info = foe && EN.BOSSES[foe.page];
     return info && info.where ? info.where.map((w) => pick(w)) : [];
   }
-  // The nearest place it's in from your bench: { area, n } or null.
+  // The nearest place it's in from your bench: { place, n } or null.
   let walked = null;
   function nearest(e, g) {
     if (!g || !g.bench) return null;
@@ -45,7 +53,7 @@
     let best = null;
     for (const [scene] of JR[e.key] || []) {
       const n = R.steps(g.bench, scene, g.lit, walked.w);
-      if (n != null && (!best || n < best.n)) best = { n, area: R.areaOf(scene) };
+      if (n != null && (!best || n < best.n)) best = { n, place: placeOf(scene) };
     }
     return best;
   }
@@ -87,7 +95,7 @@
     const where = whereOf(e);
     const near = state !== 'done' ? nearest(e, App.game()) : null;
     return (where.length ? `<p class="hj-where"><span class="save-k">${esc(t('hjWhere'))}</span> <span${NT}>${esc(where.slice(0, 4).join(', '))}</span></p>` : '')
-      + (near ? `<p class="hj-where"><span class="save-k">${esc(t('hjNearest'))}</span> <span${NT}>${esc(areaName(near.area))}</span>, ${esc(stepsText(near.n))}</p>` : '');
+      + (near ? `<p class="hj-where"><span class="save-k">${esc(t('hjNearest'))}</span> <span${NT}>${esc(near.place)}</span>, ${esc(stepsText(near.n))}</p>` : '');
   }
   // What's missing closest to your bench: the entries not complete, by rooms, with the kills left.
   function nearList(list, g) {
@@ -98,7 +106,7 @@
     return `<section class="mp-near hj-near" aria-labelledby="hj-near-h"><h3 class="ct-h" id="hj-near-h">${esc(t('hjNear'))}</h3>
       <ol class="mp-near-list">${rows.map(({ x, near }) => `<li><img src="${portrait(x.e.id)}" alt="">
         <button type="button" class="text-btn mp-near-name" data-act="hjPick" data-key="${x.e.id}"${NT}>${esc(pick(x.e.name))}</button>
-        <span class="mp-near-area"><span${NT}>${esc(areaName(near.area))}</span> · ${esc(t('hjLeft', { n: num(Math.max(0, x.e.kills - x.kills)) }))}</span>
+        <span class="mp-near-area"><span${NT}>${esc(near.place)}</span> · ${esc(t('hjLeft', { n: num(Math.max(0, x.e.kills - x.kills)) }))}</span>
         <b>${esc(stepsText(near.n))}</b></li>`).join('')}</ol>
       <p class="pg-note">${esc(t('mapNearNote'))}</p></section>`;
   }

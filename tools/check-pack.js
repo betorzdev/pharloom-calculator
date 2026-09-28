@@ -17,6 +17,11 @@
      journal     once Nuu has given the Hunter's Memento (nuuMementoAwarded), the required
                  entries complete by their kills are all of them: 230, or 231 in Steel Soul
                  (must: exit code 1 if not)
+     acts        the road to the next Act (js/acts.js) against the Act the save is in: an Act 2 or
+                 3 save has beaten the Last Judge or the Phantom; a save where the Caretaker has
+                 offered Silk and Soul meets the game's group Soul Snare (js/quests.js); an Act 3
+                 save has every step of the road to Act 3 done but the last, Grand Mother Silk
+                 (must: exit code 1 if not). The road's steps done are printed per save.
    On Linux the game's folder is ~/.config/unity3d/Team Cherry/Hollow Knight Silksong/<id>/.
    The saves stay where they are: they're somebody's games and don't go in the repo. */
 'use strict';
@@ -27,6 +32,7 @@ const F = require('../js/savefile.js');
 const CP = require('../js/completion.js');
 const E = require('../js/engine.js');
 const J = require('../js/journal.js');
+const A = require('../js/acts.js');
 
 const root = process.argv[2];
 if (!root || !fs.existsSync(root)) {
@@ -73,6 +79,13 @@ for (const file of files) {
     const need = J.REQUIRED[steel ? 'steel' : 'classic'];
     if (done !== need) pd.push(`journal ${done}≠${need} with the Memento`);
   }
+  const road = A.next(g);
+  if (g.act >= 2 && !A.next({ ...g, act: 1 }).steps.find((s) => s.id === 'judge').ok) pd.push('acts: Act 2 without the Last Judge or the Phantom');
+  if (g.snareOffered && !A.group('Soul Snare', g).ok) pd.push('acts: Silk and Soul offered without the group Soul Snare');
+  if (g.act === 3) {
+    const left = A.next({ ...g, act: 2 }).steps.filter((s) => !s.ok && s.id !== 'silk').map((s) => s.id);
+    if (left.length) pd.push('acts: Act 3 with the road not done: ' + left.join(', '));
+  }
   if (g.build.crest) {
     const sl = E.compute(g.build).slots;
     for (const c of ['red', 'blue', 'yellow']) if (sl[c].over) pd.push(`build ${c} +${sl[c].over}`);
@@ -83,7 +96,7 @@ for (const file of files) {
   if (pd.length) badP++;
   const parts = ok ? '' : '  ' + c.categories.map((k) => `${k.id} ${k.got}/${k.max}`).join(', ');
   const at = r.restore ? `  (${r.restore.date} ${r.restore.event})` : '';
-  console.log(`${ok ? 'ok' : 'XX'}  ${String(c.total).padStart(3)}% (game ${String(game).padStart(3)}%)  act ${g.act}  gauntlets ${String(g.gauntlets.length).padStart(2)}  `
+  console.log(`${ok ? 'ok' : 'XX'}  ${String(c.total).padStart(3)}% (game ${String(game).padStart(3)}%)  act ${g.act} ${road ? `(${road.done}/${road.total})` : '     '}  gauntlets ${String(g.gauntlets.length).padStart(2)}  `
     + `${name}  v${r.pd.version || '?'}${F.meta(r.pd).steel ? ' Steel Soul' : ''}${at}${parts}${pd.length ? '  pieces: ' + pd.join(', ') : ''}`);
 }
 let lost = 0;

@@ -124,7 +124,15 @@
         </li>`;
     }).join('');
     const book = App.bookDone(g.journal, m.steel), bookMax = App.bookTotal(m.steel);
+    // The road to the next Act (js/acts.js), in one line that opens it in Progress.
+    // The step you're on and how far into it: "step 1 of 5, 14 of 15".
+    const r = SS.acts.next(g);
+    const at = r ? r.steps.findIndex((x) => !x.ok && !x.bypassed) : -1;
+    const cur = at >= 0 ? r.steps[at] : null;
+    const roadText = r && cur ? t(cur.total > 1 ? 'homeRoadPart' : 'homeRoad', { n: num(r.act), k: num(at + 1), total: num(r.total), done: num(cur.done), of: num(cur.total) }) : '';
+    const road = roadText ? `<p class="hm-road"><a class="text-btn" href="${App.here(App.hashFor('progress'))}" data-act="view" data-value="progress">${esc(roadText)}</a></p>` : '';
     return `${top}
+      ${road}
       ${sinceHtml()}
       <div class="hm-total">
         <p class="hm-total-k">${esc(t('homeCompletion'))}</p>

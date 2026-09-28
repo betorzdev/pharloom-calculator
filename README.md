@@ -26,7 +26,7 @@ python3 -m http.server 8000    # then http://localhost:8000
 npm test                       # node --test, no dependencies
 npm run text -- "Straight Pin" # the game's own text, in every language it ships
 npm run kb                     # downloads the wiki's wikitext into kb/data/raw/
-npm run data                   # regenerates js/data.js, enemies, journal, collectibles, gauntlets
+npm run data                   # regenerates js/data.js, enemies, journal, collectibles, gauntlets, how
 npm run collectibles           # the completionist's dictionary, pinned (the save's fields)
 npm run art                    # the game's sprites from the wiki; npm run icons, its icons
 npm run pages                  # one page per search and per boss, in each language, and sitemap.xml
@@ -36,9 +36,15 @@ npm run check-pack -- <folder> # the site against a folder of real saves: the 10
 The map is extracted from the installed game: `tools/extract-map.py` (see its header); and the
 game's arenas, which say how a save marks each gauntlet cleared, are listed by
 `tools/extract-battles.py`; each Crest's slash timings, into `js/hero.js`, by
-`tools/extract-hero.py`; how the rooms connect, into `js/graph.js`, by `tools/extract-graph.py`; and where each Journal
-entry's enemies are placed, into `js/journal-rooms.js`, by `tools/extract-journal-rooms.py`; and each boss's phases,
-into `js/phases.js`, by `tools/extract-phases.py`.
+`tools/extract-hero.py`; how the rooms connect, into `js/graph.js`, by `tools/extract-graph.py`;
+where each Journal entry is found (its enemies, or what makes them), into `js/journal-rooms.js`, by
+`tools/extract-journal-rooms.py`; each boss's phases, into `js/phases.js`, by
+`tools/extract-phases.py`; what each common enemy does to Hornet, into `js/enemy-damage.js`, by
+`tools/extract-damage.py`; the frames of the Hornet who walks the page, into `assets/hornet/`, by
+`tools/extract-hornet.py`; the wishes' rules (what opens Act 3, and which wish comes before
+which), into `js/quests.js`, by `tools/extract-quests.py`; and what each vendor sells, for how
+much, and what each wish gives, into `js/shop.js`, by `tools/extract-shops.py` (`npm run data`
+then joins it into `js/how.js`: how to get each thing of the 100%).
 
 ## Credits
 

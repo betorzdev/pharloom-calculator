@@ -9,6 +9,12 @@ The header has the language and, on the right, the save you're in (Hornet at a b
 Journal; Crest, Combat); the ones not built yet say which phase of the plan builds them. The
 study and the plan are in `design/00-study.md`.
 
+On a computer, Hornet sits on the screen bar under the tab you're on: she is its mark, where a
+phone's width draws a rule instead. When you change screens she gets up and runs along the bar to
+the new one, at a steady pace, with her own frames from the game (the Run clip, 15 a second).
+She's decoration: hidden from screen readers and out of the tab order. With reduced motion she
+only sits, placed straight under the tab. Click her and she binds.
+
 ### Saves
 
 Four saves, as the game's profile screen, and **Free mode** (nobody's game: where the site
@@ -104,13 +110,17 @@ ones. An entry is complete when the save lists it with its kills done: the game 
 for the entries it completes another way, and on the saves where Nuu has given the Memento the
 site counts all 230. In Free mode, the whole Journal.
 
-**Where**: each entry says the areas its enemies are placed in, the most first, from the game's
-own files (208 of the 237; a boss the game summons instead says its fight's places). In a save,
-also the nearest one from your bench, in rooms, and with no entry picked the pane lists what's
-missing closest, with the kills each still needs; tap one to read it. The rooms are counted by the
-game's doors and the stations you've opened. Verdania, the Cradle, the Mist and the caravan's
-insides are reached some other way (a memory, a lift, the maze), so their entries say where, not
-how far.
+**Where**: each entry says the places it's found, the most first, from the game's own files: for
+208 of the 237, the areas its enemies are placed in; for the other 29, which the game makes as you
+play, the rooms of what makes them: a boss's arena, the waters where the Muckmaggots are on, each
+Sandcarver's pit, the cocoons and corpses that let Gloomsacs, Winged Lifeseeds and Shellwood Gnats
+out, the Void Mass's cores, and for Shakra and Garmond & Zaza the room of their duel. Lost Lace's
+arena and the Bell Eater's aren't on the map, so they count as the rooms that take you there: the
+Abyss's dive, and every Bellway station. In a save, also the nearest one from your bench, in rooms,
+and with no entry picked the pane lists what's missing closest, with the kills each still needs;
+tap one to read it. The rooms are counted by the game's doors and the stations you've opened.
+Verdania, the Cradle, the Mist and the caravan's insides are reached some other way (a memory, a
+lift, the maze), so their entries say where, not how far.
 
 ### Combat
 
@@ -122,16 +132,28 @@ black-threaded one when it has it (Act 3), its five modifiers with the level you
 and your Crafting Kit's marked, the hits that stagger it, and a boss's phases (read from the
 game's own files: where each one starts, as a health or a share of it, or after how much damage
 when each phase has a bar of its own, as Grand Mother Silk's six; and the slashes of yours that
-get there from full health). Beside it, what you do to it: each
+get there from full health; and the few that go otherwise: Father of the Flame's lanterns and
+core, each broken at 0 or after so many hits, the Forebrothers' heal when one falls, Signis's
+phases as shares of his own health, and the health Phantom goes back to if the finishing prompt
+is missed). Beside it, what you do to it: each
 of your attacks (the slash, with its product: Needle × your modifiers × its modifier; the
 Crest's own attacks; the Needle Strike; the Silk Skill equipped; each Tool that deals damage,
 with what share of its health a full load takes) and how many uses kill it, counting every hit
-landing; after a Challenge, only the first hit takes it. And what it does to you: each of its
-attacks (the wiki's names, the game doesn't name them), how many masks it takes (the Barbed
-Bracelet doubles them) and how many kill you, then how many if you Bind with the silk the
+landing; after a Challenge, only the first hit takes it. And what it does to you: for a boss,
+each of its attacks (the wiki's names, the game doesn't name them); for any other enemy, read
+from the game's own files, its body on contact (two values when the game places it with both)
+and its strongest attack when that takes more, and black-threaded every hit is 2 masks (the game
+makes them all void; it doesn't double them). What it throws or summons at run time isn't
+counted. For each, how many masks it takes (the Barbed Bracelet multiplies them by the game's
+own figure, 2) and how many kill you, then how many if you Bind with the silk the
 quickest fight leaves (the full spool and one strand a slash, less its Skill casts; a Bind as
 soon as it heals in full or the next hit would kill you; the Reserve Bind's free one and Druid's
-Eye's silk count, Silk Hearts' regeneration doesn't). The build is the Crest screen's.
+Eye's silk count). Silk Hearts' regeneration counts too, over the seconds your slash takes to
+kill it (the figure on the slash's row), as the game's code has it: silk only comes back up to
+one strand per Silk Heart (Weavelight: one more), one strand after 3.9 s in which your silk
+doesn't change (1.45 s from an empty spool; Weavelight, ×0.65), and every slash that lands
+restarts that count. Starting with a full spool and slashing nonstop, it adds nothing, and the
+note under the list says so. The build is the Crest screen's.
 
 **Enemy gauntlets**: the other half of the screen, the game's 49 arenas of waves, each named by
 its place or its area, with its reward (the game's name for it, when it gives something the game
@@ -160,11 +182,13 @@ them). Below, the places, each with a glyph of its own and switched on or off to
 the Bellway stations and the Ventrica stations where the game puts its own pins, dimmed while
 your game hasn't opened them (a station not unlocked, a toll bench not paid; the counter says how
 many are open), and the enemy gauntlets you haven't cleared, in their arena's room. Hornet sits
-on her bench's pin. The map shows the world explored before Act 3, with Verdania and Whiteward
+on her bench's pin, as the game draws her sitting. The map shows the world explored before Act 3, with Verdania and Whiteward
 as they are once their bosses are beaten.
 
 When your previous save rested at another bench, a dashed thread draws Hornet's way from it to
-this one. Under the map, **Closest to your bench**: the pieces and gauntlets you're missing that
+this one, and the first time the map comes into view she runs it, room by room, from the old
+bench to the new one (two to eight seconds; the view follows her when it's enlarged), and sits.
+She runs each way once; with reduced motion she's simply at her bench. Under the map, **Closest to your bench**: the pieces and gauntlets you're missing that
 are fewest rooms away, counting each door and each ride between the Bellway and Ventrica stations
 you've opened (the rooms and doors are the game's own, from its files; a count of rooms, not a
 distance on foot). Progress says the same for each missing piece that sits in a room. "Whole" fits it to the page; ×1,5 and ×2,5 enlarge it, and it scrolls to your bench. In
@@ -172,14 +196,53 @@ Free mode, every piece.
 
 ### Progress
 
-What's missing for 100%, in the wiki's ten categories: the Tools (with their slot colour),
+First, before Act 3, **the road to the next Act**, as the game's own rules have it (read from its
+files, not from a guide), in numbered steps, each with its count or a tick:
+
+- **To Act 2**: ring the five Bellshrines, open the Grand Gate, defeat the Last Judge, and walk into
+  the Citadel. Defeating the Phantom opens another way in, and the first two steps then say
+  they're no longer needed.
+- **To Act 3**:
+  1. Unlock the wish Silk and Soul:
+     - its 10 required wishes (guides give six: the ones before them count too);
+     - 17 of its 25 wish points (a delivery is worth half a point, the first time only);
+     - four conditions: the Flea Caravan at Fleatopia, the Faydown Cloak, Lace defeated in the
+       Cradle (with the three melodies that lead there), and the Bellhome Key. Pavo gives the key
+       after Bellhart's Glory and 2 wishes of his list, and the step lists them until then.
+  2. Take the wish.
+  3. Gather the snare's four pieces.
+  4. Bring them to the Caretaker.
+  5. Snare Grand Mother Silk with the Needolin.
+
+Each missing wish shows its Act, its area and the wish to do before it when there is one. A part
+already met hides its rows under "What's missing". On Your game, one line says which step you're
+on and links here. A slot saved before the site read the wishes asks to be imported again.
+
+Then what's missing for 100%, in the wiki's ten categories: the Tools (with their slot colour),
 Crests, Silk Skills and abilities by name, and the Mask Shards, Spool Fragments, Crafting Kit
 and Tool Pouch upgrades, Needle upgrades and Silk Hearts one by one. Each thing says its Act and
-the area it's in, with the game's names; what belongs to a later Act than yours is dimmed. Then
-what doesn't count but opens things: Memory Lockets, Craftmetal, Pale Oil, the Lost Fleas, the
-four Old Hearts (the Red Memory), the three melodies (the Cradle) and the abilities outside the
-100% (the two cloaks, Beastling Call, Elegy of the Deep), and the 49 enemy gauntlets, named as
-Combat names them.
+the area it's in, with the game's names; what belongs to a later Act than yours is dimmed. What's
+missing also says **how to get it**, from the game's shops and the wishes' rewards (and the
+wiki's boss drops):
+- the vendor and the price in rosaries;
+- the Pale Oil or Craftmetal it takes;
+- the wish, the boss, the challenge, or the fleas rescued.
+
+Under the heading, what the missing purchases cost against the rosaries you carry. The Tools'
+note warns of the two traps: the Curveclaw handed over to a Skarr loses its point until the
+Curvesickle, and the Silkshot's first repair closes the other two versions.
+
+"Nearest first" orders the missing things by rooms from your bench, the ones with no room after.
+
+Then **other collectibles**, which don't count for completion, each group saying what it's for:
+- Memory Lockets (Crest slots);
+- Craftmetal (crafted Tools);
+- Pale Oil (the Needle's upgrades);
+- the Lost Fleas (the caravan's rewards, and Fleatopia for Act 3);
+- the four Old Hearts (Act 3's ending);
+- the three melodies (the way to the Cradle);
+- the abilities outside the 100%;
+- the 49 enemy gauntlets, named as Combat names them.
 
 Last, **Tasks** («Tareas», the game's pane): the main objectives and the wishes on the boards by
 type (Wayfarer, Gather, Donate, Hunt, Grand Hunt, Delivery…), 74 in all, each with the game's own
@@ -188,7 +251,7 @@ game of that mode. A task done also shows in "Since the previous save".
 In a save it shows what's missing, or everything with a tick where you have it; without a save,
 the whole list, as a guide. Which piece you have is read from the save one by one, and on the
 92 real saves it agrees with the game's own counters (masks, spools, the three upgrade ladders,
-the Silk Hearts). The exact room comes with the map (phase 6).
+the Silk Hearts).
 
 ### Pages
 
@@ -238,6 +301,9 @@ texts and names are © Team Cherry; they're used here only to show the game's ow
   only the facts (the header, the key, the field names) are taken. Where each Tool, Crest,
   Journal entry and loose piece lives in the save comes from the completionist's dictionary,
   pinned in `kb/data/completionist/` with its licence (`npm run collectibles`).
+- **Hornet's frames**: running, sitting and standing, extracted from the installed game's own
+  sprites by `tools/extract-hornet.py` (`assets/hornet/run.png`, `sit.png`, `stand.png`), shown
+  as the rest of the sprites, as a fan project.
 - **Sprites and icons**: Hornet, the masks, the spool, the five Needles (`npm run art`) and the
   inventory icons of the Tools, Crests, Silk Skills, abilities and items and the Journal's 237
   portraits (`npm run icons`, fitted into 256 px as WebP) are the game's, downloaded from the wiki and shown as a fan project.

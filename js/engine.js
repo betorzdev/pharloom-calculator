@@ -262,18 +262,51 @@
     return null;
   }
 
-  /* What the plan's fight leaves for Binds: its silk (the spool full to start, one strand per
-     slash, less the Skill casts), a Bind's cost each, and the Reserve Bind's free one. */
-  function binds(r, p) {
-    const skill = r.skills.find((x) => x.equipped);
-    const silk = r.silk.spool + (p ? p.slashes - p.casts * (skill ? skill.silk : 0) : 0);
-    return { silk, paid: Math.floor(silk / r.silk.bind), reserve: r.state.tools.includes('reserve-bind') ? 1 : 0 };
+  /* Silk Hearts' regeneration (js/hero.js REGEN, the game's HeroController): the cap is one strand
+     per Silk Heart (Weavelight: one more), and it only regenerates below it; a strand comes after
+     delay + duration seconds in which the silk doesn't change (from an empty spool, the first*
+     times, 1.45 s; otherwise 3.9 s; Weavelight's ×0.65), and any change restarts it, the strand
+     itself too. Over `seconds` starting at `silk`, with a slash landing (a strand, up to the
+     spool) every `gap` seconds, the first at 0; no gap, no slashes. → { cap, first, next, strands } */
+  function regen(r, seconds, gap, silk = 0) {
+    const R = HERO.REGEN, ring = r.state.tools.includes('weavelight');
+    const k = ring ? R.weavelight.time : 1;
+    const cap = r.silk.hearts + (ring ? R.weavelight.cap : 0);
+    const first = (R.firstDelay + R.firstDuration) * k, next = (R.delay + R.duration) * k;
+    let strands = 0;
+    const quiet = (len) => {   // a stretch with no slash: the strands that fit in it
+      for (let t = 0; silk < cap && silk < r.silk.spool; strands++, silk++) {
+        t += silk === 0 ? first : next;
+        if (t > len + 1e-9) return;
+      }
+    };
+    if (!(gap > 0)) quiet(seconds || 0);
+    else {
+      silk = Math.min(r.silk.spool, silk + 1);   // the first slash, at 0
+      for (let left = seconds || 0; left > 1e-9; left -= gap) {
+        quiet(Math.min(gap, left));
+        if (left >= gap - 1e-9) silk = Math.min(r.silk.spool, silk + 1);
+      }
+    }
+    return { cap, first: Math.round(first * 1e4) / 1e4, next: Math.round(next * 1e4) / 1e4, strands };
   }
 
-  /* How many hits of per masks Hornet takes before dying, with the Binds b pays for (binds()):
-     she binds as soon as one heals in full, or when the next hit would kill her. Druid's Eye adds
-     a strand every two hits taken (its upgrade, two), which may pay for another. Silk Hearts'
-     regeneration and the spool's cap on what comes in are left out. → { hits, binds } */
+  /* What the plan's fight leaves for Binds: its silk (the spool full to start, one strand per
+     slash, less the Skill casts, plus what Silk Hearts regenerate over the seconds the slash
+     takes to kill at the Crest's pace: needle.speed), a Bind's cost each, and the Reserve Bind's
+     free one. Starting full and slashing nonstop, the Hearts give nothing (regen). */
+  function binds(r, p) {
+    const skill = r.skills.find((x) => x.equipped);
+    const sp = r.needle.speed || {};
+    const hearts = { ...regen(r, sp.seconds, sp.interval, r.silk.spool), seconds: sp.seconds == null ? null : sp.seconds };
+    const silk = r.silk.spool + (p ? p.slashes - p.casts * (skill ? skill.silk : 0) : 0) + hearts.strands;
+    return { silk, paid: Math.floor(silk / r.silk.bind), reserve: r.state.tools.includes('reserve-bind') ? 1 : 0, hearts };
+  }
+
+  /* How many hits of per masks Hornet takes before dying, with the Binds b pays for (binds(),
+     Silk Hearts' strands in): she binds as soon as one heals in full, or when the next hit would
+     kill her. Druid's Eye adds a strand every two hits taken (its upgrade, two), which may pay
+     for another. The spool's cap on what comes in is left out. → { hits, binds } */
   function endure(r, per, b) {
     const max = r.health.masks, heals = r.health.bind.heals, cost = r.silk.bind;
     const has = (id) => r.state.tools.includes(id);
@@ -298,25 +331,36 @@
   /* A boss's phases (js/phases.js, from the game's FSMs) against hp: each one from the second,
      with the health it starts at, the damage it takes to get there, and the slashes (h: an attack
      of compute(), its uses as usesToKill counts them). The FSM moves on when the health is at or
-     below the threshold, a share of the health it started with (rounded to the nearest: the
-     game's MultiplyIntByFloat isn't read) or a number. Bars: each phase with its own health, all
-     together the fight's; with another health (black-threaded) they no longer add up, and aren't
-     used. → [{ n, left, share, dealt, uses }] */
+     below the threshold, a share of the health it started with or a number. The share is the
+     game's MultiplyIntByFloat: the health times a single-precision float, truncated (its
+     forceRoundUp is off in every boss), so 45% of 550 is 247, not 248. `of`: the shares are of
+     one of the fight's bars, not of hp (Signis's 720 of the Forebrothers' 1,240), and the damage
+     is to that one. Bars: each phase with its own health, all together the fight's; with another
+     health (black-threaded) they no longer add up, and aren't used. With `pieces`, a bar is made
+     of so many pieces, each with its own share of it, and damage past one's 0 is lost: the
+     slashes are each piece's. → [{ n, left, share, dealt, of, uses }] */
+  const share = (hp, a) => Math.trunc(Math.fround(hp * Math.fround(a)));
   function phases(P, hp, h) {
     if (!P || !hp) return [];
     const out = [];
     if (P.bars && P.bars.reduce((a, b) => a + b, 0) === hp) {
-      let dealt = 0;
-      P.bars.slice(0, -1).forEach((b, i) => { dealt += b; out.push({ n: i + 2, left: hp - dealt, share: null, dealt }); });
-    } else {
-      for (const a of P.at || []) {
-        const left = a < 1 ? Math.round(hp * a) : a;
-        if (left > 0 && left < hp) out.push({ n: out.length + 2, left, share: a < 1 ? a : null, dealt: hp - left });
-      }
+      let dealt = 0, uses = 0;
+      P.bars.slice(0, -1).forEach((b, i) => {
+        dealt += b;
+        const k = P.pieces && P.pieces[i], each = k && h ? usesToKill(h, b / k) : null;
+        uses = !h ? null : !P.pieces ? usesToKill(h, dealt) : uses != null && each != null ? uses + k * each : null;
+        out.push({ n: i + 2, left: hp - dealt, share: null, dealt, of: null, uses });
+      });
+      return out;
+    }
+    const of = P.of || hp;
+    for (const a of P.at || []) {
+      const left = a < 1 ? share(of, a) : a;
+      if (left > 0 && left < of) out.push({ n: out.length + 2, left, share: a < 1 ? a : null, dealt: of - left, of: P.of || null });
     }
     return out.map((x) => ({ ...x, uses: h ? usesToKill(h, x.dealt) : null }));
   }
 
-  SS.engine = { roundHalfEven, normalize, modsFor, hitsOf, usesToKill, interval, compute, plan, binds, endure, phases };
+  SS.engine = { roundHalfEven, normalize, modsFor, hitsOf, usesToKill, interval, compute, plan, regen, binds, endure, phases };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.engine;
 })();

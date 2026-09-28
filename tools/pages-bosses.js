@@ -62,6 +62,15 @@ const W = {
   phaseAt: { es: 'fase {n} con {x} de vida', en: 'phase {n} at {x} health' },
   phaseShare: { es: ' ({p} %)', en: ' ({p}%)' },
   phaseAfter: { es: 'fase {n} tras {x} de daño', en: 'phase {n} after {x} damage' },
+  // The shares of one of the fight's bars (Signis's 720 of the Forebrothers' 720 + 520).
+  phaseAtOf: { es: 'fase {n} con {x} de vida de {o}', en: 'phase {n} at {x} of {o} health' },
+  phasePieces: { es: 'La fase {n} son {k} piezas de {x} de vida, y cada una se rompe a 0 o tras {h} golpes.',
+    en: 'Phase {n} is {k} pieces of {x} health, each broken at 0 or after {h} hits.' },
+  phasePiece: { es: 'La fase {n} es una pieza de {x} de vida, que se rompe a 0 o tras {h} golpes.',
+    en: 'Phase {n} is one piece of {x} health, broken at 0 or after {h} hits.' },
+  phaseHeal: { es: 'Cuando cae uno, el otro, si tiene {x} de vida o menos, recupera {a}, hasta {m} como mucho.',
+    en: 'When one falls, the other, at {x} health or less, heals {a}, to {m} at most.' },
+  phaseReset: { es: 'A 0 de vida, si se falla el remate, vuelve a {x}.', en: 'At 0 health, if the finishing prompt is missed, it goes back to {x}.' },
   drops: { es: 'Recompensa: {x}.', en: 'Reward: {x}.' },
   more: { es: 'Esta página abre la calculadora de daño con este jefe elegido: con tu partida o tu build, el daño de cada uno de tus ataques, cuántos hacen falta y lo que te hace a ti cada uno de los suyos.',
     en: 'This page opens the damage calculator with this boss picked: with your save or your build, each of your attacks\' damage, how many it takes, and what each of its attacks does to you.' },
@@ -134,7 +143,16 @@ function bossPage(page) {
   const ph = fought.map((f) => [f, E.phases(PH[f.id], f.hp)]).filter(([, l]) => l.length);
   if (ph.length) body.push(both(W.phases, (lang) => ({ x: ph.map(([f, l]) => (ph.length > 1 || fought.length > 1 ? fightName(f, lang) + ': ' : '')
     + list(l.map((x) => (PH[f.id].bars ? fill(W.phaseAfter[lang], { n: num(x.n, lang), x: num(x.dealt, lang) })
-      : fill(W.phaseAt[lang], { n: num(x.n, lang), x: num(x.left, lang) }) + (x.share ? fill(W.phaseShare[lang], { p: num(Math.round(x.share * 100), lang) }) : ''))), lang)).join('; ') })));
+      : fill(W[x.of ? 'phaseAtOf' : 'phaseAt'][lang], { n: num(x.n, lang), x: num(x.left, lang), o: num(x.of || 0, lang) })
+        + (x.share ? fill(W.phaseShare[lang], { p: num(Math.round(x.share * 100), lang) }) : ''))), lang)).join('; ') })));
+  // What js/phases.js says past the thresholds: bars in pieces, a heal, a reset.
+  for (const [f] of ph) {
+    const P = PH[f.id];
+    (P.pieces || []).forEach((k, i) => body.push(both(k > 1 ? W.phasePieces : W.phasePiece,
+      (lang) => ({ n: num(i + 1, lang), k: num(k, lang), x: num(P.bars[i] / k, lang), h: num(P.hits[i], lang) }))));
+    if (P.heal) body.push(both(W.phaseHeal, (lang) => ({ x: num(P.heal[0], lang), a: num(P.heal[1], lang), m: num(P.heal[2], lang) })));
+    if (P.reset) body.push(both(W.phaseReset, (lang) => ({ x: num(P.reset, lang) })));
+  }
   if (info.drops) body.push(both(W.drops, (lang) => ({ x: list(info.drops.map((d) => d[lang]), lang) })));
   body.push(both(W.more, (lang) => ({ n: n(lang) })));
 

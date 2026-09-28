@@ -4,7 +4,9 @@
    (js/collectibles.js CRESTS), its attackDuration, attackCooldownTime and
    quickAttackCooldownTime (Flea Brew's), and the Beast's in fury (rage). A slash waits
    max(cooldown, duration) after the one before (js/engine.js). QUICKENING: how long Flea
-   Brew's lasts. */
+   Brew's lasts. REGEN: Silk Hearts' regeneration, a strand after delay + duration seconds
+   (first*: from an empty spool) while the silk is below the cap and doesn't change;
+   weavelight: its time multiplier and what it adds to the cap. */
 (() => {
   'use strict';
   const SS = globalThis.SS || (globalThis.SS = {});
@@ -71,7 +73,17 @@
         "quickAttackCooldownTime": 0.2375
       }
     },
-    "QUICKENING": 10.0
+    "QUICKENING": 10.0,
+    "REGEN": {
+      "firstDelay": 0.65,
+      "firstDuration": 0.8,
+      "delay": 2.0,
+      "duration": 1.9,
+      "weavelight": {
+        "time": 0.65,
+        "cap": 1
+      }
+    }
   };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.hero;
 })();

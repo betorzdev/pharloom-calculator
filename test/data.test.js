@@ -155,17 +155,11 @@ test('each boss\'s phases, from the game, against the wiki\'s phase labels', () 
     const p = P[f.id];
     game[f.page] = Math.max(game[f.page] || 0, p ? (p.bars ? p.bars.length : p.at.length + 1) : 0);
   }
-  // page: [wiki, game]. Not in the game's files yet (another entity's health, or past 0).
-  const MISSING = {
-    'bell-eater': [2, 0],               // the head's and the rear's health added
-    'father-of-the-flame': [2, 0],      // four lanterns, then the core
-    'forebrothers-signis-and-gron': [2, 0], // two brothers, each upgraded at 350
-    'phantom': [2, 0],                  // the Cross Stitch once at 0
-  };
-  // The game changes more than the wiki names a phase: a rage (Gurr's, Lace's, the Bell Beast's),
-  // a last stagger, a pace that quickens, or a fight the wiki doesn't split.
+  // page: [wiki, game]. The game changes more than the wiki names a phase: a rage (Gurr's, Lace's,
+  // the Bell Beast's), a last stagger, a pace that quickens, a summons (Signis calls workers at
+  // 90% and 70% before Gron at 50%), or a fight the wiki doesn't split.
   const MORE = {
-    'bell-beast': [1, 3], 'clover-dancers': [1, 2], 'cogwork-dancers': [0, 4], 'crust-king-khann': [2, 3],
+    'bell-beast': [1, 3], 'bell-eater': [2, 3], 'forebrothers-signis-and-gron': [2, 4], 'clover-dancers': [1, 2], 'cogwork-dancers': [0, 4], 'crust-king-khann': [2, 3],
     'grand-mother-silk': [5, 6], 'gurr-the-outcast': [2, 3], 'lace': [2, 3], 'last-judge': [2, 3],
     'lost-lace': [0, 4], 'moss-mother': [0, 2], 'palestag': [0, 2], 'pinstress': [0, 2],
     'plasmified-zango': [0, 5], 'savage-beastfly': [2, 3], 'second-sentinel': [0, 2],
@@ -177,11 +171,166 @@ test('each boss\'s phases, from the game, against the wiki\'s phase labels', () 
     const labels = a.attacks.map((x) => /^Phase (\d+)/.exec((x.where && x.where.en) || '')).filter(Boolean);
     const wiki = labels.length ? Math.max(...labels.map((m) => +m[1])) : 0;
     const got = [wiki, game[page] || 0];
-    const want = MISSING[page] || MORE[page];
+    const want = MORE[page];
     if (want) assert.deepEqual(got, want, page);
     else { assert.equal(got[1], got[0], `${page}: ${got[0]} phases on the wiki, ${got[1]} from the game`); if (wiki) same++; }
   }
-  assert.equal(same, 13);
+  assert.equal(same, 15);   // with Father of the Flame's two bars and Phantom's rage
   // Every boss in js/phases.js is one of js/enemies.js.
   for (const id of Object.keys(P)) assert.ok(E.FOES.some((f) => f.id === id && f.boss), id);
+});
+
+test('what enemies do to Hornet (js/enemy-damage.js, the game\'s files): its shape, and the wiki\'s {{damage}} for the same enemies', () => {
+  const DMG = require('../js/enemy-damage.js');
+  const fs = require('fs');
+  const path = require('path');
+  const W = require('../tools/wiki.js');
+  const keys = Object.keys(DMG.BY_KEY);
+  assert.equal(keys.length, 199);
+  assert.equal(DMG.BARBED, 2);   // the Gameplay settings' barbedWireDamageTakenMultiplier
+  const journal = new Set(J.BOOK.map((e) => e.key));
+  const masks = (l) => Array.isArray(l) && l.length && l.every((m, i) => Number.isInteger(m) && m >= 1 && m <= 4 && (!i || m > l[i - 1]));
+  for (const k of keys) {
+    const d = DMG.BY_KEY[k];
+    assert.ok(journal.has(k), `${k} is no Journal entry`);
+    assert.ok(d.body || d.attacks, k);
+    if (d.body) assert.ok(masks(d.body), `${k} body`);
+    for (const [g, v] of Object.entries(d.attacks || {})) assert.ok(masks(v), `${k} ${g}`);
+    for (const [g, v] of Object.entries(d.types || {})) {
+      assert.ok(['fire', 'void'].includes(v) && d.attacks[g], `${k} ${g}`);
+      assert.ok(d.attacks[g].every((m) => m === 2), `${k} ${g}: fire and void hits are 2 masks`);
+    }
+  }
+  assert.equal(keys.filter((k) => DMG.BY_KEY[k].body).length, 198);
+  assert.equal(keys.filter((k) => Math.max(...(DMG.BY_KEY[k].body || [0])) === 2).length, 47);
+
+  /* Against the wiki: each enemy page's {{damage|n}} before its Act 3 section (a void hit left
+     out when there's another), the highest per hit against the highest the game has, and the
+     one nearest each "contact" against the body. The disagreements are pinned: in the game
+     they're projectiles spawned at run time (not under the enemy, so not read), enemies placed
+     with two values, and bosses whose contact changes with the phase. */
+  const files = new Map(fs.readdirSync(W.RAW).map((f) => [W.slug(f.replace(/\.wiki$/, '').replace(/_/g, ' ')), f]));
+  const perHit = (x) => Math.max(...x.split('+').map(Number).filter((n) => n > 0));
+  const DAMAGE = /\{\{damage\|([^}|]*)(\|[^}]*)?\}\}/gi;
+  const agree = { max: 0, contact: 0 }, differ = { max: [], contact: [] }, missing = [];
+  const seen = new Set();
+  for (const f of E.FOES) {
+    if (seen.has(f.key) || !files.has(f.page)) continue;
+    const txt = fs.readFileSync(path.join(W.RAW, files.get(f.page)), 'utf8');
+    const cut = txt.search(/^===?\s*(Act 3|Black[- ]Thread)/mi);
+    const body = cut > 0 ? txt.slice(0, cut) : txt;
+    const all = [...body.matchAll(DAMAGE)].map((m) => ({ v: perHit(m[1]), void: /void/i.test(m[2] || '') }));
+    if (!all.length) continue;   // this row's page gives none: the key's next row's page may
+    seen.add(f.key);
+    const g = DMG.BY_KEY[f.key];
+    if (!g) { missing.push(f.key); continue; }
+    const plain = all.filter((d) => !d.void);
+    const wikiMax = Math.max(...(plain.length ? plain : all).map((d) => d.v));
+    const gameMax = Math.max(...(g.body || []), ...Object.values(g.attacks || {}).flat());
+    if (wikiMax === gameMax) agree.max++; else differ.max.push(f.key);
+    const contact = new Set();
+    for (const s of body.split(/(?<=[.!?])\s+|\n|[,;]|\bwhile\b|\bbut\b/)) {
+      if (/black[- ]thread|act 3/i.test(s)) continue;
+      const ds = [...s.matchAll(DAMAGE)].filter((d) => !/void/i.test(d[0]));
+      if (!ds.length) continue;
+      for (const c of s.matchAll(/contact/gi)) {
+        contact.add(perHit(ds.reduce((a, d) => (Math.abs(d.index - c.index) < Math.abs(a.index - c.index) ? d : a))[1]));
+      }
+    }
+    if (contact.size) {
+      if ([...contact].every((c) => (g.body || []).includes(c))) agree.contact++; else differ.contact.push(f.key);
+    }
+  }
+  assert.equal(agree.max, 143);
+  assert.deepEqual(differ.max.sort(), [
+    'NAME_BONE_CIRCLER_VICIOUS',        // wiki 1, game 2: its Attack Circle
+    'NAME_BONE_SPITTER',                // wiki 2, game 1: its spit is spawned at run time
+    'NAME_CORAL_CONCH_DRILLER_GIANT',   // boss: wiki 1, game 2
+    'NAME_DOCK_BOMBER',                 // wiki 2, game 1: its bombs are spawned
+    'NAME_MOSSBONE_MOTHER',             // boss: wiki 2, game 1
+    'NAME_SLAB_FLY_MID',                // wiki 1, game 1 and 2 (placed with both)
+    'NAME_SLAB_FLY_SMALL_FRESH',        // wiki 2, game 1
+    'NAME_SONG_KNIGHT',                 // boss: wiki 2, game 1
+    'NAME_SONG_THREADED_HUSK',          // wiki 1, game 2
+    'NAME_SWAMP_GOOMBA',                // wiki 2, game 1: its explosion is spawned
+    'NAME_SWAMP_MOSQUITO',              // wiki 2, game 1
+  ]);
+  assert.equal(agree.contact, 99);
+  // Bosses whose wiki gives 1 and 2 on contact (by phase); the game places them at 2.
+  assert.deepEqual(differ.contact.sort(), ['NAME_BONE_FLYER_GIANT', 'NAME_FLOWER_QUEEN', 'NAME_SPLINTER_QUEEN']);
+  // With a {{damage}} on the wiki and nothing here: bosses and enemies the game spawns at run
+  // time (no placed record to read).
+  assert.equal(missing.length, 24);
+});
+
+test('the shops, from the game: nine vendors, prices in rosaries, every piece bought joined to its flag', () => {
+  const S = require('../js/shop.js');
+  assert.deepEqual(Object.keys(S.VENDORS).sort(), ['forge-daughter', 'frey', 'grindle', 'jubilana', 'mort', 'mottled-skarr', 'pebb', 'shakra', 'twelfth-architect']);
+  assert.deepEqual(S.UNSOLD, ['Belltown Tool Pouch', 'Forge Tacks Tool', 'Grindle Reserve Bind']);
+  for (const x of S.SHOP) {
+    assert.ok(S.VENDORS[x.vendor], x.item);
+    assert.ok(Number.isInteger(x.price) && x.price > 0, `${x.item}: price ${x.price}`);
+    assert.ok(x.craftmetal === undefined || Number.isInteger(x.craftmetal), x.item);
+    if (x.tool) assert.ok(CO.TOOLS[x.tool], `${x.item}: no Tool ${x.tool}`);
+    if (x.piece !== undefined) assert.deepEqual(CO.PIECES[x.piece][2], ['flag', x.flag], x.item);
+  }
+  // The Multibinder's price is its CostReference's (880), not its cost field (120).
+  const price = (item) => S.SHOP.find((x) => x.item === item).price;
+  assert.equal(price('Bellhart Multibind'), 880);
+  assert.equal(price('Forge Sting Shard Tool'), 140);
+  assert.deepEqual([S.NEEDLE.further, S.NEEDLE.final], [450, 680]);
+});
+
+test('how to get each thing of the 100%: every one has a way, and every way joins', () => {
+  const H = require('../js/how.js');
+  const CP = require('../js/completion.js');
+  const KINDS = new Set(['shop', 'wish', 'boss', 'found', 'craft', 'npc', 'challenge', 'fleas']);
+  const COUNTS = new Set(['mask-shard', 'spool-fragment', 'crafting-kit', 'tool-pouch', 'needle', 'silk-heart']);
+  const want = {
+    tools: CO.COUNTED.map((g) => g[0]), crests: CP.CRESTS, skills: CP.SKILLS, arts: CP.ARTS,
+    pieces: CO.PIECES.map((p, i) => (COUNTS.has(p[0]) ? String(i) : null)).filter((i) => i !== null),
+  };
+  const ways = [];
+  for (const [cat, ids] of Object.entries(want)) {
+    assert.deepEqual(Object.keys(H.HOW[cat]).sort(), [...ids].sort(), cat);
+    for (const id of ids) {
+      assert.ok(H.HOW[cat][id].length, `${cat}.${id} has no way`);
+      H.HOW[cat][id].forEach((w) => ways.push([`${cat}.${id}`, w]));
+    }
+  }
+  // 51 Tools, 6 Crests, 6 Silk Skills, 7 abilities; 20 + 18 + 4 + 4 + 4 + 3 pieces.
+  assert.deepEqual(Object.values(want).map((l) => l.length), [51, 6, 6, 7, 53]);
+  assert.ok(H.HOW.everbloom.length);
+  H.HOW.everbloom.forEach((w) => ways.push(['everbloom', w]));
+  for (const [where, w] of ways) {
+    assert.ok(KINDS.has(w.kind), `${where}: kind ${w.kind}`);
+    for (const k of ['price', 'craftmetal', 'paleOil', 'act']) {
+      if (w[k] !== undefined) assert.ok(Number.isInteger(w[k]) && w[k] >= 0, `${where}: ${k} ${w[k]}`);
+    }
+    if (w.kind === 'shop') assert.ok(Number.isInteger(w.price), `${where}: no price`);
+    if (w.vendor || w.npc) assert.ok(H.NPCS[w.vendor || w.npc], `${where}: no NPC ${w.vendor || w.npc}`);
+    if (w.kind === 'boss') assert.ok(E.FOES.some((f) => f.id === w.foe && f.boss), `${where}: no boss ${w.foe}`);
+    if (w.kind === 'wish') {
+      const c = JSON.stringify(CO.WISHES[w.wish][2]);
+      assert.ok(c.includes(JSON.stringify(['quest', w.quest])), `${where}: WISHES[${w.wish}] isn't ${w.quest}`);
+    }
+    (w.after || []).forEach((i) => assert.ok(CO.WISHES[i], `${where}: after ${i}`));
+    if (w.kind === 'fleas') assert.ok(w.fleas === 'all' || Number.isInteger(w.fleas), where);
+  }
+  for (const [id, n] of Object.entries(H.NPCS)) assert.ok(n.es && n.en, id);
+  // The Crafting Kit's four, in PIECES order.
+  const kit = CO.PIECES.map((p, i) => [p, i]).filter(([p]) => p[0] === 'crafting-kit').map(([, i]) => H.HOW.pieces[i][0]);
+  assert.deepEqual(kit.map((w) => [w.kind, w.vendor || w.quest, w.price]),
+    [['shop', 'forge-daughter', 180], ['wish', 'Crow Feathers', undefined], ['shop', 'grindle', 700], ['shop', 'twelfth-architect', 450]]);
+});
+
+test('the traps: Curveclaw handed over, Silkshot\'s three repairs, Broodfeast done as the Runt\'s', () => {
+  const H = require('../js/how.js');
+  assert.deepEqual(H.TRAPS.map((t) => t.id), ['curveclaw', 'silkshot', 'broodfeast-runt']);
+  const [curve, silk, runt] = H.TRAPS;
+  assert.deepEqual(curve.lost, { hidden: 'Curve Claws', locked: 'Curve Claws Upgraded' });
+  assert.deepEqual(silk.variants.map((v) => v.save), CO.TOOLS.silkshot);
+  assert.deepEqual(silk.variants.map((v) => v.way.kind), ['shop', 'shop', 'craft']);
+  assert.ok(JSON.stringify(CO.WISHES[runt.wish][2]).includes(runt.instead));
+  assert.ok(H.HOW.tools.longclaw.some((w) => w.quest === runt.instead && w.act === 3));
 });

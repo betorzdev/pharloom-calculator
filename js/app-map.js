@@ -1,6 +1,6 @@
 /* js/app-map.js — the Map: Pharloom as the game's map screen draws it (assets/map/rooms.webp,
    extracted from the game's files by tools/extract-map.py), and on it what your game needs: Hornet
-   at the bench you rest at, and each loose piece you're missing, in its room (js/rooms.js turns a
+   at the bench you rest at (js/app-hornet.js walks her there from the previous one), and each loose piece you're missing, in its room (js/rooms.js turns a
    scene into a point on the map). The pieces go by kind, each kind switched on or off; in Free
    mode, every piece, as a guide. Then the places, each a glyph of its own: the benches, Bellway
    and Ventrica stations where the game's own pins are (js/map.js PINS), dimmed while your game
@@ -15,7 +15,7 @@
   const SS = globalThis.SS;
   const M = SS.map, R = SS.rooms, CO = SS.collectibles, D = SS.data;
   const App = SS.app;
-  const { t, pick, esc, NT, ART, brackets, screenHead, prefs, savePrefs, render, actions } = App;
+  const { t, pick, esc, NT, brackets, screenHead, prefs, savePrefs, render, actions } = App;
 
   const num = (n) => App.NF[0].format(n);
   // The kinds drawn, in order: their name and the token of their colour on the map.
@@ -42,17 +42,32 @@
     try { prev = JSON.parse(App.load('pharloom.prev') || 'null'); } catch (e) { prev = null; }
     return prev && prev.snap ? SS.savefile.gameOf(prev.snap) : null;
   }
-  /* Hornet's way from the previous bench to this one: a line through the rooms' middles, drawn in
-     the image's own pixels (the SVG stretches with it). */
-  function wayHtml(g) {
+  /* Where a bench is drawn: its own pin when its room has one, else the room's middle; or null. */
+  function benchPoint(scene) {
+    const room = scene ? R.roomOf(scene) : null;
+    if (!room) return null;
+    const pin = M.PINS.find((p) => p[0] === 'bench' && (R.roomOf(p[3]) || {}).scene === room.scene);
+    return pin ? { x: pin[1], y: pin[2] } : { x: room.x, y: room.y };
+  }
+  /* Hornet's way from the previous save's bench to this one, in the image's pixels: the old
+     bench, the middles of the rooms between, the new bench. Its key names it (js/app-hornet.js
+     walks it once). null with no save before, a bench that didn't move, or no way between. */
+  function way(g) {
     const b = before();
-    if (!b || !b.bench || !g.bench || b.bench === g.bench) return '';
-    const way = R.path(b.bench, g.bench, g.lit);
-    const pts = (way || []).map((s) => R.roomOf(s)).filter(Boolean);
-    if (pts.length < 2) return '';
-    const start = pts[0];
+    if (!g || !b || !b.bench || !g.bench || b.bench === g.bench) return null;
+    const path = R.path(b.bench, g.bench, g.lit) || [];
+    const mid = path.slice(1, -1).map((s) => R.roomOf(s)).filter(Boolean);
+    const pts = [benchPoint(b.bench), ...mid, benchPoint(g.bench)].filter(Boolean);
+    return path.length > 1 && pts.length > 1 ? { key: b.bench + '>' + g.bench, pts } : null;
+  }
+  /* Hornet's way drawn: a line through the rooms' middles, in the image's own pixels (the SVG
+     stretches with it). */
+  function wayHtml(g) {
+    const w = way(g);
+    if (!w) return '';
+    const start = w.pts[0];
     return `<svg class="mp-way" viewBox="0 0 ${M.W} ${M.H}" preserveAspectRatio="none" aria-hidden="true">
-        <polyline points="${pts.map((p) => `${Math.round(p.x)},${Math.round(p.y)}`).join(' ')}"/></svg>
+        <polyline points="${w.pts.map((p) => `${Math.round(p.x)},${Math.round(p.y)}`).join(' ')}"/></svg>
       <i class="mp-from" style="${at(start.x, start.y)}" title="${esc(t('mapFrom'))}"></i>`;
   }
   /* What's missing nearest your bench: the pieces of the kinds shown and the gauntlets, by rooms. */
@@ -125,11 +140,10 @@
       inRoom.set(room.scene, n + 1);
       return `<span class="mp-pin is-gauntlet" style="${at(room.x + n * 16, room.y - 16)}" title="${esc(App.gauntletName(x.id))}">${GLYPH.gauntlet}</span>`;
     }).join('');
-    // Hornet on her bench's own pin when the room has one, else in the room's middle.
-    const room = g && g.bench ? R.roomOf(g.bench) : null;
-    const pin = room && M.PINS.find((p) => p[0] === 'bench' && (R.roomOf(p[3]) || {}).scene === room.scene);
-    const bench = pin ? { x: pin[1], y: pin[2] } : room;
-    const hornet = bench ? `<img class="mp-hornet" src="${ART.resting}" alt="${esc(t('mapBench'))}" title="${esc(t('mapBench'))}" style="${at(bench.x, bench.y)}">` : '';
+    /* Hornet sitting at her bench (the .hn sprite, css), on its own pin when the room has one,
+       else in the room's middle; js/app-hornet.js walks her here from the previous bench. */
+    const bench = g ? benchPoint(g.bench) : null;
+    const hornet = bench ? `<span class="mp-hornet hn is-sit" role="img" aria-label="${esc(t('mapBench'))}" title="${esc(t('mapBench'))}" style="${at(bench.x, bench.y)}"></span>` : '';
     const chips = KINDS.map((k) => `<button type="button" class="check mp-kind is-${k}" role="switch" aria-checked="${shown.includes(k)}" data-act="mapKind" data-value="${k}">
         <span class="check-box" aria-hidden="true">${App.tick}</span><i class="mp-dot is-${k}" aria-hidden="true"></i><span${NT}>${esc(kindName(k))}</span> <b>${num(count[k])}</b></button>`).join('');
     const placeChips = PLACES.map((k) => {
@@ -153,6 +167,9 @@
       if (v && h) v.scrollTo({ left: h.offsetLeft - v.clientWidth / 2, top: h.offsetTop - v.clientHeight / 2 });
     });
   };
+
+  // For js/app-hornet.js: the way to walk, and a point's place on the image.
+  Object.assign(App, { mapWay: () => way(App.game()), mapAt: at });
 
   Object.assign(actions, {
     mapKind(node) {

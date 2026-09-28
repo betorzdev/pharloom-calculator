@@ -136,13 +136,15 @@ test('the Binds a fight pays for, and the hits they let you take', () => {
   const r = E.compute({ needle: 0, skill: 'silkspear' }, { foe });
   // 31 slashes and 10 casts of 4: 9 + 31 − 40 = 0 silk left, no Bind.
   const p = E.plan(r, 300);
-  assert.deepEqual(E.binds(r, p), { silk: 0, paid: 0, reserve: 0 });
+  const { hearts: h0, ...b0 } = E.binds(r, p);
+  assert.deepEqual(b0, { silk: 0, paid: 0, reserve: 0 });
+  assert.equal(h0.strands, 0);
   assert.deepEqual(E.endure(r, 1, E.binds(r, p)), { hits: 5, binds: 0 });
   // No Skill: 60 slashes, 69 silk, 7 Binds of 3. Hits of 1: down to 2, bind (3 heals in full),
   // 7 times, 21 masks more: 26 hits.
   const r2 = E.compute({ needle: 0 }, { foe });
   const b2 = E.binds(r2, E.plan(r2, 300));
-  assert.deepEqual(b2, { silk: 69, paid: 7, reserve: 0 });
+  assert.deepEqual([b2.silk, b2.paid, b2.reserve], [69, 7, 0]);
   assert.deepEqual(E.endure(r2, 1, b2), { hits: 26, binds: 7 });
   // Hits of 2: 5 → 3, bind? 2 lost, no; 3 → 1, bind to 4 (the next would kill); 4 → 2, bind to 5 …
   const two = E.endure(r2, 2, b2);
@@ -155,11 +157,39 @@ test('the Binds a fight pays for, and the hits they let you take', () => {
   assert.deepEqual(E.endure(r2, 5, b2), { hits: 1, binds: 0 });
 });
 
-test('a boss\'s phases: a share of its health or a number, or bars of their own', () => {
+test("Silk Hearts' regeneration: below their cap, and only while the silk doesn't change", () => {
+  // The Hero prefab's times: 0.65 + 0.8 = 1.45 s from an empty spool (the Silk page's 1.45, not the
+  // Silk Heart page's 1.5), 2.0 + 1.9 = 3.9 s otherwise (not 4.25).
+  const r = E.compute({ hearts: 3 });
+  // A quiet 10 s from empty: 1.45, 5.35, 9.25: three strands, the cap. In 9 s, two.
+  assert.deepEqual(E.regen(r, 10, 0, 0), { cap: 3, first: 1.45, next: 3.9, strands: 3 });
+  assert.equal(E.regen(r, 9, 0, 0).strands, 2);
+  // At the cap or above, nothing: the spool full, or no Heart at all.
+  assert.equal(E.regen(r, 60, 0, 3).strands, 0);
+  assert.deepEqual(E.regen(E.compute({}), 60, 0, 0), { cap: 0, first: 1.45, next: 3.9, strands: 0 });
+  // Weavelight: +1 to the cap and ×0.65 the times, 0.9425 and 2.535 s; alone, one strand.
+  const w = E.compute({ tools: ['weavelight'] });
+  assert.deepEqual(E.regen(w, 5, 0, 0), { cap: 1, first: 0.9425, next: 2.535, strands: 1 });
+  // A slash every 5 s from empty: the first makes it 1; 3.9 s later a strand (2); the slash at 5
+  // makes it 3, the cap: one strand in 10 s.
+  assert.equal(E.regen(r, 10, 5, 0).strands, 1);
+  // Slashing nonstop (the Hunter's 0.41 s), even from empty: every strand that lands restarts
+  // the timer, which never runs out.
+  assert.equal(E.regen(r, 20, 0.41, 0).strands, 0);
+  // So the fight's Binds don't change: the spool full to start, a slash every 0.41 s for the
+  // 24.19 s the Needle takes to kill 300 (60 slashes of 5, 59 intervals).
+  const foe = { id: 'z', hp: 300, mods: [1, 1, 1, 1, 1] };
+  const r2 = E.compute({ needle: 0, hearts: 3, tools: ['weavelight'] }, { foe });
+  const b = E.binds(r2, E.plan(r2, 300));
+  assert.deepEqual(b.hearts, { cap: 4, first: 0.9425, next: 2.535, strands: 0, seconds: 24.19 });
+  assert.equal(b.silk, 69);
+});
+
+test('a boss\'s phases: a share of its health or a number, or bars of their own, or pieces', () => {
   const h = { total: 21, rest: 21 };
   // Lace in the Cradle: 800, phases at 75% and 40% → 600 and 320 left, 200 and 480 dealt.
   assert.deepEqual(E.phases({ at: [0.75, 0.4] }, 800, h), [
-    { n: 2, left: 600, share: 0.75, dealt: 200, uses: 10 }, { n: 3, left: 320, share: 0.4, dealt: 480, uses: 23 }]);
+    { n: 2, left: 600, share: 0.75, dealt: 200, of: null, uses: 10 }, { n: 3, left: 320, share: 0.4, dealt: 480, of: null, uses: 23 }]);
   // Widow: 70% of 360 and a plain 150.
   assert.deepEqual(E.phases({ at: [0.7, 150] }, 360).map((x) => x.left), [252, 150]);
   // Grand Mother Silk's six bars, 1224 in all: each phase after the ones before.
@@ -170,6 +200,18 @@ test('a boss\'s phases: a share of its health or a number, or bars of their own'
   assert.deepEqual(E.phases(null, 800), []);
   // The file itself: Lace's second fight, the game's own shares.
   assert.deepEqual(require('../js/phases.js')['lace-the-cradle'], { at: [0.75, 0.4] });
+  // A share is truncated, as the game's MultiplyIntByFloat: 45% of 550 is 247 (the wiki's 248),
+  // of 650 is 292; Phantom's rage, 70% then half of 650, 227.
+  assert.deepEqual(E.phases({ at: [0.8, 0.45] }, 550).map((x) => x.left), [440, 247]);
+  assert.deepEqual(E.phases({ at: [0.8, 0.45] }, 650).map((x) => x.left), [520, 292]);
+  assert.deepEqual(E.phases({ at: [0.35] }, 650).map((x) => x.left), [227]);
+  // Of one of the fight's bars: Signis's 720 of the Forebrothers' 1240, the damage to him.
+  assert.deepEqual(E.phases({ at: [0.9, 0.7, 0.5], of: 720 }, 1240, h).map((x) => [x.left, x.dealt, x.of, x.uses]),
+    [[648, 72, 720, 4], [504, 216, 720, 11], [360, 360, 720, 18]]);
+  // Bars in pieces: Father of the Flame's four lanterns of 100, then its core; damage past a
+  // lantern's 0 is lost, so the slashes are each lantern's (5 of 21 each, 20).
+  const fof = { bars: [400, 250], pieces: [4, 1], hits: [12, 30] };
+  assert.deepEqual(E.phases(fof, 650, h), [{ n: 2, left: 250, share: null, dealt: 400, of: null, uses: 20 }]);
 });
 
 test('how fast: each Crest\'s slash interval from the game\'s own timings, fury, Flea Brew, the seconds to kill', () => {

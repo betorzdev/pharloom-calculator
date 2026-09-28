@@ -286,6 +286,7 @@
     if (el.banner) el.banner.innerHTML = App.liveBanner ? App.liveBanner() : '';
     showScreen();
     restoreFocus(focus);
+    if (App.hornet) App.hornet.sync();      // Hornet takes her place on what was just painted (js/app-hornet.js)
   }
 
   /* ── Switching screens ───────────────────────────────────────────────── */

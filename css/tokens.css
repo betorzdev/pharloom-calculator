@@ -184,6 +184,14 @@
   --dur: 250ms;
   --dur-slow: 400ms;
   --ease-fade: cubic-bezier(0.45, 0, 0.55, 1);
+  /* The Hornet who walks the page (js/app-hornet.js, css: .hn): a frame of her run (the game's
+     Run clip plays at 15 a second), how long 100 px take her running along the bar, and her
+     cell's height on the screen bar and on the Map (the strips are 120 × 120 cells,
+     tools/extract-hornet.py). */
+  --dur-step: 67ms;
+  --dur-run: 400ms;
+  --hn-bar: 28px;      /* sitting under a tab's title without touching its letters */
+  --hn-map: 44px;      /* at her bench on the Map, as big as the old still */
 
   --page-max: 1216px;
   --page-pad: var(--sp-8);

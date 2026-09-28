@@ -83,3 +83,41 @@ test('where each Journal entry is: the game\'s own placements, each scene in one
   assert.strictEqual(R.areaOf('Greymoor_04'), 'GREYMOOR');
   assert.strictEqual(R.areaOf('Tut_01'), 'MOSSCAVE');
 });
+
+test('every Journal entry has a place, the 29 the game makes at run time too, and a way there', () => {
+  const JR = require('../js/journal-rooms.js');
+  const J = require('../js/journal.js');
+  const CO = require('../js/collectibles.js');
+  const HOW = globalThis.SS.journalHow, LOADS = globalThis.SS.journalLoads;
+  // All 237: 208 placed, 29 by what names or spawns them (tools/extract-journal-rooms.py RUNTIME).
+  assert.deepEqual(J.BOOK.filter((e) => !(JR[e.key] || []).length).map((e) => e.key), []);
+  assert.strictEqual(Object.keys(HOW).length, 29);
+  for (const [k, how] of Object.entries(HOW)) assert.ok(['record', 'spawn', 'duel'].includes(how), `${k}: ${how}`);
+  // Every one is reached from the first room with every station open, so "nearest" has an answer.
+  const lit = M.PINS.filter((p) => p[4] && p[0] !== 'bench').map((p) => p[0] + ' ' + p[3]);
+  const w = R.walk('Tut_01', lit);
+  const off = Object.keys(HOW).filter((k) => !JR[k].some(([s]) => w.has(R.graphScene(s))));
+  assert.deepEqual(off, []);
+  const areas = (k) => new Set(JR[k].map(([s]) => R.areaOf(s)).filter(Boolean));
+  // Checked against the wiki (kb/data/raw/): the Muckmaggots only where their waters are on
+  // (Sinner's Road, Bilewater, Putrified Ducts, Wisp Thicket), the Sandcarvers in the sand.
+  assert.deepEqual([...areas('NAME_MAGGOTS')].sort(), ['AQUEDUCTS', 'DUSTPENS', 'SHADOW', 'WISP']);
+  assert.deepEqual([...areas('NAME_SAND_CENTIPEDE')].sort(), ['CORAL_RIVER', 'CORAL_STEPS']);
+  assert.deepEqual([...areas('NAME_SHELLWOOD_GNAT')].sort(), ['ARBORIUM', 'SHELLWOOD']);
+  assert.deepEqual([...areas('NAME_LIFEBLOOD_FLY')].sort(), ['BONEBOTTOM', 'CRAWL']);
+  assert.deepEqual([...areas('NAME_GLOOMFLY')], ['ABYSS']);
+  // A duel only where it's fought; the Void Mass not on the Wishes' board or in the title screen.
+  assert.deepEqual(JR.NAME_SHAKRA.map(([s]) => s), ['greymoor_08_mapper']);
+  assert.deepEqual(JR.NAME_GARMOND_ZAZA.map(([s]) => s), ['Library_09']);
+  assert.ok(!JR.NAME_BLACK_THREAD_CORE.some(([s]) => /^(Belltown|Menu_Title)$/i.test(s)));
+  // A boss in its arena; the two arenas off the map by the scenes that load them.
+  assert.deepEqual(JR.NAME_SPINNER_BOSS, [['Belltown_Shrine', 1]]);
+  assert.deepEqual(LOADS, { NAME_GIANT_CENTIPEDE: 'bellway_centipede_arena', NAME_LOST_LACE: 'abyss_cocoon' });
+  assert.deepEqual(JR.NAME_LOST_LACE.map(([s]) => s), ['Abyss_05']);
+  const stations = M.PINS.filter((p) => p[0] === 'bellway').length;
+  assert.strictEqual(JR.NAME_GIANT_CENTIPEDE.length, stations);
+  // The Garpids are in the Border Caves, which the site's areas don't name (js/app-journal.js does).
+  assert.deepEqual(JR.NAME_CENTIPEDE_TRAP.map(([s]) => s), ['Cradle_Destroyed_Challenge_01']);
+  assert.strictEqual(R.areaOf('Cradle_Destroyed_Challenge_01'), null);
+  assert.ok(Object.keys(CO.AREAS).length > 30);
+});

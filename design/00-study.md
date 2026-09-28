@@ -810,6 +810,24 @@ door, the Mist's MazeController, a scene loaded on top of another, a memory's FS
 Cradle was already reached. The scenes a boss fight, a cutscene or the Bellway's ride loads on
 top are left out, so the stations still need the save's.
 
+Then (28 September) **the 29 entries the game makes at run time**, placed from its own files too:
+237 of 237. `tools/extract-journal-rooms.py` finds what names a record, or points at a prefab
+whose enemy carries it, in every component's raw data, and its RUNTIME table says for each of the
+29 which objects count:
+- a boss's own object or its Boss Scene FSM;
+- a hazard's attacker: each Sandcarver pit, each Stilkin burrow;
+- the Void Mass's cores and the Void Tendrils' tablet;
+- the cocoons and corpses that let Gloomsacs, Lifeseeds and Shellwood Gnats out;
+- for Shakra and Garmond & Zaza, only their duel's room, since the ally FSM names them everywhere.
+
+Every water names the Muckmaggots' record, and only the MaggotRegions that are on count
+(overrideActive, or the scene's MapZone in the region's mask), which leaves the wiki's four areas
+exactly. Lost Lace's cocoon and the Bell Eater's arena aren't on the map, so they count as the scenes
+that load them (Abyss_05's dive, every Bellway station), and the nearest from the bench covers all
+237. The one disagreement is the Void Mass: the game has cores in 45 scenes and the wiki counts 34.
+The extras in Greymoor, Shellwood and Choral Chambers sit under the same Act 3 object, and the site
+keeps the game's.
+
 **Phase 5 has started** (the same day): `js/engine.js` takes an enemy (`compute(state, { foe,
 black })`): each hit is one product rounded once (weapon × the enemy's modifier at the level of
 what hits × Hornet's bracket), bonus damage takes neither, and each attack says how many uses kill
@@ -830,8 +848,8 @@ up to the fight's: Grand Mother Silk's six, 1,224; the Dancers'). `tools/extract
 those actions over each FSM and joins it to its boss by the object's journal record (a table by
 scene for the seven whose FSM isn't on it, and Lace's two fights): `js/phases.js`, 23 bosses, on
 the Combat card with the slashes to reach each phase and on the boss pages. The others change
-phase some other way, or not at all; the share's rounding (MultiplyIntByFloat's) isn't read, so
-the site rounds to the nearest. With the per-boss pages (phase 8's) and the gauntlets (phase
+phase some other way, or not at all; the share's rounding (MultiplyIntByFloat's) was read later:
+it truncates. With the per-boss pages (phase 8's) and the gauntlets (phase
 7's), **phase 5 is done**.
 
 **The phases the first pass missed** (28 September). Checked against the wiki's own phase labels
@@ -849,12 +867,54 @@ Beastfly (80% before 45%), the Second Sentinel (50%) and the Moss Mother (95%). 
 numbers: Trobbio, Groal, Lugoli, the First Sinner, the Raging Conchfly and Sister Splinter's third
 (124) match; Tormented Trobbio (the wiki 375, the game half of 950), Gurr (750; 60% of 1,000) and
 Karmelita (1,000 and 500; 65% and 35% of 1,500) don't, and the site shows the game's. Four change
-phase with something other than their own health, and aren't read: the Bell Eater (the head's and
+phase with something other than their own health (read in the next paragraph): the Bell Eater (the head's and
 the rear's added), Father of the Flame (four lanterns, then the core), the Forebrothers (two, each
 upgraded at 350 by the scene's FSM) and Phantom (the Cross Stitch once at 0). The cross-check is a
 test now (`test/data.test.js`): 13 match, 14 have none on either side, and the 24 that differ are
-listed with the four above. Still open: the extractor runs the actions in order without following
-branches, so a threshold set by Act 3 or Steel Soul would take the last one.
+listed with the four above. The branches the extractor doesn't follow were checked
+later: no threshold changes with Act 3 or Steel Soul (next paragraph).
+
+**The four that go otherwise** (28 September), now read too: 41 bosses. The Bell Eater's FSM adds
+the head's health and the rear's (GetHPEveryFrame, IntOperator +) and compares the sum with 75% and
+40% of its 800 (600, the wiki's, and 320). Father of the Flame has no HealthManager: each of the
+four lanterns and then the core keeps an HP of its own in its FSM (100 each, then 250) and breaks
+at 0 or after 12 counted hits (the core 30), as the wiki says: `bars` [400, 250] with their
+`pieces` and `hits`, and the slashes are each lantern's, since damage past one's 0 is lost. The
+Forebrothers' shares are Signis's own (`of`: 90%, 70% and 50% of 720, the wiki's 648, 504 and 360;
+each also waits for the workers or 8 s), and when one falls the scene's FSM heals the other at 350
+or below (HealthManager.AddHP(200, 350), which adds and caps: `heal`). Phantom's rage is half of
+70% (227; the 455 before it is Lightfall, an attack), and a missed Cross Stitch sets its health back
+to 60 (`reset`); the Dancers' SetHP 9999 isn't one. The wiki test has none missing now: 15 match,
+and the Bell Eater (3) and the Forebrothers (4) join those where the game changes more than the
+wiki names. On the way, MultiplyIntByFloat, read in the game's code, truncates (forceRoundUp is off
+in every boss), and `phases()` does too: seven thresholds move by one (the Savage Beastfly's 45% of
+550 is 247, not the wiki's 248; of 650, 292 as the wiki says). No threshold changes with Act 3 or
+Steel Soul: each is set in one state, the PlayerData tests only gate intros and refights, and a
+black-threaded boss's shares follow its doubled health (BlackThreadState: hp × 2), as the wiki's
+black-threaded numbers confirm; the absolute ones (the Widow's 150, the Fourth Chorus's) are of
+bosses never black-threaded. Still open: IntCompare's strict "<" (the Bell Eater's) is taken as
+"at or below", and the lanterns' hit count, with a cooldown of its own, isn't in the slashes.
+
+**Silk Hearts in the Binds** (28 September), from the game's code (HeroController and the Hero
+prefab, read into `js/hero.js` REGEN by `tools/extract-hero.py`). A strand comes after 0.65 + 0.8 =
+1.45 s from an empty spool and 2.0 + 1.9 = 3.9 s otherwise, so the Silk page is right and the Silk
+Heart page's 1.5 / 4.25 s isn't. It only regenerates below one strand per Heart (Weavelight: one
+more, and ×0.65 on both times), and any silk change restarts it, the landing slash included. Over
+the seconds the slash takes to kill (`needle.speed`), starting from a full spool and slashing every
+0.5 s or faster, it adds nothing with any Crest, and the page says so (`engine.regen`,
+`binds().hearts`). Pauses (dodging, the Bind itself) aren't modelled.
+
+**What enemies do to Hornet, from the game's files** (28 September). `tools/extract-damage.py`
+reads the DamageHero hitboxes on every enemy placed in the 590 scenes, joined to its Journal key as
+`extract-journal-rooms.py` does, into `js/enemy-damage.js`: 199 entries, 198 with a contact value,
+47 of them 2 masks. Combat shows, for every enemy without a wiki attack list, its contact damage and
+its strongest attack when that is more. In the game's code a fire or void hit is set to 2 masks, not
+doubled, and black-threading makes every hit void, so a black-threaded enemy's every hit is 2, as
+the wiki's Black-Threading page says. The Barbed Bracelet's multiplier is read from the Gameplay
+settings (2.0, floored). Against the wiki's `{{damage}}`, the highest hit agrees for 143 of 154 and
+contact for 99 of 102: projectiles spawned at run time aren't read, a few enemies are placed with
+two values, and three bosses' contact changes with the phase. `test/data.test.js` pins the counts
+and lists each disagreement.
 
 **Phase 6's spike is done** (the same day): the map comes out of the game's files (§4.7), so the
 fallback (a schematic map from the randomizer's room graph) isn't needed. The author decided to
@@ -892,6 +952,18 @@ ways; from the first room every piece's room is reached. `js/rooms.js` walks it 
 stations a save has opened: Hornet's way from the previous bench to this one is drawn on the Map,
 and what's missing is ordered by rooms from your bench, on the Map and in Progress. That closes
 phase 6.
+
+**Hornet walks the page** (28 September), ported from the Hollow Knight site's Knight as
+`js/app-hornet.js`, with her frames from the game's own sprites (the wiki's only run is a grey
+capture that turns around). `tools/extract-hornet.py` reads the tk2d collection, still named
+"Knight" (1,828 frames in four atlases), and the 535-clip animation library, and writes three strips
+in 120 px cells into `assets/hornet/`: the Run clip (10 frames at 15 fps), sitting and standing, 18
+KB in all. On a computer she sits under the current tab in place of its accent rule and runs to
+the new one on a screen change; below 900 px she leaves the bar and the rule returns; with reduced
+motion she only sits; she's hidden from screen readers. On the Map, when the previous save rested
+elsewhere, she runs once from that bench to this one, room by room along `js/rooms.js`'s path,
+with the view following her. `test/hornet.test.js` checks the strips, the tokens, the script order
+on every page and a path between benches.
 
 **Phase 7 has started** (the same day): the Tasks. The completionist's 74 (21 main objectives and
 53 wishes in 11 types) with their save field, joined to the game's own names by their English
@@ -935,6 +1007,40 @@ with no pronoun and no verb on the boss's name, since Spanish would have to agre
 Khann or the Forebrothers.
 Left, and the author's to do: publishing (GitHub Pages) and Search Console; and trying the live
 link by hand with the game running.
+
+**Progress reviewed, and the road to the next Act** (28 September). What confuses players most is
+what opens Act 3, and the game's own files say it exactly: `dataassets/questsystem/
+completetotalgroups.bundle`'s group Soul Snare, which the wish Silk and Soul («Seda y alma») waits
+for. `tools/extract-quests.py` reads it into `js/quests.js` (GROUPS, each quest's CHAIN,
+BELLSHRINES, SNARE), with the test and comparison enums from Assembly-CSharp:
+- 10 required wishes (the wiki names six: the last step of each chain);
+- 17 of 25 wish points (a delivery is worth half, the first time only);
+- four checks: the Flea Caravan at Fleatopia, the Faydown Cloak, Lace defeated in the Cradle, and
+  Pavo's Bellhome Key. Pavo gives the key after Bellhart's Glory and 2 of his group's wishes (read
+  from his FSM).
+
+After that come the offer, the four pieces, the snare, and Grand Mother Silk snared with the
+Needolin. Act 2 opens after the five Bellshrines, the Grand Gate and the Last Judge, or with the
+Phantom, which goes round the first two. Broodfeast done the Runt's way gives no point.
+`js/acts.js` `next(g)` gives the road as steps, and check-pack checks it on the 92 saves: every Act
+3 save meets it all and no earlier one does, and one had everything but Pavo's talk until it.
+
+**What the screens show:**
+- Progress opens with the road, the steps numbered as the game's objectives. Each missing wish has
+  its Act, its area and the one before it. A part already met hides its rows.
+- Your game says which step you're on.
+- Each missing thing of the 100% says how to get it. `tools/extract-shops.py` reads the shops, the
+  wishes' rewards and Plinney's costs into `js/shop.js` (83 items from 9 vendors; 31 of the
+  completionist's prices match), and `tools/gen-how.js` joins them into `js/how.js`: every one of
+  the 124 things has a way.
+- Under the heading, what the missing purchases cost against the rosaries carried.
+- The Tools' note warns of the Curveclaw handed to a Skarr and the Silkshot's first repair.
+- "Nearest first" orders the missing things by rooms from the bench.
+- "Beyond 100%" became «Otros coleccionables», each group saying what it's for.
+
+**A fix on the way:** the game counts a Tool only when it's unlocked and not hidden
+(`ToolItemManager`, IsUnlockedNotHidden), and `savefile.game()` now does too; the 92 saves still
+match.
 
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
