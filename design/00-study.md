@@ -834,6 +834,28 @@ phase some other way, or not at all; the share's rounding (MultiplyIntByFloat's)
 the site rounds to the nearest. With the per-boss pages (phase 8's) and the gauntlets (phase
 7's), **phase 5 is done**.
 
+**The phases the first pass missed** (28 September). Checked against the wiki's own phase labels
+(each boss page's attacks, "Phase 1", "Phase 2"…), 14 bosses had phases on the wiki and none from
+the game. Most compare their health another way: CompareHPBool (Karmelita, Crawfather), or GetHP
+into a variable compared with IntCompare, IntTestToBool or IntCompareToBool (Sister Splinter, Gurr,
+the Raging Conchfly); Lugoli's share is an IntOperator (an enum in the action's byteData: 3,
+divide), and Gurr compares before the state that sets the threshold, so `thresholds()` now sets the
+variables in a first pass. Trobbio, Tormented Trobbio, Groal and the First Sinner carry no journal
+record on their FSM's object and go by scene (and object: both Trobbios fight in `library_13`).
+The variables that are a phase are now the ones named so (`P2 HP`, `HP P3`, `Rage HP`), which
+leaves out the Moss Mother's `HP Call Buddy` and Tormented Trobbio's `CrossFlash HP`. **37 bosses**
+now, and the same pass found phases the old one missed in Lost Lace (75%, 50%, 30%), the Savage
+Beastfly (80% before 45%), the Second Sentinel (50%) and the Moss Mother (95%). Against the wiki's
+numbers: Trobbio, Groal, Lugoli, the First Sinner, the Raging Conchfly and Sister Splinter's third
+(124) match; Tormented Trobbio (the wiki 375, the game half of 950), Gurr (750; 60% of 1,000) and
+Karmelita (1,000 and 500; 65% and 35% of 1,500) don't, and the site shows the game's. Four change
+phase with something other than their own health, and aren't read: the Bell Eater (the head's and
+the rear's added), Father of the Flame (four lanterns, then the core), the Forebrothers (two, each
+upgraded at 350 by the scene's FSM) and Phantom (the Cross Stitch once at 0). The cross-check is a
+test now (`test/data.test.js`): 13 match, 14 have none on either side, and the 24 that differ are
+listed with the four above. Still open: the extractor runs the actions in order without following
+branches, so a threshold set by Act 3 or Steel Soul would take the last one.
+
 **Phase 6's spike is done** (the same day): the map comes out of the game's files (§4.7), so the
 fallback (a schematic map from the randomizer's room graph) isn't needed. The author decided to
 publish it as the Hollow Knight site does, and the Map screen followed: `tools/extract-map.py`

@@ -144,3 +144,44 @@ test('the 49 enemy gauntlets: every wave\'s enemies are in js/enemies.js, every 
     assert.ok(ok(g.done), `${g.id}: done ${JSON.stringify(g.done)}`);
   }
 });
+
+/* The phases (js/phases.js, from the game's FSMs) against the wiki's own labels (each boss page's
+   attacks, "Phase 1", "Phase 2"…), by page: the most phases any of its fights has. A patch that
+   moves a phase, or a wiki edit that labels one, fails here and is looked at. */
+test('each boss\'s phases, from the game, against the wiki\'s phase labels', () => {
+  const P = require('../js/phases.js');
+  const game = {};
+  for (const f of E.FOES.filter((x) => x.boss)) {
+    const p = P[f.id];
+    game[f.page] = Math.max(game[f.page] || 0, p ? (p.bars ? p.bars.length : p.at.length + 1) : 0);
+  }
+  // page: [wiki, game]. Not in the game's files yet (another entity's health, or past 0).
+  const MISSING = {
+    'bell-eater': [2, 0],               // the head's and the rear's health added
+    'father-of-the-flame': [2, 0],      // four lanterns, then the core
+    'forebrothers-signis-and-gron': [2, 0], // two brothers, each upgraded at 350
+    'phantom': [2, 0],                  // the Cross Stitch once at 0
+  };
+  // The game changes more than the wiki names a phase: a rage (Gurr's, Lace's, the Bell Beast's),
+  // a last stagger, a pace that quickens, or a fight the wiki doesn't split.
+  const MORE = {
+    'bell-beast': [1, 3], 'clover-dancers': [1, 2], 'cogwork-dancers': [0, 4], 'crust-king-khann': [2, 3],
+    'grand-mother-silk': [5, 6], 'gurr-the-outcast': [2, 3], 'lace': [2, 3], 'last-judge': [2, 3],
+    'lost-lace': [0, 4], 'moss-mother': [0, 2], 'palestag': [0, 2], 'pinstress': [0, 2],
+    'plasmified-zango': [0, 5], 'savage-beastfly': [2, 3], 'second-sentinel': [0, 2],
+    'shrine-guardian-seth': [2, 3], 'sister-splinter': [2, 3], 'skarrsinger-karmelita': [2, 3],
+    'summoned-saviour': [0, 3], 'voltvyrm': [0, 3],
+  };
+  let same = 0;
+  for (const [page, a] of Object.entries(E.ATTACKS)) {
+    const labels = a.attacks.map((x) => /^Phase (\d+)/.exec((x.where && x.where.en) || '')).filter(Boolean);
+    const wiki = labels.length ? Math.max(...labels.map((m) => +m[1])) : 0;
+    const got = [wiki, game[page] || 0];
+    const want = MISSING[page] || MORE[page];
+    if (want) assert.deepEqual(got, want, page);
+    else { assert.equal(got[1], got[0], `${page}: ${got[0]} phases on the wiki, ${got[1]} from the game`); if (wiki) same++; }
+  }
+  assert.equal(same, 13);
+  // Every boss in js/phases.js is one of js/enemies.js.
+  for (const id of Object.keys(P)) assert.ok(E.FOES.some((f) => f.id === id && f.boss), id);
+});
