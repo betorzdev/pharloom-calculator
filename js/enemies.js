@@ -4,7 +4,8 @@
    pages, fetched with npm run kb) and the game's text (patch 1.0.30000): not edited by hand.
 
      FOES      one entry per row of the wiki's master tables: an enemy can appear more than once
-               (Moss Mother's three fights, a summon inside a boss fight), told apart by variant.
+               (Moss Mother's three fights, a summon inside a boss fight), told apart by variant;
+               then the two entries the tables lack that the game lets you hit (src).
        hj        its number in the Hunter's Journal.
        name      the game's Journal name { es, en, key }; variant = the circumstance, written from
                  the game's names for the place or the boss.
@@ -13,6 +14,9 @@
        mods      the five damage modifiers, by the level of what hits (Needle or Crafting Kit, 0..4):
                  damage = weapon[level] × mods[level] × (1 + Σ Hornet's), rounded half to even.
        page      the wiki page, the key into ATTACKS.
+       src       'game': a Journal entry the tables have no row for, from the game's own files
+                 (tools/gen-enemies.js GAME): no mods (the game has none for it), and oneHit =
+                 its first hit kills it, so hp is 1.
      ATTACKS   per boss page: attacks (name in the wiki's English, the game doesn't name attacks;
                masks = [1] per hit when the wiki gives none, [1, 1] is two masks; type = 'void',
                'fire'…; where = the fight or phase) and staggers (hits to stagger, in page order).
@@ -1975,6 +1979,26 @@
       mods: [2, 1.25, 1, 1, 1],
     },
     {
+      id: 'wisp',
+      hj: 69,
+      key: 'NAME_WISP',
+      name: { es: 'Fatuo', en: 'Wisp', key: 'NAME_WISP' },
+      page: 'wisp',
+      hp: 1,
+      src: 'game',
+      oneHit: true,
+    },
+    {
+      id: 'winged-lifeseed',
+      hj: 200,
+      key: 'NAME_LIFEBLOOD_FLY',
+      name: { es: 'Germen de vida alado', en: 'Winged Lifeseed', key: 'NAME_LIFEBLOOD_FLY' },
+      page: 'winged-lifeseed',
+      hp: 1,
+      src: 'game',
+      oneHit: true,
+    },
+    {
       id: 'bell-beast',
       hj: 25,
       key: 'NAME_BONE_BEAST',
@@ -3483,7 +3507,7 @@
       ],
     },
     'clover-dancers': {
-      where: [{ es: 'Lost Verdania', en: 'Lost Verdania', key: 'GROVE_SUPER+GROVE_MAIN' }],
+      where: [{ es: 'Verdania Perdida', en: 'Lost Verdania', key: 'GROVE_SUPER+GROVE_MAIN+GROVE_SUB' }],
       drops: [{ es: 'Corazón siamés', en: 'Conjoined Heart', key: 'INV_NAME_HEART_CLOVER' }],
     },
     'cogwork-dancers': { where: [{ es: 'Núcleo Mecánico', en: 'Cogwork Core', key: 'COG_CORE' }] },
@@ -3550,7 +3574,9 @@
       where: [{ es: 'Gran Puerta', en: 'Grand Gate', key: 'GRANDGATE_MAIN' }],
       drops: [{ es: 'Corazón de polen', en: 'Pollen Heart', key: 'INV_NAME_HEART_BLOOM' }],
     },
-    palestag: { where: [{ es: 'Lost Verdania', en: 'Lost Verdania', key: 'GROVE_SUPER+GROVE_MAIN' }] },
+    palestag: {
+      where: [{ es: 'Verdania Perdida', en: 'Lost Verdania', key: 'GROVE_SUPER+GROVE_MAIN+GROVE_SUB' }],
+    },
     phantom: {
       where: [{ es: 'Órgano de Escape', en: 'Exhaust Organ', key: 'ORGAN' }],
       drops: [{ es: 'Punto de cruz', en: 'Cross Stitch', key: 'INV_NAME_SKILL_PARRY' }],

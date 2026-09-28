@@ -128,6 +128,38 @@
     return r ? AREA_OF[r.area] || null : null;
   }
 
-  SS.rooms = { ENTRANCE, roomOf, sceneOf, graphScene, walk, steps, path, areaOf };
+  /* ── The map's state: the rooms a game has there ──────────────────────
+     Some rooms change with the game (js/map.js LAYERS, each with the game's own condition over a
+     few playerData flags): the Cradle, Cogwork Core and the Ventrica hub fall in Act 3
+     (act3MapUpdated) and their destroyed rooms take their place; the Abyss's diving bell is broken,
+     then gone (SeenDivingBellGoneAbyss), then mended with the Everbloom (HasWhiteFlower). A game
+     carries the flags its save has set (savefile's mapFlags). One kept before the site read them
+     has none: in Act 3 its map is taken as fallen (the game sets act3MapUpdated soon after
+     blackThreadWorld, at its first map update), with the bell as its Everbloom says.
+     With no game (Free mode), FREE: the world before Act 3. */
+  function mapFlags(g) {
+    if (!g) return M.FREE.slice();
+    const f = Array.isArray(g.mapFlags) ? g.mapFlags.filter((x) => M.VARY.includes(x)) : [];
+    // A slot kept before the site read the flags: its Act 3 taken as the fallen Cradle's. A game
+    // just in Act 3 whose map the game hasn't updated yet has mapRead and no flag: as it is.
+    if (g.act === 3 && !g.mapRead && !f.length) return ['act3MapUpdated', ...(g.everbloom ? ['HasWhiteFlower'] : [])];
+    return f;
+  }
+  function holds(c, flags) {
+    switch (c[0]) {
+      case 'flag': return flags.includes(c[1]);
+      case 'not': return !holds(c[1], flags);
+      case 'all': return c.slice(1).every((x) => holds(x, flags));
+      case 'any': return c.slice(1).some((x) => holds(x, flags));
+      default: return false;
+    }
+  }
+  /* The layers drawn for these flags, and the scenes of those that aren't (their rooms, and the
+     pins in them, aren't there). */
+  const layersOn = (flags) => M.LAYERS.filter((l) => holds(l[0], flags));
+  const scenesOff = (flags) => new Set(M.LAYERS.filter((l) => !holds(l[0], flags)).flatMap((l) => l[6]));
+  const pinsOn = (flags) => { const off = scenesOff(flags); return M.PINS.filter((p) => !off.has(p[3])); };
+
+  SS.rooms = { ENTRANCE, roomOf, sceneOf, graphScene, walk, steps, path, areaOf, mapFlags, layersOn, scenesOff, pinsOn };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.rooms;
 })();

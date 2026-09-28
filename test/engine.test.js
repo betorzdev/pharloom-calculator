@@ -68,7 +68,10 @@ test('a Tool at the Kit\'s level, its ammo at the Pouch\'s, a full load and its 
 test('silk, the Bind and the slots', () => {
   const c = E.compute({ spools: 9, masks: 5, hearts: 3, tools: ['spool-extender', 'egg-of-flealia', 'multibinder', 'injector-band'] });
   assert.deepEqual([c.silk.spool, c.silk.skill, c.silk.casts, c.health.masks], [21, 3, 7, 10]);
-  assert.deepEqual(c.health.bind, { heals: 4, parts: [2, 2], seconds: 0.82 });
+  // The Bind FSM's times: two Binds of 0.8 × 0.6 = 0.48 s, each with its 0.17 s burst: 1.3 s, the
+  // Bind page's table (not 1.37 × 0.6). Alone: 1.2 + 0.17, 2 × (0.8 + 0.17), 1.2 × 0.6 + 0.17.
+  assert.deepEqual(c.health.bind, { heals: 4, parts: [2, 2], seconds: 1.3 });
+  assert.deepEqual([[], ['multibinder'], ['injector-band']].map((tools) => E.compute({ tools }).health.bind.seconds), [1.37, 1.94, 0.89]);
   // The Hunter: one red open and one locked; three reds is one too many.
   const h = E.compute({ tools: ['straight-pin', 'threefold-pin', 'tacks'] });
   assert.deepEqual(h.slots.red, { open: 1, locked: 1, extra: 0, used: 3, over: 1 });
@@ -131,28 +134,36 @@ test('the fight as a whole: loads first, then the fewest slashes with the Skills
   assert.equal(E.plan(r2, null), null);
 });
 
-test('the Binds a fight pays for, and the hits they let you take', () => {
+test('the Binds in a fight: its silk in order, capped by the spool, and the hits they let you take', () => {
   const foe = { id: 'z', hp: 300, mods: [1, 1, 1, 1, 1] };
   const r = E.compute({ needle: 0, skill: 'silkspear' }, { foe });
-  // 31 slashes and 10 casts of 4: 9 + 31 − 40 = 0 silk left, no Bind.
+  // 31 slashes and 10 casts of 4: 9 + 31 = 40 silk, all of it cast (as soon as it's there, so the
+  // spool is never full and nothing is lost), none left for a Bind: 5 hits of 1 kill.
   const p = E.plan(r, 300);
   const { hearts: h0, ...b0 } = E.binds(r, p);
-  assert.deepEqual(b0, { silk: 0, paid: 0, reserve: 0 });
+  assert.deepEqual(b0, { spool: 9, slashes: 31, casts: 10, skill: 4, reserve: 0 });
   assert.equal(h0.strands, 0);
   assert.deepEqual(E.endure(r, 1, E.binds(r, p)), { hits: 5, binds: 0 });
-  // No Skill: 60 slashes, 69 silk, 7 Binds of 3. Hits of 1: down to 2, bind (3 heals in full),
-  // 7 times, 21 masks more: 26 hits.
+  // The spool's cap, by hand: 10 slashes, a spool of 9 full to start, hits of 2 on 5 masks.
+  // 3 hits come after 1, 5 and 8 slashes: the first slash is lost (full); 5 → 3; 3 → 1, Bind
+  // (9 → 0 silk) to 4; 3 slashes, 3 silk, 4 → 2, no Bind: she lives. 4 hits, after 1, 3, 6 and
+  // 8: 3; 1, Bind to 4; 2 with 3 silk; 0 with 5. The lump sum (9 + 10 = 19) paid two.
   const r2 = E.compute({ needle: 0 }, { foe });
+  const ten = { spool: 9, slashes: 10, casts: 0, skill: 0, reserve: 0 };
+  assert.deepEqual(E.endure(r2, 2, ten), { hits: 4, binds: 1 });
+  // No Skill, the plan's 60 slashes (as the model gives them, the cases above are by hand): 21
+  // hits of 1 kill (26 with the old lump sum of 69 silk), 8 of 2 (13).
   const b2 = E.binds(r2, E.plan(r2, 300));
-  assert.deepEqual([b2.silk, b2.paid, b2.reserve], [69, 7, 0]);
-  assert.deepEqual(E.endure(r2, 1, b2), { hits: 26, binds: 7 });
-  // Hits of 2: 5 → 3, bind? 2 lost, no; 3 → 1, bind to 4 (the next would kill); 4 → 2, bind to 5 …
-  const two = E.endure(r2, 2, b2);
-  assert.equal(two.binds, 7);
-  assert.equal(two.hits, Math.ceil((5 + 21) / 2));
-  // The Reserve Bind: one more, with no silk at all.
-  const r3 = E.compute({ needle: 0, tools: ['reserve-bind'] }, { foe });
-  assert.deepEqual(E.endure(r3, 1, { silk: 0, paid: 0, reserve: 1 }), { hits: 8, binds: 1 });
+  assert.deepEqual([b2.spool, b2.slashes, b2.casts], [9, 60, 0]);
+  assert.deepEqual(E.endure(r2, 1, b2), { hits: 21, binds: 3 });
+  assert.deepEqual(E.endure(r2, 2, b2), { hits: 8, binds: 1 });
+  // No slash at all: every hit at once, on the spool. The Reserve Bind: one more when the silk
+  // isn't there. 5 → 2, Bind (9 → 0); 5 → 2, the Reserve's; 5 → 0: 11 hits.
+  const none = { spool: 9, slashes: 0, casts: 0, skill: 0, reserve: 1 };
+  assert.deepEqual(E.endure(E.compute({ tools: ['reserve-bind'] }), 1, none), { hits: 11, binds: 2 });
+  // Druid's Eye: a hit at a full spool doesn't count. 5 → 2 at full, Bind (0 silk); then every
+  // second hit a strand: 2 by the eighth, which kills.
+  assert.deepEqual(E.endure(E.compute({ tools: ['druids-eye'] }), 1, { ...none, reserve: 0 }), { hits: 8, binds: 1 });
   // A hit that takes every mask: Binds don't help.
   assert.deepEqual(E.endure(r2, 5, b2), { hits: 1, binds: 0 });
 });
@@ -182,14 +193,13 @@ test("Silk Hearts' regeneration: below their cap, and only while the silk doesn'
   const r2 = E.compute({ needle: 0, hearts: 3, tools: ['weavelight'] }, { foe });
   const b = E.binds(r2, E.plan(r2, 300));
   assert.deepEqual(b.hearts, { cap: 4, first: 0.9425, next: 2.535, strands: 0, seconds: 24.19 });
-  assert.equal(b.silk, 69);
 });
 
 test('a boss\'s phases: a share of its health or a number, or bars of their own, or pieces', () => {
   const h = { total: 21, rest: 21 };
   // Lace in the Cradle: 800, phases at 75% and 40% → 600 and 320 left, 200 and 480 dealt.
   assert.deepEqual(E.phases({ at: [0.75, 0.4] }, 800, h), [
-    { n: 2, left: 600, share: 0.75, dealt: 200, of: null, uses: 10 }, { n: 3, left: 320, share: 0.4, dealt: 480, of: null, uses: 23 }]);
+    { n: 2, left: 600, share: 0.75, below: false, dealt: 200, of: null, uses: 10 }, { n: 3, left: 320, share: 0.4, below: false, dealt: 480, of: null, uses: 23 }]);
   // Widow: 70% of 360 and a plain 150.
   assert.deepEqual(E.phases({ at: [0.7, 150] }, 360).map((x) => x.left), [252, 150]);
   // Grand Mother Silk's six bars, 1224 in all: each phase after the ones before.
@@ -211,7 +221,45 @@ test('a boss\'s phases: a share of its health or a number, or bars of their own,
   // Bars in pieces: Father of the Flame's four lanterns of 100, then its core; damage past a
   // lantern's 0 is lost, so the slashes are each lantern's (5 of 21 each, 20).
   const fof = { bars: [400, 250], pieces: [4, 1], hits: [12, 30] };
-  assert.deepEqual(E.phases(fof, 650, h), [{ n: 2, left: 250, share: null, dealt: 400, of: null, uses: 20 }]);
+  assert.deepEqual(E.phases(fof, 650, h), [{ n: 2, left: 250, share: null, below: false, dealt: 400, of: null, uses: 20 }]);
+});
+
+test('a strict "<": the game moves on below the threshold, not at it', () => {
+  const P = require('../js/phases.js');
+  // The Bell Eater's IntCompare: head + rear below 75% and 40% of 800, so at 599 and 319.
+  assert.deepEqual(P['bell-eater'], { at: [0.75, 0.4], below: [0.75, 0.4] });
+  assert.deepEqual(E.phases(P['bell-eater'], 800, { total: 21, rest: 21 }).map((x) => [x.left, x.below, x.dealt, x.uses]),
+    [[599, true, 201, 10], [319, true, 481, 23]]);
+  // The Fourth Chorus's CompareHP below 451, 326 and 201: at 450, 325 and 200.
+  assert.deepEqual(E.phases(P['fourth-chorus'], 500).map((x) => x.left), [450, 325, 200]);
+  // Gurr: his rage below 40% (399), but 60% at or below, as his throws already change at 600.
+  assert.deepEqual(E.phases(P['gurr-the-outcast'], 1000).map((x) => x.left), [600, 399]);
+  // Lace in the Cradle compares at or below: unchanged.
+  assert.deepEqual(E.phases(P['lace-the-cradle'], 800).map((x) => x.left), [600, 320]);
+});
+
+test('Father of the Flame\'s pieces: by damage or by counted hits, with the cooldown run while still', () => {
+  const P = require('../js/phases.js')['father-of-the-flame'];
+  // From the game's FSMs: a lantern's hit counts after 1 s still, past its 0.55 s recovery; the core's 0.5 s past 0.1 s.
+  assert.deepEqual([P.cooldown, P.recover, P.hits], [[1, 0.5], [0.55, 0.1], [12, 30]]);
+  const low = { total: 5, rest: 5 };
+  // At the Hunter's 0.41 s, a lantern never gets still (only the first counts) and the core
+  // counts one hit in 2: damage breaks both (20 and 50 slashes), though 12 and 30 hits spaced
+  // 1.55 s and 0.6 s apart would.
+  const at = (t) => E.pieces(P, low, t).map((p) => [p.each, p.uses, p.by, p.spaced, p.gap]);
+  assert.deepEqual(at(0.41), [[null, 20, 'damage', 12, 1.55], [2, 50, 'damage', 30, 0.6]]);
+  // The Wanderer's 0.3 s: the core, one in 3.
+  assert.equal(E.pieces(P, low, 0.3)[1].each, 3);
+  // Slower than the recovery plus the cooldown, every hit counts, and the count comes first.
+  assert.deepEqual(at(2), [[1, 12, 'hits', 12, 1.55], [1, 30, 'hits', 30, 0.6]]);
+  // With 0.6 s between slashes the core counts every one: 30 before 50.
+  assert.deepEqual(at(0.6)[1], [1, 30, 'hits', 30, 0.6]);
+  // A strong Needle: damage first whatever the pace (5 of 21 a lantern, 12 for the core), no spacing helps.
+  assert.deepEqual(E.pieces(P, { total: 21, rest: 21 }, 2).map((p) => [p.uses, p.by, p.spaced]), [[5, 'damage', null], [12, 'damage', null]]);
+  // The phase: the four lanterns' slashes at that pace, 4 × 12 when the count breaks them.
+  assert.equal(E.phases(P, 650, low, 2)[0].uses, 48);
+  assert.equal(E.phases(P, 650, low, 0.41)[0].uses, 80);
+  assert.deepEqual(E.pieces(null), []);
 });
 
 test('how fast: each Crest\'s slash interval from the game\'s own timings, fury, Flea Brew, the seconds to kill', () => {

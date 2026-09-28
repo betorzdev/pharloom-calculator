@@ -35,10 +35,18 @@ the Savage Beastfly's 880 and 585); the numbers (the Widow's 150, the Fourth Cho
 bosses that are never black-threaded.
 A share is MultiplyIntByFloat, which the game truncates (forceRoundUp is off in all of them):
 js/engine.js's phases() does the same.
+At or below, or below (read in the game's code on 28-Sep-2026): CompareHP, CompareHPBool, IntCompare,
+IntTestToBool and IntCompareToBool all send equal, less than and greater than apart, so it's each
+FSM that makes a threshold "at or below" (equal where less than goes, or the phase where greater
+than doesn't fire) or strict (only less than: the Bell Eater's IntCompare, the Fourth Chorus's
+CompareHP 451, Gurr's lessThanBool…): strict(), and `below` in js/phases.js when every comparison
+with it is. Father of the Flame's pieces break after so many counted hits, and a hit counts only
+after a cooldown that runs while the piece is still: piece() reads it and the recovery before it.
 A PlayMaker action's parameters are stored by type (paramDataType: 16 an FsmInt, 15 an FsmFloat,
 18 an FsmString, 23 an event, 39 an FsmVar: CallMethodProper's arguments), each at paramDataPos in
 its own list, or inline in byteData (paramByteDataSize bytes: Phantom's and the Forebrothers').
---dump=<file> writes every FSM with a CompareHP, its thresholds and the states they lead to;
+A PlayMaker enum (paramDataType 7, IntOperator's operation) is 4 bytes in byteData too.
+--dump=<file> writes every FSM that compares its health, its thresholds and the states they lead to;
 --cache=<file> keeps the FSMs read, for the next run. """
 import json, os, pickle, re, struct, subprocess, sys
 import UnityPy
@@ -52,7 +60,7 @@ OUT = os.path.join(ROOT, 'js', 'phases.js')
 # others are when the First Sinner can bind, a pilgrim flees (Init HP), a Coral Brawler or the Moss
 # Mother calls (Call HP, HP Call Buddy), a hive spawns, Tormented Trobbio flashes (CrossFlash HP).
 PHASE_FSMS = {'Control', 'Phase Control', 'Death Control'}
-PHASES = re.compile(r'\bP\d\b|\bPhase\b|\bRage\b')
+PHASES = re.compile(r'(?<![A-Za-z0-9])(?:P\d|Phase ?\d*|Rage)(?![A-Za-z0-9])', re.I)
 # The bosses whose FSM isn't on the object that carries their journal record, by scene, or by
 # scene and object where two share a scene; and Lace and the Conchflies, whose fights share one.
 SCENE_KEY = {
@@ -68,9 +76,9 @@ SCENE_FOE = {'bone_east_12': 'lace', 'song_tower_01': 'lace-the-cradle', 'coral_
 # The fights broken in pieces, each with a health of its own in its FSM: by scene, the FSMs in the
 # order the fight breaks them (Father of the Flame's lanterns, then its core).
 PIECES = {'belltown_08': ['wisp_brazier_arm', 'Take Damage']}
-INT, FLOAT, STRING, EVENT, ENUM, VAR = 16, 15, 18, 23, 7, 39
+INT, FLOAT, BOOL, STRING, EVENT, ENUM, VAR = 16, 15, 17, 18, 23, 7, 39
 # IntOperator's operation (an enum, stored in byteData): the four that make a share.
-OPERATION = {0: lambda a, b: a + b, 1: lambda a, b: a - b, 2: lambda a, b: a * b, 3: lambda a, b: a / b}
+OPERATION = {0: lambda a, b: a + b, 1: lambda a, b: a - b, 2: lambda a, b: a * b, 3: lambda a, b: int(a / b)}
 
 
 def fsms(game):
@@ -145,6 +153,9 @@ def actions(state):
                 ps[ad['paramName'][j]] = {'var': p['name']} if p.get('useVariable') and p.get('name') else p.get('value')
             elif kind == EVENT:
                 ps[ad['paramName'][j]] = ad['stringParams'][pos] if pos < len(ad['stringParams']) else None
+            elif kind == BOOL and pos < len(ad.get('fsmBoolParams', [])):   # a variable it sets or tests: its name
+                p = ad['fsmBoolParams'][pos]
+                ps[ad['paramName'][j]] = {'var': p['name']} if p.get('useVariable') and p.get('name') else p.get('value')
             elif kind == STRING and pos < len(ad['fsmStringParams']):
                 ps[ad['paramName'][j]] = ad['fsmStringParams'][pos]['value']
             elif kind == VAR and pos < len(ad['fsmVarParams']):   # an argument: its number, if an int (type 1)
@@ -166,21 +177,27 @@ def thresholds(f):
     calls HealthManager.AddHP isn't a phase but a heal (the Forebrothers'): 'heal', with its
     arguments. Run twice: the first pass only sets the variables, since a state can compare with
     one that a later state sets (Gurr's Choice, before Set HPs)."""
-    val = {v['name']: ('hp', v['value']) for v in f.get('variables', {}).get('intVariables', []) if v['value']}
-    get = lambda p: val.get(p['var']) if isinstance(p, dict) else ('hp', p) if isinstance(p, (int, float)) else None
+    start = {v['name']: ('hp', v['value']) for v in f.get('variables', {}).get('intVariables', []) if v['value']}
+    val, first = dict(start), {}
+    # A variable not set yet in the second pass has the value the first pass left it (Gurr's Choice
+    # compares with what Set HPs, later in order, sets); one set in place (HP = HP / 2) is set from
+    # its own start again, not from the first pass's result.
+    get = lambda p: (val.get(p['var'], first.get(p['var'])) if isinstance(p, dict)
+                     else ('hp', p) if isinstance(p, (int, float)) else None)
     name = lambda p: p.get('var') if isinstance(p, dict) else None
-    health = lambda p: isinstance(p, dict) and val.get(p['var']) == ('share', 1.0)
+    health = lambda p: isinstance(p, dict) and get(p) == ('share', 1.0)
     found = []
 
-    def compare(s, to, p, ev=None):
+    def compare(s, to, p, ev=None, lt=False):
         v = get(p)
         if v and v != ('share', 1.0):
-            found.append({'state': s['name'], 'var': name(p), v[0]: v[1], 'to': to.get(ev), 'events': to})
+            found.append({'state': s['name'], 'var': name(p), v[0]: v[1], 'to': to.get(ev), 'events': to, 'strict': lt})
 
+    parsed = [(s, {t['fsmEvent']['name']: t['toState'] for t in s.get('transitions', [])}, actions(s)) for s in f['states']]
     for run in (0, 1):
-        for s in f['states']:
-            to = {t['fsmEvent']['name']: t['toState'] for t in s.get('transitions', [])}
-            acts = actions(s)
+        if run:
+            first, val = val, dict(start)
+        for s, to, acts in parsed:
             for i, (a, ps) in enumerate(acts):
                 if a in ('GetHP', 'GetHPEveryFrame') and isinstance(ps.get('storeValue'), dict):
                     val[ps['storeValue']['var']] = ('share', 1.0)
@@ -193,9 +210,12 @@ def thresholds(f):
                     if v and isinstance(m, (int, float)):
                         val[ps['storeResult']['var']] = (v[0], round(v[1] * m, 4))
                 elif a == 'IntOperator' and isinstance(ps.get('storeResult'), dict) and ps.get('operation') in OPERATION:
-                    v, w = get(ps.get('integer1')), get(ps.get('integer2'))
-                    if v and w and w[0] == 'hp' and w[1]:   # a share or a health, by a number
-                        val[ps['storeResult']['var']] = (v[0], round(OPERATION[ps['operation']](v[1], w[1]), 4))
+                    v, w, op = get(ps.get('integer1')), get(ps.get('integer2')), ps['operation']
+                    if v and w and w[0] == 'hp' and w[1]:
+                        if v[0] == 'hp':   # a health by a number, as the game's ints do it
+                            val[ps['storeResult']['var']] = ('hp', OPERATION[op](v[1], w[1]))
+                        elif op == 3:   # a share of the health, divided (Lugoli's HP / 2)
+                            val[ps['storeResult']['var']] = ('share', round(v[1] / w[1], 4))
                     elif v == w == ('share', 1.0) and ps['operation'] == 0:   # two healths added
                         val[ps['storeResult']['var']] = v
                 elif not run:
@@ -205,14 +225,35 @@ def thresholds(f):
                     if add and isinstance(ps.get('integer2'), int):
                         found.append({'state': s['name'], 'var': None, 'heal': [ps['integer2']] + add[:2], 'to': None, 'events': to})
                     else:
-                        compare(s, to, ps.get('integer2'), ps.get('lessThan') or ps.get('equal'))
+                        compare(s, to, ps.get('integer2'), ps.get('lessThan') or ps.get('equal'), strict(ps, to))
                 elif a == 'CompareHPBool':
-                    compare(s, to, ps.get('compareTo'))
+                    compare(s, to, ps.get('compareTo'), None, strict(ps, to))
                 elif a in ('IntCompare', 'IntTestToBool', 'IntCompareToBool'):
+                    # The health against a variable (a literal here is some other check, not a
+                    # phase); written the other way round, its greater than is the health's less than.
                     x, y = (ps.get(k) for k in (('int1', 'int2') if a == 'IntTestToBool' else ('integer1', 'integer2')))
-                    if health(x) and not health(y):
-                        compare(s, to, y, ps.get('lessThan') or ps.get('equal'))
+                    if health(x) and isinstance(y, dict) and not health(y):
+                        compare(s, to, y, ps.get('lessThan') or ps.get('equal'), strict(ps, to))
+                    elif health(y) and isinstance(x, dict) and not health(x):
+                        flip = {k.replace('greaterThan', 'lessThan') if 'greaterThan' in k else k.replace('lessThan', 'greaterThan') if 'lessThan' in k else k: v
+                                for k, v in ps.items()}
+                        compare(s, to, x, flip.get('lessThan') or flip.get('equal'), strict(flip, to))
     return found
+
+
+def strict(ps, to):
+    """Whether a comparison of the health with a threshold moves on only below it, not at it. The
+    game's CompareHP, CompareHPBool, IntCompare, IntTestToBool and IntCompareToBool all compare the
+    same way (read in its code: equal, then less than, then greater than, each its own event or
+    bool), so it's the FSM that makes it "at or below" or "below": an event for less than and none,
+    or another state, for equal (the Bell Eater's IntCompare, the Last Judge's and the Fourth
+    Chorus's CompareHP), or a bool for less than and none for equal (Gurr's lessThanBool), is
+    strict; an equal that goes where less than goes, or a phase reached when greater than doesn't
+    fire (the state goes on), is at or below."""
+    if 'lessThanBool' in ps or 'equalBool' in ps:
+        return isinstance(ps.get('lessThanBool'), dict) and not isinstance(ps.get('equalBool'), dict)
+    lt, eq = ps.get('lessThan'), ps.get('equal')
+    return bool(lt) and (not eq or to.get(eq) != to.get(lt))
 
 
 def bars(f):
@@ -234,9 +275,16 @@ def bars(f):
 def piece(f):
     """A health its FSM keeps, with no HealthManager (Father of the Flame's lanterns and core): its
     HP variable, which it takes the damage dealt from (IntOperator HP - Damage Dealt), and the
-    hits after which it breaks anyway (IntCompare Total Times Hit > n: n + 1). [hp, hits] or None."""
+    hits after which it breaks anyway (IntCompare Total Times Hit > n: n + 1). Every hit takes its
+    damage, but one counts only with its Hit Cooldown Timer at 0 or below (Increment Hit Total?),
+    which a counted hit sets (SetFloatValue: the lanterns' 1.0 s, the core's 0.5) and which counts
+    down only in Idle (FloatAdd -1 per second, every frame): after a hit it first recovers, the
+    states from Hit back to Idle (Wait, AnimateRotationToV2: the lanterns' 0.05 s recoil and 0.5 s
+    return, where a hit takes its damage and starts it again; the core's 0.1 s, with its collider
+    off). [hp, hits, cooldown, recover] or None."""
     iv = {v['name']: v['value'] for v in f.get('variables', {}).get('intVariables', [])}
-    hurt = hits = None
+    hurt = hits = cool = None
+    st = {s['name']: s for s in f['states']}
     for s in f['states']:
         for a, ps in actions(s):
             if a == 'IntOperator' and ps.get('operation') == 1 and ps.get('integer1') == {'var': 'HP'} == ps.get('storeResult') \
@@ -244,7 +292,17 @@ def piece(f):
                 hurt = True
             elif a == 'IntCompare' and ps.get('integer1') == {'var': 'Total Times Hit'} and isinstance(ps.get('integer2'), int) and ps.get('greaterThan'):
                 hits = ps['integer2'] + 1
-    return [iv['HP'], hits] if hurt and iv.get('HP') else None
+            elif a == 'SetFloatValue' and ps.get('floatVariable') == {'var': 'Hit Cooldown Timer'} and isinstance(ps.get('floatValue'), float):
+                cool = round(ps['floatValue'], 4)
+    # The recovery: from Hit, not broken, back to Idle, each state's timed action (the first way
+    # out where it has several: the lanterns' recoil up or down, the core's wobble left or right).
+    rec, name, seen = 0.0, 'Hit', set()
+    while name in st and name != 'Idle' and name not in seen:
+        seen.add(name)
+        rec += sum(ps['time'] for a, ps in actions(st[name]) if a in ('Wait', 'AnimateRotationToV2') and isinstance(ps.get('time'), float))
+        out = [t['toState'] for t in st[name].get('transitions', []) if t['fsmEvent']['name'] not in ('BREAK', 'DAMAGED')]
+        name = out[0] if out else None
+    return [iv['HP'], hits, cool, round(rec, 4) if name == 'Idle' else None] if hurt and iv.get('HP') else None
 
 
 def reset(f):
@@ -267,10 +325,10 @@ def main(game, dump, cache):
             pickle.dump(every, open(cache, 'wb'))
     found = []
     for sc, go, key, f, hp in every:
-        t = thresholds(f)
-        if t or bars(f) or piece(f):
+        t, b, pc = thresholds(f), bars(f), piece(f)
+        if t or b or pc:
             found.append({'scene': sc, 'object': go, 'key': key, 'fsm': f.get('name'), 'hp': hp, 'thresholds': t,
-                          'bars': bars(f), 'piece': piece(f), 'reset': reset(f)})
+                          'bars': b, 'piece': pc, 'reset': reset(f)})
     if dump:
         json.dump(found, open(dump, 'w'), indent=1)
         print(f'{len(found)} FSMs → {dump}')
@@ -289,19 +347,34 @@ def write(found):
     for fid, key, hp, bs in foes:
         by_key.setdefault(key, []).append((fid, hp, bs))
     keyed = lambda x: x['key'] or SCENE_KEY.get((x['scene'], x['object'])) or SCENE_KEY.get(x['scene'])
-    out = {}
+    out, strict = {}, {}
     for x in found:
         key = keyed(x)
         if x['fsm'] not in PHASE_FSMS or key not in by_key:
             continue
         ids = [f for f in by_key[key] if f[0] == SCENE_FOE[x['scene']]] if x['scene'] in SCENE_FOE else by_key[key]
-        at = [t.get('share', t.get('hp')) for t in x['thresholds'] if t['var'] is None or PHASES.search(t['var'])]
-        at = [a for a in at if a and (0 < a < 1 or a >= 2)]
+        ts = [t for t in x['thresholds'] if 'heal' not in t and (t['var'] is None or PHASES.search(t['var']))]
+        for t in x['thresholds']:   # what the name filter leaves out, so a renamed phase shows
+            if 'heal' not in t and t['var'] and not PHASES.search(t['var']):
+                print(f"  not a phase: {x['scene']} {x['object']} {t['var']}", file=sys.stderr)
+        ts = [t for t in ts if (lambda a: a and (0 < a < 1 or a >= 2))(t.get('share', t.get('hp')))]
+        at = [t.get('share', t.get('hp')) for t in ts]
         heal = next((t['heal'] for t in x['thresholds'] if 'heal' in t), None)
         for fid, hp, bs in ids:
             e = out.setdefault(fid, {})
             if at:
                 e['at'] = sorted(set(e.get('at', [])) | set(at), key=lambda a: -(a * (hp or 0) if a < 1 else a))
+                # Below, not at, only when every comparison with it is strict: where one is "at or
+                # below" (the Widow's Phase Check, Pinstress's and Gurr's throws), something of the
+                # next phase already starts at it.
+                for t in ts:
+                    a = t.get('share', t.get('hp'))
+                    strict[(fid, a)] = strict.get((fid, a), True) and t['strict']
+                below = [a for a in e['at'] if strict.get((fid, a))]
+                if below:
+                    e['below'] = below
+                else:
+                    e.pop('below', None)
                 # Shares of one of the fight's bars (Signis's 720 of the Forebrothers' 1,240): its own.
                 if bs and x['hp'] in bs and x['hp'] != hp and any(a < 1 for a in at):
                     e['of'] = x['hp']
@@ -324,16 +397,22 @@ def write(found):
         for fid, hp, bs in by_key[keyed(got[0])]:
             if sum(len(each) * each[0][0] for each in ps) == hp:
                 out.setdefault(fid, {}).update(bars=[len(each) * each[0][0] for each in ps], pieces=[len(each) for each in ps],
-                                               hits=[each[0][1] for each in ps])
+                                               hits=[each[0][1] for each in ps], cooldown=[each[0][2] for each in ps],
+                                               recover=[each[0][3] for each in ps])
     out = {k: v for k, v in sorted(out.items()) if v}
     data = json.dumps(out, separators=(',', ':'))
     open(OUT, 'w').write(
         "/* js/phases.js — each boss's phases: where its FSM moves on (at: highest first, a number below\n"
         "   1 a share of its health, from 1 up a health) and, when each phase has a health of its own,\n"
         "   its bars. By the boss's id in js/enemies.js. And, for the few that go otherwise:\n"
+        "     below   the thresholds it moves on only below, not at: the game compares them with a\n"
+        "             strict < (the Bell Eater's; the Fourth Chorus's 451, 326 and 201: at 450...)\n"
         "     of      the health the shares are of, when it's one of the fight's bars (Signis's)\n"
         "     pieces  how many pieces make each bar, each breaking at its share or after its `hits`\n"
-        "             (Father of the Flame's four lanterns, then its core)\n"
+        "             counted hits (Father of the Flame's four lanterns, then its core); a hit counts\n"
+        "             only after `cooldown` seconds still, which run once it has recovered from the\n"
+        "             last hit (`recover` seconds: a lantern hit meanwhile takes its damage and\n"
+        "             starts it again; the core can't be hit then)\n"
         "     heal    [at, add, max]: when one of two falls, the other at `at` or below heals `add`,\n"
         "             to `max` at most (the Forebrothers)\n"
         "     reset   at 0, the health it's set back to if the finishing prompt is missed (Phantom's)\n"

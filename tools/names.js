@@ -9,22 +9,27 @@ async function names() {
   const { EN, ES } = await load();
 
   /* English (lower case) → keys, plus the titles the game splits into <X>_SUPER + <X>_MAIN
-     ("Chapel of" + "the Beast"), as "X_SUPER+X_MAIN". */
+     ("Chapel of" + "the Beast"), as "X_SUPER+X_MAIN", or "X_SUPER+X_MAIN+X_SUB" when a language
+     puts a half under X_SUB (the Spanish, often: text() below). */
   const BY_EN = new Map();
   const add = (en, k) => { en = norm(en).toLowerCase(); if (!en) return; if (!BY_EN.has(en)) BY_EN.set(en, []); BY_EN.get(en).push(k); };
   for (const k of Object.keys(EN)) add(EN[k], k);
   for (const k of Object.keys(EN)) {
     const m = /^(.*)_MAIN$/.exec(k);
-    if (m && EN[m[1] + '_SUPER'] != null) add(EN[m[1] + '_SUPER'] + ' ' + EN[k], m[1] + '_SUPER+' + k);
+    const sub = m && (EN[m[1] + '_SUB'] != null || ES[m[1] + '_SUB'] != null) ? '+' + m[1] + '_SUB' : '';
+    if (m && EN[m[1] + '_SUPER'] != null) add(EN[m[1] + '_SUPER'] + ' ' + EN[k], m[1] + '_SUPER+' + k + sub);
   }
 
-  /* A key's { es, en, key }; two keys joined with "+" are one title. A key the Spanish dump
-     lacks keeps the English (the dump's Spanish misses 50 keys). */
+  /* A key's { es, en, key }; keys joined with "+" are one title, X_SUPER+X_MAIN+X_SUB. A single
+     key the Spanish dump lacks keeps the English. A title's halves go where each language puts
+     them: the 50 _SUPER keys the Spanish lacks are its _SUB ("Forge" + "Daughter" is «Hija» +
+     «de la Forja»), so each language joins the parts it has. */
   function text(key, optional) {
     const ks = key.split('+');
-    if (ks.some((k) => !(k in EN))) { if (optional) return null; throw new Error(`the key ${key} isn't in the dump`); }
-    const one = (L, k) => norm(L[k] != null ? L[k] : EN[k]);
-    return { es: ks.map((k) => one(ES, k)).join(' '), en: ks.map((k) => one(EN, k)).join(' '), key };
+    const split = ks.length > 1;
+    if (ks.some((k) => !(k in EN) && !(split && k in ES))) { if (optional) return null; throw new Error(`the key ${key} isn't in the dump`); }
+    const say = (L) => (split ? ks.filter((k) => L[k] != null).map((k) => norm(L[k])) : [norm(L[key] != null ? L[key] : EN[key])]).join(' ');
+    return { es: say(ES), en: say(EN), key };
   }
 
   /* By the English as the wiki writes it: the key whose English is exactly that, preferring a

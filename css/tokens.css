@@ -198,6 +198,7 @@
   /* What the screen bar stuck at the top takes up. */
   --sticky-h: 64px;
   --measure: 68ch;    /* maximum measure for long prose */
+  --column: 720px;    /* a single column of lists: Your game's categories, its changes, the road */
 
 
   /* The screens are the game's inventory: almost pure black, and the light behind a plate is

@@ -3,8 +3,9 @@ own files: the masks its body takes on contact and each of its attacks' hitboxes
 js/enemy-damage.js. Needs the game installed and UnityPy, as tools/extract-map.py does:
     uv venv /tmp/unitypy && uv pip install --python /tmp/unitypy/bin/python UnityPy
     /tmp/unitypy/bin/python tools/extract-damage.py "<Steam>/steamapps/common/Hollow Knight Silksong" [--cache=<file>] [--dump=<file>]
-Re-run it after a patch that adds or changes enemies. --cache keeps the scan (pickled) for the
-runs that follow; --dump writes every enemy's hitboxes, as read, for checking by hand.
+Re-run it after a patch that adds or changes enemies (about a minute and a half: the scenes, then
+the other bundles, in parallel). --cache keeps the scan (pickled) for the runs that follow;
+--dump writes every enemy's hitboxes and what it spawns, as read, for checking by hand.
 
 Where it is (read on 28-Sep-2026, patch 1.0.30000, with the game's code decompiled): anything that
 hurts Hornet carries a DamageHero component, whose damageDealt is the masks it takes (1 by
@@ -15,13 +16,31 @@ EnemyJournalRecord its EnemyDeathEffects points at; its DamageHero components ar
 (its body: contact damage) and on the objects under it, its hitboxes ("SlashHit", "Dash Stab
 Hit"), up to another enemy with a record of its own. The scenes are read in parallel.
 
+What it spawns at run time: its FSMs' actions that make an object (found by scanning every FSM in
+the scenes for actions with a prefab among their parameters: SpawnObjectFromGlobalPool and its
+variants, FlingObjectsFromGlobalPool, CreateObject, AddPersonalObjectPool, SpawnRandomObjects,
+SpawnProjectile…, and SetGameObject, BoolTestToGameObject and SelectRandomGameObject, which pick
+the prefab one of them makes), a variable read for its value as placed, and its corpse
+(EnemyDeathEffects' corpsePrefab: a Swamp Squit's burst is its corpse's). Each prefab is read from
+the bundles outside the scenes: the DamageHero components on it and under it, and what its own
+FSMs spawn in turn (a bomb's explosion), down to an enemy with a record of its own (a summoned
+enemy is its own entry). Each is an attack named by its prefab ("Tar Shot", "Swamp Bounce Pod
+Explosion"). A prefab a BoolTestToGameObject picks when «Is Black Threaded», or named as a
+black-thread variant ("… BT", "… BlackThread Variant", "… Void"), is only a black-threaded
+enemy's ('threaded').
+
+The enemies the game makes at run time, when none of their entry is placed: a prefab that carries
+the record (the Gloomfly), the object in a scene that names it and that Hornet can hit (a
+HealthManager on it or under it: the boss's own object or its fight's Boss Scene), or the enemy
+whose corpse names it (the Last Judge, Tormented Trobbio), in that order.
+
 What the game does with it (HeroController.TakeDamage): Flame or Void sets the hit to 2 masks,
 whatever damageDealt says; lava and steam are 2, spikes, acid, coal and zap 1. Black-threading
 (BlackThreadState.SetVisiblyThreaded) adds the Void flag to every DamageHero under the enemy, so a
-black-threaded enemy's every hit is 2 masks: the game doesn't double, it sets. Not read: a
-projectile the enemy spawns at run time (it isn't under the enemy in the scene), and an FSM that
-changes damageDealt during the fight (SetDamageHeroAmount): a body of 0 that its FSM switches on
-takes the FSM's value; the rest aren't followed. The Barbed Bracelet's multiplier on the masks
+black-threaded enemy's every hit is 2 masks: the game doesn't double, it sets. Not read: what a
+component other than an FSM spawns, and an FSM that changes damageDealt during the fight
+(SetDamageHeroAmount): a body of 0 that its FSM switches on takes the FSM's value; the rest (a
+spawned prefab's included) aren't followed. The Barbed Bracelet's multiplier on the masks
 taken is read from the game's Gameplay settings (floored by TakeDamage). """
 import json, os, pickle, re, struct, sys, warnings
 from collections import Counter, defaultdict
@@ -48,10 +67,11 @@ def setup(game):
             record[(o.assets_file.name.lower(), o.path_id)] = o.read_typetree()['displayName']['Key']
     if len(record) < 200:
         sys.exit(f'extract-damage: {len(record)} records in journalrecords.bundle: the bundles changed')
-    G.update(aa=aa, bundles=bundles, cls=cls, record=record,
+    G.update(aa=aa, bundles=bundles, cls=cls, record=record, rcab=next(iter(record))[0],
              death={k for k, v in cls.items() if v.startswith('EnemyDeathEffects') and v != 'EnemyDeathEffectsProfile'},
              hero={k for k, v in cls.items() if v == 'DamageHero'},
-             fsm={k for k, v in cls.items() if v == 'PlayMakerFSM'})
+             fsm={k for k, v in cls.items() if v == 'PlayMakerFSM'},
+             health={k for k, v in cls.items() if v == 'HealthManager'})
 
 
 def script(raw):
@@ -72,7 +92,8 @@ def scene(name):
     flags; active), and the damage values its FSMs set with SetDamageHeroAmount."""
     env = UnityPy.load(os.path.join(G['aa'], 'scenes_scenes_scenes', name + '.bundle'))
     father, go_of, objs = {}, {}, {}
-    rec, heroes, fsms = {}, defaultdict(list), defaultdict(list)
+    rec, heroes, fsms, corpses, named = {}, defaultdict(list), defaultdict(list), defaultdict(set), defaultdict(set)
+    health, unrecorded = set(), {}
     for o in env.objects:
         objs[o.path_id] = o
         if o.type.name in ('Transform', 'RectTransform'):
@@ -86,18 +107,26 @@ def scene(name):
             if s in G['death']:
                 d = o.read_typetree()
                 p = d.get('journalRecord') or {}
-                if p.get('m_PathID'):
-                    key = G['record'].get(pointer(o, p))
-                    if key:
-                        rec[gid] = key
+                key = p.get('m_PathID') and G['record'].get(pointer(o, p))
+                if key:
+                    rec[gid] = key
+                    corpses[gid] = corpse_refs(o, d)
+                else:   # its corpse may name the record (the Last Judge's, Tormented Trobbio's)
+                    unrecorded[gid] = corpse_refs(o, d)
             elif s in G['hero']:
                 d = o.read_typetree()
                 a = d.get('damageAsset') or {}
                 heroes[gid].append((d['damageDealt'], pointer(o, a) if a.get('m_PathID') else None,
                                     d['hazardType'], d['damagePropertyFlags']))
-            elif s in G['fsm'] and b'SetDamageHeroAmount' in raw:
+            elif s in G['fsm'] and (b'SetDamageHeroAmount' in raw or SPAWNS_RAW.search(raw)):
                 fsms[gid].append(o)
-    if not rec:
+            if s in G['health']:
+                health.add(gid)
+            if s not in G['death']:
+                keys = names_record(o, raw)
+                if len(keys) == 1:   # more is a list (Nuu's dialogue), not an enemy
+                    named[gid] |= keys
+    if not rec and not named and not unrecorded:
         return []
     parent = lambda gid: go_of.get(father.get(gid))
     gname = lambda gid: objs[gid].read().m_Name
@@ -117,20 +146,162 @@ def scene(name):
             gid = parent(gid)
         return '/'.join(reversed(out))
 
-    found = {g: {'key': k, 'name': gname(g), 'hits': [], 'sets': []} for g, k in rec.items()}
+    # A boss the game makes its enemy at run time (its record set by its own FSM or its fight's Boss
+    # Scene): the object that names the record, when it isn't under a placed enemy, stands for it.
+    # It has to be something Hornet can hit: a HealthManager on it or under it (not Nuu, who names
+    # a record in her dialogue, nor a water that names the Muckmaggots').
+    how = {g: 'placed' for g in rec}
+    hit = set()
+    for g in health:
+        while g and g not in hit:
+            hit.add(g)
+            g = parent(g)
+    for g, keys in named.items():
+        if g in objs and g in hit and not owner(g):
+            how[g] = 'named'
+    # An enemy with no record of its own whose corpse names one (its key is known once the prefabs
+    # are read: '?' until then).
+    for g, cs in unrecorded.items():
+        if cs and g in objs and g not in how and not owner(g):
+            how[g] = 'corpse'
+            corpses[g] = cs
+    for g in how:
+        if how[g] == 'named':
+            rec[g] = next(iter(named[g]))
+        elif how[g] == 'corpse':
+            rec[g] = '?'
+
+    children = defaultdict(list)
+    for g in father:
+        if parent(g):
+            children[parent(g)].append(g)
+
+    def under(gid):   # an object and everything under it
+        out, todo = [], [gid]
+        while todo:
+            g = todo.pop()
+            out.append(g)
+            todo += children.get(g, [])
+        return out
+
+    found = {g: {'key': k, 'name': gname(g), 'hits': [], 'sets': [], 'spawned': [], 'refs': {r: False for r in corpses[g]}}
+             for g, k in rec.items()}
     for gid, hs in heroes.items():
         root = owner(gid)
         if root:
             for dmg, asset, hazard, flags in hs:
                 found[root]['hits'].append((rel(gid, root), dmg, asset, hazard, flags, active(gid)))
+    me = next(iter(objs.values())).assets_file.name.lower() if objs else ''
     for gid, os_ in fsms.items():
         root = owner(gid)
         if not root:
             continue
         for o in os_:
-            for v in set_amounts(o.read_typetree()['fsm']):
+            d = o.read_typetree()['fsm']
+            for v in set_amounts(d):
                 found[root]['sets'].append(v)
-    return [(name, f['key'], f['name'], f['hits'], f['sets']) for f in found.values()]
+            for ref, bt in spawn_refs(o, d).items():
+                if ref[0] != me:   # a prefab: read once the scenes are
+                    found[root]['refs'][ref] = found[root]['refs'].get(ref, True) and bt
+                elif ref[1] in objs and owner(ref[1]) != root and ref[1] not in rec:
+                    # An object elsewhere in the scene it makes copies of: its hitboxes, as a prefab's.
+                    for g in under(ref[1]):
+                        if g in rec:
+                            continue
+                        for dmg, asset, hazard, flags in heroes.get(g, ()):
+                            found[root]['spawned'].append((gname(ref[1]), dmg, asset, hazard, flags, rel(g, ref[1]), bt))
+    return [(name, f['key'], f['name'], f['hits'], f['sets'], f['spawned'], sorted(f['refs'].items()), how[g]) for g, f in found.items()]
+
+
+def names_record(o, raw):
+    """The journal records a component points at, found in its raw data as
+    tools/extract-journal-rooms.py finds them: the records' file's index among its externals (an
+    int32) and the record's path id (an int64)."""
+    out = set()
+    for i, e in enumerate(o.assets_file.externals):
+        if e.path.split('/')[-1].lower() != G['rcab']:
+            continue
+        pat = struct.pack('<i', i + 1)
+        p = raw.find(pat)
+        while p >= 0:
+            if p + 12 <= len(raw):
+                k = G['record'].get((G['rcab'], struct.unpack_from('<q', raw, p + 4)[0]))
+                if k:
+                    out.add(k)
+            p = raw.find(pat, p + 1)
+    return out
+
+
+# The PlayMaker actions that make an object at run time, from a pool or not (found by scanning
+# every FSM in the scenes for actions with a prefab among their parameters), and the ones that
+# pick the prefab another of them makes (SetGameObject, BoolTestToGameObject…).
+SPAWNS = re.compile(r'^(Spawn(?!SkillGetMsg|PowerUpGetMsg)|Fling|CreateObject|CreateChild|AddPersonalObjectPool|SetGameObject$|'
+                    r'BoolTestToGameObject|SelectRandomGameObject)')
+SPAWNS_RAW = re.compile(rb'\.(Spawn|Fling|CreateObject|CreateChild|AddPersonalObjectPool|SetGameObject|BoolTestToGameObject|SelectRandomGameObject)')
+NOT_PREFAB = re.compile(r'spawnPoint|store|variable|target|parent', re.I)
+THREADED = re.compile(r'black.?thread', re.I)
+# A hitbox or prefab only a black-threaded enemy has, by its name ("Pt Spit Void", "Grass Ball
+# BlackThread Variant", "Conch Projectile Heavy BT").
+THREADED_NAME = re.compile(r'black.?thread|\bBT\b|\bvoid\b', re.I)
+FSM_GAMEOBJECT = 19   # ParamDataType.FsmGameObject: an index into fsmGameObjectParams
+
+
+def corpse_refs(o, d):
+    """What an enemy leaves when it dies (EnemyDeathEffects' corpsePrefab and altCorpses): a
+    Swamp Squit's burst is its corpse's."""
+    out, todo = set(), [d.get('corpsePrefab'), d.get('altCorpses')]
+    while todo:
+        x = todo.pop()
+        if isinstance(x, dict) and 'm_PathID' in x:
+            if x['m_PathID']:
+                out.add(pointer(o, x))
+        elif isinstance(x, dict):
+            todo += x.values()
+        elif isinstance(x, list):
+            todo += x
+    return out
+
+
+def fsm_bool(ad, j):
+    """An FsmBool parameter, kept in byteData: its value, whether it's a variable, its name."""
+    b = bytes(ad['byteData'][ad['paramDataPos'][j]:ad['paramDataPos'][j] + ad['paramByteDataSize'][j]])
+    return bool(b[0]) if b else False, len(b) > 1 and bool(b[1]), b[2:].decode('utf-8', 'replace')
+
+
+def spawn_refs(o, f):
+    """The objects an FSM's spawn actions make: (file, path id) → whether only a black-threaded
+    enemy makes it (its BoolTestToGameObject tests «Is Black Threaded», as the Coral Conch
+    Shooter Heavy's does), a variable read for its value as placed."""
+    var = {v['name']: v['value'] for v in f['variables'].get('gameObjectVariables', [])}
+    out = {}
+    for s in f['states']:
+        ad = s['actionData']
+        n = min(len(ad['paramDataType']), len(ad['paramDataPos']), len(ad['paramName']))
+        start = [min(x, n) for x in ad['actionStartIndex']] + [n]
+        for i, full in enumerate(ad['actionNames']):
+            action = full.split(',')[0].split('.')[-1]
+            if not SPAWNS.search(action):
+                continue
+            threaded = None   # the branch a black-threaded enemy takes, if the action tests for it
+            if action == 'BoolTestToGameObject':
+                for j in range(start[i], start[i + 1]):
+                    if ad['paramName'][j] == 'Test':
+                        _, isvar, var_name = fsm_bool(ad, j)
+                        if isvar and THREADED.search(var_name):
+                            threaded = 'TrueGameObject'
+                for j in range(start[i], start[i + 1]):
+                    if threaded and ad['paramName'][j] == 'ExpectedValue' and not fsm_bool(ad, j)[0]:
+                        threaded = 'FalseGameObject'
+            for j in range(start[i], start[i + 1]):
+                pos = ad['paramDataPos'][j]
+                if ad['paramDataType'][j] != FSM_GAMEOBJECT or pos >= len(ad['fsmGameObjectParams']) or NOT_PREFAB.search(ad['paramName'][j]):
+                    continue
+                p = ad['fsmGameObjectParams'][pos]
+                v = var.get(p['name']) if p.get('useVariable') else p.get('value')
+                if v and v.get('m_PathID'):
+                    r = pointer(o, v)
+                    out[r] = out.get(r, True) and ad['paramName'][j] == threaded
+    return out
 
 
 def set_amounts(f):
@@ -150,6 +321,154 @@ def set_amounts(f):
     return out
 
 
+# The bundles outside the scenes with no prefabs in them (as tools/extract-journal-rooms.py skips).
+SKIP = re.compile(r'^(sfx|herosfx|textures|utilitytextures|materials|animations|audiocues|tk2d|fonts|shaders|vibration|'
+                  r'herocollections|journalrecords)|monoscripts|unitybuiltin')
+
+
+def bundle(f):
+    """A bundle outside the scenes, for its prefabs: per file, each object's name, whether it's on
+    and its parent, the DamageHero components on it, what its FSMs spawn and the damage they set,
+    and the enemies with a record (their key and their corpses)."""
+    env = UnityPy.load(G['bundles'][f])
+    out = {}
+    for o in env.objects:
+        t = o.type.name
+        if t not in ('GameObject', 'Transform', 'RectTransform', 'MonoBehaviour'):
+            continue
+        x = out.setdefault(o.assets_file.name.lower(), {'name': {}, 'on': {}, 'tr': {}, 'father': {}, 'hero': {}, 'spawn': {},
+                                                         'sets': {}, 'rec': {}, 'corpse': {}, 'named': {}, 'hp': set()})
+        if t == 'GameObject':
+            g = o.read()
+            x['name'][o.path_id] = g.m_Name
+            x['on'][o.path_id] = bool(g.m_IsActive)
+        elif t != 'MonoBehaviour':
+            tr = o.read()
+            x['tr'][o.path_id] = tr.m_GameObject.m_PathID
+            x['father'][tr.m_GameObject.m_PathID] = tr.m_Father.m_PathID
+        else:
+            raw = o.get_raw_data()
+            s = script(raw)
+            gid = struct.unpack_from('<q', raw, 4)[0] if len(raw) >= 12 else 0
+            if s in G['hero']:
+                d = o.read_typetree()
+                a = d.get('damageAsset') or {}
+                x['hero'].setdefault(gid, []).append((d['damageDealt'], pointer(o, a) if a.get('m_PathID') else None,
+                                                     d['hazardType'], d['damagePropertyFlags']))
+            elif s in G['death']:
+                d = o.read_typetree()
+                p = d.get('journalRecord') or {}
+                key = p.get('m_PathID') and G['record'].get(pointer(o, p))
+                if key:
+                    x['rec'][gid] = key
+                    x['corpse'][gid] = corpse_refs(o, d)
+            elif s in G['fsm'] and (b'SetDamageHeroAmount' in raw or SPAWNS_RAW.search(raw)):
+                d = o.read_typetree()['fsm']
+                mine = x['spawn'].setdefault(gid, {})
+                for r, bt in spawn_refs(o, d).items():
+                    mine[r] = mine.get(r, True) and bt
+                x['sets'].setdefault(gid, []).extend(set_amounts(d))
+            if s in G['health']:
+                x['hp'].add(gid)
+            if s not in G['death']:
+                keys = names_record(o, raw)
+                if len(keys) == 1:
+                    x['named'][gid] = next(iter(keys))
+    for x in out.values():   # a Transform's father → its object
+        x['father'] = {g: x['tr'].get(p) for g, p in x['father'].items()}
+        del x['tr']
+    return out
+
+
+def index(pool):
+    """Every bundle outside the scenes read (in parallel), by file, with each object's children."""
+    scenes = os.path.join(G['aa'], 'scenes_scenes_scenes')
+    names = sorted(f for f, p in G['bundles'].items() if not p.startswith(scenes) and not SKIP.search(f))
+    idx = {}
+    for i, r in enumerate(pool.imap_unordered(bundle, names, chunksize=1)):
+        idx.update(r)
+        if i % 50 == 0:
+            print(f'prefabs {i}/{len(names)}', file=sys.stderr, flush=True)
+    for x in idx.values():
+        x['children'] = defaultdict(list)
+        for g, p in x['father'].items():
+            if p:
+                x['children'][p].append(g)
+    return idx
+
+
+def rel_in(x, g, top):
+    out = []
+    while g and g != top:
+        out.append(x['name'].get(g, '?'))
+        g = x['father'].get(g)
+    return '/'.join(reversed(out))
+
+
+def below(x, gid):
+    """An object in a prefab and everything under it, down to another enemy with a record."""
+    out, todo = [], [gid]
+    while todo:
+        g = todo.pop()
+        if g != gid and g in x['rec']:
+            continue
+        out.append(g)
+        todo += x['children'].get(g, [])
+    return out
+
+
+def prefabs(idx, refs):
+    """What each prefab an enemy's FSMs spawn (or its corpse is) deals: {(file, path id): [(its
+    name, damageDealt, asset, hazardType, flags, the hitbox's path under it, black-threaded
+    only)]}, from the DamageHero components on it and under it and from what its own FSMs spawn in
+    turn (a bomb's explosion, a corpse's burst), down to an enemy with a record of its own (a
+    summoned enemy is its own entry)."""
+    def hits(ref, bt, seen):
+        # seen: each prefab with whether it was reached only through a black-threaded branch; one
+        # reached so is walked again when a plain branch reaches it, so its hits aren't left as
+        # a black-threaded enemy's only.
+        cab, gid = ref
+        x = idx.get(cab)
+        if not x or gid not in x['name'] or gid in x['rec'] or (ref in seen and (bt or not seen[ref])):
+            return []
+        seen[ref] = bt
+        out = []
+        for g in below(x, gid):
+            out += [(x['name'][gid],) + h + (rel_in(x, g, gid), bt) for h in x['hero'].get(g, ())]
+            for r, t in sorted(x['spawn'].get(g, {}).items()):
+                out += hits(r, bt or t, seen)
+        return out
+    return {r: hits(r[0], r[1], {}) for r in refs}
+
+
+def prefab_rows(idx, keys):
+    """The enemies the game only makes from a prefab (Tormented Trobbio, the Last Judge…), as the
+    scenes' rows: only for the keys given, the ones with no enemy placed in a scene."""
+    rows = []
+    for cab, x in sorted(idx.items()):
+        # An enemy with its record on its EnemyDeathEffects, or named by another of its components
+        # (Tormented Trobbio's) when Hornet can hit it and it isn't inside another.
+        roots = dict(x['rec'])
+        for gid, key in x['named'].items():
+            up, g = False, x['father'].get(gid)
+            while g:
+                up = up or g in x['rec'] or g in x['named']
+                g = x['father'].get(g)
+            if not up and gid not in roots and any(g in x['hp'] for g in below(x, gid)):
+                roots[gid] = key
+        for gid, key in sorted(roots.items()):
+            if key not in keys:
+                continue
+            hits, sets, refs = [], [], {r: False for r in x['corpse'].get(gid, ())}
+            for g in below(x, gid):
+                hits += [(rel_in(x, g, gid),) + h + (x['on'].get(g, True),) for h in x['hero'].get(g, ())]
+                sets += x['sets'].get(g, [])
+                for r, bt in x['spawn'].get(g, {}).items():
+                    refs[r] = refs.get(r, True) and bt
+            rows.append(('prefab:' + cab, key, x['name'].get(gid, '?'), hits, sets, [], sorted(refs.items()), 'prefab'))
+    return rows
+
+
 def scan(game):
     setup(game)
     names = sorted(f[:-7] for f in os.listdir(os.path.join(G['aa'], 'scenes_scenes_scenes')) if f.endswith('.bundle'))
@@ -159,8 +478,27 @@ def scan(game):
             rows += r
             if i % 50 == 0:
                 print(f'{i}/{len(names)}', file=sys.stderr, flush=True)
+        idx = index(pool)
+    # A key placed in some scene is read there; one the game makes from a prefab, from its prefab;
+    # a boss only named by its fight, from the object that names it.
+    placed = {r[1] for r in rows if r[7] == 'placed'}
+    rows += prefab_rows(idx, {k for k in G['record'].values() if k not in placed})
+    # A corpse's record: the one its prefab carries or names.
+    def corpse_key(refs):
+        ks = {k for (cab, gid), _ in refs for k in [idx.get(cab, {}).get('rec', {}).get(gid) or idx.get(cab, {}).get('named', {}).get(gid)] if k}
+        return next(iter(ks)) if len(ks) == 1 else None
+    rows = [r[:1] + (corpse_key(r[6]),) + r[2:] if r[7] == 'corpse' else r for r in rows]
+    rows = [r for r in rows if r[1]]
+    better = {'placed': (), 'prefab': ('placed',), 'named': ('placed', 'prefab'), 'corpse': ('placed', 'prefab', 'named')}
+    has = {h: {r[1] for r in rows if r[7] == h} for h in better}
+    rows = [r for r in rows if not any(r[1] in has[h] for h in better[r[7]])]
+    made = prefabs(idx, {ref for r in rows for ref in r[6]})
+    # Each enemy's spawned hitboxes: the ones in its scene and its prefabs'.
+    rows = [(sc, k, n, hs, st, sp + [h for ref in refs for h in made[ref]], how)
+            for sc, k, n, hs, st, sp, refs, how in rows]
+    print(f'{sum(1 for r in rows if r[5])} enemies spawn something that hurts', file=sys.stderr)
     # The DamageReference assets any hitbox points at: their value.
-    assets = {h[2] for r in rows for h in r[3] if h[2]}
+    assets = {h[2] for r in rows for h in r[3] if h[2]} | {h[2] for r in rows for h in r[5] if h[2]}
     values = {}
     if assets:
         files = {a[0] for a in assets}
@@ -197,8 +535,9 @@ def main(game, cache, dump):
         if cache:
             pickle.dump((rows, values, barbed), open(cache, 'wb'))
     if dump:
-        json.dump([{'scene': s, 'key': k, 'name': n, 'hits': [list(h[:2]) + [values.get(h[2]) if h[2] else None] + list(h[3:]) for h in hs], 'sets': st}
-                   for s, k, n, hs, st in rows], open(dump, 'w'), indent=1)
+        json.dump([{'scene': s, 'key': k, 'name': n, 'how': how, 'hits': [list(h[:2]) + [values.get(h[2]) if h[2] else None] + list(h[3:]) for h in hs], 'sets': st,
+                    'spawned': [list(h[:2]) + [values.get(h[2]) if h[2] else None] + list(h[3:]) for h in sp]}
+                   for s, k, n, hs, st, sp, how in rows], open(dump, 'w'), indent=1)
         print(f'{len(rows)} enemies → {dump}')
     write(rows, values, barbed)
 
@@ -231,8 +570,22 @@ def entries(rows, values):
     DamageHero on the enemy itself or, when it has none there, the ones under it that are on from
     the start and aren't an attack's; an FSM that switches a body of 0 on (SetDamageHeroAmount)
     gives its value."""
-    body, attacks, types = defaultdict(set), defaultdict(lambda: defaultdict(set)), defaultdict(dict)
-    for sc, key, name, hits, sets in rows:
+    body, attacks, types, spawns = defaultdict(set), defaultdict(lambda: defaultdict(set)), defaultdict(dict), defaultdict(set)
+    threaded = defaultdict(dict)
+    for sc, key, name, hits, sets, spawned, how in rows:
+        # What it spawns: an attack each, by the prefab's name.
+        for prefab, dmg, asset, hazard, flags, path, bt in spawned:
+            d = masks(values.get(asset, dmg) if asset else dmg, hazard, flags)
+            if d is None:
+                continue
+            g = group(prefab)
+            attacks[key][g].add(d)
+            spawns[key].add(g)
+            threaded[key][g] = threaded[key].get(g, True) and (bt or bool(THREADED_NAME.search(prefab + '/' + path)))
+            if flags & VOID:
+                types[key][g] = 'void'
+            elif flags & FLAME:
+                types[key][g] = 'fire'
         root = [h for h in hits if h[0] == '']
         for path, dmg, asset, hazard, flags, on in hits:
             d = masks(values.get(asset, dmg) if asset else dmg, hazard, flags)
@@ -246,6 +599,7 @@ def entries(rows, values):
             else:
                 g = group(path)
                 attacks[key][g].add(d)
+                threaded[key][g] = threaded[key].get(g, True) and bool(THREADED_NAME.search(path))
                 if flags & VOID:
                     types[key][g] = 'void'
                 elif flags & FLAME:
@@ -259,6 +613,10 @@ def entries(rows, values):
             e['attacks'] = {g: sorted(v) for g, v in sorted(attacks[key].items())}
         if types.get(key):
             e['types'] = dict(sorted(types[key].items()))
+        if spawns.get(key):
+            e['spawned'] = sorted(spawns[key])
+        if any(threaded[key].values()):
+            e['threaded'] = sorted(g for g, t in threaded[key].items() if t)
         out[key] = e
     return out
 
@@ -270,19 +628,21 @@ def write(rows, values, barbed):
         "/* js/enemy-damage.js: what each Hunter's Journal entry's enemies do to Hornet, in masks.\n"
         "   BY_KEY: its NAME_ key (js/journal.js) → body (on contact: each value its placed enemies\n"
         "   have, lowest first), attacks (its hitboxes, by the game's own object names without their\n"
-        "   numbers → the values found) and types (a hitbox that is 'fire' or 'void': 2 masks whatever\n"
-        "   it says).\n"
+        "   numbers, or what it spawns by the prefab's → the values found), types (a hitbox that is\n"
+        "   'fire' or 'void': 2 masks whatever it says), spawned (the attacks it makes at run time:\n"
+        "   projectiles, bombs, its corpse's burst) and threaded (the attacks only a black-threaded one\n"
+        "   has).\n"
         "   BARBED: what the Barbed Bracelet multiplies the masks taken by (floored), the game's Gameplay\n"
         "   settings' barbedWireDamageTakenMultiplier.\n"
         "   GENERATED by tools/extract-damage.py from the game's own files (each enemy's DamageHero\n"
-        "   components): not edited by hand. Black-threaded, every hit is 2 masks (the game sets the Void\n"
-        "   flag on all of them). Not here: what an enemy spawns at run time (projectiles, summons), and\n"
-        "   a hitbox whose damage its FSM sets during the fight. */\n"
+        "   components, and those of the prefabs its FSMs spawn): not edited by hand. Black-threaded,\n"
+        "   every hit is 2 masks (the game sets the Void flag on all of them). Not here: a summoned enemy\n"
+        "   with an entry of its own, and a hitbox whose damage its FSM sets during the fight. */\n"
         "(() => {\n  'use strict';\n  const SS = globalThis.SS || (globalThis.SS = {});\n"
         f"  SS.enemyDamage = {{ BY_KEY: {data}, BARBED: {json.dumps(barbed)} }};\n"
         "  if (typeof module !== 'undefined' && module.exports) module.exports = SS.enemyDamage;\n})();\n")
     two = sum(1 for e in out.values() if max(e.get('body', [0])) >= 2)
-    print(f'{len(out)} of {len({r[1] for r in rows})} entries placed have damage, {sum(1 for e in out.values() if "body" in e)} with a body, '
+    print(f'{len(out)} of {len({r[1] for r in rows})} entries read have damage, {sum(1 for e in out.values() if "body" in e)} with a body, '
           f'{two} of them 2 masks → js/enemy-damage.js ({os.path.getsize(OUT) // 1024} KB)')
 
 

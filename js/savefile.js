@@ -239,6 +239,10 @@
                           Bellway or Ventrica station unlocked, a toll bench paid), by pinKey
        journal            { entry id: kills } for every entry the save lists
        act                1, 2 from act2Started, 3 once the world is black-threaded (blackThreadWorld)
+       mapFlags           the flags the map's rooms change with (js/map.js VARY) that the save has
+                          set (HasWhiteFlower: the Everbloom); js/rooms.js mapFlags reads them
+       mapRead            true: this game's mapFlags were read (a slot kept before they were has
+                          none, and js/rooms.js guesses them from its Act)
        bench, area        where Hornet rests (respawnScene) and the area she's in (currentArea)
        build              what she wears (buildOf): { crest, hunterStage, tools, skill, vest }, or null
      and what js/acts.js reads for the road to the next Act (js/quests.js has the game's rules):
@@ -246,7 +250,6 @@
                           sorted: Broodfeast done the Runt's way is "Huntress Quest Runt", which no
                           group counts
        bellshrines        the Bellshrines rung, by their playerData field (js/quests.js BELLSHRINES)
-       grandGate          the Grand Gate reached (visitedGrandGate)
        lastJudge, phantom the two bosses either of which opens the Citadel (defeated*)
        caravan            where the flea caravan is (CaravanTroupeLocation: 3 is Fleatopia)
        doubleJump         the Faydown Cloak (hasDoubleJump); laceTower: Lace beaten atop the
@@ -303,12 +306,13 @@
       lit: LIGHTS.filter((p) => has(p[4])).map(pinKey),
       journal,
       act: pd.blackThreadWorld === true ? 3 : pd.act2Started === true ? 2 : 1,
+      mapRead: true,
+      mapFlags: MAP.VARY.filter((f) => (f === 'HasWhiteFlower' ? int(flower) > 0 : pd[f] === true)),
       bench: typeof pd.respawnScene === 'string' && /^[\w ()-]{1,64}$/.test(pd.respawnScene) ? pd.respawnScene : '',
       area: typeof pd.currentArea === 'string' && /^[A-Z_]{1,32}$/.test(pd.currentArea) ? pd.currentArea : '',
       build: buildOf(pd) || {},
       quests: [...quests].filter(([, d]) => !!d.IsCompleted).map(([n]) => n).sort(),
       bellshrines: QU.BELLSHRINES.map((b) => b.field).filter((f) => pd[f] === true),
-      grandGate: pd.visitedGrandGate === true,
       lastJudge: pd.defeatedLastJudge === true,
       phantom: pd.defeatedPhantom === true,
       caravan: int(pd.CaravanTroupeLocation),
@@ -326,7 +330,7 @@
        pharloom.owned     { tools, crests, skills, arts }: what the Crest screen can equip
        pharloom.journal   { entry id: kills }
        pharloom.progress  the rest of game(): masks, spools, hearts, needle, kit, pouch,
-                          everbloom, pieces, wishes, gauntlets, lit, act, bench, area, build and
+                          everbloom, pieces, wishes, gauntlets, lit, act, mapFlags, bench, area, build and
                           the road's fields (quests … snareReady)
        pharloom.meta      what the profile screen shows (meta()) and when the file was saved
      toSnapshot() writes them; gameOf() reads them back into one game, with the same defaults as
@@ -351,8 +355,8 @@
     };
   }
   const EMPTY = Object.freeze({ tools: [], crests: [], skills: [], arts: [], journal: {}, masks: 0, spools: 0, hearts: 0,
-    needle: 0, kit: 0, pouch: 0, everbloom: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, bench: '', area: '', build: {},
-    quests: [], bellshrines: [], grandGate: false, lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
+    needle: 0, kit: 0, pouch: 0, everbloom: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, bench: '', area: '', build: {},
+    quests: [], bellshrines: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
     bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false });
   const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
   // Each field only if it has the type an empty game gives it.
@@ -371,6 +375,7 @@
     // The gauntlets go by their ids, the wiki's subpages: one the list no longer has is dropped.
     out.gauntlets = out.gauntlets.filter((id) => GA.GAUNTLETS.some((x) => x.id === id));
     out.lit = out.lit.filter((k) => LIGHTS.some((p) => pinKey(p) === k));
+    out.mapFlags = out.mapFlags.filter((f) => MAP.VARY.includes(f));
     return out;
   }
   const metaOf = (snap) => ({ version: '', time: 0, completion: 0, rosaries: 0, shards: 0, steel: false, dead: false, saved: null,

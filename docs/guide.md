@@ -132,8 +132,14 @@ black-threaded one when it has it (Act 3), its five modifiers with the level you
 and your Crafting Kit's marked, the hits that stagger it, and a boss's phases (read from the
 game's own files: where each one starts, as a health or a share of it, or after how much damage
 when each phase has a bar of its own, as Grand Mother Silk's six; and the slashes of yours that
-get there from full health; and the few that go otherwise: Father of the Flame's lanterns and
-core, each broken at 0 or after so many hits, the Forebrothers' heal when one falls, Signis's
+get there from full health; where the game moves on only below its number, not at it (a strict
+"less than": the Bell Eater's, the Fourth Chorus's…), the figure is already one under, and the
+note says so; and the few that go otherwise: Father of the Flame's lanterns and core, each broken
+at 0 or after so many counted hits, where a hit counts only once the piece has been still a
+while after recovering from the last (1 s after 0.55 s for a lantern, 0.5 s after 0.1 s for the
+core), so at your slash's pace the card says how many count (against a lantern, only the first)
+and whether damage or the count breaks it first, and how few hits would do spaced out; the
+Forebrothers' heal when one falls, Signis's
 phases as shares of his own health, and the health Phantom goes back to if the finishing prompt
 is missed). Beside it, what you do to it: each
 of your attacks (the slash, with its product: Needle × your modifiers × its modifier; the
@@ -142,18 +148,28 @@ with what share of its health a full load takes) and how many uses kill it, coun
 landing; after a Challenge, only the first hit takes it. And what it does to you: for a boss,
 each of its attacks (the wiki's names, the game doesn't name them); for any other enemy, read
 from the game's own files, its body on contact (two values when the game places it with both)
-and its strongest attack when that takes more, and black-threaded every hit is 2 masks (the game
-makes them all void; it doesn't double them). What it throws or summons at run time isn't
-counted. For each, how many masks it takes (the Barbed Bracelet multiplies them by the game's
-own figure, 2) and how many kill you, then how many if you Bind with the silk the
-quickest fight leaves (the full spool and one strand a slash, less its Skill casts; a Bind as
-soon as it heals in full or the next hit would kill you; the Reserve Bind's free one and Druid's
-Eye's silk count). Silk Hearts' regeneration counts too, over the seconds your slash takes to
-kill it (the figure on the slash's row), as the game's code has it: silk only comes back up to
-one strand per Silk Heart (Weavelight: one more), one strand after 3.9 s in which your silk
-doesn't change (1.45 s from an empty spool; Weavelight, ×0.65), and every slash that lands
-restarts that count. Starting with a full spool and slashing nonstop, it adds nothing, and the
-note under the list says so. The build is the Crest screen's.
+and its strongest attack when that takes more, what it throws at run time included (spit,
+bombs, the burst its corpse leaves; not what only a black-threaded one throws), and
+black-threaded every hit is 2 masks (the game makes them all void; it doesn't double them). An
+enemy it summons with a Journal entry of its own isn't counted as its attack. For each, how many masks it takes (the Barbed Bracelet multiplies them by the game's
+own figure, 2) and how many kill you, then how many kill you if you Bind during the quickest
+fight: the hits come spread evenly over it (it ends with its last slash), and its silk comes in
+order. The spool starts full and never holds more than it holds, as in the game: a slash that
+lands with it full gives nothing. The Skill casts spend theirs as soon as it's there; a Bind
+comes as soon as it heals in full or the next hit would kill you; the Reserve Bind's free one
+counts, and Druid's Eye's silk too (a strand every second hit taken below a full spool; the
+hits at full don't count). Silk Hearts' regeneration counts too, over the seconds your slash
+takes to kill it (the figure on the slash's row), as the game's code has it: silk only comes
+back up to one strand per Silk Heart (Weavelight: one more), one strand after 3.9 s in which
+your silk doesn't change (1.45 s from an empty spool; Weavelight, ×0.65), every slash that
+lands restarts that count, and a Bind stops it while it lasts. Starting with a full spool and
+slashing nonstop, it adds nothing, and the note under the list says so. The build is the Crest
+screen's.
+
+The list is the wiki's, plus two Journal entries it gives no health, read from the game's files:
+the Wisp and the Winged Lifeseed have no health or modifiers there and die to the first hit, and
+their card says so. The Muckmaggots, the Sandcarver and the Void Tendrils can't be hit that way
+(the water, the sand pits and a tablet), so they aren't in it.
 
 **Enemy gauntlets**: the other half of the screen, the game's 49 arenas of waves, each named by
 its place or its area, with its reward (the game's name for it, when it gives something the game
@@ -182,8 +198,12 @@ them). Below, the places, each with a glyph of its own and switched on or off to
 the Bellway stations and the Ventrica stations where the game puts its own pins, dimmed while
 your game hasn't opened them (a station not unlocked, a toll bench not paid; the counter says how
 many are open), and the enemy gauntlets you haven't cleared, in their arena's room. Hornet sits
-on her bench's pin, as the game draws her sitting. The map shows the world explored before Act 3, with Verdania and Whiteward
-as they are once their bosses are beaten.
+on her bench's pin, as the game draws her sitting. The map shows the whole world explored, in your
+game's state, by the game's own conditions: in Act 3 the Cradle, Cogwork Core and the Ventrica
+hub are drawn destroyed, as the game redraws them then (with their benches and station), and the
+Abyss's diving bell is broken, gone or mended with the Everbloom, as your save has it. In Free
+mode it's the world before Act 3. Verdania and Whiteward are always as they are once their
+bosses are beaten.
 
 When your previous save rested at another bench, a dashed thread draws Hornet's way from it to
 this one, and the first time the map comes into view she runs it, room by room, from the old
@@ -214,7 +234,11 @@ files, not from a guide), in numbered steps, each with its count or a tick:
   4. Bring them to the Caretaker.
   5. Snare Grand Mother Silk with the Needolin.
 
-Each missing wish shows its Act, its area and the wish to do before it when there is one. A part
+Each missing wish shows its Act, its area, the rooms from your bench to where it's taken, and the
+wish to do before it when there is one. Where it's taken is the game's: the Wishwall that lists it
+(Bellhart's, Bone Bottom's or Songclave's), or the NPC who offers it; a wish that comes after
+another on a board (Crawbug Clearing, Berry Picking…) counts the board until that one is done, and
+the NPC after. A part
 already met hides its rows under "What's missing". On Your game, one line says which step you're
 on and links here. A slot saved before the site read the wishes asks to be imported again.
 
@@ -226,13 +250,18 @@ missing also says **how to get it**, from the game's shops and the wishes' rewar
 wiki's boss drops):
 - the vendor and the price in rosaries;
 - the Pale Oil or Craftmetal it takes;
-- the wish, the boss, the challenge, or the fleas rescued.
+- the wish, the boss, the challenge, or the fleas rescued;
+- the keys it lies behind, by the names the inventory gives them: the Architect's Key for the
+  Architect Crest, a Simple Key for the Rosary Cannon (and the Flintslate, unless you go round
+  with the Clawline), the White Key for the Whiteward (and the Surgeon's Key for its Silk Heart),
+  the Slab's keys for its Mask Shard and Rune Rage.
 
 Under the heading, what the missing purchases cost against the rosaries you carry. The Tools'
 note warns of the two traps: the Curveclaw handed over to a Skarr loses its point until the
 Curvesickle, and the Silkshot's first repair closes the other two versions.
 
-"Nearest first" orders the missing things by rooms from your bench, the ones with no room after.
+"Nearest first" orders the missing things by rooms from your bench, the ones with no room after;
+the wishes, in the road and in Tasks, by the rooms to where they're taken.
 
 Then **other collectibles**, which don't count for completion, each group saying what it's for:
 - Memory Lockets (Crest slots);
@@ -308,7 +337,8 @@ texts and names are © Team Cherry; they're used here only to show the game's ow
   inventory icons of the Tools, Crests, Silk Skills, abilities and items and the Journal's 237
   portraits (`npm run icons`, fitted into 256 px as WebP) are the game's, downloaded from the wiki and shown as a fan project.
 - **The map**: the rooms of the game's own map screen, extracted from the installed game's files
-  by `tools/extract-map.py` (`assets/map/rooms.webp`, `js/map.js`), shown as the Hollow Knight
+  by `tools/extract-map.py` (`assets/map/rooms.webp`, the rooms that change with the game in `assets/map/states.webp`,
+  `js/map.js`), shown as the Hollow Knight
   site shows its map, as a fan project.
 - **Fonts**: Cinzel, Spectral and Patrick Hand SC, under the
   [SIL Open Font License 1.1](../assets/fonts/OFL.txt).

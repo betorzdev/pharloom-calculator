@@ -8,7 +8,8 @@
      · health, modifiers   the damage page's two master tables ("Standard Enemies", "Bosses and
                            Minibosses"), one row per appearance with a Hunter's Journal number.
                            The wiki's disclaimer applies: enemies with several values (a summon
-                           inside a boss fight) aren't fully explored yet.
+                           inside a boss fight) aren't fully explored yet. Two entries the tables
+                           lack come from the game's own files (GAME, below).
      · names               the game's Journal names, NAME_<CODE>, by the CODEname on the row's
                            wiki page ({{Localisation}}), so the join is the game's own key.
                            A row's circumstance ("(Fighting Shakra)", "(Greymoor Arena)") is
@@ -93,6 +94,27 @@ function masterRows(heading, boss) {
     return { hj: Number(W.plain(r[0])), page, name, label, extra, boss, ...health(r[3], label), mods };
   });
 }
+
+/* ── The game's rows ──────────────────────────────────────────────────── */
+/* Five Journal entries have no row in the master tables (of their infoboxes, only the Winged
+   Lifeseed's gives a health). The game's files were read for them (28-Sep-2026, patch 1.0.30000,
+   UnityPy and dnfile; what makes each is in tools/extract-journal-rooms.py's RUNTIME). An enemy's health and its five modifiers are its
+   HealthManager's hp and damageScaling (Level1Mult…Level5Mult, the wiki's modifiers), and none of
+   the five carries a HealthManager, so none has modifiers. Two die to the first hit, and are here
+   as health 1 (oneHit), so Combat can pick them:
+     Wisp             what the Wisp Flame Lanterns let out, the Wisp Fireball
+                      (localpoolprefabs_assets_areawisp): its Control FSM goes to Explode on any
+                      DAMAGE, in every state that takes it.
+     Winged Lifeseed  the Health Flyer a Plasmium Cocoon lets out (localpoolprefabs_assets_lifeblood):
+                      a HealthFlyer, an IHitResponder with no health field (Assembly-CSharp), dead
+                      on its first Hit. Its wiki infobox says health 1.
+   Left out, with no health at all: the Muckmaggots (the water's MaggotRegion; a Pimpillo or a volt
+   into it kills some), the Sandcarver (each pit's RangeAttacker: a Tool's damage kills one, and
+   counts 5 to 8 kills, journalAmountPerKill) and the Void Tendrils (their tablet, an inspect). */
+const GAME = [
+  { page: 'Wisp', key: 'NAME_WISP', hp: 1, oneHit: true },
+  { page: 'Winged Lifeseed', key: 'NAME_LIFEBLOOD_FLY', hp: 1, oneHit: true },
+];
 
 /* ── Boss pages: attacks and staggers ─────────────────────────────────── */
 /* The masks of {{Damage|1+1|type=Void}}: [1, 1] and 'void'. */
@@ -196,6 +218,22 @@ function infobox(title, crests) {
     };
   });
 
+  // The entries the tables have no row for that the game lets you hit: after the standard rows.
+  const journal = W.table(W.page("Hunter's Journal (Silksong)"), '== Hunter\'s Journal entries ==').slice(1)
+    .map((r) => W.linkTarget(r[0].replace(/\[\[File:[^\]]*\]\]/, '')));
+  const game = GAME.map((g) => {
+    const key = N.journalKey(g.page);
+    if (key !== g.key) fail(`${g.page}: the game's key is ${key}, not ${g.key}`);
+    if (foes.some((f) => f.key === key)) fail(`${g.page} has a row in the master tables now: GAME can lose it`);
+    const hj = journal.indexOf(g.page) + 1;
+    if (!hj) fail(`${g.page} isn't in the Hunter's Journal table`);
+    const id = W.slug(g.page);
+    if (ids.has(id)) fail(`two rows make the id ${id}`);
+    ids.add(id);
+    return { id, hj, key, name: N.text(key), page: id, hp: g.hp, src: 'game', oneHit: g.oneHit || undefined };
+  });
+  foes.splice(foes.findIndex((f) => f.boss), 0, ...game);
+
   // The attacks, per boss page (a page can have several rows: Lace's two fights, Moss Mother's three).
   const ATTACKS = {};
   for (const page of [...new Set(rows.filter((r) => r.boss).map((r) => r.page))].sort()) {
@@ -217,7 +255,8 @@ function infobox(title, crests) {
    pages, fetched with npm run kb) and the game's text (patch 1.0.30000): not edited by hand.
 
      FOES      one entry per row of the wiki's master tables: an enemy can appear more than once
-               (Moss Mother's three fights, a summon inside a boss fight), told apart by variant.
+               (Moss Mother's three fights, a summon inside a boss fight), told apart by variant;
+               then the two entries the tables lack that the game lets you hit (src).
        hj        its number in the Hunter's Journal.
        name      the game's Journal name { es, en, key }; variant = the circumstance, written from
                  the game's names for the place or the boss.
@@ -226,11 +265,14 @@ function infobox(title, crests) {
        mods      the five damage modifiers, by the level of what hits (Needle or Crafting Kit, 0..4):
                  damage = weapon[level] × mods[level] × (1 + Σ Hornet's), rounded half to even.
        page      the wiki page, the key into ATTACKS.
+       src       'game': a Journal entry the tables have no row for, from the game's own files
+                 (tools/gen-enemies.js GAME): no mods (the game has none for it), and oneHit =
+                 its first hit kills it, so hp is 1.
      ATTACKS   per boss page: attacks (name in the wiki's English, the game doesn't name attacks;
                masks = [1] per hit when the wiki gives none, [1, 1] is two masks; type = 'void',
                'fire'…; where = the fight or phase) and staggers (hits to stagger, in page order).
      BOSSES    per boss page: where (the places it's fought, the game's names) and drops (what
                it gives that the game names), from its infobox.`;
   const size = write(OUT, header, 'enemies', [['FOES', foes], ['ATTACKS', ATTACKS], ['BOSSES', BOSSES]]);
-  console.log(`js/enemies.js: ${std} enemy rows, ${foes.length - std} boss rows, ${Object.keys(ATTACKS).length} boss pages with attacks, ${Object.keys(BOSSES).length} with where and drops (${(size / 1024).toFixed(1)} KB)`);
+  console.log(`js/enemies.js: ${std} enemy rows (${game.length} from the game), ${foes.length - std} boss rows, ${Object.keys(ATTACKS).length} boss pages with attacks, ${Object.keys(BOSSES).length} with where and drops (${(size / 1024).toFixed(1)} KB)`);
 })().catch((e) => { console.error(e.message); process.exitCode = 1; });

@@ -419,7 +419,7 @@
     ABYSS: { es: 'El Abismo', en: 'The Abyss', key: 'ABYSS' },
     MOSSCAVE: { es: 'Gruta Musgosa', en: 'Moss Grotto', key: 'MOSSCAVE_MAIN' },
     CORAL_TOWER: { es: 'Torre de Coral', en: 'Coral Tower', key: 'CORAL_TOWER_MAIN' },
-    GROVE: { es: 'Lost Verdania', en: 'Lost Verdania', key: 'GROVE_SUPER+GROVE_MAIN' },
+    GROVE: { es: 'Verdania Perdida', en: 'Lost Verdania', key: 'GROVE_SUPER+GROVE_MAIN+GROVE_SUB' },
     MEMORY_RED: { es: 'Memoria roja', en: 'Red Memory', key: 'MEMORY_RED' },
     MISTMAZE: { es: 'La Niebla', en: 'The Mist', key: 'DUST_MAZE' },
     MOSSTOWN: { es: 'Hogar Musgoso', en: 'Mosshome', key: 'MOSSTOWN' },

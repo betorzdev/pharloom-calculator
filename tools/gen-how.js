@@ -37,7 +37,12 @@
                { kind: 'npc', npc }  given by an NPC, for nothing
                { kind: 'challenge', npc }  won from an NPC (Loddie's pins, Lumble's dice)
                { kind: 'fleas', npc, fleas }  Mooshka's reward for that many Lost Fleas
-     TRAPS   the three ways to lose a point or a wish, with the save's state that shows each */
+     TRAPS   the three ways to lose a point or a wish, with the save's state that shows each
+     KEYS    key id → { save, name, locks? }: the key's collectable (its save name), its game
+             name, and the scenes of its doors (js/quests.js LOCKS, read from the game)
+     NEEDS   { tools, crests, skills, arts: { id: need }, pieces: { index: need } }, need
+             { keys: [key id], or? }: the keys a thing lies behind, or an ability that goes round
+             them (an ARTS id) */
 'use strict';
 const fs = require('fs');
 const path = require('path');
@@ -49,6 +54,7 @@ const E = require('../js/enemies.js');
 const CO = require('../js/collectibles.js');
 const CP = require('../js/completion.js');
 const S = require('../js/shop.js');
+const Q = require('../js/quests.js');
 
 const OUT = path.join(__dirname, '..', 'js', 'how.js');
 const SRC = path.join(__dirname, '..', 'kb', 'data', 'completionist');
@@ -57,15 +63,16 @@ const warnings = [];
 const warn = (m) => warnings.push(m);
 
 /* The NPCs, by the key of the name the game shows over their dialogue. Two have a title split in
-   <X>_SUPER + <X>_MAIN whose Spanish half is missing from the dump (the Spanish only calls her
-   «Hija de la Forja» inside sentences): they stay in English, CLAUDE.md rule 3. */
+   halves, which each language puts where it likes: English <X>_SUPER + <X>_MAIN ("Forge" +
+   "Daughter"), Spanish <X>_MAIN + <X>_SUB («Hija» + «de la Forja», «Skarr» + «Moteado»). */
 const NPC_KEYS = {
   grindle: 'GRINDLE_MAIN', pebb: 'BB_SHOPKEEP_MAIN', frey: 'BELLHART_SHOPKEEP_MAIN', mort: 'PILGRIM_REST_SHOP_MAIN',
   'twelfth-architect': 'ARCHITECT_SHOP_TITLE', jubilana: 'CITY_MERCHANT_MAIN', shakra: 'MAPPER_MAIN',
   plinney: 'PINSMITH_MAIN', eva: 'CREST_UPG_SHRINE_MAIN', pinstress: 'PINSTRESS_MAIN', loddie: 'LADYBUG_LARGE_MAIN',
   lumble: 'DICE_PILGRIM_MAIN', mooshka: 'FLEAMASTER_MAIN',
+  'forge-daughter': 'FORGEDAUGHTER_SUPER+FORGEDAUGHTER_MAIN+FORGEDAUGHTER_SUB',
+  'mottled-skarr': 'ANT_MERCHANT_SUPER+ANT_MERCHANT_MAIN+ANT_MERCHANT_SUB',
 };
-const NPC_ENGLISH = { 'forge-daughter': 'Forge Daughter', 'mottled-skarr': 'Mottled Skarr' };
 
 /* A boss page with several fights (js/enemies.js FOES of one page): the one that gives it. */
 const FIGHT = {
@@ -112,6 +119,40 @@ const HAND = {
 /* The Everbloom: the White Lady gives it in the Red Memory, at the end of The Old Hearts. */
 const EVERBLOOM_QUEST = 'Black Thread Pt5 Heart';
 
+/* The keys, by the collectable the game's locks take (js/quests.js LOCKS) and the name its
+   inventory shows. The Slab's three are one collectable, 'Slab Key', shown by three names; its
+   doors aren't ItemReceptacles, so LOCKS has none of them. */
+const KEY = {
+  simple: ['Simple Key', 'INV_NAME_TOKEN_FAITH'], architect: ['Architect Key', 'INV_NAME_ARCHITECT_KEY'],
+  white: ['Ward Key', 'INV_NAME_WARD_KEY'], surgeon: ['Ward Boss Key', 'INV_NAME_WARD_BOSS_KEY'],
+  indolent: ['Slab Key', 'INV_NAME_SLAB_KEY_A'], heretic: ['Slab Key', 'INV_NAME_SLAB_KEY_B'], apostate: ['Slab Key', 'INV_NAME_SLAB_KEY_C'],
+};
+/* What of the 100% lies behind a key: the wiki's pages (each item's "How to Acquire", the keys'
+   "Use"), each checked against the game's own lock where it has one (lock: the scene of the last
+   key's door in LOCKS).
+   The four Simple Key doors (Crawl_02, Dust_02, Hang_06, Room_Forge) are the wiki's four; behind
+   the Wormways' and the Green Prince's cell nothing of the 100%. A piece by its save check. */
+const BEHIND = [
+  // Architect Crest: the Chapel of the Architect (the shrine of Under_20, which only Under_17 leads to).
+  { thing: ['crests', 'architect'], keys: ['architect'], lock: 'Under_17' },
+  // Rosary Cannon: the Rosary Bank (Hang_06_bank, which only Hang_06 leads to).
+  { thing: ['tools', 'rosary-cannon'], keys: ['simple'], lock: 'Hang_06' },
+  // Flintslate: the lower Deep Docks, beyond the door south of the Forge Daughter; Deep Docks:
+  // or from Far Fields with the Clawline.
+  { thing: ['tools', 'flintslate'], keys: ['simple'], lock: 'Room_Forge', or: 'clawline' },
+  // The Whiteward: its lift takes the White Key (Whiteward). The Injector Band, the Spool
+  // Fragment under the lift, Sherma's (she waits inside), and the Unravelled's Silk Heart, whose
+  // sluice takes the Surgeon's Key too (The Unravelled).
+  { thing: ['tools', 'injector-band'], keys: ['white'], lock: 'Ward_01' },
+  { thing: ['pieces', ['bool', 'Ward_01', 'Silk Spool']], keys: ['white'], lock: 'Ward_01' },
+  { thing: ['pieces', ['quest', 'Save Sherma']], keys: ['white'], lock: 'Ward_01' },
+  { thing: ['pieces', ['visited', 'Memory_Silk_Heart_WardBoss']], keys: ['white', 'surgeon'], lock: 'Ward_02' },
+  // The Slab: the Mask Shard in its northeast (Key of Apostate); Rune Rage, bound after the
+  // First Sinner (all three keys).
+  { thing: ['pieces', ['bool', 'Slab_17', 'Heart Piece']], keys: ['apostate'] },
+  { thing: ['skills', 'rune-rage'], keys: ['indolent', 'heretic', 'apostate'] },
+];
+
 // The completionist's categories (as tools/gen-collectibles.js reads them): only to cross-check.
 function load(file) {
   const src = fs.readFileSync(path.join(SRC, file), 'utf8')
@@ -128,7 +169,6 @@ const norm = (s) => String(s).toLowerCase().replace(/[’']/g, "'").trim();
 /* ── NPCs ── */
 const NPCS = {};
 for (const [id, key] of Object.entries(NPC_KEYS)) NPCS[id] = N.text(key);
-for (const [id, en] of Object.entries(NPC_ENGLISH)) NPCS[id] = { es: en, en };
 for (const v of Object.keys(S.VENDORS)) if (!NPCS[v]) fail(`the vendor ${v} has no name`);
 
 /* ── Joins ── */
@@ -263,6 +303,23 @@ function pieceWays(i, check) {
 CO.PIECES.forEach((p, i) => { if (COUNTS.has(p[0])) HOW.pieces[i] = pieceWays(i, p[2]); });
 if (needle.length !== 5) fail('js/data.js NEEDLES is not five');
 
+/* The keys and what lies behind them. */
+const KEYS = {};
+for (const [id, [save, key]] of Object.entries(KEY)) {
+  KEYS[id] = { save, name: N.text(key) };
+  if (Q.LOCKS[save]) KEYS[id].locks = Q.LOCKS[save];
+}
+const NEEDS = { tools: {}, crests: {}, skills: {}, arts: {}, pieces: {} };
+for (const b of BEHIND) {
+  const [cat, at] = b.thing;
+  const id = cat === 'pieces' ? CO.PIECES.findIndex((p) => JSON.stringify(p[2]) === JSON.stringify(at)) : at;
+  if (cat === 'pieces' ? id < 0 || !HOW.pieces[id] : !HOW[cat][id]) fail(`BEHIND: ${cat} ${JSON.stringify(at)} isn't a thing of the 100%`);
+  b.keys.forEach((k) => { if (!KEYS[k]) fail(`BEHIND: no key ${k}`); });
+  if (b.lock && !(KEYS[b.keys[b.keys.length - 1]].locks || []).includes(b.lock)) fail(`BEHIND: the game has no ${KEYS[b.keys[b.keys.length - 1]].save} lock in ${b.lock}`);
+  if (b.or && !D.ARTS.some((x) => x.id === b.or)) fail(`BEHIND: no ability ${b.or}`);
+  NEEDS[cat][id] = { keys: b.keys, ...(b.or ? { or: b.or } : {}) };
+}
+
 /* The Everbloom. */
 HOW.everbloom = [wish(EVERBLOOM_QUEST)];
 
@@ -360,7 +417,8 @@ for (const lvl of [2, 3, 4, 5]) {
 }
 
 write(OUT, `js/how.js: how to get each thing of the 100%, as data (no prose): its ways, best first.
-   GENERATED by tools/gen-how.js from js/shop.js (the game's shops and wish rewards), the save's
+   GENERATED by tools/gen-how.js from js/shop.js (the game's shops and wish rewards), js/quests.js
+   (the game's key locks), the save's
    checks (js/collectibles.js PIECES), the wiki's boss drops (js/enemies.js BOSSES) and wish
    rewards (kb/data/raw/Wishes.wiki), and a short table by hand (the generator's HAND): not
    edited by hand. Change the generator and run npm run data.
@@ -384,7 +442,12 @@ write(OUT, `js/how.js: how to get each thing of the 100%, as data (no prose): it
      TRAPS   the ways to lose a point or a wish: curveclaw (lost: the save names hidden and
              locked while it's gone; back: how it returns), silkshot (variants: the save's name
              and way of each; the first repaired locks the others), broodfeast-runt (the wish
-             done as counts or as instead: only counts is Act 3's)`, 'how', [['NPCS', NPCS], ['HOW', HOW], ['TRAPS', TRAPS]]);
+             done as counts or as instead: only counts is Act 3's)
+     KEYS    key id → { save, name, locks? }: the collectable the game's locks take, its name,
+             and the scenes of its doors (js/quests.js LOCKS; the Slab's have none there)
+     NEEDS   { tools, crests, skills, arts: { id: need }, pieces: { PIECES index: need } }: the
+             keys a thing lies behind, need { keys: [key id], or? }, or an ability (ARTS id) that
+             goes round them`, 'how', [['NPCS', NPCS], ['HOW', HOW], ['TRAPS', TRAPS], ['KEYS', KEYS], ['NEEDS', NEEDS]]);
 
 const n = Object.values(HOW).reduce((a, m) => a + (Array.isArray(m) ? 1 : Object.keys(m).length), 0);
 console.log(`${n} things with their ways → js/how.js (${checked} of the completionist's prices checked against the game's)`);

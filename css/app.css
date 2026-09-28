@@ -918,7 +918,7 @@ kbd {
 .hm-check.is-off { color: var(--cond); }
 
 .hm-cats {
-  list-style: none; margin: 0 auto; padding: 0; max-width: 720px;
+  list-style: none; margin: 0 auto; padding: 0; max-width: var(--column);
   display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-3) var(--sp-8);
 }
 .hm-cat { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "name n" "bar bar"; gap: var(--sp-1) var(--sp-3); align-items: baseline; }
@@ -985,7 +985,7 @@ kbd {
 .pg-done { display: flex; align-items: center; gap: var(--sp-2); margin: var(--sp-2) 0 0; font-size: var(--fs-sm); color: var(--ink-2); }
 /* The road to the next Act: numbered steps in one column, as the game's objectives read, each
    titled with its count or a tick; a step done goes quiet, one the Phantom's way skips too. */
-.pg-road { max-width: 720px; margin: 0 auto; }
+.pg-road { max-width: var(--column); margin: 0 auto; }
 .pg-road > .pg-note { text-align: center; }
 .pg-road > .pg-note.is-warn { color: var(--cond); }
 .pg-steps { list-style: none; margin: var(--sp-4) 0 0; padding: 0; display: grid; gap: var(--sp-6); }
@@ -1012,7 +1012,7 @@ kbd {
 
 /* Since the previous save (js/app-home.js, js/changes.js): a short list under the profile's line,
    each thing by name with its area quiet beside it, and what the completion went up by. */
-.hm-since { max-width: 720px; margin: 0 auto var(--sp-8); padding: var(--sp-4) var(--sp-6); border: 1px solid var(--line); background: var(--well); }
+.hm-since { max-width: var(--column); margin: 0 auto var(--sp-8); padding: var(--sp-4) var(--sp-6); border: 1px solid var(--line); background: var(--well); }
 .hm-since-h {
   display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--sp-1) var(--sp-3); margin: 0 0 var(--sp-3);
   font-family: var(--font-display); font-size: var(--fs-md); font-weight: 600; letter-spacing: var(--track-title); color: var(--filigree);
@@ -1295,6 +1295,9 @@ kbd {
 .mp-view { overflow: auto; max-height: 75vh; border: 1px solid var(--line); background: var(--scene-bg); }
 .mp-map { position: relative; min-width: 100%; }
 .mp-rooms { display: block; width: 100%; height: auto; }
+/* The rooms that change with the game: a window on the map onto their row of states.webp. */
+.mp-layer { position: absolute; overflow: hidden; pointer-events: none; }
+.mp-layer img { position: absolute; left: 0; max-width: none; height: auto; }
 .mp-dot {
   position: absolute; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%;
   border: 1px solid var(--scene-bg); box-shadow: 0 0 6px currentColor; background: currentColor;

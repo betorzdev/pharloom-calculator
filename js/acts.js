@@ -84,7 +84,7 @@
     return { ok: testsOk && required.missing.length === 0 && got >= G.target, required, points, tests };
   }
 
-  const EMPTY = { quests: [], bellshrines: [], grandGate: false, lastJudge: false, phantom: false, caravan: 0, doubleJump: false,
+  const EMPTY = { quests: [], bellshrines: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false,
     laceTower: false, bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, act: 1 };
   const step = (id, done, total, extra) => ({ id, ok: done >= total, done, total, ...extra });
 

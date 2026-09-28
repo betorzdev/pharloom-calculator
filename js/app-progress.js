@@ -34,12 +34,21 @@
     : rows.map((x, i) => ({ x, i, d: dist(x) })).sort((a, b) => (a.d ?? Infinity) - (b.d ?? Infinity) || a.i - b.i).map((e) => e.x));
 
   /* How to get a thing (js/how.js): its first way, in a few words, with the game's names; a thing
-     lying in a room says nothing more than its area already does. */
+     lying in a room says nothing more than its area already does. Then the keys it lies behind
+     (js/how.js NEEDS), by the names the inventory gives them. */
   const HW = SS.how;
   const itemName = (id) => pick(item(id).name);
-  function howText(ways) {
+  // The game on screen, set per render: a need its other way already meets (the Clawline for the
+  // Flintslate) isn't shown.
+  let cur = null;
+  function needText(need) {
+    if (!need || (need.or && cur && cur.arts.includes(need.or))) return '';
+    const keys = need.keys.map((k) => pick(HW.KEYS[k].name)).join(', ');
+    return need.or ? t('howNeedsOr', { keys, alt: pick(D.ARTS.find((x) => x.id === need.or).name) }) : t('howNeeds', { keys });
+  }
+  function howText(ways, need) {
     const w = ways && ways[0];
-    if (!w) return '';
+    if (!w) return needText(need);
     const npc = (id) => (HW.NPCS[id] ? pick(HW.NPCS[id]) : id);
     const cost = [w.craftmetal ? `${num(w.craftmetal)} ${itemName('craftmetal')}` : '', w.paleOil ? `${num(w.paleOil)} ${itemName('pale-oil')}` : ''];
     const main = {
@@ -51,8 +60,8 @@
       challenge: () => t('howChallenge', { npc: npc(w.npc) }),
       fleas: () => (w.fleas === 'all' ? t('howFleasAll', { npc: npc(w.npc) }) : t('howFleas', { npc: npc(w.npc), n: num(w.fleas) })),
     }[w.kind];
-    if (!main) return '';
-    return [main(), ...cost, w.act ? t('howFromAct', { n: num(w.act) }) : ''].filter(Boolean).join(' · ');
+    if (!main) return needText(need);
+    return [main(), ...cost, w.act ? t('howFromAct', { n: num(w.act) }) : '', needText(need)].filter(Boolean).join(' · ');
   }
 
   /* One row: its name, whether you have it, its Act and its area; how to get it, when it's missing. */
@@ -78,14 +87,14 @@
     const where = (map, id) => { const w = map[id] || []; return { act: w[0] || 0, area: w[1] || null }; };
     const pieces = (kind, name) => CO.PIECES.map((p, i) => ({ p, i })).filter(({ p }) => p[0] === kind)
       .map(({ p, i }, k) => ({ name: name ? name(k) : KIND_NAME[kind](), got: !!g && g.pieces.includes(i), act: p[1], area: p[3], scene: R.sceneOf(p[2]),
-        how: howText(HW.HOW.pieces[i]), ways: HW.HOW.pieces[i] }));
+        how: howText(HW.HOW.pieces[i], HW.NEEDS.pieces[i]), ways: HW.HOW.pieces[i] }));
     const tools = CO.COUNTED.map((ids) => {
       const tool = D.TOOLS.find((x) => x.id === ids[0]);
       const got = !!g && ids.some((id) => g.tools.includes(id));
-      return { name: pick(tool.name), got, color: tool.color, ...where(CO.WHERE.tools, ids[0]), how: howText(HW.HOW.tools[ids[0]]), ways: HW.HOW.tools[ids[0]] };
+      return { name: pick(tool.name), got, color: tool.color, ...where(CO.WHERE.tools, ids[0]), how: howText(HW.HOW.tools[ids[0]], HW.NEEDS.tools[ids[0]]), ways: HW.HOW.tools[ids[0]] };
     });
     const named = (list, ids, map, key) => ids.map((id) => ({ name: pick(list.find((x) => x.id === id).name), got: has(g ? g[key] : [], id), ...where(map, id),
-      how: howText(HW.HOW[key][id]), ways: HW.HOW[key][id] }));
+      how: howText(HW.HOW[key][id], HW.NEEDS[key][id]), ways: HW.HOW[key][id] }));
     const ev = CO.WHERE.everbloom || [];
     return {
       tools: tools.sort(byAct),
@@ -133,9 +142,10 @@
     // A wish only one mode has (the Steel Soul's, a Classic one) shows in a game of that mode.
     const m = App.gameMeta();
     const mode = !g ? null : m && m.steel ? 'steel' : 'classic';
+    const done = new Set(g ? g.quests : []);
     return CO.WISH_TYPES.map((ty) => {
       const list = CO.WISHES.map((w, i) => ({ w, i })).filter(({ w }) => w[0] === ty.id && (!mode || !w[5] || w[5] === mode))
-        .map(({ w, i }) => ({ name: pick(w[4]), got: !!g && g.wishes.includes(i), act: w[1], area: w[3] })).sort(byAct);
+        .map(({ w, i }) => ({ name: pick(w[4]), got: !!g && g.wishes.includes(i), act: w[1], area: w[3], scene: wishScene(wishQuest(w), done) })).sort(byAct);
       const title = ty.name ? pick(ty.name) : TYPE_NAME[ty.id]();
       return list.length ? group('wish-' + ty.id, title, list, g, list.filter((x) => x.got).length, list.length) : '';
     }).join('');
@@ -153,22 +163,33 @@
   const SNARE_AREA = { 'Snare Soul Churchkeeper': 'BONEBOTTOM', 'Snare Soul Bell Hermit': 'BELLHART',
     'Snare Soul Swamp Bug': 'SHADOW', 'Silk Snare': 'WEAVE_PRIME' };
   const wishName = (q) => pick(QU.CHAIN[q].name);
+  /* The room a wish is taken in (js/quests.js FROM, the game's): its Wishwall, or else the NPC
+     who offers it. A wish after another (prev) is taken where the first one not done yet is: the
+     board's Pre, then the NPC it sends you to. */
+  function wishScene(quest, done) {
+    let q = quest;
+    while (q && QU.CHAIN[q] && QU.CHAIN[q].prev && !done.has(QU.CHAIN[q].prev)) q = QU.CHAIN[q].prev;
+    const f = (q && QU.FROM[q]) || {};
+    return f.board || (f.npc || [])[0] || null;
+  }
+  // A wish's quest (js/collectibles.js WISHES check): its own, or the first of several.
+  const wishQuest = (w) => (w[2][0] === 'quest' ? w[2][1] : w[2][0] === 'any' ? (w[2].slice(1).find((c) => c[0] === 'quest') || [])[1] : null);
   // The three melodies the Cradle's way asks for (the pieces of kind 'melody').
   const melodies = (g) => (g ? CO.PIECES.filter((p, i) => p[0] === 'melody' && g.pieces.includes(i)).length : 0);
 
-  /* A wish of a group as a row: its Act and area (the pane's, js/collectibles.js WISHES), half a
-     point when it's worth that, and the wishes to do before it. */
-  function wishRow(x, got) {
+  /* A wish of a group as a row: its Act and area (the pane's, js/collectibles.js WISHES), the room
+     it's taken in, half a point when it's worth that, and the wishes to do before it. */
+  function wishRow(x, got, done) {
     const w = x.wish >= 0 ? CO.WISHES[x.wish] : null;
     const runt = HW.TRAPS.find((r) => r.id === 'broodfeast-runt');
     const sub = [x.value === 0.5 ? t('roadHalf') : '', !got && x.before.length ? t('roadBefore', { name: x.before.map(wishName).join(', ') }) : '',
       !got && runt && x.quest === runt.counts ? t('roadRunt') : ''];
-    return { name: x.name ? pick(x.name) : w ? pick(w[4]) : x.quest, got, act: w ? w[1] : 0, area: w ? w[3] : null, sub };
+    return { name: x.name ? pick(x.name) : w ? pick(w[4]) : x.quest, got, act: w ? w[1] : 0, area: w ? w[3] : null, scene: wishScene(x.quest, done), sub };
   }
   function groupRows(name, g, required) {
     const done = new Set(g ? g.quests : []);
     return QU.GROUPS[name].quests.filter((q) => q.required === required)
-      .map((q) => wishRow(A.missing(q.quest, done, required ? undefined : q.value), done.has(q.quest))).sort(byAct);
+      .map((q) => wishRow(A.missing(q.quest, done, required ? undefined : q.value), done.has(q.quest), done)).sort(byAct);
   }
   // met: a part already fulfilled (enough points) shows its rows only with Everything.
   const list = (rows, g, met) => {
@@ -215,7 +236,7 @@
         sub: [test('bellhomeKey').ok ? '' : key.ready ? t('roadPavo') : t('roadKeyRule', { glory: wishName('Belltown House Mid'), n: num(key.need) })] },
     ].map((x) => ({ act: 0, area: null, ...x }));
     // The key's own rule, while it isn't there: Bellhart's Glory, then 2 of the group's wishes.
-    const keyRows = [wishRow(key.gloryQuest, key.glory), ...groupRows('Belltown House Key', g, false)];
+    const keyRows = [wishRow(key.gloryQuest, key.glory, new Set(g ? g.quests : [])), ...groupRows('Belltown House Key', g, false)];
     const keyPart = g && !test('bellhomeKey').ok && !key.ready
       ? subHead(t('roadKeyHead', { key: t('roadKey') }), (key.glory ? 1 : 0) + Math.min(key.got, key.need), 1 + key.need, g) + list(keyRows, g) : '';
     const unlockBody = subHead(t('roadRequired'), unlock.required.done, unlock.required.total, g) + list(required, g, !unlock.required.missing.length)
@@ -264,6 +285,7 @@
     const g = App.game();
     const w = g && g.bench ? R.walk(g.bench, g.lit) : null;
     away = (scene) => (w ? R.steps(g.bench, scene, g.lit, w) : null);
+    cur = g;
     const all = things(g);
     const c = g ? CP.count(g) : null;
     const seg = g ? `<div class="seg pg-seg" role="group" aria-label="${esc(t('pgShow'))}">
