@@ -29,7 +29,7 @@
   let away = () => null;
   /* Nearest first, when chosen: the missing rows by rooms from the bench, the ones with no room
      (a wish, an ability) after them in their own order. */
-  const dist = (x) => (!x.got && x.scene ? away(x.scene) : null);
+  const dist = (x) => { const scene = !x.got && (x.scene || spotScene(x.mark)); return scene ? away(scene) : null; };
   const nearFirst = (rows) => (!prefs.pgNear ? rows
     : rows.map((x, i) => ({ x, i, d: dist(x) })).sort((a, b) => (a.d ?? Infinity) - (b.d ?? Infinity) || a.i - b.i).map((e) => e.x));
 
@@ -67,7 +67,7 @@
   }
 
   /* One row: its name, whether you have it, its Act and its area; how to get it, when it's missing. */
-  // Where the Map has a thing (js/spots.js AT), for its distance when its check names no room.
+  // Where the Map has a thing (js/spots.js AT), to sort by nearest when its check names no room.
   const SPOT = SS.spots ? SS.spots.AT : null;
   const spotScene = (mark) => {
     if (!SPOT || !mark) return null;
@@ -76,15 +76,11 @@
     return (SPOT[cat === 'piece' ? 'pieces' : cat] || {})[id] || null;
   };
   /* One row (design/25-progress-lists-variants.html, B): the thing's picture, its name in the
-     game's face (a Tool with its slot's diamond) and how to get it under it; on the right how far
-     it is, large, with its area under, and a pin to see it on the Map. Its Act heads the list
-     (listHtml); sorted by nearest, it goes with the area instead. */
-  const PIN = '<svg class="ic" width="12" height="16" viewBox="0 0 12 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 15 C6 15 11 9 11 6 A5 5 0 0 0 1 6 C1 9 6 15 6 15 Z"/><circle cx="6" cy="6" r="1.8"/></svg>';
-  function row({ name, got, act, area, color, scene, sub = [], how, mark, icon }, g) {
-    scene = scene || spotScene(mark);
+     game's face (a Tool with its slot's diamond) and how to get it under it; on the right its
+     area, and a pin to see it on the Map. Its Act heads the list (listHtml); sorted by nearest,
+     it goes with the area instead. */
+  function row({ name, got, act, area, color, sub = [], how, mark, icon }, g) {
     const later = g && !got && act > g.act;
-    const n = !got && scene ? away(scene) : null;
-    const steps = n == null ? '' : n === 0 ? t('mapHere') : t(n === 1 ? 'mapSteps1' : 'mapSteps', { n: num(n) });
     const place = [prefs.pgNear && act ? t('saveAct', { n: act }) : '', areaName(area), ...sub].filter(Boolean);
     const onMap = !got && mark && App.mapHas && App.mapHas(mark);
     return `<li class="pg-item${got ? ' is-got' : ''}${later ? ' is-later' : ''}${icon ? '' : ' is-plain'}"${later ? ` title="${esc(t('pgLater', { n: act }))}"` : ''}>
@@ -93,8 +89,8 @@
         ${icon ? `<span class="pg-art"><img src="${icon}" alt="" loading="lazy"></span>` : ''}
         <span class="pg-main"><span class="pg-name"${NT}>${color ? `<span class="pg-slot is-${color}" aria-hidden="true"></span>` : ''}${esc(name)}</span>
           ${got ? `<span class="sr-only">${esc(t('pgGot'))}</span>` : ''}${!got && how ? `<span class="pg-how">${esc(how)}</span>` : ''}</span>
-        <span class="pg-place">${steps ? `<b>${esc(steps)}</b>` : ''}<span class="pg-where">${place.map((w, i) => `<span${i || prefs.pgNear ? NT : ''}>${esc(w)}</span>`).join('')}</span></span>
-        ${onMap ? `<button type="button" class="pg-onmap" data-act="mapShow" data-value="${esc(mark)}" aria-label="${esc(t('mapOnMap') + ': ' + name)}" title="${esc(t('mapOnMap'))}">${PIN}</button>` : '<span class="pg-onmap is-none" aria-hidden="true"></span>'}
+        <span class="pg-place"><span class="pg-where">${place.map((w, i) => `<span${i || prefs.pgNear ? NT : ''}>${esc(w)}</span>`).join('')}</span></span>
+        ${onMap ? `<button type="button" class="pg-onmap" data-act="mapShow" data-value="${esc(mark)}" aria-label="${esc(t('mapOnMap') + ': ' + name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '<span class="pg-onmap is-none" aria-hidden="true"></span>'}
       </li>`;
   }
   // A list of rows; in the Act's order, each Act a small head over its rows.

@@ -1,33 +1,36 @@
-/* js/app-fight.js — Combat: your build against one enemy, as a duel (design/21-combat-variants.html,
-   A, the sibling's): Hornet and the enemy's whole Journal drawing face to face, the slashes that
-   win and the hits that take you down between them; your attacks as cards and its with their
-   masks, all of them tappable to play the fight out (js/sim.js: damage, masks, silk, uses, the
-   Bind, a log, undo); the rest folded under «How it's worked out». Every enemy carries five damage
-   modifiers, one per level of what hits (js/enemies.js, the wiki's master tables), so how many
-   hits kill it is a question per enemy: the engine (js/engine.js, compute(state, { foe })) takes
-   the enemy's modifier at the Needle's level for the Needle, its Strike and the Silk Skills, and at
-   the Crafting Kit's for the Tools, and says how many uses of each attack take its health, normal
-   or black-threaded (Act 3). The build is the Crest screen's: in a save, what Hornet wears; in
-   Free mode, the one being tried. And the other way: how many hits of each of a boss's attacks
-   take your masks (the wiki's figures, one mask when it gives none; the attacks' names are the
-   wiki's, the game doesn't name them), and for any other enemy what its body and its strongest
-   hitbox take, from the game's own files (js/enemy-damage.js). Shares SS.app with js/app.js (see there). */
+/* js/app-fight.js — Combat: your build against one enemy, played out as the sibling's arena
+   (hollownest-calculator's js/app-arena.js), made Silksong's. Hornet and the enemy's whole Journal
+   drawing face to face; between them the slashes that still win and the hits that still take you
+   down, the clock, Undo (Ctrl+Z) and Start over; her HUD (masks, the Plasmium ones, the spool, what
+   she's under: focus, fury, Flea Brew, Flintslate, a Bind's window) and its bars (a boss of two
+   at once, a fight in pieces or in bars one after another), its stagger count and time. Under
+   them your moves, grouped, and its attacks, all tappable: js/fight.js plays each and says what
+   happened, which the log under them tells in three voices (you, it, the fight); the end is titled, with the
+   fight in figures. The rest folds under «How it's worked out».
+   Every number comes from the engine (js/engine.js, compute(state, { foe })): each enemy carries
+   five damage modifiers, one per level of what hits, so how many hits kill it is a question per
+   enemy. The build is the Crest screen's: in a save, what Hornet wears; in Free mode, the one being
+   tried. Its attacks: a boss's are the wiki's (their names too: the game doesn't name them), any
+   other enemy's from the game's own files (js/enemy-damage.js). The stagger, from the game's own
+   files (js/stagger.js). Shares SS.app with js/app.js (see there). */
 (() => {
   'use strict';
   const SS = globalThis.SS;
-  const D = SS.data, EN = SS.enemies, E = SS.engine, J = SS.journal;
+  const D = SS.data, EN = SS.enemies, E = SS.engine, J = SS.journal, FT = SS.fight, ST = SS.stagger, HERO = SS.hero;
   const App = SS.app;
   const { t, pick, esc, NT, brackets, screenHead, prefs, savePrefs, render, actions } = App;
 
   const num = (n, d = 0) => App.NF[d].format(n);
   const FOE = new Map(EN.FOES.map((f) => [f.id, f]));
+  const TOOL = new Map(D.TOOLS.map((x) => [x.id, x]));
+  const toolName = (id) => pick(TOOL.get(id).name);
   const BOOK_BY_N = new Map(J.BOOK.map((e) => [e.n, e]));
   const portrait = (f) => { const e = BOOK_BY_N.get(f.hj); return e ? `assets/icons/journal/${e.id}.webp` : ''; };
   const foeName = (f) => pick(f.name) + (f.variant ? ' · ' + pick(f.variant) : '');
   // Bosses first, then the rest, each in the Journal's order.
   const ORDER = EN.FOES.slice().sort((a, b) => (b.boss ? 1 : 0) - (a.boss ? 1 : 0) || a.hj - b.hj || foeName(a).localeCompare(foeName(b)));
   let query = '';
-  const fold = (x) => String(x).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const fold = (x) => String(x).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
   const HAY = new Map(EN.FOES.map((f) => [f.id, fold([f.name.es, f.name.en, f.variant ? f.variant.es + ' ' + f.variant.en : ''].join(' '))]));
 
   function picker(cur) {
@@ -48,11 +51,12 @@
     const lv = r.state.needle, kit = r.state.kit;
     // An entry from the game's files (js/enemies.js src) has no modifiers: its first hit kills it.
     const mods = (f.mods || []).map((m, i) => `<li class="${i === lv ? 'is-needle' : ''}${i === kit ? ' is-kit' : ''}"><span>${num(i)}</span><b>×${num(m, 2)}</b></li>`).join('');
-    const st = (EN.ATTACKS[f.page] || { staggers: [] }).staggers;
+    const cfgs = stunCfgs(f);
+    const stag = cfgs.map((c) => t(c.secs == null ? 'ftStaggerGameNoTime' : 'ftStaggerGame', { n: num(c.max + 1), c: num(c.combo), w: num(c.window, 1), s: num(c.secs || 0, 1), x: num(c.shave || 0, 2) }));
     return `${f.bars ? `<p class="ft-stagger"><span class="save-k">${esc(t('ftHp'))}</span> ${esc(f.bars.map((b) => num(b)).join(' + '))}</p>` : ''}
         ${f.mods ? `<div class="ft-mods"><span class="save-k">${esc(t('ftMods'))}</span><ol>${mods}</ol>
           <p class="pg-note">${esc(t('ftModsNote', { n: num(lv), k: num(kit) }))}</p></div>` : f.oneHit ? `<p class="pg-note">${esc(t('ftOneHit'))}</p>` : ''}
-        ${st.length ? `<p class="ft-stagger"><span class="save-k">${esc(t('ftStagger'))}</span> ${esc(st.map((x) => t('ftHits', { n: num(x) })).join(' · '))}</p>` : ''}
+        ${stag.length ? `<p class="ft-stagger"><span class="save-k">${esc(t('ftStagger'))}</span> ${esc(stag.join(' · '))}</p>` : ''}
         ${phasesHtml(f, r, hp)}`;
   }
 
@@ -93,46 +97,12 @@
   const icon = (list, id) => `assets/icons/${list}/${id}.webp`;
   const hitsText = (each) => (each.length > 1 ? each.map((x) => num(x)).join(' + ') : '');
 
-  // What you do to it: each attack, its damage, the uses that kill it, and how it's made (its title).
-  function yours(r) {
-    const n = r.needle, out = [];
-    // The slash says its product: the Needle × Hornet's bracket × the enemy's modifier at its level.
-    const formula = t('ftFormula', { base: num(n.base), x: num(n.bracket, 2), m: num(n.enemy, 2) });
-    for (const a of n.attacks.filter((x) => x.id === 'slash' || D.CRESTS.find((c) => c.id === r.state.crest).attacks)) {
-      // The slash also says how long slashing nonstop takes, at the Crest's own pace (js/hero.js).
-      const time = a.id === 'slash' && n.speed.seconds != null ? t('ftSeconds', { s: num(n.speed.seconds, 1) }) : '';
-      out.push({ id: 'att:' + a.id, dmg: a.rest ?? a.total, gain: 1, img: `assets/needles/${n.level}.png`, name: t('ctAtt_' + a.id), total: a.total, uses: a.uses,
-        how: [hitsText(a.each), a.id === 'slash' ? formula : '', time].filter(Boolean).join(' · '), needle: true });
-    }
-    if (r.strike) out.push({ id: 'strike', dmg: r.strike.rest ?? r.strike.total, img: icon('arts', 'needle-strike'), name: t('ctStrike'), total: r.strike.total, uses: r.strike.uses, how: hitsText(r.strike.each) });
-    const sk = r.skills.find((s) => s.equipped);
-    if (sk) out.push({ id: 'skill', dmg: sk.rest ?? sk.total, cost: r.silk.skill, img: icon('skills', sk.id), name: pick(D.SKILLS.find((x) => x.id === sk.id).name), total: sk.total, uses: sk.uses, how: hitsText(sk.each) });
-    for (const x of r.tools.filter((y) => y.attacks.length)) {
-      const a = x.attacks[0];
-      const load = x.loadShare != null ? t('ftLoad', { p: num(Math.min(999, x.loadShare * 100)) }) : '';
-      out.push({ id: 'tool:' + x.id, dmg: a.rest ?? a.total, ammo: x.ammo, img: icon('tools', x.id), name: pick(D.TOOLS.find((y) => y.id === x.id).name), total: a.total, uses: a.uses, how: [hitsText(a.each), load].filter(Boolean).join(' · ') });
-    }
-    return out;
-  }
-  /* As cards: art, name, damage, the uses that kill it; the one that needs fewest, marked. A tap
-     plays it on the fight (js/sim.js); under it what it costs or has left, and it can't be played
-     without the silk or the uses. */
-  function yoursHtml(list, kit, fs) {
-    const best = Math.min(...list.map((x) => (x.uses == null ? Infinity : x.uses)));
-    return `<section class="ft-side"><h3 class="ct-h">${esc(t('ftYours'))}</h3><ul class="ft-cards">${list.map((x) => {
-      const left = x.ammo != null ? t('ftLeft', { n: num(fs.ammo[x.id]), m: num(x.ammo) }) : x.cost ? t('ctSilkCost', { n: num(x.cost) }) : '';
-      return `<li><button type="button" class="ft-cardx${x.uses === best ? ' is-best' : ''}" data-act="ftAct" data-value="${x.id}"${SIM.can(kit, fs, x.id) ? '' : ' disabled'}${x.how ? ` title="${esc(x.how)}"` : ''}>
-        <img class="${x.needle ? 'is-needle' : ''}" src="${x.img}" alt=""><span${NT}>${esc(x.name)}</span><b>${num(x.total)}</b>
-        <em>${x.uses == null ? '' : esc(t('ftUses', { n: num(x.uses) }))}</em>${left ? `<small>${esc(left)}</small>` : ''}</button></li>`;
-    }).join('')}</ul></section>`;
-  }
-
   /* The fight as a whole (js/engine.js, plan): the red Tools' loads first, then the fewest slashes
      with the Skill casts their silk pays for, the spool full to start and no Bind. */
   function planHtml(r) {
     const p = E.plan(r, r.foe && r.foe.hp);
     if (!p) return '';
-    const parts = p.throws.map((x) => t('ftPlanThrows', { n: num(x.n), name: pick(D.TOOLS.find((y) => y.id === x.id).name) }));
+    const parts = p.throws.map((x) => t('ftPlanThrows', { n: num(x.n), name: toolName(x.id) }));
     if (p.slashes) parts.push(t(p.slashes === 1 ? 'ftPlanSlash' : 'ftPlanSlashes', { n: num(p.slashes) }));
     const sk = r.skills.find((x) => x.equipped);
     if (p.casts) parts.push(t('ftPlanCasts', { n: num(p.casts), name: pick(D.SKILLS.find((y) => y.id === sk.id).name) }));
@@ -180,60 +150,17 @@
       const bare = Math.ceil(masks / per), end = E.endure(r, per, b);
       return { ...x, per, bare, bind: end && end.hits > bare ? end.hits : null };
     });
-    const tool = (id) => pick(D.TOOLS.find((y) => y.id === id).name);
     /* Silk Hearts (js/engine.js, regen): up to their cap, and only while the silk doesn't change,
        over the seconds the slash takes to kill (the figure on the slash's row). */
     const H = b.hearts, ring = r.state.tools.includes('weavelight');
     const hearts = !H.cap ? t('ftBindNoHearts') : H.seconds == null ? ''
       : t('ftBindHearts', { n: num(H.cap), b: num(H.next, 2), a: num(H.first, 2), t: num(H.seconds, 1), i: num(r.needle.speed.interval, 2), x: num(H.strands) });
-    const extra = [b.reserve ? t('ftBindReserve', { name: tool('reserve-bind') }) : '',
-      ['druids-eyes', 'druids-eye'].filter((id) => r.state.tools.includes(id)).map((id) => t('ftBindEye', { name: tool(id) }))[0] || '',
-      hearts, ring && H.cap ? t('ftBindRing', { name: tool('weavelight'), k: num(SS.hero.REGEN.weavelight.time, 2) }) : ''];
+    const extra = [b.reserve ? t('ftBindReserve', { name: toolName('reserve-bind') }) : '',
+      ['druids-eyes', 'druids-eye'].filter((id) => r.state.tools.includes(id)).map((id) => t('ftBindEye', { name: toolName(id) }))[0] || '',
+      hearts, ring && H.cap ? t('ftBindRing', { name: toolName('weavelight'), k: num(HERO.REGEN.weavelight.time, 2) }) : ''];
     const notes = [black ? t('ftTheirsBlackNote') : fromGame ? t('ftTheirsGameNote') : t('ftTheirsNote'),
       [t('ftBindNote', { s: num(b.spool), c: num(r.silk.bind), h: num(r.health.bind.heals) }), ...extra].filter(Boolean).join(' ')];
     return { list, fromGame, notes };
-  }
-  // Its attacks: the name, its masks drawn, and how many take yours.
-  const MASK = '<img src="assets/hud/mask.png" alt="">';
-  function theirsHtml(th, kit, fs) {
-    if (!th.list.length) return '';
-    return `<section class="ft-side"><h3 class="ct-h">${esc(t('ftTheirsShort'))}</h3><ul class="ft-hits">${th.list.map((x, i) => `<li><button type="button" class="ft-hit" data-act="ftAct" data-value="hit:${i}"${SIM.can(kit, fs, 'hit:' + i) ? '' : ' disabled'}${x.sub ? ` title="${esc(x.sub)}"` : ''}>
-        <span class="ft-hit-name"${th.fromGame ? '' : NT}>${esc(x.name)}</span>
-        <span class="ft-hit-masks" role="img" aria-label="${esc(t('ftMasksN', { n: num(x.per) }))}">${x.per > 6 ? `${MASK}<b>×${num(x.per)}</b>` : MASK.repeat(x.per)}</span>
-        <em>${esc([t(x.bare === 1 ? 'ftToDie1' : 'ftToDie', { n: num(x.bare) }), x.bind ? t('ftIfBind', { n: num(x.bind) }) : ''].filter(Boolean).join(' · '))}</em></button></li>`).join('')}</ul></section>`;
-  }
-
-  /* ── The fight played out (js/sim.js): the screen describes it as a kit, from what the engine
-     computes; the state lives here while the page is open, for this enemy and this build (a
-     change of either starts it over). ── */
-  const SIM = SS.sim;
-  let fight = null;
-  function kitOf(f, r, hp, moves, th, ticks) {
-    return { hp: hp || 0, masks: r.health.masks, spool: r.silk.spool, bind: { cost: r.silk.bind, heals: r.health.bind.heals },
-      moves: Object.fromEntries(moves.map((x) => [x.id, { dmg: x.dmg, gain: x.gain || 0, cost: x.cost || 0, ammo: x.ammo }])),
-      hits: Object.fromEntries(th.list.map((x, i) => ['hit:' + i, x.per])), phases: ticks };
-  }
-  // Where each phase starts, in health left (js/phases.js through the engine).
-  function phaseMarks(f, r, hp) {
-    const P = SS.phases[f.id] || {};
-    if (!hp) return [];
-    return E.phases(P, hp, r.needle.attacks[0], r.needle.speed && r.needle.speed.interval)
-      .map((x) => ({ n: x.n, at: P.bars ? hp - x.dealt : x.left })).filter((x) => x.at > 0 && x.at < hp);
-  }
-  // The log, newest first: what each move did.
-  function logHtml(fs, moves, th, f) {
-    const name = (id) => (moves.find((x) => x.id === id) || {}).name || id;
-    const line = (e) => (e.k === 'you' ? t('ftLogYou', { name: name(e.id), n: num(e.dmg), hp: num(e.hp) })
-      : e.k === 'hit' ? t('ftLogHit', { name: th.list[+e.id.split(':')[1]].name, n: num(e.m), m: num(e.masks) })
-      : e.k === 'bind' ? t('ftLogBind', { n: num(e.h) })
-      : e.k === 'phase' ? t('ftLogPhase', { n: num(e.n) })
-      : e.k === 'win' ? t('ftLogWin', { name: pick(f.name), n: num(e.n) }) : t('ftLogLose'));
-    const lines = fs.log.slice(-4).reverse();
-    return `<div class="ft-log">
-        <div class="ft-log-tools"><button type="button" class="text-btn" data-act="ftUndo"${fs.past ? '' : ' disabled'}>↶ ${esc(t('ftUndo'))}</button>
-          <button type="button" class="text-btn" data-act="ftReset"${fs.past ? '' : ' disabled'}>⟲ ${esc(t('ftReset'))}</button></div>
-        ${lines.length ? `<ol class="ft-log-lines">${lines.map((e) => `<li class="is-${e.k}"${NT}>${esc(line(e))}</li>`).join('')}</ol>` : `<p class="pg-note">${esc(t('ftLogStart'))}</p>`}
-      </div>`;
   }
 
   /* ── The enemy gauntlets (js/gauntlets.js): an arena's waves, one after another ──
@@ -289,30 +216,470 @@
   // The enemy's whole drawing (the Journal's, assets/journal/art/), else its portrait.
   const drawing = (f) => { const e = BOOK_BY_N.get(f.hj); return e ? `assets/journal/art/${e.key.toLowerCase()}.webp` : portrait(f); };
 
-  /* The duel (design/21-combat-variants.html, A, the sibling's): Hornet and the enemy face to
-     face, each on the Journal's light; between them, the slashes that still win and the fewest of
-     its hits that still take you down; her masks and silk and its health as the fight stands, a
-     tick on its bar where each phase starts. */
-  function duel(f, r, hp, th, kit, fs, marks) {
-    const slash = r.needle.attacks[0], per = slash.rest ?? slash.total;
-    const worst = th.list.reduce((m, x) => (!m || x.per > m.per ? x : m), null);
-    const toWin = hp == null || !per ? null : Math.ceil(fs.hp / per);
-    const toFall = worst ? Math.ceil(fs.masks / worst.per) : null;
-    const ticks = marks.map((x) => `<i style="left:${(x.at / hp * 100).toFixed(1)}%"></i>`).join('');
+  /* ── The fight ─────────────────────────────────────────────────────────
+     The kit (js/fight.js's header): what the engine says each move does for this build against
+     this enemy. The Needle's damage is computed once per combination of what comes and goes in a
+     fight (the Hunter's focus level, the Beast's fury, Flintslate, the Challenge), each a
+     compute() with those set; the fight picks the one that holds at each hit. */
+  const C = HERO.COMBAT;
+  const FLINT_SECS = 8;       // wiki, "Flintslate": 8 seconds (not read from the game's files)
+  const WISP_EVERY = 4;       // wiki, "Wispfire Lantern": a wisp for a strand every 4 seconds
+  const stunOf = (table, id, per = 1) => (table && table[id] != null ? table[id] : 1) * per;
+
+  function kitOf(f, r, black) {
+    const s = r.state, has = (id) => s.tools.includes(id);
+    const opt = { foe: f, black };
+    const fl = s.crest === 'hunter' ? (s.hunterStage >= 3 ? [0, 1, 2] : s.hunterStage >= 2 ? [0, 1] : [0]) : [0];
+    const table = {}, crit = {};
+    for (const fo of fl) for (const fu of s.crest === 'beast' ? [0, 1] : [0]) for (const fi of has('flintslate') ? [0, 1] : [0]) for (const ch of [0, 1]) {
+      const v = E.compute({ ...s, focus: fo > 0, hunterStage: fo ? fo + 1 : s.hunterStage, fury: !!fu, flint: !!fi, challenge: !!ch }, opt);
+      const k = `${fo}${fu}${fi}${ch}`;
+      const use = (a) => (ch ? a.total : a.rest ?? a.total);
+      for (const a of v.needle.attacks) (table['att:' + a.id] || (table['att:' + a.id] = {}))[k] = use(a);
+      if (v.strike) (table.strike || (table.strike = {}))[k] = use(v.strike);
+      if (v.needle.crit) (crit['att:slash'] || (crit['att:slash'] = {}))[k] = v.needle.crit.damage;
+    }
+    const H = ST.HORNET, crest = s.crest;
+    const every = E.interval(s), quick = E.interval(s, true), rage = crest === 'beast' ? E.interval({ ...s, fury: true }) : null;
+    const moves = {}, list = [];
+    const add = (m, kitMove) => { list.push(m); moves[m.id] = kitMove; };
+    const crestAtt = D.CRESTS.find((c) => c.id === crest).attacks;
+    // The Needle: the slash, and the Crest's own down- and run-slashes.
+    for (const a of r.needle.attacks.filter((x) => x.id === 'slash' || crestAtt)) {
+      add({ id: 'att:' + a.id, group: 'needle', name: t('ctAtt_' + a.id), img: App.ART.needle(r.needle.level), needle: true, each: a.each, uses: a.uses, total: a.total },
+        { kind: 'needle', dmg: table['att:' + a.id], crit: crit['att:' + a.id], stun: stunOf(H.slash, crest, a.each.length), hits: a.each.length, silk: 1, dur: every, quick, rage });
+    }
+    if (r.strike) {
+      add({ id: 'strike', group: 'needle', name: t('ctStrike'), img: icon('arts', 'needle-strike'), each: r.strike.each, uses: r.strike.uses, total: r.strike.total },
+        { kind: 'strike', dmg: table.strike, stun: stunOf(H.strike, crest, r.strike.each.length), hits: r.strike.each.length, silk: crest === 'hunter' ? 2 : 1,
+          dur: has('pin-badge') ? C.chargeQuick : C.charge });
+    }
+    // The Challenge (wiki, "Combat (Silksong)"): 2 damage a Needle level, through the bracket and the enemy's modifier.
+    const ch = D.MODIFIERS.find((m) => m.id === 'challenge');
+    const chDmg = E.roundHalfEven(2 * (r.needle.level + 1) * r.needle.bracket * r.needle.enemy);
+    add({ id: 'taunt', group: 'needle', name: pick(ch.name), img: '', total: chDmg, note: t('ftTauntNote') },
+      { kind: 'challenge', dmg: chDmg, stun: H.challenge, hits: 1, silk: 1 });
+    // Silk: the Skill in the Crest's slot.
+    const sk = r.skills.find((x) => x.equipped);
+    if (sk) {
+      add({ id: 'skill', group: 'silk', name: pick(D.SKILLS.find((x) => x.id === sk.id).name), img: icon('skills', sk.id), each: sk.each, uses: sk.uses, total: sk.total, cost: sk.silk },
+        { kind: 'skill', dmg: sk.rest ?? sk.total, stun: stunOf(H.skills, sk.id, sk.each.length), hits: sk.each.length, cost: sk.silk });
+    }
+    // The Tools you throw, drink or set off; the ones that answer something (a Bind, a hit, the clock) are the kit's own.
+    const passive = new Set(['memory-crystal', 'claw-mirror', 'claw-mirrors', 'warding-bell', 'wispfire-lantern', 'pollip-pouch']);
+    for (const x of r.tools) {
+      const eff = x.id === 'flea-brew' ? 'brew' : x.id === 'flintslate' ? 'flint' : x.id === 'plasmium-phial' ? 'plasm' : null;
+      const a = x.attacks.find((y) => !y.bonus);
+      if (passive.has(x.id) || (!eff && !a)) continue;
+      const base = { id: 'tool:' + x.id, group: 'tools', name: toolName(x.id), img: icon('tools', x.id), ammo: x.ammo };
+      if (eff) {
+        const s2 = eff === 'brew' ? HERO.QUICKENING : FLINT_SECS;
+        add({ ...base, note: t('ftEff_' + eff, { s: num(s2) }) }, { kind: 'tool', effect: eff, ammo: x.ammo });
+      } else {
+        add({ ...base, each: a.each, uses: a.uses, total: a.total, load: x.loadShare },
+          { kind: 'tool', dmg: a.rest ?? a.total, stun: stunOf(H.tools, x.id, a.each.length), hits: a.each.length, ammo: x.ammo });
+      }
+    }
+    const tool = (id) => { const x = r.tools.find((y) => y.id === id); return x && x.attacks[0] ? x.attacks[0].total : 0; };
+    const mirror = tool('claw-mirrors') || tool('claw-mirror');
+    const rg = E.regen(r, 0, 0);
+    const kit = {
+      masks: r.health.masks, spool: r.silk.spool, fractured: has('fractured-mask'),
+      regen: rg.cap ? { cap: rg.cap, first: rg.first, next: rg.next } : null,
+      bind: { cost: r.silk.bind, heals: r.health.bind.heals, seconds: r.health.bind.seconds,
+        crest: crest === 'beast' ? 'beast' : crest === 'reaper' ? 'reaper' : null,
+        warding: tool('warding-bell'), wardingStun: 1, mirror, mirrorStun: mirror ? 1 : 0, reserve: has('reserve-bind') ? 1 : 0 },
+      moves, hunter: crest === 'hunter' ? C.hunter.slice(0, Math.max(0, s.hunterStage - 1)).map((x) => x[0]) : [],
+      fury: { secs: C.fury.secs, hurt: C.fury.hurt }, reaper: { secs: C.reaper }, brew: HERO.QUICKENING, flint: FLINT_SECS,
+      eye: has('druids-eyes') ? 2 : has('druids-eye') ? 1 : 0, memory: tool('memory-crystal'), memoryStun: 1,
+      wisp: has('wispfire-lantern') ? { every: WISP_EVERY, dmg: tool('wispfire-lantern'), stun: 1 } : null,
+    };
+    return { kit, list };
+  }
+
+  /* The bars: what's standing now, and what comes after. A boss of two at once (the Forebrothers,
+     each with its own stagger), a fight in pieces (Father of the Flame: four lanterns, then its
+     core), in bars one after another (the Dancers, Grand Mother Silk), or one bar with the ticks
+     where it changes phase. Black-threaded, its health is another and the bars don't add up to it:
+     one bar. */
+  // A name in both languages from the dictionary, for a bar's name that outlives a change of language.
+  const pair = (key, vars = {}) => Object.fromEntries(['es', 'en'].map((l) => [l, Object.entries(vars).reduce((x, [k, v]) => x.split('{' + k + '}').join(v), SS.i18n.UI[key][l])]));
+  const PART_NAMES = {
+    signis: { es: 'Signis', en: 'Signis', key: 'DOCK_GUARD_SOLO_MAIN' },
+    gron: { es: 'Gron', en: 'Gron', key: 'DOCK_GUARD_THROWER_MAIN' },
+  };
+  function phasesOf(f, hp, black) {
+    const P = SS.phases[f.id] || {};
+    const whole = (bars) => !black && bars && bars.reduce((a, b) => a + b, 0) === hp;
+    const one = (x, key) => ({ key: key || 'main', foeId: f.id, name: x.name || f.name, hp: x.hp });
+    if (f.id === 'forebrothers-signis-and-gron' && whole(f.bars)) {
+      return [[one({ name: PART_NAMES.signis, hp: f.bars[0] }, 'signis'), one({ name: PART_NAMES.gron, hp: f.bars[1] }, 'gron')]];
+    }
+    if (P.pieces && whole(P.bars)) {
+      return P.bars.map((b, i) => Array.from({ length: P.pieces[i] }, (_, k) => one({
+        name: P.pieces[i] > 1 ? pair('ftPiece', { n: k + 1 }) : pair('ftCore'), hp: b / P.pieces[i] }, 'piece')));
+    }
+    if (P.bars && whole(P.bars)) return P.bars.map((b) => [one({ hp: b })]);
+    return [[one({ hp })]];
+  }
+  /* A gauntlet's waves (js/gauntlets.js): a phase each, a bar per enemy, each with its own health
+     (one, for an entry the game gives none: its first hit kills it). */
+  function wavesOf(g) {
+    return g.waves.map((w) => w.flatMap(([id, n]) => {
+      const f = FOE.get(id);
+      return Array.from({ length: n }, () => ({ key: 'main', foeId: id, name: f.name, hp: f.hp || 1 }));
+    }));
+  }
+  // The stagger of each bar (js/stagger.js): a boss of two, each its own; a piece, none.
+  function stunCfgs(f) { const b = ST.BOSSES[f.id]; return !b ? [] : b.parts ? Object.values(b.parts) : [b]; }
+  function stunFor(f, part) {
+    const b = f && ST.BOSSES[f.id];
+    if (!b || !part || part.key === 'piece') return null;
+    return b.parts ? b.parts[part.key] || null : b;
+  }
+  // Where each phase starts on a single bar, in health left (js/phases.js through the engine).
+  function phaseMarks(f, r, hp, single) {
+    const P = SS.phases[f.id] || {};
+    if (!hp || !single || P.bars) return [];
+    return E.phases(P, hp, r.needle.attacks[0], r.needle.speed && r.needle.speed.interval)
+      .map((x) => ({ n: x.n, at: x.left })).filter((x) => x.at > 0 && x.at < hp);
+  }
+
+  /* The fight's state lives here while the page is open, for this enemy and this build (a change
+     of either starts it over): js/fight.js's (Hornet's side, the clock) and the bars, the phase,
+     who you're hitting, the log. Undo keeps whole copies, up to 50. */
+  let fight = null, cur = null;
+  const undoStack = [];
+  const UNDO_MAX = 50;
+  function newPart(x) { return { key: x.key, foeId: x.foeId, name: x.name, hp: x.hp, max: x.hp }; }
+  /* cur, what the screen computed for this fight: its key, its name (title), health (hp), its phases
+     (a boss's bars, or a gauntlet's waves: wave), and a kit per enemy in it (kits: each enemy takes
+     its own modifiers; the rest of a kit is the same in all). */
+  function startFight(c) {
+    undoStack.length = 0;
+    const phases = c.phases;
+    fight = { key: c.key, s: FT.reset(Object.values(c.kits)[0].kit), phases, phase: 0, parts: phases[0].map(newPart), target: 0, log: [], over: null, started: false };
+    logLine(t('ftLogStart', { name: pick(c.title), hp: num(c.hp || 0) }), 'sys');
+    hudPrev = null; foePrev = null;
+  }
+  const snapshot = () => { undoStack.push(structuredClone({ ...fight })); if (undoStack.length > UNDO_MAX) undoStack.shift(); };
+  function undo() {
+    const snap = undoStack.pop();
+    if (!snap) return false;
+    fight = snap;
+    hudPrev = null; foePrev = null; endFresh = false;
+    return true;
+  }
+  /* The log speaks in three voices (the sibling's): 'you', 'foe' and 'sys' (phases, stagger, what
+     wears off), newest first, nine lines. */
+  const logLine = (text, side = 'sys') => { fight.log.unshift({ text, side }); if (fight.log.length > 9) fight.log.pop(); };
+
+  const targetOf = () => { const p = fight.parts[fight.target]; return p && p.hp > 0 ? p : null; };
+  function retarget() { const i = fight.parts.findIndex((p) => p.hp > 0); fight.target = i < 0 ? 0 : i; }
+  const ctxOf = () => { const tg = targetOf(); return { target: tg, stun: stunFor(tg && FOE.get(tg.foeId), tg), parts: fight.parts }; };
+  // The kit of whoever you're hitting (or the first standing): its damage against that enemy; sync() makes it cur's.
+  const sync = () => { const k = kitNow(); cur.kit = k.kit; cur.list = k.list; cur.r = k.r; };
+  const kitNow = () => { const p = targetOf() || fight.parts.find((x) => x.hp > 0) || fight.parts[0]; return cur.kits[p.foeId] || Object.values(cur.kits)[0]; };
+  // What's left to take, this phase's standing bars and every phase to come.
+  const remaining = () => fight.parts.reduce((a, p) => a + Math.max(0, p.hp), 0)
+    + fight.phases.slice(fight.phase + 1).reduce((a, ph) => a + ph.reduce((b, x) => b + x.hp, 0), 0);
+
+  /* The reducer's events (js/fight.js), told: this is where the language comes in. */
+  const moveName = (id) => { const m = cur.list.find((x) => x.id === id); return m ? m.name : id; };
+  const WHAT = { fury: () => t('ftFury'), reaper: () => pick(D.CRESTS.find((c) => c.id === 'reaper').name), brew: () => toolName('flea-brew'), flint: () => toolName('flintslate') };
+  function tell(evs) {
+    const n = (x) => num(x);
+    for (const e of evs) {
+      const you = (text) => logLine(text, 'you'), foe = (text) => logLine(text, 'foe'), sys = (text) => logLine(text, 'sys');
+      switch (e.kind) {
+        case 'hit': you(t(e.crit ? 'ftLogCrit' : 'ftLogYou', { name: moveName(e.id), n: n(e.n), hp: n(e.left) })); break;
+        case 'wisp': you(t('ftLogYou', { name: toolName('wispfire-lantern'), n: n(e.n), hp: n(e.left) })); break;
+        case 'mirror': you(t('ftLogYou', { name: toolName(cur.r.state.tools.includes('claw-mirrors') ? 'claw-mirrors' : 'claw-mirror'), n: n(e.n), hp: n(e.left) })); break;
+        case 'bell': you(t('ftLogYou', { name: toolName('warding-bell'), n: n(e.n), hp: n(e.left) })); break;
+        case 'memory': you(t('ftLogYou', { name: toolName('memory-crystal'), n: n(e.n), hp: n(e.left) })); break;
+        case 'stagger': sys(t(e.s ? (e.combo ? 'ftLogStaggerCombo' : 'ftLogStagger') : 'ftLogStaggerNoTime', { name: pick(e.name), s: num(e.s, 1) })); break;
+        case 'staggerEnd': sys(t('ftLogStaggerEnd')); break;
+        case 'hearts': you(t('ftLogHearts', { n: n(e.left) })); break;
+        case 'over': sys(t('ftLogOver', { name: WHAT[e.what]() })); break;
+        case 'bindLost': foe(t(e.silk ? 'ftLogBindLost' : 'ftLogBindLostKept', { n: n(e.n), s: n(e.silk) })); break;
+        case 'warded': foe(t('ftLogWarded', { name: toolName('warding-bell'), move: e.label })); break;
+        case 'take': foe(t('ftLogHit', { name: e.label, n: n(e.n), m: n(e.left) })); break;
+        case 'down': foe(t('ftLogLose')); break;
+        case 'fractured': foe(t('ftLogFractured', { name: toolName('fractured-mask') })); break;
+        case 'eye': you(t('ftLogEye', { name: toolName(cur.kit.eye === 2 ? 'druids-eyes' : 'druids-eye'), n: n(e.silk) })); break;
+        case 'focus': sys(t('ftLogFocus', { x: num(C.hunter[e.level - 1][1], 1) })); break;
+        case 'focusLost': foe(t('ftLogFocusLost')); break;
+        case 'lifesteal': you(t('ftLogLifesteal', { m: n(e.left) })); break;
+        case 'reaperSilk': you(t('ftLogReaperSilk')); break;
+        case 'brew': you(t('ftLogBrew', { name: toolName('flea-brew'), s: n(e.s) })); break;
+        case 'flint': you(t('ftLogFlint', { name: toolName('flintslate'), s: n(e.s) })); break;
+        case 'plasm': you(t('ftLogPlasm', { name: toolName('plasmium-phial'), m: n(e.left) })); break;
+        case 'challenge': you(t('ftLogChallenge')); break;
+        case 'bind': you(t(e.free ? 'ftLogBindFree' : 'ftLogBind', { n: n(e.n), name: toolName('reserve-bind') })); break;
+        case 'fury': you(t('ftLogFury', { s: n(e.s), n: n(e.n) })); break;
+        case 'reaper': you(t('ftLogReaper', { name: WHAT.reaper(), s: n(e.s) })); break;
+        case 'wait': you(t('ftLogWait', { s: num(e.s, 2) })); break;
+        default: break;
+      }
+    }
+  }
+
+  /* After each action: the bars that fell (a boss of two heals the other; a phase gives way to the
+     next; the last, the win), the phase ticks crossed, who you're hitting. */
+  function settle(before) {
+    const P = cur.wave ? {} : SS.phases[cur.f.id] || {};
+    for (const p of fight.parts) {
+      if (p.hp > 0 || p.settled) continue;
+      p.settled = true;
+      if (fight.parts.length > 1) logLine(t('ftLogPartDown', { name: pick(p.name) }), 'sys');
+      // The Forebrothers: when one falls, the other, at or under its figure, heals (js/phases.js heal).
+      if (P.heal && fight.parts.length === 2) {
+        const o = fight.parts.find((x) => x.hp > 0);
+        if (o && o.hp <= P.heal[0]) {
+          const was = o.hp;
+          o.hp = Math.min(P.heal[2], o.hp + P.heal[1]);
+          o.max = Math.max(o.max, o.hp);
+          logLine(t('ftLogHeal', { name: pick(o.name), n: num(o.hp - was), hp: num(o.hp) }), 'sys');
+        }
+      }
+    }
+    const after = remaining();
+    for (const m of cur.marks) if (before > m.at && after <= m.at && after > 0) logLine(t('ftLogPhase', { n: num(m.n) }), 'sys');
+    if (fight.parts.every((p) => p.hp <= 0)) {
+      if (fight.phase + 1 < fight.phases.length) {
+        fight.phase += 1;
+        fight.parts = fight.phases[fight.phase].map(newPart);
+        logLine(t(cur.wave ? 'ftWave' : 'ftLogPhase', { n: num(fight.phase + 1) }), 'sys');
+      } else if (!fight.over) {
+        fight.over = 'win';
+        endFresh = true;
+        logLine(t('ftLogWin', { name: pick(cur.title), n: num(fight.s.hits) }), 'sys');
+      }
+    }
+    if (!targetOf()) retarget();
+  }
+
+  function act(action) {
+    if (!fight || fight.over) return;
+    snapshot();
+    const before = remaining();
+    const evs = FT.apply(fight.s, kitNow().kit, action, ctxOf());
+    fight.started = true;
+    sync();
+    tell(evs);
+    if (!FT.alive(fight.s) && !fight.over) { fight.over = 'lose'; endFresh = true; }
+    settle(before);
+    hudEvent = action.type === 'foeHit' ? 'hit' : action.type === 'bind' ? 'bind' : '';
+    render();
+  }
+
+  /* ── The duel, drawn (the sibling's scene): what changes is animated by comparing it with the
+     last thing painted: the mask that breaks, the silk that moves, the hit that flashes the enemy
+     and rises as its figure, the bar's pale trail, the dust when it falls. Nothing bounces. */
+  let hudPrev = null, foePrev = null, hudEvent = '', endFresh = false;
+  const MASK = '<img src="assets/hud/mask.png" alt="">';
+  const secsLeft = (until) => Math.max(0, until - fight.s.clock);
+
+  function hornetSide() {
+    const s = fight.s, k = cur.kit;
+    const prev = hudPrev;
+    hudPrev = { masks: s.masks + s.plasm, silk: s.silk };
+    const hit = prev && hudEvent === 'hit' && s.masks + s.plasm < prev.masks;
+    const healed = prev && s.masks + s.plasm > prev.masks;
+    const down = !FT.alive(s);
+    const masks = Array.from({ length: k.masks }, (_, i) => `<img src="assets/hud/mask.png" alt="" class="${i < s.masks ? '' : 'is-off'}${i === 0 && s.fractured ? ' is-fractured' : ''}${prev && i >= s.masks && i < prev.masks - s.plasm ? ' is-broken' : ''}">`).join('')
+      + Array.from({ length: s.plasm }, () => '<img src="assets/hud/mask.png" alt="" class="is-plasm">').join('');
+    const chips = [];
+    const lv = FT.focusLevel(s, k);
+    if (k.hunter.length) chips.push(lv ? t('ftChipFocus', { x: num(C.hunter[lv - 1][1], 1) }) : t('ftChipFocusBuild', { n: num(s.focus), m: num(k.hunter[0]) }));
+    if (s.furyUntil > s.clock) chips.push(t('ftChipFury', { s: num(secsLeft(s.furyUntil), 1), n: num(s.furyHeals) }));
+    if (s.reaperUntil > s.clock) chips.push(t('ftChipTimed', { name: WHAT.reaper(), s: num(secsLeft(s.reaperUntil), 1) }));
+    if (s.brewUntil > s.clock) chips.push(t('ftChipTimed', { name: toolName('flea-brew'), s: num(secsLeft(s.brewUntil), 1) }));
+    if (s.flintUntil > s.clock) chips.push(t('ftChipTimed', { name: toolName('flintslate'), s: num(secsLeft(s.flintUntil), 1) }));
+    if (s.challenge) chips.push(t('ftChipChallenge'));
+    if (k.fractured) chips.push(t(s.fractured ? 'ftChipMask' : 'ftChipMaskBroken', { name: toolName('fractured-mask') }));
+    if (k.bind.reserve) chips.push(t(s.reserve ? 'ftChipReserve' : 'ftChipReserveUsed', { name: toolName('reserve-bind') }));
+    const cls = [down && 'is-down', hit && !down && 'is-hit', healed && !down && 'is-bind', s.binding && 'is-binding'].filter(Boolean).join(' ');
+    const bindWhy = FT.why(s, k, 'bind', ctxOf());
+    return `<div class="ft-fighter ft-hornet ${cls}">
+        <div class="ft-art"><img src="${down ? App.ART.corpse : App.ART.idle}" alt=""></div><h3>Hornet</h3>
+        <span class="ft-masks" role="img" aria-label="${esc(t('ftMasksN', { n: num(s.masks + s.plasm) }))}">${masks}</span>
+        <span class="ft-silk${prev && prev.silk !== s.silk ? ' is-changed' : ''}" role="img" aria-label="${esc(t('invSilk') + ' ' + num(s.silk))}" style="--s:${(s.silk / k.spool * 100).toFixed(1)}%"><span><img class="is-dim" src="assets/hud/spool.png" alt=""><img class="is-lit" src="assets/hud/spool.png" alt=""></span><b>${num(s.silk)}</b></span>
+        ${chips.length ? `<ul class="ft-chips">${chips.map((c) => `<li>${esc(c)}</li>`).join('')}</ul>` : ''}
+        ${s.binding ? `<div class="ft-binding"><span>${esc(t(k.bind.warding ? 'ftBindingBell' : 'ftBinding', { name: toolName('warding-bell') }))}</span>
+          <button type="button" class="text-btn" data-act="ftDone">${esc(t('ftDone'))}</button></div>`
+          : `<button type="button" class="btn ft-bind" data-act="ftBind"${bindWhy ? ` disabled title="${esc(t('ftWhy_' + bindWhy))}"` : ''}>${esc(t(k.bind.crest === 'beast' ? 'ftBindFury' : 'ftBindBtn', { n: num(k.bind.heals), c: num(k.bind.cost) }))}</button>`}
+      </div>`;
+  }
+
+  function foeSide(f, hp) {
+    const x = targetOf() || fight.parts.find((p) => p.hp > 0) || fight.parts[0];
+    const key = [f.id, fight.phase, fight.target].join('|');
+    const prev = foePrev && foePrev.key === key ? foePrev : null;
+    const cur2 = x ? Math.max(0, x.hp) : 0;
+    foePrev = { key, hp: cur2, over: fight.over };
+    const hit = prev && prev.hp > cur2;
+    const dying = fight.over === 'win' && endFresh;
+    const pct = x && x.max ? cur2 / x.max * 100 : 0;
+    const st = x && x.stag, cfg = stunFor(f, x);
+    const downNow = !!(st && st.down);
+    const several = fight.parts.length > 1;
+    const ticks = fight.phases.length === 1 && !several ? cur.marks.map((m) => `<i style="left:${(m.at / hp * 100).toFixed(1)}%"></i>`).join('') : '';
+    let stagger = '';
+    if (cfg && x && x.hp > 0 && fight.over == null) {
+      const live = st && st.lastAt != null && fight.s.clock - st.lastAt <= cfg.window + FT.EPS;
+      stagger = downNow ? t(cfg.secs == null ? 'ftStaggeredWait' : 'ftStaggered', { s: num(secsLeft(st.until), 2) })
+        : t('ftStaggerCount', { n: num(st ? st.total : 0, 2), max: num(cfg.max), c: num(live ? st.combo : 0, 2), k: num(cfg.combo) });
+    }
+    const phaseLbl = fight.phases.length > 1 ? t(cur.wave ? 'ftWaveN' : 'ftPhaseN', { n: num(fight.phase + 1), m: num(fight.phases.length) }) : '';
     const black = !!prefs.ftBlack && f.bt;
-    const masks = Array.from({ length: kit.masks }, (_, i) => `<img src="assets/hud/mask.png" alt=""${i < fs.masks ? '' : ' class="is-off"'}>`).join('');
-    return `<div class="ft-duel">
-        <div class="ft-fighter"><div class="ft-art"><img src="${App.ART.idle}" alt=""></div><h3>Hornet</h3>
-          <span class="ft-masks" role="img" aria-label="${esc(t('ftMasksN', { n: num(fs.masks) }))}">${masks}</span>
-          <span class="ft-silk" role="img" aria-label="${esc(t('invSilk') + ' ' + num(fs.silk))}" style="--s:${(fs.silk / kit.spool * 100).toFixed(1)}%"><span><img class="is-dim" src="assets/hud/spool.png" alt=""><img class="is-lit" src="assets/hud/spool.png" alt=""></span><b>${num(fs.silk)}</b></span>
-          <button type="button" class="btn ft-bind" data-act="ftAct" data-value="bind"${SIM.can(kit, fs, 'bind') ? '' : ' disabled'}>${esc(t('ftBindBtn', { n: num(kit.bind.heals), c: num(kit.bind.cost) }))}</button></div>
-        <div class="ft-mid">
-          <p><b>${toWin == null ? '?' : num(toWin)}</b><span>${esc(t('ftToWin'))}</span></p>
-          ${worst ? `<p class="is-sub"><b>${num(toFall)}</b><span>${esc(t('ftToFall'))}</span></p>` : ''}
-        </div>
-        <div class="ft-fighter${fs.over === 'win' ? ' is-down' : ''}"><div class="ft-art"><img src="${drawing(f)}" alt="" onerror="this.src='${portrait(f)}'"></div><h3${NT}>${esc(pick(f.name))}</h3>
-          <span class="ft-hpbar" style="--h:${hp ? (fs.hp / hp * 100).toFixed(1) : 100}%">${ticks}</span><span class="ft-hpn">${esc(hp == null ? t('ftHpN', { n: '?' }) : t('ftHpLeft', { n: num(fs.hp), m: num(hp) }))}</span>
-          ${f.bt ? `<button type="button" class="check" role="switch" aria-checked="${!!black}" data-act="ftBlack"><span class="check-box" aria-hidden="true">${App.tick}</span><span>${esc(t('ftBlack', { n: num(f.bt) }))}</span></button>` : ''}</div>
+    const cls = [fight.over === 'win' && 'is-down', dying && 'is-dying', hit && 'is-hit', downNow && 'is-staggered'].filter(Boolean).join(' ');
+    const dust = dying ? Array.from({ length: 10 }, (_, i) => `<span class="ft-dust" style="--i:${i}"></span>`).join('') : '';
+    return `<div class="ft-fighter ft-enemy ${cls}"><div class="ft-art"><img src="${drawing(f)}" alt="" onerror="this.src='${portrait(f)}'">
+          ${hit ? `<span class="ft-dmg">−${num(prev.hp - cur2)}</span>` : ''}${dust}</div>
+        <h3${NT}>${esc(pick(f.name))}</h3>
+        ${phaseLbl ? `<span class="ft-phase-n">${esc(phaseLbl)}</span>` : ''}
+        ${several && x && !cur.wave ? `<span class="ft-part-name"${NT}>${esc(pick(x.name))}</span>` : ''}
+        <span class="ft-hpbar${pct <= 25 ? ' is-low' : ''}">${hit ? `<span class="ft-trail" style="width:${Math.min(100, prev.hp / x.max * 100).toFixed(1)}%"></span>` : ''}<span class="ft-fill" style="width:${pct.toFixed(1)}%"></span>${ticks}</span>
+        <span class="ft-hpn">${esc(hp == null ? t('ftHpN', { n: '?' }) : t('ftHpLeft', { n: num(cur2), m: num(x ? x.max : 0) }))}</span>
+        ${stagger ? `<span class="ft-stag${downNow ? ' is-down' : ''}">${esc(stagger)}</span>` : ''}
+        ${f.bt && !cur.wave ? `<button type="button" class="check" role="switch" aria-checked="${!!black}" data-act="ftBlack"><span class="check-box" aria-hidden="true">${App.tick}</span><span>${esc(t('ftBlack', { n: num(f.bt) }))}</span></button>` : ''}</div>`;
+  }
+
+  // Undo and Start over, with their circled arrows.
+  const UNDO_ICON = '<svg class="ic" width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h7a3.5 3.5 0 0 1 0 7H6"/><path d="M6 3L3 6l3 3"/></svg>';
+  const RESET_ICON = '<svg class="ic" width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.5 8a5.5 5.5 0 1 1-1.8-4.1"/><path d="M12.2 1.2v3.2H9"/></svg>';
+  const undoBtn = (band) => `<button type="button" class="text-btn ft-undo" data-act="ftUndo"${undoStack.length ? '' : ' disabled'}${band ? ' tabindex="-1"' : ' aria-keyshortcuts="Control+Z"'} title="${esc(t('ftUndoHint'))}">${UNDO_ICON}${esc(t('ftUndo'))}</button>`;
+
+  // Hits left on both sides: slashes to finish what's standing and what comes, and of its strongest hit you can still take.
+  /* Each bar's slashes, with the slash against that enemy (a gauntlet's differ by modifier); and
+     the strongest hit among who's standing now. */
+  const standingFoes = () => [...new Set(fight.parts.filter((p) => p.hp > 0).map((p) => p.foeId))];
+  function score() {
+    const per = (id) => { const k = cur.kits[id].kit; return k.moves['att:slash'] ? FT.damage(fight.s, k, 'att:slash') : 0; };
+    let win = 0;
+    for (const p of [...fight.parts, ...fight.phases.slice(fight.phase + 1).flat()]) {
+      if (p.hp <= 0) continue;
+      const d = per(p.foeId);
+      if (!d) { win = null; break; }
+      win += Math.ceil(p.hp / d);
+    }
+    const worst = standingFoes().reduce((m, id) => Math.max(m, ...cur.theirs[id].list.map((x) => x.per), 0), 0);
+    return { win: cur.hp == null ? null : win, fall: worst ? Math.ceil(FT.total(fight.s) / worst) : null };
+  }
+  function midHtml() {
+    const sc = score();
+    return `<div class="ft-mid">
+        ${fight.over ? '' : `<p><b>${sc.win == null ? '?' : num(sc.win)}</b><span>${esc(t('ftToWin'))}</span></p>
+        ${sc.fall != null ? `<p class="is-sub"><b>${num(sc.fall)}</b><span>${esc(t('ftToFall'))}</span></p>` : ''}`}
+        <p class="ft-clock"><span>${esc(t('ftClock', { s: num(fight.s.clock, 2) }))}</span></p>
+        <div class="ft-log-tools">${undoBtn()}<button type="button" class="text-btn" data-act="ftReset"${fight.started ? '' : ' disabled'}>${RESET_ICON}${esc(t('ftReset'))}</button></div>
+      </div>`;
+  }
+
+  /* The band: when the duel scrolls out of view, the same face-off in small sticks under the bar
+     (the sibling's), so the lists below can be played with the fight in sight. It repeats what the
+     duel says: hidden from screen readers, its Undo out of the tab order. */
+  function bandHtml(f) {
+    const s = fight.s, x = targetOf() || fight.parts[0], sc = score();
+    const pct = x && x.max ? Math.max(0, x.hp) / x.max * 100 : 0;
+    return `<div class="ft-band" aria-hidden="true"><div class="ft-band-in">
+        <span class="ft-band-me"><span class="ft-masks">${Array.from({ length: cur.kit.masks }, (_, i) => `<img src="assets/hud/mask.png" alt="" class="${i < s.masks ? '' : 'is-off'}">`).join('')}${'<img src="assets/hud/mask.png" alt="" class="is-plasm">'.repeat(s.plasm)}</span><b>${num(s.silk)}</b></span>
+        <span class="ft-band-vs">${sc.win == null || fight.over ? '' : `<b>${num(sc.win)}</b> · `}${esc(t('ftClock', { s: num(s.clock, 1) }))} ${undoBtn(true)}</span>
+        <span class="ft-band-foe"><span${NT}>${esc(pick(x ? x.name : f.name))}</span><span class="ft-hpbar"><span class="ft-fill" style="width:${pct.toFixed(1)}%"></span></span></span>
+      </div></div>`;
+  }
+  let bandOn = false;
+  function bandCheck() {
+    const duel = document.querySelector('.ft-duel'), band = document.querySelector('.ft-band');
+    if (!duel || !band || !duel.offsetParent) { bandOn = false; return; }
+    const nav = document.getElementById('nav');
+    const top = nav ? nav.getBoundingClientRect().bottom : 0;
+    document.documentElement.style.setProperty('--ft-band-top', Math.round(top) + 'px');
+    const r = duel.getBoundingClientRect();
+    bandOn = r.bottom < top + 120;
+    band.classList.toggle('is-on', bandOn);
+  }
+  window.addEventListener('scroll', bandCheck, { passive: true });
+  window.addEventListener('resize', bandCheck);
+
+  /* Your moves, in groups as the game hands them out: the Needle (its slashes, the Strike, the
+     Challenge), silk (the Skill), the Tools, and time (Wait, only when something will happen). A
+     card says its damage, what it costs or has left, and why it can't be done now. The Wanderer's
+     critical is a second button beside the slash: whoever plays decides it, with its chance in view. */
+  const GROUPS = [['needle', 'ftGNeedle'], ['silk', 'ftGSilk'], ['tools', 'ftGTools'], ['time', 'ftGTime']];
+  function movesHtml() {
+    const s = fight.s, k = cur.kit, ctx = ctxOf();
+    const cards = cur.list.map((m) => {
+      const why = fight.over ? 'over' : FT.why(s, k, m.id, ctx);
+      const dmg = k.moves[m.id].dmg != null ? FT.damage(s, k, m.id) : null;
+      const sub = m.ammo != null ? t('ftLeft', { n: num(s.ammo[m.id] ?? 0), m: num(m.ammo) }) : m.cost ? t('ctSilkCost', { n: num(m.cost) }) : m.note || '';
+      const how = [m.each ? hitsText(m.each) : '', m.load != null ? t('ftLoad', { p: num(Math.min(999, m.load * 100)) }) : ''].filter(Boolean).join(' · ');
+      const card = `<button type="button" class="ft-cardx" data-act="ftAct" data-value="${m.id}"${why ? ' disabled' : ''}${how || why ? ` title="${esc(why && why !== 'over' ? t('ftWhy_' + why) : how)}"` : ''}>
+        ${m.img ? `<img class="${m.needle ? 'is-needle' : ''}" src="${m.img}" alt="">` : '<span class="ft-card-glyph" aria-hidden="true">✦</span>'}<span${NT}>${esc(m.name)}</span>${dmg != null ? `<b>${num(dmg)}</b>` : ''}
+        ${m.uses == null ? '' : `<em>${esc(t('ftUses', { n: num(m.uses) }))}</em>`}${sub ? `<small>${esc(sub)}</small>` : ''}${why && why !== 'over' && why !== 'target' ? `<small class="ft-why">${esc(t('ftWhy_' + why))}</small>` : ''}</button>`;
+      const critTable = k.moves[m.id].crit;
+      const crit = critTable ? `<button type="button" class="ft-cardx is-crit" data-act="ftCrit" data-value="${m.id}"${why ? ' disabled' : ''} title="${esc(t('ftCritTitle'))}">
+        <span>${esc(t('ftCrit'))}</span><b>${num(FT.damage(s, k, m.id, true))}</b><em>${esc(t('ftCritHint', { p: num(cur.r.needle.crit.chance * 100, 1) }))}</em></button>` : '';
+      return { group: m.group, html: `<li${crit ? ' class="has-crit"' : ''}>${card}${crit}</li>` };
+    });
+    const tk = FT.nextTick(s, k, ctx);
+    if (tk && !fight.over) {
+      cards.push({ group: 'time', html: `<li><button type="button" class="ft-cardx" data-act="ftWait"><span class="ft-card-glyph" aria-hidden="true">⧖</span>
+        <span>${esc(t('ftWait'))}</span><b>${num(tk.s, 2)} s</b><em>${esc(t('ftWaitFor_' + tk.what))}</em></button></li>` });
+    }
+    return `<section class="ft-side"><h3 class="ct-h">${esc(t('ftYours'))}</h3>${GROUPS.map(([g, key]) => {
+      const cs = cards.filter((c) => c.group === g);
+      return cs.length ? `<div class="ft-group"><h4 class="ft-group-h">${esc(t(key))}</h4><ul class="ft-cards">${cs.map((c) => c.html).join('')}</ul></div>` : '';
+    }).join('')}</section>`;
+  }
+
+  /* Its side: who you're hitting when there are several, and the attacks of each enemy standing (a
+     gauntlet's wave, grouped by enemy), which can't land while it's down. */
+  function theirsHtml() {
+    const parts = fight.parts.length > 1 ? `<div class="ft-targets" role="group" aria-label="${esc(t('ftTarget'))}">${fight.parts.map((p, i) => {
+      const pct = p.max ? Math.max(0, p.hp) / p.max * 100 : 0;
+      return `<button type="button" class="ft-target${i === fight.target ? ' is-on' : ''}" data-act="ftTarget" data-value="${i}" aria-pressed="${i === fight.target}"${p.hp > 0 ? '' : ' disabled'}>
+        <span${NT}>${esc(pick(p.name))}</span><span class="ft-hpbar"><span class="ft-fill" style="width:${pct.toFixed(1)}%"></span></span><b>${num(Math.max(0, p.hp))}</b></button>`;
+    }).join('')}</div>` : '';
+    const ids = cur.wave ? [...new Set(fight.parts.map((p) => p.foeId))] : Object.keys(cur.theirs);
+    let downNote = false;
+    const groups = ids.map((id) => {
+      const th = cur.theirs[id], mine = fight.parts.filter((p) => p.foeId === id && p.hp > 0);
+      const down = mine.length > 0 && mine.every((p) => p.stag && p.stag.down);
+      downNote = downNote || down;
+      const off = !!fight.over || !mine.length || down;
+      const head = ids.length > 1 ? `<h4 class="ft-group-h"${NT}>${esc(foeName(FOE.get(id)))}${mine.length > 1 ? ` ×${num(mine.length)}` : ''}</h4>` : '';
+      return head + `<ul class="ft-hits">${th.list.map((x, i) => `<li><button type="button" class="ft-hit" data-act="ftHit" data-value="${id}:${i}"${off ? ' disabled' : ''}${x.sub ? ` title="${esc(x.sub)}"` : ''}>
+        <span class="ft-hit-name"${th.fromGame ? '' : NT}>${esc(x.name)}</span>
+        <span class="ft-hit-masks" role="img" aria-label="${esc(t('ftMasksN', { n: num(x.per) }))}">${x.per > 6 ? `${MASK}<b>×${num(x.per)}</b>` : MASK.repeat(x.per)}</span>
+        <em>${esc([t(x.bare === 1 ? 'ftToDie1' : 'ftToDie', { n: num(x.bare) }), x.bind && !cur.wave ? t('ftIfBind', { n: num(x.bind) }) : ''].filter(Boolean).join(' · '))}</em></button></li>`).join('')}</ul>`;
+    }).join('');
+    return `<section class="ft-side"><h3 class="ct-h">${esc(t('ftTheirsShort'))}</h3>${parts}${groups}
+      ${downNote ? `<p class="pg-note">${esc(t('ftStaggeredNote'))}</p>` : ''}</section>`;
+  }
+
+  /* The log, newest first, under the moves (the least of the screen): what you did, what it did to
+     you (with a mask), and the fight's own lines between rules. */
+  const logHtml = () => `<div class="ft-log"><ol class="ft-log-lines">${fight.log.map((l, i) => `<li class="is-${l.side}${i ? '' : ' is-last'}">${l.side === 'foe' ? '<img class="ft-log-mask" src="assets/hud/mask.png" alt="">' : ''}<span>${esc(l.text)}</span></li>`).join('')}</ol></div>`;
+
+  /* The end, titled the way the game titles an area on entry, and the fight in figures under it:
+     the time your actions took and the damage per second, the moves, the masks lost, the silk
+     spent, the Binds. It fades in only when the action causes it. */
+  function endHtml() {
+    if (!fight.over) return '';
+    const s = fight.s, won = fight.over === 'win';
+    const items = [
+      s.clock > 0 && [t('ftSumTime'), num(s.clock, 1) + ' s'],
+      s.clock > 0 && [t('ftSumDps'), num(s.dealt / s.clock, 1)],
+      [t('ftSumHits'), num(s.hits)], [t('ftSumTaken'), num(s.taken)], [t('ftSumSilk'), num(s.silkSpent)], [t('ftSumBinds'), num(s.binds)],
+    ].filter(Boolean);
+    return `<div class="ft-end ${won ? 'is-won' : 'is-dead'}${endFresh ? ' is-fresh' : ''}" role="status">
+        <p class="ft-end-title">${esc(t(won ? 'ftWon' : 'ftLogLose'))}</p>
+        <span class="ft-end-rule" aria-hidden="true"><i></i><svg viewBox="0 0 14 12" width="14" height="12"><path d="M7 1L13 6L7 11L1 6Z"/></svg><i></i></span>
+        <p class="ft-end-note">${esc(won ? t('ftLogWin', { name: pick(cur.title), n: num(s.hits) }) : t('ftDeadNote', { n: num(s.dealt), m: num(cur.hp || 0) }))}</p>
+        <dl class="ft-sum">${items.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
+        <button type="button" class="btn btn-primary" data-act="ftReset">${esc(t('ftAgain'))}</button>
       </div>`;
   }
 
@@ -322,46 +689,72 @@
         <button type="button" data-act="ftMode" data-value="foe" aria-pressed="${mode === 'foe'}">${esc(t('ftModeFoe'))}</button>
         <button type="button" data-act="ftMode" data-value="gauntlets" aria-pressed="${mode === 'gauntlets'}">${esc(t('ftModeGauntlets'))}</button></div>`;
     const how = (body) => `<details class="ft-how"><summary class="ct-h">${esc(t('ftHow'))}</summary><div class="ft-how-body">${body}</div></details>`;
+    const st = App.currentBuild();
+    let face, picked, top, how2, plan;
     if (mode === 'gauntlets') {
+      /* A gauntlet, played as one fight: its waves one after another, a bar per enemy, your masks,
+         silk, uses and the clock carried from wave to wave. Each enemy takes its own modifiers, so
+         each gets its own kit. */
       const g = G.find((x) => x.id === prefs.gauntlet) || G[0];
-      const st = App.currentBuild();
       const game = App.game(), done = new Set(game ? game.gauntlets : []);
-      /* The whole arena at once, silk and loads carrying over: its health as your Needle's level
-         sees it (each enemy's health over its modifier at that level), against the plan. The Tools
-         hit at the Kit's level, where the modifiers can differ: an estimate, and it says so. */
+      /* The quickest way through the whole arena: its health as your Needle's level sees it (each
+         enemy's health over its modifier at that level). The Tools hit at the Kit's level, where
+         the modifiers can differ: an estimate, and it says so. */
       const lvl = E.normalize(st).needle;
       const hpAll = Math.ceil(g.waves.reduce((a, w) => a + w.reduce((b, [id, n]) => {
         const f = FOE.get(id) || {};
         return b + (f.hp ? (f.hp / (f.mods ? f.mods[lvl] : 1)) * n : 0);
       }, 0), 0));
-      const whole = E.compute(st, { foe: { id: g.id, hp: hpAll, mods: [1, 1, 1, 1, 1] } });
-      const face = `<img src="${portrait(FOE.get(g.waves[g.waves.length - 1][0][0]))}" alt=""><span class="ft-choose-name"${NT}>${esc(gauntletName(g))}</span>
+      plan = planHtml(E.compute(st, { foe: { id: g.id, hp: hpAll, mods: [1, 1, 1, 1, 1] } }));
+      const ids = [...new Set(g.waves.flat().map(([id]) => id))];
+      const kits = {}, their = {};
+      for (const id of ids) {
+        const f = FOE.get(id), r = E.compute(st, { foe: f });
+        kits[id] = { ...kitOf(f, r, false), r };
+        their[id] = theirs(f, r);
+      }
+      const phases = wavesOf(g);
+      cur = { key: ['g', g.id, SS.codec.encode(E.normalize(st))].join('|'), wave: true, title: g.place || (CO.AREAS[g.area] || { es: g.id, en: g.id }),
+        hp: phases.flat().reduce((a, p) => a + p.hp, 0), kits, theirs: their, phases, marks: [] };
+      face = `<img src="${portrait(FOE.get(g.waves[g.waves.length - 1][0][0]))}" alt=""><span class="ft-choose-name"${NT}>${esc(gauntletName(g))}</span>
           <i class="ft-boss">${done.has(g.id) ? App.tick + ' ' : ''}${esc(t('ftWaves', { n: num(g.waves.length) }))}</i>`;
-      sec.innerHTML = `<div class="ft">${brackets}${screenHead(esc(t('navFight')), modes)}
-        ${choose(t('ftModeGauntlets'), face, gauntletPicker(g, done))}
-        ${gauntletCard(g, game)}${planHtml(whole)}
-        <div class="ct-figs ft-waves">${gauntletWaves(g, st)}</div>
-        ${how(`<p class="pg-note">${esc(t('ftGauntletNote'))}</p>${game ? `<p class="pg-note">${esc(t('ftClearedCount', { n: num(done.size), of: num(G.length) }))}</p>` : ''}`)}</div>`;
-      return;
+      picked = choose(t('ftModeGauntlets'), face, gauntletPicker(g, done));
+      top = gauntletCard(g, game);
+      how2 = `<div class="ct-figs ft-waves">${gauntletWaves(g, st)}</div><p class="pg-note">${esc(t('ftGauntletNote'))}</p>
+        ${game ? `<p class="pg-note">${esc(t('ftClearedCount', { n: num(done.size), of: num(G.length) }))}</p>` : ''}`;
+    } else {
+      const f = FOE.get(prefs.foe) || FOE.get('lace');
+      const black = !!prefs.ftBlack && !!f.bt;
+      const r = E.compute(st, { foe: f, black });
+      const hp = black ? f.bt : f.hp;
+      const th = theirs(f, r);
+      const phases = phasesOf(f, hp, black);
+      // A new enemy, black thread or build starts the fight over.
+      cur = { key: [f.id, black, SS.codec.encode(r.state)].join('|'), f, title: f.name, hp, black, kits: { [f.id]: { ...kitOf(f, r, black), r } },
+        theirs: { [f.id]: th }, phases, marks: phaseMarks(f, r, hp, phases.length === 1 && phases[0].length === 1) };
+      picked = choose(t('ftSearch'), foeFace(f), picker(f));
+      top = '';
+      plan = planHtml(r);
+      how2 = `${about(f, r, hp)}<p class="pg-note">${esc(t('ftYoursNote'))}</p><p class="pg-note">${esc(t('ftPlanNote', { s: num(r.silk.spool) }))}</p>
+        ${th.notes.map((n) => `<p class="pg-note">${esc(n)}</p>`).join('')}`;
     }
-    const f = FOE.get(prefs.foe) || FOE.get('lace');
-    const black = !!prefs.ftBlack && !!f.bt;
-    const r = E.compute(App.currentBuild(), { foe: f, black });
-    const hp = black ? f.bt : f.hp;
-    const th = theirs(f, r);
-    const moves = yours(r), marks = phaseMarks(f, r, hp);
-    const kit = kitOf(f, r, hp, moves, th, marks);
-    // A new enemy, black thread or build starts the fight over.
-    const key = [f.id, black, SS.codec.encode(r.state)].join('|');
-    if (!fight || fight.key !== key) fight = { key, kit, s: SIM.start(kit) };
-    fight.kit = kit;
-    const fs = fight.s;
+    if (!fight || fight.key !== cur.key) startFight(cur);
+    sync();
+    // The enemy on the stage: whoever you're hitting (in a gauntlet, each wave's).
+    const tp = targetOf() || fight.parts.find((p) => p.hp > 0) || fight.parts[0];
+    const shown = FOE.get(tp.foeId);
+    const note = `<p class="pg-note">${esc(t('ftSimNote', { flint: toolName('flintslate'), wisp: toolName('wispfire-lantern'), wanderer: pick(D.CRESTS.find((c) => c.id === 'wanderer').name) }))}</p>`;
     sec.innerHTML = `<div class="ft">${brackets}${screenHead(esc(t('navFight')), modes)}
-      ${choose(t('ftSearch'), foeFace(f), picker(f))}
-      ${duel(f, r, hp, th, kit, fs, marks)}${planHtml(r)}${logHtml(fs, moves, th, f)}
-      <div class="ft-two">${yoursHtml(moves, kit, fs)}${theirsHtml(th, kit, fs)}</div>
-      ${how(`${about(f, r, hp)}<p class="pg-note">${esc(t('ftYoursNote'))}</p><p class="pg-note">${esc(t('ftPlanNote', { s: num(r.silk.spool) }))}</p>
-        ${th.notes.map((n) => `<p class="pg-note">${esc(n)}</p>`).join('')}`)}</div>`;
+      ${picked}${top}
+      ${bandHtml(shown)}
+      <div class="ft-duel">${hornetSide()}${midHtml()}${foeSide(shown, cur.hp)}</div>
+      ${endHtml()}${plan}
+      <div class="ft-two">${movesHtml()}${theirsHtml()}</div>
+      ${logHtml()}
+      ${how(how2 + note)}</div>`;
+    hudEvent = '';
+    endFresh = false;
+    requestAnimationFrame(bandCheck);
   };
 
   /* A boss's page (tools/pages-bosses.js) opens on that boss: <html data-foe>, applied at boot
@@ -379,10 +772,29 @@
     ftBlack() { prefs.ftBlack = !prefs.ftBlack; savePrefs(); render(); },
     ftMode(node) { prefs.ftMode = node.dataset.value; savePrefs(); render(); },
     ftGauntlet(node) { prefs.gauntlet = node.dataset.value; savePrefs(); render(); },
-    // The fight played out: a move, one back, from the start.
-    ftAct(node) { if (fight) { fight.s = SIM.act(fight.kit, fight.s, node.dataset.value); render(); } },
-    ftUndo() { if (fight) { fight.s = SIM.undo(fight.s); render(); } },
-    ftReset() { if (fight) { fight.s = SIM.start(fight.kit); render(); } },
+    // The fight played out: a move, a critical slash, one of its hits, a Bind and its window, Wait.
+    ftAct(node) { act({ type: 'move', id: node.dataset.value }); },
+    ftCrit(node) { act({ type: 'move', id: node.dataset.value, crit: true }); },
+    ftHit(node) {
+      const [id, i] = node.dataset.value.split(':');
+      const x = cur && cur.theirs[id] && cur.theirs[id].list[+i];
+      if (x) act({ type: 'foeHit', masks: x.per, label: x.name });
+    },
+    ftBind() { act({ type: 'bind' }); },
+    ftDone() { act({ type: 'done' }); },
+    ftWait() { act({ type: 'wait' }); },
+    ftTarget(node) { if (fight) { fight.target = +node.dataset.value; render(); } },
+    ftUndo() { if (undo()) render(); },
+    ftReset() { if (cur) { startFight(cur); render(); } },
+  });
+  /* Ctrl+Z (Cmd+Z on a Mac) undoes the last move while Combat is in view, except inside a text
+     field, where it belongs to the text. */
+  document.addEventListener('keydown', (ev) => {
+    if (!(ev.ctrlKey || ev.metaKey) || ev.shiftKey || ev.altKey || ev.key.toLowerCase() !== 'z') return;
+    if (prefs.view !== 'fight' || !undoStack.length) return;
+    if (ev.target.closest && ev.target.closest('input, textarea, select, [contenteditable]')) return;
+    ev.preventDefault();
+    if (undo()) render();
   });
   // The search filters as you type; only the list is repainted, so the field keeps its focus.
   document.addEventListener('input', (e) => {

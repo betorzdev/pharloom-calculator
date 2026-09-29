@@ -208,16 +208,22 @@
   /* What Hornet wears now: playerData.CurrentCrestID ("Hunter_v2": the Hunter at its second
      stage), that Crest's slots in ToolEquips (each { EquippedTool, IsUnlocked }; the Tools and
      the Silk Skill in them) and the Vesticrest's (ExtraToolEquips). Checked on the author's
-     saves, 27-Sep-2026. */
+     saves, 27-Sep-2026. The Crest's slots come in the order js/crest-slots.js lists them (the
+     game's): seats is what each holds (a Tool's or Silk Skill's id, or null) and unlocked
+     whether a Memory Locket opened it (the game keeps it false on the slots that start open).
+     Checked on the author's saves, 29-Sep-2026. */
   function buildOf(pd) {
     const cur = typeof pd.CurrentCrestID === 'string' ? pd.CurrentCrestID : '';
     const m = /^(.*?)(?:_v(\d))?$/.exec(cur);
     const crest = CREST_OF.get(m[1]) || null;
     if (!crest) return null;
     const slots = (list(pd.ToolEquips).find((e) => e.Name === cur) || { Data: {} }).Data.Slots;
-    const worn = [...(Array.isArray(slots) ? slots : []), ...list(pd.ExtraToolEquips).map((e) => e.Data || {})]
-      .map((x) => (x && typeof x.EquippedTool === 'string' ? x.EquippedTool : '')).filter(Boolean);
+    const own = Array.isArray(slots) ? slots : [];
+    const name = (x) => (x && typeof x.EquippedTool === 'string' ? x.EquippedTool : '');
+    const worn = [...own, ...list(pd.ExtraToolEquips).map((e) => e.Data || {})].map(name).filter(Boolean);
     return {
+      seats: own.map((x) => TOOL_OF.get(name(x)) || SKILL_SAVE[name(x)] || null),
+      unlocked: own.map((x) => !!(x && x.IsUnlocked === true)),
       crest, hunterStage: crest === 'hunter' ? Number(m[2]) || 1 : 1,
       tools: [...new Set(worn.map((n) => TOOL_OF.get(n)).filter(Boolean))],
       skill: worn.map((n) => SKILL_SAVE[n]).find(Boolean) || null,
@@ -246,7 +252,7 @@
        mapRead            true: this game's mapFlags were read (a slot kept before they were has
                           none, and js/rooms.js guesses them from its Act)
        bench, area        where Hornet rests (respawnScene) and the area she's in (currentArea)
-       build              what she wears (buildOf): { crest, hunterStage, tools, skill, vest }, or null
+       build              what she wears (buildOf): { crest, hunterStage, tools, skill, vest, seats, unlocked }, or null
      and what js/acts.js reads for the road to the next Act (js/quests.js has the game's rules):
        quests             the save names of the quests complete (QuestCompletionData IsCompleted),
                           sorted: Broodfeast done the Runt's way is "Huntress Quest Runt", which no

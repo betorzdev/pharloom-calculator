@@ -34,7 +34,6 @@
   const BOOK = new Map(J.BOOK.map((e) => [e.id, e]));
   const BOOK_KEY = new Map(J.BOOK.map((e) => [e.key, e]));
   const areaName = (a) => (a && CO.AREAS[a] ? pick(CO.AREAS[a]) : '');
-  const stepsText = (n) => (n === 0 ? t('mapHere') : t(n === 1 ? 'mapSteps1' : 'mapSteps', { n: num(n) }));
   const itemName = (id) => pick(D.ITEMS.find((x) => x.id === id).name);
   const lower = (s) => String(s || '').toLowerCase();
   const pinKey = SS.savefile.pinKey;
@@ -71,7 +70,7 @@
     L('bellshrine', 'places', () => t('mapLayer_bells'), { pin: 'quest_map_icon_grand_gate_final' }),
     L('lock', 'places', () => t('mapLayer_locks'), { glyph: 'lock' }),
     L('shop', 'places', () => t('mapLayer_shops'), { pin: 'pin_shop' }),
-    L('shakra', 'people', () => t('mapLayer_shakra'), { glyph: 'quill' }),
+    L('shakra', 'people', () => t('mapLayer_shakra'), { glyph: 'map' }),
     L('wishwall', 'people', () => t('mapLayer_wishwalls'), { glyph: 'wish' }),
     L('giver', 'people', () => t('mapLayer_givers'), { glyph: 'giver' }),
     L('person', 'people', () => t('mapLayer_people'), { glyph: 'person' }),
@@ -87,7 +86,7 @@
     L('fog', 'game', () => t('mapLayer_fog'), { glyph: 'fog' }),
     L('cocoon', 'game', () => t('mapLayer_cocoon'), { pin: 'shade_pin' }),
     L('journal', 'game', () => t('mapLayer_journal'), { badge: 'journal' }),
-    L('maps', 'game', () => t('mapLayer_maps'), { glyph: 'map' }),
+    L('maps', 'game', () => t('mapLayer_maps'), { glyph: 'unmapped' }),
   ];
   const LAYER = new Map(LAYERS.map((l) => [l.id, l]));
   const GROUPS = ['hundred', 'places', 'people', 'extras', 'game'];
@@ -113,14 +112,15 @@
     gauntlet: svg('<path d="M2.5 2.5l9 9M11.5 2.5l-9 9"/>'),
     boss: svg('<path d="M2.5 11.5V5l2.5 2 2-4 2 4 2.5-2v6.5z"/>'),
     lock: svg('<rect x="3" y="6.5" width="8" height="5.5" rx="1"/><path d="M4.8 6.5V4.8a2.2 2.2 0 014.4 0v1.7"/>'),
-    quill: svg('<path d="M11.5 2.5c-4 .5-6.5 3.5-7.5 8M4 10.5l-1.5 1.5M7 5.5l2 2"/>'),
     wish: svg('<rect x="3" y="2.5" width="8" height="9" rx="1"/><path d="M5 5.5h4M5 8h4"/>'),
     giver: svg('<circle cx="7" cy="4.5" r="2"/><path d="M3 12c.5-2.8 2-4 4-4s3.5 1.2 4 4"/><path d="M11 2v2.5M9.8 3.2h2.4"/>'),
     person: svg('<circle cx="7" cy="4.5" r="2"/><path d="M3 12c.5-2.8 2-4 4-4s3.5 1.2 4 4"/>'),
     home: svg('<path d="M2.5 7L7 3l4.5 4M4 6v5.5h6V6"/>'),
     wall: svg('<path d="M2 3h10v8H2zM2 7h10M5 3v4M9 7v4"/>'),
     fog: svg('<path d="M2 5.5h7M4 8h8M2 10.5h6"/>'),
+    // A folded map: Shakra, who sells them; struck through, an area whose map isn't bought.
     map: svg('<path d="M2 3.5l3.3-1 3.4 1.5 3.3-1v8l-3.3 1-3.4-1.5-3.3 1z"/><path d="M5.3 2.5v8M8.7 4v8"/>'),
+    unmapped: svg('<path d="M2 3.5l3.3-1 3.4 1.5 3.3-1v8l-3.3 1-3.4-1.5-3.3 1z"/><path d="M1.5 12.5l11-11"/>'),
     spawn: svg('<path d="M7 2l1.5 3.2 3.5.4-2.6 2.4.7 3.5L7 9.8 3.9 11.5l.7-3.5L2 5.6l3.5-.4z"/>'),
     journal: svg('<path d="M3 2.5h7a1 1 0 011 1v8H4a1 1 0 01-1-1z"/><path d="M5 5h4"/>'),
   };
@@ -153,7 +153,11 @@
   }
   /* A gauntlet: its champion, the Journal's portrait of its last wave's enemy, on the badge's rim. */
   const champion = (x) => { const w = x && x.waves[x.waves.length - 1]; return w && w[0] ? w[0][0] : null; };
-  const bookOfFoe = (foe) => BOOK.get(foe) || BOOK.get(String(foe).replace(/-(the-cradle|far-fields|chapel-of-the-beast|weavenest-atla|coral-tower)$/, ''));
+  // A boss's entry: its own id, its place-suffixed id's, or the entry the foe counts for (hj: the
+  // Raging Conchfly is the Great Conchfly's).
+  const BOOK_N = new Map(J.BOOK.map((e) => [e.n, e]));
+  const bookOfFoe = (foe) => BOOK.get(foe) || BOOK.get(String(foe).replace(/-(the-cradle|far-fields|chapel-of-the-beast|weavenest-atla|coral-tower)$/, ''))
+    || (FOE.get(foe) && BOOK_N.get(FOE.get(foe).hj));
 
   /* ── What the map holds: every mark of every layer, for a game (null: Free mode with nothing) ──
      { key, layer, scene, act, got, name, sub, draw(style, title, key, cls) } */
@@ -211,7 +215,7 @@
       name: t('mapLock'), sub: t('mapLockKey', { key: pick(SP.KEYS[k]) }), lockKey: k, draw: (s, ti, kk, c) => badge('lock', GLYPH.lock, s, ti, kk, c) }));
     for (const [v, scenes] of Object.entries(SP.VENDORS)) {
       if (v === 'shakra') { scenes.forEach((scene, i) => add({ key: 'shakra:' + i, layer: 'shakra', scene, got: false, name: pick(HW.NPCS.shakra), npc: 'shakra',
-        draw: (s, ti, k, c) => badge('shakra', GLYPH.quill, s, ti, k, c) })); continue; }
+        draw: (s, ti, k, c) => badge('shakra', GLYPH.map, s, ti, k, c) })); continue; }
       scenes.forEach((scene, i) => add({ key: 'shop:' + v + ':' + i, layer: 'shop', scene, got: false, name: pick(HW.NPCS[v]), npc: v,
         draw: (s, ti, k, c) => pin('shop', 'pin_shop', s, ti, k, c) }));
     }
@@ -300,12 +304,16 @@
   function artOf(m) {
     const html = m.draw('', '', '', '');
     const src = /src="([^"]+)"/.exec(html);
+    // The Needle is a long thin line: laid across the disc, it's seen.
+    if (src && /items\/needle\./.test(src[1])) return `<image href="${src[1]}" x="-0.54" y="-0.54" width="1.08" height="1.08" transform="rotate(35)"/>`;
     if (src) return `<image href="${src[1]}" x="-0.46" y="-0.46" width="0.92" height="0.92"/>`;
     const g = /<svg[^>]*>([\s\S]*?)<\/svg>/.exec(html);
-    return g ? `<svg class="mp-glyph" x="-0.3" y="-0.3" width="0.6" height="0.6" viewBox="0 0 14 14">${g[1]}</svg>` : '';
+    // The glyph keeps its stroke (svg()'s attributes): without them its lines fill black.
+    return g ? `<svg class="mp-glyph" x="-0.3" y="-0.3" width="0.6" height="0.6" viewBox="0 0 14 14" fill="none" stroke="currentColor"
+        stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${g[1]}</svg>` : '';
   }
   const pinSvg = (m, p, title, cls) => `<g class="mp-mk is-${m.layer}${cls}${m.off ? ' is-off' : ''}${sel(m.key)}" style="--px:${n2(p.x)}px;--py:${n2(p.y)}px;--ox:${n2(p.ox || 0)}px;--oy:${n2(p.oy || 0)}px"
-        data-mk="${esc(m.key)}" role="button" tabindex="0" aria-label="${esc(title)}"><title>${esc(title)}</title><circle r="0.5"/>${artOf(m)}</g>`;
+        data-mk="${esc(m.key)}" role="button" tabindex="0" aria-label="${esc(title)}"><title>${esc(title)}</title><circle r="0.5"/><circle class="mp-plate" r="0.47"/>${artOf(m)}</g>`;
   /* Things on the same point (within SAME pixels: a room's middle, a shop's stock) are laid out
      around it in a small grid, in pins, so it keeps its shape at any zoom. */
   const SAME = 6;
@@ -398,8 +406,9 @@
     return list.sort((a, b) => a.n - b.n);
   }
   // Each row opens the Map on its thing.
-  const nearRow = (x) => `<li>${x.mark}<button type="button" class="text-btn mp-near-name" data-act="mapShow" data-value="${esc(x.key)}" title="${esc(t('mapOnMap'))}"${NT}>${esc(x.name)}</button>
-        <span class="mp-near-area"${NT}>${esc(areaName(x.area))}</span><b>${esc(stepsText(x.n))}</b></li>`;
+  const nearRow = (x) => `<li>${x.mark}<span class="mp-near-name"${NT}>${esc(x.name)}</span>
+        <span class="mp-near-area"${NT}>${esc(areaName(x.area))}</span>
+        <button type="button" class="pg-onmap" data-act="mapShow" data-value="${esc(x.key)}" aria-label="${esc(t('mapOnMap') + ': ' + x.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button></li>`;
   App.nearList = nearList;
   App.nearRow = nearRow;
 
@@ -482,6 +491,7 @@
       <div class="mp-stage">
         <div class="mp-view">
           <svg class="mp-svg" viewBox="${vb ? `${vb.x} ${vb.y} ${vb.w} ${vb.h}` : `0 0 ${M.W} ${M.H}`}" role="img" aria-label="${esc(t('mapAlt'))}">
+            <defs><radialGradient id="mp-plate"><stop offset="0"/><stop offset="0.6"/><stop offset="1"/></radialGradient></defs>
             <image class="mp-rooms" href="assets/map/rooms${hdOn ? '-hd' : ''}.webp" width="${M.W}" height="${M.H}"/>${layersSvg(flags, hdOn)}
             ${fog}${own ? waySvg(own, shownPins) : ''}<g class="mp-names">${namesSvg}</g><g class="mp-marks">${clusters}${marks}</g>
           </svg>${hornet}<i class="mp-ping" hidden></i>
@@ -598,7 +608,6 @@
     const line = (xs) => xs.filter(Boolean).map((x) => `<span${NT}>${esc(x)}</span>`).join('');
     const state = (x) => `<span class="mp-card-state">${esc(x)}</span>`;
     const btn = (act, value, label) => `<button type="button" class="text-btn" data-act="${act}" data-value="${esc(value)}">${esc(label)}</button>`;
-    const away = (scene) => { const n = own && own.bench && scene ? R.steps(own.bench, scene, own.lit) : null; return n == null ? '' : stepsText(n); };
     let art = '', name = '', where = '', note = '', acts = '';
     if (key.startsWith('area:')) {
       const id = key.slice(5), a = AREA_NAMES().find((x) => x.id === id);
@@ -620,7 +629,7 @@
     art = m.draw('', '', '', '');
     name = m.name;
     const area = m.area || R.areaOf(m.scene);
-    where = line([areaName(area), m.act ? t('saveAct', { n: m.act }) : '', m.sub, away(m.scene)]);
+    where = line([areaName(area), m.act ? t('saveAct', { n: m.act }) : '', m.sub]);
     const kind = key.split(':')[0];
     if (kind === 'piece') {
       const i = Number(key.slice(6));
@@ -632,10 +641,10 @@
       if (g) acts = state(t(m.got ? 'pgGot' : 'invMissing'));
     } else if (kind === 'pin') {
       if (m.off) acts = state(m.sub);
-      where = line([areaName(area), away(m.scene)]);
+      where = line([areaName(area)]);
     } else if (kind === 'gaunt') {
       const x = m.gauntlet, n = x.waves.length;
-      where = line([areaName(x.area), t(n === 1 ? 'ftWaves1' : 'ftWaves', { n: num(n) }), away(m.scene)]);
+      where = line([areaName(x.area), t(n === 1 ? 'ftWaves1' : 'ftWaves', { n: num(n) })]);
       note = x.reward ? t('ftReward') + ': ' + pick(x.reward) : '';
       acts = btn('mapFight', x.id, t('mapFight'));
     } else if (kind === 'boss') {
@@ -660,7 +669,7 @@
       note = open.length ? t(g ? 'mapWishesLeft' : 'mapWishes', { list: listOf(open) }) : t('mapWishesNone');
     } else if (kind === 'lock') {
       note = m.sub;
-      where = line([areaName(area), away(m.scene)]);
+      where = line([areaName(area)]);
     } else if (kind === 'extra') {
       if (g) acts = state(t(m.got ? 'pgGot' : 'invMissing'));
     } else if (kind === 'journal') {

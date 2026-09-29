@@ -58,7 +58,7 @@ Tower in the Sands of Karak), the Act and the time played; Hornet sitting on tha
 from the game's files; one it doesn't know shows Bone Bottom's); and four
 figures: **your 100%**, the Journal, the masks and the rosaries. Under it, the road to the next
 Act when there is one, then three columns: what changed since the previous save (below), what's
-missing **closest to your bench** (the first five, in rooms: each door and each ride between the stations you've opened counts one), and your 100% split into
+missing **closest to your bench** (the first five, by the game's doors and the stations you've opened, each with its area and a pin that shows it on the Map), and your 100% split into
 the wiki's ten categories (Tools, Silk Spools, the Crafting Kit and Tool Pouch, abilities, Silk Skills, Crests,
 masks, the Needle, Silk Hearts, the Everbloom), with the figure the game itself shows under it:
 they're the same. The site counts as the game does, checked on 92 real saves (0% to 100%, four
@@ -111,8 +111,10 @@ the hit after a Challenge.
 
 Below, the Crest drawn as the game draws it, with its slots where the game puts them (read from
 its files, per Crest and per evolution of the Hunter), each the game's frame in its colour and
-holding the Tool or Silk Skill worn; a slot a Memory Locket opens, left empty, shows the game's
-locked frame, and the Vesticrest's slots sit in the corner of the Crest's box. ‹ › change the Crest. Beside it,
+holding the Tool or Silk Skill worn (from a save, in the slot the game has it in); a slot no
+Memory Locket has opened yet shows the game's grey locked frame (from a save, as the save says;
+in Free mode every slot is open), and the Vesticrest's slots sit on a row under the Crest. In Free mode a
+tap on a worn one there takes it off, and the others stay in their slots. ‹ › change the Crest. Beside it,
 the Tools and Silk Skills you have (as the game lists them; in Free mode, what the Inventory's
 marks say, or all of them), by colour, each on its slot as the Inventory draws it, the
 slot filled and lit when it's worn: a tap puts one on or takes it off,
@@ -148,7 +150,7 @@ with a build opens it in Free mode; if you were in a save, the page goes to Free
 
 The Hunter's Journal. On top, the count for Nuu's Hunter's Memento as a ring (230 required, 231
 in Steel Soul; the bright arc is what's complete, the dim one what you've seen), and beside it the
-four entries you're missing closest to your bench, with how many rooms away and how many kills to
+four entries you're missing closest to your bench, with how many kills to
 go. Under it, the 236 portraits (237 in Steel Soul) **by area**, the areas with the most missing
 first and each with its count (6/20), or **in the Journal's order**; entries with no place go last,
 under "Elsewhere". Two small toggles switch that and "What's missing / Everything", and a search
@@ -172,9 +174,9 @@ play, the rooms of what makes them: a boss's arena, the waters where the Muckmag
 Sandcarver's pit, the cocoons and corpses that let Gloomsacs, Winged Lifeseeds and Shellwood Gnats
 out, the Void Mass's cores, and for Shakra and Garmond & Zaza the room of their duel. Lost Lace's
 arena and the Bell Eater's aren't on the map, so they count as the rooms that take you there: the
-Abyss's dive, and every Bellway station. In a save, also the nearest one from your bench, in rooms,
+Abyss's dive, and every Bellway station. In a save, also the nearest one from your bench,
 and with no entry picked the pane lists what's missing closest, with the kills each still needs;
-tap one to read it. The rooms are counted by the game's doors and the stations you've opened.
+tap one to read it. Nearness goes by the game's doors and the stations you've opened.
 Verdania, the Cradle, the Mist and the caravan's insides are reached some other way (a memory, a
 lift, the maze), so their entries say where, not how far.
 
@@ -188,13 +190,40 @@ cards (the one that needs fewest framed; pointing at one shows how its damage is
 attacks with their masks drawn. The enemy is picked in a dropdown over the duel (search in either
 language, accents optional; bosses first). Everything else is folded under «How it's worked out».
 
-The fight can be played out, as on the Hollow Knight site: tap one of your attacks and its damage
-comes off the enemy's bar; tap one of its attacks and its masks come off yours. Silk counts as
-the game counts it for the quickest way: the spool starts full, a slash that lands adds one, your
-Silk Skill spends its cost, and the Bind button spends its silk and heals. Each Tool has its uses
-at your Pouch's level. A move that can't be made (no silk, no uses, the fight over) is greyed
-out. The log under the duel says what each move did, when a phase starts and who falls; Undo
-steps back one move and Start over begins again. A different enemy or build starts it over.
+The fight can be played out, as on the Hollow Knight site's arena: tap one of your moves and its
+damage comes off the enemy's bar; tap one of its attacks and its masks come off yours. Your moves
+come in groups: the Needle (the slash, the Crest's down- and run-slashes, the Needle Strike, the
+Challenge, which arms the next slash with +50% if there's a strand to swirl), silk (your Skill),
+the Tools (their uses at your Pouch's level; Flea Brew, Flintslate and the Plasmium Phial work for
+their seconds or add a mask) and Wait, which only shows when something will happen and jumps to
+it. With the Wanderer, a Critical button beside the slash: you decide when it comes.
+
+A clock counts what your moves take: a slash at your Crest's pace (faster under Flea Brew), the
+Needle Strike its charge, a Bind its time; Skills, Tools and the Challenge count 0 s. On it run
+Silk Hearts' silk, the Wispfire Lantern's wisps and what wears off. The Bind opens a window until
+your next move (or «Done»): a hit inside it loses the heal and every strand on the spool, as in
+the game; the Warding Bell stops that hit and strikes, but the heal is still lost. The Claw
+Mirror strikes when a Bind ends; the Reserve Bind pays one; the Beast's Bind is fury (a mask back
+per slash) and the Reaper's makes your slashes drop silk. The Hunter's focus builds with 6 slashes
+(and 6 more evolved) and goes when you're hit. A hit takes the Plasmium masks first; the Fractured
+Mask leaves you one mask once; Druid's Eye gives silk; the Memory Crystal strikes back.
+
+Bosses stagger as the game's own files say: each hit adds its stun (a slash 1, the Wanderer's 0.8,
+a Tool's often less), and it goes down at the hit after its maximum or after a combo of hits each
+under a second apart; down for its seconds (usually 2), each hit shortening it, and its attacks
+can't be played meanwhile. Its bar counts towards both. A boss of two (the Forebrothers) shows
+both bars and you pick who you hit; when one falls the other may heal. Father of the Flame is four
+lanterns, then its core; the Dancers and Grand Mother Silk a bar per phase. The log, under your moves and
+its attacks, tells the fight in three voices (you, it, the fight); Undo (or Ctrl+Z) steps back, Start over begins again, and
+the end is titled with the fight in figures (time, damage per second, moves, masks lost, silk
+spent, Binds). When the duel scrolls away, a band keeps it in sight under the bar. A different
+enemy or build starts it over.
+
+The enemy gauntlets are played the same way, as one fight: each wave comes after the last, each
+enemy of it a bar (you pick who you hit; each takes your damage with its own modifiers) and its
+attacks grouped by enemy, while your masks, silk, Tool uses and the clock carry from wave to wave.
+Above the duel, the arena's name, area, health and reward (and, with a save, whether you've cleared
+it); its waves one by one fold under «How it's worked out».
 
 Every enemy has five damage modifiers, one per level of what
 hits it (Moorwing takes ×2 from a level-0 weapon and ×0.85 from a level-4 one), so how many hits
@@ -296,7 +325,10 @@ own mark is its switch, dimmed when off, with its count:
   the areas whose map you haven't bought, their names struck through.
 
 Each mark is the thing's own picture on a dark disc with a thin rim, as the Hollow Knight site
-draws them, about the same size at any zoom, a little bigger close up. It sits where the game
+draws them, over a pale plate so a dark portrait reads, about the same size at any zoom, a little
+bigger close up. What has no picture of its own takes a drawn sign: a folded map for Shakra, a
+padlock, a notice board for a Wishwall, a figure for a person (with a plus for who asks for a
+wish), a house for the Bellhome's furnishings, bricks for a breakable wall. It sits where the game
 has the thing in its room: the pickup lying there, the NPC, the shrine, the cache (the object's
 place in its scene, put on the room's drawing as the game places Hornet on its map; checked
 against the benches, which fall by the game's own bench pins). What has no place of its own (a
@@ -305,7 +337,7 @@ grid around it. The map is drawn in SVG, so it stays sharp as you zoom.
 
 With a save the map shows only what you're missing; in Free mode, everything, as a guide (with
 things marked in the Inventory, what those marks say is missing). Tap any mark for its card: what
-it is, where, how many rooms from your bench, how it's had, and what it says of your game. A
+it is, where, how it's had, and what it says of your game. A
 shop's says what of the 100% it still has for you, Shakra's which maps you lack, a Wishwall's or a
 wish giver's the wishes still open, a boss's whether it's beaten, with «Fight it in Combat» and
 «See in the Journal»; a gauntlet's its waves and reward; a Journal entry's its kills. In Free mode
@@ -345,8 +377,7 @@ opens its list; the rows you open stay open. «What's missing · Everything» an
 Nearest first» sit just above the rows.
 
 Opened, a category lists its things by Act: each with its picture, its name (a Tool with its
-slot's colour) and how to get it, how many rooms away it is from your bench and its area on the
-right, and a pin that shows it on the Map.
+slot's colour) and how to get it, its area on the right, and a pin that shows it on the Map.
 
 In **Free mode** with things marked in the Inventory, Progress counts from those marks and
 each missing row has a box to mark it here too; masks, silk, the Silk Hearts, the Needle, the
@@ -371,7 +402,7 @@ numbered steps, each with its count or a tick:
   4. Bring them to the Caretaker.
   5. Snare Grand Mother Silk with the Needolin.
 
-Each missing wish shows its Act, its area, the rooms from your bench to where it's taken, and the
+Each missing wish shows its Act, its area, and the
 wish to do before it when there is one. Where it's taken is the game's: the Wishwall that lists it
 (Bellhart's, Bone Bottom's or Songclave's), or the NPC who offers it; a wish that comes after
 another on a board (Crawbug Clearing, Berry Picking…) counts the board until that one is done, and

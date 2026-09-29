@@ -126,6 +126,8 @@
   --scene-cold: rgba(94, 84, 74, 0.3);
   --scene-cold-off: rgba(94, 84, 74, 0.1);
   --map-fog: rgba(1, 1, 1, 0.62);              /* the Map's veil over the rooms not visited */
+  --map-plate: rgba(236, 236, 236, 0.46);      /* the plate behind a mark's picture: --halo-plate's */
+  --map-plate-mid: rgba(236, 236, 236, 0.16);
   /* Each area's light (design/02-silksong.md §4, measured on the wiki's area maps): the fill and
      the line the game's map screen draws it in, by the save's area ids (js/collectibles.js
      AREAS). Your game's bench card is lit by its area (js/app-home.js); an area not measured

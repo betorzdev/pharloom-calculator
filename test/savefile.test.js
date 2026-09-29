@@ -134,3 +134,15 @@ test('the endings seen: CompletedEndings, a bit each (the game\'s CompletionStat
   assert.deepEqual(F.game({ ...BASE, CompletedEndings: 15 }).endings.length, 4);
   assert.deepEqual(F.gameOf(F.toSnapshot({ ...BASE, CompletedEndings: 8 })).endings, ['sister-of-the-void']);
 });
+
+test('the build worn: each Crest slot\'s Tool or Silk Skill, in the game\'s order, and whether a Locket opened it', () => {
+  // As the author's save carries it (29-Sep-2026): the Hunter's three locked slots opened.
+  const slot = (tool, open) => ({ EquippedTool: tool, IsUnlocked: open });
+  const pd = { ...BASE, CurrentCrestID: 'Hunter', ToolEquips: { savedData: [{ Name: 'Hunter', Data: { Slots: [
+    slot('', false), slot('', false), slot('Compass', false), slot('Silk Spear', false), slot('', true), slot('Tri Pin', true), slot('', false)] } }] } };
+  const b = F.game(pd, null).build;
+  assert.deepEqual(b.seats, [null, null, 'compass', 'silkspear', null, 'threefold-pin', null]);
+  assert.deepEqual(b.unlocked, [false, false, false, false, true, true, false]);
+  assert.deepEqual(b.tools, ['compass', 'threefold-pin']);
+  assert.equal(b.skill, 'silkspear');
+});

@@ -266,6 +266,8 @@
   const chevron = (up) => `<svg class="ic chev ${up ? 'up' : ''}" width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1.5 L6 6 L11 1.5"/></svg>`;
   const lens = '<svg class="ic" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="5" r="3.6"/><path d="M7.8 7.8 L10.8 10.8"/></svg>';
   const tick = '<svg class="ic" width="12" height="10" viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 5.2 L4.6 8.2 L10.5 1.8"/></svg>';
+  // A map pin: a thing's way onto the Map, from any screen (App.mapShow).
+  const pin = '<svg class="ic" width="12" height="16" viewBox="0 0 12 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 15 C6 15 11 9 11 6 A5 5 0 0 0 1 6 C1 9 6 15 6 15 Z"/><circle cx="6" cy="6" r="1.8"/></svg>';
   const cross = '<svg class="ic" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2 2 L10 10 M10 2 L2 10"/></svg>';
   /* The pointers of the game's menus, either side of the item you're on (drawn: the wiki doesn't
      have the sprite). The slots' buttons on Saves and the header's save selector carry them. */
@@ -444,5 +446,5 @@
 
   Object.assign(App, { t, pick, KEY, PAGE_LANG, PAGE_VIEW, $, el, hoverable, VIEWS, TOOLS, NT, esc, load, save, rebuildNF, pctSpace,
     prefs, loadPrefs, savePrefs, splitHash, hashFor, here, persist, navNow, applyNav, writeUrl, navTo, track,
-    brackets, chevron, lens, tick, cross, rule, FLEURS, ART, emptyHtml, screenHead, screenOf, VIEW_KEY, render, go, toast, actions, restoreFocus, focusDescriptor });
+    brackets, chevron, lens, tick, cross, pin, rule, FLEURS, ART, emptyHtml, screenHead, screenOf, VIEW_KEY, render, go, toast, actions, restoreFocus, focusDescriptor });
 })();

@@ -827,6 +827,26 @@ the Bind's cost and heal), each Tool's uses, the phase thresholds; the cards, it
 button act (`ftAct`), greyed when they can't; a four-line log under the duel with Undo and Start
 over. No clock and no stagger, unlike the sibling's arena. Gauntlets aren't played.
 
+Then (29 September; Albert: «the fights work much better on the sibling: bring the whole engine,
+minding the differences»; decided in plan mode: the engine and the arena, every Silksong mechanic
+family, the stagger read from the game), **the sibling's arena, made Silksong's**. `js/sim.js`
+gave way to `js/fight.js`, the sibling's reducer (`apply(f, kit, action, ctx)` → events) with a
+clock, and the screen to its arena: HUD animations, the hit's figure and trail, dust, a phase
+announced, several bars with a target, an undo stack with Ctrl+Z, a nine-line log in three voices,
+the end titled with the fight in figures, the sticky band. What changes from Hollow Knight: Focus
+is the Bind (a hit in its window loses the heal and the spool; the Warding Bell), the charms are
+Tools and Crests (the Hunter's focus, the Beast's fury, the Reaper's silk, Flea Brew, Flintslate,
+the Plasmium Phial, the Fractured Mask, Druid's Eye, the Memory Crystal, the Claw Mirror, the
+Wispfire Lantern, Silk Hearts), the combat numbers from the game's files (`js/hero.js` COMBAT), and
+the stagger from each boss's Stun Control FSM (`tools/extract-stagger.py` → `js/stagger.js`: a
+maximum, a combo within 1 s, 2 s down less 0.25 s a hit, each of Hornet's hits its own stun), not
+the wiki's "75 damage, no combos".
+
+Then (Albert: «enemy gauntlets should change, shouldn't they?»; decided in plan mode: played as one
+fight), **the gauntlets played**: a wave a phase, an enemy a bar (up to 11, the target list), a kit
+per enemy (its own modifiers), its attacks grouped by enemy; masks, silk, uses and the clock carry
+over. The waves' list folds under «How it's worked out».
+
 ## Step 10 · The static pages
 
 ### What there is (28 September 2026)

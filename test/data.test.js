@@ -421,3 +421,32 @@ test('each Crest\'s slots from the game match js/data.js, and each has its art',
     });
   }
 });
+
+test('how bosses stagger, from the game: the wiki\'s hit count is the maximum plus one', () => {
+  const S = require('../js/stagger.js');
+  const FOE = new Map(E.FOES.map((f) => [f.id, f]));
+  const cfgs = (id) => { const b = S.BOSSES[id]; return !b ? [] : b.parts ? Object.values(b.parts) : [b]; };
+  assert.ok(Object.keys(S.BOSSES).length >= 30);
+  for (const [id, b] of Object.entries(S.BOSSES)) {
+    assert.ok(FOE.has(id) && FOE.get(id).boss, id + ' is a boss of js/enemies.js');
+    for (const c of cfgs(id)) {
+      assert.ok(c.max > 0 && c.combo > 0 && c.window > 0, id);
+      assert.ok(c.secs == null || (c.secs > 0 && c.shave > 0), id);
+    }
+  }
+  // Against the wiki's {{Stagger}}, by page: each fight of it, in order (Lace's two), or each part.
+  const differ = [];
+  for (const [page, a] of Object.entries(E.ATTACKS)) {
+    if (!a.staggers.length) continue;
+    const ids = E.FOES.filter((f) => f.page === page && f.boss && S.BOSSES[f.id]).map((f) => f.id);
+    const game = ids.flatMap(cfgs).map((c) => c.max + 1);
+    if (!game.length) continue;
+    const pairs = a.staggers.map((w, i) => [w, game[Math.min(i, game.length - 1)]]);
+    if (pairs.some(([w, g]) => w !== g)) differ.push(page);
+  }
+  assert.deepEqual(differ, ['grand-mother-silk'], 'only Grand Mother Silk differs (the wiki 19, the game 18)');
+  // Hornet's side: a slash counts 1 but for the Crests that split it.
+  assert.equal(S.HORNET.slash.hunter, 1);
+  assert.equal(S.HORNET.slash.wanderer, 0.8);
+  assert.equal(S.HORNET.challenge, 0.5);
+});

@@ -927,6 +927,22 @@ bosses never black-threaded. Still open: IntCompare's strict "<" (the Bell Eater
 
 **Phase 5's phases are exact now.**
 
+**The fight played out as the sibling's arena** (29 September). `js/fight.js` replaces
+`js/sim.js`: the Hollow Knight site's reducer with a clock, made Silksong's (design/03-redesign.md,
+step 9). Read from the game's files for it:
+- **Stagger** (`tools/extract-stagger.py` → `js/stagger.js`, 31 bosses): each boss's Stun Control
+  FSM staggers at the hit after its hits' stun reaches Stun Hit Max, or when a combo (hits each
+  within Combo Time, 1 s) reaches Stun Combo; its Control FSM keeps it down for Stun Timer (2 s;
+  Phantom 1.5) less a fixed amount per hit taken (0.25 s; the Moss Mother and the Savage Beastfly
+  0.1); hits while down count towards the next. The wiki's {{Stagger}} is Stun Hit Max + 1 for
+  every boss but Grand Mother Silk (the wiki 19, the game 18); its "75 damage, no combos" isn't
+  what the files do. Groal has no timer. Hornet's side, each attack's `stunDamage`: a slash 1
+  (the Wanderer's 0.8, the Architect's a third a drill, the Cloakless kick 0.5), the Needle Strike
+  per Crest, the Challenge 0.5, four Skills and ten Tools; the rest count 1.
+- **The Crests in a fight** (`js/hero.js` COMBAT): the Needle Strike's charge (1.35 s, 0.8 with the
+  Pin Badge), the Hunter's focus (6 hits ×1.3, 6 more ×1.5 evolved), the Beast's fury (5 s, cut to
+  2.5 by a hit), the Reaper's mode (10 s).
+
 **Silk Hearts in the Binds** (28 September), from the game's code (HeroController and the Hero
 prefab, read into `js/hero.js` REGEN by `tools/extract-hero.py`). A strand comes after 0.65 + 0.8 =
 1.45 s from an empty spool and 2.0 + 1.9 = 3.9 s otherwise, so the Silk page is right and the Silk

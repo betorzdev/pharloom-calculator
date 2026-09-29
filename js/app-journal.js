@@ -61,7 +61,6 @@
     }
     return best;
   }
-  const stepsText = (n) => (n === 0 ? t('mapHere') : t('mapSteps', { n: num(n) }));
 
   // Each entry's state in a game: 'done', 'seen' (listed, kills short) or 'unseen'.
   function states() {
@@ -113,7 +112,7 @@
     const where = whereOf(e);
     const near = state !== 'done' ? nearest(e, App.game()) : null;
     return (where.length ? `<p class="hj-area">${esc(where.slice(0, 4).join(' · '))}</p>` : '')
-      + (near ? `<p class="hj-where">${esc(t('hjNearest'))}: ${esc(near.place)}, ${esc(stepsText(near.n))}</p>` : '');
+      + (near ? `<p class="hj-where">${esc(t('hjNearest'))}: ${esc(near.place)}</p>` : '');
   }
   // The hunts: what's missing closest to your bench, by rooms, as cards.
   function hunts(list, g) {
@@ -122,8 +121,8 @@
       .filter((r) => r.near).sort((a, b) => a.near.n - b.near.n).slice(0, HUNTS);
     if (!rows.length) return '';
     return `<section class="hj-hunts" aria-labelledby="hj-hunts-h"><h3 class="ct-h" id="hj-hunts-h">${esc(t('hjNear'))}</h3>
-      <ol class="hj-hunt-row">${rows.map(({ x, near }) => `<li><button type="button" class="hj-hunt${picked === x.e.id ? ' is-picked' : ''}" data-act="hjPick" data-key="${x.e.id}" title="${esc(t('mapNearNote'))}"${NT}>
-        ${ring(x)}<b>${esc(pick(x.e.name))}</b><em>${esc(stepsText(near.n))}</em>
+      <ol class="hj-hunt-row">${rows.map(({ x }) => `<li><button type="button" class="hj-hunt${picked === x.e.id ? ' is-picked' : ''}" data-act="hjPick" data-key="${x.e.id}"${NT}>
+        ${ring(x)}<b>${esc(pick(x.e.name))}</b>
         <span class="hj-hunt-left">${esc(t('hjLeft', { n: num(Math.max(0, x.e.kills - x.kills)) }))}</span></button></li>`).join('')}</ol></section>`;
   }
 

@@ -73,37 +73,55 @@
 
   /* ── The Crest and its slots, as the game's pane draws them (js/crest-slots.js) ──
      Each colour's Tools go into its slots in the game's order, the open ones first and then those
-     a Memory Locket opens; a locked slot left empty shows the game's locked frame. The
-     Vesticrest's slots float beside the Crest, as the game's "Floating Slots". */
+     a Memory Locket opens; a slot no Locket has opened yet shows the game's locked frame (in a
+     save, as the save says, slot by slot; in Free mode every Locket is used). The
+     Vesticrest's slots float under the Crest, clear of its art, as the game's "Floating Slots". In Free mode a
+     Tool in a slot is taken off with a tap, and each slot keeps what it holds (seats, per Crest,
+     while the page is open): taking one off leaves the others where they were, as in the game. */
   const TYPE = ['red', 'blue', 'yellow', 'skill'];
   const slotName = (kind, id) => pick((kind === 'skill' ? D.SKILLS.find((x) => x.id === id) : TOOL.get(id)).name);
-  function slot(kind, frame, id, x, y) {
+  const seats = {};
+  function slot(kind, frame, id, x, y, locked) {
     const style = ` style="--g:url(${SS.crestFrames[frame === 'locked' ? 'locked' : kind]})${x == null ? '' : `;--x:${x};--y:${y}`}"`;
     if (!id) return `<span class="ct-slot is-${kind}${frame === 'locked' ? ' is-locked' : ''}"${style} aria-hidden="true"></span>`;
     const name = slotName(kind, id);
-    return `<button type="button" class="ct-slot is-${kind} is-full" data-act="ctDescribe" data-kind="${kind === 'skill' ? 'skill' : 'tool'}" data-value="${id}"${style}
+    const act = locked ? 'ctDescribe' : kind === 'skill' ? 'ctSkill' : 'ctTool';
+    return `<button type="button" class="ct-slot is-${kind} is-full" data-act="${act}" data-kind="${kind === 'skill' ? 'skill' : 'tool'}" data-value="${id}"${style}
         title="${esc(name)}" aria-label="${esc(name)}"${NT}><img src="${icon(kind === 'skill' ? 'skills' : 'tools', id)}" alt=""></button>`;
   }
   function crestHtml(st, r, locked, have) {
     const crest = D.CRESTS.find((c) => c.id === st.crest);
     const art = st.crest === 'hunter' ? `hunter-${st.hunterStage}` : st.crest;
     const pos = st.crest === 'hunter' ? SS.crestSlots.hunter[st.hunterStage - 1] : SS.crestSlots[st.crest];
-    const [w, h] = SS.crestArt[art];
-    const worn = Object.fromEntries(COLORS.map((c) => [c, st.tools.filter((id) => TOOL.get(id).color === c)]));
-    worn.skill = st.skill ? [st.skill] : [];
-    const order = pos.map((p, i) => ({ p, i })).sort((a, b) => a.p[2] - b.p[2] || a.p[3] - b.p[3] || a.i - b.i);
-    const used = { red: 0, blue: 0, yellow: 0, skill: 0 };
-    const placed = order.map(({ p }) => {
-      const kind = TYPE[p[2]], id = worn[kind][used[kind]++];
-      return slot(kind, p[3] && !id ? 'locked' : kind, id, p[0], p[1]);
-    }).join('');
+    const [w, h, ax, ay] = SS.crestArt[art];
+    // Every slot, the Crest's and then the Vesticrest's, in the order the game fills them.
+    const spots = [...pos.map((p, i) => ({ kind: TYPE[p[2]], lock: p[3], x: p[0], y: p[1], i }))
+      .sort((a, b) => TYPE.indexOf(a.kind) - TYPE.indexOf(b.kind) || a.lock - b.lock || a.i - b.i),
+    ...COLORS.flatMap((c) => Array.from({ length: r.slots[c].extra }, () => ({ kind: c, lock: 0 })))];
+    const kindOf = (id) => (id === st.skill ? 'skill' : TOOL.get(id).color);
+    const wear = [...st.tools, ...(st.skill ? [st.skill] : [])];
+    // Each worn one stays in the slot it had (a save's, where the game has it; Free mode's, where it
+    // was put); the rest take the first free one of their colour.
+    const key = st.crest === 'hunter' ? `hunter-${st.hunterStage}` : st.crest;
+    const b = (locked && have && have.build) || {};
+    const read = Array.isArray(b.seats) && b.seats.length === pos.length;
+    const before = locked ? spots.map((s) => (read && s.i != null ? b.seats[s.i] : null)) : seats[key] || [];
+    const opened = (s) => !locked || (read && Array.isArray(b.unlocked) && b.unlocked[s.i] === true);
+    const held = spots.map((s, i) => (wear.includes(before[i]) && kindOf(before[i]) === s.kind ? before[i] : null));
+    for (const id of wear.filter((x) => !held.includes(x))) {
+      const i = spots.findIndex((s, j) => !held[j] && s.kind === kindOf(id));
+      if (i >= 0) held[i] = id;
+    }
+    if (!locked) seats[key] = held;
+    const html = (s, i) => slot(s.kind, s.lock && !held[i] && !opened(s) ? 'locked' : s.kind, held[i], s.x, s.y, locked);
+    const placed = spots.map((s, i) => (s.x == null ? '' : html(s, i))).join('');
     // What doesn't fit the Crest goes on the Vesticrest's slots.
-    const float = COLORS.filter((c) => r.slots[c].extra).map((c) => Array.from({ length: r.slots[c].extra }, () => slot(c, c, worn[c][used[c]++])).join('')).join('');
+    const float = spots.map((s, i) => (s.x == null ? html(s, i) : '')).join('');
     // ‹ › change the Crest (Free mode), past the ones the Inventory's marks say you don't have.
     const had = D.CRESTS.filter((c) => c.id === 'hunter' || !have || have.crests.includes(c.id));
     const step = (d) => { const i = had.findIndex((c) => c.id === st.crest); return had[(i + d + had.length) % had.length].id; };
     const arrow = (d, label) => (locked || had.length < 2 ? '' : `<button type="button" class="icon-btn ct-arrow" data-act="ctCrest" data-value="${step(d)}" aria-label="${esc(label)}" title="${esc(label)}">${d < 0 ? '‹' : '›'}</button>`);
-    return `<div class="ct-crest" style="--w:${w};--h:${h}">
+    return `<div class="ct-crest" style="--w:${w};--h:${h};--ax:${ax};--ay:${ay}">
         <div class="ct-crest-art"><img src="assets/crests/${art}.webp" alt="">${placed}</div>
         ${float ? `<div class="ct-float">${float}</div>` : ''}
       </div>

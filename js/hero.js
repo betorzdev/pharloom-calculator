@@ -6,7 +6,9 @@
    max(cooldown, duration) after the one before (js/engine.js). QUICKENING: how long Flea
    Brew's lasts. REGEN: Silk Hearts' regeneration, a strand after delay + duration seconds
    (first*: from an empty spool) while the silk is below the cap and doesn't change;
-   weavelight: its time multiplier and what it adds to the cap. */
+   weavelight: its time multiplier and what it adds to the cap. COMBAT: what a fight runs on
+   (js/fight.js): the Needle Strike's charge, the Hunter's focus as [needle hits, ×damage],
+   the Beast's fury and the Reaper's mode in seconds. */
 (() => {
   'use strict';
   const SS = globalThis.SS || (globalThis.SS = {});
@@ -83,6 +85,27 @@
         "time": 0.65,
         "cap": 1
       }
+    },
+    "COMBAT": {
+      "charge": 1.35,
+      "chargeQuick": 0.8,
+      "invul": 1.0,
+      "hunter": [
+        [
+          6,
+          1.3
+        ],
+        [
+          12,
+          1.5
+        ]
+      ],
+      "fury": {
+        "secs": 5.0,
+        "hurt": 2.5,
+        "mult": 1.25
+      },
+      "reaper": 10.0
     }
   };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.hero;

@@ -1089,8 +1089,9 @@ kbd {
 .hm-cols:has(> :only-child) { max-width: var(--column); margin-inline: auto; }
 .hm-col > .text-btn { justify-self: start; font-size: var(--fs-sm); }
 .hm-col .mp-near-list { margin: 0; gap: var(--sp-2); }
-.hm-col .mp-near-list li { grid-template-columns: 18px minmax(0, 1fr) auto; row-gap: 0; }
-.hm-col .mp-near-area { grid-column: 2 / -1; grid-row: 2; white-space: normal; }
+.hm-col .mp-near-list li { grid-template-columns: 18px minmax(0, 1fr) 28px; row-gap: 0; }
+.hm-col .mp-near-area { grid-column: 2; grid-row: 2; white-space: normal; }
+.hm-col .mp-near-list .pg-onmap { grid-column: 3; grid-row: 1 / span 2; justify-self: end; }
 .hm-parts { display: grid; gap: var(--sp-1); }
 .hm-parts a { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: var(--sp-3); padding: var(--sp-half) 0; font-size: var(--fs-sm); color: var(--ink); text-decoration: none; transition: color var(--dur) var(--ease); }
 .hm-parts a:is(:hover, :focus-visible) { color: var(--accent); }
@@ -1224,13 +1225,12 @@ kbd {
 .pg-slot.is-yellow { background: var(--slot-yellow); }
 .pg-how { font-size: var(--fs-xs); color: var(--ink-2); }
 .pg-place { display: grid; justify-items: end; gap: var(--sp-half); text-align: right; }
-.pg-place b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-sm); font-weight: 600; color: var(--ink); white-space: nowrap; }
 .pg-where { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0 var(--sp-2); font-size: var(--fs-xs); color: var(--muted); }
 .pg-where span + span::before { content: '·'; margin-right: var(--sp-2); }
-.pg-item .pg-onmap { display: grid; place-items: center; width: 28px; height: 28px; padding: 0; border: 1px solid var(--line-ctl); border-radius: 50%; background: none; color: var(--ink-2); cursor: pointer; transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease); }
+:is(.pg-item, .mp-near-list) .pg-onmap { display: grid; place-items: center; width: 28px; height: 28px; padding: 0; border: 1px solid var(--line-ctl); border-radius: 50%; background: none; color: var(--ink-2); cursor: pointer; transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease); }
 .pg-item .pg-onmap.is-none { border: 0; cursor: default; }
-.pg-item .pg-onmap .ic { width: 10px; }
-.pg-item .pg-onmap:is(:hover, :focus-visible) { color: var(--accent); border-color: var(--accent); outline: none; }
+:is(.pg-item, .mp-near-list) .pg-onmap .ic { width: 10px; }
+:is(.pg-item, .mp-near-list) .pg-onmap:is(:hover, :focus-visible) { color: var(--accent); border-color: var(--accent); outline: none; }
 .pg > .pg-buy { text-align: center; }
 .pg-item.is-got .pg-name { color: var(--ink-2); }
 .pg-item.is-later { opacity: 0.55; }
@@ -1456,10 +1456,13 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 .ct-body { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--sp-8); align-items: start; margin-top: var(--sp-8); }
 .ct-side { display: grid; justify-items: center; gap: var(--sp-3); }
 .ct-crest { --k: var(--crest-k); position: relative; }
-/* The art's box is the slots' reach (every Crest's slots sit within ±2.7 units, ±3 up), the art centred in it. */
-.ct-crest-art { position: relative; width: calc(var(--k) * 6.2); height: calc(var(--k) * 6.4); }
+/* The box is centred on the Crest's centre, where the slots are measured from, and reaches every
+   Crest's art and slots (±3.1 units across, ±3.25 up and down). The art's own centre sits off it by
+   (--ax, --ay): the game trims it in its atlas (js/crest-slots.js). */
+.ct-crest-art { position: relative; width: calc(var(--k) * 6.2); height: calc(var(--k) * 6.5); }
 .ct-crest-art > img {
-  position: absolute; left: 50%; top: 50%; width: calc(var(--k) * var(--w)); height: calc(var(--k) * var(--h)); transform: translate(-50%, -50%);
+  position: absolute; left: calc(50% + var(--ax) * var(--k)); top: calc(50% - var(--ay) * var(--k));
+  width: calc(var(--k) * var(--w)); height: calc(var(--k) * var(--h)); transform: translate(-50%, -50%);
   filter: drop-shadow(0 0 14px color-mix(in oklab, var(--silk) 22%, transparent));
 }
 .ct-slot {
@@ -1468,16 +1471,16 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
   display: grid; place-items: center; width: calc(var(--k) * 0.95); height: calc(var(--k) * 0.95); padding: 0; border: 0; background: none;
 }
 .ct-float .ct-slot { position: relative; left: auto; top: auto; transform: none; }
-/* The Vesticrest's slots in the box's bottom-right corner, which no Crest's slots reach: the art stays centred over its name. */
-.ct-float { position: absolute; right: 0; bottom: 0; display: flex; gap: var(--sp-1); }
+/* The Vesticrest's slots on a row under the Crest's box, never over its art. */
+.ct-float { display: flex; justify-content: center; gap: var(--sp-2); margin-top: var(--sp-2); }
 .ct-slot::before { content: ''; position: absolute; inset: 0; background: var(--c); -webkit-mask: var(--g) center / contain no-repeat; mask: var(--g) center / contain no-repeat; opacity: 0.9; }
 .ct-slot.is-blue { --c: var(--slot-blue); }
 .ct-slot.is-yellow { --c: var(--slot-yellow); }
 .ct-slot.is-skill { --c: var(--slot-skill); }
 .ct-slot.is-locked::before { background: var(--slot-locked); opacity: 0.7; }
 .ct-slot.is-full { cursor: pointer; -webkit-tap-highlight-color: transparent; }
-.ct-slot.is-full::before { opacity: 0.3; }
-.ct-slot.is-skill.is-full::before { opacity: 0.12; }
+/* A worn one keeps its slot's colour (the game's frame round it); the Silk Skill's white glyph dims under its see-through art. */
+.ct-slot.is-skill.is-full::before { opacity: 0.4; }
 .ct-slot img { position: relative; width: 84%; height: 84%; object-fit: contain; filter: drop-shadow(0 0 6px color-mix(in oklab, var(--c) 55%, transparent)); transition: transform var(--dur) var(--ease); }
 .ct-slot.is-full:is(:hover, :focus-visible) { outline: none; }
 .ct-slot.is-full:is(:hover, :focus-visible) img { transform: scale(1.1); }
@@ -1591,7 +1594,6 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 }
 .hj-hunt .hj-ring { width: 72px; margin-bottom: var(--sp-1); }
 .hj-hunt b { font-family: var(--font-display); font-weight: 400; font-size: var(--fs-sm); color: var(--ink-strong); }
-.hj-hunt em { font-style: normal; font-size: var(--fs-xs); color: var(--ink-2); }
 .hj-hunt-left { font-size: var(--fs-xs); color: var(--muted); }
 .hj-hunt:focus { outline: none; }
 .hj-hunt:is(:hover, :focus-visible), .hj-hunt.is-picked { border-color: var(--accent-line); background: var(--veil); }
@@ -1672,7 +1674,7 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
   .hj-hunt-row { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--sp-1); }
   .hj-hunt { padding: var(--sp-2) 0; border-color: transparent; }
   .hj-hunt .hj-ring { width: 56px; }
-  .hj-hunt b { font-size: var(--fs-xs); }
+  .hj-hunt b { font-size: var(--fs-2xs); letter-spacing: 0; max-width: 100%; overflow-wrap: anywhere; }
   .hj-hunt-left { display: none; }
   .hj-tools { justify-content: center; gap: var(--sp-3) var(--sp-6); }
   .hj-find { flex-basis: 100%; max-width: none; margin-right: 0; }
@@ -1788,12 +1790,19 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 .ft-hp b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-2xl); color: var(--ink-strong); }
 .ft .ct-figs.ft-waves { position: static; margin-top: var(--sp-6); }
 /* The fight's log, newest first, with undo and start over. */
-.ft-log { display: grid; gap: var(--sp-2); max-width: 640px; min-height: calc(var(--sp-16) + var(--sp-4)); margin: var(--sp-4) auto 0; }
-.ft-log-tools { display: flex; justify-content: center; gap: var(--sp-6); }
-.ft-log-lines { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-1); text-align: center; font-family: var(--font-num); font-size: var(--fs-xs); color: var(--muted); }
-.ft-log-lines li:first-child { font-size: var(--fs-sm); color: var(--ink-strong); }
-.ft-log-lines li.is-phase, .ft-log-lines li.is-win, .ft-log-lines li.is-lose { font-family: var(--font-display); letter-spacing: var(--track-title); color: var(--ink); }
-.ft-log .pg-note { text-align: center; }
+/* The log, in three voices (the sibling's): what you did on the left with a slash of the Needle,
+   what it did to you on the right with a mask, the fight's own lines centred between two rules. */
+.ft-log { max-width: 720px; margin: var(--sp-8) auto 0; }
+.ft-log-lines { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-1); font-family: var(--font-num); font-size: var(--fs-xs); color: var(--muted); }
+.ft-log-lines li { display: flex; align-items: center; gap: var(--sp-2); }
+.ft-log-lines li.is-foe { justify-content: flex-end; text-align: right; }
+.ft-log-lines li.is-sys { justify-content: center; font-family: var(--font-display); letter-spacing: var(--track-caps); color: var(--label); }
+.ft-log-lines li.is-sys::before, .ft-log-lines li.is-sys::after { content: ''; flex: 0 1 var(--sp-12); border-top: 1px solid var(--line); }
+.ft-log-lines li.is-last { font-size: var(--fs-sm); color: var(--ink-strong); animation: ft-in var(--dur) var(--ease); }
+.ft-log-mask { height: var(--sp-3); width: auto; }
+.ft-log-tools { display: flex; justify-content: center; gap: var(--sp-4); }
+.ft-log-tools .ic, .ft-undo .ic { margin-right: var(--sp-1); vertical-align: -1px; }
+@keyframes ft-in { from { opacity: 0; transform: translateY(-4px); } }
 /* How it's worked out, folded. */
 .ft-how { margin-top: var(--sp-8); }
 .ft-how > summary { list-style: none; cursor: pointer; }
@@ -1814,9 +1823,85 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 .ft-list li { grid-template-columns: 28px minmax(0, 1fr) auto auto; grid-template-areas: "i n v u" "i s v u"; column-gap: var(--sp-3); }
 .ft-list.is-theirs li { grid-template-columns: minmax(0, 1fr) auto auto; grid-template-areas: "n v u" "s v u"; }
 .ft-uses { grid-area: u; min-width: 8ch; text-align: right; font-size: var(--fs-xs); color: var(--ink-2); }
+/* The fight played out (js/fight.js): Hornet's HUD, its bar, the clock, the end. What changes
+   flashes once when the action causes it (the sibling's): a hit whitens the one hit, its figure
+   rises and fades, the bar leaves a pale trail, a mask breaks, a Bind glows; nothing bounces. */
+.ft-masks img.is-plasm { filter: sepia(1) hue-rotate(170deg) saturate(3) brightness(0.8); }
+.ft-masks img.is-fractured { outline: 1px dashed var(--mask-line); outline-offset: 1px; }
+.ft-masks img.is-broken { animation: ft-break var(--dur-slow) var(--ease); }
+@keyframes ft-break { from { filter: none; transform: scale(1.2); } }
+.ft-silk.is-changed b { animation: ft-glow var(--dur-flash) var(--ease); }
+@keyframes ft-glow { from { text-shadow: 0 0 8px var(--focus-glow); } }
+.ft-chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-1); font-size: var(--fs-2xs); letter-spacing: var(--track-caps); color: var(--label); }
+.ft-chips li { padding: var(--sp-half) var(--sp-2); border: 1px solid var(--line); }
+.ft-binding { display: grid; justify-items: center; gap: var(--sp-1); max-width: 260px; font-size: var(--fs-xs); color: var(--ink); }
+/* Hornet's sprite faces left: mirrored, she faces the enemy (scale, not transform, so the hit's shake still runs). */
+.ft-hornet .ft-art img { scale: -1 1; }
+.ft-hornet.is-hit .ft-art img { animation: ft-hit var(--dur-slow) var(--ease); }
+.ft-hornet.is-bind .ft-art img, .ft-hornet.is-binding .ft-art img { filter: drop-shadow(0 0 12px var(--focus-glow)); transition: filter var(--dur) var(--ease); }
+.ft-enemy.is-hit .ft-art img { animation: ft-hit var(--dur-slow) var(--ease); }
+@keyframes ft-hit { 0% { filter: brightness(3); transform: translateX(4px); } 100% { filter: none; transform: none; } }
+.ft-enemy.is-staggered .ft-art img { transform: rotate(6deg) translateY(4%); filter: brightness(0.8); transition: transform var(--dur) var(--ease), filter var(--dur) var(--ease); }
+.ft-dmg { position: absolute; top: 20%; left: 50%; font-family: var(--font-num); font-size: var(--fs-xl); font-weight: 600; color: var(--ink-strong); pointer-events: none; animation: ft-rise var(--dur-flash) var(--ease) forwards; }
+@keyframes ft-rise { from { opacity: 1; transform: translate(-50%, 0); } to { opacity: 0; transform: translate(-50%, -40px); } }
+.ft-dust { position: absolute; left: calc(20% + var(--i) * 6%); bottom: 30%; width: 4px; height: 4px; border-radius: 50%; background: var(--ink); opacity: 0; animation: ft-dust calc(var(--dur-flash) * 1.4) var(--ease) calc(var(--i) * 40ms) forwards; }
+@keyframes ft-dust { from { opacity: 0.9; transform: none; } to { opacity: 0; transform: translateY(-60px); } }
+.ft-enemy.is-dying .ft-art img { animation: ft-fade calc(var(--dur-flash) * 1.4) var(--ease) forwards; }
+@keyframes ft-fade { to { opacity: 0.35; filter: grayscale(1); } }
+.ft-hpbar { background: var(--ring-track); box-shadow: 0 0 10px color-mix(in oklab, var(--slot-red) 35%, transparent); }
+.ft-hpbar > .ft-fill, .ft-hpbar > .ft-trail { position: absolute; top: 0; bottom: 0; left: 0; transition: width var(--dur) var(--ease); }
+.ft-hpbar > .ft-fill { background: color-mix(in oklab, var(--slot-red) 75%, transparent); }
+.ft-hpbar > .ft-trail { background: color-mix(in oklab, var(--ink) 55%, transparent); animation: ft-trail var(--dur-flash) var(--ease) forwards; }
+@keyframes ft-trail { to { opacity: 0; } }
+.ft-hpbar.is-low > .ft-fill { background: var(--slot-red); }
+.ft-phase-n, .ft-part-name { font-size: var(--fs-xs); letter-spacing: var(--track-caps); color: var(--label); }
+.ft-stag { font-family: var(--font-num); font-size: var(--fs-2xs); color: var(--muted); }
+.ft-stag.is-down { color: var(--ink-strong); }
+.ft-clock { font-family: var(--font-num); font-size: var(--fs-xs); color: var(--muted); }
+/* Your moves in groups; a card that can't be played says why. The critical sits beside the slash. */
+.ft-group { display: grid; gap: var(--sp-2); }
+.ft-group-h { margin: 0; font-size: var(--fs-xs); font-style: italic; font-weight: 400; color: var(--muted); border-bottom: 1px solid var(--line-row); }
+.ft-cards li.has-crit { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr); grid-column: span 2; }
+.ft-cardx.is-crit { border-left: 1px dashed var(--line); }
+.ft-card-glyph { display: grid; place-items: center; width: var(--sp-12); height: var(--sp-12); font-size: var(--fs-xl); color: var(--ink-2); }
+.ft-cardx .ft-why { color: var(--slot-red); }
+.ft-targets { display: grid; gap: var(--sp-1); }
+.ft-target { display: grid; grid-template-columns: minmax(0, 1fr) 30% auto; align-items: center; gap: var(--sp-2); padding: var(--sp-1) var(--sp-2); border: 1px solid transparent; background: none; color: var(--ink-2); font: inherit; font-size: var(--fs-sm); text-align: left; cursor: pointer; }
+.ft-target.is-on { border-color: var(--filigree); color: var(--ink-strong); background: var(--veil); }
+.ft-target:disabled { opacity: 0.4; cursor: default; }
+.ft-target b { font-family: var(--font-num); font-variant-numeric: tabular-nums; }
+.ft-target .ft-hpbar { width: 100%; height: 4px; }
+/* The end, titled as the game titles an area, with the fight in figures. */
+.ft-end { display: grid; justify-items: center; gap: var(--sp-2); margin: var(--sp-8) auto 0; text-align: center; }
+.ft-end.is-fresh { animation: ft-in var(--dur-slow) var(--ease-fade); }
+.ft-end-title { margin: 0; font-family: var(--font-display); font-size: var(--fs-2xl); letter-spacing: var(--track-title); color: var(--ink-strong); }
+.ft-end-rule { display: flex; align-items: center; gap: var(--sp-2); width: 220px; color: var(--filigree); }
+.ft-end-rule i { flex: 1; border-top: 1px solid currentColor; }
+.ft-end-rule svg { fill: none; stroke: currentColor; }
+.ft-end-note { margin: 0; color: var(--ink-2); }
+.ft-sum { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-2) var(--sp-6); margin: var(--sp-2) 0; }
+.ft-sum div { display: grid; justify-items: center; }
+.ft-sum dt { order: 2; font-size: var(--fs-2xs); letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
+.ft-sum dd { margin: 0; font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-lg); color: var(--ink-strong); }
+/* The band: the duel in small, stuck under the bar when the duel scrolls away. */
+.ft-band { position: sticky; top: var(--ft-band-top, 0); z-index: 6; height: 0; }
+.ft-band-in { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4); padding: var(--sp-2) var(--sp-3); background: var(--scene-bg); border-bottom: 1px solid var(--line); box-shadow: var(--shadow-md);
+  opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease), visibility 0s linear var(--dur); }
+.ft-band.is-on .ft-band-in { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+.ft-band-me { display: flex; align-items: center; gap: var(--sp-2); }
+.ft-band-me .ft-masks img { height: var(--sp-3); }
+.ft-band-me b, .ft-band-vs b { font-family: var(--font-num); color: var(--ink-strong); }
+.ft-band-vs { font-family: var(--font-num); font-size: var(--fs-xs); color: var(--muted); white-space: nowrap; }
+.ft-band-foe { display: grid; justify-items: end; gap: var(--sp-1); min-width: 0; font-size: var(--fs-xs); color: var(--ink); }
+.ft-band-foe .ft-hpbar { width: 140px; height: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  .ft-dmg, .ft-dust, .ft-hpbar > .ft-trail { display: none; }
+  .ft [class*="is-"] img, .ft-end.is-fresh, .ft-log-lines li.is-last { animation: none !important; }
+}
 @media (max-width: 899px) {
   .ft-duel { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--sp-4); }
-  .ft-mid { grid-column: 1 / -1; grid-row: 2; grid-auto-flow: column; justify-content: center; align-items: end; gap: var(--sp-8); padding: 0; }
+  .ft-mid { grid-column: 1 / -1; grid-row: 2; grid-template-columns: repeat(2, auto); justify-content: center; align-items: end; gap: var(--sp-2) var(--sp-8); padding: 0; }
+  .ft-mid > .ft-clock, .ft-mid > .ft-log-tools, .ft-mid > .ft-clock:first-child { grid-column: 1 / -1; }
   .ft-duel { --ft-art: calc(var(--sp-16) * 2.2); }
   .ft-two { grid-template-columns: minmax(0, 1fr); }
   .ft-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -1934,6 +2019,8 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
   background: var(--scene-bg); border: 1px solid var(--line-ctl);
 }
 .mp-dot img { width: calc(var(--mp-s, 22px) * 0.86); height: calc(var(--mp-s, 22px) * 0.86); object-fit: contain; }
+/* The Needle, a long thin line, laid across the disc as the fight's card lays it (.ft-cardx). */
+.mp-dot.is-needle img { transform: rotate(35deg) scale(1.2); }
 /* The map in SVG, as the sibling's: the view is its viewBox, the marks keep their size (--k). */
 .mp-svg { display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; user-select: none; }
 .mp-view.is-grabbing .mp-svg { cursor: grabbing; }
@@ -1941,13 +2028,19 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 /* A mark: a dark disc with a thin rim and the thing's picture almost as big; the rim lit when
    pointed at or chosen. */
 .mp-mk { transform: translate(var(--px), var(--py)) scale(var(--k, 1)) translate(var(--ox, 0px), var(--oy, 0px)); cursor: pointer; }
-.mp-mk circle { fill: var(--scene-bg); stroke: var(--line-ctl); stroke-width: 0.06; }
-.mp-mk:is(:hover, :focus-visible, .is-sel) circle { stroke: var(--accent); stroke-width: 0.1; }
+.mp-mk > circle:first-of-type { fill: var(--scene-bg); stroke: var(--line-ctl); stroke-width: 0.06; }
+.mp-mk:is(:hover, :focus-visible, .is-sel) > circle:first-of-type { stroke: var(--accent); stroke-width: 0.1; }
 .mp-mk:focus { outline: none; }
 .mp-mk.is-off { opacity: 0.4; }
 .mp-glyph { color: var(--ink-strong); }
+/* Behind the picture, the inventory's pale plate (--halo-plate), so a dark portrait or a thin
+   needle reads on the black disc. */
+.mp-plate { fill: url(#mp-plate); pointer-events: none; }
+#mp-plate stop { stop-color: var(--map-plate); }
+#mp-plate stop:nth-child(2) { stop-color: var(--map-plate-mid); }
+#mp-plate stop:last-child { stop-color: transparent; }
 .mp-from { pointer-events: none; }
-.mp-from circle { stroke: var(--silk); stroke-width: 0.12; }
+.mp-from > circle:first-of-type { stroke: var(--silk); stroke-width: 0.12; }
 /* The areas' names, keeping their size on screen, with the map's black round their letters. */
 .mp-name { font-family: var(--font-display); font-size: calc(var(--k, 1) * 0.5px); letter-spacing: var(--track-caps); text-transform: uppercase;
   text-anchor: middle; dominant-baseline: middle; fill: color-mix(in oklab, var(--ink) 72%, transparent);
@@ -1975,7 +2068,6 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 .hj-where { margin: 0; font-size: var(--fs-sm); color: var(--ink-2); }
 .mp-near-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .mp-near-area { font-size: var(--fs-xs); color: var(--muted); white-space: nowrap; }
-.mp-near-list b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-xs); font-weight: 500; color: var(--ink-strong); white-space: nowrap; }
 /* A place: the game's own map pin; a gauntlet, the badge with its needles crossed, in the slots'
    red; dimmed while your game hasn't opened it. */
 .mp-pin {
