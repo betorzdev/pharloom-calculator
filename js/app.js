@@ -312,7 +312,7 @@
     for (const v of VIEWS) {
       const sec = screenOf(v);
       if (!sec) continue;
-      if (App.screens[v]) { App.screens[v](sec); continue; }
+      if (App.screens[v]) { safely('screen-' + v, () => App.screens[v](sec)); continue; }
       const study = `<a class="text-btn" href="https://github.com/betorzdev/pharloom-calculator/blob/main/design/00-study.md" target="_blank" rel="noopener">${esc(t('soonStudy'))}</a>`;
       sec.innerHTML = brackets + screenHead(esc(t(VIEW_KEY[v]))) + emptyHtml(esc(t('soon', { n: PHASE[v] })), study);
     }
@@ -353,17 +353,28 @@
   function renderBanner() {
     if (el.banner) el.banner.innerHTML = betaBanner() + (App.liveBanner ? App.liveBanner() : '');
   }
+  /* One painter that throws mustn't take the rest down with it: every screen starts hidden
+     (index.html) and only showScreen(), at the end of render(), shows one, so an error before it
+     left the header and the bar with no screen. Right after a deploy GitHub Pages can serve an old
+     app.js next to a new app-*.js (each file is cached on its own for 10 minutes), and the new one
+     calls what the old one lacks. */
+  function safely(name, fn) {
+    try { fn(); } catch (e) {
+      console.error(e);
+      track('error-' + name);
+    }
+  }
   function render() {
     const focus = focusDescriptor();
-    renderMasthead();
-    renderAbout();
-    renderColophon();
-    renderNav();
-    renderScreens();
-    renderBanner();
+    safely('masthead', renderMasthead);
+    safely('about', renderAbout);
+    safely('colophon', renderColophon);
+    safely('nav', renderNav);
+    renderScreens();                        // each screen on its own (safely, above)
+    safely('banner', renderBanner);
     showScreen();
     restoreFocus(focus);
-    if (App.hornet) App.hornet.sync();      // Hornet takes her place on what was just painted (js/app-hornet.js)
+    if (App.hornet) safely('hornet', () => App.hornet.sync());   // Hornet takes her place on what was just painted (js/app-hornet.js)
   }
 
   /* ── Switching screens ───────────────────────────────────────────────── */
