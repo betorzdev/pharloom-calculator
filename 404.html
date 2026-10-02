@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- The page GitHub Pages serves for any address under the site that doesn't exist. It can be
+     served at any depth, so <base> points every path at the site's root; over file:// it never
+     shows. Both languages at once: there's no address to tell which one was meant. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<base href="/pharloom-calculator/">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Page not found · Pharloom Calculator</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/site/icon-48.png" sizes="48x48">
+<link rel="icon" href="assets/site/icon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="assets/site/apple-touch-icon.png">
+<meta name="theme-color" content="#0f0604">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/app.css">
+<style>
+  .lost { display: flex; flex-direction: column; align-items: center; gap: var(--sp-6); padding: var(--sp-16) 0; text-align: center; }
+  .lost img { width: calc(var(--sp-16) * 2); height: auto; }
+  .lost h1 { margin: 0; font-family: var(--font-display); font-weight: 900; font-size: var(--fs-brand); color: var(--ink-strong); }
+  .lost p { margin: 0; max-width: 40ch; color: var(--ink-2); }
+  .lost-links { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-4) var(--sp-8); }
+  .lost-links .btn { text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="shell">
+    <main class="lost">
+      <img src="assets/hornet/sit.png" alt="">
+      <h1>Page not found</h1>
+      <p>This address doesn't lead anywhere in Pharloom.</p>
+      <p lang="es">Esta dirección no lleva a ninguna parte de Telalejana.</p>
+      <div class="lost-links">
+        <a class="btn btn-primary" href="./">Pharloom Calculator</a>
+        <a class="btn" href="es/" lang="es">Calculadora de Telalejana</a>
+      </div>
+    </main>
+  </div>
+</div>
+</body>
+</html>
