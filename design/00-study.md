@@ -1239,6 +1239,17 @@ as an HTML layer. Now:
   up; things on one point in a small grid round it. Hornet stays the page's sprite, placed over
   the map at her point (`App.mapHornetAt`).
 
+**Launch, with Combat hidden** (2 October). The site goes up on GitHub Pages as a beta (a
+notice above the screens, closable, and «Beta» by the title), with Search Console and a
+`404.html`. Its focus is following your game live, so **Combat is hidden** for now (Albert's
+call; whether it comes back is decided later): `OFF` in `js/app.js` takes it out of the views,
+so no tab, link, hash or saved preference reaches it, and the Map's cards lose their way to it;
+`OFF` in `tools/pages.js` leaves out its pages, the damage calculator and the 51 bosses', so 12
+pages are written and listed instead of 116. The bar is six tabs in a row, Crest no longer
+apart; on a phone the Inventory still folds under Your game, and Build is gone. The screen's
+code, its texts and its tests stay: bringing it back is taking `'fight'` out of both `OFF`s,
+the tabs from git history (`ea0d729`) and `npm run pages`.
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).

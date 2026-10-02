@@ -6,12 +6,15 @@
 
 The header has the title under a filigree crown (it leads back to Your game), the language on
 the left and, on the right, the save you're in (Hornet at a bench): it opens **Saves**. The
-screen bar has the screens, in two groups: your game (Your game, Inventory, Progress, Map,
-Journal) and, after a thin rule, the tools (Crest, Combat). With a save loaded, Progress carries
-your completion and Journal the entries Nuu counts (`63%`, `120/230`); in Free mode the bar only
-has the names. On a phone the seven don't fit in a row, so they fold: Crest and Combat into one
-tab, **Build**, which opens the last one you used, and Inventory under Your game; while you're
-in either pair, a second row under the bar switches between its two.
+screen bar has six screens in a row: Your game, Inventory, Progress, Map, Journal and Crest.
+With a save loaded, Progress carries your completion and Journal the entries Nuu counts
+(`63%`, `120/230`); in Free mode the bar only has the names. On a phone the six don't fit, so
+Inventory folds under Your game: while you're in either, a second row under the bar switches
+between the two.
+
+**Combat is hidden for now**: the site is about following your game, and it may come back. Its
+tab, its pages (the damage calculator and the bosses') and the Map's «Fight it in Combat» are
+gone, and a link to it opens Your game. Its section below says what it does when it's on.
 
 The site is a beta: a small «Beta» sits by the title, and above the screens a notice says it's
 still being built, with a link to report what looks wrong (the project's GitHub issues). Closing
@@ -185,6 +188,8 @@ Verdania, the Cradle, the Mist and the caravan's insides are reached some other 
 lift, the maze), so their entries say where, not how far.
 
 ### Combat
+
+*Hidden for now (see above): what follows is the screen as it is when it's on.*
 
 Your build against one enemy, as a duel: Hornet and the enemy face to face, each on the
 Journal's light (the enemy as the Journal draws it whole), between them the slashes that win and
@@ -458,12 +463,13 @@ the Silk Hearts).
 
 The site is one page, and each search it answers has an address of its own, in each language:
 the save analyzer, the 100% checklist, the map, the Hunter's Journal, the Tools and Crests
-calculator and the damage calculator (`save-analyzer/`, `es/analizador-partida/`…). Each is the
+calculator (`save-analyzer/`, `es/analizador-partida/`…). Each is the
 whole site opened on its screen, with its own title, description and a short text with
 questions, and `sitemap.xml` lists them. `npm run pages` writes them from `index.html` and
 `tools/pages-text.js`; `npm test` fails if one falls behind.
 
-And one page per boss, 51 in each language (`bosses/lace/`, `es/jefes/lace/`): the site opened on
+With Combat on, also the damage calculator and one page per boss, 51 in each language
+(`bosses/lace/`, `es/jefes/lace/`); while it's hidden they aren't written. A boss's page is the site opened on
 Combat with that boss picked, and a text written from the data, so a patch changes it with
 `npm run data && npm run pages`. Its health in each fight (and black-threaded), how many slashes
 kill it with the Needle alone at each upgrade (the engine, through the boss's own modifiers),

@@ -646,10 +646,10 @@
       const x = m.gauntlet, n = x.waves.length;
       where = line([areaName(x.area), t(n === 1 ? 'ftWaves1' : 'ftWaves', { n: num(n) })]);
       note = x.reward ? t('ftReward') + ': ' + pick(x.reward) : '';
-      acts = btn('mapFight', x.id, t('mapFight'));
+      if (App.VIEWS.includes('fight')) acts = btn('mapFight', x.id, t('mapFight'));
     } else if (kind === 'boss') {
       if (g) acts = state(t(m.got ? 'mapBeaten' : 'mapNotBeaten'));
-      acts += btn('mapFoe', m.foe, t('mapFight')) + (m.entry ? btn('mapJournal', m.entry, t('mapToJournal')) : '');
+      acts += (App.VIEWS.includes('fight') ? btn('mapFoe', m.foe, t('mapFight')) : '') + (m.entry ? btn('mapJournal', m.entry, t('mapToJournal')) : '');
     } else if (kind === 'bell') {
       if (g) acts = state(t(m.got ? 'mapRung' : 'mapNotRung'));
     } else if (kind === 'shop' || kind === 'person' || kind === 'shakra') {

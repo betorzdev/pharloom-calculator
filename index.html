@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Silksong save tracker, 100% checklist, map and Tools · Pharloom Calculator</title>
-<meta name="description" content="Import your Hollow Knight: Silksong save and see what's missing for 100%, on the game's own map, and how many hits each enemy takes with your Tools and Crests.">
+<meta name="description" content="Import your Hollow Knight: Silksong save and see what's missing for 100%, on the game's own map, and how each Tool and Crest changes Hornet.">
 <link rel="canonical" href="https://betorzdev.github.io/pharloom-calculator/">
 <link rel="alternate" hreflang="en" href="https://betorzdev.github.io/pharloom-calculator/">
 <link rel="alternate" hreflang="es" href="https://betorzdev.github.io/pharloom-calculator/es/">
@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pharloom Calculator">
 <meta property="og:title" content="Silksong save tracker, 100% checklist, map and Tools · Pharloom Calculator">
-<meta property="og:description" content="Import your Hollow Knight: Silksong save and see what's missing for 100%, on the game's own map, and how many hits each enemy takes with your Tools and Crests.">
+<meta property="og:description" content="Import your Hollow Knight: Silksong save and see what's missing for 100%, on the game's own map, and how each Tool and Crest changes Hornet.">
 <meta property="og:url" content="https://betorzdev.github.io/pharloom-calculator/">
 <meta property="og:image" content="https://betorzdev.github.io/pharloom-calculator/assets/site/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -69,18 +69,11 @@
         <a class="nav-tab" id="nav-pg" data-act="view" data-value="progress" href="#view=progress"><span class="nav-lbl">Progress</span><span class="nav-num"></span></a>
         <a class="nav-tab" data-act="view" data-value="map" href="#view=map">Map</a>
         <a class="nav-tab" id="nav-hj" data-act="view" data-value="journal" href="#view=journal"><span class="nav-lbl">Journal</span><span class="nav-num"></span></a>
-        <span class="nav-sep" aria-hidden="true"></span>
-        <a class="nav-tab nav-tool" data-act="view" data-value="tools" href="#view=tools">Crest</a>
-        <a class="nav-tab nav-tool" data-act="view" data-value="fight" href="#view=fight">Combat</a>
-        <a class="nav-tab nav-tools" id="nav-tools" data-act="view" data-value="tools" href="#view=tools">Build</a>
+        <a class="nav-tab" data-act="view" data-value="tools" href="#view=tools">Crest</a>
       </div>
       <div class="nav-sub" id="nav-sub-game" hidden>
         <a class="nav-tab" data-act="view" data-value="home" href="#view=home">Your game</a>
         <a class="nav-tab" data-act="view" data-value="game" href="#view=game">Inventory</a>
-      </div>
-      <div class="nav-sub" id="nav-sub" hidden>
-        <a class="nav-tab" data-act="view" data-value="tools" href="#view=tools">Crest</a>
-        <a class="nav-tab" data-act="view" data-value="fight" href="#view=fight">Combat</a>
       </div>
     </nav>
     <main class="screens">
@@ -106,7 +99,7 @@
         </div>
       </header>
       <div class="about-text">
-        <p>It works without a save too: the Crest screen tells you how each of Hornet's stats changes with each Tool, Crest and upgrade, and Combat takes your build against every enemy, boss and enemy gauntlet, through each one's own modifiers. Every number comes from the wiki, with the game's rounding, and every name from its official translation.</p>
+        <p>It works without a save too: the Crest screen tells you how each of Hornet's stats changes with each Tool, Crest and upgrade. Every number comes from the wiki, with the game's rounding, and every name from its official translation.</p>
       </div>
       <svg class="about-crown" width="200" height="28" viewBox="0 0 200 28" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" aria-hidden="true"><path d="M93 14 C84 14 78 7 69 7 C61 7 58 13 62 16.5 C65 19 69.5 16.5 68 13.5"/><path d="M62 16.5 C50 22 30 21 10 14"/><path d="M10 14 C6 12 5.5 8.5 9 8 C11.5 7.8 12 10.5 10.5 11.5"/><path d="M78 9 C74 3 66 1.5 58 3.5"/><g transform="translate(200 0) scale(-1 1)"><path d="M93 14 C84 14 78 7 69 7 C61 7 58 13 62 16.5 C65 19 69.5 16.5 68 13.5"/><path d="M62 16.5 C50 22 30 21 10 14"/><path d="M10 14 C6 12 5.5 8.5 9 8 C11.5 7.8 12 10.5 10.5 11.5"/><path d="M78 9 C74 3 66 1.5 58 3.5"/></g><path d="M100 5 L105 14 L100 23 L95 14 Z"/><path d="M100 1 V5 M100 23 V27"/></svg>
       <div class="about-faq">
@@ -122,7 +115,6 @@
           <li><a href="map/" data-page><img src="assets/icons/items/farsight.webp" alt="" loading="lazy"><span>Map</span></a></li>
           <li><a href="hunters-journal/" data-page><img src="assets/icons/items/hunters-journal.webp" alt="" loading="lazy"><span>Hunter's Journal</span></a></li>
           <li><a href="tools-and-crests/" data-page><img src="assets/icons/crests/hunter.webp" alt="" loading="lazy"><span>Tools and Crests</span></a></li>
-          <li><a href="damage-calculator/" data-page><img src="assets/icons/tools/straight-pin.webp" alt="" loading="lazy"><span>Damage calculator</span></a></li>
         </ul>
       </nav>
     </section>

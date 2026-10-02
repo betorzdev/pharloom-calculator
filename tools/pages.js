@@ -21,7 +21,10 @@ const path = require('path');
 const T = require('./pages-text.js');
 const { BRAND, LABELS, OG_ALT } = T;
 const { BOSS_PAGES } = require('./pages-bosses.js');
-const PAGES = [...T.PAGES, ...BOSS_PAGES];
+/* The screens hidden for now (js/app.js, OFF): Combat's pages, the damage calculator and each
+   boss's, aren't written, nor listed in the sitemap or under "More on the site". */
+const OFF = ['fight'];
+const PAGES = [...T.PAGES, ...BOSS_PAGES].filter((p) => !OFF.includes(p.view));
 
 const ROOT = path.join(__dirname, '..');
 const SITE = 'https://betorzdev.github.io/pharloom-calculator/';
@@ -86,7 +89,7 @@ ${rest.map((p) => `    <p>${p[lang]}</p>`).join('\n')}
   const faq = page.faq.map((f, i) => `    <details${i ? '' : ' open'}><summary><h3>${f.q[lang]}</h3></summary><p>${f.a[lang]}</p></details>`).join('\n');
   const li = (p) => `      <li><a href="${rel(p, lang) || './'}" data-page>${p.icon ? `<img src="${p.icon}" alt="" loading="lazy">` : ''}<span>${p.link[lang]}</span></a></li>`;
   const face = (p) => `      <li><a href="${rel(p, lang)}" data-page title="${attr(p.link[lang])}"><span class="hj-ring is-done" style="--f:1"><img src="${p.guide.icon}" alt="" loading="lazy"></span><span>${p.link[lang]}</span></a></li>`;
-  const more = T.PAGES.filter((p) => p !== page).map(li).join('\n');
+  const more = T.PAGES.filter((p) => p !== page && PAGES.includes(p)).map(li).join('\n');
   // Combat's pages, the calculator's and each boss's, show every boss.
   const bosses = page.view === 'fight' ? `
   ${CROWN}
@@ -194,4 +197,4 @@ if (require.main === module) {
   console.log(`${PAGES.length * LANGS.length} pages and sitemap.xml written`);
 }
 
-module.exports = { build, all, sitemap, rel, url, file, fullTitle, SITE, LANGS, PAGES };
+module.exports = { build, all, sitemap, rel, url, file, fullTitle, SITE, LANGS, PAGES, OFF };

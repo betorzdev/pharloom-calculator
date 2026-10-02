@@ -35,16 +35,17 @@ test('her timings and sizes are tokens', () => {
 });
 
 test('every page loads her after the Map and before the boot', () => {
+  const P = require('../tools/pages.js');
   const pages = [];
   const walk = (dir) => {
     for (const e of fs.readdirSync(path.join(ROOT, dir), { withFileTypes: true })) {
       const rel = path.join(dir, e.name);
-      if (e.isDirectory() && !/^(\.|node_modules|kb|design|tools|test|assets|js|css)/.test(e.name)) walk(rel);
+      if (e.isDirectory() && !/^(\..*|node_modules|kb|design|tools|test|assets|js|css)$/.test(e.name)) walk(rel);
       else if (e.name === 'index.html') pages.push(rel);
     }
   };
   walk('.');
-  assert.ok(pages.length > 100);
+  assert.strictEqual(pages.length, P.PAGES.length * P.LANGS.length);   // every page tools/pages.js writes, and no stale one
   for (const p of pages) {
     const html = read(p);
     const map = html.indexOf('js/app-map.js'), hn = html.indexOf('js/app-hornet.js'), boot = html.indexOf('js/app-boot.js');

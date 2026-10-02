@@ -23,8 +23,8 @@
     betaReport:     { es: 'avísame', en: 'let me know' },
     betaClose:      { es: 'Cerrar el aviso', en: 'Close the notice' },
     docTitle:       { es: 'Tu partida de Silksong: el 100 %, el mapa y las herramientas · Calculadora de Telalejana', en: 'Silksong save tracker, 100% checklist, map and Tools · Pharloom Calculator' },
-    metaDescription:{ es: 'Importa tu partida de Hollow Knight: Silksong y mira qué te falta para el 100 %, en el mapa del propio juego, y cuántos golpes necesita cada enemigo con tus herramientas y blasones.',
-                      en: 'Import your Hollow Knight: Silksong save and see what\'s missing for 100%, on the game\'s own map, and how many hits each enemy takes with your Tools and Crests.' },
+    metaDescription:{ es: 'Importa tu partida de Hollow Knight: Silksong y mira qué te falta para el 100 %, en el mapa del propio juego, y cómo cambia Hornet con cada herramienta y blasón.',
+                      en: 'Import your Hollow Knight: Silksong save and see what\'s missing for 100%, on the game\'s own map, and how each Tool and Crest changes Hornet.' },
 
     /* The screen bar: the pages of the game's pause menu, with the game's own names where it has them. */
     navLabel:       { es: 'Pantallas', en: 'Screens' },

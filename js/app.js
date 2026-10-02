@@ -41,9 +41,13 @@
 
   /* The screens, in two groups: your game as the save says it (Your game, the Inventory,
      Progress, the Map, the Journal) and the tools (the Crest screen and Combat). And the save
-     slots, which aren't in the bar: the header opens them. */
-  const VIEWS = ['home', 'game', 'progress', 'map', 'journal', 'tools', 'fight', 'saves'];
-  const TOOLS = ['tools', 'fight'];
+     slots, which aren't in the bar: the header opens them.
+     The screens in OFF are hidden for now: the site is about following your game, and Combat may
+     come back. Their script still loads, but out of VIEWS no tab, link, hash or saved preference
+     reaches them. tools/pages.js leaves their pages out the same way (its own OFF). */
+  const OFF = ['fight'];
+  const VIEWS = ['home', 'game', 'progress', 'map', 'journal', 'tools', 'fight', 'saves'].filter((v) => !OFF.includes(v));
+  const TOOLS = ['tools', 'fight'].filter((v) => !OFF.includes(v));
   // Which phase of the plan (design/00-study.md §9) brings each screen, while it isn't built.
   const PHASE = { home: 2, game: 2, progress: 2, map: 6, journal: 4, tools: 3, fight: 5, saves: 2 };
   const VIEW_KEY = { home: 'navHome', game: 'navGame', progress: 'navProgress', map: 'navMap', journal: 'navJournal',
@@ -223,11 +227,11 @@
         <a class="gh" href="https://github.com/betorzdev/pharloom-calculator" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">${GITHUB}</a></p>`;
   }
 
-  /* The screen bar, in two groups: your game (Your game, the Inventory, Progress, the Map, the
-     Journal) and, after a thin rule, the tools (the Crest screen, Combat). On a phone the seven
-     don't fit in a row, so they fold as the sibling's do: the tools into one tab, Build, which
-     opens the last one used, and while you're in one a second row switches between them
-     (#nav-sub); the Inventory folds under Your game the same way (#nav-sub-game). With a save,
+  /* The screen bar: Your game, the Inventory, Progress, the Map, the Journal and the Crest
+     screen, in a row (with Combat hidden, see OFF, the tools are one and no longer a group of
+     their own). On a phone the six don't fit, so the Inventory folds under Your game as the
+     sibling's do: while you're in either a second row switches between them (#nav-sub-game).
+     With Combat back, the tools fold into one tab, Build (#nav-tools, #nav-sub), the same way. With a save,
      Progress carries your completion and the Journal the entries Nuu counts. It lives in
      index.html and here only its texts and which one is active change: repainted whole, the
      focus would be lost when switching screens. */

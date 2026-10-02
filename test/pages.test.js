@@ -29,7 +29,7 @@ test('each page points at itself and at its other language, both ways', () => {
 });
 
 test('each page opens on a real screen, and its base reaches the root', () => {
-  const VIEWS = ['home', 'game', 'progress', 'map', 'journal', 'tools', 'fight', 'saves'];
+  const VIEWS = ['home', 'game', 'progress', 'map', 'journal', 'tools', 'saves'];   // js/app.js's, without OFF
   for (const { page, lang } of EVERY) {
     const html = read(P.file(page, lang));
     const view = (html.match(/<html [^>]*data-view="([a-z]+)"/) || [])[1] || null;
@@ -82,10 +82,16 @@ test('the sitemap lists every page', () => {
 
 test('a page per boss, in each language: it opens Combat on that boss, and the calculator lists them all', () => {
   const EN = require('../js/enemies.js');
-  const bosses = PAGES.filter((p) => p.boss);
+  const { BOSS_PAGES: bosses } = require('../tools/pages-bosses.js');
   assert.strictEqual(bosses.length, Object.keys(EN.ATTACKS).length, 'one page per boss page of the wiki');
-  const damage = PAGES.find((p) => p.id === 'damage');
-  for (const lang of P.LANGS) {
+  const damage = require('../tools/pages-text.js').PAGES.find((p) => p.id === 'damage');
+  // With Combat hidden (js/app.js, OFF) none of them is written, and none is left behind.
+  if (P.OFF.includes('fight')) {
+    for (const p of [damage, ...bosses]) for (const lang of P.LANGS) {
+      assert.ok(!PAGES.includes(p), p.id);
+      assert.ok(!fs.existsSync(path.join(ROOT, P.file(p, lang))), `${P.file(p, lang)} is left behind`);
+    }
+  } else for (const lang of P.LANGS) {
     const calc = read(P.file(damage, lang));
     for (const b of bosses) {
       const html = read(P.file(b, lang));
