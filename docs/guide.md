@@ -13,6 +13,10 @@ has the names. On a phone the seven don't fit in a row, so they fold: Crest and 
 tab, **Build**, which opens the last one you used, and Inventory under Your game; while you're
 in either pair, a second row under the bar switches between its two.
 
+The site is a beta: a small «Beta» sits by the title, and above the screens a notice says it's
+still being built, with a link to report what looks wrong (the project's GitHub issues). Closing
+it (×) hides it for good in that browser (`pharloom.betaSeen`); the tag by the title stays.
+
 Every screen is framed as the game's pause menu frames its panes: a thin filigree line all
 round with a curl at each corner, and the screen's name on its top edge in a small plaque with
 pointed ends, where the line stops. The frame is lit in the colour of the tab's place in the

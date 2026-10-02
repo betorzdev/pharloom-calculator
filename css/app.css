@@ -346,6 +346,12 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
   line-height: 1.05; letter-spacing: var(--track-title); color: var(--ink-strong); text-align: center;
   text-wrap: balance;
 }
+/* Beta, by the title: a small label in the secondary ink, raised like an exponent. */
+.mh-beta {
+  margin-left: var(--sp-2); vertical-align: super;
+  font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase;
+  color: var(--ink-2);
+}
 /* The language, as loose text like a game menu: small, unboxed, so the title rules. */
 .mh-tools { --tools-gap: var(--sp-6); display: flex; align-items: center; gap: var(--tools-gap); flex-wrap: wrap; }
 .langsel { position: relative; display: flex; align-items: center; gap: var(--sp-2); }
