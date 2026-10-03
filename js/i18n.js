@@ -647,6 +647,20 @@
                       en: 'Data from {wiki}, under {lic}; game texts from its official translation.' },
     footMade:       { es: 'Hecho por Albert. ¿Un número mal, una traducción rara o un fallo? Escribe a {mail}.',
                       en: 'Made by Albert. A wrong number, an odd translation or a bug? Write to {mail}.' },
+    // The privacy notice under it, folded (docs/guide.md, "Privacy"). No game source: written for context.
+    footPrivacy:    { es: 'Privacidad', en: 'Privacy' },
+    footPrivNone:   { es: 'Esta web no usa cookies ni rastreadores.',
+                      en: 'This site uses no cookies and no trackers.' },
+    footPrivLocal:  { es: 'Lo que marcas (partidas, herramientas y blasones, diario, progreso, preferencias) se guarda solo en este navegador; si pones «Seguir al juego», también el acceso a tu archivo de guardado.',
+                      en: 'What you mark (saves, Tools and Crests, journal, progress, preferences) is kept only in this browser; if you turn on "Follow the game", so is the access to your save file.' },
+    footPrivSaves:  { es: 'Tus archivos de guardado se leen aquí mismo y no se suben a ningún sitio.',
+                      en: 'Your save files are read right here and never uploaded anywhere.' },
+    footPrivCount:  { es: 'Las visitas se cuentan con {gc}: páginas, desde dónde llegas, navegador y sistema, ancho de pantalla, idioma, país y qué pantallas abres, guardados solo como recuentos por día. No guarda tu IP ni usa cookies.',
+                      en: 'Visits are counted with {gc}: pages, where you came from, browser and system, screen width, language, country and which screens you open, kept only as daily counts. It keeps no IP and uses no cookies.' },
+    footPrivHost:   { es: 'La web está alojada en {gh}, que guarda registros técnicos de cada visita.',
+                      en: 'The site is hosted on {gh}, which keeps technical logs of each visit.' },
+    footPrivErase:  { es: 'Para borrarlo todo, borra los datos de este sitio en tu navegador.',
+                      en: 'To erase it all, clear this site\'s data in your browser.' },
   };
 
   let lang = 'en';   // English by default

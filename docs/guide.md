@@ -545,6 +545,30 @@ texts and names are © Team Cherry; they're used here only to show the game's ow
 If you hold rights over something here and want it removed, open an issue or write to
 [betorzdev@gmail.com](mailto:betorzdev@gmail.com).
 
+## Privacy
+
+The footer carries a folded **Privacy** notice. The site sets **no cookies**, so it shows no
+cookie banner: what it keeps on the device is strictly necessary for the service the visitor asks
+for (LSSI art. 22.2, ePrivacy art. 5.3), and never leaves it:
+
+- `localStorage`: the `pharloom.*` keys (saves, Tools and Crests, journal, progress, preferences).
+- `sessionStorage`: `pharloom.cleared` and `pharloom.entered`, for the screen transitions.
+- IndexedDB: `pharloom-live`, the save-file handle, only after "Follow the game" (`js/live.js`).
+- Save files are read in the browser; nothing is uploaded.
+
+The visit counter is [Footworn](https://github.com/betorzdev/footworn) (`track()` in `js/app.js`),
+Albert's own, on a Cloudflare Worker in Western Europe. It sets no cookies, keeps no IP and stores
+only daily counts of pages, referrer host, browser and system families, screen width, language,
+country and the site's events (`screen` with `view` and `lang`, `lang`, `error` with `part`, and
+the plain ones: `share`, `save-import`, `save-sync`...); its own record of what it stores is at
+footworn.betorzdev.workers.dev/privacy (the owner can also watch visits arrive live there, and
+that view keeps nothing). That fits the AEPD's exemption for audience measurement ("Guía uso de
+cookies para herramientas de medición de audiencia", January 2024), whose one condition that
+falls on the site is to **inform** visitors: that's what the notice is for. GitHub Pages, the
+host, keeps technical logs (GDPR art. 13), which the notice also says. If the site ever adds ads,
+donations or a counter that stores something, this changes: a legal notice (LSSI art. 10) and,
+for ads, a consent banner.
+
 ## Contact
 
 Made by **Albert** ([@betorzdev](https://github.com/betorzdev)).

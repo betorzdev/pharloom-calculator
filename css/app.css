@@ -386,6 +386,20 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
 }
 .colophon a:hover { color: var(--accent-ink); }
 .colophon .gh { display: inline-flex; vertical-align: -3px; margin-left: var(--sp-1); text-decoration: none; }
+/* The privacy notice, folded: its summary responds to the finger, so it takes the links' accent; open,
+   a short left-aligned list in the footer's muted ink, no wider than a comfortable line. */
+.colophon-privacy summary {
+  display: inline-flex; align-items: center; gap: var(--sp-1); cursor: pointer; list-style: none;
+  color: var(--accent); transition: color var(--dur) var(--ease);
+}
+.colophon-privacy summary:hover { color: var(--accent-ink); }
+.colophon-privacy summary::-webkit-details-marker { display: none; }
+.colophon-privacy summary::after { content: '▾'; transition: transform var(--dur) var(--ease); }
+.colophon-privacy[open] summary::after { transform: rotate(180deg); }
+.colophon-privacy ul {
+  max-width: 60ch; margin: var(--sp-2) auto 0; padding-left: var(--sp-4);
+  display: flex; flex-direction: column; gap: var(--sp-1); text-align: left; text-wrap: pretty;
+}
 /* The About block: the page's text for search engines and for whoever lands from one, as a guide
    page on the main menu's red with no box (tools/pages.js; design/23-static-pages-round2.html, D). */
 .about {
