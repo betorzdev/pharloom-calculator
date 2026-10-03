@@ -134,10 +134,11 @@
     if (back && cur && cur.from === key) { try { history.back(); return; } catch (e) { /* stays as a new entry */ } }
     if (!cur || cur.key !== key) writeUrl(true);
   }
-  /* A GoatCounter event (index.html loads it). Only the name travels, never the hash. Without
-     the script (blocked, offline, file://) it does nothing. */
-  function track(name) {
-    try { if (window.goatcounter && goatcounter.count) goatcounter.count({ path: name, title: name, event: true }); } catch (e) {}
+  /* A Footworn event (index.html loads it): a name and, at most, a few short properties. Only
+     those travel, never the hash. Without the script (blocked, offline, file://) it does
+     nothing. */
+  function track(name, props) {
+    try { if (window.footworn && footworn.event) footworn.event(name, props); } catch (e) {}
   }
   const persist = () => { writeUrl(false); };
 
@@ -361,7 +362,7 @@
   function safely(name, fn) {
     try { fn(); } catch (e) {
       console.error(e);
-      track('error-' + name);
+      track('error', { part: name });
     }
   }
   function render() {
@@ -390,7 +391,7 @@
     setView(v);
     navTo(false);
     render();
-    if (changed) { track('screen-' + prefs.view); fadeIn(screenOf(prefs.view)); }
+    if (changed) { track('screen', { view: prefs.view, lang: prefs.lang }); fadeIn(screenOf(prefs.view)); }
     if (changed) {
       const start = el.masthead.offsetTop + el.masthead.offsetHeight;
       if (scrollY > start) scrollTo(0, start);
@@ -431,7 +432,7 @@
       const page = langPage(next);
       prefs.lang = I.setLang(next);
       prefs.langChosen = true;
-      track('lang-' + prefs.lang);
+      track('lang', { lang: prefs.lang });
       savePrefs();
       if (page) { persist(); location.href = page; return; }
       rebuildNF();

@@ -27,8 +27,9 @@ Neither folder is part of the page: `index.html` doesn't load them.
 - **No framework and no build.** `index.html` loads classic scripts, not modules. The page is
   `js/app.js` (the core) and one script per screen (`js/app-*.js`), sharing the `SS.app` object,
   and `js/app-boot.js` starts it; the rules for sharing are in `js/app.js`'s header. Plus
-  GoatCounter's (`async`, external), the visit counter: the site has to work the same without
-  it, so its events go through `track()` in `js/app.js`, which does nothing if it's missing.
+  Footworn's (`async`, external, `data-site="pharloom"`), the visit counter: the site has to
+  work the same without it, so its events go through `track()` in `js/app.js`, which does
+  nothing if it's missing.
 - **The site has to work over `file://`** (opening `index.html` with a double click). Everything
   else follows from that: ES modules and `fetch()` are blocked by the opaque origin, so **data
   travels in `.js` files with an assignment, never in `.json`**.
