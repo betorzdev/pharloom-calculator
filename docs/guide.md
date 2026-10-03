@@ -556,13 +556,14 @@ for (LSSI art. 22.2, ePrivacy art. 5.3), and never leaves it:
 - IndexedDB: `pharloom-live`, the save-file handle, only after "Follow the game" (`js/live.js`).
 - Save files are read in the browser; nothing is uploaded.
 
-The visit counter is [Footworn](https://github.com/betorzdev/footworn) (`track()` in `js/app.js`),
-Albert's own, on a Cloudflare Worker in Western Europe. It sets no cookies, keeps no IP and stores
-only daily counts of pages, referrer host, browser and system families, screen width, language,
-country and the site's events (`screen` with `view` and `lang`, `lang`, `error` with `part`, and
-the plain ones: `share`, `save-import`, `save-sync`...); its own record of what it stores is at
-footworn.betorzdev.workers.dev/privacy (the owner can also watch visits arrive live there, and
-that view keeps nothing). That fits the AEPD's exemption for audience measurement ("Guía uso de
+The visit counter is [Footworn](https://github.com/betorzdev/footworn) (`track()` in `js/app.js`;
+`404.html` loads it too, to see which broken addresses people land on), Albert's own, on a
+Cloudflare Worker in Western Europe. It sets no cookies, keeps no IP, and stores one row per visit
+with nothing that names you: the page, referrer host, browser and system families, screen width,
+language, country and the site's events (`screen` with `view` and `lang`, `lang`, `error` with
+`part`, and the plain ones: `share`, `save-import`, `save-sync`...). The owner sees them as daily
+counts and, for today only, one by one, rounded (the minute, phone/tablet/desktop); its own
+record of what it stores is at footworn.betorzdev.workers.dev/privacy. That fits the AEPD's exemption for audience measurement ("Guía uso de
 cookies para herramientas de medición de audiencia", January 2024), whose one condition that
 falls on the site is to **inform** visitors: that's what the notice is for. GitHub Pages, the
 host, keeps technical logs (GDPR art. 13), which the notice also says. If the site ever adds ads,
