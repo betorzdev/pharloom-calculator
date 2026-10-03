@@ -307,8 +307,8 @@ only zoomed in.
 
 Under the map, the filters and the legend. The filters: the Act (all, or only Act 1, 2 or 3's
 things), «Only what I can reach now» with a save (hides what asks for an ability or Silk Skill you
-don't have yet: the Faydown Cloak, Clawline, Silk Soar, as the completionist lists them), and the
-area names on or off. The legend is five groups, each folded or open as you left it, with its
+don't have yet: the Faydown Cloak, Clawline, Silk Soar, as the completionist lists them), «Only
+what the game shows» with a save (see below), and the area names on or off. The legend is five groups, each folded or open as you left it, with its
 count and a switch for the whole group («All», or «None» when it's all on); inside, each layer's
 own mark is its switch, dimmed when off, with its count:
 
@@ -329,9 +329,8 @@ own mark is its switch, dimmed when off, with its count:
   the Bellhome's furnishings, unique enemies (Rhinogrunds, Covetous Pilgrims, Shardillards, Void
   Masses), and the rosary and shell shard caches and the breakable walls: so many that they're
   drawn one by one only close up; from afar, a count per room.
-- **Your game**, with a save: the rooms you haven't visited, dimmed (on at first); your cocoon,
-  where you last fell; the Journal's entries still missing, in the room where each is found; and
-  the areas whose map you haven't bought, their names struck through.
+- **Your game**, with a save: your cocoon, where you last fell (on at first), and the Journal's
+  entries still missing, in the room where each is found.
 
 Each mark is the thing's own picture on a dark disc with a thin rim, as the Hollow Knight site
 draws them, over a pale plate so a dark portrait reads, about the same size at any zoom, a little
@@ -356,16 +355,26 @@ and what's left there of the 100%, the Journal and the gauntlets.
 Other screens open the map on a thing: «See on the map» on each missing row of Progress and on a
 Journal entry, and each line of «Closest to your bench» in Your game.
 
-Pharloom as the game's own map screen draws it, taken from the game's files (every room in its
-area's tint, the full drawing, as once the area's map is bought), with Hornet on her bench's pin,
-as the game draws her sitting. Where each thing is comes from the game's files too: the pickups
-lying in each room, the vendors, the Wishwalls and their givers, the bosses' arenas, the scripts
-that give an ability. The map shows the whole world explored, in your game's state, by the
-game's own conditions: in Act 3 the Cradle, Cogwork Core and the Ventrica hub are drawn
-destroyed, as the game redraws them then (with their benches and station), and the Abyss's
-diving bell is broken, gone or mended with the Everbloom, as your save has it. In Free mode it's
-the world before Act 3. Verdania and Whiteward are always as they are once their bosses are
-beaten.
+Pharloom as the game's own map screen draws it for your game, piece by piece and by its own
+rules, taken from its files and its code, in a dim tone, with Hornet on her bench's pin, as the game draws her
+sitting. Each room is drawn by its parts, as the game maps them (most rooms have two or three:
+Greymoor_02, its top, its middle), and what your game's map draws is in colour: the parts the
+game has mapped, in the areas whose map you've bought from Shakra. The site being a guide, the
+rest of the map is there too, faint: the areas whose map you haven't bought (their names struck
+through) and the rooms not mapped yet, so that what's missing there has a map under it. A room
+goes whole in colour once any part of it is mapped, so its tone never changes halfway through. «Only
+what the game shows» draws your game's map exactly: no area without its map, nor its name, and a
+part not mapped shows the dotted rough sketch the bought map gives it, or nothing when it's a
+secret or a room's hidden half. What's mapped is what your save says the game has mapped
+(`scenesMapped`), which can trail what you've walked until you sit at a bench, and without the
+Quill the game draws nothing it has mapped. The game's state changes it too: in Act 3 the Cradle,
+Cogwork Core and the Ventrica hub are drawn destroyed, as the game redraws them then (with their
+benches and station); the Abyss's diving bell is broken, gone or mended with the Everbloom;
+Verdania takes its colours once its Dancers are beaten; Whiteward's pit opens after the
+Unravelled; and with the Cloakless crest the Slab moves, as the game moves it. In Free mode it's
+the whole map, the world before Act 3. Where each thing is comes from
+the game's files too: the pickups lying in each room, the vendors, the Wishwalls and their
+givers, the bosses' arenas, the scripts that give an ability.
 
 When your previous save rested at another bench, a dashed thread draws Hornet's way from it to
 this one, and the first time the map comes into view she runs it, room by room, from the old
@@ -526,10 +535,9 @@ texts and names are © Team Cherry; they're used here only to show the game's ow
 - **Sprites and icons**: Hornet, the masks, the spool, the five Needles, the benches (`npm run art`) and the
   inventory icons of the Tools, Crests, Silk Skills, abilities and items and the Journal's 237
   portraits (`npm run icons`, fitted into 256 px as WebP) are the game's, downloaded from the wiki and shown as a fan project.
-- **The map**: the rooms of the game's own map screen, extracted from the installed game's files
-  by `tools/extract-map.py` (`assets/map/rooms.webp`, the rooms that change with the game in `assets/map/states.webp`,
-  `js/map.js`), shown as the Hollow Knight
-  site shows its map, as a fan project.
+- **The map**: the pieces of the game's own map screen and their rules, extracted from the
+  installed game's files by `tools/extract-map.py` (`assets/map/pieces.webp`, `pieces-hd.webp`,
+  `js/map.js`), shown as the Hollow Knight site shows its map, as a fan project.
 - **Fonts**: Cinzel, Spectral and Patrick Hand SC, under the
   [SIL Open Font License 1.1](../assets/fonts/OFL.txt).
 - **Code**: MIT ([`LICENSE`](../LICENSE)). It covers only the code, not any of the above.

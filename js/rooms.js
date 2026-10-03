@@ -128,38 +128,126 @@
     return r ? AREA_OF[r.area] || null : null;
   }
 
-  /* ── The map's state: the rooms a game has there ──────────────────────
-     Some rooms change with the game (js/map.js LAYERS, each with the game's own condition over a
-     few playerData flags): the Cradle, Cogwork Core and the Ventrica hub fall in Act 3
-     (act3MapUpdated) and their destroyed rooms take their place; the Abyss's diving bell is broken,
-     then gone (SeenDivingBellGoneAbyss), then mended with the Everbloom (HasWhiteFlower). A game
-     carries the flags its save has set (savefile's mapFlags). One kept before the site read them
-     has none: in Act 3 its map is taken as fallen (the game sets act3MapUpdated soon after
-     blackThreadWorld, at its first map update), with the bell as its Everbloom says.
-     With no game (Free mode), FREE: the world before Act 3. */
-  function mapFlags(g) {
-    if (!g) return M.FREE.slice();
-    const f = Array.isArray(g.mapFlags) ? g.mapFlags.filter((x) => M.VARY.includes(x)) : [];
-    // A slot kept before the site read the flags: its Act 3 taken as the fallen Cradle's. A game
-    // just in Act 3 whose map the game hasn't updated yet has mapRead and no flag: as it is.
-    if (g.act === 3 && !g.mapRead && !f.length) return ['act3MapUpdated', ...(g.everbloom ? ['HasWhiteFlower'] : [])];
-    return f;
+  /* ── The map as the game draws it ─────────────────────────────────────
+     Piece by piece (js/map.js PIECES), with the game's own rules (GameMap.SetupMap and
+     GameMapScene, read in its code on 3-Oct-2026; tools/extract-map.py's header has them):
+     an area shows while its map is bought (ZONES' bool) or mapAllRooms is set; a piece is mapped
+     when its scene is in scenesMapped, or every scene of its ifAll is, or its parent is mapped;
+     mapped (or Full from the start), and with the Quill, it shows its whole drawing, else a Rough
+     one its sketch and a Hidden one nothing. The rules read a few playerData fields (VARS).
+     With no game (Free mode): every area, every piece mapped but those of Act 3, FREE's values. */
+
+  // A game's values for the rules (savefile's mapVars). A slot kept before the site read them
+  // has its mapFlags, or nothing: in Act 3 its map is taken as fallen (the game sets
+  // act3MapUpdated soon after blackThreadWorld, at its first map update), with the bell as its
+  // Everbloom says; the rest as with no game.
+  function mapVars(g) {
+    const v = { ...M.FREE };
+    if (!g) return v;
+    if (g.mapVars && typeof g.mapVars === 'object' && Object.keys(g.mapVars).length) {
+      for (const k of M.VARS) if (k in g.mapVars) v[k] = g.mapVars[k];
+      return v;
+    }
+    const f = Array.isArray(g.mapFlags) ? g.mapFlags : [];
+    const fallen = f.length ? f : g.act === 3 && !g.mapRead ? ['act3MapUpdated', ...(g.everbloom ? ['HasWhiteFlower'] : [])] : [];
+    for (const k of ['act3MapUpdated', 'HasWhiteFlower', 'SeenDivingBellGoneAbyss']) v[k] = fallen.includes(k);
+    return v;
   }
-  function holds(c, flags) {
+  // A rule (tools/extract-map.py's form) against those values.
+  function rule(c, v) {
+    if (c === true || c == null) return true;
+    if (c === false) return false;
     switch (c[0]) {
-      case 'flag': return flags.includes(c[1]);
-      case 'not': return !holds(c[1], flags);
-      case 'all': return c.slice(1).every((x) => holds(x, flags));
-      case 'any': return c.slice(1).some((x) => holds(x, flags));
+      case 'flag': return v[c[1]] === true;
+      case 'is': return v[c[1]] === c[2];
+      case 'has': return String(v[c[1]] == null ? '' : v[c[1]]).includes(c[2]);
+      case 'lt': return Number(v[c[1]]) < c[2];
+      case 'gt': return Number(v[c[1]]) > c[2];
+      case 'not': return !rule(c[1], v);
+      case 'all': return c.slice(1).every((x) => rule(x, v));
+      case 'any': return c.slice(1).some((x) => rule(x, v));
       default: return false;
     }
   }
-  /* The layers drawn for these flags, and the scenes of those that aren't (their rooms, and the
-     pins in them, aren't there). */
-  const layersOn = (flags) => M.LAYERS.filter((l) => holds(l[0], flags));
-  const scenesOff = (flags) => new Set(M.LAYERS.filter((l) => !holds(l[0], flags)).flatMap((l) => l[6]));
-  const pinsOn = (flags) => { const off = scenesOff(flags); return M.PINS.filter((p) => !off.has(p[3])); };
+  const PIECE = new Map(M.PIECES.map((e) => [e.s, e]));
+  // A piece's whole drawing: the first sprite and the first tint whose rule holds.
+  function whole(e, v) {
+    const si = (e.ws || []).findIndex((c) => rule(c, v)), ci = (e.wc || []).findIndex((c) => rule(c, v));
+    const row = e.w[si < 0 ? e.w.length - 1 : si];
+    return row[ci < 0 ? row.length - 1 : ci];
+  }
+  /* The room a piece is a part of: its own scene, or, for a part (Greymoor_02_top, Library_05_3:
+     named after another piece and not a scene of the game, js/graph.js), the room it's a part of.
+     A destroyed piece stands for its room rather than being part of it. */
+  const SCENE = new Set(Object.keys(G).map((k) => k.toLowerCase()));
+  const ROOM_OF = new Map();
+  function roomPiece(s) {
+    if (ROOM_OF.has(s)) return ROOM_OF.get(s);
+    let r = s;
+    if (!/_Destroyed/.test(s) && !SCENE.has(s.toLowerCase())) {
+      for (let i = s.lastIndexOf('_'); i > 0; i = s.lastIndexOf('_', i - 1)) {
+        const b = s.slice(0, i);
+        if (PIECE.has(b) && !/_Destroyed/.test(b)) { r = roomPiece(b); break; }
+      }
+    }
+    ROOM_OF.set(s, r);
+    return r;
+  }
+  /* What the map shows for a game (null: Free mode). `all`: what the game doesn't draw (an area
+     whose map isn't bought, a room not mapped yet) is there too, faint (faint: true), as a
+     guide. Each piece: { e, cell (a CELLS index), faint }; zones: area → its move, when it has
+     one that holds ({ at, dx, dy, sx, sy }); off: the scenes a rule takes off the map (their pins
+     go with them). */
+  function mapView(g, opts) {
+    const all = !!(opts && opts.all), v = mapVars(g);
+    const own = !!g, mapAll = own && g.mapAll === true;
+    // A slot kept before the site read scenesMapped: what it visited, with the Quill.
+    const known = own && Array.isArray(g.mapped) && (g.mapped.length || g.mappedRead);
+    const set = new Set(own ? (known ? g.mapped : g.visited || []) : []);
+    const quill = !own || g.quill !== false || !known;
+    const bought = new Set(own ? g.maps || [] : []);
+    const zoneOn = (a) => !own || mapAll || (!!(M.ZONES[a] || {}).bool && bought.has(M.ZONES[a].bool.slice(3, -3)));
+    const memo = new Map();
+    const mapped = (e) => {
+      if (!e) return false;
+      if (memo.has(e.s)) return memo.get(e.s);
+      memo.set(e.s, false);
+      const m = !own ? !e.act3 : mapAll || set.has(e.s) || (!!e.ifAll && e.ifAll.every((s) => set.has(s))) || (!!e.parent && mapped(PIECE.get(e.parent)));
+      memo.set(e.s, m);
+      return m;
+    };
+    const pieces = [], off = new Set();
+    for (const e of M.PIECES) {
+      // Off the map: a rule takes it off, or it's of Act 3 while the Cradle stands (with no game,
+      // always: Free mode is the world before Act 3).
+      const gone = e.dark || rule(e.off || false, v) || rule(e.hide || false, v) || (e.act3 && (!own || !v.act3MapUpdated));
+      if (gone) { off.add(e.s); continue; }
+      const isMapped = mapped(e), set1 = (e.st === 2 || isMapped) && quill;
+      let cell = -1;
+      if (set1) cell = whole(e, v);
+      else if (!e.asleep) cell = e.st === 1 ? (e.r == null ? -1 : e.r) : e.st === 2 ? whole(e, v) : -1;
+      const shown = zoneOn(e.a) && cell >= 0;
+      if (shown && (set1 || !all)) { pieces.push({ e, cell, faint: false }); continue; }
+      // As a guide: the whole drawing, faint, of what the game doesn't draw whole.
+      if (all) { const w = whole(e, v); if (w >= 0) pieces.push({ e, cell: w, faint: true }); }
+    }
+    /* As a guide, a room is whole or not as a whole: once the game draws any part of it in colour,
+       its other parts are in colour too. The game cuts rooms into parts with straight lines, and a
+       part faint beside one in colour showed a change of tone in the middle of a room. */
+    if (all) {
+      const lit = new Set(pieces.filter((p) => !p.faint).map((p) => roomPiece(p.e.s)));
+      for (const p of pieces) if (p.faint && lit.has(roomPiece(p.e.s))) p.faint = false;
+    }
+    const zones = {};
+    for (const [a, z] of Object.entries(M.ZONES)) {
+      const mv = (z.moves || []).find((m) => rule(m[0], v));
+      if (mv && (mv[1] || mv[2] || mv[3] !== 1 || mv[4] !== 1)) zones[a] = { at: z.at, dx: mv[1], dy: mv[2], sx: mv[3], sy: mv[4] };
+    }
+    return { pieces, zones, off, zoneOn };
+  }
+  // The pins drawn for a game: those whose piece a rule hasn't taken off the map.
+  const pinsOn = (g) => { const off = mapView(g).off; return M.PINS.filter((p) => !off.has(p[3])); };
 
-  SS.rooms = { ENTRANCE, roomOf, sceneOf, graphScene, walk, steps, path, areaOf, mapFlags, layersOn, scenesOff, pinsOn };
+  SS.rooms = { ENTRANCE, roomOf, sceneOf, graphScene, walk, steps, path, areaOf, mapVars, rule, mapView, pinsOn };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.rooms;
 })();

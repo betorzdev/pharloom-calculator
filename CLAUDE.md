@@ -127,6 +127,13 @@ From the study (`design/00-study.md`) and the wiki's damage page:
 - **A slash waits max(cooldown, duration)**, each Crest's own (`js/hero.js`, from the game's
   files): 0.41 s for the Hunter. Flea Brew only shortens the cooldown, so the Hunter's 0.35 s is
   its floor: +17%, not the wiki's +50%.
+- **The Map is drawn piece by piece with the game's own rules** (`tools/extract-map.py`'s header,
+  `js/rooms.js mapView`): a room is two or three pieces mapped one by one, by `scenesMapped`
+  (not `scenesVisited`: it trails it), and an area shows only once its map is bought. The site
+  being a guide, what the game doesn't draw yet is there faint by default («Only what the game
+  shows» hides it). Never cut a room out by its box: its pieces share it. The pieces are composed
+  on a canvas (`js/map-paint.js`), never a window each: the browser smooths each window's edge
+  and lets a hairline through where two pieces meet.
 - **Six wiki pages carry a `CODEname` that isn't their Journal key** (`CORAL_GOOMBA` for
   `NAME_CORAL_GOOMBAS`); `tools/names.js` falls back to the title.
 - **The game selects with white on grey, with no selection hue**: don't invent one from

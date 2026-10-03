@@ -125,7 +125,11 @@
   --area-spot-off: rgba(236, 236, 236, 0.04);
   --scene-cold: rgba(94, 84, 74, 0.3);
   --scene-cold-off: rgba(94, 84, 74, 0.1);
-  --map-fog: rgba(1, 1, 1, 0.62);              /* the Map's veil over the rooms not visited */
+  --map-faint: 0.45;                           /* the Map's guide view: what the game doesn't draw yet (js/map-paint.js reads it) */
+  /* The Map's tone: the drawing as the game's files have it, much dimmer and a little greyer, as
+     mapgenie's whole map of Pharloom shows it (measured 3-Oct-2026), so its soft edges and dashes
+     hardly show. Not yet checked against the game's own map screen. */
+  --map-tone: saturate(0.8) brightness(0.7) contrast(0.95);
   --map-plate: rgba(236, 236, 236, 0.46);      /* the plate behind a mark's picture: --halo-plate's */
   --map-plate-mid: rgba(236, 236, 236, 0.16);
   /* Each area's light (design/02-silksong.md §4, measured on the wiki's area maps): the fill and

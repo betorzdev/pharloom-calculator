@@ -251,6 +251,8 @@
                           set (HasWhiteFlower: the Everbloom); js/rooms.js mapFlags reads them
        mapRead            true: this game's mapFlags were read (a slot kept before they were has
                           none, and js/rooms.js guesses them from its Act)
+       mapVars            the playerData fields the map's rules read (js/map.js VARS), with this
+                          save's values: js/rooms.js mapView draws the map with them
        bench, area        where Hornet rests (respawnScene) and the area she's in (currentArea)
        build              what she wears (buildOf): { crest, hunterStage, tools, skill, vest, seats, unlocked }, or null
      and what js/acts.js reads for the road to the next Act (js/quests.js has the game's rules):
@@ -326,7 +328,8 @@
       journal,
       act: pd.blackThreadWorld === true ? 3 : pd.act2Started === true ? 2 : 1,
       mapRead: true,
-      mapFlags: MAP.VARY.filter((f) => (f === 'HasWhiteFlower' ? int(flower) > 0 : pd[f] === true)),
+      mapFlags: MAP_VARY.filter((f) => (f === 'HasWhiteFlower' ? int(flower) > 0 : pd[f] === true)),
+      mapVars: Object.fromEntries(MAP.VARS.map((f) => [f, f === 'HasWhiteFlower' ? int(flower) > 0 : mapValue(pd[f], MAP.FREE[f])])),
       bench: typeof pd.respawnScene === 'string' && /^[\w ()-]{1,64}$/.test(pd.respawnScene) ? pd.respawnScene : '',
       area: typeof pd.currentArea === 'string' && /^[A-Z_]{1,32}$/.test(pd.currentArea) ? pd.currentArea : '',
       build: buildOf(pd) || {},
@@ -342,10 +345,17 @@
       snarePieces: QU.SNARE.filter(held).map((x) => x.save),
       snareReady: pd.soulSnareReady === true,
       endings: ENDINGS.filter((e) => (int(pd.CompletedEndings) & e.bit) !== 0).map((e) => e.id),
-      // For the Map: the rooms entered, the areas whose map is bought (Has<Area>Map, by the
-      // area's name in the flag), where the cocoon lies (the scene Hornet last fell in, while
-      // it's there), the things beyond the 100% had (js/spots.js EXTRAS) and the bosses beaten.
+      // For the Map: the rooms entered and the rooms the game has mapped (scenesMapped: what its
+      // map draws, behind what's entered until Hornet sits at a bench or with the Quill), the
+      // Quill (hasQuill: without it the game draws nothing it has mapped), mapAllRooms, the areas
+      // whose map is bought (Has<Area>Map, by the area's name in the flag), where the cocoon lies
+      // (the scene Hornet last fell in, while it's there), the things beyond the 100% had
+      // (js/spots.js EXTRAS) and the bosses beaten.
       visited: [...visited].filter((x) => typeof x === 'string' && /^[\w ()-]{1,64}$/.test(x)).sort(),
+      mapped: scenes(pd.scenesMapped),
+      mappedRead: true,
+      quill: pd.hasQuill === true,
+      mapAll: pd.mapAllRooms === true,
       maps: MAP_FLAGS.filter((f) => pd[f] === true).map((f) => f.slice(3, -3)),
       cocoon: typeof pd.HeroCorpseScene === 'string' && /^[\w ()-]{1,64}$/.test(pd.HeroCorpseScene) ? pd.HeroCorpseScene : '',
       extras: SP.EXTRAS.map((x, i) => (has(x[2]) ? i : -1)).filter((i) => i >= 0),
@@ -358,12 +368,19 @@
        pharloom.owned     { tools, crests, skills, arts }: what the Crest screen can equip
        pharloom.journal   { entry id: kills }
        pharloom.progress  the rest of game(): masks, spools, hearts, needle, kit, pouch,
-                          everbloom, pieces, wishes, gauntlets, lit, act, mapFlags, bench, area, build,
-                          the road's fields (quests … snareReady) and the Map's (visited … bosses)
+                          everbloom, pieces, wishes, gauntlets, lit, act, mapFlags, mapVars, bench,
+                          area, build, the road's fields (quests … snareReady) and the Map's
+                          (visited … bosses)
        pharloom.meta      what the profile screen shows (meta()) and when the file was saved
      toSnapshot() writes them; gameOf() reads them back into one game, with the same defaults as
      an empty game for anything missing or damaged. */
   const OWNED = ['tools', 'crests', 'skills', 'arts'];
+  // The flags kept as mapFlags (before mapVars: a slot with these alone still draws its Act 3).
+  const MAP_VARY = Object.freeze(['act3MapUpdated', 'HasWhiteFlower', 'SeenDivingBellGoneAbyss']);
+  // A rule's field as the save has it: a bool, a number or a short string, else its value with no save.
+  const mapValue = (x, free) => (typeof x === 'boolean' || (typeof x === 'number' && Number.isFinite(x))
+    || (typeof x === 'string' && /^[\w ()-]{0,64}$/.test(x)) ? x : free);
+  const scenes = (l) => [...new Set(Array.isArray(l) ? l : [])].filter((x) => typeof x === 'string' && /^[\w ()-]{1,64}$/.test(x)).sort();
   // The 28 maps Shakra sells, as the save flags them (checked on the author's saves).
   const MAP_FLAGS = Object.freeze(['HasMossGrottoMap', 'HasWildsMap', 'HasBoneforestMap', 'HasDocksMap', 'HasGreymoorMap',
     'HasBellhartMap', 'HasShellwoodMap', 'HasCrawlMap', 'HasHuntersNestMap', 'HasJudgeStepsMap', 'HasDustpensMap', 'HasSlabMap',
@@ -398,10 +415,10 @@
     };
   }
   const EMPTY = Object.freeze({ tools: [], crests: [], skills: [], arts: [], journal: {}, masks: 0, spools: 0, hearts: 0,
-    needle: 0, kit: 0, pouch: 0, everbloom: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, bench: '', area: '', build: {},
+    needle: 0, kit: 0, pouch: 0, everbloom: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', area: '', build: {},
     quests: [], bellshrines: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
     bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [],
-    visited: [], maps: [], cocoon: '', extras: [], bosses: [] });
+    visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', extras: [], bosses: [] });
   const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
   // Each field only if it has the type an empty game gives it.
   function gameOf(snap) {
@@ -421,7 +438,8 @@
     // The gauntlets go by their ids, the wiki's subpages: one the list no longer has is dropped.
     out.gauntlets = out.gauntlets.filter((id) => GA.GAUNTLETS.some((x) => x.id === id));
     out.lit = out.lit.filter((k) => LIGHTS.some((p) => pinKey(p) === k));
-    out.mapFlags = out.mapFlags.filter((f) => MAP.VARY.includes(f));
+    out.mapFlags = out.mapFlags.filter((f) => MAP_VARY.includes(f));
+    out.mapVars = Object.fromEntries(Object.entries(out.mapVars).filter(([k, x]) => MAP.VARS.includes(k) && mapValue(x, undefined) !== undefined));
     return out;
   }
   const metaOf = (snap) => ({ version: '', time: 0, completion: 0, rosaries: 0, shards: 0, steel: false, dead: false, saved: null,

@@ -534,7 +534,9 @@ a `Game_Map_Hornet` tree as Hollow Knight's `Game_Map`: one child per area, one 
 room named after its scene, its Transform and a SpriteRenderer tinted with the area's colour;
 the sprites are `hornet_map.spriteatlas` (4096², BC7, 1,199 rooms by name) and a patch atlas.
 UnityPy reads them with the Unity version set by hand (6000.0.50f1). `tools/extract-map.py`
-places 1,110 rooms and gives the game's map line for line. What follows was written before:
+places 1,110 rooms and gives the game's map line for line. Since 3 October it extracts the map
+piece by piece with the game's own rules for which drawing each piece shows (§9, «The map, piece
+by piece»). What follows was written before:
 
 Unverified, but the signs are good. `extract-map.py` reads Hollow Knight's `resources.assets`
 for the `Game_Map` object tree (a `<scene>_Cornifer` sprite per room, the tint, the pins) and
@@ -1249,6 +1251,68 @@ pages are written and listed instead of 116. The bar is six tabs in a row, Crest
 apart; on a phone the Inventory still folds under Your game, and Build is gone. The screen's
 code, its texts and its tests stay: bringing it back is taking `'fight'` out of both `OFF`s,
 the tabs from git history (`ea0d729`) and `npm run pages`.
+
+**The map, piece by piece as the game draws it** (3 October). Set against the game's own map
+screen, the Map was wrong in many places: it drew one image of the world explored and laid over
+it a veil with a box cut out for each room in `scenesVisited`. The game draws something else, and
+its code (`GameMap.SetupMap`, `GameMapScene`, read with ILSpy) says what. The map is 838 pieces,
+not rooms: most rooms have two or three parts (`Greymoor_02`, `_mid`, `_top`), each mapped on its
+own, and each part's sprite is the room's whole canvas with only its part drawn, so their boxes
+are all the same and a box cut out of the veil for one part opened its neighbours. An area shows
+only while its map is bought (`Has<Area>Map`; the Dust Maze and the Surface have none, and the
+game never shows them). A piece is mapped when its scene is in **`scenesMapped`** (not
+`scenesVisited`: it trails it until a bench), when every scene of its `mappedIfAllMapped` is, or
+when its `mappedParent` is. Mapped, or Full from the start, and with the Quill, it shows its whole
+drawing. Otherwise a Rough piece shows its rough sketch and a Hidden one nothing. A handful of
+playerData fields change pieces (Act 3, the diving bell, Verdania's colours, Whiteward's pit,
+`Coral_19_base`), and two move an area (the Slab with the Cloakless crest, the Dust Maze by its
+entrance). A rule with no tests holds.
+
+`tools/extract-map.py` now writes each piece's drawings (whole, each tint its rules give, and the
+sketch) into `assets/map/pieces.webp` (915 KB, and `pieces-hd.webp`, 2 MB, twice as fine) and
+the rules into `js/map.js`: PIECES, CELLS, ZONES, VARS and FREE. `ROOMS` and `PINS` come out the
+same, so nothing on the map moves. `js/rooms.js mapView` applies the game's rules to a save
+(`savefile.game()` now keeps `mapped`, the Quill, `mapAllRooms` and the rules' values, `mapVars`),
+and `js/app-map.js` draws each piece as a window on the sheet. The veil and the «Maps not bought»
+layer are gone; what the game doesn't draw yet is there faint (below). With no save it's the whole map before Act 3,
+which matches the earlier single image except for `Cog_11_Destroyed`, a passage no save maps.
+`tools/map-debug.html`, which nothing links, draws the map for a save or a game made by hand,
+with what each piece shows and why, to set against the game's pause screen.
+The same day Albert turned the default round: the site is a guide for getting everything, and an
+area left black hides what's missing in it. So the whole map is always there, what the game draws
+in colour and the rest faint, and the switch became **Only what the game shows**, off at first.
+A room mapped in part then showed a change of tone in its middle, where the game's straight cut
+between two parts falls (33 rooms in one save), so as a guide a room goes whole in colour once any
+part of it is. A part is a piece named after another and not a scene of the game (`js/graph.js`):
+237 of them; Belltown_06 or Hang_03_top are scenes, rooms of their own.
+Then a black hairline where two pieces met: each piece is a window of its own, and the browser
+smooths a window's edge, so the black under two touching windows showed through (the single image
+never had it). `extract-map.py` now lets each drawing reach a pixel (two in `pieces-hd.webp`)
+under its neighbours, only where the other pieces cover the map, so outer outlines stay as they
+are; it needs numpy.
+The pieces are drawn in the game's order, the farthest first (the largest z: they share their
+sorting layer and order, so the camera sorts by depth), not the bundle's. Some broken lines are
+the game's own drawing: Song_09b's top edge is dashed and sits over Song_09b_top in the game too.
+Albert then set the Map beside mapgenie's whole map of Pharloom
+(mapgenie.io/hollow-knight-silksong/maps/pharloom): it looked clean and the site full of small
+flaws. Aligned at the same scale, the drawing is the same, flaws and all; mapgenie's is much
+dimmer (median brightness 40 against the site's 54, the 99th percentile 90 against 148) and a
+little greyer (saturation 0.30 against 0.38), so its soft edges and dashes hardly show. The pieces
+now take that tone (`--map-tone`: saturate 0.8, brightness 0.7, contrast 0.95, a CSS filter on
+them alone), and the guide view's faint parts went from 0.3 to 0.45 to stay readable over it.
+Whether the game's own map screen is that dim is still to check against a capture of it.
+mapgenie's map is a composite, not one game's state: it has the Cradle fallen and Cogwork Core
+standing, which the game never shows together (act3MapUpdated switches both).
+Close up, set against mapgenie's finest tiles, the site still drew flaws mapgenie hasn't: lines
+through the Vaults' fades, a wavy line in the Arborium's band, light ticks where rooms join. The
+game's own sprites, composed at their native 100 pixels a unit, are as clean as mapgenie's, so
+the flaws were ours, three of them. Each sprite was rounded to the pixel on its own, so rooms
+that touch were up to a pixel apart; `extract-map.py` now places each to the fraction of a pixel
+(`placed()`, four times finer and averaged, premultiplied). The pixel each drawing reached under
+its neighbours drew its fades and outline ends over them; it's gone. And the hairlines were the
+browser's, which smoothed the edge of each piece's SVG window: the pieces are now composed on a
+canvas first (`js/map-paint.js`, one to one from the sheet, at twice the size in four tiles close
+up so that no canvas passes Safari's limit) and the view draws that one image, as the game does.
 
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about

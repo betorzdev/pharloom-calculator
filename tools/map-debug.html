@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<!-- tools/map-debug.html — a bench for the Map's drawing, not part of the site (nothing links it).
+     The map piece by piece as js/rooms.js mapView draws it for a game (on a canvas, as the site:
+     js/map-paint.js), which can be a real save
+     (.dat) or one made here: each area's map bought or not, each piece mapped or not, the Quill,
+     the values the rules read. A click on the map maps or unmaps the smallest piece under the
+     pointer; the side panel lists every piece under it with what it shows and why. Right click
+     flags a piece as drawn wrong; the flagged list is there to copy. Opens over file:// like the site. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Map debug · Pharloom Calculator</title>
+<style>
+  :root { --bg: #010101; --panel: #141414; --line: #333; --ink: #ddd; --muted: #888; --on: #6fd18a; --off: #e0675c; --flag: #ffd23f; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); font: 13px/1.4 system-ui, sans-serif; }
+  body { display: grid; grid-template-columns: minmax(0, 1fr) 360px; }
+  #view { position: relative; overflow: hidden; height: 100vh; cursor: crosshair; }
+  #view.grab { cursor: grabbing; }
+  #svg { position: relative; display: block; width: 100%; height: 100%; user-select: none; }
+  /* As css/tokens.css --map-tone: the Map's tone. */
+  #cv { position: absolute; inset: 0; width: 100%; height: 100%; filter: saturate(0.8) brightness(0.7) contrast(0.95); }
+  .box { fill: none; stroke-width: 1; vector-effect: non-scaling-stroke; pointer-events: none; }
+  .box.flag { stroke: var(--flag); stroke-width: 2; }
+  .box.all { stroke: #4a90d9; stroke-dasharray: 3 3; }
+  .hover { fill: rgba(255, 255, 255, 0.08); stroke: #fff; stroke-width: 1.5; vector-effect: non-scaling-stroke; pointer-events: none; }
+  #tip { position: absolute; pointer-events: none; background: #000d; border: 1px solid var(--line); padding: 2px 6px; white-space: nowrap; display: none; }
+  aside { height: 100vh; overflow: auto; background: var(--panel); border-left: 1px solid var(--line); padding: 12px; display: flex; flex-direction: column; gap: 12px; }
+  h2 { margin: 0; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+  section { display: flex; flex-direction: column; gap: 6px; }
+  .row { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; }
+  button, label.btn { background: #222; color: var(--ink); border: 1px solid var(--line); padding: 4px 8px; cursor: pointer; font: inherit; }
+  button:hover, label.btn:hover { border-color: #666; }
+  input[type=file] { display: none; }
+  input[type=text] { background: #0b0b0b; color: var(--ink); border: 1px solid var(--line); padding: 2px 4px; font: inherit; }
+  textarea { width: 100%; height: 110px; background: #0b0b0b; color: var(--ink); border: 1px solid var(--line); font: 12px ui-monospace, monospace; }
+  ul { list-style: none; margin: 0; padding: 0; }
+  #under li { display: grid; grid-template-columns: auto auto 1fr; gap: 2px 6px; align-items: center; padding: 3px 0; border-bottom: 1px solid #222; }
+  #under li .why { grid-column: 1 / -1; color: var(--muted); font-size: 12px; }
+  #under li button { padding: 0 6px; }
+  .tag { font-size: 11px; color: var(--muted); }
+  .on-t { color: var(--on); } .off-t { color: var(--off); } .flag-t { color: var(--flag); }
+  .zones label { min-width: 150px; }
+  kbd { border: 1px solid var(--line); padding: 0 4px; font-size: 11px; }
+</style>
+</head>
+<body>
+<div id="view">
+  <canvas id="cv"></canvas>
+  <svg id="svg"></svg>
+  <div id="tip"></div>
+</div>
+<aside>
+  <section>
+    <h2>Map debug</h2>
+    <div class="tag">Click: map ↔ unmap · Right click: flag as wrong · Wheel: zoom · Drag: pan · <kbd>B</kbd> boxes</div>
+    <div id="stats" class="tag"></div>
+  </section>
+  <section>
+    <h2>Game</h2>
+    <div class="row">
+      <label class="btn">Load save (.dat)<input type="file" id="save" accept=".dat"></label>
+      <button id="free">Free mode</button>
+      <button id="all-on">Map all</button>
+      <button id="all-off">Map none</button>
+    </div>
+    <div class="row">
+      <label><input type="checkbox" id="quill"> Quill</label>
+      <label><input type="checkbox" id="mapAll"> mapAllRooms</label>
+      <label><input type="checkbox" id="whole"> Show the whole map</label>
+      <label><input type="checkbox" id="boxes"> Boxes</label>
+      <label><input type="checkbox" id="hd" checked> HD close up</label>
+    </div>
+  </section>
+  <section>
+    <h2>Rules' values</h2>
+    <div class="row" id="vars"></div>
+  </section>
+  <section>
+    <h2>Areas' maps bought <button id="zones-all" class="tag">all</button> <button id="zones-none" class="tag">none</button></h2>
+    <div class="row zones" id="zones"></div>
+  </section>
+  <section>
+    <h2>Under the pointer (last click)</h2>
+    <ul id="under"><li class="tag">Click on the map.</li></ul>
+  </section>
+  <section>
+    <h2>Flagged as wrong <span id="nflag" class="tag"></span></h2>
+    <textarea id="flagged" readonly></textarea>
+    <div class="row"><button id="copy-flag">Copy</button><button id="clear-flag">Clear flags</button></div>
+  </section>
+  <section>
+    <h2>Find a piece</h2>
+    <input type="text" id="find" list="scenes" placeholder="Scene name…">
+    <datalist id="scenes"></datalist>
+  </section>
+</aside>
+<script src="../js/i18n.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/journal.js"></script>
+<script src="../js/journal-rooms.js"></script>
+<script src="../js/enemies.js"></script>
+<script src="../js/enemy-damage.js"></script>
+<script src="../js/phases.js"></script>
+<script src="../js/gauntlets.js"></script>
+<script src="../js/collectibles.js"></script>
+<script src="../js/map.js"></script>
+<script src="../js/graph.js"></script>
+<script src="../js/rooms.js"></script>
+<script src="../js/map-paint.js"></script>
+<script src="../js/benches.js"></script>
+<script src="../js/completion.js"></script>
+<script src="../js/quests.js"></script>
+<script src="../js/acts.js"></script>
+<script src="../js/how.js"></script>
+<script src="../js/spots.js"></script>
+<script src="../js/savefile.js"></script>
+<script>
+(() => {
+  'use strict';
+  const M = SS.map, R = SS.rooms, F = SS.savefile;
+  const KEY = 'pharloom.debug.map2';
+  const $ = (id) => document.getElementById(id);
+  const svg = $('svg'), view = $('view'), tip = $('tip');
+  const BOUGHT = Object.values(M.ZONES).map((z) => z.bool).filter(Boolean).map((b) => b.slice(3, -3));
+  const ALL_SCENES = M.PIECES.map((e) => e.s);
+
+  // The game made here: null is Free mode. Kept in localStorage (wrapped: over file:// it may throw).
+  let st = { game: null, flagged: [], whole: false, boxes: false, hd: true };
+  try { Object.assign(st, JSON.parse(localStorage.getItem(KEY)) || {}); } catch (e) { /* defaults */ }
+  let flagged = new Set(st.flagged);
+  const save = () => { st.flagged = [...flagged]; try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) { /* not kept */ } };
+  const world = () => ({ mapVars: { ...M.FREE }, mapped: ALL_SCENES.slice(), mappedRead: true, quill: true, mapAll: false, maps: BOUGHT.slice(), visited: [] });
+  const game = () => st.game;
+  const ensure = () => { if (!st.game) st.game = world(); return st.game; };
+
+  // Why a piece shows what it shows (js/rooms.js mapView's rules, said out).
+  function why(e, p) {
+    const g = game(), v = R.mapVars(g);
+    if (e.dark) return 'renderer off in the scene file: never drawn';
+    if (R.rule(e.off || false, v)) return 'switched off by ' + JSON.stringify(e.off);
+    if (R.rule(e.hide || false, v)) return 'hidden by ' + JSON.stringify(e.hide);
+    if (e.act3 && (!g || !v.act3MapUpdated)) return 'of Act 3: not there while the Cradle stands';
+    const st0 = ['Hidden', 'Rough', 'Full'][e.st];
+    if (!g) return st0 + ' · Free mode: whole';
+    const zone = M.ZONES[e.a] || {};
+    const bits = [st0, (g.mapped || []).includes(e.s) ? 'mapped' : 'not mapped'];
+    if (e.parent) bits.push('parent ' + e.parent);
+    if (e.ifAll) bits.push('if all mapped: ' + e.ifAll.join(', '));
+    if (!g.quill) bits.push('no Quill');
+    if (!R.mapView(g).zoneOn(e.a)) bits.push(zone.bool ? `area's map not bought (${zone.bool})` : 'area never shown by the game');
+    bits.push(!p ? 'shows nothing' : p.faint ? 'faint (whole map)' : p.cell === e.r ? 'rough sketch' : 'whole');
+    return bits.join(' · ');
+  }
+
+  // The view: a viewBox over the map's own pixels, as js/app-map.js.
+  let vb = { x: 0, y: 0, w: M.W, h: M.H };
+  function fit() {
+    const r = view.getBoundingClientRect(), k = Math.max(M.W / r.width, M.H / r.height);
+    vb = { w: r.width * k, h: r.height * k, x: (M.W - r.width * k) / 2, y: (M.H - r.height * k) / 2 };
+  }
+  const scale = () => view.getBoundingClientRect().width / vb.w;
+  const toImg = (ev) => { const r = view.getBoundingClientRect(); return { x: vb.x + (ev.clientX - r.left) / scale(), y: vb.y + (ev.clientY - r.top) / scale() }; };
+
+  // The pieces on a canvas under the SVG, composed as js/app-map.js composes them (js/map-paint.js).
+  const MP = SS.mapPaint, cv = $('cv'), sheets = {};
+  let shown = { pieces: [], zones: {} }, hoverRect = null, comp = null, compKey = '';
+  function sheet(sc, then) {
+    let s = sheets[sc];
+    if (!s) {
+      s = sheets[sc] = { img: new Image(), ready: false, wait: [] };
+      s.img.onload = () => { s.ready = true; for (const f of s.wait.splice(0)) f(); };
+      s.img.src = `../assets/map/pieces${sc === 2 ? '-hd' : ''}.webp`;
+    }
+    if (s.ready) then(); else s.wait.push(then);
+  }
+  function paintCanvas() {
+    const r = view.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
+    const w = Math.round(r.width * dpr), h = Math.round(r.height * dpr);
+    if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; }
+    MP.paint(cv.getContext('2d'), comp, vb, w, h);
+  }
+  function draw() {
+    svg.setAttribute('viewBox', `${vb.x} ${vb.y} ${vb.w} ${vb.h}`);
+    const sc = st.hd && scale() * (window.devicePixelRatio || 1) > 1.1 ? 2 : 1;
+    shown = R.mapView(game(), { all: st.whole });
+    const key = MP.keyOf(shown, sc);
+    if (key !== compKey) {
+      sheet(sc, () => {
+        if (MP.keyOf(shown, sc) !== key) return;
+        comp = MP.compose(shown, sheets[sc].img, sc, 0.45, (w, h) => { const c = document.createElement('canvas'); c.width = w; c.height = h; return c; });
+        compKey = key;
+        paintCanvas();
+      });
+    }
+    paintCanvas();
+    let h = '';
+    h += '<g class="boxes">' + pieceBoxes().filter((b) => st.boxes || flagged.has(b.e.s)).map((b) =>
+      `<rect class="box ${flagged.has(b.e.s) ? 'flag' : 'all'}" x="${b.x}" y="${b.y}" width="${b.w}" height="${b.h}"/>`).join('') + '</g>';
+    h += '<rect class="hover" width="0" height="0"/>';
+    svg.innerHTML = h;
+    hoverRect = svg.querySelector('.hover');
+    stats();
+  }
+  // Each piece's box: the union of its drawings' boxes.
+  let boxesCache = null;
+  function pieceBoxes() {
+    if (boxesCache) return boxesCache;
+    return (boxesCache = M.PIECES.map((e) => {
+      const cs = [...e.w.flat(), e.r].filter((c) => c != null && c >= 0).map((c) => M.CELLS[c]);
+      const x = Math.min(...cs.map((c) => c[0])), y = Math.min(...cs.map((c) => c[1]));
+      return { e, x, y, w: Math.max(...cs.map((c) => c[0] + c[2])) - x, h: Math.max(...cs.map((c) => c[1] + c[3])) - y };
+    }));
+  }
+  function stats() {
+    const g = game(), n = shown.pieces.length, faint = shown.pieces.filter((p) => p.faint).length;
+    $('stats').textContent = g ? `${(g.mapped || []).length} scenes mapped · ${n - faint} pieces drawn${faint ? `, ${faint} faint` : ''} · ${g.maps.length} areas bought · ${flagged.size} flagged`
+      : `Free mode · ${n} pieces drawn · ${flagged.size} flagged`;
+    $('flagged').value = [...flagged].sort().map((s) => { const e = M.PIECES.find((x) => x.s === s); return `${s}  (${e.a}) ${why(e, shown.pieces.find((p) => p.e === e))}`; }).join('\n');
+    $('nflag').textContent = flagged.size ? `(${flagged.size})` : '';
+    // The panel's controls, as the game is.
+    const free = !g;
+    for (const id of ['quill', 'mapAll']) { $(id).disabled = free; }
+    $('quill').checked = !free && g.quill !== false;
+    $('mapAll').checked = !free && !!g.mapAll;
+    $('whole').checked = !!st.whole;
+    $('boxes').checked = !!st.boxes;
+    const v = R.mapVars(g);
+    for (const el of $('vars').querySelectorAll('[data-var]')) {
+      const k = el.dataset.var;
+      el.disabled = free;
+      if (el.type === 'checkbox') el.checked = v[k] === true; else el.value = v[k] == null ? '' : v[k];
+    }
+    for (const el of $('zones').querySelectorAll('input')) { el.disabled = free; el.checked = free || g.maps.includes(el.dataset.zone); }
+  }
+
+  // The pieces under a point, the smallest box first.
+  const under = (p) => pieceBoxes().filter((b) => p.x >= b.x && p.x < b.x + b.w && p.y >= b.y && p.y < b.y + b.h).sort((a, b) => a.w * a.h - b.w * b.h);
+  function showUnder(bs) {
+    const ul = $('under');
+    ul.textContent = '';
+    if (!bs.length) { ul.innerHTML = '<li class="tag">No piece here.</li>'; return; }
+    const g = game();
+    for (const b of bs) {
+      const e = b.e, p = shown.pieces.find((x) => x.e === e), mapped = !g || (g.mapped || []).includes(e.s), f = flagged.has(e.s);
+      const li = document.createElement('li');
+      li.innerHTML = `<button data-t="m">${mapped ? 'unmap' : 'map'}</button><button data-t="f">${f ? 'unflag' : 'flag'}</button>
+        <span class="${f ? 'flag-t' : p && !p.faint ? 'on-t' : 'off-t'}">${e.s} <span class="tag">${e.a}</span></span><span class="why">${why(e, p)}</span>`;
+      li.querySelector('[data-t=m]').onclick = () => { toggleMapped(e.s); draw(); showUnder(bs); };
+      li.querySelector('[data-t=f]').onclick = () => { toggle(flagged, e.s); save(); draw(); showUnder(bs); };
+      li.onmouseenter = () => hover(b);
+      ul.appendChild(li);
+    }
+  }
+  const toggle = (set, s) => { if (set.has(s)) set.delete(s); else set.add(s); };
+  function toggleMapped(s) {
+    const g = ensure(), m = new Set(g.mapped);
+    toggle(m, s);
+    g.mapped = [...m];
+    save();
+  }
+  function hover(b) {
+    if (!hoverRect) return;
+    if (!b) { hoverRect.setAttribute('width', 0); return; }
+    for (const [k, v] of [['x', b.x], ['y', b.y], ['width', b.w], ['height', b.h]]) hoverRect.setAttribute(k, v);
+  }
+
+  // Pointer: drag pans, a click without moving maps or unmaps; right click flags.
+  let drag = null;
+  view.addEventListener('pointerdown', (ev) => { if (ev.button !== 0) return; drag = { x: ev.clientX, y: ev.clientY, vb: { ...vb }, moved: false }; view.setPointerCapture(ev.pointerId); });
+  view.addEventListener('pointermove', (ev) => {
+    if (drag) {
+      const dx = ev.clientX - drag.x, dy = ev.clientY - drag.y;
+      if (Math.abs(dx) + Math.abs(dy) > 4) { drag.moved = true; view.classList.add('grab'); }
+      if (drag.moved) { vb.x = drag.vb.x - dx / scale(); vb.y = drag.vb.y - dy / scale(); svg.setAttribute('viewBox', `${vb.x} ${vb.y} ${vb.w} ${vb.h}`); paintCanvas(); }
+      return;
+    }
+    const bs = under(toImg(ev)), b = bs[0];
+    hover(b);
+    const vr = view.getBoundingClientRect();
+    if (b) {
+      const p = shown.pieces.find((x) => x.e === b.e);
+      tip.style.display = 'block';
+      tip.style.left = ev.clientX - vr.left + 14 + 'px';
+      tip.style.top = ev.clientY - vr.top + 14 + 'px';
+      tip.innerHTML = `<b class="${flagged.has(b.e.s) ? 'flag-t' : p && !p.faint ? 'on-t' : 'off-t'}">${b.e.s}</b> <span class="tag">${b.e.a}${bs.length > 1 ? ` · +${bs.length - 1} under` : ''}</span>`;
+    } else tip.style.display = 'none';
+  });
+  view.addEventListener('pointerup', (ev) => {
+    if (!drag) return;
+    const moved = drag.moved;
+    drag = null;
+    view.classList.remove('grab');
+    if (moved) { draw(); return; }
+    const bs = under(toImg(ev));
+    if (bs[0]) toggleMapped(bs[0].e.s);
+    draw();
+    showUnder(bs);
+  });
+  view.addEventListener('pointerleave', () => { tip.style.display = 'none'; hover(null); });
+  view.addEventListener('contextmenu', (ev) => {
+    ev.preventDefault();
+    const bs = under(toImg(ev));
+    if (bs[0]) { toggle(flagged, bs[0].e.s); save(); }
+    draw();
+    showUnder(bs);
+  });
+  view.addEventListener('wheel', (ev) => {
+    ev.preventDefault();
+    const p = toImg(ev), k = Math.exp(ev.deltaY * 0.0015);
+    const w = Math.min(M.W * 3, Math.max(60, vb.w * k)), f = w / vb.w;
+    vb = { x: p.x - (p.x - vb.x) * f, y: p.y - (p.y - vb.y) * f, w, h: vb.h * f };
+    draw();
+  }, { passive: false });
+  addEventListener('resize', () => { if (view.getBoundingClientRect().width) { fit(); draw(); } });
+  addEventListener('keydown', (ev) => {
+    if (ev.target.tagName === 'INPUT') return;
+    if (ev.key === 'b' || ev.key === 'B') { st.boxes = !st.boxes; save(); draw(); }
+  });
+
+  // The panel.
+  $('free').onclick = () => { st.game = null; save(); draw(); };
+  $('all-on').onclick = () => { ensure().mapped = ALL_SCENES.slice(); save(); draw(); };
+  $('all-off').onclick = () => { ensure().mapped = []; save(); draw(); };
+  $('quill').onchange = (ev) => { ensure().quill = ev.target.checked; save(); draw(); };
+  $('mapAll').onchange = (ev) => { ensure().mapAll = ev.target.checked; save(); draw(); };
+  for (const id of ['whole', 'boxes', 'hd']) $(id).onchange = (ev) => { st[id] = ev.target.checked; save(); draw(); };
+  for (const k of M.VARS) {
+    const lab = document.createElement('label');
+    const isBool = typeof M.FREE[k] === 'boolean';
+    lab.innerHTML = isBool ? `<input type="checkbox" data-var="${k}"> ${k}` : `${k} <input type="text" data-var="${k}" size="10">`;
+    lab.querySelector('input').onchange = (ev) => {
+      const g = ensure();
+      g.mapVars = { ...R.mapVars(g), [k]: isBool ? ev.target.checked : ev.target.value };
+      save(); draw();
+    };
+    $('vars').appendChild(lab);
+  }
+  for (const [a, z] of Object.entries(M.ZONES).sort()) {
+    if (!z.bool) continue;
+    const lab = document.createElement('label');
+    const zone = z.bool.slice(3, -3);
+    lab.innerHTML = `<input type="checkbox" data-zone="${zone}"> ${a} <span class="tag">${z.bool}</span>`;
+    lab.querySelector('input').onchange = (ev) => {
+      const g = ensure(), m = new Set(g.maps);
+      if (ev.target.checked) m.add(zone); else m.delete(zone);
+      g.maps = [...m];
+      save(); draw();
+    };
+    $('zones').appendChild(lab);
+  }
+  $('zones-all').onclick = () => { ensure().maps = BOUGHT.slice(); save(); draw(); };
+  $('zones-none').onclick = () => { ensure().maps = []; save(); draw(); };
+  $('copy-flag').onclick = () => { $('flagged').select(); try { navigator.clipboard.writeText($('flagged').value); } catch (e) { document.execCommand('copy'); } };
+  $('clear-flag').onclick = () => { flagged = new Set(); save(); draw(); };
+  $('save').onchange = async (ev) => {
+    const file = ev.target.files[0];
+    if (!file) return;
+    const r = F.read(new Uint8Array(await file.arrayBuffer()));
+    if (!r.ok) { alert('Unreadable save: ' + r.error); return; }
+    const g = F.game(r.pd, r.sd);
+    st.game = { mapVars: g.mapVars, mapped: g.mapped, mappedRead: true, quill: g.quill, mapAll: g.mapAll, maps: g.maps, visited: g.visited };
+    save(); draw();
+    ev.target.value = '';
+  };
+  $('scenes').innerHTML = ALL_SCENES.map((s) => `<option value="${s}">`).join('');
+  $('find').onchange = () => {
+    const b = pieceBoxes().find((x) => x.e.s.toLowerCase() === $('find').value.trim().toLowerCase());
+    if (!b) return;
+    const w = Math.max(b.w, b.h) * 6, k = vb.h / vb.w;
+    vb = { w, h: w * k, x: b.x + b.w / 2 - w / 2, y: b.y + b.h / 2 - (w * k) / 2 };
+    draw(); hover(b); showUnder([b]);
+  };
+
+  fit();
+  draw();
+})();
+</script>
+</body>
+</html>

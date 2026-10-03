@@ -30,6 +30,11 @@ test('every loose piece on the floor has its room, the fleas by the room their f
   assert.equal(R.sceneOf(['quest', 'Save Sherma']), null);
 });
 
+// Every area's map bought, every piece mapped, the Quill, and these values for the map's rules.
+const world = (vars) => ({ mapVars: { ...M.FREE, ...vars }, mapped: M.PIECES.map((e) => e.s), mappedRead: true, quill: true,
+  maps: Object.values(M.ZONES).map((z) => z.bool).filter(Boolean).map((b) => b.slice(3, -3)), visited: [] });
+const drawn = (view) => new Set(view.pieces.filter((p) => !p.faint).map((p) => p.e.s));
+
 test('an interior the map does not draw goes where its door is; every gauntlet and pin has its room', () => {
   for (const [inside, door] of Object.entries(R.ENTRANCE)) {
     assert.ok(M.ROOMS[door], `${inside}: its door ${door} is not on the map`);
@@ -44,38 +49,61 @@ test('an interior the map does not draw goes where its door is; every gauntlet a
   }
   // Each state shows its own: the Ventrica hub's bench and station, and the diving bell's bench.
   assert.deepEqual(kinds, { bench: 78, bellway: 12, ventrica: 8 });
-  const count = (flags) => R.pinsOn(flags).reduce((o, p) => ({ ...o, [p[0]]: (o[p[0]] || 0) + 1 }), {});
-  assert.deepEqual(count(R.mapFlags(null)), { bench: 76, bellway: 12, ventrica: 7 });
-  assert.deepEqual(count(['act3MapUpdated', 'SeenDivingBellGoneAbyss']), { bench: 75, bellway: 12, ventrica: 7 });
-  assert.deepEqual(count(['act3MapUpdated', 'SeenDivingBellGoneAbyss', 'HasWhiteFlower']), { bench: 76, bellway: 12, ventrica: 7 });
+  const count = (g) => R.pinsOn(g).reduce((o, p) => ({ ...o, [p[0]]: (o[p[0]] || 0) + 1 }), {});
+  assert.deepEqual(count(null), { bench: 76, bellway: 12, ventrica: 7 });
+  assert.deepEqual(count(world({ act3MapUpdated: true, SeenDivingBellGoneAbyss: true })), { bench: 75, bellway: 12, ventrica: 7 });
+  assert.deepEqual(count(world({ act3MapUpdated: true, SeenDivingBellGoneAbyss: true, HasWhiteFlower: true })), { bench: 76, bellway: 12, ventrica: 7 });
 });
 
-test('the map\'s state: the rooms Act 3 destroys and the diving bell, by the game\'s own conditions', () => {
-  const on = (flags) => new Set(R.layersOn(flags).flatMap((l) => l[6]));
+test('the map\'s state: the rooms Act 3 destroys and the diving bell, by the game\'s own rules', () => {
   // Free mode and before Act 3: the Cradle, Cogwork Core and the Ventrica hub standing, the bell broken.
-  for (const flags of [R.mapFlags(null), R.mapFlags({ act: 2, mapFlags: [] })]) {
-    const s = on(flags);
+  for (const g of [null, world({}), { act: 2, mapFlags: [], ...world({}), mapVars: undefined }]) {
+    const s = drawn(R.mapView(g));
     for (const x of ['Cradle_01', 'Cog_Dancers', 'Tube_Hub', 'Song_Tower_01', 'Abyss_03_bell_broken']) assert.ok(s.has(x), x);
     for (const x of ['Cradle_01_Destroyed', 'Tube_Hub_Destroyed', 'Abyss_03_bell_fixed']) assert.ok(!s.has(x), x);
   }
   // Act 3: the 14 rooms the game hides, and their destroyed rooms in their place.
-  const a3 = on(['act3MapUpdated', 'SeenDivingBellGoneAbyss']);
-  assert.equal(M.LAYERS.find((l) => JSON.stringify(l[0]) === '["not",["flag","act3MapUpdated"]]')[6].length, 14);
+  assert.equal(M.PIECES.filter((e) => JSON.stringify(e.hide) === '["flag","act3MapUpdated"]').length, 14);
+  const a3 = drawn(R.mapView(world({ act3MapUpdated: true, SeenDivingBellGoneAbyss: true })));
   for (const x of ['Cradle_01_Destroyed', 'Cog_Dancers_Destroyed', 'Tube_Hub_Destroyed', 'Song_Tower_Destroyed']) assert.ok(a3.has(x), x);
   for (const x of ['Cradle_01', 'Tube_Hub', 'Abyss_03_bell_broken', 'Abyss_03_bell_fixed']) assert.ok(!a3.has(x), x);
-  assert.ok(on(['act3MapUpdated', 'HasWhiteFlower']).has('Abyss_03_bell_fixed'));
-  // A save's own flags; one kept before the site read them, in Act 3, is taken as fallen.
-  assert.deepEqual(R.mapFlags({ act: 3, mapFlags: ['act3MapUpdated'] }), ['act3MapUpdated']);
-  assert.deepEqual(R.mapFlags({ act: 3, mapFlags: [], everbloom: true }), ['act3MapUpdated', 'HasWhiteFlower']);
-  // A game read with the flags, just in Act 3 before the game updates its map: as it is.
-  assert.deepEqual(R.mapFlags({ act: 3, mapRead: true, mapFlags: [] }), []);
-  // Each layer is inside the map and its row inside states.webp; the rows don't overlap.
-  let row = 0;
-  for (const [, x, y, w, h, top, scenes] of M.LAYERS) {
-    assert.ok(x >= 0 && y >= 0 && x + w <= M.W && y + h <= M.H && w <= M.SW && top >= row && top + h <= M.SH, scenes.join());
-    for (const s of scenes) assert.ok(M.ROOMS[s], s);
-    row = top + h;
+  assert.ok(drawn(R.mapView(world({ act3MapUpdated: true, HasWhiteFlower: true }))).has('Abyss_03_bell_fixed'));
+  // A slot kept before the site read the rules' values: its flags, or in Act 3 the Cradle fallen.
+  assert.equal(R.mapVars({ act: 3, mapFlags: ['act3MapUpdated'] }).act3MapUpdated, true);
+  assert.equal(R.mapVars({ act: 3, mapFlags: [], everbloom: true }).HasWhiteFlower, true);
+  assert.equal(R.mapVars({ act: 3, mapRead: true, mapFlags: [] }).act3MapUpdated, false);
+});
+
+test('the map piece by piece, as the game draws it', () => {
+  // Every drawing is inside the map and inside pieces.webp.
+  for (const [x, y, w, h, sx, sy] of M.CELLS) assert.ok(x >= 0 && y >= 0 && x + w <= M.W && y + h <= M.H && sx + w <= M.SW && sy + h <= M.SH);
+  for (const e of M.PIECES) for (const c of [...e.w.flat(), e.r].filter((c) => c != null && c >= 0)) assert.ok(M.CELLS[c], e.s);
+  // Free mode: every area, and nothing faint.
+  const free = R.mapView(null);
+  assert.ok(free.pieces.length > 700 && free.pieces.every((p) => !p.faint));
+  // An area whose map isn't bought: nothing of it, as in the game; with the whole map, faint.
+  const noGrey = { ...world({}), maps: world({}).maps.filter((m) => m !== 'Greymoor') };
+  assert.ok(!R.mapView(noGrey).pieces.some((p) => p.e.a === 'Greymoor'));
+  assert.ok(R.mapView(noGrey, { all: true }).pieces.filter((p) => p.e.a === 'Greymoor').every((p) => p.faint));
+  // A room's parts are each its own: Greymoor_02 mapped, its top part not.
+  const part = { ...world({}), mapped: M.PIECES.map((e) => e.s).filter((s) => s !== 'Greymoor_02_top') };
+  const v = drawn(R.mapView(part));
+  assert.ok(v.has('Greymoor_02') && v.has('Greymoor_02_mid') && !v.has('Greymoor_02_top'));
+  // As a guide, a room goes whole in colour once any part of it is: no change of tone inside it.
+  const guide = R.mapView(part, { all: true }).pieces.find((p) => p.e.s === 'Greymoor_02_top');
+  assert.ok(guide && !guide.faint);
+  // Not mapped: a Rough piece shows its sketch, a Hidden one nothing; without the Quill, the same.
+  const rough = M.PIECES.find((e) => e.st === 1 && e.r != null), hidden = M.PIECES.find((e) => e.st === 0 && !e.hide && !e.off && !e.act3);
+  for (const g of [{ ...world({}), mapped: [] }, { ...world({}), quill: false }]) {
+    const pcs = R.mapView(g).pieces;
+    assert.equal(pcs.find((p) => p.e === rough).cell, rough.r);
+    assert.ok(!pcs.some((p) => p.e === hidden));
   }
+  // The Dust Maze and the Surface have no map to buy: the game never shows them.
+  assert.ok(!R.mapView(world({})).pieces.some((p) => p.e.a === 'Dust Maze'));
+  // The Slab moves with the Cloakless crest.
+  assert.ok(R.mapView(world({ CurrentCrestID: 'Cloakless' })).zones.Slab);
+  assert.ok(!R.mapView(world({})).zones.Slab);
 });
 
 test('getting around: the game\'s doors, and the stations a save has opened; every piece can be reached', () => {

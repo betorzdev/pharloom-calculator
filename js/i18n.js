@@ -257,6 +257,10 @@
     mapActs:        { es: 'Por acto', en: 'By Act' },
     mapActAll:      { es: 'Todos', en: 'All' },
     mapReachNow:    { es: 'Solo lo que puedo coger ya', en: 'Only what I can reach now' },
+    // The Map shows the whole map, faint where your game's doesn't yet; this leaves that out. No game source: written for context.
+    mapGame:        { es: 'Solo lo que enseña el juego', en: 'Only what the game shows' },
+    mapGameTip:     { es: 'Como el mapa de tu partida: sin las zonas cuyo mapa no has comprado ni las salas sin cartografiar.',
+                      en: 'As your game\'s map: without the areas whose map you haven\'t bought or the rooms not mapped.' },
     mapArea:        { es: 'Zona', en: 'Area' },
     mapOnMap:       { es: 'Ver en el mapa', en: 'See on the map' },
     mapMore:        { es: 'y {n} más', en: 'and {n} more' },
@@ -270,10 +274,8 @@
     mapLayer_givers:{ es: 'Quien pide un deseo', en: 'Who asks for a wish' },
     mapLayer_giver1:{ es: 'Pide un deseo', en: 'Asks for a wish' },
     mapLayer_people:{ es: 'Quien da algo del 100 %', en: 'Who gives a 100% thing' },
-    mapLayer_fog:   { es: 'Salas sin visitar', en: 'Rooms not visited' },
     mapLayer_cocoon:{ es: 'Tu capullo', en: 'Your cocoon' },
     mapLayer_journal: { es: 'Diario: lo que falta', en: 'Journal: what\'s missing' },
-    mapLayer_maps:  { es: 'Mapas sin comprar', en: 'Maps not bought' },
     'mapExtra_bone-scroll':        { es: 'Pergamino óseo', en: 'Bone Scroll' },   // INV_NAME_R_BONE_RECORD
     'mapExtra_weaver-effigy':      { es: 'Efigie de Tejedora', en: 'Weaver Effigy' },   // INV_NAME_R_WEAVER_TOTEM
     'mapExtra_choral-commandment': { es: 'Mandamiento coral', en: 'Choral Commandment' },   // INV_NAME_R_SEAL_CHIT

@@ -1,9 +1,12 @@
-/* js/app-map.js — the Map: Pharloom as the game's map screen draws it (assets/map/rooms.webp,
-   extracted from the game's files by tools/extract-map.py) in your game's state: in Act 3 the
-   Cradle, Cogwork Core and the Ventrica hub destroyed, and the Abyss's diving bell as your game
-   has it (states.webp's layers, js/rooms.js mapFlags; Free mode: before Act 3), and on it
-   everything the game has for each room (js/spots.js, from the game's own files), in layers
-   grouped as the legend under the map shows them:
+/* js/app-map.js — the Map: Pharloom as the game's map screen draws it for your game, piece by
+   piece with the game's own rules (assets/map/pieces.webp, extracted from the game's files by
+   tools/extract-map.py; js/rooms.js mapView): the areas whose map you've bought, each room's
+   parts as the game has mapped them, whole, or the rough sketch of those it hasn't, in Act 3 the
+   Cradle, Cogwork Core and the Ventrica hub destroyed and the Abyss's diving bell as your game
+   has it. The site being a guide, what the game doesn't draw yet is there too, faint (the areas
+   whose map isn't bought, the rooms not mapped); "Only what the game shows" leaves it out. In
+   Free mode, the whole map before Act 3. On it, everything the game has for each room (js/spots.js, from the game's
+   own files), in layers grouped as the legend under the map shows them:
      Missing for 100%   every piece, Tool, Crest, Silk Skill, ability and the Everbloom, where it's
                         had: lying in its room, its vendor's, its Wishwall's, its boss's arena
      Places             benches, Bellway and Ventrica stations (the game's own pins, dimmed while
@@ -14,8 +17,7 @@
      Other collectibles relics, Mossberries, Silkeaters, Mementos, the Bellhome's furnishings,
                         unique spawns, and the rosary and shell shard caches and breakable walls
                         (off at first; from afar, a count per room)
-     Your game          the rooms not visited, dimmed (scenesVisited); your cocoon; the Journal's
-                        entries still missing; the areas whose map isn't bought
+     Your game          your cocoon; the Journal's entries still missing
    In a save, what's had is left out; in Free mode, everything shows, as a guide. The Act filter
    and "what I can reach now" (js/spots.js NEEDS against your abilities) narrow every layer. A tap
    on a mark, or on an area's name, opens its card. Hornet sits at your bench (js/app-hornet.js
@@ -83,20 +85,18 @@
     L('rosary-cache', 'extras', () => t('mapExtra_rosary'), { dot: 'assets/icons/extras/rosary-cache.webp' }),
     L('shard-cache', 'extras', () => t('mapExtra_shard'), { dot: 'assets/icons/extras/shard-cache.webp' }),
     L('wall', 'extras', () => t('mapExtra_wall'), { glyph: 'wall' }),
-    L('fog', 'game', () => t('mapLayer_fog'), { glyph: 'fog' }),
     L('cocoon', 'game', () => t('mapLayer_cocoon'), { pin: 'shade_pin' }),
     L('journal', 'game', () => t('mapLayer_journal'), { badge: 'journal' }),
-    L('maps', 'game', () => t('mapLayer_maps'), { glyph: 'unmapped' }),
   ];
   const LAYER = new Map(LAYERS.map((l) => [l.id, l]));
   const GROUPS = ['hundred', 'places', 'people', 'extras', 'game'];
   const groupName = (g) => t('mapGroup_' + g);
-  // On at first: the whole 100%, the stations, the gauntlets and bosses, and the rooms not visited.
-  const FIRST_ON = [...LAYERS.filter((l) => l.group === 'hundred').map((l) => l.id), 'bellway', 'ventrica', 'gauntlet', 'boss', 'fog', 'cocoon'];
+  // On at first: the whole 100%, the stations, the gauntlets and bosses, and your cocoon.
+  const FIRST_ON = [...LAYERS.filter((l) => l.group === 'hundred').map((l) => l.id), 'bellway', 'ventrica', 'gauntlet', 'boss', 'cocoon'];
   // So many they'd hide the map: drawn only close up; from afar, a count per room.
   const FINE = new Set(['rosary-cache', 'shard-cache', 'wall']);
   // The layers that only a save can say anything about.
-  const OWN_ONLY = new Set(['fog', 'cocoon', 'journal', 'maps']);
+  const OWN_ONLY = new Set(['cocoon', 'journal']);
   function layersOn() {
     if (Array.isArray(prefs.mapLayers)) return prefs.mapLayers.filter((k) => LAYER.has(k));
     // The earlier switches (mapKinds, mapPlaces), kept where they said something.
@@ -117,10 +117,8 @@
     person: svg('<circle cx="7" cy="4.5" r="2"/><path d="M3 12c.5-2.8 2-4 4-4s3.5 1.2 4 4"/>'),
     home: svg('<path d="M2.5 7L7 3l4.5 4M4 6v5.5h6V6"/>'),
     wall: svg('<path d="M2 3h10v8H2zM2 7h10M5 3v4M9 7v4"/>'),
-    fog: svg('<path d="M2 5.5h7M4 8h8M2 10.5h6"/>'),
-    // A folded map: Shakra, who sells them; struck through, an area whose map isn't bought.
+    // A folded map: Shakra, who sells them.
     map: svg('<path d="M2 3.5l3.3-1 3.4 1.5 3.3-1v8l-3.3 1-3.4-1.5-3.3 1z"/><path d="M5.3 2.5v8M8.7 4v8"/>'),
-    unmapped: svg('<path d="M2 3.5l3.3-1 3.4 1.5 3.3-1v8l-3.3 1-3.4-1.5-3.3 1z"/><path d="M1.5 12.5l11-11"/>'),
     spawn: svg('<path d="M7 2l1.5 3.2 3.5.4-2.6 2.4.7 3.5L7 9.8 3.9 11.5l.7-3.5L2 5.6l3.5-.4z"/>'),
     journal: svg('<path d="M3 2.5h7a1 1 0 011 1v8H4a1 1 0 01-1-1z"/><path d="M5 5h4"/>'),
   };
@@ -190,7 +188,7 @@
       name: t('cat_items'), draw: (s, ti, k, c) => dot('everbloom', 'assets/icons/items/everbloom.webp', s, ti, k, c) });
     // Places: the pins (a station not open, a toll not paid: dimmed, cls ' is-off').
     const lit = new Set(own ? own.lit : []);
-    R.pinsOn(R.mapFlags(own)).forEach((p, pi) => {
+    R.pinsOn(own).forEach((p, pi) => {
       const open = !p[4] || !own || lit.has(pinKey(p));
       const name = t(p[0] === 'bench' ? 'mapPlace_bench1' : 'mapPlace_' + p[0]);
       out.push({ key: 'pin:' + pi, layer: p[0], scene: p[3], at: { x: p[1], y: p[2] }, got: false, off: !open, pinData: p,
@@ -283,18 +281,45 @@
   /* ── The map, in SVG in the image's own pixels (M.W × M.H): the view is its viewBox, as the
      sibling's (hallownest-calculator js/app-map.js). ── */
   const n2 = (v) => (Math.round(v * 100) / 100).toString();
-  // The rooms that change with the game (js/map.js LAYERS), those this game has: each a window on
-  // its row of assets/map/states.webp.
-  const layersSvg = (flags, hd) => R.layersOn(flags).map(([, x, y, w, h, top]) =>
-    `<svg class="mp-layer" x="${x}" y="${y}" width="${w}" height="${h}" viewBox="0 ${top} ${w} ${h}" preserveAspectRatio="none">`
-    + `<image href="assets/map/states${hd ? '-hd' : ''}.webp" width="${M.SW}" height="${M.SH}"/></svg>`).join('');
-  /* The rooms not visited, dimmed: a veil over the whole map with each visited room cut out of it. */
-  function fogSvg(own) {
-    const seen = new Set(own.visited.map(lower));
-    const holes = Object.entries(M.ROOMS).filter(([s, r]) => r[2] && seen.has(lower(s)))
-      .map(([, r]) => `<rect x="${r[0]}" y="${r[1]}" width="${r[2]}" height="${r[3]}"/>`).join('');
-    return `<g class="mp-fog" aria-hidden="true"><defs><mask id="mp-fog-m"><rect width="${M.W}" height="${M.H}" fill="#fff"/><g fill="#000">${holes}</g></mask></defs>
-        <rect width="${M.W}" height="${M.H}" mask="url(#mp-fog-m)"/></g>`;
+  /* The map's pieces as the game draws them for this game (js/rooms.js mapView), on a canvas
+     under the SVG: composed once from assets/map/pieces.webp (js/map-paint.js), then drawn as one
+     image at the view; close up, from pieces-hd.webp, twice as fine. A window per piece let a
+     hairline of black through where two pieces met. */
+  const MP = SS.mapPaint;
+  const sheets = {};   // scale → { img, ready, wait }: pieces.webp (1), pieces-hd.webp (2)
+  function sheet(scale, then) {
+    let s = sheets[scale];
+    if (!s) {
+      s = sheets[scale] = { img: new Image(), ready: false, wait: [] };
+      s.img.onload = () => { s.ready = true; for (const f of s.wait.splice(0)) f(); };
+      s.img.src = `assets/map/pieces${scale === 2 ? '-hd' : ''}.webp`;
+    }
+    if (s.ready) then(); else s.wait.push(then);
+  }
+  let shown = null, shownKey = '', shownStamp = 0, comp = null, compKey = '', wantScale = 1;
+  const faintOf = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--map-faint')) || 0.45;
+  const makeCanvas = (w, h) => { const c = document.createElement('canvas'); c.width = w; c.height = h; return c; };
+  // The composed map for what's shown at the scale wanted; the one before stays until it's ready.
+  function composeMap() {
+    if (!shown) return;
+    const scale = wantScale, key = shownStamp + '@' + scale;
+    if (key === compKey) { paintMap(); return; }
+    sheet(scale, () => {
+      if (shownStamp + '@' + wantScale !== key) return;   // something newer is on its way
+      comp = MP.compose(shown, sheets[scale].img, scale, faintOf(), makeCanvas);
+      compKey = key;
+      paintMap();
+    });
+    paintMap();
+  }
+  function paintMap() {
+    const { v } = nodes(), cv = v && v.querySelector('.mp-canvas');
+    if (!cv || !vb) return;
+    const r = cv.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
+    const w = Math.round(r.width * dpr), h = Math.round(r.height * dpr);
+    if (!w || !h) return;
+    if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; }
+    MP.paint(cv.getContext('2d'), comp, vb, w, h);
   }
   /* A mark on the map, as the sibling's pins: a dark disc with a thin rim, the thing's picture
      almost as big (its own art, the game's pin, a Journal portrait) or the site's glyph. It keeps
@@ -374,7 +399,7 @@
     const b = before();
     const path = R.path(b.bench, g.bench, g.lit) || [];
     const mid = path.slice(1, -1).map((s) => R.roomOf(s)).filter(Boolean);
-    pins = pins || R.pinsOn(R.mapFlags(g));
+    pins = pins || R.pinsOn(g);
     const pts = [benchPoint(b.bench, pins), ...mid, benchPoint(g.bench, pins)].filter(Boolean);
     return path.length > 1 && pts.length > 1 ? { key, pts } : null;
   }
@@ -440,14 +465,16 @@
     const marks = items.map(({ m, p }) => pinSvg(m, p, [m.name, m.sub, m.act ? t('saveAct', { n: m.act }) : ''].filter(Boolean).join(' · '),
       FINE.has(m.layer) ? ' is-fine' : '')).join('');
     const clusters = [...fine.values()].map((f) => `<g class="mp-mk mp-cluster" style="--px:${n2(f.x)}px;--py:${n2(f.y)}px" aria-hidden="true"><circle r="0.5"/><text dy="0.02">${num(f.n)}</text></g>`).join('');
-    const flags = R.mapFlags(own), shownPins = R.pinsOn(flags);
+    const exact = !!own && !!prefs.mapGame, view = R.mapView(own, { all: !exact }), shownPins = R.pinsOn(own);
     const bench = own ? benchPoint(own.bench, shownPins) : null;
     // Hornet at her bench: the page's own sprite (.hn), over the map at her point (placeOver).
     const hornet = bench ? `<span class="mp-hornet hn is-sit" role="img" aria-label="${esc(t('mapBench'))}" title="${esc(t('mapBench'))}" data-x="${bench.x}" data-y="${bench.y}"></span>` : '';
-    const fog = own && on.has('fog') ? fogSvg(own) : '';
     const bought = mapped(own);
+    // An area whose map isn't bought: its name struck through; with only what the game shows,
+    // not there, as in the game.
     const namesSvg = names ? AREA_NAMES().map((a) => {
-      const unmapped = own && on.has('maps') && MAPPABLE.has(a.id) && !bought.has(a.id);
+      const unmapped = own && MAPPABLE.has(a.id) && !bought.has(a.id);
+      if (unmapped && exact) return '';
       return `<text class="mp-name${unmapped ? ' is-unmapped' : ''}${sel('area:' + a.id)}" x="${n2(a.x)}" y="${n2(a.y)}" data-mk="area:${a.id}" role="button" tabindex="0"${NT}>`
         + `${unmapped ? `<title>${esc(t('mapUnmapped'))}</title>` : ''}${esc(areaName(a.id))}</text>`;
     }).join('') : '';
@@ -458,13 +485,13 @@
     const sw = (l) => {
       const n = count[l.id];
       return `<li><button type="button" class="mp-sw" data-act="mapLayer" data-value="${l.id}" aria-pressed="${on.has(l.id)}">
-        ${legendMark(l)}<span${NT}>${esc(l.name())}</span>${n != null && l.id !== 'fog' ? ` <b>${num(n)}</b>` : ''}</button></li>`;
+        ${legendMark(l)}<span${NT}>${esc(l.name())}</span>${n != null ? ` <b>${num(n)}</b>` : ''}</button></li>`;
     };
     const groups = GROUPS.map((gr) => {
       const ls = LAYERS.filter((l) => l.group === gr && (gr !== 'game' || own));
       if (!ls.length) return '';
       const isOpen = !!open[gr], allOn = ls.every((l) => on.has(l.id));
-      const n = ls.reduce((a, l) => a + (on.has(l.id) && l.id !== 'fog' ? count[l.id] || 0 : 0), 0);
+      const n = ls.reduce((a, l) => a + (on.has(l.id) ? count[l.id] || 0 : 0), 0);
       return `<section class="mp-grp${isOpen ? ' is-open' : ''}">
           <div class="mp-grp-h"><button type="button" class="mp-grp-t" data-act="mapOpen" data-value="${gr}" aria-expanded="${isOpen}">
             <span class="mp-grp-c" aria-hidden="true">${isOpen ? '▾' : '▸'}</span><span class="lbl">${esc(groupName(gr))}</span>${n ? ` <b>${num(n)}</b>` : ''}</button>
@@ -477,6 +504,7 @@
         <div class="seg" role="group" aria-label="${esc(t('mapActs'))}">${[0, 1, 2, 3].map((n) =>
           `<button type="button" data-act="mapAct" data-value="${n}" aria-pressed="${act === n}">${esc(n ? t('saveAct', { n }) : t('mapActAll'))}</button>`).join('')}</div>
         ${g ? `<button type="button" class="mp-sw" data-act="mapReach" aria-pressed="${!!prefs.mapReach}"><span class="check-box" aria-hidden="true"></span><span>${esc(t('mapReachNow'))}</span></button>` : ''}
+        ${own ? `<button type="button" class="mp-sw" data-act="mapGame" aria-pressed="${exact}" title="${esc(t('mapGameTip'))}"><span class="check-box" aria-hidden="true"></span><span>${esc(t('mapGame'))}</span></button>` : ''}
         <button type="button" class="mp-sw" data-act="mapNames" aria-pressed="${names}"><span class="mp-aa" aria-hidden="true">Aa</span><span>${esc(t('mapNames'))}</span></button>
       </div>`;
     const legend = `<div class="mp-legend">${filters}${groups}</div>`;
@@ -490,10 +518,10 @@
     sec.innerHTML = `<div class="mp${big ? ' is-big' : ''}">${brackets}${screenHead(esc(t('navMap')))}
       <div class="mp-stage">
         <div class="mp-view">
+          <canvas class="mp-canvas" aria-hidden="true"></canvas>
           <svg class="mp-svg" viewBox="${vb ? `${vb.x} ${vb.y} ${vb.w} ${vb.h}` : `0 0 ${M.W} ${M.H}`}" role="img" aria-label="${esc(t('mapAlt'))}">
             <defs><radialGradient id="mp-plate"><stop offset="0"/><stop offset="0.6"/><stop offset="1"/></radialGradient></defs>
-            <image class="mp-rooms" href="assets/map/rooms${hdOn ? '-hd' : ''}.webp" width="${M.W}" height="${M.H}"/>${layersSvg(flags, hdOn)}
-            ${fog}${own ? waySvg(own, shownPins) : ''}<g class="mp-names">${namesSvg}</g><g class="mp-marks">${clusters}${marks}</g>
+            ${own ? waySvg(own, shownPins) : ''}<g class="mp-names">${namesSvg}</g><g class="mp-marks">${clusters}${marks}</g>
           </svg>${hornet}<i class="mp-ping" hidden></i>
         </div>
         ${search}${tools}
@@ -501,6 +529,10 @@
       ${legend}
       <p class="pg-note">${esc(t('mapNote'))}</p></div>`;
     cardCtx = { g, own };
+    // The pieces: composed again only when what's shown changes.
+    const viewKey = MP.keyOf(view, 0);
+    if (!shown || viewKey !== shownKey) { shownKey = viewKey; shownStamp++; }
+    shown = view;
     // The view as it was, once the screen shows; or the thing another screen asked for.
     requestAnimationFrame(() => {
       applyView();
@@ -567,9 +599,10 @@
     m.style.setProperty('--k', String(vb.w / r.width * px));
     v.classList.toggle('is-zoomed', zoom > 1.5);
     v.classList.toggle('is-close', zoom > 3);   // the caches and walls, one by one
-    // Close up, the map at twice the resolution (assets/map/rooms-hd.webp, tools/extract-map.py):
+    // Close up, the map at twice the resolution (assets/map/pieces-hd.webp, tools/extract-map.py):
     // loaded the first time it's needed, and kept.
-    if (r.width * (window.devicePixelRatio || 1) / vb.w > 1.1) hd(m);
+    if (r.width * (window.devicePixelRatio || 1) / vb.w > 1.1) wantScale = 2;
+    composeMap();
     for (const el of v.querySelectorAll('.mp-hornet, .mp-ping')) placeOver(el);
     paintCard();
   }
@@ -703,19 +736,6 @@
   const pick1 = (key) => { picked = key; const { m } = nodes(); if (m) for (const x of m.querySelectorAll('.is-sel')) x.classList.remove('is-sel');
     const el = key && m && m.querySelector(`[data-mk="${CSS.escape(key)}"]`); if (el) el.classList.add('is-sel');
     const sec = App.screenOf('map'), c = sec && sec.querySelector('.mp-card-wrap'); if (c) c.dataset.key = ''; paintCard(); };
-  let hdOn = false;
-  function hd(m) {
-    if (hdOn) return;
-    for (const img of m.querySelectorAll('image.mp-rooms, .mp-layer image')) {
-      const href = img.getAttribute('href');
-      if (/-hd\.webp$/.test(href)) continue;
-      const big = href.replace(/\.webp$/, '-hd.webp');
-      const pre = new Image();
-      pre.onload = () => { img.setAttribute('href', big); };
-      pre.src = big;
-    }
-    hdOn = true;
-  }
   // f above 1 goes further, below 1 closer, round a map point.
   function zoomAt(f, cx, cy) {
     if (!vb) return;
@@ -856,6 +876,7 @@
     },
     mapAct(node) { prefs.mapAct = Number(node.dataset.value) || 0; savePrefs(); render(); },
     mapReach() { prefs.mapReach = !prefs.mapReach; savePrefs(); render(); },
+    mapGame() { prefs.mapGame = !prefs.mapGame; savePrefs(); render(); },
     mapZoom(node) { if (vb) zoomAt(node.dataset.value === 'in' ? 1 / 1.4 : 1.4, vb.x + vb.w / 2, vb.y + vb.h / 2); },
     // The large map, a choice (prefs.mapBig), as the sibling's: refitted and brought under the bar.
     mapBig() {

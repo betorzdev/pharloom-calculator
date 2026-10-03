@@ -2017,7 +2017,6 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
   .mp-view:not(.is-zoomed) { --mp-s: 16px; }
   .mp-tools { top: 0; }
 }
-/* The rooms that change with the game: a window on the map onto their row of states.webp. */
 /* A piece: the game's round badge, a dark disc with a rim in the kind's colour, the picture inside. */
 .mp-dot {
   --c: var(--ink); position: absolute; z-index: 2; display: grid; place-items: center; width: var(--mp-s, 22px); height: var(--mp-s, 22px);
@@ -2028,9 +2027,11 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 /* The Needle, a long thin line, laid across the disc as the fight's card lays it (.ft-cardx). */
 .mp-dot.is-needle img { transform: rotate(35deg) scale(1.2); }
 /* The map in SVG, as the sibling's: the view is its viewBox, the marks keep their size (--k). */
-.mp-svg { display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; user-select: none; }
+.mp-svg { position: relative; display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; user-select: none; }
+/* The map's pieces, composed on a canvas under the SVG (js/map-paint.js), in the map's tone. */
+.mp-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; filter: var(--map-tone); }
 .mp-view.is-grabbing .mp-svg { cursor: grabbing; }
-.mp-svg image, .mp-layer { pointer-events: none; }
+.mp-svg image { pointer-events: none; }
 /* A mark: a dark disc with a thin rim and the thing's picture almost as big; the rim lit when
    pointed at or chosen. */
 .mp-mk { transform: translate(var(--px), var(--py)) scale(var(--k, 1)) translate(var(--ox, 0px), var(--oy, 0px)); cursor: pointer; }
@@ -2058,8 +2059,6 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 .mp-cluster { pointer-events: none; }
 .mp-cluster text { font-family: var(--font-num); font-size: 0.42px; text-anchor: middle; dominant-baseline: middle; fill: var(--ink-2); }
 .mp-view.is-close .mp-cluster { display: none; }
-/* The rooms not visited: a veil with the visited ones cut out of it. */
-.mp-fog > rect { fill: var(--map-fog); }
 /* The caches and walls: so many they're drawn close up only; from afar, a count per room. */
 .mp-view:not(.is-close) .is-fine { display: none; }
 /* An area whose map isn't bought yet. */
