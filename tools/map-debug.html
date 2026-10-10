@@ -183,13 +183,15 @@
   }
   function draw() {
     svg.setAttribute('viewBox', `${vb.x} ${vb.y} ${vb.w} ${vb.h}`);
-    const sc = st.hd && scale() * (window.devicePixelRatio || 1) > 1.1 ? 2 : 1;
+    const sc = st.hd && scale() * (window.devicePixelRatio || 1) > 1 ? 2 : 1;
     shown = R.mapView(game(), { all: st.whole });
     const key = MP.keyOf(shown, sc);
     if (key !== compKey) {
       sheet(sc, () => {
         if (MP.keyOf(shown, sc) !== key) return;
-        comp = MP.compose(shown, sheets[sc].img, sc, 0.45, (w, h) => { const c = document.createElement('canvas'); c.width = w; c.height = h; return c; });
+        const make = (w, h) => { const c = document.createElement('canvas'); c.width = w; c.height = h; return c; };
+        const made = MP.compose(shown, sheets[sc].img, sc, 0.45, make);
+        comp = sc === 1 ? MP.levels(made, make) : [made];   // as js/app-map.js: never shrunk more than twice
         compKey = key;
         paintCanvas();
       });

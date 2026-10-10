@@ -92,6 +92,11 @@ test('the map piece by piece, as the game draws it', () => {
   // As a guide, a room goes whole in colour once any part of it is: no change of tone inside it.
   const guide = R.mapView(part, { all: true }).pieces.find((p) => p.e.s === 'Greymoor_02_top');
   assert.ok(guide && !guide.faint);
+  // So with a room drawn only in parts, named after its scene: Under_13's left part mapped.
+  const under = { ...world({}), mapped: M.PIECES.map((e) => e.s).filter((s) => !/^Under_13_(right|bot)/.test(s)) };
+  assert.ok(!drawn(R.mapView(under)).has('Under_13_right'));
+  const parts = R.mapView(under, { all: true }).pieces.filter((p) => /^Under_13_/.test(p.e.s));
+  assert.ok(parts.length >= 3 && parts.every((p) => !p.faint), JSON.stringify(parts.map((p) => [p.e.s, p.faint])));
   // Not mapped: a Rough piece shows its sketch, a Hidden one nothing; without the Quill, the same.
   const rough = M.PIECES.find((e) => e.st === 1 && e.r != null), hidden = M.PIECES.find((e) => e.st === 0 && !e.hide && !e.off && !e.act3);
   for (const g of [{ ...world({}), mapped: [] }, { ...world({}), quill: false }]) {

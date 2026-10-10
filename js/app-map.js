@@ -282,9 +282,10 @@
      sibling's (hallownest-calculator js/app-map.js). ── */
   const n2 = (v) => (Math.round(v * 100) / 100).toString();
   /* The map's pieces as the game draws them for this game (js/rooms.js mapView), on a canvas
-     under the SVG: composed once from assets/map/pieces.webp (js/map-paint.js), then drawn as one
-     image at the view; close up, from pieces-hd.webp, twice as fine. A window per piece let a
-     hairline of black through where two pieces met. */
+     under the SVG: composed once from assets/map/pieces.webp (js/map-paint.js), with a half and a
+     quarter of it, and close up from pieces-hd.webp, twice as fine; the view is drawn from the one
+     nearest above what the screen needs. A window per piece let a hairline of black through where
+     two pieces met. */
   const MP = SS.mapPaint;
   const sheets = {};   // scale → { img, ready, wait }: pieces.webp (1), pieces-hd.webp (2)
   function sheet(scale, then) {
@@ -296,30 +297,59 @@
     }
     if (s.ready) then(); else s.wait.push(then);
   }
-  let shown = null, shownKey = '', shownStamp = 0, comp = null, compKey = '', wantScale = 1;
+  let shown = null, shownKey = '', shownStamp = 0, wantFine = false;
+  // The composed maps for what's shown (shownStamp `at`): the map's own pixels with its half and
+  // quarter, and the fine one, made the first time the view needs it. The ones before stay until
+  // these are ready.
+  let coarse = { at: -1, list: [] }, fine = { at: -1, comp: null };
   const faintOf = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--map-faint')) || 0.45;
   const makeCanvas = (w, h) => { const c = document.createElement('canvas'); c.width = w; c.height = h; return c; };
-  // The composed map for what's shown at the scale wanted; the one before stays until it's ready.
   function composeMap() {
     if (!shown) return;
-    const scale = wantScale, key = shownStamp + '@' + scale;
-    if (key === compKey) { paintMap(); return; }
-    sheet(scale, () => {
-      if (shownStamp + '@' + wantScale !== key) return;   // something newer is on its way
-      comp = MP.compose(shown, sheets[scale].img, scale, faintOf(), makeCanvas);
-      compKey = key;
-      paintMap();
-    });
+    const at = shownStamp;
+    if (coarse.at !== at) {
+      sheet(1, () => {
+        if (shownStamp !== at || coarse.at === at) return;   // something newer is on its way, or it's done
+        coarse = { at, list: MP.levels(MP.compose(shown, sheets[1].img, 1, faintOf(), makeCanvas), makeCanvas) };
+        paintMap();
+      });
+    }
+    if (fine.at !== at && wantFine) {
+      sheet(2, () => {
+        if (shownStamp !== at || fine.at === at) return;
+        fine = { at, comp: MP.compose(shown, sheets[2].img, 2, faintOf(), makeCanvas) };
+        paintMap();
+      });
+    } else if (fine.at !== at) fine = { at: -1, comp: null };   // another game's: made again when needed
     paintMap();
   }
   function paintMap() {
     const { v } = nodes(), cv = v && v.querySelector('.mp-canvas');
     if (!cv || !vb) return;
-    const r = cv.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
-    const w = Math.round(r.width * dpr), h = Math.round(r.height * dpr);
+    const [w, h] = canvasPixels(cv);
     if (!w || !h) return;
     if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; }
-    MP.paint(cv.getContext('2d'), comp, vb, w, h);
+    MP.paint(cv.getContext('2d'), [...coarse.list, fine.comp], vb, w, h);
+  }
+  /* The canvas as many pixels as the screen has under it: as the browser measures them where it
+     can (ResizeObserver's device-pixel-content-box). Rounded from its CSS size × devicePixelRatio
+     it can be a pixel off at a fractional ratio (a zoomed page, a 125% screen), and the browser
+     then stretches the whole map by that pixel and smooths it over. */
+  let seen = null, watched = null;   // seen: { cv, w, h }, the canvas's size as last measured
+  const watch = typeof ResizeObserver === 'function' ? new ResizeObserver((es) => {
+    const e = es[es.length - 1], s = e.devicePixelContentBoxSize && e.devicePixelContentBoxSize[0];
+    if (s) { seen = { cv: e.target, w: s.inlineSize, h: s.blockSize }; paintMap(); }
+  }) : null;
+  function canvasPixels(cv) {
+    if (watch && watched !== cv) {
+      watched = cv;
+      watch.disconnect();
+      try { watch.observe(cv, { box: 'device-pixel-content-box' }); } catch (e) { /* a browser without it */ }
+    }
+    const r = cv.getBoundingClientRect(), dpr = window.devicePixelRatio || 1, w = r.width * dpr, h = r.height * dpr;
+    // The measure only settles the rounding: one that disagrees by more (an emulated screen) isn't taken.
+    if (seen && seen.cv === cv && Math.abs(seen.w - w) <= 1 && Math.abs(seen.h - h) <= 1) return [seen.w, seen.h];
+    return [Math.round(w), Math.round(h)];
   }
   /* A mark on the map, as the sibling's pins: a dark disc with a thin rim, the thing's picture
      almost as big (its own art, the game's pin, a Journal portrait) or the site's glyph. It keeps
@@ -600,8 +630,8 @@
     v.classList.toggle('is-zoomed', zoom > 1.5);
     v.classList.toggle('is-close', zoom > 3);   // the caches and walls, one by one
     // Close up, the map at twice the resolution (assets/map/pieces-hd.webp, tools/extract-map.py):
-    // loaded the first time it's needed, and kept.
-    if (r.width * (window.devicePixelRatio || 1) / vb.w > 1.1) wantScale = 2;
+    // loaded the first time the screen has more pixels than the map, and kept.
+    if (r.width * (window.devicePixelRatio || 1) / vb.w > 1) wantFine = true;
     composeMap();
     for (const el of v.querySelectorAll('.mp-hornet, .mp-ping')) placeOver(el);
     paintCard();

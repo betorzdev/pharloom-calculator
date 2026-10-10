@@ -3,7 +3,7 @@ screen draws it: every piece's drawings into assets/map/pieces.webp (and pieces-
 fine, for close up), and the rules that say which drawing each piece shows for a save, with where
 each room is, into js/map.js.
 Needs the game installed and UnityPy (no pip on the author's machine: uv, in an env of its own):
-    uv venv /tmp/unitypy && uv pip install --python /tmp/unitypy/bin/python UnityPy
+    uv venv /tmp/unitypy && uv pip install --python /tmp/unitypy/bin/python UnityPy numpy
     /tmp/unitypy/bin/python tools/extract-map.py "<Steam>/steamapps/common/Hollow Knight Silksong"
 The image is Team Cherry's art, published as the Hollow Knight site publishes its map (a fan
 project; the colophon says so). Re-run it after a patch that touches the map.
@@ -65,6 +65,11 @@ Nothing reaches under its neighbours: a drawing grown a pixel to hide the seams 
 edges and the ends of its outline over them. The seams were the browser's, which smoothed the
 edge of each piece's window; the site now composes the pieces on a canvas first
 (js/map-paint.js), and they meet as in the game.
+Two more seams were ours (11-Oct-2026): drawn one over the other, two drawings that meet edge to
+edge cover the pixel on the line less than whole (close_joins() gives it to the later one), and
+the sheets were lossy, coding each drawing's edge against its neighbours in the sheet (a lighter
+and a darker line along joins, blotched fills): they're lossless now. Each drawing's box holds
+everything either size draws, so the fine one's faintest pixels aren't cut along it.
 """
 import json, math, os, re, sys
 import UnityPy
@@ -80,7 +85,7 @@ PIN_KIND = {'Bench': 'bench', 'Bellway': 'bellway', 'Tube': 'ventrica'}
 HIDDEN, ROUGH, FULL = 0, 1, 2   # GameMapScene.States
 GREY = (0.5, 0.5, 0.5)          # Color.grey: a Rough piece with no fullSprite, not mapped
 SHEET_W = 2048                  # pieces.webp's width, in the map's pixels
-GAP = 2                         # between drawings in the sheet (the lossy image bleeds a pixel)
+GAP = 2                         # between drawings in the sheet
 # With no save: the world explored before Act 3, with Verdania's Dancers and the Unravelled beaten
 # (Verdania's colours and its two rooms, Whiteward's pit). Every field a rule reads has to be here:
 # one that isn't stops the run, so a patch that adds one is seen.
@@ -246,6 +251,60 @@ def canvas_box(sprite, wx, wy, sx, sy, ox, oy, ppu):
     w, h = max(1, round(im.width * k * abs(sx))), max(1, round(im.height * k * abs(sy)))
     pv = sprite.m_Pivot
     return [round((wx - ox) * ppu - w * pv.x), round((oy - wy) * ppu - h * (1 - pv.y)), w, h]
+
+
+JOIN = (0.92, 1.08)   # two partly covered pixels whose coverages add up to about one: a join
+EDGE = (8, 247)       # partly covered: the fills are 254 or 255, and below 8 a pixel's colour is a guess
+
+
+def close_joins(looks, which, f, W):
+    """Where two pieces meet edge to edge (a room's parts along their cut, two rooms that touch),
+    each drawing has the pixel on the line partly covered, a coverage and its complement: the
+    drawing whose edge falls 0.25 of the way in has 0.25 there, its neighbour 0.75. Drawn one over
+    the other, they cover it 0.25 + 0.75 × 0.75, not 1, and the black under them shows through
+    along the whole join (up to a quarter of it: Library_09_top against Enclave_bridge_left).
+    Each drawing is smoothed on its own, so only here, where all of them are known, can this be
+    put right: on such a pixel the piece the game draws later (its neighbour is under it) takes
+    both coverages and their colours, mixed by them, so the two cover it whole together as one
+    drawing of both would; alone, its edge is at most a pixel harder. Pixels partly covered by
+    two pieces whose coverages don't add up to about one are overlaps or gaps, and are left as
+    they are; so are drawings of the same piece (its sprites and tints are alternatives, never
+    drawn together). `which` is the drawing at `f` pixels a map pixel ('im', 'hd'); W the map's
+    width. Returns how many pixels it closed."""
+    import numpy as np
+    idx, px, own = [], [], []
+    for i, lk in enumerate(looks):
+        a = np.asarray(lk[which], dtype=np.int64)
+        ys, xs = np.nonzero((a[:, :, 3] >= EDGE[0]) & (a[:, :, 3] <= EDGE[1]))
+        idx.append((ys + lk['y'] * f) * (W * f) + xs + lk['x'] * f)
+        px.append(a[ys, xs])
+        own.append(np.full(len(ys), i))
+    idx, px, own = np.concatenate(idx), np.concatenate(px), np.concatenate(own)
+    o = np.argsort(idx, kind='stable')
+    idx, px, own = idx[o], px[o], own[o]
+    starts = np.flatnonzero(np.r_[True, idx[1:] != idx[:-1]])
+    ends = np.r_[starts[1:], len(idx)]
+    lo, hi = JOIN[0] * 255, JOIN[1] * 255
+    fix = {}   # look → {pixel: (r, g, b, a)}
+    for s, e in zip(starts[ends - starts >= 2], ends[ends - starts >= 2]):
+        es = [(looks[own[k]]['rank'], own[k], px[k]) for k in range(s, e)]
+        for rl, il, pl in es:
+            for re_, ie, pe in es:
+                al_, ae = int(pl[3]), int(pe[3])
+                if re_ < rl and lo <= al_ + ae <= hi:
+                    rgb = [round((int(pl[c]) * al_ + int(pe[c]) * ae) / (al_ + ae)) for c in range(3)]
+                    fix.setdefault(il, {})[int(idx[s])] = tuple(rgb) + (min(255, al_ + ae),)
+                    break
+    n = 0
+    for i, at in fix.items():
+        lk = looks[i]
+        a = np.array(lk[which])
+        for k, v in at.items():
+            y, x = divmod(k, W * f)
+            a[y - lk['y'] * f, x - lk['x'] * f] = v
+            n += 1
+        lk[which] = Image.fromarray(a, 'RGBA')
+    return n
 
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -420,22 +479,34 @@ def main(game):
             hd, hpx, hpy = placed(s, c, p['x'], p['y'], p['sx'], p['sy'], minx, maxy, PPU * HD)
             raw.append((p, key, im, px, py, hd, hpx, hpy))
 
-    # Each drawing's tight box on the map (in PPU pixels) and its place in the sheet.
+    # Each drawing's tight box on the map (in PPU pixels) and its place in the sheet: everything
+    # either size draws, so that no soft edge or fade is cut along the box (a fine drawing cropped
+    # to the coarse one's box lost the faintest pixels of its fades in a straight line).
+    rank = {p['gid']: i for i, p in enumerate(sorted(pieces, key=lambda p: -p['z']))}   # the game's order
     looks = []
     for p, key, im, px, py, hd, hpx, hpy in raw:
         p.setdefault('cells', {})
-        bb = im.getchannel('A').point(lambda v: 255 if v > 4 else 0).getbbox()
-        if not bb:
+        # A drawing with nothing to see (no pixel above 4 in 255) is no drawing.
+        if not im.getchannel('A').point(lambda v: 255 if v > 4 else 0).getbbox():
             continue
+        bb, bh = im.getchannel('A').getbbox(), hd.getchannel('A').getbbox()
         x0, y0 = px + bb[0], py + bb[1]
-        w, h = bb[2] - bb[0], bb[3] - bb[1]
+        x1, y1 = px + bb[2], py + bb[3]
+        if bh:
+            x0, y0 = min(x0, (hpx + bh[0]) // HD), min(y0, (hpy + bh[1]) // HD)
+            x1, y1 = max(x1, -(-(hpx + bh[2]) // HD)), max(y1, -(-(hpy + bh[3]) // HD))
+        w, h = x1 - x0, y1 - y0
         # The fine drawing cropped to the same box, twice as big (its own rounding aside).
-        hd = hd.crop((x0 * HD - hpx, y0 * HD - hpy, (x0 + w) * HD - hpx, (y0 + h) * HD - hpy))
+        hd = hd.crop((x0 * HD - hpx, y0 * HD - hpy, x1 * HD - hpx, y1 * HD - hpy))
         p['cells'][key] = len(looks)
-        looks.append({'x': x0, 'y': y0, 'w': w, 'h': h, 'im': im.crop(bb), 'hd': hd})
+        looks.append({'x': x0, 'y': y0, 'w': w, 'h': h, 'im': im.crop((x0 - px, y0 - py, x1 - px, y1 - py)), 'hd': hd,
+                      'rank': rank[p['gid']]})
     for p in pieces:
         if not p['looks']:
             boxes.setdefault(p['scene'], [round((p['x'] - minx) * PPU), round((maxy - p['y']) * PPU), 0, 0, p['area']])
+    # Where two pieces meet edge to edge, each drawing's pixel on the line is partly covered, and
+    # drawn one over the other they cover it less than whole: a dark line along every such join.
+    joined = close_joins(looks, 'im', 1, W), close_joins(looks, 'hd', HD, W)
 
     # pieces.webp: the drawings on shelves, tallest first, SHEET_W wide; pieces-hd.webp the same,
     # twice as big.
@@ -518,8 +589,11 @@ def main(game):
 
     out = os.path.join(ROOT, 'assets', 'map')
     os.makedirs(out, exist_ok=True)
-    sheet.save(os.path.join(out, 'pieces.webp'), 'WEBP', quality=85, method=6)
-    sheet_hd.save(os.path.join(out, 'pieces-hd.webp'), 'WEBP', quality=80, method=6)
+    # Lossless: lossy, every drawing's edge pixels were coded against what lay beside it in the
+    # sheet (another drawing, the gap), and where two drawings meet on the map one came out lighter
+    # and the other darker, a line along the join; its fills were blotched and its colours ran.
+    sheet.save(os.path.join(out, 'pieces.webp'), 'WEBP', lossless=True, quality=100, method=6)
+    sheet_hd.save(os.path.join(out, 'pieces-hd.webp'), 'WEBP', lossless=True, quality=100, method=6)
     data = {'W': W, 'H': H, 'PPU': PPU, 'ROOMS': dict(sorted(boxes.items())), 'PINS': PINS,
             'PIECES': PIECES, 'CELLS': cells, 'SW': SW, 'SH': SH, 'ZONES': ZONES,
             'VARS': sorted(VARS), 'FREE': {k: FREE[k] for k in sorted(VARS)}}
@@ -555,7 +629,7 @@ def main(game):
     print(f'{len(PINS)} pins ({", ".join(f"{sum(q[0] == k for q in PINS)} {k}" for k in PIN_KIND.values())}), '
           f'{len(PIECES)} pieces ({len(cells)} drawings), {len(boxes)} rooms, {len(ZONES)} areas, map {W} × {H} px; '
           f'assets/map/pieces.webp {SW} × {SH} ({kb("pieces.webp")} KB), pieces-hd.webp ({kb("pieces-hd.webp")} KB); '
-          f'rules read {", ".join(sorted(VARS))}')
+          f'rules read {", ".join(sorted(VARS))}; joins closed: {joined[0]} pixels, {joined[1]} close up')
 
     # A check (not written): every piece as it shows with no save, over the map, to set against
     # the earlier single image (assets/map/rooms.webp, when it's still there).
