@@ -35,7 +35,7 @@ the work up reads it first, then the step it's on.
 |---|---|---|---|
 | 1 | **The shell**: header, screen bar (desktop and phone), the screen's frame and title, footer and About, the atmosphere | **Built** (28 Sep) | [`04-shell-variants.html`](04-shell-variants.html) |
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
-| 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep) | [`06-home-variants.html`](06-home-variants.html) |
+| 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep) | [`07-inventory-variants.html`](07-inventory-variants.html) |
 | 5 | Progress (`progress`) | **Built** (28 Sep) | [`10-progress-variants.html`](10-progress-variants.html) |
 | 6 | Map (`map`) | **Built** (28 Sep) | [`12-map-variants.html`](12-map-variants.html) |
@@ -283,6 +283,37 @@ style. Built: `tools/extract-benches.py` reads them into `js/benches.js` (the ro
 picture in `assets/benches/`, with the row of its seat), `rest()` in `js/app-home.js` sits her hem
 on that seat (`.hm-rest`, `--hn-rest`); a room it doesn't know, and Free mode, get Bone Bottom's,
 the first bench. The bench's states (broken in Act 3, under cloth, snowed) aren't told apart.
+
+### Retouch: the lists (11 October 2026)
+
+Albert: the lists under the card should look much better. They were plain text. *Since the
+previous save* was up to 29 bulleted names (Save 3 against its 1.0.28891 backup), with the +12% as
+a small figure. *Closest to your bench* had tiny marks. *By part* was ten rows of "Tools 31/51"
+with no picture and no gauge. The sibling gives each change its picture, closes the list with
+the completion on a bar (its design/34 A) and fades the rows in. Four looks were drawn in
+`26-game-lists-variants.html` (Save 3's changes and nearest things, Save 4's parts):
+
+- **A · clean rows**: Progress's list rows on all three.
+- **B · ledger and mosaic**: the parts as Progress's ledger, what you gained as pictures.
+- **C · three plates**: each list on its own framed plate, lit by the screen it leads to.
+- **D · the board**: the parts as ring tiles across the top, the other two below.
+
+The page also had two switches: how a long *since* list shows (capped, everything, folded by
+kind) and whether *closest* shows the distance in rooms.
+
+Albert chose **A**, the since list **capped at 8 with «Show all n»**, **no distance**, and the
+rows **fading in one by one** (none with reduced motion). Built (`js/app-home.js`, `.hm-*`):
+
+- Every row is `.hm-row`: `.hm-art` (`--hm-art`), the name in Cinzel and its area under it.
+- A Tool sits on its slot's diamond. Pieces, wishes and gauntlets use the Map's own marks
+  (`App.mapMark` in `js/app-map.js`, which replaces `App.nearRow`).
+- *Since* opens with the completion's gain on a gauge (`.hm-gain`, `.hm-bar`). Its rows are
+  grouped by kind with `.hm-kind` heads; the new heads are `homeKindUpgrades` and
+  `homeKindPieces`, and the rest reuse existing strings. The Journal shows as portraits.
+  `homeSinceAll` / `homeSinceFewer` toggle the cap; a list of at most ten rows isn't capped.
+- *By part* gives each part a picture, a count and a gauge; a full part lights its diamond.
+- The rows fade in (`.hm.is-enter`, `--dur-step` apart) when the screen is arrived at or
+  another save shows, not on a plain repaint.
 
 ## Step 4 · Inventory
 

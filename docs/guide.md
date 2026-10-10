@@ -78,9 +78,19 @@ the screen folds into «About this site».
 
 When the save follows the game's file, each new save the game writes to it (the restore points
 go to their own folder and aren't followed) brings a block **Since
-the previous save**: the new Act, Crests, Tools, Silk Skills and abilities by name, the upgrades
-with their new value, each piece found with its area, the Journal entries new or completed as a
-count, and what the completion went up by. The notice at the top says the same in one line.
+the previous save**: first what the completion went up by, from and to on one gauge, and when
+the save before was made; then everything new grouped by kind under small heads (Crests, Silk
+Skills, abilities, Tools, upgrades with their new value, pieces found with their area, tasks done,
+gauntlets cleared), each as a row with its picture (a Tool on its slot's diamond, a piece or a
+gauntlet with its mark on the Map), and the Journal entries new or completed as their portraits.
+A long list shows its first eight rows and «Show all n» opens the rest. The notice at the top
+says the same in one line.
+
+The three lists share one look: each row has its picture, its name in the game's lettering and
+its area under it, and «Closest to your bench» keeps its pin to the Map. Each part of the 100%
+has a picture, its count and a gauge, and a finished one lights its diamond. When you arrive at
+the screen, or the followed file brings a new save, the rows fade in one after another (not with
+reduced motion).
 
 ### Inventory
 
