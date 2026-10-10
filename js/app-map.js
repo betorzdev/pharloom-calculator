@@ -437,6 +437,88 @@
   App.nearList = nearList;
   App.nearRow = nearRow;
 
+  /* ── The area you rest in, for Your game (App.mapAreaHtml, App.mapAreaPaint) ──
+     The sibling's "area map" idea (hallownest-calculator js/app-home.js, areaMapHtml), with this
+     map's own drawing: the same view as the Map screen (js/rooms.js mapView, "Only what the game
+     shows" included), composed by the same painter (js/map-paint.js) but cropped to the box of
+     the rooms of the bench's branch of the map, with the bench's pin, Hornet on it and your
+     cocoon when it lies in that area. It opens the Map. */
+  const AREA_BOX = new Map();
+  // The branch's rooms' box in the map's pixels: [x, y, w, h], or null when it draws none (Surface).
+  function branchBox(branch) {
+    if (!AREA_BOX.has(branch)) {
+      let b = null;
+      for (const r of Object.values(M.ROOMS)) {
+        if (r[4] !== branch || !r[2] || !r[3]) continue;
+        b = b ? [Math.min(b[0], r[0]), Math.min(b[1], r[1]), Math.max(b[2], r[0] + r[2]), Math.max(b[3], r[1] + r[3])] : [r[0], r[1], r[0] + r[2], r[1] + r[3]];
+      }
+      AREA_BOX.set(branch, b);
+    }
+    return AREA_BOX.get(branch);
+  }
+  /* The view of that box: moved with its branch when a rule moves it (Slab with the Cloakless
+     Crest), padded, and no smaller than a few rooms so that a small area isn't blown up. */
+  const AREA_MIN = [360, 220];
+  function areaView(branch, view) {
+    const b = branchBox(branch);
+    if (!b) return null;
+    let [x0, y0, x1, y1] = b;
+    const z = view.zones[branch];
+    if (z) { const mv = (v, c, s, d) => (v - c) * s + c + d; x0 = mv(x0, z.at[0], z.sx, z.dx); x1 = mv(x1, z.at[0], z.sx, z.dx); y0 = mv(y0, z.at[1], z.sy, z.dy); y1 = mv(y1, z.at[1], z.sy, z.dy); }
+    const pad = Math.max(x1 - x0, y1 - y0) * 0.08;
+    const w = Math.max(x1 - x0 + 2 * pad, AREA_MIN[0]), h = Math.max(y1 - y0 + 2 * pad, AREA_MIN[1]);
+    const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
+    return { x: cx - w / 2, y: cy - h / 2, w, h };
+  }
+  let areaCtx = null;   // { view, box }: what the figure on screen draws
+  App.mapAreaHtml = (g) => {
+    areaCtx = null;
+    const room = g && g.bench ? R.roomOf(g.bench) : null;
+    if (!room) return '';
+    const view = R.mapView(g, { all: !prefs.mapGame });
+    const box = areaView(room.area, view);
+    if (!box) return '';
+    areaCtx = { view, box, key: MP.keyOf(view, 0) };
+    const at = (p) => `left:${n2((p.x - box.x) / box.w * 100)}%;top:${n2((p.y - box.y) / box.h * 100)}%`;
+    const bench = benchPoint(g.bench, R.pinsOn(g));
+    const cocoonRoom = g.cocoon ? R.roomOf(g.cocoon) : null;
+    const cocoon = cocoonRoom && cocoonRoom.area === room.area ? pin('cocoon', 'shade_pin', at(cocoonRoom), t('mapCocoonNote')) : '';
+    const home = R.areaOf(g.bench);
+    const label = t('homeMapLabel', { area: areaName(home) });
+    const legend = `<span class="hmB-key">${pin('bench', 'pin_bench', '', '')}<span>${esc(t('mapBench'))}</span></span>${cocoon ? `<span class="hmB-key">${pin('cocoon', 'shade_pin', '', '')}<span>${esc(t('mapLayer_cocoon'))}</span></span>` : ''}`;
+    return `<figure class="hmB-map">
+        <a class="hmB-view" href="${App.here(App.hashFor('map'))}" data-act="view" data-value="map" style="--r:${n2(box.w / box.h)}" aria-label="${esc(label + ' · ' + t('homeNearMap'))}" title="${esc(t('homeNearMap'))}">
+          <canvas class="hmB-canvas" aria-hidden="true"></canvas>${cocoon}${pin('bench', 'pin_bench', at(bench))}
+          <span class="hn is-sit hmB-hornet" aria-hidden="true" style="${at(bench)}"></span>
+        </a>
+        <figcaption class="hmB-cap">${legend}</figcaption></figure>`;
+  };
+  /* Paints the figure just placed on the page (the screen is built whole each time, so this runs
+     after every render): the pieces composed again only when what's shown changes, at the finer
+     scale when the area is drawn larger than the map's own pixels. */
+  let areaComp = null, areaCompKey = '';
+  function areaPaint() {
+    const cv = document.querySelector('.hmB-canvas');
+    if (!cv || !areaCtx) return;
+    const r = cv.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
+    const w = Math.round(r.width * dpr), h = Math.round(r.height * dpr);
+    if (!w || !h) return;
+    const { view, box, key } = areaCtx, scale = w / box.w > 1.1 ? 2 : 1, ck = key + '@' + scale;
+    const draw = () => {
+      if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; }
+      MP.paint(cv.getContext('2d'), areaComp, box, w, h);
+    };
+    if (areaCompKey === ck) { draw(); return; }
+    sheet(scale, () => {
+      if (!cv.isConnected) return;
+      areaComp = MP.compose(view, sheets[scale].img, scale, faintOf(), makeCanvas);
+      areaCompKey = ck;
+      draw();
+    });
+  }
+  App.mapAreaPaint = () => requestAnimationFrame(areaPaint);
+  window.addEventListener('resize', () => { if (document.querySelector('.hmB-canvas')) areaPaint(); });
+
   const fold = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
   let finds = [], placed = new Map(), pending = '';
 
