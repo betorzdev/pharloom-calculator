@@ -2068,7 +2068,7 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
   stroke: var(--scene-bg); stroke-width: calc(var(--k, 1) * 0.12px); paint-order: stroke; cursor: pointer; }
 .mp-name:focus { outline: none; }
 .mp-name:is(:hover, :focus-visible, .is-sel) { fill: var(--ink-strong); }
-.mp-name.is-unmapped { fill: color-mix(in oklab, var(--muted) 70%, transparent); text-decoration: line-through; }
+.mp-name.is-unmapped { fill: color-mix(in oklab, var(--muted) 70%, transparent); }
 /* The caches and walls from afar: a count per room. */
 .mp-cluster { pointer-events: none; }
 .mp-cluster text { font-family: var(--font-num); font-size: 0.42px; text-anchor: middle; dominant-baseline: middle; fill: var(--ink-2); }
