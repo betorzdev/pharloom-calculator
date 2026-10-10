@@ -1,4 +1,4 @@
-# Pharloom Calculator — project instructions
+# Pharloom Calculator: project instructions
 
 A site for seeing **how each of Hornet's stats changes with each Tool, Crest and upgrade** in
 *Hollow Knight: Silksong*, and for following your real game from its save. Spanish and English.
@@ -12,12 +12,12 @@ date when the page changes); these are the rules for working on it.
 
 Before touching anything, check whether it's already solved:
 
-- **`design/`** — design. **`design/00-study.md` is the entry point**: what Silksong has for each
+- **`design/`**: design. **`design/00-study.md` is the entry point**: what Silksong has for each
   piece of the site, the damage model, every data source checked from here, what carries over
   from the Hollow Knight site, the risks, and **the plan by value and cost, with its status**.
   Next to it, web best practices (`01-web.md`) and the game's visual language, measured
   (`02-silksong.md`). **Read the study before any change.**
-- **`kb/`** — the wiki's wikitext (`kb/data/raw/`, `npm run kb`) that the site's data is generated
+- **`kb/`**: the wiki's wikitext (`kb/data/raw/`, `npm run kb`) that the site's data is generated
   from (`kb/README.md`).
 
 Neither folder is part of the page: `index.html` doesn't load them.
@@ -95,8 +95,12 @@ a game name that doesn't say what the game says.
 
 ## When you finish
 
+`/finish` runs this list. The other project skills (`.claude/skills/`): `/design-round` for a
+step of the UI review, `/port` to carry a change to or from the sibling, `/game-text` for visible
+strings.
+
 - If you've touched `tools/gen-*.js` or re-fetched `kb/`, `npm run data` and look at the diff.
-- `npm test` — `node --test`, no dependencies. `test/i18n.test.js` fails if a Spanish accent
+- `npm test`: `node --test`, no dependencies. `test/i18n.test.js` fails if a Spanish accent
   slips into the English or a string is left untranslated. If you've touched game names,
   `npm run text -- --audit`.
 - If you've touched `js/savefile.js` or `js/completion.js` and have a folder of real saves,

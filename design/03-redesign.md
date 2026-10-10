@@ -7,6 +7,8 @@ the work up reads it first, then the step it's on.
 
 ## How each step goes
 
+`/design-round` (`.claude/skills/design-round/`) runs these steps as a checklist.
+
 1. **Look at the site as it is.** Screenshots of the step's screens at 1440 px and 390 px
    (headless Chrome over `file://`: `google-chrome --headless=new --window-size=1440,2200
    --screenshot=… "file://…/index.html#view=<v>"`), and the code behind them (`css/app.css`,
