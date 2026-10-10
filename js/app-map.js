@@ -440,6 +440,11 @@
   const fold = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
   let finds = [], placed = new Map(), pending = '';
 
+  // Full screen's button: the four corners of a frame, opening out, and closing in to leave it.
+  const corners = (d) => `<svg class="ic is-lg" width="16" height="16" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${d}"/></svg>`;
+  const FULL_IN = corners('M1.5 4.5 V1.5 H4.5 M7.5 1.5 H10.5 V4.5 M10.5 7.5 V10.5 H7.5 M4.5 10.5 H1.5 V7.5');
+  const FULL_OUT = corners('M4.5 1.5 V4.5 H1.5 M10.5 4.5 H7.5 V1.5 M7.5 10.5 V7.5 H10.5 M1.5 7.5 H4.5 V10.5');
+
   App.screens.map = (sec) => {
     const { list, g, own } = all();
     const on = new Set(layersOn());
@@ -509,13 +514,15 @@
       </div>`;
     const legend = `<div class="mp-legend">${filters}${groups}</div>`;
     const big = !!prefs.mapBig;
+    const fsTitle = esc(t(full ? 'mapFullExit' : 'mapFullScreen'));
     const tools = `<div class="mp-tools" role="group" aria-label="${esc(t('mapZoom'))}">
         <button type="button" data-act="mapZoom" data-value="in" aria-label="${esc(t('mapCloser'))}" title="${esc(t('mapCloser'))}">+</button>
         <button type="button" data-act="mapZoom" data-value="out" aria-label="${esc(t('mapFurther'))}" title="${esc(t('mapFurther'))}">−</button>
-        <button type="button" class="mp-big" data-act="mapBig" aria-pressed="${big}" aria-label="${esc(t(big ? 'mapSmall' : 'mapFull'))}" title="${esc(t(big ? 'mapSmall' : 'mapFull'))}">${big ? '⤡' : '⤢'}</button></div>`;
+        <button type="button" class="mp-big" data-act="mapBig" aria-pressed="${big}" aria-label="${esc(t(big ? 'mapSmall' : 'mapFull'))}" title="${esc(t(big ? 'mapSmall' : 'mapFull'))}">${big ? '⤡' : '⤢'}</button>
+        <button type="button" class="mp-full" data-act="mapFull" aria-pressed="${full}" aria-label="${esc(t('mapFullScreen'))}" title="${fsTitle}">${full ? FULL_OUT : FULL_IN}</button></div>`;
     const search = `<div class="mp-find"><label class="search">${App.lens}<input type="search" data-change="mapFind" placeholder="${esc(t('mapFind'))}" aria-label="${esc(t('mapFind'))}" autocomplete="off"></label>
         <ul class="mp-found" hidden></ul></div>`;
-    sec.innerHTML = `<div class="mp${big ? ' is-big' : ''}">${brackets}${screenHead(esc(t('navMap')))}
+    sec.innerHTML = `<div class="mp${big ? ' is-big' : ''}${full ? ' is-full' : ''}">${brackets}${screenHead(esc(t('navMap')))}
       <div class="mp-stage">
         <div class="mp-view">
           <canvas class="mp-canvas" aria-hidden="true"></canvas>
@@ -568,6 +575,7 @@
      eight times closer the closest. The pins keep about the same size on screen (--k), a little
      more close up. The view lasts while the page is open; it isn't saved. */
   let vb = null;   // { x, y, w, h }: the viewBox; null = fitted
+  let full = false;   // the map in full screen (setFull)
   const nodes = () => { const sec = App.screenOf('map'); return sec ? { v: sec.querySelector('.mp-view'), m: sec.querySelector('.mp-svg') } : {}; };
   // The whole map fitted to a box of that shape: a wide box shows it all; a tall one (a phone)
   // fills its height, to be slid sideways.
@@ -606,6 +614,40 @@
     for (const el of v.querySelectorAll('.mp-hornet, .mp-ping')) placeOver(el);
     paintCard();
   }
+  /* Full screen, a state and not a pref (the browser wants a tap to go in): the map's stage over
+     the whole window with the search and the zoom on it (css: .mp.is-full), and the page itself
+     full screen where the browser can; where it can't (an iPhone, an iframe), it fills the
+     window. Out by its button, by Esc, or by leaving the Map (setView, js/app.js). As the
+     sibling's (hallownest-calculator js/app-map.js). */
+  const root = document.documentElement;
+  const fsEnter = root.requestFullscreen || root.webkitRequestFullscreen;
+  const fsExit = document.exitFullscreen || document.webkitExitFullscreen;
+  const fsOn = () => !!(document.fullscreenElement || document.webkitFullscreenElement);
+  const fsCan = !!(fsEnter && fsExit && (document.fullscreenEnabled || document.webkitFullscreenEnabled));
+  const quiet = (f) => { try { const p = f(); if (p && p.catch) p.catch(() => {}); } catch (e) { /* refused: it fills the window */ } };
+  // Out of it without painting: whoever calls paints.
+  function fullOff() {
+    if (!full) return;
+    full = false; vb = null;
+    const mp = document.querySelector('.mp.is-full');
+    if (mp) mp.classList.remove('is-full');
+    if (fsCan && fsOn()) quiet(() => fsExit.call(document));
+  }
+  function setFull(on) {
+    if (on === full) return;
+    if (on) { full = true; vb = null; if (fsCan) quiet(() => fsEnter.call(root)); } else fullOff();
+    render();
+    const sec = App.screenOf('map'), btn = sec && sec.querySelector('.mp-full');
+    if (btn) btn.focus({ preventScroll: true });
+  }
+  for (const ev of ['fullscreenchange', 'webkitfullscreenchange']) document.addEventListener(ev, () => {
+    if (full && !fsOn()) setFull(false);                          // Esc, or the browser's own way out
+    else if (prefs.view === 'map') { vb = null; applyView(); }    // in, or out by its button: fitted to the window as it is now
+  });
+  // Esc where the browser doesn't take it (filling the window); an open card takes the first Esc.
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && full && !e.defaultPrevented) setFull(false); });
+  App.mapFullOff = fullOff;
+
   // What sits over the map in the page (Hornet, the search's ring): at its map point (data-x, -y).
   function placeOver(el) {
     const { m } = nodes();
@@ -772,7 +814,7 @@
   document.addEventListener('keydown', (e) => {
     const mk = e.target.closest && e.target.closest('.mp-svg [data-mk]');
     if (mk && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); pick1(mk.dataset.mk); }
-    else if (e.key === 'Escape' && picked) pick1('');
+    else if (e.key === 'Escape' && picked) { e.preventDefault(); pick1(''); }   // (full screen's Esc waits for the next one)
   });
   const inView = (e) => { const { v } = nodes(); return v && v.contains(e.target) && !e.target.closest('.mp-find, .mp-tools, .mp-card-wrap') ? v : null; };
   document.addEventListener('pointerdown', (e) => {
@@ -885,6 +927,7 @@
       if (b) b.focus({ preventScroll: true });
       if (prefs.mapBig && st) st.scrollIntoView({ block: 'start' });
     },
+    mapFull() { setFull(!full); },
     mapPick() { pick1(''); },
     // Free mode: a piece marked had or not from its card (the Inventory's marks). With no marks
     // yet, the map's loose pieces start as missing, the rest as had (Free mode's everything).

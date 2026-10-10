@@ -226,6 +226,8 @@
     mapCloser:      { es: 'Acercar', en: 'Closer' },
     mapFurther:     { es: 'Alejar', en: 'Further' },
     mapFull:        { es: 'Mapa grande', en: 'Large map' },
+    mapFullScreen:  { es: 'Pantalla completa', en: 'Full Screen' },   // VIDEO_FULLSCREEN
+    mapFullExit:    { es: 'Salir de pantalla completa', en: 'Exit full screen' },
     mapSmall:       { es: 'Mapa normal', en: 'Normal map' },
     mapFind:        { es: 'Busca en el mapa: una zona, una pieza, un jefe', en: 'Search the map: an area, a piece, a boss' },
     mapFindNone:    { es: 'Nada con ese nombre en el mapa.', en: 'Nothing by that name on the map.' },
