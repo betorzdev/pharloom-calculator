@@ -37,7 +37,7 @@ the work up reads it first, then the step it's on.
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep) | [`06-home-variants.html`](06-home-variants.html) |
 | 4 | Inventory (`game`) | **Built** (28 Sep) | [`07-inventory-variants.html`](07-inventory-variants.html) |
-| 5 | Progress (`progress`) | **Built** (28 Sep) | [`10-progress-variants.html`](10-progress-variants.html) |
+| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
 | 6 | Map (`map`) | **Built** (28 Sep) | [`12-map-variants.html`](12-map-variants.html) |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds) | [`15-journal-variants.html`](15-journal-variants.html) |
 | 8 | Crest (`tools`) | **Built** (28 Sep) | [`18-crest-variants.html`](18-crest-variants.html) |
@@ -474,6 +474,40 @@ Albert: the percentage could be more attractive. Today it's a plain system-font 
 Decision: **A · the ring**, built: `.pg-ring` (`--pg-ring` 220 px, 180 on a phone), the
 Journal's Memento arc (`--ring`, `--ring-track`, `--ring-mask`) doubled, a thin filigree circle
 inside, the figure in Cinzel with a soft halo, `pgCompletion` («Finalización», `COMPLETION`) under it.
+
+### The restructure: two tabs (11 October 2026)
+
+Albert: organise the whole screen better; what players value most is what's left for the next
+Act. Should the Acts and the 100% be two subtabs? Two rounds, over three real saves (Act 2 at
+55%, Act 1 at 10%, Act 3 at 63%).
+
+Round 1 (`27-progress-variants.html`): A two subtabs, B one page with the next Act first, C
+three subtabs, D two columns; and how what's left reads, which tab opens, Act 3, Tasks, the ring
+and the road on a phone. Albert: two subtabs, but the plaque's tab names wouldn't be noticed;
+what's left was too much text; the tab used last opens (the Act's the first time); in Act 3
+«Tu partida»; the wishes the next Act requires go in its tab, the rest stay in Tasks; the ring
+only on the 100% tab; every step of the road named on a phone.
+
+Round 2 (`27b-progress-variants.html`): the tabs as A the pause menu's bar with L/R arrows, B two
+plaques, C a segmented control with figures, **D two cards with a picture** (chosen); what's left
+as A medallions, B the road drawn, **C rings** (chosen), D the HUD's masks and silk.
+
+Built (`js/app-progress.js`, `css/app.css`):
+- `.pg-tabs`: two cards, `role="tab"`, the open one white on the picked grey. The road's shows the
+  step you're on (its picture, «11/15 · paso 1 de 5»); the 100%'s a small ring and what's left. The
+  tab is `prefs.pgTab` (`pharloom.prefs`).
+- The road's tab: the journey (no title: the card says it), the step with its picture, one ring per
+  part of it (`rings()`: required wishes, wish points, the other conditions; the Bellshrines; the
+  snare's pieces) with the game's picture inside, the figure under it and only the missing as
+  medallions (`medal()`: picture, name, the Map's pin when it has the thing); the points show the
+  nearest four wishes, «½» on a delivery. The later steps dim, then the bridge: how many things of
+  the 100% you can already get (each piece one, not points) and «Ver el 100 %». «El camino entero»
+  still opens the full road.
+- In Act 3, «Tu partida»: the game's thread, a ring of the endings and one of what only Act 3 holds.
+- The wishes' pictures are the game's: each type's large emblem and the Wishes tab, read from its
+  files by `tools/extract-wish-icons.py` (QuestType `largeIcon` in `wish.spriteatlas`). The steps'
+  are the map's quest medallions, the Journal's portraits and the benches.
+- Tasks leaves out the ten wishes Act 3 requires while they're in the road's tab.
 
 ## Step 6 · Map
 

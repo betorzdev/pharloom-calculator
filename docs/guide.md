@@ -383,16 +383,32 @@ She runs each way once; with reduced motion she's simply at her bench.
 
 ### Progress
 
-A ledger. At the top, **your 100%** in a ring that fills with it, as the Journal's Memento, with
-the game's word, «Finalización» (a line under it only if the game's own figure is another). In Act 3, the whole game at a glance: Act 1, Act 2 and Act 3 on one thread, then the four
-endings, lit the ones your save has seen (the game keeps them: Weaver Queen, Snared Silk, Twisted
-Child, Sister of the Void), and «Act 3 · n of 4 endings». Before Act 3,
-**the road to the next Act** at a glance: its steps as diamonds on one thread, the ones done lit
-and the one you're on larger, named with the game's words, and that step's title with how far
-into it («2 of 15»); «The whole road» opens it in full. Then each category is a row: its name,
-its things as the game's pictures (what you lack dimmed) or as pips, its count and a ring that
-opens its list; the rows you open stay open. «What's missing · Everything» and «By Act ·
-Nearest first» sit just above the rows.
+Two tabs, as two cards under the title, each with its own picture of how far you are; the one
+you used last opens, the road's the first time.
+
+**The road to the next Act** (its card: the picture of the step you're on, how far into it and
+«step 1 of 5»). Its steps as diamonds on one thread, the ones done lit and the one you're on
+larger, each named with the game's words (on a phone too). Then the step you're on, with its
+picture, as **rings**: one per part of it (the wishes it requires, its wish points, its other
+conditions; the Bellshrines; the snare's pieces), the game's picture inside, how far as a figure
+under it, and under that only what's missing, each as a medallion with its picture and name and a
+pin when the Map has it. The wishes carry the game's emblem for their type (Hunt, Gather,
+Donate…); the points show the nearest four wishes that would give one, with «½» on a delivery.
+The steps after it follow, dim. A line says how many things of the 100% you can already get in
+your Act (each counted on its own: a Mask Shard is one, not a point) and leads to the other tab;
+«The whole road» opens the road in full, as below.
+
+In Act 3 the tab is **«Your game»**: Act 1, Act 2 and Act 3 on one thread, then the four endings,
+lit the ones your save has seen (the game keeps them: Weaver Queen, Snared Silk, Twisted Child,
+Sister of the Void); a ring for the endings and one for the things of the 100% only Act 3 holds.
+Without a save, the tab is both roads in full, as a guide.
+
+**For 100%** (its card: a small ring and what's left). At the top, **your 100%** in a ring that
+fills with it, as the Journal's Memento, with the game's word, «Finalización» (a line under it
+only if the game's own figure is another). Then each category is a row: its name, its things as
+the game's pictures (what you lack dimmed) or as pips, its count and a ring that opens its list;
+the rows you open stay open. «What's missing · Everything» and «By Act · Nearest first» sit just
+above the rows.
 
 Opened, a category lists its things by Act: each with its picture, its name (a Tool with its
 slot's colour) and how to get it, its area on the right, and a pin that shows it on the Map.
@@ -400,7 +416,7 @@ slot's colour) and how to get it, its area on the right, and a pin that shows it
 In **Free mode** with things marked in the Inventory, Progress counts from those marks and
 each missing row has a box to mark it here too; masks, silk, the Silk Hearts, the Needle, the
 Kit and the Pouch follow what the Inventory sets. With nothing marked, it's the whole list as a
-guide, and both roads behind «The roads to Acts 2 and 3».
+guide, and the road tab is «The roads to Acts 2 and 3».
 
 The whole road, as the game's own rules have it (read from its files, not from a guide), in
 numbered steps, each with its count or a tick:
@@ -461,7 +477,7 @@ Then **other collectibles**, which don't count for completion, each group saying
 
 Last, **Tasks** («Tareas», the game's pane): the main objectives and the wishes on the boards by
 type (Wayfarer, Gather, Donate, Hunt, Grand Hunt, Delivery…), 74 in all, each with the game's own
-name, its Act and where. The one only Steel Soul has, and the one only Classic has, show only in a
+name, its Act and where. In Act 2, the ten wishes Act 3 requires are in the road's tab instead. The one only Steel Soul has, and the one only Classic has, show only in a
 game of that mode. A task done also shows in "Since the previous save".
 In a save it shows what's missing, or everything with a tick where you have it; without a save,
 the whole list, as a guide. Which piece you have is read from the save one by one, and on the
@@ -538,6 +554,9 @@ texts and names are © Team Cherry; they're used here only to show the game's ow
 - **The map**: the pieces of the game's own map screen and their rules, extracted from the
   installed game's files by `tools/extract-map.py` (`assets/map/pieces.webp`, `pieces-hd.webp`,
   `js/map.js`), shown as the Hollow Knight site shows its map, as a fan project.
+- **The wishes' emblems**: the large emblem of each type of wish and the pause menu's Wishes tab,
+  extracted from the installed game's files by `tools/extract-wish-icons.py`
+  (`assets/icons/wishes/`), for the road to the next Act in Progress.
 - **Fonts**: Cinzel, Spectral and Patrick Hand SC, under the
   [SIL Open Font License 1.1](../assets/fonts/OFL.txt).
 - **Code**: MIT ([`LICENSE`](../LICENSE)). It covers only the code, not any of the above.

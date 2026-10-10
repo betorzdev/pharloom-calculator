@@ -315,6 +315,11 @@
   --crest-k-sm: 48px;
   /* Progress's completion ring (design/20-progress-total-variants.html, A); smaller on a phone. */
   --pg-ring: 220px;
+  /* Its two tabs' pictures, the rings of what's left for the next Act and their medallions
+     (design/27b-progress-variants.html, 1 D and 2 C); smaller on a phone. */
+  --pg-tab-art: 56px;
+  --pg-rg-ring: 128px;
+  --pg-md: 60px;
   /* Each tab's light (design/03-redesign.md, step 1, third round, E): the colour of its place in
      the game, from the area tokens, for its frame, corners, plaque and the light from its top.
      Your game and Saves keep the main menu's red. */

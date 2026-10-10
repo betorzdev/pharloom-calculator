@@ -564,6 +564,18 @@
     pgTasksNote:    { es: 'Los objetivos del juego y los deseos de los tablones, con el nombre que les da el juego. No cuentan para la finalización.', en: 'The game\'s objectives and the wishes on the boards, with the game\'s names for them. They don\'t count for completion.' },
     pgTasksMain:    { es: 'Objetivos principales', en: 'Main objectives' },
     pgTasksCollect: { es: 'Colección', en: 'Collect' },
+    pgTasksNoteAct: { es: 'Los objetivos del juego y los deseos de los tablones, con el nombre que les da el juego. Los que pide el Acto {n} están en su pestaña. No cuentan para la finalización.',
+                      en: 'The game\'s objectives and the wishes on the boards, with the game\'s names for them. The ones Act {n} asks for are in its tab. They don\'t count for completion.' },
+    /* Progress's two tabs (design/27b-progress-variants.html): the road to the next Act and the 100% */
+    pgStepOf:       { es: 'paso {n} de {of}', en: 'step {n} of {of}' },
+    pgToGo:         { es: '{pct} por conseguir', en: '{pct} to go' },
+    pgReach:        { es: 'cosas del 100 % que ya puedes conseguir', en: 'things of the 100% you can already get' },
+    pgReachTip:     { es: 'Cada cosa cuenta por separado: un fragmento de máscara es una, no un punto de la finalización.', en: 'Each thing counts on its own: a Mask Shard is one, not a point of completion.' },
+    pgSee100:       { es: 'Ver el 100 %', en: 'See the 100%' },
+    pgShrines:      { es: 'Santuarios de Campana', en: 'Bellshrines' },   // BELLSHRINE, in the plural
+    pgPoints:       { es: 'Puntos de deseos', en: 'Wish points' },
+    pgEndings:      { es: 'Finales', en: 'Endings' },   // no word of the game's for them
+    pgOnlyAct3:     { es: 'Solo en el Acto 3', en: 'Only in Act 3' },
 
     /* Progress: the road to the next Act (js/acts.js, the game's own rules) */
     roadTitle:      { es: 'Camino al Acto {n}', en: 'The road to Act {n}' },
@@ -572,7 +584,6 @@
     roadCitadelName:{ es: 'CIUDADELA MELODIOSA', en: 'CITADEL OF SONG' },   // ACT_2_NAME
     roadSnare:      { es: 'Trampa anímica', en: 'Soul Snare' },   // MQ_SILK_SNARE_NAME
     roadWishwall:   { es: 'Muro de deseos', en: 'Wishwall' },   // the game says it in BB_FIXER_Q1_INTRO; no name of its own
-    roadOf:         { es: '{n} de {of}', en: '{n} of {of}' },
     ending_A:       { es: 'Reina Tejedora', en: 'Weaver Queen' },   // ENDING_A_NAME
     ending_C:       { es: 'Atadura de seda', en: 'Snared Silk' },   // ENDING_C_NAME
     ending_D:       { es: 'Niña retorcida', en: 'Twisted Child' },   // ENDING_D_NAME
