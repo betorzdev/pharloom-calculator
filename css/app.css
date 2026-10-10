@@ -1104,7 +1104,8 @@ kbd {
 .hm-road { margin: 0 0 var(--sp-6); text-align: center; font-size: var(--fs-sm); }
 /* The map of the area she rests in (js/app-map.js, App.mapAreaHtml): beside the card on a
    computer, under it on a phone. The Map's own drawing on a canvas, cropped to the area's box
-   (--r: its width over its height), with the bench's pin, Hornet on it and the cocoon. */
+   (--r: its width over its height), faded at its edges, with Hornet on her bench and the Map's own
+   marks over it. */
 .hm-hero { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--sp-4) var(--sp-8); align-items: center; }
 .hm-hero > .hm-card { margin-bottom: 0; }
 .hm-hero { margin-bottom: var(--sp-6); }
@@ -1113,15 +1114,18 @@ kbd {
   .hm-hero.has-map { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .hm-hero.has-map .hm-area { font-size: clamp(var(--fs-2xl), 1rem + 3vw, 4rem); }
 }
-.hmB-map { display: grid; justify-items: center; gap: var(--sp-2); margin: 0; min-width: 0; }
-.hmB-view { position: relative; display: block; overflow: hidden; width: min(100%, calc(var(--hm-map-max) * var(--r))); aspect-ratio: var(--r);
-  background: var(--scene-bg); border: 1px solid var(--line-ctl); }
-.hmB-view:is(:hover, :focus-visible) { border-color: var(--ink-2); }
-.hmB-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; filter: var(--map-tone); }
-.hmB-view .mp-pin { pointer-events: none; }
-.hmB-cap { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-1) var(--sp-4); font-size: var(--fs-xs); color: var(--muted); }
-.hmB-key { display: inline-flex; align-items: center; gap: var(--sp-1); }
-.hmB-key .mp-pin { position: static; margin: 0; --mp-s: 18px; }
+.hmB-map { display: grid; justify-items: center; margin: 0; min-width: 0; }
+/* No frame: the drawing fades out on every side (the canvas only: the marks stay as the Map has them). */
+.hmB-view { position: relative; display: block; width: min(100%, calc(var(--hm-map-max) * var(--r))); aspect-ratio: var(--r); }
+.hmB-view:focus-visible { outline: 1px solid var(--ink-2); outline-offset: var(--sp-1); }
+.hmB-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; filter: var(--map-tone);
+  -webkit-mask: radial-gradient(ellipse closest-side at 50% 50%, #000 62%, transparent 100%); mask: radial-gradient(ellipse closest-side at 50% 50%, #000 62%, transparent 100%); }
+/* The Map's own marks over it (.mp-mk, sized by --k as there), as pictures. */
+.hmB-svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.hmB-svg .mp-plate { fill: url(#hmB-plate); }
+#hmB-plate stop { stop-color: var(--map-plate); }
+#hmB-plate stop:nth-child(2) { stop-color: var(--map-plate-mid); }
+#hmB-plate stop:last-child { stop-color: transparent; }
 /* Three columns under the card: since the previous save, closest to the bench, the 100% by part. */
 .hm-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: var(--sp-8); }
 .hm-col { display: grid; gap: var(--sp-3); align-content: start; }
