@@ -95,9 +95,11 @@ a game name that doesn't say what the game says.
 
 ## When you finish
 
-`/finish` runs this list. The other project skills (`.claude/skills/`): `/design-round` for a
-step of the UI review, `/port` to carry a change to or from the sibling, `/game-text` for visible
-strings.
+`/finish` runs this list, and ends in a branch and a PR to `dev` with only Albert as author (the
+`commit-msg` hook in `.githooks/` rejects a Claude co-author; enable it once per clone with
+`git config core.hooksPath .githooks`). The other project skills (`.claude/skills/`):
+`/design-round` for a step of the UI review, `/orchestrate` to hand several tasks to agents,
+`/port` to carry a change to or from the sibling, `/game-text` for visible strings.
 
 - If you've touched `tools/gen-*.js` or re-fetched `kb/`, `npm run data` and look at the diff.
 - `npm test`: `node --test`, no dependencies. `test/i18n.test.js` fails if a Spanish accent
