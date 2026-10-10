@@ -84,21 +84,23 @@
   }
 
   /* ── The URL and the history ─────────────────────────────────────────── */
-  /* The language and the screen travel in the hash with the build, but aren't part of it. */
+  /* The language and the screen travel in the hash with the build, but aren't part of it; nor
+     is admin=1, the Map's admin mode (js/app-map-admin.js), which a reload keeps. */
   function splitHash(hash) {
     const text = String(hash || '').replace(/^#/, '');
     const keep = [];
-    let lang = null, view = null;
+    let lang = null, view = null, admin = false;
     for (const pair of text.split('&')) {
       if (/^lang=/.test(pair)) lang = pair.slice(5);
       else if (/^view=/.test(pair)) view = pair.slice(5);
+      else if (pair === 'admin=1') admin = true;
       else if (pair) keep.push(pair);
     }
-    return { build: keep.join('&'), lang: ['es', 'en'].includes(lang) ? lang : null, view: VIEWS.includes(view) ? view : null };
+    return { build: keep.join('&'), lang: ['es', 'en'].includes(lang) ? lang : null, view: VIEWS.includes(view) ? view : null, admin };
   }
   App.build = '';   // the build's share of the hash, as it came (phase 3 encodes it)
   const hashFor = (view = prefs.view) => '#' + App.build + (prefs.lang !== PAGE_LANG ? '&lang=' + prefs.lang : '')
-    + (view && view !== BARE_VIEW ? '&view=' + view : '');
+    + (view && view !== BARE_VIEW ? '&view=' + view : '') + (App.admin ? '&admin=1' : '');
   const here = (hash) => location.pathname + location.search + (hash === '#' ? '' : hash.replace(/^#&/, '#'));
   /* Where you are, which is the screen and what each screen's script registers in
      App.navParts as { get, set }. Back and Forward walk through these; the build isn't a

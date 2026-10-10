@@ -381,6 +381,22 @@ this one, and the first time the map comes into view she runs it, room by room, 
 bench to the new one (two to eight seconds; the view follows her when it's enlarged), and sits.
 She runs each way once; with reduced motion she's simply at her bench.
 
+**For the maintainer, the admin mode** (`#view=map&admin=1`, nothing a visitor sees). A band
+under the map, above the legend, corrects what the game's files place wrong: a mark is dragged
+where it really goes, or nudged with the arrow keys (a pixel of the image; Shift, five); one that
+shouldn't be there is hidden (faint and struck through while in the mode); and *Add* shows the
+legend's marks of Places, People and Other collectibles, so each tap on the map drops one of the
+chosen kind in the room under it, until Escape. An added mark takes an Act and, optionally, a
+save check in `js/collectibles.js`'s form (`["bool", "<room>", "<object>"]`), which tells when a
+save has it; without one it always shows. A dashed way joins a moved mark to the data's point (in
+the accent while unsaved), an added one carries a "+", and the band lists every fix by kind, a
+tap going to it. Changes wait through a reload (`sessionStorage`) and Undo steps back. *Save*
+sends them to `npm run admin` (`tools/admin.js`: the site on `http://localhost:8787` with a way
+to write), which writes `js/map-fixes.js`; with no server (`file://`, the published site) the
+button reads *Copy* and puts the new `FIXES` on the clipboard, to paste over the file's. That
+file isn't generated: `npm run data` never touches it, every fix stores its mark's room, and
+`npm test` says when one names a mark the regenerated data no longer has there.
+
 ### Progress
 
 A ledger. At the top, **your 100%** in a ring that fills with it, as the Journal's Memento, with

@@ -2078,6 +2078,60 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 /* An area whose map isn't bought yet. */
 /* Hornet's way from the previous bench: a silk thread over the rooms, from a hollow ring. */
 .mp-way polyline { fill: none; stroke: var(--silk); stroke-width: 4; stroke-dasharray: 10 8; stroke-linecap: round; stroke-linejoin: round; opacity: 0.75; vector-effect: non-scaling-stroke; }
+
+/* The Map's admin mode (js/app-map-admin.js, #…&admin=1; design/30-map-admin-variants.html, all A):
+   a band under the map, above the legend; on the map, a moved mark's way from the data's point
+   (in the accent while unsaved), a hidden one faint and struck through, an added one with a "+". */
+.mp-adm { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); gap: var(--sp-3) var(--sp-8); align-items: start; padding: var(--sp-4) 0; border-bottom: 1px solid var(--inv-line); font-size: var(--fs-xs); color: var(--ink-2); }
+.mp-adm-col { display: grid; gap: var(--sp-3); align-content: start; min-width: 0; }
+.mp-adm-h { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--sp-1) var(--sp-3); }
+.mp-adm-h b { font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
+.mp-adm-h span { font-family: var(--font-num); font-variant-numeric: tabular-nums; color: var(--muted); }
+.mp-adm .is-pending { color: var(--accent); }
+.mp-adm-sel { display: grid; grid-template-columns: var(--sp-8) minmax(0, 1fr); gap: var(--sp-2) var(--sp-3); align-items: start; }
+.mp-adm-art { display: grid; place-items: center; height: var(--sp-8); }
+.mp-adm :is(.mp-dot, .mp-pin) { position: static; margin: 0; --mp-s: 24px; }
+.mp-adm-name { display: block; font-family: var(--font-display); font-weight: 400; font-size: var(--fs-sm); color: var(--ink-strong); }
+.mp-adm :is(code, .mp-adm-xy, .mp-adm-in) { font-family: var(--font-num); font-variant-numeric: tabular-nums; }
+.mp-adm code { font-size: var(--fs-2xs); color: var(--muted); word-break: break-all; }
+.mp-adm-body { grid-column: 1 / -1; display: grid; gap: var(--sp-2); }
+.mp-adm-xy { display: grid; grid-template-columns: auto 1fr; gap: var(--sp-1) var(--sp-3); margin: 0; }
+.mp-adm-xy dt { color: var(--muted); }
+.mp-adm-xy dd { margin: 0; color: var(--ink); }
+.mp-adm-xy small { color: var(--muted); }
+.mp-adm-acts, .mp-adm-foot { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-4); align-items: center; }
+.mp-adm :is(.mp-adm-acts, .mp-adm-foot) .text-btn { font-size: var(--fs-xs); }
+.mp-adm-foot .mp-adm-hint { margin-left: auto; }
+.mp-adm-state { color: var(--muted); font-style: italic; }
+.mp-adm-hint { font-size: var(--fs-2xs); color: var(--muted); }
+.mp-adm-field { display: grid; gap: var(--sp-1); }
+.mp-adm-field > span, .mp-adm-pick p { margin: 0; font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
+.mp-adm .seg button { min-width: var(--sp-8); }
+.mp-adm-in { width: 100%; min-width: 0; padding: var(--sp-1) var(--sp-2); background: var(--scene-bg); color: var(--ink); border: 1px solid var(--line-ctl); font-size: var(--fs-xs); }
+.mp-adm-in:focus { outline: none; border-color: var(--accent-line); }
+.mp-adm-in.is-bad { border-color: var(--line-panel); color: var(--muted); text-decoration: underline wavy var(--line-panel); }
+.mp-adm-text { min-height: calc(var(--sp-16) * 2); resize: vertical; }
+.mp-adm-pick { display: grid; gap: var(--sp-2); }
+.mp-adm-grid { display: flex; flex-wrap: wrap; gap: var(--sp-1); }
+.mp-adm-grid button { display: grid; place-items: center; width: var(--ctl-sm); height: var(--ctl-sm); border: 1px solid transparent; }
+.mp-adm-grid button:hover { background: var(--veil); }
+.mp-adm-grid button[aria-pressed="true"] { border-color: var(--accent-line); background: var(--picked); }
+.mp-adm-list details { border-top: 1px solid color-mix(in oklab, var(--filigree) 10%, transparent); padding-top: var(--sp-1); }
+.mp-adm-list summary { cursor: pointer; font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
+.mp-adm-list summary span { color: var(--muted); font-weight: 400; letter-spacing: 0; }
+.mp-adm-list ul { list-style: none; margin: var(--sp-1) 0 0; padding: 0; display: grid; gap: var(--sp-1); }
+.mp-adm-list li button { display: grid; grid-template-columns: var(--sp-6) minmax(0, 1fr) auto; gap: var(--sp-2); align-items: center; width: 100%; padding: var(--sp-1); text-align: left; color: var(--ink-2); }
+.mp-adm-list li button:hover { background: var(--veil); color: var(--ink-strong); }
+.mp-adm-list li :is(.mp-dot, .mp-pin) { --mp-s: 20px; }
+.mp-view.is-adding .mp-svg { cursor: crosshair; }
+.mp-adm-ways { pointer-events: none; }
+.mp-adm-ways line { stroke: var(--ink-strong); stroke-width: 1.5; stroke-dasharray: 4 3; vector-effect: non-scaling-stroke; opacity: 0.7; }
+.mp-adm-ways circle { fill: none; stroke: var(--ink-strong); stroke-width: 1.5; vector-effect: non-scaling-stroke; opacity: 0.7; }
+.mp-adm-ways .is-pending :is(line, circle) { stroke: var(--accent); opacity: 1; }
+.mp-mk.is-hidden { opacity: 0.35; }
+.mp-adm-strike { stroke: var(--ink-strong); stroke-width: 0.09; stroke-linecap: round; }
+.mp-adm-plus circle { fill: var(--scene-bg); stroke: var(--accent); stroke-width: 0.06; }
+.mp-adm-plus path { stroke: var(--accent); stroke-width: 0.07; stroke-linecap: round; }
 /* What's missing closest to your bench: a short list under the map. */
 .mp-near-list { list-style: none; margin: var(--sp-3) 0 0; padding: 0; display: grid; gap: var(--sp-1); }
 .mp-near-list li { display: grid; grid-template-columns: var(--sp-6) minmax(0, 1fr) auto auto; align-items: center; gap: var(--sp-3); font-size: var(--fs-sm); color: var(--ink); }

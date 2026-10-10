@@ -43,6 +43,7 @@ the work up reads it first, then the step it's on.
 | 8 | Crest (`tools`) | **Built** (28 Sep) | [`18-crest-variants.html`](18-crest-variants.html) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
 | 10 | **Built** (28 Sep) · The static pages (`tools/pages*.js`: `bosses/`, `es/jefes/`, the landing folders): they inherit steps 1 and 2; only what's theirs | To do | |
+| 6b | The Map's admin mode (`#view=map&admin=1`): the panel, adding, the save check, hide and delete, the marks | **Built** (11 Oct) | `30-map-admin-variants.html` (kept out of the repo) |
 
 ## Step 1 · The shell
 
@@ -938,3 +939,26 @@ tints `.frame-line` (a radial light from the top, the border, a soft glow), its 
 the `.bk` corners and the `.screen-plaque`. `CLAUDE.md`'s rule ("no colour per section") now
 says the frame's light takes the tab's colour, and only that.
 
+## Step 6b · The Map's admin mode
+
+### What there is (11 October 2026)
+
+Nothing: the sibling's admin mode (hallownest-calculator, `#view=map&admin=1`) only moves pins, in
+a panel over the map's top left, where this site has its search. Albert asked for it here, able
+to add marks too.
+
+### The options (`30-map-admin-variants.html`, the real Map in Free mode over Shellwood)
+
+Six choices, each A, B or C: 1 the panel (a band under the map · floating over it · a column
+beside it); 2 adding (the legend's marks in a grid · a list of names · a menu on the map); 3 the
+save check (one line · kind, room and id · the id only); 4 hide and delete (in the panel · on the
+mark's card · the keyboard); 5 on the map (a way, a strike and a "+" · the way only · a dashed
+rim); 6 the list (by kind · one list · the counts).
+
+### Decision (11 October 2026)
+
+All A: a band between the map and the legend, which covers nothing and stays below in
+fullscreen; the legend's marks in a grid, each tap dropping one until Escape; one line for the
+check, the room filled in and checked as it's typed; Restore, Hide, Show and Delete in the panel;
+the way from the data's point (in the accent while unsaved), the hidden mark faint and struck
+through, the added one with a "+"; the fixes listed by kind. Built in `js/app-map-admin.js`.

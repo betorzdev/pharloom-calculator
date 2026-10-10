@@ -188,10 +188,10 @@
       name: t('cat_items'), draw: (s, ti, k, c) => dot('everbloom', 'assets/icons/items/everbloom.webp', s, ti, k, c) });
     // Places: the pins (a station not open, a toll not paid: dimmed, cls ' is-off').
     const lit = new Set(own ? own.lit : []);
-    R.pinsOn(own).forEach((p, pi) => {
+    R.pinsOn(own).forEach((p) => {
       const open = !p[4] || !own || lit.has(pinKey(p));
       const name = t(p[0] === 'bench' ? 'mapPlace_bench1' : 'mapPlace_' + p[0]);
-      out.push({ key: 'pin:' + pi, layer: p[0], scene: p[3], at: { x: p[1], y: p[2] }, got: false, off: !open, pinData: p,
+      out.push({ key: 'pin:' + M.PINS.indexOf(p), layer: p[0], scene: p[3], at: { x: p[1], y: p[2] }, got: false, off: !open, pinData: p,
         name, sub: open ? '' : t(p[0] === 'bench' ? 'mapToll' : 'mapClosed'),
         draw: (s, ti, k, c) => pin(p[0], p[0] === 'bench' ? 'pin_bench' : p[0] === 'bellway' ? 'pin_stag_station' : 'pin_tube_station', s, ti, k, c + (open ? '' : ' is-off')) });
     });
@@ -253,7 +253,32 @@
         draw: (s, ti, k, c) => badge('journal', portrait(e.id), s, ti, k, c) });
     }
     for (const m of out) if (!m.needs) m.needs = SP.NEEDS[m.key];
-    return out;
+    return fixed(out, g);
+  }
+  /* js/map-fixes.js, last of all (and in the admin mode, js/app-map-admin.js, its unsaved
+     changes): a mark moved where it really goes (fix), one hidden (in the admin mode kept,
+     flagged), and the marks added by hand, each drawn and named as its layer's. A fix whose
+     scene isn't its mark's any more (a list regenerated in another order) is left alone. */
+  const MF = SS.mapFixes || { FIXES: {}, LAYERS: [] };
+  const lookDraw = (l) => (s, ti, k, c) => (l.look.dot ? dot(l.id, l.look.dot, s, ti, k, c) : l.look.pin ? pin(l.id, l.look.pin, s, ti, k, c)
+    : badge(l.id, l.look.badge === 'gauntlet' ? GLYPH.gauntlet : GLYPH[l.look.badge || l.look.glyph], s, ti, k, c));
+  function fixed(out, g) {
+    const F = App.mapFixes ? App.mapFixes() : MF.FIXES, moved = F.moved || {}, hidden = F.hidden || {}, keep = !!App.admin;
+    const list = [];
+    for (const m of out) {
+      if (OWN_ONLY.has(m.layer)) { list.push(m); continue; }
+      const mv = moved[m.key];
+      if (mv && mv[2] === m.scene) m.fix = { x: mv[0], y: mv[1] };
+      if (hidden[m.key] === m.scene) { if (!keep) continue; m.hidden = true; }
+      list.push(m);
+    }
+    for (const a of F.added || []) {
+      const l = LAYER.get(a.layer);
+      if (!l || !MF.LAYERS.includes(a.layer)) continue;
+      list.push({ key: a.id, layer: a.layer, scene: a.scene, act: a.act, fix: { x: a.x, y: a.y }, added: a,
+        got: !!g && !!a.check && (g.added || []).includes(a.id), name: l.name(), draw: lookDraw(l) });
+    }
+    return list;
   }
   // Where a thing of the map is, by its key, for the other screens (Progress, the Journal).
   let cache = null;
@@ -337,7 +362,7 @@
     return g ? `<svg class="mp-glyph" x="-0.3" y="-0.3" width="0.6" height="0.6" viewBox="0 0 14 14" fill="none" stroke="currentColor"
         stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${g[1]}</svg>` : '';
   }
-  const pinSvg = (m, p, title, cls) => `<g class="mp-mk is-${m.layer}${cls}${m.off ? ' is-off' : ''}${sel(m.key)}" style="--px:${n2(p.x)}px;--py:${n2(p.y)}px;--ox:${n2(p.ox || 0)}px;--oy:${n2(p.oy || 0)}px"
+  const pinSvg = (m, p, title, cls) => `<g class="mp-mk is-${m.layer}${cls}${m.off ? ' is-off' : ''}${m.fix ? ' is-fixed' : ''}${m.hidden ? ' is-hidden' : ''}${m.added ? ' is-added' : ''}${sel(m.key)}" style="--px:${n2(p.x)}px;--py:${n2(p.y)}px;--ox:${n2(p.ox || 0)}px;--oy:${n2(p.oy || 0)}px"
         data-mk="${esc(m.key)}" role="button" tabindex="0" aria-label="${esc(title)}"><title>${esc(title)}</title><circle r="0.5"/><circle class="mp-plate" r="0.47"/>${artOf(m)}</g>`;
   /* Things on the same point (within SAME pixels: a room's middle, a shop's stock) are laid out
      around it in a small grid, in pins, so it keeps its shape at any zoom. */
@@ -439,6 +464,14 @@
 
   const fold = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
   let finds = [], placed = new Map(), pending = '';
+  // A mark's point as the data has it: the game's pin, else where the game has the thing
+  // (js/spots.js XY), else its room's middle.
+  function pointOf(m) {
+    const own1 = (SP.XY || {})[m.key];
+    const xy = m.at || (own1 && { x: own1[0], y: own1[1] });
+    const room = xy ? null : R.roomOf(m.scene);
+    return xy || (room && { x: room.x, y: room.y });
+  }
 
   App.screens.map = (sec) => {
     const { list, g, own } = all();
@@ -451,10 +484,7 @@
     for (const m of list) {
       if (!shows(m, g, own)) continue;
       count[m.layer] = (count[m.layer] || 0) + 1;
-      const own1 = (SP.XY || {})[m.key];
-      const xy = m.at || (own1 && { x: own1[0], y: own1[1] });
-      const room = xy ? null : R.roomOf(m.scene);
-      const p = xy || (room && { x: room.x, y: room.y });
+      const p = m.fix || pointOf(m);
       if (!p) continue;
       placed.set(m.key, { x: p.x, y: p.y });
       if (!on.has(m.layer)) continue;
@@ -703,7 +733,7 @@
     } else if (kind === 'lock') {
       note = m.sub;
       where = line([areaName(area)]);
-    } else if (kind === 'extra') {
+    } else if (kind === 'extra' || (kind === 'add' && m.added.check)) {
       if (g) acts = state(t(m.got ? 'pgGot' : 'invMissing'));
     } else if (kind === 'journal') {
       const e = BOOK.get(m.entry), k = own && own.journal[e.id];
@@ -913,4 +943,9 @@
     // Another screen's "on the map" button.
     mapShow(node) { App.mapShow(node.dataset.value); },
   });
+
+  // For the admin mode (js/app-map-admin.js): what it reads of the Map, and the list worked out
+  // again once a fix changes.
+  App.mapApi = { LAYER, LAYERS, OWN_ONLY, layersOn, pointOf, toMap, nodes, focusOn, pick: pick1, picked: () => picked, list: () => all().list, placed: () => placed,
+    view: () => vb, dirty: () => { cache = null; } };
 })();
