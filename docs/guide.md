@@ -305,38 +305,47 @@ NPC, a Journal entry), each with its layer and area under it: pick one and the m
 with its layer switched on, its card open and a ring where it is. On a phone the area names show
 only zoomed in.
 
-Under the map, the filters and the legend. The filters: the Act (all, or only Act 1, 2 or 3's
-things), «Only what I can reach now» with a save (hides what asks for an ability or Silk Skill you
-don't have yet: the Faydown Cloak, Clawline, Silk Soar, as the completionist lists them), «Only
-what the game shows» with a save (see below), and the area names on or off. The legend is five groups, each folded or open as you left it, with its
-count and a switch for the whole group («All», or «None» when it's all on); inside, each layer's
-own mark is its switch, dimmed when off, with its count:
+Under the map, **What the map shows**, as the Hollow Knight site has it: «Show all · Hide all» on
+its right, then the Act (all, or only Act 1, 2 or 3's things), «Only what I can reach now» with a
+save (hides what asks for an ability or Silk Skill you don't have yet: the Faydown Cloak,
+Clawline, Silk Soar, as the completionist lists them), «Only what the game shows» with a save (see
+below), and the area names on or off. Then seven groups, each a row that folds (its caret; all open
+at first, only the first on a phone, then as you left them) whose title is the switch for the
+whole group, in ink when all of it is on, dimmer when part, muted when none. Inside, each layer's
+switch is the game's own picture of it, in grey when off. Beside each, how many: in a save, had of
+the total (a layer complete in green); for places and people, which aren't had, how many there
+are; in Free mode, the total. The Act and reach filters narrow the counts too.
 
-- **Missing for 100%**: every piece, each kind a layer (Mask Shards, Spool Fragments, Memory
-  Lockets, Craftmetal, Pale Oil, fleas, Needle upgrades, Tool Pouch, Crafting Kit, Silk Hearts,
-  Old Hearts, melodies), the Tools, Crests, Silk Skills, abilities and the Everbloom. Each in the
-  room where it's had: lying there, at the shop that sells it, at the Wishwall or with whoever
-  gives the wish, in its boss's arena, with the person who gives it. All on at first.
+- **Towards 100%**: every piece, each kind a layer (Mask Shards, Spool Fragments, Needle
+  upgrades, Tool Pouch, Crafting Kit, Silk Hearts, then the Tools, Crests, Silk Skills and
+  abilities, then Memory Lockets, Craftmetal, Pale Oil, fleas, Old Hearts, melodies) and the
+  Everbloom. Each in the room where it's had: lying there, at the shop that sells it, at the
+  Wishwall or with whoever gives the wish, in its boss's arena, with the person who gives it. All
+  on at first.
 - **Places**: benches (off at first: there are 76), Bellway and Ventrica stations (dimmed while
-  your game hasn't opened them: a station not unlocked, a toll not paid), the enemy gauntlets and
-  bosses not beaten yet, the five Bellshrines of the Grand Gate, the locked doors (with the key
-  each takes) and the shops.
+  your game hasn't opened them: a station not unlocked, a toll not paid), the five Bellshrines of
+  the Grand Gate, the shops and the locked doors (with the key each takes).
+- **Fights**: the enemy gauntlets and bosses not beaten yet, and the unique enemies (Rhinogrunds,
+  Covetous Pilgrims, Shardillards, Void Masses).
 - **People**: Shakra's spots, the Wishwalls and who asks for a wish (with a save, only while one
   is still open there), and who gives something of the 100% (Plinney, Eva, Pinstress, Loddie,
   Lumble, Mooshka) and Scrounge, who buys the relics.
-- **Other collectibles**, off at first: the relics (Bone Scrolls, Weaver Effigies, Choral
-  Commandments, Rune Harps, Psalm Cylinders, the Arcane Egg), Mossberries, Silkeaters, Mementos,
-  the Bellhome's furnishings, unique enemies (Rhinogrunds, Covetous Pilgrims, Shardillards, Void
-  Masses), and the rosary and shell shard caches and the breakable walls: so many that they're
-  drawn one by one only close up; from afar, a count per room.
+- **Collectibles**, off at first: the relics, one switch for the six (Bone Scrolls, Weaver
+  Effigies, Choral Commandments, Rune Harps, Psalm Cylinders, the Arcane Egg) whose round caret
+  opens them one by one, Mossberries, Silkeaters, Mementos and the Bellhome's furnishings.
+- **Secrets**, off at first: the rosary and shell shard caches and the breakable walls, so many
+  that they're drawn one by one only close up; from afar, a count per room.
 - **Your game**, with a save: your cocoon, where you last fell (on at first), and the Journal's
   entries still missing, in the room where each is found.
 
 Each mark is the thing's own picture on a dark disc with a thin rim, as the Hollow Knight site
 draws them, over a pale plate so a dark portrait reads, about the same size at any zoom, a little
-bigger close up. What has no picture of its own takes a drawn sign: a folded map for Shakra, a
-padlock, a notice board for a Wishwall, a figure for a person (with a plus for who asks for a
-wish), a house for the Bellhome's furnishings, bricks for a breakable wall. It sits where the game
+bigger close up. What has no picture of its own takes one of the game's: Shakra's Journal portrait, a key of the
+inventory for a locked door, the pause menu's Wishes tab for a Wishwall, a wish's emblem for who
+asks for one, the herald's emblem for who gives a thing of the 100%, the game's Bellhome bench pin
+for its furnishings (tools/extract-map-icons.py takes them from the game's files). Only the
+breakable walls keep a drawn sign, bricks: the game's walls are tall dark rock that doesn't read
+that small. It sits where the game
 has the thing in its room: the pickup lying there, the NPC, the shrine, the cache (the object's
 place in its scene, put on the room's drawing as the game places Hornet on its map; checked
 against the benches, which fall by the game's own bench pins). What has no place of its own (a
