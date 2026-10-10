@@ -146,3 +146,29 @@ test('the build worn: each Crest slot\'s Tool or Silk Skill, in the game\'s orde
   assert.deepEqual(b.tools, ['compass', 'threefold-pin']);
   assert.equal(b.skill, 'silkspear');
 });
+
+test('the purse: what is held of each Collectable, the two currencies, the Farsight and the Journal; kept in a slot', () => {
+  const held = (Name, Amount) => ({ Name, Data: { Amount } });
+  const pd = { ...BASE, geo: 1402, ShellShards: 744, hasJournal: true, ToolPouchUpgrades: 4,
+    Collectables: { savedData: [held('Great Shard', 6), held('Shard Pouch', 9), held('Rosary_Set_Medium', 2), held('Rosary_Set_Huge_White', 0),
+      held('Farsight', 1), held('Mossberry', 3)] } };
+  const g = F.game(pd, null);
+  assert.equal(g.purse['beast-shard'], 6);
+  assert.equal(g.purse['shard-bundle'], 9);
+  assert.equal(g.purse['rosary-necklace'], 2);
+  assert.equal(g.purse['pale-rosary-necklace'], 0);
+  assert.equal(g.purse['growstone'], 0);
+  assert.equal(Object.keys(g.purse).length, 10);
+  assert.deepEqual([g.rosaries, g.shards, g.farsight, g.hasJournal], [1402, 744, true, true]);
+  // Assembled in the Bellhome, nothing carried: still had.
+  assert.equal(F.game({ ...BASE, ConstructedFarsight: true }, null).farsight, true);
+  assert.equal(F.game(BASE, null).farsight, false);
+  // Through a slot and back; a damaged count falls back to none.
+  const snap = F.toSnapshot(pd);
+  assert.deepEqual(F.gameOf(snap).purse, g.purse);
+  assert.equal(F.gameOf(snap).rosaries, 1402);
+  const bad = { ...snap, 'pharloom.progress': JSON.stringify({ purse: { 'beast-shard': 'x', 'shard-bundle': -4, other: 3 } }) };
+  assert.equal(F.gameOf(bad).purse['beast-shard'], 0);
+  assert.equal(F.gameOf(bad).purse['shard-bundle'], 0);
+  assert.equal('other' in F.gameOf(bad).purse, false);
+});

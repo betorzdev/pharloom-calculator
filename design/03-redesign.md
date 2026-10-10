@@ -36,7 +36,7 @@ the work up reads it first, then the step it's on.
 | 1 | **The shell**: header, screen bar (desktop and phone), the screen's frame and title, footer and About, the atmosphere | **Built** (28 Sep) | [`04-shell-variants.html`](04-shell-variants.html) |
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep) | [`06-home-variants.html`](06-home-variants.html) |
-| 4 | Inventory (`game`) | **Built** (28 Sep) | [`07-inventory-variants.html`](07-inventory-variants.html) |
+| 4 | Inventory (`game`) | **Built** (28 Sep; purse 11 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep) | [`10-progress-variants.html`](10-progress-variants.html) |
 | 6 | Map (`map`) | **Built** (28 Sep) | [`12-map-variants.html`](12-map-variants.html) |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds) | [`15-journal-variants.html`](15-journal-variants.html) |
@@ -398,6 +398,19 @@ Albert chose **silk 2 · beads on a thread**. Built:
   (the text open under the shelf says which one). A Tool you lack sits on **the game's locked
   slot** (solid grey with its pale rim, `design/02-silksong.md` §3), its picture grey on it; chosen
   from [`09-locked-tool-variants.html`](09-locked-tool-variants.html) (B).
+- **Retouch, the purse, Farsight, the Journal, the Relics and the Mementos** (11 October 2026):
+  Albert asked what else the game's own pane holds. Drawn in
+  `29-inventory-variants.html` over Save 4 and Save 1: **A · the
+  purse above Items**, B · a strip across the top, C · with Hornet, D · a ledger. Albert chose
+  **A**, the Growstone always shown (dimmed until you hold one), the five rosary strings, the
+  Relics one cell per kind, and in Free mode a typed figure for the two currencies and − N + for
+  the rest. Built: a «Monedero» section with Rosaries (`geo`) and Shell Shards (`ShellShards`,
+  against the Pouch's 400 to 800), under each the strings, bundles and shards that break into it
+  (the Collectables' `Amount`, `js/collectibles.js` PURSE) and the sum if you broke them all; the
+  Farsight and the Hunter's Journal as cells of Items; the Relics (N of each kind) and the
+  Mementos on shelves of their own, read from the Map's EXTRAS. Free mode keeps them in
+  `pharloom.progress`. The Rosary_Set_* save names are the game's own item assets (checked
+  against `kb/data/game/pickups.json`).
 
 ## Step 5 · Progress
 

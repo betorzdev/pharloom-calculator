@@ -240,6 +240,10 @@
        masks, spools      whole ones gained (maxHealthBase − 5, silkMax − 9), as the game counts them
        hearts             Silk Hearts (silkRegenMax); needle, kit, pouch: the three upgrade ladders
        everbloom          the White Flower in Collectables
+       purse              { item id: how many held } of js/collectibles.js's PURSE (the strings of
+                          rosaries and the things that break into shell shards: Collectables Amount)
+       rosaries, shards   what Hornet holds (geo, ShellShards); farsight: the Farsight carried or
+                          already assembled (ConstructedFarsight); hasJournal: the Hunter's Journal
        pieces             the indices of js/collectibles.js's PIECES found
        wishes             the indices of its WISHES done (the pane «Tareas»)
        gauntlets          the ids of js/gauntlets.js's enemy gauntlets cleared (each one's done)
@@ -321,6 +325,10 @@
       needle: Math.min(4, whole(pd.nailUpgrades, 0)), kit: Math.min(4, whole(pd.ToolKitUpgrades, 0)),
       pouch: Math.min(4, whole(pd.ToolPouchUpgrades, 0)),
       everbloom: int(flower) > 0,
+      purse: Object.fromEntries(CO.PURSE.map((p) => [p[0], Math.max(0, int((items.get(p[1]) || {}).Amount))])),
+      rosaries: Math.max(0, int(pd.geo)), shards: Math.max(0, int(pd.ShellShards)),
+      farsight: int((items.get('Farsight') || {}).Amount) > 0 || pd.ConstructedFarsight === true,
+      hasJournal: pd.hasJournal === true,
       pieces: CO.PIECES.map((p, i) => (has(p[2]) ? i : -1)).filter((i) => i >= 0),
       wishes: CO.WISHES.map((w, i) => (has(w[2]) ? i : -1)).filter((i) => i >= 0),
       gauntlets: GA.GAUNTLETS.filter((x) => has(x.done)).map((x) => x.id),
@@ -368,7 +376,7 @@
        pharloom.owned     { tools, crests, skills, arts }: what the Crest screen can equip
        pharloom.journal   { entry id: kills }
        pharloom.progress  the rest of game(): masks, spools, hearts, needle, kit, pouch,
-                          everbloom, pieces, wishes, gauntlets, lit, act, mapFlags, mapVars, bench,
+                          everbloom, purse, rosaries, shards, farsight, hasJournal, pieces, wishes, gauntlets, lit, act, mapFlags, mapVars, bench,
                           area, build, the road's fields (quests … snareReady) and the Map's
                           (visited … bosses)
        pharloom.meta      what the profile screen shows (meta()) and when the file was saved
@@ -415,7 +423,7 @@
     };
   }
   const EMPTY = Object.freeze({ tools: [], crests: [], skills: [], arts: [], journal: {}, masks: 0, spools: 0, hearts: 0,
-    needle: 0, kit: 0, pouch: 0, everbloom: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', area: '', build: {},
+    needle: 0, kit: 0, pouch: 0, everbloom: false, purse: {}, rosaries: 0, shards: 0, farsight: false, hasJournal: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', area: '', build: {},
     quests: [], bellshrines: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
     bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [],
     visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', extras: [], bosses: [] });
@@ -430,6 +438,8 @@
       const ok = Array.isArray(def) ? Array.isArray(v) : typeof v === typeof def && v !== null;
       out[k] = ok ? v : (Array.isArray(def) ? [] : typeof def === 'object' ? {} : def);
     }
+    // The held counts: only the items the list has, as whole numbers.
+    out.purse = Object.fromEntries(CO.PURSE.map((p) => [p[0], Number.isInteger(out.purse[p[0]]) ? Math.max(0, out.purse[p[0]]) : 0]));
     // The pieces by their keys → today's places in the list; a key the list no longer has is dropped.
     out.pieces = out.pieces.map((k) => KEY_AT.get(k)).filter((i) => i !== undefined);
     out.wishes = out.wishes.map((k) => WISH_AT.get(k)).filter((i) => i !== undefined);
