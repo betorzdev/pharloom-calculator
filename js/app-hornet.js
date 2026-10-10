@@ -1,3 +1,4 @@
+/* NOTE: the Map walk between benches is off for now (WALK_ON_BENCH_CHANGE below). */
 /* js/app-hornet.js: the Hornet who walks the page, ported from the Hollow Knight site's Knight
    (js/app-knight.js there). One sprite (css: .hn; the strips in assets/hornet/, from the game's own
    frames by tools/extract-hornet.py) that says where you are, the way her mark does on the game's
@@ -6,7 +7,6 @@
    there). When you change screens she gets up and runs along the bar to the new one, at a steady
    pace (--dur-run per 100 px): never a slide; she only fades in on arriving, and out where the bar
    has no room for her (below 900 px). On the Map she sits at your bench (js/app-map.js draws her
-   (The bench-change walk is off for now: WALK_ON_BENCH_CHANGE below.)
    there) and, when the save before was at another bench, she walks from the old one to the new one
    room by room, along the way the Map draws (App.mapWay: js/rooms.js through js/graph.js's doors
    and the stations your game has opened), once, while the map is in view. With reduced motion she
