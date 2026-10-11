@@ -60,6 +60,17 @@ function get(url, hops = 5) {
   });
 }
 
+/* A wiki file's bytes: Special:FilePath, or, where the wiki refuses scripts there (403, as it did
+   on 11-Oct-2026), the CDN address its File: page carries. */
+async function fetchFile(file) {
+  const name = encodeURIComponent(file.replace(/ /g, '_'));
+  try { return await get('https://hollowknight.wiki/w/Special:FilePath/' + name); } catch (e) { /* the File: page */ }
+  const html = (await get('https://hollowknight.wiki/w/File:' + name)).toString('utf8');
+  const m = /https:\/\/cdn\.wikimg\.net\/[^"'\s]+\/images\/[0-9a-f]\/[0-9a-f]{2}\/[^"'\s?]+/.exec(html);
+  if (!m) throw new Error('no address for ' + file);
+  return get(m[0]);
+}
+
 (async () => {
   const jobs = [];
   const add = (list, id, en, extra) => {
@@ -83,7 +94,7 @@ function get(url, hops = 5) {
     ['heart-hunter', "Icon SS Hunter's Heart Art.png"], ['heart-clover', 'Icon SS Conjoined Heart Art.png'],
     ['melody-architect', "Icon SS Architect's Melody Art.png"], ['melody-librarian', "Icon SS Vaultkeeper's Melody Art.png"],
     ['melody-conductor', "Icon SS Conductor's Melody Art.png"]]) jobs.push([`pieces/${id}`, file]);
-  for (const x of D.ITEMS) add('items', x.id, x.name.en, ["%'s Journal (Silksong)"]);
+  for (const x of D.ITEMS.filter((y) => !y.art)) add('items', x.id, x.name.en, ["%'s Journal (Silksong)"]);
   /* The Hunter's Journal's portraits: the wiki's table names each row's file with the page it
      links to ("[[File:HJ Mossgrub.png|60px|link=Mossgrub]]"); they're paired with js/journal.js's
      entries by that page's name, not by order (the Steel Soul row carries an icon between the two,
@@ -102,7 +113,7 @@ function get(url, hops = 5) {
   for (const [key, file] of jobs) {
     if (!file || (ONLY.length && !ONLY.includes(key.split('/')[0]) && !ONLY.includes(key))) continue;
     try {
-      const buf = await get('https://hollowknight.wiki/w/Special:FilePath/' + encodeURIComponent(file.replace(/ /g, '_')));
+      const buf = await fetchFile(file);
       const to = path.join(OUT, key + '.png');
       fs.mkdirSync(path.dirname(to), { recursive: true });
       fs.writeFileSync(to, buf);

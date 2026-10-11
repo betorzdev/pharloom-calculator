@@ -17,7 +17,9 @@
                an AREAS id (or null); check is ['bool', scene, id] (sceneData.persistentBools),
                ['flag', name], ['min', name, n], ['quest', name] (QuestCompletionData
                IsCompleted), ['visited', scene] (playerData.scenesVisited) or ['any', check…].
-               Act 0 = there from the start. */
+               Act 0 = there from the start.
+     PURSE     [site item id, its name in playerData.Collectables (Amount: how many are held),
+               'rosaries' or 'shards' (what it breaks into), how many, the most the game has] */
 (() => {
   'use strict';
   const SS = globalThis.SS || (globalThis.SS = {});
@@ -748,6 +750,19 @@
     { id: 'steel', name: { es: 'Acero', en: 'Steel', key: 'TYPE_STEELSENTINEL_TITLE' } },
   ];
 
+  const PURSE = [
+    ['beast-shard', 'Great Shard', 'shards', 140, 9],
+    ['shard-bundle', 'Shard Pouch', 'shards', 80, 20],
+    ['pristine-core', 'Pristine Core', 'shards', 220, 2],
+    ['hornet-statuette', 'Fixer Idol', 'shards', 60, 1],
+    ['growstone', 'Growstone', 'shards', 0, 1],
+    ['frayed-rosary-string', 'Rosary_Set_Frayed', 'rosaries', 30, 19],
+    ['rosary-string', 'Rosary_Set_Small', 'rosaries', 60, 20],
+    ['rosary-necklace', 'Rosary_Set_Medium', 'rosaries', 120, 20],
+    ['heavy-rosary-necklace', 'Rosary_Set_Large', 'rosaries', 220, 7],
+    ['pale-rosary-necklace', 'Rosary_Set_Huge_White', 'rosaries', 340, 2],
+  ];
+
   const WISHES = [
     [
       'main-objectives',
@@ -1419,6 +1434,6 @@
     ],
   ];
 
-  SS.collectibles = { TOOLS, COUNTED, CRESTS, JOURNAL, AREAS, WHERE, PIECES, WISH_TYPES, WISHES };
+  SS.collectibles = { TOOLS, COUNTED, CRESTS, JOURNAL, AREAS, WHERE, PIECES, WISH_TYPES, PURSE, WISHES };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.collectibles;
 })();

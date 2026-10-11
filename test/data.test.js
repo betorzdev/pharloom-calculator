@@ -450,3 +450,23 @@ test('how bosses stagger, from the game: the wiki\'s hit count is the maximum pl
   assert.equal(S.HORNET.slash.wanderer, 0.8);
   assert.equal(S.HORNET.challenge, 0.5);
 });
+
+test("the purse: every item has its game text, what breaks into what, and the Shell Shards' capacity", () => {
+  const ids = new Set(D.ITEMS.map((x) => x.id));
+  assert.equal(CO.PURSE.length, 10);
+  for (const [id, save, cur, worth, max] of CO.PURSE) {
+    assert.ok(ids.has(id), `no item ${id}`);
+    assert.ok(save && ['rosaries', 'shards'].includes(cur) && worth >= 0 && max >= 1, id);
+  }
+  // The wiki's values: the strings 30, 60, 120, 220 and 340 rosaries; the shards' things 80, 140, 220 and 60.
+  const worth = Object.fromEntries(CO.PURSE.map((p) => [p[0], p[3]]));
+  assert.deepEqual(['frayed-rosary-string', 'rosary-string', 'rosary-necklace', 'heavy-rosary-necklace', 'pale-rosary-necklace'].map((k) => worth[k]), [30, 60, 120, 220, 340]);
+  assert.deepEqual(['shard-bundle', 'beast-shard', 'pristine-core', 'hornet-statuette'].map((k) => worth[k]), [80, 140, 220, 60]);
+  // 400 shards at the base, 100 more per Tool Pouch level: 800 at the top.
+  assert.deepEqual(D.HORNET.shells, { base: 400, perPouch: 100 });
+  // Each has the game's own text, with its key.
+  for (const id of ['rosaries', 'shell-shards', 'beast-shard', 'bone-scroll', 'grey-memento']) {
+    const x = D.ITEMS.find((y) => y.id === id);
+    assert.ok(x.name.key && x.desc && x.desc.key, id);
+  }
+});

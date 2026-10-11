@@ -409,12 +409,37 @@ const ITEMS = [
   ['crafting-kit', 'INV_MSG_TOOLKIT'], ['pale-oil', 'INV_NAME_PLINNEY_TOOLS'],
   ['craftmetal', 'INV_NAME_TOOL_METAL'], ['everbloom', 'INV_NAME_WHITE_FLOWER'],
   ['farsight', 'INV_NAME_FARSIGHT'], ['hunters-journal', 'INV_NAME_JOURNAL'],
+  // The purse (Inventory): the two currencies, and what breaks into them (the pane's Consumables).
+  ['rosaries', 'INV_NAME_COIN'], ['shell-shards', 'INV_NAME_SHARD'],
+  ['beast-shard', 'INV_NAME_GREAT_SHARD'], ['shard-bundle', 'INV_NAME_SHARD_POUCH'], ['pristine-core', 'INV_NAME_PRISTINE_CORE'],
+  ['hornet-statuette', 'INV_NAME_FIXER_IDOL'], ['growstone', 'INV_NAME_GROWSTONE'],
+  ['frayed-rosary-string', 'INV_NAME_COIN_SET_F'], ['rosary-string', 'INV_NAME_COIN_SET_S'], ['rosary-necklace', 'INV_NAME_COIN_SET_M'],
+  ['heavy-rosary-necklace', 'INV_NAME_COIN_SET_M2'], ['pale-rosary-necklace', 'INV_NAME_COIN_SET_L'],
+  // The Relics (one per kind) and the Mementos: their pictures are the Map's (assets/icons/extras/).
+  ['bone-scroll', 'INV_NAME_R_BONE_RECORD', 'extras'], ['weaver-effigy', 'INV_NAME_R_WEAVER_TOTEM', 'extras'],
+  ['choral-commandment', 'INV_NAME_R_SEAL_CHIT', 'extras'], ['rune-harp', 'INV_NAME_R_WEAVER_RECORD', 'extras'],
+  ['psalm-cylinder', 'INV_NAME_R_PSALM_CYL', 'extras'], ['arcane-egg', 'INV_NAME_R_ANCIENT_EGG', 'extras'],
+  ['grey-memento', 'INV_NAME_MEMENTO_GREY', 'extras'], ['heros-memento', 'INV_NAME_MEMENTO_GARMOND', 'extras'],
+  ['surface-memento', 'INV_NAME_MEMENTO_SURFACE', 'extras'], ['hunters-memento', 'INV_NAME_HUNTER_MEMENTO', 'extras'],
+  ['craw-memento', 'INV_NAME_MEMENTO_CROWMAN', 'extras'], ['sprintmaster-memento', 'INV_NAME_SPRINT_MEMENTO', 'extras'],
+  ['guardians-memento', 'INV_NAME_SETH_MEMENTO', 'extras'],
 ];
 /* Their description, the inventory's: INV_DESC_ for INV_NAME_; the Crafting Kit has none of its
    own, and shares the Tool Pouch's pane text (INV_DESC_POUCHANDTOOLKIT); the Journal has none. */
 const ITEM_DESC = { 'crafting-kit': 'INV_DESC_POUCHANDTOOLKIT' };
-const buildItems = () => ITEMS.map(([id, key]) => ({ id, key, name: text(key),
-  desc: (ITEM_DESC[id] ? text(ITEM_DESC[id], true) : text(key.replace('INV_NAME_', 'INV_DESC_'), true)) || undefined }));
+const buildItems = () => ITEMS.map(([id, key, art]) => ({ id, key, name: text(key),
+  desc: (ITEM_DESC[id] ? text(ITEM_DESC[id], true) : text(key.replace('INV_NAME_', 'INV_DESC_'), true)) || undefined, art }));
+
+/* The Shell Shards' capacity, read from the Tool Pouch & Crafting Kit page's sentence ("a capacity
+   of 400, up to 800", "by 100"); it fails if the wiki rewords it. */
+const SHELLS = (() => {
+  const t = W.page('Tool Pouch & Crafting Kit');
+  const m = /increase the maximum capacity of \[\[Shell Shards\]\] by \{\{S\|(\d+)\}\}, starting with a capacity of \{\{S\|(\d+)\}\}, up to a maximum of \{\{S\|(\d+)\}\}/.exec(t);
+  if (!m) fail("the Tool Pouch page's Shell Shards capacity sentence changed");
+  const [per, base, max] = m.slice(1).map(Number);
+  if (base + 4 * per !== max) fail(`Shell Shards capacity: ${base} + 4 × ${per} is not ${max}`);
+  return { base, perPouch: per };
+})();
 
 /* Hornet's numbers (design/00-study.md §1, §2.6, from the wiki's Mask Shard, Spool Fragment,
    Silk, Bind and Tool Pouch & Crafting Kit pages). */
@@ -424,6 +449,7 @@ const HORNET = {
   bind: { heals: 3, seconds: 1.37 },
   kit: { levels: 4, boost: 0.6 },                              // +60% per level, rounded before anything else
   pouch: { levels: 4 },
+  shells: SHELLS,                                              // the Shell Shards' capacity: base + perPouch × Pouch level
 };
 
 (async () => {

@@ -1,0 +1,7 @@
+#!/bin/sh
+# Only Albert signs this repo's commits: reject any Claude co-author or attribution line.
+# Enable once per clone: git config core.hooksPath .githooks
+if grep -qiE '^co-authored-by:.*(claude|anthropic)|generated with \[?claude code' "$1"; then
+  echo "commit-msg: remove the Claude co-author / attribution line (CLAUDE.md, When you finish)" >&2
+  exit 1
+fi

@@ -6,12 +6,14 @@
    the Crest screen does, and a tap on the right marks a thing had or not (js/app-saves.js,
    App.freeGame), which the Crest screen then respects. In a save it shows what the game saved,
    and what you don't have yet is a dimmed silhouette. A tap opens the game's text under its
-   shelf. The icons are the wiki's
+   shelf. Above the Items, the purse (Rosaries and Shell Shards with the strings, bundles and
+   shards that break into them, design/29-inventory-variants.html, A); the Relics and the
+   Mementos on shelves below. The icons are the wiki's
    (tools/fetch-icons.js, npm run icons). Shares SS.app with js/app.js (see there). */
 (() => {
   'use strict';
   const SS = globalThis.SS;
-  const D = SS.data, CO = SS.collectibles;
+  const D = SS.data, CO = SS.collectibles, SP = SS.spots;
   const App = SS.app;
   const { t, pick, esc, NT, ART, brackets, screenHead, actions } = App;
 
@@ -22,11 +24,25 @@
     CollectedHeartClover: 'heart-clover', HasMelodyArchitect: 'melody-architect', HasMelodyLibrarian: 'melody-librarian',
     HasMelodyConductor: 'melody-conductor' };
 
-  // Free mode: everything, as the site's everything-unlocked sheet.
+  /* The Relics, one cell per kind (js/spots.js EXTRAS holds each one found), and the Mementos by the
+     picture each has (assets/icons/extras/, the Map's too): the item ids of js/data.js. */
+  const RELICS = ['bone-scroll', 'weaver-effigy', 'choral-commandment', 'rune-harp', 'psalm-cylinder', 'arcane-egg'];
+  const MEMENTO_ID = { 'Grey Memento': 'grey-memento', 'Memento Garmond': 'heros-memento', 'Memento Surface': 'surface-memento',
+    'Hunter Memento': 'hunters-memento', 'Crowman Memento': 'craw-memento', 'Sprintmaster Memento': 'sprintmaster-memento', 'Memento Seth': 'guardians-memento' };
+  // The EXTRAS entries of each: indices into SP.EXTRAS (a memento is named by its check; the Old Hearts' deposit has no name of its own).
+  const extrasOf = (kind) => SP.EXTRAS.map((x, i) => (x[0] === kind ? i : -1)).filter((i) => i >= 0);
+  const MEMENTOS = SP.EXTRAS.map((x, i) => (x[0] === 'memento' && MEMENTO_ID[x[2][1]] ? i : -1)).filter((i) => i >= 0);
+  const RELIC_AT = SP.EXTRAS.map((x, i) => (RELICS.includes(x[0]) ? i : -1)).filter((i) => i >= 0);
+  // Rosaries have no cap in the game's files; the typed field stops at five digits, as the screen can hold.
+  const MAX_ROSARIES = 99999;
+  const shardCap = (pouch) => D.HORNET.shells.base + D.HORNET.shells.perPouch * pouch;
+
+  // Free mode: everything, as the site's everything-unlocked sheet (nothing loose or carried: a full game has spent it).
   function fullGame() {
     return { tools: D.TOOLS.map((x) => x.id), crests: D.CRESTS.map((x) => x.id), skills: D.SKILLS.map((x) => x.id),
       arts: D.ARTS.map((x) => x.id), masks: 5, spools: 9, hearts: 3, needle: 4, kit: 4, pouch: 4, everbloom: true,
-      pieces: CO.PIECES.map((p, i) => i), journal: {}, act: 3 };
+      pieces: CO.PIECES.map((p, i) => i), purse: {}, rosaries: 0, shards: 0, farsight: true, hasJournal: true,
+      extras: [...RELIC_AT, ...MEMENTOS], journal: {}, act: 3 };
   }
 
   /* Every thing the pane can show, by a key "list/id": { list, id, name, desc, got, count, color }. */
@@ -48,6 +64,20 @@
     it('spool-fragment', frags > 0, `${num(Math.max(0, frags))}/2`, [Math.max(0, Math.min(1, frags)), 1]);
     for (const id of ['memory-locket', 'craftmetal', 'pale-oil']) it(id, found(id) > 0, `${num(found(id))}/${num(total(id))}`, [found(id), total(id)]);
     it('everbloom', g.everbloom);
+    it('farsight', g.farsight);
+    it('hunters-journal', g.hasJournal);
+    // The purse: the two currencies (their picture opens the text), and what breaks into them, held counts.
+    for (const id of ['rosaries', 'shell-shards']) { const x = item(id); out.push({ list: 'items', id, name: x.name, desc: x.desc, got: true, shelf: 'currency' }); }
+    for (const [id, , cur, worth, max] of CO.PURSE) {
+      const x = item(id), v = Math.min(max, g.purse[id] || 0);
+      out.push({ list: 'items', id, name: x.name, desc: x.desc, got: v > 0, keep: true, count: `${num(v)}/${num(max)}`, n: [v, max], shelf: 'purse', cur, worth });
+    }
+    // The Relics by kind (how many of the kind), the Mementos one by one.
+    for (const k of RELICS) {
+      const at = extrasOf(k), v = at.filter((i) => g.extras.includes(i)).length, x = item(k);
+      out.push({ list: 'extras', id: k, name: x.name, desc: x.desc, got: v > 0, count: `${num(v)}/${num(at.length)}`, n: [v, at.length], shelf: 'relics', kind: k });
+    }
+    for (const i of MEMENTOS) { const id = MEMENTO_ID[SP.EXTRAS[i][2][1]], x = item(id); out.push({ list: 'extras', id, name: x.name, desc: x.desc, got: g.extras.includes(i), shelf: 'mementos', extra: i }); }
     // The Silk Hearts, the Old Hearts and the melodies, each with its own picture.
     out.push({ list: 'pieces', id: 'silk-heart', name: { es: t('kind_silkHeart'), en: t('kind_silkHeart') }, got: g.hearts > 0, count: `${num(g.hearts)}/3` });
     CO.PIECES.forEach((p, i) => {
@@ -75,10 +105,12 @@
   }
   /* Free mode marks (design/03-redesign.md, step 4): a tap on a Tool, Crest, Silk Skill,
      ability, the Everbloom, an Old Heart or a melody marks it had or not and opens its text; the
-     counted ones (loose shards and fragments, lockets, Craftmetal, Pale Oil, fleas) go by − N +.
+     counted ones (loose shards and fragments, lockets, Craftmetal, Pale Oil, fleas, what's in the
+     purse, the Relics of each kind) go by − N +, and the two currencies are typed.
      The Hunter Crest is always had: Hornet starts with it. */
   let marking = false;
-  const markable = (x) => !x.n && x.id !== 'silk-heart' && !(x.list === 'crests' && x.id === 'hunter') && (x.list !== 'items' || x.id === 'everbloom');
+  const markable = (x) => !x.n && x.id !== 'silk-heart' && !(x.list === 'crests' && x.id === 'hunter')
+    && (x.list !== 'items' || ['everbloom', 'farsight', 'hunters-journal'].includes(x.id));
   const stepper = (x) => {
     const [v, max] = x.n, what = pick(x.name);
     return `<span class="inv-step"><button type="button" class="icon-btn" data-act="invCount" data-key="${esc(keyOf(x))}" data-value="${v - 1}" ${v > 0 ? '' : 'disabled'} aria-label="${esc(t('invLess', { what }))}" title="${esc(t('invLess', { what }))}">−</button>
@@ -149,6 +181,31 @@
     }).join('')}</ul>`;
   }
 
+  /* The purse (design/29-inventory-variants.html, A): a figure for each currency with its picture
+     (a tap reads the game's text), and under it what breaks into it, counted, and the sum if you
+     broke it all. Rosaries have no cap; the Shell Shards' is the Tool Pouch's, 400 to 800, with a
+     bar of how full. In Free mode the figures are typed (Enter or leaving the field: js/app-game.js
+     invMoney, clamped to 0 up to the cap). */
+  function purse(g, all, money) {
+    const cap = shardCap(g.pouch);
+    const of = (cur) => all.filter((x) => x.shelf === 'purse' && x.cur === cur);
+    const broken = (cur) => of(cur).reduce((a, x) => a + x.n[0] * x.worth, 0);
+    const field = (key, v, max, what) => `<input class="inv-in" type="text" inputmode="numeric" autocomplete="off" data-change="invMoney" data-key="${key}" value="${v}" aria-label="${esc(t('invFieldMax', { what, n: num(max) }))}">`;
+    const one = (id, key, v, max) => {
+      const x = all.find((y) => y.id === id), name = pick(x.name), ros = id === 'rosaries';
+      const fig = marking ? field(key, v, max, name) : esc(num(v));
+      const list = of(ros ? 'rosaries' : 'shards'), sum = broken(ros ? 'rosaries' : 'shards');
+      return `<div class="inv-cur"><div class="inv-fig">
+        <button type="button" class="inv-fig-art${picked === keyOf(x) ? ' is-picked' : ''}" data-act="invPick" data-key="${esc(keyOf(x))}" aria-expanded="${picked === keyOf(x)}" aria-label="${esc(name)}" title="${esc(name)}"${NT}><img src="${icon(x.list, x.id)}" alt=""></button>
+        <span class="inv-fig-name"${NT}>${esc(name)}</span>
+        <span class="inv-fig-num">${fig}${ros ? '' : `<i> / ${esc(num(cap))}</i>`}</span>
+        ${ros ? '' : `<span class="inv-bar" style="--f:${(Math.min(v, cap) / cap * 100).toFixed(1)}%"></span>`}</div>
+        <ul class="inv-grid is-items">${list.map(cell).join('')}</ul>
+        ${sum > 0 ? `<p class="inv-broken">${esc(t('invBroken', { n: num(sum) }))}</p>` : ''}</div>`;
+    };
+    return `<div class="inv-two">${one('rosaries', 'rosaries', money.rosaries, MAX_ROSARIES)}${one('shell-shards', 'shards', Math.min(money.shards, cap), cap)}</div>`;
+  }
+
   let shown = [];   // what the last render drew, for the descriptions
   App.screens.game = (sec) => {
     const own = App.game();
@@ -158,7 +215,7 @@
     const g = own || (have ? { ...have, needle: b.needle, kit: b.kit, pouch: b.pouch, masks: b.masks, spools: b.spools, hearts: b.hearts } : fullGame());
     marking = !own;
     // In free mode with no marks everything is had, the loose pieces too (a full game has none left loose).
-    const all = shown = things(g).map((x) => (own || have ? x : { ...x, got: true }));
+    const all = shown = things(g).map((x) => (own || have || x.keep ? x : { ...x, got: true }));
     const by = (list) => all.filter((x) => x.list === list);
     const still = own ? ' disabled' : '';
     const cats = own || have ? Object.fromEntries(SS.completion.count(g).categories.map((c) => [c.id, c])) : {};
@@ -169,7 +226,12 @@
       const l = by('tools').filter((x) => x.color === c);
       return `<p class="inv-sub" style="--c: var(--slot-${c})">${esc(t('ct_' + c))}${own || have ? ` <b>${num(l.filter((x) => x.got).length)}</b>` : ''}</p><ul class="inv-grid">${l.map(cell).join('')}</ul>`;
     }).join('');
-    const items = [...by('items').filter((x) => x.id !== 'crafting-kit' && x.id !== 'tool-pouch'), ...by('pieces').filter((x) => x.id !== 'silk-heart')];
+    const items = [...by('items').filter((x) => !x.shelf && x.id !== 'crafting-kit' && x.id !== 'tool-pouch'), ...by('pieces').filter((x) => x.id !== 'silk-heart')];
+    const relics = all.filter((x) => x.shelf === 'relics'), mementos = all.filter((x) => x.shelf === 'mementos');
+    const money = own ? { rosaries: (App.gameMeta() || {}).rosaries || 0, shards: (App.gameMeta() || {}).shards || 0 } : g;
+    const counts = { relics: { got: relics.reduce((a, x) => a + x.n[0], 0), max: relics.reduce((a, x) => a + x.n[1], 0) },
+      mementos: { got: mementos.filter((x) => x.got).length, max: mementos.length } };
+    const purseShelf = [...all.filter((x) => x.shelf === 'currency'), ...all.filter((x) => x.shelf === 'purse')];
     const start = own ? ''
       : `<p class="inv-presets"><span class="lbl">${esc(t('invStart'))}</span><button type="button" class="text-btn" data-act="ctPreset" data-value="base">${esc(t('invBase'))}</button>
           <span class="lbl" aria-hidden="true">·</span><button type="button" class="text-btn" data-act="ctPreset" data-value="max">${esc(t('invMax'))}</button></p>`;
@@ -184,7 +246,10 @@
         <div class="inv-col">
           <section class="inv-sec is-tools">${head(t('cat_tools'), cats.tools, 'tools')}${tools}${open(by('tools'))}</section>
           <section class="inv-sec">${head(t('cat_crests'), cats.crests, 'crests')}<ul class="inv-grid">${by('crests').map(cell).join('')}</ul>${open(by('crests'))}</section>
+          <section class="inv-sec">${head(t('invPurse'))}${purse(g, all, money)}${open(purseShelf)}</section>
           <section class="inv-sec">${head(t('invItems'), null, 'items')}<ul class="inv-grid is-items">${items.map(cell).join('')}</ul>${open(items)}</section>
+          <section class="inv-sec">${head(t('invRelics'), counts.relics, 'relics')}<ul class="inv-grid is-items">${relics.map(cell).join('')}</ul>${open(relics)}</section>
+          <section class="inv-sec">${head(t('invMementos'), counts.mementos, 'mementos')}<ul class="inv-grid">${mementos.map(cell).join('')}</ul>${open(mementos)}</section>
         </div>
       </div>
     </div>`;
@@ -195,7 +260,8 @@
      free build loses what isn't had any more (js/app-tools.js, App.editFree). */
   function mark(f) {
     const cur = App.freeGame() || fullGame();
-    const m = { tools: [...cur.tools], crests: [...cur.crests], skills: [...cur.skills], arts: [...cur.arts], everbloom: !!cur.everbloom, pieces: [...cur.pieces] };
+    const m = { tools: [...cur.tools], crests: [...cur.crests], skills: [...cur.skills], arts: [...cur.arts], everbloom: !!cur.everbloom, pieces: [...cur.pieces],
+      purse: { ...cur.purse }, rosaries: cur.rosaries || 0, shards: cur.shards || 0, farsight: !!cur.farsight, hasJournal: !!cur.hasJournal, extras: [...cur.extras] };
     f(m);
     if (!m.crests.includes('hunter')) m.crests.unshift('hunter');
     App.setFreeGame(m);
@@ -209,10 +275,20 @@
   const toggle = (arr, id) => (arr.includes(id) ? arr.filter((x) => x !== id) : [...arr, id]);
   // The pieces of one kind, the first n in the list's order (and the rest of that kind off).
   const KIND = { 'mask-shard': 'mask-shard', 'spool-fragment': 'spool-fragment', 'memory-locket': 'memory-locket', craftmetal: 'craftmetal', 'pale-oil': 'pale-oil', flea: 'flea' };
+  // The relics of one kind: the first n of them in the list's order (and the rest of that kind off).
+  function setRelics(m, kind, n) {
+    const at = extrasOf(kind);
+    m.extras = [...m.extras.filter((i) => !at.includes(i)), ...at.slice(0, Math.max(0, n))];
+  }
   function setKind(m, kind, n) {
     const all = CO.PIECES.map((p, i) => (p[0] === kind ? i : -1)).filter((i) => i >= 0);
     m.pieces = [...m.pieces.filter((i) => CO.PIECES[i][0] !== kind), ...all.slice(0, Math.max(0, n))];
   }
+  // The typed fields (data-change) don't click: they commit when the browser says the value changed.
+  document.addEventListener('change', (e) => {
+    const f = e.target.closest && e.target.closest('[data-change="invMoney"]');
+    if (f) actions.invMoney(f);
+  });
   Object.assign(actions, {
     invOwn(node) {
       const x = shown.find((y) => keyOf(y) === node.dataset.key);
@@ -221,6 +297,9 @@
       mark((m) => {
         if (['tools', 'crests', 'skills', 'arts'].includes(x.list)) m[x.list] = toggle(m[x.list], x.id);
         else if (x.id === 'everbloom') m.everbloom = !m.everbloom;
+        else if (x.id === 'farsight') m.farsight = !m.farsight;
+        else if (x.id === 'hunters-journal') m.hasJournal = !m.hasJournal;
+        else if (x.extra != null) m.extras = toggle(m.extras, x.extra);
         else if (x.piece != null) m.pieces = toggle(m.pieces, x.piece);
       });
     },
@@ -229,9 +308,13 @@
       mark((m) => {
         if (list === 'items') {
           m.everbloom = on;
+          m.farsight = on;
+          m.hasJournal = on;
           m.pieces = on ? CO.PIECES.map((p, i) => i) : [];
           return;
         }
+        if (list === 'relics') { m.extras = on ? [...new Set([...m.extras, ...RELIC_AT])] : m.extras.filter((i) => !RELIC_AT.includes(i)); return; }
+        if (list === 'mementos') { m.extras = on ? [...new Set([...m.extras, ...MEMENTOS])] : m.extras.filter((i) => !MEMENTOS.includes(i)); return; }
         const ids = { tools: D.TOOLS, crests: D.CRESTS, skills: D.SKILLS, arts: D.ARTS }[list].map((y) => y.id);
         m[list] = on ? ids : [];
       });
@@ -240,9 +323,20 @@
       const x = shown.find((y) => keyOf(y) === node.dataset.key);
       if (!x || !x.n) return;
       const b = App.currentBuild(), v = Math.max(0, Math.min(x.n[1], Number(node.dataset.value)));
+      if (x.shelf === 'purse') { mark((m) => { m.purse[x.id] = v; }); return; }
+      if (x.shelf === 'relics') { mark((m) => setRelics(m, x.kind, v)); return; }
       // The loose shards and fragments come after those already in whole masks and spools.
       const over = x.id === 'mask-shard' ? 4 * b.masks : x.id === 'spool-fragment' ? 2 * b.spools : 0;
       mark((m) => setKind(m, KIND[x.id], over + v));
+    },
+    /* A typed figure of the purse, taken when the field is left or Enter is pressed: whole
+       numbers only, 0 up to the cap (the Shell Shards' is the Pouch's). */
+    invMoney(node) {
+      const key = node.dataset.key;
+      const raw = Number(String(node.value).replace(/\D/g, ''));
+      const max = key === 'shards' ? shardCap(App.currentBuild().pouch) : MAX_ROSARIES;
+      const v = Math.max(0, Math.min(max, Number.isFinite(raw) ? Math.round(raw) : 0));
+      mark((m) => { m[key] = v; });
     },
     invPick(node) {
       picked = node.dataset.key === picked ? null : node.dataset.key;

@@ -236,7 +236,9 @@
   --dur-run: 500ms;
   --hn-bar: 28px;      /* sitting under a tab's title without touching its letters */
   --hn-map: 44px;      /* at her bench on the Map, as big as the old still */
+  --hm-map-max: 340px; /* the tallest the area's map gets beside the bench card in Your game */
   --hn-rest: 0.5;      /* resting on her bench in Your game's card: the wiki's sprites at half (her 186 px → 93) */
+  --hm-art: 36px;      /* a picture in Your game's lists, as Progress's rows (css: .hm-art) */
 
   --page-max: 1216px;
   --page-pad: var(--sp-8);
@@ -315,6 +317,11 @@
   --crest-k-sm: 48px;
   /* Progress's completion ring (design/20-progress-total-variants.html, A); smaller on a phone. */
   --pg-ring: 220px;
+  /* Its two tabs' pictures, the rings of what's left for the next Act and their medallions
+     (design/27b-progress-variants.html, 1 D and 2 C); smaller on a phone. */
+  --pg-tab-art: 56px;
+  --pg-rg-ring: 128px;
+  --pg-md: 60px;
   /* Each tab's light (design/03-redesign.md, step 1, third round, E): the colour of its place in
      the game, from the area tokens, for its frame, corners, plaque and the light from its top.
      Your game and Saves keep the main menu's red. */

@@ -1314,6 +1314,57 @@ browser's, which smoothed the edge of each piece's SVG window: the pieces are no
 canvas first (`js/map-paint.js`, one to one from the sheet, at twice the size in four tiles close
 up so that no canvas passes Safari's limit) and the view draws that one image, as the game does.
 
+**The map's blurs and fades** (11 October). Albert still saw uneven blurs and fades on the Map.
+Rendered in headless Chrome (1, 1.5 and 2 screen pixels a CSS pixel; the whole map, three zooms
+and the closest; Free mode and a made-up game with maps bought and rooms mapped in turns), before
+and after, they had seven causes, none of them the game's:
+1. **The faint pieces were faded one by one**, so where two of them overlap (a room's parts along
+   their cut, soft edges, Arborium_11's two halves) the guide view was stronger: lighter
+   rectangles inside faint rooms and a smeared streak along the Arborium's band (11,000 pixels
+   more than a tenth stronger in that game). `compose()` now draws them among themselves at full
+   strength on a layer and fades the layer once, under the pieces in colour.
+2. **The sheets were lossy WebP.** Each drawing's edge pixels were coded against whatever lay
+   beside it in the sheet, so where two rooms meet one side came out lighter and the other darker,
+   a line along the join (Greymoor_05 against Greymoor_06), fills were blotched and colours ran at
+   the edges. They're lossless now: 953 KB and 2.5 MB, against 824 KB and 1.8 MB.
+3. **Two pieces that meet edge to edge left a dark line between them.** Each drawing's pixel on
+   the line is partly covered, a coverage and its complement, and drawn one over the other they
+   cover it less than whole: Library_09_top's 64 and Enclave_bridge_left's 191 of 255 made 207, a
+   line a fifth dark through a fill. `close_joins()` in `extract-map.py` gives that pixel to the
+   drawing the game draws later, with both coverages and their colours mixed by them (4,018
+   pixels, 9,747 in the fine sheet), only where the two coverages add up to about one and each is
+   a real edge (8 to 247), so overlaps and gaps are left alone. The one-pixel dips in the whole
+   map went from 1,583 to 239; what's left is the art's own lines and real gaps between parts.
+   One more kind showed close up (11-Oct-2026, Library_09_top against Enclave_bridge_left again):
+   placed to the fraction, two drawings can overlap on the join by part of a pixel, so their
+   coverages add up to more than one (191 and 128 of 255 made 223 in the fine sheet). Where the two
+   edges face each other (each drawing on its own side of the pixel) and add up to at most 1.5,
+   `close_joins()` closes them too (5,959 pixels, 14,616 fine). In the composed map only joins
+   change, never lighter: the one-pixel dips went from 801 to 175 (1,758 to 452 fine).
+4. **A dark line ran straight through the map close up**, at its middle (map x 1372): the four
+   tiles of the fine map were smoothed each on its own, and at a tile's edge the smoothing read
+   the transparent outside. The tiles now reach 8 pixels into each other.
+5. **The whole map looked different after a zoom in and out**: once wanted, the fine map was
+   drawn at every zoom, so the whole map became the fine one shrunk five times (3,797 pixels of
+   the fitted view changed by more than 10 levels), which a browser that samples without
+   averaging (Firefox) draws with broken outlines. The view is now drawn from the level nearest
+   above what the screen needs (twice as fine, the map's own pixels, a half, a quarter, each made
+   by halving), never shrunk more than twice: the same view draws the same pixels however it was
+   reached.
+6. **An area moved by a fraction of a pixel was smoothed over** (the Dust Maze, by its entrance);
+   a move without scaling is now by whole pixels. And the canvas takes its size in screen pixels
+   from the browser where it can (`ResizeObserver`'s `device-pixel-content-box`): rounded from CSS
+   pixels, at a fractional ratio (a zoomed page, a 125% screen) it could be a pixel off, and the
+   browser stretched the whole map by it.
+7. **Eighteen rooms changed tone halfway through in the guide view**: the map draws them only in
+   parts named after their scene (Under_13_left, _right, _bot), and the rule that makes a room
+   whole in colour once any part is looked only for parts named after another piece. Those parts
+   are grouped by their scene now.
+What stays soft is the closest zoom, past the game's own resolution: each pixel of the fine
+sheet (96 a unit, the game's is 100) is then about one and a half CSS pixels wide on any screen.
+The made-up game and the render harness aren't kept; `tools/map-debug.html` draws the map as the
+site does.
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).
