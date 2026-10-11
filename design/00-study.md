@@ -1365,6 +1365,23 @@ sheet (96 a unit, the game's is 100) is then about one and a half CSS pixels wid
 The made-up game and the render harness aren't kept; `tools/map-debug.html` draws the map as the
 site does.
 
+**What opens a way** (11 October). Against mapgenie's categories the Map lacked levers, locked
+doors, shortcuts, Needolin doors and silk walls, and Albert's rule was that each must come from the
+save. In the scenes, every such object that stays open carries a `PersistentBoolItem` of its own,
+the bool the save keeps in `sceneData.persistentBools` by scene and id; about twenty of the 100%
+saves' 1,962 bools have no such component behind them, so the save holds nothing else.
+`tools/extract-pickups.py` now writes them (`doors`), by kind: 87 levers (`Lever`, `Lever_tk2d`),
+16 pressure plates, 37 gates (`Gate`, `Trapdoor`, `DialDoorBridge`, `TrapBridgeExtend`, and the
+ring gates Clawline pulls), 25 doors a key opens (7 of `js/quests.js` LOCKS' 10, the Slab's 14
+locks, its cells), 44 shortcuts and the 2 silk walls of Mosshome, each with the scene's own name as
+the save writes it (`aa/catalog.bin`: the bundles are lower case, and three map rooms differ in
+case). Left out, and why: the Needolin's doors (`Song_Gate_set`) open each time and keep nothing;
+about 255 levers of trapdoors, vent hatches and flip bridges that close again keep nothing either;
+three key doors (the Bellhome's, Ward_01's, the demo's) keep nothing in `sceneData`, so they stay
+as before. `tools/gen-spots.js` appends them to EXTRAS as `['bool', Scene, id]` (after the
+completionist's, whose order `js/map-fixes.js` keys by) and `js/app-map.js` draws them in a new
+group, Passages (design/03-redesign.md, step 6).
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).

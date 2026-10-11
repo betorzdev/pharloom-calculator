@@ -331,6 +331,18 @@
     mapBell:        { es: 'Santuario de Campana de {area}', en: '{area} Bellshrine' },
     mapLock:        { es: 'Puerta cerrada', en: 'Locked door' },
     mapLockKey:     { es: 'Se abre con: {key}', en: 'Opened with: {key}' },
+    // What opens a way (the Map's Passages): the game names none of these, so written for context.
+    mapGroup_passage:   { es: 'Pasos', en: 'Passages' },
+    mapLayer_levers:    { es: 'Palancas', en: 'Levers' },
+    mapLayer_gates:     { es: 'Rejas', en: 'Gates' },
+    mapLayer_shortcuts: { es: 'Atajos', en: 'Shortcuts' },
+    mapLayer_silkwalls: { es: 'Muros de seda', en: 'Silk walls' },
+    mapLever:       { es: 'Palanca', en: 'Lever' },
+    mapPlate:       { es: 'Placa de presión', en: 'Pressure plate' },
+    mapGate:        { es: 'Reja', en: 'Gate' },
+    mapShortcut:    { es: 'Atajo', en: 'Shortcut' },
+    mapSilkwall:    { es: 'Muro de seda', en: 'Silk wall' },
+    mapSilkwallNote:{ es: 'Se corta con la {skill}.', en: 'Cut with {skill}.' },   // {skill}: Silkspear's name, the game's
     mapScrounge:    { es: 'Scrounge', en: 'Scrounge' },   // BELLHART_RELICDEALER_MAIN
     mapScroungeNote:{ es: 'Compra las reliquias.', en: 'Buys the relics.' },
     mapCocoonNote:  { es: 'Donde caíste por última vez: tus rosarios te esperan ahí.', en: 'Where you last fell: your rosaries wait there.' },

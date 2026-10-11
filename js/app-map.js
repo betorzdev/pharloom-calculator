@@ -10,8 +10,11 @@
      Towards 100%   every piece, Tool, Crest, Silk Skill, ability and the Everbloom, where it's
                     had: lying in its room, its vendor's, its Wishwall's, its boss's arena
      Places         benches, Bellway and Ventrica stations (the game's own pins, dimmed while your
-                    game hasn't opened them), the Bellshrines, the shops and the locked doors
-     Fights         the gauntlets and bosses not beaten, the unique spawns
+                    game hasn't opened them), the Bellshrines and the shops
+     Passages       what opens a way and stays open, each gone once your save has it open: levers
+                    and pressure plates, gates, the doors a key opens, shortcuts (the one-way
+                    walls among them) and silk walls (off at first; design/03-redesign.md, step 6)
+     Fights        the gauntlets and bosses not beaten, the unique spawns
      People         Shakra's spots, the Wishwalls and who offers a wish still open, and the people
                     who give a thing of the 100%
      Collectibles   the relics (one switch, its caret opening the six), Mossberries, Silkeaters,
@@ -75,7 +78,11 @@
     L('ventrica', () => t('mapPlace_ventrica'), PIN('pin_tube_station')),
     L('bellshrine', () => t('mapLayer_bells'), PIN('quest_map_icon_grand_gate_final')),
     L('shop', () => t('mapLayer_shops'), PIN('pin_shop')),
+    L('lever', () => t('mapLayer_levers'), ICON('_0005_core_lever_02')),
+    L('gate', () => t('mapLayer_gates'), null),   // the glyph
     L('lock', () => t('mapLayer_locks'), ICON('i_slab_key')),
+    L('shortcut', () => t('mapLayer_shortcuts'), null),   // the glyph
+    L('silkwall', () => t('mapLayer_silkwalls'), null),   // the glyph
     L('gauntlet', () => t('ftModeGauntlets'), null),   // the first gauntlet's champion (legendArt)
     L('boss', () => t('mapLayer_boss'), FACE('lace')),
     L('spawn', () => t('mapExtra_spawn'), FACE('rhinogrund')),
@@ -102,7 +109,8 @@
   const GROUPS = [
     ['hundred', ['mask-shard', 'spool-fragment', 'needle', 'tool-pouch', 'crafting-kit', 'silk-heart', 'tools', 'crests', 'skills', 'arts',
       'memory-locket', 'craftmetal', 'pale-oil', 'flea', 'old-heart', 'melody', 'everbloom']],
-    ['places', ['bench', 'bellway', 'ventrica', 'bellshrine', 'shop', 'lock']],
+    ['places', ['bench', 'bellway', 'ventrica', 'bellshrine', 'shop']],
+    ['passage', ['lever', 'gate', 'lock', 'shortcut', 'silkwall']],   // design/03-redesign.md, step 6, Passages
     ['fights', ['gauntlet', 'boss', 'spawn']],
     ['people', ['shakra', 'wishwall', 'giver', 'person']],
     ['extras', ['relics', 'mossberry', 'silkeater', 'memento', 'bellhome']],
@@ -118,6 +126,22 @@
   const FINE = new Set(['rosary-cache', 'shard-cache', 'wall']);
   // The layers that only a save can say anything about.
   const OWN_ONLY = new Set(['cocoon', 'journal']);
+  /* Passages: the extras that open a way (js/spots.js EXTRAS, from the game's scenes), each drawn
+     as its layer's: the mark's name, and the game's art where it reads at a mark's size, else the
+     glyph (design/03-redesign.md, step 6). A pressure plate goes among the levers; a one-way wall the completionist
+     lists among the breakable walls goes among the shortcuts. */
+  const DOOR = { lever: { name: 'mapLever', art: '_0005_core_lever_02' }, gate: { name: 'mapGate' }, lock: { name: 'mapLock', art: 'i_slab_key' },
+    shortcut: { name: 'mapShortcut' }, silkwall: { name: 'mapSilkwall' } };
+  const ONE_WAY = /^One Way|Shortcut/;
+  const layerOf = (x) => (x[0] === 'plate' ? 'lever' : x[0] === 'wall' && ONE_WAY.test(x[2][2]) ? 'shortcut' : x[0]);
+  // The doors a key opens that the save keeps (a 'lock' extra), by scene → the key (js/quests.js LOCKS).
+  const LOCK_AT = new Map();
+  for (const x of SP.EXTRAS) {
+    if (x[0] !== 'lock') continue;
+    const k = Object.keys(QU.LOCKS).find((key) => QU.LOCKS[key].some((s) => lower(s) === lower(x[3])));
+    if (k) LOCK_AT.set(lower(x[3]), k);
+  }
+  const silkNote = () => t('mapSilkwallNote', { skill: pick(D.SKILLS.find((s) => s.id === 'silkspear').name) });
   function layersOn() {
     if (Array.isArray(prefs.mapLayers)) return prefs.mapLayers.filter((k) => LAYER.has(k));
     // The earlier switches (mapKinds, mapPlaces), kept where they said something.
@@ -134,6 +158,10 @@
     gauntlet: svg('<path d="M2.5 2.5l9 9M11.5 2.5l-9 9"/>'),
     boss: svg('<path d="M2.5 11.5V5l2.5 2 2-4 2 4 2.5-2v6.5z"/>'),
     wall: svg('<path d="M2 3h10v8H2zM2 7h10M5 3v4M9 7v4"/>'),
+    // A gate's bars, a way through a wall, three threads of silk.
+    gate: svg('<path d="M3 12V3M6 12V3M9 12V3M12 12V3M2 3h11"/>'),
+    shortcut: svg('<path d="M2 7h7M6.5 4L9.5 7 6.5 10M11.5 2.5v9"/>'),
+    silkwall: svg('<path d="M3 2c2 3-1 7 1 10M7 2c2 3-1 7 1 10M11 2c2 3-1 7 1 10"/>'),
     // A folded map: an area's card.
     map: svg('<path d="M2 3.5l3.3-1 3.4 1.5 3.3-1v8l-3.3 1-3.4-1.5-3.3 1z"/><path d="M5.3 2.5v8M8.7 4v8"/>'),
     spawn: svg('<path d="M7 2l1.5 3.2 3.5.4-2.6 2.4.7 3.5L7 9.8 3.9 11.5l.7-3.5L2 5.6l3.5-.4z"/>'),
@@ -223,7 +251,8 @@
       add({ key: 'bell:' + field, layer: 'bellshrine', scene, got: !!g && g.bellshrines.includes(field), name: t('mapBell', { area: pick(b.name) }),
         draw: (s, ti, k, c) => pin('bellshrine', 'quest_map_icon_grand_gate_final', s, ti, k, c) });
     }
-    for (const [k, scenes] of Object.entries(QU.LOCKS)) scenes.forEach((scene) => add({ key: 'lock:' + k + ':' + scene, layer: 'lock', scene, got: false,
+    // The doors a key opens whose door the save doesn't keep (the rest are extras, LOCK_AT below).
+    for (const [k, scenes] of Object.entries(QU.LOCKS)) scenes.filter((scene) => !LOCK_AT.has(lower(scene))).forEach((scene) => add({ key: 'lock:' + k + ':' + scene, layer: 'lock', scene, got: false,
       name: t('mapLock'), sub: t('mapLockKey', { key: pick(SP.KEYS[k]) }), lockKey: k, draw: (s, ti, kk, c) => badge('lock', img(ICON('i_slab_key')), s, ti, kk, c) }));
     for (const [v, scenes] of Object.entries(SP.VENDORS)) {
       if (v === 'shakra') { scenes.forEach((scene, i) => add({ key: 'shakra:' + i, layer: 'shakra', scene, got: false, name: pick(HW.NPCS.shakra), npc: 'shakra',
@@ -247,6 +276,13 @@
     // Other collectibles.
     SP.EXTRAS.forEach((x, i) => {
       const [kind, act, check, scene, name] = x;
+      if (DOOR[layerOf(x)]) {
+        const layer = layerOf(x), d = DOOR[layer], k = kind === 'lock' && LOCK_AT.get(lower(scene));
+        add({ key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i), needs: SP.NEEDS['extra:' + i],
+          name: t(kind === 'plate' ? 'mapPlate' : d.name), sub: k ? t('mapLockKey', { key: pick(SP.KEYS[k]) }) : layer === 'silkwall' ? silkNote() : '',
+          draw: (s, ti, kk, c) => badge(layer, d.art ? img(ICON(kind === 'plate' ? 'dock_door_bottom_pressure_plate' : d.art)) : GLYPH[layer], s, ti, kk, c) });
+        return;
+      }
       const layer = kind;
       const icon = kind === 'memento' ? (MEMENTO_ICON[check[1]] ? `assets/icons/extras/${MEMENTO_ICON[check[1]]}.webp` : 'assets/icons/pieces/heart-bloom.webp')
         : kind === 'silkeater' ? null : kind === 'spawn' || kind === 'bellhome' || kind === 'wall' ? null : `assets/icons/extras/${kind}.webp`;
@@ -618,7 +654,7 @@
   window.addEventListener('resize', () => { if (document.querySelector('.hmB-canvas')) areaPaint(); });
 
   /* The layers whose things aren't had (a bench, a shop, a person): a count, not had of total. */
-  const PLAIN = new Set(['bench', 'bellway', 'ventrica', 'shop', 'lock', 'shakra', 'person', 'cocoon']);
+  const PLAIN = new Set(['bench', 'bellway', 'ventrica', 'shop', 'shakra', 'person', 'cocoon']);
   const CARET = '<svg class="mp-caret" viewBox="0 0 10 10" aria-hidden="true"><path d="M3 1 L8 5 L3 9 Z" fill="currentColor"/></svg>';
   // The groups open: as left (prefs.mapOpen); at first all of them, on a phone only the 100%.
   const openGroups = () => (prefs.mapOpen && !Array.isArray(prefs.mapOpen) ? Object.keys(prefs.mapOpen).filter((k) => prefs.mapOpen[k])

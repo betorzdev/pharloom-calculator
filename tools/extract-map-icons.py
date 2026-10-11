@@ -9,8 +9,12 @@ What each is (read on 11-Oct-2026, in atlases_assets_assets/sprites/_atlases/):
     hornet_inv_pane_icons_0003_journal   the Journal's layer: its tab (inventory)
     quest_icon_large__0008_gather        who asks for a wish: a wish's emblem (wish)
     quest_icon_large_0006_herald         who gives a thing of the 100%: the herald's emblem (wish)
+    _0005_core_lever_02                  Levers: the Citadel's brass lever (core)
+    dock_door_bottom_pressure_plate      a pressure plate, among the levers: the Docks' (dock)
 The breakable walls keep the site's glyph: the game's walls (break_wall) are tall dark rock that
-doesn't read at a mark's size. Each picture is cut to what it draws and kept at most 128 px.
+doesn't read at a mark's size; so do the gates, shortcuts and silk walls (design/03-redesign.md,
+step 6, Passages: the game's gates are dark ironwork and its silk vines a few hairlines at that
+size). Each picture is cut to what it draws and kept at most 128 px.
 Team Cherry's art, published as the map is (the colophon says so). Re-run after a patch. """
 import os, sys
 import UnityPy
@@ -19,6 +23,8 @@ UnityPy.config.FALLBACK_UNITY_VERSION = '6000.0.50f1'   # Unity 6 strips its ver
 WANT = {
     'inventory': ['I_slab_key', 'Hornet_Inv_pane_icons_0002_wish', 'Hornet_Inv_pane_icons_0003_journal'],
     'wish': ['quest_icon_large__0008_gather', 'quest_icon_large_0006_herald'],
+    'core': ['_0005_core_lever_02'],
+    'dock': ['dock_door_bottom_pressure_plate'],
 }
 MAX = 128
 

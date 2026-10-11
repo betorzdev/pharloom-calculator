@@ -19,7 +19,9 @@
      EXTRAS   what doesn't count for the 100%, from kb/data/completionist/: relics, Mossberries,
               Silkeaters, Mementos, the Bellhome's furnishings, unique spawns, rosary and shell
               shard caches and breakable walls, each [kind, act, check, scene, name?]: the scene
-              the check names, or the pickup's (relics, Mementos), or HAND_EXTRA's.
+              the check names, or the pickup's (relics, Mementos), or HAND_EXTRA's. Then, from the
+              game's scenes (pickups.json doors), what opens a way: lever, plate, gate, lock,
+              shortcut, silkwall, each ['bool', Scene, id] as the save keeps it.
      BOSSES   [foe id, scene, check]: each boss of the completionist's list, its arena and whether
               it's beaten (a playerData flag, or its Journal entry listed).
      VENDORS  vendor id → its rooms (js/shop.js), Shakra's among them
@@ -276,6 +278,27 @@ for (const it of C.load('bellhome.ts')) extra('bellhome', it, N.gameName(it.name
 for (const sec of C.sections('uniqueSpawns.ts')) for (const it of sec.items) extra('spawn', it, N.text(SPAWN_KIND[sec.name] || fail(`spawn kind ${sec.name}`)));
 for (const sec of C.sections('cachesAndSecrets.ts')) for (const it of sec.items) extra(CACHE_KIND[sec.name] || fail(`cache kind ${sec.name}`), it);
 
+/* What opens a way and stays open (pickups.json doors, from the game's scenes): levers and
+   pressure plates, gates, doors a key opens, shortcuts and silk walls, each by the bool the save
+   keeps once it's opened, after the completionist's (whose order js/map-fixes.js keys by). One
+   already there under the same check (a one-way wall among the breakable walls) isn't twice. */
+const DOOR_KINDS = ['lever', 'plate', 'gate', 'lock', 'shortcut', 'silkwall'];
+const DOOR_AT = new Map();
+{
+  const doors = P.doors || fail('pickups.json has no doors: run tools/extract-pickups.py again');
+  const had = new Set(EXTRAS.map((x) => JSON.stringify(x[2]).toLowerCase()));
+  for (const kind of DOOR_KINDS) {
+    for (const [scene, id, x, y] of doors[kind] || fail(`pickups.json has no ${kind}`)) {
+      const c = ['bool', scene, id], k = JSON.stringify(c).toLowerCase();
+      if (had.has(k)) continue;
+      if (!onMap(scene)) { unplaced.push(`${kind} ${scene} ${id}`); continue; }
+      had.add(k);
+      if (typeof x === 'number') DOOR_AT.set(EXTRAS.length, [x, y]);
+      EXTRAS.push([kind, 0, c, scene]);
+    }
+  }
+}
+
 /* ── The Bellshrines and the keys ── */
 /* Each Bellshrine's room: the two whose flag a scene names (Far Fields' in Bellshrine_05, Bellhart's
    in Widow's arena, where its bell is rung), and the other three by their area (js/map.js). */
@@ -357,7 +380,8 @@ for (const cat of ['crests', 'skills', 'arts']) {
 }
 EXTRAS.forEach((x, i) => {
   const c = x[2];
-  put2('extra:' + i, objectAt(c) || (c[0] === 'relic' || c[0] === 'memento' ? itemAt(c[1], x[3]) : null));
+  const door = DOOR_AT.get(i);
+  put2('extra:' + i, objectAt(c) || (c[0] === 'relic' || c[0] === 'memento' ? itemAt(c[1], x[3]) : door ? toMap(x[3], door[0], door[1]) : null));
 });
 for (const [id, obj] of Object.entries(PEOPLE_OBJ)) put2('person:' + id, entryAt(P.npcs[obj], PEOPLE[id]));
 for (const [field, scene] of BELLS) { const b = P.benches[lower(scene)]; put2('bell:' + field, b && toMap(scene, b[0], b[1])); }
@@ -376,7 +400,8 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               crests, skills, arts: { id: scene }, everbloom: scene }: where each thing of the
               100% is had (its pickup, its vendor, its Wishwall, its boss's arena, its giver)
      EXTRAS   [kind, act, check, scene, name?]: what doesn't count (relics by kind, mossberry,
-              silkeater, memento, bellhome, spawn, rosary-cache, shard-cache, wall); check as
+              silkeater, memento, bellhome, spawn, rosary-cache, shard-cache, wall, then lever,
+              plate, gate, lock, shortcut, silkwall from the game's scenes); check as
               js/collectibles.js's, plus ['relic', name], ['memento', name], ['int', scene, id,
               value] and ['geo', scene, id]
      BOSSES   [foe id, scene, check]: each boss's arena and whether it's beaten

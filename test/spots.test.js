@@ -26,7 +26,7 @@ test('every piece, Tool, Crest, Silk Skill, ability and the Everbloom has a room
 
 test('the extras, bosses, people and Bellshrines are all on the map, with a check the save reads', () => {
   const kinds = new Set(['bone-scroll', 'weaver-effigy', 'choral-commandment', 'rune-harp', 'psalm-cylinder', 'arcane-egg', 'mossberry', 'silkeater',
-    'memento', 'bellhome', 'spawn', 'rosary-cache', 'shard-cache', 'wall']);
+    'memento', 'bellhome', 'spawn', 'rosary-cache', 'shard-cache', 'wall', 'lever', 'plate', 'gate', 'lock', 'shortcut', 'silkwall']);
   const checks = new Set(['bool', 'flag', 'min', 'quest', 'visited', 'journal', 'relic', 'memento', 'int', 'geo', 'any']);
   for (const [kind, , check, scene] of SP.EXTRAS) {
     assert.ok(kinds.has(kind), kind);
@@ -40,6 +40,21 @@ test('the extras, bosses, people and Bellshrines are all on the map, with a chec
   for (const k of Object.keys(Q.LOCKS)) assert.ok(SP.KEYS[k] && SP.KEYS[k].es && SP.KEYS[k].en, k);
   assert.equal(Object.keys(SP.MAPS).length, 28);
   for (const area of Object.values(SP.MAPS)) assert.ok(CO.AREAS[area], area);
+});
+
+test('what opens a way comes after the completionist\'s extras, each a bool of its own the save keeps', () => {
+  const DOORS = new Set(['lever', 'plate', 'gate', 'lock', 'shortcut', 'silkwall']);
+  const first = SP.EXTRAS.findIndex((x) => DOORS.has(x[0]));
+  assert.ok(first > 0 && SP.EXTRAS.slice(first).every((x) => DOORS.has(x[0])), 'appended, never among the others (js/map-fixes.js keys by place)');
+  const seen = new Set();
+  for (const [kind, , check] of SP.EXTRAS.slice(first)) {
+    assert.equal(check[0], 'bool', kind);
+    const k = JSON.stringify(check).toLowerCase();
+    assert.ok(!seen.has(k), `${kind} ${JSON.stringify(check)} twice`);
+    seen.add(k);
+  }
+  const n = (kind) => SP.EXTRAS.filter((x) => x[0] === kind).length;
+  assert.ok(n('lever') > 50 && n('gate') > 20 && n('lock') > 10 && n('silkwall') >= 2, 'the scenes gave fewer than they did');
 });
 
 test('a thing\'s prereqs are abilities or Silk Skills the save tells', () => {

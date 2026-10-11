@@ -42,7 +42,7 @@ the work up reads it first, then the step it's on.
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse 11 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
-| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct) | [`12-map-variants.html`](12-map-variants.html) |
+| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages 11 Oct) | [`12-map-variants.html`](12-map-variants.html) |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds) | [`15-journal-variants.html`](15-journal-variants.html) |
 | 8 | Crest (`tools`) | **Built** (28 Sep) | [`18-crest-variants.html`](18-crest-variants.html) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
@@ -720,6 +720,27 @@ the screen; `css/app.css` .mp-legend to .mp-inside):
 - The counts: had of total in a save (complete in `--good`), a plain count for what isn't had
   (benches, shops, people), the total in Free mode.
 - The closing note is gone (`mapNote`, with `mapAll` and `mapNone`).
+
+### Passages: levers, gates, doors, shortcuts (11 October 2026)
+
+Albert, setting the Map beside mapgenie's: things are missing (its Locked Door 89, Lever 58,
+Shortcut 26, Needolin Door 5, Silk Wall 2). His rule: only what the save records, so each mark goes
+had when the save says it's open. The game's 590 scenes, read with UnityPy, give 87 levers, 16
+pressure plates, 37 gates, 25 doors a key opens, 44 shortcuts (31 of them the one-way walls already
+among the breakable walls) and 2 silk walls, each an object with a `PersistentBoolItem` of its own
+(checked against his two 100% saves). The Needolin's doors keep nothing in the save. Options drawn
+in a variants page (not kept in the repo), over the real map
+and selector: 1 · where (A a new group, B a set in Places, C in Secrets); 2 · the one-way walls (A
+to Shortcuts, B left with the walls); 3 · the plates (A with the levers, B out); 4 · the locked
+doors (A grown, with the save's check, B as they were); 5 · the icons (A the game's art where it
+reads, a glyph where it doesn't, B glyphs, C all art); 6 · on at first (A none, B levers and gates,
+C all).
+
+Albert chose **all the A's**. Built: `tools/extract-pickups.py` writes them (`doors`, with each
+scene's own name from `aa/catalog.bin`), `tools/gen-spots.js` appends them to EXTRAS as
+`['bool', Scene, id]`, and `js/app-map.js` draws a new group after Places, «Passages» (Levers, Gates, Locked
+doors, Shortcuts, Silk walls), off at first; the lever and plate icons come from the game's atlases
+(`tools/extract-map-icons.py`), gates, shortcuts and silk walls take glyphs.
 
 ## Step 7 · Journal
 

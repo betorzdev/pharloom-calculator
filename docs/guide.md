@@ -336,7 +336,7 @@ Under the map, **What the map shows**, as the Hollow Knight site has it: «Show 
 its right, then the Act (all, or only Act 1, 2 or 3's things), «Only what I can reach now» with a
 save (hides what asks for an ability or Silk Skill you don't have yet: the Faydown Cloak,
 Clawline, Silk Soar, as the completionist lists them), «Only what the game shows» with a save (see
-below), and the area names on or off. Then seven groups, each a row that folds (its caret; all open
+below), and the area names on or off. Then eight groups, each a row that folds (its caret; all open
 at first, only the first on a phone, then as you left them) whose title is the switch for the
 whole group, in ink when all of it is on, dimmer when part, muted when none. Inside, each layer's
 switch is the game's own picture of it, in grey when off. Beside each, how many: in a save, had of
@@ -351,7 +351,14 @@ are; in Free mode, the total. The Act and reach filters narrow the counts too.
   on at first.
 - **Places**: benches (off at first: there are 76), Bellway and Ventrica stations (dimmed while
   your game hasn't opened them: a station not unlocked, a toll not paid), the five Bellshrines of
-  the Grand Gate, the shops and the locked doors (with the key each takes).
+  the Grand Gate and the shops.
+- **Passages**, off at first: what opens a way and stays open, each read from the game's own
+  scenes with the bool your save keeps once it's open, so with a save only what's still shut
+  shows. Levers (with the pressure plates and Clawline's pull switch), gates (opened by a lever,
+  from one side, or pulled open with Clawline), the doors a key opens (with the key each takes;
+  the Slab's locks and cells among them), shortcuts (the one-way walls, planks, ladders and floors
+  that break from one side) and the two silk walls Silkspear cuts in Mosshome. The doors the
+  Needolin opens aren't there: they open each time and the save keeps nothing of them.
 - **Fights**: the enemy gauntlets and bosses not beaten yet, and the unique enemies (Rhinogrunds,
   Covetous Pilgrims, Shardillards, Void Masses).
 - **People**: Shakra's spots, the Wishwalls and who asks for a wish (with a save, only while one
@@ -360,7 +367,8 @@ are; in Free mode, the total. The Act and reach filters narrow the counts too.
 - **Collectibles**, off at first: the relics, one switch for the six (Bone Scrolls, Weaver
   Effigies, Choral Commandments, Rune Harps, Psalm Cylinders, the Arcane Egg) whose round caret
   opens them one by one, Mossberries, Silkeaters, Mementos and the Bellhome's furnishings.
-- **Secrets**, off at first: the rosary and shell shard caches and the breakable walls, so many
+- **Secrets**, off at first: the rosary and shell shard caches and the breakable walls (the
+  one-way ones are among the shortcuts), so many
   that they're drawn one by one only close up; from afar, a count per room.
 - **Your game**, with a save: your cocoon, where you last fell (on at first), and the Journal's
   entries still missing, in the room where each is found.
@@ -370,9 +378,10 @@ draws them, over a pale plate so a dark portrait reads, about the same size at a
 bigger close up. What has no picture of its own takes one of the game's: Shakra's Journal portrait, a key of the
 inventory for a locked door, the pause menu's Wishes tab for a Wishwall, a wish's emblem for who
 asks for one, the herald's emblem for who gives a thing of the 100%, the game's Bellhome bench pin
-for its furnishings (tools/extract-map-icons.py takes them from the game's files). Only the
-breakable walls keep a drawn sign, bricks: the game's walls are tall dark rock that doesn't read
-that small. It sits where the game
+for its furnishings, the Citadel's brass lever for the levers and a Docks plate for the pressure
+plates (tools/extract-map-icons.py takes them from the game's files). The breakable walls keep a
+drawn sign, bricks: the game's walls are tall dark rock that doesn't read that small; so do the
+gates (bars), the shortcuts (an arrow through a wall) and the silk walls (threads). It sits where the game
 has the thing in its room: the pickup lying there, the NPC, the shrine, the cache (the object's
 place in its scene, put on the room's drawing as the game places Hornet on its map; checked
 against the benches, which fall by the game's own bench pins). What has no place of its own (a
