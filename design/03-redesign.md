@@ -35,14 +35,15 @@ the work up reads it first, then the step it's on.
 |---|---|---|---|
 | 1 | **The shell**: header, screen bar (desktop and phone), the screen's frame and title, footer and About, the atmosphere | **Built** (28 Sep) | [`04-shell-variants.html`](04-shell-variants.html) |
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
-| 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep) | [`06-home-variants.html`](06-home-variants.html) |
-| 4 | Inventory (`game`) | **Built** (28 Sep) | [`07-inventory-variants.html`](07-inventory-variants.html) |
+| 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html` |
+| 4 | Inventory (`game`) | **Built** (28 Sep; purse 11 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
-| 6 | Map (`map`) | **Built** (28 Sep) | [`12-map-variants.html`](12-map-variants.html) |
+| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct) | [`12-map-variants.html`](12-map-variants.html) |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds) | [`15-journal-variants.html`](15-journal-variants.html) |
 | 8 | Crest (`tools`) | **Built** (28 Sep) | [`18-crest-variants.html`](18-crest-variants.html) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
 | 10 | **Built** (28 Sep) · The static pages (`tools/pages*.js`: `bosses/`, `es/jefes/`, the landing folders): they inherit steps 1 and 2; only what's theirs | To do | |
+| 6b | The Map's admin mode (`#view=map&admin=1`): the panel, adding, the save check, hide and delete, the marks | **Built** (11 Oct) | `30-map-admin-variants.html` (kept out of the repo) |
 
 ## Step 1 · The shell
 
@@ -284,6 +285,37 @@ picture in `assets/benches/`, with the row of its seat), `rest()` in `js/app-hom
 on that seat (`.hm-rest`, `--hn-rest`); a room it doesn't know, and Free mode, get Bone Bottom's,
 the first bench. The bench's states (broken in Act 3, under cloth, snowed) aren't told apart.
 
+### Retouch: the lists (11 October 2026)
+
+Albert: the lists under the card should look much better. They were plain text. *Since the
+previous save* was up to 29 bulleted names (Save 3 against its 1.0.28891 backup), with the +12% as
+a small figure. *Closest to your bench* had tiny marks. *By part* was ten rows of "Tools 31/51"
+with no picture and no gauge. The sibling gives each change its picture, closes the list with
+the completion on a bar (its design/34 A) and fades the rows in. Four looks were drawn in
+`26-game-lists-variants.html` (Save 3's changes and nearest things, Save 4's parts):
+
+- **A · clean rows**: Progress's list rows on all three.
+- **B · ledger and mosaic**: the parts as Progress's ledger, what you gained as pictures.
+- **C · three plates**: each list on its own framed plate, lit by the screen it leads to.
+- **D · the board**: the parts as ring tiles across the top, the other two below.
+
+The page also had two switches: how a long *since* list shows (capped, everything, folded by
+kind) and whether *closest* shows the distance in rooms.
+
+Albert chose **A**, the since list **capped at 8 with «Show all n»**, **no distance**, and the
+rows **fading in one by one** (none with reduced motion). Built (`js/app-home.js`, `.hm-*`):
+
+- Every row is `.hm-row`: `.hm-art` (`--hm-art`), the name in Cinzel and its area under it.
+- A Tool sits on its slot's diamond. Pieces, wishes and gauntlets use the Map's own marks
+  (`App.mapMark` in `js/app-map.js`, which replaces `App.nearRow`).
+- *Since* opens with the completion's gain on a gauge (`.hm-gain`, `.hm-bar`). Its rows are
+  grouped by kind with `.hm-kind` heads; the new heads are `homeKindUpgrades` and
+  `homeKindPieces`, and the rest reuse existing strings. The Journal shows as portraits.
+  `homeSinceAll` / `homeSinceFewer` toggle the cap; a list of at most ten rows isn't capped.
+- *By part* gives each part a picture, a count and a gauge; a full part lights its diamond.
+- The rows fade in (`.hm.is-enter`, `--dur-step` apart) when the screen is arrived at or
+  another save shows, not on a plain repaint.
+
 ## Step 4 · Inventory
 
 ### What there is (28 September 2026)
@@ -398,6 +430,19 @@ Albert chose **silk 2 · beads on a thread**. Built:
   (the text open under the shelf says which one). A Tool you lack sits on **the game's locked
   slot** (solid grey with its pale rim, `design/02-silksong.md` §3), its picture grey on it; chosen
   from [`09-locked-tool-variants.html`](09-locked-tool-variants.html) (B).
+- **Retouch, the purse, Farsight, the Journal, the Relics and the Mementos** (11 October 2026):
+  Albert asked what else the game's own pane holds. Drawn in
+  `29-inventory-variants.html` over Save 4 and Save 1: **A · the
+  purse above Items**, B · a strip across the top, C · with Hornet, D · a ledger. Albert chose
+  **A**, the Growstone always shown (dimmed until you hold one), the five rosary strings, the
+  Relics one cell per kind, and in Free mode a typed figure for the two currencies and − N + for
+  the rest. Built: a «Monedero» section with Rosaries (`geo`) and Shell Shards (`ShellShards`,
+  against the Pouch's 400 to 800), under each the strings, bundles and shards that break into it
+  (the Collectables' `Amount`, `js/collectibles.js` PURSE) and the sum if you broke them all; the
+  Farsight and the Hunter's Journal as cells of Items; the Relics (N of each kind) and the
+  Mementos on shelves of their own, read from the Map's EXTRAS. Free mode keeps them in
+  `pharloom.progress`. The Rosary_Set_* save names are the game's own item assets (checked
+  against `kb/data/game/pickups.json`).
 
 ## Step 5 · Progress
 
@@ -620,6 +665,41 @@ Act2Cursed 2 = Twisted Child, Act2SoulSnare 4 = Snared Silk, Act3Ending 8 = Sist
 the wiki's Endings page agrees; ENDING_B «Strung to Serve» is cut), read as `g.endings`
 (`js/savefile.js` ENDINGS). He also found dull, and so removed: the «Your 100%» label, «It matches
 the 63% the game shows» (the line stays only when the figures differ) and the purchase-cost line.
+
+### The selector under the map (11 October 2026)
+
+Albert: improve the whole selector under the map, its sections, and replace the pictures that look
+cheap; look at the sibling. What there was: three styles of control in one row (the Acts, two
+diamond checks, a loose «Aa»), five groups whose «All · None» sat at the far edge, 33 layers each
+the map's 22 px disc with the art shrunk inside (muddy; off, all of it at 30 %), nine hand-drawn
+glyphs (padlock, folded map, notice board, figures, house, star, book…), counts of what's
+missing only, the six relics as six layers, and a long closing note. The sibling's filter
+(hallownest js/app-map.js filterHtml, its design/16 and /24): a head with the title and show all ·
+hide all, groups that fold whose title is their switch, the bare art at 28 px greyed when off,
+had/total, sets that open. Options drawn over Save 4 and Free mode (a variants page not kept in
+the repo): 1 · layout A like the sibling, B columns, C tabs; 2 · pictures A bare with every glyph
+replaced from the game's files, B only what the repo had, C the disc; 3 · groups A new, B as
+they were; 4 · counts A had/total, B missing; 5 · the note A gone, B one line.
+
+Albert chose **all the A's**. Built (`js/app-map.js` GROUPS, SETS, legendArt and the selector in
+the screen; `css/app.css` .mp-legend to .mp-inside):
+
+- The head: «What the map shows», «Show all · Hide all», the Acts and the three choices as the
+  step 2 on/off (`.check`).
+- Seven groups: Towards 100% (Hornet's upgrades, her gear, then the materials and the rest), Places,
+  Fights (gauntlets, bosses, unique enemies), People, Collectibles (the relics one set, its caret
+  opening the six), Secrets (caches and walls), Your game. Each folds (`prefs.mapOpen`; all open at
+  first, on a phone only the 100%); its title switches all of it.
+- Each layer's switch is the game's art, bare, in grey when off (`--missing-art`). The glyphs went:
+  Shakra's Journal portrait, Lace's for bosses, a Rhinogrund for unique enemies, the Bellhome's
+  bench pin, and five sprites from the game's atlases into `assets/map/icons/`
+  (`tools/extract-map-icons.py`, one command): a key (`I_slab_key`) for locked doors, the Wishes and
+  Journal tabs of the pause menu, a wish's emblem for who asks for one and the herald's for who
+  gives a thing of the 100%. The map's own marks take the same pictures. Only the breakable walls
+  keep the bricks: the game's walls (`break_wall`) are tall dark rock that doesn't read that small.
+- The counts: had of total in a save (complete in `--good`), a plain count for what isn't had
+  (benches, shops, people), the total in Free mode.
+- The closing note is gone (`mapNote`, with `mapAll` and `mapNone`).
 
 ## Step 7 · Journal
 
@@ -972,3 +1052,26 @@ tints `.frame-line` (a radial light from the top, the border, a soft glow), its 
 the `.bk` corners and the `.screen-plaque`. `CLAUDE.md`'s rule ("no colour per section") now
 says the frame's light takes the tab's colour, and only that.
 
+## Step 6b · The Map's admin mode
+
+### What there is (11 October 2026)
+
+Nothing: the sibling's admin mode (hallownest-calculator, `#view=map&admin=1`) only moves pins, in
+a panel over the map's top left, where this site has its search. Albert asked for it here, able
+to add marks too.
+
+### The options (`30-map-admin-variants.html`, the real Map in Free mode over Shellwood)
+
+Six choices, each A, B or C: 1 the panel (a band under the map · floating over it · a column
+beside it); 2 adding (the legend's marks in a grid · a list of names · a menu on the map); 3 the
+save check (one line · kind, room and id · the id only); 4 hide and delete (in the panel · on the
+mark's card · the keyboard); 5 on the map (a way, a strike and a "+" · the way only · a dashed
+rim); 6 the list (by kind · one list · the counts).
+
+### Decision (11 October 2026)
+
+All A: a band between the map and the legend, which covers nothing and stays below in
+fullscreen; the legend's marks in a grid, each tap dropping one until Escape; one line for the
+check, the room filled in and checked as it's typed; Restore, Hide, Show and Delete in the panel;
+the way from the data's point (in the accent while unsaved), the hidden mark faint and struck
+through, the added one with a "+"; the fixes listed by kind. Built in `js/app-map-admin.js`.

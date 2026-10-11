@@ -3,7 +3,8 @@
    area title card where Hornet rests, with the 100% (set against the figure the game itself
    shows), the Journal, the masks and the rosaries; under it what changed since the previous
    save, what's missing closest to the bench and the 100% split into the wiki's ten categories
-   (js/completion.js); then the ways on to the other screens. Shares SS.app with js/app.js (see
+   (js/completion.js); then the ways on to the other screens. Beside the card, the map of the area
+   she rests in (js/app-map.js, App.mapAreaHtml; the sibling's area map). Shares SS.app with js/app.js (see
    there). */
 (() => {
   'use strict';
@@ -69,15 +70,75 @@
       return Math.abs(m) < 60 ? rtf.format(m, 'minute') : Math.abs(m) < 60 * 24 ? rtf.format(Math.round(m / 60), 'hour') : rtf.format(Math.round(m / 1440), 'day');
     } catch (e) { return ''; }
   }
+  /* Since the previous save, as rows (design/03-redesign.md, step 3, the lists round, A): each
+     thing with its picture (a Tool on its slot's diamond, the map's own mark for what the map
+     shows, the game's picture for the rest), its name and where under it, grouped by kind in
+     js/changes.js's order; the Journal's entries as their portraits. The completion's gain opens
+     it, as a bar. Past CAP rows the rest wait behind «Show all n». */
+  const CAP = 8;
+  let sinceAll = false;
+  const img = (src, alt = '') => `<img src="${src}" alt="${esc(alt)}" loading="lazy">`;
+  const icon = (p) => `assets/icons/${p}.webp`;
+  const art = (inner, cls = '', style = '') => `<span class="hm-art${cls}"${style ? ` style="${style}"` : ''} aria-hidden="true">${inner}</span>`;
+  const areaOf = (a) => (a && CO.AREAS[a] ? pick(CO.AREAS[a]) : '');
+  const UPGRADE_ART = { masks: 'items/mask-shard', spools: 'items/spool-fragment', hearts: 'pieces/silk-heart', kit: 'items/crafting-kit', pouch: 'items/tool-pouch' };
+  const OWN_KIND = { crest: ['crests', 'cat_crests'], skill: ['skills', 'cat_skills'], art: ['arts', 'cat_arts'] };
+  function groups(list) {
+    const M = App.mapMark || {};
+    const out = [];
+    const add = (id, head, row) => { let g = out.find((x) => x.id === id); if (!g) out.push(g = { id, head, rows: [] }); g.rows.push(row); };
+    for (const c of list) {
+      if (c.kind === 'journal') { add('journal', t('navJournal'), c.id); continue; }
+      const d = describe(c);
+      if (!d) continue;
+      if (c.kind === 'act') add('act', '', { ...d, art: art('', ' is-glyph') });
+      else if (OWN_KIND[c.kind]) add(c.kind, t(OWN_KIND[c.kind][1]), { ...d, art: art(img(icon(OWN_KIND[c.kind][0] + '/' + c.id))) });
+      else if (c.kind === 'tool') {
+        const tool = D.TOOLS.find((x) => x.id === c.id);
+        add('tools', t('cat_tools'), { ...d, art: art(img(icon('tools/' + c.id)), ' is-slot', tool ? `--c:var(--slot-${tool.color})` : '') });
+      } else if (c.kind === 'upgrade') add('upgrades', t('homeKindUpgrades'), { ...d, art: art(img(c.id === 'needle' ? App.ART.needle(c.to) : icon(UPGRADE_ART[c.id]))) });
+      else if (c.kind === 'everbloom') add('upgrades', t('homeKindUpgrades'), { ...d, art: art(img(icon('items/everbloom'))) });
+      else if (c.kind === 'piece') add('pieces', t('homeKindPieces'), { ...d, sub: d.where, art: art(M.piece ? M.piece(c.i) : '', ' is-mark') });
+      else if (c.kind === 'wish') add('wishes', t('pgTasks'), { ...d, sub: areaOf(CO.WISHES[c.i][3]), art: art(M.wish ? M.wish() : '', ' is-mark') });
+      else if (c.kind === 'gauntlet') {
+        const x = SS.gauntlets.GAUNTLETS.find((y) => y.id === c.id);
+        add('gauntlets', t('ftModeGauntlets'), { ...d, sub: x ? areaOf(x.area) : '', art: art(M.gauntlet ? M.gauntlet(c.id) : '', ' is-mark') });
+      }
+    }
+    return out;
+  }
+  // A row, its place in the fade (--i) and what goes at its end (the Map's pin).
+  const rowHtml = (r, i, end = '') => `<li class="hm-row" style="--i:${i}">${r.art}<span class="hm-row-txt"><span class="hm-row-name"${r.nt ? NT : ''}>${esc(r.name)}</span>${r.sub ? `<span class="hm-row-sub"${NT}>${esc(r.sub)}</span>` : ''}</span>${end}</li>`;
+  const BOOK = new Map(SS.journal.BOOK.map((e) => [e.id, e]));
   function sinceHtml() {
     const { list, saved } = gained();
     if (!list.length) return '';
     const up = list.find((c) => c.kind === 'pct');
-    const items = lines(list).map((x) => `<li class="hm-gain"><span class="hm-gain-name"${x.nt ? NT : ''}>${esc(x.name)}</span>${x.where ? `<span class="hm-gain-where"${NT}>${esc(x.where)}</span>` : ''}</li>`).join('');
+    const gs = groups(list);
+    const total = gs.reduce((n, g) => n + (g.id === 'journal' ? 1 : g.rows.length), 0);
+    const long = total > CAP + 2, capped = long && !sinceAll;
+    let left = capped ? CAP : Infinity, i = 0, body = '';
+    for (const g of gs) {
+      if (left <= 0) break;
+      const head = g.head ? `<p class="hm-kind" style="--i:${i++}"><span>${esc(g.head)}</span><span class="hm-kind-n">${num(g.rows.length)}</span></p>` : '';
+      if (g.id === 'journal') {
+        const faces = g.rows.map((id) => { const e = BOOK.get(id); const name = e ? pick(e.name) : id; return `<img src="${icon('journal/' + id)}" alt="${esc(name)}" title="${esc(name)}" loading="lazy">`; }).join('');
+        body += `${head}<p class="hm-faces" style="--i:${i++}"${NT}>${faces}</p>`;
+        left--;
+        continue;
+      }
+      const rows = g.rows.slice(0, left);
+      left -= rows.length;
+      body += `${head}<ul class="hm-rows">${rows.map((r) => rowHtml(r, i++)).join('')}</ul>`;
+    }
+    const more = long ? `<button type="button" class="text-btn" data-act="homeSinceAll" aria-expanded="${!capped}">${esc(capped ? t('homeSinceAll', { n: num(total) }) : t('homeSinceFewer'))}</button>` : '';
+    const at = saved ? `<span class="hm-gain-at">${esc(t('homeSinceAt', { ago: ago(saved) }))}</span>` : '';
+    const gain = up ? `<div class="hm-gain"><span class="hm-gain-k">${esc(t('completion'))}</span><span class="hm-gain-v">${num(up.from)} → ${esc(pct(up.to))}</span>
+        <span class="hm-bar" aria-hidden="true"><i style="width:${up.from}%"></i><i style="left:${up.from}%;width:${up.to - up.from}%"></i></span>${at}</div>`
+      : at ? `<div class="hm-gain">${at}</div>` : '';
     return `<section class="hm-col hm-since" aria-labelledby="hm-since-h">
         <h3 class="ct-h" id="hm-since-h">${esc(t('homeSince'))}</h3>
-        ${saved || up ? `<p class="hm-since-at">${saved ? esc(t('homeSinceAt', { ago: ago(saved) })) : ''}${up ? ` <b class="hm-since-pct">+${num(up.to - up.from)}${pctSpace()}</b>` : ''}</p>` : ''}
-        <ul class="hm-gains">${items}</ul>
+        ${gain}${body}${more}
       </section>`;
   }
   /* The notice when the followed file brings a new save (js/app-saves.js): three things by name at most. */
@@ -138,6 +199,9 @@
      list, App.nearList) and the 100% by part, each a way into Progress; then the ways on. */
   const areaId = (a) => a.toLowerCase().replace(/_/g, '-');
   const NEAR = 5;
+  // Each part of the 100% by one of its pictures.
+  const PART_ART = { tools: 'tools/straight-pin', spools: 'items/spool-fragment', upgrades: 'items/crafting-kit', arts: 'arts/clawline', skills: 'skills/silkspear',
+    crests: 'crests/hunter', masks: 'items/mask-shard', needle: 'items/needle', hearts: 'pieces/silk-heart', items: 'items/everbloom' };
   function game(g, m) {
     const c = CP.count(g);
     const h = Math.floor(m.time / 3600), min = Math.floor((m.time % 3600) / 60);
@@ -173,10 +237,13 @@
     const link = (v, text) => `<a class="text-btn" href="${App.here(App.hashFor(v))}" data-act="view" data-value="${v}">${esc(text)}</a>`;
     const road = roadText ? `<p class="hm-road">${link('progress', roadText)}</p>` : '';
     const near = App.nearList ? App.nearList(g).slice(0, NEAR) : [];
+    const onMap = (x) => `<button type="button" class="pg-onmap" data-act="mapShow" data-value="${esc(x.key)}" aria-label="${esc(t('mapOnMap') + ': ' + x.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>`;
     const nearCol = near.length ? `<section class="hm-col" aria-labelledby="hm-near-h"><h3 class="ct-h" id="hm-near-h">${esc(t('mapNear'))}</h3>
-        <ol class="mp-near-list">${near.map(App.nearRow).join('')}</ol>${link('map', t('homeNearMap'))}</section>` : '';
-    const rows = c.categories.map((k) => `<li class="hm-part${k.got >= k.max ? ' is-full' : ''}"><a href="${App.here(App.hashFor('progress'))}" data-act="view" data-value="progress">
-        <span class="hm-part-name">${esc(t('cat_' + k.id))}</span><span class="hm-part-n"><b>${num(k.got)}</b><i class="u">/${num(k.max)}</i></span></a></li>`).join('');
+        <ol class="hm-rows">${near.map((x, i) => rowHtml({ name: x.name, nt: true, sub: areaOf(x.area), art: art(x.mark, ' is-mark') }, i, onMap(x))).join('')}</ol>${link('map', t('homeNearMap'))}</section>` : '';
+    // Each part with its picture, its count and a gauge; a full one with the lit diamond.
+    const rows = c.categories.map((k, i) => `<li class="hm-part${k.got >= k.max ? ' is-full' : ''}${k.got ? '' : ' is-none'}" style="--i:${i}"><a href="${App.here(App.hashFor('progress'))}" data-act="view" data-value="progress">
+        ${art(img(icon(PART_ART[k.id])))}<span class="hm-part-name">${esc(t('cat_' + k.id))}</span><span class="hm-part-n"><b>${num(k.got)}</b><i class="u">/${num(k.max)}</i></span>
+        <span class="hm-bar" aria-hidden="true"><i style="width:${+(k.got / k.max * 100).toFixed(1)}%"></i></span></a></li>`).join('');
     const parts = `<section class="hm-col" aria-labelledby="hm-parts-h"><h3 class="ct-h" id="hm-parts-h">${esc(t('homeParts'))}</h3>
         <ol class="hm-parts">${rows}</ol>${link('progress', t('homeAllParts'))}</section>`;
     const left = bookMax - book;
@@ -189,12 +256,25 @@
         ${go('journal', 'assets/icons/items/hunters-journal.webp', left > 0 ? t(left === 1 ? 'homeGoJournal1' : 'homeGoJournal', { n: num(left) }) : t('homeGoJournal0'))}
         ${go('tools', `assets/icons/crests/${crest}.webp`, t('homeGoCrest'))}
       </ul></nav>`;
-    return `${card}${road}<div class="hm-cols">${sinceHtml()}${nearCol}${parts}</div>${next}`;
+    // The map of the area she rests in beside the card (js/app-map.js, App.mapAreaHtml); under it on a phone.
+    const map = App.mapAreaHtml ? App.mapAreaHtml(g) : '';
+    return `<div class="hm-hero${map ? ' has-map' : ''}">${card}${map}</div>${road}<div class="hm-cols">${sinceHtml()}${nearCol}${parts}</div>${next}`;
   }
 
+  /* The rows fade in one by one when the screen is arrived at or another save shows, not when
+     it's only repainted (a language, «Show all»). */
+  let lastKey = null;
   App.screens.home = (sec) => {
     const g = App.game(), m = App.gameMeta();
-    sec.innerHTML = `<div class="hm">${brackets}${screenHead(esc(t('navHome')))}${g ? game(g, m) : invite()}</div>`;
+    const key = g ? [m.saved, m.time, m.completion].join('|') : '';
+    if (key !== lastKey) sinceAll = false;
+    const enter = sec.hidden || key !== lastKey;
+    lastKey = key;
+    sec.innerHTML = `<div class="hm${enter && g ? ' is-enter' : ''}">${brackets}${screenHead(esc(t('navHome')))}${g ? game(g, m) : invite()}</div>`;
+    if (g && App.mapAreaPaint) App.mapAreaPaint();
   };
-  Object.assign(App.actions, { homeImport() { App.importFirstEmpty(); } });
+  Object.assign(App.actions, {
+    homeImport() { App.importFirstEmpty(); },
+    homeSinceAll() { sinceAll = !sinceAll; App.render(); },
+  });
 })();
