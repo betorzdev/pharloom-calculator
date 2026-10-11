@@ -618,6 +618,18 @@
     pgTasksNote:    { es: 'Los objetivos del juego y los deseos de los tablones, con el nombre que les da el juego. No cuentan para la finalización.', en: 'The game\'s objectives and the wishes on the boards, with the game\'s names for them. They don\'t count for completion.' },
     pgTasksMain:    { es: 'Objetivos principales', en: 'Main objectives' },
     pgTasksCollect: { es: 'Colección', en: 'Collect' },
+    pgTasksNoteAct: { es: 'Los objetivos del juego y los deseos de los tablones, con el nombre que les da el juego. Los que pide el Acto {n} están en su pestaña. No cuentan para la finalización.',
+                      en: 'The game\'s objectives and the wishes on the boards, with the game\'s names for them. The ones Act {n} asks for are in its tab. They don\'t count for completion.' },
+    /* Progress's two tabs (design/27b-progress-variants.html): the road to the next Act and the 100% */
+    pgStepOf:       { es: 'paso {n} de {of}', en: 'step {n} of {of}' },
+    pgToGo:         { es: '{pct} por conseguir', en: '{pct} to go' },
+    pgReach:        { es: 'cosas del 100 % que ya puedes conseguir', en: 'things of the 100% you can already get' },
+    pgReachTip:     { es: 'Cada cosa cuenta por separado: un fragmento de máscara es una, no un punto de la finalización.', en: 'Each thing counts on its own: a Mask Shard is one, not a point of completion.' },
+    pgSee100:       { es: 'Ver el 100 %', en: 'See the 100%' },
+    pgShrines:      { es: 'Santuarios de Campana', en: 'Bellshrines' },   // BELLSHRINE, in the plural
+    pgPoints:       { es: 'Puntos de deseos', en: 'Wish points' },
+    pgEndings:      { es: 'Finales', en: 'Endings' },   // no word of the game's for them
+    pgOnlyAct3:     { es: 'Solo en el Acto 3', en: 'Only in Act 3' },
 
     /* Progress: the road to the next Act (js/acts.js, the game's own rules) */
     roadTitle:      { es: 'Camino al Acto {n}', en: 'The road to Act {n}' },
@@ -626,7 +638,6 @@
     roadCitadelName:{ es: 'CIUDADELA MELODIOSA', en: 'CITADEL OF SONG' },   // ACT_2_NAME
     roadSnare:      { es: 'Trampa anímica', en: 'Soul Snare' },   // MQ_SILK_SNARE_NAME
     roadWishwall:   { es: 'Muro de deseos', en: 'Wishwall' },   // the game says it in BB_FIXER_Q1_INTRO; no name of its own
-    roadOf:         { es: '{n} de {of}', en: '{n} of {of}' },
     ending_A:       { es: 'Reina Tejedora', en: 'Weaver Queen' },   // ENDING_A_NAME
     ending_C:       { es: 'Atadura de seda', en: 'Snared Silk' },   // ENDING_C_NAME
     ending_D:       { es: 'Niña retorcida', en: 'Twisted Child' },   // ENDING_D_NAME
@@ -652,6 +663,14 @@
     roadHalf:       { es: '½ punto', en: '½ point' },
     roadBefore:     { es: 'antes: {name}', en: 'first: {name}' },
     roadChecks:     { es: 'Y además', en: 'And also' },
+    roadFour:       { es: 'Cuatro condiciones', en: 'Four conditions' },
+    roadAllThree:   { es: 'Para que el {caretaker} te ofrezca «{wish}» hacen falta las tres cosas:', en: 'For the {caretaker} to offer you "{wish}", all three are needed:' },
+    roadGoalReq:    { es: 'Hay que hacerlos todos.', en: 'Every one of them is needed.' },
+    roadGoalPts:    { es: '{n} puntos con cualquiera de estos {wishes} deseos: cada uno vale un punto; una entrega, medio, y solo la primera vez.', en: '{n} points from any of these {wishes} wishes: each is worth a point; a delivery half of one, and only the first time.' },
+    roadGoalChk:    { es: 'Hay que cumplirlas todas.', en: 'Every one of them is needed.' },
+    roadGoalShrines: { es: 'Hay que hacer sonar los {n}.', en: 'All {n} must be rung.' },
+    roadGoalSnare:  { es: 'Hay que reunir las {n}.', en: 'All {n} are needed.' },
+    roadLeft:       { es: 'Te faltan {n}.', en: '{n} to go.' },
     roadCaravan:    { es: 'La Caravana de las pulgas en Pulgatopía', en: 'The Flea Caravan at Fleatopia' },   // KEY_CARAVAN, FLEATOPIA
     roadLace:       { es: 'Derrota a Lace en la Cuna', en: 'Defeat Lace in the Cradle' },   // DEFEATED_LACE_2_DESC
     roadKey:        { es: 'Llave de hogar campana', en: 'Bellhome Key' },   // INV_NAME_BELL_HOUSE_KEY

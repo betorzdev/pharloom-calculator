@@ -45,7 +45,8 @@ where each Journal entry is found (its enemies, or what makes them), into `js/jo
 `tools/extract-journal-art.py`; each Crest's art and where its slots sit, into `assets/crests/`
 and `js/crest-slots.js`, by `tools/extract-crests.py`; which bench each bench room has, into
 `js/benches.js`, by `tools/extract-benches.py`; the wishes' rules (what opens Act 3, and which wish comes before
-which), into `js/quests.js`, by `tools/extract-quests.py`; and what each vendor sells, for how
+which), into `js/quests.js`, by `tools/extract-quests.py`; each type of wish's emblem, into
+`assets/icons/wishes/`, by `tools/extract-wish-icons.py`; and what each vendor sells, for how
 much, and what each wish gives, into `js/shop.js`, by `tools/extract-shops.py` (`npm run data`
 then joins it into `js/how.js`: how to get each thing of the 100%).
 
