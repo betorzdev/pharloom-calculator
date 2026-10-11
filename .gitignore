@@ -18,3 +18,6 @@ kb/data/all_text.json
 
 # The wiki's sprites, downloaded by tools/measure-palette.py to measure the palette (Team Cherry's art)
 kb/data/art/
+
+# Agents' git worktrees (Claude Code)
+.claude/worktrees/

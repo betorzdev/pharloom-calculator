@@ -21,13 +21,17 @@ the work up reads it first, then the step it's on.
    worth bringing over. Its `design/` has the earlier rounds (`10-restructure.md`,
    `11-components.md` and the `*-variants.html`).
 4. **Draw the options** in `design/NN-<step>-variants.html`: the site's real CSS
-   (`<base href="../">`, `css/tokens.css`, `css/app.css`) plus the mockup's own rules, a bar at the
-   bottom to switch between options and widths, and the choice in the URL (`?header=b&w=390`).
-   Not part of the site: `index.html` doesn't load it, as `kb/` and the rest of `design/`.
-5. **Propose in plan mode**, with the options and a recommendation, and pointing at the variants
-   page. Albert decides.
+   (`<base href="../">`, `css/tokens.css`, `css/app.css`), real data from a save, and a bar at the
+   bottom where every open decision is a numbered row (1, 2, 3...) and every option a lettered
+   button (A, B, C...), the recommended one marked ★, switching live, plus the width; the choice in
+   the URL (`?v=b&w=390`). Every option checked by screenshot at both widths. Not part of the site:
+   `index.html` doesn't load it, as `kb/` and the rest of `design/`. The page is a working tool:
+   it isn't committed, and it's deleted once the step is built (pages 04 to 25 predate this).
+5. **Propose with the option selector** (AskUserQuestion, not plan mode): open the page in the
+   browser, name its file, say in one line what each decision is about, the recommended option
+   first. Albert decides.
 6. **Build what was decided**, update `docs/guide.md` if the page changed, `npm test`, and mark
-   the step here (status, decision and date). Albert commits.
+   the step here (status, decision and date). Then a branch and a PR (`/finish`).
 
 ## The steps
 
