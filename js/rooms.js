@@ -177,8 +177,10 @@
     return row[ci < 0 ? row.length - 1 : ci];
   }
   /* The room a piece is a part of: its own scene, or, for a part (Greymoor_02_top, Library_05_3:
-     named after another piece and not a scene of the game, js/graph.js), the room it's a part of.
-     A destroyed piece stands for its room rather than being part of it. */
+     named after another piece and not a scene of the game, js/graph.js), the room it's a part of;
+     the parts of a room the map draws only in parts are named after its scene (Under_13_left,
+     _right and _bot are Under_13, 18 rooms). A destroyed piece stands for its room rather than
+     being part of it. */
   const SCENE = new Set(Object.keys(G).map((k) => k.toLowerCase()));
   const ROOM_OF = new Map();
   function roomPiece(s) {
@@ -188,6 +190,7 @@
       for (let i = s.lastIndexOf('_'); i > 0; i = s.lastIndexOf('_', i - 1)) {
         const b = s.slice(0, i);
         if (PIECE.has(b) && !/_Destroyed/.test(b)) { r = roomPiece(b); break; }
+        if (SCENE.has(b.toLowerCase())) { r = b; break; }
       }
     }
     ROOM_OF.set(s, r);
