@@ -1467,17 +1467,16 @@ kbd {
 .inv-pc img { height: calc(var(--sp-6) + var(--sp-half)); width: auto; filter: var(--missing-art); transition: filter var(--dur) var(--ease); }
 .inv-pc.is-on img { filter: none; }
 .inv-pc:is(:hover, :focus-visible):not(:disabled) { transform: translateY(calc(var(--sp-half) * -1)); }
-/* The silk: one thread across, a bead per silk strung on it (the game's diamond), lit up to yours. */
 /* The masks: together from the left, as the HUD draws them (design/03-redesign.md, Inventory masks). */
 .inv-pieces.is-masks { flex-wrap: nowrap; }
 .inv-pieces.is-masks .inv-pc { min-width: 0; flex: none; }
 .inv-pieces.is-masks .inv-pc img { height: var(--sp-8); }
-.inv-pieces.is-spools { position: relative; display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: 0; }
-.inv-pieces.is-spools::before {
-  content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1px;
-  background: linear-gradient(90deg, var(--silk) var(--f), color-mix(in oklab, var(--silk-rim) 35%, transparent) var(--f));
-}
-.inv-pieces.is-spools .inv-pc { position: relative; min-width: 0; }
+/* The silk: a bead per silk strung tight from the left like the masks (the game's diamond), the
+   thread drawn bead by bead and lit up to yours (design/03-redesign.md, Inventory silk). */
+.inv-pieces.is-spools { flex-wrap: nowrap; gap: 0; }
+.inv-pieces.is-spools .inv-pc { position: relative; isolation: isolate; min-width: 0; width: calc(var(--sp-4) + var(--sp-half)); flex: none; }
+.inv-pieces.is-spools .inv-pc::before { content: ''; position: absolute; z-index: -1; left: 0; right: 0; top: 50%; height: 1px; background: color-mix(in oklab, var(--silk-rim) 35%, transparent); }
+.inv-pieces.is-spools .inv-pc.is-on::before { background: var(--silk); }
 .inv-bead { width: 10px; height: 10px; transform: rotate(45deg); border: 1px solid var(--silk-rim); background: var(--scene-bg); transition: background-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease); }
 .inv-pc.is-on .inv-bead { background: var(--silk); border-color: var(--silk); box-shadow: 0 0 8px color-mix(in oklab, var(--silk) 60%, transparent); }
 .inv-pc.is-base .inv-bead { width: 8px; height: 8px; }
