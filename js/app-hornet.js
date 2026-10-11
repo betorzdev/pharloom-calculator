@@ -1,3 +1,4 @@
+/* NOTE: the Map walk between benches is off for now (WALK_ON_BENCH_CHANGE below). */
 /* js/app-hornet.js: the Hornet who walks the page, ported from the Hollow Knight site's Knight
    (js/app-knight.js there). One sprite (css: .hn; the strips in assets/hornet/, from the game's own
    frames by tools/extract-hornet.py) that says where you are, the way her mark does on the game's
@@ -127,7 +128,9 @@
   const mapScreen = () => App.screenOf('map');
   const mapPin = () => { const s = mapScreen(); return s ? s.querySelector('.mp-hornet') : null; };
   let walking = null;    // the way under way, { key }
+  const WALK_ON_BENCH_CHANGE = false;   // off for now: she is simply at the new bench. Set true to bring the walk back.
   function syncMap() {
+    if (!WALK_ON_BENCH_CHANGE) return;
     // The key first, cheap: the way (a path between the benches) only when it's still to walk.
     if (walking || !App.mapWayKey || prefs.walked === App.mapWayKey() || !mapPin()) return;
     const w = App.mapWay();
