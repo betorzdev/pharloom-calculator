@@ -63,7 +63,13 @@ In a save, the game's area title card: **Resting at** the area of the bench Horn
 that area's own colour on the game's map, the room's area under it when it's another (Coral
 Tower in the Sands of Karak), the Act and the time played; Hornet sitting on that very bench (each room's bench is read
 from the game's files; one it doesn't know shows Bone Bottom's); and four
-figures: **your 100%**, the Journal, the masks and the rosaries. Under it, the road to the next
+figures: **your 100%**, the Journal, the masks and the rosaries. Beside the card (under it on a
+phone) is **the map of that area**, drawn as the Map screen draws it (the same view, «Only what
+the game shows» included), cropped to the area's rooms and fading out at its edges, with Hornet
+sitting on your bench and the Map's own marks over it: the layers and filters you have set on the
+Map (its legend and its Act and «what I can reach now» filters) decide which show, so the two
+agree (the caches and walls, which the Map only draws close up, are left out); a tap on it opens
+the Map. Under it, the road to the next
 Act when there is one, then three columns: what changed since the previous save (below), what's
 missing **closest to your bench** (the first five, by the game's doors and the stations you've opened, each with its area and a pin that shows it on the Map), and your 100% split into
 the wiki's ten categories (Tools, Silk Spools, the Crafting Kit and Tool Pouch, abilities, Silk Skills, Crests,
@@ -78,9 +84,19 @@ the screen folds into «About this site».
 
 When the save follows the game's file, each new save the game writes to it (the restore points
 go to their own folder and aren't followed) brings a block **Since
-the previous save**: the new Act, Crests, Tools, Silk Skills and abilities by name, the upgrades
-with their new value, each piece found with its area, the Journal entries new or completed as a
-count, and what the completion went up by. The notice at the top says the same in one line.
+the previous save**: first what the completion went up by, from and to on one gauge, and when
+the save before was made; then everything new grouped by kind under small heads (Crests, Silk
+Skills, abilities, Tools, upgrades with their new value, pieces found with their area, tasks done,
+gauntlets cleared), each as a row with its picture (a Tool on its slot's diamond, a piece or a
+gauntlet with its mark on the Map), and the Journal entries new or completed as their portraits.
+A long list shows its first eight rows and «Show all n» opens the rest. The notice at the top
+says the same in one line.
+
+The three lists share one look: each row has its picture, its name in the game's lettering and
+its area under it, and «Closest to your bench» keeps its pin to the Map. Each part of the 100%
+has a picture, its count and a gauge, and a finished one lights its diamond. When you arrive at
+the screen, or the followed file brings a new save, the rows fade in one after another (not with
+reduced motion).
 
 ### Inventory
 
@@ -91,14 +107,24 @@ Pouch with their level; then the **Silk Skills** with what each deals at this bu
 **abilities** (Needle Strike with its damage). On the right, what she carries: the **Tools** by
 colour, each on its slot's diamond (dashed and grey while you lack it), the **Crests** and the
 **items** with their counts (the loose Mask Shards and Spool Fragments, the Memory Lockets,
-Craftmetal, Pale Oil, the Everbloom, the Old Hearts, the melodies and the fleas). The heads count
-as the 100% does (Tools of 51). Tap anything to read the game's own text under its shelf.
+Craftmetal, Pale Oil, the Everbloom, the Farsight, the Hunter's Journal, the Old Hearts, the
+melodies and the fleas). Above the items sits the **Purse**: Rosaries and Shell Shards as big
+figures (the shards out of what your Tool Pouch holds, 400 to 800, with a bar), and under each
+what breaks into it, counted, with the sum you would get from breaking it all: the five Rosary
+strings and necklaces under the rosaries; the Beast Shards, Shard Bundles, Pristine Cores,
+Hornet Statuettes and the Growstone (Steel Soul) under the shards. Below the items, the
+**Relics** (how many you hold of each kind) and the **Mementos**. The heads count as the 100%
+does (Tools of 51); the Relics and Mementos aren't part of it. Tap anything to read the game's
+own text under its shelf.
 
 In **Free mode** everything on it is yours to set. On the left, tap a Needle, a mask, a bead of
 silk, a Silk Heart or a level (tap the last one lit to take it back). On the right, tap a Tool,
-Crest, Silk Skill, ability, the Everbloom, an Old Heart or a melody to mark it had or not (its
+Crest, Silk Skill, ability, the Everbloom, the Farsight, the Journal, an Old Heart, a melody or a
+Memento to mark it had or not (its
 text opens under the shelf); each shelf has «All · None», and what comes in numbers (loose Mask
-Shards and Spool Fragments, Memory Lockets, Craftmetal, Pale Oil, fleas) has − N +. «Base
+Shards and Spool Fragments, Memory Lockets, Craftmetal, Pale Oil, fleas, what's in the purse, the
+Relics of each kind) has − N +. The Rosaries and Shell Shards are typed: Enter or leaving the field
+takes the figure, and the shards stop at what your Pouch holds. «Base
 Hornet» starts from nothing but the Hunter Crest; «Everything maxed» from everything. Until you
 mark something, Free mode has everything. What you mark reaches the Crest screen: only what you
 have can be put on, the rest shows as a silhouette, and taking a mark off something Hornet
@@ -299,44 +325,54 @@ and 8 × Silkspear" against something bigger.
 
 The map fills the screen. Drag it to move it; the wheel, a pinch or a double click zoom where you
 point, + and − at the middle, and ⤢ opens it large, the window's whole width (⤡ back). Close up
-it swaps to twice the resolution. On it: a search at the top left and the zoom at the top right.
+it swaps to twice the resolution. The last button, the four corners, takes it to full screen (Esc or
+the same button leave it; where the browser can't, it fills the window). On it: a search at the top left and the zoom at the top right.
 The search finds any area and anything on the map by name (a piece, a Tool, a boss, a shop, an
 NPC, a Journal entry), each with its layer and area under it: pick one and the map goes there,
 with its layer switched on, its card open and a ring where it is. On a phone the area names show
 only zoomed in.
 
-Under the map, the filters and the legend. The filters: the Act (all, or only Act 1, 2 or 3's
-things), «Only what I can reach now» with a save (hides what asks for an ability or Silk Skill you
-don't have yet: the Faydown Cloak, Clawline, Silk Soar, as the completionist lists them), «Only
-what the game shows» with a save (see below), and the area names on or off. The legend is five groups, each folded or open as you left it, with its
-count and a switch for the whole group («All», or «None» when it's all on); inside, each layer's
-own mark is its switch, dimmed when off, with its count:
+Under the map, **What the map shows**, as the Hollow Knight site has it: «Show all · Hide all» on
+its right, then the Act (all, or only Act 1, 2 or 3's things), «Only what I can reach now» with a
+save (hides what asks for an ability or Silk Skill you don't have yet: the Faydown Cloak,
+Clawline, Silk Soar, as the completionist lists them), «Only what the game shows» with a save (see
+below), and the area names on or off. Then seven groups, each a row that folds (its caret; all open
+at first, only the first on a phone, then as you left them) whose title is the switch for the
+whole group, in ink when all of it is on, dimmer when part, muted when none. Inside, each layer's
+switch is the game's own picture of it, in grey when off. Beside each, how many: in a save, had of
+the total (a layer complete in green); for places and people, which aren't had, how many there
+are; in Free mode, the total. The Act and reach filters narrow the counts too.
 
-- **Missing for 100%**: every piece, each kind a layer (Mask Shards, Spool Fragments, Memory
-  Lockets, Craftmetal, Pale Oil, fleas, Needle upgrades, Tool Pouch, Crafting Kit, Silk Hearts,
-  Old Hearts, melodies), the Tools, Crests, Silk Skills, abilities and the Everbloom. Each in the
-  room where it's had: lying there, at the shop that sells it, at the Wishwall or with whoever
-  gives the wish, in its boss's arena, with the person who gives it. All on at first.
+- **Towards 100%**: every piece, each kind a layer (Mask Shards, Spool Fragments, Needle
+  upgrades, Tool Pouch, Crafting Kit, Silk Hearts, then the Tools, Crests, Silk Skills and
+  abilities, then Memory Lockets, Craftmetal, Pale Oil, fleas, Old Hearts, melodies) and the
+  Everbloom. Each in the room where it's had: lying there, at the shop that sells it, at the
+  Wishwall or with whoever gives the wish, in its boss's arena, with the person who gives it. All
+  on at first.
 - **Places**: benches (off at first: there are 76), Bellway and Ventrica stations (dimmed while
-  your game hasn't opened them: a station not unlocked, a toll not paid), the enemy gauntlets and
-  bosses not beaten yet, the five Bellshrines of the Grand Gate, the locked doors (with the key
-  each takes) and the shops.
+  your game hasn't opened them: a station not unlocked, a toll not paid), the five Bellshrines of
+  the Grand Gate, the shops and the locked doors (with the key each takes).
+- **Fights**: the enemy gauntlets and bosses not beaten yet, and the unique enemies (Rhinogrunds,
+  Covetous Pilgrims, Shardillards, Void Masses).
 - **People**: Shakra's spots, the Wishwalls and who asks for a wish (with a save, only while one
   is still open there), and who gives something of the 100% (Plinney, Eva, Pinstress, Loddie,
   Lumble, Mooshka) and Scrounge, who buys the relics.
-- **Other collectibles**, off at first: the relics (Bone Scrolls, Weaver Effigies, Choral
-  Commandments, Rune Harps, Psalm Cylinders, the Arcane Egg), Mossberries, Silkeaters, Mementos,
-  the Bellhome's furnishings, unique enemies (Rhinogrunds, Covetous Pilgrims, Shardillards, Void
-  Masses), and the rosary and shell shard caches and the breakable walls: so many that they're
-  drawn one by one only close up; from afar, a count per room.
+- **Collectibles**, off at first: the relics, one switch for the six (Bone Scrolls, Weaver
+  Effigies, Choral Commandments, Rune Harps, Psalm Cylinders, the Arcane Egg) whose round caret
+  opens them one by one, Mossberries, Silkeaters, Mementos and the Bellhome's furnishings.
+- **Secrets**, off at first: the rosary and shell shard caches and the breakable walls, so many
+  that they're drawn one by one only close up; from afar, a count per room.
 - **Your game**, with a save: your cocoon, where you last fell (on at first), and the Journal's
   entries still missing, in the room where each is found.
 
 Each mark is the thing's own picture on a dark disc with a thin rim, as the Hollow Knight site
 draws them, over a pale plate so a dark portrait reads, about the same size at any zoom, a little
-bigger close up. What has no picture of its own takes a drawn sign: a folded map for Shakra, a
-padlock, a notice board for a Wishwall, a figure for a person (with a plus for who asks for a
-wish), a house for the Bellhome's furnishings, bricks for a breakable wall. It sits where the game
+bigger close up. What has no picture of its own takes one of the game's: Shakra's Journal portrait, a key of the
+inventory for a locked door, the pause menu's Wishes tab for a Wishwall, a wish's emblem for who
+asks for one, the herald's emblem for who gives a thing of the 100%, the game's Bellhome bench pin
+for its furnishings (tools/extract-map-icons.py takes them from the game's files). Only the
+breakable walls keep a drawn sign, bricks: the game's walls are tall dark rock that doesn't read
+that small. It sits where the game
 has the thing in its room: the pickup lying there, the NPC, the shrine, the cache (the object's
 place in its scene, put on the room's drawing as the game places Hornet on its map; checked
 against the benches, which fall by the game's own bench pins). What has no place of its own (a
@@ -381,18 +417,52 @@ this one, and the first time the map comes into view she runs it, room by room, 
 bench to the new one (two to eight seconds; the view follows her when it's enlarged), and sits.
 She runs each way once; with reduced motion she's simply at her bench.
 
+**For the maintainer, the admin mode** (`#view=map&admin=1`, nothing a visitor sees). A band
+under the map, above the legend, corrects what the game's files place wrong: a mark is dragged
+where it really goes, or nudged with the arrow keys (a pixel of the image; Shift, five); one that
+shouldn't be there is hidden (faint and struck through while in the mode); and *Add* shows the
+legend's marks of Places, People and Other collectibles, so each tap on the map drops one of the
+chosen kind in the room under it, until Escape. An added mark takes an Act and, optionally, a
+save check in `js/collectibles.js`'s form (`["bool", "<room>", "<object>"]`), which tells when a
+save has it; without one it always shows. A dashed way joins a moved mark to the data's point (in
+the accent while unsaved), an added one carries a "+", and the band lists every fix by kind, a
+tap going to it. Changes wait through a reload (`sessionStorage`) and Undo steps back. *Save*
+sends them to `npm run admin` (`tools/admin.js`: the site on `http://localhost:8787` with a way
+to write), which writes `js/map-fixes.js`; with no server (`file://`, the published site) the
+button reads *Copy* and puts the new `FIXES` on the clipboard, to paste over the file's. That
+file isn't generated: `npm run data` never touches it, every fix stores its mark's room, and
+`npm test` says when one names a mark the regenerated data no longer has there.
+
 ### Progress
 
-A ledger. At the top, **your 100%** in a ring that fills with it, as the Journal's Memento, with
-the game's word, «Finalización» (a line under it only if the game's own figure is another). In Act 3, the whole game at a glance: Act 1, Act 2 and Act 3 on one thread, then the four
-endings, lit the ones your save has seen (the game keeps them: Weaver Queen, Snared Silk, Twisted
-Child, Sister of the Void), and «Act 3 · n of 4 endings». Before Act 3,
-**the road to the next Act** at a glance: its steps as diamonds on one thread, the ones done lit
-and the one you're on larger, named with the game's words, and that step's title with how far
-into it («2 of 15»); «The whole road» opens it in full. Then each category is a row: its name,
-its things as the game's pictures (what you lack dimmed) or as pips, its count and a ring that
-opens its list; the rows you open stay open. «What's missing · Everything» and «By Act ·
-Nearest first» sit just above the rows.
+Two tabs, as two cards under the title, each with its own picture of how far you are; the one
+you used last opens, the road's the first time.
+
+**The road to the next Act** (its card: the picture of the step you're on, how far into it, counted
+as its rings count, and «step 1 of 5»). Its steps as diamonds on one thread, the ones done lit and
+the one you're on larger, each named with the game's words (on a phone too). Then the step you're
+on, with its picture, and its parts as small **rings** side by side (the wishes it requires, its
+wish points, its four conditions; the Bellshrines; the snare's pieces), the game's picture inside
+and how far as a figure under it; for Silk and Soul a line says that all three are needed. Under
+the rings, each part is a group like the 100% tab's, open at first (it folds, and stays as you
+leave it): its pictures or pips and its count, what it asks in a sentence and how much is left,
+then its things in rows by Act, the ones done ticked, each with its picture (the wishes, the
+game's emblem for their type), its area, what to do first or «½ point» on a delivery, and a pin
+when the Map has it. The steps after it follow, dim. A line says how many things of the 100% you
+can already get in your Act (each counted on its own: a Mask Shard is one, not a point) and leads
+to the other tab; «The whole road» opens the road in full, as below.
+
+In Act 3 the tab is **«Your game»**: Act 1, Act 2 and Act 3 on one thread, then the four endings,
+lit the ones your save has seen (the game keeps them: Weaver Queen, Snared Silk, Twisted Child,
+Sister of the Void); a ring for the endings and one for the things of the 100% only Act 3 holds.
+Without a save, the tab is both roads in full, as a guide.
+
+**For 100%** (its card: a small ring and what's left). At the top, **your 100%** in a ring that
+fills with it, as the Journal's Memento, with the game's word, «Finalización» (a line under it
+only if the game's own figure is another). Then each category is a row: its name, its things as
+the game's pictures (what you lack dimmed) or as pips, its count and a ring that opens its list;
+the rows you open stay open. «What's missing · Everything» and «By Act · Nearest first» sit just
+above the rows.
 
 Opened, a category lists its things by Act: each with its picture, its name (a Tool with its
 slot's colour) and how to get it, its area on the right, and a pin that shows it on the Map.
@@ -400,7 +470,7 @@ slot's colour) and how to get it, its area on the right, and a pin that shows it
 In **Free mode** with things marked in the Inventory, Progress counts from those marks and
 each missing row has a box to mark it here too; masks, silk, the Silk Hearts, the Needle, the
 Kit and the Pouch follow what the Inventory sets. With nothing marked, it's the whole list as a
-guide, and both roads behind «The roads to Acts 2 and 3».
+guide, and the road tab is «The roads to Acts 2 and 3».
 
 The whole road, as the game's own rules have it (read from its files, not from a guide), in
 numbered steps, each with its count or a tick:
@@ -461,7 +531,7 @@ Then **other collectibles**, which don't count for completion, each group saying
 
 Last, **Tasks** («Tareas», the game's pane): the main objectives and the wishes on the boards by
 type (Wayfarer, Gather, Donate, Hunt, Grand Hunt, Delivery…), 74 in all, each with the game's own
-name, its Act and where. The one only Steel Soul has, and the one only Classic has, show only in a
+name, its Act and where. In Act 2, the ten wishes Act 3 requires are in the road's tab instead. The one only Steel Soul has, and the one only Classic has, show only in a
 game of that mode. A task done also shows in "Since the previous save".
 In a save it shows what's missing, or everything with a tick where you have it; without a save,
 the whole list, as a guide. Which piece you have is read from the save one by one, and on the
@@ -538,6 +608,9 @@ texts and names are © Team Cherry; they're used here only to show the game's ow
 - **The map**: the pieces of the game's own map screen and their rules, extracted from the
   installed game's files by `tools/extract-map.py` (`assets/map/pieces.webp`, `pieces-hd.webp`,
   `js/map.js`), shown as the Hollow Knight site shows its map, as a fan project.
+- **The wishes' emblems**: the large emblem of each type of wish and the pause menu's Wishes tab,
+  extracted from the installed game's files by `tools/extract-wish-icons.py`
+  (`assets/icons/wishes/`), for the road to the next Act in Progress.
 - **Fonts**: Cinzel, Spectral and Patrick Hand SC, under the
   [SIL Open Font License 1.1](../assets/fonts/OFL.txt).
 - **Code**: MIT ([`LICENSE`](../LICENSE)). It covers only the code, not any of the above.
