@@ -38,11 +38,12 @@ the work up reads it first, then the step it's on.
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep) | [`07-inventory-variants.html`](07-inventory-variants.html) |
 | 5 | Progress (`progress`) | **Built** (28 Sep) | [`10-progress-variants.html`](10-progress-variants.html) |
-| 6 | Map (`map`) | **Built** (28 Sep) | [`12-map-variants.html`](12-map-variants.html) |
+| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct) | [`12-map-variants.html`](12-map-variants.html) |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds) | [`15-journal-variants.html`](15-journal-variants.html) |
 | 8 | Crest (`tools`) | **Built** (28 Sep) | [`18-crest-variants.html`](18-crest-variants.html) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
 | 10 | **Built** (28 Sep) · The static pages (`tools/pages*.js`: `bosses/`, `es/jefes/`, the landing folders): they inherit steps 1 and 2; only what's theirs | To do | |
+| 6b | The Map's admin mode (`#view=map&admin=1`): the panel, adding, the save check, hide and delete, the marks | **Built** (11 Oct) | `30-map-admin-variants.html` (kept out of the repo) |
 
 ## Step 1 · The shell
 
@@ -618,6 +619,41 @@ the wiki's Endings page agrees; ENDING_B «Strung to Serve» is cut), read as `g
 (`js/savefile.js` ENDINGS). He also found dull, and so removed: the «Your 100%» label, «It matches
 the 63% the game shows» (the line stays only when the figures differ) and the purchase-cost line.
 
+### The selector under the map (11 October 2026)
+
+Albert: improve the whole selector under the map, its sections, and replace the pictures that look
+cheap; look at the sibling. What there was: three styles of control in one row (the Acts, two
+diamond checks, a loose «Aa»), five groups whose «All · None» sat at the far edge, 33 layers each
+the map's 22 px disc with the art shrunk inside (muddy; off, all of it at 30 %), nine hand-drawn
+glyphs (padlock, folded map, notice board, figures, house, star, book…), counts of what's
+missing only, the six relics as six layers, and a long closing note. The sibling's filter
+(hallownest js/app-map.js filterHtml, its design/16 and /24): a head with the title and show all ·
+hide all, groups that fold whose title is their switch, the bare art at 28 px greyed when off,
+had/total, sets that open. Options drawn over Save 4 and Free mode (a variants page not kept in
+the repo): 1 · layout A like the sibling, B columns, C tabs; 2 · pictures A bare with every glyph
+replaced from the game's files, B only what the repo had, C the disc; 3 · groups A new, B as
+they were; 4 · counts A had/total, B missing; 5 · the note A gone, B one line.
+
+Albert chose **all the A's**. Built (`js/app-map.js` GROUPS, SETS, legendArt and the selector in
+the screen; `css/app.css` .mp-legend to .mp-inside):
+
+- The head: «What the map shows», «Show all · Hide all», the Acts and the three choices as the
+  step 2 on/off (`.check`).
+- Seven groups: Towards 100% (Hornet's upgrades, her gear, then the materials and the rest), Places,
+  Fights (gauntlets, bosses, unique enemies), People, Collectibles (the relics one set, its caret
+  opening the six), Secrets (caches and walls), Your game. Each folds (`prefs.mapOpen`; all open at
+  first, on a phone only the 100%); its title switches all of it.
+- Each layer's switch is the game's art, bare, in grey when off (`--missing-art`). The glyphs went:
+  Shakra's Journal portrait, Lace's for bosses, a Rhinogrund for unique enemies, the Bellhome's
+  bench pin, and five sprites from the game's atlases into `assets/map/icons/`
+  (`tools/extract-map-icons.py`, one command): a key (`I_slab_key`) for locked doors, the Wishes and
+  Journal tabs of the pause menu, a wish's emblem for who asks for one and the herald's for who
+  gives a thing of the 100%. The map's own marks take the same pictures. Only the breakable walls
+  keep the bricks: the game's walls (`break_wall`) are tall dark rock that doesn't read that small.
+- The counts: had of total in a save (complete in `--good`), a plain count for what isn't had
+  (benches, shops, people), the total in Free mode.
+- The closing note is gone (`mapNote`, with `mapAll` and `mapNone`).
+
 ## Step 7 · Journal
 
 ### What there is (28 September 2026)
@@ -969,3 +1005,26 @@ tints `.frame-line` (a radial light from the top, the border, a soft glow), its 
 the `.bk` corners and the `.screen-plaque`. `CLAUDE.md`'s rule ("no colour per section") now
 says the frame's light takes the tab's colour, and only that.
 
+## Step 6b · The Map's admin mode
+
+### What there is (11 October 2026)
+
+Nothing: the sibling's admin mode (hallownest-calculator, `#view=map&admin=1`) only moves pins, in
+a panel over the map's top left, where this site has its search. Albert asked for it here, able
+to add marks too.
+
+### The options (`30-map-admin-variants.html`, the real Map in Free mode over Shellwood)
+
+Six choices, each A, B or C: 1 the panel (a band under the map · floating over it · a column
+beside it); 2 adding (the legend's marks in a grid · a list of names · a menu on the map); 3 the
+save check (one line · kind, room and id · the id only); 4 hide and delete (in the panel · on the
+mark's card · the keyboard); 5 on the map (a way, a strike and a "+" · the way only · a dashed
+rim); 6 the list (by kind · one list · the counts).
+
+### Decision (11 October 2026)
+
+All A: a band between the map and the legend, which covers nothing and stays below in
+fullscreen; the legend's marks in a grid, each tap dropping one until Escape; one line for the
+check, the room filled in and checked as it's typed; Restore, Hide, Show and Delete in the panel;
+the way from the data's point (in the accent while unsaved), the hidden mark faint and struck
+through, the added one with a "+"; the fixes listed by kind. Built in `js/app-map-admin.js`.

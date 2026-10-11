@@ -150,8 +150,9 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
 }
 /* The plaque: a thin double outline with pointed ends, stretched to the title. */
 .screen-plaque { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; color: color-mix(in oklab, var(--filigree) 80%, transparent); pointer-events: none; }
+.screen-plaque polygon:not(.is-inner) { fill: var(--inv-bg); } /* solid: the plaque straddles the page and the plate, so it can't be clear */
 .screen-plaque .is-inner { opacity: 0.4; }
-.screen-head .sec-title { overflow: hidden; text-overflow: ellipsis; }
+.screen-head .sec-title { position: relative; overflow: hidden; text-overflow: ellipsis; }
 .screen-lead { display: flex; flex-direction: column; align-items: center; gap: var(--sp-2); margin-bottom: var(--sp-6); text-align: center; }
 
 /* ── Controls ────────────────────────────────────────────────────────── */
@@ -1102,6 +1103,30 @@ kbd {
 .hm-fig:first-child b { font-size: var(--fs-2xl); }
 .hm-fig .u { font-size: var(--fs-xs); color: var(--muted); }
 .hm-road { margin: 0 0 var(--sp-6); text-align: center; font-size: var(--fs-sm); }
+/* The map of the area she rests in (js/app-map.js, App.mapAreaHtml): beside the card on a
+   computer, under it on a phone. The Map's own drawing on a canvas, cropped to the area's box
+   (--r: its width over its height), faded at its edges, with Hornet on her bench and the Map's own
+   marks over it. */
+.hm-hero { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--sp-4) var(--sp-8); align-items: center; }
+.hm-hero > .hm-card { margin-bottom: 0; }
+.hm-hero { margin-bottom: var(--sp-6); }
+/* In half the width the area's name is smaller, so that a long one wraps instead of running under the map. */
+@media (min-width: 900px) {
+  .hm-hero.has-map { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hm-hero.has-map .hm-area { font-size: clamp(var(--fs-2xl), 1rem + 3vw, 4rem); }
+}
+.hmB-map { display: grid; justify-items: center; margin: 0; min-width: 0; }
+/* No frame: the drawing fades out on every side (the canvas only: the marks stay as the Map has them). */
+.hmB-view { position: relative; display: block; width: min(100%, calc(var(--hm-map-max) * var(--r))); aspect-ratio: var(--r); }
+.hmB-view:focus-visible { outline: 1px solid var(--ink-2); outline-offset: var(--sp-1); }
+.hmB-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; filter: var(--map-tone);
+  -webkit-mask: radial-gradient(ellipse closest-side at 50% 50%, #000 62%, transparent 100%); mask: radial-gradient(ellipse closest-side at 50% 50%, #000 62%, transparent 100%); }
+/* The Map's own marks over it (.mp-mk, sized by --k as there), as pictures. */
+.hmB-svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.hmB-svg .mp-plate { fill: url(#hmB-plate); }
+#hmB-plate stop { stop-color: var(--map-plate); }
+#hmB-plate stop:nth-child(2) { stop-color: var(--map-plate-mid); }
+#hmB-plate stop:last-child { stop-color: transparent; }
 /* Three columns under the card: since the previous save, closest to the bench, the 100% by part. */
 .hm-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: var(--sp-8); }
 .hm-col { display: grid; gap: var(--sp-3); align-content: start; }
@@ -1986,6 +2011,18 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
   .mp.is-big .mp-view { height: max(480px, calc(100vh - var(--sticky-h) - var(--sp-6))); }
 }
 @media (max-width: 899px) { .mp-big { display: none; } }
+/* Full screen (the zoom's last button; js/app-map.js, setFull): the stage over the whole window,
+   with the search and the zoom on it; the page doesn't scroll behind. On a phone too: there it's
+   what makes the map big. After the large map's rules, which it overrides: both can be on. */
+.mp-full[aria-pressed="true"] { color: var(--ink-strong); background: var(--picked); }
+/* The screen is a layer of its own (isolation), under the bar: over it. */
+.screen:has(.mp.is-full) { z-index: 50; }
+.mp.is-full .mp-stage { position: fixed; z-index: 4; inset: 0; width: auto; margin: 0; display: block; }
+.mp.is-full .mp-view { height: 100%; }
+.mp.is-full .mp-big { display: none; }
+.mp.is-full .mp-find { position: absolute; order: 0; top: var(--sp-3); left: var(--sp-3); margin: 0; padding: 0; width: auto; right: calc(var(--ctl-sm) * 3 + var(--sp-3) * 2 + var(--sp-2)); max-width: 20rem; }
+.mp.is-full .mp-tools { top: var(--sp-3); }
+html:has(.mp.is-full) { overflow: hidden; }
 .mp-float { background: color-mix(in oklab, var(--scene-bg) 88%, transparent); border: 1px solid var(--line-ctl); }
 .mp-find { position: absolute; z-index: 4; top: var(--sp-3); left: var(--sp-3); width: min(20rem, calc(100% - var(--sp-16) * 2)); }
 .mp-find .search { background: color-mix(in oklab, var(--scene-bg) 88%, transparent); border: 1px solid var(--line-ctl); }
@@ -1999,31 +2036,59 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 .mp-tools button { width: var(--ctl-sm); height: var(--ctl-sm); font-family: var(--font-num); font-size: var(--fs-md); color: var(--ink-2); }
 .mp-tools button + button { border-left: 1px solid var(--line-ctl); }
 .mp-tools button:is(:hover, :focus-visible):not(:disabled) { color: var(--ink-strong); background: var(--veil); }
-.mp-legend { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: var(--sp-1) var(--sp-6); padding: var(--sp-4) 0; border-bottom: 1px solid var(--inv-line); }
-.mp-legend-k { margin: 0; color: var(--muted); }
-/* The legend in groups, each folded or open, with a switch for all of it. */
-.mp-legend:has(.mp-grp) { display: flex; flex-direction: column; align-items: stretch; gap: var(--sp-2); }
-.mp-filters { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-2) var(--sp-6); padding-bottom: var(--sp-2); }
-.mp-grp { border-top: 1px solid var(--inv-line); padding-top: var(--sp-2); }
-.mp-grp-h { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4); }
-.mp-grp-t { display: inline-flex; align-items: center; gap: var(--sp-2); min-height: var(--ctl-sm); color: var(--ink); }
-.mp-grp-t .lbl { color: inherit; }
-.mp-grp-t b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-xs); color: var(--ink-2); }
-.mp-grp-c { width: var(--sp-3); color: var(--muted); }
-.mp-grp-all { font-size: var(--fs-sm); }
-.mp-grp .mp-sws { display: flex; flex-wrap: wrap; gap: 0 var(--sp-6); padding: var(--sp-1) 0 var(--sp-2) var(--sp-6); }
-.mp-sw .check-box { flex: none; }
-.mp-legend .mp-sws { display: flex; flex-wrap: wrap; gap: 0 var(--sp-6); }
-.mp-sws { list-style: none; margin: 0; padding: 0; }
-/* A layer's switch: its own dot or glyph, its name and count; off, all of it dims. */
-.mp-sw { display: inline-flex; align-items: center; gap: var(--sp-2); min-height: var(--ctl-sm); font-size: var(--fs-sm); color: var(--ink); transition: color var(--dur) var(--ease); }
-.mp-sw b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-xs); color: var(--ink-2); }
-.mp-sw :is(.mp-dot, .mp-pin) { position: static; margin: 0; --mp-s: 22px; transition: opacity var(--dur) var(--ease); }
-.mp-sw[aria-pressed="false"] { color: var(--muted); }
-.mp-sw[aria-pressed="false"] :is(.mp-dot, .mp-pin, .mp-aa) { opacity: 0.3; }
-.mp-sw[aria-pressed="false"] b { color: var(--line-ctl); }
-.mp-sw:is(:hover, :focus-visible) { color: var(--ink-strong); }
-.mp-aa { display: inline-grid; place-items: center; width: 18px; font-family: var(--font-display); font-size: var(--fs-2xs); color: var(--ink); }
+/* The selector under the map (design/03-redesign.md, step 6, the selector; the sibling's filter):
+   its head (title, show all · hide all, the Acts and the three choices), then the groups, each a
+   row that folds over its layers, its title its switch. */
+.mp-legend { display: flex; flex-direction: column; gap: var(--sp-3); padding: var(--sp-4) 0 0; }
+.mp-legend-h { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: var(--sp-1) var(--sp-6); }
+.mp-legend-t { margin: 0; font-family: var(--font-display); font-size: var(--fs-sm); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--ink-strong); }
+.mp-all { display: inline-flex; gap: var(--sp-4); }
+.mp-all .text-btn { font-size: var(--fs-sm); }
+.mp-opts { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-2) var(--sp-8); }
+.mp-checks { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-1) var(--sp-6); }
+.mp-sec { border-top: 1px solid var(--inv-line); }
+.mp-sec:last-child { border-bottom: 1px solid var(--inv-line); }
+.mp-sec-h { display: flex; align-items: center; gap: var(--sp-3); }
+.mp-fold { display: grid; place-items: center; flex: none; width: var(--ctl-sm); min-height: var(--ctl); padding: 0; }
+/* A caret in plain ink: the frame's light is the tab's colour, never a control's. */
+.mp-caret { flex: none; width: 10px; height: 10px; color: var(--ink-2); transition: rotate var(--dur) var(--ease); }
+.mp-sec.is-open .mp-fold .mp-caret, .mp-more[aria-expanded="true"] .mp-caret { rotate: 90deg; }
+/* The group's title is its switch: all on in ink, some in ink-2, none muted. */
+.mp-sec-sw { display: flex; flex: 1; align-items: center; gap: var(--sp-3); min-height: var(--ctl); padding: 0; text-align: left; color: var(--ink-strong); }
+.mp-sec-sw.is-some { color: var(--ink-2); }
+.mp-sec-sw.is-none { color: var(--muted); }
+.mp-sec-sw:is(:hover, :focus-visible) .mp-sec-t, .mp-fold:is(:hover, :focus-visible) + .mp-sec-sw .mp-sec-t { color: var(--accent); }
+.mp-sec-t { font-family: var(--font-display); font-size: var(--fs-sm); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; transition: color var(--dur) var(--ease); }
+.mp-kinds { display: flex; flex-wrap: wrap; gap: var(--sp-1) var(--sp-6); padding: 0 0 var(--sp-3) var(--sp-6); }
+/* A layer: the game's picture, bare, is the switch; off, in grey (the Inventory's missing look). */
+.mp-kind { display: inline-flex; align-items: center; gap: var(--sp-2); min-height: var(--ctl-sm); padding: 0; font-size: var(--fs-sm); color: var(--ink); text-align: left; }
+.mp-kind-t { transition: color var(--dur) var(--ease); }
+.mp-kind:is(:hover, :focus-visible) .mp-kind-t { color: var(--accent); }
+.mp-kind.is-off .mp-kind-t, .mp-kind.is-off .mp-n b { color: var(--muted); }
+.mp-art { --a: 28px; flex: none; display: inline-grid; place-items: center; width: var(--a); height: var(--a); color: var(--ink-2); }
+.mp-art > img { display: block; width: var(--a); height: var(--a); max-width: none; object-fit: contain; transition: filter var(--dur) var(--ease), opacity var(--dur) var(--ease); }
+.mp-art > svg { width: 70%; height: 70%; }
+/* The Needle, a long thin line, laid across as on the map. */
+.mp-art.is-needle > img { transform: rotate(35deg) scale(1.15); }
+.mp-kind.is-off .mp-art > img { filter: var(--missing-art); }
+.mp-kind.is-off .mp-art > svg { opacity: 0.35; }
+/* A set with some of its layers off: its picture half lit. */
+.mp-kind.is-some .mp-art > img { filter: grayscale(0.5) brightness(0.75); }
+/* How many: had of total in the figures' face; complete, in --good. */
+.mp-n { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-xs); color: var(--muted); white-space: nowrap; }
+.mp-n b { font-weight: 700; color: var(--ink-strong); }
+.mp-n i { font-style: normal; }
+.mp-n.is-full b { color: var(--good); }
+.mp-sec-sw .mp-n { font-size: var(--fs-2xs); }
+/* A set (the relics) and its caret, which opens its layers in a row of their own. */
+.mp-set { display: inline-flex; align-items: center; gap: var(--sp-2); }
+.mp-more { display: inline-grid; place-items: center; flex: none; width: 24px; height: 24px; padding: 0; border: 1px solid var(--line-ctl); border-radius: 50%; color: var(--ink-2); }
+.mp-more .mp-caret { width: 9px; height: 9px; color: inherit; }
+.mp-more:is(:hover, :focus-visible), .mp-more[aria-expanded="true"] { border-color: var(--accent); color: var(--accent); }
+@media (pointer: coarse) { .mp-more { width: 32px; height: 32px; } }
+.mp-inside { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: var(--sp-1) var(--sp-4); margin: 0 0 var(--sp-2) var(--sp-8); padding: var(--sp-1) var(--sp-4); border-left: 1px solid var(--line); }
+.mp-inside .mp-kind { font-size: var(--fs-xs); }
+.mp-inside .mp-art { --a: 22px; }
 /* The area names, on the map in the game's capitals, lit only enough to read. */
 /* A mark is tappable: a finger's cursor, and the one whose card is open ringed in the accent. */
 /* The card over the map, the sibling's: above its mark (below when there's no room), inside the box. */
@@ -2053,19 +2118,22 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 .mp-ping.is-on { animation: mp-ping 1.2s var(--ease-fade) 3; }
 @media (prefers-reduced-motion: reduce) { .mp-ping.is-on { opacity: 1; } }
 @media (max-width: 899px) {
-  .mp-legend { grid-template-columns: minmax(0, 1fr); }
-  .mp-legend .mp-sws { gap: 0 var(--sp-4); }
-  .mp-find { width: auto; right: calc(var(--ctl-sm) * 3 + var(--sp-3) * 2); }
+  .mp-find { width: auto; right: calc(var(--ctl-sm) * 4 + var(--sp-3) * 2); }
 }
 /* Whole on a phone the names would cover the map: they come with the zoom. */
 @media (max-width: 599px) {
   .mp-view:not(.is-zoomed) .mp-name { display: none; }
   /* Whole, the map is too short to float the search on: it goes above it. */
   .mp-stage { display: flex; flex-direction: column; }
-  .mp-find { position: static; order: -1; width: auto; margin: 0 var(--sp-3) var(--sp-2); padding-right: calc(var(--ctl-sm) * 3 + var(--sp-3)); }
+  .mp-find { position: static; order: -1; width: auto; margin: 0 var(--sp-3) var(--sp-2); padding-right: calc(var(--ctl-sm) * 4 + var(--sp-3)); }
   /* Whole, the map is small: smaller marks, so they don't cover it. */
   .mp-view:not(.is-zoomed) { --mp-s: 16px; }
   .mp-tools { top: 0; }
+  .mp-legend-h { grid-template-columns: minmax(0, 1fr); }
+  .mp-opts { gap: var(--sp-1) var(--sp-6); }
+  .mp-checks { flex-direction: column; align-items: flex-start; }
+  .mp-kinds { padding-left: 0; gap: var(--sp-1) var(--sp-4); }
+  .mp-inside { margin-left: var(--sp-2); }
 }
 /* A piece: the game's round badge, a dark disc with a rim in the kind's colour, the picture inside. */
 .mp-dot {
@@ -2104,7 +2172,7 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
   stroke: var(--scene-bg); stroke-width: calc(var(--k, 1) * 0.12px); paint-order: stroke; cursor: pointer; }
 .mp-name:focus { outline: none; }
 .mp-name:is(:hover, :focus-visible, .is-sel) { fill: var(--ink-strong); }
-.mp-name.is-unmapped { fill: color-mix(in oklab, var(--muted) 70%, transparent); text-decoration: line-through; }
+.mp-name.is-unmapped { fill: color-mix(in oklab, var(--muted) 70%, transparent); }
 /* The caches and walls from afar: a count per room. */
 .mp-cluster { pointer-events: none; }
 .mp-cluster text { font-family: var(--font-num); font-size: 0.42px; text-anchor: middle; dominant-baseline: middle; fill: var(--ink-2); }
@@ -2114,6 +2182,60 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 /* An area whose map isn't bought yet. */
 /* Hornet's way from the previous bench: a silk thread over the rooms, from a hollow ring. */
 .mp-way polyline { fill: none; stroke: var(--silk); stroke-width: 4; stroke-dasharray: 10 8; stroke-linecap: round; stroke-linejoin: round; opacity: 0.75; vector-effect: non-scaling-stroke; }
+
+/* The Map's admin mode (js/app-map-admin.js, #…&admin=1; design/30-map-admin-variants.html, all A):
+   a band under the map, above the legend; on the map, a moved mark's way from the data's point
+   (in the accent while unsaved), a hidden one faint and struck through, an added one with a "+". */
+.mp-adm { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); gap: var(--sp-3) var(--sp-8); align-items: start; padding: var(--sp-4) 0; border-bottom: 1px solid var(--inv-line); font-size: var(--fs-xs); color: var(--ink-2); }
+.mp-adm-col { display: grid; gap: var(--sp-3); align-content: start; min-width: 0; }
+.mp-adm-h { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--sp-1) var(--sp-3); }
+.mp-adm-h b { font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
+.mp-adm-h span { font-family: var(--font-num); font-variant-numeric: tabular-nums; color: var(--muted); }
+.mp-adm .is-pending { color: var(--accent); }
+.mp-adm-sel { display: grid; grid-template-columns: var(--sp-8) minmax(0, 1fr); gap: var(--sp-2) var(--sp-3); align-items: start; }
+.mp-adm-art { display: grid; place-items: center; height: var(--sp-8); }
+.mp-adm :is(.mp-dot, .mp-pin) { position: static; margin: 0; --mp-s: 24px; }
+.mp-adm-name { display: block; font-family: var(--font-display); font-weight: 400; font-size: var(--fs-sm); color: var(--ink-strong); }
+.mp-adm :is(code, .mp-adm-xy, .mp-adm-in) { font-family: var(--font-num); font-variant-numeric: tabular-nums; }
+.mp-adm code { font-size: var(--fs-2xs); color: var(--muted); word-break: break-all; }
+.mp-adm-body { grid-column: 1 / -1; display: grid; gap: var(--sp-2); }
+.mp-adm-xy { display: grid; grid-template-columns: auto 1fr; gap: var(--sp-1) var(--sp-3); margin: 0; }
+.mp-adm-xy dt { color: var(--muted); }
+.mp-adm-xy dd { margin: 0; color: var(--ink); }
+.mp-adm-xy small { color: var(--muted); }
+.mp-adm-acts, .mp-adm-foot { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-4); align-items: center; }
+.mp-adm :is(.mp-adm-acts, .mp-adm-foot) .text-btn { font-size: var(--fs-xs); }
+.mp-adm-foot .mp-adm-hint { margin-left: auto; }
+.mp-adm-state { color: var(--muted); font-style: italic; }
+.mp-adm-hint { font-size: var(--fs-2xs); color: var(--muted); }
+.mp-adm-field { display: grid; gap: var(--sp-1); }
+.mp-adm-field > span, .mp-adm-pick p { margin: 0; font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
+.mp-adm .seg button { min-width: var(--sp-8); }
+.mp-adm-in { width: 100%; min-width: 0; padding: var(--sp-1) var(--sp-2); background: var(--scene-bg); color: var(--ink); border: 1px solid var(--line-ctl); font-size: var(--fs-xs); }
+.mp-adm-in:focus { outline: none; border-color: var(--accent-line); }
+.mp-adm-in.is-bad { border-color: var(--line-panel); color: var(--muted); text-decoration: underline wavy var(--line-panel); }
+.mp-adm-text { min-height: calc(var(--sp-16) * 2); resize: vertical; }
+.mp-adm-pick { display: grid; gap: var(--sp-2); }
+.mp-adm-grid { display: flex; flex-wrap: wrap; gap: var(--sp-1); }
+.mp-adm-grid button { display: grid; place-items: center; width: var(--ctl-sm); height: var(--ctl-sm); border: 1px solid transparent; }
+.mp-adm-grid button:hover { background: var(--veil); }
+.mp-adm-grid button[aria-pressed="true"] { border-color: var(--accent-line); background: var(--picked); }
+.mp-adm-list details { border-top: 1px solid color-mix(in oklab, var(--filigree) 10%, transparent); padding-top: var(--sp-1); }
+.mp-adm-list summary { cursor: pointer; font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
+.mp-adm-list summary span { color: var(--muted); font-weight: 400; letter-spacing: 0; }
+.mp-adm-list ul { list-style: none; margin: var(--sp-1) 0 0; padding: 0; display: grid; gap: var(--sp-1); }
+.mp-adm-list li button { display: grid; grid-template-columns: var(--sp-6) minmax(0, 1fr) auto; gap: var(--sp-2); align-items: center; width: 100%; padding: var(--sp-1); text-align: left; color: var(--ink-2); }
+.mp-adm-list li button:hover { background: var(--veil); color: var(--ink-strong); }
+.mp-adm-list li :is(.mp-dot, .mp-pin) { --mp-s: 20px; }
+.mp-view.is-adding .mp-svg { cursor: crosshair; }
+.mp-adm-ways { pointer-events: none; }
+.mp-adm-ways line { stroke: var(--ink-strong); stroke-width: 1.5; stroke-dasharray: 4 3; vector-effect: non-scaling-stroke; opacity: 0.7; }
+.mp-adm-ways circle { fill: none; stroke: var(--ink-strong); stroke-width: 1.5; vector-effect: non-scaling-stroke; opacity: 0.7; }
+.mp-adm-ways .is-pending :is(line, circle) { stroke: var(--accent); opacity: 1; }
+.mp-mk.is-hidden { opacity: 0.35; }
+.mp-adm-strike { stroke: var(--ink-strong); stroke-width: 0.09; stroke-linecap: round; }
+.mp-adm-plus circle { fill: var(--scene-bg); stroke: var(--accent); stroke-width: 0.06; }
+.mp-adm-plus path { stroke: var(--accent); stroke-width: 0.07; stroke-linecap: round; }
 /* What's missing closest to your bench: a short list under the map. */
 .mp-near-list { list-style: none; margin: var(--sp-3) 0 0; padding: 0; display: grid; gap: var(--sp-1); }
 .mp-near-list li { display: grid; grid-template-columns: var(--sp-6) minmax(0, 1fr) auto auto; align-items: center; gap: var(--sp-3); font-size: var(--fs-sm); color: var(--ink); }
@@ -2136,7 +2258,7 @@ span.mp-pin { border-radius: 50%; background: var(--scene-bg); border: 1px solid
 .mp-pin.is-off { filter: var(--missing-soft) drop-shadow(0 1px 2px var(--badge-shadow)); opacity: var(--missing-soft-opacity); }
 /* Hornet at her bench: the .hn sprite (sitting; running while js/app-hornet.js walks her from the
    previous bench), her feet and her middle on the point. */
-.mp-hornet.hn {
+.mp-hornet.hn, .hmB-hornet.hn {
   --hn-h: var(--hn-map); z-index: 2; translate: calc(-1 * var(--hn-map) * 62 / 120) calc(-1 * var(--hn-map) * 116 / 120);
   filter: drop-shadow(0 0 8px color-mix(in oklab, var(--spotlight) 60%, transparent)); transition: none;
 }

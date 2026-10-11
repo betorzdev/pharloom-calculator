@@ -14,6 +14,7 @@
   // The screen: the link's; without it, the page's own; and with no link, wherever you left it.
   prefs.view = urlHash.view || PAGE_VIEW || prefs.view;
   App.build = urlHash.build;
+  App.admin = urlHash.admin;   // #…&admin=1: the Map's admin mode (js/app-map-admin.js)
   I.setLang(fromUrl || prefs.lang);
   prefs.lang = I.current;
   if (fromUrl) prefs.langChosen = true;   // a link with a language counts as choosing it
