@@ -1964,31 +1964,59 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 .mp-tools button { width: var(--ctl-sm); height: var(--ctl-sm); font-family: var(--font-num); font-size: var(--fs-md); color: var(--ink-2); }
 .mp-tools button + button { border-left: 1px solid var(--line-ctl); }
 .mp-tools button:is(:hover, :focus-visible):not(:disabled) { color: var(--ink-strong); background: var(--veil); }
-.mp-legend { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: var(--sp-1) var(--sp-6); padding: var(--sp-4) 0; border-bottom: 1px solid var(--inv-line); }
-.mp-legend-k { margin: 0; color: var(--muted); }
-/* The legend in groups, each folded or open, with a switch for all of it. */
-.mp-legend:has(.mp-grp) { display: flex; flex-direction: column; align-items: stretch; gap: var(--sp-2); }
-.mp-filters { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-2) var(--sp-6); padding-bottom: var(--sp-2); }
-.mp-grp { border-top: 1px solid var(--inv-line); padding-top: var(--sp-2); }
-.mp-grp-h { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4); }
-.mp-grp-t { display: inline-flex; align-items: center; gap: var(--sp-2); min-height: var(--ctl-sm); color: var(--ink); }
-.mp-grp-t .lbl { color: inherit; }
-.mp-grp-t b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-xs); color: var(--ink-2); }
-.mp-grp-c { width: var(--sp-3); color: var(--muted); }
-.mp-grp-all { font-size: var(--fs-sm); }
-.mp-grp .mp-sws { display: flex; flex-wrap: wrap; gap: 0 var(--sp-6); padding: var(--sp-1) 0 var(--sp-2) var(--sp-6); }
-.mp-sw .check-box { flex: none; }
-.mp-legend .mp-sws { display: flex; flex-wrap: wrap; gap: 0 var(--sp-6); }
-.mp-sws { list-style: none; margin: 0; padding: 0; }
-/* A layer's switch: its own dot or glyph, its name and count; off, all of it dims. */
-.mp-sw { display: inline-flex; align-items: center; gap: var(--sp-2); min-height: var(--ctl-sm); font-size: var(--fs-sm); color: var(--ink); transition: color var(--dur) var(--ease); }
-.mp-sw b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-xs); color: var(--ink-2); }
-.mp-sw :is(.mp-dot, .mp-pin) { position: static; margin: 0; --mp-s: 22px; transition: opacity var(--dur) var(--ease); }
-.mp-sw[aria-pressed="false"] { color: var(--muted); }
-.mp-sw[aria-pressed="false"] :is(.mp-dot, .mp-pin, .mp-aa) { opacity: 0.3; }
-.mp-sw[aria-pressed="false"] b { color: var(--line-ctl); }
-.mp-sw:is(:hover, :focus-visible) { color: var(--ink-strong); }
-.mp-aa { display: inline-grid; place-items: center; width: 18px; font-family: var(--font-display); font-size: var(--fs-2xs); color: var(--ink); }
+/* The selector under the map (design/03-redesign.md, step 6, the selector; the sibling's filter):
+   its head (title, show all · hide all, the Acts and the three choices), then the groups, each a
+   row that folds over its layers, its title its switch. */
+.mp-legend { display: flex; flex-direction: column; gap: var(--sp-3); padding: var(--sp-4) 0 0; }
+.mp-legend-h { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: var(--sp-1) var(--sp-6); }
+.mp-legend-t { margin: 0; font-family: var(--font-display); font-size: var(--fs-sm); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--ink-strong); }
+.mp-all { display: inline-flex; gap: var(--sp-4); }
+.mp-all .text-btn { font-size: var(--fs-sm); }
+.mp-opts { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-2) var(--sp-8); }
+.mp-checks { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-1) var(--sp-6); }
+.mp-sec { border-top: 1px solid var(--inv-line); }
+.mp-sec:last-child { border-bottom: 1px solid var(--inv-line); }
+.mp-sec-h { display: flex; align-items: center; gap: var(--sp-3); }
+.mp-fold { display: grid; place-items: center; flex: none; width: var(--ctl-sm); min-height: var(--ctl); padding: 0; }
+/* A caret in plain ink: the frame's light is the tab's colour, never a control's. */
+.mp-caret { flex: none; width: 10px; height: 10px; color: var(--ink-2); transition: rotate var(--dur) var(--ease); }
+.mp-sec.is-open .mp-fold .mp-caret, .mp-more[aria-expanded="true"] .mp-caret { rotate: 90deg; }
+/* The group's title is its switch: all on in ink, some in ink-2, none muted. */
+.mp-sec-sw { display: flex; flex: 1; align-items: center; gap: var(--sp-3); min-height: var(--ctl); padding: 0; text-align: left; color: var(--ink-strong); }
+.mp-sec-sw.is-some { color: var(--ink-2); }
+.mp-sec-sw.is-none { color: var(--muted); }
+.mp-sec-sw:is(:hover, :focus-visible) .mp-sec-t, .mp-fold:is(:hover, :focus-visible) + .mp-sec-sw .mp-sec-t { color: var(--accent); }
+.mp-sec-t { font-family: var(--font-display); font-size: var(--fs-sm); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; transition: color var(--dur) var(--ease); }
+.mp-kinds { display: flex; flex-wrap: wrap; gap: var(--sp-1) var(--sp-6); padding: 0 0 var(--sp-3) var(--sp-6); }
+/* A layer: the game's picture, bare, is the switch; off, in grey (the Inventory's missing look). */
+.mp-kind { display: inline-flex; align-items: center; gap: var(--sp-2); min-height: var(--ctl-sm); padding: 0; font-size: var(--fs-sm); color: var(--ink); text-align: left; }
+.mp-kind-t { transition: color var(--dur) var(--ease); }
+.mp-kind:is(:hover, :focus-visible) .mp-kind-t { color: var(--accent); }
+.mp-kind.is-off .mp-kind-t, .mp-kind.is-off .mp-n b { color: var(--muted); }
+.mp-art { --a: 28px; flex: none; display: inline-grid; place-items: center; width: var(--a); height: var(--a); color: var(--ink-2); }
+.mp-art > img { display: block; width: var(--a); height: var(--a); max-width: none; object-fit: contain; transition: filter var(--dur) var(--ease), opacity var(--dur) var(--ease); }
+.mp-art > svg { width: 70%; height: 70%; }
+/* The Needle, a long thin line, laid across as on the map. */
+.mp-art.is-needle > img { transform: rotate(35deg) scale(1.15); }
+.mp-kind.is-off .mp-art > img { filter: var(--missing-art); }
+.mp-kind.is-off .mp-art > svg { opacity: 0.35; }
+/* A set with some of its layers off: its picture half lit. */
+.mp-kind.is-some .mp-art > img { filter: grayscale(0.5) brightness(0.75); }
+/* How many: had of total in the figures' face; complete, in --good. */
+.mp-n { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-xs); color: var(--muted); white-space: nowrap; }
+.mp-n b { font-weight: 700; color: var(--ink-strong); }
+.mp-n i { font-style: normal; }
+.mp-n.is-full b { color: var(--good); }
+.mp-sec-sw .mp-n { font-size: var(--fs-2xs); }
+/* A set (the relics) and its caret, which opens its layers in a row of their own. */
+.mp-set { display: inline-flex; align-items: center; gap: var(--sp-2); }
+.mp-more { display: inline-grid; place-items: center; flex: none; width: 24px; height: 24px; padding: 0; border: 1px solid var(--line-ctl); border-radius: 50%; color: var(--ink-2); }
+.mp-more .mp-caret { width: 9px; height: 9px; color: inherit; }
+.mp-more:is(:hover, :focus-visible), .mp-more[aria-expanded="true"] { border-color: var(--accent); color: var(--accent); }
+@media (pointer: coarse) { .mp-more { width: 32px; height: 32px; } }
+.mp-inside { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: var(--sp-1) var(--sp-4); margin: 0 0 var(--sp-2) var(--sp-8); padding: var(--sp-1) var(--sp-4); border-left: 1px solid var(--line); }
+.mp-inside .mp-kind { font-size: var(--fs-xs); }
+.mp-inside .mp-art { --a: 22px; }
 /* The area names, on the map in the game's capitals, lit only enough to read. */
 /* A mark is tappable: a finger's cursor, and the one whose card is open ringed in the accent. */
 /* The card over the map, the sibling's: above its mark (below when there's no room), inside the box. */
@@ -2018,8 +2046,6 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 .mp-ping.is-on { animation: mp-ping 1.2s var(--ease-fade) 3; }
 @media (prefers-reduced-motion: reduce) { .mp-ping.is-on { opacity: 1; } }
 @media (max-width: 899px) {
-  .mp-legend { grid-template-columns: minmax(0, 1fr); }
-  .mp-legend .mp-sws { gap: 0 var(--sp-4); }
   .mp-find { width: auto; right: calc(var(--ctl-sm) * 3 + var(--sp-3) * 2); }
 }
 /* Whole on a phone the names would cover the map: they come with the zoom. */
@@ -2031,6 +2057,11 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
   /* Whole, the map is small: smaller marks, so they don't cover it. */
   .mp-view:not(.is-zoomed) { --mp-s: 16px; }
   .mp-tools { top: 0; }
+  .mp-legend-h { grid-template-columns: minmax(0, 1fr); }
+  .mp-opts { gap: var(--sp-1) var(--sp-6); }
+  .mp-checks { flex-direction: column; align-items: flex-start; }
+  .mp-kinds { padding-left: 0; gap: var(--sp-1) var(--sp-4); }
+  .mp-inside { margin-left: var(--sp-2); }
 }
 /* A piece: the game's round badge, a dark disc with a rim in the kind's colour, the picture inside. */
 .mp-dot {
