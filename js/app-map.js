@@ -268,16 +268,14 @@
         draw: (s, ti, k, c) => badge('journal', portrait(e.id), s, ti, k, c) });
     }
     for (const m of out) if (!m.needs) m.needs = SP.NEEDS[m.key];
-    return fixed(out, g);
+    return fixed(out);
   }
   /* js/map-fixes.js, last of all (and in the admin mode, js/app-map-admin.js, its unsaved
      changes): a mark moved where it really goes (fix), one hidden (in the admin mode kept,
-     flagged), and the marks added by hand, each drawn and named as its layer's. A fix whose
-     scene isn't its mark's any more (a list regenerated in another order) is left alone. */
-  const MF = SS.mapFixes || { FIXES: {}, LAYERS: [] };
-  const lookDraw = (l) => (s, ti, k, c) => (l.look.dot ? dot(l.id, l.look.dot, s, ti, k, c) : l.look.pin ? pin(l.id, l.look.pin, s, ti, k, c)
-    : badge(l.id, l.look.badge === 'gauntlet' ? GLYPH.gauntlet : GLYPH[l.look.badge || l.look.glyph], s, ti, k, c));
-  function fixed(out, g) {
+     flagged). A fix whose scene isn't its mark's any more (a list regenerated in another order)
+     is left alone. */
+  const MF = SS.mapFixes || { FIXES: {} };
+  function fixed(out) {
     const F = App.mapFixes ? App.mapFixes() : MF.FIXES, moved = F.moved || {}, hidden = F.hidden || {}, keep = !!App.admin;
     const list = [];
     for (const m of out) {
@@ -286,12 +284,6 @@
       if (mv && mv[2] === m.scene) m.fix = { x: mv[0], y: mv[1] };
       if (hidden[m.key] === m.scene) { if (!keep) continue; m.hidden = true; }
       list.push(m);
-    }
-    for (const a of F.added || []) {
-      const l = LAYER.get(a.layer);
-      if (!l || !MF.LAYERS.includes(a.layer)) continue;
-      list.push({ key: a.id, layer: a.layer, scene: a.scene, act: a.act, fix: { x: a.x, y: a.y }, added: a,
-        got: !!g && !!a.check && (g.added || []).includes(a.id), name: l.name(), draw: lookDraw(l) });
     }
     return list;
   }
@@ -408,7 +400,7 @@
         stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${g[1]}</svg>` : '';
   }
   // inert: Your game's copy of a mark (js/app-map.js, App.mapAreaHtml) is a picture, not a button.
-  const pinSvg = (m, p, title, cls, inert) => `<g class="mp-mk is-${m.layer}${cls}${m.off ? ' is-off' : ''}${m.fix ? ' is-fixed' : ''}${m.hidden ? ' is-hidden' : ''}${m.added ? ' is-added' : ''}${inert ? '' : sel(m.key)}" style="--px:${n2(p.x)}px;--py:${n2(p.y)}px;--ox:${n2(p.ox || 0)}px;--oy:${n2(p.oy || 0)}px"
+  const pinSvg = (m, p, title, cls, inert) => `<g class="mp-mk is-${m.layer}${cls}${m.off ? ' is-off' : ''}${m.fix ? ' is-fixed' : ''}${m.hidden ? ' is-hidden' : ''}${inert ? '' : sel(m.key)}" style="--px:${n2(p.x)}px;--py:${n2(p.y)}px;--ox:${n2(p.ox || 0)}px;--oy:${n2(p.oy || 0)}px"
         ${inert ? '' : `data-mk="${esc(m.key)}" role="button" tabindex="0" aria-label="${esc(title)}"`}><title>${esc(title)}</title><circle r="0.5"/><circle class="mp-plate" r="0.47"/>${artOf(m)}</g>`;
   const markTitle = (m) => [m.name, m.sub, m.act ? t('saveAct', { n: m.act }) : ''].filter(Boolean).join(' · ');
   /* Each mark on its point: the pin the game draws, else where the game has the thing (js/spots.js
@@ -956,7 +948,7 @@
     } else if (kind === 'lock') {
       note = m.sub;
       where = line([areaName(area)]);
-    } else if (kind === 'extra' || (kind === 'add' && m.added.check)) {
+    } else if (kind === 'extra') {
       if (g) acts = state(t(m.got ? 'pgGot' : 'invMissing'));
     } else if (kind === 'journal') {
       const e = BOOK.get(m.entry), k = own && own.journal[e.id];
