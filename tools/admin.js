@@ -4,7 +4,7 @@
    itself needs no server: this one is only so the admin mode can write) and answers two calls of
    js/app-map-admin.js's:
      GET  /__admin/ping       → { ok: true }: the page knows it can save, not just copy
-     POST /__admin/map-fixes  { moved, hidden, added } → checked (check()), written into
+     POST /__admin/map-fixes  { moved, hidden } → checked (check()), written into
                               js/map-fixes.js (its FIXES, by its own format(); the header kept)
                               → { ok: true, n }
    Nothing else: no listing, no paths outside the repo, no other writes. No dependencies.
@@ -58,12 +58,12 @@ function places() {
 }
 
 /* The fixes checked: their shape, each point on the map (a margin of 40 px: a mark may sit a
-   little off the drawn rooms), each added mark in a layer marks can be added to, with a room
-   under it. → the error, or '' */
+   little off the drawn rooms). → the error, or '' */
 function check(f) {
   if (!f || typeof f !== 'object' || Array.isArray(f)) return 'not an object';
-  const { moved = {}, hidden = {}, added = [] } = f;
-  if (typeof moved !== 'object' || Array.isArray(moved) || typeof hidden !== 'object' || Array.isArray(hidden) || !Array.isArray(added)) return 'moved, hidden or added: wrong shape';
+  const { moved = {}, hidden = {}, ...rest } = f;
+  if (typeof moved !== 'object' || Array.isArray(moved) || typeof hidden !== 'object' || Array.isArray(hidden)) return 'moved or hidden: wrong shape';
+  if (Object.keys(rest).length) return 'only moved and hidden: ' + Object.keys(rest).join(', ');
   const PAD = 40;
   const onMap = (x, y) => Number.isFinite(x) && Number.isFinite(y) && x >= -PAD && x <= M.W + PAD && y >= -PAD && y <= M.H + PAD;
   const scene = (s) => typeof s === 'string' && /^[\w ()-]{1,64}$/.test(s);
@@ -72,15 +72,6 @@ function check(f) {
     if (!Array.isArray(p) || p.length !== 3 || !onMap(p[0], p[1]) || !scene(p[2])) return `moved ${k}: not [x, y, scene] on the map`;
   }
   for (const [k, s] of Object.entries(hidden)) if (!k || !scene(s)) return `hidden ${k}: not a scene`;
-  const ids = new Set();
-  for (const a of added) {
-    if (!a || typeof a !== 'object' || !/^add:\d+$/.test(a.id) || ids.has(a.id)) return `added ${a && a.id}: a bad or repeated id`;
-    ids.add(a.id);
-    if (!MF.LAYERS.includes(a.layer)) return `added ${a.id}: no layer ${a.layer}`;
-    if (!onMap(a.x, a.y) || !scene(a.scene)) return `added ${a.id}: not on the map`;
-    if (a.act != null && ![1, 2, 3].includes(a.act)) return `added ${a.id}: act 1, 2 or 3`;
-    if (a.check != null && !MF.isCheck(a.check)) return `added ${a.id}: a check as js/collectibles.js's`;
-  }
   return '';
 }
 // The file's new text: FIXES as format() writes it, the rest (the header, format itself) as it is.
@@ -117,7 +108,7 @@ const server = http.createServer((req, res) => {
       try {
         fs.writeFileSync(FIXES_FILE, withFixes(fs.readFileSync(FIXES_FILE, 'utf8'), fixes));
       } catch (e) { return json(res, 500, { error: e.message }); }
-      const n = Object.keys(fixes.moved || {}).length + Object.keys(fixes.hidden || {}).length + (fixes.added || []).length;
+      const n = Object.keys(fixes.moved || {}).length + Object.keys(fixes.hidden || {}).length;
       console.log(`js/map-fixes.js written: ${n} fix${n === 1 ? '' : 'es'}`);
       return json(res, 200, { ok: true, n });
     });
@@ -129,7 +120,7 @@ const server = http.createServer((req, res) => {
 if (require.main === module) {
   server.listen(PORT, '127.0.0.1', () => {
     console.log(`Admin: open http://localhost:${PORT}/#view=map&admin=1`);
-    console.log('Move, hide or add marks and press Save: it writes js/map-fixes.js. Ctrl+C to stop.');
+    console.log('Move or hide marks and press Save: it writes js/map-fixes.js. Ctrl+C to stop.');
   });
 }
 
