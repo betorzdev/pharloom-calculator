@@ -336,7 +336,7 @@ Under the map, **What the map shows**, as the Hollow Knight site has it: «Show 
 its right, then the Act (all, or only Act 1, 2 or 3's things), «Only what I can reach now» with a
 save (hides what asks for an ability or Silk Skill you don't have yet: the Faydown Cloak,
 Clawline, Silk Soar, as the completionist lists them), «Only what the game shows» with a save (see
-below), and the area names on or off. Then seven groups, each a row that folds (its caret; all open
+below), and the area names on or off. Then eight groups, each a row that folds (its caret; all open
 at first, only the first on a phone, then as you left them) whose title is the switch for the
 whole group, in ink when all of it is on, dimmer when part, muted when none. Inside, each layer's
 switch is the game's own picture of it, in grey when off. Beside each, how many: in a save, had of
@@ -349,18 +349,64 @@ are; in Free mode, the total. The Act and reach filters narrow the counts too.
   Everbloom. Each in the room where it's had: lying there, at the shop that sells it, at the
   Wishwall or with whoever gives the wish, in its boss's arena, with the person who gives it. All
   on at first.
-- **Places**: benches (off at first: there are 76), Bellway and Ventrica stations (dimmed while
+- **Places**: benches (off at first: there are 80, the game's own bench pins and the Songclave's,
+  which its map doesn't pin; the Flea Caravan's two of its own, in Greymoor and the Blasted Steps,
+  only while your caravan is there), Bellway and Ventrica stations (dimmed while
   your game hasn't opened them: a station not unlocked, a toll not paid), the five Bellshrines of
-  the Grand Gate, the shops and the locked doors (with the key each takes).
-- **Fights**: the enemy gauntlets and bosses not beaten yet, and the unique enemies (Rhinogrunds,
+  the Grand Gate and the shops, and the **Lifts** (off at first), gone once your game has called each. The shops are the
+  game's own (its ShopOwners: Pebb, Frey, Mort, the Forge Daughter, Grindle, Jubilana, the
+  Mottled Skarr, the Twelfth Architect) and those who trade outside them: the Couriers' delivery
+  wishes in Bellhart, the Moss Druid, who buys Mossberries, and Creige's drinks.
+- **Passages**, off at first: what opens a way and stays open, each read from the game's own
+  scenes with the bool your save keeps once it's open, so with a save only what's still shut
+  shows. Levers (with the pressure plates and Clawline's pull switch), gates (opened by a lever,
+  from one side, or pulled open with Clawline), the doors a key opens (with the key each takes;
+  the Slab's locks and cells among them), shortcuts (the one-way walls, planks, ladders and floors
+  that break from one side) and the two silk walls Silkspear cuts in Mosshome. The doors the
+  Needolin opens aren't there: they open each time and the save keeps nothing of them. Some
+  levers, gates and walls the save keeps by a flag of its own rather than per room (the Bellhome's
+  door among them): they're there too. **Keys**: the Simple Keys, the Slab's three and the
+  Whiteward's two, where each lies.
+- **Fights**: the enemy gauntlets and bosses not beaten yet, each fight its own mark (Lace atop the
+  Cradle, the two Moss Mothers of Weavenest Atla, the Act 3 Moss Mother and the Savage Beastfly
+  of the Far Fields too), and the unique enemies (Rhinogrunds,
   Covetous Pilgrims, Shardillards, Void Masses).
-- **People**: Shakra's spots, the Wishwalls and who asks for a wish (with a save, only while one
-  is still open there), and who gives something of the 100% (Plinney, Eva, Pinstress, Loddie,
-  Lumble, Mooshka) and Scrounge, who buys the relics.
+- **People**: Shakra's spots, and who gives something of the 100% (Plinney, Eva, Pinstress,
+  Loddie, Lumble, Mooshka) and Scrounge, who buys the relics. **Everyone else** (off at first): every
+  other person the game's scenes place, 54 of them, each in one switch only, with their own figure
+  from the game's sprites (tools/extract-people.py), named as their title card names them. With a
+  save, those you haven't met yet are dimmed, but only when the save has a flag for it: the ones it
+  says nothing about are never dimmed by guess. Who moves shows only where the save says they are
+  now (the flea troupe at its camp, Kratt strung up in Greymoor until he's back, Nuu at home, the
+  Second Sentinel resting, Pilby, the Chapel Maid, Seth at the Flea Festival); who has left or died
+  is gone. Where the save doesn't say, every spot shows and the card says so (Garmond comes and
+  goes, Sherma, Gilly, the Green Prince, Mister Mushroom…). In Free mode, everyone everywhere.
+- **Tasks**, as the game's pause menu calls its wishes and objectives: the Wishwalls and who asks
+  for a wish (with a save, only while one is still open there); where a wish is done (the
+  deliveries and the Steel Sentinel's spots where the game's own map pins them, of the Sentinel's
+  six only the three your game chose, and only in Steel Soul; the Herald's seven; the rescues and
+  fights, in the room where the game ends the wish); what a wish asks for (the 22 things lying in a
+  room or given there: the Pollip Hearts, the Flintgems, the Grand Hunts' trophies, the
+  Gourmand's delicacies, the three souls, the Twisted Bud, the Steel Spines); and the main
+  objectives, where the game's map pins them (the Bellshrines, Old Hearts and Melodies are already
+  layers of their own). Each is done as your save says: the wish granted, the objective complete
+  or a later step of it (Pale Monarch stays incomplete when Act 3 opens through the Soul Snare), a
+  thing picked up, held or its wish granted. Off at first.
 - **Collectibles**, off at first: the relics, one switch for the six (Bone Scrolls, Weaver
   Effigies, Choral Commandments, Rune Harps, Psalm Cylinders, the Arcane Egg) whose round caret
-  opens them one by one, Mossberries, Silkeaters, Mementos and the Bellhome's furnishings.
-- **Secrets**, off at first: the rosary and shell shard caches and the breakable walls, so many
+  opens them one by one, Mossberries, Silkeaters, Mementos and the Bellhome's furnishings. Then
+  the **Maps**: each of the 28 area maps where it's had, the fourteen Shakra sells at her spot in
+  that area (with her price) and the fourteen found lying in a room (the Weavenest Atla Map, the
+  Slab's…), each gone once your save has it. And the **Rosaries** and **Shell Shards** lying in a
+  room (strings, necklaces, Shard Bundles, Great Shards, Pristine Cores), each by its own pickup.
+  The **Key items** lying in a room (the Cogheart Pieces, the broken Silkshot, Farsight, the
+  Materium), the **Silk cocoons**, the small ones beside the Silkeaters, and **What Eva gives**
+  besides Sylphsong: the Hunter Crest's two evolutions and the Vesticrest's yellow and blue slots,
+  each with the slots it needs across your Crests (the Hunter's aside) and, with a save, how many
+  you have open.
+- **Secrets**, off at first: the rosary and shell shard caches, the breakable walls (the
+  one-way ones are among the shortcuts), the loose rosaries and the **Hidden corners** (what
+  covers part of a room until you walk in, one mark per room, gone once all of it is uncovered), so many
   that they're drawn one by one only close up; from afar, a count per room.
 - **Your game**, with a save: your cocoon, where you last fell (on at first), and the Journal's
   entries still missing, in the room where each is found.
@@ -370,9 +416,10 @@ draws them, over a pale plate so a dark portrait reads, about the same size at a
 bigger close up. What has no picture of its own takes one of the game's: Shakra's Journal portrait, a key of the
 inventory for a locked door, the pause menu's Wishes tab for a Wishwall, a wish's emblem for who
 asks for one, the herald's emblem for who gives a thing of the 100%, the game's Bellhome bench pin
-for its furnishings (tools/extract-map-icons.py takes them from the game's files). Only the
-breakable walls keep a drawn sign, bricks: the game's walls are tall dark rock that doesn't read
-that small. It sits where the game
+for its furnishings, the Citadel's brass lever for the levers and a Docks plate for the pressure
+plates (tools/extract-map-icons.py takes them from the game's files). The breakable walls keep a
+drawn sign, bricks: the game's walls are tall dark rock that doesn't read that small; so do the
+gates (bars), the shortcuts (an arrow through a wall) and the silk walls (threads). It sits where the game
 has the thing in its room: the pickup lying there, the NPC, the shrine, the cache (the object's
 place in its scene, put on the room's drawing as the game places Hornet on its map; checked
 against the benches, which fall by the game's own bench pins). What has no place of its own (a
@@ -383,7 +430,8 @@ With a save the map shows only what you're missing; in Free mode, everything, as
 things marked in the Inventory, what those marks say is missing). Tap any mark for its card: what
 it is, where, how it's had, and what it says of your game. A
 shop's says what of the 100% it still has for you, Shakra's which maps you lack, a Wishwall's or a
-wish giver's the wishes still open, a boss's whether it's beaten, with «Fight it in Combat» and
+wish giver's the wishes still open, a wish's place or thing which wish it's for, whether it's done
+and a button to its Wishwall or to who asks for it, a boss's whether it's beaten, with «Fight it in Combat» and
 «See in the Journal»; a gauntlet's its waves and reward; a Journal entry's its kills. In Free mode
 a piece's card marks it had. Tap an area's name for its card: the rooms of it you've visited,
 and what's left there of the 100%, the Journal and the gauntlets.

@@ -361,6 +361,1286 @@
    14.84
   ]
  },
+ "doors": {
+  "gate": [
+   [
+    "Bone_10",
+    "Song_Gate_small",
+    95.72,
+    26.63
+   ],
+   [
+    "Bone_East_05",
+    "Song_Gate_small",
+    3.3,
+    8.88
+   ],
+   [
+    "Bone_East_10_Church",
+    "Song_Gate_small (1)",
+    129.9,
+    11.89
+   ],
+   [
+    "Bone_East_12",
+    "Song_Gate_small",
+    77.28,
+    8.91
+   ],
+   [
+    "Bone_East_15",
+    "Song_Gate_small (3)",
+    44.82,
+    54.6
+   ],
+   [
+    "Clover_04b",
+    "Clover Gate",
+    1.47,
+    19.85
+   ],
+   [
+    "Clover_04b",
+    "Clover Gate (1)",
+    0.93,
+    19.77
+   ],
+   [
+    "Clover_05c",
+    "Clover Gate (1)",
+    23.77,
+    71.81
+   ],
+   [
+    "Cog_Dancers",
+    "slide_gate_ring",
+    16.64,
+    36.21
+   ],
+   [
+    "Coral_28",
+    "Coral_gate_large",
+    125.46,
+    16.11
+   ],
+   [
+    "Coral_28",
+    "Coral_gate_large (1)",
+    124.3,
+    16.83
+   ],
+   [
+    "Dock_03",
+    "Song_Gate_small",
+    72.34,
+    107.81
+   ],
+   [
+    "Dock_08",
+    "Song_Gate_small",
+    57.94,
+    20.85
+   ],
+   [
+    "Hang_06",
+    "Bot Blocker",
+    28.91,
+    0.26
+   ],
+   [
+    "Hang_08",
+    "slide_gate_ring",
+    20.88,
+    135.56
+   ],
+   [
+    "Hang_08",
+    "slide_gate_ring (2)",
+    11.26,
+    115.55
+   ],
+   [
+    "Hang_08",
+    "slide_gate_ring (3)",
+    25.98,
+    18.19
+   ],
+   [
+    "Library_07",
+    "slide_gate_ring",
+    41.85,
+    131.71
+   ],
+   [
+    "Library_11",
+    "Understore Big Plate Gate",
+    1.75,
+    91.34
+   ],
+   [
+    "Library_13",
+    "Song_Gate_small",
+    25.45,
+    15.57
+   ],
+   [
+    "Room_Diving_Bell_Abyss",
+    "diving_bell_door_breakable",
+    22.32,
+    8.14
+   ],
+   [
+    "Room_Forge",
+    "Song_Gate_small",
+    48.45,
+    33.52
+   ],
+   [
+    "Slab_10c",
+    "slab_break_weaver_gate_ring",
+    16.3,
+    3.77
+   ],
+   [
+    "Slab_10c",
+    "slab_break_weaver_gate_ring (1)",
+    37.64,
+    12.72
+   ],
+   [
+    "Slab_10c",
+    "slab_break_weaver_gate_ring (2)",
+    6.65,
+    19.35
+   ],
+   [
+    "Slab_10c",
+    "slab_break_weaver_gate_ring (3)",
+    31.53,
+    23.72
+   ],
+   [
+    "Song_04",
+    "Bot Blocker",
+    27.89,
+    -0.84
+   ],
+   [
+    "Song_10",
+    "Song_Gate_small",
+    60.62,
+    54.37
+   ],
+   [
+    "Song_10",
+    "Song_Gate_small (1)",
+    55.55,
+    54.37
+   ],
+   [
+    "Song_20b",
+    "Dial Door Bridge",
+    25.69,
+    190.27
+   ],
+   [
+    "Tube_Hub",
+    "cradle_pipe_trapdoor",
+    29.44,
+    95.98
+   ],
+   [
+    "Under_01b",
+    "Understore Big Plate Gate",
+    43.55,
+    5.89
+   ],
+   [
+    "Under_04",
+    "Understore Big Plate Gate",
+    112.27,
+    13.0
+   ],
+   [
+    "Under_07c",
+    "Bot Blocker",
+    56.96,
+    105.55
+   ],
+   [
+    "Under_10",
+    "Song_Gate_small",
+    13.92,
+    6.77
+   ],
+   [
+    "Under_13",
+    "Innerworks Trap Bridge Large",
+    25.52,
+    82.77
+   ],
+   [
+    "Ward_02",
+    "Pipe_Vent_Hatch",
+    63.71,
+    13.14
+   ]
+  ],
+  "lever": [
+   [
+    "Ant_05b",
+    "ant_lever_persistent",
+    110.53,
+    3.41
+   ],
+   [
+    "Ant_17",
+    "ant_lever_persistent",
+    10.99,
+    8.68
+   ],
+   [
+    "Ant_19",
+    "ant_lever_persistent",
+    89.29,
+    35.48
+   ],
+   [
+    "Belltown_Shrine",
+    "Song_lever_side",
+    22.79,
+    20.98
+   ],
+   [
+    "Bellway_City",
+    "Understore Lever",
+    92.91,
+    29.35
+   ],
+   [
+    "Bellway_Peak",
+    "Song_lever_side",
+    10.96,
+    21.97
+   ],
+   [
+    "Bone_01",
+    "Bone Lever",
+    87.58,
+    12.57
+   ],
+   [
+    "Bone_03",
+    "Song_lever_side",
+    45.56,
+    91.01
+   ],
+   [
+    "Bone_04",
+    "Bone Lever",
+    20.42,
+    25.66
+   ],
+   [
+    "Bone_04",
+    "Song_lever_side",
+    118.19,
+    24.25
+   ],
+   [
+    "Bone_04",
+    "Song_lever_side right",
+    157.73,
+    4.98
+   ],
+   [
+    "Bone_08",
+    "lever",
+    11.07,
+    92.4
+   ],
+   [
+    "Bone_10",
+    "Song_lever_side",
+    99.04,
+    30.11
+   ],
+   [
+    "Bone_East_01",
+    "Song_lever_side",
+    42.02,
+    24.81
+   ],
+   [
+    "Bone_East_01",
+    "Song_lever_side (1)",
+    5.41,
+    55.8
+   ],
+   [
+    "Bone_East_05",
+    "Song_lever_side",
+    6.54,
+    13.16
+   ],
+   [
+    "Bone_East_05",
+    "Song_lever_side (1)",
+    7.61,
+    22.8
+   ],
+   [
+    "Bone_East_11",
+    "Song_lever_side",
+    12.42,
+    2.95
+   ],
+   [
+    "Bone_East_11",
+    "Song_lever_side (1)",
+    18.84,
+    81.01
+   ],
+   [
+    "Bone_East_12",
+    "Song_lever_side",
+    72.91,
+    17.07
+   ],
+   [
+    "Bone_East_13",
+    "Song_lever_side",
+    119.96,
+    21.62
+   ],
+   [
+    "Bone_East_15",
+    "Song_lever_side",
+    48.67,
+    59.52
+   ],
+   [
+    "Bone_East_17",
+    "ant_lever_persistent",
+    53.43,
+    97.38
+   ],
+   [
+    "Bone_East_18",
+    "ant_lever_persistent (1)",
+    130.94,
+    37.55
+   ],
+   [
+    "Bone_East_24",
+    "ant_lever_persistent",
+    62.39,
+    51.4
+   ],
+   [
+    "Bone_East_24",
+    "ant_lever_persistent (1)",
+    256.57,
+    38.22
+   ],
+   [
+    "Bonetown",
+    "Bone Lever",
+    209.85,
+    66.56
+   ],
+   [
+    "Coral_02",
+    "Song_lever_side",
+    143.04,
+    34.15
+   ],
+   [
+    "Coral_03",
+    "Song_lever_side",
+    20.82,
+    123.96
+   ],
+   [
+    "Crawl_02",
+    "Song_lever_side",
+    10.62,
+    36.23
+   ],
+   [
+    "Dock_02b",
+    "Song_lever_side",
+    47.36,
+    56.15
+   ],
+   [
+    "Dock_03",
+    "Song_lever_side",
+    69.09,
+    109.71
+   ],
+   [
+    "Dock_06_Church",
+    "Song_lever_side",
+    37.32,
+    13.34
+   ],
+   [
+    "Dock_08",
+    "Song_lever_side",
+    55.05,
+    23.7
+   ],
+   [
+    "Dock_11",
+    "Song_lever_side",
+    53.0,
+    66.4
+   ],
+   [
+    "Dock_11",
+    "Song_lever_side (1)",
+    79.04,
+    66.66
+   ],
+   [
+    "Dock_11",
+    "Song_lever_side (2)",
+    139.06,
+    67.52
+   ],
+   [
+    "Dust_02",
+    "Dust_02Gate",
+    50.92,
+    106.69
+   ],
+   [
+    "Dust_02",
+    "greymoor_lever_simple_EDITED",
+    10.8,
+    87.88
+   ],
+   [
+    "Dust_05",
+    "greymoor_lever_simple",
+    341.48,
+    23.65
+   ],
+   [
+    "Dust_Chef",
+    "greymoor_lever_simple",
+    5.96,
+    35.01
+   ],
+   [
+    "Greymoor_01",
+    "Song_lever_side",
+    117.24,
+    17.05
+   ],
+   [
+    "Greymoor_02",
+    "Greymoor Stand Lever - Bridge",
+    78.55,
+    63.25
+   ],
+   [
+    "Greymoor_02",
+    "Greymoor Stand Lever - Crane",
+    69.72,
+    38.17
+   ],
+   [
+    "Greymoor_02",
+    "greymoor_lever_simple",
+    4.56,
+    125.57
+   ],
+   [
+    "Greymoor_07",
+    "greymoor_lever_simple",
+    64.62,
+    26.54
+   ],
+   [
+    "Greymoor_15",
+    "greymoor_lever_simple",
+    71.06,
+    67.32
+   ],
+   [
+    "Greymoor_15b",
+    "Greymoor Stand Lever",
+    150.36,
+    15.91
+   ],
+   [
+    "Greymoor_15b",
+    "Greymoor Stand Lever (1)",
+    110.04,
+    86.31
+   ],
+   [
+    "Hang_06_bank",
+    "Song_lever_side",
+    73.39,
+    31.09
+   ],
+   [
+    "Library_03",
+    "Song_lever_side",
+    18.37,
+    40.2
+   ],
+   [
+    "Library_03",
+    "innerworks_lever",
+    29.9,
+    41.97
+   ],
+   [
+    "Library_04",
+    "Song_lever_side",
+    50.0,
+    160.27
+   ],
+   [
+    "Library_04",
+    "Song_lever_side (1)",
+    10.15,
+    88.13
+   ],
+   [
+    "Library_09",
+    "Song_lever_side",
+    16.24,
+    17.42
+   ],
+   [
+    "Library_13",
+    "Song_lever_side",
+    104.04,
+    22.31
+   ],
+   [
+    "Library_13",
+    "Song_lever_side (1)",
+    27.55,
+    18.01
+   ],
+   [
+    "Library_15",
+    "Song_lever_side",
+    8.45,
+    13.1
+   ],
+   [
+    "Mosstown_01",
+    "Trapdoor Lever",
+    24.37,
+    13.68
+   ],
+   [
+    "Mosstown_02",
+    "Bone Lever 2",
+    25.06,
+    33.98
+   ],
+   [
+    "Peak_05",
+    "Song_lever_side",
+    222.37,
+    164.51
+   ],
+   [
+    "Room_CrowCourt",
+    "Bone Lever",
+    29.3,
+    62.27
+   ],
+   [
+    "Room_CrowCourt",
+    "greymoor_lever_simple",
+    28.48,
+    65.84
+   ],
+   [
+    "Room_Forge",
+    "Song_lever_side",
+    51.4,
+    32.04
+   ],
+   [
+    "Slab_02",
+    "slab_jail_lever",
+    12.81,
+    6.14
+   ],
+   [
+    "Slab_03",
+    "slab_jail_lever",
+    23.25,
+    103.15
+   ],
+   [
+    "Slab_03",
+    "slab_jail_lever (1)",
+    6.02,
+    122.15
+   ],
+   [
+    "Slab_22",
+    "slab_jail_lever",
+    33.59,
+    8.93
+   ],
+   [
+    "Song_01",
+    "Song_lever_side",
+    100.18,
+    79.08
+   ],
+   [
+    "Song_01b",
+    "Song_lever_side (1)",
+    57.24,
+    4.06
+   ],
+   [
+    "Song_09b",
+    "Song_lever_side",
+    91.59,
+    131.86
+   ],
+   [
+    "Song_09b",
+    "Song_lever_side (1)",
+    11.03,
+    131.99
+   ],
+   [
+    "Song_10",
+    "Song_lever_side",
+    63.72,
+    57.99
+   ],
+   [
+    "Song_11",
+    "Song_lever_side",
+    25.34,
+    62.16
+   ],
+   [
+    "Song_19_entrance",
+    "Song_lever_side",
+    -27.04,
+    152.04
+   ],
+   [
+    "Song_20b",
+    "Song_lever_side",
+    13.97,
+    233.98
+   ],
+   [
+    "Song_27",
+    "Song_lever_side",
+    4.15,
+    10.37
+   ],
+   [
+    "Tube_Hub",
+    "Understore Lever",
+    36.32,
+    43.8
+   ],
+   [
+    "Under_01",
+    "Pipe_Cog_Lever",
+    33.02,
+    76.87
+   ],
+   [
+    "Under_02",
+    "Song_lever_side",
+    12.17,
+    94.08
+   ],
+   [
+    "Under_02",
+    "Song_lever_side (1)",
+    34.11,
+    24.17
+   ],
+   [
+    "Under_02",
+    "Song_lever_side (3)",
+    7.51,
+    162.1
+   ],
+   [
+    "Under_05",
+    "Song_lever_side",
+    1.96,
+    40.25
+   ],
+   [
+    "Under_10",
+    "Song_lever_side",
+    15.93,
+    11.62
+   ],
+   [
+    "Under_11",
+    "Pipe_Cog_Lever",
+    48.69,
+    3.9
+   ],
+   [
+    "Under_23",
+    "Song_lever_side",
+    149.54,
+    22.13
+   ],
+   [
+    "Ward_01",
+    "Understore Lever L Main",
+    25.98,
+    51.96
+   ]
+  ],
+  "lock": [
+   [
+    "Bone_12",
+    "jail_door (1)",
+    19.36,
+    28.87
+   ],
+   [
+    "Bone_12",
+    "jail_door (2)",
+    38.71,
+    21.99
+   ],
+   [
+    "Crawl_02",
+    "aspid_sealed_gate_stone",
+    4.31,
+    28.34
+   ],
+   [
+    "Dock_12",
+    "Diving Bell Door",
+    30.31,
+    29.01
+   ],
+   [
+    "Dust_02",
+    "Prince Cell Door",
+    19.03,
+    25.55
+   ],
+   [
+    "Hang_06",
+    "bank_door",
+    16.29,
+    19.12
+   ],
+   [
+    "Room_Forge",
+    "dock_sealed_gate",
+    135.17,
+    12.78
+   ],
+   [
+    "Slab_03",
+    "Slab Lock",
+    20.7,
+    152.2
+   ],
+   [
+    "Slab_03",
+    "Slab Lock (1)",
+    27.03,
+    245.23
+   ],
+   [
+    "Slab_03",
+    "Slab Lock (2)",
+    1.94,
+    81.23
+   ],
+   [
+    "Slab_03",
+    "Slab Lock (3)",
+    35.53,
+    92.05
+   ],
+   [
+    "Slab_03",
+    "Slab Lock (4)",
+    27.24,
+    49.32
+   ],
+   [
+    "Slab_03",
+    "door_slabCaged",
+    14.42,
+    272.13
+   ],
+   [
+    "Slab_05",
+    "Slab Lock (2)",
+    97.01,
+    10.27
+   ],
+   [
+    "Slab_14",
+    "Slab Lock L",
+    81.4,
+    4.39
+   ],
+   [
+    "Slab_14",
+    "Slab Lock R",
+    84.45,
+    4.39
+   ],
+   [
+    "Slab_15",
+    "Slab Lock (1)",
+    82.68,
+    4.39
+   ],
+   [
+    "Slab_15",
+    "Slab Lock (2)",
+    80.54,
+    4.39
+   ],
+   [
+    "Slab_16",
+    "Jail Gate Door - Persistent",
+    25.56,
+    29.41
+   ],
+   [
+    "Slab_16",
+    "Slab Lock (1)",
+    81.12,
+    20.39
+   ],
+   [
+    "Slab_16",
+    "Slab Lock (2)",
+    84.41,
+    20.39
+   ],
+   [
+    "Slab_21",
+    "Slab Lock",
+    -31.01,
+    105.22
+   ],
+   [
+    "Slab_23",
+    "Slab Lock L",
+    46.3,
+    10.31
+   ],
+   [
+    "Under_17",
+    "Architect Shrine Door",
+    26.29,
+    36.08
+   ],
+   [
+    "Ward_02",
+    "lock_machine",
+    41.52,
+    60.59
+   ]
+  ],
+  "plate": [
+   [
+    "Bone_11b",
+    "Plate",
+    10.02,
+    2.7
+   ],
+   [
+    "Clover_04b",
+    "Hornet_pressure_plate_small_persistent",
+    4.53,
+    17.14
+   ],
+   [
+    "Clover_05c",
+    "Hornet_pressure_plate_small_persistent",
+    25.82,
+    69.17
+   ],
+   [
+    "Clover_18",
+    "Plaque Pressure Plate",
+    114.15,
+    7.21
+   ],
+   [
+    "Clover_18",
+    "Shrine Pressure Plate BR",
+    185.71,
+    7.21
+   ],
+   [
+    "Clover_18",
+    "Shrine Pressure Plate L",
+    63.26,
+    65.21
+   ],
+   [
+    "Clover_18",
+    "Shrine Pressure Plate TR",
+    145.61,
+    45.21
+   ],
+   [
+    "Cog_Bench",
+    "Hornet_pressure_plate_small_persistent",
+    26.28,
+    26.94
+   ],
+   [
+    "Coral_10",
+    "Coral10rightsidegate",
+    110.66,
+    7.23
+   ],
+   [
+    "Dock_03",
+    "Harpoon Ring Pull Switch",
+    104.27,
+    85.02
+   ],
+   [
+    "Dock_10",
+    "dock_pressure_plate_lock",
+    5.01,
+    29.87
+   ],
+   [
+    "Halfway_01",
+    "Hornet_pressure_plate_small_persistent",
+    37.98,
+    3.14
+   ],
+   [
+    "Library_07",
+    "Plate",
+    34.45,
+    43.33
+   ],
+   [
+    "Library_10",
+    "Hornet_pressure_plate_small_persistent",
+    40.52,
+    2.01
+   ],
+   [
+    "Shellwood_02",
+    "Hornet_pressure_plate",
+    70.25,
+    8.57
+   ],
+   [
+    "Song_09",
+    "Hornet_pressure_plate_small_persistent",
+    37.92,
+    41.11
+   ]
+  ],
+  "shortcut": [
+   [
+    "Ant_05b",
+    "One Way Wall",
+    103.68,
+    3.36
+   ],
+   [
+    "Aqueduct_04",
+    "One Way Wall",
+    160.01,
+    26.16
+   ],
+   [
+    "Aqueduct_04",
+    "drop_planks",
+    174.3,
+    -18.5
+   ],
+   [
+    "Arborium_08",
+    "One Way Wall",
+    2.67,
+    6.77
+   ],
+   [
+    "Belltown_basement_03",
+    "One Way Wall (1)",
+    111.52,
+    88.48
+   ],
+   [
+    "Belltown_basement_03",
+    "One Way Wall (3)",
+    85.41,
+    68.18
+   ],
+   [
+    "Belltown_basement_03",
+    "One Way Wall (4)",
+    109.21,
+    38.49
+   ],
+   [
+    "Belltown_basement_03",
+    "One Way Wall (5)",
+    66.62,
+    25.42
+   ],
+   [
+    "Bellway_Peak_02",
+    "One Way Wall Crystal (2)",
+    75.2,
+    15.69
+   ],
+   [
+    "Bonegrave",
+    "One Way Wall",
+    264.67,
+    74.06
+   ],
+   [
+    "Chapel_Wanderer",
+    "One Way Wall",
+    20.35,
+    100.36
+   ],
+   [
+    "Cog_10_Destroyed",
+    "Pipe_Vent_Hatch Broken",
+    14.62,
+    92.28
+   ],
+   [
+    "Dock_02",
+    "One Way Wall",
+    18.24,
+    64.31
+   ],
+   [
+    "Dock_03",
+    "One Way Wall",
+    35.45,
+    84.12
+   ],
+   [
+    "Dust_06",
+    "One Way Wall",
+    8.79,
+    152.57
+   ],
+   [
+    "Dust_10",
+    "One Way Wall",
+    69.74,
+    61.25
+   ],
+   [
+    "Dust_11",
+    "One Way Wall (1)",
+    83.42,
+    4.38
+   ],
+   [
+    "Dust_11",
+    "One Way Wall (2)",
+    59.12,
+    16.47
+   ],
+   [
+    "Greymoor_07",
+    "One Way Wall",
+    16.44,
+    83.27
+   ],
+   [
+    "Greymoor_16",
+    "greystore_floor_shortcut (1)",
+    97.72,
+    40.09
+   ],
+   [
+    "Greymoor_20c",
+    "greystore_floor_shortcut",
+    19.78,
+    67.06
+   ],
+   [
+    "Greymoor_22",
+    "One Way Wall (2)",
+    69.8,
+    25.59
+   ],
+   [
+    "Library_04",
+    "Top Shortcut",
+    26.92,
+    216.23
+   ],
+   [
+    "Library_04",
+    "attic_ladder",
+    59.21,
+    195.46
+   ],
+   [
+    "Library_05",
+    "attic_ladder",
+    23.92,
+    11.16
+   ],
+   [
+    "Library_12",
+    "One Way Wall",
+    27.92,
+    96.08
+   ],
+   [
+    "Peak_01",
+    "One Way Wall Crystal",
+    9.5,
+    263.03
+   ],
+   [
+    "Peak_04c",
+    "One Way Wall Crystal",
+    101.99,
+    5.46
+   ],
+   [
+    "Room_CrowCourt_02",
+    "One Way Wall",
+    25.56,
+    76.26
+   ],
+   [
+    "Shadow_01",
+    "drop_planks",
+    54.37,
+    135.52
+   ],
+   [
+    "Shadow_08",
+    "BreakableWallSwampBenchShortcut",
+    10.68,
+    7.89
+   ],
+   [
+    "Shadow_20",
+    "drop_planks_horizontal",
+    161.34,
+    10.48
+   ],
+   [
+    "Slab_03",
+    "One Way Wall",
+    5.93,
+    26.5
+   ],
+   [
+    "Slab_03",
+    "One Way Wall (1)",
+    19.43,
+    201.1
+   ],
+   [
+    "Slab_18",
+    "One Way Wall",
+    2.46,
+    9.85
+   ],
+   [
+    "Slab_23",
+    "One Way Wall",
+    7.6,
+    7.15
+   ],
+   [
+    "Slab_Cell_Quiet",
+    "One Way Wall",
+    45.31,
+    32.22
+   ],
+   [
+    "Song_01",
+    "Breakable Floor_basic Song_01",
+    24.78,
+    33.99
+   ],
+   [
+    "Song_Enclave_Tube",
+    "One Way Wall",
+    22.08,
+    7.11
+   ],
+   [
+    "Tube_Hub",
+    "Breakable Floor_basic",
+    90.45,
+    37.07
+   ],
+   [
+    "Tut_02",
+    "One Way VineWall",
+    16.1,
+    24.9
+   ],
+   [
+    "Under_05",
+    "cog_05_shortcut",
+    14.32,
+    47.69
+   ],
+   [
+    "Under_08",
+    "One Way Wall",
+    110.98,
+    36.71
+   ],
+   [
+    "Ward_07",
+    "Junk Hatch",
+    13.03,
+    14.31
+   ]
+  ],
+  "silkwall": [
+   [
+    "Mosstown_02",
+    "Thick Silk Vines",
+    135.13,
+    10.23
+   ],
+   [
+    "Mosstown_02",
+    "Thick Silk Vines (1)",
+    43.82,
+    45.46
+   ]
+  ]
+ },
  "fields": {
   "HasBoundCrestUpgrader": [
    [
@@ -938,6 +2218,952 @@
     "RestBench",
     57.77,
     14.84
+   ]
+  ],
+  "SeenMapperBellhart": [
+   [
+    "ant_04_mid",
+    "Mapper NPC",
+    198.81,
+    15.24
+   ],
+   [
+    "ant_20",
+    "Mapper Sit NPC",
+    75.35,
+    9.06
+   ],
+   [
+    "belltown",
+    "Mapper NPC",
+    101.94,
+    23.62
+   ],
+   [
+    "belltown",
+    "Mapper Sit NPC",
+    102.26,
+    22.85
+   ],
+   [
+    "bone_04",
+    "Mapper NPC",
+    56.81,
+    14.64
+   ],
+   [
+    "bone_east_01",
+    "Mapper NPC",
+    16.99,
+    8.7
+   ],
+   [
+    "bone_east_21",
+    "Mapper Sit NPC",
+    18.78,
+    5.81
+   ],
+   [
+    "bonetown",
+    "Mapper NPC",
+    298.03,
+    25.6
+   ],
+   [
+    "bonetown",
+    "Mapper Sit NPC",
+    295.73,
+    24.84
+   ],
+   [
+    "coral_12",
+    "Mapper NPC (1)",
+    67.79,
+    8.82
+   ],
+   [
+    "coral_40",
+    "Mapper Sit NPC",
+    12.82,
+    9.9
+   ],
+   [
+    "crawl_01",
+    "Mapper NPC",
+    30.91,
+    58.43
+   ],
+   [
+    "dust_10",
+    "Mapper Sit NPC",
+    112.31,
+    44.84
+   ],
+   [
+    "greymoor_02",
+    "Mapper Sit NPC",
+    67.98,
+    5.86
+   ],
+   [
+    "peak_02",
+    "Mapper NPC",
+    61.16,
+    9.64
+   ],
+   [
+    "shadow_23",
+    "Mapper Sit NPC",
+    35.57,
+    7.87
+   ],
+   [
+    "shellwood_16",
+    "Mapper NPC",
+    44.36,
+    11.39
+   ]
+  ],
+  "SeenMapperBoneForest": [
+   [
+    "ant_04_mid",
+    "Mapper NPC",
+    198.81,
+    15.24
+   ],
+   [
+    "belltown",
+    "Mapper NPC",
+    101.94,
+    23.62
+   ],
+   [
+    "bone_04",
+    "Mapper NPC",
+    56.81,
+    14.64
+   ],
+   [
+    "bone_east_01",
+    "Mapper NPC",
+    16.99,
+    8.7
+   ],
+   [
+    "bonetown",
+    "Mapper NPC",
+    298.03,
+    25.6
+   ],
+   [
+    "coral_12",
+    "Mapper NPC (1)",
+    67.79,
+    8.82
+   ],
+   [
+    "crawl_01",
+    "Mapper NPC",
+    30.91,
+    58.43
+   ],
+   [
+    "peak_02",
+    "Mapper NPC",
+    61.16,
+    9.64
+   ],
+   [
+    "shellwood_16",
+    "Mapper NPC",
+    44.36,
+    11.39
+   ]
+  ],
+  "SeenMapperBonetown": [
+   [
+    "ant_04_mid",
+    "Mapper NPC",
+    198.81,
+    15.24
+   ],
+   [
+    "ant_20",
+    "Mapper Sit NPC",
+    75.35,
+    9.06
+   ],
+   [
+    "belltown",
+    "Mapper NPC",
+    101.94,
+    23.62
+   ],
+   [
+    "belltown",
+    "Mapper Sit NPC",
+    102.26,
+    22.85
+   ],
+   [
+    "bone_04",
+    "Mapper NPC",
+    56.81,
+    14.64
+   ],
+   [
+    "bone_east_01",
+    "Mapper NPC",
+    16.99,
+    8.7
+   ],
+   [
+    "bone_east_21",
+    "Mapper Sit NPC",
+    18.78,
+    5.81
+   ],
+   [
+    "bonetown",
+    "Mapper NPC",
+    298.03,
+    25.6
+   ],
+   [
+    "bonetown",
+    "Mapper Sit NPC",
+    295.73,
+    24.84
+   ],
+   [
+    "coral_12",
+    "Mapper NPC (1)",
+    67.79,
+    8.82
+   ],
+   [
+    "coral_40",
+    "Mapper Sit NPC",
+    12.82,
+    9.9
+   ],
+   [
+    "crawl_01",
+    "Mapper NPC",
+    30.91,
+    58.43
+   ],
+   [
+    "dust_10",
+    "Mapper Sit NPC",
+    112.31,
+    44.84
+   ],
+   [
+    "greymoor_02",
+    "Mapper Sit NPC",
+    67.98,
+    5.86
+   ],
+   [
+    "peak_02",
+    "Mapper NPC",
+    61.16,
+    9.64
+   ],
+   [
+    "shadow_23",
+    "Mapper Sit NPC",
+    35.57,
+    7.87
+   ],
+   [
+    "shellwood_16",
+    "Mapper NPC",
+    44.36,
+    11.39
+   ]
+  ],
+  "SeenMapperCoralCaverns": [
+   [
+    "ant_20",
+    "Mapper Sit NPC",
+    75.35,
+    9.06
+   ],
+   [
+    "belltown",
+    "Mapper Sit NPC",
+    102.26,
+    22.85
+   ],
+   [
+    "bone_east_21",
+    "Mapper Sit NPC",
+    18.78,
+    5.81
+   ],
+   [
+    "bonetown",
+    "Mapper Sit NPC",
+    295.73,
+    24.84
+   ],
+   [
+    "coral_40",
+    "Mapper Sit NPC",
+    12.82,
+    9.9
+   ],
+   [
+    "dust_10",
+    "Mapper Sit NPC",
+    112.31,
+    44.84
+   ],
+   [
+    "greymoor_02",
+    "Mapper Sit NPC",
+    67.98,
+    5.86
+   ],
+   [
+    "shadow_23",
+    "Mapper Sit NPC",
+    35.57,
+    7.87
+   ]
+  ],
+  "SeenMapperCrawl": [
+   [
+    "ant_04_mid",
+    "Mapper NPC",
+    198.81,
+    15.24
+   ],
+   [
+    "belltown",
+    "Mapper NPC",
+    101.94,
+    23.62
+   ],
+   [
+    "bone_04",
+    "Mapper NPC",
+    56.81,
+    14.64
+   ],
+   [
+    "bone_east_01",
+    "Mapper NPC",
+    16.99,
+    8.7
+   ],
+   [
+    "bonetown",
+    "Mapper NPC",
+    298.03,
+    25.6
+   ],
+   [
+    "coral_12",
+    "Mapper NPC (1)",
+    67.79,
+    8.82
+   ],
+   [
+    "crawl_01",
+    "Mapper NPC",
+    30.91,
+    58.43
+   ],
+   [
+    "peak_02",
+    "Mapper NPC",
+    61.16,
+    9.64
+   ],
+   [
+    "shellwood_16",
+    "Mapper NPC",
+    44.36,
+    11.39
+   ]
+  ],
+  "SeenMapperDocks": [
+   [
+    "ant_04_mid",
+    "Mapper NPC",
+    198.81,
+    15.24
+   ],
+   [
+    "belltown",
+    "Mapper NPC",
+    101.94,
+    23.62
+   ],
+   [
+    "bone_04",
+    "Mapper NPC",
+    56.81,
+    14.64
+   ],
+   [
+    "bone_east_01",
+    "Mapper NPC",
+    16.99,
+    8.7
+   ],
+   [
+    "bonetown",
+    "Mapper NPC",
+    298.03,
+    25.6
+   ],
+   [
+    "coral_12",
+    "Mapper NPC (1)",
+    67.79,
+    8.82
+   ],
+   [
+    "crawl_01",
+    "Mapper NPC",
+    30.91,
+    58.43
+   ],
+   [
+    "peak_02",
+    "Mapper NPC",
+    61.16,
+    9.64
+   ],
+   [
+    "shellwood_16",
+    "Mapper NPC",
+    44.36,
+    11.39
+   ]
+  ],
+  "SeenMapperDustpens": [
+   [
+    "ant_20",
+    "Mapper Sit NPC",
+    75.35,
+    9.06
+   ],
+   [
+    "belltown",
+    "Mapper Sit NPC",
+    102.26,
+    22.85
+   ],
+   [
+    "bone_east_21",
+    "Mapper Sit NPC",
+    18.78,
+    5.81
+   ],
+   [
+    "bonetown",
+    "Mapper Sit NPC",
+    295.73,
+    24.84
+   ],
+   [
+    "coral_40",
+    "Mapper Sit NPC",
+    12.82,
+    9.9
+   ],
+   [
+    "dust_10",
+    "Mapper Sit NPC",
+    112.31,
+    44.84
+   ],
+   [
+    "greymoor_02",
+    "Mapper Sit NPC",
+    67.98,
+    5.86
+   ],
+   [
+    "shadow_23",
+    "Mapper Sit NPC",
+    35.57,
+    7.87
+   ]
+  ],
+  "SeenMapperGreymoor": [
+   [
+    "ant_20",
+    "Mapper Sit NPC",
+    75.35,
+    9.06
+   ],
+   [
+    "belltown",
+    "Mapper Sit NPC",
+    102.26,
+    22.85
+   ],
+   [
+    "bone_east_21",
+    "Mapper Sit NPC",
+    18.78,
+    5.81
+   ],
+   [
+    "bonetown",
+    "Mapper Sit NPC",
+    295.73,
+    24.84
+   ],
+   [
+    "coral_40",
+    "Mapper Sit NPC",
+    12.82,
+    9.9
+   ],
+   [
+    "dust_10",
+    "Mapper Sit NPC",
+    112.31,
+    44.84
+   ],
+   [
+    "greymoor_02",
+    "Mapper Sit NPC",
+    67.98,
+    5.86
+   ],
+   [
+    "shadow_23",
+    "Mapper Sit NPC",
+    35.57,
+    7.87
+   ]
+  ],
+  "SeenMapperHuntersNest": [
+   [
+    "ant_04_mid",
+    "Mapper NPC",
+    198.81,
+    15.24
+   ],
+   [
+    "ant_20",
+    "Mapper Sit NPC",
+    75.35,
+    9.06
+   ],
+   [
+    "belltown",
+    "Mapper NPC",
+    101.94,
+    23.62
+   ],
+   [
+    "belltown",
+    "Mapper Sit NPC",
+    102.26,
+    22.85
+   ],
+   [
+    "bone_04",
+    "Mapper NPC",
+    56.81,
+    14.64
+   ],
+   [
+    "bone_east_01",
+    "Mapper NPC",
+    16.99,
+    8.7
+   ],
+   [
+    "bone_east_21",
+    "Mapper Sit NPC",
+    18.78,
+    5.81
+   ],
+   [
+    "bonetown",
+    "Mapper NPC",
+    298.03,
+    25.6
+   ],
+   [
+    "bonetown",
+    "Mapper Sit NPC",
+    295.73,
+    24.84
+   ],
+   [
+    "coral_12",
+    "Mapper NPC (1)",
+    67.79,
+    8.82
+   ],
+   [
+    "coral_40",
+    "Mapper Sit NPC",
+    12.82,
+    9.9
+   ],
+   [
+    "crawl_01",
+    "Mapper NPC",
+    30.91,
+    58.43
+   ],
+   [
+    "dust_10",
+    "Mapper Sit NPC",
+    112.31,
+    44.84
+   ],
+   [
+    "greymoor_02",
+    "Mapper Sit NPC",
+    67.98,
+    5.86
+   ],
+   [
+    "peak_02",
+    "Mapper NPC",
+    61.16,
+    9.64
+   ],
+   [
+    "shadow_23",
+    "Mapper Sit NPC",
+    35.57,
+    7.87
+   ],
+   [
+    "shellwood_16",
+    "Mapper NPC",
+    44.36,
+    11.39
+   ]
+  ],
+  "SeenMapperJudgeSteps": [
+   [
+    "ant_04_mid",
+    "Mapper NPC",
+    198.81,
+    15.24
+   ],
+   [
+    "belltown",
+    "Mapper NPC",
+    101.94,
+    23.62
+   ],
+   [
+    "bone_04",
+    "Mapper NPC",
+    56.81,
+    14.64
+   ],
+   [
+    "bone_east_01",
+    "Mapper NPC",
+    16.99,
+    8.7
+   ],
+   [
+    "bonetown",
+    "Mapper NPC",
+    298.03,
+    25.6
+   ],
+   [
+    "coral_12",
+    "Mapper NPC (1)",
+    67.79,
+    8.82
+   ],
+   [
+    "crawl_01",
+    "Mapper NPC",
+    30.91,
+    58.43
+   ],
+   [
+    "peak_02",
+    "Mapper NPC",
+    61.16,
+    9.64
+   ],
+   [
+    "shellwood_16",
+    "Mapper NPC",
+    44.36,
+    11.39
+   ]
+  ],
+  "SeenMapperPeak": [
+   [
+    "ant_04_mid",
+    "Mapper NPC",
+    198.81,
+    15.24
+   ],
+   [
+    "belltown",
+    "Mapper NPC",
+    101.94,
+    23.62
+   ],
+   [
+    "bone_04",
+    "Mapper NPC",
+    56.81,
+    14.64
+   ],
+   [
+    "bone_east_01",
+    "Mapper NPC",
+    16.99,
+    8.7
+   ],
+   [
+    "bonetown",
+    "Mapper NPC",
+    298.03,
+    25.6
+   ],
+   [
+    "coral_12",
+    "Mapper NPC (1)",
+    67.79,
+    8.82
+   ],
+   [
+    "crawl_01",
+    "Mapper NPC",
+    30.91,
+    58.43
+   ],
+   [
+    "peak_02",
+    "Mapper NPC",
+    61.16,
+    9.64
+   ],
+   [
+    "shellwood_16",
+    "Mapper NPC",
+    44.36,
+    11.39
+   ]
+  ],
+  "SeenMapperShadow": [
+   [
+    "ant_20",
+    "Mapper Sit NPC",
+    75.35,
+    9.06
+   ],
+   [
+    "belltown",
+    "Mapper Sit NPC",
+    102.26,
+    22.85
+   ],
+   [
+    "bone_east_21",
+    "Mapper Sit NPC",
+    18.78,
+    5.81
+   ],
+   [
+    "bonetown",
+    "Mapper Sit NPC",
+    295.73,
+    24.84
+   ],
+   [
+    "coral_40",
+    "Mapper Sit NPC",
+    12.82,
+    9.9
+   ],
+   [
+    "dust_10",
+    "Mapper Sit NPC",
+    112.31,
+    44.84
+   ],
+   [
+    "greymoor_02",
+    "Mapper Sit NPC",
+    67.98,
+    5.86
+   ],
+   [
+    "shadow_23",
+    "Mapper Sit NPC",
+    35.57,
+    7.87
+   ]
+  ],
+  "SeenMapperShellwood": [
+   [
+    "ant_04_mid",
+    "Mapper NPC",
+    198.81,
+    15.24
+   ],
+   [
+    "ant_20",
+    "Mapper Sit NPC",
+    75.35,
+    9.06
+   ],
+   [
+    "belltown",
+    "Mapper NPC",
+    101.94,
+    23.62
+   ],
+   [
+    "belltown",
+    "Mapper Sit NPC",
+    102.26,
+    22.85
+   ],
+   [
+    "bone_04",
+    "Mapper NPC",
+    56.81,
+    14.64
+   ],
+   [
+    "bone_east_01",
+    "Mapper NPC",
+    16.99,
+    8.7
+   ],
+   [
+    "bone_east_21",
+    "Mapper Sit NPC",
+    18.78,
+    5.81
+   ],
+   [
+    "bonetown",
+    "Mapper NPC",
+    298.03,
+    25.6
+   ],
+   [
+    "bonetown",
+    "Mapper Sit NPC",
+    295.73,
+    24.84
+   ],
+   [
+    "coral_12",
+    "Mapper NPC (1)",
+    67.79,
+    8.82
+   ],
+   [
+    "coral_40",
+    "Mapper Sit NPC",
+    12.82,
+    9.9
+   ],
+   [
+    "crawl_01",
+    "Mapper NPC",
+    30.91,
+    58.43
+   ],
+   [
+    "dust_10",
+    "Mapper Sit NPC",
+    112.31,
+    44.84
+   ],
+   [
+    "greymoor_02",
+    "Mapper Sit NPC",
+    67.98,
+    5.86
+   ],
+   [
+    "peak_02",
+    "Mapper NPC",
+    61.16,
+    9.64
+   ],
+   [
+    "shadow_23",
+    "Mapper Sit NPC",
+    35.57,
+    7.87
+   ],
+   [
+    "shellwood_16",
+    "Mapper NPC",
+    44.36,
+    11.39
+   ]
+  ],
+  "SeenMapperWilds": [
+   [
+    "ant_20",
+    "Mapper Sit NPC",
+    75.35,
+    9.06
+   ],
+   [
+    "belltown",
+    "Mapper Sit NPC",
+    102.26,
+    22.85
+   ],
+   [
+    "bone_east_21",
+    "Mapper Sit NPC",
+    18.78,
+    5.81
+   ],
+   [
+    "bonetown",
+    "Mapper Sit NPC",
+    295.73,
+    24.84
+   ],
+   [
+    "coral_40",
+    "Mapper Sit NPC",
+    12.82,
+    9.9
+   ],
+   [
+    "dust_10",
+    "Mapper Sit NPC",
+    112.31,
+    44.84
+   ],
+   [
+    "greymoor_02",
+    "Mapper Sit NPC",
+    67.98,
+    5.86
+   ],
+   [
+    "shadow_23",
+    "Mapper Sit NPC",
+    35.57,
+    7.87
    ]
   ],
   "UnlockedFastTravelTeleport": [
@@ -1866,6 +4092,18 @@
   ]
  },
  "items": {
+  "Abyss Map": {
+   "at": [
+    [
+     "abyss_12",
+     "CollectableItemPickup",
+     "Get Map Inspect",
+     13.94,
+     26.83
+    ]
+   ],
+   "class": "PlayerDataCollectable"
+  },
   "Ancient Egg Abyss Middle": {
    "at": [
     [
@@ -1889,6 +4127,30 @@
     ]
    ],
    "class": "CollectableItemBasic"
+  },
+  "Aqueduct Map": {
+   "at": [
+    [
+     "aqueduct_07",
+     "CollectableItemPickup",
+     "Aqueduct Map Inspect",
+     28.93,
+     28.98
+    ]
+   ],
+   "class": "PlayerDataCollectable"
+  },
+  "Arborium Map": {
+   "at": [
+    [
+     "arborium_11",
+     "PlayMakerFSM",
+     "Map Machine",
+     13.35,
+     11.16
+    ]
+   ],
+   "class": "PlayerDataCollectable"
   },
   "Architect Key": {
    "at": [
@@ -2161,6 +4423,18 @@
    ],
    "class": "CollectableItemMemento"
   },
+  "Clover Map": {
+   "at": [
+    [
+     "clover_20",
+     "CollectableItemPickup",
+     "Collectable Item Pickup",
+     133.55,
+     16.47
+    ]
+   ],
+   "class": "PlayerDataCollectable"
+  },
   "Cog Heart Pieces": {
    "at": [
     [
@@ -2200,6 +4474,18 @@
     ]
    ],
    "class": "CollectableItemStack"
+  },
+  "Cog Map": {
+   "at": [
+    [
+     "cog_bench",
+     "CollectableItemPickup",
+     "Collectable Item Pickup Child",
+     26.26,
+     29.04
+    ]
+   ],
+   "class": "PlayerDataCollectable"
   },
   "Cogwork Flier": {
    "at": [
@@ -2328,6 +4614,25 @@
     ]
    ],
    "class": "DeliveryQuestItemStandalone"
+  },
+  "Cradle Map": {
+   "at": [
+    [
+     "cradle_02",
+     "PlayMakerFSM",
+     "Map Machine (1)",
+     54.08,
+     67.17
+    ],
+    [
+     "tube_hub",
+     "CollectableItemPickup",
+     "Collectable Item Pickup",
+     27.04,
+     29.4
+    ]
+   ],
+   "class": "PlayerDataCollectable"
   },
   "Craw Summons": {
    "at": [
@@ -3083,6 +5388,37 @@
    ],
    "class": "CollectableItemMemento"
   },
+  "Halls Map": {
+   "at": [
+    [
+     "bellway_city",
+     "PlayMakerFSM",
+     "Map Machine",
+     102.59,
+     10.04
+    ],
+    [
+     "song_01b",
+     "PlayMakerFSM",
+     "Map Machine (2)",
+     102.72,
+     2.86
+    ]
+   ],
+   "class": "PlayerDataCollectable"
+  },
+  "Hang Map": {
+   "at": [
+    [
+     "hang_06b",
+     "PlayMakerFSM",
+     "Map Machine",
+     51.0,
+     3.07
+    ]
+   ],
+   "class": "PlayerDataCollectable"
+  },
   "Harpoon": {
    "at": [
     [
@@ -3194,6 +5530,18 @@
     ]
    ],
    "class": "CollectableRelic"
+  },
+  "Library Map": {
+   "at": [
+    [
+     "library_04",
+     "PlayMakerFSM",
+     "Map Machine (1)",
+     10.27,
+     205.83
+    ]
+   ],
+   "class": "PlayerDataCollectable"
   },
   "Lightning Rod": {
    "at": [
@@ -5119,6 +7467,362 @@
    ],
    "class": "CollectableItemBasic"
   },
+  "Slab Key A": {
+   "at": [
+    [
+     "slab_03",
+     "PlayMakerFSM",
+     "Slab Lock",
+     20.7,
+     152.2
+    ],
+    [
+     "slab_03",
+     "PlayMakerFSM",
+     "Slab Lock (1)",
+     27.03,
+     245.23
+    ],
+    [
+     "slab_03",
+     "PlayMakerFSM",
+     "Slab Lock (2)",
+     1.94,
+     81.23
+    ],
+    [
+     "slab_03",
+     "PlayMakerFSM",
+     "Slab Lock (3)",
+     35.53,
+     92.05
+    ],
+    [
+     "slab_03",
+     "PlayMakerFSM",
+     "Slab Lock (4)",
+     27.24,
+     49.32
+    ],
+    [
+     "slab_05",
+     "PlayMakerFSM",
+     "Slab Lock (2)",
+     97.01,
+     10.27
+    ],
+    [
+     "slab_14",
+     "CollectableItemPickup",
+     "Collectable Item Pickup (1)",
+     12.9,
+     6.89
+    ],
+    [
+     "slab_14",
+     "PlayMakerFSM",
+     "Slab Lock L",
+     81.4,
+     4.39
+    ],
+    [
+     "slab_14",
+     "PlayMakerFSM",
+     "Slab Lock R",
+     84.45,
+     4.39
+    ],
+    [
+     "slab_15",
+     "PlayMakerFSM",
+     "Slab Lock (1)",
+     82.68,
+     4.39
+    ],
+    [
+     "slab_15",
+     "PlayMakerFSM",
+     "Slab Lock (2)",
+     80.54,
+     4.39
+    ],
+    [
+     "slab_16",
+     "PlayMakerFSM",
+     "Slab Lock (1)",
+     81.12,
+     20.39
+    ],
+    [
+     "slab_16",
+     "PlayMakerFSM",
+     "Slab Lock (2)",
+     84.41,
+     20.39
+    ],
+    [
+     "slab_21",
+     "PlayMakerFSM",
+     "Slab Lock",
+     -31.01,
+     105.22
+    ],
+    [
+     "slab_23",
+     "PlayMakerFSM",
+     "Slab Lock L",
+     46.3,
+     10.31
+    ]
+   ],
+   "class": "PlayerDataCollectable"
+  },
+  "Slab Key B": {
+   "at": [
+    [
+     "slab_03",
+     "PlayMakerFSM",
+     "Slab Lock",
+     20.7,
+     152.2
+    ],
+    [
+     "slab_03",
+     "PlayMakerFSM",
+     "Slab Lock (1)",
+     27.03,
+     245.23
+    ],
+    [
+     "slab_03",
+     "PlayMakerFSM",
+     "Slab Lock (2)",
+     1.94,
+     81.23
+    ],
+    [
+     "slab_03",
+     "PlayMakerFSM",
+     "Slab Lock (3)",
+     35.53,
+     92.05
+    ],
+    [
+     "slab_03",
+     "PlayMakerFSM",
+     "Slab Lock (4)",
+     27.24,
+     49.32
+    ],
+    [
+     "slab_05",
+     "PlayMakerFSM",
+     "Slab Lock (2)",
+     97.01,
+     10.27
+    ],
+    [
+     "slab_14",
+     "PlayMakerFSM",
+     "Slab Lock L",
+     81.4,
+     4.39
+    ],
+    [
+     "slab_14",
+     "PlayMakerFSM",
+     "Slab Lock R",
+     84.45,
+     4.39
+    ],
+    [
+     "slab_15",
+     "PlayMakerFSM",
+     "Slab Lock (1)",
+     82.68,
+     4.39
+    ],
+    [
+     "slab_15",
+     "PlayMakerFSM",
+     "Slab Lock (2)",
+     80.54,
+     4.39
+    ],
+    [
+     "slab_16",
+     "CollectableItemPickup",
+     "Collectable Item Pickup",
+     25.54,
+     23.67
+    ],
+    [
+     "slab_16",
+     "CollectableItemPickup",
+     "Collectable Item Pickup Return",
+     25.45,
+     18.2
+    ],
+    [
+     "slab_16",
+     "PlayMakerFSM",
+     "Slab Lock (1)",
+     81.12,
+     20.39
+    ],
+    [
+     "slab_16",
+     "PlayMakerFSM",
+     "Slab Lock (2)",
+     84.41,
+     20.39
+    ],
+    [
+     "slab_21",
+     "PlayMakerFSM",
+     "Slab Lock",
+     -31.01,
+     105.22
+    ],
+    [
+     "slab_23",
+     "PlayMakerFSM",
+     "Slab Lock L",
+     46.3,
+     10.31
+    ]
+   ],
+   "class": "PlayerDataCollectable"
+  },
+  "Slab Key C": {
+   "at": [
+    [
+     "aqueduct_04",
+     "CollectableItemPickup",
+     "Collectable Item Pickup Slab Key",
+     7.57,
+     38.65
+    ],
+    [
+     "slab_03",
+     "PlayMakerFSM",
+     "Slab Lock",
+     20.7,
+     152.2
+    ],
+    [
+     "slab_03",
+     "PlayMakerFSM",
+     "Slab Lock (1)",
+     27.03,
+     245.23
+    ],
+    [
+     "slab_03",
+     "PlayMakerFSM",
+     "Slab Lock (2)",
+     1.94,
+     81.23
+    ],
+    [
+     "slab_03",
+     "PlayMakerFSM",
+     "Slab Lock (3)",
+     35.53,
+     92.05
+    ],
+    [
+     "slab_03",
+     "PlayMakerFSM",
+     "Slab Lock (4)",
+     27.24,
+     49.32
+    ],
+    [
+     "slab_05",
+     "PlayMakerFSM",
+     "Slab Lock (2)",
+     97.01,
+     10.27
+    ],
+    [
+     "slab_14",
+     "PlayMakerFSM",
+     "Slab Lock L",
+     81.4,
+     4.39
+    ],
+    [
+     "slab_14",
+     "PlayMakerFSM",
+     "Slab Lock R",
+     84.45,
+     4.39
+    ],
+    [
+     "slab_15",
+     "PlayMakerFSM",
+     "Slab Lock (1)",
+     82.68,
+     4.39
+    ],
+    [
+     "slab_15",
+     "PlayMakerFSM",
+     "Slab Lock (2)",
+     80.54,
+     4.39
+    ],
+    [
+     "slab_16",
+     "PlayMakerFSM",
+     "Slab Lock (1)",
+     81.12,
+     20.39
+    ],
+    [
+     "slab_16",
+     "PlayMakerFSM",
+     "Slab Lock (2)",
+     84.41,
+     20.39
+    ],
+    [
+     "slab_16b",
+     "CollectableItemPickup",
+     "Collectable Item Pickup",
+     59.98,
+     15.24
+    ],
+    [
+     "slab_21",
+     "PlayMakerFSM",
+     "Slab Lock",
+     -31.01,
+     105.22
+    ],
+    [
+     "slab_23",
+     "PlayMakerFSM",
+     "Slab Lock L",
+     46.3,
+     10.31
+    ]
+   ],
+   "class": "PlayerDataCollectable"
+  },
+  "Slab Map": {
+   "at": [
+    [
+     "slab_20",
+     "CollectableItemPickup",
+     "Slab Map Inspect",
+     86.57,
+     14.07
+    ]
+   ],
+   "class": "PlayerDataCollectable"
+  },
   "Smeltstone": {
    "at": [
     [
@@ -5187,6 +7891,18 @@
     ]
    ],
    "class": "CollectableItemBasic"
+  },
+  "Song Gate Map": {
+   "at": [
+    [
+     "song_19_entrance",
+     "PlayMakerFSM",
+     "Map Machine (1)",
+     40.1,
+     7.01
+    ]
+   ],
+   "class": "PlayerDataCollectable"
   },
   "Spell": {
    "at": [
@@ -5833,6 +8549,18 @@
    ],
    "class": "ToolItemBasic"
   },
+  "Understore Map": {
+   "at": [
+    [
+     "under_16",
+     "CollectableItemPickup",
+     "Understore Map Inspect",
+     65.1,
+     35.33
+    ]
+   ],
+   "class": "PlayerDataCollectable"
+  },
   "Vintage Nectar": {
    "at": [
     [
@@ -6005,6 +8733,18 @@
    ],
    "class": "CollectableItemBasic"
   },
+  "Ward Map": {
+   "at": [
+    [
+     "ward_01",
+     "PlayMakerFSM",
+     "Map Machine (1)",
+     54.51,
+     19.98
+    ]
+   ],
+   "class": "PlayerDataCollectable"
+  },
   "Warrior": {
    "at": [
     [
@@ -6156,6 +8896,18 @@
     ]
    ],
    "class": "ToolCrest"
+  },
+  "Weavehome Map": {
+   "at": [
+    [
+     "weave_12",
+     "CollectableItemPickup",
+     "Get Map Inspect",
+     14.02,
+     11.05
+    ]
+   ],
+   "class": "PlayerDataCollectable"
   },
   "Weaver Record Conductor": {
    "at": [
@@ -6738,6 +9490,5888 @@
    ],
    "class": "ToolItemBasic"
   }
+ },
+ "kept": {
+  "bead": [
+   [
+    "Aspid_01",
+    "Geo Small Persistent",
+    "bool",
+    17.42,
+    6.25
+   ],
+   [
+    "Aspid_01",
+    "Geo Small Persistent (1)",
+    "bool",
+    15.19,
+    6.25
+   ],
+   [
+    "Aspid_01",
+    "Geo Small Persistent (2)",
+    "bool",
+    11.08,
+    6.25
+   ],
+   [
+    "Bellway_Peak_02",
+    "Geo Small Persistent (1)",
+    "bool",
+    26.56,
+    24.36
+   ],
+   [
+    "Bellway_Peak_02",
+    "Geo Small Persistent (2)",
+    "bool",
+    33.01,
+    10.29
+   ],
+   [
+    "Bellway_Peak_02",
+    "Geo Small Persistent (3)",
+    "bool",
+    31.16,
+    10.29
+   ],
+   [
+    "Bone_01",
+    "Geo Small Persistent (3)",
+    "bool",
+    118.34,
+    6.41
+   ],
+   [
+    "Bone_01",
+    "Geo Small Persistent (4)",
+    "bool",
+    114.88,
+    6.41
+   ],
+   [
+    "Bone_01c",
+    "Geo Med Persistent",
+    "bool",
+    143.94,
+    6.33
+   ],
+   [
+    "Bone_01c",
+    "Geo Small Persistent (1)",
+    "bool",
+    139.71,
+    6.41
+   ],
+   [
+    "Bone_01c",
+    "Geo Small Persistent (2)",
+    "bool",
+    138.77,
+    6.41
+   ],
+   [
+    "Bone_02",
+    "Geo Small Persistent",
+    "bool",
+    142.4,
+    33.32
+   ],
+   [
+    "Bone_02",
+    "Geo Small Persistent (1)",
+    "bool",
+    140.4,
+    33.32
+   ],
+   [
+    "Bone_04",
+    "Geo Small Persistent",
+    "bool",
+    12.0,
+    2.31
+   ],
+   [
+    "Bone_04",
+    "Geo Small Persistent (1)",
+    "bool",
+    12.65,
+    2.3
+   ],
+   [
+    "Bone_04",
+    "Geo Small Persistent (2)",
+    "bool",
+    11.28,
+    2.53
+   ],
+   [
+    "Bone_04",
+    "Geo Small Persistent (3)",
+    "bool",
+    14.07,
+    2.31
+   ],
+   [
+    "Bone_04",
+    "Geo Small Persistent (4)",
+    "bool",
+    14.86,
+    2.31
+   ],
+   [
+    "Bone_04",
+    "Geo Small Persistent (5)",
+    "bool",
+    62.22,
+    3.33
+   ],
+   [
+    "Bone_04",
+    "Geo Small Persistent (6)",
+    "bool",
+    61.37,
+    3.33
+   ],
+   [
+    "Bone_10",
+    "Geo Small Persistent",
+    "bool",
+    96.21,
+    44.44
+   ],
+   [
+    "Bone_10",
+    "Geo Small Persistent (1)",
+    "bool",
+    94.91,
+    44.44
+   ],
+   [
+    "Bone_14",
+    "Geo Small Persistent",
+    "bool",
+    118.65,
+    7.18
+   ],
+   [
+    "Bone_14",
+    "Geo Small Persistent (1)",
+    "bool",
+    115.35,
+    7.18
+   ],
+   [
+    "Bone_14",
+    "Geo Small Persistent (2)",
+    "bool",
+    113.94,
+    7.18
+   ],
+   [
+    "Bone_19",
+    "Geo Small Persistent",
+    "bool",
+    32.21,
+    6.24
+   ],
+   [
+    "Bone_19",
+    "Geo Small Persistent (1)",
+    "bool",
+    33.63,
+    6.24
+   ],
+   [
+    "Bone_19",
+    "Geo Small Persistent (2)",
+    "bool",
+    28.81,
+    2.19
+   ],
+   [
+    "Bone_East_10_Room",
+    "Geo Small Persistent",
+    "bool",
+    56.72,
+    12.28
+   ],
+   [
+    "Bone_East_10_Room",
+    "Geo Small Persistent (1)",
+    "bool",
+    60.2,
+    12.28
+   ],
+   [
+    "Bone_East_10_Room",
+    "Geo Small Persistent (3)",
+    "bool",
+    61.1,
+    12.28
+   ],
+   [
+    "Bonegrave",
+    "Geo Small Persistent",
+    "bool",
+    274.05,
+    71.38
+   ],
+   [
+    "Bonegrave",
+    "Geo Small Persistent (1)",
+    "bool",
+    272.53,
+    71.38
+   ],
+   [
+    "Bonegrave",
+    "Geo Small Persistent (2)",
+    "bool",
+    222.92,
+    6.31
+   ],
+   [
+    "Bonegrave",
+    "Geo Small Persistent (3)",
+    "bool",
+    216.19,
+    6.31
+   ],
+   [
+    "Bonegrave",
+    "Geo Small Persistent (4)",
+    "bool",
+    221.93,
+    6.31
+   ],
+   [
+    "Bonegrave",
+    "Geo Small Persistent (5)",
+    "bool",
+    226.18,
+    6.31
+   ],
+   [
+    "Bonetown",
+    "Geo Med Persistent",
+    "bool",
+    220.68,
+    79.39
+   ],
+   [
+    "Bonetown",
+    "Geo Small Persistent (1)",
+    "bool",
+    216.23,
+    79.24
+   ],
+   [
+    "Bonetown",
+    "Geo Small Persistent (2)",
+    "bool",
+    214.97,
+    79.24
+   ],
+   [
+    "Bonetown",
+    "Geo Small Persistent (3)",
+    "bool",
+    226.25,
+    79.31
+   ],
+   [
+    "Chapel_Wanderer",
+    "Geo Small Persistent",
+    "bool",
+    37.66,
+    122.23
+   ],
+   [
+    "Chapel_Wanderer",
+    "Geo Small Persistent (1)",
+    "bool",
+    44.77,
+    122.23
+   ],
+   [
+    "Chapel_Wanderer",
+    "Geo Small Persistent (2)",
+    "bool",
+    35.74,
+    122.23
+   ],
+   [
+    "Chapel_Wanderer",
+    "Geo Small Persistent (3)",
+    "bool",
+    29.0,
+    117.21
+   ],
+   [
+    "Coral_19",
+    "Geo Small Persistent",
+    "bool",
+    258.49,
+    43.25
+   ],
+   [
+    "Coral_19",
+    "Geo Small Persistent (1)",
+    "bool",
+    259.4,
+    43.25
+   ],
+   [
+    "Coral_19",
+    "Geo Small Persistent (2)",
+    "bool",
+    260.08,
+    43.25
+   ],
+   [
+    "Dock_01",
+    "Geo Med Persistent",
+    "bool",
+    9.83,
+    24.31
+   ],
+   [
+    "Dock_01",
+    "Geo Small Persistent",
+    "bool",
+    9.06,
+    24.25
+   ],
+   [
+    "Dock_01",
+    "Geo Small Persistent (1)",
+    "bool",
+    7.49,
+    24.25
+   ],
+   [
+    "Greymoor_04",
+    "Geo Small Persistent",
+    "bool",
+    30.13,
+    35.14
+   ],
+   [
+    "Greymoor_04",
+    "Geo Small Persistent (1)",
+    "bool",
+    31.14,
+    35.14
+   ],
+   [
+    "Greymoor_04",
+    "Geo Small Persistent (2)",
+    "bool",
+    6.21,
+    25.22
+   ],
+   [
+    "Greymoor_04",
+    "Geo Small Persistent (3)",
+    "bool",
+    7.05,
+    25.26
+   ],
+   [
+    "Greymoor_04",
+    "Geo Small Persistent (4)",
+    "bool",
+    7.97,
+    25.26
+   ],
+   [
+    "Greymoor_04",
+    "Geo Small Persistent (5)",
+    "bool",
+    5.63,
+    25.18
+   ],
+   [
+    "Greymoor_11",
+    "Geo Small Persistent",
+    "bool",
+    61.83,
+    50.19
+   ],
+   [
+    "Greymoor_11",
+    "Geo Small Persistent (1)",
+    "bool",
+    62.73,
+    50.19
+   ],
+   [
+    "Greymoor_15",
+    "Geo Small Persistent",
+    "bool",
+    62.1,
+    24.17
+   ],
+   [
+    "Greymoor_15",
+    "Geo Small Persistent (1)",
+    "bool",
+    59.91,
+    24.17
+   ],
+   [
+    "Greymoor_15b",
+    "Geo Small Persistent",
+    "bool",
+    181.69,
+    98.32
+   ],
+   [
+    "Greymoor_15b",
+    "Geo Small Persistent (1)",
+    "bool",
+    175.06,
+    98.32
+   ],
+   [
+    "Greymoor_15b",
+    "Geo Small Persistent (2)",
+    "bool",
+    171.71,
+    98.26
+   ],
+   [
+    "Greymoor_15b",
+    "Geo Small Persistent (3)",
+    "bool",
+    172.55,
+    98.26
+   ],
+   [
+    "Greymoor_16",
+    "Geo Med Persistent",
+    "bool",
+    159.76,
+    12.39
+   ],
+   [
+    "Greymoor_16",
+    "Geo Med Persistent (1)",
+    "bool",
+    156.88,
+    12.39
+   ],
+   [
+    "Greymoor_16",
+    "Geo Small Persistent (2)",
+    "bool",
+    162.23,
+    12.26
+   ],
+   [
+    "Greymoor_16",
+    "Geo Small Persistent (3)",
+    "bool",
+    162.98,
+    12.26
+   ],
+   [
+    "Greymoor_16",
+    "Geo Small Persistent (4)",
+    "bool",
+    164.18,
+    12.26
+   ],
+   [
+    "Greymoor_16",
+    "Geo Small Persistent (5)",
+    "bool",
+    158.88,
+    12.33
+   ],
+   [
+    "Greymoor_16",
+    "Geo Small Persistent (6)",
+    "bool",
+    158.19,
+    12.33
+   ],
+   [
+    "Hang_06_bank",
+    "Geo Small Persistent",
+    "bool",
+    84.27,
+    24.26
+   ],
+   [
+    "Hang_06_bank",
+    "Geo Small Persistent (1)",
+    "bool",
+    84.17,
+    13.32
+   ],
+   [
+    "Hang_06_bank",
+    "Geo Small Persistent (10)",
+    "bool",
+    74.53,
+    5.23
+   ],
+   [
+    "Hang_06_bank",
+    "Geo Small Persistent (11)",
+    "bool",
+    73.41,
+    5.23
+   ],
+   [
+    "Hang_06_bank",
+    "Geo Small Persistent (3)",
+    "bool",
+    41.61,
+    12.26
+   ],
+   [
+    "Hang_06_bank",
+    "Geo Small Persistent (4)",
+    "bool",
+    42.68,
+    12.26
+   ],
+   [
+    "Hang_06_bank",
+    "Geo Small Persistent (5)",
+    "bool",
+    36.32,
+    12.65
+   ],
+   [
+    "Hang_06_bank",
+    "Geo Small Persistent (6)",
+    "bool",
+    77.82,
+    24.26
+   ],
+   [
+    "Hang_06_bank",
+    "Geo Small Persistent (7)",
+    "bool",
+    78.55,
+    24.26
+   ],
+   [
+    "Mosstown_01",
+    "Geo Small Persistent",
+    "bool",
+    128.78,
+    22.25
+   ],
+   [
+    "Mosstown_01",
+    "Geo Small Persistent (1)",
+    "bool",
+    127.64,
+    22.25
+   ],
+   [
+    "Mosstown_01",
+    "Geo Small Persistent (2)",
+    "bool",
+    126.95,
+    22.25
+   ],
+   [
+    "Mosstown_01",
+    "Geo Small Persistent (3)",
+    "bool",
+    46.56,
+    22.29
+   ],
+   [
+    "Peak_01",
+    "Geo Small Persistent",
+    "bool",
+    87.73,
+    146.21
+   ],
+   [
+    "Peak_01",
+    "Geo Small Persistent (1)",
+    "bool",
+    85.52,
+    146.21
+   ],
+   [
+    "Peak_01",
+    "Geo Small Persistent (2)",
+    "bool",
+    84.74,
+    146.21
+   ],
+   [
+    "Peak_01",
+    "Geo Small Persistent (3)",
+    "bool",
+    82.59,
+    146.21
+   ],
+   [
+    "Shellgrave",
+    "Geo Small Persistent",
+    "bool",
+    55.48,
+    9.29
+   ],
+   [
+    "Shellgrave",
+    "Geo Small Persistent (1)",
+    "bool",
+    57.58,
+    9.29
+   ],
+   [
+    "Shellwood_11",
+    "Geo Small Persistent",
+    "bool",
+    59.59,
+    20.27
+   ],
+   [
+    "Shellwood_11",
+    "Geo Small Persistent (1)",
+    "bool",
+    60.66,
+    20.27
+   ],
+   [
+    "Slab_06",
+    "Geo Small Persistent",
+    "bool",
+    88.8,
+    26.27
+   ],
+   [
+    "Song_01b",
+    "Geo Med Persistent",
+    "bool",
+    15.51,
+    3.3
+   ],
+   [
+    "Song_01b",
+    "Geo Small Persistent",
+    "bool",
+    13.46,
+    3.2
+   ],
+   [
+    "Song_01b",
+    "Geo Small Persistent (1)",
+    "bool",
+    14.19,
+    3.24
+   ],
+   [
+    "Song_07",
+    "Geo Med Persistent",
+    "bool",
+    5.85,
+    4.33
+   ],
+   [
+    "Song_07",
+    "Geo Small Persistent",
+    "bool",
+    5.06,
+    4.25
+   ],
+   [
+    "Under_16",
+    "Geo Small Persistent",
+    "bool",
+    32.56,
+    27.22
+   ],
+   [
+    "Under_16",
+    "Geo Small Persistent (2)",
+    "bool",
+    30.97,
+    27.22
+   ]
+  ],
+  "cocoon": [
+   [
+    "Coral_37",
+    "Silk Grub Large Cocoon",
+    "bool",
+    19.11,
+    12.7
+   ],
+   [
+    "Coral_37",
+    "Silk Grub Small Cocoon 2",
+    "bool",
+    21.11,
+    12.0
+   ],
+   [
+    "Coral_37",
+    "Silk Grub Small Cocoon 2 (1)",
+    "bool",
+    16.15,
+    8.68
+   ],
+   [
+    "Dock_14",
+    "Silk Grub Large Cocoon",
+    "bool",
+    23.34,
+    9.38
+   ],
+   [
+    "Dock_14",
+    "Silk Grub Small Cocoon 2",
+    "bool",
+    24.68,
+    11.61
+   ],
+   [
+    "Greymoor_04",
+    "Silk Grub Large Cocoon",
+    "bool",
+    19.42,
+    145.69
+   ],
+   [
+    "Greymoor_04",
+    "Silk Grub Small Cocoon 1 (1)",
+    "bool",
+    25.93,
+    140.04
+   ],
+   [
+    "Greymoor_04",
+    "Silk Grub Small Cocoon 2",
+    "bool",
+    20.9,
+    146.99
+   ],
+   [
+    "Library_14",
+    "Silk Grub Large Cocoon",
+    "bool",
+    54.51,
+    17.26
+   ],
+   [
+    "Library_14",
+    "Silk Grub Small Cocoon 1",
+    "bool",
+    56.09,
+    11.33
+   ],
+   [
+    "Library_14",
+    "Silk Grub Small Cocoon 2",
+    "bool",
+    53.01,
+    6.64
+   ],
+   [
+    "Organ_01",
+    "Silk Grub Large Cocoon",
+    "bool",
+    135.53,
+    40.37
+   ],
+   [
+    "Organ_01",
+    "Silk Grub Small Cocoon 1",
+    "bool",
+    133.6,
+    41.53
+   ],
+   [
+    "Organ_01",
+    "Silk Grub Small Cocoon 2",
+    "bool",
+    132.17,
+    40.53
+   ],
+   [
+    "Song_09b",
+    "Silk Grub Large Cocoon",
+    "bool",
+    151.97,
+    139.34
+   ],
+   [
+    "Song_09b",
+    "Silk Grub Small Cocoon 2",
+    "bool",
+    150.05,
+    139.55
+   ],
+   [
+    "Song_24",
+    "Silk Grub Large Cocoon",
+    "bool",
+    52.99,
+    21.53
+   ],
+   [
+    "Song_24",
+    "Silk Grub Small Cocoon 1",
+    "bool",
+    51.63,
+    23.34
+   ],
+   [
+    "Tube_Hub",
+    "Silk Grub Large Cocoon",
+    "bool",
+    20.35,
+    8.78
+   ],
+   [
+    "Tube_Hub",
+    "Silk Grub Small Cocoon 2",
+    "bool",
+    22.41,
+    10.01
+   ],
+   [
+    "Under_20",
+    "Silk Grub Large Cocoon",
+    "bool",
+    163.18,
+    20.06
+   ],
+   [
+    "Under_20",
+    "Silk Grub Small Cocoon 1",
+    "bool",
+    165.93,
+    20.34
+   ],
+   [
+    "Under_20",
+    "Silk Grub Small Cocoon 1 (1)",
+    "bool",
+    161.98,
+    22.75
+   ],
+   [
+    "Under_20",
+    "Silk Grub Small Cocoon 2",
+    "bool",
+    164.8,
+    21.6
+   ],
+   [
+    "Ward_04",
+    "Silk Grub Large Cocoon",
+    "bool",
+    24.2,
+    22.26
+   ],
+   [
+    "Ward_04",
+    "Silk Grub Small Cocoon 1",
+    "bool",
+    27.95,
+    11.77
+   ],
+   [
+    "Ward_04",
+    "Silk Grub Small Cocoon 1 (1)",
+    "bool",
+    26.44,
+    22.83
+   ],
+   [
+    "Ward_04",
+    "Silk Grub Small Cocoon 2",
+    "bool",
+    29.16,
+    14.11
+   ]
+  ],
+  "hidden": [
+   [
+    "Abandoned_town",
+    "Remasker New",
+    "bool",
+    259.13,
+    6.04
+   ],
+   [
+    "Abyss_05",
+    "Remasker New Sharp Ultra",
+    "bool",
+    41.02,
+    62.19
+   ],
+   [
+    "Abyss_Cocoon",
+    "glow_rim_Remasker",
+    "bool",
+    -29.08,
+    90.21
+   ],
+   [
+    "Ant_04",
+    "Secret Mask New",
+    "bool",
+    81.07,
+    39.31
+   ],
+   [
+    "Ant_04_left",
+    "Secret Mask New",
+    "bool",
+    81.07,
+    39.31
+   ],
+   [
+    "Ant_04_mid",
+    "Secret Mask New",
+    "bool",
+    81.07,
+    39.31
+   ],
+   [
+    "Ant_05b",
+    "Remasker New",
+    "bool",
+    105.56,
+    20.16
+   ],
+   [
+    "Ant_05b",
+    "Remasker New (1)",
+    "bool",
+    107.63,
+    -5.52
+   ],
+   [
+    "Ant_05c",
+    "Remasker New Sharp",
+    "bool",
+    67.03,
+    31.58
+   ],
+   [
+    "Ant_05c",
+    "Remasker New Sharp (1)",
+    "bool",
+    67.03,
+    8.0
+   ],
+   [
+    "Ant_17",
+    "Remasker New Sharp Ultra",
+    "bool",
+    8.54,
+    9.26
+   ],
+   [
+    "Ant_19",
+    "Remasker New",
+    "bool",
+    122.3,
+    68.29
+   ],
+   [
+    "Ant_19",
+    "Remasker New (1)",
+    "bool",
+    148.2,
+    68.6
+   ],
+   [
+    "Ant_Merchant",
+    "Remasker New Sharp Ultra",
+    "bool",
+    31.0,
+    20.7
+   ],
+   [
+    "Aqueduct_01",
+    "Remasker New Sharp Ultra",
+    "bool",
+    24.88,
+    29.58
+   ],
+   [
+    "Aqueduct_02",
+    "Remasker New",
+    "bool",
+    15.0,
+    7.86
+   ],
+   [
+    "Aqueduct_03",
+    "Remasker New Sharp",
+    "bool",
+    165.59,
+    36.38
+   ],
+   [
+    "Aqueduct_04",
+    "Remasker New Sharp",
+    "bool",
+    107.57,
+    14.09
+   ],
+   [
+    "Aqueduct_04",
+    "Remasker New Sharp (1)",
+    "bool",
+    107.57,
+    14.09
+   ],
+   [
+    "Aqueduct_04",
+    "Remasker New Sharp Ultra",
+    "bool",
+    146.09,
+    2.34
+   ],
+   [
+    "Aqueduct_04",
+    "Remasker New Sharp Ultra",
+    "bool",
+    173.94,
+    29.15
+   ],
+   [
+    "Aqueduct_05",
+    "Remasker New Sharp Ultra",
+    "bool",
+    256.39,
+    76.73
+   ],
+   [
+    "Aqueduct_06",
+    "Remasker New Sharp Ultra",
+    "bool",
+    34.57,
+    5.14
+   ],
+   [
+    "Aqueduct_06",
+    "Secret Sound Region",
+    "bool",
+    38.28,
+    21.07
+   ],
+   [
+    "Aqueduct_06",
+    "Secret Sound Region (1)",
+    "bool",
+    1.33,
+    7.83
+   ],
+   [
+    "Aqueduct_07",
+    "Remasker New",
+    "bool",
+    30.45,
+    10.48
+   ],
+   [
+    "Aqueduct_07",
+    "Remasker New (1)",
+    "bool",
+    29.71,
+    27.46
+   ],
+   [
+    "Aqueduct_08",
+    "Remasker New",
+    "bool",
+    30.45,
+    10.48
+   ],
+   [
+    "Aqueduct_08",
+    "Remasker New (1)",
+    "bool",
+    29.71,
+    27.46
+   ],
+   [
+    "Arborium_01",
+    "Remasker New Sharp Ultra",
+    "bool",
+    13.58,
+    142.95
+   ],
+   [
+    "Arborium_04",
+    "Remasker New",
+    "bool",
+    118.54,
+    11.66
+   ],
+   [
+    "Arborium_04",
+    "Remasker New (1)",
+    "bool",
+    93.34,
+    11.66
+   ],
+   [
+    "Arborium_04",
+    "Remasker New (2)",
+    "bool",
+    74.45,
+    11.66
+   ],
+   [
+    "Arborium_04",
+    "Remasker New (3)",
+    "bool",
+    55.11,
+    11.66
+   ],
+   [
+    "Arborium_04",
+    "Remasker New (4)",
+    "bool",
+    39.6,
+    11.66
+   ],
+   [
+    "Arborium_07",
+    "Remasker New (1)",
+    "bool",
+    70.75,
+    12.19
+   ],
+   [
+    "Arborium_07",
+    "Remasker New Sharp",
+    "bool",
+    123.35,
+    14.47
+   ],
+   [
+    "Arborium_08",
+    "Remasker New (1)",
+    "bool",
+    70.61,
+    2.63
+   ],
+   [
+    "Arborium_08",
+    "Remasker New Inverse",
+    "bool",
+    70.61,
+    2.63
+   ],
+   [
+    "Arborium_09",
+    "Remasker New (3)",
+    "bool",
+    51.31,
+    14.98
+   ],
+   [
+    "Belltown",
+    "Remasker New Sharp Ultra",
+    "bool",
+    62.94,
+    69.32
+   ],
+   [
+    "Belltown_04",
+    "Remasker New",
+    "bool",
+    21.11,
+    77.97
+   ],
+   [
+    "Belltown_04",
+    "Remasker New",
+    "bool",
+    40.94,
+    63.82
+   ],
+   [
+    "Belltown_04",
+    "Remasker New",
+    "bool",
+    69.62,
+    23.65
+   ],
+   [
+    "Belltown_04",
+    "Remasker New (1)",
+    "bool",
+    37.1,
+    23.42
+   ],
+   [
+    "Belltown_04",
+    "Remasker New (1)",
+    "bool",
+    45.13,
+    72.42
+   ],
+   [
+    "Belltown_04",
+    "Remasker New (1)",
+    "bool",
+    48.16,
+    13.71
+   ],
+   [
+    "Belltown_04",
+    "Remasker New (1)",
+    "bool",
+    75.07,
+    49.29
+   ],
+   [
+    "Belltown_06",
+    "Remasker New Sharp Ultra",
+    "bool",
+    9.37,
+    39.73
+   ],
+   [
+    "Belltown_07",
+    "Remasker New Sharp Ultra",
+    "bool",
+    31.41,
+    26.74
+   ],
+   [
+    "Belltown_basement",
+    "Remasker New",
+    "bool",
+    78.07,
+    99.56
+   ],
+   [
+    "Bellway_02",
+    "Remasker New",
+    "bool",
+    74.69,
+    16.72
+   ],
+   [
+    "Bellway_03",
+    "Secret Mask New",
+    "bool",
+    108.47,
+    9.25
+   ],
+   [
+    "Bellway_03",
+    "Secret Mask New (1)",
+    "bool",
+    84.4,
+    9.25
+   ],
+   [
+    "Bellway_04",
+    "Remasker New Sharp",
+    "bool",
+    18.15,
+    7.21
+   ],
+   [
+    "Bellway_Aqueduct",
+    "Remasker New Sharp Ultra",
+    "bool",
+    69.9,
+    66.0
+   ],
+   [
+    "Bellway_City",
+    "Remasker New",
+    "bool",
+    93.63,
+    26.0
+   ],
+   [
+    "Bellway_City",
+    "Remasker New (1)",
+    "bool",
+    91.17,
+    14.25
+   ],
+   [
+    "Bellway_Peak_02",
+    "Remasker New",
+    "bool",
+    85.22,
+    7.53
+   ],
+   [
+    "Bone_01",
+    "Inverse Remasker",
+    "bool",
+    88.41,
+    48.96
+   ],
+   [
+    "Bone_01",
+    "Inverse Remasker (1)",
+    "bool",
+    66.1,
+    50.3
+   ],
+   [
+    "Bone_01",
+    "Remasker New",
+    "bool",
+    83.05,
+    26.02
+   ],
+   [
+    "Bone_01",
+    "Secret Mask",
+    "bool",
+    119.67,
+    9.9
+   ],
+   [
+    "Bone_01c",
+    "Inverse Remasker",
+    "bool",
+    88.41,
+    50.91
+   ],
+   [
+    "Bone_01c",
+    "Inverse Remasker (1)",
+    "bool",
+    66.1,
+    50.3
+   ],
+   [
+    "Bone_04",
+    "Inverse Remasker",
+    "bool",
+    -14.16,
+    11.51
+   ],
+   [
+    "Bone_05b",
+    "Remasker New Sharp Ultra",
+    "bool",
+    15.32,
+    23.33
+   ],
+   [
+    "Bone_05b",
+    "Secret Sound Region",
+    "bool",
+    41.8,
+    15.42
+   ],
+   [
+    "Bone_07",
+    "Remasker New",
+    "bool",
+    48.0,
+    15.9
+   ],
+   [
+    "Bone_07",
+    "Remasker New (1)",
+    "bool",
+    50.6,
+    26.45
+   ],
+   [
+    "Bone_07",
+    "Remasker New (2)",
+    "bool",
+    22.75,
+    6.96
+   ],
+   [
+    "Bone_07",
+    "Remasker New (3)",
+    "bool",
+    50.6,
+    26.45
+   ],
+   [
+    "Bone_08",
+    "Remasker New Sharp Ultra",
+    "bool",
+    29.07,
+    48.32
+   ],
+   [
+    "Bone_09",
+    "Remasker New",
+    "bool",
+    161.92,
+    25.32
+   ],
+   [
+    "Bone_10",
+    "Remasker New",
+    "bool",
+    40.2,
+    40.27
+   ],
+   [
+    "Bone_10",
+    "Secret Mask New",
+    "bool",
+    105.42,
+    28.36
+   ],
+   [
+    "Bone_15",
+    "Remasker New",
+    "bool",
+    63.9,
+    5.58
+   ],
+   [
+    "Bone_15",
+    "Remasker New (1)",
+    "bool",
+    63.9,
+    22.15
+   ],
+   [
+    "Bone_15",
+    "Secret Mask New",
+    "bool",
+    65.84,
+    10.45
+   ],
+   [
+    "Bone_16",
+    "Remasker New",
+    "bool",
+    51.96,
+    35.24
+   ],
+   [
+    "Bone_16",
+    "Remasker New (1)",
+    "bool",
+    83.02,
+    63.6
+   ],
+   [
+    "Bone_East_04",
+    "Inverse Remasker",
+    "bool",
+    61.56,
+    101.4
+   ],
+   [
+    "Bone_East_04b",
+    "Remasker New",
+    "bool",
+    5.23,
+    82.8
+   ],
+   [
+    "Bone_East_07",
+    "Remasker_Left",
+    "bool",
+    6.16,
+    105.93
+   ],
+   [
+    "Bone_East_07",
+    "Secret Mask New (1)",
+    "bool",
+    41.19,
+    124.3
+   ],
+   [
+    "Bone_East_07",
+    "Secret Mask New (2)",
+    "bool",
+    30.23,
+    139.67
+   ],
+   [
+    "Bone_East_08",
+    "Remasker New",
+    "bool",
+    126.73,
+    35.09
+   ],
+   [
+    "Bone_East_09",
+    "Secret Mask New",
+    "bool",
+    94.47,
+    8.47
+   ],
+   [
+    "Bone_East_09b",
+    "Remasker New Sharp",
+    "bool",
+    22.24,
+    134.27
+   ],
+   [
+    "Bone_East_09b",
+    "Remasker New Sharp (1)",
+    "bool",
+    80.9,
+    144.21
+   ],
+   [
+    "Bone_East_10",
+    "Remasker New (1)",
+    "bool",
+    134.65,
+    12.78
+   ],
+   [
+    "Bone_East_10_Church",
+    "Inverse Remasker",
+    "bool",
+    186.37,
+    1.71
+   ],
+   [
+    "Bone_East_11",
+    "Remasker New Sharp",
+    "bool",
+    20.15,
+    119.5
+   ],
+   [
+    "Bone_East_14",
+    "Inverse Remasker",
+    "bool",
+    36.89,
+    9.83
+   ],
+   [
+    "Bone_East_14",
+    "Secret Mask New",
+    "bool",
+    7.27,
+    9.51
+   ],
+   [
+    "Bone_East_15",
+    "Remasker New",
+    "bool",
+    90.97,
+    68.22
+   ],
+   [
+    "Bone_East_15",
+    "Remasker New (1)",
+    "bool",
+    74.74,
+    62.62
+   ],
+   [
+    "Bone_East_17",
+    "Secret Mask New",
+    "bool",
+    47.55,
+    98.22
+   ],
+   [
+    "Bone_East_18",
+    "Remasker New Sharp",
+    "bool",
+    157.0,
+    38.86
+   ],
+   [
+    "Bone_East_18b",
+    "Remasker New Sharp Ultra",
+    "bool",
+    170.21,
+    36.8
+   ],
+   [
+    "Bone_East_18c",
+    "Remasker New Sharp",
+    "bool",
+    157.0,
+    38.86
+   ],
+   [
+    "Bone_East_20",
+    "Remasker New Sharp",
+    "bool",
+    93.93,
+    -0.5
+   ],
+   [
+    "Bone_East_25",
+    "Remasker New Sharp Ultra",
+    "bool",
+    121.54,
+    15.0
+   ],
+   [
+    "Bone_East_LavaChallenge",
+    "Inverse Remasker",
+    "bool",
+    0.82,
+    218.3
+   ],
+   [
+    "Bone_East_LavaChallenge",
+    "Remasker New Sharp",
+    "bool",
+    19.02,
+    192.71
+   ],
+   [
+    "Bone_East_Weavehome",
+    "Remasker New Sharp Ultra",
+    "bool",
+    93.68,
+    71.95
+   ],
+   [
+    "Bonegrave",
+    "Remasker New Sharp Ultra",
+    "bool",
+    260.9,
+    66.08
+   ],
+   [
+    "Bonetown",
+    "Remasker New",
+    "bool",
+    29.75,
+    13.56
+   ],
+   [
+    "Bonetown",
+    "Remasker New (1)",
+    "bool",
+    224.51,
+    81.95
+   ],
+   [
+    "Chapel_Wanderer",
+    "Remasker New",
+    "bool",
+    40.45,
+    124.05
+   ],
+   [
+    "Chapel_Wanderer",
+    "Remasker New Sharp",
+    "bool",
+    20.17,
+    93.29
+   ],
+   [
+    "Chapel_Wanderer",
+    "Remasker New Sharp (1)",
+    "bool",
+    20.16,
+    109.27
+   ],
+   [
+    "Chapel_Wanderer",
+    "Remasker New Sharp (1)",
+    "bool",
+    67.55,
+    92.99
+   ],
+   [
+    "Clover_01",
+    "Remasker New Sharp Ultra",
+    "bool",
+    164.79,
+    15.35
+   ],
+   [
+    "Clover_10",
+    "Remasker New",
+    "bool",
+    56.73,
+    45.61
+   ],
+   [
+    "Clover_10",
+    "Remasker New (1)",
+    "bool",
+    103.34,
+    42.89
+   ],
+   [
+    "Clover_10",
+    "Remasker New Sharp",
+    "bool",
+    85.5,
+    42.84
+   ],
+   [
+    "Clover_10",
+    "Remasker New Sharp (1)",
+    "bool",
+    85.5,
+    25.89
+   ],
+   [
+    "Clover_10_web",
+    "Remasker New Sharp Ultra",
+    "bool",
+    31.79,
+    44.42
+   ],
+   [
+    "Clover_16",
+    "Remasker New Sharp Ultra",
+    "bool",
+    19.83,
+    43.61
+   ],
+   [
+    "Clover_18",
+    "Remasker New",
+    "bool",
+    147.86,
+    51.63
+   ],
+   [
+    "Clover_18",
+    "Remasker New (1)",
+    "bool",
+    61.72,
+    71.62
+   ],
+   [
+    "Clover_18",
+    "Remasker New Sharp Ultra",
+    "bool",
+    187.06,
+    10.87
+   ],
+   [
+    "Cog_05",
+    "Remasker New Sharp",
+    "bool",
+    31.42,
+    22.24
+   ],
+   [
+    "Cog_07",
+    "Remasker New Sharp",
+    "bool",
+    27.21,
+    29.44
+   ],
+   [
+    "Cog_07",
+    "Remasker New Sharp (1)",
+    "bool",
+    28.52,
+    73.26
+   ],
+   [
+    "Cog_10_Destroyed",
+    "Secret Mask New",
+    "bool",
+    14.37,
+    81.81
+   ],
+   [
+    "Coral_02",
+    "Remasker New",
+    "bool",
+    41.1,
+    5.6
+   ],
+   [
+    "Coral_02",
+    "Remasker New (1)",
+    "bool",
+    51.74,
+    24.06
+   ],
+   [
+    "Coral_19",
+    "Remasker New Sharp Ultra",
+    "bool",
+    293.66,
+    44.7
+   ],
+   [
+    "Coral_23",
+    "Remasker New",
+    "bool",
+    308.61,
+    71.96
+   ],
+   [
+    "Coral_23",
+    "Remasker New (1)",
+    "bool",
+    89.71,
+    81.64
+   ],
+   [
+    "Coral_28",
+    "Remasker New Sharp Ultra",
+    "bool",
+    117.75,
+    47.72
+   ],
+   [
+    "Coral_28",
+    "Remasker New Sharp Ultra (1)",
+    "bool",
+    76.14,
+    46.26
+   ],
+   [
+    "Coral_29",
+    "Remasker New Sharp Ultra",
+    "bool",
+    223.74,
+    85.9
+   ],
+   [
+    "Coral_32",
+    "Remasker New",
+    "bool",
+    104.11,
+    54.75
+   ],
+   [
+    "Coral_32",
+    "Remasker New Sharp Ultra",
+    "bool",
+    131.68,
+    110.23
+   ],
+   [
+    "Coral_32",
+    "Remasker New Sharp Ultra (1)",
+    "bool",
+    151.83,
+    106.87
+   ],
+   [
+    "Coral_32",
+    "Remasker New Sharp Ultra (2)",
+    "bool",
+    68.1,
+    28.6
+   ],
+   [
+    "Coral_35b",
+    "Remasker New Sharp Ultra",
+    "bool",
+    40.54,
+    9.79
+   ],
+   [
+    "Coral_35b",
+    "Remasker New Sharp Ultra 1",
+    "bool",
+    14.34,
+    151.97
+   ],
+   [
+    "Coral_35b",
+    "Remasker New Sharp Ultra 2",
+    "bool",
+    22.05,
+    78.67
+   ],
+   [
+    "Coral_36",
+    "Remasker New Sharp Ultra",
+    "bool",
+    20.3,
+    19.7
+   ],
+   [
+    "Coral_37",
+    "Remasker New",
+    "bool",
+    57.3,
+    9.7
+   ],
+   [
+    "Coral_37",
+    "Remasker New Sharp Ultra",
+    "bool",
+    58.38,
+    11.55
+   ],
+   [
+    "Coral_38",
+    "Remasker New Sharp Ultra",
+    "bool",
+    25.41,
+    75.78
+   ],
+   [
+    "Coral_38",
+    "Remasker New Sharp Ultra",
+    "bool",
+    50.89,
+    43.76
+   ],
+   [
+    "Coral_41",
+    "Remasker New",
+    "bool",
+    125.35,
+    50.53
+   ],
+   [
+    "Coral_41",
+    "Remasker New",
+    "bool",
+    78.37,
+    31.9
+   ],
+   [
+    "Coral_44",
+    "Remasker New Sharp Ultra",
+    "bool",
+    174.34,
+    50.93
+   ],
+   [
+    "Coral_44",
+    "Secret Mask New Sharp Ultra",
+    "bool",
+    79.07,
+    33.67
+   ],
+   [
+    "Coral_Tower_01",
+    "Remasker New Sharp Ultra",
+    "bool",
+    128.04,
+    11.75
+   ],
+   [
+    "Cradle_01",
+    "Inverse Remasker",
+    "bool",
+    40.07,
+    137.53
+   ],
+   [
+    "Cradle_03",
+    "Remasker New Sharp Ultra",
+    "bool",
+    72.23,
+    85.01
+   ],
+   [
+    "Cradle_03",
+    "glow_rim_Remasker",
+    "bool",
+    30.67,
+    134.63
+   ],
+   [
+    "Cradle_03_Destroyed",
+    "Remasker New Sharp",
+    "bool",
+    45.82,
+    178.2
+   ],
+   [
+    "Cradle_Destroyed_Challenge_01",
+    "Inverse Remasker",
+    "bool",
+    40.07,
+    137.53
+   ],
+   [
+    "Cradle_Destroyed_Challenge_01",
+    "Remasker New",
+    "bool",
+    37.0,
+    312.47
+   ],
+   [
+    "Cradle_Destroyed_Challenge_01",
+    "Remasker New (1)",
+    "bool",
+    26.82,
+    313.82
+   ],
+   [
+    "Dock_02",
+    "Remasker New",
+    "bool",
+    -90.9,
+    12.69
+   ],
+   [
+    "Dock_02",
+    "Remasker New",
+    "bool",
+    14.91,
+    57.13
+   ],
+   [
+    "Dock_02",
+    "Remasker New (1)",
+    "bool",
+    22.36,
+    67.79
+   ],
+   [
+    "Dock_02",
+    "Remasker New (1)",
+    "bool",
+    7.8,
+    22.4
+   ],
+   [
+    "Dock_02b",
+    "Remasker New",
+    "bool",
+    30.98,
+    34.79
+   ],
+   [
+    "Dock_02b",
+    "Remasker New (1)",
+    "bool",
+    30.98,
+    107.26
+   ],
+   [
+    "Dock_02b",
+    "Remasker New (2)",
+    "bool",
+    9.77,
+    34.98
+   ],
+   [
+    "Dock_02b",
+    "Remasker New Sharp Ultra",
+    "bool",
+    59.44,
+    41.56
+   ],
+   [
+    "Dock_02b",
+    "Remasker New Sharp Ultra (1)",
+    "bool",
+    59.44,
+    79.18
+   ],
+   [
+    "Dock_03",
+    "Remasker New Sharp",
+    "bool",
+    19.59,
+    105.08
+   ],
+   [
+    "Dock_03",
+    "Secret Mask New Gate",
+    "bool",
+    119.82,
+    83.28
+   ],
+   [
+    "Dock_03b",
+    "Remasker New",
+    "bool",
+    148.65,
+    80.03
+   ],
+   [
+    "Dock_03b",
+    "Remasker New (1)",
+    "bool",
+    148.65,
+    80.03
+   ],
+   [
+    "Dock_03b",
+    "Remasker New (2)",
+    "bool",
+    135.19,
+    86.43
+   ],
+   [
+    "Dock_03c",
+    "Remasker New",
+    "bool",
+    133.28,
+    57.41
+   ],
+   [
+    "Dock_03c",
+    "Remasker New Sharp",
+    "bool",
+    131.62,
+    6.82
+   ],
+   [
+    "Dock_03c",
+    "Remasker New Sharp (1)",
+    "bool",
+    112.91,
+    1.3
+   ],
+   [
+    "Dock_03c",
+    "Remasker New Sharp (2)",
+    "bool",
+    118.2,
+    68.6
+   ],
+   [
+    "Dock_03c",
+    "Remasker New Sharp (3)",
+    "bool",
+    122.6,
+    33.6
+   ],
+   [
+    "Dock_06_Church",
+    "Remasker New Sharp Ultra",
+    "bool",
+    29.39,
+    7.41
+   ],
+   [
+    "Dock_08",
+    "Remasker New",
+    "bool",
+    64.95,
+    23.44
+   ],
+   [
+    "Dock_11",
+    "Remasker New",
+    "bool",
+    25.71,
+    4.87
+   ],
+   [
+    "Dock_11",
+    "Remasker New (1)",
+    "bool",
+    60.1,
+    28.6
+   ],
+   [
+    "Dock_11",
+    "Remasker New (2)",
+    "bool",
+    79.12,
+    8.23
+   ],
+   [
+    "Dock_11",
+    "Remasker New Sharp",
+    "bool",
+    28.16,
+    41.35
+   ],
+   [
+    "Dock_12",
+    "Remasker New Sharp Ultra",
+    "bool",
+    38.62,
+    54.18
+   ],
+   [
+    "Dock_14",
+    "Remasker New",
+    "bool",
+    25.02,
+    6.99
+   ],
+   [
+    "Dust_01",
+    "Remasker New Sharp Ultra",
+    "bool",
+    36.18,
+    32.88
+   ],
+   [
+    "Dust_01",
+    "Secret Mask New",
+    "bool",
+    35.31,
+    33.41
+   ],
+   [
+    "Dust_02",
+    "Remasker New Sharp Ultra",
+    "bool",
+    22.0,
+    5.59
+   ],
+   [
+    "Dust_03",
+    "Remasker New",
+    "bool",
+    130.41,
+    36.2
+   ],
+   [
+    "Dust_03",
+    "Remasker New (1)",
+    "bool",
+    106.53,
+    28.83
+   ],
+   [
+    "Dust_05",
+    "Remasker New",
+    "bool",
+    149.76,
+    6.13
+   ],
+   [
+    "Dust_05",
+    "Remasker New (2)",
+    "bool",
+    149.76,
+    6.13
+   ],
+   [
+    "Dust_06",
+    "Remasker New",
+    "bool",
+    17.2,
+    4.32
+   ],
+   [
+    "Dust_06",
+    "Secret Mask New",
+    "bool",
+    2.47,
+    156.18
+   ],
+   [
+    "Dust_10",
+    "Secret Mask New",
+    "bool",
+    69.43,
+    59.53
+   ],
+   [
+    "Dust_11",
+    "Remasker New",
+    "bool",
+    57.82,
+    3.2
+   ],
+   [
+    "Dust_11",
+    "Remasker New (1)",
+    "bool",
+    57.82,
+    3.2
+   ],
+   [
+    "Dust_11",
+    "Remasker New (2)",
+    "bool",
+    106.0,
+    30.56
+   ],
+   [
+    "Dust_11",
+    "Remasker New Sharp Ultra",
+    "bool",
+    130.11,
+    7.14
+   ],
+   [
+    "Dust_Chef",
+    "Remasker New",
+    "bool",
+    41.69,
+    58.3
+   ],
+   [
+    "Dust_Chef",
+    "Remasker New (1)",
+    "bool",
+    21.64,
+    18.87
+   ],
+   [
+    "Greymoor_04",
+    "Remasker New",
+    "bool",
+    19.24,
+    143.8
+   ],
+   [
+    "Greymoor_06",
+    "Remasker New",
+    "bool",
+    19.76,
+    143.69
+   ],
+   [
+    "Greymoor_13",
+    "Remasker New (1)",
+    "bool",
+    101.49,
+    4.41
+   ],
+   [
+    "Greymoor_15b",
+    "Remasker New Sharp Ultra",
+    "bool",
+    183.21,
+    101.0
+   ],
+   [
+    "Greymoor_15b",
+    "Remasker New Sharp Ultra (1)",
+    "bool",
+    183.21,
+    101.0
+   ],
+   [
+    "Greymoor_16",
+    "Inverse Remasker",
+    "bool",
+    101.07,
+    28.24
+   ],
+   [
+    "Greymoor_16",
+    "Inverse Remasker (1)",
+    "bool",
+    81.8,
+    28.7
+   ],
+   [
+    "Greymoor_16",
+    "Remasker New",
+    "bool",
+    64.15,
+    12.92
+   ],
+   [
+    "Greymoor_16",
+    "Remasker New (1)",
+    "bool",
+    135.64,
+    12.92
+   ],
+   [
+    "Greymoor_16",
+    "Remasker New Sharp",
+    "bool",
+    57.27,
+    53.97
+   ],
+   [
+    "Greymoor_16",
+    "Remasker New Sharp (1)",
+    "bool",
+    97.34,
+    35.0
+   ],
+   [
+    "Greymoor_17",
+    "Remasker New Sharp Ultra",
+    "bool",
+    49.26,
+    38.56
+   ],
+   [
+    "Greymoor_20c",
+    "Inverse Remasker",
+    "bool",
+    41.11,
+    22.4
+   ],
+   [
+    "Greymoor_20c",
+    "Inverse Remasker (5)",
+    "bool",
+    36.3,
+    47.21
+   ],
+   [
+    "Greymoor_20c",
+    "Inverse Remasker (6)",
+    "bool",
+    11.47,
+    41.97
+   ],
+   [
+    "Greymoor_22",
+    "Remasker New Sharp",
+    "bool",
+    67.78,
+    30.67
+   ],
+   [
+    "Greymoor_22",
+    "Remasker New Sharp Ultra",
+    "bool",
+    67.56,
+    40.98
+   ],
+   [
+    "Halfway_01",
+    "Secret Mask New",
+    "bool",
+    6.84,
+    15.78
+   ],
+   [
+    "Hang_06_bank",
+    "Inverse Remasker",
+    "bool",
+    88.8,
+    16.6
+   ],
+   [
+    "Hang_06_bank",
+    "Remasker New Sharp",
+    "bool",
+    52.61,
+    47.28
+   ],
+   [
+    "Hang_06_bank",
+    "Remasker New Sharp (2)",
+    "bool",
+    22.3,
+    16.87
+   ],
+   [
+    "Hang_06_bank",
+    "Remasker New Sharp Ultra",
+    "bool",
+    58.65,
+    8.73
+   ],
+   [
+    "Hang_06_bank",
+    "Remasker New Sharp Ultra (1)",
+    "bool",
+    39.68,
+    11.97
+   ],
+   [
+    "Hang_06_bank",
+    "Secret Mask New",
+    "bool",
+    76.92,
+    31.28
+   ],
+   [
+    "Hang_08",
+    "Remasker New",
+    "bool",
+    1.72,
+    39.0
+   ],
+   [
+    "Hang_09",
+    "Remasker New (2)",
+    "bool",
+    99.17,
+    18.65
+   ],
+   [
+    "Hang_14",
+    "Remasker New Sharp",
+    "bool",
+    71.76,
+    23.57
+   ],
+   [
+    "Hang_14",
+    "Remasker New Sharp (1)",
+    "bool",
+    44.0,
+    7.01
+   ],
+   [
+    "Hang_16",
+    "Remasker New Sharp",
+    "bool",
+    88.77,
+    23.99
+   ],
+   [
+    "Library_02",
+    "Remasker New",
+    "bool",
+    48.17,
+    51.53
+   ],
+   [
+    "Library_02",
+    "Remasker New (1)",
+    "bool",
+    104.88,
+    55.23
+   ],
+   [
+    "Library_03",
+    "Secret Mask New",
+    "bool",
+    25.59,
+    12.68
+   ],
+   [
+    "Library_04",
+    "Remasker New",
+    "bool",
+    35.12,
+    200.32
+   ],
+   [
+    "Library_04",
+    "Remasker New Sharp",
+    "bool",
+    32.59,
+    211.07
+   ],
+   [
+    "Library_05",
+    "Remasker New",
+    "bool",
+    23.19,
+    30.95
+   ],
+   [
+    "Library_05",
+    "Remasker New Sharp Ultra",
+    "bool",
+    25.4,
+    -2.79
+   ],
+   [
+    "Library_06",
+    "Remasker New",
+    "bool",
+    61.85,
+    70.71
+   ],
+   [
+    "Library_07",
+    "Remasker New",
+    "bool",
+    28.0,
+    41.73
+   ],
+   [
+    "Library_07",
+    "Remasker New (1)",
+    "bool",
+    47.64,
+    55.42
+   ],
+   [
+    "Library_08",
+    "Remasker New",
+    "bool",
+    7.67,
+    22.59
+   ],
+   [
+    "Library_08",
+    "Remasker New (2)",
+    "bool",
+    103.74,
+    19.81
+   ],
+   [
+    "Library_08",
+    "Remasker New Inverted",
+    "bool",
+    103.74,
+    19.81
+   ],
+   [
+    "Library_09",
+    "Remasker New Sharp",
+    "bool",
+    152.73,
+    11.08
+   ],
+   [
+    "Library_09",
+    "Remasker New Sharp (1)",
+    "bool",
+    30.6,
+    14.38
+   ],
+   [
+    "Library_09",
+    "Remasker New Sharp (3)",
+    "bool",
+    30.6,
+    14.38
+   ],
+   [
+    "Library_10",
+    "Remasker New",
+    "bool",
+    92.42,
+    16.38
+   ],
+   [
+    "Library_10",
+    "Remasker New (1)",
+    "bool",
+    92.42,
+    11.06
+   ],
+   [
+    "Library_11",
+    "Remasker New",
+    "bool",
+    16.54,
+    191.9
+   ],
+   [
+    "Library_11",
+    "Remasker New - Centre",
+    "bool",
+    16.15,
+    236.09
+   ],
+   [
+    "Library_11",
+    "Remasker New - Left",
+    "bool",
+    6.5,
+    235.54
+   ],
+   [
+    "Library_11",
+    "Remasker New - Right",
+    "bool",
+    25.62,
+    236.31
+   ],
+   [
+    "Library_11b",
+    "Remasker New Sharp",
+    "bool",
+    21.3,
+    89.92
+   ],
+   [
+    "Library_11b",
+    "Secret Mask New",
+    "bool",
+    77.61,
+    19.11
+   ],
+   [
+    "Library_12",
+    "Remasker",
+    "bool",
+    34.8,
+    89.78
+   ],
+   [
+    "Library_12",
+    "Remasker (1)",
+    "bool",
+    28.46,
+    101.18
+   ],
+   [
+    "Library_12",
+    "Remasker New",
+    "bool",
+    99.53,
+    104.73
+   ],
+   [
+    "Library_12",
+    "Remasker New (1)",
+    "bool",
+    139.74,
+    38.7
+   ],
+   [
+    "Library_12",
+    "Remasker New Sharp",
+    "bool",
+    56.76,
+    73.53
+   ],
+   [
+    "Library_12",
+    "Remasker New Sharp",
+    "bool",
+    69.69,
+    101.16
+   ],
+   [
+    "Library_12",
+    "Remasker New Sharp (1)",
+    "bool",
+    42.98,
+    104.64
+   ],
+   [
+    "Library_12",
+    "Remasker New Sharp (1)",
+    "bool",
+    56.7,
+    91.7
+   ],
+   [
+    "Library_13",
+    "Inverse Remasker",
+    "bool",
+    74.04,
+    23.6
+   ],
+   [
+    "Library_13b",
+    "Remasker New Sharp Ultra (1)",
+    "bool",
+    68.38,
+    9.97
+   ],
+   [
+    "Library_14",
+    "Remasker New",
+    "bool",
+    55.33,
+    7.72
+   ],
+   [
+    "Library_15",
+    "Remasker New Sharp Ultra",
+    "bool",
+    27.26,
+    11.9
+   ],
+   [
+    "Memory_Ant_Queen",
+    "Col_Glow_Remasker",
+    "bool",
+    147.8,
+    25.78
+   ],
+   [
+    "Memory_Coral_Tower",
+    "Remasker New (1)",
+    "bool",
+    55.5,
+    103.0
+   ],
+   [
+    "Memory_Coral_Tower",
+    "Remasker New Top",
+    "bool",
+    55.5,
+    419.7
+   ],
+   [
+    "Memory_Silk_Heart_BellBeast",
+    "glow_rim_Remasker",
+    "bool",
+    -34.08,
+    102.21
+   ],
+   [
+    "Memory_Silk_Heart_LaceTower",
+    "glow_rim_Remasker",
+    "bool",
+    -34.08,
+    102.21
+   ],
+   [
+    "Memory_Silk_Heart_WardBoss",
+    "glow_rim_Remasker",
+    "bool",
+    -34.08,
+    102.21
+   ],
+   [
+    "Mosstown_01",
+    "Remasker New (1)",
+    "bool",
+    44.94,
+    24.59
+   ],
+   [
+    "Mosstown_02",
+    "Remasker New Sharp",
+    "bool",
+    29.92,
+    42.94
+   ],
+   [
+    "Organ_01",
+    "Remasker New",
+    "bool",
+    57.0,
+    55.8
+   ],
+   [
+    "Organ_01",
+    "Remasker New (1)",
+    "bool",
+    99.64,
+    39.36
+   ],
+   [
+    "Organ_01",
+    "Remasker New (2)",
+    "bool",
+    131.4,
+    39.36
+   ],
+   [
+    "Organ_01",
+    "Remasker New (3)",
+    "bool",
+    145.35,
+    23.81
+   ],
+   [
+    "Organ_01",
+    "Remasker New Sharp Ultra",
+    "bool",
+    41.87,
+    81.26
+   ],
+   [
+    "Peak_01",
+    "Remasker New",
+    "bool",
+    -8.97,
+    262.46
+   ],
+   [
+    "Peak_01",
+    "Remasker New (1)",
+    "bool",
+    20.1,
+    262.19
+   ],
+   [
+    "Peak_04d",
+    "Remasker New Sharp Ultra",
+    "bool",
+    14.45,
+    10.28
+   ],
+   [
+    "Peak_05c",
+    "Remasker New Sharp Ultra",
+    "bool",
+    243.2,
+    104.57
+   ],
+   [
+    "Peak_05e",
+    "Remasker New Sharp",
+    "bool",
+    80.16,
+    47.47
+   ],
+   [
+    "Peak_06",
+    "Remasker New Sharp Ultra",
+    "bool",
+    28.57,
+    223.06
+   ],
+   [
+    "Peak_07",
+    "Remasker New Sharp Ultra",
+    "bool",
+    23.79,
+    -6.09
+   ],
+   [
+    "Peak_07",
+    "Secret Mask New",
+    "bool",
+    5.83,
+    7.89
+   ],
+   [
+    "Peak_08b",
+    "Remasker New",
+    "bool",
+    281.98,
+    6.08
+   ],
+   [
+    "Room_CrowCourt_02",
+    "Remasker New Sharp",
+    "bool",
+    12.48,
+    90.81
+   ],
+   [
+    "Room_CrowCourt_02",
+    "Remasker New Sharp (1)",
+    "bool",
+    20.99,
+    54.03
+   ],
+   [
+    "Room_CrowCourt_02",
+    "Remasker New Sharp Ultra",
+    "bool",
+    32.49,
+    27.54
+   ],
+   [
+    "Room_Forge",
+    "Inverse Remasker",
+    "bool",
+    16.86,
+    16.87
+   ],
+   [
+    "Room_Forge",
+    "Remasker New",
+    "bool",
+    8.37,
+    39.28
+   ],
+   [
+    "Room_Forge",
+    "Remasker New (1)",
+    "bool",
+    29.22,
+    18.85
+   ],
+   [
+    "Shadow_01",
+    "Inverse Remasker",
+    "bool",
+    44.38,
+    65.61
+   ],
+   [
+    "Shadow_01",
+    "Remasker New",
+    "bool",
+    23.61,
+    63.47
+   ],
+   [
+    "Shadow_08",
+    "Remasker New Sharp Ultra",
+    "bool",
+    11.38,
+    17.95
+   ],
+   [
+    "Shadow_08",
+    "Remasker New Sharp Ultra (1)",
+    "bool",
+    31.65,
+    22.9
+   ],
+   [
+    "Shadow_09",
+    "Remasker New Sharp Ultra",
+    "bool",
+    122.1,
+    56.31
+   ],
+   [
+    "Shadow_10",
+    "Remasker New",
+    "bool",
+    167.66,
+    4.41
+   ],
+   [
+    "Shadow_10",
+    "Remasker New Sharp Ultra",
+    "bool",
+    98.9,
+    44.78
+   ],
+   [
+    "Shadow_15",
+    "Remasker New",
+    "bool",
+    30.09,
+    9.62
+   ],
+   [
+    "Shadow_18",
+    "Remasker",
+    "bool",
+    74.66,
+    38.56
+   ],
+   [
+    "Shadow_19",
+    "Remasker New",
+    "bool",
+    48.65,
+    27.46
+   ],
+   [
+    "Shadow_19",
+    "Remasker New Sharp",
+    "bool",
+    3.83,
+    79.24
+   ],
+   [
+    "Shadow_20",
+    "Remasker New",
+    "bool",
+    10.25,
+    27.39
+   ],
+   [
+    "Shadow_20",
+    "Remasker New (1)",
+    "bool",
+    38.46,
+    39.94
+   ],
+   [
+    "Shadow_20",
+    "Remasker New (2)",
+    "bool",
+    168.98,
+    14.26
+   ],
+   [
+    "Shadow_20",
+    "Remasker New (3)",
+    "bool",
+    337.53,
+    -14.01
+   ],
+   [
+    "Shadow_20",
+    "Remasker New Sharp",
+    "bool",
+    111.34,
+    32.45
+   ],
+   [
+    "Shadow_20",
+    "Remasker New Sharp (1)",
+    "bool",
+    76.5,
+    41.8
+   ],
+   [
+    "Shadow_20",
+    "Remasker New Sharp (2)",
+    "bool",
+    58.4,
+    0.4
+   ],
+   [
+    "Shadow_20",
+    "Remasker New Sharp Ultra (1)",
+    "bool",
+    124.54,
+    6.85
+   ],
+   [
+    "Shadow_20",
+    "Secret Sound Region_right_Bot",
+    "bool",
+    146.06,
+    3.67
+   ],
+   [
+    "Shadow_22",
+    "Remasker New",
+    "bool",
+    62.7,
+    1.52
+   ],
+   [
+    "Shadow_22",
+    "Remasker New (1)",
+    "bool",
+    62.45,
+    12.14
+   ],
+   [
+    "Shadow_22",
+    "Remasker New (2)",
+    "bool",
+    8.42,
+    26.41
+   ],
+   [
+    "Shadow_22",
+    "Remasker New (3)",
+    "bool",
+    2.55,
+    8.78
+   ],
+   [
+    "Shadow_Weavehome",
+    "Remasker New",
+    "bool",
+    159.4,
+    57.97
+   ],
+   [
+    "Shadow_Weavehome",
+    "Remasker New Inverted",
+    "bool",
+    159.4,
+    57.97
+   ],
+   [
+    "Shellwood_01b",
+    "Remasker New",
+    "bool",
+    38.11,
+    72.05
+   ],
+   [
+    "Shellwood_01b",
+    "Remasker New (1)",
+    "bool",
+    5.86,
+    72.7
+   ],
+   [
+    "Shellwood_11",
+    "Remasker New (1)",
+    "bool",
+    69.72,
+    46.83
+   ],
+   [
+    "Shellwood_11",
+    "Remasker New Twig Wall",
+    "bool",
+    37.58,
+    10.42
+   ],
+   [
+    "Shellwood_11b_Memory",
+    "Remasker New",
+    "bool",
+    19.31,
+    124.46
+   ],
+   [
+    "Shellwood_13",
+    "Remasker New",
+    "bool",
+    105.95,
+    33.87
+   ],
+   [
+    "Shellwood_13",
+    "Remasker New",
+    "bool",
+    116.68,
+    33.72
+   ],
+   [
+    "Shellwood_13",
+    "Remasker New",
+    "bool",
+    121.3,
+    33.85
+   ],
+   [
+    "Shellwood_13",
+    "Remasker New",
+    "bool",
+    145.96,
+    34.27
+   ],
+   [
+    "Shellwood_13",
+    "Remasker New (1)",
+    "bool",
+    108.04,
+    33.85
+   ],
+   [
+    "Shellwood_13",
+    "Remasker New (1)",
+    "bool",
+    94.44,
+    34.53
+   ],
+   [
+    "Shellwood_13",
+    "Secret Mask New",
+    "bool",
+    74.09,
+    65.45
+   ],
+   [
+    "Slab_03",
+    "Remasker New",
+    "bool",
+    13.02,
+    34.38
+   ],
+   [
+    "Slab_03",
+    "Remasker New Sharp Ultra",
+    "bool",
+    4.41,
+    22.01
+   ],
+   [
+    "Slab_03",
+    "Secret Mask New",
+    "bool",
+    12.98,
+    184.98
+   ],
+   [
+    "Slab_05",
+    "Remasker New",
+    "bool",
+    1.32,
+    5.6
+   ],
+   [
+    "Slab_05",
+    "Remasker New Sharp",
+    "bool",
+    32.2,
+    35.88
+   ],
+   [
+    "Slab_06",
+    "Remasker New Sharp",
+    "bool",
+    90.32,
+    38.33
+   ],
+   [
+    "Slab_06",
+    "Remasker New Sharp (1)",
+    "bool",
+    90.32,
+    38.33
+   ],
+   [
+    "Slab_07",
+    "Remasker New Sharp Ultra",
+    "bool",
+    23.91,
+    31.96
+   ],
+   [
+    "Slab_07",
+    "Remasker New Sharp Ultra(Clone)",
+    "bool",
+    72.57,
+    32.14
+   ],
+   [
+    "Slab_08",
+    "Remasker New Sharp Ultra",
+    "bool",
+    15.5,
+    33.09
+   ],
+   [
+    "Slab_13",
+    "Remasker New Sharp",
+    "bool",
+    58.2,
+    12.12
+   ],
+   [
+    "Slab_13",
+    "Slab_vent_mask",
+    "bool",
+    12.36,
+    4.84
+   ],
+   [
+    "Slab_15",
+    "Remasker New Sharp",
+    "bool",
+    50.28,
+    4.57
+   ],
+   [
+    "Slab_15",
+    "Secret Mask New",
+    "bool",
+    57.39,
+    6.01
+   ],
+   [
+    "Slab_15",
+    "Slab_vent_mask",
+    "bool",
+    19.39,
+    18.74
+   ],
+   [
+    "Slab_16",
+    "Remasker New",
+    "bool",
+    51.81,
+    73.17
+   ],
+   [
+    "Slab_16",
+    "Remasker New (1)",
+    "bool",
+    70.83,
+    57.13
+   ],
+   [
+    "Slab_16",
+    "Remasker New Sharp",
+    "bool",
+    76.04,
+    21.26
+   ],
+   [
+    "Slab_16",
+    "Slab_vent_mask",
+    "bool",
+    21.89,
+    16.01
+   ],
+   [
+    "Slab_19b",
+    "Remasker New Sharp Ultra",
+    "bool",
+    19.29,
+    29.95
+   ],
+   [
+    "Slab_20",
+    "Remasker New Sharp Ultra",
+    "bool",
+    76.05,
+    14.21
+   ],
+   [
+    "Slab_22",
+    "Remasker New",
+    "bool",
+    151.42,
+    7.65
+   ],
+   [
+    "Slab_22",
+    "Remasker New(Clone)",
+    "bool",
+    124.13,
+    8.96
+   ],
+   [
+    "Slab_22",
+    "Remasker New(Clone)",
+    "bool",
+    179.89,
+    11.03
+   ],
+   [
+    "Slab_22",
+    "Remasker New(Clone)",
+    "bool",
+    18.96,
+    5.67
+   ],
+   [
+    "Slab_22",
+    "Remasker New(Clone)",
+    "bool",
+    66.19,
+    7.36
+   ],
+   [
+    "Slab_23",
+    "Remasker New",
+    "bool",
+    -0.23,
+    10.41
+   ],
+   [
+    "Song_01",
+    "Remasker New",
+    "bool",
+    19.09,
+    57.15
+   ],
+   [
+    "Song_01",
+    "Remasker New Sharp Ultra",
+    "bool",
+    75.05,
+    113.38
+   ],
+   [
+    "Song_01b",
+    "Remasker New (1)",
+    "bool",
+    14.11,
+    7.18
+   ],
+   [
+    "Song_02",
+    "Remasker New",
+    "bool",
+    96.32,
+    8.39
+   ],
+   [
+    "Song_02",
+    "Remasker New Sharp",
+    "bool",
+    111.19,
+    26.34
+   ],
+   [
+    "Song_02",
+    "Remasker New Sharp (1)",
+    "bool",
+    64.18,
+    26.34
+   ],
+   [
+    "Song_02",
+    "Remasker New Sharp (2)",
+    "bool",
+    98.93,
+    3.19
+   ],
+   [
+    "Song_03",
+    "Remasker New (1)",
+    "bool",
+    28.13,
+    34.05
+   ],
+   [
+    "Song_04",
+    "Remasker New",
+    "bool",
+    126.75,
+    34.15
+   ],
+   [
+    "Song_04",
+    "Remasker New (1)",
+    "bool",
+    88.1,
+    18.84
+   ],
+   [
+    "Song_05",
+    "Remasker New",
+    "bool",
+    4.5,
+    47.27
+   ],
+   [
+    "Song_05",
+    "Remasker New (1)",
+    "bool",
+    42.28,
+    52.41
+   ],
+   [
+    "Song_07",
+    "Remasker New",
+    "bool",
+    18.6,
+    20.37
+   ],
+   [
+    "Song_07",
+    "Remasker New (1)",
+    "bool",
+    31.34,
+    12.27
+   ],
+   [
+    "Song_09",
+    "Remasker New",
+    "bool",
+    44.81,
+    43.54
+   ],
+   [
+    "Song_09",
+    "Remasker New (1)",
+    "bool",
+    25.64,
+    81.03
+   ],
+   [
+    "Song_09",
+    "Remasker New (2)",
+    "bool",
+    7.33,
+    60.01
+   ],
+   [
+    "Song_09",
+    "Remasker New (3)",
+    "bool",
+    7.33,
+    60.01
+   ],
+   [
+    "Song_09",
+    "Remasker New (4)",
+    "bool",
+    44.35,
+    46.55
+   ],
+   [
+    "Song_09",
+    "Remasker New Sharp Ultra",
+    "bool",
+    43.46,
+    3.71
+   ],
+   [
+    "Song_09",
+    "Remasker New Sharp Ultra (1)",
+    "bool",
+    7.96,
+    44.46
+   ],
+   [
+    "Song_09",
+    "Remasker New Sharp Ultra (2)",
+    "bool",
+    5.25,
+    77.79
+   ],
+   [
+    "Song_09",
+    "Remasker New Sharp Ultra (3)",
+    "bool",
+    44.53,
+    44.67
+   ],
+   [
+    "Song_09",
+    "Secret Mask New",
+    "bool",
+    42.58,
+    43.51
+   ],
+   [
+    "Song_09b",
+    "Inverse Remasker",
+    "bool",
+    107.7,
+    135.39
+   ],
+   [
+    "Song_09b",
+    "Inverse Remasker (1)",
+    "bool",
+    105.89,
+    137.66
+   ],
+   [
+    "Song_09b",
+    "Remasker New",
+    "bool",
+    143.99,
+    139.12
+   ],
+   [
+    "Song_09b",
+    "Remasker New (1)",
+    "bool",
+    125.41,
+    136.67
+   ],
+   [
+    "Song_09b",
+    "Remasker New (2)",
+    "bool",
+    147.87,
+    126.6
+   ],
+   [
+    "Song_10",
+    "Inverse Remasker",
+    "bool",
+    44.61,
+    45.85
+   ],
+   [
+    "Song_10",
+    "Remasker New",
+    "bool",
+    30.23,
+    53.55
+   ],
+   [
+    "Song_10",
+    "Remasker New (1)",
+    "bool",
+    30.23,
+    62.42
+   ],
+   [
+    "Song_10",
+    "Remasker New (2)",
+    "bool",
+    80.02,
+    58.88
+   ],
+   [
+    "Song_10",
+    "Remasker New (3)",
+    "bool",
+    118.21,
+    51.36
+   ],
+   [
+    "Song_10",
+    "Remasker New (4)",
+    "bool",
+    80.02,
+    58.88
+   ],
+   [
+    "Song_10",
+    "Remasker New (5)",
+    "bool",
+    118.21,
+    51.36
+   ],
+   [
+    "Song_10",
+    "Remasker New Sharp",
+    "bool",
+    49.4,
+    17.8
+   ],
+   [
+    "Song_10",
+    "Remasker New Sharp (1)",
+    "bool",
+    30.67,
+    56.84
+   ],
+   [
+    "Song_11",
+    "Inverse Remasker",
+    "bool",
+    43.55,
+    109.43
+   ],
+   [
+    "Song_11",
+    "Remasker New",
+    "bool",
+    42.3,
+    119.8
+   ],
+   [
+    "Song_11",
+    "Remasker New (1)",
+    "bool",
+    47.5,
+    223.1
+   ],
+   [
+    "Song_11",
+    "Remasker New Inverse",
+    "bool",
+    42.3,
+    119.8
+   ],
+   [
+    "Song_15",
+    "Remasker New",
+    "bool",
+    42.95,
+    7.8
+   ],
+   [
+    "Song_15",
+    "Remasker New Sharp",
+    "bool",
+    28.65,
+    30.57
+   ],
+   [
+    "Song_18",
+    "Remasker New Sharp",
+    "bool",
+    71.3,
+    35.8
+   ],
+   [
+    "Song_18",
+    "Remasker New Sharp (1)",
+    "bool",
+    64.84,
+    58.08
+   ],
+   [
+    "Song_18",
+    "Remasker New Sharp (2)",
+    "bool",
+    80.71,
+    9.73
+   ],
+   [
+    "Song_18",
+    "Remasker New Sharp (3)",
+    "bool",
+    51.59,
+    9.73
+   ],
+   [
+    "Song_20b",
+    "Remasker New",
+    "bool",
+    24.3,
+    187.36
+   ],
+   [
+    "Song_20b",
+    "Remasker New Sharp Ultra",
+    "bool",
+    10.35,
+    236.41
+   ],
+   [
+    "Song_25",
+    "Remasker New",
+    "bool",
+    45.3,
+    7.31
+   ],
+   [
+    "Song_25",
+    "Remasker New Sharp",
+    "bool",
+    19.06,
+    25.38
+   ],
+   [
+    "Song_25",
+    "Remasker New Sharp Drapes",
+    "bool",
+    19.06,
+    25.38
+   ],
+   [
+    "Song_Enclave_Tube",
+    "Remasker New",
+    "bool",
+    20.24,
+    22.23
+   ],
+   [
+    "Song_Enclave_Tube",
+    "Remasker New (1)",
+    "bool",
+    18.22,
+    -0.88
+   ],
+   [
+    "Tube_Hub",
+    "Remasker (1)",
+    "bool",
+    46.4,
+    14.1
+   ],
+   [
+    "Tube_Hub",
+    "Remasker New",
+    "bool",
+    24.02,
+    14.21
+   ],
+   [
+    "Tube_Hub",
+    "Remasker New Sharp (1)",
+    "bool",
+    28.74,
+    147.02
+   ],
+   [
+    "Tube_Hub",
+    "Remasker New Sharp (1)",
+    "bool",
+    40.82,
+    12.22
+   ],
+   [
+    "Tube_Hub",
+    "Remasker New Sharp (2)",
+    "bool",
+    40.82,
+    12.22
+   ],
+   [
+    "Tube_Hub",
+    "Remasker New Sharp Ultra",
+    "bool",
+    54.0,
+    15.97
+   ],
+   [
+    "Tube_Hub",
+    "Remasker New Sharp Ultra (1)",
+    "bool",
+    71.15,
+    128.85
+   ],
+   [
+    "Tube_Hub",
+    "Remasker Pre Hub Left",
+    "bool",
+    18.03,
+    45.79
+   ],
+   [
+    "Tube_Hub",
+    "Remasker Pre Hub Right",
+    "bool",
+    63.76,
+    43.17
+   ],
+   [
+    "Tut_01",
+    "Remasker",
+    "bool",
+    48.8,
+    9.87
+   ],
+   [
+    "Tut_01",
+    "Remasker New",
+    "bool",
+    16.59,
+    76.05
+   ],
+   [
+    "Tut_01",
+    "Remasker New (1)",
+    "bool",
+    74.38,
+    10.55
+   ],
+   [
+    "Tut_01",
+    "Remasker New (2)",
+    "bool",
+    50.9,
+    10.55
+   ],
+   [
+    "Tut_01",
+    "Remasker New (3)",
+    "bool",
+    49.21,
+    7.32
+   ],
+   [
+    "Tut_01",
+    "Remasker New thumper",
+    "bool",
+    96.25,
+    18.72
+   ],
+   [
+    "Tut_01b",
+    "remask right",
+    "bool",
+    155.92,
+    39.13
+   ],
+   [
+    "Tut_02",
+    "Remasker",
+    "bool",
+    39.36,
+    12.3
+   ],
+   [
+    "Tut_02",
+    "Remasker (1)",
+    "bool",
+    39.36,
+    12.3
+   ],
+   [
+    "Tut_02",
+    "Remasker New",
+    "bool",
+    10.93,
+    34.36
+   ],
+   [
+    "Tut_04",
+    "Remasker New Sharp Ultra",
+    "bool",
+    78.51,
+    29.9
+   ],
+   [
+    "Under_01",
+    "Remasker",
+    "bool",
+    19.52,
+    73.5
+   ],
+   [
+    "Under_01",
+    "Remasker New",
+    "bool",
+    19.82,
+    106.24
+   ],
+   [
+    "Under_01",
+    "Remasker New (1)",
+    "bool",
+    17.1,
+    139.91
+   ],
+   [
+    "Under_01",
+    "Remasker New Right Blackout",
+    "bool",
+    42.4,
+    83.22
+   ],
+   [
+    "Under_01",
+    "Remasker New Sharp",
+    "bool",
+    9.26,
+    72.5
+   ],
+   [
+    "Under_01",
+    "Remasker New Top_glower",
+    "bool",
+    40.93,
+    83.22
+   ],
+   [
+    "Under_01",
+    "Secret Mask New",
+    "bool",
+    35.4,
+    76.14
+   ],
+   [
+    "Under_02",
+    "Remasker New Sharp Ultra",
+    "bool",
+    4.68,
+    191.33
+   ],
+   [
+    "Under_03",
+    "Remasker New (1)",
+    "bool",
+    11.56,
+    7.61
+   ],
+   [
+    "Under_03d",
+    "Remasker New (1)",
+    "bool",
+    14.12,
+    21.82
+   ],
+   [
+    "Under_04",
+    "Remasker New",
+    "bool",
+    17.01,
+    30.02
+   ],
+   [
+    "Under_07",
+    "Remasker New Sharp",
+    "bool",
+    57.96,
+    11.0
+   ],
+   [
+    "Under_07b",
+    "Remasker New",
+    "bool",
+    95.48,
+    93.12
+   ],
+   [
+    "Under_07c",
+    "Inverse Remasker",
+    "bool",
+    67.52,
+    99.91
+   ],
+   [
+    "Under_07c",
+    "Inverse Remasker (1)",
+    "bool",
+    119.6,
+    78.16
+   ],
+   [
+    "Under_07c",
+    "Remasker New",
+    "bool",
+    75.25,
+    51.75
+   ],
+   [
+    "Under_07c",
+    "Remasker New (1)",
+    "bool",
+    12.71,
+    70.43
+   ],
+   [
+    "Under_07c",
+    "Remasker New Sharp",
+    "bool",
+    32.3,
+    68.8
+   ],
+   [
+    "Under_07c",
+    "Remasker New Sharp Ultra",
+    "bool",
+    74.88,
+    97.34
+   ],
+   [
+    "Under_08",
+    "Remasker New",
+    "bool",
+    118.97,
+    17.99
+   ],
+   [
+    "Under_08",
+    "Remasker New (1)",
+    "bool",
+    67.9,
+    20.84
+   ],
+   [
+    "Under_08",
+    "Remasker New (3)",
+    "bool",
+    89.91,
+    37.08
+   ],
+   [
+    "Under_08",
+    "Remasker New Sharp",
+    "bool",
+    120.7,
+    32.49
+   ],
+   [
+    "Under_08",
+    "Remasker New Sharp Ultra",
+    "bool",
+    111.24,
+    18.94
+   ],
+   [
+    "Under_08",
+    "Remasker New Sharp Ultra (1)",
+    "bool",
+    62.77,
+    18.29
+   ],
+   [
+    "Under_08",
+    "Remasker New Sharp Ultra (2)",
+    "bool",
+    85.87,
+    19.55
+   ],
+   [
+    "Under_08",
+    "Secret Sound Region",
+    "bool",
+    96.72,
+    36.43
+   ],
+   [
+    "Under_10",
+    "Remasker New",
+    "bool",
+    71.44,
+    9.51
+   ],
+   [
+    "Under_13",
+    "Remasker New",
+    "bool",
+    44.53,
+    55.3
+   ],
+   [
+    "Under_13",
+    "Remasker New (1)",
+    "bool",
+    7.69,
+    64.41
+   ],
+   [
+    "Under_13",
+    "Remasker New (2)",
+    "bool",
+    44.53,
+    55.3
+   ],
+   [
+    "Under_13",
+    "Remasker New (3)",
+    "bool",
+    7.69,
+    64.41
+   ],
+   [
+    "Under_14",
+    "Remasker New Sharp",
+    "bool",
+    102.07,
+    21.07
+   ],
+   [
+    "Under_16",
+    "Remasker New (1)",
+    "bool",
+    45.78,
+    27.87
+   ],
+   [
+    "Under_17",
+    "Remasker New (10)",
+    "bool",
+    80.06,
+    15.38
+   ],
+   [
+    "Under_17",
+    "Remasker New (2)",
+    "bool",
+    95.97,
+    31.7
+   ],
+   [
+    "Under_17",
+    "Remasker New (3)",
+    "bool",
+    129.24,
+    31.97
+   ],
+   [
+    "Under_17",
+    "Remasker New (4)",
+    "bool",
+    59.65,
+    35.72
+   ],
+   [
+    "Under_17",
+    "Remasker New (6)",
+    "bool",
+    48.59,
+    4.92
+   ],
+   [
+    "Under_17",
+    "Remasker New (7)",
+    "bool",
+    117.25,
+    4.92
+   ],
+   [
+    "Under_17",
+    "Remasker New (8)",
+    "bool",
+    25.81,
+    39.72
+   ],
+   [
+    "Under_17",
+    "Remasker New (9)",
+    "bool",
+    81.66,
+    35.94
+   ],
+   [
+    "Under_18",
+    "Inverse Remasker",
+    "bool",
+    10.49,
+    25.7
+   ],
+   [
+    "Under_18",
+    "Remasker New (1)",
+    "bool",
+    123.91,
+    42.4
+   ],
+   [
+    "Under_20",
+    "Remasker New Sharp Ultra",
+    "bool",
+    81.19,
+    21.78
+   ],
+   [
+    "Under_23",
+    "Remasker New Sharp",
+    "bool",
+    -53.8,
+    75.6
+   ],
+   [
+    "Under_23",
+    "Remasker New Sharp Ultra",
+    "bool",
+    84.57,
+    12.19
+   ],
+   [
+    "Under_27",
+    "Remasker New Sharp",
+    "bool",
+    51.34,
+    25.58
+   ],
+   [
+    "Under_27",
+    "Remasker New Sharp (1)",
+    "bool",
+    33.19,
+    46.4
+   ],
+   [
+    "Under_27",
+    "Remasker New Sharp Ultra",
+    "bool",
+    97.58,
+    47.94
+   ],
+   [
+    "Ward_01",
+    "Remasker New - Centre",
+    "bool",
+    35.59,
+    54.16
+   ],
+   [
+    "Ward_01",
+    "Remasker New - Left",
+    "bool",
+    25.94,
+    53.61
+   ],
+   [
+    "Ward_01",
+    "Remasker New - Right",
+    "bool",
+    45.75,
+    54.38
+   ],
+   [
+    "Ward_01",
+    "Remasker New - bot",
+    "bool",
+    44.79,
+    26.17
+   ],
+   [
+    "Ward_01",
+    "Remasker New Sharp",
+    "bool",
+    88.9,
+    50.22
+   ],
+   [
+    "Ward_01",
+    "Remasker New Sharp (1)",
+    "bool",
+    -34.12,
+    55.38
+   ],
+   [
+    "Ward_01",
+    "Remasker New Sharp Ultra",
+    "bool",
+    71.42,
+    77.16
+   ],
+   [
+    "Ward_01",
+    "Remasker New Sharp Ultra (1)",
+    "bool",
+    34.87,
+    19.94
+   ],
+   [
+    "Ward_01",
+    "Remasker New Sharp Ultra (2)",
+    "bool",
+    59.1,
+    21.3
+   ],
+   [
+    "Ward_02",
+    "Remasker New Sharp",
+    "bool",
+    91.27,
+    7.32
+   ],
+   [
+    "Ward_02_boss",
+    "Remasker New",
+    "bool",
+    49.82,
+    12.28
+   ],
+   [
+    "Ward_02b",
+    "Remasker New",
+    "bool",
+    147.53,
+    5.56
+   ],
+   [
+    "Ward_02b",
+    "Remasker New (1)",
+    "bool",
+    35.39,
+    14.99
+   ],
+   [
+    "Ward_02b",
+    "Remasker New (2)",
+    "bool",
+    16.32,
+    5.46
+   ],
+   [
+    "Ward_02b",
+    "Remasker New Sharp",
+    "bool",
+    78.14,
+    25.22
+   ],
+   [
+    "Ward_03",
+    "Remasker New",
+    "bool",
+    212.02,
+    36.46
+   ],
+   [
+    "Ward_03",
+    "Remasker New Sharp",
+    "bool",
+    207.84,
+    38.23
+   ],
+   [
+    "Ward_03",
+    "Remasker New Sharp Ultra",
+    "bool",
+    165.18,
+    45.6
+   ],
+   [
+    "Ward_05",
+    "Remasker New Sharp Ultra",
+    "bool",
+    5.67,
+    12.4
+   ],
+   [
+    "Ward_05",
+    "Remasker New Sharp Ultra (1)",
+    "bool",
+    120.2,
+    10.48
+   ],
+   [
+    "Ward_06",
+    "Remasker New Sharp Ultra",
+    "bool",
+    79.61,
+    48.83
+   ],
+   [
+    "Ward_07",
+    "Remasker New Sharp Ultra",
+    "bool",
+    122.2,
+    20.23
+   ],
+   [
+    "Weave_02",
+    "Inverse Remasker",
+    "bool",
+    21.91,
+    94.58
+   ],
+   [
+    "Weave_02",
+    "Remasker New",
+    "bool",
+    38.09,
+    216.86
+   ],
+   [
+    "Weave_04",
+    "Remasker New Sharp",
+    "bool",
+    92.0,
+    116.4
+   ],
+   [
+    "Weave_07",
+    "Remasker New Sharp Ultra",
+    "bool",
+    0.73,
+    106.7
+   ],
+   [
+    "Weave_08",
+    "Remasker New Sharp Ultra",
+    "bool",
+    75.79,
+    18.19
+   ],
+   [
+    "Weave_11",
+    "Remasker New Sharp Ultra",
+    "bool",
+    96.85,
+    28.05
+   ],
+   [
+    "Wisp_03",
+    "Remasker New Sharp",
+    "bool",
+    87.8,
+    26.92
+   ],
+   [
+    "Wisp_07",
+    "Remasker New",
+    "bool",
+    246.34,
+    21.19
+   ],
+   [
+    "Wisp_07",
+    "Remasker New (1)",
+    "bool",
+    256.55,
+    26.16
+   ]
+  ],
+  "lift": [
+   [
+    "Belltown_06",
+    "Mines Lift",
+    "bool",
+    28.0,
+    70.0
+   ],
+   [
+    "Bone_16",
+    "Bone Carriage",
+    "bool",
+    98.88,
+    12.88
+   ],
+   [
+    "Coral_38",
+    "Hornet_cage_rect_lift",
+    "bool",
+    24.06,
+    75.2
+   ],
+   [
+    "Coral_38",
+    "Hornet_cage_rect_lift",
+    "int",
+    24.06,
+    75.2
+   ],
+   [
+    "Greymoor_03",
+    "Hornet_cage_rect_lift_greymoor",
+    "bool",
+    27.6,
+    14.63
+   ],
+   [
+    "Greymoor_03",
+    "Hornet_cage_rect_lift_greymoor",
+    "int",
+    27.6,
+    14.63
+   ],
+   [
+    "Library_11",
+    "library_lift_large",
+    "int",
+    15.78,
+    263.06
+   ],
+   [
+    "Organ_01",
+    "Hornet_cage_rect_lift_organ (1)",
+    "bool",
+    48.58,
+    215.06
+   ],
+   [
+    "Organ_01",
+    "Hornet_cage_rect_lift_organ (1)",
+    "int",
+    48.58,
+    215.06
+   ],
+   [
+    "Shellwood_01b",
+    "Hornet_cage_rect_lift",
+    "bool",
+    37.64,
+    36.2
+   ],
+   [
+    "Shellwood_01b",
+    "Hornet_cage_rect_lift",
+    "int",
+    37.64,
+    36.2
+   ],
+   [
+    "Shellwood_02",
+    "Hornet_cage_rect_lift",
+    "bool",
+    46.5,
+    10.24
+   ],
+   [
+    "Shellwood_02",
+    "Hornet_cage_rect_lift",
+    "int",
+    46.5,
+    10.24
+   ],
+   [
+    "Ward_01",
+    "under_lift_large",
+    "bool",
+    35.27,
+    99.28
+   ],
+   [
+    "Ward_01",
+    "under_lift_large",
+    "int",
+    35.27,
+    99.28
+   ]
+  ]
+ },
+ "lying": {
+  "Ancient Egg Abyss Middle": [
+   [
+    "Abyss_04",
+    "Collectable Item Pickup",
+    98.24,
+    50.34
+   ]
+  ],
+  "Ant Trapper Item": [
+   [
+    "Bone_East_18b",
+    "Collectable Item Pickup",
+    107.45,
+    19.25
+   ]
+  ],
+  "Barbed Wire": [
+   [
+    "Dust_Barb",
+    "Collectable Item Pickup",
+    28.95,
+    4.32
+   ]
+  ],
+  "Beastfly Remains": [
+   [
+    "Bone_East_08_boss_beastfly",
+    "Collectable Item Pickup",
+    80.94,
+    7.07
+   ]
+  ],
+  "Bell Bind": [
+   [
+    "Dock_03b",
+    "Collectable Item Pickup",
+    154.09,
+    107.46
+   ]
+  ],
+  "Bone Necklace": [
+   [
+    "Bone_17",
+    "Collectable Item Pickup",
+    12.7,
+    6.48
+   ]
+  ],
+  "Bone Record Bone_East_14": [
+   [
+    "Bone_East_14",
+    "Collectable Item Pickup (1)",
+    42.21,
+    40.57
+   ]
+  ],
+  "Bone Record Greymoor_flooded_corridor": [
+   [
+    "Greymoor_21",
+    "Collectable Item Pickup",
+    72.17,
+    8.28
+   ]
+  ],
+  "Bone Record Understore_Map_Room": [
+   [
+    "Under_16",
+    "Collectable Item Pickup",
+    71.36,
+    15.41
+   ]
+  ],
+  "Bone Record Wisp Top": [
+   [
+    "Wisp_08",
+    "Collectable Item Pickup",
+    10.18,
+    114.64
+   ]
+  ],
+  "Broken SilkShot": [
+   [
+    "Shadow_Weavehome",
+    "Collectable Item Pickup",
+    76.64,
+    54.58
+   ]
+  ],
+  "Clover Heart": [
+   [
+    "Clover_01",
+    "Collectable Item Pickup",
+    118.69,
+    7.2
+   ]
+  ],
+  "Clover Map": [
+   [
+    "Clover_20",
+    "Collectable Item Pickup",
+    133.55,
+    16.47
+   ]
+  ],
+  "Cog Heart Pieces": [
+   [
+    "Arborium_10",
+    "Collectable Item Pickup",
+    17.81,
+    5.7
+   ],
+   [
+    "Library_16",
+    "Collectable Item Pickup",
+    49.36,
+    3.67
+   ],
+   [
+    "Song_26",
+    "Collectable Item Pickup",
+    15.53,
+    5.7
+   ]
+  ],
+  "Conch Drill": [
+   [
+    "Coral_Tower_01",
+    "Collectable Item Pickup Fling",
+    80.87,
+    7.61
+   ],
+   [
+    "Coral_Tower_01",
+    "Collectable Item Pickup Stand",
+    80.87,
+    7.31
+   ]
+  ],
+  "Coral Heart": [
+   [
+    "Coral_Tower_01",
+    "Collectable Item Pickup Heart",
+    80.88,
+    10.11
+   ],
+   [
+    "Coral_Tower_01",
+    "Collectable Item Pickup Heart",
+    82.58,
+    6.37
+   ]
+  ],
+  "Coral Ingredient": [
+   [
+    "Coral_41",
+    "Collectable Item Pickup",
+    7.12,
+    36.44
+   ]
+  ],
+  "Cradle Map": [
+   [
+    "Tube_Hub",
+    "Collectable Item Pickup",
+    27.04,
+    29.4
+   ]
+  ],
+  "Crawbell": [
+   [
+    "Room_CrowCourt_02",
+    "Collectable Item Pickup Crawbell",
+    19.41,
+    44.32
+   ]
+  ],
+  "Crest Socket Unlocker": [
+   [
+    "Ant_20",
+    "Collectable Item Pickup",
+    147.39,
+    13.79
+   ],
+   [
+    "Arborium_05",
+    "Collectable Item Pickup",
+    3.95,
+    7.27
+   ],
+   [
+    "Belltown",
+    "Collectable Item Pickup",
+    59.17,
+    66.17
+   ],
+   [
+    "Bellway_City",
+    "Collectable Item Pickup",
+    67.57,
+    24.29
+   ],
+   [
+    "Bone_10",
+    "Collectable Item Pickup Locket",
+    18.81,
+    16.25
+   ],
+   [
+    "Bone_18",
+    "Collectable Item Pickup",
+    38.15,
+    20.51
+   ],
+   [
+    "Bone_East_25",
+    "Collectable Item Pickup",
+    151.95,
+    6.35
+   ],
+   [
+    "Coral_02",
+    "Collectable Item Pickup (1)",
+    202.32,
+    43.56
+   ],
+   [
+    "Coral_23",
+    "Collectable Item Pickup",
+    90.74,
+    50.4
+   ],
+   [
+    "Crawl_09",
+    "Collectable Item Pickup",
+    130.49,
+    3.34
+   ],
+   [
+    "Dock_13",
+    "Collectable Item Pickup",
+    15.26,
+    3.29
+   ],
+   [
+    "Greymoor_16",
+    "Collectable Item Pickup",
+    130.9,
+    51.48
+   ],
+   [
+    "Halfway_01",
+    "Collectable Item Pickup",
+    8.29,
+    13.0
+   ],
+   [
+    "Library_08",
+    "Collectable Item Pickup",
+    105.34,
+    33.48
+   ],
+   [
+    "Shadow_20",
+    "Collectable Item Pickup",
+    17.71,
+    23.86
+   ],
+   [
+    "Shadow_27",
+    "Sack Corpse Pickup",
+    195.09,
+    11.76
+   ],
+   [
+    "Slab_Cell_Quiet",
+    "Collectable Item Pickup",
+    42.44,
+    30.4
+   ],
+   [
+    "Under_08",
+    "Collectable Item Pickup",
+    61.07,
+    16.47
+   ]
+  ],
+  "Crowman Memento": [
+   [
+    "Room_CrowCourt_02",
+    "Collectable Item Pickup",
+    34.75,
+    20.3
+   ]
+  ],
+  "Curve Claws": [
+   [
+    "Ant_21",
+    "Collectable Item Pickup",
+    44.78,
+    76.93
+   ]
+  ],
+  "Curve Claws Upgraded": [
+   [
+    "Bone_East_22",
+    "Collectable Item Pickup",
+    46.03,
+    4.81
+   ]
+  ],
+  "Dazzle Bind": [
+   [
+    "Library_13",
+    "Collectable Item Pickup",
+    73.76,
+    13.71
+   ],
+   [
+    "Library_13",
+    "Re-Entry Pickup",
+    73.61,
+    13.23
+   ]
+  ],
+  "Dazzle Bind Upgraded": [
+   [
+    "Library_13",
+    "Collectable Item Pickup",
+    73.84,
+    13.23
+   ],
+   [
+    "Library_13",
+    "Re-Entry Pickup Upgrade",
+    73.76,
+    13.23
+   ]
+  ],
+  "Dead Mans Purse": [
+   [
+    "Crawl_01",
+    "Collectable Item Pickup - Purse",
+    54.5,
+    85.1
+   ]
+  ],
+  "Dock Demo Key": [
+   [
+    "Room_Forge",
+    "Collectable Item Pickup (1)",
+    5.23,
+    7.53
+   ]
+  ],
+  "Farsight": [
+   [
+    "Abyss_08",
+    "Collectable Item Pickup",
+    157.55,
+    90.54
+   ]
+  ],
+  "Flintstone": [
+   [
+    "Dock_02b",
+    "Collectable Item Pickup",
+    26.57,
+    103.54
+   ]
+  ],
+  "Flower Heart": [
+   [
+    "Shellwood_11b",
+    "Collectable Item Pickup",
+    22.01,
+    149.01
+   ]
+  ],
+  "Fractured Mask": [
+   [
+    "Ant_Merchant",
+    "Collectable Item Pickup",
+    20.9,
+    15.19
+   ]
+  ],
+  "Great Shard": [
+   [
+    "Coral_36",
+    "Shell Shard Collectable Item Pickup Instant",
+    20.05,
+    48.57
+   ],
+   [
+    "Dock_11",
+    "Collectable Item Pickup",
+    100.63,
+    6.28
+   ]
+  ],
+  "Harpoon": [
+   [
+    "Belltown_Room_shellwood",
+    "Collectable Item Pickup",
+    37.02,
+    7.07
+   ]
+  ],
+  "Hunter Heart": [
+   [
+    "Ant_Queen",
+    "Collectable Item Pickup",
+    32.82,
+    20.17
+   ]
+  ],
+  "Librarian Melody Cylinder": [
+   [
+    "Library_10",
+    "Collectable Item Pickup - Melody",
+    14.18,
+    3.87
+   ]
+  ],
+  "Lightning Rod": [
+   [
+    "Arborium_07",
+    "Collectable Item Pickup Battle",
+    154.27,
+    10.54
+   ]
+  ],
+  "Maggot Charm": [
+   [
+    "Aqueduct_06",
+    "Collectable Item Pickup",
+    126.24,
+    8.43
+   ]
+  ],
+  "Magnetite Dice": [
+   [
+    "Coral_33",
+    "Collectable Item Pickup",
+    20.21,
+    60.29
+   ]
+  ],
+  "Materium": [
+   [
+    "Arborium_07",
+    "Collectable Item Pickup Materium",
+    103.38,
+    11.11
+   ]
+  ],
+  "Memento Surface": [
+   [
+    "Abandoned_town",
+    "Collectable Item Pickup",
+    357.2,
+    6.2
+   ],
+   [
+    "Abandoned_town",
+    "Collectable Item Pickup",
+    359.31,
+    6.25
+   ]
+  ],
+  "Pale_Oil": [
+   [
+    "Aqueduct_05_festival",
+    "Collectable Item Pickup Reward 3",
+    153.11,
+    15.32
+   ],
+   [
+    "Library_03",
+    "Collectable Item Pickup",
+    8.18,
+    41.53
+   ]
+  ],
+  "Pickled Roach Egg": [
+   [
+    "Dust_Chef",
+    "Return Pickup",
+    41.77,
+    34.36
+   ]
+  ],
+  "Pristine Core": [
+   [
+    "Cog_07",
+    "Collectable Item Pickup",
+    0.0,
+    0.0
+   ],
+   [
+    "Under_17",
+    "Collectable Item Pickup",
+    75.44,
+    23.37
+   ]
+  ],
+  "Psalm Cylinder Hang": [
+   [
+    "Hang_10",
+    "Collectable Item Pickup",
+    72.66,
+    15.21
+   ]
+  ],
+  "Psalm Cylinder Librarian": [
+   [
+    "Library_08",
+    "Collectable Item Pickup Librarian",
+    93.69,
+    30.19
+   ]
+  ],
+  "Psalm Cylinder Library Roof": [
+   [
+    "Library_09",
+    "Collectable Item Pickup",
+    25.54,
+    12.21
+   ]
+  ],
+  "Psalm Cylinder Ward": [
+   [
+    "Under_08",
+    "Collectable Item Pickup (1)",
+    67.42,
+    47.48
+   ]
+  ],
+  "Quick Sling": [
+   [
+    "Shadow_11",
+    "Collectable Item Pickup (1)",
+    7.6,
+    84.2
+   ]
+  ],
+  "Quickbind": [
+   [
+    "Ward_03",
+    "Collectable Item Pickup",
+    96.49,
+    32.78
+   ]
+  ],
+  "Reserve Bind": [
+   [
+    "Hang_17b",
+    "Collectable Item Pickup",
+    42.87,
+    4.5
+   ]
+  ],
+  "Revenge Crystal": [
+   [
+    "Bellway_Peak_02",
+    "Collectable Item Pickup",
+    94.1,
+    9.5
+   ]
+  ],
+  "Rosary Cannon": [
+   [
+    "Hang_06_bank",
+    "Rosary Cannon Pickup",
+    40.89,
+    16.11
+   ]
+  ],
+  "Rosary_Set_Frayed": [
+   [
+    "Aqueduct_01",
+    "Collectable Item Pickup",
+    256.19,
+    14.67
+   ],
+   [
+    "Bone_10",
+    "Collectable Item Pickup",
+    98.98,
+    41.32
+   ],
+   [
+    "Bone_East_04b",
+    "Collectable Item Pickup",
+    6.46,
+    87.19
+   ],
+   [
+    "Coral_03",
+    "Collectable Item Pickup",
+    38.64,
+    5.53
+   ],
+   [
+    "Crawl_02",
+    "Collectable Item Pickup",
+    3.14,
+    142.37
+   ],
+   [
+    "Dust_01",
+    "Collectable Item Pickup",
+    76.43,
+    2.72
+   ],
+   [
+    "Greymoor_15",
+    "Collectable Item Pickup",
+    64.41,
+    24.21
+   ],
+   [
+    "Greymoor_15b",
+    "Collectable Item Pickup",
+    91.86,
+    35.26
+   ],
+   [
+    "Hang_16",
+    "Collectable Item Pickup",
+    67.81,
+    6.38
+   ],
+   [
+    "Mosstown_02",
+    "Collectable Item Pickup",
+    35.32,
+    40.27
+   ],
+   [
+    "Shadow_02",
+    "Collectable Item Pickup",
+    49.21,
+    161.48
+   ],
+   [
+    "Shellwood_01",
+    "Collectable Item Pickup",
+    48.99,
+    23.27
+   ],
+   [
+    "Slab_02",
+    "Collectable Item Pickup",
+    53.46,
+    21.21
+   ],
+   [
+    "Slab_18",
+    "Collectable Item Pickup",
+    17.23,
+    21.2
+   ],
+   [
+    "Slab_22",
+    "Collectable Item Pickup",
+    28.3,
+    30.39
+   ],
+   [
+    "Tut_01",
+    "Collectable Item Pickup",
+    43.96,
+    20.43
+   ],
+   [
+    "Under_07c",
+    "Collectable Item Pickup",
+    75.57,
+    76.08
+   ],
+   [
+    "Under_12",
+    "Collectable Item Pickup",
+    33.13,
+    10.29
+   ],
+   [
+    "Wisp_03",
+    "Collectable Item Pickup",
+    62.89,
+    35.37
+   ]
+  ],
+  "Rosary_Set_Huge_White": [
+   [
+    "Bone_East_24",
+    "Collectable Item Pickup",
+    248.93,
+    67.4
+   ],
+   [
+    "Hang_06_bank",
+    "Collectable Item Pickup",
+    73.41,
+    35.39
+   ]
+  ],
+  "Rosary_Set_Large": [
+   [
+    "Library_02",
+    "Collectable Item Pickup",
+    76.44,
+    48.02
+   ],
+   [
+    "Library_09",
+    "Collectable Item Pickup (1)",
+    14.08,
+    36.42
+   ],
+   [
+    "Song_04",
+    "Collectable Item Pickup",
+    121.49,
+    37.57
+   ]
+  ],
+  "Rosary_Set_Medium": [
+   [
+    "Ant_04_left",
+    "Collectable Item Pickup",
+    85.02,
+    26.99
+   ],
+   [
+    "Aqueduct_05_festival",
+    "Collectable Item Pickup Reward 2",
+    152.78,
+    16.24
+   ],
+   [
+    "Song_07",
+    "Collectable Item Pickup",
+    3.83,
+    4.91
+   ],
+   [
+    "Song_09",
+    "Collectable Item Pickup",
+    39.38,
+    8.27
+   ],
+   [
+    "Wisp_02",
+    "Collectable Item Pickup",
+    111.32,
+    37.99
+   ]
+  ],
+  "Rosary_Set_Small": [
+   [
+    "Aqueduct_05_festival",
+    "Collectable Item Pickup Reward 1",
+    154.04,
+    15.98
+   ],
+   [
+    "Bone_East_14",
+    "Collectable Item Pickup",
+    13.82,
+    7.46
+   ],
+   [
+    "Shellwood_01b",
+    "Collectable Item Pickup",
+    33.13,
+    72.38
+   ],
+   [
+    "Shellwood_25",
+    "Collectable Item Pickup (1)",
+    83.3,
+    25.42
+   ]
+  ],
+  "Screw Attack": [
+   [
+    "Under_14",
+    "Collectable Item Pickup",
+    72.11,
+    6.71
+   ]
+  ],
+  "Seal Chit Aspid_01": [
+   [
+    "Aspid_01",
+    "Collectable Item Pickup (2)",
+    63.31,
+    65.26
+   ]
+  ],
+  "Seal Chit Silk Siphon": [
+   [
+    "Ward_05",
+    "Collectable Item Pickup",
+    133.04,
+    4.24
+   ]
+  ],
+  "Seal Chit Ward Corpse": [
+   [
+    "Ward_02b",
+    "Collectable Item Pickup",
+    51.12,
+    3.92
+   ]
+  ],
+  "Shard Pouch": [
+   [
+    "Arborium_11",
+    "Collectable Item Pickup",
+    211.22,
+    10.27
+   ],
+   [
+    "Bone_East_01",
+    "Collectable Item Pickup",
+    38.31,
+    72.3
+   ],
+   [
+    "Cog_10",
+    "Collectable Item Pickup",
+    6.78,
+    44.67
+   ],
+   [
+    "Dock_02",
+    "Collectable Item Pickup",
+    38.79,
+    3.52
+   ],
+   [
+    "Dust_06",
+    "Collectable Item Pickup",
+    26.11,
+    96.25
+   ],
+   [
+    "Greymoor_05",
+    "Collectable Item Pickup",
+    59.01,
+    62.74
+   ],
+   [
+    "Greymoor_12",
+    "Collectable Item Pickup",
+    61.29,
+    14.4
+   ],
+   [
+    "Library_12",
+    "Collectable Item Pickup",
+    126.39,
+    24.41
+   ],
+   [
+    "Room_Forge",
+    "Collectable Item Pickup",
+    5.08,
+    37.38
+   ],
+   [
+    "Shellwood_13",
+    "Collectable Item Pickup",
+    82.29,
+    67.21
+   ],
+   [
+    "Slab_04",
+    "Collectable Item Pickup",
+    9.49,
+    15.69
+   ],
+   [
+    "Under_03",
+    "Collectable Item Pickup",
+    4.59,
+    6.23
+   ],
+   [
+    "Under_18",
+    "Collectable Item Pickup (1)",
+    34.14,
+    34.3
+   ]
+  ],
+  "Shell Satchel": [
+   [
+    "Crawl_01",
+    "Collectable Item Pickup - Satchel",
+    54.5,
+    85.1
+   ]
+  ],
+  "Silk Snare": [
+   [
+    "Weave_14",
+    "Collectable Item Pickup (1)",
+    66.53,
+    6.72
+   ]
+  ],
+  "Simple Key": [
+   [
+    "Bellshrine_Coral",
+    "Collectable Item Pickup",
+    28.32,
+    16.54
+   ],
+   [
+    "Dust_06",
+    "Collectable Item SimpleKey",
+    6.01,
+    179.63
+   ]
+  ],
+  "Skull King Fragment": [
+   [
+    "Bone_15",
+    "Collectable Item Pickup",
+    66.24,
+    13.59
+   ],
+   [
+    "Bone_15",
+    "Collectable Item Pickup",
+    98.58,
+    13.64
+   ]
+  ],
+  "Slab Key A": [
+   [
+    "Slab_14",
+    "Collectable Item Pickup (1)",
+    12.9,
+    6.89
+   ]
+  ],
+  "Slab Key B": [
+   [
+    "Slab_16",
+    "Collectable Item Pickup",
+    25.54,
+    23.67
+   ],
+   [
+    "Slab_16",
+    "Collectable Item Pickup Return",
+    25.45,
+    18.2
+   ]
+  ],
+  "Slab Key C": [
+   [
+    "Slab_16b",
+    "Collectable Item Pickup",
+    59.98,
+    15.24
+   ]
+  ],
+  "Snare Soul Swamp Bug": [
+   [
+    "Shadow_Bilehaven_Room",
+    "Collectable Item Pickup (1)",
+    26.11,
+    6.52
+   ]
+  ],
+  "Sprintmaster": [
+   [
+    "Bone_East_Weavehome",
+    "Collectable Item Pickup",
+    124.24,
+    90.55
+   ]
+  ],
+  "Straight Pin": [
+   [
+    "Bone_12",
+    "Collectable Item Pickup Pin",
+    41.13,
+    27.81
+   ]
+  ],
+  "Tack": [
+   [
+    "Dust_Shack",
+    "Collectable Item Dustpilo",
+    15.69,
+    5.46
+   ]
+  ],
+  "Tool Metal": [
+   [
+    "Aqueduct_05",
+    "Collectable Item Pickup - Tool Metal",
+    327.1,
+    16.35
+   ],
+   [
+    "Bone_07",
+    "Collectable Item Pickup - Tool Metal",
+    39.51,
+    4.98
+   ],
+   [
+    "Coral_32",
+    "Collectable Item Pickup - Tool Metal",
+    74.53,
+    9.06
+   ],
+   [
+    "Dock_03",
+    "Collectable Item Pickup",
+    7.7,
+    81.89
+   ],
+   [
+    "Under_19b",
+    "Collectable Item Pickup - Tool Metal",
+    7.59,
+    7.18
+   ],
+   [
+    "Wisp_05",
+    "Collectable Item Pickup - Tool Metal",
+    44.6,
+    59.94
+   ]
+  ],
+  "Tri Pin": [
+   [
+    "Greymoor_15b",
+    "Collectable Item Pickup (1)",
+    184.32,
+    100.36
+   ]
+  ],
+  "Vintage Nectar": [
+   [
+    "Ant_08",
+    "Collectable Item Pickup",
+    44.85,
+    24.93
+   ]
+  ],
+  "Ward Boss Key": [
+   [
+    "Ward_07",
+    "Collectable Item Pickup",
+    12.93,
+    7.16
+   ],
+   [
+    "Ward_07",
+    "Collectable Item Pickup",
+    18.22,
+    6.97
+   ]
+  ],
+  "Ward Key": [
+   [
+    "Song_Enclave",
+    "Collectable Item Pickup",
+    102.08,
+    6.29
+   ]
+  ],
+  "Weaver Record Conductor": [
+   [
+    "Hang_12",
+    "Collectable Item Pickup",
+    15.21,
+    4.91
+   ]
+  ],
+  "Weaver Record Sprint_Challenge": [
+   [
+    "Bone_East_Weavehome",
+    "Collectable Item Pickup",
+    51.32,
+    63.31
+   ]
+  ],
+  "Weaver Record Weave_08": [
+   [
+    "Weave_08",
+    "Collectable Item Pickup",
+    41.68,
+    54.13
+   ]
+  ],
+  "Weaver Totem Bonetown_upper_room": [
+   [
+    "Bonetown",
+    "Collectable Item Pickup",
+    132.73,
+    62.52
+   ]
+  ],
+  "Weaver Totem Slab_Bottom": [
+   [
+    "Slab_12",
+    "Collectable Item Pickup",
+    98.51,
+    27.52
+   ]
+  ],
+  "Weaver Totem Witch": [
+   [
+    "Shellwood_25",
+    "Collectable Item Pickup",
+    281.47,
+    26.4
+   ]
+  ],
+  "Weighted Anklet": [
+   [
+    "Bone_East_07",
+    "Collectable Item Pickup",
+    13.5,
+    111.33
+   ]
+  ],
+  "White Ring": [
+   [
+    "Weave_03",
+    "Collectable Item Pickup",
+    14.35,
+    28.62
+   ],
+   [
+    "Weave_03",
+    "Collectable Item Pickup",
+    14.42,
+    19.34
+   ]
+  ],
+  "Wisp Lantern": [
+   [
+    "Belltown_08",
+    "Lantern Item",
+    54.55,
+    11.31
+   ]
+  ],
+  "Wood Witch Item": [
+   [
+    "Shadow_20",
+    "Collectable Item Pickup (1)",
+    107.98,
+    48.88
+   ]
+  ],
+  "Zap Imbuement": [
+   [
+    "Coral_29",
+    "Collectable Item Pickup",
+    174.18,
+    31.62
+   ],
+   [
+    "Coral_29",
+    "Collectable Item Pickup",
+    175.79,
+    23.21
+   ]
+  ]
+ },
+ "maps": {
+  "Abyss Map": [
+   "HasAbyssMap",
+   "ABYSS_MAP_GET_MSG"
+  ],
+  "Aqueduct Map": [
+   "HasAqueductMap",
+   "AQUEDUCT_MAP_GET_MSG"
+  ],
+  "Arborium Map": [
+   "HasArboriumMap",
+   "ARBORIUM_MAP_GET_MSG"
+  ],
+  "Clover Map": [
+   "HasCloverMap",
+   "CLOVER_MAP_GET_MSG"
+  ],
+  "Cog Map": [
+   "HasCogMap",
+   "COG_MAP_GET_MSG"
+  ],
+  "Cradle Map": [
+   "HasCradleMap",
+   "CRADLE_MAP_GET_MSG"
+  ],
+  "Halls Map": [
+   "HasHallsMap",
+   "HALLS_MAP_GET_MSG"
+  ],
+  "Hang Map": [
+   "HasHangMap",
+   "HANG_MAP_GET_MSG"
+  ],
+  "Library Map": [
+   "HasLibraryMap",
+   "LIBRARY_MAP_GET_MSG"
+  ],
+  "Slab Key A": [
+   "HasSlabKeyA",
+   "INV_NAME_SLAB_KEY_A"
+  ],
+  "Slab Key B": [
+   "HasSlabKeyB",
+   "INV_NAME_SLAB_KEY_B"
+  ],
+  "Slab Key C": [
+   "HasSlabKeyC",
+   "INV_NAME_SLAB_KEY_C"
+  ],
+  "Slab Map": [
+   "HasSlabMap",
+   "SLAB_MAP_GET_MSG"
+  ],
+  "Song Gate Map": [
+   "HasSongGateMap",
+   "SONGGATE_MAP_GET_MSG"
+  ],
+  "Understore Map": [
+   "HasCitadelUnderstoreMap",
+   "UNDERSTORE_MAP_GET_MSG"
+  ],
+  "Ward Map": [
+   "HasWardMap",
+   "WARD_MAP_GET_MSG"
+  ],
+  "Weavehome Map": [
+   "HasWeavehomeMap",
+   "WEAVE_MAP_GET_MSG"
+  ]
  },
  "npcs": {
   "Architect NPC": [
@@ -10914,6 +19548,781 @@
     24.14
    ]
   }
+ },
+ "pd": {
+  "BelltownHouseUnlocked": [
+   [
+    "belltown",
+    "ItemReceptacle",
+    "Door Lock",
+    60.78,
+    40.14
+   ]
+  ],
+  "BonePlazaOpened": [
+   [
+    "bone_11",
+    "DeactivateIfPlayerdataFalse",
+    "Pilgrim 03 (3)",
+    97.91,
+    3.13
+   ],
+   [
+    "bone_11",
+    "DeactivateIfPlayerdataTrue",
+    "Pilgrim 03 (1)",
+    80.42,
+    4.07
+   ],
+   [
+    "bone_11",
+    "DeactivatePlayerDataTest",
+    "Plaza_closed",
+    82.02,
+    4.39
+   ],
+   [
+    "bone_11",
+    "DeactivatePlayerDataTest",
+    "Plaza_open",
+    82.02,
+    4.39
+   ],
+   [
+    "bone_11b",
+    "PersistentPressurePlate",
+    "Plate",
+    10.02,
+    2.7
+   ]
+  ],
+  "Bone_East_04b_ExplodeWall": [
+   [
+    "bone_east_04",
+    "DeactivateIfPlayerdataTrue",
+    "explode_wall",
+    41.89,
+    46.44
+   ],
+   [
+    "bone_east_04b",
+    "PlayMakerFSM",
+    "explode_wall",
+    41.89,
+    46.44
+   ]
+  ],
+  "CollectedDustCageKey": [
+   [
+    "dust_06",
+    "CollectableItemPickup",
+    "Collectable Item SimpleKey",
+    6.01,
+    179.63
+   ],
+   [
+    "dust_06",
+    "DeactivateIfPlayerdataTrue",
+    "Collectable Item SimpleKey",
+    6.01,
+    179.63
+   ],
+   [
+    "dust_06",
+    "DeactivateIfPlayerdataTrue",
+    "Roachkeeper",
+    14.6,
+    191.0
+   ],
+   [
+    "dust_06",
+    "DeactivateIfPlayerdataTrue",
+    "Shiny Item",
+    13.15,
+    189.4
+   ],
+   [
+    "dust_06",
+    "PlayMakerFSM",
+    "greymoor_flip_bridge (3)",
+    3.0,
+    177.55
+   ]
+  ],
+  "antMerchantShortcut": [
+   [
+    "bone_east_16",
+    "PlayMakerFSM",
+    "Breakable Wall",
+    54.51,
+    12.08
+   ],
+   [
+    "bone_east_17b",
+    "PlayMakerFSM",
+    "Breakable Wall",
+    8.89,
+    11.68
+   ]
+  ],
+  "arborium_08_oneWay": [
+   [
+    "arborium_01",
+    "DeactivateIfPlayerdataTrue",
+    "one_way_inner_craw",
+    22.91,
+    140.25
+   ],
+   [
+    "arborium_08",
+    "PlayMakerFSM",
+    "One Way Wall",
+    2.67,
+    6.77
+   ]
+  ],
+  "arborium_09_oneWay": [
+   [
+    "arborium_01",
+    "PlayerDataTestResponse",
+    "Arborium 09 Break Wall",
+    1.18,
+    13.74
+   ],
+   [
+    "arborium_09",
+    "PlayMakerFSM",
+    "Moss Vine Cluster",
+    64.43,
+    14.84
+   ]
+  ],
+  "bankOpened": [
+   [
+    "hang_06_bank",
+    "Lever_tk2d",
+    "Song_lever_side",
+    73.39,
+    31.09
+   ]
+  ],
+  "bone01shortcutPlat": [
+   [
+    "bone_01",
+    "PlayMakerFSM",
+    "Rock Roller",
+    78.46,
+    78.95
+   ],
+   [
+    "bone_01",
+    "TestGameObjectActivator",
+    "Chain Plat Drop",
+    102.56,
+    67.81
+   ],
+   [
+    "bone_04",
+    "Lever_tk2d",
+    "Song_lever_side",
+    118.19,
+    24.25
+   ]
+  ],
+  "bone03_openedTrapdoor": [
+   [
+    "bone_03",
+    "Lever_tk2d",
+    "Song_lever_side",
+    45.56,
+    91.01
+   ]
+  ],
+  "boneEast07_openedMidRoof": [
+   [
+    "bone_east_07",
+    "PlayMakerFSM",
+    "Updraft After",
+    6.14,
+    100.93
+   ],
+   [
+    "bone_east_07",
+    "PlayMakerFSM",
+    "explode_wall (7) - boneEast07_openedMidRoof",
+    8.16,
+    129.62
+   ]
+  ],
+  "bonegraveOpen": [
+   [
+    "bonegrave",
+    "DeactivateIfPlayerdataTrue",
+    "bone_gate_02004",
+    306.46,
+    22.68
+   ],
+   [
+    "bonegrave",
+    "PlayMakerFSM",
+    "Moss Vine Cluster",
+    304.96,
+    21.83
+   ],
+   [
+    "bonetown",
+    "DeactivateIfPlayerdataTrue",
+    "bone_gate_02004",
+    8.77,
+    10.46
+   ],
+   [
+    "bonetown",
+    "PlayMakerFSM",
+    "Churchkeeper",
+    71.98,
+    8.31
+   ]
+  ],
+  "cog7_gateOpened": [
+   [
+    "cog_07",
+    "PlayMakerFSM",
+    "cog_lever",
+    41.99,
+    51.38
+   ]
+  ],
+  "crawl03_oneWayWall": [
+   [
+    "crawl_02",
+    "DeactivateIfPlayerdataTrue",
+    "One Way Wall",
+    1.31,
+    111.77
+   ],
+   [
+    "crawl_03",
+    "PlayMakerFSM",
+    "Breakable Wall (1)",
+    179.25,
+    68.84
+   ]
+  ],
+  "docks_02_shortcut_right": [
+   [
+    "dock_02b",
+    "Lever_tk2d",
+    "Song_lever_side",
+    47.36,
+    56.15
+   ]
+  ],
+  "droppedFloorBreakerPlat": [
+   [
+    "under_02",
+    "DeactivateIfPlayerdataFalse",
+    "Barrel Plat Lift DROPPER Bottom",
+    19.8,
+    7.23
+   ],
+   [
+    "under_02",
+    "DeactivateIfPlayerdataFalse",
+    "Dock Smash Plats After",
+    0.0,
+    0.0
+   ],
+   [
+    "under_02",
+    "DeactivateIfPlayerdataTrue",
+    "Barrel Plat Lift DROPPER",
+    20.18,
+    173.1
+   ],
+   [
+    "under_02",
+    "DeactivateIfPlayerdataTrue",
+    "Dock Smash Plats Before",
+    0.0,
+    0.0
+   ],
+   [
+    "under_02",
+    "Lever_tk2d",
+    "Song_lever_side (3)",
+    7.51,
+    162.1
+   ]
+  ],
+  "explodeWallBoneEast18c": [
+   [
+    "bone_east_10",
+    "DeactivateIfPlayerdataTrue",
+    "one way wall",
+    119.22,
+    29.69
+   ],
+   [
+    "bone_east_18c",
+    "PlayMakerFSM",
+    "explode_wall",
+    2.64,
+    12.73
+   ]
+  ],
+  "explodeWallMosstown3": [
+   [
+    "bone_06",
+    "DeactivateIfPlayerdataTrue",
+    "Bone_face_shortcut",
+    5.92,
+    12.0
+   ],
+   [
+    "mosstown_03",
+    "PlayMakerFSM",
+    "explode_wall",
+    31.72,
+    33.0
+   ],
+   [
+    "shellwood_25",
+    "TestGameObjectActivator",
+    "explode_wall",
+    0.0,
+    0.0
+   ]
+  ],
+  "greatBoneGateOpened": [
+   [
+    "bone_01",
+    "DeactivateIfPlayerdataTrue",
+    "Secret Mask",
+    119.67,
+    9.9
+   ],
+   [
+    "bone_01",
+    "Lever_tk2d",
+    "Bone Lever",
+    87.58,
+    12.57
+   ],
+   [
+    "bone_01",
+    "PlayMakerFSM",
+    "Sherma Bone Gate NPC",
+    68.43,
+    7.29
+   ]
+  ],
+  "laceTowerDoorOpened": [
+   [
+    "song_tower_01",
+    "PlayMakerFSM",
+    "song_tower_right_gate",
+    80.38,
+    100.5
+   ]
+  ],
+  "libraryRoofShortcut": [
+   [
+    "library_04",
+    "DeactivateIfPlayerdataTrue",
+    "closed",
+    65.14,
+    190.28
+   ],
+   [
+    "library_09",
+    "Lever_tk2d",
+    "Song_lever_side",
+    16.24,
+    17.42
+   ]
+  ],
+  "mosstown01_shortcut": [
+   [
+    "mosstown_01",
+    "Lever_tk2d",
+    "Bone Lever",
+    24.37,
+    13.68
+   ]
+  ],
+  "openedCauldronShortcut": [
+   [
+    "bone_east_09",
+    "DeactivateIfPlayerdataFalse",
+    "Updraft After 2",
+    31.85,
+    75.5
+   ],
+   [
+    "bone_east_09",
+    "DeactivateIfPlayerdataTrue",
+    "Updraft After 1",
+    31.85,
+    75.5
+   ],
+   [
+    "bone_east_09",
+    "DeactivateIfPlayerdataTrue",
+    "top_explode_wall",
+    29.15,
+    93.78
+   ],
+   [
+    "bone_east_09b",
+    "PlayMakerFSM",
+    "explode_wall",
+    31.2,
+    97.79
+   ]
+  ],
+  "openedCitadelSpaLeft": [
+   [
+    "song_10",
+    "Lever_tk2d",
+    "Song_lever_side",
+    63.72,
+    57.99
+   ]
+  ],
+  "openedCitadelSpaRight": [
+   [
+    "song_10",
+    "Lever",
+    "Pipe_Cog_Lever",
+    122.04,
+    61.11
+   ],
+   [
+    "song_11",
+    "TestGameObjectActivator",
+    "Song_10_hidden_gate",
+    7.84,
+    38.86
+   ]
+  ],
+  "openedDocksBackEntrance": [
+   [
+    "dock_03",
+    "PlayMakerFSM",
+    "Breakable Wall_Silhouette",
+    130.42,
+    106.87
+   ],
+   [
+    "dock_03b",
+    "PlayMakerFSM",
+    "Breakable Wall",
+    138.12,
+    100.12
+   ],
+   [
+    "dock_03c",
+    "PlayMakerFSM",
+    "Breakable Wall_Silhouette",
+    130.16,
+    106.87
+   ],
+   [
+    "dock_03d",
+    "PlayMakerFSM",
+    "Breakable Wall_Silhouette",
+    130.16,
+    106.87
+   ]
+  ],
+  "openedDust05Gate": [
+   [
+    "dust_05",
+    "Lever",
+    "greymoor_lever_simple",
+    341.48,
+    23.65
+   ],
+   [
+    "dust_06",
+    "TestGameObjectActivator",
+    "Dust_05 Gate",
+    3.47,
+    102.36
+   ]
+  ],
+  "openedGeyserShaft": [
+   [
+    "bone_east_07",
+    "DeactivateIfPlayerdataFalse",
+    "open",
+    22.75,
+    186.52
+   ],
+   [
+    "bone_east_07",
+    "DeactivateIfPlayerdataTrue",
+    "closed",
+    22.75,
+    186.52
+   ],
+   [
+    "bone_east_11",
+    "Lever_tk2d",
+    "Song_lever_side",
+    12.42,
+    2.95
+   ]
+  ],
+  "openedTallGeyser": [
+   [
+    "bone_east_07",
+    "DeactivateIfPlayerdataFalse",
+    "Wind Top",
+    22.75,
+    186.52
+   ],
+   [
+    "bone_east_07",
+    "DeactivateIfPlayerdataTrue",
+    "CameraLockArea (3)",
+    18.87,
+    143.38
+   ],
+   [
+    "bone_east_07",
+    "DeactivateIfPlayerdataTrue",
+    "CameraLockArea (4)",
+    44.8,
+    120.75
+   ],
+   [
+    "bone_east_07",
+    "DeactivateIfPlayerdataTrue",
+    "CameraLockArea (5)",
+    55.07,
+    93.27
+   ],
+   [
+    "bone_east_07",
+    "DeactivateIfPlayerdataTrue",
+    "CameraLockArea (6)",
+    -21.8,
+    191.0
+   ],
+   [
+    "bone_east_07",
+    "PlayMakerFSM",
+    "Song Trapdoor",
+    22.75,
+    186.53
+   ],
+   [
+    "bone_east_07",
+    "PlayMakerFSM",
+    "explode_wall (6)",
+    21.21,
+    129.72
+   ],
+   [
+    "bone_east_11",
+    "DeactivateIfPlayerdataFalse",
+    "Updraft After",
+    20.03,
+    -37.3
+   ],
+   [
+    "bone_east_11",
+    "DeactivateIfPlayerdataFalse",
+    "Updraft Before",
+    20.03,
+    -64.5
+   ],
+   [
+    "bone_east_11",
+    "PlayMakerFSM",
+    "Song Trapdoor",
+    20.9,
+    -1.2
+   ]
+  ],
+  "opened_cog_06_door": [
+   [
+    "cog_06",
+    "PlayMakerFSM",
+    "cog_lever",
+    83.11,
+    34.0
+   ]
+  ],
+  "rhinoChurchUnlocked": [
+   [
+    "bone_east_10",
+    "PlayMakerFSM",
+    "Gate Smashing",
+    0.0,
+    0.0
+   ],
+   [
+    "bone_east_10",
+    "PlayMakerFSM",
+    "Pilgrim NPC Scene",
+    102.99,
+    49.26
+   ],
+   [
+    "bone_east_10_church",
+    "DeactivateIfPlayerdataTrue",
+    "Rhino",
+    139.32,
+    10.97
+   ],
+   [
+    "bone_east_10_church",
+    "Lever_tk2d",
+    "Song_lever_side",
+    132.1,
+    15.63
+   ]
+  ],
+  "sethShortcut": [
+   [
+    "under_01",
+    "DeactivateIfPlayerdataTrue",
+    "Vine Wall Shortcut",
+    10.46,
+    16.23
+   ],
+   [
+    "under_27",
+    "PlayMakerFSM",
+    "Shellwood Twig Wall (1)",
+    125.36,
+    60.28
+   ],
+   [
+    "under_27",
+    "PlayMakerFSM",
+    "right2",
+    128.5,
+    62.0
+   ]
+  ],
+  "shellwood13_BellWall": [
+   [
+    "shellwood_13",
+    "PlayMakerFSM",
+    "Bell Wall Tall",
+    139.06,
+    34.84
+   ]
+  ],
+  "shellwoodBellshrineTwigWall": [
+   [
+    "shellwood_04b",
+    "PlayMakerFSM",
+    "Shellwood Twig Wall (1)",
+    29.62,
+    8.66
+   ],
+   [
+    "shellwood_08c",
+    "PlayMakerFSM",
+    "Shellwood Twig Wall",
+    37.82,
+    7.31
+   ]
+  ],
+  "shellwoodTwigShortcut": [
+   [
+    "shellwood_01b",
+    "DeactivateIfPlayerdataTrue",
+    "wall_patch",
+    47.2,
+    58.67
+   ],
+   [
+    "shellwood_15",
+    "PlayMakerFSM",
+    "Shellwood Twig Wall (1)",
+    6.15,
+    18.51
+   ]
+  ],
+  "slab_05_gateOpen": [
+   [
+    "slab_03",
+    "PlayMakerFSM",
+    "Slab Lock (2)",
+    1.94,
+    81.23
+   ],
+   [
+    "slab_05",
+    "DeactivateIfPlayerdataTrue",
+    "Jail Gate Door (2)",
+    98.45,
+    10.29
+   ],
+   [
+    "slab_05",
+    "PlayMakerFSM",
+    "Slab Lock (2)",
+    97.01,
+    10.27
+   ]
+  ],
+  "slab_17_openedGateLeft": [
+   [
+    "slab_03",
+    "PlayMakerFSM",
+    "Slab Lock (1)",
+    27.03,
+    245.23
+   ]
+  ],
+  "song_11_oneway": [
+   [
+    "hang_07",
+    "PlayerDataTestResponse",
+    "shortcut_states",
+    8.43,
+    9.14
+   ],
+   [
+    "song_11",
+    "PlayMakerFSM",
+    "Plug_Gate",
+    58.66,
+    181.04
+   ]
+  ],
+  "song_27_opened": [
+   [
+    "song_05",
+    "DeactivateIfPlayerdataTrue",
+    "Shortcut Wall",
+    47.28,
+    50.8
+   ],
+   [
+    "song_27",
+    "Lever_tk2d",
+    "Song_lever_side",
+    4.15,
+    10.37
+   ]
+  ],
+  "wardBossHatchOpened": [
+   [
+    "ward_02",
+    "PlayMakerFSM",
+    "Pipe_Vent_Hatch",
+    63.71,
+    13.14
+   ]
+  ]
  },
  "sizes": {
   "abandoned_town": [
