@@ -173,9 +173,11 @@
     if (max > MAX_PIPS) return '<span class="pg-strip" aria-hidden="true"></span>';
     return `<span class="pg-strip pg-pips" aria-hidden="true">${Array.from({ length: max }, (_, i) => `<i class="${g && i < got ? 'is-on' : ''}"></i>`).join('')}</span>`;
   }
-  function group(id, title, list, g, got, max) {
-    const all = prefs.pgAll || !g;
-    const open = isOpen(id);
+  /* o (the road's parts, actHtml): all, every row, the done ones ticked, whatever the toggle says;
+     road, open unless folded (prefs.pgShut), as they start open; note, the line under the head. */
+  function group(id, title, list, g, got, max, o = {}) {
+    const all = o.all || prefs.pgAll || !g;
+    const open = o.road ? !(prefs.pgShut || []).includes(id) : isOpen(id);
     const done = g && got >= max;
     const shown = open ? nearFirst(all ? list : list.filter((x) => !x.got)) : [];
     const body = !open ? '' : shown.length ? listHtml(shown, g)
@@ -183,9 +185,9 @@
     return `<section class="pg-group${done ? ' is-done' : ''}${open ? ' is-open' : ''}" aria-labelledby="pg-${id}">
         <h3 class="pg-head" id="pg-${id}"><button type="button" class="pg-open" data-act="pgOpen" data-value="${id}" aria-expanded="${open}">
           <span class="pg-title">${esc(title)}</span>${strip(list, g, got, max)}
-          ${g ? `<span class="pg-count"><b>${num(got)}</b><i class="u">/${num(max)}</i></span>` : `<span class="pg-count"><i class="u">${num(max)}</i></span>`}
+          ${g ? `<span class="pg-count"><b>${pts(got)}</b><i class="u">/${num(max)}</i></span>` : `<span class="pg-count"><i class="u">${num(max)}</i></span>`}
           <span class="disc-ring">${App.chevron(open)}</span></button></h3>
-        ${open ? `${NOTE[id] ? `<p class="pg-note">${esc(NOTE[id]())}</p>` : ''}${body}` : ''}
+        ${open ? `${NOTE[id] ? `<p class="pg-note">${esc(NOTE[id]())}</p>` : o.note ? `<p class="pg-note">${esc(o.note)}</p>` : ''}${body}` : ''}
       </section>`;
   }
 
@@ -237,7 +239,7 @@
     const runt = HW.TRAPS.find((r) => r.id === 'broodfeast-runt');
     const sub = [x.value === 0.5 ? t('roadHalf') : '', !got && x.before.length ? t('roadBefore', { name: x.before.map(wishName).join(', ') }) : '',
       !got && runt && x.quest === runt.counts ? t('roadRunt') : ''];
-    return { name: x.name ? pick(x.name) : w ? pick(w[4]) : x.quest, got, act: w ? w[1] : 0, area: w ? w[3] : null, scene: wishScene(x.quest, done), sub };
+    return { name: x.name ? pick(x.name) : w ? pick(w[4]) : x.quest, got, act: w ? w[1] : 0, area: w ? w[3] : null, scene: wishScene(x.quest, done), sub, wish: x.wish };
   }
   function groupRows(name, g, required) {
     const done = new Set(g ? g.quests : []);
@@ -274,6 +276,23 @@
     ];
   }
 
+  /* The Soul Snare's four checks on the save (js/acts.js): the caravan, the Faydown Cloak, Lace
+     beaten atop the Cradle's tower (defeatedLaceTower: set in Song_Tower_01, the Cradle's) and the
+     Bellhome's key, with what each still asks. */
+  function checkRows(unlock, g) {
+    const test = (id) => unlock.tests.find((x) => x.id === id);
+    const key = test('bellhomeKey').key;
+    const fay = CO.WHERE.arts['faydown-cloak'] || [];
+    return [
+      { name: t('roadCaravan'), got: test('caravan').ok, icon: 'assets/benches/caravan.png' },
+      { name: artName('faydown-cloak'), got: test('doubleJump').ok, act: fay[0], area: fay[1], icon: 'assets/icons/arts/faydown-cloak.webp', mark: 'arts:faydown-cloak' },
+      { name: t('roadLace'), got: test('laceTower').ok, act: 2, area: 'CRADLE', icon: PORTRAIT('lace'),
+        how: test('laceTower').ok ? '' : t('roadMelodies', { n: num(melodies(g)) }) },
+      { name: t('roadKey'), got: test('bellhomeKey').ok, act: 2, area: 'BELLHART', icon: 'assets/benches/bellhome.png',
+        how: test('bellhomeKey').ok ? '' : key.ready ? t('roadPavo') : t('roadKeyRule', { glory: wishName('Belltown House Mid'), n: num(key.need) }) },
+    ].map((x) => ({ act: 0, area: null, ...x }));
+  }
+
   function toAct3(r, g) {
     const [unlock, offer, pieces, ready, silk] = r.steps;
     const wish = wishName(offer.quest);
@@ -281,13 +300,7 @@
     const required = groupRows('Soul Snare', g, true), points = groupRows('Soul Snare', g, false);
     const test = (id) => unlock.tests.find((x) => x.id === id);
     const key = test('bellhomeKey').key;
-    const checks = [
-      { name: t('roadCaravan'), got: test('caravan').ok },
-      { name: artName('faydown-cloak'), got: test('doubleJump').ok, ...(() => { const w = CO.WHERE.arts['faydown-cloak'] || []; return { act: w[0], area: w[1] }; })() },
-      { name: t('roadLace'), got: test('laceTower').ok, act: 2, area: 'CRADLE', sub: [test('laceTower').ok ? '' : t('roadMelodies', { n: num(melodies(g)) })] },
-      { name: t('roadKey'), got: test('bellhomeKey').ok, act: 2, area: 'BELLHART',
-        sub: [test('bellhomeKey').ok ? '' : key.ready ? t('roadPavo') : t('roadKeyRule', { glory: wishName('Belltown House Mid'), n: num(key.need) })] },
-    ].map((x) => ({ act: 0, area: null, ...x }));
+    const checks = checkRows(unlock, g).map(({ icon, mark, how, ...x }) => ({ ...x, sub: [how] }));
     // The key's own rule, while it isn't there: Bellhart's Glory, then 2 of the group's wishes.
     const keyRows = [wishRow(key.gloryQuest, key.glory, new Set(g ? g.quests : [])), ...groupRows('Belltown House Key', g, false)];
     const keyPart = g && !test('bellhomeKey').ok && !key.ready
@@ -339,13 +352,13 @@
       </div>`;
   }
 
-  /* ── What's left, drawn (design/27b-progress-variants.html, 2 C: rings) ──────────────────
-     The step you're on as one ring per part of it (the wishes it requires, its points, its
-     checks…): the game's picture inside, how far as a figure under it, and under that only what's
-     missing, each as a medallion with its picture, its name and a pin when the Map has it. The
-     steps after it follow, dim. The pictures are the game's: the map's quest medallions
-     (assets/map/pins), the Journal's portraits, the benches, the wishes' type emblems
-     (assets/icons/wishes, tools/extract-wish-icons.py). */
+  /* ── What's left, drawn (design/03-redesign.md, step 5: the rings, then E) ──────────────
+     The step you're on as one small ring per part of it (the wishes it requires, its points, its
+     checks…), the game's picture inside and how far as a figure under it; under them each part
+     as a group of the 100% tab (parts(), partsHtml()). The steps after it follow, dim, as
+     medallions. The pictures are the game's: the map's quest medallions (assets/map/pins), the
+     Journal's portraits, the benches, the wishes' type emblems (assets/icons/wishes,
+     tools/extract-wish-icons.py). */
   const QUEST = (n) => `assets/map/pins/quest_map_icon_${n}.webp`;
   const PORTRAIT = (id) => `assets/icons/journal/${id}.webp`;
   const BOARD = 'assets/icons/wishes/board.webp';
@@ -371,46 +384,39 @@
         <p class="pg-rg-n"><b>${pts(Math.min(r.got, r.of))}</b><span class="u">/${num(r.of)}</span></p><h4 class="pg-rg-k">${esc(r.label)}</h4>
         ${r.items.length ? `<ul class="pg-mds">${r.items.map(medal).join('')}${r.more ? `<li class="pg-md-more">+${num(r.more)}</li>` : ''}</ul>` : ''}</section>`;
   }
-  // A missing wish (acts.js missing()) as a medallion: its type's emblem, and the wishes to do before it.
-  const wishMedal = (m, done) => ({ name: m.name ? pick(m.name) : m.wish >= 0 ? pick(CO.WISHES[m.wish][4]) : m.quest, icon: wishArt(m.wish),
-    badge: m.value === 0.5 ? '½' : '', sub: m.before.length ? t('roadBefore', { name: m.before.map(wishName).join(', ') }) : '',
-    d: (() => { const s = wishScene(m.quest, done); return s ? away(s) : null; })() });
-  const nearest = (list) => list.map((x, i) => ({ x, i })).sort((a, b) => (a.x.d ?? Infinity) - (b.x.d ?? Infinity) || a.i - b.i).map((e) => e.x);
-  const POINTS_SHOWN = 4;
-  /* The rings of the step you're on. */
-  function rings(r, s, g) {
-    const done = new Set(g.quests || []);
+  /* The step you're on, in its parts (design/03-redesign.md, step 5, E): the wishes it requires,
+     its points, its checks; the Bellshrines; the snare's pieces. Each a ring for the summary on
+     top, and its rows (the 100% tab's own: group(), row()) for the list under it, with its goal
+     in words and how much is left. A step of one thing is its ring alone. */
+  function parts(r, s, g) {
+    const part = (id, label, icon, got, of, goal, rows) => ({ id, label, icon, got: Math.min(got, of), of, rows,
+      note: [goal, got < of ? t('roadLeft', { n: pts(of - got) }) : ''].filter(Boolean).join(' ') });
+    // A wish's picture is its type's emblem; what it waits for goes under its name.
+    const wishes = (rows) => rows.map(({ sub, ...x }) => ({ ...x, icon: wishArt(x.wish), how: sub.filter(Boolean).join(' · ') }));
     if (s.id === 'bellshrines') {
-      return [{ label: t('pgShrines'), icon: STEP_ART.bellshrines, got: s.done, of: s.total,
-        items: s.shrines.filter((b) => !b.ok).map((b) => ({ name: pick(b.name), icon: STEP_ART.bellshrines })) }];
+      return [part('shrines', t('pgShrines'), STEP_ART.bellshrines, s.done, s.total, t('roadGoalShrines', { n: num(s.total) }),
+        s.shrines.map((b) => ({ name: pick(b.name), got: b.ok, act: 1, icon: STEP_ART.bellshrines })))];
     }
     if (s.id === 'unlock') {
-      const test = (id) => s.tests.find((x) => x.id === id);
-      const key = test('bellhomeKey').key;
-      const checks = [
-        { id: 'caravan', name: t('roadCaravan'), icon: 'assets/benches/caravan.png', plain: true },
-        { id: 'doubleJump', name: artName('faydown-cloak'), icon: 'assets/icons/arts/faydown-cloak.webp', mark: 'arts:faydown-cloak' },
-        { id: 'laceTower', name: t('roadLace'), icon: PORTRAIT('lace'), plain: true, sub: t('roadMelodies', { n: num(melodies(g)) }) },
-        { id: 'bellhomeKey', name: t('roadKey'), icon: 'assets/benches/bellhome.png',
-          sub: key.ready ? t('roadPavo') : t('roadKeyRule', { glory: wishName('Belltown House Mid'), n: num(key.need) }) },
-      ].filter((x) => !test(x.id).ok);
-      const options = nearest(s.points.missing.map((m) => wishMedal(m, done)));
-      const short = s.points.got < s.points.need;
+      const points = wishes(groupRows('Soul Snare', g, false));
       return [
-        { label: t('roadRequired'), icon: BOARD, got: s.required.done, of: s.required.total, items: nearest(s.required.missing.map((m) => wishMedal(m, done))) },
-        { label: t('pgPoints'), icon: QUEST('snare'), got: s.points.got, of: s.points.need, items: short ? options.slice(0, POINTS_SHOWN) : [],
-          more: short ? Math.max(0, options.length - POINTS_SHOWN) : 0 },
-        { label: t('roadChecks'), icon: checks.length ? checks[0].icon : 'assets/benches/bellhome.png', got: s.tests.filter((x) => x.ok).length, of: s.tests.length, items: checks },
+        part('required', t('roadRequired'), BOARD, s.required.done, s.required.total, t('roadGoalReq'), wishes(groupRows('Soul Snare', g, true))),
+        part('points', t('pgPoints'), QUEST('snare'), s.points.got, s.points.need, t('roadGoalPts', { n: num(s.points.need), wishes: num(points.length) }), points),
+        part('checks', t('roadFour'), 'assets/benches/bellhome.png', s.tests.filter((x) => x.ok).length, s.tests.length, t('roadGoalChk'), checkRows(s, g)),
       ];
     }
     if (s.id === 'pieces') {
-      return [{ label: t('roadSnare'), icon: STEP_ART.pieces, got: s.done, of: s.total,
-        items: s.pieces.filter((x) => !x.ok).map((x) => ({ name: pick(x.name), icon: QUEST('snare') })) }];
+      return [part('snare', t('roadSnare'), STEP_ART.pieces, s.done, s.total, t('roadGoalSnare', { n: num(s.total) }),
+        s.pieces.map((x) => ({ name: pick(x.name), got: x.ok, act: 2, area: SNARE_AREA[x.save] || null, icon: QUEST('snare') })))];
     }
-    return [{ label: stepNames(r)[r.steps.indexOf(s)], icon: STEP_ART[s.id], got: s.done, of: s.total, items: [] }];
+    return [part(s.id, stepNames(r)[r.steps.indexOf(s)], STEP_ART[s.id], s.done, s.total, '', [])];
   }
+  // A step's parts at once: what the tab's card counts, in the rings' own units.
+  const partsSum = (ps) => ps.reduce((a, p) => ({ got: a.got + p.got, of: a.of + p.of }), { got: 0, of: 0 });
   /* The Act tab with a save before Act 3: the journey, the step you're on as a heading with its
-     picture, its rings, the steps after it, then the bridge to the 100% and the whole road. */
+     picture, its parts as rings side by side (with, when there are several, that all are needed),
+     then each part as a group of the 100% tab, open at first; the steps after it, the bridge to
+     the 100% and the whole road. */
   function actHtml(r, g) {
     const at = stepAt(r);
     const s = r.steps[at];
@@ -421,10 +427,17 @@
     const open = !!prefs.pgRoad;
     return journey(r) + (s ? `<div class="pg-now"><img src="${STEP_ART[s.id]}" alt="" loading="lazy"><h3>${esc(titles[at])}</h3></div>
         ${stale ? `<p class="pg-note is-warn">${esc(t('roadStale'))}</p>` : ''}
-        ${s.bypassed ? '' : `<div class="pg-rings">${rings(r, s, g).map(ring).join('')}</div>`}
+        ${s.bypassed ? '' : partsHtml(r, s, g)}
         ${later.length ? `<ul class="pg-mds pg-later">${later.map(medal).join('')}</ul>` : ''}` : '')
       + reach(g) + `<div class="pg-whole"><button type="button" class="text-btn" data-act="pgRoad" aria-expanded="${open}">${esc(t(open ? 'roadLess' : 'roadWhole'))}</button></div>`
       + (open ? roadHtml(g) : '');
+  }
+  function partsHtml(r, s, g) {
+    const ps = parts(r, s, g);
+    const lead = s.id === 'unlock' ? `<p class="pg-lead">${esc(t('roadAllThree', { caretaker: t('roadCaretaker'), wish: wishName(r.steps[1].quest) }))}</p>` : '';
+    return `${lead}<div class="pg-rings is-sum" style="--n:${ps.length}">${ps.map((p) => ring({ ...p, items: [] })).join('')}</div>
+        ${ps.some((p) => p.rows.length) ? `<div class="pg-groups">${ps.filter((p) => p.rows.length)
+          .map((p) => group('road-' + p.id, p.label, p.rows, g, p.got, p.of, { all: true, road: true, note: p.note })).join('')}</div>` : ''}`;
   }
   /* «Tu partida», in Act 3 (round 1, 4 A): the game at a glance, then two rings: the endings seen,
      and the things of the 100% only Act 3 holds. */
@@ -546,9 +559,11 @@
        how far you are; the one used last opens (prefs.pgTab), the Act's the first time. */
     const tab = prefs.pgTab === '100' ? '100' : 'act';
     const s = next ? next.steps[stepAt(next)] : null;
+    // What's done of the step, in the units its rings count (a point a point, a check a check).
+    const sum = s && !s.bypassed ? partsSum(parts(next, s, own)) : null;
     const actCard = next
       ? { art: STEP_ART[s ? s.id : 'citadel'], label: t('roadTitle', { n: num(next.act) }),
-        sub: s ? `${s.total > 1 ? `<b>${num(s.done)}</b>/${num(s.total)} · ` : ''}${esc(t('pgStepOf', { n: num(stepAt(next) + 1), of: num(next.steps.length) }))}` : '' }
+        sub: s ? `${sum && sum.of > 1 ? `<b>${pts(sum.got)}</b>/${num(sum.of)} · ` : ''}${esc(t('pgStepOf', { n: num(stepAt(next) + 1), of: num(next.steps.length) }))}` : '' }
       : own ? { art: QUEST('act3_finale'), label: t('roadGame'),
         sub: esc(t('roadEndings', { n: num(new Set(own.endings || []).size), of: num(SS.savefile.ENDINGS.length) })) }
         : { art: QUEST('grand_gate_final'), label: t('roadBoth'), sub: '' };
@@ -578,8 +593,10 @@
 
   Object.assign(actions, {
     pgOpen(node) {
-      const id = node.dataset.value, list = prefs.pgOpen || [];
-      prefs.pgOpen = list.includes(id) ? list.filter((x) => x !== id) : [...list, id];
+      const id = node.dataset.value;
+      // The road's parts start open: what's kept is the ones folded.
+      const key = id.startsWith('road-') ? 'pgShut' : 'pgOpen', list = prefs[key] || [];
+      prefs[key] = list.includes(id) ? list.filter((x) => x !== id) : [...list, id];
       savePrefs();
       render();
     },

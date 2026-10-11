@@ -663,6 +663,14 @@
     roadHalf:       { es: '½ punto', en: '½ point' },
     roadBefore:     { es: 'antes: {name}', en: 'first: {name}' },
     roadChecks:     { es: 'Y además', en: 'And also' },
+    roadFour:       { es: 'Cuatro condiciones', en: 'Four conditions' },
+    roadAllThree:   { es: 'Para que el {caretaker} te ofrezca «{wish}» hacen falta las tres cosas:', en: 'For the {caretaker} to offer you "{wish}", all three are needed:' },
+    roadGoalReq:    { es: 'Hay que hacerlos todos.', en: 'Every one of them is needed.' },
+    roadGoalPts:    { es: '{n} puntos con cualquiera de estos {wishes} deseos: cada uno vale un punto; una entrega, medio, y solo la primera vez.', en: '{n} points from any of these {wishes} wishes: each is worth a point; a delivery half of one, and only the first time.' },
+    roadGoalChk:    { es: 'Hay que cumplirlas todas.', en: 'Every one of them is needed.' },
+    roadGoalShrines: { es: 'Hay que hacer sonar los {n}.', en: 'All {n} must be rung.' },
+    roadGoalSnare:  { es: 'Hay que reunir las {n}.', en: 'All {n} are needed.' },
+    roadLeft:       { es: 'Te faltan {n}.', en: '{n} to go.' },
     roadCaravan:    { es: 'La Caravana de las pulgas en Pulgatopía', en: 'The Flea Caravan at Fleatopia' },   // KEY_CARAVAN, FLEATOPIA
     roadLace:       { es: 'Derrota a Lace en la Cuna', en: 'Defeat Lace in the Cradle' },   // DEFEATED_LACE_2_DESC
     roadKey:        { es: 'Llave de hogar campana', en: 'Bellhome Key' },   // INV_NAME_BELL_HOUSE_KEY

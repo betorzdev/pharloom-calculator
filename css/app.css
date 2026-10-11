@@ -1266,6 +1266,13 @@ kbd {
 .pg-now img { flex: none; width: var(--sp-12); height: var(--sp-12); object-fit: contain; }
 .pg-now h3 { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: var(--fs-xl); color: var(--ink-strong); text-wrap: balance; }
 .pg-rings { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: var(--sp-8) var(--sp-6); max-width: calc(var(--column) + var(--sp-16)); margin: var(--sp-6) auto 0; }
+/* The road's step as a summary (design/03-redesign.md, step 5, E): its parts' rings small, side by
+   side, over their lists (.pg-groups); and, when there are several, the line that all are needed. */
+.pg-lead { max-width: var(--column); margin: 0 auto var(--sp-4); text-align: center; font-size: var(--fs-sm); color: var(--ink-2); text-wrap: balance; }
+.pg-rings.is-sum { --pg-rg-ring: calc(var(--pg-tab-art) * 2); grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); gap: var(--sp-6) var(--sp-3); margin: 0 auto var(--sp-8); }
+.pg-rings.is-sum .pg-rg-n { font-size: var(--fs-xl); }
+.pg-rings.is-sum .pg-rg-n .u { font-size: var(--fs-sm); }
+@media (max-width: 599px) { .pg-rings.is-sum { --pg-rg-ring: calc(var(--pg-tab-art) * 1.5); } }
 .pg-rg { display: grid; justify-items: center; align-content: start; gap: var(--sp-2); text-align: center; }
 .pg-rg-ring { --pg-ring: var(--pg-rg-ring); }
 .pg-rg-ring::after { inset: var(--sp-3); }

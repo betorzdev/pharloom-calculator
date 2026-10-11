@@ -554,6 +554,22 @@ Built (`js/app-progress.js`, `css/app.css`):
   are the map's quest medallions, the Journal's portraits and the benches.
 - Tasks leaves out the ten wishes Act 3 requires while they're in the road's tab.
 
+Round 3, the rings (`33-road-rings-variants.html`, 11 October 2026). Albert: the rings are pretty
+but don't read: what each counts, and what's missing for the next Act. Over Save 2 (Act 2 at 15%,
+Silk and Soul): A the rings explained (a line that all three are needed, a + between them, each
+one's goal in a sentence), B a list with bars, C what's missing first (a sentence of the three
+counts as switches), D rings counting down («9 · faltan»). Albert, then E: the rings on top, and
+below as the 100% tab. **Decision: E** (11 October 2026), built:
+- `parts()` gives the step's parts, each its ring and its rows; on top `.pg-rings.is-sum`, the rings
+  small side by side (`--pg-tab-art` × 2, × 1.5 on a phone), and for Silk and Soul `.pg-lead`, that
+  all three are needed. The third ring is «Cuatro condiciones» with a fixed picture (the Bellhome).
+- Under them each part is the 100% tab's `group()` with its rows (`row()`): every row, the done
+  ones ticked; open at first and folded as left (`prefs.pgShut`); its goal and what's left as the
+  group's note. The medallions under the rings are gone (they stay for the later steps and Act 3).
+- The road card counts as the rings do (3/31 here, not the step's 2/15, which counted all the points
+  as one thing). The Lace check was checked: `defeatedLaceTower` is set only in Song_Tower_01, the
+  Cradle's tower, so «Derrota a Lace en la Cuna» is right (Save 2 has the three melodies).
+
 ## Step 6 · Map
 
 ### What there is (28 September 2026)

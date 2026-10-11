@@ -438,17 +438,19 @@ file isn't generated: `npm run data` never touches it, every fix stores its mark
 Two tabs, as two cards under the title, each with its own picture of how far you are; the one
 you used last opens, the road's the first time.
 
-**The road to the next Act** (its card: the picture of the step you're on, how far into it and
-«step 1 of 5»). Its steps as diamonds on one thread, the ones done lit and the one you're on
-larger, each named with the game's words (on a phone too). Then the step you're on, with its
-picture, as **rings**: one per part of it (the wishes it requires, its wish points, its other
-conditions; the Bellshrines; the snare's pieces), the game's picture inside, how far as a figure
-under it, and under that only what's missing, each as a medallion with its picture and name and a
-pin when the Map has it. The wishes carry the game's emblem for their type (Hunt, Gather,
-Donate…); the points show the nearest four wishes that would give one, with «½» on a delivery.
-The steps after it follow, dim. A line says how many things of the 100% you can already get in
-your Act (each counted on its own: a Mask Shard is one, not a point) and leads to the other tab;
-«The whole road» opens the road in full, as below.
+**The road to the next Act** (its card: the picture of the step you're on, how far into it, counted
+as its rings count, and «step 1 of 5»). Its steps as diamonds on one thread, the ones done lit and
+the one you're on larger, each named with the game's words (on a phone too). Then the step you're
+on, with its picture, and its parts as small **rings** side by side (the wishes it requires, its
+wish points, its four conditions; the Bellshrines; the snare's pieces), the game's picture inside
+and how far as a figure under it; for Silk and Soul a line says that all three are needed. Under
+the rings, each part is a group like the 100% tab's, open at first (it folds, and stays as you
+leave it): its pictures or pips and its count, what it asks in a sentence and how much is left,
+then its things in rows by Act, the ones done ticked, each with its picture (the wishes, the
+game's emblem for their type), its area, what to do first or «½ point» on a delivery, and a pin
+when the Map has it. The steps after it follow, dim. A line says how many things of the 100% you
+can already get in your Act (each counted on its own: a Mask Shard is one, not a point) and leads
+to the other tab; «The whole road» opens the road in full, as below.
 
 In Act 3 the tab is **«Your game»**: Act 1, Act 2 and Act 3 on one thread, then the four endings,
 lit the ones your save has seen (the game keeps them: Weaver Queen, Snared Silk, Twisted Child,
