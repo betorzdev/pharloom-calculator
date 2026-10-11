@@ -21,7 +21,8 @@
               shard caches and breakable walls, each [kind, act, check, scene, name?]: the scene
               the check names, or the pickup's (relics, Mementos), or HAND_EXTRA's.
      BOSSES   [foe id, scene, check]: each boss of the completionist's list, its arena and whether
-              it's beaten (a playerData flag, or its Journal entry listed).
+              it's beaten (a playerData flag, or its Journal entry listed), then the second fights
+              it folds into one entry (BOSS_MORE), each with what the save keeps of it.
      VENDORS  vendor id → its rooms (js/shop.js), Shakra's among them
      PEOPLE   npc id → its room: the people who give something of the 100%, and Scrounge, who
               buys the relics
@@ -125,8 +126,24 @@ const HAND_PIECE = {
   HasMelodyArchitect: 'Cog_09', HasMelodyConductor: 'Hang_12', 'Flea Games': 'Aqueduct_05_festival',
 };
 const EVERBLOOM = 'Tut_04';
-// Bosses whose Journal entry is another's (the Raging Conchfly is the Great Conchfly fought alone).
-const BOSS_ROOM = { 'raging-conchfly': 'Coral_27' };
+// Bosses whose Journal entry is another's (the Raging Conchfly is the Great Conchfly fought alone),
+// and the fights that aren't in their entry's first room: the first Moss Mother in Tut_03 (its
+// Battle Scene; Tut_02 holds the Act 3 one, in the lower Moss Grotto), the Moss Mothers' pair in
+// Weavenest Atla (where the Weavelight lies), Lace's second fight atop the Cradle's tower, the
+// Savage Beastfly of the wish in the Far Fields (its boss scene's room).
+const BOSS_ROOM = { 'raging-conchfly': 'Coral_27', 'moss-mother-ruined-chapel': 'Tut_03', 'lace-the-cradle': 'Song_Tower_01', 'moss-mother-weavenest-atla': 'Weave_03',
+  'moss-mother-act-3-moss-grotto': 'Tut_02', 'savage-beastfly-far-fields': 'Bone_East_08' };
+/* The fights the completionist folds into its boss's entry (its check is the first fight's), each
+   with what the save keeps once it's won, read in the scene that fights it (11-Oct-2026): the
+   flag Song_Tower_01's boss scene tests, Weave_03's Boss Scene bool, the Act 3 Moss Mother's own
+   PersistentBoolItem (no ID: the game saves it by the object's name), the flag the Far Fields
+   Beastfly's death sets. */
+const BOSS_MORE = [
+  ['lace-the-cradle', ['flag', 'defeatedLaceTower']],
+  ['moss-mother-weavenest-atla', ['bool', 'Weave_03', 'Boss Scene']],
+  ['moss-mother-act-3-moss-grotto', ['bool', 'Tut_02', 'Mossbone Mother Ambient']],
+  ['savage-beastfly-far-fields', ['flag', 'defeatedBoneFlyerGiantGolemScene']],
+];
 // Relics an NPC hands over: Jubilana's Choral Commandment, Grindle's Psalm Cylinder.
 const RELIC_ROOM = { 'Seal Chit City Merchant': 'song_enclave', 'Psalm Cylinder Grindle': 'coral_42' };
 // The Bellhome, where its furnishings go (Pavo's house in Bellhart).
@@ -154,11 +171,17 @@ for (const [id, scene] of Object.entries(PEOPLE_ROOM)) PEOPLE[id] = onMap(scene)
 const personScene = (npc) => PEOPLE[npc] || (VENDORS[npc] && npc !== 'shakra' ? VENDORS[npc][0] : null);
 
 /* ── The bosses ── */
-const foeBy = new Map(E.FOES.map((f) => [norm(f.name.en), f.id]));
+// A name's first foe (js/enemies.js lists a boss's first fight before its others): the fight the
+// completionist's entry checks (Moss Mother's Ruined Chapel, Lace's Deep Docks).
+const foeBy = new Map();
+for (const f of E.FOES) if (!foeBy.has(norm(f.name.en))) foeBy.set(norm(f.name.en), f.id);
 const bookBy = new Map(J.BOOK.map((e) => [e.id, e]));
+const bookN = new Map(J.BOOK.map((e) => [e.n, e]));
+const foeOf = new Map(E.FOES.map((f) => [f.id, f]));
 const arena = (foe) => {
   if (BOSS_ROOM[foe]) return BOSS_ROOM[foe];
-  const e = bookBy.get(foe) || bookBy.get(foe.replace(/-(the-cradle|far-fields|chapel-of-the-beast|weavenest-atla|coral-tower)$/, ''));
+  const e = bookBy.get(foe) || bookBy.get(foe.replace(/-(the-cradle|far-fields|chapel-of-the-beast|weavenest-atla|coral-tower)$/, ''))
+    || (foeOf.has(foe) && bookN.get(foeOf.get(foe).hj));
   const rooms = e && SS.journalRooms[e.key];
   return rooms ? (rooms.map(([s]) => s).find(onMap) || null) : null;
 };
@@ -168,6 +191,11 @@ for (const it of C.load('bosses.ts')) {
   const scene = arena(foe);
   if (!scene) { unplaced.push('boss ' + foe); continue; }
   BOSSES.push([foe, scene, C.check(it.parsingInfo, fail)]);
+}
+for (const [foe, check] of BOSS_MORE) {
+  if (!foeOf.has(foe) || BOSSES.some((b) => b[0] === foe)) fail(`BOSS_MORE: ${foe} isn't a foe of its own`);
+  if (!onMap(arena(foe))) fail(`BOSS_MORE: ${foe}'s arena isn't on the map`);
+  BOSSES.push([foe, arena(foe), check]);
 }
 
 /* ── The 100%: each thing's room, by its ways ── */
@@ -379,7 +407,7 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               silkeater, memento, bellhome, spawn, rosary-cache, shard-cache, wall); check as
               js/collectibles.js's, plus ['relic', name], ['memento', name], ['int', scene, id,
               value] and ['geo', scene, id]
-     BOSSES   [foe id, scene, check]: each boss's arena and whether it's beaten
+     BOSSES   [foe id, scene, check]: each boss fight's arena and whether it's beaten
      VENDORS  vendor id → the rooms it sells in; PEOPLE  npc id → its room
      BELLS    [playerData field, scene]: the five Bellshrines
      KEYS     a lock's key (js/quests.js LOCKS) → its name

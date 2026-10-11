@@ -20,9 +20,14 @@ Where it is (found on 27-Sep-2026, design/00-study.md §4.7):
     component whose visibleCondition is the pin set bought from the Mapper (hasPinBench…) and
     whose materialCondition is what lights it: the station unlocked (UnlockedShadowStation…),
     the toll paid (the room's bell_toll_machine). They're written to js/map.js as PINS, the
-    condition in js/collectibles.js's form; a plain bench has none. Left out: the caravan's
-    benches (they move with CaravanTroupeLocation), the Steel Soul, "Pre" and fake ones, the
-    vendors (each with its own merchant's state), and the arrows and markers.
+    condition in js/collectibles.js's form; a plain bench has none. The Flea Caravan's benches
+    ("Bench Pin Caravan", 11-Oct-2026) carry where the caravan has to be for the game to show
+    them (their DeactivatePlayerDataTest on CaravanTroupeLocation), and Fleatopia's "Pre" bench
+    is there until the caravan comes, so Fleatopia always has one; they go after the rest, so
+    the pins before keep their index (js/map-fixes.js keys them by it). Left out: the Steel Soul
+    and fake ones, the vendors (each with its own merchant's state), and the arrows and markers.
+    One bench has no pin on the game's map: the Songclave's (UNPINNED), placed by its RestBench
+    (kb/data/game/pickups.json, tools/extract-pickups.py) as tools/gen-spots.js places a point.
   · the sprites are in atlases_assets_assets/sprites/_atlases/hornet_map.spriteatlas.bundle (a
     4096² BC7 texture, 1,199 sprites) and hornet_map_patch.spriteatlas.bundle.
   · Unity 6 strips its version from the bundles: UnityPy needs it set (6000.0.50f1, the one
@@ -80,8 +85,12 @@ PPU = 48                # pixels per world unit on the site's map (the whole map
 HD = 2                  # pieces-hd.webp: twice as fine (the game draws its map at 100 pixels a unit)
 NOT_AREAS = {'Pan Audio Loop', 'Main Quest Pins', 'Compass Icon', 'Shade Pos', 'Map Markers', 'Flea Tracker Markers'}
 ICONS = ('pin_', 'quest_map_icon', 'Map_Arrow')
-PIN = re.compile(r'^(Bench|Bellway|Tube) Pin( Toll| Bellshrine| Swamp Shaman)?( \(\d+\))?$')
+PIN = re.compile(r'^(Bench|Bellway|Tube) Pin( Toll| Bellshrine| Swamp Shaman| Caravan| Pre)?( \(\d+\))?$')
 PIN_KIND = {'Bench': 'bench', 'Bellway': 'bellway', 'Tube': 'ventrica'}
+# The benches the game's map has no pin for, placed by their scene's RestBench: the Songclave's
+# (Song_Enclave; it appears once the Songclave grows, enclaveLevel, and stays in Act 3).
+UNPINNED = ['Song_Enclave']
+PICKUPS = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'kb', 'data', 'game', 'pickups.json')
 HIDDEN, ROUGH, FULL = 0, 1, 2   # GameMapScene.States
 GREY = (0.5, 0.5, 0.5)          # Color.grey: a Rough piece with no fullSprite, not mapped
 SHEET_W = 2048                  # pieces.webp's width, in the map's pixels
@@ -137,6 +146,23 @@ def condition(c):
         b = ['bool', pb['SceneName'], pb['Id']]
         alts.append(b if pb['ExpectedValue'] else ['not', b])
     return None if not alts else alts[0] if len(alts) == 1 else ['any'] + alts
+
+
+def caravan_here(t):
+    """A caravan bench's DeactivatePlayerDataTest → where the caravan has to be for the pin to
+    show, in js/rooms.js's rule form over CaravanTroupeLocation: 'is' for a caravan's bench (off
+    while the caravan is elsewhere), 'not is' for Fleatopia's "Pre" one (off once it's there). The
+    group that tests the pin set bought (hasPinBench) is left out, as for every pin."""
+    here = None
+    for g in t['TestGroups']:
+        for x in g['Tests']:
+            if x['Type'] == 0 and x['FieldName'].startswith('hasPin'):
+                continue
+            if x['FieldName'] != 'CaravanTroupeLocation' or x['Type'] not in (1, 3) or x['NumType'] not in (0, 1) or here:
+                raise ValueError(f'a bench pin switched off by something else: {t}')
+            at = ['is', 'CaravanTroupeLocation', x['IntValue']]
+            here = at if x['NumType'] == 1 else ['not', at]
+    return here
 
 
 # ── A map rule: a PlayerDataTest in js/rooms.js's form, read against a save's VARS ──
@@ -396,12 +422,17 @@ def main(game):
         # A pin: Game_Map_Hornet / <area> / <room> / … / <kind> Pin.
         m = PIN.match(go.m_Name)
         if m and sr is not None and len(names) >= 4 and names[0] == 'Game_Map_Hornet':
-            lit = None
+            lit = here = None
+            caravan = m.group(2) in (' Caravan', ' Pre')
             for cls, tree, _ in behaviours.get(o.path_id, []):
                 if 'materialCondition' in tree:
                     lit = condition(tree['materialCondition'])
+                if caravan and cls == 'DeactivatePlayerDataTest':
+                    here = caravan_here(tree['test'])
+            if caravan and not here:
+                raise ValueError(f'a caravan bench that never goes: {"/".join(names)}')
             x, y, _, _ = world(ts)
-            pins.append({'kind': PIN_KIND[m.group(1)], 'scene': names[2], 'x': x, 'y': y, 'lit': lit})
+            pins.append({'kind': PIN_KIND[m.group(1)], 'scene': names[2], 'x': x, 'y': y, 'lit': lit, 'here': here, 'caravan': caravan})
             continue
         if sr is None or len(names) != 3 or names[0] != 'Game_Map_Hornet' or names[1] in NOT_AREAS:
             continue
@@ -587,15 +618,32 @@ def main(game):
         ZONES[area] = z
 
     # The pins in the map's pixels; one of a kind per spot and piece rule (a room's two states can
-    # draw it twice). A pin in a piece that can be off is there when its piece is.
+    # draw it twice). A pin in a piece that can be off is there when its piece is. The caravan's
+    # last; one on the spot of another is there whenever either is (the Marrow's is the Act 3
+    # bench's spot, which the game always pins; Fleatopia's "Pre" and caravan benches make one).
     rule_of = {p['scene']: json.dumps([p['hide'], p['off']]) for p in pieces}
-    PINS = []
-    for q in sorted(pins, key=lambda q: (q['kind'], q['scene'], q['x'], q['y'])):
+    either = lambda a, b: None if a is None or b is None or a == ['not', b] or b == ['not', a] else ['any', a, b]
+    PINS, here = [], {}
+    for q in sorted(pins, key=lambda q: (q['caravan'], q['kind'], q['scene'], q['x'], q['y'])):
         px, py = round((q['x'] - minx) * PPU), round((maxy - q['y']) * PPU)
-        if any(o[0] == q['kind'] and abs(o[1] - px) < 12 and abs(o[2] - py) < 12 and rule_of.get(o[3]) == rule_of.get(q['scene'])
-               for o in PINS):
+        same = next((i for i, o in enumerate(PINS) if o[0] == q['kind'] and abs(o[1] - px) < 12 and abs(o[2] - py) < 12
+                     and rule_of.get(o[3]) == rule_of.get(q['scene'])), None)
+        if same is not None:
+            here[same] = either(here[same], q['here'])
             continue
+        here[len(PINS)] = q['here']
         PINS.append([q['kind'], px, py, q['scene']] + ([q['lit']] if q['lit'] else []))
+    for i, h in here.items():
+        if h:
+            PINS[i] += ([None] if len(PINS[i]) == 4 else []) + [h]
+    # The benches the game doesn't pin: at their RestBench, x / width across their room's drawing
+    # and y / height up it (the scene's size, its tk2dTileMap), as tools/gen-spots.js places points.
+    seen = json.load(open(PICKUPS))
+    for s in UNPINNED:
+        r, b, size = boxes.get(s), seen['benches'].get(s.lower()), seen['sizes'].get(s.lower())
+        if not (r and r[2] and b and size) or any(o[0] == 'bench' and o[3] == s for o in PINS):
+            raise ValueError(f'{s}: no room, RestBench or size to place its bench by, or the game pins it now')
+        PINS.append(['bench', round(r[0] + b[0] / size[0] * r[2]), round(r[1] + (1 - b[1] / size[1]) * r[3]), s])
 
     out = os.path.join(ROOT, 'assets', 'map')
     os.makedirs(out, exist_ok=True)
@@ -614,10 +662,12 @@ def main(game):
            "   ROOMS: scene → [x, y, w, h, area] in the map's pixels (the area as the game names its\n"
            "   branch of the map: Bone, Crawl, Dock…); w = h = 0 for a room with no drawing of its own,\n"
            "   a point where the game places it.\n"
-           "   PINS: [kind, x, y, scene, lit?]: the game's own pins for the benches, the Bellways and the\n"
-           "   Ventrica stations (kind: bench, bellway, ventrica), and what lights one (the station\n"
-           "   unlocked, the toll paid) in js/collectibles.js's form; a plain bench has none. A pin is\n"
-           "   there when its scene's piece is.\n"
+           "   PINS: [kind, x, y, scene, lit?, here?]: the game's own pins for the benches, the Bellways and\n"
+           "   the Ventrica stations (kind: bench, bellway, ventrica), and what lights one (the station\n"
+           "   unlocked, the toll paid) in js/collectibles.js's form; a plain bench has none (null when\n"
+           "   here follows). A pin is there when its scene's piece is; a Flea Caravan bench's here is\n"
+           "   where the caravan has to be, a rule over CaravanTroupeLocation. The caravan's come after\n"
+           "   the rest, then the Songclave's bench, which the game doesn't pin.\n"
            "   PIECES: each map piece, in the order the game draws them (the farthest first): s its\n"
            "   scene, a its area, st its first state (0 Hidden, 1 Rough,\n"
            "   2 Full); w its whole drawing, a CELLS index per sprite (ws: the rules of all but the last)\n"

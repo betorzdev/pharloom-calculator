@@ -11,7 +11,7 @@
               silkeater, memento, bellhome, spawn, rosary-cache, shard-cache, wall); check as
               js/collectibles.js's, plus ['relic', name], ['memento', name], ['int', scene, id,
               value] and ['geo', scene, id]
-     BOSSES   [foe id, scene, check]: each boss's arena and whether it's beaten
+     BOSSES   [foe id, scene, check]: each boss fight's arena and whether it's beaten
      VENDORS  vendor id → the rooms it sells in; PEOPLE  npc id → its room
      BELLS    [playerData field, scene]: the five Bellshrines
      KEYS     a lock's key (js/quests.js LOCKS) → its name
@@ -140,7 +140,7 @@
       '110': 'under_17',
       '111': 'bone_05_boss',
       '112': 'ward_02_boss',
-      '113': 'Bone_East_12',
+      '113': 'Song_Tower_01',
       '114': 'shellwood_11b',
       '115': 'coral_tower_01',
       '116': 'ant_queen',
@@ -174,7 +174,7 @@
       'pollip-pouch': 'Room_Witch',
       'fractured-mask': 'ant_merchant',
       multibinder: 'belltown',
-      weavelight: 'Tut_02',
+      weavelight: 'Weave_03',
       'sawtooth-circlet': 'under_17',
       'injector-band': 'ward_03',
       'spool-extender': 'hang_04',
@@ -2690,11 +2690,11 @@
   ];
 
   const BOSSES = [
-    ['moss-mother-weavenest-atla', 'Tut_02', ['flag', 'defeatedMossMother']],
+    ['moss-mother-ruined-chapel', 'Tut_03', ['flag', 'defeatedMossMother']],
     ['bell-beast', 'bone_05_boss', ['flag', 'defeatedBellBeast']],
-    ['lace-the-cradle', 'Bone_East_12', ['flag', 'defeatedLace1']],
+    ['lace', 'Bone_East_12', ['flag', 'defeatedLace1']],
     ['fourth-chorus', 'bone_east_08_boss_golem', ['flag', 'defeatedSongGolem']],
-    ['savage-beastfly-far-fields', 'Ant_19', ['flag', 'defeatedBoneFlyerGiant']],
+    ['savage-beastfly-chapel-of-the-beast', 'Ant_19', ['flag', 'defeatedBoneFlyerGiant']],
     ['sister-splinter', 'Shellwood_18', ['flag', 'defeatedSplinterQueen']],
     ['skull-tyrant', 'Bone_15', ['flag', 'skullKingDefeated']],
     ['moorwing', 'greymoor_05_boss', ['flag', 'defeatedVampireGnatBoss']],
@@ -2734,6 +2734,10 @@
     ['crust-king-khann', 'memory_coral_tower', ['flag', 'defeatedCoralKing']],
     ['summoned-saviour', 'Bone_Steel_Servant', ['journal', 'Abyss Mass']],
     ['lost-lace', 'Abyss_05', ['journal', 'Lost Lace']],
+    ['lace-the-cradle', 'Song_Tower_01', ['flag', 'defeatedLaceTower']],
+    ['moss-mother-weavenest-atla', 'Weave_03', ['bool', 'Weave_03', 'Boss Scene']],
+    ['moss-mother-act-3-moss-grotto', 'Tut_02', ['bool', 'Tut_02', 'Mossbone Mother Ambient']],
+    ['savage-beastfly-far-fields', 'Bone_East_08', ['flag', 'defeatedBoneFlyerGiantGolemScene']],
   ];
 
   const VENDORS = {
@@ -2934,6 +2938,7 @@
     'tools:druids-eye': [795.8, 1344.4],
     'tools:warding-bell': [1819, 1505.1],
     'tools:fractured-mask': [1506, 1304.4],
+    'tools:weavelight': [502.2, 1578.9],
     'tools:sawtooth-circlet': [1441.8, 855.4],
     'tools:injector-band': [1402.4, 769.2],
     'tools:claw-mirror': [1566.9, 695.2],

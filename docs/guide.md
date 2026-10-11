@@ -349,11 +349,15 @@ are; in Free mode, the total. The Act and reach filters narrow the counts too.
   Everbloom. Each in the room where it's had: lying there, at the shop that sells it, at the
   Wishwall or with whoever gives the wish, in its boss's arena, with the person who gives it. All
   on at first.
-- **Places**: benches (off at first: there are 76), Bellway and Ventrica stations (dimmed while
+- **Places**: benches (off at first: there are 80, the game's own bench pins and the Songclave's,
+  which its map doesn't pin; the Flea Caravan's two of its own, in Greymoor and the Blasted Steps,
+  only while your caravan is there), Bellway and Ventrica stations (dimmed while
   your game hasn't opened them: a station not unlocked, a toll not paid), the five Bellshrines of
   the Grand Gate, the shops and the locked doors (with the key each takes).
-- **Fights**: the enemy gauntlets and bosses not beaten yet, and the unique enemies (Rhinogrunds,
-  Covetous Pilgrims, Shardillards, Void Masses).
+- **Fights**: the enemy gauntlets and bosses not beaten yet, each fight its own mark (Lace atop the
+  Cradle, the two Moss Mothers of Weavenest Atla, the Act 3 Moss Mother and the Savage Beastfly
+  of the Far Fields too), and the unique enemies (Rhinogrunds, Covetous Pilgrims, Shardillards,
+  Void Masses).
 - **People**: Shakra's spots, the Wishwalls and who asks for a wish (with a save, only while one
   is still open there), and who gives something of the 100% (Plinney, Eva, Pinstress, Loddie,
   Lumble, Mooshka) and Scrounge, who buys the relics.

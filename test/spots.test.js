@@ -42,6 +42,22 @@ test('the extras, bosses, people and Bellshrines are all on the map, with a chec
   for (const area of Object.values(SP.MAPS)) assert.ok(CO.AREAS[area], area);
 });
 
+test('each boss fight is a mark of its own: the first fight by its name, the second ones in their arenas', () => {
+  const ids = SP.BOSSES.map((b) => b[0]);
+  assert.equal(new Set(ids).size, ids.length);
+  const at = Object.fromEntries(SP.BOSSES.map((b) => [b[0], b[1]]));
+  // The completionist's entry is the first fight (its check: defeatedMossMother, defeatedLace1).
+  assert.equal(at['moss-mother-ruined-chapel'], 'Tut_03');
+  assert.equal(at.lace, 'Bone_East_12');
+  assert.equal(at['savage-beastfly-chapel-of-the-beast'], 'Ant_19');
+  assert.deepEqual(['lace-the-cradle', 'moss-mother-weavenest-atla', 'moss-mother-act-3-moss-grotto', 'savage-beastfly-far-fields'].map((f) => at[f]),
+    ['Song_Tower_01', 'Weave_03', 'Tut_02', 'Bone_East_08']);
+  // What a second fight gives is had in its arena: the Weavelight, the Silk Heart Lace leaves.
+  assert.equal(SP.AT.tools.weavelight, 'Weave_03');
+  const heart = CO.PIECES.findIndex((p, i) => p[0] === 'silk-heart' && SP.AT.pieces[i] === 'Song_Tower_01');
+  assert.ok(heart >= 0);
+});
+
 test('a thing\'s prereqs are abilities or Silk Skills the save tells', () => {
   const ids = new Set([...D.ARTS, ...D.SKILLS].map((x) => x.id));
   for (const [key, needs] of Object.entries(SP.NEEDS)) for (const id of needs) assert.ok(ids.has(id), `${key}: ${id}`);

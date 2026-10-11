@@ -1365,6 +1365,43 @@ sheet (96 a unit, the game's is 100) is then about one and a half CSS pixels wid
 The made-up game and the render harness aren't kept; `tools/map-debug.html` draws the map as the
 site does.
 
+**The Map's counts against mapgenie's** (11 October). Albert found things missing on the Map
+next to mapgenie's Pharloom. Category by category (mapgenie's list read as a pointer only; every
+fix from the game's files and a save field):
+- **Benches**, mapgenie 81, the site 76 shown (78 pins: the Ventrica hub's and the diving bell's
+  benches each have a pin per state). Missing were four the game's files have: the Flea
+  Caravan's benches in Greymoor and the Blasted Steps ("Bench Pin Caravan", shown by the game
+  only while CaravanTroupeLocation is 1 or 2), Fleatopia's (its "Pre" bench until the caravan
+  comes, then the caravan's: always one), and the Songclave's, a RestBench the game's map never
+  pins. `extract-map.py` now keeps them, after the other pins so their indices hold, the caravan's
+  with where the caravan has to be (`here`, read by `rooms.js pinsOn` against the save's
+  `caravan`; with no save, both); the Songclave's is placed by its RestBench. The Marrow's caravan
+  bench is the Act 3 bench's spot, always pinned. The fifth, the Cradle's hidden bench
+  (`Cradle_Destroyed_Challenge_Bench`), is in a scene the map has no room for: left out, as the
+  walls there. 80 in Free mode.
+- **Ventrica stations**, mapgenie 7, the site 7 at once: Terminus has a pin in each of its two
+  states (`Tube_Hub_right`, `Tube_Hub_Destroyed`), and one shows.
+- **Mementos**, mapgenie 11, the site 8: mapgenie lists each of the four Old Hearts, but only the
+  one not given to the Snail Shamans becomes a memento (the wiki's Materium page): one mark, had
+  with any of them. The Fleatopia Memento in the game's text is cut content.
+- **Silkeaters**, mapgenie 10, the site 9: the tenth is what Styx grows in Sinner's Road, one an
+  hour, with nothing in the save to say it's had.
+- **Bosses**, mapgenie 46, the site 44, now 48. The completionist checks each boss by its first
+  fight, and gen-spots named the fight by the last foe of that name in `enemies.js`, so the first
+  Moss Mother, Lace and Savage Beastfly carried their later fights' ids (and the first Moss Mother
+  sat in Tut_02, the Act 3 one's room, not Tut_03). Each fight is its own mark now, with what the
+  save keeps (`BOSS_MORE`): Lace atop the Cradle (`defeatedLaceTower`), the Moss Mothers of
+  Weavenest Atla (Weave_03's `Boss Scene` bool), the Act 3 Moss Mother (Tut_02's
+  `Mossbone Mother Ambient`, its PersistentBoolItem: no save has it yet to confirm), the Savage
+  Beastfly of the Far Fields (`defeatedBoneFlyerGiantGolemScene`). The Weavelight and the Silk
+  Heart Lace leaves moved to their fights' rooms with them. Not added: the Skull Tyrant's return
+  to Bone Bottom (no foe of its own; `skullKingKilled` looks like its flag). The site also has
+  three mapgenie hasn't: Garmond & Zaza, Craggler and Shakra.
+- **Vendors**, mapgenie 23 (eight shopkeepers and fifteen of Shakra's spots), the site 10 shop
+  marks (the same eight, Jubilana in her three rooms) and 17 of Shakra's: none missing. The game's
+  own shop pins add the Flea Caravan's and one in the Whispering Vaults (Library_08), left to the
+  people and vendors layer.
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).
