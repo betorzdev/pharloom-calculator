@@ -395,8 +395,11 @@
 
   /* ── Switching screens ───────────────────────────────────────────────── */
   function setView(v) {
+    const was = prefs.view;
     prefs.view = VIEWS.includes(v) ? v : 'home';
     if (TOOLS.includes(prefs.view)) prefs.tool = prefs.view;
+    // Nor is the Map's full screen: leaving the Map leaves it (js/app-map.js).
+    if (prefs.view !== was && App.mapFullOff) App.mapFullOff();
     savePrefs();
   }
   /* Leaves a history entry and scrolls up to the top of the screen, which sits just below the

@@ -3,7 +3,8 @@
    area title card where Hornet rests, with the 100% (set against the figure the game itself
    shows), the Journal, the masks and the rosaries; under it what changed since the previous
    save, what's missing closest to the bench and the 100% split into the wiki's ten categories
-   (js/completion.js); then the ways on to the other screens. Shares SS.app with js/app.js (see
+   (js/completion.js); then the ways on to the other screens. Beside the card, the map of the area
+   she rests in (js/app-map.js, App.mapAreaHtml; the sibling's area map). Shares SS.app with js/app.js (see
    there). */
 (() => {
   'use strict';
@@ -189,12 +190,15 @@
         ${go('journal', 'assets/icons/items/hunters-journal.webp', left > 0 ? t(left === 1 ? 'homeGoJournal1' : 'homeGoJournal', { n: num(left) }) : t('homeGoJournal0'))}
         ${go('tools', `assets/icons/crests/${crest}.webp`, t('homeGoCrest'))}
       </ul></nav>`;
-    return `${card}${road}<div class="hm-cols">${sinceHtml()}${nearCol}${parts}</div>${next}`;
+    // The map of the area she rests in beside the card (js/app-map.js, App.mapAreaHtml); under it on a phone.
+    const map = App.mapAreaHtml ? App.mapAreaHtml(g) : '';
+    return `<div class="hm-hero${map ? ' has-map' : ''}">${card}${map}</div>${road}<div class="hm-cols">${sinceHtml()}${nearCol}${parts}</div>${next}`;
   }
 
   App.screens.home = (sec) => {
     const g = App.game(), m = App.gameMeta();
     sec.innerHTML = `<div class="hm">${brackets}${screenHead(esc(t('navHome')))}${g ? game(g, m) : invite()}</div>`;
+    if (g && App.mapAreaPaint) App.mapAreaPaint();
   };
   Object.assign(App.actions, { homeImport() { App.importFirstEmpty(); } });
 })();
