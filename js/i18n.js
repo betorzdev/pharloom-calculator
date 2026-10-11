@@ -166,6 +166,12 @@
     /* Since the previous save (js/changes.js): Your game and the notice when the game saves */
     homeSince:      { es: 'Desde el guardado anterior', en: 'Since the previous save' },
     homeSinceAt:    { es: 'guardado {ago}', en: 'saved {ago}' },
+    homeSinceAll:   { es: 'Ver las {n}', en: 'Show all {n}' },
+    homeSinceFewer: { es: 'Ver menos', en: 'Show fewer' },
+    /* Its groups' heads that the game doesn't name (the rest are the 100%'s categories, the
+       Tasks pane and the Journal) */
+    homeKindUpgrades: { es: 'Mejoras', en: 'Upgrades' },
+    homeKindPieces: { es: 'Piezas', en: 'Pieces' },
     chMasks:        { es: 'Máscaras: {n}', en: 'Masks: {n}' },
     chSpools:       { es: 'Carretes de seda: {n}', en: 'Silk Spools: {n}' },
     chHearts:       { es: 'Corazones de seda: {n}', en: 'Silk Hearts: {n}' },

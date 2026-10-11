@@ -507,7 +507,7 @@
         <g class="mp-mk mp-from" style="--px:${n2(start.x)}px;--py:${n2(start.y)}px"><title>${esc(t('mapFrom'))}</title><circle r="0.3"/></g></g>`;
   }
 
-  /* What's missing nearest your bench, for Your game (App.nearList, App.nearRow): the loose pieces
+  /* What's missing nearest your bench, for Your game (App.nearList): the loose pieces
      and the gauntlets, by rooms, nearest first. */
   const NEAR_KINDS = ['mask-shard', 'spool-fragment', 'memory-locket', 'craftmetal', 'pale-oil', 'flea'];
   function nearList(g) {
@@ -526,12 +526,14 @@
     }
     return list.sort((a, b) => a.n - b.n);
   }
-  // Each row opens the Map on its thing.
-  const nearRow = (x) => `<li>${x.mark}<span class="mp-near-name"${NT}>${esc(x.name)}</span>
-        <span class="mp-near-area"${NT}>${esc(areaName(x.area))}</span>
-        <button type="button" class="pg-onmap" data-act="mapShow" data-value="${esc(x.key)}" aria-label="${esc(t('mapOnMap') + ': ' + x.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button></li>`;
   App.nearList = nearList;
-  App.nearRow = nearRow;
+  /* The map's own marks, for Your game's lists (js/app-home.js): a piece's disc, a gauntlet's
+     badge with its champion, a wish's. */
+  App.mapMark = {
+    piece: (i) => { const p = CO.PIECES[i]; return p ? dot(p[0], pieceIcon(p[0], p)) : ''; },
+    gauntlet: (id) => badge('gauntlet', portrait(champion(SS.gauntlets.GAUNTLETS.find((x) => x.id === id))) || GLYPH.gauntlet),
+    wish: () => badge('wishwall', img(ICON('hornet_inv_pane_icons_0002_wish'))),
+  };
 
   /* ── The area you rest in, for Your game (App.mapAreaHtml, App.mapAreaPaint) ──
      The sibling's "area map" idea (hallownest-calculator js/app-home.js, areaMapHtml), with this
