@@ -1335,6 +1335,12 @@ and after, they had seven causes, none of them the game's:
    pixels, 9,747 in the fine sheet), only where the two coverages add up to about one and each is
    a real edge (8 to 247), so overlaps and gaps are left alone. The one-pixel dips in the whole
    map went from 1,583 to 239; what's left is the art's own lines and real gaps between parts.
+   One more kind showed close up (11-Oct-2026, Library_09_top against Enclave_bridge_left again):
+   placed to the fraction, two drawings can overlap on the join by part of a pixel, so their
+   coverages add up to more than one (191 and 128 of 255 made 223 in the fine sheet). Where the two
+   edges face each other (each drawing on its own side of the pixel) and add up to at most 1.5,
+   `close_joins()` closes them too (5,959 pixels, 14,616 fine). In the composed map only joins
+   change, never lighter: the one-pixel dips went from 801 to 175 (1,758 to 452 fine).
 4. **A dark line ran straight through the map close up**, at its middle (map x 1372): the four
    tiles of the fine map were smoothed each on its own, and at a tile's edge the smoothing read
    the transparent outside. The tiles now reach 8 pixels into each other.
