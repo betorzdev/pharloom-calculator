@@ -150,8 +150,9 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
 }
 /* The plaque: a thin double outline with pointed ends, stretched to the title. */
 .screen-plaque { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; color: color-mix(in oklab, var(--filigree) 80%, transparent); pointer-events: none; }
+.screen-plaque polygon:not(.is-inner) { fill: var(--inv-bg); } /* solid: the plaque straddles the page and the plate, so it can't be clear */
 .screen-plaque .is-inner { opacity: 0.4; }
-.screen-head .sec-title { overflow: hidden; text-overflow: ellipsis; }
+.screen-head .sec-title { position: relative; overflow: hidden; text-overflow: ellipsis; }
 .screen-lead { display: flex; flex-direction: column; align-items: center; gap: var(--sp-2); margin-bottom: var(--sp-6); text-align: center; }
 
 /* ── Controls ────────────────────────────────────────────────────────── */
