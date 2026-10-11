@@ -141,6 +141,7 @@
     homeKingdom:    { es: 'Telalejana', en: 'Pharloom' },   // MQ_BELLSHRINES_LOC
     homeGhost:      { es: 'Aquí irá tu partida', en: 'Your game goes here' },
     homeNearMap:    { es: 'En el mapa', en: 'On the map' },
+    homeMapLabel:   { es: 'Mapa de {area}', en: 'Map of {area}' },   // PANE_MAP, and the area's name
     homeParts:      { es: 'Tu 100 %, por partes', en: 'Your 100%, by part' },
     homeAllParts:   { es: 'Todo en Progreso', en: 'Everything in Progress' },
     homeGoLabel:    { es: 'Sigue por', en: 'Where next' },
@@ -248,14 +249,22 @@
     mapFrom:        { es: 'Tu banco anterior', en: 'Your previous bench' },
     mapClosed:      { es: 'sin abrir', en: 'not open yet' },
     mapToll:        { es: 'sin pagar el peaje', en: 'toll not paid' },
-    mapNote:        { es: 'Cada cosa, en la sala donde se consigue: tirada en el suelo, en la tienda que la vende, en el muro de deseos o con quien da el deseo, en la arena de su jefe. Varias en la misma sala se ven en fila. Con una partida, solo lo que te falta; en el modo libre, todo. Los bancos y las estaciones están donde el juego pone sus alfileres; atenuadas, las que tu partida aún no ha abierto.', en: 'Each thing in the room where it\'s had: lying there, at the shop that sells it, at the Wishwall or with whoever gives the wish, in its boss\'s arena. Several in one room show in a row. With a save, only what you\'re missing; in Free mode, everything. The benches and stations are where the game puts its pins; dimmed, the ones your game hasn\'t opened yet.' },
-    mapGroup_hundred: { es: 'Falta para el 100 %', en: 'Missing for 100%' },
+    mapGroup_hundred: { es: 'Para el 100 %', en: 'Towards 100%' },
     mapGroup_places:  { es: 'Lugares', en: 'Places' },
+    mapGroup_fights:  { es: 'Combates', en: 'Fights' },
     mapGroup_people:  { es: 'Gente', en: 'People' },
-    mapGroup_extras:  { es: 'Otros coleccionables', en: 'Other collectibles' },
+    mapGroup_extras:  { es: 'Coleccionables', en: 'Collectibles' },
+    mapGroup_secrets: { es: 'Secretos', en: 'Secrets' },
     mapGroup_game:    { es: 'Tu partida', en: 'Your game' },
-    mapAll:         { es: 'Todo', en: 'All' },
-    mapNone:        { es: 'Nada', en: 'None' },
+    mapShows:       { es: 'Qué se ve en el mapa', en: 'What the map shows' },
+    mapShowAll:     { es: 'Mostrar todo', en: 'Show all' },
+    mapHideAll:     { es: 'Esconder todo', en: 'Hide all' },
+    mapGroupShow:   { es: 'Mostrar todo el grupo', en: 'Show the whole group' },
+    mapGroupHide:   { es: 'Esconder todo el grupo', en: 'Hide the whole group' },
+    mapFoldOpen:    { es: 'Abrir {g}', en: 'Open {g}' },
+    mapFoldClose:   { es: 'Plegar {g}', en: 'Fold {g}' },
+    mapSetChoose:   { es: 'Elegir cuáles', en: 'Choose which' },
+    mapSet_relics:  { es: 'Reliquias', en: 'Relics' },   // COLLECTION_HEADING_RELICDEALER
     mapActs:        { es: 'Por acto', en: 'By Act' },
     mapActAll:      { es: 'Todos', en: 'All' },
     mapReachNow:    { es: 'Solo lo que puedo coger ya', en: 'Only what I can reach now' },
@@ -277,7 +286,7 @@
     mapLayer_giver1:{ es: 'Pide un deseo', en: 'Asks for a wish' },
     mapLayer_people:{ es: 'Quien da algo del 100 %', en: 'Who gives a 100% thing' },
     mapLayer_cocoon:{ es: 'Tu capullo', en: 'Your cocoon' },
-    mapLayer_journal: { es: 'Diario: lo que falta', en: 'Journal: what\'s missing' },
+    mapLayer_journal: { es: 'Diario', en: 'Journal' },   // PANE_JOURNAL
     'mapExtra_bone-scroll':        { es: 'Pergamino óseo', en: 'Bone Scroll' },   // INV_NAME_R_BONE_RECORD
     'mapExtra_weaver-effigy':      { es: 'Efigie de Tejedora', en: 'Weaver Effigy' },   // INV_NAME_R_WEAVER_TOTEM
     'mapExtra_choral-commandment': { es: 'Mandamiento coral', en: 'Choral Commandment' },   // INV_NAME_R_SEAL_CHIT
