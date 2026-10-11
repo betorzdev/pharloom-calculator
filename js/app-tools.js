@@ -316,7 +316,7 @@
      bottom, nothing had but the Hunter Crest, so nothing equipped), or everything (the marks
      cleared: Free mode's everything-unlocked sheet). */
   const PRESET = { base: { needle: 0, kit: 0, pouch: 0, masks: 0, spools: 0, hearts: 0 }, max: { needle: 4, kit: 4, pouch: 4, masks: 5, spools: 9, hearts: 3 } };
-  const BASE_GAME = { tools: [], crests: ['hunter'], skills: [], arts: [], everbloom: false, pieces: [] };
+  const BASE_GAME = { tools: [], crests: ['hunter'], skills: [], arts: [], everbloom: false, pieces: [], purse: {}, rosaries: 0, shards: 0, farsight: false, hasJournal: false, extras: [] };
   // Free mode's build changed from the Inventory (js/app-game.js): a mark taken off takes it off Hornet too.
   App.editFree = change;
   Object.assign(actions, {

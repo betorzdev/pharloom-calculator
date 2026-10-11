@@ -573,6 +573,11 @@
 
     /* The Inventory (js/app-game.js) */
     invItems:       { es: 'Objetos', en: 'Items' },
+    invPurse:       { es: 'Monedero', en: 'Purse' },
+    invRelics:      { es: 'Reliquias', en: 'Relics' },   // COLLECTION_HEADING_RELICDEALER
+    invMementos:    { es: 'Recuerdos', en: 'Mementos' },   // COLLECTION_HEADING_MOMENTOS
+    invBroken:      { es: 'Si lo rompieras todo: +{n}', en: 'If you broke them all: +{n}' },
+    invFieldMax:    { es: '{what}, máximo {n}', en: '{what}, maximum {n}' },
     invMissing:     { es: 'Aún no lo tienes', en: 'You don\'t have it yet' },
     invAll:         { es: 'Todo', en: 'All' },
     invNone:        { es: 'Nada', en: 'None' },

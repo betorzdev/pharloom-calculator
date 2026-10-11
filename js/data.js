@@ -1389,6 +1389,277 @@
       key: 'INV_NAME_JOURNAL',
       name: { es: 'Diario de caza', en: 'Hunter\'s Journal', key: 'INV_NAME_JOURNAL' },
     },
+    {
+      id: 'rosaries',
+      key: 'INV_NAME_COIN',
+      name: { es: 'Rosarios', en: 'Rosaries', key: 'INV_NAME_COIN' },
+      desc: {
+        es: 'Cuentas talladas en diversos materiales que se utilizan como medida de fe y como moneda de cambio. Cada una está grabada con un fino diseño.',
+        en: 'Beads carved from various materials, used as a measure of faith and traded as currency. Each is etched with a fine patterned design.',
+        key: 'INV_DESC_COIN',
+      },
+    },
+    {
+      id: 'shell-shards',
+      key: 'INV_NAME_SHARD',
+      name: { es: 'Fragmentos de coraza', en: 'Shell Shards', key: 'INV_NAME_SHARD' },
+      desc: {
+        es: 'Fragmentos endurecidos de coraza y hueso que se utilizan para fabricar herramientas y trampas.',
+        en: 'Hardened fragments of shell and bone, used in the crafting of tools and traps.',
+        key: 'INV_DESC_SHARD',
+      },
+    },
+    {
+      id: 'beast-shard',
+      key: 'INV_NAME_GREAT_SHARD',
+      name: { es: 'Fragmento de bestia', en: 'Beast Shard', key: 'INV_NAME_GREAT_SHARD' },
+      desc: {
+        es: 'Trozo de material endurecido que se encuentra en las corazas de las grandes bestias. Puede romperse en fragmentos individuales y usarse para fabricar.',
+        en: 'Chunk of hardened material found in the shells of great beasts. Can be broken into individual shell shards for use in crafting.',
+        key: 'INV_DESC_GREAT_SHARD',
+      },
+    },
+    {
+      id: 'shard-bundle',
+      key: 'INV_NAME_SHARD_POUCH',
+      name: { es: 'Manojo de fragmentos', en: 'Shard Bundle', key: 'INV_NAME_SHARD_POUCH' },
+      desc: {
+        es: 'Pequeño manojo de fragmentos de coraza encordados. Se puede romper y utilizar los fragmentos para fabricar.',
+        en: 'Small bundle of shell shards tied together with string. Can be broken to use the shards for crafting.',
+        key: 'INV_DESC_SHARD_POUCH',
+      },
+    },
+    {
+      id: 'pristine-core',
+      key: 'INV_NAME_PRISTINE_CORE',
+      name: { es: 'Núcleo prístino', en: 'Pristine Core', key: 'INV_NAME_PRISTINE_CORE' },
+      desc: {
+        es: 'Intrincado mecanismo interno de un bicho mecánico. Puede romperse en fragmentos individuales y usarse para fabricar.',
+        en: 'Intricate internal mechanism of a cogwork bug. Can be broken into individual shell shards for use in crafting.',
+        key: 'INV_DESC_PRISTINE_CORE',
+      },
+    },
+    {
+      id: 'hornet-statuette',
+      key: 'INV_NAME_FIXER_IDOL',
+      name: { es: 'Estatuilla de Hornet', en: 'Hornet Statuette', key: 'INV_NAME_FIXER_IDOL' },
+      desc: {
+        es: 'Pequeña escultura, de factura inexperta, pero minuciosamente elaborada como símbolo de amistad duradera.',
+        en: 'Small sculpture, inexpertly but painstakingly crafted as a symbol of enduring friendship.',
+        key: 'INV_DESC_FIXER_IDOL',
+      },
+    },
+    {
+      id: 'growstone',
+      key: 'INV_NAME_GROWSTONE',
+      name: { es: 'Piedra de brote', en: 'Growstone', key: 'INV_NAME_GROWSTONE' },
+      desc: {
+        es: 'Piedra fría y acerada con una notable capacidad de rebrote. Si se rompe en fragmentos, se reformará con el tiempo.',
+        en: 'Cold, steely stone with remarkable regrowth capacity. If shattered into shell shards, it will reform over time.',
+        key: 'INV_DESC_GROWSTONE',
+      },
+    },
+    {
+      id: 'frayed-rosary-string',
+      key: 'INV_NAME_COIN_SET_F',
+      name: {
+        es: 'Ristra de rosarios desgastada',
+        en: 'Frayed Rosary String',
+        key: 'INV_NAME_COIN_SET_F',
+      },
+      desc: {
+        es: 'Ristra desgastada que sujeta unos pocos rosarios. Se puede romper y utilizar los rosarios para comerciar.',
+        en: 'Worn string holding a meagre amount of rosaries. Can be broken and the loose rosaries used to trade.',
+        key: 'INV_DESC_COIN_SET_F',
+      },
+    },
+    {
+      id: 'rosary-string',
+      key: 'INV_NAME_COIN_SET_S',
+      name: { es: 'Ristra de rosarios', en: 'Rosary String', key: 'INV_NAME_COIN_SET_S' },
+      desc: {
+        es: 'Ristra de rosarios corta. Se puede romper y utilizar los rosarios para comerciar.',
+        en: 'Short string of rosaries. Can be broken and the rosaries used to trade.',
+        key: 'INV_DESC_COIN_SET_S',
+      },
+    },
+    {
+      id: 'rosary-necklace',
+      key: 'INV_NAME_COIN_SET_M',
+      name: { es: 'Collar de rosarios', en: 'Rosary Necklace', key: 'INV_NAME_COIN_SET_M' },
+      desc: {
+        es: 'Adorno con una gran cantidad de rosarios. Se puede romper y utilizar los rosarios para comerciar.',
+        en: 'Adornment strung with a large quantity of rosaries. Can be broken and the rosaries used to trade.',
+        key: 'INV_DESC_COIN_SET_M',
+      },
+    },
+    {
+      id: 'heavy-rosary-necklace',
+      key: 'INV_NAME_COIN_SET_M2',
+      name: { es: 'Collar de rosarios pesado', en: 'Heavy Rosary Necklace', key: 'INV_NAME_COIN_SET_M2' },
+      desc: {
+        es: 'Encordado con una mezcla de rosarios comunes y de calidad. Se puede romper y utilizar los rosarios para comerciar.',
+        en: 'String threaded with a mix of common and fine rosaries. Can be broken and the rosaries used to trade.',
+        key: 'INV_DESC_COIN_SET_M2',
+      },
+    },
+    {
+      id: 'pale-rosary-necklace',
+      key: 'INV_NAME_COIN_SET_L',
+      name: { es: 'Collar de rosarios pálido', en: 'Pale Rosary Necklace', key: 'INV_NAME_COIN_SET_L' },
+      desc: {
+        es: 'Collar pesado con una gran cantidad de rosarios de perlas. Se puede romper y utilizar los rosarios para comerciar.',
+        en: 'Heavy necklace laden with pearl rosaries. Can be broken and the rosaries used to trade.',
+        key: 'INV_DESC_COIN_SET_L',
+      },
+    },
+    {
+      id: 'bone-scroll',
+      key: 'INV_NAME_R_BONE_RECORD',
+      name: { es: 'Pergamino óseo', en: 'Bone Scroll', key: 'INV_NAME_R_BONE_RECORD' },
+      desc: {
+        es: 'Tosco diario hecho de jirones de tela y hueso, dejado por un peregrino caído.',
+        en: 'Crude journal made of coarse fabric and bone, left by a fallen pilgrim.',
+        key: 'INV_DESC_R_BONE_RECORD',
+      },
+      art: 'extras',
+    },
+    {
+      id: 'weaver-effigy',
+      key: 'INV_NAME_R_WEAVER_TOTEM',
+      name: { es: 'Efigie de Tejedora', en: 'Weaver Effigy', key: 'INV_NAME_R_WEAVER_TOTEM' },
+      desc: {
+        es: 'Ídolo óseo tallado a imagen de una antigua Tejedora. Tiene grabada una oración.',
+        en: 'Carved bone idol of an ancient Weaver. A prayer is etched upon its body.',
+        key: 'INV_DESC_R_WEAVER_TOTEM',
+      },
+      art: 'extras',
+    },
+    {
+      id: 'choral-commandment',
+      key: 'INV_NAME_R_SEAL_CHIT',
+      name: { es: 'Mandamiento coral', en: 'Choral Commandment', key: 'INV_NAME_R_SEAL_CHIT' },
+      desc: {
+        es: 'Orden emitida por la Ciudadela. El sello, antaño reluciente, se ha desgastado con el tiempo.',
+        en: 'Order issued by the Citadel. The once gleaming seal has worn with time.',
+        key: 'INV_DESC_R_SEAL_CHIT',
+      },
+      art: 'extras',
+    },
+    {
+      id: 'rune-harp',
+      key: 'INV_NAME_R_WEAVER_RECORD',
+      name: { es: 'Arpa rúnica', en: 'Rune Harp', key: 'INV_NAME_R_WEAVER_RECORD' },
+      desc: {
+        es: 'Antiguo instrumento de grabación de las Tejedoras, encordado con runas de seda. Las runas descoloridas contienen las palabras de una Tejedora de tiempos pasados.',
+        en: 'Old Weaver recording instrument, strung with Silk runes. The faded runes hold a Weaver\'s words from ages gone.',
+        key: 'INV_DESC_R_WEAVER_RECORD',
+      },
+      art: 'extras',
+    },
+    {
+      id: 'psalm-cylinder',
+      key: 'INV_NAME_R_PSALM_CYL',
+      name: { es: 'Cilindro de salmo', en: 'Psalm Cylinder', key: 'INV_NAME_R_PSALM_CYL' },
+      desc: {
+        es: 'Cilindro metálico fabricado en la Ciudadela con una grabación de sonido. El cilindro puede reproducirse en un gramófono.',
+        en: 'Metallic cylinder of Citadel make, etched with a recording of sound. The cylinder can be played in a gramophone.',
+        key: 'INV_DESC_R_PSALM_CYL',
+      },
+      art: 'extras',
+    },
+    {
+      id: 'arcane-egg',
+      key: 'INV_NAME_R_ANCIENT_EGG',
+      name: { es: 'Huevo arcano', en: 'Arcane Egg', key: 'INV_NAME_R_ANCIENT_EGG' },
+      desc: {
+        es: 'Huevo de piedra negro formado antes del nacimiento de Telalejana. Se trata de una reliquia del pasado muy valorada por los coleccionistas de objetos históricos.',
+        en: 'Black stone egg formed before the birth of Pharloom. A relic from the ancient past. Highly prized by collectors of historical items.',
+        key: 'INV_DESC_R_ANCIENT_EGG',
+      },
+      art: 'extras',
+    },
+    {
+      id: 'grey-memento',
+      key: 'INV_NAME_MEMENTO_GREY',
+      name: { es: 'Recuerdo gris', en: 'Grey Memento', key: 'INV_NAME_MEMENTO_GREY' },
+      desc: {
+        es: 'Piedra de corteza grabada, desgastada por la arena y blanqueada por el tiempo. ... Contempla... Recuerda... Hasta que el tiempo... La vida de nuevo...',
+        en: 'Engraved cruststone, worn by sand and blanched by time. ...Watch...Remember...Till time... Life anew...',
+        key: 'INV_DESC_MEMENTO_GREY',
+      },
+      art: 'extras',
+    },
+    {
+      id: 'heros-memento',
+      key: 'INV_NAME_MEMENTO_GARMOND',
+      name: { es: 'Recuerdo de héroe', en: 'Hero\'s Memento', key: 'INV_NAME_MEMENTO_GARMOND' },
+      desc: {
+        es: 'Herencia de un pueblo que sucumbió al Embrujo de Telalejana.',
+        en: 'Heirloom of a village lost to Pharloom\'s Haunting.',
+        key: 'INV_DESC_MEMENTO_GARMOND',
+      },
+      art: 'extras',
+    },
+    {
+      id: 'surface-memento',
+      key: 'INV_NAME_MEMENTO_SURFACE',
+      name: { es: 'Recuerdo de la superficie', en: 'Surface Memento', key: 'INV_NAME_MEMENTO_SURFACE' },
+      desc: {
+        es: 'Ornamento desgastado de la Aldea sin Nombre en lo alto de Telalejana.',
+        en: 'Worn ornament of the Nameless Town high above Pharloom.',
+        key: 'INV_DESC_MEMENTO_SURFACE',
+      },
+      art: 'extras',
+    },
+    {
+      id: 'hunters-memento',
+      key: 'INV_NAME_HUNTER_MEMENTO',
+      name: { es: 'Recuerdo de cazadora', en: 'Hunter\'s Memento', key: 'INV_NAME_HUNTER_MEMENTO' },
+      desc: {
+        es: 'Símbolo de sello otorgado en reconocimiento a una verdadera cazadora, estampado con una masa pegajosa.',
+        en: 'Seal symbol given in recognition of a true Hunter, stamped in sticky goo.',
+        key: 'INV_DESC_HUNTER_MEMENTO',
+      },
+      art: 'extras',
+    },
+    {
+      id: 'craw-memento',
+      key: 'INV_NAME_MEMENTO_CROWMAN',
+      name: { es: 'Recuerdo cuervón', en: 'Craw Memento', key: 'INV_NAME_MEMENTO_CROWMAN' },
+      desc: {
+        es: 'Emblema de hierro de la Corte de Cuervones que absuelve al portador de todos los crímenes pasados y futuros.',
+        en: 'Iron emblem of the Court of Craws, absolving the bearer of all crimes past and future.',
+        key: 'INV_DESC_MEMENTO_CROWMAN',
+      },
+      art: 'extras',
+    },
+    {
+      id: 'sprintmaster-memento',
+      key: 'INV_NAME_SPRINT_MEMENTO',
+      name: {
+        es: 'Recuerdo del Maestro de Sprints',
+        en: 'Sprintmaster Memento',
+        key: 'INV_NAME_SPRINT_MEMENTO',
+      },
+      desc: {
+        es: 'Trofeo dorado concedido por el Maestro de Sprints Veloz al bicho más rápido de Telalejana.',
+        en: 'Gilded trophy awarded by Sprintmaster Swift to the fastest bug in Pharloom.',
+        key: 'INV_DESC_SPRINT_MEMENTO',
+      },
+      art: 'extras',
+    },
+    {
+      id: 'guardians-memento',
+      key: 'INV_NAME_SETH_MEMENTO',
+      name: { es: 'Recuerdo del guardián', en: 'Guardian\'s Memento', key: 'INV_NAME_SETH_MEMENTO' },
+      desc: {
+        es: 'Medallón antiguo del errante Seth. Un regalo entregado en reconocimiento de una gran habilidad.',
+        en: 'Aged medallion of the wanderer Seth. A gift given in respect of great skill.',
+        key: 'INV_DESC_SETH_MEMENTO',
+      },
+      art: 'extras',
+    },
   ];
 
   const HORNET = {
@@ -1397,6 +1668,7 @@
     bind: { heals: 3, seconds: 1.37 },
     kit: { levels: 4, boost: 0.6 },
     pouch: { levels: 4 },
+    shells: { base: 400, perPouch: 100 },
   };
 
   SS.data = { NEEDLES, CRESTS, OTHER_CRESTS, VESTICREST, TOOLS, SKILLS, ARTS, MODIFIERS, ITEMS, HORNET };

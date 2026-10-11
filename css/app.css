@@ -1479,6 +1479,22 @@ kbd {
 .inv-step b { min-width: var(--sp-6); text-align: center; font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-sm); color: var(--ink-strong); }
 .inv-step .icon-btn { width: var(--sp-8); height: var(--sp-8); }
 .inv-count { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-2xs); color: var(--ink-2); }
+/* The purse (design/29-inventory-variants.html, A): each currency a figure with its picture, a bar
+   for the Shell Shards' cap, then what breaks into it and the sum. */
+.inv-two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-6); }
+.inv-cur { display: grid; gap: var(--sp-3); align-content: start; min-width: 0; }
+.inv-fig { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 0 var(--sp-3); }
+.inv-fig-art { grid-row: span 3; display: grid; place-items: center; padding: 0; }
+.inv-fig-art img { width: calc(var(--sp-12) + var(--sp-2)); height: calc(var(--sp-12) + var(--sp-2)); object-fit: contain; filter: drop-shadow(0 0 6px color-mix(in oklab, var(--spotlight) 35%, transparent)); transition: filter var(--dur) var(--ease); }
+.inv-fig-art:is(:hover, :focus-visible, .is-picked) img { filter: drop-shadow(0 0 8px color-mix(in oklab, var(--spotlight) 55%, transparent)); }
+.inv-fig-name { font-size: var(--fs-xs); color: var(--ink-2); }
+.inv-fig-num { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-2xl); font-weight: 600; line-height: 1.1; color: var(--ink-strong); }
+.inv-fig-num i { font-style: normal; font-size: var(--fs-sm); font-weight: 400; color: var(--muted); }
+.inv-bar { height: 3px; margin: var(--sp-1) 0; background: var(--inv-line); }
+.inv-bar::after { content: ''; display: block; height: 100%; width: var(--f); background: var(--accent-line); }
+.inv-in { width: 9ch; padding: var(--sp-1) var(--sp-2); background: transparent; border: 1px solid var(--line-ctl); color: var(--ink-strong); font: inherit; font-family: var(--font-num); font-size: var(--fs-xl); font-variant-numeric: tabular-nums; }
+.inv-in:focus-visible { outline: 1px solid var(--accent-line); border-color: var(--accent-line); }
+.inv-broken { margin: 0; font-size: var(--fs-xs); color: var(--muted); }
 /* What's open under a shelf: the accent's bar on the left over the chosen veil (the open row). */
 .inv-open { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--sp-1) var(--sp-6); align-items: center; margin-top: var(--sp-2); padding: var(--sp-4) var(--sp-6); border-left: 2px solid var(--accent); background: var(--picked); }
 .inv-open img { grid-row: 1 / span 3; width: calc(var(--sp-16) + var(--sp-2)); height: calc(var(--sp-16) + var(--sp-2)); object-fit: contain; }
@@ -1490,6 +1506,7 @@ kbd {
   .inv-body { grid-template-columns: minmax(0, 1fr); gap: var(--sp-8); }
 }
 @media (max-width: 599px) {
+  .inv-two { grid-template-columns: minmax(0, 1fr); }
   .inv-open { grid-template-columns: minmax(0, 1fr); padding: var(--sp-3) var(--sp-4); }
   .inv-open img { grid-row: auto; width: var(--sp-12); height: var(--sp-12); }
   .inv-pieces.is-spools .inv-bead { width: 8px; height: 8px; }

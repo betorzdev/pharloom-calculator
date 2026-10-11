@@ -107,14 +107,24 @@ Pouch with their level; then the **Silk Skills** with what each deals at this bu
 **abilities** (Needle Strike with its damage). On the right, what she carries: the **Tools** by
 colour, each on its slot's diamond (dashed and grey while you lack it), the **Crests** and the
 **items** with their counts (the loose Mask Shards and Spool Fragments, the Memory Lockets,
-Craftmetal, Pale Oil, the Everbloom, the Old Hearts, the melodies and the fleas). The heads count
-as the 100% does (Tools of 51). Tap anything to read the game's own text under its shelf.
+Craftmetal, Pale Oil, the Everbloom, the Farsight, the Hunter's Journal, the Old Hearts, the
+melodies and the fleas). Above the items sits the **Purse**: Rosaries and Shell Shards as big
+figures (the shards out of what your Tool Pouch holds, 400 to 800, with a bar), and under each
+what breaks into it, counted, with the sum you would get from breaking it all: the five Rosary
+strings and necklaces under the rosaries; the Beast Shards, Shard Bundles, Pristine Cores,
+Hornet Statuettes and the Growstone (Steel Soul) under the shards. Below the items, the
+**Relics** (how many you hold of each kind) and the **Mementos**. The heads count as the 100%
+does (Tools of 51); the Relics and Mementos aren't part of it. Tap anything to read the game's
+own text under its shelf.
 
 In **Free mode** everything on it is yours to set. On the left, tap a Needle, a mask, a bead of
 silk, a Silk Heart or a level (tap the last one lit to take it back). On the right, tap a Tool,
-Crest, Silk Skill, ability, the Everbloom, an Old Heart or a melody to mark it had or not (its
+Crest, Silk Skill, ability, the Everbloom, the Farsight, the Journal, an Old Heart, a melody or a
+Memento to mark it had or not (its
 text opens under the shelf); each shelf has «All · None», and what comes in numbers (loose Mask
-Shards and Spool Fragments, Memory Lockets, Craftmetal, Pale Oil, fleas) has − N +. «Base
+Shards and Spool Fragments, Memory Lockets, Craftmetal, Pale Oil, fleas, what's in the purse, the
+Relics of each kind) has − N +. The Rosaries and Shell Shards are typed: Enter or leaving the field
+takes the figure, and the shards stop at what your Pouch holds. «Base
 Hornet» starts from nothing but the Hunter Crest; «Everything maxed» from everything. Until you
 mark something, Free mode has everything. What you mark reaches the Crest screen: only what you
 have can be put on, the rest shows as a silhouette, and taking a mark off something Hornet
