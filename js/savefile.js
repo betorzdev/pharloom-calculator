@@ -31,6 +31,8 @@
   const QU = SS.quests || require('./quests.js');
   // js/spots.js, the Map's extras and bosses; a page without it reads none.
   const SP = SS.spots || (() => { try { return require('./spots.js'); } catch (e) { return { EXTRAS: [], BOSSES: [] }; } })();
+  // js/people.js, the Map's people: the playerData fields that say whom you've met and where they are.
+  const PE = SS.people || (() => { try { return require('./people.js'); } catch (e) { return { VARS: [] }; } })();
   // The map's pins that light up (a station, a toll bench), by what they are: "bellway Bellway_02".
   const pinKey = (p) => p[0] + ' ' + p[3];
   const LIGHTS = MAP.PINS.filter((p) => p[4]);
@@ -368,6 +370,8 @@
       cocoon: typeof pd.HeroCorpseScene === 'string' && /^[\w ()-]{1,64}$/.test(pd.HeroCorpseScene) ? pd.HeroCorpseScene : '',
       extras: SP.EXTRAS.map((x, i) => (has(x[2]) ? i : -1)).filter((i) => i >= 0),
       bosses: SP.BOSSES.filter((b) => has(b[2])).map((b) => b[0]),
+      // The Map's people: the fields their rules read (js/people.js VARS), as the save has them.
+      peopleVars: Object.fromEntries(PE.VARS.filter((f) => mapValue(pd[f], undefined) !== undefined).map((f) => [f, pd[f]])),
     };
   }
 
@@ -378,7 +382,7 @@
        pharloom.progress  the rest of game(): masks, spools, hearts, needle, kit, pouch,
                           everbloom, purse, rosaries, shards, farsight, hasJournal, pieces, wishes, gauntlets, lit, act, mapFlags, mapVars, bench,
                           area, build, the road's fields (quests … snareReady) and the Map's
-                          (visited … bosses)
+                          (visited … bosses, peopleVars)
        pharloom.meta      what the profile screen shows (meta()) and when the file was saved
      toSnapshot() writes them; gameOf() reads them back into one game, with the same defaults as
      an empty game for anything missing or damaged. */
@@ -426,7 +430,7 @@
     needle: 0, kit: 0, pouch: 0, everbloom: false, purse: {}, rosaries: 0, shards: 0, farsight: false, hasJournal: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', area: '', build: {},
     quests: [], bellshrines: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
     bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [],
-    visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', extras: [], bosses: [] });
+    visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', extras: [], bosses: [], peopleVars: {} });
   const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
   // Each field only if it has the type an empty game gives it.
   function gameOf(snap) {
@@ -450,6 +454,7 @@
     out.lit = out.lit.filter((k) => LIGHTS.some((p) => pinKey(p) === k));
     out.mapFlags = out.mapFlags.filter((f) => MAP_VARY.includes(f));
     out.mapVars = Object.fromEntries(Object.entries(out.mapVars).filter(([k, x]) => MAP.VARS.includes(k) && mapValue(x, undefined) !== undefined));
+    out.peopleVars = Object.fromEntries(Object.entries(out.peopleVars).filter(([k, x]) => PE.VARS.includes(k) && mapValue(x, undefined) !== undefined));
     return out;
   }
   const metaOf = (snap) => ({ version: '', time: 0, completion: 0, rosaries: 0, shards: 0, steel: false, dead: false, saved: null,

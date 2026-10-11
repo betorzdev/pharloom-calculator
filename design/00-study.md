@@ -1365,6 +1365,24 @@ sheet (96 a unit, the game's is 100) is then about one and a half CSS pixels wid
 The made-up game and the render harness aren't kept; `tools/map-debug.html` draws the map as the
 site does.
 
+**The people** (11 October). Set against mapgenie's 146 NPC marks, the Map had seven people. The
+game's scenes give every person: an NpcDialogueTitle names them (its keys are the dump's
+`<KEY>_SUPER/_MAIN/_SUB`, Flick «El arreglador»), and some talkers show their title from their
+own FSM. `tools/extract-people.py` reads them all into kb/data/game/people.json (each one's spots,
+one per scene, and every name their scripts and the tests switching them read) and cuts each
+figure from its tk2d sprite into assets/map/people/. `tools/gen-people.js` keeps those on the Map
+under no other layer: 54 people in 140 spots (Lugoli, the Crawfather and the Father of the Flame
+are bosses with no talker and drop out). What a save says of each is a hand table checked against
+the scans: 25 have a met flag their own scripts read (others, such as MetBelltownDoctor, exist but
+aren't read by Yarnaby's objects, so they're left out rather than guessed); the troupe's camp is
+`CaravanTroupeLocation` (0 Bone_10, 1 Greymoor_08_caravan, 2 Coral_Judge_Arena, 3 Aqueduct_05),
+Kratt is at Greymoor_24 until `CaravanLechReturnedToCaravan`, Vog at the Putrified Ducts' Bellway
+until `MetTroupeHunterWild`, the Second Sentinel where `songChevalierActiveIn<Room>` says. Still
+open: Sherma's `shermaPos`, `gillyLocation`, `GreenPrinceLocation`, Mister Mushroom's
+`MushroomQuestFound1..7`, Ballow's diving bell, and Garmond, whose `garmondIn<Room>` flags stay
+set after he moves on: every spot shows for them. The vendors: the game's ShopOwners are exactly
+js/shop.js's nine; the Couriers (a SimpleQuestsShopOwner), the Moss Druid and Creige trade too.
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).

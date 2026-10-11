@@ -30,6 +30,7 @@
   'use strict';
   const SS = globalThis.SS;
   const M = SS.map, R = SS.rooms, CO = SS.collectibles, D = SS.data, SP = SS.spots, J = SS.journal, QU = SS.quests, HW = SS.how;
+  const PE = SS.people || { PEOPLE: [], TRADE: [] };
   const App = SS.app;
   const { t, pick, esc, NT, brackets, screenHead, prefs, savePrefs, render, actions } = App;
 
@@ -83,6 +84,7 @@
     L('wishwall', () => t('mapLayer_wishwalls'), ICON('hornet_inv_pane_icons_0002_wish')),
     L('giver', () => t('mapLayer_givers'), ICON('quest_icon_large__0008_gather')),
     L('person', () => t('mapLayer_people'), ICON('quest_icon_large_0006_herald')),
+    L('npc', () => t('mapLayer_npc'), 'assets/map/people/bellhart-greeter.webp'),
     ...RELICS.map((k) => L(k, () => t('mapExtra_' + k), `assets/icons/extras/${k}.webp`)),
     L('mossberry', () => t('mapExtra_mossberry'), 'assets/icons/extras/mossberry.webp'),
     L('silkeater', () => t('mapExtra_silkeater'), PIN('pin_grub_location')),
@@ -104,7 +106,7 @@
       'memory-locket', 'craftmetal', 'pale-oil', 'flea', 'old-heart', 'melody', 'everbloom']],
     ['places', ['bench', 'bellway', 'ventrica', 'bellshrine', 'shop', 'lock']],
     ['fights', ['gauntlet', 'boss', 'spawn']],
-    ['people', ['shakra', 'wishwall', 'giver', 'person']],
+    ['people', ['shakra', 'wishwall', 'giver', 'person', 'npc']],
     ['extras', ['relics', 'mossberry', 'silkeater', 'memento', 'bellhome']],
     ['secrets', ['rosary-cache', 'shard-cache', 'wall']],
     ['game', ['cocoon', 'journal']],
@@ -177,6 +179,24 @@
   function wishOf(quest) { return CO.WISHES.findIndex((w) => w[2][0] === 'quest' && w[2][1] === quest); }
   const wishDone = (g, quest) => { const i = wishOf(quest); return !!g && i >= 0 && g.wishes.includes(i); };
   const complete = (g, e) => !!g && SS.completion.journalDone(e, g.journal);
+  /* A person of js/people.js in a save (own): met (true, false, or null when the save has no word
+     for it), gone, and where: the scenes they're in now (null: every spot, as in Free mode). A
+     field the save doesn't carry (a slot kept before) says nothing. */
+  const truthy = (v) => v === true || (typeof v === 'number' && v > 0);
+  const personArt = (x) => (x.art ? `assets/${x.art.startsWith('journal/') ? 'icons' : 'map'}/${x.art}.webp` : ICON('quest_icon_large_0006_herald'));
+  function personNow(x, own) {
+    const v = own && own.peopleVars;
+    if (!v) return { met: null, gone: false, where: null };
+    const known = (fs) => !!fs && fs.some((f) => v[f] !== undefined);
+    const met = known(x.met) ? x.met.some((f) => truthy(v[f])) : null;
+    const gone = !!x.gone && x.gone.some((f) => v[f] === true);
+    if (x.unsure) return { met, gone, where: null, unsure: true };
+    if (!x.at || !known(x.at.map((r) => r[0]))) return { met, gone, where: null };
+    const hit = x.at.find(([f, val]) => v[f] === val);
+    const named = new Set(x.at.map((r) => lower(r[2])));
+    const where = hit ? new Set([lower(hit[2])]) : new Set(x.spots.map((s) => lower(s[0])).filter((s) => !named.has(s)));
+    return { met, gone, where: where.size ? where : null };
+  }
   function things(g, own) {
     const out = [];
     const add = (m) => { if (m.scene && R.roomOf(m.scene)) out.push(m); };
@@ -231,6 +251,9 @@
       scenes.forEach((scene, i) => add({ key: 'shop:' + v + ':' + i, layer: 'shop', scene, got: false, name: pick(HW.NPCS[v]), npc: v,
         draw: (s, ti, k, c) => pin('shop', 'pin_shop', s, ti, k, c) }));
     }
+    // Who buys or sells outside the game's shops (js/people.js TRADE): the Couriers, the Moss Druid, Creige.
+    for (const x of PE.TRADE) x.spots.forEach(([scene, px, py], i) => add({ key: 'shop:' + x.id + ':' + i, layer: 'shop', scene,
+      at: px != null ? { x: px, y: py } : undefined, got: false, name: pick(x.name), trade: x.note, draw: (s, ti, k, c) => pin('shop', 'pin_shop', s, ti, k, c) }));
     // People: the Wishwalls and who offers a wish, each with the wishes still open there.
     const boards = new Map(), givers = new Map();
     for (const [quest, f] of Object.entries(QU.FROM)) {
@@ -244,6 +267,17 @@
       name: t('mapLayer_giver1'), draw: (s, ti, kk, c) => badge('giver', img(ICON('quest_icon_large__0008_gather')), s, ti, kk, c) });
     for (const [id, scene] of Object.entries(SP.PEOPLE)) add({ key: 'person:' + id, layer: 'person', scene, got: false, npc: id,
       name: id === 'scrounge' ? t('mapScrounge') : pick(HW.NPCS[id]), draw: (s, ti, k, c) => badge('person', img(ICON('quest_icon_large_0006_herald')), s, ti, k, c) });
+    /* Everyone else (js/people.js), each at their own point in the room: in a save, only where it
+       says they are now, gone once they've left, and dimmed until you've met (personNow). */
+    for (const x of PE.PEOPLE) {
+      const now = personNow(x, own);
+      if (now.gone) continue;
+      for (const [scene, px, py] of x.spots) {
+        if (now.where && !now.where.has(lower(scene))) continue;
+        add({ key: 'npc:' + x.id + ':' + lower(scene), layer: 'npc', scene, at: px != null ? { x: px, y: py } : undefined, got: false,
+          off: now.met === false, person: x, now, name: pick(x.name), draw: (s, ti, k, c) => badge('npc', img(personArt(x)), s, ti, k, c) });
+      }
+    }
     // Other collectibles.
     SP.EXTRAS.forEach((x, i) => {
       const [kind, act, check, scene, name] = x;
@@ -618,7 +652,7 @@
   window.addEventListener('resize', () => { if (document.querySelector('.hmB-canvas')) areaPaint(); });
 
   /* The layers whose things aren't had (a bench, a shop, a person): a count, not had of total. */
-  const PLAIN = new Set(['bench', 'bellway', 'ventrica', 'shop', 'lock', 'shakra', 'person', 'cocoon']);
+  const PLAIN = new Set(['bench', 'bellway', 'ventrica', 'shop', 'lock', 'shakra', 'person', 'npc', 'cocoon']);
   const CARET = '<svg class="mp-caret" viewBox="0 0 10 10" aria-hidden="true"><path d="M3 1 L8 5 L3 9 Z" fill="currentColor"/></svg>';
   // The groups open: as left (prefs.mapOpen); at first all of them, on a phone only the 100%.
   const openGroups = () => (prefs.mapOpen && !Array.isArray(prefs.mapOpen) ? Object.keys(prefs.mapOpen).filter((k) => prefs.mapOpen[k])
@@ -930,9 +964,15 @@
       acts += (App.VIEWS.includes('fight') ? btn('mapFoe', m.foe, t('mapFight')) : '') + (m.entry ? btn('mapJournal', m.entry, t('mapToJournal')) : '');
     } else if (kind === 'bell') {
       if (g) acts = state(t(m.got ? 'mapRung' : 'mapNotRung'));
+    } else if (kind === 'npc') {
+      const x = m.person, s = m.now;
+      if (s.met != null) acts = state(t(s.met ? 'mapMet' : 'mapNotMet'));
+      note = s.unsure ? t('mapNpcUnsure') : !s.where && x.spots.length > 1 ? t('mapNpcSpots', { n: num(x.spots.length) }) : '';
     } else if (kind === 'shop' || kind === 'person' || kind === 'shakra') {
       const id = m.npc;
-      if (id === 'shakra') {
+      if (m.trade) {
+        note = t('mapTrade_' + m.trade);
+      } else if (id === 'shakra') {
         const bought = new Set(own ? own.maps : []);
         const left = Object.keys(SP.MAPS).filter((f) => !bought.has(f)).map((f) => areaName(SP.MAPS[f])).filter(Boolean);
         note = own ? (left.length ? t('mapShakraLeft', { list: listOf(left) }) : t('mapShakraAll')) : t('mapShakraNote');

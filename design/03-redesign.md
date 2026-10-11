@@ -47,6 +47,7 @@ the work up reads it first, then the step it's on.
 | 8 | Crest (`tools`) | **Built** (28 Sep) | [`18-crest-variants.html`](18-crest-variants.html) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
 | 10 | **Built** (28 Sep) · The static pages (`tools/pages*.js`: `bosses/`, `es/jefes/`, the landing folders): they inherit steps 1 and 2; only what's theirs | To do | |
+| 6c | The Map's people: everyone in the world and every place that sells | **Built** (11 Oct) | `30-map-people-variants.html` (kept out of the repo) |
 | 6b | The Map's admin mode (`#view=map&admin=1`): the panel, adding, the save check, hide and delete, the marks | **Built** (11 Oct) | `30-map-admin-variants.html` (kept out of the repo) |
 
 ## Step 1 · The shell
@@ -720,6 +721,31 @@ the screen; `css/app.css` .mp-legend to .mp-inside):
 - The counts: had of total in a save (complete in `--good`), a plain count for what isn't had
   (benches, shops, people), the total in Free mode.
 - The closing note is gone (`mapNote`, with `mapAll` and `mapNone`).
+
+### The people (11 October 2026)
+
+Albert, setting the Map against mapgenie's (146 NPC marks, 23 vendors): «faltan cosas». The site
+had 7 people (who gives a thing of the 100%, and Scrounge), the wish givers, 10 shop rooms and
+Shakra. Read from the game's scenes: 79 title keys on talkers (an NpcDialogueTitle, or the title
+a talker's own FSM shows), named by the dump's `<KEY>_SUPER/_MAIN/_SUB`; their figures from their
+own tk2d sprites; and for each, the playerData their scripts read. The game's ShopOwners are
+exactly js/shop.js's nine vendors; outside them only the Couriers' wish shop, the Moss Druid
+(Mossberries for rosaries) and Creige (drinks) trade. Options drawn over three of Albert's saves
+(Acts 1, 2 and 3): 1 · the selector (A one more switch «Everyone else», B one switch for all, C by
+role); 2 · the mark (A the herald, B their own figure, head and shoulders, C the whole figure with
+no disc); 3 · met (A not met yet dimmed, B met dimmed, C met hidden); 4 · who moves (A only where
+the save says now, B every spot with the current one lit); 5 · crowded rooms (A each at their own
+point, B a count from afar); 6 · vendors (A in Places with the shop pin, B in People).
+
+Albert chose **all the A's**. Built: `tools/extract-people.py` (kb/data/game/people.json and
+assets/map/people/), `tools/gen-people.js` (js/people.js, in npm run data: a hand table of met
+flags, departures and where-now rules that stops when a field isn't one the person's scripts read
+or a room isn't theirs), `js/savefile.js` keeps those fields (`peopleVars`), and js/app-map.js
+draws «Everyone else» (54 people) and the three traders. The 29 with no met flag are places with
+no state. Garmond is always «comes and goes» (his garmondIn<Room> flags stay set after he moves
+on); Sherma, Gilly, the Green Prince, Ballow, Mister Mushroom, Flick, Reed and the Caretaker show
+every spot: their numbers or flags aren't tied to rooms yet. Styx and Crull and Benjin were
+checked and don't trade, so the vendors are 13 (Scrounge's in People), not the 15 first counted.
 
 ## Step 7 · Journal
 

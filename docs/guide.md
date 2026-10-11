@@ -351,12 +351,23 @@ are; in Free mode, the total. The Act and reach filters narrow the counts too.
   on at first.
 - **Places**: benches (off at first: there are 76), Bellway and Ventrica stations (dimmed while
   your game hasn't opened them: a station not unlocked, a toll not paid), the five Bellshrines of
-  the Grand Gate, the shops and the locked doors (with the key each takes).
+  the Grand Gate, the shops and the locked doors (with the key each takes). The shops are the
+  game's own (its ShopOwners: Pebb, Frey, Mort, the Forge Daughter, Grindle, Jubilana, the
+  Mottled Skarr, the Twelfth Architect) and those who trade outside them: the Couriers' delivery
+  wishes in Bellhart, the Moss Druid, who buys Mossberries, and Creige's drinks.
 - **Fights**: the enemy gauntlets and bosses not beaten yet, and the unique enemies (Rhinogrunds,
   Covetous Pilgrims, Shardillards, Void Masses).
 - **People**: Shakra's spots, the Wishwalls and who asks for a wish (with a save, only while one
   is still open there), and who gives something of the 100% (Plinney, Eva, Pinstress, Loddie,
-  Lumble, Mooshka) and Scrounge, who buys the relics.
+  Lumble, Mooshka) and Scrounge, who buys the relics. **Everyone else** (off at first): every
+  other person the game's scenes place, 54 of them, each in one switch only, with their own figure
+  from the game's sprites (tools/extract-people.py), named as their title card names them. With a
+  save, those you haven't met yet are dimmed, but only when the save has a flag for it: the ones it
+  says nothing about are never dimmed by guess. Who moves shows only where the save says they are
+  now (the flea troupe at its camp, Kratt strung up in Greymoor until he's back, Nuu at home, the
+  Second Sentinel resting, Pilby, the Chapel Maid, Seth at the Flea Festival); who has left or died
+  is gone. Where the save doesn't say, every spot shows and the card says so (Garmond comes and
+  goes, Sherma, Gilly, the Green Prince, Mister Mushroom…). In Free mode, everyone everywhere.
 - **Collectibles**, off at first: the relics, one switch for the six (Bone Scrolls, Weaver
   Effigies, Choral Commandments, Rune Harps, Psalm Cylinders, the Arcane Egg) whose round caret
   opens them one by one, Mossberries, Silkeaters, Mementos and the Bellhome's furnishings.

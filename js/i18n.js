@@ -320,7 +320,7 @@
     'mapExtra_rune-harp':          { es: 'Arpa rúnica', en: 'Rune Harp' },   // INV_NAME_R_WEAVER_RECORD
     'mapExtra_psalm-cylinder':     { es: 'Cilindro de salmo', en: 'Psalm Cylinder' },   // INV_NAME_R_PSALM_CYL
     'mapExtra_arcane-egg':         { es: 'Huevo arcano', en: 'Arcane Egg' },   // INV_NAME_R_ANCIENT_EGG
-    mapExtra_mossberry: { es: 'Baya musgosa', en: 'Mossberry' },   // INV_NAME_MOSSBERRY
+    mapExtra_mossberry: { es: 'Baya musgosa', en: 'Mossberry' },
     mapExtra_silkeater: { es: 'Devoraseda', en: 'Silkeater' },   // INV_NAME_SILK_GRUB
     mapExtra_memento:   { es: 'Recuerdos', en: 'Mementos' },   // COLLECTION_HEADING_MOMENTOS
     mapExtra_bellhome:  { es: 'Hogar campana', en: 'Bellhome' },   // BELLHOME
@@ -333,6 +333,14 @@
     mapLockKey:     { es: 'Se abre con: {key}', en: 'Opened with: {key}' },
     mapScrounge:    { es: 'Scrounge', en: 'Scrounge' },   // BELLHART_RELICDEALER_MAIN
     mapScroungeNote:{ es: 'Compra las reliquias.', en: 'Buys the relics.' },
+    mapLayer_npc:   { es: 'El resto de la gente', en: 'Everyone else' },
+    mapMet:         { es: 'Ya os habéis visto', en: 'You\'ve met' },
+    mapNotMet:      { es: 'Aún no os habéis visto', en: 'Not met yet' },
+    mapNpcSpots:    { es: 'Aparece en {n} sitios, según el acto y lo que hayas hecho.', en: 'Turns up in {n} places, by act and by what you\'ve done.' },
+    mapNpcUnsure:   { es: 'Va y viene por Telalejana: la partida no dice dónde está ahora.', en: 'Comes and goes around Pharloom: the save doesn\'t say where now.' },
+    mapTrade_couriers: { es: 'Ofrecen deseos de reparto.', en: 'Offer delivery wishes.' },
+    mapTrade_druid:    { es: 'Cambia bayas musgosas por rosarios.', en: 'Trades Mossberries for rosaries.' },
+    mapTrade_creige:   { es: 'Vende bebidas.', en: 'Sells drinks.' },
     mapCocoonNote:  { es: 'Donde caíste por última vez: tus rosarios te esperan ahí.', en: 'Where you last fell: your rosaries wait there.' },
     mapUnmapped:    { es: 'Aún no tienes su mapa', en: 'You don\'t have its map yet' },
     mapAreaRooms:   { es: '{n} de {m} salas visitadas', en: '{n} of {m} rooms visited' },
