@@ -432,6 +432,8 @@ def main(game):
         p['off'] = c_join('any', offs)
         pieces.append(p)
         by_id[o.path_id] = p
+        if gms_o is not None:
+            by_id[gms_o.path_id] = p   # mappedParent and mappedIfAllMapped point at the GameMapScene, not its GameObject
     for p in pieces:
         p['parent'] = by_id[p['parent']]['scene'] if p['parent'] in by_id else None
         p['ifall'] = [by_id[i]['scene'] for i in p['ifall'] if i in by_id]

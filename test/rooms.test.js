@@ -97,6 +97,11 @@ test('the map piece by piece, as the game draws it', () => {
   assert.ok(!drawn(R.mapView(under)).has('Under_13_right'));
   const parts = R.mapView(under, { all: true }).pieces.filter((p) => /^Under_13_/.test(p.e.s));
   assert.ok(parts.length >= 3 && parts.every((p) => !p.faint), JSON.stringify(parts.map((p) => [p.e.s, p.faint])));
+  // A piece the game maps with others (mappedIfAllMapped): Songclave's bridge, once Song_Enclave
+  // and Library_09_top are, though no scene is named after it.
+  const bridge = (mapped) => drawn(R.mapView({ ...world({}), mapped })).has('Enclave_bridge_left');
+  assert.ok(bridge(['Song_Enclave', 'Library_09_top']) && !bridge(['Song_Enclave']));
+  assert.ok(M.PIECES.some((e) => e.parent), 'a mappedParent is read');
   // Not mapped: a Rough piece shows its sketch, a Hidden one nothing; without the Quill, the same.
   const rough = M.PIECES.find((e) => e.st === 1 && e.r != null), hidden = M.PIECES.find((e) => e.st === 0 && !e.hide && !e.off && !e.act3);
   for (const g of [{ ...world({}), mapped: [] }, { ...world({}), quill: false }]) {
