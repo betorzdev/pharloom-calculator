@@ -305,7 +305,8 @@ and 8 × Silkspear" against something bigger.
 
 The map fills the screen. Drag it to move it; the wheel, a pinch or a double click zoom where you
 point, + and − at the middle, and ⤢ opens it large, the window's whole width (⤡ back). Close up
-it swaps to twice the resolution. On it: a search at the top left and the zoom at the top right.
+it swaps to twice the resolution. The last button, the four corners, takes it to full screen (Esc or
+the same button leave it; where the browser can't, it fills the window). On it: a search at the top left and the zoom at the top right.
 The search finds any area and anything on the map by name (a piece, a Tool, a boss, a shop, an
 NPC, a Journal entry), each with its layer and area under it: pick one and the map goes there,
 with its layer switched on, its card open and a ring where it is. On a phone the area names show

@@ -1975,6 +1975,18 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
   .mp.is-big .mp-view { height: max(480px, calc(100vh - var(--sticky-h) - var(--sp-6))); }
 }
 @media (max-width: 899px) { .mp-big { display: none; } }
+/* Full screen (the zoom's last button; js/app-map.js, setFull): the stage over the whole window,
+   with the search and the zoom on it; the page doesn't scroll behind. On a phone too: there it's
+   what makes the map big. After the large map's rules, which it overrides: both can be on. */
+.mp-full[aria-pressed="true"] { color: var(--ink-strong); background: var(--picked); }
+/* The screen is a layer of its own (isolation), under the bar: over it. */
+.screen:has(.mp.is-full) { z-index: 50; }
+.mp.is-full .mp-stage { position: fixed; z-index: 4; inset: 0; width: auto; margin: 0; display: block; }
+.mp.is-full .mp-view { height: 100%; }
+.mp.is-full .mp-big { display: none; }
+.mp.is-full .mp-find { position: absolute; order: 0; top: var(--sp-3); left: var(--sp-3); margin: 0; padding: 0; width: auto; right: calc(var(--ctl-sm) * 3 + var(--sp-3) * 2 + var(--sp-2)); max-width: 20rem; }
+.mp.is-full .mp-tools { top: var(--sp-3); }
+html:has(.mp.is-full) { overflow: hidden; }
 .mp-float { background: color-mix(in oklab, var(--scene-bg) 88%, transparent); border: 1px solid var(--line-ctl); }
 .mp-find { position: absolute; z-index: 4; top: var(--sp-3); left: var(--sp-3); width: min(20rem, calc(100% - var(--sp-16) * 2)); }
 .mp-find .search { background: color-mix(in oklab, var(--scene-bg) 88%, transparent); border: 1px solid var(--line-ctl); }
@@ -2070,14 +2082,14 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 .mp-ping.is-on { animation: mp-ping 1.2s var(--ease-fade) 3; }
 @media (prefers-reduced-motion: reduce) { .mp-ping.is-on { opacity: 1; } }
 @media (max-width: 899px) {
-  .mp-find { width: auto; right: calc(var(--ctl-sm) * 3 + var(--sp-3) * 2); }
+  .mp-find { width: auto; right: calc(var(--ctl-sm) * 4 + var(--sp-3) * 2); }
 }
 /* Whole on a phone the names would cover the map: they come with the zoom. */
 @media (max-width: 599px) {
   .mp-view:not(.is-zoomed) .mp-name { display: none; }
   /* Whole, the map is too short to float the search on: it goes above it. */
   .mp-stage { display: flex; flex-direction: column; }
-  .mp-find { position: static; order: -1; width: auto; margin: 0 var(--sp-3) var(--sp-2); padding-right: calc(var(--ctl-sm) * 3 + var(--sp-3)); }
+  .mp-find { position: static; order: -1; width: auto; margin: 0 var(--sp-3) var(--sp-2); padding-right: calc(var(--ctl-sm) * 4 + var(--sp-3)); }
   /* Whole, the map is small: smaller marks, so they don't cover it. */
   .mp-view:not(.is-zoomed) { --mp-s: 16px; }
   .mp-tools { top: 0; }
