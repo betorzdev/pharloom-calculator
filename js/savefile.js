@@ -31,6 +31,8 @@
   const QU = SS.quests || require('./quests.js');
   // js/spots.js, the Map's extras and bosses; a page without it reads none.
   const SP = SS.spots || (() => { try { return require('./spots.js'); } catch (e) { return { EXTRAS: [], BOSSES: [] }; } })();
+  // js/map-fixes.js, the marks added to the Map by hand: those with a check, had or not.
+  const MF = SS.mapFixes || (() => { try { return require('./map-fixes.js'); } catch (e) { return { FIXES: {} }; } })();
   // The map's pins that light up (a station, a toll bench), by what they are: "bellway Bellway_02".
   const pinKey = (p) => p[0] + ' ' + p[3];
   const LIGHTS = MAP.PINS.filter((p) => p[4]);
@@ -368,6 +370,7 @@
       cocoon: typeof pd.HeroCorpseScene === 'string' && /^[\w ()-]{1,64}$/.test(pd.HeroCorpseScene) ? pd.HeroCorpseScene : '',
       extras: SP.EXTRAS.map((x, i) => (has(x[2]) ? i : -1)).filter((i) => i >= 0),
       bosses: SP.BOSSES.filter((b) => has(b[2])).map((b) => b[0]),
+      added: (MF.FIXES.added || []).filter((a) => a.check && has(a.check)).map((a) => a.id),
     };
   }
 
@@ -426,7 +429,7 @@
     needle: 0, kit: 0, pouch: 0, everbloom: false, purse: {}, rosaries: 0, shards: 0, farsight: false, hasJournal: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', area: '', build: {},
     quests: [], bellshrines: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
     bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [],
-    visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', extras: [], bosses: [] });
+    visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', extras: [], bosses: [], added: [] });
   const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
   // Each field only if it has the type an empty game gives it.
   function gameOf(snap) {
