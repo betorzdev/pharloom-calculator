@@ -40,7 +40,7 @@ the work up reads it first, then the step it's on.
 | 1 | **The shell**: header, screen bar (desktop and phone), the screen's frame and title, footer and About, the atmosphere | **Built** (28 Sep) | [`04-shell-variants.html`](04-shell-variants.html) |
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html` |
-| 4 | Inventory (`game`) | **Built** (28 Sep; purse 11 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html` |
+| 4 | Inventory (`game`) | **Built** (28 Sep; purse and masks 11 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct) | [`12-map-variants.html`](12-map-variants.html) |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds) | [`15-journal-variants.html`](15-journal-variants.html) |
@@ -447,6 +447,11 @@ Albert chose **silk 2 · beads on a thread**. Built:
   Mementos on shelves of their own, read from the Map's EXTRAS. Free mode keeps them in
   `pharloom.progress`. The Rosary_Set_* save names are the game's own item assets (checked
   against `kb/data/game/pickups.json`).
+- **Retouch, the masks** (11 October 2026): ten equal columns across the field left each mask
+  small at the left of its own, far apart, the row short of the count. Drawn in
+  `26-inventory-masks-variants.html` (kept out of the repo): **A · together, as the HUD**, B ·
+  edge to edge, C · together and large, D · two fives. Albert chose **A**: a tight row from the
+  left, the masks a step larger (`--sp-8`), as the HUD and the save slots draw them.
 
 ## Step 5 · Progress
 

@@ -1468,8 +1468,10 @@ kbd {
 .inv-pc.is-on img { filter: none; }
 .inv-pc:is(:hover, :focus-visible):not(:disabled) { transform: translateY(calc(var(--sp-half) * -1)); }
 /* The silk: one thread across, a bead per silk strung on it (the game's diamond), lit up to yours. */
-.inv-pieces.is-masks { display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); justify-items: start; }
-.inv-pieces.is-masks .inv-pc { min-width: 0; width: 100%; max-width: var(--ctl-sm); }
+/* The masks: together from the left, as the HUD draws them (design/03-redesign.md, Inventory masks). */
+.inv-pieces.is-masks { flex-wrap: nowrap; }
+.inv-pieces.is-masks .inv-pc { min-width: 0; flex: none; }
+.inv-pieces.is-masks .inv-pc img { height: var(--sp-8); }
 .inv-pieces.is-spools { position: relative; display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: 0; }
 .inv-pieces.is-spools::before {
   content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1px;
