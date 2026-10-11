@@ -150,8 +150,9 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
 }
 /* The plaque: a thin double outline with pointed ends, stretched to the title. */
 .screen-plaque { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; color: color-mix(in oklab, var(--filigree) 80%, transparent); pointer-events: none; }
+.screen-plaque polygon:not(.is-inner) { fill: var(--inv-bg); } /* solid: the plaque straddles the page and the plate, so it can't be clear */
 .screen-plaque .is-inner { opacity: 0.4; }
-.screen-head .sec-title { overflow: hidden; text-overflow: ellipsis; }
+.screen-head .sec-title { position: relative; overflow: hidden; text-overflow: ellipsis; }
 .screen-lead { display: flex; flex-direction: column; align-items: center; gap: var(--sp-2); margin-bottom: var(--sp-6); text-align: center; }
 
 /* ── Controls ────────────────────────────────────────────────────────── */
@@ -2099,7 +2100,7 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
   stroke: var(--scene-bg); stroke-width: calc(var(--k, 1) * 0.12px); paint-order: stroke; cursor: pointer; }
 .mp-name:focus { outline: none; }
 .mp-name:is(:hover, :focus-visible, .is-sel) { fill: var(--ink-strong); }
-.mp-name.is-unmapped { fill: color-mix(in oklab, var(--muted) 70%, transparent); text-decoration: line-through; }
+.mp-name.is-unmapped { fill: color-mix(in oklab, var(--muted) 70%, transparent); }
 /* The caches and walls from afar: a count per room. */
 .mp-cluster { pointer-events: none; }
 .mp-cluster text { font-family: var(--font-num); font-size: 0.42px; text-anchor: middle; dominant-baseline: middle; fill: var(--ink-2); }
