@@ -141,6 +141,9 @@ From the study (`design/00-study.md`) and the wiki's damage page:
   and lets a hairline through where two pieces meet. The faint pieces go on one layer faded
   once (fading each piece darkens where they overlap), and the sheets are lossless WebP (lossy
   ones leave lines and blotches where rooms meet).
+- **A mark the Map places wrong is fixed in `js/map-fixes.js`** (moved, hidden or added), with the
+  Map's admin mode (`#view=map&admin=1`, saved by `npm run admin`, `tools/admin.js`), never in the
+  generated data: the file isn't generated, and `npm test` flags a fix gone stale after `npm run data`.
 - **Six wiki pages carry a `CODEname` that isn't their Journal key** (`CORAL_GOOMBA` for
   `NAME_CORAL_GOOMBAS`); `tools/names.js` falls back to the title.
 - **The game selects with white on grey, with no selection hue**: don't invent one from
