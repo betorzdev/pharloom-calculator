@@ -289,6 +289,8 @@
     const relics = named(pd.Relics), items = named(pd.Collectables);
     const deposited = new Set(list(pd.MementosDeposited).filter((e) => e && e.Data && e.Data.IsDeposited).map((e) => e.Name));
     const visited = new Set(Array.isArray(pd.scenesVisited) ? pd.scenesVisited : []);
+    // The Steel Sentinel's spots this game chose (three of six), and whether each was seen.
+    const steel = (Array.isArray(pd.SteelQuestSpots) ? pd.SteelQuestSpots : list(pd.SteelQuestSpots)).filter((e) => e && typeof e.SceneName === 'string' && /^[\w ()-]{1,64}$/.test(e.SceneName));
     const kills = new Map((pd.EnemyJournalKillData && Array.isArray(pd.EnemyJournalKillData.list) ? pd.EnemyJournalKillData.list : [])
       .map((e) => [e.Name, e.Record ? int(e.Record.Kills) : 0]));
     const has = (c) => {
@@ -301,6 +303,8 @@
         case 'journal': return kills.has(c[1]);   // the entry is listed (seen)
         case 'relic': return !!(relics.get(c[1]) || {}).IsCollected;
         case 'memento': return deposited.has(c[1]) || int((items.get(c[1]) || {}).Amount) > 0;
+        case 'held': return int((items.get(c[1]) || {}).Amount) > 0;
+        case 'steel': return steel.some((e) => e.SceneName === c[1] && e.IsSeen === true);
         case 'int': return ints.get(c[1] + '\u0000' + c[2]) === c[3];
         case 'geo': return rocks.get(c[1] + '\u0000' + c[2]) === 0;   // listed, with no hits left
         case 'any': return c.slice(1).some(has);
@@ -358,7 +362,8 @@
       // Quill (hasQuill: without it the game draws nothing it has mapped), mapAllRooms, the areas
       // whose map is bought (Has<Area>Map, by the area's name in the flag), where the cocoon lies
       // (the scene Hornet last fell in, while it's there), the things beyond the 100% had
-      // (js/spots.js EXTRAS) and the bosses beaten.
+      // (js/spots.js EXTRAS) and the bosses beaten; the wishes' and the main objectives' marks done
+      // (js/spots.js TASKS), and the Steel Sentinel's three spots this game chose (SteelQuestSpots).
       visited: [...visited].filter((x) => typeof x === 'string' && /^[\w ()-]{1,64}$/.test(x)).sort(),
       mapped: scenes(pd.scenesMapped),
       mappedRead: true,
@@ -368,6 +373,8 @@
       cocoon: typeof pd.HeroCorpseScene === 'string' && /^[\w ()-]{1,64}$/.test(pd.HeroCorpseScene) ? pd.HeroCorpseScene : '',
       extras: SP.EXTRAS.map((x, i) => (has(x[2]) ? i : -1)).filter((i) => i >= 0),
       bosses: SP.BOSSES.filter((b) => has(b[2])).map((b) => b[0]),
+      tasks: SP.TASKS.map((x, i) => (has(x[2]) ? i : -1)).filter((i) => i >= 0),
+      steelSpots: steel.map((e) => e.SceneName).sort(),
     };
   }
 
@@ -378,7 +385,7 @@
        pharloom.progress  the rest of game(): masks, spools, hearts, needle, kit, pouch,
                           everbloom, purse, rosaries, shards, farsight, hasJournal, pieces, wishes, gauntlets, lit, act, mapFlags, mapVars, bench,
                           area, build, the road's fields (quests … snareReady) and the Map's
-                          (visited … bosses)
+                          (visited … steelSpots)
        pharloom.meta      what the profile screen shows (meta()) and when the file was saved
      toSnapshot() writes them; gameOf() reads them back into one game, with the same defaults as
      an empty game for anything missing or damaged. */
@@ -409,10 +416,14 @@
   const KEY_AT = new Map(CO.PIECES.map((p, i) => [pieceKey(p), i]));
   const WISH_AT = new Map(CO.WISHES.map((w, i) => [pieceKey(w), i]));
   const EXTRA_AT = new Map(SP.EXTRAS.map((x, i) => [pieceKey(x), i]));
+  // A wish's or an objective's mark (js/spots.js TASKS): its kind, room and check (the Bellbeast's
+  // thirteen pins share a check).
+  const taskKey = (x) => x[0] + ' ' + x[3] + ' ' + JSON.stringify(x[2]);
+  const TASK_AT = new Map(SP.TASKS.map((x, i) => [taskKey(x), i]));
   function toSnapshot(pd, sd = null, saved = null) {
     const g = game(pd, sd);
     const progress = { ...g, pieces: g.pieces.map((i) => pieceKey(CO.PIECES[i])), wishes: g.wishes.map((i) => pieceKey(CO.WISHES[i])),
-      extras: g.extras.map((i) => pieceKey(SP.EXTRAS[i])) };
+      extras: g.extras.map((i) => pieceKey(SP.EXTRAS[i])), tasks: g.tasks.map((i) => taskKey(SP.TASKS[i])) };
     for (const k of [...OWNED, 'journal']) delete progress[k];
     const m = meta(pd);
     return {
@@ -426,7 +437,8 @@
     needle: 0, kit: 0, pouch: 0, everbloom: false, purse: {}, rosaries: 0, shards: 0, farsight: false, hasJournal: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', area: '', build: {},
     quests: [], bellshrines: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
     bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [],
-    visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', extras: [], bosses: [] });
+    visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', extras: [], bosses: [],
+    tasks: [], steelSpots: [] });
   const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
   // Each field only if it has the type an empty game gives it.
   function gameOf(snap) {
@@ -444,6 +456,8 @@
     out.pieces = out.pieces.map((k) => KEY_AT.get(k)).filter((i) => i !== undefined);
     out.wishes = out.wishes.map((k) => WISH_AT.get(k)).filter((i) => i !== undefined);
     out.extras = out.extras.map((k) => EXTRA_AT.get(k)).filter((i) => i !== undefined);
+    out.tasks = out.tasks.map((k) => TASK_AT.get(k)).filter((i) => i !== undefined);
+    out.steelSpots = out.steelSpots.filter((x) => typeof x === 'string' && /^[\w ()-]{1,64}$/.test(x));
     out.bosses = out.bosses.filter((id) => SP.BOSSES.some((b) => b[0] === id));
     // The gauntlets go by their ids, the wiki's subpages: one the list no longer has is dropped.
     out.gauntlets = out.gauntlets.filter((id) => GA.GAUNTLETS.some((x) => x.id === id));

@@ -354,9 +354,19 @@ are; in Free mode, the total. The Act and reach filters narrow the counts too.
   the Grand Gate, the shops and the locked doors (with the key each takes).
 - **Fights**: the enemy gauntlets and bosses not beaten yet, and the unique enemies (Rhinogrunds,
   Covetous Pilgrims, Shardillards, Void Masses).
-- **People**: Shakra's spots, the Wishwalls and who asks for a wish (with a save, only while one
-  is still open there), and who gives something of the 100% (Plinney, Eva, Pinstress, Loddie,
-  Lumble, Mooshka) and Scrounge, who buys the relics.
+- **People**: Shakra's spots, and who gives something of the 100% (Plinney, Eva, Pinstress,
+  Loddie, Lumble, Mooshka) and Scrounge, who buys the relics.
+- **Tasks**, as the game's pause menu calls its wishes and objectives: the Wishwalls and who asks
+  for a wish (with a save, only while one is still open there); where a wish is done (the
+  deliveries and the Steel Sentinel's spots where the game's own map pins them, of the Sentinel's
+  six only the three your game chose, and only in Steel Soul; the Herald's seven; the rescues and
+  fights, in the room where the game ends the wish); what a wish asks for (the 22 things lying in a
+  room or given there: the Pollip Hearts, the Flintgems, the Grand Hunts' trophies, the
+  Gourmand's delicacies, the three souls, the Twisted Bud, the Steel Spines); and the main
+  objectives, where the game's map pins them (the Bellshrines, Old Hearts and Melodies are already
+  layers of their own). Each is done as your save says: the wish granted, the objective complete
+  or a later step of it (Pale Monarch stays incomplete when Act 3 opens through the Soul Snare), a
+  thing picked up, held or its wish granted. Off at first.
 - **Collectibles**, off at first: the relics, one switch for the six (Bone Scrolls, Weaver
   Effigies, Choral Commandments, Rune Harps, Psalm Cylinders, the Arcane Egg) whose round caret
   opens them one by one, Mossberries, Silkeaters, Mementos and the Bellhome's furnishings.
@@ -383,7 +393,8 @@ With a save the map shows only what you're missing; in Free mode, everything, as
 things marked in the Inventory, what those marks say is missing). Tap any mark for its card: what
 it is, where, how it's had, and what it says of your game. A
 shop's says what of the 100% it still has for you, Shakra's which maps you lack, a Wishwall's or a
-wish giver's the wishes still open, a boss's whether it's beaten, with «Fight it in Combat» and
+wish giver's the wishes still open, a wish's place or thing which wish it's for, whether it's done
+and a button to its Wishwall or to who asks for it, a boss's whether it's beaten, with «Fight it in Combat» and
 «See in the Journal»; a gauntlet's its waves and reward; a Journal entry's its kills. In Free mode
 a piece's card marks it had. Tap an area's name for its card: the rooms of it you've visited,
 and what's left there of the 100%, the Journal and the gauntlets.

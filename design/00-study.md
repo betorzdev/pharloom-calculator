@@ -1365,6 +1365,23 @@ sheet (96 a unit, the game's is 100) is then about one and a half CSS pixels wid
 The made-up game and the render harness aren't kept; `tools/map-debug.html` draws the map as the
 site does.
 
+**The wishes and the main objectives on the Map** (11 October). Albert set the Map beside
+mapgenie's Quests group (66 quest items, 21 objectives, 48 wishes) with one rule: everything added
+follows the save. `tools/extract-wishes.py` reads the game's files into `kb/data/game/wishes.json`
+and the marks' pictures: each quest's type and targets, every pickup of a target, the flower that
+gives a Pollip Heart, the Flintbeetle that drops a Flintgem (its flag is "<object>_item_<quest>"),
+the NPCs who give the souls, the room where each quest is ended (the FSM action's own quest, as
+`extract-quests.py` maps an offer), the Herald's seven `MushroomQuestFound<n>`, and the map's own
+quest pins (`Main Quest Pins`, QuestMapMarker, which `extract-map.py` leaves out), put on the map
+by the bench pins. `tools/gen-spots.js` writes `js/spots.js` TASKS: 22 things a wish asks for, 30
+places where a wish is done, 31 objective pins (19 of the 20 objectives; After the Fall has none;
+the Bellshrines', Old Hearts' and Melodies' pins are layers already). The save says each: a
+pickup's flag, the item held (`held`), the wish granted, a Steel Sentinel spot seen (`steel`:
+`SteelQuestSpots` keeps the three of six a game chose), an objective complete or a later step of
+it (the author's 100% save left Pale Monarch incomplete, Act 3 opened through the Soul Snare).
+Inscriptions (57 in 51 rooms) keep nothing in the save: left out. The 72 saves of the author's
+folder still match.
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).

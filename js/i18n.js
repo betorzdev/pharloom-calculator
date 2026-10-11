@@ -280,6 +280,7 @@
     mapGroup_places:  { es: 'Lugares', en: 'Places' },
     mapGroup_fights:  { es: 'Combates', en: 'Fights' },
     mapGroup_people:  { es: 'Gente', en: 'People' },
+    mapGroup_quests:  { es: 'Tareas', en: 'Tasks' },   // PANE_QUESTS
     mapGroup_extras:  { es: 'Coleccionables', en: 'Collectibles' },
     mapGroup_secrets: { es: 'Secretos', en: 'Secrets' },
     mapGroup_game:    { es: 'Tu partida', en: 'Your game' },
@@ -312,6 +313,10 @@
     mapLayer_givers:{ es: 'Quien pide un deseo', en: 'Who asks for a wish' },
     mapLayer_giver1:{ es: 'Pide un deseo', en: 'Asks for a wish' },
     mapLayer_people:{ es: 'Quien da algo del 100 %', en: 'Who gives a 100% thing' },
+    // The wishes and the main objectives (js/spots.js TASKS). No game source: written for context.
+    mapLayer_wspots:{ es: 'Dónde se cumple un deseo', en: 'Where a wish is done' },
+    mapLayer_qitems:{ es: 'Lo que pide un deseo', en: 'What a wish asks for' },
+    mapLayer_goals: { es: 'Objetivos', en: 'Objectives' },
     mapLayer_cocoon:{ es: 'Tu capullo', en: 'Your cocoon' },
     mapLayer_journal: { es: 'Diario', en: 'Journal' },   // PANE_JOURNAL
     'mapExtra_bone-scroll':        { es: 'Pergamino óseo', en: 'Bone Scroll' },   // INV_NAME_R_BONE_RECORD
@@ -355,6 +360,12 @@
     mapWishesLeft:  { es: 'Deseos sin cumplir: {list}', en: 'Wishes still open: {list}' },
     mapWishesNone:  { es: 'No quedan deseos por cumplir.', en: 'No wishes left open.' },
     mapKills:       { es: '{n} de {m} derrotados', en: '{n} of {m} defeated' },
+    mapTaskFor:     { es: 'Lo pide el deseo «{wish}».', en: 'The wish "{wish}" asks for it.' },
+    mapWishGranted: { es: 'Deseo concedido', en: 'Wish Granted' },   // WISH_GRANTED
+    mapDone:        { es: 'Cumplido', en: 'Done' },
+    mapNotDone:     { es: 'Sin cumplir', en: 'Not done yet' },
+    mapToWall:      { es: 'Ver el muro de deseos', en: 'See the Wishwall' },
+    mapToGiver:     { es: 'Ver quién lo pide', en: 'See who asks for it' },
 
     /* Combat: your build against one enemy (js/app-fight.js) */
     ftToWin:        { es: 'tajos para ganar', en: 'slashes to win' },

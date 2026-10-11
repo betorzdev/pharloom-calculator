@@ -2,7 +2,8 @@
 /* tools/gen-spots.js — generates js/spots.js: where the Map draws each thing (npm run data runs it
    after tools/gen-how.js). Offline: it reads the site's generated data (js/collectibles.js,
    js/how.js, js/shop.js, js/quests.js, js/journal-rooms.js, js/enemies.js), kb/data/completionist/
-   and kb/data/game/pickups.json (tools/extract-pickups.py, from the game's own files).
+   and kb/data/game/pickups.json and wishes.json (tools/extract-pickups.py, tools/extract-wishes.py,
+   from the game's own files).
 
    Where a thing of the 100% is drawn, by its first way (js/how.js HOW) that has a room:
      found      the room its check names (a piece's sceneData bool), else where the game has its
@@ -366,9 +367,116 @@ for (const [quest, f] of Object.entries(Q.FROM)) {
 }
 console.log(`${Object.keys(XY).length} things with their own point in their room`);
 
+/* ── The wishes and the main objectives (TASKS), from kb/data/game/wishes.json ──
+   (tools/extract-wishes.py, the game's own files; design/31-map-quests-variants.html, Albert's choice)
+     qitem  what a wish asks for, where it lies (a pickup, the flower that gives it, the Flintbeetle
+            that drops it) or who gives it: done once its sceneData flag is set, it's held, or its
+            wish is done
+     wspot  where a wish is done: the map's own pins for the deliveries and the Steel Sentinel's
+            spots (the save chooses three of six, SteelQuestSpots), the Herald's seven spots
+            (MushroomQuestFound<n>), and the one room where the game ends a wish that isn't where
+            it's taken (a rescue, a fight, the Roach Guts delivered)
+     goal   the main objectives where the map's own pins put them, but the Bellshrines' (a layer of
+            their own) and the Old Hearts' and Melodies' (pieces of the 100%); done once complete or
+            a later step is (LATER: Pale Monarch stays incomplete when Act 3 opens through the Soul
+            Snare, as the author's 100% save shows) */
+const WI = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'kb', 'data', 'game', 'wishes.json'), 'utf8'));
+// The Twisted Bud no target names: the Wood Witch takes it for Rite of Rebirth (her FSM ends that wish).
+const WISH_OF = { 'Wood Witch Item': 'Wood Witch Curse' };
+const LATER = { 'Citadel Ascent Silk Defeat': ['Black Thread Pt0'] };
+const TASKS = [];
+{
+  // The scenes as the game names them (a sceneData flag is kept under that name); one nobody enters
+  // by a door keeps the bundle's lower case (js/rooms.js finds its room either way), and no flag.
+  const PROPER = new Map();
+  for (const [k, v] of Object.entries(SS.graph)) for (const s of [k, ...v]) PROPER.set(s.toLowerCase(), s);
+  for (const s of Object.keys(M.ROOMS)) PROPER.set(s.toLowerCase(), s);
+  const proper = (s) => PROPER.get(s.toLowerCase()) || null;
+  const isWish = (q) => CO.WISHES.some((w) => w[2][0] === 'quest' && w[2][1] === q);
+  const art = (n) => { if (!fs.existsSync(path.join(__dirname, '..', 'assets', 'map', n + '.webp'))) fail(`assets/map/${n}.webp is missing`); return n; };
+  const steel = (q) => (WI.quests[q] || {}).type === 'Steel Sentinel' ? 'steel' : null;
+  const task = (kind, quest, check, scene, x, y, icon, name, pick) => {
+    if (!onMap(scene)) { unplaced.push(`${kind} ${quest} ${scene}`); return; }
+    const i = TASKS.length;
+    TASKS.push([kind, quest, check, proper(scene) || scene, icon, name || null, steel(quest), pick || null]);
+    const p = x == null ? null : Array.isArray(x) ? x : toMap(scene, x, y);
+    if (p) XY['task:' + i] = p;
+  };
+  // What a wish asks for.
+  const wants = (save) => WISH_OF[save] ? [WISH_OF[save]] : Object.keys(WI.quests).filter((q) => !WI.quests[q].main && WI.quests[q].targets.includes(save));
+  for (const [save, at] of Object.entries(WI.items)) {
+    const q = wants(save).find(isWish) || fail(`no wish asks for ${save}`);
+    const name = N.text(WI.names[save] || fail(`no name for ${save}`)), icon = art('icons/' + WI.icons[save]);
+    const seen = new Set();
+    for (const [scene, , , flag, x, y] of at) {
+      if (seen.has(scene + flag)) continue;   // the Crown Fragment lies twice in its room, under one flag
+      seen.add(scene + flag);
+      const check = ['any', ...(flag && proper(scene) ? [['bool', proper(scene), flag]] : []), ['held', save], ['quest', q]];
+      task('qitem', q, check, scene, x, y, icon, name);
+    }
+  }
+  // The map's own pins, on the map by its bench pins (their median offset; the bench pins are the
+  // game's, so they agree to the pixel).
+  const off = [];
+  for (const pin of M.PINS) {
+    const b = pin[0] === 'bench' && WI.benches[pin[3].toLowerCase()];
+    if (b) off.push([b[0] - pin[1] / M.PPU, b[1] + pin[2] / M.PPU]);
+  }
+  const med = (a) => a.slice().sort((p, q) => p - q)[Math.floor(a.length / 2)];
+  const ox = med(off.map((o) => o[0])), oy = med(off.map((o) => o[1]));
+  const bad = off.filter((o) => Math.hypot(o[0] - ox, o[1] - oy) * M.PPU > 2).length;
+  if (off.length < 40 || bad > off.length / 10) fail(`the map's quest pins don't line up by its bench pins (${off.length} benches, ${bad} off)`);
+  const inRoom = ([px, py]) => Object.entries(M.ROOMS).filter(([, r]) => px >= r[0] && px <= r[0] + r[2] && py >= r[1] && py <= r[1] + r[3])
+    .sort(([, a], [, b]) => a[2] * a[3] - b[2] * b[3]).map(([s]) => s)[0];
+  const byItem = (save) => Object.keys(WI.quests).find((q) => WI.quests[q].targets.includes(save));
+  const pinned = new Set();
+  for (const [, sprite, quest, item, target, wx, wy] of WI.pins) {
+    const q = quest || byItem(item);
+    const info = WI.quests[q];
+    if (!info) continue;   // a step of a main objective (an Old Heart, a Melody): a piece of the 100%
+    const p = [Math.round((wx - ox) * M.PPU * 10) / 10, Math.round((oy - wy) * M.PPU * 10) / 10];
+    const scene = target || inRoom(p);
+    if (!scene) { unplaced.push(`pin ${q}`); continue; }
+    if (info.main) {
+      if (sprite === 'quest_map_icon_songshrines') continue;   // the Bellshrines' layer
+      const later = [...(LATER[q] || [])];
+      for (let grow = true; grow;) {   // every main objective that comes after it
+        grow = false;
+        for (const [n, c] of Object.entries(Q.CHAIN)) if (c.main && (c.prev === q || later.includes(c.prev)) && !later.includes(n)) { later.push(n); grow = true; }
+      }
+      task('goal', q, ['any', ['quest', q], ...later.map((n) => ['quest', n])], scene, p, null, art('pins/' + sprite));
+    } else {
+      if (!isWish(q) && !isWish(Object.keys(Q.CHAIN).find((n) => Q.CHAIN[n].prev === q))) continue;
+      pinned.add(q);
+      const spot = target && (proper(target) || fail(`no scene named ${target}`));
+      const check = spot ? ['any', ['steel', spot], ['quest', q]] : ['quest', q];
+      // The Courier's Rasher is a delivery the Great Gourmand's wish asks for: the couriers' emblem.
+      const emblem = sprite === 'quest_map_icon_courier' ? Object.values(WI.quests).find((x) => x.type === 'Courier').emblem : info.emblem;
+      task('wspot', q, check, scene, p, null, art('icons/' + emblem), null, spot);
+    }
+  }
+  // The Herald's spots, each its own flag.
+  for (const [field, at] of Object.entries(WI.fields)) {
+    const [scene, , x, y] = at.find((e) => /NPC/.test(e[1])) || at[0];
+    task('wspot', 'Mr Mushroom', ['any', ['flag', field], ['quest', 'Mr Mushroom']], scene, x, y, art('icons/' + WI.quests['Mr Mushroom'].emblem));
+  }
+  // The one room where the game ends a wish, when it isn't where the wish is taken.
+  for (const [q, at] of Object.entries(WI.ends)) {
+    if (!isWish(q) || WI.quests[q].main || pinned.has(q) || WI.quests[q].type === 'Herald') continue;
+    const scenes = [...new Set(at.map((e) => e[0]))].filter(onMap);
+    const from = Q.FROM[q] || {}, taken = [from.board, ...(from.npc || [])].filter(Boolean).map((s) => s.toLowerCase());
+    if (scenes.length !== 1 || taken.includes(scenes[0])) continue;
+    const [scene, , x, y] = at.find((e) => e[0] === scenes[0]);
+    task('wspot', q, ['quest', q], scene, x, y, art('icons/' + WI.quests[q].emblem));
+  }
+  const n = (k) => TASKS.filter((x) => x[0] === k).length;
+  console.log(`tasks: ${n('qitem')} wish items, ${n('wspot')} places where a wish is done, ${n('goal')} objective pins`);
+}
+
 const size = write(OUT, `js/spots.js — where the Map draws each thing, and what it shows beyond the 100%.
    GENERATED by tools/gen-spots.js from the site's data, kb/data/completionist/ and
-   kb/data/game/pickups.json (tools/extract-pickups.py, the game's own files): not edited by hand.
+   kb/data/game/pickups.json and wishes.json (tools/extract-pickups.py, tools/extract-wishes.py,
+   the game's own files): not edited by hand.
    Change the generator and run npm run data. Scenes as the game names them (js/rooms.js places
    them in either case).
 
@@ -386,10 +494,17 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
      MAPS     a map's flag (Has<X>Map, without Has and Map) → the area it draws
      NEEDS    a thing's key ('piece:<i>', 'tools:<id>', 'arts:<id>', 'extra:<i>'…) → the abilities
               and Silk Skills it asks for first (the completionist's prereqs)
-     XY       a thing's key (as NEEDS, and 'person:<id>', 'board:<scene>', 'bell:<field>') → its
+     TASKS    [kind, quest, check, scene, picture, name?, mode?, steel?]: the wishes and the main
+              objectives (kind 'qitem' what a wish asks for, 'wspot' where a wish is done, 'goal' a
+              main objective's pin), quest its save name (js/quests.js), check as EXTRAS' plus
+              ['held', collectable] and ['steel', scene] (a Steel Sentinel spot seen), picture
+              under assets/map/, name the thing's (a wish's and an objective's are the quest's),
+              mode 'steel' when only Steel Soul has it, steel the spot's scene when the save
+              chooses it (SteelQuestSpots)
+     XY       a thing's key (as NEEDS, and 'person:<id>', 'board:<scene>', 'bell:<field>', 'task:<i>') → its
               point on the map, in the image's pixels: where the game has it in its room (the
               object's place in the scene, over the scene's size, on the room's drawing)`,
-'spots', [['AT', AT], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['NEEDS', NEEDS], ['XY', XY]]);
+'spots', [['AT', AT], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['NEEDS', NEEDS], ['TASKS', TASKS], ['XY', XY]]);
 const kinds = {};
 for (const x of EXTRAS) kinds[x[0]] = (kinds[x[0]] || 0) + 1;
 console.log(`js/spots.js  ${placed.length} things of the 100% placed, ${EXTRAS.length} extras (${Object.entries(kinds).map(([k, n]) => n + ' ' + k).join(', ')}), `

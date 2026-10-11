@@ -12,8 +12,9 @@
      Places         benches, Bellway and Ventrica stations (the game's own pins, dimmed while your
                     game hasn't opened them), the Bellshrines, the shops and the locked doors
      Fights         the gauntlets and bosses not beaten, the unique spawns
-     People         Shakra's spots, the Wishwalls and who offers a wish still open, and the people
-                    who give a thing of the 100%
+     People         Shakra's spots and the people who give a thing of the 100%
+     Tasks          the Wishwalls and who offers a wish still open, where a wish is done, what a
+                    wish asks for, and the main objectives where the game's map pins them
      Collectibles   the relics (one switch, its caret opening the six), Mossberries, Silkeaters,
                     Mementos, the Bellhome's furnishings
      Secrets        the rosary and shell shard caches and breakable walls (off at first; from afar,
@@ -93,6 +94,11 @@
     L('wall', () => t('mapExtra_wall'), null),   // the glyph
     L('cocoon', () => t('mapLayer_cocoon'), PIN('shade_pin')),
     L('journal', () => t('mapLayer_journal'), ICON('hornet_inv_pane_icons_0003_journal')),
+    // The wishes and the main objectives (js/spots.js TASKS): a wish's emblem, a thing it asks for,
+    // the map's own objective pin.
+    L('wspot', () => t('mapLayer_wspots'), ICON('qi_wayfarer')),
+    L('qitem', () => t('mapLayer_qitems'), ICON('_0007_shell_flower_purple_icon')),
+    L('goal', () => t('mapLayer_goals'), PIN('quest_map_icon_citadel_seeker')),
   ];
   const LAYER = new Map(LAYERS.map((l) => [l.id, l]));
   /* The sets: one switch in the selector for several layers, its caret opening them one by one
@@ -104,7 +110,9 @@
       'memory-locket', 'craftmetal', 'pale-oil', 'flea', 'old-heart', 'melody', 'everbloom']],
     ['places', ['bench', 'bellway', 'ventrica', 'bellshrine', 'shop', 'lock']],
     ['fights', ['gauntlet', 'boss', 'spawn']],
-    ['people', ['shakra', 'wishwall', 'giver', 'person']],
+    ['people', ['shakra', 'person']],
+    // The game's Tasks (PANE_QUESTS): the wishes and the main objectives (design/31-map-quests-variants.html).
+    ['quests', ['wishwall', 'giver', 'wspot', 'qitem', 'goal']],
     ['extras', ['relics', 'mossberry', 'silkeater', 'memento', 'bellhome']],
     ['secrets', ['rosary-cache', 'shard-cache', 'wall']],
     ['game', ['cocoon', 'journal']],
@@ -242,6 +250,18 @@
       name: t('mapLayer_wishwall1'), draw: (s, ti, kk, c) => badge('wishwall', img(ICON('hornet_inv_pane_icons_0002_wish')), s, ti, kk, c) });
     for (const [k, b] of givers) add({ key: 'giver:' + k, layer: 'giver', scene: b.scene, quests: b.quests, got: !!g && b.quests.every((q) => wishDone(g, q)),
       name: t('mapLayer_giver1'), draw: (s, ti, kk, c) => badge('giver', img(ICON('quest_icon_large__0008_gather')), s, ti, kk, c) });
+    /* The wishes and the main objectives (js/spots.js TASKS): what a wish asks for, where a wish is
+       done, the main objectives' pins. A Steel Soul wish only in Steel Soul, and of the Steel
+       Sentinel's six spots the three this game chose. A wish's and an objective's name is its quest's. */
+    const steelGame = !own || !!(App.gameMeta() || {}).steel;
+    SP.TASKS.forEach((x, i) => {
+      const [kind, quest, , scene, art, name, mode, spot] = x;
+      if (own && ((mode === 'steel' && !steelGame) || (spot && !own.steelSpots.includes(spot)))) return;
+      const w = CO.WISHES[wishOf(quest)];
+      add({ key: 'task:' + i, layer: kind, scene, act: kind === 'goal' ? undefined : w && w[1], got: !!g && (g.tasks || []).includes(i), quest,
+        name: name ? pick(name) : pick(QU.CHAIN[quest].name), sub: name ? pick(QU.CHAIN[quest].name) : '',
+        draw: (s, ti, k, c) => dot(kind, `assets/map/${art}.webp`, s, ti, k, c) });
+    });
     for (const [id, scene] of Object.entries(SP.PEOPLE)) add({ key: 'person:' + id, layer: 'person', scene, got: false, npc: id,
       name: id === 'scrounge' ? t('mapScrounge') : pick(HW.NPCS[id]), draw: (s, ti, k, c) => badge('person', img(ICON('quest_icon_large_0006_herald')), s, ti, k, c) });
     // Other collectibles.
@@ -945,6 +965,14 @@
     } else if (kind === 'board' || kind === 'giver') {
       const open = m.quests.filter((q) => !wishDone(g, q)).map((q) => pick(CO.WISHES[wishOf(q)][4]));
       note = open.length ? t(g ? 'mapWishesLeft' : 'mapWishes', { list: listOf(open) }) : t('mapWishesNone');
+    } else if (kind === 'task') {
+      // What it's for, whether it's done, and where its wish is taken (the Wishwall, or who asks).
+      if (m.layer === 'qitem') note = t('mapTaskFor', { wish: m.sub });
+      where = line([areaName(area), m.act ? t('saveAct', { n: m.act }) : '']);
+      if (g) acts = state(t(m.layer === 'qitem' ? (m.got ? 'pgGot' : 'invMissing') : m.got ? (m.layer === 'wspot' ? 'mapWishGranted' : 'mapDone') : 'mapNotDone'));
+      const f = QU.FROM[m.quest] || {};
+      const to = f.board ? 'board:' + lower(f.board) : f.npc && f.npc.length ? 'giver:' + lower(f.npc[0]) : '';
+      if (to && list.some((x) => x.key === to)) acts += btn('mapShow', to, t(f.board ? 'mapToWall' : 'mapToGiver'));
     } else if (kind === 'lock') {
       note = m.sub;
       where = line([areaName(area)]);

@@ -42,7 +42,7 @@ the work up reads it first, then the step it's on.
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse 11 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
-| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct) | [`12-map-variants.html`](12-map-variants.html) |
+| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; the wishes and objectives 11 Oct) | [`12-map-variants.html`](12-map-variants.html), `31-map-quests-variants.html` (not kept) |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds) | [`15-journal-variants.html`](15-journal-variants.html) |
 | 8 | Crest (`tools`) | **Built** (28 Sep) | [`18-crest-variants.html`](18-crest-variants.html) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
@@ -720,6 +720,29 @@ the screen; `css/app.css` .mp-legend to .mp-inside):
 - The counts: had of total in a save (complete in `--good`), a plain count for what isn't had
   (benches, shops, people), the total in Free mode.
 - The closing note is gone (`mapNote`, with `mapAll` and `mapNone`).
+
+### The wishes and the main objectives (11 October 2026)
+
+Albert, setting the Map beside mapgenie's: things are missing. Its Quests group has Quest Item
+(66), Objective (21) and Wish (48, each where it's done), and Other has Lore (80) and Point of
+Interest (11); the Map had only the Wishwalls and who asks for a wish. His rule: everything added
+has to follow the save. Read from the game's files (`tools/extract-wishes.py`): 22 things a wish
+asks for, each with its flag, held or its wish granted; 30 places where a wish is done (the map's
+own pins for the deliveries and the Steel Sentinel, whose save keeps the three spots it chose and
+which were seen; the Herald's seven flags; the room where the game ends a rescue or a fight); the
+map's own pins for 19 of the 20 main objectives. The 57 inscriptions keep nothing in the save;
+nothing was found for mapgenie's points of interest. Options drawn over the real map, Free mode
+and Save 1 (`31-map-quests-variants.html`, not kept in the repo): 1 · the selector A a group
+«Tareas» (`PANE_QUESTS`), B inside People, C one set with a caret; 2 · the marks A each thing's own
+art (its inventory picture, its wish type's emblem, the map's objective pin), B the map's pins, C
+an emblem per layer; 3 · the link to the Wishwall A a button in the card, B and a thread on the
+map, C the name only; 4 · the things A only what a wish asks for, B and the key items (Cogheart
+Pieces, Pristine Cores, the Ruined Tool, the Crawbell, the Craw Summons); 5 · the inscriptions A
+left out, B as places with no state.
+
+Albert chose **all the A's**, with a later step counting an objective done. Built (`js/spots.js`
+TASKS, `js/app-map.js` the group «Tasks» and the card, `js/savefile.js` the checks `held` and
+`steel`): People keeps Shakra and who gives a thing of the 100%.
 
 ## Step 7 · Journal
 

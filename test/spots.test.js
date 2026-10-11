@@ -75,3 +75,39 @@ test('each thing with a point of its own sits in (or at the edge of) its room\'s
     assert.ok(boxes.some((r) => x >= r[0] - 12 && x <= r[0] + r[2] + 12 && y >= r[1] - 12 && y <= r[1] + r[3] + 12), `${key} at ${x},${y} is in no room`);
   }
 });
+
+test('the wishes and the main objectives (TASKS) sit on the map, each with its picture and a check the save reads', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const checks = new Set(['bool', 'flag', 'quest', 'held', 'steel', 'any']);
+  const walk = (c) => { assert.ok(checks.has(c[0]), c[0]); if (c[0] === 'any') c.slice(1).forEach(walk); };
+  const n = { qitem: 0, wspot: 0, goal: 0 };
+  for (const [kind, quest, check, scene, art] of SP.TASKS) {
+    assert.ok(kind in n, kind);
+    n[kind]++;
+    assert.ok(Q.CHAIN[quest], quest);
+    assert.equal(Q.CHAIN[quest].main, kind === 'goal', `${quest}: a main objective is a goal, a wish isn't`);
+    walk(check);
+    assert.ok(onMap(scene), `${kind} ${quest}: ${scene}`);
+    assert.ok(fs.existsSync(path.join(__dirname, '..', 'assets', 'map', art + '.webp')), art);
+  }
+  assert.ok(n.qitem >= 20 && n.wspot >= 25 && n.goal >= 25, JSON.stringify(n));
+});
+
+test('a save says which wish items, places and objectives are done, the Steel Sentinel\'s spots, and a slot keeps them', () => {
+  const flower = SP.TASKS.findIndex((x) => x[0] === 'qitem' && x[1] === 'Shell Flowers');
+  const spot = SP.TASKS.findIndex((x) => x[7]);
+  const monarch = SP.TASKS.findIndex((x) => x[1] === 'Citadel Ascent Silk Defeat');
+  const [, , [, [, scene, id]]] = SP.TASKS[flower];
+  const pd = { silk: 0, silkMax: 9, maxHealth: 5, SteelQuestSpots: [{ SceneName: SP.TASKS[spot][7], IsSeen: true }, { SceneName: 'Hang_08', IsSeen: false }],
+    QuestCompletionData: { savedData: [{ Name: 'Black Thread Pt0', Data: { IsCompleted: true } }, { Name: 'Citadel Ascent Silk Defeat', Data: { IsCompleted: false } }] } };
+  const sd = { persistentBools: { serializedList: [{ SceneName: scene, ID: id, Value: true }] } };
+  const g = F.game(pd, sd);
+  assert.ok(g.tasks.includes(flower), 'a Pollip Heart picked up');
+  assert.ok(g.tasks.includes(spot), 'a Steel Sentinel spot seen');
+  assert.ok(g.tasks.includes(monarch), 'Pale Monarch, passed by a later step');
+  assert.deepEqual(g.steelSpots, [...new Set(['Hang_08', SP.TASKS[spot][7]])].sort());
+  const back = F.gameOf(F.toSnapshot(pd, sd));
+  assert.deepEqual(back.tasks, g.tasks);
+  assert.deepEqual(back.steelSpots, g.steelSpots);
+});
