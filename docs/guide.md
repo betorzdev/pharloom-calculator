@@ -102,7 +102,7 @@ reduced motion).
 
 A sheet in two columns. On the left, what Hornet is: **the Needle**, the five upright with their
 damage, the one she carries taller and lit; then **Hornet**: the masks (5 to 10) as the game's
-masks, the silk (9 to 18) as beads on one thread, the Silk Hearts, and the Crafting Kit and Tool
+masks, in a row as the HUD draws them, the silk (9 to 18) as beads on one thread, the Silk Hearts, and the Crafting Kit and Tool
 Pouch with their level; then the **Silk Skills** with what each deals at this build, and the
 **abilities** (Needle Strike with its damage). On the right, what she carries: the **Tools** by
 colour, each on its slot's diamond (dashed and grey while you lack it), the **Crests** and the
