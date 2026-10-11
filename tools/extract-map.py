@@ -254,6 +254,7 @@ def canvas_box(sprite, wx, wy, sx, sy, ox, oy, ppu):
 
 
 JOIN = (0.92, 1.08)   # two partly covered pixels whose coverages add up to about one: a join
+OVERLAP = 1.5         # up to this, two facing edges that add up to more than one: a join placed a fraction over
 EDGE = (8, 247)       # partly covered: the fills are 254 or 255, and below 8 a pixel's colour is a guess
 
 
@@ -266,32 +267,39 @@ def close_joins(looks, which, f, W):
     Each drawing is smoothed on its own, so only here, where all of them are known, can this be
     put right: on such a pixel the piece the game draws later (its neighbour is under it) takes
     both coverages and their colours, mixed by them, so the two cover it whole together as one
-    drawing of both would; alone, its edge is at most a pixel harder. Pixels partly covered by
-    two pieces whose coverages don't add up to about one are overlaps or gaps, and are left as
-    they are; so are drawings of the same piece (its sprites and tints are alternatives, never
+    drawing of both would; alone, its edge is at most a pixel harder. So too where two edges
+    face each other (their drawings on opposite sides of the pixel) and add up to a little more
+    than one (up to OVERLAP): placed to the fraction, the two drawings overlap there by part of a
+    pixel, which the fine drawing shows (Library_09_top's 191 and Enclave_bridge_left's 128 of
+    255 made 223, a darker line along the join), and one drawing of both would cover it whole.
+    Other pixels partly covered by two pieces are overlaps or gaps, and are left as they are; so are drawings of the same piece (its sprites and tints are alternatives, never
     drawn together). `which` is the drawing at `f` pixels a map pixel ('im', 'hd'); W the map's
     width. Returns how many pixels it closed."""
     import numpy as np
-    idx, px, own = [], [], []
+    idx, px, own, grad = [], [], [], []
     for i, lk in enumerate(looks):
         a = np.asarray(lk[which], dtype=np.int64)
         ys, xs = np.nonzero((a[:, :, 3] >= EDGE[0]) & (a[:, :, 3] <= EDGE[1]))
         idx.append((ys + lk['y'] * f) * (W * f) + xs + lk['x'] * f)
         px.append(a[ys, xs])
         own.append(np.full(len(ys), i))
-    idx, px, own = np.concatenate(idx), np.concatenate(px), np.concatenate(own)
+        # Which way the drawing lies from the pixel: towards where its coverage grows.
+        al = np.pad(a[:, :, 3], 1)
+        grad.append(np.stack([al[ys + 1, xs + 2] - al[ys + 1, xs], al[ys + 2, xs + 1] - al[ys, xs + 1]], axis=1))
+    idx, px, own, grad = np.concatenate(idx), np.concatenate(px), np.concatenate(own), np.concatenate(grad)
     o = np.argsort(idx, kind='stable')
-    idx, px, own = idx[o], px[o], own[o]
+    idx, px, own, grad = idx[o], px[o], own[o], grad[o]
     starts = np.flatnonzero(np.r_[True, idx[1:] != idx[:-1]])
     ends = np.r_[starts[1:], len(idx)]
     lo, hi = JOIN[0] * 255, JOIN[1] * 255
     fix = {}   # look → {pixel: (r, g, b, a)}
     for s, e in zip(starts[ends - starts >= 2], ends[ends - starts >= 2]):
-        es = [(looks[own[k]]['rank'], own[k], px[k]) for k in range(s, e)]
-        for rl, il, pl in es:
-            for re_, ie, pe in es:
+        es = [(looks[own[k]]['rank'], own[k], px[k], grad[k]) for k in range(s, e)]
+        for rl, il, pl, gl in es:
+            for re_, ie, pe, ge in es:
                 al_, ae = int(pl[3]), int(pe[3])
-                if re_ < rl and lo <= al_ + ae <= hi:
+                facing = int(gl[0]) * int(ge[0]) + int(gl[1]) * int(ge[1]) < 0
+                if re_ < rl and (lo <= al_ + ae <= hi or (facing and hi < al_ + ae <= OVERLAP * 255)):
                     rgb = [round((int(pl[c]) * al_ + int(pe[c]) * ae) / (al_ + ae)) for c in range(3)]
                     fix.setdefault(il, {})[int(idx[s])] = tuple(rgb) + (min(255, al_ + ae),)
                     break
