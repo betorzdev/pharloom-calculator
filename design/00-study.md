@@ -1365,6 +1365,141 @@ sheet (96 a unit, the game's is 100) is then about one and a half CSS pixels wid
 The made-up game and the render harness aren't kept; `tools/map-debug.html` draws the map as the
 site does.
 
+**The Map's counts against mapgenie's** (11 October). Albert found things missing on the Map
+next to mapgenie's Pharloom. Category by category (mapgenie's list read as a pointer only; every
+fix from the game's files and a save field):
+- **Benches**, mapgenie 81, the site 76 shown (78 pins: the Ventrica hub's and the diving bell's
+  benches each have a pin per state). Missing were four the game's files have: the Flea
+  Caravan's benches in Greymoor and the Blasted Steps ("Bench Pin Caravan", shown by the game
+  only while CaravanTroupeLocation is 1 or 2), Fleatopia's (its "Pre" bench until the caravan
+  comes, then the caravan's: always one), and the Songclave's, a RestBench the game's map never
+  pins. `extract-map.py` now keeps them, after the other pins so their indices hold, the caravan's
+  with where the caravan has to be (`here`, read by `rooms.js pinsOn` against the save's
+  `caravan`; with no save, both); the Songclave's is placed by its RestBench. The Marrow's caravan
+  bench is the Act 3 bench's spot, always pinned. The fifth, the Cradle's hidden bench
+  (`Cradle_Destroyed_Challenge_Bench`), is in a scene the map has no room for: left out, as the
+  walls there. 80 in Free mode.
+- **Ventrica stations**, mapgenie 7, the site 7 at once: Terminus has a pin in each of its two
+  states (`Tube_Hub_right`, `Tube_Hub_Destroyed`), and one shows.
+- **Mementos**, mapgenie 11, the site 8: mapgenie lists each of the four Old Hearts, but only the
+  one not given to the Snail Shamans becomes a memento (the wiki's Materium page): one mark, had
+  with any of them. The Fleatopia Memento in the game's text is cut content.
+- **Silkeaters**, mapgenie 10, the site 9: the tenth is what Styx grows in Sinner's Road, one an
+  hour, with nothing in the save to say it's had.
+- **Bosses**, mapgenie 46, the site 44, now 48. The completionist checks each boss by its first
+  fight, and gen-spots named the fight by the last foe of that name in `enemies.js`, so the first
+  Moss Mother, Lace and Savage Beastfly carried their later fights' ids (and the first Moss Mother
+  sat in Tut_02, the Act 3 one's room, not Tut_03). Each fight is its own mark now, with what the
+  save keeps (`BOSS_MORE`): Lace atop the Cradle (`defeatedLaceTower`), the Moss Mothers of
+  Weavenest Atla (Weave_03's `Boss Scene` bool), the Act 3 Moss Mother (Tut_02's
+  `Mossbone Mother Ambient`, its PersistentBoolItem: no save has it yet to confirm), the Savage
+  Beastfly of the Far Fields (`defeatedBoneFlyerGiantGolemScene`). The Weavelight and the Silk
+  Heart Lace leaves moved to their fights' rooms with them. Not added: the Skull Tyrant's return
+  to Bone Bottom (no foe of its own; `skullKingKilled` looks like its flag). The site also has
+  three mapgenie hasn't: Garmond & Zaza, Craggler and Shakra.
+- **Vendors**, mapgenie 23 (eight shopkeepers and fifteen of Shakra's spots), the site 10 shop
+  marks (the same eight, Jubilana in her three rooms) and 17 of Shakra's: none missing. The game's
+  own shop pins add the Flea Caravan's and one in the Whispering Vaults (Library_08), left to the
+  people and vendors layer.
+
+**What opens a way** (11 October). Against mapgenie's categories the Map lacked levers, locked
+doors, shortcuts, Needolin doors and silk walls, and Albert's rule was that each must come from the
+save. In the scenes, every such object that stays open carries a `PersistentBoolItem` of its own,
+the bool the save keeps in `sceneData.persistentBools` by scene and id; about twenty of the 100%
+saves' 1,962 bools have no such component behind them, so the save holds nothing else.
+`tools/extract-pickups.py` now writes them (`doors`), by kind: 87 levers (`Lever`, `Lever_tk2d`),
+16 pressure plates, 37 gates (`Gate`, `Trapdoor`, `DialDoorBridge`, `TrapBridgeExtend`, and the
+ring gates Clawline pulls), 25 doors a key opens (7 of `js/quests.js` LOCKS' 10, the Slab's 14
+locks, its cells), 44 shortcuts and the 2 silk walls of Mosshome, each with the scene's own name as
+the save writes it (`aa/catalog.bin`: the bundles are lower case, and three map rooms differ in
+case). Left out, and why: the Needolin's doors (`Song_Gate_set`) open each time and keep nothing;
+about 255 levers of trapdoors, vent hatches and flip bridges that close again keep nothing either;
+three key doors (the Bellhome's, Ward_01's, the demo's) keep nothing in `sceneData`, so they stay
+as before. `tools/gen-spots.js` appends them to EXTRAS as `['bool', Scene, id]` (after the
+completionist's, whose order `js/map-fixes.js` keys by) and `js/app-map.js` draws them in a new
+group, Passages (design/03-redesign.md, step 6).
+
+**The wishes and the main objectives on the Map** (11 October). Albert set the Map beside
+mapgenie's Quests group (66 quest items, 21 objectives, 48 wishes) with one rule: everything added
+follows the save. `tools/extract-wishes.py` reads the game's files into `kb/data/game/wishes.json`
+and the marks' pictures: each quest's type and targets, every pickup of a target, the flower that
+gives a Pollip Heart, the Flintbeetle that drops a Flintgem (its flag is "<object>_item_<quest>"),
+the NPCs who give the souls, the room where each quest is ended (the FSM action's own quest, as
+`extract-quests.py` maps an offer), the Herald's seven `MushroomQuestFound<n>`, and the map's own
+quest pins (`Main Quest Pins`, QuestMapMarker, which `extract-map.py` leaves out), put on the map
+by the bench pins. `tools/gen-spots.js` writes `js/spots.js` TASKS: 22 things a wish asks for, 30
+places where a wish is done, 31 objective pins (19 of the 20 objectives; After the Fall has none;
+the Bellshrines', Old Hearts' and Melodies' pins are layers already). The save says each: a
+pickup's flag, the item held (`held`), the wish granted, a Steel Sentinel spot seen (`steel`:
+`SteelQuestSpots` keeps the three of six a game chose), an objective complete or a later step of
+it (the author's 100% save left Pale Monarch incomplete, Act 3 opened through the Soul Snare).
+Inscriptions (57 in 51 rooms) keep nothing in the save: left out. The 72 saves of the author's
+folder still match.
+
+**The people** (11 October). Set against mapgenie's 146 NPC marks, the Map had seven people. The
+game's scenes give every person: an NpcDialogueTitle names them (its keys are the dump's
+`<KEY>_SUPER/_MAIN/_SUB`, Flick «El arreglador»), and some talkers show their title from their
+own FSM. `tools/extract-people.py` reads them all into kb/data/game/people.json (each one's spots,
+one per scene, and every name their scripts and the tests switching them read) and cuts each
+figure from its tk2d sprite into assets/map/people/. `tools/gen-people.js` keeps those on the Map
+under no other layer: 54 people in 140 spots (Lugoli, the Crawfather and the Father of the Flame
+are bosses with no talker and drop out). What a save says of each is a hand table checked against
+the scans: 25 have a met flag their own scripts read (others, such as MetBelltownDoctor, exist but
+aren't read by Yarnaby's objects, so they're left out rather than guessed); the troupe's camp is
+`CaravanTroupeLocation` (0 Bone_10, 1 Greymoor_08_caravan, 2 Coral_Judge_Arena, 3 Aqueduct_05),
+Kratt is at Greymoor_24 until `CaravanLechReturnedToCaravan`, Vog at the Putrified Ducts' Bellway
+until `MetTroupeHunterWild`, the Second Sentinel where `songChevalierActiveIn<Room>` says. Still
+open: Sherma's `shermaPos`, `gillyLocation`, `GreenPrinceLocation`, Mister Mushroom's
+`MushroomQuestFound1..7`, Ballow's diving bell, and Garmond, whose `garmondIn<Room>` flags stay
+set after he moves on: every spot shows for them. The vendors: the game's ShopOwners are exactly
+js/shop.js's nine; the Couriers (a SimpleQuestsShopOwner), the Moss Druid and Creige trade too.
+
+**The area maps, and a sweep of the 100% save** (11 October). Albert missed the Weavenest Atla
+Map. Of the 28 Has<Area>Map flags, Shakra sells 14 (js/shop.js); the other 14 are fake
+collectables (`fakecollectables.bundle`, `isMap`, with the flag they set and their words,
+`WEAVE_MAP_GET_MSG`), given by a pickup in the room (a map lying or on a sign: the Slab's, the
+Underworks', Weavenest Atla's, the Abyss's, Verdania's, the Putrified Ducts', the Cogwork Core's)
+or by the Citadel's map machines (an FSM: High Halls, Grand Gate, Whiteward, Whispering Vaults,
+Memorium, two for the Choral Chambers, the Cradle's and a pickup at Ventrica's Terminus).
+`tools/extract-pickups.py` now reads them (`maps`) and gen-spots marks each where it's had, a
+bought one at Shakra's spot in its area (the one whose scripts set her SeenMapper flags; the
+Mosslands' where she's first met, in the Marrow): 30 marks for 28 flags, a new Maps layer among
+the Collectibles. Then the sweep: every playerData field and sceneData bool and int the author's
+100% save has set, less what the site reads (330 of its 1,317 fields; 1,026 sceneData keys). Of
+the 935 bools and 80 ints left, the pickups each with a bool of its own were the clear gap:
+the rosary strings and necklaces and the shell shard bundles, Great Shards and Pristine Cores
+lying in a room (`lying`, 31 and 16; the Flea Games' prizes left out), two more layers. What was
+left, for Albert to choose: the levers and walls the save keeps in playerData rather than in
+sceneData (about 30: bone01shortcutPlat, libraryRoofShortcut, explodeWallMosstown3…), the keys
+lying (Simple Keys, the Slab's three, the Whiteward keys, the Sinner's Road cage key), the Cog
+Heart pieces and their music boxes, lifts, 97 loose rosaries ("Geo Small/Med Persistent"),
+13 small silk cocoons, and the 370 Remaskers and 12 Secret Masks that reveal hidden rooms.
+Internal state (talks, cutscenes, prompts, NPC moves, breakables, ambient silkflies) stays out.
+
+**The leftovers built, and the sweep over every save** (11 October, Albert's choice for all four).
+Every check is now confirmed over the 72 saves of the author's folder (every user#.dat and restore
+point: an early game, a mid game, Steel Soul, 100%), not one: at 0% only the first room's rosary
+string is had (picked up at once), and each count grows along a game's restore points. In playerData, 37 levers, walls and gates (`PD_WAYS`), of which 21 are
+already marked by their object's own bool: 16 new, the Bellhome's door among them, which now has a
+check. Keys (8 marks): the Simple Keys, the Slab's three (fake collectables, HasSlabKey), the
+Whiteward's two; the Sinner's Road key's and the Whiteward's pickups keep no bool in any save, so
+they go by the flag the game sets (CollectedDustCageKey, collectedWardKey, collectedWardBossKey).
+Key items (6): the Cogheart Pieces by their pickup (the music boxes are the puzzle that drops them),
+the broken Silkshot, Farsight, the Materium. In sceneData (`kept`): 101 loose rosaries, 18 small
+silk cocoons (the large ones are the Silkeaters; Under_20 has a large one the completionist hasn't),
+7 lifts by their bool (the int beside it is where the lift stands; the Whispering Vaults' keeps
+only that, and Organ_01's bool no save sets), and the Remaskers and Secret Masks: 516 in 237 rooms,
+one to ten a room, so one mark per room, had once all are uncovered, without the inverse ones, the
+glow rims and the sound regions (225 rooms). Eva's other four rewards, by her Crest list
+(Hunter_v2, _v3) and the Vesticrest flags, with the slots each needs (Eva.wiki, js/data.js
+VESTICREST); the save's count (every Crest's open slots but the Hunter's) matches every flag in the
+72 saves (37 at the author's 100%, the most there is). The wider sweep added nothing to build: the
+fields only other saves set are talks, NPC moves, Steel Soul state, the flea pins bought
+(hasPinFlea…), the Second Sentinel's spots and, in sceneData, more Remaskers, three "Rock Roller"
+bools and two more lifts' ints. Eleven rosary and shard pickups are set in none of the saves
+(present and false in all three games: Bone_East_01's sits under a "Demo Gate", Under_17's under
+the Architect's final scene); they stay, unproven.
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).

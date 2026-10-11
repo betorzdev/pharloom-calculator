@@ -48,11 +48,19 @@ test('an interior the map does not draw goes where its door is; every gauntlet a
     assert.ok(x >= 0 && x <= M.W && y >= 0 && y <= M.H && R.roomOf(scene), `${kind} in ${scene}`);
   }
   // Each state shows its own: the Ventrica hub's bench and station, and the diving bell's bench.
-  assert.deepEqual(kinds, { bench: 78, bellway: 12, ventrica: 8 });
+  // Then the Flea Caravan's two benches of its own (Greymoor, the Blasted Steps), Fleatopia's and
+  // the Songclave's, after the rest so the pins before keep their index (js/map-fixes.js).
+  assert.deepEqual(kinds, { bench: 82, bellway: 12, ventrica: 8 });
+  assert.deepEqual(M.PINS.slice(98).map((p) => p[3]), ['Aqueduct_05', 'Coral_Judge_Arena', 'Greymoor_08', 'Song_Enclave']);
   const count = (g) => R.pinsOn(g).reduce((o, p) => ({ ...o, [p[0]]: (o[p[0]] || 0) + 1 }), {});
-  assert.deepEqual(count(null), { bench: 76, bellway: 12, ventrica: 7 });
-  assert.deepEqual(count(world({ act3MapUpdated: true, SeenDivingBellGoneAbyss: true })), { bench: 75, bellway: 12, ventrica: 7 });
-  assert.deepEqual(count(world({ act3MapUpdated: true, SeenDivingBellGoneAbyss: true, HasWhiteFlower: true })), { bench: 76, bellway: 12, ventrica: 7 });
+  assert.deepEqual(count(null), { bench: 80, bellway: 12, ventrica: 7 });
+  assert.deepEqual(count(world({ act3MapUpdated: true, SeenDivingBellGoneAbyss: true })), { bench: 77, bellway: 12, ventrica: 7 });
+  assert.deepEqual(count(world({ act3MapUpdated: true, SeenDivingBellGoneAbyss: true, HasWhiteFlower: true })), { bench: 78, bellway: 12, ventrica: 7 });
+  // A caravan's bench shows only where your caravan is (CaravanTroupeLocation: 1 Greymoor, 2 the
+  // Blasted Steps); with no game, both.
+  const caravan = (at) => R.pinsOn({ ...world({}), caravan: at }).filter((p) => p[5]).map((p) => p[3]);
+  assert.deepEqual([0, 1, 2, 3].map(caravan), [[], ['Greymoor_08'], ['Coral_Judge_Arena'], []]);
+  assert.deepEqual(R.pinsOn(null).filter((p) => p[5]).map((p) => p[3]), ['Coral_Judge_Arena', 'Greymoor_08']);
 });
 
 test('the map\'s state: the rooms Act 3 destroys and the diving bell, by the game\'s own rules', () => {
