@@ -141,6 +141,7 @@
     homeKingdom:    { es: 'Telalejana', en: 'Pharloom' },   // MQ_BELLSHRINES_LOC
     homeGhost:      { es: 'Aquí irá tu partida', en: 'Your game goes here' },
     homeNearMap:    { es: 'En el mapa', en: 'On the map' },
+    homeMapLabel:   { es: 'Mapa de {area}', en: 'Map of {area}' },   // PANE_MAP, and the area's name
     homeParts:      { es: 'Tu 100 %, por partes', en: 'Your 100%, by part' },
     homeAllParts:   { es: 'Todo en Progreso', en: 'Everything in Progress' },
     homeGoLabel:    { es: 'Sigue por', en: 'Where next' },

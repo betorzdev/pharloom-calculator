@@ -63,7 +63,13 @@ In a save, the game's area title card: **Resting at** the area of the bench Horn
 that area's own colour on the game's map, the room's area under it when it's another (Coral
 Tower in the Sands of Karak), the Act and the time played; Hornet sitting on that very bench (each room's bench is read
 from the game's files; one it doesn't know shows Bone Bottom's); and four
-figures: **your 100%**, the Journal, the masks and the rosaries. Under it, the road to the next
+figures: **your 100%**, the Journal, the masks and the rosaries. Beside the card (under it on a
+phone) is **the map of that area**, drawn as the Map screen draws it (the same view, «Only what
+the game shows» included), cropped to the area's rooms and fading out at its edges, with Hornet
+sitting on your bench and the Map's own marks over it: the layers and filters you have set on the
+Map (its legend and its Act and «what I can reach now» filters) decide which show, so the two
+agree (the caches and walls, which the Map only draws close up, are left out); a tap on it opens
+the Map. Under it, the road to the next
 Act when there is one, then three columns: what changed since the previous save (below), what's
 missing **closest to your bench** (the first five, by the game's doors and the stations you've opened, each with its area and a pin that shows it on the Map), and your 100% split into
 the wiki's ten categories (Tools, Silk Spools, the Crafting Kit and Tool Pouch, abilities, Silk Skills, Crests,

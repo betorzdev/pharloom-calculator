@@ -382,8 +382,37 @@
     return g ? `<svg class="mp-glyph" x="-0.3" y="-0.3" width="0.6" height="0.6" viewBox="0 0 14 14" fill="none" stroke="currentColor"
         stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${g[1]}</svg>` : '';
   }
-  const pinSvg = (m, p, title, cls) => `<g class="mp-mk is-${m.layer}${cls}${m.off ? ' is-off' : ''}${sel(m.key)}" style="--px:${n2(p.x)}px;--py:${n2(p.y)}px;--ox:${n2(p.ox || 0)}px;--oy:${n2(p.oy || 0)}px"
-        data-mk="${esc(m.key)}" role="button" tabindex="0" aria-label="${esc(title)}"><title>${esc(title)}</title><circle r="0.5"/><circle class="mp-plate" r="0.47"/>${artOf(m)}</g>`;
+  // inert: Your game's copy of a mark (js/app-map.js, App.mapAreaHtml) is a picture, not a button.
+  const pinSvg = (m, p, title, cls, inert) => `<g class="mp-mk is-${m.layer}${cls}${m.off ? ' is-off' : ''}${inert ? '' : sel(m.key)}" style="--px:${n2(p.x)}px;--py:${n2(p.y)}px;--ox:${n2(p.ox || 0)}px;--oy:${n2(p.oy || 0)}px"
+        ${inert ? '' : `data-mk="${esc(m.key)}" role="button" tabindex="0" aria-label="${esc(title)}"`}><title>${esc(title)}</title><circle r="0.5"/><circle class="mp-plate" r="0.47"/>${artOf(m)}</g>`;
+  const markTitle = (m) => [m.name, m.sub, m.act ? t('saveAct', { n: m.act }) : ''].filter(Boolean).join(' · ');
+  /* Each mark on its point: the pin the game draws, else where the game has the thing (js/spots.js
+     XY), else its room's middle; those on one point in a grid around it. The marks the legend has
+     on (`on`) and the filters let show, as { count per layer, items: [{ m, p }], fine: the caches
+     and walls' counts per room, placed: key → point }. The Map screen and Your game's area map
+     both read it. */
+  // Per layer, under the Act and reach filters: how many there are, how many had, how many show.
+  function layout(list, g, own, on) {
+    const count = {}, items = [], fine = new Map(), placed = new Map();
+    for (const m of list) {
+      if (!passes(m, g, own)) continue;
+      const c = count[m.layer] || (count[m.layer] = { all: 0, had: 0, shown: 0 });
+      c.all++;
+      if (g && m.got) { c.had++; continue; }
+      c.shown++;
+      const own1 = (SP.XY || {})[m.key];
+      const xy = m.at || (own1 && { x: own1[0], y: own1[1] });
+      const room = xy ? null : R.roomOf(m.scene);
+      const p = xy || (room && { x: room.x, y: room.y });
+      if (!p) continue;
+      placed.set(m.key, { x: p.x, y: p.y });
+      if (!on.has(m.layer)) continue;
+      if (FINE.has(m.layer)) { const k = (R.roomOf(m.scene) || {}).scene || m.key; const f = fine.get(k) || { ...p, n: 0 }; f.n++; fine.set(k, f); }
+      items.push({ m, p: { x: p.x, y: p.y } });
+    }
+    arrange(items);
+    return { count, items, fine, placed };
+  }
   /* Things on the same point (within SAME pixels: a room's middle, a shop's stock) are laid out
      around it in a small grid, in pins, so it keeps its shape at any zoom. */
   const SAME = 6;
@@ -482,6 +511,96 @@
   App.nearList = nearList;
   App.nearRow = nearRow;
 
+  /* ── The area you rest in, for Your game (App.mapAreaHtml, App.mapAreaPaint) ──
+     The sibling's "area map" idea (hallownest-calculator js/app-home.js, areaMapHtml), with this
+     map's own drawing: the same view as the Map screen (js/rooms.js mapView, "Only what the game
+     shows" included), composed by the same painter (js/map-paint.js) but cropped to the box of
+     the rooms of the bench's branch of the map, with Hornet on her bench and the Map's own marks
+     over it (layout(): the layers its legend has on and its filters let show, so the two agree;
+     the caches and walls, which the Map only draws close up, left out). It opens the Map. */
+  const AREA_BOX = new Map();
+  // The branch's rooms' box in the map's pixels: [x, y, w, h], or null when it draws none (Surface).
+  function branchBox(branch) {
+    if (!AREA_BOX.has(branch)) {
+      let b = null;
+      for (const r of Object.values(M.ROOMS)) {
+        if (r[4] !== branch || !r[2] || !r[3]) continue;
+        b = b ? [Math.min(b[0], r[0]), Math.min(b[1], r[1]), Math.max(b[2], r[0] + r[2]), Math.max(b[3], r[1] + r[3])] : [r[0], r[1], r[0] + r[2], r[1] + r[3]];
+      }
+      AREA_BOX.set(branch, b);
+    }
+    return AREA_BOX.get(branch);
+  }
+  /* The view of that box: moved with its branch when a rule moves it (Slab with the Cloakless
+     Crest), padded, and no smaller than a few rooms so that a small area isn't blown up. */
+  const AREA_MIN = [360, 220];
+  function areaView(branch, view) {
+    const b = branchBox(branch);
+    if (!b) return null;
+    let [x0, y0, x1, y1] = b;
+    const z = view.zones[branch];
+    if (z) { const mv = (v, c, s, d) => (v - c) * s + c + d; x0 = mv(x0, z.at[0], z.sx, z.dx); x1 = mv(x1, z.at[0], z.sx, z.dx); y0 = mv(y0, z.at[1], z.sy, z.dy); y1 = mv(y1, z.at[1], z.sy, z.dy); }
+    const pad = Math.max(x1 - x0, y1 - y0) * 0.08;
+    const w = Math.max(x1 - x0 + 2 * pad, AREA_MIN[0]), h = Math.max(y1 - y0 + 2 * pad, AREA_MIN[1]);
+    const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
+    return { x: cx - w / 2, y: cy - h / 2, w, h };
+  }
+  let areaCtx = null;   // { view, box }: what the figure on screen draws
+  App.mapAreaHtml = (g) => {
+    areaCtx = null;
+    const room = g && g.bench ? R.roomOf(g.bench) : null;
+    if (!room) return '';
+    const view = R.mapView(g, { all: !prefs.mapGame });
+    const box = areaView(room.area, view);
+    if (!box) return '';
+    areaCtx = { view, box, key: MP.keyOf(view, 0) };
+    // Hornet where she rests (her bench's pin comes with the Map's own marks, if its layer is on).
+    const bench = benchPoint(g.bench, R.pinsOn(g));
+    const at = `left:${n2((bench.x - box.x) / box.w * 100)}%;top:${n2((bench.y - box.y) / box.h * 100)}%`;
+    // The marks: the Map's own, the layers its legend has on and its filters let show, those in the box.
+    const { list, g: shown, own } = all();
+    const inBox = (p) => p.x >= box.x && p.x <= box.x + box.w && p.y >= box.y && p.y <= box.y + box.h;
+    const marks = layout(list, shown, own, new Set(layersOn())).items.filter(({ m, p }) => !FINE.has(m.layer) && inBox(p))
+      .map(({ m, p }) => pinSvg(m, p, markTitle(m), '', true)).join('');
+    const label = t('homeMapLabel', { area: areaName(R.areaOf(g.bench)) });
+    return `<figure class="hmB-map">
+        <a class="hmB-view" href="${App.here(App.hashFor('map'))}" data-act="view" data-value="map" style="--r:${n2(box.w / box.h)}" aria-label="${esc(label + ' · ' + t('homeNearMap'))}">
+          <canvas class="hmB-canvas" aria-hidden="true"></canvas>
+          <svg class="hmB-svg" viewBox="${n2(box.x)} ${n2(box.y)} ${n2(box.w)} ${n2(box.h)}" aria-hidden="true">
+            <defs><radialGradient id="hmB-plate"><stop offset="0"/><stop offset="0.6"/><stop offset="1"/></radialGradient></defs>${marks}</svg>
+          <span class="hn is-sit hmB-hornet" aria-hidden="true" style="${at}"></span>
+        </a></figure>`;
+  };
+  /* Paints the figure just placed on the page (the screen is built whole each time, so this runs
+     after every render): the pieces composed again only when what's shown changes, at the finer
+     scale when the area is drawn larger than the map's own pixels. */
+  let areaComp = null, areaCompKey = '';
+  function areaPaint() {
+    const cv = document.querySelector('.hmB-canvas');
+    if (!cv || !areaCtx) return;
+    const r = cv.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
+    const w = Math.round(r.width * dpr), h = Math.round(r.height * dpr);
+    if (!w || !h) return;
+    const { view, box, key } = areaCtx;
+    // The marks' size on screen, as the Map keeps it (about 22 px, 18 on a phone).
+    const svg = cv.parentElement.querySelector('.hmB-svg');
+    if (svg) svg.style.setProperty('--k', String(box.w / r.width * (r.width < 600 ? 18 : 22)));
+    const scale = w / box.w > 1.1 ? 2 : 1, ck = key + '@' + scale;
+    const draw = () => {
+      if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; }
+      MP.paint(cv.getContext('2d'), areaComp, box, w, h);
+    };
+    if (areaCompKey === ck) { draw(); return; }
+    sheet(scale, () => {
+      if (!cv.isConnected) return;
+      areaComp = MP.compose(view, sheets[scale].img, scale, faintOf(), makeCanvas);
+      areaCompKey = ck;
+      draw();
+    });
+  }
+  App.mapAreaPaint = () => requestAnimationFrame(areaPaint);
+  window.addEventListener('resize', () => { if (document.querySelector('.hmB-canvas')) areaPaint(); });
+
   /* The layers whose things aren't had (a bench, a shop, a person): a count, not had of total. */
   const PLAIN = new Set(['bench', 'bellway', 'ventrica', 'shop', 'lock', 'shakra', 'person', 'cocoon']);
   const CARET = '<svg class="mp-caret" viewBox="0 0 10 10" aria-hidden="true"><path d="M3 1 L8 5 L3 9 Z" fill="currentColor"/></svg>';
@@ -496,30 +615,10 @@
     const { list, g, own } = all();
     const on = new Set(layersOn());
     const names = prefs.mapNames !== false;
-    /* Each mark on its point: the pin the game draws, else where the game has the thing
-       (js/spots.js XY), else its room's middle; those on one point in a grid around it. */
-    placed = new Map();
-    // Per layer, under the Act and reach filters: how many there are, how many had, how many show.
-    const count = {}, items = [], fine = new Map();
-    for (const m of list) {
-      if (!passes(m, g, own)) continue;
-      const c = count[m.layer] || (count[m.layer] = { all: 0, had: 0, shown: 0 });
-      c.all++;
-      if (g && m.got) { c.had++; continue; }
-      c.shown++;
-      const own1 = (SP.XY || {})[m.key];
-      const xy = m.at || (own1 && { x: own1[0], y: own1[1] });
-      const room = xy ? null : R.roomOf(m.scene);
-      const p = xy || (room && { x: room.x, y: room.y });
-      if (!p) continue;
-      placed.set(m.key, { x: p.x, y: p.y });
-      if (!on.has(m.layer)) continue;
-      if (FINE.has(m.layer)) { const k = (R.roomOf(m.scene) || {}).scene || m.key; const f = fine.get(k) || { ...p, n: 0 }; f.n++; fine.set(k, f); }
-      items.push({ m, p: { x: p.x, y: p.y } });
-    }
-    arrange(items);
-    const marks = items.map(({ m, p }) => pinSvg(m, p, [m.name, m.sub, m.act ? t('saveAct', { n: m.act }) : ''].filter(Boolean).join(' · '),
-      FINE.has(m.layer) ? ' is-fine' : '')).join('');
+    const lay = layout(list, g, own, on);
+    placed = lay.placed;
+    const { count, items, fine } = lay;
+    const marks = items.map(({ m, p }) => pinSvg(m, p, markTitle(m), FINE.has(m.layer) ? ' is-fine' : '')).join('');
     const clusters = [...fine.values()].map((f) => `<g class="mp-mk mp-cluster" style="--px:${n2(f.x)}px;--py:${n2(f.y)}px" aria-hidden="true"><circle r="0.5"/><text dy="0.02">${num(f.n)}</text></g>`).join('');
     const exact = !!own && !!prefs.mapGame, view = R.mapView(own, { all: !exact }), shownPins = R.pinsOn(own);
     const bench = own ? benchPoint(own.bench, shownPins) : null;
