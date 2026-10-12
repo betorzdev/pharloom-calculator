@@ -21,7 +21,8 @@ What it writes (read on 28-Sep-2026, patch 1.0.30000):
           every PlayMakerFSM whose raw data names it (a set or a test: gen-spots picks).
   npcs    an object name the NPCS pattern list matches → [scene, object]: where each of them is.
   objects the objects kb/data/game/wanted.json asks for (tools/spots-wanted.js: the ones a save's
-          sceneData check names) → { scene: { name: [x, y] } }, the first of each name.
+          sceneData check names) → { scene: { name: [x, y] } }, the first of each name: an
+          object of that name, else a saved item whose own ID it is.
   benches each scene's RestBench → [x, y], which tools/gen-spots.js sets against the map's own
           bench pins to check how a point is placed on the map.
   sizes   each scene's size in world units, its tk2dTileMap's width and height: the game places a
@@ -49,6 +50,15 @@ What it writes (read on 28-Sep-2026, patch 1.0.30000):
   kept    the rest the save keeps per room that the Map shows, by kind (KEPT: loose rosaries, the
           small silk cocoons, lifts, the masks that hide a room) → [[Scene, id, bool or int, x, y]]:
           each saved bool or int of its own on an object with that component, kept as the doors are.
+  caches  each rosary or shell shard cache whose save is an int (a PersistentIntItem beside a
+          RosaryCache, RosaryCacheHanging, RosaryCacheString or BreakableHolder, kept as the doors are)
+          → [[Scene, id, component, emptied, last]]: the int from which it's emptied, up to the last
+          it can hold (read in Assembly-CSharp 1.0.30000 and against the author's saves, 12-Oct-2026).
+          A BreakableHolder keeps its hits left: 0 once broken (emptied and last 0). A RosaryCache
+          keeps its state: -1 untouched, a step up each hit, held at its hitStates' last, which is
+          when it's emptied (emptied and last its hitStates' count - 1). A RosaryCacheString adds a
+          state a hit up to maxHits (maxHits + 1 states once awake), and its last rosaries fly a
+          step before that, at maxHits - 1 (emptied maxHits - 1, last maxHits).
   maps    each area map found rather than bought (a FakeCollectable with isMap, in the bundles
           above, its pickup under items) → [the Has<Area>Map flag it sets, its words' key].
   lying   each item lying in a room whose pickup keeps a bool of its own (a CollectableItemPickup
@@ -108,6 +118,8 @@ PD_WAYS = ['openedCitadelSpaLeft', 'openedCitadelSpaRight', 'greatBoneGateOpened
 # the saved bool or int (kept, below).
 KEPT = [('bead', {'GeoControl'}), ('cocoon', {'SilkGrubCocoon'}), ('lift', {'LiftControl', 'LiftPlatform', 'ManualLift'}),
         ('hidden', {'Remasker', 'Unmasker'})]
+# The caches whose int the save keeps (caches, above).
+CACHES = {'RosaryCache', 'RosaryCacheHanging', 'RosaryCacheString', 'BreakableHolder'}
 # The people the Map shows, by their objects' names in the scenes (without the copy's " (1)").
 NPCS = r'Pinsmith.*|Seamstress.*|Pinstress.*|Crest Upgrade Shrine|Ladybug.*|Dice Pilgrim.*|Flea ?Master.*|Caravan Troupe Leader.*|' \
        r'Mapper.*|Shakra.*|Quest Board.*|Questboard.*|Relic ?Dealer.*|Belltown Shop NPC|Grindle.*|Mort.*|Frey.*|Pebb.*|Jubilana.*|' \
@@ -147,11 +159,11 @@ def door_kind(comps, name):
 
 def main(game, cache):
     got = pickle.load(open(cache, 'rb')) if cache and os.path.exists(cache) else None
-    if not got or len(got) != 11:   # none, or one kept before the doors, the pickups' bools, the maps, pd or kept
+    if not got or len(got) != 12:   # none, or one kept before the doors, the pickups' bools, the maps, pd, kept or caches
         got = scan(game)
         if cache:
             pickle.dump(got, open(cache, 'wb'))
-    items, fields, npcs, objects, benches, sizes, doors, lying, maps, pd, kept = got
+    items, fields, npcs, objects, benches, sizes, doors, lying, maps, pd, kept, caches = got
     r2 = lambda v: [round(x, 2) if isinstance(x, float) else x for x in v]
     srt = lambda v: sorted({tuple(r2(x)) for x in v}, key=lambda x: tuple(str(y) for y in x))
     out = {'items': {k: {'class': c, 'at': srt(v)} for (k, c), v in sorted(items.items())},
@@ -164,11 +176,14 @@ def main(game, cache):
            'lying': {k: srt(v) for k, v in sorted(lying.items())},
            'maps': dict(sorted(maps.items())),
            'pd': {k: srt(v) for k, v in sorted(pd.items())},
-           'kept': {k: srt(v) for k, v in sorted(kept.items())}}
+           'kept': {k: srt(v) for k, v in sorted(kept.items())},
+           'caches': srt(caches)}
     if len(out['pd']) < len(PD_WAYS):
         sys.exit(f"extract-pickups: no scene names {', '.join(sorted(set(PD_WAYS) - set(out['pd'])))} any more: PD_WAYS needs reading again")
     if len(out['maps']) < 10:
         sys.exit('extract-pickups: too few maps found lying: the fake collectables need reading again')
+    if len(out['caches']) < 300:
+        sys.exit('extract-pickups: too few caches: CACHES needs reading again')
     if len(out['doors'].get('lever', [])) < 50:
         sys.exit('extract-pickups: too few levers: the doors need reading again')
     for f in FIELDS[:11]:   # the abilities; a Bellshrine's flag is named where only some of them are
@@ -236,7 +251,7 @@ def scan(game):
     copy = lambda n: re.sub(r'\s*\(\d+\)$', '', n or '').strip()
     items, fields, npcs = defaultdict(list), defaultdict(list), defaultdict(list)
     objects, benches, sizes, doors, lying = defaultdict(dict), {}, {}, defaultdict(list), defaultdict(list)
-    pd, kept = defaultdict(list), defaultdict(list)
+    pd, kept, caches = defaultdict(list), defaultdict(list), []
     pd_re = re.compile(rb'(?<![A-Za-z0-9_])(' + b'|'.join(re.escape(f.encode()) for f in sorted(PD_WAYS, key=len, reverse=True)) + rb')(?![A-Za-z0-9_])')
     # Each scene's own name, as the game (and its save) writes it: the bundles' are lower case.
     with open(os.path.join(aa, '..', 'catalog.bin'), 'rb') as fh:
@@ -271,7 +286,7 @@ def scan(game):
                     n = o.read().m_Name
                     if n in want and n not in objects[scene]:
                         objects[scene][n] = world(o.path_id)
-        door_comps, bools, pickup_of, ints, comps_of, pd_hits = defaultdict(set), [], {}, [], defaultdict(set), []
+        door_comps, bools, pickup_of, ints, comps_of, pd_hits, cache_of = defaultdict(set), [], {}, [], defaultdict(set), [], {}
         for o in env.objects:
             if o.type.name != 'MonoBehaviour':
                 continue
@@ -279,6 +294,8 @@ def scan(game):
             raw = o.get_raw_data()   # a MonoBehaviour starts with its GameObject (file id, path id)
             gid0 = struct.unpack_from('<q', raw, 4)[0] if len(raw) >= 12 else None
             comps_of[gid0].add(comp)
+            if comp in CACHES:
+                cache_of[gid0] = (comp, o)
             for f in set(pd_re.findall(raw)):
                 pd_hits.append((f.decode(), comp, gid0))
             if comp == 'PersistentIntItem':
@@ -327,6 +344,12 @@ def scan(game):
                     t = T.get(f) if f else None
                 return '/'.join(reversed(out))
             own = NAMES.get(scene)
+            # A wanted id that's a saved item's own ID rather than its object's name (a wall saved
+            # as "Act3_Bellway_01_Breakable_wall"): its place is that object's.
+            for gid, o in (bools + ints if want else []):
+                bid = (o.read_typetree().get('itemData') or {}).get('ID')
+                if bid in want and bid not in objects[scene]:
+                    objects[scene][bid] = world(gid)
             for gid, o in bools:
                 name = name_of(gid)
                 kind = door_kind(door_comps.get(gid, set()), name) if (scene, name) not in OFF else None
@@ -358,11 +381,28 @@ def scan(game):
                     if not own:
                         sys.exit(f'extract-pickups: {scene} has no name in catalog.bin')
                     kept[kind].append((own, it.get('ID') or name_of(gid), typ, *world(gid)))
+            # The caches whose int the save keeps (caches): from which int each is emptied.
+            for gid, o in ints:
+                if gid not in cache_of:
+                    continue
+                d = o.read_typetree()
+                it = d.get('itemData') or {}
+                if it.get('IsSemiPersistent') or d.get('dontSave') or (it.get('SceneName') and it['SceneName'].lower() != scene):
+                    continue
+                comp, c = cache_of[gid]
+                t = c.read_typetree()
+                if comp == 'BreakableHolder':
+                    emptied = last = 0
+                elif comp == 'RosaryCacheString':
+                    emptied, last = t['maxHits'] - 1, t['maxHits']
+                else:
+                    emptied = last = len(t['hitStates']) - 1
+                caches.append((own, it.get('ID') or name_of(gid), comp, emptied, last))
             for f, comp, gid in pd_hits:
                 pd[f].append((scene, comp, name_of(gid) if gid else '', *(world(gid) if gid else [])))
         if i % 50 == 0:
             print(f'{i}/{len(names)} {scene}', file=sys.stderr, flush=True)
-    return dict(items), dict(fields), dict(npcs), dict(objects), benches, sizes, dict(doors), dict(lying), maps, dict(pd), dict(kept)
+    return dict(items), dict(fields), dict(npcs), dict(objects), benches, sizes, dict(doors), dict(lying), maps, dict(pd), dict(kept), caches
 
 
 if __name__ == '__main__':
