@@ -305,6 +305,12 @@
           name: x ? pick(x.name) : id, draw: (s, ti, k, c) => dot(cat, `assets/icons/${cat}/${id}.webp`, s, ti, k, c) });
       }
     }
+    // The abilities outside the 100% (the two Needolin melodies), with their Act from js/spots.js.
+    for (const x of D.ARTS) {
+      if (CO.WHERE.arts[x.id]) continue;
+      add({ key: 'arts:' + x.id, layer: 'arts', scene: SP.AT.arts[x.id], act: SP.AT.act['arts:' + x.id], got: !!g && g.arts.includes(x.id),
+        name: pick(x.name), note: t('mapArtOut'), draw: (s, ti, k, c) => dot('arts', `assets/icons/arts/${x.id}.webp`, s, ti, k, c) });
+    }
     add({ key: 'everbloom', layer: 'everbloom', scene: SP.AT.everbloom, act: (CO.WHERE.everbloom || [])[0], got: !!g && g.everbloom,
       name: t('cat_items'), draw: (s, ti, k, c) => dot('everbloom', 'assets/icons/items/everbloom.webp', s, ti, k, c) });
     // Places: the pins (a station not open, a toll not paid: dimmed, cls ' is-off').

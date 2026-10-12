@@ -22,6 +22,7 @@ const QU = require('../js/quests.js');
 const SP = require('../js/spots.js');
 const PE = require('../js/people.js');
 const MF = require('../js/map-fixes.js');
+const D = require('../js/data.js');
 
 const ROOT = path.resolve(__dirname, '..');
 const PORT = Number(process.env.PORT || 8788);   // the sibling's takes 8787
@@ -41,6 +42,8 @@ function places() {
   for (const ids of CO.COUNTED) add('tools:' + ids[0], SP.AT.tools[ids[0]]);
   // The six outside the 100% (js/app-map.js OTHER_TOOLS).
   for (const id of Object.keys(CO.TOOLS)) if (!CO.COUNTED.some((ids) => ids[0] === id)) add('tools:' + id, SP.AT.tools[id]);
+  // The abilities outside the 100% (js/app-map.js, the Needolin melodies).
+  for (const x of D.ARTS) if (!CO.WHERE.arts[x.id]) add('arts:' + x.id, SP.AT.arts[x.id]);
   for (const cat of ['crests', 'skills', 'arts']) for (const id of Object.keys(CO.WHERE[cat])) add(cat + ':' + id, SP.AT[cat][id]);
   add('everbloom', SP.AT.everbloom);
   M.PINS.forEach((p, i) => out.set('pin:' + i, p[3]));

@@ -92,6 +92,10 @@ const HAND = {
     'swift-step': ['hasDash', 'bone_east_05'], clawline: ['hasHarpoonDash', 'under_18'],
     'silk-soar': ['hasSuperJump', 'abyss_08'], 'drifters-cloak': ['hasBrolly', 'bone_east_umbrella'],
     'faydown-cloak': ['hasDoubleJump', 'peak_08b'],
+    // The two Needolin melodies outside the 100%, both Act 3's (their wiki pages): the Beastling
+    // Call from the Bell Beast once the Bell Eater is beaten, in its arena under Bellhart; the
+    // Elegy of the Deep from the Snail Shamans in the Ruined Chapel. Third: the Act.
+    'beastling-call': ['UnlockedFastTravelTeleport', 'belltown_basement', 3], 'elegy-of-the-deep': ['hasNeedolinMemoryPowerup', 'tut_04', 3],
   },
   tools: {
     // The craft pickups (Craft Pickup).
@@ -267,6 +271,15 @@ for (const cat of ['crests', 'skills', 'arts']) {
     const s = hand ? chosen(hand[1], from, cat + ' ' + id) : byWays(H.HOW[cat][id], () => null);
     put(cat, id, s, cat + ' ' + id);
   }
+}
+// The abilities outside the 100% (js/data.js ARTS the completionist doesn't list), by hand, with
+// their Act (AT.act: js/collectibles.js WHERE has none for them).
+AT.act = {};
+for (const a of D.ARTS) {
+  if (CO.WHERE.arts[a.id]) continue;
+  const hand = HAND.arts[a.id] || fail(`ability ${a.id} outside the 100% has no room in HAND.arts`);
+  put('arts', a.id, chosen(hand[1], (P.fields[hand[0]] || []).map(([sc]) => sc), 'arts ' + a.id), 'arts ' + a.id);
+  AT.act['arts:' + a.id] = hand[2];
 }
 AT.everbloom = byWays(H.HOW.everbloom, () => null) || EVERBLOOM;
 (AT.everbloom ? placed : unplaced).push('everbloom');
@@ -768,7 +781,8 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
    them in either case).
 
      AT       { pieces: { PIECES index: scene }, tools: { COUNTED group's first id, and the six
-              outside the 100%: scene }, crests, skills, arts: { id: scene }, everbloom: scene }:
+              outside the 100%: scene }, crests, skills, arts: { id: scene }, everbloom: scene,
+              act: { key: Act } for what's outside the 100% and js/collectibles.js WHERE lacks }:
               where each thing of the 100% is had (its pickup, its vendor, its Wishwall, its
               boss's arena, its giver)
      EXTRAS   [kind, act, check, scene, name?, more?]: what doesn't count (relics by kind, mossberry,

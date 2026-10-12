@@ -348,7 +348,9 @@ lying there, at the shop that sells it, at the Wishwall or with whoever gives th
 boss's arena, with the person who gives it. All of it on at first.
 
 - **Upgrades**: Mask Shards, Spool Fragments, Silk Hearts, the Needle, Tool Pouch and Crafting Kit
-  upgrades, and the abilities.
+  upgrades, and the eleven abilities: the two Needolin melodies of Act 3 (the Beastling Call,
+  under Bellhart once the Bell Eater is beaten; the Elegy of the Deep, from the Snail Shamans) don't
+  count for the 100%, and their card says so.
 - **Crest** (the game's pane where they're equipped): the **Tools**, one switch whose round caret
   opens them by the colour of their slot (red, blue, yellow) and, apart, the six **outside the
   100%** (off at first): the upgrades of four Tools (Curvesickle, Druid's Eyes, Claw Mirrors, the

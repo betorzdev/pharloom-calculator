@@ -6,7 +6,8 @@
    them in either case).
 
      AT       { pieces: { PIECES index: scene }, tools: { COUNTED group's first id, and the six
-              outside the 100%: scene }, crests, skills, arts: { id: scene }, everbloom: scene }:
+              outside the 100%: scene }, crests, skills, arts: { id: scene }, everbloom: scene,
+              act: { key: Act } for what's outside the 100% and js/collectibles.js WHERE lacks }:
               where each thing of the 100% is had (its pickup, its vendor, its Wishwall, its
               boss's arena, its giver)
      EXTRAS   [kind, act, check, scene, name?, more?]: what doesn't count (relics by kind, mossberry,
@@ -247,7 +248,10 @@
       sylphsong: 'weave_10',
       'silk-soar': 'abyss_08',
       'needle-strike': 'room_pinstress',
+      'beastling-call': 'belltown_basement',
+      'elegy-of-the-deep': 'tut_04',
     },
+    act: { 'arts:beastling-call': 3, 'arts:elegy-of-the-deep': 3 },
     everbloom: 'Tut_04',
   };
 
