@@ -26,8 +26,13 @@ Where it is (found on 27-Sep-2026, design/00-study.md §4.7):
     is there until the caravan comes, so Fleatopia always has one; they go after the rest, so
     the pins before keep their index (js/map-fixes.js keys them by it). Left out: the Steel Soul
     and fake ones, the vendors (each with its own merchant's state), and the arrows and markers.
-    One bench has no pin on the game's map: the Songclave's (UNPINNED), placed by its RestBench
-    (kb/data/game/pickups.json, tools/extract-pickups.py) as tools/gen-spots.js places a point.
+    Three benches have no pin on the game's map: the Songclave's (UNPINNED), placed by its RestBench
+    (kb/data/game/pickups.json, tools/extract-pickups.py) as tools/gen-spots.js places a point, and
+    the Bellhome's (INSIDE: Belltown_Room_Spare has no drawing of its own, so it goes at its door in
+    Belltown, the one the Belltown House Key opens, and it's lit once BelltownHouseUnlocked).
+    The Border Caves' too (INSIDE).
+    Song_01b's RestBench is not one: its GameObject is switched off in the scene and nothing in the
+    scene turns it on (read 12-Oct-2026), and no save rests there.
   · the sprites are in atlases_assets_assets/sprites/_atlases/hornet_map.spriteatlas.bundle (a
     4096² BC7 texture, 1,199 sprites) and hornet_map_patch.spriteatlas.bundle.
   · Unity 6 strips its version from the bundles: UnityPy needs it set (6000.0.50f1, the one
@@ -90,6 +95,13 @@ PIN_KIND = {'Bench': 'bench', 'Bellway': 'bellway', 'Tube': 'ventrica'}
 # The benches the game's map has no pin for, placed by their scene's RestBench: the Songclave's
 # (Song_Enclave; it appears once the Songclave grows, enclaveLevel, and stays in Act 3).
 UNPINNED = ['Song_Enclave']
+# A bench in a room with no place on the map: its scene → [the scene it's entered from, the playerData
+# field whose door (pickups.json pd) it's entered by, the field that lights it].
+INSIDE = {'Belltown_Room_Spare': ['Belltown', 'BelltownHouseUnlocked', 'BelltownHouseUnlocked'],
+          # The Border Caves' bench (the Nameless Town above the Cradle, Act 3, in the wiki's The Cradle):
+          # its room has no drawing nor a point of its own; the game places its neighbour, Challenge_02
+          # (js/rooms.js ENTRANCE), at the surface above the Cradle, so it goes there, lit with Act 3.
+          'Cradle_Destroyed_Challenge_Bench': ['Cradle_Destroyed_Challenge_02', None, 'blackThreadWorld']}
 PICKUPS = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'kb', 'data', 'game', 'pickups.json')
 HIDDEN, ROUGH, FULL = 0, 1, 2   # GameMapScene.States
 GREY = (0.5, 0.5, 0.5)          # Color.grey: a Rough piece with no fullSprite, not mapped
@@ -656,6 +668,18 @@ def main(game):
         if not (r and r[2] and b and size) or any(o[0] == 'bench' and o[3] == s for o in PINS):
             raise ValueError(f'{s}: no room, RestBench or size to place its bench by, or the game pins it now')
         PINS.append(['bench', round(r[0] + b[0] / size[0] * r[2]), round(r[1] + (1 - b[1] / size[1]) * r[3]), s])
+    for s, (host, door, flag) in INSIDE.items():
+        r, size = boxes.get(host), seen['sizes'].get(host.lower())
+        if not (r and seen['benches'].get(s.lower())) or any(o[3] == s for o in PINS):
+            raise ValueError(f'{s}: no room or RestBench to place its bench by, or the game pins it now')
+        if door:
+            at = next((e for e in seen['pd'].get(door, []) if e[0] == host.lower() and isinstance(e[3], (int, float))), None)
+            if not (r[2] and size and at):
+                raise ValueError(f'{s}: no door {door} in {host} to place its bench by')
+            x, y = r[0] + at[3] / size[0] * r[2], r[1] + (1 - at[4] / size[1]) * r[3]
+        else:
+            x, y = r[0], r[1]   # a room with no drawing: the point where the game places it
+        PINS.append(['bench', round(x), round(y), s, ['flag', flag]])
 
     out = os.path.join(ROOT, 'assets', 'map')
     os.makedirs(out, exist_ok=True)
@@ -679,7 +703,7 @@ def main(game):
            "   unlocked, the toll paid) in js/collectibles.js's form; a plain bench has none (null when\n"
            "   here follows). A pin is there when its scene's piece is; a Flea Caravan bench's here is\n"
            "   where the caravan has to be, a rule over CaravanTroupeLocation. The caravan's come after\n"
-           "   the rest, then the Songclave's bench, which the game doesn't pin.\n"
+           "   the rest, then the Songclave's and the Bellhome's benches, which the game doesn't pin.\n"
            "   PIECES: each map piece, in the order the game draws them (the farthest first): s its\n"
            "   scene, a its area, st its first state (0 Hidden, 1 Rough,\n"
            "   2 Full); w its whole drawing, a CELLS index per sprite (ws: the rules of all but the last)\n"
