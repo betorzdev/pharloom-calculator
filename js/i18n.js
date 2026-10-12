@@ -244,7 +244,7 @@
     mapCardClose:   { es: 'Cerrar', en: 'Close' },
     /* The Map's admin mode (js/app-map-admin.js, #…&admin=1): for the maintainer, not a visitor's screen. */
     admTitle:       { es: 'Admin · Mapa', en: 'Admin · Map' },
-    admCount:       { es: '{m} movidas · {h} ocultas · {a} añadidas', en: '{m} moved · {h} hidden · {a} added' },
+    admCount:       { es: '{m} movidas · {h} ocultas', en: '{m} moved · {h} hidden' },
     admPending:     { es: '{n} sin guardar', en: '{n} unsaved' },
     admHint:        { es: 'Elige una marca para moverla: arrástrala, o usa las flechas (Mayús: pasos grandes).', en: 'Pick a mark to move it: drag it, or use the arrow keys (Shift: big steps).' },
     admData:        { es: 'Datos', en: 'Data' },
@@ -253,16 +253,6 @@
     admHide:        { es: 'Ocultar', en: 'Hide' },
     admShow:        { es: 'Mostrar', en: 'Show' },
     admIsHidden:    { es: 'Oculta: no sale en el mapa.', en: "Hidden: it isn't on the map." },
-    admDelete:      { es: 'Borrar', en: 'Delete' },
-    admAct:         { es: 'Acto', en: 'Act' },
-    admCheck:       { es: 'Comprobación en la partida', en: 'Check in the save' },
-    admCheckHint:   { es: 'Como en js/collectibles.js; el id, el del objeto en la sala. Vacía: sale siempre.', en: "As in js/collectibles.js; the id, the object's in the room. Empty: always shown." },
-    admCheckBad:    { es: 'No es una comprobación válida.', en: "That isn't a valid check." },
-    admAdd:         { es: 'Añadir', en: 'Add' },
-    admAddStop:     { es: 'Dejar de añadir', en: 'Stop adding' },
-    admAddPick:     { es: 'Elige qué añadir; luego toca el mapa donde va.', en: 'Pick what to add, then tap the map where it goes.' },
-    admAddHint:     { es: '{layer}: toca el mapa donde va. Esc para terminar.', en: '{layer}: tap the map where it goes. Esc to stop.' },
-    admNoRoom:      { es: 'Ahí no hay ninguna sala.', en: "There's no room there." },
     admUndo:        { es: 'Deshacer', en: 'Undo' },
     admSave:        { es: 'Guardar', en: 'Save' },
     admCopy:        { es: 'Copiar', en: 'Copy' },
@@ -273,7 +263,6 @@
     admNoServer:    { es: 'Sin servidor (npm run admin): solo copiar', en: 'No server (npm run admin): copy only' },
     admMoved:       { es: 'Movidas', en: 'Moved' },
     admHidden:      { es: 'Ocultas', en: 'Hidden' },
-    admAdded:       { es: 'Añadidas', en: 'Added' },
     mapMissing:     { es: 'Lo que falta', en: 'Missing' },
     mapPlaces:      { es: 'Lugares', en: 'Places' },
     mapNames:       { es: 'Nombres de zona', en: 'Area names' },
@@ -287,16 +276,24 @@
     mapFrom:        { es: 'Tu banco anterior', en: 'Your previous bench' },
     mapClosed:      { es: 'sin abrir', en: 'not open yet' },
     mapToll:        { es: 'sin pagar el peaje', en: 'toll not paid' },
-    mapGroup_hundred: { es: 'Para el 100 %', en: 'Towards 100%' },
+    mapGroup_upgrades: { es: 'Mejoras', en: 'Upgrades' },
+    mapGroup_crest:   { es: 'Blasón', en: 'Crest' },   // PANE_TOOLS
+    mapGroup_items:   { es: 'Objetos', en: 'Items' },
     mapGroup_places:  { es: 'Lugares', en: 'Places' },
     mapGroup_fights:  { es: 'Combates', en: 'Fights' },
     mapGroup_people:  { es: 'Gente', en: 'People' },
+    mapGroup_quests:  { es: 'Tareas', en: 'Tasks' },   // PANE_QUESTS
     mapGroup_extras:  { es: 'Coleccionables', en: 'Collectibles' },
     mapGroup_secrets: { es: 'Secretos', en: 'Secrets' },
     mapGroup_game:    { es: 'Tu partida', en: 'Your game' },
     mapShows:       { es: 'Qué se ve en el mapa', en: 'What the map shows' },
     mapShowAll:     { es: 'Mostrar todo', en: 'Show all' },
     mapHideAll:     { es: 'Esconder todo', en: 'Hide all' },
+    mapOnlyHundred: { es: 'Solo el 100 %', en: 'Only the 100%' },
+    mapToolsOut:    { es: 'Fuera del 100 %', en: 'Outside the 100%' },
+    mapToolUpgrade: { es: 'Mejora de {tool}: no suma aparte al 100 %', en: 'Upgrades {tool}: it doesn\'t add to the 100% on its own' },
+    mapArtOut:      { es: 'No cuenta para el 100 %', en: 'It doesn\'t count for the 100%' },
+    mapToolLent:    { es: 'Te la presta un deseo y te la quita al cumplirlo: no cuenta para el 100 %', en: 'A wish lends it and takes it back once done: it doesn\'t count for the 100%' },
     mapGroupShow:   { es: 'Mostrar todo el grupo', en: 'Show the whole group' },
     mapGroupHide:   { es: 'Esconder todo el grupo', en: 'Hide the whole group' },
     mapFoldOpen:    { es: 'Abrir {g}', en: 'Open {g}' },
@@ -323,6 +320,10 @@
     mapLayer_givers:{ es: 'Quien pide un deseo', en: 'Who asks for a wish' },
     mapLayer_giver1:{ es: 'Pide un deseo', en: 'Asks for a wish' },
     mapLayer_people:{ es: 'Quien da algo del 100 %', en: 'Who gives a 100% thing' },
+    // The wishes and the main objectives (js/spots.js TASKS). No game source: written for context.
+    mapLayer_wspots:{ es: 'Dónde se cumple un deseo', en: 'Where a wish is done' },
+    mapLayer_qitems:{ es: 'Lo que pide un deseo', en: 'What a wish asks for' },
+    mapLayer_goals: { es: 'Objetivos', en: 'Objectives' },
     mapLayer_cocoon:{ es: 'Tu capullo', en: 'Your cocoon' },
     mapLayer_journal: { es: 'Diario', en: 'Journal' },   // PANE_JOURNAL
     'mapExtra_bone-scroll':        { es: 'Pergamino óseo', en: 'Bone Scroll' },   // INV_NAME_R_BONE_RECORD
@@ -331,7 +332,7 @@
     'mapExtra_rune-harp':          { es: 'Arpa rúnica', en: 'Rune Harp' },   // INV_NAME_R_WEAVER_RECORD
     'mapExtra_psalm-cylinder':     { es: 'Cilindro de salmo', en: 'Psalm Cylinder' },   // INV_NAME_R_PSALM_CYL
     'mapExtra_arcane-egg':         { es: 'Huevo arcano', en: 'Arcane Egg' },   // INV_NAME_R_ANCIENT_EGG
-    mapExtra_mossberry: { es: 'Baya musgosa', en: 'Mossberry' },   // INV_NAME_MOSSBERRY
+    mapExtra_mossberry: { es: 'Baya musgosa', en: 'Mossberry' },
     mapExtra_silkeater: { es: 'Devoraseda', en: 'Silkeater' },   // INV_NAME_SILK_GRUB
     mapExtra_memento:   { es: 'Recuerdos', en: 'Mementos' },   // COLLECTION_HEADING_MOMENTOS
     mapExtra_bellhome:  { es: 'Hogar campana', en: 'Bellhome' },   // BELLHOME
@@ -342,8 +343,56 @@
     mapBell:        { es: 'Santuario de Campana de {area}', en: '{area} Bellshrine' },
     mapLock:        { es: 'Puerta cerrada', en: 'Locked door' },
     mapLockKey:     { es: 'Se abre con: {key}', en: 'Opened with: {key}' },
+    // What opens a way (the Map's Passages): the game names none of these, so written for context.
+    mapGroup_passage:   { es: 'Pasos', en: 'Passages' },
+    mapLayer_levers:    { es: 'Palancas', en: 'Levers' },
+    mapLayer_gates:     { es: 'Rejas', en: 'Gates' },
+    mapLayer_shortcuts: { es: 'Atajos', en: 'Shortcuts' },
+    mapLayer_silkwalls: { es: 'Muros de seda', en: 'Silk walls' },
+    mapLever:       { es: 'Palanca', en: 'Lever' },
+    mapPlate:       { es: 'Placa de presión', en: 'Pressure plate' },
+    mapGate:        { es: 'Reja', en: 'Gate' },
+    mapShortcut:    { es: 'Atajo', en: 'Shortcut' },
+    mapSilkwall:    { es: 'Muro de seda', en: 'Silk wall' },
+    mapSilkwallNote:{ es: 'Se corta con la {skill}.', en: 'Cut with {skill}.' },   // {skill}: Silkspear's name, the game's
+    // The area maps (each mark carries its own name, the game's), and the rosaries and shell shards
+    // lying in a room (each its item's name).
+    mapExtra_map:      { es: 'Mapas', en: 'Maps' },   // PANE_MAP, in the plural
+    mapExtra_rosaries: { es: 'Rosarios', en: 'Rosaries' },   // INV_NAME_COIN
+    mapExtra_shards:   { es: 'Fragmentos de coraza', en: 'Shell Shards' },   // INV_NAME_SHARD
+    mapMapFound:    { es: 'Se consigue en esta sala.', en: 'Had in this room.' },
+    mapMapShakra:   { es: '{npc} lo vende por {price} rosarios desde que la ves en esta zona.', en: '{npc} sells it for {price} rosaries once you\'ve seen her in this area.' },   // {npc}: MAPPER_MAIN
+    // The keys, key items, lifts, loose rosaries, small cocoons and hidden corners: the game names
+    // none of these groups, so written for context (each key and item carries its own game name).
+    mapLayer_keys:     { es: 'Llaves', en: 'Keys' },
+    mapLayer_lifts:    { es: 'Ascensores', en: 'Lifts' },
+    mapExtra_keyitems: { es: 'Objetos clave', en: 'Key items' },
+    mapExtra_cocoons:  { es: 'Capullos de seda', en: 'Silk cocoons' },
+    mapExtra_beads:    { es: 'Rosarios sueltos', en: 'Loose rosaries' },
+    mapExtra_hidden:   { es: 'Rincones ocultos', en: 'Hidden corners' },
+    mapLift:        { es: 'Ascensor', en: 'Lift' },
+    mapCocoon:      { es: 'Capullo de seda', en: 'Silk cocoon' },
+    mapBead:        { es: 'Rosarios sueltos', en: 'Loose rosaries' },
+    mapHidden:      { es: 'Rincón oculto', en: 'Hidden corner' },
+    mapHiddenNote:  { es: 'Lo que tapa partes de esta sala hasta que entras: {n}.', en: 'What covers parts of this room until you walk in: {n}.' },
+    // Eva's rewards: {npc} CREST_UPG_SHRINE_MAIN, {crest} CREST_HUNTER_NAME, {vest} UI_MSG_TITLE_EXTRASLOT_NAME.
+    mapExtra_eva:   { es: 'Lo que da {npc}', en: 'What {npc} gives' },
+    mapEvaHunter:   { es: '{crest}, evolución {n}', en: '{crest}, evolution {n}' },
+    mapEvaYellow:   { es: '{vest}: ranura amarilla', en: '{vest}: yellow slot' },
+    mapEvaBlue:     { es: '{vest}: ranura azul', en: '{vest}: blue slot' },
+    mapEvaMeet:     { es: '{npc} la da al conocerla.', en: '{npc} gives it on meeting her.' },
+    mapEvaSlots:    { es: '{npc} lo da con {n} ranuras abiertas en tus blasones, sin contar el de {crest}.', en: '{npc} gives it at {n} slots open across your Crests, the {crest} Crest aside.' },
+    mapEvaHave:     { es: 'Tienes {n}.', en: 'You have {n}.' },
     mapScrounge:    { es: 'Scrounge', en: 'Scrounge' },   // BELLHART_RELICDEALER_MAIN
     mapScroungeNote:{ es: 'Compra las reliquias.', en: 'Buys the relics.' },
+    mapLayer_npc:   { es: 'El resto de la gente', en: 'Everyone else' },
+    mapMet:         { es: 'Ya os habéis visto', en: 'You\'ve met' },
+    mapNotMet:      { es: 'Aún no os habéis visto', en: 'Not met yet' },
+    mapNpcSpots:    { es: 'Aparece en {n} sitios, según el acto y lo que hayas hecho.', en: 'Turns up in {n} places, by act and by what you\'ve done.' },
+    mapNpcUnsure:   { es: 'Va y viene por Telalejana: la partida no dice dónde está ahora.', en: 'Comes and goes around Pharloom: the save doesn\'t say where now.' },
+    mapTrade_couriers: { es: 'Ofrecen deseos de reparto.', en: 'Offer delivery wishes.' },
+    mapTrade_druid:    { es: 'Cambia bayas musgosas por rosarios.', en: 'Trades Mossberries for rosaries.' },
+    mapTrade_creige:   { es: 'Vende bebidas.', en: 'Sells drinks.' },
     mapCocoonNote:  { es: 'Donde caíste por última vez: tus rosarios te esperan ahí.', en: 'Where you last fell: your rosaries wait there.' },
     mapUnmapped:    { es: 'Aún no tienes su mapa', en: 'You don\'t have its map yet' },
     mapAreaRooms:   { es: '{n} de {m} salas visitadas', en: '{n} of {m} rooms visited' },
@@ -356,7 +405,7 @@
     mapToJournal:   { es: 'Ver en el Diario', en: 'See in the Journal' },
     mapRung:        { es: 'Ya suena', en: 'Rung' },
     mapNotRung:     { es: 'Aún sin tocar', en: 'Not rung yet' },
-    mapShakraNote:  { es: 'Vende los mapas de cada zona, y se mueve por Telalejana.', en: 'Sells each area\'s map, and moves around Pharloom.' },
+    mapShakraNote:  { es: 'Vende {n} mapas de zona y se mueve por Telalejana; los otros {m} se encuentran.', en: 'Sells {n} area maps and moves around Pharloom; the other {m} are found.' },
     mapShakraLeft:  { es: 'Te faltan los mapas de: {list}', en: 'Maps you don\'t have: {list}' },
     mapShakraAll:   { es: 'Tienes todos sus mapas.', en: 'You have all her maps.' },
     mapSells:       { es: 'Del 100 %: {list}', en: 'For 100%: {list}' },
@@ -366,6 +415,12 @@
     mapWishesLeft:  { es: 'Deseos sin cumplir: {list}', en: 'Wishes still open: {list}' },
     mapWishesNone:  { es: 'No quedan deseos por cumplir.', en: 'No wishes left open.' },
     mapKills:       { es: '{n} de {m} derrotados', en: '{n} of {m} defeated' },
+    mapTaskFor:     { es: 'Lo pide el deseo «{wish}».', en: 'The wish "{wish}" asks for it.' },
+    mapWishGranted: { es: 'Deseo concedido', en: 'Wish Granted' },   // WISH_GRANTED
+    mapDone:        { es: 'Cumplido', en: 'Done' },
+    mapNotDone:     { es: 'Sin cumplir', en: 'Not done yet' },
+    mapToWall:      { es: 'Ver el muro de deseos', en: 'See the Wishwall' },
+    mapToGiver:     { es: 'Ver quién lo pide', en: 'See who asks for it' },
 
     /* Combat: your build against one enemy (js/app-fight.js) */
     ftToWin:        { es: 'tajos para ganar', en: 'slashes to win' },

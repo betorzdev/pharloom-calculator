@@ -40,13 +40,14 @@ the work up reads it first, then the step it's on.
 | 1 | **The shell**: header, screen bar (desktop and phone), the screen's frame and title, footer and About, the atmosphere | **Built** (28 Sep) | [`04-shell-variants.html`](04-shell-variants.html) |
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html` |
-| 4 | Inventory (`game`) | **Built** (28 Sep; purse 11 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html` |
+| 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
-| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct) | [`12-map-variants.html`](12-map-variants.html) |
+| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct) | [`12-map-variants.html`](12-map-variants.html) |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds) | [`15-journal-variants.html`](15-journal-variants.html) |
 | 8 | Crest (`tools`) | **Built** (28 Sep) | [`18-crest-variants.html`](18-crest-variants.html) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
 | 10 | **Built** (28 Sep) · The static pages (`tools/pages*.js`: `bosses/`, `es/jefes/`, the landing folders): they inherit steps 1 and 2; only what's theirs | To do | |
+| 6c | The Map's people: everyone in the world and every place that sells | **Built** (11 Oct) | `30-map-people-variants.html` (kept out of the repo) |
 | 6b | The Map's admin mode (`#view=map&admin=1`): the panel, adding, the save check, hide and delete, the marks | **Built** (11 Oct) | `30-map-admin-variants.html` (kept out of the repo) |
 
 ## Step 1 · The shell
@@ -447,6 +448,15 @@ Albert chose **silk 2 · beads on a thread**. Built:
   Mementos on shelves of their own, read from the Map's EXTRAS. Free mode keeps them in
   `pharloom.progress`. The Rosary_Set_* save names are the game's own item assets (checked
   against `kb/data/game/pickups.json`).
+- **Retouch, the masks** (11 October 2026): ten equal columns across the field left each mask
+  small at the left of its own, far apart, the row short of the count. Drawn in
+  `26-inventory-masks-variants.html` (kept out of the repo): **A · together, as the HUD**, B ·
+  edge to edge, C · together and large, D · two fives. Albert chose **A**: a tight row from the
+  left, the masks a step larger (`--sp-8`), as the HUD and the save slots draw them.
+- **Retouch, the silk** (11 October 2026): under the masks drawn together, the beads spread
+  across the field looked loose. Drawn in `26-inventory-silk-variants.html` (kept out of the
+  repo): **A · beads together**, B · the HUD's spool, C · nine and nine. Albert chose **A**: the
+  same beads on their thread, strung tight from the left, the thread drawn bead by bead.
 
 ## Step 5 · Progress
 
@@ -720,6 +730,101 @@ the screen; `css/app.css` .mp-legend to .mp-inside):
 - The counts: had of total in a save (complete in `--good`), a plain count for what isn't had
   (benches, shops, people), the total in Free mode.
 - The closing note is gone (`mapNote`, with `mapAll` and `mapNone`).
+
+### Passages: levers, gates, doors, shortcuts (11 October 2026)
+
+Albert, setting the Map beside mapgenie's: things are missing (its Locked Door 89, Lever 58,
+Shortcut 26, Needolin Door 5, Silk Wall 2). His rule: only what the save records, so each mark goes
+had when the save says it's open. The game's 590 scenes, read with UnityPy, give 87 levers, 16
+pressure plates, 37 gates, 25 doors a key opens, 44 shortcuts (31 of them the one-way walls already
+among the breakable walls) and 2 silk walls, each an object with a `PersistentBoolItem` of its own
+(checked against his two 100% saves). The Needolin's doors keep nothing in the save. Options drawn
+in a variants page (not kept in the repo), over the real map
+and selector: 1 · where (A a new group, B a set in Places, C in Secrets); 2 · the one-way walls (A
+to Shortcuts, B left with the walls); 3 · the plates (A with the levers, B out); 4 · the locked
+doors (A grown, with the save's check, B as they were); 5 · the icons (A the game's art where it
+reads, a glyph where it doesn't, B glyphs, C all art); 6 · on at first (A none, B levers and gates,
+C all).
+
+Albert chose **all the A's**. Built: `tools/extract-pickups.py` writes them (`doors`, with each
+scene's own name from `aa/catalog.bin`), `tools/gen-spots.js` appends them to EXTRAS as
+`['bool', Scene, id]`, and `js/app-map.js` draws a new group after Places, «Passages» (Levers, Gates, Locked
+doors, Shortcuts, Silk walls), off at first; the lever and plate icons come from the game's atlases
+(`tools/extract-map-icons.py`), gates, shortcuts and silk walls take glyphs.
+
+### The wishes and the main objectives (11 October 2026)
+
+Albert, setting the Map beside mapgenie's: things are missing. Its Quests group has Quest Item
+(66), Objective (21) and Wish (48, each where it's done), and Other has Lore (80) and Point of
+Interest (11); the Map had only the Wishwalls and who asks for a wish. His rule: everything added
+has to follow the save. Read from the game's files (`tools/extract-wishes.py`): 22 things a wish
+asks for, each with its flag, held or its wish granted; 30 places where a wish is done (the map's
+own pins for the deliveries and the Steel Sentinel, whose save keeps the three spots it chose and
+which were seen; the Herald's seven flags; the room where the game ends a rescue or a fight); the
+map's own pins for 19 of the 20 main objectives. The 57 inscriptions keep nothing in the save;
+nothing was found for mapgenie's points of interest. Options drawn over the real map, Free mode
+and Save 1 (`31-map-quests-variants.html`, not kept in the repo): 1 · the selector A a group
+«Tareas» (`PANE_QUESTS`), B inside People, C one set with a caret; 2 · the marks A each thing's own
+art (its inventory picture, its wish type's emblem, the map's objective pin), B the map's pins, C
+an emblem per layer; 3 · the link to the Wishwall A a button in the card, B and a thread on the
+map, C the name only; 4 · the things A only what a wish asks for, B and the key items (Cogheart
+Pieces, Pristine Cores, the Ruined Tool, the Crawbell, the Craw Summons); 5 · the inscriptions A
+left out, B as places with no state.
+
+Albert chose **all the A's**, with a later step counting an objective done. Built (`js/spots.js`
+TASKS, `js/app-map.js` the group «Tasks» and the card, `js/savefile.js` the checks `held` and
+`steel`): People keeps Shakra and who gives a thing of the 100%.
+
+### The people (11 October 2026)
+
+Albert, setting the Map against mapgenie's (146 NPC marks, 23 vendors): «faltan cosas». The site
+had 7 people (who gives a thing of the 100%, and Scrounge), the wish givers, 10 shop rooms and
+Shakra. Read from the game's scenes: 79 title keys on talkers (an NpcDialogueTitle, or the title
+a talker's own FSM shows), named by the dump's `<KEY>_SUPER/_MAIN/_SUB`; their figures from their
+own tk2d sprites; and for each, the playerData their scripts read. The game's ShopOwners are
+exactly js/shop.js's nine vendors; outside them only the Couriers' wish shop, the Moss Druid
+(Mossberries for rosaries) and Creige (drinks) trade. Options drawn over three of Albert's saves
+(Acts 1, 2 and 3): 1 · the selector (A one more switch «Everyone else», B one switch for all, C by
+role); 2 · the mark (A the herald, B their own figure, head and shoulders, C the whole figure with
+no disc); 3 · met (A not met yet dimmed, B met dimmed, C met hidden); 4 · who moves (A only where
+the save says now, B every spot with the current one lit); 5 · crowded rooms (A each at their own
+point, B a count from afar); 6 · vendors (A in Places with the shop pin, B in People).
+
+Albert chose **all the A's**. Built: `tools/extract-people.py` (kb/data/game/people.json and
+assets/map/people/), `tools/gen-people.js` (js/people.js, in npm run data: a hand table of met
+flags, departures and where-now rules that stops when a field isn't one the person's scripts read
+or a room isn't theirs), `js/savefile.js` keeps those fields (`peopleVars`), and js/app-map.js
+draws «Everyone else» (54 people) and the three traders. The 29 with no met flag are places with
+no state. Garmond is always «comes and goes» (his garmondIn<Room> flags stay set after he moves
+on); Sherma, Gilly, the Green Prince, Ballow, Mister Mushroom, Flick, Reed and the Caretaker show
+every spot: their numbers or flags aren't tied to rooms yet. Styx and Crull and Benjin were
+checked and don't trade, so the vendors are 13 (Scrounge's in People), not the 15 first counted.
+
+### The groups, without «Towards 100%» (12 October 2026)
+
+Albert, setting the Map beside mapgenie's (its 56 Tools against the site's 51): grouping by what
+counts for the 100% is the wrong axis; redistribute it. The game has 57 Tools: 51 count, four are
+upgrades that replace one that counts (Curvesickle, Druid's Eyes, Claw Mirrors, the Shell
+Satchel), and a wish lends two and takes them back (the Snare Setter, the Needle Phial). First
+round (a variants page not kept in the repo): 1 · groups A like the Inventory, B like mapgenie
+(Equipment, Collectibles, Items), C only an Equipment group; 2 · the six A a layer of their own, B
+inside the Tools, C left out; 3 · the 100% in one tap A a button, B nothing. Albert liked B
+but not a copy of mapgenie's, so a second round made it ours: 1 · the Tools A in the game's
+«Blasón» (PANE_TOOLS), by slot colour, B one layer under «Equipment»; 2 · the upgrades A a group of
+their own, B spread as mapgenie does; 2b · its name A «Mejoras», B «Salud, seda y aguja», C «Lo
+que te hace crecer» («Hornet» read as confusing); 3 · the six A in their colour, apart, B a layer,
+C out; 4 · the 100% A a diamond on each layer that counts and the button, B the button, C nothing.
+
+Albert chose **«Mejoras»**, the **«Blasón» by colour**, the six as a **sub-layer that unfolds**
+(as the sibling's sets do), and **only the button**. Built (`js/app-map.js` GROUPS, SETS, HUNDRED,
+OTHER_TOOLS; `tools/gen-spots.js` places the six where each lies, Druid's Eyes with the Moss Druid,
+the Needle Phial with Zylotol): Upgrades (Mask Shards, Spool Fragments, Silk Hearts, Needle, Pouch,
+Kit, abilities), Crest (the Tools, one switch whose caret opens Red, Blue, Yellow and Outside the
+100%; Crests; Silk Skills), Collectibles (Lockets, Fleas, Old Hearts, Melodies, Everbloom, the
+relics, Mementos, the Bellhome, silk cocoons, Eva's), Items (Craftmetal, Pale Oil, Mossberries,
+Silkeaters, maps, key items, rosaries, shell shards), then Places to Secrets as they were. «Only the
+100%» beside «Show all · Hide all» turns on just the layers that count. A save's earlier `tools`
+layer reads as the three colours.
 
 ## Step 7 · Journal
 

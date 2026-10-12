@@ -1,0 +1,2127 @@
+{
+ "benches": {
+  "abyss_12": [
+   -392.274,
+   46.285
+  ],
+  "ant_17": [
+   -387.014,
+   58.448
+  ],
+  "arborium_04": [
+   -388.655,
+   75.455
+  ],
+  "bellshrine_coral": [
+   -403.136,
+   69.141
+  ],
+  "belltown": [
+   -395.837,
+   60.71
+  ],
+  "bellway_city": [
+   -387.264,
+   70.834
+  ],
+  "bone_04": [
+   -404.597,
+   57.265
+  ],
+  "bone_10_act3_bench": [
+   -399.906,
+   56.341
+  ],
+  "bone_12": [
+   -395.79,
+   56.522
+  ],
+  "bone_east_10_room": [
+   -380.331,
+   57.468
+  ],
+  "bone_east_27_top": [
+   -376.484,
+   59.666
+  ],
+  "bone_east_umbrella": [
+   -377.887,
+   54.541
+  ],
+  "bone_east_weavehome": [
+   -371.499,
+   54.05
+  ],
+  "bonetown": [
+   -406.465,
+   55.91
+  ],
+  "clover_20": [
+   -370.144,
+   61.933
+  ],
+  "cog_bench": [
+   -391.788,
+   74.449
+  ],
+  "crawl_08": [
+   -412.438,
+   59.18
+  ],
+  "dock_10": [
+   -390.256,
+   52.749
+  ],
+  "greymoor_02": [
+   -379.599,
+   61.497
+  ],
+  "halfway_01": [
+   -386.715,
+   61.814
+  ],
+  "hang_01": [
+   -398.026,
+   74.753
+  ],
+  "hang_06b": [
+   -392.813,
+   75.307
+  ],
+  "library_08": [
+   -383.835,
+   73.217
+  ],
+  "library_10": [
+   -382.631,
+   70.843
+  ],
+  "mosstown_02c": [
+   -403.947,
+   58.042
+  ],
+  "mosstown_03_bot": [
+   -402.583,
+   58.83
+  ],
+  "organ_01": [
+   -383.975,
+   66.927
+  ],
+  "room_forge_right": [
+   -389.513,
+   54.537
+  ],
+  "room_huntress": [
+   -379.964,
+   73.97
+  ],
+  "room_pinstress": [
+   -413.636,
+   65.072
+  ],
+  "shadow_08_left": [
+   -374.01,
+   70.974
+  ],
+  "slab_06": [
+   -404.15,
+   71.608
+  ],
+  "slab_16_b": [
+   -405.344,
+   75.594
+  ],
+  "slab_16_bench": [
+   -404.522,
+   74.948
+  ],
+  "slab_20": [
+   -402.858,
+   73.813
+  ],
+  "song_10": [
+   -396.972,
+   72.178
+  ],
+  "song_18": [
+   -393.325,
+   72.662
+  ],
+  "tube_hub_destroyed": [
+   -389.334,
+   79.942
+  ],
+  "tube_hub_right": [
+   -389.321,
+   79.951
+  ],
+  "tut_03": [
+   -408.655,
+   54.849
+  ],
+  "tut_04": [
+   -409.986,
+   55.084
+  ],
+  "under_01b": [
+   -398.978,
+   65.619
+  ],
+  "under_07b": [
+   -397.289,
+   69.487
+  ],
+  "under_08": [
+   -395.084,
+   68.132
+  ],
+  "under_17": [
+   -390.59,
+   68.051
+  ],
+  "ward_01": [
+   -392.636,
+   71.104
+  ],
+  "weave_07": [
+   -404.606,
+   53.102
+  ],
+  "wisp_04": [
+   -389.922,
+   64.248
+  ]
+ },
+ "ends": {
+  "A Pinsmiths Tools": [
+   [
+    "belltown_room_pinsmith",
+    "Plinney Inside",
+    25.81,
+    8.36
+   ]
+  ],
+  "Bellbeast Rescue": [
+   [
+    "belltown_basement",
+    "Bone Beast NPC",
+    17.73,
+    95.22
+   ],
+   [
+    "bellway_01_boss",
+    "Bone Beast NPC",
+    81.62,
+    8.37
+   ],
+   [
+    "bellway_02_boss",
+    "Bone Beast NPC",
+    72.42,
+    16.71
+   ],
+   [
+    "bellway_03_boss",
+    "Bone Beast NPC",
+    80.02,
+    8.35
+   ],
+   [
+    "bellway_04_boss",
+    "Bone Beast NPC",
+    81.16,
+    8.51
+   ],
+   [
+    "bellway_08",
+    "Bone Beast NPC",
+    84.62,
+    13.49
+   ],
+   [
+    "bellway_aqueduct",
+    "Bone Beast NPC",
+    62.78,
+    22.06
+   ],
+   [
+    "bellway_city",
+    "Bone Beast NPC",
+    50.06,
+    11.16
+   ],
+   [
+    "bellway_shadow",
+    "Bone Beast NPC",
+    62.78,
+    22.06
+   ],
+   [
+    "bone_05_bellway",
+    "Bone Beast NPC",
+    95.82,
+    6.16
+   ],
+   [
+    "shellwood_19",
+    "Bone Beast NPC",
+    67.55,
+    6.43
+   ],
+   [
+    "slab_06",
+    "Bone Beast NPC",
+    34.62,
+    6.37
+   ]
+  ],
+  "Black Thread Pt5 Heart": [
+   [
+    "tut_04",
+    "Snail Shamans Set",
+    47.96,
+    6.74
+   ]
+  ],
+  "Brolly Get": [
+   [
+    "bone_east_umbrella",
+    "Seamstress",
+    27.63,
+    8.37
+   ]
+  ],
+  "Courier Delivery Bonebottom": [
+   [
+    "bonetown",
+    "Fixer NPC Standing",
+    290.82,
+    7.37
+   ],
+   [
+    "bonetown",
+    "Fixer Pilgrim Bench Repair",
+    241.07,
+    7.26
+   ]
+  ],
+  "Courier Delivery Dustpens Slave": [
+   [
+    "dust_11",
+    "Grub Farmer NPC",
+    104.38,
+    9.72
+   ]
+  ],
+  "Courier Delivery Fixer": [
+   [
+    "bone_10",
+    "Fixer Sitting Bone_10",
+    30.78,
+    15.33
+   ]
+  ],
+  "Courier Delivery Fleatopia": [
+   [
+    "aqueduct_05_caravan",
+    "Caravan Troupe Leader Fleatopia NPC",
+    123.04,
+    9.85
+   ],
+   [
+    "aqueduct_05_festival",
+    "Flea Games Host NPC",
+    156.01,
+    11.45
+   ],
+   [
+    "aqueduct_05_festival",
+    "Flea Games Host NPC",
+    179.14,
+    9.02
+   ],
+   [
+    "aqueduct_05_festival",
+    "Flea Games Host NPC",
+    200.91,
+    7.54
+   ]
+  ],
+  "Courier Delivery Mask Maker": [
+   [
+    "peak_mask_maker",
+    "Peak Mask Maker",
+    13.68,
+    7.78
+   ]
+  ],
+  "Courier Delivery Pilgrims Rest": [
+   [
+    "bone_east_10_room",
+    "Pilgrims Rest Shop",
+    44.1,
+    13.85
+   ]
+  ],
+  "Courier Delivery Songclave": [
+   [
+    "song_enclave",
+    "Enclave Caretaker",
+    59.92,
+    7.64
+   ],
+   [
+    "song_enclave",
+    "Sherma Caretaker",
+    60.13,
+    7.46
+   ]
+  ],
+  "Crow Feathers": [
+   [
+    "halfway_01",
+    "HH Bartender",
+    31.29,
+    6.02
+   ]
+  ],
+  "Doctor Curse Cure": [
+   [
+    "belltown_room_doctor",
+    "Doctor Fly",
+    25.87,
+    10.32
+   ]
+  ],
+  "Flea Games": [
+   [
+    "aqueduct_05_festival",
+    "Caravan_States",
+    127.27,
+    7.78
+   ]
+  ],
+  "Garmond Black Threaded": [
+   [
+    "bellway_08",
+    "Memento Pickup",
+    71.81,
+    12.14
+   ],
+   [
+    "coral_33",
+    "Memento Pickup",
+    34.73,
+    60.26
+   ],
+   [
+    "coral_33",
+    "Memento Pickup",
+    53.75,
+    62.32
+   ],
+   [
+    "coral_35",
+    "Memento Pickup",
+    23.43,
+    25.25
+   ],
+   [
+    "coral_43",
+    "Memento Pickup",
+    101.09,
+    5.29
+   ]
+  ],
+  "Grand Gate Bellshrines": [
+   [
+    "coral_10",
+    "Gate Quest Ender",
+    0.0,
+    0.0
+   ],
+   [
+    "coral_judge_arena",
+    "Gate NPC",
+    51.88,
+    24.65
+   ],
+   [
+    "coral_judge_arena",
+    "Gate Quest Ender",
+    0.0,
+    0.0
+   ]
+  ],
+  "Great Gourmand": [
+   [
+    "song_09b",
+    "Gourmand Servant",
+    109.64,
+    132.79
+   ]
+  ],
+  "Journal": [
+   [
+    "halfway_01",
+    "Nuu",
+    25.15,
+    20.85
+   ]
+  ],
+  "Mossberry Collection 1": [
+   [
+    "mosstown_02c",
+    "Moss Creep NPC",
+    45.71,
+    5.67
+   ]
+  ],
+  "Mr Mushroom": [
+   [
+    "bone_east_14b",
+    "Mr Mushroom NPC",
+    245.99,
+    21.42
+   ],
+   [
+    "bonetown",
+    "Mr Mushroom NPC",
+    297.58,
+    25.35
+   ],
+   [
+    "cradle_destroyed_challenge_01",
+    "Mr Mushroom NPC",
+    27.27,
+    524.31
+   ],
+   [
+    "greymoor_06",
+    "Mr Mushroom NPC",
+    10.98,
+    188.33
+   ],
+   [
+    "peak_08b",
+    "Mr Mushroom NPC",
+    284.79,
+    103.4
+   ],
+   [
+    "slab_10c",
+    "Mr Mushroom NPC",
+    6.74,
+    13.36
+   ],
+   [
+    "tut_03",
+    "Mr Mushroom NPC",
+    57.46,
+    18.31
+   ]
+  ],
+  "Pinstress Battle": [
+   [
+    "peak_07",
+    "NPC",
+    38.05,
+    90.49
+   ]
+  ],
+  "Roach Killing": [
+   [
+    "dust_shack",
+    "Dust Traders",
+    22.41,
+    6.93
+   ]
+  ],
+  "Save City Merchant": [
+   [
+    "song_07",
+    "City Merchant Meet",
+    43.82,
+    5.91
+   ]
+  ],
+  "Save City Merchant Bridge": [
+   [
+    "arborium_11",
+    "City Merchant Bridge",
+    129.82,
+    12.19
+   ]
+  ],
+  "Save Courier Short": [
+   [
+    "aspid_01",
+    "Courier Short",
+    27.02,
+    112.16
+   ]
+  ],
+  "Save Courier Tall": [
+   [
+    "dust_04",
+    "Courier Tall",
+    21.46,
+    69.48
+   ]
+  ],
+  "Save Sherma": [
+   [
+    "ward_09",
+    "Sherma Rescue NPC",
+    60.68,
+    5.33
+   ]
+  ],
+  "Save the Fleas Pre": [
+   [
+    "bone_10",
+    "Caravan Troupe Leader Bone NPC",
+    37.72,
+    16.85
+   ]
+  ],
+  "Shakra Final Quest": [
+   [
+    "shadow_24",
+    "Mapper Master NPC",
+    270.89,
+    9.65
+   ]
+  ],
+  "Shell Flowers": [
+   [
+    "room_witch",
+    "Wood Witch",
+    16.78,
+    8.36
+   ]
+  ],
+  "Soul Snare": [
+   [
+    "song_enclave",
+    "Enclave Caretaker",
+    59.92,
+    7.64
+   ]
+  ],
+  "Sprintmaster Race": [
+   [
+    "sprintmaster_cave",
+    "Sprintmaster Runner",
+    63.79,
+    8.51
+   ]
+  ],
+  "Steel Sentinel Pt2": [
+   [
+    "coral_37",
+    "Steel Sentinel",
+    65.67,
+    8.64
+   ]
+  ],
+  "The Threadspun Town": [
+   [
+    "belltown_shrine",
+    "Boss Scene",
+    60.82,
+    17.69
+   ]
+  ],
+  "Wood Witch Curse": [
+   [
+    "room_witch",
+    "Wood Witch",
+    16.78,
+    8.36
+   ]
+  ]
+ },
+ "fields": {
+  "MushroomQuestFound1": [
+   [
+    "tut_03",
+    "Mr Mushroom NPC",
+    57.46,
+    18.31
+   ]
+  ],
+  "MushroomQuestFound2": [
+   [
+    "bonetown",
+    "Mr Mushroom NPC",
+    297.58,
+    25.35
+   ]
+  ],
+  "MushroomQuestFound3": [
+   [
+    "bone_east_14b",
+    "Mr Mushroom NPC",
+    245.99,
+    21.42
+   ]
+  ],
+  "MushroomQuestFound4": [
+   [
+    "greymoor_06",
+    "Mr Mushroom NPC",
+    10.98,
+    188.33
+   ]
+  ],
+  "MushroomQuestFound5": [
+   [
+    "slab_10c",
+    "Mr Mushroom NPC",
+    6.74,
+    13.36
+   ]
+  ],
+  "MushroomQuestFound6": [
+   [
+    "peak_08b",
+    "DJ Get Sequence",
+    279.5,
+    105.53
+   ],
+   [
+    "peak_08b",
+    "Mr Mushroom NPC",
+    284.79,
+    103.4
+   ]
+  ],
+  "MushroomQuestFound7": [
+   [
+    "cradle_destroyed_challenge_01",
+    "Mr Mushroom NPC",
+    27.27,
+    524.31
+   ]
+  ]
+ },
+ "icons": {
+  "Ant Trapper Item": "gilly_doll",
+  "Beastfly Remains": "m_crest",
+  "Broodmother Remains": "brood_mother_eye_icon",
+  "Coral Ingredient": "_0007_quest_coral_nut",
+  "Extractor Machine Pins": "hornet_extractor_pins",
+  "Pickled Roach Egg": "century_maggot_icon",
+  "Rock Roller Item": "bone_roller_rock_icon",
+  "Shell Flower": "_0007_shell_flower_purple_icon",
+  "Silver Bellclapper": "hornet_icon_bell_clapper",
+  "Skull King Fragment": "m_tusk",
+  "Snare Soul Bell Hermit": "snail_icon__0001_bell_hermit_soul",
+  "Snare Soul Churchkeeper": "snail_icon__0000_churchkeeper_soul",
+  "Snare Soul Swamp Bug": "snail_icon__0001_bell_swamp_soul",
+  "Vintage Nectar": "vintage_nectar_item",
+  "Wood Witch Item": "mandrake_icon0000"
+ },
+ "items": {
+  "Ant Trapper Item": [
+   [
+    "bone_east_18b",
+    "CollectableItemPickup",
+    "Collectable Item Pickup",
+    "Collectable Item Pickup",
+    107.45,
+    19.25
+   ]
+  ],
+  "Beastfly Remains": [
+   [
+    "bone_east_08_boss_beastfly",
+    "CollectableItemPickup",
+    "Collectable Item Pickup",
+    "Collectable Item Pickup",
+    80.94,
+    7.07
+   ]
+  ],
+  "Broodmother Remains": [
+   [
+    "slab_16b",
+    "CollectableItemPickup",
+    "Collectable Item Pickup - Broodmother Eye",
+    null,
+    61.57,
+    4.68
+   ]
+  ],
+  "Coral Ingredient": [
+   [
+    "coral_41",
+    "CollectableItemPickup",
+    "Collectable Item Pickup",
+    "Collectable Item Pickup",
+    7.12,
+    36.44
+   ]
+  ],
+  "Extractor Machine Pins": [
+   [
+    "dust_shack",
+    "PlayMakerFSM",
+    "Dust Traders",
+    null,
+    22.41,
+    6.93
+   ]
+  ],
+  "Pickled Roach Egg": [
+   [
+    "dust_chef",
+    "CollectableItemPickup",
+    "Return Pickup",
+    "Return Pickup",
+    41.77,
+    34.36
+   ]
+  ],
+  "Rock Roller Item": [
+   [
+    "bone_01",
+    "PersistentEnemyItemDrop",
+    "Rock Roller",
+    "Rock Roller_item_Rock Rollers",
+    78.46,
+    78.95
+   ],
+   [
+    "bone_04",
+    "PersistentEnemyItemDrop",
+    "Rock Roller",
+    "Rock Roller_item_Rock Rollers",
+    165.86,
+    22.31
+   ],
+   [
+    "bone_06",
+    "PersistentEnemyItemDrop",
+    "Rock Roller",
+    "Rock Roller_item_Rock Rollers",
+    84.94,
+    40.44
+   ],
+   [
+    "bone_07",
+    "PersistentEnemyItemDrop",
+    "Rock Roller",
+    "Rock Roller_item_Rock Rollers",
+    60.63,
+    25.83
+   ]
+  ],
+  "Shell Flower": [
+   [
+    "shellwood_01",
+    "PlayMakerFSM",
+    "Nectar Pickup",
+    "Nectar Pickup",
+    92.29,
+    83.31
+   ],
+   [
+    "shellwood_02",
+    "PlayMakerFSM",
+    "Nectar Pickup",
+    "Nectar Pickup",
+    74.01,
+    79.72
+   ],
+   [
+    "shellwood_10",
+    "PlayMakerFSM",
+    "Nectar Pickup",
+    "Nectar Pickup",
+    9.52,
+    27.14
+   ],
+   [
+    "shellwood_15",
+    "PlayMakerFSM",
+    "Nectar Pickup",
+    "Nectar Pickup",
+    13.33,
+    6.25
+   ],
+   [
+    "shellwood_20",
+    "PlayMakerFSM",
+    "Nectar Pickup",
+    "Nectar Pickup",
+    42.58,
+    34.63
+   ],
+   [
+    "shellwood_26",
+    "PlayMakerFSM",
+    "Nectar Pickup",
+    "Nectar Pickup",
+    25.52,
+    84.28
+   ]
+  ],
+  "Silver Bellclapper": [
+   [
+    "belltown_04",
+    "QuestDropper",
+    "Quest Bell Dropper",
+    null,
+    70.03,
+    24.49
+   ],
+   [
+    "belltown_04",
+    "QuestDropper",
+    "Quest Bell Dropper (1)",
+    null,
+    64.99,
+    12.62
+   ],
+   [
+    "belltown_04",
+    "QuestDropper",
+    "Quest Bell Dropper (2)",
+    null,
+    31.58,
+    35.11
+   ],
+   [
+    "belltown_04",
+    "QuestDropper",
+    "Quest Bell Dropper (3)",
+    null,
+    74.04,
+    53.05
+   ],
+   [
+    "belltown_04",
+    "QuestDropper",
+    "Quest Bell Dropper (4)",
+    null,
+    64.8,
+    70.27
+   ],
+   [
+    "belltown_04",
+    "QuestDropper",
+    "Quest Bell Dropper (5)",
+    null,
+    18.51,
+    93.58
+   ],
+   [
+    "belltown_04",
+    "QuestDropper",
+    "Quest Bell Dropper (6)",
+    null,
+    13.22,
+    79.08
+   ],
+   [
+    "belltown_basement_03",
+    "QuestDropper",
+    "Quest Bell Dropper",
+    null,
+    95.43,
+    121.12
+   ],
+   [
+    "belltown_basement_03",
+    "QuestDropper",
+    "Quest Bell Dropper (1)",
+    null,
+    89.98,
+    95.09
+   ],
+   [
+    "belltown_basement_03",
+    "QuestDropper",
+    "Quest Bell Dropper (2)",
+    null,
+    73.0,
+    85.07
+   ],
+   [
+    "belltown_basement_03",
+    "QuestDropper",
+    "Quest Bell Dropper (3)",
+    null,
+    104.0,
+    85.08
+   ],
+   [
+    "belltown_basement_03",
+    "QuestDropper",
+    "Quest Bell Dropper (4)",
+    null,
+    96.94,
+    55.09
+   ],
+   [
+    "belltown_basement_03",
+    "QuestDropper",
+    "Quest Bell Dropper (5)",
+    null,
+    74.75,
+    41.17
+   ],
+   [
+    "belltown_basement_03",
+    "QuestDropper",
+    "Quest Bell Dropper (6)",
+    null,
+    95.08,
+    28.38
+   ]
+  ],
+  "Skull King Fragment": [
+   [
+    "bone_15",
+    "CollectableItemPickup",
+    "Collectable Item Pickup",
+    "Collectable Item Pickup",
+    66.24,
+    13.59
+   ],
+   [
+    "bone_15",
+    "CollectableItemPickup",
+    "Collectable Item Pickup",
+    "Collectable Item Pickup",
+    98.58,
+    13.64
+   ]
+  ],
+  "Snare Soul Bell Hermit": [
+   [
+    "belltown_basement_03",
+    "PlayMakerFSM",
+    "Bell Hermit",
+    null,
+    94.69,
+    103.89
+   ]
+  ],
+  "Snare Soul Churchkeeper": [
+   [
+    "bonetown",
+    "PlayMakerFSM",
+    "Churchkeeper",
+    null,
+    71.98,
+    8.31
+   ]
+  ],
+  "Snare Soul Swamp Bug": [
+   [
+    "shadow_bilehaven_room",
+    "CollectableItemPickup",
+    "Collectable Item Pickup (1)",
+    "Collectable Item Pickup (1)",
+    26.11,
+    6.52
+   ]
+  ],
+  "Vintage Nectar": [
+   [
+    "ant_08",
+    "CollectableItemPickup",
+    "Collectable Item Pickup",
+    "Collectable Item Pickup",
+    44.85,
+    24.93
+   ]
+  ],
+  "Wood Witch Item": [
+   [
+    "shadow_20",
+    "CollectableItemPickup",
+    "Collectable Item Pickup (1)",
+    "Collectable Item Pickup (1)",
+    107.98,
+    48.88
+   ]
+  ]
+ },
+ "names": {
+  "Ant Trapper Item": "INV_NAME_ANT_TRAPPER_ITEM",
+  "Beastfly Remains": "INV_NAME_BEASTFLY_REMAINS",
+  "Broodmother Remains": "INV_NAME_BROODMOTHER_REMAINS",
+  "Coral Ingredient": "INV_NAME_GOURMAND_CORAL_INGREDIENT",
+  "Extractor Machine Pins": "ITEM_EXTRACTOR_PINS_NAME",
+  "Pickled Roach Egg": "INV_NAME_PICKLEDEGG",
+  "Rock Roller Item": "INV_NAME_ROCK_ROLLER_ITEM",
+  "Shell Flower": "INV_NAME_SHELL_FLOWER",
+  "Silver Bellclapper": "INV_NAME_BELLCLAPPER_ITEM",
+  "Skull King Fragment": "INV_NAME_SK_FRAGMENT",
+  "Snare Soul Bell Hermit": "INV_NAME_SNARE_SOUL_BELLHERMIT",
+  "Snare Soul Churchkeeper": "INV_NAME_SNARE_SOUL_CHURCHKEEPER",
+  "Snare Soul Swamp Bug": "INV_NAME_SNARE_SOUL_SWAMP",
+  "Vintage Nectar": "INV_NAME_GOURMAND_VINTAGE_NECTAR",
+  "Wood Witch Item": "INV_NAME_WITCH_ITEM"
+ },
+ "pins": [
+  [
+   "Quest_Pin_Architect",
+   "Quest_Icons_Act_2_0000_1",
+   "Citadel Ascent Melody Architect",
+   null,
+   "",
+   -391.332,
+   78.805
+  ],
+  [
+   "Quest_Pin_BellbeastRescue_Aqueduct",
+   "quest_map_icon_bellbeast",
+   "Bellbeast Rescue",
+   null,
+   "",
+   -377.565,
+   75.787
+  ],
+  [
+   "Quest_Pin_BellbeastRescue_Belltown",
+   "quest_map_icon_bellbeast",
+   "Bellbeast Rescue",
+   null,
+   "",
+   -395.3,
+   60.79
+  ],
+  [
+   "Quest_Pin_BellbeastRescue_Bone",
+   "quest_map_icon_bellbeast",
+   "Bellbeast Rescue",
+   null,
+   "",
+   -402.876,
+   57.665
+  ],
+  [
+   "Quest_Pin_BellbeastRescue_BoneforestEast",
+   "quest_map_icon_bellbeast",
+   "Bellbeast Rescue",
+   null,
+   "",
+   -379.813,
+   55.666
+  ],
+  [
+   "Quest_Pin_BellbeastRescue_Bonetown",
+   "quest_map_icon_bellbeast",
+   "Bellbeast Rescue",
+   null,
+   "",
+   -405.957,
+   55.965
+  ],
+  [
+   "Quest_Pin_BellbeastRescue_City",
+   "quest_map_icon_bellbeast",
+   "Bellbeast Rescue",
+   null,
+   "",
+   -387.603,
+   70.958
+  ],
+  [
+   "Quest_Pin_BellbeastRescue_CoralTower",
+   "quest_map_icon_bellbeast",
+   "Bellbeast Rescue",
+   null,
+   "",
+   -408.909,
+   66.326
+  ],
+  [
+   "Quest_Pin_BellbeastRescue_Docks",
+   "quest_map_icon_bellbeast",
+   "Bellbeast Rescue",
+   null,
+   "",
+   -391.808,
+   54.92
+  ],
+  [
+   "Quest_Pin_BellbeastRescue_Greymoor",
+   "quest_map_icon_bellbeast",
+   "Bellbeast Rescue",
+   null,
+   "",
+   -387.312,
+   61.032
+  ],
+  [
+   "Quest_Pin_BellbeastRescue_Peak",
+   "quest_map_icon_bellbeast",
+   "Bellbeast Rescue",
+   null,
+   "",
+   -405.066,
+   71.666
+  ],
+  [
+   "Quest_Pin_BellbeastRescue_Shadow",
+   "quest_map_icon_bellbeast",
+   "Bellbeast Rescue",
+   null,
+   "",
+   -380.674,
+   66.863
+  ],
+  [
+   "Quest_Pin_BellbeastRescue_Shellwood",
+   "quest_map_icon_bellbeast",
+   "Bellbeast Rescue",
+   null,
+   "",
+   -403.737,
+   62.29
+  ],
+  [
+   "Quest_Pin_BellbeastRescue_Waterwheel",
+   "quest_map_icon_bellbeast",
+   "Bellbeast Rescue",
+   null,
+   "",
+   -378.841,
+   62.685
+  ],
+  [
+   "Quest_Pin_Bellshrine_Bellhart",
+   "quest_map_icon_songshrines",
+   "Grand Gate Bellshrines",
+   null,
+   "",
+   -394.961,
+   61.602
+  ],
+  [
+   "Quest_Pin_Bellshrine_BoneForest",
+   "quest_map_icon_songshrines",
+   "Grand Gate Bellshrines",
+   null,
+   "",
+   -401.218,
+   57.607
+  ],
+  [
+   "Quest_Pin_Bellshrine_Greymoor",
+   "quest_map_icon_songshrines",
+   "Grand Gate Bellshrines",
+   null,
+   "",
+   -380.326,
+   62.006
+  ],
+  [
+   "Quest_Pin_Bellshrine_Shellwood",
+   "quest_map_icon_songshrines",
+   "Grand Gate Bellshrines",
+   null,
+   "",
+   -404.94,
+   62.242
+  ],
+  [
+   "Quest_Pin_Bellshrine_Wilds",
+   "quest_map_icon_songshrines",
+   "Grand Gate Bellshrines",
+   null,
+   "",
+   -387.519,
+   55.205
+  ],
+  [
+   "Quest_Pin_Bellshrines_Final",
+   "quest_map_icon_grand_gate_final",
+   "Grand Gate Bellshrines",
+   null,
+   "",
+   -403.328,
+   67.556
+  ],
+  [
+   "Quest_Pin_BlackThread_Pt1",
+   "quest_map_icon_shaman",
+   "Black Thread Pt1 Shamans",
+   null,
+   "",
+   -409.996,
+   55.131
+  ],
+  [
+   "Quest_Pin_BlackThread_Pt2",
+   "quest_map_icon_shaman",
+   "Black Thread Pt2 Abyss",
+   null,
+   "",
+   -391.388,
+   46.124
+  ],
+  [
+   "Quest_Pin_BlackThread_Pt3",
+   "quest_map_icon_shaman",
+   "Black Thread Pt3 Escape",
+   null,
+   "",
+   -391.608,
+   53.296
+  ],
+  [
+   "Quest_Pin_BlackThread_Pt4",
+   "quest_map_icon_shaman",
+   "Black Thread Pt4 Return",
+   null,
+   "",
+   -409.998,
+   55.137
+  ],
+  [
+   "Quest_Pin_BlackThread_Pt5_Ant",
+   "Map_Q_icon_hunter_queen",
+   "Black Thread Pt5 Heart Ant",
+   null,
+   "",
+   -375.027,
+   59.136
+  ],
+  [
+   "Quest_Pin_BlackThread_Pt5_Coral",
+   "Map_Q_icon_coral_king",
+   "Black Thread Pt5 Heart Coral",
+   null,
+   "",
+   -414.092,
+   70.786
+  ],
+  [
+   "Quest_Pin_BlackThread_Pt5_Flower",
+   "Map_Q_icon_flower_queen",
+   "Black Thread Pt5 Heart Flower",
+   null,
+   "",
+   -405.098,
+   65.395
+  ],
+  [
+   "Quest_Pin_BlackThread_Pt5_Return",
+   "quest_map_icon_shaman",
+   "Black Thread Pt5 Heart",
+   null,
+   "",
+   -409.998,
+   55.137
+  ],
+  [
+   "Quest_Pin_BlackThread_Pt6_Flower",
+   "quest_map_icon_act3_finale",
+   "Black Thread Pt6 Flower",
+   null,
+   "",
+   -391.378,
+   46.075
+  ],
+  [
+   "Quest_Pin_Citadel_Ascent",
+   "quest_map_icon_citadel_seeker",
+   "Citadel Ascent",
+   null,
+   "",
+   -391.36,
+   74.846
+  ],
+  [
+   "Quest_Pin_Citadel_Ascent_Lift",
+   "quest_map_icon_citadel_seeker",
+   "Citadel Ascent Lift",
+   null,
+   "",
+   -391.388,
+   79.716
+  ],
+  [
+   "Quest_Pin_Citadel_Ascent_Melodies",
+   "quest_map_icon_citadel_seeker",
+   "Citadel Ascent Melodies",
+   null,
+   "",
+   -391.358,
+   74.836
+  ],
+  [
+   "Quest_Pin_Citadel_Investigate",
+   "quest_map_icon_citadel_seeker",
+   "Citadel Investigate",
+   null,
+   "",
+   -390.608,
+   72.846
+  ],
+  [
+   "Quest_Pin_Citadel_Seeker",
+   "quest_map_icon_citadel_seeker",
+   "Citadel Seeker",
+   null,
+   "",
+   -402.413,
+   67.582
+  ],
+  [
+   "Quest_Pin_Conductor",
+   "Quest_Icons_Act_2_0002_1",
+   "Citadel Ascent Melody Conductor",
+   null,
+   "",
+   -396.32,
+   75.656
+  ],
+  [
+   "Quest_Pin_Delivery_Bonebottom",
+   "quest_map_icon_courier",
+   "Courier Delivery Bonebottom",
+   null,
+   "",
+   -405.934,
+   55.563
+  ],
+  [
+   "Quest_Pin_Delivery_Dustpens",
+   "quest_map_icon_courier",
+   "Courier Delivery Dustpens Slave",
+   null,
+   "",
+   -377.912,
+   64.197
+  ],
+  [
+   "Quest_Pin_Delivery_Fixer",
+   "quest_map_icon_courier",
+   "Courier Delivery Fixer",
+   null,
+   "",
+   -399.708,
+   56.386
+  ],
+  [
+   "Quest_Pin_Delivery_Fleatopia",
+   "quest_map_icon_courier",
+   "Courier Delivery Fleatopia",
+   null,
+   "",
+   -371.722,
+   74.145
+  ],
+  [
+   "Quest_Pin_Delivery_GourmandMeat",
+   "quest_map_icon_courier",
+   null,
+   "Courier Supplies Gourmand",
+   "",
+   -392.523,
+   73.275
+  ],
+  [
+   "Quest_Pin_Delivery_MaskMaker",
+   "quest_map_icon_courier",
+   "Courier Delivery Mask Maker",
+   null,
+   "",
+   -413.767,
+   78.698
+  ],
+  [
+   "Quest_Pin_Delivery_PilgrimsRest",
+   "quest_map_icon_courier",
+   "Courier Delivery Pilgrims Rest",
+   null,
+   "",
+   -380.06,
+   57.376
+  ],
+  [
+   "Quest_Pin_Delivery_Songclave",
+   "quest_map_icon_courier",
+   "Courier Delivery Songclave",
+   null,
+   "",
+   -385.138,
+   74.856
+  ],
+  [
+   "Quest_Pin_DivingBell_Pt1",
+   "quest_map_icon_shaman",
+   "Diving Bell Pt1 Inspect",
+   null,
+   "",
+   -386.589,
+   52.161
+  ],
+  [
+   "Quest_Pin_DivingBell_Pt2",
+   "quest_map_icon_shaman",
+   "Diving Bell Pt2 Ballow",
+   null,
+   "",
+   -388.568,
+   54.746
+  ],
+  [
+   "Quest_Pin_DivingBell_Pt3",
+   "quest_map_icon_shaman",
+   "Diving Bell Pt3 Descend",
+   null,
+   "",
+   -386.59,
+   52.172
+  ],
+  [
+   "Quest_Pin_Haunted_Bellhart",
+   "quest_map_icon_haunted_town",
+   "The Threadspun Town",
+   null,
+   "",
+   -395.661,
+   61.602
+  ],
+  [
+   "Quest_Pin_Librarian",
+   "Quest_Icons_Act_2_0001_1",
+   "Citadel Ascent Melody Librarian",
+   null,
+   "",
+   -383.968,
+   71.03
+  ],
+  [
+   "Quest_Pin_Librarian Return",
+   "Quest_Icons_Act_2_0001_1",
+   "Citadel Ascent Melody Librarian Return",
+   null,
+   "",
+   -383.848,
+   73.155
+  ],
+  [
+   "Quest_Pin_Silk_Defeat",
+   "quest_map_icon_citadel_seeker",
+   "Citadel Ascent Silk Defeat",
+   null,
+   "",
+   -391.828,
+   82.646
+  ],
+  [
+   "Quest_Pin_Silk_Defeat_Snare",
+   "quest_map_icon_snare",
+   "Silk Defeat Snare",
+   null,
+   "",
+   -391.028,
+   82.646
+  ],
+  [
+   "Quest_Pin_SteelSoul_Aqueduct_05",
+   "pin_steel_servant",
+   "Steel Sentinel",
+   null,
+   "Aqueduct_05",
+   -369.088,
+   74.656
+  ],
+  [
+   "Quest_Pin_SteelSoul_Aspid_01",
+   "pin_steel_servant",
+   "Steel Sentinel",
+   null,
+   "Aspid_01",
+   -407.152,
+   61.173
+  ],
+  [
+   "Quest_Pin_SteelSoul_Bone_East_14",
+   "pin_steel_servant",
+   "Steel Sentinel",
+   null,
+   "Bone_East_14",
+   -375.168,
+   55.056
+  ],
+  [
+   "Quest_Pin_SteelSoul_Coral_28",
+   "pin_steel_servant",
+   "Steel Sentinel",
+   null,
+   "Coral_28",
+   -414.702,
+   70.548
+  ],
+  [
+   "Quest_Pin_SteelSoul_Final",
+   "pin_steel_servant",
+   "Steel Sentinel",
+   null,
+   "",
+   -415.288,
+   54.956
+  ],
+  [
+   "Quest_Pin_SteelSoul_Hang_08",
+   "pin_steel_servant",
+   "Steel Sentinel",
+   null,
+   "Hang_08",
+   -393.308,
+   78.736
+  ],
+  [
+   "Quest_Pin_SteelSoul_Pt2",
+   "pin_steel_servant",
+   "Steel Sentinel Pt2",
+   null,
+   "",
+   -404.378,
+   64.286
+  ],
+  [
+   "Quest_Pin_SteelSoul_Shellwood_26",
+   "pin_steel_servant",
+   "Steel Sentinel",
+   null,
+   "Shellwood_26",
+   -398.778,
+   63.574
+  ]
+ ],
+ "quests": {
+  "A Pinsmiths Tools": {
+   "emblem": "qi_wayfarer",
+   "main": false,
+   "targets": [
+    "Pale_Oil"
+   ],
+   "type": "Wayfarer"
+  },
+  "Ant Trapper": {
+   "emblem": "qi_hunt_grand",
+   "main": false,
+   "targets": [
+    "Ant Trapper Item"
+   ],
+   "type": "Grand Hunt"
+  },
+  "Beastfly Hunt": {
+   "emblem": "qi_hunt_grand",
+   "main": false,
+   "targets": [
+    "Beastfly Remains"
+   ],
+   "type": "Grand Hunt"
+  },
+  "Bellbeast Rescue": {
+   "main": true,
+   "targets": []
+  },
+  "Belltown House Mid": {
+   "emblem": "qi_donate",
+   "main": false,
+   "targets": [],
+   "type": "Donate"
+  },
+  "Belltown House Start": {
+   "emblem": "qi_donate",
+   "main": false,
+   "targets": [],
+   "type": "Donate"
+  },
+  "Black Thread Pt0": {
+   "main": true,
+   "targets": []
+  },
+  "Black Thread Pt1 Shamans": {
+   "main": true,
+   "targets": []
+  },
+  "Black Thread Pt2 Abyss": {
+   "main": true,
+   "targets": []
+  },
+  "Black Thread Pt3 Escape": {
+   "main": true,
+   "targets": []
+  },
+  "Black Thread Pt4 Return": {
+   "main": true,
+   "targets": []
+  },
+  "Black Thread Pt5 Heart": {
+   "main": true,
+   "targets": []
+  },
+  "Black Thread Pt6 Flower": {
+   "main": true,
+   "targets": []
+  },
+  "Brolly Get": {
+   "emblem": "qi_hunt",
+   "main": false,
+   "targets": [
+    "Common Spine"
+   ],
+   "type": "Hunt"
+  },
+  "Broodmother Hunt": {
+   "emblem": "qi_hunt_grand",
+   "main": false,
+   "targets": [
+    "Broodmother Remains"
+   ],
+   "type": "Grand Hunt"
+  },
+  "Building Materials": {
+   "emblem": "qi_donate",
+   "main": false,
+   "targets": [],
+   "type": "Donate"
+  },
+  "Building Materials (Bridge)": {
+   "emblem": "qi_donate",
+   "main": false,
+   "targets": [],
+   "type": "Donate"
+  },
+  "Building Materials (Statue)": {
+   "emblem": "qi_donate",
+   "main": false,
+   "targets": [],
+   "type": "Donate"
+  },
+  "Citadel Ascent": {
+   "main": true,
+   "targets": []
+  },
+  "Citadel Ascent Lift": {
+   "main": true,
+   "targets": []
+  },
+  "Citadel Ascent Melodies": {
+   "main": true,
+   "targets": []
+  },
+  "Citadel Ascent Silk Defeat": {
+   "main": true,
+   "targets": []
+  },
+  "Citadel Investigate": {
+   "main": true,
+   "targets": []
+  },
+  "Citadel Seeker": {
+   "main": true,
+   "targets": []
+  },
+  "Courier Delivery Bonebottom": {
+   "emblem": "qi_courier",
+   "main": false,
+   "targets": [
+    "Courier Supplies"
+   ],
+   "type": "Courier"
+  },
+  "Courier Delivery Dustpens Slave": {
+   "emblem": "qi_courier",
+   "main": false,
+   "targets": [
+    "Courier Supplies Slave"
+   ],
+   "type": "Courier"
+  },
+  "Courier Delivery Fixer": {
+   "emblem": "qi_courier",
+   "main": false,
+   "targets": [
+    "Courier Supplies"
+   ],
+   "type": "Courier"
+  },
+  "Courier Delivery Fleatopia": {
+   "emblem": "qi_courier",
+   "main": false,
+   "targets": [
+    "Courier Supplies"
+   ],
+   "type": "Courier"
+  },
+  "Courier Delivery Mask Maker": {
+   "emblem": "qi_courier",
+   "main": false,
+   "targets": [
+    "Courier Supplies Mask Maker"
+   ],
+   "type": "Courier"
+  },
+  "Courier Delivery Pilgrims Rest": {
+   "emblem": "qi_courier",
+   "main": false,
+   "targets": [
+    "Courier Supplies"
+   ],
+   "type": "Courier"
+  },
+  "Courier Delivery Songclave": {
+   "emblem": "qi_courier",
+   "main": false,
+   "targets": [
+    "Courier Supplies"
+   ],
+   "type": "Courier"
+  },
+  "Crow Feathers": {
+   "emblem": "qi_hunt",
+   "main": false,
+   "targets": [
+    "Crow Feather"
+   ],
+   "type": "Hunt"
+  },
+  "Crow Feathers Pre": {
+   "emblem": "qi_hunt",
+   "main": false,
+   "targets": [],
+   "type": "Hunt"
+  },
+  "Destroy Thread Cores": {
+   "emblem": "qi_hunt",
+   "main": false,
+   "targets": [],
+   "type": "Hunt"
+  },
+  "Diving Bell Pt1 Inspect": {
+   "main": true,
+   "targets": []
+  },
+  "Diving Bell Pt2 Ballow": {
+   "main": true,
+   "targets": []
+  },
+  "Diving Bell Pt3 Descend": {
+   "main": true,
+   "targets": []
+  },
+  "Doctor Curse Cure": {
+   "emblem": "qi_wayfarer",
+   "main": false,
+   "targets": [
+    "Extractor Machine Pins"
+   ],
+   "type": "Wayfarer"
+  },
+  "Extractor Blue": {
+   "emblem": "qi_gather",
+   "main": false,
+   "targets": [
+    "Plasmium"
+   ],
+   "type": "Gather"
+  },
+  "Extractor Blue Worms": {
+   "emblem": "qi_gather",
+   "main": false,
+   "targets": [
+    "Plasmium Blood"
+   ],
+   "type": "Gather"
+  },
+  "Fine Pins": {
+   "emblem": "qi_hunt",
+   "main": false,
+   "targets": [
+    "Fine Pin"
+   ],
+   "type": "Hunt"
+  },
+  "Flea Games": {
+   "emblem": "qi_wayfarer",
+   "main": false,
+   "targets": [],
+   "type": "Wayfarer"
+  },
+  "Flea Games Pre": {
+   "emblem": "qi_wayfarer",
+   "main": false,
+   "targets": [],
+   "type": "Wayfarer"
+  },
+  "Garmond Black Threaded": {
+   "emblem": "qi_wayfarer",
+   "main": false,
+   "targets": [],
+   "type": "Wayfarer"
+  },
+  "Grand Gate Bellshrines": {
+   "main": true,
+   "targets": []
+  },
+  "Great Gourmand": {
+   "emblem": "qi_gather",
+   "main": false,
+   "targets": [
+    "Mossberry Stew",
+    "Vintage Nectar",
+    "Courier Supplies Gourmand",
+    "Coral Ingredient",
+    "Pickled Roach Egg"
+   ],
+   "type": "Gather"
+  },
+  "Huntress Quest": {
+   "emblem": "qi_hunt",
+   "main": false,
+   "targets": [
+    "Enemy Morsel Seared",
+    "Enemy Morsel Shredded",
+    "Enemy Morsel Speared"
+   ],
+   "type": "Hunt"
+  },
+  "Huntress Quest Runt": {
+   "emblem": "qi_hunt",
+   "main": false,
+   "targets": [
+    "Enemy Morsel Seared",
+    "Enemy Morsel Shredded",
+    "Enemy Morsel Speared"
+   ],
+   "type": "Hunt"
+  },
+  "Journal": {
+   "emblem": "qi_journal",
+   "main": false,
+   "targets": [],
+   "type": "Journal"
+  },
+  "Mossberry Collection 1": {
+   "emblem": "qi_gather",
+   "main": false,
+   "targets": [
+    "Mossberry"
+   ],
+   "type": "Gather"
+  },
+  "Mossberry Collection Pre": {
+   "emblem": "qi_gather",
+   "main": false,
+   "targets": [],
+   "type": "Gather"
+  },
+  "Mr Mushroom": {
+   "emblem": "qi_herald",
+   "main": false,
+   "targets": [],
+   "type": "Herald"
+  },
+  "Pilgrim Rags": {
+   "emblem": "qi_hunt",
+   "main": false,
+   "targets": [
+    "Pilgrim Rag"
+   ],
+   "type": "Hunt"
+  },
+  "Pinstress Battle": {
+   "emblem": "qi_wayfarer",
+   "main": false,
+   "targets": [],
+   "type": "Wayfarer"
+  },
+  "Pinstress Battle Pre": {
+   "emblem": "qi_wayfarer",
+   "main": false,
+   "targets": [],
+   "type": "Wayfarer"
+  },
+  "Roach Killing": {
+   "emblem": "qi_hunt",
+   "main": false,
+   "targets": [
+    "Roach Corpse Item"
+   ],
+   "type": "Hunt"
+  },
+  "Rock Rollers": {
+   "emblem": "qi_hunt",
+   "main": false,
+   "targets": [
+    "Rock Roller Item"
+   ],
+   "type": "Hunt"
+  },
+  "Save City Merchant": {
+   "emblem": "qi_wayfarer",
+   "main": false,
+   "targets": [],
+   "type": "Wayfarer"
+  },
+  "Save City Merchant Bridge": {
+   "emblem": "qi_wayfarer",
+   "main": false,
+   "targets": [],
+   "type": "Wayfarer"
+  },
+  "Save Courier Short": {
+   "emblem": "qi_wayfarer",
+   "main": false,
+   "targets": [],
+   "type": "Wayfarer"
+  },
+  "Save Courier Tall": {
+   "emblem": "qi_wayfarer",
+   "main": false,
+   "targets": [],
+   "type": "Wayfarer"
+  },
+  "Save Sherma": {
+   "emblem": "qi_wayfarer",
+   "main": false,
+   "targets": [],
+   "type": "Wayfarer"
+  },
+  "Save the Fleas": {
+   "emblem": "qi_wayfarer",
+   "main": false,
+   "targets": [],
+   "type": "Wayfarer"
+  },
+  "Save the Fleas Pre": {
+   "emblem": "qi_wayfarer",
+   "main": false,
+   "targets": [],
+   "type": "Wayfarer"
+  },
+  "Shakra Final Quest": {
+   "emblem": "qi_wayfarer",
+   "main": false,
+   "targets": [],
+   "type": "Wayfarer"
+  },
+  "Shell Flowers": {
+   "emblem": "qi_gather",
+   "main": false,
+   "targets": [
+    "Shell Flower"
+   ],
+   "type": "Gather"
+  },
+  "Shiny Bell Goomba": {
+   "emblem": "qi_gather",
+   "main": false,
+   "targets": [
+    "Silver Bellclapper"
+   ],
+   "type": "Gather"
+  },
+  "Silk Defeat Snare": {
+   "main": true,
+   "targets": []
+  },
+  "Skull King": {
+   "emblem": "qi_hunt_grand",
+   "main": false,
+   "targets": [
+    "Skull King Fragment"
+   ],
+   "type": "Grand Hunt"
+  },
+  "Song Knight": {
+   "emblem": "qi_wayfarer",
+   "main": false,
+   "targets": [],
+   "type": "Wayfarer"
+  },
+  "Song Pilgrim Cloaks": {
+   "emblem": "qi_hunt",
+   "main": false,
+   "targets": [
+    "Song Pilgrim Cloak"
+   ],
+   "type": "Hunt"
+  },
+  "Songclave Donation 1": {
+   "emblem": "qi_donate",
+   "main": false,
+   "targets": [],
+   "type": "Donate"
+  },
+  "Songclave Donation 2": {
+   "emblem": "qi_donate",
+   "main": false,
+   "targets": [],
+   "type": "Donate"
+  },
+  "Soul Snare": {
+   "emblem": "qi_wayfarer",
+   "main": false,
+   "targets": [
+    "Snare Soul Churchkeeper",
+    "Snare Soul Bell Hermit",
+    "Snare Soul Swamp Bug"
+   ],
+   "type": "Wayfarer"
+  },
+  "Soul Snare Pre": {
+   "emblem": "qi_wayfarer",
+   "main": false,
+   "targets": [],
+   "type": "Wayfarer"
+  },
+  "Sprintmaster Pre": {
+   "emblem": "qi_sprintmaster",
+   "main": false,
+   "targets": [],
+   "type": "Sprint"
+  },
+  "Sprintmaster Race": {
+   "emblem": "qi_sprintmaster",
+   "main": false,
+   "targets": [],
+   "type": "Sprint"
+  },
+  "Steel Sentinel": {
+   "emblem": "qi_steelservant",
+   "main": false,
+   "targets": [],
+   "type": "Steel Sentinel"
+  },
+  "Steel Sentinel Pt2": {
+   "emblem": "qi_steelservant",
+   "main": false,
+   "targets": [],
+   "type": "Steel Sentinel"
+  },
+  "The Threadspun Town": {
+   "main": true,
+   "targets": []
+  },
+  "Tormented Trobbio": {
+   "emblem": "qi_wayfarer",
+   "main": false,
+   "targets": [],
+   "type": "Wayfarer"
+  },
+  "Wood Witch Curse": {
+   "emblem": "qi_wayfarer",
+   "main": false,
+   "targets": [],
+   "type": "Wayfarer"
+  }
+ }
+}

@@ -7,19 +7,32 @@
    whose map isn't bought, the rooms not mapped); "Only what the game shows" leaves it out. In
    Free mode, the whole map before Act 3. On it, everything the game has for each room (js/spots.js, from the game's
    own files), in layers grouped as the selector under the map shows them:
-     Towards 100%   every piece, Tool, Crest, Silk Skill, ability and the Everbloom, where it's
-                    had: lying in its room, its vendor's, its Wishwall's, its boss's arena
+     Upgrades       Mask Shards, Spool Fragments, Silk Hearts, the Needle, Pouch and Kit upgrades
+                    and the abilities, where each is had: lying in its room, its vendor's, its
+                    Wishwall's, its boss's arena
+     Crest          the Tools (one switch, its caret opening them by slot colour, and the six
+                    outside the 100%: four upgrades, two a wish lends), Crests and Silk Skills
      Places         benches, Bellway and Ventrica stations (the game's own pins, dimmed while your
-                    game hasn't opened them), the Bellshrines, the shops and the locked doors
+                    game hasn't opened them), the Bellshrines and the shops; the lifts (off at first)
+     Passages       what opens a way and stays open, each gone once your save has it open: levers
+                    and pressure plates, gates, the doors a key opens and the keys lying, shortcuts
+                    (the one-way walls among them) and silk walls (off at first; design/03-redesign.md,
+                    step 6), whether the save keeps them per room or in playerData
      Fights         the gauntlets and bosses not beaten, the unique spawns
-     People         Shakra's spots, the Wishwalls and who offers a wish still open, and the people
-                    who give a thing of the 100%
-     Collectibles   the relics (one switch, its caret opening the six), Mossberries, Silkeaters,
-                    Mementos, the Bellhome's furnishings
-     Secrets        the rosary and shell shard caches and breakable walls (off at first; from afar,
-                    a count per room)
+     People         Shakra's spots and the people who give a thing of the 100%
+     Tasks          the Wishwalls and who offers a wish still open, where a wish is done, what a
+                    wish asks for, and the main objectives where the game's map pins them
+     Collectibles   Memory Lockets, Lost Fleas, the Old Hearts, Melodies and the Everbloom, the
+                    relics (one switch, its caret opening the six), Mementos, the Bellhome's
+                    furnishings, the small silk cocoons and Eva's rewards
+     Items          Craftmetal, Pale Oil, Mossberries, Silkeaters, the area maps where each is had
+                    (Shakra's spot in its area, or where it lies), the key items, the rosaries and
+                    shell shards lying in a room or given (the Fixer's, the Sprintmaster's)
+     Secrets        the rosary and shell shard caches, breakable walls, loose rosaries and each room's
+                    hidden corners (off at first; from afar, a count per room)
      Your game      your cocoon; the Journal's entries still missing
-   Each layer's switch is the game's own picture, with had of total (in Free mode, the total).
+   Each layer's switch is the game's own picture, with had of total (in Free mode, the total);
+   "Only the 100%" turns on just the layers that count (design/03-redesign.md, step 6).
    In a save, what's had is left out; in Free mode, everything shows, as a guide. The Act filter
    and "what I can reach now" (js/spots.js NEEDS against your abilities) narrow every layer. A tap
    on a mark, or on an area's name, opens its card. Hornet sits at your bench (js/app-hornet.js
@@ -30,6 +43,7 @@
   'use strict';
   const SS = globalThis.SS;
   const M = SS.map, R = SS.rooms, CO = SS.collectibles, D = SS.data, SP = SS.spots, J = SS.journal, QU = SS.quests, HW = SS.how;
+  const PE = SS.people || { PEOPLE: [], TRADE: [] };
   const App = SS.app;
   const { t, pick, esc, NT, brackets, screenHead, prefs, savePrefs, render, actions } = App;
 
@@ -64,7 +78,11 @@
   const piece = (k) => L(k, () => (PIECE_NAME[k] ? t(PIECE_NAME[k]) : itemName(k)), pieceIcon(k));
   const LAYERS = [
     ...['mask-shard', 'spool-fragment', 'needle', 'tool-pouch', 'crafting-kit', 'silk-heart'].map(piece),
-    L('tools', () => t('cat_tools'), 'assets/icons/tools/straight-pin.webp'),
+    // The Tools, by slot colour (the set 'tools'), and the six outside the 100%.
+    L('tools-red', () => t('ct_red'), 'assets/icons/tools/straight-pin.webp'),
+    L('tools-blue', () => t('ct_blue'), 'assets/icons/tools/druids-eye.webp'),
+    L('tools-yellow', () => t('ct_yellow'), 'assets/icons/tools/compass.webp'),
+    L('tools-other', () => t('mapToolsOut'), 'assets/icons/tools/snare-setter.webp'),
     L('crests', () => t('cat_crests'), 'assets/icons/crests/reaper.webp'),
     L('skills', () => t('cat_skills'), 'assets/icons/skills/silkspear.webp'),
     L('arts', () => t('cat_arts'), 'assets/icons/arts/swift-step.webp'),
@@ -75,7 +93,13 @@
     L('ventrica', () => t('mapPlace_ventrica'), PIN('pin_tube_station')),
     L('bellshrine', () => t('mapLayer_bells'), PIN('quest_map_icon_grand_gate_final')),
     L('shop', () => t('mapLayer_shops'), PIN('pin_shop')),
+    L('lift', () => t('mapLayer_lifts'), null),   // the glyph
+    L('lever', () => t('mapLayer_levers'), ICON('_0005_core_lever_02')),
+    L('gate', () => t('mapLayer_gates'), null),   // the glyph
     L('lock', () => t('mapLayer_locks'), ICON('i_slab_key')),
+    L('key', () => t('mapLayer_keys'), ICON('i_token_of_faith')),
+    L('shortcut', () => t('mapLayer_shortcuts'), null),   // the glyph
+    L('silkwall', () => t('mapLayer_silkwalls'), null),   // the glyph
     L('gauntlet', () => t('ftModeGauntlets'), null),   // the first gauntlet's champion (legendArt)
     L('boss', () => t('mapLayer_boss'), FACE('lace')),
     L('spawn', () => t('mapExtra_spawn'), FACE('rhinogrund')),
@@ -83,43 +107,94 @@
     L('wishwall', () => t('mapLayer_wishwalls'), ICON('hornet_inv_pane_icons_0002_wish')),
     L('giver', () => t('mapLayer_givers'), ICON('quest_icon_large__0008_gather')),
     L('person', () => t('mapLayer_people'), ICON('quest_icon_large_0006_herald')),
+    L('npc', () => t('mapLayer_npc'), 'assets/map/people/bellhart-greeter.webp'),
     ...RELICS.map((k) => L(k, () => t('mapExtra_' + k), `assets/icons/extras/${k}.webp`)),
     L('mossberry', () => t('mapExtra_mossberry'), 'assets/icons/extras/mossberry.webp'),
     L('silkeater', () => t('mapExtra_silkeater'), PIN('pin_grub_location')),
     L('memento', () => t('mapExtra_memento'), 'assets/icons/extras/grey-memento.webp'),
     L('bellhome', () => t('mapExtra_bellhome'), PIN('pin_bench_bell')),
+    // The area maps (the inventory's rolled map), and the rosaries and shell shards lying in a room.
+    L('map', () => t('mapExtra_map'), ICON('i_map')),
+    L('rosaries', () => t('mapExtra_rosaries'), 'assets/icons/items/rosary-string.webp'),
+    L('shards', () => t('mapExtra_shards'), 'assets/icons/items/shard-bundle.webp'),
+    L('keyitem', () => t('mapExtra_keyitems'), ICON('cog_heart_pieces')),
+    L('silk-cocoon', () => t('mapExtra_cocoons'), ICON('silk_grub_small_cocoon')),
+    L('eva', () => t('mapExtra_eva', { npc: pick(HW.NPCS.eva) }), 'assets/crests/hunter-3.webp'),
     L('rosary-cache', () => t('mapExtra_rosary'), 'assets/icons/extras/rosary-cache.webp'),
     L('shard-cache', () => t('mapExtra_shard'), 'assets/icons/extras/shard-cache.webp'),
     L('wall', () => t('mapExtra_wall'), null),   // the glyph
+    L('bead', () => t('mapExtra_beads'), 'assets/icons/items/rosaries.webp'),
+    L('masked', () => t('mapExtra_hidden'), null),   // the glyph
     L('cocoon', () => t('mapLayer_cocoon'), PIN('shade_pin')),
     L('journal', () => t('mapLayer_journal'), ICON('hornet_inv_pane_icons_0003_journal')),
+    // The wishes and the main objectives (js/spots.js TASKS): a wish's emblem, a thing it asks for,
+    // the map's own objective pin.
+    L('wspot', () => t('mapLayer_wspots'), ICON('qi_wayfarer')),
+    L('qitem', () => t('mapLayer_qitems'), ICON('_0007_shell_flower_purple_icon')),
+    L('goal', () => t('mapLayer_goals'), PIN('quest_map_icon_citadel_seeker')),
   ];
   const LAYER = new Map(LAYERS.map((l) => [l.id, l]));
   /* The sets: one switch in the selector for several layers, its caret opening them one by one
      (the sibling's, design/24 there). */
-  const SETS = { relics: { name: () => t('mapSet_relics'), art: 'assets/icons/extras/bone-scroll.webp', layers: RELICS } };
-  /* The selector's groups, in this order (design/28-map-selector-variants.html, Albert's choice). */
+  const SETS = { relics: { name: () => t('mapSet_relics'), art: 'assets/icons/extras/bone-scroll.webp', layers: RELICS },
+    tools: { name: () => t('cat_tools'), art: 'assets/icons/tools/straight-pin.webp', layers: ['tools-red', 'tools-blue', 'tools-yellow', 'tools-other'] } };
+  /* The selector's groups, in this order (design/03-redesign.md, step 6, the groups: Albert's
+     choice); what counts for the 100% spread over the first three. */
   const GROUPS = [
-    ['hundred', ['mask-shard', 'spool-fragment', 'needle', 'tool-pouch', 'crafting-kit', 'silk-heart', 'tools', 'crests', 'skills', 'arts',
-      'memory-locket', 'craftmetal', 'pale-oil', 'flea', 'old-heart', 'melody', 'everbloom']],
-    ['places', ['bench', 'bellway', 'ventrica', 'bellshrine', 'shop', 'lock']],
+    ['upgrades', ['mask-shard', 'spool-fragment', 'silk-heart', 'needle', 'tool-pouch', 'crafting-kit', 'arts']],
+    ['crest', ['tools', 'crests', 'skills']],   // PANE_TOOLS
+    ['extras', ['memory-locket', 'flea', 'old-heart', 'melody', 'everbloom', 'relics', 'memento', 'bellhome', 'silk-cocoon', 'eva']],
+    ['items', ['craftmetal', 'pale-oil', 'mossberry', 'silkeater', 'map', 'keyitem', 'rosaries', 'shards']],
+    ['places', ['bench', 'bellway', 'ventrica', 'bellshrine', 'shop', 'lift']],
+    ['passage', ['lever', 'gate', 'lock', 'key', 'shortcut', 'silkwall']],   // design/03-redesign.md, step 6, Passages
     ['fights', ['gauntlet', 'boss', 'spawn']],
-    ['people', ['shakra', 'wishwall', 'giver', 'person']],
-    ['extras', ['relics', 'mossberry', 'silkeater', 'memento', 'bellhome']],
-    ['secrets', ['rosary-cache', 'shard-cache', 'wall']],
+    ['people', ['shakra', 'person', 'npc']],
+    // The game's Tasks (PANE_QUESTS): the wishes and the main objectives (design/03-redesign.md, step 6).
+    ['quests', ['wishwall', 'giver', 'wspot', 'qitem', 'goal']],
+    ['secrets', ['rosary-cache', 'shard-cache', 'wall', 'bead', 'masked']],
     ['game', ['cocoon', 'journal']],
   ];
   const layersOf = (ids) => ids.flatMap((k) => (SETS[k] ? SETS[k].layers : [k]));
   const GROUP_OF = new Map(GROUPS.flatMap(([g, ids]) => layersOf(ids).map((k) => [k, g])));
   const groupName = (g) => t('mapGroup_' + g);
+  // The layers that count for the 100% ("Only the 100%").
+  const HUNDRED = ['mask-shard', 'spool-fragment', 'silk-heart', 'needle', 'tool-pouch', 'crafting-kit', 'arts', 'tools-red', 'tools-blue',
+    'tools-yellow', 'crests', 'skills', 'memory-locket', 'flea', 'old-heart', 'melody', 'everbloom', 'craftmetal', 'pale-oil'];
   // On at first: the whole 100%, the stations, the gauntlets and bosses, and your cocoon.
-  const FIRST_ON = [...layersOf(GROUPS[0][1]), 'bellway', 'ventrica', 'gauntlet', 'boss', 'cocoon'];
+  const FIRST_ON = [...HUNDRED, 'bellway', 'ventrica', 'gauntlet', 'boss', 'cocoon'];
   // So many they'd hide the map: drawn only close up; from afar, a count per room.
-  const FINE = new Set(['rosary-cache', 'shard-cache', 'wall']);
+  const FINE = new Set(['rosary-cache', 'shard-cache', 'wall', 'bead', 'masked']);
   // The layers that only a save can say anything about.
   const OWN_ONLY = new Set(['cocoon', 'journal']);
+  /* Passages: the extras that open a way (js/spots.js EXTRAS, from the game's scenes), each drawn
+     as its layer's: the mark's name, and the game's art where it reads at a mark's size, else the
+     glyph (design/03-redesign.md, step 6). A pressure plate goes among the levers; a one-way wall the completionist
+     lists among the breakable walls goes among the shortcuts. */
+  const DOOR = { lever: { name: 'mapLever', art: '_0005_core_lever_02' }, gate: { name: 'mapGate' }, lock: { name: 'mapLock', art: 'i_slab_key' },
+    shortcut: { name: 'mapShortcut' }, silkwall: { name: 'mapSilkwall' } };
+  const ONE_WAY = /^One Way|Shortcut/;
+  const layerOf = (x) => (x[0] === 'plate' ? 'lever' : x[0] === 'wall' && ONE_WAY.test(x[2][2]) ? 'shortcut' : x[0]);
+  // The doors a key opens that the save keeps (a 'lock' extra), by scene → the key (js/quests.js LOCKS).
+  const LOCK_AT = new Map();
+  for (const x of SP.EXTRAS) {
+    if (x[0] !== 'lock') continue;
+    const k = Object.keys(QU.LOCKS).find((key) => QU.LOCKS[key].some((s) => lower(s) === lower(x[3])));
+    if (k) LOCK_AT.set(lower(x[3]), k);
+  }
+  /* Eva's rewards (js/spots.js EXTRAS 'eva'): the Hunter Crest at its evolution, or the Vesticrest's
+     slot in its colour (the Crest pane's own slot frame). */
+  const evaArt = (r) => (/^hunter-/.test(r) ? `assets/crests/${r}.webp` : (SS.crestFrames || {})[r.slice(5)] || null);
+  const evaName = (r) => (/^hunter-/.test(r) ? t('mapEvaHunter', { crest: pick(D.CRESTS.find((c) => c.id === 'hunter').name), n: r.slice(7) })
+    : t(r === 'vest-yellow' ? 'mapEvaYellow' : 'mapEvaBlue', { vest: pick(D.VESTICREST.name) }));
+  // A mark's own name where its layer's is a plural.
+  const ONE = { lift: 'mapLift', 'silk-cocoon': 'mapCocoon', bead: 'mapBead', masked: 'mapHidden' };
+  // The Tools outside the 100% (js/collectibles.js TOOLS, none a COUNTED group's first).
+  const OTHER_TOOLS = Object.keys(CO.TOOLS).filter((id) => !CO.COUNTED.some((ids) => ids[0] === id));
+  const SHAKRA_MAPS = SP.EXTRAS.filter((x) => x[0] === 'map' && x[5] && x[5].shop === 'shakra');
+  const silkNote = () => t('mapSilkwallNote', { skill: pick(D.SKILLS.find((s) => s.id === 'silkspear').name) });
   function layersOn() {
-    if (Array.isArray(prefs.mapLayers)) return prefs.mapLayers.filter((k) => LAYER.has(k));
+    // The Tools were one layer before they went by colour.
+    if (Array.isArray(prefs.mapLayers)) return prefs.mapLayers.flatMap((k) => (k === 'tools' ? ['tools-red', 'tools-blue', 'tools-yellow'] : [k])).filter((k) => LAYER.has(k));
     // The earlier switches (mapKinds, mapPlaces), kept where they said something.
     const on = new Set(FIRST_ON);
     if (Array.isArray(prefs.mapKinds)) for (const k of ['mask-shard', 'spool-fragment', 'memory-locket', 'craftmetal', 'pale-oil', 'flea']) if (!prefs.mapKinds.includes(k)) on.delete(k);
@@ -134,9 +209,16 @@
     gauntlet: svg('<path d="M2.5 2.5l9 9M11.5 2.5l-9 9"/>'),
     boss: svg('<path d="M2.5 11.5V5l2.5 2 2-4 2 4 2.5-2v6.5z"/>'),
     wall: svg('<path d="M2 3h10v8H2zM2 7h10M5 3v4M9 7v4"/>'),
+    // A gate's bars, a way through a wall, three threads of silk.
+    gate: svg('<path d="M3 12V3M6 12V3M9 12V3M12 12V3M2 3h11"/>'),
+    shortcut: svg('<path d="M2 7h7M6.5 4L9.5 7 6.5 10M11.5 2.5v9"/>'),
+    silkwall: svg('<path d="M3 2c2 3-1 7 1 10M7 2c2 3-1 7 1 10M11 2c2 3-1 7 1 10"/>'),
     // A folded map: an area's card.
     map: svg('<path d="M2 3.5l3.3-1 3.4 1.5 3.3-1v8l-3.3 1-3.4-1.5-3.3 1z"/><path d="M5.3 2.5v8M8.7 4v8"/>'),
     spawn: svg('<path d="M7 2l1.5 3.2 3.5.4-2.6 2.4.7 3.5L7 9.8 3.9 11.5l.7-3.5L2 5.6l3.5-.4z"/>'),
+    // A lift's cage on its cable; a room's hidden corner, dashed.
+    lift: svg('<path d="M7 1.5v3M3.5 4.5h7v8h-7zM7 7v3.5M5.5 8.5L7 7l1.5 1.5"/>'),
+    masked: svg('<path d="M2 4.5V2h2.5M9.5 2H12v2.5M12 9.5V12H9.5M4.5 12H2V9.5M6 7h2"/>'),
   };
 
   /* ── The marks ──
@@ -174,9 +256,41 @@
   /* ── What the map holds: every mark of every layer, for a game (null: Free mode with nothing) ──
      { key, layer, scene, act, got, name, sub, draw(style, title, key, cls) } */
   const haveArt = (g, id) => !!g && (g.arts.includes(id) || g.skills.includes(id));
-  function wishOf(quest) { return CO.WISHES.findIndex((w) => w[2][0] === 'quest' && w[2][1] === quest); }
+  /* The wish of a quest (index in CO.WISHES, or -1): the wish whose check is the quest, or an `any`
+     of several (Broodfeast and Runtfeast, the Lost Fleas), or else the wish of the quest that
+     follows it in the chain (QU.CHAIN prev): a «Pre» stage, Steel Sentinel's first offer. */
+  const WISH_OF = new Map();
+  const checksQuest = (c, quest) => c[0] === 'quest' ? c[1] === quest : (c[0] === 'any' || c[0] === 'all') && c.slice(1).some((x) => checksQuest(x, quest));
+  function wishOf(quest) {
+    if (WISH_OF.has(quest)) return WISH_OF.get(quest);
+    let i = CO.WISHES.findIndex((w) => checksQuest(w[2], quest));
+    if (i < 0) {
+      const next = Object.keys(QU.CHAIN).find((q) => QU.CHAIN[q].prev === quest);
+      if (next) i = wishOf(next);
+    }
+    WISH_OF.set(quest, i);
+    return i;
+  }
   const wishDone = (g, quest) => { const i = wishOf(quest); return !!g && i >= 0 && g.wishes.includes(i); };
   const complete = (g, e) => !!g && SS.completion.journalDone(e, g.journal);
+  /* A person of js/people.js in a save (own): met (true, false, or null when the save has no word
+     for it), gone, and where: the scenes they're in now (null: every spot, as in Free mode). A
+     field the save doesn't carry (a slot kept before) says nothing. */
+  const truthy = (v) => v === true || (typeof v === 'number' && v > 0);
+  const personArt = (x) => (x.art ? `assets/${x.art.startsWith('journal/') ? 'icons' : 'map'}/${x.art}.webp` : ICON('quest_icon_large_0006_herald'));
+  function personNow(x, own) {
+    const v = own && own.peopleVars;
+    if (!v) return { met: null, gone: false, where: null };
+    const known = (fs) => !!fs && fs.some((f) => v[f] !== undefined);
+    const met = known(x.met) ? x.met.some((f) => truthy(v[f])) : null;
+    const gone = !!x.gone && x.gone.some((f) => v[f] === true);
+    if (x.unsure) return { met, gone, where: null, unsure: true };
+    if (!x.at || !known(x.at.map((r) => r[0]))) return { met, gone, where: null };
+    const hit = x.at.find(([f, val]) => v[f] === val);
+    const named = new Set(x.at.map((r) => lower(r[2])));
+    const where = hit ? new Set([lower(hit[2])]) : new Set(x.spots.map((s) => lower(s[0])).filter((s) => !named.has(s)));
+    return { met, gone, where: where.size ? where : null };
+  }
   function things(g, own) {
     const out = [];
     const add = (m) => { if (m.scene && R.roomOf(m.scene)) out.push(m); };
@@ -188,8 +302,15 @@
     });
     for (const ids of CO.COUNTED) {
       const id = ids[0], tool = D.TOOLS.find((x) => x.id === id), w = CO.WHERE.tools[id] || [];
-      add({ key: 'tools:' + id, layer: 'tools', scene: SP.AT.tools[id], act: w[0], area: w[1], got: !!g && ids.some((x) => g.tools.includes(x)),
+      add({ key: 'tools:' + id, layer: 'tools-' + tool.color, scene: SP.AT.tools[id], act: w[0], area: w[1], got: !!g && ids.some((x) => g.tools.includes(x)),
         name: pick(tool.name), draw: (s, ti, k, c) => dot('tools', `assets/icons/tools/${id}.webp`, s, ti, k, c) });
+    }
+    // The six outside the 100%: a Tool's upgrade, or one a wish lends and takes back.
+    for (const id of OTHER_TOOLS) {
+      const tool = D.TOOLS.find((x) => x.id === id), w = CO.WHERE.tools[id] || [], of = CO.COUNTED.find((ids) => ids.includes(id));
+      add({ key: 'tools:' + id, layer: 'tools-other', scene: SP.AT.tools[id], act: w[0], area: w[1], got: !!g && g.tools.includes(id),
+        name: pick(tool.name), note: of ? t('mapToolUpgrade', { tool: pick(D.TOOLS.find((x) => x.id === of[0]).name) }) : t('mapToolLent'),
+        draw: (s, ti, k, c) => dot('tools', `assets/icons/tools/${id}.webp`, s, ti, k, c) });
     }
     for (const [cat, list] of [['crests', D.CRESTS], ['skills', D.SKILLS], ['arts', D.ARTS]]) {
       for (const [id, w] of Object.entries(CO.WHERE[cat])) {
@@ -197,6 +318,12 @@
         add({ key: cat + ':' + id, layer: cat, scene: SP.AT[cat][id], act: w[0], area: w[1], got: !!g && g[cat].includes(id),
           name: x ? pick(x.name) : id, draw: (s, ti, k, c) => dot(cat, `assets/icons/${cat}/${id}.webp`, s, ti, k, c) });
       }
+    }
+    // The abilities outside the 100% (the two Needolin melodies), with their Act from js/spots.js.
+    for (const x of D.ARTS) {
+      if (CO.WHERE.arts[x.id]) continue;
+      add({ key: 'arts:' + x.id, layer: 'arts', scene: SP.AT.arts[x.id], act: SP.AT.act['arts:' + x.id], got: !!g && g.arts.includes(x.id),
+        name: pick(x.name), note: t('mapArtOut'), draw: (s, ti, k, c) => dot('arts', `assets/icons/arts/${x.id}.webp`, s, ti, k, c) });
     }
     add({ key: 'everbloom', layer: 'everbloom', scene: SP.AT.everbloom, act: (CO.WHERE.everbloom || [])[0], got: !!g && g.everbloom,
       name: t('cat_items'), draw: (s, ti, k, c) => dot('everbloom', 'assets/icons/items/everbloom.webp', s, ti, k, c) });
@@ -206,24 +333,25 @@
       const open = !p[4] || !own || lit.has(pinKey(p));
       const name = t(p[0] === 'bench' ? 'mapPlace_bench1' : 'mapPlace_' + p[0]);
       out.push({ key: 'pin:' + M.PINS.indexOf(p), layer: p[0], scene: p[3], at: { x: p[1], y: p[2] }, got: false, off: !open, pinData: p,
-        name, sub: open ? '' : t(p[0] === 'bench' ? 'mapToll' : 'mapClosed'),
+        name, sub: open ? '' : t(p[0] === 'bench' && /bell_toll_machine/.test(JSON.stringify(p[4])) ? 'mapToll' : 'mapClosed'),
         draw: (s, ti, k, c) => pin(p[0], p[0] === 'bench' ? 'pin_bench' : p[0] === 'bellway' ? 'pin_stag_station' : 'pin_tube_station', s, ti, k, c + (open ? '' : ' is-off')) });
     });
     for (const x of SS.gauntlets.GAUNTLETS) {
-      add({ key: 'gaunt:' + x.id, layer: 'gauntlet', scene: x.scene, got: !!g && g.gauntlets.includes(x.id), area: x.area, gauntlet: x,
+      add({ key: 'gaunt:' + x.id, layer: 'gauntlet', scene: x.scene, act: x.act, got: !!g && g.gauntlets.includes(x.id), area: x.area, gauntlet: x,
         name: App.gauntletName(x.id), draw: (s, ti, k, c) => badge('gauntlet', portrait(champion(x)) || GLYPH.gauntlet, s, ti, k, c) });
     }
-    for (const [foe, scene] of SP.BOSSES) {
+    for (const [foe, scene, , act] of SP.BOSSES) {
       const f = FOE.get(foe), e = bookOfFoe(foe);
-      add({ key: 'boss:' + foe, layer: 'boss', scene, got: !!g && g.bosses.includes(foe), name: f ? pick(f.name) : foe, foe, entry: e && e.id,
+      add({ key: 'boss:' + foe, layer: 'boss', scene, act, got: !!g && g.bosses.includes(foe), name: f ? pick(f.name) : foe, foe, entry: e && e.id,
         draw: (s, ti, k, c) => badge('boss', portrait(e && e.id) || GLYPH.boss, s, ti, k, c) });
     }
-    for (const [field, scene] of SP.BELLS) {
-      const b = QU.BELLSHRINES.find((x) => x.field === field);
-      add({ key: 'bell:' + field, layer: 'bellshrine', scene, got: !!g && g.bellshrines.includes(field), name: t('mapBell', { area: pick(b.name) }),
+    for (const [field, scene, own] of SP.BELLS) {
+      const b = own ? { name: own } : QU.BELLSHRINES.find((x) => x.field === field);
+      add({ key: 'bell:' + field, layer: 'bellshrine', scene, got: !!g && g.bells.includes(field), name: t('mapBell', { area: pick(b.name) }),
         draw: (s, ti, k, c) => pin('bellshrine', 'quest_map_icon_grand_gate_final', s, ti, k, c) });
     }
-    for (const [k, scenes] of Object.entries(QU.LOCKS)) scenes.forEach((scene) => add({ key: 'lock:' + k + ':' + scene, layer: 'lock', scene, got: false,
+    // The doors a key opens whose door the save doesn't keep (the rest are extras, LOCK_AT below).
+    for (const [k, scenes] of Object.entries(QU.LOCKS)) scenes.filter((scene) => !LOCK_AT.has(lower(scene))).forEach((scene) => add({ key: 'lock:' + k + ':' + scene, layer: 'lock', scene, got: false,
       name: t('mapLock'), sub: t('mapLockKey', { key: pick(SP.KEYS[k]) }), lockKey: k, draw: (s, ti, kk, c) => badge('lock', img(ICON('i_slab_key')), s, ti, kk, c) }));
     for (const [v, scenes] of Object.entries(SP.VENDORS)) {
       if (v === 'shakra') { scenes.forEach((scene, i) => add({ key: 'shakra:' + i, layer: 'shakra', scene, got: false, name: pick(HW.NPCS.shakra), npc: 'shakra',
@@ -231,10 +359,15 @@
       scenes.forEach((scene, i) => add({ key: 'shop:' + v + ':' + i, layer: 'shop', scene, got: false, name: pick(HW.NPCS[v]), npc: v,
         draw: (s, ti, k, c) => pin('shop', 'pin_shop', s, ti, k, c) }));
     }
+    // Who buys or sells outside the game's shops (js/people.js TRADE): the Couriers, the Moss Druid, Creige.
+    for (const x of PE.TRADE) x.spots.forEach(([scene, px, py], i) => add({ key: 'shop:' + x.id + ':' + i, layer: 'shop', scene,
+      at: px != null ? { x: px, y: py } : undefined, got: false, name: pick(x.name), trade: x.note, draw: (s, ti, k, c) => pin('shop', 'pin_shop', s, ti, k, c) }));
     // People: the Wishwalls and who offers a wish, each with the wishes still open there.
     const boards = new Map(), givers = new Map();
+    const steelGame = !own || !!(App.gameMeta() || {}).steel;
     for (const [quest, f] of Object.entries(QU.FROM)) {
-      if (wishOf(quest) < 0) continue;
+      const wi = wishOf(quest);
+      if (wi < 0 || (CO.WISHES[wi][5] === 'steel' && !steelGame)) continue;   // a Steel Soul wish is only asked in Steel Soul
       if (f.board) { const k = lower(f.board); if (!boards.has(k)) boards.set(k, { scene: f.board, quests: [] }); boards.get(k).quests.push(quest); }
       for (const n of f.npc || []) { const k = lower(n); if (!givers.has(k)) givers.set(k, { scene: n, quests: [] }); givers.get(k).quests.push(quest); }
     }
@@ -242,21 +375,59 @@
       name: t('mapLayer_wishwall1'), draw: (s, ti, kk, c) => badge('wishwall', img(ICON('hornet_inv_pane_icons_0002_wish')), s, ti, kk, c) });
     for (const [k, b] of givers) add({ key: 'giver:' + k, layer: 'giver', scene: b.scene, quests: b.quests, got: !!g && b.quests.every((q) => wishDone(g, q)),
       name: t('mapLayer_giver1'), draw: (s, ti, kk, c) => badge('giver', img(ICON('quest_icon_large__0008_gather')), s, ti, kk, c) });
+    /* The wishes and the main objectives (js/spots.js TASKS): what a wish asks for, where a wish is
+       done, the main objectives' pins. A Steel Soul wish only in Steel Soul, and of the Steel
+       Sentinel's six spots the three this game chose. A wish's and an objective's name is its quest's. */
+    SP.TASKS.forEach((x, i) => {
+      const [kind, quest, , scene, art, name, mode, spot] = x;
+      if (own && ((mode === 'steel' && !steelGame) || (spot && !own.steelSpots.includes(spot)))) return;
+      const w = CO.WISHES[wishOf(quest)];
+      add({ key: 'task:' + i, layer: kind, scene, act: kind === 'goal' ? undefined : w && w[1], got: !!g && (g.tasks || []).includes(i), quest,
+        name: name ? pick(name) : pick(QU.CHAIN[quest].name), sub: name ? pick(QU.CHAIN[quest].name) : '',
+        draw: (s, ti, k, c) => dot(kind, `assets/map/${art}.webp`, s, ti, k, c) });
+    });
     for (const [id, scene] of Object.entries(SP.PEOPLE)) add({ key: 'person:' + id, layer: 'person', scene, got: false, npc: id,
       name: id === 'scrounge' ? t('mapScrounge') : pick(HW.NPCS[id]), draw: (s, ti, k, c) => badge('person', img(ICON('quest_icon_large_0006_herald')), s, ti, k, c) });
+    /* Everyone else (js/people.js), each at their own point in the room: in a save, only where it
+       says they are now, gone once they've left, and dimmed until you've met (personNow). */
+    for (const x of PE.PEOPLE) {
+      const now = personNow(x, own);
+      if (now.gone) continue;
+      for (const [scene, px, py] of x.spots) {
+        if (now.where && !now.where.has(lower(scene))) continue;
+        add({ key: 'npc:' + x.id + ':' + lower(scene), layer: 'npc', scene, at: px != null ? { x: px, y: py } : undefined, got: false,
+          off: now.met === false, person: x, now, name: pick(x.name), draw: (s, ti, k, c) => badge('npc', img(personArt(x)), s, ti, k, c) });
+      }
+    }
     // Other collectibles.
     SP.EXTRAS.forEach((x, i) => {
       const [kind, act, check, scene, name] = x;
+      // The maps Shakra sells aren't marks of their own: they'd sit on her, and her card lists them.
+      if (kind === 'map' && x[5] && x[5].shop === 'shakra') return;
+      if (DOOR[layerOf(x)]) {
+        const layer = layerOf(x), d = DOOR[layer], k = kind === 'lock' && LOCK_AT.get(lower(scene));
+        add({ key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i), needs: SP.NEEDS['extra:' + i],
+          name: t(kind === 'plate' ? 'mapPlate' : d.name), sub: k ? t('mapLockKey', { key: pick(SP.KEYS[k]) }) : layer === 'silkwall' ? silkNote() : '',
+          draw: (s, ti, kk, c) => badge(layer, d.art ? img(ICON(kind === 'plate' ? 'dock_door_bottom_pressure_plate' : d.art)) : GLYPH[layer], s, ti, kk, c) });
+        return;
+      }
       const layer = kind;
-      const icon = kind === 'memento' ? (MEMENTO_ICON[check[1]] ? `assets/icons/extras/${MEMENTO_ICON[check[1]]}.webp` : 'assets/icons/pieces/heart-bloom.webp')
+      /* An area map (js/spots.js EXTRAS' last field: Shakra's price, or found lying), a rosary or
+         shell shard item lying in its room (its item). */
+      const more = x[5] || {};
+      const icon = kind === 'map' ? ICON('i_map') : more.item ? `assets/icons/items/${more.item}.webp` : more.icon ? ICON(more.icon)
+        : kind === 'bead' ? 'assets/icons/items/rosaries.webp' : kind === 'silk-cocoon' ? ICON('silk_grub_small_cocoon')
+          : kind === 'eva' ? evaArt(more.reward) : kind === 'lift' || kind === 'masked' ? null
+        : kind === 'memento' ? (MEMENTO_ICON[check[1]] ? `assets/icons/extras/${MEMENTO_ICON[check[1]]}.webp` : 'assets/icons/pieces/heart-bloom.webp')
         : kind === 'silkeater' ? null : kind === 'spawn' || kind === 'bellhome' || kind === 'wall' ? null : `assets/icons/extras/${kind}.webp`;
       const spawn = kind === 'spawn' ? BOOK_KEY.get(name && name.key) : null;
       add({ key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i), needs: SP.NEEDS['extra:' + i],
-        name: name ? pick(name) : LAYER.get(layer).name(),
+        name: name ? pick(name) : kind === 'eva' ? evaName(more.reward) : ONE[kind] ? t(ONE[kind]) : LAYER.get(layer).name(), eva: kind === 'eva' ? more : null,
+        note: kind === 'masked' ? t('mapHiddenNote', { n: num(check[0] === 'all' ? check.length - 1 : 1) }) : more.shop ? t('mapMapShakra', { npc: pick(HW.NPCS[more.shop]), price: num(more.price) }) : more.found ? t('mapMapFound') : '',
         draw: (s, ti, k, c) => (kind === 'silkeater' ? pin('silkeater', 'pin_grub_location', s, ti, k, c)
           : kind === 'spawn' ? badge('spawn', portrait(spawn && spawn.id) || GLYPH.spawn, s, ti, k, c)
             : kind === 'bellhome' ? pin('bellhome', 'pin_bench_bell', s, ti, k, c)
-              : icon ? dot(layer, icon, s, ti, k, c) : badge(layer, GLYPH.wall, s, ti, k, c)) });
+              : icon ? dot(layer, icon, s, ti, k, c) : badge(layer, GLYPH[layer] || GLYPH.wall, s, ti, k, c)) });
     });
     // Your game: the cocoon and the Journal's entries still missing.
     if (own && own.cocoon) add({ key: 'cocoon', layer: 'cocoon', scene: own.cocoon, got: false, name: t('mapLayer_cocoon'), sub: t('mapCocoonNote'),
@@ -268,16 +439,14 @@
         draw: (s, ti, k, c) => badge('journal', portrait(e.id), s, ti, k, c) });
     }
     for (const m of out) if (!m.needs) m.needs = SP.NEEDS[m.key];
-    return fixed(out, g);
+    return fixed(out);
   }
   /* js/map-fixes.js, last of all (and in the admin mode, js/app-map-admin.js, its unsaved
      changes): a mark moved where it really goes (fix), one hidden (in the admin mode kept,
-     flagged), and the marks added by hand, each drawn and named as its layer's. A fix whose
-     scene isn't its mark's any more (a list regenerated in another order) is left alone. */
-  const MF = SS.mapFixes || { FIXES: {}, LAYERS: [] };
-  const lookDraw = (l) => (s, ti, k, c) => (l.look.dot ? dot(l.id, l.look.dot, s, ti, k, c) : l.look.pin ? pin(l.id, l.look.pin, s, ti, k, c)
-    : badge(l.id, l.look.badge === 'gauntlet' ? GLYPH.gauntlet : GLYPH[l.look.badge || l.look.glyph], s, ti, k, c));
-  function fixed(out, g) {
+     flagged). A fix whose scene isn't its mark's any more (a list regenerated in another order)
+     is left alone. */
+  const MF = SS.mapFixes || { FIXES: {} };
+  function fixed(out) {
     const F = App.mapFixes ? App.mapFixes() : MF.FIXES, moved = F.moved || {}, hidden = F.hidden || {}, keep = !!App.admin;
     const list = [];
     for (const m of out) {
@@ -286,12 +455,6 @@
       if (mv && mv[2] === m.scene) m.fix = { x: mv[0], y: mv[1] };
       if (hidden[m.key] === m.scene) { if (!keep) continue; m.hidden = true; }
       list.push(m);
-    }
-    for (const a of F.added || []) {
-      const l = LAYER.get(a.layer);
-      if (!l || !MF.LAYERS.includes(a.layer)) continue;
-      list.push({ key: a.id, layer: a.layer, scene: a.scene, act: a.act, fix: { x: a.x, y: a.y }, added: a,
-        got: !!g && !!a.check && (g.added || []).includes(a.id), name: l.name(), draw: lookDraw(l) });
     }
     return list;
   }
@@ -408,7 +571,7 @@
         stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${g[1]}</svg>` : '';
   }
   // inert: Your game's copy of a mark (js/app-map.js, App.mapAreaHtml) is a picture, not a button.
-  const pinSvg = (m, p, title, cls, inert) => `<g class="mp-mk is-${m.layer}${cls}${m.off ? ' is-off' : ''}${m.fix ? ' is-fixed' : ''}${m.hidden ? ' is-hidden' : ''}${m.added ? ' is-added' : ''}${inert ? '' : sel(m.key)}" style="--px:${n2(p.x)}px;--py:${n2(p.y)}px;--ox:${n2(p.ox || 0)}px;--oy:${n2(p.oy || 0)}px"
+  const pinSvg = (m, p, title, cls, inert) => `<g class="mp-mk is-${m.layer}${cls}${m.off ? ' is-off' : ''}${m.fix ? ' is-fixed' : ''}${m.hidden ? ' is-hidden' : ''}${inert ? '' : sel(m.key)}" style="--px:${n2(p.x)}px;--py:${n2(p.y)}px;--ox:${n2(p.ox || 0)}px;--oy:${n2(p.oy || 0)}px"
         ${inert ? '' : `data-mk="${esc(m.key)}" role="button" tabindex="0" aria-label="${esc(title)}"`}><title>${esc(title)}</title><circle r="0.5"/><circle class="mp-plate" r="0.47"/>${artOf(m)}</g>`;
   const markTitle = (m) => [m.name, m.sub, m.act ? t('saveAct', { n: m.act }) : ''].filter(Boolean).join(' · ');
   /* Each mark on its point: the pin the game draws, else where the game has the thing (js/spots.js
@@ -429,7 +592,7 @@
       if (!p) continue;
       placed.set(m.key, { x: p.x, y: p.y });
       if (!on.has(m.layer)) continue;
-      if (FINE.has(m.layer)) { const k = (R.roomOf(m.scene) || {}).scene || m.key; const f = fine.get(k) || { ...p, n: 0 }; f.n++; fine.set(k, f); }
+      if (FINE.has(m.layer)) { const k = ((R.roomOf(m.scene) || {}).scene || m.key) + '|' + m.layer; const f = fine.get(k) || { ...p, m, n: 0 }; f.n++; fine.set(k, f); }
       items.push({ m, p: { x: p.x, y: p.y } });
     }
     arrange(items);
@@ -626,11 +789,11 @@
   window.addEventListener('resize', () => { if (document.querySelector('.hmB-canvas')) areaPaint(); });
 
   /* The layers whose things aren't had (a bench, a shop, a person): a count, not had of total. */
-  const PLAIN = new Set(['bench', 'bellway', 'ventrica', 'shop', 'lock', 'shakra', 'person', 'cocoon']);
+  const PLAIN = new Set(['bench', 'bellway', 'ventrica', 'shop', 'shakra', 'person', 'npc', 'cocoon']);
   const CARET = '<svg class="mp-caret" viewBox="0 0 10 10" aria-hidden="true"><path d="M3 1 L8 5 L3 9 Z" fill="currentColor"/></svg>';
-  // The groups open: as left (prefs.mapOpen); at first all of them, on a phone only the 100%.
+  // The groups open: as left (prefs.mapOpen); at first all of them, on a phone the first two.
   const openGroups = () => (prefs.mapOpen && !Array.isArray(prefs.mapOpen) ? Object.keys(prefs.mapOpen).filter((k) => prefs.mapOpen[k])
-    : matchMedia('(max-width: 599px)').matches ? ['hundred'] : GROUPS.map(([g]) => g));
+    : matchMedia('(max-width: 599px)').matches ? ['upgrades', 'crest'] : GROUPS.map(([g]) => g));
   const inside = new Set();   // the sets whose caret is open, while the page is
   const fold = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
   let finds = [], placed = new Map(), pending = '';
@@ -656,7 +819,9 @@
     placed = lay.placed;
     const { count, items, fine } = lay;
     const marks = items.map(({ m, p }) => pinSvg(m, p, markTitle(m), FINE.has(m.layer) ? ' is-fine' : '')).join('');
-    const clusters = [...fine.values()].map((f) => `<g class="mp-mk mp-cluster" style="--px:${n2(f.x)}px;--py:${n2(f.y)}px" aria-hidden="true"><circle r="0.5"/><text dy="0.02">${num(f.n)}</text></g>`).join('');
+    // From afar, the caches and walls of a room one mark per layer: its picture, how many in a corner.
+    const clusters = [...fine.values()].map((f) => `<g class="mp-mk mp-cluster is-${f.m.layer}" style="--px:${n2(f.x)}px;--py:${n2(f.y)}px" aria-hidden="true"><circle r="0.5"/><circle class="mp-plate" r="0.47"/>${artOf(f.m)}`
+      + `${f.n > 1 ? `<g class="mp-count"><circle cx="0.36" cy="-0.36" r="0.21"/><text x="0.36" y="-0.34">${num(f.n)}</text></g>` : ''}</g>`).join('');
     const exact = !!own && !!prefs.mapGame, view = R.mapView(own, { all: !exact }), shownPins = R.pinsOn(own);
     const bench = own ? benchPoint(own.bench, shownPins) : null;
     // Hornet at her bench: the page's own sprite (.hn), over the map at her point (placeOver).
@@ -716,7 +881,7 @@
     const legend = `<section class="mp-legend" aria-labelledby="mp-legend-t">
         <div class="mp-legend-h">
           <h3 class="mp-legend-t" id="mp-legend-t">${esc(t('mapShows'))}</h3>
-          <span class="mp-all"><button type="button" class="text-btn" data-act="mapAll" data-value="1">${esc(t('mapShowAll'))}</button><button type="button" class="text-btn" data-act="mapAll" data-value="0">${esc(t('mapHideAll'))}</button></span>
+          <span class="mp-all"><button type="button" class="text-btn" data-act="mapAll" data-value="1">${esc(t('mapShowAll'))}</button><button type="button" class="text-btn" data-act="mapAll" data-value="0">${esc(t('mapHideAll'))}</button><button type="button" class="text-btn" data-act="mapHundred">${esc(t('mapOnlyHundred'))}</button></span>
           <div class="mp-opts">
             <div class="seg" role="group" aria-label="${esc(t('mapActs'))}">${[0, 1, 2, 3].map((n) =>
               `<button type="button" data-act="mapAct" data-value="${n}" aria-pressed="${act === n}">${esc(n ? t('saveAct', { n }) : t('mapActAll'))}</button>`).join('')}</div>
@@ -761,7 +926,9 @@
   function focusOn(key) {
     const p = placed.get(key) || (key.startsWith('area:') ? AREA_NAMES().find((a) => 'area:' + a.id === key) : null);
     if (!p) return;
-    centreOn(p.x, p.y, 3);
+    // A mark of a layer drawn only close up (FINE) needs the view past that, or its card has no mark to sit on.
+    const mk = all().list.find((x) => x.key === key);
+    centreOn(p.x, p.y, mk && FINE.has(mk.layer) ? 4 : 3);
     const sec = App.screenOf('map'), ping = sec && sec.querySelector('.mp-ping');
     if (ping) { ping.dataset.x = p.x; ping.dataset.y = p.y; placeOver(ping); ping.hidden = false; ping.classList.remove('is-on'); void ping.offsetWidth; ping.classList.add('is-on'); }
     pick1(key);
@@ -797,6 +964,54 @@
     return { x: (M.W - w) / 2, y: (M.H - h) / 2, w, h };
   }
   let zoom = 1;   // how many times closer than the whole map
+  /* The marks that touch at this zoom pushed apart, each a little: a pin's size (k, in the
+     image's pixels) is what they need between them. Each starts on its point and its grid
+     (arrange()) and moves at most `max` pins from it: none with the whole map (spread, a crowd
+     would cover it), SPREAD_MAX from four times closer, so close up every mark stands clear near
+     its own place. Again whenever the pins' size or the
+     marks change; the caches and walls only when they show (close), else their rooms' counts. */
+  const SPREAD_GAP = 1.04, SPREAD_MAX = 1.2;
+  let spreadAt = '';
+  function spread(m, k, close, max) {
+    const els = [...m.querySelectorAll('.mp-mk[data-mk], .mp-cluster')].filter((el) => (close ? !el.classList.contains('mp-cluster') : !el.classList.contains('is-fine')));
+    const stamp = `${k.toFixed(4)}|${close}|${max.toFixed(3)}|${els.length}|${els[0] ? els[0].dataset.mk || els[0].style.cssText : ''}`;
+    if (stamp === spreadAt && els.every((el) => el._base)) return;
+    spreadAt = stamp;
+    const num = (el, p) => parseFloat(el.style.getPropertyValue(p)) || 0;
+    const pts = els.map((el) => {
+      const b = el._base || (el._base = { x: num(el, '--px'), y: num(el, '--py'), ox: num(el, '--ox'), oy: num(el, '--oy') });
+      const x = b.x / k + b.ox, y = b.y / k + b.oy;   // in pins
+      return { el, b, x0: x, y0: y, x, y };
+    });
+    for (let pass = 0; max > 0 && pass < 10; pass++) {
+      const cells = new Map(), cell = (x, y) => Math.floor(x / SPREAD_GAP) + ',' + Math.floor(y / SPREAD_GAP);
+      pts.forEach((p, i) => { const c = cell(p.x, p.y); if (!cells.has(c)) cells.set(c, []); cells.get(c).push(i); });
+      let moved = false;
+      pts.forEach((a, i) => {
+        const cx = Math.floor(a.x / SPREAD_GAP), cy = Math.floor(a.y / SPREAD_GAP);
+        for (let dx = -1; dx <= 1; dx++) for (let dy = -1; dy <= 1; dy++) for (const j of cells.get((cx + dx) + ',' + (cy + dy)) || []) {
+          if (j <= i) continue;
+          const b = pts[j];
+          let ux = b.x - a.x, uy = b.y - a.y, d = Math.hypot(ux, uy);
+          if (d >= SPREAD_GAP) continue;
+          // Two on one point: apart sideways, the later one to the right.
+          if (d < 1e-6) { ux = 1; uy = 0; d = 1; } else { ux /= d; uy /= d; }
+          const push = (SPREAD_GAP - Math.min(d, SPREAD_GAP)) / 2;
+          a.x -= ux * push; a.y -= uy * push; b.x += ux * push; b.y += uy * push;
+          moved = true;
+        }
+      });
+      for (const p of pts) {
+        const ex = p.x - p.x0, ey = p.y - p.y0, e = Math.hypot(ex, ey);
+        if (e > max) { p.x = p.x0 + (e ? ex / e * max : 0); p.y = p.y0 + (e ? ey / e * max : 0); }
+      }
+      if (!moved) break;
+    }
+    for (const p of pts) {
+      p.el.style.setProperty('--ox', n2(p.b.ox + p.x - p.x0) + 'px');
+      p.el.style.setProperty('--oy', n2(p.b.oy + p.y - p.y0) + 'px');
+    }
+  }
   function applyView() {
     const { v, m } = nodes();
     if (!v || !m) return;
@@ -817,6 +1032,7 @@
     const px = (r.width < 600 ? 18 : 22) * Math.min(1.25, Math.max(1, Math.pow(zoom, 0.15)));
     m.style.setProperty('--k', String(vb.w / r.width * px));
     v.classList.toggle('is-zoomed', zoom > 1.5);
+    spread(m, vb.w / r.width * px, zoom > 3, SPREAD_MAX * Math.min(1, Math.max(0, (zoom - 1.5) / 2.5)));
     v.classList.toggle('is-close', zoom > 3);   // the caches and walls, one by one
     // Close up, the map at twice the resolution (assets/map/pieces-hd.webp, tools/extract-map.py):
     // loaded the first time the screen has more pixels than the map, and kept.
@@ -901,7 +1117,7 @@
       name = areaName(id);
       art = badge('maps', GLYPH.map);
       const inArea = list.filter((m) => m.scene && R.areaOf(m.scene) === id);
-      const hundred = inArea.filter((m) => GROUP_OF.get(m.layer) === 'hundred' && (!g || !m.got)).length;
+      const hundred = inArea.filter((m) => HUNDRED.includes(m.layer) && (!g || !m.got)).length;
       const visited = own ? a.rooms.filter((s) => own.visited.some((v) => lower(v) === lower(s))).length : null;
       where = line([visited != null ? t('mapAreaRooms', { n: num(visited), m: num(a.rooms.length) }) : t('mapAreaRoomsAll', { m: num(a.rooms.length) }),
         own && MAPPABLE.has(id) && !mapped(own).has(id) ? t('mapUnmapped') : '']);
@@ -923,7 +1139,7 @@
       acts = own ? state(t(m.got ? 'pgGot' : 'invMissing'))
         : `<button type="button" class="text-btn" data-act="mapMark" data-value="${i}" aria-pressed="${m.got}">${esc(t(m.got ? 'mapUnmark' : 'mapMark'))}</button>`;
     } else if (['tools', 'crests', 'skills', 'arts', 'everbloom'].includes(kind)) {
-      note = App.howOf ? App.howOf(key) : '';
+      note = m.note || (App.howOf ? App.howOf(key) : '');
       if (g) acts = state(t(m.got ? 'pgGot' : 'invMissing'));
     } else if (kind === 'pin') {
       if (m.off) acts = state(m.sub);
@@ -938,12 +1154,20 @@
       acts += (App.VIEWS.includes('fight') ? btn('mapFoe', m.foe, t('mapFight')) : '') + (m.entry ? btn('mapJournal', m.entry, t('mapToJournal')) : '');
     } else if (kind === 'bell') {
       if (g) acts = state(t(m.got ? 'mapRung' : 'mapNotRung'));
+    } else if (kind === 'npc') {
+      const x = m.person, s = m.now;
+      if (s.met != null) acts = state(t(s.met ? 'mapMet' : 'mapNotMet'));
+      note = s.unsure ? t('mapNpcUnsure') : !s.where && x.spots.length > 1 ? t('mapNpcSpots', { n: num(x.spots.length) }) : '';
     } else if (kind === 'shop' || kind === 'person' || kind === 'shakra') {
       const id = m.npc;
-      if (id === 'shakra') {
-        const bought = new Set(own ? own.maps : []);
-        const left = Object.keys(SP.MAPS).filter((f) => !bought.has(f)).map((f) => areaName(SP.MAPS[f])).filter(Boolean);
-        note = own ? (left.length ? t('mapShakraLeft', { list: listOf(left) }) : t('mapShakraAll')) : t('mapShakraNote');
+      if (m.trade) {
+        note = t('mapTrade_' + m.trade);
+      } else if (id === 'shakra') {
+        // Her maps (js/spots.js EXTRAS: the maps with a price), by their areas.
+        const bought = new Set(own ? own.maps : []), hers = SHAKRA_MAPS.map((x) => x[2][1].slice(3, -3));
+        const left = hers.filter((f) => !bought.has(f)).map((f) => areaName(SP.MAPS[f])).filter(Boolean);
+        note = own ? (left.length ? t('mapShakraLeft', { list: listOf(left) }) : t('mapShakraAll'))
+          : t('mapShakraNote', { n: num(hers.length), m: num(Object.keys(SP.MAPS).length - hers.length) });
       } else if (id === 'scrounge') {
         note = t('mapScroungeNote');
       } else {
@@ -951,12 +1175,30 @@
         note = things.length ? t(g ? 'mapSellsLeft' : 'mapSells', { list: listOf(things.map((x) => x.name)) }) : g ? t('mapSellsNone') : '';
       }
     } else if (kind === 'board' || kind === 'giver') {
-      const open = m.quests.filter((q) => !wishDone(g, q)).map((q) => pick(CO.WISHES[wishOf(q)][4]));
+      // One name per wish: Broodfeast's two quests, a wish's Pre stage and its own are the same wish.
+      const open = [...new Set(m.quests.filter((q) => !wishDone(g, q)).map((q) => wishOf(q)))].map((i) => pick(CO.WISHES[i][4]));
       note = open.length ? t(g ? 'mapWishesLeft' : 'mapWishes', { list: listOf(open) }) : t('mapWishesNone');
+    } else if (kind === 'task') {
+      // What it's for, whether it's done, and where its wish is taken (the Wishwall, or who asks).
+      if (m.layer === 'qitem') note = t('mapTaskFor', { wish: m.sub });
+      where = line([areaName(area), m.act ? t('saveAct', { n: m.act }) : '']);
+      if (g) acts = state(t(m.layer === 'qitem' ? (m.got ? 'pgGot' : 'invMissing') : m.got ? (m.layer === 'wspot' ? 'mapWishGranted' : 'mapDone') : 'mapNotDone'));
+      /* Where it's taken: the part of the wish still to do (a «Pre» at the board, then who it sends
+         you to; Steel Sentinel's first part, then its second), the first one if there's no save. */
+      const done = new Set(g ? g.quests : []);
+      let q = m.quest;
+      while (QU.CHAIN[q] && QU.CHAIN[q].prev && !done.has(QU.CHAIN[q].prev)) q = QU.CHAIN[q].prev;
+      const f = QU.FROM[q] || QU.FROM[m.quest] || {};
+      const to = f.board ? 'board:' + lower(f.board) : f.npc && f.npc.length ? 'giver:' + lower(f.npc[0]) : '';
+      if (to && list.some((x) => x.key === to)) acts += btn('mapShow', to, t(f.board ? 'mapToWall' : 'mapToGiver'));
     } else if (kind === 'lock') {
       note = m.sub;
       where = line([areaName(area)]);
-    } else if (kind === 'extra' || (kind === 'add' && m.added.check)) {
+    } else if (kind === 'extra') {
+      note = m.note || '';
+      // Eva's: the slots it needs, and with a save how many are open.
+      if (m.eva) note = (m.eva.slots ? t('mapEvaSlots', { npc: pick(HW.NPCS.eva), n: num(m.eva.slots), crest: pick(D.CRESTS.find((c) => c.id === 'hunter').name) }) : t('mapEvaMeet', { npc: pick(HW.NPCS.eva) }))
+        + (own && m.eva.slots ? ' ' + t('mapEvaHave', { n: num(own.evaSlots || 0) }) : '');
       if (g) acts = state(t(m.got ? 'pgGot' : 'invMissing'));
     } else if (kind === 'journal') {
       const e = BOOK.get(m.entry), k = own && own.journal[e.id];
@@ -1128,6 +1370,8 @@
     mapInside(node) { const k = node.dataset.value; if (inside.has(k)) inside.delete(k); else inside.add(k); render(); },
     // Show all · hide all.
     mapAll(node) { prefs.mapLayers = node.dataset.value === '1' ? LAYERS.map((l) => l.id) : []; savePrefs(); render(); },
+    // Only the 100%: just the layers that count.
+    mapHundred() { prefs.mapLayers = [...HUNDRED]; savePrefs(); render(); },
     mapOpen(node) {
       const gr = node.dataset.value, open = Object.fromEntries(openGroups().map((k) => [k, true]));
       open[gr] = !open[gr];

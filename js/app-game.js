@@ -155,7 +155,7 @@
         aria-label="${esc(name + ' ' + num(i + 1))}" aria-pressed="${on}">${piece}</button>`;
     }).join('');
     return `<div class="inv-field"><div class="inv-frow"><span><span class="inv-fname"${NT}>${esc(name)}</span><span class="inv-fnote">${esc(t('invFromTo', { a: num(base), b: num(base + max) }))}</span></span>
-      <span class="inv-fnum">${num(v)}<i>/${num(base + max)}</i></span></div><div class="inv-pieces is-${key}" role="group" aria-label="${esc(name)}" style="--n:${base + max};--f:${(v / (base + max) * 100).toFixed(2)}%">${btns}</div></div>`;
+      <span class="inv-fnum">${num(v)}<i>/${num(base + max)}</i></span></div><div class="inv-pieces is-${key}" role="group" aria-label="${esc(name)}">${btns}</div></div>`;
   }
   function level(b, key, id, still) {
     const it = D.ITEMS.find((x) => x.id === id);

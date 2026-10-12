@@ -15,6 +15,7 @@
   const ENTRANCE = {
     Bellway_01: 'Bonetown', Bone_East_LavaChallenge: 'Bone_East_14b', Room_CrowCourt: 'Greymoor_15b', Room_CrowCourt_02: 'Greymoor_15b',
     Memory_Ant_Queen: 'Ant_Queen', Memory_Coral_Tower: 'Coral_Tower_01', Room_Witch: 'Shellwood_Witch',
+    Cradle_Destroyed_Challenge_Bench: 'Cradle_Destroyed_Challenge_02',
   };
 
   /* Scene names by their lower case too: a scene nobody enters by a door (a boss's arena, a memory)
@@ -248,8 +249,13 @@
     }
     return { pieces, zones, off, zoneOn };
   }
-  // The pins drawn for a game: those whose piece a rule hasn't taken off the map.
-  const pinsOn = (g) => { const off = mapView(g).off; return M.PINS.filter((p) => !off.has(p[3])); };
+  /* The pins drawn for a game: those whose piece a rule hasn't taken off the map, and a Flea
+     Caravan bench only where your caravan is (its here, over savefile's caravan,
+     CaravanTroupeLocation); with no game, all of them, as a guide. */
+  const pinsOn = (g) => {
+    const off = mapView(g).off, at = { CaravanTroupeLocation: g ? g.caravan || 0 : 0 };
+    return M.PINS.filter((p) => !off.has(p[3]) && !(g && p[5] && !rule(p[5], at)));
+  };
 
   SS.rooms = { ENTRANCE, roomOf, sceneOf, graphScene, walk, steps, path, areaOf, mapVars, rule, mapView, pinsOn };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.rooms;
