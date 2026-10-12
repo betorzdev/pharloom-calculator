@@ -370,7 +370,7 @@ boss's arena, with the person who gives it. All of it on at first.
   room (strings, necklaces, Shard Bundles, Great Shards, Pristine Cores), each by its own pickup.
   And the **Key items** lying in a room (the Cogheart Pieces, the broken Silkshot, Farsight, the
   Materium).
-- **Places**: benches (off at first: there are 80, the game's own bench pins and the Songclave's,
+- **Places**: benches (off at first: there are 81, the game's own bench pins, the Songclave's and the Bellhome's (dimmed until the house is unlocked),
   which its map doesn't pin; the Flea Caravan's two of its own, in Greymoor and the Blasted Steps,
   only while your caravan is there), Bellway and Ventrica stations (dimmed while
   your game hasn't opened them: a station not unlocked, a toll not paid), the five Bellshrines of
