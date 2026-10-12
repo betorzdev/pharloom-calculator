@@ -367,7 +367,9 @@ boss's arena, with the person who gives it. All of it on at first.
   **Maps**: the fourteen area maps found lying in a room (the Weavenest Atla Map, the
   Slab's…), each gone once your save has it; the fourteen Shakra sells have no mark of their own
   (they'd sit on her), her card says which you lack. And the **Rosaries** and **Shell Shards** lying in a
-  room (strings, necklaces, Shard Bundles, Great Shards, Pristine Cores), each by its own pickup.
+  room (strings, necklaces, Shard Bundles, Great Shards, Pristine Cores), each by its own pickup,
+  and the ones given: the Fixer's Hornet Statuette in Bone Bottom and the Sprintmaster's two race
+  prizes (a Rosary Necklace and a Beast Shard).
   And the **Key items** lying in a room (the Cogheart Pieces, the broken Silkshot, Farsight, the
   Materium).
 - **Places**: benches (off at first: there are 80, the game's own bench pins and the Songclave's,

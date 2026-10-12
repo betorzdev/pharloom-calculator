@@ -102,14 +102,26 @@ test('each area map is a mark where it\'s had, by its flag: Shakra\'s spot in it
   const pd = { silk: 0, silkMax: 9, maxHealth: 5, HasHallsMap: true };
   assert.deepEqual(F.game(pd).extras, halls);
   assert.deepEqual(F.gameOf(F.toSnapshot(pd)).extras, halls);
-  // The rosaries and shards lying in a room: their pickup's bool, and the item they are.
+  // The rosaries and shards lying in a room: their pickup's bool, and the item they are; the ones
+  // given (the Fixer's Statuette, the Sprintmaster's two prizes) by the playerData field the giving sets.
   const purse = new Map(CO.PURSE.map((p) => [p[0], p[2]]));
   const lying = SP.EXTRAS.filter((x) => x[0] === 'rosaries' || x[0] === 'shards');
   assert.ok(lying.length > 40, 'the scenes gave fewer than they did');
-  for (const [kind, , check, , , how] of lying) {
-    assert.equal(check[0], 'bool');
+  const given = [];
+  for (const [kind, , check, scene, , how] of lying) {
     assert.equal(purse.get(how.item), kind, how.item);
+    if (check[0] !== 'bool') given.push([how.item, scene, check]);
   }
+  assert.deepEqual(given, [
+    ['hornet-statuette', 'Bonetown', ['flag', 'fixerStatueConvo']],
+    ['rosary-necklace', 'Sprintmaster_Cave', ['min', 'SprintMasterCurrentRace', 1]],
+    ['beast-shard', 'Sprintmaster_Cave', ['min', 'SprintMasterCurrentRace', 2]],
+  ]);
+  const at = (c) => SP.EXTRAS.findIndex((x) => JSON.stringify(x[2]) === JSON.stringify(c));
+  assert.deepEqual(F.game({ silk: 0, silkMax: 9, maxHealth: 5, SprintMasterCurrentRace: 1 }).extras, [at(given[1][2])]);
+  // Coral_36's Beast Shard lies there (the completionist lists it among the caches): a shard, not a cache.
+  const coral = SP.EXTRAS.filter((x) => x[3] === 'Coral_36' && x[2][2] === 'Shell Shard Collectable Item Pickup Instant');
+  assert.deepEqual(coral.map((x) => [x[0], x[5] && x[5].item]), [['shards', 'beast-shard']]);
 });
 
 test('the keys, key items, loose rosaries, cocoons, lifts, hidden corners and Eva\'s rewards, each by what the save keeps', () => {

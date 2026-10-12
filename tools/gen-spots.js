@@ -24,7 +24,9 @@
               game's scenes (pickups.json doors), what opens a way: lever, plate, gate, lock,
               shortcut, silkwall, each ['bool', Scene, id] as the save keeps it. Then the 28 area
               maps (map, by their Has<Area>Map flag: Shakra's spot or where the map lies), and the
-              rosaries and shell shards lying in a room (rosaries, shards: pickups.json lying).
+              rosaries and shell shards lying in a room (rosaries, shards: pickups.json lying; a
+              "cache" of the completionist's that is one of them goes there too), and, last, the
+              ones given (GIVEN_PURSE: the Fixer's Statuette, the Sprintmaster's prizes).
      BOSSES   [foe id, scene, check, act]: each boss of the completionist's list, its arena and whether
               it's beaten (a playerData flag, or its Journal entry listed), then the second fights
               it folds into one entry (BOSS_MORE), each with what the save keeps of it; act the
@@ -331,8 +333,22 @@ const extra = (kind, it, name) => {
   const s = kind === 'bellhome' ? BELLHOME : roomOfCheck(c);
   if (!s || !onMap(s)) { unplaced.push(`${kind} ${it.name}`); return; }
   needs('extra:' + EXTRAS.length, it);
+  /* A "cache" that is an item lying in its room (Coral_36's Beast Shard: a CollectableItemPickup,
+     pickups.json lying) goes in the rosaries' or shards' layer, by its own bool, in its place in
+     the list (js/map-fixes.js keys by it). */
+  const purse = /-cache$/.test(kind) && c[0] === 'bool' && lyingPurse(c);
+  if (purse) { EXTRAS.push([purse[2] === 'rosaries' ? 'rosaries' : 'shards', null, c, s, purse[3].name, { item: purse[0] }]); return; }
   EXTRAS.push([kind, it.whichAct || 0, c, s, name]);
 };
+// A sceneData bool → [item id, save name, 'rosaries' or 'shards', the item] if it's a PURSE pickup lying there.
+function lyingPurse(c) {
+  for (const [id, save, cur] of CO.PURSE) {
+    if (((P.lying || {})[save] || []).some(([sc, bid]) => sc.toLowerCase() === c[1].toLowerCase() && bid === c[2])) {
+      return [id, save, cur, D.ITEMS.find((x) => x.id === id) || fail(`no item ${id}`)];
+    }
+  }
+  return null;
+}
 for (const sec of C.sections('relics.ts')) for (const it of sec.items) extra(RELIC_KIND[sec.name] || fail(`relic kind ${sec.name}`), it);
 for (const it of C.load('mossberries.ts')) extra('mossberry', it);
 for (const it of C.load('silkeaters.ts')) extra('silkeater', it);
@@ -567,6 +583,30 @@ const LIFT_OUT = new Set(['Organ_01 Hornet_cage_rect_lift_organ (1)']);
   }
 }
 
+/* The rosaries and shards given rather than lying, after Eva's (so no index js/map-fixes.js keys
+   by moves), in the rosaries' and shards' layers, each by what the save keeps once it's given
+   (read in the game's scenes and Assembly-CSharp, 12-Oct-2026, against all of the author's saves):
+   the Fixer's Hornet Statuette for the statue built (his FSM's "Statue Reward" sets
+   fixerStatueConvo as it hands it over: set in exactly the saves that hold the idol), and the
+   Sprintmaster's prizes, a race's SprintRaceController reward: his FSM's "Give Reward" stores the
+   next track's index in SprintMasterCurrentRace, its Tracks being Track 1, 2 and 3 (Track 1's
+   prize a Rosary Necklace, Track 2's a Beast Shard; Track 3 gives none, the extra race the
+   Memento). Each [the item's id, its save name, the scene, the component that gives it, the
+   check]; the Statuette on the Fixer, the prizes in the room (their controllers have no point). */
+const GIVEN_PURSE = [
+  ['hornet-statuette', 'Fixer Idol', 'bonetown', 'PlayMakerFSM', ['flag', 'fixerStatueConvo']],
+  ['rosary-necklace', 'Rosary_Set_Medium', 'sprintmaster_cave', 'SprintRaceController', ['min', 'SprintMasterCurrentRace', 1]],
+  ['beast-shard', 'Great Shard', 'sprintmaster_cave', 'SprintRaceController', ['min', 'SprintMasterCurrentRace', 2]],
+];
+for (const [id, save, scene, comp, check] of GIVEN_PURSE) {
+  const [, , cur] = CO.PURSE.find((p) => p[0] === id && p[1] === save) || fail(`${id} (${save}) isn't in js/collectibles.js PURSE`);
+  const item = D.ITEMS.find((x) => x.id === id) || fail(`no item ${id}`);
+  const from = (P.items[save] || { at: [] }).at.filter((e) => e[1] === comp);
+  chosen(scene, from.map(([s]) => s), `${id} given`);
+  if (comp !== 'SprintRaceController') LATE_XY.set(EXTRAS.length, () => entryAt(from, scene));
+  EXTRAS.push([cur === 'rosaries' ? 'rosaries' : 'shards', null, check, R.roomOf(scene).scene, item.name, { item: id }]);
+}
+
 /* ── The Bellshrines and the keys ── */
 /* Each Bellshrine's room: the two whose flag a scene names (Far Fields' in Bellshrine_05, Bellhart's
    in Widow's arena, where its bell is rung), and the other three by their area (js/map.js). */
@@ -789,7 +829,7 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               silkeater, memento, bellhome, spawn, rosary-cache, shard-cache, wall, then lever,
               plate, gate, lock, shortcut, silkwall from the game's scenes, then map, rosaries,
               shards); act null when the thing has no Act of its own; more { shop, price } for a
-              map Shakra sells, { found } for one found, { item } for what lies; check as
+              map Shakra sells, { found } for one found, { item } for a rosary or shard item; check as
               js/collectibles.js's, plus ['relic', name], ['memento', name], ['int', scene, id,
               value] and ['geo', scene, id]
      BOSSES   [foe id, scene, check, act]: each boss fight's arena, whether it's beaten and the
