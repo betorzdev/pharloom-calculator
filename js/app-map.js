@@ -27,7 +27,7 @@
                     furnishings, the small silk cocoons and Eva's rewards
      Items          Craftmetal, Pale Oil, Mossberries, Silkeaters, the area maps where each is had
                     (Shakra's spot in its area, or where it lies), the key items, the rosaries and
-                    shell shards lying in a room
+                    shell shards lying in a room or given (the Fixer's, the Sprintmaster's)
      Secrets        the rosary and shell shard caches, breakable walls, loose rosaries and each room's
                     hidden corners (off at first; from afar, a count per room)
      Your game      your cocoon; the Journal's entries still missing

@@ -14,7 +14,7 @@
               silkeater, memento, bellhome, spawn, rosary-cache, shard-cache, wall, then lever,
               plate, gate, lock, shortcut, silkwall from the game's scenes, then map, rosaries,
               shards); act null when the thing has no Act of its own; more { shop, price } for a
-              map Shakra sells, { found } for one found, { item } for what lies; check as
+              map Shakra sells, { found } for one found, { item } for a rosary or shard item; check as
               js/collectibles.js's, plus ['relic', name], ['memento', name], ['int', scene, id,
               value] (['int', scene, id, value, 'min']: at least value) and ['geo', scene, id]
      BOSSES   [foe id, scene, check, act]: each boss fight's arena, whether it's beaten and the
@@ -2297,11 +2297,12 @@
       undefined,
     ],
     [
-      'shard-cache',
-      0,
+      'shards',
+      null,
       ['bool', 'Coral_36', 'Shell Shard Collectable Item Pickup Instant'],
       'Coral_36',
-      undefined,
+      { es: 'Fragmento de bestia', en: 'Beast Shard', key: 'INV_NAME_GREAT_SHARD' },
+      { item: 'beast-shard' },
     ],
     ['shard-cache', 0, ['bool', 'Dock_02b', 'Shell Shard 03 Persistent'], 'Dock_02b', undefined],
     ['shard-cache', 0, ['bool', 'Dock_02b', 'Shell Shard 02 Persistent'], 'Dock_02b', undefined],
@@ -5902,6 +5903,30 @@
       { es: 'Nido campana', en: 'Crawbell', key: 'INV_NAME_CRAWBELL' },
       { icon: 'crawbell' },
     ],
+    [
+      'shards',
+      null,
+      ['flag', 'fixerStatueConvo'],
+      'Bonetown',
+      { es: 'Estatuilla de Hornet', en: 'Hornet Statuette', key: 'INV_NAME_FIXER_IDOL' },
+      { item: 'hornet-statuette' },
+    ],
+    [
+      'rosaries',
+      null,
+      ['min', 'SprintMasterCurrentRace', 1],
+      'Sprintmaster_Cave',
+      { es: 'Collar de rosarios', en: 'Rosary Necklace', key: 'INV_NAME_COIN_SET_M' },
+      { item: 'rosary-necklace' },
+    ],
+    [
+      'shards',
+      null,
+      ['min', 'SprintMasterCurrentRace', 2],
+      'Sprintmaster_Cave',
+      { es: 'Fragmento de bestia', en: 'Beast Shard', key: 'INV_NAME_GREAT_SHARD' },
+      { item: 'beast-shard' },
+    ],
   ];
 
   const BOSSES = [
@@ -8663,6 +8688,7 @@
     'extra:1446': [831.7, 1595],
     'extra:1447': [1597.6, 1617.4],
     'extra:1448': [1191.3, 1237.6],
+    'extra:1450': [698.2, 1468.9],
     'person:eva': [831.7, 1595],
     'person:lumble': [367.3, 965.3],
     'bell:bellShrineBoneForest': [900.7, 1369.3],
