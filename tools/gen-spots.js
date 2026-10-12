@@ -32,7 +32,7 @@
      VENDORS  vendor id → its rooms (js/shop.js), Shakra's among them
      PEOPLE   npc id → its room: the people who give something of the 100%, and Scrounge, who
               buys the relics
-     BELLS    [playerData field, scene]: the five Bellshrines
+     BELLS    [playerData field, scene (, name)]: the six Bellshrines (the Grand Gate asks for five)
      KEYS     a key's save name (js/quests.js LOCKS) → its name, the game's */
 'use strict';
 const fs = require('fs');
@@ -594,13 +594,16 @@ const LIFT_OUT = new Set(['Organ_01 Hornet_cage_rect_lift_organ (1)']);
 /* Each Bellshrine's room: the two whose flag a scene names (Far Fields' in Bellshrine_05, Bellhart's
    in Widow's arena, where its bell is rung), and the other three by their area (js/map.js). */
 const BELL_HAND = { bellShrineBoneForest: 'Bellshrine', bellShrineWilds: 'Bellshrine_05', bellShrineGreymoor: 'Bellshrine_02',
-  bellShrineBellhart: 'Belltown_Shrine', bellShrineShellwood: 'Bellshrine_03' };
-const BELLS = Q.BELLSHRINES.map((b) => {
+  bellShrineBellhart: 'Belltown_Shrine', bellShrineShellwood: 'Bellshrine_03', bellShrineEnclave: 'Bellshrine_Enclave' };
+// The Songclave's «First Shrine» is a sixth the Grand Gate doesn't ask for (QU.BELLSHRINES has five):
+// it carries its own name (the area's, ENCLAVE) as the third element.
+const BELL_EXTRA = [{ field: 'bellShrineEnclave', name: N.text('ENCLAVE') }];
+const BELLS = [...Q.BELLSHRINES, ...BELL_EXTRA].map((b) => {
   const s = BELL_HAND[b.field] || fail(`no room for ${b.field}`);
   const named = (P.fields[b.field] || []).map(([x]) => x);
   if (named.length && !named.includes(s.toLowerCase())) fail(`${b.field} is named in ${named.join(', ')}, not ${s}`);
   if (!onMap(s)) fail(`${s} isn't on the map`);
-  return [b.field, s];
+  return b.field === BELL_EXTRA[0].field ? [b.field, s, b.name] : [b.field, s];
 });
 const KEY_TEXT = { 'Simple Key': 'INV_NAME_TOKEN_FAITH', 'Belltown House Key': 'INV_NAME_BELL_HOUSE_KEY', 'Dock Key': 'INV_NAME_DOCK_KEY',
   'Ward Key': 'INV_NAME_WARD_KEY', 'Ward Boss Key': 'INV_NAME_WARD_BOSS_KEY', 'Dock Demo Key': 'INV_NAME_DOCK_DEMO_KEY',
@@ -818,7 +821,7 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
      BOSSES   [foe id, scene, check, act]: each boss fight's arena, whether it's beaten and the
               first Act it can be fought in
      VENDORS  vendor id → the rooms it sells in; PEOPLE  npc id → its room
-     BELLS    [playerData field, scene]: the five Bellshrines
+     BELLS    [playerData field, scene (, name)]: the six Bellshrines (the Grand Gate asks for five)
      KEYS     a lock's key (js/quests.js LOCKS) → its name
      MAPS     a map's flag (Has<X>Map, without Has and Map) → the area it draws
      NEEDS    a thing's key ('piece:<i>', 'tools:<id>', 'arts:<id>', 'extra:<i>'…) → the abilities
