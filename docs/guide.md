@@ -489,8 +489,13 @@ moved and not saved yet to the data's point, and the band lists the fixes by kin
 sends them to `npm run admin` (`tools/admin.js`: the site on `http://localhost:8788` with a way
 to write), which writes `js/map-fixes.js`; with no server (`file://`, the published site) the
 button reads *Copy* and puts the new `FIXES` on the clipboard, to paste over the file's. That
-file isn't generated: `npm run data` never touches it, every fix stores its mark's room, and
-`npm test` says when one names a mark the regenerated data no longer has there.
+file isn't generated, but `npm run data` keeps it in step: some fixes name a mark by its place in
+a list (`extra:120`, `task:16`, `piece:3`, `pin:7`, `shakra:2`, `shop:pebb:0`), so when a patch
+inserts or removes an entry the generator (`tools/follow-fixes.js`) pairs each old entry with its
+new one by what it is and rewrites the keys, printing what it moved. A fix whose mark vanished,
+whose pairing is ambiguous or whose mark changed room stops the run with the list, nothing
+written; redo it in the admin mode and run again. Every fix stores its mark's room, and `npm test`
+says, with the mark now at that key, when one names a mark the data no longer has there.
 
 ### Progress
 

@@ -24,7 +24,8 @@ Where it is (found on 27-Sep-2026, design/00-study.md §4.7):
     ("Bench Pin Caravan", 11-Oct-2026) carry where the caravan has to be for the game to show
     them (their DeactivatePlayerDataTest on CaravanTroupeLocation), and Fleatopia's "Pre" bench
     is there until the caravan comes, so Fleatopia always has one; they go after the rest, so
-    the pins before keep their index (js/map-fixes.js keys them by it). Left out: the Steel Soul
+    the pins before keep their index (js/map-fixes.js keys them by it; tools/follow-fixes.js rekeys
+    them when they shift, below). Left out: the Steel Soul
     and fake ones, the vendors (each with its own merchant's state), and the arrows and markers.
     Three benches have no pin on the game's map: the Songclave's (UNPINNED), placed by its RestBench
     (kb/data/game/pickups.json, tools/extract-pickups.py) as tools/gen-spots.js places a point, and
@@ -81,7 +82,7 @@ the sheets were lossy, coding each drawing's edge against its neighbours in the 
 and a darker line along joins, blotched fills): they're lossless now. Each drawing's box holds
 everything either size draws, so the fine one's faintest pixels aren't cut along it.
 """
-import json, math, os, re, sys
+import json, math, os, re, subprocess, sys
 import UnityPy
 from PIL import Image
 
@@ -720,7 +721,14 @@ def main(game):
            "(() => {\n  'use strict';\n  const SS = globalThis.SS || (globalThis.SS = {});\n"
            f"  SS.map = {json.dumps(data, separators=(',', ':'))};\n"
            "  if (typeof module !== 'undefined' && module.exports) module.exports = SS.map;\n})();\n")
-    open(os.path.join(ROOT, 'js', 'map.js'), 'w').write(src)
+    # The Map admin's fixes keyed by a PINS index follow their pins (tools/follow-fixes.js): it checks
+    # the new file before js/map.js is replaced, and stops here if a fix can't follow.
+    new = os.path.join(ROOT, 'js', 'map.js.new')
+    open(new, 'w').write(src)
+    if subprocess.run(['node', os.path.join(ROOT, 'tools', 'follow-fixes.js'), 'map', new]).returncode:
+        os.remove(new)
+        sys.exit('js/map.js not written: a fix in js/map-fixes.js can\'t follow its pin')
+    os.replace(new, os.path.join(ROOT, 'js', 'map.js'))
     kb = lambda f: os.path.getsize(os.path.join(out, f)) // 1024
     print(f'{len(PINS)} pins ({", ".join(f"{sum(q[0] == k for q in PINS)} {k}" for k in PIN_KIND.values())}), '
           f'{len(PIECES)} pieces ({len(cells)} drawings), {len(boxes)} rooms, {len(ZONES)} areas, map {W} × {H} px; '

@@ -1,6 +1,9 @@
 /* js/map-fixes.js: the Map's corrections by hand: WRITTEN by the Map's admin mode
    (#view=map&admin=1, saved through `npm run admin`, tools/admin.js), or pasted from its Copy.
-   Not generated: `npm run data` never touches it, so a fix outlives a patch's regeneration.
+   Not generated, but the generators keep its keys in step: a key that names a place in a list
+   ('extra:120', 'task:16', 'piece:3', 'pin:7', 'shakra:2', 'shop:pebb:0') is rekeyed by
+   tools/follow-fixes.js when `npm run data` shifts that list, and the run stops if a mark can't
+   be followed (gone, ambiguous, in another room). So a fix outlives a patch's regeneration.
    Points in the map image's pixels (js/map.js W × H, y downwards), one decimal.
      moved   a mark's key (as js/app-map.js things() names it: 'piece:3', 'extra:120', 'pin:7'…)
              → [x, y, scene]: where it really goes, over whatever the data says. The scene is

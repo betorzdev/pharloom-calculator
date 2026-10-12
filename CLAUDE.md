@@ -145,7 +145,7 @@ From the study (`design/00-study.md`) and the wiki's damage page:
   ones leave lines and blotches where rooms meet).
 - **A mark the Map places wrong is fixed in `js/map-fixes.js`** (moved or hidden; never added:
   the save couldn't follow it), with the Map's admin mode (`#view=map&admin=1`, saved by
-  `npm run admin`, `tools/admin.js`), never in the generated data: the file isn't generated, and `npm test` flags a fix gone stale after `npm run data`.
+  `npm run admin`, `tools/admin.js`), never in the generated data: the file isn't generated, but `npm run data` rekeys its index keys (`extra:N`, `task:N`, `pin:N`…) when a list shifts (`tools/follow-fixes.js`) and stops if a mark can't be followed; `npm test` flags a fix gone stale.
 - **Six wiki pages carry a `CODEname` that isn't their Journal key** (`CORAL_GOOMBA` for
   `NAME_CORAL_GOOMBAS`); `tools/names.js` falls back to the title.
 - **The game selects with white on grey, with no selection hue**: don't invent one from
