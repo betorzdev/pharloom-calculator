@@ -149,6 +149,13 @@ test('a rosary or shell shard cache kept as an int is done at its emptied values
   assert.ok(!SP.EXTRAS.some((x) => x[2][0] === 'int' && x[2][2] === 'Rosary Pilgrim'));
 });
 
+test('the Hero Treadmill is spent once its needle has paid its 50 spits, not at the completionist\'s -1', () => {
+  const i = SP.EXTRAS.findIndex((x) => x[2][0] === 'int' && x[2][2] === 'Hero Treadmill Rosaries Paid');
+  assert.ok(i >= 0);
+  const at = (v) => F.game({}, { persistentInts: { serializedList: [{ SceneName: 'Under_03d', ID: 'Hero Treadmill Rosaries Paid', Value: v }] } }).extras.includes(i);
+  assert.deepEqual([-1, 0, 49, 50, 73].map(at), [false, false, false, true, true]);
+});
+
 test('a pin lights by fields the save keeps, not one the game works out (UnlockedAnyTube)', () => {
   const M = require('../js/map.js');
   const flags = (c) => (!Array.isArray(c) ? [] : c[0] === 'flag' ? [c[1]] : c.slice(1).flatMap(flags));
