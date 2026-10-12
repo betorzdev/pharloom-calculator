@@ -361,6 +361,2234 @@
    14.84
   ]
  },
+ "caches": [
+  [
+   "Abyss_03",
+   "Shell Shard Fossil Tiny Bumpy",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Abyss_03",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Abyss_03",
+   "Shell Shard Fossil Tiny Front",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Abyss_03",
+   "Shell Shard Fossil Tiny Front (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Abyss_05",
+   "Shell Shard Fossil Mid Variant",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Abyss_05",
+   "Shell Shard Fossil Tiny Bumpy",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Abyss_05",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Abyss_05",
+   "Shell Shard Fossil Tiny Egg (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Abyss_05",
+   "Shell Shard Fossil Tiny Front",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Ant_02",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Ant_02",
+   "Shell Shard Fossil Tiny Front",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Ant_04",
+   "ant_shell_shard_string (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Ant_04",
+   "ant_shell_shard_string (2)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Ant_04_left",
+   "ant_item_string",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Ant_04_left",
+   "ant_rosary_string",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Ant_04_left",
+   "ant_rosary_string (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Ant_21",
+   "ant_rosary_string",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Ant_21",
+   "ant_rosary_string (3)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Ant_21",
+   "ant_rosary_string_large",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Ant_21",
+   "ant_rosary_string_large (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Ant_21",
+   "ant_rosary_string_medium (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Ant_21",
+   "ant_rosary_string_medium (3)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Ant_21",
+   "ant_rosary_string_medium Variant",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Ant_Merchant",
+   "ant_shell_shard_string",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Ant_Merchant",
+   "ant_shell_shard_string (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Ant_Merchant",
+   "ant_shell_shard_string (2)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Ant_Merchant",
+   "ant_shell_shard_string (3)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Aqueduct_01",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Aqueduct_01",
+   "Shell Shard Fossil Tiny Front",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Aqueduct_04",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Aqueduct_04",
+   "Shell Shard Fossil Tiny Egg (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Aqueduct_04",
+   "Shell Shard Fossil Tiny Egg (2)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Aqueduct_04",
+   "Shell Shard Fossil Tiny Front",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Aqueduct_04",
+   "Shell Shard Fossil Tiny Front (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Aqueduct_05",
+   "Shell Shard Fossil Dustpen Short",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Aqueduct_05",
+   "Shell Shard Fossil Dustpen Tall",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Aqueduct_05",
+   "Shell Shard Fossil Dustpen Tall (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Aqueduct_05",
+   "Shell Shard Fossil Dustpen Tall (2)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Arborium_06",
+   "Shell Shard Fossil Coral Conch",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Arborium_06",
+   "Shell Shard Fossil Coral Conch (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Belltown_04",
+   "rosary_cache_bell_ground",
+   "RosaryCache",
+   2,
+   2
+  ],
+  [
+   "Belltown_04",
+   "rosary_string_medium",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Belltown_04",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Belltown_07",
+   "rosary_cache_hang_bell",
+   "RosaryCacheHanging",
+   2,
+   2
+  ],
+  [
+   "Belltown_basement_03",
+   "rosary_cache_bell_ground",
+   "RosaryCache",
+   2,
+   2
+  ],
+  [
+   "Belltown_basement_03",
+   "rosary_cache_bell_ground (1)",
+   "RosaryCache",
+   2,
+   2
+  ],
+  [
+   "Belltown_basement_03",
+   "rosary_cache_hang_bell",
+   "RosaryCacheHanging",
+   2,
+   2
+  ],
+  [
+   "Bellway_Peak",
+   "rosary_string_medium",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Bellway_Peak",
+   "rosary_string_medium (1)",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Bellway_Peak",
+   "rosary_string_small_mixed",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Bellway_Peak_02",
+   "rosary_cache_hang",
+   "RosaryCacheHanging",
+   2,
+   2
+  ],
+  [
+   "Bone_01",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_01",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Bone_01",
+   "rosary_string_small_half (2)",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Bone_01b",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Bone_01b",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Bone_01c",
+   "rosary_string_medium",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Bone_01c",
+   "rosary_string_small_half (1)",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Bone_04",
+   "Shell Shard Fossil Tiny Front (2)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_04",
+   "Shell Shard Fossil Tiny Front (3)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_07",
+   "Shell Shard Fossil Large Uni",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_11",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Bone_11",
+   "rosary_string_small_mixed",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Bone_14",
+   "Shell Shard Fossil Tiny Bumpy",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_14",
+   "Shell Shard Fossil Tiny Front",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_19",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Bone_19",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Bone_19",
+   "rosary_string_small_half (1)",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Bone_East_02b",
+   "Shell Shard Fossil Mid",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_East_07",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Bone_East_09b",
+   "ant_rosary_string",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_East_09b",
+   "ant_rosary_string (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_East_13",
+   "Shell Shard Fossil Dock (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_East_13",
+   "Shell Shard Fossil Dock (2)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_East_13",
+   "Shell Shard Fossil Dock (3)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_East_14",
+   "rosary_string_medium",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Bone_East_14",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Bone_East_14b",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Bone_East_14b",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Bone_East_16",
+   "ant_rosary_string",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_East_16",
+   "ant_rosary_string (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_East_16",
+   "ant_rosary_string (2)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_East_17",
+   "ant_rosary_string",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_East_17",
+   "ant_rosary_string (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_East_17b",
+   "ant_rosary_string",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_East_17b",
+   "ant_rosary_string (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_East_18",
+   "ant_rosary_string",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_East_18",
+   "ant_shell_shard_string",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_East_18",
+   "ant_shell_shard_string (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_East_18b",
+   "ant_item_string",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_East_24",
+   "Shell Shard Fossil Mid Variant",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_East_24",
+   "Shell Shard Fossil Tiny Bumpy",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_East_24",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_East_24",
+   "Shell Shard Fossil Tiny Front",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_East_24",
+   "ant_item_string",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_East_24",
+   "ant_rosary_string (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_East_24",
+   "ant_rosary_string_large",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bone_East_LavaChallenge",
+   "Shell Shard Fossil Mid",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bonegrave",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Bonegrave",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Bonetown",
+   "Shell Shard Fossil Big",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Bonetown",
+   "rosary_string_medium",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Bonetown",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Chapel_Wanderer",
+   "rosary_string_medium",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Chapel_Wanderer",
+   "rosary_string_small_half (1)",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Chapel_Wanderer",
+   "rosary_string_small_half (4)",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Chapel_Wanderer",
+   "rosary_string_small_half (5)",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Coral_02",
+   "Shell Shard Fossil Tiny Bumpy",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Coral_02",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Coral_02",
+   "Shell Shard Fossil Tiny Front",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Coral_24",
+   "Shell Shard Fossil Tiny Bumpy",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Coral_24",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Coral_27",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Coral_27",
+   "Shell Shard Fossil Tiny Front",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Coral_36",
+   "Shell Shard Fossil Beast",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Coral_36",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Coral_38",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Coral_38",
+   "Shell Shard Fossil Tiny Front",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Coral_38",
+   "Shell Shard Fossil Tiny Front (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Coral_38",
+   "Shell Shard Fossil Tiny Front (2)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Coral_40",
+   "Shell Shard Fossil Coral Conch",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Coral_40",
+   "Shell Shard Fossil Coral Conch (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Coral_41",
+   "Shell Shard Fossil Coral Conch",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Cradle_03",
+   "Shell Shard Fossil Mid Variant",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Dock_01",
+   "Song Shard Barrel",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Dock_01",
+   "rosary_string_medium",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Dock_01",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Dock_02",
+   "Song Shard Barrel",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Dock_02",
+   "rosary_string_small_half (1)",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Dock_02",
+   "rosary_string_small_half (2)",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Dock_02b",
+   "Shell Shard Fossil Tiny Bumpy",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Dock_02b",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Dock_02b",
+   "Shell Shard Fossil Tiny Front",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Dock_02b",
+   "Song Shard Barrel",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Dock_06_Church",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Dock_06_Church",
+   "rosary_string_small (1)",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Dock_06_Church",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Dock_06_Church",
+   "rosary_string_small_half (1)",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Dust_02",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Dust_02",
+   "rosary_string_small_half (1)",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Dust_03",
+   "Shell Shard Fossil Tiny Bumpy",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Dust_03",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Dust_03",
+   "Shell Shard Fossil Tiny Front",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Dust_03",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Dust_04",
+   "Shell Shard Fossil Tiny Bumpy (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Dust_04",
+   "Shell Shard Fossil Tiny Front",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Dust_05",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Dust_05",
+   "Shell Shard Fossil Tiny Front",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Dust_06",
+   "rosary_string_medium",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Dust_06",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Dust_06",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Greymoor_02",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Greymoor_02",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Greymoor_03",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Greymoor_03",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Greymoor_05",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Greymoor_05",
+   "rosary_string_small_half (1)",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Greymoor_07",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Greymoor_07",
+   "rosary_string_small_half (1)",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Greymoor_08",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Greymoor_11",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Greymoor_11",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Greymoor_15b",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Greymoor_15b",
+   "rosary_string_small_half (1)",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Greymoor_15b",
+   "rosary_string_small_half (2)",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Greymoor_15b",
+   "rosary_string_small_half (3)",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Greymoor_16",
+   "Shell Shard Fossil Tiny Bumpy",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Greymoor_16",
+   "Shell Shard Fossil Tiny Egg (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Greymoor_16",
+   "rosary_string_medium",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Greymoor_16",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Greymoor_16",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Greymoor_17",
+   "Shell Shard Fossil Tiny Egg (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Greymoor_17",
+   "Shell Shard Fossil Tiny Egg (3)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Greymoor_17",
+   "Shell Shard Fossil Tiny Front",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Greymoor_17",
+   "Shell Shard Fossil Tiny Front (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Greymoor_17",
+   "Shell Shard Fossil Tiny Front (2)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Greymoor_20b",
+   "scissor_string (4)",
+   "RosaryCacheHanging",
+   0,
+   0
+  ],
+  [
+   "Greymoor_20b",
+   "scissor_string (5)",
+   "RosaryCacheHanging",
+   0,
+   0
+  ],
+  [
+   "Greymoor_20b",
+   "scissor_string (6)",
+   "RosaryCacheHanging",
+   0,
+   0
+  ],
+  [
+   "Greymoor_20b",
+   "scissor_string (7)",
+   "RosaryCacheHanging",
+   0,
+   0
+  ],
+  [
+   "Greymoor_20c",
+   "scissor_string (1)",
+   "RosaryCacheHanging",
+   0,
+   0
+  ],
+  [
+   "Greymoor_20c",
+   "scissor_string (2)",
+   "RosaryCacheHanging",
+   0,
+   0
+  ],
+  [
+   "Greymoor_20c",
+   "scissor_string (4)",
+   "RosaryCacheHanging",
+   0,
+   0
+  ],
+  [
+   "Greymoor_20c",
+   "scissor_string (5)",
+   "RosaryCacheHanging",
+   0,
+   0
+  ],
+  [
+   "Greymoor_20c",
+   "scissor_string (6)",
+   "RosaryCacheHanging",
+   0,
+   0
+  ],
+  [
+   "Greymoor_20c",
+   "scissor_string (7)",
+   "RosaryCacheHanging",
+   0,
+   0
+  ],
+  [
+   "Greymoor_20c",
+   "scissor_string (8)",
+   "RosaryCacheHanging",
+   0,
+   0
+  ],
+  [
+   "Greymoor_20c",
+   "scissor_string (9)",
+   "RosaryCacheHanging",
+   0,
+   0
+  ],
+  [
+   "Greymoor_22",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Greymoor_22",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Hang_06_bank",
+   "rosary_string_large_full Variant",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Hang_06_bank",
+   "rosary_string_large_mixed Variant",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Hang_06_bank",
+   "rosary_string_medium",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Hang_06_bank",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Hang_06_bank",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Hang_06_bank",
+   "rosary_string_small_half (1)",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Hang_09",
+   "Song Shard Under Chest",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Hang_15",
+   "Song Shard Under Chest",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Library_04",
+   "rosary_bucket_library",
+   "RosaryCache",
+   2,
+   2
+  ],
+  [
+   "Library_06",
+   "rosary_bucket_library",
+   "RosaryCache",
+   2,
+   2
+  ],
+  [
+   "Library_06",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Library_06",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Library_07",
+   "Song Shard Under Chest",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Library_07",
+   "rosary_cache_bell_ground",
+   "RosaryCache",
+   2,
+   2
+  ],
+  [
+   "Library_08",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Library_08",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Library_11b",
+   "Shell Shard Fossil Tiny Bumpy",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Library_11b",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Library_11b",
+   "Shell Shard Fossil Tiny Egg (2)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Library_11b",
+   "Shell Shard Fossil Tiny Front",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Library_11b",
+   "Song Shard Barrel",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Library_11b",
+   "Song Shard Barrel (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Library_12",
+   "Shell Shard Fossil Dustpen Short",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Library_12",
+   "Shell Shard Fossil Dustpen Tall",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Library_12",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Library_12",
+   "Shell Shard Fossil Tiny Front",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Library_12b",
+   "Song Shard Under Chest",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Library_13",
+   "Song Shard Barrel",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Mosstown_01",
+   "rosary_string_small (1)",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Mosstown_01",
+   "rosary_string_small (2)",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Mosstown_02",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Mosstown_02",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Mosstown_03",
+   "Shell Shard Fossil Tiny Bumpy",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Mosstown_03",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Mosstown_03",
+   "Shell Shard Fossil Tiny Front",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Peak_01",
+   "Shell Shard Fossil Tiny Bumpy (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Peak_01",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Peak_06",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Peak_06",
+   "Shell Shard Fossil Tiny Front",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Peak_07",
+   "Shell Shard Fossil Tiny Bumpy",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Peak_07",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Peak_07",
+   "Shell Shard Fossil Tiny Front",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Room_CrowCourt",
+   "rosary_string_medium",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Room_CrowCourt",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Room_CrowCourt",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Room_CrowCourt",
+   "rosary_string_small_half (1)",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Room_CrowCourt",
+   "rosary_string_small_half (6)",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Room_CrowCourt",
+   "rosary_string_small_half (7)",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Room_CrowCourt",
+   "rosary_string_small_half (8)",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Room_CrowCourt_02",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Room_CrowCourt_02",
+   "rosary_string_small_half (2)",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Room_CrowCourt_02",
+   "rosary_string_small_half (3)",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Room_Forge",
+   "Song Shard Barrel",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Shadow_05",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Shadow_10",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Shadow_10",
+   "Shell Shard Fossil Tiny Front",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Shadow_11",
+   "Shell Shard Fossil Tiny Bumpy",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Shadow_11",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Shadow_25",
+   "Shell Shard Fossil Mid Variant",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Shadow_25",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Shadow_25",
+   "Shell Shard Fossil Tiny Front",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Shellwood_01",
+   "Shell Shard Fossil Tiny Bumpy",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Shellwood_01",
+   "Shell Shard Fossil Tiny Bumpy (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Shellwood_01",
+   "Shell Shard Fossil Tiny Front",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Shellwood_11",
+   "Shell Shard Fossil Mid",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Shellwood_11",
+   "Shell Shard Fossil Tiny Bumpy",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Shellwood_11",
+   "Shell Shard Fossil Tiny Bumpy (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Shellwood_11",
+   "Shell Shard Fossil Tiny Bumpy (2)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Shellwood_11",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Shellwood_25",
+   "Shell Shard Fossil Tiny Egg (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Slab_05",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Slab_05",
+   "Shell Shard Fossil Tiny Front",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Slab_05",
+   "Shell Shard Fossil Tiny Front (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Slab_12",
+   "Shell Shard Fossil Tiny Bumpy",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Slab_12",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Slab_18",
+   "Shell Shard Fossil Tiny Bumpy",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Slab_18",
+   "Shell Shard Fossil Tiny Front",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Slab_18",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Slab_19b",
+   "rosary_string_medium",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Slab_19b",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Slab_19b",
+   "rosary_string_small (1)",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Slab_19b",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Song_01",
+   "Song Shard Barrel",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Song_01",
+   "rosary_string_medium",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Song_01",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Song_01",
+   "rosary_string_small (1)",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Song_01",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Song_01b",
+   "rosary_string_medium",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Song_01b",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Song_01b",
+   "rosary_string_small_mixed",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Song_03",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Song_03",
+   "rosary_string_small_half (1)",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Song_07",
+   "rosary_string_medium",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Song_09",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Song_09",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Song_09",
+   "rosary_string_small_half (1)",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Song_11",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Song_11",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Song_11",
+   "rosary_string_small_half (1)",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Song_15",
+   "rosary_string_medium",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Song_15",
+   "rosary_string_small",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Song_15",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Tut_01",
+   "Shell Shard Fossil Large Uni",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Tut_01b",
+   "Shell Shard Fossil Mid (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Tut_01b",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Tut_01b",
+   "Shell Shard Fossil Tiny Front",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Tut_02",
+   "Shell Shard Fossil Tiny Bumpy",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Tut_02",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Tut_02",
+   "Shell Shard Fossil Tiny Front",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Under_03b",
+   "Song Shard Under Chest",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Under_04",
+   "Song Shard Under Chest",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Under_07",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Under_07c",
+   "Song Shard Under Chest (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Under_07c",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Under_07c",
+   "rosary_string_small_half (1)",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Under_08",
+   "Song Shard Under Chest",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Under_17",
+   "Song Shard Under Chest",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Under_23",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Under_27",
+   "Song Shard Barrel",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Ward_06",
+   "rosary_string_medium",
+   "RosaryCacheString",
+   2,
+   3
+  ],
+  [
+   "Ward_06",
+   "rosary_string_small_half",
+   "RosaryCacheString",
+   1,
+   2
+  ],
+  [
+   "Wisp_09",
+   "Shell Shard Fossil Mid Variant",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Wisp_09",
+   "Shell Shard Fossil Tiny Bumpy",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Wisp_09",
+   "Shell Shard Fossil Tiny Bumpy (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Wisp_09",
+   "Shell Shard Fossil Tiny Egg",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Wisp_09",
+   "Shell Shard Fossil Tiny Egg (1)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Wisp_09",
+   "Shell Shard Fossil Tiny Egg (2)",
+   "BreakableHolder",
+   0,
+   0
+  ],
+  [
+   "Wisp_09",
+   "Shell Shard Fossil Tiny Egg (3)",
+   "BreakableHolder",
+   0,
+   0
+  ]
+ ],
  "doors": {
   "gate": [
    [
@@ -15980,6 +18208,12 @@
     304.8
    ]
   },
+  "abyss_11": {
+   "Abyss_Collapse_Wall_bot": [
+    34.06,
+    5.03
+   ]
+  },
   "abyss_13": {
    "Abyss_Collapse_Wall": [
     3.61,
@@ -16364,6 +18598,12 @@
    "rosary_cache_hang_bell": [
     110.48,
     67.52
+   ]
+  },
+  "bellway_01": {
+   "Act3_Bellway_01_Breakable_wall": [
+    34.28,
+    29.6
    ]
   },
   "bellway_02": {
@@ -18542,6 +20782,10 @@
    "Breakable Wall": [
     41.07,
     23.01
+   ],
+   "BreakableWallSwampBenchShortcut": [
+    10.68,
+    7.89
    ]
   },
   "shadow_09": {
@@ -19332,6 +21576,12 @@
    "Song Shard Under Chest": [
     9.86,
     14.01
+   ]
+  },
+  "under_03d": {
+   "Hero Treadmill Rosaries Paid": [
+    56.09,
+    20.63
    ]
   },
   "under_04": {

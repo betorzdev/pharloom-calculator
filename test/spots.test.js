@@ -134,6 +134,28 @@ test('the keys, key items, loose rosaries, cocoons, lifts, hidden corners and Ev
   assert.equal(F.gameOf(F.toSnapshot(pd)).evaSlots, 13);
 });
 
+test('a rosary or shell shard cache kept as an int is done at its emptied values, not the untouched -1', () => {
+  const P = require('../kb/data/game/pickups.json');
+  const at = new Map(P.caches.map(([s, id, , from, to]) => [s + '|' + id, [from, to]]));
+  const ints = (c) => (c[0] === 'any' ? c.slice(1) : [c]);
+  for (const [kind, , c] of SP.EXTRAS) {
+    if (!['rosary-cache', 'shard-cache'].includes(kind) || !ints(c).every((x) => x[0] === 'int')) continue;
+    const [, scene, id] = ints(c)[0];
+    const x = at.get(scene + '|' + id);
+    if (!x) { assert.equal(ints(c)[0][2], 'Hero Treadmill Rosaries Paid', JSON.stringify(c)); continue; }
+    assert.deepEqual(ints(c).map((y) => y[3]), Array.from({ length: x[1] - x[0] + 1 }, (_, i) => x[0] + i), JSON.stringify(c));
+  }
+  // The Covetous Pilgrims' int is the rosaries they carry: their bool is the cache, and the int isn't one.
+  assert.ok(!SP.EXTRAS.some((x) => x[2][0] === 'int' && x[2][2] === 'Rosary Pilgrim'));
+});
+
+test('a pin lights by fields the save keeps, not one the game works out (UnlockedAnyTube)', () => {
+  const M = require('../js/map.js');
+  const flags = (c) => (!Array.isArray(c) ? [] : c[0] === 'flag' ? [c[1]] : c.slice(1).flatMap(flags));
+  assert.ok(!M.PINS.some((p) => flags(p[4]).includes('UnlockedAnyTube')));
+  assert.ok(M.PINS.some((p) => flags(p[4]).includes('UnlockedUnderTube') && p[3] === 'Tube_Hub_Destroyed'));
+});
+
 test('a thing\'s prereqs are abilities or Silk Skills the save tells', () => {
   const ids = new Set([...D.ARTS, ...D.SKILLS].map((x) => x.id));
   for (const [key, needs] of Object.entries(SP.NEEDS)) for (const id of needs) assert.ok(ids.has(id), `${key}: ${id}`);

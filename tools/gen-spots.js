@@ -322,12 +322,28 @@ const roomOfCheck = (c) => {
   if (c[0] === 'any') for (const x of c.slice(1)) { const r = roomOfCheck(x); if (r) return r; }
   return null;
 };
+/* A cache's int as the game keeps it (pickups.json caches, from its scenes): a shell shard cache's
+   or an ant rosary string's hits left (BreakableHolder: 0 once broken), a rosary cache's state
+   (-1 untouched, a step up each hit; emptied from its emptied step to its last). The completionist,
+   whose caches are still a work in progress, gives every one -1: an untouched rosary cache, and
+   a value a BreakableHolder never holds. Done is any of its emptied values. */
+const CACHE = new Map((P.caches || []).map(([s, id, comp, from, to]) => [s + '\u0000' + id, { comp, from, to }]));
+/* The completionist's rosary caches whose int isn't a cache's (read in the game's scenes,
+   12-Oct-2026): the Covetous Pilgrims' (Rosary Pilgrim, an enemy whose int is the rosaries it
+   carries, the same once it's beaten) are left out, as the same list has each by the bool its
+   defeat sets; the Hero Treadmill's rosaries paid (an FSM's count, 0 on every save) stays as the
+   completionist has it. */
+const NOT_CACHE = { 'Rosary Pilgrim': 'out', 'Hero Treadmill Rosaries Paid': 'as is' };
+const cacheCheck = (c) => {
+  const x = CACHE.get(c[1] + '\u0000' + c[2]);
+  if (!x) return NOT_CACHE[c[2]] ? (NOT_CACHE[c[2]] === 'out' ? null : c) : fail(`${c[1]} ${c[2]}: no cache of that name in pickups.json`);
+  const at = [];
+  for (let v = x.from; v <= x.to; v++) at.push(['int', c[1], c[2], v]);
+  return at.length === 1 ? at[0] : ['any', ...at];
+};
 const extra = (kind, it, name) => {
-  const c = C.check(it.parsingInfo, fail);
-  /* A shell shard cache's int is its hits left (1 to 3 on the author's saves, 0 once broken, never
-     -1): the completionist, whose caches are still a work in progress, gives it the rosary
-     strings' -1 (emptied). */
-  if (kind === 'shard-cache' && c[0] === 'int' && c[3] === -1) c[3] = 0;
+  let c = C.check(it.parsingInfo, fail);
+  if ((kind === 'rosary-cache' || kind === 'shard-cache') && c[0] === 'int' && !(c = cacheCheck(c))) return;
   const s = kind === 'bellhome' ? BELLHOME : roomOfCheck(c);
   if (!s || !onMap(s)) { unplaced.push(`${kind} ${it.name}`); return; }
   needs('extra:' + EXTRAS.length, it);
