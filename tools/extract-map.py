@@ -26,10 +26,11 @@ Where it is (found on 27-Sep-2026, design/00-study.md §4.7):
     is there until the caravan comes, so Fleatopia always has one; they go after the rest, so
     the pins before keep their index (js/map-fixes.js keys them by it). Left out: the Steel Soul
     and fake ones, the vendors (each with its own merchant's state), and the arrows and markers.
-    Two benches have no pin on the game's map: the Songclave's (UNPINNED), placed by its RestBench
+    Three benches have no pin on the game's map: the Songclave's (UNPINNED), placed by its RestBench
     (kb/data/game/pickups.json, tools/extract-pickups.py) as tools/gen-spots.js places a point, and
     the Bellhome's (INSIDE: Belltown_Room_Spare has no drawing of its own, so it goes at its door in
     Belltown, the one the Belltown House Key opens, and it's lit once BelltownHouseUnlocked).
+    The Border Caves' too (INSIDE).
     Song_01b's RestBench is not one: its GameObject is switched off in the scene and nothing in the
     scene turns it on (read 12-Oct-2026), and no save rests there.
   · the sprites are in atlases_assets_assets/sprites/_atlases/hornet_map.spriteatlas.bundle (a
@@ -96,7 +97,11 @@ PIN_KIND = {'Bench': 'bench', 'Bellway': 'bellway', 'Tube': 'ventrica'}
 UNPINNED = ['Song_Enclave']
 # A bench in a room with no place on the map: its scene → [the scene it's entered from, the playerData
 # field whose door (pickups.json pd) it's entered by, the field that lights it].
-INSIDE = {'Belltown_Room_Spare': ['Belltown', 'BelltownHouseUnlocked', 'BelltownHouseUnlocked']}
+INSIDE = {'Belltown_Room_Spare': ['Belltown', 'BelltownHouseUnlocked', 'BelltownHouseUnlocked'],
+          # The Border Caves' bench (the Nameless Town above the Cradle, Act 3, in the wiki's The Cradle):
+          # its room has no drawing nor a point of its own; the game places its neighbour, Challenge_02
+          # (js/rooms.js ENTRANCE), at the surface above the Cradle, so it goes there, lit with Act 3.
+          'Cradle_Destroyed_Challenge_Bench': ['Cradle_Destroyed_Challenge_02', None, 'blackThreadWorld']}
 PICKUPS = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'kb', 'data', 'game', 'pickups.json')
 HIDDEN, ROUGH, FULL = 0, 1, 2   # GameMapScene.States
 GREY = (0.5, 0.5, 0.5)          # Color.grey: a Rough piece with no fullSprite, not mapped
@@ -653,10 +658,16 @@ def main(game):
         PINS.append(['bench', round(r[0] + b[0] / size[0] * r[2]), round(r[1] + (1 - b[1] / size[1]) * r[3]), s])
     for s, (host, door, flag) in INSIDE.items():
         r, size = boxes.get(host), seen['sizes'].get(host.lower())
-        at = next((e for e in seen['pd'].get(door, []) if e[0] == host.lower() and isinstance(e[3], (int, float))), None)
-        if not (r and r[2] and size and at and seen['benches'].get(s.lower())) or any(o[3] == s for o in PINS):
-            raise ValueError(f'{s}: no door in {host}, room or RestBench to place its bench by, or the game pins it now')
-        PINS.append(['bench', round(r[0] + at[3] / size[0] * r[2]), round(r[1] + (1 - at[4] / size[1]) * r[3]), s, ['flag', flag]])
+        if not (r and seen['benches'].get(s.lower())) or any(o[3] == s for o in PINS):
+            raise ValueError(f'{s}: no room or RestBench to place its bench by, or the game pins it now')
+        if door:
+            at = next((e for e in seen['pd'].get(door, []) if e[0] == host.lower() and isinstance(e[3], (int, float))), None)
+            if not (r[2] and size and at):
+                raise ValueError(f'{s}: no door {door} in {host} to place its bench by')
+            x, y = r[0] + at[3] / size[0] * r[2], r[1] + (1 - at[4] / size[1]) * r[3]
+        else:
+            x, y = r[0], r[1]   # a room with no drawing: the point where the game places it
+        PINS.append(['bench', round(x), round(y), s, ['flag', flag]])
 
     out = os.path.join(ROOT, 'assets', 'map')
     os.makedirs(out, exist_ok=True)
