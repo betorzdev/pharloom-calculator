@@ -36,7 +36,7 @@ test('the extras, bosses, people and Bellshrines are all on the map, with a chec
   }
   for (const [foe, scene] of SP.BOSSES) assert.ok(onMap(scene), `boss ${foe}`);
   for (const scene of Object.values(SP.PEOPLE)) assert.ok(onMap(scene), scene);
-  assert.equal(SP.BELLS.length, Q.BELLSHRINES.length);
+  assert.equal(SP.BELLS.length, Q.BELLSHRINES.length + 1);   // the Songclave's sixth is the Map's only
   for (const [, scene] of SP.BELLS) assert.ok(onMap(scene), scene);
   for (const k of Object.keys(Q.LOCKS)) assert.ok(SP.KEYS[k] && SP.KEYS[k].es && SP.KEYS[k].en, k);
   assert.equal(Object.keys(SP.MAPS).length, 28);

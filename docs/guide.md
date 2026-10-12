@@ -373,8 +373,8 @@ boss's arena, with the person who gives it. All of it on at first.
 - **Places**: benches (off at first: there are 80, the game's own bench pins and the Songclave's,
   which its map doesn't pin; the Flea Caravan's two of its own, in Greymoor and the Blasted Steps,
   only while your caravan is there), Bellway and Ventrica stations (dimmed while
-  your game hasn't opened them: a station not unlocked, a toll not paid), the five Bellshrines of
-  the Grand Gate and the shops, and the **Lifts** (off at first), gone once your game has called each. The shops are the
+  your game hasn't opened them: a station not unlocked, a toll not paid), the six Bellshrines (the Grand Gate asks for five of them;
+  the Songclave's is the sixth) and the shops, and the **Lifts** (off at first), gone once your game has called each. The shops are the
   game's own (its ShopOwners: Pebb, Frey, Mort, the Forge Daughter, Grindle, Jubilana, the
   Mottled Skarr, the Twelfth Architect) and those who trade outside them: the Couriers' delivery
   wishes in Bellhart, the Moss Druid, who buys Mossberries, and Creige's drinks.

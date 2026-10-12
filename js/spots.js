@@ -20,7 +20,7 @@
      BOSSES   [foe id, scene, check, act]: each boss fight's arena, whether it's beaten and the
               first Act it can be fought in
      VENDORS  vendor id → the rooms it sells in; PEOPLE  npc id → its room
-     BELLS    [playerData field, scene]: the five Bellshrines
+     BELLS    [playerData field, scene (, name)]: the six Bellshrines (the Grand Gate asks for five)
      KEYS     a lock's key (js/quests.js LOCKS) → its name
      MAPS     a map's flag (Has<X>Map, without Has and Map) → the area it draws
      NEEDS    a thing's key ('piece:<i>', 'tools:<id>', 'arts:<id>', 'extra:<i>'…) → the abilities
@@ -5193,6 +5193,11 @@
     ['bellShrineGreymoor', 'Bellshrine_02'],
     ['bellShrineBellhart', 'Belltown_Shrine'],
     ['bellShrineShellwood', 'Bellshrine_03'],
+    [
+      'bellShrineEnclave',
+      'Bellshrine_Enclave',
+      { es: 'Enclave Cancioneril', en: 'Songclave', key: 'ENCLAVE' },
+    ],
   ];
 
   const KEYS = {
