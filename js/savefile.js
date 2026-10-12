@@ -309,7 +309,7 @@
         case 'held': return int((items.get(c[1]) || {}).Amount) > 0;
         case 'crest': return !!(crests.get(c[1]) || {}).IsUnlocked;   // a Crest by its save name (Eva's Hunter_v2, _v3)
         case 'steel': return steel.some((e) => e.SceneName === c[1] && e.IsSeen === true);
-        case 'int': return ints.get(c[1] + '\u0000' + c[2]) === c[3];
+        case 'int': { const v = ints.get(c[1] + '\u0000' + c[2]); return c[4] === 'min' ? v >= c[3] : v === c[3]; }   // 'min': at least
         case 'geo': return rocks.get(c[1] + '\u0000' + c[2]) === 0;   // listed, with no hits left
         case 'any': return c.slice(1).some(has);
         case 'all': return c.slice(1).every(has);
