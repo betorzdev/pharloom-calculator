@@ -331,12 +331,15 @@ const CACHE = new Map((P.caches || []).map(([s, id, comp, from, to]) => [s + '\u
 /* The completionist's rosary caches whose int isn't a cache's (read in the game's scenes,
    12-Oct-2026): the Covetous Pilgrims' (Rosary Pilgrim, an enemy whose int is the rosaries it
    carries, the same once it's beaten) are left out, as the same list has each by the bool its
-   defeat sets; the Hero Treadmill's rosaries paid (an FSM's count, 0 on every save) stays as the
-   completionist has it. */
-const NOT_CACHE = { 'Rosary Pilgrim': 'out', 'Hero Treadmill Rosaries Paid': 'as is' };
+   defeat sets. The Underworks' Hero Treadmill (Under_03d) isn't a cache but a wheel that pays as
+   Hornet runs it: its int is the needle's FSM's Value, one up each time the needle tops out and
+   spits; while Value is at most Max Payout (50) a spit pays (always the visit's first, then five
+   in six), past it it fails (unless it's the visit's first). So it's spent at 50: the completionist's
+   -1 is a value it never holds (0 on every save). */
+const NOT_CACHE = { 'Rosary Pilgrim': 'out', 'Hero Treadmill Rosaries Paid': ['int', 'Under_03d', 'Hero Treadmill Rosaries Paid', 50, 'min'] };
 const cacheCheck = (c) => {
   const x = CACHE.get(c[1] + '\u0000' + c[2]);
-  if (!x) return NOT_CACHE[c[2]] ? (NOT_CACHE[c[2]] === 'out' ? null : c) : fail(`${c[1]} ${c[2]}: no cache of that name in pickups.json`);
+  if (!x) return NOT_CACHE[c[2]] ? (NOT_CACHE[c[2]] === 'out' ? null : NOT_CACHE[c[2]]) : fail(`${c[1]} ${c[2]}: no cache of that name in pickups.json`);
   const at = [];
   for (let v = x.from; v <= x.to; v++) at.push(['int', c[1], c[2], v]);
   return at.length === 1 ? at[0] : ['any', ...at];
@@ -811,7 +814,7 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               shards); act null when the thing has no Act of its own; more { shop, price } for a
               map Shakra sells, { found } for one found, { item } for what lies; check as
               js/collectibles.js's, plus ['relic', name], ['memento', name], ['int', scene, id,
-              value] and ['geo', scene, id]
+              value] (['int', scene, id, value, 'min']: at least value) and ['geo', scene, id]
      BOSSES   [foe id, scene, check, act]: each boss fight's arena, whether it's beaten and the
               first Act it can be fought in
      VENDORS  vendor id → the rooms it sells in; PEOPLE  npc id → its room

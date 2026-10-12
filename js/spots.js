@@ -16,7 +16,7 @@
               shards); act null when the thing has no Act of its own; more { shop, price } for a
               map Shakra sells, { found } for one found, { item } for what lies; check as
               js/collectibles.js's, plus ['relic', name], ['memento', name], ['int', scene, id,
-              value] and ['geo', scene, id]
+              value] (['int', scene, id, value, 'min']: at least value) and ['geo', scene, id]
      BOSSES   [foe id, scene, check, act]: each boss fight's arena, whether it's beaten and the
               first Act it can be fought in
      VENDORS  vendor id → the rooms it sells in; PEOPLE  npc id → its room
@@ -925,7 +925,7 @@
     [
       'rosary-cache',
       0,
-      ['int', 'Under_03d', 'Hero Treadmill Rosaries Paid', -1],
+      ['int', 'Under_03d', 'Hero Treadmill Rosaries Paid', 50, 'min'],
       'Under_03d',
       undefined,
     ],
