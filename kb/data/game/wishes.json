@@ -716,6 +716,7 @@
   "Pickled Roach Egg": "century_maggot_icon",
   "Rock Roller Item": "bone_roller_rock_icon",
   "Shell Flower": "_0007_shell_flower_purple_icon",
+  "Silver Bellclapper": "hornet_icon_bell_clapper",
   "Skull King Fragment": "m_tusk",
   "Snare Soul Bell Hermit": "snail_icon__0001_bell_hermit_soul",
   "Snare Soul Churchkeeper": "snail_icon__0000_churchkeeper_soul",
@@ -868,6 +869,120 @@
     84.28
    ]
   ],
+  "Silver Bellclapper": [
+   [
+    "belltown_04",
+    "QuestDropper",
+    "Quest Bell Dropper",
+    null,
+    70.03,
+    24.49
+   ],
+   [
+    "belltown_04",
+    "QuestDropper",
+    "Quest Bell Dropper (1)",
+    null,
+    64.99,
+    12.62
+   ],
+   [
+    "belltown_04",
+    "QuestDropper",
+    "Quest Bell Dropper (2)",
+    null,
+    31.58,
+    35.11
+   ],
+   [
+    "belltown_04",
+    "QuestDropper",
+    "Quest Bell Dropper (3)",
+    null,
+    74.04,
+    53.05
+   ],
+   [
+    "belltown_04",
+    "QuestDropper",
+    "Quest Bell Dropper (4)",
+    null,
+    64.8,
+    70.27
+   ],
+   [
+    "belltown_04",
+    "QuestDropper",
+    "Quest Bell Dropper (5)",
+    null,
+    18.51,
+    93.58
+   ],
+   [
+    "belltown_04",
+    "QuestDropper",
+    "Quest Bell Dropper (6)",
+    null,
+    13.22,
+    79.08
+   ],
+   [
+    "belltown_basement_03",
+    "QuestDropper",
+    "Quest Bell Dropper",
+    null,
+    95.43,
+    121.12
+   ],
+   [
+    "belltown_basement_03",
+    "QuestDropper",
+    "Quest Bell Dropper (1)",
+    null,
+    89.98,
+    95.09
+   ],
+   [
+    "belltown_basement_03",
+    "QuestDropper",
+    "Quest Bell Dropper (2)",
+    null,
+    73.0,
+    85.07
+   ],
+   [
+    "belltown_basement_03",
+    "QuestDropper",
+    "Quest Bell Dropper (3)",
+    null,
+    104.0,
+    85.08
+   ],
+   [
+    "belltown_basement_03",
+    "QuestDropper",
+    "Quest Bell Dropper (4)",
+    null,
+    96.94,
+    55.09
+   ],
+   [
+    "belltown_basement_03",
+    "QuestDropper",
+    "Quest Bell Dropper (5)",
+    null,
+    74.75,
+    41.17
+   ],
+   [
+    "belltown_basement_03",
+    "QuestDropper",
+    "Quest Bell Dropper (6)",
+    null,
+    95.08,
+    28.38
+   ]
+  ],
   "Skull King Fragment": [
    [
     "bone_15",
@@ -946,6 +1061,7 @@
   "Pickled Roach Egg": "INV_NAME_PICKLEDEGG",
   "Rock Roller Item": "INV_NAME_ROCK_ROLLER_ITEM",
   "Shell Flower": "INV_NAME_SHELL_FLOWER",
+  "Silver Bellclapper": "INV_NAME_BELLCLAPPER_ITEM",
   "Skull King Fragment": "INV_NAME_SK_FRAGMENT",
   "Snare Soul Bell Hermit": "INV_NAME_SNARE_SOUL_BELLHERMIT",
   "Snare Soul Churchkeeper": "INV_NAME_SNARE_SOUL_CHURCHKEEPER",

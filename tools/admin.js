@@ -20,6 +20,7 @@ const CO = require('../js/collectibles.js');
 const GA = require('../js/gauntlets.js');
 const QU = require('../js/quests.js');
 const SP = require('../js/spots.js');
+const PE = require('../js/people.js');
 const MF = require('../js/map-fixes.js');
 
 const ROOT = path.resolve(__dirname, '..');
@@ -38,6 +39,8 @@ function places() {
   const add = (key, scene) => { if (scene && R.roomOf(scene)) out.set(key, scene); };
   CO.PIECES.forEach((p, i) => add('piece:' + i, SP.AT.pieces[i]));
   for (const ids of CO.COUNTED) add('tools:' + ids[0], SP.AT.tools[ids[0]]);
+  // The six outside the 100% (js/app-map.js OTHER_TOOLS).
+  for (const id of Object.keys(CO.TOOLS)) if (!CO.COUNTED.some((ids) => ids[0] === id)) add('tools:' + id, SP.AT.tools[id]);
   for (const cat of ['crests', 'skills', 'arts']) for (const id of Object.keys(CO.WHERE[cat])) add(cat + ':' + id, SP.AT[cat][id]);
   add('everbloom', SP.AT.everbloom);
   M.PINS.forEach((p, i) => out.set('pin:' + i, p[3]));
@@ -46,14 +49,17 @@ function places() {
   for (const [field, scene] of SP.BELLS) add('bell:' + field, scene);
   for (const [k, scenes] of Object.entries(QU.LOCKS)) for (const scene of scenes) add('lock:' + k + ':' + scene, scene);
   for (const [v, scenes] of Object.entries(SP.VENDORS)) scenes.forEach((scene, i) => add((v === 'shakra' ? 'shakra:' : 'shop:' + v + ':') + i, scene));
+  for (const x of PE.TRADE) x.spots.forEach(([scene], i) => add('shop:' + x.id + ':' + i, scene));
   const isWish = (quest) => CO.WISHES.some((w) => w[2][0] === 'quest' && w[2][1] === quest);
   for (const [quest, f] of Object.entries(QU.FROM)) {
     if (!isWish(quest)) continue;
     if (f.board) add('board:' + f.board.toLowerCase(), f.board);
     for (const n of f.npc || []) add('giver:' + n.toLowerCase(), n);
   }
+  SP.TASKS.forEach((x, i) => add('task:' + i, x[3]));
   for (const [id, scene] of Object.entries(SP.PEOPLE)) add('person:' + id, scene);
-  SP.EXTRAS.forEach((x, i) => add('extra:' + i, x[3]));
+  for (const x of PE.PEOPLE) for (const [scene] of x.spots) add('npc:' + x.id + ':' + scene.toLowerCase(), scene);
+  SP.EXTRAS.forEach((x, i) => { if (!(x[0] === 'map' && x[5] && x[5].shop === 'shakra')) add('extra:' + i, x[3]); });
   return out;
 }
 

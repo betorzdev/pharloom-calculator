@@ -25,9 +25,10 @@
               shortcut, silkwall, each ['bool', Scene, id] as the save keeps it. Then the 28 area
               maps (map, by their Has<Area>Map flag: Shakra's spot or where the map lies), and the
               rosaries and shell shards lying in a room (rosaries, shards: pickups.json lying).
-     BOSSES   [foe id, scene, check]: each boss of the completionist's list, its arena and whether
+     BOSSES   [foe id, scene, check, act]: each boss of the completionist's list, its arena and whether
               it's beaten (a playerData flag, or its Journal entry listed), then the second fights
-              it folds into one entry (BOSS_MORE), each with what the save keeps of it.
+              it folds into one entry (BOSS_MORE), each with what the save keeps of it; act the
+              first Act it can be fought in (the completionist's whichAct, BOSS_MORE's own).
      VENDORS  vendor id → its rooms (js/shop.js), Shakra's among them
      PEOPLE   npc id → its room: the people who give something of the 100%, and Scrounge, who
               buys the relics
@@ -99,12 +100,13 @@ const HAND = {
 };
 /* The people (by js/how.js NPCS id, and Scrounge) and the object that stands for them in the
    game's scenes (pickups.json npcs); Plinney's has no name of its own there, so his room is the
-   one his wish is offered in (js/quests.js FROM, A Pinsmith's Tools). */
+   one his wish is offered in (js/quests.js FROM, A Pinsmith's Tools). Jubilana sells in three rooms
+   (js/shop.js VENDORS), Songclave being her home: the other two she only scavenges in. */
 const PEOPLE_OBJ = {
   eva: 'Crest Upgrade Shrine', pinstress: 'Pinstress Interior NPC', loddie: 'Ladybug Craft Pickup', lumble: 'Dice Pilgrim',
   mooshka: 'Caravan Troupe Leader Fleatopia NPC', scrounge: 'Relic Dealer NPC',
 };
-const PEOPLE_ROOM = { plinney: 'Belltown_Room_pinsmith' };
+const PEOPLE_ROOM = { plinney: 'Belltown_Room_pinsmith', jubilana: 'song_enclave' };
 // The 28 maps Shakra sells (js/savefile.js MAP_FLAGS, Has<X>Map) → the area each draws (js/collectibles.js
 // AREAS), by the game's map names (its Areas page and the flags' own words).
 const MAPS = {
@@ -142,12 +144,14 @@ const BOSS_ROOM = { 'raging-conchfly': 'Coral_27', 'moss-mother-ruined-chapel': 
    with what the save keeps once it's won, read in the scene that fights it (11-Oct-2026): the
    flag Song_Tower_01's boss scene tests, Weave_03's Boss Scene bool, the Act 3 Moss Mother's own
    PersistentBoolItem (no ID: the game saves it by the object's name), the flag the Far Fields
-   Beastfly's death sets. */
+   Beastfly's death sets. Then the first Act it can be fought in, from its wiki page: Lace atop
+   the Cradle closes Act 2, the pair in Weavenest Atla guards the Weavelight (Act 1), the Far
+   Fields Beastfly is its Act 2 wish's (the completionist's tasks.ts). */
 const BOSS_MORE = [
-  ['lace-the-cradle', ['flag', 'defeatedLaceTower']],
-  ['moss-mother-weavenest-atla', ['bool', 'Weave_03', 'Boss Scene']],
-  ['moss-mother-act-3-moss-grotto', ['bool', 'Tut_02', 'Mossbone Mother Ambient']],
-  ['savage-beastfly-far-fields', ['flag', 'defeatedBoneFlyerGiantGolemScene']],
+  ['lace-the-cradle', ['flag', 'defeatedLaceTower'], 2],
+  ['moss-mother-weavenest-atla', ['bool', 'Weave_03', 'Boss Scene'], 1],
+  ['moss-mother-act-3-moss-grotto', ['bool', 'Tut_02', 'Mossbone Mother Ambient'], 3],
+  ['savage-beastfly-far-fields', ['flag', 'defeatedBoneFlyerGiantGolemScene'], 2],
 ];
 // Relics an NPC hands over: Jubilana's Choral Commandment, Grindle's Psalm Cylinder.
 const RELIC_ROOM = { 'Seal Chit City Merchant': 'song_enclave', 'Psalm Cylinder Grindle': 'coral_42' };
@@ -195,12 +199,12 @@ for (const it of C.load('bosses.ts')) {
   const foe = BOSS_ALIAS[norm(it.name)] || foeBy.get(norm(it.name)) || fail(`no foe named ${it.name}`);
   const scene = arena(foe);
   if (!scene) { unplaced.push('boss ' + foe); continue; }
-  BOSSES.push([foe, scene, C.check(it.parsingInfo, fail)]);
+  BOSSES.push([foe, scene, C.check(it.parsingInfo, fail), it.whichAct || fail(`${it.name} has no Act`)]);
 }
-for (const [foe, check] of BOSS_MORE) {
+for (const [foe, check, act] of BOSS_MORE) {
   if (!foeOf.has(foe) || BOSSES.some((b) => b[0] === foe)) fail(`BOSS_MORE: ${foe} isn't a foe of its own`);
   if (!onMap(arena(foe))) fail(`BOSS_MORE: ${foe}'s arena isn't on the map`);
-  BOSSES.push([foe, arena(foe), check]);
+  BOSSES.push([foe, arena(foe), check, act]);
 }
 
 /* ── The 100%: each thing's room, by its ways ── */
@@ -239,6 +243,21 @@ for (const ids of CO.COUNTED) {
   const id = ids[0], hand = HAND.tools[id];
   const s = hand ? chosen(hand[1], given(hand[0]), 'tool ' + id)
     : byWays(H.HOW.tools[id], () => ids.flatMap((x) => CO.TOOLS[x]).map((n) => lying(n)[0]).find(Boolean) || null);
+  put('tools', id, s, 'tool ' + id);
+}
+/* The six Tools outside the 100% (js/collectibles.js TOOLS, none a COUNTED group's first: four
+   Tools' upgrades, and two a wish lends and takes back): where each lies, else by hand. */
+const FIRST_TOOL = new Set(CO.COUNTED.map((ids) => ids[0]));
+const OTHER_TOOLS = Object.keys(CO.TOOLS).filter((id) => !FIRST_TOOL.has(id));
+if (OTHER_TOOLS.length !== 6) fail(`${OTHER_TOOLS.length} Tools outside the 100%, not 6: js/collectibles.js TOOLS or COUNTED changed`);
+// The Moss Druid trades Druid's Eyes for Mossberries; Zylotol lends the Needle Phial at either of
+// his wishes (hollowknight.wiki, Needle Phial), so it's where those are taken.
+const OTHER_HAND = { 'druids-eyes': ['Mosscreep Tool 2', 'mosstown_02c'] };
+const OTHER_WISH = { 'needle-phial': 'Extractor Blue' };
+for (const id of OTHER_TOOLS) {
+  const hand = OTHER_HAND[id];
+  const s = hand ? chosen(hand[1], given(hand[0]), 'tool ' + id)
+    : OTHER_WISH[id] ? wishScene(OTHER_WISH[id]) : CO.TOOLS[id].map((n) => lying(n)[0]).find(Boolean) || null;
   put('tools', id, s, 'tool ' + id);
 }
 for (const cat of ['crests', 'skills', 'arts']) {
@@ -608,6 +627,10 @@ for (const ids of CO.COUNTED) {
   const id = ids[0], scene = AT.tools[id], hand = HAND.tools[id];
   put2('tools:' + id, hand ? entryAt((P.items[hand[0]] || {}).at, scene) : ids.flatMap((x) => CO.TOOLS[x]).map((n) => itemAt(n, scene)).find(Boolean));
 }
+for (const id of OTHER_TOOLS) {
+  const scene = AT.tools[id], hand = OTHER_HAND[id];
+  put2('tools:' + id, hand ? entryAt((P.items[hand[0]] || {}).at, scene) : CO.TOOLS[id].map((n) => itemAt(n, scene)).find(Boolean));
+}
 for (const cat of ['crests', 'skills', 'arts']) {
   for (const [id, hand] of Object.entries(HAND[cat])) {
     const scene = AT[cat][id];
@@ -630,8 +653,8 @@ console.log(`${Object.keys(XY).length} things with their own point in their room
 /* ── The wishes and the main objectives (TASKS), from kb/data/game/wishes.json ──
    (tools/extract-wishes.py, the game's own files; design/03-redesign.md, step 6, Albert's choice)
      qitem  what a wish asks for, where it lies (a pickup, the flower that gives it, the Flintbeetle
-            that drops it) or who gives it: done once its sceneData flag is set, it's held, or its
-            wish is done
+            that drops it, the spots the Silver Bells drop at) or who gives it: done once its
+            sceneData flag is set, it's held, or its wish is done (a drop spot: its wish only)
      wspot  where a wish is done: the map's own pins for the deliveries and the Steel Sentinel's
             spots (the save chooses three of six, SteelQuestSpots), the Herald's seven spots
             (MushroomQuestFound<n>), and the one room where the game ends a wish that isn't where
@@ -668,10 +691,14 @@ const TASKS = [];
     const q = wants(save).find(isWish) || fail(`no wish asks for ${save}`);
     const name = N.text(WI.names[save] || fail(`no name for ${save}`)), icon = art('icons/' + WI.icons[save]);
     const seen = new Set();
-    for (const [scene, , , flag, x, y] of at) {
-      if (seen.has(scene + flag)) continue;   // the Crown Fragment lies twice in its room, under one flag
-      seen.add(scene + flag);
-      const check = ['any', ...(flag && proper(scene) ? [['bool', proper(scene), flag]] : []), ['held', save], ['quest', q]];
+    for (const [scene, comp, obj, flag, x, y] of at) {
+      const one = scene + (flag || obj);
+      if (seen.has(one)) continue;   // the Crown Fragment lies twice in its room, under one flag
+      seen.add(one);
+      // A spot where it drops by chance (the Silver Bells'): done with its wish, a bell held says
+      // nothing of the other spots.
+      const check = comp === 'QuestDropper' ? ['quest', q]
+        : ['any', ...(flag && proper(scene) ? [['bool', proper(scene), flag]] : []), ['held', save], ['quest', q]];
       task('qitem', q, check, scene, x, y, icon, name);
     }
   }
@@ -740,9 +767,10 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
    Change the generator and run npm run data. Scenes as the game names them (js/rooms.js places
    them in either case).
 
-     AT       { pieces: { PIECES index: scene }, tools: { COUNTED group's first id: scene },
-              crests, skills, arts: { id: scene }, everbloom: scene }: where each thing of the
-              100% is had (its pickup, its vendor, its Wishwall, its boss's arena, its giver)
+     AT       { pieces: { PIECES index: scene }, tools: { COUNTED group's first id, and the six
+              outside the 100%: scene }, crests, skills, arts: { id: scene }, everbloom: scene }:
+              where each thing of the 100% is had (its pickup, its vendor, its Wishwall, its
+              boss's arena, its giver)
      EXTRAS   [kind, act, check, scene, name?, more?]: what doesn't count (relics by kind, mossberry,
               silkeater, memento, bellhome, spawn, rosary-cache, shard-cache, wall, then lever,
               plate, gate, lock, shortcut, silkwall from the game's scenes, then map, rosaries,
@@ -750,7 +778,8 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               map Shakra sells, { found } for one found, { item } for what lies; check as
               js/collectibles.js's, plus ['relic', name], ['memento', name], ['int', scene, id,
               value] and ['geo', scene, id]
-     BOSSES   [foe id, scene, check]: each boss fight's arena and whether it's beaten
+     BOSSES   [foe id, scene, check, act]: each boss fight's arena, whether it's beaten and the
+              first Act it can be fought in
      VENDORS  vendor id → the rooms it sells in; PEOPLE  npc id → its room
      BELLS    [playerData field, scene]: the five Bellshrines
      KEYS     a lock's key (js/quests.js LOCKS) → its name

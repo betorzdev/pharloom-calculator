@@ -16,6 +16,9 @@ What it reads (read on 11-Oct-2026, patch 1.0.30000):
         Flintbeetles: it names the quest, and drops its target): [scene, component, object, bool, x, y],
         bool the sceneData flag the object keeps (its PersistentBoolItem's ID, else the object's
         name; a PersistentEnemyItemDrop's is "<object>_item_<quest>"), null when it has none;
+      - each of DROPPERS' FSMs, a spot where a wish's target drops by chance while the wish is
+        active (its CheckQuestStateV2 names the wish): the Silver Bells' seven spots above
+        Bellhart and seven below (component QuestDropper, no flag);
       - where the game ends each quest: a PlayMakerFSM action EndQuest, EndQuestV2 or
         TryEndQuestV2 whose quest parameter is that quest (as tools/extract-quests.py maps an
         offer): [scene, object, x, y];
@@ -53,6 +56,10 @@ ELSEWHERE = {'Mossberry', 'Pale_Oil', 'Mossberry Stew'}
 # The wish types whose emblem marks a place on the Map (tools/gen-spots.js TASKS: the deliveries,
 # the Steel Sentinel's spots, the Herald's, the rescues and fights). It stops on a missing one.
 EMBLEMS = {'Courier', 'Steel Sentinel', 'Herald', 'Wayfarer'}
+# The objects whose FSM drops a wish's target at random while the wish is on, by name: the Silver
+# Bells' (Quest Bell Dropper, Quest Bell Dropper (1)…, in belltown_04 and belltown_basement_03).
+DROPPERS = ('Quest Bell Dropper',)
+CHECK = 'CheckQuestStateV2'
 CLS = None
 
 
@@ -122,7 +129,7 @@ def scene(args):
                 continue
             tt = o.read_typetree()
             var = {v['name']: v.get('value') for v in (tt['fsm'].get('variables') or {}).get('objectVariables') or []}
-            ends, gives = set(), set()
+            ends, gives, checks = set(), set(), set()
             for st in tt['fsm'].get('states') or []:
                 ad = st['actionData']
                 starts = ad['actionStartIndex']
@@ -139,8 +146,10 @@ def scene(args):
                         ends.add(ref[0])
                     elif action in GIVE and ref[1] not in ('Quest', 'MainQuest', 'SubQuest'):
                         gives.add(ref[0])
-            if ends or gives or hit:
-                found.append(('fsm', gid, sorted(ends), sorted(gives), sorted({h.decode() for h in hit})))
+                    elif action == CHECK and ref[1] == 'Quest':
+                        checks.add(ref[0])
+            if ends or gives or hit or checks:
+                found.append(('fsm', gid, sorted(ends), sorted(gives), sorted({h.decode() for h in hit}), sorted(checks)))
         elif cls == 'PersistentBoolItem':
             tt = o.read_typetree()
             bools[gid] = (tt.get('itemData') or {}).get('ID') or ''
@@ -172,6 +181,10 @@ def scene(args):
                 out['items'].append([it, name, 'PlayMakerFSM', go, flag, *xy])
             for fld in f[4]:
                 out['fields'].append([fld, name, go, *xy])
+            # A dropper: the wish it checks (main() files it under the wish's target).
+            if go.startswith(DROPPERS):
+                for q in f[5]:
+                    out['items'].append([q, name, 'QuestDropper', go, None, *xy])
     return out
 
 
