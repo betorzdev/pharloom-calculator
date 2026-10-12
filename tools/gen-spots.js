@@ -344,8 +344,12 @@ for (const sec of C.sections('cachesAndSecrets.ts')) for (const it of sec.items)
 /* What opens a way and stays open (pickups.json doors, from the game's scenes): levers and
    pressure plates, gates, doors a key opens, shortcuts and silk walls, each by the bool the save
    keeps once it's opened, after the completionist's (whose order js/map-fixes.js keys by). One
-   already there under the same check (a one-way wall among the breakable walls) isn't twice. */
+   already there under the same check (a one-way wall among the breakable walls) isn't twice. One
+   whose bool the game never sets goes by its playerData flag instead (PD_WAYS, below): Song_27's
+   lever (unset in all 44 of the author's saves that keep it, read on 12-Oct-2026; song_27_opened
+   in 25). */
 const DOOR_KINDS = ['lever', 'plate', 'gate', 'lock', 'shortcut', 'silkwall'];
+const DOOR_BY_FLAG = new Set(['song_27/song_lever_side']);
 const SCENE_AT = new Map();
 {
   const doors = P.doors || fail('pickups.json has no doors: run tools/extract-pickups.py again');
@@ -353,7 +357,7 @@ const SCENE_AT = new Map();
   for (const kind of DOOR_KINDS) {
     for (const [scene, id, x, y] of doors[kind] || fail(`pickups.json has no ${kind}`)) {
       const c = ['bool', scene, id], k = JSON.stringify(c).toLowerCase();
-      if (had.has(k)) continue;
+      if (had.has(k) || DOOR_BY_FLAG.has(`${scene}/${id}`.toLowerCase())) continue;
       if (!onMap(scene)) { unplaced.push(`${kind} ${scene} ${id}`); continue; }
       had.add(k);
       if (typeof x === 'number') SCENE_AT.set(EXTRAS.length, [x, y]);
@@ -527,7 +531,7 @@ const LIFT_OUT = new Set(['Organ_01 Hornet_cage_rect_lift_organ (1)']);
     for (const [scene, id, type, x, y] of kept[kind] || fail(`pickups.json has no ${kind}`)) {
       if (type !== 'bool' || (kind === 'cocoon' && !/Small Cocoon/.test(id)) || (kind === 'lift' && LIFT_OUT.has(scene + ' ' + id))) continue;
       const c = ['bool', scene, id], k = JSON.stringify(c).toLowerCase();
-      if (had.has(k)) continue;
+      if (had.has(k) || DOOR_BY_FLAG.has(`${scene}/${id}`.toLowerCase())) continue;
       if (!onMap(scene)) { unplaced.push(`${kind} ${scene} ${id}`); continue; }
       had.add(k);
       if (typeof x === 'number') SCENE_AT.set(EXTRAS.length, [x, y]);

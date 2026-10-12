@@ -364,6 +364,12 @@
  "doors": {
   "gate": [
    [
+    "Bone_04",
+    "Bone Gate",
+    25.24,
+    23.57
+   ],
+   [
     "Bone_10",
     "Song_Gate_small",
     95.72,
@@ -750,6 +756,48 @@
     66.56
    ],
    [
+    "Cog_04",
+    "cog_lever",
+    41.16,
+    84.63
+   ],
+   [
+    "Cog_04",
+    "cog_lever (1)",
+    57.39,
+    141.84
+   ],
+   [
+    "Cog_06",
+    "cog_lever",
+    83.11,
+    34.0
+   ],
+   [
+    "Cog_07",
+    "cog_lever",
+    41.99,
+    51.38
+   ],
+   [
+    "Cog_08",
+    "cog_lever",
+    37.53,
+    81.73
+   ],
+   [
+    "Cog_Bench",
+    "cog_lever",
+    21.54,
+    15.57
+   ],
+   [
+    "Cog_Dancers",
+    "cog_lever",
+    45.61,
+    36.83
+   ],
+   [
     "Coral_02",
     "Song_lever_side",
     143.04,
@@ -856,6 +904,12 @@
     "greymoor_lever_simple",
     4.56,
     125.57
+   ],
+   [
+    "Greymoor_06",
+    "belltown_lever_drop_plat",
+    14.49,
+    137.04
    ],
    [
     "Greymoor_07",
@@ -1518,6 +1572,12 @@
     96.08
    ],
    [
+    "Library_12",
+    "Plug_Gate",
+    56.66,
+    102.88
+   ],
+   [
     "Peak_01",
     "One Way Wall Crystal",
     9.5,
@@ -1588,6 +1648,12 @@
     "Breakable Floor_basic Song_01",
     24.78,
     33.99
+   ],
+   [
+    "Song_11",
+    "Plug_Gate",
+    58.66,
+    181.04
    ],
    [
     "Song_Enclave_Tube",
@@ -19064,6 +19130,10 @@
    "Breakable Wall": [
     100.69,
     53.28
+   ],
+   "Breakable Wall  second": [
+    21.02,
+    61.28
    ]
   },
   "song_11": {

@@ -22,9 +22,13 @@ const load = (file) => sections(file).flatMap((s) => s.items);
    sceneDataInt holds when the room's int is the value given; a rosary cache's when it's -1
    (emptied); a Geo Rock's when the room keeps it at 0 hits left (the completionist also counts
    a rock the save doesn't list, which is a room never entered: here that's not had). */
+/* An id the completionist writes otherwise than the game (read in the author's saves, 12-Oct-2026):
+   Song_10's second breakable wall has two spaces. */
+const ID_FIX = { 'Song_10/Breakable Wall second': 'Breakable Wall  second' };
 function check(p, fail) {
   if (Array.isArray(p)) return ['any', ...p.map((x) => check(x, fail))];
-  const id = p.internalId;
+  const id = Array.isArray(p.internalId) && ID_FIX[p.internalId.slice(0, 2).join('/')]
+    ? [p.internalId[0], ID_FIX[p.internalId.slice(0, 2).join('/')], ...p.internalId.slice(2)] : p.internalId;
   switch (p.type) {
     case 'flag': return ['flag', id];
     case 'flagMin': return ['min', id[0], id[1]];
