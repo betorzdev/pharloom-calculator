@@ -36,7 +36,7 @@ test('the extras, bosses, people and Bellshrines are all on the map, with a chec
   }
   for (const [foe, scene] of SP.BOSSES) assert.ok(onMap(scene), `boss ${foe}`);
   for (const scene of Object.values(SP.PEOPLE)) assert.ok(onMap(scene), scene);
-  assert.equal(SP.BELLS.length, Q.BELLSHRINES.length);
+  assert.equal(SP.BELLS.length, Q.BELLSHRINES.length + 1);   // the Songclave's sixth is the Map's only
   for (const [, scene] of SP.BELLS) assert.ok(onMap(scene), scene);
   for (const k of Object.keys(Q.LOCKS)) assert.ok(SP.KEYS[k] && SP.KEYS[k].es && SP.KEYS[k].en, k);
   assert.equal(Object.keys(SP.MAPS).length, 28);
@@ -144,6 +144,35 @@ test('the keys, key items, loose rosaries, cocoons, lifts, hidden corners and Ev
   const had = eva.map((x) => g.extras.includes(SP.EXTRAS.indexOf(x)));
   assert.deepEqual(had, [true, true, false, false]);
   assert.equal(F.gameOf(F.toSnapshot(pd)).evaSlots, 13);
+});
+
+test('a rosary or shell shard cache kept as an int is done at its emptied values, not the untouched -1', () => {
+  const P = require('../kb/data/game/pickups.json');
+  const at = new Map(P.caches.map(([s, id, , from, to]) => [s + '|' + id, [from, to]]));
+  const ints = (c) => (c[0] === 'any' ? c.slice(1) : [c]);
+  for (const [kind, , c] of SP.EXTRAS) {
+    if (!['rosary-cache', 'shard-cache'].includes(kind) || !ints(c).every((x) => x[0] === 'int')) continue;
+    const [, scene, id] = ints(c)[0];
+    const x = at.get(scene + '|' + id);
+    if (!x) { assert.equal(ints(c)[0][2], 'Hero Treadmill Rosaries Paid', JSON.stringify(c)); continue; }
+    assert.deepEqual(ints(c).map((y) => y[3]), Array.from({ length: x[1] - x[0] + 1 }, (_, i) => x[0] + i), JSON.stringify(c));
+  }
+  // The Covetous Pilgrims' int is the rosaries they carry: their bool is the cache, and the int isn't one.
+  assert.ok(!SP.EXTRAS.some((x) => x[2][0] === 'int' && x[2][2] === 'Rosary Pilgrim'));
+});
+
+test('the Hero Treadmill is spent once its needle has paid its 50 spits, not at the completionist\'s -1', () => {
+  const i = SP.EXTRAS.findIndex((x) => x[2][0] === 'int' && x[2][2] === 'Hero Treadmill Rosaries Paid');
+  assert.ok(i >= 0);
+  const at = (v) => F.game({}, { persistentInts: { serializedList: [{ SceneName: 'Under_03d', ID: 'Hero Treadmill Rosaries Paid', Value: v }] } }).extras.includes(i);
+  assert.deepEqual([-1, 0, 49, 50, 73].map(at), [false, false, false, true, true]);
+});
+
+test('a pin lights by fields the save keeps, not one the game works out (UnlockedAnyTube)', () => {
+  const M = require('../js/map.js');
+  const flags = (c) => (!Array.isArray(c) ? [] : c[0] === 'flag' ? [c[1]] : c.slice(1).flatMap(flags));
+  assert.ok(!M.PINS.some((p) => flags(p[4]).includes('UnlockedAnyTube')));
+  assert.ok(M.PINS.some((p) => flags(p[4]).includes('UnlockedUnderTube') && p[3] === 'Tube_Hub_Destroyed'));
 });
 
 test('a thing\'s prereqs are abilities or Silk Skills the save tells', () => {

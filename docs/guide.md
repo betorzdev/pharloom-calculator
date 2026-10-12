@@ -371,12 +371,12 @@ boss's arena, with the person who gives it. All of it on at first.
   and the ones given: the Fixer's Hornet Statuette in Bone Bottom and the Sprintmaster's two race
   prizes (a Rosary Necklace and a Beast Shard).
   And the **Key items** lying in a room (the Cogheart Pieces, the broken Silkshot, Farsight, the
-  Materium).
+  Materium, and the Crawbell, after the Court of Craws).
 - **Places**: benches (off at first: there are 80, the game's own bench pins and the Songclave's,
   which its map doesn't pin; the Flea Caravan's two of its own, in Greymoor and the Blasted Steps,
   only while your caravan is there), Bellway and Ventrica stations (dimmed while
-  your game hasn't opened them: a station not unlocked, a toll not paid), the five Bellshrines of
-  the Grand Gate and the shops, and the **Lifts** (off at first), gone once your game has called each. The shops are the
+  your game hasn't opened them: a station not unlocked, a toll not paid), the six Bellshrines (the Grand Gate asks for five of them;
+  the Songclave's is the sixth) and the shops, and the **Lifts** (off at first), gone once your game has called each. The shops are the
   game's own (its ShopOwners: Pebb, Frey, Mort, the Forge Daughter, Grindle, Jubilana, the
   Mottled Skarr, the Twelfth Architect) and those who trade outside them: the Couriers' delivery
   wishes in Bellhart, the Moss Druid, who buys Mossberries, and Creige's drinks.
@@ -389,7 +389,8 @@ boss's arena, with the person who gives it. All of it on at first.
   Needolin opens aren't there: they open each time and the save keeps nothing of them. Some
   levers, gates and walls the save keeps by a flag of its own rather than per room (the Bellhome's
   door among them): they're there too. **Keys**: the Simple Keys, the Slab's three and the
-  Whiteward's two, where each lies.
+  Whiteward's two, where each lies, and the two an NPC gives: the Diving Bell Key (Ballow, in the
+  Deep Docks) and the Bellhome Key (Pavo, in Bellhart).
 - **Fights**: the enemy gauntlets and bosses not beaten yet, each fight its own mark (Lace atop the
   Cradle, the two Moss Mothers of Weavenest Atla, the Act 3 Moss Mother and the Savage Beastfly
   of the Far Fields too), and the unique enemies (Rhinogrunds,

@@ -331,9 +331,9 @@
       add({ key: 'boss:' + foe, layer: 'boss', scene, act, got: !!g && g.bosses.includes(foe), name: f ? pick(f.name) : foe, foe, entry: e && e.id,
         draw: (s, ti, k, c) => badge('boss', portrait(e && e.id) || GLYPH.boss, s, ti, k, c) });
     }
-    for (const [field, scene] of SP.BELLS) {
-      const b = QU.BELLSHRINES.find((x) => x.field === field);
-      add({ key: 'bell:' + field, layer: 'bellshrine', scene, got: !!g && g.bellshrines.includes(field), name: t('mapBell', { area: pick(b.name) }),
+    for (const [field, scene, own] of SP.BELLS) {
+      const b = own ? { name: own } : QU.BELLSHRINES.find((x) => x.field === field);
+      add({ key: 'bell:' + field, layer: 'bellshrine', scene, got: !!g && g.bells.includes(field), name: t('mapBell', { area: pick(b.name) }),
         draw: (s, ti, k, c) => pin('bellshrine', 'quest_map_icon_grand_gate_final', s, ti, k, c) });
     }
     // The doors a key opens whose door the save doesn't keep (the rest are extras, LOCK_AT below).

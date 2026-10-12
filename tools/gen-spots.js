@@ -34,7 +34,7 @@
      VENDORS  vendor id → its rooms (js/shop.js), Shakra's among them
      PEOPLE   npc id → its room: the people who give something of the 100%, and Scrounge, who
               buys the relics
-     BELLS    [playerData field, scene]: the five Bellshrines
+     BELLS    [playerData field, scene (, name)]: the six Bellshrines (the Grand Gate asks for five)
      KEYS     a key's save name (js/quests.js LOCKS) → its name, the game's */
 'use strict';
 const fs = require('fs');
@@ -324,12 +324,31 @@ const roomOfCheck = (c) => {
   if (c[0] === 'any') for (const x of c.slice(1)) { const r = roomOfCheck(x); if (r) return r; }
   return null;
 };
+/* A cache's int as the game keeps it (pickups.json caches, from its scenes): a shell shard cache's
+   or an ant rosary string's hits left (BreakableHolder: 0 once broken), a rosary cache's state
+   (-1 untouched, a step up each hit; emptied from its emptied step to its last). The completionist,
+   whose caches are still a work in progress, gives every one -1: an untouched rosary cache, and
+   a value a BreakableHolder never holds. Done is any of its emptied values. */
+const CACHE = new Map((P.caches || []).map(([s, id, comp, from, to]) => [s + '\u0000' + id, { comp, from, to }]));
+/* The completionist's rosary caches whose int isn't a cache's (read in the game's scenes,
+   12-Oct-2026): the Covetous Pilgrims' (Rosary Pilgrim, an enemy whose int is the rosaries it
+   carries, the same once it's beaten) are left out, as the same list has each by the bool its
+   defeat sets. The Underworks' Hero Treadmill (Under_03d) isn't a cache but a wheel that pays as
+   Hornet runs it: its int is the needle's FSM's Value, one up each time the needle tops out and
+   spits; while Value is at most Max Payout (50) a spit pays (always the visit's first, then five
+   in six), past it it fails (unless it's the visit's first). So it's spent at 50: the completionist's
+   -1 is a value it never holds (0 on every save). */
+const NOT_CACHE = { 'Rosary Pilgrim': 'out', 'Hero Treadmill Rosaries Paid': ['int', 'Under_03d', 'Hero Treadmill Rosaries Paid', 50, 'min'] };
+const cacheCheck = (c) => {
+  const x = CACHE.get(c[1] + '\u0000' + c[2]);
+  if (!x) return NOT_CACHE[c[2]] ? (NOT_CACHE[c[2]] === 'out' ? null : NOT_CACHE[c[2]]) : fail(`${c[1]} ${c[2]}: no cache of that name in pickups.json`);
+  const at = [];
+  for (let v = x.from; v <= x.to; v++) at.push(['int', c[1], c[2], v]);
+  return at.length === 1 ? at[0] : ['any', ...at];
+};
 const extra = (kind, it, name) => {
-  const c = C.check(it.parsingInfo, fail);
-  /* A shell shard cache's int is its hits left (1 to 3 on the author's saves, 0 once broken, never
-     -1): the completionist, whose caches are still a work in progress, gives it the rosary
-     strings' -1 (emptied). */
-  if (kind === 'shard-cache' && c[0] === 'int' && c[3] === -1) c[3] = 0;
+  let c = C.check(it.parsingInfo, fail);
+  if ((kind === 'rosary-cache' || kind === 'shard-cache') && c[0] === 'int' && !(c = cacheCheck(c))) return;
   const s = kind === 'bellhome' ? BELLHOME : roomOfCheck(c);
   if (!s || !onMap(s)) { unplaced.push(`${kind} ${it.name}`); return; }
   needs('extra:' + EXTRAS.length, it);
@@ -360,8 +379,12 @@ for (const sec of C.sections('cachesAndSecrets.ts')) for (const it of sec.items)
 /* What opens a way and stays open (pickups.json doors, from the game's scenes): levers and
    pressure plates, gates, doors a key opens, shortcuts and silk walls, each by the bool the save
    keeps once it's opened, after the completionist's (whose order js/map-fixes.js keys by). One
-   already there under the same check (a one-way wall among the breakable walls) isn't twice. */
+   already there under the same check (a one-way wall among the breakable walls) isn't twice. One
+   whose bool the game never sets goes by its playerData flag instead (PD_WAYS, below): Song_27's
+   lever (unset in all 44 of the author's saves that keep it, read on 12-Oct-2026; song_27_opened
+   in 25). */
 const DOOR_KINDS = ['lever', 'plate', 'gate', 'lock', 'shortcut', 'silkwall'];
+const DOOR_BY_FLAG = new Set(['song_27/song_lever_side']);
 const SCENE_AT = new Map();
 {
   const doors = P.doors || fail('pickups.json has no doors: run tools/extract-pickups.py again');
@@ -369,7 +392,7 @@ const SCENE_AT = new Map();
   for (const kind of DOOR_KINDS) {
     for (const [scene, id, x, y] of doors[kind] || fail(`pickups.json has no ${kind}`)) {
       const c = ['bool', scene, id], k = JSON.stringify(c).toLowerCase();
-      if (had.has(k)) continue;
+      if (had.has(k) || DOOR_BY_FLAG.has(`${scene}/${id}`.toLowerCase())) continue;
       if (!onMap(scene)) { unplaced.push(`${kind} ${scene} ${id}`); continue; }
       had.add(k);
       if (typeof x === 'number') SCENE_AT.set(EXTRAS.length, [x, y]);
@@ -543,7 +566,7 @@ const LIFT_OUT = new Set(['Organ_01 Hornet_cage_rect_lift_organ (1)']);
     for (const [scene, id, type, x, y] of kept[kind] || fail(`pickups.json has no ${kind}`)) {
       if (type !== 'bool' || (kind === 'cocoon' && !/Small Cocoon/.test(id)) || (kind === 'lift' && LIFT_OUT.has(scene + ' ' + id))) continue;
       const c = ['bool', scene, id], k = JSON.stringify(c).toLowerCase();
-      if (had.has(k)) continue;
+      if (had.has(k) || DOOR_BY_FLAG.has(`${scene}/${id}`.toLowerCase())) continue;
       if (!onMap(scene)) { unplaced.push(`${kind} ${scene} ${id}`); continue; }
       had.add(k);
       if (typeof x === 'number') SCENE_AT.set(EXTRAS.length, [x, y]);
@@ -583,9 +606,42 @@ const LIFT_OUT = new Set(['Organ_01 Hornet_cage_rect_lift_organ (1)']);
   }
 }
 
-/* The rosaries and shards given rather than lying, after Eva's (so no index js/map-fixes.js keys
-   by moves), in the rosaries' and shards' layers, each by what the save keeps once it's given
-   (read in the game's scenes and Assembly-CSharp, 12-Oct-2026, against all of the author's saves):
+/* The keys an NPC gives and the Crawbell, last (the Map's fixes, js/map-fixes.js, name an extra by
+   its index: these go after every other, so nothing before them moves). All are pushed as the keys
+   above are, ['key' or 'keyitem', null, check, scene, name, { icon }]; the name and icon the item's.
+     Keys an NPC gives (no pickup lies for them): each at the NPC's own spot, as the game's scenes
+       have it (pickups.json items: the PlayMakerFSM that hands it over, in the room whose lock it
+       opens). Had once the save says it was given, or the key is held: Ballow's BallowGivenKey (set
+       with his Diving Bell Key, in 29 of the author's saves), Pavo's BelltownGreeterHouseFullDlg (the
+       dialogue that gives the Bellhome Key, which js/savefile.js bellhomeKey reads), the door it
+       unlocked (BelltownHouseUnlocked) or the key held. Left out: the Architect's Key and the
+       Simple Keys (sold: the shop cards cover them), and the Dock Demo Key (cut content).
+     The Crawbell, lying in Room_CrowCourt_02 after the Court of Craws: its pickup's bool is set in
+       none of the author's saves (the four that reached the room are one game, patched: it wasn't
+       picked up), so it's also had once held, or installed in the Bellhome (CrawbellInstalled). */
+{
+  const iconOk = (icon) => fs.existsSync(path.join(__dirname, '..', 'assets', 'map', 'icons', icon + '.webp')) || fail(`assets/map/icons/${icon}.webp is missing`);
+  const NPC_KEYS = [
+    ['Dock Key', 'INV_NAME_DOCK_KEY', 'dock_key', 'Ballow Diving Bell NPC', ['any', ['flag', 'BallowGivenKey'], ['held', 'Dock Key']]],
+    ['Belltown House Key', 'INV_NAME_BELL_HOUSE_KEY', 'belltown_house_key', 'Belltown Greeter NPC',
+      ['any', ['flag', 'BelltownGreeterHouseFullDlg'], ['flag', 'BelltownHouseUnlocked'], ['held', 'Belltown House Key']]],
+  ];
+  for (const [item, text, icon, npc, check] of NPC_KEYS) {
+    iconOk(icon);
+    const e = ((P.items[item] || {}).at || []).find(([, comp, obj]) => comp === 'PlayMakerFSM' && obj === npc)
+      || fail(`${item}: no ${npc} gives it in pickups.json items: NPC_KEYS needs reading again`);
+    if (!onMap(e[0])) fail(`${item}: ${e[0]} isn't on the map`);
+    if (typeof e[3] === 'number') SCENE_AT.set(EXTRAS.length, [e[3], e[4]]);
+    EXTRAS.push(['key', null, check, e[0], N.text(text), { icon }]);
+  }
+  iconOk('crawbell');
+  const [scene, id, x, y] = (P.lying.Crawbell || fail('the Crawbell lies in no room: pickups.json lying')).find(([sc]) => onMap(sc)) || fail('the Crawbell\'s room isn\'t on the map');
+  if (typeof x === 'number') SCENE_AT.set(EXTRAS.length, [x, y]);
+  EXTRAS.push(['keyitem', null, ['any', ['bool', scene, id], ['held', 'Crawbell'], ['flag', 'CrawbellInstalled']], scene, N.text('INV_NAME_CRAWBELL'), { icon: 'crawbell' }]);
+}
+/* The rosaries and shards given rather than lying, after the keys an NPC gives (so no index
+   js/map-fixes.js keys moves), in the rosaries' and shards' layers, each by what the save keeps
+   once it's given (read in the game's scenes and Assembly-CSharp, 12-Oct-2026, against all of the author's saves):
    the Fixer's Hornet Statuette for the statue built (his FSM's "Statue Reward" sets
    fixerStatueConvo as it hands it over: set in exactly the saves that hold the idol), and the
    Sprintmaster's prizes, a race's SprintRaceController reward: his FSM's "Give Reward" stores the
@@ -611,13 +667,16 @@ for (const [id, save, scene, comp, check] of GIVEN_PURSE) {
 /* Each Bellshrine's room: the two whose flag a scene names (Far Fields' in Bellshrine_05, Bellhart's
    in Widow's arena, where its bell is rung), and the other three by their area (js/map.js). */
 const BELL_HAND = { bellShrineBoneForest: 'Bellshrine', bellShrineWilds: 'Bellshrine_05', bellShrineGreymoor: 'Bellshrine_02',
-  bellShrineBellhart: 'Belltown_Shrine', bellShrineShellwood: 'Bellshrine_03' };
-const BELLS = Q.BELLSHRINES.map((b) => {
+  bellShrineBellhart: 'Belltown_Shrine', bellShrineShellwood: 'Bellshrine_03', bellShrineEnclave: 'Bellshrine_Enclave' };
+// The Songclave's «First Shrine» is a sixth the Grand Gate doesn't ask for (QU.BELLSHRINES has five):
+// it carries its own name (the area's, ENCLAVE) as the third element.
+const BELL_EXTRA = [{ field: 'bellShrineEnclave', name: N.text('ENCLAVE') }];
+const BELLS = [...Q.BELLSHRINES, ...BELL_EXTRA].map((b) => {
   const s = BELL_HAND[b.field] || fail(`no room for ${b.field}`);
   const named = (P.fields[b.field] || []).map(([x]) => x);
   if (named.length && !named.includes(s.toLowerCase())) fail(`${b.field} is named in ${named.join(', ')}, not ${s}`);
   if (!onMap(s)) fail(`${s} isn't on the map`);
-  return [b.field, s];
+  return b.field === BELL_EXTRA[0].field ? [b.field, s, b.name] : [b.field, s];
 });
 const KEY_TEXT = { 'Simple Key': 'INV_NAME_TOKEN_FAITH', 'Belltown House Key': 'INV_NAME_BELL_HOUSE_KEY', 'Dock Key': 'INV_NAME_DOCK_KEY',
   'Ward Key': 'INV_NAME_WARD_KEY', 'Ward Boss Key': 'INV_NAME_WARD_BOSS_KEY', 'Dock Demo Key': 'INV_NAME_DOCK_DEMO_KEY',
@@ -831,11 +890,11 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               shards); act null when the thing has no Act of its own; more { shop, price } for a
               map Shakra sells, { found } for one found, { item } for a rosary or shard item; check as
               js/collectibles.js's, plus ['relic', name], ['memento', name], ['int', scene, id,
-              value] and ['geo', scene, id]
+              value] (['int', scene, id, value, 'min']: at least value) and ['geo', scene, id]
      BOSSES   [foe id, scene, check, act]: each boss fight's arena, whether it's beaten and the
               first Act it can be fought in
      VENDORS  vendor id → the rooms it sells in; PEOPLE  npc id → its room
-     BELLS    [playerData field, scene]: the five Bellshrines
+     BELLS    [playerData field, scene (, name)]: the six Bellshrines (the Grand Gate asks for five)
      KEYS     a lock's key (js/quests.js LOCKS) → its name
      MAPS     a map's flag (Has<X>Map, without Has and Map) → the area it draws
      NEEDS    a thing's key ('piece:<i>', 'tools:<id>', 'arts:<id>', 'extra:<i>'…) → the abilities
