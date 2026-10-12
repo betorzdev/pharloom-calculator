@@ -590,6 +590,40 @@ const LIFT_OUT = new Set(['Organ_01 Hornet_cage_rect_lift_organ (1)']);
   }
 }
 
+/* The keys an NPC gives and the Crawbell, last (the Map's fixes, js/map-fixes.js, name an extra by
+   its index: these go after every other, so nothing before them moves). All are pushed as the keys
+   above are, ['key' or 'keyitem', null, check, scene, name, { icon }]; the name and icon the item's.
+     Keys an NPC gives (no pickup lies for them): each at the NPC's own spot, as the game's scenes
+       have it (pickups.json items: the PlayMakerFSM that hands it over, in the room whose lock it
+       opens). Had once the save says it was given, or the key is held: Ballow's BallowGivenKey (set
+       with his Diving Bell Key, in 29 of the author's saves), Pavo's BelltownGreeterHouseFullDlg (the
+       dialogue that gives the Bellhome Key, which js/savefile.js bellhomeKey reads), the door it
+       unlocked (BelltownHouseUnlocked) or the key held. Left out: the Architect's Key and the
+       Simple Keys (sold: the shop cards cover them), and the Dock Demo Key (cut content).
+     The Crawbell, lying in Room_CrowCourt_02 after the Court of Craws: its pickup's bool is set in
+       none of the author's saves (the four that reached the room are one game, patched: it wasn't
+       picked up), so it's also had once held, or installed in the Bellhome (CrawbellInstalled). */
+{
+  const iconOk = (icon) => fs.existsSync(path.join(__dirname, '..', 'assets', 'map', 'icons', icon + '.webp')) || fail(`assets/map/icons/${icon}.webp is missing`);
+  const NPC_KEYS = [
+    ['Dock Key', 'INV_NAME_DOCK_KEY', 'dock_key', 'Ballow Diving Bell NPC', ['any', ['flag', 'BallowGivenKey'], ['held', 'Dock Key']]],
+    ['Belltown House Key', 'INV_NAME_BELL_HOUSE_KEY', 'belltown_house_key', 'Belltown Greeter NPC',
+      ['any', ['flag', 'BelltownGreeterHouseFullDlg'], ['flag', 'BelltownHouseUnlocked'], ['held', 'Belltown House Key']]],
+  ];
+  for (const [item, text, icon, npc, check] of NPC_KEYS) {
+    iconOk(icon);
+    const e = ((P.items[item] || {}).at || []).find(([, comp, obj]) => comp === 'PlayMakerFSM' && obj === npc)
+      || fail(`${item}: no ${npc} gives it in pickups.json items: NPC_KEYS needs reading again`);
+    if (!onMap(e[0])) fail(`${item}: ${e[0]} isn't on the map`);
+    if (typeof e[3] === 'number') SCENE_AT.set(EXTRAS.length, [e[3], e[4]]);
+    EXTRAS.push(['key', null, check, e[0], N.text(text), { icon }]);
+  }
+  iconOk('crawbell');
+  const [scene, id, x, y] = (P.lying.Crawbell || fail('the Crawbell lies in no room: pickups.json lying')).find(([sc]) => onMap(sc)) || fail('the Crawbell\'s room isn\'t on the map');
+  if (typeof x === 'number') SCENE_AT.set(EXTRAS.length, [x, y]);
+  EXTRAS.push(['keyitem', null, ['any', ['bool', scene, id], ['held', 'Crawbell'], ['flag', 'CrawbellInstalled']], scene, N.text('INV_NAME_CRAWBELL'), { icon: 'crawbell' }]);
+}
+
 /* ── The Bellshrines and the keys ── */
 /* Each Bellshrine's room: the two whose flag a scene names (Far Fields' in Bellshrine_05, Bellhart's
    in Widow's arena, where its bell is rung), and the other three by their area (js/map.js). */
