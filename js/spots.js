@@ -5093,6 +5093,40 @@
       { reward: 'vest-blue', slots: 20 },
     ],
     ['eva', null, ['crest', 'Hunter_v3'], 'weave_10', null, { reward: 'hunter-3', slots: 27 }],
+    [
+      'key',
+      null,
+      ['any', ['flag', 'BallowGivenKey'], ['held', 'Dock Key']],
+      'dock_12',
+      { es: 'Llave de campana de buceo', en: 'Diving Bell Key', key: 'INV_NAME_DOCK_KEY' },
+      { icon: 'dock_key' },
+    ],
+    [
+      'key',
+      null,
+      [
+        'any',
+        ['flag', 'BelltownGreeterHouseFullDlg'],
+        ['flag', 'BelltownHouseUnlocked'],
+        ['held', 'Belltown House Key'],
+      ],
+      'belltown',
+      { es: 'Llave de hogar campana', en: 'Bellhome Key', key: 'INV_NAME_BELL_HOUSE_KEY' },
+      { icon: 'belltown_house_key' },
+    ],
+    [
+      'keyitem',
+      null,
+      [
+        'any',
+        ['bool', 'Room_CrowCourt_02', 'Collectable Item Pickup Crawbell'],
+        ['held', 'Crawbell'],
+        ['flag', 'CrawbellInstalled'],
+      ],
+      'Room_CrowCourt_02',
+      { es: 'Nido campana', en: 'Crawbell', key: 'INV_NAME_CRAWBELL' },
+      { icon: 'crawbell' },
+    ],
   ];
 
   const BOSSES = [
@@ -7837,6 +7871,8 @@
     'extra:1439': [831.7, 1595],
     'extra:1440': [831.7, 1595],
     'extra:1441': [831.7, 1595],
+    'extra:1442': [1597.6, 1617.4],
+    'extra:1443': [1191.3, 1237.6],
     'person:eva': [831.7, 1595],
     'person:lumble': [367.3, 965.3],
     'bell:bellShrineBoneForest': [900.7, 1369.3],

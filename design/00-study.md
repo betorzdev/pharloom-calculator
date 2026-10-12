@@ -1485,7 +1485,11 @@ check. Keys (8 marks): the Simple Keys, the Slab's three (fake collectables, Has
 Whiteward's two; the Sinner's Road key's and the Whiteward's pickups keep no bool in any save, so
 they go by the flag the game sets (CollectedDustCageKey, collectedWardKey, collectedWardBossKey).
 Key items (6): the Cogheart Pieces by their pickup (the music boxes are the puzzle that drops them),
-the broken Silkshot, Farsight, the Materium. In sceneData (`kept`): 101 loose rosaries, 18 small
+the broken Silkshot, Farsight, the Materium. A later sweep added what the first one missed
+(built from pickups lying only): the two keys an NPC gives (the Diving Bell Key, Ballow's, by
+BallowGivenKey; the Bellhome Key, Pavo's, by BelltownGreeterHouseFullDlg or BelltownHouseUnlocked)
+and the Crawbell (Room_CrowCourt_02), so 10 keys and 7 key items; no save of the author's has the
+Crawbell picked up, so it is had by its pickup's bool, held, or CrawbellInstalled. In sceneData (`kept`): 101 loose rosaries, 18 small
 silk cocoons (the large ones are the Silkeaters; Under_20 has a large one the completionist hasn't),
 7 lifts by their bool (the int beside it is where the lift stands; the Whispering Vaults' keeps
 only that, and Organ_01's bool no save sets), and the Remaskers and Secret Masks: 516 in 237 rooms,

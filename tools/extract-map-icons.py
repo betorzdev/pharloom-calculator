@@ -13,9 +13,11 @@ What each is (read on 11-Oct-2026, in atlases_assets_assets/sprites/_atlases/):
     I_token_of_faith, I_slab_key, I_slab_key_gold, I_slab_key_brass, I_key_whiteward, I_chute_key_whiteward
                                          Keys: the Simple Key, the Slab's three, the Whiteward's two, each
                                          its item's own icon (inventory; the last in the items' bundle)
-    cog_heart_pieces, _0000_T_web_shot_broken, farsight, materium
+    dock_key, belltown_house_key         Keys an NPC gives: the Diving Bell Key (Ballow), the Bellhome
+                                         Key (Pavo) (inventory)
+    cog_heart_pieces, _0000_T_web_shot_broken, farsight, materium, crawbell
                                          Key items: the Cogheart Pieces, the broken Silkshot, Farsight,
-                                         the Materium (inventory, inventory_furniture_items)
+                                         the Materium, the Crawbell (inventory, inventory_furniture_items)
     Silk_Grub_small_cocoon               the small silk cocoons by the Silkeaters (core)
     _0005_core_lever_02                  Levers: the Citadel's brass lever (core)
     dock_door_bottom_pressure_plate      a pressure plate, among the levers: the Docks' (dock)
@@ -30,8 +32,9 @@ import UnityPy
 UnityPy.config.FALLBACK_UNITY_VERSION = '6000.0.50f1'   # Unity 6 strips its version from the bundles
 WANT = {
     'inventory': ['I_slab_key', 'Hornet_Inv_pane_icons_0002_wish', 'Hornet_Inv_pane_icons_0003_journal', 'I_map',
-                  'I_token_of_faith', 'I_slab_key_gold', 'I_slab_key_brass', 'I_key_whiteward', 'cog_heart_pieces', '_0000_T_web_shot_broken'],
-    'inventory_furniture_items': ['farsight', 'materium'],
+                  'I_token_of_faith', 'I_slab_key_gold', 'I_slab_key_brass', 'I_key_whiteward', 'cog_heart_pieces', '_0000_T_web_shot_broken',
+                  'dock_key', 'belltown_house_key'],
+    'inventory_furniture_items': ['farsight', 'materium', 'crawbell'],
     'wish': ['quest_icon_large__0008_gather', 'quest_icon_large_0006_herald'],
     'core': ['_0005_core_lever_02', 'Silk_Grub_small_cocoon'],
     'dock': ['dock_door_bottom_pressure_plate'],
