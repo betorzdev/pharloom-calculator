@@ -479,8 +479,8 @@ under the map, above the legend, corrects what the game's files place wrong: a m
 where it really goes, or nudged with the arrow keys (a pixel of the image; Shift, five); one that
 shouldn't be there is hidden (faint and struck through while in the mode). Nothing is added by
 hand: a mark the game's files don't have couldn't follow the save. A dashed way joins a mark
-moved and not saved yet to the data's point, and the band lists every fix by kind, a
-tap going to it. Changes wait through a reload (`sessionStorage`) and Undo steps back. *Save*
+moved and not saved yet to the data's point, and the band lists the fixes by kind
+(the moved ones only while unsaved), a tap going to it. Changes wait through a reload (`sessionStorage`) and Undo steps back. *Save*
 sends them to `npm run admin` (`tools/admin.js`: the site on `http://localhost:8788` with a way
 to write), which writes `js/map-fixes.js`; with no server (`file://`, the published site) the
 button reads *Copy* and puts the new `FIXES` on the clipboard, to paste over the file's. That
