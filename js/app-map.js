@@ -256,7 +256,21 @@
   /* ── What the map holds: every mark of every layer, for a game (null: Free mode with nothing) ──
      { key, layer, scene, act, got, name, sub, draw(style, title, key, cls) } */
   const haveArt = (g, id) => !!g && (g.arts.includes(id) || g.skills.includes(id));
-  function wishOf(quest) { return CO.WISHES.findIndex((w) => w[2][0] === 'quest' && w[2][1] === quest); }
+  /* The wish of a quest (index in CO.WISHES, or -1): the wish whose check is the quest, or an `any`
+     of several (Broodfeast and Runtfeast, the Lost Fleas), or else the wish of the quest that
+     follows it in the chain (QU.CHAIN prev): a «Pre» stage, Steel Sentinel's first offer. */
+  const WISH_OF = new Map();
+  const checksQuest = (c, quest) => c[0] === 'quest' ? c[1] === quest : (c[0] === 'any' || c[0] === 'all') && c.slice(1).some((x) => checksQuest(x, quest));
+  function wishOf(quest) {
+    if (WISH_OF.has(quest)) return WISH_OF.get(quest);
+    let i = CO.WISHES.findIndex((w) => checksQuest(w[2], quest));
+    if (i < 0) {
+      const next = Object.keys(QU.CHAIN).find((q) => QU.CHAIN[q].prev === quest);
+      if (next) i = wishOf(next);
+    }
+    WISH_OF.set(quest, i);
+    return i;
+  }
   const wishDone = (g, quest) => { const i = wishOf(quest); return !!g && i >= 0 && g.wishes.includes(i); };
   const complete = (g, e) => !!g && SS.completion.journalDone(e, g.journal);
   /* A person of js/people.js in a save (own): met (true, false, or null when the save has no word
@@ -350,8 +364,10 @@
       at: px != null ? { x: px, y: py } : undefined, got: false, name: pick(x.name), trade: x.note, draw: (s, ti, k, c) => pin('shop', 'pin_shop', s, ti, k, c) }));
     // People: the Wishwalls and who offers a wish, each with the wishes still open there.
     const boards = new Map(), givers = new Map();
+    const steelGame = !own || !!(App.gameMeta() || {}).steel;
     for (const [quest, f] of Object.entries(QU.FROM)) {
-      if (wishOf(quest) < 0) continue;
+      const wi = wishOf(quest);
+      if (wi < 0 || (CO.WISHES[wi][5] === 'steel' && !steelGame)) continue;   // a Steel Soul wish is only asked in Steel Soul
       if (f.board) { const k = lower(f.board); if (!boards.has(k)) boards.set(k, { scene: f.board, quests: [] }); boards.get(k).quests.push(quest); }
       for (const n of f.npc || []) { const k = lower(n); if (!givers.has(k)) givers.set(k, { scene: n, quests: [] }); givers.get(k).quests.push(quest); }
     }
@@ -362,7 +378,6 @@
     /* The wishes and the main objectives (js/spots.js TASKS): what a wish asks for, where a wish is
        done, the main objectives' pins. A Steel Soul wish only in Steel Soul, and of the Steel
        Sentinel's six spots the three this game chose. A wish's and an objective's name is its quest's. */
-    const steelGame = !own || !!(App.gameMeta() || {}).steel;
     SP.TASKS.forEach((x, i) => {
       const [kind, quest, , scene, art, name, mode, spot] = x;
       if (own && ((mode === 'steel' && !steelGame) || (spot && !own.steelSpots.includes(spot)))) return;
@@ -1160,14 +1175,20 @@
         note = things.length ? t(g ? 'mapSellsLeft' : 'mapSells', { list: listOf(things.map((x) => x.name)) }) : g ? t('mapSellsNone') : '';
       }
     } else if (kind === 'board' || kind === 'giver') {
-      const open = m.quests.filter((q) => !wishDone(g, q)).map((q) => pick(CO.WISHES[wishOf(q)][4]));
+      // One name per wish: Broodfeast's two quests, a wish's Pre stage and its own are the same wish.
+      const open = [...new Set(m.quests.filter((q) => !wishDone(g, q)).map((q) => wishOf(q)))].map((i) => pick(CO.WISHES[i][4]));
       note = open.length ? t(g ? 'mapWishesLeft' : 'mapWishes', { list: listOf(open) }) : t('mapWishesNone');
     } else if (kind === 'task') {
       // What it's for, whether it's done, and where its wish is taken (the Wishwall, or who asks).
       if (m.layer === 'qitem') note = t('mapTaskFor', { wish: m.sub });
       where = line([areaName(area), m.act ? t('saveAct', { n: m.act }) : '']);
       if (g) acts = state(t(m.layer === 'qitem' ? (m.got ? 'pgGot' : 'invMissing') : m.got ? (m.layer === 'wspot' ? 'mapWishGranted' : 'mapDone') : 'mapNotDone'));
-      const f = QU.FROM[m.quest] || {};
+      /* Where it's taken: the part of the wish still to do (a «Pre» at the board, then who it sends
+         you to; Steel Sentinel's first part, then its second), the first one if there's no save. */
+      const done = new Set(g ? g.quests : []);
+      let q = m.quest;
+      while (QU.CHAIN[q] && QU.CHAIN[q].prev && !done.has(QU.CHAIN[q].prev)) q = QU.CHAIN[q].prev;
+      const f = QU.FROM[q] || QU.FROM[m.quest] || {};
       const to = f.board ? 'board:' + lower(f.board) : f.npc && f.npc.length ? 'giver:' + lower(f.npc[0]) : '';
       if (to && list.some((x) => x.key === to)) acts += btn('mapShow', to, t(f.board ? 'mapToWall' : 'mapToGiver'));
     } else if (kind === 'lock') {
