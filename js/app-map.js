@@ -319,7 +319,7 @@
       const open = !p[4] || !own || lit.has(pinKey(p));
       const name = t(p[0] === 'bench' ? 'mapPlace_bench1' : 'mapPlace_' + p[0]);
       out.push({ key: 'pin:' + M.PINS.indexOf(p), layer: p[0], scene: p[3], at: { x: p[1], y: p[2] }, got: false, off: !open, pinData: p,
-        name, sub: open ? '' : t(p[0] === 'bench' ? 'mapToll' : 'mapClosed'),
+        name, sub: open ? '' : t(p[0] === 'bench' && /bell_toll_machine/.test(JSON.stringify(p[4])) ? 'mapToll' : 'mapClosed'),
         draw: (s, ti, k, c) => pin(p[0], p[0] === 'bench' ? 'pin_bench' : p[0] === 'bellway' ? 'pin_stag_station' : 'pin_tube_station', s, ti, k, c + (open ? '' : ' is-off')) });
     });
     for (const x of SS.gauntlets.GAUNTLETS) {

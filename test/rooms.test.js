@@ -49,13 +49,13 @@ test('an interior the map does not draw goes where its door is; every gauntlet a
   }
   // Each state shows its own: the Ventrica hub's bench and station, and the diving bell's bench.
   // Then the Flea Caravan's two benches of its own (Greymoor, the Blasted Steps), Fleatopia's and
-  // the Songclave's, after the rest so the pins before keep their index (js/map-fixes.js).
-  assert.deepEqual(kinds, { bench: 82, bellway: 12, ventrica: 8 });
-  assert.deepEqual(M.PINS.slice(98).map((p) => p[3]), ['Aqueduct_05', 'Coral_Judge_Arena', 'Greymoor_08', 'Song_Enclave']);
+  // the Songclave's and the Bellhome's (lit once the house is unlocked), after the rest so the pins before keep their index (js/map-fixes.js).
+  assert.deepEqual(kinds, { bench: 83, bellway: 12, ventrica: 8 });
+  assert.deepEqual(M.PINS.slice(98).map((p) => p[3]), ['Aqueduct_05', 'Coral_Judge_Arena', 'Greymoor_08', 'Song_Enclave', 'Belltown_Room_Spare']);
   const count = (g) => R.pinsOn(g).reduce((o, p) => ({ ...o, [p[0]]: (o[p[0]] || 0) + 1 }), {});
-  assert.deepEqual(count(null), { bench: 80, bellway: 12, ventrica: 7 });
-  assert.deepEqual(count(world({ act3MapUpdated: true, SeenDivingBellGoneAbyss: true })), { bench: 77, bellway: 12, ventrica: 7 });
-  assert.deepEqual(count(world({ act3MapUpdated: true, SeenDivingBellGoneAbyss: true, HasWhiteFlower: true })), { bench: 78, bellway: 12, ventrica: 7 });
+  assert.deepEqual(count(null), { bench: 81, bellway: 12, ventrica: 7 });
+  assert.deepEqual(count(world({ act3MapUpdated: true, SeenDivingBellGoneAbyss: true })), { bench: 78, bellway: 12, ventrica: 7 });
+  assert.deepEqual(count(world({ act3MapUpdated: true, SeenDivingBellGoneAbyss: true, HasWhiteFlower: true })), { bench: 79, bellway: 12, ventrica: 7 });
   // A caravan's bench shows only where your caravan is (CaravanTroupeLocation: 1 Greymoor, 2 the
   // Blasted Steps); with no game, both.
   const caravan = (at) => R.pinsOn({ ...world({}), caravan: at }).filter((p) => p[5]).map((p) => p[3]);
