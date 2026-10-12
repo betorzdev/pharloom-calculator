@@ -27,7 +27,7 @@
                     furnishings, the small silk cocoons and Eva's rewards
      Items          Craftmetal, Pale Oil, Mossberries, Silkeaters, the area maps where each is had
                     (Shakra's spot in its area, or where it lies), the key items, the rosaries and
-                    shell shards lying in a room
+                    shell shards lying in a room or given (the Fixer's, the Sprintmaster's)
      Secrets        the rosary and shell shard caches, breakable walls, loose rosaries and each room's
                     hidden corners (off at first; from afar, a count per room)
      Your game      your cocoon; the Journal's entries still missing
@@ -333,7 +333,7 @@
       const open = !p[4] || !own || lit.has(pinKey(p));
       const name = t(p[0] === 'bench' ? 'mapPlace_bench1' : 'mapPlace_' + p[0]);
       out.push({ key: 'pin:' + M.PINS.indexOf(p), layer: p[0], scene: p[3], at: { x: p[1], y: p[2] }, got: false, off: !open, pinData: p,
-        name, sub: open ? '' : t(p[0] === 'bench' ? 'mapToll' : 'mapClosed'),
+        name, sub: open ? '' : t(p[0] === 'bench' && /bell_toll_machine/.test(JSON.stringify(p[4])) ? 'mapToll' : 'mapClosed'),
         draw: (s, ti, k, c) => pin(p[0], p[0] === 'bench' ? 'pin_bench' : p[0] === 'bellway' ? 'pin_stag_station' : 'pin_tube_station', s, ti, k, c + (open ? '' : ' is-off')) });
     });
     for (const x of SS.gauntlets.GAUNTLETS) {
@@ -345,9 +345,9 @@
       add({ key: 'boss:' + foe, layer: 'boss', scene, act, got: !!g && g.bosses.includes(foe), name: f ? pick(f.name) : foe, foe, entry: e && e.id,
         draw: (s, ti, k, c) => badge('boss', portrait(e && e.id) || GLYPH.boss, s, ti, k, c) });
     }
-    for (const [field, scene] of SP.BELLS) {
-      const b = QU.BELLSHRINES.find((x) => x.field === field);
-      add({ key: 'bell:' + field, layer: 'bellshrine', scene, got: !!g && g.bellshrines.includes(field), name: t('mapBell', { area: pick(b.name) }),
+    for (const [field, scene, own] of SP.BELLS) {
+      const b = own ? { name: own } : QU.BELLSHRINES.find((x) => x.field === field);
+      add({ key: 'bell:' + field, layer: 'bellshrine', scene, got: !!g && g.bells.includes(field), name: t('mapBell', { area: pick(b.name) }),
         draw: (s, ti, k, c) => pin('bellshrine', 'quest_map_icon_grand_gate_final', s, ti, k, c) });
     }
     // The doors a key opens whose door the save doesn't keep (the rest are extras, LOCK_AT below).

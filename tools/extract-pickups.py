@@ -21,7 +21,8 @@ What it writes (read on 28-Sep-2026, patch 1.0.30000):
           every PlayMakerFSM whose raw data names it (a set or a test: gen-spots picks).
   npcs    an object name the NPCS pattern list matches → [scene, object]: where each of them is.
   objects the objects kb/data/game/wanted.json asks for (tools/spots-wanted.js: the ones a save's
-          sceneData check names) → { scene: { name: [x, y] } }, the first of each name.
+          sceneData check names) → { scene: { name: [x, y] } }, the first of each name: an
+          object of that name, else a saved item whose own ID it is.
   benches each scene's RestBench → [x, y], which tools/gen-spots.js sets against the map's own
           bench pins to check how a point is placed on the map.
   sizes   each scene's size in world units, its tk2dTileMap's width and height: the game places a
@@ -31,22 +32,33 @@ What it writes (read on 28-Sep-2026, patch 1.0.30000):
           save keeps in sceneData.persistentBools under [Scene, id] once it's opened. Scene is the
           scene's own name, as the save writes it (aa/catalog.bin's <Scene>.unity), not the
           bundle's lower case. The kinds (read on 11-Oct-2026; design/03-redesign.md, step 6, Passages):
-            lever     a Lever or Lever_tk2d component
+            lever     a Lever or Lever_tk2d component, and the levers an FSM works (LEVERS: the
+                      Cogwork Core's cog_lever, Greymoor's lever on the platform it drops)
             plate     a pressure plate Hornet steps on, and Clawline's pull switch (PLATE)
-            gate      a Gate, TempGate, Trapdoor, DialDoorBridge or TrapBridgeExtend, and the ring
-                      gates Clawline pulls open (RING)
+            gate      a Gate, TempGate, Trapdoor, DialDoorBridge or TrapBridgeExtend, the ring
+                      gates Clawline pulls open and the gates an FSM works (GATES)
             lock      a door a key opens: the Simple Key's, the Architect's, the Ward Boss Key's,
                       the Slab's locks and cells (LOCK)
-            shortcut  a way opened from one side: one-way walls, planks, ladders, floors (SHORTCUT)
+            shortcut  a way opened from one side: one-way walls, planks, ladders, floors, the
+                      Citadel's plug gates (SHORTCUT)
             silkwall  the thick silk vines Silkspear cuts (SILK)
           The doors the Needolin opens (Song_Gate_set) keep nothing in the save, and the levers of
           trapdoors and flip bridges that close again neither: not here. A demo's (Demo States/Demo)
-          and an unused one ("… old") aren't either.
+          and an unused one ("… old") aren't either, nor the two the scene leaves off (OFF).
   pd      each playerData flag of PD_WAYS (what opens a way that the save keeps there) → [scene,
           component, object, x, y]: every component whose raw data names it.
   kept    the rest the save keeps per room that the Map shows, by kind (KEPT: loose rosaries, the
           small silk cocoons, lifts, the masks that hide a room) → [[Scene, id, bool or int, x, y]]:
           each saved bool or int of its own on an object with that component, kept as the doors are.
+  caches  each rosary or shell shard cache whose save is an int (a PersistentIntItem beside a
+          RosaryCache, RosaryCacheHanging, RosaryCacheString or BreakableHolder, kept as the doors are)
+          → [[Scene, id, component, emptied, last]]: the int from which it's emptied, up to the last
+          it can hold (read in Assembly-CSharp 1.0.30000 and against the author's saves, 12-Oct-2026).
+          A BreakableHolder keeps its hits left: 0 once broken (emptied and last 0). A RosaryCache
+          keeps its state: -1 untouched, a step up each hit, held at its hitStates' last, which is
+          when it's emptied (emptied and last its hitStates' count - 1). A RosaryCacheString adds a
+          state a hit up to maxHits (maxHits + 1 states once awake), and its last rosaries fly a
+          step before that, at maxHits - 1 (emptied maxHits - 1, last maxHits).
   maps    each area map found rather than bought (a FakeCollectable with isMap, in the bundles
           above, its pickup under items) → [the Has<Area>Map flag it sets, its words' key].
   lying   each item lying in a room whose pickup keeps a bool of its own (a CollectableItemPickup
@@ -106,6 +118,8 @@ PD_WAYS = ['openedCitadelSpaLeft', 'openedCitadelSpaRight', 'greatBoneGateOpened
 # the saved bool or int (kept, below).
 KEPT = [('bead', {'GeoControl'}), ('cocoon', {'SilkGrubCocoon'}), ('lift', {'LiftControl', 'LiftPlatform', 'ManualLift'}),
         ('hidden', {'Remasker', 'Unmasker'})]
+# The caches whose int the save keeps (caches, above).
+CACHES = {'RosaryCache', 'RosaryCacheHanging', 'RosaryCacheString', 'BreakableHolder'}
 # The people the Map shows, by their objects' names in the scenes (without the copy's " (1)").
 NPCS = r'Pinsmith.*|Seamstress.*|Pinstress.*|Crest Upgrade Shrine|Ladybug.*|Dice Pilgrim.*|Flea ?Master.*|Caravan Troupe Leader.*|' \
        r'Mapper.*|Shakra.*|Quest Board.*|Questboard.*|Relic ?Dealer.*|Belltown Shop NPC|Grindle.*|Mort.*|Frey.*|Pebb.*|Jubilana.*|' \
@@ -117,18 +131,27 @@ SILK = re.compile(r'Thick Silk Vines')
 PLATE = re.compile(r'Hornet_pressure_plate.*|Plate|Plaque Pressure Plate|Shrine Pressure Plate.*|Harpoon Ring Pull Switch|dock_pressure_plate_lock')
 LOCK = re.compile(r'Slab Lock( [LR])?|aspid_sealed_gate_stone|Prince Cell Door|bank_door|dock_sealed_gate|Diving Bell Door|Architect Shrine Door|'
                   r'lock_machine|jail_door|Jail Gate Door - Persistent|door_slabCaged')
-RING = re.compile(r'slide_gate_ring|slab_break_weaver_gate_ring')
+# What an FSM works rather than a component, by name: the levers (the Cogwork Core's; Greymoor_06's,
+# whose bool is on the platform its Lever drops) and the gates (Clawline's rings, Bone_04's).
+LEVERS = re.compile(r'cog_lever|belltown_lever_drop_plat')
+GATES = re.compile(r'slide_gate_ring|slab_break_weaver_gate_ring|Bone Gate')
+# Two the scene leaves off, which none of the author's saves has opened (read on 12-Oct-2026):
+# Cog_Bench's spare cog_lever (its object switched off: the pressure plate beside it opens that
+# way) and Library_11b's plug gate (its Lever switched off). Switched off alone says nothing:
+# the game switches on many a door it starts with off.
+OFF = {('cog_bench', 'cog_lever (2)'), ('library_11b', 'Plug_Gate')}
 SHORTCUT = re.compile(r'One Way (Wall|VineWall|Wall Crystal)|drop_planks|drop_planks_horizontal|attic_ladder|greystore_floor_shortcut|cog_05_shortcut|'
-                      r'BreakableWallSwampBenchShortcut|Breakable Wall Swamp Shortcut|Breakable Floor_basic.*|Junk Hatch|Pipe_Vent_Hatch Broken')
+                      r'BreakableWallSwampBenchShortcut|Breakable Wall Swamp Shortcut|Breakable Floor_basic.*|Junk Hatch|Pipe_Vent_Hatch Broken|'
+                      r'Plug_Gate')
 
 
 def door_kind(comps, name):
     n = re.sub(r'\s*\(\d+\)$', '', name or '').strip()
-    if comps & LEVER: return 'lever'
+    if comps & LEVER or LEVERS.fullmatch(n): return 'lever'
     if SILK.fullmatch(n): return 'silkwall'
     if PLATE.fullmatch(n): return 'plate'
     if LOCK.fullmatch(n): return 'lock'
-    if RING.fullmatch(n): return 'gate'
+    if GATES.fullmatch(n): return 'gate'
     if SHORTCUT.fullmatch(n): return 'shortcut'
     if comps & GATE: return 'gate'
     return None
@@ -136,11 +159,11 @@ def door_kind(comps, name):
 
 def main(game, cache):
     got = pickle.load(open(cache, 'rb')) if cache and os.path.exists(cache) else None
-    if not got or len(got) != 11:   # none, or one kept before the doors, the pickups' bools, the maps, pd or kept
+    if not got or len(got) != 12:   # none, or one kept before the doors, the pickups' bools, the maps, pd, kept or caches
         got = scan(game)
         if cache:
             pickle.dump(got, open(cache, 'wb'))
-    items, fields, npcs, objects, benches, sizes, doors, lying, maps, pd, kept = got
+    items, fields, npcs, objects, benches, sizes, doors, lying, maps, pd, kept, caches = got
     r2 = lambda v: [round(x, 2) if isinstance(x, float) else x for x in v]
     srt = lambda v: sorted({tuple(r2(x)) for x in v}, key=lambda x: tuple(str(y) for y in x))
     out = {'items': {k: {'class': c, 'at': srt(v)} for (k, c), v in sorted(items.items())},
@@ -153,11 +176,14 @@ def main(game, cache):
            'lying': {k: srt(v) for k, v in sorted(lying.items())},
            'maps': dict(sorted(maps.items())),
            'pd': {k: srt(v) for k, v in sorted(pd.items())},
-           'kept': {k: srt(v) for k, v in sorted(kept.items())}}
+           'kept': {k: srt(v) for k, v in sorted(kept.items())},
+           'caches': srt(caches)}
     if len(out['pd']) < len(PD_WAYS):
         sys.exit(f"extract-pickups: no scene names {', '.join(sorted(set(PD_WAYS) - set(out['pd'])))} any more: PD_WAYS needs reading again")
     if len(out['maps']) < 10:
         sys.exit('extract-pickups: too few maps found lying: the fake collectables need reading again')
+    if len(out['caches']) < 300:
+        sys.exit('extract-pickups: too few caches: CACHES needs reading again')
     if len(out['doors'].get('lever', [])) < 50:
         sys.exit('extract-pickups: too few levers: the doors need reading again')
     for f in FIELDS[:11]:   # the abilities; a Bellshrine's flag is named where only some of them are
@@ -225,7 +251,7 @@ def scan(game):
     copy = lambda n: re.sub(r'\s*\(\d+\)$', '', n or '').strip()
     items, fields, npcs = defaultdict(list), defaultdict(list), defaultdict(list)
     objects, benches, sizes, doors, lying = defaultdict(dict), {}, {}, defaultdict(list), defaultdict(list)
-    pd, kept = defaultdict(list), defaultdict(list)
+    pd, kept, caches = defaultdict(list), defaultdict(list), []
     pd_re = re.compile(rb'(?<![A-Za-z0-9_])(' + b'|'.join(re.escape(f.encode()) for f in sorted(PD_WAYS, key=len, reverse=True)) + rb')(?![A-Za-z0-9_])')
     # Each scene's own name, as the game (and its save) writes it: the bundles' are lower case.
     with open(os.path.join(aa, '..', 'catalog.bin'), 'rb') as fh:
@@ -260,7 +286,7 @@ def scan(game):
                     n = o.read().m_Name
                     if n in want and n not in objects[scene]:
                         objects[scene][n] = world(o.path_id)
-        door_comps, bools, pickup_of, ints, comps_of, pd_hits = defaultdict(set), [], {}, [], defaultdict(set), []
+        door_comps, bools, pickup_of, ints, comps_of, pd_hits, cache_of = defaultdict(set), [], {}, [], defaultdict(set), [], {}
         for o in env.objects:
             if o.type.name != 'MonoBehaviour':
                 continue
@@ -268,6 +294,8 @@ def scan(game):
             raw = o.get_raw_data()   # a MonoBehaviour starts with its GameObject (file id, path id)
             gid0 = struct.unpack_from('<q', raw, 4)[0] if len(raw) >= 12 else None
             comps_of[gid0].add(comp)
+            if comp in CACHES:
+                cache_of[gid0] = (comp, o)
             for f in set(pd_re.findall(raw)):
                 pd_hits.append((f.decode(), comp, gid0))
             if comp == 'PersistentIntItem':
@@ -316,9 +344,15 @@ def scan(game):
                     t = T.get(f) if f else None
                 return '/'.join(reversed(out))
             own = NAMES.get(scene)
+            # A wanted id that's a saved item's own ID rather than its object's name (a wall saved
+            # as "Act3_Bellway_01_Breakable_wall"): its place is that object's.
+            for gid, o in (bools + ints if want else []):
+                bid = (o.read_typetree().get('itemData') or {}).get('ID')
+                if bid in want and bid not in objects[scene]:
+                    objects[scene][bid] = world(gid)
             for gid, o in bools:
                 name = name_of(gid)
-                kind = door_kind(door_comps.get(gid, set()), name)
+                kind = door_kind(door_comps.get(gid, set()), name) if (scene, name) not in OFF else None
                 if not kind and gid not in pickup_of:
                     continue
                 d = o.read_typetree()
@@ -347,11 +381,28 @@ def scan(game):
                     if not own:
                         sys.exit(f'extract-pickups: {scene} has no name in catalog.bin')
                     kept[kind].append((own, it.get('ID') or name_of(gid), typ, *world(gid)))
+            # The caches whose int the save keeps (caches): from which int each is emptied.
+            for gid, o in ints:
+                if gid not in cache_of:
+                    continue
+                d = o.read_typetree()
+                it = d.get('itemData') or {}
+                if it.get('IsSemiPersistent') or d.get('dontSave') or (it.get('SceneName') and it['SceneName'].lower() != scene):
+                    continue
+                comp, c = cache_of[gid]
+                t = c.read_typetree()
+                if comp == 'BreakableHolder':
+                    emptied = last = 0
+                elif comp == 'RosaryCacheString':
+                    emptied, last = t['maxHits'] - 1, t['maxHits']
+                else:
+                    emptied = last = len(t['hitStates']) - 1
+                caches.append((own, it.get('ID') or name_of(gid), comp, emptied, last))
             for f, comp, gid in pd_hits:
                 pd[f].append((scene, comp, name_of(gid) if gid else '', *(world(gid) if gid else [])))
         if i % 50 == 0:
             print(f'{i}/{len(names)} {scene}', file=sys.stderr, flush=True)
-    return dict(items), dict(fields), dict(npcs), dict(objects), benches, sizes, dict(doors), dict(lying), maps, dict(pd), dict(kept)
+    return dict(items), dict(fields), dict(npcs), dict(objects), benches, sizes, dict(doors), dict(lying), maps, dict(pd), dict(kept), caches
 
 
 if __name__ == '__main__':
