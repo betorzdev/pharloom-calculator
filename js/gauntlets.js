@@ -8,7 +8,8 @@
      reward    the game's name for what it gives, when it gives something
      waves     [[enemy id (js/enemies.js FOES), how many], …] per wave, in order
      done      how a save says it's cleared, as js/collectibles.js's conditions (js/savefile.js)
-     scene     the game's scene it's fought in (js/rooms.js places it on the map) */
+     scene     the game's scene it's fought in (js/rooms.js places it on the map)
+     act       the first Act it can be fought in */
 (() => {
   'use strict';
   const SS = globalThis.SS || (globalThis.SS = {});
@@ -29,6 +30,7 @@
       ],
       done: ['flag', 'DefeatedSwampShaman'],
       scene: 'Shadow_18',
+      act: 2,
     },
     {
       id: 'bone-bottom',
@@ -47,6 +49,7 @@
       ],
       done: ['bool', 'Chapel_Wanderer', 'Battle Scene'],
       scene: 'Chapel_Wanderer',
+      act: 1,
     },
     {
       id: 'choral-chambers',
@@ -61,6 +64,7 @@
       ],
       done: ['flag', 'song_04_battleCompleted'],
       scene: 'Song_04',
+      act: 2,
     },
     {
       id: 'cogwork-core-1',
@@ -76,6 +80,7 @@
       ],
       done: ['bool', 'Cog_05', 'Battle Scene'],
       scene: 'Cog_05',
+      act: 2,
     },
     {
       id: 'cogwork-core-2',
@@ -84,6 +89,7 @@
       waves: [[['underworker', 1], ['underpoke', 1]], [['undercrank', 1], ['underloft', 1]]],
       done: ['flag', 'completedCog10_abyssBattle'],
       scene: 'Cog_10_Destroyed',
+      act: 3,
     },
     {
       id: 'cogwork-core-3',
@@ -92,6 +98,7 @@
       waves: [[['cogwork-clapper', 2]]],
       done: ['bool', 'Cog_07', 'Battle Scene'],
       scene: 'Cog_07',
+      act: 3,
     },
     {
       id: 'deep-docks-1',
@@ -106,6 +113,7 @@
       ],
       done: ['bool', 'Room_Forge', 'Battle Scene'],
       scene: 'Room_Forge',
+      act: 1,
     },
     {
       id: 'deep-docks-2',
@@ -120,6 +128,7 @@
       ],
       done: ['bool', 'Dock_08', 'Battle Scene'],
       scene: 'Dock_08',
+      act: 1,
     },
     {
       id: 'deep-docks-3',
@@ -134,6 +143,7 @@
       ],
       done: ['bool', 'Dock_03c', 'Battle Scene'],
       scene: 'Dock_03c',
+      act: 2,
     },
     {
       id: 'far-fields-1',
@@ -148,6 +158,7 @@
       ],
       done: ['flag', 'completedLavaChallenge'],
       scene: 'Bone_East_LavaChallenge',
+      act: 2,
     },
     {
       id: 'karmelita',
@@ -162,6 +173,7 @@
       ],
       done: ['flag', 'defeatedAntQueen'],
       scene: 'Memory_Ant_Queen',
+      act: 3,
     },
     {
       id: 'far-fields-2',
@@ -170,6 +182,7 @@
       waves: [[['skarrgard', 1]]],
       done: ['bool', 'Bone_East_25', 'Battle Scene'],
       scene: 'Bone_East_25',
+      act: 3,
     },
     {
       id: 'greymoor-1',
@@ -177,6 +190,7 @@
       waves: [[['dreg-catcher', 2]], [['thread-raker', 1]]],
       done: ['flag', 'greymoor_04_battleCompleted'],
       scene: 'Greymoor_04',
+      act: 1,
     },
     {
       id: 'greymoor-2',
@@ -184,6 +198,7 @@
       waves: [[['dreg-catcher', 2]], [['dreg-catcher', 1], ['roachcatcher', 1]], [['thread-raker', 2]]],
       done: ['bool', 'Greymoor_04', 'Black Thread Battle Scene'],
       scene: 'Greymoor_04',
+      act: 3,
     },
     {
       id: 'greymoor-3',
@@ -199,6 +214,7 @@
       ],
       done: ['bool', 'Room_CrowCourt', 'Battle Scene'],
       scene: 'Room_CrowCourt',
+      act: 1,
     },
     {
       id: 'crawfather',
@@ -215,6 +231,7 @@
       ],
       done: ['flag', 'defeatedCrowCourt'],
       scene: 'Room_CrowCourt_02',
+      act: 3,
     },
     {
       id: 'greymoor-4',
@@ -240,6 +257,7 @@
       ],
       done: ['bool', 'Ant_08', 'Collectable Item Pickup'],
       scene: 'Ant_08',
+      act: 2,
     },
     {
       id: 'greymoor-5',
@@ -253,6 +271,7 @@
       waves: [[['silk-snipper', 1]], [['dreg-catcher', 2]], [['thread-raker', 1]], [['silk-snipper', 2]]],
       done: ['bool', 'Greymoor_20c', 'Battle Scene'],
       scene: 'Greymoor_20c',
+      act: 1,
     },
     {
       id: 'high-halls-1',
@@ -280,6 +299,7 @@
       ],
       done: ['flag', 'hang04Battle'],
       scene: 'Hang_04_Boss',
+      act: 2,
     },
     {
       id: 'high-halls-2',
@@ -289,6 +309,7 @@
       waves: [[['choir-clapper', 1], ['minister', 1]]],
       done: ['bool', 'Hang_04', 'Battle Scene Act3'],
       scene: 'Hang_04',
+      act: 3,
     },
     {
       id: 'hunters-march-1',
@@ -296,6 +317,7 @@
       waves: [[['skarrgard', 1]]],
       done: ['bool', 'Ant_02', 'Battle Scene'],
       scene: 'Ant_02',
+      act: 1,
     },
     {
       id: 'hunters-march-2',
@@ -309,6 +331,7 @@
       ],
       done: ['flag', 'ant04_battleCompleted'],
       scene: 'Ant_04_mid',
+      act: 1,
     },
     {
       id: 'hunters-march-3',
@@ -322,6 +345,7 @@
       ],
       done: ['bool', 'Ant_05b', 'Battle Scene'],
       scene: 'Ant_05b',
+      act: 1,
     },
     {
       id: 'hunters-march-4',
@@ -330,6 +354,7 @@
       waves: [[['skarrgard', 1], ['spear-skarr', 1]]],
       done: ['flag', 'ant21_InitBattleCompleted'],
       scene: 'Ant_21',
+      act: 1,
     },
     {
       id: 'hunters-march-5',
@@ -338,6 +363,7 @@
       waves: [[['spear-skarr', 2]]],
       done: ['bool', 'Ant_21', 'Battle Scene Extra'],
       scene: 'Ant_21',
+      act: 1,
     },
     {
       id: 'hunters-march-6',
@@ -349,6 +375,7 @@
       ],
       done: ['bool', 'Ant_04_mid', 'Battle Scene Black Thread'],
       scene: 'Ant_04_mid',
+      act: 3,
     },
     {
       id: 'the-marrow-1',
@@ -356,6 +383,7 @@
       waves: [[['beastfly', 1]], [['skull-scuttler', 2]], [['beastfly', 2]], [['skull-brute', 1]]],
       done: ['bool', 'Bone_01', 'Battle Scene'],
       scene: 'Bone_01',
+      act: 1,
     },
     {
       id: 'the-marrow-2',
@@ -368,6 +396,7 @@
       ],
       done: ['bool', 'Bone_18', 'Battle Scene'],
       scene: 'Bone_18',
+      act: 1,
     },
     {
       id: 'memorium',
@@ -376,6 +405,7 @@
       waves: [[['memoria', 2]]],
       done: ['bool', 'Arborium_07', 'Battle Scene'],
       scene: 'Arborium_07',
+      act: 2,
     },
     {
       id: 'coral-tower-1',
@@ -392,6 +422,7 @@
       ],
       done: ['flag', 'defeatedCoralKing'],
       scene: 'Memory_Coral_Tower',
+      act: 3,
     },
     {
       id: 'coral-tower-2',
@@ -412,6 +443,7 @@
       ],
       done: ['flag', 'defeatedCoralKing'],
       scene: 'Memory_Coral_Tower',
+      act: 3,
     },
     {
       id: 'coral-tower-3',
@@ -437,6 +469,7 @@
       ],
       done: ['flag', 'defeatedCoralKing'],
       scene: 'Memory_Coral_Tower',
+      act: 3,
     },
     {
       id: 'khann',
@@ -457,6 +490,7 @@
       ],
       done: ['flag', 'defeatedCoralKing'],
       scene: 'Memory_Coral_Tower',
+      act: 3,
     },
     {
       id: 'shellwood-1',
@@ -468,6 +502,7 @@
       ],
       done: ['bool', 'Shellwood_01b', 'Battle Scene'],
       scene: 'Shellwood_01b',
+      act: 1,
     },
     {
       id: 'shellwood-2',
@@ -479,6 +514,7 @@
       ],
       done: ['flag', 'savedPlinney'],
       scene: 'Shellgrave',
+      act: 3,
     },
     {
       id: 'sinners-road-1',
@@ -487,6 +523,7 @@
       waves: [[['roachkeeper', 1]]],
       done: ['bool', 'Dust_06', 'Collectable Item SimpleKey'],
       scene: 'Dust_06',
+      act: 1,
     },
     {
       id: 'lugoli',
@@ -495,6 +532,7 @@
       waves: [[['roachserver', 2]], [['disgraced-chef-lugoli', 1]]],
       done: ['flag', 'defeatedRoachkeeperChef'],
       scene: 'Dust_Chef',
+      act: 2,
     },
     {
       id: 'the-slab-1',
@@ -502,6 +540,7 @@
       waves: [[['scabfly', 2], ['guardfly', 1]], [['scabfly', 4]], [['guardfly', 2]]],
       done: ['bool', 'Slab_23', 'Battle Scene'],
       scene: 'Slab_23',
+      act: 1,
     },
     {
       id: 'the-slab-2',
@@ -516,6 +555,7 @@
       ],
       done: ['all', ['flag', 'slab_cloak_battle_completed'], ['bool', 'Slab_03', 'door_slabCaged']],
       scene: 'Slab_16',
+      act: 1,
     },
     {
       id: 'the-slab-3',
@@ -528,6 +568,7 @@
         ['not', ['bool', 'Slab_03', 'door_slabCaged']],
       ],
       scene: 'Slab_16',
+      act: 2,
     },
     {
       id: 'broodmother',
@@ -545,6 +586,7 @@
       ],
       done: ['flag', 'defeatedBroodMother'],
       scene: 'Slab_16b',
+      act: 2,
     },
     {
       id: 'underworks-1',
@@ -553,6 +595,7 @@
       waves: [[['undercrank', 1], ['underloft', 1]], [['undercrank', 1], ['underpoke', 1]]],
       done: ['flag', 'under07_battleCompleted'],
       scene: 'Under_07',
+      act: 2,
     },
     {
       id: 'underworks-2',
@@ -567,6 +610,7 @@
       ],
       done: ['bool', 'Under_10', 'Battle Scene'],
       scene: 'Under_10',
+      act: 2,
     },
     {
       id: 'underworks-3',
@@ -583,6 +627,7 @@
       ],
       done: ['bool', 'Under_18', 'Battle Scene'],
       scene: 'Under_18',
+      act: 2,
     },
     {
       id: 'verdania',
@@ -598,6 +643,7 @@
       ],
       done: ['flag', 'aspid06_battleComplete'],
       scene: 'Clover_04b',
+      act: 3,
     },
     {
       id: 'whispering-vaults-1',
@@ -611,6 +657,7 @@
       ],
       done: ['flag', 'completedLibraryEntryBattle'],
       scene: 'Library_02',
+      act: 2,
     },
     {
       id: 'whispering-vaults-2',
@@ -625,6 +672,7 @@
       ],
       done: ['flag', 'completedLibraryAcolyteBattle'],
       scene: 'Library_02',
+      act: 2,
     },
     {
       id: 'whiteward-1',
@@ -633,6 +681,7 @@
       waves: [[['surgeon', 1]], [['mortician', 2]], [['surgeon', 2]]],
       done: ['quest', 'Save Sherma'],
       scene: 'Ward_09',
+      act: 2,
     },
     {
       id: 'unravelled',
@@ -650,6 +699,7 @@
       ],
       done: ['flag', 'wardBossDefeated'],
       scene: 'Ward_02_Boss',
+      act: 2,
     },
   ];
 

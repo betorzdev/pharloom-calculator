@@ -4,12 +4,12 @@
    (design/30-map-admin-variants.html, all A). Nothing is added by hand: a mark the data doesn't
    have would have no way to follow the save.
      The panel     a band under the map, above the legend: the counts, the chosen mark (its
-                   points, Restore and Hide; Show for a hidden one), Undo and Save, and every fix
-                   by kind (a tap goes to it).
+                   points, Restore and Hide; Show for a hidden one), Undo and Save, and the fixes
+                   by kind, the moved ones only while unsaved (a tap goes to it).
      Moving        drag a mark (the map stays), or nudge it with the arrow keys (a pixel of the
                    image; Shift: five). The save's own marks (cocoon, Journal) never move.
-     On the map    a dashed way from the data's point to a moved mark (in the accent while
-                   unsaved), a hidden mark faint and struck through.
+     On the map    a dashed way from the data's point to a mark moved and not saved yet (the
+                   saved ones' would cover the map), a hidden mark faint and struck through.
      Saving        the changes wait in sessionStorage (pharloom.mapPending) through a reload, until
                    Save sends them to `npm run admin` (tools/admin.js), which writes
                    js/map-fixes.js; with no server (file://, the published site) Copy puts the new
@@ -121,7 +121,8 @@
       return `<li><button type="button" class="${unsaved(k) ? 'is-pending' : ''}" data-act="admGo" data-value="${esc(k)}"${NT}>${m ? art(m) : '<i></i>'}<span>${esc(m ? m.name : k)}</span><code>${esc(m ? m.scene : '×')}</code></button></li>`;
     };
     const grp = (label, ks) => (ks.length ? `<details open><summary>${esc(label)} <span>${ks.length}</span></summary><ul>${ks.sort().map(item).join('')}</ul></details>` : '');
-    return grp(t('admMoved'), Object.keys(w.moved)) + grp(t('admHidden'), Object.keys(w.hidden));
+    // The moved ones only while unsaved (the saved ones are many, and js/map-fixes.js has them).
+    return grp(t('admMoved'), Object.keys(w.moved).filter(unsaved)) + grp(t('admHidden'), Object.keys(w.hidden));
   }
   function panelHtml() {
     askServer();
@@ -150,9 +151,9 @@
     const svg = sec.querySelector('.mp-svg'), marks = svg && svg.querySelector('.mp-marks');
     if (!marks) return;
     svg.classList.add('is-admin');
-    const ways = A.list().filter((m) => m.fix && A.placed().has(m.key)).map((m) => {
+    const ways = A.list().filter((m) => m.fix && A.placed().has(m.key) && unsaved(m.key)).map((m) => {
       const p0 = A.pointOf(m), p = m.fix;
-      return p0 ? `<g class="${unsaved(m.key) ? 'is-pending' : ''}"><line x1="${p0.x}" y1="${p0.y}" x2="${p.x}" y2="${p.y}"/><circle cx="${p0.x}" cy="${p0.y}" r="2.2"/></g>` : '';
+      return p0 ? `<g><line x1="${p0.x}" y1="${p0.y}" x2="${p.x}" y2="${p.y}"/><circle cx="${p0.x}" cy="${p0.y}" r="2.2"/></g>` : '';
     }).join('');
     marks.insertAdjacentHTML('beforebegin', `<g class="mp-adm-ways" aria-hidden="true">${ways}</g>`);
     for (const g of marks.querySelectorAll('.mp-mk.is-hidden')) g.insertAdjacentHTML('beforeend', '<line class="mp-adm-strike" x1="-0.42" y1="0.42" x2="0.42" y2="-0.42"/>');

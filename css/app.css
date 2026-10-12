@@ -2266,9 +2266,10 @@ html:has(.mp.is-full) { overflow: hidden; }
 .mp-name:focus { outline: none; }
 .mp-name:is(:hover, :focus-visible, .is-sel) { fill: var(--ink-strong); }
 .mp-name.is-unmapped { fill: color-mix(in oklab, var(--muted) 70%, transparent); }
-/* The caches and walls from afar: a count per room. */
+/* The caches and walls from afar: per room, a mark per layer with how many in a corner. */
 .mp-cluster { pointer-events: none; }
-.mp-cluster text { font-family: var(--font-num); font-size: 0.42px; text-anchor: middle; dominant-baseline: middle; fill: var(--ink-2); }
+.mp-count circle { fill: var(--scene-bg); stroke: var(--line-ctl); stroke-width: 0.04; }
+.mp-count text { font-family: var(--font-num); font-size: 0.26px; text-anchor: middle; dominant-baseline: middle; fill: var(--ink-strong); }
 .mp-view.is-close .mp-cluster { display: none; }
 /* The caches and walls: so many they're drawn close up only; from afar, a count per room. */
 .mp-view:not(.is-close) .is-fine { display: none; }
@@ -2312,9 +2313,8 @@ html:has(.mp.is-full) { overflow: hidden; }
 .mp-adm-list li button:hover { background: var(--veil); color: var(--ink-strong); }
 .mp-adm-list li :is(.mp-dot, .mp-pin) { --mp-s: 20px; }
 .mp-adm-ways { pointer-events: none; }
-.mp-adm-ways line { stroke: var(--ink-strong); stroke-width: 1.5; stroke-dasharray: 4 3; vector-effect: non-scaling-stroke; opacity: 0.7; }
-.mp-adm-ways circle { fill: none; stroke: var(--ink-strong); stroke-width: 1.5; vector-effect: non-scaling-stroke; opacity: 0.7; }
-.mp-adm-ways .is-pending :is(line, circle) { stroke: var(--accent); opacity: 1; }
+.mp-adm-ways line { stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 4 3; vector-effect: non-scaling-stroke; }
+.mp-adm-ways circle { fill: none; stroke: var(--accent); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
 .mp-mk.is-hidden { opacity: 0.35; }
 .mp-adm-strike { stroke: var(--ink-strong); stroke-width: 0.09; stroke-linecap: round; }
 /* What's missing closest to your bench: a short list under the map. */

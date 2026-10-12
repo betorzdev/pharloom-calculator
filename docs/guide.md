@@ -333,22 +333,43 @@ with its layer switched on, its card open and a ring where it is. On a phone the
 only zoomed in.
 
 Under the map, **What the map shows**, as the Hollow Knight site has it: «Show all · Hide all» on
-its right, then the Act (all, or only Act 1, 2 or 3's things), «Only what I can reach now» with a
+its right, and «Only the 100%», which turns on just the layers that count for completion, then the Act (all, or only Act 1, 2 or 3's things), «Only what I can reach now» with a
 save (hides what asks for an ability or Silk Skill you don't have yet: the Faydown Cloak,
 Clawline, Silk Soar, as the completionist lists them), «Only what the game shows» with a save (see
-below), and the area names on or off. Then eight groups, each a row that folds (its caret; all open
-at first, only the first on a phone, then as you left them) whose title is the switch for the
+below), and the area names on or off. Then eleven groups, each a row that folds (its caret; all open
+at first, only the first two on a phone, then as you left them) whose title is the switch for the
 whole group, in ink when all of it is on, dimmer when part, muted when none. Inside, each layer's
 switch is the game's own picture of it, in grey when off. Beside each, how many: in a save, had of
 the total (a layer complete in green); for places and people, which aren't had, how many there
 are; in Free mode, the total. The Act and reach filters narrow the counts too.
 
-- **Towards 100%**: every piece, each kind a layer (Mask Shards, Spool Fragments, Needle
-  upgrades, Tool Pouch, Crafting Kit, Silk Hearts, then the Tools, Crests, Silk Skills and
-  abilities, then Memory Lockets, Craftmetal, Pale Oil, fleas, Old Hearts, melodies) and the
-  Everbloom. Each in the room where it's had: lying there, at the shop that sells it, at the
-  Wishwall or with whoever gives the wish, in its boss's arena, with the person who gives it. All
-  on at first.
+What counts for the 100% is in the first four groups, each thing in the room where it's had:
+lying there, at the shop that sells it, at the Wishwall or with whoever gives the wish, in its
+boss's arena, with the person who gives it. All of it on at first.
+
+- **Upgrades**: Mask Shards, Spool Fragments, Silk Hearts, the Needle, Tool Pouch and Crafting Kit
+  upgrades, and the eleven abilities: the two Needolin melodies of Act 3 (the Beastling Call,
+  under Bellhart once the Bell Eater is beaten; the Elegy of the Deep, from the Snail Shamans) don't
+  count for the 100%, and their card says so.
+- **Crest** (the game's pane where they're equipped): the **Tools**, one switch whose round caret
+  opens them by the colour of their slot (red, blue, yellow) and, apart, the six **outside the
+  100%** (off at first): the upgrades of four Tools (Curvesickle, Druid's Eyes, Claw Mirrors, the
+  Shell Satchel), which add nothing to it on their own, and the two a wish lends and takes back
+  (the Snare Setter, the Needle Phial). Then the Crests and Silk Skills.
+- **Collectibles**: Memory Lockets, Lost Fleas, the Old Hearts, the Melodies and the Everbloom
+  (on at first), then, off at first, the relics, one switch for the six (Bone Scrolls, Weaver
+  Effigies, Choral Commandments, Rune Harps, Psalm Cylinders, the Arcane Egg) whose round caret
+  opens them one by one, Mementos, the Bellhome's furnishings, the **Silk cocoons**, the small ones
+  beside the Silkeaters, and **What Eva gives** besides Sylphsong: the Hunter Crest's two
+  evolutions and the Vesticrest's yellow and blue slots, each with the slots it needs across your
+  Crests (the Hunter's aside) and, with a save, how many you have open.
+- **Items**: Craftmetal and Pale Oil (on at first), then, off at first, Mossberries, Silkeaters, the
+  **Maps**: the fourteen area maps found lying in a room (the Weavenest Atla Map, the
+  Slab's…), each gone once your save has it; the fourteen Shakra sells have no mark of their own
+  (they'd sit on her), her card says which you lack. And the **Rosaries** and **Shell Shards** lying in a
+  room (strings, necklaces, Shard Bundles, Great Shards, Pristine Cores), each by its own pickup.
+  And the **Key items** lying in a room (the Cogheart Pieces, the broken Silkshot, Farsight, the
+  Materium).
 - **Places**: benches (off at first: there are 80, the game's own bench pins and the Songclave's,
   which its map doesn't pin; the Flea Caravan's two of its own, in Greymoor and the Blasted Steps,
   only while your caravan is there), Bellway and Ventrica stations (dimmed while
@@ -387,27 +408,17 @@ are; in Free mode, the total. The Act and reach filters narrow the counts too.
   six only the three your game chose, and only in Steel Soul; the Herald's seven; the rescues and
   fights, in the room where the game ends the wish); what a wish asks for (the 22 things lying in a
   room or given there: the Pollip Hearts, the Flintgems, the Grand Hunts' trophies, the
-  Gourmand's delicacies, the three souls, the Twisted Bud, the Steel Spines); and the main
+  Gourmand's delicacies, the three souls, the Twisted Bud, the Steel Spines; and the fourteen
+  spots above and below Bellhart where a Silver Bell may drop, gone once their wish is granted); and the main
   objectives, where the game's map pins them (the Bellshrines, Old Hearts and Melodies are already
   layers of their own). Each is done as your save says: the wish granted, the objective complete
   or a later step of it (Pale Monarch stays incomplete when Act 3 opens through the Soul Snare), a
   thing picked up, held or its wish granted. Off at first.
-- **Collectibles**, off at first: the relics, one switch for the six (Bone Scrolls, Weaver
-  Effigies, Choral Commandments, Rune Harps, Psalm Cylinders, the Arcane Egg) whose round caret
-  opens them one by one, Mossberries, Silkeaters, Mementos and the Bellhome's furnishings. Then
-  the **Maps**: each of the 28 area maps where it's had, the fourteen Shakra sells at her spot in
-  that area (with her price) and the fourteen found lying in a room (the Weavenest Atla Map, the
-  Slab's…), each gone once your save has it. And the **Rosaries** and **Shell Shards** lying in a
-  room (strings, necklaces, Shard Bundles, Great Shards, Pristine Cores), each by its own pickup.
-  The **Key items** lying in a room (the Cogheart Pieces, the broken Silkshot, Farsight, the
-  Materium), the **Silk cocoons**, the small ones beside the Silkeaters, and **What Eva gives**
-  besides Sylphsong: the Hunter Crest's two evolutions and the Vesticrest's yellow and blue slots,
-  each with the slots it needs across your Crests (the Hunter's aside) and, with a save, how many
-  you have open.
 - **Secrets**, off at first: the rosary and shell shard caches, the breakable walls (the
   one-way ones are among the shortcuts), the loose rosaries and the **Hidden corners** (what
   covers part of a room until you walk in, one mark per room, gone once all of it is uncovered), so many
-  that they're drawn one by one only close up; from afar, a count per room.
+  that they're drawn one by one only close up; from afar, one mark per room and kind, with how
+  many in its corner. Marks that would cover each other step a little apart, more the closer you zoom.
 - **Your game**, with a save: your cocoon, where you last fell (on at first), and the Journal's
   entries still missing, in the room where each is found.
 
@@ -469,10 +480,10 @@ She runs each way once; with reduced motion she's simply at her bench.
 under the map, above the legend, corrects what the game's files place wrong: a mark is dragged
 where it really goes, or nudged with the arrow keys (a pixel of the image; Shift, five); one that
 shouldn't be there is hidden (faint and struck through while in the mode). Nothing is added by
-hand: a mark the game's files don't have couldn't follow the save. A dashed way joins a moved
-mark to the data's point (in the accent while unsaved), and the band lists every fix by kind, a
-tap going to it. Changes wait through a reload (`sessionStorage`) and Undo steps back. *Save*
-sends them to `npm run admin` (`tools/admin.js`: the site on `http://localhost:8787` with a way
+hand: a mark the game's files don't have couldn't follow the save. A dashed way joins a mark
+moved and not saved yet to the data's point, and the band lists the fixes by kind
+(the moved ones only while unsaved), a tap going to it. Changes wait through a reload (`sessionStorage`) and Undo steps back. *Save*
+sends them to `npm run admin` (`tools/admin.js`: the site on `http://localhost:8788` with a way
 to write), which writes `js/map-fixes.js`; with no server (`file://`, the published site) the
 button reads *Copy* and puts the new `FIXES` on the clipboard, to paste over the file's. That
 file isn't generated: `npm run data` never touches it, every fix stores its mark's room, and

@@ -42,7 +42,7 @@ the work up reads it first, then the step it's on.
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
-| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct) | [`12-map-variants.html`](12-map-variants.html) |
+| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct) | [`12-map-variants.html`](12-map-variants.html) |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds) | [`15-journal-variants.html`](15-journal-variants.html) |
 | 8 | Crest (`tools`) | **Built** (28 Sep) | [`18-crest-variants.html`](18-crest-variants.html) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
@@ -799,6 +799,32 @@ no state. Garmond is always «comes and goes» (his garmondIn<Room> flags stay s
 on); Sherma, Gilly, the Green Prince, Ballow, Mister Mushroom, Flick, Reed and the Caretaker show
 every spot: their numbers or flags aren't tied to rooms yet. Styx and Crull and Benjin were
 checked and don't trade, so the vendors are 13 (Scrounge's in People), not the 15 first counted.
+
+### The groups, without «Towards 100%» (12 October 2026)
+
+Albert, setting the Map beside mapgenie's (its 56 Tools against the site's 51): grouping by what
+counts for the 100% is the wrong axis; redistribute it. The game has 57 Tools: 51 count, four are
+upgrades that replace one that counts (Curvesickle, Druid's Eyes, Claw Mirrors, the Shell
+Satchel), and a wish lends two and takes them back (the Snare Setter, the Needle Phial). First
+round (a variants page not kept in the repo): 1 · groups A like the Inventory, B like mapgenie
+(Equipment, Collectibles, Items), C only an Equipment group; 2 · the six A a layer of their own, B
+inside the Tools, C left out; 3 · the 100% in one tap A a button, B nothing. Albert liked B
+but not a copy of mapgenie's, so a second round made it ours: 1 · the Tools A in the game's
+«Blasón» (PANE_TOOLS), by slot colour, B one layer under «Equipment»; 2 · the upgrades A a group of
+their own, B spread as mapgenie does; 2b · its name A «Mejoras», B «Salud, seda y aguja», C «Lo
+que te hace crecer» («Hornet» read as confusing); 3 · the six A in their colour, apart, B a layer,
+C out; 4 · the 100% A a diamond on each layer that counts and the button, B the button, C nothing.
+
+Albert chose **«Mejoras»**, the **«Blasón» by colour**, the six as a **sub-layer that unfolds**
+(as the sibling's sets do), and **only the button**. Built (`js/app-map.js` GROUPS, SETS, HUNDRED,
+OTHER_TOOLS; `tools/gen-spots.js` places the six where each lies, Druid's Eyes with the Moss Druid,
+the Needle Phial with Zylotol): Upgrades (Mask Shards, Spool Fragments, Silk Hearts, Needle, Pouch,
+Kit, abilities), Crest (the Tools, one switch whose caret opens Red, Blue, Yellow and Outside the
+100%; Crests; Silk Skills), Collectibles (Lockets, Fleas, Old Hearts, Melodies, Everbloom, the
+relics, Mementos, the Bellhome, silk cocoons, Eva's), Items (Craftmetal, Pale Oil, Mossberries,
+Silkeaters, maps, key items, rosaries, shell shards), then Places to Secrets as they were. «Only the
+100%» beside «Show all · Hide all» turns on just the layers that count. A save's earlier `tools`
+layer reads as the three colours.
 
 ## Step 7 · Journal
 
