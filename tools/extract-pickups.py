@@ -31,17 +31,19 @@ What it writes (read on 28-Sep-2026, patch 1.0.30000):
           save keeps in sceneData.persistentBools under [Scene, id] once it's opened. Scene is the
           scene's own name, as the save writes it (aa/catalog.bin's <Scene>.unity), not the
           bundle's lower case. The kinds (read on 11-Oct-2026; design/03-redesign.md, step 6, Passages):
-            lever     a Lever or Lever_tk2d component
+            lever     a Lever or Lever_tk2d component, and the levers an FSM works (LEVERS: the
+                      Cogwork Core's cog_lever, Greymoor's lever on the platform it drops)
             plate     a pressure plate Hornet steps on, and Clawline's pull switch (PLATE)
-            gate      a Gate, TempGate, Trapdoor, DialDoorBridge or TrapBridgeExtend, and the ring
-                      gates Clawline pulls open (RING)
+            gate      a Gate, TempGate, Trapdoor, DialDoorBridge or TrapBridgeExtend, the ring
+                      gates Clawline pulls open and the gates an FSM works (GATES)
             lock      a door a key opens: the Simple Key's, the Architect's, the Ward Boss Key's,
                       the Slab's locks and cells (LOCK)
-            shortcut  a way opened from one side: one-way walls, planks, ladders, floors (SHORTCUT)
+            shortcut  a way opened from one side: one-way walls, planks, ladders, floors, the
+                      Citadel's plug gates (SHORTCUT)
             silkwall  the thick silk vines Silkspear cuts (SILK)
           The doors the Needolin opens (Song_Gate_set) keep nothing in the save, and the levers of
           trapdoors and flip bridges that close again neither: not here. A demo's (Demo States/Demo)
-          and an unused one ("… old") aren't either.
+          and an unused one ("… old") aren't either, nor the two the scene leaves off (OFF).
   pd      each playerData flag of PD_WAYS (what opens a way that the save keeps there) → [scene,
           component, object, x, y]: every component whose raw data names it.
   kept    the rest the save keeps per room that the Map shows, by kind (KEPT: loose rosaries, the
@@ -117,18 +119,27 @@ SILK = re.compile(r'Thick Silk Vines')
 PLATE = re.compile(r'Hornet_pressure_plate.*|Plate|Plaque Pressure Plate|Shrine Pressure Plate.*|Harpoon Ring Pull Switch|dock_pressure_plate_lock')
 LOCK = re.compile(r'Slab Lock( [LR])?|aspid_sealed_gate_stone|Prince Cell Door|bank_door|dock_sealed_gate|Diving Bell Door|Architect Shrine Door|'
                   r'lock_machine|jail_door|Jail Gate Door - Persistent|door_slabCaged')
-RING = re.compile(r'slide_gate_ring|slab_break_weaver_gate_ring')
+# What an FSM works rather than a component, by name: the levers (the Cogwork Core's; Greymoor_06's,
+# whose bool is on the platform its Lever drops) and the gates (Clawline's rings, Bone_04's).
+LEVERS = re.compile(r'cog_lever|belltown_lever_drop_plat')
+GATES = re.compile(r'slide_gate_ring|slab_break_weaver_gate_ring|Bone Gate')
+# Two the scene leaves off, which none of the author's saves has opened (read on 12-Oct-2026):
+# Cog_Bench's spare cog_lever (its object switched off: the pressure plate beside it opens that
+# way) and Library_11b's plug gate (its Lever switched off). Switched off alone says nothing:
+# the game switches on many a door it starts with off.
+OFF = {('cog_bench', 'cog_lever (2)'), ('library_11b', 'Plug_Gate')}
 SHORTCUT = re.compile(r'One Way (Wall|VineWall|Wall Crystal)|drop_planks|drop_planks_horizontal|attic_ladder|greystore_floor_shortcut|cog_05_shortcut|'
-                      r'BreakableWallSwampBenchShortcut|Breakable Wall Swamp Shortcut|Breakable Floor_basic.*|Junk Hatch|Pipe_Vent_Hatch Broken')
+                      r'BreakableWallSwampBenchShortcut|Breakable Wall Swamp Shortcut|Breakable Floor_basic.*|Junk Hatch|Pipe_Vent_Hatch Broken|'
+                      r'Plug_Gate')
 
 
 def door_kind(comps, name):
     n = re.sub(r'\s*\(\d+\)$', '', name or '').strip()
-    if comps & LEVER: return 'lever'
+    if comps & LEVER or LEVERS.fullmatch(n): return 'lever'
     if SILK.fullmatch(n): return 'silkwall'
     if PLATE.fullmatch(n): return 'plate'
     if LOCK.fullmatch(n): return 'lock'
-    if RING.fullmatch(n): return 'gate'
+    if GATES.fullmatch(n): return 'gate'
     if SHORTCUT.fullmatch(n): return 'shortcut'
     if comps & GATE: return 'gate'
     return None
@@ -318,7 +329,7 @@ def scan(game):
             own = NAMES.get(scene)
             for gid, o in bools:
                 name = name_of(gid)
-                kind = door_kind(door_comps.get(gid, set()), name)
+                kind = door_kind(door_comps.get(gid, set()), name) if (scene, name) not in OFF else None
                 if not kind and gid not in pickup_of:
                     continue
                 d = o.read_typetree()
