@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* tools/admin.js: the site served locally, with the Map's admin mode able to save (ported from
-   hallownest-calculator's). `npm run admin` serves the repo on http://localhost:8787 (the site
+   hallownest-calculator's). `npm run admin` serves the repo on http://localhost:8788 (the site
    itself needs no server: this one is only so the admin mode can write) and answers two calls of
    js/app-map-admin.js's:
      GET  /__admin/ping       → { ok: true }: the page knows it can save, not just copy
@@ -24,7 +24,7 @@ const PE = require('../js/people.js');
 const MF = require('../js/map-fixes.js');
 
 const ROOT = path.resolve(__dirname, '..');
-const PORT = Number(process.env.PORT || 8787);
+const PORT = Number(process.env.PORT || 8788);   // the sibling's takes 8787
 const FIXES_FILE = path.join(ROOT, 'js', 'map-fixes.js');
 const MIME = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8',
   '.json': 'application/json', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp', '.svg': 'image/svg+xml',

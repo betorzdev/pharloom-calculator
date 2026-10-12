@@ -481,7 +481,7 @@ shouldn't be there is hidden (faint and struck through while in the mode). Nothi
 hand: a mark the game's files don't have couldn't follow the save. A dashed way joins a mark
 moved and not saved yet to the data's point, and the band lists every fix by kind, a
 tap going to it. Changes wait through a reload (`sessionStorage`) and Undo steps back. *Save*
-sends them to `npm run admin` (`tools/admin.js`: the site on `http://localhost:8787` with a way
+sends them to `npm run admin` (`tools/admin.js`: the site on `http://localhost:8788` with a way
 to write), which writes `js/map-fixes.js`; with no server (`file://`, the published site) the
 button reads *Copy* and puts the new `FIXES` on the clipboard, to paste over the file's. That
 file isn't generated: `npm run data` never touches it, every fix stores its mark's room, and
