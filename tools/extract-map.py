@@ -138,10 +138,20 @@ def full_image(sprite):
     return whole
 
 
+# The playerData bools a pin tests that the game works out rather than keeps, so a save never
+# carries them: each → the kept fields it's true by (any of them). Read in Assembly-CSharp 1.0.30000
+# on 12-Oct-2026: PlayerData.get_UnlockedAnyTube, the Ventrica hub's two pins.
+DERIVED = {
+    'UnlockedAnyTube': ['UnlockedArboriumTube', 'UnlockedEnclaveTube', 'UnlockedHangTube', 'UnlockedSongTube',
+                        'UnlockedUnderTube', 'UnlockedCityBellwayTube'],
+}
+
+
 def condition(c):
     """A pin's condition → js/collectibles.js's form, or None when it's always true: its
-    PlayerDataTest is groups (any) of tests (all), each a playerData bool that must be BoolValue;
-    its PersistentBool, a sceneData flag, is one more way to be true."""
+    PlayerDataTest is groups (any) of tests (all), each a playerData bool that must be BoolValue
+    (one the game works out, DERIVED, as the kept ones it comes from); its PersistentBool, a
+    sceneData flag, is one more way to be true."""
     if not c:
         return None
     alts = []
@@ -150,7 +160,9 @@ def condition(c):
         for t in g['Tests']:
             if t['Type'] != 0:
                 raise ValueError(f'a test that is not a bool: {t}')
-            tests.append(['flag', t['FieldName']] if t['BoolValue'] else ['not', ['flag', t['FieldName']]])
+            f = t['FieldName']
+            flag = ['any'] + [['flag', x] for x in DERIVED[f]] if f in DERIVED else ['flag', f]
+            tests.append(flag if t['BoolValue'] else ['not', flag])
         if tests:
             alts.append(tests[0] if len(tests) == 1 else ['all'] + tests)
     pb = c.get('PersistentBool') or {}
