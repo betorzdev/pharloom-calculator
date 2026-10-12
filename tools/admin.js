@@ -8,6 +8,8 @@
                               js/map-fixes.js (its FIXES, by its own format(); the header kept)
                               → { ok: true, n }
    Nothing else: no listing, no paths outside the repo, no other writes. No dependencies.
+   js/map-fixes.js is also rewritten by tools/follow-fixes.js (called by the generators) when a list
+   a fix is keyed by shifts; it shares withFixes() with this server.
    Also, for the tests: places(), every mark's key on the map → its scene, as js/app-map.js
    things() names them with no save; check() and withFixes(). */
 'use strict';
@@ -22,6 +24,7 @@ const QU = require('../js/quests.js');
 const SP = require('../js/spots.js');
 const PE = require('../js/people.js');
 const MF = require('../js/map-fixes.js');
+const FF = require('./follow-fixes.js');
 const D = require('../js/data.js');
 
 const ROOT = path.resolve(__dirname, '..');
@@ -83,12 +86,9 @@ function check(f) {
   for (const [k, s] of Object.entries(hidden)) if (!k || !scene(s)) return `hidden ${k}: not a scene`;
   return '';
 }
-// The file's new text: FIXES as format() writes it, the rest (the header, format itself) as it is.
-function withFixes(text, fixes) {
-  const open = text.indexOf('  const FIXES = {'), close = text.indexOf('\n  };', open);
-  if (open < 0 || close < 0) throw new Error('js/map-fixes.js has lost its shape');
-  return text.slice(0, open) + MF.format(fixes) + text.slice(close + '\n  };'.length);
-}
+// The file's new text: FIXES as format() writes it, the rest (the header, format itself) as it is
+// (tools/follow-fixes.js writes it the same way when a generator shifts a list).
+const withFixes = (text, fixes) => FF.withFixes(text, fixes, MF);
 
 const json = (res, code, body) => { res.writeHead(code, { 'Content-Type': 'application/json' }); res.end(JSON.stringify(body)); };
 function serveFile(req, res) {
