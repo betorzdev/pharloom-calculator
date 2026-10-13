@@ -8,16 +8,11 @@
      ?w=/__promo/#t=12.3 shows that moment and #play runs it in real time (no sound).
      It is cut to its music, Christopher Larkin's "Final Judge" (tools/promo/extract-game.py):
      73⅓ bpm, a beat every 9/11 s, the clip's beat 0 at its start; the film starts on the clip's
-     beat 81 (MUSIC), so the film's beat n is at n × BEAT. Hornet is falling from the first frame
-     and lands on beat 1 (a heavy one in the clip), her arc opening the title on 3; the save is
-     dragged in and drops on beat 9, the card lighting up. Then one save of the game, a bench
-     later (make.js --live, and every screen shot before it, pre-*.png): on Your game, on the Map
-     and on Progress it lands as a wave, the page changing where the wave has passed and every
-     spot that really changed lighting up as it's reached (found by comparing the two shots, in
-     ready()). Then a screen every two beats, four for the road to the Acts; one close-up a beat
-     from 31, where the music is loudest; the title lands on beat 39, the clip's strongest hit,
-     and the music falls quiet on beat 43. Hornet is the game's own animation (Fall, HardLand,
-     Challenge Strong).
+     beat 74 (MUSIC), so the film's beat n is at n × BEAT. Hornet falls through the first bar and
+     lands on beat 4 (a heavy one in the clip); the save is dragged in and drops on beat 13, the
+     card lighting up; then a screen every two beats, four for the road to the Acts and to the
+     100%; one close-up a beat from 38, where the music is loudest; the title lands on beat 46, the
+     clip's strongest hit, and the music falls quiet on beat 50. Hornet is the game's own animation (Fall, HardLand, Challenge Strong).
      The page's tokens (css/tokens.css) dress it: the main menu's black, red light and embers at
      either end, the white filigree, the bone ink, Cinzel and Spectral. The light effects (the
      flashes, the dust, the shade under the captions) are the film's own and stay here. -->
@@ -55,25 +50,15 @@
   .shade { position: absolute; left: 0; right: 0; bottom: 0; height: 420px;
     background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.82) 42%, rgba(0,0,0,.96) 100%); }
   .card { position: absolute; left: 0; right: 0; bottom: 70px; text-align: center; transform-origin: 50% 70%; }
-  .card.is-top { top: 54px; bottom: auto; }
-  .shade.is-top { top: 0; bottom: auto; transform: scaleY(-1); }
   .sup { font-family: var(--font-display); font-weight: 500; font-size: 22px; letter-spacing: .34em; color: var(--ink-2); text-transform: uppercase; }
   .main { font-family: var(--font-display); font-weight: 600; font-size: 72px; letter-spacing: .02em; margin-top: 10px; line-height: 1.1;
     text-shadow: 0 0 30px rgba(0,0,0,.9), 0 2px 4px rgba(0,0,0,.9); }
   .flourish { display: block; margin: 16px auto 0; color: var(--filigree); opacity: .9; }
 
   .kick { position: absolute; left: 0; right: 0; top: 50%; text-align: center; font-family: var(--font-display); font-weight: 700;
-    font-size: 190px; letter-spacing: .1em; line-height: 1; transform-origin: 50% 50%;
+    font-size: 150px; letter-spacing: .06em; line-height: 1; white-space: nowrap; transform-origin: 50% 50%;
     text-shadow: 0 0 60px rgba(0,0,0,.95), 0 0 24px rgba(0,0,0,.9), 0 0 80px rgba(255,140,90,.25); }
 
-  /* The game saving: its file, in the corner, as the save lands. */
-  .saved { position: absolute; right: 70px; top: 60px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
-  .saved .file { display: flex; gap: 12px; align-items: center; padding: 12px 22px 12px 18px; border: 1px solid rgba(241,235,220,.55);
-    background: rgba(20,12,10,.94); font-size: 26px; }
-  .saved .st { font-family: var(--font-display); font-size: 18px; letter-spacing: .28em; text-transform: uppercase; color: var(--ink-2);
-    text-shadow: 0 1px 4px #000; }
-  .gain { position: absolute; font-family: var(--font-display); font-weight: 700; font-size: 64px; color: var(--accent); transform-origin: 0 100%;
-    text-shadow: 0 0 26px rgba(255,200,150,.65), 0 2px 8px rgba(0,0,0,.95); }
   .chip { position: absolute; padding: 14px 26px 14px 22px; border: 1px solid rgba(241,235,220,.55); background: rgba(20,12,10,.92);
     font-family: var(--font-body); font-size: 28px; display: flex; gap: 14px; align-items: center;
     box-shadow: 0 18px 50px rgba(0,0,0,.7), 0 0 30px rgba(241,235,220,.12); }
@@ -93,9 +78,9 @@ const W = 1920, H = 1080;
 const BASE = new URLSearchParams(location.search).get('w') || '/__promo/';
 const BEAT = 9 / 11;
 const b = (n) => n * BEAT;
-const DUR = b(43) + 2;
+const DUR = b(50) + 2.2;
 // For make.js: which track, where the film starts in it, and its fades.
-window.MUSIC = { track: 'judge', from: b(81), fadeIn: .15, fadeOutAt: b(43) - .1, fadeOut: 2 };
+window.MUSIC = { track: 'judge', from: b(74), fadeIn: 2.6, fadeOutAt: b(50) - .1, fadeOut: 2.2 };
 
 const clamp = (x, a = 0, c = 1) => Math.min(c, Math.max(a, x));
 const lerp = (a, c, k) => a + (c - a) * k;
@@ -112,37 +97,39 @@ const draw = (root, k) => root.querySelectorAll('path').forEach((p) => { p.style
 /* ── The shots: a full-page capture (2x) seen through a camera, a rect in page px (centre x,
    centre y, width) eased from `from` to `to` over the shot. Beats, not seconds. ─────────── */
 const SCENES = [
-  { id: 'open', a: 0, z: 6, menu: true },
-  { id: 'drop', a: 6, z: 9, img: 'free', over: 'free-drag', swap: 7.6, land: 9, from: [960, 480, 1440], to: [940, 470, 1280],
+  { id: 'open', a: 0, z: 10, menu: true },
+  { id: 'drop', a: 10, z: 13, img: 'free', over: 'free-drag', swap: 11.6, land: 13, from: [960, 480, 1440], to: [940, 470, 1280],
     sup: 'From the game’s own file', main: 'Drop in your save' },
-  // One save, a bench later: a wave from the file over Your game, then over the Map and Progress.
-  { id: 'save', a: 9, z: 12, img: 'live0', post: 'live1', wave: 10, fromFile: true, from: [820, 470, 1240], to: [770, 480, 1100],
-    gain: { at: [545, 505], of: 'pct', unit: '%' },
-    sup: 'Chrome and Edge follow the file', main: 'Every save updates the site' },
-  { id: 'map', a: 12, z: 16, img: 'pre-map', post: 'map', wave: 13, marks: true, from: [960, 520, 1450], to: [940, 512, 1380],
-    gain: { near: [45, 30], of: 'found' }, capTop: true,   // beside where Hornet now rests
-    sup: 'On the map', main: 'What you find leaves the map' },
-  { id: 'progress', a: 16, z: 20, img: 'pre-progress-100', post: 'progress-100', wave: 17, origin: [960, 620], from: [960, 600, 1100], to: [960, 740, 1100],
-    gain: { at: [1060, 560], of: 'pct', unit: '%' },
-    sup: 'In your progress', main: 'Every percent, as you earn it' },
+  { id: 'lit', a: 13, z: 16, img: 'home', from: [900, 470, 1260], to: [800, 480, 1080],
+    sup: 'Read in your browser', main: 'Your game, as it stands' },
+  { id: 'pct', a: 16, z: 18, img: 'home', from: [690, 480, 900], to: [680, 500, 820],
+    sup: 'Checked on 92 real saves', main: 'The game’s own 100%' },
+  { id: 'since', a: 18, z: 20, img: 'home', from: [700, 1010, 1080], to: [820, 1000, 1020],
+    sup: 'Since your last save', main: 'What’s new' },
   { id: 'acts', a: 20, z: 24, img: 'progress', from: [960, 360, 1120], to: [960, 660, 1120],
     sup: 'Act 1 · Act 2 · Act 3', main: 'The road to every Act' },
-  { id: 'journal', a: 24, z: 26, img: 'journal', from: [960, 520, 1200], to: [960, 760, 1180],
+  { id: 'hundred', a: 24, z: 28, img: 'progress-100', from: [960, 620, 1100], to: [960, 1150, 1150],
+    sup: 'And the 100%', main: 'Every percent still to find' },
+  { id: 'map', a: 28, z: 30, img: 'map', from: [960, 600, 1150], to: [950, 590, 1040],
+    sup: 'The game’s own map', main: 'Everything you’re missing' },
+  { id: 'zoom', a: 30, z: 32, img: 'map-zoom', from: [880, 540, 940], to: [1000, 580, 860],
+    sup: 'Piece by piece', main: 'Pinned where it hides' },
+  { id: 'journal', a: 32, z: 34, img: 'journal', from: [960, 520, 1200], to: [960, 760, 1180],
     sup: 'The Hunter’s Journal', main: 'Every kill to go' },
-  { id: 'inv', a: 26, z: 28, img: 'game', from: [720, 560, 1120], to: [740, 590, 1020],
+  { id: 'inv', a: 34, z: 36, img: 'game', from: [720, 560, 1120], to: [740, 590, 1020],
     sup: 'The Inventory', main: 'All Hornet carries' },
-  { id: 'crest', a: 28, z: 31, img: 'tools', from: [940, 580, 1200], to: [930, 620, 1060],
+  { id: 'crest', a: 36, z: 38, img: 'tools', from: [940, 580, 1200], to: [930, 610, 1100],
     sup: 'Crests and Tools', main: 'Every number of your build' },
   // The montage: a close-up a beat, and its word.
-  { id: 'm1', a: 31, z: 32, img: 'game', rect: [545, 705, 620], kick: 'Masks' },
-  { id: 'm2', a: 32, z: 33, img: 'game', rect: [575, 868, 640], kick: 'Silk' },
-  { id: 'm3', a: 33, z: 34, img: 'game', rect: [1210, 905, 640], kick: 'Tools' },
-  { id: 'm4', a: 34, z: 35, img: 'tools', rect: [760, 700, 620], kick: 'Crests' },
-  { id: 'm5', a: 35, z: 36, img: 'journal', rect: [700, 810, 700], kick: 'Journal' },
-  { id: 'm6', a: 36, z: 37, img: 'map-zoom', rect: [900, 560, 640], kick: 'Map' },
-  { id: 'm7', a: 37, z: 38, img: 'progress', rect: [960, 860, 760], kick: 'Acts' },
-  { id: 'm8', a: 38, z: 39, img: 'progress-100', rect: [960, 1180, 760], kick: '100%' },
-  { id: 'end', a: 39, z: 99, menu: true },
+  { id: 'm1', a: 38, z: 39, img: 'home', rect: [680, 470, 760], kick: 'Your save' },
+  { id: 'm2', a: 39, z: 40, img: 'home-live', rect: [1000, 314, 1000], kick: 'Read live' },
+  { id: 'm3', a: 40, z: 41, img: 'progress', rect: [960, 320, 820], kick: 'Every Act' },
+  { id: 'm4', a: 41, z: 42, img: 'progress-100', rect: [960, 720, 900], kick: 'Every percent' },
+  { id: 'm5', a: 42, z: 43, img: 'map-zoom', rect: [900, 560, 640], kick: 'Every piece' },
+  { id: 'm6', a: 43, z: 44, img: 'journal', rect: [700, 810, 700], kick: 'Every kill' },
+  { id: 'm7', a: 44, z: 45, img: 'free', rect: [960, 420, 900], kick: 'Free' },
+  { id: 'm8', a: 45, z: 46, img: 'free', rect: [960, 605, 700], kick: 'No account' },
+  { id: 'end', a: 46, z: 99, menu: true },
 ];
 const stage = document.getElementById('stage'), actors = document.getElementById('actors'), over = document.getElementById('over');
 const imgs = {};
@@ -153,16 +140,9 @@ for (const s of SCENES) {
   if (s.menu) s.el.append($('<div class="glow"></div>'), $('<div class="vign"></div>'));
   if (s.img) { s.page = pageImg(s.img); s.el.append(s.page); }
   if (s.over) { s.page2 = pageImg(s.over); s.el.append(s.page2); }
-  if (s.post) { s.page2 = pageImg(s.post); s.el.append(s.page2); }
   stage.append(s.el);
 }
 const OPEN = SCENES[0], END = SCENES[SCENES.length - 1], DROP = SCENES[1];
-const WAVES = SCENES.filter((x) => x.wave);
-const SAVE = SCENES.find((x) => x.fromFile);
-const FILE_ICON = '<svg width="26" height="32" viewBox="0 0 30 36" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 2h16l8 8v24H3z"/><path d="M19 2v8h8"/></svg>';
-const saved = $(`<div class="saved"><div class="file">${FILE_ICON}user1.dat</div><div class="st">Game saved</div></div>`);
-const FILE_AT = [W - 70 - 105, 60 + 30];        // the wave's start, in the frame: the file's middle
-let LIVE_PCT = [];
 const END_AT = END.a;
 
 /* ── Hornet: her clips in cells of one size around one origin (extract-game.py) ── */
@@ -185,9 +165,9 @@ function place(x, feetY, alpha = 1) {
   hornet.style.opacity = alpha;
 }
 // Which clip and frame at time t: Fall until she lands, HardLand, a held last frame, then Challenge Strong, looping its tail.
-const FALL = 0, LAND = b(1), SLASH = b(3);
+const LAND = b(4), SLASH = b(6);
 function hornetAt(t) {
-  if (t < LAND) { const c = HM.clips.Fall, f = Math.floor((t - FALL) * c.fps); return ['Fall', f < c.n ? Math.max(0, f) : c.loopStart + (f - c.loopStart) % (c.n - c.loopStart)]; }
+  if (t < LAND) { const c = HM.clips.Fall, f = Math.floor((t - b(2.4)) * c.fps); return ['Fall', f < c.n ? Math.max(0, f) : c.loopStart + (f - c.loopStart) % (c.n - c.loopStart)]; }
   const hl = HM.clips.HardLand, cs = HM.clips['Challenge Strong'];
   const cs0 = SLASH - 3 / cs.fps;     // her arc's widest frame on the beat
   if (t < cs0) return ['HardLand', Math.min(hl.n - 1, Math.floor((t - LAND) * hl.fps))];
@@ -214,7 +194,7 @@ const vign = $('<div class="layer vignette"></div>');
 over.append(vign, shade);
 for (const s of SCENES) {
   if (s.main) {
-    s.card = $(`<div class="card${s.capTop ? ' is-top' : ''}"><div class="sup">${s.sup}</div><div class="main">${s.main}</div></div>`);
+    s.card = $(`<div class="card"><div class="sup">${s.sup}</div><div class="main">${s.main}</div></div>`);
     const fl = crown(240); fl.classList.add('flourish'); s.card.append(fl); prime(s.card);
     over.append(s.card);
   }
@@ -222,8 +202,7 @@ for (const s of SCENES) {
 }
 const chip = $(`<div class="chip"><svg width="30" height="36" viewBox="0 0 30 36" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 2h16l8 8v24H3z"/><path d="M19 2v8h8"/></svg>user1.dat</div>`);
 const flash = $('<div class="layer flash"></div>'), black = $('<div class="layer black"></div>');
-const gainEl = $('<div class="gain"></div>');
-over.append(saved, gainEl, chip, flash, black);
+over.append(chip, flash, black);
 
 /* ── Particles: the menu's embers, the dust of her landing; seeded, so every render is the same ── */
 let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
@@ -246,16 +225,6 @@ function particles(t, amount, speed) {
     const a = amount * clamp(.3 + .7 * (y / H)) * (.55 + .45 * Math.sin(t * e.tw + e.tp));
     if (a > .01) ember(x, y, e.r, a);
   }
-  // Her drop: a few streaks of light above her.
-  if (t < LAND) {
-    const k = ramp(t, FALL, LAND), y = lerp(330, HY, k * k) - 330;
-    for (let i = 0; i < 7; i++) {
-      const x = HX - 70 + i * 23 + Math.sin(i * 7.3) * 8, len = 160 + 120 * Math.sin(i * 3.1) ** 2;
-      const g = ctx.createLinearGradient(x, y - len, x, y);
-      g.addColorStop(0, 'rgba(255,240,230,0)'); g.addColorStop(1, `rgba(255,240,230,${.18 + .3 * k})`);
-      ctx.strokeStyle = g; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(x, y - len); ctx.lineTo(x, y - 40); ctx.stroke();
-    }
-  }
   // Her landing: soft dust thrown out along the ground.
   const d = t - LAND;
   if (d > 0 && d < 2.4) {
@@ -277,70 +246,6 @@ function particles(t, amount, speed) {
   }
 }
 
-/* ── The save's wave: the page after it shows inside a circle growing from where it lands, and
-   every spot that really changed (pre and post compared, in ready()) lights up as it's reached ── */
-const WAVE_LEN = 1.1;                              // seconds for the wave to cross the page
-function waveOf(S, t, rect) {
-  const s = W / rect[2], toFrame = ([x, y]) => [W / 2 + (x - rect[0]) * s, H / 2 + (y - rect[1]) * s];
-  const toPage = ([x, y]) => [rect[0] + (x - W / 2) / s, rect[1] + (y - H / 2) / s];
-  const t0 = b(S.wave), d = t - t0;
-  const o = S.fromFile ? toPage(FILE_AT) : S.origin || S.spots[0] && S.spots[0].c || [rect[0], rect[1]];
-  const reach = Math.hypot(1920, 2400);
-  const R = d <= 0 ? 0 : reach * easeIn(clamp(d / (WAVE_LEN * 2.2))) + reach * .45 * clamp(d / WAVE_LEN) ;
-  const m = `radial-gradient(circle at ${o[0]}px ${o[1]}px, #000 ${Math.max(0, R - 40)}px, transparent ${R + 40}px)`;
-  S.page2.style.webkitMaskImage = S.page2.style.maskImage = d <= 0 ? 'radial-gradient(circle, transparent 0, transparent 1px)' : m;
-  if (d <= 0) return;
-  // The wave's edge.
-  const [fx, fy] = toFrame(o), fr = R * s;
-  ctx.save();
-  if (d < WAVE_LEN * 1.6) {
-    ctx.lineWidth = 3; ctx.strokeStyle = `rgba(255,246,236,${.8 * (1 - clamp(d / (WAVE_LEN * 1.6)))})`;
-    ctx.shadowColor = 'rgba(255,230,210,.9)'; ctx.shadowBlur = 24;
-    ctx.beginPath(); ctx.arc(fx, fy, fr, 0, 6.283); ctx.stroke();
-  }
-  // Each change, lit as the wave reaches it.
-  ctx.shadowBlur = 0;
-  for (const p of S.spots) {
-    const hitAt = Math.hypot(p.c[0] - o[0], p.c[1] - o[1]), dd = R >= hitAt ? (R - hitAt) / (reach * .7) : -1;
-    if (dd < 0) continue;
-    const k = clamp(dd * 2.2);
-    if (k >= 1) continue;
-    const [px, py] = toFrame(p.c), pr = (p.r + 10) * s;
-    const g = ctx.createRadialGradient(px, py, 0, px, py, pr * 1.6);
-    g.addColorStop(0, `rgba(255,244,230,${.35 * (1 - k)})`); g.addColorStop(1, 'rgba(255,244,230,0)');
-    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(px, py, pr * 1.6, 0, 6.283); ctx.fill();
-    ctx.lineWidth = 2.5 * (1 - k) + .5; ctx.strokeStyle = `rgba(255,248,240,${.9 * (1 - k)})`;
-    ctx.beginPath(); ctx.arc(px, py, pr * (1 + k * .8), 0, 6.283); ctx.stroke();
-  }
-  ctx.restore();
-}
-// Where two shots of a page differ: blocks of changed pixels, joined, biggest first (page px).
-function changes(a, z) {
-  const k = 4, w = 1920 / k, h = Math.round(a.naturalHeight / a.naturalWidth * 1920 / k);
-  const px = (img) => { const c = document.createElement('canvas'); c.width = w; c.height = h; const g = c.getContext('2d'); g.drawImage(img, 0, 0, w, h); return g.getImageData(0, 0, w, h).data; };
-  const A = px(a), Z = px(z), B = 6, bw = Math.ceil(w / B), bh = Math.ceil(h / B), hot = new Uint16Array(bw * bh);
-  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
-    const i = (y * w + x) * 4;
-    if (Math.abs(A[i] - Z[i]) + Math.abs(A[i + 1] - Z[i + 1]) + Math.abs(A[i + 2] - Z[i + 2]) > 70) hot[Math.floor(y / B) * bw + Math.floor(x / B)]++;
-  }
-  const seen = new Uint8Array(bw * bh), spots = [];
-  for (let i = 0; i < bw * bh; i++) {
-    if (seen[i] || hot[i] < 3) continue;
-    const stack = [i]; seen[i] = 1; let n = 0, x0 = 1e9, y0 = 1e9, x1 = 0, y1 = 0;
-    while (stack.length) {
-      const j = stack.pop(), x = j % bw, y = Math.floor(j / bw); n++;
-      x0 = Math.min(x0, x); y0 = Math.min(y0, y); x1 = Math.max(x1, x); y1 = Math.max(y1, y);
-      for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
-        const nx = x + dx, ny = y + dy, nj = ny * bw + nx;
-        if (nx >= 0 && ny >= 0 && nx < bw && ny < bh && !seen[nj] && hot[nj] >= 3) { seen[nj] = 1; stack.push(nj); }
-      }
-    }
-    const u = B * k;   // a block, in page px
-    spots.push({ n, c: [(x0 + x1 + 1) / 2 * u, (y0 + y1 + 1) / 2 * u], r: Math.min(140, Math.max(x1 - x0 + 1, y1 - y0 + 1) * u / 2) });
-  }
-  return spots.sort((p, q) => q.n - p.n);
-}
-
 /* ── One frame ───────────────────────────────────────────────────────── */
 function camera(img, [cx, cy, w], punch = 0) {
   const s = (W / w) * (1 + punch);
@@ -360,8 +265,7 @@ function render(t) {
       : S.from.map((v, i) => lerp(v, S.to[i], sine(ramp(t, S.t0, S.t1))));
     const punch = cutPunch;
     camera(S.page, r, punch);
-    if (S.page2) { camera(S.page2, r, punch); S.page2.style.opacity = S.wave ? 1 : ease(ramp(t, b(S.swap), b(S.swap) + .3)); }
-    S.rectNow = r.map((v, i) => (i === 2 ? v / (1 + punch) : v));
+    if (S.page2) { camera(S.page2, r, punch); S.page2.style.opacity = ease(ramp(t, b(S.swap), b(S.swap) + .3)); }
     S.page.style.filter = S.kick ? 'brightness(.55) saturate(.9)' : '';
   }
 
@@ -372,10 +276,10 @@ function render(t) {
   // Opening: the menu's dark, her fall, her landing, the title cut by her needle.
   hornet.style.opacity = 0; ground.style.opacity = 0;
   if (S === OPEN) {
-    OPEN.el.querySelector('.glow').style.opacity = .35 + .45 * ease(ramp(t, 0, LAND)) + .3 * Math.exp(-Math.max(0, t - LAND) / .5) * (t > LAND);
-    if (t >= FALL) {
+    OPEN.el.querySelector('.glow').style.opacity = .35 + .45 * ease(ramp(t, 0, b(4))) + .3 * Math.exp(-Math.max(0, t - LAND) / .5) * (t > LAND);
+    if (t > b(2.4)) {
       const [clip, f] = hornetAt(t); pose(clip, f);
-      const y = t < LAND ? lerp(330, HY, Math.pow(ramp(t, FALL, LAND), 2)) : HY;   // in the frame from the first frame, dropping fast
+      const y = t < LAND ? lerp(-260, HY, easeIn(ramp(t, b(2.4), LAND))) : HY;
       place(HX, y);
     }
     if (t > LAND) {
@@ -390,7 +294,7 @@ function render(t) {
     T1.querySelector('h1').style.clipPath = `inset(-20% ${(1 - ks) * 50}% -20% ${(1 - ks) * 50}%)`;
     T1.querySelector('h1').style.transform = `scale(${1 + .08 * Math.exp(-Math.max(0, t - SLASH) / .25)})`;
     draw(T1.querySelector('.cw'), ease(ramp(t, SLASH, SLASH + 1.4)));
-    const kf = easeOut(ramp(t, SLASH + .6, SLASH + 1.3));
+    const kf = easeOut(ramp(t, b(7), b(7) + .8));
     const fo = T1.querySelector('.for'); fo.style.opacity = kf; fo.style.transform = `translateY(${(1 - kf) * 14}px)`;
   }
   // End: the title lands on beat 60.
@@ -405,32 +309,7 @@ function render(t) {
     step(b(2), b(2) + .7, T2.querySelector('.facts'));
     step(b(3), b(3) + .7, legal);
   }
-  particles(t, S.menu ? 1 : .3, S === OPEN && t < LAND ? 2.4 : 1);
-  if (S.wave) waveOf(S, t, S.rectNow);
-  // The game saving, in the corner: its file shows, glows as the save lands, and the wave starts there.
-  if (S === SAVE) {
-    const w0 = b(S.wave), k = easeOut(ramp(t, S.t0 + .15, S.t0 + .45));
-    const glow = Math.exp(-Math.abs(t - w0) / .25);
-    saved.style.opacity = k * (1 - ramp(t, S.t1 - .3, S.t1));
-    saved.style.transform = `translateY(${(1 - k) * -16}px)`;
-    saved.querySelector('.file').style.boxShadow = `0 0 ${10 + 50 * glow}px rgba(255,236,220,${.15 + .7 * glow})`;
-    saved.querySelector('.file').style.borderColor = `rgba(241,235,220,${.55 + .45 * glow})`;
-    saved.querySelector('.st').textContent = t < w0 - .4 ? 'Playing' : 'Game saved';
-  } else saved.style.opacity = 0;
-  // What the save added, where the page shows it, read from live.json (before and after).
-  gainEl.style.opacity = 0;
-  if (S.gain && LIVE_PCT.length > 1) {
-    const d = t - b(S.wave) - .35;
-    if (d > 0) {
-      const g = S.gain, rr = S.rectNow, sc = W / rr[2], k = easeOut(clamp(d / .3));
-      gainEl.textContent = g.of === 'found' ? `${S.found} found` : `+${parseInt(LIVE_PCT[1][g.of], 10) - parseInt(LIVE_PCT[0][g.of], 10)}${g.unit}`;
-      gainEl.style.opacity = k * (1 - ramp(t, S.t1 - .3, S.t1));
-      const at = g.near ? [S.origin[0] + g.near[0], S.origin[1] + g.near[1]] : g.at;
-      gainEl.style.left = `${W / 2 + (at[0] - rr[0]) * sc}px`;
-      gainEl.style.top = `${H / 2 + (at[1] - rr[1]) * sc - 70 - 30 * k}px`;
-      gainEl.style.transform = `scale(${lerp(1.5, 1, k)})`;
-    }
-  }
+  particles(t, S.menu ? 1 : .3, S === OPEN && t < LAND ? 1.8 : 1);
 
   // Captions, slammed in on the cut.
   let shadeOn = 0;
@@ -447,7 +326,6 @@ function render(t) {
     shadeOn = 1;
   }
   shade.style.opacity = shadeOn;
-  shade.classList.toggle('is-top', !!S.capTop);
   for (const s of SCENES) if (s.kickEl) {
     const on = s === S, k = easeOut(ramp(since, 0, .16));
     s.kickEl.style.opacity = on ? k : 0;
@@ -467,20 +345,13 @@ function render(t) {
   for (const s of SCENES) if (s.a > DROP.land && s.a < END_AT) hit(s.t0, s.kick ? .3 : .15, .18);
   flash.style.opacity = fl;
 
-  black.style.opacity = Math.max(1 - ramp(t, 0, .25), ramp(t, DUR - .8, DUR));
+  black.style.opacity = Math.max(1 - ramp(t, 0, .8), ramp(t, DUR - .8, DUR));
 }
 
 window.ready = (async () => {
   HM = await (await fetch(BASE + 'hornet/hornet.json')).json();
-  LIVE_PCT = await (await fetch(BASE + 'shots/live.json')).json();
   const sheets = Object.values(HM.clips).map((c) => { const i = new Image(); i.src = `${BASE}hornet/${c.file}`; return i.decode(); });
   await Promise.all([document.fonts.ready, ...sheets, ...[...document.images].map((i) => i.decode())]);
-  // The Map's: no pixels compared (its marks shift as others go), its own marks read by make.js.
-  const MK = await (await fetch(BASE + 'shots/map-marks.json')).json();
-  for (const S of WAVES) {
-    if (S.marks) { S.origin = MK.to; S.spots = MK.gone.map((g) => ({ c: g.at, r: 16, n: 1 })); S.found = MK.gone.length; }
-    else S.spots = changes(S.page, S.page2).filter((p) => p.n >= 2).slice(0, 16);
-  }
   render(0);
   return true;
 })();

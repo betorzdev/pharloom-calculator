@@ -5,6 +5,7 @@
      2. shoots the site in headless Chrome at 2x (tools/promo/cdp.js): Free mode's unlit card (and lit for a file dragged over it),
         then <before> imported into save 1 and <after> synced over it, as the game saving again
         would (js/saves.js sync), so "Since the previous save" has something; every screen whole,
+        and Your game once more with the live mark and the toast a followed file brings;
         and the Map twice closer, without its way to the next goal;
      3. renders tools/promo/compose.html frame by frame (its render(t)) into ffmpeg;
      4. lays its music under it (compose.html's MUSIC: the track, where the film starts in it, the
@@ -17,13 +18,6 @@
    The saves: any two of the same game, a few hours apart, mid-game, so the map, the Journal and
    "Closest to your bench" have things missing (the first cut used Restore_Points1/restoreData21
    and 22: 59% → 61%, Act 2).
-   Every screen is also shot before the sync (pre-*.png), and the Map's marks read on both
-   (map-marks.json: the ones the save took off, what was found, and where Hornet rests before and
-   after), for the trailer's wave of one save over the site.
-   --live <a,b,…>: saves of one game in order (restore points a bench apart; the trailer uses two,
-   --before and --after): the first imported, then each synced over the one before as the
-   followed file brings it, shot on Your game with the site's own live mark in the header and its
-   toast (live0.png…, and live.json, the completion and the Journal's count each one shows).
    Options: --out <dir> (default: the system's temp/pharloom-promo), --fps <n> (60),
    --stills 2.6,13,40 (only those moments, as PNGs in <out>/stills/, to check a change in
    seconds instead of the 8 minutes a render takes), --no-capture (reuse <out>/shots/).
@@ -48,7 +42,6 @@ function args(argv) {
     const k = argv[i];
     if (k === '--before') a.before = argv[++i];
     else if (k === '--after') a.after = argv[++i];
-    else if (k === '--live') a.live = argv[++i].split(',');
     else if (k === '--out') a.out = path.resolve(argv[++i]);
     else if (k === '--fps') a.fps = Number(argv[++i]);
     else if (k === '--stills') a.stills = argv[++i].split(',').map(Number);
@@ -99,98 +92,39 @@ async function capture(site, a) {
     await sleep(400);
     await whole('free-drag');
     const b64 = (f) => fs.readFileSync(f).toString('base64');
-    const seed = (body) => c.evaluate(`(() => {
+    await c.evaluate(`(() => {
       const S = SS.saves, F = SS.savefile;
       const snap = (b, name) => {
         const r = F.read(Uint8Array.from(atob(b), (ch) => ch.charCodeAt(0)));
         if (!r.ok) throw new Error(name + " isn't a save the site can read");
         return F.toSnapshot(r.pd, r.sd, Date.now());
       };
-      ${body}
+      S.importTo(localStorage, 1, snap('${b64(a.before)}', '--before'));
+      S.select(localStorage, 1);
+      S.sync(localStorage, 1, snap('${b64(a.after)}', '--after'));
     })()`);
-    // Every screen before the game saves again (pre-*.png), then after, synced as the followed file would bring it.
-    await seed(`S.importTo(localStorage, 1, snap('${b64(a.before)}', '--before')); S.select(localStorage, 1);`);
-    const hundred = async (name) => {
-      await visit('progress');
-      await c.evaluate(`document.querySelector('[data-act="pgTab"][data-value="100"]').click()`);
-      await sleep(1500);
-      await whole(name);
-    };
-    // The Map's marks (data-mk) and Hornet's, where they sit on the page: the save's own changes, there.
-    const marks = () => c.evaluate(`(() => {
-      const r = {};
-      for (const e of document.querySelectorAll('.mp-svg [data-mk]')) { const b = e.getBoundingClientRect(); r[e.dataset.mk] = [b.x + b.width / 2, b.y + b.height / 2 + scrollY]; }
-      const h = document.querySelector('.mp-hornet'), hb = h && h.getBoundingClientRect();
-      return { marks: r, hornet: hb ? [hb.x + hb.width / 2, hb.y + hb.height / 2 + scrollY] : null };
+    for (const v of ['home', 'game', 'progress', 'map', 'journal', 'tools']) { await visit(v); await whole(v); }
+    // Your game as a followed file brings the save: the header's live mark, as App.saveLink draws it
+    // while live, and the toast the live path shows (js/app-saves.js liveStart).
+    await visit('home');
+    await c.evaluate(`(() => {
+      const A = SS.app, link = document.querySelector('.mh-save'), lbl = link && link.querySelector('.mh-save-lbl');
+      if (lbl) { link.classList.add('is-live'); lbl.insertAdjacentHTML('beforeend', '<span class="mh-live" aria-hidden="true"><i class="mh-live-dot"></i><span class="mh-live-t">' + A.t('liveState_live') + '</span></span>'); }
+      A.toast(A.gainedLine() || A.t('liveUpdated'));
     })()`);
-    let preMarks = null;
-    for (const v of ['home', 'game', 'progress', 'map', 'journal', 'tools']) {
-      await visit(v);
-      if (v === 'map') preMarks = await marks();
-      await whole('pre-' + v);
-    }
-    await hundred('pre-progress-100');
-    await seed(`S.sync(localStorage, 1, snap('${b64(a.after)}', '--after'));`);
-    for (const v of ['home', 'game', 'progress', 'map', 'journal', 'tools']) {
-      await visit(v);
-      if (v === 'map') {
-        // What the save took off the map (what was found) and where Hornet now rests: map-marks.json.
-        const post = await marks();
-        const gone = Object.entries(preMarks.marks).filter(([k]) => !(k in post.marks)).map(([k, at]) => ({ key: k, at }));
-        fs.writeFileSync(path.join(dir, 'map-marks.json'), JSON.stringify({ gone, from: preMarks.hornet, to: post.hornet }));
-        console.log('  map: ' + gone.length + ' marks gone with the save');
-      }
-      await whole(v);
-    }
+    await sleep(700);
+    await whole('home-live');
     // Progress on its other tab, the 100%.
-    await hundred('progress-100');
+    await visit('progress');
+    await c.evaluate(`document.querySelector('[data-act="pgTab"][data-value="100"]').click()`);
+    await sleep(1500);
+    await whole('progress-100');
     // The Map twice closer, for the montage's close-ups.
     await visit('map');
     await c.evaluate(`(async () => { for (let i = 0; i < 2; i++) { document.querySelector('[data-act="mapZoom"]').click(); await new Promise((r) => setTimeout(r, 600)); } })()`);
     await sleep(2500);
     await whole('map-zoom');
   } finally { await c.close(); drop(profile); }
-}
-
-// The live sequence: what the site shows each time the followed file brings the next save.
-async function captureLive(site, a) {
-  const dir = path.join(a.out, 'shots');
-  fs.mkdirSync(dir, { recursive: true });
-  const profile = fs.mkdtempSync(path.join(os.tmpdir(), 'promo-chrome-'));
-  const c = await launch({ scale: 2, profile });
-  const states = [];
-  try {
-    for (let i = 0; i < a.live.length; i++) {
-      await c.go(`${site}/index.html?live=${i}#lang=en`);
-      await c.evaluate(`(() => {
-        localStorage.clear();
-        try { localStorage.setItem('pharloom.betaSeen', '1'); } catch (e) {}
-        const S = SS.saves, F = SS.savefile;
-        const snap = (b) => { const r = F.read(Uint8Array.from(atob(b), (ch) => ch.charCodeAt(0))); if (!r.ok) throw new Error("--live: a save the site can't read"); return F.toSnapshot(r.pd, r.sd, Date.now()); };
-        S.importTo(localStorage, 1, snap('${fs.readFileSync(a.live[Math.max(0, i - 1)]).toString('base64')}'));
-        S.select(localStorage, 1);
-        ${i ? `S.sync(localStorage, 1, snap('${fs.readFileSync(a.live[i]).toString('base64')}'));` : ''}
-      })()`);
-      await c.go(`${site}/index.html?live=${i}b#lang=en&view=home`);
-      await sleep(2500);
-      // The header's mark of a save that follows its file, as App.saveLink draws it while live,
-      // and the toast the live path shows when the game itself changed (js/app-saves.js liveStart).
-      const pct = await c.evaluate(`(() => {
-        const t = SS.app.t;
-        const link = document.querySelector('.mh-save'), lbl = link && link.querySelector('.mh-save-lbl');
-        if (lbl) { link.classList.add('is-live'); lbl.insertAdjacentHTML('beforeend', '<span class="mh-live" aria-hidden="true"><i class="mh-live-dot"></i><span class="mh-live-t">' + t('liveState_live') + '</span></span>'); }
-        ${i ? `SS.app.toast(SS.app.gainedLine() || t('liveUpdated'));` : ''}
-        const num = (v) => (document.querySelector('[data-value="' + v + '"] .nav-num') || {}).textContent || '';
-        return { pct: num('progress'), journal: num('journal') };
-      })()`);
-      await sleep(700);
-      const h = await c.evaluate('document.documentElement.scrollHeight');
-      fs.writeFileSync(path.join(dir, `live${i}.png`), await c.shot({ captureBeyondViewport: true, clip: { x: 0, y: 0, width: 1920, height: h, scale: 1 } }));
-      states.push(pct);
-      console.log('  shot live' + i, pct.pct, pct.journal);
-    }
-  } finally { await c.close(); drop(profile); }
-  fs.writeFileSync(path.join(dir, 'live.json'), JSON.stringify(states));
 }
 
 async function compose(site, a, each) {
@@ -217,7 +151,6 @@ async function main() {
   const site = `http://127.0.0.1:${server.address().port}`;
   try {
     if (a.capture) { console.log('shooting the site'); await capture(site, a); }
-    if (a.live) { console.log('shooting the live sequence'); await captureLive(site, a); }
     if (a.stills) {
       const dir = path.join(a.out, 'stills');
       fs.mkdirSync(dir, { recursive: true });
