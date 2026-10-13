@@ -8,13 +8,13 @@
      ?w=/__promo/#t=12.3 shows that moment and #play runs it in real time (no sound).
      It is cut to its music, Christopher Larkin's "Final Judge" (tools/promo/extract-game.py):
      73⅓ bpm, a beat every 9/11 s, the clip's beat 0 at its start; the film starts on the clip's
-     beat 70 (MUSIC), so the film's beat n is at n × BEAT. Hornet falls through the first bar and
-     lands on beat 4 (a heavy one in the clip); the save is dragged in and drops on beat 13, the
-     card lighting up; from 15 the game and the site side by side, the game saving at a bench on
-     beats 17, 20 and 23 and the site catching up each time (make.js --live); then a screen every
-     two beats, four for the road to the Acts and to the 100%; one close-up a beat from 42, where
-     the music is loudest; the title lands on beat 50, the clip's strongest hit, and the music
-     falls quiet on beat 54. Hornet is the game's own animation (Fall, HardLand, Challenge Strong).
+     beat 80 (MUSIC), so the film's beat n is at n × BEAT. Hornet falls from the first frames and
+     lands on beat 2 (a heavy one in the clip), her arc opening the title on 4; the save is dragged
+     in and drops on beat 10, the card lighting up; from 12 the game and the site side by side,
+     the game saving at a bench on beats 14, 16 and 18 and the site catching up each time
+     (make.js --live); then a screen every two beats, four for the road to the Acts and to the
+     100%; one close-up a beat from 32, where the music is loudest; the title lands on beat 40,
+     the clip's strongest hit, and the music falls quiet on beat 44. Hornet is the game's own animation (Fall, HardLand, Challenge Strong).
      The page's tokens (css/tokens.css) dress it: the main menu's black, red light and embers at
      either end, the white filigree, the bone ink, Cinzel and Spectral. The light effects (the
      flashes, the dust, the shade under the captions) are the film's own and stay here. -->
@@ -103,9 +103,9 @@ const W = 1920, H = 1080;
 const BASE = new URLSearchParams(location.search).get('w') || '/__promo/';
 const BEAT = 9 / 11;
 const b = (n) => n * BEAT;
-const DUR = b(54) + 2.2;
+const DUR = b(44) + 2;
 // For make.js: which track, where the film starts in it, and its fades.
-window.MUSIC = { track: 'judge', from: b(70), fadeIn: 2.6, fadeOutAt: b(54) - .1, fadeOut: 2.2 };
+window.MUSIC = { track: 'judge', from: b(80), fadeIn: .4, fadeOutAt: b(44) - .1, fadeOut: 2 };
 
 const clamp = (x, a = 0, c = 1) => Math.min(c, Math.max(a, x));
 const lerp = (a, c, k) => a + (c - a) * k;
@@ -122,34 +122,32 @@ const draw = (root, k) => root.querySelectorAll('path').forEach((p) => { p.style
 /* ── The shots: a full-page capture (2x) seen through a camera, a rect in page px (centre x,
    centre y, width) eased from `from` to `to` over the shot. Beats, not seconds. ─────────── */
 const SCENES = [
-  { id: 'open', a: 0, z: 10, menu: true },
-  { id: 'drop', a: 10, z: 13, img: 'free', over: 'free-drag', swap: 11.6, land: 13, from: [960, 480, 1440], to: [940, 470, 1280],
+  { id: 'open', a: 0, z: 7, menu: true },
+  { id: 'drop', a: 7, z: 10, img: 'free', over: 'free-drag', swap: 8.6, land: 10, from: [960, 480, 1440], to: [940, 470, 1280],
     sup: 'From the game’s own file', main: 'Drop in your save' },
-  { id: 'lit', a: 13, z: 15, img: 'live0', from: [900, 470, 1260], to: [820, 480, 1120],
+  { id: 'lit', a: 10, z: 12, img: 'live0', from: [900, 470, 1260], to: [820, 480, 1120],
     sup: 'Read in your browser', main: 'Your game, as it stands' },
   // Live: the game saves at a bench, the file carries it, the site catches up (three saves, a bench apart).
-  { id: 'live', a: 15, z: 27, menu: true, live: [17, 20, 23],
+  { id: 'live', a: 12, z: 20, menu: true, live: [14, 16, 18],
     sup: 'Chrome and Edge follow the file', main: 'It updates as you play' },
-  { id: 'acts', a: 27, z: 31, img: 'progress', from: [960, 360, 1120], to: [960, 660, 1120],
+  { id: 'acts', a: 20, z: 24, img: 'progress', from: [960, 360, 1120], to: [960, 660, 1120],
     sup: 'Act 1 · Act 2 · Act 3', main: 'The road to every Act' },
-  { id: 'hundred', a: 31, z: 35, img: 'progress-100', from: [960, 620, 1100], to: [960, 1150, 1150],
+  { id: 'hundred', a: 24, z: 28, img: 'progress-100', from: [960, 620, 1100], to: [960, 1150, 1150],
     sup: 'And the 100%', main: 'Every percent still to find' },
-  { id: 'map', a: 35, z: 37, img: 'map', from: [960, 600, 1150], to: [950, 590, 1040],
+  { id: 'map', a: 28, z: 30, img: 'map', from: [960, 600, 1150], to: [950, 590, 1040],
     sup: 'The game’s own map', main: 'Everything you’re missing' },
-  { id: 'journal', a: 37, z: 39, img: 'journal', from: [960, 520, 1200], to: [960, 760, 1180],
+  { id: 'journal', a: 30, z: 32, img: 'journal', from: [960, 520, 1200], to: [960, 760, 1180],
     sup: 'The Hunter’s Journal', main: 'Every kill to go' },
-  { id: 'crest', a: 39, z: 42, img: 'tools', from: [940, 580, 1200], to: [930, 620, 1060],
-    sup: 'Crests and Tools', main: 'Every number of your build' },
   // The montage: a close-up a beat, and its word.
-  { id: 'm1', a: 42, z: 43, img: 'game', rect: [545, 705, 620], kick: 'Masks' },
-  { id: 'm2', a: 43, z: 44, img: 'game', rect: [575, 868, 640], kick: 'Silk' },
-  { id: 'm3', a: 44, z: 45, img: 'game', rect: [1210, 905, 640], kick: 'Tools' },
-  { id: 'm4', a: 45, z: 46, img: 'tools', rect: [760, 700, 620], kick: 'Crests' },
-  { id: 'm5', a: 46, z: 47, img: 'journal', rect: [700, 810, 700], kick: 'Journal' },
-  { id: 'm6', a: 47, z: 48, img: 'map-zoom', rect: [900, 560, 640], kick: 'Map' },
-  { id: 'm7', a: 48, z: 49, img: 'progress', rect: [960, 860, 760], kick: 'Acts' },
-  { id: 'm8', a: 49, z: 50, img: 'progress-100', rect: [960, 1180, 760], kick: '100%' },
-  { id: 'end', a: 50, z: 99, menu: true },
+  { id: 'm1', a: 32, z: 33, img: 'game', rect: [545, 705, 620], kick: 'Masks' },
+  { id: 'm2', a: 33, z: 34, img: 'game', rect: [575, 868, 640], kick: 'Silk' },
+  { id: 'm3', a: 34, z: 35, img: 'game', rect: [1210, 905, 640], kick: 'Tools' },
+  { id: 'm4', a: 35, z: 36, img: 'tools', rect: [760, 700, 620], kick: 'Crests' },
+  { id: 'm5', a: 36, z: 37, img: 'journal', rect: [700, 810, 700], kick: 'Journal' },
+  { id: 'm6', a: 37, z: 38, img: 'map-zoom', rect: [900, 560, 640], kick: 'Map' },
+  { id: 'm7', a: 38, z: 39, img: 'progress', rect: [960, 860, 760], kick: 'Acts' },
+  { id: 'm8', a: 39, z: 40, img: 'progress-100', rect: [960, 1180, 760], kick: '100%' },
+  { id: 'end', a: 40, z: 99, menu: true },
 ];
 const stage = document.getElementById('stage'), actors = document.getElementById('actors'), over = document.getElementById('over');
 const imgs = {};
@@ -200,9 +198,9 @@ function place(x, feetY, alpha = 1) {
   hornet.style.opacity = alpha;
 }
 // Which clip and frame at time t: Fall until she lands, HardLand, a held last frame, then Challenge Strong, looping its tail.
-const LAND = b(4), SLASH = b(6);
+const FALL = 0, LAND = b(2), SLASH = b(4);
 function hornetAt(t) {
-  if (t < LAND) { const c = HM.clips.Fall, f = Math.floor((t - b(2.4)) * c.fps); return ['Fall', f < c.n ? Math.max(0, f) : c.loopStart + (f - c.loopStart) % (c.n - c.loopStart)]; }
+  if (t < LAND) { const c = HM.clips.Fall, f = Math.floor((t - FALL) * c.fps); return ['Fall', f < c.n ? Math.max(0, f) : c.loopStart + (f - c.loopStart) % (c.n - c.loopStart)]; }
   const hl = HM.clips.HardLand, cs = HM.clips['Challenge Strong'];
   const cs0 = SLASH - 3 / cs.fps;     // her arc's widest frame on the beat
   if (t < cs0) return ['HardLand', Math.min(hl.n - 1, Math.floor((t - LAND) * hl.fps))];
@@ -379,10 +377,10 @@ function render(t) {
   // Opening: the menu's dark, her fall, her landing, the title cut by her needle.
   hornet.style.opacity = 0; ground.style.opacity = 0;
   if (S === OPEN) {
-    OPEN.el.querySelector('.glow').style.opacity = .35 + .45 * ease(ramp(t, 0, b(4))) + .3 * Math.exp(-Math.max(0, t - LAND) / .5) * (t > LAND);
-    if (t > b(2.4)) {
+    OPEN.el.querySelector('.glow').style.opacity = .35 + .45 * ease(ramp(t, 0, LAND)) + .3 * Math.exp(-Math.max(0, t - LAND) / .5) * (t > LAND);
+    if (t >= FALL) {
       const [clip, f] = hornetAt(t); pose(clip, f);
-      const y = t < LAND ? lerp(-260, HY, easeIn(ramp(t, b(2.4), LAND))) : HY;
+      const y = t < LAND ? lerp(150, HY, Math.pow(ramp(t, FALL, LAND), 2)) : HY;   // in the frame from the first frame, gathering speed
       place(HX, y);
     }
     if (t > LAND) {
@@ -397,7 +395,7 @@ function render(t) {
     T1.querySelector('h1').style.clipPath = `inset(-20% ${(1 - ks) * 50}% -20% ${(1 - ks) * 50}%)`;
     T1.querySelector('h1').style.transform = `scale(${1 + .08 * Math.exp(-Math.max(0, t - SLASH) / .25)})`;
     draw(T1.querySelector('.cw'), ease(ramp(t, SLASH, SLASH + 1.4)));
-    const kf = easeOut(ramp(t, b(7), b(7) + .8));
+    const kf = easeOut(ramp(t, SLASH + .6, SLASH + 1.3));
     const fo = T1.querySelector('.for'); fo.style.opacity = kf; fo.style.transform = `translateY(${(1 - kf) * 14}px)`;
   }
   // End: the title lands on beat 60.
@@ -449,7 +447,7 @@ function render(t) {
   for (const s of SCENES) if (s.a > DROP.land && s.a < END_AT) hit(s.t0, s.kick ? .3 : .15, .18);
   flash.style.opacity = fl;
 
-  black.style.opacity = Math.max(1 - ramp(t, 0, .8), ramp(t, DUR - .8, DUR));
+  black.style.opacity = Math.max(1 - ramp(t, 0, .25), ramp(t, DUR - .8, DUR));
 }
 
 window.ready = (async () => {
