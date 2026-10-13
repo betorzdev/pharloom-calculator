@@ -120,10 +120,17 @@ for (const z of [...ZONES].sort()) {
 const AREA_ALIAS = { 'weavnest atla': 'weavenest atla' };
 const AREAS = {};
 /* strict: a piece's heading must be an area (the generator stops otherwise); a wish's may name a
-   place that isn't one ("Grand Bellway"), and then it has no area. */
+   place that isn't one ("Grand Bellway"), and then it has no area. Details with no heading may be
+   the area alone ("Deep Docks", "Memorium (Top-right)": Voltvessels, Swift Step and 17 more of the
+   100% once had no area for it); any other sentence is no area. */
 function areaOf(details, strict = true) {
   const head = /^([^:]{2,60}):/.exec(details || '');
-  if (!head) return null;
+  if (!head) {
+    const bareArea = norm(String(details || '').split(' (')[0]);
+    const z = zoneByEn.get(AREA_ALIAS[bareArea] || bareArea);
+    if (z) AREAS[z] = zoneText(z);
+    return z || null;
+  }
   let en = norm(head[1].split(' (')[0].split(' / ')[0]);
   en = AREA_ALIAS[en] || en;
   const z = zoneByEn.get(en);

@@ -1504,6 +1504,36 @@ bools and two more lifts' ints. Eleven rosary and shard pickups are set in none 
 (present and false in all three games: Bone_East_01's sits under a "Demo Gate", Under_17's under
 the Architect's final scene); they stay, unproven.
 
+**Progress's 100% audited against every save** (13 October). The ten categories are the wiki's
+`Completion (Silksong)` one by one (51 Tools with their three pairs, the Hunter Crest out, the
+cloaks out), Act 3 holds exactly its 7 points (93% before it, now a test), and over the 72 saves
+of the author's folder (and `user1.dat.bak1`) the site's figure equals the game's in all of them.
+Each Progress row was read as the screen reads it, from the slot (`toSnapshot` → `gameOf`), not
+from `game()`: every category's ticked rows add up to its count, the fleas to the game's own
+counter (the FleasCollected Target: the 27 SavedFlea_ flags with Kratt, Vog and the Huge Flea),
+no row is ticked in an Act before its own, and along each game's restore points no row goes from
+done to not done but one: a Steel Soul restore point has Rune Rage and the First Sinner beaten,
+and the next one hasn't (the game's own 45% → 55% agrees: the save, not the site). Over file://
+with real saves, the figures and counts on screen match the saves in both languages at 1440 and
+390, and the live link fed three later files in turn (55% → 95% → 100%) repaints Progress each
+time with no reload and no stale row. Fixed on the way:
+- **The flea caravan's rewards**: the Spool Fragment at 12 fleas and the Tool Pouch at 22, not the
+  completionist's 14 and 20 (the Troupe Leader's Dialogue FSM, Greymoor_08_caravan and
+  Coral_Judge_Arena, compares the FleasCollected Target's count against 12 and 22; the wiki agrees).
+- **Nineteen things of the 100% had no area** (Voltvessels, Flintslate, Swift Step, Clawline,
+  Silkspear, three Spool Fragments…): the completionist files them as the area alone ("Deep Docks"),
+  which the generator only read with a colon after it. Only the Everbloom has none now (a wish's).
+- **How to get it** follows your Act: a way the wiki tags with one (Pebb's and Mort's wares at
+  Grindle's in Act 3, the Curveclaw and the Fractured Mask by the Mottled Skarr's corpse, the
+  Magnetite Dice by Lumble's) replaces the earlier ones once the game is there
+  (`completion.js wayOf`). A shop now says what it still waits on: the wish to do first (Frey's
+  Multibinder and Spool Fragment after My Missing Courier, Jubilana's after The Lost Merchant)
+  and the ability (Grindle's Snitch Pick, the Clawline; the Architect's Sawtooth Circlet, the
+  Drifter's Cloak). The Map's cards say the same.
+Checked and left: Kratt counts by CaravanLechReturnedToCaravan where the game counts
+CaravanLechSaved, but both turn true at once in every save; the "what the missing purchases cost"
+line under the heading went with the design rounds (e80f0c0), and the guide no longer mentions it.
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).
