@@ -66,8 +66,9 @@
 
   /* ── Getting around: js/graph.js, the game's doors ──────────────────────
      A scene as the graph knows it: itself, or the map's piece of a room named after it
-     (Bone_05_right is Bone_05), or an interior by its door (ENTRANCE). The map spells some
-     differently: another capital (Abandoned_Town), a letter more (Arborium_07b), a space. */
+     (Bone_05_right is Bone_05), or an interior by its door (ENTRANCE, in any case: a memory is
+     memory_coral_tower in js/journal-rooms.js). The map spells some differently: another capital
+     (Abandoned_Town), a letter more (Arborium_07b), a space. */
   const IN_GRAPH = new Set([...Object.keys(G), ...Object.values(G).flat()]);
   const GRAPH_LOWER = new Map([...IN_GRAPH].map((k) => [k.toLowerCase(), k]));
   function graphScene(scene) {
@@ -75,7 +76,8 @@
     scene = scene.replace(/\s+/g, '');
     if (IN_GRAPH.has(scene)) return scene;
     if (GRAPH_LOWER.has(scene.toLowerCase())) return GRAPH_LOWER.get(scene.toLowerCase());
-    if (ENTRANCE[scene]) return graphScene(ENTRANCE[scene]);
+    const door = ENTRANCE[scene] || ENTRANCE_LOWER.get(scene.toLowerCase());
+    if (door) return graphScene(door);
     if (/_\d+[a-z]$/.test(scene) && IN_GRAPH.has(scene.slice(0, -1))) return scene.slice(0, -1);
     const cut = scene.lastIndexOf('_');
     return cut > 0 ? graphScene(scene.slice(0, cut)) : null;

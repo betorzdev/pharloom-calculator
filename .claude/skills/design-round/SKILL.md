@@ -10,7 +10,8 @@ section if it already has one. This is that method as a checklist.
 
 1. **Look at the site as it is.** Screenshots at 1440 and 390 px, headless Chrome over `file://`:
    `google-chrome --headless=new --window-size=1440,2200 --screenshot=<scratchpad>/x.png "file://$PWD/index.html#view=<v>"`
-   (and `--window-size=390,2200`). Read the code behind it (`css/app.css`, `js/app-<screen>.js`).
+   (and `--window-size=390,2200`). With a real save, console errors counted and full-height shots:
+   `npm run drive -- --save <user#.dat> --view <v> --out <scratchpad>` (`tools/drive.js`). Read the code behind it (`css/app.css`, `js/app-<screen>.js`).
 2. **Think it through** against `design/01-web.md` (the rules) and `design/02-silksong.md` (the
    game's measured visual language), and what the game does on the equivalent screen. The game
    selects with white on grey, no hue; the red is atmosphere only.

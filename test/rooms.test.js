@@ -158,6 +158,18 @@ test('getting around: the game\'s doors, and the stations a save has opened; eve
   assert.strictEqual(R.steps('Tut_01', 'Tut_01', []), 0);
 });
 
+test('from every bench, on foot, the rest of Pharloom: the Cradle by the Cogwork Core\'s lift', () => {
+  const B = require('../js/benches.js');
+  /* The lift is no door but an FSM's ride both ways (tools/extract-graph.py): without it, a game
+     resting at the Terminus with no Ventrica station open reached the Cradle's six rooms alone,
+     and the Journal, the Map and Progress had nothing nearest. */
+  assert.deepEqual(R.path('Tube_Hub', 'Cog_Dancers', []), ['Tube_Hub', 'Song_Tower_01', 'Cog_Dancers']);
+  assert.ok(R.steps('Tut_01', 'Cradle_03', []) > 0, 'Grand Mother Silk is reached on foot');
+  const benches = [...new Set([...Object.keys(B.scenes), ...M.PINS.filter((p) => p[0] === 'bench').map((p) => p[3])])];
+  assert.ok(benches.length > 100, `${benches.length} benches`);
+  assert.deepEqual(benches.filter((s) => !R.walk(s, []).has('Bonetown')), []);
+});
+
 test('where each Journal entry is: the game\'s own placements, each scene in one of the game\'s areas', () => {
   const JR = require('../js/journal-rooms.js');
   const J = require('../js/journal.js');
@@ -190,6 +202,11 @@ test('every Journal entry has a place, the 29 the game makes at run time too, an
   const w = R.walk('Tut_01', lit);
   const off = Object.keys(HOW).filter((k) => !JR[k].some(([s]) => w.has(R.graphScene(s))));
   assert.deepEqual(off, []);
+  // So is every placed one, a memory by the room it's entered from (its lower-case name too), but
+  // the Red Memory's, which isn't on the map.
+  assert.strictEqual(R.graphScene('memory_coral_tower'), 'Coral_Tower_01');
+  const lost = J.BOOK.filter((e) => !JR[e.key].some(([s]) => s === 'memory_red' || w.has(R.graphScene(s)))).map((e) => e.key);
+  assert.deepEqual(lost, []);
   const areas = (k) => new Set(JR[k].map(([s]) => R.areaOf(s)).filter(Boolean));
   // Checked against the wiki (kb/data/raw/): the Muckmaggots only where their waters are on
   // (Sinner's Road, Bilewater, Putrified Ducts, Wisp Thicket), the Sandcarvers in the sand.

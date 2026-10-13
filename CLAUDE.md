@@ -107,6 +107,9 @@ a game name that doesn't say what the game says.
   `npm run text -- --audit`.
 - If you've touched `js/savefile.js` or `js/completion.js` and have a folder of real saves,
   `npm run check-pack -- <folder>` (phase 2): the site's 100% must equal the game's in every one.
+- To see a screen with a real save (or Free mode) in headless Chrome, console errors counted and
+  screenshots taken: `npm run drive -- --save <user#.dat> --view home,map --width 1440,390 --out <dir>`
+  (`tools/drive.js`; its header has the options).
 - Update the plan's status in `design/00-study.md` §9 when a phase moves.
 
 ## Things that are easy to get wrong without checking
