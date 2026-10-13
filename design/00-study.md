@@ -1604,6 +1604,17 @@ Dexerto, Nintendo Life, allthings.how, gameshorizon; no Game8 or IGN page came u
   left → 3 → the endings), and Your game's line too (9 of 31 → 28 of 31 → gone in Act 3).
 - Fixed on the way: Trail's End's line printed «({n} de {of})» raw (the count comes after it).
 
+**Progress's leftovers** (13 October, design/03-redesign.md step 5). The endings: CompletedEndings
+is per game and set as each ending is seen (the restore points show it: Weaver Queen between the
+melody lift and the Faydown Cloak, Twisted Child with the Witch Crest), so an Act 2 ending missing
+in an Act 3 game is closed for good, and the ring counts the ones still within reach: the Steel
+Soul game at 100% (user3.dat: Weaver Queen, Snared Silk, Sister of the Void) is 3 of 3, not 3 of
+4. A way the wiki calls `found` had no words, so those rows looked like missing data; they say
+they're found in the area. Free mode with marks was run for the first time: marking from Progress
+works (the boxes, the counts and the 100% follow), but its top said «no save, the guide»; it now
+says what it counts. Its 40% with four Tools marked is the Inventory's ladders, which Free mode
+starts at the top («Everything maxed»): the same on the Inventory, so left as it is.
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).

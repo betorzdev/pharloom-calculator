@@ -41,7 +41,7 @@ the work up reads it first, then the step it's on.
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html` |
-| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight 13 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
+| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight and the leftovers 13 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct) | [`12-map-variants.html`](12-map-variants.html) |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds) | [`15-journal-variants.html`](15-journal-variants.html) |
 | 8 | Crest (`tools`) | **Built** (28 Sep) | [`18-crest-variants.html`](18-crest-variants.html) |
@@ -619,6 +619,38 @@ lists folded, B the invitation and the card, C as it was).
   count whole), and a «Tienes / vale (%)» head over the rows.
 - No save: `.pg-invite` with «Importar del juego» over either tab, the card «100 % en 10
   categorías», each road with its thread (`journey(r, true)`) and every list under «Ver los n».
+
+### The leftovers (13 October 2026)
+
+What the three Progress PRs of the day left open, looked at over the real saves (none, Act 2 at 15%
+and 61%, Act 3 at 76% in Steel Soul with Twisted Child closed, 100%, 100% in Steel Soul with an
+ending closed, Free mode with marks) in `41-progress-leftovers-variants.html` (kept out of the repo):
+1 the endings ring with one closed (**A** count the ones still within reach, B all four with the
+closed share dim, C as it was); 2 long how lines on a phone (A two lines and «more», **B** the
+lead and «+n more», C a part a line, D as it was); 3 the step thread on a phone (A names taking
+turns above and below, B numbers and only the current step named, **C** down the page, D as it
+was); 4 rows that only say their area (**A** a line, «Found in the area», B the area under the
+name, C a note in the group, D as it was); 5 Your game's road line (**A** one line with the step's
+name, B a small card, C as it was); 6 Free mode with marks (**A** the top says what it counts and
+the ladders' groups where they're set, B only the top, C as it was).
+
+**Decision: 1 A, 2 B, 3 C, 4 A, 5 A, 6 A** (13 October 2026), built (`js/app-progress.js`,
+`js/app-home.js`, `css/app.css`):
+- `endsOf()`: in Act 3 an Act 2 ending never seen is closed; the thread crosses it out with
+  «cerrado», the ring is «Finales a tu alcance» over the open ones with a line naming the closed,
+  and the tab's card says «n de m finales a tu alcance».
+- `howParts()` and the wish rows give each how line its lead (who asks and what it asks, the shop
+  and its price, the caravan's stop) and what it waits for (what posts it, the wish first, the Act,
+  the keys); `howHtml()` folds the second behind «+n más» (`pgMore`) at 640 px and under.
+- `.pg-journey.is-road`: on a phone the road's thread runs down the page, a step a line.
+- `isFound()`: a missing thing of the 100% whose way is `found` says «Se encuentra en la zona: el
+  alfiler marca dónde» (without the pin's half when the Map has no mark for it).
+- `App.roadNow` carries the step's short name; Your game's line reads «Camino al Acto 3 · paso 1 de
+  5: Desbloquea «Seda y alma» · 28 de 31».
+- Free mode with marks: «Modo libre.» and what it counts over the tabs; the masks', silk's,
+  upgrades', Needle's and Silk Hearts' groups say «Esto se fija en el Inventario» with the way there.
+- Plain fixes: no «·» head (Act heads only when a list spans two Acts), «Te falta 1», the bridge's
+  figure centred on a phone, the tab card's name balanced (no lone «3»).
 
 ## Step 6 · Map
 
