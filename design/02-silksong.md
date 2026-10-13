@@ -16,8 +16,9 @@ each one's colours with their share, hue, saturation and value. Re-run it after 
    the same role and nearly the same colour as Hollow Knight's lifeblood (`#65C0D9`).
 2. **The three Tool colours are one family.** Red `#EB857D`, blue `#76DEF0`, yellow `#F0CC7E`:
    the same saturation (46–51%) and value (92–94%), only the hue moves (4°, 189°, 41°). They're
-   pastels on black, not Hornet's red. A locked slot is the same shape in grey (`#606060` with a
-   `#DCDCDC` rim); a Skill slot is white.
+   pastels on black, not Hornet's red. The wiki draws a locked slot as the same shape in grey
+   (`#606060` with a `#DCDCDC` rim); the game's Crest pane draws only a small lock ring in its
+   colour's grey (`#ECECEC`) at half opacity (`--slot-lock`, read from its files); a Skill slot is white.
 3. **The game marks the selection with value, not hue.** On the Crest screen the chosen Crest is
    a white outline; the others are filled grey (`#808080`); the frame's filigree is white; the
    background is black (`#010101`) with **a warm spotlight** behind the centre (`#23201D`, H 30°,

@@ -1,7 +1,7 @@
 /* js/codec.js — a build in the URL: readable, and only what differs from the base (js/engine.js's
    normalize({}): the Hunter, every ladder at 0, nothing equipped), as the Hollow Knight site does:
      #v=1&crest=architect&needle=4&kit=3&pouch=2&masks=5&spools=9&hearts=3
-      &tools=straight-pin,compass&skill=silkspear&vest=yb&stage=3
+      &tools=straight-pin,compass&skill=silkspear&vest=yb&stage=3&shot=forge
    The Tools and Skills go by their ids, which are the wiki's names made slugs: a link keeps
    working after a patch reorders the lists. A link from a later version, or damaged, gives what
    it can read and the base for the rest. The moment of a fight (focus, fury…) isn't written:
@@ -22,9 +22,11 @@
     if (st.crest === 'hunter' && st.hunterStage !== 1) out.push('stage=' + st.hunterStage);
     for (const k of NUMS) if (st[k] !== BASE[k]) out.push(k + '=' + st[k]);
     if (st.tools.length) out.push('tools=' + st.tools.join(','));
-    if (st.skill) out.push('skill=' + st.skill);
+    if (st.skills.length) out.push('skill=' + st.skills.join(','));
     const vest = (st.vest.yellow ? 'y' : '') + (st.vest.blue ? 'b' : '');
     if (vest) out.push('vest=' + vest);
+    // The Silkshot held, when it isn't the Original (js/engine.js normalize).
+    if (st.silkshot !== BASE.silkshot) out.push('shot=' + st.silkshot);
     return out.join('&');
   }
 
@@ -33,7 +35,7 @@
     const pairs = String(text || '').replace(/^#/, '').split('&').map((p) => p.split('=')).filter((p) => p.length === 2);
     const m = new Map(pairs.map(([k, v]) => [k, decodeURIComponent(v)]));
     if (!m.has('v')) return null;
-    const x = { crest: m.get('crest'), hunterStage: m.get('stage'), skill: m.get('skill'),
+    const x = { crest: m.get('crest'), hunterStage: m.get('stage'), skills: (m.get('skill') || '').split(',').filter(Boolean), silkshot: m.get('shot'),
       tools: (m.get('tools') || '').split(',').filter(Boolean), vest: { yellow: /y/.test(m.get('vest') || ''), blue: /b/.test(m.get('vest') || '') } };
     for (const k of NUMS) if (m.has(k)) x[k] = Number(m.get(k));
     return E.normalize(x);

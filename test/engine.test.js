@@ -65,6 +65,39 @@ test('a Tool at the Kit\'s level, its ammo at the Pouch\'s, a full load and its 
   assert.equal(E.compute({ kit: 4, tools: ['straight-pin', 'barbed-bracelet'] }).tools[0].attacks[0].total, 17);
 });
 
+test("a Silk Skill per Skill slot: the Shaman's three, one elsewhere, none on the Architect", () => {
+  const three = ['silkspear', 'thread-storm', 'cross-stitch', 'sharpdart'];
+  const sh = E.compute({ crest: 'shaman', skills: three });
+  assert.deepEqual(sh.state.skills, three.slice(0, 3));
+  assert.deepEqual(sh.skills.filter((s) => s.equipped).map((s) => s.id).sort(), three.slice(0, 3).sort());
+  assert.deepEqual(sh.slots.skill, { open: 3, used: 3 });
+  assert.deepEqual(E.normalize({ skills: three }).skills, ['silkspear']);
+  assert.equal(E.normalize({ skill: 'rune-rage' }).skills[0], 'rune-rage');   // an older build's one skill
+  assert.deepEqual(E.normalize({ crest: 'architect', skill: 'rune-rage' }).skills, []);
+});
+
+test('a save made while cursed: the Witch\'s slashes, no Tools or Skills, silk stops at 3 and Bind fails', () => {
+  const c = E.compute({ cursed: true, crest: 'wanderer', needle: 2, spools: 9, tools: ['straight-pin'], skills: ['silkspear'], vest: { yellow: true } });
+  assert.deepEqual([c.state.crest, c.state.tools, c.state.skills, c.state.vest], ['witch', [], [], { yellow: false, blue: false }]);
+  assert.equal(c.silk.spool, 3);
+  assert.equal(c.health.bind.fails, true);
+  assert.equal(E.compute({}).health.bind.fails, undefined);
+});
+
+test('Silkshot is the variant the game holds: its damage, ammo, picture and words (the Original by default)', () => {
+  const shot = (silkshot) => E.compute({ kit: 4, pouch: 3, tools: ['silkshot'], silkshot }).tools[0];
+  assert.equal(shot().attacks.length, 1);
+  assert.deepEqual([shot().attacks[0].total, shot().ammo], [34, 14]);   // the Original: 34, 8/10/12/14/16
+  // Forge Daughter's: 20, and 15/18/22/26/30 (a Steel Soul save at Pouch 3 holds 26).
+  assert.deepEqual([shot('forge').attacks[0].total, shot('forge').ammo], [20, 26]);
+  assert.deepEqual(shot('architect').attacks[0].each, [10, 5, 3]);
+  assert.equal(E.normalize({ silkshot: 'nope' }).silkshot, 'original');
+  assert.equal(E.toolArt('silkshot', {}).art, 'silkshot');
+  assert.equal(E.toolArt('silkshot', { silkshot: 'forge' }).art, 'silkshot-forge');
+  assert.equal(E.toolArt('silkshot', { silkshot: 'forge' }).desc.key, 'SILKSHOT_DESC_FORGE');
+  assert.equal(E.toolArt('straight-pin', { silkshot: 'forge' }).desc.key, 'STRAIGHT_PIN_DESC');
+});
+
 test('silk, the Bind and the slots', () => {
   const c = E.compute({ spools: 9, masks: 5, hearts: 3, tools: ['spool-extender', 'egg-of-flealia', 'multibinder', 'injector-band'] });
   assert.deepEqual([c.silk.spool, c.silk.skill, c.silk.casts, c.health.masks], [21, 3, 7, 10]);

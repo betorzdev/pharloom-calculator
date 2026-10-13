@@ -4,9 +4,13 @@
 
 ## What's on the page
 
-The header has the title under a filigree crown (it leads back to Your game), the language on
-the left and, on the right, the save you're in (Hornet at a bench): it opens **Saves**. The
-screen bar has six screens in a row: Your game, Inventory, Progress, Map, Journal and Crest.
+The header has the title under a filigree crown (it leads back to Your game), on the left the
+language and **Share**, and on the right the save you're in (Hornet at a bench): it opens
+**Saves**. The language is a dropdown, as the sibling's: the one chosen and a chevron (its name,
+its code on a phone) open a list of the site's languages, each in its own name; Esc closes it
+and the arrows walk it. **Share** copies the site's address, nothing more: no screen, build or
+language. The screen bar has six screens in a row: Your game, Inventory, Progress, Map, Journal
+and Crest.
 With a save loaded, Progress carries your completion and Journal the entries Nuu counts
 (`63%`, `120/230`); in Free mode the bar only has the names. On a phone the six don't fit, so
 Inventory folds under Your game: while you're in either, a second row under the bar switches
@@ -155,17 +159,26 @@ beside them what depends on the moment: the Hunter's focus, the Beast's fury, Fl
 the hit after a Challenge.
 
 Below, the Crest drawn as the game draws it, with its slots where the game puts them (read from
-its files, per Crest and per evolution of the Hunter), each the game's frame in its colour and
-holding the Tool or Silk Skill worn (from a save, in the slot the game has it in); a slot no
-Memory Locket has opened yet shows the game's grey locked frame (from a save, as the save says;
-in Free mode every slot is open), and the Vesticrest's slots sit on a row under the Crest. In Free mode a
+its files, per Crest and per evolution of the Hunter), every piece the game's own sprite at its
+size, the Crest's lines in the half grey the game's pane gives them while you browse it. An empty slot shows its sign in its colour; a red or Silk Skill slot's sign says the button
+that fires it (a spike up for Tool + up, plain, or down for Tool + down). A slot holding a Tool or
+Silk Skill (from a save, in the slot the game has it in) is the game's ring in its colour with the
+Tool inside at the game's own size, about the ring's (a Silk Skill as the game's pane shows it,
+solid white, here, in the list under the Crest and in the Inventory). A slot no Memory Locket has opened yet shows the game's small grey lock ring in
+place of its sign (from a save, as the save says; in Free mode every slot is open). The Vesticrest's slots float
+beside the Crest between the game's white brackets, and the Crest's name sits under the Crest. The
+Shaman wears a Silk Skill in each of its three slots. A save made while cursed (the Witch's curse,
+for a while in the story) shows the Cursed Crest: no slots, a line on what the curse does, and the
+figures with silk stopped at 3 and no Bind. In Free mode a
 tap on a worn one there takes it off, and the others stay in their slots. ‹ › change the Crest. Beside it,
 the Tools and Silk Skills you have (as the game lists them; in Free mode, all of them, or on «What
 I have» what the Inventory's marks say, with a line to the Inventory while no Tool is marked), by colour, each on its slot as the Inventory draws it, the
 slot filled and lit when it's worn: a tap puts one on or takes it off,
 and pointing at one (or at a slot) describes it underneath with the game's words and its numbers
 (damage per hit, uses at the Pouch's level, a full load, the shell shards to refill it; a Silk
-Skill's damage and silk), as if it were worn when it isn't.
+Skill's damage and silk), as if it were worn when it isn't. Silkshot is the one the game repaired
+(the Original, the Twelfth Architect's or the Forge Daughter's: a save says which), with its own
+picture, words, damage and uses.
 
 The damage is the wiki's model: the weapon's damage at its level times (1 + the player's
 modifiers, which add) rounded half to even, per hit; Tools scale with the Crafting Kit, the rest
@@ -191,7 +204,7 @@ for the Reaper and the Shaman. With Flea Brew worn, what it gives for its 10 sec
 the wait, but a slash never comes faster than the slash itself lasts (0.35 s for the Hunter).
 Combat says how long slashing nonstop takes to kill the enemy.
 
-**Share** copies a link that opens the build on screen as it is (yours from a save too). The
+The address bar carries the build: copied, it opens the build on screen as it is. The
 link is readable (`#v=1&crest=architect&needle=4&tools=straight-pin,compass…`) and carries only
 what differs from a Hunter with nothing: in Free mode the address always says the build. A link
 with a build opens it in Free mode; if you were in a save, the page goes to Free mode and says so.
