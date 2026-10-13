@@ -17,8 +17,9 @@
    The saves: any two of the same game, a few hours apart, mid-game, so the map, the Journal and
    "Closest to your bench" have things missing (the first cut used Restore_Points1/restoreData21
    and 22: 59% → 61%, Act 2).
-   Every screen is also shot before the sync (pre-*.png), for the trailer's ripple of one save
-   through the whole site.
+   Every screen is also shot before the sync (pre-*.png), and the Map's marks read on both
+   (map-marks.json: the ones the save took off, what was found, and where Hornet rests before and
+   after), for the trailer's wave of one save over the site.
    --live <a,b,…>: saves of one game in order (restore points a bench apart; the trailer uses two,
    --before and --after): the first imported, then each synced over the one before as the
    followed file brings it, shot on Your game with the site's own live mark in the header and its
@@ -109,14 +110,40 @@ async function capture(site, a) {
     })()`);
     // Every screen before the game saves again (pre-*.png), then after, synced as the followed file would bring it.
     await seed(`S.importTo(localStorage, 1, snap('${b64(a.before)}', '--before')); S.select(localStorage, 1);`);
-    for (const v of ['home', 'game', 'progress', 'map', 'journal', 'tools']) { await visit(v); await whole('pre-' + v); }
+    const hundred = async (name) => {
+      await visit('progress');
+      await c.evaluate(`document.querySelector('[data-act="pgTab"][data-value="100"]').click()`);
+      await sleep(1500);
+      await whole(name);
+    };
+    // The Map's marks (data-mk) and Hornet's, where they sit on the page: the save's own changes, there.
+    const marks = () => c.evaluate(`(() => {
+      const r = {};
+      for (const e of document.querySelectorAll('.mp-svg [data-mk]')) { const b = e.getBoundingClientRect(); r[e.dataset.mk] = [b.x + b.width / 2, b.y + b.height / 2 + scrollY]; }
+      const h = document.querySelector('.mp-hornet'), hb = h && h.getBoundingClientRect();
+      return { marks: r, hornet: hb ? [hb.x + hb.width / 2, hb.y + hb.height / 2 + scrollY] : null };
+    })()`);
+    let preMarks = null;
+    for (const v of ['home', 'game', 'progress', 'map', 'journal', 'tools']) {
+      await visit(v);
+      if (v === 'map') preMarks = await marks();
+      await whole('pre-' + v);
+    }
+    await hundred('pre-progress-100');
     await seed(`S.sync(localStorage, 1, snap('${b64(a.after)}', '--after'));`);
-    for (const v of ['home', 'game', 'progress', 'map', 'journal', 'tools']) { await visit(v); await whole(v); }
+    for (const v of ['home', 'game', 'progress', 'map', 'journal', 'tools']) {
+      await visit(v);
+      if (v === 'map') {
+        // What the save took off the map (what was found) and where Hornet now rests: map-marks.json.
+        const post = await marks();
+        const gone = Object.entries(preMarks.marks).filter(([k]) => !(k in post.marks)).map(([k, at]) => ({ key: k, at }));
+        fs.writeFileSync(path.join(dir, 'map-marks.json'), JSON.stringify({ gone, from: preMarks.hornet, to: post.hornet }));
+        console.log('  map: ' + gone.length + ' marks gone with the save');
+      }
+      await whole(v);
+    }
     // Progress on its other tab, the 100%.
-    await visit('progress');
-    await c.evaluate(`document.querySelector('[data-act="pgTab"][data-value="100"]').click()`);
-    await sleep(1500);
-    await whole('progress-100');
+    await hundred('progress-100');
     // The Map twice closer, for the montage's close-ups.
     await visit('map');
     await c.evaluate(`(async () => { for (let i = 0; i < 2; i++) { document.querySelector('[data-act="mapZoom"]').click(); await new Promise((r) => setTimeout(r, 600)); } })()`);

@@ -8,13 +8,16 @@
      ?w=/__promo/#t=12.3 shows that moment and #play runs it in real time (no sound).
      It is cut to its music, Christopher Larkin's "Final Judge" (tools/promo/extract-game.py):
      73⅓ bpm, a beat every 9/11 s, the clip's beat 0 at its start; the film starts on the clip's
-     beat 80 (MUSIC), so the film's beat n is at n × BEAT. Hornet falls from the first frames and
-     lands on beat 2 (a heavy one in the clip), her arc opening the title on 4; the save is dragged
-     in and drops on beat 10, the card lighting up; from 12 the game and the site side by side,
-     the game saving at a bench on beat 14 and Your game catching up (make.js --live), then that
-     save through every screen, one a beat, each shown before and after (pre-*.png); then a screen every two beats, four for the road to the Acts and to the
-     100%; one close-up a beat from 32, where the music is loudest; the title lands on beat 40,
-     the clip's strongest hit, and the music falls quiet on beat 44. Hornet is the game's own animation (Fall, HardLand, Challenge Strong).
+     beat 81 (MUSIC), so the film's beat n is at n × BEAT. Hornet is falling from the first frame
+     and lands on beat 1 (a heavy one in the clip), her arc opening the title on 3; the save is
+     dragged in and drops on beat 9, the card lighting up. Then one save of the game, a bench
+     later (make.js --live, and every screen shot before it, pre-*.png): on Your game, on the Map
+     and on Progress it lands as a wave, the page changing where the wave has passed and every
+     spot that really changed lighting up as it's reached (found by comparing the two shots, in
+     ready()). Then a screen every two beats, four for the road to the Acts; one close-up a beat
+     from 31, where the music is loudest; the title lands on beat 39, the clip's strongest hit,
+     and the music falls quiet on beat 43. Hornet is the game's own animation (Fall, HardLand,
+     Challenge Strong).
      The page's tokens (css/tokens.css) dress it: the main menu's black, red light and embers at
      either end, the white filigree, the bone ink, Cinzel and Spectral. The light effects (the
      flashes, the dust, the shade under the captions) are the film's own and stay here. -->
@@ -52,6 +55,8 @@
   .shade { position: absolute; left: 0; right: 0; bottom: 0; height: 420px;
     background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.82) 42%, rgba(0,0,0,.96) 100%); }
   .card { position: absolute; left: 0; right: 0; bottom: 70px; text-align: center; transform-origin: 50% 70%; }
+  .card.is-top { top: 54px; bottom: auto; }
+  .shade.is-top { top: 0; bottom: auto; transform: scaleY(-1); }
   .sup { font-family: var(--font-display); font-weight: 500; font-size: 22px; letter-spacing: .34em; color: var(--ink-2); text-transform: uppercase; }
   .main { font-family: var(--font-display); font-weight: 600; font-size: 72px; letter-spacing: .02em; margin-top: 10px; line-height: 1.1;
     text-shadow: 0 0 30px rgba(0,0,0,.9), 0 2px 4px rgba(0,0,0,.9); }
@@ -61,29 +66,14 @@
     font-size: 190px; letter-spacing: .1em; line-height: 1; transform-origin: 50% 50%;
     text-shadow: 0 0 60px rgba(0,0,0,.95), 0 0 24px rgba(0,0,0,.9), 0 0 80px rgba(255,140,90,.25); }
 
-  /* Live: the game on the left, the site in a browser on the right. */
-  .lv-side { position: absolute; top: 96px; text-align: center; }
-  .lv-side .sup { margin-bottom: 18px; }
-  .lv-game { left: 60px; width: 520px; }
-  .lv-rest { position: relative; height: 420px; }
-  .lv-rest .lamp { position: absolute; inset: 0; background: radial-gradient(ellipse 50% 50% at 50% 55%, rgba(255,214,170,.28), rgba(255,214,170,0) 70%); }
-  .lv-crop { position: absolute; left: 50%; top: 40px; width: 440px; height: 340px; margin-left: -220px; overflow: hidden;
-    -webkit-mask: radial-gradient(ellipse 50% 50% at 50% 50%, #000 55%, transparent 100%); mask: radial-gradient(ellipse 50% 50% at 50% 50%, #000 55%, transparent 100%); }
-  .lv-crop img { position: absolute; left: 0; top: 0; width: 1920px; transform-origin: 0 0; }
-  .lv-file { display: inline-flex; position: relative; margin-top: 18px; padding: 12px 22px 12px 18px; border: 1px solid rgba(241,235,220,.5); background: rgba(20,12,10,.92);
-    font-size: 26px; gap: 12px; align-items: center; }
-  .lv-status { margin-top: 14px; font-family: var(--font-display); font-size: 19px; letter-spacing: .26em; text-transform: uppercase; color: var(--ink-2); }
-  .lv-site { left: 640px; width: 1220px; }
-  .lv-win { position: relative; height: 860px; border: 1px solid var(--line-panel); background: #000; overflow: hidden;
-    box-shadow: 0 30px 80px rgba(0,0,0,.7), 0 0 0 1px rgba(0,0,0,.6); }
-  .lv-bar { height: 40px; display: flex; align-items: center; gap: 10px; padding: 0 16px; background: var(--card); border-bottom: 1px solid var(--line); }
-  .lv-bar i { width: 11px; height: 11px; border-radius: 50%; background: var(--line-panel); }
-  .lv-bar span { margin-left: 18px; flex: 1; height: 26px; line-height: 26px; padding: 0 14px; background: var(--well); color: var(--ink-2); font-family: var(--font-num); font-size: 15px; text-align: left; }
-  .lv-view { position: absolute; left: 0; right: 0; top: 41px; bottom: 0; overflow: hidden; }
-  .lv-view img { position: absolute; left: 0; top: 0; width: 1920px; transform-origin: 0 0; }
-  .lv-sweep { position: absolute; left: 0; right: 0; height: 220px; background: linear-gradient(180deg, rgba(255,240,225,0), rgba(255,240,225,.16), rgba(255,240,225,0)); }
-  .lv-plus { position: absolute; z-index: 30; font-family: var(--font-display); font-weight: 700; font-size: 54px; color: var(--accent);
-    text-shadow: 0 0 24px rgba(255,200,150,.6), 0 2px 6px rgba(0,0,0,.9); }
+  /* The game saving: its file, in the corner, as the save lands. */
+  .saved { position: absolute; right: 70px; top: 60px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .saved .file { display: flex; gap: 12px; align-items: center; padding: 12px 22px 12px 18px; border: 1px solid rgba(241,235,220,.55);
+    background: rgba(20,12,10,.94); font-size: 26px; }
+  .saved .st { font-family: var(--font-display); font-size: 18px; letter-spacing: .28em; text-transform: uppercase; color: var(--ink-2);
+    text-shadow: 0 1px 4px #000; }
+  .gain { position: absolute; font-family: var(--font-display); font-weight: 700; font-size: 64px; color: var(--accent); transform-origin: 0 100%;
+    text-shadow: 0 0 26px rgba(255,200,150,.65), 0 2px 8px rgba(0,0,0,.95); }
   .chip { position: absolute; padding: 14px 26px 14px 22px; border: 1px solid rgba(241,235,220,.55); background: rgba(20,12,10,.92);
     font-family: var(--font-body); font-size: 28px; display: flex; gap: 14px; align-items: center;
     box-shadow: 0 18px 50px rgba(0,0,0,.7), 0 0 30px rgba(241,235,220,.12); }
@@ -103,9 +93,9 @@ const W = 1920, H = 1080;
 const BASE = new URLSearchParams(location.search).get('w') || '/__promo/';
 const BEAT = 9 / 11;
 const b = (n) => n * BEAT;
-const DUR = b(44) + 2;
+const DUR = b(43) + 2;
 // For make.js: which track, where the film starts in it, and its fades.
-window.MUSIC = { track: 'judge', from: b(80), fadeIn: .4, fadeOutAt: b(44) - .1, fadeOut: 2 };
+window.MUSIC = { track: 'judge', from: b(81), fadeIn: .15, fadeOutAt: b(43) - .1, fadeOut: 2 };
 
 const clamp = (x, a = 0, c = 1) => Math.min(c, Math.max(a, x));
 const lerp = (a, c, k) => a + (c - a) * k;
@@ -122,33 +112,37 @@ const draw = (root, k) => root.querySelectorAll('path').forEach((p) => { p.style
 /* ── The shots: a full-page capture (2x) seen through a camera, a rect in page px (centre x,
    centre y, width) eased from `from` to `to` over the shot. Beats, not seconds. ─────────── */
 const SCENES = [
-  { id: 'open', a: 0, z: 7, menu: true },
-  { id: 'drop', a: 7, z: 10, img: 'free', over: 'free-drag', swap: 8.6, land: 10, from: [960, 480, 1440], to: [940, 470, 1280],
+  { id: 'open', a: 0, z: 6, menu: true },
+  { id: 'drop', a: 6, z: 9, img: 'free', over: 'free-drag', swap: 7.6, land: 9, from: [960, 480, 1440], to: [940, 470, 1280],
     sup: 'From the game’s own file', main: 'Drop in your save' },
-  { id: 'lit', a: 10, z: 12, img: 'live0', from: [900, 470, 1260], to: [820, 480, 1120],
-    sup: 'Read in your browser', main: 'Your game, as it stands' },
-  // Live: the game saves at a bench, the file carries it, Your game catches up on beat 14, and
-  // the same save runs through every screen, one a beat, each shown before and after.
-  { id: 'live', a: 12, z: 20, menu: true, live: [14], ripple: ['progress', 'game', 'journal', 'map', 'tools'], rippleAt: 15,
-    sup: 'Chrome and Edge follow the file', main: 'One save. The whole site updates.' },
+  // One save, a bench later: a wave from the file over Your game, then over the Map and Progress.
+  { id: 'save', a: 9, z: 12, img: 'live0', post: 'live1', wave: 10, fromFile: true, from: [820, 470, 1240], to: [770, 480, 1100],
+    gain: { at: [545, 505], of: 'pct', unit: '%' },
+    sup: 'Chrome and Edge follow the file', main: 'Every save updates the site' },
+  { id: 'map', a: 12, z: 16, img: 'pre-map', post: 'map', wave: 13, marks: true, from: [960, 520, 1450], to: [940, 512, 1380],
+    gain: { near: [45, 30], of: 'found' }, capTop: true,   // beside where Hornet now rests
+    sup: 'On the map', main: 'What you find leaves the map' },
+  { id: 'progress', a: 16, z: 20, img: 'pre-progress-100', post: 'progress-100', wave: 17, origin: [960, 620], from: [960, 600, 1100], to: [960, 740, 1100],
+    gain: { at: [1060, 560], of: 'pct', unit: '%' },
+    sup: 'In your progress', main: 'Every percent, as you earn it' },
   { id: 'acts', a: 20, z: 24, img: 'progress', from: [960, 360, 1120], to: [960, 660, 1120],
     sup: 'Act 1 · Act 2 · Act 3', main: 'The road to every Act' },
-  { id: 'hundred', a: 24, z: 28, img: 'progress-100', from: [960, 620, 1100], to: [960, 1150, 1150],
-    sup: 'And the 100%', main: 'Every percent still to find' },
-  { id: 'map', a: 28, z: 30, img: 'map', from: [960, 600, 1150], to: [950, 590, 1040],
-    sup: 'The game’s own map', main: 'Everything you’re missing' },
-  { id: 'journal', a: 30, z: 32, img: 'journal', from: [960, 520, 1200], to: [960, 760, 1180],
+  { id: 'journal', a: 24, z: 26, img: 'journal', from: [960, 520, 1200], to: [960, 760, 1180],
     sup: 'The Hunter’s Journal', main: 'Every kill to go' },
+  { id: 'inv', a: 26, z: 28, img: 'game', from: [720, 560, 1120], to: [740, 590, 1020],
+    sup: 'The Inventory', main: 'All Hornet carries' },
+  { id: 'crest', a: 28, z: 31, img: 'tools', from: [940, 580, 1200], to: [930, 620, 1060],
+    sup: 'Crests and Tools', main: 'Every number of your build' },
   // The montage: a close-up a beat, and its word.
-  { id: 'm1', a: 32, z: 33, img: 'game', rect: [545, 705, 620], kick: 'Masks' },
-  { id: 'm2', a: 33, z: 34, img: 'game', rect: [575, 868, 640], kick: 'Silk' },
-  { id: 'm3', a: 34, z: 35, img: 'game', rect: [1210, 905, 640], kick: 'Tools' },
-  { id: 'm4', a: 35, z: 36, img: 'tools', rect: [760, 700, 620], kick: 'Crests' },
-  { id: 'm5', a: 36, z: 37, img: 'journal', rect: [700, 810, 700], kick: 'Journal' },
-  { id: 'm6', a: 37, z: 38, img: 'map-zoom', rect: [900, 560, 640], kick: 'Map' },
-  { id: 'm7', a: 38, z: 39, img: 'progress', rect: [960, 860, 760], kick: 'Acts' },
-  { id: 'm8', a: 39, z: 40, img: 'progress-100', rect: [960, 1180, 760], kick: '100%' },
-  { id: 'end', a: 40, z: 99, menu: true },
+  { id: 'm1', a: 31, z: 32, img: 'game', rect: [545, 705, 620], kick: 'Masks' },
+  { id: 'm2', a: 32, z: 33, img: 'game', rect: [575, 868, 640], kick: 'Silk' },
+  { id: 'm3', a: 33, z: 34, img: 'game', rect: [1210, 905, 640], kick: 'Tools' },
+  { id: 'm4', a: 34, z: 35, img: 'tools', rect: [760, 700, 620], kick: 'Crests' },
+  { id: 'm5', a: 35, z: 36, img: 'journal', rect: [700, 810, 700], kick: 'Journal' },
+  { id: 'm6', a: 36, z: 37, img: 'map-zoom', rect: [900, 560, 640], kick: 'Map' },
+  { id: 'm7', a: 37, z: 38, img: 'progress', rect: [960, 860, 760], kick: 'Acts' },
+  { id: 'm8', a: 38, z: 39, img: 'progress-100', rect: [960, 1180, 760], kick: '100%' },
+  { id: 'end', a: 39, z: 99, menu: true },
 ];
 const stage = document.getElementById('stage'), actors = document.getElementById('actors'), over = document.getElementById('over');
 const imgs = {};
@@ -159,35 +153,15 @@ for (const s of SCENES) {
   if (s.menu) s.el.append($('<div class="glow"></div>'), $('<div class="vign"></div>'));
   if (s.img) { s.page = pageImg(s.img); s.el.append(s.page); }
   if (s.over) { s.page2 = pageImg(s.over); s.el.append(s.page2); }
+  if (s.post) { s.page2 = pageImg(s.post); s.el.append(s.page2); }
   stage.append(s.el);
 }
 const OPEN = SCENES[0], END = SCENES[SCENES.length - 1], DROP = SCENES[1];
-const LIVE = SCENES.find((x) => x.live);
+const WAVES = SCENES.filter((x) => x.wave);
+const SAVE = SCENES.find((x) => x.fromFile);
 const FILE_ICON = '<svg width="26" height="32" viewBox="0 0 30 36" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 2h16l8 8v24H3z"/><path d="M19 2v8h8"/></svg>';
-LIVE.game = $(`<div class="lv-side lv-game"><div class="sup">In the game</div>
-  <div class="lv-rest"><div class="lamp"></div><div class="lv-crop"></div></div>
-  <div class="lv-file">${FILE_ICON}user1.dat</div><div class="lv-status">Resting</div></div>`);
-LIVE.site = $(`<div class="lv-side lv-site"><div class="sup">On the site</div>
-  <div class="lv-win"><div class="lv-bar"><i></i><i></i><i></i><span>pharloomcalculator.com</span></div>
-  <div class="lv-view"></div></div></div>`);
-LIVE.states = [0, 1].map((i) => { const im = pageImg('live' + i); LIVE.site.querySelector('.lv-view').append(im); return im; });
-// Each screen of the ripple, before (pre-*) and after the save.
-LIVE.screens = LIVE.ripple.map((v) => {
-  const pre = pageImg('pre-' + v), post = pageImg(v);
-  LIVE.site.querySelector('.lv-view').append(pre, post);
-  return { v, pre, post };
-});
-// Hornet on her bench, cut from the same card: the game's side changes bench first, the site follows.
-LIVE.benches = [0, 1].map((i) => { const im = pageImg('live' + i); LIVE.game.querySelector('.lv-crop').append(im); return im; });
-LIVE.sweep = $('<div class="lv-sweep"></div>'); LIVE.site.querySelector('.lv-view').append(LIVE.sweep);
-LIVE.plus = $('<div class="lv-plus"></div>'); LIVE.site.append(LIVE.plus);
-LIVE.plus2 = $('<div class="lv-plus"></div>'); LIVE.site.append(LIVE.plus2);
-// What the save added, where each screen shows it (page px): read from live.json, before and after.
-const GAINS = {
-  progress: { at: [1220, 420], text: (a, z) => `+${parseInt(z.pct, 10) - parseInt(a.pct, 10)}%` },
-  journal: { at: [600, 330], text: (a, z) => `+${parseInt(z.journal, 10) - parseInt(a.journal, 10)}` },
-};
-LIVE.el.append(LIVE.game, LIVE.site);
+const saved = $(`<div class="saved"><div class="file">${FILE_ICON}user1.dat</div><div class="st">Game saved</div></div>`);
+const FILE_AT = [W - 70 - 105, 60 + 30];        // the wave's start, in the frame: the file's middle
 let LIVE_PCT = [];
 const END_AT = END.a;
 
@@ -211,7 +185,7 @@ function place(x, feetY, alpha = 1) {
   hornet.style.opacity = alpha;
 }
 // Which clip and frame at time t: Fall until she lands, HardLand, a held last frame, then Challenge Strong, looping its tail.
-const FALL = 0, LAND = b(2), SLASH = b(4);
+const FALL = 0, LAND = b(1), SLASH = b(3);
 function hornetAt(t) {
   if (t < LAND) { const c = HM.clips.Fall, f = Math.floor((t - FALL) * c.fps); return ['Fall', f < c.n ? Math.max(0, f) : c.loopStart + (f - c.loopStart) % (c.n - c.loopStart)]; }
   const hl = HM.clips.HardLand, cs = HM.clips['Challenge Strong'];
@@ -240,7 +214,7 @@ const vign = $('<div class="layer vignette"></div>');
 over.append(vign, shade);
 for (const s of SCENES) {
   if (s.main) {
-    s.card = $(`<div class="card"><div class="sup">${s.sup}</div><div class="main">${s.main}</div></div>`);
+    s.card = $(`<div class="card${s.capTop ? ' is-top' : ''}"><div class="sup">${s.sup}</div><div class="main">${s.main}</div></div>`);
     const fl = crown(240); fl.classList.add('flourish'); s.card.append(fl); prime(s.card);
     over.append(s.card);
   }
@@ -248,7 +222,8 @@ for (const s of SCENES) {
 }
 const chip = $(`<div class="chip"><svg width="30" height="36" viewBox="0 0 30 36" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 2h16l8 8v24H3z"/><path d="M19 2v8h8"/></svg>user1.dat</div>`);
 const flash = $('<div class="layer flash"></div>'), black = $('<div class="layer black"></div>');
-over.append(chip, flash, black);
+const gainEl = $('<div class="gain"></div>');
+over.append(saved, gainEl, chip, flash, black);
 
 /* ── Particles: the menu's embers, the dust of her landing; seeded, so every render is the same ── */
 let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
@@ -271,6 +246,16 @@ function particles(t, amount, speed) {
     const a = amount * clamp(.3 + .7 * (y / H)) * (.55 + .45 * Math.sin(t * e.tw + e.tp));
     if (a > .01) ember(x, y, e.r, a);
   }
+  // Her drop: a few streaks of light above her.
+  if (t < LAND) {
+    const k = ramp(t, FALL, LAND), y = lerp(330, HY, k * k) - 330;
+    for (let i = 0; i < 7; i++) {
+      const x = HX - 70 + i * 23 + Math.sin(i * 7.3) * 8, len = 160 + 120 * Math.sin(i * 3.1) ** 2;
+      const g = ctx.createLinearGradient(x, y - len, x, y);
+      g.addColorStop(0, 'rgba(255,240,230,0)'); g.addColorStop(1, `rgba(255,240,230,${.18 + .3 * k})`);
+      ctx.strokeStyle = g; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(x, y - len); ctx.lineTo(x, y - 40); ctx.stroke();
+    }
+  }
   // Her landing: soft dust thrown out along the ground.
   const d = t - LAND;
   if (d > 0 && d < 2.4) {
@@ -292,97 +277,68 @@ function particles(t, amount, speed) {
   }
 }
 
-/* ── Live: each save travels along a thread from the file to the site, which catches up ── */
-const LV_RECT = [960, 430, 1160];                 // what the browser shows of the page (page px)
-const BENCH_RECT = [682, 462, 180];               // Hornet on her bench, on the card (page px)
-const LV_VIEW = { x: 640 + 1, y: 96 + 40 + 41, w: 1218, h: 860 - 42 };   // the view, in the frame
-const FILE_AT = [412, 613], WIN_AT = [640, 430];   // the thread's ends, in the frame
-const PULSE = .45;                                 // the save's trip along the thread, ending on the beat
-function threadPoint(k) {
-  const [x0, y0] = FILE_AT, [x1, y1] = WIN_AT, cx = 560, cy = 660;
-  const u = 1 - k; return [u * u * x0 + 2 * u * k * cx + k * k * x1, u * u * y0 + 2 * u * k * cy + k * k * y1];
-}
-function renderLive(t) {
-  const ups = LIVE.live.map(b);
-  const done = ups.filter((u) => t >= u).length;              // saves arrived
-  const view = LIVE.site.querySelector('.lv-view');
-  const s = LV_VIEW.w / LV_RECT[2];
-  LIVE.states.forEach((im, i) => {
-    im.style.transform = `translate(${LV_VIEW.w / 2 - LV_RECT[0] * s}px, ${LV_VIEW.h / 2 - LV_RECT[1] * s}px) scale(${s})`;
-    const since = i ? t - ups[i - 1] : 99;
-    im.style.opacity = i === done ? ease(clamp(since / .22)) : i < done ? 1 : 0;
-    im.style.zIndex = i;
-  });
-  // The ripple: every screen, one a beat, shown as it was and then repainted by the save.
-  const r0 = b(LIVE.rippleAt), cur = Math.floor((t - r0) / BEAT);
-  const SWAP = .28;
-  LIVE.screens.forEach((sc, i) => {
-    const on = i === cur, k = on ? ease(clamp((t - r0 - i * BEAT - SWAP) / .22)) : 0;
-    for (const im of [sc.pre, sc.post]) {
-      im.style.transform = `translate(${LV_VIEW.w / 2 - LV_RECT[0] * s}px, ${LV_VIEW.h / 2 - 410 * s}px) scale(${s})`;
-      im.style.zIndex = 10;
-    }
-    sc.pre.style.opacity = on ? 1 : 0;
-    sc.post.style.opacity = on ? k : 0;
-  });
-  const inRipple = cur >= 0 && cur < LIVE.screens.length;
-  const gain = inRipple && GAINS[LIVE.screens[cur].v], dg = t - r0 - cur * BEAT - SWAP;
-  if (gain && dg > 0 && LIVE_PCT.length > 1) {
-    const k = easeOut(clamp(dg / .25));
-    LIVE.plus2.textContent = gain.text(LIVE_PCT[0], LIVE_PCT[1]);
-    LIVE.plus2.style.opacity = k;
-    LIVE.plus2.style.left = `${(gain.at[0] - LV_RECT[0]) * s + LV_VIEW.w / 2 + 1}px`;
-    LIVE.plus2.style.top = `${(gain.at[1] - 410) * s + LV_VIEW.h / 2 + 18 + 40 + 41 - 30 * k}px`;
-    LIVE.plus2.style.transform = `scale(${lerp(1.4, 1, k)})`;
-  } else LIVE.plus2.style.opacity = 0;
-  LIVE.site.querySelector('.lv-bar span').textContent = 'pharloomcalculator.com' + (inRipple ? '/#view=' + LIVE.screens[cur].v : '');
-  // The game's side: her bench, switched as the game saves (before the file reaches the site).
-  const saved = ups.filter((u) => t >= u - PULSE - .35).length, bs = 440 / BENCH_RECT[2];
-  LIVE.benches.forEach((im, i) => {
-    im.style.transform = `translate(${220 - BENCH_RECT[0] * bs}px, ${170 - BENCH_RECT[1] * bs}px) scale(${bs})`;
-    const since = i ? t - (ups[i - 1] - PULSE - .35) : 99;
-    im.style.opacity = i === saved ? ease(clamp(since / .25)) : i < saved ? 1 : 0;
-    im.style.zIndex = i;
-  });
-  // The light that runs down the page as it repaints (on the save, and on each screen of the ripple), and the percent it gained.
-  const last = done ? ups[done - 1] : -99, d = t - last;
-  const dr = inRipple ? t - r0 - cur * BEAT - SWAP : -1;
-  const ds = dr >= 0 && dr < .5 ? dr / .5 : d >= 0 && d < .6 ? d / .6 : -1;
-  LIVE.sweep.style.opacity = ds >= 0 ? 1 : 0;
-  LIVE.sweep.style.zIndex = 20;
-  LIVE.sweep.style.top = `${lerp(-220, LV_VIEW.h, easeOut(clamp(ds)))}px`;
-  if (done && d < 1.6 && !inRipple && LIVE_PCT.length > done) {
-    LIVE.plus.textContent = `+${parseInt(LIVE_PCT[done].pct, 10) - parseInt(LIVE_PCT[done - 1].pct, 10)}%`;
-    const k = easeOut(clamp(d / .3));
-    LIVE.plus.style.opacity = k * (1 - ramp(d, 1.1, 1.6));
-    // Over "Your 100%" on the card (page px 540, 500), in the window's frame.
-    LIVE.plus.style.left = `${(540 - LV_RECT[0]) * s + LV_VIEW.w / 2 + 1}px`;
-    LIVE.plus.style.top = `${(500 - LV_RECT[1]) * s + LV_VIEW.h / 2 + 18 + 40 + 41 - 40 * k}px`;
-    LIVE.plus.style.transform = `scale(${lerp(1.4, 1, k)})`;
-  } else LIVE.plus.style.opacity = 0;
-  // The file: it glows as the game writes it, and says so.
-  const file = LIVE.game.querySelector('.lv-file'), status = LIVE.game.querySelector('.lv-status');
-  let glow = 0, saving = false;
-  for (const u of ups) { if (t > u - PULSE - .35 && t < u) saving = true; const dd = t - (u - PULSE - .35); if (dd > 0 && dd < 1.2) glow = Math.max(glow, Math.sin(Math.PI * clamp(dd / 1.2))); }
-  file.style.boxShadow = `0 0 ${10 + 40 * glow}px rgba(255,230,210,${.15 + .55 * glow})`;
-  file.style.borderColor = `rgba(241,235,220,${.5 + .5 * glow})`;
-  status.textContent = saving ? 'Game saved' : done ? 'Saved' : 'Resting';
-  LIVE.game.querySelector('.lamp').style.opacity = .6 + .4 * glow;
-  // The thread, and each save running along it.
+/* ── The save's wave: the page after it shows inside a circle growing from where it lands, and
+   every spot that really changed (pre and post compared, in ready()) lights up as it's reached ── */
+const WAVE_LEN = 1.1;                              // seconds for the wave to cross the page
+function waveOf(S, t, rect) {
+  const s = W / rect[2], toFrame = ([x, y]) => [W / 2 + (x - rect[0]) * s, H / 2 + (y - rect[1]) * s];
+  const toPage = ([x, y]) => [rect[0] + (x - W / 2) / s, rect[1] + (y - H / 2) / s];
+  const t0 = b(S.wave), d = t - t0;
+  const o = S.fromFile ? toPage(FILE_AT) : S.origin || S.spots[0] && S.spots[0].c || [rect[0], rect[1]];
+  const reach = Math.hypot(1920, 2400);
+  const R = d <= 0 ? 0 : reach * easeIn(clamp(d / (WAVE_LEN * 2.2))) + reach * .45 * clamp(d / WAVE_LEN) ;
+  const m = `radial-gradient(circle at ${o[0]}px ${o[1]}px, #000 ${Math.max(0, R - 40)}px, transparent ${R + 40}px)`;
+  S.page2.style.webkitMaskImage = S.page2.style.maskImage = d <= 0 ? 'radial-gradient(circle, transparent 0, transparent 1px)' : m;
+  if (d <= 0) return;
+  // The wave's edge.
+  const [fx, fy] = toFrame(o), fr = R * s;
   ctx.save();
-  ctx.lineWidth = 1.5; ctx.strokeStyle = 'rgba(246,246,246,.28)';
-  ctx.beginPath(); for (let i = 0; i <= 40; i++) { const [x, y] = threadPoint(i / 40); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); } ctx.stroke();
-  for (const u of ups) {
-    const k = ramp(t, u - PULSE, u);
-    if (k <= 0 || k >= 1) continue;
-    const kk = easeIn(k) * .6 + k * .4;
-    ctx.lineWidth = 2.5; ctx.strokeStyle = 'rgba(255,250,245,.85)'; ctx.shadowColor = 'rgba(255,240,225,.9)'; ctx.shadowBlur = 14;
-    ctx.beginPath(); for (let i = 0; i <= 20; i++) { const [x, y] = threadPoint(Math.max(0, kk - .25) + (i / 20) * Math.min(.25, kk)); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); } ctx.stroke();
-    const [x, y] = threadPoint(kk);
-    const g = ctx.createRadialGradient(x, y, 0, x, y, 22); g.addColorStop(0, 'rgba(255,255,255,1)'); g.addColorStop(.3, 'rgba(255,236,220,.7)'); g.addColorStop(1, 'rgba(255,236,220,0)');
-    ctx.shadowBlur = 0; ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, 22, 0, 6.283); ctx.fill();
+  if (d < WAVE_LEN * 1.6) {
+    ctx.lineWidth = 3; ctx.strokeStyle = `rgba(255,246,236,${.8 * (1 - clamp(d / (WAVE_LEN * 1.6)))})`;
+    ctx.shadowColor = 'rgba(255,230,210,.9)'; ctx.shadowBlur = 24;
+    ctx.beginPath(); ctx.arc(fx, fy, fr, 0, 6.283); ctx.stroke();
+  }
+  // Each change, lit as the wave reaches it.
+  ctx.shadowBlur = 0;
+  for (const p of S.spots) {
+    const hitAt = Math.hypot(p.c[0] - o[0], p.c[1] - o[1]), dd = R >= hitAt ? (R - hitAt) / (reach * .7) : -1;
+    if (dd < 0) continue;
+    const k = clamp(dd * 2.2);
+    if (k >= 1) continue;
+    const [px, py] = toFrame(p.c), pr = (p.r + 10) * s;
+    const g = ctx.createRadialGradient(px, py, 0, px, py, pr * 1.6);
+    g.addColorStop(0, `rgba(255,244,230,${.35 * (1 - k)})`); g.addColorStop(1, 'rgba(255,244,230,0)');
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(px, py, pr * 1.6, 0, 6.283); ctx.fill();
+    ctx.lineWidth = 2.5 * (1 - k) + .5; ctx.strokeStyle = `rgba(255,248,240,${.9 * (1 - k)})`;
+    ctx.beginPath(); ctx.arc(px, py, pr * (1 + k * .8), 0, 6.283); ctx.stroke();
   }
   ctx.restore();
+}
+// Where two shots of a page differ: blocks of changed pixels, joined, biggest first (page px).
+function changes(a, z) {
+  const k = 4, w = 1920 / k, h = Math.round(a.naturalHeight / a.naturalWidth * 1920 / k);
+  const px = (img) => { const c = document.createElement('canvas'); c.width = w; c.height = h; const g = c.getContext('2d'); g.drawImage(img, 0, 0, w, h); return g.getImageData(0, 0, w, h).data; };
+  const A = px(a), Z = px(z), B = 6, bw = Math.ceil(w / B), bh = Math.ceil(h / B), hot = new Uint16Array(bw * bh);
+  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+    const i = (y * w + x) * 4;
+    if (Math.abs(A[i] - Z[i]) + Math.abs(A[i + 1] - Z[i + 1]) + Math.abs(A[i + 2] - Z[i + 2]) > 70) hot[Math.floor(y / B) * bw + Math.floor(x / B)]++;
+  }
+  const seen = new Uint8Array(bw * bh), spots = [];
+  for (let i = 0; i < bw * bh; i++) {
+    if (seen[i] || hot[i] < 3) continue;
+    const stack = [i]; seen[i] = 1; let n = 0, x0 = 1e9, y0 = 1e9, x1 = 0, y1 = 0;
+    while (stack.length) {
+      const j = stack.pop(), x = j % bw, y = Math.floor(j / bw); n++;
+      x0 = Math.min(x0, x); y0 = Math.min(y0, y); x1 = Math.max(x1, x); y1 = Math.max(y1, y);
+      for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
+        const nx = x + dx, ny = y + dy, nj = ny * bw + nx;
+        if (nx >= 0 && ny >= 0 && nx < bw && ny < bh && !seen[nj] && hot[nj] >= 3) { seen[nj] = 1; stack.push(nj); }
+      }
+    }
+    const u = B * k;   // a block, in page px
+    spots.push({ n, c: [(x0 + x1 + 1) / 2 * u, (y0 + y1 + 1) / 2 * u], r: Math.min(140, Math.max(x1 - x0 + 1, y1 - y0 + 1) * u / 2) });
+  }
+  return spots.sort((p, q) => q.n - p.n);
 }
 
 /* ── One frame ───────────────────────────────────────────────────────── */
@@ -404,7 +360,8 @@ function render(t) {
       : S.from.map((v, i) => lerp(v, S.to[i], sine(ramp(t, S.t0, S.t1))));
     const punch = cutPunch;
     camera(S.page, r, punch);
-    if (S.page2) { camera(S.page2, r, punch); S.page2.style.opacity = ease(ramp(t, b(S.swap), b(S.swap) + .3)); }
+    if (S.page2) { camera(S.page2, r, punch); S.page2.style.opacity = S.wave ? 1 : ease(ramp(t, b(S.swap), b(S.swap) + .3)); }
+    S.rectNow = r.map((v, i) => (i === 2 ? v / (1 + punch) : v));
     S.page.style.filter = S.kick ? 'brightness(.55) saturate(.9)' : '';
   }
 
@@ -418,7 +375,7 @@ function render(t) {
     OPEN.el.querySelector('.glow').style.opacity = .35 + .45 * ease(ramp(t, 0, LAND)) + .3 * Math.exp(-Math.max(0, t - LAND) / .5) * (t > LAND);
     if (t >= FALL) {
       const [clip, f] = hornetAt(t); pose(clip, f);
-      const y = t < LAND ? lerp(150, HY, Math.pow(ramp(t, FALL, LAND), 2)) : HY;   // in the frame from the first frame, gathering speed
+      const y = t < LAND ? lerp(330, HY, Math.pow(ramp(t, FALL, LAND), 2)) : HY;   // in the frame from the first frame, dropping fast
       place(HX, y);
     }
     if (t > LAND) {
@@ -448,8 +405,32 @@ function render(t) {
     step(b(2), b(2) + .7, T2.querySelector('.facts'));
     step(b(3), b(3) + .7, legal);
   }
-  particles(t, S === LIVE ? .45 : S.menu ? 1 : .3, S === OPEN && t < LAND ? 1.8 : 1);
-  if (S === LIVE) renderLive(t);
+  particles(t, S.menu ? 1 : .3, S === OPEN && t < LAND ? 2.4 : 1);
+  if (S.wave) waveOf(S, t, S.rectNow);
+  // The game saving, in the corner: its file shows, glows as the save lands, and the wave starts there.
+  if (S === SAVE) {
+    const w0 = b(S.wave), k = easeOut(ramp(t, S.t0 + .15, S.t0 + .45));
+    const glow = Math.exp(-Math.abs(t - w0) / .25);
+    saved.style.opacity = k * (1 - ramp(t, S.t1 - .3, S.t1));
+    saved.style.transform = `translateY(${(1 - k) * -16}px)`;
+    saved.querySelector('.file').style.boxShadow = `0 0 ${10 + 50 * glow}px rgba(255,236,220,${.15 + .7 * glow})`;
+    saved.querySelector('.file').style.borderColor = `rgba(241,235,220,${.55 + .45 * glow})`;
+    saved.querySelector('.st').textContent = t < w0 - .4 ? 'Playing' : 'Game saved';
+  } else saved.style.opacity = 0;
+  // What the save added, where the page shows it, read from live.json (before and after).
+  gainEl.style.opacity = 0;
+  if (S.gain && LIVE_PCT.length > 1) {
+    const d = t - b(S.wave) - .35;
+    if (d > 0) {
+      const g = S.gain, rr = S.rectNow, sc = W / rr[2], k = easeOut(clamp(d / .3));
+      gainEl.textContent = g.of === 'found' ? `${S.found} found` : `+${parseInt(LIVE_PCT[1][g.of], 10) - parseInt(LIVE_PCT[0][g.of], 10)}${g.unit}`;
+      gainEl.style.opacity = k * (1 - ramp(t, S.t1 - .3, S.t1));
+      const at = g.near ? [S.origin[0] + g.near[0], S.origin[1] + g.near[1]] : g.at;
+      gainEl.style.left = `${W / 2 + (at[0] - rr[0]) * sc}px`;
+      gainEl.style.top = `${H / 2 + (at[1] - rr[1]) * sc - 70 - 30 * k}px`;
+      gainEl.style.transform = `scale(${lerp(1.5, 1, k)})`;
+    }
+  }
 
   // Captions, slammed in on the cut.
   let shadeOn = 0;
@@ -466,6 +447,7 @@ function render(t) {
     shadeOn = 1;
   }
   shade.style.opacity = shadeOn;
+  shade.classList.toggle('is-top', !!S.capTop);
   for (const s of SCENES) if (s.kickEl) {
     const on = s === S, k = easeOut(ramp(since, 0, .16));
     s.kickEl.style.opacity = on ? k : 0;
@@ -493,6 +475,12 @@ window.ready = (async () => {
   LIVE_PCT = await (await fetch(BASE + 'shots/live.json')).json();
   const sheets = Object.values(HM.clips).map((c) => { const i = new Image(); i.src = `${BASE}hornet/${c.file}`; return i.decode(); });
   await Promise.all([document.fonts.ready, ...sheets, ...[...document.images].map((i) => i.decode())]);
+  // The Map's: no pixels compared (its marks shift as others go), its own marks read by make.js.
+  const MK = await (await fetch(BASE + 'shots/map-marks.json')).json();
+  for (const S of WAVES) {
+    if (S.marks) { S.origin = MK.to; S.spots = MK.gone.map((g) => ({ c: g.at, r: 16, n: 1 })); S.found = MK.gone.length; }
+    else S.spots = changes(S.page, S.page2).filter((p) => p.n >= 2).slice(0, 16);
+  }
   render(0);
   return true;
 })();
