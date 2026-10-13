@@ -1747,11 +1747,12 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 }
 /* Locked: the lock ring in the slot colour's grey, the slot at half opacity (InventoryToolCrestSlot). */
 .ct-slot.is-locked .ct-g { background: var(--slot-lock); opacity: var(--slot-lock-opacity); }
+/* A worn Tool sits clean in its ring, with no glow behind it, as the game's pane draws it. */
 .ct-slot.is-full { cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .ct-slot img {
   position: absolute; left: calc(50% + var(--ix) * var(--k)); top: calc(50% - var(--iy) * var(--k));
   width: calc(var(--k) * var(--iw)); height: calc(var(--k) * var(--ih)); max-width: none; object-fit: contain;
-  transform: translate(-50%, -50%); filter: drop-shadow(0 0 6px color-mix(in oklab, var(--c) 55%, transparent)); transition: transform var(--dur) var(--ease);
+  transform: translate(-50%, -50%); transition: transform var(--dur) var(--ease);
 }
 .ct-slot.is-full:is(:hover, :focus-visible) { outline: none; }
 .ct-slot.is-full:is(:hover, :focus-visible) img { transform: translate(-50%, -50%) scale(1.1); }
