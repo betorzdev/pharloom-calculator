@@ -181,6 +181,7 @@
         </div>
         <button type="button" class="text-btn mh-link" data-act="share" title="${esc(t('shareHint'))}">${esc(t('share'))}</button>
       </div>
+      ${App.sister ? App.sister.linkHtml() : ''}
       <a class="brand" href="${here(hashFor('home'))}" data-act="view" data-value="home" title="${esc(t('goHome'))}">
         ${CROWN}
         <p class="title">${esc(t('title'))}<span class="mh-beta">${esc(t('betaTag'))}</span></p>
@@ -421,6 +422,7 @@
     showScreen();
     restoreFocus(focus);
     if (App.hornet) safely('hornet', () => App.hornet.sync());   // Hornet takes her place on what was just painted (js/app-hornet.js)
+    if (App.sister) safely('sister', () => App.sister.sync());   // and the Knight on the sister site's link (js/app-sister.js)
   }
 
   /* ── Switching screens ───────────────────────────────────────────────── */

@@ -38,6 +38,16 @@ the new one, at a steady pace, with her own frames from the game (the Run clip, 
 She's decoration: hidden from screen readers and out of the tab order. With reduced motion she
 only sits, placed straight under the tab. Click her and she binds.
 
+Above the language and Share, on the crown's row, **«Hollow Knight ↗»** goes to the sister site,
+[Hallownest Calculator](https://hallownestcalculator.com/) (`../hollownest-calculator`), in your
+language and in a new tab; on a phone it's on its own line under the title. The Knight stands on
+the word (`js/app-sister.js`, css `.mh-sister`, `.sis-*`), as Hornet stands on «Silksong ↗» there:
+no arrival, he's simply there (Albert, 13 Oct 2026), breathing (the game's Idle at a third of its
+speed, there and back). Every 15–25 s (header in view, tab visible) his cloak stirs in the wind, he
+looks up, reads his map or focuses soul in a white light; he turns to the mouse over the header and
+looks up while it's on the link. A click counts as `sister`, as on the sibling. With reduced motion
+he only stands. He's decoration: hidden from screen readers, never under the pointer.
+
 ### Saves
 
 Four saves, as the game's profile screen, and **Free mode** (nobody's game: where the site
@@ -780,6 +790,10 @@ texts and names are © Team Cherry; they're used here only to show the game's ow
 - **Hornet's frames**: running, sitting and standing, extracted from the installed game's own
   sprites by `tools/extract-hornet.py` (`assets/hornet/run.png`, `sit.png`, `stand.png`), shown
   as the rest of the sprites, as a fan project.
+- **The Knight's frames** (on the sister site's link): ten moves (idle, wind, look up, map, focus…)
+  extracted from Hollow Knight's own sprites by `tools/extract-knight.py` (`assets/knight/`,
+  `js/knight-moves.js`; the game's MonoBehaviours carry no type trees, so it reads them through
+  its `Managed/*.dll` with TypeTreeGeneratorAPI), shown as a fan project.
 - **The benches**: which bench each room has, read from the installed game's files by
   `tools/extract-benches.py` (`js/benches.js`); their pictures are the wiki's
   (`assets/benches/`, `npm run art`).
