@@ -31,8 +31,9 @@
   .vignette { background: radial-gradient(ellipse 75% 75% at 50% 50%, transparent 55%, rgba(0,0,0,.55) 100%); pointer-events: none; }
 
   .hornet { position: absolute; background-repeat: no-repeat; transform-origin: 0 0; }
-  .ground { position: absolute; height: 2px; background: var(--filigree); transform-origin: 50% 50%;
-    box-shadow: 0 0 8px 1px rgba(255,255,255,.8), 0 0 30px 6px rgba(255,220,200,.25); }
+  /* A pool of light under her feet, not a floor: it opens as she lands and stays, faint. */
+  .ground { position: absolute; width: 900px; height: 120px; transform-origin: 50% 50%;
+    background: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(255,226,206,.42) 0%, rgba(240,170,140,.16) 40%, rgba(240,170,140,0) 100%); }
 
   .title { position: absolute; left: 0; right: 0; text-align: center; }
   .title .crown { color: var(--filigree); display: block; margin: 0 auto; }
@@ -221,18 +222,17 @@ function particles(t, amount, speed) {
     const a = amount * clamp(.3 + .7 * (y / H)) * (.55 + .45 * Math.sin(t * e.tw + e.tp));
     if (a > .01) ember(x, y, e.r, a);
   }
-  // Her landing: dust along the ground, a ring, sparks.
+  // Her landing: soft dust thrown out along the ground.
   const d = t - LAND;
   if (d > 0 && d < 2.4) {
     for (const p of DUST) {
       const k = d / p.life; if (k >= 1) continue;
-      const x = HX + p.dir * (40 + p.v * (1 - Math.exp(-d * 3)) / 3), y = HY - p.up * Math.sin(Math.PI * clamp(k * .9)) * .35 - 6;
-      ctx.fillStyle = `rgba(225,212,200,${.38 * (1 - k)})`;
-      ctx.beginPath(); ctx.arc(x, y, p.r * (1 + k * 2.5), 0, 6.283); ctx.fill();
+      const x = HX + p.dir * (40 + p.v * (1 - Math.exp(-d * 3)) / 3), y = HY - p.up * Math.sin(Math.PI * clamp(k * .9)) * .3 - 8;
+      const r = p.r * .7 * (1 + k * 3), a = .22 * (1 - k);
+      const g = ctx.createRadialGradient(x, y, 0, x, y, r);
+      g.addColorStop(0, `rgba(230,214,202,${a})`); g.addColorStop(1, 'rgba(230,214,202,0)');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, r, 0, 6.283); ctx.fill();
     }
-    const k = easeOut(clamp(d / .7));
-    ctx.strokeStyle = `rgba(255,240,230,${.7 * (1 - k)})`; ctx.lineWidth = 3 * (1 - k) + .5;
-    ctx.beginPath(); ctx.ellipse(HX, HY, 40 + 900 * k, 10 + 70 * k, 0, 0, 6.283); ctx.stroke();
   }
   // The title's landing: sparks out from the centre.
   const e = t - b(END_AT);
@@ -280,10 +280,10 @@ function render(t) {
       place(HX, y);
     }
     if (t > LAND) {
-      const k = easeOut(ramp(t, LAND, LAND + .5));
-      ground.style.opacity = .9 - .5 * ramp(t, LAND + .5, LAND + 2);
-      ground.style.width = '1500px'; ground.style.left = (W / 2 - 750) + 'px'; ground.style.top = (HY - 1) + 'px';
-      ground.style.transform = `scaleX(${k})`;
+      const k = easeOut(ramp(t, LAND, LAND + .45));
+      ground.style.opacity = 1 - .55 * ramp(t, LAND + .3, LAND + 1.8);
+      ground.style.left = (HX - 450) + 'px'; ground.style.top = (HY - 60) + 'px';
+      ground.style.transform = `scale(${lerp(.25, 1, k)}, ${lerp(.4, 1, k)})`;
     }
     // The title: cut open by the arc of her needle, from the middle out, on beat 6.
     const ks = easeOut(ramp(t, SLASH - .05, SLASH + .2));
