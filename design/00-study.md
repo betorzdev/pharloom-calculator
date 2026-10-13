@@ -1504,6 +1504,40 @@ bools and two more lifts' ints. Eleven rosary and shard pickups are set in none 
 (present and false in all three games: Bone_East_01's sits under a "Demo Gate", Under_17's under
 the Architect's final scene); they stay, unproven.
 
+**The road to Act 3, audited** (13 October). The rules (`js/quests.js`) were extracted again from
+the installed game: unchanged. Then each step against the game's FSMs, the wiki (Acts, Silk and
+Soul, the four pieces, Bellhome Key, Flea Caravan, Endings) and the popular guides (PCGamesN,
+Dexerto, Nintendo Life, allthings.how, gameshorizon; no Game8 or IGN page came up):
+- **The offer was ticked when only offered.** The Caretaker's FSM (Enclave Caretaker, Dialogue)
+  sets CaretakerOfferedSnareQuest as he offers, before the answer: turned down, the wish isn't
+  taken and his family's souls aren't given. The step is now the wish accepted: Soul Snare begun,
+  which completes Soul Snare Pre (a step begun completes the one before it in every one of the
+  72 saves); offered and turned down says to talk to him again.
+- **Your game and Progress counted the step apart** (12 of 15 against 28 of 31): Your game now
+  counts as Progress's card (`App.roadNow`).
+- **What makes each row actionable**, all from the game: each quest's `location` line («Creige of
+  the Halfway Home», `tools/extract-quests.py` → CHAIN `loc`), a pin to the Wishwall or the giver
+  on the Map, the area it's taken in when the pane has none (Trail's End, Roach Guts). The caravan
+  says its stop and the fleas: Mooshka's FSM at the Blasted Steps moves on with 22 Fleas Saved and
+  SeenFleatopiaEmpty (the empty Pale Lake); its stop there is the Last Judge's arena, so the Phantom's
+  way still needs the Judge. The pieces: the Chapel Maid's and the Bell Hermit's souls only once
+  accepted, the Seeker's Soul past Groal, the Snare Setter behind the Faydown Cloak, each with its
+  Map pin. What posts the late required wishes (Shakra's 14 maps, counted, for Trail's End; Sherma
+  and the Whiteward; Songclave grown by 3 more of its wishes; the Needle and a relic for
+  Restoration of Bellhart; the Cogwork Dancers or the Clawline for Bellhart's Glory), each checked
+  against the saves. Pinmaster's Oil counts with Plinney's second Needle upgrade, wish or not (the
+  Steel Soul game has it complete and never accepted). The last step says the Needolin, not a Bind;
+  in Act 3, the Act 2 endings never seen are closed in that game.
+- **The guides, where they're wrong:** "every wish" (it's 10 required and 17 of 25 points);
+  "20" or "25 fleas" (22 at the last stop, and the Pale Lake seen); "fix the Second Sentinel"
+  (its wishes are optional points); "the Bellhome after buying Shakra's maps" (that's Trail's End;
+  the key is Bellhart's Glory and 2 of Pavo's four). None names the Faydown Cloak or Lace in the
+  Cradle, which the game requires. Where they're right and the site was silent: the Chapel Maid
+  and the Bell Hermit give their souls only once the wish is taken.
+- `npm run check-pack` now prints the step each save is on and fails if a later save of a game
+  undoes a step of either road: none of the 72 does; every Act 3 save meets the road, no earlier
+  one shows it done.
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).

@@ -218,33 +218,85 @@
   const SNARE_AREA = { 'Snare Soul Churchkeeper': 'BONEBOTTOM', 'Snare Soul Bell Hermit': 'BELLHART',
     'Snare Soul Swamp Bug': 'SHADOW', 'Silk Snare': 'WEAVE_PRIME' };
   const wishName = (q) => pick(QU.CHAIN[q].name);
-  /* The room a wish is taken in (js/quests.js FROM, the game's): its Wishwall, or else the NPC
-     who offers it. A wish after another (prev) is taken where the first one not done yet is: the
-     board's Pre, then the NPC it sends you to. */
-  function wishScene(quest, done) {
+  const personName = (id) => { const p = SS.people && SS.people.PEOPLE.find((x) => x.id === id); return p ? pick(p.name) : id; };
+  /* How each piece is had (the wiki's pages and the Caretaker's FSM): his sister and his uncle give
+     theirs only once the wish is accepted; the Seeker's Soul lies past Groal the Great; the Snare
+     Setter past a ledge only the Faydown Cloak reaches (js/spots.js NEEDS). And its mark on the
+     Map: a soul's (js/spots.js TASKS, what the wish asks for), the Snare Setter's as a Tool's. */
+  const SNARE_HOW = {
+    'Snare Soul Churchkeeper': () => t('roadPieceGiven', { npc: personName('churchkeeper') }),
+    'Snare Soul Bell Hermit': () => t('roadPieceGiven', { npc: personName('bell-hermit') }),
+    'Snare Soul Swamp Bug': () => t('roadPieceAfter', { foe: foeName('groal-the-great') }),
+    'Silk Snare': () => t('roadPieceNeeds', { art: artName('faydown-cloak') }),
+  };
+  function snareMark(x) {
+    if (x.kind === 'tool') { const id = Object.keys(CO.TOOLS).find((k) => CO.TOOLS[k].includes(x.save)); return id ? 'tools:' + id : null; }
+    const held = JSON.stringify(['held', x.save]);
+    const i = SS.spots ? SS.spots.TASKS.findIndex((k) => k[0] === 'qitem' && JSON.stringify(k[2]).includes(held)) : -1;
+    return i >= 0 ? 'task:' + i : null;
+  }
+  const snareRow = (x) => ({ name: pick(x.name), got: x.ok, act: 2, area: SNARE_AREA[x.save] || null,
+    how: SNARE_HOW[x.save] ? SNARE_HOW[x.save]() : '', mark: snareMark(x) });
+  /* Where a wish is taken (js/quests.js FROM, the game's): its Wishwall, or else the NPC who offers
+     it, as a room and as the Map's mark there (js/app-map.js: board:, giver:). A wish after another
+     (prev) is taken where the first one not done yet is: the board's Pre, then the NPC it sends you to. */
+  function wishFrom(quest, done) {
     let q = quest;
     while (q && QU.CHAIN[q] && QU.CHAIN[q].prev && !done.has(QU.CHAIN[q].prev)) q = QU.CHAIN[q].prev;
-    const f = (q && QU.FROM[q]) || {};
-    return f.board || (f.npc || [])[0] || null;
+    const f = (q && QU.FROM[q]) || QU.FROM[quest] || {};
+    const scene = f.board || (f.npc || [])[0] || null;
+    return { scene, mark: scene ? (f.board ? 'board:' : 'giver:') + scene.toLowerCase() : null };
   }
+  const wishScene = (quest, done) => wishFrom(quest, done).scene;
+  // The game's line under a wish's title (js/quests.js CHAIN loc: who asks for it, or where); a
+  // step with none takes the one of the stage before it.
+  const wishLoc = (q) => { for (let x = q; x && QU.CHAIN[x]; x = QU.CHAIN[x].prev) if (QU.CHAIN[x].loc) return pick(QU.CHAIN[x].loc); return ''; };
+  /* What posts a required wish later than the rest, and what the point of Pinmaster's Oil also
+     comes with (the wiki: the second Needle upgrade grants it, wish or not; the author's Steel
+     Soul save has it complete, never accepted). Shown while the wish isn't done. Shakra's maps are
+     the ones she sells (js/spots.js EXTRAS), counted in a save. */
+  const SHAKRA_MAPS = SS.spots ? SS.spots.EXTRAS.filter((x) => x[0] === 'map' && x[5] && x[5].shop === 'shakra').map((x) => x[2][1].slice(3, -3)) : [];
+  const OPENS = {
+    'Shakra Final Quest': (g) => [t('roadOpensShakra', { npc: pick(HW.NPCS.shakra), art: artName('faydown-cloak') }),
+      g ? t('roadMapsBought', { n: num(SHAKRA_MAPS.filter((m) => (g.maps || []).includes(m)).length), of: num(SHAKRA_MAPS.length) }) : ''],
+    'Save Sherma': () => [t('roadOpensSherma', { npc: personName('sherma'), clave: areaName('ENCLAVE'), ward: areaName('WARD') })],
+    'Songclave Donation 2': () => [t('roadOpensClave', { clave: areaName('ENCLAVE'), first: wishName('Songclave Donation 1') })],
+    'Belltown House Start': () => [t('roadOpensTown', { npc: t('mapScrounge'), pavo: personName('bellhart-greeter') })],
+    'Belltown House Mid': () => [t('roadOpensGlory', { foe: foeName('cogwork-dancers'), art: artName('clawline') })],
+    'A Pinsmiths Tools': () => [t('roadPinOil', { npc: pick(HW.NPCS.plinney) })],
+  };
   // A wish's quest (js/collectibles.js WISHES check): its own, or the first of several.
   const wishQuest = (w) => (w[2][0] === 'quest' ? w[2][1] : w[2][0] === 'any' ? (w[2].slice(1).find((c) => c[0] === 'quest') || [])[1] : null);
   // The three melodies the Cradle's way asks for (the pieces of kind 'melody').
   const melodies = (g) => (g ? CO.PIECES.filter((p, i) => p[0] === 'melody' && g.pieces.includes(i)).length : 0);
 
-  /* A wish of a group as a row: its Act and area (the pane's, js/collectibles.js WISHES), the room
-     it's taken in, half a point when it's worth that, and the wishes to do before it. */
-  function wishRow(x, got, done) {
+  /* A wish of a group as a row: its Act and area (the pane's, js/collectibles.js WISHES; with none
+     there, the area it's taken in), the room it's taken in and its mark on the Map, who asks for it
+     (the game's line) and what posts it, half a point when it's worth that, and the wishes to do before it. */
+  function wishRow(x, got, done, g) {
     const w = x.wish >= 0 ? CO.WISHES[x.wish] : null;
     const runt = HW.TRAPS.find((r) => r.id === 'broodfeast-runt');
+    const from = wishFrom(x.quest, done);
     const sub = [x.value === 0.5 ? t('roadHalf') : '', !got && x.before.length ? t('roadBefore', { name: x.before.map(wishName).join(', ') }) : '',
       !got && runt && x.quest === runt.counts ? t('roadRunt') : ''];
-    return { name: x.name ? pick(x.name) : w ? pick(w[4]) : x.quest, got, act: w ? w[1] : 0, area: w ? w[3] : null, scene: wishScene(x.quest, done), sub, wish: x.wish };
+    const how = got ? '' : [wishLoc(x.quest), ...(OPENS[x.quest] ? OPENS[x.quest](g) : [])].filter(Boolean).join(' · ');
+    return { name: x.name ? pick(x.name) : w ? pick(w[4]) : x.quest, got, act: w ? w[1] : 0, area: (w && w[3]) || (from.scene && R.areaOf(from.scene)) || null,
+      scene: from.scene, mark: from.mark, sub, how, wish: x.wish };
   }
   function groupRows(name, g, required) {
     const done = new Set(g ? g.quests : []);
     return QU.GROUPS[name].quests.filter((q) => q.required === required)
-      .map((q) => wishRow(A.missing(q.quest, done, required ? undefined : q.value), done.has(q.quest), done)).sort(byAct);
+      .map((q) => wishRow(A.missing(q.quest, done, required ? undefined : q.value), done.has(q.quest), done, g)).sort(byAct);
+  }
+  /* The caravan, while it isn't in Fleatopia (js/acts.js): the fleas rescued and its stop now, what
+     its last move asks (the empty Pale Lake seen), and on the Phantom's way, the Last Judge (the
+     stop after Greymoor is the Judge's arena). Without a save, the rule. */
+  const STOP = ['BONEFOREST', 'GREYMOOR', 'CORAL_STEPS'];
+  function caravanHow(c, g) {
+    const lake = t('roadCaravanLake', { lake: t('roadPaleLake'), ducts: areaName('AQUEDUCTS') });
+    if (!g || !c) return [t('roadCaravanRule', { need: num(A.FLEAS), npc: pick(HW.NPCS.mooshka) }), lake].join(' · ');
+    return [t('roadCaravanHow', { n: num(c.fleas), need: num(c.need), npc: pick(HW.NPCS.mooshka), at: areaName(STOP[c.at]) }),
+      c.at === 2 ? lake : '', c.at < 2 && !g.lastJudge ? t('roadCaravanJudge', { steps: areaName('CORAL_STEPS'), judge: foeName('last-judge') }) : ''].filter(Boolean).join(' · ');
   }
   // met: a part already fulfilled (enough points) shows its rows only with Everything.
   const list = (rows, g, met) => {
@@ -284,7 +336,7 @@
     const key = test('bellhomeKey').key;
     const fay = CO.WHERE.arts['faydown-cloak'] || [];
     return [
-      { name: t('roadCaravan'), got: test('caravan').ok, icon: 'assets/benches/caravan.png' },
+      { name: t('roadCaravan'), got: test('caravan').ok, icon: 'assets/benches/caravan.png', how: test('caravan').ok ? '' : caravanHow(test('caravan').caravan, g) },
       { name: artName('faydown-cloak'), got: test('doubleJump').ok, act: fay[0], area: fay[1], icon: 'assets/icons/arts/faydown-cloak.webp', mark: 'arts:faydown-cloak' },
       { name: t('roadLace'), got: test('laceTower').ok, act: 2, area: 'CRADLE', icon: PORTRAIT('lace'),
         how: test('laceTower').ok ? '' : t('roadMelodies', { n: num(melodies(g)) }) },
@@ -300,21 +352,22 @@
     const required = groupRows('Soul Snare', g, true), points = groupRows('Soul Snare', g, false);
     const test = (id) => unlock.tests.find((x) => x.id === id);
     const key = test('bellhomeKey').key;
-    const checks = checkRows(unlock, g).map(({ icon, mark, how, ...x }) => ({ ...x, sub: [how] }));
+    // What each check still asks goes under its name, as in the Act tab (a long one doesn't fit by the area).
+    const checks = checkRows(unlock, g).map(({ icon, ...x }) => x);
     // The key's own rule, while it isn't there: Bellhart's Glory, then 2 of the group's wishes.
-    const keyRows = [wishRow(key.gloryQuest, key.glory, new Set(g ? g.quests : [])), ...groupRows('Belltown House Key', g, false)];
+    const keyRows = [wishRow(key.gloryQuest, key.glory, new Set(g ? g.quests : []), g), ...groupRows('Belltown House Key', g, false)];
     const keyPart = g && !test('bellhomeKey').ok && !key.ready
       ? subHead(t('roadKeyHead', { key: t('roadKey') }), (key.glory ? 1 : 0) + Math.min(key.got, key.need), 1 + key.need, g) + list(keyRows, g) : '';
     const unlockBody = subHead(t('roadRequired'), unlock.required.done, unlock.required.total, g) + list(required, g, !unlock.required.missing.length)
       + subHead(t('roadPoints', { n: num(rule.target), max: num(unlock.points.max) }), unlock.points.got, unlock.points.need, g)
       + `<p class="pg-note">${esc(t('roadPointsNote'))}</p>` + list(points, g, unlock.points.got >= unlock.points.need)
       + subHead(t('roadChecks'), unlock.tests.filter((x) => x.ok).length, unlock.tests.length, g) + list(checks, g) + keyPart;
-    const snare = pieces.pieces.map((x) => ({ name: pick(x.name), got: x.ok, act: 2, area: SNARE_AREA[x.save] || null }));
+    const snare = pieces.pieces.map(snareRow);
     return [
       step(1, unlock, t('roadUnlock', { wish }), unlockBody, g),
-      step(2, offer, t('roadOffer', { wish, caretaker: t('roadCaretaker'), town: areaName('BELLHART'), clave: areaName('ENCLAVE') }), '', g),
+      step(2, offer, t('roadOffer', { wish, caretaker: t('roadCaretaker'), clave: areaName('ENCLAVE') }), `<p class="pg-note">${esc(offerNote(offer, g))}</p>`, g),
       step(3, pieces, t('roadPieces'), list(snare, g), g),
-      step(4, ready, t('roadReady', { caretaker: t('roadCaretaker') }), '', g),
+      step(4, ready, t('roadReady', { caretaker: t('roadCaretaker'), clave: areaName('ENCLAVE') }), '', g),
       step(5, silk, t('roadSilk'), `<p class="pg-note">${esc(t('roadSilkNote'))}</p>`, g),
     ];
   }
@@ -392,7 +445,7 @@
     const part = (id, label, icon, got, of, goal, rows) => ({ id, label, icon, got: Math.min(got, of), of, rows,
       note: [goal, got < of ? t('roadLeft', { n: pts(of - got) }) : ''].filter(Boolean).join(' ') });
     // A wish's picture is its type's emblem; what it waits for goes under its name.
-    const wishes = (rows) => rows.map(({ sub, ...x }) => ({ ...x, icon: wishArt(x.wish), how: sub.filter(Boolean).join(' · ') }));
+    const wishes = (rows) => rows.map(({ sub, ...x }) => ({ ...x, icon: wishArt(x.wish), how: [x.how, ...sub].filter(Boolean).join(' · ') }));
     if (s.id === 'bellshrines') {
       return [part('shrines', t('pgShrines'), STEP_ART.bellshrines, s.done, s.total, t('roadGoalShrines', { n: num(s.total) }),
         s.shrines.map((b) => ({ name: pick(b.name), got: b.ok, act: 1, icon: STEP_ART.bellshrines })))];
@@ -407,12 +460,21 @@
     }
     if (s.id === 'pieces') {
       return [part('snare', t('roadSnare'), STEP_ART.pieces, s.done, s.total, t('roadGoalSnare', { n: num(s.total) }),
-        s.pieces.map((x) => ({ name: pick(x.name), got: x.ok, act: 2, area: SNARE_AREA[x.save] || null, icon: QUEST('snare') })))];
+        s.pieces.map((x) => ({ ...snareRow(x), icon: QUEST('snare') })))];
     }
     return [part(s.id, stepNames(r)[r.steps.indexOf(s)], STEP_ART[s.id], s.done, s.total, '', [])];
   }
   // A step's parts at once: what the tab's card counts, in the rings' own units.
   const partsSum = (ps) => ps.reduce((a, p) => ({ got: a.got + p.got, of: a.of + p.of }), { got: 0, of: 0 });
+  /* The step a game is on and how far into it, counted as the tab's card counts (a wish point a
+     point): Your game's line (js/app-home.js) says the same figures. Null in Act 3. */
+  App.roadNow = (g) => {
+    const r = g ? A.next(g) : null;
+    const at = r ? stepAt(r) : -1;
+    if (at < 0) return null;
+    const s = r.steps[at], sum = s.bypassed ? { got: s.done, of: s.total } : partsSum(parts(r, s, g));
+    return { act: r.act, k: at + 1, total: r.steps.length, got: sum.got, of: sum.of };
+  };
   /* The Act tab with a save before Act 3: the journey, the step you're on as a heading with its
      picture, its parts as rings side by side (with, when there are several, that all are needed),
      then each part as a group of the 100% tab, open at first; the steps after it, the bridge to
@@ -434,7 +496,10 @@
   }
   function partsHtml(r, s, g) {
     const ps = parts(r, s, g);
-    const lead = s.id === 'unlock' ? `<p class="pg-lead">${esc(t('roadAllThree', { caretaker: t('roadCaretaker'), wish: wishName(r.steps[1].quest) }))}</p>` : '';
+    // The line over the rings: what the step asks, said once (the offer's and the snare's notes too).
+    const say = s.id === 'unlock' ? t('roadAllThree', { caretaker: t('roadCaretaker'), wish: wishName(r.steps[1].quest) })
+      : s.id === 'offer' ? offerNote(s, g) : s.id === 'silk' ? t('roadSilkNote') : '';
+    const lead = say ? `<p class="pg-lead">${esc(say)}</p>` : '';
     return `${lead}<div class="pg-rings is-sum" style="--n:${ps.length}">${ps.map((p) => ring({ ...p, items: [] })).join('')}</div>
         ${ps.some((p) => p.rows.length) ? `<div class="pg-groups">${ps.filter((p) => p.rows.length)
           .map((p) => group('road-' + p.id, p.label, p.rows, g, p.got, p.of, { all: true, road: true, note: p.note })).join('')}</div>` : ''}`;
@@ -447,7 +512,9 @@
     const lack = only.filter((x) => !x.got);
     return journeyAll(g) + `<div class="pg-rings">${[
       { label: t('pgEndings'), icon: QUEST('act3_finale'), got: E.filter((e) => seen.has(e.id)).length, of: E.length,
-        items: E.filter((e) => !seen.has(e.id)).map((e) => ({ name: t('ending_' + e.key), icon: QUEST('act3_finale') })) },
+        // The Act 2 endings not seen are closed for good once the snare has taken her (the wiki's Endings).
+        items: E.filter((e) => !seen.has(e.id)).map((e) => ({ name: t('ending_' + e.key), icon: QUEST('act3_finale'),
+          sub: e.bit === 1 || e.bit === 2 ? t('pgEndingShut') : '' })) },
       { label: t('pgOnlyAct3'), icon: lack.length ? lack[0].icon : 'assets/icons/items/everbloom.webp', got: only.length - lack.length, of: only.length,
         items: lack.map((x) => ({ name: x.name, icon: x.icon, mark: x.mark })) },
     ].map(ring).join('')}</div>` + reach(g);
@@ -461,8 +528,10 @@
   const toAct2Titles = (r) => [t('roadBells'), t('roadGate', { gate: pick(QU.CHAIN[r.steps[1].quest].name) }),
     t('roadJudge', { judge: foeName('last-judge'), phantom: foeName('phantom') }), t('roadCitadel')];
   const toAct3Titles = (r) => { const wish = wishName(r.steps[1].quest);
-    return [t('roadUnlock', { wish }), t('roadOffer', { wish, caretaker: t('roadCaretaker'), town: areaName('BELLHART'), clave: areaName('ENCLAVE') }),
-      t('roadPieces'), t('roadReady', { caretaker: t('roadCaretaker') }), t('roadSilk')]; };
+    return [t('roadUnlock', { wish }), t('roadOffer', { wish, caretaker: t('roadCaretaker'), clave: areaName('ENCLAVE') }),
+      t('roadPieces'), t('roadReady', { caretaker: t('roadCaretaker'), clave: areaName('ENCLAVE') }), t('roadSilk')]; };
+  // The offer: turned down already (js/acts.js declined), or how it comes.
+  const offerNote = (s, g) => (g && s.declined ? t('roadDeclined') : t('roadOfferNote', { town: areaName('BELLHART') }));
 
   function roadHtml(g) {
     const roads = g ? [A.next(g)].filter(Boolean) : [A.next({ act: 1 }), A.next({ act: 2 })];

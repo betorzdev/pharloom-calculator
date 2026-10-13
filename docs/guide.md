@@ -507,7 +507,9 @@ as its rings count, and «step 1 of 5»). Its steps as diamonds on one thread, t
 the one you're on larger, each named with the game's words (on a phone too). Then the step you're
 on, with its picture, and its parts as small **rings** side by side (the wishes it requires, its
 wish points, its four conditions; the Bellshrines; the snare's pieces), the game's picture inside
-and how far as a figure under it; for Silk and Soul a line says that all three are needed. Under
+and how far as a figure under it; for Silk and Soul a line says that all three are needed, for
+the offer how it comes (or that you turned it down), and for the last step that the Needolin, not
+a Bind, is what snares her. Under
 the rings, each part is a group like the 100% tab's, open at first (it folds, and stays as you
 leave it): its pictures or pips and its count, what it asks in a sentence and how much is left,
 then its things in rows by Act, the ones done ticked, each with its picture (the wishes, the
@@ -548,14 +550,25 @@ numbered steps, each with its count or a tick:
      - 17 of its 25 wish points (a delivery is worth half a point, the first time only);
      - four conditions: the Flea Caravan at Fleatopia, the Faydown Cloak, Lace defeated in the
        Cradle (with the three melodies that lead there), and the Bellhome Key. Pavo gives the key
-       after Bellhart's Glory and 2 wishes of his list, and the step lists them until then.
-  2. Take the wish.
-  3. Gather the snare's four pieces.
-  4. Bring them to the Caretaker.
+       after Bellhart's Glory and 2 wishes of his list, and the step lists them until then. The
+       caravan says where it stands and the fleas rescued: Mooshka takes it to Fleatopia with 22,
+       once the empty Pale Lake has been seen (and on the Phantom's way, the Last Judge beaten
+       first: its stop before is the Judge's arena).
+  2. Accept the wish from the Caretaker in Songclave (Bellhart's Wishwall posts it too, and sends
+     you to him). Offered and turned down isn't taken: the step says to talk to him again.
+  3. Gather the snare's four pieces: the Chapel Maid's and the Bell Hermit's souls, given once the
+     wish is accepted; the Seeker's Soul, past Groal the Great; the Snare Setter, which needs the
+     Faydown Cloak. Each with a pin to the Map.
+  4. Bring them to the Caretaker in Songclave.
   5. Snare Grand Mother Silk with the Needolin.
 
-Each missing wish shows its Act, its area, and the
-wish to do before it when there is one. Where it's taken is the game's: the Wishwall that lists it
+Each missing wish shows its Act, its area, who asks for it in the game's own words («Creige of
+the Halfway Home»), a pin to where it's taken on the Map, and the wish to do before it when there
+is one. The required wishes the game posts later say what posts them (Trail's End: all of Shakra's
+maps, counted, and the Faydown Cloak; Balm for the Wounded: Sherma met and the Whiteward visited;
+Strengthening Songclave, Restoration of Bellhart, Bellhart's Glory), and Pinmaster's Oil that
+Plinney's second Needle upgrade counts for it too. In Act 3, the Act 2 endings you never saw say
+they're closed in that game. Where it's taken is the game's: the Wishwall that lists it
 (Bellhart's, Bone Bottom's or Songclave's), or the NPC who offers it; a wish that comes after
 another on a board (Crawbug Clearing, Berry Picking…) counts the board until that one is done, and
 the NPC after. A part
