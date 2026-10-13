@@ -1,13 +1,16 @@
 #!/usr/bin/env node
-/* tools/promo/make.js: the site's announcement video (45 s, 1920×1080, 60 fps, English), from the
-   real site and a real save. `npm run promo -- --before <save> --after <save>`:
+/* tools/promo/make.js: the site's announcement trailer (about 55 s, 1920×1080, 60 fps, English), from
+   the real site and a real save, cut to the game's music. `npm run promo -- --before <save> --after <save>`:
      1. serves the repo (and the work folder, under /__promo/) on 127.0.0.1;
-     2. shoots the site in headless Chrome at 2x (tools/promo/cdp.js): Free mode's unlit card,
+     2. shoots the site in headless Chrome at 2x (tools/promo/cdp.js): Free mode's unlit card (and lit for a file dragged over it),
         then <before> imported into save 1 and <after> synced over it, as the game saving again
-        would (js/saves.js sync), so "Since the previous save" has something; every screen whole;
+        would (js/saves.js sync), so "Since the previous save" has something; every screen whole,
+        and Your game once more with the live mark and the toast a followed file brings;
+        and the Map twice closer, without its way to the next goal;
      3. renders tools/promo/compose.html frame by frame (its render(t)) into ffmpeg;
-     4. for each track tools/promo/extract-music.py left in <out>/music/, a copy with that music
-        (cut, faded, at −16 LUFS).
+     4. lays its music under it (compose.html's MUSIC: the track, where the film starts in it, the
+        fades), at −16 LUFS.
+   First, once per patch: tools/promo/extract-game.py, the music and Hornet's clips into <out>.
    Needs Chrome (CHROME, or google-chrome) and ffmpeg (FFMPEG, or ffmpeg). No ffmpeg on the
    author's machine: imageio-ffmpeg's, in the env tools/extract-map.py's header makes, with
        uv pip install --python /tmp/unitypy/bin/python imageio-ffmpeg
@@ -32,8 +35,6 @@ const ROOT = path.resolve(__dirname, '..', '..');
 const MIME = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8',
   '.json': 'application/json', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp', '.svg': 'image/svg+xml',
   '.woff2': 'font/woff2', '.txt': 'text/plain; charset=utf-8' };
-// Where each track starts, in seconds: Final_Credits builds to its peak about 45 s in, which lands on the end card.
-const MUSIC_FROM = { title: 0, credits: 3 };
 
 function args(argv) {
   const a = { out: path.join(os.tmpdir(), 'pharloom-promo'), fps: 60, stills: null, capture: true };
@@ -70,7 +71,12 @@ async function capture(site, a) {
   const profile = fs.mkdtempSync(path.join(os.tmpdir(), 'promo-chrome-'));
   const c = await launch({ scale: 2, profile });
   let hop = 0;
-  const visit = async (v) => { await c.go(`${site}/index.html?promo=${++hop}#lang=en&view=${v}`); await sleep(2500); };
+  // The Map's way to the next goal (.mp-way) is the reader's route, not the film's: hidden.
+  const visit = async (v) => {
+    await c.go(`${site}/index.html?promo=${++hop}#lang=en&view=${v}`);
+    await sleep(2500);
+    await c.evaluate(`(() => { const s = document.createElement('style'); s.textContent = '.mp-way { display: none !important; }'; document.head.append(s); })()`);
+  };
   const whole = async (name) => {
     const h = await c.evaluate('document.documentElement.scrollHeight');
     fs.writeFileSync(path.join(dir, name + '.png'), await c.shot({ captureBeyondViewport: true, clip: { x: 0, y: 0, width: 1920, height: h, scale: 1 } }));
@@ -81,6 +87,10 @@ async function capture(site, a) {
     await c.evaluate(`(() => { try { localStorage.setItem('pharloom.betaSeen', '1'); } catch (e) {} })()`);
     await visit('home');
     await whole('free');
+    // The same card as a file is dragged over it (the site's own .is-drag).
+    await c.evaluate(`document.querySelector('.hm-invite').classList.add('is-drag')`);
+    await sleep(400);
+    await whole('free-drag');
     const b64 = (f) => fs.readFileSync(f).toString('base64');
     await c.evaluate(`(() => {
       const S = SS.saves, F = SS.savefile;
@@ -94,6 +104,26 @@ async function capture(site, a) {
       S.sync(localStorage, 1, snap('${b64(a.after)}', '--after'));
     })()`);
     for (const v of ['home', 'game', 'progress', 'map', 'journal', 'tools']) { await visit(v); await whole(v); }
+    // Your game as a followed file brings the save: the header's live mark, as App.saveLink draws it
+    // while live, and the toast the live path shows (js/app-saves.js liveStart).
+    await visit('home');
+    await c.evaluate(`(() => {
+      const A = SS.app, link = document.querySelector('.mh-save'), lbl = link && link.querySelector('.mh-save-lbl');
+      if (lbl) { link.classList.add('is-live'); lbl.insertAdjacentHTML('beforeend', '<span class="mh-live" aria-hidden="true"><i class="mh-live-dot"></i><span class="mh-live-t">' + A.t('liveState_live') + '</span></span>'); }
+      A.toast(A.gainedLine() || A.t('liveUpdated'));
+    })()`);
+    await sleep(700);
+    await whole('home-live');
+    // Progress on its other tab, the 100%.
+    await visit('progress');
+    await c.evaluate(`document.querySelector('[data-act="pgTab"][data-value="100"]').click()`);
+    await sleep(1500);
+    await whole('progress-100');
+    // The Map twice closer, for the montage's close-ups.
+    await visit('map');
+    await c.evaluate(`(async () => { for (let i = 0; i < 2; i++) { document.querySelector('[data-act="mapZoom"]').click(); await new Promise((r) => setTimeout(r, 600)); } })()`);
+    await sleep(2500);
+    await whole('map-zoom');
   } finally { await c.close(); drop(profile); }
 }
 
@@ -101,9 +131,9 @@ async function compose(site, a, each) {
   const profile = fs.mkdtempSync(path.join(os.tmpdir(), 'promo-chrome-'));
   const c = await launch({ profile });
   try {
-    await c.go(site + '/tools/promo/compose.html?shots=/__promo/shots/');
+    await c.go(site + '/tools/promo/compose.html?w=/__promo/');
     await c.evaluate('window.ready');
-    await each(c, await c.evaluate('DUR'));
+    await each(c, await c.evaluate('DUR'), await c.evaluate('window.MUSIC'));
   } finally { await c.close(); drop(profile); }
 }
 
@@ -134,7 +164,9 @@ async function main() {
       return;
     }
     const silent = path.join(a.out, 'pharloom-promo-silent.mp4');
-    await compose(site, a, async (c, dur) => {
+    let music = null;
+    await compose(site, a, async (c, dur, m) => {
+      music = m;
       const ff = ffmpeg(['-f', 'image2pipe', '-framerate', String(a.fps), '-c:v', 'png', '-i', '-', '-c:v', 'libx264', '-preset', 'slow',
         '-crf', '14', '-tune', 'film', '-pix_fmt', 'yuv420p', '-r', String(a.fps), '-movflags', '+faststart', silent], { stdio: ['pipe', 'inherit', 'inherit'] });
       const done = new Promise((r, j) => ff.on('close', (code) => (code ? j(new Error('ffmpeg failed: ' + code)) : r())));
@@ -148,15 +180,14 @@ async function main() {
       await done;
     });
     console.log('video', silent);
-    const music = path.join(a.out, 'music');
-    for (const f of fs.existsSync(music) ? fs.readdirSync(music).filter((x) => x.endsWith('.wav')) : []) {
-      const name = path.basename(f, '.wav'), from = MUSIC_FROM[name] || 0, out = path.join(a.out, `pharloom-promo-${name}.mp4`);
-      const r = spawnSync(process.env.FFMPEG || 'ffmpeg', ['-y', '-loglevel', 'error', '-i', silent, '-i', path.join(music, f),
-        '-af', `atrim=${from}:${from + 45},asetpts=N/SR/TB,afade=t=in:d=1.2,afade=t=out:st=41.5:d=3.5,loudnorm=I=-16:TP=-1.5:LRA=11`,
-        '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '256k', '-ar', '48000', '-shortest', out], { stdio: 'inherit' });
-      if (r.status) throw new Error('ffmpeg failed on ' + f);
-      console.log('video', out);
-    }
+    const wav = path.join(a.out, 'music', music.track + '.wav');
+    if (!fs.existsSync(wav)) { console.log(`no ${wav}: run tools/promo/extract-game.py for the music`); return; }
+    const out = path.join(a.out, 'pharloom-promo.mp4');
+    const r = spawnSync(process.env.FFMPEG || 'ffmpeg', ['-y', '-loglevel', 'error', '-i', silent, '-ss', String(music.from), '-i', wav,
+      '-af', `afade=t=in:d=${music.fadeIn},afade=t=out:st=${music.fadeOutAt}:d=${music.fadeOut},loudnorm=I=-16:TP=-1.5:LRA=11`,
+      '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '256k', '-ar', '48000', '-shortest', out], { stdio: 'inherit' });
+    if (r.status) throw new Error('ffmpeg failed laying the music');
+    console.log('video', out);
   } finally { server.close(); }
 }
 

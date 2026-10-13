@@ -7,7 +7,7 @@ const { spawn } = require('child_process');
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function launch({ width = 1920, height = 1080, scale = 1, profile }) {
-  const port = 9300 + Math.floor(Math.random() * 500);
+  const port = 9600 + Math.floor(Math.random() * 300);   // clear of 9333, Albert's own Chrome's
   const proc = spawn(process.env.CHROME || 'google-chrome', ['--headless=new', `--remote-debugging-port=${port}`,
     `--user-data-dir=${profile}`, '--no-first-run', '--hide-scrollbars', '--force-color-profile=srgb',
     '--font-render-hinting=none', '--mute-audio', `--window-size=${width},${height}`, 'about:blank'], { stdio: 'ignore' });
