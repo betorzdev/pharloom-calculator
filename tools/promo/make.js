@@ -99,6 +99,11 @@ async function capture(site, a) {
       S.sync(localStorage, 1, snap('${b64(a.after)}', '--after'));
     })()`);
     for (const v of ['home', 'game', 'progress', 'map', 'journal', 'tools']) { await visit(v); await whole(v); }
+    // Progress on its other tab, the 100%.
+    await visit('progress');
+    await c.evaluate(`document.querySelector('[data-act="pgTab"][data-value="100"]').click()`);
+    await sleep(1500);
+    await whole('progress-100');
     // The Map twice closer, for the montage's close-ups.
     await visit('map');
     await c.evaluate(`(async () => { for (let i = 0; i < 2; i++) { document.querySelector('[data-act="mapZoom"]').click(); await new Promise((r) => setTimeout(r, 600)); } })()`);
