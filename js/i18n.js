@@ -639,6 +639,13 @@
     invBroken:      { es: 'Si lo rompieras todo: +{n}', en: 'If you broke them all: +{n}' },
     invFieldMax:    { es: '{what}, máximo {n}', en: '{what}, maximum {n}' },
     invMissing:     { es: 'Aún no lo tienes', en: 'You don\'t have it yet' },
+    /* The third round (design/43): the plates' line for what you lack, what's loose under the masks
+       and the silk, and the two Tools a wish lends. No game source: written for context. */
+    invNotFound:    { es: 'Sin conseguir', en: 'Not found yet' },
+    invLooseMask:   { es: 'cuatro forman una máscara', en: 'four make a mask' },
+    invLooseSpool:  { es: 'dos forman un carrete', en: 'two make a spool' },
+    invLentTitle:   { es: 'No cuentan para el 100 %', en: 'Not counted for the 100%' },
+    invLentNote:    { es: 'Te las presta un deseo y te las quita al cumplirlo.', en: 'A wish lends them and takes them back once it\'s done.' },
     invAll:         { es: 'Todo', en: 'All' },
     invNone:        { es: 'Nada', en: 'None' },
     invLess:        { es: 'Uno menos: {what}', en: 'One less: {what}' },

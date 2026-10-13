@@ -1,15 +1,19 @@
 /* js/app-game.js — the Inventory, the sibling's sheet in Silksong's pieces (design/03-redesign.md,
-   step 4): on the left what Hornet is (the five Needles, the masks, the silk as beads on a
-   thread, the Silk Hearts, the Crafting Kit and the Tool Pouch, the Silk Skills with what they
-   deal and the abilities), on the right what she carries (the Tools on their slots by colour, the
-   Crests, the items). In Free mode all of it is set here: your game marked by hand, from a New
-   Game (js/app-saves.js, App.freeGame; design/42-free-mode-start-variants.html, 1 A): the left
-   side its levels, a tap on the right a thing had or not. Progress counts it, and the Crest
-   screen tries it on «What I have». In a save it shows what the game saved,
-   and what you don't have yet is a dimmed silhouette. A tap opens the game's text under its
-   shelf. Above the Items, the purse (Rosaries and Shell Shards with the strings, bundles and
-   shards that break into them, design/29-inventory-variants.html, A); the Relics and the
-   Mementos on shelves below. The icons are the wiki's
+   step 4; its third round, design/43, A in all six, puts each thing beside what it feeds). On the
+   left what Hornet is: the five Needles with the Pale Oil, the masks and the silk (beads on a
+   thread) each with its loose shards or fragments under it, the Silk Hearts, the Silk Skills with
+   what they deal and the abilities. On the right her equipment: the Crests with the Memory
+   Lockets that open their slots, then the Crafting Kit and the Tool Pouch with the Craftmetal, and
+   the Tools on their slots by colour, one slot per point of the 100% (a Tool and its upgrade
+   share one, the two a wish lends apart). Under both, across the width, what she carries: the
+   purse (Rosaries and Shell Shards with the strings, bundles and shards that break into them,
+   design/29-inventory-variants.html, A), the items, the Relics and the Mementos, each a plate
+   with its name. Every shelf's head counts n/max and its rule lights up to it.
+   In Free mode all of it is set here: your game marked by hand, from a New Game
+   (js/app-saves.js, App.freeGame; design/42-free-mode-start-variants.html, 1 A): the levels, a
+   tap on a thing had or not, − N + for what comes in numbers. Progress counts it, and the Crest
+   screen tries it on «What I have». In a save it shows what the game saved, and what you don't
+   have yet is faint. A tap opens the game's text under its shelf. The icons are the wiki's
    (tools/fetch-icons.js, npm run icons). Shares SS.app with js/app.js (see there). */
 (() => {
   'use strict';
@@ -34,6 +38,12 @@
   const extrasOf = (kind) => SP.EXTRAS.map((x, i) => (x[0] === kind ? i : -1)).filter((i) => i >= 0);
   const MEMENTOS = SP.EXTRAS.map((x, i) => (x[0] === 'memento' && MEMENTO_ID[x[2][1]] ? i : -1)).filter((i) => i >= 0);
   const RELIC_AT = SP.EXTRAS.map((x, i) => (RELICS.includes(x[0]) ? i : -1)).filter((i) => i >= 0);
+  /* The Tools by the 100%'s points (js/collectibles.js COUNTED): a Tool and its upgrade, or the
+     Steel Soul twin, are one point and one slot; the two a wish lends and takes back (lost) are
+     no point, drawn apart. */
+  const GROUP = new Map();
+  CO.COUNTED.forEach((ids) => ids.forEach((id) => GROUP.set(id, ids)));
+  const LENT = D.TOOLS.filter((x) => x.lost).map((x) => x.id);
   // Rosaries have no cap in the game's files; the typed field stops at five digits, as the screen can hold.
   const MAX_ROSARIES = 99999;
   const shardCap = (pouch) => D.HORNET.shells.base + D.HORNET.shells.perPouch * pouch;
@@ -94,16 +104,20 @@
   let picked = null;
   const keyOf = (x) => x.list + '/' + x.id;
 
-  /* A cell of the grids: the Tools on their slot, the game's diamond in the slot's colour (the
-     Crest screen's own drawing, design/02-silksong.md §3), dashed in the locked slot's grey when
-     you lack it; the rest plain. One fixed square, so every row lines up. */
-  function cell(x) {
+  /* A cell of the Tools' grid: the Tool on its slot, the game's diamond in the slot's colour (the
+     Crest screen's own drawing, design/02-silksong.md §3); one you lack, the slot hollow in its
+     colour and the picture faint (design/43, 3 A). One fixed square, so every row lines up. A
+     Tool and its upgrade on one slot (design/43, 4 A) show the one you have, with two pips under
+     it, had and upgraded; in Free mode a tap goes none, had, upgraded (invTwin). */
+  function cell(x, twin = null) {
     const cls = `inv-cell${x.got ? '' : ' is-missing'}${x.color ? ' is-slot' : ''}${picked === keyOf(x) ? ' is-picked' : ''}`;
-    const label = pick(x.name) + (x.count ? ' ' + x.count : '') + (x.got ? '' : ' · ' + t('invMissing'));
-    const mark = marking && markable(x);
-    return `<li><button type="button" class="${cls}"${x.color ? ` style="--c: var(--slot-${x.color})"` : ''} data-act="${mark ? 'invOwn' : 'invPick'}" data-key="${esc(keyOf(x))}"
-      ${mark ? `aria-pressed="${x.got}"` : `aria-expanded="${picked === keyOf(x)}"`} aria-label="${esc(label)}" title="${esc(pick(x.name))}"${NT}>
-        <img src="${icon(x.list, x.id)}" alt="" loading="lazy"></button>${marking && x.n ? stepper(x) : x.count ? `<span class="inv-count">${esc(x.count)}</span>` : ''}</li>`;
+    const name = twin ? twin.names : pick(x.name);
+    const label = name + (x.count ? ' ' + x.count : '') + (x.got ? '' : ' · ' + t('invMissing'));
+    const act = marking && twin ? 'invTwin' : marking && markable(x) ? 'invOwn' : 'invPick';
+    const pips = twin && twin.pips ? `<span class="inv-pips" aria-hidden="true">${twin.pips.map((on) => `<i class="${on ? 'is-on' : ''}"></i>`).join('')}</span>` : '';
+    return `<li${pips ? ' class="is-twin"' : ''}><button type="button" class="${cls}"${x.color ? ` style="--c: var(--slot-${x.color})"` : ''} data-act="${act}" data-key="${esc(twin && marking ? twin.key : keyOf(x))}"
+      ${act === 'invPick' ? `aria-expanded="${picked === keyOf(x)}"` : `aria-pressed="${x.got}"`} aria-label="${esc(label)}" title="${esc(name)}"${NT}>
+        <img src="${icon(x.list, x.id)}" alt="" loading="lazy"></button>${pips}</li>`;
   }
   /* Free mode marks (design/03-redesign.md, step 4): a tap on a Tool, Crest, Silk Skill,
      ability, the Everbloom, an Old Heart or a melody marks it had or not and opens its text; the
@@ -118,6 +132,42 @@
     return `<span class="inv-step"><button type="button" class="icon-btn" data-act="invCount" data-key="${esc(keyOf(x))}" data-value="${v - 1}" ${v > 0 ? '' : 'disabled'} aria-label="${esc(t('invLess', { what }))}" title="${esc(t('invLess', { what }))}">−</button>
       <b>${num(v)}</b><button type="button" class="icon-btn" data-act="invCount" data-key="${esc(keyOf(x))}" data-value="${v + 1}" ${v < max ? '' : 'disabled'} aria-label="${esc(t('invMore', { what }))}" title="${esc(t('invMore', { what }))}">+</button></span>`;
   };
+  /* A plate for the Crests, the items, what's in the purse, the Relics and the Mementos (design/43,
+     5 A), drawn as the Silk Skills': the picture, the pip, the name, and under it the count or
+     «Not found yet». What comes in numbers keeps its − N + in Free mode, so only its picture is
+     the button there; the rest is one button. */
+  function plate(x) {
+    const counted = marking && x.n;
+    const v = counted ? stepper(x) : x.count ? esc(x.count) : x.got ? '' : esc(t('invNotFound'));
+    const vcls = `inv-plate-v${!counted && (!x.got || !x.count) ? ' is-none' : ''}`;
+    const cls = `inv-plate${x.got ? '' : ' is-missing'}${picked === keyOf(x) ? ' is-picked' : ''}`;
+    const label = pick(x.name) + (x.count ? ' ' + x.count : '') + (x.got ? '' : ' · ' + t('invMissing'));
+    if (counted) {
+      return `<li><div class="${cls}"><button type="button" class="inv-plate-art" data-act="invPick" data-key="${esc(keyOf(x))}" aria-expanded="${picked === keyOf(x)}" aria-label="${esc(label)}"${NT}>
+        <img src="${icon(x.list, x.id)}" alt="" loading="lazy"></button><span class="inv-plate-name"${NT}>${esc(pick(x.name))}</span><span class="${vcls}">${v}</span></div></li>`;
+    }
+    const mark = marking && markable(x);
+    return `<li><button type="button" class="${cls}" data-act="${mark ? 'invOwn' : 'invPick'}" data-key="${esc(keyOf(x))}" ${mark ? `aria-pressed="${x.got}"` : `aria-expanded="${picked === keyOf(x)}"`} aria-label="${esc(label)}"${NT}>
+      <span class="inv-plate-art"><img src="${icon(x.list, x.id)}" alt="" loading="lazy"></span><span class="inv-plate-name">${esc(pick(x.name))}</span><span class="${vcls}">${v}</span></button></li>`;
+  }
+  const platesOf = (list, sm = false) => `<ul class="inv-plates${sm ? ' is-sm' : ''}">${list.map(plate).join('')}</ul>`;
+  /* A material beside what it feeds (design/43, 1 A): the Pale Oil under the Needle, the Memory
+     Lockets under the Crests, the Craftmetal by the Kit. Its picture opens its text; its count
+     beside it, or − N + in Free mode. */
+  function mat(x) {
+    return `<div class="inv-mat${x.got ? '' : ' is-missing'}"><button type="button" class="inv-mat-art" data-act="invPick" data-key="${esc(keyOf(x))}" aria-expanded="${picked === keyOf(x)}" aria-label="${esc(pick(x.name) + ' ' + x.count)}"${NT}>
+      <img src="${icon(x.list, x.id)}" alt=""></button><span class="inv-mat-name"${NT}>${esc(pick(x.name))}</span>
+      ${marking ? stepper(x) : `<span class="inv-mat-n">${num(x.n[0])}<i>/${num(x.n[1])}</i></span>`}</div>`;
+  }
+  /* The loose Mask Shards or Spool Fragments under their row, as the sibling draws its shards: the
+     game's piece lit up to what you hold, how many make a whole one, and − N + in Free mode. */
+  function loose(x, of, note) {
+    const v = Math.max(0, x.n[0]);
+    const pcs = Array.from({ length: x.n[1] }, (_, i) => `<img class="${i < v ? '' : 'is-off'}" src="${icon(x.list, x.id)}" alt="">`).join('');
+    return `<div class="inv-loose"><button type="button" class="inv-loose-art" data-act="invPick" data-key="${esc(keyOf(x))}" aria-expanded="${picked === keyOf(x)}" aria-label="${esc(pick(x.name) + ' ' + num(v) + '/' + num(of))}">
+      <span class="inv-loose-name"${NT}>${esc(pick(x.name))}</span><span class="inv-loose-pcs" aria-hidden="true">${pcs}</span><b>${num(v)}<i>/${num(of)}</i></b></button>
+      <span class="inv-loose-note">${esc(note)}</span>${marking ? stepper(x) : ''}</div>`;
+  }
   // What's open under a shelf: the picture, the name and the game's text.
   function open(list) {
     const x = shown.find((y) => keyOf(y) === picked);
@@ -127,10 +177,15 @@
       ${x.got ? '' : `<p class="inv-not">${esc(t('invMissing'))}</p>`}
       ${x.desc ? `<p class="inv-desc">${esc(pick(x.desc))}</p>` : ''}</div>`;
   }
+  /* A shelf's head (design/43, 2 A): its name and n/max, and its rule a gauge lit up to that
+     part; complete, its diamond fills. */
   const count = (c) => (c ? ` <span class="inv-n">${num(c.got)}<i>/${num(c.max)}</i></span>` : '');
-  const head = (title, c, list) => `<h3 class="ct-h inv-h">${esc(title)}${count(c)}${marking && list ? `<span class="inv-all">
+  const head = (title, c, list) => {
+    const f = c && c.max ? Math.min(1, c.got / c.max) : 0;
+    return `<h3 class="ct-h inv-h${c ? ' is-gauge' : ''}${c && f >= 1 ? ' is-full' : ''}"${c ? ` style="--f: ${(f * 100).toFixed(1)}%"` : ''}>${esc(title)}${count(c)}${marking && list ? `<span class="inv-all">
       <button type="button" class="text-btn" data-act="invAll" data-list="${list}" data-value="1">${esc(t('invAll'))}</button><span aria-hidden="true">·</span>
       <button type="button" class="text-btn" data-act="invAll" data-list="${list}" data-value="0">${esc(t('invNone'))}</button></span>` : ''}</h3>`;
+  };
 
   /* ── What Hornet is, the sibling's way (hallownest-calculator's Inventory, design/03-redesign.md
      step 4): the Needle as the focal point, the body as rows of the game's own pieces, the Kit
@@ -139,16 +194,16 @@
      full light but still. ── */
   let before = null;   // the last build drawn: what changed since lights up
   const lit = (b, k, on) => (on && before && before[k] !== b[k] ? ' is-lit' : '');
-  function needles(b, still) {
+  function needles(b, still, oil) {
     const row = D.NEEDLES.map((n, i) => `<button type="button" class="inv-np${b.needle === i ? ' is-on' : ''}${lit(b, 'needle', b.needle === i)}"
         data-act="invLevel" data-key="needle" data-value="${i}" aria-pressed="${b.needle === i}"${still} title="${esc(pick(n.name))}" aria-label="${esc(pick(n.name) + ', ' + n.damage)}"${NT}>
         <img src="${ART.needle(i)}" alt="" width="80" height="600"><b>${num(n.damage)}</b></button>`).join('');
     return `<section class="inv-sec">${head(t('invNeedle'))}<div class="inv-needles" role="group" aria-label="${esc(t('invNeedle'))}">${row}</div>
-      <p class="inv-caption"${NT}>${esc(pick(D.NEEDLES[b.needle].name))}</p></section>`;
+      <p class="inv-caption"${NT}>${esc(pick(D.NEEDLES[b.needle].name))}</p><div class="inv-mats is-centre">${mat(oil)}</div>${open([oil])}</section>`;
   }
   /* A row of pieces: the first `base` always there, then one per upgrade; a tap on one sets the
-     count to it (on the last one lit, one less). */
-  function pieces(b, key, name, base, max, piece, still) {
+     count to it (on the last one lit, one less). Under it, what's loose of the next one. */
+  function pieces(b, key, name, base, max, piece, still, after = '') {
     const v = base + b[key];
     const btns = Array.from({ length: base + max }, (_, i) => {
       const fixed = i < base, on = i < v, n = i + 1 - base;
@@ -157,7 +212,7 @@
         aria-label="${esc(name + ' ' + num(i + 1))}" aria-pressed="${on}">${piece}</button>`;
     }).join('');
     return `<div class="inv-field"><div class="inv-frow"><span><span class="inv-fname"${NT}>${esc(name)}</span><span class="inv-fnote">${esc(t('invFromTo', { a: num(base), b: num(base + max) }))}</span></span>
-      <span class="inv-fnum">${num(v)}<i>/${num(base + max)}</i></span></div><div class="inv-pieces is-${key}" role="group" aria-label="${esc(name)}">${btns}</div></div>`;
+      <span class="inv-fnum">${num(v)}<i>/${num(base + max)}</i></span></div><div class="inv-pieces is-${key}" role="group" aria-label="${esc(name)}">${btns}</div>${after}</div>`;
   }
   function level(b, key, id, still) {
     const it = D.ITEMS.find((x) => x.id === id);
@@ -165,12 +220,12 @@
     return `<div class="inv-level"><img class="${b[key] ? '' : 'is-missing'}" src="${icon('items', id)}" alt=""><span class="inv-fname"${NT}>${esc(pick(it.name))}</span>
       <div class="seg sm" role="group" aria-label="${esc(pick(it.name))}">${opts}</div></div>`;
   }
-  function hornet(b, still) {
+  // Hornet: the masks and the silk with what's loose of the next one under each, the Silk Hearts.
+  function hornet(b, still, shards, frags) {
     return `<section class="inv-sec">${head(t('ctBody'))}
-      ${pieces(b, 'masks', t('cat_masks'), 5, 5, `<img src="${ART.mask}" alt="">`, still)}
-      ${pieces(b, 'spools', t('invSilk'), 9, 9, '<i class="inv-bead"></i>', still)}
-      ${pieces(b, 'hearts', t('cat_hearts'), 0, 3, `<img src="${icon('pieces', 'silk-heart')}" alt="">`, still)}
-      <div class="inv-levels">${level(b, 'kit', 'crafting-kit', still)}${level(b, 'pouch', 'tool-pouch', still)}</div></section>`;
+      ${pieces(b, 'masks', t('cat_masks'), 5, 5, `<img src="${ART.mask}" alt="">`, still, loose(shards, 4, t('invLooseMask')))}
+      ${pieces(b, 'spools', t('invSilk'), 9, 9, '<i class="inv-bead"></i>', still, loose(frags, 2, t('invLooseSpool')))}
+      ${pieces(b, 'hearts', t('cat_hearts'), 0, 3, `<img src="${icon('pieces', 'silk-heart')}" alt="">`, still)}${open([shards, frags])}</section>`;
   }
   /* Plates: the Silk Skills with what each deals at this build (js/engine.js), the abilities with
      Needle Strike's; the rest say whether they're learnt. A tap opens the game's text. */
@@ -202,7 +257,7 @@
         <span class="inv-fig-name"${NT}>${esc(name)}</span>
         <span class="inv-fig-num">${fig}${ros ? '' : `<i> / ${esc(num(cap))}</i>`}</span>
         ${ros ? '' : `<span class="inv-bar" style="--f:${(Math.min(v, cap) / cap * 100).toFixed(1)}%"></span>`}</div>
-        <ul class="inv-grid is-items">${list.map(cell).join('')}</ul>
+        ${platesOf(list, true)}
         ${sum > 0 ? `<p class="inv-broken">${esc(t('invBroken', { n: num(sum) }))}</p>` : ''}</div>`;
     };
     return `<div class="inv-two">${one('rosaries', 'rosaries', money.rosaries, MAX_ROSARIES)}${one('shell-shards', 'shards', Math.min(money.shards, cap), cap)}</div>`;
@@ -226,11 +281,32 @@
     const r = SS.engine.compute(b);
     const skillV = (x) => { const s = r.skills.find((y) => y.id === x.id); return s ? s.total : null; };
     const artV = (x) => (x.id === 'needle-strike' && r.strike ? r.strike.total : null);
-    const tools = ['red', 'blue', 'yellow'].map((c) => {
-      const l = by('tools').filter((x) => x.color === c);
-      return `<p class="inv-sub" style="--c: var(--slot-${c})">${esc(t('ct_' + c))} <b>${num(l.filter((x) => x.got).length)}</b></p><ul class="inv-grid">${l.map(cell).join('')}</ul>`;
+    const item = (id) => all.find((x) => x.list === 'items' && x.id === id);
+    /* The Tools by colour, one slot per point of the 100% (design/43, 4 A): a Tool and its upgrade
+       share one, showing the one you have with two pips (had, upgraded); the Steel Soul twin
+       shows Shell Satchel when you have it. The two a wish lends go apart, after the colours. */
+    const tool = (id) => all.find((x) => x.list === 'tools' && x.id === id);
+    const rows = ['red', 'blue', 'yellow'].map((c) => {
+      const seen = new Set(), cells = [];
+      let got = 0;
+      for (const x of by('tools').filter((y) => y.color === c && !LENT.includes(y.id))) {
+        const grp = GROUP.get(x.id);
+        if (!grp || seen.has(grp)) continue;
+        seen.add(grp);
+        if (grp.length === 1) { cells.push(cell(x)); if (x.got) got++; continue; }
+        const [a, z] = grp.map(tool), on = a.got || z.got, steel = !!D.TOOLS.find((y) => y.id === z.id).replaces;
+        if (on) got++;
+        cells.push(cell({ ...(z.got ? z : a), got: on }, { key: a.id, names: `${pick(a.name)} · ${pick(z.name)}`, pips: steel ? null : [on, z.got] }));
+      }
+      return `<p class="inv-sub" style="--c: var(--slot-${c})">${esc(t('ct_' + c))} <span><b>${num(got)}</b><i>/${num(seen.size)}</i></span></p><ul class="inv-grid">${cells.join('')}</ul>`;
     }).join('');
-    const items = [...by('items').filter((x) => !x.shelf && x.id !== 'crafting-kit' && x.id !== 'tool-pouch'), ...by('pieces').filter((x) => x.id !== 'silk-heart')];
+    const lent = `<p class="inv-sub is-out">${esc(t('invLentTitle'))}</p><p class="inv-out-note">${esc(t('invLentNote'))}</p>
+      <ul class="inv-grid">${LENT.map((id) => cell(tool(id))).join('')}</ul>`;
+    // The Hunter Crest is always had, and drawn lit: the head counts it with the rest (the 100% doesn't).
+    const crests = by('crests'), crestsN = { got: crests.filter((x) => x.got).length, max: crests.length };
+    // The items: the Everbloom, the Farsight, the Journal, the Old Hearts and the melodies; the fleas count on their own plate.
+    const items = [item('everbloom'), item('farsight'), item('hunters-journal'), ...by('pieces').filter((x) => x.id !== 'silk-heart')];
+    const itemsN = { got: items.filter((x) => x.got && !x.n).length, max: items.filter((x) => !x.n).length };
     const relics = all.filter((x) => x.shelf === 'relics'), mementos = all.filter((x) => x.shelf === 'mementos');
     const money = own ? { rosaries: (App.gameMeta() || {}).rosaries || 0, shards: (App.gameMeta() || {}).shards || 0 } : g;
     const counts = { relics: { got: relics.reduce((a, x) => a + x.n[0], 0), max: relics.reduce((a, x) => a + x.n[1], 0) },
@@ -242,19 +318,24 @@
     sec.innerHTML = `<div class="inv">${brackets}${screenHead(esc(t('navGame')), start)}${own ? '' : App.freeNoteHtml()}
       <div class="inv-body">
         <div class="inv-col">
-          ${needles(b, still)}
-          ${hornet(b, still)}
+          ${needles(b, still, item('pale-oil'))}
+          ${hornet(b, still, item('mask-shard'), item('spool-fragment'))}
           <section class="inv-sec">${head(t('cat_skills'), cats.skills, 'skills')}${plates(by('skills'), skillV)}${open(by('skills'))}</section>
           <section class="inv-sec">${head(t('cat_arts'), cats.arts, 'arts')}${plates(by('arts'), artV)}${open(by('arts'))}</section>
         </div>
         <div class="inv-col">
-          <section class="inv-sec is-tools">${head(t('cat_tools'), cats.tools, 'tools')}${tools}${open(by('tools'))}</section>
-          <section class="inv-sec">${head(t('cat_crests'), cats.crests, 'crests')}<ul class="inv-grid">${by('crests').map(cell).join('')}</ul>${open(by('crests'))}</section>
-          <section class="inv-sec">${head(t('invPurse'))}${purse(g, all, money)}${open(purseShelf)}</section>
-          <section class="inv-sec">${head(t('invItems'), null, 'items')}<ul class="inv-grid is-items">${items.map(cell).join('')}</ul>${open(items)}</section>
-          <section class="inv-sec">${head(t('invRelics'), counts.relics, 'relics')}<ul class="inv-grid is-items">${relics.map(cell).join('')}</ul>${open(relics)}</section>
-          <section class="inv-sec">${head(t('invMementos'), counts.mementos, 'mementos')}<ul class="inv-grid">${mementos.map(cell).join('')}</ul>${open(mementos)}</section>
+          <section class="inv-sec">${head(t('cat_crests'), crestsN, 'crests')}${platesOf(crests)}<div class="inv-mats">${mat(item('memory-locket'))}</div>${open([...crests, item('memory-locket')])}</section>
+          <section class="inv-sec is-tools">${head(t('cat_tools'), cats.tools, 'tools')}
+            <div class="inv-levels">${level(b, 'kit', 'crafting-kit', still)}${level(b, 'pouch', 'tool-pouch', still)}</div>
+            <div class="inv-mats">${mat(item('craftmetal'))}</div>${open([item('craftmetal')])}
+            ${rows}${lent}${open(by('tools'))}</section>
         </div>
+      </div>
+      <div class="inv-bag">
+        <section class="inv-sec">${head(t('invPurse'))}${purse(g, all, money)}${open(purseShelf)}</section>
+        <section class="inv-sec">${head(t('invItems'), itemsN, 'items')}${platesOf(items)}${open(items)}</section>
+        <section class="inv-sec">${head(t('invRelics'), counts.relics, 'relics')}${platesOf(relics, true)}${open(relics)}</section>
+        <section class="inv-sec">${head(t('invMementos'), counts.mementos, 'mementos')}${platesOf(mementos, true)}${open(mementos)}</section>
       </div>
     </div>`;
     before = { ...b };
@@ -304,14 +385,31 @@
         else if (x.piece != null) m.pieces = toggle(m.pieces, x.piece);
       });
     },
+    /* A Tool and its upgrade on one slot (design/43, 4 A): a tap goes none, had, upgraded, none,
+       as a save keeps them (the upgrade replaces the Tool). The Steel Soul twin goes on and off
+       as the Tool it replaces. */
+    invTwin(node) {
+      const grp = GROUP.get(node.dataset.key);
+      if (!grp || grp.length < 2) return;
+      const [a, z] = grp, steel = !!D.TOOLS.find((y) => y.id === z).replaces;
+      picked = 'tools/' + a;
+      mark((m) => {
+        const now = m.tools.includes(z) ? 2 : m.tools.includes(a) ? 1 : 0;
+        const next = steel ? (now ? 0 : 1) : (now + 1) % 3;
+        m.tools = [...m.tools.filter((id) => !grp.includes(id)), ...(next === 1 ? [a] : next === 2 ? [z] : [])];
+      });
+    },
     invAll(node) {
       const on = node.dataset.value === '1', list = node.dataset.list;
       mark((m) => {
         if (list === 'items') {
+          // Only what the Items shelf holds: the three key items, the Old Hearts, the melodies and the fleas.
+          const kinds = ['old-heart', 'melody', 'flea'];
           m.everbloom = on;
           m.farsight = on;
           m.hasJournal = on;
-          m.pieces = on ? CO.PIECES.map((p, i) => i) : [];
+          m.pieces = [...m.pieces.filter((i) => !kinds.includes(CO.PIECES[i][0])),
+            ...(on ? CO.PIECES.map((p, i) => (kinds.includes(p[0]) ? i : -1)).filter((i) => i >= 0) : [])];
           return;
         }
         if (list === 'relics') { m.extras = on ? [...new Set([...m.extras, ...RELIC_AT])] : m.extras.filter((i) => !RELIC_AT.includes(i)); return; }

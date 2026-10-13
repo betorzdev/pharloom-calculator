@@ -100,30 +100,39 @@ reduced motion).
 
 ### Inventory
 
-A sheet in two columns. On the left, what Hornet is: **the Needle**, the five upright with their
-damage, the one she carries taller and lit; then **Hornet**: the masks (5 to 10) as the game's
-masks, in a row as the HUD draws them, the silk (9 to 18) as beads on one thread, the Silk Hearts, and the Crafting Kit and Tool
-Pouch with their level; then the **Silk Skills** with what each deals at this build, and the
-**abilities** (Needle Strike with its damage). On the right, what she carries: the **Tools** by
-colour, each on its slot's diamond (dashed and grey while you lack it), the **Crests** and the
-**items** with their counts (the loose Mask Shards and Spool Fragments, the Memory Lockets,
-Craftmetal, Pale Oil, the Everbloom, the Farsight, the Hunter's Journal, the Old Hearts, the
-melodies and the fleas). Above the items sits the **Purse**: Rosaries and Shell Shards as big
-figures (the shards out of what your Tool Pouch holds, 400 to 800, with a bar), and under each
-what breaks into it, counted, with the sum you would get from breaking it all: the five Rosary
-strings and necklaces under the rosaries; the Beast Shards, Shard Bundles, Pristine Cores,
-Hornet Statuettes and the Growstone (Steel Soul) under the shards. Below the items, the
-**Relics** (how many you hold of each kind) and the **Mementos**. The heads count as the 100%
-does (Tools of 51); the Relics and Mementos aren't part of it. Tap anything to read the game's
-own text under its shelf.
+A sheet in two columns, each thing beside what it feeds, and a band under both. On the left, what
+Hornet is: **the Needle**, the five upright with their damage, the one she carries taller and lit,
+and the Pale Oil you hold under it; then **Hornet**: the masks (5 to 10) as the game's masks, in a
+row as the HUD draws them, with the loose Mask Shards under them (four make a mask), the silk (9 to
+18) as beads on one thread with the loose Spool Fragments (two make a spool), and the Silk Hearts;
+then the **Silk Skills** with what each deals at this build, and the **abilities** (Needle Strike
+with its damage). On the right, her equipment: the **Crests**, with the Memory Lockets that open
+their slots, and the **Tools**: the Crafting Kit and Tool Pouch with their level and the
+Craftmetal, then the Tools by colour, each on its slot's diamond (hollow in its colour while you
+lack it). There's one slot per point of the 100%: a Tool and its upgrade (Curveclaw and
+Curvesickle, Druid's Eye and Eyes, Claw Mirror and Mirrors) share one, showing the one you have,
+with two pips under it (had, upgraded), and Shell Satchel shows in Dead Bug's Purse's slot in Steel
+Soul. Snare Setter and Needle Phial, which a wish lends and takes back, sit apart after the
+colours: they don't count. Under both columns, what she carries: the **Purse** (Rosaries and
+Shell Shards as big figures, the shards out of what your Tool Pouch holds, 400 to 800, with a bar,
+and under each what breaks into it, counted, with the sum you would get from breaking it all: the
+five Rosary strings and necklaces under the rosaries; the Beast Shards, Shard Bundles, Pristine
+Cores, Hornet Statuettes and the Growstone (Steel Soul) under the shards); the **items** (the
+Everbloom, the Farsight, the Hunter's Journal, the Old Hearts, the melodies and the fleas); the
+**Relics** (how many you hold of each kind) and the **Mementos**. Crests, items, what's in the
+purse, Relics and Mementos are plates with their name, and under it their count or «Not found
+yet». Every head says how many of how many, and its rule lights up that far (complete, its diamond
+fills): the Tools count as the 100% does (of 51), the Crests with the Hunter Crest you start with
+(of 7); the Relics and Mementos aren't part of the 100%. Tap anything to read the game's own text
+under its shelf.
 
 In **Free mode** it's your game, marked by hand, and it starts as the game does: a New Game,
 with the base Needle, five masks, nine silk and the Hunter Crest, nothing else. A line under the
 title says so. On the left, tap a Needle, a mask, a bead of
-silk, a Silk Heart or a level (tap the last one lit to take it back). On the right, tap a Tool,
+silk, a Silk Heart or a level (tap the last one lit to take it back). Tap a Tool,
 Crest, Silk Skill, ability, the Everbloom, the Farsight, the Journal, an Old Heart, a melody or a
-Memento to mark it had or not (its
-text opens under the shelf); each shelf has «All · None», and what comes in numbers (loose Mask
+Memento to mark it had or not (its text opens under the shelf); a slot a Tool shares with its
+upgrade goes none, had, upgraded with each tap. Each shelf has «All · None», and what comes in numbers (loose Mask
 Shards and Spool Fragments, Memory Lockets, Craftmetal, Pale Oil, fleas, what's in the purse, the
 Relics of each kind) has − N +. The Rosaries and Shell Shards are typed: Enter or leaving the field
 takes the figure, and the shards stop at what your Pouch holds. «Start from»: «New Game» (the
