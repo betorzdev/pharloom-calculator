@@ -685,14 +685,58 @@
     pgPoints:       { es: 'Puntos de deseos', en: 'Wish points' },
     pgEndings:      { es: 'Finales', en: 'Endings' },   // no word of the game's for them
     pgOnlyAct3:     { es: 'Solo en el Acto 3', en: 'Only in Act 3' },
+    /* Progress at first sight (design/40-progress-clarity-variants.html): where you are, over the tabs */
+    pgActName1:     { es: 'TELALEJANA', en: 'PHARLOOM' },   // ACT_1_NAME
+    pgActName2:     { es: 'CIUDADELA MELODIOSA', en: 'CITADEL OF SONG' },   // ACT_2_NAME
+    pgActName3:     { es: 'ABISMO', en: 'ABYSS' },   // ACT_3_NAME
+    pgHere:         { es: 'Estás aquí', en: 'You are here' },
+    pgHereAct:      { es: 'Estás en el Acto {n}.', en: 'You\'re in Act {n}.' },
+    pgHereNext:     { es: 'Para abrir el Acto {m} hay {of} pasos: vas por el {i}, y en él te quedan {n} cosas.', en: 'Opening Act {m} takes {of} steps: you\'re on step {i}, with {n} things left in it.' },
+    pgHereNext1:    { es: 'Para abrir el Acto {m} hay {of} pasos: vas por el {i}, y en él te queda {n} cosa.', en: 'Opening Act {m} takes {of} steps: you\'re on step {i}, with {n} thing left in it.' },
+    pgHereStep:     { es: 'Para abrir el Acto {m} hay {of} pasos: vas por el {i}.', en: 'Opening Act {m} takes {of} steps: you\'re on step {i}.' },
+    pgHere100:      { es: 'Para el 100 % te queda un {pct}.', en: '{pct} to go for 100%.' },
+    pgHereFull:     { es: 'Acto 3 y el 100 %: lo tienes todo.', en: 'Act 3 and 100%: you have it all.' },
+    pgHereNone:     { es: 'Silksong tiene tres actos. Sin partida, esta pestaña es la guía: lo que pide el juego para pasar de uno a otro, y todo lo que cuenta para el 100 %.',
+                      en: 'Silksong has three Acts. With no save, this tab is the guide: what the game asks to go from one to the next, and everything that counts for 100%.' },
+    pgInviteTag:    { es: 'Sin partida', en: 'No save' },
+    pgInvite:       { es: 'Importa tu partida y verás en qué acto estás, y qué te falta para el siguiente y para el 100 %, pieza a pieza.',
+                      en: 'Import your save to see which Act you\'re in, and what\'s left for the next one and for 100%, piece by piece.' },
+    /* The road's steps by what to do, on its thread (3 A); the titles stay the whole road's */
+    pgStepN:        { es: '{n} · {step}', en: '{n} · {step}' },
+    pgStepBells:    { es: 'Haz sonar los Santuarios', en: 'Ring the Bellshrines' },   // the game's word in it: BELLSHRINE
+    pgStepGate:     { es: 'Abre la {gate}', en: 'Open the {gate}' },
+    pgStepJudge:    { es: 'Vence a la {judge}', en: 'Defeat the {judge}' },
+    pgStepUnlock:   { es: 'Desbloquea «{wish}»', en: 'Unlock "{wish}"' },
+    pgStepOffer:    { es: 'Acepta el deseo', en: 'Take the wish' },
+    pgStepSnare:    { es: 'Reúne la trampa', en: 'Gather the snare' },
+    pgStepReady:    { es: 'Llévasela al {caretaker}', en: 'Bring it to the {caretaker}' },
+    pgStepSilk:     { es: 'Atrapa a la {silk}', en: 'Snare {silk}' },
+    /* What's next on the step you're on (2 A) */
+    pgTodo:         { es: 'Lo siguiente', en: 'What\'s next' },
+    pgTodoWish:     { es: 'Completa el deseo «{wish}»', en: 'Complete the wish "{wish}"' },
+    pgTodoPoints:   { es: 'Consigue {n} puntos más de deseos', en: 'Get {n} more wish points' },
+    pgTodoPoints1:  { es: 'Consigue {n} punto más de deseos', en: 'Get {n} more wish point' },
+    pgTodoAny:      { es: 'Vale cualquiera de estos {n} deseos; por ejemplo:', en: 'Any of these {n} wishes will do; for example:' },
+    pgTodoAnyNear:  { es: 'Vale cualquiera de estos {n} deseos; los más cerca de tu banco:', en: 'Any of these {n} wishes will do; the nearest to your bench:' },
+    pgTodoShrine:   { es: 'Haz sonar el Santuario de Campana de {area}', en: 'Ring the Bellshrine in {area}' },   // the game's word in it: BELLSHRINE
+    pgTodoGet:      { es: 'Consigue: {name}', en: 'Get: {name}' },
+    pgTodoPavo:     { es: 'Habla con Pabo: te da la {key}', en: 'Talk to Pavo: he gives you the {key}' },   // his name: BELLHART_GREETER_MAIN
+    pgTodoMore:     { es: 'y {n} más', en: 'and {n} more' },
+    pgListAll:      { es: 'Ver la lista entera, con lo hecho ({n})', en: 'See the whole list, done included ({n})' },
+    pgListLess:     { es: 'Cerrar la lista entera', en: 'Close the whole list' },
+    /* How the 100% splits (4 A), and the guide without a save (5 A) */
+    pgInCats:       { es: 'en {n} categorías', en: 'in {n} categories' },
+    // Not "each thing is 1%": masks and spools count whole (four and two pieces), as their rows say.
+    pgSplit:        { es: 'La cifra de cada fila es cuánto tienes de lo que vale, en puntos del 100 %: las Herramientas son la mitad.',
+                      en: 'Each row\'s figure is how much you have of what it\'s worth, in points of the 100%: the Tools are half of it.' },
+    pgColHead:      { es: 'Tienes / vale (%)', en: 'Got / worth (%)' },
+    pgColHeadNone:  { es: 'Vale (%)', en: 'Worth (%)' },
+    pgFoldSee:      { es: 'Ver los {n}', en: 'See all {n}' },
+    pgFoldHide:     { es: 'Ocultar', en: 'Hide' },
 
     /* Progress: the road to the next Act (js/acts.js, the game's own rules) */
     roadTitle:      { es: 'Camino al Acto {n}', en: 'The road to Act {n}' },
-    /* The road at a glance (js/app-progress.js, journey): each step by a name of the game's. */
-    roadBellshrine: { es: 'Santuario de Campana', en: 'Bellshrine' },   // BELLSHRINE
-    roadCitadelName:{ es: 'CIUDADELA MELODIOSA', en: 'CITADEL OF SONG' },   // ACT_2_NAME
     roadSnare:      { es: 'Trampa anímica', en: 'Soul Snare' },   // MQ_SILK_SNARE_NAME
-    roadWishwall:   { es: 'Muro de deseos', en: 'Wishwall' },   // the game says it in BB_FIXER_Q1_INTRO; no name of its own
     ending_A:       { es: 'Reina Tejedora', en: 'Weaver Queen' },   // ENDING_A_NAME
     ending_C:       { es: 'Atadura de seda', en: 'Snared Silk' },   // ENDING_C_NAME
     ending_D:       { es: 'Niña retorcida', en: 'Twisted Child' },   // ENDING_D_NAME
