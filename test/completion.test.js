@@ -83,3 +83,53 @@ test('a Journal entry is complete when listed with its kills; one with no count 
   assert.equal(CP.journalDone(mg, { mossgrub: 24 }), false);
   assert.equal(CP.journalDone(mg, { mossgrub: 25 }), true);
 });
+
+test('93% is the most before Act 3: its 7 points, as the wiki names them', () => {
+  // Every thing of the 100% whose Act is 1 or 2, counted as the game counts it.
+  const upTo2 = (ids, where) => ids.filter((id) => where[id] && where[id][0] <= 2);
+  const pieces = (kind) => CO.PIECES.filter((p) => p[0] === kind && p[1] <= 2).length;
+  const g = {
+    tools: upTo2(CO.COUNTED.map((ids) => ids[0]), CO.WHERE.tools), crests: upTo2(CP.CRESTS, CO.WHERE.crests),
+    skills: upTo2(CP.SKILLS, CO.WHERE.skills), arts: upTo2(CP.ARTS, CO.WHERE.arts),
+    masks: Math.floor(pieces('mask-shard') / 4), spools: Math.floor(pieces('spool-fragment') / 2), hearts: pieces('silk-heart'),
+    needle: pieces('needle'), kit: pieces('crafting-kit'), pouch: pieces('tool-pouch'), everbloom: CO.WHERE.everbloom[0] <= 2,
+  };
+  assert.equal(CP.count(g).total, 93);
+  // A mask, the Pale Steel Needle, the Pin Badge, Pale Nails, the Shaman Crest, Silk Soar and the Everbloom.
+  assert.deepEqual([g.masks, g.needle, g.tools.includes('pin-badge'), g.skills.includes('pale-nails'), g.crests.includes('shaman'),
+    g.arts.includes('silk-soar'), g.everbloom], [4, 3, false, false, false, false, false]);
+});
+
+test("every thing of the 100% says the area it is in (the Everbloom is a wish's)", () => {
+  // Details that are the area alone ("Deep Docks", "Memorium (Top-right)") once gave none.
+  for (const k of ['tools', 'crests', 'skills', 'arts']) for (const [id, w] of Object.entries(CO.WHERE[k])) assert.ok(CO.AREAS[w[1]], `${k} ${id}`);
+  for (const [i, p] of CO.PIECES.entries()) if (!['old-heart', 'melody'].includes(p[0])) assert.ok(CO.AREAS[p[3]], `PIECES[${i}] ${p[0]}`);
+  assert.deepEqual([CO.WHERE.tools.voltvessels[1], CO.WHERE.arts['swift-step'][1], CO.WHERE.skills.silkspear[1]], ['ARBORIUM', 'DOCKS', 'MOSSCAVE']);
+});
+
+test('how to get it: the way a game has reached, and what a shop still waits on', () => {
+  const H = require('../js/how.js');
+  const way = (ways, g) => CP.wayOf(ways, g, F.ART_PD);
+  const game = (o) => ({ act: 1, wishes: [], arts: [], ...o });
+  // No game: the first way. A game: the last way its Act has reached (Pebb, then Grindle in Act 3).
+  const brooch = H.HOW.tools['magnetite-brooch'];
+  assert.equal(way(brooch, null).way.vendor, 'pebb');
+  assert.equal(way(brooch, game({ act: 2 })).way.vendor, 'pebb');
+  assert.equal(way(brooch, game({ act: 3 })).way.vendor, 'grindle');
+  assert.equal(way(H.HOW.tools.curveclaw, game({ act: 2 })).way.kind, 'found');
+  // Frey's Multibinder waits for My Missing Courier; Grindle's Snitch Pick for the Clawline.
+  const multi = H.HOW.tools.multibinder;
+  assert.equal(way(multi, null).first.length, 1);
+  assert.deepEqual(way(multi, game({ wishes: multi[0].after })).first, []);
+  assert.deepEqual(way(H.HOW.tools['snitch-pick'], game()).arts, ['clawline']);
+  assert.deepEqual(way(H.HOW.tools['snitch-pick'], game({ arts: ['clawline'] })).arts, []);
+  assert.deepEqual(CP.wayOf(undefined, null), { way: null, first: [], arts: [] });
+});
+
+test("the flea caravan's rewards wait for the game's counts: 12 fleas in Greymoor, 22 in the Blasted Steps", () => {
+  // The Troupe Leader's FSM (tools/gen-how.js FLEAS), as the wiki's Fleas page says; the completionist's 14 and 20 were wrong.
+  const H = require('../js/how.js');
+  const at = (kind, text) => CO.PIECES.findIndex((p) => p[0] === kind && JSON.stringify(p[2]).includes(text));
+  assert.deepEqual(H.HOW.pieces[at('spool-fragment', 'CaravanTroupeLocation')], [{ kind: 'fleas', npc: 'mooshka', fleas: 12 }]);
+  assert.deepEqual(H.HOW.pieces[at('tool-pouch', 'Fleatopia')], [{ kind: 'fleas', npc: 'mooshka', fleas: 22 }]);
+});

@@ -81,9 +81,16 @@ const FIGHT = {
 /* The Silk Hearts' memory scenes (PIECES ['visited', scene]) → the boss page that opens each
    (the completionist's "Defeat X", checked against BOSSES: each drops a Silk Heart). */
 const HEART = { Memory_Silk_Heart_BellBeast: 'bell-beast', Memory_Silk_Heart_WardBoss: 'the-unravelled', Memory_Silk_Heart_LaceTower: 'lace' };
+/* How many Lost Fleas the caravan waits for before it moves on, giving its reward (the game's
+   files, read on 13-Oct-2026: the Troupe Leader's Dialogue FSM compares the FleasCollected
+   Target's CompletedCount, the 27 SavedFlea_ flags with Kratt, Vog and the Huge Flea, against 12
+   in Greymoor_08_caravan, "Convo Choice", and 22 in Coral_Judge_Arena, "Met?": below it, "Need
+   More Fleas"). Leaving Greymoor gives a Spool Fragment, leaving the Blasted Steps for Fleatopia
+   the Tool Pouch, as the wiki's Fleas page says. The completionist's 14 and 20 were wrong. */
+const FLEAS = { greymoor: 12, judge: 22 };
 /* A PIECES bool that isn't a pickup lying in the room: what it is. */
 const BOOL = {
-  'Aqueduct_05 Caravan Troupe Leader Fleatopia NPC': { kind: 'fleas', npc: 'mooshka', fleas: 20 },  // completionist: 20 Lost Fleas
+  'Aqueduct_05 Caravan Troupe Leader Fleatopia NPC': { kind: 'fleas', npc: 'mooshka', fleas: FLEAS.judge },
   'Bone_12 Ladybug Craft Pickup': { kind: 'found', act: 3 },  // wiki Tools: left on the ground in Act 3
 };
 const PICKUP = /^(Heart Piece|Silk Spool)( \(\d+\))?$/;
@@ -296,7 +303,7 @@ function pieceWays(i, check) {
     return [{ kind: 'boss', foe: foe(page) }];
   }
   if (t === 'min' && a === 'nailUpgrades') return needleWays[b] || fail(`no Needle upgrade ${b}`);
-  if (t === 'min' && a === 'CaravanTroupeLocation') return [{ kind: 'fleas', npc: 'mooshka', fleas: 14 }];  // completionist: 14
+  if (t === 'min' && a === 'CaravanTroupeLocation') return [{ kind: 'fleas', npc: 'mooshka', fleas: FLEAS.greymoor }];
   if (t === 'min' && a === 'pinGalleriesCompleted') return [{ kind: 'challenge', npc: 'loddie' }];  // Loddie's first pin gallery
   return fail(`PIECES[${i}]: no way for the check ${JSON.stringify(check)}`);
 }

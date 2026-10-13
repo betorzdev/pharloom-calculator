@@ -57,6 +57,25 @@
      JavaScript, which once counted the Void Tendrils before they were seen). */
   const journalDone = (e, journal) => journal[e.id] !== undefined && journal[e.id] >= (e.kills || 0);
 
-  SS.completion = { CATEGORIES, CRESTS, SKILLS, ARTS, count, journalDone };
+  /* How to get a missing thing (js/how.js HOW: its ways, best first), for a game or none:
+     { way, first, arts }. A way tagged with an Act replaces the ones before it from then on
+     (Pebb's and Mort's wares at Grindle's in Act 3, the Curveclaw by the Mottled Skarr's corpse
+     in Act 2), so a game gets the last one its Act has reached, and no game the first. first: the
+     wishes (WISHES indices) a shop waits on that the game hasn't done (Frey's Multibinder after My
+     Missing Courier); arts: the abilities it asks for (playerData has* flags, as js/savefile.js
+     ART_PD) that the game lacks (Grindle's Snitch Pick, the Clawline). */
+  function wayOf(ways, game, artPd = {}) {
+    const g = game || null;
+    const way = (ways && ((g && ways.filter((x) => x.act && x.act <= g.act).pop()) || ways[0])) || null;
+    if (!way) return { way: null, first: [], arts: [] };
+    const artOf = Object.fromEntries(Object.entries(artPd).map(([id, f]) => [f, id]));
+    return {
+      way,
+      first: (way.after || []).filter((i) => !(g && (g.wishes || []).includes(i))),
+      arts: (way.needs || []).map((f) => artOf[f]).filter((id) => id && !(g && (g.arts || []).includes(id))),
+    };
+  }
+
+  SS.completion = { CATEGORIES, CRESTS, SKILLS, ARTS, count, journalDone, wayOf };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.completion;
 })();
