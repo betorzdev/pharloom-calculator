@@ -784,6 +784,7 @@
     roadPieceGiven: { es: 'te la da al aceptar el deseo: {npc}', en: 'given once you accept the wish: {npc}' },
     roadPieceAfter: { es: 'tras vencer en combate: {foe}', en: 'after defeating {foe}' },
     roadPieceNeeds: { es: 'requiere: {art}', en: 'needs: {art}' },
+    roadHermitWay:  { es: 'cruza la pared oculta a la derecha de la Vía Campana y baja: está a la izquierda', en: 'walk through the hidden wall right of the Bellway and drop down: he\'s to the left' },   // the game's word in it: KEY_BELLWAY
     roadReady:      { es: 'Llévaselas al {caretaker} en {clave}', en: 'Bring them to the {caretaker} in {clave}' },
     roadSilk:       { es: 'Derrota a la Gran Madre Seda y atrápala con la trampa anímica', en: 'Defeat Grand Mother Silk and entrap her with the Soul Snare' },   // ENDING_C_DESC
     roadSilkNote:   { es: 'En el golpe final, toca el Agujolín en vez de enlazarla. Ese final cierra en esa partida los otros dos del Acto 2; tras los créditos, la partida se abre ya en el Acto 3.', en: 'On the final blow, play the Needolin instead of binding her. That ending closes the other two Act 2 endings in that game; after the credits the save opens in Act 3.' },
@@ -797,13 +798,19 @@
     roadPaleLake:   { es: 'Lago Pálido', en: 'Pale Lake' },   // WHITELAKE
     /* What posts a required wish later than the rest (its playerData test in js/quests.js CHAIN when,
        and the wiki's prerequisites for what sets it; checked on the author's saves). */
-    roadOpensShakra:{ es: 'sale al comprarle a {npc} todos sus mapas ({n} de {of}) y tener la {art}', en: 'posted once you have bought all of {npc}\'s maps ({n} of {of}) and have the {art}' },
+    roadOpensShakra:{ es: 'sale al comprarle a {npc} todos sus mapas y tener la {art}', en: 'posted once you have bought all of {npc}\'s maps and have the {art}' },
     roadOpensSherma:{ es: 'sale tras conocer a {npc} en {clave} y visitar el {ward}', en: 'posted after meeting {npc} in {clave} and visiting the {ward}' },
     roadOpensClave: { es: 'sale cuando {clave} crece: «{first}» y otros 3 deseos de su muro', en: 'posted once {clave} grows: "{first}" and 3 more wishes from its board' },
     roadOpensTown:  { es: 'sale tras la primera mejora de aguja, venderle una reliquia a {npc} y hablar con {pavo}', en: 'posted after your first Needle upgrade, selling a relic to {npc} and speaking with {pavo}' },
     roadOpensGlory: { es: 'sale tras vencer a los {foe} o conseguir {art}', en: 'posted after beating the {foe} or getting the {art}' },
     roadMapsBought: { es: '{n} de {of} comprados', en: '{n} of {of} bought' },
     roadPinOil:     { es: 'cuenta también con la segunda mejora de aguja de {npc}', en: 'also counts with {npc}\'s second Needle upgrade' },
+    // What a wish asks to be brought (js/quests.js CHAIN asks): a donation's sum, the Journal's entries, its things.
+    roadAskRosaries:{ es: 'pide {n} rosarios', en: 'asks for {n} rosaries' },   // the game's word in it: INV_NAME_COIN
+    roadAskShards:  { es: 'pide {n} fragmentos de coraza', en: 'asks for {n} shell shards' },   // the game's word in it: INV_NAME_SHARD
+    roadAskJournal: { es: 'pide {n} entradas en el {journal}', en: 'asks for {n} entries in the {journal}' },
+    roadAskItems:   { es: 'pide: {items}', en: 'asks for: {items}' },
+    roadAskN:       { es: '{n} × {item}', en: '{n} × {item}' },
     pgEndingShut:   { es: 'cerrado en esta partida', en: 'closed in this game' },
 
     /* Progress: how to get each thing of the 100% (js/how.js), the traps, what's left to buy */

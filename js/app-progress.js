@@ -226,12 +226,15 @@
   const wishName = (q) => pick(QU.CHAIN[q].name);
   const personName = (id) => { const p = SS.people && SS.people.PEOPLE.find((x) => x.id === id); return p ? pick(p.name) : id; };
   /* How each piece is had (the wiki's pages and the Caretaker's FSM): his sister and his uncle give
-     theirs only once the wish is accepted; the Seeker's Soul lies past Groal the Great; the Snare
+     theirs only once the wish is accepted. The uncle, the Bell Hermit, sits below Bellhart's Bellway
+     (Belltown_basement): past its right side's hidden wall (a Remasker, walked through: the room has
+     no breakable wall, whatever the guides say) and down its drop (bot1) into Belltown_basement_03,
+     left of where you land (the wiki's Bell Hermit page agrees). The Seeker's Soul lies past Groal the Great; the Snare
      Setter past a ledge only the Faydown Cloak reaches (js/spots.js NEEDS). And its mark on the
      Map: a soul's (js/spots.js TASKS, what the wish asks for), the Snare Setter's as a Tool's. */
   const SNARE_HOW = {
     'Snare Soul Churchkeeper': () => t('roadPieceGiven', { npc: personName('churchkeeper') }),
-    'Snare Soul Bell Hermit': () => t('roadPieceGiven', { npc: personName('bell-hermit') }),
+    'Snare Soul Bell Hermit': () => [t('roadPieceGiven', { npc: personName('bell-hermit') }), t('roadHermitWay')].join(' · '),
     'Snare Soul Swamp Bug': () => t('roadPieceAfter', { foe: foeName('groal-the-great') }),
     'Silk Snare': () => t('roadPieceNeeds', { art: artName('faydown-cloak') }),
   };
@@ -257,6 +260,18 @@
   // The game's line under a wish's title (js/quests.js CHAIN loc: who asks for it, or where); a
   // step with none takes the one of the stage before it.
   const wishLoc = (q) => { for (let x = q; x && QU.CHAIN[x]; x = QU.CHAIN[x].prev) if (QU.CHAIN[x].loc) return pick(QU.CHAIN[x].loc); return ''; };
+  /* What a wish asks to be brought (js/quests.js CHAIN asks, its targets in the game's files): the
+     rosaries or shell shards a donation takes, the Journal's entries, or its things, n of each. A
+     delivery's thing goes unsaid when it's all the wish asks (the wish is carrying it): the
+     Courier's Rasher is said among the Great Gourmand's dishes. */
+  function wishAsks(q) {
+    const asks = (QU.CHAIN[q] && QU.CHAIN[q].asks) || [];
+    const items = asks.filter((a) => a.kind === 'item' && (!a.delivery || asks.length > 1));
+    return [...asks.map((a) => (a.kind === 'rosaries' ? t('roadAskRosaries', { n: num(a.n) }) : a.kind === 'shards' ? t('roadAskShards', { n: num(a.n) })
+      : a.kind === 'journal' ? t('roadAskJournal', { n: num(a.n), journal: pick(item('hunters-journal').name) }) : '')),
+    items.length ? t('roadAskItems', { items: items.map((a) => (a.n > 1 ? t('roadAskN', { n: num(a.n), item: pick(a.name) }) : pick(a.name))).join(', ') }) : '']
+      .filter(Boolean).join(' · ');
+  }
   /* What posts a required wish later than the rest, and what the point of Pinmaster's Oil also
      comes with (the wiki: the second Needle upgrade grants it, wish or not; the author's Steel
      Soul save has it complete, never accepted). Shown while the wish isn't done. Shakra's maps are
@@ -278,14 +293,15 @@
 
   /* A wish of a group as a row: its Act and area (the pane's, js/collectibles.js WISHES; with none
      there, the area it's taken in), the room it's taken in and its mark on the Map, who asks for it
-     (the game's line) and what posts it, half a point when it's worth that, and the wishes to do before it. */
+     (the game's line), what it asks to be brought and what posts it, half a point when it's worth
+     that, and the wishes to do before it. */
   function wishRow(x, got, done, g) {
     const w = x.wish >= 0 ? CO.WISHES[x.wish] : null;
     const runt = HW.TRAPS.find((r) => r.id === 'broodfeast-runt');
     const from = wishFrom(x.quest, done);
     const sub = [x.value === 0.5 ? t('roadHalf') : '', !got && x.before.length ? t('roadBefore', { name: x.before.map(wishName).join(', ') }) : '',
       !got && runt && x.quest === runt.counts ? t('roadRunt') : ''];
-    const how = got ? '' : [wishLoc(x.quest), ...(OPENS[x.quest] ? OPENS[x.quest](g) : [])].filter(Boolean).join(' · ');
+    const how = got ? '' : [wishLoc(x.quest), wishAsks(x.quest), ...(OPENS[x.quest] ? OPENS[x.quest](g) : [])].filter(Boolean).join(' · ');
     return { name: x.name ? pick(x.name) : w ? pick(w[4]) : x.quest, got, act: w ? w[1] : 0, area: (w && w[3]) || (from.scene && R.areaOf(from.scene)) || null,
       scene: from.scene, mark: from.mark, sub, how, wish: x.wish, value: x.value };
   }
