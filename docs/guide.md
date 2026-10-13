@@ -721,7 +721,10 @@ calculator (`save-analyzer/`, `es/analizador-partida/`…). Each is the
 whole site opened on its screen, with its own title, description and a short text with
 questions, and `sitemap.xml` lists them. `npm run pages` writes them from `index.html` and
 `tools/pages-text.js`, with `robots.txt` and `CNAME` (the site lives at `pharloomcalculator.com`:
-`SITE` there); `npm test` fails if one falls behind.
+`SITE` there); `npm test` fails if one falls behind. The homes also carry the site's
+`WebSite` and `WebApplication` data (the name a search result gives it), and each language its
+own preview card (`assets/site/og.jpg`, `og-es.jpg`). The icons and `favicon.ico` come from the
+HUD's mask with `npm run site-icons` (`tools/site-icons.py`).
 
 With Combat on, also the damage calculator and one page per boss, 51 in each language
 (`bosses/lace/`, `es/jefes/lace/`); while it's hidden they aren't written. A boss's page is the site opened on

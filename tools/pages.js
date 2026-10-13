@@ -21,7 +21,7 @@
 const fs = require('fs');
 const path = require('path');
 const T = require('./pages-text.js');
-const { BRAND, LABELS, OG_ALT } = T;
+const { BRAND, LABELS, OG_ALT, APP_LD } = T;
 const { BOSS_PAGES } = require('./pages-bosses.js');
 /* The screens hidden for now (js/app.js, OFF): Combat's pages, the damage calculator and each
    boss's, aren't written, nor listed in the sitemap or under "More on the site". */
@@ -120,9 +120,25 @@ ${more}
 <!-- /about -->`.replace(/\n/g, '\n    ');
 }
 
-/* The page's own structured data: its questions and, below the home, where it sits. */
+/* The preview card's image: the page's language's. */
+const ogImage = (lang) => SITE + 'assets/site/' + (lang === 'es' ? 'og-es.jpg' : 'og.jpg');
+
+/* The page's own structured data: on a home, the site itself (what a result names it); its
+   questions; and, below the home, where it sits. */
 function pageLd(page, lang) {
-  const blocks = [{
+  const home = url(PAGES[0], lang);
+  const site = page.view ? [] : [{
+    '@context': 'https://schema.org', '@type': 'WebSite',
+    name: BRAND.en, alternateName: BRAND.es, url: SITE, inLanguage: LANGS,
+  }, {
+    '@context': 'https://schema.org', '@type': 'WebApplication',
+    name: BRAND[lang], alternateName: BRAND[lang === 'en' ? 'es' : 'en'], url: home, image: ogImage(lang),
+    description: APP_LD.description[lang], applicationCategory: 'GameApplication', operatingSystem: 'Any',
+    inLanguage: LANGS, isAccessibleForFree: true,
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+    about: { '@type': 'VideoGame', name: 'Hollow Knight: Silksong' },
+  }];
+  const blocks = [...site, {
     '@context': 'https://schema.org', '@type': 'FAQPage', inLanguage: lang,
     mainEntity: page.faq.map((f) => ({ '@type': 'Question', name: plain(f.q[lang]),
       acceptedAnswer: { '@type': 'Answer', text: plain(f.a[lang]) } })),
@@ -154,6 +170,7 @@ function build(html, page, lang) {
     [/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${attr(fullTitle(page, lang))}">`],
     [/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${attr(page.description[lang])}">`],
     [/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${url(page, lang)}">`],
+    [/<meta property="og:image" content="[^"]*">/, `<meta property="og:image" content="${ogImage(lang)}">`],
     [/<meta property="og:image:alt" content="[^"]*">/, `<meta property="og:image:alt" content="${attr(OG_ALT[lang])}">`],
     [/<meta property="og:locale" content="[a-z_A-Z]+">\n<meta property="og:locale:alternate" content="[a-z_A-Z]+">/,
       `<meta property="og:locale" content="${lang === 'es' ? 'es_ES' : 'en_US'}">\n<meta property="og:locale:alternate" content="${other === 'es' ? 'es_ES' : 'en_US'}">`],

@@ -30,6 +30,7 @@ npm run data                   # regenerates js/data.js, enemies, journal, colle
 npm run collectibles           # the completionist's dictionary, pinned (the save's fields)
 npm run art                    # the game's sprites from the wiki; npm run icons, its icons
 npm run pages                  # one page per search and per boss, in each language, sitemap.xml, robots.txt and CNAME
+npm run site-icons             # the site's icons and favicon.ico, from the HUD's mask (needs Pillow)
 npm run check-pack -- <folder> # the site against a folder of real saves: the 100% must match
 ```
 
