@@ -514,20 +514,22 @@ the one you're on larger, each numbered and named as what to do («1 · Unlock "
 «2 · Take the wish», «3 · Gather the snare»…; the full title shows on hover). Then the step you're
 on, with its picture, and its parts as small **rings** side by side (the wishes it requires, its
 wish points, its four conditions; the Bellshrines; the snare's pieces), the game's picture inside
-and how far as a figure under it; for Silk and Soul a line says that all three are needed.
+and how far as a figure under it; for Silk and Soul a line says that all three are needed, for
+the offer how it comes (or that you turned it down), and for the last step that the Needolin, not
+a Bind, is what snares her.
 
 Under the rings, **What's next**: only what the step still lacks, numbered, each with its picture,
 its area and the Map's pin when it has the thing: each required wish («Complete the wish "Balm for
-the Wounded"», with the wish to do first), the wish points short («Get 1 more wish point») with the
-four wishes nearest your bench that would give it (any of the others will do), each condition not
-met (the Flea Caravan, the Faydown Cloak, Lace, the Bellhome Key, or «Talk to Pavo» once he has it
-for you), each Bellshrine not rung, each piece of the snare. «See the whole list, done included»
-opens every part as a group like the 100% tab's (it stays as you leave it): its pictures or pips
-and its count, what it asks in a sentence and how much is left, then its things in rows by Act,
-the ones done ticked, with «½ point» on a delivery. The steps after it follow, dim. A line says how
-many things of the 100% you can already get in your Act (each counted on its own: a Mask Shard is
-one, not a point) and leads to the other tab; it's gone when there's nothing left to get. «The whole
-road» opens the road in full, as below.
+the Wounded"», with who asks for it in the game's words, what posts it and the wish to do first),
+the wish points short («Get 1 more wish point») with the four wishes nearest your bench that would
+give it (any of the others will do), each condition not met (the Flea Caravan, the Faydown Cloak,
+Lace, the Bellhome Key, or «Talk to Pavo» once he has it for you), each Bellshrine not rung, each
+piece of the snare. «See the whole list, done included» opens every part as a group like the 100%
+tab's (it stays as you leave it): its pictures or pips and its count, what it asks in a sentence and
+how much is left, then its things in rows by Act, the ones done ticked, with «½ point» on a
+delivery. The steps after it follow, dim. A line says how many things of the 100% you can already
+get in your Act (each counted on its own: a Mask Shard is one, not a point) and leads to the other
+tab; it's gone when there's nothing left to get. «The whole road» opens the road in full, as below.
 
 In Act 3 the tab is **«Your game»**: the four endings on a thread (the Acts are already on top), lit
 the ones your save has seen (the game keeps them: Weaver Queen, Snared Silk, Twisted Child, Sister
@@ -567,14 +569,25 @@ numbered steps, each with its count or a tick:
      - 17 of its 25 wish points (a delivery is worth half a point, the first time only);
      - four conditions: the Flea Caravan at Fleatopia, the Faydown Cloak, Lace defeated in the
        Cradle (with the three melodies that lead there), and the Bellhome Key. Pavo gives the key
-       after Bellhart's Glory and 2 wishes of his list, and the step lists them until then.
-  2. Take the wish.
-  3. Gather the snare's four pieces.
-  4. Bring them to the Caretaker.
+       after Bellhart's Glory and 2 wishes of his list, and the step lists them until then. The
+       caravan says where it stands and the fleas rescued: Mooshka takes it to Fleatopia with 22,
+       once the empty Pale Lake has been seen (and on the Phantom's way, the Last Judge beaten
+       first: its stop before is the Judge's arena).
+  2. Accept the wish from the Caretaker in Songclave (Bellhart's Wishwall posts it too, and sends
+     you to him). Offered and turned down isn't taken: the step says to talk to him again.
+  3. Gather the snare's four pieces: the Chapel Maid's and the Bell Hermit's souls, given once the
+     wish is accepted; the Seeker's Soul, past Groal the Great; the Snare Setter, which needs the
+     Faydown Cloak. Each with a pin to the Map.
+  4. Bring them to the Caretaker in Songclave.
   5. Snare Grand Mother Silk with the Needolin.
 
-Each missing wish shows its Act, its area, and the
-wish to do before it when there is one. Where it's taken is the game's: the Wishwall that lists it
+Each missing wish shows its Act, its area, who asks for it in the game's own words («Creige of
+the Halfway Home»), a pin to where it's taken on the Map, and the wish to do before it when there
+is one. The required wishes the game posts later say what posts them (Trail's End: all of Shakra's
+maps, counted, and the Faydown Cloak; Balm for the Wounded: Sherma met and the Whiteward visited;
+Strengthening Songclave, Restoration of Bellhart, Bellhart's Glory), and Pinmaster's Oil that
+Plinney's second Needle upgrade counts for it too. In Act 3, the Act 2 endings you never saw say
+they're closed in that game. Where it's taken is the game's: the Wishwall that lists it
 (Bellhart's, Bone Bottom's or Songclave's), or the NPC who offers it; a wish that comes after
 another on a board (Crawbug Clearing, Berry Picking…) counts the board until that one is done, and
 the NPC after. A part

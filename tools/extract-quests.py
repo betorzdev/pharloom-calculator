@@ -11,7 +11,9 @@ StreamingAssets/aa/StandaloneLinux64/dataassets_assets_assets/dataassets/:
       values of the complete ones (required included) add up to the target or more. A null quest
       is skipped ("Skipping null quest"): Belltown House Key has one.
   questsystem/quests.bundle, mainquests.bundle  each quest (FullQuestBase): m_Name, the name the
-      save's QuestCompletionData uses; displayName, its title's key; previousQuestStep,
+      save's QuestCompletionData uses; displayName, its title's key; location, the key of the line
+      the game writes under the title, who asks for it ("Creige of the Halfway Home") or where;
+      previousQuestStep,
       requiredCompleteQuests and requiredCompleteTotalGroups, what it waits for; playerDataTest,
       what the save must say before it's offered; targets, what it asks for (a Collectable or a
       Tool by reference, or a playerData test: the Bellshrines).
@@ -328,6 +330,9 @@ def main(game):
             needs = [h[1]['m_Name'] for h in (ref(af, r) for r in tt.get('requiredCompleteQuests', [])) if h]
             gs = [h[1]['m_Name'] for h in (ref(af, r) for r in tt.get('requiredCompleteTotalGroups', [])) if h]
             e = {'name': name(tt['displayName'].get('Key')), 'main': b.endswith('mainquests.bundle')}
+            loc = name((tt.get('location') or {}).get('Key'))
+            if loc:
+                e['loc'] = loc
             if prev:
                 e['prev'] = prev[1]['m_Name']
             if needs:
@@ -384,9 +389,11 @@ def write(groups, chain, shrines, snare, frm, locks):
         "                  complete, and the values of the complete ones add up to target or more.",
         "                  'Soul Snare' opens the wish Silk and Soul (Soul Snare Pre), the way to Act 3;",
         "                  'Belltown House Key', with Bellhart's Glory, has Pavo give the Bellhome's key.",
-        "     CHAIN        each quest by its save name (QuestCompletionData): { name, main, prev?, needs?,",
-        "                  groups?, when? }: its title, whether it's a main objective, the step before it,",
-        "                  the quests and groups it waits for, and the playerData test it's offered on.",
+        "     CHAIN        each quest by its save name (QuestCompletionData): { name, main, loc?, prev?,",
+        "                  needs?, groups?, when? }: its title, whether it's a main objective, the line the",
+        "                  game writes under the title (who asks for it, or where: 'Creige of the Halfway",
+        "                  Home'), the step before it, the quests and groups it waits for, and the",
+        "                  playerData test it's offered on.",
         "     BELLSHRINES  the five Bellshrines the Grand Gate asks for: [{ field, name }], field the",
         "                  playerData bool rung.",
         "     SNARE        the four pieces the wish Soul Snare asks for: [{ kind, save, name }], kind",
