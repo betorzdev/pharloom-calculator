@@ -587,7 +587,8 @@ and Tool Pouch upgrades, Needle upgrades and Silk Hearts one by one. Each thing 
 the area it's in, with the game's names; what belongs to a later Act than yours is dimmed. What's
 missing also says **how to get it**, from the game's shops and the wishes' rewards (and the
 wiki's boss drops):
-- the vendor and the price in rosaries;
+- the vendor and the price in rosaries, and what the shop still waits for: the wish to do first
+  (Frey's after My Missing Courier) or an ability (Grindle's Snitch Pick, the Clawline);
 - the Pale Oil or Craftmetal it takes;
 - the wish, the boss, the challenge, or the fleas rescued;
 - the keys it lies behind, by the names the inventory gives them: the Architect's Key for the
@@ -595,7 +596,8 @@ wiki's boss drops):
   with the Clawline), the White Key for the Whiteward (and the Surgeon's Key for its Silk Heart),
   the Slab's keys for its Mask Shard and Rune Rage.
 
-Under the heading, what the missing purchases cost against the rosaries you carry. The Tools'
+The way shown is the one your Act has reached: in Act 3 Pebb's and Mort's wares are Grindle's,
+and in Act 2 the Curveclaw and the Fractured Mask lie by the Mottled Skarr. The Tools'
 note warns of the two traps: the Curveclaw handed over to a Skarr loses its point until the
 Curvesickle, and the Silkshot's first repair closes the other two versions.
 

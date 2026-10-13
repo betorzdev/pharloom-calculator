@@ -51,8 +51,9 @@
     const keys = need.keys.map((k) => pick(HW.KEYS[k].name)).join(', ');
     return need.or ? t('howNeedsOr', { keys, alt: pick(D.ARTS.find((x) => x.id === need.or).name) }) : t('howNeeds', { keys });
   }
+  // The way shown is js/completion.js wayOf's, for the game on screen (Free mode's marks: none, the guide's first).
   function howText(ways, need) {
-    const w = ways && ways[0];
+    const { way: w, first, arts } = CP.wayOf(ways, marking ? null : cur, SS.savefile.ART_PD);
     if (!w) return needText(need);
     const npc = (id) => (HW.NPCS[id] ? pick(HW.NPCS[id]) : id);
     const cost = [w.craftmetal ? `${num(w.craftmetal)} ${itemName('craftmetal')}` : '', w.paleOil ? `${num(w.paleOil)} ${itemName('pale-oil')}` : ''];
@@ -66,7 +67,11 @@
       fleas: () => (w.fleas === 'all' ? t('howFleasAll', { npc: npc(w.npc) }) : t('howFleas', { npc: npc(w.npc), n: num(w.fleas) })),
     }[w.kind];
     if (!main) return needText(need);
-    return [main(), ...cost, w.act ? t('howFromAct', { n: num(w.act) }) : '', needText(need)].filter(Boolean).join(' · ');
+    // "From Act 3" only before the game is there; what a shop waits for that the game lacks: the
+    // wishes to do first, the abilities it asks for.
+    return [main(), ...cost, w.act && !(cur && !marking && cur.act >= w.act) ? t('howFromAct', { n: num(w.act) }) : '',
+      first.length ? t('roadBefore', { name: first.map((i) => pick(CO.WISHES[i][4])).join(', ') }) : '',
+      arts.length ? t('howNeeds', { keys: arts.map(artName).join(', ') }) : '', needText(need)].filter(Boolean).join(' · ');
   }
 
   /* One row: its name, whether you have it, its Act and its area; how to get it, when it's missing. */
@@ -583,8 +588,10 @@
     return { ...free, act: 3, pieces, masks: b.masks, spools: b.spools, hearts: b.hearts, needle: b.needle, kit: b.kit, pouch: b.pouch };
   }
 
-  App.howPiece = (i) => howText(HW.HOW.pieces[i], HW.NEEDS.pieces[i]);   // the Map's card
+  // The Map's card, with the game on screen (cur is Progress's, set per render).
+  App.howPiece = (i) => { cur = App.game(); marking = false; return howText(HW.HOW.pieces[i], HW.NEEDS.pieces[i]); };
   App.howOf = (key) => {   // the Map's card, for a Tool, Crest, Silk Skill, ability or the Everbloom
+    cur = App.game(); marking = false;
     if (key === 'everbloom') return howText(HW.HOW.everbloom);
     const [cat, id] = key.split(':');
     return HW.HOW[cat] && HW.HOW[cat][id] ? howText(HW.HOW[cat][id], (HW.NEEDS[cat] || {})[id]) : '';
