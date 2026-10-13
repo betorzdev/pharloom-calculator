@@ -597,7 +597,8 @@ Three decisions follow:
    patterns (§4.1), the wiki's `ESname` as the second source exactly as now, and drops the
    Spanish wiki as a third (it has nothing for Silksong).
 3. **The name.** The kingdom is Pharloom, as Hollow Knight's is Hallownest:
-   `pharloom-calculator`, at `betorzdev.github.io/pharloom-calculator/`. It says what the site
+   `pharloom-calculator`, at `betorzdev.github.io/pharloom-calculator/` (since October 2026 at
+   `pharloomcalculator.com`, as the sibling at `hallownestcalculator.com`). It says what the site
    is to someone who has played, and it sits next to the first one.
 
 ## 6. Design: what changes on the page
@@ -809,7 +810,16 @@ the Mist and the caravan were islands) was closed the same day: their doors say 
 the game's data says where they lead (a DoorTargetCondition or a PlayerDataTestResponse on the
 door, the Mist's MazeController, a scene loaded on top of another, a memory's FSM;
 `tools/extract-graph.py`'s header), so every scene is now reached from the first room. The
-Cradle was already reached. The scenes a boss fight, a cutscene or the Bellway's ride loads on
+Cradle was reached only by the Ventrica, which hid an island (13 October): its way on foot is the
+Cogwork Core's lift, no door but an FSM's ride (a BeginSceneTransition action, in Cog_Dancers'
+Boss Scene and Song_Tower_01's Travel Control), so a game resting at the Terminus with no Ventrica
+station open (`user2.dat`, Act 2 at 15%) reached the Cradle's six rooms alone and had nothing
+nearest its bench on the Journal, Your game, Progress or the Map. The extractor now keeps an FSM's
+ride when the other end rides back (that lift and nothing else; a ride one way is an event: a Slab
+Fly's cage, a memory's end, an ending), and every bench reaches Bone Bottom on foot. The same sweep
+found the Coral Tower's and the Hunter Queen's memories (`memory_coral_tower`, `memory_ant_queen`,
+15 entries found only there) with no way there: `js/rooms.js` ENTRANCE was read in lower case for the map but not
+for the walk. The scenes a boss fight, a cutscene or the Bellway's ride loads on
 top are left out, so the stations still need the save's.
 
 Then (28 September) **the 29 entries the game makes at run time**, placed from its own files too:

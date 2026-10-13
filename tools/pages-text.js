@@ -29,10 +29,21 @@ const LABELS = {
   bossCta: { es: 'Pruébalo con tu build', en: 'Try it with your build' },
 };
 
-/* The preview card's image (assets/site/og.jpg) is the same on every page; its description. */
+/* The preview card's image, one per language (assets/site/og.jpg, og-es.jpg: the Your game
+   screen with a 69% save, at 1200x630), the same on every page of it; its description. */
 const OG_ALT = {
-  es: 'La pantalla Tu partida: un 63 % repartido por categorías, que coincide con el que muestra el juego',
-  en: 'The Your game screen: a 63% split by category, matching the one the game shows',
+  // HIGH_HALLS
+  es: 'La pantalla Tu partida: descansando en Cámaras Corales, con el 100 %, el Diario, las máscaras y los rosarios junto al mapa',
+  en: 'The Your game screen: resting at Choral Chambers, with the 100%, the Journal, masks and rosaries beside the map',
+};
+
+/* The site as an application, for search engines (WebSite and WebApplication on the homes):
+   WebSite's name is what a result shows as the site's name. */
+const APP_LD = {
+  description: {
+    es: 'Sigue tu partida real de Hollow Knight: Silksong: el 100 % objeto a objeto, el mapa del juego con lo que te falta, el Diario de cazadora y cómo cambia a Hornet cada Herramienta y Blasón.',
+    en: 'Follow your real Hollow Knight: Silksong game: the 100% item by item, the game\'s own map with what you\'re missing, the Hunter\'s Journal, and how each Tool and Crest changes Hornet.',
+  },
 };
 
 const FREE = {
@@ -187,4 +198,4 @@ const GUIDE = {
 };
 for (const page of PAGES) Object.assign(page, GUIDE[page.id]);
 
-module.exports = { BRAND, LABELS, OG_ALT, PAGES };
+module.exports = { BRAND, LABELS, OG_ALT, APP_LD, PAGES };

@@ -29,7 +29,7 @@ Albert only steps in to pick between options; everything else goes ahead without
    `refactor/`...) from `dev`, one brief commit, push, `gh pr create --base dev`.
    **No `Co-Authored-By`, no "Generated with Claude Code"**: say it in every prompt, it
    overrides the harness reminder. No em dash. Return the PR URL.
-4. Verify visually: headless Chrome over `file://`, real saves, 1440 and 390.
+4. Verify visually: headless Chrome over `file://`, real saves, 1440 and 390 (`npm run drive`, `tools/drive.js`).
 
 ## While they run
 

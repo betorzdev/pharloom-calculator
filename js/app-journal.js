@@ -153,7 +153,7 @@
   const fold = (x) => String(x).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   const HAY = new Map(J.BOOK.map((e) => [e.id, fold(e.name.es + ' ' + e.name.en)]));
   const matches = (x, q) => HAY.get(x.e.id).includes(q) || whereOf(x.e).some((a) => fold(a).includes(q));
-  // The portraits, by area or in the Journal's order, with what the toggles and the search keep.
+  // The portraits, by area or in the Journal's order, with what the two choose-ones and the search keep.
   function shelf(list, g) {
     const q = fold(query.trim());
     const missing = !!g && !prefs.hjAll && !q;
@@ -175,13 +175,15 @@
     const seen = list.filter((x) => x.state !== 'unseen').length;
     const missing = !!g && !prefs.hjAll;
     const area = prefs.hjBy !== 'book';
-    // Two small toggles: an icon each, the words in their title.
-    const tog = (act, pairs, label) => `<div class="seg hj-tog" role="group" aria-label="${esc(label)}">${pairs.map(([v, on, text, icon]) =>
-      `<button type="button" data-act="${act}" data-value="${v}" aria-pressed="${on}" aria-label="${esc(text)}" title="${esc(text)}">${icon}</button>`).join('')}</div>`;
+    /* Two choose-ones, each in words under its label, as the Crest screen's «Try with»
+       (design/48-journal-controls-variants.html, 1 A: the icons alone didn't read). */
+    const pair = (id, act, label, opts) => `<div class="hj-pair"><span class="lbl" id="hj-${id}-l">${esc(label)}</span>
+        <div class="seg sm" role="group" aria-labelledby="hj-${id}-l">${opts.map(([v, on, text]) =>
+      `<button type="button" data-act="${act}" data-value="${v}" aria-pressed="${on}">${esc(text)}</button>`).join('')}</div></div>`;
     const search = `<label class="search hj-find"><span class="sr-only">${esc(t('hjFind'))}</span>${App.lens}
         <input type="search" data-act="hjQuery" value="${esc(query)}" placeholder="${esc(t('hjFind'))}" autocomplete="off"></label>`;
-    const tools = `<div class="hj-tools">${search}${g ? tog('hjShow', [['missing', missing, t('pgMissing'), ICON.missing], ['all', !missing, t('pgAll'), ICON.all]], t('pgShow')) : ''}
-        ${tog('hjBy', [['area', area, t('hjByArea'), ICON.area], ['book', !area, t('hjByBook'), ICON.book]], t('hjOrder'))}</div>`;
+    const tools = `<div class="hj-tools">${search}<div class="hj-ctl">${g ? pair('show', 'hjShow', t('pgShow'), [['missing', missing, t('pgMissing')], ['all', !missing, t('pgAll')]]) : ''}
+        ${pair('order', 'hjBy', t('hjOrder'), [['area', area, t('hjByArea')], ['book', !area, t('hjByBook')]])}</div></div>`;
     // The Memento as a ring: complete, and a dimmer arc for what's seen and not yet complete.
     const memento = `<div class="hj-memento" role="img" style="--d:${(done / need).toFixed(3)};--s:${(seen / list.length).toFixed(3)}"
         aria-label="${esc(t('hjMemento') + ': ' + num(done) + '/' + num(need) + ' · ' + t('hjSeen', { n: num(seen), m: num(list.length) }))}">
@@ -217,13 +219,6 @@
     const d = document.querySelector('dialog.hj-sheet[open]');
     if (d) { picked = null; d.close(); }
   });
-
-  const ICON = {
-    missing: '<svg class="ic" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke-dasharray="2 2"/></svg>',
-    all: '<svg class="ic" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="8" cy="8" r="6"/><circle cx="8" cy="8" r="2.5" fill="currentColor"/></svg>',
-    area: '<svg class="ic" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 4h12M2 8h5M2 12h12"/></svg>',
-    book: '<svg class="ic" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="2" y="2" width="3" height="3"/><rect x="6.5" y="2" width="3" height="3"/><rect x="11" y="2" width="3" height="3"/><rect x="2" y="6.5" width="3" height="3"/><rect x="6.5" y="6.5" width="3" height="3"/><rect x="11" y="6.5" width="3" height="3"/><rect x="2" y="11" width="3" height="3"/><rect x="6.5" y="11" width="3" height="3"/></svg>',
-  };
 
   // The Map's "See in the Journal": that entry open when the screen shows.
   App.journalOpen = (id) => { picked = id; };

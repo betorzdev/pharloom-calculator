@@ -43,7 +43,7 @@ the work up reads it first, then the step it's on.
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct) | [`12-map-variants.html`](12-map-variants.html) |
-| 7 | Journal (`journal`) | **Built** (28 Sep, three rounds) | [`15-journal-variants.html`](15-journal-variants.html) |
+| 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html` (kept out of the repo) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
 | 10 | **Built** (28 Sep) · The static pages (`tools/pages*.js`: `bosses/`, `es/jefes/`, the landing folders): they inherit steps 1 and 2; only what's theirs | To do | |
@@ -1115,6 +1115,34 @@ and centred: the drawing at its own pixels (capped at 440 px) on `--journal-ligh
 beside it; on a phone from the foot, drawing above. Not seen yet: the drawing in shadow
 (`--unseen-art`), so its shape can be learnt. `hjNotesDefeat` is `NOTES_DEFEAT` with its `{0}`.
 
+### Fourth round: the controls in words (13 October 2026)
+
+Albert: «in the Journal, there are 4 buttons at the top right that can't be understood». They
+were the second round's two icon toggles (`.seg.hj-tog`): a dashed circle «What's missing» and a
+dotted one «Everything» (only with a save; Free mode had the other two alone), three lines «By
+area» and a grid «Journal order». Their words lived only in `title` and `aria-label`, so a phone
+never showed them; the glyphs said nothing of filtering or ordering; the step 2 pip under each was
+the only sign of which was chosen and, with no word over it, read as ornament (the same diamond
+marks the optional entries and the area heads); and the two pairs were told apart only by a gap.
+The game's Journal has no filter or order (its pane only counts `ENCOUNTERED` and `COMPLETED`), so
+the words are the site's own, the ones Progress already uses. The sibling's Journal labels its
+state tabs in words with counts.
+
+`48-journal-controls-variants.html`, the site itself over three real saves (0, 55 and 100%) and
+Free mode:
+
+- **1 · How they read**: A · each pair in words with its pips, under a label («Show», «Order»), as
+  the Crest screen's «Try with»; B · words with pips and no label, as Progress, a hairline between
+  the pairs; C · the glyphs with their word beside them; D · one text button with what's chosen,
+  opening a list like the language's.
+- **2 · Where**: A · on the search's row, at its right (under it on a phone); B · a row of their
+  own under the search; C · above the search, centred.
+- **3 · Which**: A · the four, in two pairs; B · «What's missing» as one on/off, «Only what's
+  missing»; C · no «Journal order», by area always.
+
+Decision: **1 A, 2 A, 3 A**, built. `.hj-ctl` holds two `.hj-pair`s, each a `.lbl` (`pgShow`,
+`hjOrder`) and a `.seg.sm` of words (`pgMissing` / `pgAll`, `hjByArea` / `hjByBook`), the group
+named by its label (`aria-labelledby`); Free mode keeps the order pair alone. The icons are gone.
 
 ## Step 8 · Crest
 

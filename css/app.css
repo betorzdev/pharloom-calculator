@@ -1968,9 +1968,13 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 .hj-hunt-left { font-size: var(--fs-xs); color: var(--muted); }
 .hj-hunt:focus { outline: none; }
 .hj-hunt:is(:hover, :focus-visible), .hj-hunt.is-picked { border-color: var(--accent-line); background: var(--veil); }
-.hj-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: var(--sp-6); margin: var(--sp-4) 0 var(--sp-2); }
+.hj-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: var(--sp-3) var(--sp-8); margin: var(--sp-4) 0 var(--sp-2); }
 .hj-find { flex: 1 1 16rem; max-width: 24rem; margin-right: auto; }
-.hj-tog { gap: var(--sp-2); }
+/* What it shows and in what order: each choose-one in words under its label (design/03-redesign.md,
+   step 7, fourth round), as the Crest screen's «Try with». */
+.hj-ctl { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--sp-2) var(--sp-8); }
+.hj-pair { display: flex; align-items: baseline; gap: var(--sp-3); }
+.hj-pair .lbl { color: var(--muted); }
 .hj-shelf { display: grid; gap: var(--sp-6); min-width: 0; }
 .hj-area-group { display: grid; gap: var(--sp-3); }
 .hj-area-n { margin-left: auto; order: 3; font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-xs); letter-spacing: 0; color: var(--muted); }
@@ -2049,6 +2053,7 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
   .hj-hunt-left { display: none; }
   .hj-tools { justify-content: center; gap: var(--sp-3) var(--sp-6); }
   .hj-find { flex-basis: 100%; max-width: none; margin-right: 0; }
+  .hj-ctl { justify-content: center; gap: var(--sp-2) var(--sp-6); }
   .hj-sheet { inset: auto 0 0 0; margin: 0; width: auto; max-height: 90vh; grid-template-columns: minmax(0, 1fr); gap: var(--sp-4); padding: var(--sp-8) var(--sp-4) var(--sp-6); border-width: 1px 0 0; animation-name: hj-sheet-up; }
   .hj-art { min-height: 200px; }
   .hj-art img { max-height: 260px; }

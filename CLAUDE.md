@@ -36,8 +36,10 @@ Neither folder is part of the page: `index.html` doesn't load them.
 - **`localStorage` always wrapped in `try/catch`**: over `file://` its behaviour is undefined and
   access can throw.
 - **Every storage key starts with `pharloom.`**, and the IndexedDB database is `pharloom-live`.
-  This site and the Hollow Knight one share the `betorzdev.github.io` origin, so they share
-  `localStorage`: `hollow.*` is the other site's, never read or written here.
+  This site and the Hollow Knight one shared the `betorzdev.github.io` origin (each has its own
+  domain since October 2026: `pharloomcalculator.com`, `hallownestcalculator.com`), and over
+  `file://` or a local server they still can: `hollow.*` is the other site's, never read or
+  written here.
 - **Every colour, typeface and spacing value comes from `css/tokens.css`.** No loose values.
   The HUD and the slot colours are measured (`design/02-silksong.md`); the surfaces, the accent
   and the frames were decided on them (its §5, and the tokens' header). The page is the
@@ -107,6 +109,9 @@ a game name that doesn't say what the game says.
   `npm run text -- --audit`.
 - If you've touched `js/savefile.js` or `js/completion.js` and have a folder of real saves,
   `npm run check-pack -- <folder>` (phase 2): the site's 100% must equal the game's in every one.
+- To see a screen with a real save (or Free mode) in headless Chrome, console errors counted and
+  screenshots taken: `npm run drive -- --save <user#.dat> --view home,map --width 1440,390 --out <dir>`
+  (`tools/drive.js`; its header has the options).
 - Update the plan's status in `design/00-study.md` §9 when a phase moves.
 
 ## Things that are easy to get wrong without checking

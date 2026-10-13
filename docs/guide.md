@@ -216,8 +216,9 @@ in Steel Soul; the bright arc is what's complete, the dim one what you've seen),
 four entries you're missing closest to your bench, with how many kills to
 go. Under it, the 236 portraits (237 in Steel Soul) **by area**, the areas with the most missing
 first and each with its count (6/20), or **in the Journal's order**; entries with no place go last,
-under "Elsewhere". Two small toggles switch that and "What's missing / Everything", and a search
-beside them finds entries by name or by area, in either language and with or without accents; while
+under "Elsewhere". Beside the search, two choices in words under their labels: **Show** "What's
+missing / Everything" (with a save; Free mode shows everything) and **Order** "By area / Journal
+order". The search finds entries by name or by area, in either language and with or without accents; while
 it has text it looks through the whole Journal, what's complete included. Each portrait
 sits in a ring that fills with its kills and lights up once complete; one not seen yet is in
 shadow in a dashed ring («???»), and the six optional ones carry a small diamond. Tapping one
@@ -239,9 +240,10 @@ out, the Void Mass's cores, and for Shakra and Garmond & Zaza the room of their 
 arena and the Bell Eater's aren't on the map, so they count as the rooms that take you there: the
 Abyss's dive, and every Bellway station. In a save, also the nearest one from your bench,
 and with no entry picked the pane lists what's missing closest, with the kills each still needs;
-tap one to read it. Nearness goes by the game's doors and the stations you've opened.
-Verdania, the Cradle, the Mist and the caravan's insides are reached some other way (a memory, a
-lift, the maze), so their entries say where, not how far.
+tap one to read it. Nearness goes by the game's doors, the Cogwork Core's lift to the Cradle and
+the stations you've opened; Verdania, the Mist and the caravan by the ways the game decides as you
+go, and a memory (the Coral Tower's, the Hunter Queen's) from the room you enter it from. Only the
+Red Memory, which isn't on the map, has no place and no distance.
 
 ### Combat
 
@@ -720,7 +722,11 @@ the save analyzer, the 100% checklist, the map, the Hunter's Journal, the Tools 
 calculator (`save-analyzer/`, `es/analizador-partida/`…). Each is the
 whole site opened on its screen, with its own title, description and a short text with
 questions, and `sitemap.xml` lists them. `npm run pages` writes them from `index.html` and
-`tools/pages-text.js`; `npm test` fails if one falls behind.
+`tools/pages-text.js`, with `robots.txt` and `CNAME` (the site lives at `pharloomcalculator.com`:
+`SITE` there); `npm test` fails if one falls behind. The homes also carry the site's
+`WebSite` and `WebApplication` data (the name a search result gives it), and each language its
+own preview card (`assets/site/og.jpg`, `og-es.jpg`). The icons and `favicon.ico` come from the
+HUD's mask with `npm run site-icons` (`tools/site-icons.py`).
 
 With Combat on, also the damage calculator and one page per boss, 51 in each language
 (`bosses/lace/`, `es/jefes/lace/`); while it's hidden they aren't written. A boss's page is the site opened on
