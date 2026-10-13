@@ -214,6 +214,11 @@
     ctStrike:       { es: 'Golpe concentrado', en: 'Needle Strike' },   // INV_NAME_SKILL_CHARGESLASH
     ctDpsShort:     { es: 'Daño por segundo', en: 'Damage a second' },
     ctBindHeals:    { es: 'Enlazar cura {n}', en: 'a Bind heals {n}' },
+    ctBindFails:    { es: 'Enlazar falla', en: 'Bind fails' },   // the curse's; Bind as the game's button says it
+    // The curse's Crest (a save made while cursed): the game names it nowhere and the wiki's page has no
+    // ESname, so its wiki title stays in English in both (no source).
+    ctCursed:       { es: 'Cursed Crest', en: 'Cursed Crest' },
+    ctCurse:        { es: 'La maldición: sin herramientas ni habilidades, Enlazar falla y la seda no pasa de 3.', en: 'The curse: no Tools or Skills, Bind fails and silk stops at 3.' },   // BUTTON_CAST, INV_NAME_THREAD; the wiki's Cursed Crest page
     ctPrev:         { es: 'Blasón anterior', en: 'Previous Crest' },
     ctNext:         { es: 'Blasón siguiente', en: 'Next Crest' },
     ctPoint:        { es: 'Señala una herramienta para ver qué hace.', en: 'Point at a Tool to see what it does.' },

@@ -44,7 +44,7 @@ the work up reads it first, then the step it's on.
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight and the leftovers 13 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct) | [`12-map-variants.html`](12-map-variants.html) |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds) | [`15-journal-variants.html`](15-journal-variants.html) |
-| 8 | Crest (`tools`) | **Built** (28 Sep) | [`18-crest-variants.html`](18-crest-variants.html) |
+| 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html` (kept out of the repo) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
 | 10 | **Built** (28 Sep) · The static pages (`tools/pages*.js`: `bosses/`, `es/jefes/`, the landing folders): they inherit steps 1 and 2; only what's theirs | To do | |
 | 6c | The Map's people: everyone in the world and every place that sells | **Built** (11 Oct) | `30-map-people-variants.html` (kept out of the repo) |
@@ -1120,6 +1120,60 @@ attacks, damage a second, the critical, the Needle Strike) and `.ct-hud` (`asset
 per mask, the spool with the silk, «a Bind heals n»). The levels are `.ct-pips`, a pip a level
 (Free mode: a pip sets it, the lit top one steps down), − and + only in Free mode.
 
+
+### Third round: the slots as the game draws them (13 October 2026)
+
+Albert: check that every Crest, Tool and slot looks as in the game, with Tools on too. Read from the
+game's files: a full slot's EmptyToFull animation (animations_assets_shared) ends on
+`UI_tool_slot_attack0004`, a thin ring, notched up or down for a red or Silk Skill slot fired with
+Tool + up or down (each slot's AttackBinding in crestitems.bundle); the empty signs per button
+(`Tool_slot_attack_up0000`, `UI_tool_slot_weave_down`...); the Vesticrest's slots in the pane's
+"Floating Slots", between white brackets (`UI_tool_slot_extra_sockets`). `43-crest-review-variants.html`
+drew five decisions over real saves and full Free-mode builds:
+
+1. A Tool in its slot: **A the game's ring**, the Tool large inside (1.43 and 1.15 units, over the
+   art as in the game); B the sign behind a small icon (as it was); C the ring smaller.
+2. An empty slot: **A its sign by its button** (up, alone, down); B one sign per colour.
+3. A locked slot: **A its sign in grey with the lock ring** (the wiki's Red Tools Icon Locked); B the
+   game's small locked dot, a grey ring.
+4. The Vesticrest: **A beside the Crest, in its brackets**; B a row under it.
+5. A save made while cursed: **A the Cursed Crest** (its art, no slots, a line on the curse, the
+   wiki's name in English: the game gives it none); B the Hunter, empty (as it was).
+
+Decision: A in all five, built. `tools/extract-crests.py` writes the buttons into
+`SS.crestSlots` (a fifth field), the sprites at their sizes into `SS.crestSprites`, the floating
+column into `SS.crestFloat` and the curse's art. Albert, on the page: the Crest's name stays under the
+Crest alone, not under the Crest and the Vesticrest's column. The review also fixed what wasn't a
+choice: Pale Nails' description (`INV_DESC_SILKBOSS_NEEDLE`), Silkshot as the variant the save holds
+(its picture, words, damage and uses), and the Shaman's three Silk Skills.
+
+Reviewing PR #44, Albert saw the lock rings off centre on the signs. Read from the game (13 October
+2026), decision 3 A wasn't what the pane draws: the wiki's Red Tools Icon Locked is a composite.
+Each slot draws its sign on one renderer, and its Locked animation swaps the sign for
+`Tool_slot_lock_ring`, centred, scaled to 0.8, in the slot colour's grey, the slot at half opacity
+(`tools/extract-crests.py`'s header). The site now draws that: the ring alone, where the sign was.
+
+Then Albert asked whether the worn Tools weren't too big, against real pictures of the game. Two
+screenshots of the Tools pane with Tools on (the Reaper with Straight Pin, Warding Bell and Compass:
+deltiasgaming.com's `20250906185754_1.jpg` and Nintendo Life's `equipment-menu.large.jpg`) and the
+game's files say the opposite: the slot's "Item Icon" draws the Tool's inventory sprite at its own
+size (scale 1, kept by its Icon Idle animation; 100 px to the unit), 1.04 to 1.58 units across,
+about the ring's 1.43, so a Tool fills its ring. The site drew every one in a 1.15-unit box, about
+80% of the game's (the Warding Bell 1.15 units tall against 1.41). Each now goes at its own size and
+centre (`SS.crestIcons`, from `tools/extract-crests.py`); the Crest's box still holds the largest
+in every slot (the Barbed Bracelet on the third Hunter, 3.395 of 3.4 units across).
+
+On that comparison Albert asked for the two other things the screenshots show. The Crest's lines are
+a dim grey, not white with a glow: `InventoryToolCrest.UpdateListDisplay` colours the Crest by the
+pane's state, `DeselectedColor` (0.5, 0.5, 0.5) while you browse it (`EquipStates.None`), 0.3 grey
+while placing a Tool, white only for the Crest picked while switching; its "Crest Glow" only plays
+when a Crest is put on. The lines in both screenshots peak at 128 of 255; the site's are now
+`--crest-tint` (brightness 0.5, the same 129 to 134) with no glow. And a Silk Skill in its slot is
+its solid white inventory sprite (`S_needle_throw`...), the same in the pane's list and its
+description, where the site had the wiki's line art (the prompt when you get one,
+`prompt_hornet_needle_throw`). `tools/extract-crests.py` writes the six into `assets/icons/skills-inv/`;
+the slot, the list under the Crest and the Inventory use them, and the Map, Progress, Home and
+Combat keep the line art.
 
 ## Step 9 · Combat
 

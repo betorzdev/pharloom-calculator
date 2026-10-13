@@ -115,10 +115,11 @@ function damageRows(heading, levelCells = 5) {
 /* Attacks a Tool's damage rows describe that aren't the Tool's only attack, and how they're told
    apart. The names are the site's words for them; where the game has the words, they're its. */
 const VARIANTS = {
-  // Silkshot has no _DESC: each variant has its own.
-  'Silkshot (Original)': { id: 'original', name: { es: 'Original', en: 'Original' }, desc: 'SILKSHOT_DESC_WEAVER' },   // "forma original"
-  'Silkshot (Twelfth Architect) (1st+2nd+3rd hit)': { id: 'architect', name: 'ARCHITECT_SHOP_TITLE', desc: 'SILKSHOT_DESC_ARCHITECT', roundDown: true },
-  'Silkshot (Forge Daughter)': { id: 'forge', name: { es: 'Hija de la Forja', en: 'Forge Daughter' }, desc: 'SILKSHOT_DESC_FORGE' },   // the Spanish is the desc's
+  // Silkshot has no _DESC: each variant has its own, and its own ammo (the infobox's block whose
+  // label is the variant's) and picture. A game holds one: the save's Tools say which (js/savefile.js).
+  'Silkshot (Original)': { id: 'original', name: { es: 'Original', en: 'Original' }, desc: 'SILKSHOT_DESC_WEAVER', variant: 'Original' },   // "forma original"
+  'Silkshot (Twelfth Architect) (1st+2nd+3rd hit)': { id: 'architect', name: 'ARCHITECT_SHOP_TITLE', desc: 'SILKSHOT_DESC_ARCHITECT', roundDown: true, variant: 'Twelfth Architect' },
+  'Silkshot (Forge Daughter)': { id: 'forge', name: { es: 'Hija de la Forja', en: 'Forge Daughter' }, desc: 'SILKSHOT_DESC_FORGE', variant: 'Forge Daughter' },   // the Spanish is the desc's
   'Voltvessels (Spear) (needle + zap, 6 zaps / total) (Attack uses Needle upgrade)': { id: 'spear', name: { es: 'Lanza', en: 'Spear' } },   // LIGHTNING_ROD_DESC
   'Voltvessels (Bola) (orb + zap, 4 zaps / total)': { id: 'bola', name: { es: 'Boleadora', en: 'Bola' } },   // LIGHTNING_ROD_DESC
 };
@@ -211,11 +212,24 @@ function buildTools(rows) {
         bonus: BONUS.has(title) || undefined,
         roundDown: (v && v.roundDown) || ROUND_DOWN.has(title) || undefined,
       };
+      // A variant (Silkshot's): its own block of the infobox, the one labelled as it, for its ammo and refill.
+      if (v && v.variant) {
+        const f = W.fields(W.templates(W.page(title), 'SS Infobox Tool')[0]);
+        const sfx = ['', '2', '3', '4'].find((k) => W.plain(f['label' + k] || '') === v.variant);
+        if (sfx === undefined) fail(`${title}: no infobox block labelled ${v.variant}`);
+        base.variant = true;
+        base.ammo = perLevel(f['max' + sfx]);
+        base.refill = refill(f['refill' + sfx]);
+        if (!base.ammo || !base.refill) fail(`${title} (${v.variant}): ammo "${f['max' + sfx]}", refill "${f['refill' + sfx]}"`);
+      }
       if (row.modes) for (const m of row.modes) attacks.push({ ...base, id: m.id, name: MODE_NAMES[m.id], hits: m.hits });
       else attacks.push({ ...base, hits: row.hits });
     }
     // Flintslate's row is its burn; its own effect is a modifier (MODIFIERS).
     if (title === 'Flintslate') attacks.forEach((a) => { a.id = 'burn'; a.scale = 'needle'; });
+    // The variants in the infobox's order: the Original (the Tool's own ammo and picture) first.
+    const order = Object.values(VARIANTS).map((x) => x.id);
+    if (attacks.some((a) => a.variant)) attacks.sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
     if (attacks.length) tool.attacks = attacks;
     if (TWINS[title]) tool.upgrade = W.slug(TWINS[title]);
     const of = Object.keys(TWINS).find((k) => TWINS[k] === title);
@@ -355,8 +369,8 @@ function buildSkills(rows) {
     const attacks = [{ scale: 'needle', hits: row.hits }];
     if (id === 'thread-storm') attacks.push({ id: 'extended', name: { es: 'prolongada', en: 'extended' }, scale: 'needle', hits: rows['Thread Storm (Extended) (per extra hit, max 6 hits / Total)'].hits });
     // Rune Rage: the nth rune of a cast on the same enemy deals 1/n (the damage page's note).
-    // Pale Nails has no INV_DESC_ key in the dump.
-    return { id, key: 'INV_NAME_SKILL_' + k, name, desc: text('INV_DESC_SKILL_' + k, true) || undefined, silk: 4, attacks };
+    // Pale Nails' description drops the SKILL_ of its name's key: INV_DESC_SILKBOSS_NEEDLE (its ToolItem says so).
+    return { id, key: 'INV_NAME_SKILL_' + k, name, desc: text('INV_DESC_SKILL_' + k, true) || text('INV_DESC_' + k, true) || undefined, silk: 4, attacks };
   });
 }
 
@@ -485,6 +499,9 @@ const HORNET = {
      roundDown    the follow-up hits round down (Threefold Pin, the Twelfth Architect's Silkshot).
      ammo         per Tool Pouch level (0..4); null = no limit. refill: shards per use at a bench,
                   rosaries per shot, reserve = a reserve is spent first.
+     variant      an attack that is one of a Tool's variants (Silkshot's three: a game holds one, the
+                  others are never had), with its own desc, ammo and refill; the Tool's own are the
+                  first variant's.
      slots        a Crest's [open, locked] per colour; locked ones open with Memory Lockets.
      strike       the Crest's Needle Strike; minHits = the Witch's hits when not all land.
      attacks      a Crest's slashes when they aren't one hit at 1x the Needle (the Architect's

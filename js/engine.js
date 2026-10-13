@@ -13,8 +13,15 @@
    A build (normalize() fills what's missing):
      crest       a Crest id (js/data.js CRESTS)       hunterStage  1, 2 or 3 (Eva's evolutions)
      needle      0–4        kit, pouch   0–4         masks 0–5, spools 0–9, hearts 0–3 (gained)
-     tools       Tool ids equipped                    skill        a Silk Skill id or null
+     tools       Tool ids equipped                    skills       the Silk Skills equipped, one per Skill
+                                                      slot the Crest has (the Shaman's three)
+                                                      skill        the first of them, or null
      vest        the Vesticrest's extra slots open: { yellow, blue } (Eva's, at 12 and 20 slots)
+     cursed      a save made while cursed (the Witch's curse, worn for a while in the story): the
+                 Cursed Crest, no slots, no Tools or Skills, Bind fails and silk stops at 3 (the wiki's
+                 Cursed Crest page); its slashes are the Witch's (the same page), so crest is 'witch'
+     silkshot    which Silkshot the game holds: 'original', 'architect' or 'forge' (a game has one;
+                 js/data.js, its attacks' variant), the Original by default
      focus       the Hunter's focus is up (its full stage: +0.3, or +0.5 evolved)
      fury        the Beast's fury is up                flint        Flintslate's buff is up
      challenge   the next hit after a Challenge (+0.5)
@@ -45,17 +52,34 @@
   const CREST = new Map(D.CRESTS.map((c) => [c.id, c]));
   const TOOL = new Map(D.TOOLS.map((t) => [t.id, t]));
   const SKILL = new Map(D.SKILLS.map((s) => [s.id, s]));
+  const CURSE_SILK = 3;
+  // A Tool's variants (Silkshot's), the first its own: the build says which one the game holds.
+  const SILKSHOT = (TOOL.get('silkshot').attacks || []).filter((a) => a.variant).map((a) => a.id);
+  const variantOf = (t, st) => (t.attacks || []).find((a) => a.variant && a.id === st[t.id]) || null;
+  /* A Tool as the game shows the one held: its picture (assets/icons/tools/<art>.webp: a variant
+     past the first has its own, <id>-<variant>) and its description (a variant's, when the Tool
+     has none of its own). st needs only the variant: { silkshot }. */
+  function toolArt(id, st) {
+    const t = TOOL.get(id), v = variantOf(t, normalize(st));
+    const first = (t.attacks || []).find((a) => a.variant);
+    return { art: v && v !== first ? `${id}-${v.id}` : id, desc: t.desc || (v && v.desc) || null };
+  }
 
   function normalize(s) {
     const x = s && typeof s === 'object' ? s : {};
-    const crest = CREST.has(x.crest) ? x.crest : 'hunter';
-    const tools = Array.isArray(x.tools) ? [...new Set(x.tools.filter((id) => TOOL.has(id)))] : [];
+    const cursed = !!x.cursed;
+    const crest = cursed ? 'witch' : CREST.has(x.crest) ? x.crest : 'hunter';
+    // A Silk Skill per Skill slot of the Crest (a list, or the one skill of an older build).
+    const skills = [...new Set((Array.isArray(x.skills) ? x.skills : [x.skill]).filter((id) => SKILL.has(id)))]
+      .slice(0, cursed ? 0 : CREST.get(crest).slots.skill);
+    const tools = Array.isArray(x.tools) && !cursed ? [...new Set(x.tools.filter((id) => TOOL.has(id)))] : [];
     return {
       crest, hunterStage: clamp(x.hunterStage, 1, 3, 1),
       needle: clamp(x.needle, 0, 4, 0), kit: clamp(x.kit, 0, 4, 0), pouch: clamp(x.pouch, 0, 4, 0),
       masks: clamp(x.masks, 0, 5, 0), spools: clamp(x.spools, 0, 9, 0), hearts: clamp(x.hearts, 0, 3, 0),
-      tools, skill: SKILL.has(x.skill) ? x.skill : null,
-      vest: { yellow: !!(x.vest && x.vest.yellow), blue: !!(x.vest && x.vest.blue) },
+      tools, skills, skill: skills[0] || null,
+      silkshot: SILKSHOT.includes(x.silkshot) ? x.silkshot : SILKSHOT[0],
+      vest: { yellow: !cursed && !!(x.vest && x.vest.yellow), blue: !cursed && !!(x.vest && x.vest.blue) }, cursed,
       focus: !!x.focus, fury: !!x.fury, flint: !!x.flint, challenge: !!x.challenge,
     };
   }
@@ -175,7 +199,7 @@
     const skills = D.SKILLS.map((s) => {
       const a = s.attacks[0];
       const h = kill(hitsOf(a.hits[st.needle], bracketS * eN, a.roundDown));
-      return { id: s.id, equipped: st.skill === s.id, silk: has('egg-of-flealia') ? 3 : s.silk, ...h };
+      return { id: s.id, equipped: st.skills.includes(s.id), silk: has('egg-of-flealia') ? 3 : s.silk, ...h };
     });
 
     /* The Tools equipped that deal damage: each attack at the Kit's level (no player modifier
@@ -183,27 +207,31 @@
        level, a full load's damage and its refill in shell shards. */
     const tools = st.tools.map((id) => {
       const t = TOOL.get(id);
-      const attacks = (t.attacks || []).map((a) => {
+      // A Tool with variants: only the one held, with its own ammo and refill.
+      const v = variantOf(t, st);
+      const attacks = (t.attacks || []).filter((a) => !a.variant || a === v).map((a) => {
         // Bonus damage (a burn, a venom) takes no modifier at all, neither the enemy's nor Hornet's.
         const lvl = a.scale === 'needle' ? st.needle : st.kit;
         const mult = a.bonus ? 1 : (a.scale === 'needle' ? bracketN : 1) * em(lvl);
         const h = kill(hitsOf(a.hits[lvl], mult, a.roundDown));
         return { scale: a.scale, bonus: !!a.bonus, ...h };
       });
-      const ammo = Array.isArray(t.ammo) ? t.ammo[st.pouch] : null;
+      const ammo = Array.isArray((v || t).ammo) ? (v || t).ammo[st.pouch] : null;
+      const refillOf = (v || t).refill;
       const main = attacks.find((a) => !a.bonus);
       return {
         id, color: t.color, attacks, ammo,
         load: ammo && main ? ammo * main.total : null,
         // A full load against the enemy: how much of its health, as a share (1 = it dies).
         loadShare: hp && ammo && main ? (ammo * main.total) / hp : null,
-        refill: ammo && t.refill && t.refill.shards ? Math.round(ammo * t.refill.shards) : null,
+        refill: ammo && refillOf && refillOf.shards ? Math.round(ammo * refillOf.shards) : null,
       };
     });
 
     // Silk: the spool (9 + whole spools, +3 with the Spool Extender), a Bind's cost, Skill casts.
     const H = D.HORNET;
-    const spool = H.silk.base + st.spools + (has('spool-extender') ? H.silk.extender : 0);
+    // The curse stops silk at 3 (the wiki's Cursed Crest page), short of a Bind's 9: Bind fails.
+    const spool = st.cursed ? CURSE_SILK : H.silk.base + st.spools + (has('spool-extender') ? H.silk.extender : 0);
     const skillCost = has('egg-of-flealia') ? 3 : H.silk.skill;
     const silk = { spool, bind: H.silk.bind, skill: skillCost, casts: Math.floor(spool / skillCost), hearts: st.hearts };
 
@@ -216,7 +244,7 @@
     const bindTime = (multi ? BIND.multi : H.bind.seconds - BIND.burst) * (has('injector-band') ? BIND.quick : 1);
     const health = {
       masks: H.masks.base + st.masks,
-      bind: { heals: multi ? 4 : H.bind.heals, parts: multi ? [2, 2] : [H.bind.heals],
+      bind: { ...(st.cursed ? { fails: true } : {}), heals: multi ? 4 : H.bind.heals, parts: multi ? [2, 2] : [H.bind.heals],
         seconds: Math.round((multi ? 2 : 1) * (bindTime + BIND.burst) * 100) / 100 },
     };
 
@@ -231,7 +259,7 @@
       const extra = st.vest[c] ? 1 : 0;
       slots[c] = { open, locked, extra, used: used[c], over: Math.max(0, used[c] - open - locked - extra) };
     }
-    slots.skill = { open: crest.slots.skill, used: st.skill ? 1 : 0 };
+    slots.skill = { open: crest.slots.skill, used: st.skills.length };
 
     return { state: st, needle, strike, skills, tools, silk, health, slots,
       mods: { needle: nm.active, skill: sm.active }, foe: foe ? { id: foe.id, hp, black: !!opts.black, needle: eN, kit: eK } : null };
@@ -448,6 +476,6 @@
   }
   const vestOf = (crests, lockets) => { const n = evaOf(crests, lockets); return { yellow: n >= D.VESTICREST.at.yellow, blue: n >= D.VESTICREST.at.blue }; };
 
-  SS.engine = { roundHalfEven, normalize, modsFor, hitsOf, usesToKill, interval, compute, plan, regen, binds, endure, phases, pieces, evaOf, vestOf };
+  SS.engine = { roundHalfEven, normalize, variantOf, toolArt, modsFor, hitsOf, usesToKill, interval, compute, plan, regen, binds, endure, phases, pieces, evaOf, vestOf };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.engine;
 })();
