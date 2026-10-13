@@ -50,7 +50,7 @@
     saveBtnHint:    { es: 'Elegir partida: cuatro, como en el juego, o el Modo libre', en: 'Choose a save: four, as in the game, or Free mode' },
     savesNoStorage: { es: 'Este navegador no deja guardar datos: solo hay una partida', en: 'This browser doesn\'t let the site save data: there\'s only one save' },
     freeMode:       { es: 'Modo libre', en: 'Free mode' },
-    freeModeNote:   { es: 'Todo desbloqueado, para probar builds: no es ninguna de tus partidas', en: 'Everything unlocked, to try builds: it isn\'t one of your saves' },
+    freeModeNote:   { es: 'Tu partida marcada a mano, y builds para probar: no es ninguna de tus partidas', en: 'Your game marked by hand, and builds to try: it isn\'t one of your saves' },
     saveCurrent:    { es: 'Estás aquí', en: 'You\'re here' },
     saveContinue:   { es: 'Seguir con esta partida', en: 'Continue with this save' },
     saveLoad:       { es: 'Cargar esta partida', en: 'Load this save' },
@@ -217,6 +217,11 @@
     ctShare:        { es: 'Compartir', en: 'Share' },
     ctShared:       { es: 'Enlace copiado: abre esta build tal cual', en: 'Link copied: it opens this build as it is' },
     ctLinkFree:     { es: 'El enlace traía una build: está en el Modo libre', en: 'The link had a build: it\'s in Free mode' },
+    /* Free mode's «Try with» (design/42, 2 A): everything, or your game marked in the Inventory. */
+    ctTry:          { es: 'Probar con', en: 'Try with' },
+    ctTryAll:       { es: 'Todo', en: 'Everything' },
+    ctTryMine:      { es: 'Lo que tengo', en: 'What I have' },
+    ctNoTools:      { es: 'Aún no has marcado ninguna herramienta: se marcan en el', en: 'No Tool marked yet: they\'re marked in the' },
     ctAmmo:         { es: '{n} usos', en: '{n} uses' },
     ctAmmo1:        { es: '{n} uso', en: '{n} use' },
     ctLoad:         { es: '{n} por carga', en: '{n} a load' },
@@ -643,7 +648,13 @@
     invLearnt:      { es: 'Aprendida', en: 'Learnt' },
     invNotLearnt:   { es: 'Sin aprender', en: 'Not learnt' },
     invStart:       { es: 'Empezar desde', en: 'Start from' },
-    invBase:        { es: 'Hornet al empezar', en: 'Base Hornet' },
+    invBase:        { es: 'Partida nueva', en: 'New Game' },   // PROFILE_NEW_GAME
+    invFreeLead:    { es: 'Modo libre: marca lo que tienes en tu partida y Progreso cuenta el 100 % con ello. Para probar builds con todo, el Blasón.',
+      en: 'Free mode: mark what you have in your game and Progress counts the 100% from it. To try builds with everything, the Crest screen.' },
+    freeNoteTag:    { es: 'Novedad', en: 'New' },
+    freeNote:       { es: 'La aguja, las máscaras, la seda y las mejoras son ahora parte de lo que marcas: lo que no habías movido vuelve al de una partida nueva, para que el 100 % no cuente lo que no tienes. Revísalo en el Inventario.',
+      en: 'The Needle, masks, silk and upgrades are now part of what you mark: what you hadn\'t moved goes back to a New Game\'s, so the 100% doesn\'t count what you don\'t have. Check them in the Inventory.' },
+    freeNoteOk:     { es: 'Entendido', en: 'Got it' },
     invMax:         { es: 'Todo al máximo', en: 'Everything maxed' },
     invSilk:        { es: 'Seda', en: 'Silk' },   // INV_NAME_THREAD
 
@@ -735,7 +746,7 @@
     pgFoundNoPin:   { es: 'Se encuentra en la zona', en: 'Found in the area' },
     /* Free mode with the Inventory's marks (design/41, 6 A). */
     pgHereFreeK:    { es: 'Modo libre.', en: 'Free mode.' },
-    pgHereFree:     { es: 'El 100 % cuenta lo que marcas en el Inventario o aquí; el camino es la guía, como sin partida.', en: 'The 100% counts what you mark in the Inventory or here; the road is the guide, as with no save.' },
+    pgHereFree:     { es: 'El 100 % cuenta lo que marcas aquí o en el Inventario, desde una partida nueva; el camino es la guía, como sin partida.', en: 'The 100% counts what you mark here or in the Inventory, from a New Game; the road is the guide, as with no save.' },
     pgLadderNote:   { es: 'Esto se fija en el Inventario:', en: 'This is set in the Inventory:' },
     pgListAll:      { es: 'Ver la lista entera, con lo hecho ({n})', en: 'See the whole list, done included ({n})' },
     pgListLess:     { es: 'Cerrar la lista entera', en: 'Close the whole list' },

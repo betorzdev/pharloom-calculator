@@ -1496,6 +1496,11 @@ kbd {
    on their slots. In a save the controls are still but at full light (read, not greyed). */
 .inv-presets { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: var(--sp-1) var(--sp-3); margin: 0; }
 .inv-presets .lbl { color: var(--muted); }
+/* Free mode (design/42): what the screen is, over «Start from»; on a phone «Start from» takes its
+   own line, so its two choices stay together. The older visit's notice, over the body. */
+.inv-lead { max-width: 60ch; margin: 0; font-size: var(--fs-sm); color: var(--ink-2); text-wrap: balance; }
+@media (max-width: 480px) { .inv-presets > .lbl:first-child { flex-basis: 100%; text-align: center; } }
+.free-note { max-width: calc(var(--column) + var(--sp-16)); margin: 0 auto var(--sp-6); }
 .inv-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: var(--sp-12); align-items: start; }
 .inv-col { display: grid; gap: var(--sp-8); min-width: 0; }
 .inv-sec { display: grid; gap: var(--sp-2); align-content: start; min-width: 0; }
@@ -1796,6 +1801,10 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 }
 /* The passive Tools' effects: icon and the game's own text, quiet. */
 .ct-share { margin-top: var(--sp-3); }
+/* Free mode's «Try with» (design/42, 2 A), and «What I have» with no Tool marked. */
+.ct-try { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: var(--sp-1) var(--sp-3); }
+.ct-try .lbl { color: var(--muted); }
+.ct-none { margin: 0; font-size: var(--fs-sm); color: var(--ink-2); }
 
 /* ── The Hunter's Journal (js/app-journal.js) ─────────────────────────────
    design/16-journal-top-variants.html, B (next hunts): on top, the Memento as a large ring (the

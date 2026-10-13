@@ -40,7 +40,7 @@ the work up reads it first, then the step it's on.
 | 1 | **The shell**: header, screen bar (desktop and phone), the screen's frame and title, footer and About, the atmosphere | **Built** (28 Sep) | [`04-shell-variants.html`](04-shell-variants.html) |
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html` |
-| 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html` |
+| 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight and the leftovers 13 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct) | [`12-map-variants.html`](12-map-variants.html) |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds) | [`15-journal-variants.html`](15-journal-variants.html) |
@@ -457,6 +457,42 @@ Albert chose **silk 2 · beads on a thread**. Built:
   across the field looked loose. Drawn in `26-inventory-silk-variants.html` (kept out of the
   repo): **A · beads together**, B · the HUD's spool, C · nine and nine. Albert chose **A**: the
   same beads on their thread, strung tight from the left, the thread drawn bead by bead.
+
+### Free mode's start (13 October 2026)
+
+Found in the Progress review: in Free mode the Inventory started every ladder at the top («Everything
+maxed»), so a first-time player who marked four Tools read 40% on Progress (the Act 2 save's own
+marks are 15%; the masks, silk, Silk Hearts, Needle, Kit and Pouch at the top made up the rest). The
+ladders were the Crest screen's build (`pharloom.build`, `FREE_START`), so trying builds and keeping
+your game by hand shared them. The sibling does the same, and worse: its Free mode opens at 65% with
+nothing marked (the Knight maxed and every charm had).
+
+The options (`42-free-mode-start-variants.html`, the real page over a first visit, an older visit
+with marks and a game marked by hand, kept out of the repo): 1 where Free mode starts (**A** a New
+Game, B everything maxed as it was, C ask once); 2 the Crest screen (**A** a «Try with: Everything ·
+What I have» switch, B always everything, C the Inventory's marks as it was, which with a New Game
+leaves an empty Hunter); 3 Progress (**A** counts from the start, 0% with its boxes, B the guide
+until something is marked); 4 an older visit's marks (**A** the levels left at the top go to a New
+Game's, those moved by hand stay, with a notice; B kept as they were).
+
+**Decision: A in all four** (13 October 2026), built:
+- Free mode's marks are your game and start as a New Game (`App.freeGame`, `js/app-saves.js`): the
+  Hunter Crest and nothing else. The ladders and the Hunter's evolution are the marks', in
+  `pharloom.progress` as a save keeps them (`needle`, `kit`, `pouch`, `masks`, `spools`, `hearts`,
+  `build.hunterStage`); the Inventory sets them (`invLevel`), Progress and the Map read them.
+- The Crest screen's build is apart. «Probar con: Todo · Lo que tengo» (`prefs.ctTry`): Everything
+  is the build as it was, every Tool at hand; What I have takes your levels and evolution, the
+  Vesticrest Eva would give for the Crests and Memory Lockets marked (`engine.vestOf`), and only what's
+  marked, and its level steppers set your game. A link with another build opens on Everything.
+- Progress counts in Free mode from the start (0% on a New Game), its boxes always there.
+- `saves.migrateFree` moves an older visit's marks once, on load, wherever Free mode's slot is (the
+  live keys or its copy while a save is active; a save's keys are never touched). The notice
+  («Novedad», `pharloom.freeNote`) shows on the Inventory and Progress until «Entendido».
+- Plain fixes: «Todo al máximo» marks everything (100%) instead of clearing the marks; «Partida nueva»
+  (`PROFILE_NEW_GAME`) instead of «Hornet al empezar», and a New Game's Hunter is at evolution 1 with no
+  Vesticrest; Progress lets you mark without going to the Inventory first; the Map's first mark no longer
+  starts from «everything but the pieces»; on a phone «Empezar desde» takes its own line; the Crest screen
+  on «Lo que tengo» with no Tool marked says so, with the way to the Inventory.
 
 ## Step 5 · Progress
 

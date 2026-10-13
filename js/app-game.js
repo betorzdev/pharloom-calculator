@@ -2,9 +2,10 @@
    step 4): on the left what Hornet is (the five Needles, the masks, the silk as beads on a
    thread, the Silk Hearts, the Crafting Kit and the Tool Pouch, the Silk Skills with what they
    deal and the abilities), on the right what she carries (the Tools on their slots by colour, the
-   Crests, the items). In Free mode all of it is set here: the left side sets the free build, as
-   the Crest screen does, and a tap on the right marks a thing had or not (js/app-saves.js,
-   App.freeGame), which the Crest screen then respects. In a save it shows what the game saved,
+   Crests, the items). In Free mode all of it is set here: your game marked by hand, from a New
+   Game (js/app-saves.js, App.freeGame; design/42-free-mode-start-variants.html, 1 A): the left
+   side its levels, a tap on the right a thing had or not. Progress counts it, and the Crest
+   screen tries it on «What I have». In a save it shows what the game saved,
    and what you don't have yet is a dimmed silhouette. A tap opens the game's text under its
    shelf. Above the Items, the purse (Rosaries and Shell Shards with the strings, bundles and
    shards that break into them, design/29-inventory-variants.html, A); the Relics and the
@@ -37,13 +38,14 @@
   const MAX_ROSARIES = 99999;
   const shardCap = (pouch) => D.HORNET.shells.base + D.HORNET.shells.perPouch * pouch;
 
-  // Free mode: everything, as the site's everything-unlocked sheet (nothing loose or carried: a full game has spent it).
+  // Free mode's «Everything maxed»: every thing marked, at the top of every ladder, the Hunter fully evolved (nothing loose or carried: a full game has spent it).
   function fullGame() {
     return { tools: D.TOOLS.map((x) => x.id), crests: D.CRESTS.map((x) => x.id), skills: D.SKILLS.map((x) => x.id),
       arts: D.ARTS.map((x) => x.id), masks: 5, spools: 9, hearts: 3, needle: 4, kit: 4, pouch: 4, everbloom: true,
       pieces: CO.PIECES.map((p, i) => i), purse: {}, rosaries: 0, shards: 0, farsight: true, hasJournal: true,
-      extras: [...RELIC_AT, ...MEMENTOS], journal: {}, act: 3 };
+      extras: [...RELIC_AT, ...MEMENTOS], journal: {}, act: 3, build: { hunterStage: 3 } };
   }
+  App.fullGame = fullGame;
 
   /* Every thing the pane can show, by a key "list/id": { list, id, name, desc, got, count, color }. */
   function things(g) {
@@ -132,14 +134,14 @@
 
   /* ── What Hornet is, the sibling's way (hallownest-calculator's Inventory, design/03-redesign.md
      step 4): the Needle as the focal point, the body as rows of the game's own pieces, the Kit
-     and the Pouch as pips. In Free mode each one sets the free build (the Crest screen's own
-     ctLevel, js/app-tools.js), so the Crest screen and Combat follow; in a save they show what
-     the game saved, at full light but still. ── */
+     and the Pouch as pips. In Free mode each one sets your game's level (invLevel, into the
+     marks: the Crest screen's own build is apart); in a save they show what the game saved, at
+     full light but still. ── */
   let before = null;   // the last build drawn: what changed since lights up
   const lit = (b, k, on) => (on && before && before[k] !== b[k] ? ' is-lit' : '');
   function needles(b, still) {
     const row = D.NEEDLES.map((n, i) => `<button type="button" class="inv-np${b.needle === i ? ' is-on' : ''}${lit(b, 'needle', b.needle === i)}"
-        data-act="ctLevel" data-key="needle" data-value="${i}" aria-pressed="${b.needle === i}"${still} title="${esc(pick(n.name))}" aria-label="${esc(pick(n.name) + ', ' + n.damage)}"${NT}>
+        data-act="invLevel" data-key="needle" data-value="${i}" aria-pressed="${b.needle === i}"${still} title="${esc(pick(n.name))}" aria-label="${esc(pick(n.name) + ', ' + n.damage)}"${NT}>
         <img src="${ART.needle(i)}" alt="" width="80" height="600"><b>${num(n.damage)}</b></button>`).join('');
     return `<section class="inv-sec">${head(t('invNeedle'))}<div class="inv-needles" role="group" aria-label="${esc(t('invNeedle'))}">${row}</div>
       <p class="inv-caption"${NT}>${esc(pick(D.NEEDLES[b.needle].name))}</p></section>`;
@@ -151,7 +153,7 @@
     const btns = Array.from({ length: base + max }, (_, i) => {
       const fixed = i < base, on = i < v, n = i + 1 - base;
       const to = n === b[key] ? n - 1 : n;
-      return `<button type="button" class="inv-pc${on ? ' is-on' : ''}${fixed ? ' is-base' : ''}${lit(b, key, i === v - 1)}"${fixed ? ' disabled' : ` data-act="ctLevel" data-key="${key}" data-value="${to}"${still}`}
+      return `<button type="button" class="inv-pc${on ? ' is-on' : ''}${fixed ? ' is-base' : ''}${lit(b, key, i === v - 1)}"${fixed ? ' disabled' : ` data-act="invLevel" data-key="${key}" data-value="${to}"${still}`}
         aria-label="${esc(name + ' ' + num(i + 1))}" aria-pressed="${on}">${piece}</button>`;
     }).join('');
     return `<div class="inv-field"><div class="inv-frow"><span><span class="inv-fname"${NT}>${esc(name)}</span><span class="inv-fnote">${esc(t('invFromTo', { a: num(base), b: num(base + max) }))}</span></span>
@@ -159,7 +161,7 @@
   }
   function level(b, key, id, still) {
     const it = D.ITEMS.find((x) => x.id === id);
-    const opts = [0, 1, 2, 3, 4].map((n) => `<button type="button" data-act="ctLevel" data-key="${key}" data-value="${n}" aria-pressed="${b[key] === n}"${still}>${num(n)}</button>`).join('');
+    const opts = [0, 1, 2, 3, 4].map((n) => `<button type="button" data-act="invLevel" data-key="${key}" data-value="${n}" aria-pressed="${b[key] === n}"${still}>${num(n)}</button>`).join('');
     return `<div class="inv-level"><img class="${b[key] ? '' : 'is-missing'}" src="${icon('items', id)}" alt=""><span class="inv-fname"${NT}>${esc(pick(it.name))}</span>
       <div class="seg sm" role="group" aria-label="${esc(pick(it.name))}">${opts}</div></div>`;
   }
@@ -209,22 +211,24 @@
   let shown = [];   // what the last render drew, for the descriptions
   App.screens.game = (sec) => {
     const own = App.game();
-    const b = App.currentBuild();
-    // Free mode: its own marks over the free build's ladders, or with none yet, everything.
-    const have = own ? null : App.freeGame();
-    const g = own || (have ? { ...have, needle: b.needle, kit: b.kit, pouch: b.pouch, masks: b.masks, spools: b.spools, hearts: b.hearts } : fullGame());
+    // Free mode: your game marked by hand (a New Game until you mark), its levels with it; the
+    // figures take the Crest screen's build for what's worn, but only what you have of it.
+    const g = own || App.freeGame();
+    const b0 = App.currentBuild();
+    const b = own ? b0 : SS.engine.normalize({ ...b0, needle: g.needle, kit: g.kit, pouch: g.pouch, masks: g.masks, spools: g.spools, hearts: g.hearts,
+      tools: b0.tools.filter((id) => g.tools.includes(id)), skill: g.skills.includes(b0.skill) ? b0.skill : null,
+      crest: g.crests.includes(b0.crest) ? b0.crest : 'hunter', hunterStage: (g.build && g.build.hunterStage) || 1 });
     marking = !own;
-    // In free mode with no marks everything is had, the loose pieces too (a full game has none left loose).
-    const all = shown = things(g).map((x) => (own || have || x.keep ? x : { ...x, got: true }));
+    const all = shown = things(g);
     const by = (list) => all.filter((x) => x.list === list);
     const still = own ? ' disabled' : '';
-    const cats = own || have ? Object.fromEntries(SS.completion.count(g).categories.map((c) => [c.id, c])) : {};
+    const cats = Object.fromEntries(SS.completion.count(g).categories.map((c) => [c.id, c]));
     const r = SS.engine.compute(b);
     const skillV = (x) => { const s = r.skills.find((y) => y.id === x.id); return s ? s.total : null; };
     const artV = (x) => (x.id === 'needle-strike' && r.strike ? r.strike.total : null);
     const tools = ['red', 'blue', 'yellow'].map((c) => {
       const l = by('tools').filter((x) => x.color === c);
-      return `<p class="inv-sub" style="--c: var(--slot-${c})">${esc(t('ct_' + c))}${own || have ? ` <b>${num(l.filter((x) => x.got).length)}</b>` : ''}</p><ul class="inv-grid">${l.map(cell).join('')}</ul>`;
+      return `<p class="inv-sub" style="--c: var(--slot-${c})">${esc(t('ct_' + c))} <b>${num(l.filter((x) => x.got).length)}</b></p><ul class="inv-grid">${l.map(cell).join('')}</ul>`;
     }).join('');
     const items = [...by('items').filter((x) => !x.shelf && x.id !== 'crafting-kit' && x.id !== 'tool-pouch'), ...by('pieces').filter((x) => x.id !== 'silk-heart')];
     const relics = all.filter((x) => x.shelf === 'relics'), mementos = all.filter((x) => x.shelf === 'mementos');
@@ -233,9 +237,9 @@
       mementos: { got: mementos.filter((x) => x.got).length, max: mementos.length } };
     const purseShelf = [...all.filter((x) => x.shelf === 'currency'), ...all.filter((x) => x.shelf === 'purse')];
     const start = own ? ''
-      : `<p class="inv-presets"><span class="lbl">${esc(t('invStart'))}</span><button type="button" class="text-btn" data-act="ctPreset" data-value="base">${esc(t('invBase'))}</button>
+      : `<p class="inv-lead">${esc(t('invFreeLead'))}</p><p class="inv-presets"><span class="lbl">${esc(t('invStart'))}</span><button type="button" class="text-btn" data-act="ctPreset" data-value="base">${esc(t('invBase'))}</button>
           <span class="lbl" aria-hidden="true">·</span><button type="button" class="text-btn" data-act="ctPreset" data-value="max">${esc(t('invMax'))}</button></p>`;
-    sec.innerHTML = `<div class="inv">${brackets}${screenHead(esc(t('navGame')), start)}
+    sec.innerHTML = `<div class="inv">${brackets}${screenHead(esc(t('navGame')), start)}${own ? '' : App.freeNoteHtml()}
       <div class="inv-body">
         <div class="inv-col">
           ${needles(b, still)}
@@ -256,20 +260,17 @@
     before = { ...b };
   };
 
-  /* Free mode's marks, changed: from what's marked (or, the first time, everything), then the
-     free build loses what isn't had any more (js/app-tools.js, App.editFree). */
+  /* Free mode's marks, changed: from what's marked (a New Game the first time), its levels kept.
+     The Crest screen's build is apart (it tries everything); on «What I have» it filters itself. */
   function mark(f) {
-    const cur = App.freeGame() || fullGame();
-    const m = { tools: [...cur.tools], crests: [...cur.crests], skills: [...cur.skills], arts: [...cur.arts], everbloom: !!cur.everbloom, pieces: [...cur.pieces],
+    const cur = App.freeGame();
+    if (!cur) return;
+    const m = { ...cur, tools: [...cur.tools], crests: [...cur.crests], skills: [...cur.skills], arts: [...cur.arts], everbloom: !!cur.everbloom, pieces: [...cur.pieces],
       purse: { ...cur.purse }, rosaries: cur.rosaries || 0, shards: cur.shards || 0, farsight: !!cur.farsight, hasJournal: !!cur.hasJournal, extras: [...cur.extras] };
     f(m);
     if (!m.crests.includes('hunter')) m.crests.unshift('hunter');
     App.setFreeGame(m);
-    App.editFree((st) => {
-      st.tools = st.tools.filter((id) => m.tools.includes(id));
-      if (st.skill && !m.skills.includes(st.skill)) st.skill = null;
-      if (!m.crests.includes(st.crest)) st.crest = 'hunter';
-    });
+    App.render();
   }
   App.freeMark = mark;   // Progress marks from its lists too (js/app-progress.js)
   const toggle = (arr, id) => (arr.includes(id) ? arr.filter((x) => x !== id) : [...arr, id]);
@@ -322,7 +323,7 @@
     invCount(node) {
       const x = shown.find((y) => keyOf(y) === node.dataset.key);
       if (!x || !x.n) return;
-      const b = App.currentBuild(), v = Math.max(0, Math.min(x.n[1], Number(node.dataset.value)));
+      const b = App.freeGame(), v = Math.max(0, Math.min(x.n[1], Number(node.dataset.value)));
       if (x.shelf === 'purse') { mark((m) => { m.purse[x.id] = v; }); return; }
       if (x.shelf === 'relics') { mark((m) => setRelics(m, x.kind, v)); return; }
       // The loose shards and fragments come after those already in whole masks and spools.
@@ -334,9 +335,15 @@
     invMoney(node) {
       const key = node.dataset.key;
       const raw = Number(String(node.value).replace(/\D/g, ''));
-      const max = key === 'shards' ? shardCap(App.currentBuild().pouch) : MAX_ROSARIES;
+      const max = key === 'shards' ? shardCap(App.freeGame().pouch) : MAX_ROSARIES;
       const v = Math.max(0, Math.min(max, Number.isFinite(raw) ? Math.round(raw) : 0));
       mark((m) => { m[key] = v; });
+    },
+    // A level of your game (Free mode): the Needle, masks, silk, Silk Hearts, the Kit, the Pouch.
+    invLevel(node) {
+      const key = node.dataset.key, top = SS.saves.LADDER_TOP[key];
+      if (App.game() || top == null) return;
+      mark((m) => { m[key] = Math.max(0, Math.min(top, Number(node.dataset.value) || 0)); });
     },
     invPick(node) {
       picked = node.dataset.key === picked ? null : node.dataset.key;
