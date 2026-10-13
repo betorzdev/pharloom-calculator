@@ -720,7 +720,8 @@ the save analyzer, the 100% checklist, the map, the Hunter's Journal, the Tools 
 calculator (`save-analyzer/`, `es/analizador-partida/`…). Each is the
 whole site opened on its screen, with its own title, description and a short text with
 questions, and `sitemap.xml` lists them. `npm run pages` writes them from `index.html` and
-`tools/pages-text.js`; `npm test` fails if one falls behind.
+`tools/pages-text.js`, with `robots.txt` and `CNAME` (the site lives at `pharloomcalculator.com`:
+`SITE` there); `npm test` fails if one falls behind.
 
 With Combat on, also the damage calculator and one page per boss, 51 in each language
 (`bosses/lace/`, `es/jefes/lace/`); while it's hidden they aren't written. A boss's page is the site opened on

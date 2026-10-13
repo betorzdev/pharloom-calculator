@@ -597,7 +597,8 @@ Three decisions follow:
    patterns (§4.1), the wiki's `ESname` as the second source exactly as now, and drops the
    Spanish wiki as a third (it has nothing for Silksong).
 3. **The name.** The kingdom is Pharloom, as Hollow Knight's is Hallownest:
-   `pharloom-calculator`, at `betorzdev.github.io/pharloom-calculator/`. It says what the site
+   `pharloom-calculator`, at `betorzdev.github.io/pharloom-calculator/` (since October 2026 at
+   `pharloomcalculator.com`, as the sibling at `hallownestcalculator.com`). It says what the site
    is to someone who has played, and it sits next to the first one.
 
 ## 6. Design: what changes on the page
