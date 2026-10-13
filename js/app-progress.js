@@ -119,7 +119,7 @@
           : `<span class="pg-mark" aria-hidden="true">${got ? App.tick : ''}</span>`}
         ${icon ? `<span class="pg-art"><img src="${icon}" alt="" loading="lazy"></span>` : ''}
         <span class="pg-main"><span class="pg-name"${NT}>${color ? `<span class="pg-slot is-${color}" aria-hidden="true"></span>` : ''}${esc(name)}</span>
-          ${got ? `<span class="sr-only">${esc(t('pgGot'))}</span>` : ''}${!got ? howHtml(how, more) : ''}</span>
+          ${got ? `<span class="sr-only">${esc(t('pgGot'))}</span>` : ''}${!got ? howHtml(how, more) + saysRow(x.says) : ''}</span>
         <span class="pg-place"><span class="pg-where">${place.map((w, i) => `<span${i || prefs.pgNear ? NT : ''}>${esc(w)}</span>`).join('')}</span></span>
         ${onMap ? `<button type="button" class="pg-onmap" data-act="mapShow" data-value="${esc(mark)}" aria-label="${esc(t('mapOnMap') + ': ' + name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '<span class="pg-onmap is-none" aria-hidden="true"></span>'}
       </li>`;
@@ -274,8 +274,11 @@
     const i = SS.spots ? SS.spots.TASKS.findIndex((k) => k[0] === 'qitem' && JSON.stringify(k[2]).includes(held)) : -1;
     return i >= 0 ? 'task:' + i : null;
   }
+  // What the Caretaker says of each piece once the wish is taken (CARETAKER_SNARE_REPEAT_*).
+  const SNARE_SAYS = { 'Snare Soul Churchkeeper': 'roadSays_churchkeeper', 'Snare Soul Bell Hermit': 'roadSays_hermit',
+    'Snare Soul Swamp Bug': 'roadSays_swamp', 'Silk Snare': 'roadSays_snare' };
   const snareRow = (x) => ({ name: pick(x.name), got: x.ok, act: 2, area: SNARE_AREA[x.save] || null,
-    how: SNARE_HOW[x.save] ? SNARE_HOW[x.save]() : '', mark: snareMark(x) });
+    how: SNARE_HOW[x.save] ? SNARE_HOW[x.save]() : '', mark: snareMark(x), says: SNARE_SAYS[x.save] ? says('caretaker', t(SNARE_SAYS[x.save])) : null });
   /* Where a wish is taken (js/quests.js FROM, the game's): its Wishwall, or else the NPC who offers
      it, as a room and as the Map's mark there (js/app-map.js: board:, giver:). A wish after another
      (prev) is taken where the first one not done yet is: the board's Pre, then the NPC it sends you to. */
@@ -321,6 +324,111 @@
   // The three melodies the Cradle's way asks for (the pieces of kind 'melody').
   const melodies = (g) => (g ? CO.PIECES.filter((p, i) => p[0] === 'melody' && g.pieces.includes(i)).length : 0);
 
+  /* ── Each step and row in the game's own words (design/28-progress-steps-variants.html, 1 A to
+     5 A) ─────────────────────────────────────────────────────────────────────────────
+     What the pane «Tareas» says of it (js/quests.js CHAIN desc, or ready once its targets are
+     met), its Wishwall before it's taken (wall), the Inventory's line, the Journal's, or the
+     Caretaker's directions; each tagged with where the game says it. A step the game has no word
+     for (unlocking Silk and Soul, the caravan) has none: nothing is written by hand. */
+  const TAG = { tasks: () => t('pgTasks'), wall: () => t('mapLayer_wishwall1'), inv: () => t('navGame'), journal: () => t('navJournal'),
+    caretaker: () => t('roadCaretaker') };
+  const says = (tag, text, name, loc) => (text ? { tag, text, name, loc } : null);
+  const sayText = (v) => (typeof v === 'string' ? v : pick(v));
+  /* A wish as the game shows it now: its first stage not done (a board's Pre, then the wish); taken
+     (the save's IsAccepted, js/savefile.js taken), what «Tareas» says; else what its Wishwall says,
+     when it's posted on one. */
+  function wishSays(quest, g) {
+    const done = new Set(g ? g.quests : []), taken = new Set((g && g.taken) || []);
+    let q = quest;
+    while (QU.CHAIN[q] && QU.CHAIN[q].prev && !done.has(QU.CHAIN[q].prev)) q = QU.CHAIN[q].prev;
+    const e = QU.CHAIN[q] || {};
+    return !taken.has(q) && e.wall ? says('wall', e.wall) : says('tasks', e.desc);
+  }
+  /* Lace atop the Cradle's tower: the objective Pharloom's Crown at its stage (its melodies, all
+     three learned, the lift, Silk), as «Tareas» says it. */
+  const LACE_STAGES = ['Citadel Ascent Melodies', 'Citadel Ascent Lift', 'Citadel Ascent Silk Defeat'];
+  function laceSays(g) {
+    const done = new Set(g ? g.quests : []);
+    const q = LACE_STAGES.find((x) => !done.has(x)) || LACE_STAGES[0], e = QU.CHAIN[q];
+    return e ? says('tasks', q === LACE_STAGES[0] && melodies(g) >= 3 && e.ready ? e.ready : e.desc) : null;
+  }
+  // A main objective's or a wish's card: its title and line, and what «Tareas» says (desc, or ready).
+  const questSays = (q, k = 'desc') => { const e = QU.CHAIN[q]; return e ? says('tasks', e[k] || e.desc, e.name, e.loc) : null; };
+  const STEP_SAYS = {
+    bellshrines: (s) => questSays(s.quest || 'Grand Gate Bellshrines'),
+    // The Bellshrines rung, the objective's own next line: back to the Grand Gate.
+    'grand-gate': (s) => questSays(s.quest, 'ready'),
+    // No objective names her: her Journal entry says who she is and what she guards (design/28, 5 A).
+    judge: () => { const e = SS.journal && SS.journal.BOOK.find((x) => x.id === 'last-judge'); return e ? says('journal', e.desc, e.name) : null; },
+    citadel: () => questSays('Citadel Seeker'),
+    offer: (s) => questSays(s.quest),
+    pieces: () => questSays('Soul Snare'),
+    // The pieces held, the wish's own next line: bring them to the Caretaker.
+    ready: (s) => questSays(s.quest, 'ready'),
+    silk: () => questSays('Silk Defeat Snare'),
+  };
+
+  /* Where a step is on the Map (design/28, 3 A): the marks still to do, in the order to go. The
+     objectives' are the game's own map pins, found by their quest (js/spots.js TASKS 'goal'). */
+  const goal = (q) => { const i = SS.spots ? SS.spots.TASKS.findIndex((k) => k[0] === 'goal' && k[1] === q) : -1; return i >= 0 ? 'task:' + i : null; };
+  const lower = (x) => String(x || '').toLowerCase();
+  const caretakerMark = () => { const f = QU.FROM['Soul Snare'] || {}; return f.npc && f.npc[0] ? 'giver:' + lower(f.npc[0]) : null; };
+  // Pavo, who gives the Bellhome's key, where the Map has him (js/people.js).
+  const PAVO = (() => { const p = SS.people && SS.people.PEOPLE.find((x) => x.id === 'bellhart-greeter'); return p && p.spots[0] ? 'npc:bellhart-greeter:' + lower(p.spots[0][0]) : null; })();
+  function stepMarks(r, s, g) {
+    const of = {
+      bellshrines: () => s.shrines.filter((b) => !(g && b.ok)).map((b) => 'bell:' + b.field),
+      'grand-gate': () => [goal(s.quest)],
+      judge: () => ['boss:last-judge', 'boss:phantom'],
+      citadel: () => [goal('Citadel Seeker')],
+      offer: () => [caretakerMark(), QU.FROM[s.quest] && QU.FROM[s.quest].board ? 'board:' + lower(QU.FROM[s.quest].board) : null],
+      ready: () => [caretakerMark()],
+      silk: () => [goal('Silk Defeat Snare')],
+    }[s.id];
+    // A step of several things: what's next of it with a place on the Map.
+    const keys = of ? of() : todo(r, s, parts(r, s, g)).flatMap((x) => (x.opts ? x.opts : [x])).filter((x) => x.mark).map((x) => x.mark);
+    // The nearest to the bench first, in rooms (each mark's room on the Map), the rest as they come.
+    const marks = App.mapApi ? App.mapApi.list() : [];
+    const roomsAway = (k) => { const m = marks.find((x) => x.key === k); return m && m.scene ? away(m.scene) : null; };
+    return [...new Set(keys)].filter((k) => k && App.mapHas && App.mapHas(k)).map((k, i) => ({ k, i, d: roomsAway(k) }))
+      .sort((a, b) => (a.d ?? Infinity) - (b.d ?? Infinity) || a.i - b.i).map((e) => e.k);
+  }
+  // The Map's way for a step (App.mapFocus, js/app-map.js), kept by the step's road and id for the click.
+  const FOCUS = new Map();
+  function mapLink(r, s, keys) {
+    if (!keys.length) return '';
+    FOCUS.set(r.act + ':' + s.id, { keys, name: stepShort(r, s) });
+    return `<button type="button" class="text-btn pg-says-map" data-act="pgFocus" data-value="${r.act}:${s.id}">${App.pin}<span>${esc(keys.length > 1 ? t('pgMapN', { n: num(keys.length) }) : t('mapOnMap'))}</span></button>`;
+  }
+  function saysHtml(x) {
+    return `<p class="pg-says-k"><span class="pg-says-tag">${esc(TAG[x.tag]())}</span>${x.name ? `<span class="pg-says-name"${NT}>${esc(pick(x.name))}</span>` : ''}${x.loc
+      ? `<span class="pg-says-loc"${NT}>${esc(pick(x.loc))}</span>` : ''}</p><p class="pg-says-d"${NT}>${esc(sayText(x.text))}</p>`;
+  }
+  // A step's card (1 A): under its heading, what the game says of it and its way onto the Map.
+  function stepCard(r, s, g, cls = '') {
+    const x = STEP_SAYS[s.id] ? STEP_SAYS[s.id](s) : null, map = mapLink(r, s, stepMarks(r, s, g));
+    return x || map ? `<div class="pg-says${cls}">${x ? saysHtml(x) : ''}${map}</div>` : '';
+  }
+  /* Another step of the road, opened from the thread or its medallion (2 A): its number, title and
+     card where it was opened; the × or its button again close it. One at a time, while the page is. */
+  let peekAt = null, peekFrom = 'thread';
+  function peekHtml(r, g) {
+    if (!peekAt || !peekAt.startsWith(r.act + ':')) return '';
+    const i = r.steps.findIndex((x) => r.act + ':' + x.id === peekAt), s = r.steps[i];
+    if (!s) return '';
+    const done = !!g && (s.ok || s.bypassed), x = STEP_SAYS[s.id] ? STEP_SAYS[s.id](s) : null, title = stepTitle(r, s);
+    return `<div class="pg-says is-peek" role="region" aria-label="${esc(title)}"><p class="pg-peek-h"><small>${esc(t('pgPeekStep', { n: num(i + 1) }))}${done ? ' · ' + esc(t('pgPeekDone')) : ''}</small><span>${esc(title)}</span></p>
+        <button type="button" class="pg-peek-x" data-act="pgPeek" data-value="${esc(peekAt)}" aria-label="${esc(t('pgPeekClose'))}" title="${esc(t('pgPeekClose'))}">${App.cross}</button>
+        ${x ? saysHtml(x) : `<p class="pg-says-none">${esc(t('pgSaysNone'))}</p>`}${done ? '' : mapLink(r, s, stepMarks(r, s, g))}</div>`;
+  }
+  // A row's own words (4 A), folded under «Lo que dice el juego».
+  function saysRow(x) {
+    if (!x || !x.text) return '';
+    const id = 'pg-says-' + (++howN);
+    return `<span class="pg-says-row"><button type="button" class="text-btn pg-says-btn" data-act="pgSays" aria-expanded="false" aria-controls="${id}">${esc(t('pgSays'))}${App.chevron(false)}</button>
+        <span class="pg-says-q" id="${id}" hidden><span class="pg-says-tag">${esc(TAG[x.tag]())}</span> <span${NT}>${esc(sayText(x.text))}</span></span></span>`;
+  }
+
   /* A wish of a group as a row: its Act and area (the pane's, js/collectibles.js WISHES; with none
      there, the area it's taken in), the room it's taken in and its mark on the Map, who asks for it
      (the game's line), what it asks to be brought and what posts it, half a point when it's worth
@@ -335,7 +443,7 @@
     const how = got ? '' : [wishLoc(x.quest), wishAsks(x.quest)].filter(Boolean).join(' · ');
     const more = got ? [] : (OPENS[x.quest] ? OPENS[x.quest](g) : []).filter(Boolean);
     return { name: x.name ? pick(x.name) : w ? pick(w[4]) : x.quest, got, act: w ? w[1] : 0, area: (w && w[3]) || (from.scene && R.areaOf(from.scene)) || null,
-      scene: from.scene, mark: from.mark, sub, how, more, wish: x.wish, value: x.value };
+      scene: from.scene, mark: from.mark, sub, how, more, wish: x.wish, value: x.value, says: got ? null : wishSays(x.quest, g) };
   }
   function groupRows(name, g, required) {
     const done = new Set(g ? g.quests : []);
@@ -368,22 +476,23 @@
   const subHead = (title, got, max, g) => `<p class="pg-sub"><span>${esc(title)}</span>${!g ? `<span class="pg-count"><i class="u">${num(max)}</i></span>`
     : got >= max ? `<span class="pg-count"><span class="pg-mark">${App.tick}</span> <b>${num(max)}</b><i class="u">/${num(max)}</i></span>` : count(got, max)}</p>`;
 
-  function step(n, s, title, body, g) {
+  function step(n, s, title, body, g, r) {
     const state = !g ? '' : s.ok ? ' is-ok' : s.bypassed ? ' is-bypassed' : '';
+    const card = r && !(g && (s.ok || s.bypassed)) ? stepCard(r, s, g, ' is-step') : '';
     const mark = !g ? '' : s.total > 1 && !s.ok && !s.bypassed ? count(s.done, s.total) : s.ok || s.bypassed ? `<span class="pg-mark">${App.tick}</span>` : '';
     return `<li class="pg-step${state}"><h4 class="pg-step-h"><span class="pg-step-n">${num(n)}</span>
-        <span class="pg-step-t">${esc(title)}</span>${mark}</h4>${s.bypassed && !s.ok ? `<p class="pg-note">${esc(t('roadBypassed', { phantom: foeName('phantom') }))}</p>` : ''}${body || ''}</li>`;
+        <span class="pg-step-t">${esc(title)}</span>${mark}</h4>${card}${s.bypassed && !s.ok ? `<p class="pg-note">${esc(t('roadBypassed', { phantom: foeName('phantom') }))}</p>` : ''}${body || ''}</li>`;
   }
 
   function toAct2(r, g) {
     const [bells, gate, judge] = r.steps;
-    const shrines = bells.shrines.map((b) => ({ name: pick(b.name), got: b.ok, act: 1 }));   // named by their area already
+    const shrines = bells.shrines.map((b) => ({ name: pick(b.name), got: b.ok, act: 1, mark: 'bell:' + b.field }));   // named by their area already
     const gateName = pick(QU.CHAIN[gate.quest].name);
     return [
-      step(1, bells, t('roadBells'), list(shrines, g), g),
-      step(2, gate, t('roadGate', { gate: gateName }), '', g),
-      step(3, judge, t('roadJudge', { judge: foeName('last-judge'), phantom: foeName('phantom') }), '', g),
-      step(4, r.steps[3], t('roadCitadel'), '', g),
+      step(1, bells, t('roadBells'), list(shrines, g), g, r),
+      step(2, gate, t('roadGate', { gate: gateName }), '', g, r),
+      step(3, judge, t('roadJudge', { judge: foeName('last-judge'), phantom: foeName('phantom') }), '', g, r),
+      step(4, r.steps[3], t('roadCitadel'), '', g, r),
     ];
   }
 
@@ -396,11 +505,12 @@
     const fay = CO.WHERE.arts['faydown-cloak'] || [];
     return [
       { test: 'caravan', name: t('roadCaravan'), got: test('caravan').ok, icon: 'assets/benches/caravan.png', ...(test('caravan').ok ? {} : caravanHow(test('caravan').caravan, g)) },
-      { test: 'doubleJump', name: artName('faydown-cloak'), got: test('doubleJump').ok, act: fay[0], area: fay[1], icon: 'assets/icons/arts/faydown-cloak.webp', mark: 'arts:faydown-cloak' },
-      { test: 'laceTower', name: t('roadLace'), got: test('laceTower').ok, act: 2, area: 'CRADLE', icon: PORTRAIT('lace'),
-        how: test('laceTower').ok ? '' : t('roadMelodies', { n: num(melodies(g)) }) },
-      { test: 'bellhomeKey', ready: key.ready, name: t('roadKey'), got: test('bellhomeKey').ok, act: 2, area: 'BELLHART', icon: 'assets/benches/bellhome.png',
-        how: test('bellhomeKey').ok ? '' : key.ready ? t('roadPavo') : t('roadKeyRule', { glory: wishName('Belltown House Mid'), n: num(key.need) }) },
+      { test: 'doubleJump', name: artName('faydown-cloak'), got: test('doubleJump').ok, act: fay[0], area: fay[1], icon: 'assets/icons/arts/faydown-cloak.webp', mark: 'arts:faydown-cloak',
+        says: says('inv', D.ARTS.find((x) => x.id === 'faydown-cloak').desc) },
+      { test: 'laceTower', name: t('roadLace'), got: test('laceTower').ok, act: 2, area: 'CRADLE', icon: PORTRAIT('lace'), mark: 'boss:lace-the-cradle',
+        how: test('laceTower').ok ? '' : t('roadMelodies', { n: num(melodies(g)) }), says: laceSays(g) },
+      { test: 'bellhomeKey', ready: key.ready, name: t('roadKey'), got: test('bellhomeKey').ok, act: 2, area: 'BELLHART', icon: 'assets/benches/bellhome.png', mark: PAVO,
+        how: test('bellhomeKey').ok ? '' : key.ready ? t('roadPavo') : t('roadKeyRule', { glory: wishName('Belltown House Mid'), n: num(key.need) }), says: says('inv', t('roadKeyDesc')) },
     ].map((x) => ({ act: 0, area: null, ...x }));
   }
 
@@ -423,11 +533,11 @@
       + subHead(t('roadChecks'), unlock.tests.filter((x) => x.ok).length, unlock.tests.length, g) + list(checks, g) + keyPart;
     const snare = pieces.pieces.map(snareRow);
     return [
-      step(1, unlock, t('roadUnlock', { wish }), unlockBody, g),
-      step(2, offer, t('roadOffer', { wish, caretaker: t('roadCaretaker'), clave: areaName('ENCLAVE') }), `<p class="pg-note">${esc(offerNote(offer, g))}</p>`, g),
-      step(3, pieces, t('roadPieces'), list(snare, g), g),
-      step(4, ready, t('roadReady', { caretaker: t('roadCaretaker'), clave: areaName('ENCLAVE') }), '', g),
-      step(5, silk, t('roadSilk'), `<p class="pg-note">${esc(t('roadSilkNote'))}</p>`, g),
+      step(1, unlock, t('roadUnlock', { wish }), unlockBody, g, r),
+      step(2, offer, t('roadOffer', { wish, caretaker: t('roadCaretaker'), clave: areaName('ENCLAVE') }), `<p class="pg-note">${esc(offerNote(offer, g))}</p>`, g, r),
+      step(3, pieces, t('roadPieces'), list(snare, g), g, r),
+      step(4, ready, t('roadReady', { caretaker: t('roadCaretaker'), clave: areaName('ENCLAVE') }), '', g, r),
+      step(5, silk, t('roadSilk'), `<p class="pg-note">${esc(t('roadSilkNote'))}</p>`, g, r),
     ];
   }
 
@@ -441,7 +551,7 @@
     judge: () => t('roadJudge', { judge: foeName('last-judge'), phantom: foeName('phantom') }), citadel: () => t('roadCitadel'),
     unlock: (r) => t('roadUnlock', { wish: wishOf(r) }),
     offer: (r) => t('roadOffer', { wish: wishOf(r), caretaker: t('roadCaretaker'), town: areaName('BELLHART'), clave: areaName('ENCLAVE') }),
-    pieces: () => t('roadPieces'), ready: () => t('roadReady', { caretaker: t('roadCaretaker') }), silk: () => t('roadSilk'),
+    pieces: () => t('roadPieces'), ready: () => t('roadReady', { caretaker: t('roadCaretaker'), clave: areaName('ENCLAVE') }), silk: () => t('roadSilk'),
   };
   const SHORT = {
     bellshrines: () => t('pgStepBells'), 'grand-gate': (r, s) => t('pgStepGate', { gate: gateOf(s) }),
@@ -462,9 +572,9 @@
     const s = r.steps[at];
     const f = ((on + (s && s.total > 1 ? s.done / s.total : 0)) / Math.max(1, r.steps.length - 1)) * 100;
     return `<div class="pg-journey is-road" style="--n:${r.steps.length};--f:${Math.min(100, f).toFixed(1)}%">
-        <ol class="pg-journey-steps">${r.steps.map((x, i) => `<li class="${!guide && (x.ok || x.bypassed) ? 'is-done' : ''}${i === at ? ' is-cur' : ''}" title="${esc(stepTitle(r, x))}">
-          <i aria-hidden="true"></i><span>${esc(t('pgStepN', { n: num(i + 1), step: stepShort(r, x) }))}</span></li>`).join('')}</ol>
-      </div>`;
+        <ol class="pg-journey-steps">${r.steps.map((x, i) => `<li class="${!guide && (x.ok || x.bypassed) ? 'is-done' : ''}${i === at ? ' is-cur' : ''}${peekAt === r.act + ':' + x.id ? ' is-peek' : ''}" title="${esc(stepTitle(r, x))}">
+          <i aria-hidden="true"></i><span><button type="button" class="pg-jstep" data-act="pgPeek" data-value="${r.act}:${x.id}"${i === at ? '' : ` aria-expanded="${peekAt === r.act + ':' + x.id}"`}>${esc(t('pgStepN', { n: num(i + 1), step: stepShort(r, x) }))}</button></span></li>`).join('')}</ol>
+      </div>${peekFrom === 'thread' ? peekHtml(r, guide ? null : cur) : ''}`;
   }
   /* In Act 3, the endings (Albert, then design/40, 1 A: the Acts are on top of the tab now), lit the
      ones this save has seen (js/savefile.js ENDINGS), named as the game names them. They aren't a
@@ -528,7 +638,7 @@
      browser translator may translate it). */
   function medal(x) {
     const onMap = x.mark && App.mapHas && App.mapHas(x.mark);
-    return `<li class="pg-md${x.later ? ' is-later' : ''}"${x.tip ? ` title="${esc(x.tip)}"` : ''}><span class="pg-md-art"><img src="${x.icon}" alt="" loading="lazy">${x.badge ? `<span class="pg-md-badge">${esc(x.badge)}</span>` : ''}</span>
+    return `<li class="pg-md${x.later ? ' is-later' : ''}${x.peek && peekAt === x.peek ? ' is-peek' : ''}"${x.tip ? ` title="${esc(x.tip)}"` : ''}>${x.peek ? `<button type="button" class="pg-md-peek" data-act="pgPeek" data-value="${esc(x.peek)}" aria-expanded="${peekAt === x.peek}" aria-label="${esc(x.name + ': ' + t('pgPeekOpen'))}"></button>` : ''}<span class="pg-md-art"><img src="${x.icon}" alt="" loading="lazy">${x.badge ? `<span class="pg-md-badge">${esc(x.badge)}</span>` : ''}</span>
         ${onMap ? `<button type="button" class="pg-md-pin" data-act="mapShow" data-value="${esc(x.mark)}" aria-label="${esc(t('mapOnMap') + ': ' + x.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : ''}
         <span class="pg-md-name"${x.plain ? '' : NT}>${esc(x.name)}</span>${x.sub ? `<span class="pg-md-sub">${esc(x.sub)}</span>` : ''}</li>`;
   }
@@ -552,7 +662,7 @@
       more: [...x.more, ...sub.slice(1)].filter(Boolean) }));
     if (s.id === 'bellshrines') {
       return [part('shrines', t('pgShrines'), STEP_ART.bellshrines, s.done, s.total, t('roadGoalShrines', { n: num(s.total) }),
-        s.shrines.map((b) => ({ name: pick(b.name), got: b.ok, act: 1, icon: STEP_ART.bellshrines })))];
+        s.shrines.map((b) => ({ name: pick(b.name), got: b.ok, act: 1, icon: STEP_ART.bellshrines, mark: 'bell:' + b.field })))];
     }
     if (s.id === 'unlock') {
       const points = wishes(groupRows('Soul Snare', g, false));
@@ -587,12 +697,13 @@
     const at = stepAt(r);
     const s = r.steps[at];
     const stale = !g.quests.length && g.wishes.length;
-    const later = r.steps.slice(at + 1).map((x) => ({ name: stepShort(r, x), icon: STEP_ART[x.id] || BOARD, later: true, tip: stepTitle(r, x), plain: true }));
+    const later = r.steps.slice(at + 1).map((x) => ({ name: stepShort(r, x), icon: STEP_ART[x.id] || BOARD, later: true, tip: stepTitle(r, x), plain: true, peek: r.act + ':' + x.id }));
     const open = !!prefs.pgRoad;
-    return journey(r) + (s ? `<div class="pg-now"><img src="${STEP_ART[s.id] || BOARD}" alt="" loading="lazy"><h3>${esc(stepTitle(r, s))}</h3></div>
+    return journey(r) + (s ? `<div class="pg-now"><img src="${STEP_ART[s.id] || BOARD}" alt="" loading="lazy"><h3 tabindex="-1">${esc(stepTitle(r, s))}</h3></div>
+        ${stepCard(r, s, g)}
         ${stale ? `<p class="pg-note is-warn">${esc(t('roadStale'))}</p>` : ''}
         ${s.bypassed ? '' : partsHtml(r, s, g)}
-        ${later.length ? `<ul class="pg-mds pg-later">${later.map(medal).join('')}</ul>` : ''}` : '')
+        ${later.length ? `<ul class="pg-mds pg-later">${later.map(medal).join('')}</ul>${peekFrom === 'later' && later.some((x) => x.peek === peekAt) ? peekHtml(r, g) : ''}` : ''}` : '')
       + reach(g) + `<div class="pg-whole"><button type="button" class="text-btn" data-act="pgRoad" aria-expanded="${open}">${esc(t(open ? 'roadLess' : 'roadWhole'))}</button></div>`
       + (open ? roadHtml(g) : '');
   }
@@ -647,7 +758,7 @@
       const onMap = x.mark && App.mapHas && App.mapHas(x.mark);
       return `<li class="pg-item"><span class="pg-num" aria-hidden="true"><b>${num(i + 1)}</b></span>
           <span class="pg-art"><img src="${x.icon}" alt="" loading="lazy"></span>
-          <span class="pg-main"><span class="pg-name">${esc(x.name)}</span>${howHtml(x.how, x.more)}
+          <span class="pg-main"><span class="pg-name">${esc(x.name)}</span>${howHtml(x.how, x.more)}${saysRow(x.says)}
             ${x.opts ? `<ul class="pg-opts">${x.opts.map((o) => `<li><img src="${o.icon}" alt="" loading="lazy"><span><span${NT}>${esc(o.name)}</span>${o.value === 0.5 ? ` · ${esc(t('roadHalf'))}` : ''}</span></li>`).join('')}${x.more ? `<li class="is-more">${esc(t('pgTodoMore', { n: num(x.more) }))}</li>` : ''}</ul>` : ''}</span>
           <span class="pg-place"><span class="pg-where">${x.area ? `<span${NT}>${esc(areaName(x.area))}</span>` : ''}</span></span>
           ${onMap ? `<button type="button" class="pg-onmap" data-act="mapShow" data-value="${esc(x.mark)}" aria-label="${esc(t('mapOnMap') + ': ' + x.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '<span class="pg-onmap is-none" aria-hidden="true"></span>'}
@@ -837,6 +948,29 @@
       render();
     },
     pgRoad() { prefs.pgRoad = !prefs.pgRoad; savePrefs(); render(); },
+    /* A step of the thread or a medallion: its card opens where it was clicked (design/28, 2 A); the
+       step you're on takes you to its heading instead. */
+    pgPeek(node) {
+      const v = node.dataset.value, own = App.game(), r = own ? A.next(own) : null, at = r ? r.steps[stepAt(r)] : null;
+      if (at && v === r.act + ':' + at.id) {
+        peekAt = null;
+        const h = document.querySelector('.pg-now h3');
+        if (h) { h.scrollIntoView({ block: 'center' }); h.focus({ preventScroll: true }); }
+        return;
+      }
+      peekAt = peekAt === v ? null : v;
+      peekFrom = node.classList.contains('pg-md-peek') ? 'later' : 'thread';
+      render();
+    },
+    // A step's «See on the map»: the Map on what's left of it (js/app-map.js App.mapFocus).
+    pgFocus(node) { const f = FOCUS.get(node.dataset.value); if (f && f.keys.length) App.mapFocus(f.keys, f.name); },
+    pgSays(node) {
+      const q = document.getElementById(node.getAttribute('aria-controls'));
+      if (!q) return;
+      q.hidden = !q.hidden;
+      node.setAttribute('aria-expanded', String(!q.hidden));
+      node.innerHTML = esc(t(q.hidden ? 'pgSays' : 'pgSaysHide')) + App.chevron(!q.hidden);
+    },
     // The step's whole list, under what's next (design/40, 2 A).
     pgList() { prefs.pgList = !prefs.pgList; savePrefs(); render(); },
     // A list of the guide (no save), folded under «See all n».

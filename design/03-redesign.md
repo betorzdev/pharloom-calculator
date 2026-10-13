@@ -41,7 +41,7 @@ the work up reads it first, then the step it's on.
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html` |
-| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight and the leftovers 13 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
+| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct) | [`12-map-variants.html`](12-map-variants.html) |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds) | [`15-journal-variants.html`](15-journal-variants.html) |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html` (kept out of the repo) |
@@ -737,6 +737,37 @@ the ladders' groups where they're set, B only the top, C as it was).
   upgrades', Needle's and Silk Hearts' groups say «Esto se fija en el Inventario» with the way there.
 - Plain fixes: no «·» head (Act heads only when a list spans two Acts), «Te falta 1», the bridge's
   figure centred on a phone, the tab card's name balanced (no lone «3»).
+
+### Each step in the game's words, and on the Map (13 October 2026)
+
+Albert: clicking a step of the road could explain it (only with the game's own texts and
+translations), or put a pin for the Map. Looked at over real saves (Act 1 at 7% and at 10% by the
+Phantom, Act 2 at 15%, 42% and 61%, the later steps simulated from them, Free mode) and the sibling's
+Map focus. The game has an objective text for every step but two (unlocking Silk and Soul, and the
+Last Judge, who has her Journal line), and its own map pins for the Grand Gate, the Citadel and the
+Soul Snare. `28-progress-steps-variants.html` (kept out of the repo): 1 the step you're on (**A** its
+card under the heading, B folded, C as it was); 2 the other steps (**A** the thread and the medallions
+open their card, B a tooltip, C as it was); 3 the Map (**A** all that's left of the step at once, the
+sibling's focus, B the nearest mark, C the rows only); 4 each row (**A** «What the game says» folded,
+B always, two lines, C as it was); 5 the steps with no objective (**A** the Judge's Journal line, B
+none).
+
+**Decision: A in all five** (13 October 2026), built (`js/app-progress.js`, `js/app-map.js`,
+`css/app.css`, `tools/extract-quests.py`):
+- `stepCard()` under `.pg-now` and under each step of the whole road and the guide: the tag of where
+  the game says it («Tareas», «Diario»), the objective's name and line, its description for the
+  state the save is in (`STEP_SAYS`: CHAIN `desc`, or `ready` once its targets are met), and
+  «Ver los n en el mapa».
+- The thread's steps are buttons (`.pg-jstep`), the later medallions too (`.pg-md-peek`):
+  `peekHtml()` opens the step's card where it was clicked, one at a time; the step you're on goes
+  to its heading.
+- `stepMarks()`: the Bellshrines not rung, the objectives' pins by their quest (`goal()`), the Judge
+  and the Phantom, the Caretaker and Bellhart's Wishwall, what's next of a step of several things;
+  the nearest to the bench first. `App.mapFocus(keys, name)` shows only those, fitted, with a line
+  in the search's place (‹ i of n ›, ×); any switch ends it.
+- `saysRow()` under the rows: `wishSays()` (the Wishwall's text until the save says it's taken,
+  then «Tareas»'s), the Caretaker's directions per piece, the Inventory's lines, `laceSays()`.
+  The shrines', Lace's and the key's rows have their pins.
 
 ## Step 6 · Map
 

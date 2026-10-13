@@ -1301,6 +1301,48 @@ kbd {
 .pg-now { display: flex; align-items: center; justify-content: center; gap: var(--sp-3); max-width: var(--column); margin: var(--sp-6) auto; text-align: left; }
 .pg-now img { flex: none; width: var(--sp-12); height: var(--sp-12); object-fit: contain; }
 .pg-now h3 { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: var(--fs-xl); color: var(--ink-strong); text-wrap: balance; }
+.pg-now h3:focus { outline: none; }
+/* The step in the game's own words (design/28, 1 A): what the pane «Tareas» (or the Journal) says
+   of it, tagged with where, and its way onto the Map; under the step's heading, in the whole road
+   under each step's, and opened from the thread (2 A). */
+.pg-says { position: relative; max-width: var(--column); margin: calc(-1 * var(--sp-2)) auto var(--sp-6); padding: var(--sp-3) var(--sp-4); text-align: center;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.pg-says-k { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: var(--sp-1) var(--sp-2); margin: 0 0 var(--sp-1);
+  font-family: var(--font-num); font-size: var(--fs-2xs); letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
+.pg-says-tag { padding: 0 var(--sp-1); border: 1px solid var(--line-ctl); font-family: var(--font-num); font-size: var(--fs-2xs); font-style: normal; letter-spacing: var(--track-label); text-transform: uppercase; color: var(--muted); }
+.pg-says-name { color: var(--ink); }
+.pg-says-loc::before { content: '·'; margin-right: var(--sp-2); }
+.pg-says-d { margin: 0; font-style: italic; font-size: var(--fs-md); line-height: 1.5; color: var(--ink); text-wrap: pretty; white-space: pre-line; }
+.pg-says-none { margin: 0; font-size: var(--fs-xs); color: var(--muted); }
+.pg-says-map { margin-top: var(--sp-2); font-size: var(--fs-sm); }
+.pg-says.is-step { margin: var(--sp-2) 0 var(--sp-3); padding: var(--sp-2) 0; text-align: left; border: 0; }
+.pg-says.is-step .pg-says-k { justify-content: flex-start; }
+.pg-says.is-peek { margin: var(--sp-3) auto var(--sp-4); padding: var(--sp-3) var(--sp-12) var(--sp-3) var(--sp-4); text-align: left; background: var(--veil); border: 1px solid var(--line-card); }
+.pg-says.is-peek .pg-says-k { justify-content: flex-start; }
+.pg-peek-h { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--sp-2); margin: 0 0 var(--sp-2); font-family: var(--font-display); font-size: var(--fs-md); color: var(--ink-strong); }
+.pg-peek-h small { font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
+.pg-peek-x { position: absolute; top: var(--sp-2); right: var(--sp-2); display: grid; place-items: center; width: var(--ctl-sm); height: var(--ctl-sm); color: var(--ink-2); }
+.pg-peek-x:is(:hover, :focus-visible) { color: var(--ink-strong); background: var(--veil); }
+/* The thread's steps and the later medallions open their card: the whole step is the button. */
+.pg-jstep { font: inherit; letter-spacing: inherit; text-transform: inherit; text-align: inherit; color: inherit; text-decoration: underline dotted;
+  text-decoration-color: color-mix(in oklab, var(--ink-2) 45%, transparent); text-underline-offset: 3px; }
+.pg-jstep::after { content: ''; position: absolute; inset: 0; }
+.pg-journey-steps li:has(.pg-jstep:is(:hover, :focus-visible)) span, .pg-journey-steps li.is-peek span { color: var(--ink-strong); }
+.pg-journey-steps li.is-peek i::before { outline: 1px solid var(--ink-strong); outline-offset: 3px; }
+.pg-md-peek { position: absolute; inset: 0; z-index: 1; }
+.pg-md:has(.pg-md-peek:is(:hover, :focus-visible)) .pg-md-name, .pg-md.is-peek .pg-md-name { color: var(--ink-strong); }
+.pg-md.is-peek .pg-md-art { outline: 1px solid var(--ink-strong); outline-offset: 2px; }
+/* A row's own words (4 A), folded. */
+.pg-says-row { display: block; }
+.pg-says-btn { min-height: 0; font-size: var(--fs-xs); }
+.pg-says-q { display: block; margin-top: var(--sp-1); padding-left: var(--sp-3); border-left: 1px solid var(--line-ctl); font-style: italic; font-size: var(--fs-sm); line-height: 1.45; color: var(--ink); white-space: pre-line; text-wrap: pretty; }
+.pg-says-q[hidden] { display: none; }
+@media (max-width: 640px) {
+  /* The objective's line under its name, not after a dot that a wrap leaves alone. */
+  .pg-says-loc { flex-basis: 100%; }
+  .pg-says-loc::before { content: none; }
+  .pg-says.is-peek { padding-right: var(--sp-8); }
+}
 .pg-rings { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: var(--sp-8) var(--sp-6); max-width: calc(var(--column) + var(--sp-16)); margin: var(--sp-6) auto 0; }
 /* The road's step as a summary (design/03-redesign.md, step 5, E): its parts' rings small, side by
    side, over their lists (.pg-groups); and, when there are several, the line that all are needed. */
@@ -2280,6 +2322,16 @@ html:has(.mp.is-full) { overflow: hidden; }
 .mp-found button { display: flex; flex-direction: column; align-items: flex-start; gap: 0; }
 .mp-found small { font-size: var(--fs-2xs); color: var(--muted); }
 .mp-found-none { padding: var(--sp-1) var(--sp-3); font-size: var(--fs-sm); color: var(--muted); }
+/* The focus (App.mapFocus): in the search's place, what the marks are, ‹ i of n › and its ×. */
+.mp-find.mp-focus { width: min(26rem, calc(100% - var(--sp-16) * 2)); }
+.mp-focus { display: flex; align-items: center; gap: var(--sp-1); min-height: var(--ctl-sm); padding: 0 var(--sp-1) 0 var(--sp-3);
+  background: color-mix(in oklab, var(--scene-bg) 88%, transparent); border: 1px solid var(--line-ctl); font-size: var(--fs-sm); color: var(--ink); }
+.mp-focus-t { display: flex; align-items: center; gap: var(--sp-2); flex: 1; min-width: 0; }
+.mp-focus-t > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mp-focus-t .ic { flex: none; color: var(--ink-2); }
+.mp-focus-n { flex: none; font-family: var(--font-num); font-size: var(--fs-xs); color: var(--ink-2); white-space: nowrap; }
+.mp-focus :is(.mp-focus-go, .mp-focus-x) { flex: none; display: grid; place-items: center; width: var(--ctl-sm); height: var(--ctl-sm); color: var(--ink-2); font-size: var(--fs-md); }
+.mp-focus :is(.mp-focus-go, .mp-focus-x):is(:hover, :focus-visible) { color: var(--ink-strong); background: var(--veil); }
 .mp-tools { position: absolute; z-index: 4; top: var(--sp-3); right: var(--sp-3); display: flex; border: 1px solid var(--line-ctl); background: color-mix(in oklab, var(--scene-bg) 88%, transparent); }
 .mp-tools button { width: var(--ctl-sm); height: var(--ctl-sm); font-family: var(--font-num); font-size: var(--fs-md); color: var(--ink-2); }
 .mp-tools button + button { border-left: 1px solid var(--line-ctl); }
@@ -2374,6 +2426,9 @@ html:has(.mp.is-full) { overflow: hidden; }
   /* Whole, the map is too short to float the search on: it goes above it. */
   .mp-stage { display: flex; flex-direction: column; }
   .mp-find { position: static; order: -1; width: auto; margin: 0 var(--sp-3) var(--sp-2); padding-right: calc(var(--ctl-sm) * 4 + var(--sp-3)); }
+  /* The focus's line keeps the room the search leaves for the zoom outside its frame, its name over ‹ i of n ›. */
+  .mp-find.mp-focus { flex-wrap: wrap; width: auto; margin-right: calc(var(--ctl-sm) * 4 + var(--sp-3) * 2); padding: var(--sp-1) var(--sp-1) var(--sp-1) var(--sp-3); }
+  .mp-focus-t { flex-basis: 100%; }
   /* Whole, the map is small: smaller marks, so they don't cover it. */
   .mp-view:not(.is-zoomed) { --mp-s: 16px; }
   .mp-tools { top: 0; }

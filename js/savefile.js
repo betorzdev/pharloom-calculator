@@ -273,6 +273,8 @@
        quests             the save names of the quests complete (QuestCompletionData IsCompleted),
                           sorted: Broodfeast done the Runt's way is "Huntress Quest Runt", which no
                           group counts
+       taken              the save names of the quests accepted and not yet complete (IsAccepted):
+                          the pane «Tareas» shows their description, a Wishwall the rest's
        bellshrines        the Bellshrines rung, by their playerData field (js/quests.js BELLSHRINES)
        bells              every Bellshrine rung, the Songclave's too (the Map's; the Grand Gate wants five)
        lastJudge, phantom the two bosses either of which opens the Citadel (defeated*)
@@ -361,6 +363,7 @@
       build: buildOf(pd) || {},
       silkshot: WEBSHOT[Object.keys(WEBSHOT).find((n) => (tools.get(n) || {}).IsUnlocked === true)] || '',
       quests: [...quests].filter(([, d]) => !!d.IsCompleted).map(([n]) => n).sort(),
+      taken: [...quests].filter(([, d]) => !!d.IsAccepted && !d.IsCompleted).map(([n]) => n).sort(),
       bellshrines: QU.BELLSHRINES.map((b) => b.field).filter((f) => pd[f] === true),
       bells: Object.keys(pd).filter((f) => /^bellShrine[A-Z]/.test(f) && pd[f] === true),
       lastJudge: pd.defeatedLastJudge === true,
@@ -478,7 +481,7 @@
   }
   const EMPTY = Object.freeze({ tools: [], crests: [], skills: [], arts: [], journal: {}, masks: 0, spools: 0, hearts: 0,
     needle: 0, kit: 0, pouch: 0, everbloom: false, purse: {}, rosaries: 0, shards: 0, farsight: false, hasJournal: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', area: '', build: {},
-    quests: [], bellshrines: [], bells: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
+    quests: [], taken: [], bellshrines: [], bells: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
     bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [],
     visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], bosses: [],
     tasks: [], steelSpots: [], peopleVars: {}, evaSlots: 0, silkshot: '' });

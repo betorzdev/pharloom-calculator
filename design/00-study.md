@@ -1655,6 +1655,26 @@ they fall in (five did a part: Abyss_09_top, Dust_11_left…), so a hair's chang
 to another. Visually checked in headless Chrome over file:// at 1440 and 390,
 in Free mode and with a 55% save; `check-pack` still matches all 72 saves.
 
+**Each step of the road in the game's own words, and on the Map** (13 October, design/03-redesign.md
+step 5). `tools/extract-quests.py` now keeps each quest's three descriptions from its asset
+(FullQuestBase `inventoryDescription`, `inventoryCompletableDescription`, `wallDescription`: CHAIN
+`desc`, `ready`, `wall`, their paragraphs a line each), which is how the game itself picks the key:
+the Grand Gate's `MQ_BELLSHRINES_DESC` while Bellshrines are left and `_DESC_READY` once rung, Silk
+and Soul's `Q_SOUL_SNARE_DESC` and then `_DESC_GOT`, a wish's Wishwall text until it's taken. The save
+says which are taken (QuestCompletionData `IsAccepted`, `game().taken`). Every quest has a `desc`.
+Progress shows it under the step's heading, from the thread and the later medallions, and under each
+row that has words in the game (a wish as it stands, the Caretaker's directions to each snare piece,
+`CARETAKER_SNARE_REPEAT_*`, the Inventory's lines for the Faydown Cloak and the Bellhome Key, Lace's
+objective `MQ_CITADEL_ASCENT_DESC_*` by its stage). With no objective for the Last Judge, her Journal
+line speaks; unlocking Silk and Soul and the Flea Caravan have no game text and get none. A step's
+«See the n on the map» is a new Map focus (`App.mapFocus`, the sibling's): only those marks, fitted,
+‹ i of n › nearest the bench first. The objectives' pins are found by their quest (`js/spots.js` TASKS
+'goal'), not by index; Lace's row and the key's (Pavo, `js/people.js`) have their pins now, as the
+Bellshrines' rows do. Found on the way: the snare's fourth step read «… en {clave}». No new
+`track()` events. Checked in headless Chrome over file:// at 1440 and 390, es and en, over five real
+saves (Act 1 at 7% and 10% by the Phantom, Act 2 at 15%, 42% and 61%), the later steps simulated
+from them, Act 3 at 100% and Free mode.
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).
