@@ -826,6 +826,30 @@
     roadCaravanLake:{ es: 'antes, visita el {lake} vacío, en los {ducts}', en: 'first visit the empty {lake}, in the {ducts}' },
     roadCaravanJudge:{ es: 'antes de su parada en los {steps}, vence en combate: {judge}', en: 'before its stop on the {steps}, defeat {judge}' },
     roadPaleLake:   { es: 'Lago Pálido', en: 'Pale Lake' },   // WHITELAKE
+    /* Each step and row in the game's own words (design/28, 1 A to 5 A): what the pane «Tareas»
+       says of it, its Wishwall, the Inventory, the Journal or the Caretaker. */
+    pgSays:         { es: 'Lo que dice el juego', en: 'What the game says' },
+    pgSaysHide:     { es: 'Ocultar', en: 'Hide' },
+    pgSaysNone:     { es: 'El juego no tiene texto para este paso.', en: 'The game has no text for this step.' },
+    pgPeekStep:     { es: 'Paso {n}', en: 'Step {n}' },
+    pgPeekDone:     { es: 'hecho', en: 'done' },
+    pgPeekClose:    { es: 'Cerrar el paso', en: 'Close the step' },
+    pgPeekOpen:     { es: 'Lo que dice el juego de este paso', en: 'What the game says of this step' },
+    pgMapN:         { es: 'Ver los {n} en el mapa', en: 'See the {n} on the map' },
+    roadKeyDesc:    { es: 'Llave para acceder a una campana restaurada sobre Campanilla.', en: 'Key to a restored bell above Bellhart.' },   // INV_DESC_BELL_HOUSE_KEY
+    roadSays_churchkeeper: { es: 'Abajo, en las tierras musgosas, aferrada aún a su capilla fallida, mi hermana se desprenderá de su poder, si se lo pides amablemente.',
+                      en: 'Down in the mosslands, still clinging to her failed chapel, my sister\'ll part with her power, if asked kind enough.' },   // CARETAKER_SNARE_REPEAT_CHURCHKEEPER
+    roadSays_hermit: { es: 'Enterrado en la madriguera de campanas, en el núcleo de Telalejana, busca a mi hosco tío. Tiene poder de sobra.',
+                      en: 'Buried in the warren of bells, at Pharloom\'s core, seek my sullen uncle. That one has power to spare.' },   // CARETAKER_SNARE_REPEAT_BELLHERMIT
+    roadSays_swamp: { es: 'Encuentra la cáscara de mi primo, reclamada por los furiosos bichos de los pantanos. Fue un necio descuidado por dejarse atrapar, y por muy muerto que esté, aún se intuye algún atisbo de su alma.',
+                      en: 'Find the husk of my cousin, claimed by the scorned bugs of the swamps. A careless fool to let himself be taken, and dead they might be, but some glimmer of his soul can still be sensed.' },   // CARETAKER_SNARE_REPEAT_SWAMP
+    roadSays_snare: { es: 'Y como base, necesitaremos un arma del pasado de las Tejedoras. Busca abajo, a un lado de los caminos de hueso, dentro de su nido más grande. Es un dispositivo de trampa, uno que pone una runa de seda abrasadora.',
+                      en: 'For the base, we\'ll be needin\' a weapon of Weavers past. Search down low, aside the paths of bone, inside their largest nest. S\'a snare device, one to set a rune\'o searing Silk.' },   // CARETAKER_SNARE_REPEAT_SNARE
+    /* The Map's focus (js/app-map.js App.mapFocus): a step's marks at once, one by one. */
+    mapFocusOf:     { es: '{i} de {n}', en: '{i} of {n}' },
+    mapFocusPrev:   { es: 'La anterior', en: 'Previous' },
+    mapFocusNext:   { es: 'La siguiente', en: 'Next' },
+    mapFocusOff:    { es: 'Volver al mapa entero', en: 'Back to the whole map' },
     /* What posts a required wish later than the rest (its playerData test in js/quests.js CHAIN when,
        and the wiki's prerequisites for what sets it; checked on the author's saves). */
     roadOpensShakra:{ es: 'sale al comprarle a {npc} todos sus mapas y tener la {art}', en: 'posted once you have bought all of {npc}\'s maps and have the {art}' },

@@ -587,7 +587,8 @@
   function layout(list, g, own, on) {
     const count = {}, items = [], fine = new Map(), placed = new Map();
     for (const m of list) {
-      if (!passes(m, g, own)) continue;
+      const inFocus = !!focusSet && focusSet.keys.includes(m.key);
+      if (!inFocus && !passes(m, g, own)) continue;
       const c = count[m.layer] || (count[m.layer] = { all: 0, had: 0, shown: 0 });
       c.all++;
       if (g && m.got) { c.had++; continue; }
@@ -595,7 +596,7 @@
       const p = m.fix || pointOf(m);
       if (!p) continue;
       placed.set(m.key, { x: p.x, y: p.y });
-      if (!on.has(m.layer)) continue;
+      if (focusSet ? !inFocus : !on.has(m.layer)) continue;
       if (FINE.has(m.layer)) { const k = ((R.roomOf(m.scene) || {}).scene || m.key) + '|' + m.layer; const f = fine.get(k) || { ...p, m, n: 0 }; f.n++; fine.set(k, f); }
       items.push({ m, p: { x: p.x, y: p.y } });
     }
@@ -901,7 +902,7 @@
         <button type="button" data-act="mapZoom" data-value="out" aria-label="${esc(t('mapFurther'))}" title="${esc(t('mapFurther'))}">−</button>
         <button type="button" class="mp-big" data-act="mapBig" aria-pressed="${big}" aria-label="${esc(t(big ? 'mapSmall' : 'mapFull'))}" title="${esc(t(big ? 'mapSmall' : 'mapFull'))}">${big ? '⤡' : '⤢'}</button>
         <button type="button" class="mp-full" data-act="mapFull" aria-pressed="${full}" aria-label="${esc(t('mapFullScreen'))}" title="${fsTitle}">${full ? FULL_OUT : FULL_IN}</button></div>`;
-    const search = `<div class="mp-find"><label class="search">${App.lens}<input type="search" data-change="mapFind" placeholder="${esc(t('mapFind'))}" aria-label="${esc(t('mapFind'))}" autocomplete="off"></label>
+    const search = focusSet ? focusBar() : `<div class="mp-find"><label class="search">${App.lens}<input type="search" data-change="mapFind" placeholder="${esc(t('mapFind'))}" aria-label="${esc(t('mapFind'))}" autocomplete="off"></label>
         <ul class="mp-found" hidden></ul></div>`;
     sec.innerHTML = `<div class="mp${big ? ' is-big' : ''}${full ? ' is-full' : ''}">${brackets}${screenHead(esc(t('navMap')))}
       <div class="mp-stage">
@@ -923,6 +924,7 @@
     // The view as it was, once the screen shows; or the thing another screen asked for.
     requestAnimationFrame(() => {
       applyView();
+      if (focusSet && focusSet.fit) { focusSet.fit = false; fitTo(focusSet.keys); }
       if (pending) { const k = pending; pending = ''; focusOn(k); }
     });
   };
@@ -942,6 +944,7 @@
   App.mapShow = (key) => {
     const m = all().list.find((x) => x.key === key);
     if (!m) return;
+    focusSet = null;
     const on = layersOn();
     if (!on.includes(m.layer)) { prefs.mapLayers = [...on, m.layer]; }
     prefs.mapAct = 0;
@@ -950,6 +953,36 @@
     pending = key;
     if (prefs.view === 'map') render(); else App.go('map');
   };
+  /* Several marks at once (Progress's «Ver los n en el mapa», design/28, 3 A; the sibling's focus,
+     hallownest-calculator js/app-map.js showOnMap): the Map shows only them, whatever its layers
+     and filters, fitted to them, and a line in the search's place says what they are, with ‹ i of
+     n › to go through them in the order given (the nearest to the bench first: the caller's) and
+     its × back to the whole map. One mark is App.mapShow's. */
+  let focusSet = null;   // { keys, name, i (-1: none picked yet), fit } while it lasts
+  App.mapFocus = (keys, name) => {
+    const list = all().list, ok = [...new Set(keys)].filter((k) => list.some((m) => m.key === k));
+    if (ok.length < 2) { if (ok.length) App.mapShow(ok[0]); return; }
+    focusSet = { keys: ok, name, i: -1, fit: true };
+    pick1('');
+    if (prefs.view === 'map') render(); else App.go('map');
+  };
+  function focusBar() {
+    const f = focusSet, n = f.keys.length;
+    const b = (dir, label, glyph) => `<button type="button" class="mp-focus-go" data-act="mapFocusStep" data-value="${dir}" aria-label="${esc(label)}" title="${esc(label)}">${glyph}</button>`;
+    return `<div class="mp-find mp-focus" role="group" aria-label="${esc(f.name)}"><span class="mp-focus-t">${App.pin}<span>${esc(f.name)}</span></span>
+        ${b(-1, t('mapFocusPrev'), '‹')}<span class="mp-focus-n">${esc(t('mapFocusOf', { i: f.i < 0 ? '–' : num(f.i + 1), n: num(n) }))}</span>${b(1, t('mapFocusNext'), '›')}
+        <button type="button" class="mp-focus-x" data-act="mapFocusOff" aria-label="${esc(t('mapFocusOff'))}" title="${esc(t('mapFocusOff'))}">${App.cross}</button></div>`;
+  }
+  // The view around the focus's marks, a little room round them, never closer than a quarter of the map.
+  function fitTo(keys) {
+    const { m } = nodes(), pts = keys.map((k) => placed.get(k)).filter(Boolean);
+    if (!m || !pts.length) return;
+    const r = m.getBoundingClientRect(), fit = fitView(r.width, r.height), ratio = r.height / r.width;
+    const xs = pts.map((p) => p.x), ys = pts.map((p) => p.y), pad = fit.w / 10;
+    const w = Math.min(fit.w, Math.max(fit.w / 4, Math.max(...xs) - Math.min(...xs) + 2 * pad, (Math.max(...ys) - Math.min(...ys) + 2 * pad) / ratio));
+    vb = { x: (Math.max(...xs) + Math.min(...xs)) / 2 - w / 2, y: (Math.max(...ys) + Math.min(...ys)) / 2 - (w * ratio) / 2, w, h: w * ratio };
+    applyView();
+  }
 
   /* ── Moving around, as the sibling's map (hallownest-calculator js/app-map.js) ──
      The view is the SVG's viewBox, in the image's pixels: dragging moves it, the wheel or a pinch
@@ -1416,7 +1449,21 @@
     },
     // Another screen's "on the map" button.
     mapShow(node) { App.mapShow(node.dataset.value); },
+    // The focus: the next or previous of its marks, centred with its card; or back to the whole map.
+    mapFocusStep(node) {
+      if (!focusSet) return;
+      const n = focusSet.keys.length, d = Number(node.dataset.value) < 0 ? -1 : 1;
+      focusSet.i = focusSet.i < 0 ? (d > 0 ? 0 : n - 1) : (focusSet.i + d + n) % n;
+      pending = focusSet.keys[focusSet.i];
+      render();
+    },
+    mapFocusOff() { focusSet = null; pick1(''); render(); },
   });
+  // Whatever changes what the Map shows ends the focus, so a switch never seems to do nothing.
+  for (const k of ['mapLayer', 'mapGroup', 'mapSet', 'mapAll', 'mapHundred', 'mapAct', 'mapReach', 'mapGame']) {
+    const f = actions[k];
+    actions[k] = (node) => { focusSet = null; f(node); };
+  }
 
   // For the admin mode (js/app-map-admin.js): what it reads of the Map, and the list worked out
   // again once a fix changes.

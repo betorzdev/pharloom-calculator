@@ -188,7 +188,26 @@ test('game() reads the fields of the road, and a slot keeps them', () => {
   assert.deepEqual(g.snarePieces, ['Snare Soul Churchkeeper', 'Silk Snare']);
   assert.deepEqual(g.bellshrines, ['bellShrineWilds']);
   assert.deepEqual(g.quests, ['Journal']);
+  // Accepted and not done: the pane «Tareas» shows it (Progress picks its text, not its Wishwall's).
+  assert.deepEqual(g.taken, ['Skull King']);
   assert.deepEqual(F.gameOf(F.toSnapshot(pd)), g);
+});
+
+test("each step of the roads has the game's own text where the game has one, with its key", () => {
+  const keys = (q) => ['desc', 'ready', 'wall'].map((k) => (Q.CHAIN[q][k] || {}).key || null);
+  // The Grand Gate: while the Bellshrines ring, then back to the Gate (design/28).
+  assert.deepEqual(keys('Grand Gate Bellshrines'), ['MQ_BELLSHRINES_DESC', 'MQ_BELLSHRINES_DESC_READY', null]);
+  assert.deepEqual(keys('Citadel Seeker'), ['MQ_CITADEL_SEEKER_DESC', null, null]);
+  assert.deepEqual(keys('Soul Snare Pre'), ['Q_SOUL_SNARE_PRE_DESC', null, 'Q_SOUL_SNARE_PRE_DESC_WALL']);
+  assert.deepEqual(keys('Soul Snare'), ['Q_SOUL_SNARE_DESC', 'Q_SOUL_SNARE_DESC_GOT', null]);
+  assert.deepEqual(keys('Silk Defeat Snare'), ['MQ_SILK_SNARE_DESC', null, null]);
+  assert.deepEqual(keys('Citadel Ascent Melodies'), ['MQ_CITADEL_ASCENT_DESC_MELODY', 'MQ_CITADEL_ASCENT_DESC_MELODY_COMPLETABLE', null]);
+  // Every wish the rule counts says something in the pane, in both languages; its paragraphs a line each.
+  for (const q of snare.quests) {
+    const d = Q.CHAIN[q.quest].desc;
+    assert.ok(d && d.es && d.en, q.quest);
+    assert.ok(!/\n\s*\n/.test(d.en + d.es), q.quest);
+  }
 });
 
 test('where each wish is taken: the game\'s Wishwalls and the NPCs who offer them, as the wiki says', () => {

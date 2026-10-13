@@ -13,7 +13,10 @@ StreamingAssets/aa/StandaloneLinux64/dataassets_assets_assets/dataassets/:
   questsystem/quests.bundle, mainquests.bundle  each quest (FullQuestBase): m_Name, the name the
       save's QuestCompletionData uses; displayName, its title's key; location, the key of the line
       the game writes under the title, who asks for it ("Creige of the Halfway Home") or where;
-      previousQuestStep,
+      inventoryDescription, inventoryCompletableDescription and wallDescription (read on
+      13-Oct-2026), the keys of what the pane «Tareas» says while it's on and once its targets are
+      met, and what its Wishwall says before it's taken (inventoryCompletedDescription, what it
+      says once done, isn't kept: the road shows what's left); previousQuestStep,
       requiredCompleteQuests and requiredCompleteTotalGroups, what it waits for; playerDataTest,
       what the save must say before it's offered; targets, what it asks for (a Collectable or a
       Tool by reference, a counter of proxies.bundle, or a playerData test: the Bellshrines).
@@ -71,6 +74,8 @@ JOURNAL_SEEN = 'Journal Seen'
 BELLSHRINES = 'Grand Gate Bellshrines'
 SNARE = 'Soul Snare'
 NUM_OP = {0: '==', 1: '!=', 2: '<', 3: '>'}
+# A quest's three descriptions (FullQuestBase): its field → CHAIN's key.
+DESCS = (('inventoryDescription', 'desc'), ('inventoryCompletableDescription', 'ready'), ('wallDescription', 'wall'))
 
 
 def fail(msg):
@@ -81,8 +86,12 @@ def text():
     if not os.path.exists(TEXT):
         fail(f'{TEXT} is missing: run npm run text -- --key ACT_ once to download it')
     d = json.load(open(TEXT, encoding='utf-8'))
-    norm = lambda s: ' '.join(str(s).replace('’', "'").replace('‘', "'").replace('“', '"').replace('”', '"').split())
-    return lambda key: {'es': norm(d['ES'][key]), 'en': norm(d['EN'][key]), 'key': key} if key and key in d['EN'] else None
+    straight = lambda s: str(s).replace('’', "'").replace('‘', "'").replace('“', '"').replace('”', '"')
+    norm = lambda s: ' '.join(straight(s).split())
+    # A description keeps its paragraphs (one line break each), as the game sets them apart.
+    para = lambda s: '\n'.join(' '.join(l.split()) for l in straight(s).split('\n') if l.strip())
+    return lambda key, keep=False: ({'es': (para if keep else norm)(d['ES'][key]), 'en': (para if keep else norm)(d['EN'][key]), 'key': key}
+                                    if key and key in d['EN'] and key in d['ES'] else None)
 
 
 def load(game):
@@ -380,6 +389,12 @@ def main(game):
                 loc = name(re.sub(r'_(TITLE|NAME)$', '_LOC', tt['displayName'].get('Key') or ''))
             if loc:
                 e['loc'] = loc
+            # What the game writes under it: in the pane «Tareas» while it's on (desc), once its targets
+            # are met (ready), and on its Wishwall before it's taken (wall).
+            for field, k in DESCS:
+                t = name((tt.get(field) or {}).get('Key'), True)
+                if t:
+                    e[k] = t
             if prev:
                 e['prev'] = prev[1]['m_Name']
             if needs:
@@ -441,9 +456,11 @@ def write(groups, chain, shrines, snare, frm, locks):
         "                  'Soul Snare' opens the wish Silk and Soul (Soul Snare Pre), the way to Act 3;",
         "                  'Belltown House Key', with Bellhart's Glory, has Pavo give the Bellhome's key.",
         "     CHAIN        each quest by its save name (QuestCompletionData): { name, main, loc?, prev?,",
-        "                  needs?, groups?, when?, asks? }: its title, whether it's a main objective, the",
-        "                  line the game writes under the title (who asks for it, or where: 'Creige of the",
-        "                  Halfway Home'), the step before it, the quests and groups it waits for, the",
+        "                  desc?, ready?, wall?, needs?, groups?, when?, asks? }: its title, whether it's a",
+        "                  main objective, the line the game writes under the title (who asks for it, or",
+        "                  where: 'Creige of the Halfway Home'), its description in the pane «Tareas» while",
+        "                  it's on, once its targets are met, and on its Wishwall before it's taken (the",
+        "                  paragraphs a line each), the step before it, the quests and groups it waits for, the",
         "                  playerData test it's offered on, and what it asks to be brought: [{ kind, n }],",
         "                  kind 'rosaries' or 'shards' (a donation), 'journal' (entries seen) or 'item'",
         "                  (n of a Collectable or a Tool: with its save name and the game's, { save, name },",
