@@ -34,7 +34,14 @@ sprites are 100 px to the unit, 1.04 to 1.58 units across, about the ring's 1.43
 screenshots show it so: a Tool fills its ring). Their sizes and centres go into SS.crestIcons, by
 the site's picture (dataassets/tools/toolitems.bundle, the sprites in inventory.spriteatlas and
 inventory_furniture_items.spriteatlas): a Tool with states (Rosary Cannon, Voltvessels, the phials)
-takes the state the site's picture is.
+takes the state the site's picture is. A Silk Skill's is its solid white sprite (S_needle_throw...),
+in the slot, the pane's list and its description alike: written into assets/icons/skills-inv/, as the
+site's assets/icons/skills/ are the wiki's line art (the game's prompt when you get one, which the
+Map, Progress and Combat keep).
+The Crest's art is white, and the pane tints it (read on 13-Oct-2026): InventoryToolCrest.
+UpdateListDisplay sets the Crest's colour by the pane's EquipState, DeselectedColor (0.5, 0.5, 0.5)
+while browsing it (None), white only for the Crest picked while switching Crests (SwitchCrest), and
+no glow ("Crest Glow" plays only when a Crest is put on). The page draws that (--crest-dim).
 Stops if a Crest's slots don't match js/data.js (CRESTS[].slots, from the wiki). Team Cherry's
 art, published as the map is (the colophon says so). Re-run after a patch. """
 import base64, io, json, os, subprocess, sys
@@ -44,6 +51,7 @@ from PIL import Image
 
 UnityPy.config.FALLBACK_UNITY_VERSION = '6000.0.50f1'   # Unity 6 strips its version from the bundles
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+SKILLS = os.path.join(ROOT, 'assets', 'icons', 'skills-inv')   # the Silk Skills' inventory sprites (icons())
 SITE = {'Hunter': ('hunter', 0), 'Hunter_v2': ('hunter', 1), 'Hunter_v3': ('hunter', 2), 'Reaper': ('reaper', None),
         'Wanderer': ('wanderer', None), 'Warrior': ('beast', None), 'Witch': ('witch', None),
         'Toolmaster': ('architect', None), 'Spell': ('shaman', None)}
@@ -106,7 +114,8 @@ def floating(aa):
 
 def icons(aa, atl):
     """Each Tool's and Silk Skill's inventory sprite as a slot draws it, by the site's picture:
-    {tools: {art: [w, h, x, y]}, skills: {id: [...]}} in the Crest's units (box())."""
+    {tools: {art: [w, h, x, y]}, skills: {id: [...]}} in the Crest's units (box()). The Silk Skills'
+    sprites themselves go into assets/icons/skills-inv/<id>.webp."""
     ids = json.loads(subprocess.run(['node', '-e', "require('./js/data.js'); const D = SS.data; console.log(JSON.stringify({tools: "
                                      "Object.fromEntries(D.TOOLS.map((t) => [t.key + '_NAME', t.id])), skills: Object.fromEntries(D.SKILLS.map((s) => [s.key, s.id]))}))"],
                                     cwd=ROOT, capture_output=True, text=True, check=True).stdout)
@@ -115,6 +124,7 @@ def icons(aa, atl):
     env = UnityPy.load(os.path.join(aa, 'dataassets_assets_assets', 'dataassets', 'tools', 'toolitems.bundle'),
                        os.path.join(atl, 'inventory.spriteatlas.bundle'), os.path.join(atl, 'inventory_furniture_items.spriteatlas.bundle'))
     out = {'tools': {}, 'skills': {}}
+    os.makedirs(SKILLS, exist_ok=True)
     for o in env.objects:
         if o.type.name != 'MonoBehaviour':
             continue
@@ -139,9 +149,15 @@ def icons(aa, atl):
         else:
             sprites = [getattr(m, s).InventorySprite.read() for s in ('fullState', 'onState', 'offState', 'emptyState')
                        if s in d and d[s]['InventorySprite']['m_PathID']]
-        pic = os.path.join(ROOT, 'assets', 'icons', kind, name + '.webp')
-        size = Image.open(pic).size if os.path.exists(pic) else None
-        sp = next((s for s in sprites if s.image.size == size), sprites[0])
+        if kind == 'skills':
+            # The site's Silk Skill pictures are the wiki's line art (the prompt the game shows when you
+            # get one): the pane draws its solid white inventory sprite, written here.
+            sp = sprites[0]
+            sp.image.convert('RGBA').save(os.path.join(SKILLS, name + '.webp'), 'WEBP', lossless=True, method=6)
+        else:
+            pic = os.path.join(ROOT, 'assets', 'icons', kind, name + '.webp')
+            size = Image.open(pic).size if os.path.exists(pic) else None
+            sp = next((s for s in sprites if s.image.size == size), sprites[0])
         out[kind][name] = [v + 0.0 for v in box(sp)]   # no -0.0
     missing = [i for i in ids['tools'].values() if i not in out['tools']] + [i for i in ids['skills'].values() if i not in out['skills']]
     if missing:
@@ -234,7 +250,7 @@ def main(game):
                 f"  SS.crestFloat = {json.dumps(float_, separators=(',', ':'))};\n"
                 "  // Each worn Tool's and Silk Skill's picture as its slot draws it, the game's inventory sprite at its own size:\n"
                 "  // [width, height, centre x, centre y] in the same units, by the site's picture (tools: assets/icons/tools/<art>,\n"
-                "  // skills: assets/icons/skills/<id>).\n"
+                "  // skills: assets/icons/skills-inv/<id>, which the extractor writes).\n"
                 f"  SS.crestIcons = {json.dumps(icons_, separators=(',', ':'))};\n"
                 "  if (typeof module !== 'undefined' && module.exports) module.exports = SS.crestSlots;\n})();\n")
     print(f'{len(slots)} Crests and the curse\'s art → assets/crests/; their slots, {len(sprites)} slot sprites, the Vesticrest and {len(icons_["tools"])} Tools\' and {len(icons_["skills"])} Skills\' sizes → js/crest-slots.js')

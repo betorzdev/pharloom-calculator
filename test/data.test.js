@@ -438,7 +438,7 @@ test('each Crest\'s slots from the game match js/data.js, and each has its art',
     for (const id of ids) {
       const b = crestIcons[kind][id];
       assert.ok(b && b.every(Number.isFinite) && b[0] >= 1 && b[0] < 1.7 && b[1] >= 1 && b[1] < 1.7, `${kind} ${id}`);
-      assert.ok(fs.existsSync(path.join(__dirname, '..', 'assets', 'icons', kind, id + '.webp')), `${kind} ${id} picture`);
+      assert.ok(fs.existsSync(path.join(__dirname, '..', 'assets', 'icons', kind === 'skills' ? 'skills-inv' : kind, id + '.webp')), `${kind} ${id} picture`);
     }
   }
 });

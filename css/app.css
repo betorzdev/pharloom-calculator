@@ -1721,12 +1721,13 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 .ct-crest.has-float > :not(.ct-float) { grid-column: 2; }
 /* The box is centred on the Crest's centre, where the slots are measured from, and reaches every
    Crest's art and its slots full, a ring 1.43 units across (±3.4 units across, ±3.55 up and down).
-   The art's own centre sits off it by (--ax, --ay): the game trims it in its atlas. */
+   The art's own centre sits off it by (--ax, --ay): the game trims it in its atlas. It's drawn
+   half grey with no glow, as the pane tints it while you browse it (--crest-tint). */
 .ct-crest-art { position: relative; width: calc(var(--k) * 6.8); height: calc(var(--k) * 7.1); }
 .ct-crest-art > img {
   position: absolute; left: calc(50% + var(--ax) * var(--k)); top: calc(50% - var(--ay) * var(--k));
   width: calc(var(--k) * var(--w)); height: calc(var(--k) * var(--h)); transform: translate(-50%, -50%);
-  filter: drop-shadow(0 0 14px color-mix(in oklab, var(--silk) 22%, transparent));
+  filter: var(--crest-tint);
 }
 /* A slot: a ring's room (1.43 units) centred on its place; inside, the game's sprites (.ct-g, each at
    its size and centre, white tinted through a mask) and a worn one's picture at its own size and

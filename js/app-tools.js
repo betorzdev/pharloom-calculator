@@ -23,7 +23,8 @@
   const icon = (list, id) => `assets/icons/${list}/${id}.webp`;
   // A Tool's picture as the build holds it (Silkshot's variant: js/engine.js toolArt), or a Silk Skill's.
   let held = {};
-  const pic = (kind, id) => (kind === 'skill' ? icon('skills', id) : icon('tools', E.toolArt(id, held).art));
+  // A Silk Skill's is the game's own sprite in the pane, solid white (assets/icons/skills-inv, tools/extract-crests.py).
+  const pic = (kind, id) => (kind === 'skill' ? icon('skills-inv', id) : icon('tools', E.toolArt(id, held).art));
   const TOOL = new Map(D.TOOLS.map((x) => [x.id, x]));
   const COLORS = ['red', 'blue', 'yellow'];
 
@@ -85,8 +86,9 @@
      Each colour's Tools go into its slots in the game's order, the open ones first and then those
      a Memory Locket opens. Every piece is the game's sprite at its own size: an empty slot shows
      its sign (a red or Silk Skill slot's says the button that fires it: up, alone or down); a full
-     one, the ring in its colour with the Tool inside at its own size (about the ring's), over the
-     Crest's art as in the game; a slot no Locket has opened yet, the game's small lock ring in grey instead of its sign (in a
+     one, the ring in its colour with the Tool inside at its own size (about the ring's; a Silk
+     Skill, the pane's solid white sprite), over the Crest's art, in the half grey the pane gives it
+     while you browse it (--crest-tint); a slot no Locket has opened yet, the game's small lock ring in grey instead of its sign (in a
      save, as the save says, slot by slot; in Free mode every Locket is used). The Vesticrest's slots float beside the
      Crest between the game's white brackets ("Floating Slots"), and the Crest's name stays under
      the Crest alone. In Free mode a Tool in a slot is taken off with a tap, and each slot keeps

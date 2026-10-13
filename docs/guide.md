@@ -151,10 +151,11 @@ the hit after a Challenge.
 
 Below, the Crest drawn as the game draws it, with its slots where the game puts them (read from
 its files, per Crest and per evolution of the Hunter), every piece the game's own sprite at its
-size. An empty slot shows its sign in its colour; a red or Silk Skill slot's sign says the button
+size, the Crest's lines in the half grey the game's pane gives them while you browse it. An empty slot shows its sign in its colour; a red or Silk Skill slot's sign says the button
 that fires it (a spike up for Tool + up, plain, or down for Tool + down). A slot holding a Tool or
 Silk Skill (from a save, in the slot the game has it in) is the game's ring in its colour with the
-Tool inside at the game's own size, about the ring's. A slot no Memory Locket has opened yet shows the game's small grey lock ring in
+Tool inside at the game's own size, about the ring's (a Silk Skill as the game's pane shows it,
+solid white, here, in the list under the Crest and in the Inventory). A slot no Memory Locket has opened yet shows the game's small grey lock ring in
 place of its sign (from a save, as the save says; in Free mode every slot is open). The Vesticrest's slots float
 beside the Crest between the game's white brackets, and the Crest's name sits under the Crest. The
 Shaman wears a Silk Skill in each of its three slots. A save made while cursed (the Witch's curse,

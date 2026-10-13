@@ -321,6 +321,10 @@
   --crest-k: 64px;
   --crest-k-sm: 44px;
   --crest-k-xs: 35px;   /* a phone, with the Vesticrest's column beside the Crest */
+  /* Its art, white in the game's files, as the Tools pane tints it while you browse it: half grey,
+     InventoryToolCrest.DeselectedColor (0.5, 0.5, 0.5) multiplying the sprite (the screenshots'
+     lines peak at 128), and no glow (tools/extract-crests.py's header). */
+  --crest-tint: brightness(0.5);
   /* Progress's completion ring (design/20-progress-total-variants.html, A); smaller on a phone. */
   --pg-ring: 220px;
   /* Its two tabs' pictures, the rings of what's left for the next Act and their medallions

@@ -1163,6 +1163,18 @@ about the ring's 1.43, so a Tool fills its ring. The site drew every one in a 1.
 centre (`SS.crestIcons`, from `tools/extract-crests.py`); the Crest's box still holds the largest
 in every slot (the Barbed Bracelet on the third Hunter, 3.395 of 3.4 units across).
 
+On that comparison Albert asked for the two other things the screenshots show. The Crest's lines are
+a dim grey, not white with a glow: `InventoryToolCrest.UpdateListDisplay` colours the Crest by the
+pane's state, `DeselectedColor` (0.5, 0.5, 0.5) while you browse it (`EquipStates.None`), 0.3 grey
+while placing a Tool, white only for the Crest picked while switching; its "Crest Glow" only plays
+when a Crest is put on. The lines in both screenshots peak at 128 of 255; the site's are now
+`--crest-tint` (brightness 0.5, the same 129 to 134) with no glow. And a Silk Skill in its slot is
+its solid white inventory sprite (`S_needle_throw`...), the same in the pane's list and its
+description, where the site had the wiki's line art (the prompt when you get one,
+`prompt_hornet_needle_throw`). `tools/extract-crests.py` writes the six into `assets/icons/skills-inv/`;
+the slot, the list under the Crest and the Inventory use them, and the Map, Progress, Home and
+Combat keep the line art.
+
 ## Step 9 · Combat
 
 ### What there is (28 September 2026)

@@ -19,7 +19,9 @@
   const { t, pick, esc, NT, ART, brackets, screenHead, actions } = App;
 
   const num = (n) => App.NF[0].format(n);
-  const icon = (list, id) => `assets/icons/${list}/${id}.webp`;
+  // A Silk Skill as the game lists it (the Crest pane's solid white sprite, assets/icons/skills-inv), not the
+  // wiki's line art of the prompt when you get one.
+  const icon = (list, id) => `assets/icons/${list === 'skills' ? 'skills-inv' : list}/${id}.webp`;
   // The Old Hearts and melodies by their save flag → their icon (assets/icons/pieces/).
   const PIECE_ICON = { CollectedHeartFlower: 'heart-bloom', CollectedHeartCoral: 'heart-coral', CollectedHeartHunter: 'heart-hunter',
     CollectedHeartClover: 'heart-clover', HasMelodyArchitect: 'melody-architect', HasMelodyLibrarian: 'melody-librarian',
