@@ -16,6 +16,10 @@
     title:          { es: 'Calculadora de Telalejana', en: 'Pharloom Calculator' },
     goHome:         { es: 'Ir a Tu partida, la pantalla de inicio', en: 'Go to Your game, the home screen' },
     langGroup:      { es: 'Idioma', en: 'Language' },
+    share:          { es: 'Compartir', en: 'Share' },
+    shareHint:      { es: 'Copia el enlace a la web', en: 'Copy the link to the site' },
+    linkCopied:     { es: 'Enlace copiado', en: 'Link copied' },
+    copyThis:       { es: 'Copia este enlace:', en: 'Copy this link:' },
     /* The beta notice (js/app.js): above the screens until it's closed, and the tag by the title. */
     betaTag:        { es: 'Beta', en: 'Beta' },
     betaText:       { es: 'La web aún está en construcción: puede haber algún número mal, textos sin traducir o pantallas a medias. Si ves algo raro, {report}.',
@@ -214,8 +218,6 @@
     ctNext:         { es: 'Blasón siguiente', en: 'Next Crest' },
     ctPoint:        { es: 'Señala una herramienta para ver qué hace.', en: 'Point at a Tool to see what it does.' },
     ctSilkCost:     { es: '{n} de seda', en: '{n} silk' },
-    ctShare:        { es: 'Compartir', en: 'Share' },
-    ctShared:       { es: 'Enlace copiado: abre esta build tal cual', en: 'Link copied: it opens this build as it is' },
     ctLinkFree:     { es: 'El enlace traía una build: está en el Modo libre', en: 'The link had a build: it\'s in Free mode' },
     /* Free mode's «Try with» (design/42, 2 A): everything, or your game marked in the Inventory. */
     ctTry:          { es: 'Probar con', en: 'Try with' },

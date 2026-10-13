@@ -327,8 +327,8 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
 .empty.is-inline > .rule { display: none; }
 
 /* ── Header ──────────────────────────────────────────────────────────────
-   Two rows: the filigree crown above, and the title below with the language on its left, which
-   belongs to the site, and the save selector on its right, which is yours (the brand spans both
+   Two rows: the filigree crown above, and the title below with the language and Share on its left,
+   which belong to the site, and the save selector on its right, which is yours (the brand spans both
    rows and shares them, subgrid, as the sibling's). The two side columns grow equally, so the
    title lands dead centre. Behind it, like behind the whole page, the main menu's embers. */
 .masthead {
@@ -353,7 +353,7 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
   font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase;
   color: var(--ink-2);
 }
-/* The language, as loose text like a game menu: small, unboxed, so the title rules. */
+/* The language and Share, as loose text like a game menu: small, unboxed, so the title rules. */
 .mh-tools { --tools-gap: var(--sp-6); display: flex; align-items: center; gap: var(--tools-gap); flex-wrap: wrap; }
 .langsel { position: relative; display: flex; align-items: center; gap: var(--sp-2); }
 .mh-tools > .langsel:not(:last-child)::after {
@@ -1799,8 +1799,6 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
   .ct-sum-cell b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-lg); color: var(--ink-strong); }
   .ct-sum-cell img + .ct-sum-k { display: none; }
 }
-/* The passive Tools' effects: icon and the game's own text, quiet. */
-.ct-share { margin-top: var(--sp-3); }
 /* Free mode's «Try with» (design/42, 2 A), and «What I have» with no Tool marked. */
 .ct-try { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: var(--sp-1) var(--sp-3); }
 .ct-try .lbl { color: var(--muted); }
