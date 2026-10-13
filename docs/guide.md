@@ -216,8 +216,9 @@ in Steel Soul; the bright arc is what's complete, the dim one what you've seen),
 four entries you're missing closest to your bench, with how many kills to
 go. Under it, the 236 portraits (237 in Steel Soul) **by area**, the areas with the most missing
 first and each with its count (6/20), or **in the Journal's order**; entries with no place go last,
-under "Elsewhere". Two small toggles switch that and "What's missing / Everything", and a search
-beside them finds entries by name or by area, in either language and with or without accents; while
+under "Elsewhere". Beside the search, two choices in words under their labels: **Show** "What's
+missing / Everything" (with a save; Free mode shows everything) and **Order** "By area / Journal
+order". The search finds entries by name or by area, in either language and with or without accents; while
 it has text it looks through the whole Journal, what's complete included. Each portrait
 sits in a ring that fills with its kills and lights up once complete; one not seen yet is in
 shadow in a dashed ring («???»), and the six optional ones carry a small diamond. Tapping one
