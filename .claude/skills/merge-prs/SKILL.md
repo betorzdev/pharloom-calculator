@@ -25,7 +25,8 @@ order that leaves the least to rebase, the deepest change first. Say the order o
    merges clean but breaks: a name, glyph or helper the other PR removed (`node --check`, grep).
 3. **Check**: `npm test`; `npm run text -- --audit` if strings changed; `npm run data` and an
    empty diff if generators changed; the changed screens loaded headless with no console errors:
-   `google-chrome --headless=new --allow-file-access-from-files --enable-logging=stderr --v=0 --virtual-time-budget=4000 --dump-dom "file://$PWD/index.html#view=<v>"`.
+   `google-chrome --headless=new --allow-file-access-from-files --enable-logging=stderr --v=0 --virtual-time-budget=4000 --dump-dom "file://$PWD/index.html#view=<v>"`,
+   or with a real save and a count of console errors: `npm run drive -- --save <user#.dat> --view <v>` (`tools/drive.js`).
    Commit the merge (`--no-edit`) and push.
 4. **Show it**: open the screen it changes,
    `xdg-open "file://$PWD/index.html#view=<v>"` (`home` Your game, `game` Inventory, `progress`,
