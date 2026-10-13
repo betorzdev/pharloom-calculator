@@ -17,6 +17,10 @@
    The saves: any two of the same game, a few hours apart, mid-game, so the map, the Journal and
    "Closest to your bench" have things missing (the first cut used Restore_Points1/restoreData21
    and 22: 59% → 61%, Act 2).
+   --live <a,b,c,d>: saves of one game in order (restore points a bench apart), for the trailer's
+   live sequence: the first imported, then each synced over the one before as the followed file
+   brings it, shot with the site's own live mark in the header and its toast (live0.png…, and
+   live.json, the completion each one shows).
    Options: --out <dir> (default: the system's temp/pharloom-promo), --fps <n> (60),
    --stills 2.6,13,40 (only those moments, as PNGs in <out>/stills/, to check a change in
    seconds instead of the 8 minutes a render takes), --no-capture (reuse <out>/shots/).
@@ -41,6 +45,7 @@ function args(argv) {
     const k = argv[i];
     if (k === '--before') a.before = argv[++i];
     else if (k === '--after') a.after = argv[++i];
+    else if (k === '--live') a.live = argv[++i].split(',');
     else if (k === '--out') a.out = path.resolve(argv[++i]);
     else if (k === '--fps') a.fps = Number(argv[++i]);
     else if (k === '--stills') a.stills = argv[++i].split(',').map(Number);
@@ -116,6 +121,46 @@ async function capture(site, a) {
   } finally { await c.close(); drop(profile); }
 }
 
+// The live sequence: what the site shows each time the followed file brings the next save.
+async function captureLive(site, a) {
+  const dir = path.join(a.out, 'shots');
+  fs.mkdirSync(dir, { recursive: true });
+  const profile = fs.mkdtempSync(path.join(os.tmpdir(), 'promo-chrome-'));
+  const c = await launch({ scale: 2, profile });
+  const states = [];
+  try {
+    for (let i = 0; i < a.live.length; i++) {
+      await c.go(`${site}/index.html?live=${i}#lang=en`);
+      await c.evaluate(`(() => {
+        localStorage.clear();
+        try { localStorage.setItem('pharloom.betaSeen', '1'); } catch (e) {}
+        const S = SS.saves, F = SS.savefile;
+        const snap = (b) => { const r = F.read(Uint8Array.from(atob(b), (ch) => ch.charCodeAt(0))); if (!r.ok) throw new Error("--live: a save the site can't read"); return F.toSnapshot(r.pd, r.sd, Date.now()); };
+        S.importTo(localStorage, 1, snap('${fs.readFileSync(a.live[Math.max(0, i - 1)]).toString('base64')}'));
+        S.select(localStorage, 1);
+        ${i ? `S.sync(localStorage, 1, snap('${fs.readFileSync(a.live[i]).toString('base64')}'));` : ''}
+      })()`);
+      await c.go(`${site}/index.html?live=${i}b#lang=en&view=home`);
+      await sleep(2500);
+      // The header's mark of a save that follows its file, as App.saveLink draws it while live,
+      // and the toast the live path shows when the game itself changed (js/app-saves.js liveStart).
+      const pct = await c.evaluate(`(() => {
+        const t = SS.app.t;
+        const link = document.querySelector('.mh-save'), lbl = link && link.querySelector('.mh-save-lbl');
+        if (lbl) { link.classList.add('is-live'); lbl.insertAdjacentHTML('beforeend', '<span class="mh-live" aria-hidden="true"><i class="mh-live-dot"></i><span class="mh-live-t">' + t('liveState_live') + '</span></span>'); }
+        ${i ? `SS.app.toast(SS.app.gainedLine() || t('liveUpdated'));` : ''}
+        return (document.querySelector('[data-value="progress"] .nav-num') || {}).textContent || '';
+      })()`);
+      await sleep(700);
+      const h = await c.evaluate('document.documentElement.scrollHeight');
+      fs.writeFileSync(path.join(dir, `live${i}.png`), await c.shot({ captureBeyondViewport: true, clip: { x: 0, y: 0, width: 1920, height: h, scale: 1 } }));
+      states.push({ pct });
+      console.log('  shot live' + i, pct);
+    }
+  } finally { await c.close(); drop(profile); }
+  fs.writeFileSync(path.join(dir, 'live.json'), JSON.stringify(states));
+}
+
 async function compose(site, a, each) {
   const profile = fs.mkdtempSync(path.join(os.tmpdir(), 'promo-chrome-'));
   const c = await launch({ profile });
@@ -140,6 +185,7 @@ async function main() {
   const site = `http://127.0.0.1:${server.address().port}`;
   try {
     if (a.capture) { console.log('shooting the site'); await capture(site, a); }
+    if (a.live) { console.log('shooting the live sequence'); await captureLive(site, a); }
     if (a.stills) {
       const dir = path.join(a.out, 'stills');
       fs.mkdirSync(dir, { recursive: true });
