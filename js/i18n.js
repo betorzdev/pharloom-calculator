@@ -684,6 +684,11 @@
     pgShrines:      { es: 'Santuarios de Campana', en: 'Bellshrines' },   // BELLSHRINE, in the plural
     pgPoints:       { es: 'Puntos de deseos', en: 'Wish points' },
     pgEndings:      { es: 'Finales', en: 'Endings' },   // no word of the game's for them
+    /* An Act 2 ending closed in an Act 3 game (design/41, 1 A): the ring counts what's still within reach. */
+    pgEndingsReach: { es: 'Finales a tu alcance', en: 'Endings within reach' },
+    pgEndingsShut:  { es: 'Cerrado en esta partida: {name}', en: 'Closed in this game: {name}' },
+    pgEndingsShutN: { es: 'Cerrados en esta partida: {name}', en: 'Closed in this game: {name}' },
+    pgShut:         { es: 'cerrado', en: 'closed' },
     pgOnlyAct3:     { es: 'Solo en el Acto 3', en: 'Only in Act 3' },
     /* Progress at first sight (design/40-progress-clarity-variants.html): where you are, over the tabs */
     pgActName1:     { es: 'TELALEJANA', en: 'PHARLOOM' },   // ACT_1_NAME
@@ -722,6 +727,16 @@
     pgTodoGet:      { es: 'Consigue: {name}', en: 'Get: {name}' },
     pgTodoPavo:     { es: 'Habla con Pabo: te da la {key}', en: 'Talk to Pavo: he gives you the {key}' },   // his name: BELLHART_GREETER_MAIN
     pgTodoMore:     { es: 'y {n} más', en: 'and {n} more' },
+    /* A how line on a phone: its lead, and what it waits for behind a button (design/41, 2 B). */
+    pgHowMore:      { es: '+{n} más', en: '+{n} more' },
+    pgHowLess:      { es: 'menos', en: 'less' },
+    /* A thing of the 100% lying in a room, which has no other way (design/41, 4 A). */
+    pgFound:        { es: 'Se encuentra en la zona: el alfiler marca dónde', en: 'Found in the area: the pin shows where' },
+    pgFoundNoPin:   { es: 'Se encuentra en la zona', en: 'Found in the area' },
+    /* Free mode with the Inventory's marks (design/41, 6 A). */
+    pgHereFreeK:    { es: 'Modo libre.', en: 'Free mode.' },
+    pgHereFree:     { es: 'El 100 % cuenta lo que marcas en el Inventario o aquí; el camino es la guía, como sin partida.', en: 'The 100% counts what you mark in the Inventory or here; the road is the guide, as with no save.' },
+    pgLadderNote:   { es: 'Esto se fija en el Inventario:', en: 'This is set in the Inventory:' },
     pgListAll:      { es: 'Ver la lista entera, con lo hecho ({n})', en: 'See the whole list, done included ({n})' },
     pgListLess:     { es: 'Cerrar la lista entera', en: 'Close the whole list' },
     /* How the 100% splits (4 A), and the guide without a save (5 A) */
@@ -743,6 +758,7 @@
     ending_E:       { es: 'Hermana del vacío', en: 'Sister of the Void' },   // ENDING_E_NAME
     roadGame:       { es: 'Tu partida', en: 'Your game' },
     roadEndings:    { es: '{n} de {of} finales', en: '{n} of {of} endings' },
+    roadEndingsReach:{ es: '{n} de {of} finales a tu alcance', en: '{n} of {of} endings within reach' },
     roadWhole:      { es: 'El camino entero', en: 'The whole road' },
     roadLess:       { es: 'Cerrar el camino', en: 'Close the road' },
     roadBoth:       { es: 'Los caminos a los Actos 2 y 3', en: 'The roads to Acts 2 and 3' },
@@ -770,6 +786,7 @@
     roadGoalShrines: { es: 'Hay que hacer sonar los {n}.', en: 'All {n} must be rung.' },
     roadGoalSnare:  { es: 'Hay que reunir las {n}.', en: 'All {n} are needed.' },
     roadLeft:       { es: 'Te faltan {n}.', en: '{n} to go.' },
+    roadLeft1:      { es: 'Te falta {n}.', en: '{n} to go.' },
     roadCaravan:    { es: 'La Caravana de las pulgas en Pulgatopía', en: 'The Flea Caravan at Fleatopia' },   // KEY_CARAVAN, FLEATOPIA
     roadLace:       { es: 'Derrota a Lace en la Cuna', en: 'Defeat Lace in the Cradle' },   // DEFEATED_LACE_2_DESC
     roadKey:        { es: 'Llave de hogar campana', en: 'Bellhome Key' },   // INV_NAME_BELL_HOUSE_KEY
@@ -811,7 +828,6 @@
     roadAskJournal: { es: 'pide {n} entradas en el {journal}', en: 'asks for {n} entries in the {journal}' },
     roadAskItems:   { es: 'pide: {items}', en: 'asks for: {items}' },
     roadAskN:       { es: '{n} × {item}', en: '{n} × {item}' },
-    pgEndingShut:   { es: 'cerrado en esta partida', en: 'closed in this game' },
 
     /* Progress: how to get each thing of the 100% (js/how.js), the traps, what's left to buy */
     howShop:        { es: '{vendor}: {price} rosarios', en: '{vendor}: {price} rosaries' },
@@ -836,8 +852,8 @@
     pgNote_melody:       { es: 'Abren el camino a la Cuna en el Acto 2, y vencer allí a Lace es condición del Acto 3.', en: 'They open the way to the Cradle in Act 2, and beating Lace there is a condition of Act 3.' },
     pgNote_otherArts:    { es: 'No cuentan, pero abren caminos; la Capa de fayforno es condición del Acto 3.', en: 'They don\'t count, but they open the way; the Faydown Cloak is a condition of Act 3.' },
     pgNote_gauntlets:    { es: 'Arenas de oleadas; varias dan un objeto que sí cuenta.', en: 'Wave arenas; several give a thing that does count.' },
-    homeRoad:       { es: 'Camino al Acto {n}: paso {k} de {total}', en: 'The road to Act {n}: step {k} of {total}' },
-    homeRoadPart:   { es: 'Camino al Acto {n}: paso {k} de {total}, {done} de {of} hechos', en: 'The road to Act {n}: step {k} of {total}, {done} of {of} done' },
+    homeRoad:       { es: 'Camino al Acto {n} · paso {k} de {total}: {step}', en: 'The road to Act {n} · step {k} of {total}: {step}' },
+    homeRoadPart:   { es: 'Camino al Acto {n} · paso {k} de {total}: {step} · {done} de {of}', en: 'The road to Act {n} · step {k} of {total}: {step} · {done} of {of}' },
 
     /* Footer: the fan-project notice, the sources and the author (docs/guide.md, "Credits and licences") */
     footLabel:      { es: 'Aviso, fuentes y contacto', en: 'Notice, sources and contact' },

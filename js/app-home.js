@@ -229,10 +229,11 @@
         ${check}
       </div>`;
     // The road to the next Act (js/acts.js), in one line that opens it in Progress.
-    // The step you're on and how far into it, as Progress's card counts it: "step 1 of 5, 28 of 31".
+    // The step you're on, by its name, and how far into it, as Progress's card counts it:
+    // "step 1 of 5: Unlock "Silk and Soul" · 28 of 31" (design/41, 5 A).
     const now = App.roadNow ? App.roadNow(g) : null;
     const pts = (n) => (Number.isInteger(n) ? num(n) : App.NF[1].format(n));
-    const roadText = now ? t(now.of > 1 ? 'homeRoadPart' : 'homeRoad', { n: num(now.act), k: num(now.k), total: num(now.total), done: pts(now.got), of: num(now.of) }) : '';
+    const roadText = now ? t(now.of > 1 ? 'homeRoadPart' : 'homeRoad', { n: num(now.act), k: num(now.k), total: num(now.total), step: now.step, done: pts(now.got), of: num(now.of) }) : '';
     const link = (v, text) => `<a class="text-btn" href="${App.here(App.hashFor(v))}" data-act="view" data-value="${v}">${esc(text)}</a>`;
     const road = roadText ? `<p class="hm-road">${link('progress', roadText)}</p>` : '';
     const near = App.nearList ? App.nearList(g).slice(0, NEAR) : [];

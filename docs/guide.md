@@ -70,7 +70,7 @@ sitting on your bench and the Map's own marks over it: the layers and filters yo
 Map (its legend and its Act and «what I can reach now» filters) decide which show, so the two
 agree (the caches and walls, which the Map only draws close up, are left out); a tap on it opens
 the Map. Under it, the road to the next
-Act when there is one, then three columns: what changed since the previous save (below), what's
+Act when there is one (the step you're on, by its name, and how far into it), then three columns: what changed since the previous save (below), what's
 missing **closest to your bench** (the first five, by the game's doors and the stations you've opened, each with its area and a pin that shows it on the Map), and your 100% split into
 the wiki's ten categories (Tools, Silk Spools, the Crafting Kit and Tool Pouch, abilities, Silk Skills, Crests,
 masks, the Needle, Silk Hearts, the Everbloom), with the figure the game itself shows under it:
@@ -511,7 +511,8 @@ opens, the road's the first time.
 **The road to the next Act** (its card: the picture of the step you're on, how far into it, counted
 as its rings count, and «step 1 of 5»). Its steps as diamonds on one thread, the ones done lit and
 the one you're on larger, each numbered and named as what to do («1 · Unlock "Silk and Soul"»,
-«2 · Take the wish», «3 · Gather the snare»…; the full title shows on hover). Then the step you're
+«2 · Take the wish», «3 · Gather the snare»…; the full title shows on hover). On a phone the thread
+goes down the page, a step a line. Then the step you're
 on, with its picture, and its parts as small **rings** side by side (the wishes it requires, its
 wish points, its four conditions; the Bellshrines; the snare's pieces), the game's picture inside
 and how far as a figure under it; for Silk and Soul a line says that all three are needed, for
@@ -531,9 +532,17 @@ delivery. The steps after it follow, dim. A line says how many things of the 100
 get in your Act (each counted on its own: a Mask Shard is one, not a point) and leads to the other
 tab; it's gone when there's nothing left to get. «The whole road» opens the road in full, as below.
 
+How to get each thing leads with what it is and what it costs (who asks for a wish and what it asks
+to be brought, the shop and its price), then what it waits for (what posts the wish, the wish to do
+first, the Act it comes in, the keys or abilities it needs). On a phone only the lead shows, and
+«+n more» opens the rest.
+
 In Act 3 the tab is **«Your game»**: the four endings on a thread (the Acts are already on top), lit
 the ones your save has seen (the game keeps them: Weaver Queen, Snared Silk, Twisted Child, Sister
-of the Void); a ring for the endings and one for the things of the 100% only Act 3 holds.
+of the Void); a ring for the endings and one for the things of the 100% only Act 3 holds. An Act 2
+ending you never saw is closed in that game for good: the thread crosses it out with «closed» under
+it, and the ring and the tab's card count only the endings still within reach («2 of 3 endings
+within reach»), with a line under the ring naming the closed one.
 
 **Without a save**, a notice over either tab invites you to import yours (what it would show, and
 the button), the 100% card says «100% in 10 categories», and the road tab is both roads as a guide,
@@ -550,12 +559,14 @@ a ring that opens its list; the rows you open stay open. «What's missing · Eve
 Act · Nearest first» sit just above the rows.
 
 Opened, a category lists its things by Act: each with its picture, its name (a Tool with its
-slot's colour) and how to get it, its area on the right, and a pin that shows it on the Map.
+slot's colour) and how to get it, its area on the right, and a pin that shows it on the Map. A thing
+just lying in a room says so («Found in the area: the pin shows where»).
 
 In **Free mode** with things marked in the Inventory, Progress counts from those marks and
 each missing row has a box to mark it here too; masks, silk, the Silk Hearts, the Needle, the
-Kit and the Pouch follow what the Inventory sets. With nothing marked, it's the whole list as a
-guide, and the road tab is «The roads to Acts 2 and 3».
+Kit and the Pouch follow what the Inventory sets, and their groups say so, with the way there. The
+line on top says it's Free mode, counting your marks, and that the road is the guide. With nothing
+marked, it's the whole list as a guide, and the road tab is «The roads to Acts 2 and 3».
 
 The whole road, as the game's own rules have it (read from its files, not from a guide), in
 numbered steps, each with its count or a tick:
@@ -597,7 +608,8 @@ they're closed in that game. Where it's taken is the game's: the Wishwall that l
 another on a board (Crawbug Clearing, Berry Picking…) counts the board until that one is done, and
 the NPC after. A part
 already met hides its rows under "What's missing". On Your game, one line says which step you're
-on and links here. A slot saved before the site read the wishes asks to be imported again.
+on, by its name, and how far into it («The road to Act 3 · step 1 of 5: Unlock "Silk and Soul" · 28
+of 31»), and links here. A slot saved before the site read the wishes asks to be imported again.
 
 Then what's missing for 100%, in the wiki's ten categories: the Tools (with their slot colour),
 Crests, Silk Skills and abilities by name, and the Mask Shards, Spool Fragments, Crafting Kit

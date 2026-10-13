@@ -1247,6 +1247,12 @@ kbd {
 .pg-here strong { font-weight: 600; color: var(--ink-strong); }
 .pg-journey-steps li.is-ending i::before { border-radius: 50%; transform: none; }
 .pg-journey-steps li.is-ending.is-done span { color: var(--ink-strong); }
+/* An Act 2 ending closed in an Act 3 game (design/41, 1 A): a hollow dashed ring, crossed, its name
+   struck through and «closed» under it (an inline block, so the line doesn't reach it). */
+.pg-journey-steps li.is-shut i::before { border-style: dashed; border-color: var(--muted); background: none; }
+.pg-journey-steps li.is-shut i::after { content: ''; position: absolute; width: var(--sp-4); height: 1px; background: var(--muted); transform: rotate(-45deg); }
+.pg-journey-steps li.is-shut span { color: var(--muted); text-decoration: line-through; text-decoration-color: color-mix(in oklab, var(--muted) 60%, transparent); }
+.pg-journey-steps li.is-shut small { display: inline-block; width: 100%; font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--muted); }
 .pg-seg { justify-content: center; }
 /* The two tabs (design/27b-progress-variants.html, 1 D): two cards, each with its own picture of
    how far you are. The game selects with value, not hue: the open one white on the picked grey. */
@@ -1262,7 +1268,7 @@ kbd {
 .pg-tab-art .pg-ring::after { inset: var(--sp-2); }
 .pg-tab-art .pg-total-n b { font-size: var(--fs-md); }
 .pg-tab-art .pg-total-n .u { font-size: var(--fs-2xs); }
-.pg-tab-l { font-family: var(--font-display); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; font-size: var(--fs-md); }
+.pg-tab-l { font-family: var(--font-display); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; font-size: var(--fs-md); text-wrap: balance; }
 .pg-tab-s { font-size: var(--fs-xs); }
 .pg-tab-s b { font-family: var(--font-num); font-size: var(--fs-lg); font-weight: 600; }
 .pg-tab:is(:hover, :focus-visible) { border-color: var(--accent); color: var(--ink-2); }
@@ -1292,6 +1298,7 @@ kbd {
 .pg-rg-n .u { font-family: var(--font-num); font-size: var(--fs-md); color: var(--muted); }
 .pg-rg.is-done .pg-rg-n b { color: var(--good); }
 .pg-rg-k { margin: 0; font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
+.pg-rg-after { margin: 0; font-size: var(--fs-xs); color: var(--muted); text-wrap: balance; }
 /* A medallion: a missing thing's picture in a lit circle, its name under it, a pin to the Map. */
 .pg-mds { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: var(--sp-3) var(--sp-2); margin: var(--sp-2) 0 0; padding: 0; list-style: none; }
 .pg-md { position: relative; display: grid; justify-items: center; align-content: start; gap: var(--sp-1); width: calc(var(--pg-md) + var(--sp-6)); text-align: center; }
@@ -1387,6 +1394,14 @@ kbd {
   .pg-rings { grid-template-columns: 1fr 1fr; gap: var(--sp-6) var(--sp-3); }
   .pg-md { width: calc(var(--pg-md) + var(--sp-3)); }
   .pg-reach { flex-direction: column; text-align: center; }
+  .pg-reach p { flex-direction: column; align-items: center; gap: var(--sp-1); }
+  /* The road's thread goes down the page, a step a line (design/41, 3 C): every step keeps its
+     name (round 1, 7 A) and none wraps. */
+  .pg-journey.is-road .pg-journey-steps { grid-template-columns: minmax(0, 1fr); justify-items: start; gap: var(--sp-2); width: auto; }
+  .pg-journey.is-road .pg-journey-steps::before { top: var(--sp-3); bottom: var(--sp-3); left: calc(var(--sp-3) - 0.5px); right: auto; width: 1px; height: auto;
+    background: linear-gradient(180deg, var(--silk) var(--f), color-mix(in oklab, var(--silk-rim) 35%, transparent) var(--f)); }
+  .pg-journey.is-road .pg-journey-steps li { grid-template-columns: var(--sp-6) auto; align-items: center; justify-items: start; text-align: left; }
+  .pg-journey.is-road .pg-journey-steps span { font-size: var(--fs-2xs); letter-spacing: var(--track-label); }
 }
 .pg-count { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-md); color: var(--ink-strong); white-space: nowrap; }
 .pg-count .u { font-size: var(--fs-xs); font-style: normal; color: var(--muted); }
@@ -1415,6 +1430,13 @@ kbd {
 .pg-slot.is-blue { background: var(--slot-blue); }
 .pg-slot.is-yellow { background: var(--slot-yellow); }
 .pg-how { font-size: var(--fs-xs); color: var(--ink-2); }
+/* What a how line waits for follows its lead; on a phone it folds behind «+n more» (design/41, 2 B). */
+.pg-how-btn { display: none; margin-left: var(--sp-1); font-size: var(--fs-xs); }
+@media (max-width: 640px) {
+  .pg-how-btn { display: inline; }
+  .pg-how:not(.is-open) .pg-how-more { display: none; }
+  .pg-how.is-open .pg-how-more > span { display: block; color: var(--muted); }
+}
 .pg-place { display: grid; justify-items: end; gap: var(--sp-half); text-align: right; }
 .pg-where { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0 var(--sp-2); font-size: var(--fs-xs); color: var(--muted); }
 .pg-where span + span::before { content: '·'; margin-right: var(--sp-2); }
