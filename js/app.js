@@ -206,7 +206,7 @@
 
   /* Share copies the site's address and nothing else: no screen, no build, no language
      (tools/pages.js's SITE), as the sibling's. */
-  const SITE = 'https://betorzdev.github.io/pharloom-calculator/';
+  const SITE = 'https://pharloomcalculator.com/';
 
   /* The About block: the page's text for search engines. It's in the page's language and about
      its own screen, so it only shows there. */

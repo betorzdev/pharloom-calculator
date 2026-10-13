@@ -15,7 +15,7 @@ const ROOT = path.join(__dirname, '..');
 const read = (rel) => fs.readFileSync(path.join(ROOT, rel), 'utf8');
 const EVERY = PAGES.flatMap((page) => P.LANGS.map((lang) => ({ page, lang })));
 
-test('every page and the sitemap are up to date with index.html (npm run pages)', () => {
+test('every page, the sitemap, robots.txt and CNAME are up to date with index.html (npm run pages)', () => {
   for (const [file, text] of Object.entries(P.all(read('index.html')))) assert.strictEqual(read(file), text, file);
 });
 
