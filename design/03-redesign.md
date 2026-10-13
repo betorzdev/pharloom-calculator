@@ -1153,6 +1153,16 @@ Each slot draws its sign on one renderer, and its Locked animation swaps the sig
 `Tool_slot_lock_ring`, centred, scaled to 0.8, in the slot colour's grey, the slot at half opacity
 (`tools/extract-crests.py`'s header). The site now draws that: the ring alone, where the sign was.
 
+Then Albert asked whether the worn Tools weren't too big, against real pictures of the game. Two
+screenshots of the Tools pane with Tools on (the Reaper with Straight Pin, Warding Bell and Compass:
+deltiasgaming.com's `20250906185754_1.jpg` and Nintendo Life's `equipment-menu.large.jpg`) and the
+game's files say the opposite: the slot's "Item Icon" draws the Tool's inventory sprite at its own
+size (scale 1, kept by its Icon Idle animation; 100 px to the unit), 1.04 to 1.58 units across,
+about the ring's 1.43, so a Tool fills its ring. The site drew every one in a 1.15-unit box, about
+80% of the game's (the Warding Bell 1.15 units tall against 1.41). Each now goes at its own size and
+centre (`SS.crestIcons`, from `tools/extract-crests.py`); the Crest's box still holds the largest
+in every slot (the Barbed Bracelet on the third Hunter, 3.395 of 3.4 units across).
+
 ## Step 9 · Combat
 
 ### What there is (28 September 2026)

@@ -431,6 +431,16 @@ test('each Crest\'s slots from the game match js/data.js, and each has its art',
   assert.ok(crestArt.cursed && fs.existsSync(path.join(__dirname, '..', 'assets', 'crests', 'cursed.webp')));
   assert.equal(crestFloat.slots.length, 2);
   assert.deepEqual(Object.keys(crestFloat.brackets).sort(), ['1', '2']);
+  // Every worn picture's size in its slot, the game's inventory sprite (about the ring's 1.43), by the site's picture.
+  const { crestIcons } = globalThis.SS;
+  const arts = [...D.TOOLS.map((t) => t.id), ...['architect', 'forge'].map((v) => 'silkshot-' + v)];
+  for (const [kind, ids] of [['tools', arts], ['skills', D.SKILLS.map((s) => s.id)]]) {
+    for (const id of ids) {
+      const b = crestIcons[kind][id];
+      assert.ok(b && b.every(Number.isFinite) && b[0] >= 1 && b[0] < 1.7 && b[1] >= 1 && b[1] < 1.7, `${kind} ${id}`);
+      assert.ok(fs.existsSync(path.join(__dirname, '..', 'assets', 'icons', kind, id + '.webp')), `${kind} ${id} picture`);
+    }
+  }
 });
 
 test('how bosses stagger, from the game: the wiki\'s hit count is the maximum plus one', () => {

@@ -85,8 +85,8 @@
      Each colour's Tools go into its slots in the game's order, the open ones first and then those
      a Memory Locket opens. Every piece is the game's sprite at its own size: an empty slot shows
      its sign (a red or Silk Skill slot's says the button that fires it: up, alone or down); a full
-     one, the ring in its colour with the Tool large inside, over the Crest's art as in the game; a
-     slot no Locket has opened yet, the game's small lock ring in grey instead of its sign (in a
+     one, the ring in its colour with the Tool inside at its own size (about the ring's), over the
+     Crest's art as in the game; a slot no Locket has opened yet, the game's small lock ring in grey instead of its sign (in a
      save, as the save says, slot by slot; in Free mode every Locket is used). The Vesticrest's slots float beside the
      Crest between the game's white brackets ("Floating Slots"), and the Crest's name stays under
      the Crest alone. In Free mode a Tool in a slot is taken off with a tap, and each slot keeps
@@ -117,8 +117,10 @@
     const name = slotName(s.kind, id);
     const act = locked ? 'ctDescribe' : s.kind === 'skill' ? 'ctSkill' : 'ctTool';
     const ring = 'ring' + (s.kind === 'red' || s.kind === 'skill' ? BUTTON[s.bind || 0] : '');
+    // The worn one is its inventory sprite at its own size and centre, about the ring's (SS.crestIcons, the slot's Item Icon).
+    const [w, h, x, y] = s.kind === 'skill' ? SS.crestIcons.skills[id] : SS.crestIcons.tools[E.toolArt(id, held).art];
     return `<button type="button" class="ct-slot is-${s.kind} is-full" data-act="${act}" data-kind="${s.kind === 'skill' ? 'skill' : 'tool'}" data-value="${id}"${at}
-        title="${esc(name)}" aria-label="${esc(name)}"${NT}>${sprite(ring)}<img src="${pic(s.kind, id)}" alt=""></button>`;
+        title="${esc(name)}" aria-label="${esc(name)}"${NT}>${sprite(ring)}<img src="${pic(s.kind, id)}" alt="" style="--iw:${w};--ih:${h};--ix:${x};--iy:${y}"></button>`;
   }
   // The Vesticrest's column (SS.crestFloat, the game's Floating Slots): the slots and their brackets, in the Crest's units.
   function floating(items) {

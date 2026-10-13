@@ -1729,7 +1729,8 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
   filter: drop-shadow(0 0 14px color-mix(in oklab, var(--silk) 22%, transparent));
 }
 /* A slot: a ring's room (1.43 units) centred on its place; inside, the game's sprites (.ct-g, each at
-   its size and centre, white tinted through a mask) and a worn one's picture, 1.15 units. */
+   its size and centre, white tinted through a mask) and a worn one's picture at its own size and
+   centre (--iw, --ih, --ix, --iy: SS.crestIcons), 1.04 to 1.58 units, about the ring's, as in the game. */
 .ct-slot {
   --c: var(--slot-red);
   position: absolute; left: calc(50% + var(--x) * var(--k)); top: calc(50% - var(--y) * var(--k)); transform: translate(-50%, -50%);
@@ -1747,7 +1748,8 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 .ct-slot.is-locked .ct-g { background: var(--slot-lock); opacity: var(--slot-lock-opacity); }
 .ct-slot.is-full { cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .ct-slot img {
-  position: absolute; left: 50%; top: 50%; width: calc(var(--k) * 1.15); height: calc(var(--k) * 1.15); max-width: none; object-fit: contain;
+  position: absolute; left: calc(50% + var(--ix) * var(--k)); top: calc(50% - var(--iy) * var(--k));
+  width: calc(var(--k) * var(--iw)); height: calc(var(--k) * var(--ih)); max-width: none; object-fit: contain;
   transform: translate(-50%, -50%); filter: drop-shadow(0 0 6px color-mix(in oklab, var(--c) 55%, transparent)); transition: transform var(--dur) var(--ease);
 }
 .ct-slot.is-full:is(:hover, :focus-visible) { outline: none; }

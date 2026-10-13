@@ -154,7 +154,7 @@ its files, per Crest and per evolution of the Hunter), every piece the game's ow
 size. An empty slot shows its sign in its colour; a red or Silk Skill slot's sign says the button
 that fires it (a spike up for Tool + up, plain, or down for Tool + down). A slot holding a Tool or
 Silk Skill (from a save, in the slot the game has it in) is the game's ring in its colour with the
-Tool large inside. A slot no Memory Locket has opened yet shows the game's small grey lock ring in
+Tool inside at the game's own size, about the ring's. A slot no Memory Locket has opened yet shows the game's small grey lock ring in
 place of its sign (from a save, as the save says; in Free mode every slot is open). The Vesticrest's slots float
 beside the Crest between the game's white brackets, and the Crest's name sits under the Crest. The
 Shaman wears a Silk Skill in each of its three slots. A save made while cursed (the Witch's curse,

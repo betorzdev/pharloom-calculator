@@ -27,11 +27,20 @@ list leaves as silhouettes, which the site doesn't draw.
 The Vesticrest's slots float beside the Crest in the pane's "Floating Slots"
 (coremanagers_assets__gamecameras.bundle, Tools): a column of slots between white brackets
 (UI_tool_slot_extra_sockets top, mid, bottom), read from the prefab into SS.crestFloat.
+A worn Tool or Silk Skill is its inventory sprite at its own size (read on 13-Oct-2026): the slot's
+"Item Icon" renderer (InventoryToolCrestSlot.RefreshIcon sets its sprite to the ToolItem's
+inventorySprite) sits on the slot at scale 1, and its Icon Idle animation keeps it there; the
+sprites are 100 px to the unit, 1.04 to 1.58 units across, about the ring's 1.43 (the wiki's Crest
+screenshots show it so: a Tool fills its ring). Their sizes and centres go into SS.crestIcons, by
+the site's picture (dataassets/tools/toolitems.bundle, the sprites in inventory.spriteatlas and
+inventory_furniture_items.spriteatlas): a Tool with states (Rosary Cannon, Voltvessels, the phials)
+takes the state the site's picture is.
 Stops if a Crest's slots don't match js/data.js (CRESTS[].slots, from the wiki). Team Cherry's
 art, published as the map is (the colophon says so). Re-run after a patch. """
 import base64, io, json, os, subprocess, sys
 from collections import Counter
 import UnityPy
+from PIL import Image
 
 UnityPy.config.FALLBACK_UNITY_VERSION = '6000.0.50f1'   # Unity 6 strips its version from the bundles
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
@@ -95,6 +104,50 @@ def floating(aa):
         brackets[key] = [[NAMES[c], round((gy + y) * k, 2)] for c, (_, _, y, _) in children(g).items()]
     return {'k': round(k, 3), 'scale': round(kids['Defend Slot'][3], 2), 'slots': slots, 'brackets': brackets}
 
+def icons(aa, atl):
+    """Each Tool's and Silk Skill's inventory sprite as a slot draws it, by the site's picture:
+    {tools: {art: [w, h, x, y]}, skills: {id: [...]}} in the Crest's units (box())."""
+    ids = json.loads(subprocess.run(['node', '-e', "require('./js/data.js'); const D = SS.data; console.log(JSON.stringify({tools: "
+                                     "Object.fromEntries(D.TOOLS.map((t) => [t.key + '_NAME', t.id])), skills: Object.fromEntries(D.SKILLS.map((s) => [s.key, s.id]))}))"],
+                                    cwd=ROOT, capture_output=True, text=True, check=True).stdout)
+    # Silkshot's three ToolItems share a name: the site's pictures are silkshot (the Original), -architect, -forge.
+    VARIANT = {'WebShot Weaver': 'silkshot', 'WebShot Architect': 'silkshot-architect', 'WebShot Forge': 'silkshot-forge'}
+    env = UnityPy.load(os.path.join(aa, 'dataassets_assets_assets', 'dataassets', 'tools', 'toolitems.bundle'),
+                       os.path.join(atl, 'inventory.spriteatlas.bundle'), os.path.join(atl, 'inventory_furniture_items.spriteatlas.bundle'))
+    out = {'tools': {}, 'skills': {}}
+    for o in env.objects:
+        if o.type.name != 'MonoBehaviour':
+            continue
+        try:
+            d = o.read_typetree()
+        except Exception:
+            continue
+        if 'isCounted' not in d or 'type' not in d:
+            continue
+        m = o.read()
+        key = (d.get('displayName') or d.get('fullState', {}).get('DisplayName') or {}).get('Key')
+        if d['m_Name'] in VARIANT:
+            kind, name = 'tools', VARIANT[d['m_Name']]
+        elif key in ids['tools']:
+            kind, name = 'tools', ids['tools'][key]
+        elif key in ids['skills']:
+            kind, name = 'skills', ids['skills'][key]
+        else:
+            continue   # a Tool the site doesn't list (Dustpilo, cut from the game)
+        if 'inventorySprite' in d:
+            sprites = [m.inventorySprite.read()]
+        else:
+            sprites = [getattr(m, s).InventorySprite.read() for s in ('fullState', 'onState', 'offState', 'emptyState')
+                       if s in d and d[s]['InventorySprite']['m_PathID']]
+        pic = os.path.join(ROOT, 'assets', 'icons', kind, name + '.webp')
+        size = Image.open(pic).size if os.path.exists(pic) else None
+        sp = next((s for s in sprites if s.image.size == size), sprites[0])
+        out[kind][name] = [v + 0.0 for v in box(sp)]   # no -0.0
+    missing = [i for i in ids['tools'].values() if i not in out['tools']] + [i for i in ids['skills'].values() if i not in out['skills']]
+    if missing:
+        sys.exit(f'extract-crests: no inventory sprite for {missing}')
+    return {k: dict(sorted(v.items())) for k, v in out.items()}
+
 def main(game):
     aa = os.path.join(game, 'Hollow Knight Silksong_Data', 'StreamingAssets', 'aa', 'StandaloneLinux64')
     atl = os.path.join(aa, 'atlases_assets_assets', 'sprites', '_atlases')
@@ -157,6 +210,7 @@ def main(game):
     if missing or 'cursed' not in art:
         sys.exit(f'extract-crests: no slot sprite for {missing}, or no Cursed Crest art')
     float_ = floating(aa)
+    icons_ = icons(aa, atl)
     with open(os.path.join(ROOT, 'js', 'crest-slots.js'), 'w') as f:
         f.write("/* js/crest-slots.js: where each Crest's slots sit, as the game's Crest pane draws them: per Crest\n"
                 "   (the Hunter, per evolution), [x, y, type, locked, button] in units from the Crest's centre (y up;\n"
@@ -178,8 +232,12 @@ def main(game):
                 "  // The Vesticrest's Floating Slots, in the Crest's units: the slots' y (blue, yellow) and scale, and the\n"
                 "  // brackets [sprite, y] round one slot or two.\n"
                 f"  SS.crestFloat = {json.dumps(float_, separators=(',', ':'))};\n"
+                "  // Each worn Tool's and Silk Skill's picture as its slot draws it, the game's inventory sprite at its own size:\n"
+                "  // [width, height, centre x, centre y] in the same units, by the site's picture (tools: assets/icons/tools/<art>,\n"
+                "  // skills: assets/icons/skills/<id>).\n"
+                f"  SS.crestIcons = {json.dumps(icons_, separators=(',', ':'))};\n"
                 "  if (typeof module !== 'undefined' && module.exports) module.exports = SS.crestSlots;\n})();\n")
-    print(f'{len(slots)} Crests and the curse\'s art → assets/crests/; their slots, {len(sprites)} slot sprites and the Vesticrest → js/crest-slots.js')
+    print(f'{len(slots)} Crests and the curse\'s art → assets/crests/; their slots, {len(sprites)} slot sprites, the Vesticrest and {len(icons_["tools"])} Tools\' and {len(icons_["skills"])} Skills\' sizes → js/crest-slots.js')
 
 if __name__ == '__main__':
     main(sys.argv[1] if len(sys.argv) > 1 else os.path.expanduser('~/.steam/steam/steamapps/common/Hollow Knight Silksong'))
