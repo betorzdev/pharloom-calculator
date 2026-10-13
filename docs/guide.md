@@ -4,9 +4,13 @@
 
 ## What's on the page
 
-The header has the title under a filigree crown (it leads back to Your game), the language on
-the left and, on the right, the save you're in (Hornet at a bench): it opens **Saves**. The
-screen bar has six screens in a row: Your game, Inventory, Progress, Map, Journal and Crest.
+The header has the title under a filigree crown (it leads back to Your game), on the left the
+language and **Share**, and on the right the save you're in (Hornet at a bench): it opens
+**Saves**. The language is a dropdown, as the sibling's: the one chosen and a chevron (its name,
+its code on a phone) open a list of the site's languages, each in its own name; Esc closes it
+and the arrows walk it. **Share** copies the site's address, nothing more: no screen, build or
+language. The screen bar has six screens in a row: Your game, Inventory, Progress, Map, Journal
+and Crest.
 With a save loaded, Progress carries your completion and Journal the entries Nuu counts
 (`63%`, `120/230`); in Free mode the bar only has the names. On a phone the six don't fit, so
 Inventory folds under Your game: while you're in either, a second row under the bar switches
@@ -100,30 +104,39 @@ reduced motion).
 
 ### Inventory
 
-A sheet in two columns. On the left, what Hornet is: **the Needle**, the five upright with their
-damage, the one she carries taller and lit; then **Hornet**: the masks (5 to 10) as the game's
-masks, in a row as the HUD draws them, the silk (9 to 18) as beads on one thread, the Silk Hearts, and the Crafting Kit and Tool
-Pouch with their level; then the **Silk Skills** with what each deals at this build, and the
-**abilities** (Needle Strike with its damage). On the right, what she carries: the **Tools** by
-colour, each on its slot's diamond (dashed and grey while you lack it), the **Crests** and the
-**items** with their counts (the loose Mask Shards and Spool Fragments, the Memory Lockets,
-Craftmetal, Pale Oil, the Everbloom, the Farsight, the Hunter's Journal, the Old Hearts, the
-melodies and the fleas). Above the items sits the **Purse**: Rosaries and Shell Shards as big
-figures (the shards out of what your Tool Pouch holds, 400 to 800, with a bar), and under each
-what breaks into it, counted, with the sum you would get from breaking it all: the five Rosary
-strings and necklaces under the rosaries; the Beast Shards, Shard Bundles, Pristine Cores,
-Hornet Statuettes and the Growstone (Steel Soul) under the shards. Below the items, the
-**Relics** (how many you hold of each kind) and the **Mementos**. The heads count as the 100%
-does (Tools of 51); the Relics and Mementos aren't part of it. Tap anything to read the game's
-own text under its shelf.
+A sheet in two columns, each thing beside what it feeds, and a band under both. On the left, what
+Hornet is: **the Needle**, the five upright with their damage, the one she carries taller and lit,
+and the Pale Oil you hold under it; then **Hornet**: the masks (5 to 10) as the game's masks, in a
+row as the HUD draws them, with the loose Mask Shards under them (four make a mask), the silk (9 to
+18) as beads on one thread with the loose Spool Fragments (two make a spool), and the Silk Hearts;
+then the **Silk Skills** with what each deals at this build, and the **abilities** (Needle Strike
+with its damage). On the right, her equipment: the **Crests**, with the Memory Lockets that open
+their slots, and the **Tools**: the Crafting Kit and Tool Pouch with their level and the
+Craftmetal, then the Tools by colour, each on its slot's diamond (hollow in its colour while you
+lack it). There's one slot per point of the 100%: a Tool and its upgrade (Curveclaw and
+Curvesickle, Druid's Eye and Eyes, Claw Mirror and Mirrors) share one, showing the one you have,
+with two pips under it (had, upgraded), and Shell Satchel shows in Dead Bug's Purse's slot in Steel
+Soul. Snare Setter and Needle Phial, which a wish lends and takes back, sit apart after the
+colours: they don't count. Under both columns, what she carries: the **Purse** (Rosaries and
+Shell Shards as big figures, the shards out of what your Tool Pouch holds, 400 to 800, with a bar,
+and under each what breaks into it, counted, with the sum you would get from breaking it all: the
+five Rosary strings and necklaces under the rosaries; the Beast Shards, Shard Bundles, Pristine
+Cores, Hornet Statuettes and the Growstone (Steel Soul) under the shards); the **items** (the
+Everbloom, the Farsight, the Hunter's Journal, the Old Hearts, the melodies and the fleas); the
+**Relics** (how many you hold of each kind) and the **Mementos**. Crests, items, what's in the
+purse, Relics and Mementos are plates with their name, and under it their count or «Not found
+yet». Every head says how many of how many, and its rule lights up that far (complete, its diamond
+fills): the Tools count as the 100% does (of 51), the Crests with the Hunter Crest you start with
+(of 7); the Relics and Mementos aren't part of the 100%. Tap anything to read the game's own text
+under its shelf.
 
 In **Free mode** it's your game, marked by hand, and it starts as the game does: a New Game,
 with the base Needle, five masks, nine silk and the Hunter Crest, nothing else. A line under the
 title says so. On the left, tap a Needle, a mask, a bead of
-silk, a Silk Heart or a level (tap the last one lit to take it back). On the right, tap a Tool,
+silk, a Silk Heart or a level (tap the last one lit to take it back). Tap a Tool,
 Crest, Silk Skill, ability, the Everbloom, the Farsight, the Journal, an Old Heart, a melody or a
-Memento to mark it had or not (its
-text opens under the shelf); each shelf has «All · None», and what comes in numbers (loose Mask
+Memento to mark it had or not (its text opens under the shelf); a slot a Tool shares with its
+upgrade goes none, had, upgraded with each tap. Each shelf has «All · None», and what comes in numbers (loose Mask
 Shards and Spool Fragments, Memory Lockets, Craftmetal, Pale Oil, fleas, what's in the purse, the
 Relics of each kind) has − N +. The Rosaries and Shell Shards are typed: Enter or leaving the field
 takes the figure, and the shards stop at what your Pouch holds. «Start from»: «New Game» (the
@@ -131,7 +144,7 @@ game's own words) takes it all back to the start; «Everything maxed» marks eve
 at the top (a game at 100%). Progress counts what you mark, the Map leaves out what you have, and
 the Crest screen tries it on «What I have». A visit from before this (when the levels belonged to
 the Crest screen's build and started at the top) keeps the levels you moved and puts the ones still
-at the top back to a New Game's, and a notice on the Inventory and Progress says so once («Got it»).
+at the top back to a New Game's, without a notice.
 In a save the Inventory shows what the game saved, and changes only as you play.
 
 ### Crest
@@ -146,17 +159,26 @@ beside them what depends on the moment: the Hunter's focus, the Beast's fury, Fl
 the hit after a Challenge.
 
 Below, the Crest drawn as the game draws it, with its slots where the game puts them (read from
-its files, per Crest and per evolution of the Hunter), each the game's frame in its colour and
-holding the Tool or Silk Skill worn (from a save, in the slot the game has it in); a slot no
-Memory Locket has opened yet shows the game's grey locked frame (from a save, as the save says;
-in Free mode every slot is open), and the Vesticrest's slots sit on a row under the Crest. In Free mode a
+its files, per Crest and per evolution of the Hunter), every piece the game's own sprite at its
+size, the Crest's lines in the half grey the game's pane gives them while you browse it. An empty slot shows its sign in its colour; a red or Silk Skill slot's sign says the button
+that fires it (a spike up for Tool + up, plain, or down for Tool + down). A slot holding a Tool or
+Silk Skill (from a save, in the slot the game has it in) is the game's ring in its colour with the
+Tool inside at the game's own size, about the ring's (a Silk Skill as the game's pane shows it,
+solid white, here, in the list under the Crest and in the Inventory). A slot no Memory Locket has opened yet shows the game's small grey lock ring in
+place of its sign (from a save, as the save says; in Free mode every slot is open). The Vesticrest's slots float
+beside the Crest between the game's white brackets, and the Crest's name sits under the Crest. The
+Shaman wears a Silk Skill in each of its three slots. A save made while cursed (the Witch's curse,
+for a while in the story) shows the Cursed Crest: no slots, a line on what the curse does, and the
+figures with silk stopped at 3 and no Bind. In Free mode a
 tap on a worn one there takes it off, and the others stay in their slots. ‹ › change the Crest. Beside it,
 the Tools and Silk Skills you have (as the game lists them; in Free mode, all of them, or on «What
 I have» what the Inventory's marks say, with a line to the Inventory while no Tool is marked), by colour, each on its slot as the Inventory draws it, the
 slot filled and lit when it's worn: a tap puts one on or takes it off,
 and pointing at one (or at a slot) describes it underneath with the game's words and its numbers
 (damage per hit, uses at the Pouch's level, a full load, the shell shards to refill it; a Silk
-Skill's damage and silk), as if it were worn when it isn't.
+Skill's damage and silk), as if it were worn when it isn't. Silkshot is the one the game repaired
+(the Original, the Twelfth Architect's or the Forge Daughter's: a save says which), with its own
+picture, words, damage and uses.
 
 The damage is the wiki's model: the weapon's damage at its level times (1 + the player's
 modifiers, which add) rounded half to even, per hit; Tools scale with the Crafting Kit, the rest
@@ -182,7 +204,7 @@ for the Reaper and the Shaman. With Flea Brew worn, what it gives for its 10 sec
 the wait, but a slash never comes faster than the slash itself lasts (0.35 s for the Hunter).
 Combat says how long slashing nonstop takes to kill the enemy.
 
-**Share** copies a link that opens the build on screen as it is (yours from a save too). The
+The address bar carries the build: copied, it opens the build on screen as it is. The
 link is readable (`#v=1&crest=architect&needle=4&tools=straight-pin,compass…`) and carries only
 what differs from a Hunter with nothing: in Free mode the address always says the build. A link
 with a build opens it in Free mode; if you were in a save, the page goes to Free mode and says so.
@@ -463,7 +485,12 @@ a piece's card marks it had. Tap an area's name for its card: the rooms of it yo
 and what's left there of the 100%, the Journal and the gauntlets.
 
 Other screens open the map on a thing: «See on the map» on each missing row of Progress and on a
-Journal entry, and each line of «Closest to your bench» in Your game.
+Journal entry, and each line of «Closest to your bench» in Your game. A step of Progress's road
+opens it on all that's left of the step at once («See the 2 on the map»: the Bellshrines still to
+ring, the snare's pieces, what's next for Silk and Soul): the map shows only those marks, whatever
+its switches say, framed to fit them, and a line in the search's place names the step, with ‹ › to
+go from one to the next (the nearest to your bench first, «1 of 2», each centred with its card)
+and its × back to the whole map. Any switch below ends it too; Back returns to Progress.
 
 Pharloom as the game's own map screen draws it for your game, piece by piece and by its own
 rules, taken from its files and its code, in a dim tone, with Hornet on her bench's pin, as the game draws her
@@ -526,8 +553,20 @@ opens, the road's the first time.
 as its rings count, and «step 1 of 5»). Its steps as diamonds on one thread, the ones done lit and
 the one you're on larger, each numbered and named as what to do («1 · Unlock "Silk and Soul"»,
 «2 · Take the wish», «3 · Gather the snare»…; the full title shows on hover). On a phone the thread
-goes down the page, a step a line. Then the step you're
-on, with its picture, and its parts as small **rings** side by side (the wishes it requires, its
+goes down the page, a step a line. Each step there, and each dim medallion of the steps to come,
+opens its card where it was clicked: «Step 3», its title, what the game says of it and its way onto
+the Map (a step done says «done» and has no map); the × or the step again close it, and the step
+you're on takes you to its heading. Then the step you're on, with its picture and, under its
+heading, **what the game says of it**: the objective as the game's pause menu «Tasks» titles it,
+with its line («Grand Gate · Pharloom») and its description as the game words it in that state
+(«Awaken the old bells throughout the lands.» while Bellshrines are left, «Return to the Grand
+Gate and open the way to the Citadel.» once they're rung; for the snare, «Acquire the necessary
+components…», then «Give the collected components to the Caretaker of Songclave.»). The Last Judge
+has no objective of her own, so her Journal entry speaks («Final arbiter of the Blasted Steps…»,
+tagged «Journal»); unlocking Silk and Soul has no text in the game, so it has none. Under it,
+«See on the map» or «See the n on the map» (the Bellshrines not rung, the Grand Gate's and the
+Citadel's objective pins as the game's own map places them, the Last Judge and the Phantom, the
+Caretaker and Bellhart's Wishwall, the snare's pieces, the Cradle's top). Then its parts as small **rings** side by side (the wishes it requires, its
 wish points, its four conditions; the Bellshrines; the snare's pieces), the game's picture inside
 and how far as a figure under it; for Silk and Soul a line says that all three are needed, for
 the offer how it comes (or that you turned it down), and for the last step that the Needolin, not
@@ -539,7 +578,13 @@ the Wounded"», with who asks for it in the game's words, what posts it and the 
 the wish points short («Get 1 more wish point») with the four wishes nearest your bench that would
 give it (any of the others will do), each condition not met (the Flea Caravan, the Faydown Cloak,
 Lace, the Bellhome Key, or «Talk to Pavo» once he has it for you), each Bellshrine not rung, each
-piece of the snare. «See the whole list, done included» opens every part as a group like the 100%
+piece of the snare. Each row the game has words for has «What the game says» under it, which unfolds
+them: a wish as the game shows it now (what its Wishwall says until you take it, what «Tasks» says
+once you have: the save's own record of each wish taken), the Caretaker's directions to each soul
+and the Snare Setter, the Inventory's line for the Faydown Cloak and the Bellhome Key, and for Lace
+the objective that leads to her (learn the Threefold Melody, then play it at the Citadel's heart, then
+rise above the Citadel). The Flea Caravan has no game text. Lace's row and the key's (Pavo) have
+their pin too, as the Bellshrines' do. «See the whole list, done included» opens every part as a group like the 100%
 tab's (it stays as you leave it): its pictures or pips and its count, what it asks in a sentence and
 how much is left, then its things in rows by Act, the ones done ticked, with «½ point» on a
 delivery. The steps after it follow, dim. A line says how many things of the 100% you can already
@@ -583,7 +628,8 @@ line on top says it's Free mode, counting your marks from a New Game, and that t
 guide; the road tab is «The roads to Acts 2 and 3».
 
 The whole road, as the game's own rules have it (read from its files, not from a guide), in
-numbered steps, each with its count or a tick:
+numbered steps, each with its count or a tick, and each step not done with what the game says of
+it and its way onto the Map, as above:
 
 - **To Act 2**: ring the five Bellshrines, open the Grand Gate, defeat the Last Judge, and walk into
   the Citadel. Defeating the Phantom opens another way in, and the first two steps then say

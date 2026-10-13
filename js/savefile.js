@@ -205,6 +205,8 @@
     'Silk Charge': 'sharpdart', 'Silk Bomb': 'rune-rage', 'Silk Boss Needle': 'pale-nails' };
   const TOOL_OF = new Map();
   for (const [id, names] of Object.entries(CO.TOOLS)) for (const n of names) TOOL_OF.set(n, id);
+  // Silkshot's variants by their ToolItems: a game repairs it once, and holds only that one (js/data.js).
+  const WEBSHOT = { 'WebShot Weaver': 'original', 'WebShot Architect': 'architect', 'WebShot Forge': 'forge' };
   const CREST_OF = new Map(Object.entries(CO.CRESTS).map(([id, n]) => [n, id]));
 
   /* What Hornet wears now: playerData.CurrentCrestID ("Hunter_v2": the Hunter at its second
@@ -218,6 +220,8 @@
     const cur = typeof pd.CurrentCrestID === 'string' ? pd.CurrentCrestID : '';
     const m = /^(.*?)(?:_v(\d))?$/.exec(cur);
     const crest = CREST_OF.get(m[1]) || null;
+    // Cursed: the Witch's curse, worn for a while in the story (no slots: js/engine.js normalize).
+    if (m[1] === 'Cursed') return { crest: 'witch', cursed: true, hunterStage: 1, seats: [], unlocked: [], tools: [], skill: null, skills: [], vest: { yellow: false, blue: false } };
     if (!crest) return null;
     const slots = (list(pd.ToolEquips).find((e) => e.Name === cur) || { Data: {} }).Data.Slots;
     const own = Array.isArray(slots) ? slots : [];
@@ -229,6 +233,7 @@
       crest, hunterStage: crest === 'hunter' ? Number(m[2]) || 1 : 1,
       tools: [...new Set(worn.map((n) => TOOL_OF.get(n)).filter(Boolean))],
       skill: worn.map((n) => SKILL_SAVE[n]).find(Boolean) || null,
+      skills: [...new Set(worn.map((n) => SKILL_SAVE[n]).filter(Boolean))],
       vest: { yellow: pd.UnlockedExtraYellowSlot === true, blue: pd.UnlockedExtraBlueSlot === true },
     };
   }
@@ -260,11 +265,16 @@
        mapVars            the playerData fields the map's rules read (js/map.js VARS), with this
                           save's values: js/rooms.js mapView draws the map with them
        bench, area        where Hornet rests (respawnScene) and the area she's in (currentArea)
-       build              what she wears (buildOf): { crest, hunterStage, tools, skill, vest, seats, unlocked }, or null
+       build              what she wears (buildOf): { crest, hunterStage, tools, skill, skills, vest, seats, unlocked },
+                          or null (skills: every Silk Skill worn, the Shaman's three; skill the first);
+                          cursed: true when she wears the Cursed Crest (CurrentCrestID "Cursed")
+       silkshot           the Silkshot she holds ('original', 'architect', 'forge'; '' none yet): WEBSHOT
      and what js/acts.js reads for the road to the next Act (js/quests.js has the game's rules):
        quests             the save names of the quests complete (QuestCompletionData IsCompleted),
                           sorted: Broodfeast done the Runt's way is "Huntress Quest Runt", which no
                           group counts
+       taken              the save names of the quests accepted and not yet complete (IsAccepted):
+                          the pane «Tareas» shows their description, a Wishwall the rest's
        bellshrines        the Bellshrines rung, by their playerData field (js/quests.js BELLSHRINES)
        bells              every Bellshrine rung, the Songclave's too (the Map's; the Grand Gate wants five)
        lastJudge, phantom the two bosses either of which opens the Citadel (defeated*)
@@ -351,7 +361,9 @@
       bench: typeof pd.respawnScene === 'string' && /^[\w ()-]{1,64}$/.test(pd.respawnScene) ? pd.respawnScene : '',
       area: typeof pd.currentArea === 'string' && /^[A-Z_]{1,32}$/.test(pd.currentArea) ? pd.currentArea : '',
       build: buildOf(pd) || {},
+      silkshot: WEBSHOT[Object.keys(WEBSHOT).find((n) => (tools.get(n) || {}).IsUnlocked === true)] || '',
       quests: [...quests].filter(([, d]) => !!d.IsCompleted).map(([n]) => n).sort(),
+      taken: [...quests].filter(([, d]) => !!d.IsAccepted && !d.IsCompleted).map(([n]) => n).sort(),
       bellshrines: QU.BELLSHRINES.map((b) => b.field).filter((f) => pd[f] === true),
       bells: Object.keys(pd).filter((f) => /^bellShrine[A-Z]/.test(f) && pd[f] === true),
       lastJudge: pd.defeatedLastJudge === true,
@@ -469,10 +481,10 @@
   }
   const EMPTY = Object.freeze({ tools: [], crests: [], skills: [], arts: [], journal: {}, masks: 0, spools: 0, hearts: 0,
     needle: 0, kit: 0, pouch: 0, everbloom: false, purse: {}, rosaries: 0, shards: 0, farsight: false, hasJournal: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', area: '', build: {},
-    quests: [], bellshrines: [], bells: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
+    quests: [], taken: [], bellshrines: [], bells: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
     bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [],
     visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], bosses: [],
-    tasks: [], steelSpots: [], peopleVars: {}, evaSlots: 0 });
+    tasks: [], steelSpots: [], peopleVars: {}, evaSlots: 0, silkshot: '' });
   const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
   // Each field only if it has the type an empty game gives it.
   function gameOf(snap) {

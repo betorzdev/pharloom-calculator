@@ -40,11 +40,11 @@ the work up reads it first, then the step it's on.
 | 1 | **The shell**: header, screen bar (desktop and phone), the screen's frame and title, footer and About, the atmosphere | **Built** (28 Sep) | [`04-shell-variants.html`](04-shell-variants.html) |
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html` |
-| 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html` |
-| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight and the leftovers 13 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
+| 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html` |
+| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct) | [`12-map-variants.html`](12-map-variants.html) |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds) | [`15-journal-variants.html`](15-journal-variants.html) |
-| 8 | Crest (`tools`) | **Built** (28 Sep) | [`18-crest-variants.html`](18-crest-variants.html) |
+| 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html` (kept out of the repo) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
 | 10 | **Built** (28 Sep) · The static pages (`tools/pages*.js`: `bosses/`, `es/jefes/`, the landing folders): they inherit steps 1 and 2; only what's theirs | To do | |
 | 6c | The Map's people: everyone in the world and every place that sells | **Built** (11 Oct) | `30-map-people-variants.html` (kept out of the repo) |
@@ -487,12 +487,62 @@ Game's, those moved by hand stay, with a notice; B kept as they were).
 - Progress counts in Free mode from the start (0% on a New Game), its boxes always there.
 - `saves.migrateFree` moves an older visit's marks once, on load, wherever Free mode's slot is (the
   live keys or its copy while a save is active; a save's keys are never touched). The notice
-  («Novedad», `pharloom.freeNote`) shows on the Inventory and Progress until «Entendido».
+  («Novedad», `pharloom.freeNote`) showed on the Inventory and Progress until «Entendido»; removed on
+  13 October 2026 at Albert's request (no «New» notices), the migration now silent.
 - Plain fixes: «Todo al máximo» marks everything (100%) instead of clearing the marks; «Partida nueva»
   (`PROFILE_NEW_GAME`) instead of «Hornet al empezar», and a New Game's Hunter is at evolution 1 with no
   Vesticrest; Progress lets you mark without going to the Inventory first; the Map's first mark no longer
   starts from «everything but the pieces»; on a phone «Empezar desde» takes its own line; the Crest screen
   on «Lo que tengo» with no Tool marked says so, with the way to the Inventory.
+
+### Third round: the whole screen, off and on (13 October 2026)
+
+Albert asked how to reorganise the Inventory now that all its content is in, and how each part
+should look when it's off (not had yet) and on. Looked at over Free mode (a New Game, everything
+marked) and three real saves (an Act 1 restore point at 10%, an Act 2 one at 55%, user1 at 100%),
+at 1440 and 390, and against the sibling's sheet with a save and in Free mode. What was weak:
+
+1. A 100% save showed six grey Tools: the base of the three upgraded ones, Shell Satchel's twin,
+   and Snare Setter and Needle Phial, which a wish lends and takes back. Fifty-seven cells for 51
+   points.
+2. Items was a bag of unnamed icons (loose shards, materials, key items, Old Hearts, melodies,
+   fleas): «0/4» under a faint picture says nothing until you tap it.
+3. The right column ran about 350 px past the left; on a phone the screen was about 5,500 px.
+4. On a New Game the Tools were 57 identical grey diamonds (the locked slot): the three colours
+   gone.
+5. The colour rows and Items had no maximum; the Crests said 0/6 with the Hunter Crest lit.
+
+The options (`43-inventory-round3-variants.html`, the real shell and data over the five states,
+kept out of the repo): 1 the order (**A** each thing beside what it feeds, two columns and a band
+under both; B as it was; C three tabs, Hornet · Blasón · Objetos); 2 the heads (**A** n/max
+everywhere and the rule as a gauge; B the count only; C a figure at the end); 3 a Tool you lack
+(**A** the slot hollow in its colour; B the grey locked slot as it was; C a dark silhouette
+rimmed in the colour); 4 the Tools that aren't a point (**A** one slot per point, the lent two
+apart; B 57 as it was; C 51 without the lent two); 5 the things (**A** plates with their name; B
+icons as they were; C rows); 6 what you lack in a save (**A** faint, as it was; B folded when a
+shelf is empty; C only what you have, with a switch).
+
+**Decision: A in all six** (13 October 2026), built in `js/app-game.js` and `css/app.css`:
+- Left, Hornet: the Needle with the Pale Oil under it; the masks with the loose Mask Shards under
+  them and the silk with the loose Spool Fragments (the game's piece lit up to what you hold, «four
+  make a mask», «two make a spool»); the Silk Hearts; the Silk Skills; the abilities. Right, her
+  equipment: the Crests with the Memory Lockets, then the Tools with the Kit, the Pouch and the
+  Craftmetal on top. Under both (`.inv-bag`): the purse and the items, then the Relics and the
+  Mementos. A material shows as a small picture with its count (`mat`), − N + in Free mode.
+- Every head counts n/max and its rule is a gauge in bone (`.inv-h.is-gauge`, `--f`); complete,
+  the rule glows and its diamond fills. The colour rows say n/max of their points; Items counts
+  the Everbloom, Farsight, Journal, Old Hearts and melodies (the fleas have their own count); the
+  Crests count the Hunter Crest too (of 7), since it's drawn lit (the 100% counts 6: Progress
+  still does).
+- A Tool you lack: its slot hollow in its own colour, the picture faint grey (it was design/09's
+  grey locked slot).
+- One slot per point (`CO.COUNTED`): a Tool and its upgrade share one, showing the one you have
+  with two pips (had, upgraded); Shell Satchel shows in Dead Bug's Purse's slot. In Free mode a
+  tap on a shared slot goes none, had, upgraded (`invTwin`), as a save keeps them. Snare Setter
+  and Needle Phial sit after the colours under «No cuentan para el 100 %».
+- The Crests, the items, what's in the purse, the Relics and the Mementos are plates as the Silk
+  Skills': picture, pip, name, then the count or «Sin conseguir» (`invNotFound`).
+- «All · None» on Items now touches only its shelf (it marked every piece of the game before).
 
 ## Step 5 · Progress
 
@@ -687,6 +737,37 @@ the ladders' groups where they're set, B only the top, C as it was).
   upgrades', Needle's and Silk Hearts' groups say «Esto se fija en el Inventario» with the way there.
 - Plain fixes: no «·» head (Act heads only when a list spans two Acts), «Te falta 1», the bridge's
   figure centred on a phone, the tab card's name balanced (no lone «3»).
+
+### Each step in the game's words, and on the Map (13 October 2026)
+
+Albert: clicking a step of the road could explain it (only with the game's own texts and
+translations), or put a pin for the Map. Looked at over real saves (Act 1 at 7% and at 10% by the
+Phantom, Act 2 at 15%, 42% and 61%, the later steps simulated from them, Free mode) and the sibling's
+Map focus. The game has an objective text for every step but two (unlocking Silk and Soul, and the
+Last Judge, who has her Journal line), and its own map pins for the Grand Gate, the Citadel and the
+Soul Snare. `28-progress-steps-variants.html` (kept out of the repo): 1 the step you're on (**A** its
+card under the heading, B folded, C as it was); 2 the other steps (**A** the thread and the medallions
+open their card, B a tooltip, C as it was); 3 the Map (**A** all that's left of the step at once, the
+sibling's focus, B the nearest mark, C the rows only); 4 each row (**A** «What the game says» folded,
+B always, two lines, C as it was); 5 the steps with no objective (**A** the Judge's Journal line, B
+none).
+
+**Decision: A in all five** (13 October 2026), built (`js/app-progress.js`, `js/app-map.js`,
+`css/app.css`, `tools/extract-quests.py`):
+- `stepCard()` under `.pg-now` and under each step of the whole road and the guide: the tag of where
+  the game says it («Tareas», «Diario»), the objective's name and line, its description for the
+  state the save is in (`STEP_SAYS`: CHAIN `desc`, or `ready` once its targets are met), and
+  «Ver los n en el mapa».
+- The thread's steps are buttons (`.pg-jstep`), the later medallions too (`.pg-md-peek`):
+  `peekHtml()` opens the step's card where it was clicked, one at a time; the step you're on goes
+  to its heading.
+- `stepMarks()`: the Bellshrines not rung, the objectives' pins by their quest (`goal()`), the Judge
+  and the Phantom, the Caretaker and Bellhart's Wishwall, what's next of a step of several things;
+  the nearest to the bench first. `App.mapFocus(keys, name)` shows only those, fitted, with a line
+  in the search's place (‹ i of n ›, ×); any switch ends it.
+- `saysRow()` under the rows: `wishSays()` (the Wishwall's text until the save says it's taken,
+  then «Tareas»'s), the Caretaker's directions per piece, the Inventory's lines, `laceSays()`.
+  The shrines', Lace's and the key's rows have their pins.
 
 ## Step 6 · Map
 
@@ -1120,6 +1201,60 @@ attacks, damage a second, the critical, the Needle Strike) and `.ct-hud` (`asset
 per mask, the spool with the silk, «a Bind heals n»). The levels are `.ct-pips`, a pip a level
 (Free mode: a pip sets it, the lit top one steps down), − and + only in Free mode.
 
+
+### Third round: the slots as the game draws them (13 October 2026)
+
+Albert: check that every Crest, Tool and slot looks as in the game, with Tools on too. Read from the
+game's files: a full slot's EmptyToFull animation (animations_assets_shared) ends on
+`UI_tool_slot_attack0004`, a thin ring, notched up or down for a red or Silk Skill slot fired with
+Tool + up or down (each slot's AttackBinding in crestitems.bundle); the empty signs per button
+(`Tool_slot_attack_up0000`, `UI_tool_slot_weave_down`...); the Vesticrest's slots in the pane's
+"Floating Slots", between white brackets (`UI_tool_slot_extra_sockets`). `43-crest-review-variants.html`
+drew five decisions over real saves and full Free-mode builds:
+
+1. A Tool in its slot: **A the game's ring**, the Tool large inside (1.43 and 1.15 units, over the
+   art as in the game); B the sign behind a small icon (as it was); C the ring smaller.
+2. An empty slot: **A its sign by its button** (up, alone, down); B one sign per colour.
+3. A locked slot: **A its sign in grey with the lock ring** (the wiki's Red Tools Icon Locked); B the
+   game's small locked dot, a grey ring.
+4. The Vesticrest: **A beside the Crest, in its brackets**; B a row under it.
+5. A save made while cursed: **A the Cursed Crest** (its art, no slots, a line on the curse, the
+   wiki's name in English: the game gives it none); B the Hunter, empty (as it was).
+
+Decision: A in all five, built. `tools/extract-crests.py` writes the buttons into
+`SS.crestSlots` (a fifth field), the sprites at their sizes into `SS.crestSprites`, the floating
+column into `SS.crestFloat` and the curse's art. Albert, on the page: the Crest's name stays under the
+Crest alone, not under the Crest and the Vesticrest's column. The review also fixed what wasn't a
+choice: Pale Nails' description (`INV_DESC_SILKBOSS_NEEDLE`), Silkshot as the variant the save holds
+(its picture, words, damage and uses), and the Shaman's three Silk Skills.
+
+Reviewing PR #44, Albert saw the lock rings off centre on the signs. Read from the game (13 October
+2026), decision 3 A wasn't what the pane draws: the wiki's Red Tools Icon Locked is a composite.
+Each slot draws its sign on one renderer, and its Locked animation swaps the sign for
+`Tool_slot_lock_ring`, centred, scaled to 0.8, in the slot colour's grey, the slot at half opacity
+(`tools/extract-crests.py`'s header). The site now draws that: the ring alone, where the sign was.
+
+Then Albert asked whether the worn Tools weren't too big, against real pictures of the game. Two
+screenshots of the Tools pane with Tools on (the Reaper with Straight Pin, Warding Bell and Compass:
+deltiasgaming.com's `20250906185754_1.jpg` and Nintendo Life's `equipment-menu.large.jpg`) and the
+game's files say the opposite: the slot's "Item Icon" draws the Tool's inventory sprite at its own
+size (scale 1, kept by its Icon Idle animation; 100 px to the unit), 1.04 to 1.58 units across,
+about the ring's 1.43, so a Tool fills its ring. The site drew every one in a 1.15-unit box, about
+80% of the game's (the Warding Bell 1.15 units tall against 1.41). Each now goes at its own size and
+centre (`SS.crestIcons`, from `tools/extract-crests.py`); the Crest's box still holds the largest
+in every slot (the Barbed Bracelet on the third Hunter, 3.395 of 3.4 units across).
+
+On that comparison Albert asked for the two other things the screenshots show. The Crest's lines are
+a dim grey, not white with a glow: `InventoryToolCrest.UpdateListDisplay` colours the Crest by the
+pane's state, `DeselectedColor` (0.5, 0.5, 0.5) while you browse it (`EquipStates.None`), 0.3 grey
+while placing a Tool, white only for the Crest picked while switching; its "Crest Glow" only plays
+when a Crest is put on. The lines in both screenshots peak at 128 of 255; the site's are now
+`--crest-tint` (brightness 0.5, the same 129 to 134) with no glow. And a Silk Skill in its slot is
+its solid white inventory sprite (`S_needle_throw`...), the same in the pane's list and its
+description, where the site had the wiki's line art (the prompt when you get one,
+`prompt_hornet_needle_throw`). `tools/extract-crests.py` writes the six into `assets/icons/skills-inv/`;
+the slot, the list under the Crest and the Inventory use them, and the Map, Progress, Home and
+Combat keep the line art.
 
 ## Step 9 · Combat
 

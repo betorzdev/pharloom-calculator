@@ -16,6 +16,10 @@
     title:          { es: 'Calculadora de Telalejana', en: 'Pharloom Calculator' },
     goHome:         { es: 'Ir a Tu partida, la pantalla de inicio', en: 'Go to Your game, the home screen' },
     langGroup:      { es: 'Idioma', en: 'Language' },
+    share:          { es: 'Compartir', en: 'Share' },
+    shareHint:      { es: 'Copia el enlace a la web', en: 'Copy the link to the site' },
+    linkCopied:     { es: 'Enlace copiado', en: 'Link copied' },
+    copyThis:       { es: 'Copia este enlace:', en: 'Copy this link:' },
     /* The beta notice (js/app.js): above the screens until it's closed, and the tag by the title. */
     betaTag:        { es: 'Beta', en: 'Beta' },
     betaText:       { es: 'La web aún está en construcción: puede haber algún número mal, textos sin traducir o pantallas a medias. Si ves algo raro, {report}.',
@@ -210,12 +214,15 @@
     ctStrike:       { es: 'Golpe concentrado', en: 'Needle Strike' },   // INV_NAME_SKILL_CHARGESLASH
     ctDpsShort:     { es: 'Daño por segundo', en: 'Damage a second' },
     ctBindHeals:    { es: 'Enlazar cura {n}', en: 'a Bind heals {n}' },
+    ctBindFails:    { es: 'Enlazar falla', en: 'Bind fails' },   // the curse's; Bind as the game's button says it
+    // The curse's Crest (a save made while cursed): the game names it nowhere and the wiki's page has no
+    // ESname, so its wiki title stays in English in both (no source).
+    ctCursed:       { es: 'Cursed Crest', en: 'Cursed Crest' },
+    ctCurse:        { es: 'La maldición: sin herramientas ni habilidades, Enlazar falla y la seda no pasa de 3.', en: 'The curse: no Tools or Skills, Bind fails and silk stops at 3.' },   // BUTTON_CAST, INV_NAME_THREAD; the wiki's Cursed Crest page
     ctPrev:         { es: 'Blasón anterior', en: 'Previous Crest' },
     ctNext:         { es: 'Blasón siguiente', en: 'Next Crest' },
     ctPoint:        { es: 'Señala una herramienta para ver qué hace.', en: 'Point at a Tool to see what it does.' },
     ctSilkCost:     { es: '{n} de seda', en: '{n} silk' },
-    ctShare:        { es: 'Compartir', en: 'Share' },
-    ctShared:       { es: 'Enlace copiado: abre esta build tal cual', en: 'Link copied: it opens this build as it is' },
     ctLinkFree:     { es: 'El enlace traía una build: está en el Modo libre', en: 'The link had a build: it\'s in Free mode' },
     /* Free mode's «Try with» (design/42, 2 A): everything, or your game marked in the Inventory. */
     ctTry:          { es: 'Probar con', en: 'Try with' },
@@ -639,6 +646,13 @@
     invBroken:      { es: 'Si lo rompieras todo: +{n}', en: 'If you broke them all: +{n}' },
     invFieldMax:    { es: '{what}, máximo {n}', en: '{what}, maximum {n}' },
     invMissing:     { es: 'Aún no lo tienes', en: 'You don\'t have it yet' },
+    /* The third round (design/43): the plates' line for what you lack, what's loose under the masks
+       and the silk, and the two Tools a wish lends. No game source: written for context. */
+    invNotFound:    { es: 'Sin conseguir', en: 'Not found yet' },
+    invLooseMask:   { es: 'cuatro forman una máscara', en: 'four make a mask' },
+    invLooseSpool:  { es: 'dos forman un carrete', en: 'two make a spool' },
+    invLentTitle:   { es: 'No cuentan para el 100 %', en: 'Not counted for the 100%' },
+    invLentNote:    { es: 'Te las presta un deseo y te las quita al cumplirlo.', en: 'A wish lends them and takes them back once it\'s done.' },
     invAll:         { es: 'Todo', en: 'All' },
     invNone:        { es: 'Nada', en: 'None' },
     invLess:        { es: 'Uno menos: {what}', en: 'One less: {what}' },
@@ -651,10 +665,6 @@
     invBase:        { es: 'Partida nueva', en: 'New Game' },   // PROFILE_NEW_GAME
     invFreeLead:    { es: 'Modo libre: marca lo que tienes en tu partida y Progreso cuenta el 100 % con ello. Para probar builds con todo, el Blasón.',
       en: 'Free mode: mark what you have in your game and Progress counts the 100% from it. To try builds with everything, the Crest screen.' },
-    freeNoteTag:    { es: 'Novedad', en: 'New' },
-    freeNote:       { es: 'La aguja, las máscaras, la seda y las mejoras son ahora parte de lo que marcas: lo que no habías movido vuelve al de una partida nueva, para que el 100 % no cuente lo que no tienes. Revísalo en el Inventario.',
-      en: 'The Needle, masks, silk and upgrades are now part of what you mark: what you hadn\'t moved goes back to a New Game\'s, so the 100% doesn\'t count what you don\'t have. Check them in the Inventory.' },
-    freeNoteOk:     { es: 'Entendido', en: 'Got it' },
     invMax:         { es: 'Todo al máximo', en: 'Everything maxed' },
     invSilk:        { es: 'Seda', en: 'Silk' },   // INV_NAME_THREAD
 
@@ -824,6 +834,30 @@
     roadCaravanLake:{ es: 'antes, visita el {lake} vacío, en los {ducts}', en: 'first visit the empty {lake}, in the {ducts}' },
     roadCaravanJudge:{ es: 'antes de su parada en los {steps}, vence en combate: {judge}', en: 'before its stop on the {steps}, defeat {judge}' },
     roadPaleLake:   { es: 'Lago Pálido', en: 'Pale Lake' },   // WHITELAKE
+    /* Each step and row in the game's own words (design/28, 1 A to 5 A): what the pane «Tareas»
+       says of it, its Wishwall, the Inventory, the Journal or the Caretaker. */
+    pgSays:         { es: 'Lo que dice el juego', en: 'What the game says' },
+    pgSaysHide:     { es: 'Ocultar', en: 'Hide' },
+    pgSaysNone:     { es: 'El juego no tiene texto para este paso.', en: 'The game has no text for this step.' },
+    pgPeekStep:     { es: 'Paso {n}', en: 'Step {n}' },
+    pgPeekDone:     { es: 'hecho', en: 'done' },
+    pgPeekClose:    { es: 'Cerrar el paso', en: 'Close the step' },
+    pgPeekOpen:     { es: 'Lo que dice el juego de este paso', en: 'What the game says of this step' },
+    pgMapN:         { es: 'Ver los {n} en el mapa', en: 'See the {n} on the map' },
+    roadKeyDesc:    { es: 'Llave para acceder a una campana restaurada sobre Campanilla.', en: 'Key to a restored bell above Bellhart.' },   // INV_DESC_BELL_HOUSE_KEY
+    roadSays_churchkeeper: { es: 'Abajo, en las tierras musgosas, aferrada aún a su capilla fallida, mi hermana se desprenderá de su poder, si se lo pides amablemente.',
+                      en: 'Down in the mosslands, still clinging to her failed chapel, my sister\'ll part with her power, if asked kind enough.' },   // CARETAKER_SNARE_REPEAT_CHURCHKEEPER
+    roadSays_hermit: { es: 'Enterrado en la madriguera de campanas, en el núcleo de Telalejana, busca a mi hosco tío. Tiene poder de sobra.',
+                      en: 'Buried in the warren of bells, at Pharloom\'s core, seek my sullen uncle. That one has power to spare.' },   // CARETAKER_SNARE_REPEAT_BELLHERMIT
+    roadSays_swamp: { es: 'Encuentra la cáscara de mi primo, reclamada por los furiosos bichos de los pantanos. Fue un necio descuidado por dejarse atrapar, y por muy muerto que esté, aún se intuye algún atisbo de su alma.',
+                      en: 'Find the husk of my cousin, claimed by the scorned bugs of the swamps. A careless fool to let himself be taken, and dead they might be, but some glimmer of his soul can still be sensed.' },   // CARETAKER_SNARE_REPEAT_SWAMP
+    roadSays_snare: { es: 'Y como base, necesitaremos un arma del pasado de las Tejedoras. Busca abajo, a un lado de los caminos de hueso, dentro de su nido más grande. Es un dispositivo de trampa, uno que pone una runa de seda abrasadora.',
+                      en: 'For the base, we\'ll be needin\' a weapon of Weavers past. Search down low, aside the paths of bone, inside their largest nest. S\'a snare device, one to set a rune\'o searing Silk.' },   // CARETAKER_SNARE_REPEAT_SNARE
+    /* The Map's focus (js/app-map.js App.mapFocus): a step's marks at once, one by one. */
+    mapFocusOf:     { es: '{i} de {n}', en: '{i} of {n}' },
+    mapFocusPrev:   { es: 'La anterior', en: 'Previous' },
+    mapFocusNext:   { es: 'La siguiente', en: 'Next' },
+    mapFocusOff:    { es: 'Volver al mapa entero', en: 'Back to the whole map' },
     /* What posts a required wish later than the rest (its playerData test in js/quests.js CHAIN when,
        and the wiki's prerequisites for what sets it; checked on the author's saves). */
     roadOpensShakra:{ es: 'sale al comprarle a {npc} todos sus mapas y tener la {art}', en: 'posted once you have bought all of {npc}\'s maps and have the {art}' },
@@ -906,13 +940,23 @@
   const locale = () => (lang === 'en' ? 'en-GB' : 'es-ES');
   const nf = (max, min = 0) => new Intl.NumberFormat(locale(), { minimumFractionDigits: min, maximumFractionDigits: max });
 
+  /* The languages the site speaks, in the selector's order (English first: it's the default).
+     `tag` is the HTML language, `code` what a phone's header shows and `name` the language's own
+     name, as the game writes it in its menu (its LANG_CURRENT): never translated. The selector
+     (js/app.js, renderMasthead) lists them; a new language starts with a row here. */
+  const LANGS = [
+    { id: 'en', tag: 'en', code: 'EN', name: 'English' },   // EN: LANG_CURRENT
+    { id: 'es', tag: 'es', code: 'ES', name: 'Español' },   // ES: LANG_CURRENT
+  ];
+  const speaks = (id) => LANGS.some((l) => l.id === id);
+
   function setLang(next) {
-    lang = next === 'es' ? 'es' : 'en';
+    lang = speaks(next) ? next : 'en';
     SS.i18n.lang = lang;
     if (typeof document !== 'undefined') document.documentElement.lang = lang;
     return lang;
   }
 
-  SS.i18n = { UI, lang, t, pick, nf, setLang, get current() { return lang; } };
+  SS.i18n = { UI, LANGS, speaks, lang, t, pick, nf, setLang, get current() { return lang; } };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.i18n;
 })();

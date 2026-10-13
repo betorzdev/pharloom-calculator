@@ -112,6 +112,11 @@
   --slot-skill: #ffffff;
   --slot-locked: #606060;
   --slot-locked-rim: #dcdcdc;
+  /* A locked slot on the Crest (read from the game, InventoryToolCrestSlot.UpdateSlotDisplay): the
+     lock ring in its colour's grey (no saturation, same value: the game's slot colours are all V 92.5%,
+     GlobalSettings toolTypeColors), its group at half opacity. */
+  --slot-lock: #ececec;
+  --slot-lock-opacity: 0.5;
 
   /* The screens are scenes from the game: a black field and the Crest screen's warm spotlight
      (#23201d). The --scene-cold* names are kept from the skeleton; the light isn't cold. */
@@ -314,7 +319,12 @@
   /* The Crest screen's Crest: px to the game's unit (its art is 100 px to the unit, 4.3 to 6.1
      units wide), smaller on a phone. */
   --crest-k: 64px;
-  --crest-k-sm: 48px;
+  --crest-k-sm: 44px;
+  --crest-k-xs: 35px;   /* a phone, with the Vesticrest's column beside the Crest */
+  /* Its art, white in the game's files, as the Tools pane tints it while you browse it: half grey,
+     InventoryToolCrest.DeselectedColor (0.5, 0.5, 0.5) multiplying the sprite (the screenshots'
+     lines peak at 128), and no glow (tools/extract-crests.py's header). */
+  --crest-tint: brightness(0.5);
   /* Progress's completion ring (design/20-progress-total-variants.html, A); smaller on a phone. */
   --pg-ring: 220px;
   /* Its two tabs' pictures, the rings of what's left for the next Act and their medallions
