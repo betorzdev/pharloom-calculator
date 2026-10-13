@@ -499,34 +499,53 @@ says, with the mark now at that key, when one names a mark the data no longer ha
 
 ### Progress
 
-Two tabs, as two cards under the title, each with its own picture of how far you are; the one
-you used last opens, the road's the first time.
+At the top, **where you are**: the three Acts on one thread as the game titles them (Act 1
+Pharloom, Act 2 Citadel of Song, Act 3 Abyss), yours marked «You are here», and one sentence:
+which Act you're in and what opening the next takes («Opening Act 3 takes 5 steps: you're on step
+1, with 3 things left in it»), in Act 3 what's left of the 100%, at 100% that you have it all.
+Without a save it says what the tab is: the guide to the three Acts and to the 100%.
+
+Then two tabs, as two cards, each with its own picture of how far you are; the one you used last
+opens, the road's the first time.
 
 **The road to the next Act** (its card: the picture of the step you're on, how far into it, counted
 as its rings count, and «step 1 of 5»). Its steps as diamonds on one thread, the ones done lit and
-the one you're on larger, each named with the game's words (on a phone too). Then the step you're
+the one you're on larger, each numbered and named as what to do («1 · Unlock "Silk and Soul"»,
+«2 · Take the wish», «3 · Gather the snare»…; the full title shows on hover). Then the step you're
 on, with its picture, and its parts as small **rings** side by side (the wishes it requires, its
 wish points, its four conditions; the Bellshrines; the snare's pieces), the game's picture inside
-and how far as a figure under it; for Silk and Soul a line says that all three are needed. Under
-the rings, each part is a group like the 100% tab's, open at first (it folds, and stays as you
-leave it): its pictures or pips and its count, what it asks in a sentence and how much is left,
-then its things in rows by Act, the ones done ticked, each with its picture (the wishes, the
-game's emblem for their type), its area, what to do first or «½ point» on a delivery, and a pin
-when the Map has it. The steps after it follow, dim. A line says how many things of the 100% you
-can already get in your Act (each counted on its own: a Mask Shard is one, not a point) and leads
-to the other tab; «The whole road» opens the road in full, as below.
+and how far as a figure under it; for Silk and Soul a line says that all three are needed.
 
-In Act 3 the tab is **«Your game»**: Act 1, Act 2 and Act 3 on one thread, then the four endings,
-lit the ones your save has seen (the game keeps them: Weaver Queen, Snared Silk, Twisted Child,
-Sister of the Void); a ring for the endings and one for the things of the 100% only Act 3 holds.
-Without a save, the tab is both roads in full, as a guide.
+Under the rings, **What's next**: only what the step still lacks, numbered, each with its picture,
+its area and the Map's pin when it has the thing: each required wish («Complete the wish "Balm for
+the Wounded"», with the wish to do first), the wish points short («Get 1 more wish point») with the
+four wishes nearest your bench that would give it (any of the others will do), each condition not
+met (the Flea Caravan, the Faydown Cloak, Lace, the Bellhome Key, or «Talk to Pavo» once he has it
+for you), each Bellshrine not rung, each piece of the snare. «See the whole list, done included»
+opens every part as a group like the 100% tab's (it stays as you leave it): its pictures or pips
+and its count, what it asks in a sentence and how much is left, then its things in rows by Act,
+the ones done ticked, with «½ point» on a delivery. The steps after it follow, dim. A line says how
+many things of the 100% you can already get in your Act (each counted on its own: a Mask Shard is
+one, not a point) and leads to the other tab; it's gone when there's nothing left to get. «The whole
+road» opens the road in full, as below.
+
+In Act 3 the tab is **«Your game»**: the four endings on a thread (the Acts are already on top), lit
+the ones your save has seen (the game keeps them: Weaver Queen, Snared Silk, Twisted Child, Sister
+of the Void); a ring for the endings and one for the things of the 100% only Act 3 holds.
+
+**Without a save**, a notice over either tab invites you to import yours (what it would show, and
+the button), the 100% card says «100% in 10 categories», and the road tab is both roads as a guide,
+each with its thread of steps, every list folded under «See all n».
 
 **For 100%** (its card: a small ring and what's left). At the top, **your 100%** in a ring that
 fills with it, as the Journal's Memento, with the game's word, «Finalización» (a line under it
-only if the game's own figure is another). Then each category is a row: its name, its things as
-the game's pictures (what you lack dimmed) or as pips, its count and a ring that opens its list;
-the rows you open stay open. «What's missing · Everything» and «By Act · Nearest first» sit just
-above the rows.
+only if the game's own figure is another). Under it, how the 100% splits: one bar of a hundred, a
+stretch per category as wide as it's worth (the Tools are half), lit as far as you have it, its
+legend with what each category is worth, and a line that each row's figure is how much you have
+of what it's worth, in points of the 100%. Then each category is a row, under a «Got / worth (%)»
+head: its name, its things as the game's pictures (what you lack dimmed) or as pips, its count and
+a ring that opens its list; the rows you open stay open. «What's missing · Everything» and «By
+Act · Nearest first» sit just above the rows.
 
 Opened, a category lists its things by Act: each with its picture, its name (a Tool with its
 slot's colour) and how to get it, its area on the right, and a pin that shows it on the Map.
