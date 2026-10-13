@@ -1568,6 +1568,42 @@ Dexerto, Nintendo Life, allthings.how, gameshorizon; no Game8 or IGN page came u
   undoes a step of either road: none of the 72 does; every Act 3 save meets the road, no earlier
   one shows it done.
 
+**The road's last data gaps** (13 October, the same day).
+- **What each wish asks to be brought.** `tools/extract-quests.py` now loads
+  `questsystem/proxies.bundle` and `collectables/fakecollectables.bundle`, the counters a quest's
+  targets name: the Rosary Quest Target and Shard Quest Target (currencyType 0 and 1) carry each
+  donation's Count. CHAIN `asks`: the four required donations are 250 (Restoration of Bellhart),
+  400 (Bellhart's Glory), 300 and 500 (Building Up and Strengthening Songclave): 1,450 rosaries,
+  as the audit had it. Flick's three ask 200, 300 and 440 shell shards (the first two required);
+  Bugs of Pharloom 100 Journal entries seen; the rest, their things in number (25 Ragpelts, 12
+  Fine Pins, 16 Choir Cloaks, the Huntress's 15/35/10 organs, the Gourmand's five dishes…). A
+  delivery's thing is one, carried: its Count isn't a number to bring (the Swag's 5 are the hits
+  it takes, the wiki says; the Rasher's 1 isn't its 8 segments), so a delivery wish says nothing
+  more. The fleas', races', Sentinel spots' and Journal kills' counters aren't brought: not in
+  asks. Progress's wish rows and «What's next» say it after who asks («Pabo de Campanilla · pide
+  250 rosarios»).
+- **Bugs of Pharloom's line.** Its asset leaves `location` empty, but the text has its title's own
+  `QUEST_JOURNAL_LOC`, «Nuu en Hogar a medio camino» / "Nuu at the Halfway Home", and Nuu's FSM in
+  Halfway_01 is the one that offers it: a wish with no location now takes its title's `_LOC`
+  when the text has one (it changes only that one and two later stages that already inherited
+  the same line).
+- **The Bell Hermit's soul.** Bellhart's Bellway is in Belltown_basement (the station at x≈21-28).
+  Its right side is a hidden area, a Remasker with a PersistentBoolItem at x≈78 (the Map's masked
+  extra there), and past it the drop bot1 (x 81) leads into Belltown_basement_03, the bell shaft,
+  where the Hermit sits (x≈95, below and left of where you land, at top1 x 136). The room holds no
+  breakable wall (its Breakables are bell piles, sacks and lamps; the shaft's One Way Walls are
+  below him): the guides' "breakable wall" is a wall you walk through. The wiki's Bell Hermit page
+  says the same ("a hidden wall to the right, then descending… at the far left edge"). The
+  piece's row says so.
+- **The live link, for real.** Over file://, headless Chrome with a Windows user agent (so
+  `canLive()` holds) and a stand-in for the picker whose handle reads the file last fed to it
+  through a real file input (IndexedDB can't clone a fake handle, so the harness hands it back on
+  `links.get`): a save imported with real clicks and "follow" on, then the file swapped under the
+  watcher, Restore_Points1's Act 2 early (31%) → Act 2 late (61%) → Act 3 (69%), each unwrapped
+  to the user.dat it holds. Progress repainted each time with no reload (step 1 with 22 things
+  left → 3 → the endings), and Your game's line too (9 of 31 → 28 of 31 → gone in Act 3).
+- Fixed on the way: Trail's End's line printed «({n} de {of})» raw (the count comes after it).
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).

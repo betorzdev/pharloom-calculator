@@ -16,8 +16,19 @@ StreamingAssets/aa/StandaloneLinux64/dataassets_assets_assets/dataassets/:
       previousQuestStep,
       requiredCompleteQuests and requiredCompleteTotalGroups, what it waits for; playerDataTest,
       what the save must say before it's offered; targets, what it asks for (a Collectable or a
-      Tool by reference, or a playerData test: the Bellshrines).
+      Tool by reference, a counter of proxies.bundle, or a playerData test: the Bellshrines).
+      A quest whose location is empty takes its title's own _LOC line when the text has one:
+      Bugs of Pharloom's QUEST_JOURNAL_LOC, "Nuu at the Halfway Home", which its asset leaves out.
   collectables/collectableitems.bundle, tools/toolitems.bundle  the things a target names.
+  questsystem/proxies.bundle, collectables/fakecollectables.bundle  the counters a target names that
+      aren't things (read on 13-Oct-2026): 'Rosary Quest Target' and 'Shard Quest Target'
+      (currencyType 0 and 1: a donation, its Count the rosaries or shell shards given) and 'Journal
+      Seen' (the Journal's entries seen). What each wish asks to be brought (CHAIN asks) comes from
+      these and the things above. A delivery's thing (a DeliveryQuestItem: it has a breakIcon) is
+      one, carried, whatever its Count (the Courier's Swag's 5 are the hits it takes, as the wiki's
+      delivery pages say; the Rasher's 1 isn't its 8 segments): asks marks it delivery. The other
+      counters (the fleas, the Sprintmaster's races, the Second Sentinel's spots, a Journal
+      record's kills) aren't brought: none of them is in asks.
 A PlayerDataTest is groups of tests: any group whose tests all hold. Its enums, read from
 Assembly-CSharp: TestType Bool 0, Int 1, Float 2, Enum 3, String 4; NumTestType Equal 0,
 NotEqual 1, LessThan 2, MoreThan 3 (an Enum compares its IntValue).
@@ -49,7 +60,12 @@ ROOT = os.path.join(HERE, '..')
 OUT = os.path.join(ROOT, 'js', 'quests.js')
 TEXT = os.path.join(ROOT, 'kb', 'data', 'all_text.json')
 BUNDLES = ['questsystem/completetotalgroups.bundle', 'questsystem/quests.bundle', 'questsystem/mainquests.bundle',
-           'collectables/collectableitems.bundle', 'tools/toolitems.bundle']
+           'collectables/collectableitems.bundle', 'tools/toolitems.bundle', 'questsystem/proxies.bundle',
+           'collectables/fakecollectables.bundle']
+# The proxies' currencies (CurrencyType: Money 0, Shard 1), and the fake collectable that counts the
+# Journal's entries seen.
+CURRENCY = {0: 'rosaries', 1: 'shards'}
+JOURNAL_SEEN = 'Journal Seen'
 # The main quest whose targets are the five Bellshrines, and the wish whose targets are the
 # Soul Snare's four pieces.
 BELLSHRINES = 'Grand Gate Bellshrines'
@@ -86,6 +102,35 @@ def load(game):
                 continue
             objs[(o.assets_file.name, o.path_id)] = (b, tt, o.assets_file)
     return objs
+
+
+def asks(tt, af, objs, name):
+    """What a quest asks to be brought, from its targets: [{ kind: 'rosaries' | 'shards' | 'journal',
+    n }], or [{ kind: 'item', save, n, name, delivery? }] for a Collectable or a Tool (its save name
+    and the game's). A target outside the bundles read (a Journal record's kills) is left out, as
+    are the counters nothing is brought for; a delivery's thing is one (see the header)."""
+    out = []
+    for t in tt.get('targets') or []:
+        r = t.get('Counter') or {}
+        if not r.get('m_PathID'):
+            continue
+        cab = af.name if r['m_FileID'] == 0 else af.externals[r['m_FileID'] - 1].path.split('/')[-1]
+        hit = objs.get((cab, r['m_PathID']))
+        if not hit:
+            continue
+        b, c, n = hit[0], hit[1], t['Count']
+        if b == 'questsystem/proxies.bundle':
+            if 'currencyType' in c:
+                out.append({'kind': CURRENCY[c['currencyType']], 'n': n})
+        elif b == 'collectables/fakecollectables.bundle':
+            if c.get('m_Name') == JOURNAL_SEEN:
+                out.append({'kind': 'journal', 'n': n})
+        else:
+            x = {'kind': 'item', 'save': c['m_Name'], 'n': n, 'name': name((c.get('displayName') or {}).get('Key'))}
+            if 'breakIcon' in c:   # a DeliveryQuestItem: one carried, whatever its Count
+                x.update(n=1, delivery=True)
+            out.append(x)
+    return out
 
 
 def resolver(objs):
@@ -331,6 +376,8 @@ def main(game):
             gs = [h[1]['m_Name'] for h in (ref(af, r) for r in tt.get('requiredCompleteTotalGroups', [])) if h]
             e = {'name': name(tt['displayName'].get('Key')), 'main': b.endswith('mainquests.bundle')}
             loc = name((tt.get('location') or {}).get('Key'))
+            if not loc and not e['main']:
+                loc = name(re.sub(r'_(TITLE|NAME)$', '_LOC', tt['displayName'].get('Key') or ''))
             if loc:
                 e['loc'] = loc
             if prev:
@@ -342,6 +389,9 @@ def main(game):
             when = tests(tt.get('playerDataTest'))
             if when:
                 e['when'] = when
+            ask = asks(tt, af, objs, name)
+            if ask:
+                e['asks'] = ask
             if n in chain and chain[n] != e:
                 fail(f'two quests named {n}')
             chain[n] = e
@@ -364,6 +414,7 @@ def main(game):
     if not shrines or not snare:
         fail(f'{BELLSHRINES} or {SNARE} not found')
     missing = [n for n, e in chain.items() if not e['name']] + [x['save'] for x in snare if not x['name']] \
+        + [x['save'] for e in chain.values() for x in e.get('asks', []) if x['kind'] == 'item' and not x['name']] \
         + [x['field'] for x in shrines if not x['name']]
     if missing:
         print('no game text for: ' + ', '.join(missing), file=sys.stderr)
@@ -390,10 +441,13 @@ def write(groups, chain, shrines, snare, frm, locks):
         "                  'Soul Snare' opens the wish Silk and Soul (Soul Snare Pre), the way to Act 3;",
         "                  'Belltown House Key', with Bellhart's Glory, has Pavo give the Bellhome's key.",
         "     CHAIN        each quest by its save name (QuestCompletionData): { name, main, loc?, prev?,",
-        "                  needs?, groups?, when? }: its title, whether it's a main objective, the line the",
-        "                  game writes under the title (who asks for it, or where: 'Creige of the Halfway",
-        "                  Home'), the step before it, the quests and groups it waits for, and the",
-        "                  playerData test it's offered on.",
+        "                  needs?, groups?, when?, asks? }: its title, whether it's a main objective, the",
+        "                  line the game writes under the title (who asks for it, or where: 'Creige of the",
+        "                  Halfway Home'), the step before it, the quests and groups it waits for, the",
+        "                  playerData test it's offered on, and what it asks to be brought: [{ kind, n }],",
+        "                  kind 'rosaries' or 'shards' (a donation), 'journal' (entries seen) or 'item'",
+        "                  (n of a Collectable or a Tool: with its save name and the game's, { save, name },",
+        "                  and delivery: true for a delivery's thing, one carried).",
         "     BELLSHRINES  the five Bellshrines the Grand Gate asks for: [{ field, name }], field the",
         "                  playerData bool rung.",
         "     SNARE        the four pieces the wish Soul Snare asks for: [{ kind, save, name }], kind",

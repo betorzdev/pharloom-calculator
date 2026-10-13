@@ -144,12 +144,36 @@ test("the caravan's check says where it stands and the fleas rescued, of the 22 
 });
 
 test('each quest of the rule carries the line the game writes under its title (who asks for it), in both languages', () => {
-  // The two with none of their own: Berry Picking takes its first stage's; Bugs of Pharloom has no line in the game.
+  // The one with none of its own: Berry Picking takes its first stage's. Bugs of Pharloom's asset
+  // leaves it out, and its title's own line is in the text (QUEST_JOURNAL_LOC: Nuu, who offers it).
   const without = Q.GROUPS['Soul Snare'].quests.filter((q) => !Q.CHAIN[q.quest].loc).map((q) => q.quest);
-  assert.deepEqual(without, ['Mossberry Collection 1', 'Journal']);
+  assert.deepEqual(without, ['Mossberry Collection 1']);
+  assert.deepEqual(Q.CHAIN.Journal.loc, { es: 'Nuu en Hogar a medio camino', en: 'Nuu at the Halfway Home', key: 'QUEST_JOURNAL_LOC' });
+  assert.deepEqual(Q.FROM.Journal, { npc: ['Halfway_01'] });
   assert.equal(Q.CHAIN['Mossberry Collection Pre'].loc.key, 'QUEST_MOSSBERRY1_PRE_LOC');
   assert.deepEqual(Q.CHAIN['Crow Feathers'].loc, { es: 'Creige de Hogar a medio camino', en: 'Creige of the Halfway Home', key: 'QUEST_CROW_LOC' });
   assert.equal(Q.CHAIN['Soul Snare'].loc.key, 'Q_SOUL_SNARE_LOC');
+});
+
+test('what each wish asks to be brought, from its targets: the donations\' rosaries and shell shards, the Journal, the things', () => {
+  const asks = (q) => Q.CHAIN[q].asks;
+  // The four required donations: 1,450 rosaries in all (the game's Count on its Rosary Quest Target).
+  const donations = { 'Belltown House Start': 250, 'Belltown House Mid': 400, 'Songclave Donation 1': 300, 'Songclave Donation 2': 500 };
+  for (const [q, n] of Object.entries(donations)) {
+    assert.deepEqual(asks(q), [{ kind: 'rosaries', n }], q);
+    assert.ok(Q.GROUPS['Soul Snare'].quests.find((x) => x.quest === q).required, q);
+  }
+  // Flick's three, in shell shards: the first two required.
+  assert.deepEqual(['Building Materials', 'Building Materials (Bridge)', 'Building Materials (Statue)'].map((q) => asks(q)[0]),
+    [{ kind: 'shards', n: 200 }, { kind: 'shards', n: 300 }, { kind: 'shards', n: 440 }]);
+  assert.deepEqual(asks('Journal'), [{ kind: 'journal', n: 100 }]);
+  assert.deepEqual(asks('Crow Feathers'), [{ kind: 'item', save: 'Crow Feather', n: 25, name: { es: 'Piel zaparrastrosa', en: 'Ragpelt', key: 'INV_NAME_CROW_FEATHER' } }]);
+  // A delivery's thing is one, carried; the other counters (fleas, races) aren't asked.
+  assert.deepEqual(asks('Courier Delivery Bonebottom').map((a) => [a.n, a.delivery]), [[1, true]]);
+  assert.equal(asks('Great Gourmand').length, 5);
+  assert.equal(Q.CHAIN['Save the Fleas'].asks, undefined);
+  // Every thing asked carries its game name.
+  for (const e of Object.values(Q.CHAIN)) for (const a of e.asks || []) if (a.kind === 'item') assert.ok(a.name && a.name.key, a.save);
 });
 
 test('game() reads the fields of the road, and a slot keeps them', () => {

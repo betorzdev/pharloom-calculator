@@ -576,14 +576,19 @@ numbered steps, each with its count or a tick:
   2. Accept the wish from the Caretaker in Songclave (Bellhart's Wishwall posts it too, and sends
      you to him). Offered and turned down isn't taken: the step says to talk to him again.
   3. Gather the snare's four pieces: the Chapel Maid's and the Bell Hermit's souls, given once the
-     wish is accepted; the Seeker's Soul, past Groal the Great; the Snare Setter, which needs the
-     Faydown Cloak. Each with a pin to the Map.
+     wish is accepted (the Hermit sits below Bellhart's Bellway: through the hidden wall on its
+     right and down, to the left; a wall you walk through, not one you break); the Seeker's Soul,
+     past Groal the Great; the Snare Setter, which needs the Faydown Cloak. Each with a pin to the
+     Map.
   4. Bring them to the Caretaker in Songclave.
   5. Snare Grand Mother Silk with the Needolin.
 
 Each missing wish shows its Act, its area, who asks for it in the game's own words («Creige of
-the Halfway Home»), a pin to where it's taken on the Map, and the wish to do before it when there
-is one. The required wishes the game posts later say what posts them (Trail's End: all of Shakra's
+the Halfway Home»), what it asks to be brought, read from the game's files (the four required
+donations: 250 and 400 rosaries for Pavo, 300 and 500 for the Caretaker, 1,450 in all; Flick's
+shell shards, 200, 300 and 440; the Journal's 100 entries for Nuu; 25 Ragpelts, 12 Fine Pins, the
+Great Gourmand's five dishes…), a pin to where it's taken on the Map, and the wish to do before it
+when there is one. «What's next» says the same under each wish it lists. The required wishes the game posts later say what posts them (Trail's End: all of Shakra's
 maps, counted, and the Faydown Cloak; Balm for the Wounded: Sherma met and the Whiteward visited;
 Strengthening Songclave, Restoration of Bellhart, Bellhart's Glory), and Pinmaster's Oil that
 Plinney's second Needle upgrade counts for it too. In Act 3, the Act 2 endings you never saw say
