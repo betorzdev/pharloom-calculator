@@ -4,9 +4,13 @@
 
 ## What's on the page
 
-The header has the title under a filigree crown (it leads back to Your game), the language and
-**Share** on the left (it copies the site's address, nothing more: no screen, build or language)
-and, on the right, the save you're in (Hornet at a bench): it opens **Saves**. The screen bar has six screens in a row: Your game, Inventory, Progress, Map, Journal and Crest.
+The header has the title under a filigree crown (it leads back to Your game), on the left the
+language and **Share**, and on the right the save you're in (Hornet at a bench): it opens
+**Saves**. The language is a dropdown, as the sibling's: the one chosen and a chevron (its name,
+its code on a phone) open a list of the site's languages, each in its own name; Esc closes it
+and the arrows walk it. **Share** copies the site's address, nothing more: no screen, build or
+language. The screen bar has six screens in a row: Your game, Inventory, Progress, Map, Journal
+and Crest.
 With a save loaded, Progress carries your completion and Journal the entries Nuu counts
 (`63%`, `120/230`); in Free mode the bar only has the names. On a phone the six don't fit, so
 Inventory folds under Your game: while you're in either, a second row under the bar switches
