@@ -1511,21 +1511,26 @@ kbd {
 .hm-gain-at { grid-column: 1 / -1; font-size: var(--fs-xs); color: var(--muted); }
 
 /* ── The Inventory (js/app-game.js): the sibling's sheet ─────────────────
-   Two columns (design/03-redesign.md, step 4): what Hornet is on the left, what she carries on
-   the right. The Needle is the focal point; the body, rows of the game's own pieces; the Tools sit
-   on their slots. In a save the controls are still but at full light (read, not greyed). */
+   Two columns (design/03-redesign.md, step 4): what Hornet is on the left, her equipment on the
+   right, and what she carries in a band under both (design/43). The Needle is the focal point; the
+   body, rows of the game's own pieces; the Tools sit on their slots; the things are plates. In a
+   save the controls are still but at full light (read, not greyed). */
 .inv-presets { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: var(--sp-1) var(--sp-3); margin: 0; }
 .inv-presets .lbl { color: var(--muted); }
 /* Free mode (design/42): what the screen is, over «Start from»; on a phone «Start from» takes its
    own line, so its two choices stay together. The older visit's notice, over the body. */
 .inv-lead { max-width: 60ch; margin: 0; font-size: var(--fs-sm); color: var(--ink-2); text-wrap: balance; }
 @media (max-width: 480px) { .inv-presets > .lbl:first-child { flex-basis: 100%; text-align: center; } }
-.free-note { max-width: calc(var(--column) + var(--sp-16)); margin: 0 auto var(--sp-6); }
 .inv-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: var(--sp-12); align-items: start; }
 .inv-col { display: grid; gap: var(--sp-8); min-width: 0; }
 .inv-sec { display: grid; gap: var(--sp-2); align-content: start; min-width: 0; }
 .inv-n { margin-left: var(--sp-1); font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-xs); letter-spacing: 0; color: var(--ink-2); }
 .inv-n i { font-style: normal; font-weight: 400; color: var(--muted); }
+/* A shelf's head (design/43, 2 A): its rule a gauge, lit in bone up to the count; complete, the
+   whole rule glows and the head's diamond fills, as the pip of a thing you have. */
+.inv-h.is-gauge::after { height: 2px; background: linear-gradient(90deg, var(--accent-line) var(--f), color-mix(in oklab, var(--filigree) 14%, transparent) var(--f)); }
+.inv-h.is-full::after { background: var(--accent); box-shadow: var(--glow); }
+.inv-h.is-full::before { background: var(--filigree); }
 .inv :is(button:disabled) { opacity: 1; cursor: default; }
 /* The Needle: five upright, the one carried taller, lit by the spotlight, its damage larger. */
 .inv-needles { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); align-items: end; gap: var(--sp-1); }
@@ -1568,7 +1573,30 @@ kbd {
 @media (prefers-reduced-motion: no-preference) {
   .inv .is-lit :is(img, .inv-bead) { animation: inv-lit var(--dur-flash) var(--ease-fade); }
 }
+/* What's loose of the next mask or spool, under its row (design/43, 1 A): the game's piece, lit
+   up to what you hold, the count and how many make a whole one. */
+.inv-loose { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-1) var(--sp-3); font-size: var(--fs-xs); color: var(--muted); }
+.inv-loose-art { display: inline-flex; align-items: center; gap: var(--sp-2); min-height: var(--ctl-sm); padding: 0; color: var(--ink-2); }
+.inv-loose-art:is(:hover, :focus-visible) .inv-loose-name { color: var(--accent); }
+.inv-loose-pcs { display: inline-flex; gap: var(--sp-1); }
+.inv-loose-pcs img { height: var(--sp-6); width: auto; filter: drop-shadow(0 0 6px color-mix(in oklab, var(--spotlight) 35%, transparent)); }
+.inv-loose-pcs img.is-off { filter: var(--missing-art); }
+.inv-loose-art b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-weight: 600; color: var(--ink-strong); }
+.inv-loose-art b i { font-style: normal; font-weight: 400; color: var(--muted); }
+/* A material beside what it feeds (design/43, 1 A): its picture, its name and its count. */
+.inv-mats { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-6); }
+.inv-mats.is-centre { justify-content: center; }
+.inv-mat { display: grid; grid-template-columns: auto auto; align-items: center; justify-content: start; gap: 0 var(--sp-2); }
+.inv-mat-art { grid-row: span 2; display: grid; place-items: center; padding: 0; }
+.inv-mat-art img { width: var(--sp-8); height: var(--sp-8); object-fit: contain; filter: drop-shadow(0 0 6px color-mix(in oklab, var(--spotlight) 35%, transparent)); transition: filter var(--dur) var(--ease); }
+.inv-mat-art:is(:hover, :focus-visible) img { filter: drop-shadow(0 0 8px color-mix(in oklab, var(--spotlight) 55%, transparent)); }
+.inv-mat.is-missing .inv-mat-art img { filter: var(--missing-soft); opacity: var(--missing-soft-opacity); }
+.inv-mat-name { font-size: var(--fs-xs); color: var(--ink-2); }
+.inv-mat-n { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-sm); font-weight: 600; color: var(--ink-strong); }
+.inv-mat-n i { font-style: normal; font-size: var(--fs-xs); font-weight: 400; color: var(--muted); }
+.inv-mat.is-missing .inv-mat-n { color: var(--muted); }
 .inv-levels { display: grid; gap: var(--sp-3); padding-top: var(--sp-3); border-top: 1px solid var(--inv-line); }
+.is-tools .inv-levels { padding-top: var(--sp-1); border-top: 0; }
 .inv-level { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: var(--sp-1) var(--sp-3); }
 .inv-level img { grid-row: span 2; width: var(--sp-12); height: var(--sp-12); object-fit: contain; }
 .inv-level img.is-missing { filter: var(--missing-soft); opacity: var(--missing-soft-opacity); }
@@ -1597,10 +1625,22 @@ kbd {
 .inv-plate:not(.is-missing) .inv-plate-name { color: var(--ink); }
 .inv-plate-v { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-md); font-weight: 700; color: var(--ink-strong); }
 .inv-plate-v.is-none { font-family: var(--font-body); font-size: var(--fs-xs); font-weight: 400; color: var(--muted); }
+/* The things' plates (design/43, 5 A): the same plate, a step narrower on the purse's, the Relics'
+   and the Mementos' shelves; in Free mode what comes in numbers keeps its − N + under the name,
+   so only the picture is a button. */
+.inv-plates { list-style: none; margin: 0; padding: 0; }
+.inv-plates.is-sm { grid-template-columns: repeat(auto-fill, minmax(calc(var(--sp-16) + var(--sp-6)), 1fr)); }
+button.inv-plate-art { padding: 0; }
+.inv-plate-v .inv-step { justify-content: center; }
 /* The grids: one fixed square per cell, so every row lines up. */
 .inv-sub { display: flex; align-items: center; gap: var(--sp-2); margin: var(--sp-2) 0 0; font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; color: var(--label); }
 .inv-sub::before { content: ''; width: var(--sp-2); height: var(--sp-2); transform: rotate(45deg); background: var(--c); }
 .inv-sub b { color: var(--ink-2); }
+.inv-sub i { font-style: normal; font-weight: 400; color: var(--muted); }
+/* The two Tools a wish lends (design/43, 4 A): apart, after the colours, with a hollow diamond. */
+.inv-sub.is-out { margin-top: var(--sp-4); }
+.inv-sub.is-out::before { background: none; border: 1px solid var(--label); }
+.inv-out-note { margin: calc(var(--sp-1) * -1) 0 0; font-size: var(--fs-xs); color: var(--muted); }
 .inv-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, calc(var(--sp-12) + var(--sp-2))); gap: var(--sp-2); }
 .inv-grid > li { display: grid; justify-items: center; gap: var(--sp-half); }
 .inv-cell {
@@ -1608,9 +1648,7 @@ kbd {
   border: 1px solid transparent; background: none; cursor: pointer; transition: border-color var(--dur) var(--ease), background-color var(--dur) var(--ease);
 }
 .inv-cell img { position: relative; z-index: 1; width: var(--sp-8); height: var(--sp-8); object-fit: contain; transition: filter var(--dur) var(--ease); }
-.inv-cell:not(.is-slot) img { width: calc(var(--sp-8) + var(--sp-2)); height: calc(var(--sp-8) + var(--sp-2)); }
 .inv-cell.is-missing img { filter: var(--missing-soft); opacity: var(--missing-soft-opacity); }
-.inv-cell:not(.is-missing):not(.is-slot) { background: radial-gradient(closest-side, color-mix(in oklab, var(--spotlight) 22%, transparent), transparent); }
 .inv-cell:not(.is-missing) img { filter: drop-shadow(0 0 6px color-mix(in oklab, var(--spotlight) 40%, transparent)); }
 .inv-cell::after {
   content: ''; position: absolute; left: 50%; bottom: calc(var(--sp-2) * -1); width: var(--diamond); height: var(--diamond);
@@ -1622,23 +1660,31 @@ kbd {
 .inv-cell:is(:hover, :focus-visible) img { filter: drop-shadow(0 0 6px color-mix(in oklab, var(--spotlight) 45%, transparent)); }
 .inv-cell.is-missing:is(:hover, :focus-visible) img { filter: grayscale(1) brightness(0.8); }
 /* The one whose text is open needs no frame: the text under its shelf says it (Albert: the white square was too much). */
-/* A Tool on its slot: the Crest screen's diamond in the slot's colour; lacking it, the game's locked slot: solid grey with its pale rim. */
+/* A Tool on its slot: the Crest screen's diamond in the slot's colour. Lacking it, the slot hollow
+   in its own colour and the picture a faint grey (design/43, 3 A; it was the game's grey locked
+   slot, design/09, B, which on a New Game made the three colours one grey wall). */
 .inv-cell.is-slot::before {
   content: ''; position: absolute; inset: calc(var(--sp-2) + var(--sp-half)); transform: rotate(45deg);
   border: 1.5px solid var(--c); background: color-mix(in oklab, var(--c) 8%, var(--scene-bg));
 }
-.inv-cell.is-slot.is-missing::before { border: 1px solid var(--slot-locked-rim); background: color-mix(in oklab, var(--slot-locked) 45%, var(--scene-bg)); }
-/* On the grey slot the picture a touch brighter than elsewhere, so it still reads (design/09-locked-tool-variants.html, B). */
-.inv-cell.is-slot.is-missing img { filter: grayscale(1) brightness(0.75); opacity: 0.6; }
+.inv-cell.is-slot.is-missing::before { border: 1px solid color-mix(in oklab, var(--c) 55%, transparent); background: var(--scene-bg); }
+.inv-cell.is-slot.is-missing img { filter: grayscale(1) brightness(0.85); opacity: 0.42; }
+/* A Tool and its upgrade on one slot (design/43, 4 A): two pips under it, had and upgraded. */
+.inv-grid > li.is-twin { position: relative; }
+.is-twin .inv-cell::after { content: none; }
+.inv-pips { position: absolute; left: 50%; top: calc(var(--sp-12) + var(--sp-2) + var(--sp-1)); transform: translateX(-50%); display: flex; gap: var(--sp-1); }
+.inv-pips i { width: var(--diamond); height: var(--diamond); transform: rotate(45deg); border: 1px solid var(--accent-line); }
+.inv-pips i.is-on { background: var(--accent); border-color: var(--accent); box-shadow: var(--glow); }
 /* Free mode's marks: All · None on a shelf's head, and − N + under a counted item. */
 .inv-all { display: inline-flex; align-items: baseline; gap: var(--sp-2); margin-left: auto; padding-left: var(--sp-3); order: 3; font-family: var(--font-body); font-size: var(--fs-xs); font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--muted); }
 .inv-all .text-btn { font-size: var(--fs-xs); min-height: 0; }
 .inv-h:has(.inv-all)::after { order: 2; }
-.inv-grid.is-items { grid-template-columns: repeat(auto-fill, calc(var(--sp-16) + var(--sp-6))); }
 .inv-step { display: inline-flex; align-items: center; gap: var(--sp-half); }
 .inv-step b { min-width: var(--sp-6); text-align: center; font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-sm); color: var(--ink-strong); }
 .inv-step .icon-btn { width: var(--sp-8); height: var(--sp-8); }
-.inv-count { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-2xs); color: var(--ink-2); }
+/* What Hornet carries, under both columns and across the width (design/43, 1 A): the purse and
+   the items, then the Relics and the Mementos. */
+.inv-bag { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-8) var(--sp-12); align-items: start; margin-top: var(--sp-12); padding-top: var(--sp-8); border-top: 1px solid var(--inv-line); }
 /* The purse (design/29-inventory-variants.html, A): each currency a figure with its picture, a bar
    for the Shell Shards' cap, then what breaks into it and the sum. */
 .inv-two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-6); }
@@ -1663,7 +1709,8 @@ kbd {
 .inv-not { margin: 0; font-family: var(--font-num); font-size: var(--fs-2xs); letter-spacing: var(--track-label); text-transform: uppercase; color: var(--muted); }
 .inv-desc { margin: 0; font-size: var(--fs-sm); line-height: 1.55; color: var(--ink-2); text-wrap: pretty; }
 @media (max-width: 899px) {
-  .inv-body { grid-template-columns: minmax(0, 1fr); gap: var(--sp-8); }
+  .inv-body, .inv-bag { grid-template-columns: minmax(0, 1fr); gap: var(--sp-8); }
+  .inv-bag { margin-top: var(--sp-8); }
 }
 @media (max-width: 599px) {
   .inv-two { grid-template-columns: minmax(0, 1fr); }

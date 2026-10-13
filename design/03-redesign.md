@@ -40,7 +40,7 @@ the work up reads it first, then the step it's on.
 | 1 | **The shell**: header, screen bar (desktop and phone), the screen's frame and title, footer and About, the atmosphere | **Built** (28 Sep) | [`04-shell-variants.html`](04-shell-variants.html) |
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html` |
-| 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html` |
+| 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight and the leftovers 13 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct) | [`12-map-variants.html`](12-map-variants.html) |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds) | [`15-journal-variants.html`](15-journal-variants.html) |
@@ -487,12 +487,62 @@ Game's, those moved by hand stay, with a notice; B kept as they were).
 - Progress counts in Free mode from the start (0% on a New Game), its boxes always there.
 - `saves.migrateFree` moves an older visit's marks once, on load, wherever Free mode's slot is (the
   live keys or its copy while a save is active; a save's keys are never touched). The notice
-  («Novedad», `pharloom.freeNote`) shows on the Inventory and Progress until «Entendido».
+  («Novedad», `pharloom.freeNote`) showed on the Inventory and Progress until «Entendido»; removed on
+  13 October 2026 at Albert's request (no «New» notices), the migration now silent.
 - Plain fixes: «Todo al máximo» marks everything (100%) instead of clearing the marks; «Partida nueva»
   (`PROFILE_NEW_GAME`) instead of «Hornet al empezar», and a New Game's Hunter is at evolution 1 with no
   Vesticrest; Progress lets you mark without going to the Inventory first; the Map's first mark no longer
   starts from «everything but the pieces»; on a phone «Empezar desde» takes its own line; the Crest screen
   on «Lo que tengo» with no Tool marked says so, with the way to the Inventory.
+
+### Third round: the whole screen, off and on (13 October 2026)
+
+Albert asked how to reorganise the Inventory now that all its content is in, and how each part
+should look when it's off (not had yet) and on. Looked at over Free mode (a New Game, everything
+marked) and three real saves (an Act 1 restore point at 10%, an Act 2 one at 55%, user1 at 100%),
+at 1440 and 390, and against the sibling's sheet with a save and in Free mode. What was weak:
+
+1. A 100% save showed six grey Tools: the base of the three upgraded ones, Shell Satchel's twin,
+   and Snare Setter and Needle Phial, which a wish lends and takes back. Fifty-seven cells for 51
+   points.
+2. Items was a bag of unnamed icons (loose shards, materials, key items, Old Hearts, melodies,
+   fleas): «0/4» under a faint picture says nothing until you tap it.
+3. The right column ran about 350 px past the left; on a phone the screen was about 5,500 px.
+4. On a New Game the Tools were 57 identical grey diamonds (the locked slot): the three colours
+   gone.
+5. The colour rows and Items had no maximum; the Crests said 0/6 with the Hunter Crest lit.
+
+The options (`43-inventory-round3-variants.html`, the real shell and data over the five states,
+kept out of the repo): 1 the order (**A** each thing beside what it feeds, two columns and a band
+under both; B as it was; C three tabs, Hornet · Blasón · Objetos); 2 the heads (**A** n/max
+everywhere and the rule as a gauge; B the count only; C a figure at the end); 3 a Tool you lack
+(**A** the slot hollow in its colour; B the grey locked slot as it was; C a dark silhouette
+rimmed in the colour); 4 the Tools that aren't a point (**A** one slot per point, the lent two
+apart; B 57 as it was; C 51 without the lent two); 5 the things (**A** plates with their name; B
+icons as they were; C rows); 6 what you lack in a save (**A** faint, as it was; B folded when a
+shelf is empty; C only what you have, with a switch).
+
+**Decision: A in all six** (13 October 2026), built in `js/app-game.js` and `css/app.css`:
+- Left, Hornet: the Needle with the Pale Oil under it; the masks with the loose Mask Shards under
+  them and the silk with the loose Spool Fragments (the game's piece lit up to what you hold, «four
+  make a mask», «two make a spool»); the Silk Hearts; the Silk Skills; the abilities. Right, her
+  equipment: the Crests with the Memory Lockets, then the Tools with the Kit, the Pouch and the
+  Craftmetal on top. Under both (`.inv-bag`): the purse and the items, then the Relics and the
+  Mementos. A material shows as a small picture with its count (`mat`), − N + in Free mode.
+- Every head counts n/max and its rule is a gauge in bone (`.inv-h.is-gauge`, `--f`); complete,
+  the rule glows and its diamond fills. The colour rows say n/max of their points; Items counts
+  the Everbloom, Farsight, Journal, Old Hearts and melodies (the fleas have their own count); the
+  Crests count the Hunter Crest too (of 7), since it's drawn lit (the 100% counts 6: Progress
+  still does).
+- A Tool you lack: its slot hollow in its own colour, the picture faint grey (it was design/09's
+  grey locked slot).
+- One slot per point (`CO.COUNTED`): a Tool and its upgrade share one, showing the one you have
+  with two pips (had, upgraded); Shell Satchel shows in Dead Bug's Purse's slot. In Free mode a
+  tap on a shared slot goes none, had, upgraded (`invTwin`), as a save keeps them. Snare Setter
+  and Needle Phial sit after the colours under «No cuentan para el 100 %».
+- The Crests, the items, what's in the purse, the Relics and the Mementos are plates as the Silk
+  Skills': picture, pip, name, then the count or «Sin conseguir» (`invNotFound`).
+- «All · None» on Items now touches only its shelf (it marked every piece of the game before).
 
 ## Step 5 · Progress
 
