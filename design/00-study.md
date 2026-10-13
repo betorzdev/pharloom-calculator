@@ -1615,6 +1615,13 @@ works (the boxes, the counts and the 100% follow), but its top said «no save, t
 says what it counts. Its 40% with four Tools marked is the Inventory's ladders, which Free mode
 starts at the top («Everything maxed»): the same on the Inventory, so left as it is.
 
+**Free mode's start** (13 October, design/03-redesign.md step 4). Free mode is now a New Game marked by
+hand: the ladders and the Hunter's evolution are its marks (in `pharloom.progress`, as a save keeps
+them), so Progress counts what's marked (0% to start; the Act 2 save's marks read 15%, not 40%). The
+Crest screen's build is apart and tries with everything, or with «What I have». An older visit's marks
+are moved once (`saves.migrateFree`, with unit tests): a level moved by hand stays, one still at the top
+goes to a New Game's. `check-pack` still matches all 72 saves: a save never goes through it.
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).

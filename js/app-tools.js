@@ -6,12 +6,14 @@
    with its numbers.
    In a save, the build is what Hornet wears in the game (js/savefile.js, buildOf) at its levels,
    and it's read, not changed, as the Hollow Knight site does: to try builds there's Free mode,
-   where everything is at hand and the build is kept in pharloom.build. Shares SS.app with
-   js/app.js (see there). */
+   where the build is kept in pharloom.build and tried with «Try with» (design/42, 2 A): Everything
+   (every Tool, Crest and Skill at hand, its own levels, the top to start with) or What I have
+   (your game marked by hand in the Inventory: its levels, the Hunter's evolution, the Vesticrest
+   Eva would give, and only what you've marked). Shares SS.app with js/app.js (see there). */
 (() => {
   'use strict';
   const SS = globalThis.SS;
-  const D = SS.data, E = SS.engine;
+  const D = SS.data, E = SS.engine, CO = SS.collectibles;
   const App = SS.app;
   const { t, pick, esc, NT, ART, brackets, screenHead, actions, load, save, render, toast } = App;
   const C = SS.codec, S = SS.saves;
@@ -43,6 +45,8 @@
     try { store = localStorage; } catch (e) { store = null; }
     if (linked) {
       if (store && App.activeSlot() !== S.FREE && S.select(store, S.FREE)) toast(t('ctLinkFree'));
+      // Another build's link is shown as it is, not cut down to what you've marked (a reload's own is left as it was).
+      if (App.prefs.ctTry === 'mine' && C.encode(linked) !== C.encode(freeBuild())) { App.prefs.ctTry = 'all'; App.savePrefs(); }
       setFree(linked);
       return;
     }
@@ -54,14 +58,17 @@
   function current() {
     const g = App.game();
     if (!g) {
-      // Free mode with marks (the Inventory): what you don't have isn't worn.
-      const st = freeBuild(), have = App.freeGame ? App.freeGame() : null;
-      if (have) {
-        st.tools = st.tools.filter((id) => have.tools.includes(id));
-        if (st.skill && !have.skills.includes(st.skill)) st.skill = null;
-        if (st.crest !== 'hunter' && !have.crests.includes(st.crest)) st.crest = 'hunter';
-      }
-      return { st, locked: false, have };
+      const st = freeBuild();
+      if (App.prefs.ctTry !== 'mine') return { st, locked: false, have: null };
+      // What I have: your game's levels and evolution, the Vesticrest Eva would give it, and what you don't have isn't worn.
+      const have = App.freeGame();
+      const lockets = have.pieces.filter((i) => CO.PIECES[i][0] === 'memory-locket').length;
+      Object.assign(st, { needle: have.needle, kit: have.kit, pouch: have.pouch, masks: have.masks, spools: have.spools, hearts: have.hearts,
+        hunterStage: (have.build && have.build.hunterStage) || 1, vest: E.vestOf(have.crests, lockets) });
+      st.tools = st.tools.filter((id) => have.tools.includes(id));
+      if (st.skill && !have.skills.includes(st.skill)) st.skill = null;
+      if (st.crest !== 'hunter' && !have.crests.includes(st.crest)) st.crest = 'hunter';
+      return { st: E.normalize(st), locked: false, have };
     }
     const b = g.build || {};
     return { locked: true, have: g, st: E.normalize({ ...b, needle: g.needle, kit: g.kit, pouch: g.pouch, masks: g.masks, spools: g.spools, hearts: g.hearts,
@@ -164,8 +171,8 @@
   /* ── The Tool list, by colour, and the Silk Skills, each on its slot as the Inventory draws it
      (js/app-game.js, cell: the diamond in the slot's colour), filled and lit when worn: a tap puts
      one on or takes it off (Free mode) and describes it below; in a save it's read. Only what you
-     have, as the game's own pane lists them: a save's, or Free mode's marks (everything without
-     them); what you lack is the Inventory's and Progress's. A colour with none is left out. ── */
+     have, as the game's own pane lists them: a save's, or in Free mode everything (on «What I have»,
+     the Inventory's marks); what you lack is the Inventory's and Progress's. A colour with none is left out. ── */
   function toolList(st, locked, have) {
     const had = (list, id, on) => on || !have || have[list].includes(id);
     const btn = (kind, x, on) => {
@@ -179,7 +186,9 @@
     const rows = COLORS.map((c) => row(t('ct_' + c), D.TOOLS.filter((x) => x.color === c && had('tools', x.id, st.tools.includes(x.id)))
       .map((x) => btn(c, x, st.tools.includes(x.id))).join(''))).join('');
     const skills = row(t('cat_skills'), D.SKILLS.filter((x) => had('skills', x.id, st.skill === x.id)).map((x) => btn('skill', x, st.skill === x.id)).join(''));
-    return `<div class="ct-shelf">${rows}${skills}</div>`;
+    // «What I have» with no Tool marked yet: says so, and where they're marked.
+    const none = have && !locked && !have.tools.length ? `<p class="ct-none">${esc(t('ctNoTools'))} <a class="text-btn" href="${App.here(App.hashFor('game'))}" data-act="view" data-value="game">${esc(t('navGame'))}</a></p>` : '';
+    return `<div class="ct-shelf">${none}${rows}${skills}</div>`;
   }
 
   /* ── The figures ── */
@@ -269,7 +278,12 @@
     const r = E.compute(st);
     shown = { st, r };
     const share = `<button type="button" class="btn ct-share" data-act="ctShare">${esc(t('ctShare'))}</button>`;
-    sec.innerHTML = `<div class="ct">${brackets}${screenHead(esc(t('navTools')), share)}
+    // Free mode: «Try with» Everything or What I have (design/42, 2 A).
+    const mine = !locked && App.prefs.ctTry === 'mine';
+    const tryWith = locked ? '' : `<div class="ct-try"><span class="lbl">${esc(t('ctTry'))}</span><div class="seg sm" role="group" aria-label="${esc(t('ctTry'))}">
+        <button type="button" data-act="ctTry" data-value="all" aria-pressed="${!mine}">${esc(t('ctTryAll'))}</button>
+        <button type="button" data-act="ctTry" data-value="mine" aria-pressed="${mine}">${esc(t('ctTryMine'))}</button></div></div>`;
+    sec.innerHTML = `<div class="ct">${brackets}${screenHead(esc(t('navTools')), tryWith + share)}
       ${band(r, st)}${levels(st, locked)}
       <div class="ct-body">
         <div class="ct-side">${crestHtml(st, r, locked, have)}</div>
@@ -312,18 +326,18 @@
     u.hash = C.encode(st) + (App.prefs.lang !== App.PAGE_LANG ? '&lang=' + App.prefs.lang : '') + '&view=tools';
     return u.href;
   }
-  /* Start from (the Inventory, Free mode): Hornet as the game starts her (every ladder at the
-     bottom, nothing had but the Hunter Crest, so nothing equipped), or everything (the marks
-     cleared: Free mode's everything-unlocked sheet). */
-  const PRESET = { base: { needle: 0, kit: 0, pouch: 0, masks: 0, spools: 0, hearts: 0 }, max: { needle: 4, kit: 4, pouch: 4, masks: 5, spools: 9, hearts: 3 } };
-  const BASE_GAME = { tools: [], crests: ['hunter'], skills: [], arts: [], everbloom: false, pieces: [], purse: {}, rosaries: 0, shards: 0, farsight: false, hasJournal: false, extras: [] };
-  // Free mode's build changed from the Inventory (js/app-game.js): a mark taken off takes it off Hornet too.
-  App.editFree = change;
+  /* Start from (the Inventory, Free mode): a New Game (Hornet as the game starts her: every ladder
+     at the bottom, the Hunter Crest unevolved and nothing else), or everything marked, every
+     ladder at the top (a game at 100%). Your game's marks only: the build tried here is apart. */
   Object.assign(actions, {
     ctPreset(node) {
-      const base = node.dataset.value === 'base';
-      App.setFreeGame(base ? BASE_GAME : null);
-      change((st) => { Object.assign(st, PRESET[node.dataset.value] || {}); });
+      App.setFreeGame(node.dataset.value === 'base' ? App.newGame() : App.fullGame());
+      render();
+    },
+    ctTry(node) {
+      App.prefs.ctTry = node.dataset.value === 'mine' ? 'mine' : 'all';
+      App.savePrefs();
+      render();
     },
     ctShare() {
       const link = shareLink();
@@ -332,7 +346,16 @@
       try { navigator.clipboard.writeText(link).then(done, () => toast(link)); } catch (e) { toast(link); }
     },
     ctCrest(node) { change((st) => { st.crest = node.dataset.value; if (!D.CRESTS.find((c) => c.id === st.crest).slots.skill) st.skill = null; }); },
-    ctLevel(node) { change((st) => { st[node.dataset.key] = Number(node.dataset.value); }); },
+    ctLevel(node) {
+      const key = node.dataset.key, v = Number(node.dataset.value);
+      // On «What I have» the levels and the evolution are your game's: they go into the marks.
+      if (!App.game() && App.prefs.ctTry === 'mine' && App.freeMark) {
+        if (key === 'hunterStage') App.freeMark((m) => { m.build = { ...(m.build || {}), hunterStage: Math.max(1, Math.min(3, v)) }; });
+        else if (S.LADDER_TOP[key] != null) App.freeMark((m) => { m[key] = Math.max(0, Math.min(S.LADDER_TOP[key], v)); });
+        return;
+      }
+      change((st) => { st[key] = v; });
+    },
     ctToggle(node) {
       const k = node.dataset.value;
       if (App.game()) { moment[k] = !moment[k]; render(); return; }
@@ -349,7 +372,7 @@
       change((st) => {
         if (st.tools.includes(id)) { st.tools = st.tools.filter((x) => x !== id); return; }
         // Room in its colour: the Crest's slots, open and locked, and the Vesticrest's.
-        const c = TOOL.get(id).color, s = E.compute(st).slots[c];
+        const c = TOOL.get(id).color, s = E.compute(current().st).slots[c];
         const room = s.open + s.locked + s.extra;
         if (s.used >= room) { toast(t('ctFull', { c: t('ct_' + c) })); return; }
         st.tools = [...st.tools, id];

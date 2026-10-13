@@ -469,7 +469,7 @@
   }
   App.mapHas = (key) => all().list.some((m) => m.key === key);
 
-  /* Which marks show: the layer on, and in a save (or Free mode with marks) not had yet; then the
+  /* Which marks show: the layer on, and in a save (or Free mode's marks) not had yet; then the
      Act and "reach now" filters. The pins show open or not; the Journal's and the save's own
      layers need a save. */
   function passes(m, g, own) {
@@ -1390,14 +1390,10 @@
     },
     mapFull() { setFull(!full); },
     mapPick() { pick1(''); },
-    // Free mode: a piece marked had or not from its card (the Inventory's marks). With no marks
-    // yet, the map's loose pieces start as missing, the rest as had (Free mode's everything).
+    // Free mode: a piece marked had or not from its card (the Inventory's marks, a New Game until you mark).
     mapMark(node) {
-      const i = Number(node.dataset.value), fresh = !App.freeGame();
-      App.freeMark((m) => {
-        if (fresh) m.pieces = m.pieces.filter((j) => !NEAR_KINDS.includes(CO.PIECES[j][0]));
-        m.pieces = m.pieces.includes(i) ? m.pieces.filter((j) => j !== i) : [...m.pieces, i];
-      });
+      const i = Number(node.dataset.value);
+      App.freeMark((m) => { m.pieces = m.pieces.includes(i) ? m.pieces.filter((j) => j !== i) : [...m.pieces, i]; });
     },
     // A gauntlet's card: to Combat, that gauntlet chosen; a boss's: that boss.
     mapFight(node) { prefs.ftMode = 'gauntlets'; prefs.gauntlet = node.dataset.value; savePrefs(); App.go('fight'); },

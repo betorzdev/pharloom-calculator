@@ -163,3 +163,72 @@ test('a sync keeps what the game was before it changed, for "Since last time"', 
   assert.equal(S.sync(s, 1, at(3, 400)), 'game');
   assert.deepEqual(JSON.parse(s.getItem('pharloom.prev')), { snap: { 'pharloom.build': 'v=1&nail=2', 'pharloom.owned': '[]' }, saved: 300 });
 });
+
+/* Free mode's marks from before its ladders were marks (design/03-redesign.md, step 4): the levels
+   lived in the free build, at the top unless moved by hand. */
+const OLD_OWNED = JSON.stringify({ tools: ['threefold-pin', 'cogfly'], crests: ['hunter'], skills: ['silkspear'], arts: ['swift-step'] });
+const OLD_PROGRESS = JSON.stringify({ everbloom: false, pieces: ['a', 'b'], purse: {}, rosaries: 12, shards: 0, farsight: false, hasJournal: true, extras: [] });
+const OLD_BUILD = JSON.stringify({ crest: 'hunter', hunterStage: 3, needle: 2, kit: 4, pouch: 4, masks: 5, spools: 3, hearts: 3, tools: ['cogfly'], skill: 'silkspear' });
+
+test('an older visit\'s marks: the levels moved by hand come across, the ones left at the top go to a New Game\'s', () => {
+  const s = fakeStore({ 'pharloom.owned': OLD_OWNED, 'pharloom.progress': OLD_PROGRESS, 'pharloom.build': OLD_BUILD });
+  assert.equal(S.migrateFree(s), true);
+  const p = JSON.parse(s.getItem('pharloom.progress'));
+  assert.deepEqual([p.needle, p.kit, p.pouch, p.masks, p.spools, p.hearts], [2, 0, 0, 0, 3, 0]);
+  assert.deepEqual(p.build, { hunterStage: 1 });
+  // What was marked is kept as it was; the build and the marks of what you own aren't touched.
+  assert.deepEqual(p.pieces, ['a', 'b']);
+  assert.equal(p.rosaries, 12);
+  assert.equal(s.getItem('pharloom.owned'), OLD_OWNED);
+  assert.equal(s.getItem('pharloom.build'), OLD_BUILD);
+  // Once is enough: the second time there's nothing to move.
+  const once = s.getItem('pharloom.progress');
+  assert.equal(S.migrateFree(s), false);
+  assert.equal(s.getItem('pharloom.progress'), once);
+});
+
+test('an older visit with marks and no build kept: every level at a New Game\'s', () => {
+  const s = fakeStore({ 'pharloom.owned': OLD_OWNED });
+  assert.equal(S.migrateFree(s), true);
+  const p = JSON.parse(s.getItem('pharloom.progress'));
+  assert.deepEqual([p.needle, p.kit, p.pouch, p.masks, p.spools, p.hearts, p.build.hunterStage], [0, 0, 0, 0, 0, 0, 1]);
+});
+
+test('a Hunter evolution moved by hand comes across; out-of-range levels and a corrupt build count as none', () => {
+  const s = fakeStore({ 'pharloom.owned': OLD_OWNED, 'pharloom.build': JSON.stringify({ hunterStage: 2, needle: 9, masks: -1 }) });
+  S.migrateFree(s);
+  const p = JSON.parse(s.getItem('pharloom.progress'));
+  assert.deepEqual([p.needle, p.masks, p.build.hunterStage], [0, 0, 2]);
+  const t = fakeStore({ 'pharloom.owned': OLD_OWNED, 'pharloom.build': '{not json' });
+  assert.equal(S.migrateFree(t), true);
+  assert.equal(JSON.parse(t.getItem('pharloom.progress')).needle, 0);
+});
+
+test('free mode with no marks, or marks with their levels, isn\'t migrated', () => {
+  const none = fakeStore({ 'pharloom.build': OLD_BUILD });
+  assert.equal(S.migrateFree(none), false);
+  assert.equal(none.getItem('pharloom.progress'), null);
+  const now = JSON.stringify({ ...JSON.parse(OLD_PROGRESS), needle: 1, kit: 0, pouch: 0, masks: 2, spools: 0, hearts: 1 });
+  const s = fakeStore({ 'pharloom.owned': OLD_OWNED, 'pharloom.progress': now, 'pharloom.build': OLD_BUILD });
+  assert.equal(S.migrateFree(s), false);
+  assert.equal(s.getItem('pharloom.progress'), now);
+});
+
+test('with a save active, Free mode\'s copy is migrated and the save is left alone', () => {
+  const save = { 'pharloom.owned': '{"tools":["cogfly"]}', 'pharloom.progress': '{"pieces":[]}', 'pharloom.meta': '{}' };
+  const s = fakeStore({ ...save, 'pharloom.saves': JSON.stringify({ active: 2, slots: { 0: { 'pharloom.owned': OLD_OWNED, 'pharloom.build': OLD_BUILD } } }) });
+  assert.equal(S.migrateFree(s), true);
+  // The save's own keys (live, since it's the active one) don't change, ladders or not.
+  for (const [k, v] of Object.entries(save)) assert.equal(s.getItem(k), v);
+  assert.equal(JSON.parse(S.read(s).slots[S.FREE]['pharloom.progress']).needle, 2);
+  // Going back to Free mode brings the migrated marks in, and there's nothing left to move.
+  S.select(s, S.FREE);
+  assert.equal(JSON.parse(s.getItem('pharloom.progress')).spools, 3);
+  assert.equal(S.migrateFree(s), false);
+});
+
+test('a save in a slot that isn\'t active isn\'t migrated, even without ladders', () => {
+  const s = fakeStore({ 'pharloom.saves': JSON.stringify({ active: 0, slots: { 1: { 'pharloom.owned': OLD_OWNED } } }) });
+  assert.equal(S.migrateFree(s), false);
+  assert.equal(S.read(s).slots[1]['pharloom.progress'], undefined);
+});

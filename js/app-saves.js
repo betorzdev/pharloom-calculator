@@ -628,23 +628,63 @@
   const activeSlot = () => (store ? S.read(store).active : S.FREE);
   App.game = () => (store && activeSlot() ? F.gameOf(S.snapshot(store)) : null);
   App.gameMeta = () => (store && activeSlot() ? F.metaOf(S.snapshot(store)) : null);
-  /* Free mode's own marks (design/03-redesign.md, step 4): what you set as had in the Inventory,
-     in the same keys a save uses (slot 0's, so they stay with Free mode): pharloom.owned for the
-     Tools, Crests, Silk Skills and abilities, pharloom.progress for the Everbloom, the pieces, the purse (the held counts and the two currencies), the Farsight, the Journal and the Relics and Mementos.
-     No marks yet is null: everything, as Free mode always was. It only reaches the Inventory and
-     the Crest screen; App.game() stays null, so every other screen is Free mode's. */
-  const FREE_KEYS = ['pharloom.owned', 'pharloom.progress'];
-  App.freeGame = () => (store && activeSlot() === S.FREE && store.getItem('pharloom.owned') != null ? F.gameOf(S.snapshot(store)) : null);
-  App.setFreeGame = (g) => {
-    if (!store || activeSlot() !== S.FREE) return;
-    try {
-      if (!g) { for (const k of FREE_KEYS) store.removeItem(k); return; }
-      store.setItem('pharloom.owned', JSON.stringify({ tools: g.tools, crests: g.crests, skills: g.skills, arts: g.arts }));
-      store.setItem('pharloom.progress', JSON.stringify({ everbloom: !!g.everbloom, pieces: g.pieces.map((i) => F.pieceKey(SS.collectibles.PIECES[i])),
-        purse: g.purse || {}, rosaries: g.rosaries || 0, shards: g.shards || 0, farsight: !!g.farsight, hasJournal: !!g.hasJournal,
-        extras: (g.extras || []).map((i) => F.pieceKey(SS.spots.EXTRAS[i])) }));
-    } catch (e) { /* no storage: the marks aren't kept */ }
+  /* Free mode's own marks (design/03-redesign.md, step 4): your game, marked by hand, in the same
+     keys a save uses (slot 0's, so they stay with Free mode): pharloom.owned for the Tools, Crests,
+     Silk Skills and abilities, pharloom.progress for the ladders (the Needle, the Kit, the Pouch,
+     masks, silk, Silk Hearts), the Hunter's evolution (build.hunterStage), the Everbloom, the
+     pieces, the purse (the held counts and the two currencies), the Farsight, the Journal and the
+     Relics and Mementos. With nothing marked it's a New Game (design/42, 1 A): Hornet as the game
+     starts her, the Hunter Crest and nothing else. App.game() stays null, so the screens that
+     read only a save are Free mode's; the Inventory, Progress, the Map and the Crest screen's
+     «What I have» read this. The Crest screen's own build (pharloom.build) is apart: to try. */
+  const NEW_GAME = Object.freeze({ tools: [], crests: ['hunter'], skills: [], arts: [], needle: 0, kit: 0, pouch: 0, masks: 0, spools: 0, hearts: 0,
+    build: { hunterStage: 1 } });
+  let memFree;   // where the marks live while the page is open if the browser keeps nothing
+  const freeSnap = () => {
+    if (!store || memFree !== undefined) return memFree || null;
+    try { return store.getItem('pharloom.owned') != null ? S.snapshot(store) : null; } catch (e) { return null; }
   };
+  App.freeGame = () => {
+    if (activeSlot() !== S.FREE) return null;
+    const snap = freeSnap();
+    return snap ? F.gameOf(snap) : { ...F.gameOf({}), ...NEW_GAME };
+  };
+  App.newGame = () => ({ ...F.gameOf({}), ...NEW_GAME });
+  App.setFreeGame = (g) => {
+    if (activeSlot() !== S.FREE) return;
+    const int = (v, max) => Math.max(0, Math.min(max, Number.isInteger(v) ? v : 0));
+    const top = S.LADDER_TOP;
+    const stage = g && g.build && Number.isInteger(g.build.hunterStage) ? Math.max(1, Math.min(3, g.build.hunterStage)) : 1;
+    const snap = !g ? null : {
+      'pharloom.owned': JSON.stringify({ tools: g.tools, crests: g.crests, skills: g.skills, arts: g.arts }),
+      'pharloom.progress': JSON.stringify({ needle: int(g.needle, top.needle), kit: int(g.kit, top.kit), pouch: int(g.pouch, top.pouch),
+        masks: int(g.masks, top.masks), spools: int(g.spools, top.spools), hearts: int(g.hearts, top.hearts), build: { hunterStage: stage },
+        everbloom: !!g.everbloom, pieces: g.pieces.map((i) => F.pieceKey(SS.collectibles.PIECES[i])),
+        purse: g.purse || {}, rosaries: g.rosaries || 0, shards: g.shards || 0, farsight: !!g.farsight, hasJournal: !!g.hasJournal,
+        extras: (g.extras || []).map((i) => F.pieceKey(SS.spots.EXTRAS[i])) }),
+    };
+    if (!store || memFree !== undefined) { memFree = snap; return; }
+    try {
+      for (const k of ['pharloom.owned', 'pharloom.progress']) if (snap) store.setItem(k, snap[k]); else store.removeItem(k);
+    } catch (e) { memFree = snap; }
+  };
+  /* Free mode's marks from an older visit, when the ladders were the build's (js/saves.js
+     migrateFree, design/42, 4 A): moved over once, on load, and said once («Got it» on the
+     Inventory or Progress), by pharloom.freeNote, outside the slots. */
+  const NOTE_KEY = 'pharloom.freeNote';
+  if (store) {
+    try { if (S.migrateFree(store)) store.setItem(NOTE_KEY, '1'); } catch (e) { /* left as it was */ }
+  }
+  App.freeNote = () => {
+    if (!store || activeSlot() !== S.FREE) return false;
+    try { return store.getItem(NOTE_KEY) === '1'; } catch (e) { return false; }
+  };
+  actions.freeNoteOk = () => {
+    try { if (store) store.removeItem(NOTE_KEY); } catch (e) { /* it shows again next time */ }
+    render();
+  };
+  App.freeNoteHtml = () => (App.freeNote() ? `<div class="banner is-hint free-note"><span class="banner-tag lbl">${esc(t('freeNoteTag'))}</span>
+      <span class="banner-text">${esc(t('freeNote'))}</span><button type="button" class="btn" data-act="freeNoteOk">${esc(t('freeNoteOk'))}</button></div>` : '');
 
   /* ── Following the game ───────────────────────────────────────────────
      Only the slot you're in watches its file; another linked one catches up on entering it.

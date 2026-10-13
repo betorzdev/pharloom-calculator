@@ -37,7 +37,7 @@ only sits, placed straight under the tab. Click her and she binds.
 ### Saves
 
 Four saves, as the game's profile screen, and **Free mode** (nobody's game: where the site
-starts). A save only comes from the game's file: **Import from the game** opens a view that
+starts, a New Game you mark by hand, and builds to try). A save only comes from the game's file: **Import from the game** opens a view that
 says where each system keeps its saves (the folder to copy and how to paste it into the file
 picker) and takes the file by dragging it in or with the picker. It shows what it read (masks,
 Needle, time, completion, rosaries, the Act, the Journal, the Tools) before anything is written.
@@ -117,19 +117,22 @@ Hornet Statuettes and the Growstone (Steel Soul) under the shards. Below the ite
 does (Tools of 51); the Relics and Mementos aren't part of it. Tap anything to read the game's
 own text under its shelf.
 
-In **Free mode** everything on it is yours to set. On the left, tap a Needle, a mask, a bead of
+In **Free mode** it's your game, marked by hand, and it starts as the game does: a New Game,
+with the base Needle, five masks, nine silk and the Hunter Crest, nothing else. A line under the
+title says so. On the left, tap a Needle, a mask, a bead of
 silk, a Silk Heart or a level (tap the last one lit to take it back). On the right, tap a Tool,
 Crest, Silk Skill, ability, the Everbloom, the Farsight, the Journal, an Old Heart, a melody or a
 Memento to mark it had or not (its
 text opens under the shelf); each shelf has «All · None», and what comes in numbers (loose Mask
 Shards and Spool Fragments, Memory Lockets, Craftmetal, Pale Oil, fleas, what's in the purse, the
 Relics of each kind) has − N +. The Rosaries and Shell Shards are typed: Enter or leaving the field
-takes the figure, and the shards stop at what your Pouch holds. «Base
-Hornet» starts from nothing but the Hunter Crest; «Everything maxed» from everything. Until you
-mark something, Free mode has everything. What you mark reaches the Crest screen: only what you
-have can be put on, the rest shows as a silhouette, and taking a mark off something Hornet
-wears takes it off her. Combat fights with that build; the other screens stay Free mode's. In a
-save the Inventory shows what the game saved, and changes only as you play.
+takes the figure, and the shards stop at what your Pouch holds. «Start from»: «New Game» (the
+game's own words) takes it all back to the start; «Everything maxed» marks everything, every level
+at the top (a game at 100%). Progress counts what you mark, the Map leaves out what you have, and
+the Crest screen tries it on «What I have». A visit from before this (when the levels belonged to
+the Crest screen's build and started at the top) keeps the levels you moved and puts the ones still
+at the top back to a New Game's, and a notice on the Inventory and Progress says so once («Got it»).
+In a save the Inventory shows what the game saved, and changes only as you play.
 
 ### Crest
 
@@ -148,8 +151,8 @@ holding the Tool or Silk Skill worn (from a save, in the slot the game has it in
 Memory Locket has opened yet shows the game's grey locked frame (from a save, as the save says;
 in Free mode every slot is open), and the Vesticrest's slots sit on a row under the Crest. In Free mode a
 tap on a worn one there takes it off, and the others stay in their slots. ‹ › change the Crest. Beside it,
-the Tools and Silk Skills you have (as the game lists them; in Free mode, what the Inventory's
-marks say, or all of them), by colour, each on its slot as the Inventory draws it, the
+the Tools and Silk Skills you have (as the game lists them; in Free mode, all of them, or on «What
+I have» what the Inventory's marks say, with a line to the Inventory while no Tool is marked), by colour, each on its slot as the Inventory draws it, the
 slot filled and lit when it's worn: a tap puts one on or takes it off,
 and pointing at one (or at a slot) describes it underneath with the game's words and its numbers
 (damage per hit, uses at the Pouch's level, a full load, the shell shards to refill it; a Silk
@@ -159,7 +162,12 @@ The damage is the wiki's model: the weapon's damage at its level times (1 + the 
 modifiers, which add) rounded half to even, per hit; Tools scale with the Crafting Kit, the rest
 with the Needle; no player modifier reaches a Tool. In a save, the build is what Hornet wears in
 the game, at its levels, and it's read, not changed (the moment can still be switched): to try
-builds, Free mode, where the build is kept in this browser.
+builds, Free mode, where the build is kept in this browser. There «Try with» picks what it's tried
+with: **Everything** (every Tool, Crest and Silk Skill at hand, and the build's own levels, at the
+top to start with) or **What I have** (your game as marked in the Inventory: its levels, the
+Hunter's evolution, the Vesticrest's slots Eva would have given it for the Crests and Memory Lockets
+marked, and only the Tools, Crests and Skills you have). On «What I have» the levels set here are
+your game's, and Combat fights with that. A link with a build always opens on «Everything».
 
 The Architect and the Witch split their slashes (the Architect drills: 0.9× + 0.1× + 0.1× the
 Needle; both have their own down- and run-slashes), and the band shows all three attacks; the
@@ -440,8 +448,8 @@ against the benches, which fall by the game's own bench pins). What has no place
 shop's stock, a boss's arena) sits in its room's middle, and things on one point gather in a small
 grid around it. The map is drawn in SVG, so it stays sharp as you zoom.
 
-With a save the map shows only what you're missing; in Free mode, everything, as a guide (with
-things marked in the Inventory, what those marks say is missing). Tap any mark for its card: what
+With a save the map shows only what you're missing; in Free mode, what your marks say is missing
+(everything, as a guide, on a New Game). Tap any mark for its card: what
 it is, where, how it's had, and what it says of your game. A
 shop's says what of the 100% it still has for you, Shakra's which maps you lack, a Wishwall's or a
 wish giver's the wishes still open, a wish's place or thing which wish it's for, whether it's done
@@ -562,11 +570,11 @@ Opened, a category lists its things by Act: each with its picture, its name (a T
 slot's colour) and how to get it, its area on the right, and a pin that shows it on the Map. A thing
 just lying in a room says so («Found in the area: the pin shows where»).
 
-In **Free mode** with things marked in the Inventory, Progress counts from those marks and
-each missing row has a box to mark it here too; masks, silk, the Silk Hearts, the Needle, the
+In **Free mode** Progress counts what you mark, from a New Game (0% until you mark something),
+and each missing row has a box to mark it here too; masks, silk, the Silk Hearts, the Needle, the
 Kit and the Pouch follow what the Inventory sets, and their groups say so, with the way there. The
-line on top says it's Free mode, counting your marks, and that the road is the guide. With nothing
-marked, it's the whole list as a guide, and the road tab is «The roads to Acts 2 and 3».
+line on top says it's Free mode, counting your marks from a New Game, and that the road is the
+guide; the road tab is «The roads to Acts 2 and 3».
 
 The whole road, as the game's own rules have it (read from its files, not from a guide), in
 numbered steps, each with its count or a tick:

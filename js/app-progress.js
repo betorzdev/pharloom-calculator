@@ -203,7 +203,7 @@
     if (max > MAX_PIPS) return '<span class="pg-strip" aria-hidden="true"></span>';
     return `<span class="pg-strip pg-pips" aria-hidden="true">${Array.from({ length: max }, (_, i) => `<i class="${g && i < got ? 'is-on' : ''}"></i>`).join('')}</span>`;
   }
-  /* Free mode with marks (design/41, 6 A): the categories whose pieces follow the Inventory's
+  /* Free mode's marks (design/41, 6 A): the categories whose pieces follow the Inventory's
      ladders (masks, silk, the upgrades, the Needle, the Silk Hearts) have no box; their group says
      where they're set, with the way there. */
   const LADDER_CATS = ['masks', 'spools', 'upgrades', 'needle', 'hearts'];
@@ -699,14 +699,14 @@
 
 
 
-  /* Free mode's game for Progress: the Inventory's marks, and its ladders (masks, silk, Silk
-     Hearts, Needle, Kit, Pouch) from the free build, as the Inventory sets them: their pieces had
-     in order up to the build's level, so the lists and the counts agree. In Act 3, so nothing
-     reads as later. */
+  /* Free mode's game for Progress: the Inventory's marks, a New Game until you mark (design/42,
+     3 A), and its ladders (masks, silk, Silk Hearts, Needle, Kit, Pouch) as the Inventory sets
+     them: their pieces had in order up to the level, so the lists and the counts agree. In Act 3,
+     so nothing reads as later. */
   const LADDER = { 'mask-shard': (b) => 4 * b.masks, 'spool-fragment': (b) => 2 * b.spools, 'silk-heart': (b) => b.hearts,
     needle: (b) => b.needle, 'crafting-kit': (b) => b.kit, 'tool-pouch': (b) => b.pouch };
   function freeView(free) {
-    const b = App.currentBuild();
+    const b = free;
     const pieces = free.pieces.filter((i) => !LADDER[CO.PIECES[i][0]]);
     for (const [kind, n] of Object.entries(LADDER)) {
       CO.PIECES.forEach((p, i) => { if (p[0] === kind) pieces.push(i); });
@@ -729,8 +729,9 @@
   App.screens.progress = (sec) => {
     howN = 0;
     const own = App.game();
-    /* Free mode with marks counts from them (the Inventory's, js/app-saves.js App.freeGame), as a
-       game in Act 3 so nothing reads as later; its road stays the guide, as no save told it. */
+    /* Free mode counts its marks (the Inventory's or these boxes', js/app-saves.js App.freeGame:
+       0 % on a New Game), as a game in Act 3 so nothing reads as later; its road stays the guide,
+       as no save told it. */
     const free = own ? null : App.freeGame();
     const g = own || (free ? freeView(free) : null);
     marking = !!free;
@@ -822,7 +823,7 @@
     sec.innerHTML = `<div class="pg">${brackets}${screenHead(esc(t('navProgress')))}
         ${actsTop(own, next, c, sum)}
         ${tabs}
-        <div class="pg-panel" id="pg-panel" role="tabpanel" aria-labelledby="pg-tab-${tab}">${invite}${tab === 'act' ? act : hundredTab}</div>
+        <div class="pg-panel" id="pg-panel" role="tabpanel" aria-labelledby="pg-tab-${tab}">${own ? '' : App.freeNoteHtml()}${invite}${tab === 'act' ? act : hundredTab}</div>
       </div>`;
   };
 

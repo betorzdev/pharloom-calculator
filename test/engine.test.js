@@ -279,3 +279,17 @@ test('how fast: each Crest\'s slash interval from the game\'s own timings, fury,
   assert.strictEqual(Math.round(s.dps * 100) / 100, Math.round((21 / 0.41) * 100) / 100);
   assert.strictEqual(s.seconds, 4.51);
 });
+
+test('the Vesticrest from what\'s marked by hand: Eva\'s count of the slots a Crest starts with and the Lockets', () => {
+  // The wiki's example: the Wanderer Crest opens 4 slots, and Memory Lockets up to 3 more.
+  assert.strictEqual(E.evaOf(['wanderer'], 0), 4);
+  assert.strictEqual(E.evaOf(['wanderer'], 9), 7);
+  // The Hunter Crest doesn't count; a New Game has nothing.
+  assert.strictEqual(E.evaOf(['hunter'], 3), 0);
+  assert.deepEqual(E.vestOf(['hunter'], 0), { yellow: false, blue: false });
+  // Every Crest and Locket: past both of Eva's counts (12 and 20).
+  const all = require('../js/data.js').CRESTS.map((c) => c.id);
+  assert.deepEqual(E.vestOf(all, 20), { yellow: true, blue: true });
+  assert.deepEqual(E.vestOf(['wanderer', 'reaper', 'beast'], 0), { yellow: false, blue: false });
+  assert.deepEqual(E.vestOf(['wanderer', 'reaper', 'beast'], 5), { yellow: true, blue: false });
+});
