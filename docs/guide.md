@@ -239,9 +239,10 @@ out, the Void Mass's cores, and for Shakra and Garmond & Zaza the room of their 
 arena and the Bell Eater's aren't on the map, so they count as the rooms that take you there: the
 Abyss's dive, and every Bellway station. In a save, also the nearest one from your bench,
 and with no entry picked the pane lists what's missing closest, with the kills each still needs;
-tap one to read it. Nearness goes by the game's doors and the stations you've opened.
-Verdania, the Cradle, the Mist and the caravan's insides are reached some other way (a memory, a
-lift, the maze), so their entries say where, not how far.
+tap one to read it. Nearness goes by the game's doors, the Cogwork Core's lift to the Cradle and
+the stations you've opened; Verdania, the Mist and the caravan by the ways the game decides as you
+go, and a memory (the Coral Tower's, the Hunter Queen's) from the room you enter it from. Only the
+Red Memory, which isn't on the map, has no place and no distance.
 
 ### Combat
 
