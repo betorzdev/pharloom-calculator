@@ -11,8 +11,8 @@
      beat 80 (MUSIC), so the film's beat n is at n × BEAT. Hornet falls from the first frames and
      lands on beat 2 (a heavy one in the clip), her arc opening the title on 4; the save is dragged
      in and drops on beat 10, the card lighting up; from 12 the game and the site side by side,
-     the game saving at a bench on beats 14, 16 and 18 and the site catching up each time
-     (make.js --live); then a screen every two beats, four for the road to the Acts and to the
+     the game saving at a bench on beat 14 and Your game catching up (make.js --live), then that
+     save through every screen, one a beat, each shown before and after (pre-*.png); then a screen every two beats, four for the road to the Acts and to the
      100%; one close-up a beat from 32, where the music is loudest; the title lands on beat 40,
      the clip's strongest hit, and the music falls quiet on beat 44. Hornet is the game's own animation (Fall, HardLand, Challenge Strong).
      The page's tokens (css/tokens.css) dress it: the main menu's black, red light and embers at
@@ -82,7 +82,7 @@
   .lv-view { position: absolute; left: 0; right: 0; top: 41px; bottom: 0; overflow: hidden; }
   .lv-view img { position: absolute; left: 0; top: 0; width: 1920px; transform-origin: 0 0; }
   .lv-sweep { position: absolute; left: 0; right: 0; height: 220px; background: linear-gradient(180deg, rgba(255,240,225,0), rgba(255,240,225,.16), rgba(255,240,225,0)); }
-  .lv-plus { position: absolute; font-family: var(--font-display); font-weight: 700; font-size: 54px; color: var(--accent);
+  .lv-plus { position: absolute; z-index: 30; font-family: var(--font-display); font-weight: 700; font-size: 54px; color: var(--accent);
     text-shadow: 0 0 24px rgba(255,200,150,.6), 0 2px 6px rgba(0,0,0,.9); }
   .chip { position: absolute; padding: 14px 26px 14px 22px; border: 1px solid rgba(241,235,220,.55); background: rgba(20,12,10,.92);
     font-family: var(--font-body); font-size: 28px; display: flex; gap: 14px; align-items: center;
@@ -127,9 +127,10 @@ const SCENES = [
     sup: 'From the game’s own file', main: 'Drop in your save' },
   { id: 'lit', a: 10, z: 12, img: 'live0', from: [900, 470, 1260], to: [820, 480, 1120],
     sup: 'Read in your browser', main: 'Your game, as it stands' },
-  // Live: the game saves at a bench, the file carries it, the site catches up (three saves, a bench apart).
-  { id: 'live', a: 12, z: 20, menu: true, live: [14, 16, 18],
-    sup: 'Chrome and Edge follow the file', main: 'It updates as you play' },
+  // Live: the game saves at a bench, the file carries it, Your game catches up on beat 14, and
+  // the same save runs through every screen, one a beat, each shown before and after.
+  { id: 'live', a: 12, z: 20, menu: true, live: [14], ripple: ['progress', 'game', 'journal', 'map', 'tools'], rippleAt: 15,
+    sup: 'Chrome and Edge follow the file', main: 'One save. The whole site updates.' },
   { id: 'acts', a: 20, z: 24, img: 'progress', from: [960, 360, 1120], to: [960, 660, 1120],
     sup: 'Act 1 · Act 2 · Act 3', main: 'The road to every Act' },
   { id: 'hundred', a: 24, z: 28, img: 'progress-100', from: [960, 620, 1100], to: [960, 1150, 1150],
@@ -169,11 +170,23 @@ LIVE.game = $(`<div class="lv-side lv-game"><div class="sup">In the game</div>
 LIVE.site = $(`<div class="lv-side lv-site"><div class="sup">On the site</div>
   <div class="lv-win"><div class="lv-bar"><i></i><i></i><i></i><span>pharloomcalculator.com</span></div>
   <div class="lv-view"></div></div></div>`);
-LIVE.states = [0, 1, 2, 3].map((i) => { const im = pageImg('live' + i); LIVE.site.querySelector('.lv-view').append(im); return im; });
+LIVE.states = [0, 1].map((i) => { const im = pageImg('live' + i); LIVE.site.querySelector('.lv-view').append(im); return im; });
+// Each screen of the ripple, before (pre-*) and after the save.
+LIVE.screens = LIVE.ripple.map((v) => {
+  const pre = pageImg('pre-' + v), post = pageImg(v);
+  LIVE.site.querySelector('.lv-view').append(pre, post);
+  return { v, pre, post };
+});
 // Hornet on her bench, cut from the same card: the game's side changes bench first, the site follows.
-LIVE.benches = [0, 1, 2, 3].map((i) => { const im = pageImg('live' + i); LIVE.game.querySelector('.lv-crop').append(im); return im; });
+LIVE.benches = [0, 1].map((i) => { const im = pageImg('live' + i); LIVE.game.querySelector('.lv-crop').append(im); return im; });
 LIVE.sweep = $('<div class="lv-sweep"></div>'); LIVE.site.querySelector('.lv-view').append(LIVE.sweep);
 LIVE.plus = $('<div class="lv-plus"></div>'); LIVE.site.append(LIVE.plus);
+LIVE.plus2 = $('<div class="lv-plus"></div>'); LIVE.site.append(LIVE.plus2);
+// What the save added, where each screen shows it (page px): read from live.json, before and after.
+const GAINS = {
+  progress: { at: [1220, 420], text: (a, z) => `+${parseInt(z.pct, 10) - parseInt(a.pct, 10)}%` },
+  journal: { at: [600, 330], text: (a, z) => `+${parseInt(z.journal, 10) - parseInt(a.journal, 10)}` },
+};
 LIVE.el.append(LIVE.game, LIVE.site);
 let LIVE_PCT = [];
 const END_AT = END.a;
@@ -300,6 +313,29 @@ function renderLive(t) {
     im.style.opacity = i === done ? ease(clamp(since / .22)) : i < done ? 1 : 0;
     im.style.zIndex = i;
   });
+  // The ripple: every screen, one a beat, shown as it was and then repainted by the save.
+  const r0 = b(LIVE.rippleAt), cur = Math.floor((t - r0) / BEAT);
+  const SWAP = .28;
+  LIVE.screens.forEach((sc, i) => {
+    const on = i === cur, k = on ? ease(clamp((t - r0 - i * BEAT - SWAP) / .22)) : 0;
+    for (const im of [sc.pre, sc.post]) {
+      im.style.transform = `translate(${LV_VIEW.w / 2 - LV_RECT[0] * s}px, ${LV_VIEW.h / 2 - 410 * s}px) scale(${s})`;
+      im.style.zIndex = 10;
+    }
+    sc.pre.style.opacity = on ? 1 : 0;
+    sc.post.style.opacity = on ? k : 0;
+  });
+  const inRipple = cur >= 0 && cur < LIVE.screens.length;
+  const gain = inRipple && GAINS[LIVE.screens[cur].v], dg = t - r0 - cur * BEAT - SWAP;
+  if (gain && dg > 0 && LIVE_PCT.length > 1) {
+    const k = easeOut(clamp(dg / .25));
+    LIVE.plus2.textContent = gain.text(LIVE_PCT[0], LIVE_PCT[1]);
+    LIVE.plus2.style.opacity = k;
+    LIVE.plus2.style.left = `${(gain.at[0] - LV_RECT[0]) * s + LV_VIEW.w / 2 + 1}px`;
+    LIVE.plus2.style.top = `${(gain.at[1] - 410) * s + LV_VIEW.h / 2 + 18 + 40 + 41 - 30 * k}px`;
+    LIVE.plus2.style.transform = `scale(${lerp(1.4, 1, k)})`;
+  } else LIVE.plus2.style.opacity = 0;
+  LIVE.site.querySelector('.lv-bar span').textContent = 'pharloomcalculator.com' + (inRipple ? '/#view=' + LIVE.screens[cur].v : '');
   // The game's side: her bench, switched as the game saves (before the file reaches the site).
   const saved = ups.filter((u) => t >= u - PULSE - .35).length, bs = 440 / BENCH_RECT[2];
   LIVE.benches.forEach((im, i) => {
@@ -308,13 +344,15 @@ function renderLive(t) {
     im.style.opacity = i === saved ? ease(clamp(since / .25)) : i < saved ? 1 : 0;
     im.style.zIndex = i;
   });
-  // The light that runs down the page as it repaints, and the percent it gained.
+  // The light that runs down the page as it repaints (on the save, and on each screen of the ripple), and the percent it gained.
   const last = done ? ups[done - 1] : -99, d = t - last;
-  LIVE.sweep.style.opacity = d >= 0 && d < .6 ? 1 : 0;
-  LIVE.sweep.style.top = `${lerp(-220, LV_VIEW.h, easeOut(clamp(d / .6)))}px`;
-  if (done && d < 1.6 && LIVE_PCT.length > done) {
-    const gain = parseInt(LIVE_PCT[done].pct, 10) - parseInt(LIVE_PCT[done - 1].pct, 10);
-    LIVE.plus.textContent = `+${gain}%`;
+  const dr = inRipple ? t - r0 - cur * BEAT - SWAP : -1;
+  const ds = dr >= 0 && dr < .5 ? dr / .5 : d >= 0 && d < .6 ? d / .6 : -1;
+  LIVE.sweep.style.opacity = ds >= 0 ? 1 : 0;
+  LIVE.sweep.style.zIndex = 20;
+  LIVE.sweep.style.top = `${lerp(-220, LV_VIEW.h, easeOut(clamp(ds)))}px`;
+  if (done && d < 1.6 && !inRipple && LIVE_PCT.length > done) {
+    LIVE.plus.textContent = `+${parseInt(LIVE_PCT[done].pct, 10) - parseInt(LIVE_PCT[done - 1].pct, 10)}%`;
     const k = easeOut(clamp(d / .3));
     LIVE.plus.style.opacity = k * (1 - ramp(d, 1.1, 1.6));
     // Over "Your 100%" on the card (page px 540, 500), in the window's frame.
@@ -328,7 +366,7 @@ function renderLive(t) {
   for (const u of ups) { if (t > u - PULSE - .35 && t < u) saving = true; const dd = t - (u - PULSE - .35); if (dd > 0 && dd < 1.2) glow = Math.max(glow, Math.sin(Math.PI * clamp(dd / 1.2))); }
   file.style.boxShadow = `0 0 ${10 + 40 * glow}px rgba(255,230,210,${.15 + .55 * glow})`;
   file.style.borderColor = `rgba(241,235,220,${.5 + .5 * glow})`;
-  status.textContent = saving ? 'Game saved' : done ? 'Saved · ' + ['', '1 of 3', '2 of 3', '3 of 3'][done] : 'Resting';
+  status.textContent = saving ? 'Game saved' : done ? 'Saved' : 'Resting';
   LIVE.game.querySelector('.lamp').style.opacity = .6 + .4 * glow;
   // The thread, and each save running along it.
   ctx.save();

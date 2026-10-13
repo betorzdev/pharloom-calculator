@@ -17,10 +17,12 @@
    The saves: any two of the same game, a few hours apart, mid-game, so the map, the Journal and
    "Closest to your bench" have things missing (the first cut used Restore_Points1/restoreData21
    and 22: 59% → 61%, Act 2).
-   --live <a,b,c,d>: saves of one game in order (restore points a bench apart), for the trailer's
-   live sequence: the first imported, then each synced over the one before as the followed file
-   brings it, shot with the site's own live mark in the header and its toast (live0.png…, and
-   live.json, the completion each one shows).
+   Every screen is also shot before the sync (pre-*.png), for the trailer's ripple of one save
+   through the whole site.
+   --live <a,b,…>: saves of one game in order (restore points a bench apart; the trailer uses two,
+   --before and --after): the first imported, then each synced over the one before as the
+   followed file brings it, shot on Your game with the site's own live mark in the header and its
+   toast (live0.png…, and live.json, the completion and the Journal's count each one shows).
    Options: --out <dir> (default: the system's temp/pharloom-promo), --fps <n> (60),
    --stills 2.6,13,40 (only those moments, as PNGs in <out>/stills/, to check a change in
    seconds instead of the 8 minutes a render takes), --no-capture (reuse <out>/shots/).
@@ -96,17 +98,19 @@ async function capture(site, a) {
     await sleep(400);
     await whole('free-drag');
     const b64 = (f) => fs.readFileSync(f).toString('base64');
-    await c.evaluate(`(() => {
+    const seed = (body) => c.evaluate(`(() => {
       const S = SS.saves, F = SS.savefile;
       const snap = (b, name) => {
         const r = F.read(Uint8Array.from(atob(b), (ch) => ch.charCodeAt(0)));
         if (!r.ok) throw new Error(name + " isn't a save the site can read");
         return F.toSnapshot(r.pd, r.sd, Date.now());
       };
-      S.importTo(localStorage, 1, snap('${b64(a.before)}', '--before'));
-      S.select(localStorage, 1);
-      S.sync(localStorage, 1, snap('${b64(a.after)}', '--after'));
+      ${body}
     })()`);
+    // Every screen before the game saves again (pre-*.png), then after, synced as the followed file would bring it.
+    await seed(`S.importTo(localStorage, 1, snap('${b64(a.before)}', '--before')); S.select(localStorage, 1);`);
+    for (const v of ['home', 'game', 'progress', 'map', 'journal', 'tools']) { await visit(v); await whole('pre-' + v); }
+    await seed(`S.sync(localStorage, 1, snap('${b64(a.after)}', '--after'));`);
     for (const v of ['home', 'game', 'progress', 'map', 'journal', 'tools']) { await visit(v); await whole(v); }
     // Progress on its other tab, the 100%.
     await visit('progress');
@@ -149,13 +153,14 @@ async function captureLive(site, a) {
         const link = document.querySelector('.mh-save'), lbl = link && link.querySelector('.mh-save-lbl');
         if (lbl) { link.classList.add('is-live'); lbl.insertAdjacentHTML('beforeend', '<span class="mh-live" aria-hidden="true"><i class="mh-live-dot"></i><span class="mh-live-t">' + t('liveState_live') + '</span></span>'); }
         ${i ? `SS.app.toast(SS.app.gainedLine() || t('liveUpdated'));` : ''}
-        return (document.querySelector('[data-value="progress"] .nav-num') || {}).textContent || '';
+        const num = (v) => (document.querySelector('[data-value="' + v + '"] .nav-num') || {}).textContent || '';
+        return { pct: num('progress'), journal: num('journal') };
       })()`);
       await sleep(700);
       const h = await c.evaluate('document.documentElement.scrollHeight');
       fs.writeFileSync(path.join(dir, `live${i}.png`), await c.shot({ captureBeyondViewport: true, clip: { x: 0, y: 0, width: 1920, height: h, scale: 1 } }));
-      states.push({ pct });
-      console.log('  shot live' + i, pct);
+      states.push(pct);
+      console.log('  shot live' + i, pct.pct, pct.journal);
     }
   } finally { await c.close(); drop(profile); }
   fs.writeFileSync(path.join(dir, 'live.json'), JSON.stringify(states));
