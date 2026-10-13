@@ -429,9 +429,13 @@
             : kind === 'bellhome' ? pin('bellhome', 'pin_bench_bell', s, ti, k, c)
               : icon ? dot(layer, icon, s, ti, k, c) : badge(layer, GLYPH[layer] || GLYPH.wall, s, ti, k, c)) });
     });
-    // Your game: the cocoon and the Journal's entries still missing.
-    if (own && own.cocoon) add({ key: 'cocoon', layer: 'cocoon', scene: own.cocoon, got: false, name: t('mapLayer_cocoon'), sub: t('mapCocoonNote'),
-      draw: (s, ti, k, c) => pin('cocoon', 'shade_pin', s, ti, k, c) });
+    // Your game: the cocoon, where the game's map marks it (js/rooms.js mapPoint, by where Hornet fell
+    // in the scene; else its room's middle), and the Journal's entries still missing.
+    if (own && own.cocoon) {
+      const at = own.cocoonAt && own.cocoonAt.length === 4 ? R.mapPoint(own.cocoon, ...own.cocoonAt) : null;
+      add({ key: 'cocoon', layer: 'cocoon', scene: own.cocoon, at: at || undefined, got: false, name: t('mapLayer_cocoon'), sub: t('mapCocoonNote'),
+        draw: (s, ti, k, c) => pin('cocoon', 'shade_pin', s, ti, k, c) });
+    }
     if (own) for (const e of J.BOOK) {
       const rooms = SS.journalRooms[e.key];
       const scene = rooms && (rooms.map(([sc]) => sc).find((sc) => R.roomOf(sc)));

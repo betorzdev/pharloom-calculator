@@ -30,6 +30,19 @@ test('every loose piece on the floor has its room, the fleas by the room their f
   assert.equal(R.sceneOf(['quest', 'Save Sherma']), null);
 });
 
+test('a point of a scene goes where the game puts it: across and up its room\'s box, by the scene\'s size', () => {
+  const r = M.ROOMS.Bellway_City;
+  assert.deepEqual(R.mapPoint('Bellway_City', 0, 0, 50, 20), { x: r[0], y: r[1] + r[3] });   // the scene's bottom left
+  assert.deepEqual(R.mapPoint('bellway_city', 50, 20, 50, 20), { x: r[0] + r[2], y: r[1] });  // its top right, either case
+  const mid = R.mapPoint('Bellway_City', 25, 10, 50, 20), room = R.roomOf('Bellway_City');
+  assert.ok(Math.abs(mid.x - room.x) < 1e-9 && Math.abs(mid.y - room.y) < 1e-9);
+  // The room has to be the scene's own (the game finds it by name), and a room that is a point has no box.
+  const point = Object.keys(M.ROOMS).find((s) => !M.ROOMS[s][2]);
+  assert.equal(R.mapPoint(point, 1, 1, 10, 10), null);
+  assert.equal(R.mapPoint('Belltown_Room_doctor', 1, 1, 10, 10), null);
+  assert.equal(R.mapPoint('Bellway_City', 1, 1, 0, 10), null);
+});
+
 // Every area's map bought, every piece mapped, the Quill, and these values for the map's rules.
 const world = (vars) => ({ mapVars: { ...M.FREE, ...vars }, mapped: M.PIECES.map((e) => e.s), mappedRead: true, quill: true,
   maps: Object.values(M.ZONES).map((z) => z.bool).filter(Boolean).map((b) => b.slice(3, -3)), visited: [] });

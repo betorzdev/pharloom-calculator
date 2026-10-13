@@ -50,6 +50,7 @@ require('../js/shop.js');
 require('../js/quests.js');
 require('../js/how.js');
 require('../js/journal-rooms.js');
+require('../js/gauntlets.js');
 require('../js/map.js');
 require('../js/graph.js');
 const R = require('../js/rooms.js');
@@ -123,10 +124,12 @@ const MAPS = {
   Cradle: 'CRADLE', Arborium: 'ARBORIUM', Aqueduct: 'AQUEDUCTS', Weavehome: 'WEAVE_PRIME',
 };
 // The completionist's bosses whose names aren't a foe's (js/enemies.js), and the extras whose check
-// is a flag with no room: each placed where the completionist's own sentence says it is.
+// is a flag with no room: each placed where the completionist's own sentence says it is, but the
+// Mosshome Mossberry: the pickup that sets its flag is in Bone_05b, beside Mosshome (pickups.json
+// fields, 13-Oct-2026; Albert's hand fix had put it there too).
 const BOSS_ALIAS = { 'great conchflies': 'great-conchfly', 'raging conchfly': 'raging-conchfly' };
 const HAND_EXTRA = {
-  bonetownAspidBerryCollected: 'Bonetown', mosstownAspidBerryCollected: 'Mosstown_01',
+  bonetownAspidBerryCollected: 'Bonetown', mosstownAspidBerryCollected: 'Bone_05b',
   bonegraveAspidBerryCollected: 'Bonegrave', churchRhinoKilled: 'Bone_East_10_Church', silkFarmAbyssCoresCleared: 'Dust_11',
 };
 /* The pieces with no way of their own (js/how.js HOW lists those of the 100%'s counters), by the
@@ -193,10 +196,12 @@ for (const f of E.FOES) if (!foeBy.has(norm(f.name.en))) foeBy.set(norm(f.name.e
 const bookBy = new Map(J.BOOK.map((e) => [e.id, e]));
 const bookN = new Map(J.BOOK.map((e) => [e.n, e]));
 const foeOf = new Map(E.FOES.map((f) => [f.id, f]));
+// A foe's Journal entry (a later fight's is its first's).
+const bookOf = (foe) => bookBy.get(foe) || bookBy.get(foe.replace(/-(the-cradle|far-fields|chapel-of-the-beast|weavenest-atla|coral-tower)$/, ''))
+  || (foeOf.has(foe) && bookN.get(foeOf.get(foe).hj)) || null;
 const arena = (foe) => {
   if (BOSS_ROOM[foe]) return BOSS_ROOM[foe];
-  const e = bookBy.get(foe) || bookBy.get(foe.replace(/-(the-cradle|far-fields|chapel-of-the-beast|weavenest-atla|coral-tower)$/, ''))
-    || (foeOf.has(foe) && bookN.get(foeOf.get(foe).hj));
+  const e = bookOf(foe);
   const rooms = e && SS.journalRooms[e.key];
   return rooms ? (rooms.map(([s]) => s).find(onMap) || null) : null;
 };
@@ -216,7 +221,9 @@ for (const [foe, check, act] of BOSS_MORE) {
 /* ── The 100%: each thing's room, by its ways ── */
 const quests = Q.FROM;
 const wishScene = (quest) => { const f = quests[quest]; return f ? (f.board && onMap(f.board) ? f.board : (f.npc || []).find(onMap)) || null : null; };
-function byWays(ways, found) {
+// The way each thing's room came from (key → a js/how.js way), for its point in the room (WHO below).
+const WAY_OF = {};
+function byWays(ways, found, key) {
   for (const w of ways || []) {
     let s = null;
     if (w.kind === 'found' || w.kind === 'craft') s = found();
@@ -224,7 +231,7 @@ function byWays(ways, found) {
     else if (w.kind === 'wish') s = wishScene(w.quest);
     else if (w.kind === 'boss') s = arena(w.foe);
     else if (['npc', 'challenge', 'fleas'].includes(w.kind)) s = personScene(w.npc);
-    if (s && onMap(s)) return s;
+    if (s && onMap(s)) { if (key) WAY_OF[key] = w; return s; }
   }
   return null;
 }
@@ -237,18 +244,21 @@ CO.PIECES.forEach((p, i) => {
   const own = R.sceneOf(p[2]);
   // A piece sold with no counter of its own (js/shop.js SHOP gives it), from the vendor of the
   // earliest Act; one a wish gives (REWARDS), where the wish is taken.
-  const sold = SH.SHOP.filter((x) => x.piece === i).sort((a, b) => (a.act || 0) - (b.act || 0)).map((x) => personScene(x.vendor)).find(onMap);
-  const reward = Object.entries(SH.REWARDS).filter(([, r]) => [].concat(r).some((x) => x.piece === i)).map(([q]) => wishScene(q)).find(onMap);
+  const seller = SH.SHOP.filter((x) => x.piece === i).sort((a, b) => (a.act || 0) - (b.act || 0)).find((x) => onMap(personScene(x.vendor)));
+  const wish = Object.entries(SH.REWARDS).filter(([, r]) => [].concat(r).some((x) => x.piece === i)).map(([q]) => q).find((q) => onMap(wishScene(q)));
+  const sold = seller && personScene(seller.vendor), reward = wish && wishScene(wish);
   const s = onMap(own) ? own
     : HAND_PIECE[p[2][1]] ? HAND_PIECE[p[2][1]]
       : OLD_HEARTS[p[2][1]] ? lying(OLD_HEARTS[p[2][1]])[0] || null
-        : byWays(H.HOW.pieces[i], () => null) || sold || reward || null;
+        : byWays(H.HOW.pieces[i], () => null, 'piece:' + i) || sold || reward || null;
+  if (s && !WAY_OF['piece:' + i] && s === sold) WAY_OF['piece:' + i] = { kind: 'shop', vendor: seller.vendor };
+  else if (s && !WAY_OF['piece:' + i] && s === reward) WAY_OF['piece:' + i] = { kind: 'wish', quest: wish };
   put('pieces', i, s, `piece ${i} ${p[0]} ${JSON.stringify(p[2])}`);
 });
 for (const ids of CO.COUNTED) {
   const id = ids[0], hand = HAND.tools[id];
   const s = hand ? chosen(hand[1], given(hand[0]), 'tool ' + id)
-    : byWays(H.HOW.tools[id], () => ids.flatMap((x) => CO.TOOLS[x]).map((n) => lying(n)[0]).find(Boolean) || null);
+    : byWays(H.HOW.tools[id], () => ids.flatMap((x) => CO.TOOLS[x]).map((n) => lying(n)[0]).find(Boolean) || null, 'tools:' + id);
   put('tools', id, s, 'tool ' + id);
 }
 /* The six Tools outside the 100% (js/collectibles.js TOOLS, none a COUNTED group's first: four
@@ -264,13 +274,14 @@ for (const id of OTHER_TOOLS) {
   const hand = OTHER_HAND[id];
   const s = hand ? chosen(hand[1], given(hand[0]), 'tool ' + id)
     : OTHER_WISH[id] ? wishScene(OTHER_WISH[id]) : CO.TOOLS[id].map((n) => lying(n)[0]).find(Boolean) || null;
+  if (OTHER_WISH[id]) WAY_OF['tools:' + id] = { kind: 'wish', quest: OTHER_WISH[id] };
   put('tools', id, s, 'tool ' + id);
 }
 for (const cat of ['crests', 'skills', 'arts']) {
   for (const id of Object.keys(CO.WHERE[cat])) {
     const hand = HAND[cat][id];
     const from = hand ? (cat === 'arts' ? (P.fields[hand[0]] || []).map(([s]) => s) : given(hand[0])) : [];
-    const s = hand ? chosen(hand[1], from, cat + ' ' + id) : byWays(H.HOW[cat][id], () => null);
+    const s = hand ? chosen(hand[1], from, cat + ' ' + id) : byWays(H.HOW[cat][id], () => null, cat + ':' + id);
     put(cat, id, s, cat + ' ' + id);
   }
 }
@@ -283,7 +294,7 @@ for (const a of D.ARTS) {
   put('arts', a.id, chosen(hand[1], (P.fields[hand[0]] || []).map(([sc]) => sc), 'arts ' + a.id), 'arts ' + a.id);
   AT.act['arts:' + a.id] = hand[2];
 }
-AT.everbloom = byWays(H.HOW.everbloom, () => null) || EVERBLOOM;
+AT.everbloom = byWays(H.HOW.everbloom, () => null, 'everbloom') || EVERBLOOM;
 (AT.everbloom ? placed : unplaced).push('everbloom');
 
 /* NEEDS: what a thing asks of Hornet first (the completionist's prereqs), as the abilities and
@@ -685,18 +696,19 @@ const KEYS = {};
 for (const k of Object.keys(Q.LOCKS)) KEYS[k] = N.text(KEY_TEXT[k] || fail(`no text for the key ${k}`));
 
 /* ── Where in its room: each thing's point on the map ──
-   The game places a point of a scene on its room's drawing by the scene's size (its tk2dTileMap,
-   pickups.json sizes): x / width across the drawing, y / height up it. Checked on the benches:
-   each RestBench, placed so, has to fall by the bench pin the map itself draws (js/map.js PINS). */
+   As the game places a point of a scene on its map (GameMap.GetMapPosition, js/rooms.js mapPoint):
+   x / width across its room's box and y / height up it, the scene's size its tk2dTileMap's
+   (pickups.json sizes). Checked on the benches: each RestBench, placed so, has to fall by the
+   bench pin the map itself draws (js/map.js PINS; the game sets those by hand, a few pixels off). */
 const M = SS.map;
 const ROOM_OF = new Map(Object.entries(M.ROOMS).map(([k, r]) => [k.toLowerCase(), r]));
 function toMap(scene, x, y) {
   const r = ROOM_OF.get(String(scene).toLowerCase()), size = P.sizes[String(scene).toLowerCase()];
-  if (!r || !r[2] || !size || x == null || y == null) return null;
-  const px = r[0] + (x / size[0]) * r[2], py = r[1] + (1 - y / size[1]) * r[3];
-  // A point well outside its room's drawing is something parked off the scene: not used.
-  const out = Math.max(r[0] - px, px - r[0] - r[2], 0) + Math.max(r[1] - py, py - r[1] - r[3], 0);
-  return out > 12 ? null : [Math.round(px * 10) / 10, Math.round(py * 10) / 10];
+  const p = r && size && x != null && y != null ? R.mapPoint(String(scene), x, y, size[0], size[1]) : null;
+  if (!p) return null;
+  // A point well outside its room's box is something parked off the scene: not used.
+  const out = Math.max(r[0] - p.x, p.x - r[0] - r[2], 0) + Math.max(r[1] - p.y, p.y - r[1] - r[3], 0);
+  return out > 12 ? null : [Math.round(p.x * 10) / 10, Math.round(p.y * 10) / 10];
 }
 {
   const errs = [];
@@ -759,6 +771,128 @@ for (const [id, obj] of Object.entries(PEOPLE_OBJ)) put2('person:' + id, entryAt
 for (const [field, scene] of BELLS) { const b = P.benches[lower(scene)]; put2('bell:' + field, b && toMap(scene, b[0], b[1])); }
 for (const [quest, f] of Object.entries(Q.FROM)) {
   if (f.board) put2('board:' + lower(f.board), entryAt(P.npcs['Quest Board Pivot'], f.board));
+}
+
+/* ── What has no object of its own: where whoever stands for it is (Albert's choice, 13-Oct-2026,
+   the Map's hand fixes dropped). Each at its point in its room, as the rest:
+     a vendor and Shakra   the person who sells (WHO: their NpcDialogueTitle key, people.json), and
+                           what a vendor sells, there too (its way: js/how.js shop, js/shop.js SHOP)
+     who offers a wish     the person (GIVER), and what a wish gives, at its Wishwall or giver
+     a person's gift       that person (js/how.js npc, challenge, fleas)
+     a boss and its drop   the boss in its arena: what in the scene points at its Journal record
+                           (pickups.json records: the enemy carrying it, else its fight's FSM),
+                           brought to the scene's edge when it waits just off it
+     a gauntlet            its arena, the middle of its BattleScene's waves (pickups.json battles):
+                           the one its check names (its object, or the flag it sets once won), else
+                           the only one
+     a lost flea           the flea in its room (pickups.json fleas), or the script that sets its
+                           flag (fields: the Huge Flea, Kratt, Vog), as the melodies and the extras
+                           whose flag has no room (HAND_PIECE, HAND_EXTRA)
+     a key's door          its ItemReceptacle, when its room has only one (pickups.json locks)
+   A point at its scene's origin or off it is something parked until the game moves it: not used.
+   An interior the map doesn't draw (a point, or none) keeps its room's point: the game puts nothing
+   of it anywhere else. Every person named here has to stand in that room (people.json), or the
+   generator stops: a patch moved them. */
+const PP = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'kb', 'data', 'game', 'people.json'), 'utf8'));
+const WHO = { grindle: 'GRINDLE', pebb: 'BB_SHOPKEEP', frey: 'BELLHART_SHOPKEEP', mort: 'PILGRIM_REST_SHOP', 'twelfth-architect': 'ARCHITECT',
+  jubilana: 'CITY_MERCHANT', shakra: 'MAPPER', plinney: 'PINSMITH', eva: 'CREST_UPG_SHRINE', pinstress: 'PINSTRESS', loddie: 'LADYBUG_LARGE',
+  lumble: 'DICE_PILGRIM', mooshka: 'FLEAMASTER', 'forge-daughter': 'FORGEDAUGHTER', 'mottled-skarr': 'ANT_MERCHANT', scrounge: 'BELLHART_RELICDEALER' };
+// Who offers the wishes of each room js/quests.js FROM names (one mark per room): the Couriers in
+// Bellhart, the Bartender at the Halfway House (Nuu's is the Journal's), the Caretaker in the Songclave…
+// Fleatopia's Mr Mushroom (Aqueduct_05) has nobody of his in the room: its middle.
+const GIVER = { Belltown_Room_pinsmith: 'PINSMITH', Bone_East_Umbrella: 'SEAMSTRESS', Belltown: 'COURIERS_SHOP', Halfway_01: 'HH_BARTENDER',
+  Belltown_Room_doctor: 'DOCTOR', Crawl_08: 'BLUE_SCIENTIST', aqueduct_05_festival: 'FLEAMASTER', Song_09b: 'GOURMAND_SERVANT',
+  Room_Huntress: 'HUNTRESS', Mosstown_02c: 'MOSSCREEP', Aqueduct_05: null, Room_Pinstress: 'PINSTRESS', Dust_Shack: 'DUST_TRADERS_1',
+  Bone_10: 'FLEAMASTER', Room_Witch: 'SHELLWOOD_WITCH', Song_Enclave: 'CHURCHKEEPER', Sprintmaster_Cave: 'SPEEDMASTER',
+  Coral_37: 'STEEL_SENTINEL', Bone_Steel_Servant: 'STEEL_SERVANT' };
+for (const f of Object.values(Q.FROM)) for (const n of f.npc || []) if (!(n in GIVER)) fail(`nobody stands for the wishes offered in ${n}: GIVER needs reading again`);
+// The first of a person's spots in a room, where the game places it (null in an interior); they have to stand there.
+const personAt = (key, scene) => {
+  const spots = ((PP.people[key] || fail(`${key} isn't in people.json`)).spots).filter(([sc]) => lower(sc) === lower(scene));
+  if (!spots.length) fail(`${key} doesn't stand in ${scene} (people.json): WHO or GIVER needs reading again`);
+  for (const [, , x, y] of spots) { const p = typeof x === 'number' ? toMap(scene, x, y) : null; if (p) return p; }
+  return null;
+};
+const whoAt = (npc, scene) => (WHO[npc] ? personAt(WHO[npc], scene) : fail(`no person for ${npc} in WHO`));
+const giverAt = (scene) => (GIVER[scene] ? personAt(GIVER[scene], scene) : null);
+// A point inside its scene: one at the scene's origin, or off it, is parked until the game moves it.
+const inScene = (scene, x, y) => {
+  const size = P.sizes[lower(scene)];
+  return typeof x === 'number' && size && (Math.abs(x) > 0.5 || Math.abs(y) > 0.5) && x > 0 && y > 0 && x < size[0] && y < size[1];
+};
+// A boss where it is in its arena: the first enemy carrying its Journal record there, else what names
+// it. One waiting just off its scene (the Widow above, Groal under the swamp) comes in where it waits:
+// its point is brought to the scene's edge. One at the scene's origin is parked: not used.
+const foeAt = (foe, scene) => {
+  const e = bookOf(foe), size = P.sizes[lower(scene)];
+  const hits = ((e && P.records[e.key]) || []).filter(([sc, , , x, y]) => lower(sc) === lower(scene) && typeof x === 'number' && (Math.abs(x) > 0.5 || Math.abs(y) > 0.5));
+  const first = (l) => l.find(([, comp]) => /^EnemyDeathEffects/.test(comp)) || l[0];
+  const hit = first(hits.filter(([, , , x, y]) => inScene(scene, x, y))) || first(hits);
+  if (!hit || !size) return null;
+  const clamp = (v, n) => Math.min(Math.max(v, 1), n - 1);
+  return toMap(scene, clamp(hit[3], size[0]), clamp(hit[4], size[1]));
+};
+// What a wish gives: at the Wishwall it's on, else at who offers it.
+const wishAt = (quest, scene) => {
+  const f = Q.FROM[quest] || {};
+  if (f.board && lower(f.board) === lower(scene)) return XY['board:' + lower(f.board)] || null;
+  const n = (f.npc || []).find((x) => lower(x) === lower(scene));
+  return n ? giverAt(n) : null;
+};
+// A thing's point by the way its room came from (WAY_OF).
+const wayAt = (key, scene) => {
+  const w = WAY_OF[key];
+  if (!w || !scene) return null;
+  if (w.kind === 'shop') return whoAt(w.vendor, w.vendor === 'shakra' ? 'Belltown' : scene);
+  if (w.kind === 'wish') return wishAt(w.quest, scene);
+  if (w.kind === 'boss') return foeAt(w.foe, scene);
+  if (['npc', 'challenge', 'fleas'].includes(w.kind)) return XY['person:' + w.npc] && lower(PEOPLE[w.npc]) === lower(scene) ? XY['person:' + w.npc] : whoAt(w.npc, scene);
+  return null;
+};
+// A flag's script in a room (pickups.json fields).
+const fieldAt = (flag, scene) => entryAt(P.fields[flag], scene);
+// Kratt, strung up in Greymoor_24: no script there names his flag, he stands there himself.
+const PIECE_WHO = { CaravanLechReturnedToCaravan: 'FLEA_LECH' };
+// A room's lost flea: the flea itself (in its cage, barrel, branches, asleep…), else what wakes it.
+const fleaIn = (scene) => {
+  const all = (P.fleas[lower(scene)] || []).filter((f) => f[1] || f[2]);
+  return all.find((f) => !/ (Activation|Scene)$/.test(f[0])) || all[0] || null;
+};
+// The people of PEOPLE with no object of theirs placed (PEOPLE_ROOM's, or none there).
+for (const id of Object.keys(PEOPLE)) if (!XY['person:' + id] && WHO[id]) put2('person:' + id, whoAt(id, PEOPLE[id]));
+// The vendors, Shakra and who offers a wish.
+for (const [v, scenes] of Object.entries(VENDORS)) scenes.forEach((sc, i) => put2((v === 'shakra' ? 'shakra:' : 'shop:' + v + ':') + i, whoAt(v, sc)));
+for (const n of Object.keys(GIVER)) put2('giver:' + lower(n), giverAt(n));
+// The 100% with no point of its own: by its way, the flea, or the script setting its flag.
+CO.PIECES.forEach((p, i) => {
+  const key = 'piece:' + i, scene = AT.pieces[i];
+  if (XY[key] || !scene) return;
+  const flea = p[2][0] === 'flag' && /^SavedFlea_/.test(p[2][1]) ? fleaIn(scene) : null;
+  put2(key, flea ? toMap(scene, flea[1], flea[2]) : HAND_PIECE[p[2][1]] ? fieldAt(p[2][1], scene) || (PIECE_WHO[p[2][1]] && personAt(PIECE_WHO[p[2][1]], scene))
+    : wayAt(key, scene));
+});
+for (const cat of ['tools', 'crests', 'skills', 'arts']) for (const [id, scene] of Object.entries(AT[cat])) if (!XY[cat + ':' + id]) put2(cat + ':' + id, wayAt(cat + ':' + id, scene));
+put2('everbloom', wayAt('everbloom', AT.everbloom));
+// The extras whose flag has no room (HAND_EXTRA), and the relics an NPC hands over (RELIC_ROOM: Jubilana, Grindle).
+const RELIC_WHO = { 'Seal Chit City Merchant': 'jubilana', 'Psalm Cylinder Grindle': 'grindle' };
+EXTRAS.forEach((x, i) => {
+  const c = x[2];
+  if (XY['extra:' + i]) return;
+  if (c[0] === 'flag' && HAND_EXTRA[c[1]]) put2('extra:' + i, fieldAt(c[1], x[3]));
+  else if (c[0] === 'relic' && RELIC_WHO[c[1]]) put2('extra:' + i, whoAt(RELIC_WHO[c[1]], x[3]));
+});
+// The bosses in their arenas, the gauntlets at theirs, the key doors at their lock.
+for (const [foe, scene] of BOSSES) put2('boss:' + foe, foeAt(foe, scene));
+const flat = (c) => (c[0] === 'any' || c[0] === 'all' ? c.slice(1).flatMap(flat) : [c]);
+for (const g of SS.gauntlets.GAUNTLETS) {
+  const all = P.battles[lower(g.scene)] || [];
+  const named = flat(g.done).map((c) => all.find((b) => (c[0] === 'bool' && lower(c[1]) === lower(g.scene) && b[0] === c[2]) || (c[0] === 'flag' && b[3] === c[1]))).find(Boolean);
+  const b = named || (all.length === 1 ? all[0] : null);
+  put2('gaunt:' + g.id, b && inScene(g.scene, b[1], b[2]) ? toMap(g.scene, b[1], b[2]) : null);
+}
+for (const [k, scenes] of Object.entries(Q.LOCKS)) for (const sc of scenes) {
+  const all = P.locks[lower(sc)] || [];
+  if (all.length === 1 && typeof all[0][1] === 'number') put2('lock:' + k + ':' + sc, toMap(sc, all[0][1], all[0][2]));
 }
 console.log(`${Object.keys(XY).length} things with their own point in their room`);
 
@@ -825,8 +959,12 @@ const TASKS = [];
   const ox = med(off.map((o) => o[0])), oy = med(off.map((o) => o[1]));
   const bad = off.filter((o) => Math.hypot(o[0] - ox, o[1] - oy) * M.PPU > 2).length;
   if (off.length < 40 || bad > off.length / 10) fail(`the map's quest pins don't line up by its bench pins (${off.length} benches, ${bad} off)`);
+  // The room a pin falls in: the smallest box holding it, as the scene it's a part of (Bellway_Aqueduct_top
+  // is Bellway_Aqueduct's: a part is no scene, and which part holds a pin can turn on a hair).
+  const isScene = (s) => !!P.sizes[lower(s)];
+  const sceneOfPart = (s) => { let x = s; while (!isScene(x) && x.lastIndexOf('_') > 0) x = x.slice(0, x.lastIndexOf('_')); return isScene(x) && M.ROOMS[x] ? x : s; };
   const inRoom = ([px, py]) => Object.entries(M.ROOMS).filter(([, r]) => px >= r[0] && px <= r[0] + r[2] && py >= r[1] && py <= r[1] + r[3])
-    .sort(([, a], [, b]) => a[2] * a[3] - b[2] * b[3]).map(([s]) => s)[0];
+    .sort(([, a], [, b]) => a[2] * a[3] - b[2] * b[3]).map(([s]) => sceneOfPart(s))[0];
   const byItem = (save) => Object.keys(WI.quests).find((q) => WI.quests[q].targets.includes(save));
   const pinned = new Set();
   for (const [, sprite, quest, item, target, wx, wy] of WI.pins) {
@@ -909,9 +1047,11 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               under assets/map/, name the thing's (a wish's and an objective's are the quest's),
               mode 'steel' when only Steel Soul has it, steel the spot's scene when the save
               chooses it (SteelQuestSpots)
-     XY       a thing's key (as NEEDS, and 'person:<id>', 'board:<scene>', 'bell:<field>', 'task:<i>') → its
-              point on the map, in the image's pixels: where the game has it in its room (the
-              object's place in the scene, over the scene's size, on the room's drawing)`,
+     XY       a thing's key (as NEEDS, and 'person:<id>', 'board:<scene>', 'bell:<field>', 'task:<i>',
+              'shakra:<i>', 'shop:<vendor>:<i>', 'giver:<scene>', 'boss:<foe>', 'gaunt:<id>',
+              'lock:<key>:<scene>', 'everbloom') → its point on the map, in the image's pixels: where
+              the game has it in its room (the object's place in the scene, or whoever stands for it,
+              placed as the game places a point: js/rooms.js mapPoint)`,
 'spots', [['AT', AT], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['NEEDS', NEEDS], ['TASKS', TASKS], ['XY', XY]]);
 const kinds = {};
 for (const x of EXTRAS) kinds[x[0]] = (kinds[x[0]] || 0) + 1;

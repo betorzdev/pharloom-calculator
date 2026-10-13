@@ -1,5 +1,6 @@
 /* js/rooms.js — where a scene is on the map (js/map.js): the point to draw it at. Pure.
-   A scene the game's map draws is its room's middle. Some aren't drawn (an interior, a bench's own
+   A scene the game's map draws is its room's middle, and a point in it goes where the game puts
+   it (mapPoint). Some aren't drawn (an interior, a bench's own
    small room: Belltown_Room_doctor, Cog_Bench): the scene named without its last part is tried
    next (Belltown_Room_doctor → Belltown_Room → Belltown), down to the area's own name; without
    any, null (the site doesn't place it rather than place it wrong). An interior with another name
@@ -35,6 +36,21 @@
       if (cut <= 0) return null;
       s = s.slice(0, cut);
     }
+  }
+
+  /* A point of a scene on the map, as the game places Hornet's compass and her cocoon
+     (GameMap.GetMapPosition; tools/extract-map.py bounds_box has the rest): its room's box is the
+     game's own (ROOMS), and the point goes x / width across it and y / height up, the scene's size
+     being its tilemap's (kb/data/game/pickups.json sizes, a save's HeroDeathSceneSize). The room
+     has to be the scene's own, by its name, as the game looks it up: none (an interior, a scene
+     the map doesn't draw) gives null, and so does a room that is a point (the game puts every
+     point of it there, where the Map puts its room anyway). → { x, y } in the map's pixels. */
+  function mapPoint(scene, x, y, w, h) {
+    if (typeof scene !== 'string' || ![x, y, w, h].every(Number.isFinite) || w <= 0 || h <= 0) return null;
+    const key = M.ROOMS[scene] ? scene : LOWER.get(scene.toLowerCase());
+    const r = key && M.ROOMS[key];
+    if (!r || !r[2] || !r[3]) return null;
+    return { x: r[0] + (x / w) * r[2], y: r[1] + (1 - y / h) * r[3] };
   }
 
   /* The scene a piece is in, from its condition (js/collectibles.js): a floor flag's scene, the
@@ -257,6 +273,6 @@
     return M.PINS.filter((p) => !off.has(p[3]) && !(g && p[5] && !rule(p[5], at)));
   };
 
-  SS.rooms = { ENTRANCE, roomOf, sceneOf, graphScene, walk, steps, path, areaOf, mapVars, rule, mapView, pinsOn };
+  SS.rooms = { ENTRANCE, roomOf, mapPoint, sceneOf, graphScene, walk, steps, path, areaOf, mapVars, rule, mapView, pinsOn };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.rooms;
 })();

@@ -23,8 +23,8 @@
    bonetownPilgrim*Seen, pilbyKilled): the check can't tie it to them, so they stay with no state.
    And places no field says (Sherma's shermaPos, gillyLocation, GreenPrinceLocation, Ballow's
    diving bell): their numbers aren't mapped to rooms in the game's data read so far, so every spot.
-   The spots are each scene's object, one per scene, at its point in its room (x / width across
-   the room's drawing, y / height up, as tools/gen-spots.js places the rest). */
+   The spots are each scene's object, one per scene, at its point in its room (where the game
+   places it on its map, js/rooms.js mapPoint, as tools/gen-spots.js places the rest). */
 'use strict';
 const fs = require('fs');
 const path = require('path');
@@ -101,12 +101,13 @@ const HAND = {
 };
 
 const ROOM_OF = new Map(Object.entries(M.ROOMS).map(([k, r]) => [k.toLowerCase(), r]));
+// A point of a scene where the game places it on its map (js/rooms.js mapPoint, as tools/gen-spots.js).
 function toMap(scene, x, y) {
   const r = ROOM_OF.get(scene.toLowerCase()), size = SIZES[scene.toLowerCase()];
-  if (!r || !r[2] || !size || x == null) return null;
-  const px = r[0] + (x / size[0]) * r[2], py = r[1] + (1 - y / size[1]) * r[3];
-  const out = Math.max(r[0] - px, px - r[0] - r[2], 0) + Math.max(r[1] - py, py - r[1] - r[3], 0);
-  return out > 12 ? null : [Math.round(px * 10) / 10, Math.round(py * 10) / 10];
+  const p = r && size && x != null && y != null ? R.mapPoint(scene, x, y, size[0], size[1]) : null;
+  if (!p) return null;
+  const out = Math.max(r[0] - p.x, p.x - r[0] - r[2], 0) + Math.max(r[1] - p.y, p.y - r[1] - r[3], 0);
+  return out > 12 ? null : [Math.round(p.x * 10) / 10, Math.round(p.y * 10) / 10];
 }
 const idOf = (key) => key.toLowerCase().replace(/_/g, '-');
 
