@@ -44,7 +44,7 @@ the work up reads it first, then the step it's on.
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight and the leftovers 13 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct) | [`12-map-variants.html`](12-map-variants.html) |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds) | [`15-journal-variants.html`](15-journal-variants.html) |
-| 8 | Crest (`tools`) | **Built** (28 Sep) | [`18-crest-variants.html`](18-crest-variants.html) |
+| 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html` (kept out of the repo) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
 | 10 | **Built** (28 Sep) · The static pages (`tools/pages*.js`: `bosses/`, `es/jefes/`, the landing folders): they inherit steps 1 and 2; only what's theirs | To do | |
 | 6c | The Map's people: everyone in the world and every place that sells | **Built** (11 Oct) | `30-map-people-variants.html` (kept out of the repo) |
@@ -1120,6 +1120,32 @@ attacks, damage a second, the critical, the Needle Strike) and `.ct-hud` (`asset
 per mask, the spool with the silk, «a Bind heals n»). The levels are `.ct-pips`, a pip a level
 (Free mode: a pip sets it, the lit top one steps down), − and + only in Free mode.
 
+
+### Third round: the slots as the game draws them (13 October 2026)
+
+Albert: check that every Crest, Tool and slot looks as in the game, with Tools on too. Read from the
+game's files: a full slot's EmptyToFull animation (animations_assets_shared) ends on
+`UI_tool_slot_attack0004`, a thin ring, notched up or down for a red or Silk Skill slot fired with
+Tool + up or down (each slot's AttackBinding in crestitems.bundle); the empty signs per button
+(`Tool_slot_attack_up0000`, `UI_tool_slot_weave_down`...); the Vesticrest's slots in the pane's
+"Floating Slots", between white brackets (`UI_tool_slot_extra_sockets`). `43-crest-review-variants.html`
+drew five decisions over real saves and full Free-mode builds:
+
+1. A Tool in its slot: **A the game's ring**, the Tool large inside (1.43 and 1.15 units, over the
+   art as in the game); B the sign behind a small icon (as it was); C the ring smaller.
+2. An empty slot: **A its sign by its button** (up, alone, down); B one sign per colour.
+3. A locked slot: **A its sign in grey with the lock ring** (the wiki's Red Tools Icon Locked); B the
+   game's small locked dot, a grey ring.
+4. The Vesticrest: **A beside the Crest, in its brackets**; B a row under it.
+5. A save made while cursed: **A the Cursed Crest** (its art, no slots, a line on the curse, the
+   wiki's name in English: the game gives it none); B the Hunter, empty (as it was).
+
+Decision: A in all five, built. `tools/extract-crests.py` writes the buttons into
+`SS.crestSlots` (a fifth field), the sprites at their sizes into `SS.crestSprites`, the floating
+column into `SS.crestFloat` and the curse's art. Albert, on the page: the Crest's name stays under the
+Crest alone, not under the Crest and the Vesticrest's column. The review also fixed what wasn't a
+choice: Pale Nails' description (`INV_DESC_SILKBOSS_NEEDLE`), Silkshot as the variant the save holds
+(its picture, words, damage and uses), and the Shaman's three Silk Skills.
 
 ## Step 9 · Combat
 

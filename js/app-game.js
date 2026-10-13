@@ -53,7 +53,8 @@
     const total = (kind) => CO.PIECES.filter((p) => p[0] === kind).length;
     const item = (id) => D.ITEMS.find((x) => x.id === id);
     const out = [];
-    for (const x of D.TOOLS) out.push({ list: 'tools', id: x.id, name: x.name, desc: x.desc, got: g.tools.includes(x.id), color: x.color });
+    // A Tool as the game holds it: Silkshot's picture and words are the variant's (js/engine.js toolArt).
+    for (const x of D.TOOLS) { const a = SS.engine.toolArt(x.id, g); out.push({ list: 'tools', id: x.id, art: a.art, name: x.name, desc: a.desc, got: g.tools.includes(x.id), color: x.color }); }
     for (const x of D.CRESTS) out.push({ list: 'crests', id: x.id, name: x.name, desc: x.desc, got: g.crests.includes(x.id) });
     for (const x of D.SKILLS) out.push({ list: 'skills', id: x.id, name: x.name, desc: x.desc, got: g.skills.includes(x.id) });
     for (const x of D.ARTS) out.push({ list: 'arts', id: x.id, name: x.name, desc: x.desc, got: g.arts.includes(x.id) });
@@ -103,7 +104,7 @@
     const mark = marking && markable(x);
     return `<li><button type="button" class="${cls}"${x.color ? ` style="--c: var(--slot-${x.color})"` : ''} data-act="${mark ? 'invOwn' : 'invPick'}" data-key="${esc(keyOf(x))}"
       ${mark ? `aria-pressed="${x.got}"` : `aria-expanded="${picked === keyOf(x)}"`} aria-label="${esc(label)}" title="${esc(pick(x.name))}"${NT}>
-        <img src="${icon(x.list, x.id)}" alt="" loading="lazy"></button>${marking && x.n ? stepper(x) : x.count ? `<span class="inv-count">${esc(x.count)}</span>` : ''}</li>`;
+        <img src="${icon(x.list, x.art || x.id)}" alt="" loading="lazy"></button>${marking && x.n ? stepper(x) : x.count ? `<span class="inv-count">${esc(x.count)}</span>` : ''}</li>`;
   }
   /* Free mode marks (design/03-redesign.md, step 4): a tap on a Tool, Crest, Silk Skill,
      ability, the Everbloom, an Old Heart or a melody marks it had or not and opens its text; the
@@ -122,7 +123,7 @@
   function open(list) {
     const x = shown.find((y) => keyOf(y) === picked);
     if (!x || !list.includes(x)) return '';
-    return `<div class="inv-open" aria-live="polite"><img class="${x.got ? '' : 'is-missing'}" src="${icon(x.list, x.id)}" alt="">
+    return `<div class="inv-open" aria-live="polite"><img class="${x.got ? '' : 'is-missing'}" src="${icon(x.list, x.art || x.id)}" alt="">
       <h4 class="inv-name"${NT}>${esc(pick(x.name))}</h4>
       ${x.got ? '' : `<p class="inv-not">${esc(t('invMissing'))}</p>`}
       ${x.desc ? `<p class="inv-desc">${esc(pick(x.desc))}</p>` : ''}</div>`;
@@ -178,7 +179,7 @@
     return `<ul class="inv-plates">${list.map((x) => {
       const v = x.got ? x2v(x) : null;
       return `<li><button type="button" class="inv-plate${x.got ? '' : ' is-missing'}${picked === keyOf(x) ? ' is-picked' : ''}" data-act="${marking ? 'invOwn' : 'invPick'}" data-key="${esc(keyOf(x))}" ${marking ? `aria-pressed="${x.got}"` : `aria-expanded="${picked === keyOf(x)}"`}${NT}>
-        <span class="inv-plate-art"><img src="${icon(x.list, x.id)}" alt="" loading="lazy"></span><span class="inv-plate-name">${esc(pick(x.name))}</span>
+        <span class="inv-plate-art"><img src="${icon(x.list, x.art || x.id)}" alt="" loading="lazy"></span><span class="inv-plate-name">${esc(pick(x.name))}</span>
         <span class="inv-plate-v${v == null ? ' is-none' : ''}">${v == null ? esc(t(x.got ? 'invLearnt' : 'invNotLearnt')) : num(v)}</span></button></li>`;
     }).join('')}</ul>`;
   }
@@ -198,7 +199,7 @@
       const fig = marking ? field(key, v, max, name) : esc(num(v));
       const list = of(ros ? 'rosaries' : 'shards'), sum = broken(ros ? 'rosaries' : 'shards');
       return `<div class="inv-cur"><div class="inv-fig">
-        <button type="button" class="inv-fig-art${picked === keyOf(x) ? ' is-picked' : ''}" data-act="invPick" data-key="${esc(keyOf(x))}" aria-expanded="${picked === keyOf(x)}" aria-label="${esc(name)}" title="${esc(name)}"${NT}><img src="${icon(x.list, x.id)}" alt=""></button>
+        <button type="button" class="inv-fig-art${picked === keyOf(x) ? ' is-picked' : ''}" data-act="invPick" data-key="${esc(keyOf(x))}" aria-expanded="${picked === keyOf(x)}" aria-label="${esc(name)}" title="${esc(name)}"${NT}><img src="${icon(x.list, x.art || x.id)}" alt=""></button>
         <span class="inv-fig-name"${NT}>${esc(name)}</span>
         <span class="inv-fig-num">${fig}${ros ? '' : `<i> / ${esc(num(cap))}</i>`}</span>
         ${ros ? '' : `<span class="inv-bar" style="--f:${(Math.min(v, cap) / cap * 100).toFixed(1)}%"></span>`}</div>
@@ -216,7 +217,7 @@
     const g = own || App.freeGame();
     const b0 = App.currentBuild();
     const b = own ? b0 : SS.engine.normalize({ ...b0, needle: g.needle, kit: g.kit, pouch: g.pouch, masks: g.masks, spools: g.spools, hearts: g.hearts,
-      tools: b0.tools.filter((id) => g.tools.includes(id)), skill: g.skills.includes(b0.skill) ? b0.skill : null,
+      tools: b0.tools.filter((id) => g.tools.includes(id)), skills: b0.skills.filter((id) => g.skills.includes(id)),
       crest: g.crests.includes(b0.crest) ? b0.crest : 'hunter', hunterStage: (g.build && g.build.hunterStage) || 1 });
     marking = !own;
     const all = shown = things(g);

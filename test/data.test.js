@@ -418,8 +418,19 @@ test('each Crest\'s slots from the game match js/data.js, and each has its art',
       assert.equal(n('skill', 0) + n('skill', 1), c.slots.skill, `${c.id} skill`);
       const art = c.id === 'hunter' ? `hunter-${i + 1}` : c.id;
       assert.ok(crestArt[art] && fs.existsSync(path.join(__dirname, '..', 'assets', 'crests', art + '.webp')), art);
+      // Each slot's button: 0 alone, 1 up, 2 down; a Crest's red and Skill slots never share one.
+      assert.ok(row.every((s) => [0, 1, 2].includes(s[4])), `${c.id} buttons`);
+      for (const t of [0, 3]) { const b = row.filter((s) => s[2] === t).map((s) => s[4]); assert.equal(new Set(b).size, b.length, `${c.id} ${TYPE[t]} buttons`); }
     });
   }
+  // The game's sprites the pane draws with, the curse's art, and the Vesticrest's floating column.
+  const { crestSprites, crestFloat } = globalThis.SS;
+  for (const k of ['red', 'red-up', 'red-down', 'blue', 'yellow', 'skill', 'skill-up', 'skill-down', 'ring', 'ring-up', 'ring-down', 'lock', 'bracket-top', 'bracket-mid', 'bracket-bot']) {
+    assert.ok(crestSprites[k] && /^data:image\/webp;base64,/.test(crestSprites[k][0]) && crestSprites[k].slice(1).every(Number.isFinite), k);
+  }
+  assert.ok(crestArt.cursed && fs.existsSync(path.join(__dirname, '..', 'assets', 'crests', 'cursed.webp')));
+  assert.equal(crestFloat.slots.length, 2);
+  assert.deepEqual(Object.keys(crestFloat.brackets).sort(), ['1', '2']);
 });
 
 test('how bosses stagger, from the game: the wiki\'s hit count is the maximum plus one', () => {

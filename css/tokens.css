@@ -314,7 +314,8 @@
   /* The Crest screen's Crest: px to the game's unit (its art is 100 px to the unit, 4.3 to 6.1
      units wide), smaller on a phone. */
   --crest-k: 64px;
-  --crest-k-sm: 48px;
+  --crest-k-sm: 44px;
+  --crest-k-xs: 35px;   /* a phone, with the Vesticrest's column beside the Crest */
   /* Progress's completion ring (design/20-progress-total-variants.html, A); smaller on a phone. */
   --pg-ring: 220px;
   /* Its two tabs' pictures, the rings of what's left for the next Act and their medallions

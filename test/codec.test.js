@@ -25,3 +25,17 @@ test("the base writes nothing but the version; a damaged link keeps what it can 
   const d = C.decode('v=1&crest=nope&needle=9&tools=straight-pin,nothing&skill=x');
   assert.deepEqual([d.crest, d.needle, d.tools, d.skill], ['hunter', 4, ['straight-pin'], null]);
 });
+
+test("the Shaman's three Silk Skills travel in one field, and an older link's one skill still reads", () => {
+  const link = C.encode({ crest: 'shaman', skills: ['silkspear', 'rune-rage', 'pale-nails'] });
+  assert.match(link, /&skill=silkspear,rune-rage,pale-nails/);
+  assert.deepEqual(C.decode(link).skills, ['silkspear', 'rune-rage', 'pale-nails']);
+  assert.deepEqual(C.decode('v=1&skill=sharpdart').skills, ['sharpdart']);
+});
+
+test('the Silkshot held travels in the link, and only when it is not the Original', () => {
+  assert.ok(!/shot=/.test(C.encode({ tools: ['silkshot'] })));
+  const link = C.encode({ tools: ['silkshot'], silkshot: 'architect' });
+  assert.match(link, /&shot=architect/);
+  assert.equal(C.decode(link).silkshot, 'architect');
+});

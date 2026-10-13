@@ -146,17 +146,25 @@ beside them what depends on the moment: the Hunter's focus, the Beast's fury, Fl
 the hit after a Challenge.
 
 Below, the Crest drawn as the game draws it, with its slots where the game puts them (read from
-its files, per Crest and per evolution of the Hunter), each the game's frame in its colour and
-holding the Tool or Silk Skill worn (from a save, in the slot the game has it in); a slot no
-Memory Locket has opened yet shows the game's grey locked frame (from a save, as the save says;
-in Free mode every slot is open), and the Vesticrest's slots sit on a row under the Crest. In Free mode a
+its files, per Crest and per evolution of the Hunter), every piece the game's own sprite at its
+size. An empty slot shows its sign in its colour; a red or Silk Skill slot's sign says the button
+that fires it (a spike up for Tool + up, plain, or down for Tool + down). A slot holding a Tool or
+Silk Skill (from a save, in the slot the game has it in) is the game's ring in its colour with the
+Tool large inside. A slot no Memory Locket has opened yet shows its sign in grey with the lock ring
+(from a save, as the save says; in Free mode every slot is open). The Vesticrest's slots float
+beside the Crest between the game's white brackets, and the Crest's name sits under the Crest. The
+Shaman wears a Silk Skill in each of its three slots. A save made while cursed (the Witch's curse,
+for a while in the story) shows the Cursed Crest: no slots, a line on what the curse does, and the
+figures with silk stopped at 3 and no Bind. In Free mode a
 tap on a worn one there takes it off, and the others stay in their slots. ‹ › change the Crest. Beside it,
 the Tools and Silk Skills you have (as the game lists them; in Free mode, all of them, or on «What
 I have» what the Inventory's marks say, with a line to the Inventory while no Tool is marked), by colour, each on its slot as the Inventory draws it, the
 slot filled and lit when it's worn: a tap puts one on or takes it off,
 and pointing at one (or at a slot) describes it underneath with the game's words and its numbers
 (damage per hit, uses at the Pouch's level, a full load, the shell shards to refill it; a Silk
-Skill's damage and silk), as if it were worn when it isn't.
+Skill's damage and silk), as if it were worn when it isn't. Silkshot is the one the game repaired
+(the Original, the Twelfth Architect's or the Forge Daughter's: a save says which), with its own
+picture, words, damage and uses.
 
 The damage is the wiki's model: the weapon's damage at its level times (1 + the player's
 modifiers, which add) rounded half to even, per hit; Tools scale with the Crafting Kit, the rest
