@@ -41,7 +41,7 @@ the work up reads it first, then the step it's on.
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html` |
-| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
+| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight 13 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct) | [`12-map-variants.html`](12-map-variants.html) |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds) | [`15-journal-variants.html`](15-journal-variants.html) |
 | 8 | Crest (`tools`) | **Built** (28 Sep) | [`18-crest-variants.html`](18-crest-variants.html) |
@@ -583,6 +583,42 @@ below as the 100% tab. **Decision: E** (11 October 2026), built:
 - The road card counts as the rings do (3/31 here, not the step's 2/15, which counted all the points
   as one thing). The Lace check was checked: `defeatedLaceTower` is set only in Song_Tower_01, the
   Cradle's tower, so «Derrota a Lace en la Cuna» is right (Save 2 has the three melodies).
+
+### At first sight (13 October 2026)
+
+Albert: a first-time player must understand the tab at once; people look for guides on getting from
+Act 2 to Act 3. Looked at over five real saves (none, Act 1 at 7%, Act 2 at 15% and at 61% just
+before Act 3, Act 3 at 72%, 100%) and the sibling's ledger. What a newcomer didn't get: nothing said
+what the tab is, nor that the game has three Acts; «Desbloquea el deseo «Seda y alma»» opened it with
+no word that this wish opens Act 3; at 61% the three things left sat among 42 ticked rows, three
+screens long; the thread's steps were bare nouns («Muro de deseos», «Cuidador»); nothing said how the
+100% splits (the Tools are half); without a save the 100% card was an empty ring with a lone «%», and
+the guide a long flat list with no word about importing; at 100%, «0 cosas… que ya puedes conseguir».
+
+The options (`40-progress-clarity-variants.html`, the real page over the five saves, each decision
+switchable): 1 the top (A the three Acts and a sentence, B the sentence, C as it was); 2 the step
+(A «Lo siguiente», only what's missing, numbered, the whole list folded; B the lists without the
+done rows; C as it was); 3 the thread (A steps named as actions, B a numbered list down the page, C
+as it was); 4 the 100% (A a bar of the split with its legend, B a sentence and «n % to go» per row,
+C as it was); 5 no save (A the invitation, the card's figure and both roads with their threads and
+lists folded, B the invitation and the card, C as it was).
+
+**Decision: A in all five** (13 October 2026), built (`js/app-progress.js`, `css/app.css`):
+- `actsTop()`: `.pg-acts` over the tabs, the three Acts on the journey's thread with `ACT_n_NAME`
+  under each, yours marked «Estás aquí», and `.pg-here`: the step and what's left of it in the
+  rings' units, or the 100% in Act 3, or what the tab is without a save.
+- Steps are read by id (`TITLE`, `SHORT`, from `js/acts.js` next()), so a step the road gains keeps
+  its words; the thread shows «n · what to do», the later medallions the same.
+- `todoHtml()`: «Lo siguiente» from the parts' own rows, the done left out; the wish points short as
+  one line with the four nearest wishes (`byNear`, rooms from the bench); «Talk to Pavo» once the key
+  is ready. The parts' groups fold under «Ver la lista entera» (`prefs.pgList`).
+- Act 3 keeps only the endings on its thread (`journeyEnds`), the thread unlit: they aren't a
+  sequence. The bridge to the 100% is gone when nothing's left to get.
+- The 100% tab: `.pg-split`, a bar of a hundred by category, its legend and «La cifra de cada fila
+  es cuánto tienes de lo que vale, en puntos del 100 %» (not «each thing is 1%»: masks and spools
+  count whole), and a «Tienes / vale (%)» head over the rows.
+- No save: `.pg-invite` with «Importar del juego» over either tab, the card «100 % en 10
+  categorías», each road with its thread (`journey(r, true)`) and every list under «Ver los n».
 
 ## Step 6 · Map
 
