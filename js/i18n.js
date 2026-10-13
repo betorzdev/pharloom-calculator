@@ -18,6 +18,11 @@
     langGroup:      { es: 'Idioma', en: 'Language' },
     share:          { es: 'Compartir', en: 'Share' },
     shareHint:      { es: 'Copia el enlace a la web', en: 'Copy the link to the site' },
+    // The sister site's link (js/app-sister.js): the game's title, as it's sold in both languages; its
+    // hint names the sister in each, as that site calls itself (its own title; «Amuletos» is Hollow
+    // Knight's Spanish for Charms, PANE_CHARMS there).
+    sister:         { es: 'Hollow Knight', en: 'Hollow Knight' },
+    sisterHint:     { es: 'Calculadora de Hallownest: tu partida de Hollow Knight, el 112 %, el mapa y los amuletos', en: 'Hallownest Calculator: your Hollow Knight save, the 112%, the map and the Charms' },
     linkCopied:     { es: 'Enlace copiado', en: 'Link copied' },
     copyThis:       { es: 'Copia este enlace:', en: 'Copy this link:' },
     /* The beta notice (js/app.js): above the screens until it's closed, and the tag by the title. */

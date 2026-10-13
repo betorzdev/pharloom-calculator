@@ -554,6 +554,30 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
 /* On the screen bar: sitting at its bottom edge, under the current tab's title. */
 .nav-tabs > .hn { bottom: 0; left: 0; }
 
+/* ── The sister site's link and its Knight (js/app-sister.js) ────────────
+   «Hollow Knight ↗», a loose word above the language and Share, on the crown's row (the sibling's
+   «Silksong ↗», where Hornet stands); the header opens higher for him to stand on it. On a phone,
+   on its own line under the title (the ≤599 px block), with room above for him. The Knight's layer
+   is in .page, over the masthead's letters and under the screen bar when it sticks; he's drawn from
+   his move's strip, stepped by the JS or, looping, by steps() here (the sibling's .sis-hornet). */
+.masthead:has(.mh-sister-row) { padding-top: var(--sp-12); }
+.mh-sister-row { grid-column: 1; grid-row: 1; justify-self: start; align-self: end; display: flex; }
+.mh-sister {
+  display: inline-flex; align-items: center; gap: var(--sp-1); min-height: var(--ctl-sm);
+  font-family: var(--font-body); font-size: var(--fs-md); color: var(--ink-2); text-decoration: none; white-space: nowrap;
+  transition: color var(--dur) var(--ease);
+}
+.mh-sister:is(:hover, :focus-visible) { color: var(--accent); }
+.mh-sister-arr { font-size: var(--fs-2xs); }
+.sis-lay { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+.sis-knight { position: absolute; left: 0; top: 0; background-repeat: no-repeat; will-change: transform; }
+.sis-knight.is-loop { animation: sis-cycle 1s steps(var(--n)) infinite; }
+.sis-knight.is-loop.is-calm { animation-name: sis-breathe; animation-timing-function: steps(var(--n), jump-none); animation-direction: alternate; }
+/* Focusing soul: the white light swells round him while he gathers it (Hornet's Bind, .hn.is-bind). */
+.sis-knight.is-focus { filter: drop-shadow(0 0 3px var(--focus-glow)) drop-shadow(0 0 10px var(--focus-glow)); transition: filter var(--dur-slow) var(--ease-fade); }
+@keyframes sis-cycle { from { background-position-x: 0; } to { background-position-x: calc(-1 * var(--cell) * var(--n)); } }
+@keyframes sis-breathe { from { background-position-x: 0; } to { background-position-x: calc(-1 * var(--cell) * (var(--n) - 1)); } }
+
 /* ── Atmosphere ──────────────────────────────────────────────────────────
    The main menu behind the whole page (tokens.css): fixed to the window and behind everything.
    Below, the red light, the vignette and the embers (.atmos, js/app.js); above, the grain. */
@@ -628,6 +652,11 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
   .masthead { display: flex; flex-wrap: nowrap; justify-content: space-between; align-items: center; gap: var(--sp-2); padding-top: var(--sp-3); }
   .brand, .masthead .brand { display: flex; flex: 1 1 auto; align-items: flex-start; order: -1; }
   .masthead .mh-tools { order: 1; flex: none; flex-wrap: nowrap; --tools-gap: var(--sp-3); }
+  /* The sister's link (js/app-sister.js): on its own line under the title, room above for the Knight;
+     the title gives way first, so the save and the language keep their row. */
+  .masthead:has(.mh-sister-row) { flex-wrap: wrap; padding-top: var(--sp-3); }
+  .masthead:has(.mh-sister-row) .brand { flex: 1 1 0; }
+  .mh-sister-row { order: 2; flex-basis: 100%; margin-top: var(--sp-8); }
   .lang-name { display: none; }
   .lang-code { display: inline; }
   /* At the right edge, the list opens leftwards. */
