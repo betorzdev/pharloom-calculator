@@ -36,8 +36,10 @@ Neither folder is part of the page: `index.html` doesn't load them.
 - **`localStorage` always wrapped in `try/catch`**: over `file://` its behaviour is undefined and
   access can throw.
 - **Every storage key starts with `pharloom.`**, and the IndexedDB database is `pharloom-live`.
-  This site and the Hollow Knight one share the `betorzdev.github.io` origin, so they share
-  `localStorage`: `hollow.*` is the other site's, never read or written here.
+  This site and the Hollow Knight one shared the `betorzdev.github.io` origin (each has its own
+  domain since October 2026: `pharloomcalculator.com`, `hallownestcalculator.com`), and over
+  `file://` or a local server they still can: `hollow.*` is the other site's, never read or
+  written here.
 - **Every colour, typeface and spacing value comes from `css/tokens.css`.** No loose values.
   The HUD and the slot colours are measured (`design/02-silksong.md`); the surfaces, the accent
   and the frames were decided on them (its §5, and the tokens' header). The page is the
