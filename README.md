@@ -31,6 +31,7 @@ npm run collectibles           # the completionist's dictionary, pinned (the sav
 npm run art                    # the game's sprites from the wiki; npm run icons, its icons
 npm run pages                  # one page per search and per boss, in each language, and sitemap.xml
 npm run check-pack -- <folder> # the site against a folder of real saves: the 100% must match
+npm run promo -- --before <save> --after <save>  # the announcement video (tools/promo/make.js)
 ```
 
 The map is extracted from the installed game: `tools/extract-map.py` (see its header); and the
