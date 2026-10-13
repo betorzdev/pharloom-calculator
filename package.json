@@ -15,6 +15,7 @@
     "art": "node tools/fetch-art.js",
     "icons": "node tools/fetch-icons.js",
     "pages": "node tools/pages.js",
-    "admin": "node tools/admin.js"
+    "admin": "node tools/admin.js",
+    "promo": "node tools/promo/make.js"
   }
 }
