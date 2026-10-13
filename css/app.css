@@ -1743,9 +1743,8 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
   width: calc(var(--gw) * var(--k)); height: calc(var(--gh) * var(--k)); transform: translate(-50%, -50%); pointer-events: none;
   background: var(--c); -webkit-mask: var(--g) center / contain no-repeat; mask: var(--g) center / contain no-repeat;
 }
-/* Locked: the sign in grey, the lock ring on its shoulder in the pale rim (the wiki's Red Tools Icon Locked). */
-.ct-slot.is-locked .ct-g { background: var(--slot-locked); }
-.ct-slot.is-locked .ct-g.is-lock { background: var(--slot-locked-rim); }
+/* Locked: the lock ring in the slot colour's grey, the slot at half opacity (InventoryToolCrestSlot). */
+.ct-slot.is-locked .ct-g { background: var(--slot-lock); opacity: var(--slot-lock-opacity); }
 .ct-slot.is-full { cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .ct-slot img {
   position: absolute; left: 50%; top: 50%; width: calc(var(--k) * 1.15); height: calc(var(--k) * 1.15); max-width: none; object-fit: contain;

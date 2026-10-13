@@ -112,6 +112,11 @@
   --slot-skill: #ffffff;
   --slot-locked: #606060;
   --slot-locked-rim: #dcdcdc;
+  /* A locked slot on the Crest (read from the game, InventoryToolCrestSlot.UpdateSlotDisplay): the
+     lock ring in its colour's grey (no saturation, same value: the game's slot colours are all V 92.5%,
+     GlobalSettings toolTypeColors), its group at half opacity. */
+  --slot-lock: #ececec;
+  --slot-lock-opacity: 0.5;
 
   /* The screens are scenes from the game: a black field and the Crest screen's warm spotlight
      (#23201d). The --scene-cold* names are kept from the skeleton; the light isn't cold. */

@@ -17,7 +17,13 @@ The slot sprites, white and tinted by colour in the game, are in inventory.sprit
 _defend0000 blue, _explore0000 yellow, _weave0000 Silk Skill; a red or Skill slot on up or down
 has its own, Tool_slot_attack_up0000 / _down0000 and UI_tool_slot_weave_up / _down); a full one
 ends its EmptyToFull animation (animations_assets_shared) on UI_tool_slot_attack0004, a ring
-(_up / _down notched for up and down); a locked one is its sign in grey with Tool_slot_lock_ring.
+(_up / _down notched for up and down). A locked one is Tool_slot_lock_ring alone (read on
+13-Oct-2026): each slot draws its sign on one renderer ("Background", in the pane's Template Crest),
+and its Locked animation (toolui_assets_all, "Attack Slot Locked", shared by every colour) swaps the
+sign for the ring, centred; InventoryToolCrestSlot.UpdateSlotDisplay (Assembly-CSharp 1.0.30000)
+scales it to 0.8, tints it the slot colour's grey and fades the slot to half (js/app-tools.js, the
+--slot-lock tokens). UI_tool_slot_locked_fill, on "Background_Filled", only shows on the Crests the
+list leaves as silhouettes, which the site doesn't draw.
 The Vesticrest's slots float beside the Crest in the pane's "Floating Slots"
 (coremanagers_assets__gamecameras.bundle, Tools): a column of slots between white brackets
 (UI_tool_slot_extra_sockets top, mid, bottom), read from the prefab into SS.crestFloat.

@@ -86,8 +86,8 @@
      a Memory Locket opens. Every piece is the game's sprite at its own size: an empty slot shows
      its sign (a red or Silk Skill slot's says the button that fires it: up, alone or down); a full
      one, the ring in its colour with the Tool large inside, over the Crest's art as in the game; a
-     slot no Locket has opened yet, its sign in grey with the lock ring (in a save, as the save
-     says, slot by slot; in Free mode every Locket is used). The Vesticrest's slots float beside the
+     slot no Locket has opened yet, the game's small lock ring in grey instead of its sign (in a
+     save, as the save says, slot by slot; in Free mode every Locket is used). The Vesticrest's slots float beside the
      Crest between the game's white brackets ("Floating Slots"), and the Crest's name stays under
      the Crest alone. In Free mode a Tool in a slot is taken off with a tap, and each slot keeps
      what it holds (seats, per Crest, while the page is open): taking one off leaves the others
@@ -103,12 +103,16 @@
     const [x, y] = at || [ax * k, ay * k];
     return `<i class="ct-g${cls}" style="--g:url(${uri});--gw:${w * k};--gh:${h * k};--gx:${x};--gy:${y}"></i>`;
   };
+  // A locked slot's ring, scaled down (InventoryToolCrestSlot.UpdateSlotDisplay, Assembly-CSharp 1.0.30000).
+  const LOCKED_SCALE = 0.8;
   const sign = (kind, bind) => sprite(kind === 'red' || kind === 'skill' ? kind + BUTTON[bind || 0] : kind);
   function slot(s, id, shut, locked) {
     const at = s.x == null ? '' : ` style="--x:${s.x};--y:${s.y}"`;
     if (!id) {
-      // The lock ring sits on the sign's shoulder, as the wiki's Red Tools Icon Locked shows it.
-      return `<span class="ct-slot is-${s.kind}${shut ? ' is-locked' : ''}"${at} aria-hidden="true">${sign(s.kind, s.bind)}${shut ? sprite('lock', ' is-lock', 1, [0.3, 0.32]) : ''}</span>`;
+      // A locked slot is the lock ring alone, where the sign would be: the slot's Locked animation swaps
+      // the sign for Tool_slot_lock_ring (centred) and scales it to LOCKED_SCALE (InventoryToolCrestSlot).
+      const g = shut ? sprite('lock', '', LOCKED_SCALE) : sign(s.kind, s.bind);
+      return `<span class="ct-slot is-${s.kind}${shut ? ' is-locked' : ''}"${at} aria-hidden="true">${g}</span>`;
     }
     const name = slotName(s.kind, id);
     const act = locked ? 'ctDescribe' : s.kind === 'skill' ? 'ctSkill' : 'ctTool';

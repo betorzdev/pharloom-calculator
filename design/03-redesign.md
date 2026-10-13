@@ -1147,6 +1147,12 @@ Crest alone, not under the Crest and the Vesticrest's column. The review also fi
 choice: Pale Nails' description (`INV_DESC_SILKBOSS_NEEDLE`), Silkshot as the variant the save holds
 (its picture, words, damage and uses), and the Shaman's three Silk Skills.
 
+Reviewing PR #44, Albert saw the lock rings off centre on the signs. Read from the game (13 October
+2026), decision 3 A wasn't what the pane draws: the wiki's Red Tools Icon Locked is a composite.
+Each slot draws its sign on one renderer, and its Locked animation swaps the sign for
+`Tool_slot_lock_ring`, centred, scaled to 0.8, in the slot colour's grey, the slot at half opacity
+(`tools/extract-crests.py`'s header). The site now draws that: the ring alone, where the sign was.
+
 ## Step 9 · Combat
 
 ### What there is (28 September 2026)
