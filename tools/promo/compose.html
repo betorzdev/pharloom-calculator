@@ -3,293 +3,359 @@
 <head>
 <meta charset="utf-8">
 <title>Pharloom promo</title>
-<!-- tools/promo/compose.html: the announcement video, one frame per render(t) (tools/promo/make.js
+<!-- tools/promo/compose.html: the announcement trailer, one frame per render(t) (tools/promo/make.js
      drives it; the real site's screens are its shots). Opened by hand through make.js's server,
-     ?shots=/__promo/shots/#t=12.3 shows that moment and #play runs it in real time.
+     ?w=/__promo/#t=12.3 shows that moment and #play runs it in real time (no sound).
+     It is cut to its music, Christopher Larkin's "Final Judge" (tools/promo/extract-game.py):
+     73⅓ bpm, a beat every 9/11 s, the clip's beat 0 at its start; the film starts on the clip's
+     beat 76 (MUSIC), so the film's beat n is at n × BEAT. Hornet falls through the first bar and
+     lands on beat 4 (a heavy one in the clip); the save is dragged in and drops on beat 13, the
+     card lighting up; then a screen every two beats, four for the road to the Acts and to the
+     100%; one close-up a beat from 36, where the music is loudest; the title lands on beat 44, the
+     clip's strongest hit, and the music falls quiet on beat 48. Hornet is the game's own animation (Fall, HardLand, Challenge Strong).
      The page's tokens (css/tokens.css) dress it: the main menu's black, red light and embers at
      either end, the white filigree, the bone ink, Cinzel and Spectral. The light effects (the
-     silk's glow, the flash as the save lights the card, the shade under the captions) are the
-     film's own and stay here. -->
+     flashes, the dust, the shade under the captions) are the film's own and stay here. -->
 <link rel="stylesheet" href="../../css/tokens.css">
 <style>
   * { box-sizing: border-box; margin: 0; }
   html, body { width: 1920px; height: 1080px; overflow: hidden; background: #000; }
   body { font-family: var(--font-body); color: var(--accent); }
   .layer { position: absolute; inset: 0; }
-  .scene { position: absolute; inset: 0; overflow: hidden; visibility: hidden; }
+  #world { position: absolute; inset: -40px; }          /* room to shake */
+  #world > * { position: absolute; left: 40px; top: 40px; width: 1920px; height: 1080px; }
+  .scene { overflow: hidden; visibility: hidden; }
   .scene img.page { position: absolute; left: 0; top: 0; width: 1920px; transform-origin: 0 0; }
   .menu { background: var(--bg); }
   .menu .glow { position: absolute; inset: 0; background: var(--ember-glow); }
-  .menu .vign { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 70% at 50% 45%, transparent 40%, rgba(0,0,0,.55) 100%); }
-  canvas { position: absolute; inset: 0; }
+  .menu .vign { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 70% at 50% 45%, transparent 40%, rgba(0,0,0,.6) 100%); }
+  .vignette { background: radial-gradient(ellipse 75% 75% at 50% 50%, transparent 55%, rgba(0,0,0,.55) 100%); pointer-events: none; }
+
+  .hornet { position: absolute; background-repeat: no-repeat; transform-origin: 0 0; }
+  /* A pool of light under her feet, not a floor: it opens as she lands and stays, faint. */
+  .ground { position: absolute; width: 900px; height: 120px; transform-origin: 50% 50%;
+    background: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(255,226,206,.42) 0%, rgba(240,170,140,.16) 40%, rgba(240,170,140,0) 100%); }
+
+  .title { position: absolute; left: 0; right: 0; text-align: center; }
+  .title .crown { color: var(--filigree); display: block; margin: 0 auto; }
+  .title h1 { font-family: var(--font-display); font-weight: 700; font-size: 112px; letter-spacing: .03em; line-height: 1; margin-top: 14px;
+    text-shadow: 0 0 50px rgba(255, 120, 80, .25), 0 2px 6px rgba(0,0,0,.8); white-space: nowrap; }
+  .title h1 .cap { font-size: 1.22em; }
+  .title .for { font-family: var(--font-body); font-style: italic; font-weight: 300; font-size: 34px; color: var(--ink-2); margin-top: 22px; }
+  .title .url { font-family: var(--font-display); font-weight: 500; font-size: 48px; letter-spacing: .08em; margin-top: 38px; }
+  .title .facts { font-family: var(--font-display); font-size: 21px; letter-spacing: .3em; color: var(--ink-2); margin-top: 26px; text-transform: uppercase; }
+  .legal { position: absolute; left: 0; right: 0; bottom: 34px; text-align: center; font-size: 17px; color: var(--muted); }
 
   /* The game's area title card: a small line over the name, a flourish under it. */
-  .card { position: absolute; left: 0; right: 0; bottom: 70px; text-align: center; }
-  .shade { position: absolute; left: 0; right: 0; bottom: 0; height: 400px;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.8) 42%, rgba(0,0,0,.95) 100%); }
+  .shade { position: absolute; left: 0; right: 0; bottom: 0; height: 420px;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.82) 42%, rgba(0,0,0,.96) 100%); }
+  .card { position: absolute; left: 0; right: 0; bottom: 70px; text-align: center; transform-origin: 50% 70%; }
   .sup { font-family: var(--font-display); font-weight: 500; font-size: 22px; letter-spacing: .34em; color: var(--ink-2); text-transform: uppercase; }
-  .main { font-family: var(--font-display); font-weight: 500; font-size: 68px; letter-spacing: .02em; color: var(--accent); margin-top: 10px; line-height: 1.1;
+  .main { font-family: var(--font-display); font-weight: 600; font-size: 72px; letter-spacing: .02em; margin-top: 10px; line-height: 1.1;
     text-shadow: 0 0 30px rgba(0,0,0,.9), 0 2px 4px rgba(0,0,0,.9); }
   .flourish { display: block; margin: 16px auto 0; color: var(--filigree); opacity: .9; }
 
-  .title { position: absolute; left: 0; right: 0; top: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-  .title .crown { color: var(--filigree); }
-  .title h1 { font-family: var(--font-display); font-weight: 700; font-size: 104px; letter-spacing: .03em; margin-top: 18px; line-height: 1;
-    text-shadow: 0 0 40px rgba(255, 120, 80, .18); white-space: nowrap; }
-  .title h1 .cap { font-size: 1.22em; }
-  .title .for { font-family: var(--font-body); font-style: italic; font-weight: 300; font-size: 34px; color: var(--ink-2); margin-top: 26px; }
-  .title .url { font-family: var(--font-display); font-weight: 500; font-size: 46px; letter-spacing: .08em; color: var(--accent); margin-top: 40px; }
-  .title .facts { font-family: var(--font-display); font-size: 20px; letter-spacing: .3em; color: var(--ink-2); margin-top: 26px; text-transform: uppercase; }
-  .legal { position: absolute; left: 0; right: 0; bottom: 34px; text-align: center; font-size: 17px; color: var(--muted); letter-spacing: .02em; }
+  .kick { position: absolute; left: 0; right: 0; top: 50%; text-align: center; font-family: var(--font-display); font-weight: 700;
+    font-size: 150px; letter-spacing: .06em; line-height: 1; white-space: nowrap; transform-origin: 50% 50%;
+    text-shadow: 0 0 60px rgba(0,0,0,.95), 0 0 24px rgba(0,0,0,.9), 0 0 80px rgba(255,140,90,.25); }
 
-  .thread { position: absolute; left: 0; height: 2px; background: var(--filigree); transform-origin: 0 50%;
-    box-shadow: 0 0 6px 1px rgba(255,255,255,.85), 0 0 22px 4px rgba(255,235,220,.35); }
-  .hornet { position: absolute; width: 120px; height: 120px; background: url('../../assets/hornet/run.png') 0 0 / 1200px 120px; }
   .chip { position: absolute; padding: 14px 26px 14px 22px; border: 1px solid rgba(241,235,220,.55); background: rgba(20,12,10,.92);
-    font-family: var(--font-body); font-size: 28px; color: var(--accent); display: flex; gap: 14px; align-items: center;
+    font-family: var(--font-body); font-size: 28px; display: flex; gap: 14px; align-items: center;
     box-shadow: 0 18px 50px rgba(0,0,0,.7), 0 0 30px rgba(241,235,220,.12); }
-  .chip svg { color: var(--accent); }
-  .flash { position: absolute; inset: 0; background: radial-gradient(ellipse 75% 80% at 47% 42%, rgba(255,246,236,1) 0%, rgba(255,236,220,.92) 35%, rgba(240,200,180,.55) 75%, rgba(200,150,130,.35) 100%); }
-  .black { position: absolute; inset: 0; background: #000; }
-  .chip, .flash { z-index: 1; } .shade { z-index: 2; } .card { z-index: 3; } .thread, .hornet { z-index: 4; } .black { z-index: 10; }
+  .flash { background: radial-gradient(ellipse 80% 80% at 50% 50%, rgba(255,246,236,1) 0%, rgba(255,236,220,.9) 45%, rgba(230,190,170,.6) 100%); }
+  .black { background: #000; }
 </style>
 </head>
 <body>
 <!-- The crown is the site's own (index.html's header). -->
 <template id="crown"><svg width="300" height="42" viewBox="0 0 200 28" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><path d="M93 14 C84 14 78 7 69 7 C61 7 58 13 62 16.5 C65 19 69.5 16.5 68 13.5"/><path d="M62 16.5 C50 22 30 21 10 14"/><path d="M10 14 C6 12 5.5 8.5 9 8 C11.5 7.8 12 10.5 10.5 11.5"/><path d="M78 9 C74 3 66 1.5 58 3.5"/><g transform="translate(200 0) scale(-1 1)"><path d="M93 14 C84 14 78 7 69 7 C61 7 58 13 62 16.5 C65 19 69.5 16.5 68 13.5"/><path d="M62 16.5 C50 22 30 21 10 14"/><path d="M10 14 C6 12 5.5 8.5 9 8 C11.5 7.8 12 10.5 10.5 11.5"/><path d="M78 9 C74 3 66 1.5 58 3.5"/></g><path d="M100 5 L105 14 L100 23 L95 14 Z"/><path d="M100 1 V5 M100 23 V27"/></svg></template>
 
-<div id="stage" class="layer"></div>
-<canvas id="embers" width="1920" height="1080"></canvas>
-<div id="fx" class="layer"></div>
+<div id="world"><div id="stage"></div><canvas id="fx" width="1920" height="1080"></canvas><div id="actors"></div></div>
+<div id="over" class="layer"></div>
 
 <script>
-const W = 1920, H = 1080, SHOTS = new URLSearchParams(location.search).get('shots') || '/__promo/shots/';
-const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
-const lerp = (a, b, k) => a + (b - a) * k;
-const ramp = (t, a, b) => clamp((t - a) / (b - a));
-const ease = (k) => k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;      // in-out cubic
+const W = 1920, H = 1080;
+const BASE = new URLSearchParams(location.search).get('w') || '/__promo/';
+const BEAT = 9 / 11;
+const b = (n) => n * BEAT;
+const DUR = b(48) + 2.2;
+// For make.js: which track, where the film starts in it, and its fades.
+window.MUSIC = { track: 'judge', from: b(76), fadeIn: 2.6, fadeOutAt: b(48) - .1, fadeOut: 2.2 };
+
+const clamp = (x, a = 0, c = 1) => Math.min(c, Math.max(a, x));
+const lerp = (a, c, k) => a + (c - a) * k;
+const ramp = (t, a, c) => clamp((t - a) / (c - a));
+const ease = (k) => k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;
 const easeOut = (k) => 1 - Math.pow(1 - k, 3);
+const easeIn = (k) => k * k * k;
 const sine = (k) => -(Math.cos(Math.PI * k) - 1) / 2;
 const $ = (h) => { const d = document.createElement('div'); d.innerHTML = h.trim(); return d.firstElementChild; };
-const crown = () => document.getElementById('crown').content.firstElementChild.cloneNode(true);
+const crown = (w = 300) => { const s = document.getElementById('crown').content.firstElementChild.cloneNode(true); s.setAttribute('width', w); s.setAttribute('height', w * .14); return s; };
+const prime = (root) => root.querySelectorAll('path').forEach((p) => { const L = p.getTotalLength(); p.style.strokeDasharray = L; p.dataset.len = L; });
+const draw = (root, k) => root.querySelectorAll('path').forEach((p) => { p.style.strokeDashoffset = p.dataset.len * (1 - k); });
 
-/* ── The timeline ─────────────────────────────────────────────────────────
-   Each shot is a full-page capture of the real site (2x), seen through a camera: a rect in
-   page px (centre x, centre y, width) eased from `from` to `to` over the shot. */
-const DUR = 45;
-const SHOTS_LIST = [
-  { id: 'open',  t0: 0,    t1: 4.4,  menu: true },
-  { id: 'free',  t0: 4.4,  t1: 10.4, img: 'free.png', over: 'home.png', swap: 7.0,
-    from: [960, 480, 1440], to: [900, 470, 1260],
-    sup: 'Import your save', main: 'Your game, as it stands', cap: [4.9, 10.0] },
-  { id: 'pct',   t0: 10.4, t1: 15.4, img: 'home.png', from: [690, 455, 1020], to: [680, 505, 820],
-    sup: 'Checked on 92 real saves', main: 'The same 100% the game counts', cap: [10.8, 15.0] },
-  { id: 'since', t0: 15.4, t1: 20.4, img: 'home.png', from: [640, 1030, 1120], to: [900, 1000, 1020],
-    sup: 'Since your last save', main: 'What’s new. What’s near.', cap: [15.8, 20.0] },
-  { id: 'map',   t0: 20.4, t1: 26.0, img: 'map.png', from: [960, 600, 1300], to: [930, 575, 840],
-    sup: 'The game’s own map', main: 'Everything you’re missing, pinned', cap: [20.8, 25.6] },
-  { id: 'road',  t0: 26.0, t1: 30.6, img: 'progress.png', from: [960, 430, 1240], to: [960, 640, 1120],
-    sup: 'Act by act', main: 'The road ahead, step by step', cap: [26.4, 30.2] },
-  { id: 'journal', t0: 30.6, t1: 35.2, img: 'journal.png', from: [960, 470, 1240], to: [960, 1130, 1180],
-    sup: 'The Hunter’s Journal', main: 'Every bug, every kill to go', cap: [31.0, 34.8] },
-  { id: 'inv',   t0: 35.2, t1: 37.4, img: 'game.png', from: [700, 560, 1180], to: [740, 590, 1040],
-    sup: 'Crests and Tools', main: 'Every number of your build', cap: [35.6, 39.8] },
-  { id: 'crest', t0: 37.4, t1: 40.2, img: 'tools.png', from: [960, 560, 1250], to: [940, 605, 1140], quick: true },
-  { id: 'end',   t0: 40.2, t1: DUR,  menu: true, end: true },
+/* ── The shots: a full-page capture (2x) seen through a camera, a rect in page px (centre x,
+   centre y, width) eased from `from` to `to` over the shot. Beats, not seconds. ─────────── */
+const SCENES = [
+  { id: 'open', a: 0, z: 10, menu: true },
+  { id: 'drop', a: 10, z: 13, img: 'free', over: 'free-drag', swap: 11.6, land: 13, from: [960, 480, 1440], to: [940, 470, 1280],
+    sup: 'From the game’s own file', main: 'Drop in your save' },
+  { id: 'lit', a: 13, z: 16, img: 'home', from: [900, 470, 1260], to: [800, 480, 1080],
+    sup: 'Read in your browser', main: 'Your game, as it stands' },
+  { id: 'pct', a: 16, z: 18, img: 'home', from: [690, 480, 900], to: [680, 500, 820],
+    sup: 'Checked on 92 real saves', main: 'The game’s own 100%' },
+  { id: 'map', a: 18, z: 20, img: 'map', from: [960, 600, 1150], to: [950, 590, 1040],
+    sup: 'The game’s own map', main: 'Everything you’re missing' },
+  { id: 'zoom', a: 20, z: 22, img: 'map-zoom', from: [880, 540, 940], to: [1000, 580, 860],
+    sup: 'Piece by piece', main: 'Pinned where it hides' },
+  { id: 'acts', a: 22, z: 26, img: 'progress', from: [960, 360, 1120], to: [960, 660, 1120],
+    sup: 'Act 1 · Act 2 · Act 3', main: 'The road to every Act' },
+  { id: 'hundred', a: 26, z: 30, img: 'progress-100', from: [960, 620, 1100], to: [960, 1150, 1150],
+    sup: 'And the 100%', main: 'Every percent still to find' },
+  { id: 'journal', a: 30, z: 32, img: 'journal', from: [960, 520, 1200], to: [960, 760, 1180],
+    sup: 'The Hunter’s Journal', main: 'Every foe still to defeat' },
+  { id: 'inv', a: 32, z: 34, img: 'game', from: [720, 560, 1120], to: [740, 590, 1020],
+    sup: 'The Inventory', main: 'All Hornet carries' },
+  { id: 'crest', a: 34, z: 36, img: 'tools', from: [940, 580, 1200], to: [930, 610, 1100],
+    sup: 'Crests and Tools', main: 'Every number of your build' },
+  // The montage: a close-up a beat, and its word.
+  { id: 'm1', a: 36, z: 37, img: 'home', rect: [680, 470, 760], kick: 'Your save' },
+  { id: 'm2', a: 37, z: 38, img: 'home-live', rect: [1000, 314, 1000], kick: 'Read live' },
+  { id: 'm3', a: 38, z: 39, img: 'progress', rect: [960, 320, 820], kick: 'Every Act' },
+  { id: 'm4', a: 39, z: 40, img: 'progress-100', rect: [960, 720, 900], kick: 'Every percent' },
+  { id: 'm5', a: 40, z: 41, img: 'map-zoom', rect: [900, 560, 640], kick: 'Every piece' },
+  { id: 'm6', a: 41, z: 42, img: 'journal', rect: [700, 810, 700], kick: 'Every foe' },
+  { id: 'm7', a: 42, z: 43, img: 'free', rect: [960, 420, 900], kick: 'Free' },
+  { id: 'm8', a: 43, z: 44, img: 'free', rect: [960, 605, 700], kick: 'No account' },
+  { id: 'end', a: 44, z: 99, menu: true },
 ];
-
-const stage = document.getElementById('stage'), fx = document.getElementById('fx');
-for (const s of SHOTS_LIST) {
+const stage = document.getElementById('stage'), actors = document.getElementById('actors'), over = document.getElementById('over');
+const imgs = {};
+const pageImg = (name) => { const i = $(`<img class="page" src="${BASE}shots/${name}.png">`); imgs[name] = true; return i; };
+for (const s of SCENES) {
+  s.t0 = b(s.a); s.t1 = b(s.z);
   s.el = $(`<div class="scene${s.menu ? ' menu' : ''}"></div>`);
   if (s.menu) s.el.append($('<div class="glow"></div>'), $('<div class="vign"></div>'));
-  if (s.img) { s.page = $(`<img class="page" src="${SHOTS + s.img}">`); s.el.append(s.page); }
-  if (s.over) { s.page2 = $(`<img class="page" src="${SHOTS + s.over}">`); s.el.append(s.page2); }
+  if (s.img) { s.page = pageImg(s.img); s.el.append(s.page); }
+  if (s.over) { s.page2 = pageImg(s.over); s.el.append(s.page2); }
   stage.append(s.el);
 }
+const OPEN = SCENES[0], END = SCENES[SCENES.length - 1], DROP = SCENES[1];
+const END_AT = END.a;
 
-// Opening and closing titles.
-const open = SHOTS_LIST[0], end = SHOTS_LIST[SHOTS_LIST.length - 1];
-open.title = $(`<div class="title"><div class="crown-wrap"></div>
+/* ── Hornet: her clips in cells of one size around one origin (extract-game.py) ── */
+const HS = 1.55, HX = 960, HY = 905;      // her scale, and where her feet land
+const hornet = $('<div class="hornet"></div>');
+const ground = $('<div class="ground"></div>');
+actors.append(ground, hornet);
+let HM = null;
+function pose(clip, frame) {
+  const c = HM.clips[clip], [cw, ch] = HM.cell;
+  hornet.style.width = cw + 'px'; hornet.style.height = ch + 'px';
+  hornet.style.backgroundImage = `url(${BASE}hornet/${c.file})`;
+  hornet.style.backgroundSize = `${cw * c.n}px ${ch}px`;
+  hornet.style.backgroundPosition = `${-frame * cw}px 0`;
+}
+function place(x, feetY, alpha = 1) {
+  // The origin goes to x; the cell's floor (her feet, in HardLand) to feetY. Mirrored: she faces right.
+  const [ox] = HM.origin, floor = HM.clips.HardLand.floor;
+  hornet.style.transform = `translate(${x + ox * HS}px, ${feetY - floor * HS}px) scale(${-HS}, ${HS})`;
+  hornet.style.opacity = alpha;
+}
+// Which clip and frame at time t: Fall until she lands, HardLand, a held last frame, then Challenge Strong, looping its tail.
+const LAND = b(4), SLASH = b(6);
+function hornetAt(t) {
+  if (t < LAND) { const c = HM.clips.Fall, f = Math.floor((t - b(2.4)) * c.fps); return ['Fall', f < c.n ? Math.max(0, f) : c.loopStart + (f - c.loopStart) % (c.n - c.loopStart)]; }
+  const hl = HM.clips.HardLand, cs = HM.clips['Challenge Strong'];
+  const cs0 = SLASH - 3 / cs.fps;     // her arc's widest frame on the beat
+  if (t < cs0) return ['HardLand', Math.min(hl.n - 1, Math.floor((t - LAND) * hl.fps))];
+  const f = Math.floor((t - cs0) * cs.fps);
+  return ['Challenge Strong', f < cs.n ? f : cs.loopStart + (f - cs.loopStart) % (cs.n - cs.loopStart)];
+}
+
+/* ── Titles ──────────────────────────────────────────────────────────── */
+const T1 = $(`<div class="title" style="top:250px"><div class="cw"></div>
   <h1><span class="cap">P</span>HARLOOM <span class="cap">C</span>ALCULATOR</h1>
-  <div class="for">Your Hollow Knight: Silksong save, read the way the game reads it</div></div>`);
-open.title.querySelector('.crown-wrap').append(crown());
-open.el.append(open.title);
-end.title = $(`<div class="title"><div class="crown-wrap"></div>
+  <div class="for">Your Silksong game, tracked to 100%</div></div>`);
+T1.querySelector('.cw').append(crown());
+const T2 = $(`<div class="title" style="top:330px"><div class="cw"></div>
   <h1><span class="cap">P</span>HARLOOM <span class="cap">C</span>ALCULATOR</h1>
   <div class="url">pharloomcalculator.com</div>
   <div class="facts">Free · No account · English and Español</div></div>`);
-end.title.querySelector('.crown-wrap').append(crown());
-end.legal = $(`<div class="legal">Unofficial fan project, not affiliated with Team Cherry. Hollow Knight: Silksong, its art and music © Team Cherry.</div>`);
-end.el.append(end.title, end.legal);
-for (const s of [open, end]) s.el.querySelectorAll('.crown-wrap path').forEach((p) => {
-  const L = p.getTotalLength(); p.style.strokeDasharray = L; p.dataset.len = L;
-});
+T2.querySelector('.cw').append(crown());
+const legal = $(`<div class="legal">Unofficial fan project, not affiliated with Team Cherry. Hollow Knight: Silksong, its art and music © Team Cherry. Music: “Final Judge”, Christopher Larkin.</div>`);
+OPEN.el.append(T1); END.el.append(T2, legal);
+prime(T1); prime(T2);
 
-// Captions, one per shot that has one.
-const shade = $('<div class="shade"></div>'); fx.append(shade);
-for (const s of SHOTS_LIST) if (s.main) {
-  s.card = $(`<div class="card"><div class="sup">${s.sup}</div><div class="main">${s.main}</div></div>`);
-  const fl = crown(); fl.setAttribute('class', 'flourish'); fl.setAttribute('width', '240'); fl.setAttribute('height', '34');
-  s.card.append(fl); fx.append(s.card);
-  s.card.querySelectorAll('path').forEach((p) => { const L = p.getTotalLength(); p.style.strokeDasharray = L; p.dataset.len = L; });
+const shade = $('<div class="layer shade" style="top:auto"></div>');
+const vign = $('<div class="layer vignette"></div>');
+over.append(vign, shade);
+for (const s of SCENES) {
+  if (s.main) {
+    s.card = $(`<div class="card"><div class="sup">${s.sup}</div><div class="main">${s.main}</div></div>`);
+    const fl = crown(240); fl.classList.add('flourish'); s.card.append(fl); prime(s.card);
+    over.append(s.card);
+  }
+  if (s.kick) { s.kickEl = $(`<div class="kick">${s.kick}</div>`); over.append(s.kickEl); }
 }
-// The save file dropped into the unlit card.
 const chip = $(`<div class="chip"><svg width="30" height="36" viewBox="0 0 30 36" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 2h16l8 8v24H3z"/><path d="M19 2v8h8"/></svg>user1.dat</div>`);
-const flash = $('<div class="flash"></div>');
-const thread = $('<div class="thread"></div>'), thread2 = $('<div class="thread"></div>');
-const hornet = $('<div class="hornet"></div>');
-const black = $('<div class="black"></div>');
-fx.append(chip, flash, thread, thread2, hornet, black);
+const flash = $('<div class="layer flash"></div>'), black = $('<div class="layer black"></div>');
+over.append(chip, flash, black);
 
-/* ── Embers: the main menu's, seeded so every render is the same ──────── */
+/* ── Particles: the menu's embers, the dust of her landing; seeded, so every render is the same ── */
 let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
-const EMBERS = Array.from({ length: 70 }, () => ({ x: rnd() * W, ph: rnd(), v: 40 + rnd() * 90, sway: 10 + rnd() * 40,
+const EMBERS = Array.from({ length: 90 }, () => ({ x: rnd() * W, ph: rnd(), v: 40 + rnd() * 90, sway: 10 + rnd() * 40,
   sf: .2 + rnd() * .6, r: .8 + rnd() * 2.2, tw: 1 + rnd() * 3, tp: rnd() * 6.28 }));
-const ctx = document.getElementById('embers').getContext('2d');
-function embers(t, amount) {
+const DUST = Array.from({ length: 46 }, () => ({ dir: rnd() < .5 ? -1 : 1, v: 250 + rnd() * 900, up: 40 + rnd() * 260, r: 3 + rnd() * 9, life: .5 + rnd() * .9 }));
+const BURST = Array.from({ length: 60 }, () => ({ a: rnd() * 6.283, v: 200 + rnd() * 700, r: 1 + rnd() * 2.5, life: .8 + rnd() * 1.4 }));
+const ctx = document.getElementById('fx').getContext('2d');
+function ember(x, y, r, a) {
+  const g = ctx.createRadialGradient(x, y, 0, x, y, r * 5);
+  // --mote's ember (#f18b45), with a hotter core
+  g.addColorStop(0, `rgba(255,190,120,${a})`); g.addColorStop(.25, `rgba(241,139,69,${a * .8})`); g.addColorStop(1, 'rgba(241,139,69,0)');
+  ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, r * 5, 0, 6.283); ctx.fill();
+}
+function particles(t, amount, speed) {
   ctx.clearRect(0, 0, W, H);
-  if (amount <= 0) return;
   for (const e of EMBERS) {
-    const span = H + 120, y = H + 60 - ((e.ph * span + t * e.v) % span);
+    const span = H + 120, y = H + 60 - ((e.ph * span + t * e.v * speed) % span);
     const x = e.x + Math.sin(t * e.sf + e.tp) * e.sway;
-    const life = 1 - y / H;   // fade as they rise
-    const a = amount * clamp(.25 + .75 * (1 - life * .9)) * (.55 + .45 * Math.sin(t * e.tw + e.tp));
-    if (a <= 0.01) continue;
-    const g = ctx.createRadialGradient(x, y, 0, x, y, e.r * 5);
-    // --mote's ember (#f18b45), with a hotter core
-    g.addColorStop(0, `rgba(255,190,120,${a})`); g.addColorStop(.25, `rgba(241,139,69,${a * .8})`); g.addColorStop(1, 'rgba(241,139,69,0)');
-    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, e.r * 5, 0, 6.283); ctx.fill();
+    const a = amount * clamp(.3 + .7 * (y / H)) * (.55 + .45 * Math.sin(t * e.tw + e.tp));
+    if (a > .01) ember(x, y, e.r, a);
+  }
+  // Her landing: soft dust thrown out along the ground.
+  const d = t - LAND;
+  if (d > 0 && d < 2.4) {
+    for (const p of DUST) {
+      const k = d / p.life; if (k >= 1) continue;
+      const x = HX + p.dir * (40 + p.v * (1 - Math.exp(-d * 3)) / 3), y = HY - p.up * Math.sin(Math.PI * clamp(k * .9)) * .3 - 8;
+      const r = p.r * .7 * (1 + k * 3), a = .22 * (1 - k);
+      const g = ctx.createRadialGradient(x, y, 0, x, y, r);
+      g.addColorStop(0, `rgba(230,214,202,${a})`); g.addColorStop(1, 'rgba(230,214,202,0)');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, r, 0, 6.283); ctx.fill();
+    }
+  }
+  // The title's landing: sparks out from the centre.
+  const e = t - b(END_AT);
+  if (e > 0 && e < 3) for (const p of BURST) {
+    const k = e / p.life; if (k >= 1) continue;
+    const dist = p.v * (1 - Math.exp(-e * 2.2)) / 2.2;
+    ember(W / 2 + Math.cos(p.a) * dist * 1.6, 470 + Math.sin(p.a) * dist * .7, p.r, 1 - k);
   }
 }
 
 /* ── One frame ───────────────────────────────────────────────────────── */
-function camera(img, rect) {
-  const [cx, cy, w] = rect, s = W / w;
+function camera(img, [cx, cy, w], punch = 0) {
+  const s = (W / w) * (1 + punch);
   img.style.transform = `translate(${W / 2 - cx * s}px, ${H / 2 - cy * s}px) scale(${s})`;
 }
-function drawPaths(root, k) {
-  root.querySelectorAll('path').forEach((p) => { p.style.strokeDashoffset = p.dataset.len * (1 - k); });
-}
-// The thread transition into shot s: the silk is drawn across, then opens into the next shot.
-const TA = .5, TB = .45;
-function reveal(s, t) {
-  // fraction of the next shot shown, as an inset from the middle
-  const k = easeOut(ramp(t, s.t0, s.t0 + TB));
-  return k;
-}
-function titleIn(root, t, t0) {
-  const c = root.querySelector('.crown-wrap'), h = root.querySelector('h1');
-  drawPaths(c, ease(ramp(t, t0, t0 + 1.4)));
-  c.style.opacity = ramp(t, t0, t0 + .3);
-  const k = easeOut(ramp(t, t0 + .5, t0 + 1.7));
-  h.style.opacity = k; h.style.transform = `translateY(${(1 - k) * 18}px)`; h.style.filter = `blur(${(1 - k) * 8}px)`;
-  h.style.letterSpacing = `${.03 + (1 - k) * .06}em`;
-  return (a, b, el) => { const q = easeOut(ramp(t, t0 + a, t0 + b)); el.style.opacity = q; el.style.transform = `translateY(${(1 - q) * 12}px)`; };
-}
+// A shake, decaying, after a hit at time h.
+const shake = (t, h, amp, len) => { const d = t - h; if (d < 0 || d > len) return [0, 0]; const f = amp * (1 - d / len) ** 2; return [f * Math.sin(d * 71), f * Math.cos(d * 53)]; };
 
 function render(t) {
-  // Which shots are on: the current one, and the one before while the thread opens.
-  let cur = SHOTS_LIST.findIndex((s) => t >= s.t0 && t < s.t1); if (cur < 0) cur = SHOTS_LIST.length - 1;
-  const S = SHOTS_LIST[cur], P = SHOTS_LIST[cur - 1];
-  for (const s of SHOTS_LIST) { s.el.style.visibility = 'hidden'; s.el.style.clipPath = ''; s.el.style.zIndex = 0; }
-  const opening = P && t < S.t0 + TB;
-  for (const s of opening ? [P, S] : [S]) {
-    s.el.style.visibility = 'visible';
-    const k = ramp(t, s.t0, s.t1);
-    if (s.img) {
-      const r = s.from.map((v, i) => lerp(v, s.to[i], sine(k)));
-      camera(s.page, r); if (s.page2) camera(s.page2, r);
-      if (s.page2) s.page2.style.opacity = ease(ramp(t, s.swap - .12, s.swap + .12));
+  let cur = SCENES.findIndex((s) => t >= s.t0 && t < s.t1); if (cur < 0) cur = SCENES.length - 1;
+  const S = SCENES[cur];
+  for (const s of SCENES) s.el.style.visibility = s === S ? 'visible' : 'hidden';
+  const since = t - S.t0;                                  // time into the shot
+  const cutPunch = S.a >= 10 ? .03 * Math.exp(-since / .25) : 0;
+  if (S.img) {
+    const r = S.rect ? [S.rect[0], S.rect[1], lerp(S.rect[2] * 1.12, S.rect[2], easeOut(ramp(since, 0, BEAT)))]
+      : S.from.map((v, i) => lerp(v, S.to[i], sine(ramp(t, S.t0, S.t1))));
+    const punch = cutPunch;
+    camera(S.page, r, punch);
+    if (S.page2) { camera(S.page2, r, punch); S.page2.style.opacity = ease(ramp(t, b(S.swap), b(S.swap) + .3)); }
+    S.page.style.filter = S.kick ? 'brightness(.55) saturate(.9)' : '';
+  }
+
+  // One small shake, where she lands.
+  const [sx, sy] = shake(t, LAND, 6, .35);
+  document.getElementById('world').style.transform = `translate(${sx}px, ${sy}px)`;
+
+  // Opening: the menu's dark, her fall, her landing, the title cut by her needle.
+  hornet.style.opacity = 0; ground.style.opacity = 0;
+  if (S === OPEN) {
+    OPEN.el.querySelector('.glow').style.opacity = .35 + .45 * ease(ramp(t, 0, b(4))) + .3 * Math.exp(-Math.max(0, t - LAND) / .5) * (t > LAND);
+    if (t > b(2.4)) {
+      const [clip, f] = hornetAt(t); pose(clip, f);
+      const y = t < LAND ? lerp(-260, HY, easeIn(ramp(t, b(2.4), LAND))) : HY;
+      place(HX, y);
     }
-  }
-  if (opening) {
-    S.el.style.zIndex = 2;
-    const k = reveal(S, t);
-    S.el.style.clipPath = `inset(${(1 - k) * 50}% 0 ${(1 - k) * 50}% 0)`;
-  }
-
-  // The thread: drawn across in the TA before a shot starts, then split to the edges as it opens.
-  thread.style.opacity = thread2.style.opacity = 0;
-  const N = SHOTS_LIST[cur + 1];
-  const quick = (x) => x && x.quick;
-  if (N && t > N.t0 - TA) {
-    const k = ease(ramp(t, N.t0 - TA, N.t0));
-    thread.style.top = (H / 2 - 1) + 'px'; thread.style.width = W + 'px';
-    thread.style.transform = `scaleX(${k})`; thread.style.opacity = 1;
-  }
-  if (opening) {
-    const k = easeOut(ramp(t, S.t0, S.t0 + TB));
-    const y = (1 - k) * (H / 2);
-    for (const [el, top] of [[thread, y - 1], [thread2, H - y - 1]]) {
-      el.style.top = top + 'px'; el.style.width = W + 'px'; el.style.transform = 'scaleX(1)'; el.style.opacity = 1 - k * k;
+    if (t > LAND) {
+      const k = easeOut(ramp(t, LAND, LAND + .45));
+      ground.style.opacity = 1 - .55 * ramp(t, LAND + .3, LAND + 1.8);
+      ground.style.left = (HX - 450) + 'px'; ground.style.top = (HY - 60) + 'px';
+      ground.style.transform = `scale(${lerp(.25, 1, k)}, ${lerp(.4, 1, k)})`;
     }
+    // The title: cut open by the arc of her needle, from the middle out, on beat 6.
+    const ks = easeOut(ramp(t, SLASH - .05, SLASH + .2));
+    T1.style.opacity = t > SLASH - .05 ? 1 : 0;
+    T1.querySelector('h1').style.clipPath = `inset(-20% ${(1 - ks) * 50}% -20% ${(1 - ks) * 50}%)`;
+    T1.querySelector('h1').style.transform = `scale(${1 + .08 * Math.exp(-Math.max(0, t - SLASH) / .25)})`;
+    draw(T1.querySelector('.cw'), ease(ramp(t, SLASH, SLASH + 1.4)));
+    const kf = easeOut(ramp(t, b(7), b(7) + .8));
+    const fo = T1.querySelector('.for'); fo.style.opacity = kf; fo.style.transform = `translateY(${(1 - kf) * 14}px)`;
   }
-
-  // Hornet runs the thread into the first shot and into the end card: she draws the silk.
-  hornet.style.opacity = 0;
-  for (const into of [SHOTS_LIST[1], end]) {
-    if (t > into.t0 - TA - .05 && t < into.t0) {
-      const k = ease(ramp(t, into.t0 - TA, into.t0));
-      const frame = Math.floor(t * 15) % 10;
-      hornet.style.opacity = 1;
-      hornet.style.backgroundPosition = `${-frame * 120}px 0`;
-      hornet.style.transform = `translate(${k * W - 40}px, ${H / 2 - 104}px) scale(-1.3, 1.3)`;
-    }
+  // End: the title lands on beat 60.
+  if (S === END) {
+    const d = t - b(END_AT);
+    END.el.querySelector('.glow').style.opacity = .85 + .4 * Math.exp(-d / .6);
+    const k = easeOut(clamp(d / .35));
+    const h1 = T2.querySelector('h1'); h1.style.opacity = k; h1.style.transform = `scale(${lerp(1.35, 1, k)})`; h1.style.filter = `blur(${(1 - k) * 10}px)`;
+    draw(T2.querySelector('.cw'), ease(ramp(d, .1, 1.3)));
+    const step = (a, z, el) => { const q = easeOut(ramp(d, a, z)); el.style.opacity = q; el.style.transform = `translateY(${(1 - q) * 12}px)`; };
+    step(b(1), b(1) + .7, T2.querySelector('.url'));
+    step(b(2), b(2) + .7, T2.querySelector('.facts'));
+    step(b(3), b(3) + .7, legal);
   }
+  particles(t, S.menu ? 1 : .3, S === OPEN && t < LAND ? 1.8 : 1);
 
-  // Embers: full over the menu, a breath over the shots.
-  embers(t, S.menu ? 1 : .35);
-
-  // Opening title.
-  if (S === open || (opening && P === open)) {
-    const step = titleIn(open.title, t, .5);
-    step(1.6, 2.6, open.title.querySelector('.for'));
-    open.el.querySelector('.glow').style.opacity = ease(ramp(t, 0, 2));
-    const fade = 1 - ramp(t, 3.6, 3.95);
-    open.title.style.opacity = fade;
-  }
-  // End card.
-  if (S === end) {
-    const step = titleIn(end.title, t, end.t0 + .35);
-    step(1.5, 2.3, end.title.querySelector('.url'));
-    step(2.0, 2.8, end.title.querySelector('.facts'));
-    step(2.4, 3.2, end.legal);
-    end.el.querySelector('.glow').style.opacity = 1;
-  }
-
-  // Captions.
+  // Captions, slammed in on the cut.
   let shadeOn = 0;
-  for (const s of SHOTS_LIST) if (s.card) {
-    const [a, b] = s.cap;
-    const kin = easeOut(ramp(t, a, a + .9)), kout = ramp(t, b - .45, b);
-    const on = kin * (1 - kout);
-    s.card.style.opacity = on;
-    s.card.style.visibility = on > 0 ? 'visible' : 'hidden';
-    const sup = s.card.querySelector('.sup'), main = s.card.querySelector('.main');
-    sup.style.letterSpacing = `${.34 + (1 - kin) * .25}em`;
-    const km = easeOut(ramp(t, a + .15, a + 1.05));
-    main.style.transform = `translateY(${(1 - km) * 14}px)`; main.style.filter = `blur(${(1 - km) * 6}px)`;
-    drawPaths(s.card.querySelector('.flourish'), ease(ramp(t, a + .35, a + 1.5)));
-    shadeOn = Math.max(shadeOn, ramp(t, a - .3, a + .4) * (1 - ramp(t, b - .2, b + .3)));
+  for (const s of SCENES) if (s.card) {
+    const on = s === S;
+    s.card.style.visibility = on ? 'visible' : 'hidden';
+    if (!on) continue;
+    const kin = easeOut(ramp(since, .05, .45)), kout = ramp(t, s.t1 - .2, s.t1);
+    s.card.style.opacity = kin * (1 - kout);
+    s.card.style.transform = `scale(${lerp(1.1, 1, kin)})`;
+    s.card.querySelector('.main').style.filter = `blur(${(1 - kin) * 8}px)`;
+    s.card.querySelector('.sup').style.letterSpacing = `${.34 + (1 - kin) * .3}em`;
+    draw(s.card.querySelector('.flourish'), ease(ramp(since, .3, 1.3)));
+    shadeOn = 1;
   }
   shade.style.opacity = shadeOn;
+  for (const s of SCENES) if (s.kickEl) {
+    const on = s === S, k = easeOut(ramp(since, 0, .16));
+    s.kickEl.style.opacity = on ? k : 0;
+    s.kickEl.style.transform = `translateY(-50%) scale(${lerp(1.5, 1, k) + since * .06})`;
+  }
 
-  // The save dropped into the unlit card, and the light it brings.
-  const F = SHOTS_LIST[1];
-  const kd = ease(ramp(t, F.swap - 1.3, F.swap - .15));
-  chip.style.opacity = t > F.swap - 1.4 && t < F.swap + .3 ? Math.min(ramp(t, F.swap - 1.4, F.swap - 1.1), 1 - ramp(t, F.swap - .2, F.swap + .15)) : 0;
-  chip.style.transform = `translate(${lerp(1390, 860, kd)}px, ${lerp(150, 470, kd)}px) rotate(${lerp(8, 0, kd)}deg) scale(${lerp(1.05, .7, ramp(t, F.swap - .4, F.swap + .1))})`;
-  flash.style.opacity = t > F.swap - .3 ? (t < F.swap ? easeOut(ramp(t, F.swap - .3, F.swap - .1)) : 1 - easeOut(ramp(t, F.swap + .05, F.swap + .85))) : 0;
+  // The save: it comes in from the corner, lights the card as it crosses it, and drops on beat 13.
+  const SW = b(DROP.land), IN = b(DROP.a + 1);
+  const kd = ease(ramp(t, IN, SW - .08));
+  chip.style.opacity = t > IN - .1 && t < SW ? ramp(t, IN - .1, IN + .25) : 0;
+  chip.style.transform = `translate(${lerp(1560, 840, kd)}px, ${lerp(60, 450, kd) - Math.sin(Math.PI * kd) * 60}px) rotate(${lerp(12, 0, kd)}deg) scale(${lerp(1.15, .8, kd)})`;
 
-  // From black, and to black.
-  black.style.opacity = Math.max(1 - ramp(t, 0, .6), ramp(t, DUR - .7, DUR));
+  // Flashes: her landing, the save's light, each cut, the title.
+  let fl = 0;
+  const hit = (h, a, len) => { const d = t - h; if (d >= 0 && d < len) fl = Math.max(fl, a * (1 - d / len) ** 2); };
+  hit(LAND, .85, .45); hit(SLASH, .35, .25); hit(SW, .9, .7); hit(b(END_AT), .9, .7);
+  for (const s of SCENES) if (s.a > DROP.land && s.a < END_AT) hit(s.t0, s.kick ? .3 : .15, .18);
+  flash.style.opacity = fl;
+
+  black.style.opacity = Math.max(1 - ramp(t, 0, .8), ramp(t, DUR - .8, DUR));
 }
 
-window.ready = Promise.all([document.fonts.ready, ...[...document.images].map((i) => i.decode())]).then(() => { render(0); return true; });
+window.ready = (async () => {
+  HM = await (await fetch(BASE + 'hornet/hornet.json')).json();
+  const sheets = Object.values(HM.clips).map((c) => { const i = new Image(); i.src = `${BASE}hornet/${c.file}`; return i.decode(); });
+  await Promise.all([document.fonts.ready, ...sheets, ...[...document.images].map((i) => i.decode())]);
+  render(0);
+  return true;
+})();
 window.render = render; window.DUR = DUR;
-// Preview in a browser: #t=12.3 shows that moment; #play runs it in real time.
 if (location.hash.startsWith('#t=')) window.ready.then(() => render(parseFloat(location.hash.slice(3))));
-if (location.hash === '#play') window.ready.then(() => { const t0 = performance.now(); const f = () => { const t = (performance.now() - t0) / 1000; render(t % DUR); requestAnimationFrame(f); }; f(); });
+if (location.hash === '#play') window.ready.then(() => { const t0 = performance.now(); const f = () => { render(((performance.now() - t0) / 1000) % DUR); requestAnimationFrame(f); }; f(); });
 </script>
 </body>
 </html>
