@@ -111,11 +111,12 @@ test('follow: every generator\'s lists follow the fixes onto themselves (nothing
 test('follow: run() rekeys the fixes file for a regenerated list and leaves the rest of it alone', () => {
   const dir = fs.mkdtempSync(path.join(require('node:os').tmpdir(), 'follow-fixes-'));
   const file = path.join(dir, 'map-fixes.js');
-  const text = fs.readFileSync(path.join(__dirname, '..', 'js', 'map-fixes.js'), 'utf8');
-  fs.writeFileSync(file, text);
+  // The file as it is, with two fixes of its own on extras (it may hold none: Albert dropped them all).
   const was = JSON.parse(JSON.stringify(SP));
-  const fixed = Object.keys(MF.FIXES.moved).filter((k) => k.startsWith('extra:')).map((k) => Number(k.slice(6)));
-  const first = Math.min(...fixed);
+  const first = was.EXTRAS.findIndex((x, i) => i > 100 && was.XY['extra:' + i]);
+  const fixes = { moved: { ['extra:' + first]: [1, 2, was.EXTRAS[first][3]], ['extra:' + (first + 7)]: [3, 4, was.EXTRAS[first + 7][3]] }, hidden: {} };
+  const text = withFixes(fs.readFileSync(path.join(__dirname, '..', 'js', 'map-fixes.js'), 'utf8'), fixes);
+  fs.writeFileSync(file, text);
   const neu = JSON.parse(JSON.stringify(was));
   neu.EXTRAS.splice(first, 0, ['wall', 0, ['bool', 'Fake_01', 'x'], 'Fake_01']);
   neu.XY = Object.fromEntries(Object.entries(was.XY).map(([k, v]) => [/^extra:\d+$/.test(k) && Number(k.slice(6)) >= first ? 'extra:' + (Number(k.slice(6)) + 1) : k, v]));
@@ -123,8 +124,9 @@ test('follow: run() rekeys the fixes file for a regenerated list and leaves the 
   try { FF.run('spots', neu, { fixesFile: file }); } finally { console.log = log; }
   const out = require(file);
   delete require.cache[file];
-  assert.equal(Object.keys(out.FIXES.moved).length, Object.keys(MF.FIXES.moved).length);
-  assert.deepEqual(out.FIXES.moved['extra:' + (first + 1)], MF.FIXES.moved['extra:' + first]);
+  assert.equal(Object.keys(out.FIXES.moved).length, 2);
+  assert.deepEqual(out.FIXES.moved['extra:' + (first + 1)], fixes.moved['extra:' + first]);
+  assert.deepEqual(out.FIXES.moved['extra:' + (first + 8)], fixes.moved['extra:' + (first + 7)]);
   assert.ok(!('extra:' + first in out.FIXES.moved));
   assert.equal(fs.readFileSync(file, 'utf8').split('  const FIXES')[0], text.split('  const FIXES')[0]);
   // A fix whose mark was removed stops the run and leaves the file as it was.

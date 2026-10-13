@@ -1,4 +1,458 @@
 {
+ "battles": {
+  "ant_02": [
+   [
+    "Battle Scene",
+    55.44,
+    6.83,
+    ""
+   ]
+  ],
+  "ant_04_mid": [
+   [
+    "Battle Scene",
+    204.69,
+    14.93,
+    "ant04_battleCompleted"
+   ],
+   [
+    "Battle Scene Black Thread",
+    204.69,
+    21.99,
+    ""
+   ]
+  ],
+  "ant_05b": [
+   [
+    "Battle Scene",
+    48.88,
+    8.33,
+    ""
+   ]
+  ],
+  "ant_08": [
+   [
+    "Battle Scene",
+    35.99,
+    54.83,
+    ""
+   ]
+  ],
+  "ant_21": [
+   [
+    "Battle Scene Extra",
+    85.53,
+    78.35,
+    ""
+   ],
+   [
+    "Battle Scene Init",
+    85.53,
+    78.35,
+    "ant21_InitBattleCompleted"
+   ]
+  ],
+  "arborium_07": [
+   [
+    "Battle Scene",
+    153.57,
+    13.02,
+    ""
+   ]
+  ],
+  "arborium_11": [
+   [
+    "Battle Scene",
+    131.81,
+    16.37,
+    ""
+   ]
+  ],
+  "bone_01": [
+   [
+    "Battle Scene",
+    105.55,
+    24.7,
+    ""
+   ]
+  ],
+  "bone_18": [
+   [
+    "Battle Scene",
+    35.77,
+    21.39,
+    ""
+   ],
+   [
+    "Battle Scene",
+    38.69,
+    21.22,
+    ""
+   ]
+  ],
+  "bone_east_25": [
+   [
+    "Battle Scene",
+    137.65,
+    9.79,
+    ""
+   ]
+  ],
+  "bone_east_lavachallenge": [
+   [
+    "Battle Scene",
+    15.3,
+    7.92,
+    ""
+   ]
+  ],
+  "bone_steel_servant": [
+   [
+    "Battle Scene",
+    25.81,
+    9.13,
+    ""
+   ]
+  ],
+  "chapel_wanderer": [
+   [
+    "Battle Scene",
+    42.13,
+    81.15,
+    ""
+   ]
+  ],
+  "clover_04b": [
+   [
+    "Battle Scene",
+    27.17,
+    21.01,
+    "aspid06_battleComplete"
+   ]
+  ],
+  "cog_05": [
+   [
+    "Battle Scene",
+    58.03,
+    21.14,
+    ""
+   ]
+  ],
+  "cog_07": [
+   [
+    "Battle Scene",
+    12.27,
+    75.8,
+    ""
+   ]
+  ],
+  "cog_10_destroyed": [
+   [
+    "Battle Scene",
+    22.38,
+    80.12,
+    "completedCog10_abyssBattle"
+   ]
+  ],
+  "coral_27": [
+   [
+    "Battle Scene",
+    15.94,
+    26.67,
+    "defeatedCoralDrillerSolo"
+   ]
+  ],
+  "dock_03c": [
+   [
+    "Battle Scene",
+    47.42,
+    51.09,
+    ""
+   ]
+  ],
+  "dock_08": [
+   [
+    "Battle Scene",
+    25.69,
+    27.49,
+    ""
+   ]
+  ],
+  "dust_03": [
+   [
+    "Battle Scene",
+    106.68,
+    10.1,
+    "dust03_battleCompleted"
+   ]
+  ],
+  "dust_11": [
+   [
+    "Battle Scene 1",
+    107.55,
+    3.16,
+    "silkFarmBattle1_complete"
+   ],
+   [
+    "Battle Scene Act3",
+    111.21,
+    12.74,
+    "silkFarmAbyssCoresCleared"
+   ]
+  ],
+  "dust_chef": [
+   [
+    "Battle Scene",
+    41.98,
+    46.5,
+    "defeatedRoachkeeperChef"
+   ]
+  ],
+  "greymoor_04": [
+   [
+    "Battle Scene",
+    13.09,
+    13.55,
+    "greymoor_04_battleCompleted"
+   ],
+   [
+    "Black Thread Battle Scene",
+    8.41,
+    14.96,
+    ""
+   ]
+  ],
+  "greymoor_20c": [
+   [
+    "Battle Scene",
+    42.57,
+    44.99,
+    ""
+   ]
+  ],
+  "hang_04": [
+   [
+    "Battle Scene Act3",
+    33.97,
+    12.45,
+    ""
+   ]
+  ],
+  "hang_04_boss": [
+   [
+    "Battle Scene",
+    30.85,
+    11.16,
+    "hang04Battle"
+   ]
+  ],
+  "library_02": [
+   [
+    "Battle Scene",
+    76.79,
+    32.49,
+    "completedLibraryEntryBattle"
+   ],
+   [
+    "Battle Scene Acolyte",
+    76.13,
+    32.69,
+    "completedLibraryAcolyteBattle"
+   ]
+  ],
+  "memory_ant_queen": [
+   [
+    "Battle Scene",
+    143.39,
+    20.55,
+    ""
+   ]
+  ],
+  "memory_coral_tower": [
+   [
+    "Battle Scene Chamber 1",
+    54.64,
+    264.13,
+    ""
+   ],
+   [
+    "Battle Scene Chamber 2",
+    56.36,
+    290.83,
+    ""
+   ],
+   [
+    "Battle Scene Chamber 3",
+    54.76,
+    340.93,
+    ""
+   ],
+   [
+    "Battle Scene Chamber 4",
+    54.61,
+    366.79,
+    ""
+   ]
+  ],
+  "room_crowcourt": [
+   [
+    "Battle Scene",
+    31.14,
+    48.83,
+    ""
+   ]
+  ],
+  "room_crowcourt_02": [
+   [
+    "Battle Scene",
+    26.74,
+    28.91,
+    "defeatedCrowCourt"
+   ]
+  ],
+  "room_forge": [
+   [
+    "Battle Scene",
+    80.63,
+    7.71,
+    ""
+   ]
+  ],
+  "shadow_18": [
+   [
+    "Battle Scene",
+    61.53,
+    11.14,
+    "DefeatedSwampShaman"
+   ]
+  ],
+  "shadow_28": [
+   [
+    "Battle Scene",
+    41.46,
+    21.58,
+    ""
+   ]
+  ],
+  "shellgrave": [
+   [
+    "Battle Scene",
+    63.16,
+    10.48,
+    "savedPlinney"
+   ]
+  ],
+  "shellwood_01b": [
+   [
+    "Battle Scene",
+    28.97,
+    4.79,
+    ""
+   ]
+  ],
+  "slab_16": [
+   [
+    "Battle Cloaked Scene",
+    25.54,
+    20.57,
+    "slab_cloak_battle_completed"
+   ],
+   [
+    "Battle Cloakless Scene",
+    28.18,
+    20.57,
+    ""
+   ]
+  ],
+  "slab_16b": [
+   [
+    "Battle Scene Broodmother",
+    60.89,
+    4.72,
+    "defeatedBroodMother"
+   ]
+  ],
+  "slab_23": [
+   [
+    "Battle Scene",
+    78.17,
+    14.97,
+    ""
+   ]
+  ],
+  "song_04": [
+   [
+    "Battle Scene",
+    65.7,
+    8.88,
+    "song_04_battleCompleted"
+   ]
+  ],
+  "song_07": [
+   [
+    "Battle Scene",
+    47.81,
+    5.34,
+    ""
+   ]
+  ],
+  "tut_03": [
+   [
+    "Battle Scene",
+    54.77,
+    25.76,
+    ""
+   ]
+  ],
+  "under_07": [
+   [
+    "Battle Scene",
+    46.71,
+    14.23,
+    "under07_battleCompleted"
+   ]
+  ],
+  "under_07c": [
+   [
+    "Battle Scene",
+    0.0,
+    0.0,
+    ""
+   ]
+  ],
+  "under_10": [
+   [
+    "Battle Scene",
+    39.88,
+    11.65,
+    ""
+   ]
+  ],
+  "under_18": [
+   [
+    "Battle Scene",
+    120.83,
+    46.31,
+    ""
+   ]
+  ],
+  "ward_09": [
+   [
+    "Battle Scene",
+    53.1,
+    4.61,
+    ""
+   ]
+  ],
+  "weave_03": [
+   [
+    "Boss Scene",
+    18.68,
+    31.12,
+    ""
+   ]
+  ]
+ },
  "benches": {
   "abyss_09": [
    8.03,
@@ -3936,6 +4390,14 @@
   ]
  },
  "fields": {
+  "CaravanLechReturnedToCaravan": [
+   [
+    "bone_10",
+    "Caravan Troupe Leader Bone NPC",
+    37.72,
+    16.85
+   ]
+  ],
   "HasBoundCrestUpgrader": [
    [
     "abyss_09",
@@ -4512,6 +4974,96 @@
     "RestBench",
     57.77,
     14.84
+   ]
+  ],
+  "HasMelodyArchitect": [
+   [
+    "cog_09",
+    "puzzle cylinders",
+    29.86,
+    68.62
+   ],
+   [
+    "song_enclave",
+    "Enclave Simple NPC Short Horned",
+    25.33,
+    7.19
+   ],
+   [
+    "under_17",
+    "Architect NPC",
+    76.82,
+    27.17
+   ]
+  ],
+  "HasMelodyConductor": [
+   [
+    "hang_12",
+    "Last Conductor NPC",
+    12.17,
+    8.1
+   ],
+   [
+    "song_enclave",
+    "Enclave Simple NPC Short Horned",
+    25.33,
+    7.19
+   ]
+  ],
+  "MetTroupeHunterWild": [
+   [
+    "aqueduct_05_caravan",
+    "Caravan Troup Member Short Pot",
+    105.99,
+    9.41
+   ],
+   [
+    "aqueduct_05_caravan",
+    "Caravan Troupe Hunter",
+    153.77,
+    10.08
+   ],
+   [
+    "aqueduct_05_caravan",
+    "Caravan Troupe Leader Fleatopia NPC",
+    123.04,
+    9.85
+   ],
+   [
+    "bellway_aqueduct",
+    "Caravan Troupe Hunter Wild",
+    71.01,
+    63.12
+   ],
+   [
+    "bone_10",
+    "Caravan Troupe Hunter",
+    55.38,
+    17.03
+   ],
+   [
+    "coral_judge_arena",
+    "Caravan Troup Member Short Pot",
+    39.84,
+    24.34
+   ],
+   [
+    "coral_judge_arena",
+    "Caravan Troupe Hunter",
+    47.3,
+    25.13
+   ],
+   [
+    "greymoor_08_caravan",
+    "Caravan Troup Member Short Greymoor",
+    29.68,
+    4.36
+   ],
+   [
+    "greymoor_08_caravan",
+    "Caravan Troupe Hunter",
+    83.84,
+    5.18
    ]
   ],
   "SeenMapperBellhart": [
@@ -5694,6 +6246,42 @@
     0.0
    ]
   ],
+  "bonegraveAspidBerryCollected": [
+   [
+    "bonegrave",
+    "Mossberry Pickup",
+    252.64,
+    42.33
+   ]
+  ],
+  "bonetownAspidBerryCollected": [
+   [
+    "bone_01b",
+    "Mossberry Pickup",
+    41.07,
+    43.52
+   ],
+   [
+    "bonetown",
+    "Mossberry Pickup",
+    282.34,
+    49.3
+   ]
+  ],
+  "churchRhinoKilled": [
+   [
+    "bone_east_10",
+    "Gate Smashing",
+    0.0,
+    0.0
+   ],
+   [
+    "bone_east_10",
+    "Pilgrim NPC Scene",
+    102.99,
+    49.26
+   ]
+  ],
   "hasBrolly": [
    [
     "bone_east_08",
@@ -6382,6 +6970,322 @@
     "Shrine Weaver Ability",
     26.35,
     13.23
+   ]
+  ],
+  "mosstownAspidBerryCollected": [
+   [
+    "bone_05b",
+    "Mossberry Pickup",
+    60.18,
+    25.08
+   ]
+  ],
+  "silkFarmAbyssCoresCleared": [
+   [
+    "dust_11",
+    "Grub Farmer NPC",
+    104.38,
+    9.72
+   ]
+  ],
+  "tamedGiantFlea": [
+   [
+    "arborium_08",
+    "Giant Flea",
+    33.65,
+    34.55
+   ],
+   [
+    "arborium_08",
+    "Giant Flea Cage",
+    33.73,
+    38.76
+   ]
+  ]
+ },
+ "fleas": {
+  "ant_03": [
+   [
+    "Flea Rescue Activation",
+    43.11,
+    69.96
+   ],
+   [
+    "Flea Rescue Cage",
+    43.3,
+    70.24
+   ]
+  ],
+  "belltown_04": [
+   [
+    "Flea Rescue Activation",
+    10.85,
+    89.68
+   ],
+   [
+    "Flea Rescue Generic",
+    10.85,
+    89.68
+   ]
+  ],
+  "bone_06": [
+   [
+    "Flea Rescue Activation",
+    100.25,
+    24.48
+   ],
+   [
+    "Flea Rescue Branches",
+    101.34,
+    24.44
+   ]
+  ],
+  "bone_east_05": [
+   [
+    "Flea Rescue Activation",
+    31.39,
+    38.98
+   ],
+   [
+    "Flea Rescue Barrel",
+    31.39,
+    38.56
+   ]
+  ],
+  "bone_east_10_church": [
+   [
+    "Flea Rescue Activation",
+    181.45,
+    23.47
+   ],
+   [
+    "Flea Rescue BlackSilk",
+    181.45,
+    23.47
+   ],
+   [
+    "Flea Rescue Sleeping",
+    181.94,
+    22.2
+   ]
+  ],
+  "bone_east_17b": [
+   [
+    "Flea Rescue Activation",
+    85.92,
+    29.9
+   ],
+   [
+    "Flea Rescue Cage",
+    86.11,
+    30.18
+   ]
+  ],
+  "coral_24": [
+   [
+    "Flea Rescue Activation",
+    36.43,
+    46.07
+   ],
+   [
+    "Flea Rescue Generic",
+    36.43,
+    46.07
+   ]
+  ],
+  "coral_35": [
+   [
+    "Flea Rescue Sleeping",
+    6.47,
+    143.09
+   ]
+  ],
+  "crawl_06": [
+   [
+    "Flea Rescue",
+    77.35,
+    28.11
+   ]
+  ],
+  "dock_03d": [
+   [
+    "Flea Rescue Sleeping",
+    101.53,
+    68.15
+   ]
+  ],
+  "dock_16": [
+   [
+    "Flea Rescue Activation",
+    52.43,
+    22.69
+   ],
+   [
+    "Flea Rescue BlackSilk",
+    52.43,
+    22.69
+   ],
+   [
+    "Flea Rescue Sleeping",
+    50.92,
+    20.28
+   ]
+  ],
+  "dust_09": [
+   [
+    "Flea Rescue Activation",
+    6.43,
+    35.06
+   ],
+   [
+    "Flea Rescue Branches",
+    5.34,
+    35.02
+   ]
+  ],
+  "dust_12": [
+   [
+    "Flea Rescue Sleeping",
+    26.1,
+    3.58
+   ]
+  ],
+  "greymoor_06": [
+   [
+    "Flea Rescue Sleeping",
+    25.47,
+    139.12
+   ]
+  ],
+  "greymoor_15b": [
+   [
+    "Flea Rescue Activation",
+    178.99,
+    53.97
+   ],
+   [
+    "Flea Rescue Barrel",
+    178.99,
+    53.55
+   ]
+  ],
+  "library_01": [
+   [
+    "Flea Rescue Activation",
+    48.54,
+    88.83
+   ],
+   [
+    "Flea Rescue CitadelCage",
+    48.4,
+    90.0
+   ]
+  ],
+  "library_09": [
+   [
+    "Flea Rescue Sleeping",
+    126.79,
+    99.82
+   ]
+  ],
+  "peak_05c": [
+   [
+    "Flea Rescue Activation",
+    246.66,
+    115.87
+   ]
+  ],
+  "shadow_10": [
+   [
+    "Flea Rescue Activation",
+    80.73,
+    42.28
+   ],
+   [
+    "Flea Rescue Branches",
+    79.64,
+    42.24
+   ]
+  ],
+  "shadow_28": [
+   [
+    "Flea Rescue Scared",
+    30.76,
+    21.72
+   ],
+   [
+    "Flea Rescue Scene",
+    0.0,
+    0.0
+   ]
+  ],
+  "shellwood_03": [
+   [
+    "Flea Rescue Activation",
+    23.12,
+    49.05
+   ],
+   [
+    "Flea Rescue Branches",
+    24.21,
+    49.01
+   ]
+  ],
+  "slab_06": [
+   [
+    "Flea Rescue Sleeping",
+    84.49,
+    28.08
+   ]
+  ],
+  "slab_cell": [
+   [
+    "Flea Rescue Activation",
+    53.51,
+    8.31
+   ]
+  ],
+  "song_11": [
+   [
+    "Flea Rescue Sleeping",
+    50.28,
+    164.15
+   ]
+  ],
+  "song_14": [
+   [
+    "Flea Rescue Activation",
+    61.74,
+    8.84
+   ],
+   [
+    "Flea Rescue CitadelCage",
+    61.6,
+    10.01
+   ]
+  ],
+  "under_21": [
+   [
+    "Flea Rescue Activation",
+    9.34,
+    16.11
+   ],
+   [
+    "Flea Rescue Barrel",
+    9.34,
+    15.69
+   ]
+  ],
+  "under_23": [
+   [
+    "Flea Rescue Activation",
+    18.23,
+    23.82
+   ],
+   [
+    "Flea Rescue Barrel",
+    18.23,
+    23.4
    ]
   ]
  },
@@ -16415,6 +17319,78 @@
    ]
   ]
  },
+ "locks": {
+  "belltown": [
+   [
+    "Door Lock",
+    60.78,
+    40.14
+   ]
+  ],
+  "bone_east_12": [
+   [
+    "Dock Key Receptacle",
+    73.07,
+    17.24
+   ]
+  ],
+  "crawl_02": [
+   [
+    "lock",
+    4.31,
+    28.34
+   ]
+  ],
+  "dock_12": [
+   [
+    "lock",
+    30.35,
+    29.38
+   ]
+  ],
+  "dust_02": [
+   [
+    "Key Receptactle",
+    17.74,
+    23.12
+   ]
+  ],
+  "hang_06": [
+   [
+    "bank_door",
+    16.29,
+    19.12
+   ]
+  ],
+  "room_forge": [
+   [
+    "song_knight_lock",
+    133.33,
+    14.34
+   ]
+  ],
+  "under_17": [
+   [
+    "Architect Shrine Door",
+    26.29,
+    36.08
+   ]
+  ],
+  "ward_01": [
+   [
+    "key_machine",
+    29.25,
+    97.94
+   ]
+  ],
+  "ward_02": [
+   [
+    "lock_machine",
+    41.52,
+    60.59
+   ]
+  ]
+ },
  "lying": {
   "Ancient Egg Abyss Middle": [
    [
@@ -22641,6 +23617,9229 @@
     "Pipe_Vent_Hatch",
     63.71,
     13.14
+   ]
+  ]
+ },
+ "records": {
+  "NAME_ABYSS_CRAWLER": [
+   [
+    "abyss_01",
+    "EnemyDeathEffectsRegular",
+    "Abyss Crawler (2)",
+    29.75,
+    92.23
+   ],
+   [
+    "abyss_02",
+    "EnemyDeathEffectsRegular",
+    "Abyss Crawler (2)",
+    135.75,
+    16.09
+   ],
+   [
+    "abyss_02b",
+    "EnemyDeathEffectsRegular",
+    "Abyss Crawler (1)",
+    35.82,
+    26.38
+   ],
+   [
+    "abyss_03",
+    "EnemyDeathEffectsRegular",
+    "Abyss Crawler",
+    10.41,
+    14.27
+   ],
+   [
+    "abyss_05",
+    "EnemyDeathEffectsRegular",
+    "Abyss Crawler (4)",
+    170.33,
+    21.42
+   ],
+   [
+    "abyss_13",
+    "EnemyDeathEffectsRegular",
+    "Abyss Crawler",
+    67.68,
+    13.31
+   ]
+  ],
+  "NAME_ABYSS_CRAWLER_LARGE": [
+   [
+    "abyss_04",
+    "EnemyDeathEffectsRegular",
+    "Abyss Crawler Large",
+    55.94,
+    73.14
+   ],
+   [
+    "abyss_05",
+    "EnemyDeathEffectsRegular",
+    "Abyss Crawler Large (1)",
+    143.25,
+    67.24
+   ],
+   [
+    "abyss_06",
+    "EnemyDeathEffectsRegular",
+    "Abyss Crawler Large",
+    20.2,
+    11.18
+   ]
+  ],
+  "NAME_ABYSS_MASS": [
+   [
+    "bone_steel_servant",
+    "EnemyDeathEffectsRegular",
+    "Abyss Mass",
+    25.81,
+    9.13
+   ]
+  ],
+  "NAME_ABYSS_TENDRIL": [
+   [
+    "abyss_08",
+    "BasicNPC",
+    "Inspect Region - Void Tendrils",
+    17.67,
+    68.56
+   ]
+  ],
+  "NAME_ARBORIUM_KEEPER": [
+   [
+    "arborium_01",
+    "EnemyDeathEffectsRegular",
+    "Arborium Keeper (2)",
+    12.99,
+    111.49
+   ],
+   [
+    "arborium_03",
+    "EnemyDeathEffectsRegular",
+    "Arborium Keeper",
+    4.14,
+    99.87
+   ],
+   [
+    "arborium_07",
+    "EnemyDeathEffectsRegular",
+    "Arborium Keeper (1)",
+    140.35,
+    13.02
+   ]
+  ],
+  "NAME_ASPID_COLLECTOR": [
+   [
+    "aspid_01",
+    "EnemyDeathEffectsRegular",
+    "Aspid Collector (3)",
+    18.97,
+    13.93
+   ],
+   [
+    "bone_01b",
+    "EnemyDeathEffectsRegular",
+    "Aspid Collector",
+    28.38,
+    40.81
+   ],
+   [
+    "bone_05b",
+    "EnemyDeathEffectsRegular",
+    "Aspid Collector (5)",
+    60.18,
+    25.08
+   ],
+   [
+    "bone_11",
+    "EnemyDeathEffectsRegular",
+    "Aspid Collector",
+    14.34,
+    12.54
+   ],
+   [
+    "bonegrave",
+    "EnemyDeathEffectsRegular",
+    "Aspid Collector (2)",
+    289.12,
+    63.78
+   ],
+   [
+    "bonetown",
+    "EnemyDeathEffectsRegular",
+    "Aspid Collector",
+    287.09,
+    59.4
+   ],
+   [
+    "crawl_06",
+    "EnemyDeathEffectsRegular",
+    "Aspid Collector (3)",
+    77.11,
+    29.61
+   ],
+   [
+    "mosstown_01",
+    "EnemyDeathEffectsRegular",
+    "Aspid Collector",
+    109.04,
+    12.34
+   ],
+   [
+    "mosstown_02",
+    "EnemyDeathEffectsRegular",
+    "Aspid Collector",
+    110.18,
+    37.99
+   ],
+   [
+    "mosstown_03",
+    "EnemyDeathEffectsRegular",
+    "Aspid Collector (2)",
+    6.71,
+    46.72
+   ]
+  ],
+  "NAME_BELL_FLY": [
+   [
+    "belltown_04",
+    "EnemyDeathEffectsRegular",
+    "Bell Fly",
+    46.16,
+    47.0
+   ],
+   [
+    "belltown_basement_03",
+    "EnemyDeathEffectsRegular",
+    "Bell Fly (1)",
+    63.87,
+    73.15
+   ]
+  ],
+  "NAME_BELL_GOOMBA": [
+   [
+    "belltown_04",
+    "EnemyDeathEffectsRegular",
+    "Bell Goomba",
+    0.3,
+    117.4
+   ],
+   [
+    "belltown_basement_03",
+    "EnemyDeathEffectsRegular",
+    "Bell Goomba",
+    0.28,
+    199.53
+   ],
+   [
+    "wisp_03",
+    "EnemyDeathEffectsRegular",
+    "Bell Goomba",
+    11.81,
+    59.97
+   ]
+  ],
+  "NAME_BLACK_THREAD_CORE": [
+   [
+    "ant_04_left",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    58.69,
+    30.08
+   ],
+   [
+    "ant_05b",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    46.76,
+    15.23
+   ],
+   [
+    "bone_02",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    17.84,
+    37.6
+   ],
+   [
+    "bone_04",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    64.73,
+    15.59
+   ],
+   [
+    "bone_07",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    54.51,
+    65.94
+   ],
+   [
+    "bone_09",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    134.57,
+    31.79
+   ],
+   [
+    "bone_east_02b",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    289.67,
+    12.27
+   ],
+   [
+    "bone_east_03",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    181.84,
+    31.7
+   ],
+   [
+    "bone_east_05",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    145.62,
+    97.25
+   ],
+   [
+    "bone_east_17",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    16.53,
+    86.64
+   ],
+   [
+    "bone_east_26",
+    "PlayMakerFSM",
+    "Black_Thread_Core_Citadel",
+    107.97,
+    26.02
+   ],
+   [
+    "cog_04",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    68.78,
+    28.48
+   ],
+   [
+    "coral_11",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    52.08,
+    25.1
+   ],
+   [
+    "coral_12",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    6.17,
+    47.72
+   ],
+   [
+    "coral_32",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    95.54,
+    70.29
+   ],
+   [
+    "dock_04",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    4.4,
+    68.32
+   ],
+   [
+    "dust_03",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    96.46,
+    19.67
+   ],
+   [
+    "dust_11",
+    "PlayMakerFSM",
+    "Black_Thread_Core (1)",
+    99.64,
+    12.74
+   ],
+   [
+    "greymoor_02",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    56.47,
+    138.33
+   ],
+   [
+    "greymoor_07",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    53.47,
+    11.12
+   ],
+   [
+    "greymoor_11",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    11.24,
+    45.21
+   ],
+   [
+    "greymoor_12",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    81.39,
+    27.12
+   ],
+   [
+    "greymoor_16",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    116.0,
+    35.51
+   ],
+   [
+    "hang_03",
+    "PlayMakerFSM",
+    "Black_Thread_Core_Citadel",
+    5.43,
+    20.16
+   ],
+   [
+    "hang_13",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    46.4,
+    43.87
+   ],
+   [
+    "library_04",
+    "PlayMakerFSM",
+    "Black_Thread_Core_Citadel (1)",
+    59.12,
+    89.31
+   ],
+   [
+    "library_06",
+    "PlayMakerFSM",
+    "Black_Thread_Core_Citadel",
+    6.4,
+    40.17
+   ],
+   [
+    "mosstown_02",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    158.51,
+    31.0
+   ],
+   [
+    "shadow_05",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    101.88,
+    30.62
+   ],
+   [
+    "shellwood_01b",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    33.76,
+    12.14
+   ],
+   [
+    "shellwood_02",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    52.17,
+    79.52
+   ],
+   [
+    "shellwood_04b",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    80.27,
+    14.78
+   ],
+   [
+    "shellwood_15",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    80.6,
+    28.59
+   ],
+   [
+    "shellwood_26",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    67.23,
+    109.14
+   ],
+   [
+    "song_01",
+    "PlayMakerFSM",
+    "Black_Thread_Core_Citadel",
+    36.89,
+    88.22
+   ],
+   [
+    "song_04",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    58.37,
+    14.01
+   ],
+   [
+    "song_05",
+    "PlayMakerFSM",
+    "Black_Thread_Core_Citadel",
+    44.89,
+    36.61
+   ],
+   [
+    "song_15",
+    "PlayMakerFSM",
+    "Black_Thread_Core_Citadel",
+    21.97,
+    8.47
+   ],
+   [
+    "song_17",
+    "PlayMakerFSM",
+    "Black_Thread_Core_Citadel",
+    70.89,
+    64.22
+   ],
+   [
+    "song_27",
+    "PlayMakerFSM",
+    "Black_Thread_Core_Citadel",
+    31.38,
+    13.64
+   ],
+   [
+    "under_02",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    12.99,
+    79.27
+   ],
+   [
+    "under_05",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    23.34,
+    71.24
+   ],
+   [
+    "under_18",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    26.89,
+    29.82
+   ],
+   [
+    "under_27",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    41.63,
+    51.38
+   ],
+   [
+    "weave_03",
+    "PlayMakerFSM",
+    "Black_Thread_Core",
+    160.26,
+    -40.82
+   ]
+  ],
+  "NAME_BLADE_SPIDER": [
+   [
+    "clover_20",
+    "EnemyDeathEffectsRegular",
+    "Blade Spider",
+    55.49,
+    21.71
+   ],
+   [
+    "coral_02",
+    "EnemyDeathEffectsRegular",
+    "Blade Spider",
+    42.87,
+    21.68
+   ],
+   [
+    "coral_03",
+    "EnemyDeathEffectsRegular",
+    "Blade Spider (3)",
+    26.65,
+    92.64
+   ],
+   [
+    "coral_12",
+    "EnemyDeathEffectsRegular",
+    "Blade Spider (1)",
+    81.59,
+    53.42
+   ],
+   [
+    "coral_19",
+    "EnemyDeathEffectsRegular",
+    "Blade Spider (3)",
+    76.89,
+    37.9
+   ],
+   [
+    "coral_19b",
+    "EnemyDeathEffectsRegular",
+    "Blade Spider (2)",
+    87.57,
+    86.82
+   ],
+   [
+    "coral_25",
+    "EnemyDeathEffectsRegular",
+    "Blade Spider (1)",
+    126.75,
+    44.94
+   ],
+   [
+    "cradle_destroyed_challenge_02",
+    "EnemyDeathEffectsRegular",
+    "Blade Spider (1)",
+    25.19,
+    60.97
+   ],
+   [
+    "library_09",
+    "EnemyDeathEffectsRegular",
+    "Blade Spider",
+    140.32,
+    82.4
+   ],
+   [
+    "library_12",
+    "EnemyDeathEffectsRegular",
+    "Blade Spider (2)",
+    41.84,
+    55.78
+   ],
+   [
+    "wisp_09",
+    "EnemyDeathEffectsRegular",
+    "Blade Spider (1)",
+    60.63,
+    13.73
+   ]
+  ],
+  "NAME_BLADE_SPIDER_HANG": [
+   [
+    "clover_20",
+    "EnemyDeathEffectsRegular",
+    "Blade Spider Hang",
+    12.01,
+    20.32
+   ],
+   [
+    "cradle_destroyed_challenge_02",
+    "EnemyDeathEffectsRegular",
+    "Blade Spider Hang (1)",
+    42.29,
+    48.17
+   ],
+   [
+    "library_09",
+    "EnemyDeathEffectsRegular",
+    "Blade Spider Hang",
+    137.58,
+    101.03
+   ],
+   [
+    "library_12",
+    "EnemyDeathEffectsRegular",
+    "Blade Spider Hang (2)",
+    59.38,
+    48.26
+   ],
+   [
+    "weave_05b",
+    "EnemyDeathEffectsRegular",
+    "Blade Spider Hang",
+    128.48,
+    15.41
+   ],
+   [
+    "wisp_09",
+    "EnemyDeathEffectsRegular",
+    "Blade Spider Hang",
+    83.83,
+    31.3
+   ]
+  ],
+  "NAME_BLOAT_ROACH": [
+   [
+    "shadow_01",
+    "EnemyDeathEffectsRegular",
+    "Bloat Roach",
+    49.07,
+    14.41
+   ],
+   [
+    "shadow_02",
+    "EnemyDeathEffectsRegular",
+    "Bloat Roach",
+    43.3,
+    96.71
+   ]
+  ],
+  "NAME_BLOOM_PUNCHER": [
+   [
+    "arborium_05",
+    "EnemyDeathEffectsRegular",
+    "Bloom Puncher (1)",
+    37.5,
+    16.72
+   ],
+   [
+    "shellwood_01b",
+    "EnemyDeathEffectsRegular",
+    "Bloom Puncher (5)",
+    43.96,
+    75.29
+   ],
+   [
+    "shellwood_10",
+    "EnemyDeathEffectsRegular",
+    "Bloom Puncher (1)",
+    37.19,
+    51.96
+   ],
+   [
+    "shellwood_11",
+    "EnemyDeathEffectsRegular",
+    "Bloom Puncher (4)",
+    17.78,
+    17.69
+   ]
+  ],
+  "NAME_BLOOM_SHOOTER": [
+   [
+    "arborium_03",
+    "EnemyDeathEffectsRegular",
+    "Bloom Shooter (3)",
+    3.83,
+    86.0
+   ],
+   [
+    "arborium_05",
+    "EnemyDeathEffectsRegular",
+    "Bloom Shooter",
+    11.54,
+    11.18
+   ],
+   [
+    "shellwood_03",
+    "EnemyDeathEffectsRegular",
+    "Bloom Shooter (1)",
+    35.98,
+    49.07
+   ],
+   [
+    "under_27",
+    "EnemyDeathEffectsRegular",
+    "Bloom Shooter (9)",
+    73.57,
+    19.69
+   ]
+  ],
+  "NAME_BLUE_ASSISTANT": [
+   [
+    "crawl_10",
+    "PlayMakerFSM",
+    "Blue Assistant",
+    16.77,
+    7.98
+   ],
+   [
+    "halfway_01",
+    "PlayMakerFSM",
+    "Nuu",
+    25.15,
+    20.85
+   ]
+  ],
+  "NAME_BONE_BEAST": [
+   [
+    "bone_05_boss",
+    "EnemyDeathEffectsRegular",
+    "Bone Beast",
+    84.21,
+    -15.42
+   ]
+  ],
+  "NAME_BONE_CIRCLER": [
+   [
+    "ant_19",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler (1)",
+    57.26,
+    19.52
+   ],
+   [
+    "arborium_02",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler (1)",
+    102.03,
+    12.92
+   ],
+   [
+    "aspid_01",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler (1)",
+    26.23,
+    116.48
+   ],
+   [
+    "bone_02",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler (3)",
+    29.38,
+    40.22
+   ],
+   [
+    "bone_03",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler (4)",
+    44.22,
+    85.31
+   ],
+   [
+    "bone_06",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler (2)",
+    72.1,
+    24.43
+   ],
+   [
+    "bone_07",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler (7)",
+    24.73,
+    55.73
+   ],
+   [
+    "bone_09",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler",
+    43.68,
+    14.62
+   ],
+   [
+    "bone_14",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler (5)",
+    62.56,
+    25.56
+   ],
+   [
+    "bone_16",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler",
+    70.76,
+    19.1
+   ],
+   [
+    "bone_east_03",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler (2)",
+    178.2,
+    77.54
+   ],
+   [
+    "bone_east_05",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler (2)",
+    171.62,
+    40.6
+   ],
+   [
+    "bone_east_09",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler (1)",
+    56.2,
+    16.68
+   ],
+   [
+    "bone_east_09b",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler",
+    19.71,
+    107.51
+   ],
+   [
+    "bone_east_11",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler (6)",
+    -75.47,
+    170.54
+   ],
+   [
+    "dock_02",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler (1)",
+    49.31,
+    8.62
+   ],
+   [
+    "dock_02b",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler (4)",
+    70.89,
+    11.38
+   ],
+   [
+    "dock_16",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler",
+    16.94,
+    30.79
+   ]
+  ],
+  "NAME_BONE_CIRCLER_VICIOUS": [
+   [
+    "ant_19",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler Vicious",
+    105.23,
+    57.36
+   ],
+   [
+    "arborium_02",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler Vicious (2)",
+    71.31,
+    14.03
+   ],
+   [
+    "bellway_03",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler Vicious (1)",
+    105.16,
+    46.72
+   ],
+   [
+    "bone_east_03",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler Vicious (1)",
+    132.64,
+    57.82
+   ],
+   [
+    "bone_east_07",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler Vicious",
+    37.79,
+    74.2
+   ],
+   [
+    "bone_east_09",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler Vicious",
+    43.73,
+    12.09
+   ],
+   [
+    "bone_east_09b",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler Vicious (4)",
+    25.88,
+    109.66
+   ],
+   [
+    "bone_east_11",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler Vicious (1)",
+    -84.19,
+    184.14
+   ],
+   [
+    "bone_east_15",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler Vicious",
+    130.81,
+    98.03
+   ],
+   [
+    "bone_east_lavachallenge",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler Vicious (1)",
+    6.48,
+    7.93
+   ],
+   [
+    "dock_02",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler Vicious (2)",
+    84.02,
+    10.93
+   ],
+   [
+    "dock_02b",
+    "EnemyDeathEffectsRegular",
+    "Bone Circler Vicious",
+    31.35,
+    6.42
+   ]
+  ],
+  "NAME_BONE_CRAWLER": [
+   [
+    "ant_19",
+    "EnemyDeathEffectsRegular",
+    "Bone Crawler (2)",
+    90.73,
+    52.5
+   ],
+   [
+    "arborium_02",
+    "EnemyDeathEffectsRegular",
+    "Bone Crawler (1)",
+    61.17,
+    21.7
+   ],
+   [
+    "bone_07",
+    "EnemyDeathEffectsRegular",
+    "Bone Crawler (4)",
+    10.85,
+    17.36
+   ],
+   [
+    "bone_10",
+    "EnemyDeathEffectsRegular",
+    "Bone Crawler (2)",
+    88.33,
+    6.75
+   ],
+   [
+    "bone_16",
+    "EnemyDeathEffectsRegular",
+    "Bone Crawler",
+    76.17,
+    46.67
+   ]
+  ],
+  "NAME_BONE_FLYER": [
+   [
+    "ant_19",
+    "EnemyDeathEffectsRegular",
+    "Bone Flyer",
+    50.85,
+    23.7
+   ],
+   [
+    "arborium_02",
+    "EnemyDeathEffectsRegular",
+    "Bone Flyer",
+    38.67,
+    15.94
+   ],
+   [
+    "bone_01",
+    "EnemyDeathEffectsRegular",
+    "Bone Flyer (1)",
+    109.39,
+    24.7
+   ],
+   [
+    "bone_06",
+    "EnemyDeathEffectsRegular",
+    "Bone Flyer (2)",
+    61.84,
+    39.62
+   ],
+   [
+    "bone_east_03",
+    "EnemyDeathEffectsRegular",
+    "Bone Flyer (1)",
+    187.4,
+    81.61
+   ],
+   [
+    "bone_east_15",
+    "EnemyDeathEffectsRegular",
+    "Bone Flyer",
+    144.46,
+    98.34
+   ],
+   [
+    "bone_east_lavachallenge",
+    "EnemyDeathEffectsRegular",
+    "Bone Flyer (2)",
+    26.31,
+    4.72
+   ],
+   [
+    "dock_08",
+    "EnemyDeathEffectsRegular",
+    "Bone Flyer",
+    11.68,
+    27.49
+   ]
+  ],
+  "NAME_BONE_FLYER_GIANT": [
+   [
+    "ant_19",
+    "EnemyDeathEffectsRegular",
+    "Bone Flyer Giant",
+    45.01,
+    36.89
+   ],
+   [
+    "bone_east_08_boss_beastfly",
+    "EnemyDeathEffectsRegular",
+    "Bone Flyer Giant",
+    81.0,
+    0.49
+   ]
+  ],
+  "NAME_BONE_GOOMBA": [
+   [
+    "abyss_09",
+    "EnemyDeathEffectsRegular",
+    "Bone Goomba",
+    37.02,
+    999.12
+   ],
+   [
+    "arborium_02",
+    "EnemyDeathEffectsRegular",
+    "Bone Goomba",
+    15.94,
+    8.97
+   ],
+   [
+    "bone_01",
+    "EnemyDeathEffectsRegular",
+    "Bone Goomba (1)",
+    88.75,
+    23.08
+   ],
+   [
+    "bone_02",
+    "EnemyDeathEffectsRegular",
+    "Bone Goomba (1)",
+    57.01,
+    9.07
+   ],
+   [
+    "bone_04",
+    "EnemyDeathEffectsRegular",
+    "Bone Goomba",
+    171.71,
+    4.92
+   ],
+   [
+    "bone_06",
+    "EnemyDeathEffectsRegular",
+    "Bone Goomba",
+    33.09,
+    26.89
+   ],
+   [
+    "bone_07",
+    "EnemyDeathEffectsRegular",
+    "Bone Goomba (2)",
+    71.46,
+    24.06
+   ],
+   [
+    "bone_09",
+    "EnemyDeathEffectsRegular",
+    "Bone Goomba (2)",
+    64.99,
+    2.53
+   ],
+   [
+    "bone_14",
+    "EnemyDeathEffectsRegular",
+    "Bone Goomba (3)",
+    101.35,
+    9.99
+   ],
+   [
+    "bone_15",
+    "EnemyDeathEffectsRegular",
+    "Bone Goomba",
+    28.79,
+    8.07
+   ],
+   [
+    "bone_16",
+    "EnemyDeathEffectsRegular",
+    "Bone Goomba (1)",
+    23.0,
+    55.2
+   ],
+   [
+    "bone_east_03",
+    "EnemyDeathEffectsRegular",
+    "Bone Goomba (2)",
+    54.27,
+    17.14
+   ]
+  ],
+  "NAME_BONE_GOOMBA_BOUNCE_FLY": [
+   [
+    "abyss_09",
+    "EnemyDeathEffectsRegular",
+    "Bone Goomba Bounce Fly (1)",
+    36.37,
+    556.63
+   ],
+   [
+    "weave_05b",
+    "EnemyDeathEffectsRegular",
+    "Bone Goomba Bounce Fly (10)",
+    175.73,
+    19.27
+   ]
+  ],
+  "NAME_BONE_GOOMBA_LARGE": [
+   [
+    "arborium_02",
+    "EnemyDeathEffectsRegular",
+    "Bone Goomba Large",
+    26.63,
+    11.64
+   ],
+   [
+    "bone_01",
+    "EnemyDeathEffectsRegular",
+    "Bone Goomba Large",
+    78.58,
+    71.85
+   ],
+   [
+    "bone_01c",
+    "EnemyDeathEffectsRegular",
+    "Bone Goomba Large",
+    78.58,
+    72.85
+   ],
+   [
+    "bone_02",
+    "EnemyDeathEffectsRegular",
+    "Bone Goomba Large (1)",
+    44.72,
+    28.84
+   ],
+   [
+    "bone_03",
+    "EnemyDeathEffectsRegular",
+    "Bone Goomba Large (1)",
+    45.89,
+    94.67
+   ],
+   [
+    "bone_06",
+    "EnemyDeathEffectsRegular",
+    "Bone Goomba Large",
+    47.12,
+    17.67
+   ],
+   [
+    "bone_09",
+    "EnemyDeathEffectsRegular",
+    "Bone Goomba Large",
+    38.73,
+    39.87
+   ],
+   [
+    "bone_14",
+    "EnemyDeathEffectsRegular",
+    "Bone Goomba Large",
+    125.58,
+    8.55
+   ],
+   [
+    "bone_16",
+    "EnemyDeathEffectsRegular",
+    "Bone Goomba Large",
+    57.52,
+    33.62
+   ],
+   [
+    "bone_east_03",
+    "EnemyDeathEffectsRegular",
+    "Bone Goomba Large",
+    137.58,
+    52.67
+   ],
+   [
+    "dock_16",
+    "EnemyDeathEffectsRegular",
+    "Bone Goomba Large",
+    5.62,
+    13.74
+   ]
+  ],
+  "NAME_BONE_HOPPER": [
+   [
+    "bone_east_03",
+    "EnemyDeathEffectsRegular",
+    "Bone Hopper Simple",
+    83.84,
+    13.38
+   ],
+   [
+    "bone_east_18",
+    "EnemyDeathEffectsRegular",
+    "Bone Hopper Simple (1)",
+    103.04,
+    3.69
+   ],
+   [
+    "bone_east_24",
+    "EnemyDeathEffectsRegular",
+    "Bone Hopper Simple",
+    86.13,
+    25.6
+   ]
+  ],
+  "NAME_BONE_HOPPER_GIANT": [
+   [
+    "bone_east_18",
+    "EnemyDeathEffectsRegular",
+    "Bone Hopper Giant",
+    107.47,
+    4.85
+   ],
+   [
+    "bone_east_24",
+    "EnemyDeathEffectsRegular",
+    "Bone Hopper Giant",
+    171.76,
+    26.8
+   ]
+  ],
+  "NAME_BONE_HUNTER": [
+   [
+    "ant_04",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter",
+    281.76,
+    87.33
+   ],
+   [
+    "ant_04_left",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter",
+    44.69,
+    24.37
+   ],
+   [
+    "ant_04_mid",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter",
+    206.03,
+    14.93
+   ],
+   [
+    "ant_08",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter (1)",
+    31.32,
+    27.4
+   ],
+   [
+    "ant_20",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter",
+    78.2,
+    9.4
+   ],
+   [
+    "bone_east_02",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter",
+    190.16,
+    -44.12
+   ],
+   [
+    "bone_east_02b",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter",
+    234.0,
+    14.1
+   ],
+   [
+    "bone_east_05",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter (1)",
+    129.42,
+    92.11
+   ],
+   [
+    "bone_east_16",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter",
+    16.95,
+    16.06
+   ],
+   [
+    "bone_east_17",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter",
+    16.8,
+    64.4
+   ],
+   [
+    "bone_east_24",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter",
+    243.98,
+    66.37
+   ],
+   [
+    "bone_east_26",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter",
+    102.29,
+    19.52
+   ],
+   [
+    "memory_ant_queen",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter (1)",
+    143.39,
+    21.0
+   ]
+  ],
+  "NAME_BONE_HUNTER_BUZZER": [
+   [
+    "ant_03",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Buzzer (3)",
+    30.59,
+    29.85
+   ],
+   [
+    "ant_04",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Buzzer (1)",
+    310.15,
+    86.49
+   ],
+   [
+    "ant_04_left",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Buzzer (3)",
+    104.3,
+    43.82
+   ],
+   [
+    "ant_04_mid",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Buzzer (2)",
+    190.43,
+    26.25
+   ],
+   [
+    "ant_05b",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Buzzer",
+    44.81,
+    18.8
+   ],
+   [
+    "ant_08",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Buzzer",
+    35.99,
+    47.77
+   ],
+   [
+    "ant_14",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Buzzer (4)",
+    35.52,
+    143.57
+   ],
+   [
+    "bone_east_04",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Buzzer (3)",
+    8.42,
+    150.47
+   ],
+   [
+    "bone_east_04b",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Buzzer (7)",
+    19.13,
+    55.74
+   ]
+  ],
+  "NAME_BONE_HUNTER_CHIEF": [
+   [
+    "memory_ant_queen",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Fly Chief (1)",
+    156.28,
+    18.64
+   ]
+  ],
+  "NAME_BONE_HUNTER_CHILD": [
+   [
+    "ant_04",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Child",
+    292.09,
+    78.74
+   ],
+   [
+    "ant_04_left",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Child",
+    108.11,
+    43.03
+   ],
+   [
+    "ant_04_mid",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Child (Return)",
+    196.88,
+    14.08
+   ],
+   [
+    "ant_05b",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Child (3)",
+    49.23,
+    8.11
+   ],
+   [
+    "ant_08",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Child (1)",
+    31.26,
+    32.91
+   ],
+   [
+    "bone_east_02",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Child",
+    184.71,
+    -44.94
+   ],
+   [
+    "bone_east_02b",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Child",
+    293.82,
+    5.62
+   ],
+   [
+    "bone_east_03",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Child",
+    190.52,
+    75.04
+   ],
+   [
+    "bone_east_04c",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Child",
+    37.95,
+    4.5
+   ],
+   [
+    "bone_east_05",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Child",
+    148.96,
+    27.55
+   ],
+   [
+    "bone_east_09b",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Child",
+    71.7,
+    125.48
+   ],
+   [
+    "bone_east_17",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Child",
+    76.51,
+    81.56
+   ],
+   [
+    "bone_east_17b",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Child",
+    68.05,
+    29.5
+   ],
+   [
+    "bone_east_22",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Child (1)",
+    27.36,
+    5.54
+   ],
+   [
+    "bone_east_24",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Child (2)",
+    160.73,
+    25.56
+   ],
+   [
+    "memory_ant_queen",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Child",
+    136.73,
+    20.55
+   ]
+  ],
+  "NAME_BONE_HUNTER_FLY": [
+   [
+    "ant_04",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Fly",
+    257.98,
+    24.45
+   ],
+   [
+    "ant_04_left",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Fly",
+    65.31,
+    26.68
+   ],
+   [
+    "ant_04_mid",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Fly (3)",
+    204.69,
+    22.01
+   ],
+   [
+    "ant_05b",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Fly",
+    39.46,
+    13.28
+   ],
+   [
+    "ant_08",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Fly",
+    50.18,
+    55.02
+   ],
+   [
+    "ant_09",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Fly",
+    91.91,
+    18.73
+   ],
+   [
+    "ant_21",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Fly",
+    67.41,
+    74.62
+   ],
+   [
+    "bone_08",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Fly",
+    21.5,
+    55.69
+   ],
+   [
+    "bone_east_02b",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Fly",
+    191.88,
+    9.6
+   ],
+   [
+    "bone_east_04c",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Fly",
+    40.84,
+    4.84
+   ],
+   [
+    "bone_east_05",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Fly",
+    115.72,
+    92.73
+   ],
+   [
+    "bone_east_17",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Fly",
+    81.31,
+    86.51
+   ],
+   [
+    "bone_east_22",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Fly",
+    45.89,
+    9.65
+   ],
+   [
+    "bone_east_26",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Fly",
+    73.35,
+    22.32
+   ],
+   [
+    "memory_ant_queen",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Fly",
+    143.0,
+    25.58
+   ]
+  ],
+  "NAME_BONE_HUNTER_THROW": [
+   [
+    "ant_02",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Throw",
+    55.44,
+    6.83
+   ],
+   [
+    "ant_08",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Throw",
+    59.8,
+    43.81
+   ],
+   [
+    "ant_21",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Throw",
+    67.41,
+    76.91
+   ],
+   [
+    "bone_east_25",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Throw",
+    137.65,
+    9.79
+   ]
+  ],
+  "NAME_BONE_HUNTER_TINY": [
+   [
+    "ant_03",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Tiny",
+    22.36,
+    21.96
+   ],
+   [
+    "ant_04",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Tiny (1)",
+    312.52,
+    96.19
+   ],
+   [
+    "ant_04_left",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Tiny",
+    15.18,
+    28.75
+   ],
+   [
+    "ant_05b",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Tiny",
+    57.3,
+    7.4
+   ],
+   [
+    "ant_08",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Tiny (1)",
+    33.17,
+    54.83
+   ],
+   [
+    "ant_14",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Tiny (2)",
+    75.99,
+    94.91
+   ],
+   [
+    "bone_east_04",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Tiny",
+    59.17,
+    92.7
+   ]
+  ],
+  "NAME_BONE_HUNTER_TRAPPER": [
+   [
+    "bone_east_18b",
+    "EnemyDeathEffectsRegular",
+    "Bone Hunter Trapper",
+    172.21,
+    8.89
+   ]
+  ],
+  "NAME_BONE_ROLLER": [
+   [
+    "arborium_03",
+    "EnemyDeathEffectsRegular",
+    "Bone Roller",
+    21.6,
+    30.38
+   ],
+   [
+    "tut_01b",
+    "EnemyDeathEffectsRegular",
+    "Bone Roller (4)",
+    155.72,
+    -1.28
+   ],
+   [
+    "weave_03",
+    "EnemyDeathEffectsRegular",
+    "Bone Roller (2)",
+    175.59,
+    24.44
+   ]
+  ],
+  "NAME_BONE_SPITTER": [
+   [
+    "bone_east_08_boss_beastfly",
+    "EnemyDeathEffectsRegular",
+    "Bone Spitter (1)",
+    73.94,
+    14.11
+   ],
+   [
+    "bone_east_14b",
+    "EnemyDeathEffectsRegular",
+    "Bone Spitter",
+    164.09,
+    20.72
+   ],
+   [
+    "bone_east_lavachallenge",
+    "EnemyDeathEffectsRegular",
+    "Bone Spitter (1)",
+    6.35,
+    7.92
+   ]
+  ],
+  "NAME_BONE_THUMPER": [
+   [
+    "arborium_04",
+    "EnemyDeathEffectsRegular",
+    "Bone Thumper",
+    114.59,
+    8.43
+   ],
+   [
+    "tut_01",
+    "EnemyDeathEffectsRegular",
+    "Bone Thumper",
+    101.23,
+    17.29
+   ],
+   [
+    "tut_01b",
+    "EnemyDeathEffectsRegular",
+    "Bone Thumper",
+    119.85,
+    10.61
+   ],
+   [
+    "weave_03",
+    "EnemyDeathEffectsRegular",
+    "Bone Thumper",
+    108.14,
+    8.33
+   ],
+   [
+    "weave_11",
+    "EnemyDeathEffectsRegular",
+    "Bone Thumper (1)",
+    22.27,
+    24.51
+   ]
+  ],
+  "NAME_BONE_WORM": [
+   [
+    "crawl_01",
+    "EnemyDeathEffectsRegular",
+    "Bone Worm (4)",
+    -50.0,
+    0.0
+   ],
+   [
+    "crawl_03",
+    "EnemyDeathEffectsRegular",
+    "Bone Worm (11)",
+    30.0,
+    108.4
+   ],
+   [
+    "crawl_03b",
+    "EnemyDeathEffectsRegular",
+    "Bone Worm (3)",
+    45.15,
+    38.03
+   ],
+   [
+    "crawl_05",
+    "EnemyDeathEffectsRegular",
+    "Bone Worm (9)",
+    0.0,
+    108.4
+   ],
+   [
+    "crawl_06",
+    "EnemyDeathEffectsRegular",
+    "Bone Worm (2)",
+    41.1,
+    15.34
+   ],
+   [
+    "crawl_07",
+    "EnemyDeathEffectsRegular",
+    "Bone Worm (1)",
+    103.15,
+    38.03
+   ],
+   [
+    "crawl_09",
+    "EnemyDeathEffectsRegular",
+    "Bone Worm (4)",
+    185.55,
+    38.03
+   ]
+  ],
+  "NAME_BONE_WORM_BLUEBLOOD": [
+   [
+    "crawl_03",
+    "EnemyDeathEffectsRegular",
+    "Bone Worm BlueBlood",
+    127.59,
+    11.11
+   ],
+   [
+    "crawl_05",
+    "EnemyDeathEffectsRegular",
+    "Bone Worm BlueBlood",
+    193.86,
+    12.23
+   ],
+   [
+    "crawl_07",
+    "EnemyDeathEffectsRegular",
+    "Bone Worm BlueBlood",
+    66.81,
+    21.21
+   ],
+   [
+    "crawl_09",
+    "EnemyDeathEffectsRegular",
+    "Bone Worm BlueBlood (3)",
+    49.57,
+    13.13
+   ]
+  ],
+  "NAME_BONE_WORM_BLUETURRET": [
+   [
+    "crawl_03",
+    "EnemyDeathEffectsRegular",
+    "Bone Worm BlueTurret",
+    93.28,
+    5.87
+   ],
+   [
+    "crawl_03b",
+    "EnemyDeathEffectsRegular",
+    "Bone Worm BlueTurret",
+    96.12,
+    7.04
+   ],
+   [
+    "crawl_05",
+    "EnemyDeathEffectsRegular",
+    "Bone Worm BlueTurret",
+    143.86,
+    15.4
+   ]
+  ],
+  "NAME_CENTIPEDE_TRAP": [
+   [
+    "cradle_destroyed_challenge_01",
+    "PlayMakerFSM",
+    "Centipede Trap",
+    71.54,
+    103.31
+   ]
+  ],
+  "NAME_CITADEL_BAT": [
+   [
+    "arborium_11",
+    "EnemyDeathEffectsRegular",
+    "Citadel Bat",
+    145.54,
+    15.49
+   ],
+   [
+    "hang_06_bank",
+    "EnemyDeathEffectsRegular",
+    "Citadel Bat (1)",
+    51.97,
+    49.83
+   ],
+   [
+    "hang_10",
+    "EnemyDeathEffectsRegular",
+    "Citadel Bat (1)",
+    64.68,
+    8.56
+   ],
+   [
+    "hang_15",
+    "EnemyDeathEffectsRegular",
+    "Citadel Bat",
+    77.52,
+    21.66
+   ],
+   [
+    "library_01",
+    "EnemyDeathEffectsRegular",
+    "Citadel Bat (1)",
+    26.98,
+    95.84
+   ],
+   [
+    "library_02",
+    "EnemyDeathEffectsRegular",
+    "Citadel Bat (1)",
+    78.44,
+    58.22
+   ],
+   [
+    "library_04",
+    "EnemyDeathEffectsRegular",
+    "Citadel Bat (4)",
+    48.59,
+    125.44
+   ],
+   [
+    "library_09",
+    "EnemyDeathEffectsRegular",
+    "Citadel Bat R1",
+    68.95,
+    22.92
+   ],
+   [
+    "organ_01",
+    "EnemyDeathEffectsRegular",
+    "Citadel Bat (1)",
+    98.88,
+    43.61
+   ],
+   [
+    "slab_04",
+    "EnemyDeathEffectsRegular",
+    "Citadel Bat",
+    31.84,
+    25.05
+   ],
+   [
+    "slab_06",
+    "EnemyDeathEffectsRegular",
+    "Citadel Bat (3)",
+    83.24,
+    31.03
+   ],
+   [
+    "song_09",
+    "EnemyDeathEffectsRegular",
+    "Citadel Bat (1)",
+    41.54,
+    14.45
+   ],
+   [
+    "song_12",
+    "EnemyDeathEffectsRegular",
+    "Citadel Bat",
+    15.08,
+    110.07
+   ],
+   [
+    "under_01",
+    "EnemyDeathEffectsRegular",
+    "Citadel Bat",
+    14.57,
+    154.51
+   ],
+   [
+    "under_07c",
+    "EnemyDeathEffectsRegular",
+    "Citadel Bat (3)",
+    77.44,
+    41.31
+   ],
+   [
+    "under_16",
+    "EnemyDeathEffectsRegular",
+    "Citadel Bat",
+    63.64,
+    20.95
+   ],
+   [
+    "ward_02b",
+    "EnemyDeathEffectsRegular",
+    "Citadel Bat",
+    59.85,
+    26.87
+   ]
+  ],
+  "NAME_CITADEL_BAT_LARGE": [
+   [
+    "arborium_11",
+    "EnemyDeathEffectsRegular",
+    "Citadel Bat Large R",
+    117.16,
+    17.24
+   ],
+   [
+    "library_09",
+    "EnemyDeathEffectsRegular",
+    "Citadel Bat Large R",
+    80.79,
+    23.16
+   ]
+  ],
+  "NAME_CLOCKWORK_DANCER": [
+   [
+    "cog_dancers",
+    "PlayMakerFSM",
+    "Boss Scene",
+    0.0,
+    0.0
+   ]
+  ],
+  "NAME_CLOVERSTAG": [
+   [
+    "clover_06",
+    "EnemyDeathEffectsRegular",
+    "Cloverstag (2)",
+    91.01,
+    8.93
+   ],
+   [
+    "clover_16",
+    "EnemyDeathEffectsRegular",
+    "Cloverstag (6)",
+    105.01,
+    28.16
+   ]
+  ],
+  "NAME_CLOVERSTAG_WHITE": [
+   [
+    "clover_19",
+    "EnemyDeathEffectsRegular",
+    "Cloverstag White Boss",
+    31.1,
+    14.06
+   ]
+  ],
+  "NAME_CLOVER_DANCER": [
+   [
+    "clover_10",
+    "EnemyDeathEffectsRegular",
+    "Dancer A",
+    95.03,
+    57.77
+   ]
+  ],
+  "NAME_CONDUCTOR_BOSS": [
+   [
+    "ward_02_boss",
+    "PlayMakerFSM",
+    "Conductor Boss",
+    50.85,
+    8.28
+   ]
+  ],
+  "NAME_CORAL_BIG_JELLYFISH": [
+   [
+    "memory_coral_tower",
+    "EnemyDeathEffectsRegular",
+    "Coral Big Jellyfish (1)",
+    62.0,
+    339.0
+   ]
+  ],
+  "NAME_CORAL_BRAWLER": [
+   [
+    "memory_coral_tower",
+    "EnemyDeathEffectsRegular",
+    "Coral Brawler",
+    65.54,
+    289.94
+   ]
+  ],
+  "NAME_CORAL_BUBBLE_BRUTE": [
+   [
+    "memory_coral_tower",
+    "EnemyDeathEffectsRegular",
+    "Coral Bubble Brute",
+    54.36,
+    368.05
+   ]
+  ],
+  "NAME_CORAL_CONCH_DRILLER": [
+   [
+    "coral_27",
+    "EnemyDeathEffectsRegular",
+    "Driller C",
+    16.72,
+    33.55
+   ],
+   [
+    "coral_38",
+    "EnemyDeathEffectsRegular",
+    "Coral Conch Driller",
+    62.89,
+    69.42
+   ],
+   [
+    "memory_coral_tower",
+    "EnemyDeathEffectsRegular",
+    "Coral Conch Driller",
+    35.93,
+    265.17
+   ]
+  ],
+  "NAME_CORAL_CONCH_DRILLER_GIANT": [
+   [
+    "coral_11",
+    "EnemyDeathEffectsRegular",
+    "Driller B",
+    65.38,
+    36.21
+   ],
+   [
+    "coral_27",
+    "EnemyDeathEffectsRegular",
+    "Coral Conch Driller Giant Solo",
+    15.94,
+    26.67
+   ]
+  ],
+  "NAME_CORAL_CONCH_SHOOTER": [
+   [
+    "arborium_06",
+    "EnemyDeathEffectsRegular",
+    "Coral Conch Shooter (2)",
+    81.46,
+    17.3
+   ],
+   [
+    "coral_03",
+    "EnemyDeathEffectsRegular",
+    "Coral Conch Shooter",
+    29.94,
+    68.32
+   ],
+   [
+    "coral_11",
+    "EnemyDeathEffectsRegular",
+    "Coral Conch Shooter (2)",
+    140.07,
+    13.38
+   ],
+   [
+    "coral_12",
+    "EnemyDeathEffectsRegular",
+    "Coral Conch Shooter (1)",
+    23.25,
+    31.9
+   ],
+   [
+    "coral_32",
+    "EnemyDeathEffectsRegular",
+    "Coral Conch Shooter (1)",
+    84.6,
+    57.11
+   ],
+   [
+    "coral_41",
+    "EnemyDeathEffectsRegular",
+    "Coral Conch Shooter",
+    137.05,
+    60.45
+   ]
+  ],
+  "NAME_CORAL_CONCH_SHOOTER_HEAVY": [
+   [
+    "arborium_06",
+    "EnemyDeathEffectsRegular",
+    "Coral Conch Shooter Heavy",
+    22.89,
+    15.2
+   ],
+   [
+    "coral_11",
+    "EnemyDeathEffectsRegular",
+    "Coral Conch Shooter Heavy",
+    62.27,
+    25.43
+   ],
+   [
+    "coral_23",
+    "EnemyDeathEffectsRegular",
+    "Coral Conch Shooter Heavy (3)",
+    257.78,
+    58.32
+   ],
+   [
+    "coral_24",
+    "EnemyDeathEffectsRegular",
+    "Coral Conch Shooter Heavy (1)",
+    77.5,
+    15.0
+   ],
+   [
+    "coral_27",
+    "EnemyDeathEffectsRegular",
+    "Coral Conch Shooter Heavy (3)",
+    105.41,
+    24.04
+   ],
+   [
+    "coral_41",
+    "EnemyDeathEffectsRegular",
+    "Coral Conch Shooter Heavy (1)",
+    52.65,
+    28.48
+   ],
+   [
+    "memory_coral_tower",
+    "EnemyDeathEffectsRegular",
+    "Coral Conch Shooter Heavy (1)",
+    61.14,
+    362.65
+   ]
+  ],
+  "NAME_CORAL_CONCH_STABBER": [
+   [
+    "coral_24",
+    "EnemyDeathEffectsRegular",
+    "Coral Conch Stabber (1)",
+    159.82,
+    36.25
+   ],
+   [
+    "coral_26",
+    "EnemyDeathEffectsRegular",
+    "Coral Conch Stabber (1)",
+    16.2,
+    53.89
+   ],
+   [
+    "coral_35b",
+    "EnemyDeathEffectsRegular",
+    "Coral Conch Stabber",
+    19.49,
+    15.44
+   ],
+   [
+    "coral_44",
+    "EnemyDeathEffectsRegular",
+    "Coral Conch Stabber (1)",
+    101.06,
+    28.99
+   ]
+  ],
+  "NAME_CORAL_FLYER": [
+   [
+    "memory_coral_tower",
+    "EnemyDeathEffectsRegular",
+    "Coral Flyer",
+    42.18,
+    292.93
+   ]
+  ],
+  "NAME_CORAL_FLYER_THROW": [
+   [
+    "memory_coral_tower",
+    "EnemyDeathEffectsRegular",
+    "Coral Flyer Throw",
+    55.58,
+    341.41
+   ]
+  ],
+  "NAME_CORAL_GOOMBAS": [
+   [
+    "memory_coral_tower",
+    "EnemyDeathEffectsRegular",
+    "Coral Goomba M (3)",
+    63.28,
+    307.36
+   ]
+  ],
+  "NAME_CORAL_GOOMBA_LARGE": [
+   [
+    "arborium_06",
+    "EnemyDeathEffectsRegular",
+    "Coral Goomba Large (2)",
+    19.94,
+    9.75
+   ]
+  ],
+  "NAME_CORAL_HUNTER": [
+   [
+    "memory_coral_tower",
+    "EnemyDeathEffectsRegular",
+    "Coral Hunter",
+    41.53,
+    340.98
+   ]
+  ],
+  "NAME_CORAL_JUDGE": [
+   [
+    "coral_02",
+    "EnemyDeathEffectsRegular",
+    "Coral Judge (4)",
+    199.3,
+    58.8
+   ],
+   [
+    "coral_12",
+    "EnemyDeathEffectsRegular",
+    "Coral Judge (1)",
+    24.4,
+    40.93
+   ],
+   [
+    "coral_32",
+    "EnemyDeathEffectsRegular",
+    "Coral Judge (3)",
+    74.5,
+    50.1
+   ]
+  ],
+  "NAME_CORAL_JUDGE_CHILD": [
+   [
+    "coral_36",
+    "EnemyDeathEffectsRegular",
+    "Judge Child (5)",
+    39.08,
+    3.9
+   ]
+  ],
+  "NAME_CORAL_KING": [
+   [
+    "memory_coral_tower",
+    "EnemyDeathEffectsRegular",
+    "Coral King",
+    60.72,
+    554.26
+   ]
+  ],
+  "NAME_CORAL_SPIKE_GOOMBA": [
+   [
+    "coral_23",
+    "EnemyDeathEffectsRegular",
+    "Coral Spike Goomba (1)",
+    284.81,
+    51.61
+   ],
+   [
+    "coral_24",
+    "EnemyDeathEffectsRegular",
+    "Coral Spike Goomba (1)",
+    119.38,
+    31.08
+   ],
+   [
+    "coral_38",
+    "EnemyDeathEffectsRegular",
+    "Coral Spike Goomba",
+    43.23,
+    10.5
+   ],
+   [
+    "coral_41",
+    "EnemyDeathEffectsRegular",
+    "Coral Spike Goomba (2)",
+    131.77,
+    32.69
+   ]
+  ],
+  "NAME_CORAL_SWIMMER_FAT": [
+   [
+    "memory_coral_tower",
+    "EnemyDeathEffectsRegular",
+    "Coral Swimmer Fat",
+    54.14,
+    334.9
+   ]
+  ],
+  "NAME_CORAL_SWIMMER_SMALL": [
+   [
+    "memory_coral_tower",
+    "EnemyDeathEffectsRegular",
+    "Coral Swimmer Small (5)",
+    93.39,
+    260.54
+   ]
+  ],
+  "NAME_CORAL_WARRIOR": [
+   [
+    "memory_coral_tower",
+    "EnemyDeathEffectsRegular",
+    "Coral Warrior",
+    61.83,
+    287.56
+   ]
+  ],
+  "NAME_CORAL_WARRIOR_GREY": [
+   [
+    "coral_39",
+    "EnemyDeathEffectsRegular",
+    "Coral Warrior Grey",
+    126.11,
+    8.44
+   ]
+  ],
+  "NAME_CRAWFATHER": [
+   [
+    "room_crowcourt_02",
+    "EnemyDeathEffectsRegular",
+    "Crawfather",
+    32.39,
+    28.91
+   ]
+  ],
+  "NAME_CROW": [
+   [
+    "greymoor_01",
+    "EnemyDeathEffectsRegular",
+    "Crow (2)",
+    61.27,
+    38.47
+   ],
+   [
+    "greymoor_02",
+    "EnemyDeathEffectsRegular",
+    "Crow (2)",
+    -11.27,
+    135.67
+   ],
+   [
+    "greymoor_03",
+    "EnemyDeathEffectsRegular",
+    "Crow (2)",
+    45.88,
+    34.57
+   ],
+   [
+    "greymoor_15",
+    "EnemyDeathEffectsRegular",
+    "Crow",
+    58.08,
+    14.57
+   ],
+   [
+    "greymoor_15b",
+    "EnemyDeathEffectsRegular",
+    "Crow",
+    133.91,
+    51.67
+   ],
+   [
+    "greymoor_17",
+    "EnemyDeathEffectsRegular",
+    "Crow (1)",
+    58.09,
+    14.57
+   ],
+   [
+    "greymoor_22",
+    "EnemyDeathEffectsRegular",
+    "Crow (3)",
+    81.72,
+    23.27
+   ],
+   [
+    "room_crowcourt",
+    "EnemyDeathEffectsRegular",
+    "Crow (2)",
+    36.54,
+    48.14
+   ]
+  ],
+  "NAME_CROWMAN": [
+   [
+    "greymoor_02",
+    "EnemyDeathEffectsRegular",
+    "Crowman",
+    -11.49,
+    133.02
+   ],
+   [
+    "greymoor_15b",
+    "EnemyDeathEffectsRegular",
+    "Crowman",
+    163.55,
+    21.67
+   ],
+   [
+    "room_crowcourt",
+    "EnemyDeathEffectsRegular",
+    "Crowman",
+    38.14,
+    48.83
+   ]
+  ],
+  "NAME_CROWMAN_DAGGER": [
+   [
+    "greymoor_02",
+    "EnemyDeathEffectsRegular",
+    "Crowman Dagger (1)",
+    9.01,
+    116.81
+   ],
+   [
+    "greymoor_15b",
+    "EnemyDeathEffectsRegular",
+    "Crowman Dagger (1)",
+    164.51,
+    33.72
+   ],
+   [
+    "room_crowcourt",
+    "EnemyDeathEffectsRegular",
+    "Crowman Dagger (1)",
+    38.2,
+    49.42
+   ]
+  ],
+  "NAME_CROWMAN_DAGGER_JUROR": [
+   [
+    "room_crowcourt_02",
+    "EnemyDeathEffectsRegular",
+    "Crowman Dagger Juror",
+    26.74,
+    28.11
+   ]
+  ],
+  "NAME_CROWMAN_JUROR": [
+   [
+    "room_crowcourt_02",
+    "EnemyDeathEffectsRegular",
+    "Crowman Juror (1)",
+    25.28,
+    26.07
+   ]
+  ],
+  "NAME_CROWMAN_JUROR_TINY": [
+   [
+    "greymoor_15",
+    "EnemyDeathEffectsRegular",
+    "Crowman Juror Tiny Variant - Wild",
+    58.08,
+    14.57
+   ],
+   [
+    "greymoor_15b",
+    "EnemyDeathEffectsRegular",
+    "Crowman Juror Tiny",
+    133.91,
+    51.67
+   ],
+   [
+    "room_crowcourt_02",
+    "EnemyDeathEffectsRegular",
+    "Crowman Juror Tiny (1)",
+    25.76,
+    30.45
+   ]
+  ],
+  "NAME_CRYPT_WORM": [
+   [
+    "crawl_01",
+    "EnemyDeathEffectsRegular",
+    "Crypt Worm (9)",
+    27.37,
+    42.0
+   ],
+   [
+    "crawl_03",
+    "EnemyDeathEffectsRegular",
+    "Crypt Worm",
+    123.21,
+    10.48
+   ],
+   [
+    "crawl_05",
+    "EnemyDeathEffectsRegular",
+    "Crypt Worm",
+    166.14,
+    13.59
+   ],
+   [
+    "crawl_07",
+    "EnemyDeathEffectsRegular",
+    "Crypt Worm (2)",
+    6.83,
+    35.9
+   ],
+   [
+    "crawl_09",
+    "EnemyDeathEffectsRegular",
+    "Crypt Worm (1)",
+    50.81,
+    12.78
+   ]
+  ],
+  "NAME_CRYSTAL_DRIFTER": [
+   [
+    "peak_02",
+    "EnemyDeathEffectsRegular",
+    "Crystal Drifter (12)",
+    29.99,
+    34.4
+   ],
+   [
+    "peak_02",
+    "PlayMakerFSM",
+    "Crystal Drifter (12)",
+    29.99,
+    34.4
+   ],
+   [
+    "peak_04",
+    "EnemyDeathEffectsRegular",
+    "Crystal Drifter",
+    181.19,
+    19.51
+   ],
+   [
+    "peak_04",
+    "PlayMakerFSM",
+    "Crystal Drifter (10)",
+    260.72,
+    26.88
+   ],
+   [
+    "peak_05c",
+    "EnemyDeathEffectsRegular",
+    "Crystal Drifter (3)",
+    217.64,
+    32.96
+   ],
+   [
+    "peak_05c",
+    "PlayMakerFSM",
+    "Crystal Drifter (3)",
+    217.64,
+    32.96
+   ],
+   [
+    "peak_05e",
+    "EnemyDeathEffectsRegular",
+    "Crystal Drifter (8)",
+    69.46,
+    9.46
+   ],
+   [
+    "peak_05e",
+    "PlayMakerFSM",
+    "Crystal Drifter (8)",
+    69.46,
+    9.46
+   ],
+   [
+    "peak_06",
+    "EnemyDeathEffectsRegular",
+    "Crystal Drifter (1)",
+    17.49,
+    17.46
+   ],
+   [
+    "peak_06",
+    "PlayMakerFSM",
+    "Crystal Drifter (1)",
+    17.49,
+    17.46
+   ]
+  ],
+  "NAME_CRYSTAL_DRIFTER_GIANT": [
+   [
+    "peak_06",
+    "EnemyDeathEffectsRegular",
+    "Crystal Drifter Giant (6)",
+    34.01,
+    158.93
+   ],
+   [
+    "peak_06",
+    "PlayMakerFSM",
+    "Crystal Drifter Giant",
+    23.36,
+    124.3
+   ]
+  ],
+  "NAME_DOCK_BOMBER": [
+   [
+    "dock_02",
+    "EnemyDeathEffectsRegular",
+    "Dock Bomber",
+    103.94,
+    52.02
+   ],
+   [
+    "dock_03",
+    "EnemyDeathEffectsRegular",
+    "Dock Bomber (1)",
+    57.16,
+    85.38
+   ],
+   [
+    "dock_03c",
+    "EnemyDeathEffectsRegular",
+    "Dock Bomber",
+    50.48,
+    51.54
+   ],
+   [
+    "dock_03d",
+    "EnemyDeathEffectsRegular",
+    "Dock Bomber Amb1",
+    22.35,
+    94.17
+   ]
+  ],
+  "NAME_DOCK_CHARGER": [
+   [
+    "dock_02b",
+    "EnemyDeathEffectsRegular",
+    "Dock Charger",
+    36.02,
+    80.12
+   ],
+   [
+    "dock_03",
+    "EnemyDeathEffectsRegular",
+    "Dock Charger",
+    29.09,
+    100.12
+   ],
+   [
+    "dock_03c",
+    "EnemyDeathEffectsRegular",
+    "Dock Charger",
+    39.93,
+    51.45
+   ]
+  ],
+  "NAME_DOCK_FLYER": [
+   [
+    "bone_09",
+    "EnemyDeathEffectsRegular",
+    "Dock Flyer",
+    92.64,
+    19.74
+   ],
+   [
+    "bone_east_01",
+    "EnemyDeathEffectsRegular",
+    "Dock Flyer",
+    16.27,
+    40.15
+   ],
+   [
+    "bone_east_13",
+    "EnemyDeathEffectsRegular",
+    "Dock Flyer",
+    67.96,
+    18.35
+   ],
+   [
+    "dock_02",
+    "EnemyDeathEffectsRegular",
+    "Dock Flyer (1)",
+    61.12,
+    81.19
+   ],
+   [
+    "dock_03",
+    "EnemyDeathEffectsRegular",
+    "Dock Flyer",
+    20.21,
+    84.89
+   ],
+   [
+    "dock_03c",
+    "EnemyDeathEffectsRegular",
+    "Dock Flyer",
+    47.42,
+    51.09
+   ],
+   [
+    "dock_03d",
+    "EnemyDeathEffectsRegular",
+    "Dock Flyer Amb",
+    25.35,
+    90.85
+   ],
+   [
+    "dock_04",
+    "EnemyDeathEffectsRegular",
+    "Dock Flyer (1)",
+    18.41,
+    18.51
+   ],
+   [
+    "dock_06_church",
+    "EnemyDeathEffectsRegular",
+    "Dock Flyer",
+    29.92,
+    20.7
+   ],
+   [
+    "dock_08",
+    "EnemyDeathEffectsRegular",
+    "Dock Flyer",
+    30.88,
+    34.42
+   ],
+   [
+    "dock_09",
+    "EnemyDeathEffectsRegular",
+    "Dock Flyer (1)",
+    32.09,
+    10.28
+   ],
+   [
+    "room_forge",
+    "EnemyDeathEffectsRegular",
+    "Dock Flyer",
+    81.24,
+    21.15
+   ]
+  ],
+  "NAME_DOCK_GUARD_THROWER": [
+   [
+    "dock_09",
+    "PlayMakerFSM",
+    "Boss Scene",
+    0.0,
+    0.0
+   ]
+  ],
+  "NAME_DOCK_WORKER": [
+   [
+    "bone_09",
+    "EnemyDeathEffectsRegular",
+    "Dock Worker (1)",
+    144.71,
+    3.03
+   ],
+   [
+    "bone_east_01",
+    "EnemyDeathEffectsRegular",
+    "Dock Worker (1)",
+    25.67,
+    8.09
+   ],
+   [
+    "bone_east_03",
+    "EnemyDeathEffectsRegular",
+    "Dock Worker",
+    33.26,
+    21.66
+   ],
+   [
+    "bone_east_05",
+    "EnemyDeathEffectsRegular",
+    "Dock Worker",
+    42.11,
+    40.23
+   ],
+   [
+    "dock_02",
+    "EnemyDeathEffectsRegular",
+    "Dock Worker (1)",
+    10.19,
+    66.72
+   ],
+   [
+    "dock_02b",
+    "EnemyDeathEffectsRegular",
+    "Dock Worker",
+    29.1,
+    79.64
+   ],
+   [
+    "dock_03",
+    "EnemyDeathEffectsRegular",
+    "Dock Worker",
+    8.05,
+    99.64
+   ],
+   [
+    "dock_03c",
+    "EnemyDeathEffectsRegular",
+    "Dock Worker (4)",
+    24.31,
+    8.38
+   ],
+   [
+    "dock_04",
+    "EnemyDeathEffectsRegular",
+    "Dock Worker",
+    6.37,
+    49.05
+   ],
+   [
+    "dock_05",
+    "EnemyDeathEffectsRegular",
+    "Dock Worker (1)",
+    22.82,
+    3.48
+   ],
+   [
+    "dock_06_church",
+    "EnemyDeathEffectsRegular",
+    "Dock Worker (1)",
+    9.85,
+    21.49
+   ],
+   [
+    "dock_08",
+    "EnemyDeathEffectsRegular",
+    "Dock Worker",
+    25.69,
+    21.67
+   ],
+   [
+    "dock_09",
+    "EnemyDeathEffectsRegular",
+    "Dock Worker (2)",
+    29.58,
+    7.8
+   ],
+   [
+    "room_forge",
+    "EnemyDeathEffectsRegular",
+    "Dock Worker",
+    67.2,
+    7.71
+   ]
+  ],
+  "NAME_DRAGONFLY_LARGE": [
+   [
+    "clover_18",
+    "EnemyDeathEffectsRegular",
+    "Dragonfly Large",
+    88.21,
+    18.6
+   ]
+  ],
+  "NAME_DUSTROACH": [
+   [
+    "dust_01",
+    "EnemyDeathEffectsRegular",
+    "Dustroach Caged",
+    37.6,
+    15.2
+   ],
+   [
+    "dust_03",
+    "EnemyDeathEffectsRegular",
+    "Dustroach Caged",
+    109.34,
+    11.77
+   ],
+   [
+    "dust_05",
+    "EnemyDeathEffectsRegular",
+    "Dustroach (1)",
+    185.85,
+    70.22
+   ],
+   [
+    "dust_11",
+    "EnemyDeathEffectsRegular",
+    "Dustroach Caged (1)",
+    53.54,
+    20.32
+   ],
+   [
+    "dust_12",
+    "EnemyDeathEffectsRegular",
+    "Dustroach Caged (4)",
+    5.61,
+    9.77
+   ]
+  ],
+  "NAME_DUSTROACH_POLLYWOG": [
+   [
+    "shadow_13",
+    "EnemyDeathEffectsRegular",
+    "Dustroach Pollywog (9)",
+    -50.0,
+    10.0
+   ]
+  ],
+  "NAME_FARMER_CATCHER": [
+   [
+    "greymoor_03",
+    "EnemyDeathEffectsRegular",
+    "Farmer Catcher (4)",
+    -12.85,
+    124.11
+   ],
+   [
+    "greymoor_04",
+    "EnemyDeathEffectsRegular",
+    "Farmer Catcher (2)",
+    15.53,
+    14.08
+   ],
+   [
+    "greymoor_05",
+    "EnemyDeathEffectsRegular",
+    "Farmer Catcher (2)",
+    28.64,
+    26.64
+   ],
+   [
+    "greymoor_07",
+    "EnemyDeathEffectsRegular",
+    "Farmer Catcher (1)",
+    24.26,
+    89.5
+   ],
+   [
+    "greymoor_20c",
+    "EnemyDeathEffectsRegular",
+    "Farmer Catcher (1)",
+    46.3,
+    33.21
+   ],
+   [
+    "wisp_03",
+    "EnemyDeathEffectsRegular",
+    "Farmer Catcher",
+    135.43,
+    9.56
+   ]
+  ],
+  "NAME_FARMER_CENTIPEDE": [
+   [
+    "greymoor_04",
+    "EnemyDeathEffectsRegular",
+    "Farmer Centipede (1)",
+    0.8,
+    14.96
+   ],
+   [
+    "greymoor_05",
+    "EnemyDeathEffectsRegular",
+    "Farmer Centipede Act 3",
+    57.17,
+    7.31
+   ],
+   [
+    "greymoor_10",
+    "EnemyDeathEffectsRegular",
+    "Farmer Centipede (1)",
+    59.77,
+    11.38
+   ],
+   [
+    "greymoor_20c",
+    "EnemyDeathEffectsRegular",
+    "Farmer Centipede",
+    29.84,
+    34.37
+   ]
+  ],
+  "NAME_FARMER_SCISSORS": [
+   [
+    "greymoor_04",
+    "EnemyDeathEffectsRegular",
+    "Farmer Scissors",
+    7.88,
+    84.19
+   ],
+   [
+    "greymoor_05",
+    "EnemyDeathEffectsRegular",
+    "Farmer Scissors",
+    72.5,
+    72.13
+   ],
+   [
+    "greymoor_06",
+    "EnemyDeathEffectsRegular",
+    "Farmer Scissors",
+    19.03,
+    71.13
+   ],
+   [
+    "greymoor_07",
+    "EnemyDeathEffectsRegular",
+    "Farmer Scissors (2)",
+    37.55,
+    46.19
+   ],
+   [
+    "greymoor_20c",
+    "EnemyDeathEffectsRegular",
+    "Farmer Scissors (1)",
+    42.6,
+    45.01
+   ]
+  ],
+  "NAME_FARMER_WISP": [
+   [
+    "wisp_02",
+    "EnemyDeathEffectsRegular",
+    "Farmer Wisp (2)",
+    64.27,
+    19.06
+   ],
+   [
+    "wisp_07",
+    "EnemyDeathEffectsRegular",
+    "Farmer Wisp",
+    184.45,
+    19.02
+   ]
+  ],
+  "NAME_FIELDS_FLOCK_FLYERS": [
+   [
+    "bone_east_02",
+    "EnemyDeathEffectsRegular",
+    "Fields Flock Flyer (18)",
+    89.18,
+    87.75
+   ],
+   [
+    "bone_east_02b",
+    "EnemyDeathEffectsRegular",
+    "Fields Flock Flyer",
+    265.09,
+    10.85
+   ],
+   [
+    "bone_east_07",
+    "EnemyDeathEffectsRegular",
+    "Fields Flock Flyer (21)",
+    -84.19,
+    175.2
+   ],
+   [
+    "bone_east_14",
+    "EnemyDeathEffectsRegular",
+    "Fields Flock Flyer (7)",
+    45.21,
+    7.82
+   ],
+   [
+    "bone_east_14b",
+    "EnemyDeathEffectsRegular",
+    "Fields Flock Flyer (6)",
+    217.33,
+    8.49
+   ],
+   [
+    "bone_east_15",
+    "EnemyDeathEffectsRegular",
+    "Fields Flock Flyer (5)",
+    65.82,
+    24.73
+   ],
+   [
+    "bone_east_17",
+    "EnemyDeathEffectsRegular",
+    "Fields Flock Flyer (4)",
+    82.86,
+    146.61
+   ],
+   [
+    "bone_east_24",
+    "EnemyDeathEffectsRegular",
+    "Fields Flock Flyer (1)",
+    45.04,
+    27.76
+   ]
+  ],
+  "NAME_FIELDS_FLYER": [
+   [
+    "bone_east_02",
+    "EnemyDeathEffectsRegular",
+    "Fields Flyer",
+    128.89,
+    138.21
+   ],
+   [
+    "bone_east_02b",
+    "EnemyDeathEffectsRegular",
+    "Fields Flyer",
+    319.96,
+    16.12
+   ],
+   [
+    "bone_east_09b",
+    "EnemyDeathEffectsRegular",
+    "Fields Flyer",
+    59.84,
+    127.56
+   ],
+   [
+    "bone_east_15",
+    "EnemyDeathEffectsRegular",
+    "Fields Flyer (2)",
+    111.81,
+    73.1
+   ],
+   [
+    "bone_east_17",
+    "EnemyDeathEffectsRegular",
+    "Fields Flyer (3)",
+    54.12,
+    140.79
+   ],
+   [
+    "bone_east_18b",
+    "EnemyDeathEffectsRegular",
+    "Fields Flyer",
+    47.6,
+    76.81
+   ],
+   [
+    "bone_east_24",
+    "EnemyDeathEffectsRegular",
+    "Fields Flyer (2)",
+    212.93,
+    43.92
+   ],
+   [
+    "bone_east_25",
+    "EnemyDeathEffectsRegular",
+    "Fields Flyer",
+    112.9,
+    18.6
+   ],
+   [
+    "dock_03d",
+    "EnemyDeathEffectsRegular",
+    "Fields Flyer",
+    92.3,
+    70.06
+   ]
+  ],
+  "NAME_FIELDS_GOOMBA": [
+   [
+    "bone_east_02",
+    "EnemyDeathEffectsRegular",
+    "Fields Goomba",
+    87.82,
+    100.56
+   ],
+   [
+    "bone_east_02b",
+    "EnemyDeathEffectsRegular",
+    "Fields Goomba (4)",
+    295.06,
+    24.05
+   ],
+   [
+    "bone_east_07",
+    "EnemyDeathEffectsRegular",
+    "Fields Goomba",
+    16.79,
+    37.62
+   ],
+   [
+    "bone_east_09",
+    "EnemyDeathEffectsRegular",
+    "Fields Goomba",
+    9.49,
+    55.61
+   ],
+   [
+    "bone_east_09b",
+    "EnemyDeathEffectsRegular",
+    "Fields Goomba",
+    63.97,
+    141.41
+   ],
+   [
+    "bone_east_14",
+    "EnemyDeathEffectsRegular",
+    "Fields Goomba (4)",
+    112.28,
+    69.5
+   ],
+   [
+    "bone_east_14b",
+    "EnemyDeathEffectsRegular",
+    "Fields Goomba (3)",
+    188.12,
+    8.75
+   ],
+   [
+    "bone_east_15",
+    "EnemyDeathEffectsRegular",
+    "Fields Goomba",
+    71.01,
+    5.66
+   ],
+   [
+    "bone_east_16",
+    "EnemyDeathEffectsRegular",
+    "Fields Goomba",
+    29.88,
+    5.52
+   ],
+   [
+    "bone_east_17",
+    "EnemyDeathEffectsRegular",
+    "Fields Goomba",
+    62.77,
+    63.65
+   ],
+   [
+    "bone_east_17b",
+    "EnemyDeathEffectsRegular",
+    "Fields Goomba (1)",
+    25.4,
+    40.51
+   ],
+   [
+    "bone_east_18",
+    "EnemyDeathEffectsRegular",
+    "Fields Goomba",
+    96.36,
+    40.52
+   ],
+   [
+    "bone_east_18b",
+    "EnemyDeathEffectsRegular",
+    "Fields Goomba (1)",
+    22.53,
+    85.51
+   ],
+   [
+    "bone_east_18c",
+    "EnemyDeathEffectsRegular",
+    "Fields Goomba",
+    31.25,
+    12.69
+   ],
+   [
+    "bone_east_20",
+    "EnemyDeathEffectsRegular",
+    "Fields Goomba (1)",
+    98.13,
+    5.29
+   ],
+   [
+    "bone_east_24",
+    "EnemyDeathEffectsRegular",
+    "Fields Goomba (3)",
+    248.96,
+    24.43
+   ],
+   [
+    "bone_east_26",
+    "EnemyDeathEffectsRegular",
+    "Fields Goomba",
+    22.06,
+    29.51
+   ],
+   [
+    "dock_03b",
+    "EnemyDeathEffectsRegular",
+    "Fields Goomba",
+    156.9,
+    91.35
+   ],
+   [
+    "dock_03d",
+    "EnemyDeathEffectsRegular",
+    "Fields Goomba (1)",
+    67.28,
+    66.38
+   ]
+  ],
+  "NAME_FIRST_WEAVER": [
+   [
+    "slab_10b",
+    "PlayMakerFSM",
+    "First Weaver",
+    48.0,
+    42.3
+   ]
+  ],
+  "NAME_FLOWER_DRIFTER": [
+   [
+    "arborium_03",
+    "EnemyDeathEffectsRegular",
+    "Flower Drifter (4)",
+    18.06,
+    86.37
+   ],
+   [
+    "shellwood_01b",
+    "EnemyDeathEffectsRegular",
+    "Flower Drifter (1)",
+    41.57,
+    6.75
+   ],
+   [
+    "shellwood_03",
+    "EnemyDeathEffectsRegular",
+    "Flower Drifter (11)",
+    24.95,
+    73.29
+   ],
+   [
+    "shellwood_08",
+    "EnemyDeathEffectsRegular",
+    "Flower Drifter (9)",
+    60.24,
+    8.49
+   ],
+   [
+    "shellwood_10",
+    "EnemyDeathEffectsRegular",
+    "Flower Drifter (1)",
+    52.33,
+    30.93
+   ],
+   [
+    "shellwood_11",
+    "EnemyDeathEffectsRegular",
+    "Flower Drifter",
+    28.79,
+    11.46
+   ],
+   [
+    "shellwood_14",
+    "EnemyDeathEffectsRegular",
+    "Flower Drifter (7)",
+    21.86,
+    10.38
+   ],
+   [
+    "shellwood_witch",
+    "EnemyDeathEffectsRegular",
+    "Flower Drifter (1)",
+    86.45,
+    25.84
+   ],
+   [
+    "under_27",
+    "EnemyDeathEffectsRegular",
+    "Flower Drifter (4)",
+    119.22,
+    32.39
+   ]
+  ],
+  "NAME_FLOWER_QUEEN": [
+   [
+    "shellwood_11b_memory",
+    "EnemyDeathEffectsRegular",
+    "Flower Queen Boss",
+    10.04,
+    110.43
+   ]
+  ],
+  "NAME_GARMOND": [
+   [
+    "coral_33",
+    "EnemyDeathEffectsRegular",
+    "Garmond Black Threaded Fighter",
+    23.74,
+    61.99
+   ]
+  ],
+  "NAME_GARMOND_ZAZA": [
+   [
+    "bone_09",
+    "PlayMakerFSM",
+    "Garmond Fighter",
+    127.74,
+    11.09
+   ],
+   [
+    "bone_11",
+    "PlayMakerFSM",
+    "Garmond Fighter",
+    78.84,
+    21.36
+   ],
+   [
+    "bone_east_02",
+    "PlayMakerFSM",
+    "Garmond Fighter",
+    149.07,
+    -37.72
+   ],
+   [
+    "bone_east_05",
+    "PlayMakerFSM",
+    "Garmond Fighter",
+    110.8,
+    -7.23
+   ],
+   [
+    "bone_east_14",
+    "PlayMakerFSM",
+    "Garmond Fighter",
+    97.65,
+    9.02
+   ],
+   [
+    "coral_02",
+    "PlayMakerFSM",
+    "Garmond Fighter",
+    90.92,
+    32.14
+   ],
+   [
+    "dust_05",
+    "PlayMakerFSM",
+    "Garmond Fighter",
+    343.42,
+    -20.88
+   ],
+   [
+    "greymoor_05",
+    "PlayMakerFSM",
+    "Garmond Fighter",
+    52.6,
+    6.62
+   ],
+   [
+    "greymoor_08_boss",
+    "PlayMakerFSM",
+    "Garmond Fighter",
+    97.34,
+    11.0
+   ],
+   [
+    "hang_04_boss",
+    "PlayMakerFSM",
+    "Garmond Fighter",
+    43.6,
+    7.5
+   ],
+   [
+    "library_09",
+    "PlayMakerFSM",
+    "Garmond Fighter",
+    74.96,
+    16.74
+   ],
+   [
+    "shellwood_04b",
+    "PlayMakerFSM",
+    "Garmond Fighter",
+    84.07,
+    6.74
+   ],
+   [
+    "song_01",
+    "PlayMakerFSM",
+    "Garmond Fighter",
+    78.5,
+    37.93
+   ],
+   [
+    "song_02",
+    "PlayMakerFSM",
+    "Garmond Fighter",
+    125.89,
+    18.75
+   ],
+   [
+    "song_13",
+    "PlayMakerFSM",
+    "Garmond Fighter",
+    39.27,
+    7.92
+   ],
+   [
+    "song_17",
+    "PlayMakerFSM",
+    "Garmond Fighter",
+    71.47,
+    56.96
+   ]
+  ],
+  "NAME_GIANT_CENTIPEDE": [
+   [
+    "bellway_centipede_arena",
+    "PlayMakerFSM",
+    "Centipede Control",
+    0.0,
+    0.0
+   ]
+  ],
+  "NAME_GIANT_FLEA": [
+   [
+    "arborium_08",
+    "PlayMakerFSM",
+    "Giant Flea",
+    33.65,
+    34.55
+   ]
+  ],
+  "NAME_GLOOM_BEAST": [
+   [
+    "abyss_02b",
+    "EnemyDeathEffectsRegular",
+    "Gloom Beast",
+    163.85,
+    22.52
+   ]
+  ],
+  "NAME_GNAT_GIANT": [
+   [
+    "greymoor_16",
+    "EnemyDeathEffectsRegular",
+    "Gnat Giant (1)",
+    122.66,
+    22.47
+   ]
+  ],
+  "NAME_GRASSHOPPER_CHILD": [
+   [
+    "clover_04b",
+    "EnemyDeathEffectsRegular",
+    "Grasshopper Child",
+    34.37,
+    21.01
+   ],
+   [
+    "clover_10_web",
+    "EnemyDeathEffectsRegular",
+    "Grasshopper Child",
+    46.71,
+    32.34
+   ],
+   [
+    "clover_11",
+    "EnemyDeathEffectsRegular",
+    "Grasshopper Child",
+    18.36,
+    15.31
+   ]
+  ],
+  "NAME_GRASSHOPPER_FLY": [
+   [
+    "clover_02c",
+    "EnemyDeathEffectsRegular",
+    "Grasshopper Fly",
+    139.42,
+    56.23
+   ],
+   [
+    "clover_04b",
+    "EnemyDeathEffectsRegular",
+    "Grasshopper Fly",
+    27.17,
+    50.83
+   ],
+   [
+    "clover_21",
+    "EnemyDeathEffectsRegular",
+    "Grasshopper Fly",
+    73.61,
+    15.24
+   ]
+  ],
+  "NAME_GRASSHOPPER_SLASHER": [
+   [
+    "clover_02c",
+    "EnemyDeathEffectsRegular",
+    "Grasshopper Slasher (2)",
+    40.81,
+    47.96
+   ],
+   [
+    "clover_04b",
+    "EnemyDeathEffectsRegular",
+    "Grasshopper Slasher",
+    23.99,
+    18.5
+   ],
+   [
+    "clover_21",
+    "EnemyDeathEffectsRegular",
+    "Grasshopper Slasher",
+    118.99,
+    12.64
+   ]
+  ],
+  "NAME_GRASS_GOOMBA": [
+   [
+    "clover_01b",
+    "EnemyDeathEffectsRegular",
+    "Grass Goomba",
+    144.66,
+    13.74
+   ],
+   [
+    "clover_02c",
+    "EnemyDeathEffectsRegular",
+    "Grass Goomba",
+    116.0,
+    16.38
+   ],
+   [
+    "clover_03",
+    "EnemyDeathEffectsRegular",
+    "Grass Goomba",
+    15.6,
+    79.31
+   ],
+   [
+    "clover_05c",
+    "EnemyDeathEffectsRegular",
+    "Grass Goomba (1)",
+    8.99,
+    84.21
+   ],
+   [
+    "clover_16",
+    "EnemyDeathEffectsRegular",
+    "Grass Goomba (1)",
+    128.67,
+    47.14
+   ]
+  ],
+  "NAME_HORNET_DRAGONFLY": [
+   [
+    "clover_01b",
+    "EnemyDeathEffectsRegular",
+    "Hornet Dragonfly",
+    84.11,
+    5.66
+   ],
+   [
+    "clover_03",
+    "EnemyDeathEffectsRegular",
+    "Hornet Dragonfly (1)",
+    15.53,
+    69.85
+   ],
+   [
+    "clover_04b",
+    "EnemyDeathEffectsRegular",
+    "Hornet Dragonfly",
+    103.01,
+    22.84
+   ],
+   [
+    "clover_05c",
+    "EnemyDeathEffectsRegular",
+    "Hornet Dragonfly",
+    22.24,
+    49.81
+   ],
+   [
+    "clover_06",
+    "EnemyDeathEffectsRegular",
+    "Hornet Dragonfly (2)",
+    150.29,
+    20.68
+   ],
+   [
+    "clover_16",
+    "EnemyDeathEffectsRegular",
+    "Hornet Dragonfly (2)",
+    73.5,
+    58.63
+   ],
+   [
+    "clover_18",
+    "EnemyDeathEffectsRegular",
+    "Hornet Dragonfly (3)",
+    48.1,
+    10.1
+   ]
+  ],
+  "NAME_HUNTER_QUEEN": [
+   [
+    "memory_ant_queen",
+    "EnemyDeathEffectsRegular",
+    "Hunter Queen Boss",
+    149.0,
+    20.19
+   ]
+  ],
+  "NAME_LACE": [
+   [
+    "bone_east_12",
+    "EnemyDeathEffectsRegular",
+    "Lace Boss1",
+    97.39,
+    7.55
+   ],
+   [
+    "song_tower_01",
+    "EnemyDeathEffectsRegular",
+    "Lace Boss2 New",
+    59.19,
+    100.52
+   ]
+  ],
+  "NAME_LIGHTBEARER": [
+   [
+    "library_04",
+    "EnemyDeathEffectsRegular",
+    "Lightbearer (4)",
+    28.5,
+    102.03
+   ]
+  ],
+  "NAME_LILYPAD_FLY": [
+   [
+    "clover_02c",
+    "EnemyDeathEffectsRegular",
+    "Lilypad Fly (10)",
+    31.2,
+    7.14
+   ],
+   [
+    "clover_06",
+    "EnemyDeathEffectsRegular",
+    "Lilypad Fly",
+    159.07,
+    7.26
+   ],
+   [
+    "clover_16",
+    "EnemyDeathEffectsRegular",
+    "Lilypad Fly (1)",
+    87.84,
+    18.97
+   ],
+   [
+    "clover_18",
+    "EnemyDeathEffectsRegular",
+    "Lilypad Fly (2)",
+    157.57,
+    6.45
+   ]
+  ],
+  "NAME_LILYPAD_TRAP": [
+   [
+    "arborium_09",
+    "EnemyDeathEffectsRegular",
+    "Enemy",
+    55.08,
+    78.98
+   ],
+   [
+    "clover_01b",
+    "EnemyDeathEffectsRegular",
+    "Enemy",
+    156.38,
+    5.14
+   ],
+   [
+    "clover_02c",
+    "EnemyDeathEffectsRegular",
+    "Enemy",
+    157.1,
+    41.16
+   ],
+   [
+    "clover_03",
+    "EnemyDeathEffectsRegular",
+    "Enemy",
+    11.48,
+    66.22
+   ],
+   [
+    "clover_04b",
+    "EnemyDeathEffectsRegular",
+    "Enemy",
+    171.35,
+    14.55
+   ],
+   [
+    "clover_06",
+    "EnemyDeathEffectsRegular",
+    "Enemy",
+    117.12,
+    6.16
+   ],
+   [
+    "clover_10",
+    "EnemyDeathEffectsRegular",
+    "Enemy",
+    80.79,
+    4.69
+   ],
+   [
+    "clover_10_web",
+    "EnemyDeathEffectsRegular",
+    "Enemy",
+    80.79,
+    4.69
+   ],
+   [
+    "clover_16",
+    "EnemyDeathEffectsRegular",
+    "Enemy",
+    112.81,
+    62.45
+   ],
+   [
+    "clover_18",
+    "EnemyDeathEffectsRegular",
+    "Enemy",
+    132.02,
+    5.72
+   ],
+   [
+    "clover_19",
+    "EnemyDeathEffectsRegular",
+    "Enemy",
+    49.18,
+    9.99
+   ],
+   [
+    "clover_21",
+    "EnemyDeathEffectsRegular",
+    "Enemy",
+    76.74,
+    3.16
+   ]
+  ],
+  "NAME_LOST_LACE": [
+   [
+    "abyss_cocoon",
+    "PlayMakerFSM",
+    "Superjump Sequence",
+    29.0,
+    5.0
+   ]
+  ],
+  "NAME_MAGGOTS": [
+   [
+    "abyss_05",
+    "MaggotRegion",
+    "Surface Water Region",
+    78.84,
+    3.97
+   ],
+   [
+    "abyss_07",
+    "MaggotRegion",
+    "Surface Water Region",
+    72.5,
+    3.95
+   ],
+   [
+    "abyss_08",
+    "MaggotRegion",
+    "Surface Water Region",
+    87.11,
+    3.97
+   ],
+   [
+    "aqueduct_01",
+    "MaggotRegion",
+    "Surface Water Region",
+    154.48,
+    2.44
+   ],
+   [
+    "aqueduct_03",
+    "MaggotRegion",
+    "Surface Water Region",
+    108.3,
+    2.44
+   ],
+   [
+    "aqueduct_04",
+    "MaggotRegion",
+    "Surface Water Region",
+    66.4,
+    7.96
+   ],
+   [
+    "aqueduct_05",
+    "MaggotRegion",
+    "Surface Water Region (1)",
+    27.9,
+    5.9
+   ],
+   [
+    "aqueduct_05_festival",
+    "MaggotRegion",
+    "Surface Water Region NotPlaying",
+    271.04,
+    5.08
+   ],
+   [
+    "aqueduct_06",
+    "MaggotRegion",
+    "Surface Water Region",
+    125.79,
+    4.62
+   ],
+   [
+    "aqueduct_08",
+    "MaggotRegion",
+    "Surface Water Region",
+    27.83,
+    1.4
+   ],
+   [
+    "arborium_05",
+    "MaggotRegion",
+    "Surface Water Region (1)",
+    23.48,
+    5.95
+   ],
+   [
+    "arborium_09",
+    "MaggotRegion",
+    "Surface Water Region",
+    53.1,
+    78.8
+   ],
+   [
+    "belltown_room_spare",
+    "MaggotRegion",
+    "Surface Water Region",
+    22.43,
+    12.84
+   ],
+   [
+    "bonegrave",
+    "MaggotRegion",
+    "Surface Water Region",
+    263.66,
+    4.99
+   ],
+   [
+    "clover_01",
+    "MaggotRegion",
+    "Surface Water Region (2)",
+    159.03,
+    4.66
+   ],
+   [
+    "clover_01b",
+    "MaggotRegion",
+    "Surface Water Region",
+    92.03,
+    2.86
+   ],
+   [
+    "clover_02c",
+    "MaggotRegion",
+    "Surface Water Region",
+    165.63,
+    40.76
+   ],
+   [
+    "clover_03",
+    "MaggotRegion",
+    "Surface Water Region",
+    -19.22,
+    65.94
+   ],
+   [
+    "clover_04b",
+    "MaggotRegion",
+    "Surface Water Region (1)",
+    151.66,
+    14.16
+   ],
+   [
+    "clover_06",
+    "MaggotRegion",
+    "Surface Water Region",
+    137.14,
+    5.64
+   ],
+   [
+    "clover_10",
+    "MaggotRegion",
+    "Surface Water Region (4)",
+    127.79,
+    33.66
+   ],
+   [
+    "clover_16",
+    "MaggotRegion",
+    "Surface Water Region",
+    108.92,
+    18.08
+   ],
+   [
+    "clover_18",
+    "MaggotRegion",
+    "Surface Water Region",
+    119.88,
+    5.5
+   ],
+   [
+    "clover_19",
+    "MaggotRegion",
+    "Surface Water Region",
+    47.11,
+    9.61
+   ],
+   [
+    "clover_21",
+    "MaggotRegion",
+    "Surface Water Region",
+    60.8,
+    2.64
+   ],
+   [
+    "crawl_02",
+    "MaggotRegion",
+    "Surface Water Region",
+    11.74,
+    1.74
+   ],
+   [
+    "dust_02",
+    "MaggotRegion",
+    "Surface Water Region",
+    17.61,
+    2.2
+   ],
+   [
+    "dust_04",
+    "MaggotRegion",
+    "Surface Water Region (1)",
+    59.06,
+    21.82
+   ],
+   [
+    "dust_05",
+    "MaggotRegion",
+    "Surface Water Region (2)",
+    342.77,
+    9.46
+   ],
+   [
+    "dust_06",
+    "MaggotRegion",
+    "Surface Water Region (1)",
+    16.6,
+    9.76
+   ],
+   [
+    "dust_09",
+    "MaggotRegion",
+    "Surface Water Region",
+    109.08,
+    4.12
+   ],
+   [
+    "dust_10",
+    "MaggotRegion",
+    "Surface Water Region",
+    111.68,
+    8.13
+   ],
+   [
+    "dust_11",
+    "MaggotRegion",
+    "Surface Water Region",
+    32.98,
+    11.36
+   ],
+   [
+    "dust_barb",
+    "MaggotRegion",
+    "Surface Water Region",
+    17.61,
+    2.3
+   ],
+   [
+    "greymoor_03",
+    "MaggotRegion",
+    "Surface Water Region",
+    32.74,
+    8.11
+   ],
+   [
+    "greymoor_08",
+    "MaggotRegion",
+    "Surface Water Region",
+    139.45,
+    1.8
+   ],
+   [
+    "greymoor_12",
+    "MaggotRegion",
+    "Surface Water Region",
+    109.4,
+    3.45
+   ],
+   [
+    "greymoor_13",
+    "MaggotRegion",
+    "Surface Water Region",
+    120.45,
+    3.11
+   ],
+   [
+    "greymoor_15",
+    "MaggotRegion",
+    "Surface Water Region",
+    48.9,
+    6.97
+   ],
+   [
+    "greymoor_15b",
+    "MaggotRegion",
+    "Surface Water Region",
+    149.99,
+    7.02
+   ],
+   [
+    "greymoor_16",
+    "MaggotRegion",
+    "Surface Water Region",
+    65.87,
+    4.87
+   ],
+   [
+    "greymoor_21",
+    "MaggotRegion",
+    "Surface Water Region",
+    43.77,
+    7.07
+   ],
+   [
+    "greymoor_24",
+    "MaggotRegion",
+    "Surface Water Region",
+    30.96,
+    9.6
+   ],
+   [
+    "hang_01",
+    "MaggotRegion",
+    "Surface Water Region",
+    37.23,
+    9.3
+   ],
+   [
+    "hang_02",
+    "MaggotRegion",
+    "Surface Water Region",
+    84.08,
+    22.83
+   ],
+   [
+    "hang_03",
+    "MaggotRegion",
+    "Surface Water Region",
+    18.85,
+    4.25
+   ],
+   [
+    "hang_09",
+    "MaggotRegion",
+    "Surface Water Region (1)",
+    90.64,
+    28.14
+   ],
+   [
+    "hang_10",
+    "MaggotRegion",
+    "Surface Water Region",
+    50.9,
+    4.28
+   ],
+   [
+    "hang_13",
+    "MaggotRegion",
+    "Surface Water Region (3)",
+    118.83,
+    52.82
+   ],
+   [
+    "mosstown_02c",
+    "MaggotRegion",
+    "Surface Water Region",
+    47.32,
+    4.23
+   ],
+   [
+    "peak_02",
+    "MaggotRegion",
+    "Surface Water Region (2)",
+    23.63,
+    4.58
+   ],
+   [
+    "peak_04",
+    "MaggotRegion",
+    "Surface Water Region (1)",
+    257.15,
+    11.58
+   ],
+   [
+    "peak_05c",
+    "MaggotRegion",
+    "Surface Water Region",
+    235.31,
+    25.07
+   ],
+   [
+    "peak_05e",
+    "MaggotRegion",
+    "Surface Water Region (2)",
+    104.22,
+    40.35
+   ],
+   [
+    "peak_06",
+    "MaggotRegion",
+    "Surface Water Region",
+    34.43,
+    3.42
+   ],
+   [
+    "room_caravan_spa",
+    "MaggotRegion",
+    "Surface Water Region",
+    17.4,
+    5.48
+   ],
+   [
+    "room_crowcourt_02",
+    "MaggotRegion",
+    "Surface Water Region (1)",
+    66.2,
+    71.88
+   ],
+   [
+    "shadow_01",
+    "MaggotRegion",
+    "Surface Water Region (3)",
+    46.31,
+    2.82
+   ],
+   [
+    "shadow_02",
+    "MaggotRegion",
+    "Surface Water Region",
+    38.58,
+    20.86
+   ],
+   [
+    "shadow_03",
+    "MaggotRegion",
+    "Surface Water Region (1)",
+    47.21,
+    10.02
+   ],
+   [
+    "shadow_04",
+    "MaggotRegion",
+    "Surface Water Region",
+    35.0,
+    4.12
+   ],
+   [
+    "shadow_04b",
+    "MaggotRegion",
+    "Surface Water Region (1)",
+    78.19,
+    59.5
+   ],
+   [
+    "shadow_05",
+    "MaggotRegion",
+    "Surface Water Region",
+    56.78,
+    2.9
+   ],
+   [
+    "shadow_08",
+    "MaggotRegion",
+    "Surface Water Region",
+    80.54,
+    2.62
+   ],
+   [
+    "shadow_09",
+    "MaggotRegion",
+    "Surface Water Region",
+    104.5,
+    51.15
+   ],
+   [
+    "shadow_10",
+    "MaggotRegion",
+    "Surface Water Region (4)",
+    167.75,
+    25.2
+   ],
+   [
+    "shadow_11",
+    "MaggotRegion",
+    "Surface Water Region",
+    16.13,
+    5.36
+   ],
+   [
+    "shadow_12",
+    "MaggotRegion",
+    "Surface Water Region (8)",
+    104.99,
+    10.56
+   ],
+   [
+    "shadow_13",
+    "MaggotRegion",
+    "Surface Water Region (1)",
+    265.1,
+    38.46
+   ],
+   [
+    "shadow_15",
+    "MaggotRegion",
+    "Surface Water Region (3)",
+    32.51,
+    5.23
+   ],
+   [
+    "shadow_16",
+    "MaggotRegion",
+    "Surface Water Region (1)",
+    69.08,
+    6.13
+   ],
+   [
+    "shadow_18",
+    "MaggotRegion",
+    "Surface Water Region",
+    71.3,
+    7.9
+   ],
+   [
+    "shadow_19",
+    "MaggotRegion",
+    "Surface Water Region",
+    48.59,
+    5.48
+   ],
+   [
+    "shadow_20",
+    "MaggotRegion",
+    "Surface Water Region (1)",
+    115.86,
+    26.51
+   ],
+   [
+    "shadow_21",
+    "MaggotRegion",
+    "Surface Water Region (1)",
+    73.23,
+    1.5
+   ],
+   [
+    "shadow_22",
+    "MaggotRegion",
+    "Surface Water Region",
+    28.98,
+    5.15
+   ],
+   [
+    "shadow_24",
+    "MaggotRegion",
+    "Surface Water Region",
+    278.3,
+    5.06
+   ],
+   [
+    "shadow_27",
+    "MaggotRegion",
+    "Surface Water Region (2)",
+    181.81,
+    6.35
+   ],
+   [
+    "shadow_28",
+    "MaggotRegion",
+    "Surface Water Region (3)",
+    53.78,
+    2.92
+   ],
+   [
+    "shadow_weavehome",
+    "MaggotRegion",
+    "Surface Water Region (1)",
+    167.52,
+    35.02
+   ],
+   [
+    "shellwood_01",
+    "MaggotRegion",
+    "Surface Water Region",
+    65.85,
+    2.83
+   ],
+   [
+    "shellwood_02",
+    "MaggotRegion",
+    "Surface Water Region",
+    45.62,
+    3.61
+   ],
+   [
+    "shellwood_04b",
+    "MaggotRegion",
+    "Surface Water Region",
+    158.18,
+    2.4
+   ],
+   [
+    "shellwood_11",
+    "MaggotRegion",
+    "Surface Water Region",
+    73.6,
+    6.18
+   ],
+   [
+    "shellwood_13",
+    "MaggotRegion",
+    "Surface Water Region",
+    35.54,
+    2.75
+   ],
+   [
+    "shellwood_14",
+    "MaggotRegion",
+    "Surface Water Region",
+    22.34,
+    2.84
+   ],
+   [
+    "shellwood_16",
+    "MaggotRegion",
+    "Surface Water Region",
+    25.3,
+    1.84
+   ],
+   [
+    "shellwood_18",
+    "MaggotRegion",
+    "Surface Water Region (1)",
+    113.81,
+    5.77
+   ],
+   [
+    "shellwood_19",
+    "MaggotRegion",
+    "Surface Water Region",
+    35.82,
+    3.51
+   ],
+   [
+    "shellwood_20",
+    "MaggotRegion",
+    "Surface Water Region",
+    54.34,
+    5.62
+   ],
+   [
+    "shellwood_25",
+    "MaggotRegion",
+    "Surface Water Region (3)",
+    276.43,
+    8.94
+   ],
+   [
+    "shellwood_26",
+    "MaggotRegion",
+    "Surface Water Region (1)",
+    64.13,
+    55.95
+   ],
+   [
+    "slab_03",
+    "MaggotRegion",
+    "Surface Water Region",
+    14.24,
+    2.64
+   ],
+   [
+    "slab_07",
+    "MaggotRegion",
+    "Surface Water Region",
+    54.4,
+    3.93
+   ],
+   [
+    "slab_12",
+    "MaggotRegion",
+    "Surface Water Region",
+    28.76,
+    12.98
+   ],
+   [
+    "song_07",
+    "MaggotRegion",
+    "Surface Water Region",
+    19.19,
+    1.87
+   ],
+   [
+    "song_10",
+    "MaggotRegion",
+    "Surface Water Region (1)",
+    91.46,
+    49.84
+   ],
+   [
+    "tut_02",
+    "MaggotRegion",
+    "Surface Water Region",
+    36.75,
+    9.54
+   ],
+   [
+    "under_07b",
+    "MaggotRegion",
+    "Surface Water Region (2)",
+    86.68,
+    85.39
+   ],
+   [
+    "weave_03",
+    "MaggotRegion",
+    "Surface Water Region",
+    47.77,
+    4.41
+   ],
+   [
+    "weave_07",
+    "MaggotRegion",
+    "Surface Water Region",
+    22.15,
+    101.94
+   ],
+   [
+    "weave_11",
+    "MaggotRegion",
+    "Surface Water Region",
+    83.74,
+    2.96
+   ],
+   [
+    "wisp_02",
+    "MaggotRegion",
+    "Surface Water Region",
+    124.41,
+    10.74
+   ],
+   [
+    "wisp_07",
+    "MaggotRegion",
+    "Surface Water Region (1)",
+    260.69,
+    3.86
+   ]
+  ],
+  "NAME_MITE": [
+   [
+    "ant_08",
+    "EnemyDeathEffectsRegular",
+    "Mite (2)",
+    41.36,
+    49.03
+   ],
+   [
+    "dust_02",
+    "EnemyDeathEffectsRegular",
+    "Mite (2)",
+    33.13,
+    8.1
+   ],
+   [
+    "dust_03",
+    "EnemyDeathEffectsRegular",
+    "Mite",
+    130.67,
+    3.09
+   ],
+   [
+    "dust_04",
+    "EnemyDeathEffectsRegular",
+    "Mite (5)",
+    80.8,
+    38.94
+   ],
+   [
+    "dust_06",
+    "EnemyDeathEffectsRegular",
+    "Mite (2)",
+    14.47,
+    13.42
+   ],
+   [
+    "greymoor_01",
+    "EnemyDeathEffectsRegular",
+    "Mite (1)",
+    100.08,
+    30.19
+   ],
+   [
+    "greymoor_02",
+    "EnemyDeathEffectsRegular",
+    "Mite (1)",
+    -24.36,
+    113.95
+   ],
+   [
+    "greymoor_03",
+    "EnemyDeathEffectsRegular",
+    "Mite (5)",
+    15.12,
+    62.28
+   ],
+   [
+    "greymoor_06",
+    "EnemyDeathEffectsRegular",
+    "Mite (2)",
+    34.91,
+    102.75
+   ],
+   [
+    "greymoor_07",
+    "EnemyDeathEffectsRegular",
+    "Mite (5)",
+    32.65,
+    41.98
+   ],
+   [
+    "greymoor_11",
+    "EnemyDeathEffectsRegular",
+    "Mite",
+    42.09,
+    29.09
+   ],
+   [
+    "greymoor_12",
+    "EnemyDeathEffectsRegular",
+    "Mite (1)",
+    146.15,
+    6.02
+   ],
+   [
+    "greymoor_13",
+    "EnemyDeathEffectsRegular",
+    "Mite",
+    94.62,
+    10.87
+   ],
+   [
+    "greymoor_15",
+    "EnemyDeathEffectsRegular",
+    "Mite (2)",
+    65.58,
+    27.27
+   ],
+   [
+    "greymoor_15b",
+    "EnemyDeathEffectsRegular",
+    "Mite",
+    197.49,
+    47.1
+   ],
+   [
+    "greymoor_16",
+    "EnemyDeathEffectsRegular",
+    "Mite (1)",
+    126.52,
+    32.1
+   ],
+   [
+    "greymoor_17",
+    "EnemyDeathEffectsRegular",
+    "Mite",
+    30.49,
+    51.13
+   ],
+   [
+    "room_crowcourt",
+    "EnemyDeathEffectsRegular",
+    "Mite",
+    39.05,
+    30.17
+   ]
+  ],
+  "NAME_MITEFLY": [
+   [
+    "ant_08",
+    "EnemyDeathEffectsRegular",
+    "Mitefly (3)",
+    35.92,
+    56.33
+   ],
+   [
+    "greymoor_03",
+    "EnemyDeathEffectsRegular",
+    "Mitefly (3)",
+    46.9,
+    91.26
+   ],
+   [
+    "greymoor_04",
+    "EnemyDeathEffectsRegular",
+    "Mitefly",
+    25.15,
+    38.45
+   ],
+   [
+    "greymoor_05",
+    "EnemyDeathEffectsRegular",
+    "Mitefly (7)",
+    81.66,
+    60.33
+   ],
+   [
+    "greymoor_07",
+    "EnemyDeathEffectsRegular",
+    "Mitefly",
+    36.57,
+    94.87
+   ],
+   [
+    "greymoor_11",
+    "EnemyDeathEffectsRegular",
+    "Mitefly (2)",
+    66.24,
+    35.16
+   ],
+   [
+    "greymoor_12",
+    "EnemyDeathEffectsRegular",
+    "Mitefly",
+    113.68,
+    7.63
+   ],
+   [
+    "greymoor_16",
+    "EnemyDeathEffectsRegular",
+    "Mitefly (2)",
+    74.33,
+    42.67
+   ],
+   [
+    "greymoor_17",
+    "EnemyDeathEffectsRegular",
+    "Mitefly",
+    49.36,
+    47.55
+   ]
+  ],
+  "NAME_MITE_HEAVY": [
+   [
+    "cog_05",
+    "EnemyDeathEffectsRegular",
+    "Mite Heavy",
+    32.35,
+    3.05
+   ],
+   [
+    "cog_07",
+    "EnemyDeathEffectsRegular",
+    "Mite Heavy",
+    44.66,
+    28.95
+   ],
+   [
+    "cog_10_destroyed",
+    "EnemyDeathEffectsRegular",
+    "Mite Heavy",
+    16.27,
+    4.04
+   ],
+   [
+    "hang_06_bank",
+    "EnemyDeathEffectsRegular",
+    "Mite Heavy (1)",
+    90.49,
+    47.08
+   ],
+   [
+    "library_01",
+    "EnemyDeathEffectsRegular",
+    "Mite Heavy",
+    56.58,
+    55.78
+   ],
+   [
+    "library_02",
+    "EnemyDeathEffectsRegular",
+    "Mite Heavy",
+    71.86,
+    6.96
+   ],
+   [
+    "library_04",
+    "EnemyDeathEffectsRegular",
+    "Mite Heavy (1)",
+    39.94,
+    152.22
+   ],
+   [
+    "library_05",
+    "EnemyDeathEffectsRegular",
+    "Mite Heavy (1)",
+    35.45,
+    28.01
+   ],
+   [
+    "library_06",
+    "EnemyDeathEffectsRegular",
+    "Mite Heavy",
+    57.22,
+    29.98
+   ],
+   [
+    "slab_13",
+    "EnemyDeathEffectsRegular",
+    "Mite Heavy",
+    36.77,
+    3.1
+   ],
+   [
+    "slab_15",
+    "EnemyDeathEffectsRegular",
+    "Mite Heavy (1)",
+    38.5,
+    18.03
+   ],
+   [
+    "slab_16",
+    "EnemyDeathEffectsRegular",
+    "Mite Heavy",
+    63.1,
+    12.17
+   ],
+   [
+    "slab_18",
+    "EnemyDeathEffectsRegular",
+    "Mite Heavy",
+    15.44,
+    11.02
+   ],
+   [
+    "song_02",
+    "EnemyDeathEffectsRegular",
+    "Mite Heavy",
+    94.14,
+    3.24
+   ],
+   [
+    "song_04",
+    "EnemyDeathEffectsRegular",
+    "Mite Heavy",
+    126.94,
+    30.04
+   ],
+   [
+    "song_09",
+    "EnemyDeathEffectsRegular",
+    "Mite Heavy",
+    11.38,
+    55.95
+   ],
+   [
+    "song_10",
+    "EnemyDeathEffectsRegular",
+    "Mite Heavy (1)",
+    74.95,
+    12.07
+   ],
+   [
+    "song_18",
+    "EnemyDeathEffectsRegular",
+    "Mite Heavy (2)",
+    99.89,
+    48.93
+   ],
+   [
+    "under_01",
+    "EnemyDeathEffectsRegular",
+    "Mite Heavy",
+    35.43,
+    149.08
+   ],
+   [
+    "under_03c",
+    "EnemyDeathEffectsRegular",
+    "Mite Heavy",
+    9.72,
+    59.0
+   ],
+   [
+    "under_04",
+    "EnemyDeathEffectsRegular",
+    "Mite Heavy",
+    94.76,
+    23.88
+   ],
+   [
+    "under_07c",
+    "EnemyDeathEffectsRegular",
+    "Mite Heavy (2)",
+    40.64,
+    49.78
+   ],
+   [
+    "under_23",
+    "EnemyDeathEffectsRegular",
+    "Mite Heavy (1)",
+    102.98,
+    23.0
+   ]
+  ],
+  "NAME_MOSSBONE_CRAWLER": [
+   [
+    "arborium_01",
+    "EnemyDeathEffectsRegular",
+    "MossBone Crawler (1)",
+    12.1,
+    61.09
+   ],
+   [
+    "arborium_04",
+    "EnemyDeathEffectsRegular",
+    "MossBone Crawler (3)",
+    71.7,
+    7.81
+   ],
+   [
+    "arborium_09",
+    "EnemyDeathEffectsRegular",
+    "MossBone Crawler (1)",
+    56.05,
+    18.89
+   ],
+   [
+    "tut_01b",
+    "EnemyDeathEffectsRegular",
+    "MossBone Crawler (2)",
+    88.66,
+    36.27
+   ],
+   [
+    "tut_02",
+    "EnemyDeathEffectsRegular",
+    "MossBone Crawler (5)",
+    8.19,
+    17.29
+   ],
+   [
+    "tut_03",
+    "EnemyDeathEffectsRegular",
+    "MossBone Crawler Summon",
+    49.09,
+    29.13
+   ],
+   [
+    "weave_03",
+    "EnemyDeathEffectsRegular",
+    "MossBone Crawler",
+    195.3,
+    6.81
+   ]
+  ],
+  "NAME_MOSSBONE_CRAWLER_FAT": [
+   [
+    "arborium_09",
+    "EnemyDeathEffectsRegular",
+    "MossBone Crawler Fat (1)",
+    32.98,
+    12.69
+   ]
+  ],
+  "NAME_MOSSBONE_FLY": [
+   [
+    "arborium_01",
+    "EnemyDeathEffectsRegular",
+    "MossBone Fly (2)",
+    6.81,
+    67.86
+   ],
+   [
+    "arborium_04",
+    "EnemyDeathEffectsRegular",
+    "MossBone Fly (2)",
+    30.42,
+    13.89
+   ],
+   [
+    "tut_01",
+    "EnemyDeathEffectsRegular",
+    "MossBone Fly (2)",
+    6.85,
+    74.66
+   ],
+   [
+    "tut_01b",
+    "EnemyDeathEffectsRegular",
+    "MossBone Fly (4)",
+    110.57,
+    20.37
+   ],
+   [
+    "tut_02",
+    "EnemyDeathEffectsRegular",
+    "MossBone Fly",
+    52.02,
+    39.69
+   ],
+   [
+    "weave_03",
+    "EnemyDeathEffectsRegular",
+    "MossBone Fly (1)",
+    67.1,
+    22.52
+   ]
+  ],
+  "NAME_MOSSBONE_MOTHER": [
+   [
+    "tut_02",
+    "EnemyDeathEffectsRegular",
+    "Mossbone Mother Ambient",
+    128.29,
+    37.49
+   ],
+   [
+    "tut_03",
+    "EnemyDeathEffectsRegular",
+    "Mossbone Mother",
+    54.77,
+    25.76
+   ],
+   [
+    "weave_03",
+    "PlayMakerFSM",
+    "Battle End",
+    0.0,
+    0.0
+   ]
+  ],
+  "NAME_PEAKS_DRIFTER": [
+   [
+    "peak_01",
+    "EnemyDeathEffectsRegular",
+    "Peaks Drifter (18)",
+    70.32,
+    282.84
+   ],
+   [
+    "peak_04c",
+    "EnemyDeathEffectsRegular",
+    "Peaks Drifter (1)",
+    79.46,
+    19.77
+   ],
+   [
+    "peak_05",
+    "EnemyDeathEffectsRegular",
+    "Peaks Drifter (15)",
+    188.31,
+    136.39
+   ],
+   [
+    "peak_05d",
+    "EnemyDeathEffectsRegular",
+    "Peaks Drifter (15)",
+    200.93,
+    232.03
+   ],
+   [
+    "peak_07",
+    "EnemyDeathEffectsRegular",
+    "Peaks Drifter (9)",
+    34.97,
+    130.68
+   ],
+   [
+    "peak_08",
+    "EnemyDeathEffectsRegular",
+    "Peaks Drifter (16)",
+    32.62,
+    39.14
+   ]
+  ],
+  "NAME_PHANTOM": [
+   [
+    "organ_01",
+    "PlayMakerFSM",
+    "Phantom",
+    77.44,
+    104.24
+   ]
+  ],
+  "NAME_PILGRIM_01": [
+   [
+    "bone_04",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 01",
+    98.14,
+    13.64
+   ],
+   [
+    "bone_07",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 01",
+    43.82,
+    15.48
+   ],
+   [
+    "bone_09",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 01",
+    65.18,
+    29.52
+   ],
+   [
+    "bone_11",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 01 (1)",
+    73.15,
+    18.44
+   ],
+   [
+    "bone_14",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 01",
+    29.37,
+    18.48
+   ],
+   [
+    "bone_18",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 01",
+    32.5,
+    21.43
+   ],
+   [
+    "bone_east_14",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 01 (2)",
+    90.71,
+    40.38
+   ],
+   [
+    "bonegrave",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 01 (1)",
+    214.65,
+    7.54
+   ],
+   [
+    "chapel_wanderer",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 01",
+    37.76,
+    91.36
+   ],
+   [
+    "coral_02",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 01 (1)",
+    100.23,
+    46.15
+   ],
+   [
+    "greymoor_13",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 01 (4)",
+    38.11,
+    4.88
+   ],
+   [
+    "mosstown_01",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 01",
+    74.8,
+    4.54
+   ],
+   [
+    "mosstown_02",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 01 (3)",
+    92.78,
+    19.11
+   ],
+   [
+    "shellgrave",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 01",
+    58.26,
+    10.57
+   ]
+  ],
+  "NAME_PILGRIM_01_SONG": [
+   [
+    "library_02",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 01 Song",
+    89.02,
+    32.42
+   ],
+   [
+    "song_01",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 01 Song",
+    127.26,
+    36.38
+   ],
+   [
+    "song_02",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 01 Song",
+    110.04,
+    17.42
+   ],
+   [
+    "song_03",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 01 Song",
+    10.8,
+    10.31
+   ],
+   [
+    "song_04",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 01 Song (1)",
+    50.16,
+    3.6
+   ],
+   [
+    "song_05",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 01 Song",
+    23.07,
+    68.35
+   ],
+   [
+    "song_09",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 01 Song",
+    17.21,
+    30.41
+   ],
+   [
+    "song_09b",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 01 Song",
+    16.62,
+    74.37
+   ],
+   [
+    "song_11",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 01 Song (1)",
+    14.26,
+    107.69
+   ],
+   [
+    "song_12",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 01 Song",
+    11.7,
+    37.59
+   ],
+   [
+    "song_17",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 01 Song",
+    98.77,
+    55.59
+   ],
+   [
+    "song_20",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 01 Song",
+    30.08,
+    69.47
+   ],
+   [
+    "song_27",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 01 Song",
+    17.52,
+    4.5
+   ]
+  ],
+  "NAME_PILGRIM_02": [
+   [
+    "bone_east_10",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 02 (Unique female)",
+    139.88,
+    85.76
+   ],
+   [
+    "bone_east_14",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 02",
+    93.94,
+    8.39
+   ],
+   [
+    "bone_east_14b",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 02",
+    241.57,
+    51.09
+   ],
+   [
+    "chapel_wanderer",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 02",
+    51.04,
+    81.44
+   ],
+   [
+    "dock_08",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 02",
+    18.85,
+    21.49
+   ],
+   [
+    "shellgrave",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 02",
+    71.95,
+    10.48
+   ]
+  ],
+  "NAME_PILGRIM_02_SONG": [
+   [
+    "library_02",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 02 Song",
+    68.35,
+    32.38
+   ],
+   [
+    "song_01",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 02 Song (1)",
+    84.44,
+    36.73
+   ],
+   [
+    "song_02",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 02 Song SK",
+    62.64,
+    15.4
+   ],
+   [
+    "song_05",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 02 Song",
+    19.12,
+    4.46
+   ],
+   [
+    "song_09",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 02 Song",
+    23.6,
+    30.5
+   ],
+   [
+    "song_11",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 02 Song",
+    27.03,
+    44.84
+   ],
+   [
+    "song_27",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 02 Song (1)",
+    191.8,
+    4.4
+   ]
+  ],
+  "NAME_PILGRIM_03": [
+   [
+    "bone_04",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03",
+    86.93,
+    13.17
+   ],
+   [
+    "bone_11",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03 (1)",
+    80.42,
+    4.07
+   ],
+   [
+    "bone_14",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03",
+    85.2,
+    25.07
+   ],
+   [
+    "bone_18",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03",
+    35.77,
+    22.34
+   ],
+   [
+    "bone_east_14",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03",
+    102.33,
+    8.18
+   ],
+   [
+    "bonegrave",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03",
+    221.9,
+    7.19
+   ],
+   [
+    "chapel_wanderer",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03",
+    51.14,
+    81.15
+   ],
+   [
+    "coral_02",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03",
+    86.88,
+    46.02
+   ],
+   [
+    "greymoor_13",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03",
+    147.59,
+    5.2
+   ],
+   [
+    "mosstown_01",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03 (1)",
+    40.18,
+    3.24
+   ],
+   [
+    "mosstown_02",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03 (1)",
+    149.82,
+    29.79
+   ],
+   [
+    "shellgrave",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03",
+    54.04,
+    10.05
+   ]
+  ],
+  "NAME_PILGRIM_03_SONG": [
+   [
+    "hang_04_boss",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03 Song (1)",
+    39.25,
+    10.96
+   ],
+   [
+    "library_02",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03 Song",
+    64.45,
+    36.31
+   ],
+   [
+    "library_09",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03 Song",
+    76.92,
+    22.67
+   ],
+   [
+    "song_02",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03 Song",
+    105.8,
+    19.62
+   ],
+   [
+    "song_04",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03 Song",
+    65.71,
+    9.02
+   ],
+   [
+    "song_05",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03 Song",
+    38.12,
+    36.09
+   ],
+   [
+    "song_11",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03 Song (1)",
+    12.06,
+    155.77
+   ],
+   [
+    "song_12",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03 Song",
+    25.48,
+    27.29
+   ],
+   [
+    "song_14",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03 Song",
+    20.14,
+    10.38
+   ],
+   [
+    "song_15",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03 Song",
+    53.13,
+    9.93
+   ],
+   [
+    "song_20",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03 Song (1)",
+    6.77,
+    94.98
+   ],
+   [
+    "song_20b",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03 Song",
+    13.62,
+    214.31
+   ]
+  ],
+  "NAME_PILGRIM_03_UNDERSTORE": [
+   [
+    "under_03b",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03 Understore (1)",
+    53.81,
+    14.15
+   ],
+   [
+    "under_04",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03 Understore",
+    75.99,
+    8.13
+   ],
+   [
+    "under_07c",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03 Understore",
+    65.86,
+    34.06
+   ],
+   [
+    "under_10",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03 Understore",
+    42.92,
+    5.26
+   ],
+   [
+    "under_11",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03 Understore",
+    38.59,
+    13.15
+   ],
+   [
+    "under_13",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03 Understore",
+    33.28,
+    24.05
+   ],
+   [
+    "under_18",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03 Understore",
+    109.58,
+    37.14
+   ],
+   [
+    "under_19",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 03 Understore (1)",
+    100.94,
+    10.13
+   ]
+  ],
+  "NAME_PILGRIM_04": [
+   [
+    "bone_east_14b",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 04",
+    260.8,
+    9.15
+   ],
+   [
+    "bonegrave",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 04",
+    224.12,
+    7.03
+   ],
+   [
+    "chapel_wanderer",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 04",
+    48.99,
+    81.05
+   ],
+   [
+    "crawl_06",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 04",
+    59.91,
+    8.23
+   ],
+   [
+    "greymoor_08",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 04",
+    68.87,
+    -13.82
+   ],
+   [
+    "shellwood_01",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 04",
+    105.64,
+    6.14
+   ],
+   [
+    "shellwood_04b",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 04",
+    78.38,
+    74.22
+   ]
+  ],
+  "NAME_PILGRIM_04_SONG": [
+   [
+    "library_02",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 04 Song",
+    76.76,
+    31.68
+   ],
+   [
+    "song_01",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 04 Song (1)",
+    38.29,
+    55.38
+   ],
+   [
+    "song_02",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 04 Song SK",
+    69.23,
+    21.63
+   ],
+   [
+    "song_04",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 04 Song",
+    65.46,
+    3.25
+   ],
+   [
+    "song_09",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 04 Song",
+    13.63,
+    22.1
+   ],
+   [
+    "song_11",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 04 Song",
+    14.24,
+    21.54
+   ],
+   [
+    "song_12",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 04 Song (1)",
+    25.52,
+    74.99
+   ],
+   [
+    "song_14",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 04 Song",
+    39.76,
+    9.73
+   ],
+   [
+    "song_20",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 04 Song (1)",
+    42.31,
+    91.77
+   ],
+   [
+    "song_27",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 04 Song",
+    165.39,
+    6.53
+   ]
+  ],
+  "NAME_PILGRIM_05": [
+   [
+    "bone_18",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 05",
+    38.91,
+    21.39
+   ],
+   [
+    "bonegrave",
+    "EnemyDeathEffectsRegular",
+    "Act3 Pilgrim 05",
+    186.27,
+    7.33
+   ],
+   [
+    "coral_33",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 05",
+    19.91,
+    61.45
+   ],
+   [
+    "greymoor_08",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 05",
+    69.06,
+    -13.85
+   ],
+   [
+    "shellwood_01",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim 05",
+    105.67,
+    6.56
+   ]
+  ],
+  "NAME_PILGRIM_BELLTHROWER_FLY": [
+   [
+    "coral_12",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Bellthrower Fly",
+    69.84,
+    48.34
+   ],
+   [
+    "crawl_02",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Bellthrower Fly (1)",
+    22.8,
+    90.87
+   ],
+   [
+    "greymoor_13",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Bellthrower Fly",
+    67.98,
+    11.13
+   ],
+   [
+    "shellwood_04c",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Bellthrower Fly (1)",
+    19.93,
+    38.62
+   ]
+  ],
+  "NAME_PILGRIM_BELL_THROWER": [
+   [
+    "bonegrave",
+    "EnemyDeathEffectsRegular",
+    "Act3 Pilgrim BellThrower",
+    211.56,
+    7.26
+   ],
+   [
+    "coral_02",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim BellThrower",
+    40.58,
+    62.29
+   ],
+   [
+    "greymoor_13",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim BellThrower (1)",
+    31.05,
+    4.92
+   ],
+   [
+    "shellgrave",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim BellThrower (1)",
+    57.0,
+    10.21
+   ]
+  ],
+  "NAME_PILGRIM_FISHER": [
+   [
+    "shellwood_01",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Fisher Enemy BT",
+    101.07,
+    9.75
+   ],
+   [
+    "shellwood_02",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Fisher Enemy (1)",
+    23.83,
+    15.45
+   ],
+   [
+    "shellwood_04b",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Fisher Enemy",
+    115.85,
+    -8.44
+   ]
+  ],
+  "NAME_PILGRIM_FLY": [
+   [
+    "bone_04",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Fly",
+    180.09,
+    18.42
+   ],
+   [
+    "bone_07",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Fly",
+    57.46,
+    6.04
+   ],
+   [
+    "bone_18",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Fly",
+    39.7,
+    20.7
+   ],
+   [
+    "bone_east_14",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Fly",
+    117.29,
+    15.99
+   ],
+   [
+    "bonegrave",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Fly",
+    177.22,
+    6.76
+   ],
+   [
+    "chapel_wanderer",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Fly",
+    42.13,
+    80.77
+   ],
+   [
+    "coral_32",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Fly",
+    110.44,
+    65.09
+   ],
+   [
+    "coral_33",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Fly",
+    16.76,
+    65.1
+   ],
+   [
+    "crawl_02",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Fly (1)",
+    9.18,
+    63.68
+   ],
+   [
+    "greymoor_08",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Fly (2)",
+    67.04,
+    -9.85
+   ],
+   [
+    "shellwood_04c",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Fly (1)",
+    35.1,
+    50.05
+   ]
+  ],
+  "NAME_PILGRIM_HIKER": [
+   [
+    "coral_02",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Hiker",
+    44.34,
+    62.35
+   ],
+   [
+    "coral_03",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Hiker",
+    20.56,
+    141.19
+   ],
+   [
+    "coral_12",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Hiker",
+    64.27,
+    44.38
+   ],
+   [
+    "coral_32",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Hiker",
+    96.55,
+    61.3
+   ],
+   [
+    "coral_33",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Hiker",
+    33.66,
+    61.37
+   ]
+  ],
+  "NAME_PILGRIM_MOSS_SPITTER": [
+   [
+    "bonegrave",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Moss Spitter (1)",
+    280.87,
+    72.39
+   ],
+   [
+    "crawl_06",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Moss Spitter",
+    79.48,
+    8.39
+   ],
+   [
+    "mosstown_01",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Moss Spitter",
+    92.39,
+    3.53
+   ],
+   [
+    "mosstown_02",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Moss Spitter (2)",
+    147.15,
+    16.38
+   ]
+  ],
+  "NAME_PILGRIM_STAFFWIELDER": [
+   [
+    "bone_12",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim StaffWielder",
+    9.85,
+    28.61
+   ],
+   [
+    "bonegrave",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim StaffWielder",
+    182.96,
+    8.58
+   ],
+   [
+    "chapel_wanderer",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim StaffWielder",
+    35.12,
+    82.61
+   ],
+   [
+    "greymoor_12",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim StaffWielder",
+    97.0,
+    11.72
+   ],
+   [
+    "greymoor_13",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim StaffWielder",
+    34.71,
+    6.24
+   ],
+   [
+    "shellgrave",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim StaffWielder",
+    70.0,
+    11.56
+   ]
+  ],
+  "NAME_PILGRIM_STAFF_UNDERSTORE": [
+   [
+    "under_04",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Staff Understore",
+    58.43,
+    23.52
+   ],
+   [
+    "under_05",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Staff Understore",
+    24.54,
+    84.16
+   ],
+   [
+    "under_07",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Staff Understore",
+    26.74,
+    22.52
+   ],
+   [
+    "under_10",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Staff Understore",
+    37.07,
+    6.64
+   ],
+   [
+    "under_18",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Staff Understore",
+    123.37,
+    38.59
+   ],
+   [
+    "under_19",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Staff Understore",
+    146.65,
+    19.57
+   ]
+  ],
+  "NAME_PILGRIM_STOMPER_SONG": [
+   [
+    "library_02",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Stomper Song (1)",
+    81.7,
+    39.44
+   ],
+   [
+    "song_02",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Stomper Song",
+    118.58,
+    21.97
+   ],
+   [
+    "song_11",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Stomper Song",
+    10.0,
+    65.74
+   ],
+   [
+    "song_12",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Stomper Song (1)",
+    20.08,
+    30.82
+   ],
+   [
+    "song_20",
+    "EnemyDeathEffectsRegular",
+    "Pilgrim Stomper Song",
+    9.98,
+    82.58
+   ]
+  ],
+  "NAME_PINSTRESS_BOSS": [
+   [
+    "peak_07",
+    "EnemyDeathEffectsRegular",
+    "Pinstress Boss",
+    38.05,
+    90.49
+   ]
+  ],
+  "NAME_POKE_SWIMMER": [
+   [
+    "memory_coral_tower",
+    "EnemyDeathEffectsRegular",
+    "Coral Poke Swimmer (1)",
+    52.6,
+    367.14
+   ]
+  ],
+  "NAME_POND_SKATER": [
+   [
+    "arborium_05",
+    "EnemyDeathEffectsRegular",
+    "Pond Skater (1)",
+    91.92,
+    7.02
+   ],
+   [
+    "shellwood_01",
+    "EnemyDeathEffectsRegular",
+    "Pond Skater (3)",
+    34.26,
+    3.79
+   ],
+   [
+    "shellwood_02",
+    "EnemyDeathEffectsRegular",
+    "Pond Skater (2)",
+    18.65,
+    4.5
+   ],
+   [
+    "shellwood_04b",
+    "EnemyDeathEffectsRegular",
+    "Pond Skater (1)",
+    164.65,
+    3.35
+   ],
+   [
+    "shellwood_25",
+    "EnemyDeathEffectsRegular",
+    "Pond Skater",
+    274.66,
+    9.92
+   ],
+   [
+    "shellwood_26",
+    "EnemyDeathEffectsRegular",
+    "Pond Skater",
+    47.19,
+    57.0
+   ]
+  ],
+  "NAME_RHINO": [
+   [
+    "arborium_02",
+    "EnemyDeathEffectsRegular",
+    "Rhino",
+    111.05,
+    8.94
+   ],
+   [
+    "bone_east_02b",
+    "EnemyDeathEffectsRegular",
+    "Rhino",
+    240.17,
+    13.82
+   ],
+   [
+    "bone_east_10_church",
+    "EnemyDeathEffectsRegular",
+    "Rhino",
+    139.32,
+    10.97
+   ],
+   [
+    "bone_east_10_room",
+    "EnemyDeathEffectsRegular",
+    "Rhino",
+    46.94,
+    13.87
+   ]
+  ],
+  "NAME_ROACHFEEDER_SHORT": [
+   [
+    "dust_02",
+    "EnemyDeathEffectsRegular",
+    "Roachfeeder Short",
+    22.38,
+    57.63
+   ],
+   [
+    "dust_03",
+    "EnemyDeathEffectsRegular",
+    "Roachfeeder Short",
+    116.61,
+    10.1
+   ],
+   [
+    "dust_04",
+    "EnemyDeathEffectsRegular",
+    "Roachfeeder Short",
+    33.0,
+    114.6
+   ],
+   [
+    "greymoor_04",
+    "EnemyDeathEffectsRegular",
+    "Roachfeeder Short",
+    0.25,
+    19.54
+   ],
+   [
+    "greymoor_07",
+    "EnemyDeathEffectsRegular",
+    "Roachfeeder Short",
+    48.58,
+    15.25
+   ],
+   [
+    "greymoor_11",
+    "EnemyDeathEffectsRegular",
+    "Roachfeeder Short",
+    43.39,
+    40.35
+   ],
+   [
+    "greymoor_12",
+    "EnemyDeathEffectsRegular",
+    "Roachfeeder Short (1)",
+    94.7,
+    21.37
+   ]
+  ],
+  "NAME_ROACHFEEDER_TALL": [
+   [
+    "dust_01",
+    "EnemyDeathEffectsRegular",
+    "Roachfeeder Tall",
+    139.52,
+    10.35
+   ],
+   [
+    "dust_02",
+    "EnemyDeathEffectsRegular",
+    "Roachfeeder Tall",
+    19.91,
+    76.15
+   ],
+   [
+    "dust_03",
+    "EnemyDeathEffectsRegular",
+    "Roachfeeder Tall",
+    41.55,
+    5.88
+   ],
+   [
+    "dust_04",
+    "EnemyDeathEffectsRegular",
+    "Roachfeeder Tall",
+    24.99,
+    72.25
+   ],
+   [
+    "dust_06",
+    "EnemyDeathEffectsRegular",
+    "Roachfeeder Tall (1)",
+    18.57,
+    118.32
+   ],
+   [
+    "dust_11",
+    "EnemyDeathEffectsRegular",
+    "Roachfeeder Tall",
+    105.62,
+    8.33
+   ]
+  ],
+  "NAME_ROACHKEEPER": [
+   [
+    "dust_05",
+    "EnemyDeathEffectsRegular",
+    "Roachkeeper",
+    226.4,
+    13.78
+   ],
+   [
+    "dust_06",
+    "EnemyDeathEffectsRegular",
+    "Roachkeeper",
+    14.6,
+    191.0
+   ]
+  ],
+  "NAME_ROACHKEEPER_CHEF": [
+   [
+    "dust_chef",
+    "EnemyDeathEffectsRegular",
+    "Roachkeeper Chef (1)",
+    41.77,
+    49.95
+   ]
+  ],
+  "NAME_ROACHKEEPER_CHEF_TINY": [
+   [
+    "dust_chef",
+    "EnemyDeathEffectsRegular",
+    "Roachkeeper Chef Tiny (1)",
+    36.2,
+    34.77
+   ]
+  ],
+  "NAME_ROCK_ROLLER": [
+   [
+    "bone_01",
+    "EnemyDeathEffectsRegular",
+    "Rock Roller",
+    78.46,
+    78.95
+   ],
+   [
+    "bone_04",
+    "EnemyDeathEffectsRegular",
+    "Rock Roller",
+    165.86,
+    22.31
+   ],
+   [
+    "bone_06",
+    "EnemyDeathEffectsRegular",
+    "Rock Roller",
+    84.94,
+    40.44
+   ],
+   [
+    "bone_07",
+    "EnemyDeathEffectsRegular",
+    "Rock Roller",
+    60.63,
+    25.83
+   ]
+  ],
+  "NAME_ROOF_CRAB": [
+   [
+    "crawl_04",
+    "EnemyDeathEffectsRegular",
+    "Roof Crab",
+    83.52,
+    14.89
+   ]
+  ],
+  "NAME_ROSARY_PILGRIM": [
+   [
+    "bonegrave",
+    "EnemyDeathEffectsRegular",
+    "Rosary Pilgrim",
+    219.37,
+    7.93
+   ],
+   [
+    "shadow_23",
+    "EnemyDeathEffectsRegular",
+    "Rosary Pilgrim",
+    32.95,
+    7.81
+   ],
+   [
+    "shellgrave",
+    "EnemyDeathEffectsRegular",
+    "Rosary Pilgrim",
+    59.67,
+    10.51
+   ]
+  ],
+  "NAME_ROSARY_THIEF": [
+   [
+    "bone_east_10",
+    "EnemyDeathEffectsRegular",
+    "Rosary Thief (1)",
+    70.3,
+    4.57
+   ],
+   [
+    "bone_east_10_room",
+    "EnemyDeathEffectsRegular",
+    "Rosary Thief",
+    58.63,
+    13.46
+   ],
+   [
+    "bonetown",
+    "EnemyDeathEffectsRegular",
+    "Rosary Thief (2)",
+    281.71,
+    7.56
+   ],
+   [
+    "coral_42",
+    "EnemyDeathEffectsRegular",
+    "Rosary Thief",
+    48.78,
+    4.79
+   ],
+   [
+    "hang_06_bank",
+    "EnemyDeathEffectsRegular",
+    "Rosary Thief",
+    89.29,
+    26.13
+   ],
+   [
+    "shadow_28",
+    "EnemyDeathEffectsRegular",
+    "Rosary Thief (2)",
+    41.46,
+    21.58
+   ],
+   [
+    "slab_07",
+    "EnemyDeathEffectsRegular",
+    "Rosary Thief (2)",
+    38.1,
+    28.68
+   ],
+   [
+    "song_24",
+    "EnemyDeathEffectsRegular",
+    "Rosary Thief",
+    41.43,
+    17.57
+   ]
+  ],
+  "NAME_SAND_CENTIPEDE": [
+   [
+    "coral_02",
+    "RangeAttacker",
+    "Sand Centipede Attacker (9)",
+    82.65,
+    14.31
+   ],
+   [
+    "coral_03",
+    "RangeAttacker",
+    "Sand Centipede Attacker (7)",
+    7.13,
+    141.02
+   ],
+   [
+    "coral_11",
+    "RangeAttacker",
+    "Sand Centipede Attacker",
+    151.22,
+    3.25
+   ],
+   [
+    "coral_11b",
+    "RangeAttacker",
+    "Sand Centipede Attacker (7)",
+    42.79,
+    10.79
+   ],
+   [
+    "coral_12",
+    "RangeAttacker",
+    "Sand Centipede Attacker (31)",
+    79.2,
+    29.28
+   ],
+   [
+    "coral_23",
+    "RangeAttacker",
+    "Sand Centipede Attacker (235)",
+    137.43,
+    25.24
+   ],
+   [
+    "coral_24",
+    "RangeAttacker",
+    "Sand Centipede Attacker (83)",
+    78.48,
+    7.25
+   ],
+   [
+    "coral_26",
+    "RangeAttacker",
+    "Sand Centipede Attacker (2)",
+    11.11,
+    29.62
+   ],
+   [
+    "coral_27",
+    "RangeAttacker",
+    "Sand Centipede Attacker (82)",
+    70.0,
+    21.56
+   ],
+   [
+    "coral_28",
+    "RangeAttacker",
+    "Sand Centipede Attacker (195)",
+    74.69,
+    4.83
+   ],
+   [
+    "coral_32",
+    "RangeAttacker",
+    "Sand Centipede Attacker (95)",
+    93.54,
+    18.21
+   ],
+   [
+    "coral_34",
+    "RangeAttacker",
+    "Sand Centipede Attacker (72)",
+    141.71,
+    3.26
+   ],
+   [
+    "coral_35",
+    "RangeAttacker",
+    "Sand Centipede Attacker (20)",
+    20.35,
+    5.48
+   ],
+   [
+    "coral_38",
+    "RangeAttacker",
+    "Sand Centipede Attacker (11)",
+    23.34,
+    2.67
+   ],
+   [
+    "coral_39",
+    "RangeAttacker",
+    "Sand Centipede Attacker (22)",
+    25.56,
+    4.1
+   ],
+   [
+    "coral_41",
+    "RangeAttacker",
+    "Sand Centipede Attacker (167)",
+    27.32,
+    33.66
+   ],
+   [
+    "coral_43",
+    "RangeAttacker",
+    "Sand Centipede Attacker (12)",
+    22.96,
+    3.4
+   ],
+   [
+    "coral_44",
+    "RangeAttacker",
+    "Sand Centipede Attacker (93)",
+    102.86,
+    8.67
+   ],
+   [
+    "coral_tower_01",
+    "RangeAttacker",
+    "Sand Centipede Attacker (20)",
+    41.17,
+    4.71
+   ]
+  ],
+  "NAME_SCHOLAR": [
+   [
+    "library_02",
+    "EnemyDeathEffectsRegular",
+    "Scholar (1)",
+    68.08,
+    37.23
+   ],
+   [
+    "library_04",
+    "EnemyDeathEffectsRegular",
+    "Scholar (1)",
+    35.11,
+    10.03
+   ],
+   [
+    "library_06",
+    "EnemyDeathEffectsRegular",
+    "Scholar",
+    30.6,
+    9.92
+   ],
+   [
+    "library_14",
+    "EnemyDeathEffectsRegular",
+    "Scholar",
+    30.58,
+    8.82
+   ]
+  ],
+  "NAME_SCROLLKEEPER": [
+   [
+    "library_01",
+    "EnemyDeathEffectsRegular",
+    "Scrollkeeper (1)",
+    23.14,
+    41.54
+   ],
+   [
+    "library_04",
+    "EnemyDeathEffectsRegular",
+    "Scrollkeeper",
+    38.89,
+    190.56
+   ],
+   [
+    "library_06",
+    "EnemyDeathEffectsRegular",
+    "Scrollkeeper",
+    5.01,
+    32.53
+   ]
+  ],
+  "NAME_SETH": [
+   [
+    "shellwood_22",
+    "EnemyDeathEffectsRegular",
+    "Seth",
+    104.8,
+    6.81
+   ]
+  ],
+  "NAME_SHAKRA": [
+   [
+    "ant_04_mid",
+    "PlayMakerFSM",
+    "Mapper NPC",
+    198.81,
+    15.24
+   ],
+   [
+    "belltown",
+    "PlayMakerFSM",
+    "Mapper NPC",
+    101.94,
+    23.62
+   ],
+   [
+    "bone_04",
+    "PlayMakerFSM",
+    "Mapper NPC",
+    56.81,
+    14.64
+   ],
+   [
+    "bone_east_01",
+    "PlayMakerFSM",
+    "Mapper NPC",
+    16.99,
+    8.7
+   ],
+   [
+    "bonetown",
+    "PlayMakerFSM",
+    "Mapper NPC",
+    298.03,
+    25.6
+   ],
+   [
+    "coral_12",
+    "PlayMakerFSM",
+    "Mapper NPC (1)",
+    67.79,
+    8.82
+   ],
+   [
+    "crawl_01",
+    "PlayMakerFSM",
+    "Mapper NPC",
+    30.91,
+    58.43
+   ],
+   [
+    "greymoor_08_mapper",
+    "PlayMakerFSM",
+    "Mapper Spar NPC",
+    33.26,
+    5.68
+   ],
+   [
+    "peak_02",
+    "PlayMakerFSM",
+    "Mapper NPC",
+    61.16,
+    9.64
+   ],
+   [
+    "shellwood_16",
+    "PlayMakerFSM",
+    "Mapper NPC",
+    44.36,
+    11.39
+   ]
+  ],
+  "NAME_SHELLWOOD_WASP": [
+   [
+    "shellwood_01",
+    "EnemyDeathEffectsRegular",
+    "Shellwood Wasp (2)",
+    95.31,
+    80.02
+   ],
+   [
+    "shellwood_02",
+    "EnemyDeathEffectsRegular",
+    "Shellwood Wasp",
+    119.52,
+    61.16
+   ],
+   [
+    "shellwood_26",
+    "EnemyDeathEffectsRegular",
+    "Shellwood Wasp (2)",
+    -41.33,
+    98.98
+   ]
+  ],
+  "NAME_SHELL_FOSSIL_MIMIC": [
+   [
+    "bone_06",
+    "EnemyDeathEffectsRegular",
+    "Shell Fossil Mimic AppearVariant",
+    30.17,
+    36.0
+   ],
+   [
+    "bone_14",
+    "EnemyDeathEffectsRegular",
+    "Shell Fossil Mimic",
+    99.3,
+    34.34
+   ],
+   [
+    "bone_east_03",
+    "EnemyDeathEffectsRegular",
+    "Shell Fossil Mimic",
+    154.7,
+    17.43
+   ],
+   [
+    "bone_east_14",
+    "EnemyDeathEffectsRegular",
+    "Shell Fossil Mimic",
+    113.41,
+    65.52
+   ],
+   [
+    "coral_38",
+    "EnemyDeathEffectsRegular",
+    "Shell Fossil Mimic",
+    63.48,
+    47.54
+   ],
+   [
+    "crawl_01",
+    "EnemyDeathEffectsRegular",
+    "Shell Fossil Mimic",
+    19.84,
+    32.73
+   ],
+   [
+    "greymoor_17",
+    "EnemyDeathEffectsRegular",
+    "Shell Fossil Mimic",
+    14.18,
+    38.32
+   ]
+  ],
+  "NAME_SHIELD_DOCK_WORKER": [
+   [
+    "dock_02",
+    "EnemyDeathEffectsRegular",
+    "Shield Dockworker (2)",
+    109.28,
+    79.18
+   ],
+   [
+    "dock_03",
+    "EnemyDeathEffectsRegular",
+    "Shield Dockworker",
+    52.12,
+    79.1
+   ],
+   [
+    "dock_03c",
+    "EnemyDeathEffectsRegular",
+    "Shield Dockworker (1)",
+    49.88,
+    36.11
+   ],
+   [
+    "dock_08",
+    "EnemyDeathEffectsRegular",
+    "Shield Dockworker",
+    29.68,
+    21.1
+   ],
+   [
+    "dock_09",
+    "EnemyDeathEffectsRegular",
+    "Shield Dockworker",
+    39.8,
+    20.12
+   ],
+   [
+    "room_forge",
+    "EnemyDeathEffectsRegular",
+    "Shield Dockworker",
+    80.63,
+    7.07
+   ]
+  ],
+  "NAME_SILK_BOSS": [
+   [
+    "cradle_03",
+    "PlayMakerFSM",
+    "Silk Boss",
+    50.61,
+    138.94
+   ]
+  ],
+  "NAME_SKULL_KING": [
+   [
+    "bone_15",
+    "EnemyDeathEffectsRegular",
+    "Skull King",
+    99.57,
+    15.64
+   ],
+   [
+    "bonetown_boss",
+    "EnemyDeathEffectsRegular",
+    "Skull King",
+    313.03,
+    9.82
+   ]
+  ],
+  "NAME_SLAB_FLY_BROODMOTHER": [
+   [
+    "slab_16b",
+    "EnemyDeathEffectsRegular",
+    "Slab Fly Broodmother",
+    61.63,
+    -1.27
+   ]
+  ],
+  "NAME_SLAB_FLY_LARGE": [
+   [
+    "bone_east_04c",
+    "EnemyDeathEffectsRegular",
+    "Slab Fly Large Cage",
+    45.42,
+    6.74
+   ],
+   [
+    "greymoor_05",
+    "EnemyDeathEffectsRegular",
+    "Slab Fly Large Cage",
+    60.61,
+    7.2
+   ],
+   [
+    "shadow_21",
+    "EnemyDeathEffectsRegular",
+    "Slab Fly Large Cage",
+    99.12,
+    13.17
+   ],
+   [
+    "slab_16",
+    "EnemyDeathEffectsRegular",
+    "Slab Fly Large",
+    31.22,
+    20.57
+   ],
+   [
+    "slab_16b",
+    "EnemyDeathEffectsRegular",
+    "Slab Fly Large",
+    63.84,
+    10.78
+   ],
+   [
+    "slab_22",
+    "EnemyDeathEffectsRegular",
+    "Slab Fly Large (5)",
+    22.94,
+    19.23
+   ]
+  ],
+  "NAME_SLAB_FLY_MID": [
+   [
+    "slab_03",
+    "EnemyDeathEffectsRegular",
+    "Slab Fly Mid (1)",
+    6.77,
+    75.52
+   ],
+   [
+    "slab_04",
+    "EnemyDeathEffectsRegular",
+    "Slab Fly Mid (1)",
+    4.89,
+    11.43
+   ],
+   [
+    "slab_13",
+    "EnemyDeathEffectsRegular",
+    "Slab Fly Mid",
+    68.36,
+    10.23
+   ],
+   [
+    "slab_15",
+    "EnemyDeathEffectsRegular",
+    "Slab Fly Mid",
+    52.14,
+    11.15
+   ],
+   [
+    "slab_16",
+    "EnemyDeathEffectsRegular",
+    "Slab Fly Mid (1)",
+    32.94,
+    20.37
+   ],
+   [
+    "slab_16b",
+    "EnemyDeathEffectsRegular",
+    "Slab Fly Mid",
+    56.3,
+    11.35
+   ],
+   [
+    "slab_23",
+    "EnemyDeathEffectsRegular",
+    "Slab Fly Mid",
+    71.06,
+    15.31
+   ]
+  ],
+  "NAME_SLAB_FLY_SMALL": [
+   [
+    "slab_05",
+    "EnemyDeathEffectsRegular",
+    "Slab Fly Small",
+    30.99,
+    10.95
+   ],
+   [
+    "slab_16",
+    "EnemyDeathEffectsRegular",
+    "Slab Fly Small (3)",
+    22.39,
+    20.28
+   ],
+   [
+    "slab_23",
+    "EnemyDeathEffectsRegular",
+    "Slab Fly Small (1)",
+    92.9,
+    14.97
+   ]
+  ],
+  "NAME_SLAB_FLY_SMALL_FRESH": [
+   [
+    "slab_16b",
+    "EnemyDeathEffectsRegular",
+    "Slab Fly Small Fresh (1)",
+    60.89,
+    15.48
+   ]
+  ],
+  "NAME_SLAB_PRISONER_FLY_NEW": [
+   [
+    "slab_14",
+    "EnemyDeathEffectsRegular",
+    "Slab Prisoner Fly New",
+    5.29,
+    2.33
+   ],
+   [
+    "slab_15",
+    "EnemyDeathEffectsRegular",
+    "Slab Prisoner Fly New",
+    37.07,
+    2.86
+   ]
+  ],
+  "NAME_SLAB_PRISONER_LEAPER_NEW": [
+   [
+    "slab_05",
+    "EnemyDeathEffectsRegular",
+    "Slab Prisoner Leaper New",
+    67.92,
+    9.67
+   ],
+   [
+    "slab_14",
+    "EnemyDeathEffectsRegular",
+    "Slab Prisoner Leaper New",
+    24.94,
+    2.83
+   ],
+   [
+    "slab_15",
+    "EnemyDeathEffectsRegular",
+    "Slab Prisoner Leaper New",
+    21.43,
+    3.7
+   ]
+  ],
+  "NAME_SMALL_CRAB": [
+   [
+    "crawl_04",
+    "EnemyDeathEffectsRegular",
+    "Small Crab (2)",
+    88.61,
+    8.97
+   ]
+  ],
+  "NAME_SONG_ADMINISTRATOR": [
+   [
+    "hang_03",
+    "EnemyDeathEffectsRegular",
+    "Song Administrator (1)",
+    24.83,
+    15.41
+   ],
+   [
+    "hang_03_top",
+    "EnemyDeathEffectsRegular",
+    "Song Administrator (2)",
+    24.44,
+    107.2
+   ],
+   [
+    "hang_04",
+    "EnemyDeathEffectsRegular",
+    "Song Administrator",
+    33.97,
+    12.45
+   ],
+   [
+    "hang_04_boss",
+    "EnemyDeathEffectsRegular",
+    "Song Administrator (1)",
+    20.6,
+    11.34
+   ],
+   [
+    "hang_08",
+    "EnemyDeathEffectsRegular",
+    "Song Administrator (1)",
+    22.74,
+    90.22
+   ],
+   [
+    "hang_13",
+    "EnemyDeathEffectsRegular",
+    "Song Administrator (3)",
+    54.61,
+    43.96
+   ]
+  ],
+  "NAME_SONG_AUTOMATON_01": [
+   [
+    "cog_04",
+    "EnemyDeathEffectsRegular",
+    "Song Automaton 01 (1)",
+    16.04,
+    98.75
+   ],
+   [
+    "cog_05",
+    "EnemyDeathEffectsRegular",
+    "Song Automaton 01",
+    84.5,
+    85.4
+   ],
+   [
+    "cog_08",
+    "EnemyDeathEffectsRegular",
+    "Song Automaton 01 (1)",
+    32.6,
+    20.4
+   ],
+   [
+    "cog_09",
+    "EnemyDeathEffectsRegular",
+    "Song Automaton 01 (2)",
+    53.92,
+    35.42
+   ]
+  ],
+  "NAME_SONG_AUTOMATON_02": [
+   [
+    "cog_04",
+    "EnemyDeathEffectsRegular",
+    "Song Automaton 02",
+    19.97,
+    46.42
+   ],
+   [
+    "cog_05",
+    "EnemyDeathEffectsRegular",
+    "Song Automaton 02",
+    86.84,
+    85.63
+   ],
+   [
+    "cog_08",
+    "EnemyDeathEffectsRegular",
+    "Song Automaton 02 (2)",
+    19.14,
+    74.16
+   ]
+  ],
+  "NAME_SONG_AUTOMATON_BALL": [
+   [
+    "cog_07",
+    "EnemyDeathEffectsRegular",
+    "Song Automaton Ball (1)",
+    27.65,
+    55.65
+   ]
+  ],
+  "NAME_SONG_AUTOMATON_FLY": [
+   [
+    "cog_05",
+    "EnemyDeathEffectsRegular",
+    "Song Automaton Fly (1)",
+    58.02,
+    24.53
+   ],
+   [
+    "cog_06",
+    "EnemyDeathEffectsRegular",
+    "Song Automaton Fly (4)",
+    30.04,
+    36.19
+   ],
+   [
+    "cog_07",
+    "EnemyDeathEffectsRegular",
+    "Song Automaton Fly (3)",
+    80.86,
+    48.39
+   ],
+   [
+    "song_27",
+    "EnemyDeathEffectsRegular",
+    "Song Automaton Fly",
+    95.57,
+    18.31
+   ],
+   [
+    "song_29",
+    "EnemyDeathEffectsRegular",
+    "Song Automaton Fly (4)",
+    15.97,
+    42.26
+   ]
+  ],
+  "NAME_SONG_AUTOMATON_FLY_SPIKE": [
+   [
+    "cog_05",
+    "EnemyDeathEffectsRegular",
+    "Song Automaton Fly Spike",
+    54.83,
+    18.82
+   ],
+   [
+    "cog_08",
+    "EnemyDeathEffectsRegular",
+    "Song Automaton Fly Spike (1)",
+    23.28,
+    23.01
+   ]
+  ],
+  "NAME_SONG_AUTOMATON_GOOMBA": [
+   [
+    "cog_04",
+    "EnemyDeathEffectsRegular",
+    "Song Automaton Goomba (1)",
+    28.5,
+    50.44
+   ],
+   [
+    "cog_08",
+    "EnemyDeathEffectsRegular",
+    "Song Automaton Goomba (5)",
+    5.56,
+    29.09
+   ]
+  ],
+  "NAME_SONG_AUTOMATON_SHIELD": [
+   [
+    "cog_05",
+    "EnemyDeathEffectsRegular",
+    "Song Automaton Shield",
+    81.32,
+    86.74
+   ],
+   [
+    "cog_06",
+    "EnemyDeathEffectsRegular",
+    "Song Automaton Shield",
+    41.9,
+    30.05
+   ],
+   [
+    "cog_08",
+    "EnemyDeathEffectsRegular",
+    "Song Automaton Shield",
+    34.85,
+    75.75
+   ]
+  ],
+  "NAME_SONG_CREEPER": [
+   [
+    "ward_03",
+    "EnemyDeathEffectsRegular",
+    "Song Creeper",
+    39.51,
+    16.04
+   ],
+   [
+    "ward_09",
+    "EnemyDeathEffectsRegular",
+    "Song Creeper",
+    53.1,
+    4.18
+   ]
+  ],
+  "NAME_SONG_GOLEM": [
+   [
+    "bone_east_08_boss_golem",
+    "EnemyDeathEffectsRegular",
+    "SG_head",
+    81.01,
+    12.31
+   ],
+   [
+    "bone_east_08_boss_golem",
+    "PlayMakerFSM",
+    "song_golem",
+    80.85,
+    7.46
+   ]
+  ],
+  "NAME_SONG_HANDMAIDEN": [
+   [
+    "hang_04_boss",
+    "EnemyDeathEffectsRegular",
+    "Song Handmaiden",
+    1.67,
+    46.23
+   ],
+   [
+    "hang_14",
+    "EnemyDeathEffectsRegular",
+    "Song Handmaiden (6)",
+    25.85,
+    7.84
+   ],
+   [
+    "hang_14",
+    "PlayMakerFSM",
+    "Handmaiden Scene",
+    0.0,
+    0.0
+   ],
+   [
+    "song_04",
+    "EnemyDeathEffectsRegular",
+    "Song Handmaiden",
+    121.4,
+    90.0
+   ],
+   [
+    "song_17",
+    "EnemyDeathEffectsRegular",
+    "Song Handmaiden (2)",
+    66.5,
+    39.2
+   ]
+  ],
+  "NAME_SONG_HEAVY_SENTRY": [
+   [
+    "hang_04",
+    "EnemyDeathEffectsRegular",
+    "Song Heavy Sentry",
+    22.01,
+    7.37
+   ],
+   [
+    "hang_04_boss",
+    "EnemyDeathEffectsRegular",
+    "Song Heavy Sentry (3)",
+    42.03,
+    23.73
+   ]
+  ],
+  "NAME_SONG_KNIGHT": [
+   [
+    "hang_07",
+    "EnemyDeathEffectsRegular",
+    "Song Knight",
+    81.98,
+    7.96
+   ],
+   [
+    "hang_17b",
+    "EnemyDeathEffectsRegular",
+    "Song Knight",
+    44.53,
+    5.92
+   ],
+   [
+    "song_02",
+    "EnemyDeathEffectsRegular",
+    "Song Knight BattleEncounter",
+    52.19,
+    16.92
+   ],
+   [
+    "song_04",
+    "EnemyDeathEffectsRegular",
+    "Song Knight BattleEncounter",
+    57.96,
+    4.95
+   ],
+   [
+    "song_25",
+    "EnemyDeathEffectsRegular",
+    "Song Knight BattleEncounter",
+    176.71,
+    8.02
+   ],
+   [
+    "song_27",
+    "EnemyDeathEffectsRegular",
+    "Song Knight BattleEncounter",
+    161.16,
+    5.9
+   ]
+  ],
+  "NAME_SONG_PILGRIM_01": [
+   [
+    "hang_04_boss",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim 01",
+    44.92,
+    5.13
+   ],
+   [
+    "song_01",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim 01 (2)",
+    121.23,
+    81.27
+   ],
+   [
+    "song_02",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim 01 (1)",
+    160.48,
+    19.38
+   ],
+   [
+    "song_03",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim 01",
+    63.19,
+    19.45
+   ],
+   [
+    "song_05",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim 01",
+    22.53,
+    5.45
+   ],
+   [
+    "song_07",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim 01",
+    47.81,
+    5.34
+   ],
+   [
+    "song_17",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim 01",
+    72.01,
+    56.78
+   ],
+   [
+    "song_20",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim 01",
+    36.37,
+    11.27
+   ],
+   [
+    "song_27",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim 01",
+    188.29,
+    5.4
+   ]
+  ],
+  "NAME_SONG_PILGRIM_02": [
+   [
+    "ward_03",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim 02",
+    152.34,
+    32.64
+   ],
+   [
+    "ward_06",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim 02",
+    152.34,
+    32.64
+   ],
+   [
+    "ward_09",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim 02 Dummy",
+    51.99,
+    4.13
+   ]
+  ],
+  "NAME_SONG_PILGRIM_03": [
+   [
+    "hang_04_boss",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim 03",
+    19.41,
+    4.53
+   ],
+   [
+    "library_02",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim 03",
+    67.16,
+    32.43
+   ],
+   [
+    "library_09",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim Target",
+    75.11,
+    15.82
+   ],
+   [
+    "slab_01",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim 03",
+    61.04,
+    14.85
+   ],
+   [
+    "song_01",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim 03",
+    81.1,
+    81.11
+   ],
+   [
+    "song_03",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim 03",
+    119.18,
+    4.88
+   ],
+   [
+    "song_04",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim 03",
+    48.16,
+    3.72
+   ],
+   [
+    "song_05",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim 03 (1)",
+    25.14,
+    88.89
+   ],
+   [
+    "song_07",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim 03",
+    40.59,
+    4.86
+   ],
+   [
+    "song_13",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim 03 (1)",
+    43.82,
+    6.71
+   ],
+   [
+    "song_17",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim 03",
+    63.53,
+    56.19
+   ],
+   [
+    "song_20",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim 03",
+    31.21,
+    118.75
+   ],
+   [
+    "song_24",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim 03",
+    37.07,
+    17.6
+   ]
+  ],
+  "NAME_SONG_PILGRIM_MAESTRO": [
+   [
+    "hang_02",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim Maestro",
+    67.13,
+    22.97
+   ],
+   [
+    "hang_04_boss",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim Maestro",
+    24.42,
+    10.87
+   ],
+   [
+    "hang_13",
+    "EnemyDeathEffectsRegular",
+    "Song Pilgrim Maestro",
+    42.72,
+    19.58
+   ]
+  ],
+  "NAME_SONG_REED": [
+   [
+    "hang_04_boss",
+    "EnemyDeathEffectsRegular",
+    "Song Reed (2)",
+    40.34,
+    11.16
+   ],
+   [
+    "library_02",
+    "EnemyDeathEffectsRegular",
+    "Song Reed",
+    86.1,
+    33.86
+   ],
+   [
+    "library_09",
+    "EnemyDeathEffectsRegular",
+    "Song Reed",
+    102.8,
+    25.07
+   ],
+   [
+    "slab_01",
+    "EnemyDeathEffectsRegular",
+    "Song Reed",
+    80.73,
+    14.47
+   ],
+   [
+    "song_01",
+    "EnemyDeathEffectsRegular",
+    "Song Reed",
+    43.35,
+    91.64
+   ],
+   [
+    "song_03",
+    "EnemyDeathEffectsRegular",
+    "Song Reed",
+    58.72,
+    23.3
+   ],
+   [
+    "song_04",
+    "EnemyDeathEffectsRegular",
+    "Song Reed (1)",
+    65.78,
+    9.35
+   ],
+   [
+    "song_05",
+    "EnemyDeathEffectsRegular",
+    "Song Reed (1)",
+    20.69,
+    50.74
+   ],
+   [
+    "song_08",
+    "EnemyDeathEffectsRegular",
+    "Song Reed",
+    46.91,
+    7.05
+   ],
+   [
+    "song_15",
+    "EnemyDeathEffectsRegular",
+    "Song Reed",
+    23.22,
+    10.67
+   ],
+   [
+    "song_17",
+    "EnemyDeathEffectsRegular",
+    "Song Reed",
+    13.23,
+    103.13
+   ],
+   [
+    "song_20",
+    "EnemyDeathEffectsRegular",
+    "Song Reed (3)",
+    39.11,
+    34.33
+   ],
+   [
+    "song_20b",
+    "EnemyDeathEffectsRegular",
+    "Song Reed (4)",
+    13.83,
+    221.24
+   ],
+   [
+    "song_27",
+    "EnemyDeathEffectsRegular",
+    "Song Reed (9)",
+    25.04,
+    13.39
+   ]
+  ],
+  "NAME_SONG_REED_GRAND": [
+   [
+    "hang_07",
+    "EnemyDeathEffectsRegular",
+    "Song Reed Grand (1)",
+    121.06,
+    8.0
+   ],
+   [
+    "song_25",
+    "EnemyDeathEffectsRegular",
+    "Song Reed Grand (2)",
+    40.1,
+    7.7
+   ]
+  ],
+  "NAME_SONG_SCHOLAR_ACOLYTE": [
+   [
+    "library_01",
+    "EnemyDeathEffectsRegular",
+    "Song Scholar Acolyte (1)",
+    56.47,
+    27.16
+   ],
+   [
+    "library_02",
+    "EnemyDeathEffectsRegular",
+    "Song Scholar Acolyte (3)",
+    69.79,
+    32.17
+   ],
+   [
+    "library_04",
+    "EnemyDeathEffectsRegular",
+    "Song Scholar Acolyte (9)",
+    16.98,
+    106.84
+   ],
+   [
+    "library_06",
+    "EnemyDeathEffectsRegular",
+    "Song Scholar Acolyte (4)",
+    51.14,
+    6.79
+   ],
+   [
+    "library_15",
+    "EnemyDeathEffectsRegular",
+    "Song Scholar Acolyte",
+    18.71,
+    8.78
+   ]
+  ],
+  "NAME_SONG_THREADED_HUSK": [
+   [
+    "ward_02",
+    "EnemyDeathEffectsRegular",
+    "Slasher 2",
+    60.0,
+    9.42
+   ],
+   [
+    "ward_02_boss",
+    "EnemyDeathEffectsRegular",
+    "Slasher 2",
+    60.0,
+    9.42
+   ],
+   [
+    "ward_02b",
+    "EnemyDeathEffectsRegular",
+    "Song Threaded Husk",
+    73.57,
+    106.8
+   ],
+   [
+    "ward_07",
+    "EnemyDeathEffectsRegular",
+    "Song Threaded Husk L",
+    6.92,
+    1.85
+   ]
+  ],
+  "NAME_SONG_THREADED_HUSK_SPIN": [
+   [
+    "ward_02",
+    "EnemyDeathEffectsRegular",
+    "Slammer 2",
+    61.97,
+    10.71
+   ],
+   [
+    "ward_02_boss",
+    "EnemyDeathEffectsRegular",
+    "Slammer 2",
+    43.99,
+    9.42
+   ]
+  ],
+  "NAME_SPIKE_LAZY_FLYER": [
+   [
+    "cradle_destroyed_challenge_01",
+    "EnemyDeathEffectsRegular",
+    "Spike Lazy Flyer (8)",
+    30.81,
+    441.06
+   ]
+  ],
+  "NAME_SPIKE_SWIMMER": [
+   [
+    "memory_coral_tower",
+    "EnemyDeathEffectsRegular",
+    "Coral Spike Swimmer (1)",
+    56.34,
+    289.85
+   ]
+  ],
+  "NAME_SPINE_FLOATER": [
+   [
+    "bone_east_14",
+    "EnemyDeathEffectsRegular",
+    "Spine Floater - static",
+    62.75,
+    21.87
+   ],
+   [
+    "bone_east_14b",
+    "EnemyDeathEffectsRegular",
+    "Spine Floater (7)",
+    150.06,
+    65.12
+   ]
+  ],
+  "NAME_SPINNER_BOSS": [
+   [
+    "belltown_shrine",
+    "PlayMakerFSM",
+    "Spinner Boss",
+    57.04,
+    52.79
+   ]
+  ],
+  "NAME_SPLINTER_QUEEN": [
+   [
+    "shellwood_18",
+    "EnemyDeathEffectsRegular",
+    "Splinter Queen",
+    45.96,
+    16.88
+   ]
+  ],
+  "NAME_STICK_INSECT": [
+   [
+    "shellwood_01b",
+    "EnemyDeathEffectsRegular",
+    "Stick Insect",
+    37.85,
+    4.79
+   ],
+   [
+    "shellwood_02",
+    "EnemyDeathEffectsRegular",
+    "Stick Insect",
+    16.5,
+    33.74
+   ],
+   [
+    "shellwood_15",
+    "EnemyDeathEffectsRegular",
+    "Stick Insect (1)",
+    84.1,
+    11.73
+   ]
+  ],
+  "NAME_STICK_INSECT_CHARGER": [
+   [
+    "shellwood_01b",
+    "EnemyDeathEffectsRegular",
+    "Stick Insect Charger",
+    39.73,
+    4.75
+   ],
+   [
+    "shellwood_02",
+    "EnemyDeathEffectsRegular",
+    "Stick Insect Charger",
+    24.41,
+    24.82
+   ],
+   [
+    "shellwood_20",
+    "EnemyDeathEffectsRegular",
+    "Stick Insect Charger",
+    70.51,
+    11.8
+   ]
+  ],
+  "NAME_STICK_INSECT_FLYER": [
+   [
+    "shellwood_18",
+    "EnemyDeathEffectsRegular",
+    "Stick Insect Flyer",
+    36.7,
+    22.44
+   ],
+   [
+    "shellwood_26",
+    "EnemyDeathEffectsRegular",
+    "Stick Insect Flyer (3)",
+    68.57,
+    87.88
+   ]
+  ],
+  "NAME_SURFACE_SCUTTLER": [
+   [
+    "abandoned_town",
+    "EnemyDeathEffectsRegular",
+    "Surface Scuttler (3)",
+    166.05,
+    11.65
+   ]
+  ],
+  "NAME_SWAMP_BARNACLE": [
+   [
+    "aqueduct_01",
+    "EnemyDeathEffectsRegular",
+    "Swamp Barnacle (4)",
+    206.62,
+    36.39
+   ],
+   [
+    "aqueduct_01",
+    "PlayMakerFSM",
+    "Swamp Barnacle (4)",
+    206.62,
+    36.39
+   ],
+   [
+    "aqueduct_02",
+    "EnemyDeathEffectsRegular",
+    "Swamp Barnacle",
+    21.49,
+    90.4
+   ],
+   [
+    "aqueduct_02",
+    "PlayMakerFSM",
+    "Swamp Barnacle (1)",
+    6.73,
+    61.88
+   ],
+   [
+    "aqueduct_03",
+    "EnemyDeathEffectsRegular",
+    "Swamp Barnacle (1)",
+    206.3,
+    41.58
+   ],
+   [
+    "aqueduct_03",
+    "PlayMakerFSM",
+    "Swamp Barnacle (1)",
+    206.3,
+    41.58
+   ],
+   [
+    "aqueduct_04",
+    "EnemyDeathEffectsRegular",
+    "Swamp Barnacle (2)",
+    146.65,
+    45.39
+   ],
+   [
+    "aqueduct_04",
+    "PlayMakerFSM",
+    "Swamp Barnacle (2)",
+    146.65,
+    45.39
+   ],
+   [
+    "aqueduct_06",
+    "EnemyDeathEffectsRegular",
+    "Swamp Barnacle (5)",
+    18.08,
+    117.16
+   ],
+   [
+    "aqueduct_06",
+    "PlayMakerFSM",
+    "Swamp Barnacle (5)",
+    18.08,
+    117.16
+   ],
+   [
+    "aqueduct_07",
+    "EnemyDeathEffectsRegular",
+    "Swamp Barnacle (1)",
+    25.59,
+    17.28
+   ],
+   [
+    "aqueduct_07",
+    "PlayMakerFSM",
+    "Swamp Barnacle (1)",
+    25.59,
+    17.28
+   ],
+   [
+    "aqueduct_08",
+    "EnemyDeathEffectsRegular",
+    "Swamp Barnacle (1)",
+    24.48,
+    14.87
+   ],
+   [
+    "aqueduct_08",
+    "PlayMakerFSM",
+    "Swamp Barnacle (1)",
+    24.48,
+    14.87
+   ]
+  ],
+  "NAME_SWAMP_DRIFTER": [
+   [
+    "shadow_11",
+    "EnemyDeathEffectsRegular",
+    "Swamp Drifter (1)",
+    21.01,
+    56.54
+   ],
+   [
+    "shadow_14",
+    "EnemyDeathEffectsRegular",
+    "Swamp Drifter (3)",
+    17.6,
+    42.41
+   ],
+   [
+    "shadow_15",
+    "EnemyDeathEffectsRegular",
+    "Swamp Drifter (1)",
+    9.12,
+    15.07
+   ],
+   [
+    "shadow_22",
+    "EnemyDeathEffectsRegular",
+    "Swamp Drifter (4)",
+    39.58,
+    10.8
+   ],
+   [
+    "shadow_25",
+    "EnemyDeathEffectsRegular",
+    "Swamp Drifter",
+    17.49,
+    10.54
+   ],
+   [
+    "shadow_26",
+    "EnemyDeathEffectsRegular",
+    "Swamp Drifter (5)",
+    14.08,
+    45.93
+   ],
+   [
+    "shadow_27",
+    "EnemyDeathEffectsRegular",
+    "Swamp Drifter (5)",
+    67.05,
+    10.36
+   ]
+  ],
+  "NAME_SWAMP_DUCTSUCKER": [
+   [
+    "aqueduct_01",
+    "EnemyDeathEffectsRegular",
+    "Swamp Ductsucker",
+    129.46,
+    25.97
+   ],
+   [
+    "aqueduct_03",
+    "EnemyDeathEffectsRegular",
+    "Swamp Ductsucker (1)",
+    109.58,
+    17.55
+   ],
+   [
+    "aqueduct_04",
+    "EnemyDeathEffectsRegular",
+    "Swamp Ductsucker",
+    85.44,
+    38.97
+   ]
+  ],
+  "NAME_SWAMP_GOOMBA": [
+   [
+    "shadow_02",
+    "EnemyDeathEffectsRegular",
+    "Swamp Goomba (1)",
+    47.43,
+    58.06
+   ],
+   [
+    "shadow_02",
+    "PlayMakerFSM",
+    "Swamp Goomba (1)",
+    47.43,
+    58.06
+   ],
+   [
+    "shadow_04",
+    "EnemyDeathEffectsRegular",
+    "Swamp Goomba",
+    56.76,
+    45.8
+   ],
+   [
+    "shadow_04",
+    "PlayMakerFSM",
+    "Swamp Goomba",
+    56.76,
+    45.8
+   ],
+   [
+    "shadow_05",
+    "EnemyDeathEffectsRegular",
+    "Swamp Goomba",
+    136.74,
+    30.25
+   ],
+   [
+    "shadow_05",
+    "PlayMakerFSM",
+    "Swamp Goomba",
+    136.74,
+    30.25
+   ],
+   [
+    "shadow_09",
+    "EnemyDeathEffectsRegular",
+    "Swamp Goomba (1)",
+    46.78,
+    91.02
+   ],
+   [
+    "shadow_09",
+    "PlayMakerFSM",
+    "Swamp Goomba (1)",
+    46.78,
+    91.02
+   ],
+   [
+    "shadow_11",
+    "EnemyDeathEffectsRegular",
+    "Swamp Goomba",
+    8.36,
+    35.08
+   ],
+   [
+    "shadow_11",
+    "PlayMakerFSM",
+    "Swamp Goomba",
+    8.36,
+    35.08
+   ],
+   [
+    "shadow_12",
+    "EnemyDeathEffectsRegular",
+    "Swamp Goomba",
+    189.64,
+    37.29
+   ],
+   [
+    "shadow_12",
+    "PlayMakerFSM",
+    "Swamp Goomba",
+    189.64,
+    37.29
+   ],
+   [
+    "shadow_16",
+    "EnemyDeathEffectsRegular",
+    "Swamp Goomba (1)",
+    58.34,
+    27.47
+   ],
+   [
+    "shadow_16",
+    "PlayMakerFSM",
+    "Swamp Goomba",
+    40.86,
+    9.34
+   ],
+   [
+    "shadow_20",
+    "EnemyDeathEffectsRegular",
+    "Swamp Goomba",
+    38.75,
+    35.46
+   ],
+   [
+    "shadow_20",
+    "PlayMakerFSM",
+    "Swamp Goomba",
+    38.75,
+    35.46
+   ],
+   [
+    "shadow_21",
+    "EnemyDeathEffectsRegular",
+    "Swamp Goomba",
+    19.78,
+    9.21
+   ],
+   [
+    "shadow_21",
+    "PlayMakerFSM",
+    "Swamp Goomba",
+    19.78,
+    9.21
+   ],
+   [
+    "shadow_26",
+    "EnemyDeathEffectsRegular",
+    "Swamp Goomba (1)",
+    20.61,
+    45.74
+   ],
+   [
+    "shadow_26",
+    "PlayMakerFSM",
+    "Swamp Goomba (1)",
+    20.61,
+    45.74
+   ]
+  ],
+  "NAME_SWAMP_MOSQUITO": [
+   [
+    "shadow_04",
+    "EnemyDeathEffectsRegular",
+    "Swamp Mosquito (4)",
+    -19.8,
+    70.2
+   ],
+   [
+    "shadow_04",
+    "PlayMakerFSM",
+    "Swamp Mosquito (4)",
+    -19.8,
+    70.2
+   ],
+   [
+    "shadow_04b",
+    "EnemyDeathEffectsRegular",
+    "Swamp Mosquito",
+    -9.9,
+    96.4
+   ],
+   [
+    "shadow_04b",
+    "PlayMakerFSM",
+    "Swamp Mosquito",
+    -9.9,
+    96.4
+   ],
+   [
+    "shadow_05",
+    "EnemyDeathEffectsRegular",
+    "Swamp Mosquito",
+    -1.0,
+    70.2
+   ],
+   [
+    "shadow_05",
+    "PlayMakerFSM",
+    "Swamp Mosquito",
+    -1.0,
+    70.2
+   ],
+   [
+    "shadow_09",
+    "EnemyDeathEffectsRegular",
+    "Swamp Mosquito (6)",
+    -16.6,
+    138.6
+   ],
+   [
+    "shadow_09",
+    "PlayMakerFSM",
+    "Swamp Mosquito (6)",
+    -16.6,
+    138.6
+   ],
+   [
+    "shadow_11",
+    "EnemyDeathEffectsRegular",
+    "Swamp Mosquito",
+    15.19,
+    11.77
+   ],
+   [
+    "shadow_11",
+    "PlayMakerFSM",
+    "Swamp Mosquito",
+    15.19,
+    11.77
+   ],
+   [
+    "shadow_12",
+    "EnemyDeathEffectsRegular",
+    "Swamp Mosquito (1)",
+    -14.09,
+    24.27
+   ],
+   [
+    "shadow_12",
+    "PlayMakerFSM",
+    "Swamp Mosquito (1)",
+    -14.09,
+    24.27
+   ],
+   [
+    "shadow_13",
+    "EnemyDeathEffectsRegular",
+    "Swamp Mosquito (6)",
+    -61.4,
+    45.4
+   ],
+   [
+    "shadow_13",
+    "PlayMakerFSM",
+    "Swamp Mosquito (6)",
+    -61.4,
+    45.4
+   ],
+   [
+    "shadow_18",
+    "EnemyDeathEffectsRegular",
+    "Swamp Mosquito (2)",
+    48.34,
+    19.79
+   ],
+   [
+    "shadow_18",
+    "PlayMakerFSM",
+    "Swamp Mosquito (2)",
+    48.34,
+    19.79
+   ],
+   [
+    "shadow_19",
+    "EnemyDeathEffectsRegular",
+    "Swamp Mosquito (3)",
+    -20.0,
+    31.3
+   ],
+   [
+    "shadow_19",
+    "PlayMakerFSM",
+    "Swamp Mosquito (3)",
+    -20.0,
+    31.3
+   ],
+   [
+    "shadow_20",
+    "EnemyDeathEffectsRegular",
+    "Swamp Mosquito",
+    151.56,
+    36.35
+   ],
+   [
+    "shadow_20",
+    "PlayMakerFSM",
+    "Swamp Mosquito",
+    151.56,
+    36.35
+   ]
+  ],
+  "NAME_SWAMP_MOSQUITO_SKINNY": [
+   [
+    "aqueduct_01",
+    "EnemyDeathEffectsRegular",
+    "Swamp Mosquito Skinny (3)",
+    229.12,
+    12.56
+   ],
+   [
+    "aqueduct_02",
+    "EnemyDeathEffectsRegular",
+    "Swamp Mosquito Skinny (1)",
+    21.89,
+    52.15
+   ],
+   [
+    "aqueduct_03",
+    "EnemyDeathEffectsRegular",
+    "Swamp Mosquito Skinny (5)",
+    120.19,
+    6.4
+   ]
+  ],
+  "NAME_SWAMP_MUCKMAN": [
+   [
+    "shadow_03",
+    "PlayMakerFSM",
+    "Swamp Muckman (1)",
+    -41.94,
+    36.8
+   ],
+   [
+    "shadow_04b",
+    "PlayMakerFSM",
+    "Swamp Muckman",
+    -42.3,
+    30.4
+   ],
+   [
+    "shadow_10",
+    "PlayMakerFSM",
+    "Swamp Muckman (3)",
+    -20.23,
+    50.06
+   ],
+   [
+    "shadow_12",
+    "PlayMakerFSM",
+    "Swamp Muckman (4)",
+    -20.23,
+    50.06
+   ],
+   [
+    "shadow_18",
+    "PlayMakerFSM",
+    "Swamp Muckman (2)",
+    70.88,
+    9.44
+   ],
+   [
+    "shadow_21",
+    "PlayMakerFSM",
+    "Swamp Muckman",
+    -41.36,
+    28.57
+   ]
+  ],
+  "NAME_SWAMP_MUCKMAN_TALL": [
+   [
+    "shadow_12",
+    "EnemyDeathEffectsRegular",
+    "Swamp Muckman Tall",
+    -49.5,
+    8.82
+   ],
+   [
+    "shadow_16",
+    "EnemyDeathEffectsRegular",
+    "Swamp Muckman Tall",
+    21.71,
+    8.82
+   ],
+   [
+    "shadow_18",
+    "EnemyDeathEffectsRegular",
+    "Swamp Muckman Tall (1)",
+    71.2,
+    8.92
+   ],
+   [
+    "shadow_19",
+    "EnemyDeathEffectsRegular",
+    "Swamp Muckman Tall",
+    -19.7,
+    20.66
+   ]
+  ],
+  "NAME_SWAMP_SHAMAN": [
+   [
+    "shadow_18",
+    "PlayMakerFSM",
+    "Swamp Shaman",
+    68.71,
+    -9.34
+   ]
+  ],
+  "NAME_TAR_SLUG": [
+   [
+    "dock_02",
+    "EnemyDeathEffectsRegular",
+    "Tar Slug (5)",
+    90.58,
+    85.03
+   ],
+   [
+    "dock_02b",
+    "EnemyDeathEffectsRegular",
+    "Tar Slug (2)",
+    60.15,
+    97.98
+   ],
+   [
+    "dock_03",
+    "EnemyDeathEffectsRegular",
+    "Tar Slug (3)",
+    86.27,
+    89.36
+   ],
+   [
+    "dock_03c",
+    "EnemyDeathEffectsRegular",
+    "Tar Slug (1)",
+    92.39,
+    24.22
+   ],
+   [
+    "dock_04",
+    "EnemyDeathEffectsRegular",
+    "Tar Slug (3)",
+    16.43,
+    90.82
+   ],
+   [
+    "dock_11",
+    "EnemyDeathEffectsRegular",
+    "Tar Slug (1)",
+    30.66,
+    7.04
+   ]
+  ],
+  "NAME_TAR_SLUG_HUGE": [
+   [
+    "dock_11",
+    "EnemyDeathEffectsRegular",
+    "Tar Slug Huge (1)",
+    25.27,
+    35.46
+   ]
+  ],
+  "NAME_TROBBIO": [
+   [
+    "library_13",
+    "PlayMakerFSM",
+    "Trobbio",
+    73.76,
+    16.38
+   ]
+  ],
+  "NAME_UNDERSTORE_AUTOMATON": [
+   [
+    "under_13",
+    "EnemyDeathEffectsRegular",
+    "Understore Automaton",
+    19.69,
+    111.02
+   ],
+   [
+    "under_18",
+    "EnemyDeathEffectsRegular",
+    "Understore Automaton (5)",
+    83.77,
+    35.16
+   ],
+   [
+    "under_19",
+    "EnemyDeathEffectsRegular",
+    "Understore Automaton",
+    102.83,
+    15.81
+   ],
+   [
+    "under_19b",
+    "EnemyDeathEffectsRegular",
+    "Understore Automaton (1)",
+    58.84,
+    10.85
+   ],
+   [
+    "under_19c",
+    "EnemyDeathEffectsRegular",
+    "Understore Automaton (2)",
+    15.29,
+    44.23
+   ]
+  ],
+  "NAME_UNDERSTORE_AUTOMATON_EX": [
+   [
+    "under_13",
+    "EnemyDeathEffectsRegular",
+    "Understore Automaton EX",
+    38.14,
+    42.2
+   ],
+   [
+    "under_18",
+    "EnemyDeathEffectsRegular",
+    "Understore Automaton EX (1)",
+    125.82,
+    46.31
+   ],
+   [
+    "under_19",
+    "EnemyDeathEffectsRegular",
+    "Understore Automaton EX (9)",
+    76.97,
+    16.46
+   ],
+   [
+    "under_19b",
+    "EnemyDeathEffectsRegular",
+    "Understore Automaton EX (4)",
+    50.71,
+    9.06
+   ],
+   [
+    "under_21",
+    "EnemyDeathEffectsRegular",
+    "Understore Automaton EX (9)",
+    67.86,
+    11.38
+   ]
+  ],
+  "NAME_UNDERSTORE_HEAVY": [
+   [
+    "cog_10_destroyed",
+    "EnemyDeathEffectsRegular",
+    "Understore Heavy (1)",
+    6.99,
+    89.01
+   ],
+   [
+    "under_03",
+    "EnemyDeathEffectsRegular",
+    "Understore Heavy (1)",
+    37.45,
+    5.71
+   ],
+   [
+    "under_07",
+    "EnemyDeathEffectsRegular",
+    "Understore Heavy",
+    46.71,
+    20.96
+   ],
+   [
+    "under_10",
+    "EnemyDeathEffectsRegular",
+    "Understore Heavy (1)",
+    51.37,
+    16.69
+   ],
+   [
+    "under_18",
+    "EnemyDeathEffectsRegular",
+    "Understore Heavy",
+    120.83,
+    46.81
+   ],
+   [
+    "under_19b",
+    "EnemyDeathEffectsRegular",
+    "Understore Heavy",
+    21.42,
+    14.37
+   ]
+  ],
+  "NAME_UNDERSTORE_MITE_GIANT": [
+   [
+    "hang_06_bank",
+    "EnemyDeathEffectsRegular",
+    "Understore Mite Giant",
+    105.76,
+    14.6
+   ],
+   [
+    "hang_09",
+    "EnemyDeathEffectsRegular",
+    "Understore Mite Giant",
+    92.92,
+    17.46
+   ],
+   [
+    "hang_10",
+    "EnemyDeathEffectsRegular",
+    "Understore Mite Giant",
+    48.69,
+    17.51
+   ],
+   [
+    "library_06",
+    "EnemyDeathEffectsRegular",
+    "Understore Mite Giant",
+    30.02,
+    63.13
+   ],
+   [
+    "ward_06",
+    "EnemyDeathEffectsRegular",
+    "Understore Mite Giant",
+    84.64,
+    45.66
+   ]
+  ],
+  "NAME_UNDERSTORE_POKER": [
+   [
+    "cog_10_destroyed",
+    "EnemyDeathEffectsRegular",
+    "Understore Poker",
+    22.38,
+    79.2
+   ],
+   [
+    "library_11b",
+    "EnemyDeathEffectsRegular",
+    "Understore Poker (1)",
+    35.53,
+    106.52
+   ],
+   [
+    "under_02",
+    "EnemyDeathEffectsRegular",
+    "Understore Poker",
+    30.92,
+    57.56
+   ],
+   [
+    "under_04",
+    "EnemyDeathEffectsRegular",
+    "Understore Poker",
+    97.7,
+    17.88
+   ],
+   [
+    "under_05",
+    "EnemyDeathEffectsRegular",
+    "Understore Poker (1)",
+    6.54,
+    111.43
+   ],
+   [
+    "under_07",
+    "EnemyDeathEffectsRegular",
+    "Understore Poker",
+    40.3,
+    14.17
+   ],
+   [
+    "under_10",
+    "EnemyDeathEffectsRegular",
+    "Understore Poker",
+    37.82,
+    11.83
+   ],
+   [
+    "under_18",
+    "EnemyDeathEffectsRegular",
+    "Understore Poker",
+    32.05,
+    27.74
+   ]
+  ],
+  "NAME_UNDERSTORE_SMALL": [
+   [
+    "cog_10_destroyed",
+    "EnemyDeathEffectsRegular",
+    "Understore Small",
+    6.73,
+    80.12
+   ],
+   [
+    "under_02",
+    "EnemyDeathEffectsRegular",
+    "Understore Small",
+    27.67,
+    90.72
+   ],
+   [
+    "under_06",
+    "EnemyDeathEffectsRegular",
+    "Understore Small (2)",
+    25.42,
+    7.06
+   ],
+   [
+    "under_10",
+    "EnemyDeathEffectsRegular",
+    "Understore Small",
+    39.76,
+    5.98
+   ],
+   [
+    "under_11",
+    "EnemyDeathEffectsRegular",
+    "Understore Small",
+    5.6,
+    13.95
+   ],
+   [
+    "under_12",
+    "EnemyDeathEffectsRegular",
+    "Understore Small",
+    30.76,
+    11.94
+   ]
+  ],
+  "NAME_UNDERSTORE_THROWER": [
+   [
+    "cog_10_destroyed",
+    "EnemyDeathEffectsRegular",
+    "Understore Thrower",
+    22.66,
+    79.43
+   ],
+   [
+    "library_11b",
+    "EnemyDeathEffectsRegular",
+    "Understore Thrower (2)",
+    58.6,
+    18.69
+   ],
+   [
+    "under_02",
+    "EnemyDeathEffectsRegular",
+    "Understore Thrower",
+    24.28,
+    62.24
+   ],
+   [
+    "under_05",
+    "EnemyDeathEffectsRegular",
+    "Understore Thrower",
+    23.72,
+    131.52
+   ],
+   [
+    "under_07",
+    "EnemyDeathEffectsRegular",
+    "Understore Thrower",
+    52.72,
+    14.23
+   ],
+   [
+    "under_10",
+    "EnemyDeathEffectsRegular",
+    "Understore Thrower",
+    38.11,
+    5.62
+   ],
+   [
+    "under_12",
+    "EnemyDeathEffectsRegular",
+    "Understore Thrower",
+    35.4,
+    11.65
+   ],
+   [
+    "under_18",
+    "EnemyDeathEffectsRegular",
+    "Understore Thrower",
+    126.08,
+    43.59
+   ],
+   [
+    "under_19b",
+    "EnemyDeathEffectsRegular",
+    "Understore Thrower",
+    94.52,
+    15.27
+   ]
+  ],
+  "NAME_VAMPIRE_GNAT": [
+   [
+    "greymoor_05_boss",
+    "EnemyDeathEffectsRegular",
+    "Vampire Gnat",
+    50.65,
+    41.6
+   ],
+   [
+    "greymoor_08_boss",
+    "EnemyDeathEffectsRegular",
+    "Vampire Gnat",
+    33.3,
+    31.46
+   ]
+  ],
+  "NAME_WEAVER_SERVITOR": [
+   [
+    "bone_east_weavehome",
+    "EnemyDeathEffectsRegular",
+    "Weaver Servitor (2)",
+    40.86,
+    103.96
+   ],
+   [
+    "shadow_weavehome",
+    "EnemyDeathEffectsRegular",
+    "Weaver Servitor (1)",
+    78.19,
+    41.31
+   ],
+   [
+    "weave_02",
+    "EnemyDeathEffectsRegular",
+    "Weaver Servitor (2)",
+    28.71,
+    105.65
+   ],
+   [
+    "weave_03",
+    "EnemyDeathEffectsRegular",
+    "Weaver Servitor (2)",
+    67.81,
+    6.59
+   ],
+   [
+    "weave_04",
+    "EnemyDeathEffectsRegular",
+    "Weaver Servitor (2)",
+    42.15,
+    103.12
+   ],
+   [
+    "weave_08",
+    "EnemyDeathEffectsRegular",
+    "Weaver Servitor (2)",
+    47.62,
+    28.6
+   ],
+   [
+    "weave_13",
+    "EnemyDeathEffectsRegular",
+    "Weaver Servitor",
+    18.05,
+    12.29
+   ]
+  ],
+  "NAME_WEAVER_SERVITOR_LARGE": [
+   [
+    "peak_02",
+    "EnemyDeathEffectsRegular",
+    "Weaver Servitor Large",
+    56.12,
+    199.3
+   ],
+   [
+    "peak_04d",
+    "EnemyDeathEffectsRegular",
+    "Weaver Servitor Large",
+    63.55,
+    7.44
+   ]
+  ],
+  "NAME_WHITE_PALACE_FLY": [
+   [
+    "memory_red",
+    "EnemyDeathEffectsRegular",
+    "White Palace Fly Red Memory (3)",
+    771.5,
+    542.58
+   ],
+   [
+    "memory_red",
+    "PlayMakerFSM",
+    "door_wakeInRedMemory Weaver",
+    646.38,
+    786.48
+   ]
+  ],
+  "NAME_WISP": [
+   [
+    "wisp_02",
+    "PlayMakerFSM",
+    "Wisp Flame Lantern (1)",
+    117.4,
+    29.78
+   ],
+   [
+    "wisp_07",
+    "PlayMakerFSM",
+    "Wisp Flame Lantern (2)",
+    180.92,
+    24.29
+   ],
+   [
+    "wisp_08",
+    "PlayMakerFSM",
+    "Wisp Flame Lantern",
+    15.97,
+    60.28
+   ]
+  ],
+  "NAME_WISP_PYRE_EFFIGY": [
+   [
+    "belltown_08",
+    "PlayMakerFSM",
+    "Wisp Pyre Effigy",
+    56.06,
+    11.54
+   ]
+  ],
+  "NAME_WRAITH": [
+   [
+    "dust_maze_01",
+    "EnemyDeathEffectsRegular",
+    "Wraith",
+    290.1,
+    61.26
+   ]
+  ],
+  "NAME_ZAP_CORE_ENEMY": [
+   [
+    "coral_29",
+    "PlayMakerFSM",
+    "Zap Core Enemy",
+    173.18,
+    33.15
    ]
   ]
  },

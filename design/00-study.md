@@ -1622,6 +1622,39 @@ Crest screen's build is apart and tries with everything, or with «What I have»
 are moved once (`saves.migrateFree`, with unit tests): a level moved by hand stays, one still at the top
 goes to a New Game's. `check-pack` still matches all 72 saves: a save never goes through it.
 
+**The map's marks where the game places them** (13 October). Albert had been moving many marks by hand
+in the admin mode (139 fixes). `GameMap.GetMapPosition` (Assembly-CSharp, read again with dnfile and
+dncil) is how the game puts Hornet's compass and her cocoon on its map: a point of a scene goes x / width
+across a box and y / height up it, the scene's size its tilemap's (the root object tagged TileMap). The
+box is the piece's BoundsSprite (its fullSprite when it starts Rough, else its own sprite), its whole
+rectangle by the piece's scale, centred on the area's place plus the piece's. Every map sprite has its
+pivot in the middle, nothing is scaled above the pieces and none is flipped, so that box was already the
+drawing's canvas that ROOMS kept, to within 0.75 px of rounding; the scenes' own walls (their tilemap
+colliders) placed so trace the drawings. ROOMS is now that box to a tenth of a pixel
+(`tools/extract-map.py bounds_box`) and `js/rooms.js mapPoint` the rule, for the generators and for the
+cocoon, which now sits where the game draws it (the save's HeroDeathScenePos and HeroDeathSceneSize,
+kept in a slot as `cocoonAt`). The 51 benches against the game's own bench pins: median 2.86 → 2.84 px,
+mean 4.33 → 4.30, worst 36 (Belltown; the pins are set by hand, about 3 px above the bench, Bonetown's
+25 px off). So the fixes weren't the box's: they spread crowded rooms, pulled marks out of parts of a
+room the map doesn't draw, and gave a place to what had none. Albert dropped them all
+(`js/map-fixes.js` is empty, its admin mode as before), and what had no object of its own now goes where
+whoever stands for it is (`tools/gen-spots.js`, from `tools/extract-pickups.py`'s new battles, records,
+fleas and locks and people.json): Shakra and the vendors where they stand and their stock with them,
+a wish's reward at its Wishwall or giver, a boss where the game has it in its arena, a gauntlet at the
+middle of its waves, a lost flea in its cage, a key's door at its lock. Of the 71 fixed marks that had no
+point of their own, 62 have one now, a median 6.7 px from where Albert had put them by hand (32.8 at
+the room's middle). Of the Map's 2,170 marks (Free mode), 260 still sit at their room's middle: 232 in a
+room the map doesn't draw (an interior, a bench's room, a memory: the game places nothing of them on its
+map either), and 28 with nothing to go by: five bosses the game spawns at run time or parks at the
+scene's origin (the Last Judge, Tormented Trobbio, the Cogwork Dancers, the Forebrothers, Weavenest
+Atla's Moss Mothers) and two whose fight is in an arena off the map (Lost Lace, the Far Fields
+Beastfly), the Sinner's Road gauntlet (no BattleScene), Fleatopia's Tool Pouch and Mr Mushroom wish
+(nobody of theirs in the room), twelve extras whose object is parked off its room, and six people's
+spots that walk in from off-screen. The map's own wish and objective pins now name the scene of the part
+they fall in (five did a part: Abyss_09_top, Dust_11_left…), so a hair's change in a box doesn't move them
+to another. Visually checked in headless Chrome over file:// at 1440 and 390,
+in Free mode and with a 55% save; `check-pack` still matches all 72 saves.
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).

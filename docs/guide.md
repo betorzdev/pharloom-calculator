@@ -430,8 +430,8 @@ boss's arena, with the person who gives it. All of it on at first.
   covers part of a room until you walk in, one mark per room, gone once all of it is uncovered), so many
   that they're drawn one by one only close up; from afar, one mark per room and kind, with how
   many in its corner. Marks that would cover each other step a little apart, more the closer you zoom.
-- **Your game**, with a save: your cocoon, where you last fell (on at first), and the Journal's
-  entries still missing, in the room where each is found.
+- **Your game**, with a save: your cocoon, where you last fell, at the spot the game's own map
+  marks it (on at first), and the Journal's entries still missing, in the room where each is found.
 
 Each mark is the thing's own picture on a dark disc with a thin rim, as the Hollow Knight site
 draws them, over a pale plate so a dark portrait reads, about the same size at any zoom, a little
@@ -443,10 +443,14 @@ plates (tools/extract-map-icons.py takes them from the game's files). The breaka
 drawn sign, bricks: the game's walls are tall dark rock that doesn't read that small; so do the
 gates (bars), the shortcuts (an arrow through a wall) and the silk walls (threads). It sits where the game
 has the thing in its room: the pickup lying there, the NPC, the shrine, the cache (the object's
-place in its scene, put on the room's drawing as the game places Hornet on its map; checked
-against the benches, which fall by the game's own bench pins). What has no place of its own (a
-shop's stock, a boss's arena) sits in its room's middle, and things on one point gather in a small
-grid around it. The map is drawn in SVG, so it stays sharp as you zoom.
+place in its scene, put on the map by the game's own rule for Hornet's compass and her cocoon;
+checked against the benches, which fall by the game's own bench pins). What has no object of its
+own sits where whoever stands for it is: Shakra and the vendors where they stand, and what they
+sell with them; a wish's reward at its Wishwall or at who offers it; a boss where it waits in its
+arena, and what it drops there; a gauntlet at its arena; a lost flea in its cage. Only what's in a
+room the map doesn't draw (an interior, a bench's own room) stays at that room's point, as on the
+game's map. Things on one point gather in a small grid around it. The map is drawn in SVG, so it
+stays sharp as you zoom.
 
 With a save the map shows only what you're missing; in Free mode, what your marks say is missing
 (everything, as a guide, on a New Game). Tap any mark for its card: what
@@ -503,7 +507,9 @@ inserts or removes an entry the generator (`tools/follow-fixes.js`) pairs each o
 new one by what it is and rewrites the keys, printing what it moved. A fix whose mark vanished,
 whose pairing is ambiguous or whose mark changed room stops the run with the list, nothing
 written; redo it in the admin mode and run again. Every fix stores its mark's room, and `npm test`
-says, with the mark now at that key, when one names a mark the data no longer has there.
+says, with the mark now at that key, when one names a mark the data no longer has there. The file
+holds no fix since 13 October 2026: Albert dropped them all once the marks followed the game's
+own placement.
 
 ### Progress
 
