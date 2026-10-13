@@ -2,7 +2,7 @@
 /* tools/promo/make.js: the site's announcement trailer (about 55 s, 1920×1080, 60 fps, English), from
    the real site and a real save, cut to the game's music. `npm run promo -- --before <save> --after <save>`:
      1. serves the repo (and the work folder, under /__promo/) on 127.0.0.1;
-     2. shoots the site in headless Chrome at 2x (tools/promo/cdp.js): Free mode's unlit card,
+     2. shoots the site in headless Chrome at 2x (tools/promo/cdp.js): Free mode's unlit card (and lit for a file dragged over it),
         then <before> imported into save 1 and <after> synced over it, as the game saving again
         would (js/saves.js sync), so "Since the previous save" has something; every screen whole,
         and the Map twice closer, without its way to the next goal;
@@ -86,6 +86,10 @@ async function capture(site, a) {
     await c.evaluate(`(() => { try { localStorage.setItem('pharloom.betaSeen', '1'); } catch (e) {} })()`);
     await visit('home');
     await whole('free');
+    // The same card as a file is dragged over it (the site's own .is-drag).
+    await c.evaluate(`document.querySelector('.hm-invite').classList.add('is-drag')`);
+    await sleep(400);
+    await whole('free-drag');
     const b64 = (f) => fs.readFileSync(f).toString('base64');
     await c.evaluate(`(() => {
       const S = SS.saves, F = SS.savefile;

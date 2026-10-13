@@ -8,10 +8,11 @@
      ?w=/__promo/#t=12.3 shows that moment and #play runs it in real time (no sound).
      It is cut to its music, Christopher Larkin's "Final Judge" (tools/promo/extract-game.py):
      73⅓ bpm, a beat every 9/11 s, the clip's beat 0 at its start; the film starts on the clip's
-     beat 77 (MUSIC), so the film's beat n is at n × BEAT. Hornet falls through the first bar and
-     lands on beat 4 (a heavy one in the clip); a screen every two beats from beat 10, four for the
-     road to the Acts and to the 100%; one close-up a beat from 35, where the music is loudest; the
-     title lands on beat 43, the clip's strongest hit, and the music falls quiet on beat 47. Hornet is the game's own animation (Fall, HardLand, Challenge Strong).
+     beat 74 (MUSIC), so the film's beat n is at n × BEAT. Hornet falls through the first bar and
+     lands on beat 4 (a heavy one in the clip); the save is dragged in and drops on beat 13, the
+     card lighting up; then a screen every two beats, four for the road to the Acts and to the
+     100%; one close-up a beat from 38, where the music is loudest; the title lands on beat 46, the
+     clip's strongest hit, and the music falls quiet on beat 50. Hornet is the game's own animation (Fall, HardLand, Challenge Strong).
      The page's tokens (css/tokens.css) dress it: the main menu's black, red light and embers at
      either end, the white filigree, the bone ink, Cinzel and Spectral. The light effects (the
      flashes, the dust, the shade under the captions) are the film's own and stay here. -->
@@ -77,9 +78,9 @@ const W = 1920, H = 1080;
 const BASE = new URLSearchParams(location.search).get('w') || '/__promo/';
 const BEAT = 9 / 11;
 const b = (n) => n * BEAT;
-const DUR = b(47) + 2.2;
+const DUR = b(50) + 2.2;
 // For make.js: which track, where the film starts in it, and its fades.
-window.MUSIC = { track: 'judge', from: b(77), fadeIn: 2.6, fadeOutAt: b(47) - .1, fadeOut: 2.2 };
+window.MUSIC = { track: 'judge', from: b(74), fadeIn: 2.6, fadeOutAt: b(50) - .1, fadeOut: 2.2 };
 
 const clamp = (x, a = 0, c = 1) => Math.min(c, Math.max(a, x));
 const lerp = (a, c, k) => a + (c - a) * k;
@@ -97,36 +98,38 @@ const draw = (root, k) => root.querySelectorAll('path').forEach((p) => { p.style
    centre y, width) eased from `from` to `to` over the shot. Beats, not seconds. ─────────── */
 const SCENES = [
   { id: 'open', a: 0, z: 10, menu: true },
-  { id: 'free', a: 10, z: 13, img: 'free', over: 'home', swap: 12, from: [960, 470, 1400], to: [900, 470, 1260],
-    sup: 'Import your save', main: 'Your game, as it stands' },
-  { id: 'pct', a: 13, z: 15, img: 'home', from: [690, 480, 900], to: [680, 500, 820],
+  { id: 'drop', a: 10, z: 13, img: 'free', over: 'free-drag', swap: 11.6, land: 13, from: [960, 480, 1440], to: [940, 470, 1280],
+    sup: 'From the game’s own file', main: 'Drop in your save' },
+  { id: 'lit', a: 13, z: 16, img: 'home', from: [900, 470, 1260], to: [800, 480, 1080],
+    sup: 'Read in your browser', main: 'Your game, as it stands' },
+  { id: 'pct', a: 16, z: 18, img: 'home', from: [690, 480, 900], to: [680, 500, 820],
     sup: 'Checked on 92 real saves', main: 'The game’s own 100%' },
-  { id: 'since', a: 15, z: 17, img: 'home', from: [700, 1010, 1080], to: [820, 1000, 1020],
+  { id: 'since', a: 18, z: 20, img: 'home', from: [700, 1010, 1080], to: [820, 1000, 1020],
     sup: 'Since your last save', main: 'What’s new' },
-  { id: 'acts', a: 17, z: 21, img: 'progress', from: [960, 360, 1120], to: [960, 660, 1120],
+  { id: 'acts', a: 20, z: 24, img: 'progress', from: [960, 360, 1120], to: [960, 660, 1120],
     sup: 'Act 1 · Act 2 · Act 3', main: 'The road to every Act' },
-  { id: 'hundred', a: 21, z: 25, img: 'progress-100', from: [960, 620, 1100], to: [960, 1150, 1150],
+  { id: 'hundred', a: 24, z: 28, img: 'progress-100', from: [960, 620, 1100], to: [960, 1150, 1150],
     sup: 'And the 100%', main: 'Every percent still to find' },
-  { id: 'map', a: 25, z: 27, img: 'map', from: [960, 600, 1150], to: [950, 590, 1040],
+  { id: 'map', a: 28, z: 30, img: 'map', from: [960, 600, 1150], to: [950, 590, 1040],
     sup: 'The game’s own map', main: 'Everything you’re missing' },
-  { id: 'zoom', a: 27, z: 29, img: 'map-zoom', from: [880, 540, 940], to: [1000, 580, 860],
+  { id: 'zoom', a: 30, z: 32, img: 'map-zoom', from: [880, 540, 940], to: [1000, 580, 860],
     sup: 'Piece by piece', main: 'Pinned where it hides' },
-  { id: 'journal', a: 29, z: 31, img: 'journal', from: [960, 520, 1200], to: [960, 760, 1180],
+  { id: 'journal', a: 32, z: 34, img: 'journal', from: [960, 520, 1200], to: [960, 760, 1180],
     sup: 'The Hunter’s Journal', main: 'Every kill to go' },
-  { id: 'inv', a: 31, z: 33, img: 'game', from: [720, 560, 1120], to: [740, 590, 1020],
+  { id: 'inv', a: 34, z: 36, img: 'game', from: [720, 560, 1120], to: [740, 590, 1020],
     sup: 'The Inventory', main: 'All Hornet carries' },
-  { id: 'crest', a: 33, z: 35, img: 'tools', from: [940, 580, 1200], to: [930, 610, 1100],
+  { id: 'crest', a: 36, z: 38, img: 'tools', from: [940, 580, 1200], to: [930, 610, 1100],
     sup: 'Crests and Tools', main: 'Every number of your build' },
   // The montage: a close-up a beat, and its word.
-  { id: 'm1', a: 35, z: 36, img: 'game', rect: [545, 705, 620], kick: 'Masks' },
-  { id: 'm2', a: 36, z: 37, img: 'game', rect: [575, 868, 640], kick: 'Silk' },
-  { id: 'm3', a: 37, z: 38, img: 'game', rect: [1210, 905, 640], kick: 'Tools' },
-  { id: 'm4', a: 38, z: 39, img: 'tools', rect: [760, 700, 620], kick: 'Crests' },
-  { id: 'm5', a: 39, z: 40, img: 'journal', rect: [700, 810, 700], kick: 'Journal' },
-  { id: 'm6', a: 40, z: 41, img: 'map-zoom', rect: [900, 560, 640], kick: 'Map' },
-  { id: 'm7', a: 41, z: 42, img: 'progress', rect: [960, 860, 760], kick: 'Acts' },
-  { id: 'm8', a: 42, z: 43, img: 'progress-100', rect: [960, 1180, 760], kick: '100%' },
-  { id: 'end', a: 43, z: 99, menu: true },
+  { id: 'm1', a: 38, z: 39, img: 'game', rect: [545, 705, 620], kick: 'Masks' },
+  { id: 'm2', a: 39, z: 40, img: 'game', rect: [575, 868, 640], kick: 'Silk' },
+  { id: 'm3', a: 40, z: 41, img: 'game', rect: [1210, 905, 640], kick: 'Tools' },
+  { id: 'm4', a: 41, z: 42, img: 'tools', rect: [760, 700, 620], kick: 'Crests' },
+  { id: 'm5', a: 42, z: 43, img: 'journal', rect: [700, 810, 700], kick: 'Journal' },
+  { id: 'm6', a: 43, z: 44, img: 'map-zoom', rect: [900, 560, 640], kick: 'Map' },
+  { id: 'm7', a: 44, z: 45, img: 'progress', rect: [960, 860, 760], kick: 'Acts' },
+  { id: 'm8', a: 45, z: 46, img: 'progress-100', rect: [960, 1180, 760], kick: '100%' },
+  { id: 'end', a: 46, z: 99, menu: true },
 ];
 const stage = document.getElementById('stage'), actors = document.getElementById('actors'), over = document.getElementById('over');
 const imgs = {};
@@ -139,7 +142,7 @@ for (const s of SCENES) {
   if (s.over) { s.page2 = pageImg(s.over); s.el.append(s.page2); }
   stage.append(s.el);
 }
-const OPEN = SCENES[0], END = SCENES[SCENES.length - 1], FREE = SCENES[1];
+const OPEN = SCENES[0], END = SCENES[SCENES.length - 1], DROP = SCENES[1];
 const END_AT = END.a;
 
 /* ── Hornet: her clips in cells of one size around one origin (extract-game.py) ── */
@@ -262,7 +265,7 @@ function render(t) {
       : S.from.map((v, i) => lerp(v, S.to[i], sine(ramp(t, S.t0, S.t1))));
     const punch = cutPunch;
     camera(S.page, r, punch);
-    if (S.page2) { camera(S.page2, r, punch); S.page2.style.opacity = ramp(t, b(S.swap) - .02, b(S.swap) + .03); }
+    if (S.page2) { camera(S.page2, r, punch); S.page2.style.opacity = ease(ramp(t, b(S.swap), b(S.swap) + .3)); }
     S.page.style.filter = S.kick ? 'brightness(.55) saturate(.9)' : '';
   }
 
@@ -329,17 +332,17 @@ function render(t) {
     s.kickEl.style.transform = `translateY(-50%) scale(${lerp(1.5, 1, k) + since * .06})`;
   }
 
-  // The save dropped into the unlit card, landing on beat 15, and the light it brings.
-  const SW = b(FREE.swap);
-  const kd = easeIn(ramp(t, SW - .7, SW));
-  chip.style.opacity = t > SW - .8 && t < SW + .05 ? ramp(t, SW - .8, SW - .6) : 0;
-  chip.style.transform = `translate(${lerp(1380, 880, kd)}px, ${lerp(120, 470, kd)}px) rotate(${lerp(10, 0, kd)}deg) scale(${lerp(1.1, .75, kd)})`;
+  // The save: it comes in from the corner, lights the card as it crosses it, and drops on beat 13.
+  const SW = b(DROP.land), IN = b(DROP.a + 1);
+  const kd = ease(ramp(t, IN, SW - .08));
+  chip.style.opacity = t > IN - .1 && t < SW ? ramp(t, IN - .1, IN + .25) : 0;
+  chip.style.transform = `translate(${lerp(1560, 840, kd)}px, ${lerp(60, 450, kd) - Math.sin(Math.PI * kd) * 60}px) rotate(${lerp(12, 0, kd)}deg) scale(${lerp(1.15, .8, kd)})`;
 
   // Flashes: her landing, the save's light, each cut, the title.
   let fl = 0;
   const hit = (h, a, len) => { const d = t - h; if (d >= 0 && d < len) fl = Math.max(fl, a * (1 - d / len) ** 2); };
-  hit(LAND, .85, .45); hit(SLASH, .35, .25); hit(SW, .95, .8); hit(b(END_AT), .9, .7);
-  for (const s of SCENES) if (s.a > 10 && s.a < END_AT) hit(s.t0, s.kick ? .3 : .15, .18);
+  hit(LAND, .85, .45); hit(SLASH, .35, .25); hit(SW, .9, .7); hit(b(END_AT), .9, .7);
+  for (const s of SCENES) if (s.a > DROP.land && s.a < END_AT) hit(s.t0, s.kick ? .3 : .15, .18);
   flash.style.opacity = fl;
 
   black.style.opacity = Math.max(1 - ramp(t, 0, .8), ramp(t, DUR - .8, DUR));
