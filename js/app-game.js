@@ -318,7 +318,7 @@
     const start = own ? ''
       : `<p class="inv-lead">${esc(t('invFreeLead'))}</p><p class="inv-presets"><span class="lbl">${esc(t('invStart'))}</span><button type="button" class="text-btn" data-act="ctPreset" data-value="base">${esc(t('invBase'))}</button>
           <span class="lbl" aria-hidden="true">·</span><button type="button" class="text-btn" data-act="ctPreset" data-value="max">${esc(t('invMax'))}</button></p>`;
-    sec.innerHTML = `<div class="inv">${brackets}${screenHead(esc(t('navGame')), start)}${own ? '' : App.freeNoteHtml()}
+    sec.innerHTML = `<div class="inv">${brackets}${screenHead(esc(t('navGame')), start)}
       <div class="inv-body">
         <div class="inv-col">
           ${needles(b, still, item('pale-oil'))}

@@ -144,7 +144,7 @@ game's own words) takes it all back to the start; «Everything maxed» marks eve
 at the top (a game at 100%). Progress counts what you mark, the Map leaves out what you have, and
 the Crest screen tries it on «What I have». A visit from before this (when the levels belonged to
 the Crest screen's build and started at the top) keeps the levels you moved and puts the ones still
-at the top back to a New Game's, and a notice on the Inventory and Progress says so once («Got it»).
+at the top back to a New Game's, without a notice.
 In a save the Inventory shows what the game saved, and changes only as you play.
 
 ### Crest

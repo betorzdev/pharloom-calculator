@@ -665,10 +665,6 @@
     invBase:        { es: 'Partida nueva', en: 'New Game' },   // PROFILE_NEW_GAME
     invFreeLead:    { es: 'Modo libre: marca lo que tienes en tu partida y Progreso cuenta el 100 % con ello. Para probar builds con todo, el Blasón.',
       en: 'Free mode: mark what you have in your game and Progress counts the 100% from it. To try builds with everything, the Crest screen.' },
-    freeNoteTag:    { es: 'Novedad', en: 'New' },
-    freeNote:       { es: 'La aguja, las máscaras, la seda y las mejoras son ahora parte de lo que marcas: lo que no habías movido vuelve al de una partida nueva, para que el 100 % no cuente lo que no tienes. Revísalo en el Inventario.',
-      en: 'The Needle, masks, silk and upgrades are now part of what you mark: what you hadn\'t moved goes back to a New Game\'s, so the 100% doesn\'t count what you don\'t have. Check them in the Inventory.' },
-    freeNoteOk:     { es: 'Entendido', en: 'Got it' },
     invMax:         { es: 'Todo al máximo', en: 'Everything maxed' },
     invSilk:        { es: 'Seda', en: 'Silk' },   // INV_NAME_THREAD
 

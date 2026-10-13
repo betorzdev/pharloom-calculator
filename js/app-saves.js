@@ -669,22 +669,11 @@
     } catch (e) { memFree = snap; }
   };
   /* Free mode's marks from an older visit, when the ladders were the build's (js/saves.js
-     migrateFree, design/42, 4 A): moved over once, on load, and said once («Got it» on the
-     Inventory or Progress), by pharloom.freeNote, outside the slots. */
-  const NOTE_KEY = 'pharloom.freeNote';
+     migrateFree, design/42, 4 A): moved over once, on load, without a notice (Albert, 13 Oct
+     2026: no «New» notices). The notice's old flag, pharloom.freeNote, is cleared. */
   if (store) {
-    try { if (S.migrateFree(store)) store.setItem(NOTE_KEY, '1'); } catch (e) { /* left as it was */ }
+    try { S.migrateFree(store); store.removeItem('pharloom.freeNote'); } catch (e) { /* left as it was */ }
   }
-  App.freeNote = () => {
-    if (!store || activeSlot() !== S.FREE) return false;
-    try { return store.getItem(NOTE_KEY) === '1'; } catch (e) { return false; }
-  };
-  actions.freeNoteOk = () => {
-    try { if (store) store.removeItem(NOTE_KEY); } catch (e) { /* it shows again next time */ }
-    render();
-  };
-  App.freeNoteHtml = () => (App.freeNote() ? `<div class="banner is-hint free-note"><span class="banner-tag lbl">${esc(t('freeNoteTag'))}</span>
-      <span class="banner-text">${esc(t('freeNote'))}</span><button type="button" class="btn" data-act="freeNoteOk">${esc(t('freeNoteOk'))}</button></div>` : '');
 
   /* ── Following the game ───────────────────────────────────────────────
      Only the slot you're in watches its file; another linked one catches up on entering it.

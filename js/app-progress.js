@@ -823,7 +823,7 @@
     sec.innerHTML = `<div class="pg">${brackets}${screenHead(esc(t('navProgress')))}
         ${actsTop(own, next, c, sum)}
         ${tabs}
-        <div class="pg-panel" id="pg-panel" role="tabpanel" aria-labelledby="pg-tab-${tab}">${own ? '' : App.freeNoteHtml()}${invite}${tab === 'act' ? act : hundredTab}</div>
+        <div class="pg-panel" id="pg-panel" role="tabpanel" aria-labelledby="pg-tab-${tab}">${invite}${tab === 'act' ? act : hundredTab}</div>
       </div>`;
   };
 

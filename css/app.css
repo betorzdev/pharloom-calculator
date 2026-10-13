@@ -1521,7 +1521,6 @@ kbd {
    own line, so its two choices stay together. The older visit's notice, over the body. */
 .inv-lead { max-width: 60ch; margin: 0; font-size: var(--fs-sm); color: var(--ink-2); text-wrap: balance; }
 @media (max-width: 480px) { .inv-presets > .lbl:first-child { flex-basis: 100%; text-align: center; } }
-.free-note { max-width: calc(var(--column) + var(--sp-16)); margin: 0 auto var(--sp-6); }
 .inv-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: var(--sp-12); align-items: start; }
 .inv-col { display: grid; gap: var(--sp-8); min-width: 0; }
 .inv-sec { display: grid; gap: var(--sp-2); align-content: start; min-width: 0; }

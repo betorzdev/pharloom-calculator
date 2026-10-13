@@ -487,7 +487,8 @@ Game's, those moved by hand stay, with a notice; B kept as they were).
 - Progress counts in Free mode from the start (0% on a New Game), its boxes always there.
 - `saves.migrateFree` moves an older visit's marks once, on load, wherever Free mode's slot is (the
   live keys or its copy while a save is active; a save's keys are never touched). The notice
-  («Novedad», `pharloom.freeNote`) shows on the Inventory and Progress until «Entendido».
+  («Novedad», `pharloom.freeNote`) showed on the Inventory and Progress until «Entendido»; removed on
+  13 October 2026 at Albert's request (no «New» notices), the migration now silent.
 - Plain fixes: «Todo al máximo» marks everything (100%) instead of clearing the marks; «Partida nueva»
   (`PROFILE_NEW_GAME`) instead of «Hornet al empezar», and a New Game's Hunter is at evolution 1 with no
   Vesticrest; Progress lets you mark without going to the Inventory first; the Map's first mark no longer
