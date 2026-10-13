@@ -321,6 +321,8 @@
     const journal = {};
     for (const [id, name] of Object.entries(CO.JOURNAL)) if (kills.has(name)) journal[id] = Math.max(0, kills.get(name));
     const flower = (items.get('White Flower') || {}).Amount;
+    const corpse = typeof pd.HeroCorpseScene === 'string' && /^[\w ()-]{1,64}$/.test(pd.HeroCorpseScene) ? pd.HeroCorpseScene : '';
+    const at = (v) => (v && typeof v === 'object' ? v : {});
     const held = (x) => (x.kind === 'tool' ? !!(tools.get(x.save) || {}).IsUnlocked : int((items.get(x.save) || {}).Amount) > 0);
     return {
       // Unlocked and not hidden, as the game's ToolItemManager counts them (IsUnlockedNotHidden):
@@ -366,7 +368,9 @@
       // map draws, behind what's entered until Hornet sits at a bench or with the Quill), the
       // Quill (hasQuill: without it the game draws nothing it has mapped), mapAllRooms, the areas
       // whose map is bought (Has<Area>Map, by the area's name in the flag), where the cocoon lies
-      // (the scene Hornet last fell in, while it's there), the things beyond the 100% had
+      // (the scene Hornet last fell in, while it's there, and where in it: cocoonAt, the point and
+      // the scene's size the game marks it by, HeroDeathScenePos and HeroDeathSceneSize, as
+      // js/rooms.js mapPoint takes them; [] without), the things beyond the 100% had
       // (js/spots.js EXTRAS) and the bosses beaten; the wishes' and the main objectives' marks done
       // (js/spots.js TASKS), and the Steel Sentinel's three spots this game chose (SteelQuestSpots).
       visited: [...visited].filter((x) => typeof x === 'string' && /^[\w ()-]{1,64}$/.test(x)).sort(),
@@ -375,7 +379,8 @@
       quill: pd.hasQuill === true,
       mapAll: pd.mapAllRooms === true,
       maps: MAP_FLAGS.filter((f) => pd[f] === true).map((f) => f.slice(3, -3)),
-      cocoon: typeof pd.HeroCorpseScene === 'string' && /^[\w ()-]{1,64}$/.test(pd.HeroCorpseScene) ? pd.HeroCorpseScene : '',
+      cocoon: corpse,
+      cocoonAt: corpse ? fourNumbers([at(pd.HeroDeathScenePos).x, at(pd.HeroDeathScenePos).y, at(pd.HeroDeathSceneSize).x, at(pd.HeroDeathSceneSize).y]) : [],
       extras: SP.EXTRAS.map((x, i) => (has(x[2]) ? i : -1)).filter((i) => i >= 0),
       evaSlots: evaSlots(crests),
       bosses: SP.BOSSES.filter((b) => has(b[2])).map((b) => b[0]),
@@ -421,6 +426,8 @@
   const mapValue = (x, free) => (typeof x === 'boolean' || (typeof x === 'number' && Number.isFinite(x))
     || (typeof x === 'string' && /^[\w ()-]{0,64}$/.test(x)) ? x : free);
   const scenes = (l) => [...new Set(Array.isArray(l) ? l : [])].filter((x) => typeof x === 'string' && /^[\w ()-]{1,64}$/.test(x)).sort();
+  // A point and a size (the cocoon's): four finite numbers, the size above zero, else none.
+  const fourNumbers = (a) => (Array.isArray(a) && a.length === 4 && a.every(Number.isFinite) && a[2] > 0 && a[3] > 0 ? a : []);
   // The 28 maps Shakra sells, as the save flags them (checked on the author's saves).
   const MAP_FLAGS = Object.freeze(['HasMossGrottoMap', 'HasWildsMap', 'HasBoneforestMap', 'HasDocksMap', 'HasGreymoorMap',
     'HasBellhartMap', 'HasShellwoodMap', 'HasCrawlMap', 'HasHuntersNestMap', 'HasJudgeStepsMap', 'HasDustpensMap', 'HasSlabMap',
@@ -464,7 +471,7 @@
     needle: 0, kit: 0, pouch: 0, everbloom: false, purse: {}, rosaries: 0, shards: 0, farsight: false, hasJournal: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', area: '', build: {},
     quests: [], bellshrines: [], bells: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
     bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [],
-    visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', extras: [], bosses: [],
+    visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], bosses: [],
     tasks: [], steelSpots: [], peopleVars: {}, evaSlots: 0 });
   const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
   // Each field only if it has the type an empty game gives it.
@@ -485,6 +492,7 @@
     out.extras = [...new Set(out.extras.flatMap((k) => EXTRA_AT.get(k) || []))].sort((a, b) => a - b);
     out.tasks = out.tasks.map((k) => TASK_AT.get(k)).filter((i) => i !== undefined);
     out.steelSpots = out.steelSpots.filter((x) => typeof x === 'string' && /^[\w ()-]{1,64}$/.test(x));
+    out.cocoonAt = out.cocoon ? fourNumbers(out.cocoonAt) : [];
     out.bosses = out.bosses.filter((id) => SP.BOSSES.some((b) => b[0] === id));
     // The gauntlets go by their ids, the wiki's subpages: one the list no longer has is dropped.
     out.gauntlets = out.gauntlets.filter((id) => GA.GAUNTLETS.some((x) => x.id === id));

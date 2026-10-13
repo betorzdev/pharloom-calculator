@@ -432,6 +432,22 @@
     });
   }
 
-  SS.engine = { roundHalfEven, normalize, modsFor, hitsOf, usesToKill, interval, compute, plan, regen, binds, endure, phases, pieces };
+  /* The Vesticrest for a game marked by hand (Free mode's «What I have»), from what's had, as Eva
+     counts (the wiki's Eva page): every slot a Crest but the Hunter's starts with, and as many of
+     their locked ones as Memory Lockets are had (a save counts each one opened: js/savefile.js
+     evaSlots). Its yellow slot at 12, its blue one at 20 (D.VESTICREST.at). */
+  const SLOTS = SS.crestSlots || require('./crest-slots.js');
+  function evaOf(crests, lockets) {
+    let open = 0, locked = 0;
+    for (const id of new Set(crests || [])) {
+      const s = SLOTS[id];
+      if (id === 'hunter' || !Array.isArray(s)) continue;
+      for (const x of s) if (x[3]) locked++; else open++;
+    }
+    return open + Math.min(Math.max(0, lockets || 0), locked);
+  }
+  const vestOf = (crests, lockets) => { const n = evaOf(crests, lockets); return { yellow: n >= D.VESTICREST.at.yellow, blue: n >= D.VESTICREST.at.blue }; };
+
+  SS.engine = { roundHalfEven, normalize, modsFor, hitsOf, usesToKill, interval, compute, plan, regen, binds, endure, phases, pieces, evaOf, vestOf };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.engine;
 })();

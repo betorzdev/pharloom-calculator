@@ -40,8 +40,8 @@ the work up reads it first, then the step it's on.
 | 1 | **The shell**: header, screen bar (desktop and phone), the screen's frame and title, footer and About, the atmosphere | **Built** (28 Sep) | [`04-shell-variants.html`](04-shell-variants.html) |
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html` |
-| 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html` |
-| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
+| 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html` |
+| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight and the leftovers 13 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct) | [`12-map-variants.html`](12-map-variants.html) |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds) | [`15-journal-variants.html`](15-journal-variants.html) |
 | 8 | Crest (`tools`) | **Built** (28 Sep) | [`18-crest-variants.html`](18-crest-variants.html) |
@@ -458,6 +458,42 @@ Albert chose **silk 2 · beads on a thread**. Built:
   repo): **A · beads together**, B · the HUD's spool, C · nine and nine. Albert chose **A**: the
   same beads on their thread, strung tight from the left, the thread drawn bead by bead.
 
+### Free mode's start (13 October 2026)
+
+Found in the Progress review: in Free mode the Inventory started every ladder at the top («Everything
+maxed»), so a first-time player who marked four Tools read 40% on Progress (the Act 2 save's own
+marks are 15%; the masks, silk, Silk Hearts, Needle, Kit and Pouch at the top made up the rest). The
+ladders were the Crest screen's build (`pharloom.build`, `FREE_START`), so trying builds and keeping
+your game by hand shared them. The sibling does the same, and worse: its Free mode opens at 65% with
+nothing marked (the Knight maxed and every charm had).
+
+The options (`42-free-mode-start-variants.html`, the real page over a first visit, an older visit
+with marks and a game marked by hand, kept out of the repo): 1 where Free mode starts (**A** a New
+Game, B everything maxed as it was, C ask once); 2 the Crest screen (**A** a «Try with: Everything ·
+What I have» switch, B always everything, C the Inventory's marks as it was, which with a New Game
+leaves an empty Hunter); 3 Progress (**A** counts from the start, 0% with its boxes, B the guide
+until something is marked); 4 an older visit's marks (**A** the levels left at the top go to a New
+Game's, those moved by hand stay, with a notice; B kept as they were).
+
+**Decision: A in all four** (13 October 2026), built:
+- Free mode's marks are your game and start as a New Game (`App.freeGame`, `js/app-saves.js`): the
+  Hunter Crest and nothing else. The ladders and the Hunter's evolution are the marks', in
+  `pharloom.progress` as a save keeps them (`needle`, `kit`, `pouch`, `masks`, `spools`, `hearts`,
+  `build.hunterStage`); the Inventory sets them (`invLevel`), Progress and the Map read them.
+- The Crest screen's build is apart. «Probar con: Todo · Lo que tengo» (`prefs.ctTry`): Everything
+  is the build as it was, every Tool at hand; What I have takes your levels and evolution, the
+  Vesticrest Eva would give for the Crests and Memory Lockets marked (`engine.vestOf`), and only what's
+  marked, and its level steppers set your game. A link with another build opens on Everything.
+- Progress counts in Free mode from the start (0% on a New Game), its boxes always there.
+- `saves.migrateFree` moves an older visit's marks once, on load, wherever Free mode's slot is (the
+  live keys or its copy while a save is active; a save's keys are never touched). The notice
+  («Novedad», `pharloom.freeNote`) shows on the Inventory and Progress until «Entendido».
+- Plain fixes: «Todo al máximo» marks everything (100%) instead of clearing the marks; «Partida nueva»
+  (`PROFILE_NEW_GAME`) instead of «Hornet al empezar», and a New Game's Hunter is at evolution 1 with no
+  Vesticrest; Progress lets you mark without going to the Inventory first; the Map's first mark no longer
+  starts from «everything but the pieces»; on a phone «Empezar desde» takes its own line; the Crest screen
+  on «Lo que tengo» with no Tool marked says so, with the way to the Inventory.
+
 ## Step 5 · Progress
 
 ### What there is (28 September 2026)
@@ -583,6 +619,74 @@ below as the 100% tab. **Decision: E** (11 October 2026), built:
 - The road card counts as the rings do (3/31 here, not the step's 2/15, which counted all the points
   as one thing). The Lace check was checked: `defeatedLaceTower` is set only in Song_Tower_01, the
   Cradle's tower, so «Derrota a Lace en la Cuna» is right (Save 2 has the three melodies).
+
+### At first sight (13 October 2026)
+
+Albert: a first-time player must understand the tab at once; people look for guides on getting from
+Act 2 to Act 3. Looked at over five real saves (none, Act 1 at 7%, Act 2 at 15% and at 61% just
+before Act 3, Act 3 at 72%, 100%) and the sibling's ledger. What a newcomer didn't get: nothing said
+what the tab is, nor that the game has three Acts; «Desbloquea el deseo «Seda y alma»» opened it with
+no word that this wish opens Act 3; at 61% the three things left sat among 42 ticked rows, three
+screens long; the thread's steps were bare nouns («Muro de deseos», «Cuidador»); nothing said how the
+100% splits (the Tools are half); without a save the 100% card was an empty ring with a lone «%», and
+the guide a long flat list with no word about importing; at 100%, «0 cosas… que ya puedes conseguir».
+
+The options (`40-progress-clarity-variants.html`, the real page over the five saves, each decision
+switchable): 1 the top (A the three Acts and a sentence, B the sentence, C as it was); 2 the step
+(A «Lo siguiente», only what's missing, numbered, the whole list folded; B the lists without the
+done rows; C as it was); 3 the thread (A steps named as actions, B a numbered list down the page, C
+as it was); 4 the 100% (A a bar of the split with its legend, B a sentence and «n % to go» per row,
+C as it was); 5 no save (A the invitation, the card's figure and both roads with their threads and
+lists folded, B the invitation and the card, C as it was).
+
+**Decision: A in all five** (13 October 2026), built (`js/app-progress.js`, `css/app.css`):
+- `actsTop()`: `.pg-acts` over the tabs, the three Acts on the journey's thread with `ACT_n_NAME`
+  under each, yours marked «Estás aquí», and `.pg-here`: the step and what's left of it in the
+  rings' units, or the 100% in Act 3, or what the tab is without a save.
+- Steps are read by id (`TITLE`, `SHORT`, from `js/acts.js` next()), so a step the road gains keeps
+  its words; the thread shows «n · what to do», the later medallions the same.
+- `todoHtml()`: «Lo siguiente» from the parts' own rows, the done left out; the wish points short as
+  one line with the four nearest wishes (`byNear`, rooms from the bench); «Talk to Pavo» once the key
+  is ready. The parts' groups fold under «Ver la lista entera» (`prefs.pgList`).
+- Act 3 keeps only the endings on its thread (`journeyEnds`), the thread unlit: they aren't a
+  sequence. The bridge to the 100% is gone when nothing's left to get.
+- The 100% tab: `.pg-split`, a bar of a hundred by category, its legend and «La cifra de cada fila
+  es cuánto tienes de lo que vale, en puntos del 100 %» (not «each thing is 1%»: masks and spools
+  count whole), and a «Tienes / vale (%)» head over the rows.
+- No save: `.pg-invite` with «Importar del juego» over either tab, the card «100 % en 10
+  categorías», each road with its thread (`journey(r, true)`) and every list under «Ver los n».
+
+### The leftovers (13 October 2026)
+
+What the three Progress PRs of the day left open, looked at over the real saves (none, Act 2 at 15%
+and 61%, Act 3 at 76% in Steel Soul with Twisted Child closed, 100%, 100% in Steel Soul with an
+ending closed, Free mode with marks) in `41-progress-leftovers-variants.html` (kept out of the repo):
+1 the endings ring with one closed (**A** count the ones still within reach, B all four with the
+closed share dim, C as it was); 2 long how lines on a phone (A two lines and «more», **B** the
+lead and «+n more», C a part a line, D as it was); 3 the step thread on a phone (A names taking
+turns above and below, B numbers and only the current step named, **C** down the page, D as it
+was); 4 rows that only say their area (**A** a line, «Found in the area», B the area under the
+name, C a note in the group, D as it was); 5 Your game's road line (**A** one line with the step's
+name, B a small card, C as it was); 6 Free mode with marks (**A** the top says what it counts and
+the ladders' groups where they're set, B only the top, C as it was).
+
+**Decision: 1 A, 2 B, 3 C, 4 A, 5 A, 6 A** (13 October 2026), built (`js/app-progress.js`,
+`js/app-home.js`, `css/app.css`):
+- `endsOf()`: in Act 3 an Act 2 ending never seen is closed; the thread crosses it out with
+  «cerrado», the ring is «Finales a tu alcance» over the open ones with a line naming the closed,
+  and the tab's card says «n de m finales a tu alcance».
+- `howParts()` and the wish rows give each how line its lead (who asks and what it asks, the shop
+  and its price, the caravan's stop) and what it waits for (what posts it, the wish first, the Act,
+  the keys); `howHtml()` folds the second behind «+n más» (`pgMore`) at 640 px and under.
+- `.pg-journey.is-road`: on a phone the road's thread runs down the page, a step a line.
+- `isFound()`: a missing thing of the 100% whose way is `found` says «Se encuentra en la zona: el
+  alfiler marca dónde» (without the pin's half when the Map has no mark for it).
+- `App.roadNow` carries the step's short name; Your game's line reads «Camino al Acto 3 · paso 1 de
+  5: Desbloquea «Seda y alma» · 28 de 31».
+- Free mode with marks: «Modo libre.» and what it counts over the tabs; the masks', silk's,
+  upgrades', Needle's and Silk Hearts' groups say «Esto se fija en el Inventario» with the way there.
+- Plain fixes: no «·» head (Act heads only when a list spans two Acts), «Te falta 1», the bridge's
+  figure centred on a phone, the tab card's name balanced (no lone «3»).
 
 ## Step 6 · Map
 

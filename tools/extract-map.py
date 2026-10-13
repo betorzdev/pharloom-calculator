@@ -63,6 +63,16 @@ DeactivatePlayerDataTest, DeactivateIfPlayerdataFalse). js/rooms.js piecesOn doe
     from where it is and a scale (the Slab with the Cloakless crest, the Dust Maze by its
     entrance).
 
+Where a point of a scene goes (GameMap.GetMapPosition, Assembly-CSharp 1.0.30000, re-read on
+13-Oct-2026 with dnfile and dncil): the game puts Hornet's compass and her cocoon by it, x / width
+across a box of the scene's piece and y / height up it, the scene's size its tilemap's. ROOMS
+keeps that box (bounds_box, below); js/rooms.js mapPoint applies the rule, for tools/gen-spots.js
+and tools/gen-people.js (the things in a room) and for the cocoon on the Map. The box is the
+drawing's canvas to within a pixel (the canvas, rounded one by one, was ROOMS until then), and
+the scenes' own walls (their TileMap Render Data colliders) placed so trace the drawings. The
+bench pins, which the game sets by hand, sit a median 2.8 px from their RestBench placed so
+(about 3 px above it; Belltown's 36 px and Bonetown's 25 px off).
+
 What js/map.js carries for that (its header says it field by field): PIECES, each piece's rules
 and its drawings' places in pieces.webp; ZONES, each area's bool and moves; VARS, the playerData
 fields the rules read; FREE, their values with no save (the world explored before Act 3, with
@@ -294,14 +304,43 @@ def placed(sprite, color, wx, wy, sx, sy, ox, oy, ppu):
     return out, X0, Y0
 
 
-def canvas_box(sprite, wx, wy, sx, sy, ox, oy, ppu):
-    """The drawing's whole canvas on the map as ROOMS has always kept it (rounded one by one): the
-    marks are placed by it, so it mustn't move."""
-    k = ppu / sprite.m_PixelsToUnits
-    im = full_image(sprite)
-    w, h = max(1, round(im.width * k * abs(sx))), max(1, round(im.height * k * abs(sy)))
-    pv = sprite.m_Pivot
-    return [round((wx - ox) * ppu - w * pv.x), round((oy - wy) * ppu - h * (1 - pv.y)), w, h]
+def bounds_box(p, ox, oy, ppu):
+    """A room's box in ROOMS: the one GameMap.GetMapPosition places a point of its scene by
+    (Assembly-CSharp 1.0.30000, read on 13-Oct-2026). That is how the game puts Hornet's compass
+    on its map, and her cocoon (PositionCompassAndCorpse, from HeroDeathScenePos and
+    HeroDeathSceneSize):
+      · GetSceneInfo finds the piece named as the scene among its area's children; the scene's
+        place is the area's localPosition plus the piece's (no scale between them), in the map's
+        own space (Game_Map_Hornet: the compass is its child);
+      · its GameMapScene's BoundsSprite: the fullSprite of a piece that starts Rough and has one,
+        else the renderer's sprite as the scene file has it (initialSprite), else none, and none
+        while unmappedNoBounds holds and the piece isn't mapped (Dust_09: the marks are a guide,
+        so its box as once mapped);
+      · its size, Sprite.bounds' (the sprite's whole rectangle over its pixels per unit, the
+        transparent margins in: the trimmed meshes would have put the benches off their pins) by
+        the piece's localScale; the box centred on the scene's place, whatever the sprite's pivot;
+      · a point (x, y) of the scene goes x / width across it and y / height up, the scene's size
+        being its tilemap's (pickups.json sizes; currentSceneSize is the TileMap's width and
+        height): js/rooms.js mapPoint. With no BoundsSprite the point is the scene's place as is.
+    The drawings are placed by the same transforms, so the box is the drawing's canvas (every map
+    sprite has its pivot in the middle). Kept to a tenth of a pixel. → [x, y, w, h] in the map's
+    pixels (w = h = 0 when the piece has no BoundsSprite)."""
+    root, area, me = p['ts'][0], p['ts'][1], p['ts'][2]
+    lx = area.m_LocalPosition.x + me.m_LocalPosition.x
+    ly = area.m_LocalPosition.y + me.m_LocalPosition.y
+    rs = root.m_LocalScale
+    wx, wy = root.m_LocalPosition.x + lx * rs.x, root.m_LocalPosition.y + ly * rs.y
+    cx, cy = (wx - ox) * ppu, (oy - wy) * ppu
+    s = p['full'] if p['state'] == ROUGH and p['full'] is not None else p['own']
+    if s is None:
+        return [round(cx, 1), round(cy, 1), 0, 0]
+    w = s.m_Rect.width / s.m_PixelsToUnits * me.m_LocalScale.x * rs.x * ppu
+    h = s.m_Rect.height / s.m_PixelsToUnits * me.m_LocalScale.y * rs.y * ppu
+    if w <= 0 or h <= 0:
+        # The game mirrors a point in a flipped piece (its size comes out negative); ROOMS' readers
+        # take a box's width and height as positive. None is flipped in 1.0.30000.
+        raise ValueError(f'{p["scene"]}: a flipped map piece: ROOMS and js/rooms.js mapPoint need it handled')
+    return [round(cx - w / 2, 1), round(cy - h / 2, 1), round(w, 1), round(h, 1)]
 
 
 JOIN = (0.92, 1.08)   # two partly covered pixels whose coverages add up to about one: a join
@@ -539,9 +578,10 @@ def main(game):
     for p in drawn:
         for key, (s, c) in p['looks'].items():
             im, px, py = placed(s, c, p['x'], p['y'], p['sx'], p['sy'], minx, maxy, PPU)
-            # ROOMS keeps the whole drawing's canvas with its first rules (the marks are placed by it).
+            # ROOMS: the box the game places a point of the scene by (bounds_box), the first piece of
+            # that name with a drawing (the pieces that share a name are parts, not scenes).
             if key == f'{len(p["sprites"]) - 1},{len(p["colors"]) - 1}':
-                boxes.setdefault(p['scene'], canvas_box(s, p['x'], p['y'], p['sx'], p['sy'], minx, maxy, PPU) + [p['area']])
+                boxes.setdefault(p['scene'], bounds_box(p, minx, maxy, PPU) + [p['area']])
             hd, hpx, hpy = placed(s, c, p['x'], p['y'], p['sx'], p['sy'], minx, maxy, PPU * HD)
             raw.append((p, key, im, px, py, hd, hpx, hpy))
 
@@ -569,7 +609,7 @@ def main(game):
                       'rank': rank[p['gid']]})
     for p in pieces:
         if not p['looks']:
-            boxes.setdefault(p['scene'], [round((p['x'] - minx) * PPU), round((maxy - p['y']) * PPU), 0, 0, p['area']])
+            boxes.setdefault(p['scene'], bounds_box(p, minx, maxy, PPU) + [p['area']])   # no drawing: its point
     # Where two pieces meet edge to edge, each drawing's pixel on the line is partly covered, and
     # drawn one over the other they cover it less than whole: a dark line along every such join.
     joined = close_joins(looks, 'im', 1, W), close_joins(looks, 'hd', HD, W)
@@ -661,14 +701,18 @@ def main(game):
     for i, h in here.items():
         if h:
             PINS[i] += ([None] if len(PINS[i]) == 4 else []) + [h]
-    # The benches the game doesn't pin: at their RestBench, x / width across their room's drawing
-    # and y / height up it (the scene's size, its tk2dTileMap), as tools/gen-spots.js places points.
+    # The benches the game doesn't pin: at their RestBench, placed as the game places a point of a
+    # scene (bounds_box: x / width across its room's box and y / height up it, the scene's size its
+    # tilemap's), as js/rooms.js mapPoint does for tools/gen-spots.js.
     seen = json.load(open(PICKUPS))
+    def map_point(r, size, x, y):
+        return r[0] + x / size[0] * r[2], r[1] + (1 - y / size[1]) * r[3]
     for s in UNPINNED:
         r, b, size = boxes.get(s), seen['benches'].get(s.lower()), seen['sizes'].get(s.lower())
         if not (r and r[2] and b and size) or any(o[0] == 'bench' and o[3] == s for o in PINS):
             raise ValueError(f'{s}: no room, RestBench or size to place its bench by, or the game pins it now')
-        PINS.append(['bench', round(r[0] + b[0] / size[0] * r[2]), round(r[1] + (1 - b[1] / size[1]) * r[3]), s])
+        x, y = map_point(r, size, b[0], b[1])
+        PINS.append(['bench', round(x), round(y), s])
     for s, (host, door, flag) in INSIDE.items():
         r, size = boxes.get(host), seen['sizes'].get(host.lower())
         if not (r and seen['benches'].get(s.lower())) or any(o[3] == s for o in PINS):
@@ -677,7 +721,7 @@ def main(game):
             at = next((e for e in seen['pd'].get(door, []) if e[0] == host.lower() and isinstance(e[3], (int, float))), None)
             if not (r[2] and size and at):
                 raise ValueError(f'{s}: no door {door} in {host} to place its bench by')
-            x, y = r[0] + at[3] / size[0] * r[2], r[1] + (1 - at[4] / size[1]) * r[3]
+            x, y = map_point(r, size, at[3], at[4])
         else:
             x, y = r[0], r[1]   # a room with no drawing: the point where the game places it
         PINS.append(['bench', round(x), round(y), s, ['flag', flag]])
@@ -697,7 +741,9 @@ def main(game):
            "   screen's tree and its code; the rules are in its header): not edited by hand.\n"
            "   W, H: the map's size in pixels; PPU: its pixels per world unit.\n"
            "   ROOMS: scene → [x, y, w, h, area] in the map's pixels (the area as the game names its\n"
-           "   branch of the map: Bone, Crawl, Dock…); w = h = 0 for a room with no drawing of its own,\n"
+           "   branch of the map: Bone, Crawl, Dock…): the box the game places a point of the scene by\n"
+           "   (GameMap.GetMapPosition: its piece's BoundsSprite by its scale, centred on its place; the\n"
+           "   drawing's canvas), to a tenth of a pixel; w = h = 0 for a room with no drawing of its own,\n"
            "   a point where the game places it.\n"
            "   PINS: [kind, x, y, scene, lit?, here?]: the game's own pins for the benches, the Bellways and\n"
            "   the Ventrica stations (kind: bench, bellway, ventrica), and what lights one (the station\n"

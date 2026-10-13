@@ -13,8 +13,15 @@
                   delivery is worth ½), and four checks on the save: the flea caravan at Fleatopia,
                   the Faydown Cloak, Lace beaten atop the Cradle's tower, and the Bellhome's key.
                   Pavo gives that key when Bellhart's Glory is done and 2 of the group 'Belltown
-                  House Key''s wishes are (read from his FSM: the Belltown Greeter's).
-     2. offer     the Caretaker offers the wish Silk and Soul (CaretakerOfferedSnareQuest).
+                  House Key''s wishes are (read from his FSM: the Belltown Greeter's). The
+                  caravan settles in Fleatopia when Mooshka, at the Blasted Steps, has 22 fleas
+                  and Hornet has seen the empty Pale Lake (his FSM there: Caravan Troupe Leader
+                  Judge NPC, Fleas Saved and SeenFleatopiaEmpty).
+     2. offer     the wish Silk and Soul accepted from the Caretaker (his FSM: Enclave Caretaker).
+                  He offers it once the group holds (CaretakerOfferedSnareQuest, set as he offers
+                  it, before the answer); taken from Bellhart's board, it still sends you to him.
+                  Accepting begins Soul Snare, which completes its first stage, Soul Snare Pre
+                  (a step begun completes the one before it, on every save read).
      3. pieces    the Soul Snare's four pieces: three souls and the Snare Setter.
      4. ready     the pieces given, the snare built (soulSnareReady).
      5. silk      Grand Mother Silk, snared with the Needolin: the world turns black-threaded.
@@ -85,7 +92,12 @@
   }
 
   const EMPTY = { quests: [], bellshrines: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false,
-    laceTower: false, bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, act: 1 };
+    laceTower: false, bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, act: 1, pieces: [] };
+  /* The Flea Caravan: CaravanTroupeLocation 0 the Marrow, 1 Greymoor, 2 the Blasted Steps, 3
+     Fleatopia; it moves when Mooshka is spoken to. Its last move asks for 22 Lost Fleas (the
+     game's Fleas Saved: the site's flea pieces, Kratt and Vog among them). */
+  const FLEATOPIA = 3, FLEAS = 22;
+  const FLEA_AT = CO.PIECES.map((p, i) => (p[0] === 'flea' ? i : -1)).filter((i) => i >= 0);
   const step = (id, done, total, extra) => ({ id, ok: done >= total, done, total, ...extra });
 
   function toAct2(g) {
@@ -107,19 +119,24 @@
     const key = group('Belltown House Key', g);
     const glory = missing('Belltown House Mid', done);
     // The Bellhome's key, under its check: Bellhart's Glory and 2 of the group's wishes.
-    const tests = rule.tests.map((t) => (t.id !== 'bellhomeKey' ? t : { ...t, key: {
+    const tests = rule.tests.map((t) => (t.id === 'bellhomeKey' ? { ...t, key: {
       glory: done.has('Belltown House Mid'), gloryQuest: glory, got: key.points.got, need: key.points.need,
-      missing: key.points.missing, ready: done.has('Belltown House Mid') && key.points.got >= key.points.need } }));
+      missing: key.points.missing, ready: done.has('Belltown House Mid') && key.points.got >= key.points.need } }
+      // The caravan, while it isn't there: where it stands and the fleas rescued, of the 22.
+      : t.id === 'caravan' ? { ...t, caravan: { at: Math.max(0, Math.min(FLEATOPIA, g.caravan | 0)),
+        fleas: FLEA_AT.filter((i) => g.pieces.includes(i)).length, need: FLEAS } } : t));
     const unlockTotal = rule.required.total + 1 + tests.length;
     const unlockDone = rule.required.done + (rule.points.got >= rule.points.need ? 1 : 0) + tests.filter((t) => t.ok).length;
     const wished = g.snareOffered || done.has('Soul Snare Pre');
+    // Accepted: Soul Snare begun (its Pre done), done, or the snare built. Offered and turned down isn't.
+    const taken = done.has('Soul Snare Pre') || done.has('Soul Snare') || g.snareReady;
     const given = done.has('Soul Snare') || g.snareReady;
     const pieces = QU.SNARE.map((x) => ({ kind: x.kind, save: x.save, name: x.name, ok: given || g.snarePieces.includes(x.save) }));
     return [
       // unlock is done once the Caretaker offers the wish, whatever the save says now.
       step('unlock', wished ? unlockTotal : unlockDone, unlockTotal,
         { required: rule.required, points: rule.points, tests }),
-      step('offer', wished ? 1 : 0, 1, { quest: 'Soul Snare Pre' }),
+      step('offer', taken ? 1 : 0, 1, { quest: 'Soul Snare Pre', declined: g.snareOffered && !taken }),
       step('pieces', pieces.filter((p) => p.ok).length, pieces.length, { pieces }),
       step('ready', g.snareReady ? 1 : 0, 1, { quest: 'Soul Snare' }),
       step('silk', 0, 1),
@@ -137,8 +154,10 @@
                     missing: [wish with its value] }, tests: [{ field, id, ok }] (id: 'caravan',
                     'doubleJump', 'laceTower', 'bellhomeKey'); the bellhomeKey test carries key:
                     { glory, gloryQuest (a wish: Bellhart's Glory), got, need, missing: [wish],
-                    ready (go and talk to Pavo) }
-       offer        quest ('Soul Snare Pre': the wish Silk and Soul)
+                    ready (go and talk to Pavo) }; the caravan test carries caravan: { at (its
+                    stop, 0 to 3), fleas (rescued), need (22) }
+       offer        quest ('Soul Snare Pre': the wish Silk and Soul), declined (offered, and
+                    turned down: talk to the Caretaker again)
        pieces       pieces: [{ kind, save, name, ok }]
        ready        quest ('Soul Snare')
        silk         (the change of Act)
@@ -151,6 +170,6 @@
     return { act: g.act + 1, done: ok, total: steps.length, steps };
   }
 
-  SS.acts = { FIELDS, group, missing, next };
+  SS.acts = { FIELDS, FLEAS, group, missing, next };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.acts;
 })();

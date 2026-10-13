@@ -16,8 +16,9 @@ What it writes (read on 28-Sep-2026, patch 1.0.30000):
           (an NPC, a shrine, a boss's corpse), and gen-spots picks among those by hand (its HAND).
           What only drops or pays it (HealthManager, GeoControl, Breakable…) and the title menu's
           HUD aren't kept.
-  fields  a playerData field the site reads (the abilities', the Bellshrines', the area maps' and
-          Shakra's SeenMapper<Area>) → [scene, object]:
+  fields  a playerData field the site reads (the abilities', the Bellshrines', the area maps',
+          Shakra's SeenMapper<Area>, and the flags of the pieces and extras that have no room of
+          their own: gen-spots HAND_PIECE, HAND_EXTRA) → [scene, object]:
           every PlayMakerFSM whose raw data names it (a set or a test: gen-spots picks).
   npcs    an object name the NPCS pattern list matches → [scene, object]: where each of them is.
   objects the objects kb/data/game/wanted.json asks for (tools/spots-wanted.js: the ones a save's
@@ -26,7 +27,17 @@ What it writes (read on 28-Sep-2026, patch 1.0.30000):
   benches each scene's RestBench → [x, y], which tools/gen-spots.js sets against the map's own
           bench pins to check how a point is placed on the map.
   sizes   each scene's size in world units, its tk2dTileMap's width and height: the game places a
-          point on its room's drawing by it (x / width across, y / height up).
+          point on its room's drawing by it (x / width across, y / height up). The tilemap is the
+          one the game reads (GameManager.RefreshTilemapInfo): on a root object tagged TileMap,
+          else any object so tagged, else the scene's first (read on 13-Oct-2026).
+  battles each scene's BattleScene objects (an enemy arena: a gauntlet's) → [[object, x, y, the
+          playerData flag it sets once won, or '']]: x, y the middle of its waves' enemies (the
+          object's own place is often a prefab's corner, or parked off the scene).
+  locks   each scene's ItemReceptacle (a door a key opens) → [[object, x, y]].
+  records each Journal record (its NAME_ key) → [[scene, component, object, x, y]]: what points at it
+          in a scene, one per scene and kind (the first enemy carrying it, EnemyDeathEffects, and
+          the first other component naming it: a boss scene's FSM): where that foe, a boss, is.
+  fleas   each scene's lost flea (an object named Flea Rescue…) → [[object, x, y]].
   doors   what opens a way and stays open, by kind → [[Scene, id, x, y]]: each object with a
           PersistentBoolItem of its own (not semi-persistent, saved, its scene's), whose bool the
           save keeps in sceneData.persistentBools under [Scene, id] once it's opened. Scene is the
@@ -101,6 +112,22 @@ MAPS = ['MossGrotto', 'Wilds', 'Boneforest', 'Docks', 'Greymoor', 'Bellhart', 'S
 SEEN_MAPPER = ['Bonetown', 'BoneForest', 'Docks', 'Wilds', 'Crawl', 'Greymoor', 'Bellhart', 'Shellwood', 'HuntersNest', 'JudgeSteps',
                'Dustpens', 'Peak', 'Shadow', 'CoralCaverns']
 FIELDS += [f'Has{m}Map' for m in MAPS] + [f'SeenMapper{m}' for m in SEEN_MAPPER]
+# Then the pieces of the 100% given by a script rather than lying (tools/gen-spots.js HAND_PIECE): the
+# Huge Flea tamed, Kratt back at the caravan, the wild troupe hunter met, two of the melodies.
+FIELDS += ['tamedGiantFlea', 'CaravanLechReturnedToCaravan', 'MetTroupeHunterWild', 'HasMelodyArchitect', 'HasMelodyConductor']
+# …and the extras whose check is a flag with no room of its own (tools/gen-spots.js HAND_EXTRA): three
+# Mossberries, the church's Rhinogrund, the Abyss's silk farm.
+FIELDS += ['bonetownAspidBerryCollected', 'mosstownAspidBerryCollected', 'bonegraveAspidBerryCollected', 'churchRhinoKilled',
+           'silkFarmAbyssCoresCleared']
+# The lost fleas: each is an object of its own in its room (its SavedFlea_<scene> flag is made from
+# the scene's name at run time, so nothing names it).
+FLEA = re.compile(r'Flea Rescue.*')
+# The Hunter's Journal's records (EnemyJournalRecord, by their displayName's key, NAME_<X>): what in a
+# scene points at one (an enemy's EnemyDeathEffects, a boss scene's FSM) is where that foe is.
+RECORDS = 'enemyjournal/journalrecords.bundle'
+RECORD = 'EnemyJournalRecord'
+DEATH = re.compile(r'EnemyDeathEffects.*')
+TILEMAP_TAG = 20000   # the "TileMap" tag (globalgamemanagers' TagManager: the first custom tag)
 # What opens a way that the save keeps in playerData rather than in sceneData (read in the author's
 # 100% save against the site, 11-Oct-2026): levers, a pressure plate, gates and doors, walls and
 # one-way ways, and where they're named (every component, not only the FSMs: a Lever_tk2d, a
@@ -157,13 +184,25 @@ def door_kind(comps, name):
     return None
 
 
+def one_each(v):
+    """A record's hits, one per scene and kind: the first enemy that carries it (EnemyDeathEffects…),
+    the first other component that names it."""
+    seen, out = set(), []
+    for x in v:
+        k = (x[0], bool(DEATH.fullmatch(x[1] or '')))
+        if k not in seen:
+            seen.add(k)
+            out.append(x)
+    return out
+
+
 def main(game, cache):
     got = pickle.load(open(cache, 'rb')) if cache and os.path.exists(cache) else None
-    if not got or len(got) != 12:   # none, or one kept before the doors, the pickups' bools, the maps, pd, kept or caches
+    if not got or len(got) != 16:   # none, or one kept before the doors, … the battles, the records, the fleas or the locks
         got = scan(game)
         if cache:
             pickle.dump(got, open(cache, 'wb'))
-    items, fields, npcs, objects, benches, sizes, doors, lying, maps, pd, kept, caches = got
+    items, fields, npcs, objects, benches, sizes, doors, lying, maps, pd, kept, caches, battles, records, fleas, locks = got
     r2 = lambda v: [round(x, 2) if isinstance(x, float) else x for x in v]
     srt = lambda v: sorted({tuple(r2(x)) for x in v}, key=lambda x: tuple(str(y) for y in x))
     out = {'items': {k: {'class': c, 'at': srt(v)} for (k, c), v in sorted(items.items())},
@@ -177,13 +216,19 @@ def main(game, cache):
            'maps': dict(sorted(maps.items())),
            'pd': {k: srt(v) for k, v in sorted(pd.items())},
            'kept': {k: srt(v) for k, v in sorted(kept.items())},
-           'caches': srt(caches)}
+           'caches': srt(caches),
+           'battles': {s: srt(v) for s, v in sorted(battles.items())},
+           'records': {k: srt(one_each(v)) for k, v in sorted(records.items())},
+           'fleas': {s: srt(v) for s, v in sorted(fleas.items())},
+           'locks': {s: srt(v) for s, v in sorted(locks.items())}}
     if len(out['pd']) < len(PD_WAYS):
         sys.exit(f"extract-pickups: no scene names {', '.join(sorted(set(PD_WAYS) - set(out['pd'])))} any more: PD_WAYS needs reading again")
     if len(out['maps']) < 10:
         sys.exit('extract-pickups: too few maps found lying: the fake collectables need reading again')
     if len(out['caches']) < 300:
         sys.exit('extract-pickups: too few caches: CACHES needs reading again')
+    if len(out['battles']) < 40 or len(out['records']) < 200 or len(out['fleas']) < 20:
+        sys.exit('extract-pickups: too few arenas, Journal records or fleas: BattleScene, RECORDS or FLEA need reading again')
     if len(out['doors'].get('lever', [])) < 50:
         sys.exit('extract-pickups: too few levers: the doors need reading again')
     for f in FIELDS[:11]:   # the abilities; a Bellshrine's flag is named where only some of them are
@@ -195,7 +240,8 @@ def main(game, cache):
         fh.write('\n')
     print(f"{len(out['items'])} items, {len(out['fields'])} fields, {len(out['npcs'])} people, "
           f"{sum(len(v) for v in out['objects'].values())} objects, {len(out['benches'])} benches, {len(out['sizes'])} scene sizes, "
-          f"{', '.join(f'{len(v)} {k}' for k, v in out['doors'].items())}, {sum(len(v) for v in out['lying'].values())} pickups' bools → {os.path.relpath(OUT)} "
+          f"{', '.join(f'{len(v)} {k}' for k, v in out['doors'].items())}, {sum(len(v) for v in out['lying'].values())} pickups' bools, "
+          f"{sum(len(v) for v in out['battles'].values())} arenas, {len(out['records'])} Journal records, {len(out['fleas'])} fleas → {os.path.relpath(OUT)} "
           f"({os.path.getsize(OUT) // 1024} KB)")
 
 
@@ -211,7 +257,7 @@ def scan(game):
 
     data = os.path.join(aa, 'dataassets_assets_assets', 'dataassets')
     targets, maps = {}, {}
-    for rel in BUNDLES:
+    for rel in BUNDLES + [RECORDS]:
         for o in UnityPy.load(os.path.join(data, rel)).objects:
             if o.type.name != 'MonoBehaviour':
                 continue
@@ -224,6 +270,8 @@ def scan(game):
                 if not d.get('isMap') and not KEY_FAKE.fullmatch(name or ''):
                     continue
                 maps[name] = [d.get('linkedPDBool'), (d.get('uiMsgName') or {}).get('Key')]
+            if rel == RECORDS:
+                name = (d.get('displayName') or {}).get('Key')
             if name:
                 targets.setdefault(o.assets_file.name.lower(), {})[o.path_id] = (name, CLS.get(script(o)))
     if sum(len(v) for v in targets.values()) < 200:
@@ -252,6 +300,7 @@ def scan(game):
     items, fields, npcs = defaultdict(list), defaultdict(list), defaultdict(list)
     objects, benches, sizes, doors, lying = defaultdict(dict), {}, {}, defaultdict(list), defaultdict(list)
     pd, kept, caches = defaultdict(list), defaultdict(list), []
+    battles, records, fleas, locks = defaultdict(list), defaultdict(list), defaultdict(list), defaultdict(list)
     pd_re = re.compile(rb'(?<![A-Za-z0-9_])(' + b'|'.join(re.escape(f.encode()) for f in sorted(PD_WAYS, key=len, reverse=True)) + rb')(?![A-Za-z0-9_])')
     # Each scene's own name, as the game (and its save) writes it: the bundles' are lower case.
     with open(os.path.join(aa, '..', 'catalog.bin'), 'rb') as fh:
@@ -266,6 +315,27 @@ def scan(game):
         # Each object's place in the world: its Transforms composed from the root.
         T = {o.path_id: o.read() for o in env.objects if o.type.name == 'Transform'}
         of_go = {t.m_GameObject.m_PathID: t for t in T.values()}
+        def arena(d, at):
+            """A BattleScene's arena: the middle (median) of its waves' enemies, the children of each
+            wave's object (its own transform is often a prefab's corner or parked), and its flag."""
+            byid = {o.path_id: o for o in env.objects}
+            kids = defaultdict(list)
+            for t in T.values():
+                kids[t.m_Father.m_PathID].append(t)
+            xs, ys = [], []
+            for w in d.get('waves') or []:
+                wo = byid.get(w['m_PathID'])
+                if wo is None:
+                    continue
+                wg = w['m_PathID'] if wo.type.name == 'GameObject' else wo.read_typetree()['m_GameObject']['m_PathID']
+                wt = of_go.get(wg)
+                for k in kids.get(next((p for p, t in T.items() if t is wt), None), []):
+                    p = world(k.m_GameObject.m_PathID)
+                    if p:
+                        xs.append(p[0])
+                        ys.append(p[1])
+            mid = lambda v: sorted(v)[len(v) // 2]
+            return [*([mid(xs), mid(ys)] if xs else at), d.get('setPDBoolOnEnd') or '']
         def world(gid):
             t, chain = of_go.get(gid), []
             while t is not None:
@@ -280,12 +350,17 @@ def scan(game):
                 sx, sy = sx * ls.x, sy * ls.y
             return [x, y] if chain else []
         want = wanted.get(scene, set())
-        if want:
-            for o in env.objects:
-                if o.type.name == 'GameObject':
-                    n = o.read().m_Name
-                    if n in want and n not in objects[scene]:
-                        objects[scene][n] = world(o.path_id)
+        tag_of = {}   # GameObject's path id → its tag
+        for o in env.objects:
+            if o.type.name == 'GameObject':
+                g = o.read()
+                n = g.m_Name
+                tag_of[o.path_id] = g.m_Tag
+                if n in want and n not in objects[scene]:
+                    objects[scene][n] = world(o.path_id)
+                if FLEA.fullmatch(n):
+                    fleas[scene].append((n, *world(o.path_id)))
+        tilemaps = []   # (how sure, order, size): the one the game reads first
         door_comps, bools, pickup_of, ints, comps_of, pd_hits, cache_of = defaultdict(set), [], {}, [], defaultdict(set), [], {}
         for o in env.objects:
             if o.type.name != 'MonoBehaviour':
@@ -306,14 +381,19 @@ def scan(game):
                     bools.append((gid, o))
                 else:
                     door_comps[gid].add(comp)
-            if comp == 'tk2dTileMap' and scene not in sizes:
+            if comp == 'tk2dTileMap':
                 d = o.read_typetree()
                 if d.get('width') and d.get('height'):
-                    sizes[scene] = (d['width'], d['height'])
+                    t = of_go.get(gid0)
+                    tagged = tag_of.get(gid0) == TILEMAP_TAG
+                    root = t is not None and not t.m_Father.m_PathID
+                    tilemaps.append((0 if tagged and root else 1 if tagged else 2, len(tilemaps), (d['width'], d['height'])))
                 continue
             got = set(refs(o)) if comp not in NOISE else set()
+            recs = {n for n, c in got if c == RECORD}
+            got = {x for x in got if x[1] != RECORD}
             hit = comp == 'PlayMakerFSM' and field_re.findall(o.get_raw_data())
-            if not got and not hit and comp not in ('PlayMakerFSM', 'BasicNPC', 'RestBench'):
+            if not got and not recs and not hit and comp not in ('PlayMakerFSM', 'BasicNPC', 'RestBench', 'BattleScene', 'ItemReceptacle'):
                 continue
             try:
                 ref = o.read().m_GameObject
@@ -324,6 +404,12 @@ def scan(game):
             if comp == 'RestBench':
                 benches.setdefault(scene, at)
                 continue
+            if comp == 'BattleScene':
+                battles[scene].append((go, *arena(o.read_typetree(), at)))
+            if comp == 'ItemReceptacle':
+                locks[scene].append((go, *at))
+            for k in recs:
+                records[k].append((scene, comp, go, *at))
             for name, cls in got:
                 items[(name, cls)].append((scene, comp, go, *at))
             if comp == 'CollectableItemPickup' and got and gid:
@@ -400,9 +486,14 @@ def scan(game):
                 caches.append((own, it.get('ID') or name_of(gid), comp, emptied, last))
             for f, comp, gid in pd_hits:
                 pd[f].append((scene, comp, name_of(gid) if gid else '', *(world(gid) if gid else [])))
+        if tilemaps:
+            sizes[scene] = min(tilemaps)[2]
+            if len(tilemaps) > 1 and min(tilemaps)[2] != tilemaps[0][2]:
+                print(f'{scene}: the tilemap the game reads is not the first ({min(tilemaps)[2]} for {tilemaps[0][2]})', file=sys.stderr)
         if i % 50 == 0:
             print(f'{i}/{len(names)} {scene}', file=sys.stderr, flush=True)
-    return dict(items), dict(fields), dict(npcs), dict(objects), benches, sizes, dict(doors), dict(lying), maps, dict(pd), dict(kept), caches
+    return (dict(items), dict(fields), dict(npcs), dict(objects), benches, sizes, dict(doors), dict(lying), maps, dict(pd), dict(kept), caches,
+            dict(battles), dict(records), dict(fleas), dict(locks))
 
 
 if __name__ == '__main__':

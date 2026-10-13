@@ -229,11 +229,11 @@
         ${check}
       </div>`;
     // The road to the next Act (js/acts.js), in one line that opens it in Progress.
-    // The step you're on and how far into it: "step 1 of 5, 14 of 15".
-    const r = SS.acts.next(g);
-    const at = r ? r.steps.findIndex((x) => !x.ok && !x.bypassed) : -1;
-    const cur = at >= 0 ? r.steps[at] : null;
-    const roadText = r && cur ? t(cur.total > 1 ? 'homeRoadPart' : 'homeRoad', { n: num(r.act), k: num(at + 1), total: num(r.total), done: num(cur.done), of: num(cur.total) }) : '';
+    // The step you're on, by its name, and how far into it, as Progress's card counts it:
+    // "step 1 of 5: Unlock "Silk and Soul" · 28 of 31" (design/41, 5 A).
+    const now = App.roadNow ? App.roadNow(g) : null;
+    const pts = (n) => (Number.isInteger(n) ? num(n) : App.NF[1].format(n));
+    const roadText = now ? t(now.of > 1 ? 'homeRoadPart' : 'homeRoad', { n: num(now.act), k: num(now.k), total: num(now.total), step: now.step, done: pts(now.got), of: num(now.of) }) : '';
     const link = (v, text) => `<a class="text-btn" href="${App.here(App.hashFor(v))}" data-act="view" data-value="${v}">${esc(text)}</a>`;
     const road = roadText ? `<p class="hm-road">${link('progress', roadText)}</p>` : '';
     const near = App.nearList ? App.nearList(g).slice(0, NEAR) : [];

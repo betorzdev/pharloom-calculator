@@ -1504,6 +1504,157 @@ bools and two more lifts' ints. Eleven rosary and shard pickups are set in none 
 (present and false in all three games: Bone_East_01's sits under a "Demo Gate", Under_17's under
 the Architect's final scene); they stay, unproven.
 
+**Progress's 100% audited against every save** (13 October). The ten categories are the wiki's
+`Completion (Silksong)` one by one (51 Tools with their three pairs, the Hunter Crest out, the
+cloaks out), Act 3 holds exactly its 7 points (93% before it, now a test), and over the 72 saves
+of the author's folder (and `user1.dat.bak1`) the site's figure equals the game's in all of them.
+Each Progress row was read as the screen reads it, from the slot (`toSnapshot` → `gameOf`), not
+from `game()`: every category's ticked rows add up to its count, the fleas to the game's own
+counter (the FleasCollected Target: the 27 SavedFlea_ flags with Kratt, Vog and the Huge Flea),
+no row is ticked in an Act before its own, and along each game's restore points no row goes from
+done to not done but one: a Steel Soul restore point has Rune Rage and the First Sinner beaten,
+and the next one hasn't (the game's own 45% → 55% agrees: the save, not the site). Over file://
+with real saves, the figures and counts on screen match the saves in both languages at 1440 and
+390, and the live link fed three later files in turn (55% → 95% → 100%) repaints Progress each
+time with no reload and no stale row. Fixed on the way:
+- **The flea caravan's rewards**: the Spool Fragment at 12 fleas and the Tool Pouch at 22, not the
+  completionist's 14 and 20 (the Troupe Leader's Dialogue FSM, Greymoor_08_caravan and
+  Coral_Judge_Arena, compares the FleasCollected Target's count against 12 and 22; the wiki agrees).
+- **Nineteen things of the 100% had no area** (Voltvessels, Flintslate, Swift Step, Clawline,
+  Silkspear, three Spool Fragments…): the completionist files them as the area alone ("Deep Docks"),
+  which the generator only read with a colon after it. Only the Everbloom has none now (a wish's).
+- **How to get it** follows your Act: a way the wiki tags with one (Pebb's and Mort's wares at
+  Grindle's in Act 3, the Curveclaw and the Fractured Mask by the Mottled Skarr's corpse, the
+  Magnetite Dice by Lumble's) replaces the earlier ones once the game is there
+  (`completion.js wayOf`). A shop now says what it still waits on: the wish to do first (Frey's
+  Multibinder and Spool Fragment after My Missing Courier, Jubilana's after The Lost Merchant)
+  and the ability (Grindle's Snitch Pick, the Clawline; the Architect's Sawtooth Circlet, the
+  Drifter's Cloak). The Map's cards say the same.
+Checked and left: Kratt counts by CaravanLechReturnedToCaravan where the game counts
+CaravanLechSaved, but both turn true at once in every save; the "what the missing purchases cost"
+line under the heading went with the design rounds (e80f0c0), and the guide no longer mentions it.
+
+**The road to Act 3, audited** (13 October). The rules (`js/quests.js`) were extracted again from
+the installed game: unchanged. Then each step against the game's FSMs, the wiki (Acts, Silk and
+Soul, the four pieces, Bellhome Key, Flea Caravan, Endings) and the popular guides (PCGamesN,
+Dexerto, Nintendo Life, allthings.how, gameshorizon; no Game8 or IGN page came up):
+- **The offer was ticked when only offered.** The Caretaker's FSM (Enclave Caretaker, Dialogue)
+  sets CaretakerOfferedSnareQuest as he offers, before the answer: turned down, the wish isn't
+  taken and his family's souls aren't given. The step is now the wish accepted: Soul Snare begun,
+  which completes Soul Snare Pre (a step begun completes the one before it in every one of the
+  72 saves); offered and turned down says to talk to him again.
+- **Your game and Progress counted the step apart** (12 of 15 against 28 of 31): Your game now
+  counts as Progress's card (`App.roadNow`).
+- **What makes each row actionable**, all from the game: each quest's `location` line («Creige of
+  the Halfway Home», `tools/extract-quests.py` → CHAIN `loc`), a pin to the Wishwall or the giver
+  on the Map, the area it's taken in when the pane has none (Trail's End, Roach Guts). The caravan
+  says its stop and the fleas: Mooshka's FSM at the Blasted Steps moves on with 22 Fleas Saved and
+  SeenFleatopiaEmpty (the empty Pale Lake); its stop there is the Last Judge's arena, so the Phantom's
+  way still needs the Judge. The pieces: the Chapel Maid's and the Bell Hermit's souls only once
+  accepted, the Seeker's Soul past Groal, the Snare Setter behind the Faydown Cloak, each with its
+  Map pin. What posts the late required wishes (Shakra's 14 maps, counted, for Trail's End; Sherma
+  and the Whiteward; Songclave grown by 3 more of its wishes; the Needle and a relic for
+  Restoration of Bellhart; the Cogwork Dancers or the Clawline for Bellhart's Glory), each checked
+  against the saves. Pinmaster's Oil counts with Plinney's second Needle upgrade, wish or not (the
+  Steel Soul game has it complete and never accepted). The last step says the Needolin, not a Bind;
+  in Act 3, the Act 2 endings never seen are closed in that game.
+- **The guides, where they're wrong:** "every wish" (it's 10 required and 17 of 25 points);
+  "20" or "25 fleas" (22 at the last stop, and the Pale Lake seen); "fix the Second Sentinel"
+  (its wishes are optional points); "the Bellhome after buying Shakra's maps" (that's Trail's End;
+  the key is Bellhart's Glory and 2 of Pavo's four). None names the Faydown Cloak or Lace in the
+  Cradle, which the game requires. Where they're right and the site was silent: the Chapel Maid
+  and the Bell Hermit give their souls only once the wish is taken.
+- `npm run check-pack` now prints the step each save is on and fails if a later save of a game
+  undoes a step of either road: none of the 72 does; every Act 3 save meets the road, no earlier
+  one shows it done.
+
+**The road's last data gaps** (13 October, the same day).
+- **What each wish asks to be brought.** `tools/extract-quests.py` now loads
+  `questsystem/proxies.bundle` and `collectables/fakecollectables.bundle`, the counters a quest's
+  targets name: the Rosary Quest Target and Shard Quest Target (currencyType 0 and 1) carry each
+  donation's Count. CHAIN `asks`: the four required donations are 250 (Restoration of Bellhart),
+  400 (Bellhart's Glory), 300 and 500 (Building Up and Strengthening Songclave): 1,450 rosaries,
+  as the audit had it. Flick's three ask 200, 300 and 440 shell shards (the first two required);
+  Bugs of Pharloom 100 Journal entries seen; the rest, their things in number (25 Ragpelts, 12
+  Fine Pins, 16 Choir Cloaks, the Huntress's 15/35/10 organs, the Gourmand's five dishes…). A
+  delivery's thing is one, carried: its Count isn't a number to bring (the Swag's 5 are the hits
+  it takes, the wiki says; the Rasher's 1 isn't its 8 segments), so a delivery wish says nothing
+  more. The fleas', races', Sentinel spots' and Journal kills' counters aren't brought: not in
+  asks. Progress's wish rows and «What's next» say it after who asks («Pabo de Campanilla · pide
+  250 rosarios»).
+- **Bugs of Pharloom's line.** Its asset leaves `location` empty, but the text has its title's own
+  `QUEST_JOURNAL_LOC`, «Nuu en Hogar a medio camino» / "Nuu at the Halfway Home", and Nuu's FSM in
+  Halfway_01 is the one that offers it: a wish with no location now takes its title's `_LOC`
+  when the text has one (it changes only that one and two later stages that already inherited
+  the same line).
+- **The Bell Hermit's soul.** Bellhart's Bellway is in Belltown_basement (the station at x≈21-28).
+  Its right side is a hidden area, a Remasker with a PersistentBoolItem at x≈78 (the Map's masked
+  extra there), and past it the drop bot1 (x 81) leads into Belltown_basement_03, the bell shaft,
+  where the Hermit sits (x≈95, below and left of where you land, at top1 x 136). The room holds no
+  breakable wall (its Breakables are bell piles, sacks and lamps; the shaft's One Way Walls are
+  below him): the guides' "breakable wall" is a wall you walk through. The wiki's Bell Hermit page
+  says the same ("a hidden wall to the right, then descending… at the far left edge"). The
+  piece's row says so.
+- **The live link, for real.** Over file://, headless Chrome with a Windows user agent (so
+  `canLive()` holds) and a stand-in for the picker whose handle reads the file last fed to it
+  through a real file input (IndexedDB can't clone a fake handle, so the harness hands it back on
+  `links.get`): a save imported with real clicks and "follow" on, then the file swapped under the
+  watcher, Restore_Points1's Act 2 early (31%) → Act 2 late (61%) → Act 3 (69%), each unwrapped
+  to the user.dat it holds. Progress repainted each time with no reload (step 1 with 22 things
+  left → 3 → the endings), and Your game's line too (9 of 31 → 28 of 31 → gone in Act 3).
+- Fixed on the way: Trail's End's line printed «({n} de {of})» raw (the count comes after it).
+
+**Progress's leftovers** (13 October, design/03-redesign.md step 5). The endings: CompletedEndings
+is per game and set as each ending is seen (the restore points show it: Weaver Queen between the
+melody lift and the Faydown Cloak, Twisted Child with the Witch Crest), so an Act 2 ending missing
+in an Act 3 game is closed for good, and the ring counts the ones still within reach: the Steel
+Soul game at 100% (user3.dat: Weaver Queen, Snared Silk, Sister of the Void) is 3 of 3, not 3 of
+4. A way the wiki calls `found` had no words, so those rows looked like missing data; they say
+they're found in the area. Free mode with marks was run for the first time: marking from Progress
+works (the boxes, the counts and the 100% follow), but its top said «no save, the guide»; it now
+says what it counts. Its 40% with four Tools marked is the Inventory's ladders, which Free mode
+starts at the top («Everything maxed»): the same on the Inventory, so left as it is.
+
+**Free mode's start** (13 October, design/03-redesign.md step 4). Free mode is now a New Game marked by
+hand: the ladders and the Hunter's evolution are its marks (in `pharloom.progress`, as a save keeps
+them), so Progress counts what's marked (0% to start; the Act 2 save's marks read 15%, not 40%). The
+Crest screen's build is apart and tries with everything, or with «What I have». An older visit's marks
+are moved once (`saves.migrateFree`, with unit tests): a level moved by hand stays, one still at the top
+goes to a New Game's. `check-pack` still matches all 72 saves: a save never goes through it.
+
+**The map's marks where the game places them** (13 October). Albert had been moving many marks by hand
+in the admin mode (139 fixes). `GameMap.GetMapPosition` (Assembly-CSharp, read again with dnfile and
+dncil) is how the game puts Hornet's compass and her cocoon on its map: a point of a scene goes x / width
+across a box and y / height up it, the scene's size its tilemap's (the root object tagged TileMap). The
+box is the piece's BoundsSprite (its fullSprite when it starts Rough, else its own sprite), its whole
+rectangle by the piece's scale, centred on the area's place plus the piece's. Every map sprite has its
+pivot in the middle, nothing is scaled above the pieces and none is flipped, so that box was already the
+drawing's canvas that ROOMS kept, to within 0.75 px of rounding; the scenes' own walls (their tilemap
+colliders) placed so trace the drawings. ROOMS is now that box to a tenth of a pixel
+(`tools/extract-map.py bounds_box`) and `js/rooms.js mapPoint` the rule, for the generators and for the
+cocoon, which now sits where the game draws it (the save's HeroDeathScenePos and HeroDeathSceneSize,
+kept in a slot as `cocoonAt`). The 51 benches against the game's own bench pins: median 2.86 → 2.84 px,
+mean 4.33 → 4.30, worst 36 (Belltown; the pins are set by hand, about 3 px above the bench, Bonetown's
+25 px off). So the fixes weren't the box's: they spread crowded rooms, pulled marks out of parts of a
+room the map doesn't draw, and gave a place to what had none. Albert dropped them all
+(`js/map-fixes.js` is empty, its admin mode as before), and what had no object of its own now goes where
+whoever stands for it is (`tools/gen-spots.js`, from `tools/extract-pickups.py`'s new battles, records,
+fleas and locks and people.json): Shakra and the vendors where they stand and their stock with them,
+a wish's reward at its Wishwall or giver, a boss where the game has it in its arena, a gauntlet at the
+middle of its waves, a lost flea in its cage, a key's door at its lock. Of the 71 fixed marks that had no
+point of their own, 62 have one now, a median 6.7 px from where Albert had put them by hand (32.8 at
+the room's middle). Of the Map's 2,170 marks (Free mode), 260 still sit at their room's middle: 232 in a
+room the map doesn't draw (an interior, a bench's room, a memory: the game places nothing of them on its
+map either), and 28 with nothing to go by: five bosses the game spawns at run time or parks at the
+scene's origin (the Last Judge, Tormented Trobbio, the Cogwork Dancers, the Forebrothers, Weavenest
+Atla's Moss Mothers) and two whose fight is in an arena off the map (Lost Lace, the Far Fields
+Beastfly), the Sinner's Road gauntlet (no BattleScene), Fleatopia's Tool Pouch and Mr Mushroom wish
+(nobody of theirs in the room), twelve extras whose object is parked off its room, and six people's
+spots that walk in from off-screen. The map's own wish and objective pins now name the scene of the part
+they fall in (five did a part: Abyss_09_top, Dust_11_left…), so a hair's change in a box doesn't move them
+to another. Visually checked in headless Chrome over file:// at 1440 and 390,
+in Free mode and with a 55% save; `check-pack` still matches all 72 saves.
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).

@@ -5,8 +5,9 @@
    build—; the preferences (language, screen) belong to whoever plays, not to the game, and
    aren't in it. Carried over from hallownest-calculator's js/saves.js unchanged but for the
    keys; the list of keys grows with each phase.
-   Free mode (slot 0, FREE) is what shows while no save has been selected: the everything-unlocked
-   sheet, to try builds, which is nobody's game. It's where the site starts. It can be entered
+   Free mode (slot 0, FREE) is what shows while no save has been selected: a game marked by hand
+   from a New Game, and the Crest screen's build to try, which is nobody's game. It's where the
+   site starts. It can be entered
    and left like a save, but not cleared.
    A save only comes from the game's file (importTo): an empty slot isn't entered, since a save
    is read on the site and never made or changed by hand.
@@ -70,7 +71,7 @@
   }
 
   /* Changes the active slot. The one you leave is copied out, the one you enter is copied in;
-     free mode with nothing saved comes in with the defaults (everything unlocked). An empty slot
+     free mode with nothing saved comes in with the defaults (a New Game). An empty slot
      isn't entered: a save only comes from the game's file (importTo). Returns whether anything
      changed. */
   function select(store, n) {
@@ -150,6 +151,39 @@
     return game ? 'game' : 'meta';
   }
 
-  SS.saves = { COUNT, FREE, SAVES_KEY, KEYS, SITE_ONLY, GAME, SLOT_IDS, ALL_IDS, read, snapshot, list, select, clear, importTo, sync };
+  /* Free mode's marks from before its ladders were marks (design/03-redesign.md, step 4, Free
+     mode's start). The Needle, the Kit, the Pouch, the masks, the silk, the Silk Hearts and the
+     Hunter's evolution used to be the free build's (pharloom.build), which started at the top, so
+     a game marked by hand counted them all. They're the marks' now, in pharloom.progress as a save
+     keeps them: a level moved by hand comes across, one still at the top goes to a New Game's
+     (it was never set). Only Free mode's slot, and only marks kept the old way (pharloom.owned
+     with no ladders): a real save always has them. Returns the snapshot migrated, or null. */
+  const LADDER_TOP = Object.freeze({ needle: 4, kit: 4, pouch: 4, masks: 5, spools: 9, hearts: 3 });
+  const STAGE_TOP = 3;
+  const parseObj = (v) => { try { const x = JSON.parse(v || 'null'); return x && typeof x === 'object' && !Array.isArray(x) ? x : null; } catch (e) { return null; } };
+  function freeLadders(snap) {
+    if (!snap || typeof snap['pharloom.owned'] !== 'string') return null;
+    const prog = parseObj(snap['pharloom.progress']) || {};
+    if (Object.keys(LADDER_TOP).every((k) => Number.isInteger(prog[k]))) return null;
+    const b = parseObj(snap['pharloom.build']) || {};
+    const kept = (v, lo, top) => (Number.isInteger(v) && v >= lo && v < top ? v : null);
+    const ladders = Object.fromEntries(Object.entries(LADDER_TOP).map(([k, top]) => [k, kept(b[k], 0, top) ?? 0]));
+    const hunterStage = kept(b.hunterStage, 1, STAGE_TOP) ?? 1;
+    return { ...snap, 'pharloom.progress': JSON.stringify({ ...prog, ...ladders, build: { hunterStage } }) };
+  }
+  // The same over the store, wherever Free mode's slot is (the live keys, or its copy). Whether it moved.
+  function migrateFree(store) {
+    const saves = read(store);
+    if (saves.active === FREE) {
+      const next = freeLadders(snapshot(store));
+      if (next) put(store, 'pharloom.progress', next['pharloom.progress']);
+      return !!next;
+    }
+    const next = freeLadders(saves.slots[FREE]);
+    if (next) { saves.slots[FREE] = next; write(store, saves); }
+    return !!next;
+  }
+
+  SS.saves = { COUNT, FREE, SAVES_KEY, KEYS, SITE_ONLY, GAME, SLOT_IDS, ALL_IDS, LADDER_TOP, read, snapshot, list, select, clear, importTo, sync, freeLadders, migrateFree };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.saves;
 })();

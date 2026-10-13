@@ -1233,10 +1233,26 @@ kbd {
 .pg-journey-steps li.is-cur i::before { width: calc(var(--sp-4) + var(--sp-half)); height: calc(var(--sp-4) + var(--sp-half)); border-color: var(--accent); box-shadow: var(--glow); }
 .pg-journey-steps span { font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; color: var(--muted); line-height: 1.3; }
 .pg-journey-steps li.is-cur span { color: var(--ink-strong); }
-/* The whole game (Act 3): the endings after the Acts, their diamonds set apart by a small ring. */
-.pg-journey.is-game .pg-journey-steps::before { background: linear-gradient(90deg, var(--silk) calc(100% * 2 / (var(--n) - 1)), color-mix(in oklab, var(--silk-rim) 35%, transparent) 0); }
+/* Act 3: the endings, their diamonds set apart by a small ring; not a sequence, so the thread stays unlit. */
+.pg-journey.is-game .pg-journey-steps::before { background: color-mix(in oklab, var(--silk-rim) 35%, transparent); }
+/* Where you are, over the tabs (design/40, 1 A): the three Acts on the journey's thread, each with
+   the game's name for it, yours marked; one sentence under them. */
+.pg-acts { max-width: var(--column); margin: var(--sp-2) auto var(--sp-6); }
+.pg-acts .pg-journey { margin: 0 auto var(--sp-3); }
+.pg-acts .pg-journey-steps span { display: grid; gap: var(--sp-half); }
+.pg-acts .pg-journey-steps small { font-family: var(--font-display); font-size: var(--fs-xs); font-weight: 400; letter-spacing: var(--track-label); color: var(--muted); }
+.pg-acts .pg-journey-steps li.is-cur small { color: var(--ink-2); }
+.pg-acts .pg-journey-steps em { justify-self: center; padding: 0 var(--sp-2); border: 1px solid var(--accent-line); font-style: normal; font-family: var(--font-num); font-size: var(--fs-2xs); letter-spacing: 0; text-transform: none; color: var(--ink-strong); }
+.pg-here { margin: 0 auto; text-align: center; font-size: var(--fs-md); color: var(--ink-2); text-wrap: balance; }
+.pg-here strong { font-weight: 600; color: var(--ink-strong); }
 .pg-journey-steps li.is-ending i::before { border-radius: 50%; transform: none; }
 .pg-journey-steps li.is-ending.is-done span { color: var(--ink-strong); }
+/* An Act 2 ending closed in an Act 3 game (design/41, 1 A): a hollow dashed ring, crossed, its name
+   struck through and «closed» under it (an inline block, so the line doesn't reach it). */
+.pg-journey-steps li.is-shut i::before { border-style: dashed; border-color: var(--muted); background: none; }
+.pg-journey-steps li.is-shut i::after { content: ''; position: absolute; width: var(--sp-4); height: 1px; background: var(--muted); transform: rotate(-45deg); }
+.pg-journey-steps li.is-shut span { color: var(--muted); text-decoration: line-through; text-decoration-color: color-mix(in oklab, var(--muted) 60%, transparent); }
+.pg-journey-steps li.is-shut small { display: inline-block; width: 100%; font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--muted); }
 .pg-seg { justify-content: center; }
 /* The two tabs (design/27b-progress-variants.html, 1 D): two cards, each with its own picture of
    how far you are. The game selects with value, not hue: the open one white on the picked grey. */
@@ -1252,7 +1268,7 @@ kbd {
 .pg-tab-art .pg-ring::after { inset: var(--sp-2); }
 .pg-tab-art .pg-total-n b { font-size: var(--fs-md); }
 .pg-tab-art .pg-total-n .u { font-size: var(--fs-2xs); }
-.pg-tab-l { font-family: var(--font-display); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; font-size: var(--fs-md); }
+.pg-tab-l { font-family: var(--font-display); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; font-size: var(--fs-md); text-wrap: balance; }
 .pg-tab-s { font-size: var(--fs-xs); }
 .pg-tab-s b { font-family: var(--font-num); font-size: var(--fs-lg); font-weight: 600; }
 .pg-tab:is(:hover, :focus-visible) { border-color: var(--accent); color: var(--ink-2); }
@@ -1282,6 +1298,7 @@ kbd {
 .pg-rg-n .u { font-family: var(--font-num); font-size: var(--fs-md); color: var(--muted); }
 .pg-rg.is-done .pg-rg-n b { color: var(--good); }
 .pg-rg-k { margin: 0; font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
+.pg-rg-after { margin: 0; font-size: var(--fs-xs); color: var(--muted); text-wrap: balance; }
 /* A medallion: a missing thing's picture in a lit circle, its name under it, a pin to the Map. */
 .pg-mds { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: var(--sp-3) var(--sp-2); margin: var(--sp-2) 0 0; padding: 0; list-style: none; }
 .pg-md { position: relative; display: grid; justify-items: center; align-content: start; gap: var(--sp-1); width: calc(var(--pg-md) + var(--sp-6)); text-align: center; }
@@ -1314,7 +1331,31 @@ kbd {
   font-family: var(--font-display); font-size: var(--fs-xl); font-weight: 600; letter-spacing: var(--track-title); color: var(--filigree);
 }
 .pg-part b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-lg); color: var(--ink-2); }
-.pg > .pg-note { text-align: center; }
+.pg > .pg-note, .pg-panel > .pg-note { text-align: center; }
+/* What's next (design/40, 2 A): the 100% tab's rows, a numbered diamond in place of the tick, the
+   name free to wrap, and the wishes that would give a point as small chips. */
+.pg-todo { max-width: calc(var(--column) + var(--sp-16)); margin: 0 auto; }
+.pg-todo .pg-part { margin-top: var(--sp-6); }
+.pg-todo .pg-item { grid-template-columns: var(--sp-6) 40px minmax(0, 1fr) auto 28px; }
+.pg-todo .pg-name { white-space: normal; text-wrap: balance; }
+.pg-num { display: grid; place-items: center; width: var(--sp-6); height: var(--sp-6); border: 1px solid var(--accent-line); transform: rotate(45deg); }
+.pg-num b { transform: rotate(-45deg); font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 700; color: var(--ink-strong); }
+.pg-opts { display: flex; flex-wrap: wrap; gap: var(--sp-1) var(--sp-2); margin: var(--sp-1) 0 0; padding: 0; list-style: none; font-size: var(--fs-xs); color: var(--ink-2); }
+.pg-opts li { display: inline-flex; align-items: center; gap: var(--sp-1); padding: 0 var(--sp-2); border: 1px solid var(--line-ctl); }
+.pg-opts img { width: var(--sp-4); height: var(--sp-4); object-fit: contain; }
+.pg-opts li.is-more { border: 0; color: var(--muted); }
+/* How the 100% splits (design/40, 4 A): a bar of a hundred, a stretch per category. */
+.pg-split-box { max-width: calc(var(--column) + var(--sp-16)); margin: 0 auto var(--sp-6); }
+.pg-split { display: flex; gap: 3px; height: var(--sp-4); }
+.pg-split-seg { position: relative; min-width: 3px; border: 1px solid var(--accent-line); background: var(--ring-track); overflow: hidden; }
+.pg-split-seg i { position: absolute; inset: 0 auto 0 0; background: var(--accent); }
+.pg-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-1) var(--sp-4); margin: var(--sp-3) 0 0; padding: 0; list-style: none; font-size: var(--fs-xs); color: var(--muted); }
+.pg-legend b { font-family: var(--font-num); font-weight: 600; color: var(--ink-strong); }
+.pg-split-note { max-width: var(--column); margin: var(--sp-3) auto 0; text-align: center; font-size: var(--fs-sm); color: var(--ink-2); text-wrap: balance; }
+.pg-colhead { max-width: calc(var(--column) + var(--sp-16) * 2); margin: var(--sp-4) auto calc(var(--sp-2) * -1); padding-right: calc(28px + var(--sp-4)); text-align: right; font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; color: var(--label); }
+/* No save (design/40, 5 A): the invitation over either tab; the guide's lists fold. */
+.pg-invite { max-width: calc(var(--column) + var(--sp-16)); margin: 0 auto var(--sp-6); }
+.pg-fold { margin: var(--sp-1) 0 0; font-size: var(--fs-xs); }
 .pg-groups { display: grid; max-width: calc(var(--column) + var(--sp-16) * 2); margin: var(--sp-4) auto 0; border-top: 1px solid var(--line-row); }
 .pg-group { min-width: 0; border-bottom: 1px solid var(--line-row); }
 .pg-head { margin: 0; font-size: var(--fs-md); font-weight: 400; }
@@ -1353,6 +1394,14 @@ kbd {
   .pg-rings { grid-template-columns: 1fr 1fr; gap: var(--sp-6) var(--sp-3); }
   .pg-md { width: calc(var(--pg-md) + var(--sp-3)); }
   .pg-reach { flex-direction: column; text-align: center; }
+  .pg-reach p { flex-direction: column; align-items: center; gap: var(--sp-1); }
+  /* The road's thread goes down the page, a step a line (design/41, 3 C): every step keeps its
+     name (round 1, 7 A) and none wraps. */
+  .pg-journey.is-road .pg-journey-steps { grid-template-columns: minmax(0, 1fr); justify-items: start; gap: var(--sp-2); width: auto; }
+  .pg-journey.is-road .pg-journey-steps::before { top: var(--sp-3); bottom: var(--sp-3); left: calc(var(--sp-3) - 0.5px); right: auto; width: 1px; height: auto;
+    background: linear-gradient(180deg, var(--silk) var(--f), color-mix(in oklab, var(--silk-rim) 35%, transparent) var(--f)); }
+  .pg-journey.is-road .pg-journey-steps li { grid-template-columns: var(--sp-6) auto; align-items: center; justify-items: start; text-align: left; }
+  .pg-journey.is-road .pg-journey-steps span { font-size: var(--fs-2xs); letter-spacing: var(--track-label); }
 }
 .pg-count { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-md); color: var(--ink-strong); white-space: nowrap; }
 .pg-count .u { font-size: var(--fs-xs); font-style: normal; color: var(--muted); }
@@ -1381,6 +1430,13 @@ kbd {
 .pg-slot.is-blue { background: var(--slot-blue); }
 .pg-slot.is-yellow { background: var(--slot-yellow); }
 .pg-how { font-size: var(--fs-xs); color: var(--ink-2); }
+/* What a how line waits for follows its lead; on a phone it folds behind «+n more» (design/41, 2 B). */
+.pg-how-btn { display: none; margin-left: var(--sp-1); font-size: var(--fs-xs); }
+@media (max-width: 640px) {
+  .pg-how-btn { display: inline; }
+  .pg-how:not(.is-open) .pg-how-more { display: none; }
+  .pg-how.is-open .pg-how-more > span { display: block; color: var(--muted); }
+}
 .pg-place { display: grid; justify-items: end; gap: var(--sp-half); text-align: right; }
 .pg-where { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0 var(--sp-2); font-size: var(--fs-xs); color: var(--muted); }
 .pg-where span + span::before { content: '·'; margin-right: var(--sp-2); }
@@ -1418,6 +1474,9 @@ kbd {
   .pg-item.is-plain { grid-template-columns: var(--sp-4) minmax(0, 1fr) 28px; }
   .pg-place { grid-column: 3; grid-row: 2; justify-items: start; text-align: left; display: flex; flex-wrap: wrap; gap: 0 var(--sp-2); }
   .pg-item.is-plain .pg-place { grid-column: 2; }
+  .pg-todo .pg-item { grid-template-columns: var(--sp-6) 36px minmax(0, 1fr) 28px; }
+  .pg-colhead { padding-right: calc(28px + var(--sp-2)); }
+  .pg-here { font-size: var(--fs-sm); }
   .pg-where { justify-content: flex-start; }
   .pg-item .pg-onmap { grid-row: 1 / span 2; grid-column: -2; }
   .pg-name { white-space: normal; }
@@ -1437,6 +1496,11 @@ kbd {
    on their slots. In a save the controls are still but at full light (read, not greyed). */
 .inv-presets { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: var(--sp-1) var(--sp-3); margin: 0; }
 .inv-presets .lbl { color: var(--muted); }
+/* Free mode (design/42): what the screen is, over «Start from»; on a phone «Start from» takes its
+   own line, so its two choices stay together. The older visit's notice, over the body. */
+.inv-lead { max-width: 60ch; margin: 0; font-size: var(--fs-sm); color: var(--ink-2); text-wrap: balance; }
+@media (max-width: 480px) { .inv-presets > .lbl:first-child { flex-basis: 100%; text-align: center; } }
+.free-note { max-width: calc(var(--column) + var(--sp-16)); margin: 0 auto var(--sp-6); }
 .inv-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: var(--sp-12); align-items: start; }
 .inv-col { display: grid; gap: var(--sp-8); min-width: 0; }
 .inv-sec { display: grid; gap: var(--sp-2); align-content: start; min-width: 0; }
@@ -1737,6 +1801,10 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 }
 /* The passive Tools' effects: icon and the game's own text, quiet. */
 .ct-share { margin-top: var(--sp-3); }
+/* Free mode's «Try with» (design/42, 2 A), and «What I have» with no Tool marked. */
+.ct-try { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: var(--sp-1) var(--sp-3); }
+.ct-try .lbl { color: var(--muted); }
+.ct-none { margin: 0; font-size: var(--fs-sm); color: var(--ink-2); }
 
 /* ── The Hunter's Journal (js/app-journal.js) ─────────────────────────────
    design/16-journal-top-variants.html, B (next hunts): on top, the Memento as a large ring (the

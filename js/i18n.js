@@ -50,7 +50,7 @@
     saveBtnHint:    { es: 'Elegir partida: cuatro, como en el juego, o el Modo libre', en: 'Choose a save: four, as in the game, or Free mode' },
     savesNoStorage: { es: 'Este navegador no deja guardar datos: solo hay una partida', en: 'This browser doesn\'t let the site save data: there\'s only one save' },
     freeMode:       { es: 'Modo libre', en: 'Free mode' },
-    freeModeNote:   { es: 'Todo desbloqueado, para probar builds: no es ninguna de tus partidas', en: 'Everything unlocked, to try builds: it isn\'t one of your saves' },
+    freeModeNote:   { es: 'Tu partida marcada a mano, y builds para probar: no es ninguna de tus partidas', en: 'Your game marked by hand, and builds to try: it isn\'t one of your saves' },
     saveCurrent:    { es: 'Estás aquí', en: 'You\'re here' },
     saveContinue:   { es: 'Seguir con esta partida', en: 'Continue with this save' },
     saveLoad:       { es: 'Cargar esta partida', en: 'Load this save' },
@@ -217,6 +217,11 @@
     ctShare:        { es: 'Compartir', en: 'Share' },
     ctShared:       { es: 'Enlace copiado: abre esta build tal cual', en: 'Link copied: it opens this build as it is' },
     ctLinkFree:     { es: 'El enlace traía una build: está en el Modo libre', en: 'The link had a build: it\'s in Free mode' },
+    /* Free mode's «Try with» (design/42, 2 A): everything, or your game marked in the Inventory. */
+    ctTry:          { es: 'Probar con', en: 'Try with' },
+    ctTryAll:       { es: 'Todo', en: 'Everything' },
+    ctTryMine:      { es: 'Lo que tengo', en: 'What I have' },
+    ctNoTools:      { es: 'Aún no has marcado ninguna herramienta: se marcan en el', en: 'No Tool marked yet: they\'re marked in the' },
     ctAmmo:         { es: '{n} usos', en: '{n} uses' },
     ctAmmo1:        { es: '{n} uso', en: '{n} use' },
     ctLoad:         { es: '{n} por carga', en: '{n} a load' },
@@ -643,7 +648,13 @@
     invLearnt:      { es: 'Aprendida', en: 'Learnt' },
     invNotLearnt:   { es: 'Sin aprender', en: 'Not learnt' },
     invStart:       { es: 'Empezar desde', en: 'Start from' },
-    invBase:        { es: 'Hornet al empezar', en: 'Base Hornet' },
+    invBase:        { es: 'Partida nueva', en: 'New Game' },   // PROFILE_NEW_GAME
+    invFreeLead:    { es: 'Modo libre: marca lo que tienes en tu partida y Progreso cuenta el 100 % con ello. Para probar builds con todo, el Blasón.',
+      en: 'Free mode: mark what you have in your game and Progress counts the 100% from it. To try builds with everything, the Crest screen.' },
+    freeNoteTag:    { es: 'Novedad', en: 'New' },
+    freeNote:       { es: 'La aguja, las máscaras, la seda y las mejoras son ahora parte de lo que marcas: lo que no habías movido vuelve al de una partida nueva, para que el 100 % no cuente lo que no tienes. Revísalo en el Inventario.',
+      en: 'The Needle, masks, silk and upgrades are now part of what you mark: what you hadn\'t moved goes back to a New Game\'s, so the 100% doesn\'t count what you don\'t have. Check them in the Inventory.' },
+    freeNoteOk:     { es: 'Entendido', en: 'Got it' },
     invMax:         { es: 'Todo al máximo', en: 'Everything maxed' },
     invSilk:        { es: 'Seda', en: 'Silk' },   // INV_NAME_THREAD
 
@@ -684,21 +695,81 @@
     pgShrines:      { es: 'Santuarios de Campana', en: 'Bellshrines' },   // BELLSHRINE, in the plural
     pgPoints:       { es: 'Puntos de deseos', en: 'Wish points' },
     pgEndings:      { es: 'Finales', en: 'Endings' },   // no word of the game's for them
+    /* An Act 2 ending closed in an Act 3 game (design/41, 1 A): the ring counts what's still within reach. */
+    pgEndingsReach: { es: 'Finales a tu alcance', en: 'Endings within reach' },
+    pgEndingsShut:  { es: 'Cerrado en esta partida: {name}', en: 'Closed in this game: {name}' },
+    pgEndingsShutN: { es: 'Cerrados en esta partida: {name}', en: 'Closed in this game: {name}' },
+    pgShut:         { es: 'cerrado', en: 'closed' },
     pgOnlyAct3:     { es: 'Solo en el Acto 3', en: 'Only in Act 3' },
+    /* Progress at first sight (design/40-progress-clarity-variants.html): where you are, over the tabs */
+    pgActName1:     { es: 'TELALEJANA', en: 'PHARLOOM' },   // ACT_1_NAME
+    pgActName2:     { es: 'CIUDADELA MELODIOSA', en: 'CITADEL OF SONG' },   // ACT_2_NAME
+    pgActName3:     { es: 'ABISMO', en: 'ABYSS' },   // ACT_3_NAME
+    pgHere:         { es: 'Estás aquí', en: 'You are here' },
+    pgHereAct:      { es: 'Estás en el Acto {n}.', en: 'You\'re in Act {n}.' },
+    pgHereNext:     { es: 'Para abrir el Acto {m} hay {of} pasos: vas por el {i}, y en él te quedan {n} cosas.', en: 'Opening Act {m} takes {of} steps: you\'re on step {i}, with {n} things left in it.' },
+    pgHereNext1:    { es: 'Para abrir el Acto {m} hay {of} pasos: vas por el {i}, y en él te queda {n} cosa.', en: 'Opening Act {m} takes {of} steps: you\'re on step {i}, with {n} thing left in it.' },
+    pgHereStep:     { es: 'Para abrir el Acto {m} hay {of} pasos: vas por el {i}.', en: 'Opening Act {m} takes {of} steps: you\'re on step {i}.' },
+    pgHere100:      { es: 'Para el 100 % te queda un {pct}.', en: '{pct} to go for 100%.' },
+    pgHereFull:     { es: 'Acto 3 y el 100 %: lo tienes todo.', en: 'Act 3 and 100%: you have it all.' },
+    pgHereNone:     { es: 'Silksong tiene tres actos. Sin partida, esta pestaña es la guía: lo que pide el juego para pasar de uno a otro, y todo lo que cuenta para el 100 %.',
+                      en: 'Silksong has three Acts. With no save, this tab is the guide: what the game asks to go from one to the next, and everything that counts for 100%.' },
+    pgInviteTag:    { es: 'Sin partida', en: 'No save' },
+    pgInvite:       { es: 'Importa tu partida y verás en qué acto estás, y qué te falta para el siguiente y para el 100 %, pieza a pieza.',
+                      en: 'Import your save to see which Act you\'re in, and what\'s left for the next one and for 100%, piece by piece.' },
+    /* The road's steps by what to do, on its thread (3 A); the titles stay the whole road's */
+    pgStepN:        { es: '{n} · {step}', en: '{n} · {step}' },
+    pgStepBells:    { es: 'Haz sonar los Santuarios', en: 'Ring the Bellshrines' },   // the game's word in it: BELLSHRINE
+    pgStepGate:     { es: 'Abre la {gate}', en: 'Open the {gate}' },
+    pgStepJudge:    { es: 'Vence a la {judge}', en: 'Defeat the {judge}' },
+    pgStepUnlock:   { es: 'Desbloquea «{wish}»', en: 'Unlock "{wish}"' },
+    pgStepOffer:    { es: 'Acepta el deseo', en: 'Take the wish' },
+    pgStepSnare:    { es: 'Reúne la trampa', en: 'Gather the snare' },
+    pgStepReady:    { es: 'Llévasela al {caretaker}', en: 'Bring it to the {caretaker}' },
+    pgStepSilk:     { es: 'Atrapa a la {silk}', en: 'Snare {silk}' },
+    /* What's next on the step you're on (2 A) */
+    pgTodo:         { es: 'Lo siguiente', en: 'What\'s next' },
+    pgTodoWish:     { es: 'Completa el deseo «{wish}»', en: 'Complete the wish "{wish}"' },
+    pgTodoPoints:   { es: 'Consigue {n} puntos más de deseos', en: 'Get {n} more wish points' },
+    pgTodoPoints1:  { es: 'Consigue {n} punto más de deseos', en: 'Get {n} more wish point' },
+    pgTodoAny:      { es: 'Vale cualquiera de estos {n} deseos; por ejemplo:', en: 'Any of these {n} wishes will do; for example:' },
+    pgTodoAnyNear:  { es: 'Vale cualquiera de estos {n} deseos; los más cerca de tu banco:', en: 'Any of these {n} wishes will do; the nearest to your bench:' },
+    pgTodoShrine:   { es: 'Haz sonar el Santuario de Campana de {area}', en: 'Ring the Bellshrine in {area}' },   // the game's word in it: BELLSHRINE
+    pgTodoGet:      { es: 'Consigue: {name}', en: 'Get: {name}' },
+    pgTodoPavo:     { es: 'Habla con Pabo: te da la {key}', en: 'Talk to Pavo: he gives you the {key}' },   // his name: BELLHART_GREETER_MAIN
+    pgTodoMore:     { es: 'y {n} más', en: 'and {n} more' },
+    /* A how line on a phone: its lead, and what it waits for behind a button (design/41, 2 B). */
+    pgHowMore:      { es: '+{n} más', en: '+{n} more' },
+    pgHowLess:      { es: 'menos', en: 'less' },
+    /* A thing of the 100% lying in a room, which has no other way (design/41, 4 A). */
+    pgFound:        { es: 'Se encuentra en la zona: el alfiler marca dónde', en: 'Found in the area: the pin shows where' },
+    pgFoundNoPin:   { es: 'Se encuentra en la zona', en: 'Found in the area' },
+    /* Free mode with the Inventory's marks (design/41, 6 A). */
+    pgHereFreeK:    { es: 'Modo libre.', en: 'Free mode.' },
+    pgHereFree:     { es: 'El 100 % cuenta lo que marcas aquí o en el Inventario, desde una partida nueva; el camino es la guía, como sin partida.', en: 'The 100% counts what you mark here or in the Inventory, from a New Game; the road is the guide, as with no save.' },
+    pgLadderNote:   { es: 'Esto se fija en el Inventario:', en: 'This is set in the Inventory:' },
+    pgListAll:      { es: 'Ver la lista entera, con lo hecho ({n})', en: 'See the whole list, done included ({n})' },
+    pgListLess:     { es: 'Cerrar la lista entera', en: 'Close the whole list' },
+    /* How the 100% splits (4 A), and the guide without a save (5 A) */
+    pgInCats:       { es: 'en {n} categorías', en: 'in {n} categories' },
+    // Not "each thing is 1%": masks and spools count whole (four and two pieces), as their rows say.
+    pgSplit:        { es: 'La cifra de cada fila es cuánto tienes de lo que vale, en puntos del 100 %: las Herramientas son la mitad.',
+                      en: 'Each row\'s figure is how much you have of what it\'s worth, in points of the 100%: the Tools are half of it.' },
+    pgColHead:      { es: 'Tienes / vale (%)', en: 'Got / worth (%)' },
+    pgColHeadNone:  { es: 'Vale (%)', en: 'Worth (%)' },
+    pgFoldSee:      { es: 'Ver los {n}', en: 'See all {n}' },
+    pgFoldHide:     { es: 'Ocultar', en: 'Hide' },
 
     /* Progress: the road to the next Act (js/acts.js, the game's own rules) */
     roadTitle:      { es: 'Camino al Acto {n}', en: 'The road to Act {n}' },
-    /* The road at a glance (js/app-progress.js, journey): each step by a name of the game's. */
-    roadBellshrine: { es: 'Santuario de Campana', en: 'Bellshrine' },   // BELLSHRINE
-    roadCitadelName:{ es: 'CIUDADELA MELODIOSA', en: 'CITADEL OF SONG' },   // ACT_2_NAME
     roadSnare:      { es: 'Trampa anímica', en: 'Soul Snare' },   // MQ_SILK_SNARE_NAME
-    roadWishwall:   { es: 'Muro de deseos', en: 'Wishwall' },   // the game says it in BB_FIXER_Q1_INTRO; no name of its own
     ending_A:       { es: 'Reina Tejedora', en: 'Weaver Queen' },   // ENDING_A_NAME
     ending_C:       { es: 'Atadura de seda', en: 'Snared Silk' },   // ENDING_C_NAME
     ending_D:       { es: 'Niña retorcida', en: 'Twisted Child' },   // ENDING_D_NAME
     ending_E:       { es: 'Hermana del vacío', en: 'Sister of the Void' },   // ENDING_E_NAME
     roadGame:       { es: 'Tu partida', en: 'Your game' },
     roadEndings:    { es: '{n} de {of} finales', en: '{n} of {of} endings' },
+    roadEndingsReach:{ es: '{n} de {of} finales a tu alcance', en: '{n} of {of} endings within reach' },
     roadWhole:      { es: 'El camino entero', en: 'The whole road' },
     roadLess:       { es: 'Cerrar el camino', en: 'Close the road' },
     roadBoth:       { es: 'Los caminos a los Actos 2 y 3', en: 'The roads to Acts 2 and 3' },
@@ -726,20 +797,48 @@
     roadGoalShrines: { es: 'Hay que hacer sonar los {n}.', en: 'All {n} must be rung.' },
     roadGoalSnare:  { es: 'Hay que reunir las {n}.', en: 'All {n} are needed.' },
     roadLeft:       { es: 'Te faltan {n}.', en: '{n} to go.' },
+    roadLeft1:      { es: 'Te falta {n}.', en: '{n} to go.' },
     roadCaravan:    { es: 'La Caravana de las pulgas en Pulgatopía', en: 'The Flea Caravan at Fleatopia' },   // KEY_CARAVAN, FLEATOPIA
     roadLace:       { es: 'Derrota a Lace en la Cuna', en: 'Defeat Lace in the Cradle' },   // DEFEATED_LACE_2_DESC
     roadKey:        { es: 'Llave de hogar campana', en: 'Bellhome Key' },   // INV_NAME_BELL_HOUSE_KEY
     roadPavo:       { es: 'lista: habla con Pabo', en: 'ready: talk to Pavo' },   // his name: BELLHART_GREETER_MAIN
     roadKeyRule:    { es: 'Pabo la da tras «{glory}» y {n} deseos de su lista', en: 'Pavo gives it after {glory} and {n} wishes of his list' },
     roadKeyHead:    { es: '{key}: lo que pide Pabo', en: '{key}: what Pavo asks' },
-    roadOffer:      { es: 'Acepta «{wish}» en el muro de deseos de {town} o con el {caretaker} en {clave}', en: 'Take "{wish}" from the wishwall in {town} or from the {caretaker} in {clave}' },
+    roadOffer:      { es: 'Acepta «{wish}»: habla con el {caretaker} en {clave}', en: 'Accept "{wish}": talk to the {caretaker} in {clave}' },
+    roadOfferNote:  { es: 'Con todo cumplido, te llama con la mano. El deseo sale también en el muro de deseos de {town}, que te manda a él.', en: 'Once everything is met he waves you over. The wish also shows on the Wishwall in {town}, which sends you to him.' },
+    roadDeclined:   { es: 'Ya te lo ofreció y lo rechazaste: vuelve a hablar con él y acéptalo.', en: 'He offered it and you turned it down: talk to him again and accept.' },
     roadCaretaker:  { es: 'Cuidador', en: 'Caretaker' },   // CARETAKER_MAIN
     roadPieces:     { es: 'Reúne las cuatro piezas de la trampa', en: 'Gather the snare\'s four pieces' },
-    roadReady:      { es: 'Llévaselas al {caretaker}', en: 'Bring them to the {caretaker}' },
+    roadPieceGiven: { es: 'te la da al aceptar el deseo: {npc}', en: 'given once you accept the wish: {npc}' },
+    roadPieceAfter: { es: 'tras vencer en combate: {foe}', en: 'after defeating {foe}' },
+    roadPieceNeeds: { es: 'requiere: {art}', en: 'needs: {art}' },
+    roadHermitWay:  { es: 'cruza la pared oculta a la derecha de la Vía Campana y baja: está a la izquierda', en: 'walk through the hidden wall right of the Bellway and drop down: he\'s to the left' },   // the game's word in it: KEY_BELLWAY
+    roadReady:      { es: 'Llévaselas al {caretaker} en {clave}', en: 'Bring them to the {caretaker} in {clave}' },
     roadSilk:       { es: 'Derrota a la Gran Madre Seda y atrápala con la trampa anímica', en: 'Defeat Grand Mother Silk and entrap her with the Soul Snare' },   // ENDING_C_DESC
-    roadSilkNote:   { es: 'En el golpe final, toca el Agujolín en vez de enlazarla. Ese final cierra en esa partida los otros dos del Acto 2.', en: 'On the final blow, play the Needolin instead of binding her. That ending closes the other two Act 2 endings in that game.' },
+    roadSilkNote:   { es: 'En el golpe final, toca el Agujolín en vez de enlazarla. Ese final cierra en esa partida los otros dos del Acto 2; tras los créditos, la partida se abre ya en el Acto 3.', en: 'On the final blow, play the Needolin instead of binding her. That ending closes the other two Act 2 endings in that game; after the credits the save opens in Act 3.' },
     roadRunt:       { es: 'para el Acto 3 cuenta su versión principal, no la de la cría', en: 'for Act 3 its main version counts, not the runt\'s' },
     roadMelodies:   { es: 'para llegar a la Cuna, las tres melodías: {n} de 3', en: 'to reach the Cradle, the three melodies: {n} of 3' },
+    // The caravan (js/acts.js: Mooshka's FSM): its stop now, the fleas, and what its last move asks.
+    roadCaravanHow: { es: '{n} de {need} pulgas rescatadas; habla con {npc} en cada parada (ahora: {at})', en: '{n} of {need} fleas rescued; talk to {npc} at each stop (now: {at})' },
+    roadCaravanRule:{ es: 'rescata {need} pulgas y habla con {npc} en cada parada de la caravana', en: 'rescue {need} fleas and talk to {npc} at each of the Caravan\'s stops' },
+    roadCaravanLake:{ es: 'antes, visita el {lake} vacío, en los {ducts}', en: 'first visit the empty {lake}, in the {ducts}' },
+    roadCaravanJudge:{ es: 'antes de su parada en los {steps}, vence en combate: {judge}', en: 'before its stop on the {steps}, defeat {judge}' },
+    roadPaleLake:   { es: 'Lago Pálido', en: 'Pale Lake' },   // WHITELAKE
+    /* What posts a required wish later than the rest (its playerData test in js/quests.js CHAIN when,
+       and the wiki's prerequisites for what sets it; checked on the author's saves). */
+    roadOpensShakra:{ es: 'sale al comprarle a {npc} todos sus mapas y tener la {art}', en: 'posted once you have bought all of {npc}\'s maps and have the {art}' },
+    roadOpensSherma:{ es: 'sale tras conocer a {npc} en {clave} y visitar el {ward}', en: 'posted after meeting {npc} in {clave} and visiting the {ward}' },
+    roadOpensClave: { es: 'sale cuando {clave} crece: «{first}» y otros 3 deseos de su muro', en: 'posted once {clave} grows: "{first}" and 3 more wishes from its board' },
+    roadOpensTown:  { es: 'sale tras la primera mejora de aguja, venderle una reliquia a {npc} y hablar con {pavo}', en: 'posted after your first Needle upgrade, selling a relic to {npc} and speaking with {pavo}' },
+    roadOpensGlory: { es: 'sale tras vencer a los {foe} o conseguir {art}', en: 'posted after beating the {foe} or getting the {art}' },
+    roadMapsBought: { es: '{n} de {of} comprados', en: '{n} of {of} bought' },
+    roadPinOil:     { es: 'cuenta también con la segunda mejora de aguja de {npc}', en: 'also counts with {npc}\'s second Needle upgrade' },
+    // What a wish asks to be brought (js/quests.js CHAIN asks): a donation's sum, the Journal's entries, its things.
+    roadAskRosaries:{ es: 'pide {n} rosarios', en: 'asks for {n} rosaries' },   // the game's word in it: INV_NAME_COIN
+    roadAskShards:  { es: 'pide {n} fragmentos de coraza', en: 'asks for {n} shell shards' },   // the game's word in it: INV_NAME_SHARD
+    roadAskJournal: { es: 'pide {n} entradas en el {journal}', en: 'asks for {n} entries in the {journal}' },
+    roadAskItems:   { es: 'pide: {items}', en: 'asks for: {items}' },
+    roadAskN:       { es: '{n} × {item}', en: '{n} × {item}' },
 
     /* Progress: how to get each thing of the 100% (js/how.js), the traps, what's left to buy */
     howShop:        { es: '{vendor}: {price} rosarios', en: '{vendor}: {price} rosaries' },
@@ -764,8 +863,8 @@
     pgNote_melody:       { es: 'Abren el camino a la Cuna en el Acto 2, y vencer allí a Lace es condición del Acto 3.', en: 'They open the way to the Cradle in Act 2, and beating Lace there is a condition of Act 3.' },
     pgNote_otherArts:    { es: 'No cuentan, pero abren caminos; la Capa de fayforno es condición del Acto 3.', en: 'They don\'t count, but they open the way; the Faydown Cloak is a condition of Act 3.' },
     pgNote_gauntlets:    { es: 'Arenas de oleadas; varias dan un objeto que sí cuenta.', en: 'Wave arenas; several give a thing that does count.' },
-    homeRoad:       { es: 'Camino al Acto {n}: paso {k} de {total}', en: 'The road to Act {n}: step {k} of {total}' },
-    homeRoadPart:   { es: 'Camino al Acto {n}: paso {k} de {total}, {done} de {of} hechos', en: 'The road to Act {n}: step {k} of {total}, {done} of {of} done' },
+    homeRoad:       { es: 'Camino al Acto {n} · paso {k} de {total}: {step}', en: 'The road to Act {n} · step {k} of {total}: {step}' },
+    homeRoadPart:   { es: 'Camino al Acto {n} · paso {k} de {total}: {step} · {done} de {of}', en: 'The road to Act {n} · step {k} of {total}: {step} · {done} of {of}' },
 
     /* Footer: the fan-project notice, the sources and the author (docs/guide.md, "Credits and licences") */
     footLabel:      { es: 'Aviso, fuentes y contacto', en: 'Notice, sources and contact' },

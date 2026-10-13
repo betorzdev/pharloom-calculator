@@ -186,18 +186,21 @@ test('a save gives the Map its rooms visited, maps, cocoon, extras and bosses, a
   const rosary = SP.EXTRAS.findIndex((x) => x[0] === 'rosary-cache' && x[2][0] === 'int');
   const boss = SP.BOSSES.find((b) => b[2][0] === 'flag');
   const pd = { silk: 0, silkMax: 9, maxHealth: 5, scenesVisited: ['Bone_01', 'Tut_01'], HasGreymoorMap: true, HasWildsMap: false,
-    HeroCorpseScene: 'Bone_04', [boss[2][1]]: true };
+    HeroCorpseScene: 'Bone_04', HeroDeathScenePos: { x: 12.5, y: 30 }, HeroDeathSceneSize: { x: 120, y: 60 }, [boss[2][1]]: true };
   const sd = { persistentInts: { serializedList: [{ SceneName: c[1], ID: c[2], Value: c[3] },
     { SceneName: SP.EXTRAS[rosary][2][1], ID: SP.EXTRAS[rosary][2][2], Value: 3 }] } };
   const g = F.game(pd, sd);
   assert.deepEqual(g.visited, ['Bone_01', 'Tut_01']);
   assert.deepEqual(g.maps, ['Greymoor']);
   assert.equal(g.cocoon, 'Bone_04');
+  assert.deepEqual(g.cocoonAt, [12.5, 30, 120, 60]);   // where in it, as the game's map marks it (js/rooms.js mapPoint)
+  assert.deepEqual(F.game({ ...pd, HeroDeathSceneSize: { x: 0, y: 60 } }, sd).cocoonAt, []);
+  assert.deepEqual(F.game({ ...pd, HeroCorpseScene: '' }, sd).cocoonAt, []);
   assert.ok(g.extras.includes(i));
   assert.ok(!g.extras.includes(rosary) || SP.EXTRAS[rosary][2][3] === 3);
   assert.deepEqual(g.bosses, [boss[0]]);
   const back = F.gameOf(F.toSnapshot(pd, sd));
-  for (const k of ['visited', 'maps', 'cocoon', 'extras', 'bosses']) assert.deepEqual(back[k], g[k], k);
+  for (const k of ['visited', 'maps', 'cocoon', 'cocoonAt', 'extras', 'bosses']) assert.deepEqual(back[k], g[k], k);
 });
 
 test('each thing with a point of its own sits in (or at the edge of) its room\'s drawing', () => {

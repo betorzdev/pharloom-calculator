@@ -110,15 +110,70 @@ test('a missing wish says what comes first; Broodfeast done the Runt way gives n
 });
 
 test('Act 2 to 3: the offer, the pieces (held, or given), the snare; a delivery is worth half a point', () => {
-  const base = { ...RP25, bellhomeKey: true, snareOffered: true };
+  // Accepted: Soul Snare begun, which completes its first stage (Soul Snare Pre).
+  const base = { ...RP25, bellhomeKey: true, snareOffered: true, quests: [...RP25.quests, 'Soul Snare Pre'] };
   let road = A.next(base);
   assert.deepEqual(road.steps.map((s) => s.ok), [true, true, false, false, false]);
+  assert.equal(step(road, 'offer').declined, false);
   road = A.next({ ...base, snarePieces: Q.SNARE.map((x) => x.save) });
   assert.equal(step(road, 'pieces').ok, true);
   road = A.next({ ...base, snarePieces: [], snareReady: true, quests: [...base.quests, 'Soul Snare Pre', 'Soul Snare'] });
   assert.deepEqual([road.done, road.total], [4, 5]);
   const half = A.group('Soul Snare', { quests: ['Courier Delivery Songclave'] });
   assert.equal(half.points.got, 0.5);
+});
+
+test('offered is not accepted: the Caretaker sets his flag as he asks, so a wish turned down is still to take', () => {
+  // CaretakerOfferedSnareQuest set, Soul Snare not begun: the rule held (unlock done), the wish not taken.
+  const road = A.next({ ...RP25, bellhomeKey: true, snareOffered: true });
+  assert.deepEqual(road.steps.map((s) => s.ok), [true, false, false, false, false]);
+  assert.equal(step(road, 'offer').declined, true);
+  assert.equal(road.done, 1);
+  // The pieces held before (the Seeker's Soul, the Snare Setter) still count while it's to take.
+  assert.deepEqual(step(road, 'pieces').pieces.map((p) => p.ok), [false, false, true, false]);
+});
+
+test("the caravan's check says where it stands and the fleas rescued, of the 22 its last move asks", () => {
+  const fleas = CO.PIECES.map((p, i) => (p[0] === 'flea' ? i : -1)).filter((i) => i >= 0);
+  assert.equal(fleas.length, 30);
+  const caravan = (g) => step(A.next({ act: 2, ...g }), 'unlock').tests.find((t) => t.id === 'caravan');
+  assert.deepEqual(caravan({ caravan: 2, pieces: fleas.slice(0, 21) }).caravan, { at: 2, fleas: 21, need: A.FLEAS });
+  assert.equal(A.FLEAS, 22);
+  assert.equal(caravan({ caravan: 3, pieces: fleas }).ok, true);
+  assert.equal(caravan({}).caravan.at, 0);
+});
+
+test('each quest of the rule carries the line the game writes under its title (who asks for it), in both languages', () => {
+  // The one with none of its own: Berry Picking takes its first stage's. Bugs of Pharloom's asset
+  // leaves it out, and its title's own line is in the text (QUEST_JOURNAL_LOC: Nuu, who offers it).
+  const without = Q.GROUPS['Soul Snare'].quests.filter((q) => !Q.CHAIN[q.quest].loc).map((q) => q.quest);
+  assert.deepEqual(without, ['Mossberry Collection 1']);
+  assert.deepEqual(Q.CHAIN.Journal.loc, { es: 'Nuu en Hogar a medio camino', en: 'Nuu at the Halfway Home', key: 'QUEST_JOURNAL_LOC' });
+  assert.deepEqual(Q.FROM.Journal, { npc: ['Halfway_01'] });
+  assert.equal(Q.CHAIN['Mossberry Collection Pre'].loc.key, 'QUEST_MOSSBERRY1_PRE_LOC');
+  assert.deepEqual(Q.CHAIN['Crow Feathers'].loc, { es: 'Creige de Hogar a medio camino', en: 'Creige of the Halfway Home', key: 'QUEST_CROW_LOC' });
+  assert.equal(Q.CHAIN['Soul Snare'].loc.key, 'Q_SOUL_SNARE_LOC');
+});
+
+test('what each wish asks to be brought, from its targets: the donations\' rosaries and shell shards, the Journal, the things', () => {
+  const asks = (q) => Q.CHAIN[q].asks;
+  // The four required donations: 1,450 rosaries in all (the game's Count on its Rosary Quest Target).
+  const donations = { 'Belltown House Start': 250, 'Belltown House Mid': 400, 'Songclave Donation 1': 300, 'Songclave Donation 2': 500 };
+  for (const [q, n] of Object.entries(donations)) {
+    assert.deepEqual(asks(q), [{ kind: 'rosaries', n }], q);
+    assert.ok(Q.GROUPS['Soul Snare'].quests.find((x) => x.quest === q).required, q);
+  }
+  // Flick's three, in shell shards: the first two required.
+  assert.deepEqual(['Building Materials', 'Building Materials (Bridge)', 'Building Materials (Statue)'].map((q) => asks(q)[0]),
+    [{ kind: 'shards', n: 200 }, { kind: 'shards', n: 300 }, { kind: 'shards', n: 440 }]);
+  assert.deepEqual(asks('Journal'), [{ kind: 'journal', n: 100 }]);
+  assert.deepEqual(asks('Crow Feathers'), [{ kind: 'item', save: 'Crow Feather', n: 25, name: { es: 'Piel zaparrastrosa', en: 'Ragpelt', key: 'INV_NAME_CROW_FEATHER' } }]);
+  // A delivery's thing is one, carried; the other counters (fleas, races) aren't asked.
+  assert.deepEqual(asks('Courier Delivery Bonebottom').map((a) => [a.n, a.delivery]), [[1, true]]);
+  assert.equal(asks('Great Gourmand').length, 5);
+  assert.equal(Q.CHAIN['Save the Fleas'].asks, undefined);
+  // Every thing asked carries its game name.
+  for (const e of Object.values(Q.CHAIN)) for (const a of e.asks || []) if (a.kind === 'item') assert.ok(a.name && a.name.key, a.save);
 });
 
 test('game() reads the fields of the road, and a slot keeps them', () => {

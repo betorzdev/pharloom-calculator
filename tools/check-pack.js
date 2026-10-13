@@ -20,8 +20,9 @@
      acts        the road to the next Act (js/acts.js) against the Act the save is in: an Act 2 or
                  3 save has beaten the Last Judge or the Phantom; a save where the Caretaker has
                  offered Silk and Soul meets the game's group Soul Snare (js/quests.js); an Act 3
-                 save has every step of the road to Act 3 done but the last, Grand Mother Silk
-                 (must: exit code 1 if not). The road's steps done are printed per save.
+                 save has every step of the road to Act 3 done but the last, Grand Mother Silk;
+                 and in a later save of the same game no step of either road is undone (must:
+                 exit code 1 if not). The road's steps done and the step it's on are printed per save.
    On Linux the game's folder is ~/.config/unity3d/Team Cherry/Hollow Knight Silksong/<id>/.
    The saves stay where they are: they're somebody's games and don't go in the repo. */
 'use strict';
@@ -64,6 +65,7 @@ function pieceDiffs(pd, g) {
 
 let bad = 0, badP = 0, unreadable = 0;
 const cleared = new Map();   // game → [[playTime, Set of gauntlets, file]]
+const roads = new Map();     // game → [[playTime, Set of road steps done (both roads, as if from Act 1 and 2), file]]
 for (const file of files) {
   const name = path.relative(root, file);
   const r = F.read(fs.readFileSync(file));
@@ -80,6 +82,9 @@ for (const file of files) {
     if (done !== need) pd.push(`journal ${done}≠${need} with the Memento`);
   }
   const road = A.next(g);
+  const stepOn = road ? road.steps.find((s) => !s.ok && !s.bypassed) : null;
+  const met = new Set([...A.next({ ...g, act: 1 }).steps.filter((s) => s.ok || s.bypassed).map((s) => '2:' + s.id),
+    ...A.next({ ...g, act: 2 }).steps.filter((s) => s.ok).map((s) => '3:' + s.id)]);
   if (g.act >= 2 && !A.next({ ...g, act: 1 }).steps.find((s) => s.id === 'judge').ok) pd.push('acts: Act 2 without the Last Judge or the Phantom');
   if (g.snareOffered && !A.group('Soul Snare', g).ok) pd.push('acts: Silk and Soul offered without the group Soul Snare');
   if (g.act === 3) {
@@ -92,14 +97,22 @@ for (const file of files) {
   }
   const key = path.dirname(path.relative(root, file)).split(path.sep)[0] + '#' + r.pd.profileID;
   (cleared.get(key) || cleared.set(key, []).get(key)).push([Number(r.pd.playTime) || 0, new Set(g.gauntlets), name]);
+  (roads.get(key) || roads.set(key, []).get(key)).push([Number(r.pd.playTime) || 0, met, name]);
   if (!ok) bad++;
   if (pd.length) badP++;
   const parts = ok ? '' : '  ' + c.categories.map((k) => `${k.id} ${k.got}/${k.max}`).join(', ');
   const at = r.restore ? `  (${r.restore.date} ${r.restore.event})` : '';
-  console.log(`${ok ? 'ok' : 'XX'}  ${String(c.total).padStart(3)}% (game ${String(game).padStart(3)}%)  act ${g.act} ${road ? `(${road.done}/${road.total})` : '     '}  gauntlets ${String(g.gauntlets.length).padStart(2)}  `
+  console.log(`${ok ? 'ok' : 'XX'}  ${String(c.total).padStart(3)}% (game ${String(game).padStart(3)}%)  act ${g.act} ${road ? `(${road.done}/${road.total} ${stepOn ? stepOn.id : '-'})`.padEnd(18) : ''.padEnd(18)}  gauntlets ${String(g.gauntlets.length).padStart(2)}  `
     + `${name}  v${r.pd.version || '?'}${F.meta(r.pd).steel ? ' Steel Soul' : ''}${at}${parts}${pd.length ? '  pieces: ' + pd.join(', ') : ''}`);
 }
 let lost = 0;
+for (const list of roads.values()) {
+  list.sort((a, b) => a[0] - b[0]);
+  for (let i = 1; i < list.length; i++) {
+    const undone = [...list[i - 1][1]].filter((id) => !list[i][1].has(id));
+    if (undone.length) { lost++; console.log(`XX  ${list[i][2]}: road steps done before and not now: ${undone.join(', ')}`); }
+  }
+}
 for (const list of cleared.values()) {
   list.sort((a, b) => a[0] - b[0]);
   for (let i = 1; i < list.length; i++) {
@@ -108,5 +121,5 @@ for (const list of cleared.values()) {
   }
 }
 console.log(`\n${files.length} saves · completion: ${files.length - bad - unreadable} match, ${bad} differ`
-  + ` · pieces: ${badP} differ · gauntlets: ${lost} lost · ${unreadable} unreadable`);
+  + ` · pieces: ${badP} differ · gauntlets or road steps: ${lost} lost · ${unreadable} unreadable`);
 process.exit(bad || badP || lost || unreadable ? 1 : 0);
