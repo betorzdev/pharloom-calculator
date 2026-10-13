@@ -16,6 +16,10 @@
     title:          { es: 'Calculadora de Telalejana', en: 'Pharloom Calculator' },
     goHome:         { es: 'Ir a Tu partida, la pantalla de inicio', en: 'Go to Your game, the home screen' },
     langGroup:      { es: 'Idioma', en: 'Language' },
+    share:          { es: 'Compartir', en: 'Share' },
+    shareHint:      { es: 'Copia el enlace a la web', en: 'Copy the link to the site' },
+    linkCopied:     { es: 'Enlace copiado', en: 'Link copied' },
+    copyThis:       { es: 'Copia este enlace:', en: 'Copy this link:' },
     /* The beta notice (js/app.js): above the screens until it's closed, and the tag by the title. */
     betaTag:        { es: 'Beta', en: 'Beta' },
     betaText:       { es: 'La web aún está en construcción: puede haber algún número mal, textos sin traducir o pantallas a medias. Si ves algo raro, {report}.',
@@ -219,8 +223,6 @@
     ctNext:         { es: 'Blasón siguiente', en: 'Next Crest' },
     ctPoint:        { es: 'Señala una herramienta para ver qué hace.', en: 'Point at a Tool to see what it does.' },
     ctSilkCost:     { es: '{n} de seda', en: '{n} silk' },
-    ctShare:        { es: 'Compartir', en: 'Share' },
-    ctShared:       { es: 'Enlace copiado: abre esta build tal cual', en: 'Link copied: it opens this build as it is' },
     ctLinkFree:     { es: 'El enlace traía una build: está en el Modo libre', en: 'The link had a build: it\'s in Free mode' },
     /* Free mode's «Try with» (design/42, 2 A): everything, or your game marked in the Inventory. */
     ctTry:          { es: 'Probar con', en: 'Try with' },
@@ -911,13 +913,23 @@
   const locale = () => (lang === 'en' ? 'en-GB' : 'es-ES');
   const nf = (max, min = 0) => new Intl.NumberFormat(locale(), { minimumFractionDigits: min, maximumFractionDigits: max });
 
+  /* The languages the site speaks, in the selector's order (English first: it's the default).
+     `tag` is the HTML language, `code` what a phone's header shows and `name` the language's own
+     name, as the game writes it in its menu (its LANG_CURRENT): never translated. The selector
+     (js/app.js, renderMasthead) lists them; a new language starts with a row here. */
+  const LANGS = [
+    { id: 'en', tag: 'en', code: 'EN', name: 'English' },   // EN: LANG_CURRENT
+    { id: 'es', tag: 'es', code: 'ES', name: 'Español' },   // ES: LANG_CURRENT
+  ];
+  const speaks = (id) => LANGS.some((l) => l.id === id);
+
   function setLang(next) {
-    lang = next === 'es' ? 'es' : 'en';
+    lang = speaks(next) ? next : 'en';
     SS.i18n.lang = lang;
     if (typeof document !== 'undefined') document.documentElement.lang = lang;
     return lang;
   }
 
-  SS.i18n = { UI, lang, t, pick, nf, setLang, get current() { return lang; } };
+  SS.i18n = { UI, LANGS, speaks, lang, t, pick, nf, setLang, get current() { return lang; } };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.i18n;
 })();

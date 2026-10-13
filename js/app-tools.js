@@ -41,7 +41,7 @@
 
   /* A build in the link (the boot, or a link pasted by hand): it's Free mode's. In a save, which
      is read and not changed, the page goes to Free mode to show it, and says so. Without a
-     link, Free mode's own build goes into the URL; a save's never does (its link is Share's). */
+     link, Free mode's own build goes into the URL; a save's never does. */
   App.adoptBuild = () => {
     const linked = App.build ? C.decode(App.build) : null;
     let store = null;
@@ -312,13 +312,12 @@
     const r = E.compute(st);
     shown = { st, r };
     held = st;
-    const share = `<button type="button" class="btn ct-share" data-act="ctShare">${esc(t('ctShare'))}</button>`;
     // Free mode: «Try with» Everything or What I have (design/42, 2 A).
     const mine = !locked && App.prefs.ctTry === 'mine';
     const tryWith = locked ? '' : `<div class="ct-try"><span class="lbl">${esc(t('ctTry'))}</span><div class="seg sm" role="group" aria-label="${esc(t('ctTry'))}">
         <button type="button" data-act="ctTry" data-value="all" aria-pressed="${!mine}">${esc(t('ctTryAll'))}</button>
         <button type="button" data-act="ctTry" data-value="mine" aria-pressed="${mine}">${esc(t('ctTryMine'))}</button></div></div>`;
-    sec.innerHTML = `<div class="ct">${brackets}${screenHead(esc(t('navTools')), tryWith + share)}
+    sec.innerHTML = `<div class="ct">${brackets}${screenHead(esc(t('navTools')), tryWith)}
       ${band(r, st)}${levels(st, locked)}
       <div class="ct-body">
         <div class="ct-side">${crestHtml(st, r, locked, have)}</div>
@@ -353,14 +352,6 @@
     App.persist();
     render();
   }
-  /* Share: the link to this build (a save's too), on the Crest screen and in the page's language,
-     copied; where the browser won't copy, the notice shows it. */
-  function shareLink() {
-    const { st } = current();
-    const u = new URL(location.href);
-    u.hash = C.encode(st) + (App.prefs.lang !== App.PAGE_LANG ? '&lang=' + App.prefs.lang : '') + '&view=tools';
-    return u.href;
-  }
   /* Start from (the Inventory, Free mode): a New Game (Hornet as the game starts her: every ladder
      at the bottom, the Hunter Crest unevolved and nothing else), or everything marked, every
      ladder at the top (a game at 100%). Your game's marks only: the build tried here is apart. */
@@ -373,12 +364,6 @@
       App.prefs.ctTry = node.dataset.value === 'mine' ? 'mine' : 'all';
       App.savePrefs();
       render();
-    },
-    ctShare() {
-      const link = shareLink();
-      App.track('share');
-      const done = () => toast(t('ctShared'));
-      try { navigator.clipboard.writeText(link).then(done, () => toast(link)); } catch (e) { toast(link); }
     },
     // Another Crest keeps the Silk Skills its slots have room for (js/engine.js normalize).
     ctCrest(node) { change((st) => { st.crest = node.dataset.value; }); },
