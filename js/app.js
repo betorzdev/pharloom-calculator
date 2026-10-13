@@ -170,6 +170,7 @@
     el.masthead.innerHTML = `
       <div class="mh-tools">
         <div class="seg langsel" role="group" aria-label="${esc(t('langGroup'))}">${langBtn('en', 'English')}${langBtn('es', 'Español')}</div>
+        <button type="button" class="text-btn mh-link" data-act="share" title="${esc(t('shareHint'))}">${esc(t('share'))}</button>
       </div>
       <a class="brand" href="${here(hashFor('home'))}" data-act="view" data-value="home" title="${esc(t('goHome'))}">
         ${CROWN}
@@ -177,6 +178,10 @@
       </a>
       ${App.saveLink ? App.saveLink() : ''}`;
   }
+
+  /* Share copies the site's address and nothing else: no screen, no build, no language
+     (tools/pages.js's SITE), as the sibling's. */
+  const SITE = 'https://betorzdev.github.io/pharloom-calculator/';
 
   /* The About block: the page's text for search engines. It's in the page's language and about
      its own screen, so it only shows there. */
@@ -456,6 +461,14 @@
       rebuildNF();
       persist();
       render();
+    },
+    // The site's bare address: the address bar carries the build.
+    share() {
+      persist();
+      track('share');
+      const done = () => toast(t('linkCopied'));
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(SITE).then(done, () => prompt(t('copyThis'), SITE));
+      else prompt(t('copyThis'), SITE);
     },
     view(node) { go(node.dataset.value, !node.closest('#nav, .masthead')); },
     // The About block's button (tools/pages.js): up to the screen it's about.

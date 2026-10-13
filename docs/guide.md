@@ -4,9 +4,9 @@
 
 ## What's on the page
 
-The header has the title under a filigree crown (it leads back to Your game), the language on
-the left and, on the right, the save you're in (Hornet at a bench): it opens **Saves**. The
-screen bar has six screens in a row: Your game, Inventory, Progress, Map, Journal and Crest.
+The header has the title under a filigree crown (it leads back to Your game), the language and
+**Share** on the left (it copies the site's address, nothing more: no screen, build or language)
+and, on the right, the save you're in (Hornet at a bench): it opens **Saves**. The screen bar has six screens in a row: Your game, Inventory, Progress, Map, Journal and Crest.
 With a save loaded, Progress carries your completion and Journal the entries Nuu counts
 (`63%`, `120/230`); in Free mode the bar only has the names. On a phone the six don't fit, so
 Inventory folds under Your game: while you're in either, a second row under the bar switches
@@ -182,7 +182,7 @@ for the Reaper and the Shaman. With Flea Brew worn, what it gives for its 10 sec
 the wait, but a slash never comes faster than the slash itself lasts (0.35 s for the Hunter).
 Combat says how long slashing nonstop takes to kill the enemy.
 
-**Share** copies a link that opens the build on screen as it is (yours from a save too). The
+The address bar carries the build: copied, it opens the build on screen as it is. The
 link is readable (`#v=1&crest=architect&needle=4&tools=straight-pin,compass…`) and carries only
 what differs from a Hunter with nothing: in Free mode the address always says the build. A link
 with a build opens it in Free mode; if you were in a save, the page goes to Free mode and says so.
