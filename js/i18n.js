@@ -908,13 +908,23 @@
   const locale = () => (lang === 'en' ? 'en-GB' : 'es-ES');
   const nf = (max, min = 0) => new Intl.NumberFormat(locale(), { minimumFractionDigits: min, maximumFractionDigits: max });
 
+  /* The languages the site speaks, in the selector's order (English first: it's the default).
+     `tag` is the HTML language, `code` what a phone's header shows and `name` the language's own
+     name, as the game writes it in its menu (its LANG_CURRENT): never translated. The selector
+     (js/app.js, renderMasthead) lists them; a new language starts with a row here. */
+  const LANGS = [
+    { id: 'en', tag: 'en', code: 'EN', name: 'English' },   // EN: LANG_CURRENT
+    { id: 'es', tag: 'es', code: 'ES', name: 'Español' },   // ES: LANG_CURRENT
+  ];
+  const speaks = (id) => LANGS.some((l) => l.id === id);
+
   function setLang(next) {
-    lang = next === 'es' ? 'es' : 'en';
+    lang = speaks(next) ? next : 'en';
     SS.i18n.lang = lang;
     if (typeof document !== 'undefined') document.documentElement.lang = lang;
     return lang;
   }
 
-  SS.i18n = { UI, lang, t, pick, nf, setLang, get current() { return lang; } };
+  SS.i18n = { UI, LANGS, speaks, lang, t, pick, nf, setLang, get current() { return lang; } };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.i18n;
 })();

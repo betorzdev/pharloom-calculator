@@ -166,10 +166,19 @@
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute('content', own ? PAGE_HEAD.description : t('metaDescription'));
     for (const v of VIEWS) { const sec = screenOf(v); if (sec) sec.setAttribute('aria-label', t(VIEW_KEY[v])); }
-    const langBtn = (code, label) => `<button type="button" lang="${code}" data-act="lang" data-value="${code}" aria-pressed="${prefs.lang === code}" aria-label="${label}" title="${label}">${code.toUpperCase()}</button>`;
+    /* The language (the sibling's design/29-language-selector.html): what's chosen and a chevron
+       (its name on a wide screen, its code on a phone), and under it the site's languages
+       (I.LANGS), each by its own name and a link to this page in it (langPage; inside a frame,
+       where the language changes in place, to where you are). */
+    const now = I.LANGS.find((l) => l.id === prefs.lang) || I.LANGS[0];
+    const langItem = (l) => `<li><a href="${esc(langPage(l.id) || here(hashFor()))}" lang="${l.tag}" hreflang="${l.tag}"${NT} data-act="lang" data-value="${l.id}"${l === now ? ' aria-current="true"' : ''}>${esc(l.name)}</a></li>`;
+    el.masthead.classList.toggle('is-lang-open', langOpen);
     el.masthead.innerHTML = `
       <div class="mh-tools">
-        <div class="seg langsel" role="group" aria-label="${esc(t('langGroup'))}">${langBtn('en', 'English')}${langBtn('es', 'Español')}</div>
+        <div class="langsel">
+          <button type="button" class="text-btn lang-btn" data-act="langMenu" aria-haspopup="true" aria-expanded="${langOpen}" aria-controls="lang-menu" aria-label="${esc(t('langGroup') + ': ' + now.name)}" title="${esc(t('langGroup'))}"><span class="lang-name" lang="${now.tag}"${NT}>${esc(now.name)}</span><span class="lang-code" aria-hidden="true">${now.code}</span>${chevron(langOpen)}</button>
+          <ul class="lang-menu" id="lang-menu"${langOpen ? '' : ' hidden'}>${I.LANGS.map(langItem).join('')}</ul>
+        </div>
         <button type="button" class="text-btn mh-link" data-act="share" title="${esc(t('shareHint'))}">${esc(t('share'))}</button>
       </div>
       <a class="brand" href="${here(hashFor('home'))}" data-act="view" data-value="home" title="${esc(t('goHome'))}">
@@ -177,6 +186,22 @@
         <p class="title">${esc(t('title'))}<span class="mh-beta">${esc(t('betaTag'))}</span></p>
       </a>
       ${App.saveLink ? App.saveLink() : ''}`;
+  }
+
+  /* The language's list, open or closed without repainting the header (the focus would be lost).
+     Open, the header rises over the screen bar (css: .is-lang-open) and the focus goes to the
+     chosen language; closed from the keyboard, back to its button. */
+  let langOpen = false;
+  function langMenu(on, byKey) {
+    langOpen = on;
+    const btn = el.masthead.querySelector('.lang-btn'), menu = el.masthead.querySelector('.lang-menu');
+    if (!btn || !menu) return;
+    el.masthead.classList.toggle('is-lang-open', on);
+    btn.setAttribute('aria-expanded', String(on));
+    btn.querySelector('.chev').classList.toggle('up', on);
+    menu.hidden = !on;
+    if (on) (menu.querySelector('[aria-current]') || menu.querySelector('a')).focus();
+    else if (byKey) btn.focus();
   }
 
   /* Share copies the site's address and nothing else: no screen, no build, no language
@@ -449,8 +474,10 @@
   /* What each data-act does. Here, the header's and the bar's; each screen's script adds its
      own with Object.assign(actions, …). */
   const actions = {
+    langMenu() { langMenu(!langOpen); },
     lang(node) {
       const next = node.dataset.value;
+      langMenu(false);
       if (next === prefs.lang) return;
       const page = langPage(next);
       prefs.lang = I.setLang(next);
@@ -476,12 +503,24 @@
     betaClose() { save(KEY.beta, '1'); track('beta-close'); renderBanner(); },
     aboutFold() { aboutOpen = true; renderAbout(); const h = el.about.querySelector('h1'); if (h) { h.setAttribute('tabindex', '-1'); h.focus(); } },
   };
+  // The language's list is a dropdown: a tap anywhere else closes it (and still does what it was for).
   document.addEventListener('click', (ev) => {
+    if (langOpen && !ev.target.closest('.langsel')) langMenu(false);
     const node = ev.target.closest('[data-act]');
     if (!node) return;
     if (node.tagName === 'A' && (ev.ctrlKey || ev.metaKey || ev.shiftKey || ev.altKey || ev.button)) return;
     const act = node.dataset.act;
     if (actions[act]) { ev.preventDefault(); actions[act](node); }
+  });
+  // The language's list: Esc closes it and up and down walk it, as a menu.
+  document.addEventListener('keydown', (ev) => {
+    if (!langOpen) return;
+    if (ev.key === 'Escape') { langMenu(false, true); ev.preventDefault(); return; }
+    if (ev.key !== 'ArrowDown' && ev.key !== 'ArrowUp') return;
+    const items = [...el.masthead.querySelectorAll('.lang-menu a')];
+    const at = items.indexOf(document.activeElement), step = ev.key === 'ArrowDown' ? 1 : -1;
+    items[(at + step + items.length) % items.length].focus();
+    ev.preventDefault();
   });
   /* Back and Forward. The entries the site leaves (marked {ss: 1}) only change the place; a
      link typed or pasted by hand brings its language and its screen. */

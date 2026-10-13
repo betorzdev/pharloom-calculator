@@ -263,8 +263,7 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
 .search input:focus-visible { outline: none; }
 /* Choose one (.seg): a group where one is always chosen. The upgrade pips (design/03-redesign.md,
    step 2): a hollow diamond under each word, on the accent's line; the chosen one in bone, its
-   pip filled and lit. The header's language (.langsel) keeps the plain underline: it's loose
-   text, as a game menu's. */
+   pip filled and lit. */
 .seg { display: inline-flex; align-items: center; gap: var(--sp-4); flex-wrap: wrap; }
 .seg button {
   display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--sp-1);
@@ -285,12 +284,6 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
 .seg button:disabled::after { border-color: var(--line-ctl); }
 .seg.sm { gap: var(--sp-3); }
 .seg.sm button { min-height: var(--ctl-sm); font-size: var(--fs-xs); }
-/* The language: words on a faint line, the chosen one on the accent's, doubled. */
-.langsel button { flex-direction: row; min-width: 0; border-bottom: 1px solid color-mix(in oklab, var(--accent-line) 40%, transparent);
-  transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease); }
-.langsel button::after { display: none; }
-.langsel button:is(:hover, :focus-visible):not([aria-pressed="true"]) { border-bottom-color: var(--accent-line); }
-.langsel button[aria-pressed="true"] { border-bottom-color: var(--accent); box-shadow: 0 1px 0 var(--accent); }
 
 /* ── Showing ───────────────────────────────────────────────────────────
    A frame says "press me", so what only informs carries none. */
@@ -355,15 +348,38 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
 }
 /* The language and Share, as loose text like a game menu: small, unboxed, so the title rules. */
 .mh-tools { --tools-gap: var(--sp-6); display: flex; align-items: center; gap: var(--tools-gap); flex-wrap: wrap; }
-.langsel { position: relative; display: flex; align-items: center; gap: var(--sp-2); }
+/* The language (the sibling's design/29-language-selector.html): what's chosen and a chevron (its
+   name on a wide screen, its code on a phone) and, under it, a short list: each language by its
+   own name, the chosen one in bone behind the diamond. */
+.langsel { position: relative; display: flex; align-items: center; }
 .mh-tools > .langsel:not(:last-child)::after {
   content: ''; position: absolute; top: 50%; right: calc(var(--tools-gap) / -2 - 0.5px);
   width: 1px; height: var(--sp-4); transform: translateY(-50%); background: var(--line-ctl);
 }
-.langsel button, .mh-link {
+.lang-btn, .mh-link {
   display: inline-flex; align-items: center; min-height: var(--ctl-sm); padding: 0;
-  font-size: var(--fs-sm); letter-spacing: var(--track-label);
+  font-size: var(--fs-sm); letter-spacing: var(--track-label); white-space: nowrap;
 }
+.lang-btn { gap: var(--sp-2); }
+.lang-btn[aria-expanded="true"] { color: var(--ink-strong); text-decoration-color: var(--accent); }
+.lang-code { display: none; }
+.lang-menu {
+  position: absolute; z-index: 2; top: calc(100% + var(--sp-2)); left: calc(var(--sp-4) * -1); min-width: max-content;
+  max-height: calc(100dvh - var(--sp-16) * 2); overflow-y: auto; margin: 0; padding: var(--sp-2) 0; list-style: none;
+  background: var(--card); border: 1px solid var(--line-panel); box-shadow: var(--shadow-md);
+}
+.lang-menu a {
+  display: flex; align-items: center; gap: var(--sp-3); min-height: var(--ctl-sm); padding: 0 var(--sp-8) 0 var(--sp-4);
+  font-size: var(--fs-sm); color: var(--ink-2); text-decoration: none; white-space: nowrap;
+  transition: color var(--dur) var(--ease), background-color var(--dur) var(--ease);
+}
+.lang-menu a::before { content: ''; flex: none; width: var(--diamond); height: var(--diamond); transform: rotate(45deg); }
+.lang-menu a[aria-current="true"] { color: var(--ink-strong); }
+.lang-menu a[aria-current="true"]::before { background: var(--accent); }
+.lang-menu a:is(:hover, :focus-visible) { color: var(--accent-ink); background: var(--accent-soft); }
+.lang-menu a:focus-visible { outline-offset: calc(var(--sp-half) * -1); }   /* inside the list, which clips */
+/* Open, the list falls over the screen bar, which is stuck above the header's own layer. */
+.masthead.is-lang-open { position: relative; z-index: 40; }
 
 /* ── The screen bar ──────────────────────────────────────────────────────
    The pages of the game's pause menu: their names in the serif, in lowercase. Stuck at the top
@@ -612,6 +628,10 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
   .masthead { display: flex; flex-wrap: nowrap; justify-content: space-between; align-items: center; gap: var(--sp-2); padding-top: var(--sp-3); }
   .brand, .masthead .brand { display: flex; flex: 1 1 auto; align-items: flex-start; order: -1; }
   .masthead .mh-tools { order: 1; flex: none; flex-wrap: nowrap; --tools-gap: var(--sp-3); }
+  .lang-name { display: none; }
+  .lang-code { display: inline; }
+  /* At the right edge, the list opens leftwards. */
+  .lang-menu { left: auto; right: calc(var(--sp-4) * -1); }
   .title { font-size: var(--fs-lg); text-align: left; letter-spacing: var(--track-title); }
   /* The bar, on a phone: the five tabs spread out in one row. */
   .nav-tabs { justify-content: space-between; gap: 0 var(--sp-3); }
