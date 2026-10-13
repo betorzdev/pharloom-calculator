@@ -83,6 +83,19 @@ async function fetchFile(file) {
   for (const [id, en] of EXTRAS) add('extras', id, en);
   jobs.push(['items/needle', FILE['items/needle']]);
   for (const x of D.TOOLS) add('tools', x.id, x.name.en);
+  /* A Tool's variants past the first (Silkshot's), each its own picture: the infobox block
+     labelled as it (js/data.js attacks[].variant), as tools/<id>-<variant>.webp. On 13-Oct-2026
+     the wiki refused them (a browser check): the two in the repo are the game's own inventory
+     sprites (inventory.spriteatlas, _0002_T_web_shot_forge and _0003_T_web_shot_architect), the
+     same art at the same size as the wiki's. */
+  for (const x of D.TOOLS) {
+    for (const a of (x.attacks || []).filter((y) => y.variant).slice(1)) {
+      const text = W.page(titleOf(x.name.en));
+      const f = W.fields(W.templates(text, 'SS Infobox Tool')[0]);
+      const sfx = ['2', '3', '4'].find((k) => W.plain(f['label' + k] || '') === a.name.en);
+      jobs.push([`tools/${x.id}-${a.id}`, sfx ? imageOf(text, sfx) : null]);
+    }
+  }
   for (const x of D.CRESTS) add('crests', x.id, x.name.en, ['% Crest']);
   /* The Silk Skills and abilities: the inventory's art, one family on the wiki, "Icon SS <Name>
      Art.png" (white on black, as the pause menu draws them), not their pages' small HUD icon. */

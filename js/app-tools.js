@@ -21,6 +21,10 @@
   const KEY = 'pharloom.build';
   const num = (n, d = 0) => App.NF[d].format(n);
   const icon = (list, id) => `assets/icons/${list}/${id}.webp`;
+  // A Tool's picture as the build holds it (Silkshot's variant: js/engine.js toolArt), or a Silk Skill's.
+  let held = {};
+  // A Silk Skill's is the game's own sprite in the pane, solid white (assets/icons/skills-inv, tools/extract-crests.py).
+  const pic = (kind, id) => (kind === 'skill' ? icon('skills-inv', id) : icon('tools', E.toolArt(id, held).art));
   const TOOL = new Map(D.TOOLS.map((x) => [x.id, x]));
   const COLORS = ['red', 'blue', 'yellow'];
 
@@ -66,47 +70,85 @@
       Object.assign(st, { needle: have.needle, kit: have.kit, pouch: have.pouch, masks: have.masks, spools: have.spools, hearts: have.hearts,
         hunterStage: (have.build && have.build.hunterStage) || 1, vest: E.vestOf(have.crests, lockets) });
       st.tools = st.tools.filter((id) => have.tools.includes(id));
-      if (st.skill && !have.skills.includes(st.skill)) st.skill = null;
+      st.skills = st.skills.filter((id) => have.skills.includes(id));
       if (st.crest !== 'hunter' && !have.crests.includes(st.crest)) st.crest = 'hunter';
       return { st: E.normalize(st), locked: false, have };
     }
     const b = g.build || {};
-    return { locked: true, have: g, st: E.normalize({ ...b, needle: g.needle, kit: g.kit, pouch: g.pouch, masks: g.masks, spools: g.spools, hearts: g.hearts,
-      ...moment }) };
+    return { locked: true, have: g, st: E.normalize({ ...b, needle: g.needle, kit: g.kit, pouch: g.pouch, masks: g.masks, spools: g.spools, hearts: g.hearts, cursed: b.cursed,
+      silkshot: g.silkshot || undefined, ...moment }) };
   }
 
   // The build on screen, for the other screens too (Combat, js/app-fight.js).
   App.currentBuild = () => current().st;
 
-  /* ── The Crest and its slots, as the game's pane draws them (js/crest-slots.js) ──
+  /* ── The Crest and its slots, as the game's pane draws them (js/crest-slots.js; design/43) ──
      Each colour's Tools go into its slots in the game's order, the open ones first and then those
-     a Memory Locket opens; a slot no Locket has opened yet shows the game's locked frame (in a
-     save, as the save says, slot by slot; in Free mode every Locket is used). The
-     Vesticrest's slots float under the Crest, clear of its art, as the game's "Floating Slots". In Free mode a
-     Tool in a slot is taken off with a tap, and each slot keeps what it holds (seats, per Crest,
-     while the page is open): taking one off leaves the others where they were, as in the game. */
+     a Memory Locket opens. Every piece is the game's sprite at its own size: an empty slot shows
+     its sign (a red or Silk Skill slot's says the button that fires it: up, alone or down); a full
+     one, the ring in its colour with the Tool inside at its own size (about the ring's; a Silk
+     Skill, the pane's solid white sprite), over the Crest's art, in the half grey the pane gives it
+     while you browse it (--crest-tint); a slot no Locket has opened yet, the game's small lock ring in grey instead of its sign (in a
+     save, as the save says, slot by slot; in Free mode every Locket is used). The Vesticrest's slots float beside the
+     Crest between the game's white brackets ("Floating Slots"), and the Crest's name stays under
+     the Crest alone. In Free mode a Tool in a slot is taken off with a tap, and each slot keeps
+     what it holds (seats, per Crest, while the page is open): taking one off leaves the others
+     where they were, as in the game. A save made while cursed wears the Cursed Crest: its art, no
+     slots, and a line on what the curse does. */
   const TYPE = ['red', 'blue', 'yellow', 'skill'];
+  const BUTTON = ['', '-up', '-down'];
   const slotName = (kind, id) => pick((kind === 'skill' ? D.SKILLS.find((x) => x.id === id) : TOOL.get(id)).name);
   const seats = {};
-  function slot(kind, frame, id, x, y, locked) {
-    const style = ` style="--g:url(${SS.crestFrames[frame === 'locked' ? 'locked' : kind]})${x == null ? '' : `;--x:${x};--y:${y}`}"`;
-    if (!id) return `<span class="ct-slot is-${kind}${frame === 'locked' ? ' is-locked' : ''}"${style} aria-hidden="true"></span>`;
-    const name = slotName(kind, id);
-    const act = locked ? 'ctDescribe' : kind === 'skill' ? 'ctSkill' : 'ctTool';
-    return `<button type="button" class="ct-slot is-${kind} is-full" data-act="${act}" data-kind="${kind === 'skill' ? 'skill' : 'tool'}" data-value="${id}"${style}
-        title="${esc(name)}" aria-label="${esc(name)}"${NT}><img src="${icon(kind === 'skill' ? 'skills' : 'tools', id)}" alt=""></button>`;
+  // One of the game's sprites (js/crest-slots.js crestSprites), at its size and centre, tinted through a mask.
+  const sprite = (name, cls = '', k = 1, at = null) => {
+    const [uri, w, h, ax, ay] = SS.crestSprites[name];
+    const [x, y] = at || [ax * k, ay * k];
+    return `<i class="ct-g${cls}" style="--g:url(${uri});--gw:${w * k};--gh:${h * k};--gx:${x};--gy:${y}"></i>`;
+  };
+  // A locked slot's ring, scaled down (InventoryToolCrestSlot.UpdateSlotDisplay, Assembly-CSharp 1.0.30000).
+  const LOCKED_SCALE = 0.8;
+  const sign = (kind, bind) => sprite(kind === 'red' || kind === 'skill' ? kind + BUTTON[bind || 0] : kind);
+  function slot(s, id, shut, locked) {
+    const at = s.x == null ? '' : ` style="--x:${s.x};--y:${s.y}"`;
+    if (!id) {
+      // A locked slot is the lock ring alone, where the sign would be: the slot's Locked animation swaps
+      // the sign for Tool_slot_lock_ring (centred) and scales it to LOCKED_SCALE (InventoryToolCrestSlot).
+      const g = shut ? sprite('lock', '', LOCKED_SCALE) : sign(s.kind, s.bind);
+      return `<span class="ct-slot is-${s.kind}${shut ? ' is-locked' : ''}"${at} aria-hidden="true">${g}</span>`;
+    }
+    const name = slotName(s.kind, id);
+    const act = locked ? 'ctDescribe' : s.kind === 'skill' ? 'ctSkill' : 'ctTool';
+    const ring = 'ring' + (s.kind === 'red' || s.kind === 'skill' ? BUTTON[s.bind || 0] : '');
+    // The worn one is its inventory sprite at its own size and centre, about the ring's (SS.crestIcons, the slot's Item Icon).
+    const [w, h, x, y] = s.kind === 'skill' ? SS.crestIcons.skills[id] : SS.crestIcons.tools[E.toolArt(id, held).art];
+    return `<button type="button" class="ct-slot is-${s.kind} is-full" data-act="${act}" data-kind="${s.kind === 'skill' ? 'skill' : 'tool'}" data-value="${id}"${at}
+        title="${esc(name)}" aria-label="${esc(name)}"${NT}>${sprite(ring)}<img src="${pic(s.kind, id)}" alt="" style="--iw:${w};--ih:${h};--ix:${x};--iy:${y}"></button>`;
+  }
+  // The Vesticrest's column (SS.crestFloat, the game's Floating Slots): the slots and their brackets, in the Crest's units.
+  function floating(items) {
+    const F = SS.crestFloat, n = items.length;
+    const brackets = F.brackets[n];
+    const ys = [...brackets.map(([b, y]) => [y, SS.crestSprites[b][2] * F.k]), ...items.map((_, i) => [F.slots[i], 1.43])];
+    const top = Math.max(...ys.map(([y, h]) => y + h / 2)), bottom = Math.min(...ys.map(([y, h]) => y - h / 2));
+    return `<div class="ct-float" style="--top:${top};--fh:${top - bottom}">${brackets.map(([b, y]) => `<span class="ct-bracket" style="--y:${y}">${sprite(b, '', F.k)}</span>`).join('')}${
+      items.map((html, i) => html.replace('class="ct-slot', `style="--y:${F.slots[i]}" class="ct-slot`)).join('')}</div>`;
   }
   function crestHtml(st, r, locked, have) {
+    if (st.cursed) {
+      const [w, h, ax, ay] = SS.crestArt.cursed;
+      return `<div class="ct-crest"><div class="ct-crest-art" style="--w:${w};--h:${h};--ax:${ax};--ay:${ay}"><img src="assets/crests/cursed.webp" alt=""></div>
+        <div class="ct-crest-name"><div><h3${NT}>${esc(t('ctCursed'))}</h3></div></div><p class="ct-curse">${esc(t('ctCurse'))}</p></div>`;
+    }
     const crest = D.CRESTS.find((c) => c.id === st.crest);
     const art = st.crest === 'hunter' ? `hunter-${st.hunterStage}` : st.crest;
     const pos = st.crest === 'hunter' ? SS.crestSlots.hunter[st.hunterStage - 1] : SS.crestSlots[st.crest];
     const [w, h, ax, ay] = SS.crestArt[art];
     // Every slot, the Crest's and then the Vesticrest's, in the order the game fills them.
-    const spots = [...pos.map((p, i) => ({ kind: TYPE[p[2]], lock: p[3], x: p[0], y: p[1], i }))
+    const spots = [...pos.map((p, i) => ({ kind: TYPE[p[2]], lock: p[3], x: p[0], y: p[1], bind: p[4], i }))
       .sort((a, b) => TYPE.indexOf(a.kind) - TYPE.indexOf(b.kind) || a.lock - b.lock || a.i - b.i),
     ...COLORS.flatMap((c) => Array.from({ length: r.slots[c].extra }, () => ({ kind: c, lock: 0 })))];
-    const kindOf = (id) => (id === st.skill ? 'skill' : TOOL.get(id).color);
-    const wear = [...st.tools, ...(st.skill ? [st.skill] : [])];
+    const kindOf = (id) => (st.skills.includes(id) ? 'skill' : TOOL.get(id).color);
+    const wear = [...st.tools, ...st.skills];
     // Each worn one stays in the slot it had (a save's, where the game has it; Free mode's, where it
     // was put); the rest take the first free one of their colour.
     const key = st.crest === 'hunter' ? `hunter-${st.hunterStage}` : st.crest;
@@ -120,20 +162,18 @@
       if (i >= 0) held[i] = id;
     }
     if (!locked) seats[key] = held;
-    const html = (s, i) => slot(s.kind, s.lock && !held[i] && !opened(s) ? 'locked' : s.kind, held[i], s.x, s.y, locked);
+    const html = (s, i) => slot(s, held[i], s.lock && !held[i] && !opened(s), locked);
     const placed = spots.map((s, i) => (s.x == null ? '' : html(s, i))).join('');
-    // What doesn't fit the Crest goes on the Vesticrest's slots.
-    const float = spots.map((s, i) => (s.x == null ? html(s, i) : '')).join('');
+    // What doesn't fit the Crest goes on the Vesticrest's slots, its blue over its yellow.
+    const vest = spots.map((s, i) => (s.x == null ? html(s, i) : null)).filter(Boolean);
     // ‹ › change the Crest (Free mode), past the ones the Inventory's marks say you don't have.
     const had = D.CRESTS.filter((c) => c.id === 'hunter' || !have || have.crests.includes(c.id));
     const step = (d) => { const i = had.findIndex((c) => c.id === st.crest); return had[(i + d + had.length) % had.length].id; };
     const arrow = (d, label) => (locked || had.length < 2 ? '' : `<button type="button" class="icon-btn ct-arrow" data-act="ctCrest" data-value="${step(d)}" aria-label="${esc(label)}" title="${esc(label)}">${d < 0 ? '‹' : '›'}</button>`);
-    return `<div class="ct-crest" style="--w:${w};--h:${h};--ax:${ax};--ay:${ay}">
-        <div class="ct-crest-art"><img src="assets/crests/${art}.webp" alt="">${placed}</div>
-        ${float ? `<div class="ct-float">${float}</div>` : ''}
-      </div>
-      <div class="ct-crest-name">${arrow(-1, t('ctPrev'))}<div><h3${NT}>${esc(pick(crest.name))}</h3>
-        ${st.crest === 'hunter' ? `<span class="ct-stage">${esc(t('ctStage', { n: num(st.hunterStage) }))}</span>` : ''}</div>${arrow(1, t('ctNext'))}</div>`;
+    return `<div class="ct-crest${vest.length ? ' has-float' : ''}">${vest.length ? floating(vest) : ''}
+        <div class="ct-crest-art" style="--w:${w};--h:${h};--ax:${ax};--ay:${ay}"><img src="assets/crests/${art}.webp" alt="">${placed}</div>
+        <div class="ct-crest-name">${arrow(-1, t('ctPrev'))}<div><h3${NT}>${esc(pick(crest.name))}</h3>
+        ${st.crest === 'hunter' ? `<span class="ct-stage">${esc(t('ctStage', { n: num(st.hunterStage) }))}</span>` : ''}</div>${arrow(1, t('ctNext'))}</div></div>`;
   }
 
   /* ── The levels: − N + for the Needle, the Kit, the Pouch and the Hunter's evolution (read
@@ -180,12 +220,12 @@
       const act = locked ? 'ctDescribe' : kind === 'skill' ? 'ctSkill' : 'ctTool';
       return `<li><button type="button" class="inv-cell is-slot ct-tool${on ? ' is-on' : ''}" style="--c: var(--slot-${kind})" data-act="${act}" data-kind="${kind === 'skill' ? 'skill' : 'tool'}" data-value="${x.id}"
           ${locked ? '' : `aria-pressed="${on}"`} title="${esc(name)}" aria-label="${esc(name)}"${NT}>
-          <img src="${icon(kind === 'skill' ? 'skills' : 'tools', x.id)}" alt="" loading="lazy"></button></li>`;
+          <img src="${pic(kind, x.id)}" alt="" loading="lazy"></button></li>`;
     };
     const row = (label, cells) => (cells ? `<ul class="inv-grid ct-tools" aria-label="${esc(label)}">${cells}</ul>` : '');
     const rows = COLORS.map((c) => row(t('ct_' + c), D.TOOLS.filter((x) => x.color === c && had('tools', x.id, st.tools.includes(x.id)))
       .map((x) => btn(c, x, st.tools.includes(x.id))).join(''))).join('');
-    const skills = row(t('cat_skills'), D.SKILLS.filter((x) => had('skills', x.id, st.skill === x.id)).map((x) => btn('skill', x, st.skill === x.id)).join(''));
+    const skills = row(t('cat_skills'), D.SKILLS.filter((x) => had('skills', x.id, st.skills.includes(x.id))).map((x) => btn('skill', x, st.skills.includes(x.id))).join(''));
     // «What I have» with no Tool marked yet: says so, and where they're marked.
     const none = have && !locked && !have.tools.length ? `<p class="ct-none">${esc(t('ctNoTools'))} <a class="text-btn" href="${App.here(App.hashFor('game'))}" data-act="view" data-value="game">${esc(t('navGame'))}</a></p>` : '';
     return `<div class="ct-shelf">${none}${rows}${skills}</div>`;
@@ -223,7 +263,8 @@
     const hud = `<div class="ct-hud">
         <span class="ct-masks" role="img" aria-label="${esc(num(masks) + ' ' + t('cat_masks'))}">${'<img src="assets/hud/mask.png" alt="">'.repeat(masks)}</span>
         <span class="ct-spool" title="${esc(t('ctCasts', { n: num(r.silk.casts), c: num(r.silk.skill) }))}"><img src="assets/hud/spool.png" alt=""><b>${num(silk)}</b><span class="sr-only">${esc(t('invSilk'))}</span></span>
-        <span class="ct-heal" title="${esc(t('ctBindSub', { parts: r.health.bind.parts.map((p) => num(p)).join(' + '), s: num(r.health.bind.seconds, 2) }))}">${esc(t('ctBindHeals', { n: num(heals) }))}</span></div>`;
+        ${r.health.bind.fails ? `<span class="ct-heal">${esc(t('ctBindFails'))}</span>`
+    : `<span class="ct-heal" title="${esc(t('ctBindSub', { parts: r.health.bind.parts.map((p) => num(p)).join(' + '), s: num(r.health.bind.seconds, 2) }))}">${esc(t('ctBindHeals', { n: num(heals) }))}</span>`}</div>`;
     return `<div class="ct-band">
         <div class="ct-slash"${slash.title ? ` title="${esc(slash.title)}"` : ''}><img src="assets/needles/${st.needle}.png" alt=""><div><b>${num(slash.v)}</b><span>${esc(slash.k)}</span></div></div>
         <div class="ct-mid">${middle}</div>${hud}</div>`;
@@ -236,6 +277,7 @@
     const w = what || (st.tools[0] ? { kind: 'tool', id: st.tools[0] } : st.skill ? { kind: 'skill', id: st.skill } : null);
     if (!w) return `<p class="ct-desc-none">${esc(t('ctPoint'))}</p>`;
     const x = w.kind === 'skill' ? D.SKILLS.find((k) => k.id === w.id) : TOOL.get(w.id);
+    const desc = w.kind === 'skill' ? x.desc : E.toolArt(w.id, st).desc;
     let nums = '';
     if (w.kind === 'skill') {
       const k = r.skills.find((s) => s.id === w.id);
@@ -248,7 +290,7 @@
       nums = (a ? `<b>${num(a.total)}</b>` : '') + extra.map((v) => `<span>${esc(v)}</span>`).join('');
     }
     return `<h3 class="ct-desc-name is-${w.kind === 'skill' ? 'skill' : x.color}"${NT}>${esc(pick(x.name))}</h3>
-      ${x.desc ? `<p class="ct-desc-text">${esc(pick(x.desc))}</p>` : ''}
+      ${desc ? `<p class="ct-desc-text">${esc(pick(desc))}</p>` : ''}
       ${nums ? `<p class="ct-desc-nums">${nums}</p>` : ''}`;
   }
 
@@ -259,13 +301,13 @@
     const n = r.needle;
     const own = !!D.CRESTS.find((c) => c.id === r.state.crest).attacks;
     const cell = (k, v, img = '') => `<div class="ct-sum-cell">${img}<span class="ct-sum-k"${img ? NT : ''}>${k}</span><b>${v}</b></div>`;
-    const pic = (list, id, name) => `<img src="${icon(list, id)}" alt="" title="${esc(name)}">`;
+    const img = (kind, id, name) => `<img src="${pic(kind, id)}" alt="" title="${esc(name)}">`;
     const skill = r.skills.find((s) => s.equipped);
     const tool = r.tools.find((x) => x.attacks.length);
     const cells = [
       cell(esc(own ? t('ctAtt_' + n.attacks[0].id) : t('ctSlash')), num(own ? n.attacks[0].total : n.slash)),
-      skill ? (() => { const nm = pick(D.SKILLS.find((x) => x.id === skill.id).name); return cell(esc(nm), num(skill.total), pic('skills', skill.id, nm)); })() : '',
-      tool ? (() => { const nm = pick(TOOL.get(tool.id).name); return cell(esc(nm), num(tool.attacks[0].total), pic('tools', tool.id, nm)); })() : '',
+      skill ? (() => { const nm = pick(D.SKILLS.find((x) => x.id === skill.id).name); return cell(esc(nm), num(skill.total), img('skill', skill.id, nm)); })() : '',
+      tool ? (() => { const nm = pick(TOOL.get(tool.id).name); return cell(esc(nm), num(tool.attacks[0].total), img('tool', tool.id, nm)); })() : '',
       cell(esc(t('cat_masks')), num(r.health.masks)),
       cell(esc(t('invSilk')), num(r.silk.spool)),
     ].filter(Boolean).join('');
@@ -277,6 +319,7 @@
     const { st, locked, have } = current();
     const r = E.compute(st);
     shown = { st, r };
+    held = st;
     // Free mode: «Try with» Everything or What I have (design/42, 2 A).
     const mine = !locked && App.prefs.ctTry === 'mine';
     const tryWith = locked ? '' : `<div class="ct-try"><span class="lbl">${esc(t('ctTry'))}</span><div class="seg sm" role="group" aria-label="${esc(t('ctTry'))}">
@@ -330,7 +373,8 @@
       App.savePrefs();
       render();
     },
-    ctCrest(node) { change((st) => { st.crest = node.dataset.value; if (!D.CRESTS.find((c) => c.id === st.crest).slots.skill) st.skill = null; }); },
+    // Another Crest keeps the Silk Skills its slots have room for (js/engine.js normalize).
+    ctCrest(node) { change((st) => { st.crest = node.dataset.value; }); },
     ctLevel(node) {
       const key = node.dataset.key, v = Number(node.dataset.value);
       // On «What I have» the levels and the evolution are your game's: they go into the marks.
@@ -349,7 +393,14 @@
     ctDescribe(node) { described = { kind: node.dataset.kind, id: node.dataset.value }; paintDesc(described); },
     ctSkill(node) {
       described = { kind: 'skill', id: node.dataset.value };
-      change((st) => { st.skill = st.skill === node.dataset.value ? null : node.dataset.value; });
+      // One per Skill slot (the Shaman's three): a tap takes it off, or puts it on; with every slot
+      // taken, it replaces the last one put on (a Crest with one slot: the one there).
+      const id = node.dataset.value;
+      change((st) => {
+        const room = D.CRESTS.find((c) => c.id === st.crest).slots.skill;
+        if (st.skills.includes(id)) st.skills = st.skills.filter((x) => x !== id);
+        else st.skills = [...(st.skills.length < room ? st.skills : st.skills.slice(0, room - 1)), id];
+      });
     },
     ctTool(node) {
       const id = node.dataset.value;

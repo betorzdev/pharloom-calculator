@@ -104,30 +104,39 @@ reduced motion).
 
 ### Inventory
 
-A sheet in two columns. On the left, what Hornet is: **the Needle**, the five upright with their
-damage, the one she carries taller and lit; then **Hornet**: the masks (5 to 10) as the game's
-masks, in a row as the HUD draws them, the silk (9 to 18) as beads on one thread, the Silk Hearts, and the Crafting Kit and Tool
-Pouch with their level; then the **Silk Skills** with what each deals at this build, and the
-**abilities** (Needle Strike with its damage). On the right, what she carries: the **Tools** by
-colour, each on its slot's diamond (dashed and grey while you lack it), the **Crests** and the
-**items** with their counts (the loose Mask Shards and Spool Fragments, the Memory Lockets,
-Craftmetal, Pale Oil, the Everbloom, the Farsight, the Hunter's Journal, the Old Hearts, the
-melodies and the fleas). Above the items sits the **Purse**: Rosaries and Shell Shards as big
-figures (the shards out of what your Tool Pouch holds, 400 to 800, with a bar), and under each
-what breaks into it, counted, with the sum you would get from breaking it all: the five Rosary
-strings and necklaces under the rosaries; the Beast Shards, Shard Bundles, Pristine Cores,
-Hornet Statuettes and the Growstone (Steel Soul) under the shards. Below the items, the
-**Relics** (how many you hold of each kind) and the **Mementos**. The heads count as the 100%
-does (Tools of 51); the Relics and Mementos aren't part of it. Tap anything to read the game's
-own text under its shelf.
+A sheet in two columns, each thing beside what it feeds, and a band under both. On the left, what
+Hornet is: **the Needle**, the five upright with their damage, the one she carries taller and lit,
+and the Pale Oil you hold under it; then **Hornet**: the masks (5 to 10) as the game's masks, in a
+row as the HUD draws them, with the loose Mask Shards under them (four make a mask), the silk (9 to
+18) as beads on one thread with the loose Spool Fragments (two make a spool), and the Silk Hearts;
+then the **Silk Skills** with what each deals at this build, and the **abilities** (Needle Strike
+with its damage). On the right, her equipment: the **Crests**, with the Memory Lockets that open
+their slots, and the **Tools**: the Crafting Kit and Tool Pouch with their level and the
+Craftmetal, then the Tools by colour, each on its slot's diamond (hollow in its colour while you
+lack it). There's one slot per point of the 100%: a Tool and its upgrade (Curveclaw and
+Curvesickle, Druid's Eye and Eyes, Claw Mirror and Mirrors) share one, showing the one you have,
+with two pips under it (had, upgraded), and Shell Satchel shows in Dead Bug's Purse's slot in Steel
+Soul. Snare Setter and Needle Phial, which a wish lends and takes back, sit apart after the
+colours: they don't count. Under both columns, what she carries: the **Purse** (Rosaries and
+Shell Shards as big figures, the shards out of what your Tool Pouch holds, 400 to 800, with a bar,
+and under each what breaks into it, counted, with the sum you would get from breaking it all: the
+five Rosary strings and necklaces under the rosaries; the Beast Shards, Shard Bundles, Pristine
+Cores, Hornet Statuettes and the Growstone (Steel Soul) under the shards); the **items** (the
+Everbloom, the Farsight, the Hunter's Journal, the Old Hearts, the melodies and the fleas); the
+**Relics** (how many you hold of each kind) and the **Mementos**. Crests, items, what's in the
+purse, Relics and Mementos are plates with their name, and under it their count or «Not found
+yet». Every head says how many of how many, and its rule lights up that far (complete, its diamond
+fills): the Tools count as the 100% does (of 51), the Crests with the Hunter Crest you start with
+(of 7); the Relics and Mementos aren't part of the 100%. Tap anything to read the game's own text
+under its shelf.
 
 In **Free mode** it's your game, marked by hand, and it starts as the game does: a New Game,
 with the base Needle, five masks, nine silk and the Hunter Crest, nothing else. A line under the
 title says so. On the left, tap a Needle, a mask, a bead of
-silk, a Silk Heart or a level (tap the last one lit to take it back). On the right, tap a Tool,
+silk, a Silk Heart or a level (tap the last one lit to take it back). Tap a Tool,
 Crest, Silk Skill, ability, the Everbloom, the Farsight, the Journal, an Old Heart, a melody or a
-Memento to mark it had or not (its
-text opens under the shelf); each shelf has «All · None», and what comes in numbers (loose Mask
+Memento to mark it had or not (its text opens under the shelf); a slot a Tool shares with its
+upgrade goes none, had, upgraded with each tap. Each shelf has «All · None», and what comes in numbers (loose Mask
 Shards and Spool Fragments, Memory Lockets, Craftmetal, Pale Oil, fleas, what's in the purse, the
 Relics of each kind) has − N +. The Rosaries and Shell Shards are typed: Enter or leaving the field
 takes the figure, and the shards stop at what your Pouch holds. «Start from»: «New Game» (the
@@ -135,7 +144,7 @@ game's own words) takes it all back to the start; «Everything maxed» marks eve
 at the top (a game at 100%). Progress counts what you mark, the Map leaves out what you have, and
 the Crest screen tries it on «What I have». A visit from before this (when the levels belonged to
 the Crest screen's build and started at the top) keeps the levels you moved and puts the ones still
-at the top back to a New Game's, and a notice on the Inventory and Progress says so once («Got it»).
+at the top back to a New Game's, without a notice.
 In a save the Inventory shows what the game saved, and changes only as you play.
 
 ### Crest
@@ -150,17 +159,26 @@ beside them what depends on the moment: the Hunter's focus, the Beast's fury, Fl
 the hit after a Challenge.
 
 Below, the Crest drawn as the game draws it, with its slots where the game puts them (read from
-its files, per Crest and per evolution of the Hunter), each the game's frame in its colour and
-holding the Tool or Silk Skill worn (from a save, in the slot the game has it in); a slot no
-Memory Locket has opened yet shows the game's grey locked frame (from a save, as the save says;
-in Free mode every slot is open), and the Vesticrest's slots sit on a row under the Crest. In Free mode a
+its files, per Crest and per evolution of the Hunter), every piece the game's own sprite at its
+size, the Crest's lines in the half grey the game's pane gives them while you browse it. An empty slot shows its sign in its colour; a red or Silk Skill slot's sign says the button
+that fires it (a spike up for Tool + up, plain, or down for Tool + down). A slot holding a Tool or
+Silk Skill (from a save, in the slot the game has it in) is the game's ring in its colour with the
+Tool inside at the game's own size, about the ring's (a Silk Skill as the game's pane shows it,
+solid white, here, in the list under the Crest and in the Inventory). A slot no Memory Locket has opened yet shows the game's small grey lock ring in
+place of its sign (from a save, as the save says; in Free mode every slot is open). The Vesticrest's slots float
+beside the Crest between the game's white brackets, and the Crest's name sits under the Crest. The
+Shaman wears a Silk Skill in each of its three slots. A save made while cursed (the Witch's curse,
+for a while in the story) shows the Cursed Crest: no slots, a line on what the curse does, and the
+figures with silk stopped at 3 and no Bind. In Free mode a
 tap on a worn one there takes it off, and the others stay in their slots. ‹ › change the Crest. Beside it,
 the Tools and Silk Skills you have (as the game lists them; in Free mode, all of them, or on «What
 I have» what the Inventory's marks say, with a line to the Inventory while no Tool is marked), by colour, each on its slot as the Inventory draws it, the
 slot filled and lit when it's worn: a tap puts one on or takes it off,
 and pointing at one (or at a slot) describes it underneath with the game's words and its numbers
 (damage per hit, uses at the Pouch's level, a full load, the shell shards to refill it; a Silk
-Skill's damage and silk), as if it were worn when it isn't.
+Skill's damage and silk), as if it were worn when it isn't. Silkshot is the one the game repaired
+(the Original, the Twelfth Architect's or the Forge Daughter's: a save says which), with its own
+picture, words, damage and uses.
 
 The damage is the wiki's model: the weapon's damage at its level times (1 + the player's
 modifiers, which add) rounded half to even, per hit; Tools scale with the Crafting Kit, the rest

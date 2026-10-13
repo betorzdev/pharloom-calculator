@@ -14,6 +14,9 @@
      roundDown    the follow-up hits round down (Threefold Pin, the Twelfth Architect's Silkshot).
      ammo         per Tool Pouch level (0..4); null = no limit. refill: shards per use at a bench,
                   rosaries per shot, reserve = a reserve is spent first.
+     variant      an attack that is one of a Tool's variants (Silkshot's three: a game holds one, the
+                  others are never had), with its own desc, ammo and refill; the Tool's own are the
+                  first variant's.
      slots        a Crest's [open, locked] per colour; locked ones open with Memory Lockets.
      strike       the Crest's Needle Strike; minHits = the Witch's hits when not all land.
      attacks      a Crest's slashes when they aren't one hit at 1x the Needle (the Architect's
@@ -367,15 +370,18 @@
       refill: { shards: 5 },
       attacks: [
         {
-          id: 'forge',
-          name: { es: 'Hija de la Forja', en: 'Forge Daughter' },
+          id: 'original',
+          name: { es: 'Original', en: 'Original' },
           desc: {
-            es: 'Antigua arma de las Tejedoras, reparada y modificada por la Hija de la Forja. Utiliza cartuchos de coraza y la propia seda del portador para disparar.',
-            en: 'Ancient weapon of the Weavers, repaired and modified by Forge Daughter. Uses shell canisters and the wielder\'s own Silk to fire.',
-            key: 'SILKSHOT_DESC_FORGE',
+            es: 'Antigua arma de las Tejedoras, reparada a su forma original. Utiliza cartuchos de coraza y la propia seda del portador para disparar.',
+            en: 'Ancient weapon of the Weavers, repaired to its original form. Uses shell canisters and the wielder\'s own Silk to fire.',
+            key: 'SILKSHOT_DESC_WEAVER',
           },
           scale: 'kit',
-          hits: [[[6, 1]], [[10, 1]], [[13, 1]], [[17, 1]], [[20, 1]]],
+          variant: true,
+          ammo: [8, 10, 12, 14, 16],
+          refill: { shards: 5 },
+          hits: [[[10, 1]], [[16, 1]], [[22, 1]], [[28, 1]], [[34, 1]]],
         },
         {
           id: 'architect',
@@ -387,6 +393,9 @@
           },
           scale: 'kit',
           roundDown: true,
+          variant: true,
+          ammo: [12, 15, 18, 21, 24],
+          refill: { shards: 3.33 },
           hits: [
             [[3, 1], [1, 1], [1, 1]],
             [[5, 1], [2, 1], [1, 1]],
@@ -396,15 +405,18 @@
           ],
         },
         {
-          id: 'original',
-          name: { es: 'Original', en: 'Original' },
+          id: 'forge',
+          name: { es: 'Hija de la Forja', en: 'Forge Daughter' },
           desc: {
-            es: 'Antigua arma de las Tejedoras, reparada a su forma original. Utiliza cartuchos de coraza y la propia seda del portador para disparar.',
-            en: 'Ancient weapon of the Weavers, repaired to its original form. Uses shell canisters and the wielder\'s own Silk to fire.',
-            key: 'SILKSHOT_DESC_WEAVER',
+            es: 'Antigua arma de las Tejedoras, reparada y modificada por la Hija de la Forja. Utiliza cartuchos de coraza y la propia seda del portador para disparar.',
+            en: 'Ancient weapon of the Weavers, repaired and modified by Forge Daughter. Uses shell canisters and the wielder\'s own Silk to fire.',
+            key: 'SILKSHOT_DESC_FORGE',
           },
           scale: 'kit',
-          hits: [[[10, 1]], [[16, 1]], [[22, 1]], [[28, 1]], [[34, 1]]],
+          variant: true,
+          ammo: [15, 18, 22, 26, 30],
+          refill: { shards: 2.66 },
+          hits: [[[6, 1]], [[10, 1]], [[13, 1]], [[17, 1]], [[20, 1]]],
         },
       ],
     },
@@ -1150,6 +1162,11 @@
       id: 'pale-nails',
       key: 'INV_NAME_SKILL_SILKBOSS_NEEDLE',
       name: { es: 'Uñas pálidas', en: 'Pale Nails', key: 'INV_NAME_SKILL_SILKBOSS_NEEDLE' },
+      desc: {
+        es: 'Técnica tomada de la fuente primigenia de la seda. Hila garras de hilo que se lanzan contra los enemigos.',
+        en: 'Technique taken from the primal source of Silk. Spin talons from thread that seek out enemies.',
+        key: 'INV_DESC_SILKBOSS_NEEDLE',
+      },
       silk: 4,
       attacks: [{ scale: 'needle', hits: [[[5, 3]], [[9, 3]], [[13, 3]], [[17, 3]], [[21, 3]]] }],
     },

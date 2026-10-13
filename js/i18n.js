@@ -214,6 +214,11 @@
     ctStrike:       { es: 'Golpe concentrado', en: 'Needle Strike' },   // INV_NAME_SKILL_CHARGESLASH
     ctDpsShort:     { es: 'Daño por segundo', en: 'Damage a second' },
     ctBindHeals:    { es: 'Enlazar cura {n}', en: 'a Bind heals {n}' },
+    ctBindFails:    { es: 'Enlazar falla', en: 'Bind fails' },   // the curse's; Bind as the game's button says it
+    // The curse's Crest (a save made while cursed): the game names it nowhere and the wiki's page has no
+    // ESname, so its wiki title stays in English in both (no source).
+    ctCursed:       { es: 'Cursed Crest', en: 'Cursed Crest' },
+    ctCurse:        { es: 'La maldición: sin herramientas ni habilidades, Enlazar falla y la seda no pasa de 3.', en: 'The curse: no Tools or Skills, Bind fails and silk stops at 3.' },   // BUTTON_CAST, INV_NAME_THREAD; the wiki's Cursed Crest page
     ctPrev:         { es: 'Blasón anterior', en: 'Previous Crest' },
     ctNext:         { es: 'Blasón siguiente', en: 'Next Crest' },
     ctPoint:        { es: 'Señala una herramienta para ver qué hace.', en: 'Point at a Tool to see what it does.' },
@@ -641,6 +646,13 @@
     invBroken:      { es: 'Si lo rompieras todo: +{n}', en: 'If you broke them all: +{n}' },
     invFieldMax:    { es: '{what}, máximo {n}', en: '{what}, maximum {n}' },
     invMissing:     { es: 'Aún no lo tienes', en: 'You don\'t have it yet' },
+    /* The third round (design/43): the plates' line for what you lack, what's loose under the masks
+       and the silk, and the two Tools a wish lends. No game source: written for context. */
+    invNotFound:    { es: 'Sin conseguir', en: 'Not found yet' },
+    invLooseMask:   { es: 'cuatro forman una máscara', en: 'four make a mask' },
+    invLooseSpool:  { es: 'dos forman un carrete', en: 'two make a spool' },
+    invLentTitle:   { es: 'No cuentan para el 100 %', en: 'Not counted for the 100%' },
+    invLentNote:    { es: 'Te las presta un deseo y te las quita al cumplirlo.', en: 'A wish lends them and takes them back once it\'s done.' },
     invAll:         { es: 'Todo', en: 'All' },
     invNone:        { es: 'Nada', en: 'None' },
     invLess:        { es: 'Uno menos: {what}', en: 'One less: {what}' },
@@ -653,10 +665,6 @@
     invBase:        { es: 'Partida nueva', en: 'New Game' },   // PROFILE_NEW_GAME
     invFreeLead:    { es: 'Modo libre: marca lo que tienes en tu partida y Progreso cuenta el 100 % con ello. Para probar builds con todo, el Blasón.',
       en: 'Free mode: mark what you have in your game and Progress counts the 100% from it. To try builds with everything, the Crest screen.' },
-    freeNoteTag:    { es: 'Novedad', en: 'New' },
-    freeNote:       { es: 'La aguja, las máscaras, la seda y las mejoras son ahora parte de lo que marcas: lo que no habías movido vuelve al de una partida nueva, para que el 100 % no cuente lo que no tienes. Revísalo en el Inventario.',
-      en: 'The Needle, masks, silk and upgrades are now part of what you mark: what you hadn\'t moved goes back to a New Game\'s, so the 100% doesn\'t count what you don\'t have. Check them in the Inventory.' },
-    freeNoteOk:     { es: 'Entendido', en: 'Got it' },
     invMax:         { es: 'Todo al máximo', en: 'Everything maxed' },
     invSilk:        { es: 'Seda', en: 'Silk' },   // INV_NAME_THREAD
 
