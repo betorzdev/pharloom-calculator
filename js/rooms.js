@@ -132,8 +132,11 @@
      in a room, wish and gauntlet has its scene and its area. A scene of theirs takes the area they
      carry there (the most of them, should they differ), so a piece's room is its own area; any
      other scene takes its branch's, the area most of the branch's carry. Four branches carry none
-     and are named here; Surface has no area of its own. */
+     and are named here; Surface has no area of its own. The Songclave's room
+     is named here too: nothing lies in it, but it's an area of its own in the Song branch, and all
+     it hands you is filed under it (its shop's Mask Shard and Spool Fragment, Sherma's). */
   const AREA_FALLBACK = { Abyss: 'ABYSS', Cradle: 'CRADLE', 'Dust Maze': 'MISTMAZE', Tut: 'MOSSCAVE' };
+  const AREA_ROOM = { song_enclave: 'ENCLAVE' };
   let AREA_OF = null, AREA_AT = null;
   const most = (v) => Object.entries(v).sort((a, b) => b[1] - a[1])[0][0];
   function areaOf(scene) {
@@ -152,7 +155,7 @@
       for (const g of GA.GAUNTLETS) add(g.scene, g.area);
       AREA_OF = { ...AREA_FALLBACK };
       for (const [branch, v] of Object.entries(vote)) AREA_OF[branch] = most(v);
-      AREA_AT = new Map(Object.entries(at).map(([k, v]) => [k, most(v)]));
+      AREA_AT = new Map([...Object.entries(at).map(([k, v]) => [k, most(v)]), ...Object.entries(AREA_ROOM)]);
     }
     const r = roomOf(scene);
     return r ? AREA_AT.get(scene.toLowerCase()) || AREA_OF[r.area] || null : null;

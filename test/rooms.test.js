@@ -196,6 +196,12 @@ test('where each Journal entry is: the game\'s own placements, each scene in one
   assert.deepEqual(lying.filter((p) => R.areaOf(R.sceneOf(p[2])) !== p[3]).map((p) => `${p[0]} ${R.sceneOf(p[2])}`), []);
   assert.strictEqual(R.areaOf('Song_09'), 'COGWORK_CORE');
   assert.strictEqual(R.areaOf('Song_10'), R.areaOf('Song_02'));   // the rest of the branch, by its vote
+  // The Songclave's room is the Songclave, as everything it hands you is filed (js/spots.js AT).
+  const SP = require('../js/spots.js');
+  const handed = CO.PIECES.filter((p, i) => /^song_enclave$/i.test(SP.AT.pieces[i] || ''));
+  assert.ok(handed.length >= 4 && handed.every((p) => p[3] === 'ENCLAVE'), JSON.stringify(handed.map((p) => p[3])));
+  assert.strictEqual(R.areaOf('Song_Enclave'), 'ENCLAVE');
+  assert.strictEqual(R.areaOf('song_enclave'), 'ENCLAVE');
 });
 
 test('every Journal entry has a place, the 29 the game makes at run time too, and a way there', () => {
