@@ -1,5 +1,5 @@
 /* js/live.js — a save slot kept in step with the real game (hallownest-calculator's
-   design/08-live-sync.md; carried over unchanged but for the database's name).
+   design/08-live-sync.md; carried over with its own database name, plus the games store).
    The page keeps a handle to the game's save file (File System Access) and reads it again each
    time the game writes it, which is on resting at a bench and on quitting: "at each bench", not
    real time. No DOM and no language: js/app-saves.js paints what this says.
@@ -8,6 +8,9 @@
                            a cross-origin iframe, which can't open the picker)
      links                 the handles, one per slot, in IndexedDB (a handle can't go in
                            localStorage), each with the file's stamp when it was last taken in
+     games                 the save each slot was last read from, and the one before it, so the
+                           slot is read again when the site learns something new (js/app-saves.js
+                           refreshSlots); IndexedDB, as a save is too big for localStorage
      watch(opts)           a generic watcher: asks opts.read() every 2 s, also while the tab is hidden
                            (playing full screen hides it: the site is up to date when you come back)
                            (and at once on coming back to it) and reports what it finds. The file
@@ -23,7 +26,7 @@
   const SS = globalThis.SS || (globalThis.SS = {});
 
   const MS = 2000;
-  const DB = 'pharloom-live', STORE = 'links';
+  const DB = 'pharloom-live', LINKS = 'links', GAMES = 'games';
 
   function topLevel() {
     try { return window.top === window || !!window.top.location.href; } catch (e) { return false; }
@@ -36,55 +39,63 @@
     try { return 'showOpenFilePicker' in window && 'indexedDB' in window && topLevel() && !linux(); } catch (e) { return false; }
   }
 
-  /* ── The handles, in IndexedDB ────────────────────────────────────────
+  /* ── The handles and the saves, in IndexedDB ──────────────────────────
      links.get(n) → { handle, name, stamp } or null; stamp = { lastModified, size } of the file
-     the slot last took in. Every failure resolves to nothing: without IndexedDB there's no link. */
+     the slot last took in. games.get(n) → { now, prev } or null, each { pd, sd, saved } as
+     js/savefile.js read() and toSnapshot() take them (prev null until the game saves again).
+     Every failure resolves to nothing: without IndexedDB there's no link and no copy. */
   let dbp = null;
   function db() {
     if (!dbp) {
       dbp = new Promise((ok, ko) => {
         let r;
-        try { r = indexedDB.open(DB, 1); } catch (e) { ko(e); return; }
-        r.onupgradeneeded = () => r.result.createObjectStore(STORE);
-        r.onsuccess = () => ok(r.result);
+        try { r = indexedDB.open(DB, 2); } catch (e) { ko(e); return; }
+        r.onupgradeneeded = () => {
+          for (const s of [LINKS, GAMES]) if (!r.result.objectStoreNames.contains(s)) r.result.createObjectStore(s);
+        };
+        // A newer page in another tab upgrading the database gets it: this one opens it again when it next needs it.
+        r.onsuccess = () => { r.result.onversionchange = () => { r.result.close(); dbp = null; }; ok(r.result); };
         r.onerror = () => ko(r.error);
       });
       dbp.catch(() => { dbp = null; });
     }
     return dbp;
   }
-  async function idb(mode, fn) {
+  async function idb(store, mode, fn) {
     const d = await db();
     return new Promise((ok, ko) => {
-      const tx = d.transaction(STORE, mode);
-      const req = fn(tx.objectStore(STORE));
+      const tx = d.transaction(store, mode);
+      const req = fn(tx.objectStore(store));
       tx.oncomplete = () => ok(req && req.result);
       tx.onerror = () => ko(tx.error);
       tx.onabort = () => ko(tx.error);
     });
   }
   const safe = (p, def) => p.then((v) => v, () => def);
-  const links = {
-    get: (n) => safe(idb('readonly', (s) => s.get(n)), null).then((v) => v || null),
-    put: (n, rec) => safe(idb('readwrite', (s) => s.put(rec, n)).then(() => true), false),
-    drop: (n) => safe(idb('readwrite', (s) => s.delete(n)).then(() => true), false),
-    // The slots that are linked, as { n: name }.
-    all: () => safe(new Promise((ok, ko) => {
-      db().then((d) => {
-        const out = {};
-        const tx = d.transaction(STORE, 'readonly');
-        const req = tx.objectStore(STORE).openCursor();
-        req.onsuccess = () => {
-          const c = req.result;
-          if (!c) return;
-          out[c.key] = (c.value && c.value.name) || '';
-          c.continue();
-        };
-        tx.oncomplete = () => ok(out);
-        tx.onerror = () => ko(tx.error);
-      }, ko);
-    }), {}),
-  };
+  // Every record of a store, as { n: what(record) }.
+  const every = (store, what) => safe(new Promise((ok, ko) => {
+    db().then((d) => {
+      const out = {};
+      const tx = d.transaction(store, 'readonly');
+      const req = tx.objectStore(store).openCursor();
+      req.onsuccess = () => {
+        const c = req.result;
+        if (!c) return;
+        out[c.key] = what(c.value);
+        c.continue();
+      };
+      tx.oncomplete = () => ok(out);
+      tx.onerror = () => ko(tx.error);
+    }, ko);
+  }), {});
+  const table = (store) => ({
+    get: (n) => safe(idb(store, 'readonly', (s) => s.get(n)), null).then((v) => v || null),
+    put: (n, rec) => safe(idb(store, 'readwrite', (s) => s.put(rec, n)).then(() => true), false),
+    drop: (n) => safe(idb(store, 'readwrite', (s) => s.delete(n)).then(() => true), false),
+  });
+  // links.all(): the slots that are linked, as { n: name }.
+  const links = { ...table(LINKS), all: () => every(LINKS, (v) => (v && v.name) || '') };
+  const games = { ...table(GAMES), all: () => every(GAMES, (v) => v) };
 
   const stampOf = (file) => ({ lastModified: file.lastModified, size: file.size });
   const sameStamp = (a, b) => !!a && !!b && a.lastModified === b.lastModified && a.size === b.size;
@@ -173,5 +184,5 @@
     };
   }
 
-  SS.live = { MS, canLive, links, fileSource, watch, stampOf, sameStamp };
+  SS.live = { MS, canLive, links, games, fileSource, watch, stampOf, sameStamp };
 })();

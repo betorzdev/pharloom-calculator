@@ -151,6 +151,32 @@
     return game ? 'game' : 'meta';
   }
 
+  /* The same save read again by today's code, from the copy the slot keeps (js/live.js games):
+     a mark, a check or a count the site learned after the import shows as the game has it. Not a
+     new save, so nothing is "since last time": the game's keys and pharloom.meta are replaced, the
+     site's own are kept, and pharloom.prev is replaced only by its own save read again (prevSnap,
+     the same moment as the one kept), else kept as it was. Only when the copy is the save the slot
+     holds (the same moment and play time in pharloom.meta). Returns whether anything changed. */
+  const momentOf = (v) => { const m = parseObj(v) || {}; return JSON.stringify([m.saved ?? null, m.time ?? null]); };
+  const prevMoment = (v) => { const p = parseObj(v) || {}; return p.saved ?? null; };
+  function refresh(store, n, snap, prevSnap = null) {
+    if (!SLOT_IDS.includes(n)) return false;
+    const saves = read(store);
+    const was = n === saves.active ? snapshot(store) : saves.slots[n];
+    const next = cleanSnap(snap);
+    if (!was || !was['pharloom.meta'] || momentOf(was['pharloom.meta']) !== momentOf(next['pharloom.meta'])) return false;
+    for (const k of SITE_ONLY) { if (was[k] != null) next[k] = was[k]; else delete next[k]; }
+    delete next['pharloom.prev'];
+    if (was['pharloom.prev'] != null) {
+      const again = prevSnap ? prevOf(cleanSnap(prevSnap)) : null;
+      next['pharloom.prev'] = again && prevMoment(again) != null && prevMoment(again) === prevMoment(was['pharloom.prev']) ? again : was['pharloom.prev'];
+    }
+    if (KEYS.every((k) => same(was, next, k))) return false;
+    if (n === saves.active) restore(store, next);
+    else { saves.slots[n] = next; write(store, saves); }
+    return true;
+  }
+
   /* Free mode's marks from before its ladders were marks (design/03-redesign.md, step 4, Free
      mode's start). The Needle, the Kit, the Pouch, the masks, the silk, the Silk Hearts and the
      Hunter's evolution used to be the free build's (pharloom.build), which started at the top, so
@@ -184,6 +210,6 @@
     return !!next;
   }
 
-  SS.saves = { COUNT, FREE, SAVES_KEY, KEYS, SITE_ONLY, GAME, SLOT_IDS, ALL_IDS, LADDER_TOP, read, snapshot, list, select, clear, importTo, sync, freeLadders, migrateFree };
+  SS.saves = { COUNT, FREE, SAVES_KEY, KEYS, SITE_ONLY, GAME, SLOT_IDS, ALL_IDS, LADDER_TOP, read, snapshot, list, select, clear, importTo, sync, refresh, freeLadders, migrateFree };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.saves;
 })();

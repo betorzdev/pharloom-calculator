@@ -415,6 +415,7 @@
       const n = imp.n, f = imp.file;
       if (!f || !store) return;
       S.importTo(store, n, f.snap);
+      await L.games.put(n, { now: f.raw, prev: null });
       track('save-import');
       let rec = null;
       if (f.handle && imp.sync) rec = await link(n, f.handle, f.name, f.stamp, true);
@@ -430,7 +431,7 @@
       try { [h] = await pickSave(); } catch (e) { return; }
       try { file = await h.getFile(); r = F.read(new Uint8Array(await file.arrayBuffer())); } catch (e) { r = null; }
       if (!r || !r.ok) { toast(t('saveImportBad')); return; }
-      S.sync(store, n, F.toSnapshot(r.pd, r.sd, file.lastModified));
+      await keep(n, rawOf(r, file), S.sync(store, n, F.toSnapshot(r.pd, r.sd, file.lastModified)));
       const active = n === activeSlot();
       const rec = await link(n, h, file.name, L.stampOf(file), active);
       if (!rec) { toast(t('liveFollowNo')); return; }
@@ -464,6 +465,7 @@
         const wasActive = S.read(store).active === n;
         if (!S.clear(store, n)) { render(); return; }
         if (live.links[n] != null) { L.links.drop(n); delete live.links[n]; if (n === live.n) stopLive(); }
+        L.games.drop(n);
         justCleared = n;
         const was = el.saves.querySelector(`.save[data-slot="${n}"]`);
         const from = was ? was.offsetHeight : 0;
@@ -545,7 +547,7 @@
       const r = F.read(new Uint8Array(reader.result));
       if (!r.ok) { imp.state = 'error'; paintDrop(); track('import-bad'); return; }
       // A restore point isn't the game's live file: it can be imported, not followed.
-      imp.file = { name: file.name, snap: F.toSnapshot(r.pd, r.sd, file.lastModified), meta: F.meta(r.pd),
+      imp.file = { name: file.name, snap: F.toSnapshot(r.pd, r.sd, file.lastModified), meta: F.meta(r.pd), raw: rawOf(r, file),
         restore: r.restore || null, handle: r.restore ? null : handle, stamp: L.stampOf(file) };
       imp.state = 'ready';
       paintDrop();
@@ -680,6 +682,33 @@
      When the game saves, the slot takes the file in and every screen repaints. The stamp is
      kept with the link, so that a reload doesn't take in again a file already taken in. */
   const parseSave = (bytes) => { const r = F.read(bytes); return r.ok ? r : null; };
+
+  /* The save each slot was read from, kept (js/live.js games) so that the slot is read again by
+     today's code: a mark, a check or a count the site learned after the import shows as the game
+     has it, with no need to import it again. As sync keeps pharloom.prev, the copy keeps the save
+     before when the game changed (S.sync said 'game'). */
+  const rawOf = (r, file) => ({ pd: r.pd, sd: r.sd, saved: file.lastModified });
+  async function keep(n, now, changed) {
+    const was = await L.games.get(n);
+    await L.games.put(n, { now, prev: changed === 'game' ? (was && was.now) || null : (was && was.prev) || null });
+  }
+  // At startup, every slot with its save kept is read again (S.refresh changes nothing when it's the same).
+  async function refreshSlots() {
+    if (!store) return;
+    const all = await L.games.all();
+    let shown = false;
+    for (const [k, g] of Object.entries(all)) {
+      const n = Number(k);
+      if (!g || !g.now || !g.now.pd) continue;
+      let changed = false;
+      try {
+        const snapOf = (x) => F.toSnapshot(x.pd, x.sd || null, x.saved);
+        changed = S.refresh(store, n, snapOf(g.now), g.prev && g.prev.pd ? snapOf(g.prev) : null);
+      } catch (e) { changed = false; }
+      if (changed && (n === activeSlot() || prefs.view === 'saves')) shown = true;
+    }
+    if (shown) render();
+  }
   function stopLive() {
     if (live.watcher) live.watcher.stop();
     Object.assign(live, { n: 0, name: '', state: '', watcher: null });
@@ -700,6 +729,7 @@
       async onData(r, next) {
         stamp = next;
         const changed = S.sync(store, n, F.toSnapshot(r.pd, r.sd, next.lastModified));
+        await keep(n, rawOf(r, next), changed);
         await L.links.put(n, { ...rec, stamp });
         if (!changed || activeSlot() !== n) return;
         render();
@@ -740,5 +770,5 @@
     return `<a class="mh-save${lv ? ' is-' + lv.state : ''}" href="${here(App.hashFor('saves'))}" data-act="view" data-value="saves"${prefs.view === 'saves' ? ' aria-current="page"' : ''}
       aria-label="${esc(label + (lv ? ', ' + st : ''))}" title="${esc(title)}"><span class="mh-save-fig"><span class="mh-save-light" aria-hidden="true"></span><img src="${ART.resting}" alt=""></span><span class="mh-save-lbl">${FLEURS}${esc(label)}${liveHtml}</span><span class="mh-save-short" aria-hidden="true">${esc(n ? label : t('savesTitle'))}</span></a>`;
   };
-  Object.assign(App, { activeSlot, liveStart, isDesktop, bookDone, bookTotal });
+  Object.assign(App, { activeSlot, liveStart, refreshSlots, isDesktop, bookDone, bookTotal });
 })();

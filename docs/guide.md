@@ -58,7 +58,13 @@ Needle, time, completion, rosaries, the Act, the Journal, the Tools) before anyt
 Any of the game's files works: `user1.dat` to `user4.dat`, the copies from before a patch
 (`user1_1.0.29242.dat`) and the **restore points** in `Restore_Points#/restoreData#.dat`, which
 are earlier moments of the same game (the preview says the day). The file is read in the browser
-and isn't sent anywhere.
+and isn't sent anywhere. The site keeps what it read (and, when the game saves while it's followed,
+the save before it) in the browser's IndexedDB, and reads it again on each visit
+(`js/app-saves.js refreshSlots`, `js/saves.js refresh`): a mark, a check or a count the site
+learns after the import (a new kind of mark on the Map, say) shows as the game has it, with no
+need to import the file again. Only a save imported before that copy existed (October 2026) has to
+be imported once more. A slot that keeps no copy still has its bought maps' marks: they come from
+the `Has<Area>Map` flags it always kept.
 
 Where the browser can (Chrome and Edge: File System Access), an imported save can **follow the
 game**: the site keeps a link to the file and catches up each time the game writes it. After a
@@ -823,7 +829,8 @@ for (LSSI art. 22.2, ePrivacy art. 5.3), and never leaves it:
 
 - `localStorage`: the `pharloom.*` keys (saves, Tools and Crests, journal, progress, preferences).
 - `sessionStorage`: `pharloom.cleared` and `pharloom.entered`, for the screen transitions.
-- IndexedDB: `pharloom-live`, the save-file handle, only after "Follow the game" (`js/live.js`).
+- IndexedDB: `pharloom-live`, a copy of each imported save (so a slot is read again when the
+  site learns something new) and, only after "Follow the game", the save-file handle (`js/live.js`).
 - Save files are read in the browser; nothing is uploaded.
 
 The visit counter is [Footworn](https://github.com/betorzdev/footworn) (`track()` in `js/app.js`;
