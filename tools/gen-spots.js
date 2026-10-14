@@ -35,7 +35,8 @@
      PEOPLE   npc id → its room: the people who give something of the 100%, and Scrounge, who
               buys the relics
      BELLS    [playerData field, scene (, name)]: the six Bellshrines (the Grand Gate asks for five)
-     KEYS     a key's save name (js/quests.js LOCKS) → its name, the game's */
+     KEYS     a key's save name (js/quests.js LOCKS) → its name, the game's
+     SEATS    where the game wakes Hornet, each respawn marker on the ground under it (below) */
 'use strict';
 const fs = require('fs');
 const path = require('path');
@@ -719,6 +720,47 @@ function toMap(scene, x, y) {
   if (errs.length < 40 || med > 10) fail(`the benches don't fall by their pins (${errs.length} benches, median ${med.toFixed(1)} px): how a scene's point goes on the map needs reading again`);
   console.log(`benches against their pins: ${errs.length}, median ${med.toFixed(1)} px, worst ${errs.slice(-3).map(([e, s]) => s + ' ' + e.toFixed(0)).join(', ')}`);
 }
+/* ── Where the game wakes Hornet: SEATS ──
+   Each respawn marker of pickups.json (tools/extract-pickups.py respawns: a bench's RestBench, a
+   room's Death Respawn Marker), at its x and the ground her feet go on, placed as above. An
+   additive scene (the Flea Caravan's) has no tilemap of its own and goes on its host's room, the
+   scene without its last part, under its own name and, when no other scene loaded there names a
+   marker the same, under the host's too (the save names the scene it's in). A marker in a room the
+   map doesn't draw (an interior) has none: js/rooms.js restPoint takes the game's own pin for its
+   bench, or the room's middle. The bench pins, which the game sets by hand, have to fall by their
+   RestBenches' feet, as the RestBenches by them above. */
+const SEATS = {};
+{
+  const toHost = new Map();   // host scene → marker name → its point (null: more than one scene names it)
+  for (const [scene, marks] of Object.entries(P.respawns)) {
+    // An interior has a tilemap of its own and isn't moved: only a scene without one takes a host.
+    let host = scene;
+    if (!P.sizes[scene]) while (host.includes('_') && !(P.sizes[host] && ROOM_OF.get(host))) host = host.slice(0, host.lastIndexOf('_'));
+    for (const [name, [x, y, feet]] of Object.entries(marks)) {
+      const at = toMap(host, x, feet == null ? y : feet);
+      if (!at) continue;
+      (SEATS[scene] || (SEATS[scene] = {}))[name] = at;
+      if (host === scene) continue;
+      if (!toHost.has(host)) toHost.set(host, new Map());
+      const m = toHost.get(host);
+      m.set(name, m.has(name) ? null : at);
+    }
+  }
+  for (const [host, m] of toHost) for (const [name, at] of m) if (at && !(SEATS[host] || {})[name]) (SEATS[host] || (SEATS[host] = {}))[name] = at;
+  for (const k of Object.keys(SEATS).sort()) { const v = SEATS[k]; delete SEATS[k]; SEATS[k] = v; }
+  const errs = [];
+  for (const pin of M.PINS) {
+    // A room with two benches (Slab_16, the Underworks' three) has a pin for each: the nearest.
+    const seat = pin[0] === 'bench' && SEATS[R.roomPiece(pin[3]).toLowerCase()];
+    const d = Object.entries(seat || {}).filter(([n]) => /^RestBench/.test(n)).map(([, p]) => Math.hypot(p[0] - pin[1], p[1] - pin[2]));
+    if (d.length) errs.push([Math.min(...d), pin[3]]);
+  }
+  errs.sort((a, b) => a[0] - b[0]);
+  const med = errs[Math.floor(errs.length / 2)][0];
+  if (errs.length < 40 || med > 10) fail(`the benches' feet don't fall by their pins (${errs.length} benches, median ${med.toFixed(1)} px): pickups.json respawns need reading again`);
+  console.log(`where Hornet wakes: ${Object.values(SEATS).reduce((n, s) => n + Object.keys(s).length, 0)} markers in ${Object.keys(SEATS).length} rooms; `
+    + `the benches' feet against their pins: median ${med.toFixed(1)} px, worst ${errs.slice(-4).map(([e, s]) => s + ' ' + e.toFixed(0)).join(', ')}`);
+}
 // A thing's point: the first of its entries in pickups.json (…, x, y at the end) in that scene.
 const lower = (s) => String(s || '').toLowerCase();
 const entryAt = (entries, scene, want = () => true) => {
@@ -1047,8 +1089,12 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               'board:<scene>', 'bell:<field>', 'task:<i>', 'shakra:<i>', 'shop:<vendor>:<i>', 'giver:<scene>', 'boss:<foe>', 'gaunt:<id>',
               'lock:<key>:<scene>', 'everbloom') → its point on the map, in the image's pixels: where
               the game has it in its room (the object's place in the scene, or whoever stands for it,
-              placed as the game places a point: js/rooms.js mapPoint)`,
-'spots', [['AT', AT], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['TASKS', TASKS], ['XY', XY]]);
+              placed as the game places a point: js/rooms.js mapPoint)
+     SEATS    scene (lower case) → { respawn marker's name → its point on the map }: where the game
+              wakes Hornet when a save names that marker (respawnScene, respawnMarkerName: a bench's
+              RestBench, a room's Death Respawn Marker), her feet on the ground under it (a bench's
+              own foot, the terrain under a marker), in the image's pixels; js/rooms.js restPoint`,
+'spots', [['AT', AT], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['TASKS', TASKS], ['XY', XY], ['SEATS', SEATS]]);
 const kinds = {};
 for (const x of EXTRAS) kinds[x[0]] = (kinds[x[0]] || 0) + 1;
 console.log(`js/spots.js  ${placed.length} things of the 100% placed, ${EXTRAS.length} extras (${Object.entries(kinds).map(([k, n]) => n + ' ' + k).join(', ')}), `

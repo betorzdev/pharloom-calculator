@@ -43,7 +43,7 @@ the work up reads it first, then the step it's on.
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html` |
-| 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html` |
+| 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
 | 10 | **Built** (28 Sep) · The static pages (`tools/pages*.js`: `bosses/`, `es/jefes/`, the landing folders): they inherit steps 1 and 2; only what's theirs | To do | |
@@ -1232,6 +1232,27 @@ Free mode:
 Decision: **1 A, 2 A, 3 A**, built. `.hj-ctl` holds two `.hj-pair`s, each a `.lbl` (`pgShow`,
 `hjOrder`) and a `.seg.sm` of words (`pgMissing` / `pgAll`, `hjByArea` / `hjByBook`), the group
 named by its label (`aria-labelledby`); Free mode keeps the order pair alone. The icons are gone.
+
+### Retouch: the pin to the Map (14 October 2026)
+
+Albert: change the entry's «See on the map» to the pin symbol, so the look is the same everywhere.
+The sheet had the only text-only way onto the Map (`.text-btn.hj-onmap`, under the name);
+Your game's and Progress's rows carry the round pin (`.pg-onmap`), Progress's cards the pin with
+its words. Neither «Ver en el mapa» nor the Map card's «Ver en el Diario» is game text: both are the
+site's (`mapOnMap`, `mapToJournal`). `69-map-button-variants.html` (kept out of the repo), the site
+over save 2, Craw's entry and the Map cards of Craw and Sister Splinter:
+
+- **1 · The sheet's button**: A · the lists' round pin, the words in `aria-label` and `title`;
+  B · pin and words, as Progress's cards; C · as it was.
+- **2 · Where**: A · at the end of the «Nearest» line, where the sheet says where it is; B · under
+  the name, as it was; C · in the corner, beside the ×.
+- **3 · The Map card's «See in the Journal»**: A · words, as it is (every action of the card is
+  words); B · the game's Hunter's Journal picture and the words; C · round, the picture alone.
+
+Decision: **1 A, 2 A, 3 A**, built. `whereHtml()` ends the «Nearest» line with the `.pg-onmap`
+pin (`mapOnMap: <name>` as its label); with no bench, the areas' line; with neither, the pin
+alone. The pin's circle is the lists' rule, now taking `.hj-sheet` too; `.hj-onmap` is gone. The
+Map card is unchanged.
 
 ## Step 8 · Crest
 

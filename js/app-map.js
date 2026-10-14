@@ -328,12 +328,14 @@
     }
     add({ key: 'everbloom', layer: 'everbloom', scene: SP.AT.everbloom, act: (CO.WHERE.everbloom || [])[0], got: !!g && g.everbloom,
       name: t('cat_items'), draw: (s, ti, k, c) => dot('everbloom', 'assets/icons/items/everbloom.webp', s, ti, k, c) });
-    // Places: the pins (a station not open, a toll not paid: dimmed, cls ' is-off').
+    // Places: the pins (a station not open, a toll not paid: dimmed, cls ' is-off'). A bench
+    // with a seat rests on its floor, where Hornet sits (js/rooms.js benchSeat; rests: layout).
     const lit = new Set(own ? own.lit : []);
     R.pinsOn(own).forEach((p) => {
       const open = !p[4] || !own || lit.has(pinKey(p));
       const name = t(p[0] === 'bench' ? 'mapPlace_bench1' : 'mapPlace_' + p[0]);
-      out.push({ key: 'pin:' + M.PINS.indexOf(p), layer: p[0], scene: p[3], at: { x: p[1], y: p[2] }, got: false, off: !open, pinData: p,
+      const seat = R.benchSeat(p);
+      out.push({ key: 'pin:' + M.PINS.indexOf(p), layer: p[0], scene: p[3], at: seat || { x: p[1], y: p[2] }, rests: !!seat, got: false, off: !open, pinData: p,
         name, sub: open ? '' : t(p[0] === 'bench' && /bell_toll_machine/.test(JSON.stringify(p[4])) ? 'mapToll' : 'mapClosed'),
         draw: (s, ti, k, c) => pin(p[0], p[0] === 'bench' ? 'pin_bench' : p[0] === 'bellway' ? 'pin_stag_station' : 'pin_tube_station', s, ti, k, c + (open ? '' : ' is-off')) });
     });
@@ -585,7 +587,8 @@
      on (`on`) and the filters let show, as { count per layer, items: [{ m, p }], fine: the caches
      and walls' counts per room, placed: key → point }. The Map screen and Your game's area map
      both read it. */
-  // Per layer: how many there are, how many had, how many show.
+  // Per layer: how many there are, how many had, how many show. REST: a resting mark's lift.
+  const REST = 0.53;
   function layout(list, g, own, on) {
     const count = {}, items = [], fine = new Map(), placed = new Map();
     for (const m of list) {
@@ -597,12 +600,17 @@
       c.shown++;
       const p = m.fix || pointOf(m);
       if (!p) continue;
-      placed.set(m.key, { x: p.x, y: p.y });
+      placed.set(m.key, { x: p.x, y: p.y, lift: m.rests ? REST : 0 });
       if (focusSet ? !inFocus : !on.has(m.layer)) continue;
       if (FINE.has(m.layer)) { const k = ((R.roomOf(m.scene) || {}).scene || m.key) + '|' + m.layer; const f = fine.get(k) || { ...p, m, n: 0 }; f.n++; fine.set(k, f); }
       items.push({ m, p: { x: p.x, y: p.y } });
     }
     arrange(items);
+    // A mark that rests on a floor (a bench on its seat) has its point at its bottom: up by its
+    // radius, in pins (the disc's r 0.5 and half its rim), so it sits on the floor at any zoom
+    // rather than sinking into it; moved by hand (m.fix, js/app-map-admin.js), on the point it was
+    // moved to.
+    for (const { m, p } of items) if (m.rests) p.oy = (p.oy || 0) - REST;
     return { count, items, fine, placed };
   }
   /* Things on the same point (within SAME pixels: a room's middle, a shop's stock) are laid out
@@ -646,22 +654,6 @@
     try { prev = JSON.parse(App.load('pharloom.prev') || 'null'); } catch (e) { prev = null; }
     return prev && prev.snap ? SS.savefile.gameOf(prev.snap) : null;
   }
-  /* Her bench's pin: the one in her room, else the one in a part of it (Tube_Hub's is in
-     Tube_Hub_right, Bone_01c's in Bone_01c_bot: js/rooms.js roomPiece), among the pins shown and
-     then among all (Act 3's Ventrica hub draws Tube_Hub_Destroyed, where Tube_Hub_right was); with
-     none, her room's middle. A save written where the game set her respawn to a room's own marker
-     rather than a bench (respawnType 0, savefile's rested false: a restore point after a boss, an
-     ability, an Act) wakes her there, standing: her room's middle, as the marker isn't extracted. */
-  function benchPoint(scene, pins, rested = true) {
-    const room = scene ? R.roomOf(scene) : null;
-    if (!room) return null;
-    if (!rested) return { x: room.x, y: room.y };
-    const names = [lower(room.scene), lower(scene)];
-    const inRoom = (x) => x[0] === 'bench' && (R.roomOf(x[3]) || {}).scene === room.scene;
-    const inPart = (x) => x[0] === 'bench' && names.includes(lower(R.roomPiece(x[3])));
-    const p = pins.find(inRoom) || pins.find(inPart) || M.PINS.find(inRoom) || M.PINS.find(inPart);
-    return p ? { x: p[1], y: p[2] } : { x: room.x, y: room.y };
-  }
   /* The way's key, cheap (no path searched): the two benches and when this save was written, so
      a later return between the same two benches walks again. null with no way to walk. */
   function wayKey(g) {
@@ -676,7 +668,7 @@
     const path = R.path(b.bench, g.bench, g.lit) || [];
     const mid = path.slice(1, -1).map((s) => R.roomOf(s)).filter(Boolean);
     pins = pins || R.pinsOn(g);
-    const pts = [benchPoint(b.bench, pins, b.rested), ...mid, benchPoint(g.bench, pins, g.rested)].filter(Boolean);
+    const pts = [R.restPoint(b, pins), ...mid, R.restPoint(g, pins)].filter(Boolean);
     return path.length > 1 && pts.length > 1 ? { key, pts, fromRested: b.rested } : null;
   }
   function waySvg(g, pins) {
@@ -759,7 +751,7 @@
     if (!box) return '';
     areaCtx = { view, box, key: MP.keyOf(view, 0) };
     // Hornet where she rests (her bench's pin comes with the Map's own marks, if its layer is on).
-    const bench = benchPoint(g.bench, R.pinsOn(g), g.rested);
+    const bench = R.restPoint(g, R.pinsOn(g));
     const at = `left:${n2((bench.x - box.x) / box.w * 100)}%;top:${n2((bench.y - box.y) / box.h * 100)}%`;
     // The marks: the Map's own, the layers its legend has on and its filters let show, those in the box.
     const { list, g: shown, own } = all();
@@ -841,7 +833,7 @@
     const clusters = [...fine.values()].map((f) => `<g class="mp-mk mp-cluster is-${f.m.layer}" style="--px:${n2(f.x)}px;--py:${n2(f.y)}px" aria-hidden="true"><circle r="0.5"/><circle class="mp-plate" r="0.47"/>${artOf(f.m)}`
       + `${f.n > 1 ? `<g class="mp-count"><circle cx="0.36" cy="-0.36" r="0.21"/><text x="0.36" y="-0.34">${num(f.n)}</text></g>` : ''}</g>`).join('');
     const exact = !!own && !!prefs.mapGame, view = R.mapView(own, { all: !exact }), shownPins = R.pinsOn(own);
-    const bench = own ? benchPoint(own.bench, shownPins, own.rested) : null;
+    const bench = own ? R.restPoint(own, shownPins) : null;
     // Hornet at her bench, sitting, or standing where the game respawns her: the page's own sprite
     // (.hn), over the map at her point (placeOver).
     const hereName = esc(t(own && !own.rested ? 'mapRespawn' : 'mapBench'));
@@ -951,7 +943,7 @@
     const mk = all().list.find((x) => x.key === key);
     centreOn(p.x, p.y, mk && FINE.has(mk.layer) ? 4 : 3);
     const sec = App.screenOf('map'), ping = sec && sec.querySelector('.mp-ping');
-    if (ping) { ping.dataset.x = p.x; ping.dataset.y = p.y; placeOver(ping); ping.hidden = false; ping.classList.remove('is-on'); void ping.offsetWidth; ping.classList.add('is-on'); }
+    if (ping) { ping.dataset.x = p.x; ping.dataset.y = p.y; ping.dataset.lift = p.lift || 0; placeOver(ping); ping.hidden = false; ping.classList.remove('is-on'); void ping.offsetWidth; ping.classList.add('is-on'); }
     pick1(key);
   }
   /* Another screen's "on the map" (Progress, the Journal, Your game): the Map opens on that thing,
@@ -1003,6 +995,7 @@
      eight times closer the closest. The pins keep about the same size on screen (--k), a little
      more close up. The view lasts while the page is open; it isn't saved. */
   let vb = null;   // { x, y, w, h }: the viewBox; null = fitted
+  let pinPx = 22;  // a pin's size on screen (applyView)
   let full = false;   // the map in full screen (setFull)
   const nodes = () => { const sec = App.screenOf('map'); return sec ? { v: sec.querySelector('.mp-view'), m: sec.querySelector('.mp-svg') } : {}; };
   // The whole map fitted to a box of that shape: a wide box shows it all; a tall one (a phone)
@@ -1080,6 +1073,7 @@
     // The pins' size on screen: about 22 px with the whole map (18 on a phone), up to a quarter
     // more close up, so zooming in makes room between them rather than making them bigger.
     const px = (r.width < 600 ? 18 : 22) * Math.min(1.25, Math.max(1, Math.pow(zoom, 0.15)));
+    pinPx = px;
     m.style.setProperty('--k', String(vb.w / r.width * px));
     v.classList.toggle('is-zoomed', zoom > 1.5);
     spread(m, vb.w / r.width * px, zoom > 3, SPREAD_MAX * Math.min(1, Math.max(0, (zoom - 1.5) / 2.5)));
@@ -1146,13 +1140,14 @@
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && full && !e.defaultPrevented) setFull(false); });
   App.mapFullOff = fullOff;
 
-  // What sits over the map in the page (Hornet, the search's ring): at its map point (data-x, -y).
+  /* What sits over the map in the page (Hornet, the search's ring): at its map point (data-x, -y),
+     raised by data-lift pins where the mark rests on it (a bench on its floor: layout's REST). */
   function placeOver(el) {
     const { m } = nodes();
     if (!m || !vb || el.dataset.x === undefined) return;
     const r = m.getBoundingClientRect();
     el.style.left = ((el.dataset.x - vb.x) / vb.w * r.width) + 'px';
-    el.style.top = ((el.dataset.y - vb.y) / vb.h * r.height) + 'px';
+    el.style.top = ((el.dataset.y - vb.y) / vb.h * r.height - (Number(el.dataset.lift) || 0) * pinPx) + 'px';
   }
   // A point on screen → the image's pixels.
   function toMap(clientX, clientY) {

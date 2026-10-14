@@ -5,13 +5,13 @@
 ## What's on the page
 
 The header has the title under a filigree crown (it leads back to Your game), on the left the
-language and **Share**, and on the right the save you're in (Hornet at a bench): it opens
-**Saves**. The language is a dropdown, as the sibling's: the one chosen and a chevron (its name,
+language and **Share**, and on the right the profile you're in (Hornet at a bench; «Select Profile» in Free mode): it opens
+**Profiles**. The language is a dropdown, as the sibling's: the one chosen and a chevron (its name,
 its code on a phone) open a list of the site's languages, each in its own name; Esc closes it
 and the arrows walk it. **Share** copies the site's address, nothing more: no screen, build or
 language. The screen bar has six screens in a row: Your game, Inventory, Progress, Map, Journal
 and Crest.
-With a save loaded, Progress carries your completion and Journal the entries Nuu counts
+With a profile loaded, Progress carries your completion and Journal the entries Nuu counts
 (`63%`, `120/230`); in Free mode the bar only has the names. On a phone the six don't fit, so
 Inventory folds under Your game: while you're in either, a second row under the bar switches
 between the two.
@@ -49,25 +49,26 @@ looks up, reads his map or focuses soul in a white light; he turns to the mouse 
 looks up while it's on the link. A click counts as `sister` with `to: 'hallownest'` (the sister's Footworn id, which its dashboard draws as a villager crossing to that quarter), as on the sibling. With reduced motion
 he only stands. He's decoration: hidden from screen readers, never under the pointer.
 
-### Saves
+### Profiles
 
-Four saves, as the game's profile screen, and **Free mode** (nobody's game: where the site
-starts, a New Game you mark by hand, and builds to try). A save only comes from the game's file: **Import from the game** opens a view that
-says where each system keeps its saves (the folder to copy and how to paste it into the file
+Four profiles, as the game's profile screen («Select Profile»), and **Free mode** (nobody's game: where the site
+starts, a New Game you mark by hand, and builds to try). The site speaks the game's words here: a slot is a profile, a playthrough a game, the file a
+save file. A profile only comes from the game's save file: **Import Save Data** opens a view that
+says where each system keeps its save files (the folder to copy and how to paste it into the file
 picker) and takes the file by dragging it in or with the picker. It shows what it read (masks,
 Needle, time, completion, rosaries, the Act, the Journal, the Tools) before anything is written.
 Any of the game's files works: `user1.dat` to `user4.dat`, the copies from before a patch
-(`user1_1.0.29242.dat`) and the **restore points** in `Restore_Points#/restoreData#.dat`, which
-are earlier moments of the same game (the preview says the day). The file is read in the browser
+(`user1_1.0.29242.dat`) and the game's **auto saves** in `Restore_Points#/restoreData#.dat`, which
+are earlier moments of the same game (the preview says the day: «Auto save of …»). The file is read in the browser
 and isn't sent anywhere. The site keeps what it read (and, when the game saves while it's followed,
 the save before it) in the browser's IndexedDB, and reads it again on each visit
 (`js/app-saves.js refreshSlots`, `js/saves.js refresh`): a mark, a check or a count the site
 learns after the import (a new kind of mark on the Map, say) shows as the game has it, with no
-need to import the file again. Only a save imported before that copy existed (October 2026) has to
+need to import the file again. Only a profile imported before that copy existed (October 2026) has to
 be imported once more. A slot that keeps no copy still has its bought maps' marks: they come from
 the `Has<Area>Map` flags it always kept.
 
-Where the browser can (Chrome and Edge: File System Access), an imported save can **follow the
+Where the browser can (Chrome and Edge: File System Access), an imported profile can **follow the
 game**: the site keeps a link to the file and catches up each time the game writes it. After a
 reload the browser asks for permission again, and a notice above the screen says so. Not on
 Linux: Chrome's picker refuses `~/.config` («it contains system files»), where the game keeps its
@@ -76,9 +77,9 @@ asks the game's own question («Clear Profile?») and only clears the site's cop
 
 ### Your game
 
-In Free mode, the card a save shows, unlit: «Resting at Pharloom», Hornet in silhouette on
-Bone Bottom's bench (the first one) and the four figures waiting, with Import. Drag your save's file onto it and it goes into the first
-empty save.
+In Free mode, the card a profile shows, unlit: «Resting at Pharloom», Hornet in silhouette on
+Bone Bottom's bench (the first one) and the four figures waiting, with Import Save Data. Drag your save file onto it and it goes into the first
+empty profile.
 
 In a save, the game's area title card: **Resting at** the area of the bench Hornet sits at, lit by
 that area's own colour on the game's map, the room's area under it when it's another (Coral
@@ -96,7 +97,7 @@ agree (the caches and walls, which the Map only draws close up, are left out); a
 the Map. Under it, the road to the next
 Act when there is one (the step you're on, by its name, and how far into it), then three columns: what changed since the previous save (below), what's
 missing **closest to your bench** (the first five, by the game's doors and the stations you've opened, each with its area and a pin that shows it on the Map), and your 100% split into
-the wiki's ten categories (Tools, Silk Spools, the Crafting Kit and Tool Pouch, abilities, Silk Skills, Crests,
+the wiki's ten categories (Tools, Silk Spools, the Tool Pouch & Crafting Kit, abilities, Silk Skills, Crests,
 masks, the Needle, Silk Hearts, the Everbloom), with the figure the game itself shows under it:
 they're the same. The site counts as the game does, checked on 92 real saves (0% to 100%, four
 patches, Steel Soul): whole masks and spools, not loose shards and fragments (two shards are
@@ -106,7 +107,7 @@ category opens Progress. At the foot, the ways on: Progress, the Map, the Journa
 entries still to go) and the Crest screen. With a save loaded, the text about the site under
 the screen folds into «About this site».
 
-When the save follows the game's file, each new save the game writes to it (the restore points
+When the profile follows the game's save file, each new save the game writes to it (the auto saves
 go to their own folder and aren't followed) brings a block **Since
 the previous save**: first what the completion went up by, from and to on one gauge, and when
 the save before was made; then everything new grouped by kind under small heads (Crests, Silk
@@ -263,8 +264,8 @@ opens its page as the game's Journal shows it (from the foot on a phone; Esc or 
 closes it): the whole drawing, from the game's files, on a soft light and at the size the game
 draws it (a Mossgrub small, the Bell Beast filling it), so you know the bug when you meet it; one
 not seen yet is in shadow. Beside it the name, the kills, its areas and the nearest from your
-bench, the description, and under the Hunter's symbol the Hunter's note once complete, or the
-game's «Defeat 11 more to complete the hunter's notes.» (the Void Tendrils has no kills: it says «Completed by reading its tablet.» instead). An entry is complete when the save lists it
+bench (with the pin the lists carry, which opens it on the Map, while it isn't complete), the description, and under the Hunter's symbol the Hunter's note once complete, or the
+game's «Defeat 11 more to complete the hunter's notes.» (the Void Tendrils has no kills: it says «Completed by inspecting its rune-scroll.» instead). An entry is complete when the save lists it
 with its kills done: the game writes them even for the entries it completes another way, and on
 the saves where Nuu has given the Memento the site counts all 230. In Free mode, the whole
 Journal.
@@ -372,7 +373,7 @@ screen's.
 The list is the wiki's, plus two Journal entries it gives no health, read from the game's files:
 the Wisp and the Winged Lifeseed have no health or modifiers there and die to the first hit, and
 their card says so. The Muckmaggots, the Sandcarver and the Void Tendrils can't be hit that way
-(the water, the sand pits and a tablet), so they aren't in it.
+(the water, the sand pits and an entry completed from a rune-scroll), so they aren't in it.
 
 **Enemy gauntlets**: the other half of the screen, the game's 49 arenas of waves, each named by
 its place or its area, with its reward (the game's name for it, when it gives something the game
@@ -445,7 +446,7 @@ boss's arena, with the person who gives it. All of it on at first.
   which its map doesn't pin; the Flea Caravan's two of its own, in Greymoor and the Blasted Steps,
   only while your caravan is there), Bellway and Ventrica stations (dimmed while
   your game hasn't opened them: a station not unlocked, a toll not paid), the six Bellshrines (the Grand Gate asks for five of them;
-  the Songclave's is the sixth) and the shops, and the **Lifts** (off at first), gone once your game has called each. The shops are the
+  the Songclave's is the sixth) and the Vendors (the game's map key), and the **Lifts** (off at first), gone once your game has called each. The shops are the
   game's own (its ShopOwners: Pebb, Frey, Mort, the Forge Daughter, Grindle, Jubilana, the
   Mottled Skarr, the Twelfth Architect) and those who trade outside them: the Couriers' delivery
   wishes in Bellhart, the Moss Druid, who buys Mossberries, and Creige's drinks.
@@ -534,9 +535,14 @@ go from one to the next (the nearest to your bench first, «1 of 2», each centr
 and its × back to the whole map. Any switch below ends it too; Back returns to Progress.
 
 Pharloom as the game's own map screen draws it for your game, piece by piece and by its own
-rules, taken from its files and its code, in a dim tone, with Hornet on her bench's pin, as the game draws her
-sitting (when the save was written where the game wakes her at a room's own respawn point, as a
-restore point after a boss or an ability is, she stands in that room: «Your respawn point»). Each room is drawn by its parts, as the game maps them (most rooms have two or three:
+rules, taken from its files and its code, in a dim tone, with Hornet sitting at her bench, her feet
+where the bench's own feet are in the game's files (not on the game's bench pin, which it sets by
+hand a little above the bench, and in a few rooms far off it); when the save was written where the
+game wakes her at a room's own respawn point, as a restore point after a boss or an ability is, she
+stands on the ground under that point: «Your respawn point». A bench in a room the map doesn't
+draw (an interior, the Pilgrim's Rest, the Sprintmaster's cave) has her on its pin. The benches'
+marks are on that same ground: each rests on its bench's feet, its bottom on the floor, so she sits
+over her bench's mark; a bench the map draws no room for keeps the game's pin. Each room is drawn by its parts, as the game maps them (most rooms have two or three:
 Greymoor_02, its top, its middle), and what your game's map draws is in colour: the parts the
 game has mapped, in the areas whose map you've bought from Shakra. The site being a guide, the
 rest of the map is there too, faint: the areas whose map you haven't bought (their names struck
@@ -595,7 +601,7 @@ arrows, Home and End move to the other and open it.
 **The road to the next Act** (its card: the picture of the step you're on, how far into it, counted
 as its rings count, and «step 1 of 5»). Its steps as diamonds on one thread, the ones done lit and
 the one you're on larger, each numbered and named as what to do («1 · Unlock "Silk and Soul"»,
-«2 · Take the wish», «3 · Gather the snare»…; the full title shows on hover). On a phone the thread
+«2 · Accept the wish», «3 · Gather the snare»…; the full title shows on hover). On a phone the thread
 goes down the page, a step a line. Each step there, and each dim medallion of the steps to come,
 opens its card where it was clicked: «Step 3», its title, what the game says of it and its way onto
 the Map (a step done says «done» and has no map); the × or the step again close it, and the step
