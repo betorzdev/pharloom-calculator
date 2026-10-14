@@ -39,7 +39,7 @@ the work up reads it first, then the step it's on.
 |---|---|---|---|
 | 1 | **The shell**: header, screen bar (desktop and phone), the screen's frame and title, footer and About, the atmosphere | **Built** (28 Sep) | [`04-shell-variants.html`](04-shell-variants.html) |
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
-| 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html` |
+| 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, 14 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html` |
@@ -320,6 +320,41 @@ rows **fading in one by one** (none with reduced motion). Built (`js/app-home.js
 - *By part* gives each part a picture, a count and a gauge; a full part lights its diamond.
 - The rows fade in (`.hm.is-enter`, `--dur-step` apart) when the screen is arrived at or
   another save shows, not on a plain repaint.
+
+### The calm round (14 October 2026)
+
+Albert: «haz algunos diseños para enfocar la pantalla YOUR GAME de otras maneras». A first round in
+`71-your-game-variants.html` drew five whole-screen approaches over the real screen and six saves
+(0%, 15%, 55% at a respawn point, Steel Soul 100%, 100%, Free mode): A · what next (the road's step
+leading), B · the pause menu (the area map as the scene, the HUD, the panes), C · a journey (the
+Acts as a road, the bosses beaten), D · a dashboard (every count as a tile), E · calm (the card,
+one call to action, the rest folded). Albert: «en la mayoría veo exceso de cosas. tiene que ser un
+sitio agradable y tranquilo. Y no es muy conveniente poner demasiada información que ya la tenemos
+en otras tabs». The second round, in the same page, started from less (only what this screen
+alone says) with four options: A · the scene (the area's name in its light, its map faint
+behind, Hornet at her bench, Act and time, the 100% as one figure; under it what changed, short),
+B · the bench and one sentence (no map, what changed as one line by kind), C · the postcard (the
+area's name between the game's filigree, what changed as a row of pictures), D · what changed
+(the card beside the list); and a second row: no next step here, or one quiet line to Progress.
+
+Albert chose **A, without the line «Coincide con el {n} % que muestra el juego»**, and **no next
+step**. Free mode keeps the ghost bench. Built:
+
+- `js/app-home.js`: the save's card is the scene (`.hm-scene`): «Resting at» or «Your respawn
+  point», the area, Act and time, Hornet, and the 100% as one figure (`.hm-pct`) into Progress,
+  «What's missing for 100%» (`homeGoProgress`), «Everything in Progress» (`homeAllParts`) at 100.
+  Under it, *Since the previous save* alone, capped at five rows (`CAP`) with «Show all n».
+- Gone from the screen, each to the tab that owns it: the parts of the 100% and the road line
+  (Progress), the Journal's count (the Journal and the bar), masks and rosaries (the Inventory),
+  *Closest to your bench* (the Map), the four ways on (the tab bar), and the matching line.
+  The check itself stays in `npm run check-pack`; Progress still says when a save's own figure
+  differs (`homeDiffers`), and no other screen showed the matching line.
+- `js/app-map.js`: `App.mapAreaHtml` is a bare picture now (no marks, no Hornet, not a link,
+  `aria-hidden`), set faint behind the scene; `App.nearList` is gone, and so is
+  `App.roadNow` (`js/app-progress.js`), which only fed Your game's line. The strings only these
+  used went with them (`homeMatches`, `homeParts`, `homeGoLabel`, `homeGoMap`, `homeGoJournal*`,
+  `homeGoCrest`, `homeRoad*`, `homeNearMap`, `homeMapLabel`, `mapNear*`).
+- The README's screenshots of Your game were taken again.
 
 ## Step 4 · Inventory
 

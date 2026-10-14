@@ -688,15 +688,6 @@
   }
   // A step's parts at once: what the tab's card counts, in the rings' own units.
   const partsSum = (ps) => ps.reduce((a, p) => ({ got: a.got + p.got, of: a.of + p.of }), { got: 0, of: 0 });
-  /* The step a game is on and how far into it, counted as the tab's card counts (a wish point a
-     point): Your game's line (js/app-home.js) says the same figures. Null in Act 3. */
-  App.roadNow = (g) => {
-    const r = g ? A.next(g) : null;
-    const at = r ? stepAt(r) : -1;
-    if (at < 0) return null;
-    const s = r.steps[at], sum = s.bypassed ? { got: s.done, of: s.total } : partsSum(parts(r, s, g));
-    return { act: r.act, k: at + 1, total: r.steps.length, got: sum.got, of: sum.of, step: stepShort(r, s) };
-  };
   /* The Act tab with a save before Act 3: the journey, the step you're on as a heading with its
      picture, its parts as rings side by side (with, when there are several, that all are needed),
      then what's next (todoHtml) and, folded, each part as a group of the 100% tab; the steps after
