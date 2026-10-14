@@ -747,7 +747,7 @@
     pgTodoPoints:   { es: 'Consigue {n} puntos más de deseos', en: 'Get {n} more wish points' },
     pgTodoPoints1:  { es: 'Consigue {n} punto más de deseos', en: 'Get {n} more wish point' },
     pgTodoAny:      { es: 'Vale cualquiera de estos {n} deseos; por ejemplo:', en: 'Any of these {n} wishes will do; for example:' },
-    pgTodoAnyNear:  { es: 'Vale cualquiera de estos {n} deseos; los más cerca de tu banco:', en: 'Any of these {n} wishes will do; the nearest to your bench:' },
+    pgTodoAnyNear:  { es: 'Vale cualquiera de estos {n} deseos; los más cercanos a tu banco:', en: 'Any of these {n} wishes will do; the nearest to your bench:' },
     pgTodoShrine:   { es: 'Haz sonar el Santuario de Campana de {area}', en: 'Ring the Bellshrine in {area}' },   // the game's word in it: BELLSHRINE
     pgTodoGet:      { es: 'Consigue: {name}', en: 'Get: {name}' },
     pgTodoPavo:     { es: 'Habla con Pabo: te da la {key}', en: 'Talk to Pavo: he gives you the {key}' },   // his name: BELLHART_GREETER_MAIN

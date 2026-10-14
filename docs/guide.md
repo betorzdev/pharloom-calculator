@@ -578,7 +578,8 @@ which Act you're in and what opening the next takes («Opening Act 3 takes 5 ste
 Without a save it says what the tab is: the guide to the three Acts and to the 100%.
 
 Then two tabs, as two cards, each with its own picture of how far you are; the one you used last
-opens, the road's the first time.
+opens, the road's the first time. From the keyboard, Tab reaches the one selected and the
+arrows, Home and End move to the other and open it.
 
 **The road to the next Act** (its card: the picture of the step you're on, how far into it, counted
 as its rings count, and «step 1 of 5»). Its steps as diamonds on one thread, the ones done lit and
@@ -649,11 +650,12 @@ a ring that opens its list; the rows you open stay open. «What's missing · Eve
 Act · Nearest first» sit just above the rows.
 
 Opened, a category lists its things by Act: each with its picture, its name (a Tool with its
-slot's colour) and how to get it, its area on the right, and a pin that shows it on the Map. A thing
+slot's colour; in a Steel Soul save, the Shell Satchel where Classic has the Dead Bug's Purse) and how to get it, its area on the right, and a pin that shows it on the Map. A thing
 just lying in a room says so («Found in the area: the pin shows where»).
 
 In **Free mode** Progress counts what you mark, from a New Game (0% until you mark something),
-and each missing row has a box to mark it here too; masks, silk, the Silk Hearts, the Needle, the
+and each missing row has a box to mark it here too (on a Tool marked with its upgrade,
+such as the Curvesickle, the box unmarks both); masks, silk, the Silk Hearts, the Needle, the
 Kit and the Pouch follow what the Inventory sets, and their groups say so, with the way there. The
 line on top says it's Free mode, counting your marks from a New Game, and that the road is the
 guide; the road tab is «The roads to Acts 2 and 3».
@@ -664,7 +666,7 @@ it and its way onto the Map, as above:
 
 - **To Act 2**: ring the five Bellshrines, open the Grand Gate, defeat the Last Judge, and walk into
   the Citadel. Defeating the Phantom opens another way in, and the first two steps then say
-  they're no longer needed.
+  they're no longer needed (the Bellshrines left unrung aren't listed as to do).
 - **To Act 3**:
   1. Unlock the wish Silk and Soul:
      - its 10 required wishes (guides give six: the ones before them count too);
@@ -730,15 +732,16 @@ Then **other collectibles**, which don't count for completion, each group saying
 - Craftmetal (crafted Tools);
 - Pale Oil (the Needle's upgrades);
 - the Lost Fleas (the caravan's rewards, and Fleatopia for Act 3);
-- the four Old Hearts (Act 3's ending);
-- the three melodies (the way to the Cradle);
-- the abilities outside the 100%;
+- the four Old Hearts (Act 3's ending) and the three melodies (the way to the Cradle), each in the
+  area the wiki gives it;
+- the abilities outside the 100% (Beastling Call and Elegy of the Deep under Act 3, where the Map
+  has them);
 - the 49 enemy gauntlets, named as Combat names them.
 
 Last, **Tasks** («Tareas», the game's pane): the main objectives and the wishes on the boards by
 type (Wayfarer, Gather, Donate, Hunt, Grand Hunt, Delivery…), 74 in all, each with the game's own
-name, its Act and where. In Act 2, the ten wishes Act 3 requires are in the road's tab instead. The one only Steel Soul has, and the one only Classic has, show only in a
-game of that mode. A task done also shows in "Since the previous save".
+name, its Act and where (a wish the pane files under no area, the area it's taken in). In Act 2, the ten wishes Act 3 requires are in the road's tab instead. The one only Steel Soul has, and the one only Classic has, show only in a
+save of that mode, and both in Free mode, as the Journal and the Map show them. A task done also shows in "Since the previous save".
 In a save it shows what's missing, or everything with a tick where you have it; without a save,
 the whole list, as a guide. Which piece you have is read from the save one by one, and on the
 92 real saves it agrees with the game's own counters (masks, spools, the three upgrade ladders,
