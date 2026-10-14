@@ -567,7 +567,8 @@ which Act you're in and what opening the next takes («Opening Act 3 takes 5 ste
 Without a save it says what the tab is: the guide to the three Acts and to the 100%.
 
 Then two tabs, as two cards, each with its own picture of how far you are; the one you used last
-opens, the road's the first time.
+opens, the road's the first time. From the keyboard, Tab reaches the one selected and the
+arrows, Home and End move to the other and open it.
 
 **The road to the next Act** (its card: the picture of the step you're on, how far into it, counted
 as its rings count, and «step 1 of 5»). Its steps as diamonds on one thread, the ones done lit and

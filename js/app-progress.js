@@ -897,7 +897,9 @@
     const roadWishes = next && next.act === 3 ? new Set(QU.GROUPS['Soul Snare'].quests.filter((q) => q.required)
       .map((q) => A.missing(q.quest, new Set(own.quests)).wish).filter((i) => i >= 0)) : new Set();
     /* The two tabs (design/27b-progress-variants.html, 1 D): two cards, each with its picture of
-       how far you are; the one used last opens (prefs.pgTab), the Act's the first time. */
+       how far you are; the one used last opens (prefs.pgTab), the Act's the first time. As the
+       ARIA tabs pattern: only the selected one is in the Tab order, and the arrows, Home and End
+       move to the other and select it (the keydown below). */
     const tab = prefs.pgTab === '100' ? '100' : 'act';
     const s = next ? next.steps[stepAt(next)] : null;
     // What's done of the step, in the units its rings count (a point a point, a check a check).
@@ -908,7 +910,7 @@
       : own ? { art: QUEST('act3_finale'), label: t('roadGame'),
         sub: esc((({ seen, shut, of }) => t(shut.length ? 'roadEndingsReach' : 'roadEndings', { n: num(seen.size), of: num(of) }))(endsOf(own))) }
         : { art: QUEST('grand_gate_final'), label: t('roadBoth'), sub: '' };
-    const card = (id, art, label, sub) => `<button type="button" class="pg-tab" role="tab" id="pg-tab-${id}" aria-controls="pg-panel" aria-selected="${tab === id}" data-act="pgTab" data-value="${id}">
+    const card = (id, art, label, sub) => `<button type="button" class="pg-tab" role="tab" id="pg-tab-${id}" aria-controls="pg-panel" aria-selected="${tab === id}" tabindex="${tab === id ? 0 : -1}" data-act="pgTab" data-value="${id}">
         <span class="pg-tab-art" aria-hidden="true">${art}</span><span class="pg-tab-l">${esc(label)}</span>${sub ? `<span class="pg-tab-s">${sub}</span>` : ''}</button>`;
     const tabs = `<div class="pg-tabs" role="tablist" aria-label="${esc(t('navProgress'))}">
         ${card('act', `<img src="${actCard.art}" alt="" loading="lazy">`, actCard.label, actCard.sub)}
@@ -943,6 +945,20 @@
         <div class="pg-panel" id="pg-panel" role="tabpanel" aria-labelledby="pg-tab-${tab}">${invite}${tab === 'act' ? act : hundredTab}</div>
       </div>`;
   };
+
+  /* The tabs from the keyboard (the ARIA tabs pattern, selection following focus): Left and Right
+     go to the other tab, wrapping round, Home to the first and End to the last; pgTab selects it,
+     repaints and focuses it. */
+  const TABS = ['act', '100'];
+  document.addEventListener('keydown', (ev) => {
+    const tab = ev.target.closest && ev.target.closest('.pg-tab[role="tab"]');
+    if (!tab || ev.altKey || ev.ctrlKey || ev.metaKey) return;
+    const at = TABS.indexOf(tab.dataset.value), n = TABS.length;
+    const to = { ArrowRight: (at + 1) % n, ArrowLeft: (at - 1 + n) % n, Home: 0, End: n - 1 }[ev.key];
+    if (to === undefined) return;
+    ev.preventDefault();
+    actions.pgTab({ dataset: { value: TABS[to] } });
+  });
 
   Object.assign(actions, {
     pgOpen(node) {
