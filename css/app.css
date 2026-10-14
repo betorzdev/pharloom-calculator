@@ -1541,10 +1541,10 @@ kbd {
 .pg-place { display: grid; justify-items: end; gap: var(--sp-half); text-align: right; }
 .pg-where { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0 var(--sp-2); font-size: var(--fs-xs); color: var(--muted); }
 .pg-where span + span::before { content: '·'; margin-right: var(--sp-2); }
-:is(.pg-item, .mp-near-list, .hm-row) .pg-onmap { display: grid; place-items: center; width: 28px; height: 28px; padding: 0; border: 1px solid var(--line-ctl); border-radius: 50%; background: none; color: var(--ink-2); cursor: pointer; transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease); }
+:is(.pg-item, .mp-near-list, .hm-row, .hj-sheet) .pg-onmap { display: grid; place-items: center; width: 28px; height: 28px; padding: 0; border: 1px solid var(--line-ctl); border-radius: 50%; background: none; color: var(--ink-2); cursor: pointer; transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease); }
 .pg-item .pg-onmap.is-none { border: 0; cursor: default; }
-:is(.pg-item, .mp-near-list, .hm-row) .pg-onmap .ic { width: 10px; }
-:is(.pg-item, .mp-near-list, .hm-row) .pg-onmap:is(:hover, :focus-visible) { color: var(--accent); border-color: var(--accent); outline: none; }
+:is(.pg-item, .mp-near-list, .hm-row, .hj-sheet) .pg-onmap .ic { width: 10px; }
+:is(.pg-item, .mp-near-list, .hm-row, .hj-sheet) .pg-onmap:is(:hover, :focus-visible) { color: var(--accent); border-color: var(--accent); outline: none; }
 .pg > .pg-buy { text-align: center; }
 .pg-item.is-got .pg-name { color: var(--ink-2); }
 .pg-item.is-later { opacity: 0.55; }
@@ -2481,7 +2481,7 @@ html:has(.mp.is-full) { overflow: hidden; }
 .mp-card-acts { grid-column: 2; display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-1) var(--sp-4); font-size: var(--fs-sm); }
 .mp-card-acts .mp-card-state { grid-column: auto; }
 /* Another screen's way onto the Map. */
-.pg-onmap, .hj-onmap { justify-self: start; font-size: var(--fs-xs); }
+.pg-onmap { justify-self: start; font-size: var(--fs-xs); }
 
 /* Where a search result is: a ring that swells and fades. */
 .mp-ping { position: absolute; z-index: 3; width: var(--sp-12); height: var(--sp-12); margin: calc(var(--sp-6) * -1) 0 0 calc(var(--sp-6) * -1); border: 2px solid var(--accent); border-radius: 50%; opacity: 0; pointer-events: none; }
@@ -2607,6 +2607,10 @@ html:has(.mp.is-full) { overflow: hidden; }
 .mp-near-list li > img { width: 18px; height: 20px; object-fit: contain; }
 .mp-near-list .text-btn { justify-self: start; text-align: left; font-size: var(--fs-sm); }
 .hj-where { margin: 0; font-size: var(--fs-sm); color: var(--ink-2); }
+/* The entry's way onto the Map (design/69): the lists' round pin at the end of the line that says
+   where it is, both centred; alone in that place when the entry has no area. */
+.hj-entry .has-pin { display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--sp-1) var(--sp-3); }
+.hj-entry > .pg-onmap { justify-self: center; }
 .mp-near-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .mp-near-area { font-size: var(--fs-xs); color: var(--muted); white-space: nowrap; }
 /* A place: the game's own map pin; a gauntlet, the badge with its needles crossed, in the slots'

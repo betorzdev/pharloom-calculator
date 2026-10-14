@@ -97,9 +97,8 @@
       <div class="hj-art is-${state}"><img src="${art(e)}" alt="" decoding="async"></div>
       <div class="hj-entry">
       <h3 class="hj-name">${esc(name)}</h3>
-      ${state !== 'done' && App.mapHas && App.mapHas('journal:' + e.id) ? `<button type="button" class="text-btn hj-onmap" data-act="mapShow" data-value="journal:${e.id}">${esc(t('mapOnMap'))}</button>` : ''}
       ${e.inspect ? '' : `<p class="hj-kills"><b>${num(Math.min(kills, 9999))}</b><i class="u">/${num(e.kills)}</i></p>`}
-      ${whereHtml(e, state)}
+      ${whereHtml(e, state, name)}
       ${e.optional ? `<p class="inv-not">${esc(t('hjOptional'))}</p>` : ''}
       ${e.steel ? `<p class="inv-not">${esc(t('steelSoul'))}</p>` : ''}
       ${state !== 'unseen' && e.desc ? `<p class="inv-desc">${esc(pick(e.desc))}</p>` : ''}
@@ -108,11 +107,17 @@
       </div></dialog>`;
   }
 
-  function whereHtml(e, state) {
+  /* Where it is, and the way onto the Map: the round pin the lists carry (design/69, 1 A and 2 A),
+     at the end of the «Nearest» line; on the areas' line with no bench, alone with neither. */
+  function whereHtml(e, state, name) {
     const where = whereOf(e);
     const near = state !== 'done' ? nearest(e, App.game()) : null;
-    return (where.length ? `<p class="hj-area">${esc(where.slice(0, 4).join(' · '))}</p>` : '')
-      + (near ? `<p class="hj-where">${esc(t('hjNearest'))}: ${esc(near.place)}</p>` : '');
+    const pin = state !== 'done' && App.mapHas && App.mapHas('journal:' + e.id)
+      ? `<button type="button" class="pg-onmap" data-act="mapShow" data-value="journal:${e.id}" aria-label="${esc(t('mapOnMap') + ': ' + name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '';
+    const line = (cls, text, last) => `<p class="${cls}${last && pin ? ' has-pin' : ''}"><span>${text}</span>${last ? pin : ''}</p>`;
+    return (where.length ? line('hj-area', esc(where.slice(0, 4).join(' · ')), !near) : '')
+      + (near ? line('hj-where', `${esc(t('hjNearest'))}: ${esc(near.place)}`, true) : '')
+      + (!where.length && !near ? pin : '');
   }
   // The hunts: what's missing closest to your bench, by rooms, as cards.
   function hunts(list, g) {
