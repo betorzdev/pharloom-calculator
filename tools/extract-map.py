@@ -47,6 +47,18 @@ DeactivatePlayerDataTest, DeactivateIfPlayerdataFalse). js/rooms.js piecesOn doe
     Maze and Surface have no bool: the game never shows them.
   · a piece is mapped when mapAllRooms is set, its scene is in scenesMapped, every scene of its
     mappedIfAllMapped is, or its mappedParent is mapped.
+  · how a name gets into scenesMapped (read on 14-Oct-2026: CustomSceneManager.AddSceneMapped,
+    MapSceneRegion, GameManager.AddToScenesVisited, GameMap.UpdateGameMap, HasMapForScene and
+    IsSceneMappable): entering a scene writes its name into scenesVisited (unless the scene leaves
+    it to a trigger, manualMapTrigger), and a trigger in it (a MapSceneRegion, its sceneName
+    trimmed) writes a part's when Hornet enters it; the next map update (at a bench, a map bought)
+    moves into scenesMapped each name visited that a piece of the map has as written (mapCaches is
+    a case-sensitive dictionary), Dust_09, Dust_09_top_2, Dust_09_into_citadel and
+    Dust_Maze_08_completed only once defeatedPhantom. So a part is drawn only once Hornet has been
+    in it: a secret part's trigger (behind a breakable or twig wall, under a mask the game lifts)
+    is inside it, and the author's 100% save lacks ten such parts (Belltown_06_fisher,
+    Greymoor_02_top_right…), as its map in the game does. Coral_19_base never is: its trigger
+    writes Coral_19_Base.
   · a piece is drawn whole (SetMapped) when it starts Full, or is mapped, and Hornet has the Quill
     (hasQuill): a Rough piece then shows its fullSprite (its renderer's own sprite if it has
     none), a Hidden or Full one its renderer's own; the first altFullSprites whose condition holds
@@ -127,7 +139,7 @@ FREE = {
     'wardBossDefeated': True,
     'HasWhiteFlower': False,          # the Abyss's diving bell, broken until the Everbloom
     'SeenDivingBellGoneAbyss': False,
-    'HasJudgeStepsMap': True,         # Coral_19_base, drawn once the Blasted Steps are mapped
+    'HasJudgeStepsMap': True,         # Coral_19_base, on with the Blasted Steps' map (only mapAllRooms draws it)
     'CurrentCrestID': 'Hunter',       # the Slab where it is (it moves with the Cloakless crest)
     'MazeEntranceScene': '',          # the Dust Maze where it is
 }

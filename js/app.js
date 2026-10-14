@@ -2,8 +2,7 @@
    The page is made of screens, like the game's pause menu: the header, the screen bar
    and, one at a time, the screens (design/00-study.md §9 says which and in what order they're
    built). The screen travels in the URL ("view="), and so does the language ("lang=") when it
-   isn't the page's own; the build will travel there too (phase 3), and splitHash keeps its
-   place for it.
+   isn't the page's own; so does Free mode's build (js/codec.js), which splitHash keeps apart.
    Every state change repaints from templates; a single listener delegated by data-act handles
    the clicks. The language comes from js/i18n.js and applies to the whole render.
    Each screen has its own classic script (js/app-*.js), loaded after this one; they share
@@ -173,7 +172,10 @@
     const now = I.LANGS.find((l) => l.id === prefs.lang) || I.LANGS[0];
     const langItem = (l) => `<li><a href="${esc(langPage(l.id) || here(hashFor()))}" lang="${l.tag}" hreflang="${l.tag}"${NT} data-act="lang" data-value="${l.id}"${l === now ? ' aria-current="true"' : ''}>${esc(l.name)}</a></li>`;
     el.masthead.classList.toggle('is-lang-open', langOpen);
+    // In the page's order the sister's link, the language and Share, the title and the save: the
+    // keyboard walks the header left to right, and a phone's second row in its own order (css).
     el.masthead.innerHTML = `
+      ${App.sister ? App.sister.linkHtml() : ''}
       <div class="mh-tools">
         <div class="langsel">
           <button type="button" class="text-btn lang-btn" data-act="langMenu" aria-haspopup="true" aria-expanded="${langOpen}" aria-controls="lang-menu" aria-label="${esc(t('langGroup') + ': ' + now.name)}" title="${esc(t('langGroup'))}"><span class="lang-name" lang="${now.tag}"${NT}>${esc(now.name)}</span><span class="lang-code" aria-hidden="true">${now.code}</span>${chevron(langOpen)}</button>
@@ -181,7 +183,6 @@
         </div>
         <button type="button" class="text-btn mh-link" data-act="share" title="${esc(t('shareHint'))}">${esc(t('share'))}</button>
       </div>
-      ${App.sister ? App.sister.linkHtml() : ''}
       <a class="brand" href="${here(hashFor('home'))}" data-act="view" data-value="home" title="${esc(t('goHome'))}">
         ${CROWN}
         <p class="title">${esc(t('title'))}<span class="mh-beta">${esc(t('betaTag'))}</span></p>
@@ -432,6 +433,11 @@
     if (TOOLS.includes(prefs.view)) prefs.tool = prefs.view;
     // Nor is the Map's full screen: leaving the Map leaves it (js/app-map.js).
     if (prefs.view !== was && App.mapFullOff) App.mapFullOff();
+    /* Nor is a screen's modal (the Journal's entry, which also stops drawing it off its screen):
+       «See on the map» changes screens through the history API, which fires no hashchange, and a
+       modal left open in a hidden screen keeps the rest of the page inert (the Map's card
+       couldn't be closed). */
+    if (prefs.view !== was) for (const d of document.querySelectorAll('dialog[open]')) if (!d.closest(`.screen[data-view="${prefs.view}"]`)) d.close();
     savePrefs();
   }
   /* Leaves a history entry and scrolls up to the top of the screen, which sits just below the
@@ -502,7 +508,7 @@
     view(node) { go(node.dataset.value, !node.closest('#nav, .masthead')); },
     // The About block's button (tools/pages.js): up to the screen it's about.
     aboutUp() { const m = document.querySelector('.screens'); if (m) m.scrollIntoView({ behavior: 'smooth', block: 'start' }); },
-    betaClose() { save(KEY.beta, '1'); track('beta-close'); renderBanner(); },
+    betaClose() { save(KEY.beta, '1'); renderBanner(); },
     aboutFold() { aboutOpen = true; renderAbout(); const h = el.about.querySelector('h1'); if (h) { h.setAttribute('tabindex', '-1'); h.focus(); } },
   };
   // The language's list is a dropdown: a tap anywhere else closes it (and still does what it was for).

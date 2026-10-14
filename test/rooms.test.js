@@ -74,6 +74,9 @@ test('an interior the map does not draw goes where its door is; every gauntlet a
   const caravan = (at) => R.pinsOn({ ...world({}), caravan: at }).filter((p) => p[5]).map((p) => p[3]);
   assert.deepEqual([0, 1, 2, 3].map(caravan), [[], ['Greymoor_08'], ['Coral_Judge_Arena'], []]);
   assert.deepEqual(R.pinsOn(null).filter((p) => p[5]).map((p) => p[3]), ['Coral_Judge_Arena', 'Greymoor_08']);
+  // A bench pin in a part of its room is that room's (js/rooms.js restPoint finds it by that).
+  const parts = { Tube_Hub_right: 'Tube_Hub', Bone_01c_bot: 'Bone_01c', Coral_Tower_01_Bench: 'Coral_Tower_01', Mosstown_03_bot: 'Mosstown_03', Belltown_Shrine: 'Belltown_Shrine' };
+  for (const [pin, room] of Object.entries(parts)) assert.equal(R.roomPiece(pin), room, pin);
 });
 
 test('the map\'s state: the rooms Act 3 destroys and the diving bell, by the game\'s own rules', () => {
@@ -130,6 +133,23 @@ test('the map piece by piece, as the game draws it', () => {
     assert.equal(pcs.find((p) => p.e === rough).cell, rough.r);
     assert.ok(!pcs.some((p) => p.e === hidden));
   }
+  // A secret part of a room (behind a breakable or twig wall, or under a mask the game lifts) is
+  // mapped only by its own name, which a trigger inside it writes: the game draws it once Hornet
+  // has been there, never for its room's other parts. The eleven the author's 100% save lacks
+  // (14-Oct-2026); Coral_37_right and Mosstown_03_top come in the saves that opened their way.
+  const secret = ['Belltown_06_fisher', 'Bone_East_14_2', 'Coral_19_base', 'Coral_37_join', 'Coral_37_right', 'Dust_11_bot',
+    'Dust_Chef_b', 'Greymoor_02_top_right', 'Mosstown_03_top', 'Shadow_18_top', 'Under_14_right'];
+  for (const s of secret) assert.ok(M.PIECES.some((e) => e.s === s && e.st === 0 && !e.parent && !e.ifAll), s);
+  const full = { ...world({}), mapped: M.PIECES.map((e) => e.s).filter((s) => !secret.includes(s)) };
+  const hid = drawn(R.mapView(full));
+  for (const s of secret) {
+    assert.ok(!hid.has(s), s);
+    assert.ok(drawn(R.mapView({ ...full, mapped: [...full.mapped, s] })).has(s), s);
+  }
+  // Coral_19_base's trigger writes Coral_19_Base, and the game looks a name up as it's written, so
+  // only mapAllRooms draws it.
+  assert.ok(!drawn(R.mapView({ ...full, mapped: [...full.mapped, 'Coral_19_Base'] })).has('Coral_19_base'));
+  assert.ok(drawn(R.mapView({ ...full, mapAll: true })).has('Coral_19_base'));
   // The Dust Maze and the Surface have no map to buy: the game never shows them.
   assert.ok(!R.mapView(world({})).pieces.some((p) => p.e.a === 'Dust Maze'));
   // The Slab moves with the Cloakless crest.
@@ -186,6 +206,19 @@ test('where each Journal entry is: the game\'s own placements, each scene in one
   assert.strictEqual(R.roomOf('bone_05_boss').scene, 'Bone_05');
   assert.strictEqual(R.areaOf('Greymoor_04'), 'GREYMOOR');
   assert.strictEqual(R.areaOf('Tut_01'), 'MOSSCAVE');
+  /* A piece lying in a room is in its own area, though its branch of the map holds others: the Mask
+     Shard in Song_09 is Cogwork Core's, not the High Halls' its branch (Song) takes. */
+  const lying = CO.PIECES.filter((p) => R.sceneOf(p[2]) && p[3] && R.roomOf(R.sceneOf(p[2])));
+  assert.ok(lying.length >= 80, `${lying.length} pieces lying in a room`);
+  assert.deepEqual(lying.filter((p) => R.areaOf(R.sceneOf(p[2])) !== p[3]).map((p) => `${p[0]} ${R.sceneOf(p[2])}`), []);
+  assert.strictEqual(R.areaOf('Song_09'), 'COGWORK_CORE');
+  assert.strictEqual(R.areaOf('Song_10'), R.areaOf('Song_02'));   // the rest of the branch, by its vote
+  // The Songclave's room is the Songclave, as everything it hands you is filed (js/spots.js AT).
+  const SP = require('../js/spots.js');
+  const handed = CO.PIECES.filter((p, i) => /^song_enclave$/i.test(SP.AT.pieces[i] || ''));
+  assert.ok(handed.length >= 4 && handed.every((p) => p[3] === 'ENCLAVE'), JSON.stringify(handed.map((p) => p[3])));
+  assert.strictEqual(R.areaOf('Song_Enclave'), 'ENCLAVE');
+  assert.strictEqual(R.areaOf('song_enclave'), 'ENCLAVE');
 });
 
 test('every Journal entry has a place, the 29 the game makes at run time too, and a way there', () => {
@@ -209,8 +242,10 @@ test('every Journal entry has a place, the 29 the game makes at run time too, an
   assert.deepEqual(lost, []);
   const areas = (k) => new Set(JR[k].map(([s]) => R.areaOf(s)).filter(Boolean));
   // Checked against the wiki (kb/data/raw/): the Muckmaggots only where their waters are on
-  // (Sinner's Road, Bilewater, Putrified Ducts, Wisp Thicket), the Sandcarvers in the sand.
-  assert.deepEqual([...areas('NAME_MAGGOTS')].sort(), ['AQUEDUCTS', 'DUSTPENS', 'SHADOW', 'WISP']);
+  // (Sinner's Road, Bilewater, Putrified Ducts, Wisp Thicket; Dust_09 is the Exhaust Organ, inside
+  // Sinner's Road on the wiki and an area of its own in the game, as its Lost Flea says), the
+  // Sandcarvers in the sand.
+  assert.deepEqual([...areas('NAME_MAGGOTS')].sort(), ['AQUEDUCTS', 'DUSTPENS', 'ORGAN', 'SHADOW', 'WISP']);
   assert.deepEqual([...areas('NAME_SAND_CENTIPEDE')].sort(), ['CORAL_RIVER', 'CORAL_STEPS']);
   assert.deepEqual([...areas('NAME_SHELLWOOD_GNAT')].sort(), ['ARBORIUM', 'SHELLWOOD']);
   assert.deepEqual([...areas('NAME_LIFEBLOOD_FLY')].sort(), ['BONEBOTTOM', 'CRAWL']);

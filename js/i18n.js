@@ -15,7 +15,7 @@
     /* Header */
     title:          { es: 'Calculadora de Telalejana', en: 'Pharloom Calculator' },
     goHome:         { es: 'Ir a Tu partida, la pantalla de inicio', en: 'Go to Your game, the home screen' },
-    langGroup:      { es: 'Idioma', en: 'Language' },
+    langGroup:      { es: 'Idioma', en: 'Language' },   // GAME_LANGUAGE
     share:          { es: 'Compartir', en: 'Share' },
     shareHint:      { es: 'Copia el enlace a la web', en: 'Copy the link to the site' },
     // The sister site's link (js/app-sister.js): the game's title, as it's sold in both languages; its
@@ -47,28 +47,31 @@
     /* On a phone the Crest screen and Combat fold into one tab. «Tools» would be the game's Tools,
        so it's named after what the two share, the build (the site says «build» in both languages). */
     navBuild:       { es: 'Build', en: 'Build' },
-    savesTitle:     { es: 'Partidas', en: 'Saves' },
+    savesTitle:     { es: 'Perfiles', en: 'Profiles' },   // the noun of PROFILE_CLEAR_PROMPT, in the plural (no game text for the screen's own title)
 
     /* A screen that isn't built yet (design/00-study.md §9). */
     soon:           { es: 'Aún no está: llega en la fase {n} del plan.', en: 'Not built yet: it comes in phase {n} of the plan.' },
     soonStudy:      { es: 'El estudio y el plan', en: 'The study and the plan' },
 
-    /* Saves: four, as the game's profile screen, and free mode (js/app-saves.js) */
-    saveSlot:       { es: 'Partida {n}', en: 'Save {n}' },
-    saveSelect:     { es: 'Selecciona partida', en: 'Select save' },
-    saveBtnHint:    { es: 'Elegir partida: cuatro, como en el juego, o el Modo libre', en: 'Choose a save: four, as in the game, or Free mode' },
-    savesNoStorage: { es: 'Este navegador no deja guardar datos: solo hay una partida', en: 'This browser doesn\'t let the site save data: there\'s only one save' },
+    /* Profiles: four, as the game's profile screen (SCREEN_SAVE_PROFILES), and free mode (js/app-saves.js).
+       In the game's words: a slot is a profile («perfil», PROFILE_CLEAR_PROMPT), a playthrough a game
+       («partida», PROFILE_NEW_GAME), the file a save file («archivo guardado», SAVE_CORRUPTED_TITLE).
+       What carries no key here has no game text: written for context in those words. */
+    saveSlot:       { es: 'Perfil {n}', en: 'Profile {n}' },   // a slot is a profile, as PROFILE_CLEAR_PROMPT says; the game numbers none
+    saveSelect:     { es: 'Seleccionar perfil', en: 'Select Profile' },   // SCREEN_SAVE_PROFILES
+    saveBtnHint:    { es: 'Elegir perfil: cuatro, como en el juego, o el Modo libre', en: 'Choose a profile: four, as in the game, or Free mode' },
+    savesNoStorage: { es: 'Este navegador no deja guardar datos: solo hay un perfil', en: 'This browser doesn\'t let the site save data: there\'s only one profile' },
     freeMode:       { es: 'Modo libre', en: 'Free mode' },
-    freeModeNote:   { es: 'Tu partida marcada a mano, y builds para probar: no es ninguna de tus partidas', en: 'Your game marked by hand, and builds to try: it isn\'t one of your saves' },
+    freeModeNote:   { es: 'Tu partida marcada a mano, y builds para probar: no es ninguno de tus perfiles', en: 'Your game marked by hand, and builds to try: it isn\'t one of your profiles' },
     saveCurrent:    { es: 'Estás aquí', en: 'You\'re here' },
-    saveContinue:   { es: 'Seguir con esta partida', en: 'Continue with this save' },
-    saveLoad:       { es: 'Cargar esta partida', en: 'Load this save' },
-    saveImport:     { es: 'Importar del juego', en: 'Import from the game' },
+    saveContinue:   { es: 'Continuar', en: 'Continue' },   // PAUSE_CONTINUE
+    saveLoad:       { es: 'Cargar este perfil', en: 'Load this profile' },   // no game text
+    saveImport:     { es: 'Importar datos de guardado', en: 'Import Save Data' },   // PS4_SAVE_IMPORT_LABEL without its «PS4™»
     saveImportShort:{ es: 'Importar', en: 'Import' },   // the same, on a phone
     saveImportBad:  { es: 'No se pueden leer los datos: busca user1.dat, user2.dat…', en: 'Save cannot be read: look for user1.dat, user2.dat…' },   // PROFILE_CORRUPTED, and where to look
     saveClear:      { es: 'Borrar', en: 'Clear' },
     saveClearAsk:   { es: '¿Borrar el perfil?', en: 'Clear Profile?' },   // PROFILE_CLEAR_PROMPT
-    saveClearNote:  { es: 'Solo aquí: tu partida del juego no cambia.', en: 'Only here: your game\'s own save doesn\'t change.' },
+    saveClearNote:  { es: 'Solo aquí: tu archivo guardado del juego no cambia.', en: 'Only here: your game\'s save file doesn\'t change.' },   // the file as SAVE_CORRUPTED_TITLE calls it
     saveAct:        { es: 'Acto {n}', en: 'Act {n}' },   // ACT_1_SUPER…, in the game's capitals there
     saveDefeated:   { es: 'Derrota', en: 'Defeated' },   // PROFILE_DEFEATED
     yes:            { es: 'Sí', en: 'Yes' },   // YES
@@ -77,14 +80,15 @@
     completion:     { es: 'Finalización', en: 'Completion' },   // COMPLETION
     rosaries:       { es: 'Rosarios', en: 'Rosaries' },   // INV_NAME_COIN
 
-    /* Importing a save from the game's file */
-    impTitle:       { es: 'Importar a la Partida {n}', en: 'Import into Save {n}' },
-    impLead:        { es: 'Trae tu partida real: la web lee el archivo que guarda el juego y rellena esta partida con lo que llevas: herramientas, blasones, mejoras, el Diario y el 100 %.',
-                      en: 'Bring your real game: the site reads the file the game saves and fills this save with what you carry: Tools, Crests, upgrades, the Journal and the 100%.' },
-    impMobile:      { es: 'Tus partidas están en el ordenador donde juegas: abre esta web allí, o pásate el archivo a este dispositivo.',
-                      en: 'Your saves are on the computer you play on: open this site there, or move the file to this device.' },
+    /* Importing a profile from the game's save file; its restore points are the game's auto saves
+       (RESTORE_SAVE_SELECTION_TITLE). No game text for the rest: written for context. */
+    impTitle:       { es: 'Importar al Perfil {n}', en: 'Import into Profile {n}' },
+    impLead:        { es: 'Trae tu partida real: la web lee el archivo guardado del juego y rellena este perfil con lo que llevas: herramientas, blasones, mejoras, el Diario y el 100 %.',
+                      en: 'Bring your real game: the site reads the game\'s save file and fills this profile with what you carry: Tools, Crests, upgrades, the Journal and the 100%.' },
+    impMobile:      { es: 'Tus archivos guardados están en el ordenador donde juegas: abre esta web allí, o pásate el archivo a este dispositivo.',
+                      en: 'Your save files are on the computer you play on: open this site there, or move the file to this device.' },
     impOs:          { es: 'Tu sistema', en: 'Your system' },
-    impStep1:       { es: 'Copia la carpeta de las partidas', en: 'Copy the saves folder' },
+    impStep1:       { es: 'Copia la carpeta de los archivos guardados', en: 'Copy the save files folder' },
     impStep2:       { es: 'Abre el selector y pega la carpeta', en: 'Open the picker and paste the folder' },
     impStep3:       { es: 'Entra en la carpeta de tu cuenta y elige el archivo', en: 'Go into your account\'s folder and pick the file' },
     impHowWin:      { es: 'Pulsa «Seleccionar archivo», pega la ruta en la casilla del nombre y pulsa {k1}.',
@@ -93,53 +97,53 @@
                       en: 'Press "Choose file", then {k1}, paste the path and press {k2}.' },
     impHowLinux:    { es: 'Pulsa «Seleccionar archivo», luego {k1}, pega la ruta y pulsa {k2}.',
                       en: 'Press "Choose file", then {k1}, paste the path and press {k2}.' },
-    impFiles:       { es: 'Dentro hay una carpeta con un número (tu cuenta de Steam) o «default». Cada perfil del juego es un archivo: el primero es user1.dat, el segundo user2.dat, y así. En Restore_Points hay copias de momentos anteriores (restoreData): también se pueden importar.',
-                      en: 'Inside there\'s a folder named with a number (your Steam account) or "default". Each of the game\'s profiles is a file: the first is user1.dat, the second user2.dat, and so on. Restore_Points holds copies of earlier moments (restoreData): those can be imported too.' },
+    impFiles:       { es: 'Dentro hay una carpeta con un número (tu cuenta de Steam) o «default». Cada perfil del juego es un archivo: el primero es user1.dat, el segundo user2.dat, y así. En Restore_Points están sus guardados automáticos (restoreData): también se pueden importar.',
+                      en: 'Inside there\'s a folder named with a number (your Steam account) or "default". Each of the game\'s profiles is a file: the first is user1.dat, the second user2.dat, and so on. Restore_Points holds their auto saves (restoreData): those can be imported too.' },
     impCopy:        { es: 'Copiar', en: 'Copy' },
     impCopied:      { es: 'Copiada', en: 'Copied' },
     impEnter:       { es: 'Intro', en: 'Enter' },
-    impDrop:        { es: 'Arrastra aquí el archivo de tu partida', en: 'Drag your save\'s file here' },
+    impDrop:        { es: 'Arrastra aquí tu archivo guardado', en: 'Drag your save file here' },
     impDropping:    { es: 'Suéltalo', en: 'Let go' },
     impReading:     { es: 'Leyendo…', en: 'Reading…' },
     impOr:          { es: 'o', en: 'or' },
     impChoose:      { es: 'Seleccionar archivo', en: 'Choose file' },
     impOther:       { es: 'Elegir otro archivo', en: 'Choose another file' },
-    impPrivate:     { es: 'Se lee aquí, en tu navegador: no se envía a ningún sitio y tu partida del juego no cambia.',
-                      en: 'It\'s read here, in your browser: it isn\'t sent anywhere and your game\'s save doesn\'t change.' },
+    impPrivate:     { es: 'Se lee aquí, en tu navegador: no se envía a ningún sitio y tu archivo guardado del juego no cambia.',
+                      en: 'It\'s read here, in your browser: it isn\'t sent anywhere and your game\'s save file doesn\'t change.' },
     impTime:        { es: '{h} h {m} min', en: '{h} h {m} min' },
     impVersion:     { es: 'Guardada con la versión {v}', en: 'Saved with version {v}' },
-    impRestore:     { es: 'Punto de restauración del {date}', en: 'Restore point of {date}' },
-    impReplace:     { es: 'Sustituirá lo que tiene ahora la Partida {n}.', en: 'It will replace what Save {n} holds now.' },
+    impRestore:     { es: 'Guardado automático del {date}', en: 'Auto save of {date}' },   // RESTORE_SAVE_SELECTION_TITLE, in the singular
+    impReplace:     { es: 'Sustituirá lo que tiene ahora el Perfil {n}.', en: 'It will replace what Profile {n} holds now.' },
     impSync:        { es: 'Mantener sincronizada con el juego', en: 'Keep in sync with the game' },
     impSyncOn:      { es: 'Activado', en: 'On' },
     impSyncOff:     { es: 'Desactivado', en: 'Off' },
     impSyncNote:    { es: 'Se pone al día cada vez que el juego guarda, mientras la web esté abierta en este navegador.',
                       en: 'It catches up every time the game saves, while the site is open in this browser.' },
 
-    /* Following the game's file (js/live.js) */
+    /* Following the game's file (js/live.js). No game text: written for context. */
     liveFollow:     { es: 'Seguir al juego', en: 'Follow the game' },
     liveFollowShort:{ es: 'Seguir', en: 'Follow' },   // the same, on a phone
-    liveFollowHint: { es: 'Elige el archivo de esta partida: se pone al día con él ahora y cada vez que el juego guarde',
-                      en: 'Pick this save\'s file: it catches up with it now and every time the game saves' },
-    liveFollowing:  { es: 'La Partida {n} sigue ahora a {file}', en: 'Save {n} now follows {file}' },
+    liveFollowHint: { es: 'Elige el archivo de este perfil: se pone al día con él ahora y cada vez que el juego guarde',
+                      en: 'Pick this profile\'s file: it catches up with it now and every time the game saves' },
+    liveFollowing:  { es: 'El Perfil {n} sigue ahora a {file}', en: 'Profile {n} now follows {file}' },
     liveFollowNo:   { es: 'Este navegador no deja guardar el vínculo con el archivo', en: 'This browser doesn\'t let the site keep the link to the file' },
     liveFollows:    { es: 'Sigue a {file}', en: 'Follows {file}' },
     liveUnlink:     { es: 'Dejar de seguir', en: 'Stop following' },
     liveState_live: { es: 'en vivo', en: 'live' },
     liveState_paused: { es: 'en pausa', en: 'paused' },
     liveState_lost: { es: 'sin archivo', en: 'file missing' },
-    livePaused:     { es: 'Esta partida sigue a {file}, pero el navegador pide permiso otra vez para leerlo.',
-                      en: 'This save follows {file}, but the browser asks for permission to read it again.' },
-    liveLost:       { es: 'No se encuentra {file}: la partida conserva lo que tenía, pero ya no sigue al juego.',
-                      en: '{file} can\'t be found: the save keeps what it had, but no longer follows the game.' },
+    livePaused:     { es: 'Este perfil sigue a {file}, pero el navegador pide permiso otra vez para leerlo.',
+                      en: 'This profile follows {file}, but the browser asks for permission to read it again.' },
+    liveLost:       { es: 'No se encuentra {file}: el perfil conserva lo que tenía, pero ya no sigue al juego.',
+                      en: '{file} can\'t be found: the profile keeps what it had, but no longer follows the game.' },
     liveResume:     { es: 'Seguir', en: 'Resume' },
     liveRelink:     { es: 'Buscar el archivo', en: 'Find the file' },
-    liveResumeNo:   { es: 'Sin permiso, la partida no sigue al juego', en: 'Without permission, the save doesn\'t follow the game' },
-    liveUpdated:    { es: 'Tu partida se ha puesto al día con el juego', en: 'Your save caught up with the game' },
+    liveResumeNo:   { es: 'Sin permiso, el perfil no sigue al juego', en: 'Without permission, the profile doesn\'t follow the game' },
+    liveUpdated:    { es: 'Tu perfil se ha puesto al día con el juego', en: 'Your profile caught up with the game' },
     liveTag:        { es: 'Tu partida real', en: 'Your real game' },
 
     /* Your game: the start screen (js/app-home.js) */
-    homeInviteBtn:  { es: 'Importar del juego', en: 'Import from the game' },
+    homeInviteBtn:  { es: 'Importar datos de guardado', en: 'Import Save Data' },   // PS4_SAVE_IMPORT_LABEL without its «PS4™»
     homeCompletion: { es: 'Tu 100 %', en: 'Your 100%' },
     homeMatches:    { es: 'Coincide con el {pct} que muestra el juego.', en: 'It matches the {pct} the game shows.' },
     homeDiffers:    { es: 'El juego muestra {pct}: tu archivo es de una versión que cuenta distinto, o hay un fallo. Escríbenos.',
@@ -163,7 +167,7 @@
     aboutFold:      { es: 'Sobre esta web', en: 'About this site' },
     cat_tools:      { es: 'Herramientas', en: 'Tools' },
     cat_spools:     { es: 'Carretes de seda', en: 'Silk Spools' },
-    cat_upgrades:   { es: 'Kit de fabricación y bolsa de herramientas', en: 'Crafting Kit and Tool Pouch' },
+    cat_upgrades:   { es: 'Bolsa de herramientas y kit de fabricación', en: 'Tool Pouch & Crafting Kit' },   // INV_NAME_POUCHANDTOOLKIT
     cat_arts:       { es: 'Habilidades', en: 'Abilities' },
     cat_skills:     { es: 'Habilidades de seda', en: 'Silk Skills' },
     cat_crests:     { es: 'Blasones', en: 'Crests' },
@@ -189,7 +193,7 @@
     chJournal:      { es: 'Diario: {n} entradas nuevas o completadas', en: 'Journal: {n} entries new or completed' },
     chJournalOne:   { es: 'Diario: una entrada nueva o completada', en: 'Journal: one entry new or completed' },
     chMore:         { es: 'y {n} más', en: 'and {n} more' },
-    chWish:         { es: 'tarea cumplida', en: 'task done' },
+    chWish:         { es: 'tarea completada', en: 'task completed' },   // a PANE_QUESTS task, COMPLETED as the game says it
     chGauntlet:     { es: 'desafío superado', en: 'gauntlet cleared' },
     chToast:        { es: 'Tu partida: {list}', en: 'Your game: {list}' },
 
@@ -207,7 +211,7 @@
     ctFocus:        { es: 'Concentración de la Cazadora', en: 'Hunter\'s focus' },
     ctFocusFull:    { es: 'Concentración plena', en: 'Full focus' },
     ctFury:         { es: 'Furia de la Bestia', en: 'Beast\'s fury' },
-    ctFlint:        { es: 'Pedernal activo', en: 'Flintslate active' },
+    ctFlint:        { es: '{name} activa', en: '{name} active' },   // {name}: the Tool's, as the game names it
     ctChallenge:    { es: 'Tras desafiar (primer golpe)', en: 'After a Challenge (first hit)' },
     ctSlash:        { es: 'Tajo', en: 'Slash' },
     ctAtt_slash:    { es: 'Tajo', en: 'Slash' },
@@ -238,7 +242,7 @@
     ctAmmo1:        { es: '{n} uso', en: '{n} use' },
     ctLoad:         { es: '{n} por carga', en: '{n} a load' },
     ctRefill:       { es: '{n} fragmentos de coraza', en: '{n} shell shards' },   // as INV_NAME_SHARD says them
-    ctBody:         { es: 'Hornet', en: 'Hornet' },
+    ctBody:         { es: 'Hornet', en: 'Hornet' },   // HORNET_NAME
     ctCasts:        { es: '{n} habilidades de {c} de seda', en: '{n} Skills of {c} silk' },
     ctCasts1:       { es: '{n} habilidad de {c} de seda', en: '{n} Skill of {c} silk' },
     ctBind:         { es: 'Enlazar', en: 'Bind' },   // BUTTON_CAST
@@ -247,13 +251,14 @@
     /* The Map (js/app-map.js) */
     mapBench:       { es: 'Tu banco', en: 'Your bench' },
     mapZoom:        { es: 'Tamaño del mapa', en: 'Map size' },
-    mapCloser:      { es: 'Acercar', en: 'Closer' },
-    mapFurther:     { es: 'Alejar', en: 'Further' },
+    mapCloser:      { es: 'Acercar', en: 'Zoom In' },   // CTRL_ZOOM_IN
+    mapFurther:     { es: 'Alejar', en: 'Zoom Out' },   // CTRL_ZOOM_OUT
     mapFull:        { es: 'Mapa grande', en: 'Large map' },
     mapFullScreen:  { es: 'Pantalla completa', en: 'Full Screen' },   // VIDEO_FULLSCREEN
     mapFullExit:    { es: 'Salir de pantalla completa', en: 'Exit full screen' },
     mapSmall:       { es: 'Mapa normal', en: 'Normal map' },
     mapFind:        { es: 'Busca en el mapa: una zona, una pieza, un jefe', en: 'Search the map: an area, a piece, a boss' },
+    mapFindShort:   { es: 'Busca en el mapa', en: 'Search the map' },   // the same, where the field is narrow (a phone)
     mapFindNone:    { es: 'Nada con ese nombre en el mapa.', en: 'Nothing by that name on the map.' },
     mapMark:        { es: 'Marcar como conseguido', en: 'Mark as had' },
     mapUnmark:      { es: 'Desmarcar', en: 'Unmark' },
@@ -285,12 +290,16 @@
     mapNames:       { es: 'Nombres de zona', en: 'Area names' },
     mapFit:         { es: 'Entero', en: 'Whole' },
     mapAlt:         { es: 'El mapa de Telalejana', en: 'The map of Pharloom' },
-    mapPlace_bench: { es: 'Bancos', en: 'Benches' },
-    mapPlace_bench1:{ es: 'Banco', en: 'Bench' },
-    mapPlace_bellway:{ es: 'Vías campana', en: 'Bellways' },
+    mapPlace_bench: { es: 'Bancos', en: 'Benches' },   // KEY_BENCH, in the plural
+    mapPlace_bench1:{ es: 'Banco', en: 'Bench' },   // KEY_BENCH
+    mapPlace_bellway:{ es: 'Vías Campana', en: 'Bellways' },   // MAP_LIST_TITLE
     mapPlace_ventrica:{ es: 'Ventrica', en: 'Ventrica' },   // KEY_TUBE
     mapNear:        { es: 'Lo más cerca de tu banco', en: 'Closest to your bench' },
+    mapNearRespawn: { es: 'Lo más cerca de tu punto de reaparición', en: 'Closest to your respawn point' },   // no game text: as mapRespawn
     mapFrom:        { es: 'Tu banco anterior', en: 'Your previous bench' },
+    // No game text for a respawn point (searched: respawn, reaparecer, wake): written for the context.
+    mapRespawn:     { es: 'Tu punto de reaparición', en: 'Your respawn point' },
+    mapFromRespawn: { es: 'Tu punto de reaparición anterior', en: 'Your previous respawn point' },
     mapClosed:      { es: 'sin abrir', en: 'not open yet' },
     mapToll:        { es: 'sin pagar el peaje', en: 'toll not paid' },
     mapGroup_upgrades: { es: 'Mejoras', en: 'Upgrades' },
@@ -317,20 +326,17 @@
     mapFoldClose:   { es: 'Plegar {g}', en: 'Fold {g}' },
     mapSetChoose:   { es: 'Elegir cuáles', en: 'Choose which' },
     mapSet_relics:  { es: 'Reliquias', en: 'Relics' },   // COLLECTION_HEADING_RELICDEALER
-    mapActs:        { es: 'Por acto', en: 'By Act' },
-    mapActAll:      { es: 'Todos', en: 'All' },
-    mapReachNow:    { es: 'Solo lo que puedo coger ya', en: 'Only what I can reach now' },
     // The Map shows the whole map, faint where your game's doesn't yet; this leaves that out. No game source: written for context.
-    mapGame:        { es: 'Solo lo que enseña el juego', en: 'Only what the game shows' },
-    mapGameTip:     { es: 'Como el mapa de tu partida: sin las zonas cuyo mapa no has comprado ni las salas sin cartografiar.',
-                      en: 'As your game\'s map: without the areas whose map you haven\'t bought or the rooms not mapped.' },
+    mapWhole:       { es: 'Mapa completo', en: 'Whole map' },   // no game text: the site's own switch
+    mapWholeTip:    { es: 'Con lo que tu partida aún no ha dibujado, en tenue. Una sala sale entera en color en cuanto tienes cartografiada una parte, así que puede salir en color una parte en la que aún no has entrado, también un secreto. Apágalo para verlo exactamente como el mapa de tu partida: sin las zonas cuyo mapa no has comprado ni las salas sin cartografiar.',
+                      en: 'With what your game hasn\'t drawn yet, faint. A room goes whole in colour once any part of it is mapped, so a part you haven\'t been in yet can show in colour, a secret too. Turn it off to see it exactly as your game\'s map: without the areas whose map you haven\'t bought or the rooms not mapped.' },
     mapArea:        { es: 'Zona', en: 'Area' },
     mapOnMap:       { es: 'Ver en el mapa', en: 'See on the map' },
     mapMore:        { es: 'y {n} más', en: 'and {n} more' },
     mapLayer_boss:  { es: 'Jefes', en: 'Bosses' },
-    mapLayer_bells: { es: 'Santuarios de campana', en: 'Bellshrines' },
+    mapLayer_bells: { es: 'Santuarios de Campana', en: 'Bellshrines' },   // BELLSHRINE, in the plural
     mapLayer_locks: { es: 'Puertas con llave', en: 'Locked doors' },
-    mapLayer_shops: { es: 'Tiendas', en: 'Shops' },
+    mapLayer_shops: { es: 'Vendedores', en: 'Vendors' },   // KEY_SHOP (the game's map key), in the plural
     mapLayer_shakra:{ es: 'Shakra', en: 'Shakra' },   // MAPPER_MAIN
     mapLayer_wishwalls: { es: 'Muros de deseos', en: 'Wishwalls' },
     mapLayer_wishwall1: { es: 'Muro de deseos', en: 'Wishwall' },   // QUESTBOARD_TITLE
@@ -349,7 +355,7 @@
     'mapExtra_rune-harp':          { es: 'Arpa rúnica', en: 'Rune Harp' },   // INV_NAME_R_WEAVER_RECORD
     'mapExtra_psalm-cylinder':     { es: 'Cilindro de salmo', en: 'Psalm Cylinder' },   // INV_NAME_R_PSALM_CYL
     'mapExtra_arcane-egg':         { es: 'Huevo arcano', en: 'Arcane Egg' },   // INV_NAME_R_ANCIENT_EGG
-    mapExtra_mossberry: { es: 'Baya musgosa', en: 'Mossberry' },
+    mapExtra_mossberry: { es: 'Baya musgosa', en: 'Mossberry' },   // INV_NAME_MOSSBERRY
     mapExtra_silkeater: { es: 'Devoraseda', en: 'Silkeater' },   // INV_NAME_SILK_GRUB
     mapExtra_memento:   { es: 'Recuerdos', en: 'Mementos' },   // COLLECTION_HEADING_MOMENTOS
     mapExtra_bellhome:  { es: 'Hogar campana', en: 'Bellhome' },   // BELLHOME
@@ -406,8 +412,8 @@
     mapMet:         { es: 'Ya os habéis visto', en: 'You\'ve met' },
     mapNotMet:      { es: 'Aún no os habéis visto', en: 'Not met yet' },
     mapNpcSpots:    { es: 'Aparece en {n} sitios, según el acto y lo que hayas hecho.', en: 'Turns up in {n} places, by act and by what you\'ve done.' },
-    mapNpcUnsure:   { es: 'Va y viene por Telalejana: la partida no dice dónde está ahora.', en: 'Comes and goes around Pharloom: the save doesn\'t say where now.' },
-    mapTrade_couriers: { es: 'Ofrecen deseos de reparto.', en: 'Offer delivery wishes.' },
+    mapNpcUnsure:   { es: 'Va y viene por Telalejana: tu archivo guardado no dice dónde está ahora.', en: 'Comes and goes around Pharloom: your save file doesn\'t say where now.' },
+    mapTrade_couriers: { es: 'Ofrecen deseos de entrega.', en: 'Offer delivery wishes.' },   // the wish type: TYPE_COURIER_TITLE
     mapTrade_druid:    { es: 'Cambia bayas musgosas por rosarios.', en: 'Trades Mossberries for rosaries.' },
     mapTrade_creige:   { es: 'Vende bebidas.', en: 'Sells drinks.' },
     mapCocoonNote:  { es: 'Donde caíste por última vez: tus rosarios te esperan ahí.', en: 'Where you last fell: your rosaries wait there.' },
@@ -434,7 +440,7 @@
     mapKills:       { es: '{n} de {m} derrotados', en: '{n} of {m} defeated' },
     mapTaskFor:     { es: 'Lo pide el deseo «{wish}».', en: 'The wish "{wish}" asks for it.' },
     mapWishGranted: { es: 'Deseo concedido', en: 'Wish Granted' },   // WISH_GRANTED
-    mapDone:        { es: 'Cumplido', en: 'Done' },
+    mapDone:        { es: 'Completado', en: 'Completed' },   // COMPLETED
     mapNotDone:     { es: 'Sin cumplir', en: 'Not done yet' },
     mapToWall:      { es: 'Ver el muro de deseos', en: 'See the Wishwall' },
     mapToGiver:     { es: 'Ver quién lo pide', en: 'See who asks for it' },
@@ -454,8 +460,8 @@
     ftLogStart:     { es: 'Contra {name}: {hp} de vida. Toca un movimiento para jugar la pelea.', en: 'Against {name}: {hp} health. Tap a move to play the fight out.' },
     ftUndoHint:     { es: 'Deshace el último movimiento (Ctrl+Z)', en: 'Undoes the last move (Ctrl+Z)' },
     ftClock:        { es: '{s} s de pelea', en: '{s} s of fighting' },
-    ftGNeedle:      { es: 'Aguja', en: 'Needle' },
-    ftGSilk:        { es: 'Seda', en: 'Silk' },
+    ftGNeedle:      { es: 'Aguja', en: 'Needle' },   // INV_NAME_NAIL1
+    ftGSilk:        { es: 'Seda', en: 'Silk' },   // INV_NAME_THREAD
     ftGTools:       { es: 'Herramientas', en: 'Tools' },
     ftGTime:        { es: 'Tiempo', en: 'Time' },
     ftTauntNote:    { es: 'el próximo tajo, +50 %', en: 'the next slash, +50%' },
@@ -474,7 +480,7 @@
     ftWaitFor_reaper: { es: 'hasta que acabe la seda de los tajos', en: 'until the slashes\' silk ends' },
     ftWaitFor_brew: { es: 'hasta que acabe el brebaje', en: 'until the brew wears off' },
     ftWaitFor_flint: { es: 'hasta que se apague la aguja', en: 'until the Needle cools' },
-    ftWaitFor_wisp: { es: 'hasta el próximo fuego fatuo', en: 'until the next wisp' },
+    ftWaitFor_wisp: { es: 'hasta la próxima llama fatua', en: 'until the next wisp' },   // the wisps as WISP_LANTERN_DESC calls them
     ftWhy_silk:     { es: 'Te falta seda', en: 'Not enough silk' },
     ftWhy_ammo:     { es: 'Sin usos', en: 'No uses left' },
     ftWhy_full:     { es: 'Ya tienes todas las máscaras', en: 'Already at full masks' },
@@ -551,7 +557,7 @@
     ftNone:         { es: 'Ningún enemigo se llama así.', en: 'No enemy by that name.' },
     ftBoss:         { es: 'jefe', en: 'boss' },
     ftHp:           { es: 'Vida', en: 'Health' },
-    ftBlack:        { es: 'Con hilo negro (acto 3): {n}', en: 'Black-threaded (Act 3): {n}' },
+    ftBlack:        { es: 'Con hilo negro (Acto 3): {n}', en: 'Black-threaded (Act 3): {n}' },
     ftMods:         { es: 'Daño que recibe, por nivel', en: 'Damage it takes, by level' },
     ftModsNote:     { es: 'Tu aguja, tu golpe concentrado y tus habilidades usan el nivel {n}; tus herramientas, el {k}.', en: 'Your Needle, Needle Strike and Skills use level {n}; your Tools, level {k}.' },
     // An entry the wiki's tables lack, read from the game's files (js/enemies.js src).
@@ -613,11 +619,11 @@
     ftWaves:        { es: '{n} oleadas', en: '{n} waves' },
     ftWaves1:       { es: '{n} oleada', en: '{n} wave' },
     ftWave:         { es: 'Oleada {n}', en: 'Wave {n}' },
-    ftReward:       { es: 'Recompensa', en: 'Reward' },
+    ftReward:       { es: 'Recompensa', en: 'Reward' },   // UI_BOARD_REWARD_TITLE
     ftCleared:      { es: 'Superado', en: 'Cleared' },
     ftNotCleared:   { es: 'Sin superar en esta partida', en: 'Not cleared in this game' },
     ftClearedCount: { es: 'Has superado {n} de {of} en esta partida.', en: 'You\'ve cleared {n} of {of} in this game.' },
-    ftGauntletNote: { es: 'La vida de todas sus oleadas. Lo más rápido es una estimación: cuenta la seda y las cargas de una oleada a otra, con el daño de cada enemigo a tu nivel de aguja. Con hilo negro (acto 3) algunas cambian.', en: 'The health of all its waves. The quickest way is an estimate: it carries silk and loads from one wave to the next, with each enemy\'s damage at your Needle\'s level. Black-threaded (Act 3), some change.' },
+    ftGauntletNote: { es: 'La vida de todas sus oleadas. Lo más rápido es una estimación: cuenta la seda y las cargas de una oleada a otra, con el daño de cada enemigo a tu nivel de aguja. Con hilo negro (Acto 3) algunas cambian.', en: 'The health of all its waves. The quickest way is an estimate: it carries silk and loads from one wave to the next, with each enemy\'s damage at your Needle\'s level. Black-threaded (Act 3), some change.' },
     ftType_fire:    { es: 'fuego', en: 'fire' },
     ftType_void:    { es: 'vacío', en: 'void' },
 
@@ -628,10 +634,11 @@
     hjLeft1:        { es: 'falta {n}', en: '{n} to go' },
     hjMemento:      { es: 'Para el Recuerdo de cazadora', en: 'For the Hunter\'s Memento' },   // as INV_NAME_HUNTER_MEMENTO names it
     hjMementoShort: { es: 'Recuerdo', en: 'Memento' },   // the Hunter's Memento, shortened under its ring
-    hjSeen:         { es: '{n} de {m} vistas', en: '{n} of {m} seen' },
+    hjSeen:         { es: '{n} de {m} encontradas', en: '{n} of {m} encountered' },   // the Journal's ENCOUNTERED
     hjOptional:     { es: 'Opcional: no cuenta para el Recuerdo', en: 'Optional: not needed for the Memento' },
     hjBy:           { es: 'También se completa al derrotar a: {names}', en: 'Also completed by defeating: {names}' },
-    hjInspect:      { es: 'Se completa al leer su lápida.', en: 'Completed by reading its tablet.' },
+    // Void Tendrils' entry: the game's prompt (INSPECT) and what it calls the thing (WEAVE_DARK, «Una runa de pergamino…»).
+    hjInspect:      { es: 'Se completa al inspeccionar su runa de pergamino.', en: 'Completed by inspecting its rune-scroll.' },
     hjOrder:        { es: 'Orden', en: 'Order' },
     hjByArea:       { es: 'Por zonas', en: 'By area' },
     hjByBook:       { es: 'Como el Diario', en: 'Journal order' },
@@ -639,9 +646,10 @@
     hjFind:         { es: 'Buscar en el Diario: un bicho, una zona', en: 'Search the Journal: a bug, an area' },
     hjNone:         { es: 'Nada con ese nombre en el Diario.', en: 'Nothing by that name in the Journal.' },
     hjElsewhere:    { es: 'En otros sitios', en: 'Elsewhere' },
-    hjState_done:   { es: 'completa', en: 'complete' },
-    hjState_seen:   { es: 'vista, sin completar', en: 'seen, not complete' },
-    hjState_unseen: { es: 'aún no vista', en: 'not seen yet' },
+    // In the Journal's own words, ENCOUNTERED and COMPLETED (an entry: «completada», «encontrada»).
+    hjState_done:   { es: 'completada', en: 'completed' },
+    hjState_seen:   { es: 'encontrada, sin completar', en: 'encountered, not completed' },
+    hjState_unseen: { es: 'aún sin encontrar', en: 'not encountered yet' },
 
     /* The Inventory (js/app-game.js) */
     invItems:       { es: 'Objetos', en: 'Items' },
@@ -685,12 +693,12 @@
     pgBeyondNote:   { es: 'No cuentan para la finalización. Bajo cada grupo, para qué sirve.', en: 'They don\'t count for completion. Under each group, what it\'s for.' },
     pgDone:         { es: 'Completo', en: 'Complete' },
     pgGot:          { es: 'Conseguido', en: 'Got' },
-    pgLater:        { es: 'Más adelante: acto {n}', en: 'Later: Act {n}' },
+    pgLater:        { es: 'Más adelante: Acto {n}', en: 'Later: Act {n}' },
     pgWholeNote:    { es: 'Cuentan las máscaras enteras: cada cuatro fragmentos, un 1 %.', en: 'Whole masks count: every four shards, 1%.' },
     pgSpoolNote:    { es: 'Cuentan los carretes enteros: cada dos fragmentos, un 1 %.', en: 'Whole spools count: every two fragments, 1%.' },
     kind_flea:      { es: 'Pulga perdida', en: 'Lost Flea' },   // KEY_FLEA
     kind_silkHeart: { es: 'Corazón de seda', en: 'Silk Heart' },   // MEMORY_MSG_TITLE_SILKHEART
-    kind_fleas:     { es: 'Pulgas perdidas', en: 'Lost Fleas' },
+    kind_fleas:     { es: 'Las pulgas perdidas', en: 'The Lost Fleas' },   // QUEST_FLEAS_TITLE
     kind_oldHearts: { es: 'Viejos corazones', en: 'Old Hearts' },   // as the wish MQ_BLACKTHREAD_5_NAME says them
     kind_melodies:  { es: 'Melodías', en: 'Melodies' },
     pgOtherArts:    { es: 'Otras habilidades', en: 'Other abilities' },
@@ -726,18 +734,18 @@
     pgHereStep:     { es: 'Para abrir el Acto {m} hay {of} pasos: vas por el {i}.', en: 'Opening Act {m} takes {of} steps: you\'re on step {i}.' },
     pgHere100:      { es: 'Para el 100 % te queda un {pct}.', en: '{pct} to go for 100%.' },
     pgHereFull:     { es: 'Acto 3 y el 100 %: lo tienes todo.', en: 'Act 3 and 100%: you have it all.' },
-    pgHereNone:     { es: 'Silksong tiene tres actos. Sin partida, esta pestaña es la guía: lo que pide el juego para pasar de uno a otro, y todo lo que cuenta para el 100 %.',
-                      en: 'Silksong has three Acts. With no save, this tab is the guide: what the game asks to go from one to the next, and everything that counts for 100%.' },
-    pgInviteTag:    { es: 'Sin partida', en: 'No save' },
-    pgInvite:       { es: 'Importa tu partida y verás en qué acto estás, y qué te falta para el siguiente y para el 100 %, pieza a pieza.',
-                      en: 'Import your save to see which Act you\'re in, and what\'s left for the next one and for 100%, piece by piece.' },
+    pgHereNone:     { es: 'Silksong tiene tres actos. Sin un perfil cargado, esta pestaña es la guía: lo que pide el juego para pasar de uno a otro, y todo lo que cuenta para el 100 %.',
+                      en: 'Silksong has three Acts. With no profile loaded, this tab is the guide: what the game asks to go from one to the next, and everything that counts for 100%.' },
+    pgInviteTag:    { es: 'Sin perfil', en: 'No profile' },
+    pgInvite:       { es: 'Importa tu partida y verás en qué acto estás, y qué te falta para el siguiente y para el 100 %, pieza a pieza.',
+                      en: 'Import your game to see which Act you\'re in, and what\'s left for the next one and for 100%, piece by piece.' },
     /* The road's steps by what to do, on its thread (3 A); the titles stay the whole road's */
     pgStepN:        { es: '{n} · {step}', en: '{n} · {step}' },
     pgStepBells:    { es: 'Haz sonar los Santuarios', en: 'Ring the Bellshrines' },   // the game's word in it: BELLSHRINE
     pgStepGate:     { es: 'Abre la {gate}', en: 'Open the {gate}' },
-    pgStepJudge:    { es: 'Vence a la {judge}', en: 'Defeat the {judge}' },
+    pgStepJudge:    { es: 'Derrota a la {judge}', en: 'Defeat the {judge}' },   // with its {judge}, DEFEATED_LAST_JUDGE_1_DESC
     pgStepUnlock:   { es: 'Desbloquea «{wish}»', en: 'Unlock "{wish}"' },
-    pgStepOffer:    { es: 'Acepta el deseo', en: 'Take the wish' },
+    pgStepOffer:    { es: 'Acepta el deseo', en: 'Accept the wish' },   // the game's verb: CTRL_ACCEPT
     pgStepSnare:    { es: 'Reúne la trampa', en: 'Gather the snare' },
     pgStepReady:    { es: 'Llévasela al {caretaker}', en: 'Bring it to the {caretaker}' },
     pgStepSilk:     { es: 'Atrapa a la {silk}', en: 'Snare {silk}' },
@@ -747,7 +755,7 @@
     pgTodoPoints:   { es: 'Consigue {n} puntos más de deseos', en: 'Get {n} more wish points' },
     pgTodoPoints1:  { es: 'Consigue {n} punto más de deseos', en: 'Get {n} more wish point' },
     pgTodoAny:      { es: 'Vale cualquiera de estos {n} deseos; por ejemplo:', en: 'Any of these {n} wishes will do; for example:' },
-    pgTodoAnyNear:  { es: 'Vale cualquiera de estos {n} deseos; los más cerca de tu banco:', en: 'Any of these {n} wishes will do; the nearest to your bench:' },
+    pgTodoAnyNear:  { es: 'Vale cualquiera de estos {n} deseos; los más cercanos a tu banco:', en: 'Any of these {n} wishes will do; the nearest to your bench:' },
     pgTodoShrine:   { es: 'Haz sonar el Santuario de Campana de {area}', en: 'Ring the Bellshrine in {area}' },   // the game's word in it: BELLSHRINE
     pgTodoGet:      { es: 'Consigue: {name}', en: 'Get: {name}' },
     pgTodoPavo:     { es: 'Habla con Pabo: te da la {key}', en: 'Talk to Pavo: he gives you the {key}' },   // his name: BELLHART_GREETER_MAIN
@@ -760,7 +768,7 @@
     pgFoundNoPin:   { es: 'Se encuentra en la zona', en: 'Found in the area' },
     /* Free mode with the Inventory's marks (design/41, 6 A). */
     pgHereFreeK:    { es: 'Modo libre.', en: 'Free mode.' },
-    pgHereFree:     { es: 'El 100 % cuenta lo que marcas aquí o en el Inventario, desde una partida nueva; el camino es la guía, como sin partida.', en: 'The 100% counts what you mark here or in the Inventory, from a New Game; the road is the guide, as with no save.' },
+    pgHereFree:     { es: 'El 100 % cuenta lo que marcas aquí o en el Inventario, desde una partida nueva; el camino es la guía, como sin un perfil cargado.', en: 'The 100% counts what you mark here or in the Inventory, from a New Game; the road is the guide, as with no profile loaded.' },
     pgLadderNote:   { es: 'Esto se fija en el Inventario:', en: 'This is set in the Inventory:' },
     pgListAll:      { es: 'Ver la lista entera, con lo hecho ({n})', en: 'See the whole list, done included ({n})' },
     pgListLess:     { es: 'Cerrar la lista entera', en: 'Close the whole list' },
@@ -790,11 +798,12 @@
     roadNote2:      { es: 'Lo que pide el juego para entrar en la Ciudadela, paso a paso.', en: 'What the game asks before you walk into the Citadel, step by step.' },
     roadNote3:      { es: 'Lo que pide el juego para abrir el Acto 3, leído de sus propios archivos. Las guías suelen dar solo seis deseos: cuentan también los que van antes de ellos, un mínimo de puntos de deseos y cuatro condiciones más.',
                       en: 'What the game asks before Act 3 opens, read from its own files. Guides usually give six wishes: the ones before them count too, and so do a minimum of wish points and four more conditions.' },
-    roadStale:      { es: 'Esta partida se guardó en la web antes de que leyera los deseos: vuelve a importarla para ver su camino.', en: 'This save was kept before the site read the wishes: import it again to see its road.' },
-    roadBypassed:   { es: 'Ya no hace falta: la victoria sobre {phantom} abre otro camino.', en: 'No longer needed: beating {phantom} opens another way in.' },
+    roadStale:      { es: 'Este perfil se guardó en la web antes de que leyera los deseos: vuelve a importarlo para ver su camino.', en: 'This profile was kept before the site read the wishes: import it again to see its road.' },
+    // Defeating a foe as the game words it (MQ_TYPE_DEFEAT, DEFEATED_*_DESC: «Derrota a…», "Defeat…").
+    roadBypassed:   { es: 'Ya no hace falta: derrotar a {phantom} abre otro camino.', en: 'No longer needed: defeating {phantom} opens another way in.' },
     roadBells:      { es: 'Haz sonar los cinco Santuarios de Campana', en: 'Ring the five Bellshrines' },   // the game's word in it: BELLSHRINE
     roadGate:       { es: 'Abre: {gate}', en: 'Open: {gate}' },   // as the game titles the objective: MQ_TYPE_BELLSHRINES, then its name
-    roadJudge:      { es: 'Vence en combate: {judge}, o {phantom} por otro camino', en: 'Defeat {judge}, or {phantom} for another way in' },
+    roadJudge:      { es: 'Derrota a la {judge}, o a {phantom} por otro camino', en: 'Defeat the {judge}, or {phantom} for another way in' },
     roadCitadel:    { es: 'Entra en la Ciudadela', en: 'Walk into the Citadel' },
     roadUnlock:     { es: 'Desbloquea el deseo «{wish}»', en: 'Unlock the wish "{wish}"' },
     roadRequired:   { es: 'Deseos obligatorios', en: 'Required wishes' },
@@ -824,19 +833,19 @@
     roadCaretaker:  { es: 'Cuidador', en: 'Caretaker' },   // CARETAKER_MAIN
     roadPieces:     { es: 'Reúne las cuatro piezas de la trampa', en: 'Gather the snare\'s four pieces' },
     roadPieceGiven: { es: 'te la da al aceptar el deseo: {npc}', en: 'given once you accept the wish: {npc}' },
-    roadPieceAfter: { es: 'tras vencer en combate: {foe}', en: 'after defeating {foe}' },
+    roadPieceAfter: { es: 'tras derrotar a {foe}', en: 'after defeating {foe}' },
     roadPieceNeeds: { es: 'requiere: {art}', en: 'needs: {art}' },
     roadHermitWay:  { es: 'cruza la pared oculta a la derecha de la Vía Campana y baja: está a la izquierda', en: 'walk through the hidden wall right of the Bellway and drop down: he\'s to the left' },   // the game's word in it: KEY_BELLWAY
     roadReady:      { es: 'Llévaselas al {caretaker} en {clave}', en: 'Bring them to the {caretaker} in {clave}' },
     roadSilk:       { es: 'Derrota a la Gran Madre Seda y atrápala con la trampa anímica', en: 'Defeat Grand Mother Silk and entrap her with the Soul Snare' },   // ENDING_C_DESC
-    roadSilkNote:   { es: 'En el golpe final, toca el Agujolín en vez de enlazarla. Ese final cierra en esa partida los otros dos del Acto 2; tras los créditos, la partida se abre ya en el Acto 3.', en: 'On the final blow, play the Needolin instead of binding her. That ending closes the other two Act 2 endings in that game; after the credits the save opens in Act 3.' },
+    roadSilkNote:   { es: 'En el golpe final, toca el Agujolín en vez de enlazarla. Ese final cierra en esa partida los otros dos del Acto 2; tras los créditos, la partida se abre ya en el Acto 3.', en: 'On the final blow, play the Needolin instead of binding her. That ending closes the other two Act 2 endings in that game; after the credits the game opens in Act 3.' },
     roadRunt:       { es: 'para el Acto 3 cuenta su versión principal, no la de la cría', en: 'for Act 3 its main version counts, not the runt\'s' },
     roadMelodies:   { es: 'para llegar a la Cuna, las tres melodías: {n} de 3', en: 'to reach the Cradle, the three melodies: {n} of 3' },
     // The caravan (js/acts.js: Mooshka's FSM): its stop now, the fleas, and what its last move asks.
     roadCaravanHow: { es: '{n} de {need} pulgas rescatadas; habla con {npc} en cada parada (ahora: {at})', en: '{n} of {need} fleas rescued; talk to {npc} at each stop (now: {at})' },
     roadCaravanRule:{ es: 'rescata {need} pulgas y habla con {npc} en cada parada de la caravana', en: 'rescue {need} fleas and talk to {npc} at each of the Caravan\'s stops' },
     roadCaravanLake:{ es: 'antes, visita el {lake} vacío, en los {ducts}', en: 'first visit the empty {lake}, in the {ducts}' },
-    roadCaravanJudge:{ es: 'antes de su parada en los {steps}, vence en combate: {judge}', en: 'before its stop on the {steps}, defeat {judge}' },
+    roadCaravanJudge:{ es: 'antes de su parada en los {steps}, derrota a la {judge}', en: 'before its stop on the {steps}, defeat the {judge}' },
     roadPaleLake:   { es: 'Lago Pálido', en: 'Pale Lake' },   // WHITELAKE
     /* Each step and row in the game's own words (design/28, 1 A to 5 A): what the pane «Tareas»
        says of it, its Wishwall, the Inventory, the Journal or the Caretaker. */
@@ -868,7 +877,7 @@
     roadOpensSherma:{ es: 'sale tras conocer a {npc} en {clave} y visitar el {ward}', en: 'posted after meeting {npc} in {clave} and visiting the {ward}' },
     roadOpensClave: { es: 'sale cuando {clave} crece: «{first}» y otros 3 deseos de su muro', en: 'posted once {clave} grows: "{first}" and 3 more wishes from its board' },
     roadOpensTown:  { es: 'sale tras la primera mejora de aguja, venderle una reliquia a {npc} y hablar con {pavo}', en: 'posted after your first Needle upgrade, selling a relic to {npc} and speaking with {pavo}' },
-    roadOpensGlory: { es: 'sale tras vencer a los {foe} o conseguir {art}', en: 'posted after beating the {foe} or getting the {art}' },
+    roadOpensGlory: { es: 'sale tras derrotar a los {foe} o conseguir {art}', en: 'posted after defeating the {foe} or getting the {art}' },
     roadMapsBought: { es: '{n} de {of} comprados', en: '{n} of {of} bought' },
     roadPinOil:     { es: 'cuenta también con la segunda mejora de aguja de {npc}', en: 'also counts with {npc}\'s second Needle upgrade' },
     // What a wish asks to be brought (js/quests.js CHAIN asks): a donation's sum, the Journal's entries, its things.
@@ -892,13 +901,13 @@
     howNeedsOr:     { es: 'Hace falta: {keys} (o {alt})', en: 'Needs: {keys} (or {alt})' },
     pgToolsTrap:    { es: 'Si entregas la {curveclaw} a un skarr en el Acto 3, pierdes su punto hasta recuperarla como {curvesickle}. La {silkshot} tiene tres versiones según quién la repare y cuenta una sola: la primera reparación cierra las otras dos.',
                       en: 'Hand the {curveclaw} to a Skarr in Act 3 and its point is gone until you get it back as the {curvesickle}. The {silkshot} comes in three versions depending on who repairs it, and one counts: the first repair closes the other two.' },
-    pgNote_memoryLocket: { es: 'Abren ranuras extra en los Blasones.', en: 'They open extra slots on the Crests.' },
+    pgNote_memoryLocket: { es: 'Abren ranuras extra en los blasones.', en: 'They open extra slots on the Crests.' },
     pgNote_craftmetal:   { es: 'Con él se fabrican herramientas; algunas cuentan para el 100 %.', en: 'Tools are crafted with it; some count for 100%.' },
-    pgNote_paleOil:      { es: 'Plinney lo pide para mejorar la Aguja: sin él no hay mejoras de la 2 a la 4.', en: 'Plinney asks for it to upgrade the Needle: without it, no upgrades 2 to 4.' },
-    pgNote_flea:         { es: 'Llevarlas a la caravana da premios, y una Bolsa de herramientas y un fragmento de carrete cuentan para el 100 %. La caravana en Pulgatopía es condición del Acto 3.',
+    pgNote_paleOil:      { es: 'Plinney lo pide para mejorar la aguja: sin él no hay mejoras de la 2 a la 4.', en: 'Plinney asks for it to upgrade the Needle: without it, no upgrades 2 to 4.' },
+    pgNote_flea:         { es: 'Llevarlas a la caravana da premios, y una bolsa de herramientas y un fragmento de carrete cuentan para el 100 %. La caravana en Pulgatopía es condición del Acto 3.',
                            en: 'Bringing them to the caravan gives rewards, and a Tool Pouch and a Spool Fragment count for 100%. The caravan at Fleatopia is a condition of Act 3.' },
     pgNote_oldHeart:     { es: 'Del Acto 3: llevan a su final.', en: 'Act 3\'s: they lead to its ending.' },
-    pgNote_melody:       { es: 'Abren el camino a la Cuna en el Acto 2, y vencer allí a Lace es condición del Acto 3.', en: 'They open the way to the Cradle in Act 2, and beating Lace there is a condition of Act 3.' },
+    pgNote_melody:       { es: 'Abren el camino a la Cuna en el Acto 2, y derrotar allí a Lace es condición del Acto 3.', en: 'They open the way to the Cradle in Act 2, and defeating Lace there is a condition of Act 3.' },
     pgNote_otherArts:    { es: 'No cuentan, pero abren caminos; la Capa de fayforno es condición del Acto 3.', en: 'They don\'t count, but they open the way; the Faydown Cloak is a condition of Act 3.' },
     pgNote_gauntlets:    { es: 'Arenas de oleadas; varias dan un objeto que sí cuenta.', en: 'Wave arenas; several give a thing that does count.' },
     homeRoad:       { es: 'Camino al Acto {n} · paso {k} de {total}: {step}', en: 'The road to Act {n} · step {k} of {total}: {step}' },
@@ -916,10 +925,10 @@
     footPrivacy:    { es: 'Privacidad', en: 'Privacy' },
     footPrivNone:   { es: 'Esta web no usa cookies ni rastreadores.',
                       en: 'This site uses no cookies and no trackers.' },
-    footPrivLocal:  { es: 'Lo que marcas (partidas, herramientas y blasones, diario, progreso, preferencias) se guarda solo en este navegador, con una copia de cada partida que importas; si pones «Seguir al juego», también el acceso a tu archivo de guardado.',
-                      en: 'What you mark (saves, Tools and Crests, journal, progress, preferences) is kept only in this browser, with a copy of each save you import; if you turn on "Follow the game", so is the access to your save file.' },
-    footPrivSaves:  { es: 'Tus archivos de guardado se leen aquí mismo y no se suben a ningún sitio.',
-                      en: 'Your save files are read right here and never uploaded anywhere.' },
+    footPrivLocal:  { es: 'Lo que marcas (perfiles, herramientas y blasones, diario, progreso, preferencias) se guarda solo en este navegador, con una copia de cada archivo guardado que importas; si pones «Seguir al juego», también el acceso a tu archivo guardado.',
+                      en: 'What you mark (profiles, Tools and Crests, journal, progress, preferences) is kept only in this browser, with a copy of each save file you import; if you turn on "Follow the game", so is the access to your save file.' },
+    footPrivSaves:  { es: 'Tus archivos guardados se leen aquí mismo y no se suben a ningún sitio.',
+                      en: 'Your save files are read right here and never uploaded anywhere.' },   // the files as SAVE_CORRUPTED_TITLE and PS4_SAVE_IMPORT_RESULT_SUCCESS call them
     footPrivCount:  { es: 'Las visitas se cuentan con {gc}: páginas, desde dónde llegas, navegador y sistema, ancho de pantalla, idioma, país y qué pantallas abres. El dueño las ve como recuentos por día y, las de hoy, una a una con la hora al minuto. No guarda tu IP ni usa cookies.',
                       en: 'Visits are counted with {gc}: pages, where you came from, browser and system, screen width, language, country and which screens you open. The owner sees them as daily counts and, for today only, one by one with the time to the minute. It keeps no IP and uses no cookies.' },
     footPrivHost:   { es: 'La web está alojada en {gh}, que guarda registros técnicos de cada visita.',

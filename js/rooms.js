@@ -5,7 +5,9 @@
    next (Belltown_Room_doctor → Belltown_Room → Belltown), down to the area's own name; without
    any, null (the site doesn't place it rather than place it wrong). An interior with another name
    goes where its door is (ENTRANCE: the room its door leads to, read from the scene's own doors,
-   their targetScene, in the game's files on 28-Sep-2026). And how to get from one room to another:
+   their targetScene, in the game's files on 28-Sep-2026). Where Hornet is for a save: on the ground
+   where the game wakes her (restPoint, js/spots.js SEATS), and a bench's mark on that same ground
+   (benchSeat). And how to get from one room to another:
    js/graph.js's doors, and the stations a save has opened (walk, steps, path). */
 (() => {
   'use strict';
@@ -127,24 +129,38 @@
   }
 
   /* A scene's area as the game names it (js/collectibles.js AREAS, the save's currentArea ids).
-     The map's branches (Bone, Crawl…) aren't those ids; the join comes from the data: every piece,
-     wish and gauntlet has its scene and its area, and each branch takes the area most of its own
-     carry. Four branches carry none and are named here; Surface has no area of its own. */
+     The map's branches (Bone, Crawl…) aren't those ids, and a branch can hold several areas (Song:
+     the High Halls, Cogwork Core, the Songclave); the join comes from the data: every piece lying
+     in a room, wish and gauntlet has its scene and its area. A scene of theirs takes the area they
+     carry there (the most of them, should they differ), so a piece's room is its own area; any
+     other scene takes its branch's, the area most of the branch's carry. Four branches carry none
+     and are named here; Surface has no area of its own. The Songclave's room
+     is named here too: nothing lies in it, but it's an area of its own in the Song branch, and all
+     it hands you is filed under it (its shop's Mask Shard and Spool Fragment, Sherma's). */
   const AREA_FALLBACK = { Abyss: 'ABYSS', Cradle: 'CRADLE', 'Dust Maze': 'MISTMAZE', Tut: 'MOSSCAVE' };
-  let AREA_OF = null;
+  const AREA_ROOM = { song_enclave: 'ENCLAVE' };
+  let AREA_OF = null, AREA_AT = null;
+  const most = (v) => Object.entries(v).sort((a, b) => b[1] - a[1])[0][0];
   function areaOf(scene) {
     if (!AREA_OF) {
       const CO = SS.collectibles || require('./collectibles.js');
       const GA = SS.gauntlets || require('./gauntlets.js');
-      const vote = {};
-      const add = (sc, area) => { const r = sc && area && roomOf(sc); if (r) (vote[r.area] = vote[r.area] || {})[area] = (vote[r.area][area] || 0) + 1; };
+      const vote = {}, at = {};
+      const add = (sc, area) => {
+        const r = sc && area && roomOf(sc);
+        if (!r) return;
+        (vote[r.area] = vote[r.area] || {})[area] = (vote[r.area][area] || 0) + 1;
+        const k = sc.toLowerCase();
+        (at[k] = at[k] || {})[area] = (at[k][area] || 0) + 1;
+      };
       for (const p of [...CO.PIECES, ...CO.WISHES]) add(sceneOf(p[2]), p[3]);
       for (const g of GA.GAUNTLETS) add(g.scene, g.area);
       AREA_OF = { ...AREA_FALLBACK };
-      for (const [branch, v] of Object.entries(vote)) AREA_OF[branch] = Object.entries(v).sort((a, b) => b[1] - a[1])[0][0];
+      for (const [branch, v] of Object.entries(vote)) AREA_OF[branch] = most(v);
+      AREA_AT = new Map([...Object.entries(at).map(([k, v]) => [k, most(v)]), ...Object.entries(AREA_ROOM)]);
     }
     const r = roomOf(scene);
-    return r ? AREA_OF[r.area] || null : null;
+    return r ? AREA_AT.get(scene.toLowerCase()) || AREA_OF[r.area] || null : null;
   }
 
   /* ── The map as the game draws it ─────────────────────────────────────
@@ -199,7 +215,7 @@
      named after another piece and not a scene of the game, js/graph.js), the room it's a part of;
      the parts of a room the map draws only in parts are named after its scene (Under_13_left,
      _right and _bot are Under_13, 18 rooms). A destroyed piece stands for its room rather than
-     being part of it. */
+     being part of it. restPoint finds a bench's pin by it too. */
   const SCENE = new Set(Object.keys(G).map((k) => k.toLowerCase()));
   const ROOM_OF = new Map();
   function roomPiece(s) {
@@ -275,6 +291,59 @@
     return M.PINS.filter((p) => !off.has(p[3]) && !(g && p[5] && !rule(p[5], at)));
   };
 
-  SS.rooms = { ENTRANCE, roomOf, mapPoint, sceneOf, graphScene, walk, steps, path, areaOf, mapVars, rule, mapView, pinsOn };
+  /* Where Hornet is on the map for a game: where the game wakes her, the respawn marker its save
+     names (respawnScene and respawnMarkerName: a bench's RestBench, where she sits, or a room's
+     Death Respawn Marker after a boss, an ability or an Act, where she stands), her feet on the
+     ground under it (js/spots.js SEATS, from the game's files: a bench's own foot, the terrain
+     under a marker), placed as the game places a point (mapPoint). The game's bench pins aren't
+     that: it sets them by hand, a few pixels above the bench and in some rooms far off it (Bone
+     Bottom's 24 px up, in mid-air; one of Mount Fay's 7 px down, in the rock). A slot kept before
+     the marker was read: the scene's bench, or its Death Respawn Marker. A room the map draws as a
+     point, or not at all (an interior: the Pilgrim's Rest, the Sprintmaster's cave), has no seat:
+     sitting, she takes the game's pin for that bench, the one in her room or in a part of it
+     (Tube_Hub's is in Tube_Hub_right: roomPiece) among `pins` (those shown), then among all; else
+     her room's point (its middle). → { x, y } in the map's pixels, or null with no room. */
+  const seatsOf = (scene) => {
+    const SP = SS.spots || (typeof require === 'function' ? require('./spots.js') : {});
+    return (SP.SEATS || {})[String(scene).toLowerCase()] || null;
+  };
+  function restPoint(g, pins) {
+    const scene = g && g.bench;
+    const room = scene ? roomOf(scene) : null;
+    if (!room) return null;
+    const seats = seatsOf(scene) || {};
+    const sits = g.rested !== false;
+    const name = g.marker && seats[g.marker] ? g.marker
+      : Object.keys(seats).find((n) => (sits ? /^RestBench/.test(n) : n === 'Death Respawn Marker'));
+    if (name) return { x: seats[name][0], y: seats[name][1] };
+    if (sits) {
+      const parts = [room.scene.toLowerCase(), scene.toLowerCase()];
+      const inRoom = (p) => p[0] === 'bench' && (roomOf(p[3]) || {}).scene === room.scene;
+      const inPart = (p) => p[0] === 'bench' && parts.includes(roomPiece(p[3]).toLowerCase());
+      const p = (pins || []).find(inRoom) || (pins || []).find(inPart) || M.PINS.find(inRoom) || M.PINS.find(inPart);
+      if (p) return { x: p[1], y: p[2] };
+    }
+    return { x: room.x, y: room.y };
+  }
+  /* A bench pin's bench on the ground: the foot of the RestBench it stands for (SEATS, the point
+     Hornet sits on, restPoint), in its scene or the room it's a part of (Tube_Hub_right's is
+     Tube_Hub's: roomPiece), the nearest to the pin where the room has more than one (Slab_16, the
+     Underworks' three). The Map draws the bench's mark resting on it, as she sits there, rather
+     than on the pin the game sets by hand (Bellhart's floats 24 px over its floor). null: a bench
+     with no seat (an interior, a room the map draws as a point, Act 3's destroyed Ventrica hub),
+     whose mark stays on its pin. → { x, y } in the map's pixels. */
+  function benchSeat(p) {
+    if (!p || p[0] !== 'bench') return null;
+    const seats = seatsOf(p[3]) || seatsOf(roomPiece(p[3])) || {};
+    let best = null;
+    for (const [name, at] of Object.entries(seats)) {
+      if (!/^RestBench/.test(name)) continue;
+      const d = Math.hypot(at[0] - p[1], at[1] - p[2]);
+      if (!best || d < best.d) best = { x: at[0], y: at[1], d };
+    }
+    return best && { x: best.x, y: best.y };
+  }
+
+  SS.rooms = { ENTRANCE, roomOf, roomPiece, mapPoint, sceneOf, graphScene, walk, steps, path, areaOf, mapVars, rule, mapView, pinsOn, restPoint, benchSeat };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.rooms;
 })();

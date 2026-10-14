@@ -30,12 +30,13 @@
      BOSSES   [foe id, scene, check, act]: each boss of the completionist's list, its arena and whether
               it's beaten (a playerData flag, or its Journal entry listed), then the second fights
               it folds into one entry (BOSS_MORE), each with what the save keeps of it; act the
-              first Act it can be fought in (the completionist's whichAct, BOSS_MORE's own).
+              first Act it can be fought in (the completionist's whichAct, BOSS_MORE's own, BOSS_ACT's fix).
      VENDORS  vendor id → its rooms (js/shop.js), Shakra's among them
      PEOPLE   npc id → its room: the people who give something of the 100%, and Scrounge, who
               buys the relics
      BELLS    [playerData field, scene (, name)]: the six Bellshrines (the Grand Gate asks for five)
-     KEYS     a key's save name (js/quests.js LOCKS) → its name, the game's */
+     KEYS     a key's save name (js/quests.js LOCKS) → its name, the game's
+     SEATS    where the game wakes Hornet, each respawn marker on the ground under it (below) */
 'use strict';
 const fs = require('fs');
 const path = require('path');
@@ -162,6 +163,10 @@ const BOSS_MORE = [
   ['moss-mother-act-3-moss-grotto', ['bool', 'Tut_02', 'Mossbone Mother Ambient'], 3],
   ['savage-beastfly-far-fields', ['flag', 'defeatedBoneFlyerGiantGolemScene'], 2],
 ];
+/* A boss whose Act the completionist has wrong: the Summoned Saviour, Steel Soul's, is Act 3 there,
+   but its wish (A Vassal Lost) is taken in Act 2 and the author's Steel Soul game beat it then
+   (Restore_Points3/restoreData24: act2Started, not blackThreadWorld; checked 14-Oct-2026). */
+const BOSS_ACT = { 'summoned-saviour': 2 };
 // Relics an NPC hands over: Jubilana's Choral Commandment, Grindle's Psalm Cylinder.
 const RELIC_ROOM = { 'Seal Chit City Merchant': 'song_enclave', 'Psalm Cylinder Grindle': 'coral_42' };
 // The Bellhome, where its furnishings go (Pavo's house in Bellhart).
@@ -210,7 +215,7 @@ for (const it of C.load('bosses.ts')) {
   const foe = BOSS_ALIAS[norm(it.name)] || foeBy.get(norm(it.name)) || fail(`no foe named ${it.name}`);
   const scene = arena(foe);
   if (!scene) { unplaced.push('boss ' + foe); continue; }
-  BOSSES.push([foe, scene, C.check(it.parsingInfo, fail), it.whichAct || fail(`${it.name} has no Act`)]);
+  BOSSES.push([foe, scene, C.check(it.parsingInfo, fail), BOSS_ACT[foe] || it.whichAct || fail(`${it.name} has no Act`)]);
 }
 for (const [foe, check, act] of BOSS_MORE) {
   if (!foeOf.has(foe) || BOSSES.some((b) => b[0] === foe)) fail(`BOSS_MORE: ${foe} isn't a foe of its own`);
@@ -297,29 +302,6 @@ for (const a of D.ARTS) {
 AT.everbloom = byWays(H.HOW.everbloom, () => null, 'everbloom') || EVERBLOOM;
 (AT.everbloom ? placed : unplaced).push('everbloom');
 
-/* NEEDS: what a thing asks of Hornet first (the completionist's prereqs), as the abilities and
-   Silk Skills the save tells (js/savefile.js ART_PD, SKILL_PD): key (the Map's: 'piece:<i>',
-   'tools:<id>', 'extra:<i>'…) → [ability or skill id]. A prereq that isn't one (a key) is left out. */
-const NEEDS = {};
-const abilityBy = new Map([...D.ARTS, ...D.SKILLS].map((x) => [norm(x.name.en), x.id]));
-const needs = (key, it) => {
-  const ids = (it.prereqs || []).map((n) => abilityBy.get(norm(n))).filter(Boolean);
-  if (ids.length) NEEDS[key] = ids;
-};
-/* The 100%'s prereqs: a piece by its check, a Tool by its name. */
-const pieceAt = new Map(CO.PIECES.map((p, i) => [JSON.stringify(p[2]), i]));
-for (const f of ['maskShards.ts', 'spoolFragments.ts', 'memoryLockets.ts', 'craftmetals.ts', 'paleOil.ts', 'fleas.ts', 'upgrades.ts', 'abilities.ts', 'tools.ts', 'crests.ts']) {
-  for (const it of C.load(f)) {
-    if (!it.prereqs) continue;
-    const i = it.parsingInfo && pieceAt.get(JSON.stringify(C.check(it.parsingInfo, () => null)));
-    const tool = D.TOOLS.find((x) => norm(x.name.en) === norm(it.name.split(' / ')[0]));
-    const art = abilityBy.get(norm(it.name.replace(/\s*\(.*\)$/, '')));
-    const key = i != null ? 'piece:' + i : tool ? 'tools:' + (CO.COUNTED.find((g) => g.includes(tool.id)) || [tool.id])[0]
-      : art ? (D.ARTS.some((x) => x.id === art) ? 'arts:' : 'skills:') + art : null;
-    if (key) needs(key, it);
-  }
-}
-
 /* ── What doesn't count: the completionist's extras ── */
 const RELIC_KIND = { 'Bone Scrolls': 'bone-scroll', 'Weaver Effigies': 'weaver-effigy', 'Choral Commandments': 'choral-commandment',
   'Rune Harps': 'rune-harp', 'Psalm Cylinders': 'psalm-cylinder', 'Arcane Egg': 'arcane-egg' };
@@ -375,7 +357,6 @@ const extra = (kind, it, name) => {
   const s = kind === 'bellhome' ? BELLHOME : roomOfCheck(c);
   if (!s || !onMap(s)) { unplaced.push(`${kind} ${it.name}`); return; }
   if (CHECK_OF[it.name]) c = CHECK_OF[it.name];
-  needs('extra:' + EXTRAS.length, it);
   /* A "cache" that is an item lying in its room (Coral_36's Beast Shard: a CollectableItemPickup,
      pickups.json lying) goes in the rosaries' or shards' layer, by its own bool, in its place in
      the list (js/map-fixes.js keys by it). */
@@ -739,6 +720,47 @@ function toMap(scene, x, y) {
   if (errs.length < 40 || med > 10) fail(`the benches don't fall by their pins (${errs.length} benches, median ${med.toFixed(1)} px): how a scene's point goes on the map needs reading again`);
   console.log(`benches against their pins: ${errs.length}, median ${med.toFixed(1)} px, worst ${errs.slice(-3).map(([e, s]) => s + ' ' + e.toFixed(0)).join(', ')}`);
 }
+/* ── Where the game wakes Hornet: SEATS ──
+   Each respawn marker of pickups.json (tools/extract-pickups.py respawns: a bench's RestBench, a
+   room's Death Respawn Marker), at its x and the ground her feet go on, placed as above. An
+   additive scene (the Flea Caravan's) has no tilemap of its own and goes on its host's room, the
+   scene without its last part, under its own name and, when no other scene loaded there names a
+   marker the same, under the host's too (the save names the scene it's in). A marker in a room the
+   map doesn't draw (an interior) has none: js/rooms.js restPoint takes the game's own pin for its
+   bench, or the room's middle. The bench pins, which the game sets by hand, have to fall by their
+   RestBenches' feet, as the RestBenches by them above. */
+const SEATS = {};
+{
+  const toHost = new Map();   // host scene → marker name → its point (null: more than one scene names it)
+  for (const [scene, marks] of Object.entries(P.respawns)) {
+    // An interior has a tilemap of its own and isn't moved: only a scene without one takes a host.
+    let host = scene;
+    if (!P.sizes[scene]) while (host.includes('_') && !(P.sizes[host] && ROOM_OF.get(host))) host = host.slice(0, host.lastIndexOf('_'));
+    for (const [name, [x, y, feet]] of Object.entries(marks)) {
+      const at = toMap(host, x, feet == null ? y : feet);
+      if (!at) continue;
+      (SEATS[scene] || (SEATS[scene] = {}))[name] = at;
+      if (host === scene) continue;
+      if (!toHost.has(host)) toHost.set(host, new Map());
+      const m = toHost.get(host);
+      m.set(name, m.has(name) ? null : at);
+    }
+  }
+  for (const [host, m] of toHost) for (const [name, at] of m) if (at && !(SEATS[host] || {})[name]) (SEATS[host] || (SEATS[host] = {}))[name] = at;
+  for (const k of Object.keys(SEATS).sort()) { const v = SEATS[k]; delete SEATS[k]; SEATS[k] = v; }
+  const errs = [];
+  for (const pin of M.PINS) {
+    // A room with two benches (Slab_16, the Underworks' three) has a pin for each: the nearest.
+    const seat = pin[0] === 'bench' && SEATS[R.roomPiece(pin[3]).toLowerCase()];
+    const d = Object.entries(seat || {}).filter(([n]) => /^RestBench/.test(n)).map(([, p]) => Math.hypot(p[0] - pin[1], p[1] - pin[2]));
+    if (d.length) errs.push([Math.min(...d), pin[3]]);
+  }
+  errs.sort((a, b) => a[0] - b[0]);
+  const med = errs[Math.floor(errs.length / 2)][0];
+  if (errs.length < 40 || med > 10) fail(`the benches' feet don't fall by their pins (${errs.length} benches, median ${med.toFixed(1)} px): pickups.json respawns need reading again`);
+  console.log(`where Hornet wakes: ${Object.values(SEATS).reduce((n, s) => n + Object.keys(s).length, 0)} markers in ${Object.keys(SEATS).length} rooms; `
+    + `the benches' feet against their pins: median ${med.toFixed(1)} px, worst ${errs.slice(-4).map(([e, s]) => s + ' ' + e.toFixed(0)).join(', ')}`);
+}
 // A thing's point: the first of its entries in pickups.json (…, x, y at the end) in that scene.
 const lower = (s) => String(s || '').toLowerCase();
 const entryAt = (entries, scene, want = () => true) => {
@@ -1056,8 +1078,6 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
      BELLS    [playerData field, scene (, name)]: the six Bellshrines (the Grand Gate asks for five)
      KEYS     a lock's key (js/quests.js LOCKS) → its name
      MAPS     a map's flag (Has<X>Map, without Has and Map) → the area it draws
-     NEEDS    a thing's key ('piece:<i>', 'tools:<id>', 'arts:<id>', 'extra:<i>'…) → the abilities
-              and Silk Skills it asks for first (the completionist's prereqs)
      TASKS    [kind, quest, check, scene, picture, name?, mode?, steel?]: the wishes and the main
               objectives (kind 'qitem' what a wish asks for, 'wspot' where a wish is done, 'goal' a
               main objective's pin), quest its save name (js/quests.js), check as EXTRAS' plus
@@ -1065,15 +1085,19 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               under assets/map/, name the thing's (a wish's and an objective's are the quest's),
               mode 'steel' when only Steel Soul has it, steel the spot's scene when the save
               chooses it (SteelQuestSpots)
-     XY       a thing's key (as NEEDS, and 'person:<id>', 'board:<scene>', 'bell:<field>', 'task:<i>',
-              'shakra:<i>', 'shop:<vendor>:<i>', 'giver:<scene>', 'boss:<foe>', 'gaunt:<id>',
+     XY       a thing's key ('piece:<i>', 'tools:<id>', 'arts:<id>', 'extra:<i>'…, 'person:<id>',
+              'board:<scene>', 'bell:<field>', 'task:<i>', 'shakra:<i>', 'shop:<vendor>:<i>', 'giver:<scene>', 'boss:<foe>', 'gaunt:<id>',
               'lock:<key>:<scene>', 'everbloom') → its point on the map, in the image's pixels: where
               the game has it in its room (the object's place in the scene, or whoever stands for it,
-              placed as the game places a point: js/rooms.js mapPoint)`,
-'spots', [['AT', AT], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['NEEDS', NEEDS], ['TASKS', TASKS], ['XY', XY]]);
+              placed as the game places a point: js/rooms.js mapPoint)
+     SEATS    scene (lower case) → { respawn marker's name → its point on the map }: where the game
+              wakes Hornet when a save names that marker (respawnScene, respawnMarkerName: a bench's
+              RestBench, a room's Death Respawn Marker), her feet on the ground under it (a bench's
+              own foot, the terrain under a marker), in the image's pixels; js/rooms.js restPoint`,
+'spots', [['AT', AT], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['TASKS', TASKS], ['XY', XY], ['SEATS', SEATS]]);
 const kinds = {};
 for (const x of EXTRAS) kinds[x[0]] = (kinds[x[0]] || 0) + 1;
 console.log(`js/spots.js  ${placed.length} things of the 100% placed, ${EXTRAS.length} extras (${Object.entries(kinds).map(([k, n]) => n + ' ' + k).join(', ')}), `
-  + `${BOSSES.length} bosses, ${Object.keys(NEEDS).length} with prereqs  (${size} bytes)`);
+  + `${BOSSES.length} bosses  (${size} bytes)`);
 if (unplaced.length) console.log(`not placed (${unplaced.length}): ${unplaced.join('; ')}`);
 })().catch((e) => { console.error(e.message); process.exit(1); });

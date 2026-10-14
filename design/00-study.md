@@ -133,7 +133,7 @@ without parsing prose. The Spanish names are the game's, `CREST_<X>_NAME`.
 |---|---|---|---|---|---|---|---|
 | Hunter · «Cazadora» | 1 | 1 + 1 locked | 1 + 1 | 1 + 1 | – | 1.4 × 2 hits: 7 → 29 (14 → 58) | Evolved by Eva: ×1.3 after 6 hits; fully evolved (27 slots unlocked elsewhere): ×1.5 after 12; lost on taking damage or at a bench. Both Strike hits give silk |
 | Reaper · «Parca» | 1 | 1 + 1 | 1 + 1 | 1 + 1 | −23% | 2.5: 12 → 52 | After a Bind, hits drop silk fragments for 10 s (3 make a strand) |
-| Wanderer · «Errante» | 1 | 1 | 2 locked | 2 + 1 | +34% | 0.6 × 5: 3 → 12 (15 → 60) | 2% critical hits ×3 while Bind is ready (2.2% with Magnetite Dice; about +4% on average) |
+| Wanderer · «Errante» | 1 | 1 | 2 locked | 2 + 1 | +34% | about 0.55 × 5 (the damage page's table: 3/5/7/9/12, not the Architect's 0.6): 3 → 12 (15 → 60) | 2% critical hits ×3 while Bind is ready (2.2% with Magnetite Dice; about +4% on average) |
 | Beast · «Bestia» | 1 | 2 | – | 2 locked | | 2.5, 3 in fury: 12 → 52 | Bind in about 1 s gives fury for 4.7 s: +25% damage, +20% range and speed, hits heal up to 3 masks (4 with Multibinder) |
 | Witch · «Bruja» | 1 | 1 + 1 | 1 + 2 locked | – | −10% | about 0.8 per hit, up to 4 or 6 hits (the wiki disagrees with itself): 4 → 17 | Bind is a third faster and thrashes roots that damage and heal per hit; down-slash hits twice (0.55× + 0.5×) |
 | Architect · «Arquitecta» | – | 3 | 2 locked | 2 locked | | 0.6 × 5: 3 → 13 (15 → 65) | Slashes are drills (0.9× + 0.1× + 0.1×; down and run 0.55× + 0.5×); "craft Bind" refills red Tools anywhere for 9 silk instead of healing. No Silk Skills |
@@ -1684,6 +1684,69 @@ Bellshrines' rows do. Found on the way: the snare's fourth step read «… en {c
 `track()` events. Checked in headless Chrome over file:// at 1440 and 390, es and en, over five real
 saves (Act 1 at 7% and 10% by the Phantom, Act 2 at 15%, 42% and 61%), the later steps simulated
 from them, Act 3 at 100% and Free mode.
+
+**The Map's Act filter, removed** (14 October 2026). Checked over the 72 saves: of the 1,831 marks
+it filtered, 469 carry a real Act (all borne out by the saves but the Summoned Saviour's, the
+completionist's Act 3 for a Steel Soul fight beaten in Act 2, now 2 in `tools/gen-spots.js`), 875
+had a placeholder 0 that showed as Act 1 (the walls, caches and the ways open, some in the Abyss)
+and 487 none, shown under every Act; and an Act showed only what first appears in it, hiding what's
+still to get from the Acts before. The game sorts nothing by Act. Albert's choice: gone; a mark's
+card and title still say its Act, and Progress keeps its own.
+
+**Hornet on the ground** (14 October). Albert saw Hornet sitting in mid-air at Bone Bottom's bench
+and in the rock at one of Mount Fay's. The Map and Your game's area map put her feet on the game's
+bench pin, and the game sets its pins by hand: a median 2.8 px above the bench, Bone Bottom's 24 px
+up, Belltown's 36, Peak_02's 7 px down. Where she is now comes from where the game wakes her: the
+respawn marker the save names (`respawnScene`, `respawnMarkerName`, kept as `marker` by
+`savefile.game()`), a bench's RestBench or a room's Death Respawn Marker. `tools/extract-pickups.py`
+keeps every RespawnMarker of every scene (`respawns`: 166 in 143 scenes) with the ground her feet
+go on: a bench's own foot, the bottom of its RestBench's trigger box, which sits within a third of a
+unit of the scene's terrain under every bench (the Terrain layer's colliders, read for the check;
+a unit above it on the four Choral Chambers benches, which stand on their fountain); under a death
+marker, the top of the terrain straight below (a Death Respawn Marker sits 0.4 to 4 units up, a
+median of 1.9; the Flea Caravan's additive scenes on their host's). `tools/gen-spots.js` places them as the game
+places a point (SEATS, 125 in 106 rooms) and stops unless the bench pins fall by them (median 3.9
+px); `js/rooms.js restPoint` puts her there, sitting or standing, and the Map, the area map and her
+walk between benches use it. The sprite's anchor was already her feet (row 116 of her cell, the
+bottom of the game's Sit frame). A room the map draws as a point (an interior: the Pilgrim's Rest,
+the Cogwork Core's bench) has her at that point or on the game's pin, as before. Left as it was: a
+death marker in an interior the map doesn't have (Belltown_Room_doctor: Belltown's middle) and
+Tut_05, which has no room (no Hornet). Checked over every bench (the 90 RestBench scenes, each set
+in an Act 2 and an Act 3 save) and the author's 71 user and restore-point files, the Map zoomed onto
+her and the area map, in headless Chrome over file:// (1440 and 390, es and en, no console errors);
+`check-pack` still matches all 72.
+Then the benches' marks (Albert: «the position of the benches is still the same… the bench's pin
+should be on the ground»): Bellhart's floated over the floor she sat on, Mount Fay's (Peak_02) sat
+below its room, in the black. `js/rooms.js benchSeat` gives a bench pin the foot of its RestBench
+(SEATS: in its scene or the room it's a part of, the nearest where a room has two or three), and the
+Map and Your game's area map draw the mark there, its disc's bottom on the floor (lifted by its
+radius and half its rim, in pins, so at any zoom; js/app-map.js layout, REST): 66 of the 84 bench
+pins; the other 18 (interiors, rooms drawn as a point, Act 3's destroyed Ventrica hub, the diving
+bell) keep the game's pin. Hornet sits on the same point, drawn over her bench's mark, as when both
+were on the pin. Checked against every bench mark close up, before and after, in headless Chrome.
+
+**Parts of a room the game hasn't mapped** (14 October 2026). Albert saw parts of his 100% game
+(a corner of Bellhart) in colour with «Whole map» and gone without it: eleven pieces, each a part
+of a room whose other parts are mapped. The game's code (Assembly-CSharp, read with dnfile and
+dncil; `tools/extract-map.py`'s header) maps a part only by its own name in `scenesMapped`, which a
+trigger inside the part (a MapSceneRegion) writes into `scenesVisited` when Hornet enters it, for
+the next map update to move. Every scene was read for those triggers (333): ten of the eleven sit
+in a secret part, behind a breakable or twig wall or under a mask the game lifts, and over the 72
+saves each part is there exactly when its way was opened and walked (Coral_37's two parts in the
+19 saves whose mask is lifted, Mosstown_03_top in the 16 whose twig wall is broken; the other
+seven in none: Greymoor_02's breakable wall and the tunnel through Greymoor_17 to Dust_11's bottom,
+Bone_East_14's blast wall, Shadow_18's and Bellhart's masks never lifted, Bellhart's around a door
+to Belltown_Room_Fisher, a scene the game doesn't have; Under_14's and Dust_Chef's lifted but
+their far end never reached). The eleventh, Coral_19_base, is never mapped: its trigger writes
+Coral_19_Base (in `scenesVisited` in 45 saves, in `scenesMapped` in none), and the game looks a
+name up as written. So without
+«Whole map» the Map draws what the game draws; with it, a room goes whole in colour once any part
+is, secret parts too. A test pins the rule. Keeping secret parts faint was weighed and dropped: the
+game's files don't tell a secret part from one not walked into yet. The 673 masks over hidden areas
+(Remasker, Unmasker) cover 8 of the 11 parts' triggers but also 119 ordinary ones (interiors the
+game hides from outside), and a breakable wall leaves no mark on the map; and keeping every part not
+mapped faint brought back the change of tone in about 34 rooms of a 56% save. Albert's choice: the
+rule stays, and the guide and the switch's tip say so.
 
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about

@@ -158,7 +158,15 @@
      doesn't know and in Free mode. Her hem (row 154 of ART.resting's 186) sits on the seat; the
      box holds both, the places in percents of it so it scales as one (css: .hm-rest). */
   const HORNET = [207, 186, 154];
-  function rest(scene) {
+  /* A save written where the game wakes her at a room's own respawn marker, not a bench
+     (savefile's rested false): no bench in the picture, Hornet standing (ART.idle, 186 × 216). */
+  const STANDING = [186, 216];
+  function rest(scene, rested = true) {
+    if (!rested) {
+      const [w, h] = STANDING;
+      return `<span class="hm-rest" style="--w:${w};aspect-ratio:${w} / ${h}" aria-hidden="true">
+          <img src="${ART.idle}" alt="" style="left:0;top:0;width:100%"></span>`;
+    }
     const B = SS.benches;
     const id = (scene && B.scenes[scene.toLowerCase()]) || 'bone-bottom';
     const [w, h, seat] = B.art[id];
@@ -217,9 +225,9 @@
     const book = App.bookDone(g.journal, m.steel), bookMax = App.bookTotal(m.steel);
     const fig = (k, v, u = '', nt = false) => `<span class="hm-fig"><span class="hm-fig-k"${nt ? NT : ''}>${esc(k)}</span><b>${v}${u ? `<span class="u">${u}</span>` : ''}</b></span>`;
     const card = `<div class="hm-card"${light ? ` style="${light}"` : ''}>
-        ${areaName ? `<p class="hm-sup">${esc(t('homeRest'))}</p><p class="hm-area"${NT}>${esc(areaName)}</p>` : ''}
+        ${areaName ? `<p class="hm-sup">${esc(t(g.rested ? 'homeRest' : 'mapRespawn'))}</p><p class="hm-area"${NT}>${esc(areaName)}</p>` : ''}
         <p class="hm-sub">${sub}</p>
-        ${rest(g.bench)}
+        ${rest(g.bench, g.rested)}
         <div class="hm-figs">
           ${fig(t('homeCompletion'), num(c.total), esc(pctSpace().trim() || '%'))}
           ${fig(t('homeJournal'), num(book), '/' + num(bookMax), true)}
@@ -238,7 +246,7 @@
     const road = roadText ? `<p class="hm-road">${link('progress', roadText)}</p>` : '';
     const near = App.nearList ? App.nearList(g).slice(0, NEAR) : [];
     const onMap = (x) => `<button type="button" class="pg-onmap" data-act="mapShow" data-value="${esc(x.key)}" aria-label="${esc(t('mapOnMap') + ': ' + x.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>`;
-    const nearCol = near.length ? `<section class="hm-col" aria-labelledby="hm-near-h"><h3 class="ct-h" id="hm-near-h">${esc(t('mapNear'))}</h3>
+    const nearCol = near.length ? `<section class="hm-col" aria-labelledby="hm-near-h"><h3 class="ct-h" id="hm-near-h">${esc(t(g.rested ? 'mapNear' : 'mapNearRespawn'))}</h3>
         <ol class="hm-rows">${near.map((x, i) => rowHtml({ name: x.name, nt: true, sub: areaOf(x.area), art: art(x.mark, ' is-mark') }, i, onMap(x))).join('')}</ol>${link('map', t('homeNearMap'))}</section>` : '';
     // Each part with its picture, its count and a gauge; a full one with the lit diamond.
     const rows = c.categories.map((k, i) => `<li class="hm-part${k.got >= k.max ? ' is-full' : ''}${k.got ? '' : ' is-none'}" style="--i:${i}"><a href="${App.here(App.hashFor('progress'))}" data-act="view" data-value="progress">

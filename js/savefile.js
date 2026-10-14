@@ -266,6 +266,10 @@
        mapVars            the playerData fields the map's rules read (js/map.js VARS), with this
                           save's values: js/rooms.js mapView draws the map with them
        bench, area        where Hornet rests (respawnScene) and the area she's in (currentArea)
+       rested             whether that's a bench (respawnType 1); false: a room's own respawn marker
+                          (the game's SetDeathRespawn, "Death Respawn Marker"), where she wakes standing
+       marker             that marker's name (respawnMarkerName: "RestBench", "Death Respawn Marker"…),
+                          by which the game finds it in the scene: js/rooms.js restPoint puts her there
        build              what she wears (buildOf): { crest, hunterStage, tools, skill, skills, vest, seats, unlocked },
                           or null (skills: every Silk Skill worn, the Shaman's three; skill the first);
                           cursed: true when she wears the Cursed Crest (CurrentCrestID "Cursed")
@@ -364,6 +368,8 @@
       mapFlags: MAP_VARY.filter((f) => (f === 'HasWhiteFlower' ? int(flower) > 0 : pd[f] === true)),
       mapVars: Object.fromEntries(MAP.VARS.map((f) => [f, f === 'HasWhiteFlower' ? int(flower) > 0 : mapValue(pd[f], MAP.FREE[f])])),
       bench: typeof pd.respawnScene === 'string' && /^[\w ()-]{1,64}$/.test(pd.respawnScene) ? pd.respawnScene : '',
+      rested: pd.respawnType === 1,
+      marker: typeof pd.respawnMarkerName === 'string' && /^[\w ()-]{1,64}$/.test(pd.respawnMarkerName) ? pd.respawnMarkerName : '',
       area: typeof pd.currentArea === 'string' && /^[A-Z_]{1,32}$/.test(pd.currentArea) ? pd.currentArea : '',
       build: buildOf(pd) || {},
       silkshot: WEBSHOT[Object.keys(WEBSHOT).find((n) => (tools.get(n) || {}).IsUnlocked === true)] || '',
@@ -485,7 +491,7 @@
     };
   }
   const EMPTY = Object.freeze({ tools: [], gaveBack: [], crests: [], skills: [], arts: [], journal: {}, masks: 0, spools: 0, hearts: 0,
-    needle: 0, kit: 0, pouch: 0, everbloom: false, purse: {}, rosaries: 0, shards: 0, farsight: false, hasJournal: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', area: '', build: {},
+    needle: 0, kit: 0, pouch: 0, everbloom: false, purse: {}, rosaries: 0, shards: 0, farsight: false, hasJournal: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', rested: true, marker: '', area: '', build: {},
     quests: [], taken: [], bellshrines: [], bells: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
     bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [],
     visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], bosses: [],

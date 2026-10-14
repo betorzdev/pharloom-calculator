@@ -557,7 +557,7 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
 /* ── The sister site's link and its Knight (js/app-sister.js) ────────────
    «Hollow Knight ↗», a loose word above the language and Share, on the crown's row (the sibling's
    «Silksong ↗», where Hornet stands); the header opens higher for him to stand on it. On a phone,
-   on its own line under the title (the ≤599 px block), with room above for him. The Knight's layer
+   on its own line under the title (the ≤599 px block), the language and Share at its right, with room above for him. The Knight's layer
    is in .page, over the masthead's letters and under the screen bar when it sticks; he's drawn from
    his move's strip, stepped by the JS or, looping, by steps() here (the sibling's .sis-hornet). */
 .masthead:has(.mh-sister-row) { padding-top: var(--sp-12); }
@@ -652,11 +652,13 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
   .masthead { display: flex; flex-wrap: nowrap; justify-content: space-between; align-items: center; gap: var(--sp-2); padding-top: var(--sp-3); }
   .brand, .masthead .brand { display: flex; flex: 1 1 auto; align-items: flex-start; order: -1; }
   .masthead .mh-tools { order: 1; flex: none; flex-wrap: nowrap; --tools-gap: var(--sp-3); }
-  /* The sister's link (js/app-sister.js): on its own line under the title, room above for the Knight;
-     the title gives way first, so the save and the language keep their row. */
+  /* The sister's link (js/app-sister.js): on a line of its own under the title, room above for the
+     Knight, with the language and Share at its right; the title's row keeps the title and the save
+     alone, so a long title (Spanish's) still fits on two lines (Albert's choice, 14 Oct 2026). */
   .masthead:has(.mh-sister-row) { flex-wrap: wrap; padding-top: var(--sp-3); }
-  .masthead:has(.mh-sister-row) .brand { flex: 1 1 0; }
-  .mh-sister-row { order: 2; flex-basis: 100%; margin-top: var(--sp-8); }
+  .masthead:has(.mh-sister-row) .brand { flex: 1 1 calc(100% - var(--sp-16)); }
+  .mh-sister-row { order: 2; flex: 1 1 auto; margin-top: var(--sp-8); }
+  .masthead:has(.mh-sister-row) .mh-tools { order: 3; align-self: flex-end; }
   .lang-name { display: none; }
   .lang-code { display: inline; }
   /* At the right edge, the list opens leftwards. */
@@ -684,9 +686,9 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
 
 /* ── Saves: the game's profile screen ────────────────────────────────────
    The four slots stacked like the game's bars: the number, the masks with the
-   HUD's sprites, the nail and what the game carries (charms found, Journal, Hall). No boxes:
-   rules in the spotlight's bone between slots, and the whole bar responds to the finger. The slot you're
-   playing carries the accent's line on its edge, as the equipped charm does, and a light from
+   HUD's sprites, the Needle and what the game carries (the Act, the completion, the Journal). No
+   boxes: rules in the spotlight's bone between slots, and the whole bar responds to the finger. The
+   slot you're playing carries the accent's line on its edge and a light from
    that edge. Free mode, which is nobody's game, is the one sheet with a frame. */
 /* Saves draws its own plate (.saves-body, with the frame): the screen around it adds none. */
 .screen[data-view="saves"] { padding: 0; }
@@ -1052,6 +1054,11 @@ kbd {
   .imp-found { grid-template-areas: "fname fname" "nail hud" "meta meta" "facts facts" "warn warn" "sync sync" "actions actions"; }
   .imp-meta { justify-content: center; }
   .imp-bar { margin-bottom: var(--sp-2); }
+  /* The import view's title («Importar a la Partida 2») is longer than a phone: it wraps onto two
+     lines inside its plaque instead of being cut (Albert's choice, 14 Oct 2026), and the way back clears it. */
+  .imp .screen-head { width: max-content; white-space: normal; }
+  .imp .screen-head .sec-title { text-align: center; text-wrap: balance; }
+  .imp .imp-bar { margin-top: var(--sp-6); }
   /* On a phone an empty slot says only «Import». */
   .save.is-empty .save-main { min-height: calc(var(--sp-16) + var(--sp-2)); }
   .save-act-long { display: none; }
@@ -1068,6 +1075,8 @@ kbd {
   .save-where { grid-column: 1 / -1; }
   .save-fact { display: contents; }
   .save-fact b { text-align: right; }
+  /* Its unit right after the figure, also in the import view's preview, which centres its text. */
+  .save-fact .u { text-align: left; }
   .save.is-free .save-n::before { width: var(--sp-16); }
   .save.is-free .save-n img { height: var(--sp-8); }
   .save-masks img { height: var(--sp-4); }
@@ -1241,7 +1250,8 @@ kbd {
 .hm-go:is(:hover, :focus-visible) img { filter: drop-shadow(0 0 8px color-mix(in oklab, var(--spotlight) 45%, transparent)); }
 @media (max-width: 599px) {
   .hm-area { font-size: var(--fs-2xl); }
-  .hm-figs { gap: var(--sp-4) var(--sp-8); }
+  /* The four figures two by two: four in a row don't fit, and three left one alone (Albert's choice, 14 Oct 2026). */
+  .hm-figs { display: grid; grid-template-columns: repeat(2, auto); justify-content: center; gap: var(--sp-4) var(--sp-12); }
   .hm-next ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
@@ -1531,10 +1541,10 @@ kbd {
 .pg-place { display: grid; justify-items: end; gap: var(--sp-half); text-align: right; }
 .pg-where { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0 var(--sp-2); font-size: var(--fs-xs); color: var(--muted); }
 .pg-where span + span::before { content: '·'; margin-right: var(--sp-2); }
-:is(.pg-item, .mp-near-list, .hm-row) .pg-onmap { display: grid; place-items: center; width: 28px; height: 28px; padding: 0; border: 1px solid var(--line-ctl); border-radius: 50%; background: none; color: var(--ink-2); cursor: pointer; transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease); }
+:is(.pg-item, .mp-near-list, .hm-row, .hj-sheet) .pg-onmap { display: grid; place-items: center; width: 28px; height: 28px; padding: 0; border: 1px solid var(--line-ctl); border-radius: 50%; background: none; color: var(--ink-2); cursor: pointer; transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease); }
 .pg-item .pg-onmap.is-none { border: 0; cursor: default; }
-:is(.pg-item, .mp-near-list, .hm-row) .pg-onmap .ic { width: 10px; }
-:is(.pg-item, .mp-near-list, .hm-row) .pg-onmap:is(:hover, :focus-visible) { color: var(--accent); border-color: var(--accent); outline: none; }
+:is(.pg-item, .mp-near-list, .hm-row, .hj-sheet) .pg-onmap .ic { width: 10px; }
+:is(.pg-item, .mp-near-list, .hm-row, .hj-sheet) .pg-onmap:is(:hover, :focus-visible) { color: var(--accent); border-color: var(--accent); outline: none; }
 .pg > .pg-buy { text-align: center; }
 .pg-item.is-got .pg-name { color: var(--ink-2); }
 .pg-item.is-later { opacity: 0.55; }
@@ -1756,6 +1766,7 @@ button.inv-plate-art { padding: 0; }
 .inv-h:has(.inv-all)::after { order: 2; }
 .inv-step { display: inline-flex; align-items: center; gap: var(--sp-half); }
 .inv-step b { min-width: var(--sp-6); text-align: center; font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-sm); color: var(--ink-strong); }
+.inv-step b i { font-style: normal; font-size: var(--fs-xs); font-weight: 400; color: var(--muted); }
 .inv-step .icon-btn { width: var(--sp-8); height: var(--sp-8); }
 /* What Hornet carries, under both columns and across the width (design/43, 1 A): the purse and
    the items, then the Relics and the Mementos. */
@@ -2015,6 +2026,7 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 .hj-hunt:is(:hover, :focus-visible), .hj-hunt.is-picked { border-color: var(--accent-line); background: var(--veil); }
 .hj-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: var(--sp-3) var(--sp-8); margin: var(--sp-4) 0 var(--sp-2); }
 .hj-find { flex: 1 1 16rem; max-width: 24rem; margin-right: auto; }
+.hj-find input { text-overflow: ellipsis; }   /* the Spanish placeholder is longer than a phone's field: ends in an ellipsis, not cut mid-word */
 /* What it shows and in what order: each choose-one in words under its label (design/03-redesign.md,
    step 7, fourth round), as the Crest screen's «Try with». */
 .hj-ctl { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--sp-2) var(--sp-8); }
@@ -2367,11 +2379,13 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 .mp.is-full .mp-stage { position: fixed; z-index: 4; inset: 0; width: auto; margin: 0; display: block; }
 .mp.is-full .mp-view { height: 100%; }
 .mp.is-full .mp-big { display: none; }
-.mp.is-full .mp-find { position: absolute; order: 0; top: var(--sp-3); left: var(--sp-3); margin: 0; padding: 0; width: auto; right: calc(var(--ctl-sm) * 3 + var(--sp-3) * 2 + var(--sp-2)); max-width: 20rem; }
+.mp.is-full .mp-find { position: absolute; order: 0; top: var(--sp-3); left: var(--sp-3); margin: 0; padding: 0; width: auto; right: calc(var(--ctl-sm) * 3 + var(--sp-3) * 2 + var(--sp-2)); max-width: 26rem; }
 .mp.is-full .mp-tools { top: var(--sp-3); }
 html:has(.mp.is-full) { overflow: hidden; }
 .mp-float { background: color-mix(in oklab, var(--scene-bg) 88%, transparent); border: 1px solid var(--line-ctl); }
-.mp-find { position: absolute; z-index: 4; top: var(--sp-3); left: var(--sp-3); width: min(20rem, calc(100% - var(--sp-16) * 2)); }
+/* Wide enough for its placeholder, which ends in an ellipsis where it can't be (a phone has a shorter one). */
+.mp-find { position: absolute; z-index: 4; top: var(--sp-3); left: var(--sp-3); width: min(26rem, calc(100% - var(--sp-16) * 2)); }
+.mp-find input { text-overflow: ellipsis; }
 .mp-find .search { background: color-mix(in oklab, var(--scene-bg) 88%, transparent); border: 1px solid var(--line-ctl); }
 .mp-found { list-style: none; margin: var(--sp-1) 0 0; padding: var(--sp-1) 0; background: color-mix(in oklab, var(--scene-bg) 94%, transparent); border: 1px solid var(--line-ctl); }
 .mp-found button { width: 100%; padding: var(--sp-1) var(--sp-3); min-height: var(--ctl-sm); text-align: left; font-size: var(--fs-sm); color: var(--ink); }
@@ -2467,7 +2481,7 @@ html:has(.mp.is-full) { overflow: hidden; }
 .mp-card-acts { grid-column: 2; display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-1) var(--sp-4); font-size: var(--fs-sm); }
 .mp-card-acts .mp-card-state { grid-column: auto; }
 /* Another screen's way onto the Map. */
-.pg-onmap, .hj-onmap { justify-self: start; font-size: var(--fs-xs); }
+.pg-onmap { justify-self: start; font-size: var(--fs-xs); }
 
 /* Where a search result is: a ring that swells and fades. */
 .mp-ping { position: absolute; z-index: 3; width: var(--sp-12); height: var(--sp-12); margin: calc(var(--sp-6) * -1) 0 0 calc(var(--sp-6) * -1); border: 2px solid var(--accent); border-radius: 50%; opacity: 0; pointer-events: none; }
@@ -2475,14 +2489,14 @@ html:has(.mp.is-full) { overflow: hidden; }
 .mp-ping.is-on { animation: mp-ping 1.2s var(--ease-fade) 3; }
 @media (prefers-reduced-motion: reduce) { .mp-ping.is-on { opacity: 1; } }
 @media (max-width: 899px) {
-  .mp-find { width: auto; right: calc(var(--ctl-sm) * 4 + var(--sp-3) * 2); }
+  .mp-find { width: auto; right: calc(var(--ctl-sm) * 3 + var(--sp-3) * 2); }   /* the zoom's three buttons (no large map here) */
 }
 /* Whole on a phone the names would cover the map: they come with the zoom. */
 @media (max-width: 599px) {
   .mp-view:not(.is-zoomed) .mp-name { display: none; }
   /* Whole, the map is too short to float the search on: it goes above it. */
   .mp-stage { display: flex; flex-direction: column; }
-  .mp-find { position: static; order: -1; width: auto; margin: 0 var(--sp-3) var(--sp-2); padding-right: calc(var(--ctl-sm) * 4 + var(--sp-3)); }
+  .mp-find { position: static; order: -1; width: auto; margin: 0 var(--sp-3) var(--sp-2); padding-right: calc(var(--ctl-sm) * 3 + var(--sp-3)); }
   /* The focus's line keeps the room the search leaves for the zoom outside its frame, its name over ‹ i of n ›. */
   .mp-find.mp-focus { flex-wrap: wrap; width: auto; margin-right: calc(var(--ctl-sm) * 4 + var(--sp-3) * 2); padding: var(--sp-1) var(--sp-1) var(--sp-1) var(--sp-3); }
   .mp-focus-t { flex-basis: 100%; }
@@ -2504,6 +2518,12 @@ html:has(.mp.is-full) { overflow: hidden; }
 .mp-dot img { width: calc(var(--mp-s, 22px) * 0.86); height: calc(var(--mp-s, 22px) * 0.86); object-fit: contain; }
 /* The Needle, a long thin line, laid across the disc as the fight's card lays it (.ft-cardx). */
 .mp-dot.is-needle img { transform: rotate(35deg) scale(1.2); }
+/* A picture placed by its measure (js/app-map.js fitOf; design/03-redesign.md, step 6, the marks'
+   size): it fills its disc, or the selector's square, moved and scaled so its opaque part is as big
+   as every other's and centred. */
+:is(.mp-dot, .mp-pin.is-badge) img.mp-fit { width: 100%; height: 100%; }
+img.mp-fit { transform: translate(calc(var(--fx) * 100%), calc(var(--fy) * 100%)) scale(var(--fs)); }
+.is-needle > img.mp-fit { transform: translate(calc(var(--fx) * 100%), calc(var(--fy) * 100%)) scale(var(--fs)) rotate(35deg); }
 /* The map in SVG, as the sibling's: the view is its viewBox, the marks keep their size (--k). */
 .mp-svg { position: relative; display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; user-select: none; }
 /* The map's pieces, composed on a canvas under the SVG (js/map-paint.js), in the map's tone. */
@@ -2533,6 +2553,8 @@ html:has(.mp.is-full) { overflow: hidden; }
 .mp-name:focus { outline: none; }
 .mp-name:is(:hover, :focus-visible, .is-sel) { fill: var(--ink-strong); }
 .mp-name.is-unmapped { fill: color-mix(in oklab, var(--muted) 70%, transparent); }
+/* From afar, a name that would overlap a larger area's waits for the zoom (js/app-map.js unclutter). */
+.mp-name.is-crowded { display: none; }
 /* The caches and walls from afar: per room, a mark per layer with how many in a corner. */
 .mp-cluster { pointer-events: none; }
 .mp-count circle { fill: var(--scene-bg); stroke: var(--line-ctl); stroke-width: 0.04; }
@@ -2591,6 +2613,10 @@ html:has(.mp.is-full) { overflow: hidden; }
 .mp-near-list li > img { width: 18px; height: 20px; object-fit: contain; }
 .mp-near-list .text-btn { justify-self: start; text-align: left; font-size: var(--fs-sm); }
 .hj-where { margin: 0; font-size: var(--fs-sm); color: var(--ink-2); }
+/* The entry's way onto the Map (design/69): the lists' round pin at the end of the line that says
+   where it is, both centred; alone in that place when the entry has no area. */
+.hj-entry .has-pin { display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--sp-1) var(--sp-3); }
+.hj-entry > .pg-onmap { justify-self: center; }
 .mp-near-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .mp-near-area { font-size: var(--fs-xs); color: var(--muted); white-space: nowrap; }
 /* A place: the game's own map pin; a gauntlet, the badge with its needles crossed, in the slots'
