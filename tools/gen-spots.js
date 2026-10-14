@@ -357,11 +357,17 @@ const cacheCheck = (c) => {
   for (let v = x.from; v <= x.to; v++) at.push(['int', c[1], c[2], v]);
   return at.length === 1 ? at[0] : ['any', ...at];
 };
+/* A thing whose completionist check stops holding once it's had (placed where that check says):
+   the Heart Memento is the fourth Old Heart, the one The Old Hearts doesn't take. Any heart held or
+   shown in the Bellhome (its check) is true while the wish is on and false once three are handed
+   over; all four found (CollectedHeart*, never cleared) is the spare one had, shown or not. */
+const CHECK_OF = { 'Heart Memento': ['all', ...['Flower', 'Coral', 'Hunter', 'Clover'].map((h) => ['flag', 'CollectedHeart' + h])] };
 const extra = (kind, it, name) => {
   let c = C.check(it.parsingInfo, fail);
   if ((kind === 'rosary-cache' || kind === 'shard-cache') && c[0] === 'int' && !(c = cacheCheck(c))) return;
   const s = kind === 'bellhome' ? BELLHOME : roomOfCheck(c);
   if (!s || !onMap(s)) { unplaced.push(`${kind} ${it.name}`); return; }
+  if (CHECK_OF[it.name]) c = CHECK_OF[it.name];
   needs('extra:' + EXTRAS.length, it);
   /* A "cache" that is an item lying in its room (Coral_36's Beast Shard: a CollectableItemPickup,
      pickups.json lying) goes in the rosaries' or shards' layer, by its own bool, in its place in
