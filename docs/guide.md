@@ -122,7 +122,7 @@ reduced motion).
 
 A sheet in two columns, each thing beside what it feeds, and a band under both. On the left, what
 Hornet is: **the Needle**, the five upright with their damage, the one she carries taller and lit,
-and the Pale Oil under it (the game's flask three times, lit up to what you hold); then **Hornet**: the masks (5 to 10) as the game's masks, in a
+and the Pale Oil under it (the game's flask three times, lit up to how many you've found, spent or not); then **Hornet**: the masks (5 to 10) as the game's masks, in a
 row as the HUD draws them, with the loose Mask Shards under them (four make a mask), the silk (9 to
 18) as beads on one thread with the loose Spool Fragments (two make a spool), and the Silk Hearts;
 then the **Silk Skills** with what each deals at this build, and the **abilities** (Needle Strike
@@ -138,14 +138,14 @@ handed back they still show found (here and on the Map: the save keeps them, hid
 Shell Shards as big figures, the shards out of what your Tool Pouch holds, 400 to 800, with a bar,
 and under each what breaks into it, counted, with the sum you would get from breaking it all: the
 five Rosary strings and necklaces under the rosaries; the Beast Shards, Shard Bundles, Pristine
-Cores, Hornet Statuettes and the Growstone (Steel Soul) under the shards); the **items** (the
+Cores, Hornet Statuettes and the Growstone under the shards, the last only in a Steel Soul game or Free mode); the **items** (the
 Everbloom, the Farsight, the Hunter's Journal, the Old Hearts, the melodies and the fleas); the
 **Relics** (how many you hold of each kind) and the **Mementos**. Crests, items, what's in the
 purse, Relics and Mementos are plates with their name, and under it their count or «Not found
 yet». Every head says how many of how many, and its rule lights up that far (complete, its diamond
 fills): the Tools count as the 100% does (of 51), the Crests with the Hunter Crest you start with
 (of 7); the Relics and Mementos aren't part of the 100%. Tap anything to read the game's own text
-under its shelf.
+under its shelf (the Hunter Crest's is the evolved one's once Eva has evolved it).
 
 In **Free mode** it's your game, marked by hand, and it starts as the game does: a New Game,
 with the base Needle, five masks, nine silk and the Hunter Crest, nothing else. A line under the
@@ -155,8 +155,10 @@ Crest, Silk Skill, ability, the Everbloom, the Farsight, the Journal, an Old Hea
 Memento to mark it had or not (its text opens under the shelf); a slot a Tool shares with its
 upgrade goes none, had, upgraded with each tap. Each shelf has «All · None», and what comes in numbers (loose Mask
 Shards and Spool Fragments, Memory Lockets, Craftmetal, Pale Oil, fleas, what's in the purse, the
-Relics of each kind) has − N +. The Rosaries and Shell Shards are typed: Enter or leaving the field
-takes the figure, and the shards stop at what your Pouch holds. «Start from»: «New Game» (the
+Relics of each kind) has − N +: the loose shards and fragments stop at what the masks and silk
+left unfilled. The Rosaries and Shell Shards are typed: Enter or leaving the field
+takes the figure, and the shards stop at what your Pouch holds. With the keyboard, the focus stays
+where it was through each mark. «Start from»: «New Game» (the
 game's own words) takes it all back to the start; «Everything maxed» marks everything, every level
 at the top (a game at 100%). Progress counts what you mark, the Map leaves out what you have, and
 the Crest screen tries it on «What I have». A visit from before this (when the levels belonged to

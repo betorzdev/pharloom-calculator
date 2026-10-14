@@ -48,6 +48,14 @@
   const LENT = D.TOOLS.filter((x) => x.lost).map((x) => x.id);
   // Rosaries have no cap in the game's files; the typed field stops at five digits, as the screen can hold.
   const MAX_ROSARIES = 99999;
+  // What only a Steel Soul game holds (the wiki's Growstone page): left out of a Classic save's purse.
+  const STEEL_ONLY = ['growstone'];
+  /* The Hunter Crest's evolution: Eva's two rewards (js/spots.js EXTRAS, the save's Hunter_v2 and
+     _v3), or the stage worn; Free mode keeps it in its marks. Evolved, the game describes the Crest
+     with CREST_HUNTER_UPGRADED_DESC (js/data.js CRESTS evolved). */
+  const EVA_AT = (r) => SP.EXTRAS.findIndex((x) => x[0] === 'eva' && x[5] && x[5].reward === r);
+  const EVOLVED = [EVA_AT('hunter-2'), EVA_AT('hunter-3')].filter((i) => i >= 0);
+  const hunterStage = (g) => Math.max((g.build && g.build.hunterStage) || 1, 1 + EVOLVED.filter((i) => g.extras.includes(i)).length);
   const shardCap = (pouch) => D.HORNET.shells.base + D.HORNET.shells.perPouch * pouch;
 
   // Free mode's «Everything maxed»: every thing marked, at the top of every ladder, the Hunter fully evolved (nothing loose or carried: a full game has spent it).
@@ -59,24 +67,27 @@
   }
   App.fullGame = fullGame;
 
-  /* Every thing the pane can show, by a key "list/id": { list, id, name, desc, got, count, color }. */
-  function things(g) {
+  /* Every thing the pane can show, by a key "list/id": { list, id, name, desc, got, count, color }.
+     steel: a Steel Soul game, or Free mode (which has no mode): what only Steel Soul holds shows. */
+  function things(g, steel = true) {
     const found = (kind) => g.pieces.filter((i) => CO.PIECES[i][0] === kind).length;
     const total = (kind) => CO.PIECES.filter((p) => p[0] === kind).length;
     const item = (id) => D.ITEMS.find((x) => x.id === id);
     const out = [];
     // A Tool as the game holds it: Silkshot's picture and words are the variant's (js/engine.js toolArt).
     for (const x of D.TOOLS) { const a = SS.engine.toolArt(x.id, g); out.push({ list: 'tools', id: x.id, art: a.art, name: x.name, desc: a.desc, got: g.tools.includes(x.id) || (x.lost && g.gaveBack.includes(x.id)), color: x.color }); }
-    for (const x of D.CRESTS) out.push({ list: 'crests', id: x.id, name: x.name, desc: x.desc, got: g.crests.includes(x.id) });
+    const evolved = hunterStage(g) > 1;
+    for (const x of D.CRESTS) out.push({ list: 'crests', id: x.id, name: x.name, desc: evolved && x.evolved ? x.evolved : x.desc, got: g.crests.includes(x.id) });
     for (const x of D.SKILLS) out.push({ list: 'skills', id: x.id, name: x.name, desc: x.desc, got: g.skills.includes(x.id) });
     for (const x of D.ARTS) out.push({ list: 'arts', id: x.id, name: x.name, desc: x.desc, got: g.arts.includes(x.id) });
     // The items: the two upgrade ladders with their level, the materials with how many were found.
-    const it = (id, got, count, n) => { const x = item(id); out.push({ list: 'items', id, name: x.name, desc: x.desc, got, count, n }); };
+    const it = (id, got, count, n, top) => { const x = item(id); out.push({ list: 'items', id, name: x.name, desc: x.desc, got, count, n, top }); };
     it('crafting-kit', g.kit > 0, `${num(g.kit)}/4`);
     it('tool-pouch', g.pouch > 0, `${num(g.pouch)}/4`);
+    // The loose ones: up to three shards (one), and none past what the whole masks (spools) left.
     const shards = found('mask-shard') - 4 * g.masks, frags = found('spool-fragment') - 2 * g.spools;
-    it('mask-shard', shards > 0, `${num(Math.max(0, shards))}/4`, [Math.max(0, Math.min(3, shards)), 3]);
-    it('spool-fragment', frags > 0, `${num(Math.max(0, frags))}/2`, [Math.max(0, Math.min(1, frags)), 1]);
+    it('mask-shard', shards > 0, `${num(Math.max(0, shards))}/4`, [Math.max(0, Math.min(3, shards)), 3], Math.max(0, Math.min(3, total('mask-shard') - 4 * g.masks)));
+    it('spool-fragment', frags > 0, `${num(Math.max(0, frags))}/2`, [Math.max(0, Math.min(1, frags)), 1], Math.max(0, Math.min(1, total('spool-fragment') - 2 * g.spools)));
     for (const id of ['memory-locket', 'craftmetal', 'pale-oil']) it(id, found(id) > 0, `${num(found(id))}/${num(total(id))}`, [found(id), total(id)]);
     it('everbloom', g.everbloom);
     it('farsight', g.farsight);
@@ -84,6 +95,7 @@
     // The purse: the two currencies (their picture opens the text), and what breaks into them, held counts.
     for (const id of ['rosaries', 'shell-shards']) { const x = item(id); out.push({ list: 'items', id, name: x.name, desc: x.desc, got: true, shelf: 'currency' }); }
     for (const [id, , cur, worth, max] of CO.PURSE) {
+      if (!steel && STEEL_ONLY.includes(id)) continue;
       const x = item(id), v = Math.min(max, g.purse[id] || 0);
       out.push({ list: 'items', id, name: x.name, desc: x.desc, got: v > 0, keep: true, count: `${num(v)}/${num(max)}`, n: [v, max], shelf: 'purse', cur, worth });
     }
@@ -132,10 +144,17 @@
   let marking = false;
   const markable = (x) => !x.n && x.id !== 'silk-heart' && !(x.list === 'crests' && x.id === 'hunter')
     && (x.list !== 'items' || ['everbloom', 'farsight', 'hunters-journal'].includes(x.id));
+  // x.top: how far + goes, when less than the most there can be (the loose shards once the masks are whole).
   const stepper = (x) => {
-    const [v, max] = x.n, what = pick(x.name);
-    return `<span class="inv-step"><button type="button" class="icon-btn" data-act="invCount" data-key="${esc(keyOf(x))}" data-value="${v - 1}" ${v > 0 ? '' : 'disabled'} aria-label="${esc(t('invLess', { what }))}" title="${esc(t('invLess', { what }))}">−</button>
-      <b>${num(v)}</b><button type="button" class="icon-btn" data-act="invCount" data-key="${esc(keyOf(x))}" data-value="${v + 1}" ${v < max ? '' : 'disabled'} aria-label="${esc(t('invMore', { what }))}" title="${esc(t('invMore', { what }))}">+</button></span>`;
+    const [v, max] = x.n, top = x.top ?? max, what = pick(x.name);
+    return `<span class="inv-step"><button type="button" class="icon-btn" data-act="invCount" data-key="${esc(keyOf(x))}" data-value="${v - 1}" data-dir="less" ${v > 0 ? '' : 'disabled'} aria-label="${esc(t('invLess', { what }))}" title="${esc(t('invLess', { what }))}">−</button>
+      <b>${num(v)}</b><button type="button" class="icon-btn" data-act="invCount" data-key="${esc(keyOf(x))}" data-value="${v + 1}" data-dir="more" ${v < top ? '' : 'disabled'} aria-label="${esc(t('invMore', { what }))}" title="${esc(t('invMore', { what }))}">+</button></span>`;
+  };
+  /* After a mark repaints the screen, the focus goes back where the key was: the repaint changes
+     the steppers' and the pieces' data-value, so js/app.js restoreFocus can't find them. */
+  const refocus = (sel, ...more) => {
+    const b = [sel, ...more].map((s) => document.querySelector(s)).find((n) => n && !n.disabled);
+    if (b) b.focus({ preventScroll: true });
   };
   /* A plate for the Crests, the items, what's in the purse, the Relics and the Mementos (design/43,
      5 A), drawn as the Silk Skills': the picture, the pip, the name, and under it the count or
@@ -280,7 +299,7 @@
       tools: b0.tools.filter((id) => g.tools.includes(id)), skills: b0.skills.filter((id) => g.skills.includes(id)),
       crest: g.crests.includes(b0.crest) ? b0.crest : 'hunter', hunterStage: (g.build && g.build.hunterStage) || 1 });
     marking = !own;
-    const all = shown = things(g);
+    const all = shown = things(g, !own || !!(App.gameMeta() || {}).steel);
     const by = (list) => all.filter((x) => x.list === list);
     const still = own ? ' disabled' : '';
     const cats = Object.fromEntries(SS.completion.count(g).categories.map((c) => [c.id, c]));
@@ -374,10 +393,17 @@
     const all = CO.PIECES.map((p, i) => (p[0] === kind ? i : -1)).filter((i) => i >= 0);
     m.pieces = [...m.pieces.filter((i) => CO.PIECES[i][0] !== kind), ...all.slice(0, Math.max(0, n))];
   }
-  // The typed fields (data-change) don't click: they commit when the browser says the value changed.
+  /* The typed fields (data-change) don't click: they commit when the browser says the value changed.
+     A moment later, so a Tab out of the field has landed first: the repaint then puts the focus
+     back where it went (js/app.js render), or in the field again after Enter. */
   document.addEventListener('change', (e) => {
     const f = e.target.closest && e.target.closest('[data-change="invMoney"]');
-    if (f) actions.invMoney(f);
+    if (!f) return;
+    setTimeout(() => {
+      const a = document.activeElement, field = a && a.dataset && a.dataset.change === 'invMoney' ? a.dataset.key : null;
+      actions.invMoney(f);
+      if (field) refocus(`[data-change="invMoney"][data-key="${field}"]`);
+    }, 0);
   });
   Object.assign(actions, {
     invOwn(node) {
@@ -429,12 +455,15 @@
     invCount(node) {
       const x = shown.find((y) => keyOf(y) === node.dataset.key);
       if (!x || !x.n) return;
-      const b = App.freeGame(), v = Math.max(0, Math.min(x.n[1], Number(node.dataset.value)));
-      if (x.shelf === 'purse') { mark((m) => { m.purse[x.id] = v; }); return; }
-      if (x.shelf === 'relics') { mark((m) => setRelics(m, x.kind, v)); return; }
+      const b = App.freeGame(), v = Math.max(0, Math.min(x.top ?? x.n[1], Number(node.dataset.value)));
+      const key = CSS.escape(node.dataset.key), dir = node.dataset.dir, other = dir === 'more' ? 'less' : 'more';
+      const back = () => refocus(`[data-act="invCount"][data-key="${key}"][data-dir="${dir}"]`, `[data-act="invCount"][data-key="${key}"][data-dir="${other}"]`);
+      if (x.shelf === 'purse') { mark((m) => { m.purse[x.id] = v; }); back(); return; }
+      if (x.shelf === 'relics') { mark((m) => setRelics(m, x.kind, v)); back(); return; }
       // The loose shards and fragments come after those already in whole masks and spools.
       const over = x.id === 'mask-shard' ? 4 * b.masks : x.id === 'spool-fragment' ? 2 * b.spools : 0;
       mark((m) => setKind(m, KIND[x.id], over + v));
+      back();
     },
     /* A typed figure of the purse, taken when the field is left or Enter is pressed: whole
        numbers only, 0 up to the cap (the Shell Shards' is the Pouch's). */
@@ -449,7 +478,10 @@
     invLevel(node) {
       const key = node.dataset.key, top = SS.saves.LADDER_TOP[key];
       if (App.game() || top == null) return;
+      // A piece of a row (a mask, a bead, a Silk Heart): the focus back on the same one.
+      const row = node.closest('.inv-pieces'), at = row ? [...row.children].indexOf(node) : -1;
       mark((m) => { m[key] = Math.max(0, Math.min(top, Number(node.dataset.value) || 0)); });
+      if (at >= 0) refocus(`.inv-pieces.is-${key} > :nth-child(${at + 1})`);
     },
     invPick(node) {
       picked = node.dataset.key === picked ? null : node.dataset.key;
