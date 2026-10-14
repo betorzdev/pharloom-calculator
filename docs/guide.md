@@ -163,8 +163,9 @@ In a save the Inventory shows what the game saved, and changes only as you play.
 The game's Crest screen («Blasón»), laid out as the game's pane. On top, the figures as the game's
 HUD: the Needle at its level with the slash large beside it (each attack, for the Crests that
 split them); damage per second, the Wanderer's critical hit and the Needle Strike; and Hornet as
-the HUD shows her, her masks drawn, the spool with her silk, and what a Bind heals. Pointing at a
-figure shows how it's made. Under them the levels as the game's upgrade pips, − and + either side
+the HUD shows her, her masks drawn, the spool with her silk, and what a Bind heals (in a window
+too narrow for one row, she goes on a row of her own under the rest). Pointing at a figure shows
+how it's made. Under them the levels as the game's upgrade pips, − and + either side
 (a pip sets it): the Needle, the Crafting Kit, the Tool Pouch and the Hunter's evolution; and
 beside them what depends on the moment: the Hunter's focus, the Beast's fury, Flintslate's buff,
 the hit after a Challenge.
