@@ -35,7 +35,8 @@
    "Only the 100%" turns on just the layers that count (design/03-redesign.md, step 6).
    In a save, what's had is left out; in Free mode, everything shows, as a guide. The Act filter
    and "what I can reach now" (js/spots.js NEEDS against your abilities) narrow every layer. A tap
-   on a mark, or on an area's name, opens its card. Hornet sits at your bench (js/app-hornet.js
+   on a mark, or on an area's name, opens its card. Hornet sits at your bench, or stands where the
+   game respawns her when the save says she isn't at one (js/app-hornet.js
    walks her there from the previous one). Other screens open the Map on a thing (App.mapShow).
    The marks are placed in percentages of the image, so they follow its zoom. Shares SS.app with
    js/app.js (see there). */
@@ -652,10 +653,13 @@
   /* Her bench's pin: the one in her room, else the one in a part of it (Tube_Hub's is in
      Tube_Hub_right, Bone_01c's in Bone_01c_bot: js/rooms.js roomPiece), among the pins shown and
      then among all (Act 3's Ventrica hub draws Tube_Hub_Destroyed, where Tube_Hub_right was); with
-     none, her room's middle. */
-  function benchPoint(scene, pins) {
+     none, her room's middle. A save written where the game set her respawn to a room's own marker
+     rather than a bench (respawnType 0, savefile's rested false: a restore point after a boss, an
+     ability, an Act) wakes her there, standing: her room's middle, as the marker isn't extracted. */
+  function benchPoint(scene, pins, rested = true) {
     const room = scene ? R.roomOf(scene) : null;
     if (!room) return null;
+    if (!rested) return { x: room.x, y: room.y };
     const names = [lower(room.scene), lower(scene)];
     const inRoom = (x) => x[0] === 'bench' && (R.roomOf(x[3]) || {}).scene === room.scene;
     const inPart = (x) => x[0] === 'bench' && names.includes(lower(R.roomPiece(x[3])));
@@ -676,15 +680,15 @@
     const path = R.path(b.bench, g.bench, g.lit) || [];
     const mid = path.slice(1, -1).map((s) => R.roomOf(s)).filter(Boolean);
     pins = pins || R.pinsOn(g);
-    const pts = [benchPoint(b.bench, pins), ...mid, benchPoint(g.bench, pins)].filter(Boolean);
-    return path.length > 1 && pts.length > 1 ? { key, pts } : null;
+    const pts = [benchPoint(b.bench, pins, b.rested), ...mid, benchPoint(g.bench, pins, g.rested)].filter(Boolean);
+    return path.length > 1 && pts.length > 1 ? { key, pts, fromRested: b.rested } : null;
   }
   function waySvg(g, pins) {
     const w = way(g, pins);
     if (!w) return '';
     const start = w.pts[0];
     return `<g class="mp-way" aria-hidden="true"><polyline points="${w.pts.map((p) => `${Math.round(p.x)},${Math.round(p.y)}`).join(' ')}"/>
-        <g class="mp-mk mp-from" style="--px:${n2(start.x)}px;--py:${n2(start.y)}px"><title>${esc(t('mapFrom'))}</title><circle r="0.3"/></g></g>`;
+        <g class="mp-mk mp-from" style="--px:${n2(start.x)}px;--py:${n2(start.y)}px"><title>${esc(t(w.fromRested ? 'mapFrom' : 'mapFromRespawn'))}</title><circle r="0.3"/></g></g>`;
   }
 
   /* What's missing nearest your bench, for Your game (App.nearList): the loose pieces
@@ -759,7 +763,7 @@
     if (!box) return '';
     areaCtx = { view, box, key: MP.keyOf(view, 0) };
     // Hornet where she rests (her bench's pin comes with the Map's own marks, if its layer is on).
-    const bench = benchPoint(g.bench, R.pinsOn(g));
+    const bench = benchPoint(g.bench, R.pinsOn(g), g.rested);
     const at = `left:${n2((bench.x - box.x) / box.w * 100)}%;top:${n2((bench.y - box.y) / box.h * 100)}%`;
     // The marks: the Map's own, the layers its legend has on and its filters let show, those in the box.
     const { list, g: shown, own } = all();
@@ -772,7 +776,7 @@
           <canvas class="hmB-canvas" aria-hidden="true"></canvas>
           <svg class="hmB-svg" viewBox="${n2(box.x)} ${n2(box.y)} ${n2(box.w)} ${n2(box.h)}" aria-hidden="true">
             <defs><radialGradient id="hmB-plate"><stop offset="0"/><stop offset="0.6"/><stop offset="1"/></radialGradient></defs>${marks}</svg>
-          <span class="hn is-sit hmB-hornet" aria-hidden="true" style="${at}"></span>
+          <span class="hn${g.rested ? ' is-sit' : ''} hmB-hornet" aria-hidden="true" style="${at}"></span>
         </a></figure>`;
   };
   /* Paints the figure just placed on the page (the screen is built whole each time, so this runs
@@ -840,9 +844,11 @@
     const clusters = [...fine.values()].map((f) => `<g class="mp-mk mp-cluster is-${f.m.layer}" style="--px:${n2(f.x)}px;--py:${n2(f.y)}px" aria-hidden="true"><circle r="0.5"/><circle class="mp-plate" r="0.47"/>${artOf(f.m)}`
       + `${f.n > 1 ? `<g class="mp-count"><circle cx="0.36" cy="-0.36" r="0.21"/><text x="0.36" y="-0.34">${num(f.n)}</text></g>` : ''}</g>`).join('');
     const exact = !!own && !!prefs.mapGame, view = R.mapView(own, { all: !exact }), shownPins = R.pinsOn(own);
-    const bench = own ? benchPoint(own.bench, shownPins) : null;
-    // Hornet at her bench: the page's own sprite (.hn), over the map at her point (placeOver).
-    const hornet = bench ? `<span class="mp-hornet hn is-sit" role="img" aria-label="${esc(t('mapBench'))}" title="${esc(t('mapBench'))}" data-x="${bench.x}" data-y="${bench.y}"></span>` : '';
+    const bench = own ? benchPoint(own.bench, shownPins, own.rested) : null;
+    // Hornet at her bench, sitting, or standing where the game respawns her: the page's own sprite
+    // (.hn), over the map at her point (placeOver).
+    const hereName = esc(t(own && !own.rested ? 'mapRespawn' : 'mapBench'));
+    const hornet = bench ? `<span class="mp-hornet hn${own.rested ? ' is-sit' : ''}" role="img" aria-label="${hereName}" title="${hereName}" data-x="${bench.x}" data-y="${bench.y}"></span>` : '';
     const bought = mapped(own);
     // An area whose map isn't bought: its name struck through; with only what the game shows,
     // not there, as in the game.
