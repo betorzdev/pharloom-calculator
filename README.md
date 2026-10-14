@@ -174,7 +174,7 @@ What's read from the installed game (each script's header says how):
 | `tools/extract-phases.py` | `js/phases.js` | Each boss's phases |
 | `tools/extract-damage.py` | `js/enemy-damage.js` | What each common enemy does to Hornet |
 | `tools/extract-quests.py` | `js/quests.js` | The wishes' rules: what opens Act 3, which comes first |
-| `tools/extract-wish-icons.py` | `assets/icons/wishes/` | Each type of wish's emblem |
+| `tools/extract-wish-icons.py` | `assets/icons/wishes/`, `assets/icons/tasks/` | Each type of wish's emblem, and the pictures the pane «Tasks» draws by each wish and main objective |
 | `tools/extract-shops.py` | `js/shop.js` | What each vendor sells, for how much, and what each wish gives |
 
 `npm run data` then joins the shops into `js/how.js`: how to get each thing of the 100%.

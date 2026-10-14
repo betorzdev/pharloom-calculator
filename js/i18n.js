@@ -670,12 +670,9 @@
     pgNear:         { es: 'Más cerca', en: 'Nearest first' },
     pg100:          { es: 'Para el 100 %', en: 'For 100%' },
     pgBeyond:       { es: 'Otros coleccionables', en: 'Other collectibles' },
-    pgBeyondNote:   { es: 'No cuentan para la finalización. Bajo cada grupo, para qué sirve.', en: 'They don\'t count for completion. Under each group, what it\'s for.' },
     pgDone:         { es: 'Completo', en: 'Complete' },
     pgGot:          { es: 'Conseguido', en: 'Got' },
     pgLater:        { es: 'Más adelante: Acto {n}', en: 'Later: Act {n}' },
-    pgWholeNote:    { es: 'Cuentan las máscaras enteras: cada cuatro fragmentos, un 1 %.', en: 'Whole masks count: every four shards, 1%.' },
-    pgSpoolNote:    { es: 'Cuentan los carretes enteros: cada dos fragmentos, un 1 %.', en: 'Whole spools count: every two fragments, 1%.' },
     kind_flea:      { es: 'Pulga perdida', en: 'Lost Flea' },   // KEY_FLEA
     kind_silkHeart: { es: 'Corazón de seda', en: 'Silk Heart' },   // MEMORY_MSG_TITLE_SILKHEART
     kind_fleas:     { es: 'Las pulgas perdidas', en: 'The Lost Fleas' },   // QUEST_FLEAS_TITLE
@@ -683,11 +680,8 @@
     kind_melodies:  { es: 'Melodías', en: 'Melodies' },
     pgOtherArts:    { es: 'Otras habilidades', en: 'Other abilities' },
     pgTasks:        { es: 'Tareas', en: 'Tasks' },   // PANE_QUESTS
-    pgTasksNote:    { es: 'Los objetivos del juego y los deseos de los tablones, con el nombre que les da el juego. No cuentan para la finalización.', en: 'The game\'s objectives and the wishes on the boards, with the game\'s names for them. They don\'t count for completion.' },
     pgTasksMain:    { es: 'Objetivos principales', en: 'Main objectives' },
     pgTasksCollect: { es: 'Colección', en: 'Collect' },
-    pgTasksNoteAct: { es: 'Los objetivos del juego y los deseos de los tablones, con el nombre que les da el juego. Los que pide el Acto {n} están en su pestaña. No cuentan para la finalización.',
-                      en: 'The game\'s objectives and the wishes on the boards, with the game\'s names for them. The ones Act {n} asks for are in its tab. They don\'t count for completion.' },
     /* Progress's two tabs (design/27b-progress-variants.html): the road to the next Act and the 100% */
     pgStepOf:       { es: 'paso {n} de {of}', en: 'step {n} of {of}' },
     pgToGo:         { es: '{pct} por conseguir', en: '{pct} to go' },
@@ -752,11 +746,8 @@
     pgLadderNote:   { es: 'Esto se fija en el Inventario:', en: 'This is set in the Inventory:' },
     pgListAll:      { es: 'Ver la lista entera, con lo hecho ({n})', en: 'See the whole list, done included ({n})' },
     pgListLess:     { es: 'Cerrar la lista entera', en: 'Close the whole list' },
-    /* How the 100% splits (4 A), and the guide without a save (5 A) */
+    /* The 100% tab (4 A), and the guide without a save (5 A) */
     pgInCats:       { es: 'en {n} categorías', en: 'in {n} categories' },
-    // Not "each thing is 1%": masks and spools count whole (four and two pieces), as their rows say.
-    pgSplit:        { es: 'La cifra de cada fila es cuánto tienes de lo que vale, en puntos del 100 %: las Herramientas son la mitad.',
-                      en: 'Each row\'s figure is how much you have of what it\'s worth, in points of the 100%: the Tools are half of it.' },
     pgColHead:      { es: 'Tienes / vale (%)', en: 'Got / worth (%)' },
     pgColHeadNone:  { es: 'Vale (%)', en: 'Worth (%)' },
     pgFoldSee:      { es: 'Ver los {n}', en: 'See all {n}' },
@@ -879,17 +870,6 @@
     howFromAct:     { es: 'desde el Acto {n}', en: 'from Act {n}' },
     howNeeds:       { es: 'Hace falta: {keys}', en: 'Needs: {keys}' },
     howNeedsOr:     { es: 'Hace falta: {keys} (o {alt})', en: 'Needs: {keys} (or {alt})' },
-    pgToolsTrap:    { es: 'Si entregas la {curveclaw} a un skarr en el Acto 3, pierdes su punto hasta recuperarla como {curvesickle}. La {silkshot} tiene tres versiones según quién la repare y cuenta una sola: la primera reparación cierra las otras dos.',
-                      en: 'Hand the {curveclaw} to a Skarr in Act 3 and its point is gone until you get it back as the {curvesickle}. The {silkshot} comes in three versions depending on who repairs it, and one counts: the first repair closes the other two.' },
-    pgNote_memoryLocket: { es: 'Abren ranuras extra en los blasones.', en: 'They open extra slots on the Crests.' },
-    pgNote_craftmetal:   { es: 'Con él se fabrican herramientas; algunas cuentan para el 100 %.', en: 'Tools are crafted with it; some count for 100%.' },
-    pgNote_paleOil:      { es: 'Plinney lo pide para mejorar la aguja: sin él no hay mejoras de la 2 a la 4.', en: 'Plinney asks for it to upgrade the Needle: without it, no upgrades 2 to 4.' },
-    pgNote_flea:         { es: 'Llevarlas a la caravana da premios, y una bolsa de herramientas y un fragmento de carrete cuentan para el 100 %. La caravana en Pulgatopía es condición del Acto 3.',
-                           en: 'Bringing them to the caravan gives rewards, and a Tool Pouch and a Spool Fragment count for 100%. The caravan at Fleatopia is a condition of Act 3.' },
-    pgNote_oldHeart:     { es: 'Del Acto 3: llevan a su final.', en: 'Act 3\'s: they lead to its ending.' },
-    pgNote_melody:       { es: 'Abren el camino a la Cuna en el Acto 2, y derrotar allí a Lace es condición del Acto 3.', en: 'They open the way to the Cradle in Act 2, and defeating Lace there is a condition of Act 3.' },
-    pgNote_otherArts:    { es: 'No cuentan, pero abren caminos; la Capa de fayforno es condición del Acto 3.', en: 'They don\'t count, but they open the way; the Faydown Cloak is a condition of Act 3.' },
-    pgNote_gauntlets:    { es: 'Arenas de oleadas; varias dan un objeto que sí cuenta.', en: 'Wave arenas; several give a thing that does count.' },
 
     /* Footer: the fan-project notice, the sources and the author (docs/guide.md, "Credits and licences") */
     footLabel:      { es: 'Aviso, fuentes y contacto', en: 'Notice, sources and contact' },
