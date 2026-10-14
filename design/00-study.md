@@ -1293,7 +1293,7 @@ area left black hides what's missing in it. So the whole map is always there, wh
 in colour and the rest faint, and the switch became **Only what the game shows**, off at first.
 A room mapped in part then showed a change of tone in its middle, where the game's straight cut
 between two parts falls (33 rooms in one save), so as a guide a room goes whole in colour once any
-part of it is. A part is a piece named after another and not a scene of the game (`js/graph.js`):
+part of it is (until 14 October: «Colour only where the game draws», below). A part is a piece named after another and not a scene of the game (`js/graph.js`):
 237 of them; Belltown_06 or Hang_03_top are scenes, rooms of their own.
 Then a black hairline where two pieces met: each piece is a window of its own, and the browser
 smooths a window's edge, so the black under two touching windows showed through (the single image
@@ -1369,7 +1369,7 @@ and after, they had seven causes, none of them the game's:
 7. **Eighteen rooms changed tone halfway through in the guide view**: the map draws them only in
    parts named after their scene (Under_13_left, _right, _bot), and the rule that makes a room
    whole in colour once any part is looked only for parts named after another piece. Those parts
-   are grouped by their scene now.
+   are grouped by their scene now (the rule went on 14 October; the grouping stays for the benches).
 What stays soft is the closest zoom, past the game's own resolution: each pixel of the fine
 sheet (96 a unit, the game's is 100) is then about one and a half CSS pixels wide on any screen.
 The made-up game and the render harness aren't kept; `tools/map-debug.html` draws the map as the
@@ -1745,8 +1745,22 @@ is, secret parts too. A test pins the rule. Keeping secret parts faint was weigh
 game's files don't tell a secret part from one not walked into yet. The 673 masks over hidden areas
 (Remasker, Unmasker) cover 8 of the 11 parts' triggers but also 119 ordinary ones (interiors the
 game hides from outside), and a breakable wall leaves no mark on the map; and keeping every part not
-mapped faint brought back the change of tone in about 34 rooms of a 56% save. Albert's choice: the
-rule stays, and the guide and the switch's tip say so.
+mapped faint brought back the change of tone in about 34 rooms of a 56% save. The rule stayed, for
+a few hours.
+
+**Colour only where the game draws** (the same day, 14 October 2026). On a new game (user4, 5%)
+Albert saw in colour a part of the Marrow he hadn't been in: Bone_16_top, an ordinary part of
+Bone_16 (mapped in 48 of the 73 saves), drawn because Bone_16 and Bone_16_right were. Over the 73
+saves the rule coloured what the game doesn't draw in 52 of them, a median of 34 parts in 32 rooms
+(up to 56 in 49, a 55% save), 114 parts in all, only 8 of them never mapped in any save; and in 11
+saves it coloured a room across into an area whose map isn't bought (Peak_01 in Mount Fay beside
+its parts in the Slab, Coral_35_top_break_base). The 100% saves PR #88 looked at hid the scale.
+Albert's choice: in colour only what the game draws whole, piece by piece, as with «Whole map»
+off, and everything else in the one faint layer, a room's parts not mapped too. Of the looks drawn
+for those parts (faint as the rest, a stronger faint, the outline only, a soft edge at the cut) he
+took faint as the rest: the game's straight cut shows as a change of tone, and nothing new is
+drawn. `js/rooms.js mapView` lost the rule; the test pins that, with the whole map, colour is
+exactly what the game draws, and over the 73 saves no piece is in colour that the game doesn't draw.
 
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about

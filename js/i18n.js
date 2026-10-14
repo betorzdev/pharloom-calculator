@@ -284,10 +284,8 @@
     mapPlace_bench1:{ es: 'Banco', en: 'Bench' },   // KEY_BENCH
     mapPlace_bellway:{ es: 'Vías Campana', en: 'Bellways' },   // MAP_LIST_TITLE
     mapPlace_ventrica:{ es: 'Ventrica', en: 'Ventrica' },   // KEY_TUBE
-    mapFrom:        { es: 'Tu banco anterior', en: 'Your previous bench' },
     // No game text for a respawn point (searched: respawn, reaparecer, wake): written for the context.
     mapRespawn:     { es: 'Tu punto de reaparición', en: 'Your respawn point' },
-    mapFromRespawn: { es: 'Tu punto de reaparición anterior', en: 'Your previous respawn point' },
     mapClosed:      { es: 'sin abrir', en: 'not open yet' },
     mapToll:        { es: 'sin pagar el peaje', en: 'toll not paid' },
     mapGroup_upgrades: { es: 'Mejoras', en: 'Upgrades' },
@@ -316,8 +314,8 @@
     mapSet_relics:  { es: 'Reliquias', en: 'Relics' },   // COLLECTION_HEADING_RELICDEALER
     // The Map shows the whole map, faint where your game's doesn't yet; this leaves that out. No game source: written for context.
     mapWhole:       { es: 'Mapa completo', en: 'Whole map' },   // no game text: the site's own switch
-    mapWholeTip:    { es: 'Con lo que tu partida aún no ha dibujado, en tenue. Una sala sale entera en color en cuanto tienes cartografiada una parte, así que puede salir en color una parte en la que aún no has entrado, también un secreto. Apágalo para verlo exactamente como el mapa de tu partida: sin las zonas cuyo mapa no has comprado ni las salas sin cartografiar.',
-                      en: 'With what your game hasn\'t drawn yet, faint. A room goes whole in colour once any part of it is mapped, so a part you haven\'t been in yet can show in colour, a secret too. Turn it off to see it exactly as your game\'s map: without the areas whose map you haven\'t bought or the rooms not mapped.' },
+    mapWholeTip:    { es: 'Con lo que tu partida aún no ha dibujado, en tenue. En color, solo lo que ya dibuja el mapa de tu partida, parte a parte: la parte de una sala en la que aún no has entrado sale en tenue aunque el resto de la sala esté en color. Apágalo para verlo exactamente como el mapa de tu partida: sin las zonas cuyo mapa no has comprado ni lo que está sin cartografiar.',
+                      en: 'With what your game hasn\'t drawn yet, faint. In colour, only what your game\'s map already draws, part by part: a part of a room you haven\'t been in yet stays faint even when the rest of the room is in colour. Turn it off to see it exactly as your game\'s map: without the areas whose map you haven\'t bought or what isn\'t mapped yet.' },
     mapArea:        { es: 'Zona', en: 'Area' },
     mapOnMap:       { es: 'Ver en el mapa', en: 'See on the map' },
     mapMore:        { es: 'y {n} más', en: 'and {n} more' },

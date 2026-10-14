@@ -541,11 +541,11 @@ over her bench's mark; a bench the map draws no room for keeps the game's pin. E
 Greymoor_02, its top, its middle), and what your game's map draws is in colour: the parts the
 game has mapped, in the areas whose map you've bought from Shakra. The site being a guide, the
 rest of the map is there too, faint: the areas whose map you haven't bought (their names struck
-through) and the rooms not mapped yet, so that what's missing there has a map under it. A room
-goes whole in colour once any part of it is mapped, so its tone never changes halfway through; so a
-part you haven't been in yet can show in colour though the game doesn't draw it, a secret too (a
-corner behind a breakable wall, a hidden room: the game maps each part only once you've been in
-it, and its files don't tell a secret part from any other). Turning
+through) and the rooms not mapped yet, so that what's missing there has a map under it. In colour
+is only what the game draws, part by part: a part of a room you haven't been in yet stays faint
+beside the parts in colour, its tone changing along the game's own straight cut between them (the
+game maps each part only once you've been in it: a corner behind a breakable wall, a hidden room).
+Turning
 «Whole map» off draws your game's map exactly: no area without its map, nor its name, and a
 part not mapped shows the dotted rough sketch the bought map gives it, or nothing when it's a
 secret or a room's hidden half. What's mapped is what your save says the game has mapped
@@ -558,11 +558,6 @@ Unravelled; and with the Cloakless crest the Slab moves, as the game moves it. I
 the whole map, the world before Act 3. Where each thing is comes from
 the game's files too: the pickups lying in each room, the vendors, the Wishwalls and their
 givers, the bosses' arenas, the scripts that give an ability.
-
-When your previous save rested at another bench, a dashed thread draws Hornet's way from it to
-this one, and the first time the map comes into view she runs it, room by room, from the old
-bench to the new one (two to eight seconds; the view follows her when it's enlarged), and sits.
-She runs each way once; with reduced motion she's simply at her bench.
 
 **For the maintainer, the admin mode** (`#view=map&admin=1`, nothing a visitor sees). A band
 under the map, above the legend, corrects what the game's files place wrong: a mark is dragged

@@ -2515,8 +2515,6 @@ img.mp-fit { transform: translate(calc(var(--fx) * 100%), calc(var(--fy) * 100%)
 #mp-plate stop { stop-color: var(--map-plate); }
 #mp-plate stop:nth-child(2) { stop-color: var(--map-plate-mid); }
 #mp-plate stop:last-child { stop-color: transparent; }
-.mp-from { pointer-events: none; }
-.mp-from > circle:first-of-type { stroke: var(--silk); stroke-width: 0.12; }
 /* The areas' names, keeping their size on screen, with the map's black round their letters. */
 .mp-name { font-family: var(--font-display); font-size: calc(var(--k, 1) * 0.5px); letter-spacing: var(--track-caps); text-transform: uppercase;
   text-anchor: middle; dominant-baseline: middle; fill: color-mix(in oklab, var(--ink) 72%, transparent);
@@ -2534,8 +2532,6 @@ img.mp-fit { transform: translate(calc(var(--fx) * 100%), calc(var(--fy) * 100%)
 /* The caches and walls: so many they're drawn close up only; from afar, a count per room. */
 .mp-view:not(.is-close) .is-fine { display: none; }
 /* An area whose map isn't bought yet. */
-/* Hornet's way from the previous bench: a silk thread over the rooms, from a hollow ring. */
-.mp-way polyline { fill: none; stroke: var(--silk); stroke-width: 4; stroke-dasharray: 10 8; stroke-linecap: round; stroke-linejoin: round; opacity: 0.75; vector-effect: non-scaling-stroke; }
 
 /* The Map's admin mode (js/app-map-admin.js, #…&admin=1; design/30-map-admin-variants.html, all A):
    a band under the map, above the legend; on the map, a moved mark's way from the data's point
