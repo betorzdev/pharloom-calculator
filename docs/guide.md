@@ -90,7 +90,7 @@ figures: **your 100%**, the Journal, the masks and the rosaries. Beside the card
 phone) is **the map of that area**, drawn as the Map screen draws it (the same view, «Only what
 the game shows» included), cropped to the area's rooms and fading out at its edges, with Hornet
 sitting on your bench and the Map's own marks over it: the layers and filters you have set on the
-Map (its legend and its Act and «what I can reach now» filters) decide which show, so the two
+Map (its legend and its «what I can reach now» filter) decide which show, so the two
 agree (the caches and walls, which the Map only draws close up, are left out); a tap on it opens
 the Map. Under it, the road to the next
 Act when there is one (the step you're on, by its name, and how far into it), then three columns: what changed since the previous save (below), what's
@@ -387,7 +387,7 @@ area name that would fall on another waits for the zoom (the larger area's stays
 on a phone the area names show only zoomed in.
 
 Under the map, **What the map shows**, as the Hollow Knight site has it: «Show all · Hide all» on
-its right, and «Only the 100%», which turns on just the layers that count for completion, then the Act (all, or only Act 1, 2 or 3's things), «Only what I can reach now» with a
+its right, and «Only the 100%», which turns on just the layers that count for completion, then «Only what I can reach now» with a
 save (hides what asks for an ability or Silk Skill you don't have yet: the Faydown Cloak,
 Clawline, Silk Soar, as the completionist lists them), «Only what the game shows» with a save (see
 below), and the area names on or off. Then eleven groups, each a row that folds (its caret; all open
@@ -396,7 +396,7 @@ whole group, in ink when all of it is on, dimmer when part, muted when none. Ins
 switch is the game's own picture of it, in grey when off. Beside each, how many: in a save, had of
 the total (a layer complete in green); for places and people, which aren't had, how many there
 are; in Free mode, the total. A group's title counts its layers the same way, all but your cocoon,
-so «Your game» counts as its Journal does. The Act and reach filters narrow the counts too.
+so «Your game» counts as its Journal does. The reach filter narrows the counts too.
 
 What counts for the 100% is in the first four groups, each thing in the room where it's had:
 lying there, at the shop that sells it, at the Wishwall or with whoever gives the wish, in its

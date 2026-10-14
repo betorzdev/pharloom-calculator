@@ -5953,7 +5953,7 @@
     ['nyleth', 'shellwood_11b_memory', ['flag', 'defeatedFlowerQueen'], 3],
     ['skarrsinger-karmelita', 'memory_ant_queen', ['flag', 'defeatedAntQueen'], 3],
     ['crust-king-khann', 'memory_coral_tower', ['flag', 'defeatedCoralKing'], 3],
-    ['summoned-saviour', 'Bone_Steel_Servant', ['journal', 'Abyss Mass'], 3],
+    ['summoned-saviour', 'Bone_Steel_Servant', ['journal', 'Abyss Mass'], 2],
     ['lost-lace', 'Abyss_05', ['journal', 'Lost Lace'], 3],
     ['lace-the-cradle', 'Song_Tower_01', ['flag', 'defeatedLaceTower'], 2],
     ['moss-mother-weavenest-atla', 'Weave_03', ['bool', 'Weave_03', 'Boss Scene'], 1],

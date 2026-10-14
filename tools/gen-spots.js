@@ -30,7 +30,7 @@
      BOSSES   [foe id, scene, check, act]: each boss of the completionist's list, its arena and whether
               it's beaten (a playerData flag, or its Journal entry listed), then the second fights
               it folds into one entry (BOSS_MORE), each with what the save keeps of it; act the
-              first Act it can be fought in (the completionist's whichAct, BOSS_MORE's own).
+              first Act it can be fought in (the completionist's whichAct, BOSS_MORE's own, BOSS_ACT's fix).
      VENDORS  vendor id → its rooms (js/shop.js), Shakra's among them
      PEOPLE   npc id → its room: the people who give something of the 100%, and Scrounge, who
               buys the relics
@@ -162,6 +162,10 @@ const BOSS_MORE = [
   ['moss-mother-act-3-moss-grotto', ['bool', 'Tut_02', 'Mossbone Mother Ambient'], 3],
   ['savage-beastfly-far-fields', ['flag', 'defeatedBoneFlyerGiantGolemScene'], 2],
 ];
+/* A boss whose Act the completionist has wrong: the Summoned Saviour, Steel Soul's, is Act 3 there,
+   but its wish (A Vassal Lost) is taken in Act 2 and the author's Steel Soul game beat it then
+   (Restore_Points3/restoreData24: act2Started, not blackThreadWorld; checked 14-Oct-2026). */
+const BOSS_ACT = { 'summoned-saviour': 2 };
 // Relics an NPC hands over: Jubilana's Choral Commandment, Grindle's Psalm Cylinder.
 const RELIC_ROOM = { 'Seal Chit City Merchant': 'song_enclave', 'Psalm Cylinder Grindle': 'coral_42' };
 // The Bellhome, where its furnishings go (Pavo's house in Bellhart).
@@ -210,7 +214,7 @@ for (const it of C.load('bosses.ts')) {
   const foe = BOSS_ALIAS[norm(it.name)] || foeBy.get(norm(it.name)) || fail(`no foe named ${it.name}`);
   const scene = arena(foe);
   if (!scene) { unplaced.push('boss ' + foe); continue; }
-  BOSSES.push([foe, scene, C.check(it.parsingInfo, fail), it.whichAct || fail(`${it.name} has no Act`)]);
+  BOSSES.push([foe, scene, C.check(it.parsingInfo, fail), BOSS_ACT[foe] || it.whichAct || fail(`${it.name} has no Act`)]);
 }
 for (const [foe, check, act] of BOSS_MORE) {
   if (!foeOf.has(foe) || BOSSES.some((b) => b[0] === foe)) fail(`BOSS_MORE: ${foe} isn't a foe of its own`);
