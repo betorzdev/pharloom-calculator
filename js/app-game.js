@@ -154,22 +154,23 @@
       <span class="inv-plate-art"><img src="${icon(x.list, x.art || x.id)}" alt="" loading="lazy"></span><span class="inv-plate-name">${esc(pick(x.name))}</span><span class="${vcls}">${v}</span></button></li>`;
   }
   const platesOf = (list, sm = false) => `<ul class="inv-plates${sm ? ' is-sm' : ''}">${list.map(plate).join('')}</ul>`;
-  /* A material beside what it feeds (design/43, 1 A): the Pale Oil under the Needle, the Memory
-     Lockets under the Crests, the Craftmetal by the Kit. Its picture opens its text; its count
-     beside it, or − N + in Free mode. */
-  function mat(x) {
-    return `<div class="inv-mat${x.got ? '' : ' is-missing'}"><button type="button" class="inv-mat-art" data-act="invPick" data-key="${esc(keyOf(x))}" aria-expanded="${picked === keyOf(x)}" aria-label="${esc(pick(x.name) + ' ' + x.count)}"${NT}>
-      <img src="${icon(x.list, x.art || x.id)}" alt=""></button><span class="inv-mat-name"${NT}>${esc(pick(x.name))}</span>
+  /* A material beside what it feeds (design/43, 1 A; drawn as a row, design/49): the Memory
+     Lockets under the Crests and the Craftmetal under the Kit and the Pouch, as their rows: the
+     picture, which opens its text, the name, and under it the count, or − N + in Free mode. */
+  function mat(x, rule = false) {
+    return `<div class="inv-mat${x.got ? '' : ' is-missing'}${rule ? ' is-rule' : ''}"><button type="button" class="inv-mat-art" data-act="invPick" data-key="${esc(keyOf(x))}" aria-expanded="${picked === keyOf(x)}" aria-label="${esc(pick(x.name) + ' ' + x.count)}"${NT}>
+      <img src="${icon(x.list, x.art || x.id)}" alt=""></button><span class="inv-fname"${NT}>${esc(pick(x.name))}</span>
       ${marking ? stepper(x) : `<span class="inv-mat-n">${num(x.n[0])}<i>/${num(x.n[1])}</i></span>`}</div>`;
   }
   /* The loose Mask Shards or Spool Fragments under their row, as the sibling draws its shards: the
-     game's piece lit up to what you hold, how many make a whole one, and − N + in Free mode. */
-  function loose(x, of, note) {
+     game's piece lit up to what you hold, how many make a whole one, and − N + in Free mode. The
+     Pale Oil the same way, centred under the Needle's name (design/49). */
+  function loose(x, of, note, cls = '') {
     const v = Math.max(0, x.n[0]);
     const pcs = Array.from({ length: x.n[1] }, (_, i) => `<img class="${i < v ? '' : 'is-off'}" src="${icon(x.list, x.art || x.id)}" alt="">`).join('');
-    return `<div class="inv-loose"><button type="button" class="inv-loose-art" data-act="invPick" data-key="${esc(keyOf(x))}" aria-expanded="${picked === keyOf(x)}" aria-label="${esc(pick(x.name) + ' ' + num(v) + '/' + num(of))}">
+    return `<div class="inv-loose${cls}"><button type="button" class="inv-loose-art" data-act="invPick" data-key="${esc(keyOf(x))}" aria-expanded="${picked === keyOf(x)}" aria-label="${esc(pick(x.name) + ' ' + num(v) + '/' + num(of))}">
       <span class="inv-loose-name"${NT}>${esc(pick(x.name))}</span><span class="inv-loose-pcs" aria-hidden="true">${pcs}</span><b>${num(v)}<i>/${num(of)}</i></b></button>
-      <span class="inv-loose-note">${esc(note)}</span>${marking ? stepper(x) : ''}</div>`;
+      ${note ? `<span class="inv-loose-note">${esc(note)}</span>` : ''}${marking ? stepper(x) : ''}</div>`;
   }
   // What's open under a shelf: the picture, the name and the game's text.
   function open(list) {
@@ -202,7 +203,7 @@
         data-act="invLevel" data-key="needle" data-value="${i}" aria-pressed="${b.needle === i}"${still} title="${esc(pick(n.name))}" aria-label="${esc(pick(n.name) + ', ' + n.damage)}"${NT}>
         <img src="${ART.needle(i)}" alt="" width="80" height="600"><b>${num(n.damage)}</b></button>`).join('');
     return `<section class="inv-sec">${head(t('invNeedle'))}<div class="inv-needles" role="group" aria-label="${esc(t('invNeedle'))}">${row}</div>
-      <p class="inv-caption"${NT}>${esc(pick(D.NEEDLES[b.needle].name))}</p><div class="inv-mats is-centre">${mat(oil)}</div>${open([oil])}</section>`;
+      <p class="inv-caption"${NT}>${esc(pick(D.NEEDLES[b.needle].name))}</p>${loose(oil, oil.n[1], '', ' is-centre')}${open([oil])}</section>`;
   }
   /* A row of pieces: the first `base` always there, then one per upgrade; a tap on one sets the
      count to it (on the last one lit, one less). Under it, what's loose of the next one. */
@@ -327,10 +328,9 @@
           <section class="inv-sec">${head(t('cat_arts'), cats.arts, 'arts')}${plates(by('arts'), artV)}${open(by('arts'))}</section>
         </div>
         <div class="inv-col">
-          <section class="inv-sec">${head(t('cat_crests'), crestsN, 'crests')}${platesOf(crests)}<div class="inv-mats">${mat(item('memory-locket'))}</div>${open([...crests, item('memory-locket')])}</section>
+          <section class="inv-sec">${head(t('cat_crests'), crestsN, 'crests')}${platesOf(crests)}${mat(item('memory-locket'), true)}${open([...crests, item('memory-locket')])}</section>
           <section class="inv-sec is-tools">${head(t('cat_tools'), cats.tools, 'tools')}
-            <div class="inv-levels">${level(b, 'kit', 'crafting-kit', still)}${level(b, 'pouch', 'tool-pouch', still)}</div>
-            <div class="inv-mats">${mat(item('craftmetal'))}</div>${open([item('craftmetal')])}
+            <div class="inv-levels">${level(b, 'kit', 'crafting-kit', still)}${level(b, 'pouch', 'tool-pouch', still)}${mat(item('craftmetal'))}</div>${open([item('craftmetal')])}
             ${rows}${lent}${open(by('tools'))}</section>
         </div>
       </div>

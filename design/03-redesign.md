@@ -40,7 +40,7 @@ the work up reads it first, then the step it's on.
 | 1 | **The shell**: header, screen bar (desktop and phone), the screen's frame and title, footer and About, the atmosphere | **Built** (28 Sep) | [`04-shell-variants.html`](04-shell-variants.html) |
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html` |
-| 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html` |
+| 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html` |
@@ -543,6 +543,25 @@ shelf is empty; C only what you have, with a switch).
 - The Crests, the items, what's in the purse, the Relics and the Mementos are plates as the Silk
   Skills': picture, pip, name, then the count or «Sin conseguir» (`invNotFound`).
 - «All · None» on Items now touches only its shelf (it marked every piece of the game before).
+
+### Retouch: the materials (14 October 2026)
+
+Albert: the Memory Lockets and the Pale Oil «no se ven bien puestos». The third round's `mat` (a
+small picture with its name and count beside it) sat badly in both places: under the Needle the
+block was centred with the picture to one side, so the name fell off the caption's axis; under
+the Crests the locket hung small against the grid's last row. The Craftmetal, the same piece,
+looked out of step with the Kit and the Pouch above it.
+
+The options (`49-inventory-materials-variants.html`, the real sections the site renders, in Free
+mode, an Act 2 restore point and user1; kept out of the repo): 1 the Pale Oil (**A** a row of the
+game's flask lit up to what you hold, as the loose shards, centred under the Needle's name; B a
+centred plate; C a row as the Kit's); 2 the Memory Lockets (**A** a row as the Kit's, apart from
+the Crests by a rule; B one more plate after the Crests; C one compact line); 3 the Craftmetal
+(**A** a third row under the Kit and the Pouch; B as it was).
+
+**Decision: A in all three** (14 October 2026): the Pale Oil goes through `loose` (`is-centre`),
+and `mat` draws the Kit's row (picture `--sp-12`, name, count or − N + under it), the Memory
+Lockets with a rule above (`is-rule`), the Craftmetal inside `.inv-levels`.
 
 ## Step 5 · Progress
 

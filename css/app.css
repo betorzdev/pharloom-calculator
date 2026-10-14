@@ -1654,15 +1654,18 @@ kbd {
 .inv-loose-pcs img.is-off { filter: var(--missing-art); }
 .inv-loose-art b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-weight: 600; color: var(--ink-strong); }
 .inv-loose-art b i { font-style: normal; font-weight: 400; color: var(--muted); }
-/* A material beside what it feeds (design/43, 1 A): its picture, its name and its count. */
-.inv-mats { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-6); }
-.inv-mats.is-centre { justify-content: center; }
-.inv-mat { display: grid; grid-template-columns: auto auto; align-items: center; justify-content: start; gap: 0 var(--sp-2); }
+.inv-loose.is-centre { justify-content: center; }
+/* A material beside what it feeds (design/43, 1 A), drawn as the Kit's and the Pouch's rows
+   (design/49): its picture, its name and under it the count or − N +; the Memory Lockets apart
+   from the Crests by a rule. */
+.inv-mat { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: var(--sp-1) var(--sp-3); }
+.inv-mat.is-rule { margin-top: var(--sp-1); padding-top: var(--sp-3); border-top: 1px solid var(--inv-line); }
+.inv-mat .inv-fname { align-self: end; }
+.inv-mat > :last-child { align-self: start; justify-self: start; }
 .inv-mat-art { grid-row: span 2; display: grid; place-items: center; padding: 0; }
-.inv-mat-art img { width: var(--sp-8); height: var(--sp-8); object-fit: contain; filter: drop-shadow(0 0 6px color-mix(in oklab, var(--spotlight) 35%, transparent)); transition: filter var(--dur) var(--ease); }
+.inv-mat-art img { width: var(--sp-12); height: var(--sp-12); object-fit: contain; filter: drop-shadow(0 0 6px color-mix(in oklab, var(--spotlight) 35%, transparent)); transition: filter var(--dur) var(--ease); }
 .inv-mat-art:is(:hover, :focus-visible) img { filter: drop-shadow(0 0 8px color-mix(in oklab, var(--spotlight) 55%, transparent)); }
 .inv-mat.is-missing .inv-mat-art img { filter: var(--missing-soft); opacity: var(--missing-soft-opacity); }
-.inv-mat-name { font-size: var(--fs-xs); color: var(--ink-2); }
 .inv-mat-n { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-sm); font-weight: 600; color: var(--ink-strong); }
 .inv-mat-n i { font-style: normal; font-size: var(--fs-xs); font-weight: 400; color: var(--muted); }
 .inv-mat.is-missing .inv-mat-n { color: var(--muted); }
