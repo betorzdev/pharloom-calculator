@@ -1789,6 +1789,18 @@ took faint as the rest: the game's straight cut shows as a change of tone, and n
 drawn. `js/rooms.js mapView` lost the rule; the test pins that, with the whole map, colour is
 exactly what the game draws, and over the 73 saves no piece is in colour that the game doesn't draw.
 
+**The pane «Tareas»'s own pictures** (14 October 2026, design/03-redesign.md step 5). Albert asked
+whether the Tasks could have pictures, if the game has them. It does, for all 74: each QuestType of
+`questsystem/types.bundle` has a small `icon` (QI_Wayfarer, QI_Hunt…, in `inventory.spriteatlas`;
+the Witness's QI_herald in types.bundle itself), the one the pane draws by each wish, besides the
+large emblem the Wishwalls show; and each MainQuest of `mainquests.bundle` its own `typeIcon`
+(QI_Main_*: the Citadel's for five objectives, the Black Thread's for eight, the Bellshrines' and
+the Snare's, each melody and Old Heart its own; two of them live in mainquests.bundle). The two Soul
+Snare wishes the site files apart are Wayfarer ones in the game. Rewards were looked at too
+(`rewardItem`, `rewardIcon`): only 28 of the 74 name one, the rest give theirs through the NPC's
+script, so they weren't used. `tools/extract-wish-icons.py` writes them into `assets/icons/tasks/`
+(37 lossless WebP, at most 64 px), and Progress's Tasks, now a tab of its own, draws them.
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).
