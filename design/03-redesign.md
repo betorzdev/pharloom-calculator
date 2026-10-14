@@ -42,7 +42,7 @@ the work up reads it first, then the step it's on.
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
-| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html` |
+| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
@@ -1078,6 +1078,27 @@ soft light inside (narrower on a phone); C no ground, edge to edge, cut where it
 **Decision: A** (14 October 2026): `.mp-stage` and `.mp-view` lose their background and
 `.mp-canvas` takes a mask that fades its four edges; the large map and full screen, which leave the
 frame, keep the black.
+
+### Retouch: counts, names and the card (14 October 2026)
+
+Found in the whole-site review (the Map, agent 4): the «Your game» group's title showed a bare
+number (what it shows: the Journal's missing entries plus the cocoon) beside its Journal's own
+«233/235»; from afar, area names drew over one another (Cogwork Core over the High Halls, the
+Whispering Vaults over the Coral Chambers, Wormways and Moss Grotto by Bone Bottom); and a card
+opened on a mark near the top went over the search and the zoom.
+
+The options (`64-map-variants.html`, the real Map of an Act 2 restore point; kept out of the repo):
+1 the group's count, **A** had of total as its Journal, B none, C as it was; 2 the names, **A** never
+over one another, the larger area's (by its rooms) staying and the rest with the zoom, B over the
+marks, C both, D only zoomed in as on a phone, E as they were; 3 the card, **A** below its mark when
+above it would cover the search or the zoom, B always at the map's foot, C as it was.
+
+**Decision: 1 A, 2 A, 3 A** (Albert, 14 October 2026). `js/app-map.js`: a group's count leaves the
+cocoon out (it's never had, nor many), so «Your game» counts as its Journal; `unclutter()` hides,
+from afar (zoom up to 1.5), a name whose box meets a larger area's (`.mp-name.is-crowded`), worked
+out again when the map, its size or the zoom changes and once the typeface is in; `paintCard()`
+flips the card below its mark when above it would meet `.mp-find` or `.mp-tools`. On a phone the
+names already waited for the zoom.
 
 ## Step 7 · Journal
 

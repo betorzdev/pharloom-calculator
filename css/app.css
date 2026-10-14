@@ -2547,6 +2547,8 @@ html:has(.mp.is-full) { overflow: hidden; }
 .mp-name:focus { outline: none; }
 .mp-name:is(:hover, :focus-visible, .is-sel) { fill: var(--ink-strong); }
 .mp-name.is-unmapped { fill: color-mix(in oklab, var(--muted) 70%, transparent); }
+/* From afar, a name that would overlap a larger area's waits for the zoom (js/app-map.js unclutter). */
+.mp-name.is-crowded { display: none; }
 /* The caches and walls from afar: per room, a mark per layer with how many in a corner. */
 .mp-cluster { pointer-events: none; }
 .mp-count circle { fill: var(--scene-bg); stroke: var(--line-ctl); stroke-width: 0.04; }
