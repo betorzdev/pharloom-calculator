@@ -82,7 +82,6 @@ async function capture(site, a) {
   };
   try {
     await c.go(site + '/index.html#lang=en');
-    await c.evaluate(`(() => { try { localStorage.setItem('pharloom.betaSeen', '1'); } catch (e) {} })()`);
     await visit('home');
     await whole('free');
     // The same card as a file is dragged over it (the site's own .is-drag).

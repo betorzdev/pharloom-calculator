@@ -19,7 +19,7 @@ game's own Crest screen: a Crest, its Tools, the Needle's level.
 <br>
 
 <!-- docs/screenshots/: npm run drive with a 69% save (Restore_Points1/restoreData24.dat, --prev
-     restoreData22.dat), the beta notice closed by --eval, cropped and saved as WebP. -->
+     restoreData22.dat), cropped and saved as WebP. -->
 <img src="docs/screenshots/home.webp" alt="The Your game screen: resting at Choral Chambers in Act 3, 31 h 58 min played, the area's map faint behind Hornet on her bench, 69% of the 100%, and what changed since the previous save: from 61% to 69%, Act 3, Beastling Call and five Tools" width="900">
 
 </div>

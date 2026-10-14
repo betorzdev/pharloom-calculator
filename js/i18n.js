@@ -25,12 +25,6 @@
     sisterHint:     { es: 'Calculadora de Hallownest: tu partida de Hollow Knight, el 112 %, el mapa y los amuletos', en: 'Hallownest Calculator: your Hollow Knight save, the 112%, the map and the Charms' },
     linkCopied:     { es: 'Enlace copiado', en: 'Link copied' },
     copyThis:       { es: 'Copia este enlace:', en: 'Copy this link:' },
-    /* The beta notice (js/app.js): above the screens until it's closed, and the tag by the title. */
-    betaTag:        { es: 'Beta', en: 'Beta' },
-    betaText:       { es: 'La web aún está en construcción: puede haber algún número mal, textos sin traducir o pantallas a medias. Si ves algo raro, {report}.',
-                      en: 'The site is still being built: some numbers may be off, some text untranslated and some screens unfinished. If something looks wrong, {report}.' },
-    betaReport:     { es: 'avísame', en: 'let me know' },
-    betaClose:      { es: 'Cerrar el aviso', en: 'Close the notice' },
     docTitle:       { es: 'Tu partida de Silksong: el 100 %, el mapa y las herramientas · Calculadora de Telalejana', en: 'Silksong save tracker, 100% checklist, map and Tools · Pharloom Calculator' },
     metaDescription:{ es: 'Importa tu partida de Hollow Knight: Silksong y mira qué te falta para el 100 %, en el mapa del propio juego, y cómo cambia Hornet con cada herramienta y blasón.',
                       en: 'Import your Hollow Knight: Silksong save and see what\'s missing for 100%, on the game\'s own map, and how each Tool and Crest changes Hornet.' },
