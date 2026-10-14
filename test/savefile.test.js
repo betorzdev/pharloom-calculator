@@ -172,3 +172,14 @@ test('the purse: what is held of each Collectable, the two currencies, the Farsi
   assert.equal(F.gameOf(bad).purse['shard-bundle'], 0);
   assert.equal('other' in F.gameOf(bad).purse, false);
 });
+
+test('a Tool handed back (unlocked and hidden) is gaveBack, not held; kept in a slot', () => {
+  const tool = (Name, IsUnlocked, IsHidden) => ({ Name, Data: { IsUnlocked, IsHidden } });
+  // As Zylotol leaves it once Alchemist's Assistant is done, and the Caretaker the Snare Setter.
+  const pd = { ...BASE, Tools: { savedData: [tool('Extractor', true, true), tool('Silk Snare', true, true), tool('Lifeblood Syringe', true, false)] } };
+  const g = F.game(pd, null);
+  assert.deepEqual(g.tools, ['plasmium-phial']);
+  assert.deepEqual(g.gaveBack.sort(), ['needle-phial', 'snare-setter']);
+  assert.deepEqual(F.gameOf(F.toSnapshot(pd)).gaveBack.sort(), ['needle-phial', 'snare-setter']);
+  assert.deepEqual(F.gameOf({ 'pharloom.progress': '{"gaveBack":["needle-phial","nope"]}' }).gaveBack, ['needle-phial']);
+});

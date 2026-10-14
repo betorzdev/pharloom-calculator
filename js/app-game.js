@@ -66,7 +66,7 @@
     const item = (id) => D.ITEMS.find((x) => x.id === id);
     const out = [];
     // A Tool as the game holds it: Silkshot's picture and words are the variant's (js/engine.js toolArt).
-    for (const x of D.TOOLS) { const a = SS.engine.toolArt(x.id, g); out.push({ list: 'tools', id: x.id, art: a.art, name: x.name, desc: a.desc, got: g.tools.includes(x.id), color: x.color }); }
+    for (const x of D.TOOLS) { const a = SS.engine.toolArt(x.id, g); out.push({ list: 'tools', id: x.id, art: a.art, name: x.name, desc: a.desc, got: g.tools.includes(x.id) || (x.lost && g.gaveBack.includes(x.id)), color: x.color }); }
     for (const x of D.CRESTS) out.push({ list: 'crests', id: x.id, name: x.name, desc: x.desc, got: g.crests.includes(x.id) });
     for (const x of D.SKILLS) out.push({ list: 'skills', id: x.id, name: x.name, desc: x.desc, got: g.skills.includes(x.id) });
     for (const x of D.ARTS) out.push({ list: 'arts', id: x.id, name: x.name, desc: x.desc, got: g.arts.includes(x.id) });
