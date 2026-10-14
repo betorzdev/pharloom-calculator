@@ -40,7 +40,7 @@ the work up reads it first, then the step it's on.
 | 1 | **The shell**: header, screen bar (desktop and phone), the screen's frame and title, footer and About, the atmosphere | **Built** (28 Sep) | [`04-shell-variants.html`](04-shell-variants.html) |
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html` |
-| 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html` |
+| 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html` |
@@ -575,6 +575,27 @@ at the end of the reds; C hidden unless the save holds them right now, never in 
 
 **Decision: A** (14 October 2026): the red row takes them in `D.TOOLS` order, out of the count
 (`li.is-lent`, a dashed slot), and `.inv-lent` under the row explains the dashed diamond.
+
+### Retouch: the whole-site review (14 October 2026)
+
+Three things the review of the Inventory found: the abilities' head said n/7 over eleven plates,
+with nothing saying which four the 100% leaves out; in Free mode the Memory Lockets, the Craftmetal
+and every other − N + showed a figure with no maximum, where a save shows «15/20»; and an evolved
+Hunter Crest kept the base Crest's picture, where the game draws the evolved one.
+
+The options (`62-inventory-variants.html`, the site's own render of an Act 3 restore point and of
+Free mode marked part way; kept out of the repo): 1 the abilities (**A** the four outside the 100%
+under their own sub-head, «Otras habilidades n/4», as the Tools' colour rows; B the head counts all
+eleven; C as it was); 2 the maxima (**A** every − N + of a material, the purse, the Relics and the
+fleas carries its maximum, «− 6/20 +»; B only the lockets and the Craftmetal, the figure as a
+save's beside − +; C as it was); 3 the evolved Hunter (**A** the evolved Crest's own picture; B as
+it was).
+
+**Decision: A in all three** (14 October 2026): the abilities split by `completion.ARTS`, the four
+under an `.inv-sub` named with Progress's `pgOtherArts` (the game has no name for them); `stepper(x,
+true)` adds the maximum in the materials and the plates (the loose shards and fragments keep theirs
+in the row beside); the Hunter Crest's art is `assets/crests/hunter-<stage>.webp` from stage 2 (the
+wiki's «Hunter Crest Inventory 2/3», the Crest screen's art), its stage from Eva's rewards.
 
 ## Step 5 · Progress
 
@@ -1551,3 +1572,24 @@ fullscreen; the legend's marks in a grid, each tap dropping one until Escape; on
 check, the room filled in and checked as it's typed; Restore, Hide, Show and Delete in the panel;
 the way from the data's point (in the accent while unsaved), the hidden mark faint and struck
 through, the added one with a "+"; the fixes listed by kind. Built in `js/app-map-admin.js`.
+
+## The whole-site review · Three things a phone didn't fit
+
+### What there was (14 October 2026)
+
+At 390 px the Spanish title took three lines («Calculadora / de / Telalejana») with any save loaded,
+and at 360 px «Beta» sat over «Partida 1». Your game's four figures showed three and one alone. The
+Import view's title was cut to «Importar a la …» / "Import into …", losing the save's number.
+
+### The options (`61-phone-header-variants.html`, the site's own HTML for Save 1 in Spanish)
+
+1. The header: A, the language and Share on the second row, right of «Hollow Knight ↗»; B, Share as
+   an icon; C, the title a step smaller; D, as it was.
+2. The figures: A, two by two; B, as they were.
+3. The Import title: A, two lines inside its plaque; B, the plaque says «Importar»; C, as it was.
+
+### Decision (14 October 2026)
+
+All A, phone widths only (≤599 px). Built in `css/app.css`; the header's order in the page is now
+the sister's link, the language and Share, the title, the save (`js/app.js`), so the keyboard walks
+the desktop header left to right and the phone's second row in its own order.
