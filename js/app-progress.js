@@ -236,7 +236,9 @@
     const done = new Set(g ? g.quests : []);
     return CO.WISH_TYPES.map((ty) => {
       const list = CO.WISHES.map((w, i) => ({ w, i })).filter(({ w, i }) => w[0] === ty.id && !skip.has(i) && (!mode || !w[5] || w[5] === mode))
-        .map(({ w, i }) => ({ name: pick(w[4]), got: !!g && g.wishes.includes(i), act: w[1], area: w[3], scene: wishScene(wishQuest(w), done) })).sort(byAct);
+        .map(({ w, i }) => { const scene = wishScene(wishQuest(w), done);
+          // With no area in the pane's list, the area it's taken in, as the road's rows (wishRow).
+          return { name: pick(w[4]), got: !!g && g.wishes.includes(i), act: w[1], area: w[3] || (scene && R.areaOf(scene)) || null, scene }; }).sort(byAct);
       const title = ty.name ? pick(ty.name) : TYPE_NAME[ty.id]();
       return list.length ? group('wish-' + ty.id, title, list, g, list.filter((x) => x.got).length, list.length) : '';
     }).join('');
@@ -489,7 +491,8 @@
     const shrines = bells.shrines.map((b) => ({ name: pick(b.name), got: b.ok, act: 1, mark: 'bell:' + b.field }));   // named by their area already
     const gateName = pick(QU.CHAIN[gate.quest].name);
     return [
-      step(1, bells, t('roadBells'), list(shrines, g), g, r),
+      // Gone round by the Phantom, the Bellshrines left are no longer to do: as a part met, only with Everything.
+      step(1, bells, t('roadBells'), list(shrines, g, !!bells.bypassed), g, r),
       step(2, gate, t('roadGate', { gate: gateName }), '', g, r),
       step(3, judge, t('roadJudge', { judge: foeName('last-judge'), phantom: foeName('phantom') }), '', g, r),
       step(4, r.steps[3], t('roadCitadel'), '', g, r),
@@ -877,8 +880,11 @@
           icon: pieceIcon(kind, k, p), mark: 'piece:' + i })).sort(byAct);
       return group(kind, key ? t(key) : KIND_NAME[kind](), list, g, list.filter((x) => x.got).length, list.length);
     }).join('') + (() => {
-      const list = OTHER_ARTS.map((id) => { const w = CO.WHERE.arts[id] || [];
-        return { name: pick(D.ARTS.find((x) => x.id === id).name), got: !!g && g.arts.includes(id), act: w[0] || 0, area: w[1] || null, icon: `assets/icons/arts/${id}.webp`, mark: 'arts:' + id }; });
+      /* Beastling Call and Elegy of the Deep aren't in WHERE: their Act and room are the Map's
+         (js/spots.js AT.act, AT.arts), so they don't sit under the Act 2 head of the cloaks. */
+      const list = OTHER_ARTS.map((id) => { const w = CO.WHERE.arts[id] || [], scene = spotScene('arts:' + id);
+        return { name: pick(D.ARTS.find((x) => x.id === id).name), got: !!g && g.arts.includes(id), act: w[0] || (SPOT && SPOT.act && SPOT.act['arts:' + id]) || 0,
+          area: w[1] || (scene && R.areaOf(scene)) || null, icon: `assets/icons/arts/${id}.webp`, mark: 'arts:' + id }; });
       return group('other-arts', t('pgOtherArts'), list, g, list.filter((x) => x.got).length, list.length);
     })() + (() => {
       // The enemy gauntlets, in the wiki's order (by area), named as Combat names them.
@@ -987,12 +993,16 @@
       const tab = document.getElementById('pg-tab-' + prefs.pgTab);
       if (tab) tab.focus();
     },
-    // Free mode: a row's box marks it had or not (the Inventory's own marks).
+    /* Free mode: a row's box marks it had or not (the Inventory's own marks). A Tool's row is its
+       point (js/collectibles.js COUNTED): marked with its upgrade (the Curvesickle), the box
+       unmarks both. */
     pgOwn(node) {
       const [kind, id] = node.dataset.value.split(':');
       App.freeMark((m) => {
         const flip = (arr, x) => (arr.includes(x) ? arr.filter((y) => y !== x) : [...arr, x]);
-        if (kind === 'piece') m.pieces = flip(m.pieces, Number(id));
+        const pair = kind === 'tools' ? CO.COUNTED.find((ids) => ids.includes(id)) : null;
+        if (pair) m.tools = pair.some((x) => m.tools.includes(x)) ? m.tools.filter((x) => !pair.includes(x)) : [...m.tools, id];
+        else if (kind === 'piece') m.pieces = flip(m.pieces, Number(id));
         else if (kind === 'everbloom') m.everbloom = !m.everbloom;
         else m[kind] = flip(m[kind], id);
       });
