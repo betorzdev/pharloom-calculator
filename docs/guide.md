@@ -263,7 +263,7 @@ opens its page as the game's Journal shows it (from the foot on a phone; Esc or 
 closes it): the whole drawing, from the game's files, on a soft light and at the size the game
 draws it (a Mossgrub small, the Bell Beast filling it), so you know the bug when you meet it; one
 not seen yet is in shadow. Beside it the name, the kills, its areas and the nearest from your
-bench, the description, and under the Hunter's symbol the Hunter's note once complete, or the
+bench (with the pin the lists carry, which opens it on the Map, while it isn't complete), the description, and under the Hunter's symbol the Hunter's note once complete, or the
 game's «Defeat 11 more to complete the hunter's notes.» (the Void Tendrils has no kills: it says «Completed by reading its tablet.» instead). An entry is complete when the save lists it
 with its kills done: the game writes them even for the entries it completes another way, and on
 the saves where Nuu has given the Memento the site counts all 230. In Free mode, the whole
