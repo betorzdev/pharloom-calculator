@@ -328,8 +328,8 @@
     mapSet_relics:  { es: 'Reliquias', en: 'Relics' },   // COLLECTION_HEADING_RELICDEALER
     // The Map shows the whole map, faint where your game's doesn't yet; this leaves that out. No game source: written for context.
     mapWhole:       { es: 'Mapa completo', en: 'Whole map' },   // no game text: the site's own switch
-    mapWholeTip:    { es: 'Con lo que tu partida aún no ha dibujado, en tenue. Apágalo para verlo como el mapa de tu partida: sin las zonas cuyo mapa no has comprado ni las salas sin cartografiar.',
-                      en: 'With what your game hasn\'t drawn yet, faint. Turn it off to see it as your game\'s map: without the areas whose map you haven\'t bought or the rooms not mapped.' },
+    mapWholeTip:    { es: 'Con lo que tu partida aún no ha dibujado, en tenue. Una sala sale entera en color en cuanto tienes cartografiada una parte, así que puede salir en color una parte en la que aún no has entrado, también un secreto. Apágalo para verlo exactamente como el mapa de tu partida: sin las zonas cuyo mapa no has comprado ni las salas sin cartografiar.',
+                      en: 'With what your game hasn\'t drawn yet, faint. A room goes whole in colour once any part of it is mapped, so a part you haven\'t been in yet can show in colour, a secret too. Turn it off to see it exactly as your game\'s map: without the areas whose map you haven\'t bought or the rooms not mapped.' },
     mapArea:        { es: 'Zona', en: 'Area' },
     mapOnMap:       { es: 'Ver en el mapa', en: 'See on the map' },
     mapMore:        { es: 'y {n} más', en: 'and {n} more' },

@@ -1725,6 +1725,29 @@ pins; the other 18 (interiors, rooms drawn as a point, Act 3's destroyed Ventric
 bell) keep the game's pin. Hornet sits on the same point, drawn over her bench's mark, as when both
 were on the pin. Checked against every bench mark close up, before and after, in headless Chrome.
 
+**Parts of a room the game hasn't mapped** (14 October 2026). Albert saw parts of his 100% game
+(a corner of Bellhart) in colour with «Whole map» and gone without it: eleven pieces, each a part
+of a room whose other parts are mapped. The game's code (Assembly-CSharp, read with dnfile and
+dncil; `tools/extract-map.py`'s header) maps a part only by its own name in `scenesMapped`, which a
+trigger inside the part (a MapSceneRegion) writes into `scenesVisited` when Hornet enters it, for
+the next map update to move. Every scene was read for those triggers (333): ten of the eleven sit
+in a secret part, behind a breakable or twig wall or under a mask the game lifts, and over the 72
+saves each part is there exactly when its way was opened and walked (Coral_37's two parts in the
+19 saves whose mask is lifted, Mosstown_03_top in the 16 whose twig wall is broken; the other
+seven in none: Greymoor_02's breakable wall and the tunnel through Greymoor_17 to Dust_11's bottom,
+Bone_East_14's blast wall, Shadow_18's and Bellhart's masks never lifted, Bellhart's around a door
+to Belltown_Room_Fisher, a scene the game doesn't have; Under_14's and Dust_Chef's lifted but
+their far end never reached). The eleventh, Coral_19_base, is never mapped: its trigger writes
+Coral_19_Base (in `scenesVisited` in 45 saves, in `scenesMapped` in none), and the game looks a
+name up as written. So without
+«Whole map» the Map draws what the game draws; with it, a room goes whole in colour once any part
+is, secret parts too. A test pins the rule. Keeping secret parts faint was weighed and dropped: the
+game's files don't tell a secret part from one not walked into yet. The 673 masks over hidden areas
+(Remasker, Unmasker) cover 8 of the 11 parts' triggers but also 119 ordinary ones (interiors the
+game hides from outside), and a breakable wall leaves no mark on the map; and keeping every part not
+mapped faint brought back the change of tone in about 34 rooms of a 56% save. Albert's choice: the
+rule stays, and the guide and the switch's tip say so.
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).

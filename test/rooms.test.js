@@ -133,6 +133,23 @@ test('the map piece by piece, as the game draws it', () => {
     assert.equal(pcs.find((p) => p.e === rough).cell, rough.r);
     assert.ok(!pcs.some((p) => p.e === hidden));
   }
+  // A secret part of a room (behind a breakable or twig wall, or under a mask the game lifts) is
+  // mapped only by its own name, which a trigger inside it writes: the game draws it once Hornet
+  // has been there, never for its room's other parts. The eleven the author's 100% save lacks
+  // (14-Oct-2026); Coral_37_right and Mosstown_03_top come in the saves that opened their way.
+  const secret = ['Belltown_06_fisher', 'Bone_East_14_2', 'Coral_19_base', 'Coral_37_join', 'Coral_37_right', 'Dust_11_bot',
+    'Dust_Chef_b', 'Greymoor_02_top_right', 'Mosstown_03_top', 'Shadow_18_top', 'Under_14_right'];
+  for (const s of secret) assert.ok(M.PIECES.some((e) => e.s === s && e.st === 0 && !e.parent && !e.ifAll), s);
+  const full = { ...world({}), mapped: M.PIECES.map((e) => e.s).filter((s) => !secret.includes(s)) };
+  const hid = drawn(R.mapView(full));
+  for (const s of secret) {
+    assert.ok(!hid.has(s), s);
+    assert.ok(drawn(R.mapView({ ...full, mapped: [...full.mapped, s] })).has(s), s);
+  }
+  // Coral_19_base's trigger writes Coral_19_Base, and the game looks a name up as it's written, so
+  // only mapAllRooms draws it.
+  assert.ok(!drawn(R.mapView({ ...full, mapped: [...full.mapped, 'Coral_19_Base'] })).has('Coral_19_base'));
+  assert.ok(drawn(R.mapView({ ...full, mapAll: true })).has('Coral_19_base'));
   // The Dust Maze and the Surface have no map to buy: the game never shows them.
   assert.ok(!R.mapView(world({})).pieces.some((p) => p.e.a === 'Dust Maze'));
   // The Slab moves with the Cloakless crest.
