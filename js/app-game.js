@@ -106,12 +106,14 @@
     }
     for (const i of MEMENTOS) { const id = MEMENTO_ID[SP.EXTRAS[i][2][1]], x = item(id); out.push({ list: 'extras', id, name: x.name, desc: x.desc, got: g.extras.includes(i), shelf: 'mementos', extra: i }); }
     // The Silk Hearts, the Old Hearts and the melodies, each with its own picture.
-    out.push({ list: 'pieces', id: 'silk-heart', name: { es: t('kind_silkHeart'), en: t('kind_silkHeart') }, got: g.hearts > 0, count: `${num(g.hearts)}/3` });
+    // Their names as js/i18n.js carries them, both languages: kind_silkHeart (MEMORY_MSG_TITLE_SILKHEART) and kind_fleas
+    // (the game says «pulgas perdidas», "lost fleas", inside FLEAS_HALF_DESC; no key of its own).
+    out.push({ list: 'pieces', id: 'silk-heart', name: SS.i18n.UI.kind_silkHeart, got: g.hearts > 0, count: `${num(g.hearts)}/3` });
     CO.PIECES.forEach((p, i) => {
       if (p[0] !== 'old-heart' && p[0] !== 'melody') return;
       out.push({ list: 'pieces', id: PIECE_ICON[p[2][1]], name: p[4], desc: p[5], got: g.pieces.includes(i), piece: i });
     });
-    out.push({ list: 'pieces', id: 'flea', name: { es: t('kind_fleas'), en: t('kind_fleas') }, got: found('flea') > 0, count: `${num(found('flea'))}/${num(total('flea'))}`, n: [found('flea'), total('flea')] });
+    out.push({ list: 'pieces', id: 'flea', name: SS.i18n.UI.kind_fleas, got: found('flea') > 0, count: `${num(found('flea'))}/${num(total('flea'))}`, n: [found('flea'), total('flea')] });
     return out;
   }
 
