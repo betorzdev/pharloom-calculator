@@ -49,6 +49,7 @@ the work up reads it first, then the step it's on.
 | 10 | **Built** (28 Sep) · The static pages (`tools/pages*.js`: `bosses/`, `es/jefes/`, the landing folders): they inherit steps 1 and 2; only what's theirs | To do | |
 | 6c | The Map's people: everyone in the world and every place that sells | **Built** (11 Oct) | `30-map-people-variants.html` (kept out of the repo) |
 | 6b | The Map's admin mode (`#view=map&admin=1`): the panel, adding, the save check, hide and delete, the marks | **Built** (11 Oct) | `30-map-admin-variants.html` (kept out of the repo) |
+| 1c | The site's icon: the favicon, the home-screen icon | **Built** (14 Oct) | `72-site-icon-variants.html` (kept out of the repo) |
 
 ## Step 1 · The shell
 
@@ -1678,3 +1679,24 @@ Import view's title was cut to «Importar a la …» / "Import into …", losing
 All A, phone widths only (≤599 px). Built in `css/app.css`; the header's order in the page is now
 the sister's link, the language and Share, the title, the save (`js/app.js`), so the keyboard walks
 the desktop header left to right and the phone's second row in its own order.
+
+## Step 1c · The site's icon
+
+### What there was (14 October 2026)
+
+The HUD's mask on the page's plain background (`tools/site-icons.py`). Clean, but at 16 px in a
+browser tab it's a white drop that could as well be Hollow Knight's.
+
+### The options
+
+`72-site-icon-variants.html` drew each one where it's seen (a browser tab, dark and light; a
+search result; a phone's home screen, square and round; each size alone). 1 · the figure: **A**
+Hornet's head with its red collar (`assets/hornet/resting.png`, cut above the cloak), B the mask
+(as it was), C the Hunter's Crest (its thin lines vanish at 16 px), D the Straight Pin (clear, but
+says little of the site). 2 · the ground: **A** the page's background with the main menu's red light
+from below (`--ember-glow`, the same gradient), B plain (as it was), C transparent.
+
+### Decision (14 October 2026)
+
+A and A. `tools/site-icons.py` cuts the head from the sprite and draws `--ember-glow` over `--bg`,
+both read from `css/tokens.css`; `npm run site-icons` writes the four files.
