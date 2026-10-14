@@ -730,7 +730,7 @@ Then **other collectibles**, which don't count for completion, each group saying
 Last, **Tasks** («Tareas», the game's pane): the main objectives and the wishes on the boards by
 type (Wayfarer, Gather, Donate, Hunt, Grand Hunt, Delivery…), 74 in all, each with the game's own
 name, its Act and where (a wish the pane files under no area, the area it's taken in). In Act 2, the ten wishes Act 3 requires are in the road's tab instead. The one only Steel Soul has, and the one only Classic has, show only in a
-game of that mode. A task done also shows in "Since the previous save".
+save of that mode, and both in Free mode, as the Journal and the Map show them. A task done also shows in "Since the previous save".
 In a save it shows what's missing, or everything with a tick where you have it; without a save,
 the whole list, as a guide. Which piece you have is read from the save one by one, and on the
 92 real saves it agrees with the game's own counters (masks, spools, the three upgrade ladders,

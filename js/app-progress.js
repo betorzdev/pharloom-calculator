@@ -230,9 +230,10 @@
   /* The pane «Tareas»: the main objectives, then the wishes by type, each with the game's name. */
   const TYPE_NAME = { 'main-objectives': () => t('pgTasksMain'), collect: () => t('pgTasksCollect') };
   function tasks(g, skip = new Set()) {
-    // A wish only one mode has (the Steel Soul's, a Classic one) shows in a game of that mode.
+    /* A wish only one mode has (the Steel Soul's, a Classic one) shows in a save of that mode. Free
+       mode has none: it shows both, as the Journal and the Map do. */
     const m = App.gameMeta();
-    const mode = !g ? null : m && m.steel ? 'steel' : 'classic';
+    const mode = !g || !App.game() ? null : m && m.steel ? 'steel' : 'classic';
     const done = new Set(g ? g.quests : []);
     return CO.WISH_TYPES.map((ty) => {
       const list = CO.WISHES.map((w, i) => ({ w, i })).filter(({ w, i }) => w[0] === ty.id && !skip.has(i) && (!mode || !w[5] || w[5] === mode))
