@@ -1741,7 +1741,12 @@ their far end never reached). The eleventh, Coral_19_base, is never mapped: its 
 Coral_19_Base (in `scenesVisited` in 45 saves, in `scenesMapped` in none), and the game looks a
 name up as written. So without
 «Whole map» the Map draws what the game draws; with it, a room goes whole in colour once any part
-is, secret parts too. A test pins the rule.
+is, secret parts too. A test pins the rule. Keeping secret parts faint was weighed and dropped: the
+game's files don't tell a secret part from one not walked into yet. The 673 masks over hidden areas
+(Remasker, Unmasker) cover 8 of the 11 parts' triggers but also 119 ordinary ones (interiors the
+game hides from outside), and a breakable wall leaves no mark on the map; and keeping every part not
+mapped faint brought back the change of tone in about 34 rooms of a 56% save. Albert's choice: the
+rule stays, and the guide and the switch's tip say so.
 
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about

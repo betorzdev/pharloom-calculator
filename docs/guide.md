@@ -547,7 +547,10 @@ Greymoor_02, its top, its middle), and what your game's map draws is in colour: 
 game has mapped, in the areas whose map you've bought from Shakra. The site being a guide, the
 rest of the map is there too, faint: the areas whose map you haven't bought (their names struck
 through) and the rooms not mapped yet, so that what's missing there has a map under it. A room
-goes whole in colour once any part of it is mapped, so its tone never changes halfway through. Turning
+goes whole in colour once any part of it is mapped, so its tone never changes halfway through; so a
+part you haven't been in yet can show in colour though the game doesn't draw it, a secret too (a
+corner behind a breakable wall, a hidden room: the game maps each part only once you've been in
+it, and its files don't tell a secret part from any other). Turning
 «Whole map» off draws your game's map exactly: no area without its map, nor its name, and a
 part not mapped shows the dotted rough sketch the bought map gives it, or nothing when it's a
 secret or a room's hidden half. What's mapped is what your save says the game has mapped
