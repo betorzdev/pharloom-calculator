@@ -164,6 +164,36 @@ test('a sync keeps what the game was before it changed, for "Since last time"', 
   assert.deepEqual(JSON.parse(s.getItem('pharloom.prev')), { snap: { 'pharloom.build': 'v=1&nail=2', 'pharloom.owned': '[]' }, saved: 300 });
 });
 
+test('a save read again by today\'s code replaces the slot as it is, never as a change, and only for that same save', () => {
+  const s = fakeStore();
+  const at = (extras, saved, time = saved) => ({ 'pharloom.progress': JSON.stringify({ extras }), 'pharloom.owned': '[]',
+    'pharloom.meta': JSON.stringify({ time, saved }) });
+  S.importTo(s, 1, at(['a'], 100));
+  S.select(s, 1);
+  s.setItem('pharloom.run', 'mine');
+  assert.equal(S.sync(s, 1, at(['a', 'b'], 200)), 'game');
+  const prev = s.getItem('pharloom.prev');
+  // The site learned 'c': the same two saves, read again.
+  assert.equal(S.refresh(s, 1, at(['a', 'b', 'c'], 200), at(['a', 'c'], 100)), true);
+  assert.deepEqual(JSON.parse(s.getItem('pharloom.progress')).extras, ['a', 'b', 'c']);
+  assert.equal(s.getItem('pharloom.run'), 'mine', 'the site\'s own keys stay');
+  assert.deepEqual(JSON.parse(s.getItem('pharloom.prev')), { snap: { 'pharloom.progress': JSON.stringify({ extras: ['a', 'c'] }), 'pharloom.owned': '[]' }, saved: 100 });
+  assert.equal(S.refresh(s, 1, at(['a', 'b', 'c'], 200), at(['a', 'c'], 100)), false, 'the same again changes nothing');
+  // Without the save before it, or with another one, pharloom.prev stays as it was.
+  assert.equal(S.refresh(s, 1, at(['a', 'b'], 200), at(['z'], 50)), true);
+  assert.deepEqual(JSON.parse(s.getItem('pharloom.prev')).saved, 100);
+  assert.notEqual(s.getItem('pharloom.prev'), prev);
+  // A copy of another save (another moment, or another play time) leaves the slot alone.
+  assert.equal(S.refresh(s, 1, at(['x'], 300)), false);
+  assert.equal(S.refresh(s, 1, at(['x'], 200, 199)), false);
+  // A slot not active, an empty one, Free mode.
+  S.importTo(s, 2, at(['a'], 10));
+  assert.equal(S.refresh(s, 2, at(['a', 'b'], 10)), true);
+  assert.deepEqual(JSON.parse(S.read(s).slots[2]['pharloom.progress']).extras, ['a', 'b']);
+  assert.equal(S.refresh(s, 3, at(['a'], 10)), false);
+  assert.equal(S.refresh(s, S.FREE, at(['a'], 10)), false);
+});
+
 /* Free mode's marks from before its ladders were marks (design/03-redesign.md, step 4): the levels
    lived in the free build, at the top unless moved by hand. */
 const OLD_OWNED = JSON.stringify({ tools: ['threefold-pin', 'cogfly'], crests: ['hunter'], skills: ['silkspear'], arts: ['swift-step'] });
