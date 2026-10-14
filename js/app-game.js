@@ -106,8 +106,7 @@
     }
     for (const i of MEMENTOS) { const id = MEMENTO_ID[SP.EXTRAS[i][2][1]], x = item(id); out.push({ list: 'extras', id, name: x.name, desc: x.desc, got: g.extras.includes(i), shelf: 'mementos', extra: i }); }
     // The Silk Hearts, the Old Hearts and the melodies, each with its own picture.
-    // Their names as js/i18n.js carries them, both languages: kind_silkHeart (MEMORY_MSG_TITLE_SILKHEART) and kind_fleas
-    // (the game says «pulgas perdidas», "lost fleas", inside FLEAS_HALF_DESC; no key of its own).
+    // Their names as js/i18n.js carries them, both languages: kind_silkHeart (MEMORY_MSG_TITLE_SILKHEART), kind_fleas (QUEST_FLEAS_TITLE).
     out.push({ list: 'pieces', id: 'silk-heart', name: SS.i18n.UI.kind_silkHeart, got: g.hearts > 0, count: `${num(g.hearts)}/3` });
     CO.PIECES.forEach((p, i) => {
       if (p[0] !== 'old-heart' && p[0] !== 'melody') return;
