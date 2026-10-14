@@ -311,6 +311,7 @@
         case 'flag': return !!pd[c[1]];
         case 'min': return (Number(pd[c[1]]) || 0) >= c[2];
         case 'quest': return !!(quests.get(c[1]) || {}).IsCompleted;
+        case 'accepted': return !!(quests.get(c[1]) || {}).IsAccepted;   // taken, done or not
         case 'bool': return !!bools.get(c[1] + '\u0000' + c[2]);
         case 'visited': return visited.has(c[1]);
         case 'journal': return kills.has(c[1]);   // the entry is listed (seen)

@@ -172,3 +172,14 @@ test('the purse: what is held of each Collectable, the two currencies, the Farsi
   assert.equal(F.gameOf(bad).purse['shard-bundle'], 0);
   assert.equal('other' in F.gameOf(bad).purse, false);
 });
+
+test("a wish taken is 'accepted' whether it's done or not; 'quest' only once done", () => {
+  const quest = (IsAccepted, IsCompleted) => ({ QuestCompletionData: { savedData: [{ Name: 'Beastfly Hunt', Data: { IsAccepted, IsCompleted } }] } });
+  // Bone_East_17b's wall: open by its bool or by the wish taken (tools/gen-spots.js CHECK_OF).
+  const SP = require('../js/spots.js');
+  const i = SP.EXTRAS.findIndex((x) => x[0] === 'wall' && JSON.stringify(x[2]).includes('Beastfly Hunt'));
+  assert.ok(i >= 0);
+  assert.equal(F.game({ ...BASE, ...quest(false, false) }, null).extras.includes(i), false);
+  assert.equal(F.game({ ...BASE, ...quest(true, false) }, null).extras.includes(i), true);
+  assert.equal(F.game({ ...BASE, ...quest(true, true) }, null).extras.includes(i), true);
+});
