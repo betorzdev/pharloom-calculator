@@ -1,4 +1,3 @@
-/* NOTE: the Map walk between benches is off for now (WALK_ON_BENCH_CHANGE below). */
 /* js/app-hornet.js: the Hornet who walks the page, ported from the Hollow Knight site's Knight
    (js/app-knight.js there). One sprite (css: .hn; the strips in assets/hornet/, from the game's own
    frames by tools/extract-hornet.py) that says where you are, the way her mark does on the game's
@@ -7,10 +6,7 @@
    there). When you change screens she gets up and runs along the bar to the new one, at a steady
    pace (--dur-run per 100 px): never a slide; she only fades in on arriving, and out where the bar
    has no room for her (below 900 px). On the Map she sits at your bench (js/app-map.js draws her
-   there) and, when the save before was at another bench, she walks from the old one to the new one
-   room by room, along the way the Map draws (App.mapWay: js/rooms.js through js/graph.js's doors
-   and the stations your game has opened), once, while the map is in view. With reduced motion she
-   only stands or sits. Decorative for the page: hidden from screen readers and out of the tab
+   there). With reduced motion she only stands or sits. Decorative for the page: hidden from screen readers and out of the tab
    order; the click (she binds) is an easter egg.
    Shares SS.app (see js/app.js): App.hornet.sync() after every render, App.hornet.start() once,
    from js/app-boot.js. */
@@ -18,7 +14,7 @@
   'use strict';
   const SS = globalThis.SS;
   const App = SS.app;
-  const { el, track, prefs, savePrefs } = App;
+  const { el, track } = App;
 
   const still = matchMedia('(prefers-reduced-motion: reduce)');
   // Below 900 px the bar spreads its tabs over the width: no room for her beside a tab (css).
@@ -121,84 +117,10 @@
     clip(hn, 'sit'); sync();
   }
 
-  /* ── The Map: her walk from the previous bench to this one ──
-     The sprite there is the map's own (js/app-map.js, .mp-hornet), repainted with every render,
-     so it's looked up again at every step; it's already painted at the new bench, where the walk
-     ends. Seen once per way (prefs.walked, the way's key). */
-  const mapScreen = () => App.screenOf('map');
-  const mapPin = () => { const s = mapScreen(); return s ? s.querySelector('.mp-hornet') : null; };
-  let walking = null;    // the way under way, { key }
-  const WALK_ON_BENCH_CHANGE = false;   // off for now: she is simply at the new bench. Set true to bring the walk back.
-  function syncMap() {
-    if (!WALK_ON_BENCH_CHANGE) return;
-    // The key first, cheap: the way (a path between the benches) only when it's still to walk.
-    if (walking || !App.mapWayKey || prefs.walked === App.mapWayKey() || !mapPin()) return;
-    const w = App.mapWay();
-    if (w) mapWalk(w);
-  }
-  /* From the old bench to the new one: the bench's point, the rooms' middles, the other bench's
-     point, at a steady pace (300 ms a room, the whole way in 2 to 8 s), her run's frames stepping
-     (css) and turning where the way turns. When the view scrolls, it keeps her in sight.
-     Reduced motion, or the tab hidden: she's simply there. */
-  function mapWalk(w) {
-    walking = { key: w.key };
-    const pts = w.pts;
-    const done = () => {
-      walking = null; prefs.walked = w.key; savePrefs();
-      const pin = mapPin(), end = pts[pts.length - 1];
-      if (pin) { clip(pin, 'sit'); pin.classList.remove('is-right'); App.mapHornetAt(pin, end.x, end.y); }
-    };
-    if (still.matches || document.hidden) { done(); return; }
-    const segs = []; let len = 0;
-    for (let i = 1; i < pts.length; i++) { const d = Math.hypot(pts[i].x - pts[i - 1].x, pts[i].y - pts[i - 1].y); segs.push(d); len += d; }
-    if (!len) { done(); return; }
-    const dur = Math.min(8000, Math.max(2000, 300 * segs.length)), t0 = performance.now();
-    const step = (now) => {
-      if (!walking || walking.key !== w.key) return;
-      const u = Math.min(1, Math.max(0, now - t0) / dur);
-      let dist = u * len, i = 0;
-      while (i < segs.length - 1 && dist > segs[i]) { dist -= segs[i]; i++; }
-      const f = segs[i] ? Math.min(1, dist / segs[i]) : 1;
-      const x = pts[i].x + (pts[i + 1].x - pts[i].x) * f, y = pts[i].y + (pts[i + 1].y - pts[i].y) * f;
-      const pin = mapPin();
-      if (pin) {
-        App.mapHornetAt(pin, x, y);   // over the map's SVG, at that point (js/app-map.js)
-        clip(pin, 'run'); face(pin, pts[i + 1].x - pts[i].x);
-        if (App.mapKeep) App.mapKeep(x, y);   // the view follows her when she walks out of it
-      }
-      if (u < 1 && !document.hidden) requestAnimationFrame(step); else done();
-    };
-    requestAnimationFrame(step);
-  }
-
-  /* ── What's in view: the map, whose walk waits for it ──
-     How much of the map's view is in the window, and whether that's enough (in at 60%, out under
-     10%: no flicker at the edge). The view is repainted with its screen, so it's looked up again. */
-  let mapNode = null, mapSeen = 0, mapOn = false;
-  const io = window.IntersectionObserver ? new IntersectionObserver((entries) => {
-    for (const e of entries) if (e.target === mapNode) mapSeen = e.intersectionRatio;
-    decide();
-  }, { threshold: [0, 0.1, 0.6, 1] }) : null;
-  function watchMap() {
-    const s = mapScreen();
-    const node = s && !s.hidden ? s.querySelector('.mp-view') : null;
-    if (node === mapNode || !io) return;
-    if (mapNode) io.unobserve(mapNode);
-    mapNode = node; mapSeen = 0;
-    if (node) io.observe(node);
-  }
-  function decide() {
-    if (document.hidden) return;
-    mapOn = !mapNode ? false : mapSeen >= 0.6 ? true : mapSeen <= 0.1 ? false : mapOn;
-    if (mapOn) syncMap();                    // the map in view: her walk, if one waits
-    if (activeTab() && !phone.matches) syncBar(); else unmount();
-  }
-
   /* ── The whole ── */
   function sync() {
     if (document.hidden) return;             // she catches up when the tab comes back (visibilitychange)
-    watchMap();
-    decide();
+    if (activeTab() && !phone.matches) syncBar(); else unmount();
   }
   function start() {
     hn.addEventListener('click', bind);
@@ -212,7 +134,7 @@
     sync();
   }
 
-  // Where she is and whether the map is in view, for a smoke test in a browser.
-  const state = () => ({ perch, tabId, mapSeen, mapOn, cls: hn.className, walking });
+  // Where she is, for a smoke test in a browser.
+  const state = () => ({ perch, tabId, cls: hn.className });
   App.hornet = { start, sync, state };
 })();

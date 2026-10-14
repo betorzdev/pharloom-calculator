@@ -71,11 +71,9 @@ async function capture(site, a) {
   const profile = fs.mkdtempSync(path.join(os.tmpdir(), 'promo-chrome-'));
   const c = await launch({ scale: 2, profile });
   let hop = 0;
-  // The Map's way to the next goal (.mp-way) is the reader's route, not the film's: hidden.
   const visit = async (v) => {
     await c.go(`${site}/index.html?promo=${++hop}#lang=en&view=${v}`);
     await sleep(2500);
-    await c.evaluate(`(() => { const s = document.createElement('style'); s.textContent = '.mp-way { display: none !important; }'; document.head.append(s); })()`);
   };
   const whole = async (name) => {
     const h = await c.evaluate('document.documentElement.scrollHeight');
