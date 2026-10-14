@@ -24,8 +24,6 @@
      BELLS    [playerData field, scene (, name)]: the six Bellshrines (the Grand Gate asks for five)
      KEYS     a lock's key (js/quests.js LOCKS) → its name
      MAPS     a map's flag (Has<X>Map, without Has and Map) → the area it draws
-     NEEDS    a thing's key ('piece:<i>', 'tools:<id>', 'arts:<id>', 'extra:<i>'…) → the abilities
-              and Silk Skills it asks for first (the completionist's prereqs)
      TASKS    [kind, quest, check, scene, picture, name?, mode?, steel?]: the wishes and the main
               objectives (kind 'qitem' what a wish asks for, 'wspot' where a wish is done, 'goal' a
               main objective's pin), quest its save name (js/quests.js), check as EXTRAS' plus
@@ -33,8 +31,8 @@
               under assets/map/, name the thing's (a wish's and an objective's are the quest's),
               mode 'steel' when only Steel Soul has it, steel the spot's scene when the save
               chooses it (SteelQuestSpots)
-     XY       a thing's key (as NEEDS, and 'person:<id>', 'board:<scene>', 'bell:<field>', 'task:<i>',
-              'shakra:<i>', 'shop:<vendor>:<i>', 'giver:<scene>', 'boss:<foe>', 'gaunt:<id>',
+     XY       a thing's key ('piece:<i>', 'tools:<id>', 'arts:<id>', 'extra:<i>'…, 'person:<id>',
+              'board:<scene>', 'bell:<field>', 'task:<i>', 'shakra:<i>', 'shop:<vendor>:<i>', 'giver:<scene>', 'boss:<foe>', 'gaunt:<id>',
               'lock:<key>:<scene>', 'everbloom') → its point on the map, in the image's pixels: where
               the game has it in its room (the object's place in the scene, or whoever stands for it,
               placed as the game places a point: js/rooms.js mapPoint) */
@@ -5953,7 +5951,7 @@
     ['nyleth', 'shellwood_11b_memory', ['flag', 'defeatedFlowerQueen'], 3],
     ['skarrsinger-karmelita', 'memory_ant_queen', ['flag', 'defeatedAntQueen'], 3],
     ['crust-king-khann', 'memory_coral_tower', ['flag', 'defeatedCoralKing'], 3],
-    ['summoned-saviour', 'Bone_Steel_Servant', ['journal', 'Abyss Mass'], 3],
+    ['summoned-saviour', 'Bone_Steel_Servant', ['journal', 'Abyss Mass'], 2],
     ['lost-lace', 'Abyss_05', ['journal', 'Lost Lace'], 3],
     ['lace-the-cradle', 'Song_Tower_01', ['flag', 'defeatedLaceTower'], 2],
     ['moss-mother-weavenest-atla', 'Weave_03', ['bool', 'Weave_03', 'Boss Scene'], 1],
@@ -6054,53 +6052,6 @@
     Arborium: 'ARBORIUM',
     Aqueduct: 'AQUEDUCTS',
     Weavehome: 'WEAVE_PRIME',
-  };
-
-  const NEEDS = {
-    'piece:1': ['swift-step'],
-    'piece:2': ['drifters-cloak'],
-    'piece:4': ['cling-grip'],
-    'piece:5': ['needolin'],
-    'piece:9': ['clawline'],
-    'piece:10': ['clawline'],
-    'piece:12': ['faydown-cloak'],
-    'piece:13': ['faydown-cloak'],
-    'piece:15': ['faydown-cloak'],
-    'piece:19': ['silk-soar'],
-    'piece:22': ['cling-grip'],
-    'piece:23': ['cling-grip'],
-    'piece:24': ['needolin'],
-    'piece:25': ['needolin'],
-    'piece:34': ['clawline'],
-    'piece:35': ['faydown-cloak'],
-    'piece:36': ['faydown-cloak'],
-    'piece:37': ['faydown-cloak'],
-    'piece:41': ['faydown-cloak'],
-    'piece:43': ['silk-soar'],
-    'piece:45': ['cling-grip'],
-    'piece:63': ['faydown-cloak'],
-    'piece:71': ['swift-step'],
-    'piece:77': ['drifters-cloak', 'cling-grip'],
-    'piece:78': ['cling-grip'],
-    'piece:81': ['cling-grip'],
-    'piece:85': ['clawline'],
-    'piece:90': ['cling-grip'],
-    'piece:91': ['clawline'],
-    'piece:93': ['clawline'],
-    'piece:95': ['faydown-cloak'],
-    'piece:96': ['faydown-cloak'],
-    'piece:97': ['cling-grip'],
-    'piece:98': ['faydown-cloak'],
-    'skills:pale-nails': ['silk-soar'],
-    'piece:111': ['silkspear'],
-    'arts:faydown-cloak': ['needolin', 'clawline'],
-    'tools:pimpillo': ['cling-grip'],
-    'tools:snare-setter': ['faydown-cloak'],
-    'tools:silkspeed-anklets': ['needolin', 'swift-step'],
-    'extra:1': ['drifters-cloak'],
-    'extra:5': ['cling-grip'],
-    'extra:16': ['clawline'],
-    'extra:17': ['clawline'],
   };
 
   const TASKS = [
@@ -8946,6 +8897,6 @@
     'task:96': [2433.5, 617.1],
   };
 
-  SS.spots = { AT, EXTRAS, BOSSES, VENDORS, PEOPLE, BELLS, KEYS, MAPS, NEEDS, TASKS, XY };
+  SS.spots = { AT, EXTRAS, BOSSES, VENDORS, PEOPLE, BELLS, KEYS, MAPS, TASKS, XY };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.spots;
 })();

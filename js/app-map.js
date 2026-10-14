@@ -33,8 +33,7 @@
      Your game      your cocoon; the Journal's entries still missing
    Each layer's switch is the game's own picture, with had of total (in Free mode, the total);
    "Only the 100%" turns on just the layers that count (design/03-redesign.md, step 6).
-   In a save, what's had is left out; in Free mode, everything shows, as a guide. The Act filter
-   and "what I can reach now" (js/spots.js NEEDS against your abilities) narrow every layer. A tap
+   In a save, what's had is left out; in Free mode, everything shows, as a guide. A tap
    on a mark, or on an area's name, opens its card. Hornet sits at your bench, or stands where the
    game respawns her when the save says she isn't at one (js/app-hornet.js
    walks her there from the previous one). Other screens open the Map on a thing (App.mapShow).
@@ -256,7 +255,6 @@
 
   /* ── What the map holds: every mark of every layer, for a game (null: Free mode with nothing) ──
      { key, layer, scene, act, got, name, sub, draw(style, title, key, cls) } */
-  const haveArt = (g, id) => !!g && (g.arts.includes(id) || g.skills.includes(id));
   /* The wish of a quest (index in CO.WISHES, or -1): the wish whose check is the quest, or an `any`
      of several (Broodfeast and Runtfeast, the Lost Fleas), or else the wish of the quest that
      follows it in the chain (QU.CHAIN prev): a «Pre» stage, Steel Sentinel's first offer. */
@@ -411,7 +409,7 @@
       if (kind === 'map' && x[5] && x[5].shop === 'shakra') return;
       if (DOOR[layerOf(x)]) {
         const layer = layerOf(x), d = DOOR[layer], k = kind === 'lock' && LOCK_AT.get(lower(scene));
-        add({ key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i), needs: SP.NEEDS['extra:' + i],
+        add({ key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i),
           name: t(kind === 'plate' ? 'mapPlate' : d.name), sub: k ? t('mapLockKey', { key: pick(SP.KEYS[k]) }) : layer === 'silkwall' ? silkNote() : '',
           draw: (s, ti, kk, c) => badge(layer, d.art ? img(ICON(kind === 'plate' ? 'dock_door_bottom_pressure_plate' : d.art)) : GLYPH[layer], s, ti, kk, c) });
         return;
@@ -426,7 +424,7 @@
         : kind === 'memento' ? (MEMENTO_ICON[check[1]] ? `assets/icons/extras/${MEMENTO_ICON[check[1]]}.webp` : 'assets/icons/pieces/heart-bloom.webp')
         : kind === 'silkeater' ? null : kind === 'spawn' || kind === 'bellhome' || kind === 'wall' ? null : `assets/icons/extras/${kind}.webp`;
       const spawn = kind === 'spawn' ? BOOK_KEY.get(name && name.key) : null;
-      add({ key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i), needs: SP.NEEDS['extra:' + i],
+      add({ key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i),
         name: name ? pick(name) : kind === 'eva' ? evaName(more.reward) : ONE[kind] ? t(ONE[kind]) : LAYER.get(layer).name(), eva: kind === 'eva' ? more : null,
         note: kind === 'masked' ? t('mapHiddenNote', { n: num(check[0] === 'all' ? check.length - 1 : 1) }) : more.shop ? t('mapMapShakra', { npc: pick(HW.NPCS[more.shop]), price: num(more.price) }) : more.found ? t('mapMapFound') : '',
         draw: (s, ti, k, c) => (kind === 'silkeater' ? pin('silkeater', 'pin_grub_location', s, ti, k, c)
@@ -448,7 +446,6 @@
       add({ key: 'journal:' + e.id, layer: 'journal', scene, got: complete(own, e), name: pick(e.name), entry: e.id,
         draw: (s, ti, k, c) => badge('journal', portrait(e.id), s, ti, k, c) });
     }
-    for (const m of out) if (!m.needs) m.needs = SP.NEEDS[m.key];
     return fixed(out);
   }
   /* js/map-fixes.js, last of all (and in the admin mode, js/app-map-admin.js, its unsaved
@@ -479,15 +476,13 @@
   }
   App.mapHas = (key) => all().list.some((m) => m.key === key);
 
-  /* Which marks show: the layer on, and in a save (or Free mode's marks) not had yet; then the
-     Act and "reach now" filters. The pins show open or not; the Journal's and the save's own
-     layers need a save. */
+  /* Which marks show: the layer on, and in a save (or Free mode's marks) not had yet. The pins
+     show open or not; the Journal's and the save's own layers need a save. (Two filters were here
+     until 14-Oct-2026: by Act, which most marks had no Act of their own for, an Act showing only
+     what first appears in it; and «what I can reach now», which only 44 marks had any needs for,
+     js/spots.js NEEDS. A mark's card and title still say its Act; Progress says what it waits on.) */
   function passes(m, g, own) {
-    if (OWN_ONLY.has(m.layer) && !own) return false;
-    const act = prefs.mapAct || 0;
-    if (act && m.act != null && Math.max(1, m.act) !== act) return false;
-    if (prefs.mapReach && g && m.needs && !m.needs.every((id) => haveArt(g, id))) return false;
-    return true;
+    return !(OWN_ONLY.has(m.layer) && !own);
   }
   const shows = (m, g, own) => passes(m, g, own) && !(g && m.got);
 
@@ -589,7 +584,7 @@
      on (`on`) and the filters let show, as { count per layer, items: [{ m, p }], fine: the caches
      and walls' counts per room, placed: key → point }. The Map screen and Your game's area map
      both read it. */
-  // Per layer, under the Act and reach filters: how many there are, how many had, how many show.
+  // Per layer: how many there are, how many had, how many show.
   function layout(list, g, own, on) {
     const count = {}, items = [], fine = new Map(), placed = new Map();
     for (const m of list) {
@@ -833,6 +828,7 @@
   const FULL_OUT = corners('M4.5 1.5 V4.5 H1.5 M10.5 4.5 H7.5 V1.5 M7.5 10.5 V7.5 H10.5 M1.5 7.5 H4.5 V10.5');
 
   App.screens.map = (sec) => {
+    delete prefs.mapAct; delete prefs.mapReach;   // the two filters' choices, from before they went: gone with the next save of the prefs
     const { list, g, own } = all();
     const on = new Set(layersOn());
     const names = prefs.mapNames !== false;
@@ -860,7 +856,7 @@
     }).join('') : '';
 
     /* The selector under the map (design/03-redesign.md, step 6, the selector; the sibling's
-       filter): its head (title, show all · hide all, the Acts and the three choices), then the
+       filter): its head (title, show all · hide all and the three choices), then the
        groups, each folding (prefs.mapOpen), its title its switch, with its count; each layer's
        picture its switch, in grey when off, with its count; a set's caret opens its layers. */
     const open = openGroups();
@@ -901,7 +897,6 @@
           ${isOpen ? `<div class="mp-kinds" role="group" aria-label="${esc(title)}">${ids.map(kinds).join('')}</div>` : ''}
         </section>`;
     }).join('');
-    const act = prefs.mapAct || 0;
     const check = (actName, pressed, label, tip = '') => `<button type="button" class="check" role="switch" aria-checked="${pressed}" data-act="${actName}"${tip ? ` title="${esc(tip)}"` : ''}>
         <span class="check-box" aria-hidden="true">${App.tick}</span><span>${esc(label)}</span></button>`;
     const legend = `<section class="mp-legend" aria-labelledby="mp-legend-t">
@@ -909,9 +904,7 @@
           <h3 class="mp-legend-t" id="mp-legend-t">${esc(t('mapShows'))}</h3>
           <span class="mp-all"><button type="button" class="text-btn" data-act="mapAll" data-value="1">${esc(t('mapShowAll'))}</button><button type="button" class="text-btn" data-act="mapAll" data-value="0">${esc(t('mapHideAll'))}</button><button type="button" class="text-btn" data-act="mapHundred">${esc(t('mapOnlyHundred'))}</button></span>
           <div class="mp-opts">
-            <div class="seg" role="group" aria-label="${esc(t('mapActs'))}">${[0, 1, 2, 3].map((n) =>
-              `<button type="button" data-act="mapAct" data-value="${n}" aria-pressed="${act === n}">${esc(n ? t('saveAct', { n }) : t('mapActAll'))}</button>`).join('')}</div>
-            <div class="mp-checks">${g ? check('mapReach', !!prefs.mapReach, t('mapReachNow')) : ''}${own ? check('mapGame', exact, t('mapGame'), t('mapGameTip')) : ''}${check('mapNames', names, t('mapNames'))}</div>
+            <div class="mp-checks">${own ? check('mapGame', exact, t('mapGame'), t('mapGameTip')) : ''}${check('mapNames', names, t('mapNames'))}</div>
           </div>
         </div>
         <div class="mp-secs">${groups}</div>
@@ -968,8 +961,6 @@
     focusSet = null;
     const on = layersOn();
     if (!on.includes(m.layer)) { prefs.mapLayers = [...on, m.layer]; }
-    prefs.mapAct = 0;
-    prefs.mapReach = false;
     savePrefs();
     pending = key;
     if (prefs.view === 'map') render(); else App.go('map');
@@ -1471,8 +1462,6 @@
       open[gr] = !open[gr];
       prefs.mapOpen = open; savePrefs(); render();
     },
-    mapAct(node) { prefs.mapAct = Number(node.dataset.value) || 0; savePrefs(); render(); },
-    mapReach() { prefs.mapReach = !prefs.mapReach; savePrefs(); render(); },
     mapGame() { prefs.mapGame = !prefs.mapGame; savePrefs(); render(); },
     mapZoom(node) { if (vb) zoomAt(node.dataset.value === 'in' ? 1 / 1.4 : 1.4, vb.x + vb.w / 2, vb.y + vb.h / 2); },
     // The large map, a choice (prefs.mapBig), as the sibling's: refitted and brought under the bar.
@@ -1517,7 +1506,7 @@
     mapFocusOff() { focusSet = null; pick1(''); render(); },
   });
   // Whatever changes what the Map shows ends the focus, so a switch never seems to do nothing.
-  for (const k of ['mapLayer', 'mapGroup', 'mapSet', 'mapAll', 'mapHundred', 'mapAct', 'mapReach', 'mapGame']) {
+  for (const k of ['mapLayer', 'mapGroup', 'mapSet', 'mapAll', 'mapHundred', 'mapGame']) {
     const f = actions[k];
     actions[k] = (node) => { focusSet = null; f(node); };
   }

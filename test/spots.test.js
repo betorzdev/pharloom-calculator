@@ -57,6 +57,11 @@ test('each boss fight is a mark of its own: the first fight by its name, the sec
   assert.equal(SP.AT.tools.weavelight, 'Weave_03');
   const heart = CO.PIECES.findIndex((p, i) => p[0] === 'silk-heart' && SP.AT.pieces[i] === 'Song_Tower_01');
   assert.ok(heart >= 0);
+  // The Summoned Saviour is fought in Act 2 (its wish, Steel Sentinel Pt2, is an Act 2 wish), not
+  // in the completionist's Act 3: the author's Steel Soul game beat it before the world was threaded.
+  const actOf = Object.fromEntries(SP.BOSSES.map((b) => [b[0], b[3]]));
+  assert.equal(actOf['summoned-saviour'], 2);
+  assert.equal(CO.WISHES.find((w) => JSON.stringify(w[2]) === '["quest","Steel Sentinel Pt2"]')[1], 2);
 });
 
 test('what opens a way comes after the completionist\'s extras, each a bool of its own the save keeps', () => {
@@ -173,11 +178,6 @@ test('a pin lights by fields the save keeps, not one the game works out (Unlocke
   const flags = (c) => (!Array.isArray(c) ? [] : c[0] === 'flag' ? [c[1]] : c.slice(1).flatMap(flags));
   assert.ok(!M.PINS.some((p) => flags(p[4]).includes('UnlockedAnyTube')));
   assert.ok(M.PINS.some((p) => flags(p[4]).includes('UnlockedUnderTube') && p[3] === 'Tube_Hub_Destroyed'));
-});
-
-test('a thing\'s prereqs are abilities or Silk Skills the save tells', () => {
-  const ids = new Set([...D.ARTS, ...D.SKILLS].map((x) => x.id));
-  for (const [key, needs] of Object.entries(SP.NEEDS)) for (const id of needs) assert.ok(ids.has(id), `${key}: ${id}`);
 });
 
 test('a save gives the Map its rooms visited, maps, cocoon, extras and bosses, and a slot keeps them', () => {

@@ -267,7 +267,7 @@
      (Belltown_basement): past its right side's hidden wall (a Remasker, walked through: the room has
      no breakable wall, whatever the guides say) and down its drop (bot1) into Belltown_basement_03,
      left of where you land (the wiki's Bell Hermit page agrees). The Seeker's Soul lies past Groal the Great; the Snare
-     Setter past a ledge only the Faydown Cloak reaches (js/spots.js NEEDS). And its mark on the
+     Setter past a ledge only the Faydown Cloak reaches (the completionist's prereqs). And its mark on the
      Map: a soul's (js/spots.js TASKS, what the wish asks for), the Snare Setter's as a Tool's. */
   const SNARE_HOW = {
     'Snare Soul Churchkeeper': () => t('roadPieceGiven', { npc: personName('churchkeeper') }),

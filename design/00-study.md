@@ -1685,6 +1685,14 @@ Bellshrines' rows do. Found on the way: the snare's fourth step read «… en {c
 saves (Act 1 at 7% and 10% by the Phantom, Act 2 at 15%, 42% and 61%), the later steps simulated
 from them, Act 3 at 100% and Free mode.
 
+**The Map's Act filter, removed** (14 October 2026). Checked over the 72 saves: of the 1,831 marks
+it filtered, 469 carry a real Act (all borne out by the saves but the Summoned Saviour's, the
+completionist's Act 3 for a Steel Soul fight beaten in Act 2, now 2 in `tools/gen-spots.js`), 875
+had a placeholder 0 that showed as Act 1 (the walls, caches and the ways open, some in the Abyss)
+and 487 none, shown under every Act; and an Act showed only what first appears in it, hiding what's
+still to get from the Acts before. The game sorts nothing by Act. Albert's choice: gone; a mark's
+card and title still say its Act, and Progress keeps its own.
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).

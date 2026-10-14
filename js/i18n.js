@@ -322,9 +322,6 @@
     mapFoldClose:   { es: 'Plegar {g}', en: 'Fold {g}' },
     mapSetChoose:   { es: 'Elegir cuáles', en: 'Choose which' },
     mapSet_relics:  { es: 'Reliquias', en: 'Relics' },   // COLLECTION_HEADING_RELICDEALER
-    mapActs:        { es: 'Por acto', en: 'By Act' },
-    mapActAll:      { es: 'Todos', en: 'All' },
-    mapReachNow:    { es: 'Solo lo que puedo coger ya', en: 'Only what I can reach now' },
     // The Map shows the whole map, faint where your game's doesn't yet; this leaves that out. No game source: written for context.
     mapGame:        { es: 'Solo lo que enseña el juego', en: 'Only what the game shows' },
     mapGameTip:     { es: 'Como el mapa de tu partida: sin las zonas cuyo mapa no has comprado ni las salas sin cartografiar.',
