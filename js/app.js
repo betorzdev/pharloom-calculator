@@ -2,8 +2,7 @@
    The page is made of screens, like the game's pause menu: the header, the screen bar
    and, one at a time, the screens (design/00-study.md §9 says which and in what order they're
    built). The screen travels in the URL ("view="), and so does the language ("lang=") when it
-   isn't the page's own; the build will travel there too (phase 3), and splitHash keeps its
-   place for it.
+   isn't the page's own; so does Free mode's build (js/codec.js), which splitHash keeps apart.
    Every state change repaints from templates; a single listener delegated by data-act handles
    the clicks. The language comes from js/i18n.js and applies to the whole render.
    Each screen has its own classic script (js/app-*.js), loaded after this one; they share

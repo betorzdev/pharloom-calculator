@@ -684,9 +684,9 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
 
 /* ── Saves: the game's profile screen ────────────────────────────────────
    The four slots stacked like the game's bars: the number, the masks with the
-   HUD's sprites, the nail and what the game carries (charms found, Journal, Hall). No boxes:
-   rules in the spotlight's bone between slots, and the whole bar responds to the finger. The slot you're
-   playing carries the accent's line on its edge, as the equipped charm does, and a light from
+   HUD's sprites, the Needle and what the game carries (the Act, the completion, the Journal). No
+   boxes: rules in the spotlight's bone between slots, and the whole bar responds to the finger. The
+   slot you're playing carries the accent's line on its edge and a light from
    that edge. Free mode, which is nobody's game, is the one sheet with a frame. */
 /* Saves draws its own plate (.saves-body, with the frame): the screen around it adds none. */
 .screen[data-view="saves"] { padding: 0; }
@@ -1068,6 +1068,8 @@ kbd {
   .save-where { grid-column: 1 / -1; }
   .save-fact { display: contents; }
   .save-fact b { text-align: right; }
+  /* Its unit right after the figure, also in the import view's preview, which centres its text. */
+  .save-fact .u { text-align: left; }
   .save.is-free .save-n::before { width: var(--sp-16); }
   .save.is-free .save-n img { height: var(--sp-8); }
   .save-masks img { height: var(--sp-4); }
