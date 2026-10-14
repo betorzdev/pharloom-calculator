@@ -153,7 +153,7 @@
     // The masthead in view: his life pauses without it.
     if ('IntersectionObserver' in window) new IntersectionObserver((es) => { inView = es[0].isIntersecting; }).observe(el.masthead);
     addEventListener('resize', () => sync());
-    el.masthead.addEventListener('click', (e) => { if (e.target.closest('.mh-sister')) track('sister'); });
+    el.masthead.addEventListener('click', (e) => { if (e.target.closest('.mh-sister')) track('sister', { to: 'hallownest' }); });   // `to`: the sister's Footworn id, drawn as a crossing
     el.masthead.addEventListener('mousemove', (e) => {
       if (kn.state !== 'idle' && kn.state !== 'look') return;
       const x = e.clientX - el.page.getBoundingClientRect().left;

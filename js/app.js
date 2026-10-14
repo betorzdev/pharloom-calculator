@@ -431,6 +431,11 @@
     if (TOOLS.includes(prefs.view)) prefs.tool = prefs.view;
     // Nor is the Map's full screen: leaving the Map leaves it (js/app-map.js).
     if (prefs.view !== was && App.mapFullOff) App.mapFullOff();
+    /* Nor is a screen's modal (the Journal's entry, which also stops drawing it off its screen):
+       «See on the map» changes screens through the history API, which fires no hashchange, and a
+       modal left open in a hidden screen keeps the rest of the page inert (the Map's card
+       couldn't be closed). */
+    if (prefs.view !== was) for (const d of document.querySelectorAll('dialog[open]')) if (!d.closest(`.screen[data-view="${prefs.view}"]`)) d.close();
     savePrefs();
   }
   /* Leaves a history entry and scrolls up to the top of the screen, which sits just below the

@@ -2,7 +2,8 @@
    step 4; its third round, design/43, A in all six, puts each thing beside what it feeds). On the
    left what Hornet is: the five Needles with the Pale Oil, the masks and the silk (beads on a
    thread) each with its loose shards or fragments under it, the Silk Hearts, the Silk Skills with
-   what they deal and the abilities. On the right her equipment: the Crests with the Memory
+   what they deal and the abilities (the four outside the 100% apart, design/62). On the right
+   her equipment: the Crests (the Hunter's evolved picture once evolved) with the Memory
    Lockets that open their slots, then the Crafting Kit and the Tool Pouch with the Craftmetal, and
    the Tools on their slots by colour, one slot per point of the 100% (a Tool and its upgrade
    share one, the two a wish lends apart). Under both, across the width, what she carries: the
@@ -25,7 +26,8 @@
   const num = (n) => App.NF[0].format(n);
   // A Silk Skill as the game lists it (the Crest pane's solid white sprite, assets/icons/skills-inv), not the
   // wiki's line art of the prompt when you get one.
-  const icon = (list, id) => `assets/icons/${list === 'skills' ? 'skills-inv' : list}/${id}.webp`;
+  // An art that is already a path (the evolved Hunter Crest's, below) is taken as it is.
+  const icon = (list, id) => (id.includes('/') ? id : `assets/icons/${list === 'skills' ? 'skills-inv' : list}/${id}.webp`);
   // The Old Hearts and melodies by their save flag → their icon (assets/icons/pieces/).
   const PIECE_ICON = { CollectedHeartFlower: 'heart-bloom', CollectedHeartCoral: 'heart-coral', CollectedHeartHunter: 'heart-hunter',
     CollectedHeartClover: 'heart-clover', HasMelodyArchitect: 'melody-architect', HasMelodyLibrarian: 'melody-librarian',
@@ -48,6 +50,14 @@
   const LENT = D.TOOLS.filter((x) => x.lost).map((x) => x.id);
   // Rosaries have no cap in the game's files; the typed field stops at five digits, as the screen can hold.
   const MAX_ROSARIES = 99999;
+  // What only a Steel Soul game holds (the wiki's Growstone page): left out of a Classic save's purse.
+  const STEEL_ONLY = ['growstone'];
+  /* The Hunter Crest's evolution: Eva's two rewards (js/spots.js EXTRAS, the save's Hunter_v2 and
+     _v3), or the stage worn; Free mode keeps it in its marks. Evolved, the game describes the Crest
+     with CREST_HUNTER_UPGRADED_DESC (js/data.js CRESTS evolved). */
+  const EVA_AT = (r) => SP.EXTRAS.findIndex((x) => x[0] === 'eva' && x[5] && x[5].reward === r);
+  const EVOLVED = [EVA_AT('hunter-2'), EVA_AT('hunter-3')].filter((i) => i >= 0);
+  const hunterStage = (g) => Math.max((g.build && g.build.hunterStage) || 1, 1 + EVOLVED.filter((i) => g.extras.includes(i)).length);
   const shardCap = (pouch) => D.HORNET.shells.base + D.HORNET.shells.perPouch * pouch;
 
   // Free mode's «Everything maxed»: every thing marked, at the top of every ladder, the Hunter fully evolved (nothing loose or carried: a full game has spent it).
@@ -59,24 +69,32 @@
   }
   App.fullGame = fullGame;
 
-  /* Every thing the pane can show, by a key "list/id": { list, id, name, desc, got, count, color }. */
-  function things(g) {
+  /* Every thing the pane can show, by a key "list/id": { list, id, name, desc, got, count, color }.
+     steel: a Steel Soul game, or Free mode (which has no mode): what only Steel Soul holds shows. */
+  function things(g, steel = true) {
     const found = (kind) => g.pieces.filter((i) => CO.PIECES[i][0] === kind).length;
     const total = (kind) => CO.PIECES.filter((p) => p[0] === kind).length;
     const item = (id) => D.ITEMS.find((x) => x.id === id);
     const out = [];
     // A Tool as the game holds it: Silkshot's picture and words are the variant's (js/engine.js toolArt).
     for (const x of D.TOOLS) { const a = SS.engine.toolArt(x.id, g); out.push({ list: 'tools', id: x.id, art: a.art, name: x.name, desc: a.desc, got: g.tools.includes(x.id) || (x.lost && g.gaveBack.includes(x.id)), color: x.color }); }
-    for (const x of D.CRESTS) out.push({ list: 'crests', id: x.id, name: x.name, desc: x.desc, got: g.crests.includes(x.id) });
+    /* Evolved, the Hunter Crest is drawn as the game draws it then (design/62, 3 A): the Crest
+       screen's own art for that stage (assets/crests/hunter-2, -3: the wiki's «Hunter Crest Inventory 2/3»). */
+    const stage = hunterStage(g), evolved = stage > 1;
+    for (const x of D.CRESTS) {
+      const art = x.id === 'hunter' && evolved ? `assets/crests/hunter-${stage}.webp` : undefined;
+      out.push({ list: 'crests', id: x.id, art, name: x.name, desc: evolved && x.evolved ? x.evolved : x.desc, got: g.crests.includes(x.id) });
+    }
     for (const x of D.SKILLS) out.push({ list: 'skills', id: x.id, name: x.name, desc: x.desc, got: g.skills.includes(x.id) });
     for (const x of D.ARTS) out.push({ list: 'arts', id: x.id, name: x.name, desc: x.desc, got: g.arts.includes(x.id) });
     // The items: the two upgrade ladders with their level, the materials with how many were found.
-    const it = (id, got, count, n) => { const x = item(id); out.push({ list: 'items', id, name: x.name, desc: x.desc, got, count, n }); };
+    const it = (id, got, count, n, top) => { const x = item(id); out.push({ list: 'items', id, name: x.name, desc: x.desc, got, count, n, top }); };
     it('crafting-kit', g.kit > 0, `${num(g.kit)}/4`);
     it('tool-pouch', g.pouch > 0, `${num(g.pouch)}/4`);
+    // The loose ones: up to three shards (one), and none past what the whole masks (spools) left.
     const shards = found('mask-shard') - 4 * g.masks, frags = found('spool-fragment') - 2 * g.spools;
-    it('mask-shard', shards > 0, `${num(Math.max(0, shards))}/4`, [Math.max(0, Math.min(3, shards)), 3]);
-    it('spool-fragment', frags > 0, `${num(Math.max(0, frags))}/2`, [Math.max(0, Math.min(1, frags)), 1]);
+    it('mask-shard', shards > 0, `${num(Math.max(0, shards))}/4`, [Math.max(0, Math.min(3, shards)), 3], Math.max(0, Math.min(3, total('mask-shard') - 4 * g.masks)));
+    it('spool-fragment', frags > 0, `${num(Math.max(0, frags))}/2`, [Math.max(0, Math.min(1, frags)), 1], Math.max(0, Math.min(1, total('spool-fragment') - 2 * g.spools)));
     for (const id of ['memory-locket', 'craftmetal', 'pale-oil']) it(id, found(id) > 0, `${num(found(id))}/${num(total(id))}`, [found(id), total(id)]);
     it('everbloom', g.everbloom);
     it('farsight', g.farsight);
@@ -84,6 +102,7 @@
     // The purse: the two currencies (their picture opens the text), and what breaks into them, held counts.
     for (const id of ['rosaries', 'shell-shards']) { const x = item(id); out.push({ list: 'items', id, name: x.name, desc: x.desc, got: true, shelf: 'currency' }); }
     for (const [id, , cur, worth, max] of CO.PURSE) {
+      if (!steel && STEEL_ONLY.includes(id)) continue;
       const x = item(id), v = Math.min(max, g.purse[id] || 0);
       out.push({ list: 'items', id, name: x.name, desc: x.desc, got: v > 0, keep: true, count: `${num(v)}/${num(max)}`, n: [v, max], shelf: 'purse', cur, worth });
     }
@@ -94,12 +113,13 @@
     }
     for (const i of MEMENTOS) { const id = MEMENTO_ID[SP.EXTRAS[i][2][1]], x = item(id); out.push({ list: 'extras', id, name: x.name, desc: x.desc, got: g.extras.includes(i), shelf: 'mementos', extra: i }); }
     // The Silk Hearts, the Old Hearts and the melodies, each with its own picture.
-    out.push({ list: 'pieces', id: 'silk-heart', name: { es: t('kind_silkHeart'), en: t('kind_silkHeart') }, got: g.hearts > 0, count: `${num(g.hearts)}/3` });
+    // Their names as js/i18n.js carries them, both languages: kind_silkHeart (MEMORY_MSG_TITLE_SILKHEART), kind_fleas (QUEST_FLEAS_TITLE).
+    out.push({ list: 'pieces', id: 'silk-heart', name: SS.i18n.UI.kind_silkHeart, got: g.hearts > 0, count: `${num(g.hearts)}/3` });
     CO.PIECES.forEach((p, i) => {
       if (p[0] !== 'old-heart' && p[0] !== 'melody') return;
       out.push({ list: 'pieces', id: PIECE_ICON[p[2][1]], name: p[4], desc: p[5], got: g.pieces.includes(i), piece: i });
     });
-    out.push({ list: 'pieces', id: 'flea', name: { es: t('kind_fleas'), en: t('kind_fleas') }, got: found('flea') > 0, count: `${num(found('flea'))}/${num(total('flea'))}`, n: [found('flea'), total('flea')] });
+    out.push({ list: 'pieces', id: 'flea', name: SS.i18n.UI.kind_fleas, got: found('flea') > 0, count: `${num(found('flea'))}/${num(total('flea'))}`, n: [found('flea'), total('flea')] });
     return out;
   }
 
@@ -132,10 +152,19 @@
   let marking = false;
   const markable = (x) => !x.n && x.id !== 'silk-heart' && !(x.list === 'crests' && x.id === 'hunter')
     && (x.list !== 'items' || ['everbloom', 'farsight', 'hunters-journal'].includes(x.id));
-  const stepper = (x) => {
-    const [v, max] = x.n, what = pick(x.name);
-    return `<span class="inv-step"><button type="button" class="icon-btn" data-act="invCount" data-key="${esc(keyOf(x))}" data-value="${v - 1}" ${v > 0 ? '' : 'disabled'} aria-label="${esc(t('invLess', { what }))}" title="${esc(t('invLess', { what }))}">−</button>
-      <b>${num(v)}</b><button type="button" class="icon-btn" data-act="invCount" data-key="${esc(keyOf(x))}" data-value="${v + 1}" ${v < max ? '' : 'disabled'} aria-label="${esc(t('invMore', { what }))}" title="${esc(t('invMore', { what }))}">+</button></span>`;
+  /* x.top: how far + goes, when less than the most there can be (the loose shards once the masks are
+     whole). of: the figure carries its maximum, as a save's count does (design/62, 2 A: the
+     materials, the purse, the Relics and the fleas; the loose shards say theirs beside it). */
+  const stepper = (x, of = false) => {
+    const [v, max] = x.n, top = x.top ?? max, what = pick(x.name);
+    return `<span class="inv-step"><button type="button" class="icon-btn" data-act="invCount" data-key="${esc(keyOf(x))}" data-value="${v - 1}" data-dir="less" ${v > 0 ? '' : 'disabled'} aria-label="${esc(t('invLess', { what }))}" title="${esc(t('invLess', { what }))}">−</button>
+      <b>${num(v)}${of ? `<i>/${num(max)}</i>` : ''}</b><button type="button" class="icon-btn" data-act="invCount" data-key="${esc(keyOf(x))}" data-value="${v + 1}" data-dir="more" ${v < top ? '' : 'disabled'} aria-label="${esc(t('invMore', { what }))}" title="${esc(t('invMore', { what }))}">+</button></span>`;
+  };
+  /* After a mark repaints the screen, the focus goes back where the key was: the repaint changes
+     the steppers' and the pieces' data-value, so js/app.js restoreFocus can't find them. */
+  const refocus = (sel, ...more) => {
+    const b = [sel, ...more].map((s) => document.querySelector(s)).find((n) => n && !n.disabled);
+    if (b) b.focus({ preventScroll: true });
   };
   /* A plate for the Crests, the items, what's in the purse, the Relics and the Mementos (design/43,
      5 A), drawn as the Silk Skills': the picture, the pip, the name, and under it the count or
@@ -143,7 +172,7 @@
      the button there; the rest is one button. */
   function plate(x) {
     const counted = marking && x.n;
-    const v = counted ? stepper(x) : x.count ? esc(x.count) : x.got ? '' : esc(t('invNotFound'));
+    const v = counted ? stepper(x, true) : x.count ? esc(x.count) : x.got ? '' : esc(t('invNotFound'));
     const vcls = `inv-plate-v${!counted && (!x.got || !x.count) ? ' is-none' : ''}`;
     const cls = `inv-plate${x.got ? '' : ' is-missing'}${picked === keyOf(x) ? ' is-picked' : ''}`;
     const label = pick(x.name) + (x.count ? ' ' + x.count : '') + (x.got ? '' : ' · ' + t('invMissing'));
@@ -162,7 +191,7 @@
   function mat(x, rule = false) {
     return `<div class="inv-mat${x.got ? '' : ' is-missing'}${rule ? ' is-rule' : ''}"><button type="button" class="inv-mat-art" data-act="invPick" data-key="${esc(keyOf(x))}" aria-expanded="${picked === keyOf(x)}" aria-label="${esc(pick(x.name) + ' ' + x.count)}"${NT}>
       <img src="${icon(x.list, x.art || x.id)}" alt=""></button><span class="inv-fname"${NT}>${esc(pick(x.name))}</span>
-      ${marking ? stepper(x) : `<span class="inv-mat-n">${num(x.n[0])}<i>/${num(x.n[1])}</i></span>`}</div>`;
+      ${marking ? stepper(x, true) : `<span class="inv-mat-n">${num(x.n[0])}<i>/${num(x.n[1])}</i></span>`}</div>`;
   }
   /* The loose Mask Shards or Spool Fragments under their row, as the sibling draws its shards: the
      game's piece lit up to what you hold, how many make a whole one, and − N + in Free mode. The
@@ -280,13 +309,17 @@
       tools: b0.tools.filter((id) => g.tools.includes(id)), skills: b0.skills.filter((id) => g.skills.includes(id)),
       crest: g.crests.includes(b0.crest) ? b0.crest : 'hunter', hunterStage: (g.build && g.build.hunterStage) || 1 });
     marking = !own;
-    const all = shown = things(g);
+    const all = shown = things(g, !own || !!(App.gameMeta() || {}).steel);
     const by = (list) => all.filter((x) => x.list === list);
     const still = own ? ' disabled' : '';
     const cats = Object.fromEntries(SS.completion.count(g).categories.map((c) => [c.id, c]));
     const r = SS.engine.compute(b);
     const skillV = (x) => { const s = r.skills.find((y) => y.id === x.id); return s ? s.total : null; };
     const artV = (x) => (x.id === 'needle-strike' && r.strike ? r.strike.total : null);
+    /* The abilities (design/62, 1 A): the seven of the 100% under the head's n/7, then the four that
+       aren't (the two cloaks, Beastling Call, Elegy of the Deep) under their own count, named as
+       Progress names them (pgOtherArts: the game has no name for them). */
+    const arts100 = by('arts').filter((x) => SS.completion.ARTS.includes(x.id)), artsOther = by('arts').filter((x) => !SS.completion.ARTS.includes(x.id));
     const item = (id) => all.find((x) => x.list === 'items' && x.id === id);
     /* The Tools by colour, one slot per point of the 100% (design/43, 4 A): a Tool and its upgrade
        share one, showing the one you have with two pips (had, upgraded); the Steel Soul twin
@@ -330,7 +363,9 @@
           ${needles(b, still, item('pale-oil'))}
           ${hornet(b, still, item('mask-shard'), item('spool-fragment'))}
           <section class="inv-sec">${head(t('cat_skills'), cats.skills, 'skills')}${plates(by('skills'), skillV)}${open(by('skills'))}</section>
-          <section class="inv-sec">${head(t('cat_arts'), cats.arts, 'arts')}${plates(by('arts'), artV)}${open(by('arts'))}</section>
+          <section class="inv-sec">${head(t('cat_arts'), cats.arts, 'arts')}${plates(arts100, artV)}
+            <p class="inv-sub" style="--c: var(--accent-line)">${esc(t('pgOtherArts'))} <span><b>${num(artsOther.filter((x) => x.got).length)}</b><i>/${num(artsOther.length)}</i></span></p>
+            ${plates(artsOther, artV)}${open(by('arts'))}</section>
         </div>
         <div class="inv-col">
           <section class="inv-sec">${head(t('cat_crests'), crestsN, 'crests')}${platesOf(crests)}${mat(item('memory-locket'), true)}${open([...crests, item('memory-locket')])}</section>
@@ -374,10 +409,17 @@
     const all = CO.PIECES.map((p, i) => (p[0] === kind ? i : -1)).filter((i) => i >= 0);
     m.pieces = [...m.pieces.filter((i) => CO.PIECES[i][0] !== kind), ...all.slice(0, Math.max(0, n))];
   }
-  // The typed fields (data-change) don't click: they commit when the browser says the value changed.
+  /* The typed fields (data-change) don't click: they commit when the browser says the value changed.
+     A moment later, so a Tab out of the field has landed first: the repaint then puts the focus
+     back where it went (js/app.js render), or in the field again after Enter. */
   document.addEventListener('change', (e) => {
     const f = e.target.closest && e.target.closest('[data-change="invMoney"]');
-    if (f) actions.invMoney(f);
+    if (!f) return;
+    setTimeout(() => {
+      const a = document.activeElement, field = a && a.dataset && a.dataset.change === 'invMoney' ? a.dataset.key : null;
+      actions.invMoney(f);
+      if (field) refocus(`[data-change="invMoney"][data-key="${field}"]`);
+    }, 0);
   });
   Object.assign(actions, {
     invOwn(node) {
@@ -429,12 +471,15 @@
     invCount(node) {
       const x = shown.find((y) => keyOf(y) === node.dataset.key);
       if (!x || !x.n) return;
-      const b = App.freeGame(), v = Math.max(0, Math.min(x.n[1], Number(node.dataset.value)));
-      if (x.shelf === 'purse') { mark((m) => { m.purse[x.id] = v; }); return; }
-      if (x.shelf === 'relics') { mark((m) => setRelics(m, x.kind, v)); return; }
+      const b = App.freeGame(), v = Math.max(0, Math.min(x.top ?? x.n[1], Number(node.dataset.value)));
+      const key = CSS.escape(node.dataset.key), dir = node.dataset.dir, other = dir === 'more' ? 'less' : 'more';
+      const back = () => refocus(`[data-act="invCount"][data-key="${key}"][data-dir="${dir}"]`, `[data-act="invCount"][data-key="${key}"][data-dir="${other}"]`);
+      if (x.shelf === 'purse') { mark((m) => { m.purse[x.id] = v; }); back(); return; }
+      if (x.shelf === 'relics') { mark((m) => setRelics(m, x.kind, v)); back(); return; }
       // The loose shards and fragments come after those already in whole masks and spools.
       const over = x.id === 'mask-shard' ? 4 * b.masks : x.id === 'spool-fragment' ? 2 * b.spools : 0;
       mark((m) => setKind(m, KIND[x.id], over + v));
+      back();
     },
     /* A typed figure of the purse, taken when the field is left or Enter is pressed: whole
        numbers only, 0 up to the cap (the Shell Shards' is the Pouch's). */
@@ -449,7 +494,10 @@
     invLevel(node) {
       const key = node.dataset.key, top = SS.saves.LADDER_TOP[key];
       if (App.game() || top == null) return;
+      // A piece of a row (a mask, a bead, a Silk Heart): the focus back on the same one.
+      const row = node.closest('.inv-pieces'), at = row ? [...row.children].indexOf(node) : -1;
       mark((m) => { m[key] = Math.max(0, Math.min(top, Number(node.dataset.value) || 0)); });
+      if (at >= 0) refocus(`.inv-pieces.is-${key} > :nth-child(${at + 1})`);
     },
     invPick(node) {
       picked = node.dataset.key === picked ? null : node.dataset.key;
