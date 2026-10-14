@@ -1693,6 +1693,33 @@ and 487 none, shown under every Act; and an Act showed only what first appears i
 still to get from the Acts before. The game sorts nothing by Act. Albert's choice: gone; a mark's
 card and title still say its Act, and Progress keeps its own.
 
+**The Map with every mark shown** (14 October). Albert found the site slow once the Map showed
+everything. Measured in headless Chrome over file:// (ANGLE-GL on the GPU; 1440 px, and 390 px at
+three device pixels a CSS pixel with the CPU four times slower, as a phone), with five saves and Free
+mode: «Whole map» (the faint layer) costs nothing per frame, the composed map being one image
+either way; «Show all» is what weighs: 2,600 to 2,800 marks in an early save or Free mode (1,385
+at 100%), 18,000 nodes, a pan of the whole map at 40 to 55 ms of main thread a frame, a zoom step
+at 40, every legend switch 250 ms (a second on the phone). The causes, and what changed in
+`js/app-map.js`: every mark read its transform from a `--k` the SVG passed down, so each zoom step
+restyled every node of every mark (now the transform is written on each mark, only when it
+changes, and `spread()` lists the marks once per map with a numeric grid); close up, every mark of
+every layer was laid out and painted though most were far out of the view (now those beyond a
+quarter of the view past an edge leave the layout, from 1.5 times closer); the map was drawn at
+its finest at every frame, the browser making its mipmaps again each time (now plain bilinear
+while the view moves, and as before once it's been still for 150 ms); every switch drew every
+screen again (now the legend's draw the Map only, `App.renderOnly`); and the grab cursor, changed
+at each drag's start and end, was passed down to every mark. In an early save with every mark
+shown, on the desktop a zoom step went from 50 to 30 ms and a close-up pan from 42 to 20 ms a
+frame, the renderer's memory after zooming from 1,090 to 640 MB, «Only the 100%» from 78 to 49 ms;
+on the phone a zoom step from 212 to 103 ms. At rest the Map is the same: of 48 screenshots set
+against `dev`'s (three saves, two widths, default and every layer, the whole map, zoomed in, after a
+drag and back out), 43 are the same to the pixel and none differs by more than one level, on at
+most 31 pixels. Left for later (step B): panning the whole map with every mark
+shown still repaints them all at every frame (about 15 to 20 frames a second on a desktop, 6 on
+the phone); moving the drawn view with a transform while the drag lasts, and leaving the caches and
+walls out of the page until close up, would take it to 60, at the cost of a margin drawn past the
+view's edges (a design question).
+
 **Hornet on the ground** (14 October). Albert saw Hornet sitting in mid-air at Bone Bottom's bench
 and in the rock at one of Mount Fay's. The Map and Your game's area map put her feet on the game's
 bench pin, and the game sets its pins by hand: a median 2.8 px above the bench, Bone Bottom's 24 px

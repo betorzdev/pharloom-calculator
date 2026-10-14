@@ -356,8 +356,13 @@
   /* ── The screens ─────────────────────────────────────────────────────── */
   App.screens = {};   // view → painter, registered by each screen's script (js/app-*.js)
   const screenOf = (v) => el.screens.querySelector(`.screen[data-view="${v}"]`);
+  /* A render for one screen's own switches (the Map's legend): that screen drawn again, not every
+     one; the rest are drawn again when shown (go, render). */
+  let only = null;
+  App.renderOnly = (v) => { only = v; try { render(); } finally { only = null; } };
   function renderScreens() {
     for (const v of VIEWS) {
+      if (only && v !== only) continue;
       const sec = screenOf(v);
       if (!sec) continue;
       if (App.screens[v]) { safely('screen-' + v, () => App.screens[v](sec)); continue; }
