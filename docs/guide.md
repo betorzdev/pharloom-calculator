@@ -81,47 +81,37 @@ In Free mode, the card a profile shows, unlit: «Resting at Pharloom», Hornet i
 Bone Bottom's bench (the first one) and the four figures waiting, with Import Save Data. Drag your save file onto it and it goes into the first
 empty profile.
 
-In a save, the game's area title card: **Resting at** the area of the bench Hornet sits at, lit by
-that area's own colour on the game's map, the room's area under it when it's another (Coral
-Tower in the Sands of Karak), the Act and the time played; Hornet sitting on that very bench (each room's bench is read
-from the game's files; one it doesn't know shows Bone Bottom's). When the save was written where
-the game wakes her at a room's own respawn point instead (a restore point after a boss or an
-ability), the card says **Your respawn point** over that area, shows her standing with no bench,
-and its list is what's closest to that point. Then four
-figures: **your 100%**, the Journal, the masks and the rosaries (two by two on a phone). Beside the card (under it on a
-phone) is **the map of that area**, drawn as the Map screen draws it (the same view, «Only what
-the game shows» included), cropped to the area's rooms and fading out at its edges, with Hornet
-sitting on your bench and the Map's own marks over it: the layers and filters you have set on the
-Map (its legend) decide which show, so the two
-agree (the caches and walls, which the Map only draws close up, are left out); a tap on it opens
-the Map. Under it, the road to the next
-Act when there is one (the step you're on, by its name, and how far into it), then three columns: what changed since the previous save (below), what's
-missing **closest to your bench** (the first five, by the game's doors and the stations you've opened, each with its area and a pin that shows it on the Map), and your 100% split into
-the wiki's ten categories (Tools, Silk Spools, the Tool Pouch & Crafting Kit, abilities, Silk Skills, Crests,
-masks, the Needle, Silk Hearts, the Everbloom), with the figure the game itself shows under it:
-they're the same. The site counts as the game does, checked on 92 real saves (0% to 100%, four
-patches, Steel Soul): whole masks and spools, not loose shards and fragments (two shards are
-still 0%), and a Tool and its upgrade (Curveclaw and Curvesickle) are one point. And the
-Journal: the required entries with their kills done, out of 230 (231 in Steel Soul). Each
-category opens Progress. At the foot, the ways on: Progress, the Map, the Journal (with the
-entries still to go) and the Crest screen. With a save loaded, the text about the site under
-the screen folds into «About this site».
+In a save, a calm scene that says only what no other tab says: **Resting at** the area of the
+bench Hornet sits at, lit by that area's own colour on the game's map, with **the map of that
+area** faint behind it (drawn as the Map screen draws it, «Only what the game shows» included,
+cropped to the area's rooms and fading out at its edges: a picture, with no marks; the Map tab is
+where you look things up); the room's area under the name when it's another (Coral Tower in the
+Sands of Karak), the Act and the time played; Hornet sitting on that very bench (each room's
+bench is read from the game's files; one it doesn't know shows Bone Bottom's). When the save was
+written where the game wakes her at a room's own respawn point instead (a restore point after a
+boss or an ability), it says **Your respawn point** over that area and shows her standing with no
+bench. Under her, **your 100%** as one figure, which opens Progress («What's missing for 100%»;
+«Everything in Progress» once it's 100). The site counts as the game does, checked on 92 real
+saves (0% to 100%, four patches, Steel Soul): whole masks and spools, not loose shards and
+fragments (two shards are still 0%), and a Tool and its upgrade (Curveclaw and Curvesickle) are
+one point; if a save's own figure ever differed, Progress says so. With a save loaded, the text
+about the site under the screen folds into «About this site».
+
+What the other tabs show isn't repeated here: the parts of the 100% and the road to the next Act
+are in Progress, the Journal's count in the Journal (and on the bar), masks and rosaries in the
+Inventory, and what's missing nearby on the Map.
 
 When the profile follows the game's save file, each new save the game writes to it (the auto saves
 go to their own folder and aren't followed) brings a block **Since
-the previous save**: first what the completion went up by, from and to on one gauge, and when
-the save before was made; then everything new grouped by kind under small heads (Crests, Silk
-Skills, abilities, Tools, upgrades with their new value, pieces found with their area, tasks done,
-gauntlets cleared), each as a row with its picture (a Tool on its slot's diamond, a piece or a
-gauntlet with its mark on the Map), and the Journal entries new or completed as their portraits.
-A long list shows its first eight rows and «Show all n» opens the rest. The notice at the top
-says the same in one line.
-
-The three lists share one look: each row has its picture, its name in the game's lettering and
-its area under it, and «Closest to your bench» keeps its pin to the Map. Each part of the 100%
-has a picture, its count and a gauge, and a finished one lights its diamond. When you arrive at
-the screen, or the followed file brings a new save, the rows fade in one after another (not with
-reduced motion).
+the previous save** under the scene: first what the completion went up by, from and to on one
+gauge, and when the save before was made; then everything new grouped by kind under small heads
+(Crests, Silk Skills, abilities, Tools, upgrades with their new value, pieces found with their
+area, tasks done, gauntlets cleared), each as a row with its picture (a Tool on its slot's
+diamond, a piece or a gauntlet with its mark on the Map), its name in the game's lettering and its
+area under it, and the Journal entries new or completed as their portraits. A long list shows its
+first five rows and «Show all n» opens the rest. The notice at the top says the same in one line.
+When you arrive at the screen, or the followed file brings a new save, the rows fade in one after
+another (not with reduced motion).
 
 ### Inventory
 
@@ -530,7 +520,7 @@ or Pouch follows the Inventory's levels instead, as on Progress, and its card le
 and what's left there of the 100%, the Journal and the gauntlets.
 
 Other screens open the map on a thing: «See on the map» on each missing row of Progress and on a
-Journal entry, and each line of «Closest to your bench» in Your game. A step of Progress's road
+Journal entry. A step of Progress's road
 opens it on all that's left of the step at once («See the 2 on the map»: the Bellshrines still to
 ring, the snare's pieces, what's next for Silk and Soul): the map shows only those marks, whatever
 its switches say, framed to fit them, and a line in the search's place names the step, with ‹ › to
@@ -723,9 +713,7 @@ they're closed in that game. Where it's taken is the game's: the Wishwall that l
 (Bellhart's, Bone Bottom's or Songclave's), or the NPC who offers it; a wish that comes after
 another on a board (Crawbug Clearing, Berry Picking…) counts the board until that one is done, and
 the NPC after. A part
-already met hides its rows under "What's missing". On Your game, one line says which step you're
-on, by its name, and how far into it («The road to Act 3 · step 1 of 5: Unlock "Silk and Soul" · 28
-of 31»), and links here. A slot saved before the site read the wishes asks to be imported again.
+already met hides its rows under "What's missing". A slot saved before the site read the wishes asks to be imported again.
 
 Then what's missing for 100%, in the wiki's ten categories: the Tools (with their slot colour),
 Crests, Silk Skills and abilities by name, and the Mask Shards, Spool Fragments, Crafting Kit

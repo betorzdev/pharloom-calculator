@@ -145,7 +145,6 @@
     /* Your game: the start screen (js/app-home.js) */
     homeInviteBtn:  { es: 'Importar datos de guardado', en: 'Import Save Data' },   // PS4_SAVE_IMPORT_LABEL without its «PS4™»
     homeCompletion: { es: 'Tu 100 %', en: 'Your 100%' },
-    homeMatches:    { es: 'Coincide con el {pct} que muestra el juego.', en: 'It matches the {pct} the game shows.' },
     homeDiffers:    { es: 'El juego muestra {pct}: tu archivo es de una versión que cuenta distinto, o hay un fallo. Escríbenos.',
                       en: 'The game shows {pct}: your file is from a version that counts differently, or there\'s a bug. Write to us.' },
     homeJournal:    { es: 'Diario', en: 'Journal' },   // PANE_JOURNAL
@@ -153,17 +152,8 @@
     homeRest:       { es: 'Descansando en', en: 'Resting at' },
     homeKingdom:    { es: 'Telalejana', en: 'Pharloom' },   // MQ_BELLSHRINES_LOC
     homeGhost:      { es: 'Aquí irá tu partida', en: 'Your game goes here' },
-    homeNearMap:    { es: 'En el mapa', en: 'On the map' },
-    homeMapLabel:   { es: 'Mapa de {area}', en: 'Map of {area}' },   // PANE_MAP, and the area's name
-    homeParts:      { es: 'Tu 100 %, por partes', en: 'Your 100%, by part' },
     homeAllParts:   { es: 'Todo en Progreso', en: 'Everything in Progress' },
-    homeGoLabel:    { es: 'Sigue por', en: 'Where next' },
     homeGoProgress: { es: 'Lo que te falta para el 100 %', en: 'What\'s missing for 100%' },
-    homeGoMap:      { es: 'Dónde está, en el mapa del juego', en: 'Where it is, on the game\'s map' },
-    homeGoJournal:  { es: 'Te quedan {n} entradas', en: '{n} entries to go' },
-    homeGoJournal1: { es: 'Te queda {n} entrada', en: '{n} entry to go' },
-    homeGoJournal0: { es: 'Completo para Nuu', en: 'Complete for Nuu' },
-    homeGoCrest:    { es: 'Tu build, cifra a cifra', en: 'Your build, figure by figure' },
     aboutFold:      { es: 'Sobre esta web', en: 'About this site' },
     cat_tools:      { es: 'Herramientas', en: 'Tools' },
     cat_spools:     { es: 'Carretes de seda', en: 'Silk Spools' },
@@ -294,8 +284,6 @@
     mapPlace_bench1:{ es: 'Banco', en: 'Bench' },   // KEY_BENCH
     mapPlace_bellway:{ es: 'Vías Campana', en: 'Bellways' },   // MAP_LIST_TITLE
     mapPlace_ventrica:{ es: 'Ventrica', en: 'Ventrica' },   // KEY_TUBE
-    mapNear:        { es: 'Lo más cerca de tu banco', en: 'Closest to your bench' },
-    mapNearRespawn: { es: 'Lo más cerca de tu punto de reaparición', en: 'Closest to your respawn point' },   // no game text: as mapRespawn
     mapFrom:        { es: 'Tu banco anterior', en: 'Your previous bench' },
     // No game text for a respawn point (searched: respawn, reaparecer, wake): written for the context.
     mapRespawn:     { es: 'Tu punto de reaparición', en: 'Your respawn point' },
@@ -910,8 +898,6 @@
     pgNote_melody:       { es: 'Abren el camino a la Cuna en el Acto 2, y derrotar allí a Lace es condición del Acto 3.', en: 'They open the way to the Cradle in Act 2, and defeating Lace there is a condition of Act 3.' },
     pgNote_otherArts:    { es: 'No cuentan, pero abren caminos; la Capa de fayforno es condición del Acto 3.', en: 'They don\'t count, but they open the way; the Faydown Cloak is a condition of Act 3.' },
     pgNote_gauntlets:    { es: 'Arenas de oleadas; varias dan un objeto que sí cuenta.', en: 'Wave arenas; several give a thing that does count.' },
-    homeRoad:       { es: 'Camino al Acto {n} · paso {k} de {total}: {step}', en: 'The road to Act {n} · step {k} of {total}: {step}' },
-    homeRoadPart:   { es: 'Camino al Acto {n} · paso {k} de {total}: {step} · {done} de {of}', en: 'The road to Act {n} · step {k} of {total}: {step} · {done} of {of}' },
 
     /* Footer: the fan-project notice, the sources and the author (docs/guide.md, "Credits and licences") */
     footLabel:      { es: 'Aviso, fuentes y contacto', en: 'Notice, sources and contact' },
