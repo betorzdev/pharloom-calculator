@@ -189,6 +189,13 @@ test('where each Journal entry is: the game\'s own placements, each scene in one
   assert.strictEqual(R.roomOf('bone_05_boss').scene, 'Bone_05');
   assert.strictEqual(R.areaOf('Greymoor_04'), 'GREYMOOR');
   assert.strictEqual(R.areaOf('Tut_01'), 'MOSSCAVE');
+  /* A piece lying in a room is in its own area, though its branch of the map holds others: the Mask
+     Shard in Song_09 is Cogwork Core's, not the High Halls' its branch (Song) takes. */
+  const lying = CO.PIECES.filter((p) => R.sceneOf(p[2]) && p[3] && R.roomOf(R.sceneOf(p[2])));
+  assert.ok(lying.length >= 80, `${lying.length} pieces lying in a room`);
+  assert.deepEqual(lying.filter((p) => R.areaOf(R.sceneOf(p[2])) !== p[3]).map((p) => `${p[0]} ${R.sceneOf(p[2])}`), []);
+  assert.strictEqual(R.areaOf('Song_09'), 'COGWORK_CORE');
+  assert.strictEqual(R.areaOf('Song_10'), R.areaOf('Song_02'));   // the rest of the branch, by its vote
 });
 
 test('every Journal entry has a place, the 29 the game makes at run time too, and a way there', () => {
@@ -212,8 +219,10 @@ test('every Journal entry has a place, the 29 the game makes at run time too, an
   assert.deepEqual(lost, []);
   const areas = (k) => new Set(JR[k].map(([s]) => R.areaOf(s)).filter(Boolean));
   // Checked against the wiki (kb/data/raw/): the Muckmaggots only where their waters are on
-  // (Sinner's Road, Bilewater, Putrified Ducts, Wisp Thicket), the Sandcarvers in the sand.
-  assert.deepEqual([...areas('NAME_MAGGOTS')].sort(), ['AQUEDUCTS', 'DUSTPENS', 'SHADOW', 'WISP']);
+  // (Sinner's Road, Bilewater, Putrified Ducts, Wisp Thicket; Dust_09 is the Exhaust Organ, inside
+  // Sinner's Road on the wiki and an area of its own in the game, as its Lost Flea says), the
+  // Sandcarvers in the sand.
+  assert.deepEqual([...areas('NAME_MAGGOTS')].sort(), ['AQUEDUCTS', 'DUSTPENS', 'ORGAN', 'SHADOW', 'WISP']);
   assert.deepEqual([...areas('NAME_SAND_CENTIPEDE')].sort(), ['CORAL_RIVER', 'CORAL_STEPS']);
   assert.deepEqual([...areas('NAME_SHELLWOOD_GNAT')].sort(), ['ARBORIUM', 'SHELLWOOD']);
   assert.deepEqual([...areas('NAME_LIFEBLOOD_FLY')].sort(), ['BONEBOTTOM', 'CRAWL']);

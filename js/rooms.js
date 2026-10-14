@@ -127,24 +127,35 @@
   }
 
   /* A scene's area as the game names it (js/collectibles.js AREAS, the save's currentArea ids).
-     The map's branches (Bone, Crawl…) aren't those ids; the join comes from the data: every piece,
-     wish and gauntlet has its scene and its area, and each branch takes the area most of its own
-     carry. Four branches carry none and are named here; Surface has no area of its own. */
+     The map's branches (Bone, Crawl…) aren't those ids, and a branch can hold several areas (Song:
+     the High Halls, Cogwork Core, the Songclave); the join comes from the data: every piece lying
+     in a room, wish and gauntlet has its scene and its area. A scene of theirs takes the area they
+     carry there (the most of them, should they differ), so a piece's room is its own area; any
+     other scene takes its branch's, the area most of the branch's carry. Four branches carry none
+     and are named here; Surface has no area of its own. */
   const AREA_FALLBACK = { Abyss: 'ABYSS', Cradle: 'CRADLE', 'Dust Maze': 'MISTMAZE', Tut: 'MOSSCAVE' };
-  let AREA_OF = null;
+  let AREA_OF = null, AREA_AT = null;
+  const most = (v) => Object.entries(v).sort((a, b) => b[1] - a[1])[0][0];
   function areaOf(scene) {
     if (!AREA_OF) {
       const CO = SS.collectibles || require('./collectibles.js');
       const GA = SS.gauntlets || require('./gauntlets.js');
-      const vote = {};
-      const add = (sc, area) => { const r = sc && area && roomOf(sc); if (r) (vote[r.area] = vote[r.area] || {})[area] = (vote[r.area][area] || 0) + 1; };
+      const vote = {}, at = {};
+      const add = (sc, area) => {
+        const r = sc && area && roomOf(sc);
+        if (!r) return;
+        (vote[r.area] = vote[r.area] || {})[area] = (vote[r.area][area] || 0) + 1;
+        const k = sc.toLowerCase();
+        (at[k] = at[k] || {})[area] = (at[k][area] || 0) + 1;
+      };
       for (const p of [...CO.PIECES, ...CO.WISHES]) add(sceneOf(p[2]), p[3]);
       for (const g of GA.GAUNTLETS) add(g.scene, g.area);
       AREA_OF = { ...AREA_FALLBACK };
-      for (const [branch, v] of Object.entries(vote)) AREA_OF[branch] = Object.entries(v).sort((a, b) => b[1] - a[1])[0][0];
+      for (const [branch, v] of Object.entries(vote)) AREA_OF[branch] = most(v);
+      AREA_AT = new Map(Object.entries(at).map(([k, v]) => [k, most(v)]));
     }
     const r = roomOf(scene);
-    return r ? AREA_OF[r.area] || null : null;
+    return r ? AREA_AT.get(scene.toLowerCase()) || AREA_OF[r.area] || null : null;
   }
 
   /* ── The map as the game draws it ─────────────────────────────────────
