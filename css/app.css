@@ -1711,10 +1711,10 @@ button.inv-plate-art { padding: 0; }
 .inv-sub::before { content: ''; width: var(--sp-2); height: var(--sp-2); transform: rotate(45deg); background: var(--c); }
 .inv-sub b { color: var(--ink-2); }
 .inv-sub i { font-style: normal; font-weight: 400; color: var(--muted); }
-/* The two Tools a wish lends (design/43, 4 A): apart, after the colours, with a hollow diamond. */
-.inv-sub.is-out { margin-top: var(--sp-4); }
-.inv-sub.is-out::before { background: none; border: 1px solid var(--label); }
-.inv-out-note { margin: calc(var(--sp-1) * -1) 0 0; font-size: var(--fs-xs); color: var(--muted); }
+/* The two Tools a wish lends (design/51, A): among the reds, their slot dashed, and a line under
+   the row with a dashed diamond of the colour saying why they're out of the count. */
+.inv-lent { display: flex; align-items: center; gap: var(--sp-2); margin: calc(var(--sp-2) * -1) 0 0; font-size: var(--fs-xs); color: var(--muted); }
+.inv-lent::before { content: ''; flex: none; width: var(--sp-3); height: var(--sp-3); transform: rotate(45deg); border: 1px dashed var(--c); }
 .inv-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, calc(var(--sp-12) + var(--sp-2))); gap: var(--sp-2); }
 .inv-grid > li { display: grid; justify-items: center; gap: var(--sp-half); }
 .inv-cell {
@@ -1743,6 +1743,7 @@ button.inv-plate-art { padding: 0; }
 }
 .inv-cell.is-slot.is-missing::before { border: 1px solid color-mix(in oklab, var(--c) 55%, transparent); background: var(--scene-bg); }
 .inv-cell.is-slot.is-missing img { filter: grayscale(1) brightness(0.85); opacity: 0.42; }
+.is-lent > .inv-cell.is-slot::before { border-style: dashed; }
 /* A Tool and its upgrade on one slot (design/43, 4 A): two pips under it, had and upgraded. */
 .inv-grid > li.is-twin { position: relative; }
 .is-twin .inv-cell::after { content: none; }

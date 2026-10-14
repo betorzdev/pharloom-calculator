@@ -113,12 +113,14 @@
      Tool and its upgrade on one slot (design/43, 4 A) show the one you have, with two pips under
      it, had and upgraded; in Free mode a tap goes none, had, upgraded (invTwin). */
   function cell(x, twin = null) {
+    const lent = LENT.includes(x.id);
     const cls = `inv-cell${x.got ? '' : ' is-missing'}${x.color ? ' is-slot' : ''}${picked === keyOf(x) ? ' is-picked' : ''}`;
     const name = twin ? twin.names : pick(x.name);
     const label = name + (x.count ? ' ' + x.count : '') + (x.got ? '' : ' · ' + t('invMissing'));
     const act = marking && twin ? 'invTwin' : marking && markable(x) ? 'invOwn' : 'invPick';
     const pips = twin && twin.pips ? `<span class="inv-pips" aria-hidden="true">${twin.pips.map((on) => `<i class="${on ? 'is-on' : ''}"></i>`).join('')}</span>` : '';
-    return `<li${pips ? ' class="is-twin"' : ''}><button type="button" class="${cls}"${x.color ? ` style="--c: var(--slot-${x.color})"` : ''} data-act="${act}" data-key="${esc(twin && marking ? twin.key : keyOf(x))}"
+    const li = [pips ? 'is-twin' : '', lent ? 'is-lent' : ''].filter(Boolean).join(' ');
+    return `<li${li ? ` class="${li}"` : ''}><button type="button" class="${cls}"${x.color ? ` style="--c: var(--slot-${x.color})"` : ''} data-act="${act}" data-key="${esc(twin && marking ? twin.key : keyOf(x))}"
       ${act === 'invPick' ? `aria-expanded="${picked === keyOf(x)}"` : `aria-pressed="${x.got}"`} aria-label="${esc(label)}" title="${esc(name)}"${NT}>
         <img src="${icon(x.list, x.art || x.id)}" alt="" loading="lazy"></button>${pips}</li>`;
   }
@@ -288,12 +290,15 @@
     const item = (id) => all.find((x) => x.list === 'items' && x.id === id);
     /* The Tools by colour, one slot per point of the 100% (design/43, 4 A): a Tool and its upgrade
        share one, showing the one you have with two pips (had, upgraded); the Steel Soul twin
-       shows Shell Satchel when you have it. The two a wish lends go apart, after the colours. */
+       shows Shell Satchel when you have it. The two a wish lends sit among the reds where the
+       game lists them, their slot dashed and out of the count, a line under the row saying why
+       (design/51). */
     const tool = (id) => all.find((x) => x.list === 'tools' && x.id === id);
     const rows = ['red', 'blue', 'yellow'].map((c) => {
       const seen = new Set(), cells = [];
       let got = 0;
-      for (const x of by('tools').filter((y) => y.color === c && !LENT.includes(y.id))) {
+      for (const x of by('tools').filter((y) => y.color === c)) {
+        if (LENT.includes(x.id)) { cells.push(cell(x)); continue; }
         const grp = GROUP.get(x.id);
         if (!grp || seen.has(grp)) continue;
         seen.add(grp);
@@ -302,10 +307,10 @@
         if (on) got++;
         cells.push(cell({ ...(z.got ? z : a), got: on }, { key: a.id, names: `${pick(a.name)} · ${pick(z.name)}`, pips: steel ? null : [on, z.got] }));
       }
-      return `<p class="inv-sub" style="--c: var(--slot-${c})">${esc(t('ct_' + c))} <span><b>${num(got)}</b><i>/${num(seen.size)}</i></span></p><ul class="inv-grid">${cells.join('')}</ul>`;
+      const lent = by('tools').some((y) => y.color === c && LENT.includes(y.id));
+      return `<p class="inv-sub" style="--c: var(--slot-${c})">${esc(t('ct_' + c))} <span><b>${num(got)}</b><i>/${num(seen.size)}</i></span></p><ul class="inv-grid">${cells.join('')}</ul>
+        ${lent ? `<p class="inv-lent" style="--c: var(--slot-${c})">${esc(t('invLentNote'))}</p>` : ''}`;
     }).join('');
-    const lent = `<p class="inv-sub is-out">${esc(t('invLentTitle'))}</p><p class="inv-out-note">${esc(t('invLentNote'))}</p>
-      <ul class="inv-grid">${LENT.map((id) => cell(tool(id))).join('')}</ul>`;
     // The Hunter Crest is always had, and drawn lit: the head counts it with the rest (the 100% doesn't).
     const crests = by('crests'), crestsN = { got: crests.filter((x) => x.got).length, max: crests.length };
     // The items: the Everbloom, the Farsight, the Journal, the Old Hearts and the melodies; the fleas count on their own plate.
@@ -331,7 +336,7 @@
           <section class="inv-sec">${head(t('cat_crests'), crestsN, 'crests')}${platesOf(crests)}${mat(item('memory-locket'), true)}${open([...crests, item('memory-locket')])}</section>
           <section class="inv-sec is-tools">${head(t('cat_tools'), cats.tools, 'tools')}
             <div class="inv-levels">${level(b, 'kit', 'crafting-kit', still)}${level(b, 'pouch', 'tool-pouch', still)}${mat(item('craftmetal'))}</div>${open([item('craftmetal')])}
-            ${rows}${lent}${open(by('tools'))}</section>
+            ${rows}${open(by('tools'))}</section>
         </div>
       </div>
       <div class="inv-bag">
