@@ -45,7 +45,7 @@ the word (`js/app-sister.js`, css `.mh-sister`, `.sis-*`), as Hornet stands on �
 no arrival, he's simply there (Albert, 13 Oct 2026), breathing (the game's Idle at a third of its
 speed, there and back). Every 15–25 s (header in view, tab visible) his cloak stirs in the wind, he
 looks up, reads his map or focuses soul in a white light; he turns to the mouse over the header and
-looks up while it's on the link. A click counts as `sister`, as on the sibling. With reduced motion
+looks up while it's on the link. A click counts as `sister` with `to: 'hallownest'` (the sister's Footworn id, which its dashboard draws as a villager crossing to that quarter), as on the sibling. With reduced motion
 he only stands. He's decoration: hidden from screen readers, never under the pointer.
 
 ### Saves
@@ -852,7 +852,7 @@ The visit counter is [Footworn](https://github.com/betorzdev/footworn) (`track()
 Cloudflare Worker in Western Europe. It sets no cookies, keeps no IP, and stores one row per visit
 with nothing that names you: the page, referrer host, browser and system families, screen width,
 language, country and the site's events (`screen` with `view` and `lang`, `lang`, `error` with
-`part`, and the plain ones: `share`, `save-import`, `save-sync`...). The owner sees them as daily
+`part`, `sister` with `to` (the other site's id), and the plain ones: `share`, `save-import`, `save-sync`...). The owner sees them as daily
 counts and, for today only, one by one, rounded (the minute, phone/tablet/desktop); its own
 record of what it stores is at footworn.betorzdev.workers.dev/privacy. That fits the AEPD's exemption for audience measurement ("Guía uso de
 cookies para herramientas de medición de audiencia", January 2024), whose one condition that
