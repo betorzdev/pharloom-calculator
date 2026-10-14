@@ -639,7 +639,7 @@ a ring that opens its list; the rows you open stay open. «What's missing · Eve
 Act · Nearest first» sit just above the rows.
 
 Opened, a category lists its things by Act: each with its picture, its name (a Tool with its
-slot's colour) and how to get it, its area on the right, and a pin that shows it on the Map. A thing
+slot's colour; in a Steel Soul save, the Shell Satchel where Classic has the Dead Bug's Purse) and how to get it, its area on the right, and a pin that shows it on the Map. A thing
 just lying in a room says so («Found in the area: the pin shows where»).
 
 In **Free mode** Progress counts what you mark, from a New Game (0% until you mark something),

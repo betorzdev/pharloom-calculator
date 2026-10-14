@@ -155,11 +155,15 @@
     const pieces = (kind, name) => CO.PIECES.map((p, i) => ({ p, i })).filter(({ p }) => p[0] === kind)
       .map(({ p, i }, k) => ({ name: name ? name(k) : KIND_NAME[kind](), got: !!g && g.pieces.includes(i), act: p[1], area: p[3], scene: R.sceneOf(p[2]),
         ...howParts(HW.HOW.pieces[i], HW.NEEDS.pieces[i]), ways: HW.HOW.pieces[i], icon: pieceIcon(kind, k), mark: 'piece:' + i }));
+    /* A Steel Soul save has the Tool its mode gives instead of another (js/data.js replaces: the
+       Shell Satchel for the Dead Bug's Purse): the row is named and drawn as that one. Free mode,
+       with no mode, as Classic. Where it is, how to get it and its mark stay the pair's. */
+    const steel = !!(g && App.game() && (App.gameMeta() || {}).steel);
     const tools = CO.COUNTED.map((ids) => {
-      const tool = D.TOOLS.find((x) => x.id === ids[0]);
+      const tool = (steel && ids.map((id) => D.TOOLS.find((x) => x.id === id)).find((x) => x && x.replaces)) || D.TOOLS.find((x) => x.id === ids[0]);
       const got = !!g && ids.some((id) => g.tools.includes(id));
       return { name: pick(tool.name), got, color: tool.color, ...where(CO.WHERE.tools, ids[0]), ...howParts(HW.HOW.tools[ids[0]], HW.NEEDS.tools[ids[0]]), ways: HW.HOW.tools[ids[0]],
-        icon: `assets/icons/tools/${ids[0]}.webp`, mark: 'tools:' + ids[0] };
+        icon: `assets/icons/tools/${tool.id}.webp`, mark: 'tools:' + ids[0] };
     });
     const named = (list, ids, map, key) => ids.map((id) => ({ name: pick(list.find((x) => x.id === id).name), got: has(g ? g[key] : [], id), ...where(map, id),
       ...howParts(HW.HOW[key][id], HW.NEEDS[key][id]), ways: HW.HOW[key][id], icon: `assets/icons/${key}/${id}.webp`, mark: key + ':' + id }));
