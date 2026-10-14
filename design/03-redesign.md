@@ -42,7 +42,7 @@ the work up reads it first, then the step it's on.
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
-| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html` |
+| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
@@ -1099,6 +1099,35 @@ from afar (zoom up to 1.5), a name whose box meets a larger area's (`.mp-name.is
 out again when the map, its size or the zoom changes and once the typeface is in; `paintCard()`
 flips the card below its mark when above it would meet `.mp-find` or `.mp-tools`. On a phone the
 names already waited for the zoom.
+
+### Retouch: the marks' size (14 October 2026)
+
+Albert: «revisar el tamaño de todos los items en el mapa para que tengan todos un tamaño similar».
+Measured over Free mode and his four saves (562 different pictures, alpha over 40): every mark is
+one disc (22 px on the whole map, 18 on a phone, up to ×1.25 close up; bosses, places and the fine
+layers alike), its picture's canvas in a 0.92 box. Most art already filled 0.85 to 0.92 of the disc;
+the outliers were the Mask Shard at 0.50 (its file has a fifth of margin all round, tiny in the
+selector too), the Journal's portraits at 0.73 (bosses, gauntlets, unique enemies, Shakra, the
+Journal: 323 pictures), the place pins at 0.79, and up to a tenth of a picture past the rim (the
+people's busts, keys, levers, Longpin, the Plasmium Phial; the Needle at 1.06). By weight (opaque
+area) they go from 0.06 of the disc (Clawline) to 0.96 (a pilgrim's head).
+
+The options (`70-mark-size-variants.html`, the real site on its Map with a sampler of every layer;
+kept out of the repo): 1 how to even them, **A** the same visible box, B by visual weight, C as
+they were; 2 the disc, **A** one size for all, B by role (bosses ×1.25, places ×1.1, fine ×0.8), C
+only the fine ones smaller; 3 the rim, **A** each picture whole inside the disc, B cut by it, C as
+it was; 4 **A** the selector and the lists measured the same way, B the map only.
+
+**Decision: 1 A, 2 A, 3 A, 4 A** (Albert, 14 October 2026). `tools/fit-marks.py` (`npm run
+mark-fit`) measures every picture a mark can show and writes `js/mark-fit.js` (its canvas, its
+opaque box's centre and longest side, its farthest opaque pixel; the Needle's box once turned;
+Eva's slot signs from js/crest-slots.js); `test/mark-fit.test.js` fails when a picture has no
+measure or a measure no picture. `js/app-map.js` `fitOf()` places each one: its opaque box centred,
+its longest side 0.80 of the disc, shrunk just enough that nothing crosses r 0.45 (the plate is
+0.47); `artOf()` draws the Map's and Your game's area map's marks from it, and `img()` the HTML
+discs (Your game's lists, the card) and the selector's bare pictures (0.86 of their square, no rim)
+through `.mp-fit` (css). The glyphs stay as they were: white strokes on black already weigh as much
+as a picture.
 
 ## Step 7 · Journal
 

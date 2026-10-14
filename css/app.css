@@ -2518,6 +2518,12 @@ html:has(.mp.is-full) { overflow: hidden; }
 .mp-dot img { width: calc(var(--mp-s, 22px) * 0.86); height: calc(var(--mp-s, 22px) * 0.86); object-fit: contain; }
 /* The Needle, a long thin line, laid across the disc as the fight's card lays it (.ft-cardx). */
 .mp-dot.is-needle img { transform: rotate(35deg) scale(1.2); }
+/* A picture placed by its measure (js/app-map.js fitOf; design/03-redesign.md, step 6, the marks'
+   size): it fills its disc, or the selector's square, moved and scaled so its opaque part is as big
+   as every other's and centred. */
+:is(.mp-dot, .mp-pin.is-badge) img.mp-fit { width: 100%; height: 100%; }
+img.mp-fit { transform: translate(calc(var(--fx) * 100%), calc(var(--fy) * 100%)) scale(var(--fs)); }
+.is-needle > img.mp-fit { transform: translate(calc(var(--fx) * 100%), calc(var(--fy) * 100%)) scale(var(--fs)) rotate(35deg); }
 /* The map in SVG, as the sibling's: the view is its viewBox, the marks keep their size (--k). */
 .mp-svg { position: relative; display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; user-select: none; }
 /* The map's pieces, composed on a canvas under the SVG (js/map-paint.js), in the map's tone. */

@@ -497,7 +497,10 @@ boss's arena, with the person who gives it. All of it on at first.
 
 Each mark is the thing's own picture on a dark disc with a thin rim, as the Hollow Knight site
 draws them, over a pale plate so a dark portrait reads, about the same size at any zoom, a little
-bigger close up. What has no picture of its own takes one of the game's: Shakra's Journal portrait, a key of the
+bigger close up. Every picture shows at the same visible size, whatever margin its file carries: its
+opaque part is measured (tools/fit-marks.py, js/mark-fit.js), centred and drawn at 0.8 of the disc,
+or smaller where it would cross the plate; the selector under the map and Your game's lists measure
+them the same way. What has no picture of its own takes one of the game's: Shakra's Journal portrait, a key of the
 inventory for a locked door, the pause menu's Wishes tab for a Wishwall, a wish's emblem for who
 asks for one, the herald's emblem for who gives a thing of the 100%, the game's Bellhome bench pin
 for its furnishings, the Citadel's brass lever for the levers and a Docks plate for the pressure
