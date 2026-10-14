@@ -180,11 +180,6 @@ test('a pin lights by fields the save keeps, not one the game works out (Unlocke
   assert.ok(M.PINS.some((p) => flags(p[4]).includes('UnlockedUnderTube') && p[3] === 'Tube_Hub_Destroyed'));
 });
 
-test('a thing\'s prereqs are abilities or Silk Skills the save tells', () => {
-  const ids = new Set([...D.ARTS, ...D.SKILLS].map((x) => x.id));
-  for (const [key, needs] of Object.entries(SP.NEEDS)) for (const id of needs) assert.ok(ids.has(id), `${key}: ${id}`);
-});
-
 test('a save gives the Map its rooms visited, maps, cocoon, extras and bosses, and a slot keeps them', () => {
   const i = SP.EXTRAS.findIndex((x) => x[2][0] === 'int');
   const [, , c] = SP.EXTRAS[i];

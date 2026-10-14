@@ -301,29 +301,6 @@ for (const a of D.ARTS) {
 AT.everbloom = byWays(H.HOW.everbloom, () => null, 'everbloom') || EVERBLOOM;
 (AT.everbloom ? placed : unplaced).push('everbloom');
 
-/* NEEDS: what a thing asks of Hornet first (the completionist's prereqs), as the abilities and
-   Silk Skills the save tells (js/savefile.js ART_PD, SKILL_PD): key (the Map's: 'piece:<i>',
-   'tools:<id>', 'extra:<i>'…) → [ability or skill id]. A prereq that isn't one (a key) is left out. */
-const NEEDS = {};
-const abilityBy = new Map([...D.ARTS, ...D.SKILLS].map((x) => [norm(x.name.en), x.id]));
-const needs = (key, it) => {
-  const ids = (it.prereqs || []).map((n) => abilityBy.get(norm(n))).filter(Boolean);
-  if (ids.length) NEEDS[key] = ids;
-};
-/* The 100%'s prereqs: a piece by its check, a Tool by its name. */
-const pieceAt = new Map(CO.PIECES.map((p, i) => [JSON.stringify(p[2]), i]));
-for (const f of ['maskShards.ts', 'spoolFragments.ts', 'memoryLockets.ts', 'craftmetals.ts', 'paleOil.ts', 'fleas.ts', 'upgrades.ts', 'abilities.ts', 'tools.ts', 'crests.ts']) {
-  for (const it of C.load(f)) {
-    if (!it.prereqs) continue;
-    const i = it.parsingInfo && pieceAt.get(JSON.stringify(C.check(it.parsingInfo, () => null)));
-    const tool = D.TOOLS.find((x) => norm(x.name.en) === norm(it.name.split(' / ')[0]));
-    const art = abilityBy.get(norm(it.name.replace(/\s*\(.*\)$/, '')));
-    const key = i != null ? 'piece:' + i : tool ? 'tools:' + (CO.COUNTED.find((g) => g.includes(tool.id)) || [tool.id])[0]
-      : art ? (D.ARTS.some((x) => x.id === art) ? 'arts:' : 'skills:') + art : null;
-    if (key) needs(key, it);
-  }
-}
-
 /* ── What doesn't count: the completionist's extras ── */
 const RELIC_KIND = { 'Bone Scrolls': 'bone-scroll', 'Weaver Effigies': 'weaver-effigy', 'Choral Commandments': 'choral-commandment',
   'Rune Harps': 'rune-harp', 'Psalm Cylinders': 'psalm-cylinder', 'Arcane Egg': 'arcane-egg' };
@@ -379,7 +356,6 @@ const extra = (kind, it, name) => {
   const s = kind === 'bellhome' ? BELLHOME : roomOfCheck(c);
   if (!s || !onMap(s)) { unplaced.push(`${kind} ${it.name}`); return; }
   if (CHECK_OF[it.name]) c = CHECK_OF[it.name];
-  needs('extra:' + EXTRAS.length, it);
   /* A "cache" that is an item lying in its room (Coral_36's Beast Shard: a CollectableItemPickup,
      pickups.json lying) goes in the rosaries' or shards' layer, by its own bool, in its place in
      the list (js/map-fixes.js keys by it). */
@@ -1060,8 +1036,6 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
      BELLS    [playerData field, scene (, name)]: the six Bellshrines (the Grand Gate asks for five)
      KEYS     a lock's key (js/quests.js LOCKS) → its name
      MAPS     a map's flag (Has<X>Map, without Has and Map) → the area it draws
-     NEEDS    a thing's key ('piece:<i>', 'tools:<id>', 'arts:<id>', 'extra:<i>'…) → the abilities
-              and Silk Skills it asks for first (the completionist's prereqs)
      TASKS    [kind, quest, check, scene, picture, name?, mode?, steel?]: the wishes and the main
               objectives (kind 'qitem' what a wish asks for, 'wspot' where a wish is done, 'goal' a
               main objective's pin), quest its save name (js/quests.js), check as EXTRAS' plus
@@ -1069,15 +1043,15 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               under assets/map/, name the thing's (a wish's and an objective's are the quest's),
               mode 'steel' when only Steel Soul has it, steel the spot's scene when the save
               chooses it (SteelQuestSpots)
-     XY       a thing's key (as NEEDS, and 'person:<id>', 'board:<scene>', 'bell:<field>', 'task:<i>',
-              'shakra:<i>', 'shop:<vendor>:<i>', 'giver:<scene>', 'boss:<foe>', 'gaunt:<id>',
+     XY       a thing's key ('piece:<i>', 'tools:<id>', 'arts:<id>', 'extra:<i>'…, 'person:<id>',
+              'board:<scene>', 'bell:<field>', 'task:<i>', 'shakra:<i>', 'shop:<vendor>:<i>', 'giver:<scene>', 'boss:<foe>', 'gaunt:<id>',
               'lock:<key>:<scene>', 'everbloom') → its point on the map, in the image's pixels: where
               the game has it in its room (the object's place in the scene, or whoever stands for it,
               placed as the game places a point: js/rooms.js mapPoint)`,
-'spots', [['AT', AT], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['NEEDS', NEEDS], ['TASKS', TASKS], ['XY', XY]]);
+'spots', [['AT', AT], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['TASKS', TASKS], ['XY', XY]]);
 const kinds = {};
 for (const x of EXTRAS) kinds[x[0]] = (kinds[x[0]] || 0) + 1;
 console.log(`js/spots.js  ${placed.length} things of the 100% placed, ${EXTRAS.length} extras (${Object.entries(kinds).map(([k, n]) => n + ' ' + k).join(', ')}), `
-  + `${BOSSES.length} bosses, ${Object.keys(NEEDS).length} with prereqs  (${size} bytes)`);
+  + `${BOSSES.length} bosses  (${size} bytes)`);
 if (unplaced.length) console.log(`not placed (${unplaced.length}): ${unplaced.join('; ')}`);
 })().catch((e) => { console.error(e.message); process.exit(1); });
