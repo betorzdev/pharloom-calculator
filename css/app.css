@@ -1936,6 +1936,18 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
   .ct-pick { width: 100%; }
   .ct-figs { grid-column: 1 / -1; position: static; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); }
 }
+/* Between the phone and a wide window (design/52, A) the band's one row doesn't fit: the HUD goes
+   under the Needle and the figures, centred after a rule; narrower still, the figures too. The
+   Crest takes its small size there, so the Vesticrest's column beside it stays in the frame. */
+@media (min-width: 600px) and (max-width: 1059px) {
+  .ct-band { flex-wrap: wrap; row-gap: var(--sp-4); }
+  .ct-hud { flex-basis: 100%; justify-items: center; padding-top: var(--sp-4); border-left: 0; border-top: 1px solid color-mix(in oklab, var(--filigree) 22%, transparent); }
+}
+@media (min-width: 600px) and (max-width: 719px) {
+  .ct-band > * { padding-inline: var(--sp-4); }
+  .ct-mid { flex-basis: 100%; justify-content: center; gap: var(--sp-6); padding-top: var(--sp-4); border-left: 0; border-top: 1px solid color-mix(in oklab, var(--filigree) 22%, transparent); }
+  .ct-crest.has-float { --k: var(--crest-k-sm); }
+}
 @media (max-width: 599px) {
   .ct-crest { --k: var(--crest-k-sm); }
   .ct-crest.has-float { --k: var(--crest-k-xs); }
