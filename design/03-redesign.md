@@ -44,7 +44,7 @@ the work up reads it first, then the step it's on.
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html` |
-| 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html` (kept out of the repo) |
+| 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
 | 10 | **Built** (28 Sep) · The static pages (`tools/pages*.js`: `bosses/`, `es/jefes/`, the landing folders): they inherit steps 1 and 2; only what's theirs | To do | |
 | 6c | The Map's people: everyone in the world and every place that sells | **Built** (11 Oct) | `30-map-people-variants.html` (kept out of the repo) |
@@ -1330,6 +1330,22 @@ description, where the site had the wiki's line art (the prompt when you get one
 `prompt_hornet_needle_throw`). `tools/extract-crests.py` writes the six into `assets/icons/skills-inv/`;
 the slot, the list under the Crest and the Inventory use them, and the Map, Progress, Home and
 Combat keep the line art.
+
+### Retouch: middle widths (14 October 2026)
+
+Albert, with the window narrowed: the masks spill out of the screen, and not only the masks.
+Measured (every element past the frame, 390 to 1300 px, a 100% save and Free mode): from about
+960 px down to 600 the band's one row doesn't fit, so the ten masks run past the frame; at 600 to
+640 the whole band does, the Needle on the left too; at 600 the Vesticrest's column beside the
+Crest touches the frame. Under 600 the phone's stack already holds.
+
+The options (`52-crest-hud-variants.html`, the real site in a frame of the width chosen; kept out
+of the repo): **A** from 1060 px down, Hornet's HUD (masks, silk, Bind) on a row of its own under
+the Needle and the figures, centred after a rule, and under 720 px the figures on their own row
+too; B the phone's stack from 1060 px down.
+
+**Decision: A** (14 October 2026), in `css/app.css` (two media queries before the phone's): and in
+both, under 720 px the Crest with the Vesticrest's column takes `--crest-k-sm`.
 
 ## Step 9 · Combat
 
