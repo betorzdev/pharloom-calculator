@@ -160,17 +160,19 @@ for (const [file, name, kind] of SECTION_KINDS) {
 /* The pieces the completionist doesn't list and the save keeps as flags, each with its own name:
    the four Old Hearts that open the Red Memory (the Everbloom) and the three melodies that open
    the Cradle. Their flags and Acts were found on the author's restore points (GAINED_HEART_*,
-   GAINED_MELODY_*: the flag that turned true, in the Act the event happened); no area: nothing
-   says where, and the flag isn't a place. */
-for (const [flag, key, kind, act] of [
-  ['CollectedHeartFlower', 'INV_NAME_HEART_BLOOM', 'old-heart', 3], ['CollectedHeartCoral', 'INV_NAME_HEART_CORAL', 'old-heart', 3],
-  ['CollectedHeartHunter', 'INV_NAME_HEART_HUNTER', 'old-heart', 3], ['CollectedHeartClover', 'INV_NAME_HEART_CLOVER', 'old-heart', 3],
-  ['HasMelodyArchitect', 'SQ_MELODY_ARCHITECT_NAME', 'melody', 2], ['HasMelodyLibrarian', 'SQ_MELODY_LIBRARIAN_NAME', 'melody', 2],
-  ['HasMelodyConductor', 'SQ_MELODY_CONDUCTOR_NAME', 'melody', 2],
+   GAINED_MELODY_*: the flag that turned true, in the Act the event happened). The flag isn't a
+   place: their area is the wiki's (each page's mapshot: «Location in Grand Gate», «Conductor's
+   Melody location in the High Halls»…), the same the game's scene where each is had falls in
+   (js/spots.js, js/rooms.js areaOf). */
+for (const [flag, key, kind, act, area] of [
+  ['CollectedHeartFlower', 'INV_NAME_HEART_BLOOM', 'old-heart', 3, 'GRANDGATE'], ['CollectedHeartCoral', 'INV_NAME_HEART_CORAL', 'old-heart', 3, 'CORAL_RIVER'],
+  ['CollectedHeartHunter', 'INV_NAME_HEART_HUNTER', 'old-heart', 3, 'WILDS'], ['CollectedHeartClover', 'INV_NAME_HEART_CLOVER', 'old-heart', 3, 'GROVE'],
+  ['HasMelodyArchitect', 'SQ_MELODY_ARCHITECT_NAME', 'melody', 2, 'COGWORK_CORE'], ['HasMelodyLibrarian', 'SQ_MELODY_LIBRARIAN_NAME', 'melody', 2, 'LIBRARY'],
+  ['HasMelodyConductor', 'SQ_MELODY_CONDUCTOR_NAME', 'melody', 2, 'HANG'],
 ]) {
   // Their description, the game's: the heart's inventory text, or the melody's wish ("Search the…").
   const desc = N.text(key.startsWith('INV_NAME_') ? key.replace('INV_NAME_', 'INV_DESC_') : key.replace(/_NAME$/, '_DESC'));
-  PIECES.push([kind, act, ['flag', flag], null, N.text(key), desc]);
+  PIECES.push([kind, act, ['flag', flag], area, N.text(key), desc]);
 }
 
 /* ── The Wishes (the pane «Tareas»): the main objectives and the wishes by type, as the

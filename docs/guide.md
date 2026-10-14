@@ -188,13 +188,21 @@ beside the Crest between the game's white brackets, and the Crest's name sits un
 Shaman wears a Silk Skill in each of its three slots. A save made while cursed (the Witch's curse,
 for a while in the story) shows the Cursed Crest: no slots, a line on what the curse does, and the
 figures with silk stopped at 3 and no Bind. In Free mode a
-tap on a worn one there takes it off, and the others stay in their slots. ‹ › change the Crest. Beside it,
+tap on a worn one there takes it off, and the others stay in their slots. ‹ › change the Crest,
+and each Crest keeps the Tools and Silk Skills in its own slots, as the game does: back on one, it's
+as you left it (the Hunter's three evolutions share one). The Vesticrest's two Tools are shared by
+every Crest, as in the game, and stay put when the Crest changes. A Crest not worn yet starts with
+what fits of the one you left. A Tool is never worn twice, nor with its twin, across the Crest's
+slots and the Vesticrest's. Only what has a slot counts (on «What I have» without the Vesticrest,
+its Tools are left out until it's there). From a save, what the
+Crest's own slots don't hold is on the Vesticrest's, where the game has it. Beside it,
 the Tools and Silk Skills you have (as the game lists them; in Free mode, all of them, or on «What
 I have» what the Inventory's marks say, with a line to the Inventory while no Tool is marked), by colour, each on its slot as the Inventory draws it, the
 slot filled and lit when it's worn: a tap puts one on or takes it off,
 and pointing at one (or at a slot) describes it underneath with the game's words and its numbers
 (damage per hit, uses at the Pouch's level, a full load, the shell shards to refill it; a Silk
-Skill's damage and silk), as if it were worn when it isn't. Silkshot is the one the game repaired
+Skill's damage and silk), as if it were worn when it isn't. A Tool and its upgraded twin (Claw
+Mirror and Claw Mirrors…) are never worn together, as in the game: putting one on swaps the other, on the Crest or the Vesticrest. Silkshot is the one the game repaired
 (the Original, the Twelfth Architect's or the Forge Daughter's: a save says which), with its own
 picture, words, damage and uses.
 
@@ -207,7 +215,9 @@ with: **Everything** (every Tool, Crest and Silk Skill at hand, and the build's 
 top to start with) or **What I have** (your game as marked in the Inventory: its levels, the
 Hunter's evolution, the Vesticrest's slots Eva would have given it for the Crests and Memory Lockets
 marked, and only the Tools, Crests and Skills you have). On «What I have» the levels set here are
-your game's, and Combat fights with that. A link with a build always opens on «Everything».
+your game's, and Combat fights with that. A link with a build always opens on «Everything». The
+moment's switches (focus, fury, Flintslate, a Challenge) aren't in the link, but a reload keeps them;
+the Hunter's focus starts on, as it does with a save.
 
 The Architect and the Witch split their slashes (the Architect drills: 0.9× + 0.1× + 0.1× the
 Needle; both have their own down- and run-slashes), and the band shows all three attacks; the
@@ -224,7 +234,8 @@ Combat says how long slashing nonstop takes to kill the enemy.
 
 The address bar carries the build: copied, it opens the build on screen as it is. The
 link is readable (`#v=1&crest=architect&needle=4&tools=straight-pin,compass…`) and carries only
-what differs from a Hunter with nothing: in Free mode the address always says the build. A link
+what differs from a Hunter with nothing: in Free mode the address always says the build, the Crest
+worn's (the other Crests' Tools stay in this browser). A link
 with a build opens it in Free mode; if you were in a save, the page goes to Free mode and says so.
 
 ### Journal
@@ -236,7 +247,7 @@ go. Under it, the 236 portraits (237 in Steel Soul) **by area**, the areas with 
 first and each with its count (6/20), or **in the Journal's order**; entries with no place go last,
 under "Elsewhere". Beside the search, two choices in words under their labels: **Show** "What's
 missing / Everything" (with a save; Free mode shows everything) and **Order** "By area / Journal
-order". The search finds entries by name or by area, in either language and with or without accents; while
+order". The search finds entries by name (in either language) or by area (in the page's), with or without accents; while
 it has text it looks through the whole Journal, what's complete included. Each portrait
 sits in a ring that fills with its kills and lights up once complete; one not seen yet is in
 shadow in a dashed ring («???»), and the six optional ones carry a small diamond. Tapping one
@@ -245,7 +256,7 @@ closes it): the whole drawing, from the game's files, on a soft light and at the
 draws it (a Mossgrub small, the Bell Beast filling it), so you know the bug when you meet it; one
 not seen yet is in shadow. Beside it the name, the kills, its areas and the nearest from your
 bench, the description, and under the Hunter's symbol the Hunter's note once complete, or the
-game's «Defeat 11 more to complete the hunter's notes.». An entry is complete when the save lists it
+game's «Defeat 11 more to complete the hunter's notes.» (the Void Tendrils has no kills: it says «Completed by reading its tablet.» instead). An entry is complete when the save lists it
 with its kills done: the game writes them even for the entries it completes another way, and on
 the saves where Nuu has given the Memento the site counts all 230. In Free mode, the whole
 Journal.
@@ -567,7 +578,8 @@ which Act you're in and what opening the next takes («Opening Act 3 takes 5 ste
 Without a save it says what the tab is: the guide to the three Acts and to the 100%.
 
 Then two tabs, as two cards, each with its own picture of how far you are; the one you used last
-opens, the road's the first time.
+opens, the road's the first time. From the keyboard, Tab reaches the one selected and the
+arrows, Home and End move to the other and open it.
 
 **The road to the next Act** (its card: the picture of the step you're on, how far into it, counted
 as its rings count, and «step 1 of 5»). Its steps as diamonds on one thread, the ones done lit and
@@ -638,11 +650,12 @@ a ring that opens its list; the rows you open stay open. «What's missing · Eve
 Act · Nearest first» sit just above the rows.
 
 Opened, a category lists its things by Act: each with its picture, its name (a Tool with its
-slot's colour) and how to get it, its area on the right, and a pin that shows it on the Map. A thing
+slot's colour; in a Steel Soul save, the Shell Satchel where Classic has the Dead Bug's Purse) and how to get it, its area on the right, and a pin that shows it on the Map. A thing
 just lying in a room says so («Found in the area: the pin shows where»).
 
 In **Free mode** Progress counts what you mark, from a New Game (0% until you mark something),
-and each missing row has a box to mark it here too; masks, silk, the Silk Hearts, the Needle, the
+and each missing row has a box to mark it here too (on a Tool marked with its upgrade,
+such as the Curvesickle, the box unmarks both); masks, silk, the Silk Hearts, the Needle, the
 Kit and the Pouch follow what the Inventory sets, and their groups say so, with the way there. The
 line on top says it's Free mode, counting your marks from a New Game, and that the road is the
 guide; the road tab is «The roads to Acts 2 and 3».
@@ -653,7 +666,7 @@ it and its way onto the Map, as above:
 
 - **To Act 2**: ring the five Bellshrines, open the Grand Gate, defeat the Last Judge, and walk into
   the Citadel. Defeating the Phantom opens another way in, and the first two steps then say
-  they're no longer needed.
+  they're no longer needed (the Bellshrines left unrung aren't listed as to do).
 - **To Act 3**:
   1. Unlock the wish Silk and Soul:
      - its 10 required wishes (guides give six: the ones before them count too);
@@ -719,15 +732,16 @@ Then **other collectibles**, which don't count for completion, each group saying
 - Craftmetal (crafted Tools);
 - Pale Oil (the Needle's upgrades);
 - the Lost Fleas (the caravan's rewards, and Fleatopia for Act 3);
-- the four Old Hearts (Act 3's ending);
-- the three melodies (the way to the Cradle);
-- the abilities outside the 100%;
+- the four Old Hearts (Act 3's ending) and the three melodies (the way to the Cradle), each in the
+  area the wiki gives it;
+- the abilities outside the 100% (Beastling Call and Elegy of the Deep under Act 3, where the Map
+  has them);
 - the 49 enemy gauntlets, named as Combat names them.
 
 Last, **Tasks** («Tareas», the game's pane): the main objectives and the wishes on the boards by
 type (Wayfarer, Gather, Donate, Hunt, Grand Hunt, Delivery…), 74 in all, each with the game's own
-name, its Act and where. In Act 2, the ten wishes Act 3 requires are in the road's tab instead. The one only Steel Soul has, and the one only Classic has, show only in a
-game of that mode. A task done also shows in "Since the previous save".
+name, its Act and where (a wish the pane files under no area, the area it's taken in). In Act 2, the ten wishes Act 3 requires are in the road's tab instead. The one only Steel Soul has, and the one only Classic has, show only in a
+save of that mode, and both in Free mode, as the Journal and the Map show them. A task done also shows in "Since the previous save".
 In a save it shows what's missing, or everything with a tick where you have it; without a save,
 the whole list, as a guide. Which piece you have is read from the save one by one, and on the
 92 real saves it agrees with the game's own counters (masks, spools, the three upgrade ladders,
