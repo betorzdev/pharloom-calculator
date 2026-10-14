@@ -229,22 +229,45 @@
   const tap = (key, title) => (key ? ` data-mk="${esc(key)}" role="button" tabindex="0" aria-label="${esc(title)}"` : '');
   const sel = (key) => (key && key === picked ? ' is-sel' : '');
   const attrs = (style, title, key) => `${style ? ` style="${style}"` : ''}${title ? ` title="${esc(title)}"` : ' aria-hidden="true"'}${tap(key, title)}`;
+  /* Every picture at the same visible size (design/03-redesign.md, step 6, the marks' size, all A):
+     its opaque box (js/mark-fit.js, tools/fit-marks.py) centred, its longest side MARK_BOX of the
+     disc, shrunk just enough that no opaque pixel crosses MARK_RIM (the pale plate is r 0.47); in
+     the selector, bare, ART_BOX of its square and no rim. In disc units (the disc 1 across): the
+     scale (s, per pixel), where the picture's canvas goes (x, y, w, h), and for an <img> that fills
+     the disc, its scale (k) and shift (dx, dy) as shares of it. null: a picture not measured. */
+  const MARK_BOX = 0.8, MARK_RIM = 0.45, ART_BOX = 0.86;
+  const FIT = SS.markFit || {};
+  const fitKey = (src) => (src.startsWith('data:') ? 'crest:' + (Object.entries(SS.crestFrames || {}).find(([, v]) => v === src) || [''])[0] : src);
+  function fitOf(src, box = MARK_BOX, rim = MARK_RIM) {
+    const f = src && FIT[fitKey(src)];
+    if (!f) return null;
+    const [W, H, cx, cy, L, R, Lturned] = f;
+    let s = box / (Lturned || L);
+    if (rim) s = Math.min(s, rim / R);
+    return { s, x: -cx * s, y: -cy * s, w: W * s, h: H * s, k: s * Math.max(W, H), dx: -(cx - W / 2) * s, dy: -(cy - H / 2) * s };
+  }
+  // An <img> that fills its disc (or the selector's square), placed by its fit (css .mp-fit).
+  const n3 = (x) => +x.toFixed(3);
+  function img(src, box, rim) {
+    const f = fitOf(src, box, rim);
+    return f ? `<img class="mp-fit" src="${src}" alt="" loading="lazy" style="--fs:${n3(f.k)};--fx:${n3(f.dx)};--fy:${n3(f.dy)}">`
+      : `<img src="${src}" alt="" loading="lazy">`;
+  }
   // A piece or a thing: a dark disc with a rim in its layer's colour and the game's picture.
   const dot = (layer, src, style = '', title = '', key = '', cls = '') =>
-    `<i class="mp-dot is-${layer}${cls}${sel(key)}"${attrs(style, title, key)}><img src="${src}" alt="" loading="lazy"></i>`;
+    `<i class="mp-dot is-${layer}${cls}${sel(key)}"${attrs(style, title, key)}>${img(src)}</i>`;
   // A place: the game's own map pin.
   const pin = (layer, file, style = '', title = '', key = '', cls = '') =>
     `<img class="mp-pin is-${layer}${cls}${sel(key)}" src="assets/map/pins/${file}.webp" alt=""${attrs(style, title, key)}>`;
   // A badge: a creature's Journal portrait (a gauntlet's champion, a boss), or a glyph.
   const badge = (layer, inner, style = '', title = '', key = '', cls = '') =>
     `<span class="mp-pin is-badge is-${layer}${cls}${sel(key)}"${attrs(style, title, key)}>${inner}</span>`;
-  const portrait = (id) => (id ? `<img src="assets/icons/journal/${id}.webp" alt="" loading="lazy">` : '');
-  const img = (src) => `<img src="${src}" alt="" loading="lazy">`;
+  const portrait = (id) => (id ? img(`assets/icons/journal/${id}.webp`) : '');
   // A layer's (or a set's) picture in the selector: the game's art, bare.
   function legendArt(id) {
     const x = SETS[id] || LAYER.get(id);
     const src = id === 'gauntlet' ? FACE(champion(SS.gauntlets.GAUNTLETS[0])) : x.art;
-    return `<span class="mp-art${id === 'needle' ? ' is-needle' : ''}">${src ? img(src) : GLYPH[id]}</span>`;
+    return `<span class="mp-art${id === 'needle' ? ' is-needle' : ''}">${src ? img(src, ART_BOX, 0) : GLYPH[id]}</span>`;
   }
   /* A gauntlet: its champion, the Journal's portrait of its last wave's enemy, on the badge's rim. */
   const champion = (x) => { const w = x && x.waves[x.waves.length - 1]; return w && w[0] ? w[0][0] : null; };
@@ -563,7 +586,8 @@
     return [Math.round(w), Math.round(h)];
   }
   /* A mark on the map, as the sibling's pins: a dark disc with a thin rim, the thing's picture
-     almost as big (its own art, the game's pin, a Journal portrait) or the site's glyph. It keeps
+     (its own art, the game's pin, a Journal portrait) at the same visible size as every other's,
+     whole inside the disc (fitOf), or the site's glyph. It keeps
      its size on screen (--k: a pin's size in the image's pixels) and sits on its point (--px,
      --py), shifted within its point's grid (--ox, --oy, in pins). The picture is the one its
      list mark has (m.draw). */
@@ -571,7 +595,11 @@
     const html = m.draw('', '', '', '');
     const src = /src="([^"]+)"/.exec(html);
     // The Needle is a long thin line: laid across the disc, it's seen.
-    if (src && /items\/needle\./.test(src[1])) return `<image href="${src[1]}" x="-0.54" y="-0.54" width="1.08" height="1.08" transform="rotate(35)"/>`;
+    const turn = src && /items\/needle\./.test(src[1]) ? ' transform="rotate(35)"' : '';
+    // Its opaque box centred and the same visible size as every other (fitOf); a picture not measured as before.
+    const f = src && fitOf(src[1]);
+    if (f) return `<image href="${src[1]}" x="${n3(f.x)}" y="${n3(f.y)}" width="${n3(f.w)}" height="${n3(f.h)}" preserveAspectRatio="none"${turn}/>`;
+    if (turn) return `<image href="${src[1]}" x="-0.54" y="-0.54" width="1.08" height="1.08"${turn}/>`;
     if (src) return `<image href="${src[1]}" x="-0.46" y="-0.46" width="0.92" height="0.92"/>`;
     const g = /<svg[^>]*>([\s\S]*?)<\/svg>/.exec(html);
     // The glyph keeps its stroke (svg()'s attributes): without them its lines fill black.
