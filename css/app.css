@@ -1158,17 +1158,16 @@ kbd {
 .hm-fig:first-child b { font-size: var(--fs-2xl); }
 .hm-fig .u { font-size: var(--fs-xs); color: var(--muted); }
 /* The scene (design/03-redesign.md, step 3, the calm round, A): the bench card, taller, with the
-   map of the area she rests in faint behind it (js/app-map.js, App.mapAreaHtml: the Map's own
-   drawing on a canvas, cropped to the area's box, --r its width over its height, faded at its
-   edges; a picture with no marks and no Hornet, not a link) and the 100% as one figure. The map
-   fits inside the card both ways (a container, its width and height): a tall area on a phone
-   (The Abyss) would otherwise run past the card and the frame. */
+   map of the area she rests in behind it (js/app-map.js, App.mapAreaHtml: the Map's own drawing
+   on a canvas; a picture with no marks and no Hornet, not a link) and the 100% as one figure.
+   The map fills the card around her bench, its room right under her (the map round, B and C,
+   Albert's choice, 14 Oct 2026: it had faded to nothing), in the Map's own tone at
+   --hm-map-opacity, strongest round her and fading out to the sides, the foot and under the title. */
 .hm-scene { min-height: calc(var(--hm-map-max) * 1.4); align-content: center; padding-block: var(--sp-8) var(--sp-4); margin-bottom: var(--sp-8); }
 .hm-scene .hm-rest { margin-block: var(--sp-4) var(--sp-2); }
-.hmB-map { position: absolute; inset: 0; z-index: -2; display: grid; place-items: center; margin: 0; opacity: calc(var(--map-faint) * 0.7); pointer-events: none; container-type: size; }
-.hmB-view { position: relative; display: block; width: min(100cqw, calc(var(--hm-map-max) * 1.6 * var(--r)), calc(100cqh * var(--r))); aspect-ratio: var(--r); }
+.hmB-map { position: absolute; inset: 0; z-index: -2; margin: 0; overflow: hidden; opacity: var(--hm-map-opacity); pointer-events: none; }
 .hmB-canvas { position: absolute; inset: 0; width: 100%; height: 100%; filter: var(--map-tone);
-  -webkit-mask: radial-gradient(ellipse closest-side at 50% 50%, #000 62%, transparent 100%); mask: radial-gradient(ellipse closest-side at 50% 50%, #000 62%, transparent 100%); }
+  -webkit-mask: radial-gradient(ellipse 50% 46% at 50% 56%, #000 50%, transparent 100%); mask: radial-gradient(ellipse 50% 46% at 50% 56%, #000 50%, transparent 100%); }
 /* The 100% as one figure, the way into Progress: its label, the figure, and what Progress holds
    under it with the accent's arrow, stepping forward under the finger (as the ways on did). */
 .hm-pct { display: inline-grid; justify-items: center; gap: var(--sp-1); padding: var(--sp-2) var(--sp-4); text-decoration: none; color: var(--ink); }
@@ -1217,7 +1216,6 @@ kbd {
   /* Free mode's four figures two by two: four in a row don't fit, and three left one alone (Albert's choice, 14 Oct 2026). */
   .hm-figs { display: grid; grid-template-columns: repeat(2, auto); justify-content: center; gap: var(--sp-4) var(--sp-12); }
   .hm-scene { min-height: 0; }
-  .hmB-view { width: min(100cqw, calc(100cqh * var(--r))); }
 }
 
 /* ── Progress (js/app-progress.js): the ledger ────────────────────────────

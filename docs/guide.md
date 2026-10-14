@@ -80,10 +80,11 @@ empty profile.
 
 In a save, a calm scene that says only what no other tab says: **Resting at** the area of the
 bench Hornet sits at, the whole screen lit by that area's own colour on the game's map (its
-frame too, one light from the top), with **the map of that area** faint behind it, fitted inside
-the scene (drawn as the Map screen draws it, «Only what the game shows» included,
-cropped to the area's rooms and fading out at its edges: a picture, with no marks; the Map tab is
-where you look things up); the room's area under the name when it's another (Coral Tower in the
+frame too, one light from the top), with **the map of that area** behind it, filling the scene
+around her bench, its room right under her (drawn as the Map screen draws it, «Only what the
+game shows» included, never smaller than the map's own size, so a phone shows the rooms round
+her, and fading out to the scene's edges: a picture, with no marks; the Map tab is where you look
+things up); the room's area under the name when it's another (Coral Tower in the
 Sands of Karak), the Act and the time played; Hornet sitting on that very bench (each room's
 bench is read from the game's files; one it doesn't know shows Bone Bottom's). When the save was
 written where the game wakes her at a room's own respawn point instead (a restore point after a

@@ -39,7 +39,7 @@ the work up reads it first, then the step it's on.
 |---|---|---|---|
 | 1 | **The shell**: header, screen bar (desktop and phone), the screen's frame and title, footer and About, the atmosphere | **Built** (28 Sep) | [`04-shell-variants.html`](04-shell-variants.html) |
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
-| 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round and its light, 14 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html` |
+| 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html` |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html` |
@@ -379,6 +379,31 @@ little taller (90% × 78%), down to her bench. `.hm-card::before` is gone, and t
 glow with it: Free mode keeps the red, one light. Seen on the way: on a phone a tall area's map
 (The Abyss) ran about 120 px past the card and the frame, the grid row as tall as the map; the
 map's figure is now a size container and the map fits it both ways (`100cqw`, `100cqh × --r`).
+
+### Retouch: the map seen (14 October 2026)
+
+Albert, on Save 4 (Deep Docks, 5%): «el mapa dibujado de fondo prácticamente no se ve». It had
+been that faint since the calm round, not since the one light. The causes, together: what the game
+doesn't draw yet was faded twice (to `--map-faint` inside the canvas, then the whole figure to
+`--map-faint` × 0.7, about 0.14 in all, and 43 of Deep Docks' 46 pieces are that guide in Save 4;
+Save 2 hasn't bought The Cradle's map, so all of it is); `--map-tone` darkened pieces that are dark
+already (the game's fill, a median of 57/255); the one light from the top leaves the lower half
+black, and up top the map's fill is the very colour the light is mixed from; and the whole area
+fitted in the card drew a tall one (Deep Docks, 559 × 995 map pixels) at about half its size, its
+middle under the title and Hornet, its edges in the mask. Drawn in `76-your-game-map-variants.html`
+(kept out of the repo), the real screen over seven saves (Deep Docks, The Cradle, Mount Fay at a
+respawn point, Bilewater, The Slab, The Abyss, Bellhart) and Free mode, two rows: 1, how it's
+drawn (A as now, B stronger with the same look, C in the area's light, the map traced in its line
+colour, D what she has walked lit and the guide grey); 2, its size and place (A as now, B the
+whole area as large as the frame, C around her bench, filling the frame).
+
+Albert chose **1 B** and **2 C** (14 October 2026). Built: the figure at `--hm-map-opacity`
+(`css/tokens.css`, the guide's strength × 1.4, twice what it was), the Map's own tone kept; it
+fills the scene (`.hmB-map`, no more `.hmB-view` or `--r`), its mask strongest round her and fading
+to the sides, the foot and under the title; `js/app-map.js` (`areaCut`, inside `areaPaint`) cuts
+the frame's shape from the area's box, as wide (or tall) as the area but never smaller than the
+map's own size (on a phone, the rooms round her), with her bench's room right under Hornet
+(`.hm-rest`), kept inside the area. Free mode, with no map, is as it was.
 
 ## Step 4 · Inventory
 
