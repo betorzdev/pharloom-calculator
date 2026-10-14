@@ -189,7 +189,10 @@ Shaman wears a Silk Skill in each of its three slots. A save made while cursed (
 for a while in the story) shows the Cursed Crest: no slots, a line on what the curse does, and the
 figures with silk stopped at 3 and no Bind. In Free mode a
 tap on a worn one there takes it off, and the others stay in their slots. ‹ › change the Crest,
-which keeps the Tools and Silk Skills it has slots for, those put on first. From a save, what the
+and each Crest keeps its own Tools and Silk Skills, as the game does: back on one, it's as you left
+it. A Crest not worn yet starts with what fits of the one you left. Only what the Crest has slots
+for now counts (a lower evolution of the Hunter, or no Vesticrest, leaves some out without
+taking them off). From a save, what the
 Crest's own slots don't hold is on the Vesticrest's, where the game has it. Beside it,
 the Tools and Silk Skills you have (as the game lists them; in Free mode, all of them, or on «What
 I have» what the Inventory's marks say, with a line to the Inventory while no Tool is marked), by colour, each on its slot as the Inventory draws it, the
@@ -211,7 +214,8 @@ top to start with) or **What I have** (your game as marked in the Inventory: its
 Hunter's evolution, the Vesticrest's slots Eva would have given it for the Crests and Memory Lockets
 marked, and only the Tools, Crests and Skills you have). On «What I have» the levels set here are
 your game's, and Combat fights with that. A link with a build always opens on «Everything». The
-moment's switches (focus, fury, Flintslate, a Challenge) aren't in the link, but a reload keeps them.
+moment's switches (focus, fury, Flintslate, a Challenge) aren't in the link, but a reload keeps them;
+the Hunter's focus starts on, as it does with a save.
 
 The Architect and the Witch split their slashes (the Architect drills: 0.9× + 0.1× + 0.1× the
 Needle; both have their own down- and run-slashes), and the band shows all three attacks; the
@@ -228,7 +232,8 @@ Combat says how long slashing nonstop takes to kill the enemy.
 
 The address bar carries the build: copied, it opens the build on screen as it is. The
 link is readable (`#v=1&crest=architect&needle=4&tools=straight-pin,compass…`) and carries only
-what differs from a Hunter with nothing: in Free mode the address always says the build. A link
+what differs from a Hunter with nothing: in Free mode the address always says the build, the Crest
+worn's (the other Crests' Tools stay in this browser). A link
 with a build opens it in Free mode; if you were in a save, the page goes to Free mode and says so.
 
 ### Journal

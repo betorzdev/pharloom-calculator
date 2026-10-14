@@ -350,3 +350,35 @@ test('a build that can be worn (Free mode): a Tool and its twin never together, 
   // No Vesticrest: the Shaman has no red or yellow slot at all.
   assert.deepEqual(E.fit({ crest: 'shaman', tools: ['straight-pin', 'compass', 'claw-mirror'] }).tools, ['claw-mirror']);
 });
+
+test("Free mode's loadouts: each Crest keeps its own, as the game does, and an older build moves into the Crest worn", () => {
+  const start = { crest: 'hunter', hunterStage: 3, needle: 4, focus: true, vest: { yellow: true, blue: true } };
+  const hunter = E.normalize({ ...start, tools: ['barbed-bracelet', 'magnetite-dice', 'compass', 'straight-pin'], skills: ['silkspear'] });
+  // To the Witch: never worn, it starts with what fits of the Hunter's (one yellow slot, the Vesticrest's).
+  const w = E.wearCrest(hunter, {}, 'witch');
+  assert.deepEqual([w.st.crest, w.st.tools, w.st.skills], ['witch', ['barbed-bracelet', 'straight-pin'], ['silkspear']]);
+  assert.deepEqual(w.loads.hunter, { tools: hunter.tools, skills: ['silkspear'] });
+  // The Witch's own: the Bracelet off, Druid's Eye on.
+  const w2 = { ...w.st, tools: ['straight-pin', 'druids-eye'] };
+  assert.equal(E.compute(E.fit(w2)).needle.slash, 21);
+  // Back to the Hunter: the Bracelet and the rest as left, the slash with its 25% and the focus (21 × 1.75 = 36.75 → 37).
+  const h = E.wearCrest(w2, w.loads, 'hunter');
+  assert.deepEqual(h.st.tools, hunter.tools);
+  assert.equal(E.compute(E.fit(h.st)).needle.slash, 37);
+  assert.deepEqual(h.loads, { witch: { tools: ['straight-pin', 'druids-eye'], skills: ['silkspear'] } });
+  // Stored and read back: the Crest worn is the build, never among the loadouts.
+  const stored = JSON.parse(JSON.stringify(E.keep(h.st, { ...h.loads, hunter: { tools: [], skills: [] } })));
+  assert.deepEqual(Object.keys(stored.loadouts), ['witch']);
+  const back = E.kept(stored, start);
+  assert.deepEqual([back.st, back.loads], [h.st, h.loads]);
+  // A loadout keeps a Tool a lower evolution has no slot for; only the figures leave it out.
+  assert.deepEqual(E.normalize({ ...h.st, hunterStage: 1 }).tools, hunter.tools);
+  // A build kept before the loadouts is the Crest worn's, with nothing kept for the others, and its
+  // Hunter's focus on (reset on every reload then, it was never really set); a newer one's stays as set.
+  const old = E.kept({ crest: 'reaper', tools: ['tacks'], focus: false }, start);
+  assert.deepEqual([old.st.crest, old.st.tools, old.st.focus, old.loads], ['reaper', ['tacks'], true, {}]);
+  assert.equal(E.kept({ ...stored, focus: false }, start).st.focus, false);
+  assert.equal(E.kept(null, start).st.focus, true);
+  // The twins, per loadout: the one put on last.
+  assert.deepEqual(E.fit(E.wearCrest({ ...hunter, tools: ['claw-mirror', 'claw-mirrors'] }, {}, 'reaper').st).tools, ['claw-mirrors']);
+});

@@ -6,7 +6,8 @@
    with its numbers.
    In a save, the build is what Hornet wears in the game (js/savefile.js, buildOf) at its levels,
    and it's read, not changed, as the Hollow Knight site does: to try builds there's Free mode,
-   where the build is kept in pharloom.build and tried with «Try with» (design/42, 2 A): Everything
+   where the build is kept in pharloom.build, each Crest with its own Tools and Silk Skills as the
+   game keeps them, and tried with «Try with» (design/42, 2 A): Everything
    (every Tool, Crest and Skill at hand, its own levels, the top to start with) or What I have
    (your game marked by hand in the Inventory: its levels, the Hunter's evolution, the Vesticrest
    Eva would give, and only what you've marked). Shares SS.app with js/app.js (see there). */
@@ -31,16 +32,19 @@
   /* The build on screen: in a save, the game's; in Free mode, the one kept here (a Hunter at
      the top of every ladder to start with). */
   const FREE_START = { crest: 'hunter', hunterStage: 3, needle: 4, kit: 4, pouch: 4, masks: 5, spools: 9, hearts: 3,
-    tools: ['straight-pin', 'claw-mirror', 'compass'], skill: 'silkspear', vest: { yellow: true, blue: true } };
-  function freeBuild() {
+    tools: ['straight-pin', 'claw-mirror', 'compass'], skill: 'silkspear', vest: { yellow: true, blue: true }, focus: true };
+  /* Free mode's build is kept here with every Crest's own loadout, as the game keeps them
+     (js/engine.js kept, keep, wearCrest): ‹ › and back finds each Crest as it was left. */
+  function freeKept() {
     let x = null;
     try { x = JSON.parse(load(KEY) || 'null'); } catch (e) { x = null; }
-    return E.fit({ ...FREE_START, ...(x && typeof x === 'object' ? x : {}) });
+    return E.kept(x, FREE_START);
   }
-  /* Free mode's build is kept here and travels in the URL (js/codec.js), so a link says it. It's
-     kept as it can be worn (js/engine.js fit): what the Crest has no slot for, or a Tool's twin,
-     doesn't stay in the figures unseen. */
-  const setFree = (st) => { const x = E.fit(st); save(KEY, JSON.stringify(x)); App.build = C.encode(x); };
+  const freeBuild = () => freeKept().st;
+  /* What's worn and counted is what the Crest has slots for now (js/engine.js fit: the evolution and
+     the Vesticrest's slots can hide some of a loadout, and a Tool's twin never counts with it), and
+     that's what travels in the URL (js/codec.js), so a link says it. */
+  const setFree = (st, loads = freeKept().loads) => { save(KEY, JSON.stringify(E.keep(st, loads))); App.build = C.encode(E.fit(st)); };
 
   /* A build in the link (the boot, or a link pasted by hand): it's Free mode's. In a save, which
      is read and not changed, the page goes to Free mode to show it, and says so. Without a
@@ -51,14 +55,18 @@
     try { store = localStorage; } catch (e) { store = null; }
     if (linked) {
       if (store && App.activeSlot() !== S.FREE && S.select(store, S.FREE)) toast(t('ctLinkFree'));
+      const { st: mine, loads } = freeKept();
       // Another build's link is shown as it is, not cut down to what you've marked (a reload's own is left as it was).
-      const own = C.encode(linked) === C.encode(freeBuild());
+      const own = C.encode(linked) === C.encode(E.fit(mine));
       if (App.prefs.ctTry === 'mine' && !own) { App.prefs.ctTry = 'all'; App.savePrefs(); }
-      // A reload's own build keeps the moment switched on it (focus, fury…), which the link doesn't carry.
-      setFree(own ? freeBuild() : linked);
+      /* A reload's own build is kept as it was; another's becomes its Crest's loadout, the others'
+         kept (the one worn until now among them), with the moment switched here (focus, fury…),
+         which a link doesn't carry. */
+      if (own) setFree(mine, loads);
+      else setFree({ ...linked, focus: mine.focus, fury: mine.fury, flint: mine.flint, challenge: mine.challenge }, { ...loads, [mine.crest]: { tools: mine.tools, skills: mine.skills } });
       return;
     }
-    App.build = App.game() ? '' : C.encode(freeBuild());
+    App.build = App.game() ? '' : C.encode(E.fit(freeBuild()));
   };
   /* The moment of the fight (focus, fury, Flintslate, a Challenge) isn't part of the build: in a
      save too it can be switched, and it's kept only while the page is open. */
@@ -66,16 +74,17 @@
   function current() {
     const g = App.game();
     if (!g) {
-      const st = freeBuild();
-      if (App.prefs.ctTry !== 'mine') return { st, locked: false, have: null };
+      const { st: kept, loads } = freeKept();
+      if (App.prefs.ctTry !== 'mine') return { st: E.fit(kept), locked: false, have: null };
       // What I have: your game's levels and evolution, the Vesticrest Eva would give it, and what you don't have isn't worn.
       const have = App.freeGame();
       const lockets = have.pieces.filter((i) => CO.PIECES[i][0] === 'memory-locket').length;
+      // A Crest not had is worn as the Hunter, with the Hunter's own loadout.
+      const st = kept.crest !== 'hunter' && !have.crests.includes(kept.crest) ? E.wearCrest(kept, loads, 'hunter').st : kept;
       Object.assign(st, { needle: have.needle, kit: have.kit, pouch: have.pouch, masks: have.masks, spools: have.spools, hearts: have.hearts,
         hunterStage: (have.build && have.build.hunterStage) || 1, vest: E.vestOf(have.crests, lockets) });
       st.tools = st.tools.filter((id) => have.tools.includes(id));
       st.skills = st.skills.filter((id) => have.skills.includes(id));
-      if (st.crest !== 'hunter' && !have.crests.includes(st.crest)) st.crest = 'hunter';
       return { st: E.fit(st), locked: false, have };
     }
     const b = g.build || {};
@@ -359,11 +368,12 @@
   });
 
   /* ── Changing the build (Free mode only) ── */
+  // f changes the build kept, or gives { st, loads } for another Crest worn.
   function change(f) {
     if (App.game()) return;
-    const st = freeBuild();
-    f(st);
-    setFree(E.normalize(st));
+    const { st, loads } = freeKept();
+    const r = f(st, loads);
+    setFree(r ? r.st : st, r ? r.loads : loads);
     App.persist();
     render();
   }
@@ -380,8 +390,8 @@
       App.savePrefs();
       render();
     },
-    // Another Crest keeps the Silk Skills and the Tools its slots have room for (js/engine.js normalize, fit).
-    ctCrest(node) { change((st) => { st.crest = node.dataset.value; }); },
+    // Each Crest keeps its own loadout: back on one, it's as it was left (js/engine.js wearCrest).
+    ctCrest(node) { change((st, loads) => E.wearCrest(st, loads, node.dataset.value)); },
     ctLevel(node) {
       const key = node.dataset.key, v = Number(node.dataset.value);
       // On «What I have» the levels and the evolution are your game's: they go into the marks.
@@ -412,15 +422,17 @@
     ctTool(node) {
       const id = node.dataset.value;
       described = { kind: 'tool', id };
+      // On or off as it's worn and counted (current(): a loadout's Tool with no slot now isn't).
+      const worn = current().st;
       change((st) => {
-        if (st.tools.includes(id)) { st.tools = st.tools.filter((x) => x !== id); return; }
+        if (worn.tools.includes(id)) { st.tools = st.tools.filter((x) => x !== id); return; }
         // Its twin, if worn, gives it its place: a game never holds both (js/engine.js twinOf).
         if (st.tools.includes(E.twinOf(id))) { st.tools = st.tools.map((x) => (x === E.twinOf(id) ? id : x)); return; }
         // Room in its colour: the Crest's slots, open and locked, and the Vesticrest's.
-        const c = TOOL.get(id).color, s = E.compute(current().st).slots[c];
+        const c = TOOL.get(id).color, s = E.compute(worn).slots[c];
         const room = s.open + s.locked + s.extra;
         if (s.used >= room) { toast(t('ctFull', { c: t('ct_' + c) })); return; }
-        st.tools = [...st.tools, id];
+        st.tools = [...st.tools.filter((x) => x !== id), id];
       });
     },
   });

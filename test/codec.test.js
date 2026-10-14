@@ -39,3 +39,18 @@ test('the Silkshot held travels in the link, and only when it is not the Origina
   assert.match(link, /&shot=architect/);
   assert.equal(C.decode(link).silkshot, 'architect');
 });
+
+test("Free mode's build kept with every Crest's loadout: the link still carries only the Crest worn, and reads back exact", () => {
+  const hunter = { crest: 'hunter', hunterStage: 3, needle: 4, vest: { yellow: true, blue: true }, tools: ['barbed-bracelet', 'straight-pin'], skills: ['silkspear'] };
+  const w = E.wearCrest(hunter, { reaper: { tools: ['tacks'], skills: ['rune-rage'] } }, 'witch');
+  const stored = E.keep(w.st, w.loads);
+  assert.deepEqual(Object.keys(stored.loadouts).sort(), ['hunter', 'reaper']);
+  const link = C.encode(E.fit(stored));
+  assert.ok(!/tacks|rune-rage|loadouts/.test(link), 'the other Crests stay out of the link');
+  assert.equal(C.encode(C.decode(link)), link);
+  const d = C.decode(link);
+  assert.deepEqual([d.crest, d.tools, d.skills], ['witch', ['barbed-bracelet', 'straight-pin'], ['silkspear']]);
+  // A link from before the loadouts reads as it did.
+  const old = 'v=1&crest=architect&needle=4&kit=3&tools=straight-pin,compass&vest=y';
+  assert.equal(C.encode(C.decode(old)), old);
+});

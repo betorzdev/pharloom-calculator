@@ -91,16 +91,52 @@
   for (const t of D.TOOLS) for (const o of [t.upgrade, t.upgradeOf, t.replaces]) if (o && TOOL.has(o)) { TWIN.set(t.id, o); TWIN.set(o, t.id); }
   const twinOf = (id) => TWIN.get(id) || null;
 
-  /* A build that can be worn (Free mode's: a Crest changed, a link, a build kept by an older
-     visit): of a Tool and its twin, the one put on last; and of each colour, the Tools in the
-     order they were put on while the Crest has slots for them, open and locked, and the
-     Vesticrest's. What a save wears is never cut: compute() says what doesn't fit (slots.over). */
+  /* A build as it can be worn, for the figures of Free mode's (its loadout is kept whole: a lower
+     evolution or no Vesticrest only hides what doesn't fit): of a Tool and its twin, the one put
+     on last; and of each colour, the Tools in the order they were put on while the Crest has
+     slots for them, open and locked, and the Vesticrest's. What a save wears is never cut:
+     compute() says what doesn't fit (slots.over). */
   function fit(s) {
     const st = normalize(s);
     const crest = CREST.get(st.crest), left = {};
     for (const c of ['red', 'blue', 'yellow']) left[c] = crest.slots[c][0] + crest.slots[c][1] + (st.vest[c] ? 1 : 0);
     st.tools = st.tools.filter((id, i) => !st.tools.slice(i + 1).includes(twinOf(id))).filter((id) => left[TOOL.get(id).color]-- > 0);
     return st;
+  }
+
+  /* Free mode's build as kept (pharloom.build), each Crest with its own loadout as the game keeps
+     one per Crest (playerData.ToolEquips: its Tools and Silk Skills, slot by slot): the build is
+     the Crest worn with its loadout, and `loadouts` every other Crest's { tools, skills } as it was
+     left. A Crest never worn yet starts with what fits of the one left. Only the build goes into a
+     link (js/codec.js). The Vesticrest's slots, which the game shares among the Crests, go with
+     each loadout here.
+     kept(raw, start) → { st, loads }: what was stored (start fills what's missing). A build kept
+       before the loadouts (no `loadouts`) is the Crest worn's, and its Hunter's focus starts on,
+       as start says: the switch, reset on every reload then, was never really set.
+     keep(st, loads) → what's stored.
+     wearCrest(st, loads, crest) → { st, loads } with that Crest worn. */
+  const LOAD = (x) => ({ tools: Array.isArray(x && x.tools) ? x.tools.filter((id) => TOOL.has(id)) : [],
+    skills: Array.isArray(x && x.skills) ? x.skills.filter((id) => SKILL.has(id)) : [] });
+  function kept(raw, start = {}) {
+    const x = raw && typeof raw === 'object' ? raw : {};
+    const old = !x.loadouts || typeof x.loadouts !== 'object';
+    const st = normalize({ ...start, ...x, ...(old && start.focus ? { focus: true } : {}) });
+    const loads = {};
+    if (!old) for (const [id, l] of Object.entries(x.loadouts)) if (CREST.has(id) && id !== st.crest) loads[id] = LOAD(l);
+    return { st, loads };
+  }
+  const keep = (st, loads = {}) => {
+    const b = normalize(st), rest = { ...loads };
+    delete rest[b.crest];
+    return { ...b, loadouts: rest };
+  };
+  function wearCrest(st, loads, crest) {
+    const b = normalize(st);
+    if (!CREST.has(crest) || crest === b.crest) return { st: b, loads: { ...loads } };
+    const rest = { ...loads, [b.crest]: { tools: b.tools, skills: b.skills } };
+    const own = rest[crest] || fit({ ...b, crest });
+    delete rest[crest];
+    return { st: normalize({ ...b, crest, tools: own.tools, skills: own.skills }), loads: rest };
   }
 
   /* The player's modifiers that apply now, to the Needle or to the Skills: { add, first, mul,
@@ -495,6 +531,6 @@
   }
   const vestOf = (crests, lockets) => { const n = evaOf(crests, lockets); return { yellow: n >= D.VESTICREST.at.yellow, blue: n >= D.VESTICREST.at.blue }; };
 
-  SS.engine = { roundHalfEven, normalize, twinOf, fit, variantOf, toolArt, modsFor, hitsOf, usesToKill, interval, compute, plan, regen, binds, endure, phases, pieces, evaOf, vestOf };
+  SS.engine = { roundHalfEven, normalize, twinOf, fit, kept, keep, wearCrest, variantOf, toolArt, modsFor, hitsOf, usesToKill, interval, compute, plan, regen, binds, endure, phases, pieces, evaOf, vestOf };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.engine;
 })();
