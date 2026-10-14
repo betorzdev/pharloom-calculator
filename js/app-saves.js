@@ -312,6 +312,9 @@
     Promise.race([fonts, new Promise((ok) => setTimeout(ok, 800))]).then(() => {
       at();
       unveil();
+      // From the keyboard, the focus where it was before the reload: on the row, now its Import (as clearing another save leaves it).
+      const imp = h.keys ? li.querySelector('[data-act="saveImport"]') : null;
+      if (imp) imp.focus({ preventScroll: true });
       if (shrinks) setTimeout(() => shrink(li, to), 400);
     });
   }
@@ -371,6 +374,7 @@
     savePick(node) {
       const n = Number(node.dataset.value);
       if (!store) { toast(t('savesNoStorage')); return; }
+      track('save-pick', { slot: n === S.FREE ? 'free' : 'save' });
       if (S.read(store).active === n) { App.go('home', true); return; }
       if (S.select(store, n)) leave(n);
     },
@@ -391,6 +395,7 @@
       focusIn(`[data-act="saveImport"][data-value="${n}"]`);
     },
     importOs(node) {
+      if (imp.os !== node.dataset.value) track('import-os', { os: node.dataset.value, detected: detectOs() });
       imp.os = node.dataset.value; imp.chosen = true; imp.copied = 0;
       render();
       focusIn(`[data-act="importOs"][data-value="${imp.os}"]`);
@@ -471,8 +476,10 @@
         const from = was ? was.offsetHeight : 0;
         // Clearing the game you're in drops you into free mode: the page reloads, but stays here, with the row where it was.
         if (wasActive) {
+          let keys = false;
+          try { keys = document.activeElement.matches(':focus-visible'); } catch (e) { keys = false; }
           try {
-            sessionStorage.setItem(CLEARED_KEY, JSON.stringify({ n, from, top: was ? was.getBoundingClientRect().top : null }));
+            sessionStorage.setItem(CLEARED_KEY, JSON.stringify({ n, from, top: was ? was.getBoundingClientRect().top : null, keys }));
             history.scrollRestoration = 'manual';
           } catch (e) { /* it comes in without fading */ }
           document.documentElement.classList.add('is-leaving');

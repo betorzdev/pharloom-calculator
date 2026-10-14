@@ -207,7 +207,7 @@
     ctFocus:        { es: 'Concentración de la Cazadora', en: 'Hunter\'s focus' },
     ctFocusFull:    { es: 'Concentración plena', en: 'Full focus' },
     ctFury:         { es: 'Furia de la Bestia', en: 'Beast\'s fury' },
-    ctFlint:        { es: 'Pedernal activo', en: 'Flintslate active' },
+    ctFlint:        { es: '{name} activa', en: '{name} active' },   // {name}: the Tool's, as the game names it
     ctChallenge:    { es: 'Tras desafiar (primer golpe)', en: 'After a Challenge (first hit)' },
     ctSlash:        { es: 'Tajo', en: 'Slash' },
     ctAtt_slash:    { es: 'Tajo', en: 'Slash' },
@@ -254,6 +254,7 @@
     mapFullExit:    { es: 'Salir de pantalla completa', en: 'Exit full screen' },
     mapSmall:       { es: 'Mapa normal', en: 'Normal map' },
     mapFind:        { es: 'Busca en el mapa: una zona, una pieza, un jefe', en: 'Search the map: an area, a piece, a boss' },
+    mapFindShort:   { es: 'Busca en el mapa', en: 'Search the map' },   // the same, where the field is narrow (a phone)
     mapFindNone:    { es: 'Nada con ese nombre en el mapa.', en: 'Nothing by that name on the map.' },
     mapMark:        { es: 'Marcar como conseguido', en: 'Mark as had' },
     mapUnmark:      { es: 'Desmarcar', en: 'Unmark' },
@@ -290,7 +291,11 @@
     mapPlace_bellway:{ es: 'Vías Campana', en: 'Bellways' },   // MAP_LIST_TITLE
     mapPlace_ventrica:{ es: 'Ventrica', en: 'Ventrica' },   // KEY_TUBE
     mapNear:        { es: 'Lo más cerca de tu banco', en: 'Closest to your bench' },
+    mapNearRespawn: { es: 'Lo más cerca de tu punto de reaparición', en: 'Closest to your respawn point' },   // no game text: as mapRespawn
     mapFrom:        { es: 'Tu banco anterior', en: 'Your previous bench' },
+    // No game text for a respawn point (searched: respawn, reaparecer, wake): written for the context.
+    mapRespawn:     { es: 'Tu punto de reaparición', en: 'Your respawn point' },
+    mapFromRespawn: { es: 'Tu punto de reaparición anterior', en: 'Your previous respawn point' },
     mapClosed:      { es: 'sin abrir', en: 'not open yet' },
     mapToll:        { es: 'sin pagar el peaje', en: 'toll not paid' },
     mapGroup_upgrades: { es: 'Mejoras', en: 'Upgrades' },
@@ -317,13 +322,10 @@
     mapFoldClose:   { es: 'Plegar {g}', en: 'Fold {g}' },
     mapSetChoose:   { es: 'Elegir cuáles', en: 'Choose which' },
     mapSet_relics:  { es: 'Reliquias', en: 'Relics' },   // COLLECTION_HEADING_RELICDEALER
-    mapActs:        { es: 'Por acto', en: 'By Act' },
-    mapActAll:      { es: 'Todos', en: 'All' },
-    mapReachNow:    { es: 'Solo lo que puedo coger ya', en: 'Only what I can reach now' },
     // The Map shows the whole map, faint where your game's doesn't yet; this leaves that out. No game source: written for context.
-    mapGame:        { es: 'Solo lo que enseña el juego', en: 'Only what the game shows' },
-    mapGameTip:     { es: 'Como el mapa de tu partida: sin las zonas cuyo mapa no has comprado ni las salas sin cartografiar.',
-                      en: 'As your game\'s map: without the areas whose map you haven\'t bought or the rooms not mapped.' },
+    mapWhole:       { es: 'Mapa completo', en: 'Whole map' },   // no game text: the site's own switch
+    mapWholeTip:    { es: 'Con lo que tu partida aún no ha dibujado, en tenue. Apágalo para verlo como el mapa de tu partida: sin las zonas cuyo mapa no has comprado ni las salas sin cartografiar.',
+                      en: 'With what your game hasn\'t drawn yet, faint. Turn it off to see it as your game\'s map: without the areas whose map you haven\'t bought or the rooms not mapped.' },
     mapArea:        { es: 'Zona', en: 'Area' },
     mapOnMap:       { es: 'Ver en el mapa', en: 'See on the map' },
     mapMore:        { es: 'y {n} más', en: 'and {n} more' },
@@ -692,7 +694,7 @@
     pgSpoolNote:    { es: 'Cuentan los carretes enteros: cada dos fragmentos, un 1 %.', en: 'Whole spools count: every two fragments, 1%.' },
     kind_flea:      { es: 'Pulga perdida', en: 'Lost Flea' },   // KEY_FLEA
     kind_silkHeart: { es: 'Corazón de seda', en: 'Silk Heart' },   // MEMORY_MSG_TITLE_SILKHEART
-    kind_fleas:     { es: 'Pulgas perdidas', en: 'Lost Fleas' },
+    kind_fleas:     { es: 'Las pulgas perdidas', en: 'The Lost Fleas' },   // QUEST_FLEAS_TITLE
     kind_oldHearts: { es: 'Viejos corazones', en: 'Old Hearts' },   // as the wish MQ_BLACKTHREAD_5_NAME says them
     kind_melodies:  { es: 'Melodías', en: 'Melodies' },
     pgOtherArts:    { es: 'Otras habilidades', en: 'Other abilities' },
@@ -749,7 +751,7 @@
     pgTodoPoints:   { es: 'Consigue {n} puntos más de deseos', en: 'Get {n} more wish points' },
     pgTodoPoints1:  { es: 'Consigue {n} punto más de deseos', en: 'Get {n} more wish point' },
     pgTodoAny:      { es: 'Vale cualquiera de estos {n} deseos; por ejemplo:', en: 'Any of these {n} wishes will do; for example:' },
-    pgTodoAnyNear:  { es: 'Vale cualquiera de estos {n} deseos; los más cerca de tu banco:', en: 'Any of these {n} wishes will do; the nearest to your bench:' },
+    pgTodoAnyNear:  { es: 'Vale cualquiera de estos {n} deseos; los más cercanos a tu banco:', en: 'Any of these {n} wishes will do; the nearest to your bench:' },
     pgTodoShrine:   { es: 'Haz sonar el Santuario de Campana de {area}', en: 'Ring the Bellshrine in {area}' },   // the game's word in it: BELLSHRINE
     pgTodoGet:      { es: 'Consigue: {name}', en: 'Get: {name}' },
     pgTodoPavo:     { es: 'Habla con Pabo: te da la {key}', en: 'Talk to Pavo: he gives you the {key}' },   // his name: BELLHART_GREETER_MAIN

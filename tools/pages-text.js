@@ -43,7 +43,7 @@ const OG_ALT = {
    WebSite's name is what a result shows as the site's name. */
 const APP_LD = {
   description: {
-    es: 'Sigue tu partida real de Hollow Knight: Silksong: el 100 % objeto a objeto, el mapa del juego con lo que te falta, el Diario de cazadora y cómo cambia a Hornet cada Herramienta y Blasón.',
+    es: 'Sigue tu partida real de Hollow Knight: Silksong: el 100 % objeto a objeto, el mapa del juego con lo que te falta, el Diario de caza y cómo cambia a Hornet cada Herramienta y Blasón.',
     en: 'Follow your real Hollow Knight: Silksong game: the 100% item by item, the game\'s own map with what you\'re missing, the Hunter\'s Journal, and how each Tool and Crest changes Hornet.',
   },
 };

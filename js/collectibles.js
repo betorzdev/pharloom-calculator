@@ -641,7 +641,7 @@
       'old-heart',
       3,
       ['flag', 'CollectedHeartFlower'],
-      null,
+      'GRANDGATE',
       { es: 'Corazón de polen', en: 'Pollen Heart', key: 'INV_NAME_HEART_BLOOM' },
       {
         es: 'Corazón animado de Nyleth. Su latido es tenue y rápido.',
@@ -653,7 +653,7 @@
       'old-heart',
       3,
       ['flag', 'CollectedHeartCoral'],
-      null,
+      'CORAL_RIVER',
       { es: 'Corazón de corteza', en: 'Encrusted Heart', key: 'INV_NAME_HEART_CORAL' },
       {
         es: 'Corazón animado de Khan, Rey de la Corteza. Su latido es profundo y lento.',
@@ -665,7 +665,7 @@
       'old-heart',
       3,
       ['flag', 'CollectedHeartHunter'],
-      null,
+      'WILDS',
       { es: 'Corazón de cazadora', en: 'Hunter\'s Heart', key: 'INV_NAME_HEART_HUNTER' },
       {
         es: 'Corazón animado de Karmelita, la Cantante Skarr. Su latido es firme y fuerte.',
@@ -677,7 +677,7 @@
       'old-heart',
       3,
       ['flag', 'CollectedHeartClover'],
-      null,
+      'GROVE',
       { es: 'Corazón siamés', en: 'Conjoined Heart', key: 'INV_NAME_HEART_CLOVER' },
       {
         es: 'Corazón animado del Príncipe Verde. Su latido es nítido y claro.',
@@ -689,7 +689,7 @@
       'melody',
       2,
       ['flag', 'HasMelodyArchitect'],
-      null,
+      'COGWORK_CORE',
       {
         es: 'Melodía de los Arquitectos',
         en: 'Architect\'s Melody',
@@ -705,7 +705,7 @@
       'melody',
       2,
       ['flag', 'HasMelodyLibrarian'],
-      null,
+      'LIBRARY',
       {
         es: 'Melodía de los Guardianes de las Bóvedas',
         en: 'Vaultkeeper\'s Melody',
@@ -721,7 +721,7 @@
       'melody',
       2,
       ['flag', 'HasMelodyConductor'],
-      null,
+      'HANG',
       {
         es: 'Melodía de los Directores',
         en: 'Conductor\'s Melody',

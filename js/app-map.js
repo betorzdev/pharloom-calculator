@@ -4,7 +4,8 @@
    parts as the game has mapped them, whole, or the rough sketch of those it hasn't, in Act 3 the
    Cradle, Cogwork Core and the Ventrica hub destroyed and the Abyss's diving bell as your game
    has it. The site being a guide, what the game doesn't draw yet is there too, faint (the areas
-   whose map isn't bought, the rooms not mapped); "Only what the game shows" leaves it out. In
+   whose map isn't bought, the rooms not mapped); turning "Whole map" off leaves it out (the
+   switch is on while prefs.mapGame is false, so the stored choice reads as it did). In
    Free mode, the whole map before Act 3. On it, everything the game has for each room (js/spots.js, from the game's
    own files), in layers grouped as the selector under the map shows them:
      Upgrades       Mask Shards, Spool Fragments, Silk Hearts, the Needle, Pouch and Kit upgrades
@@ -33,9 +34,9 @@
      Your game      your cocoon; the Journal's entries still missing
    Each layer's switch is the game's own picture, with had of total (in Free mode, the total);
    "Only the 100%" turns on just the layers that count (design/03-redesign.md, step 6).
-   In a save, what's had is left out; in Free mode, everything shows, as a guide. The Act filter
-   and "what I can reach now" (js/spots.js NEEDS against your abilities) narrow every layer. A tap
-   on a mark, or on an area's name, opens its card. Hornet sits at your bench (js/app-hornet.js
+   In a save, what's had is left out; in Free mode, everything shows, as a guide. A tap
+   on a mark, or on an area's name, opens its card. Hornet sits at your bench, or stands where the
+   game respawns her when the save says she isn't at one (js/app-hornet.js
    walks her there from the previous one). Other screens open the Map on a thing (App.mapShow).
    The marks are placed in percentages of the image, so they follow its zoom. Shares SS.app with
    js/app.js (see there). */
@@ -255,7 +256,6 @@
 
   /* ── What the map holds: every mark of every layer, for a game (null: Free mode with nothing) ──
      { key, layer, scene, act, got, name, sub, draw(style, title, key, cls) } */
-  const haveArt = (g, id) => !!g && (g.arts.includes(id) || g.skills.includes(id));
   /* The wish of a quest (index in CO.WISHES, or -1): the wish whose check is the quest, or an `any`
      of several (Broodfeast and Runtfeast, the Lost Fleas), or else the wish of the quest that
      follows it in the chain (QU.CHAIN prev): a «Pre» stage, Steel Sentinel's first offer. */
@@ -341,8 +341,12 @@
       add({ key: 'gaunt:' + x.id, layer: 'gauntlet', scene: x.scene, act: x.act, got: !!g && g.gauntlets.includes(x.id), area: x.area, gauntlet: x,
         name: App.gauntletName(x.id), draw: (s, ti, k, c) => badge('gauntlet', portrait(champion(x)) || GLYPH.gauntlet, s, ti, k, c) });
     }
+    // Steel Soul's own (the Summoned Saviour, its fight and its Journal entry) only in Steel Soul;
+    // with no save, all of it, as a guide.
+    const steelGame = !own || !!(App.gameMeta() || {}).steel;
     for (const [foe, scene, , act] of SP.BOSSES) {
       const f = FOE.get(foe), e = bookOfFoe(foe);
+      if (e && e.steel && !steelGame) continue;
       add({ key: 'boss:' + foe, layer: 'boss', scene, act, got: !!g && g.bosses.includes(foe), name: f ? pick(f.name) : foe, foe, entry: e && e.id,
         draw: (s, ti, k, c) => badge('boss', portrait(e && e.id) || GLYPH.boss, s, ti, k, c) });
     }
@@ -365,7 +369,6 @@
       at: px != null ? { x: px, y: py } : undefined, got: false, name: pick(x.name), trade: x.note, draw: (s, ti, k, c) => pin('shop', 'pin_shop', s, ti, k, c) }));
     // People: the Wishwalls and who offers a wish, each with the wishes still open there.
     const boards = new Map(), givers = new Map();
-    const steelGame = !own || !!(App.gameMeta() || {}).steel;
     for (const [quest, f] of Object.entries(QU.FROM)) {
       const wi = wishOf(quest);
       if (wi < 0 || (CO.WISHES[wi][5] === 'steel' && !steelGame)) continue;   // a Steel Soul wish is only asked in Steel Soul
@@ -407,7 +410,7 @@
       if (kind === 'map' && x[5] && x[5].shop === 'shakra') return;
       if (DOOR[layerOf(x)]) {
         const layer = layerOf(x), d = DOOR[layer], k = kind === 'lock' && LOCK_AT.get(lower(scene));
-        add({ key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i), needs: SP.NEEDS['extra:' + i],
+        add({ key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i),
           name: t(kind === 'plate' ? 'mapPlate' : d.name), sub: k ? t('mapLockKey', { key: pick(SP.KEYS[k]) }) : layer === 'silkwall' ? silkNote() : '',
           draw: (s, ti, kk, c) => badge(layer, d.art ? img(ICON(kind === 'plate' ? 'dock_door_bottom_pressure_plate' : d.art)) : GLYPH[layer], s, ti, kk, c) });
         return;
@@ -422,7 +425,7 @@
         : kind === 'memento' ? (MEMENTO_ICON[check[1]] ? `assets/icons/extras/${MEMENTO_ICON[check[1]]}.webp` : 'assets/icons/pieces/heart-bloom.webp')
         : kind === 'silkeater' ? null : kind === 'spawn' || kind === 'bellhome' || kind === 'wall' ? null : `assets/icons/extras/${kind}.webp`;
       const spawn = kind === 'spawn' ? BOOK_KEY.get(name && name.key) : null;
-      add({ key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i), needs: SP.NEEDS['extra:' + i],
+      add({ key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i),
         name: name ? pick(name) : kind === 'eva' ? evaName(more.reward) : ONE[kind] ? t(ONE[kind]) : LAYER.get(layer).name(), eva: kind === 'eva' ? more : null,
         note: kind === 'masked' ? t('mapHiddenNote', { n: num(check[0] === 'all' ? check.length - 1 : 1) }) : more.shop ? t('mapMapShakra', { npc: pick(HW.NPCS[more.shop]), price: num(more.price) }) : more.found ? t('mapMapFound') : '',
         draw: (s, ti, k, c) => (kind === 'silkeater' ? pin('silkeater', 'pin_grub_location', s, ti, k, c)
@@ -438,12 +441,12 @@
         draw: (s, ti, k, c) => pin('cocoon', 'shade_pin', s, ti, k, c) });
     }
     if (own) for (const e of J.BOOK) {
+      if (e.steel && !steelGame) continue;
       const rooms = SS.journalRooms[e.key];
       const scene = rooms && (rooms.map(([sc]) => sc).find((sc) => R.roomOf(sc)));
       add({ key: 'journal:' + e.id, layer: 'journal', scene, got: complete(own, e), name: pick(e.name), entry: e.id,
         draw: (s, ti, k, c) => badge('journal', portrait(e.id), s, ti, k, c) });
     }
-    for (const m of out) if (!m.needs) m.needs = SP.NEEDS[m.key];
     return fixed(out);
   }
   /* js/map-fixes.js, last of all (and in the admin mode, js/app-map-admin.js, its unsaved
@@ -474,15 +477,13 @@
   }
   App.mapHas = (key) => all().list.some((m) => m.key === key);
 
-  /* Which marks show: the layer on, and in a save (or Free mode's marks) not had yet; then the
-     Act and "reach now" filters. The pins show open or not; the Journal's and the save's own
-     layers need a save. */
+  /* Which marks show: the layer on, and in a save (or Free mode's marks) not had yet. The pins
+     show open or not; the Journal's and the save's own layers need a save. (Two filters were here
+     until 14-Oct-2026: by Act, which most marks had no Act of their own for, an Act showing only
+     what first appears in it; and «what I can reach now», which only 44 marks had any needs for,
+     js/spots.js NEEDS. A mark's card and title still say its Act; Progress says what it waits on.) */
   function passes(m, g, own) {
-    if (OWN_ONLY.has(m.layer) && !own) return false;
-    const act = prefs.mapAct || 0;
-    if (act && m.act != null && Math.max(1, m.act) !== act) return false;
-    if (prefs.mapReach && g && m.needs && !m.needs.every((id) => haveArt(g, id))) return false;
-    return true;
+    return !(OWN_ONLY.has(m.layer) && !own);
   }
   const shows = (m, g, own) => passes(m, g, own) && !(g && m.got);
 
@@ -584,7 +585,7 @@
      on (`on`) and the filters let show, as { count per layer, items: [{ m, p }], fine: the caches
      and walls' counts per room, placed: key → point }. The Map screen and Your game's area map
      both read it. */
-  // Per layer, under the Act and reach filters: how many there are, how many had, how many show.
+  // Per layer: how many there are, how many had, how many show.
   function layout(list, g, own, on) {
     const count = {}, items = [], fine = new Map(), placed = new Map();
     for (const m of list) {
@@ -645,10 +646,20 @@
     try { prev = JSON.parse(App.load('pharloom.prev') || 'null'); } catch (e) { prev = null; }
     return prev && prev.snap ? SS.savefile.gameOf(prev.snap) : null;
   }
-  function benchPoint(scene, pins) {
+  /* Her bench's pin: the one in her room, else the one in a part of it (Tube_Hub's is in
+     Tube_Hub_right, Bone_01c's in Bone_01c_bot: js/rooms.js roomPiece), among the pins shown and
+     then among all (Act 3's Ventrica hub draws Tube_Hub_Destroyed, where Tube_Hub_right was); with
+     none, her room's middle. A save written where the game set her respawn to a room's own marker
+     rather than a bench (respawnType 0, savefile's rested false: a restore point after a boss, an
+     ability, an Act) wakes her there, standing: her room's middle, as the marker isn't extracted. */
+  function benchPoint(scene, pins, rested = true) {
     const room = scene ? R.roomOf(scene) : null;
     if (!room) return null;
-    const p = pins.find((x) => x[0] === 'bench' && (R.roomOf(x[3]) || {}).scene === room.scene);
+    if (!rested) return { x: room.x, y: room.y };
+    const names = [lower(room.scene), lower(scene)];
+    const inRoom = (x) => x[0] === 'bench' && (R.roomOf(x[3]) || {}).scene === room.scene;
+    const inPart = (x) => x[0] === 'bench' && names.includes(lower(R.roomPiece(x[3])));
+    const p = pins.find(inRoom) || pins.find(inPart) || M.PINS.find(inRoom) || M.PINS.find(inPart);
     return p ? { x: p[1], y: p[2] } : { x: room.x, y: room.y };
   }
   /* The way's key, cheap (no path searched): the two benches and when this save was written, so
@@ -665,15 +676,15 @@
     const path = R.path(b.bench, g.bench, g.lit) || [];
     const mid = path.slice(1, -1).map((s) => R.roomOf(s)).filter(Boolean);
     pins = pins || R.pinsOn(g);
-    const pts = [benchPoint(b.bench, pins), ...mid, benchPoint(g.bench, pins)].filter(Boolean);
-    return path.length > 1 && pts.length > 1 ? { key, pts } : null;
+    const pts = [benchPoint(b.bench, pins, b.rested), ...mid, benchPoint(g.bench, pins, g.rested)].filter(Boolean);
+    return path.length > 1 && pts.length > 1 ? { key, pts, fromRested: b.rested } : null;
   }
   function waySvg(g, pins) {
     const w = way(g, pins);
     if (!w) return '';
     const start = w.pts[0];
     return `<g class="mp-way" aria-hidden="true"><polyline points="${w.pts.map((p) => `${Math.round(p.x)},${Math.round(p.y)}`).join(' ')}"/>
-        <g class="mp-mk mp-from" style="--px:${n2(start.x)}px;--py:${n2(start.y)}px"><title>${esc(t('mapFrom'))}</title><circle r="0.3"/></g></g>`;
+        <g class="mp-mk mp-from" style="--px:${n2(start.x)}px;--py:${n2(start.y)}px"><title>${esc(t(w.fromRested ? 'mapFrom' : 'mapFromRespawn'))}</title><circle r="0.3"/></g></g>`;
   }
 
   /* What's missing nearest your bench, for Your game (App.nearList): the loose pieces
@@ -748,7 +759,7 @@
     if (!box) return '';
     areaCtx = { view, box, key: MP.keyOf(view, 0) };
     // Hornet where she rests (her bench's pin comes with the Map's own marks, if its layer is on).
-    const bench = benchPoint(g.bench, R.pinsOn(g));
+    const bench = benchPoint(g.bench, R.pinsOn(g), g.rested);
     const at = `left:${n2((bench.x - box.x) / box.w * 100)}%;top:${n2((bench.y - box.y) / box.h * 100)}%`;
     // The marks: the Map's own, the layers its legend has on and its filters let show, those in the box.
     const { list, g: shown, own } = all();
@@ -761,7 +772,7 @@
           <canvas class="hmB-canvas" aria-hidden="true"></canvas>
           <svg class="hmB-svg" viewBox="${n2(box.x)} ${n2(box.y)} ${n2(box.w)} ${n2(box.h)}" aria-hidden="true">
             <defs><radialGradient id="hmB-plate"><stop offset="0"/><stop offset="0.6"/><stop offset="1"/></radialGradient></defs>${marks}</svg>
-          <span class="hn is-sit hmB-hornet" aria-hidden="true" style="${at}"></span>
+          <span class="hn${g.rested ? ' is-sit' : ''} hmB-hornet" aria-hidden="true" style="${at}"></span>
         </a></figure>`;
   };
   /* Paints the figure just placed on the page (the screen is built whole each time, so this runs
@@ -818,6 +829,7 @@
   const FULL_OUT = corners('M4.5 1.5 V4.5 H1.5 M10.5 4.5 H7.5 V1.5 M7.5 10.5 V7.5 H10.5 M1.5 7.5 H4.5 V10.5');
 
   App.screens.map = (sec) => {
+    delete prefs.mapAct; delete prefs.mapReach;   // the two filters' choices, from before they went: gone with the next save of the prefs
     const { list, g, own } = all();
     const on = new Set(layersOn());
     const names = prefs.mapNames !== false;
@@ -829,27 +841,32 @@
     const clusters = [...fine.values()].map((f) => `<g class="mp-mk mp-cluster is-${f.m.layer}" style="--px:${n2(f.x)}px;--py:${n2(f.y)}px" aria-hidden="true"><circle r="0.5"/><circle class="mp-plate" r="0.47"/>${artOf(f.m)}`
       + `${f.n > 1 ? `<g class="mp-count"><circle cx="0.36" cy="-0.36" r="0.21"/><text x="0.36" y="-0.34">${num(f.n)}</text></g>` : ''}</g>`).join('');
     const exact = !!own && !!prefs.mapGame, view = R.mapView(own, { all: !exact }), shownPins = R.pinsOn(own);
-    const bench = own ? benchPoint(own.bench, shownPins) : null;
-    // Hornet at her bench: the page's own sprite (.hn), over the map at her point (placeOver).
-    const hornet = bench ? `<span class="mp-hornet hn is-sit" role="img" aria-label="${esc(t('mapBench'))}" title="${esc(t('mapBench'))}" data-x="${bench.x}" data-y="${bench.y}"></span>` : '';
+    const bench = own ? benchPoint(own.bench, shownPins, own.rested) : null;
+    // Hornet at her bench, sitting, or standing where the game respawns her: the page's own sprite
+    // (.hn), over the map at her point (placeOver).
+    const hereName = esc(t(own && !own.rested ? 'mapRespawn' : 'mapBench'));
+    const hornet = bench ? `<span class="mp-hornet hn${own.rested ? ' is-sit' : ''}" role="img" aria-label="${hereName}" title="${hereName}" data-x="${bench.x}" data-y="${bench.y}"></span>` : '';
     const bought = mapped(own);
     // An area whose map isn't bought: its name struck through; with only what the game shows,
     // not there, as in the game.
     const namesSvg = names ? AREA_NAMES().map((a) => {
       const unmapped = own && MAPPABLE.has(a.id) && !bought.has(a.id);
       if (unmapped && exact) return '';
-      return `<text class="mp-name${unmapped ? ' is-unmapped' : ''}${sel('area:' + a.id)}" x="${n2(a.x)}" y="${n2(a.y)}" data-mk="area:${a.id}" role="button" tabindex="0"${NT}>`
+      return `<text class="mp-name${unmapped ? ' is-unmapped' : ''}${sel('area:' + a.id)}" x="${n2(a.x)}" y="${n2(a.y)}" data-mk="area:${a.id}" data-rooms="${a.rooms.length}" role="button" tabindex="0"${NT}>`
         + `${unmapped ? `<title>${esc(t('mapUnmapped'))}</title>` : ''}${esc(areaName(a.id))}</text>`;
     }).join('') : '';
 
     /* The selector under the map (design/03-redesign.md, step 6, the selector; the sibling's
-       filter): its head (title, show all · hide all, the Acts and the three choices), then the
+       filter): its head (title, show all · hide all and the three choices), then the
        groups, each folding (prefs.mapOpen), its title its switch, with its count; each layer's
        picture its switch, in grey when off, with its count; a set's caret opens its layers. */
     const open = openGroups();
     // How many: of a layer whose things are had, had of total in a save (all of them in Free
     // mode); of the rest (places, people), how many show. A layer complete in --good.
     const tally = (ids) => {
+      // A group counts its layers but the cocoon, which isn't had nor many: «Your game» counts as
+      // its Journal does, had of total (design/64, 1 A).
+      if (ids.length > 1) ids = ids.filter((k) => k !== 'cocoon');
       const cs = ids.map((k) => count[k] || { all: 0, had: 0, shown: 0 });
       const sum = (f) => cs.reduce((a, c) => a + c[f], 0);
       if (!own) return [null, sum('all')];
@@ -881,7 +898,6 @@
           ${isOpen ? `<div class="mp-kinds" role="group" aria-label="${esc(title)}">${ids.map(kinds).join('')}</div>` : ''}
         </section>`;
     }).join('');
-    const act = prefs.mapAct || 0;
     const check = (actName, pressed, label, tip = '') => `<button type="button" class="check" role="switch" aria-checked="${pressed}" data-act="${actName}"${tip ? ` title="${esc(tip)}"` : ''}>
         <span class="check-box" aria-hidden="true">${App.tick}</span><span>${esc(label)}</span></button>`;
     const legend = `<section class="mp-legend" aria-labelledby="mp-legend-t">
@@ -889,9 +905,7 @@
           <h3 class="mp-legend-t" id="mp-legend-t">${esc(t('mapShows'))}</h3>
           <span class="mp-all"><button type="button" class="text-btn" data-act="mapAll" data-value="1">${esc(t('mapShowAll'))}</button><button type="button" class="text-btn" data-act="mapAll" data-value="0">${esc(t('mapHideAll'))}</button><button type="button" class="text-btn" data-act="mapHundred">${esc(t('mapOnlyHundred'))}</button></span>
           <div class="mp-opts">
-            <div class="seg" role="group" aria-label="${esc(t('mapActs'))}">${[0, 1, 2, 3].map((n) =>
-              `<button type="button" data-act="mapAct" data-value="${n}" aria-pressed="${act === n}">${esc(n ? t('saveAct', { n }) : t('mapActAll'))}</button>`).join('')}</div>
-            <div class="mp-checks">${g ? check('mapReach', !!prefs.mapReach, t('mapReachNow')) : ''}${own ? check('mapGame', exact, t('mapGame'), t('mapGameTip')) : ''}${check('mapNames', names, t('mapNames'))}</div>
+            <div class="mp-checks">${own ? check('mapGame', !exact, t('mapWhole'), t('mapWholeTip')) : ''}${check('mapNames', names, t('mapNames'))}</div>
           </div>
         </div>
         <div class="mp-secs">${groups}</div>
@@ -903,7 +917,7 @@
         <button type="button" data-act="mapZoom" data-value="out" aria-label="${esc(t('mapFurther'))}" title="${esc(t('mapFurther'))}">−</button>
         <button type="button" class="mp-big" data-act="mapBig" aria-pressed="${big}" aria-label="${esc(t(big ? 'mapSmall' : 'mapFull'))}" title="${esc(t(big ? 'mapSmall' : 'mapFull'))}">${big ? '⤡' : '⤢'}</button>
         <button type="button" class="mp-full" data-act="mapFull" aria-pressed="${full}" aria-label="${esc(t('mapFullScreen'))}" title="${fsTitle}">${full ? FULL_OUT : FULL_IN}</button></div>`;
-    const search = focusSet ? focusBar() : `<div class="mp-find"><label class="search">${App.lens}<input type="search" data-change="mapFind" placeholder="${esc(t('mapFind'))}" aria-label="${esc(t('mapFind'))}" autocomplete="off"></label>
+    const search = focusSet ? focusBar() : `<div class="mp-find"><label class="search">${App.lens}<input type="search" data-change="mapFind" placeholder="${esc(t(matchMedia('(max-width: 599px)').matches ? 'mapFindShort' : 'mapFind'))}" aria-label="${esc(t('mapFind'))}" autocomplete="off"></label>
         <ul class="mp-found" hidden></ul></div>`;
     sec.innerHTML = `<div class="mp${big ? ' is-big' : ''}${full ? ' is-full' : ''}">${brackets}${screenHead(esc(t('navMap')))}
       <div class="mp-stage">
@@ -948,8 +962,6 @@
     focusSet = null;
     const on = layersOn();
     if (!on.includes(m.layer)) { prefs.mapLayers = [...on, m.layer]; }
-    prefs.mapAct = 0;
-    prefs.mapReach = false;
     savePrefs();
     pending = key;
     if (prefs.view === 'map') render(); else App.go('map');
@@ -1072,12 +1084,33 @@
     v.classList.toggle('is-zoomed', zoom > 1.5);
     spread(m, vb.w / r.width * px, zoom > 3, SPREAD_MAX * Math.min(1, Math.max(0, (zoom - 1.5) / 2.5)));
     v.classList.toggle('is-close', zoom > 3);   // the caches and walls, one by one
+    unclutter(m, zoom > 1.5);
     // Close up, the map at twice the resolution (assets/map/pieces-hd.webp, tools/extract-map.py):
     // loaded the first time the screen has more pixels than the map, and kept.
     if (r.width * (window.devicePixelRatio || 1) / vb.w > 1) wantFine = true;
     composeMap();
     for (const el of v.querySelectorAll('.mp-hornet, .mp-ping')) placeOver(el);
     paintCard();
+  }
+  /* The area names, from afar (design/64, 2 A): one that would overlap another waits for the zoom,
+     the larger area's (by its rooms) staying; zoomed in, all of them. Their size on screen is the
+     same at any zoom, so only the view's size and the names shown change it. */
+  function unclutter(m, zoomed) {
+    const names = [...m.querySelectorAll('.mp-name')];
+    const r0 = m.getBoundingClientRect();
+    // Worked out again only when the map (a render makes a new one), its size or the zoom change.
+    const stamp = `${zoomed}|${Math.round(r0.width)}x${Math.round(r0.height)}`;
+    if (m._clutter === stamp) return;
+    m._clutter = stamp;
+    for (const x of names) x.classList.remove('is-crowded');
+    if (zoomed) return;
+    const kept = [];
+    for (const x of names.slice().sort((a, b) => Number(b.dataset.rooms) - Number(a.dataset.rooms))) {
+      const r = x.getBoundingClientRect();
+      if (!r.width) continue;
+      if (kept.some((k) => r.left < k.right + 4 && r.right > k.left - 4 && r.top < k.bottom + 2 && r.bottom > k.top - 2)) x.classList.add('is-crowded');
+      else kept.push(r);
+    }
   }
   /* Full screen, a state and not a pref (the browser wants a tap to go in): the map's stage over
      the whole window with the search and the zoom on it (css: .mp.is-full), and the page itself
@@ -1129,7 +1162,7 @@
 
   /* ── The card of the mark tapped, over the map, as the sibling's: its picture, its name, where
      it is and what it says (how it's had, what's still open there); in Free mode a piece can be
-     marked had from it; a gauntlet or a boss takes you to fight it, a boss or an entry to the
+     marked had from it (a ladder's leads to the Inventory); a gauntlet or a boss takes you to fight it, a boss or an entry to the
      Journal. It follows its mark as the map moves; ×, Escape or a tap on the empty map close it. ── */
   let cardCtx = null;
   // The things of the 100% a person gives or sells (js/how.js HOW), by the map's keys.
@@ -1140,6 +1173,8 @@
     for (const cat of ['tools', 'crests', 'skills', 'arts']) for (const [k, ways] of Object.entries(HW.HOW[cat])) scan(cat, ways, cat + ':' + k);
     return keys;
   }
+  // The pieces Free mode takes from the Inventory's ladders (js/app-progress.js freeView, LADDER).
+  const LADDER_KINDS = ['mask-shard', 'spool-fragment', 'silk-heart', 'needle', 'crafting-kit', 'tool-pouch'];
   const listOf = (names, more) => names.slice(0, 6).join(', ') + (names.length > 6 ? ' ' + t('mapMore', { n: num(names.length - 6) }) : '') + (more || '');
   function cardHtml(key) {
     const c = cardCtx || {};
@@ -1174,8 +1209,11 @@
     if (kind === 'piece') {
       const i = Number(key.slice(6));
       note = App.howPiece ? App.howPiece(i) : '';
+      /* In Free mode a piece is marked here, but those of a ladder (masks, silk, the Silk Hearts, the
+         Needle, the Kit, the Pouch) follow the Inventory's levels, as on Progress: the way there. */
       acts = own ? state(t(m.got ? 'pgGot' : 'invMissing'))
-        : `<button type="button" class="text-btn" data-act="mapMark" data-value="${i}" aria-pressed="${m.got}">${esc(t(m.got ? 'mapUnmark' : 'mapMark'))}</button>`;
+        : LADDER_KINDS.includes(m.layer) ? `${state(t('pgLadderNote'))}<a class="text-btn" href="${App.here(App.hashFor('game'))}" data-act="view" data-value="game">${esc(t('navGame'))}</a>`
+          : `<button type="button" class="text-btn" data-act="mapMark" data-value="${i}" aria-pressed="${m.got}">${esc(t(m.got ? 'mapUnmark' : 'mapMark'))}</button>`;
     } else if (['tools', 'crests', 'skills', 'arts', 'everbloom'].includes(kind)) {
       note = m.note || (App.howOf ? App.howOf(key) : '');
       if (g) acts = state(t(m.got ? 'pgGot' : 'invMissing'));
@@ -1264,7 +1302,15 @@
     const half = c.firstElementChild ? c.firstElementChild.offsetWidth / 2 + 8 : 0;
     c.style.left = (half * 2 > br.width ? br.width / 2 : Math.max(half, Math.min(br.width - half, sx))) + 'px';
     c.style.top = sy + 'px';
-    c.classList.toggle('is-below', sy < (c.firstElementChild ? c.firstElementChild.offsetHeight : 0) + 24);
+    /* Above its mark, unless it doesn't fit, or would cover the search or the zoom (design/64, 3 A):
+       then below it. */
+    const ch = c.firstElementChild ? c.firstElementChild.offsetHeight : 0, cw = c.firstElementChild ? c.firstElementChild.offsetWidth : 0;
+    const left = parseFloat(c.style.left) - cw / 2, top = sy - ch - 16;
+    const covers = [...stage.querySelectorAll('.mp-find, .mp-tools')].some((x) => {
+      const b = x.getBoundingClientRect(), bx = b.left - br.left, by = b.top - br.top;
+      return b.width && left < bx + b.width && left + cw > bx && top < by + b.height && sy > by;
+    });
+    c.classList.toggle('is-below', sy < ch + 24 || covers);
   }
   const pick1 = (key) => { picked = key; const { m } = nodes(); if (m) for (const x of m.querySelectorAll('.is-sel')) x.classList.remove('is-sel');
     const el = key && m && m.querySelector(`[data-mk="${CSS.escape(key)}"]`); if (el) el.classList.add('is-sel');
@@ -1355,6 +1401,8 @@
   const pageWidth = () => document.documentElement.style.setProperty('--page-w', document.documentElement.clientWidth + 'px');
   pageWidth();
   window.addEventListener('resize', () => { pageWidth(); applyView(); });
+  // The names' sizes once the typeface is in (unclutter measures them).
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { const { m } = nodes(); if (m) { m._clutter = ''; applyView(); } });
 
   // For js/app-hornet.js: the way to walk, and a point's place on the image.
   Object.assign(App, { mapWay: () => way(App.game()), mapWayKey: () => wayKey(App.game()) });
@@ -1415,8 +1463,6 @@
       open[gr] = !open[gr];
       prefs.mapOpen = open; savePrefs(); render();
     },
-    mapAct(node) { prefs.mapAct = Number(node.dataset.value) || 0; savePrefs(); render(); },
-    mapReach() { prefs.mapReach = !prefs.mapReach; savePrefs(); render(); },
     mapGame() { prefs.mapGame = !prefs.mapGame; savePrefs(); render(); },
     mapZoom(node) { if (vb) zoomAt(node.dataset.value === 'in' ? 1 / 1.4 : 1.4, vb.x + vb.w / 2, vb.y + vb.h / 2); },
     // The large map, a choice (prefs.mapBig), as the sibling's: refitted and brought under the bar.
@@ -1461,7 +1507,7 @@
     mapFocusOff() { focusSet = null; pick1(''); render(); },
   });
   // Whatever changes what the Map shows ends the focus, so a switch never seems to do nothing.
-  for (const k of ['mapLayer', 'mapGroup', 'mapSet', 'mapAll', 'mapHundred', 'mapAct', 'mapReach', 'mapGame']) {
+  for (const k of ['mapLayer', 'mapGroup', 'mapSet', 'mapAll', 'mapHundred', 'mapGame']) {
     const f = actions[k];
     actions[k] = (node) => { focusSet = null; f(node); };
   }

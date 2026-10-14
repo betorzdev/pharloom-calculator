@@ -127,6 +127,19 @@ test('the map\'s pins lit: a Bellway station unlocked, a toll bench paid; kept i
   assert.deepEqual(F.gameOf({ ...snap, 'pharloom.progress': JSON.stringify({ ...old, lit: ['bellway Nowhere', 'bench Dock_01'] }) }).lit, ['bench Dock_01']);
 });
 
+test('where Hornet wakes: a bench (respawnType 1), or a room\'s own respawn marker; a slot from before says a bench', () => {
+  const bench = F.game({ ...BASE, respawnScene: 'Bonetown', respawnMarkerName: 'RestBench', respawnType: 1 });
+  assert.equal(bench.bench, 'Bonetown');
+  assert.equal(bench.rested, true);
+  const pd = { ...BASE, respawnScene: 'Peak_08b', respawnMarkerName: 'Death Respawn Marker', respawnType: 0 };
+  assert.equal(F.game(pd).rested, false);
+  const snap = F.toSnapshot(pd, null);
+  assert.equal(F.gameOf(snap).rested, false);
+  const old = JSON.parse(snap['pharloom.progress']);
+  delete old.rested;
+  assert.equal(F.gameOf({ ...snap, 'pharloom.progress': JSON.stringify(old) }).rested, true);
+});
+
 test('Free mode\'s marks (the Inventory) read back through the same keys a save uses', () => {
   const CO = require('../js/collectibles.js');
   const i = CO.PIECES.findIndex((p) => p[0] === 'memory-locket');
