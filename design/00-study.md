@@ -1693,6 +1693,38 @@ and 487 none, shown under every Act; and an Act showed only what first appears i
 still to get from the Acts before. The game sorts nothing by Act. Albert's choice: gone; a mark's
 card and title still say its Act, and Progress keeps its own.
 
+**Hornet on the ground** (14 October). Albert saw Hornet sitting in mid-air at Bone Bottom's bench
+and in the rock at one of Mount Fay's. The Map and Your game's area map put her feet on the game's
+bench pin, and the game sets its pins by hand: a median 2.8 px above the bench, Bone Bottom's 24 px
+up, Belltown's 36, Peak_02's 7 px down. Where she is now comes from where the game wakes her: the
+respawn marker the save names (`respawnScene`, `respawnMarkerName`, kept as `marker` by
+`savefile.game()`), a bench's RestBench or a room's Death Respawn Marker. `tools/extract-pickups.py`
+keeps every RespawnMarker of every scene (`respawns`: 166 in 143 scenes) with the ground her feet
+go on: a bench's own foot, the bottom of its RestBench's trigger box, which sits within a third of a
+unit of the scene's terrain under every bench (the Terrain layer's colliders, read for the check;
+a unit above it on the four Choral Chambers benches, which stand on their fountain); under a death
+marker, the top of the terrain straight below (a Death Respawn Marker sits 0.4 to 4 units up, a
+median of 1.9; the Flea Caravan's additive scenes on their host's). `tools/gen-spots.js` places them as the game
+places a point (SEATS, 125 in 106 rooms) and stops unless the bench pins fall by them (median 3.9
+px); `js/rooms.js restPoint` puts her there, sitting or standing, and the Map, the area map and her
+walk between benches use it. The sprite's anchor was already her feet (row 116 of her cell, the
+bottom of the game's Sit frame). A room the map draws as a point (an interior: the Pilgrim's Rest,
+the Cogwork Core's bench) has her at that point or on the game's pin, as before. Left as it was: a
+death marker in an interior the map doesn't have (Belltown_Room_doctor: Belltown's middle) and
+Tut_05, which has no room (no Hornet). Checked over every bench (the 90 RestBench scenes, each set
+in an Act 2 and an Act 3 save) and the author's 71 user and restore-point files, the Map zoomed onto
+her and the area map, in headless Chrome over file:// (1440 and 390, es and en, no console errors);
+`check-pack` still matches all 72.
+Then the benches' marks (Albert: «the position of the benches is still the same… the bench's pin
+should be on the ground»): Bellhart's floated over the floor she sat on, Mount Fay's (Peak_02) sat
+below its room, in the black. `js/rooms.js benchSeat` gives a bench pin the foot of its RestBench
+(SEATS: in its scene or the room it's a part of, the nearest where a room has two or three), and the
+Map and Your game's area map draw the mark there, its disc's bottom on the floor (lifted by its
+radius and half its rim, in pins, so at any zoom; js/app-map.js layout, REST): 66 of the 84 bench
+pins; the other 18 (interiors, rooms drawn as a point, Act 3's destroyed Ventrica hub, the diving
+bell) keep the game's pin. Hornet sits on the same point, drawn over her bench's mark, as when both
+were on the pin. Checked against every bench mark close up, before and after, in headless Chrome.
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).

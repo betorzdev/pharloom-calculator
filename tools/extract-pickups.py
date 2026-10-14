@@ -26,6 +26,16 @@ What it writes (read on 28-Sep-2026, patch 1.0.30000):
           object of that name, else a saved item whose own ID it is.
   benches each scene's RestBench → [x, y], which tools/gen-spots.js sets against the map's own
           bench pins to check how a point is placed on the map.
+  respawns where the game wakes Hornet: each scene's RespawnMarkers (a bench's RestBench, a room's
+          "Death Respawn Marker"), by their object's name, which is how the save names one
+          (respawnScene, respawnMarkerName) → { scene: { name: [x, y, ground] } }, ground the y her
+          feet go on (read on 14-Oct-2026): a bench's own foot, the bottom of its RestBench's trigger
+          box (within a third of a unit of the scene's terrain under every bench, a unit above it on
+          the Choral Chambers' fountains, which it stands on); under a marker, the ground she drops
+          onto, the top of the scene's Terrain layer straight under it (a Death Respawn Marker
+          sits 0.4 to 4 units up; an additive scene, the Flea Caravan's, on its host's), null with
+          none. An active marker wins over one of the same name switched off in the scene file.
+          tools/gen-spots.js puts them on the map (SEATS), where the Map has Hornet sit or stand.
   sizes   each scene's size in world units, its tk2dTileMap's width and height: the game places a
           point on its room's drawing by it (x / width across, y / height up). The tilemap is the
           one the game reads (GameManager.RefreshTilemapInfo): on a root object tagged TileMap,
@@ -81,7 +91,7 @@ What it writes (read on 28-Sep-2026, patch 1.0.30000):
 Every [scene, …] above ends with the object's place in the world, [x, y] (its Transforms composed
 from the scene's root), where there's one. Scene names are the bundles', lower case; js/rooms.js
 finds them on the map either way. """
-import json, os, pickle, re, struct, sys
+import json, math, os, pickle, re, struct, sys
 from collections import defaultdict
 import UnityPy
 
@@ -130,6 +140,9 @@ RECORDS = 'enemyjournal/journalrecords.bundle'
 RECORD = 'EnemyJournalRecord'
 DEATH = re.compile(r'EnemyDeathEffects.*')
 TILEMAP_TAG = 20000   # the "TileMap" tag (globalgamemanagers' TagManager: the first custom tag)
+TERRAIN = 8           # the "Terrain" layer (the same TagManager's layers): the ground Hornet stands on
+REACH = 0.5           # how far above a respawn marker the ground under it may reach
+COLLIDERS = ('BoxCollider2D', 'EdgeCollider2D', 'PolygonCollider2D')
 # What opens a way that the save keeps in playerData rather than in sceneData (read in the author's
 # 100% save against the site, 11-Oct-2026): levers, a pressure plate, gates and doors, walls and
 # one-way ways, and where they're named (every component, not only the FSMs: a Lever_tk2d, a
@@ -198,13 +211,90 @@ def one_each(v):
     return out
 
 
+def placer(T, of_go):
+    """A GameObject's own points → the world (gid → a function of x, y): each Transform's scale,
+    turn about z and place, from its own up to the root."""
+    def of(gid):
+        chain, t = [], of_go.get(gid)
+        while t is not None:
+            chain.append(t)
+            f = t.m_Father.m_PathID
+            t = T.get(f) if f else None
+        def at(x, y):
+            for t in chain:
+                s, r, p = t.m_LocalScale, t.m_LocalRotation, t.m_LocalPosition
+                a = 2 * math.atan2(r.z, r.w)
+                x, y = x * s.x, y * s.y
+                x, y = x * math.cos(a) - y * math.sin(a), x * math.sin(a) + y * math.cos(a)
+                x, y = x + p.x, y + p.y
+            return x, y
+        return at
+    return of
+
+
+def switched_on(T, of_go, gos):
+    """Whether a GameObject and every one above it are on in the scene file."""
+    def on(gid):
+        t = of_go.get(gid)
+        while t is not None:
+            g = gos.get(t.m_GameObject.m_PathID)
+            if g is not None and not g.m_IsActive:
+                return False
+            f = t.m_Father.m_PathID
+            t = T.get(f) if f else None
+        return True
+    return on
+
+
+def ground(env, T, of_go, gos):
+    """A scene's ground: every edge of a solid collider on the Terrain layer switched on in the scene
+    file, in the world ([((x0, y0), (x1, y1))])."""
+    of, on, edges = placer(T, of_go), switched_on(T, of_go, gos), []
+    for o in env.objects:
+        if o.type.name not in COLLIDERS:
+            continue
+        gid = struct.unpack_from('<q', o.get_raw_data(), 4)[0]   # a component starts with its GameObject
+        g = gos.get(gid)
+        if g is None or g.m_Layer != TERRAIN or not on(gid):
+            continue
+        d = o.read_typetree()
+        if d.get('m_IsTrigger') or not d.get('m_Enabled', 1):
+            continue
+        ox, oy = d['m_Offset']['x'], d['m_Offset']['y']
+        if o.type.name == 'EdgeCollider2D':
+            paths = [([(p['x'] + ox, p['y'] + oy) for p in d['m_Points']], False)]
+        elif o.type.name == 'PolygonCollider2D':
+            paths = [([(p['x'] + ox, p['y'] + oy) for p in path], True) for path in d['m_Points']['m_Paths']]
+        else:
+            w, h = d['m_Size']['x'] / 2, d['m_Size']['y'] / 2
+            paths = [([(ox - w, oy - h), (ox + w, oy - h), (ox + w, oy + h), (ox - w, oy + h)], True)]
+        at = of(gid)
+        for pts, closed in paths:
+            pts = [at(*p) for p in pts]
+            edges += [(pts[k], pts[(k + 1) % len(pts)]) for k in range(len(pts) if closed else len(pts) - 1)]
+    return edges
+
+
+def ground_under(edges, x, y):
+    """The top of the ground straight under (x, y): the highest edge crossing x no more than REACH
+    above y, or None."""
+    best = None
+    for (x0, y0), (x1, y1) in edges:
+        if x0 == x1 or (x0 - x) * (x1 - x) > 0:
+            continue
+        top = y0 + (y1 - y0) * (x - x0) / (x1 - x0)
+        if top <= y + REACH and (best is None or top > best):
+            best = top
+    return best
+
+
 def main(game, cache):
     got = pickle.load(open(cache, 'rb')) if cache and os.path.exists(cache) else None
-    if not got or len(got) != 16:   # none, or one kept before the doors, … the battles, the records, the fleas or the locks
+    if not got or len(got) != 17:   # none, or one kept before the doors, … the records, the fleas, the locks or the respawns
         got = scan(game)
         if cache:
             pickle.dump(got, open(cache, 'wb'))
-    items, fields, npcs, objects, benches, sizes, doors, lying, maps, pd, kept, caches, battles, records, fleas, locks = got
+    items, fields, npcs, objects, benches, sizes, doors, lying, maps, pd, kept, caches, battles, records, fleas, locks, respawns = got
     r2 = lambda v: [round(x, 2) if isinstance(x, float) else x for x in v]
     srt = lambda v: sorted({tuple(r2(x)) for x in v}, key=lambda x: tuple(str(y) for y in x))
     out = {'items': {k: {'class': c, 'at': srt(v)} for (k, c), v in sorted(items.items())},
@@ -222,7 +312,8 @@ def main(game, cache):
            'battles': {s: srt(v) for s, v in sorted(battles.items())},
            'records': {k: srt(one_each(v)) for k, v in sorted(records.items())},
            'fleas': {s: srt(v) for s, v in sorted(fleas.items())},
-           'locks': {s: srt(v) for s, v in sorted(locks.items())}}
+           'locks': {s: srt(v) for s, v in sorted(locks.items())},
+           'respawns': {s: {n: r2(p[:3]) for n, p in sorted(v.items())} for s, v in sorted(respawns.items())}}
     if len(out['pd']) < len(PD_WAYS):
         sys.exit(f"extract-pickups: no scene names {', '.join(sorted(set(PD_WAYS) - set(out['pd'])))} any more: PD_WAYS needs reading again")
     if len(out['maps']) < 10:
@@ -231,6 +322,8 @@ def main(game, cache):
         sys.exit('extract-pickups: too few caches: CACHES needs reading again')
     if len(out['battles']) < 40 or len(out['records']) < 200 or len(out['fleas']) < 20:
         sys.exit('extract-pickups: too few arenas, Journal records or fleas: BattleScene, RECORDS or FLEA need reading again')
+    if len(out['respawns']) < 120 or sum(p[2] is None for v in out['respawns'].values() for p in v.values()) > 5:
+        sys.exit('extract-pickups: too few respawn markers, or too many with no ground under them: RespawnMarker or TERRAIN need reading again')
     if len(out['doors'].get('lever', [])) < 50:
         sys.exit('extract-pickups: too few levers: the doors need reading again')
     for f in FIELDS[:11]:   # the abilities; a Bellshrine's flag is named where only some of them are
@@ -303,6 +396,7 @@ def scan(game):
     objects, benches, sizes, doors, lying = defaultdict(dict), {}, {}, defaultdict(list), defaultdict(list)
     pd, kept, caches = defaultdict(list), defaultdict(list), []
     battles, records, fleas, locks = defaultdict(list), defaultdict(list), defaultdict(list), defaultdict(list)
+    respawns = defaultdict(dict)
     pd_re = re.compile(rb'(?<![A-Za-z0-9_])(' + b'|'.join(re.escape(f.encode()) for f in sorted(PD_WAYS, key=len, reverse=True)) + rb')(?![A-Za-z0-9_])')
     # Each scene's own name, as the game (and its save) writes it: the bundles' are lower case.
     with open(os.path.join(aa, '..', 'catalog.bin'), 'rb') as fh:
@@ -420,6 +514,29 @@ def scan(game):
                 fields[f.decode()].append((scene, go, *at))
             if npc_re.fullmatch(copy(go)):
                 npcs[copy(go)].append((scene, go, *at))
+        # Where the game wakes Hornet (respawns): each RespawnMarker by its object's name, and the
+        # ground her feet go on, a bench's own foot or the terrain under the marker.
+        marks = [g for g, cs in comps_of.items() if 'RespawnMarker' in cs]
+        if marks:
+            gobs = {o.path_id: o.read() for o in env.objects if o.type.name == 'GameObject'}
+            of, on, edges = placer(T, of_go), switched_on(T, of_go, gobs), None
+            box_of = {}
+            for o in env.objects:
+                if o.type.name == 'BoxCollider2D':
+                    gid = struct.unpack_from('<q', o.get_raw_data(), 4)[0]
+                    if gid in marks and 'RestBench' in comps_of[gid]:
+                        box_of.setdefault(gid, o.read_typetree())
+            for gid in marks:
+                name, (x, y), up = gobs[gid].m_Name, of(gid)(0, 0), on(gid)
+                if 'RestBench' in comps_of[gid]:
+                    b = box_of.get(gid)
+                    feet = of(gid)(b['m_Offset']['x'], b['m_Offset']['y'] - b['m_Size']['y'] / 2)[1] if b else None
+                else:
+                    edges = ground(env, T, of_go, gobs) if edges is None else edges
+                    feet = ground_under(edges, x, y)
+                had = respawns[scene].get(name)
+                if not had or (up and not had[3]):
+                    respawns[scene][name] = (x, y, feet, up)
         # The doors: each saved bool of its own on an object of a kind (door_kind).
         if bools or ints or pd_hits:
             gos = {o.path_id: o for o in env.objects if o.type.name == 'GameObject'}
@@ -494,8 +611,24 @@ def scan(game):
                 print(f'{scene}: the tilemap the game reads is not the first ({min(tilemaps)[2]} for {tilemaps[0][2]})', file=sys.stderr)
         if i % 50 == 0:
             print(f'{i}/{len(names)} {scene}', file=sys.stderr, flush=True)
+    # A marker with no ground under it in its own scene: an additive scene's (the Flea Caravan's,
+    # loaded into Greymoor_08 or Aqueduct_05) stands on its host's, the scene without its last part.
+    for scene, marks in respawns.items():
+        host = scene
+        while '_' in host and any(m[2] is None for m in marks.values()):
+            host = host.rsplit('_', 1)[0]
+            if host not in names:
+                continue
+            env = UnityPy.load(os.path.join(sdir, host + '.bundle'))
+            T = {o.path_id: o.read() for o in env.objects if o.type.name == 'Transform'}
+            of_go = {t.m_GameObject.m_PathID: t for t in T.values()}
+            gobs = {o.path_id: o.read() for o in env.objects if o.type.name == 'GameObject'}
+            edges = ground(env, T, of_go, gobs)
+            for name, (x, y, feet, up) in list(marks.items()):
+                if feet is None:
+                    marks[name] = (x, y, ground_under(edges, x, y), up)
     return (dict(items), dict(fields), dict(npcs), dict(objects), benches, sizes, dict(doors), dict(lying), maps, dict(pd), dict(kept), caches,
-            dict(battles), dict(records), dict(fleas), dict(locks))
+            dict(battles), dict(records), dict(fleas), dict(locks), dict(respawns))
 
 
 if __name__ == '__main__':
