@@ -20,10 +20,6 @@ between the two.
 tab, its pages (the damage calculator and the bosses') and the Map's «Fight it in Combat» are
 gone, and a link to it opens Your game. Its section below says what it does when it's on.
 
-The site is a beta: a small «Beta» sits by the title, and above the screens a notice says it's
-still being built, with a link to report what looks wrong (the project's GitHub issues). Closing
-it (×) hides it for good in that browser (`pharloom.betaSeen`); the tag by the title stays.
-
 Every screen is framed as the game's pause menu frames its panes: a thin filigree line all
 round with a curl at each corner, and the screen's name on its top edge in a small plaque with
 pointed ends, where the line stops. The frame is lit in the colour of the tab's place in the

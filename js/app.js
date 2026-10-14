@@ -22,7 +22,7 @@
   const pick = (v) => I.pick(v);
 
   // Every key starts with pharloom.: the Hollow Knight site shares this origin (CLAUDE.md).
-  const KEY = { prefs: 'pharloom.prefs', beta: 'pharloom.betaSeen' };
+  const KEY = { prefs: 'pharloom.prefs' };
   /* The page's own language: es/index.html will be the Spanish copy, with its own address so
      that search engines index the Spanish too. Read before setLang() rewrites <html lang>. */
   const PAGE_LANG = document.documentElement.lang === 'es' ? 'es' : 'en';
@@ -185,7 +185,7 @@
       </div>
       <a class="brand" href="${here(hashFor('home'))}" data-act="view" data-value="home" title="${esc(t('goHome'))}">
         ${CROWN}
-        <p class="title">${esc(t('title'))}<span class="mh-beta">${esc(t('betaTag'))}</span></p>
+        <p class="title">${esc(t('title'))}</p>
       </a>
       ${App.saveLink ? App.saveLink() : ''}`;
   }
@@ -387,19 +387,8 @@
     for (const k of ['id', 'key', 'value']) if (node.dataset[k] !== undefined) parts.push(`[data-${k}="${node.dataset[k]}"]`);
     return { sel: parts.join('') };
   }
-  /* The notices above the screens: the beta one, until it's closed (the tag by the title stays),
-     and the one for when following the game needs you (js/app-saves.js). */
-  function betaBanner() {
-    if (load(KEY.beta)) return '';
-    const report = `<a href="https://github.com/betorzdev/pharloom-calculator/issues" target="_blank" rel="noopener">${esc(t('betaReport'))}</a>`;
-    return `<div class="banner is-hint" role="status">
-      <span class="banner-tag">${esc(t('betaTag'))}</span>
-      <span class="banner-text">${t('betaText', { report })}</span>
-      <button type="button" class="icon-btn" data-act="betaClose" aria-label="${esc(t('betaClose'))}" title="${esc(t('betaClose'))}">${cross}</button>
-    </div>`;
-  }
   function renderBanner() {
-    if (el.banner) el.banner.innerHTML = betaBanner() + (App.liveBanner ? App.liveBanner() : '');
+    if (el.banner) el.banner.innerHTML = App.liveBanner ? App.liveBanner() : '';
   }
   /* One painter that throws mustn't take the rest down with it: every screen starts hidden
      (index.html) and only showScreen(), at the end of render(), shows one, so an error before it
@@ -508,7 +497,6 @@
     view(node) { go(node.dataset.value, !node.closest('#nav, .masthead')); },
     // The About block's button (tools/pages.js): up to the screen it's about.
     aboutUp() { const m = document.querySelector('.screens'); if (m) m.scrollIntoView({ behavior: 'smooth', block: 'start' }); },
-    betaClose() { save(KEY.beta, '1'); renderBanner(); },
     aboutFold() { aboutOpen = true; renderAbout(); const h = el.about.querySelector('h1'); if (h) { h.setAttribute('tabindex', '-1'); h.focus(); } },
   };
   // The language's list is a dropdown: a tap anywhere else closes it (and still does what it was for).
