@@ -63,8 +63,10 @@ Neither folder is part of the page: `index.html` doesn't load them.
 ## Translations
 
 **Nothing is translated by hand.** Every visible string carries `{ es, en }` and comes from a
-source, in this order. `npm run text -- "Straight Pin"` searches the first one; `--key CREST_`
-lists by key; `--audit` cross-checks every game name the site carries against its text.
+source, in this order, **both sides**: the English is copied from the game as much as the
+Spanish, never one side from the game and the other written by hand.
+`npm run text -- "Straight Pin"` searches the first one; `--key CREST_` lists by key; `--audit`
+cross-checks every game name the site carries against its text.
 An element that shows only a game name carries `${NT}` (`translate="no"`), so a browser
 translator leaves it as the game says it.
 
