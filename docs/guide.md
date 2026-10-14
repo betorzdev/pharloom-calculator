@@ -116,13 +116,13 @@ reduced motion).
 
 A sheet in two columns, each thing beside what it feeds, and a band under both. On the left, what
 Hornet is: **the Needle**, the five upright with their damage, the one she carries taller and lit,
-and the Pale Oil you hold under it; then **Hornet**: the masks (5 to 10) as the game's masks, in a
+and the Pale Oil under it (the game's flask three times, lit up to what you hold); then **Hornet**: the masks (5 to 10) as the game's masks, in a
 row as the HUD draws them, with the loose Mask Shards under them (four make a mask), the silk (9 to
 18) as beads on one thread with the loose Spool Fragments (two make a spool), and the Silk Hearts;
 then the **Silk Skills** with what each deals at this build, and the **abilities** (Needle Strike
 with its damage). On the right, her equipment: the **Crests**, with the Memory Lockets that open
-their slots, and the **Tools**: the Crafting Kit and Tool Pouch with their level and the
-Craftmetal, then the Tools by colour, each on its slot's diamond (hollow in its colour while you
+their slots under them, and the **Tools**: the Crafting Kit and Tool Pouch with their level and the
+Craftmetal, three rows alike, then the Tools by colour, each on its slot's diamond (hollow in its colour while you
 lack it). There's one slot per point of the 100%: a Tool and its upgrade (Curveclaw and
 Curvesickle, Druid's Eye and Eyes, Claw Mirror and Mirrors) share one, showing the one you have,
 with two pips under it (had, upgraded), and Shell Satchel shows in Dead Bug's Purse's slot in Steel
