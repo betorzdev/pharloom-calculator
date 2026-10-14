@@ -1293,7 +1293,7 @@ area left black hides what's missing in it. So the whole map is always there, wh
 in colour and the rest faint, and the switch became **Only what the game shows**, off at first.
 A room mapped in part then showed a change of tone in its middle, where the game's straight cut
 between two parts falls (33 rooms in one save), so as a guide a room goes whole in colour once any
-part of it is. A part is a piece named after another and not a scene of the game (`js/graph.js`):
+part of it is (until 14 October: «Colour only where the game draws», below). A part is a piece named after another and not a scene of the game (`js/graph.js`):
 237 of them; Belltown_06 or Hang_03_top are scenes, rooms of their own.
 Then a black hairline where two pieces met: each piece is a window of its own, and the browser
 smooths a window's edge, so the black under two touching windows showed through (the single image
@@ -1369,7 +1369,7 @@ and after, they had seven causes, none of them the game's:
 7. **Eighteen rooms changed tone halfway through in the guide view**: the map draws them only in
    parts named after their scene (Under_13_left, _right, _bot), and the rule that makes a room
    whole in colour once any part is looked only for parts named after another piece. Those parts
-   are grouped by their scene now.
+   are grouped by their scene now (the rule went on 14 October; the grouping stays for the benches).
 What stays soft is the closest zoom, past the game's own resolution: each pixel of the fine
 sheet (96 a unit, the game's is 100) is then about one and a half CSS pixels wide on any screen.
 The made-up game and the render harness aren't kept; `tools/map-debug.html` draws the map as the
@@ -1693,6 +1693,33 @@ and 487 none, shown under every Act; and an Act showed only what first appears i
 still to get from the Acts before. The game sorts nothing by Act. Albert's choice: gone; a mark's
 card and title still say its Act, and Progress keeps its own.
 
+**The Map with every mark shown** (14 October). Albert found the site slow once the Map showed
+everything. Measured in headless Chrome over file:// (ANGLE-GL on the GPU; 1440 px, and 390 px at
+three device pixels a CSS pixel with the CPU four times slower, as a phone), with five saves and Free
+mode: «Whole map» (the faint layer) costs nothing per frame, the composed map being one image
+either way; «Show all» is what weighs: 2,600 to 2,800 marks in an early save or Free mode (1,385
+at 100%), 18,000 nodes, a pan of the whole map at 40 to 55 ms of main thread a frame, a zoom step
+at 40, every legend switch 250 ms (a second on the phone). The causes, and what changed in
+`js/app-map.js`: every mark read its transform from a `--k` the SVG passed down, so each zoom step
+restyled every node of every mark (now the transform is written on each mark, only when it
+changes, and `spread()` lists the marks once per map with a numeric grid); close up, every mark of
+every layer was laid out and painted though most were far out of the view (now those beyond a
+quarter of the view past an edge leave the layout, from 1.5 times closer); the map was drawn at
+its finest at every frame, the browser making its mipmaps again each time (now plain bilinear
+while the view moves, and as before once it's been still for 150 ms); every switch drew every
+screen again (now the legend's draw the Map only, `App.renderOnly`); and the grab cursor, changed
+at each drag's start and end, was passed down to every mark. In an early save with every mark
+shown, on the desktop a zoom step went from 50 to 30 ms and a close-up pan from 42 to 20 ms a
+frame, the renderer's memory after zooming from 1,090 to 640 MB, «Only the 100%» from 78 to 49 ms;
+on the phone a zoom step from 212 to 103 ms. At rest the Map is the same: of 48 screenshots set
+against `dev`'s (three saves, two widths, default and every layer, the whole map, zoomed in, after a
+drag and back out), 43 are the same to the pixel and none differs by more than one level, on at
+most 31 pixels. Left for later (step B): panning the whole map with every mark
+shown still repaints them all at every frame (about 15 to 20 frames a second on a desktop, 6 on
+the phone); moving the drawn view with a transform while the drag lasts, and leaving the caches and
+walls out of the page until close up, would take it to 60, at the cost of a margin drawn past the
+view's edges (a design question).
+
 **Hornet on the ground** (14 October). Albert saw Hornet sitting in mid-air at Bone Bottom's bench
 and in the rock at one of Mount Fay's. The Map and Your game's area map put her feet on the game's
 bench pin, and the game sets its pins by hand: a median 2.8 px above the bench, Bone Bottom's 24 px
@@ -1745,8 +1772,34 @@ is, secret parts too. A test pins the rule. Keeping secret parts faint was weigh
 game's files don't tell a secret part from one not walked into yet. The 673 masks over hidden areas
 (Remasker, Unmasker) cover 8 of the 11 parts' triggers but also 119 ordinary ones (interiors the
 game hides from outside), and a breakable wall leaves no mark on the map; and keeping every part not
-mapped faint brought back the change of tone in about 34 rooms of a 56% save. Albert's choice: the
-rule stays, and the guide and the switch's tip say so.
+mapped faint brought back the change of tone in about 34 rooms of a 56% save. The rule stayed, for
+a few hours.
+
+**Colour only where the game draws** (the same day, 14 October 2026). On a new game (user4, 5%)
+Albert saw in colour a part of the Marrow he hadn't been in: Bone_16_top, an ordinary part of
+Bone_16 (mapped in 48 of the 73 saves), drawn because Bone_16 and Bone_16_right were. Over the 73
+saves the rule coloured what the game doesn't draw in 52 of them, a median of 34 parts in 32 rooms
+(up to 56 in 49, a 55% save), 114 parts in all, only 8 of them never mapped in any save; and in 11
+saves it coloured a room across into an area whose map isn't bought (Peak_01 in Mount Fay beside
+its parts in the Slab, Coral_35_top_break_base). The 100% saves PR #88 looked at hid the scale.
+Albert's choice: in colour only what the game draws whole, piece by piece, as with «Whole map»
+off, and everything else in the one faint layer, a room's parts not mapped too. Of the looks drawn
+for those parts (faint as the rest, a stronger faint, the outline only, a soft edge at the cut) he
+took faint as the rest: the game's straight cut shows as a change of tone, and nothing new is
+drawn. `js/rooms.js mapView` lost the rule; the test pins that, with the whole map, colour is
+exactly what the game draws, and over the 73 saves no piece is in colour that the game doesn't draw.
+
+**The pane «Tareas»'s own pictures** (14 October 2026, design/03-redesign.md step 5). Albert asked
+whether the Tasks could have pictures, if the game has them. It does, for all 74: each QuestType of
+`questsystem/types.bundle` has a small `icon` (QI_Wayfarer, QI_Hunt…, in `inventory.spriteatlas`;
+the Witness's QI_herald in types.bundle itself), the one the pane draws by each wish, besides the
+large emblem the Wishwalls show; and each MainQuest of `mainquests.bundle` its own `typeIcon`
+(QI_Main_*: the Citadel's for five objectives, the Black Thread's for eight, the Bellshrines' and
+the Snare's, each melody and Old Heart its own; two of them live in mainquests.bundle). The two Soul
+Snare wishes the site files apart are Wayfarer ones in the game. Rewards were looked at too
+(`rewardItem`, `rewardIcon`): only 28 of the 74 name one, the rest give theirs through the NPC's
+script, so they weren't used. `tools/extract-wish-icons.py` writes them into `assets/icons/tasks/`
+(37 lossless WebP, at most 64 px), and Progress's Tasks, now a tab of its own, draws them.
 
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about

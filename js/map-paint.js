@@ -106,15 +106,16 @@
   }
 
   /* The view `vb` (in the map's pixels) of the composed maps `comps`, on a canvas `cw` × `ch`
-     pixels. */
-  function paint(ctx, comps, vb, cw, ch) {
+     pixels, smoothed at `quality`: 'high' at rest; 'low' (plain bilinear, no mipmaps made again
+     for every draw) while the view moves (js/app-map.js paintMap). */
+  function paint(ctx, comps, vb, cw, ch, quality = 'high') {
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.clearRect(0, 0, cw, ch);
     const kx = cw / vb.w, ky = ch / vb.h;
     const comp = pick(Array.isArray(comps) ? comps : [comps], Math.max(kx, ky));
     if (!comp) return;
     ctx.imageSmoothingEnabled = true;
-    ctx.imageSmoothingQuality = 'high';
+    ctx.imageSmoothingQuality = quality;
     const s = comp.scale;
     for (const t of comp.tiles) {
       const x0 = Math.max(vb.x, t.x), y0 = Math.max(vb.y, t.y);

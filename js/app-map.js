@@ -538,7 +538,7 @@
   let coarse = { at: -1, list: [] }, fine = { at: -1, comp: null };
   const faintOf = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--map-faint')) || 0.45;
   const makeCanvas = (w, h) => { const c = document.createElement('canvas'); c.width = w; c.height = h; return c; };
-  function composeMap() {
+  function composeMap(r) {
     if (!shown) return;
     const at = shownStamp;
     if (coarse.at !== at) {
@@ -555,15 +555,24 @@
         paintMap();
       });
     } else if (fine.at !== at) fine = { at: -1, comp: null };   // another game's: made again when needed
-    paintMap();
+    paintMap(r);
   }
-  function paintMap() {
+  /* While the view moves (a drag, a pinch, the wheel), the map is drawn with the plain smoothing,
+     and once it has been still for SETTLE ms, again as at rest. Drawn at its finest at every
+     frame, the browser made the map's mipmaps again each time: twice the GPU memory, and most of a
+     frame's work on a slow device (14-Oct-2026). At rest it's the same pixels as before. */
+  const SETTLE = 150;
+  let movedAt = -Infinity, settle = 0;
+  // `r`: the view's box, when the caller has just measured it (the canvas has the SVG's).
+  function paintMap(r) {
     const { v } = nodes(), cv = v && v.querySelector('.mp-canvas');
     if (!cv || !vb) return;
-    const [w, h] = canvasPixels(cv);
+    const [w, h] = canvasPixels(cv, r);
     if (!w || !h) return;
     if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; }
-    MP.paint(cv.getContext('2d'), [...coarse.list, fine.comp], vb, w, h);
+    const moving = performance.now() - movedAt < SETTLE;
+    MP.paint(cv.getContext('2d'), [...coarse.list, fine.comp], vb, w, h, moving ? 'low' : 'high');
+    if (moving) { clearTimeout(settle); settle = setTimeout(() => paintMap(), SETTLE); }
   }
   /* The canvas as many pixels as the screen has under it: as the browser measures them where it
      can (ResizeObserver's device-pixel-content-box). Rounded from its CSS size × devicePixelRatio
@@ -574,13 +583,13 @@
     const e = es[es.length - 1], s = e.devicePixelContentBoxSize && e.devicePixelContentBoxSize[0];
     if (s) { seen = { cv: e.target, w: s.inlineSize, h: s.blockSize }; paintMap(); }
   }) : null;
-  function canvasPixels(cv) {
+  function canvasPixels(cv, r = cv.getBoundingClientRect()) {
     if (watch && watched !== cv) {
       watched = cv;
       watch.disconnect();
       try { watch.observe(cv, { box: 'device-pixel-content-box' }); } catch (e) { /* a browser without it */ }
     }
-    const r = cv.getBoundingClientRect(), dpr = window.devicePixelRatio || 1, w = r.width * dpr, h = r.height * dpr;
+    const dpr = window.devicePixelRatio || 1, w = r.width * dpr, h = r.height * dpr;
     // The measure only settles the rounding: one that disagrees by more (an emulated screen) isn't taken.
     if (seen && seen.cv === cv && Math.abs(seen.w - w) <= 1 && Math.abs(seen.h - h) <= 1) return [seen.w, seen.h];
     return [Math.round(w), Math.round(h)];
@@ -674,37 +683,6 @@
   const mapped = (own) => new Set((own ? own.maps : []).map((f) => SP.MAPS[f]).filter(Boolean));
   const MAPPABLE = new Set(Object.values(SP.MAPS));
 
-  /* Hornet's bench and her way from the previous one. */
-  function before() {
-    let prev = null;
-    try { prev = JSON.parse(App.load('pharloom.prev') || 'null'); } catch (e) { prev = null; }
-    return prev && prev.snap ? SS.savefile.gameOf(prev.snap) : null;
-  }
-  /* The way's key, cheap (no path searched): the two benches and when this save was written, so
-     a later return between the same two benches walks again. null with no way to walk. */
-  function wayKey(g) {
-    const b = before();
-    if (!g || !b || !b.bench || !g.bench || b.bench === g.bench) return null;
-    return b.bench + '>' + g.bench + '@' + ((App.gameMeta() || {}).saved || '');
-  }
-  function way(g, pins) {
-    const key = wayKey(g);
-    if (!key) return null;
-    const b = before();
-    const path = R.path(b.bench, g.bench, g.lit) || [];
-    const mid = path.slice(1, -1).map((s) => R.roomOf(s)).filter(Boolean);
-    pins = pins || R.pinsOn(g);
-    const pts = [R.restPoint(b, pins), ...mid, R.restPoint(g, pins)].filter(Boolean);
-    return path.length > 1 && pts.length > 1 ? { key, pts, fromRested: b.rested } : null;
-  }
-  function waySvg(g, pins) {
-    const w = way(g, pins);
-    if (!w) return '';
-    const start = w.pts[0];
-    return `<g class="mp-way" aria-hidden="true"><polyline points="${w.pts.map((p) => `${Math.round(p.x)},${Math.round(p.y)}`).join(' ')}"/>
-        <g class="mp-mk mp-from" style="--px:${n2(start.x)}px;--py:${n2(start.y)}px"><title>${esc(t(w.fromRested ? 'mapFrom' : 'mapFromRespawn'))}</title><circle r="0.3"/></g></g>`;
-  }
-
   /* The map's own marks, for Your game's lists (js/app-home.js): a piece's disc, a gauntlet's
      badge with its champion, a wish's. */
   App.mapMark = {
@@ -719,7 +697,10 @@
      shows" included), composed by the same painter (js/map-paint.js) but cropped to the box of
      the rooms of the bench's branch of the map. Since the calm round (design/03-redesign.md, step
      3) it's the scene's backdrop, faint behind the area's name: a picture with no marks and no
-     Hornet (she's on her bench in front), not a way in (the Map tab is). */
+     Hornet (she's on her bench in front), not a way in (the Map tab is). Since the map round
+     (design/03-redesign.md, step 3, 14 Oct 2026) it fills the scene around her bench: the frame's
+     shape cut from the area's box, the bench's room right under her, and never smaller than the
+     map's own size (on a phone, the rooms round her rather than the whole area shrunk). */
   const AREA_BOX = new Map();
   // The branch's rooms' box in the map's pixels: [x, y, w, h], or null when it draws none (Surface).
   function branchBox(branch) {
@@ -747,7 +728,7 @@
     const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
     return { x: cx - w / 2, y: cy - h / 2, w, h };
   }
-  let areaCtx = null;   // { view, box }: what the figure on screen draws
+  let areaCtx = null;   // { view, box, at }: what the figure on screen draws, and her bench's point
   App.mapAreaHtml = (g) => {
     areaCtx = null;
     const room = g && g.bench ? R.roomOf(g.bench) : null;
@@ -755,9 +736,27 @@
     const view = R.mapView(g, { all: !prefs.mapGame });
     const box = areaView(room.area, view);
     if (!box) return '';
-    areaCtx = { view, box, key: MP.keyOf(view, 0) };
-    return `<figure class="hmB-map" aria-hidden="true"><span class="hmB-view" style="--r:${n2(box.w / box.h)}"><canvas class="hmB-canvas"></canvas></span></figure>`;
+    const z = view.zones[room.area];
+    const at = z ? [(room.x - z.at[0]) * z.sx + z.at[0] + z.dx, (room.y - z.at[1]) * z.sy + z.at[1] + z.dy] : [room.x, room.y];
+    areaCtx = { view, box, at, key: MP.keyOf(view, 0) };
+    return '<figure class="hmB-map" aria-hidden="true"><canvas class="hmB-canvas"></canvas></figure>';
   };
+  /* The part of the area's box the figure shows (`r`, its box on screen): the figure's shape, as
+     wide (or tall) as the area, no wider than the figure in map pixels, placed so that her bench's
+     point falls under Hornet (.hm-rest), kept inside the area's box. */
+  function areaCut(r) {
+    const { box, at } = areaCtx, k = r.width / r.height;
+    let w = box.w, h = box.w / k;
+    if (h > box.h) { h = box.h; w = box.h * k; }
+    if (w > r.width) { h *= r.width / w; w = r.width; }
+    const her = (document.querySelector('.hm-scene .hm-rest') || document.querySelector('.hmB-canvas')).getBoundingClientRect();
+    const fx = (her.left + her.width / 2 - r.left) / r.width, fy = (her.top + her.height / 2 - r.top) / r.height;
+    return {
+      x: Math.min(Math.max(at[0] - w * fx, box.x), box.x + box.w - w),
+      y: Math.min(Math.max(at[1] - h * fy, box.y), box.y + box.h - h),
+      w, h,
+    };
+  }
   /* Paints the figure just placed on the page (the screen is built whole each time, so this runs
      after every render): the pieces composed again only when what's shown changes, at the finer
      scale when the area is drawn larger than the map's own pixels. */
@@ -768,7 +767,7 @@
     const r = cv.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
     const w = Math.round(r.width * dpr), h = Math.round(r.height * dpr);
     if (!w || !h) return;
-    const { view, box, key } = areaCtx;
+    const { view, key } = areaCtx, box = areaCut(r);
     const scale = w / box.w > 1.1 ? 2 : 1, ck = key + '@' + scale;
     const draw = () => {
       if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; }
@@ -905,7 +904,7 @@
           <canvas class="mp-canvas" aria-hidden="true"></canvas>
           <svg class="mp-svg" viewBox="${vb ? `${vb.x} ${vb.y} ${vb.w} ${vb.h}` : `0 0 ${M.W} ${M.H}`}" role="img" aria-label="${esc(t('mapAlt'))}">
             <defs><radialGradient id="mp-plate"><stop offset="0"/><stop offset="0.6"/><stop offset="1"/></radialGradient></defs>
-            ${own ? waySvg(own, shownPins) : ''}<g class="mp-names">${namesSvg}</g><g class="mp-marks">${clusters}${marks}</g>
+            <g class="mp-names">${namesSvg}</g><g class="mp-marks">${clusters}${marks}</g>
           </svg>${hornet}<i class="mp-ping" hidden></i>
         </div>
         ${search}${tools}
@@ -1000,47 +999,73 @@
      (arrange()) and moves at most `max` pins from it: none with the whole map (spread, a crowd
      would cover it), SPREAD_MAX from four times closer, so close up every mark stands clear near
      its own place. Again whenever the pins' size or the
-     marks change; the caches and walls only when they show (close), else their rooms' counts. */
+     marks change; the caches and walls only when they show (close), else their rooms' counts.
+     Each mark's transform is written whole (its point, the pins' size, its shift), and only when
+     it changes: read from a --k the SVG passed down, every zoom step restyled every node of every
+     mark, most of a frame with every layer shown (14-Oct-2026). */
   const SPREAD_GAP = 1.04, SPREAD_MAX = 1.2;
-  let spreadAt = '';
+  // The marks of a map drawn (a render makes a new SVG), listed once: all, from afar, close up.
+  function marksOf(m) {
+    if (!m._marks) {
+      const all = [...m.querySelectorAll('.mp-mk[data-mk], .mp-cluster')];
+      m._marks = { all, far: all.filter((el) => !el.classList.contains('is-fine')), close: all.filter((el) => !el.classList.contains('mp-cluster')) };
+    }
+    return m._marks;
+  }
+  // A mark's point and its grid's shift (arrange()), as the page wrote them.
+  const styleNum = (el, p) => parseFloat(el.style.getPropertyValue(p)) || 0;
+  const baseOf = (el) => el._base || (el._base = { x: styleNum(el, '--px'), y: styleNum(el, '--py'), ox: styleNum(el, '--ox'), oy: styleNum(el, '--oy') });
+  // A mark at its point, `k` image pixels a pin, shifted (ox, oy) pins.
+  function placeMark(el, k, ox, oy) {
+    const b = baseOf(el), t = `translate(${b.x}px,${b.y}px) scale(${k}) translate(${n2(ox)}px,${n2(oy)}px)`;
+    el._at = { k, ox, oy };
+    if (el._t !== t) { el._t = t; el.style.transform = t; }
+  }
   function spread(m, k, close, max) {
-    const els = [...m.querySelectorAll('.mp-mk[data-mk], .mp-cluster')].filter((el) => (close ? !el.classList.contains('mp-cluster') : !el.classList.contains('is-fine')));
-    const stamp = `${k.toFixed(4)}|${close}|${max.toFixed(3)}|${els.length}|${els[0] ? els[0].dataset.mk || els[0].style.cssText : ''}`;
-    if (stamp === spreadAt && els.every((el) => el._base)) return;
-    spreadAt = stamp;
-    const num = (el, p) => parseFloat(el.style.getPropertyValue(p)) || 0;
-    const pts = els.map((el) => {
-      const b = el._base || (el._base = { x: num(el, '--px'), y: num(el, '--py'), ox: num(el, '--ox'), oy: num(el, '--oy') });
-      const x = b.x / k + b.ox, y = b.y / k + b.oy;   // in pins
-      return { el, b, x0: x, y0: y, x, y };
-    });
+    const els = close ? marksOf(m).close : marksOf(m).far;
+    const stamp = `${k.toFixed(4)}|${close}|${max.toFixed(3)}`;
+    if (stamp === m._spread) return;
+    m._spread = stamp;
+    // In pins: where each starts (x0, y0) and where it's pushed to (x, y).
+    const n = els.length, x0 = new Float64Array(n), y0 = new Float64Array(n), x = new Float64Array(n), y = new Float64Array(n);
+    els.forEach((el, i) => { const b = baseOf(el); x0[i] = x[i] = b.x / k + b.ox; y0[i] = y[i] = b.y / k + b.oy; });
+    const G = SPREAD_GAP, cell = (cx, cy) => cx * 65536 + cy;
     for (let pass = 0; max > 0 && pass < 10; pass++) {
-      const cells = new Map(), cell = (x, y) => Math.floor(x / SPREAD_GAP) + ',' + Math.floor(y / SPREAD_GAP);
-      pts.forEach((p, i) => { const c = cell(p.x, p.y); if (!cells.has(c)) cells.set(c, []); cells.get(c).push(i); });
+      const cells = new Map();
+      for (let i = 0; i < n; i++) { const c = cell(Math.floor(x[i] / G), Math.floor(y[i] / G)), l = cells.get(c); if (l) l.push(i); else cells.set(c, [i]); }
       let moved = false;
-      pts.forEach((a, i) => {
-        const cx = Math.floor(a.x / SPREAD_GAP), cy = Math.floor(a.y / SPREAD_GAP);
-        for (let dx = -1; dx <= 1; dx++) for (let dy = -1; dy <= 1; dy++) for (const j of cells.get((cx + dx) + ',' + (cy + dy)) || []) {
+      for (let i = 0; i < n; i++) {
+        const cx = Math.floor(x[i] / G), cy = Math.floor(y[i] / G);
+        for (let dx = -1; dx <= 1; dx++) for (let dy = -1; dy <= 1; dy++) for (const j of cells.get(cell(cx + dx, cy + dy)) || []) {
           if (j <= i) continue;
-          const b = pts[j];
-          let ux = b.x - a.x, uy = b.y - a.y, d = Math.hypot(ux, uy);
-          if (d >= SPREAD_GAP) continue;
+          let ux = x[j] - x[i], uy = y[j] - y[i], d = Math.hypot(ux, uy);
+          if (d >= G) continue;
           // Two on one point: apart sideways, the later one to the right.
           if (d < 1e-6) { ux = 1; uy = 0; d = 1; } else { ux /= d; uy /= d; }
-          const push = (SPREAD_GAP - Math.min(d, SPREAD_GAP)) / 2;
-          a.x -= ux * push; a.y -= uy * push; b.x += ux * push; b.y += uy * push;
+          const push = (G - Math.min(d, G)) / 2;
+          x[i] -= ux * push; y[i] -= uy * push; x[j] += ux * push; y[j] += uy * push;
           moved = true;
         }
-      });
-      for (const p of pts) {
-        const ex = p.x - p.x0, ey = p.y - p.y0, e = Math.hypot(ex, ey);
-        if (e > max) { p.x = p.x0 + (e ? ex / e * max : 0); p.y = p.y0 + (e ? ey / e * max : 0); }
+      }
+      for (let i = 0; i < n; i++) {
+        const ex = x[i] - x0[i], ey = y[i] - y0[i], e = Math.hypot(ex, ey);
+        if (e > max) { x[i] = x0[i] + (e ? ex / e * max : 0); y[i] = y0[i] + (e ? ey / e * max : 0); }
       }
       if (!moved) break;
     }
-    for (const p of pts) {
-      p.el.style.setProperty('--ox', n2(p.b.ox + p.x - p.x0) + 'px');
-      p.el.style.setProperty('--oy', n2(p.b.oy + p.y - p.y0) + 'px');
+    els.forEach((el, i) => { const b = baseOf(el); placeMark(el, k, b.ox + x[i] - x0[i], b.oy + y[i] - y0[i]); });
+  }
+  /* Close up, the marks well outside the view (a quarter of it past each edge) leave the layout
+     (.is-away): a move then lays out and paints the marks near the view, not every mark of every
+     layer (14-Oct-2026). Up to 1.5 times closer than the whole map they all stay, so Tab goes
+     through all of them. */
+  const AWAY = 0.25;
+  function cull(m, on) {
+    const ax = vb.w * AWAY, ay = vb.h * AWAY;
+    for (const el of marksOf(m).all) {
+      const b = baseOf(el);
+      const away = on && (b.x < vb.x - ax || b.x > vb.x + vb.w + ax || b.y < vb.y - ay || b.y > vb.y + vb.h + ay);
+      if (!!el._away !== away) { el._away = away; el.classList.toggle('is-away', away); }
     }
   }
   function applyView() {
@@ -1062,28 +1087,32 @@
     // more close up, so zooming in makes room between them rather than making them bigger.
     const px = (r.width < 600 ? 18 : 22) * Math.min(1.25, Math.max(1, Math.pow(zoom, 0.15)));
     pinPx = px;
-    m.style.setProperty('--k', String(vb.w / r.width * px));
+    const k = vb.w / r.width * px;
+    // The names (and whatever else on the map isn't a mark) still take the pins' size from --k.
+    for (const g of m.querySelectorAll(':scope > g:not(.mp-marks)')) g.style.setProperty('--k', String(k));
     v.classList.toggle('is-zoomed', zoom > 1.5);
-    spread(m, vb.w / r.width * px, zoom > 3, SPREAD_MAX * Math.min(1, Math.max(0, (zoom - 1.5) / 2.5)));
+    spread(m, k, zoom > 3, SPREAD_MAX * Math.min(1, Math.max(0, (zoom - 1.5) / 2.5)));
     v.classList.toggle('is-close', zoom > 3);   // the caches and walls, one by one
-    unclutter(m, zoom > 1.5);
+    cull(m, zoom > 1.5);
+    // The box measured above serves the rest: measured again, the marks just moved would be laid
+    // out there and then, in the middle of the frame.
+    unclutter(m, zoom > 1.5, r);
     // Close up, the map at twice the resolution (assets/map/pieces-hd.webp, tools/extract-map.py):
     // loaded the first time the screen has more pixels than the map, and kept.
     if (r.width * (window.devicePixelRatio || 1) / vb.w > 1) wantFine = true;
-    composeMap();
-    for (const el of v.querySelectorAll('.mp-hornet, .mp-ping')) placeOver(el);
+    composeMap(r);
+    for (const el of v.querySelectorAll('.mp-hornet, .mp-ping')) placeOver(el, r);
     paintCard();
   }
   /* The area names, from afar (design/64, 2 A): one that would overlap another waits for the zoom,
      the larger area's (by its rooms) staying; zoomed in, all of them. Their size on screen is the
      same at any zoom, so only the view's size and the names shown change it. */
-  function unclutter(m, zoomed) {
-    const names = [...m.querySelectorAll('.mp-name')];
-    const r0 = m.getBoundingClientRect();
+  function unclutter(m, zoomed, r0 = m.getBoundingClientRect()) {
     // Worked out again only when the map (a render makes a new one), its size or the zoom change.
     const stamp = `${zoomed}|${Math.round(r0.width)}x${Math.round(r0.height)}`;
     if (m._clutter === stamp) return;
     m._clutter = stamp;
+    const names = [...m.querySelectorAll('.mp-name')];
     for (const x of names) x.classList.remove('is-crowded');
     if (zoomed) return;
     const kept = [];
@@ -1130,10 +1159,10 @@
 
   /* What sits over the map in the page (Hornet, the search's ring): at its map point (data-x, -y),
      raised by data-lift pins where the mark rests on it (a bench on its floor: layout's REST). */
-  function placeOver(el) {
+  function placeOver(el, r) {
     const { m } = nodes();
     if (!m || !vb || el.dataset.x === undefined) return;
-    const r = m.getBoundingClientRect();
+    r = r || m.getBoundingClientRect();
     el.style.left = ((el.dataset.x - vb.x) / vb.w * r.width) + 'px';
     el.style.top = ((el.dataset.y - vb.y) / vb.h * r.height - (Number(el.dataset.lift) || 0) * pinPx) + 'px';
   }
@@ -1280,6 +1309,9 @@
     if (!el) { if (c) c.remove(); return; }
     if (!c) { c = document.createElement('div'); c.className = 'mp-card-wrap'; stage.appendChild(c); }
     if (c.dataset.key !== picked) { c.innerHTML = cardHtml(picked); c.dataset.key = picked; }
+    // Its mark far out of the view (cull), and so out of the layout: the card waits for it.
+    c.hidden = !!el._away;
+    if (c.hidden) return;
     const r = el.getBoundingClientRect(), br = stage.getBoundingClientRect();
     const sx = r.left + r.width / 2 - br.left, sy = r.top - br.top;
     const half = c.firstElementChild ? c.firstElementChild.offsetWidth / 2 + 8 : 0;
@@ -1314,13 +1346,6 @@
     vb = { x: px - w / 2, y: py - h / 2, w, h };
     applyView();
   }
-  // Keeps a map point in view (js/app-hornet.js, while she walks).
-  App.mapKeep = (px, py) => {
-    if (!vb) return;
-    if (px < vb.x || py < vb.y || px > vb.x + vb.w || py > vb.y + vb.h) { vb = { ...vb, x: px - vb.w / 2, y: py - vb.h / 2 }; applyView(); }
-  };
-  // Hornet's sprite at a map point (js/app-hornet.js walks her with it).
-  App.mapHornetAt = (el, x, y) => { el.dataset.x = x; el.dataset.y = y; placeOver(el); };
   const touches = new Map();
   let drag = null, pinch = null, moved = false;
   // A tap (not the end of a drag): on a mark, its card; on the empty map, the card closes.
@@ -1358,10 +1383,12 @@
       const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
       if (Math.abs(dx) + Math.abs(dy) > 4) moved = true;
       vb = { ...drag.vb, x: drag.vb.x - (dx / r.width) * drag.vb.w, y: drag.vb.y - (dy / r.height) * drag.vb.h };
+      movedAt = performance.now();
       applyView();
     } else if (pinch && touches.size === 2) {
       const [a, b] = [...touches.values()];
       moved = true;
+      movedAt = performance.now();
       vb = { ...pinch.vb };
       zoomAt(pinch.d / (Math.hypot(a[0] - b[0], a[1] - b[1]) || 1), pinch.c[0], pinch.c[1]);
     }
@@ -1377,6 +1404,7 @@
     if (!v || !vb) return;
     e.preventDefault();
     const [cx, cy] = toMap(e.clientX, e.clientY);
+    movedAt = performance.now();
     zoomAt(e.deltaY > 0 ? 1.15 : 1 / 1.15, cx, cy);
   }, { passive: false });
   document.addEventListener('dblclick', (e) => { const v = inView(e); if (v && vb) { const [cx, cy] = toMap(e.clientX, e.clientY); zoomAt(1 / 1.8, cx, cy); } });
@@ -1386,9 +1414,6 @@
   window.addEventListener('resize', () => { pageWidth(); applyView(); });
   // The names' sizes once the typeface is in (unclutter measures them).
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { const { m } = nodes(); if (m) { m._clutter = ''; applyView(); } });
-
-  // For js/app-hornet.js: the way to walk, and a point's place on the image.
-  Object.assign(App, { mapWay: () => way(App.game()), mapWayKey: () => wayKey(App.game()) });
 
   /* Typing in the search lists what matches under it, up to ten: the areas, then every thing the
      map can show (whatever layer it's on; in a save, what's missing), each with its layer's name;
@@ -1420,31 +1445,35 @@
       : `<li class="mp-found-none">${esc(t('mapFindNone'))}</li>`;
   });
 
+  /* The legend's switches draw the Map again, not every screen (js/app.js renderOnly: the others
+     took a quarter of each switch, far more on a phone; 14-Oct-2026). An app.js from before it
+     (GitHub Pages caches each file on its own) draws them all, as it did. */
+  const redraw = () => (App.renderOnly ? App.renderOnly('map') : render());
   // Several layers at once: all on, or (when they're all on already, or `off`) all off.
   function switchAll(ids, off = ids.every((k) => layersOn().includes(k))) {
     const cur = layersOn();
     prefs.mapLayers = off ? cur.filter((k) => !ids.includes(k)) : [...new Set([...cur, ...ids])];
-    savePrefs(); render();
+    savePrefs(); redraw();
   }
   Object.assign(actions, {
     mapLayer(node) {
       const k = node.dataset.value, cur = layersOn();
       prefs.mapLayers = cur.includes(k) ? cur.filter((x) => x !== k) : [...cur, k];
-      savePrefs(); render();
+      savePrefs(); redraw();
     },
     // A group's switch: all of it on, or, when it's all on already, all of it off.
     mapGroup(node) { switchAll(layersOf(GROUPS.find(([g]) => g === node.dataset.value)[1])); },
     // A set's switch: all of its layers on, or, when any is on, all of them off.
     mapSet(node) { const ids = SETS[node.dataset.value].layers; switchAll(ids, ids.some((k) => layersOn().includes(k))); },
-    mapInside(node) { const k = node.dataset.value; if (inside.has(k)) inside.delete(k); else inside.add(k); render(); },
+    mapInside(node) { const k = node.dataset.value; if (inside.has(k)) inside.delete(k); else inside.add(k); redraw(); },
     // Show all · hide all.
-    mapAll(node) { prefs.mapLayers = node.dataset.value === '1' ? LAYERS.map((l) => l.id) : []; savePrefs(); render(); },
+    mapAll(node) { prefs.mapLayers = node.dataset.value === '1' ? LAYERS.map((l) => l.id) : []; savePrefs(); redraw(); },
     // Only the 100%: just the layers that count.
-    mapHundred() { prefs.mapLayers = [...HUNDRED]; savePrefs(); render(); },
+    mapHundred() { prefs.mapLayers = [...HUNDRED]; savePrefs(); redraw(); },
     mapOpen(node) {
       const gr = node.dataset.value, open = Object.fromEntries(openGroups().map((k) => [k, true]));
       open[gr] = !open[gr];
-      prefs.mapOpen = open; savePrefs(); render();
+      prefs.mapOpen = open; savePrefs(); redraw();
     },
     mapGame() { prefs.mapGame = !prefs.mapGame; savePrefs(); render(); },
     mapZoom(node) { if (vb) zoomAt(node.dataset.value === 'in' ? 1 / 1.4 : 1.4, vb.x + vb.w / 2, vb.y + vb.h / 2); },
@@ -1467,7 +1496,7 @@
     mapFoe(node) { prefs.ftMode = 'foe'; prefs.foe = node.dataset.value; savePrefs(); App.go('fight'); },
     // A boss's or an entry's card: the Journal, that entry open.
     mapJournal(node) { if (App.journalOpen) App.journalOpen(node.dataset.value); App.go('journal'); },
-    mapNames() { prefs.mapNames = prefs.mapNames === false; savePrefs(); render(); },
+    mapNames() { prefs.mapNames = prefs.mapNames === false; savePrefs(); redraw(); },
     // A search result: its layer on, the view close on it, its card open.
     mapGo(node) {
       const x = finds[Number(node.dataset.value)];
@@ -1497,6 +1526,14 @@
 
   // For the admin mode (js/app-map-admin.js): what it reads of the Map, and the list worked out
   // again once a fix changes.
+  // A mark moved by hand (the admin's drag) to a point of the image, keeping its size and shift.
+  function moveMark(el, p) {
+    const b = baseOf(el), at = el._at || { k: 1, ox: b.ox, oy: b.oy };
+    b.x = p.x; b.y = p.y;
+    el.style.setProperty('--px', p.x + 'px');
+    el.style.setProperty('--py', p.y + 'px');
+    placeMark(el, at.k, at.ox, at.oy);
+  }
   App.mapApi = { LAYER, LAYERS, OWN_ONLY, layersOn, pointOf, toMap, nodes, focusOn, pick: pick1, picked: () => picked, list: () => all().list, placed: () => placed,
-    view: () => vb, dirty: () => { cache = null; } };
+    view: () => vb, dirty: () => { cache = null; }, moveMark };
 })();

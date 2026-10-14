@@ -19,7 +19,7 @@ game's own Crest screen: a Crest, its Tools, the Needle's level.
 <br>
 
 <!-- docs/screenshots/: npm run drive with a 69% save (Restore_Points1/restoreData24.dat, --prev
-     restoreData22.dat), the beta notice closed by --eval, cropped and saved as WebP. -->
+     restoreData22.dat), cropped and saved as WebP. -->
 <img src="docs/screenshots/home.webp" alt="The Your game screen: resting at Choral Chambers in Act 3, 31 h 58 min played, the area's map faint behind Hornet on her bench, 69% of the 100%, and what changed since the previous save: from 61% to 69%, Act 3, Beastling Call and five Tools" width="900">
 
 </div>
@@ -174,7 +174,7 @@ What's read from the installed game (each script's header says how):
 | `tools/extract-phases.py` | `js/phases.js` | Each boss's phases |
 | `tools/extract-damage.py` | `js/enemy-damage.js` | What each common enemy does to Hornet |
 | `tools/extract-quests.py` | `js/quests.js` | The wishes' rules: what opens Act 3, which comes first |
-| `tools/extract-wish-icons.py` | `assets/icons/wishes/` | Each type of wish's emblem |
+| `tools/extract-wish-icons.py` | `assets/icons/wishes/`, `assets/icons/tasks/` | Each type of wish's emblem, and the pictures the pane «Tasks» draws by each wish and main objective |
 | `tools/extract-shops.py` | `js/shop.js` | What each vendor sells, for how much, and what each wish gives |
 
 `npm run data` then joins the shops into `js/how.js`: how to get each thing of the 100%.

@@ -22,7 +22,7 @@
   const pick = (v) => I.pick(v);
 
   // Every key starts with pharloom.: the Hollow Knight site shares this origin (CLAUDE.md).
-  const KEY = { prefs: 'pharloom.prefs', beta: 'pharloom.betaSeen' };
+  const KEY = { prefs: 'pharloom.prefs' };
   /* The page's own language: es/index.html will be the Spanish copy, with its own address so
      that search engines index the Spanish too. Read before setLang() rewrites <html lang>. */
   const PAGE_LANG = document.documentElement.lang === 'es' ? 'es' : 'en';
@@ -159,6 +159,8 @@
      such piece, so it's drawn (design/03-redesign.md, step 1). */
   const CROWN_HALF = '<path d="M93 14 C84 14 78 7 69 7 C61 7 58 13 62 16.5 C65 19 69.5 16.5 68 13.5"/><path d="M62 16.5 C50 22 30 21 10 14"/><path d="M10 14 C6 12 5.5 8.5 9 8 C11.5 7.8 12 10.5 10.5 11.5"/><path d="M78 9 C74 3 66 1.5 58 3.5"/>';
   const CROWN = `<svg class="mh-crown" width="200" height="28" viewBox="0 0 200 28" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" aria-hidden="true">${CROWN_HALF}<g transform="translate(200 0) scale(-1 1)">${CROWN_HALF}</g><path d="M100 5 L105 14 L100 23 L95 14 Z"/><path d="M100 1 V5 M100 23 V27"/></svg>`;
+  // The same filigree under a part's title (Progress, design/75, 6 B), with its own class.
+  App.crown = (cls) => CROWN.replace('mh-crown', cls);
   function renderMasthead() {
     const own = prefs.lang === PAGE_LANG && prefs.view === (PAGE_VIEW || 'home');
     document.title = own ? PAGE_HEAD.title : prefs.view === 'home' ? t('docTitle') : t(VIEW_KEY[prefs.view]) + ' · ' + t('title');
@@ -185,7 +187,7 @@
       </div>
       <a class="brand" href="${here(hashFor('home'))}" data-act="view" data-value="home" title="${esc(t('goHome'))}">
         ${CROWN}
-        <p class="title">${esc(t('title'))}<span class="mh-beta">${esc(t('betaTag'))}</span></p>
+        <p class="title">${esc(t('title'))}</p>
       </a>
       ${App.saveLink ? App.saveLink() : ''}`;
   }
@@ -356,8 +358,13 @@
   /* ── The screens ─────────────────────────────────────────────────────── */
   App.screens = {};   // view → painter, registered by each screen's script (js/app-*.js)
   const screenOf = (v) => el.screens.querySelector(`.screen[data-view="${v}"]`);
+  /* A render for one screen's own switches (the Map's legend): that screen drawn again, not every
+     one; the rest are drawn again when shown (go, render). */
+  let only = null;
+  App.renderOnly = (v) => { only = v; try { render(); } finally { only = null; } };
   function renderScreens() {
     for (const v of VIEWS) {
+      if (only && v !== only) continue;
       const sec = screenOf(v);
       if (!sec) continue;
       if (App.screens[v]) { safely('screen-' + v, () => App.screens[v](sec)); continue; }
@@ -387,19 +394,8 @@
     for (const k of ['id', 'key', 'value']) if (node.dataset[k] !== undefined) parts.push(`[data-${k}="${node.dataset[k]}"]`);
     return { sel: parts.join('') };
   }
-  /* The notices above the screens: the beta one, until it's closed (the tag by the title stays),
-     and the one for when following the game needs you (js/app-saves.js). */
-  function betaBanner() {
-    if (load(KEY.beta)) return '';
-    const report = `<a href="https://github.com/betorzdev/pharloom-calculator/issues" target="_blank" rel="noopener">${esc(t('betaReport'))}</a>`;
-    return `<div class="banner is-hint" role="status">
-      <span class="banner-tag">${esc(t('betaTag'))}</span>
-      <span class="banner-text">${t('betaText', { report })}</span>
-      <button type="button" class="icon-btn" data-act="betaClose" aria-label="${esc(t('betaClose'))}" title="${esc(t('betaClose'))}">${cross}</button>
-    </div>`;
-  }
   function renderBanner() {
-    if (el.banner) el.banner.innerHTML = betaBanner() + (App.liveBanner ? App.liveBanner() : '');
+    if (el.banner) el.banner.innerHTML = App.liveBanner ? App.liveBanner() : '';
   }
   /* One painter that throws mustn't take the rest down with it: every screen starts hidden
      (index.html) and only showScreen(), at the end of render(), shows one, so an error before it
@@ -508,7 +504,6 @@
     view(node) { go(node.dataset.value, !node.closest('#nav, .masthead')); },
     // The About block's button (tools/pages.js): up to the screen it's about.
     aboutUp() { const m = document.querySelector('.screens'); if (m) m.scrollIntoView({ behavior: 'smooth', block: 'start' }); },
-    betaClose() { save(KEY.beta, '1'); renderBanner(); },
     aboutFold() { aboutOpen = true; renderAbout(); const h = el.about.querySelector('h1'); if (h) { h.setAttribute('tabindex', '-1'); h.focus(); } },
   };
   // The language's list is a dropdown: a tap anywhere else closes it (and still does what it was for).
