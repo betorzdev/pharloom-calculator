@@ -403,7 +403,7 @@ area name that would fall on another waits for the zoom (the larger area's stays
 on a phone the area names show only zoomed in.
 
 Under the map, **What the map shows**, as the Hollow Knight site has it: «Show all · Hide all» on
-its right, and «Only the 100%», which turns on just the layers that count for completion, then «Only what the game shows» with a save (see
+its right, and «Only the 100%», which turns on just the layers that count for completion, then «Whole map» with a save, on at first (see
 below), and the area names on or off. Then eleven groups, each a row that folds (its caret; all open
 at first, only the first two on a phone, then as you left them) whose title is the switch for the
 whole group, in ink when all of it is on, dimmer when part, muted when none. Inside, each layer's
@@ -541,8 +541,8 @@ Greymoor_02, its top, its middle), and what your game's map draws is in colour: 
 game has mapped, in the areas whose map you've bought from Shakra. The site being a guide, the
 rest of the map is there too, faint: the areas whose map you haven't bought (their names struck
 through) and the rooms not mapped yet, so that what's missing there has a map under it. A room
-goes whole in colour once any part of it is mapped, so its tone never changes halfway through. «Only
-what the game shows» draws your game's map exactly: no area without its map, nor its name, and a
+goes whole in colour once any part of it is mapped, so its tone never changes halfway through. Turning
+«Whole map» off draws your game's map exactly: no area without its map, nor its name, and a
 part not mapped shows the dotted rough sketch the bought map gives it, or nothing when it's a
 secret or a room's hidden half. What's mapped is what your save says the game has mapped
 (`scenesMapped`), which can trail what you've walked until you sit at a bench, and without the
