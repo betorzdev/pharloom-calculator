@@ -35,7 +35,8 @@
    "Only the 100%" turns on just the layers that count (design/03-redesign.md, step 6).
    In a save, what's had is left out; in Free mode, everything shows, as a guide. The Act filter
    and "what I can reach now" (js/spots.js NEEDS against your abilities) narrow every layer. A tap
-   on a mark, or on an area's name, opens its card. Hornet sits at your bench (js/app-hornet.js
+   on a mark, or on an area's name, opens its card. Hornet sits at your bench, or stands where the
+   game respawns her when the save says she isn't at one (js/app-hornet.js
    walks her there from the previous one). Other screens open the Map on a thing (App.mapShow).
    The marks are placed in percentages of the image, so they follow its zoom. Shares SS.app with
    js/app.js (see there). */
@@ -341,8 +342,12 @@
       add({ key: 'gaunt:' + x.id, layer: 'gauntlet', scene: x.scene, act: x.act, got: !!g && g.gauntlets.includes(x.id), area: x.area, gauntlet: x,
         name: App.gauntletName(x.id), draw: (s, ti, k, c) => badge('gauntlet', portrait(champion(x)) || GLYPH.gauntlet, s, ti, k, c) });
     }
+    // Steel Soul's own (the Summoned Saviour, its fight and its Journal entry) only in Steel Soul;
+    // with no save, all of it, as a guide.
+    const steelGame = !own || !!(App.gameMeta() || {}).steel;
     for (const [foe, scene, , act] of SP.BOSSES) {
       const f = FOE.get(foe), e = bookOfFoe(foe);
+      if (e && e.steel && !steelGame) continue;
       add({ key: 'boss:' + foe, layer: 'boss', scene, act, got: !!g && g.bosses.includes(foe), name: f ? pick(f.name) : foe, foe, entry: e && e.id,
         draw: (s, ti, k, c) => badge('boss', portrait(e && e.id) || GLYPH.boss, s, ti, k, c) });
     }
@@ -365,7 +370,6 @@
       at: px != null ? { x: px, y: py } : undefined, got: false, name: pick(x.name), trade: x.note, draw: (s, ti, k, c) => pin('shop', 'pin_shop', s, ti, k, c) }));
     // People: the Wishwalls and who offers a wish, each with the wishes still open there.
     const boards = new Map(), givers = new Map();
-    const steelGame = !own || !!(App.gameMeta() || {}).steel;
     for (const [quest, f] of Object.entries(QU.FROM)) {
       const wi = wishOf(quest);
       if (wi < 0 || (CO.WISHES[wi][5] === 'steel' && !steelGame)) continue;   // a Steel Soul wish is only asked in Steel Soul
@@ -438,6 +442,7 @@
         draw: (s, ti, k, c) => pin('cocoon', 'shade_pin', s, ti, k, c) });
     }
     if (own) for (const e of J.BOOK) {
+      if (e.steel && !steelGame) continue;
       const rooms = SS.journalRooms[e.key];
       const scene = rooms && (rooms.map(([sc]) => sc).find((sc) => R.roomOf(sc)));
       add({ key: 'journal:' + e.id, layer: 'journal', scene, got: complete(own, e), name: pick(e.name), entry: e.id,
@@ -645,10 +650,20 @@
     try { prev = JSON.parse(App.load('pharloom.prev') || 'null'); } catch (e) { prev = null; }
     return prev && prev.snap ? SS.savefile.gameOf(prev.snap) : null;
   }
-  function benchPoint(scene, pins) {
+  /* Her bench's pin: the one in her room, else the one in a part of it (Tube_Hub's is in
+     Tube_Hub_right, Bone_01c's in Bone_01c_bot: js/rooms.js roomPiece), among the pins shown and
+     then among all (Act 3's Ventrica hub draws Tube_Hub_Destroyed, where Tube_Hub_right was); with
+     none, her room's middle. A save written where the game set her respawn to a room's own marker
+     rather than a bench (respawnType 0, savefile's rested false: a restore point after a boss, an
+     ability, an Act) wakes her there, standing: her room's middle, as the marker isn't extracted. */
+  function benchPoint(scene, pins, rested = true) {
     const room = scene ? R.roomOf(scene) : null;
     if (!room) return null;
-    const p = pins.find((x) => x[0] === 'bench' && (R.roomOf(x[3]) || {}).scene === room.scene);
+    if (!rested) return { x: room.x, y: room.y };
+    const names = [lower(room.scene), lower(scene)];
+    const inRoom = (x) => x[0] === 'bench' && (R.roomOf(x[3]) || {}).scene === room.scene;
+    const inPart = (x) => x[0] === 'bench' && names.includes(lower(R.roomPiece(x[3])));
+    const p = pins.find(inRoom) || pins.find(inPart) || M.PINS.find(inRoom) || M.PINS.find(inPart);
     return p ? { x: p[1], y: p[2] } : { x: room.x, y: room.y };
   }
   /* The way's key, cheap (no path searched): the two benches and when this save was written, so
@@ -665,15 +680,15 @@
     const path = R.path(b.bench, g.bench, g.lit) || [];
     const mid = path.slice(1, -1).map((s) => R.roomOf(s)).filter(Boolean);
     pins = pins || R.pinsOn(g);
-    const pts = [benchPoint(b.bench, pins), ...mid, benchPoint(g.bench, pins)].filter(Boolean);
-    return path.length > 1 && pts.length > 1 ? { key, pts } : null;
+    const pts = [benchPoint(b.bench, pins, b.rested), ...mid, benchPoint(g.bench, pins, g.rested)].filter(Boolean);
+    return path.length > 1 && pts.length > 1 ? { key, pts, fromRested: b.rested } : null;
   }
   function waySvg(g, pins) {
     const w = way(g, pins);
     if (!w) return '';
     const start = w.pts[0];
     return `<g class="mp-way" aria-hidden="true"><polyline points="${w.pts.map((p) => `${Math.round(p.x)},${Math.round(p.y)}`).join(' ')}"/>
-        <g class="mp-mk mp-from" style="--px:${n2(start.x)}px;--py:${n2(start.y)}px"><title>${esc(t('mapFrom'))}</title><circle r="0.3"/></g></g>`;
+        <g class="mp-mk mp-from" style="--px:${n2(start.x)}px;--py:${n2(start.y)}px"><title>${esc(t(w.fromRested ? 'mapFrom' : 'mapFromRespawn'))}</title><circle r="0.3"/></g></g>`;
   }
 
   /* What's missing nearest your bench, for Your game (App.nearList): the loose pieces
@@ -748,7 +763,7 @@
     if (!box) return '';
     areaCtx = { view, box, key: MP.keyOf(view, 0) };
     // Hornet where she rests (her bench's pin comes with the Map's own marks, if its layer is on).
-    const bench = benchPoint(g.bench, R.pinsOn(g));
+    const bench = benchPoint(g.bench, R.pinsOn(g), g.rested);
     const at = `left:${n2((bench.x - box.x) / box.w * 100)}%;top:${n2((bench.y - box.y) / box.h * 100)}%`;
     // The marks: the Map's own, the layers its legend has on and its filters let show, those in the box.
     const { list, g: shown, own } = all();
@@ -761,7 +776,7 @@
           <canvas class="hmB-canvas" aria-hidden="true"></canvas>
           <svg class="hmB-svg" viewBox="${n2(box.x)} ${n2(box.y)} ${n2(box.w)} ${n2(box.h)}" aria-hidden="true">
             <defs><radialGradient id="hmB-plate"><stop offset="0"/><stop offset="0.6"/><stop offset="1"/></radialGradient></defs>${marks}</svg>
-          <span class="hn is-sit hmB-hornet" aria-hidden="true" style="${at}"></span>
+          <span class="hn${g.rested ? ' is-sit' : ''} hmB-hornet" aria-hidden="true" style="${at}"></span>
         </a></figure>`;
   };
   /* Paints the figure just placed on the page (the screen is built whole each time, so this runs
@@ -829,9 +844,11 @@
     const clusters = [...fine.values()].map((f) => `<g class="mp-mk mp-cluster is-${f.m.layer}" style="--px:${n2(f.x)}px;--py:${n2(f.y)}px" aria-hidden="true"><circle r="0.5"/><circle class="mp-plate" r="0.47"/>${artOf(f.m)}`
       + `${f.n > 1 ? `<g class="mp-count"><circle cx="0.36" cy="-0.36" r="0.21"/><text x="0.36" y="-0.34">${num(f.n)}</text></g>` : ''}</g>`).join('');
     const exact = !!own && !!prefs.mapGame, view = R.mapView(own, { all: !exact }), shownPins = R.pinsOn(own);
-    const bench = own ? benchPoint(own.bench, shownPins) : null;
-    // Hornet at her bench: the page's own sprite (.hn), over the map at her point (placeOver).
-    const hornet = bench ? `<span class="mp-hornet hn is-sit" role="img" aria-label="${esc(t('mapBench'))}" title="${esc(t('mapBench'))}" data-x="${bench.x}" data-y="${bench.y}"></span>` : '';
+    const bench = own ? benchPoint(own.bench, shownPins, own.rested) : null;
+    // Hornet at her bench, sitting, or standing where the game respawns her: the page's own sprite
+    // (.hn), over the map at her point (placeOver).
+    const hereName = esc(t(own && !own.rested ? 'mapRespawn' : 'mapBench'));
+    const hornet = bench ? `<span class="mp-hornet hn${own.rested ? ' is-sit' : ''}" role="img" aria-label="${hereName}" title="${hereName}" data-x="${bench.x}" data-y="${bench.y}"></span>` : '';
     const bought = mapped(own);
     // An area whose map isn't bought: its name struck through; with only what the game shows,
     // not there, as in the game.
@@ -903,7 +920,7 @@
         <button type="button" data-act="mapZoom" data-value="out" aria-label="${esc(t('mapFurther'))}" title="${esc(t('mapFurther'))}">−</button>
         <button type="button" class="mp-big" data-act="mapBig" aria-pressed="${big}" aria-label="${esc(t(big ? 'mapSmall' : 'mapFull'))}" title="${esc(t(big ? 'mapSmall' : 'mapFull'))}">${big ? '⤡' : '⤢'}</button>
         <button type="button" class="mp-full" data-act="mapFull" aria-pressed="${full}" aria-label="${esc(t('mapFullScreen'))}" title="${fsTitle}">${full ? FULL_OUT : FULL_IN}</button></div>`;
-    const search = focusSet ? focusBar() : `<div class="mp-find"><label class="search">${App.lens}<input type="search" data-change="mapFind" placeholder="${esc(t('mapFind'))}" aria-label="${esc(t('mapFind'))}" autocomplete="off"></label>
+    const search = focusSet ? focusBar() : `<div class="mp-find"><label class="search">${App.lens}<input type="search" data-change="mapFind" placeholder="${esc(t(matchMedia('(max-width: 599px)').matches ? 'mapFindShort' : 'mapFind'))}" aria-label="${esc(t('mapFind'))}" autocomplete="off"></label>
         <ul class="mp-found" hidden></ul></div>`;
     sec.innerHTML = `<div class="mp${big ? ' is-big' : ''}${full ? ' is-full' : ''}">${brackets}${screenHead(esc(t('navMap')))}
       <div class="mp-stage">
@@ -1129,7 +1146,7 @@
 
   /* ── The card of the mark tapped, over the map, as the sibling's: its picture, its name, where
      it is and what it says (how it's had, what's still open there); in Free mode a piece can be
-     marked had from it; a gauntlet or a boss takes you to fight it, a boss or an entry to the
+     marked had from it (a ladder's leads to the Inventory); a gauntlet or a boss takes you to fight it, a boss or an entry to the
      Journal. It follows its mark as the map moves; ×, Escape or a tap on the empty map close it. ── */
   let cardCtx = null;
   // The things of the 100% a person gives or sells (js/how.js HOW), by the map's keys.
@@ -1140,6 +1157,8 @@
     for (const cat of ['tools', 'crests', 'skills', 'arts']) for (const [k, ways] of Object.entries(HW.HOW[cat])) scan(cat, ways, cat + ':' + k);
     return keys;
   }
+  // The pieces Free mode takes from the Inventory's ladders (js/app-progress.js freeView, LADDER).
+  const LADDER_KINDS = ['mask-shard', 'spool-fragment', 'silk-heart', 'needle', 'crafting-kit', 'tool-pouch'];
   const listOf = (names, more) => names.slice(0, 6).join(', ') + (names.length > 6 ? ' ' + t('mapMore', { n: num(names.length - 6) }) : '') + (more || '');
   function cardHtml(key) {
     const c = cardCtx || {};
@@ -1174,8 +1193,11 @@
     if (kind === 'piece') {
       const i = Number(key.slice(6));
       note = App.howPiece ? App.howPiece(i) : '';
+      /* In Free mode a piece is marked here, but those of a ladder (masks, silk, the Silk Hearts, the
+         Needle, the Kit, the Pouch) follow the Inventory's levels, as on Progress: the way there. */
       acts = own ? state(t(m.got ? 'pgGot' : 'invMissing'))
-        : `<button type="button" class="text-btn" data-act="mapMark" data-value="${i}" aria-pressed="${m.got}">${esc(t(m.got ? 'mapUnmark' : 'mapMark'))}</button>`;
+        : LADDER_KINDS.includes(m.layer) ? `${state(t('pgLadderNote'))}<a class="text-btn" href="${App.here(App.hashFor('game'))}" data-act="view" data-value="game">${esc(t('navGame'))}</a>`
+          : `<button type="button" class="text-btn" data-act="mapMark" data-value="${i}" aria-pressed="${m.got}">${esc(t(m.got ? 'mapUnmark' : 'mapMark'))}</button>`;
     } else if (['tools', 'crests', 'skills', 'arts', 'everbloom'].includes(kind)) {
       note = m.note || (App.howOf ? App.howOf(key) : '');
       if (g) acts = state(t(m.got ? 'pgGot' : 'invMissing'));

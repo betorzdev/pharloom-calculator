@@ -254,6 +254,7 @@
     mapFullExit:    { es: 'Salir de pantalla completa', en: 'Exit full screen' },
     mapSmall:       { es: 'Mapa normal', en: 'Normal map' },
     mapFind:        { es: 'Busca en el mapa: una zona, una pieza, un jefe', en: 'Search the map: an area, a piece, a boss' },
+    mapFindShort:   { es: 'Busca en el mapa', en: 'Search the map' },   // the same, where the field is narrow (a phone)
     mapFindNone:    { es: 'Nada con ese nombre en el mapa.', en: 'Nothing by that name on the map.' },
     mapMark:        { es: 'Marcar como conseguido', en: 'Mark as had' },
     mapUnmark:      { es: 'Desmarcar', en: 'Unmark' },
@@ -291,6 +292,9 @@
     mapPlace_ventrica:{ es: 'Ventrica', en: 'Ventrica' },   // KEY_TUBE
     mapNear:        { es: 'Lo más cerca de tu banco', en: 'Closest to your bench' },
     mapFrom:        { es: 'Tu banco anterior', en: 'Your previous bench' },
+    // No game text for a respawn point (searched: respawn, reaparecer, wake): written for the context.
+    mapRespawn:     { es: 'Tu punto de reaparición', en: 'Your respawn point' },
+    mapFromRespawn: { es: 'Tu punto de reaparición anterior', en: 'Your previous respawn point' },
     mapClosed:      { es: 'sin abrir', en: 'not open yet' },
     mapToll:        { es: 'sin pagar el peaje', en: 'toll not paid' },
     mapGroup_upgrades: { es: 'Mejoras', en: 'Upgrades' },

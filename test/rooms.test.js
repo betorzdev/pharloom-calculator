@@ -74,6 +74,9 @@ test('an interior the map does not draw goes where its door is; every gauntlet a
   const caravan = (at) => R.pinsOn({ ...world({}), caravan: at }).filter((p) => p[5]).map((p) => p[3]);
   assert.deepEqual([0, 1, 2, 3].map(caravan), [[], ['Greymoor_08'], ['Coral_Judge_Arena'], []]);
   assert.deepEqual(R.pinsOn(null).filter((p) => p[5]).map((p) => p[3]), ['Coral_Judge_Arena', 'Greymoor_08']);
+  // A bench pin in a part of its room is that room's (js/app-map.js benchPoint: Hornet sits on it).
+  const parts = { Tube_Hub_right: 'Tube_Hub', Bone_01c_bot: 'Bone_01c', Coral_Tower_01_Bench: 'Coral_Tower_01', Mosstown_03_bot: 'Mosstown_03', Belltown_Shrine: 'Belltown_Shrine' };
+  for (const [pin, room] of Object.entries(parts)) assert.equal(R.roomPiece(pin), room, pin);
 });
 
 test('the map\'s state: the rooms Act 3 destroys and the diving bell, by the game\'s own rules', () => {
@@ -186,6 +189,19 @@ test('where each Journal entry is: the game\'s own placements, each scene in one
   assert.strictEqual(R.roomOf('bone_05_boss').scene, 'Bone_05');
   assert.strictEqual(R.areaOf('Greymoor_04'), 'GREYMOOR');
   assert.strictEqual(R.areaOf('Tut_01'), 'MOSSCAVE');
+  /* A piece lying in a room is in its own area, though its branch of the map holds others: the Mask
+     Shard in Song_09 is Cogwork Core's, not the High Halls' its branch (Song) takes. */
+  const lying = CO.PIECES.filter((p) => R.sceneOf(p[2]) && p[3] && R.roomOf(R.sceneOf(p[2])));
+  assert.ok(lying.length >= 80, `${lying.length} pieces lying in a room`);
+  assert.deepEqual(lying.filter((p) => R.areaOf(R.sceneOf(p[2])) !== p[3]).map((p) => `${p[0]} ${R.sceneOf(p[2])}`), []);
+  assert.strictEqual(R.areaOf('Song_09'), 'COGWORK_CORE');
+  assert.strictEqual(R.areaOf('Song_10'), R.areaOf('Song_02'));   // the rest of the branch, by its vote
+  // The Songclave's room is the Songclave, as everything it hands you is filed (js/spots.js AT).
+  const SP = require('../js/spots.js');
+  const handed = CO.PIECES.filter((p, i) => /^song_enclave$/i.test(SP.AT.pieces[i] || ''));
+  assert.ok(handed.length >= 4 && handed.every((p) => p[3] === 'ENCLAVE'), JSON.stringify(handed.map((p) => p[3])));
+  assert.strictEqual(R.areaOf('Song_Enclave'), 'ENCLAVE');
+  assert.strictEqual(R.areaOf('song_enclave'), 'ENCLAVE');
 });
 
 test('every Journal entry has a place, the 29 the game makes at run time too, and a way there', () => {
@@ -209,8 +225,10 @@ test('every Journal entry has a place, the 29 the game makes at run time too, an
   assert.deepEqual(lost, []);
   const areas = (k) => new Set(JR[k].map(([s]) => R.areaOf(s)).filter(Boolean));
   // Checked against the wiki (kb/data/raw/): the Muckmaggots only where their waters are on
-  // (Sinner's Road, Bilewater, Putrified Ducts, Wisp Thicket), the Sandcarvers in the sand.
-  assert.deepEqual([...areas('NAME_MAGGOTS')].sort(), ['AQUEDUCTS', 'DUSTPENS', 'SHADOW', 'WISP']);
+  // (Sinner's Road, Bilewater, Putrified Ducts, Wisp Thicket; Dust_09 is the Exhaust Organ, inside
+  // Sinner's Road on the wiki and an area of its own in the game, as its Lost Flea says), the
+  // Sandcarvers in the sand.
+  assert.deepEqual([...areas('NAME_MAGGOTS')].sort(), ['AQUEDUCTS', 'DUSTPENS', 'ORGAN', 'SHADOW', 'WISP']);
   assert.deepEqual([...areas('NAME_SAND_CENTIPEDE')].sort(), ['CORAL_RIVER', 'CORAL_STEPS']);
   assert.deepEqual([...areas('NAME_SHELLWOOD_GNAT')].sort(), ['ARBORIUM', 'SHELLWOOD']);
   assert.deepEqual([...areas('NAME_LIFEBLOOD_FLY')].sort(), ['BONEBOTTOM', 'CRAWL']);
