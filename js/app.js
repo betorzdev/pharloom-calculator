@@ -501,7 +501,7 @@
     view(node) { go(node.dataset.value, !node.closest('#nav, .masthead')); },
     // The About block's button (tools/pages.js): up to the screen it's about.
     aboutUp() { const m = document.querySelector('.screens'); if (m) m.scrollIntoView({ behavior: 'smooth', block: 'start' }); },
-    betaClose() { save(KEY.beta, '1'); track('beta-close'); renderBanner(); },
+    betaClose() { save(KEY.beta, '1'); renderBanner(); },
     aboutFold() { aboutOpen = true; renderAbout(); const h = el.about.querySelector('h1'); if (h) { h.setAttribute('tabindex', '-1'); h.focus(); } },
   };
   // The language's list is a dropdown: a tap anywhere else closes it (and still does what it was for).
