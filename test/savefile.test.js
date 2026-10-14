@@ -100,6 +100,19 @@ test('the gauntlets cleared: the arena\'s flag in sceneData or playerData, or wh
   assert.deepEqual(F.gameOf({ ...snap, 'pharloom.progress': JSON.stringify(old) }).gauntlets, []);
 });
 
+test('an area map\'s marks are had by the maps the slot keeps, also in a slot from before they were marks', () => {
+  const SP = require('../js/spots.js');
+  const marks = (flag) => SP.EXTRAS.flatMap((x, i) => (x[0] === 'map' && x[2][1] === flag ? [i] : []));
+  const pd = { ...BASE, HasHallsMap: true, HasWildsMap: true };
+  const snap = F.toSnapshot(pd, null);
+  const had = [...marks('HasHallsMap'), ...marks('HasWildsMap')].sort((a, b) => a - b);
+  assert.equal(marks('HasHallsMap').length, 2, 'the Choral Chambers map is a mark in two rooms');
+  assert.deepEqual(F.gameOf(snap).extras.filter((i) => SP.EXTRAS[i][0] === 'map'), had);
+  const old = JSON.parse(snap['pharloom.progress']);
+  const before = F.gameOf({ ...snap, 'pharloom.progress': JSON.stringify({ ...old, extras: [] }) });
+  assert.deepEqual(before.extras, had);
+});
+
 test('the map\'s pins lit: a Bellway station unlocked, a toll bench paid; kept in the slot by what they are', () => {
   const pd = { ...BASE, UnlockedFastTravel: true, UnlockedDocksStation: true };
   const sd = { persistentBools: { serializedList: [{ SceneName: 'Dock_01', ID: 'bell_toll_machine', Value: true }] } };
@@ -171,4 +184,26 @@ test('the purse: what is held of each Collectable, the two currencies, the Farsi
   assert.equal(F.gameOf(bad).purse['beast-shard'], 0);
   assert.equal(F.gameOf(bad).purse['shard-bundle'], 0);
   assert.equal('other' in F.gameOf(bad).purse, false);
+});
+
+test('a Tool handed back (unlocked and hidden) is gaveBack, not held; kept in a slot', () => {
+  const tool = (Name, IsUnlocked, IsHidden) => ({ Name, Data: { IsUnlocked, IsHidden } });
+  // As Zylotol leaves it once Alchemist's Assistant is done, and the Caretaker the Snare Setter.
+  const pd = { ...BASE, Tools: { savedData: [tool('Extractor', true, true), tool('Silk Snare', true, true), tool('Lifeblood Syringe', true, false)] } };
+  const g = F.game(pd, null);
+  assert.deepEqual(g.tools, ['plasmium-phial']);
+  assert.deepEqual(g.gaveBack.sort(), ['needle-phial', 'snare-setter']);
+  assert.deepEqual(F.gameOf(F.toSnapshot(pd)).gaveBack.sort(), ['needle-phial', 'snare-setter']);
+  assert.deepEqual(F.gameOf({ 'pharloom.progress': '{"gaveBack":["needle-phial","nope"]}' }).gaveBack, ['needle-phial']);
+});
+
+test("a wish taken is 'accepted' whether it's done or not; 'quest' only once done", () => {
+  const quest = (IsAccepted, IsCompleted) => ({ QuestCompletionData: { savedData: [{ Name: 'Beastfly Hunt', Data: { IsAccepted, IsCompleted } }] } });
+  // Bone_East_17b's wall: open by its bool or by the wish taken (tools/gen-spots.js CHECK_OF).
+  const SP = require('../js/spots.js');
+  const i = SP.EXTRAS.findIndex((x) => x[0] === 'wall' && JSON.stringify(x[2]).includes('Beastfly Hunt'));
+  assert.ok(i >= 0);
+  assert.equal(F.game({ ...BASE, ...quest(false, false) }, null).extras.includes(i), false);
+  assert.equal(F.game({ ...BASE, ...quest(true, false) }, null).extras.includes(i), true);
+  assert.equal(F.game({ ...BASE, ...quest(true, true) }, null).extras.includes(i), true);
 });

@@ -40,11 +40,11 @@ the work up reads it first, then the step it's on.
 | 1 | **The shell**: header, screen bar (desktop and phone), the screen's frame and title, footer and About, the atmosphere | **Built** (28 Sep) | [`04-shell-variants.html`](04-shell-variants.html) |
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html` |
-| 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html` |
+| 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
-| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct) | [`12-map-variants.html`](12-map-variants.html) |
+| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html` |
-| 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html` (kept out of the repo) |
+| 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
 | 10 | **Built** (28 Sep) · The static pages (`tools/pages*.js`: `bosses/`, `es/jefes/`, the landing folders): they inherit steps 1 and 2; only what's theirs | To do | |
 | 6c | The Map's people: everyone in the world and every place that sells | **Built** (11 Oct) | `30-map-people-variants.html` (kept out of the repo) |
@@ -544,6 +544,38 @@ shelf is empty; C only what you have, with a switch).
   Skills': picture, pip, name, then the count or «Sin conseguir» (`invNotFound`).
 - «All · None» on Items now touches only its shelf (it marked every piece of the game before).
 
+### Retouch: the materials (14 October 2026)
+
+Albert: the Memory Lockets and the Pale Oil «no se ven bien puestos». The third round's `mat` (a
+small picture with its name and count beside it) sat badly in both places: under the Needle the
+block was centred with the picture to one side, so the name fell off the caption's axis; under
+the Crests the locket hung small against the grid's last row. The Craftmetal, the same piece,
+looked out of step with the Kit and the Pouch above it.
+
+The options (`49-inventory-materials-variants.html`, the real sections the site renders, in Free
+mode, an Act 2 restore point and user1; kept out of the repo): 1 the Pale Oil (**A** a row of the
+game's flask lit up to what you hold, as the loose shards, centred under the Needle's name; B a
+centred plate; C a row as the Kit's); 2 the Memory Lockets (**A** a row as the Kit's, apart from
+the Crests by a rule; B one more plate after the Crests; C one compact line); 3 the Craftmetal
+(**A** a third row under the Kit and the Pouch; B as it was).
+
+**Decision: A in all three** (14 October 2026): the Pale Oil goes through `loose` (`is-centre`),
+and `mat` draws the Kit's row (picture `--sp-12`, name, count or − N + under it), the Memory
+Lockets with a rule above (`is-rule`), the Craftmetal inside `.inv-levels`.
+
+### Retouch: the lent Tools (14 October 2026)
+
+Albert didn't like Snare Setter and Needle Phial, the two reds a wish lends and takes back, set
+apart under the three colours («No cuentan para el 100 %»).
+
+The options (`51-lent-tools-variants.html`, the real site with the variant over it; kept out of
+the repo): **A** among the reds where the game lists them (Snare Setter after Flintslate, Needle
+Phial last), their slot dashed, a line under the row saying why, the count still n/18; B the same
+at the end of the reds; C hidden unless the save holds them right now, never in Free mode.
+
+**Decision: A** (14 October 2026): the red row takes them in `D.TOOLS` order, out of the count
+(`li.is-lent`, a dashed slot), and `.inv-lent` under the row explains the dashed diamond.
+
 ## Step 5 · Progress
 
 ### What there is (28 September 2026)
@@ -1011,6 +1043,21 @@ Silkeaters, maps, key items, rosaries, shell shards), then Places to Secrets as 
 100%» beside «Show all · Hide all» turns on just the layers that count. A save's earlier `tools`
 layer reads as the three colours.
 
+### Retouch: the map's ground (14 October 2026)
+
+Albert: the map «parece un bloque negro pegado en un fondo difuminado». The stage and the view
+painted the scene's black edge to edge of the frame, over the screen's light from the top, so the
+Map was the one screen with no light and a hard black rectangle in the frame.
+
+The options (`50-map-ground-variants.html`, the real site with the variant over it; kept out of
+the repo): **A** no ground of its own, the screen's light behind the map and, closer up, its edges
+fading into the frame; B a window inside the plate's padding, a hairline in the tab's colour and a
+soft light inside (narrower on a phone); C no ground, edge to edge, cut where it ends.
+
+**Decision: A** (14 October 2026): `.mp-stage` and `.mp-view` lose their background and
+`.mp-canvas` takes a mask that fades its four edges; the large map and full screen, which leave the
+frame, keep the black.
+
 ## Step 7 · Journal
 
 ### What there is (28 September 2026)
@@ -1283,6 +1330,22 @@ description, where the site had the wiki's line art (the prompt when you get one
 `prompt_hornet_needle_throw`). `tools/extract-crests.py` writes the six into `assets/icons/skills-inv/`;
 the slot, the list under the Crest and the Inventory use them, and the Map, Progress, Home and
 Combat keep the line art.
+
+### Retouch: middle widths (14 October 2026)
+
+Albert, with the window narrowed: the masks spill out of the screen, and not only the masks.
+Measured (every element past the frame, 390 to 1300 px, a 100% save and Free mode): from about
+960 px down to 600 the band's one row doesn't fit, so the ten masks run past the frame; at 600 to
+640 the whole band does, the Needle on the left too; at 600 the Vesticrest's column beside the
+Crest touches the frame. Under 600 the phone's stack already holds.
+
+The options (`52-crest-hud-variants.html`, the real site in a frame of the width chosen; kept out
+of the repo): **A** from 1060 px down, Hornet's HUD (masks, silk, Bind) on a row of its own under
+the Needle and the figures, centred after a rule, and under 720 px the figures on their own row
+too; B the phone's stack from 1060 px down.
+
+**Decision: A** (14 October 2026), in `css/app.css` (two media queries before the phone's): and in
+both, under 720 px the Crest with the Vesticrest's column takes `--crest-k-sm`.
 
 ## Step 9 · Combat
 

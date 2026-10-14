@@ -27,6 +27,7 @@
   render();
   if (App.hornet) App.hornet.start();    // Hornet on the page, from now on (js/app-hornet.js)
   if (App.sister) App.sister.start();    // and the Knight on the sister site's link (js/app-sister.js)
-  // The save you're in, if it follows the game's file, starts watching it (js/app-saves.js).
+  // The saves read again by today's code (js/app-saves.js), and the one you're in, if it follows the game's file, starts watching it.
+  if (App.refreshSlots) App.refreshSlots();
   if (App.liveStart) App.liveStart();
 })();

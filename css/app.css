@@ -1654,15 +1654,18 @@ kbd {
 .inv-loose-pcs img.is-off { filter: var(--missing-art); }
 .inv-loose-art b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-weight: 600; color: var(--ink-strong); }
 .inv-loose-art b i { font-style: normal; font-weight: 400; color: var(--muted); }
-/* A material beside what it feeds (design/43, 1 A): its picture, its name and its count. */
-.inv-mats { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-6); }
-.inv-mats.is-centre { justify-content: center; }
-.inv-mat { display: grid; grid-template-columns: auto auto; align-items: center; justify-content: start; gap: 0 var(--sp-2); }
+.inv-loose.is-centre { justify-content: center; }
+/* A material beside what it feeds (design/43, 1 A), drawn as the Kit's and the Pouch's rows
+   (design/49): its picture, its name and under it the count or − N +; the Memory Lockets apart
+   from the Crests by a rule. */
+.inv-mat { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: var(--sp-1) var(--sp-3); }
+.inv-mat.is-rule { margin-top: var(--sp-1); padding-top: var(--sp-3); border-top: 1px solid var(--inv-line); }
+.inv-mat .inv-fname { align-self: end; }
+.inv-mat > :last-child { align-self: start; justify-self: start; }
 .inv-mat-art { grid-row: span 2; display: grid; place-items: center; padding: 0; }
-.inv-mat-art img { width: var(--sp-8); height: var(--sp-8); object-fit: contain; filter: drop-shadow(0 0 6px color-mix(in oklab, var(--spotlight) 35%, transparent)); transition: filter var(--dur) var(--ease); }
+.inv-mat-art img { width: var(--sp-12); height: var(--sp-12); object-fit: contain; filter: drop-shadow(0 0 6px color-mix(in oklab, var(--spotlight) 35%, transparent)); transition: filter var(--dur) var(--ease); }
 .inv-mat-art:is(:hover, :focus-visible) img { filter: drop-shadow(0 0 8px color-mix(in oklab, var(--spotlight) 55%, transparent)); }
 .inv-mat.is-missing .inv-mat-art img { filter: var(--missing-soft); opacity: var(--missing-soft-opacity); }
-.inv-mat-name { font-size: var(--fs-xs); color: var(--ink-2); }
 .inv-mat-n { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-sm); font-weight: 600; color: var(--ink-strong); }
 .inv-mat-n i { font-style: normal; font-size: var(--fs-xs); font-weight: 400; color: var(--muted); }
 .inv-mat.is-missing .inv-mat-n { color: var(--muted); }
@@ -1708,10 +1711,10 @@ button.inv-plate-art { padding: 0; }
 .inv-sub::before { content: ''; width: var(--sp-2); height: var(--sp-2); transform: rotate(45deg); background: var(--c); }
 .inv-sub b { color: var(--ink-2); }
 .inv-sub i { font-style: normal; font-weight: 400; color: var(--muted); }
-/* The two Tools a wish lends (design/43, 4 A): apart, after the colours, with a hollow diamond. */
-.inv-sub.is-out { margin-top: var(--sp-4); }
-.inv-sub.is-out::before { background: none; border: 1px solid var(--label); }
-.inv-out-note { margin: calc(var(--sp-1) * -1) 0 0; font-size: var(--fs-xs); color: var(--muted); }
+/* The two Tools a wish lends (design/51, A): among the reds, their slot dashed, and a line under
+   the row with a dashed diamond of the colour saying why they're out of the count. */
+.inv-lent { display: flex; align-items: center; gap: var(--sp-2); margin: calc(var(--sp-2) * -1) 0 0; font-size: var(--fs-xs); color: var(--muted); }
+.inv-lent::before { content: ''; flex: none; width: var(--sp-3); height: var(--sp-3); transform: rotate(45deg); border: 1px dashed var(--c); }
 .inv-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, calc(var(--sp-12) + var(--sp-2))); gap: var(--sp-2); }
 .inv-grid > li { display: grid; justify-items: center; gap: var(--sp-half); }
 .inv-cell {
@@ -1740,6 +1743,7 @@ button.inv-plate-art { padding: 0; }
 }
 .inv-cell.is-slot.is-missing::before { border: 1px solid color-mix(in oklab, var(--c) 55%, transparent); background: var(--scene-bg); }
 .inv-cell.is-slot.is-missing img { filter: grayscale(1) brightness(0.85); opacity: 0.42; }
+.is-lent > .inv-cell.is-slot::before { border-style: dashed; }
 /* A Tool and its upgrade on one slot (design/43, 4 A): two pips under it, had and upgraded. */
 .inv-grid > li.is-twin { position: relative; }
 .is-twin .inv-cell::after { content: none; }
@@ -1931,6 +1935,18 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
   .ct-body { grid-template-columns: minmax(0, 1fr); justify-items: center; }
   .ct-pick { width: 100%; }
   .ct-figs { grid-column: 1 / -1; position: static; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); }
+}
+/* Between the phone and a wide window (design/52, A) the band's one row doesn't fit: the HUD goes
+   under the Needle and the figures, centred after a rule; narrower still, the figures too. The
+   Crest takes its small size there, so the Vesticrest's column beside it stays in the frame. */
+@media (min-width: 600px) and (max-width: 1059px) {
+  .ct-band { flex-wrap: wrap; row-gap: var(--sp-4); }
+  .ct-hud { flex-basis: 100%; justify-items: center; padding-top: var(--sp-4); border-left: 0; border-top: 1px solid color-mix(in oklab, var(--filigree) 22%, transparent); }
+}
+@media (min-width: 600px) and (max-width: 719px) {
+  .ct-band > * { padding-inline: var(--sp-4); }
+  .ct-mid { flex-basis: 100%; justify-content: center; gap: var(--sp-6); padding-top: var(--sp-4); border-left: 0; border-top: 1px solid color-mix(in oklab, var(--filigree) 22%, transparent); }
+  .ct-crest.has-float { --k: var(--crest-k-sm); }
 }
 @media (max-width: 599px) {
   .ct-crest { --k: var(--crest-k-sm); }
@@ -2319,10 +2335,17 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
    the dots take the HUD's: bone for shards, silk white for fragments, the slots' for the rest). */
 /* The map first (design/03-redesign.md, step 6): the view fills the plate to the frame's inner
    edge; on it, the search top left, the zoom top right, the legend bottom left. */
-.mp-stage { position: relative; margin: 0 calc(var(--inv-pad) * -1 + var(--frame-inset) + 1px); background: var(--scene-bg); }
+/* It has no ground of its own (design/50): the screen's black and its light from the top show
+   behind the map, and closer up its edges fade into the frame instead of a cut. The large map and
+   full screen, which leave the frame, keep the black. */
+.mp-stage { position: relative; margin: 0 calc(var(--inv-pad) * -1 + var(--frame-inset) + 1px); }
 /* The view: a fixed window the map moves and scales in (js/app-map.js): drag, wheel, pinch. */
-.mp-view { position: relative; overflow: hidden; height: min(72vh, 720px, 62vw + 120px); background: var(--scene-bg);
+.mp-view { position: relative; overflow: hidden; height: min(72vh, 720px, 62vw + 120px);
   touch-action: none; cursor: grab; user-select: none; -webkit-user-select: none; }
+.mp:not(.is-big, .is-full) .mp-canvas {
+  --fade: linear-gradient(to bottom, transparent, #000 var(--sp-12), #000 calc(100% - var(--sp-16)), transparent), linear-gradient(to right, transparent, #000 var(--sp-12), #000 calc(100% - var(--sp-12)), transparent);
+  -webkit-mask-image: var(--fade); -webkit-mask-composite: source-in; mask-image: var(--fade); mask-composite: intersect; }
+.mp:is(.is-big, .is-full) :is(.mp-stage, .mp-view) { background: var(--scene-bg); }
 .mp-view.is-grabbing { cursor: grabbing; }
 /* No will-change: it would keep the layer rasterised at the fitted size, blurred close up. */
 .mp-view img { -webkit-user-drag: none; pointer-events: none; }

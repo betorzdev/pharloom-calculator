@@ -66,7 +66,7 @@
     const item = (id) => D.ITEMS.find((x) => x.id === id);
     const out = [];
     // A Tool as the game holds it: Silkshot's picture and words are the variant's (js/engine.js toolArt).
-    for (const x of D.TOOLS) { const a = SS.engine.toolArt(x.id, g); out.push({ list: 'tools', id: x.id, art: a.art, name: x.name, desc: a.desc, got: g.tools.includes(x.id), color: x.color }); }
+    for (const x of D.TOOLS) { const a = SS.engine.toolArt(x.id, g); out.push({ list: 'tools', id: x.id, art: a.art, name: x.name, desc: a.desc, got: g.tools.includes(x.id) || (x.lost && g.gaveBack.includes(x.id)), color: x.color }); }
     for (const x of D.CRESTS) out.push({ list: 'crests', id: x.id, name: x.name, desc: x.desc, got: g.crests.includes(x.id) });
     for (const x of D.SKILLS) out.push({ list: 'skills', id: x.id, name: x.name, desc: x.desc, got: g.skills.includes(x.id) });
     for (const x of D.ARTS) out.push({ list: 'arts', id: x.id, name: x.name, desc: x.desc, got: g.arts.includes(x.id) });
@@ -113,12 +113,14 @@
      Tool and its upgrade on one slot (design/43, 4 A) show the one you have, with two pips under
      it, had and upgraded; in Free mode a tap goes none, had, upgraded (invTwin). */
   function cell(x, twin = null) {
+    const lent = LENT.includes(x.id);
     const cls = `inv-cell${x.got ? '' : ' is-missing'}${x.color ? ' is-slot' : ''}${picked === keyOf(x) ? ' is-picked' : ''}`;
     const name = twin ? twin.names : pick(x.name);
     const label = name + (x.count ? ' ' + x.count : '') + (x.got ? '' : ' · ' + t('invMissing'));
     const act = marking && twin ? 'invTwin' : marking && markable(x) ? 'invOwn' : 'invPick';
     const pips = twin && twin.pips ? `<span class="inv-pips" aria-hidden="true">${twin.pips.map((on) => `<i class="${on ? 'is-on' : ''}"></i>`).join('')}</span>` : '';
-    return `<li${pips ? ' class="is-twin"' : ''}><button type="button" class="${cls}"${x.color ? ` style="--c: var(--slot-${x.color})"` : ''} data-act="${act}" data-key="${esc(twin && marking ? twin.key : keyOf(x))}"
+    const li = [pips ? 'is-twin' : '', lent ? 'is-lent' : ''].filter(Boolean).join(' ');
+    return `<li${li ? ` class="${li}"` : ''}><button type="button" class="${cls}"${x.color ? ` style="--c: var(--slot-${x.color})"` : ''} data-act="${act}" data-key="${esc(twin && marking ? twin.key : keyOf(x))}"
       ${act === 'invPick' ? `aria-expanded="${picked === keyOf(x)}"` : `aria-pressed="${x.got}"`} aria-label="${esc(label)}" title="${esc(name)}"${NT}>
         <img src="${icon(x.list, x.art || x.id)}" alt="" loading="lazy"></button>${pips}</li>`;
   }
@@ -154,22 +156,23 @@
       <span class="inv-plate-art"><img src="${icon(x.list, x.art || x.id)}" alt="" loading="lazy"></span><span class="inv-plate-name">${esc(pick(x.name))}</span><span class="${vcls}">${v}</span></button></li>`;
   }
   const platesOf = (list, sm = false) => `<ul class="inv-plates${sm ? ' is-sm' : ''}">${list.map(plate).join('')}</ul>`;
-  /* A material beside what it feeds (design/43, 1 A): the Pale Oil under the Needle, the Memory
-     Lockets under the Crests, the Craftmetal by the Kit. Its picture opens its text; its count
-     beside it, or − N + in Free mode. */
-  function mat(x) {
-    return `<div class="inv-mat${x.got ? '' : ' is-missing'}"><button type="button" class="inv-mat-art" data-act="invPick" data-key="${esc(keyOf(x))}" aria-expanded="${picked === keyOf(x)}" aria-label="${esc(pick(x.name) + ' ' + x.count)}"${NT}>
-      <img src="${icon(x.list, x.art || x.id)}" alt=""></button><span class="inv-mat-name"${NT}>${esc(pick(x.name))}</span>
+  /* A material beside what it feeds (design/43, 1 A; drawn as a row, design/49): the Memory
+     Lockets under the Crests and the Craftmetal under the Kit and the Pouch, as their rows: the
+     picture, which opens its text, the name, and under it the count, or − N + in Free mode. */
+  function mat(x, rule = false) {
+    return `<div class="inv-mat${x.got ? '' : ' is-missing'}${rule ? ' is-rule' : ''}"><button type="button" class="inv-mat-art" data-act="invPick" data-key="${esc(keyOf(x))}" aria-expanded="${picked === keyOf(x)}" aria-label="${esc(pick(x.name) + ' ' + x.count)}"${NT}>
+      <img src="${icon(x.list, x.art || x.id)}" alt=""></button><span class="inv-fname"${NT}>${esc(pick(x.name))}</span>
       ${marking ? stepper(x) : `<span class="inv-mat-n">${num(x.n[0])}<i>/${num(x.n[1])}</i></span>`}</div>`;
   }
   /* The loose Mask Shards or Spool Fragments under their row, as the sibling draws its shards: the
-     game's piece lit up to what you hold, how many make a whole one, and − N + in Free mode. */
-  function loose(x, of, note) {
+     game's piece lit up to what you hold, how many make a whole one, and − N + in Free mode. The
+     Pale Oil the same way, centred under the Needle's name (design/49). */
+  function loose(x, of, note, cls = '') {
     const v = Math.max(0, x.n[0]);
     const pcs = Array.from({ length: x.n[1] }, (_, i) => `<img class="${i < v ? '' : 'is-off'}" src="${icon(x.list, x.art || x.id)}" alt="">`).join('');
-    return `<div class="inv-loose"><button type="button" class="inv-loose-art" data-act="invPick" data-key="${esc(keyOf(x))}" aria-expanded="${picked === keyOf(x)}" aria-label="${esc(pick(x.name) + ' ' + num(v) + '/' + num(of))}">
+    return `<div class="inv-loose${cls}"><button type="button" class="inv-loose-art" data-act="invPick" data-key="${esc(keyOf(x))}" aria-expanded="${picked === keyOf(x)}" aria-label="${esc(pick(x.name) + ' ' + num(v) + '/' + num(of))}">
       <span class="inv-loose-name"${NT}>${esc(pick(x.name))}</span><span class="inv-loose-pcs" aria-hidden="true">${pcs}</span><b>${num(v)}<i>/${num(of)}</i></b></button>
-      <span class="inv-loose-note">${esc(note)}</span>${marking ? stepper(x) : ''}</div>`;
+      ${note ? `<span class="inv-loose-note">${esc(note)}</span>` : ''}${marking ? stepper(x) : ''}</div>`;
   }
   // What's open under a shelf: the picture, the name and the game's text.
   function open(list) {
@@ -202,7 +205,7 @@
         data-act="invLevel" data-key="needle" data-value="${i}" aria-pressed="${b.needle === i}"${still} title="${esc(pick(n.name))}" aria-label="${esc(pick(n.name) + ', ' + n.damage)}"${NT}>
         <img src="${ART.needle(i)}" alt="" width="80" height="600"><b>${num(n.damage)}</b></button>`).join('');
     return `<section class="inv-sec">${head(t('invNeedle'))}<div class="inv-needles" role="group" aria-label="${esc(t('invNeedle'))}">${row}</div>
-      <p class="inv-caption"${NT}>${esc(pick(D.NEEDLES[b.needle].name))}</p><div class="inv-mats is-centre">${mat(oil)}</div>${open([oil])}</section>`;
+      <p class="inv-caption"${NT}>${esc(pick(D.NEEDLES[b.needle].name))}</p>${loose(oil, oil.n[1], '', ' is-centre')}${open([oil])}</section>`;
   }
   /* A row of pieces: the first `base` always there, then one per upgrade; a tap on one sets the
      count to it (on the last one lit, one less). Under it, what's loose of the next one. */
@@ -287,12 +290,15 @@
     const item = (id) => all.find((x) => x.list === 'items' && x.id === id);
     /* The Tools by colour, one slot per point of the 100% (design/43, 4 A): a Tool and its upgrade
        share one, showing the one you have with two pips (had, upgraded); the Steel Soul twin
-       shows Shell Satchel when you have it. The two a wish lends go apart, after the colours. */
+       shows Shell Satchel when you have it. The two a wish lends sit among the reds where the
+       game lists them, their slot dashed and out of the count, a line under the row saying why
+       (design/51). */
     const tool = (id) => all.find((x) => x.list === 'tools' && x.id === id);
     const rows = ['red', 'blue', 'yellow'].map((c) => {
       const seen = new Set(), cells = [];
       let got = 0;
-      for (const x of by('tools').filter((y) => y.color === c && !LENT.includes(y.id))) {
+      for (const x of by('tools').filter((y) => y.color === c)) {
+        if (LENT.includes(x.id)) { cells.push(cell(x)); continue; }
         const grp = GROUP.get(x.id);
         if (!grp || seen.has(grp)) continue;
         seen.add(grp);
@@ -301,10 +307,10 @@
         if (on) got++;
         cells.push(cell({ ...(z.got ? z : a), got: on }, { key: a.id, names: `${pick(a.name)} · ${pick(z.name)}`, pips: steel ? null : [on, z.got] }));
       }
-      return `<p class="inv-sub" style="--c: var(--slot-${c})">${esc(t('ct_' + c))} <span><b>${num(got)}</b><i>/${num(seen.size)}</i></span></p><ul class="inv-grid">${cells.join('')}</ul>`;
+      const lent = by('tools').some((y) => y.color === c && LENT.includes(y.id));
+      return `<p class="inv-sub" style="--c: var(--slot-${c})">${esc(t('ct_' + c))} <span><b>${num(got)}</b><i>/${num(seen.size)}</i></span></p><ul class="inv-grid">${cells.join('')}</ul>
+        ${lent ? `<p class="inv-lent" style="--c: var(--slot-${c})">${esc(t('invLentNote'))}</p>` : ''}`;
     }).join('');
-    const lent = `<p class="inv-sub is-out">${esc(t('invLentTitle'))}</p><p class="inv-out-note">${esc(t('invLentNote'))}</p>
-      <ul class="inv-grid">${LENT.map((id) => cell(tool(id))).join('')}</ul>`;
     // The Hunter Crest is always had, and drawn lit: the head counts it with the rest (the 100% doesn't).
     const crests = by('crests'), crestsN = { got: crests.filter((x) => x.got).length, max: crests.length };
     // The items: the Everbloom, the Farsight, the Journal, the Old Hearts and the melodies; the fleas count on their own plate.
@@ -327,11 +333,10 @@
           <section class="inv-sec">${head(t('cat_arts'), cats.arts, 'arts')}${plates(by('arts'), artV)}${open(by('arts'))}</section>
         </div>
         <div class="inv-col">
-          <section class="inv-sec">${head(t('cat_crests'), crestsN, 'crests')}${platesOf(crests)}<div class="inv-mats">${mat(item('memory-locket'))}</div>${open([...crests, item('memory-locket')])}</section>
+          <section class="inv-sec">${head(t('cat_crests'), crestsN, 'crests')}${platesOf(crests)}${mat(item('memory-locket'), true)}${open([...crests, item('memory-locket')])}</section>
           <section class="inv-sec is-tools">${head(t('cat_tools'), cats.tools, 'tools')}
-            <div class="inv-levels">${level(b, 'kit', 'crafting-kit', still)}${level(b, 'pouch', 'tool-pouch', still)}</div>
-            <div class="inv-mats">${mat(item('craftmetal'))}</div>${open([item('craftmetal')])}
-            ${rows}${lent}${open(by('tools'))}</section>
+            <div class="inv-levels">${level(b, 'kit', 'crafting-kit', still)}${level(b, 'pouch', 'tool-pouch', still)}${mat(item('craftmetal'))}</div>${open([item('craftmetal')])}
+            ${rows}${open(by('tools'))}</section>
         </div>
       </div>
       <div class="inv-bag">

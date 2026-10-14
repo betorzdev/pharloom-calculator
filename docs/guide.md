@@ -58,7 +58,13 @@ Needle, time, completion, rosaries, the Act, the Journal, the Tools) before anyt
 Any of the game's files works: `user1.dat` to `user4.dat`, the copies from before a patch
 (`user1_1.0.29242.dat`) and the **restore points** in `Restore_Points#/restoreData#.dat`, which
 are earlier moments of the same game (the preview says the day). The file is read in the browser
-and isn't sent anywhere.
+and isn't sent anywhere. The site keeps what it read (and, when the game saves while it's followed,
+the save before it) in the browser's IndexedDB, and reads it again on each visit
+(`js/app-saves.js refreshSlots`, `js/saves.js refresh`): a mark, a check or a count the site
+learns after the import (a new kind of mark on the Map, say) shows as the game has it, with no
+need to import the file again. Only a save imported before that copy existed (October 2026) has to
+be imported once more. A slot that keeps no copy still has its bought maps' marks: they come from
+the `Has<Area>Map` flags it always kept.
 
 Where the browser can (Chrome and Edge: File System Access), an imported save can **follow the
 game**: the site keeps a link to the file and catches up each time the game writes it. After a
@@ -116,18 +122,19 @@ reduced motion).
 
 A sheet in two columns, each thing beside what it feeds, and a band under both. On the left, what
 Hornet is: **the Needle**, the five upright with their damage, the one she carries taller and lit,
-and the Pale Oil you hold under it; then **Hornet**: the masks (5 to 10) as the game's masks, in a
+and the Pale Oil under it (the game's flask three times, lit up to what you hold); then **Hornet**: the masks (5 to 10) as the game's masks, in a
 row as the HUD draws them, with the loose Mask Shards under them (four make a mask), the silk (9 to
 18) as beads on one thread with the loose Spool Fragments (two make a spool), and the Silk Hearts;
 then the **Silk Skills** with what each deals at this build, and the **abilities** (Needle Strike
 with its damage). On the right, her equipment: the **Crests**, with the Memory Lockets that open
-their slots, and the **Tools**: the Crafting Kit and Tool Pouch with their level and the
-Craftmetal, then the Tools by colour, each on its slot's diamond (hollow in its colour while you
+their slots under them, and the **Tools**: the Crafting Kit and Tool Pouch with their level and the
+Craftmetal, three rows alike, then the Tools by colour, each on its slot's diamond (hollow in its colour while you
 lack it). There's one slot per point of the 100%: a Tool and its upgrade (Curveclaw and
 Curvesickle, Druid's Eye and Eyes, Claw Mirror and Mirrors) share one, showing the one you have,
 with two pips under it (had, upgraded), and Shell Satchel shows in Dead Bug's Purse's slot in Steel
-Soul. Snare Setter and Needle Phial, which a wish lends and takes back, sit apart after the
-colours: they don't count. Under both columns, what she carries: the **Purse** (Rosaries and
+Soul. Snare Setter and Needle Phial, which a wish lends and takes back, sit among the reds where
+the game lists them, their slot dashed: they don't count, and a line under the row says so. Once
+handed back they still show found (here and on the Map: the save keeps them, hidden). Under both columns, what she carries: the **Purse** (Rosaries and
 Shell Shards as big figures, the shards out of what your Tool Pouch holds, 400 to 800, with a bar,
 and under each what breaks into it, counted, with the sum you would get from breaking it all: the
 five Rosary strings and necklaces under the rosaries; the Beast Shards, Shard Bundles, Pristine
@@ -162,8 +169,9 @@ In a save the Inventory shows what the game saved, and changes only as you play.
 The game's Crest screen («Blasón»), laid out as the game's pane. On top, the figures as the game's
 HUD: the Needle at its level with the slash large beside it (each attack, for the Crests that
 split them); damage per second, the Wanderer's critical hit and the Needle Strike; and Hornet as
-the HUD shows her, her masks drawn, the spool with her silk, and what a Bind heals. Pointing at a
-figure shows how it's made. Under them the levels as the game's upgrade pips, − and + either side
+the HUD shows her, her masks drawn, the spool with her silk, and what a Bind heals (in a window
+too narrow for one row, she goes on a row of her own under the rest). Pointing at a figure shows
+how it's made. Under them the levels as the game's upgrade pips, − and + either side
 (a pip sets it): the Needle, the Crafting Kit, the Tool Pouch and the Hunter's evolution; and
 beside them what depends on the moment: the Hunter's focus, the Beast's fury, Flintslate's buff,
 the hit after a Challenge.
@@ -397,7 +405,7 @@ boss's arena, with the person who gives it. All of it on at first.
   opens them by the colour of their slot (red, blue, yellow) and, apart, the six **outside the
   100%** (off at first): the upgrades of four Tools (Curvesickle, Druid's Eyes, Claw Mirrors, the
   Shell Satchel), which add nothing to it on their own, and the two a wish lends and takes back
-  (the Snare Setter, the Needle Phial). Then the Crests and Silk Skills.
+  (the Snare Setter, the Needle Phial), found once had even after handing them back. Then the Crests and Silk Skills.
 - **Collectibles**: Memory Lockets, Lost Fleas, the Old Hearts, the Melodies and the Everbloom
   (on at first), then, off at first, the relics, one switch for the six (Bone Scrolls, Weaver
   Effigies, Choral Commandments, Rune Harps, Psalm Cylinders, the Arcane Egg) whose round caret
@@ -821,7 +829,8 @@ for (LSSI art. 22.2, ePrivacy art. 5.3), and never leaves it:
 
 - `localStorage`: the `pharloom.*` keys (saves, Tools and Crests, journal, progress, preferences).
 - `sessionStorage`: `pharloom.cleared` and `pharloom.entered`, for the screen transitions.
-- IndexedDB: `pharloom-live`, the save-file handle, only after "Follow the game" (`js/live.js`).
+- IndexedDB: `pharloom-live`, a copy of each imported save (so a slot is read again when the
+  site learns something new) and, only after "Follow the game", the save-file handle (`js/live.js`).
 - Save files are read in the browser; nothing is uploaded.
 
 The visit counter is [Footworn](https://github.com/betorzdev/footworn) (`track()` in `js/app.js`;

@@ -46,7 +46,7 @@ What it writes (read on 28-Sep-2026, patch 1.0.30000):
             lever     a Lever or Lever_tk2d component, and the levers an FSM works (LEVERS: the
                       Cogwork Core's cog_lever, Greymoor's lever on the platform it drops)
             plate     a pressure plate Hornet steps on, and Clawline's pull switch (PLATE)
-            gate      a Gate, TempGate, Trapdoor, DialDoorBridge or TrapBridgeExtend, the ring
+            gate      a Gate, TempGate, Trapdoor or TrapBridgeExtend, the ring
                       gates Clawline pulls open and the gates an FSM works (GATES)
             lock      a door a key opens: the Simple Key's, the Architect's, the Ward Boss Key's,
                       the Slab's locks and cells (LOCK)
@@ -54,7 +54,9 @@ What it writes (read on 28-Sep-2026, patch 1.0.30000):
                       Citadel's plug gates (SHORTCUT)
             silkwall  the thick silk vines Silkspear cuts (SILK)
           The doors the Needolin opens (Song_Gate_set) keep nothing in the save, and the levers of
-          trapdoors and flip bridges that close again neither: not here. A demo's (Demo States/Demo)
+          trapdoors and flip bridges that close again neither: not here. Nor a DialDoorBridge (the
+          Citadel's Song_20b): its levers turn it either way and its bool is where it stands, not
+          a way opened (true, then false again, in the author's saves; 14-Oct-2026). A demo's (Demo States/Demo)
           and an unused one ("… old") aren't either, nor the two the scene leaves off (OFF).
   pd      each playerData flag of PD_WAYS (what opens a way that the save keeps there) → [scene,
           component, object, x, y]: every component whose raw data names it.
@@ -153,7 +155,7 @@ NPCS = r'Pinsmith.*|Seamstress.*|Pinstress.*|Crest Upgrade Shrine|Ladybug.*|Dice
        r'Architect NPC|Forge Daughter.*|Mottled.*|City Merchant.*|Bone ?town Merchant.*|Nuu|Couriers Quest Giver'
 # The doors' kinds (doors above): by a component on the object, else by its name (without the copy's " (1)").
 LEVER = {'Lever', 'Lever_tk2d'}
-GATE = {'Gate', 'TempGate', 'Trapdoor', 'DialDoorBridge', 'TrapBridgeExtend'}
+GATE = {'Gate', 'TempGate', 'Trapdoor', 'TrapBridgeExtend'}
 SILK = re.compile(r'Thick Silk Vines')
 PLATE = re.compile(r'Hornet_pressure_plate.*|Plate|Plaque Pressure Plate|Shrine Pressure Plate.*|Harpoon Ring Pull Switch|dock_pressure_plate_lock')
 LOCK = re.compile(r'Slab Lock( [LR])?|aspid_sealed_gate_stone|Prince Cell Door|bank_door|dock_sealed_gate|Diving Bell Door|Architect Shrine Door|'
