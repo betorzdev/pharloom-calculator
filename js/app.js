@@ -159,6 +159,8 @@
      such piece, so it's drawn (design/03-redesign.md, step 1). */
   const CROWN_HALF = '<path d="M93 14 C84 14 78 7 69 7 C61 7 58 13 62 16.5 C65 19 69.5 16.5 68 13.5"/><path d="M62 16.5 C50 22 30 21 10 14"/><path d="M10 14 C6 12 5.5 8.5 9 8 C11.5 7.8 12 10.5 10.5 11.5"/><path d="M78 9 C74 3 66 1.5 58 3.5"/>';
   const CROWN = `<svg class="mh-crown" width="200" height="28" viewBox="0 0 200 28" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" aria-hidden="true">${CROWN_HALF}<g transform="translate(200 0) scale(-1 1)">${CROWN_HALF}</g><path d="M100 5 L105 14 L100 23 L95 14 Z"/><path d="M100 1 V5 M100 23 V27"/></svg>`;
+  // The same filigree under a part's title (Progress, design/75, 6 B), with its own class.
+  App.crown = (cls) => CROWN.replace('mh-crown', cls);
   function renderMasthead() {
     const own = prefs.lang === PAGE_LANG && prefs.view === (PAGE_VIEW || 'home');
     document.title = own ? PAGE_HEAD.title : prefs.view === 'home' ? t('docTitle') : t(VIEW_KEY[prefs.view]) + ' · ' + t('title');
@@ -356,8 +358,13 @@
   /* ── The screens ─────────────────────────────────────────────────────── */
   App.screens = {};   // view → painter, registered by each screen's script (js/app-*.js)
   const screenOf = (v) => el.screens.querySelector(`.screen[data-view="${v}"]`);
+  /* A render for one screen's own switches (the Map's legend): that screen drawn again, not every
+     one; the rest are drawn again when shown (go, render). */
+  let only = null;
+  App.renderOnly = (v) => { only = v; try { render(); } finally { only = null; } };
   function renderScreens() {
     for (const v of VIEWS) {
+      if (only && v !== only) continue;
       const sec = screenOf(v);
       if (!sec) continue;
       if (App.screens[v]) { safely('screen-' + v, () => App.screens[v](sec)); continue; }

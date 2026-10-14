@@ -41,7 +41,7 @@ the work up reads it first, then the step it's on.
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html` |
-| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
+| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html` |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
@@ -905,6 +905,40 @@ none).
 - `saysRow()` under the rows: `wishSays()` (the Wishwall's text until the save says it's taken,
   then «Tareas»'s), the Caretaker's directions per piece, the Inventory's lines, `laceSays()`.
   The shrines', Lace's and the key's rows have their pins.
+
+### The 100%'s look, and Tasks (14 October 2026)
+
+Albert, on «For 100%»: the bar split in pieces could be much prettier; the line on what each row's
+figure means goes; opening a section shows no intro text (then: nor under a part's title, as «Other
+collectibles»); an open section's things should take the whole width; is TASKS the wishes? (Yes:
+«Tareas» is the pause menu's pane, PANE_QUESTS, the 21 main objectives and the wishes by type, none
+of which counts for completion; it sat in the 100% tab only as the tab of lists.) Could the Tasks have
+pictures, if the game has them? (It has, for every one: design/00-study.md §9, «The pane «Tareas»'s
+own pictures».) `75-progress-100-variants.html` (kept out of the repo), the real page over six games
+(5%, 15%, 55%, 77%, 100%, Free mode), the texts already gone in every option: 1 the bar (**A** one
+line in a filigree frame with diamond ends, a notch per category and a taller one where the Tools'
+half ends, B a hundred diamonds, C two halves, D finer segments); 2 an open section (A rows to the
+full width, **B** one line per thing on a computer, C B to the frame's width); 3 Tasks (**A** a tab of
+its own, B where it was, C under the road); 4 its pictures (**A** the pane's, B and the reward's, C
+none); 5 the «For 100%» title repeated under the bar (**A** gone, B as it was); 6 the parts' titles
+(**B** with the masthead's filigree, A as they were); 7 the Tasks groups' heads (**B** with the type's
+emblem, A as they were).
+
+**Decision: 1 A, 2 B, 3 A, 4 A, 5 A, 6 B, 7 B** (14 October 2026), and Free mode's «This is set in the
+Inventory» stays (it isn't an intro: it says why those rows have no box). Albert likes the bar as one
+line in pieces but wants more designs of it: a second round of the bar alone is open on the same page.
+Built (`js/app-progress.js`, `css/app.css`, `tools/extract-wish-icons.py`):
+- `splitBar()` and its `.pg-split` block, self-contained so another design can take its place.
+- No line under the split, a part's title or an open group (`pgSplit`, `pgBeyondNote`,
+  `pgTasksNote*`, the groups' notes `pgWholeNote`, `pgSpoolNote`, `pgToolsTrap`, `pgNote_*` gone; the
+  road's notes stay). What they said is in docs/guide.md.
+- `.pg-groups.is-wide` (the 100% and Tasks): an open group's rows from the left edge; from 700 px
+  each thing one line (picture, name, how, where, pin).
+- Three tabs (`TABS`, `prefs.pgTab` 'tasks'): Tasks' card the pause menu's Wishes tab and how many
+  are done; on a phone a card keeps its figure and drops the words after it (`.pg-tab-x`).
+- `taskIcon()`: the pane's picture by each task (`assets/icons/tasks/`), and each type's group its
+  Wishwall emblem (`.pg-emb`; `pips` keeps the head's pips, as its pictures repeat).
+- «Other collectibles» under `App.crown()`, the masthead's filigree.
 
 ## Step 6 · Map
 

@@ -584,9 +584,10 @@ which Act you're in and what opening the next takes («Opening Act 3 takes 5 ste
 1, with 3 things left in it»), in Act 3 what's left of the 100%, at 100% that you have it all.
 Without a save it says what the tab is: the guide to the three Acts and to the 100%.
 
-Then two tabs, as two cards, each with its own picture of how far you are; the one you used last
-opens, the road's the first time. From the keyboard, Tab reaches the one selected and the
-arrows, Home and End move to the other and open it.
+Then three tabs, as three cards, each with its own picture of how far you are; the one you used last
+opens, the road's the first time. On a phone a card keeps its figure and leaves out the words after
+it («step 1 of 5», «85% to go»). From the keyboard, Tab reaches the one selected and the arrows,
+Home and End move to another and open it.
 
 **The road to the next Act** (its card: the picture of the step you're on, how far into it, counted
 as its rings count, and «step 1 of 5»). Its steps as diamonds on one thread, the ones done lit and
@@ -642,23 +643,25 @@ ending you never saw is closed in that game for good: the thread crosses it out 
 it, and the ring and the tab's card count only the endings still within reach («2 of 3 endings
 within reach»), with a line under the ring naming the closed one.
 
-**Without a save**, a notice over either tab invites you to import yours (what it would show, and
+**Without a save**, a notice over every tab invites you to import yours (what it would show, and
 the button), the 100% card says «100% in 10 categories», and the road tab is both roads as a guide,
 each with its thread of steps, every list folded under «See all n».
 
 **For 100%** (its card: a small ring and what's left). At the top, **your 100%** in a ring that
 fills with it, as the Journal's Memento, with the game's word, «Finalización» (a line under it
-only if the game's own figure is another). Under it, how the 100% splits: one bar of a hundred, a
-stretch per category as wide as it's worth (the Tools are half), lit as far as you have it, its
-legend with what each category is worth, and a line that each row's figure is how much you have
-of what it's worth, in points of the 100%. Then each category is a row, under a «Got / worth (%)»
-head: its name, its things as the game's pictures (what you lack dimmed) or as pips, its count and
-a ring that opens its list; the rows you open stay open. «What's missing · Everything» and «By
-Act · Nearest first» sit just above the rows.
+only if the game's own figure is another). Under it, how the 100% splits: one line of a hundred in
+a thin filigree frame with a diamond at each end, a stretch per category as wide as it's worth, lit
+as far as you have it, a hairline notch where each category ends and a taller one, with its
+diamonds, where the Tools' half ends; and its legend with what each category is worth. Then each
+category is a row, under a «Got / worth (%)» head: its name, its things as the game's pictures
+(what you lack dimmed) or as pips, its count and a ring that opens its list; the rows you open stay
+open. «What's missing · Everything» and «By Act · Nearest first» sit just above the rows.
 
-Opened, a category lists its things by Act: each with its picture, its name (a Tool with its
-slot's colour; in a Steel Soul save, the Shell Satchel where Classic has the Dead Bug's Purse) and how to get it, its area on the right, and a pin that shows it on the Map. A thing
-just lying in a room says so («Found in the area: the pin shows where»).
+Opened, a category goes straight to its things, with no line over them, by Act and across the
+whole width: each with its picture, its name (a Tool with its slot's colour; in a Steel Soul save,
+the Shell Satchel where Classic has the Dead Bug's Purse), how to get it, its area and a pin that
+shows it on the Map; on a computer each thing is one line, on a phone how and where go under the
+name. A thing just lying in a room says so («Found in the area: the pin shows where»).
 
 In **Free mode** Progress counts what you mark, from a New Game (0% until you mark something),
 and each missing row has a box to mark it here too (on a Tool marked with its upgrade,
@@ -725,14 +728,16 @@ wiki's boss drops):
   the Slab's keys for its Mask Shard and Rune Rage.
 
 The way shown is the one your Act has reached: in Act 3 Pebb's and Mort's wares are Grindle's,
-and in Act 2 the Curveclaw and the Fractured Mask lie by the Mottled Skarr. The Tools'
-note warns of the two traps: the Curveclaw handed over to a Skarr loses its point until the
-Curvesickle, and the Silkshot's first repair closes the other two versions.
+and in Act 2 the Curveclaw and the Fractured Mask lie by the Mottled Skarr. Two traps the page
+doesn't spell out: the Curveclaw handed over to a Skarr loses its point until the Curvesickle, and
+the Silkshot's first repair closes the other two versions. Masks and spools count whole: four
+shards or two fragments are 1%.
 
 "Nearest first" orders the missing things by rooms from your bench, the ones with no room after;
 the wishes, in the road and in Tasks, by the rooms to where they're taken.
 
-Then **other collectibles**, which don't count for completion, each group saying what it's for:
+Then **other collectibles**, under a title with the masthead's filigree. They don't count for
+completion, and what each is for is here, not on the page:
 - Memory Lockets (Crest slots);
 - Craftmetal (crafted Tools);
 - Pale Oil (the Needle's upgrades);
@@ -743,9 +748,14 @@ Then **other collectibles**, which don't count for completion, each group saying
   has them);
 - the 49 enemy gauntlets, named as Combat names them.
 
-Last, **Tasks** («Tareas», the game's pane): the main objectives and the wishes on the boards by
-type (Wayfarer, Gather, Donate, Hunt, Grand Hunt, Delivery…), 74 in all, each with the game's own
-name, its Act and where (a wish the pane files under no area, the area it's taken in). In Act 2, the ten wishes Act 3 requires are in the road's tab instead. The one only Steel Soul has, and the one only Classic has, show only in a
+**Tasks** («Tareas», the game's pane), the third tab (its card: the pause menu's Wishes tab and how
+many are done): the main objectives and the wishes on the boards by type (Wayfarer, Gather, Donate,
+Hunt, Grand Hunt, Delivery…), 74 in all. They don't count for completion. Each type's group carries
+the large emblem the Wishwalls show for it, and each task the picture the game's pane draws by it:
+a wish its type's, a main objective its own (the Citadel's, the Bellshrines', the Snare's, the
+Black Thread's…). Each with the game's own name, its Act and where (a wish the pane files under no
+area, the area it's taken in), across the whole width as in the 100%. In Act 2, the ten wishes Act
+3 requires are in the road's tab instead. The one only Steel Soul has, and the one only Classic has, show only in a
 save of that mode, and both in Free mode, as the Journal and the Map show them. A task done also shows in "Since the previous save".
 In a save it shows what's missing, or everything with a tick where you have it; without a save,
 the whole list, as a guide. Which piece you have is read from the save one by one, and on the
@@ -832,7 +842,9 @@ texts and names are © Team Cherry; they're used here only to show the game's ow
   `js/map.js`), shown as the Hollow Knight site shows its map, as a fan project.
 - **The wishes' emblems**: the large emblem of each type of wish and the pause menu's Wishes tab,
   extracted from the installed game's files by `tools/extract-wish-icons.py`
-  (`assets/icons/wishes/`), for the road to the next Act in Progress.
+  (`assets/icons/wishes/`), for the road to the next Act in Progress; and with them the pictures
+  the pause menu's «Tasks» draws by each wish and main objective (`assets/icons/tasks/`), for the
+  Tasks tab.
 - **Fonts**: Cinzel, Spectral and Patrick Hand SC, under the
   [SIL Open Font License 1.1](../assets/fonts/OFL.txt).
 - **Code**: MIT ([`LICENSE`](../LICENSE)). It covers only the code, not any of the above.

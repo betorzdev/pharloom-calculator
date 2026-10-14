@@ -182,15 +182,6 @@
         icon: 'assets/icons/items/everbloom.webp', mark: 'everbloom' }],
     };
   }
-  /* A group's own note: masks and spools count whole, not by piece; the Tools' traps (js/how.js
-     TRAPS: the Curveclaw handed over, the Silkshot's repairs); and what each of the other
-     collectibles is for. */
-  const toolName = (id) => pick(D.TOOLS.find((x) => x.id === id).name);
-  const NOTE = { masks: () => t('pgWholeNote'), spools: () => t('pgSpoolNote'),
-    tools: () => t('pgToolsTrap', { curveclaw: toolName('curveclaw'), curvesickle: toolName('curvesickle'), silkshot: toolName('silkshot') }),
-    'memory-locket': () => t('pgNote_memoryLocket'), craftmetal: () => t('pgNote_craftmetal'), 'pale-oil': () => t('pgNote_paleOil'),
-    flea: () => t('pgNote_flea'), 'old-heart': () => t('pgNote_oldHeart'), melody: () => t('pgNote_melody'),
-    'other-arts': () => t('pgNote_otherArts'), gauntlets: () => t('pgNote_gauntlets') };
   const BEYOND = [['memory-locket'], ['craftmetal'], ['pale-oil'], ['flea', 'kind_fleas'], ['old-heart', 'kind_oldHearts'], ['melody', 'kind_melodies']];
   // The abilities that aren't in the 100%: the two cloaks, Beastling Call and Elegy of the Deep.
   const OTHER_ARTS = ['drifters-cloak', 'faydown-cloak', 'beastling-call', 'elegy-of-the-deep'];
@@ -200,8 +191,8 @@
      its count and the disclosure's ring; open, its list. Which rows are open is kept (prefs.pgOpen). */
   const MAX_PIPS = 60;
   const isOpen = (id) => (prefs.pgOpen || []).includes(id);
-  function strip(list, g, got, max) {
-    if (list.length <= 12 && list.every((x) => x.icon)) {
+  function strip(list, g, got, max, pips = false) {
+    if (!pips && list.length <= 12 && list.every((x) => x.icon)) {
       return `<span class="pg-strip" aria-hidden="true">${list.map((x) => `<img class="${!g || x.got ? '' : 'is-missing'}" src="${x.icon}" alt="" loading="lazy">`).join('')}</span>`;
     }
     if (max > MAX_PIPS) return '<span class="pg-strip" aria-hidden="true"></span>';
@@ -214,7 +205,10 @@
   const ladderNote = (id, g) => (marking && g && LADDER_CATS.includes(id)
     ? `<p class="pg-note">${esc(t('pgLadderNote'))} <a class="text-btn" href="${App.here(App.hashFor('game'))}" data-act="view" data-value="game">${esc(t('navGame'))}</a></p>` : '');
   /* o (the road's parts, actHtml): all, every row, the done ones ticked, whatever the toggle says;
-     road, open unless folded (prefs.pgShut), as they start open; note, the line under the head. */
+     road, open unless folded (prefs.pgShut), as they start open; note, the line under the head (the
+     road's only: the 100% and Tasks open straight on their rows, design/75); emblem, a picture by
+     the title (null keeps its place, so the titles line up); pips, pips in the strip even when every
+     row has a picture. */
   function group(id, title, list, g, got, max, o = {}) {
     const all = o.all || prefs.pgAll || !g;
     const open = o.road ? !(prefs.pgShut || []).includes(id) : isOpen(id);
@@ -224,29 +218,66 @@
       : `<p class="pg-done">${App.tick}${esc(t('pgDone'))}</p>`;
     return `<section class="pg-group${done ? ' is-done' : ''}${open ? ' is-open' : ''}" aria-labelledby="pg-${id}">
         <h3 class="pg-head" id="pg-${id}"><button type="button" class="pg-open" data-act="pgOpen" data-value="${id}" aria-expanded="${open}">
-          <span class="pg-title">${esc(title)}</span>${strip(list, g, got, max)}
+          <span class="pg-title">${o.emblem !== undefined ? `<span class="pg-emb" aria-hidden="true">${o.emblem ? `<img src="${o.emblem}" alt="" loading="lazy">` : ''}</span>` : ''}${esc(title)}</span>${strip(list, g, got, max, o.pips)}
           ${g ? `<span class="pg-count"><b>${pts(got)}</b><i class="u">/${num(max)}</i></span>` : `<span class="pg-count"><i class="u">${num(max)}</i></span>`}
           <span class="disc-ring">${App.chevron(open)}</span></button></h3>
-        ${open ? `${NOTE[id] ? `<p class="pg-note">${esc(NOTE[id]())}</p>` : o.note ? `<p class="pg-note">${esc(o.note)}</p>` : ''}${ladderNote(id, g)}${body}` : ''}
+        ${open ? `${o.note ? `<p class="pg-note">${esc(o.note)}</p>` : ''}${ladderNote(id, g)}${body}` : ''}
       </section>`;
   }
 
-  /* The pane «Tareas»: the main objectives, then the wishes by type, each with the game's name. */
+  /* The pane «Tareas»: the main objectives, then the wishes by type, each with the game's name and
+     the picture the pane draws by it (design/75, 4 A; tools/extract-wish-icons.py): a main
+     objective's own (tasks/main-<its quest>), a wish's its type's (tasks/<type>). The objectives the
+     save checks by a flag or the Journal take their quest's; the Soul Snare's two are Wayfarer
+     wishes in the game (their QuestType), though the pane's groups put them elsewhere. Each type's
+     group has its large emblem by its name (7 B), the Wishwalls' (assets/icons/wishes). */
   const TYPE_NAME = { 'main-objectives': () => t('pgTasksMain'), collect: () => t('pgTasksCollect') };
+  const TASK_QUEST = { HasMelodyConductor: 'Citadel Ascent Melody Conductor', HasMelodyArchitect: 'Citadel Ascent Melody Architect',
+    HasMelodyLibrarian: 'Citadel Ascent Melody Librarian', CollectedHeartCoral: 'Black Thread Pt5 Heart Coral',
+    CollectedHeartFlower: 'Black Thread Pt5 Heart Flower', CollectedHeartHunter: 'Black Thread Pt5 Heart Ant', 'Lost Lace': 'Black Thread Pt6 Flower' };
+  const TASK_TYPE = { 'Soul Snare': 'wayfarer', 'Soul Snare Pre': 'wayfarer' };
+  const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  function taskIcon(w) {
+    const q = wishQuest(w) || TASK_QUEST[w[2][1]];
+    const ty = TASK_TYPE[q] || (w[0] === 'main-objectives' ? null : w[0]);
+    return ty ? `assets/icons/tasks/${ty}.webp` : q ? `assets/icons/tasks/main-${slug(q)}.webp` : null;
+  }
+  // The groups, and how many tasks are done of how many (the tab's card).
   function tasks(g, skip = new Set()) {
     /* A wish only one mode has (the Steel Soul's, a Classic one) shows in a save of that mode. Free
        mode has none: it shows both, as the Journal and the Map do. */
     const m = App.gameMeta();
     const mode = !g || !App.game() ? null : m && m.steel ? 'steel' : 'classic';
     const done = new Set(g ? g.quests : []);
-    return CO.WISH_TYPES.map((ty) => {
+    const sum = { got: 0, max: 0 };
+    const html = CO.WISH_TYPES.map((ty) => {
       const list = CO.WISHES.map((w, i) => ({ w, i })).filter(({ w, i }) => w[0] === ty.id && !skip.has(i) && (!mode || !w[5] || w[5] === mode))
         .map(({ w, i }) => { const scene = wishScene(wishQuest(w), done);
           // With no area in the pane's list, the area it's taken in, as the road's rows (wishRow).
-          return { name: pick(w[4]), got: !!g && g.wishes.includes(i), act: w[1], area: w[3] || (scene && R.areaOf(scene)) || null, scene }; }).sort(byAct);
+          return { name: pick(w[4]), got: !!g && g.wishes.includes(i), act: w[1], area: w[3] || (scene && R.areaOf(scene)) || null, scene, icon: taskIcon(w) }; }).sort(byAct);
       const title = ty.name ? pick(ty.name) : TYPE_NAME[ty.id]();
-      return list.length ? group('wish-' + ty.id, title, list, g, list.filter((x) => x.got).length, list.length) : '';
+      const got = list.filter((x) => x.got).length;
+      sum.got += got;
+      sum.max += list.length;
+      return list.length ? group('wish-' + ty.id, title, list, g, got, list.length,
+        { pips: true, emblem: WISH_ICON.has(ty.id) ? `assets/icons/wishes/${ty.id}.webp` : null }) : '';
     }).join('');
+    return { html, ...sum };
+  }
+
+  /* How the 100% splits (design/75-progress-100-variants.html, 1 A): one line of a hundred, a
+     stretch per category as wide as it's worth and lit as far as it's done, in a thin filigree
+     frame with a diamond at each end; a hairline notch where each category ends, and a taller
+     one with its diamonds where the Tools' half (the first category) ends. Its legend names each
+     category with what it's worth. Self-contained (here and .pg-split in css/app.css): Albert
+     asked for more designs of it, so it may be swapped. */
+  function splitBar(cats) {
+    const label = cats.map((x) => `${x.name} ${num(x.got)}/${num(x.max)}`).join(', ');
+    const total = cats.reduce((a, x) => a + x.max, 0);
+    return `<div class="pg-split-box"><div class="pg-split" role="img" aria-label="${esc(label)}"><div class="pg-split-track">${cats.map((x) =>
+        `<span class="pg-split-seg" style="flex:${x.max}" title="${esc(`${x.name}: ${num(x.got)}/${num(x.max)}`)}"><i style="width:${(100 * x.got / x.max).toFixed(1)}%"></i></span>`).join('')}
+        <span class="pg-split-half" style="left:${(100 * cats[0].max / total).toFixed(1)}%"></span></div></div>
+        <ul class="pg-legend">${cats.map((x) => `<li>${esc(x.name)} <b>${num(x.max)}</b></li>`).join('')}</ul></div>`;
   }
 
   /* The road to the next Act (js/acts.js, the game's own rules in js/quests.js): its steps in
@@ -892,60 +923,59 @@
     // The wishes the road to Act 3 requires are in the Act tab (round 1, 5): not again in Tasks.
     const roadWishes = next && next.act === 3 ? new Set(QU.GROUPS['Soul Snare'].quests.filter((q) => q.required)
       .map((q) => A.missing(q.quest, new Set(own.quests)).wish).filter((i) => i >= 0)) : new Set();
-    /* The two tabs (design/27b-progress-variants.html, 1 D): two cards, each with its picture of
-       how far you are; the one used last opens (prefs.pgTab), the Act's the first time. As the
-       ARIA tabs pattern: only the selected one is in the Tab order, and the arrows, Home and End
-       move to the other and select it (the keydown below). */
-    const tab = prefs.pgTab === '100' ? '100' : 'act';
+    /* The three tabs (design/27b-progress-variants.html, 1 D; Tasks since design/75, 3 A): cards,
+       each with its picture of how far you are; the one used last opens (prefs.pgTab), the Act's
+       the first time. As the ARIA tabs pattern: only the selected one is in the Tab order, and the
+       arrows, Home and End move to another and select it (the keydown below). On a phone a card
+       keeps its figure and drops the words after it (.pg-tab-x). */
+    const tab = TABS.includes(prefs.pgTab) ? prefs.pgTab : 'act';
     const s = next ? next.steps[stepAt(next)] : null;
     // What's done of the step, in the units its rings count (a point a point, a check a check).
     const sum = s && !s.bypassed ? partsSum(parts(next, s, own)) : null;
+    const x = (html) => `<span class="pg-tab-x">${html}</span>`;
     const actCard = next
       ? { art: STEP_ART[s ? s.id : 'citadel'], label: t('roadTitle', { n: num(next.act) }),
-        sub: s ? `${sum && sum.of > 1 ? `<b>${pts(sum.got)}</b>/${num(sum.of)} · ` : ''}${esc(t('pgStepOf', { n: num(stepAt(next) + 1), of: num(next.steps.length) }))}` : '' }
+        sub: s ? `${sum && sum.of > 1 ? `<b>${pts(sum.got)}</b>/${num(sum.of)}${x(' · ' + esc(t('pgStepOf', { n: num(stepAt(next) + 1), of: num(next.steps.length) })))}`
+          : x(esc(t('pgStepOf', { n: num(stepAt(next) + 1), of: num(next.steps.length) })))}` : '' }
       : own ? { art: QUEST('act3_finale'), label: t('roadGame'),
-        sub: esc((({ seen, shut, of }) => t(shut.length ? 'roadEndingsReach' : 'roadEndings', { n: num(seen.size), of: num(of) }))(endsOf(own))) }
+        sub: x(esc((({ seen, shut, of }) => t(shut.length ? 'roadEndingsReach' : 'roadEndings', { n: num(seen.size), of: num(of) }))(endsOf(own)))) }
         : { art: QUEST('grand_gate_final'), label: t('roadBoth'), sub: '' };
+    const taskList = tasks(g, roadWishes);
     const card = (id, art, label, sub) => `<button type="button" class="pg-tab" role="tab" id="pg-tab-${id}" aria-controls="pg-panel" aria-selected="${tab === id}" tabindex="${tab === id ? 0 : -1}" data-act="pgTab" data-value="${id}">
         <span class="pg-tab-art" aria-hidden="true">${art}</span><span class="pg-tab-l">${esc(label)}</span>${sub ? `<span class="pg-tab-s">${sub}</span>` : ''}</button>`;
     const tabs = `<div class="pg-tabs" role="tablist" aria-label="${esc(t('navProgress'))}">
         ${card('act', `<img src="${actCard.art}" alt="" loading="lazy">`, actCard.label, actCard.sub)}
         ${card('100', `<span class="pg-ring" style="--p:${c ? Math.min(100, c.total) : 0}"><span class="pg-total-n"><b>${num(c ? c.total : 100)}</b><span class="u">%</span></span></span>`,
-          t('pg100'), esc(c ? t('pgToGo', { pct: num(Math.max(0, 100 - c.total)) + App.pctSpace() }) : t('pgInCats', { n: num(CP.CATEGORIES.length) })))}
+          t('pg100'), x(esc(c ? t('pgToGo', { pct: num(Math.max(0, 100 - c.total)) + App.pctSpace() }) : t('pgInCats', { n: num(CP.CATEGORIES.length) }))))}
+        ${card('tasks', `<img src="${BOARD}" alt="" loading="lazy">`, t('pgTasks'), g ? `<b>${num(taskList.got)}</b>/${num(taskList.max)}` : num(taskList.max))}
       </div>`;
-    /* How the 100% splits (design/40, 4 A): one bar of a hundred, a stretch per category as wide as
-       it's worth, lit as far as it's done; its legend, and what each row's figure means. */
+    // How the 100% splits: one line of a hundred, in its categories (splitBar).
     const cats = CP.CATEGORIES.map((k, i) => ({ name: t('cat_' + k.id), max: k.max, got: c ? Math.min(k.max, c.categories[i].got) : 0 }));
-    const split = `<div class="pg-split-box"><div class="pg-split" role="img" aria-label="${esc(cats.map((x) => `${x.name} ${num(x.got)}/${num(x.max)}`).join(', '))}">${cats.map((x) =>
-        `<span class="pg-split-seg" style="flex:${x.max}" title="${esc(`${x.name}: ${num(x.got)}/${num(x.max)}`)}"><i style="width:${(100 * x.got / x.max).toFixed(1)}%"></i></span>`).join('')}</div>
-        <ul class="pg-legend">${cats.map((x) => `<li>${esc(x.name)} <b>${num(x.max)}</b></li>`).join('')}</ul>
-        <p class="pg-split-note">${esc(t('pgSplit'))}</p></div>`;
-    // Without a save (design/40, 5 A): what importing one shows, on both tabs.
+    // Without a save (design/40, 5 A): what importing one shows, on every tab.
     const invite = own ? '' : `<div class="banner is-hint pg-invite"><span class="banner-tag lbl">${esc(t('pgInviteTag'))}</span><span class="banner-text">${esc(t('pgInvite'))}</span>
         <button type="button" class="btn btn-primary" data-act="homeImport">${esc(t('homeInviteBtn'))}</button></div>`;
-    const act = next ? actHtml(next, own) : own ? gameHtml(own, all) : roadHtml(null);
-    const hundredTab = `${total}${split}
-        <h3 class="pg-part">${esc(t('pg100'))}</h3>
+    /* The 100% and Tasks open straight on their rows, with no line over them (design/75, Albert);
+       their rows take the whole width (2 B), and the part's title carries the masthead's filigree
+       (6 B). */
+    const panel = tab === 'act' ? (next ? actHtml(next, own) : own ? gameHtml(own, all) : roadHtml(null))
+      : tab === '100' ? `${total}${splitBar(cats)}
         ${controls}
         <p class="pg-colhead" aria-hidden="true">${esc(t(g ? 'pgColHead' : 'pgColHeadNone'))}</p>
-        <div class="pg-groups">${hundred}</div>
-        <h3 class="pg-part">${esc(t('pgBeyond'))}</h3>
-        <p class="pg-note">${esc(t('pgBeyondNote'))}</p>
-        <div class="pg-groups">${beyond}</div>
-        <h3 class="pg-part">${esc(t('pgTasks'))}</h3>
-        <p class="pg-note">${esc(roadWishes.size ? t('pgTasksNoteAct', { n: num(next.act) }) : t('pgTasksNote'))}</p>
-        <div class="pg-groups">${tasks(g, roadWishes)}</div>`;
+        <div class="pg-groups is-wide">${hundred}</div>
+        <h3 class="pg-part is-crowned">${esc(t('pgBeyond'))}${App.crown('pg-crown')}</h3>
+        <div class="pg-groups is-wide">${beyond}</div>`
+        : `${controls}<div class="pg-groups is-wide">${taskList.html}</div>`;
     sec.innerHTML = `<div class="pg">${brackets}${screenHead(esc(t('navProgress')))}
         ${actsTop(own, next, c, sum)}
         ${tabs}
-        <div class="pg-panel" id="pg-panel" role="tabpanel" aria-labelledby="pg-tab-${tab}">${invite}${tab === 'act' ? act : hundredTab}</div>
+        <div class="pg-panel" id="pg-panel" role="tabpanel" aria-labelledby="pg-tab-${tab}">${invite}${panel}</div>
       </div>`;
   };
 
   /* The tabs from the keyboard (the ARIA tabs pattern, selection following focus): Left and Right
-     go to the other tab, wrapping round, Home to the first and End to the last; pgTab selects it,
-     repaints and focuses it. */
-  const TABS = ['act', '100'];
+     go to the next tab or the one before, wrapping round, Home to the first and End to the last;
+     pgTab selects it, repaints and focuses it. */
+  const TABS = ['act', '100', 'tasks'];
   document.addEventListener('keydown', (ev) => {
     const tab = ev.target.closest && ev.target.closest('.pg-tab[role="tab"]');
     if (!tab || ev.altKey || ev.ctrlKey || ev.metaKey) return;
@@ -999,7 +1029,7 @@
     },
     // The tab: kept in the preferences, so the one used last opens next time.
     pgTab(node) {
-      prefs.pgTab = node.dataset.value === '100' ? '100' : 'act';
+      prefs.pgTab = TABS.includes(node.dataset.value) ? node.dataset.value : 'act';
       savePrefs();
       render();
       const tab = document.getElementById('pg-tab-' + prefs.pgTab);

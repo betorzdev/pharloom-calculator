@@ -180,8 +180,7 @@
     const p = { x: pinDrag.p0.x + mx - pinDrag.from.x, y: pinDrag.p0.y + my - pinDrag.from.y };
     if (!pinDrag.p && Math.abs(e.clientX - down.x) + Math.abs(e.clientY - down.y) < 5) return;   // a tap, not a drag
     pinDrag.p = p;
-    pinDrag.g.style.setProperty('--px', p.x + 'px');
-    pinDrag.g.style.setProperty('--py', p.y + 'px');
+    A.moveMark(pinDrag.g, p);
   }, true);
   const endDrag = (e) => {
     if (!pinDrag) return;

@@ -1276,9 +1276,10 @@ kbd {
 .pg-journey-steps li.is-shut span { color: var(--muted); text-decoration: line-through; text-decoration-color: color-mix(in oklab, var(--muted) 60%, transparent); }
 .pg-journey-steps li.is-shut small { display: inline-block; width: 100%; font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--muted); }
 .pg-seg { justify-content: center; }
-/* The two tabs (design/27b-progress-variants.html, 1 D): two cards, each with its own picture of
-   how far you are. The game selects with value, not hue: the open one white on the picked grey. */
-.pg-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3); max-width: calc(var(--column) + var(--sp-8)); margin: var(--sp-2) auto var(--sp-4); }
+/* The tabs (design/27b-progress-variants.html, 1 D; the third, Tasks, design/75, 3 A): cards, each
+   with its own picture of how far you are. The game selects with value, not hue: the open one white
+   on the picked grey. On a phone a card keeps its figure, not the words after it (.pg-tab-x). */
+.pg-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-3); max-width: calc(var(--column) + var(--sp-16) * 2); margin: var(--sp-2) auto var(--sp-4); }
 .pg-tab {
   display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: var(--sp-1) var(--sp-4);
   padding: var(--sp-3) var(--sp-4); border: 1px solid var(--line); color: var(--muted); text-align: left;
@@ -1408,14 +1409,34 @@ kbd {
 .pg-opts li { display: inline-flex; align-items: center; gap: var(--sp-1); padding: 0 var(--sp-2); border: 1px solid var(--line-ctl); }
 .pg-opts img { width: var(--sp-4); height: var(--sp-4); object-fit: contain; }
 .pg-opts li.is-more { border: 0; color: var(--muted); }
-/* How the 100% splits (design/40, 4 A): a bar of a hundred, a stretch per category. */
+/* How the 100% splits (design/75-progress-100-variants.html, 1 A; js/app-progress.js splitBar):
+   one line of a hundred in a thin filigree frame with a diamond at each end, a hairline notch where
+   each category ends, a taller one with its diamonds where the Tools' half ends. Self-contained:
+   it may be swapped for another design. */
 .pg-split-box { max-width: calc(var(--column) + var(--sp-16)); margin: 0 auto var(--sp-6); }
-.pg-split { display: flex; gap: 3px; height: var(--sp-4); }
-.pg-split-seg { position: relative; min-width: 3px; border: 1px solid var(--accent-line); background: var(--ring-track); overflow: hidden; }
-.pg-split-seg i { position: absolute; inset: 0 auto 0 0; background: var(--accent); }
-.pg-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-1) var(--sp-4); margin: var(--sp-3) 0 0; padding: 0; list-style: none; font-size: var(--fs-xs); color: var(--muted); }
+.pg-split { position: relative; margin: var(--sp-2) var(--sp-3) 0; padding: 3px; border: 1px solid color-mix(in oklab, var(--filigree) 45%, transparent); }
+.pg-split::before, .pg-split::after {
+  content: ''; position: absolute; top: 50%; width: var(--sp-2); height: var(--sp-2); background: var(--scene-bg);
+  border: 1px solid color-mix(in oklab, var(--filigree) 70%, transparent); transform: translate(-50%, -50%) rotate(45deg);
+}
+.pg-split::before { left: calc(-1 * var(--sp-1)); }
+.pg-split::after { left: calc(100% + var(--sp-1)); }
+.pg-split-track { position: relative; display: flex; height: var(--sp-2); background: var(--ring-track); }
+.pg-split-seg { position: relative; min-width: 2px; }
+.pg-split-seg + .pg-split-seg { box-shadow: inset 1px 0 0 var(--scene-bg); }
+.pg-split-seg i { position: absolute; inset: 0 auto 0 0; background: var(--accent); box-shadow: 0 0 6px color-mix(in oklab, var(--spotlight) 45%, transparent); }
+.pg-split-seg + .pg-split-seg i { left: 1px; }
+.pg-split-half { position: absolute; top: calc(-1 * var(--sp-2)); bottom: calc(-1 * var(--sp-2)); width: 1px; background: color-mix(in oklab, var(--filigree) 70%, transparent); }
+.pg-split-half::before, .pg-split-half::after {
+  content: ''; position: absolute; left: 50%; width: var(--diamond); height: var(--diamond); background: var(--filigree); transform: translate(-50%, -50%) rotate(45deg);
+}
+.pg-split-half::before { top: 0; }
+.pg-split-half::after { top: 100%; }
+.pg-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-1) var(--sp-4); margin: var(--sp-4) 0 0; padding: 0; list-style: none; font-size: var(--fs-xs); color: var(--muted); }
 .pg-legend b { font-family: var(--font-num); font-weight: 600; color: var(--ink-strong); }
-.pg-split-note { max-width: var(--column); margin: var(--sp-3) auto 0; text-align: center; font-size: var(--fs-sm); color: var(--ink-2); text-wrap: balance; }
+/* A part's title with the masthead's filigree under it (design/75, 6 B). */
+.pg-part.is-crowned { flex-direction: column; align-items: center; gap: var(--sp-2); }
+.pg-crown { display: block; width: calc(var(--sp-16) * 2.5); height: auto; color: color-mix(in oklab, var(--filigree) 55%, transparent); }
 .pg-colhead { max-width: calc(var(--column) + var(--sp-16) * 2); margin: var(--sp-4) auto calc(var(--sp-2) * -1); padding-right: calc(28px + var(--sp-4)); text-align: right; font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; color: var(--label); }
 /* No save (design/40, 5 A): the invitation over either tab; the guide's lists fold. */
 .pg-invite { max-width: calc(var(--column) + var(--sp-16)); margin: 0 auto var(--sp-6); }
@@ -1441,11 +1462,34 @@ kbd {
 .pg-pips i.is-on { background: var(--accent); border-color: var(--accent); }
 .pg-group.is-open > :not(.pg-head) { margin-left: calc(13rem + var(--sp-4)); }
 .pg-group.is-open > :last-child { margin-bottom: var(--sp-4); }
+/* A Tasks group's emblem by its title, the Wishwalls' (design/75, 7 B); an empty one keeps its place. */
+.pg-title:has(.pg-emb) { display: inline-flex; align-items: center; gap: var(--sp-2); }
+.pg-emb { flex: none; display: grid; place-items: center; width: var(--sp-8); height: var(--sp-8); }
+.pg-emb img { max-width: 100%; max-height: 100%; object-fit: contain; }
+/* The 100% and Tasks (design/75, 2 B): an open group's rows take the whole width, and on a wide
+   screen each thing is one line: its picture, its name, how to get it, where, the pin. */
+.pg-groups.is-wide .pg-group.is-open > :not(.pg-head) { margin-left: 0; }
+@media (min-width: 700px) {
+  .pg-groups.is-wide .pg-item, .pg-groups.is-wide .pg-item.is-plain {
+    grid-template-columns: var(--sp-4) 40px minmax(12rem, 18rem) minmax(0, 1fr) minmax(7rem, auto) 28px;
+    grid-template-areas: "mark art name how place pin";
+  }
+  .pg-groups.is-wide .pg-main { display: contents; }
+  .pg-groups.is-wide .pg-mark { grid-area: mark; }
+  .pg-groups.is-wide .pg-art { grid-area: art; }
+  .pg-groups.is-wide .pg-name { grid-area: name; white-space: normal; text-wrap: balance; }
+  .pg-groups.is-wide .pg-how { grid-area: how; }
+  .pg-groups.is-wide .pg-place { grid-area: place; }
+  .pg-groups.is-wide .pg-onmap { grid-area: pin; }
+  .pg-groups.is-wide .pg-says-row { grid-column: 3 / 5; grid-row: 2; }
+  .pg-groups.is-wide .pg-item:has(.pg-says-row) :is(.pg-mark, .pg-art, .pg-place, .pg-onmap) { grid-row: 1 / span 2; }
+}
 /* Free mode: a missing row's box marks it had (the Inventory's marks). */
 .pg-mark.is-own { min-height: 0; }
 @media (max-width: 599px) {
   .pg-open { grid-template-columns: minmax(0, 1fr) auto auto; }
   .pg-strip { display: none; }
+  .pg-tab-x { display: none; }
   .pg-group.is-open > :not(.pg-head) { margin-left: 0; }
   /* Every step keeps its name (round 1, 7 A), smaller; Act 3's seven in small letters. */
   .pg-journey-steps span { font-size: calc(var(--fs-2xs) * 0.9); letter-spacing: 0; text-wrap: balance; }
@@ -2492,9 +2536,13 @@ img.mp-fit { transform: translate(calc(var(--fx) * 100%), calc(var(--fy) * 100%)
 /* The map's pieces, composed on a canvas under the SVG (js/map-paint.js), in the map's tone. */
 .mp-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; filter: var(--map-tone); }
 .mp-view.is-grabbing .mp-svg { cursor: grabbing; }
+/* The marks' own cursor (each mark's, below) set on their group too, so that the grab's, changing
+   at each drag's start and end, isn't passed down to every mark (a restyle of all of them). */
+.mp-marks { cursor: pointer; }
 .mp-svg image { pointer-events: none; }
 /* A mark: a dark disc with a thin rim and the thing's picture almost as big; the rim lit when
-   pointed at or chosen. */
+   pointed at or chosen. js/app-map.js writes this transform whole on each mark (placeMark), so
+   that a zoom restyles each mark once; this rule only places them until it has. */
 .mp-mk { transform: translate(var(--px), var(--py)) scale(var(--k, 1)) translate(var(--ox, 0px), var(--oy, 0px)); cursor: pointer; }
 .mp-mk > circle:first-of-type { fill: var(--scene-bg); stroke: var(--line-ctl); stroke-width: 0.06; }
 .mp-mk:is(:hover, :focus-visible, .is-sel) > circle:first-of-type { stroke: var(--accent); stroke-width: 0.1; }
@@ -2523,6 +2571,8 @@ img.mp-fit { transform: translate(calc(var(--fx) * 100%), calc(var(--fy) * 100%)
 .mp-view.is-close .mp-cluster { display: none; }
 /* The caches and walls: so many they're drawn close up only; from afar, a count per room. */
 .mp-view:not(.is-close) .is-fine { display: none; }
+/* Close up, a mark far out of the view (js/app-map.js cull). */
+.mp-svg .is-away { display: none; }
 /* An area whose map isn't bought yet. */
 
 /* The Map's admin mode (js/app-map-admin.js, #…&admin=1; design/30-map-admin-variants.html, all A):
