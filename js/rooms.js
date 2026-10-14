@@ -232,8 +232,8 @@
     return r;
   }
   /* What the map shows for a game (null: Free mode). `all`: what the game doesn't draw (an area
-     whose map isn't bought, a room not mapped yet) is there too, faint (faint: true), as a
-     guide. Each piece: { e, cell (a CELLS index), faint }; zones: area → its move, when it has
+     whose map isn't bought, a room or a part of one not mapped yet) is there too, faint (faint:
+     true), as a guide; in colour, only what the game draws whole. Each piece: { e, cell (a CELLS index), faint }; zones: area → its move, when it has
      one that holds ({ at, dx, dy, sx, sy }); off: the scenes a rule takes off the map (their pins
      go with them). */
   function mapView(g, opts) {
@@ -269,13 +269,10 @@
       // As a guide: the whole drawing, faint, of what the game doesn't draw whole.
       if (all) { const w = whole(e, v); if (w >= 0) pieces.push({ e, cell: w, faint: true }); }
     }
-    /* As a guide, a room is whole or not as a whole: once the game draws any part of it in colour,
-       its other parts are in colour too. The game cuts rooms into parts with straight lines, and a
-       part faint beside one in colour showed a change of tone in the middle of a room. */
-    if (all) {
-      const lit = new Set(pieces.filter((p) => !p.faint).map((p) => roomPiece(p.e.s)));
-      for (const p of pieces) if (p.faint && lit.has(roomPiece(p.e.s))) p.faint = false;
-    }
+    /* Piece by piece, also as a guide: a part of a room the game hasn't mapped stays faint beside
+       its mapped parts, the game's straight cut a change of tone (Albert's choice, 14-Oct-2026,
+       design/00-study.md; until then a room went whole in colour once any part of it was, which
+       drew in colour parts not yet walked into, and across into areas whose map isn't bought). */
     const zones = {};
     for (const [a, z] of Object.entries(M.ZONES)) {
       const mv = (z.moves || []).find((m) => rule(m[0], v));

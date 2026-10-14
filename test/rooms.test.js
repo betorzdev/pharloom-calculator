@@ -113,14 +113,28 @@ test('the map piece by piece, as the game draws it', () => {
   const part = { ...world({}), mapped: M.PIECES.map((e) => e.s).filter((s) => s !== 'Greymoor_02_top') };
   const v = drawn(R.mapView(part));
   assert.ok(v.has('Greymoor_02') && v.has('Greymoor_02_mid') && !v.has('Greymoor_02_top'));
-  // As a guide, a room goes whole in colour once any part of it is: no change of tone inside it.
+  // As a guide too, piece by piece: a part the game hasn't mapped stays faint beside the mapped
+  // ones, the game's cut a change of tone (Albert's choice, 14-Oct-2026: a room no longer goes
+  // whole in colour once any part of it is).
   const guide = R.mapView(part, { all: true }).pieces.find((p) => p.e.s === 'Greymoor_02_top');
-  assert.ok(guide && !guide.faint);
-  // So with a room drawn only in parts, named after its scene: Under_13's left part mapped.
+  assert.ok(guide && guide.faint);
+  // His fresh game's Marrow: Bone_16 and its right part mapped, its top part not walked into yet.
+  const marrow = { ...world({}), mapped: ['Bone_16', 'Bone_16_right'], maps: ['Boneforest'] };
+  const bone = R.mapView(marrow, { all: true }).pieces.filter((p) => /^Bone_16/.test(p.e.s)).map((p) => [p.e.s, p.faint]);
+  assert.deepEqual(bone.sort(), [['Bone_16', false], ['Bone_16_right', false], ['Bone_16_top', true]]);
+  // A room drawn only in parts, named after its scene: Under_13's left part mapped, the rest not.
   const under = { ...world({}), mapped: M.PIECES.map((e) => e.s).filter((s) => !/^Under_13_(right|bot)/.test(s)) };
-  assert.ok(!drawn(R.mapView(under)).has('Under_13_right'));
   const parts = R.mapView(under, { all: true }).pieces.filter((p) => /^Under_13_/.test(p.e.s));
-  assert.ok(parts.length >= 3 && parts.every((p) => !p.faint), JSON.stringify(parts.map((p) => [p.e.s, p.faint])));
+  assert.ok(parts.length >= 3 && parts.every((p) => p.faint === (p.e.s !== 'Under_13_left')), JSON.stringify(parts.map((p) => [p.e.s, p.faint])));
+  // A room across two areas: its parts in the Slab mapped and bought, Peak_01 in Mount Fay, whose
+  // map isn't, stays faint.
+  const peak = { ...world({}), mapped: ['Peak_01_right_mid', 'Peak_01_right_top'], maps: ['Slab'] };
+  assert.ok(R.mapView(peak, { all: true }).pieces.filter((p) => /^Peak_01($|_top)/.test(p.e.s)).every((p) => p.faint));
+  // So with the whole map, in colour is exactly what the game draws whole.
+  for (const g of [part, marrow, under, peak]) {
+    const game = new Map(R.mapView(g).pieces.map((p) => [p.e, p.cell]));
+    for (const p of R.mapView(g, { all: true }).pieces) assert.equal(!p.faint, game.get(p.e) === p.cell, p.e.s);
+  }
   // A piece the game maps with others (mappedIfAllMapped): Songclave's bridge, once Song_Enclave
   // and Library_09_top are, though no scene is named after it.
   const bridge = (mapped) => drawn(R.mapView({ ...world({}), mapped })).has('Enclave_bridge_left');
