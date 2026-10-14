@@ -291,6 +291,7 @@
     mapPlace_bellway:{ es: 'Vías campana', en: 'Bellways' },
     mapPlace_ventrica:{ es: 'Ventrica', en: 'Ventrica' },   // KEY_TUBE
     mapNear:        { es: 'Lo más cerca de tu banco', en: 'Closest to your bench' },
+    mapNearRespawn: { es: 'Lo más cerca de tu punto de reaparición', en: 'Closest to your respawn point' },   // no game text: as mapRespawn
     mapFrom:        { es: 'Tu banco anterior', en: 'Your previous bench' },
     // No game text for a respawn point (searched: respawn, reaparecer, wake): written for the context.
     mapRespawn:     { es: 'Tu punto de reaparición', en: 'Your respawn point' },

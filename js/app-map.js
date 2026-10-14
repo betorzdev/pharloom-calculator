@@ -855,7 +855,7 @@
     const namesSvg = names ? AREA_NAMES().map((a) => {
       const unmapped = own && MAPPABLE.has(a.id) && !bought.has(a.id);
       if (unmapped && exact) return '';
-      return `<text class="mp-name${unmapped ? ' is-unmapped' : ''}${sel('area:' + a.id)}" x="${n2(a.x)}" y="${n2(a.y)}" data-mk="area:${a.id}" role="button" tabindex="0"${NT}>`
+      return `<text class="mp-name${unmapped ? ' is-unmapped' : ''}${sel('area:' + a.id)}" x="${n2(a.x)}" y="${n2(a.y)}" data-mk="area:${a.id}" data-rooms="${a.rooms.length}" role="button" tabindex="0"${NT}>`
         + `${unmapped ? `<title>${esc(t('mapUnmapped'))}</title>` : ''}${esc(areaName(a.id))}</text>`;
     }).join('') : '';
 
@@ -867,6 +867,9 @@
     // How many: of a layer whose things are had, had of total in a save (all of them in Free
     // mode); of the rest (places, people), how many show. A layer complete in --good.
     const tally = (ids) => {
+      // A group counts its layers but the cocoon, which isn't had nor many: «Your game» counts as
+      // its Journal does, had of total (design/64, 1 A).
+      if (ids.length > 1) ids = ids.filter((k) => k !== 'cocoon');
       const cs = ids.map((k) => count[k] || { all: 0, had: 0, shown: 0 });
       const sum = (f) => cs.reduce((a, c) => a + c[f], 0);
       if (!own) return [null, sum('all')];
@@ -1089,12 +1092,33 @@
     v.classList.toggle('is-zoomed', zoom > 1.5);
     spread(m, vb.w / r.width * px, zoom > 3, SPREAD_MAX * Math.min(1, Math.max(0, (zoom - 1.5) / 2.5)));
     v.classList.toggle('is-close', zoom > 3);   // the caches and walls, one by one
+    unclutter(m, zoom > 1.5);
     // Close up, the map at twice the resolution (assets/map/pieces-hd.webp, tools/extract-map.py):
     // loaded the first time the screen has more pixels than the map, and kept.
     if (r.width * (window.devicePixelRatio || 1) / vb.w > 1) wantFine = true;
     composeMap();
     for (const el of v.querySelectorAll('.mp-hornet, .mp-ping')) placeOver(el);
     paintCard();
+  }
+  /* The area names, from afar (design/64, 2 A): one that would overlap another waits for the zoom,
+     the larger area's (by its rooms) staying; zoomed in, all of them. Their size on screen is the
+     same at any zoom, so only the view's size and the names shown change it. */
+  function unclutter(m, zoomed) {
+    const names = [...m.querySelectorAll('.mp-name')];
+    const r0 = m.getBoundingClientRect();
+    // Worked out again only when the map (a render makes a new one), its size or the zoom change.
+    const stamp = `${zoomed}|${Math.round(r0.width)}x${Math.round(r0.height)}`;
+    if (m._clutter === stamp) return;
+    m._clutter = stamp;
+    for (const x of names) x.classList.remove('is-crowded');
+    if (zoomed) return;
+    const kept = [];
+    for (const x of names.slice().sort((a, b) => Number(b.dataset.rooms) - Number(a.dataset.rooms))) {
+      const r = x.getBoundingClientRect();
+      if (!r.width) continue;
+      if (kept.some((k) => r.left < k.right + 4 && r.right > k.left - 4 && r.top < k.bottom + 2 && r.bottom > k.top - 2)) x.classList.add('is-crowded');
+      else kept.push(r);
+    }
   }
   /* Full screen, a state and not a pref (the browser wants a tap to go in): the map's stage over
      the whole window with the search and the zoom on it (css: .mp.is-full), and the page itself
@@ -1286,7 +1310,15 @@
     const half = c.firstElementChild ? c.firstElementChild.offsetWidth / 2 + 8 : 0;
     c.style.left = (half * 2 > br.width ? br.width / 2 : Math.max(half, Math.min(br.width - half, sx))) + 'px';
     c.style.top = sy + 'px';
-    c.classList.toggle('is-below', sy < (c.firstElementChild ? c.firstElementChild.offsetHeight : 0) + 24);
+    /* Above its mark, unless it doesn't fit, or would cover the search or the zoom (design/64, 3 A):
+       then below it. */
+    const ch = c.firstElementChild ? c.firstElementChild.offsetHeight : 0, cw = c.firstElementChild ? c.firstElementChild.offsetWidth : 0;
+    const left = parseFloat(c.style.left) - cw / 2, top = sy - ch - 16;
+    const covers = [...stage.querySelectorAll('.mp-find, .mp-tools')].some((x) => {
+      const b = x.getBoundingClientRect(), bx = b.left - br.left, by = b.top - br.top;
+      return b.width && left < bx + b.width && left + cw > bx && top < by + b.height && sy > by;
+    });
+    c.classList.toggle('is-below', sy < ch + 24 || covers);
   }
   const pick1 = (key) => { picked = key; const { m } = nodes(); if (m) for (const x of m.querySelectorAll('.is-sel')) x.classList.remove('is-sel');
     const el = key && m && m.querySelector(`[data-mk="${CSS.escape(key)}"]`); if (el) el.classList.add('is-sel');
@@ -1377,6 +1409,8 @@
   const pageWidth = () => document.documentElement.style.setProperty('--page-w', document.documentElement.clientWidth + 'px');
   pageWidth();
   window.addEventListener('resize', () => { pageWidth(); applyView(); });
+  // The names' sizes once the typeface is in (unclutter measures them).
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { const { m } = nodes(); if (m) { m._clutter = ''; applyView(); } });
 
   // For js/app-hornet.js: the way to walk, and a point's place on the image.
   Object.assign(App, { mapWay: () => way(App.game()), mapWayKey: () => wayKey(App.game()) });

@@ -82,7 +82,10 @@ empty save.
 In a save, the game's area title card: **Resting at** the area of the bench Hornet sits at, lit by
 that area's own colour on the game's map, the room's area under it when it's another (Coral
 Tower in the Sands of Karak), the Act and the time played; Hornet sitting on that very bench (each room's bench is read
-from the game's files; one it doesn't know shows Bone Bottom's); and four
+from the game's files; one it doesn't know shows Bone Bottom's). When the save was written where
+the game wakes her at a room's own respawn point instead (a restore point after a boss or an
+ability), the card says **Your respawn point** over that area, shows her standing with no bench,
+and its list is what's closest to that point. Then four
 figures: **your 100%**, the Journal, the masks and the rosaries. Beside the card (under it on a
 phone) is **the map of that area**, drawn as the Map screen draws it (the same view, «Only what
 the game shows» included), cropped to the area's rooms and fading out at its edges, with Hornet
@@ -379,8 +382,9 @@ it swaps to twice the resolution. The last button, the four corners, takes it to
 the same button leave it; where the browser can't, it fills the window). On it: a search at the top left and the zoom at the top right.
 The search finds any area and anything on the map by name (a piece, a Tool, a boss, a shop, an
 NPC, a Journal entry), each with its layer and area under it: pick one and the map goes there,
-with its layer switched on, its card open and a ring where it is. On a phone the area names show
-only zoomed in.
+with its layer switched on, its card open and a ring where it is. With the whole map in view, an
+area name that would fall on another waits for the zoom (the larger area's stays, by its rooms);
+on a phone the area names show only zoomed in.
 
 Under the map, **What the map shows**, as the Hollow Knight site has it: «Show all · Hide all» on
 its right, and «Only the 100%», which turns on just the layers that count for completion, then the Act (all, or only Act 1, 2 or 3's things), «Only what I can reach now» with a
@@ -391,7 +395,8 @@ at first, only the first two on a phone, then as you left them) whose title is t
 whole group, in ink when all of it is on, dimmer when part, muted when none. Inside, each layer's
 switch is the game's own picture of it, in grey when off. Beside each, how many: in a save, had of
 the total (a layer complete in green); for places and people, which aren't had, how many there
-are; in Free mode, the total. The Act and reach filters narrow the counts too.
+are; in Free mode, the total. A group's title counts its layers the same way, all but your cocoon,
+so «Your game» counts as its Journal does. The Act and reach filters narrow the counts too.
 
 What counts for the 100% is in the first four groups, each thing in the room where it's had:
 lying there, at the shop that sells it, at the Wishwall or with whoever gives the wish, in its
@@ -495,7 +500,8 @@ game's map. Things on one point gather in a small grid around it. The map is dra
 stays sharp as you zoom.
 
 With a save the map shows only what you're missing; in Free mode, what your marks say is missing
-(everything, as a guide, on a New Game). Tap any mark for its card: what
+(everything, as a guide, on a New Game). Tap any mark for its card (above the mark, or below it
+when above it would cover the search or the zoom): what
 it is, where, how it's had, and what it says of your game. A
 shop's says what of the 100% it still has for you, Shakra's which maps you lack, a Wishwall's or a
 wish giver's the wishes still open, a wish's place or thing which wish it's for, whether it's done
