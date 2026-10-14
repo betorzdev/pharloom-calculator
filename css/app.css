@@ -2322,10 +2322,17 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
    the dots take the HUD's: bone for shards, silk white for fragments, the slots' for the rest). */
 /* The map first (design/03-redesign.md, step 6): the view fills the plate to the frame's inner
    edge; on it, the search top left, the zoom top right, the legend bottom left. */
-.mp-stage { position: relative; margin: 0 calc(var(--inv-pad) * -1 + var(--frame-inset) + 1px); background: var(--scene-bg); }
+/* It has no ground of its own (design/50): the screen's black and its light from the top show
+   behind the map, and closer up its edges fade into the frame instead of a cut. The large map and
+   full screen, which leave the frame, keep the black. */
+.mp-stage { position: relative; margin: 0 calc(var(--inv-pad) * -1 + var(--frame-inset) + 1px); }
 /* The view: a fixed window the map moves and scales in (js/app-map.js): drag, wheel, pinch. */
-.mp-view { position: relative; overflow: hidden; height: min(72vh, 720px, 62vw + 120px); background: var(--scene-bg);
+.mp-view { position: relative; overflow: hidden; height: min(72vh, 720px, 62vw + 120px);
   touch-action: none; cursor: grab; user-select: none; -webkit-user-select: none; }
+.mp:not(.is-big, .is-full) .mp-canvas {
+  --fade: linear-gradient(to bottom, transparent, #000 var(--sp-12), #000 calc(100% - var(--sp-16)), transparent), linear-gradient(to right, transparent, #000 var(--sp-12), #000 calc(100% - var(--sp-12)), transparent);
+  -webkit-mask-image: var(--fade); -webkit-mask-composite: source-in; mask-image: var(--fade); mask-composite: intersect; }
+.mp:is(.is-big, .is-full) :is(.mp-stage, .mp-view) { background: var(--scene-bg); }
 .mp-view.is-grabbing { cursor: grabbing; }
 /* No will-change: it would keep the layer rasterised at the fitted size, blurred close up. */
 .mp-view img { -webkit-user-drag: none; pointer-events: none; }

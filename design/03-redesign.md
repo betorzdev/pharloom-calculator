@@ -42,7 +42,7 @@ the work up reads it first, then the step it's on.
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
-| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct) | [`12-map-variants.html`](12-map-variants.html) |
+| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html` (kept out of the repo) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
@@ -1029,6 +1029,21 @@ relics, Mementos, the Bellhome, silk cocoons, Eva's), Items (Craftmetal, Pale Oi
 Silkeaters, maps, key items, rosaries, shell shards), then Places to Secrets as they were. «Only the
 100%» beside «Show all · Hide all» turns on just the layers that count. A save's earlier `tools`
 layer reads as the three colours.
+
+### Retouch: the map's ground (14 October 2026)
+
+Albert: the map «parece un bloque negro pegado en un fondo difuminado». The stage and the view
+painted the scene's black edge to edge of the frame, over the screen's light from the top, so the
+Map was the one screen with no light and a hard black rectangle in the frame.
+
+The options (`50-map-ground-variants.html`, the real site with the variant over it; kept out of
+the repo): **A** no ground of its own, the screen's light behind the map and, closer up, its edges
+fading into the frame; B a window inside the plate's padding, a hairline in the tab's colour and a
+soft light inside (narrower on a phone); C no ground, edge to edge, cut where it ends.
+
+**Decision: A** (14 October 2026): `.mp-stage` and `.mp-view` lose their background and
+`.mp-canvas` takes a mask that fades its four edges; the large map and full screen, which leave the
+frame, keep the black.
 
 ## Step 7 · Journal
 
