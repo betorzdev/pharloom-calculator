@@ -247,7 +247,7 @@ go. Under it, the 236 portraits (237 in Steel Soul) **by area**, the areas with 
 first and each with its count (6/20), or **in the Journal's order**; entries with no place go last,
 under "Elsewhere". Beside the search, two choices in words under their labels: **Show** "What's
 missing / Everything" (with a save; Free mode shows everything) and **Order** "By area / Journal
-order". The search finds entries by name or by area, in either language and with or without accents; while
+order". The search finds entries by name (in either language) or by area (in the page's), with or without accents; while
 it has text it looks through the whole Journal, what's complete included. Each portrait
 sits in a ring that fills with its kills and lights up once complete; one not seen yet is in
 shadow in a dashed ring («???»), and the six optional ones carry a small diamond. Tapping one
@@ -256,7 +256,7 @@ closes it): the whole drawing, from the game's files, on a soft light and at the
 draws it (a Mossgrub small, the Bell Beast filling it), so you know the bug when you meet it; one
 not seen yet is in shadow. Beside it the name, the kills, its areas and the nearest from your
 bench, the description, and under the Hunter's symbol the Hunter's note once complete, or the
-game's «Defeat 11 more to complete the hunter's notes.». An entry is complete when the save lists it
+game's «Defeat 11 more to complete the hunter's notes.» (the Void Tendrils has no kills: it says «Completed by reading its tablet.» instead). An entry is complete when the save lists it
 with its kills done: the game writes them even for the entries it completes another way, and on
 the saves where Nuu has given the Memento the site counts all 230. In Free mode, the whole
 Journal.
