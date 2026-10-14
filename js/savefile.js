@@ -243,6 +243,7 @@
 
   /* playerData and sceneData → what the site keeps of a game, in its own ids:
        tools, crests      owned (IsUnlocked; a Tool also not IsHidden), by js/collectibles.js's names
+       gaveBack           the Tools IsUnlocked and IsHidden: had, then handed over
        skills, arts       the has* flags above
        masks, spools      whole ones gained (maxHealthBase − 5, silkMax − 9), as the game counts them
        hearts             Silk Hearts (silkRegenMax); needle, kit, pouch: the three upgrade ladders
@@ -339,6 +340,9 @@
       // Unlocked and not hidden, as the game's ToolItemManager counts them (IsUnlockedNotHidden):
       // the Curveclaw handed to the Unnamed Skarr stays unlocked but hidden, and isn't Hornet's.
       tools: Object.keys(CO.TOOLS).filter((id) => CO.TOOLS[id].some((n) => { const x = tools.get(n) || {}; return x.IsUnlocked && !x.IsHidden; })),
+      // Unlocked and hidden: had and handed over. The Map and the Inventory show the two Tools a
+      // wish lends (Needle Phial back to Zylotol, Snare Setter to the Caretaker) as found by it.
+      gaveBack: Object.keys(CO.TOOLS).filter((id) => CO.TOOLS[id].some((n) => { const x = tools.get(n) || {}; return x.IsUnlocked && x.IsHidden; })),
       crests: Object.keys(CO.CRESTS).filter((id) => (crests.get(CO.CRESTS[id]) || {}).IsUnlocked),
       skills: Object.keys(SKILL_PD).filter((id) => pd[SKILL_PD[id]] === true),
       arts: Object.keys(ART_PD).filter((id) => pd[ART_PD[id]] === true),
@@ -480,7 +484,7 @@
       'pharloom.meta': JSON.stringify({ ...m, saved: Number.isFinite(saved) && saved > 0 ? saved : null }),
     };
   }
-  const EMPTY = Object.freeze({ tools: [], crests: [], skills: [], arts: [], journal: {}, masks: 0, spools: 0, hearts: 0,
+  const EMPTY = Object.freeze({ tools: [], gaveBack: [], crests: [], skills: [], arts: [], journal: {}, masks: 0, spools: 0, hearts: 0,
     needle: 0, kit: 0, pouch: 0, everbloom: false, purse: {}, rosaries: 0, shards: 0, farsight: false, hasJournal: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', area: '', build: {},
     quests: [], taken: [], bellshrines: [], bells: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
     bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [],
@@ -504,6 +508,7 @@
     out.wishes = out.wishes.map((k) => WISH_AT.get(k)).filter((i) => i !== undefined);
     out.extras = [...new Set(out.extras.flatMap((k) => EXTRA_AT.get(k) || []))].sort((a, b) => a - b);
     out.tasks = out.tasks.map((k) => TASK_AT.get(k)).filter((i) => i !== undefined);
+    out.gaveBack = out.gaveBack.filter((id) => CO.TOOLS[id]);
     out.steelSpots = out.steelSpots.filter((x) => typeof x === 'string' && /^[\w ()-]{1,64}$/.test(x));
     out.cocoonAt = out.cocoon ? fourNumbers(out.cocoonAt) : [];
     out.bosses = out.bosses.filter((id) => SP.BOSSES.some((b) => b[0] === id));

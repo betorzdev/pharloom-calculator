@@ -173,6 +173,17 @@ test('the purse: what is held of each Collectable, the two currencies, the Farsi
   assert.equal('other' in F.gameOf(bad).purse, false);
 });
 
+test('a Tool handed back (unlocked and hidden) is gaveBack, not held; kept in a slot', () => {
+  const tool = (Name, IsUnlocked, IsHidden) => ({ Name, Data: { IsUnlocked, IsHidden } });
+  // As Zylotol leaves it once Alchemist's Assistant is done, and the Caretaker the Snare Setter.
+  const pd = { ...BASE, Tools: { savedData: [tool('Extractor', true, true), tool('Silk Snare', true, true), tool('Lifeblood Syringe', true, false)] } };
+  const g = F.game(pd, null);
+  assert.deepEqual(g.tools, ['plasmium-phial']);
+  assert.deepEqual(g.gaveBack.sort(), ['needle-phial', 'snare-setter']);
+  assert.deepEqual(F.gameOf(F.toSnapshot(pd)).gaveBack.sort(), ['needle-phial', 'snare-setter']);
+  assert.deepEqual(F.gameOf({ 'pharloom.progress': '{"gaveBack":["needle-phial","nope"]}' }).gaveBack, ['needle-phial']);
+});
+
 test("a wish taken is 'accepted' whether it's done or not; 'quest' only once done", () => {
   const quest = (IsAccepted, IsCompleted) => ({ QuestCompletionData: { savedData: [{ Name: 'Beastfly Hunt', Data: { IsAccepted, IsCompleted } }] } });
   // Bone_East_17b's wall: open by its bool or by the wish taken (tools/gen-spots.js CHECK_OF).

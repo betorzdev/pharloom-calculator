@@ -127,7 +127,8 @@ lack it). There's one slot per point of the 100%: a Tool and its upgrade (Curvec
 Curvesickle, Druid's Eye and Eyes, Claw Mirror and Mirrors) share one, showing the one you have,
 with two pips under it (had, upgraded), and Shell Satchel shows in Dead Bug's Purse's slot in Steel
 Soul. Snare Setter and Needle Phial, which a wish lends and takes back, sit among the reds where
-the game lists them, their slot dashed: they don't count, and a line under the row says so. Under both columns, what she carries: the **Purse** (Rosaries and
+the game lists them, their slot dashed: they don't count, and a line under the row says so. Once
+handed back they still show found (here and on the Map: the save keeps them, hidden). Under both columns, what she carries: the **Purse** (Rosaries and
 Shell Shards as big figures, the shards out of what your Tool Pouch holds, 400 to 800, with a bar,
 and under each what breaks into it, counted, with the sum you would get from breaking it all: the
 five Rosary strings and necklaces under the rosaries; the Beast Shards, Shard Bundles, Pristine
@@ -398,7 +399,7 @@ boss's arena, with the person who gives it. All of it on at first.
   opens them by the colour of their slot (red, blue, yellow) and, apart, the six **outside the
   100%** (off at first): the upgrades of four Tools (Curvesickle, Druid's Eyes, Claw Mirrors, the
   Shell Satchel), which add nothing to it on their own, and the two a wish lends and takes back
-  (the Snare Setter, the Needle Phial). Then the Crests and Silk Skills.
+  (the Snare Setter, the Needle Phial), found once had even after handing them back. Then the Crests and Silk Skills.
 - **Collectibles**: Memory Lockets, Lost Fleas, the Old Hearts, the Melodies and the Everbloom
   (on at first), then, off at first, the relics, one switch for the six (Bone Scrolls, Weaver
   Effigies, Choral Commandments, Rune Harps, Psalm Cylinders, the Arcane Egg) whose round caret
