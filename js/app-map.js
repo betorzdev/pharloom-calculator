@@ -308,7 +308,8 @@
     // The six outside the 100%: a Tool's upgrade, or one a wish lends and takes back.
     for (const id of OTHER_TOOLS) {
       const tool = D.TOOLS.find((x) => x.id === id), w = CO.WHERE.tools[id] || [], of = CO.COUNTED.find((ids) => ids.includes(id));
-      add({ key: 'tools:' + id, layer: 'tools-other', scene: SP.AT.tools[id], act: w[0], area: w[1], got: !!g && g.tools.includes(id),
+      // One a wish lent and took back was found: it shows found (savefile gaveBack).
+      add({ key: 'tools:' + id, layer: 'tools-other', scene: SP.AT.tools[id], act: w[0], area: w[1], got: !!g && (g.tools.includes(id) || (!of && g.gaveBack.includes(id))),
         name: pick(tool.name), note: of ? t('mapToolUpgrade', { tool: pick(D.TOOLS.find((x) => x.id === of[0]).name) }) : t('mapToolLent'),
         draw: (s, ti, k, c) => dot('tools', `assets/icons/tools/${id}.webp`, s, ti, k, c) });
     }
