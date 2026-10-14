@@ -204,14 +204,19 @@
       d.addEventListener('click', (e) => { if (e.target === d) d.close(); });
     }
   };
-  // Closing the entry (its ×, Esc, the dim around it): back to its portrait.
+  /* Closing the entry (its ×, Esc, the dim around it): the focus goes back to what opened it (a
+     hunt's card or a portrait); if that isn't drawn any more (a complete entry in «What's
+     missing»), to the entry's other control, and failing that to the screen's title. */
+  let opener = '';
   function close(d) {
     const key = picked;
     if (!key) return;
     picked = null;
     if (d.open) d.close();
     render();
-    const b = document.querySelector(`.hj-cell[data-key="${key}"]`);
+    const own = (c) => document.querySelector(`.${c}[data-key="${key}"]`);
+    const b = (opener === 'hunt' ? own('hj-hunt') || own('hj-cell') : own('hj-cell') || own('hj-hunt'))
+      || document.querySelector('.screen:not([hidden]) .screen-title');
     if (b) b.focus({ preventScroll: true });
   }
   // Leaving the screen with the entry open (the browser's back): a modal left behind would lock the page.
@@ -221,13 +226,14 @@
   });
 
   // The Map's "See in the Journal": that entry open when the screen shows.
-  App.journalOpen = (id) => { picked = id; };
+  App.journalOpen = (id) => { picked = id; opener = ''; };
 
   Object.assign(actions, {
     hjPick(node) {
       const d = document.querySelector('dialog.hj-sheet[open]');
       if (d) { close(d); return; }
       picked = node.dataset.key || null;
+      opener = node.classList.contains('hj-hunt') ? 'hunt' : 'cell';
       render();
     },
     hjShow(node) { prefs.hjAll = node.dataset.value === 'all'; savePrefs(); render(); },
