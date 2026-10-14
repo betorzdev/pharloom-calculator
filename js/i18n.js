@@ -207,7 +207,7 @@
     ctFocus:        { es: 'Concentración de la Cazadora', en: 'Hunter\'s focus' },
     ctFocusFull:    { es: 'Concentración plena', en: 'Full focus' },
     ctFury:         { es: 'Furia de la Bestia', en: 'Beast\'s fury' },
-    ctFlint:        { es: 'Pedernal activo', en: 'Flintslate active' },
+    ctFlint:        { es: '{name} activa', en: '{name} active' },   // {name}: the Tool's, as the game names it
     ctChallenge:    { es: 'Tras desafiar (primer golpe)', en: 'After a Challenge (first hit)' },
     ctSlash:        { es: 'Tajo', en: 'Slash' },
     ctAtt_slash:    { es: 'Tajo', en: 'Slash' },
@@ -694,7 +694,7 @@
     pgSpoolNote:    { es: 'Cuentan los carretes enteros: cada dos fragmentos, un 1 %.', en: 'Whole spools count: every two fragments, 1%.' },
     kind_flea:      { es: 'Pulga perdida', en: 'Lost Flea' },   // KEY_FLEA
     kind_silkHeart: { es: 'Corazón de seda', en: 'Silk Heart' },   // MEMORY_MSG_TITLE_SILKHEART
-    kind_fleas:     { es: 'Pulgas perdidas', en: 'Lost Fleas' },
+    kind_fleas:     { es: 'Las pulgas perdidas', en: 'The Lost Fleas' },   // QUEST_FLEAS_TITLE
     kind_oldHearts: { es: 'Viejos corazones', en: 'Old Hearts' },   // as the wish MQ_BLACKTHREAD_5_NAME says them
     kind_melodies:  { es: 'Melodías', en: 'Melodies' },
     pgOtherArts:    { es: 'Otras habilidades', en: 'Other abilities' },
@@ -751,7 +751,7 @@
     pgTodoPoints:   { es: 'Consigue {n} puntos más de deseos', en: 'Get {n} more wish points' },
     pgTodoPoints1:  { es: 'Consigue {n} punto más de deseos', en: 'Get {n} more wish point' },
     pgTodoAny:      { es: 'Vale cualquiera de estos {n} deseos; por ejemplo:', en: 'Any of these {n} wishes will do; for example:' },
-    pgTodoAnyNear:  { es: 'Vale cualquiera de estos {n} deseos; los más cerca de tu banco:', en: 'Any of these {n} wishes will do; the nearest to your bench:' },
+    pgTodoAnyNear:  { es: 'Vale cualquiera de estos {n} deseos; los más cercanos a tu banco:', en: 'Any of these {n} wishes will do; the nearest to your bench:' },
     pgTodoShrine:   { es: 'Haz sonar el Santuario de Campana de {area}', en: 'Ring the Bellshrine in {area}' },   // the game's word in it: BELLSHRINE
     pgTodoGet:      { es: 'Consigue: {name}', en: 'Get: {name}' },
     pgTodoPavo:     { es: 'Habla con Pabo: te da la {key}', en: 'Talk to Pavo: he gives you the {key}' },   // his name: BELLHART_GREETER_MAIN
