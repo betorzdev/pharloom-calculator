@@ -126,9 +126,9 @@ function audit(dump) {
   }
 
   /* The js/i18n.js strings that carry their key alongside (// KEY) have to say the same as
-     the game in both languages. */
+     the game in both languages ('mapExtra_bone-scroll', a quoted id, too). */
   const src = fs.readFileSync(JS('i18n.js'), 'utf8');
-  const re = /^\s*(\w+):\s*\{ es: '((?:[^'\\]|\\.)*)',\s*en: '((?:[^'\\]|\\.)*)' \},[ \t]*\/\/[ \t]*([A-Z][A-Z0-9_]+)[ \t]*$/gm;
+  const re = /^\s*'?([\w-]+)'?:\s*\{ es: '((?:[^'\\]|\\.)*)',\s*en: '((?:[^'\\]|\\.)*)' \},[ \t]*\/\/[ \t]*([A-Z][A-Z0-9_]+)[ \t]*$/gm;
   const unesc = (s) => s.replace(/\\n/g, '\n').replace(/\\'/g, "'").replace(/\\\\/g, '\\');
   let m, keyed = 0;
   while ((m = re.exec(src))) {
