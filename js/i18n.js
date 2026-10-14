@@ -207,7 +207,7 @@
     ctFocus:        { es: 'Concentración de la Cazadora', en: 'Hunter\'s focus' },
     ctFocusFull:    { es: 'Concentración plena', en: 'Full focus' },
     ctFury:         { es: 'Furia de la Bestia', en: 'Beast\'s fury' },
-    ctFlint:        { es: 'Pedernal activo', en: 'Flintslate active' },
+    ctFlint:        { es: '{name} activa', en: '{name} active' },   // {name}: the Tool's, as the game names it
     ctChallenge:    { es: 'Tras desafiar (primer golpe)', en: 'After a Challenge (first hit)' },
     ctSlash:        { es: 'Tajo', en: 'Slash' },
     ctAtt_slash:    { es: 'Tajo', en: 'Slash' },
