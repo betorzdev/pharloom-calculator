@@ -765,7 +765,7 @@
   };
 
   /* The header's save selector: Hornet at a bench under a lamp that breathes, and the save
-     you're playing, or «Select save» in free mode. When the save follows the game's file, a
+     you're playing, or «Select Profile» in free mode. When the save follows the game's file, a
      line under the label says how: live, paused or file missing. */
   App.saveLink = () => {
     const n = activeSlot();

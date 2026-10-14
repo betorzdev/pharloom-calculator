@@ -5,13 +5,13 @@
 ## What's on the page
 
 The header has the title under a filigree crown (it leads back to Your game), on the left the
-language and **Share**, and on the right the save you're in (Hornet at a bench): it opens
-**Saves**. The language is a dropdown, as the sibling's: the one chosen and a chevron (its name,
+language and **Share**, and on the right the profile you're in (Hornet at a bench; «Select Profile» in Free mode): it opens
+**Profiles**. The language is a dropdown, as the sibling's: the one chosen and a chevron (its name,
 its code on a phone) open a list of the site's languages, each in its own name; Esc closes it
 and the arrows walk it. **Share** copies the site's address, nothing more: no screen, build or
 language. The screen bar has six screens in a row: Your game, Inventory, Progress, Map, Journal
 and Crest.
-With a save loaded, Progress carries your completion and Journal the entries Nuu counts
+With a profile loaded, Progress carries your completion and Journal the entries Nuu counts
 (`63%`, `120/230`); in Free mode the bar only has the names. On a phone the six don't fit, so
 Inventory folds under Your game: while you're in either, a second row under the bar switches
 between the two.
@@ -49,25 +49,26 @@ looks up, reads his map or focuses soul in a white light; he turns to the mouse 
 looks up while it's on the link. A click counts as `sister` with `to: 'hallownest'` (the sister's Footworn id, which its dashboard draws as a villager crossing to that quarter), as on the sibling. With reduced motion
 he only stands. He's decoration: hidden from screen readers, never under the pointer.
 
-### Saves
+### Profiles
 
-Four saves, as the game's profile screen, and **Free mode** (nobody's game: where the site
-starts, a New Game you mark by hand, and builds to try). A save only comes from the game's file: **Import from the game** opens a view that
-says where each system keeps its saves (the folder to copy and how to paste it into the file
+Four profiles, as the game's profile screen («Select Profile»), and **Free mode** (nobody's game: where the site
+starts, a New Game you mark by hand, and builds to try). The site speaks the game's words here: a slot is a profile, a playthrough a game, the file a
+save file. A profile only comes from the game's save file: **Import Save Data** opens a view that
+says where each system keeps its save files (the folder to copy and how to paste it into the file
 picker) and takes the file by dragging it in or with the picker. It shows what it read (masks,
 Needle, time, completion, rosaries, the Act, the Journal, the Tools) before anything is written.
 Any of the game's files works: `user1.dat` to `user4.dat`, the copies from before a patch
-(`user1_1.0.29242.dat`) and the **restore points** in `Restore_Points#/restoreData#.dat`, which
-are earlier moments of the same game (the preview says the day). The file is read in the browser
+(`user1_1.0.29242.dat`) and the game's **auto saves** in `Restore_Points#/restoreData#.dat`, which
+are earlier moments of the same game (the preview says the day: «Auto save of …»). The file is read in the browser
 and isn't sent anywhere. The site keeps what it read (and, when the game saves while it's followed,
 the save before it) in the browser's IndexedDB, and reads it again on each visit
 (`js/app-saves.js refreshSlots`, `js/saves.js refresh`): a mark, a check or a count the site
 learns after the import (a new kind of mark on the Map, say) shows as the game has it, with no
-need to import the file again. Only a save imported before that copy existed (October 2026) has to
+need to import the file again. Only a profile imported before that copy existed (October 2026) has to
 be imported once more. A slot that keeps no copy still has its bought maps' marks: they come from
 the `Has<Area>Map` flags it always kept.
 
-Where the browser can (Chrome and Edge: File System Access), an imported save can **follow the
+Where the browser can (Chrome and Edge: File System Access), an imported profile can **follow the
 game**: the site keeps a link to the file and catches up each time the game writes it. After a
 reload the browser asks for permission again, and a notice above the screen says so. Not on
 Linux: Chrome's picker refuses `~/.config` («it contains system files»), where the game keeps its
@@ -76,9 +77,9 @@ asks the game's own question («Clear Profile?») and only clears the site's cop
 
 ### Your game
 
-In Free mode, the card a save shows, unlit: «Resting at Pharloom», Hornet in silhouette on
-Bone Bottom's bench (the first one) and the four figures waiting, with Import. Drag your save's file onto it and it goes into the first
-empty save.
+In Free mode, the card a profile shows, unlit: «Resting at Pharloom», Hornet in silhouette on
+Bone Bottom's bench (the first one) and the four figures waiting, with Import Save Data. Drag your save file onto it and it goes into the first
+empty profile.
 
 In a save, the game's area title card: **Resting at** the area of the bench Hornet sits at, lit by
 that area's own colour on the game's map, the room's area under it when it's another (Coral
@@ -106,7 +107,7 @@ category opens Progress. At the foot, the ways on: Progress, the Map, the Journa
 entries still to go) and the Crest screen. With a save loaded, the text about the site under
 the screen folds into «About this site».
 
-When the save follows the game's file, each new save the game writes to it (the restore points
+When the profile follows the game's save file, each new save the game writes to it (the auto saves
 go to their own folder and aren't followed) brings a block **Since
 the previous save**: first what the completion went up by, from and to on one gauge, and when
 the save before was made; then everything new grouped by kind under small heads (Crests, Silk

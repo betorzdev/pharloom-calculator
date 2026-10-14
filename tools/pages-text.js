@@ -52,8 +52,9 @@ const FREE = {
   q: { es: '¿Es gratis? ¿Hace falta cuenta?', en: 'Is it free? Do I need an account?' },
   a: { es: 'Es gratis, sin cuenta y sin anuncios. Tu partida no sale de tu navegador: se lee ahí y se guarda ahí.', en: 'Free, no account and no ads. Your save never leaves your browser: it\'s read there and kept there.' },
 };
+// The file as the game calls it, «archivo guardado» (SAVE_CORRUPTED_TITLE).
 const WHERE = {
-  q: { es: '¿Dónde está el archivo de mi partida?', en: 'Where is my save file?' },
+  q: { es: '¿Dónde está mi archivo guardado?', en: 'Where is my save file?' },
   a: { es: 'En Windows, en <code>%USERPROFILE%\\AppData\\LocalLow\\Team Cherry\\Hollow Knight Silksong</code>; en macOS, en <code>~/Library/Application Support/unity.Team-Cherry.Silksong</code>; en Linux y Steam Deck, en <code>~/.config/unity3d/Team Cherry/Hollow Knight Silksong</code>. Dentro, una carpeta con un número y los archivos <code>user1.dat</code> a <code>user4.dat</code>. La propia web te guía al importar.',
        en: 'On Windows, in <code>%USERPROFILE%\\AppData\\LocalLow\\Team Cherry\\Hollow Knight Silksong</code>; on macOS, in <code>~/Library/Application Support/unity.Team-Cherry.Silksong</code>; on Linux and Steam Deck, in <code>~/.config/unity3d/Team Cherry/Hollow Knight Silksong</code>. Inside, a folder named with a number and the files <code>user1.dat</code> to <code>user4.dat</code>. The site walks you through it when importing.' },
 };

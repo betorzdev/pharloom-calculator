@@ -47,28 +47,31 @@
     /* On a phone the Crest screen and Combat fold into one tab. «Tools» would be the game's Tools,
        so it's named after what the two share, the build (the site says «build» in both languages). */
     navBuild:       { es: 'Build', en: 'Build' },
-    savesTitle:     { es: 'Partidas', en: 'Saves' },
+    savesTitle:     { es: 'Perfiles', en: 'Profiles' },   // the noun of PROFILE_CLEAR_PROMPT, in the plural (no game text for the screen's own title)
 
     /* A screen that isn't built yet (design/00-study.md §9). */
     soon:           { es: 'Aún no está: llega en la fase {n} del plan.', en: 'Not built yet: it comes in phase {n} of the plan.' },
     soonStudy:      { es: 'El estudio y el plan', en: 'The study and the plan' },
 
-    /* Saves: four, as the game's profile screen, and free mode (js/app-saves.js) */
-    saveSlot:       { es: 'Partida {n}', en: 'Save {n}' },
-    saveSelect:     { es: 'Selecciona partida', en: 'Select save' },
-    saveBtnHint:    { es: 'Elegir partida: cuatro, como en el juego, o el Modo libre', en: 'Choose a save: four, as in the game, or Free mode' },
-    savesNoStorage: { es: 'Este navegador no deja guardar datos: solo hay una partida', en: 'This browser doesn\'t let the site save data: there\'s only one save' },
+    /* Profiles: four, as the game's profile screen (SCREEN_SAVE_PROFILES), and free mode (js/app-saves.js).
+       In the game's words: a slot is a profile («perfil», PROFILE_CLEAR_PROMPT), a playthrough a game
+       («partida», PROFILE_NEW_GAME), the file a save file («archivo guardado», SAVE_CORRUPTED_TITLE).
+       What carries no key here has no game text: written for context in those words. */
+    saveSlot:       { es: 'Perfil {n}', en: 'Profile {n}' },   // a slot is a profile, as PROFILE_CLEAR_PROMPT says; the game numbers none
+    saveSelect:     { es: 'Seleccionar perfil', en: 'Select Profile' },   // SCREEN_SAVE_PROFILES
+    saveBtnHint:    { es: 'Elegir perfil: cuatro, como en el juego, o el Modo libre', en: 'Choose a profile: four, as in the game, or Free mode' },
+    savesNoStorage: { es: 'Este navegador no deja guardar datos: solo hay un perfil', en: 'This browser doesn\'t let the site save data: there\'s only one profile' },
     freeMode:       { es: 'Modo libre', en: 'Free mode' },
-    freeModeNote:   { es: 'Tu partida marcada a mano, y builds para probar: no es ninguna de tus partidas', en: 'Your game marked by hand, and builds to try: it isn\'t one of your saves' },
+    freeModeNote:   { es: 'Tu partida marcada a mano, y builds para probar: no es ninguno de tus perfiles', en: 'Your game marked by hand, and builds to try: it isn\'t one of your profiles' },
     saveCurrent:    { es: 'Estás aquí', en: 'You\'re here' },
-    saveContinue:   { es: 'Seguir con esta partida', en: 'Continue with this save' },
-    saveLoad:       { es: 'Cargar esta partida', en: 'Load this save' },
-    saveImport:     { es: 'Importar del juego', en: 'Import from the game' },
+    saveContinue:   { es: 'Continuar', en: 'Continue' },   // PAUSE_CONTINUE
+    saveLoad:       { es: 'Cargar este perfil', en: 'Load this profile' },   // no game text
+    saveImport:     { es: 'Importar datos de guardado', en: 'Import Save Data' },   // PS4_SAVE_IMPORT_LABEL without its «PS4™»
     saveImportShort:{ es: 'Importar', en: 'Import' },   // the same, on a phone
     saveImportBad:  { es: 'No se pueden leer los datos: busca user1.dat, user2.dat…', en: 'Save cannot be read: look for user1.dat, user2.dat…' },   // PROFILE_CORRUPTED, and where to look
     saveClear:      { es: 'Borrar', en: 'Clear' },
     saveClearAsk:   { es: '¿Borrar el perfil?', en: 'Clear Profile?' },   // PROFILE_CLEAR_PROMPT
-    saveClearNote:  { es: 'Solo aquí: tu partida del juego no cambia.', en: 'Only here: your game\'s own save doesn\'t change.' },
+    saveClearNote:  { es: 'Solo aquí: tu archivo guardado del juego no cambia.', en: 'Only here: your game\'s save file doesn\'t change.' },   // the file as SAVE_CORRUPTED_TITLE calls it
     saveAct:        { es: 'Acto {n}', en: 'Act {n}' },   // ACT_1_SUPER…, in the game's capitals there
     saveDefeated:   { es: 'Derrota', en: 'Defeated' },   // PROFILE_DEFEATED
     yes:            { es: 'Sí', en: 'Yes' },   // YES
@@ -77,14 +80,15 @@
     completion:     { es: 'Finalización', en: 'Completion' },   // COMPLETION
     rosaries:       { es: 'Rosarios', en: 'Rosaries' },   // INV_NAME_COIN
 
-    /* Importing a save from the game's file */
-    impTitle:       { es: 'Importar a la Partida {n}', en: 'Import into Save {n}' },
-    impLead:        { es: 'Trae tu partida real: la web lee el archivo que guarda el juego y rellena esta partida con lo que llevas: herramientas, blasones, mejoras, el Diario y el 100 %.',
-                      en: 'Bring your real game: the site reads the file the game saves and fills this save with what you carry: Tools, Crests, upgrades, the Journal and the 100%.' },
-    impMobile:      { es: 'Tus partidas están en el ordenador donde juegas: abre esta web allí, o pásate el archivo a este dispositivo.',
-                      en: 'Your saves are on the computer you play on: open this site there, or move the file to this device.' },
+    /* Importing a profile from the game's save file; its restore points are the game's auto saves
+       (RESTORE_SAVE_SELECTION_TITLE). No game text for the rest: written for context. */
+    impTitle:       { es: 'Importar al Perfil {n}', en: 'Import into Profile {n}' },
+    impLead:        { es: 'Trae tu partida real: la web lee el archivo guardado del juego y rellena este perfil con lo que llevas: herramientas, blasones, mejoras, el Diario y el 100 %.',
+                      en: 'Bring your real game: the site reads the game\'s save file and fills this profile with what you carry: Tools, Crests, upgrades, the Journal and the 100%.' },
+    impMobile:      { es: 'Tus archivos guardados están en el ordenador donde juegas: abre esta web allí, o pásate el archivo a este dispositivo.',
+                      en: 'Your save files are on the computer you play on: open this site there, or move the file to this device.' },
     impOs:          { es: 'Tu sistema', en: 'Your system' },
-    impStep1:       { es: 'Copia la carpeta de las partidas', en: 'Copy the saves folder' },
+    impStep1:       { es: 'Copia la carpeta de los archivos guardados', en: 'Copy the save files folder' },
     impStep2:       { es: 'Abre el selector y pega la carpeta', en: 'Open the picker and paste the folder' },
     impStep3:       { es: 'Entra en la carpeta de tu cuenta y elige el archivo', en: 'Go into your account\'s folder and pick the file' },
     impHowWin:      { es: 'Pulsa «Seleccionar archivo», pega la ruta en la casilla del nombre y pulsa {k1}.',
@@ -93,53 +97,53 @@
                       en: 'Press "Choose file", then {k1}, paste the path and press {k2}.' },
     impHowLinux:    { es: 'Pulsa «Seleccionar archivo», luego {k1}, pega la ruta y pulsa {k2}.',
                       en: 'Press "Choose file", then {k1}, paste the path and press {k2}.' },
-    impFiles:       { es: 'Dentro hay una carpeta con un número (tu cuenta de Steam) o «default». Cada perfil del juego es un archivo: el primero es user1.dat, el segundo user2.dat, y así. En Restore_Points hay copias de momentos anteriores (restoreData): también se pueden importar.',
-                      en: 'Inside there\'s a folder named with a number (your Steam account) or "default". Each of the game\'s profiles is a file: the first is user1.dat, the second user2.dat, and so on. Restore_Points holds copies of earlier moments (restoreData): those can be imported too.' },
+    impFiles:       { es: 'Dentro hay una carpeta con un número (tu cuenta de Steam) o «default». Cada perfil del juego es un archivo: el primero es user1.dat, el segundo user2.dat, y así. En Restore_Points están sus guardados automáticos (restoreData): también se pueden importar.',
+                      en: 'Inside there\'s a folder named with a number (your Steam account) or "default". Each of the game\'s profiles is a file: the first is user1.dat, the second user2.dat, and so on. Restore_Points holds their auto saves (restoreData): those can be imported too.' },
     impCopy:        { es: 'Copiar', en: 'Copy' },
     impCopied:      { es: 'Copiada', en: 'Copied' },
     impEnter:       { es: 'Intro', en: 'Enter' },
-    impDrop:        { es: 'Arrastra aquí el archivo de tu partida', en: 'Drag your save\'s file here' },
+    impDrop:        { es: 'Arrastra aquí tu archivo guardado', en: 'Drag your save file here' },
     impDropping:    { es: 'Suéltalo', en: 'Let go' },
     impReading:     { es: 'Leyendo…', en: 'Reading…' },
     impOr:          { es: 'o', en: 'or' },
     impChoose:      { es: 'Seleccionar archivo', en: 'Choose file' },
     impOther:       { es: 'Elegir otro archivo', en: 'Choose another file' },
-    impPrivate:     { es: 'Se lee aquí, en tu navegador: no se envía a ningún sitio y tu partida del juego no cambia.',
-                      en: 'It\'s read here, in your browser: it isn\'t sent anywhere and your game\'s save doesn\'t change.' },
+    impPrivate:     { es: 'Se lee aquí, en tu navegador: no se envía a ningún sitio y tu archivo guardado del juego no cambia.',
+                      en: 'It\'s read here, in your browser: it isn\'t sent anywhere and your game\'s save file doesn\'t change.' },
     impTime:        { es: '{h} h {m} min', en: '{h} h {m} min' },
     impVersion:     { es: 'Guardada con la versión {v}', en: 'Saved with version {v}' },
-    impRestore:     { es: 'Punto de restauración del {date}', en: 'Restore point of {date}' },
-    impReplace:     { es: 'Sustituirá lo que tiene ahora la Partida {n}.', en: 'It will replace what Save {n} holds now.' },
+    impRestore:     { es: 'Guardado automático del {date}', en: 'Auto save of {date}' },   // RESTORE_SAVE_SELECTION_TITLE, in the singular
+    impReplace:     { es: 'Sustituirá lo que tiene ahora el Perfil {n}.', en: 'It will replace what Profile {n} holds now.' },
     impSync:        { es: 'Mantener sincronizada con el juego', en: 'Keep in sync with the game' },
     impSyncOn:      { es: 'Activado', en: 'On' },
     impSyncOff:     { es: 'Desactivado', en: 'Off' },
     impSyncNote:    { es: 'Se pone al día cada vez que el juego guarda, mientras la web esté abierta en este navegador.',
                       en: 'It catches up every time the game saves, while the site is open in this browser.' },
 
-    /* Following the game's file (js/live.js) */
+    /* Following the game's file (js/live.js). No game text: written for context. */
     liveFollow:     { es: 'Seguir al juego', en: 'Follow the game' },
     liveFollowShort:{ es: 'Seguir', en: 'Follow' },   // the same, on a phone
-    liveFollowHint: { es: 'Elige el archivo de esta partida: se pone al día con él ahora y cada vez que el juego guarde',
-                      en: 'Pick this save\'s file: it catches up with it now and every time the game saves' },
-    liveFollowing:  { es: 'La Partida {n} sigue ahora a {file}', en: 'Save {n} now follows {file}' },
+    liveFollowHint: { es: 'Elige el archivo de este perfil: se pone al día con él ahora y cada vez que el juego guarde',
+                      en: 'Pick this profile\'s file: it catches up with it now and every time the game saves' },
+    liveFollowing:  { es: 'El Perfil {n} sigue ahora a {file}', en: 'Profile {n} now follows {file}' },
     liveFollowNo:   { es: 'Este navegador no deja guardar el vínculo con el archivo', en: 'This browser doesn\'t let the site keep the link to the file' },
     liveFollows:    { es: 'Sigue a {file}', en: 'Follows {file}' },
     liveUnlink:     { es: 'Dejar de seguir', en: 'Stop following' },
     liveState_live: { es: 'en vivo', en: 'live' },
     liveState_paused: { es: 'en pausa', en: 'paused' },
     liveState_lost: { es: 'sin archivo', en: 'file missing' },
-    livePaused:     { es: 'Esta partida sigue a {file}, pero el navegador pide permiso otra vez para leerlo.',
-                      en: 'This save follows {file}, but the browser asks for permission to read it again.' },
-    liveLost:       { es: 'No se encuentra {file}: la partida conserva lo que tenía, pero ya no sigue al juego.',
-                      en: '{file} can\'t be found: the save keeps what it had, but no longer follows the game.' },
+    livePaused:     { es: 'Este perfil sigue a {file}, pero el navegador pide permiso otra vez para leerlo.',
+                      en: 'This profile follows {file}, but the browser asks for permission to read it again.' },
+    liveLost:       { es: 'No se encuentra {file}: el perfil conserva lo que tenía, pero ya no sigue al juego.',
+                      en: '{file} can\'t be found: the profile keeps what it had, but no longer follows the game.' },
     liveResume:     { es: 'Seguir', en: 'Resume' },
     liveRelink:     { es: 'Buscar el archivo', en: 'Find the file' },
-    liveResumeNo:   { es: 'Sin permiso, la partida no sigue al juego', en: 'Without permission, the save doesn\'t follow the game' },
-    liveUpdated:    { es: 'Tu partida se ha puesto al día con el juego', en: 'Your save caught up with the game' },
+    liveResumeNo:   { es: 'Sin permiso, el perfil no sigue al juego', en: 'Without permission, the profile doesn\'t follow the game' },
+    liveUpdated:    { es: 'Tu perfil se ha puesto al día con el juego', en: 'Your profile caught up with the game' },
     liveTag:        { es: 'Tu partida real', en: 'Your real game' },
 
     /* Your game: the start screen (js/app-home.js) */
-    homeInviteBtn:  { es: 'Importar del juego', en: 'Import from the game' },
+    homeInviteBtn:  { es: 'Importar datos de guardado', en: 'Import Save Data' },   // PS4_SAVE_IMPORT_LABEL without its «PS4™»
     homeCompletion: { es: 'Tu 100 %', en: 'Your 100%' },
     homeMatches:    { es: 'Coincide con el {pct} que muestra el juego.', en: 'It matches the {pct} the game shows.' },
     homeDiffers:    { es: 'El juego muestra {pct}: tu archivo es de una versión que cuenta distinto, o hay un fallo. Escríbenos.',
@@ -408,7 +412,7 @@
     mapMet:         { es: 'Ya os habéis visto', en: 'You\'ve met' },
     mapNotMet:      { es: 'Aún no os habéis visto', en: 'Not met yet' },
     mapNpcSpots:    { es: 'Aparece en {n} sitios, según el acto y lo que hayas hecho.', en: 'Turns up in {n} places, by act and by what you\'ve done.' },
-    mapNpcUnsure:   { es: 'Va y viene por Telalejana: la partida no dice dónde está ahora.', en: 'Comes and goes around Pharloom: the save doesn\'t say where now.' },
+    mapNpcUnsure:   { es: 'Va y viene por Telalejana: tu archivo guardado no dice dónde está ahora.', en: 'Comes and goes around Pharloom: your save file doesn\'t say where now.' },
     mapTrade_couriers: { es: 'Ofrecen deseos de entrega.', en: 'Offer delivery wishes.' },   // the wish type: TYPE_COURIER_TITLE
     mapTrade_druid:    { es: 'Cambia bayas musgosas por rosarios.', en: 'Trades Mossberries for rosaries.' },
     mapTrade_creige:   { es: 'Vende bebidas.', en: 'Sells drinks.' },
@@ -730,11 +734,11 @@
     pgHereStep:     { es: 'Para abrir el Acto {m} hay {of} pasos: vas por el {i}.', en: 'Opening Act {m} takes {of} steps: you\'re on step {i}.' },
     pgHere100:      { es: 'Para el 100 % te queda un {pct}.', en: '{pct} to go for 100%.' },
     pgHereFull:     { es: 'Acto 3 y el 100 %: lo tienes todo.', en: 'Act 3 and 100%: you have it all.' },
-    pgHereNone:     { es: 'Silksong tiene tres actos. Sin partida, esta pestaña es la guía: lo que pide el juego para pasar de uno a otro, y todo lo que cuenta para el 100 %.',
-                      en: 'Silksong has three Acts. With no save, this tab is the guide: what the game asks to go from one to the next, and everything that counts for 100%.' },
-    pgInviteTag:    { es: 'Sin partida', en: 'No save' },
-    pgInvite:       { es: 'Importa tu partida y verás en qué acto estás, y qué te falta para el siguiente y para el 100 %, pieza a pieza.',
-                      en: 'Import your save to see which Act you\'re in, and what\'s left for the next one and for 100%, piece by piece.' },
+    pgHereNone:     { es: 'Silksong tiene tres actos. Sin un perfil cargado, esta pestaña es la guía: lo que pide el juego para pasar de uno a otro, y todo lo que cuenta para el 100 %.',
+                      en: 'Silksong has three Acts. With no profile loaded, this tab is the guide: what the game asks to go from one to the next, and everything that counts for 100%.' },
+    pgInviteTag:    { es: 'Sin perfil', en: 'No profile' },
+    pgInvite:       { es: 'Importa tu partida y verás en qué acto estás, y qué te falta para el siguiente y para el 100 %, pieza a pieza.',
+                      en: 'Import your game to see which Act you\'re in, and what\'s left for the next one and for 100%, piece by piece.' },
     /* The road's steps by what to do, on its thread (3 A); the titles stay the whole road's */
     pgStepN:        { es: '{n} · {step}', en: '{n} · {step}' },
     pgStepBells:    { es: 'Haz sonar los Santuarios', en: 'Ring the Bellshrines' },   // the game's word in it: BELLSHRINE
@@ -764,7 +768,7 @@
     pgFoundNoPin:   { es: 'Se encuentra en la zona', en: 'Found in the area' },
     /* Free mode with the Inventory's marks (design/41, 6 A). */
     pgHereFreeK:    { es: 'Modo libre.', en: 'Free mode.' },
-    pgHereFree:     { es: 'El 100 % cuenta lo que marcas aquí o en el Inventario, desde una partida nueva; el camino es la guía, como sin partida.', en: 'The 100% counts what you mark here or in the Inventory, from a New Game; the road is the guide, as with no save.' },
+    pgHereFree:     { es: 'El 100 % cuenta lo que marcas aquí o en el Inventario, desde una partida nueva; el camino es la guía, como sin un perfil cargado.', en: 'The 100% counts what you mark here or in the Inventory, from a New Game; the road is the guide, as with no profile loaded.' },
     pgLadderNote:   { es: 'Esto se fija en el Inventario:', en: 'This is set in the Inventory:' },
     pgListAll:      { es: 'Ver la lista entera, con lo hecho ({n})', en: 'See the whole list, done included ({n})' },
     pgListLess:     { es: 'Cerrar la lista entera', en: 'Close the whole list' },
@@ -794,7 +798,7 @@
     roadNote2:      { es: 'Lo que pide el juego para entrar en la Ciudadela, paso a paso.', en: 'What the game asks before you walk into the Citadel, step by step.' },
     roadNote3:      { es: 'Lo que pide el juego para abrir el Acto 3, leído de sus propios archivos. Las guías suelen dar solo seis deseos: cuentan también los que van antes de ellos, un mínimo de puntos de deseos y cuatro condiciones más.',
                       en: 'What the game asks before Act 3 opens, read from its own files. Guides usually give six wishes: the ones before them count too, and so do a minimum of wish points and four more conditions.' },
-    roadStale:      { es: 'Esta partida se guardó en la web antes de que leyera los deseos: vuelve a importarla para ver su camino.', en: 'This save was kept before the site read the wishes: import it again to see its road.' },
+    roadStale:      { es: 'Este perfil se guardó en la web antes de que leyera los deseos: vuelve a importarlo para ver su camino.', en: 'This profile was kept before the site read the wishes: import it again to see its road.' },
     // Defeating a foe as the game words it (MQ_TYPE_DEFEAT, DEFEATED_*_DESC: «Derrota a…», "Defeat…").
     roadBypassed:   { es: 'Ya no hace falta: derrotar a {phantom} abre otro camino.', en: 'No longer needed: defeating {phantom} opens another way in.' },
     roadBells:      { es: 'Haz sonar los cinco Santuarios de Campana', en: 'Ring the five Bellshrines' },   // the game's word in it: BELLSHRINE
@@ -834,7 +838,7 @@
     roadHermitWay:  { es: 'cruza la pared oculta a la derecha de la Vía Campana y baja: está a la izquierda', en: 'walk through the hidden wall right of the Bellway and drop down: he\'s to the left' },   // the game's word in it: KEY_BELLWAY
     roadReady:      { es: 'Llévaselas al {caretaker} en {clave}', en: 'Bring them to the {caretaker} in {clave}' },
     roadSilk:       { es: 'Derrota a la Gran Madre Seda y atrápala con la trampa anímica', en: 'Defeat Grand Mother Silk and entrap her with the Soul Snare' },   // ENDING_C_DESC
-    roadSilkNote:   { es: 'En el golpe final, toca el Agujolín en vez de enlazarla. Ese final cierra en esa partida los otros dos del Acto 2; tras los créditos, la partida se abre ya en el Acto 3.', en: 'On the final blow, play the Needolin instead of binding her. That ending closes the other two Act 2 endings in that game; after the credits the save opens in Act 3.' },
+    roadSilkNote:   { es: 'En el golpe final, toca el Agujolín en vez de enlazarla. Ese final cierra en esa partida los otros dos del Acto 2; tras los créditos, la partida se abre ya en el Acto 3.', en: 'On the final blow, play the Needolin instead of binding her. That ending closes the other two Act 2 endings in that game; after the credits the game opens in Act 3.' },
     roadRunt:       { es: 'para el Acto 3 cuenta su versión principal, no la de la cría', en: 'for Act 3 its main version counts, not the runt\'s' },
     roadMelodies:   { es: 'para llegar a la Cuna, las tres melodías: {n} de 3', en: 'to reach the Cradle, the three melodies: {n} of 3' },
     // The caravan (js/acts.js: Mooshka's FSM): its stop now, the fleas, and what its last move asks.
@@ -921,10 +925,10 @@
     footPrivacy:    { es: 'Privacidad', en: 'Privacy' },
     footPrivNone:   { es: 'Esta web no usa cookies ni rastreadores.',
                       en: 'This site uses no cookies and no trackers.' },
-    footPrivLocal:  { es: 'Lo que marcas (partidas, herramientas y blasones, diario, progreso, preferencias) se guarda solo en este navegador, con una copia de cada partida que importas; si pones «Seguir al juego», también el acceso a tu archivo de guardado.',
-                      en: 'What you mark (saves, Tools and Crests, journal, progress, preferences) is kept only in this browser, with a copy of each save you import; if you turn on "Follow the game", so is the access to your save file.' },
-    footPrivSaves:  { es: 'Tus archivos de guardado se leen aquí mismo y no se suben a ningún sitio.',
-                      en: 'Your save files are read right here and never uploaded anywhere.' },
+    footPrivLocal:  { es: 'Lo que marcas (perfiles, herramientas y blasones, diario, progreso, preferencias) se guarda solo en este navegador, con una copia de cada archivo guardado que importas; si pones «Seguir al juego», también el acceso a tu archivo guardado.',
+                      en: 'What you mark (profiles, Tools and Crests, journal, progress, preferences) is kept only in this browser, with a copy of each save file you import; if you turn on "Follow the game", so is the access to your save file.' },
+    footPrivSaves:  { es: 'Tus archivos guardados se leen aquí mismo y no se suben a ningún sitio.',
+                      en: 'Your save files are read right here and never uploaded anywhere.' },   // the files as SAVE_CORRUPTED_TITLE and PS4_SAVE_IMPORT_RESULT_SUCCESS call them
     footPrivCount:  { es: 'Las visitas se cuentan con {gc}: páginas, desde dónde llegas, navegador y sistema, ancho de pantalla, idioma, país y qué pantallas abres. El dueño las ve como recuentos por día y, las de hoy, una a una con la hora al minuto. No guarda tu IP ni usa cookies.',
                       en: 'Visits are counted with {gc}: pages, where you came from, browser and system, screen width, language, country and which screens you open. The owner sees them as daily counts and, for today only, one by one with the time to the minute. It keeps no IP and uses no cookies.' },
     footPrivHost:   { es: 'La web está alojada en {gh}, que guarda registros técnicos de cada visita.',
