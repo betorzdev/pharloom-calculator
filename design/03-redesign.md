@@ -1551,3 +1551,24 @@ fullscreen; the legend's marks in a grid, each tap dropping one until Escape; on
 check, the room filled in and checked as it's typed; Restore, Hide, Show and Delete in the panel;
 the way from the data's point (in the accent while unsaved), the hidden mark faint and struck
 through, the added one with a "+"; the fixes listed by kind. Built in `js/app-map-admin.js`.
+
+## The whole-site review · Three things a phone didn't fit
+
+### What there was (14 October 2026)
+
+At 390 px the Spanish title took three lines («Calculadora / de / Telalejana») with any save loaded,
+and at 360 px «Beta» sat over «Partida 1». Your game's four figures showed three and one alone. The
+Import view's title was cut to «Importar a la …» / "Import into …", losing the save's number.
+
+### The options (`61-phone-header-variants.html`, the site's own HTML for Save 1 in Spanish)
+
+1. The header: A, the language and Share on the second row, right of «Hollow Knight ↗»; B, Share as
+   an icon; C, the title a step smaller; D, as it was.
+2. The figures: A, two by two; B, as they were.
+3. The Import title: A, two lines inside its plaque; B, the plaque says «Importar»; C, as it was.
+
+### Decision (14 October 2026)
+
+All A, phone widths only (≤599 px). Built in `css/app.css`; the header's order in the page is now
+the sister's link, the language and Share, the title, the save (`js/app.js`), so the keyboard walks
+the desktop header left to right and the phone's second row in its own order.

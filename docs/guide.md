@@ -40,7 +40,8 @@ only sits, placed straight under the tab. Click her and she binds.
 
 Above the language and Share, on the crown's row, **«Hollow Knight ↗»** goes to the sister site,
 [Hallownest Calculator](https://hallownestcalculator.com/) (`../hollownest-calculator`), in your
-language and in a new tab; on a phone it's on its own line under the title. The Knight stands on
+language and in a new tab; on a phone it's on its own line under the title, with the language and
+Share at its right (the title's row keeps the title and the save alone). The Knight stands on
 the word (`js/app-sister.js`, css `.mh-sister`, `.sis-*`), as Hornet stands on «Silksong ↗» there:
 no arrival, he's simply there (Albert, 13 Oct 2026), breathing (the game's Idle at a third of its
 speed, there and back). Every 15–25 s (header in view, tab visible) his cloak stirs in the wind, he
@@ -83,7 +84,7 @@ In a save, the game's area title card: **Resting at** the area of the bench Horn
 that area's own colour on the game's map, the room's area under it when it's another (Coral
 Tower in the Sands of Karak), the Act and the time played; Hornet sitting on that very bench (each room's bench is read
 from the game's files; one it doesn't know shows Bone Bottom's); and four
-figures: **your 100%**, the Journal, the masks and the rosaries. Beside the card (under it on a
+figures: **your 100%**, the Journal, the masks and the rosaries (two by two on a phone). Beside the card (under it on a
 phone) is **the map of that area**, drawn as the Map screen draws it (the same view, «Only what
 the game shows» included), cropped to the area's rooms and fading out at its edges, with Hornet
 sitting on your bench and the Map's own marks over it: the layers and filters you have set on the

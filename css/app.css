@@ -557,7 +557,7 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
 /* ── The sister site's link and its Knight (js/app-sister.js) ────────────
    «Hollow Knight ↗», a loose word above the language and Share, on the crown's row (the sibling's
    «Silksong ↗», where Hornet stands); the header opens higher for him to stand on it. On a phone,
-   on its own line under the title (the ≤599 px block), with room above for him. The Knight's layer
+   on its own line under the title (the ≤599 px block), the language and Share at its right, with room above for him. The Knight's layer
    is in .page, over the masthead's letters and under the screen bar when it sticks; he's drawn from
    his move's strip, stepped by the JS or, looping, by steps() here (the sibling's .sis-hornet). */
 .masthead:has(.mh-sister-row) { padding-top: var(--sp-12); }
@@ -652,11 +652,13 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
   .masthead { display: flex; flex-wrap: nowrap; justify-content: space-between; align-items: center; gap: var(--sp-2); padding-top: var(--sp-3); }
   .brand, .masthead .brand { display: flex; flex: 1 1 auto; align-items: flex-start; order: -1; }
   .masthead .mh-tools { order: 1; flex: none; flex-wrap: nowrap; --tools-gap: var(--sp-3); }
-  /* The sister's link (js/app-sister.js): on its own line under the title, room above for the Knight;
-     the title gives way first, so the save and the language keep their row. */
+  /* The sister's link (js/app-sister.js): on a line of its own under the title, room above for the
+     Knight, with the language and Share at its right; the title's row keeps the title and the save
+     alone, so a long title (Spanish's) still fits on two lines (Albert's choice, 14 Oct 2026). */
   .masthead:has(.mh-sister-row) { flex-wrap: wrap; padding-top: var(--sp-3); }
-  .masthead:has(.mh-sister-row) .brand { flex: 1 1 0; }
-  .mh-sister-row { order: 2; flex-basis: 100%; margin-top: var(--sp-8); }
+  .masthead:has(.mh-sister-row) .brand { flex: 1 1 calc(100% - var(--sp-16)); }
+  .mh-sister-row { order: 2; flex: 1 1 auto; margin-top: var(--sp-8); }
+  .masthead:has(.mh-sister-row) .mh-tools { order: 3; align-self: flex-end; }
   .lang-name { display: none; }
   .lang-code { display: inline; }
   /* At the right edge, the list opens leftwards. */
@@ -1052,6 +1054,11 @@ kbd {
   .imp-found { grid-template-areas: "fname fname" "nail hud" "meta meta" "facts facts" "warn warn" "sync sync" "actions actions"; }
   .imp-meta { justify-content: center; }
   .imp-bar { margin-bottom: var(--sp-2); }
+  /* The import view's title («Importar a la Partida 2») is longer than a phone: it wraps onto two
+     lines inside its plaque instead of being cut (Albert's choice, 14 Oct 2026), and the way back clears it. */
+  .imp .screen-head { width: max-content; white-space: normal; }
+  .imp .screen-head .sec-title { text-align: center; text-wrap: balance; }
+  .imp .imp-bar { margin-top: var(--sp-6); }
   /* On a phone an empty slot says only «Import». */
   .save.is-empty .save-main { min-height: calc(var(--sp-16) + var(--sp-2)); }
   .save-act-long { display: none; }
@@ -1243,7 +1250,8 @@ kbd {
 .hm-go:is(:hover, :focus-visible) img { filter: drop-shadow(0 0 8px color-mix(in oklab, var(--spotlight) 45%, transparent)); }
 @media (max-width: 599px) {
   .hm-area { font-size: var(--fs-2xl); }
-  .hm-figs { gap: var(--sp-4) var(--sp-8); }
+  /* The four figures two by two: four in a row don't fit, and three left one alone (Albert's choice, 14 Oct 2026). */
+  .hm-figs { display: grid; grid-template-columns: repeat(2, auto); justify-content: center; gap: var(--sp-4) var(--sp-12); }
   .hm-next ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 

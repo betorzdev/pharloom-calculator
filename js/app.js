@@ -172,7 +172,10 @@
     const now = I.LANGS.find((l) => l.id === prefs.lang) || I.LANGS[0];
     const langItem = (l) => `<li><a href="${esc(langPage(l.id) || here(hashFor()))}" lang="${l.tag}" hreflang="${l.tag}"${NT} data-act="lang" data-value="${l.id}"${l === now ? ' aria-current="true"' : ''}>${esc(l.name)}</a></li>`;
     el.masthead.classList.toggle('is-lang-open', langOpen);
+    // In the page's order the sister's link, the language and Share, the title and the save: the
+    // keyboard walks the header left to right, and a phone's second row in its own order (css).
     el.masthead.innerHTML = `
+      ${App.sister ? App.sister.linkHtml() : ''}
       <div class="mh-tools">
         <div class="langsel">
           <button type="button" class="text-btn lang-btn" data-act="langMenu" aria-haspopup="true" aria-expanded="${langOpen}" aria-controls="lang-menu" aria-label="${esc(t('langGroup') + ': ' + now.name)}" title="${esc(t('langGroup'))}"><span class="lang-name" lang="${now.tag}"${NT}>${esc(now.name)}</span><span class="lang-code" aria-hidden="true">${now.code}</span>${chevron(langOpen)}</button>
@@ -180,7 +183,6 @@
         </div>
         <button type="button" class="text-btn mh-link" data-act="share" title="${esc(t('shareHint'))}">${esc(t('share'))}</button>
       </div>
-      ${App.sister ? App.sister.linkHtml() : ''}
       <a class="brand" href="${here(hashFor('home'))}" data-act="view" data-value="home" title="${esc(t('goHome'))}">
         ${CROWN}
         <p class="title">${esc(t('title'))}<span class="mh-beta">${esc(t('betaTag'))}</span></p>
