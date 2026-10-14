@@ -4,7 +4,8 @@
    parts as the game has mapped them, whole, or the rough sketch of those it hasn't, in Act 3 the
    Cradle, Cogwork Core and the Ventrica hub destroyed and the Abyss's diving bell as your game
    has it. The site being a guide, what the game doesn't draw yet is there too, faint (the areas
-   whose map isn't bought, the rooms not mapped); "Only what the game shows" leaves it out. In
+   whose map isn't bought, the rooms not mapped); turning "Whole map" off leaves it out (the
+   switch is on while prefs.mapGame is false, so the stored choice reads as it did). In
    Free mode, the whole map before Act 3. On it, everything the game has for each room (js/spots.js, from the game's
    own files), in layers grouped as the selector under the map shows them:
      Upgrades       Mask Shards, Spool Fragments, Silk Hearts, the Needle, Pouch and Kit upgrades
@@ -904,7 +905,7 @@
           <h3 class="mp-legend-t" id="mp-legend-t">${esc(t('mapShows'))}</h3>
           <span class="mp-all"><button type="button" class="text-btn" data-act="mapAll" data-value="1">${esc(t('mapShowAll'))}</button><button type="button" class="text-btn" data-act="mapAll" data-value="0">${esc(t('mapHideAll'))}</button><button type="button" class="text-btn" data-act="mapHundred">${esc(t('mapOnlyHundred'))}</button></span>
           <div class="mp-opts">
-            <div class="mp-checks">${own ? check('mapGame', exact, t('mapGame'), t('mapGameTip')) : ''}${check('mapNames', names, t('mapNames'))}</div>
+            <div class="mp-checks">${own ? check('mapGame', !exact, t('mapWhole'), t('mapWholeTip')) : ''}${check('mapNames', names, t('mapNames'))}</div>
           </div>
         </div>
         <div class="mp-secs">${groups}</div>
