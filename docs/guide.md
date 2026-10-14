@@ -24,7 +24,8 @@ Every screen is framed as the game's pause menu frames its panes: a thin filigre
 round with a curl at each corner, and the screen's name on its top edge in a small plaque with
 pointed ends, where the line stops. The frame is lit in the colour of the tab's place in the
 game (the Journal Mount Fay's blue, Progress Bone Bottom's green, Crest Bellhart's gold, the Map
-Greymoor, the Inventory the Whispering Vaults, Combat Deep Docks, Your game the red), with a
+Greymoor, the Inventory the Whispering Vaults, Combat Deep Docks, Your game the red, or with a
+save the area where Hornet rests), with a
 light from its top, so each tab reads at a glance; inside, the black and the white stay. The study and the plan are in `design/00-study.md`; the UI and UX review, step by
 step, in `design/03-redesign.md`.
 
@@ -78,8 +79,9 @@ Bone Bottom's bench (the first one) and the four figures waiting, with Import Sa
 empty profile.
 
 In a save, a calm scene that says only what no other tab says: **Resting at** the area of the
-bench Hornet sits at, lit by that area's own colour on the game's map, with **the map of that
-area** faint behind it (drawn as the Map screen draws it, «Only what the game shows» included,
+bench Hornet sits at, the whole screen lit by that area's own colour on the game's map (its
+frame too, one light from the top), with **the map of that area** faint behind it, fitted inside
+the scene (drawn as the Map screen draws it, «Only what the game shows» included,
 cropped to the area's rooms and fading out at its edges: a picture, with no marks; the Map tab is
 where you look things up); the room's area under the name when it's another (Coral Tower in the
 Sands of Karak), the Act and the time played; Hornet sitting on that very bench (each room's
@@ -535,11 +537,11 @@ over her bench's mark; a bench the map draws no room for keeps the game's pin. E
 Greymoor_02, its top, its middle), and what your game's map draws is in colour: the parts the
 game has mapped, in the areas whose map you've bought from Shakra. The site being a guide, the
 rest of the map is there too, faint: the areas whose map you haven't bought (their names struck
-through) and the rooms not mapped yet, so that what's missing there has a map under it. A room
-goes whole in colour once any part of it is mapped, so its tone never changes halfway through; so a
-part you haven't been in yet can show in colour though the game doesn't draw it, a secret too (a
-corner behind a breakable wall, a hidden room: the game maps each part only once you've been in
-it, and its files don't tell a secret part from any other). Turning
+through) and the rooms not mapped yet, so that what's missing there has a map under it. In colour
+is only what the game draws, part by part: a part of a room you haven't been in yet stays faint
+beside the parts in colour, its tone changing along the game's own straight cut between them (the
+game maps each part only once you've been in it: a corner behind a breakable wall, a hidden room).
+Turning
 «Whole map» off draws your game's map exactly: no area without its map, nor its name, and a
 part not mapped shows the dotted rough sketch the bought map gives it, or nothing when it's a
 secret or a room's hidden half. What's mapped is what your save says the game has mapped
@@ -552,11 +554,6 @@ Unravelled; and with the Cloakless crest the Slab moves, as the game moves it. I
 the whole map, the world before Act 3. Where each thing is comes from
 the game's files too: the pickups lying in each room, the vendors, the Wishwalls and their
 givers, the bosses' arenas, the scripts that give an ability.
-
-When your previous save rested at another bench, a dashed thread draws Hornet's way from it to
-this one, and the first time the map comes into view she runs it, room by room, from the old
-bench to the new one (two to eight seconds; the view follows her when it's enlarged), and sits.
-She runs each way once; with reduced motion she's simply at her bench.
 
 **For the maintainer, the admin mode** (`#view=map&admin=1`, nothing a visitor sees). A band
 under the map, above the legend, corrects what the game's files place wrong: a mark is dragged

@@ -39,10 +39,10 @@ the work up reads it first, then the step it's on.
 |---|---|---|---|
 | 1 | **The shell**: header, screen bar (desktop and phone), the screen's frame and title, footer and About, the atmosphere | **Built** (28 Sep) | [`04-shell-variants.html`](04-shell-variants.html) |
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
-| 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, 14 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html` |
+| 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round and its light, 14 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
-| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html` |
+| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
@@ -356,6 +356,29 @@ step**. Free mode keeps the ghost bench. Built:
   used went with them (`homeMatches`, `homeParts`, `homeGoLabel`, `homeGoMap`, `homeGoJournal*`,
   `homeGoCrest`, `homeRoad*`, `homeNearMap`, `homeMapLabel`, `mapNear*`).
 - The README's screenshots of Your game were taken again.
+
+### Retouch: one light (14 October 2026)
+
+Albert: «se mezclan dos difuminados y no queda del todo bien», the screen's own (the frame's red
+light from the top, `.screen .frame-line`, `--tab-home`) and the bench area's (`.hm-card::before`,
+`--area-<id>-fill`). Both lit the top half: the area's oval was cut by two red crescents at the
+corners and the blend went muddy (brown over Deep Docks, mauve over The Cradle), with the lower
+third black. Drawn in `73-your-game-light-variants.html` (kept out of the repo), the
+real screen captured from seven saves (Deep Docks, Bellhart, The Cradle, Mount Fay, The Abyss,
+Hunter's March, Bone Bottom) and Free mode, with the area switchable: A · one light, the area's
+(the frame, corners, plaque and the light from the top in the area's colour, no glow of the
+scene's own); B · two zones (the red only along the top edge, the area's low behind Hornet);
+C · the frame red, one light inside in the area's colour; D · the red kept, the area only in its
+name.
+
+Albert chose **A** (14 October 2026). Built: `js/app-home.js` sets `--area-line` / `--area-fill`
+on `.hm` instead of the card, so the frame inside it reads them; `css/app.css`
+`.screen .hm:has(.hm-scene)` sets `--tab` to the area's line mixed into its fill as every tab's is
+(`--tab-area`, 55%, `css/tokens.css`), and `.screen .hm .frame-line` lights it from the top a
+little taller (90% × 78%), down to her bench. `.hm-card::before` is gone, and the ghost bench's
+glow with it: Free mode keeps the red, one light. Seen on the way: on a phone a tall area's map
+(The Abyss) ran about 120 px past the card and the frame, the grid row as tall as the map; the
+map's figure is now a size container and the map fits it both ways (`100cqw`, `100cqh × --r`).
 
 ## Step 4 · Inventory
 
@@ -1164,6 +1187,21 @@ its longest side 0.80 of the disc, shrunk just enough that nothing crosses r 0.4
 discs (Your game's lists, the card) and the selector's bare pictures (0.86 of their square, no rim)
 through `.mp-fit` (css). The glyphs stay as they were: white strokes on black already weigh as much
 as a picture.
+
+### Retouch: a room's parts not mapped (14 October 2026)
+
+Albert, on a new game: «veo que está descubierto, pero en el juego no lo he descubierto», a part of
+the Marrow (Bone_16_top) in colour with «Whole map», which the game doesn't draw. It came from the
+rule that made a room whole in colour once any part of it was mapped (design/00-study.md, «Colour
+only where the game draws»). His choice: in colour only what the game draws, piece by piece, and
+everything else faint, a room's parts not mapped too.
+
+The options for how those parts look beside the mapped ones (`74-map-parts-variants.html`, the
+Map's own composition over three real saves; kept out of the repo): **A** faint as the rest of the
+map, B a stronger faint (0.7), C the outline only, D faint with a soft edge at the cut.
+
+**Decision: A** (Albert, 14 October 2026). `js/rooms.js mapView` lost the whole-room rule; nothing
+new is drawn, and the game's straight cut shows as a change of tone.
 
 ## Step 7 · Journal
 

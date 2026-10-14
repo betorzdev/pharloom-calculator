@@ -105,6 +105,13 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
 .screen:has(.screen-head) .frame-line::before, .screen:has(.screen-head) .frame-line::after { background: color-mix(in oklab, var(--tab) var(--tab-frame), transparent); }
 .screen .bk { color: color-mix(in oklab, var(--tab) 80%, transparent); }
 .screen .screen-plaque { color: var(--tab); }
+/* Your game's place is where Hornet rests (design/03-redesign.md, step 3, one light, A, Albert's
+   choice, 14 Oct 2026): with a save, its frame, corners, plaque and light take that area's colour
+   (--area-line and --area-fill, set on .hm by js/app-home.js), mixed as every tab's (--tab-area),
+   and that one light reaches down to her bench; the scene has no glow of its own. Free mode keeps
+   the red, with the same light. */
+.screen .hm:has(.hm-scene) { --tab: color-mix(in oklab, var(--area-line) var(--tab-area), var(--area-fill)); }
+.screen .hm .frame-line { background: radial-gradient(ellipse 90% 78% at 50% 0%, color-mix(in oklab, var(--tab) var(--tab-light), transparent), transparent), var(--inv-bg); }
 
 /* ── The screens' frame ─────────────────────────────────────────────────
    Each screen is a pause-menu screen, framed and titled in the game's white filigree, the same
@@ -1118,7 +1125,6 @@ kbd {
 /* Free mode (the ghost bench): the card unlit, the kingdom's name in faint ink, Hornet a
    silhouette with a faint rim and the figures waiting. Dropping a file on it lights it. */
 .hm-card.is-ghost { border: 1px dashed transparent; transition: border-color var(--dur) var(--ease), background-color var(--dur) var(--ease); }
-.hm-card.is-ghost::before { background: radial-gradient(ellipse 50% 70% at 50% 45%, var(--scene-glow-low), transparent 75%); }
 .is-ghost .hm-sup { color: var(--muted); }
 .is-ghost .hm-area { color: color-mix(in oklab, var(--ink) 30%, transparent); text-shadow: none; }
 /* The bench and Hornet one silhouette. */
@@ -1130,17 +1136,13 @@ kbd {
 .hm-check { margin: var(--sp-1) 0 0; font-size: var(--fs-xs); color: var(--muted); text-align: center; }
 .hm-check.is-off { color: var(--cond); }
 /* The bench card: the game's area title (a small «Resting at» over the area's name in its capitals),
-   on the area's own light from the map screen (--area-line, --area-fill: set inline from the
-   area's tokens, js/app-home.js). The name is the area's line; the light its fill, rising
-   behind Hornet. */
+   in the area's own colours from the map screen (--area-line, --area-fill: set inline on .hm from
+   the area's tokens, js/app-home.js). The name is the area's line; the screen's frame and its
+   light from the top are the two mixed (above, .hm:has(.hm-scene)). */
+.hm { --area-line: var(--spotlight); --area-fill: var(--scene-glow); }
 .hm-card {
-  --area-line: var(--spotlight); --area-fill: var(--scene-glow);
   position: relative; isolation: isolate; display: grid; justify-items: center; gap: var(--sp-2);
   padding: var(--sp-6) var(--sp-4) var(--sp-4); margin: 0 0 var(--sp-6); text-align: center;
-}
-.hm-card::before {
-  content: ''; position: absolute; inset: calc(var(--sp-4) * -1) 0 0; z-index: -1; pointer-events: none;
-  background: radial-gradient(ellipse 60% 75% at 50% 40%, color-mix(in oklab, var(--area-fill) 85%, transparent), transparent 75%);
 }
 .hm-sup { margin: 0; font-family: var(--font-display); font-size: var(--fs-sm); letter-spacing: var(--track-wide); text-transform: uppercase; color: color-mix(in oklab, var(--area-line) 70%, var(--ink-2)); }
 .hm-area {
@@ -1158,11 +1160,13 @@ kbd {
 /* The scene (design/03-redesign.md, step 3, the calm round, A): the bench card, taller, with the
    map of the area she rests in faint behind it (js/app-map.js, App.mapAreaHtml: the Map's own
    drawing on a canvas, cropped to the area's box, --r its width over its height, faded at its
-   edges; a picture with no marks and no Hornet, not a link) and the 100% as one figure. */
+   edges; a picture with no marks and no Hornet, not a link) and the 100% as one figure. The map
+   fits inside the card both ways (a container, its width and height): a tall area on a phone
+   (The Abyss) would otherwise run past the card and the frame. */
 .hm-scene { min-height: calc(var(--hm-map-max) * 1.4); align-content: center; padding-block: var(--sp-8) var(--sp-4); margin-bottom: var(--sp-8); }
 .hm-scene .hm-rest { margin-block: var(--sp-4) var(--sp-2); }
-.hmB-map { position: absolute; inset: 0; z-index: -2; display: grid; place-items: center; margin: 0; opacity: calc(var(--map-faint) * 0.7); pointer-events: none; }
-.hmB-view { position: relative; display: block; width: min(100%, calc(var(--hm-map-max) * 1.6 * var(--r))); aspect-ratio: var(--r); }
+.hmB-map { position: absolute; inset: 0; z-index: -2; display: grid; place-items: center; margin: 0; opacity: calc(var(--map-faint) * 0.7); pointer-events: none; container-type: size; }
+.hmB-view { position: relative; display: block; width: min(100cqw, calc(var(--hm-map-max) * 1.6 * var(--r)), calc(100cqh * var(--r))); aspect-ratio: var(--r); }
 .hmB-canvas { position: absolute; inset: 0; width: 100%; height: 100%; filter: var(--map-tone);
   -webkit-mask: radial-gradient(ellipse closest-side at 50% 50%, #000 62%, transparent 100%); mask: radial-gradient(ellipse closest-side at 50% 50%, #000 62%, transparent 100%); }
 /* The 100% as one figure, the way into Progress: its label, the figure, and what Progress holds
@@ -1213,7 +1217,7 @@ kbd {
   /* Free mode's four figures two by two: four in a row don't fit, and three left one alone (Albert's choice, 14 Oct 2026). */
   .hm-figs { display: grid; grid-template-columns: repeat(2, auto); justify-content: center; gap: var(--sp-4) var(--sp-12); }
   .hm-scene { min-height: 0; }
-  .hmB-view { width: 100%; }
+  .hmB-view { width: min(100cqw, calc(100cqh * var(--r))); }
 }
 
 /* ── Progress (js/app-progress.js): the ledger ────────────────────────────
@@ -2505,8 +2509,6 @@ img.mp-fit { transform: translate(calc(var(--fx) * 100%), calc(var(--fy) * 100%)
 #mp-plate stop { stop-color: var(--map-plate); }
 #mp-plate stop:nth-child(2) { stop-color: var(--map-plate-mid); }
 #mp-plate stop:last-child { stop-color: transparent; }
-.mp-from { pointer-events: none; }
-.mp-from > circle:first-of-type { stroke: var(--silk); stroke-width: 0.12; }
 /* The areas' names, keeping their size on screen, with the map's black round their letters. */
 .mp-name { font-family: var(--font-display); font-size: calc(var(--k, 1) * 0.5px); letter-spacing: var(--track-caps); text-transform: uppercase;
   text-anchor: middle; dominant-baseline: middle; fill: color-mix(in oklab, var(--ink) 72%, transparent);
@@ -2524,8 +2526,6 @@ img.mp-fit { transform: translate(calc(var(--fx) * 100%), calc(var(--fy) * 100%)
 /* The caches and walls: so many they're drawn close up only; from afar, a count per room. */
 .mp-view:not(.is-close) .is-fine { display: none; }
 /* An area whose map isn't bought yet. */
-/* Hornet's way from the previous bench: a silk thread over the rooms, from a hollow ring. */
-.mp-way polyline { fill: none; stroke: var(--silk); stroke-width: 4; stroke-dasharray: 10 8; stroke-linecap: round; stroke-linejoin: round; opacity: 0.75; vector-effect: non-scaling-stroke; }
 
 /* The Map's admin mode (js/app-map-admin.js, #…&admin=1; design/30-map-admin-variants.html, all A):
    a band under the map, above the legend; on the map, a moved mark's way from the data's point

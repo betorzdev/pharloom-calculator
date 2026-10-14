@@ -334,7 +334,8 @@
   --pg-md: 60px;
   /* Each tab's light (design/03-redesign.md, step 1, third round, E): the colour of its place in
      the game, from the area tokens, for its frame, corners, plaque and the light from its top.
-     Your game and Saves keep the main menu's red. */
+     Your game and Saves keep the main menu's red; Your game with a save takes the area where Hornet
+     rests instead (css/app.css, .hm; design/03-redesign.md, step 3, one light). */
   --tab-home: #b0463b;
   --tab-game: color-mix(in oklab, var(--area-library-line) 55%, var(--area-library-fill));
   --tab-progress: color-mix(in oklab, var(--area-bonebottom-line) 55%, var(--area-bonebottom-fill));
@@ -344,6 +345,7 @@
   --tab-fight: color-mix(in oklab, var(--area-docks-line) 55%, var(--area-docks-fill));
   --tab-light: 38%;     /* the light from the top, inside */
   --tab-frame: 70%;     /* the frame line and its corners */
+  --tab-area: 55%;      /* Your game with a save: the area she rests in, its line into its fill (css/app.css, .hm) */
   /* The static pages' art, at the top of their block (tools/pages.js). */
   --about-art: 340px;
   --journal-light: radial-gradient(closest-side, color-mix(in oklab, var(--silk) 20%, transparent), color-mix(in oklab, var(--silk) 6%, transparent) 55%, transparent);

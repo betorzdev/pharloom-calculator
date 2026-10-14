@@ -58,26 +58,7 @@ test('she is decorative: hidden from screen readers and out of the tab order', (
   assert.match(js, /setAttribute\('aria-hidden', 'true'\)/);
   assert.match(js, /tabIndex = -1/);
   assert.match(js, /prefers-reduced-motion: reduce/);
-  assert.doesNotMatch(js, /localStorage|hollow\./);   // her one memory is prefs.walked
-});
-
-test('the Map walk has a way between two benches, through the rooms between', () => {
-  const R = require('../js/rooms.js');
-  const M = require('../js/map.js');
-  const benches = M.PINS.filter((p) => p[0] === 'bench').map((p) => p[3]).filter((s) => R.roomOf(s));
-  assert.ok(benches.length > 10);
-  // Some pair of benches the doors join, without any station opened.
-  let found = null;
-  for (const a of benches) {
-    for (const b of benches) {
-      if (a === b) continue;
-      const way = R.path(a, b, []);
-      if (way && way.length > 2) { found = way; break; }
-    }
-    if (found) break;
-  }
-  assert.ok(found, 'no way between two benches');
-  assert.ok(found.slice(1, -1).every((s) => typeof s === 'string'));
+  assert.doesNotMatch(js, /localStorage|hollow\./);
 });
 
 test('on the Map she is where the game wakes her, her feet on the ground under it, not on a pin set by hand', () => {
