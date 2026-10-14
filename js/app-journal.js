@@ -91,28 +91,33 @@
     const name = pick(e.name);
     const notes = !e.note ? ''
       : state === 'done' ? `<img class="hj-sym" src="assets/journal/hunter-symbol.webp" alt=""><p class="hj-note">${esc(pick(e.note))}</p>`
-      : `<img class="hj-sym is-locked" src="assets/journal/hunter-symbol.webp" alt=""><p class="hj-later">${esc(t('hjNotesDefeat', { 0: num(Math.max(0, e.kills - kills)) }))}</p>`;
+      : `<img class="hj-sym is-locked" src="assets/journal/hunter-symbol.webp" alt=""><p class="hj-later">${esc(e.inspect ? t('hjInspect') : t('hjNotesDefeat', { 0: num(Math.max(0, e.kills - kills)) }))}</p>`;
     return `<dialog class="hj-sheet" tabindex="-1" aria-label="${esc(name)}"${NT}>
       <button type="button" class="icon-btn hj-sheet-x" data-act="hjPick" data-key="" aria-label="${esc(t('mapCardClose'))}" title="${esc(t('mapCardClose'))}">${App.cross}</button>
       <div class="hj-art is-${state}"><img src="${art(e)}" alt="" decoding="async"></div>
       <div class="hj-entry">
       <h3 class="hj-name">${esc(name)}</h3>
-      ${state !== 'done' && App.mapHas && App.mapHas('journal:' + e.id) ? `<button type="button" class="text-btn hj-onmap" data-act="mapShow" data-value="journal:${e.id}">${esc(t('mapOnMap'))}</button>` : ''}
-      <p class="hj-kills"><b>${num(Math.min(kills, 9999))}</b><i class="u">/${num(e.kills)}</i></p>
-      ${whereHtml(e, state)}
+      ${e.inspect ? '' : `<p class="hj-kills"><b>${num(Math.min(kills, 9999))}</b><i class="u">/${num(e.kills)}</i></p>`}
+      ${whereHtml(e, state, name)}
       ${e.optional ? `<p class="inv-not">${esc(t('hjOptional'))}</p>` : ''}
       ${e.steel ? `<p class="inv-not">${esc(t('steelSoul'))}</p>` : ''}
       ${state !== 'unseen' && e.desc ? `<p class="inv-desc">${esc(pick(e.desc))}</p>` : ''}
       ${notes}
       ${state !== 'done' && by.length ? `<p class="hj-by">${esc(t('hjBy', { names: by.join(', ') }))}</p>` : ''}
-      ${state !== 'done' && e.inspect ? `<p class="hj-by">${esc(t('hjInspect'))}</p>` : ''}</div></dialog>`;
+      </div></dialog>`;
   }
 
-  function whereHtml(e, state) {
+  /* Where it is, and the way onto the Map: the round pin the lists carry (design/69, 1 A and 2 A),
+     at the end of the «Nearest» line; on the areas' line with no bench, alone with neither. */
+  function whereHtml(e, state, name) {
     const where = whereOf(e);
     const near = state !== 'done' ? nearest(e, App.game()) : null;
-    return (where.length ? `<p class="hj-area">${esc(where.slice(0, 4).join(' · '))}</p>` : '')
-      + (near ? `<p class="hj-where">${esc(t('hjNearest'))}: ${esc(near.place)}</p>` : '');
+    const pin = state !== 'done' && App.mapHas && App.mapHas('journal:' + e.id)
+      ? `<button type="button" class="pg-onmap" data-act="mapShow" data-value="journal:${e.id}" aria-label="${esc(t('mapOnMap') + ': ' + name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '';
+    const line = (cls, text, last) => `<p class="${cls}${last && pin ? ' has-pin' : ''}"><span>${text}</span>${last ? pin : ''}</p>`;
+    return (where.length ? line('hj-area', esc(where.slice(0, 4).join(' · ')), !near) : '')
+      + (near ? line('hj-where', `${esc(t('hjNearest'))}: ${esc(near.place)}`, true) : '')
+      + (!where.length && !near ? pin : '');
   }
   // The hunts: what's missing closest to your bench, by rooms, as cards.
   function hunts(list, g) {
@@ -123,7 +128,7 @@
     return `<section class="hj-hunts" aria-labelledby="hj-hunts-h"><h3 class="ct-h" id="hj-hunts-h">${esc(t('hjNear'))}</h3>
       <ol class="hj-hunt-row">${rows.map(({ x }) => `<li><button type="button" class="hj-hunt${picked === x.e.id ? ' is-picked' : ''}" data-act="hjPick" data-key="${x.e.id}"${NT}>
         ${ring(x)}<b>${esc(pick(x.e.name))}</b>
-        <span class="hj-hunt-left">${esc(t('hjLeft', { n: num(Math.max(0, x.e.kills - x.kills)) }))}</span></button></li>`).join('')}</ol></section>`;
+        <span class="hj-hunt-left">${esc(x.e.inspect ? t('hjInspect') : t('hjLeft', { n: num(Math.max(0, x.e.kills - x.kills)) }))}</span></button></li>`).join('')}</ol></section>`;
   }
 
   let shown = [];
@@ -188,6 +193,10 @@
     const memento = `<div class="hj-memento" role="img" style="--d:${(done / need).toFixed(3)};--s:${(seen / list.length).toFixed(3)}"
         aria-label="${esc(t('hjMemento') + ': ' + num(done) + '/' + num(need) + ' · ' + t('hjSeen', { n: num(seen), m: num(list.length) }))}">
         <div><b>${num(done)}</b><i class="u">/${num(need)}</i><span>${esc(t('hjMementoShort'))}</span></div></div>`;
+    /* The entry is a modal: drawn only on the Journal itself. Painted again while another screen
+       shows (its «See on the map» took the page elsewhere), it would lock that screen, so leaving
+       closes it for good. */
+    if (prefs.view !== 'journal') picked = null;
     const current = picked ? list.find((x) => x.e.id === picked) || null : null;
     sec.innerHTML = `<div class="hj">${brackets}${screenHead(esc(t('navJournal')))}
       ${g ? `<div class="hj-hero">${memento}${hunts(list, g)}</div>` : ''}
@@ -204,14 +213,19 @@
       d.addEventListener('click', (e) => { if (e.target === d) d.close(); });
     }
   };
-  // Closing the entry (its ×, Esc, the dim around it): back to its portrait.
+  /* Closing the entry (its ×, Esc, the dim around it): the focus goes back to what opened it (a
+     hunt's card or a portrait); if that isn't drawn any more (a complete entry in «What's
+     missing»), to the entry's other control, and failing that to the screen's title. */
+  let opener = '';
   function close(d) {
     const key = picked;
     if (!key) return;
     picked = null;
     if (d.open) d.close();
     render();
-    const b = document.querySelector(`.hj-cell[data-key="${key}"]`);
+    const own = (c) => document.querySelector(`.${c}[data-key="${key}"]`);
+    const b = (opener === 'hunt' ? own('hj-hunt') || own('hj-cell') : own('hj-cell') || own('hj-hunt'))
+      || document.querySelector('.screen:not([hidden]) .screen-title');
     if (b) b.focus({ preventScroll: true });
   }
   // Leaving the screen with the entry open (the browser's back): a modal left behind would lock the page.
@@ -221,13 +235,14 @@
   });
 
   // The Map's "See in the Journal": that entry open when the screen shows.
-  App.journalOpen = (id) => { picked = id; };
+  App.journalOpen = (id) => { picked = id; opener = ''; };
 
   Object.assign(actions, {
     hjPick(node) {
       const d = document.querySelector('dialog.hj-sheet[open]');
       if (d) { close(d); return; }
       picked = node.dataset.key || null;
+      opener = node.classList.contains('hj-hunt') ? 'hunt' : 'cell';
       render();
     },
     hjShow(node) { prefs.hjAll = node.dataset.value === 'all'; savePrefs(); render(); },

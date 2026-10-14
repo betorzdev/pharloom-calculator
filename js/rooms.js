@@ -127,24 +127,38 @@
   }
 
   /* A scene's area as the game names it (js/collectibles.js AREAS, the save's currentArea ids).
-     The map's branches (Bone, Crawl…) aren't those ids; the join comes from the data: every piece,
-     wish and gauntlet has its scene and its area, and each branch takes the area most of its own
-     carry. Four branches carry none and are named here; Surface has no area of its own. */
+     The map's branches (Bone, Crawl…) aren't those ids, and a branch can hold several areas (Song:
+     the High Halls, Cogwork Core, the Songclave); the join comes from the data: every piece lying
+     in a room, wish and gauntlet has its scene and its area. A scene of theirs takes the area they
+     carry there (the most of them, should they differ), so a piece's room is its own area; any
+     other scene takes its branch's, the area most of the branch's carry. Four branches carry none
+     and are named here; Surface has no area of its own. The Songclave's room
+     is named here too: nothing lies in it, but it's an area of its own in the Song branch, and all
+     it hands you is filed under it (its shop's Mask Shard and Spool Fragment, Sherma's). */
   const AREA_FALLBACK = { Abyss: 'ABYSS', Cradle: 'CRADLE', 'Dust Maze': 'MISTMAZE', Tut: 'MOSSCAVE' };
-  let AREA_OF = null;
+  const AREA_ROOM = { song_enclave: 'ENCLAVE' };
+  let AREA_OF = null, AREA_AT = null;
+  const most = (v) => Object.entries(v).sort((a, b) => b[1] - a[1])[0][0];
   function areaOf(scene) {
     if (!AREA_OF) {
       const CO = SS.collectibles || require('./collectibles.js');
       const GA = SS.gauntlets || require('./gauntlets.js');
-      const vote = {};
-      const add = (sc, area) => { const r = sc && area && roomOf(sc); if (r) (vote[r.area] = vote[r.area] || {})[area] = (vote[r.area][area] || 0) + 1; };
+      const vote = {}, at = {};
+      const add = (sc, area) => {
+        const r = sc && area && roomOf(sc);
+        if (!r) return;
+        (vote[r.area] = vote[r.area] || {})[area] = (vote[r.area][area] || 0) + 1;
+        const k = sc.toLowerCase();
+        (at[k] = at[k] || {})[area] = (at[k][area] || 0) + 1;
+      };
       for (const p of [...CO.PIECES, ...CO.WISHES]) add(sceneOf(p[2]), p[3]);
       for (const g of GA.GAUNTLETS) add(g.scene, g.area);
       AREA_OF = { ...AREA_FALLBACK };
-      for (const [branch, v] of Object.entries(vote)) AREA_OF[branch] = Object.entries(v).sort((a, b) => b[1] - a[1])[0][0];
+      for (const [branch, v] of Object.entries(vote)) AREA_OF[branch] = most(v);
+      AREA_AT = new Map([...Object.entries(at).map(([k, v]) => [k, most(v)]), ...Object.entries(AREA_ROOM)]);
     }
     const r = roomOf(scene);
-    return r ? AREA_OF[r.area] || null : null;
+    return r ? AREA_AT.get(scene.toLowerCase()) || AREA_OF[r.area] || null : null;
   }
 
   /* ── The map as the game draws it ─────────────────────────────────────
@@ -199,7 +213,7 @@
      named after another piece and not a scene of the game, js/graph.js), the room it's a part of;
      the parts of a room the map draws only in parts are named after its scene (Under_13_left,
      _right and _bot are Under_13, 18 rooms). A destroyed piece stands for its room rather than
-     being part of it. */
+     being part of it. The Map finds a bench's pin by it too (js/app-map.js benchPoint). */
   const SCENE = new Set(Object.keys(G).map((k) => k.toLowerCase()));
   const ROOM_OF = new Map();
   function roomPiece(s) {
@@ -275,6 +289,6 @@
     return M.PINS.filter((p) => !off.has(p[3]) && !(g && p[5] && !rule(p[5], at)));
   };
 
-  SS.rooms = { ENTRANCE, roomOf, mapPoint, sceneOf, graphScene, walk, steps, path, areaOf, mapVars, rule, mapView, pinsOn };
+  SS.rooms = { ENTRANCE, roomOf, roomPiece, mapPoint, sceneOf, graphScene, walk, steps, path, areaOf, mapVars, rule, mapView, pinsOn };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.rooms;
 })();

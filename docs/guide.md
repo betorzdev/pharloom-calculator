@@ -40,12 +40,13 @@ only sits, placed straight under the tab. Click her and she binds.
 
 Above the language and Share, on the crown's row, **«Hollow Knight ↗»** goes to the sister site,
 [Hallownest Calculator](https://hallownestcalculator.com/) (`../hollownest-calculator`), in your
-language and in a new tab; on a phone it's on its own line under the title. The Knight stands on
+language and in a new tab; on a phone it's on its own line under the title, with the language and
+Share at its right (the title's row keeps the title and the save alone). The Knight stands on
 the word (`js/app-sister.js`, css `.mh-sister`, `.sis-*`), as Hornet stands on «Silksong ↗» there:
 no arrival, he's simply there (Albert, 13 Oct 2026), breathing (the game's Idle at a third of its
 speed, there and back). Every 15–25 s (header in view, tab visible) his cloak stirs in the wind, he
 looks up, reads his map or focuses soul in a white light; he turns to the mouse over the header and
-looks up while it's on the link. A click counts as `sister`, as on the sibling. With reduced motion
+looks up while it's on the link. A click counts as `sister` with `to: 'hallownest'` (the sister's Footworn id, which its dashboard draws as a villager crossing to that quarter), as on the sibling. With reduced motion
 he only stands. He's decoration: hidden from screen readers, never under the pointer.
 
 ### Profiles
@@ -83,17 +84,20 @@ empty profile.
 In a save, the game's area title card: **Resting at** the area of the bench Hornet sits at, lit by
 that area's own colour on the game's map, the room's area under it when it's another (Coral
 Tower in the Sands of Karak), the Act and the time played; Hornet sitting on that very bench (each room's bench is read
-from the game's files; one it doesn't know shows Bone Bottom's); and four
-figures: **your 100%**, the Journal, the masks and the rosaries. Beside the card (under it on a
+from the game's files; one it doesn't know shows Bone Bottom's). When the save was written where
+the game wakes her at a room's own respawn point instead (a restore point after a boss or an
+ability), the card says **Your respawn point** over that area, shows her standing with no bench,
+and its list is what's closest to that point. Then four
+figures: **your 100%**, the Journal, the masks and the rosaries (two by two on a phone). Beside the card (under it on a
 phone) is **the map of that area**, drawn as the Map screen draws it (the same view, «Only what
 the game shows» included), cropped to the area's rooms and fading out at its edges, with Hornet
 sitting on your bench and the Map's own marks over it: the layers and filters you have set on the
-Map (its legend and its Act and «what I can reach now» filters) decide which show, so the two
+Map (its legend) decide which show, so the two
 agree (the caches and walls, which the Map only draws close up, are left out); a tap on it opens
 the Map. Under it, the road to the next
 Act when there is one (the step you're on, by its name, and how far into it), then three columns: what changed since the previous save (below), what's
 missing **closest to your bench** (the first five, by the game's doors and the stations you've opened, each with its area and a pin that shows it on the Map), and your 100% split into
-the wiki's ten categories (Tools, Silk Spools, the Crafting Kit and Tool Pouch, abilities, Silk Skills, Crests,
+the wiki's ten categories (Tools, Silk Spools, the Tool Pouch & Crafting Kit, abilities, Silk Skills, Crests,
 masks, the Needle, Silk Hearts, the Everbloom), with the figure the game itself shows under it:
 they're the same. The site counts as the game does, checked on 92 real saves (0% to 100%, four
 patches, Steel Soul): whole masks and spools, not loose shards and fragments (two shards are
@@ -123,12 +127,14 @@ reduced motion).
 
 A sheet in two columns, each thing beside what it feeds, and a band under both. On the left, what
 Hornet is: **the Needle**, the five upright with their damage, the one she carries taller and lit,
-and the Pale Oil under it (the game's flask three times, lit up to what you hold); then **Hornet**: the masks (5 to 10) as the game's masks, in a
+and the Pale Oil under it (the game's flask three times, lit up to how many you've found, spent or not); then **Hornet**: the masks (5 to 10) as the game's masks, in a
 row as the HUD draws them, with the loose Mask Shards under them (four make a mask), the silk (9 to
 18) as beads on one thread with the loose Spool Fragments (two make a spool), and the Silk Hearts;
 then the **Silk Skills** with what each deals at this build, and the **abilities** (Needle Strike
-with its damage). On the right, her equipment: the **Crests**, with the Memory Lockets that open
-their slots under them, and the **Tools**: the Crafting Kit and Tool Pouch with their level and the
+with its damage): the seven of the 100% under the head's count, then the four that aren't (the two
+cloaks, Beastling Call and Elegy of the Deep) under «Other abilities» with their own. On the right,
+her equipment: the **Crests** (an evolved Hunter Crest drawn as its evolved stage), with the Memory
+Lockets that open their slots under them, and the **Tools**: the Crafting Kit and Tool Pouch with their level and the
 Craftmetal, three rows alike, then the Tools by colour, each on its slot's diamond (hollow in its colour while you
 lack it). There's one slot per point of the 100%: a Tool and its upgrade (Curveclaw and
 Curvesickle, Druid's Eye and Eyes, Claw Mirror and Mirrors) share one, showing the one you have,
@@ -139,14 +145,14 @@ handed back they still show found (here and on the Map: the save keeps them, hid
 Shell Shards as big figures, the shards out of what your Tool Pouch holds, 400 to 800, with a bar,
 and under each what breaks into it, counted, with the sum you would get from breaking it all: the
 five Rosary strings and necklaces under the rosaries; the Beast Shards, Shard Bundles, Pristine
-Cores, Hornet Statuettes and the Growstone (Steel Soul) under the shards); the **items** (the
+Cores, Hornet Statuettes and the Growstone under the shards, the last only in a Steel Soul game or Free mode); the **items** (the
 Everbloom, the Farsight, the Hunter's Journal, the Old Hearts, the melodies and the fleas); the
 **Relics** (how many you hold of each kind) and the **Mementos**. Crests, items, what's in the
 purse, Relics and Mementos are plates with their name, and under it their count or «Not found
 yet». Every head says how many of how many, and its rule lights up that far (complete, its diamond
 fills): the Tools count as the 100% does (of 51), the Crests with the Hunter Crest you start with
 (of 7); the Relics and Mementos aren't part of the 100%. Tap anything to read the game's own text
-under its shelf.
+under its shelf (the Hunter Crest's is the evolved one's once Eva has evolved it).
 
 In **Free mode** it's your game, marked by hand, and it starts as the game does: a New Game,
 with the base Needle, five masks, nine silk and the Hunter Crest, nothing else. A line under the
@@ -156,8 +162,10 @@ Crest, Silk Skill, ability, the Everbloom, the Farsight, the Journal, an Old Hea
 Memento to mark it had or not (its text opens under the shelf); a slot a Tool shares with its
 upgrade goes none, had, upgraded with each tap. Each shelf has «All · None», and what comes in numbers (loose Mask
 Shards and Spool Fragments, Memory Lockets, Craftmetal, Pale Oil, fleas, what's in the purse, the
-Relics of each kind) has − N +. The Rosaries and Shell Shards are typed: Enter or leaving the field
-takes the figure, and the shards stop at what your Pouch holds. «Start from»: «New Game» (the
+Relics of each kind) has − N +, its maximum beside the figure («− 6/20 +»): the loose shards and fragments stop at what the masks and silk
+left unfilled. The Rosaries and Shell Shards are typed: Enter or leaving the field
+takes the figure, and the shards stop at what your Pouch holds. With the keyboard, the focus stays
+where it was through each mark. «Start from»: «New Game» (the
 game's own words) takes it all back to the start; «Everything maxed» marks everything, every level
 at the top (a game at 100%). Progress counts what you mark, the Map leaves out what you have, and
 the Crest screen tries it on «What I have». A visit from before this (when the levels belonged to
@@ -189,13 +197,21 @@ beside the Crest between the game's white brackets, and the Crest's name sits un
 Shaman wears a Silk Skill in each of its three slots. A save made while cursed (the Witch's curse,
 for a while in the story) shows the Cursed Crest: no slots, a line on what the curse does, and the
 figures with silk stopped at 3 and no Bind. In Free mode a
-tap on a worn one there takes it off, and the others stay in their slots. ‹ › change the Crest. Beside it,
+tap on a worn one there takes it off, and the others stay in their slots. ‹ › change the Crest,
+and each Crest keeps the Tools and Silk Skills in its own slots, as the game does: back on one, it's
+as you left it (the Hunter's three evolutions share one). The Vesticrest's two Tools are shared by
+every Crest, as in the game, and stay put when the Crest changes. A Crest not worn yet starts with
+what fits of the one you left. A Tool is never worn twice, nor with its twin, across the Crest's
+slots and the Vesticrest's. Only what has a slot counts (on «What I have» without the Vesticrest,
+its Tools are left out until it's there). From a save, what the
+Crest's own slots don't hold is on the Vesticrest's, where the game has it. Beside it,
 the Tools and Silk Skills you have (as the game lists them; in Free mode, all of them, or on «What
 I have» what the Inventory's marks say, with a line to the Inventory while no Tool is marked), by colour, each on its slot as the Inventory draws it, the
 slot filled and lit when it's worn: a tap puts one on or takes it off,
 and pointing at one (or at a slot) describes it underneath with the game's words and its numbers
 (damage per hit, uses at the Pouch's level, a full load, the shell shards to refill it; a Silk
-Skill's damage and silk), as if it were worn when it isn't. Silkshot is the one the game repaired
+Skill's damage and silk), as if it were worn when it isn't. A Tool and its upgraded twin (Claw
+Mirror and Claw Mirrors…) are never worn together, as in the game: putting one on swaps the other, on the Crest or the Vesticrest. Silkshot is the one the game repaired
 (the Original, the Twelfth Architect's or the Forge Daughter's: a save says which), with its own
 picture, words, damage and uses.
 
@@ -208,7 +224,9 @@ with: **Everything** (every Tool, Crest and Silk Skill at hand, and the build's 
 top to start with) or **What I have** (your game as marked in the Inventory: its levels, the
 Hunter's evolution, the Vesticrest's slots Eva would have given it for the Crests and Memory Lockets
 marked, and only the Tools, Crests and Skills you have). On «What I have» the levels set here are
-your game's, and Combat fights with that. A link with a build always opens on «Everything».
+your game's, and Combat fights with that. A link with a build always opens on «Everything». The
+moment's switches (focus, fury, Flintslate, a Challenge) aren't in the link, but a reload keeps them;
+the Hunter's focus starts on, as it does with a save.
 
 The Architect and the Witch split their slashes (the Architect drills: 0.9× + 0.1× + 0.1× the
 Needle; both have their own down- and run-slashes), and the band shows all three attacks; the
@@ -225,7 +243,8 @@ Combat says how long slashing nonstop takes to kill the enemy.
 
 The address bar carries the build: copied, it opens the build on screen as it is. The
 link is readable (`#v=1&crest=architect&needle=4&tools=straight-pin,compass…`) and carries only
-what differs from a Hunter with nothing: in Free mode the address always says the build. A link
+what differs from a Hunter with nothing: in Free mode the address always says the build, the Crest
+worn's (the other Crests' Tools stay in this browser). A link
 with a build opens it in Free mode; if you were in a save, the page goes to Free mode and says so.
 
 ### Journal
@@ -237,7 +256,7 @@ go. Under it, the 236 portraits (237 in Steel Soul) **by area**, the areas with 
 first and each with its count (6/20), or **in the Journal's order**; entries with no place go last,
 under "Elsewhere". Beside the search, two choices in words under their labels: **Show** "What's
 missing / Everything" (with a save; Free mode shows everything) and **Order** "By area / Journal
-order". The search finds entries by name or by area, in either language and with or without accents; while
+order". The search finds entries by name (in either language) or by area (in the page's), with or without accents; while
 it has text it looks through the whole Journal, what's complete included. Each portrait
 sits in a ring that fills with its kills and lights up once complete; one not seen yet is in
 shadow in a dashed ring («???»), and the six optional ones carry a small diamond. Tapping one
@@ -245,8 +264,8 @@ opens its page as the game's Journal shows it (from the foot on a phone; Esc or 
 closes it): the whole drawing, from the game's files, on a soft light and at the size the game
 draws it (a Mossgrub small, the Bell Beast filling it), so you know the bug when you meet it; one
 not seen yet is in shadow. Beside it the name, the kills, its areas and the nearest from your
-bench, the description, and under the Hunter's symbol the Hunter's note once complete, or the
-game's «Defeat 11 more to complete the hunter's notes.». An entry is complete when the save lists it
+bench (with the pin the lists carry, which opens it on the Map, while it isn't complete), the description, and under the Hunter's symbol the Hunter's note once complete, or the
+game's «Defeat 11 more to complete the hunter's notes.» (the Void Tendrils has no kills: it says «Completed by inspecting its rune-scroll.» instead). An entry is complete when the save lists it
 with its kills done: the game writes them even for the entries it completes another way, and on
 the saves where Nuu has given the Memento the site counts all 230. In Free mode, the whole
 Journal.
@@ -354,7 +373,7 @@ screen's.
 The list is the wiki's, plus two Journal entries it gives no health, read from the game's files:
 the Wisp and the Winged Lifeseed have no health or modifiers there and die to the first hit, and
 their card says so. The Muckmaggots, the Sandcarver and the Void Tendrils can't be hit that way
-(the water, the sand pits and a tablet), so they aren't in it.
+(the water, the sand pits and an entry completed from a rune-scroll), so they aren't in it.
 
 **Enemy gauntlets**: the other half of the screen, the game's 49 arenas of waves, each named by
 its place or its area, with its reward (the game's name for it, when it gives something the game
@@ -380,19 +399,19 @@ it swaps to twice the resolution. The last button, the four corners, takes it to
 the same button leave it; where the browser can't, it fills the window). On it: a search at the top left and the zoom at the top right.
 The search finds any area and anything on the map by name (a piece, a Tool, a boss, a shop, an
 NPC, a Journal entry), each with its layer and area under it: pick one and the map goes there,
-with its layer switched on, its card open and a ring where it is. On a phone the area names show
-only zoomed in.
+with its layer switched on, its card open and a ring where it is. With the whole map in view, an
+area name that would fall on another waits for the zoom (the larger area's stays, by its rooms);
+on a phone the area names show only zoomed in.
 
 Under the map, **What the map shows**, as the Hollow Knight site has it: «Show all · Hide all» on
-its right, and «Only the 100%», which turns on just the layers that count for completion, then the Act (all, or only Act 1, 2 or 3's things), «Only what I can reach now» with a
-save (hides what asks for an ability or Silk Skill you don't have yet: the Faydown Cloak,
-Clawline, Silk Soar, as the completionist lists them), «Only what the game shows» with a save (see
+its right, and «Only the 100%», which turns on just the layers that count for completion, then «Whole map» with a save, on at first (see
 below), and the area names on or off. Then eleven groups, each a row that folds (its caret; all open
 at first, only the first two on a phone, then as you left them) whose title is the switch for the
 whole group, in ink when all of it is on, dimmer when part, muted when none. Inside, each layer's
 switch is the game's own picture of it, in grey when off. Beside each, how many: in a save, had of
 the total (a layer complete in green); for places and people, which aren't had, how many there
-are; in Free mode, the total. The Act and reach filters narrow the counts too.
+are; in Free mode, the total. A group's title counts its layers the same way, all but your cocoon,
+so «Your game» counts as its Journal does.
 
 What counts for the 100% is in the first four groups, each thing in the room where it's had:
 lying there, at the shop that sells it, at the Wishwall or with whoever gives the wish, in its
@@ -427,7 +446,7 @@ boss's arena, with the person who gives it. All of it on at first.
   which its map doesn't pin; the Flea Caravan's two of its own, in Greymoor and the Blasted Steps,
   only while your caravan is there), Bellway and Ventrica stations (dimmed while
   your game hasn't opened them: a station not unlocked, a toll not paid), the six Bellshrines (the Grand Gate asks for five of them;
-  the Songclave's is the sixth) and the shops, and the **Lifts** (off at first), gone once your game has called each. The shops are the
+  the Songclave's is the sixth) and the Vendors (the game's map key), and the **Lifts** (off at first), gone once your game has called each. The shops are the
   game's own (its ShopOwners: Pebb, Frey, Mort, the Forge Daughter, Grindle, Jubilana, the
   Mottled Skarr, the Twelfth Architect) and those who trade outside them: the Couriers' delivery
   wishes in Bellhart, the Moss Druid, who buys Mossberries, and Creige's drinks.
@@ -496,13 +515,15 @@ game's map. Things on one point gather in a small grid around it. The map is dra
 stays sharp as you zoom.
 
 With a save the map shows only what you're missing; in Free mode, what your marks say is missing
-(everything, as a guide, on a New Game). Tap any mark for its card: what
+(everything, as a guide, on a New Game). Tap any mark for its card (above the mark, or below it
+when above it would cover the search or the zoom): what
 it is, where, how it's had, and what it says of your game. A
 shop's says what of the 100% it still has for you, Shakra's which maps you lack, a Wishwall's or a
 wish giver's the wishes still open, a wish's place or thing which wish it's for, whether it's done
 and a button to its Wishwall or to who asks for it, a boss's whether it's beaten, with «Fight it in Combat» and
 «See in the Journal»; a gauntlet's its waves and reward; a Journal entry's its kills. In Free mode
-a piece's card marks it had. Tap an area's name for its card: the rooms of it you've visited,
+a piece's card marks it had; a Mask Shard, Spool Fragment, Silk Heart or upgrade of the Needle, Kit
+or Pouch follows the Inventory's levels instead, as on Progress, and its card leads there. Tap an area's name for its card: the rooms of it you've visited,
 and what's left there of the 100%, the Journal and the gauntlets.
 
 Other screens open the map on a thing: «See on the map» on each missing row of Progress and on a
@@ -515,13 +536,14 @@ and its × back to the whole map. Any switch below ends it too; Back returns to 
 
 Pharloom as the game's own map screen draws it for your game, piece by piece and by its own
 rules, taken from its files and its code, in a dim tone, with Hornet on her bench's pin, as the game draws her
-sitting. Each room is drawn by its parts, as the game maps them (most rooms have two or three:
+sitting (when the save was written where the game wakes her at a room's own respawn point, as a
+restore point after a boss or an ability is, she stands in that room: «Your respawn point»). Each room is drawn by its parts, as the game maps them (most rooms have two or three:
 Greymoor_02, its top, its middle), and what your game's map draws is in colour: the parts the
 game has mapped, in the areas whose map you've bought from Shakra. The site being a guide, the
 rest of the map is there too, faint: the areas whose map you haven't bought (their names struck
 through) and the rooms not mapped yet, so that what's missing there has a map under it. A room
-goes whole in colour once any part of it is mapped, so its tone never changes halfway through. «Only
-what the game shows» draws your game's map exactly: no area without its map, nor its name, and a
+goes whole in colour once any part of it is mapped, so its tone never changes halfway through. Turning
+«Whole map» off draws your game's map exactly: no area without its map, nor its name, and a
 part not mapped shows the dotted rough sketch the bought map gives it, or nothing when it's a
 secret or a room's hidden half. What's mapped is what your save says the game has mapped
 (`scenesMapped`), which can trail what you've walked until you sit at a bench, and without the
@@ -568,12 +590,13 @@ which Act you're in and what opening the next takes («Opening Act 3 takes 5 ste
 Without a save it says what the tab is: the guide to the three Acts and to the 100%.
 
 Then two tabs, as two cards, each with its own picture of how far you are; the one you used last
-opens, the road's the first time.
+opens, the road's the first time. From the keyboard, Tab reaches the one selected and the
+arrows, Home and End move to the other and open it.
 
 **The road to the next Act** (its card: the picture of the step you're on, how far into it, counted
 as its rings count, and «step 1 of 5»). Its steps as diamonds on one thread, the ones done lit and
 the one you're on larger, each numbered and named as what to do («1 · Unlock "Silk and Soul"»,
-«2 · Take the wish», «3 · Gather the snare»…; the full title shows on hover). On a phone the thread
+«2 · Accept the wish», «3 · Gather the snare»…; the full title shows on hover). On a phone the thread
 goes down the page, a step a line. Each step there, and each dim medallion of the steps to come,
 opens its card where it was clicked: «Step 3», its title, what the game says of it and its way onto
 the Map (a step done says «done» and has no map); the × or the step again close it, and the step
@@ -639,11 +662,12 @@ a ring that opens its list; the rows you open stay open. «What's missing · Eve
 Act · Nearest first» sit just above the rows.
 
 Opened, a category lists its things by Act: each with its picture, its name (a Tool with its
-slot's colour) and how to get it, its area on the right, and a pin that shows it on the Map. A thing
+slot's colour; in a Steel Soul save, the Shell Satchel where Classic has the Dead Bug's Purse) and how to get it, its area on the right, and a pin that shows it on the Map. A thing
 just lying in a room says so («Found in the area: the pin shows where»).
 
 In **Free mode** Progress counts what you mark, from a New Game (0% until you mark something),
-and each missing row has a box to mark it here too; masks, silk, the Silk Hearts, the Needle, the
+and each missing row has a box to mark it here too (on a Tool marked with its upgrade,
+such as the Curvesickle, the box unmarks both); masks, silk, the Silk Hearts, the Needle, the
 Kit and the Pouch follow what the Inventory sets, and their groups say so, with the way there. The
 line on top says it's Free mode, counting your marks from a New Game, and that the road is the
 guide; the road tab is «The roads to Acts 2 and 3».
@@ -654,7 +678,7 @@ it and its way onto the Map, as above:
 
 - **To Act 2**: ring the five Bellshrines, open the Grand Gate, defeat the Last Judge, and walk into
   the Citadel. Defeating the Phantom opens another way in, and the first two steps then say
-  they're no longer needed.
+  they're no longer needed (the Bellshrines left unrung aren't listed as to do).
 - **To Act 3**:
   1. Unlock the wish Silk and Soul:
      - its 10 required wishes (guides give six: the ones before them count too);
@@ -720,15 +744,16 @@ Then **other collectibles**, which don't count for completion, each group saying
 - Craftmetal (crafted Tools);
 - Pale Oil (the Needle's upgrades);
 - the Lost Fleas (the caravan's rewards, and Fleatopia for Act 3);
-- the four Old Hearts (Act 3's ending);
-- the three melodies (the way to the Cradle);
-- the abilities outside the 100%;
+- the four Old Hearts (Act 3's ending) and the three melodies (the way to the Cradle), each in the
+  area the wiki gives it;
+- the abilities outside the 100% (Beastling Call and Elegy of the Deep under Act 3, where the Map
+  has them);
 - the 49 enemy gauntlets, named as Combat names them.
 
 Last, **Tasks** («Tareas», the game's pane): the main objectives and the wishes on the boards by
 type (Wayfarer, Gather, Donate, Hunt, Grand Hunt, Delivery…), 74 in all, each with the game's own
-name, its Act and where. In Act 2, the ten wishes Act 3 requires are in the road's tab instead. The one only Steel Soul has, and the one only Classic has, show only in a
-game of that mode. A task done also shows in "Since the previous save".
+name, its Act and where (a wish the pane files under no area, the area it's taken in). In Act 2, the ten wishes Act 3 requires are in the road's tab instead. The one only Steel Soul has, and the one only Classic has, show only in a
+save of that mode, and both in Free mode, as the Journal and the Map show them. A task done also shows in "Since the previous save".
 In a save it shows what's missing, or everything with a tick where you have it; without a save,
 the whole list, as a guide. Which piece you have is read from the save one by one, and on the
 92 real saves it agrees with the game's own counters (masks, spools, the three upgrade ladders,
@@ -839,7 +864,7 @@ The visit counter is [Footworn](https://github.com/betorzdev/footworn) (`track()
 Cloudflare Worker in Western Europe. It sets no cookies, keeps no IP, and stores one row per visit
 with nothing that names you: the page, referrer host, browser and system families, screen width,
 language, country and the site's events (`screen` with `view` and `lang`, `lang`, `error` with
-`part`, and the plain ones: `share`, `save-import`, `save-sync`...). The owner sees them as daily
+`part`, `sister` with `to` (the other site's id), and the plain ones: `share`, `save-import`, `save-sync`...). The owner sees them as daily
 counts and, for today only, one by one, rounded (the minute, phone/tablet/desktop); its own
 record of what it stores is at footworn.betorzdev.workers.dev/privacy. That fits the AEPD's exemption for audience measurement ("Guía uso de
 cookies para herramientas de medición de audiencia", January 2024), whose one condition that

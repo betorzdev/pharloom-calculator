@@ -11,7 +11,9 @@
    «Diario de caza» (INV_NAME_JOURNAL), the Tools screen «Blasón» (PANE_TOOLS), completion
    «Finalización» (COMPLETION), Mask Shards «fragmentos de máscara» (INV_NAME_HEART_PIECE_1),
    Spool Fragments «fragmentos de carrete» (INV_NAME_SPOOL_PIECE_HALF), rosaries «rosarios»,
-   the Hunter's Memento the «Recuerdo de cazadora» (INV_NAME_HUNTER_MEMENTO). */
+   the Hunter's Memento the «Recuerdo de cazadora» (INV_NAME_HUNTER_MEMENTO), its notes the «notas de
+   caza» (NOTES_DEFEAT), the Acts «Acto 3» (ACT_3_SUPER), the modes «Clásico» (MODE_NORMAL) and «Alma
+   de acero» (MODE_STEEL). */
 'use strict';
 
 const BRAND = { es: 'Calculadora de Telalejana', en: 'Pharloom Calculator' };
@@ -41,7 +43,7 @@ const OG_ALT = {
    WebSite's name is what a result shows as the site's name. */
 const APP_LD = {
   description: {
-    es: 'Sigue tu partida real de Hollow Knight: Silksong: el 100 % objeto a objeto, el mapa del juego con lo que te falta, el Diario de cazadora y cómo cambia a Hornet cada Herramienta y Blasón.',
+    es: 'Sigue tu partida real de Hollow Knight: Silksong: el 100 % objeto a objeto, el mapa del juego con lo que te falta, el Diario de caza y cómo cambia a Hornet cada Herramienta y Blasón.',
     en: 'Follow your real Hollow Knight: Silksong game: the 100% item by item, the game\'s own map with what you\'re missing, the Hunter\'s Journal, and how each Tool and Crest changes Hornet.',
   },
 };
@@ -105,7 +107,7 @@ const PAGES = [
     body: [
       { es: 'El 100 % de Silksong son diez categorías: 51 herramientas, 9 carretes de seda, 8 mejoras del kit de fabricación y la bolsa de herramientas, 7 habilidades, 6 habilidades de seda, 6 blasones, 5 máscaras, 4 mejoras de la aguja, 3 corazones de seda y la Siempreviva. La lista las da una a una, con su acto y la zona donde están, y más allá del 100 %, los relicarios de memorias, el metal artesano, el aceite pálido, las pulgas y las tareas del juego.',
         en: 'Silksong\'s 100% is ten categories: 51 Tools, 9 Silk Spools, 8 Crafting Kit and Tool Pouch upgrades, 7 abilities, 6 Silk Skills, 6 Crests, 5 masks, 4 Needle upgrades, 3 Silk Hearts and the Everbloom. The list gives them one by one, with their Act and the area they\'re in, and beyond the 100%, the Memory Lockets, Craftmetal, Pale Oil, the fleas and the game\'s tasks.' },
-      { es: 'Con tu partida importada, solo lo que te falta. Siete puntos son del acto 3: antes de él, el máximo que se ve es un 93 %.',
+      { es: 'Con tu partida importada, solo lo que te falta. Siete puntos son del Acto 3: antes de él, el máximo que se ve es un 93 %.',
         en: 'With your save imported, only what you\'re missing. Seven points are Act 3\'s: before it, the most a game shows is 93%.' },
     ],
     faq: [
@@ -137,12 +139,12 @@ const PAGES = [
       en: 'The 236 entries of Hollow Knight: Silksong\'s Hunter\'s Journal, with the game\'s texts and notes, how many kills each one still needs, and how far you are from the Hunter\'s Memento.',
     },
     body: [
-      { es: 'El Diario de caza como el del juego: cada entrada con su retrato, su descripción y, cuando la completas, la nota de la cazadora, y cuántos enemigos te faltan para cada una. Nuu da el Recuerdo de cazadora al completar las 230 necesarias (231 en Alma de acero): seis son opcionales.',
-        en: 'The Hunter\'s Journal as the game\'s: each entry with its portrait, its description and, once you complete it, the Hunter\'s note, and how many kills each one still needs. Nuu gives the Hunter\'s Memento for the 230 required ones (231 in Steel Soul): six are optional.' },
+      { es: 'El Diario de caza como el del juego: cada entrada con su retrato, su descripción y, cuando la completas, sus notas de caza, y cuántos enemigos te faltan para cada una. Nuu da el Recuerdo de cazadora al completar las 230 necesarias (231 en Alma de acero): seis son opcionales.',
+        en: 'The Hunter\'s Journal as the game\'s: each entry with its portrait, its description and, once you complete it, the hunter\'s notes, and how many kills each one still needs. Nuu gives the Hunter\'s Memento for the 230 required ones (231 in Steel Soul): six are optional.' },
     ],
     faq: [
       { q: { es: '¿Cuántas entradas tiene el Diario de caza?', en: 'How many entries does the Hunter\'s Journal have?' },
-        a: { es: '236 en el modo clásico y 237 en Alma de acero. Para el Recuerdo de cazadora hacen falta 230 (231): seis son opcionales.', en: '236 in Classic and 237 in Steel Soul. The Hunter\'s Memento needs 230 (231): six are optional.' } },
+        a: { es: '236 en el modo Clásico y 237 en Alma de acero. Para el Recuerdo de cazadora hacen falta 230 (231): seis son opcionales.', en: '236 in Classic and 237 in Steel Soul. The Hunter\'s Memento needs 230 (231): six are optional.' } },
       FREE,
     ],
   },
@@ -171,7 +173,7 @@ const PAGES = [
     link: { es: 'Calculadora de daño', en: 'Damage calculator' },
     title: { es: 'Calculadora de daño de Silksong: golpes para cada jefe', en: 'Silksong damage calculator: hits to kill every boss' },
     description: {
-      es: 'Cuántos golpes necesita cada enemigo y jefe de Hollow Knight: Silksong con tu build, con sus propios modificadores a tu nivel, el hilo negro del acto 3 y los desafíos de enemigos.',
+      es: 'Cuántos golpes necesita cada enemigo y jefe de Hollow Knight: Silksong con tu build, con sus propios modificadores a tu nivel, el hilo negro del Acto 3 y los desafíos de enemigos.',
       en: 'How many hits each enemy and boss of Hollow Knight: Silksong takes with your build, through its own modifiers at your level, black-threaded in Act 3, and the enemy gauntlets.',
     },
     body: [
