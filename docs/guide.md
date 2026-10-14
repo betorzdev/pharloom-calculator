@@ -92,7 +92,7 @@ agree (the caches and walls, which the Map only draws close up, are left out); a
 the Map. Under it, the road to the next
 Act when there is one (the step you're on, by its name, and how far into it), then three columns: what changed since the previous save (below), what's
 missing **closest to your bench** (the first five, by the game's doors and the stations you've opened, each with its area and a pin that shows it on the Map), and your 100% split into
-the wiki's ten categories (Tools, Silk Spools, the Crafting Kit and Tool Pouch, abilities, Silk Skills, Crests,
+the wiki's ten categories (Tools, Silk Spools, the Tool Pouch & Crafting Kit, abilities, Silk Skills, Crests,
 masks, the Needle, Silk Hearts, the Everbloom), with the figure the game itself shows under it:
 they're the same. The site counts as the game does, checked on 92 real saves (0% to 100%, four
 patches, Steel Soul): whole masks and spools, not loose shards and fragments (two shards are
@@ -353,7 +353,7 @@ screen's.
 The list is the wiki's, plus two Journal entries it gives no health, read from the game's files:
 the Wisp and the Winged Lifeseed have no health or modifiers there and die to the first hit, and
 their card says so. The Muckmaggots, the Sandcarver and the Void Tendrils can't be hit that way
-(the water, the sand pits and a tablet), so they aren't in it.
+(the water, the sand pits and an entry completed from a rune-scroll), so they aren't in it.
 
 **Enemy gauntlets**: the other half of the screen, the game's 49 arenas of waves, each named by
 its place or its area, with its reward (the game's name for it, when it gives something the game
@@ -426,7 +426,7 @@ boss's arena, with the person who gives it. All of it on at first.
   which its map doesn't pin; the Flea Caravan's two of its own, in Greymoor and the Blasted Steps,
   only while your caravan is there), Bellway and Ventrica stations (dimmed while
   your game hasn't opened them: a station not unlocked, a toll not paid), the six Bellshrines (the Grand Gate asks for five of them;
-  the Songclave's is the sixth) and the shops, and the **Lifts** (off at first), gone once your game has called each. The shops are the
+  the Songclave's is the sixth) and the Vendors (the game's map key), and the **Lifts** (off at first), gone once your game has called each. The shops are the
   game's own (its ShopOwners: Pebb, Frey, Mort, the Forge Daughter, Grindle, Jubilana, the
   Mottled Skarr, the Twelfth Architect) and those who trade outside them: the Couriers' delivery
   wishes in Bellhart, the Moss Druid, who buys Mossberries, and Creige's drinks.
@@ -572,7 +572,7 @@ opens, the road's the first time.
 **The road to the next Act** (its card: the picture of the step you're on, how far into it, counted
 as its rings count, and «step 1 of 5»). Its steps as diamonds on one thread, the ones done lit and
 the one you're on larger, each numbered and named as what to do («1 · Unlock "Silk and Soul"»,
-«2 · Take the wish», «3 · Gather the snare»…; the full title shows on hover). On a phone the thread
+«2 · Accept the wish», «3 · Gather the snare»…; the full title shows on hover). On a phone the thread
 goes down the page, a step a line. Each step there, and each dim medallion of the steps to come,
 opens its card where it was clicked: «Step 3», its title, what the game says of it and its way onto
 the Map (a step done says «done» and has no map); the × or the step again close it, and the step
