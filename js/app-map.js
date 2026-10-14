@@ -341,8 +341,12 @@
       add({ key: 'gaunt:' + x.id, layer: 'gauntlet', scene: x.scene, act: x.act, got: !!g && g.gauntlets.includes(x.id), area: x.area, gauntlet: x,
         name: App.gauntletName(x.id), draw: (s, ti, k, c) => badge('gauntlet', portrait(champion(x)) || GLYPH.gauntlet, s, ti, k, c) });
     }
+    // Steel Soul's own (the Summoned Saviour, its fight and its Journal entry) only in Steel Soul;
+    // with no save, all of it, as a guide.
+    const steelGame = !own || !!(App.gameMeta() || {}).steel;
     for (const [foe, scene, , act] of SP.BOSSES) {
       const f = FOE.get(foe), e = bookOfFoe(foe);
+      if (e && e.steel && !steelGame) continue;
       add({ key: 'boss:' + foe, layer: 'boss', scene, act, got: !!g && g.bosses.includes(foe), name: f ? pick(f.name) : foe, foe, entry: e && e.id,
         draw: (s, ti, k, c) => badge('boss', portrait(e && e.id) || GLYPH.boss, s, ti, k, c) });
     }
@@ -365,7 +369,6 @@
       at: px != null ? { x: px, y: py } : undefined, got: false, name: pick(x.name), trade: x.note, draw: (s, ti, k, c) => pin('shop', 'pin_shop', s, ti, k, c) }));
     // People: the Wishwalls and who offers a wish, each with the wishes still open there.
     const boards = new Map(), givers = new Map();
-    const steelGame = !own || !!(App.gameMeta() || {}).steel;
     for (const [quest, f] of Object.entries(QU.FROM)) {
       const wi = wishOf(quest);
       if (wi < 0 || (CO.WISHES[wi][5] === 'steel' && !steelGame)) continue;   // a Steel Soul wish is only asked in Steel Soul
@@ -438,6 +441,7 @@
         draw: (s, ti, k, c) => pin('cocoon', 'shade_pin', s, ti, k, c) });
     }
     if (own) for (const e of J.BOOK) {
+      if (e.steel && !steelGame) continue;
       const rooms = SS.journalRooms[e.key];
       const scene = rooms && (rooms.map(([sc]) => sc).find((sc) => R.roomOf(sc)));
       add({ key: 'journal:' + e.id, layer: 'journal', scene, got: complete(own, e), name: pick(e.name), entry: e.id,
@@ -645,10 +649,17 @@
     try { prev = JSON.parse(App.load('pharloom.prev') || 'null'); } catch (e) { prev = null; }
     return prev && prev.snap ? SS.savefile.gameOf(prev.snap) : null;
   }
+  /* Her bench's pin: the one in her room, else the one in a part of it (Tube_Hub's is in
+     Tube_Hub_right, Bone_01c's in Bone_01c_bot: js/rooms.js roomPiece), among the pins shown and
+     then among all (Act 3's Ventrica hub draws Tube_Hub_Destroyed, where Tube_Hub_right was); with
+     none, her room's middle. */
   function benchPoint(scene, pins) {
     const room = scene ? R.roomOf(scene) : null;
     if (!room) return null;
-    const p = pins.find((x) => x[0] === 'bench' && (R.roomOf(x[3]) || {}).scene === room.scene);
+    const names = [lower(room.scene), lower(scene)];
+    const inRoom = (x) => x[0] === 'bench' && (R.roomOf(x[3]) || {}).scene === room.scene;
+    const inPart = (x) => x[0] === 'bench' && names.includes(lower(R.roomPiece(x[3])));
+    const p = pins.find(inRoom) || pins.find(inPart) || M.PINS.find(inRoom) || M.PINS.find(inPart);
     return p ? { x: p[1], y: p[2] } : { x: room.x, y: room.y };
   }
   /* The way's key, cheap (no path searched): the two benches and when this save was written, so
@@ -903,7 +914,7 @@
         <button type="button" data-act="mapZoom" data-value="out" aria-label="${esc(t('mapFurther'))}" title="${esc(t('mapFurther'))}">−</button>
         <button type="button" class="mp-big" data-act="mapBig" aria-pressed="${big}" aria-label="${esc(t(big ? 'mapSmall' : 'mapFull'))}" title="${esc(t(big ? 'mapSmall' : 'mapFull'))}">${big ? '⤡' : '⤢'}</button>
         <button type="button" class="mp-full" data-act="mapFull" aria-pressed="${full}" aria-label="${esc(t('mapFullScreen'))}" title="${fsTitle}">${full ? FULL_OUT : FULL_IN}</button></div>`;
-    const search = focusSet ? focusBar() : `<div class="mp-find"><label class="search">${App.lens}<input type="search" data-change="mapFind" placeholder="${esc(t('mapFind'))}" aria-label="${esc(t('mapFind'))}" autocomplete="off"></label>
+    const search = focusSet ? focusBar() : `<div class="mp-find"><label class="search">${App.lens}<input type="search" data-change="mapFind" placeholder="${esc(t(matchMedia('(max-width: 599px)').matches ? 'mapFindShort' : 'mapFind'))}" aria-label="${esc(t('mapFind'))}" autocomplete="off"></label>
         <ul class="mp-found" hidden></ul></div>`;
     sec.innerHTML = `<div class="mp${big ? ' is-big' : ''}${full ? ' is-full' : ''}">${brackets}${screenHead(esc(t('navMap')))}
       <div class="mp-stage">
@@ -1129,7 +1140,7 @@
 
   /* ── The card of the mark tapped, over the map, as the sibling's: its picture, its name, where
      it is and what it says (how it's had, what's still open there); in Free mode a piece can be
-     marked had from it; a gauntlet or a boss takes you to fight it, a boss or an entry to the
+     marked had from it (a ladder's leads to the Inventory); a gauntlet or a boss takes you to fight it, a boss or an entry to the
      Journal. It follows its mark as the map moves; ×, Escape or a tap on the empty map close it. ── */
   let cardCtx = null;
   // The things of the 100% a person gives or sells (js/how.js HOW), by the map's keys.
@@ -1140,6 +1151,8 @@
     for (const cat of ['tools', 'crests', 'skills', 'arts']) for (const [k, ways] of Object.entries(HW.HOW[cat])) scan(cat, ways, cat + ':' + k);
     return keys;
   }
+  // The pieces Free mode takes from the Inventory's ladders (js/app-progress.js freeView, LADDER).
+  const LADDER_KINDS = ['mask-shard', 'spool-fragment', 'silk-heart', 'needle', 'crafting-kit', 'tool-pouch'];
   const listOf = (names, more) => names.slice(0, 6).join(', ') + (names.length > 6 ? ' ' + t('mapMore', { n: num(names.length - 6) }) : '') + (more || '');
   function cardHtml(key) {
     const c = cardCtx || {};
@@ -1174,8 +1187,11 @@
     if (kind === 'piece') {
       const i = Number(key.slice(6));
       note = App.howPiece ? App.howPiece(i) : '';
+      /* In Free mode a piece is marked here, but those of a ladder (masks, silk, the Silk Hearts, the
+         Needle, the Kit, the Pouch) follow the Inventory's levels, as on Progress: the way there. */
       acts = own ? state(t(m.got ? 'pgGot' : 'invMissing'))
-        : `<button type="button" class="text-btn" data-act="mapMark" data-value="${i}" aria-pressed="${m.got}">${esc(t(m.got ? 'mapUnmark' : 'mapMark'))}</button>`;
+        : LADDER_KINDS.includes(m.layer) ? `${state(t('pgLadderNote'))}<a class="text-btn" href="${App.here(App.hashFor('game'))}" data-act="view" data-value="game">${esc(t('navGame'))}</a>`
+          : `<button type="button" class="text-btn" data-act="mapMark" data-value="${i}" aria-pressed="${m.got}">${esc(t(m.got ? 'mapUnmark' : 'mapMark'))}</button>`;
     } else if (['tools', 'crests', 'skills', 'arts', 'everbloom'].includes(kind)) {
       note = m.note || (App.howOf ? App.howOf(key) : '');
       if (g) acts = state(t(m.got ? 'pgGot' : 'invMissing'));

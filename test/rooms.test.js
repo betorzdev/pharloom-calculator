@@ -74,6 +74,9 @@ test('an interior the map does not draw goes where its door is; every gauntlet a
   const caravan = (at) => R.pinsOn({ ...world({}), caravan: at }).filter((p) => p[5]).map((p) => p[3]);
   assert.deepEqual([0, 1, 2, 3].map(caravan), [[], ['Greymoor_08'], ['Coral_Judge_Arena'], []]);
   assert.deepEqual(R.pinsOn(null).filter((p) => p[5]).map((p) => p[3]), ['Coral_Judge_Arena', 'Greymoor_08']);
+  // A bench pin in a part of its room is that room's (js/app-map.js benchPoint: Hornet sits on it).
+  const parts = { Tube_Hub_right: 'Tube_Hub', Bone_01c_bot: 'Bone_01c', Coral_Tower_01_Bench: 'Coral_Tower_01', Mosstown_03_bot: 'Mosstown_03', Belltown_Shrine: 'Belltown_Shrine' };
+  for (const [pin, room] of Object.entries(parts)) assert.equal(R.roomPiece(pin), room, pin);
 });
 
 test('the map\'s state: the rooms Act 3 destroys and the diving bell, by the game\'s own rules', () => {

@@ -254,6 +254,7 @@
     mapFullExit:    { es: 'Salir de pantalla completa', en: 'Exit full screen' },
     mapSmall:       { es: 'Mapa normal', en: 'Normal map' },
     mapFind:        { es: 'Busca en el mapa: una zona, una pieza, un jefe', en: 'Search the map: an area, a piece, a boss' },
+    mapFindShort:   { es: 'Busca en el mapa', en: 'Search the map' },   // the same, where the field is narrow (a phone)
     mapFindNone:    { es: 'Nada con ese nombre en el mapa.', en: 'Nothing by that name on the map.' },
     mapMark:        { es: 'Marcar como conseguido', en: 'Mark as had' },
     mapUnmark:      { es: 'Desmarcar', en: 'Unmark' },

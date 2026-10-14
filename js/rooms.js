@@ -199,7 +199,7 @@
      named after another piece and not a scene of the game, js/graph.js), the room it's a part of;
      the parts of a room the map draws only in parts are named after its scene (Under_13_left,
      _right and _bot are Under_13, 18 rooms). A destroyed piece stands for its room rather than
-     being part of it. */
+     being part of it. The Map finds a bench's pin by it too (js/app-map.js benchPoint). */
   const SCENE = new Set(Object.keys(G).map((k) => k.toLowerCase()));
   const ROOM_OF = new Map();
   function roomPiece(s) {
@@ -275,6 +275,6 @@
     return M.PINS.filter((p) => !off.has(p[3]) && !(g && p[5] && !rule(p[5], at)));
   };
 
-  SS.rooms = { ENTRANCE, roomOf, mapPoint, sceneOf, graphScene, walk, steps, path, areaOf, mapVars, rule, mapView, pinsOn };
+  SS.rooms = { ENTRANCE, roomOf, roomPiece, mapPoint, sceneOf, graphScene, walk, steps, path, areaOf, mapVars, rule, mapView, pinsOn };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.rooms;
 })();

@@ -501,7 +501,8 @@ shop's says what of the 100% it still has for you, Shakra's which maps you lack,
 wish giver's the wishes still open, a wish's place or thing which wish it's for, whether it's done
 and a button to its Wishwall or to who asks for it, a boss's whether it's beaten, with «Fight it in Combat» and
 «See in the Journal»; a gauntlet's its waves and reward; a Journal entry's its kills. In Free mode
-a piece's card marks it had. Tap an area's name for its card: the rooms of it you've visited,
+a piece's card marks it had; a Mask Shard, Spool Fragment, Silk Heart or upgrade of the Needle, Kit
+or Pouch follows the Inventory's levels instead, as on Progress, and its card leads there. Tap an area's name for its card: the rooms of it you've visited,
 and what's left there of the 100%, the Journal and the gauntlets.
 
 Other screens open the map on a thing: «See on the map» on each missing row of Progress and on a
