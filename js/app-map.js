@@ -688,7 +688,10 @@
      shows" included), composed by the same painter (js/map-paint.js) but cropped to the box of
      the rooms of the bench's branch of the map. Since the calm round (design/03-redesign.md, step
      3) it's the scene's backdrop, faint behind the area's name: a picture with no marks and no
-     Hornet (she's on her bench in front), not a way in (the Map tab is). */
+     Hornet (she's on her bench in front), not a way in (the Map tab is). Since the map round
+     (design/03-redesign.md, step 3, 14 Oct 2026) it fills the scene around her bench: the frame's
+     shape cut from the area's box, the bench's room right under her, and never smaller than the
+     map's own size (on a phone, the rooms round her rather than the whole area shrunk). */
   const AREA_BOX = new Map();
   // The branch's rooms' box in the map's pixels: [x, y, w, h], or null when it draws none (Surface).
   function branchBox(branch) {
@@ -716,7 +719,7 @@
     const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
     return { x: cx - w / 2, y: cy - h / 2, w, h };
   }
-  let areaCtx = null;   // { view, box }: what the figure on screen draws
+  let areaCtx = null;   // { view, box, at }: what the figure on screen draws, and her bench's point
   App.mapAreaHtml = (g) => {
     areaCtx = null;
     const room = g && g.bench ? R.roomOf(g.bench) : null;
@@ -724,9 +727,27 @@
     const view = R.mapView(g, { all: !prefs.mapGame });
     const box = areaView(room.area, view);
     if (!box) return '';
-    areaCtx = { view, box, key: MP.keyOf(view, 0) };
-    return `<figure class="hmB-map" aria-hidden="true"><span class="hmB-view" style="--r:${n2(box.w / box.h)}"><canvas class="hmB-canvas"></canvas></span></figure>`;
+    const z = view.zones[room.area];
+    const at = z ? [(room.x - z.at[0]) * z.sx + z.at[0] + z.dx, (room.y - z.at[1]) * z.sy + z.at[1] + z.dy] : [room.x, room.y];
+    areaCtx = { view, box, at, key: MP.keyOf(view, 0) };
+    return '<figure class="hmB-map" aria-hidden="true"><canvas class="hmB-canvas"></canvas></figure>';
   };
+  /* The part of the area's box the figure shows (`r`, its box on screen): the figure's shape, as
+     wide (or tall) as the area, no wider than the figure in map pixels, placed so that her bench's
+     point falls under Hornet (.hm-rest), kept inside the area's box. */
+  function areaCut(r) {
+    const { box, at } = areaCtx, k = r.width / r.height;
+    let w = box.w, h = box.w / k;
+    if (h > box.h) { h = box.h; w = box.h * k; }
+    if (w > r.width) { h *= r.width / w; w = r.width; }
+    const her = (document.querySelector('.hm-scene .hm-rest') || document.querySelector('.hmB-canvas')).getBoundingClientRect();
+    const fx = (her.left + her.width / 2 - r.left) / r.width, fy = (her.top + her.height / 2 - r.top) / r.height;
+    return {
+      x: Math.min(Math.max(at[0] - w * fx, box.x), box.x + box.w - w),
+      y: Math.min(Math.max(at[1] - h * fy, box.y), box.y + box.h - h),
+      w, h,
+    };
+  }
   /* Paints the figure just placed on the page (the screen is built whole each time, so this runs
      after every render): the pieces composed again only when what's shown changes, at the finer
      scale when the area is drawn larger than the map's own pixels. */
@@ -737,7 +758,7 @@
     const r = cv.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
     const w = Math.round(r.width * dpr), h = Math.round(r.height * dpr);
     if (!w || !h) return;
-    const { view, box, key } = areaCtx;
+    const { view, key } = areaCtx, box = areaCut(r);
     const scale = w / box.w > 1.1 ? 2 : 1, ck = key + '@' + scale;
     const draw = () => {
       if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; }

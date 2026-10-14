@@ -241,7 +241,8 @@
   --dur-run: 500ms;
   --hn-bar: 28px;      /* sitting under a tab's title without touching its letters */
   --hn-map: 44px;      /* at her bench on the Map, as big as the old still */
-  --hm-map-max: 340px; /* the scale of the area's map faint behind Your game's scene */
+  --hm-map-max: 340px; /* the height of Your game's scene, the area's map behind it (× 1.4) */
+  --hm-map-opacity: calc(var(--map-faint) * 1.4);   /* that map: the Map's guide twice as strong as it was, still behind (design/03-redesign.md, step 3, 14 Oct) */
   --hn-rest: 0.5;      /* resting on her bench in Your game's card: the wiki's sprites at half (her 186 px → 93) */
   --hm-art: 36px;      /* a picture in Your game's lists, as Progress's rows (css: .hm-art) */
 

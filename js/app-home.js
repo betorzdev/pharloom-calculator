@@ -2,7 +2,7 @@
    says (design/03-redesign.md, step 3, the calm round). In free mode, the ghost bench: the card a
    save shows, unlit, waiting for a game (the file dropped here goes, through js/app-saves.js, into
    the first empty save). In a save, the scene where Hornet rests: the area's title on its own
-   light, its map faint behind (js/app-map.js, App.mapAreaHtml), the Act and the time, Hornet at
+   light, its map behind her (js/app-map.js, App.mapAreaHtml), the Act and the time, Hornet at
    her bench and the 100% as one figure into Progress; under it what changed since the previous
    save, short. The parts of the 100% and the road are Progress's, the Journal's count the
    Journal's, masks and rosaries the Inventory's, what's missing nearby the Map's. Shares SS.app
@@ -204,7 +204,7 @@
 
   /* A save: the scene where Hornet rests (design/03-redesign.md, step 3, the calm round, A): «Resting
      at» over the area of her bench, lit by that area's own light from the game's map
-     (css/tokens.css, --area-*), the area's map faint behind (js/app-map.js, App.mapAreaHtml), one
+     (css/tokens.css, --area-*), the area's map round her bench (js/app-map.js, App.mapAreaHtml), one
      line with the Act and the time, Hornet at her bench, and the 100% as one figure into Progress.
      Under it what changed since the previous save, short. What another tab owns isn't repeated here. */
   const areaId = (a) => a.toLowerCase().replace(/_/g, '-');
