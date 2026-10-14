@@ -501,7 +501,11 @@
     // The pieces by their keys → today's places in the list; a key the list no longer has is dropped.
     out.pieces = out.pieces.map((k) => KEY_AT.get(k)).filter((i) => i !== undefined);
     out.wishes = out.wishes.map((k) => WISH_AT.get(k)).filter((i) => i !== undefined);
-    out.extras = [...new Set(out.extras.flatMap((k) => EXTRA_AT.get(k) || []))].sort((a, b) => a - b);
+    /* An area map's marks also by the maps the slot keeps (Has<Area>Map): a slot imported before
+       the maps were marks (or before any mark of one) still has them. */
+    const bought = new Set(out.maps.map((a) => 'Has' + a + 'Map'));
+    out.extras = [...new Set([...out.extras.flatMap((k) => EXTRA_AT.get(k) || []),
+      ...SP.EXTRAS.flatMap((x, i) => (x[0] === 'map' && x[2][0] === 'flag' && bought.has(x[2][1]) ? [i] : []))])].sort((a, b) => a - b);
     out.tasks = out.tasks.map((k) => TASK_AT.get(k)).filter((i) => i !== undefined);
     out.steelSpots = out.steelSpots.filter((x) => typeof x === 'string' && /^[\w ()-]{1,64}$/.test(x));
     out.cocoonAt = out.cocoon ? fourNumbers(out.cocoonAt) : [];

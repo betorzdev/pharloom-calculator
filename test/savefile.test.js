@@ -100,6 +100,19 @@ test('the gauntlets cleared: the arena\'s flag in sceneData or playerData, or wh
   assert.deepEqual(F.gameOf({ ...snap, 'pharloom.progress': JSON.stringify(old) }).gauntlets, []);
 });
 
+test('an area map\'s marks are had by the maps the slot keeps, also in a slot from before they were marks', () => {
+  const SP = require('../js/spots.js');
+  const marks = (flag) => SP.EXTRAS.flatMap((x, i) => (x[0] === 'map' && x[2][1] === flag ? [i] : []));
+  const pd = { ...BASE, HasHallsMap: true, HasWildsMap: true };
+  const snap = F.toSnapshot(pd, null);
+  const had = [...marks('HasHallsMap'), ...marks('HasWildsMap')].sort((a, b) => a - b);
+  assert.equal(marks('HasHallsMap').length, 2, 'the Choral Chambers map is a mark in two rooms');
+  assert.deepEqual(F.gameOf(snap).extras.filter((i) => SP.EXTRAS[i][0] === 'map'), had);
+  const old = JSON.parse(snap['pharloom.progress']);
+  const before = F.gameOf({ ...snap, 'pharloom.progress': JSON.stringify({ ...old, extras: [] }) });
+  assert.deepEqual(before.extras, had);
+});
+
 test('the map\'s pins lit: a Bellway station unlocked, a toll bench paid; kept in the slot by what they are', () => {
   const pd = { ...BASE, UnlockedFastTravel: true, UnlockedDocksStation: true };
   const sd = { persistentBools: { serializedList: [{ SceneName: 'Dock_01', ID: 'bell_toll_machine', Value: true }] } };
