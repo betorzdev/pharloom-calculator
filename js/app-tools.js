@@ -35,10 +35,12 @@
   function freeBuild() {
     let x = null;
     try { x = JSON.parse(load(KEY) || 'null'); } catch (e) { x = null; }
-    return E.normalize({ ...FREE_START, ...(x && typeof x === 'object' ? x : {}) });
+    return E.fit({ ...FREE_START, ...(x && typeof x === 'object' ? x : {}) });
   }
-  // Free mode's build is kept here and travels in the URL (js/codec.js), so a link says it.
-  const setFree = (st) => { save(KEY, JSON.stringify(st)); App.build = C.encode(st); };
+  /* Free mode's build is kept here and travels in the URL (js/codec.js), so a link says it. It's
+     kept as it can be worn (js/engine.js fit): what the Crest has no slot for, or a Tool's twin,
+     doesn't stay in the figures unseen. */
+  const setFree = (st) => { const x = E.fit(st); save(KEY, JSON.stringify(x)); App.build = C.encode(x); };
 
   /* A build in the link (the boot, or a link pasted by hand): it's Free mode's. In a save, which
      is read and not changed, the page goes to Free mode to show it, and says so. Without a
@@ -50,8 +52,10 @@
     if (linked) {
       if (store && App.activeSlot() !== S.FREE && S.select(store, S.FREE)) toast(t('ctLinkFree'));
       // Another build's link is shown as it is, not cut down to what you've marked (a reload's own is left as it was).
-      if (App.prefs.ctTry === 'mine' && C.encode(linked) !== C.encode(freeBuild())) { App.prefs.ctTry = 'all'; App.savePrefs(); }
-      setFree(linked);
+      const own = C.encode(linked) === C.encode(freeBuild());
+      if (App.prefs.ctTry === 'mine' && !own) { App.prefs.ctTry = 'all'; App.savePrefs(); }
+      // A reload's own build keeps the moment switched on it (focus, fury…), which the link doesn't carry.
+      setFree(own ? freeBuild() : linked);
       return;
     }
     App.build = App.game() ? '' : C.encode(freeBuild());
@@ -72,7 +76,7 @@
       st.tools = st.tools.filter((id) => have.tools.includes(id));
       st.skills = st.skills.filter((id) => have.skills.includes(id));
       if (st.crest !== 'hunter' && !have.crests.includes(st.crest)) st.crest = 'hunter';
-      return { st: E.normalize(st), locked: false, have };
+      return { st: E.fit(st), locked: false, have };
     }
     const b = g.build || {};
     return { locked: true, have: g, st: E.normalize({ ...b, needle: g.needle, kit: g.kit, pouch: g.pouch, masks: g.masks, spools: g.spools, hearts: g.hearts, cursed: b.cursed,
@@ -157,8 +161,11 @@
     const before = locked ? spots.map((s) => (read && s.i != null ? b.seats[s.i] : null)) : seats[key] || [];
     const opened = (s) => !locked || (read && Array.isArray(b.unlocked) && b.unlocked[s.i] === true);
     const held = spots.map((s, i) => (wear.includes(before[i]) && kindOf(before[i]) === s.kind ? before[i] : null));
+    // In a save whose slots were read, what the Crest's seats don't hold is on the Vesticrest
+    // (ExtraToolEquips), even with a slot of its colour empty on the Crest: those go there first.
+    const free = (id, vestOnly) => spots.findIndex((s, j) => !held[j] && s.kind === kindOf(id) && (!vestOnly || s.x == null));
     for (const id of wear.filter((x) => !held.includes(x))) {
-      const i = spots.findIndex((s, j) => !held[j] && s.kind === kindOf(id));
+      const i = locked && read && free(id, true) >= 0 ? free(id, true) : free(id, false);
       if (i >= 0) held[i] = id;
     }
     if (!locked) seats[key] = held;
@@ -197,7 +204,7 @@
     const situ = [
       st.crest === 'hunter' && st.hunterStage >= 2 ? check('focus', st.focus, t('ctFocus')) : '',
       st.crest === 'beast' ? check('fury', st.fury, t('ctFury')) : '',
-      st.tools.includes('flintslate') ? check('flint', st.flint, t('ctFlint')) : '',
+      st.tools.includes('flintslate') ? check('flint', st.flint, t('ctFlint', { name: pick(TOOL.get('flintslate').name) })) : '',
       check('challenge', st.challenge, t('ctChallenge')),
     ].join('');
     return `<div class="ct-levels">
@@ -373,7 +380,7 @@
       App.savePrefs();
       render();
     },
-    // Another Crest keeps the Silk Skills its slots have room for (js/engine.js normalize).
+    // Another Crest keeps the Silk Skills and the Tools its slots have room for (js/engine.js normalize, fit).
     ctCrest(node) { change((st) => { st.crest = node.dataset.value; }); },
     ctLevel(node) {
       const key = node.dataset.key, v = Number(node.dataset.value);
@@ -407,6 +414,8 @@
       described = { kind: 'tool', id };
       change((st) => {
         if (st.tools.includes(id)) { st.tools = st.tools.filter((x) => x !== id); return; }
+        // Its twin, if worn, gives it its place: a game never holds both (js/engine.js twinOf).
+        if (st.tools.includes(E.twinOf(id))) { st.tools = st.tools.map((x) => (x === E.twinOf(id) ? id : x)); return; }
         // Room in its colour: the Crest's slots, open and locked, and the Vesticrest's.
         const c = TOOL.get(id).color, s = E.compute(current().st).slots[c];
         const room = s.open + s.locked + s.extra;

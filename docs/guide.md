@@ -188,13 +188,16 @@ beside the Crest between the game's white brackets, and the Crest's name sits un
 Shaman wears a Silk Skill in each of its three slots. A save made while cursed (the Witch's curse,
 for a while in the story) shows the Cursed Crest: no slots, a line on what the curse does, and the
 figures with silk stopped at 3 and no Bind. In Free mode a
-tap on a worn one there takes it off, and the others stay in their slots. ‹ › change the Crest. Beside it,
+tap on a worn one there takes it off, and the others stay in their slots. ‹ › change the Crest,
+which keeps the Tools and Silk Skills it has slots for, those put on first. From a save, what the
+Crest's own slots don't hold is on the Vesticrest's, where the game has it. Beside it,
 the Tools and Silk Skills you have (as the game lists them; in Free mode, all of them, or on «What
 I have» what the Inventory's marks say, with a line to the Inventory while no Tool is marked), by colour, each on its slot as the Inventory draws it, the
 slot filled and lit when it's worn: a tap puts one on or takes it off,
 and pointing at one (or at a slot) describes it underneath with the game's words and its numbers
 (damage per hit, uses at the Pouch's level, a full load, the shell shards to refill it; a Silk
-Skill's damage and silk), as if it were worn when it isn't. Silkshot is the one the game repaired
+Skill's damage and silk), as if it were worn when it isn't. A Tool and its upgraded twin (Claw
+Mirror and Claw Mirrors…) are never worn together, as in the game: putting one on swaps the other. Silkshot is the one the game repaired
 (the Original, the Twelfth Architect's or the Forge Daughter's: a save says which), with its own
 picture, words, damage and uses.
 
@@ -207,7 +210,8 @@ with: **Everything** (every Tool, Crest and Silk Skill at hand, and the build's 
 top to start with) or **What I have** (your game as marked in the Inventory: its levels, the
 Hunter's evolution, the Vesticrest's slots Eva would have given it for the Crests and Memory Lockets
 marked, and only the Tools, Crests and Skills you have). On «What I have» the levels set here are
-your game's, and Combat fights with that. A link with a build always opens on «Everything».
+your game's, and Combat fights with that. A link with a build always opens on «Everything». The
+moment's switches (focus, fury, Flintslate, a Challenge) aren't in the link, but a reload keeps them.
 
 The Architect and the Witch split their slashes (the Architect drills: 0.9× + 0.1× + 0.1× the
 Needle; both have their own down- and run-slashes), and the band shows all three attacks; the

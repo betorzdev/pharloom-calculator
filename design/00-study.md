@@ -133,7 +133,7 @@ without parsing prose. The Spanish names are the game's, `CREST_<X>_NAME`.
 |---|---|---|---|---|---|---|---|
 | Hunter · «Cazadora» | 1 | 1 + 1 locked | 1 + 1 | 1 + 1 | – | 1.4 × 2 hits: 7 → 29 (14 → 58) | Evolved by Eva: ×1.3 after 6 hits; fully evolved (27 slots unlocked elsewhere): ×1.5 after 12; lost on taking damage or at a bench. Both Strike hits give silk |
 | Reaper · «Parca» | 1 | 1 + 1 | 1 + 1 | 1 + 1 | −23% | 2.5: 12 → 52 | After a Bind, hits drop silk fragments for 10 s (3 make a strand) |
-| Wanderer · «Errante» | 1 | 1 | 2 locked | 2 + 1 | +34% | 0.6 × 5: 3 → 12 (15 → 60) | 2% critical hits ×3 while Bind is ready (2.2% with Magnetite Dice; about +4% on average) |
+| Wanderer · «Errante» | 1 | 1 | 2 locked | 2 + 1 | +34% | about 0.55 × 5 (the damage page's table: 3/5/7/9/12, not the Architect's 0.6): 3 → 12 (15 → 60) | 2% critical hits ×3 while Bind is ready (2.2% with Magnetite Dice; about +4% on average) |
 | Beast · «Bestia» | 1 | 2 | – | 2 locked | | 2.5, 3 in fury: 12 → 52 | Bind in about 1 s gives fury for 4.7 s: +25% damage, +20% range and speed, hits heal up to 3 masks (4 with Multibinder) |
 | Witch · «Bruja» | 1 | 1 + 1 | 1 + 2 locked | – | −10% | about 0.8 per hit, up to 4 or 6 hits (the wiki disagrees with itself): 4 → 17 | Bind is a third faster and thrashes roots that damage and heal per hit; down-slash hits twice (0.55× + 0.5×) |
 | Architect · «Arquitecta» | – | 3 | 2 locked | 2 locked | | 0.6 × 5: 3 → 13 (15 → 65) | Slashes are drills (0.9× + 0.1× + 0.1×; down and run 0.55× + 0.5×); "craft Bind" refills red Tools anywhere for 9 silk instead of healing. No Silk Skills |

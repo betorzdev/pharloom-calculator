@@ -40,6 +40,12 @@ test("the Wanderer's critical hit is ×3 after the bracket, 2% of hits (2.2% wit
 test('the Needle Strike per Crest: the Hunter\'s two hits, 14 → 58', () => {
   assert.deepEqual(levels((c) => c.strike.total), [14, 26, 36, 48, 58]);
   assert.equal(E.compute({ crest: 'witch' }).strike.minHits, 2);
+  // The Wanderer's and the Architect's are five hits each, but not of the same: the damage page's
+  // table gives the Wanderer 3/5/7/9/12 (about 0.55 × the Needle; its own page, "roughly 3x") and
+  // the Architect 3/5/8/10/13 (0.6 ×, its page). At level 2, 35 and 40: the wiki's, not a rounding slip.
+  const strike = (crest) => [0, 1, 2, 3, 4].map((needle) => E.compute({ crest, needle }).strike.total);
+  assert.deepEqual(strike('wanderer'), [15, 25, 35, 45, 60]);
+  assert.deepEqual(strike('architect'), [15, 25, 40, 50, 65]);
 });
 
 test("the six Silk Skills per Needle level, as the study's table", () => {
@@ -325,4 +331,22 @@ test('the Vesticrest from what\'s marked by hand: Eva\'s count of the slots a Cr
   assert.deepEqual(E.vestOf(all, 20), { yellow: true, blue: true });
   assert.deepEqual(E.vestOf(['wanderer', 'reaper', 'beast'], 0), { yellow: false, blue: false });
   assert.deepEqual(E.vestOf(['wanderer', 'reaper', 'beast'], 5), { yellow: true, blue: false });
+});
+
+test('a build that can be worn (Free mode): a Tool and its twin never together, and only what the Crest has slots for', () => {
+  // The upgraded twins and the Steel Soul one, both ways.
+  assert.deepEqual([E.twinOf('claw-mirror'), E.twinOf('claw-mirrors'), E.twinOf('curveclaw'), E.twinOf('druids-eyes'), E.twinOf('dead-bugs-purse'), E.twinOf('straight-pin')],
+    ['claw-mirrors', 'claw-mirror', 'curvesickle', 'druids-eye', 'shell-satchel', null]);
+  // Of a pair, the one put on last stays.
+  assert.deepEqual(E.fit({ tools: ['claw-mirror', 'compass', 'claw-mirrors'] }).tools, ['compass', 'claw-mirrors']);
+  // The Hunter's three yellow slots (open, locked, the Vesticrest's) to the Witch's one (the Vesticrest's):
+  // the first put on stays, and the Barbed Bracelet no longer adds its 25% unseen (21, not 26).
+  const hunter = { needle: 4, vest: { yellow: true, blue: true }, tools: ['compass', 'barbed-bracelet', 'magnetite-dice', 'straight-pin'] };
+  assert.deepEqual(E.fit(hunter).tools, hunter.tools);
+  const witch = E.fit({ ...hunter, crest: 'witch' });
+  assert.deepEqual(witch.tools, ['compass', 'straight-pin']);
+  assert.equal(E.compute(witch).needle.slash, 21);
+  assert.equal(E.compute({ ...hunter, crest: 'witch' }).slots.yellow.over, 2, 'compute() cuts nothing: it says what does not fit');
+  // No Vesticrest: the Shaman has no red or yellow slot at all.
+  assert.deepEqual(E.fit({ crest: 'shaman', tools: ['straight-pin', 'compass', 'claw-mirror'] }).tools, ['claw-mirror']);
 });

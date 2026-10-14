@@ -84,6 +84,25 @@
     };
   }
 
+  /* A Tool and its other form, which a game never holds together (js/data.js: Curveclaw and
+     Curvesickle, Druid's Eye and Eyes, Claw Mirror and Mirrors are an upgrade; the Shell Satchel
+     replaces the Dead Bug's Purse in Steel Soul): none of the author's 73 saves has both. */
+  const TWIN = new Map();
+  for (const t of D.TOOLS) for (const o of [t.upgrade, t.upgradeOf, t.replaces]) if (o && TOOL.has(o)) { TWIN.set(t.id, o); TWIN.set(o, t.id); }
+  const twinOf = (id) => TWIN.get(id) || null;
+
+  /* A build that can be worn (Free mode's: a Crest changed, a link, a build kept by an older
+     visit): of a Tool and its twin, the one put on last; and of each colour, the Tools in the
+     order they were put on while the Crest has slots for them, open and locked, and the
+     Vesticrest's. What a save wears is never cut: compute() says what doesn't fit (slots.over). */
+  function fit(s) {
+    const st = normalize(s);
+    const crest = CREST.get(st.crest), left = {};
+    for (const c of ['red', 'blue', 'yellow']) left[c] = crest.slots[c][0] + crest.slots[c][1] + (st.vest[c] ? 1 : 0);
+    st.tools = st.tools.filter((id, i) => !st.tools.slice(i + 1).includes(twinOf(id))).filter((id) => left[TOOL.get(id).color]-- > 0);
+    return st;
+  }
+
   /* The player's modifiers that apply now, to the Needle or to the Skills: { add, first, mul,
      active: [ids] }. first: what only the first hit of an attack takes (the Challenge: the wiki's
      own example, a Needle Strike's two hits at 2.75 and 2.25). The Hunter's focus is its evolved
@@ -476,6 +495,6 @@
   }
   const vestOf = (crests, lockets) => { const n = evaOf(crests, lockets); return { yellow: n >= D.VESTICREST.at.yellow, blue: n >= D.VESTICREST.at.blue }; };
 
-  SS.engine = { roundHalfEven, normalize, variantOf, toolArt, modsFor, hitsOf, usesToKill, interval, compute, plan, regen, binds, endure, phases, pieces, evaOf, vestOf };
+  SS.engine = { roundHalfEven, normalize, twinOf, fit, variantOf, toolArt, modsFor, hitsOf, usesToKill, interval, compute, plan, regen, binds, endure, phases, pieces, evaOf, vestOf };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.engine;
 })();
