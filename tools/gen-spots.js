@@ -360,8 +360,15 @@ const cacheCheck = (c) => {
 /* A thing whose completionist check stops holding once it's had (placed where that check says):
    the Heart Memento is the fourth Old Heart, the one The Old Hearts doesn't take. Any heart held or
    shown in the Bellhome (its check) is true while the wish is on and false once three are handed
-   over; all four found (CollectedHeart*, never cleared) is the spare one had, shown or not. */
-const CHECK_OF = { 'Heart Memento': ['all', ...['Flower', 'Coral', 'Hunter', 'Clover'].map((h) => ['flag', 'CollectedHeart' + h])] };
+   over; all four found (CollectedHeart*, never cleared) is the spare one had, shown or not.
+   Bone_East_17b's breakable wall is gone once the Savage Beastfly wish is taken: a
+   TestGameObjectActivator on it turns it off while Beastfly Hunt IsAccepted (Assembly-CSharp
+   1.0.30000; IsAccepted stays true once it's done), and its bool, broken or not, no longer says
+   (false in 40 of the author's saves past the wish). */
+const CHECK_OF = {
+  'Heart Memento': ['all', ...['Flower', 'Coral', 'Hunter', 'Clover'].map((h) => ['flag', 'CollectedHeart' + h])],
+  'Breakable Wall (Bone_East_17b)': ['any', ['bool', 'Bone_East_17b', 'Breakable Wall'], ['accepted', 'Beastfly Hunt']],
+};
 const extra = (kind, it, name) => {
   let c = C.check(it.parsingInfo, fail);
   if ((kind === 'rosary-cache' || kind === 'shard-cache') && c[0] === 'int' && !(c = cacheCheck(c))) return;
@@ -571,7 +578,10 @@ for (const [kind, item, text, icon] of KEY_ITEMS) {
      hidden   what hides part of a room until Hornet walks in (Remasker, and the Unmasker of the
               "Secret Mask" rooms), one mark per room, had once all of them are uncovered: a room
               has from one to ten, so one each would bury the map. The inverse ones (they cover
-              again as she leaves), the glow rims and the sound regions aren't a hidden place.
+              again as she leaves), the glow rims and the sound regions aren't a hidden place, and
+              neither is a name two objects of the room share: the save keeps one bool for them,
+              whichever wrote last (Aqueduct_04's two Remasker New Sharp Ultra: true, then false
+              again, in the author's saves; 14-Oct-2026).
    Each [kind, null, ['bool', Scene, id] (hidden: all of the room's), scene]. */
 const NOT_HIDDEN = /Inverse|Inverted|glow|Glow|Sound Region|vent_mask/;
 const LIFT_OUT = new Set(['Organ_01 Hornet_cage_rect_lift_organ (1)']);
@@ -590,11 +600,12 @@ const LIFT_OUT = new Set(['Organ_01 Hornet_cage_rect_lift_organ (1)']);
       EXTRAS.push([as, null, c, scene]);
     }
   }
-  const rooms = new Map();
-  for (const [scene, id, type, x, y] of kept.hidden || fail('pickups.json has no hidden')) {
-    if (type !== 'bool' || NOT_HIDDEN.test(id) || !onMap(scene)) continue;
+  const rooms = new Map(), twice = new Map();
+  for (const [scene, id] of kept.hidden || fail('pickups.json has no hidden')) twice.set(scene + '\u0000' + id, (twice.get(scene + '\u0000' + id) || 0) + 1);
+  for (const [scene, id, type, x, y] of kept.hidden) {
+    if (type !== 'bool' || NOT_HIDDEN.test(id) || !onMap(scene) || twice.get(scene + '\u0000' + id) > 1) continue;
     if (!rooms.has(scene)) rooms.set(scene, []);
-    if (!rooms.get(scene).some((r) => r[0] === id)) rooms.get(scene).push([id, x, y]);
+    rooms.get(scene).push([id, x, y]);
   }
   for (const [scene, list] of rooms) {
     const pts = list.filter((r) => typeof r[1] === 'number');
@@ -1037,7 +1048,8 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               shards); act null when the thing has no Act of its own; more { shop, price } for a
               map Shakra sells, { found } for one found, { item } for a rosary or shard item; check as
               js/collectibles.js's, plus ['relic', name], ['memento', name], ['int', scene, id,
-              value] (['int', scene, id, value, 'min']: at least value) and ['geo', scene, id]
+              value] (['int', scene, id, value, 'min']: at least value), ['geo', scene, id] and
+              ['accepted', quest] (the wish taken, done or not)
      BOSSES   [foe id, scene, check, act]: each boss fight's arena, whether it's beaten and the
               first Act it can be fought in
      VENDORS  vendor id → the rooms it sells in; PEOPLE  npc id → its room
