@@ -126,8 +126,10 @@ and the Pale Oil under it (the game's flask three times, lit up to how many you'
 row as the HUD draws them, with the loose Mask Shards under them (four make a mask), the silk (9 to
 18) as beads on one thread with the loose Spool Fragments (two make a spool), and the Silk Hearts;
 then the **Silk Skills** with what each deals at this build, and the **abilities** (Needle Strike
-with its damage). On the right, her equipment: the **Crests**, with the Memory Lockets that open
-their slots under them, and the **Tools**: the Crafting Kit and Tool Pouch with their level and the
+with its damage): the seven of the 100% under the head's count, then the four that aren't (the two
+cloaks, Beastling Call and Elegy of the Deep) under «Other abilities» with their own. On the right,
+her equipment: the **Crests** (an evolved Hunter Crest drawn as its evolved stage), with the Memory
+Lockets that open their slots under them, and the **Tools**: the Crafting Kit and Tool Pouch with their level and the
 Craftmetal, three rows alike, then the Tools by colour, each on its slot's diamond (hollow in its colour while you
 lack it). There's one slot per point of the 100%: a Tool and its upgrade (Curveclaw and
 Curvesickle, Druid's Eye and Eyes, Claw Mirror and Mirrors) share one, showing the one you have,
@@ -155,7 +157,7 @@ Crest, Silk Skill, ability, the Everbloom, the Farsight, the Journal, an Old Hea
 Memento to mark it had or not (its text opens under the shelf); a slot a Tool shares with its
 upgrade goes none, had, upgraded with each tap. Each shelf has «All · None», and what comes in numbers (loose Mask
 Shards and Spool Fragments, Memory Lockets, Craftmetal, Pale Oil, fleas, what's in the purse, the
-Relics of each kind) has − N +: the loose shards and fragments stop at what the masks and silk
+Relics of each kind) has − N +, its maximum beside the figure («− 6/20 +»): the loose shards and fragments stop at what the masks and silk
 left unfilled. The Rosaries and Shell Shards are typed: Enter or leaving the field
 takes the figure, and the shards stop at what your Pouch holds. With the keyboard, the focus stays
 where it was through each mark. «Start from»: «New Game» (the
