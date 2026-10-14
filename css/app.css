@@ -686,9 +686,9 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
 
 /* ── Saves: the game's profile screen ────────────────────────────────────
    The four slots stacked like the game's bars: the number, the masks with the
-   HUD's sprites, the nail and what the game carries (charms found, Journal, Hall). No boxes:
-   rules in the spotlight's bone between slots, and the whole bar responds to the finger. The slot you're
-   playing carries the accent's line on its edge, as the equipped charm does, and a light from
+   HUD's sprites, the Needle and what the game carries (the Act, the completion, the Journal). No
+   boxes: rules in the spotlight's bone between slots, and the whole bar responds to the finger. The
+   slot you're playing carries the accent's line on its edge and a light from
    that edge. Free mode, which is nobody's game, is the one sheet with a frame. */
 /* Saves draws its own plate (.saves-body, with the frame): the screen around it adds none. */
 .screen[data-view="saves"] { padding: 0; }
@@ -1075,6 +1075,8 @@ kbd {
   .save-where { grid-column: 1 / -1; }
   .save-fact { display: contents; }
   .save-fact b { text-align: right; }
+  /* Its unit right after the figure, also in the import view's preview, which centres its text. */
+  .save-fact .u { text-align: left; }
   .save.is-free .save-n::before { width: var(--sp-16); }
   .save.is-free .save-n img { height: var(--sp-8); }
   .save-masks img { height: var(--sp-4); }
@@ -1764,6 +1766,7 @@ button.inv-plate-art { padding: 0; }
 .inv-h:has(.inv-all)::after { order: 2; }
 .inv-step { display: inline-flex; align-items: center; gap: var(--sp-half); }
 .inv-step b { min-width: var(--sp-6); text-align: center; font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-sm); color: var(--ink-strong); }
+.inv-step b i { font-style: normal; font-size: var(--fs-xs); font-weight: 400; color: var(--muted); }
 .inv-step .icon-btn { width: var(--sp-8); height: var(--sp-8); }
 /* What Hornet carries, under both columns and across the width (design/43, 1 A): the purse and
    the items, then the Relics and the Mementos. */
@@ -2023,6 +2026,7 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 .hj-hunt:is(:hover, :focus-visible), .hj-hunt.is-picked { border-color: var(--accent-line); background: var(--veil); }
 .hj-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: var(--sp-3) var(--sp-8); margin: var(--sp-4) 0 var(--sp-2); }
 .hj-find { flex: 1 1 16rem; max-width: 24rem; margin-right: auto; }
+.hj-find input { text-overflow: ellipsis; }   /* the Spanish placeholder is longer than a phone's field: ends in an ellipsis, not cut mid-word */
 /* What it shows and in what order: each choose-one in words under its label (design/03-redesign.md,
    step 7, fourth round), as the Crest screen's «Try with». */
 .hj-ctl { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--sp-2) var(--sp-8); }
