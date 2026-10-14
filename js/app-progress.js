@@ -155,11 +155,15 @@
     const pieces = (kind, name) => CO.PIECES.map((p, i) => ({ p, i })).filter(({ p }) => p[0] === kind)
       .map(({ p, i }, k) => ({ name: name ? name(k) : KIND_NAME[kind](), got: !!g && g.pieces.includes(i), act: p[1], area: p[3], scene: R.sceneOf(p[2]),
         ...howParts(HW.HOW.pieces[i], HW.NEEDS.pieces[i]), ways: HW.HOW.pieces[i], icon: pieceIcon(kind, k), mark: 'piece:' + i }));
+    /* A Steel Soul save has the Tool its mode gives instead of another (js/data.js replaces: the
+       Shell Satchel for the Dead Bug's Purse): the row is named and drawn as that one. Free mode,
+       with no mode, as Classic. Where it is, how to get it and its mark stay the pair's. */
+    const steel = !!(g && App.game() && (App.gameMeta() || {}).steel);
     const tools = CO.COUNTED.map((ids) => {
-      const tool = D.TOOLS.find((x) => x.id === ids[0]);
+      const tool = (steel && ids.map((id) => D.TOOLS.find((x) => x.id === id)).find((x) => x && x.replaces)) || D.TOOLS.find((x) => x.id === ids[0]);
       const got = !!g && ids.some((id) => g.tools.includes(id));
       return { name: pick(tool.name), got, color: tool.color, ...where(CO.WHERE.tools, ids[0]), ...howParts(HW.HOW.tools[ids[0]], HW.NEEDS.tools[ids[0]]), ways: HW.HOW.tools[ids[0]],
-        icon: `assets/icons/tools/${ids[0]}.webp`, mark: 'tools:' + ids[0] };
+        icon: `assets/icons/tools/${tool.id}.webp`, mark: 'tools:' + ids[0] };
     });
     const named = (list, ids, map, key) => ids.map((id) => ({ name: pick(list.find((x) => x.id === id).name), got: has(g ? g[key] : [], id), ...where(map, id),
       ...howParts(HW.HOW[key][id], HW.NEEDS[key][id]), ways: HW.HOW[key][id], icon: `assets/icons/${key}/${id}.webp`, mark: key + ':' + id }));
@@ -230,13 +234,16 @@
   /* The pane «Tareas»: the main objectives, then the wishes by type, each with the game's name. */
   const TYPE_NAME = { 'main-objectives': () => t('pgTasksMain'), collect: () => t('pgTasksCollect') };
   function tasks(g, skip = new Set()) {
-    // A wish only one mode has (the Steel Soul's, a Classic one) shows in a game of that mode.
+    /* A wish only one mode has (the Steel Soul's, a Classic one) shows in a save of that mode. Free
+       mode has none: it shows both, as the Journal and the Map do. */
     const m = App.gameMeta();
-    const mode = !g ? null : m && m.steel ? 'steel' : 'classic';
+    const mode = !g || !App.game() ? null : m && m.steel ? 'steel' : 'classic';
     const done = new Set(g ? g.quests : []);
     return CO.WISH_TYPES.map((ty) => {
       const list = CO.WISHES.map((w, i) => ({ w, i })).filter(({ w, i }) => w[0] === ty.id && !skip.has(i) && (!mode || !w[5] || w[5] === mode))
-        .map(({ w, i }) => ({ name: pick(w[4]), got: !!g && g.wishes.includes(i), act: w[1], area: w[3], scene: wishScene(wishQuest(w), done) })).sort(byAct);
+        .map(({ w, i }) => { const scene = wishScene(wishQuest(w), done);
+          // With no area in the pane's list, the area it's taken in, as the road's rows (wishRow).
+          return { name: pick(w[4]), got: !!g && g.wishes.includes(i), act: w[1], area: w[3] || (scene && R.areaOf(scene)) || null, scene }; }).sort(byAct);
       const title = ty.name ? pick(ty.name) : TYPE_NAME[ty.id]();
       return list.length ? group('wish-' + ty.id, title, list, g, list.filter((x) => x.got).length, list.length) : '';
     }).join('');
@@ -489,7 +496,8 @@
     const shrines = bells.shrines.map((b) => ({ name: pick(b.name), got: b.ok, act: 1, mark: 'bell:' + b.field }));   // named by their area already
     const gateName = pick(QU.CHAIN[gate.quest].name);
     return [
-      step(1, bells, t('roadBells'), list(shrines, g), g, r),
+      // Gone round by the Phantom, the Bellshrines left are no longer to do: as a part met, only with Everything.
+      step(1, bells, t('roadBells'), list(shrines, g, !!bells.bypassed), g, r),
       step(2, gate, t('roadGate', { gate: gateName }), '', g, r),
       step(3, judge, t('roadJudge', { judge: foeName('last-judge'), phantom: foeName('phantom') }), '', g, r),
       step(4, r.steps[3], t('roadCitadel'), '', g, r),
@@ -877,8 +885,11 @@
           icon: pieceIcon(kind, k, p), mark: 'piece:' + i })).sort(byAct);
       return group(kind, key ? t(key) : KIND_NAME[kind](), list, g, list.filter((x) => x.got).length, list.length);
     }).join('') + (() => {
-      const list = OTHER_ARTS.map((id) => { const w = CO.WHERE.arts[id] || [];
-        return { name: pick(D.ARTS.find((x) => x.id === id).name), got: !!g && g.arts.includes(id), act: w[0] || 0, area: w[1] || null, icon: `assets/icons/arts/${id}.webp`, mark: 'arts:' + id }; });
+      /* Beastling Call and Elegy of the Deep aren't in WHERE: their Act and room are the Map's
+         (js/spots.js AT.act, AT.arts), so they don't sit under the Act 2 head of the cloaks. */
+      const list = OTHER_ARTS.map((id) => { const w = CO.WHERE.arts[id] || [], scene = spotScene('arts:' + id);
+        return { name: pick(D.ARTS.find((x) => x.id === id).name), got: !!g && g.arts.includes(id), act: w[0] || (SPOT && SPOT.act && SPOT.act['arts:' + id]) || 0,
+          area: w[1] || (scene && R.areaOf(scene)) || null, icon: `assets/icons/arts/${id}.webp`, mark: 'arts:' + id }; });
       return group('other-arts', t('pgOtherArts'), list, g, list.filter((x) => x.got).length, list.length);
     })() + (() => {
       // The enemy gauntlets, in the wiki's order (by area), named as Combat names them.
@@ -891,7 +902,9 @@
     const roadWishes = next && next.act === 3 ? new Set(QU.GROUPS['Soul Snare'].quests.filter((q) => q.required)
       .map((q) => A.missing(q.quest, new Set(own.quests)).wish).filter((i) => i >= 0)) : new Set();
     /* The two tabs (design/27b-progress-variants.html, 1 D): two cards, each with its picture of
-       how far you are; the one used last opens (prefs.pgTab), the Act's the first time. */
+       how far you are; the one used last opens (prefs.pgTab), the Act's the first time. As the
+       ARIA tabs pattern: only the selected one is in the Tab order, and the arrows, Home and End
+       move to the other and select it (the keydown below). */
     const tab = prefs.pgTab === '100' ? '100' : 'act';
     const s = next ? next.steps[stepAt(next)] : null;
     // What's done of the step, in the units its rings count (a point a point, a check a check).
@@ -902,7 +915,7 @@
       : own ? { art: QUEST('act3_finale'), label: t('roadGame'),
         sub: esc((({ seen, shut, of }) => t(shut.length ? 'roadEndingsReach' : 'roadEndings', { n: num(seen.size), of: num(of) }))(endsOf(own))) }
         : { art: QUEST('grand_gate_final'), label: t('roadBoth'), sub: '' };
-    const card = (id, art, label, sub) => `<button type="button" class="pg-tab" role="tab" id="pg-tab-${id}" aria-controls="pg-panel" aria-selected="${tab === id}" data-act="pgTab" data-value="${id}">
+    const card = (id, art, label, sub) => `<button type="button" class="pg-tab" role="tab" id="pg-tab-${id}" aria-controls="pg-panel" aria-selected="${tab === id}" tabindex="${tab === id ? 0 : -1}" data-act="pgTab" data-value="${id}">
         <span class="pg-tab-art" aria-hidden="true">${art}</span><span class="pg-tab-l">${esc(label)}</span>${sub ? `<span class="pg-tab-s">${sub}</span>` : ''}</button>`;
     const tabs = `<div class="pg-tabs" role="tablist" aria-label="${esc(t('navProgress'))}">
         ${card('act', `<img src="${actCard.art}" alt="" loading="lazy">`, actCard.label, actCard.sub)}
@@ -937,6 +950,20 @@
         <div class="pg-panel" id="pg-panel" role="tabpanel" aria-labelledby="pg-tab-${tab}">${invite}${tab === 'act' ? act : hundredTab}</div>
       </div>`;
   };
+
+  /* The tabs from the keyboard (the ARIA tabs pattern, selection following focus): Left and Right
+     go to the other tab, wrapping round, Home to the first and End to the last; pgTab selects it,
+     repaints and focuses it. */
+  const TABS = ['act', '100'];
+  document.addEventListener('keydown', (ev) => {
+    const tab = ev.target.closest && ev.target.closest('.pg-tab[role="tab"]');
+    if (!tab || ev.altKey || ev.ctrlKey || ev.metaKey) return;
+    const at = TABS.indexOf(tab.dataset.value), n = TABS.length;
+    const to = { ArrowRight: (at + 1) % n, ArrowLeft: (at - 1 + n) % n, Home: 0, End: n - 1 }[ev.key];
+    if (to === undefined) return;
+    ev.preventDefault();
+    actions.pgTab({ dataset: { value: TABS[to] } });
+  });
 
   Object.assign(actions, {
     pgOpen(node) {
@@ -987,12 +1014,16 @@
       const tab = document.getElementById('pg-tab-' + prefs.pgTab);
       if (tab) tab.focus();
     },
-    // Free mode: a row's box marks it had or not (the Inventory's own marks).
+    /* Free mode: a row's box marks it had or not (the Inventory's own marks). A Tool's row is its
+       point (js/collectibles.js COUNTED): marked with its upgrade (the Curvesickle), the box
+       unmarks both. */
     pgOwn(node) {
       const [kind, id] = node.dataset.value.split(':');
       App.freeMark((m) => {
         const flip = (arr, x) => (arr.includes(x) ? arr.filter((y) => y !== x) : [...arr, x]);
-        if (kind === 'piece') m.pieces = flip(m.pieces, Number(id));
+        const pair = kind === 'tools' ? CO.COUNTED.find((ids) => ids.includes(id)) : null;
+        if (pair) m.tools = pair.some((x) => m.tools.includes(x)) ? m.tools.filter((x) => !pair.includes(x)) : [...m.tools, id];
+        else if (kind === 'piece') m.pieces = flip(m.pieces, Number(id));
         else if (kind === 'everbloom') m.everbloom = !m.everbloom;
         else m[kind] = flip(m[kind], id);
       });

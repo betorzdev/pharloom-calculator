@@ -9,8 +9,9 @@ Albert only steps in to pick between options; everything else goes ahead without
 
 ## Handing out
 
-- **One agent per task**, in the background, `isolation: "worktree"` (based on `dev`), so the
-  branches don't mix. Tasks that touch the same files still get one agent each; say in each
+- **One agent per task**, in the background, `isolation: "worktree"`, so the branches don't mix.
+  The worktree starts from the remote's default branch (`main`), not `dev`: the agent cuts its
+  PR branch from `origin/dev`. Tasks that touch the same files still get one agent each; say in each
   prompt which other agents are near, so they keep their diff small.
 - **Model and effort by the task**, not one size for all:
   - a small mechanical fix (one CSS rule, a flag): sonnet, low;
@@ -18,6 +19,7 @@ Albert only steps in to pick between options; everything else goes ahead without
   - a design round, a screen restructure, save or completion logic: opus, high;
   - a hard rendering or data bug with root causes to find: opus, xhigh.
 - **Numbers for variants pages**: hand out distinct `NN` up front to parallel design agents.
+- **A private Chrome debug port** per agent (9450, 9451...), never 9333 (Albert's).
 
 ## Every agent prompt carries
 
@@ -26,12 +28,20 @@ Albert only steps in to pick between options; everything else goes ahead without
    changes how something looks), phase 1 is a variants page by `/design-round` and nothing else;
    the agent stops and returns the page path and the decisions. Phase 2 only after the pick.
 3. The close: `/finish` (tests, audit, docs), a branch with the fitting prefix (`feat/`, `fix/`,
-   `refactor/`...) from `dev`, one brief commit, push, `gh pr create --base dev`.
+   `refactor/`...) cut from `origin/dev`, one brief commit, push, `gh pr create --base dev`.
    **No `Co-Authored-By`, no "Generated with Claude Code"**: say it in every prompt, it
    overrides the harness reminder. No em dash. Return the PR URL.
-4. Verify visually: headless Chrome over `file://`, real saves, 1440 and 390 (`npm run drive`, `tools/drive.js`).
+4. Verify visually: headless Chrome over `file://`, real saves, 1440 and 390 (`npm run drive`, `tools/drive.js`), on its own port.
+5. **Clean up before reporting**: stop every process it started (Chrome, servers, scripts) and
+   kill only its own PIDs. To wait on a process, wait on its PID (`while kill -0 PID`), never on
+   `until ! pgrep -f "<pattern>"`: the loop's own command line matches the pattern, so it never
+   ends and the agent stays "waiting on its own background work".
 
 ## While they run
+
+- **After each hand-back**, look for what the agent left running (`ps` for its port, its
+  scratchpad folder, `sleep`/`until` loops, `http.server`) and stop it; check again before the
+  final summary.
 
 - **Never enter plan mode** while agents run: it blocks every agent's writes, and leaving it asks
   Albert for permission. Choices go to AskUserQuestion directly.
