@@ -1,11 +1,12 @@
-/* js/app-home.js — Your game, the start screen. In free mode, the ghost bench: the card a save
-   shows, unlit, waiting for a game (the file dropped here goes, through js/app-saves.js, into the first empty save). In a save, the game's
-   area title card where Hornet rests, with the 100% (set against the figure the game itself
-   shows), the Journal, the masks and the rosaries; under it what changed since the previous
-   save, what's missing closest to the bench and the 100% split into the wiki's ten categories
-   (js/completion.js); then the ways on to the other screens. Beside the card, the map of the area
-   she rests in (js/app-map.js, App.mapAreaHtml; the sibling's area map). Shares SS.app with js/app.js (see
-   there). */
+/* js/app-home.js — Your game, the start screen: a calm place that says only what no other tab
+   says (design/03-redesign.md, step 3, the calm round). In free mode, the ghost bench: the card a
+   save shows, unlit, waiting for a game (the file dropped here goes, through js/app-saves.js, into
+   the first empty save). In a save, the scene where Hornet rests: the area's title on its own
+   light, its map faint behind (js/app-map.js, App.mapAreaHtml), the Act and the time, Hornet at
+   her bench and the 100% as one figure into Progress; under it what changed since the previous
+   save, short. The parts of the 100% and the road are Progress's, the Journal's count the
+   Journal's, masks and rosaries the Inventory's, what's missing nearby the Map's. Shares SS.app
+   with js/app.js (see there). */
 (() => {
   'use strict';
   const SS = globalThis.SS;
@@ -74,8 +75,9 @@
      thing with its picture (a Tool on its slot's diamond, the map's own mark for what the map
      shows, the game's picture for the rest), its name and where under it, grouped by kind in
      js/changes.js's order; the Journal's entries as their portraits. The completion's gain opens
-     it, as a bar. Past CAP rows the rest wait behind «Show all n». */
-  const CAP = 8;
+     it, as a bar. Past CAP rows the rest wait behind «Show all n» (five: the screen stays calm,
+     the calm round). */
+  const CAP = 5;
   let sinceAll = false;
   const img = (src, alt = '') => `<img src="${src}" alt="${esc(alt)}" loading="lazy">`;
   const icon = (p) => `assets/icons/${p}.webp`;
@@ -107,8 +109,8 @@
     }
     return out;
   }
-  // A row, its place in the fade (--i) and what goes at its end (the Map's pin).
-  const rowHtml = (r, i, end = '') => `<li class="hm-row" style="--i:${i}">${r.art}<span class="hm-row-txt"><span class="hm-row-name"${r.nt ? NT : ''}>${esc(r.name)}</span>${r.sub ? `<span class="hm-row-sub"${NT}>${esc(r.sub)}</span>` : ''}</span>${end}</li>`;
+  // A row and its place in the fade (--i).
+  const rowHtml = (r, i) => `<li class="hm-row" style="--i:${i}">${r.art}<span class="hm-row-txt"><span class="hm-row-name"${r.nt ? NT : ''}>${esc(r.name)}</span>${r.sub ? `<span class="hm-row-sub"${NT}>${esc(r.sub)}</span>` : ''}</span></li>`;
   const BOOK = new Map(SS.journal.BOOK.map((e) => [e.id, e]));
   function sinceHtml() {
     const { list, saved } = gained();
@@ -136,7 +138,7 @@
     const gain = up ? `<div class="hm-gain"><span class="hm-gain-k">${esc(t('completion'))}</span><span class="hm-gain-v">${num(up.from)} → ${esc(pct(up.to))}</span>
         <span class="hm-bar" aria-hidden="true"><i style="width:${up.from}%"></i><i style="left:${up.from}%;width:${up.to - up.from}%"></i></span>${at}</div>`
       : at ? `<div class="hm-gain">${at}</div>` : '';
-    return `<section class="hm-col hm-since" aria-labelledby="hm-since-h">
+    return `<section class="hm-since" aria-labelledby="hm-since-h">
         <h3 class="ct-h" id="hm-since-h">${esc(t('homeSince'))}</h3>
         ${gain}${body}${more}
       </section>`;
@@ -200,16 +202,12 @@
       </div>`;
   }
 
-  /* A save: the game's area title card, where Hornet rests (design/03-redesign.md, step 3, the
-     sibling's "bench"): «Resting at» over the area of her bench, lit by that area's own light
-     from the game's map (css/tokens.css, --area-*), Hornet at the bench and four figures. Under
-     it what changed since the previous save, what's missing closest to the bench (js/app-map.js's
-     list, App.nearList) and the 100% by part, each a way into Progress; then the ways on. */
+  /* A save: the scene where Hornet rests (design/03-redesign.md, step 3, the calm round, A): «Resting
+     at» over the area of her bench, lit by that area's own light from the game's map
+     (css/tokens.css, --area-*), the area's map faint behind (js/app-map.js, App.mapAreaHtml), one
+     line with the Act and the time, Hornet at her bench, and the 100% as one figure into Progress.
+     Under it what changed since the previous save, short. What another tab owns isn't repeated here. */
   const areaId = (a) => a.toLowerCase().replace(/_/g, '-');
-  const NEAR = 5;
-  // Each part of the 100% by one of its pictures.
-  const PART_ART = { tools: 'tools/straight-pin', spools: 'items/spool-fragment', upgrades: 'items/crafting-kit', arts: 'arts/clawline', skills: 'skills/silkspear',
-    crests: 'crests/hunter', masks: 'items/mask-shard', needle: 'items/needle', hearts: 'pieces/silk-heart', items: 'items/everbloom' };
   function game(g, m) {
     const c = CP.count(g);
     const h = Math.floor(m.time / 3600), min = Math.floor((m.time % 3600) / 60);
@@ -219,54 +217,16 @@
     const light = home ? `--area-line:var(--area-${areaId(home)}-line, var(--spotlight));--area-fill:var(--area-${areaId(home)}-fill, var(--scene-glow))` : '';
     const steel = m.steel ? ` · <span${NT}>${esc(t(m.dead ? 'saveDefeated' : 'steelSoul'))}</span>` : '';
     const sub = [inside ? `<span${NT}>${esc(inside)}</span>` : '', esc(t('saveAct', { n: g.act })) + steel, esc(t('impTime', { h: num(h), m: num(min) }))].filter(Boolean).join(' · ');
-    // The game's own figure, when the save carries one: it has to be the same (npm run check-pack).
-    const theirs = Math.round(m.completion);
-    const check = m.completion || c.total ? `<p class="hm-check${theirs === c.total ? '' : ' is-off'}">${esc(t(theirs === c.total ? 'homeMatches' : 'homeDiffers', { pct: pct(theirs) }))}</p>` : '';
-    const book = App.bookDone(g.journal, m.steel), bookMax = App.bookTotal(m.steel);
-    const fig = (k, v, u = '', nt = false) => `<span class="hm-fig"><span class="hm-fig-k"${nt ? NT : ''}>${esc(k)}</span><b>${v}${u ? `<span class="u">${u}</span>` : ''}</b></span>`;
-    const card = `<div class="hm-card"${light ? ` style="${light}"` : ''}>
+    const map = App.mapAreaHtml ? App.mapAreaHtml(g) : '';
+    const done = c.total >= 100;
+    return `<div class="hm-card hm-scene"${light ? ` style="${light}"` : ''}>${map}
         ${areaName ? `<p class="hm-sup">${esc(t(g.rested ? 'homeRest' : 'mapRespawn'))}</p><p class="hm-area"${NT}>${esc(areaName)}</p>` : ''}
         <p class="hm-sub">${sub}</p>
         ${rest(g.bench, g.rested)}
-        <div class="hm-figs">
-          ${fig(t('homeCompletion'), num(c.total), esc(pctSpace().trim() || '%'))}
-          ${fig(t('homeJournal'), num(book), '/' + num(bookMax), true)}
-          ${fig(t('cat_masks'), num(5 + g.masks))}
-          ${fig(t('rosaries'), num(m.rosaries), '', true)}
-        </div>
-        ${check}
-      </div>`;
-    // The road to the next Act (js/acts.js), in one line that opens it in Progress.
-    // The step you're on, by its name, and how far into it, as Progress's card counts it:
-    // "step 1 of 5: Unlock "Silk and Soul" · 28 of 31" (design/41, 5 A).
-    const now = App.roadNow ? App.roadNow(g) : null;
-    const pts = (n) => (Number.isInteger(n) ? num(n) : App.NF[1].format(n));
-    const roadText = now ? t(now.of > 1 ? 'homeRoadPart' : 'homeRoad', { n: num(now.act), k: num(now.k), total: num(now.total), step: now.step, done: pts(now.got), of: num(now.of) }) : '';
-    const link = (v, text) => `<a class="text-btn" href="${App.here(App.hashFor(v))}" data-act="view" data-value="${v}">${esc(text)}</a>`;
-    const road = roadText ? `<p class="hm-road">${link('progress', roadText)}</p>` : '';
-    const near = App.nearList ? App.nearList(g).slice(0, NEAR) : [];
-    const onMap = (x) => `<button type="button" class="pg-onmap" data-act="mapShow" data-value="${esc(x.key)}" aria-label="${esc(t('mapOnMap') + ': ' + x.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>`;
-    const nearCol = near.length ? `<section class="hm-col" aria-labelledby="hm-near-h"><h3 class="ct-h" id="hm-near-h">${esc(t(g.rested ? 'mapNear' : 'mapNearRespawn'))}</h3>
-        <ol class="hm-rows">${near.map((x, i) => rowHtml({ name: x.name, nt: true, sub: areaOf(x.area), art: art(x.mark, ' is-mark') }, i, onMap(x))).join('')}</ol>${link('map', t('homeNearMap'))}</section>` : '';
-    // Each part with its picture, its count and a gauge; a full one with the lit diamond.
-    const rows = c.categories.map((k, i) => `<li class="hm-part${k.got >= k.max ? ' is-full' : ''}${k.got ? '' : ' is-none'}" style="--i:${i}"><a href="${App.here(App.hashFor('progress'))}" data-act="view" data-value="progress">
-        ${art(img(icon(PART_ART[k.id])))}<span class="hm-part-name">${esc(t('cat_' + k.id))}</span><span class="hm-part-n"><b>${num(k.got)}</b><i class="u">/${num(k.max)}</i></span>
-        <span class="hm-bar" aria-hidden="true"><i style="width:${+(k.got / k.max * 100).toFixed(1)}%"></i></span></a></li>`).join('');
-    const parts = `<section class="hm-col" aria-labelledby="hm-parts-h"><h3 class="ct-h" id="hm-parts-h">${esc(t('homeParts'))}</h3>
-        <ol class="hm-parts">${rows}</ol>${link('progress', t('homeAllParts'))}</section>`;
-    const left = bookMax - book;
-    const crest = g.build && D.CRESTS.some((x) => x.id === g.build.crest) ? g.build.crest : 'hunter';
-    const go = (v, img, text) => `<li><a class="hm-go" href="${App.here(App.hashFor(v))}" data-act="view" data-value="${v}">
-        <img src="${img}" alt="" loading="lazy"><b>${esc(t(App.VIEW_KEY[v]))}</b><span>${esc(text)}</span></a></li>`;
-    const next = `<nav class="hm-next" aria-label="${esc(t('homeGoLabel'))}"><ul>
-        ${go('progress', 'assets/icons/items/mask-shard.webp', t('homeGoProgress'))}
-        ${go('map', 'assets/icons/items/farsight.webp', t('homeGoMap'))}
-        ${go('journal', 'assets/icons/items/hunters-journal.webp', left > 0 ? t(left === 1 ? 'homeGoJournal1' : 'homeGoJournal', { n: num(left) }) : t('homeGoJournal0'))}
-        ${go('tools', `assets/icons/crests/${crest}.webp`, t('homeGoCrest'))}
-      </ul></nav>`;
-    // The map of the area she rests in beside the card (js/app-map.js, App.mapAreaHtml); under it on a phone.
-    const map = App.mapAreaHtml ? App.mapAreaHtml(g) : '';
-    return `<div class="hm-hero${map ? ' has-map' : ''}">${card}${map}</div>${road}<div class="hm-cols">${sinceHtml()}${nearCol}${parts}</div>${next}`;
+        <a class="hm-pct" href="${App.here(App.hashFor('progress'))}" data-act="view" data-value="progress">
+          <span class="hm-fig-k">${esc(t('homeCompletion'))}</span><b>${num(c.total)}<span class="u">${esc(pctSpace().trim() || '%')}</span></b>
+          <span class="hm-pct-go">${esc(t(done ? 'homeAllParts' : 'homeGoProgress'))}</span></a>
+      </div>${sinceHtml()}`;
   }
 
   /* The rows fade in one by one when the screen is arrived at or another save shows, not when

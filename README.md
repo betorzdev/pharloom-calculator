@@ -20,7 +20,7 @@ game's own Crest screen: a Crest, its Tools, the Needle's level.
 
 <!-- docs/screenshots/: npm run drive with a 69% save (Restore_Points1/restoreData24.dat, --prev
      restoreData22.dat), the beta notice closed by --eval, cropped and saved as WebP. -->
-<img src="docs/screenshots/home.webp" alt="The Your game screen: resting at Choral Chambers in Act 3, 31 h 58 min played, 69% of the 100%, 90 of 230 Journal entries, 8 masks, the area's map with Hornet on her bench, and what changed since the previous save: from 61% to 69%, Act 3, Beastling Call and five Tools" width="900">
+<img src="docs/screenshots/home.webp" alt="The Your game screen: resting at Choral Chambers in Act 3, 31 h 58 min played, the area's map faint behind Hornet on her bench, 69% of the 100%, and what changed since the previous save: from 61% to 69%, Act 3, Beastling Call and five Tools" width="900">
 
 </div>
 
@@ -33,9 +33,9 @@ game's own Crest screen: a Crest, its Tools, the Needle's level.
 ### Your game, live
 Import your save file (`user1.dat`…, or any restore point) and **the site follows it**: with
 Chrome or Edge, every time the game saves at a bench the page catches up by itself and says what
-changed since the previous save. The start screen is your game at a glance: the area you rest
-in, your 100%, the Journal, masks and rosaries, **what's missing closest to your bench** and your
-100% split into its ten parts. Four save slots, like the game's: a save is read and never changed
+changed since the previous save. The start screen is a calm place: the area you rest in, with
+Hornet on her bench, your 100% and **what changed since the previous save**; the rest of your
+game is in its own tab. Four save slots, like the game's: a save is read and never changed
 here (builds are tried in Free mode).
 
 </td>

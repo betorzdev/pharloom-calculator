@@ -1113,8 +1113,8 @@ kbd {
 
 /* ── Your game, the start screen (js/app-home.js) ─────────────────────────
    In free mode, the ghost bench: the card a save shows, unlit, and the file dropped here goes
-   into the first empty save. In a save: the bench card, three columns and the ways on (design/03-redesign.md,
-   step 3). Figures in --font-num, as everywhere. */
+   into the first empty save. In a save: the scene where she rests and what changed since the
+   previous save (design/03-redesign.md, step 3, the calm round). Figures in --font-num, as everywhere. */
 /* Hornet on the bench she rests at (js/benches.js, from the game's files): both of the wiki's
    sprites at one scale (--hn-rest), her hem on the bench's seat; the box is theirs together
    (--w, its width in the sprites' pixels, and its aspect ratio, set inline with the places). */
@@ -1132,6 +1132,7 @@ kbd {
 .is-ghost .hm-fig b { color: var(--line-ctl); }
 .hm-ghost { margin: var(--sp-2) 0 0; font-family: var(--font-display); font-size: var(--fs-lg); letter-spacing: var(--track-title); color: var(--ink-strong); }
 .hm-invite.is-drag { border-color: var(--accent-line); background-color: var(--accent-soft); }
+/* The line when the game's own 100% differs from the site's (Progress, js/app-progress.js). */
 .hm-check { margin: var(--sp-1) 0 0; font-size: var(--fs-xs); color: var(--muted); text-align: center; }
 .hm-check.is-off { color: var(--cond); }
 /* The bench card: the game's area title (a small «Resting at» over the area's name in its capitals),
@@ -1160,43 +1161,34 @@ kbd {
 .hm-fig b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-xl); font-weight: 600; line-height: 1; color: var(--ink-strong); }
 .hm-fig:first-child b { font-size: var(--fs-2xl); }
 .hm-fig .u { font-size: var(--fs-xs); color: var(--muted); }
-.hm-road { margin: 0 0 var(--sp-6); text-align: center; font-size: var(--fs-sm); }
-/* The map of the area she rests in (js/app-map.js, App.mapAreaHtml): beside the card on a
-   computer, under it on a phone. The Map's own drawing on a canvas, cropped to the area's box
-   (--r: its width over its height), faded at its edges, with Hornet on her bench and the Map's own
-   marks over it. */
-.hm-hero { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--sp-4) var(--sp-8); align-items: center; }
-.hm-hero > .hm-card { margin-bottom: 0; }
-.hm-hero { margin-bottom: var(--sp-6); }
-/* In half the width the area's name is smaller, so that a long one wraps instead of running under the map. */
-@media (min-width: 900px) {
-  .hm-hero.has-map { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .hm-hero.has-map .hm-area { font-size: clamp(var(--fs-2xl), 1rem + 3vw, 4rem); }
-}
-.hmB-map { display: grid; justify-items: center; margin: 0; min-width: 0; }
-/* No frame: the drawing fades out on every side (the canvas only: the marks stay as the Map has them). */
-.hmB-view { position: relative; display: block; width: min(100%, calc(var(--hm-map-max) * var(--r))); aspect-ratio: var(--r); }
-.hmB-view:focus-visible { outline: 1px solid var(--ink-2); outline-offset: var(--sp-1); }
-.hmB-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; filter: var(--map-tone);
+/* The scene (design/03-redesign.md, step 3, the calm round, A): the bench card, taller, with the
+   map of the area she rests in faint behind it (js/app-map.js, App.mapAreaHtml: the Map's own
+   drawing on a canvas, cropped to the area's box, --r its width over its height, faded at its
+   edges; a picture with no marks and no Hornet, not a link) and the 100% as one figure. */
+.hm-scene { min-height: calc(var(--hm-map-max) * 1.4); align-content: center; padding-block: var(--sp-8) var(--sp-4); margin-bottom: var(--sp-8); }
+.hm-scene .hm-rest { margin-block: var(--sp-4) var(--sp-2); }
+.hmB-map { position: absolute; inset: 0; z-index: -2; display: grid; place-items: center; margin: 0; opacity: calc(var(--map-faint) * 0.7); pointer-events: none; }
+.hmB-view { position: relative; display: block; width: min(100%, calc(var(--hm-map-max) * 1.6 * var(--r))); aspect-ratio: var(--r); }
+.hmB-canvas { position: absolute; inset: 0; width: 100%; height: 100%; filter: var(--map-tone);
   -webkit-mask: radial-gradient(ellipse closest-side at 50% 50%, #000 62%, transparent 100%); mask: radial-gradient(ellipse closest-side at 50% 50%, #000 62%, transparent 100%); }
-/* The Map's own marks over it (.mp-mk, sized by --k as there), as pictures. */
-.hmB-svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
-.hmB-svg .mp-plate { fill: url(#hmB-plate); }
-#hmB-plate stop { stop-color: var(--map-plate); }
-#hmB-plate stop:nth-child(2) { stop-color: var(--map-plate-mid); }
-#hmB-plate stop:last-child { stop-color: transparent; }
-/* Three columns under the card: since the previous save, closest to the bench, the 100% by part. */
-.hm-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: var(--sp-8); }
-.hm-col { display: grid; gap: var(--sp-3); align-content: start; }
-/* One column alone (no previous save, a bench off the room graph) keeps a list's measure. */
-.hm-cols:has(> :only-child) { max-width: var(--column); margin-inline: auto; }
-.hm-col > .text-btn { justify-self: start; font-size: var(--fs-sm); }
+/* The 100% as one figure, the way into Progress: its label, the figure, and what Progress holds
+   under it with the accent's arrow, stepping forward under the finger (as the ways on did). */
+.hm-pct { display: inline-grid; justify-items: center; gap: var(--sp-1); padding: var(--sp-2) var(--sp-4); text-decoration: none; color: var(--ink); }
+.hm-pct b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-2xl); font-weight: 600; line-height: 1; color: var(--ink-strong); }
+.hm-pct .u { font-size: var(--fs-xs); }
+.hm-pct-go { font-size: var(--fs-xs); color: var(--muted); transition: color var(--dur) var(--ease); }
+.hm-pct-go::after { content: ' →'; display: inline-block; color: var(--accent); transition: transform var(--dur) var(--ease); }
+.hm-pct:is(:hover, :focus-visible) .hm-pct-go { color: var(--ink-strong); }
+.hm-pct:is(:hover, :focus-visible) .hm-pct-go::after { transform: translateX(var(--sp-1)); }
+/* Since the previous save, under the scene: the one list, at a list's measure. */
+.hm-since { display: grid; gap: var(--sp-3); align-content: start; max-width: var(--column); margin-inline: auto; }
+.hm-since > .text-btn { justify-self: start; font-size: var(--fs-sm); }
+.hm-since > .text-btn[aria-expanded] { margin-top: var(--sp-1); }
 /* The lists' rows (design/03-redesign.md, step 3, the lists round, A, Progress's clean rows): the
-   thing's picture, its name in the game's face with where under it, and at the end the Map's pin.
-   The picture: plain, a Tool on its slot's diamond, or the map's own mark (a piece's disc, a
-   gauntlet's champion). */
+   thing's picture and its name in the game's face with where under it. The picture: plain, a
+   Tool on its slot's diamond, or the map's own mark (a piece's disc, a gauntlet's champion). */
 .hm-rows { list-style: none; margin: 0; padding: 0; }
-.hm-row { display: grid; grid-template-columns: var(--hm-art) minmax(0, 1fr) auto; align-items: center; gap: var(--sp-3); padding: var(--sp-2) var(--sp-1); border-bottom: 1px solid var(--line-row); }
+.hm-row { display: grid; grid-template-columns: var(--hm-art) minmax(0, 1fr); align-items: center; gap: var(--sp-3); padding: var(--sp-2) var(--sp-1); border-bottom: 1px solid var(--line-row); }
 .hm-row:last-child { border-bottom: 0; }
 .hm-row-txt { display: grid; min-width: 0; }
 .hm-row-name { font-family: var(--font-display); font-size: var(--fs-sm); color: var(--ink-strong); overflow-wrap: anywhere; }
@@ -1213,46 +1205,21 @@ kbd {
 /* The Journal's entries, their portraits. */
 .hm-faces { display: flex; flex-wrap: wrap; gap: var(--sp-1); margin: 0; padding: var(--sp-1) 0; }
 .hm-faces img { width: var(--sp-8); height: var(--sp-8); object-fit: contain; border-radius: 50%; border: 1px solid var(--line-ctl); background: var(--scene-bg); }
-.hm-col > .text-btn[aria-expanded] { margin-top: var(--sp-1); }
 /* A gauge: what there was, and what was added lit. */
 .hm-bar { position: relative; display: block; height: 3px; background: var(--ring-track); }
 .hm-bar i { position: absolute; inset-block: 0; left: 0; background: color-mix(in oklab, var(--accent) 45%, transparent); }
 .hm-bar i + i { background: var(--accent); box-shadow: var(--glow); }
-/* The 100% by part: picture, name, count, and the gauge under; a full one lit, with its diamond. */
-.hm-parts { list-style: none; margin: 0; padding: 0; }
-.hm-parts a { display: grid; grid-template-columns: var(--hm-art) minmax(0, 1fr) auto; align-items: center; gap: var(--sp-1) var(--sp-3); padding: var(--sp-2) var(--sp-1); border-bottom: 1px solid var(--line-row); color: var(--ink); text-decoration: none; }
-.hm-part:last-child a { border-bottom: 0; }
-.hm-parts .hm-art { grid-row: span 2; }
-.hm-part-name { font-family: var(--font-display); font-size: var(--fs-sm); color: var(--ink-strong); transition: color var(--dur) var(--ease); }
-.hm-parts a:is(:hover, :focus-visible) .hm-part-name { color: var(--accent); }
-.hm-part-n { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-sm); color: var(--ink-strong); white-space: nowrap; }
-.hm-part-n .u { font-size: var(--fs-2xs); font-style: normal; color: var(--muted); }
-.hm-parts .hm-bar { grid-column: 2 / -1; }
-.hm-part.is-full .hm-bar i { background: var(--accent); }
-.hm-part.is-full .hm-part-n::before { content: ''; display: inline-block; width: var(--diamond); height: var(--diamond); margin-right: var(--sp-2); transform: rotate(45deg); background: var(--accent); box-shadow: var(--glow); vertical-align: 1px; }
-.hm-part.is-none .hm-art img { filter: var(--missing-soft); opacity: var(--missing-soft-opacity); }
-.hm-row, .hm-parts a { transition: background-color var(--dur) var(--ease); }
-.hm-parts a:hover { background: var(--veil); }
 /* Arriving at the screen, the rows fade in one by one (js/app-home.js, .is-enter). */
 @media (prefers-reduced-motion: no-preference) {
-  .hm.is-enter :is(.hm-row, .hm-kind, .hm-faces, .hm-part) { animation: hm-row-in var(--dur-slow) calc(var(--i, 0) * var(--dur-step)) var(--ease-fade) both; }
+  .hm.is-enter :is(.hm-row, .hm-kind, .hm-faces) { animation: hm-row-in var(--dur-slow) calc(var(--i, 0) * var(--dur-step)) var(--ease-fade) both; }
 }
 @keyframes hm-row-in { from { opacity: 0; transform: translateY(var(--sp-1)); } }
-/* The ways on: the game's pictures over the screen's name with the accent's arrow, stepping
-   forward under the finger (the sibling's). */
-.hm-next { margin-top: var(--sp-8); padding-top: var(--sp-6); border-top: 1px solid var(--inv-line); }
-.hm-next ul { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--sp-4); }
-.hm-go { display: grid; justify-items: center; gap: var(--sp-1); padding: var(--sp-3); text-align: center; text-decoration: none; font-size: var(--fs-xs); color: var(--ink-2); }
-.hm-go img { width: var(--sp-12); height: var(--sp-12); object-fit: contain; transition: filter var(--dur) var(--ease); }
-.hm-go b { font-size: var(--fs-md); font-weight: 600; color: var(--ink-strong); }
-.hm-go b::after { content: ' →'; display: inline-block; color: var(--accent); transition: transform var(--dur) var(--ease); }
-.hm-go:is(:hover, :focus-visible) b::after { transform: translateX(var(--sp-1)); }
-.hm-go:is(:hover, :focus-visible) img { filter: drop-shadow(0 0 8px color-mix(in oklab, var(--spotlight) 45%, transparent)); }
 @media (max-width: 599px) {
   .hm-area { font-size: var(--fs-2xl); }
-  /* The four figures two by two: four in a row don't fit, and three left one alone (Albert's choice, 14 Oct 2026). */
+  /* Free mode's four figures two by two: four in a row don't fit, and three left one alone (Albert's choice, 14 Oct 2026). */
   .hm-figs { display: grid; grid-template-columns: repeat(2, auto); justify-content: center; gap: var(--sp-4) var(--sp-12); }
-  .hm-next ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hm-scene { min-height: 0; }
+  .hmB-view { width: 100%; }
 }
 
 /* ── Progress (js/app-progress.js): the ledger ────────────────────────────
@@ -2632,7 +2599,7 @@ span.mp-pin { border-radius: 50%; background: var(--scene-bg); border: 1px solid
 .mp-pin.is-off { filter: var(--missing-soft) drop-shadow(0 1px 2px var(--badge-shadow)); opacity: var(--missing-soft-opacity); }
 /* Hornet at her bench: the .hn sprite (sitting; running while js/app-hornet.js walks her from the
    previous bench), her feet and her middle on the point. */
-.mp-hornet.hn, .hmB-hornet.hn {
+.mp-hornet.hn {
   --hn-h: var(--hn-map); z-index: 2; translate: calc(-1 * var(--hn-map) * 62 / 120) calc(-1 * var(--hn-map) * 116 / 120);
   filter: drop-shadow(0 0 8px color-mix(in oklab, var(--spotlight) 60%, transparent)); transition: none;
 }

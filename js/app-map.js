@@ -606,15 +606,13 @@
     return g ? `<svg class="mp-glyph" x="-0.3" y="-0.3" width="0.6" height="0.6" viewBox="0 0 14 14" fill="none" stroke="currentColor"
         stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${g[1]}</svg>` : '';
   }
-  // inert: Your game's copy of a mark (js/app-map.js, App.mapAreaHtml) is a picture, not a button.
-  const pinSvg = (m, p, title, cls, inert) => `<g class="mp-mk is-${m.layer}${cls}${m.off ? ' is-off' : ''}${m.fix ? ' is-fixed' : ''}${m.hidden ? ' is-hidden' : ''}${inert ? '' : sel(m.key)}" style="--px:${n2(p.x)}px;--py:${n2(p.y)}px;--ox:${n2(p.ox || 0)}px;--oy:${n2(p.oy || 0)}px"
-        ${inert ? '' : `data-mk="${esc(m.key)}" role="button" tabindex="0" aria-label="${esc(title)}"`}><title>${esc(title)}</title><circle r="0.5"/><circle class="mp-plate" r="0.47"/>${artOf(m)}</g>`;
+  const pinSvg = (m, p, title, cls) => `<g class="mp-mk is-${m.layer}${cls}${m.off ? ' is-off' : ''}${m.fix ? ' is-fixed' : ''}${m.hidden ? ' is-hidden' : ''}${sel(m.key)}" style="--px:${n2(p.x)}px;--py:${n2(p.y)}px;--ox:${n2(p.ox || 0)}px;--oy:${n2(p.oy || 0)}px"
+        data-mk="${esc(m.key)}" role="button" tabindex="0" aria-label="${esc(title)}"><title>${esc(title)}</title><circle r="0.5"/><circle class="mp-plate" r="0.47"/>${artOf(m)}</g>`;
   const markTitle = (m) => [m.name, m.sub, m.act ? t('saveAct', { n: m.act }) : ''].filter(Boolean).join(' · ');
   /* Each mark on its point: the pin the game draws, else where the game has the thing (js/spots.js
      XY), else its room's middle; those on one point in a grid around it. The marks the legend has
      on (`on`) and the filters let show, as { count per layer, items: [{ m, p }], fine: the caches
-     and walls' counts per room, placed: key → point }. The Map screen and Your game's area map
-     both read it. */
+     and walls' counts per room, placed: key → point }. The Map screen reads it. */
   // Per layer: how many there are, how many had, how many show. REST: a resting mark's lift.
   const REST = 0.53;
   function layout(list, g, own, on) {
@@ -707,26 +705,6 @@
         <g class="mp-mk mp-from" style="--px:${n2(start.x)}px;--py:${n2(start.y)}px"><title>${esc(t(w.fromRested ? 'mapFrom' : 'mapFromRespawn'))}</title><circle r="0.3"/></g></g>`;
   }
 
-  /* What's missing nearest your bench, for Your game (App.nearList): the loose pieces
-     and the gauntlets, by rooms, nearest first. */
-  const NEAR_KINDS = ['mask-shard', 'spool-fragment', 'memory-locket', 'craftmetal', 'pale-oil', 'flea'];
-  function nearList(g) {
-    if (!g || !g.bench) return [];
-    const w = R.walk(g.bench, g.lit);
-    const list = [];
-    CO.PIECES.forEach((p, i) => {
-      if (!NEAR_KINDS.includes(p[0]) || g.pieces.includes(i)) return;
-      const n = R.steps(g.bench, R.sceneOf(p[2]) || SP.AT.pieces[i], g.lit, w);
-      if (n != null) list.push({ n, key: 'piece:' + i, mark: dot(p[0], pieceIcon(p[0], p)), name: p[4] ? pick(p[4]) : LAYER.get(p[0]).name(), area: p[3] });
-    });
-    for (const x of SS.gauntlets.GAUNTLETS) {
-      if (g.gauntlets.includes(x.id)) continue;
-      const n = R.steps(g.bench, x.scene, g.lit, w);
-      if (n != null) list.push({ n, key: 'gaunt:' + x.id, mark: badge('gauntlet', portrait(champion(x)) || GLYPH.gauntlet), name: App.gauntletName(x.id), area: x.area });
-    }
-    return list.sort((a, b) => a.n - b.n);
-  }
-  App.nearList = nearList;
   /* The map's own marks, for Your game's lists (js/app-home.js): a piece's disc, a gauntlet's
      badge with its champion, a wish's. */
   App.mapMark = {
@@ -739,9 +717,9 @@
      The sibling's "area map" idea (hallownest-calculator js/app-home.js, areaMapHtml), with this
      map's own drawing: the same view as the Map screen (js/rooms.js mapView, "Only what the game
      shows" included), composed by the same painter (js/map-paint.js) but cropped to the box of
-     the rooms of the bench's branch of the map, with Hornet on her bench and the Map's own marks
-     over it (layout(): the layers its legend has on and its filters let show, so the two agree;
-     the caches and walls, which the Map only draws close up, left out). It opens the Map. */
+     the rooms of the bench's branch of the map. Since the calm round (design/03-redesign.md, step
+     3) it's the scene's backdrop, faint behind the area's name: a picture with no marks and no
+     Hornet (she's on her bench in front), not a way in (the Map tab is). */
   const AREA_BOX = new Map();
   // The branch's rooms' box in the map's pixels: [x, y, w, h], or null when it draws none (Surface).
   function branchBox(branch) {
@@ -778,22 +756,7 @@
     const box = areaView(room.area, view);
     if (!box) return '';
     areaCtx = { view, box, key: MP.keyOf(view, 0) };
-    // Hornet where she rests (her bench's pin comes with the Map's own marks, if its layer is on).
-    const bench = R.restPoint(g, R.pinsOn(g));
-    const at = `left:${n2((bench.x - box.x) / box.w * 100)}%;top:${n2((bench.y - box.y) / box.h * 100)}%`;
-    // The marks: the Map's own, the layers its legend has on and its filters let show, those in the box.
-    const { list, g: shown, own } = all();
-    const inBox = (p) => p.x >= box.x && p.x <= box.x + box.w && p.y >= box.y && p.y <= box.y + box.h;
-    const marks = layout(list, shown, own, new Set(layersOn())).items.filter(({ m, p }) => !FINE.has(m.layer) && inBox(p))
-      .map(({ m, p }) => pinSvg(m, p, markTitle(m), '', true)).join('');
-    const label = t('homeMapLabel', { area: areaName(R.areaOf(g.bench)) });
-    return `<figure class="hmB-map">
-        <a class="hmB-view" href="${App.here(App.hashFor('map'))}" data-act="view" data-value="map" style="--r:${n2(box.w / box.h)}" aria-label="${esc(label + ' · ' + t('homeNearMap'))}">
-          <canvas class="hmB-canvas" aria-hidden="true"></canvas>
-          <svg class="hmB-svg" viewBox="${n2(box.x)} ${n2(box.y)} ${n2(box.w)} ${n2(box.h)}" aria-hidden="true">
-            <defs><radialGradient id="hmB-plate"><stop offset="0"/><stop offset="0.6"/><stop offset="1"/></radialGradient></defs>${marks}</svg>
-          <span class="hn${g.rested ? ' is-sit' : ''} hmB-hornet" aria-hidden="true" style="${at}"></span>
-        </a></figure>`;
+    return `<figure class="hmB-map" aria-hidden="true"><span class="hmB-view" style="--r:${n2(box.w / box.h)}"><canvas class="hmB-canvas"></canvas></span></figure>`;
   };
   /* Paints the figure just placed on the page (the screen is built whole each time, so this runs
      after every render): the pieces composed again only when what's shown changes, at the finer
@@ -806,9 +769,6 @@
     const w = Math.round(r.width * dpr), h = Math.round(r.height * dpr);
     if (!w || !h) return;
     const { view, box, key } = areaCtx;
-    // The marks' size on screen, as the Map keeps it (about 22 px, 18 on a phone).
-    const svg = cv.parentElement.querySelector('.hmB-svg');
-    if (svg) svg.style.setProperty('--k', String(box.w / r.width * (r.width < 600 ? 18 : 22)));
     const scale = w / box.w > 1.1 ? 2 : 1, ck = key + '@' + scale;
     const draw = () => {
       if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; }
@@ -974,7 +934,7 @@
     if (ping) { ping.dataset.x = p.x; ping.dataset.y = p.y; ping.dataset.lift = p.lift || 0; placeOver(ping); ping.hidden = false; ping.classList.remove('is-on'); void ping.offsetWidth; ping.classList.add('is-on'); }
     pick1(key);
   }
-  /* Another screen's "on the map" (Progress, the Journal, Your game): the Map opens on that thing,
+  /* Another screen's "on the map" (Progress, the Journal): the Map opens on that thing,
      its layer switched on. */
   App.mapShow = (key) => {
     const m = all().list.find((x) => x.key === key);
