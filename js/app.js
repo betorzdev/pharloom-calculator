@@ -2,8 +2,7 @@
    The page is made of screens, like the game's pause menu: the header, the screen bar
    and, one at a time, the screens (design/00-study.md §9 says which and in what order they're
    built). The screen travels in the URL ("view="), and so does the language ("lang=") when it
-   isn't the page's own; the build will travel there too (phase 3), and splitHash keeps its
-   place for it.
+   isn't the page's own; so does Free mode's build (js/codec.js), which splitHash keeps apart.
    Every state change repaints from templates; a single listener delegated by data-act handles
    the clicks. The language comes from js/i18n.js and applies to the whole render.
    Each screen has its own classic script (js/app-*.js), loaded after this one; they share
@@ -507,7 +506,7 @@
     view(node) { go(node.dataset.value, !node.closest('#nav, .masthead')); },
     // The About block's button (tools/pages.js): up to the screen it's about.
     aboutUp() { const m = document.querySelector('.screens'); if (m) m.scrollIntoView({ behavior: 'smooth', block: 'start' }); },
-    betaClose() { save(KEY.beta, '1'); track('beta-close'); renderBanner(); },
+    betaClose() { save(KEY.beta, '1'); renderBanner(); },
     aboutFold() { aboutOpen = true; renderAbout(); const h = el.about.querySelector('h1'); if (h) { h.setAttribute('tabindex', '-1'); h.focus(); } },
   };
   // The language's list is a dropdown: a tap anywhere else closes it (and still does what it was for).
