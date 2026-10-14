@@ -188,6 +188,10 @@
     const memento = `<div class="hj-memento" role="img" style="--d:${(done / need).toFixed(3)};--s:${(seen / list.length).toFixed(3)}"
         aria-label="${esc(t('hjMemento') + ': ' + num(done) + '/' + num(need) + ' · ' + t('hjSeen', { n: num(seen), m: num(list.length) }))}">
         <div><b>${num(done)}</b><i class="u">/${num(need)}</i><span>${esc(t('hjMementoShort'))}</span></div></div>`;
+    /* The entry is a modal: drawn only on the Journal itself. Painted again while another screen
+       shows (its «See on the map» took the page elsewhere), it would lock that screen, so leaving
+       closes it for good. */
+    if (prefs.view !== 'journal') picked = null;
     const current = picked ? list.find((x) => x.e.id === picked) || null : null;
     sec.innerHTML = `<div class="hj">${brackets}${screenHead(esc(t('navJournal')))}
       ${g ? `<div class="hj-hero">${memento}${hunts(list, g)}</div>` : ''}
