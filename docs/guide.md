@@ -557,11 +557,6 @@ the whole map, the world before Act 3. Where each thing is comes from
 the game's files too: the pickups lying in each room, the vendors, the Wishwalls and their
 givers, the bosses' arenas, the scripts that give an ability.
 
-When your previous save rested at another bench, a dashed thread draws Hornet's way from it to
-this one, and the first time the map comes into view she runs it, room by room, from the old
-bench to the new one (two to eight seconds; the view follows her when it's enlarged), and sits.
-She runs each way once; with reduced motion she's simply at her bench.
-
 **For the maintainer, the admin mode** (`#view=map&admin=1`, nothing a visitor sees). A band
 under the map, above the legend, corrects what the game's files place wrong: a mark is dragged
 where it really goes, or nudged with the arrow keys (a pixel of the image; Shift, five); one that

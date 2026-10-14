@@ -284,10 +284,8 @@
     mapPlace_bench1:{ es: 'Banco', en: 'Bench' },   // KEY_BENCH
     mapPlace_bellway:{ es: 'Vías Campana', en: 'Bellways' },   // MAP_LIST_TITLE
     mapPlace_ventrica:{ es: 'Ventrica', en: 'Ventrica' },   // KEY_TUBE
-    mapFrom:        { es: 'Tu banco anterior', en: 'Your previous bench' },
     // No game text for a respawn point (searched: respawn, reaparecer, wake): written for the context.
     mapRespawn:     { es: 'Tu punto de reaparición', en: 'Your respawn point' },
-    mapFromRespawn: { es: 'Tu punto de reaparición anterior', en: 'Your previous respawn point' },
     mapClosed:      { es: 'sin abrir', en: 'not open yet' },
     mapToll:        { es: 'sin pagar el peaje', en: 'toll not paid' },
     mapGroup_upgrades: { es: 'Mejoras', en: 'Upgrades' },

@@ -674,37 +674,6 @@
   const mapped = (own) => new Set((own ? own.maps : []).map((f) => SP.MAPS[f]).filter(Boolean));
   const MAPPABLE = new Set(Object.values(SP.MAPS));
 
-  /* Hornet's bench and her way from the previous one. */
-  function before() {
-    let prev = null;
-    try { prev = JSON.parse(App.load('pharloom.prev') || 'null'); } catch (e) { prev = null; }
-    return prev && prev.snap ? SS.savefile.gameOf(prev.snap) : null;
-  }
-  /* The way's key, cheap (no path searched): the two benches and when this save was written, so
-     a later return between the same two benches walks again. null with no way to walk. */
-  function wayKey(g) {
-    const b = before();
-    if (!g || !b || !b.bench || !g.bench || b.bench === g.bench) return null;
-    return b.bench + '>' + g.bench + '@' + ((App.gameMeta() || {}).saved || '');
-  }
-  function way(g, pins) {
-    const key = wayKey(g);
-    if (!key) return null;
-    const b = before();
-    const path = R.path(b.bench, g.bench, g.lit) || [];
-    const mid = path.slice(1, -1).map((s) => R.roomOf(s)).filter(Boolean);
-    pins = pins || R.pinsOn(g);
-    const pts = [R.restPoint(b, pins), ...mid, R.restPoint(g, pins)].filter(Boolean);
-    return path.length > 1 && pts.length > 1 ? { key, pts, fromRested: b.rested } : null;
-  }
-  function waySvg(g, pins) {
-    const w = way(g, pins);
-    if (!w) return '';
-    const start = w.pts[0];
-    return `<g class="mp-way" aria-hidden="true"><polyline points="${w.pts.map((p) => `${Math.round(p.x)},${Math.round(p.y)}`).join(' ')}"/>
-        <g class="mp-mk mp-from" style="--px:${n2(start.x)}px;--py:${n2(start.y)}px"><title>${esc(t(w.fromRested ? 'mapFrom' : 'mapFromRespawn'))}</title><circle r="0.3"/></g></g>`;
-  }
-
   /* The map's own marks, for Your game's lists (js/app-home.js): a piece's disc, a gauntlet's
      badge with its champion, a wish's. */
   App.mapMark = {
@@ -905,7 +874,7 @@
           <canvas class="mp-canvas" aria-hidden="true"></canvas>
           <svg class="mp-svg" viewBox="${vb ? `${vb.x} ${vb.y} ${vb.w} ${vb.h}` : `0 0 ${M.W} ${M.H}`}" role="img" aria-label="${esc(t('mapAlt'))}">
             <defs><radialGradient id="mp-plate"><stop offset="0"/><stop offset="0.6"/><stop offset="1"/></radialGradient></defs>
-            ${own ? waySvg(own, shownPins) : ''}<g class="mp-names">${namesSvg}</g><g class="mp-marks">${clusters}${marks}</g>
+            <g class="mp-names">${namesSvg}</g><g class="mp-marks">${clusters}${marks}</g>
           </svg>${hornet}<i class="mp-ping" hidden></i>
         </div>
         ${search}${tools}
@@ -1314,13 +1283,6 @@
     vb = { x: px - w / 2, y: py - h / 2, w, h };
     applyView();
   }
-  // Keeps a map point in view (js/app-hornet.js, while she walks).
-  App.mapKeep = (px, py) => {
-    if (!vb) return;
-    if (px < vb.x || py < vb.y || px > vb.x + vb.w || py > vb.y + vb.h) { vb = { ...vb, x: px - vb.w / 2, y: py - vb.h / 2 }; applyView(); }
-  };
-  // Hornet's sprite at a map point (js/app-hornet.js walks her with it).
-  App.mapHornetAt = (el, x, y) => { el.dataset.x = x; el.dataset.y = y; placeOver(el); };
   const touches = new Map();
   let drag = null, pinch = null, moved = false;
   // A tap (not the end of a drag): on a mark, its card; on the empty map, the card closes.
@@ -1386,9 +1348,6 @@
   window.addEventListener('resize', () => { pageWidth(); applyView(); });
   // The names' sizes once the typeface is in (unclutter measures them).
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { const { m } = nodes(); if (m) { m._clutter = ''; applyView(); } });
-
-  // For js/app-hornet.js: the way to walk, and a point's place on the image.
-  Object.assign(App, { mapWay: () => way(App.game()), mapWayKey: () => wayKey(App.game()) });
 
   /* Typing in the search lists what matches under it, up to ten: the areas, then every thing the
      map can show (whatever layer it's on; in a save, what's missing), each with its layer's name;
