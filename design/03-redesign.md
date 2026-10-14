@@ -40,7 +40,7 @@ the work up reads it first, then the step it's on.
 | 1 | **The shell**: header, screen bar (desktop and phone), the screen's frame and title, footer and About, the atmosphere | **Built** (28 Sep) | [`04-shell-variants.html`](04-shell-variants.html) |
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html` |
-| 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html` |
+| 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct) | [`10-progress-variants.html`](10-progress-variants.html) |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html` |
@@ -562,6 +562,19 @@ the Crests by a rule; B one more plate after the Crests; C one compact line); 3 
 **Decision: A in all three** (14 October 2026): the Pale Oil goes through `loose` (`is-centre`),
 and `mat` draws the Kit's row (picture `--sp-12`, name, count or − N + under it), the Memory
 Lockets with a rule above (`is-rule`), the Craftmetal inside `.inv-levels`.
+
+### Retouch: the lent Tools (14 October 2026)
+
+Albert didn't like Snare Setter and Needle Phial, the two reds a wish lends and takes back, set
+apart under the three colours («No cuentan para el 100 %»).
+
+The options (`51-lent-tools-variants.html`, the real site with the variant over it; kept out of
+the repo): **A** among the reds where the game lists them (Snare Setter after Flintslate, Needle
+Phial last), their slot dashed, a line under the row saying why, the count still n/18; B the same
+at the end of the reds; C hidden unless the save holds them right now, never in Free mode.
+
+**Decision: A** (14 October 2026): the red row takes them in `D.TOOLS` order, out of the count
+(`li.is-lent`, a dashed slot), and `.inv-lent` under the row explains the dashed diamond.
 
 ## Step 5 · Progress
 

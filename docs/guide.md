@@ -126,8 +126,8 @@ Craftmetal, three rows alike, then the Tools by colour, each on its slot's diamo
 lack it). There's one slot per point of the 100%: a Tool and its upgrade (Curveclaw and
 Curvesickle, Druid's Eye and Eyes, Claw Mirror and Mirrors) share one, showing the one you have,
 with two pips under it (had, upgraded), and Shell Satchel shows in Dead Bug's Purse's slot in Steel
-Soul. Snare Setter and Needle Phial, which a wish lends and takes back, sit apart after the
-colours: they don't count. Under both columns, what she carries: the **Purse** (Rosaries and
+Soul. Snare Setter and Needle Phial, which a wish lends and takes back, sit among the reds where
+the game lists them, their slot dashed: they don't count, and a line under the row says so. Under both columns, what she carries: the **Purse** (Rosaries and
 Shell Shards as big figures, the shards out of what your Tool Pouch holds, 400 to 800, with a bar,
 and under each what breaks into it, counted, with the sum you would get from breaking it all: the
 five Rosary strings and necklaces under the rosaries; the Beast Shards, Shard Bundles, Pristine
