@@ -91,8 +91,8 @@
   for (const t of D.TOOLS) for (const o of [t.upgrade, t.upgradeOf, t.replaces]) if (o && TOOL.has(o)) { TWIN.set(t.id, o); TWIN.set(o, t.id); }
   const twinOf = (id) => TWIN.get(id) || null;
 
-  /* A build as it can be worn, for the figures of Free mode's (its loadout is kept whole: a lower
-     evolution or no Vesticrest only hides what doesn't fit): of a Tool and its twin, the one put
+  /* A build as it can be worn, for the figures of Free mode's (its loadout is kept whole: with
+     the Vesticrest closed, its Tools are only hidden): of a Tool and its twin, the one put
      on last; and of each colour, the Tools in the order they were put on while the Crest has
      slots for them, open and locked, and the Vesticrest's. What a save wears is never cut:
      compute() says what doesn't fit (slots.over). */
@@ -104,39 +104,81 @@
     return st;
   }
 
-  /* Free mode's build as kept (pharloom.build), each Crest with its own loadout as the game keeps
-     one per Crest (playerData.ToolEquips: its Tools and Silk Skills, slot by slot): the build is
-     the Crest worn with its loadout, and `loadouts` every other Crest's { tools, skills } as it was
-     left. A Crest never worn yet starts with what fits of the one left. Only the build goes into a
-     link (js/codec.js). The Vesticrest's slots, which the game shares among the Crests, go with
-     each loadout here.
-     kept(raw, start) → { st, loads }: what was stored (start fills what's missing). A build kept
-       before the loadouts (no `loadouts`) is the Crest worn's, and its Hunter's focus starts on,
-       as start says: the switch, reset on every reload then, was never really set.
-     keep(st, loads) → what's stored.
-     wearCrest(st, loads, crest) → { st, loads } with that Crest worn. */
+  /* Free mode's build as kept (pharloom.build), as the game keeps it: each Crest with its own
+     loadout (playerData.ToolEquips: the Tools and Silk Skills in its slots), and the Vesticrest's
+     two slots shared by all of them (ExtraToolEquips): its Tools stay put when the Crest changes.
+     The Hunter's three evolutions share one loadout (their slots are the same).
+       build      the Crest worn, its Tools first and then the Vesticrest's (a build's tools, flat,
+                  as compute() and a link take them)
+       loadouts   every other Crest's { tools, skills } as it was left, its own slots' only
+       vesti      the Vesticrest's Tools by colour, { yellow, blue }: an id or null
+     A Crest never worn yet starts with what fits of the one left. A Tool is never worn twice, nor
+     with its twin, across the Crest's slots and the Vesticrest's. Only the build goes into a link
+     (js/codec.js); a link's Tools sit as seat() places them.
+     seat(st) → { own, vest }: a build's Tools on its Crest's slots of their colour while there's
+       room (open and locked), then on the Vesticrest's (one yellow, one blue, when open); what
+       finds no slot is left out.
+     kept(raw, start) → { st, loads, vesti }: what was stored (start fills what's missing). An older
+       build moves in silently: one kept before the loadouts is the Crest worn's, and its Hunter's
+       focus starts on, as start says (the switch, reset on every reload then, was never really
+       set); one kept before the shared Vesticrest takes the Crest worn's, as seat() finds it, and
+       the other Crests keep only what their own slots hold.
+     keep(st, loads, vesti) → what's stored.
+     wearCrest(st, loads, vesti, crest) → { st, loads, vesti } with that Crest worn. */
+  const VEST = ['yellow', 'blue'];
   const LOAD = (x) => ({ tools: Array.isArray(x && x.tools) ? x.tools.filter((id) => TOOL.has(id)) : [],
     skills: Array.isArray(x && x.skills) ? x.skills.filter((id) => SKILL.has(id)) : [] });
+  function seat(s) {
+    const st = normalize(s), crest = CREST.get(st.crest), left = {}, vest = { yellow: null, blue: null }, own = [];
+    for (const c of ['red', 'blue', 'yellow']) left[c] = crest.slots[c][0] + crest.slots[c][1];
+    for (const id of st.tools) {
+      const c = TOOL.get(id).color;
+      if (left[c] > 0) { left[c]--; own.push(id); } else if (st.vest[c] && vest[c] === null) vest[c] = id;
+    }
+    return { own, vest };
+  }
+  const vestIds = (vesti) => VEST.map((c) => vesti[c]).filter(Boolean);
+  // A Crest's own Tools, what its own slots hold, with the Vesticrest's: none twice, nor with its twin.
+  function wear(st, own, vesti) {
+    const on = vestIds(vesti), clash = new Set([...on, ...on.map(twinOf)]);
+    const mine = fit({ ...st, tools: own.filter((id) => !clash.has(id)), vest: {} }).tools;
+    return normalize({ ...st, tools: [...mine, ...on] });
+  }
   function kept(raw, start = {}) {
     const x = raw && typeof raw === 'object' ? raw : {};
     const old = !x.loadouts || typeof x.loadouts !== 'object';
-    const st = normalize({ ...start, ...x, ...(old && start.focus ? { focus: true } : {}) });
+    let st = normalize({ ...start, ...x, ...(old && start.focus ? { focus: true } : {}) });
+    const v = x.vesti && typeof x.vesti === 'object' ? x.vesti : null;
+    const vesti = { yellow: null, blue: null };
+    if (v) {
+      for (const c of VEST) if (TOOL.has(v[c]) && TOOL.get(v[c]).color === c && st.tools.includes(v[c])) vesti[c] = v[c];
+    } else Object.assign(vesti, seat(st).vest);
+    st = wear(st, st.tools.filter((id) => !vestIds(vesti).includes(id)), vesti);
     const loads = {};
-    if (!old) for (const [id, l] of Object.entries(x.loadouts)) if (CREST.has(id) && id !== st.crest) loads[id] = LOAD(l);
-    return { st, loads };
+    if (!old) {
+      for (const [id, l] of Object.entries(x.loadouts)) {
+        if (!CREST.has(id) || id === st.crest) continue;
+        const own = LOAD(l);
+        // Its own slots' only (a build kept before the shared Vesticrest had the Vesticrest's in each).
+        loads[id] = { tools: fit({ crest: id, tools: own.tools }).tools, skills: own.skills };
+      }
+    }
+    return { st, loads, vesti };
   }
-  const keep = (st, loads = {}) => {
+  const keep = (st, loads = {}, vesti = { yellow: null, blue: null }) => {
     const b = normalize(st), rest = { ...loads };
     delete rest[b.crest];
-    return { ...b, loadouts: rest };
+    return { ...b, loadouts: rest, vesti: { yellow: vesti.yellow || null, blue: vesti.blue || null } };
   };
-  function wearCrest(st, loads, crest) {
-    const b = normalize(st);
-    if (!CREST.has(crest) || crest === b.crest) return { st: b, loads: { ...loads } };
-    const rest = { ...loads, [b.crest]: { tools: b.tools, skills: b.skills } };
-    const own = rest[crest] || fit({ ...b, crest });
+  function wearCrest(st, loads, vesti, crest) {
+    const b = normalize(st), v = { yellow: vesti.yellow || null, blue: vesti.blue || null };
+    if (!CREST.has(crest) || crest === b.crest) return { st: b, loads: { ...loads }, vesti: v };
+    const own = b.tools.filter((id) => !vestIds(v).includes(id));
+    const rest = { ...loads, [b.crest]: { tools: own, skills: b.skills } };
+    // A Crest never worn yet takes what its own slots have room for of the one left.
+    const next = rest[crest] || { tools: fit({ ...b, crest, tools: own, vest: {} }).tools, skills: b.skills };
     delete rest[crest];
-    return { st: normalize({ ...b, crest, tools: own.tools, skills: own.skills }), loads: rest };
+    return { st: wear({ ...b, crest, skills: next.skills }, next.tools, v), loads: rest, vesti: v };
   }
 
   /* The player's modifiers that apply now, to the Needle or to the Skills: { add, first, mul,
@@ -531,6 +573,6 @@
   }
   const vestOf = (crests, lockets) => { const n = evaOf(crests, lockets); return { yellow: n >= D.VESTICREST.at.yellow, blue: n >= D.VESTICREST.at.blue }; };
 
-  SS.engine = { roundHalfEven, normalize, twinOf, fit, kept, keep, wearCrest, variantOf, toolArt, modsFor, hitsOf, usesToKill, interval, compute, plan, regen, binds, endure, phases, pieces, evaOf, vestOf };
+  SS.engine = { roundHalfEven, normalize, twinOf, fit, seat, kept, keep, wearCrest, variantOf, toolArt, modsFor, hitsOf, usesToKill, interval, compute, plan, regen, binds, endure, phases, pieces, evaOf, vestOf };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.engine;
 })();

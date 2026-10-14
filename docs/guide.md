@@ -189,10 +189,12 @@ Shaman wears a Silk Skill in each of its three slots. A save made while cursed (
 for a while in the story) shows the Cursed Crest: no slots, a line on what the curse does, and the
 figures with silk stopped at 3 and no Bind. In Free mode a
 tap on a worn one there takes it off, and the others stay in their slots. ‹ › change the Crest,
-and each Crest keeps its own Tools and Silk Skills, as the game does: back on one, it's as you left
-it. A Crest not worn yet starts with what fits of the one you left. Only what the Crest has slots
-for now counts (a lower evolution of the Hunter, or no Vesticrest, leaves some out without
-taking them off). From a save, what the
+and each Crest keeps the Tools and Silk Skills in its own slots, as the game does: back on one, it's
+as you left it (the Hunter's three evolutions share one). The Vesticrest's two Tools are shared by
+every Crest, as in the game, and stay put when the Crest changes. A Crest not worn yet starts with
+what fits of the one you left. A Tool is never worn twice, nor with its twin, across the Crest's
+slots and the Vesticrest's. Only what has a slot counts (on «What I have» without the Vesticrest,
+its Tools are left out until it's there). From a save, what the
 Crest's own slots don't hold is on the Vesticrest's, where the game has it. Beside it,
 the Tools and Silk Skills you have (as the game lists them; in Free mode, all of them, or on «What
 I have» what the Inventory's marks say, with a line to the Inventory while no Tool is marked), by colour, each on its slot as the Inventory draws it, the
@@ -200,7 +202,7 @@ slot filled and lit when it's worn: a tap puts one on or takes it off,
 and pointing at one (or at a slot) describes it underneath with the game's words and its numbers
 (damage per hit, uses at the Pouch's level, a full load, the shell shards to refill it; a Silk
 Skill's damage and silk), as if it were worn when it isn't. A Tool and its upgraded twin (Claw
-Mirror and Claw Mirrors…) are never worn together, as in the game: putting one on swaps the other. Silkshot is the one the game repaired
+Mirror and Claw Mirrors…) are never worn together, as in the game: putting one on swaps the other, on the Crest or the Vesticrest. Silkshot is the one the game repaired
 (the Original, the Twelfth Architect's or the Forge Daughter's: a save says which), with its own
 picture, words, damage and uses.
 
