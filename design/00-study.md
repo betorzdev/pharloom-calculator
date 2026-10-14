@@ -1715,6 +1715,15 @@ Tut_05, which has no room (no Hornet). Checked over every bench (the 90 RestBenc
 in an Act 2 and an Act 3 save) and the author's 71 user and restore-point files, the Map zoomed onto
 her and the area map, in headless Chrome over file:// (1440 and 390, es and en, no console errors);
 `check-pack` still matches all 72.
+Then the benches' marks (Albert: «the position of the benches is still the same… the bench's pin
+should be on the ground»): Bellhart's floated over the floor she sat on, Mount Fay's (Peak_02) sat
+below its room, in the black. `js/rooms.js benchSeat` gives a bench pin the foot of its RestBench
+(SEATS: in its scene or the room it's a part of, the nearest where a room has two or three), and the
+Map and Your game's area map draw the mark there, its disc's bottom on the floor (lifted by its
+radius and half its rim, in pins, so at any zoom; js/app-map.js layout, REST): 66 of the 84 bench
+pins; the other 18 (interiors, rooms drawn as a point, Act 3's destroyed Ventrica hub, the diving
+bell) keep the game's pin. Hornet sits on the same point, drawn over her bench's mark, as when both
+were on the pin. Checked against every bench mark close up, before and after, in headless Chrome.
 
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about

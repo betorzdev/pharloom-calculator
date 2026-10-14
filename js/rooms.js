@@ -6,7 +6,8 @@
    any, null (the site doesn't place it rather than place it wrong). An interior with another name
    goes where its door is (ENTRANCE: the room its door leads to, read from the scene's own doors,
    their targetScene, in the game's files on 28-Sep-2026). Where Hornet is for a save: on the ground
-   where the game wakes her (restPoint, js/spots.js SEATS). And how to get from one room to another:
+   where the game wakes her (restPoint, js/spots.js SEATS), and a bench's mark on that same ground
+   (benchSeat). And how to get from one room to another:
    js/graph.js's doors, and the stations a save has opened (walk, steps, path). */
 (() => {
   'use strict';
@@ -302,12 +303,15 @@
      sitting, she takes the game's pin for that bench, the one in her room or in a part of it
      (Tube_Hub's is in Tube_Hub_right: roomPiece) among `pins` (those shown), then among all; else
      her room's point (its middle). → { x, y } in the map's pixels, or null with no room. */
+  const seatsOf = (scene) => {
+    const SP = SS.spots || (typeof require === 'function' ? require('./spots.js') : {});
+    return (SP.SEATS || {})[String(scene).toLowerCase()] || null;
+  };
   function restPoint(g, pins) {
     const scene = g && g.bench;
     const room = scene ? roomOf(scene) : null;
     if (!room) return null;
-    const SP = SS.spots || (typeof require === 'function' ? require('./spots.js') : {});
-    const seats = (SP.SEATS || {})[scene.toLowerCase()] || {};
+    const seats = seatsOf(scene) || {};
     const sits = g.rested !== false;
     const name = g.marker && seats[g.marker] ? g.marker
       : Object.keys(seats).find((n) => (sits ? /^RestBench/.test(n) : n === 'Death Respawn Marker'));
@@ -321,7 +325,25 @@
     }
     return { x: room.x, y: room.y };
   }
+  /* A bench pin's bench on the ground: the foot of the RestBench it stands for (SEATS, the point
+     Hornet sits on, restPoint), in its scene or the room it's a part of (Tube_Hub_right's is
+     Tube_Hub's: roomPiece), the nearest to the pin where the room has more than one (Slab_16, the
+     Underworks' three). The Map draws the bench's mark resting on it, as she sits there, rather
+     than on the pin the game sets by hand (Bellhart's floats 24 px over its floor). null: a bench
+     with no seat (an interior, a room the map draws as a point, Act 3's destroyed Ventrica hub),
+     whose mark stays on its pin. → { x, y } in the map's pixels. */
+  function benchSeat(p) {
+    if (!p || p[0] !== 'bench') return null;
+    const seats = seatsOf(p[3]) || seatsOf(roomPiece(p[3])) || {};
+    let best = null;
+    for (const [name, at] of Object.entries(seats)) {
+      if (!/^RestBench/.test(name)) continue;
+      const d = Math.hypot(at[0] - p[1], at[1] - p[2]);
+      if (!best || d < best.d) best = { x: at[0], y: at[1], d };
+    }
+    return best && { x: best.x, y: best.y };
+  }
 
-  SS.rooms = { ENTRANCE, roomOf, roomPiece, mapPoint, sceneOf, graphScene, walk, steps, path, areaOf, mapVars, rule, mapView, pinsOn, restPoint };
+  SS.rooms = { ENTRANCE, roomOf, roomPiece, mapPoint, sceneOf, graphScene, walk, steps, path, areaOf, mapVars, rule, mapView, pinsOn, restPoint, benchSeat };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.rooms;
 })();

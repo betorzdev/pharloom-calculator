@@ -539,7 +539,9 @@ where the bench's own feet are in the game's files (not on the game's bench pin,
 hand a little above the bench, and in a few rooms far off it); when the save was written where the
 game wakes her at a room's own respawn point, as a restore point after a boss or an ability is, she
 stands on the ground under that point: «Your respawn point». A bench in a room the map doesn't
-draw (an interior, the Pilgrim's Rest, the Sprintmaster's cave) has her on its pin. Each room is drawn by its parts, as the game maps them (most rooms have two or three:
+draw (an interior, the Pilgrim's Rest, the Sprintmaster's cave) has her on its pin. The benches'
+marks are on that same ground: each rests on its bench's feet, its bottom on the floor, so she sits
+over her bench's mark; a bench the map draws no room for keeps the game's pin. Each room is drawn by its parts, as the game maps them (most rooms have two or three:
 Greymoor_02, its top, its middle), and what your game's map draws is in colour: the parts the
 game has mapped, in the areas whose map you've bought from Shakra. The site being a guide, the
 rest of the map is there too, faint: the areas whose map you haven't bought (their names struck
