@@ -2,7 +2,8 @@
    step 4; its third round, design/43, A in all six, puts each thing beside what it feeds). On the
    left what Hornet is: the five Needles with the Pale Oil, the masks and the silk (beads on a
    thread) each with its loose shards or fragments under it, the Silk Hearts, the Silk Skills with
-   what they deal and the abilities. On the right her equipment: the Crests with the Memory
+   what they deal and the abilities (the four outside the 100% apart, design/62). On the right
+   her equipment: the Crests (the Hunter's evolved picture once evolved) with the Memory
    Lockets that open their slots, then the Crafting Kit and the Tool Pouch with the Craftmetal, and
    the Tools on their slots by colour, one slot per point of the 100% (a Tool and its upgrade
    share one, the two a wish lends apart). Under both, across the width, what she carries: the
@@ -25,7 +26,8 @@
   const num = (n) => App.NF[0].format(n);
   // A Silk Skill as the game lists it (the Crest pane's solid white sprite, assets/icons/skills-inv), not the
   // wiki's line art of the prompt when you get one.
-  const icon = (list, id) => `assets/icons/${list === 'skills' ? 'skills-inv' : list}/${id}.webp`;
+  // An art that is already a path (the evolved Hunter Crest's, below) is taken as it is.
+  const icon = (list, id) => (id.includes('/') ? id : `assets/icons/${list === 'skills' ? 'skills-inv' : list}/${id}.webp`);
   // The Old Hearts and melodies by their save flag → their icon (assets/icons/pieces/).
   const PIECE_ICON = { CollectedHeartFlower: 'heart-bloom', CollectedHeartCoral: 'heart-coral', CollectedHeartHunter: 'heart-hunter',
     CollectedHeartClover: 'heart-clover', HasMelodyArchitect: 'melody-architect', HasMelodyLibrarian: 'melody-librarian',
@@ -76,8 +78,13 @@
     const out = [];
     // A Tool as the game holds it: Silkshot's picture and words are the variant's (js/engine.js toolArt).
     for (const x of D.TOOLS) { const a = SS.engine.toolArt(x.id, g); out.push({ list: 'tools', id: x.id, art: a.art, name: x.name, desc: a.desc, got: g.tools.includes(x.id) || (x.lost && g.gaveBack.includes(x.id)), color: x.color }); }
-    const evolved = hunterStage(g) > 1;
-    for (const x of D.CRESTS) out.push({ list: 'crests', id: x.id, name: x.name, desc: evolved && x.evolved ? x.evolved : x.desc, got: g.crests.includes(x.id) });
+    /* Evolved, the Hunter Crest is drawn as the game draws it then (design/62, 3 A): the Crest
+       screen's own art for that stage (assets/crests/hunter-2, -3: the wiki's «Hunter Crest Inventory 2/3»). */
+    const stage = hunterStage(g), evolved = stage > 1;
+    for (const x of D.CRESTS) {
+      const art = x.id === 'hunter' && evolved ? `assets/crests/hunter-${stage}.webp` : undefined;
+      out.push({ list: 'crests', id: x.id, art, name: x.name, desc: evolved && x.evolved ? x.evolved : x.desc, got: g.crests.includes(x.id) });
+    }
     for (const x of D.SKILLS) out.push({ list: 'skills', id: x.id, name: x.name, desc: x.desc, got: g.skills.includes(x.id) });
     for (const x of D.ARTS) out.push({ list: 'arts', id: x.id, name: x.name, desc: x.desc, got: g.arts.includes(x.id) });
     // The items: the two upgrade ladders with their level, the materials with how many were found.
@@ -145,11 +152,13 @@
   let marking = false;
   const markable = (x) => !x.n && x.id !== 'silk-heart' && !(x.list === 'crests' && x.id === 'hunter')
     && (x.list !== 'items' || ['everbloom', 'farsight', 'hunters-journal'].includes(x.id));
-  // x.top: how far + goes, when less than the most there can be (the loose shards once the masks are whole).
-  const stepper = (x) => {
+  /* x.top: how far + goes, when less than the most there can be (the loose shards once the masks are
+     whole). of: the figure carries its maximum, as a save's count does (design/62, 2 A: the
+     materials, the purse, the Relics and the fleas; the loose shards say theirs beside it). */
+  const stepper = (x, of = false) => {
     const [v, max] = x.n, top = x.top ?? max, what = pick(x.name);
     return `<span class="inv-step"><button type="button" class="icon-btn" data-act="invCount" data-key="${esc(keyOf(x))}" data-value="${v - 1}" data-dir="less" ${v > 0 ? '' : 'disabled'} aria-label="${esc(t('invLess', { what }))}" title="${esc(t('invLess', { what }))}">−</button>
-      <b>${num(v)}</b><button type="button" class="icon-btn" data-act="invCount" data-key="${esc(keyOf(x))}" data-value="${v + 1}" data-dir="more" ${v < top ? '' : 'disabled'} aria-label="${esc(t('invMore', { what }))}" title="${esc(t('invMore', { what }))}">+</button></span>`;
+      <b>${num(v)}${of ? `<i>/${num(max)}</i>` : ''}</b><button type="button" class="icon-btn" data-act="invCount" data-key="${esc(keyOf(x))}" data-value="${v + 1}" data-dir="more" ${v < top ? '' : 'disabled'} aria-label="${esc(t('invMore', { what }))}" title="${esc(t('invMore', { what }))}">+</button></span>`;
   };
   /* After a mark repaints the screen, the focus goes back where the key was: the repaint changes
      the steppers' and the pieces' data-value, so js/app.js restoreFocus can't find them. */
@@ -163,7 +172,7 @@
      the button there; the rest is one button. */
   function plate(x) {
     const counted = marking && x.n;
-    const v = counted ? stepper(x) : x.count ? esc(x.count) : x.got ? '' : esc(t('invNotFound'));
+    const v = counted ? stepper(x, true) : x.count ? esc(x.count) : x.got ? '' : esc(t('invNotFound'));
     const vcls = `inv-plate-v${!counted && (!x.got || !x.count) ? ' is-none' : ''}`;
     const cls = `inv-plate${x.got ? '' : ' is-missing'}${picked === keyOf(x) ? ' is-picked' : ''}`;
     const label = pick(x.name) + (x.count ? ' ' + x.count : '') + (x.got ? '' : ' · ' + t('invMissing'));
@@ -182,7 +191,7 @@
   function mat(x, rule = false) {
     return `<div class="inv-mat${x.got ? '' : ' is-missing'}${rule ? ' is-rule' : ''}"><button type="button" class="inv-mat-art" data-act="invPick" data-key="${esc(keyOf(x))}" aria-expanded="${picked === keyOf(x)}" aria-label="${esc(pick(x.name) + ' ' + x.count)}"${NT}>
       <img src="${icon(x.list, x.art || x.id)}" alt=""></button><span class="inv-fname"${NT}>${esc(pick(x.name))}</span>
-      ${marking ? stepper(x) : `<span class="inv-mat-n">${num(x.n[0])}<i>/${num(x.n[1])}</i></span>`}</div>`;
+      ${marking ? stepper(x, true) : `<span class="inv-mat-n">${num(x.n[0])}<i>/${num(x.n[1])}</i></span>`}</div>`;
   }
   /* The loose Mask Shards or Spool Fragments under their row, as the sibling draws its shards: the
      game's piece lit up to what you hold, how many make a whole one, and − N + in Free mode. The
@@ -307,6 +316,10 @@
     const r = SS.engine.compute(b);
     const skillV = (x) => { const s = r.skills.find((y) => y.id === x.id); return s ? s.total : null; };
     const artV = (x) => (x.id === 'needle-strike' && r.strike ? r.strike.total : null);
+    /* The abilities (design/62, 1 A): the seven of the 100% under the head's n/7, then the four that
+       aren't (the two cloaks, Beastling Call, Elegy of the Deep) under their own count, named as
+       Progress names them (pgOtherArts: the game has no name for them). */
+    const arts100 = by('arts').filter((x) => SS.completion.ARTS.includes(x.id)), artsOther = by('arts').filter((x) => !SS.completion.ARTS.includes(x.id));
     const item = (id) => all.find((x) => x.list === 'items' && x.id === id);
     /* The Tools by colour, one slot per point of the 100% (design/43, 4 A): a Tool and its upgrade
        share one, showing the one you have with two pips (had, upgraded); the Steel Soul twin
@@ -350,7 +363,9 @@
           ${needles(b, still, item('pale-oil'))}
           ${hornet(b, still, item('mask-shard'), item('spool-fragment'))}
           <section class="inv-sec">${head(t('cat_skills'), cats.skills, 'skills')}${plates(by('skills'), skillV)}${open(by('skills'))}</section>
-          <section class="inv-sec">${head(t('cat_arts'), cats.arts, 'arts')}${plates(by('arts'), artV)}${open(by('arts'))}</section>
+          <section class="inv-sec">${head(t('cat_arts'), cats.arts, 'arts')}${plates(arts100, artV)}
+            <p class="inv-sub" style="--c: var(--accent-line)">${esc(t('pgOtherArts'))} <span><b>${num(artsOther.filter((x) => x.got).length)}</b><i>/${num(artsOther.length)}</i></span></p>
+            ${plates(artsOther, artV)}${open(by('arts'))}</section>
         </div>
         <div class="inv-col">
           <section class="inv-sec">${head(t('cat_crests'), crestsN, 'crests')}${platesOf(crests)}${mat(item('memory-locket'), true)}${open([...crests, item('memory-locket')])}</section>

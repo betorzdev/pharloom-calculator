@@ -1756,6 +1756,7 @@ button.inv-plate-art { padding: 0; }
 .inv-h:has(.inv-all)::after { order: 2; }
 .inv-step { display: inline-flex; align-items: center; gap: var(--sp-half); }
 .inv-step b { min-width: var(--sp-6); text-align: center; font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-sm); color: var(--ink-strong); }
+.inv-step b i { font-style: normal; font-size: var(--fs-xs); font-weight: 400; color: var(--muted); }
 .inv-step .icon-btn { width: var(--sp-8); height: var(--sp-8); }
 /* What Hornet carries, under both columns and across the width (design/43, 1 A): the purse and
    the items, then the Relics and the Mementos. */
