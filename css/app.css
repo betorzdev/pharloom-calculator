@@ -2016,6 +2016,7 @@ button.ct-pip:is(:hover, :focus-visible) { border-color: var(--accent); outline:
 .hj-hunt:is(:hover, :focus-visible), .hj-hunt.is-picked { border-color: var(--accent-line); background: var(--veil); }
 .hj-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: var(--sp-3) var(--sp-8); margin: var(--sp-4) 0 var(--sp-2); }
 .hj-find { flex: 1 1 16rem; max-width: 24rem; margin-right: auto; }
+.hj-find input { text-overflow: ellipsis; }   /* the Spanish placeholder is longer than a phone's field: ends in an ellipsis, not cut mid-word */
 /* What it shows and in what order: each choose-one in words under its label (design/03-redesign.md,
    step 7, fourth round), as the Crest screen's «Try with». */
 .hj-ctl { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--sp-2) var(--sp-8); }
