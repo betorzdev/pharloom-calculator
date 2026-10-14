@@ -46,7 +46,7 @@ here (builds are tried in Free mode).
 ### The Map
 **The game's own map**, drawn piece by piece from its files with its own rules, and on it every
 Tool, mask shard, spool fragment, flea, Memory Locket, bench and boss, found or not. Search it,
-filter it by what you can reach now, and see what the game itself wouldn't draw yet.
+switch its layers, and see what the game itself wouldn't draw yet.
 
 </td>
 <td width="50%" valign="top">
