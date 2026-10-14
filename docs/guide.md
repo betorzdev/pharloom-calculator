@@ -534,9 +534,12 @@ go from one to the next (the nearest to your bench first, «1 of 2», each centr
 and its × back to the whole map. Any switch below ends it too; Back returns to Progress.
 
 Pharloom as the game's own map screen draws it for your game, piece by piece and by its own
-rules, taken from its files and its code, in a dim tone, with Hornet on her bench's pin, as the game draws her
-sitting (when the save was written where the game wakes her at a room's own respawn point, as a
-restore point after a boss or an ability is, she stands in that room: «Your respawn point»). Each room is drawn by its parts, as the game maps them (most rooms have two or three:
+rules, taken from its files and its code, in a dim tone, with Hornet sitting at her bench, her feet
+where the bench's own feet are in the game's files (not on the game's bench pin, which it sets by
+hand a little above the bench, and in a few rooms far off it); when the save was written where the
+game wakes her at a room's own respawn point, as a restore point after a boss or an ability is, she
+stands on the ground under that point: «Your respawn point». A bench in a room the map doesn't
+draw (an interior, the Pilgrim's Rest, the Sprintmaster's cave) has her on its pin. Each room is drawn by its parts, as the game maps them (most rooms have two or three:
 Greymoor_02, its top, its middle), and what your game's map draws is in colour: the parts the
 game has mapped, in the areas whose map you've bought from Shakra. The site being a guide, the
 rest of the map is there too, faint: the areas whose map you haven't bought (their names struck

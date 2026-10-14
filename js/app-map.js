@@ -646,22 +646,6 @@
     try { prev = JSON.parse(App.load('pharloom.prev') || 'null'); } catch (e) { prev = null; }
     return prev && prev.snap ? SS.savefile.gameOf(prev.snap) : null;
   }
-  /* Her bench's pin: the one in her room, else the one in a part of it (Tube_Hub's is in
-     Tube_Hub_right, Bone_01c's in Bone_01c_bot: js/rooms.js roomPiece), among the pins shown and
-     then among all (Act 3's Ventrica hub draws Tube_Hub_Destroyed, where Tube_Hub_right was); with
-     none, her room's middle. A save written where the game set her respawn to a room's own marker
-     rather than a bench (respawnType 0, savefile's rested false: a restore point after a boss, an
-     ability, an Act) wakes her there, standing: her room's middle, as the marker isn't extracted. */
-  function benchPoint(scene, pins, rested = true) {
-    const room = scene ? R.roomOf(scene) : null;
-    if (!room) return null;
-    if (!rested) return { x: room.x, y: room.y };
-    const names = [lower(room.scene), lower(scene)];
-    const inRoom = (x) => x[0] === 'bench' && (R.roomOf(x[3]) || {}).scene === room.scene;
-    const inPart = (x) => x[0] === 'bench' && names.includes(lower(R.roomPiece(x[3])));
-    const p = pins.find(inRoom) || pins.find(inPart) || M.PINS.find(inRoom) || M.PINS.find(inPart);
-    return p ? { x: p[1], y: p[2] } : { x: room.x, y: room.y };
-  }
   /* The way's key, cheap (no path searched): the two benches and when this save was written, so
      a later return between the same two benches walks again. null with no way to walk. */
   function wayKey(g) {
@@ -676,7 +660,7 @@
     const path = R.path(b.bench, g.bench, g.lit) || [];
     const mid = path.slice(1, -1).map((s) => R.roomOf(s)).filter(Boolean);
     pins = pins || R.pinsOn(g);
-    const pts = [benchPoint(b.bench, pins, b.rested), ...mid, benchPoint(g.bench, pins, g.rested)].filter(Boolean);
+    const pts = [R.restPoint(b, pins), ...mid, R.restPoint(g, pins)].filter(Boolean);
     return path.length > 1 && pts.length > 1 ? { key, pts, fromRested: b.rested } : null;
   }
   function waySvg(g, pins) {
@@ -759,7 +743,7 @@
     if (!box) return '';
     areaCtx = { view, box, key: MP.keyOf(view, 0) };
     // Hornet where she rests (her bench's pin comes with the Map's own marks, if its layer is on).
-    const bench = benchPoint(g.bench, R.pinsOn(g), g.rested);
+    const bench = R.restPoint(g, R.pinsOn(g));
     const at = `left:${n2((bench.x - box.x) / box.w * 100)}%;top:${n2((bench.y - box.y) / box.h * 100)}%`;
     // The marks: the Map's own, the layers its legend has on and its filters let show, those in the box.
     const { list, g: shown, own } = all();
@@ -841,7 +825,7 @@
     const clusters = [...fine.values()].map((f) => `<g class="mp-mk mp-cluster is-${f.m.layer}" style="--px:${n2(f.x)}px;--py:${n2(f.y)}px" aria-hidden="true"><circle r="0.5"/><circle class="mp-plate" r="0.47"/>${artOf(f.m)}`
       + `${f.n > 1 ? `<g class="mp-count"><circle cx="0.36" cy="-0.36" r="0.21"/><text x="0.36" y="-0.34">${num(f.n)}</text></g>` : ''}</g>`).join('');
     const exact = !!own && !!prefs.mapGame, view = R.mapView(own, { all: !exact }), shownPins = R.pinsOn(own);
-    const bench = own ? benchPoint(own.bench, shownPins, own.rested) : null;
+    const bench = own ? R.restPoint(own, shownPins) : null;
     // Hornet at her bench, sitting, or standing where the game respawns her: the page's own sprite
     // (.hn), over the map at her point (placeOver).
     const hereName = esc(t(own && !own.rested ? 'mapRespawn' : 'mapBench'));

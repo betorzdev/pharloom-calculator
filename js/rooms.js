@@ -5,7 +5,8 @@
    next (Belltown_Room_doctor → Belltown_Room → Belltown), down to the area's own name; without
    any, null (the site doesn't place it rather than place it wrong). An interior with another name
    goes where its door is (ENTRANCE: the room its door leads to, read from the scene's own doors,
-   their targetScene, in the game's files on 28-Sep-2026). And how to get from one room to another:
+   their targetScene, in the game's files on 28-Sep-2026). Where Hornet is for a save: on the ground
+   where the game wakes her (restPoint, js/spots.js SEATS). And how to get from one room to another:
    js/graph.js's doors, and the stations a save has opened (walk, steps, path). */
 (() => {
   'use strict';
@@ -213,7 +214,7 @@
      named after another piece and not a scene of the game, js/graph.js), the room it's a part of;
      the parts of a room the map draws only in parts are named after its scene (Under_13_left,
      _right and _bot are Under_13, 18 rooms). A destroyed piece stands for its room rather than
-     being part of it. The Map finds a bench's pin by it too (js/app-map.js benchPoint). */
+     being part of it. restPoint finds a bench's pin by it too. */
   const SCENE = new Set(Object.keys(G).map((k) => k.toLowerCase()));
   const ROOM_OF = new Map();
   function roomPiece(s) {
@@ -289,6 +290,38 @@
     return M.PINS.filter((p) => !off.has(p[3]) && !(g && p[5] && !rule(p[5], at)));
   };
 
-  SS.rooms = { ENTRANCE, roomOf, roomPiece, mapPoint, sceneOf, graphScene, walk, steps, path, areaOf, mapVars, rule, mapView, pinsOn };
+  /* Where Hornet is on the map for a game: where the game wakes her, the respawn marker its save
+     names (respawnScene and respawnMarkerName: a bench's RestBench, where she sits, or a room's
+     Death Respawn Marker after a boss, an ability or an Act, where she stands), her feet on the
+     ground under it (js/spots.js SEATS, from the game's files: a bench's own foot, the terrain
+     under a marker), placed as the game places a point (mapPoint). The game's bench pins aren't
+     that: it sets them by hand, a few pixels above the bench and in some rooms far off it (Bone
+     Bottom's 24 px up, in mid-air; one of Mount Fay's 7 px down, in the rock). A slot kept before
+     the marker was read: the scene's bench, or its Death Respawn Marker. A room the map draws as a
+     point, or not at all (an interior: the Pilgrim's Rest, the Sprintmaster's cave), has no seat:
+     sitting, she takes the game's pin for that bench, the one in her room or in a part of it
+     (Tube_Hub's is in Tube_Hub_right: roomPiece) among `pins` (those shown), then among all; else
+     her room's point (its middle). → { x, y } in the map's pixels, or null with no room. */
+  function restPoint(g, pins) {
+    const scene = g && g.bench;
+    const room = scene ? roomOf(scene) : null;
+    if (!room) return null;
+    const SP = SS.spots || (typeof require === 'function' ? require('./spots.js') : {});
+    const seats = (SP.SEATS || {})[scene.toLowerCase()] || {};
+    const sits = g.rested !== false;
+    const name = g.marker && seats[g.marker] ? g.marker
+      : Object.keys(seats).find((n) => (sits ? /^RestBench/.test(n) : n === 'Death Respawn Marker'));
+    if (name) return { x: seats[name][0], y: seats[name][1] };
+    if (sits) {
+      const parts = [room.scene.toLowerCase(), scene.toLowerCase()];
+      const inRoom = (p) => p[0] === 'bench' && (roomOf(p[3]) || {}).scene === room.scene;
+      const inPart = (p) => p[0] === 'bench' && parts.includes(roomPiece(p[3]).toLowerCase());
+      const p = (pins || []).find(inRoom) || (pins || []).find(inPart) || M.PINS.find(inRoom) || M.PINS.find(inPart);
+      if (p) return { x: p[1], y: p[2] };
+    }
+    return { x: room.x, y: room.y };
+  }
+
+  SS.rooms = { ENTRANCE, roomOf, roomPiece, mapPoint, sceneOf, graphScene, walk, steps, path, areaOf, mapVars, rule, mapView, pinsOn, restPoint };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.rooms;
 })();
