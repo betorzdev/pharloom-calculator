@@ -91,21 +91,21 @@
     const name = pick(e.name);
     const notes = !e.note ? ''
       : state === 'done' ? `<img class="hj-sym" src="assets/journal/hunter-symbol.webp" alt=""><p class="hj-note">${esc(pick(e.note))}</p>`
-      : `<img class="hj-sym is-locked" src="assets/journal/hunter-symbol.webp" alt=""><p class="hj-later">${esc(t('hjNotesDefeat', { 0: num(Math.max(0, e.kills - kills)) }))}</p>`;
+      : `<img class="hj-sym is-locked" src="assets/journal/hunter-symbol.webp" alt=""><p class="hj-later">${esc(e.inspect ? t('hjInspect') : t('hjNotesDefeat', { 0: num(Math.max(0, e.kills - kills)) }))}</p>`;
     return `<dialog class="hj-sheet" tabindex="-1" aria-label="${esc(name)}"${NT}>
       <button type="button" class="icon-btn hj-sheet-x" data-act="hjPick" data-key="" aria-label="${esc(t('mapCardClose'))}" title="${esc(t('mapCardClose'))}">${App.cross}</button>
       <div class="hj-art is-${state}"><img src="${art(e)}" alt="" decoding="async"></div>
       <div class="hj-entry">
       <h3 class="hj-name">${esc(name)}</h3>
       ${state !== 'done' && App.mapHas && App.mapHas('journal:' + e.id) ? `<button type="button" class="text-btn hj-onmap" data-act="mapShow" data-value="journal:${e.id}">${esc(t('mapOnMap'))}</button>` : ''}
-      <p class="hj-kills"><b>${num(Math.min(kills, 9999))}</b><i class="u">/${num(e.kills)}</i></p>
+      ${e.inspect ? '' : `<p class="hj-kills"><b>${num(Math.min(kills, 9999))}</b><i class="u">/${num(e.kills)}</i></p>`}
       ${whereHtml(e, state)}
       ${e.optional ? `<p class="inv-not">${esc(t('hjOptional'))}</p>` : ''}
       ${e.steel ? `<p class="inv-not">${esc(t('steelSoul'))}</p>` : ''}
       ${state !== 'unseen' && e.desc ? `<p class="inv-desc">${esc(pick(e.desc))}</p>` : ''}
       ${notes}
       ${state !== 'done' && by.length ? `<p class="hj-by">${esc(t('hjBy', { names: by.join(', ') }))}</p>` : ''}
-      ${state !== 'done' && e.inspect ? `<p class="hj-by">${esc(t('hjInspect'))}</p>` : ''}</div></dialog>`;
+      </div></dialog>`;
   }
 
   function whereHtml(e, state) {
@@ -123,7 +123,7 @@
     return `<section class="hj-hunts" aria-labelledby="hj-hunts-h"><h3 class="ct-h" id="hj-hunts-h">${esc(t('hjNear'))}</h3>
       <ol class="hj-hunt-row">${rows.map(({ x }) => `<li><button type="button" class="hj-hunt${picked === x.e.id ? ' is-picked' : ''}" data-act="hjPick" data-key="${x.e.id}"${NT}>
         ${ring(x)}<b>${esc(pick(x.e.name))}</b>
-        <span class="hj-hunt-left">${esc(t('hjLeft', { n: num(Math.max(0, x.e.kills - x.kills)) }))}</span></button></li>`).join('')}</ol></section>`;
+        <span class="hj-hunt-left">${esc(x.e.inspect ? t('hjInspect') : t('hjLeft', { n: num(Math.max(0, x.e.kills - x.kills)) }))}</span></button></li>`).join('')}</ol></section>`;
   }
 
   let shown = [];
