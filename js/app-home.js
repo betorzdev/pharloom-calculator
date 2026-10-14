@@ -208,18 +208,24 @@
      line with the Act and the time, Hornet at her bench, and the 100% as one figure into Progress.
      Under it what changed since the previous save, short. What another tab owns isn't repeated here. */
   const areaId = (a) => a.toLowerCase().replace(/_/g, '-');
+  const homeOf = (g) => (g.bench && SS.rooms.areaOf(g.bench)) || g.area;
+  /* The area's colours, on .hm: the whole screen is lit by them, its frame included (css/app.css,
+     .hm:has(.hm-scene); design/03-redesign.md, step 3, one light). */
+  const lightOf = (g) => {
+    const home = g && homeOf(g);
+    return home ? ` style="--area-line:var(--area-${areaId(home)}-line, var(--spotlight));--area-fill:var(--area-${areaId(home)}-fill, var(--scene-glow))"` : '';
+  };
   function game(g, m) {
     const c = CP.count(g);
     const h = Math.floor(m.time / 3600), min = Math.floor((m.time % 3600) / 60);
-    const home = (g.bench && SS.rooms.areaOf(g.bench)) || g.area;
+    const home = homeOf(g);
     const areaName = home && CO.AREAS[home] ? pick(CO.AREAS[home]) : '';
     const inside = g.area && g.area !== home && CO.AREAS[g.area] ? pick(CO.AREAS[g.area]) : '';
-    const light = home ? `--area-line:var(--area-${areaId(home)}-line, var(--spotlight));--area-fill:var(--area-${areaId(home)}-fill, var(--scene-glow))` : '';
     const steel = m.steel ? ` · <span${NT}>${esc(t(m.dead ? 'saveDefeated' : 'steelSoul'))}</span>` : '';
     const sub = [inside ? `<span${NT}>${esc(inside)}</span>` : '', esc(t('saveAct', { n: g.act })) + steel, esc(t('impTime', { h: num(h), m: num(min) }))].filter(Boolean).join(' · ');
     const map = App.mapAreaHtml ? App.mapAreaHtml(g) : '';
     const done = c.total >= 100;
-    return `<div class="hm-card hm-scene"${light ? ` style="${light}"` : ''}>${map}
+    return `<div class="hm-card hm-scene">${map}
         ${areaName ? `<p class="hm-sup">${esc(t(g.rested ? 'homeRest' : 'mapRespawn'))}</p><p class="hm-area"${NT}>${esc(areaName)}</p>` : ''}
         <p class="hm-sub">${sub}</p>
         ${rest(g.bench, g.rested)}
@@ -238,7 +244,7 @@
     if (key !== lastKey) sinceAll = false;
     const enter = sec.hidden || key !== lastKey;
     lastKey = key;
-    sec.innerHTML = `<div class="hm${enter && g ? ' is-enter' : ''}">${brackets}${screenHead(esc(t('navHome')))}${g ? game(g, m) : invite()}</div>`;
+    sec.innerHTML = `<div class="hm${enter && g ? ' is-enter' : ''}"${lightOf(g)}>${brackets}${screenHead(esc(t('navHome')))}${g ? game(g, m) : invite()}</div>`;
     if (g && App.mapAreaPaint) App.mapAreaPaint();
   };
   Object.assign(App.actions, {
