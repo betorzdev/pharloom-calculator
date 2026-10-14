@@ -4,7 +4,8 @@
    2026), and with no arrival: the Knight is simply there.
    The link is a loose word in the masthead, «Hollow Knight ↗», above the language and Share, left of
    the crown (js/app.js, renderMasthead, asks linkHtml; Albert's choice, 13 Oct 2026: after Share the
-   title no longer fitted on one line); on a phone, on its own line under the title.
+   title no longer fitted on one line); on a phone, on its own line under the title, the language and
+   Share at its right.
    The Knight stands on the word, breathing (the game's Idle at a third of its speed, there and back,
    as Hornet's there): every 15–25 s (masthead in view, tab visible) his cloak stirs in the wind, he
    looks up, reads his map or focuses soul; he watches the mouse over the masthead, and looks up
