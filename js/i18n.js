@@ -690,7 +690,7 @@
     pgSpoolNote:    { es: 'Cuentan los carretes enteros: cada dos fragmentos, un 1 %.', en: 'Whole spools count: every two fragments, 1%.' },
     kind_flea:      { es: 'Pulga perdida', en: 'Lost Flea' },   // KEY_FLEA
     kind_silkHeart: { es: 'Corazón de seda', en: 'Silk Heart' },   // MEMORY_MSG_TITLE_SILKHEART
-    kind_fleas:     { es: 'Pulgas perdidas', en: 'Lost Fleas' },
+    kind_fleas:     { es: 'Las pulgas perdidas', en: 'The Lost Fleas' },   // QUEST_FLEAS_TITLE
     kind_oldHearts: { es: 'Viejos corazones', en: 'Old Hearts' },   // as the wish MQ_BLACKTHREAD_5_NAME says them
     kind_melodies:  { es: 'Melodías', en: 'Melodies' },
     pgOtherArts:    { es: 'Otras habilidades', en: 'Other abilities' },
