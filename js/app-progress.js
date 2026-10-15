@@ -179,7 +179,7 @@
       masks: pieces('mask-shard').sort(byAct),
       needle: pieces('needle', (k) => pick(D.NEEDLES[k + 1].name)),
       hearts: pieces('silk-heart').sort(byAct),
-      items: [{ name: pick(item('everbloom').name), got: !!g && g.everbloom, act: ev[0] || 3, area: ev[1] || null, ...howParts(HW.HOW.everbloom), ways: HW.HOW.everbloom,
+      items: [{ name: pick(item('everbloom').name), got: !!g && g.everbloom, act: ev[0], area: ev[1] || null, ...howParts(HW.HOW.everbloom), ways: HW.HOW.everbloom,
         icon: 'assets/icons/items/everbloom.webp', mark: 'everbloom' }],
     };
   }
@@ -237,6 +237,8 @@
     HasMelodyLibrarian: 'Citadel Ascent Melody Librarian', CollectedHeartCoral: 'Black Thread Pt5 Heart Coral',
     CollectedHeartFlower: 'Black Thread Pt5 Heart Flower', CollectedHeartHunter: 'Black Thread Pt5 Heart Ant', 'Lost Lace': 'Black Thread Pt6 Flower' };
   const TASK_TYPE = { 'Soul Snare': 'wayfarer', 'Soul Snare Pre': 'wayfarer' };
+  // The group «collect» is the Soul Snare's wish, a Wayfarer one in the game: it has no emblem of its own.
+  const GROUP_EMBLEM = { collect: TASK_TYPE['Soul Snare'] };
   const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   function taskIcon(w) {
     const q = wishQuest(w) || TASK_QUEST[w[2][1]];
@@ -262,8 +264,9 @@
       const got = list.filter((x) => x.got).length;
       sum.got += got;
       sum.max += list.length;
+      const emb = GROUP_EMBLEM[ty.id] || ty.id;
       return list.length ? group('wish-' + ty.id, title, list, g, got, list.length,
-        { pips: true, emblem: WISH_ICON.has(ty.id) ? `assets/icons/wishes/${ty.id}.webp` : null }) : '';
+        { pips: true, emblem: WISH_ICON.has(emb) ? `assets/icons/wishes/${emb}.webp` : null }) : '';
     }).join('');
     return { html, ...sum };
   }
@@ -437,7 +440,9 @@
     return e ? says('tasks', q === LACE_STAGES[0] && melodies(g) >= 3 && e.ready ? e.ready : e.desc) : null;
   }
   // A main objective's or a wish's card: its title and line, and what «Tareas» says (desc, or ready).
-  const questSays = (q, k = 'desc') => { const e = QU.CHAIN[q]; return e ? says('tasks', e[k] || e.desc, e.name, e.loc) : null; };
+  const questSays = (q, k = 'desc') => { const e = QU.CHAIN[q]; return e ? { ...says('tasks', e[k] || e.desc, e.name, e.loc), icon: questIcon(q) } : null; };
+  // A task's picture, as the pane «Tareas» draws it (taskIcon; design/79, 1 A).
+  const questIcon = (q) => { const w = CO.WISHES.find((x) => wishQuest(x) === q); return w ? taskIcon(w) : null; };
   const STEP_SAYS = {
     bellshrines: (s) => questSays(s.quest || 'Grand Gate Bellshrines'),
     // The Bellshrines rung, the objective's own next line: back to the Grand Gate.
@@ -445,6 +450,9 @@
     // No objective names her: her Journal entry says who she is and what she guards (design/28, 5 A).
     judge: () => { const e = SS.journal && SS.journal.BOOK.find((x) => x.id === 'last-judge'); return e ? says('journal', e.desc, e.name) : null; },
     citadel: () => questSays('Citadel Seeker'),
+    /* No task yet (design/79, 4 A): the wish the step opens, its picture dim, with its name and
+       place as «Tareas» will show them (Q_SOUL_SNARE_NAME, Q_SOUL_SNARE_LOC). */
+    unlock: () => { const e = QU.CHAIN['Soul Snare Pre']; return e ? { name: e.name, loc: e.loc, icon: questIcon('Soul Snare Pre'), dim: true } : null; },
     offer: (s) => questSays(s.quest),
     pieces: () => questSays('Soul Snare'),
     // The pieces held, the wish's own next line: bring them to the Caretaker.
@@ -484,9 +492,12 @@
     FOCUS.set(r.act + ':' + s.id, { keys, name: stepShort(r, s) });
     return `<button type="button" class="text-btn pg-says-map" data-act="pgFocus" data-value="${r.act}:${s.id}">${App.pin}<span>${esc(keys.length > 1 ? t('pgMapN', { n: num(keys.length) }) : t('mapOnMap'))}</span></button>`;
   }
+  /* A task's card has its picture beside its words (design/79, 1 A to 5 A): 48 px under the step's
+     heading, 32 in the whole road and a step opened; dim when it's the wish the step opens. */
   function saysHtml(x) {
-    return `<p class="pg-says-k"><span class="pg-says-tag">${esc(TAG[x.tag]())}</span>${x.name ? `<span class="pg-says-name"${NT}>${esc(pick(x.name))}</span>` : ''}${x.loc
-      ? `<span class="pg-says-loc"${NT}>${esc(pick(x.loc))}</span>` : ''}</p><p class="pg-says-d"${NT}>${esc(sayText(x.text))}</p>`;
+    const words = `<p class="pg-says-k">${x.tag ? `<span class="pg-says-tag">${esc(TAG[x.tag]())}</span>` : ''}${x.name ? `<span class="pg-says-name"${NT}>${esc(pick(x.name))}</span>` : ''}${x.loc
+      ? `<span class="pg-says-loc"${NT}>${esc(pick(x.loc))}</span>` : ''}</p>${x.text ? `<p class="pg-says-d"${NT}>${esc(sayText(x.text))}</p>` : ''}`;
+    return x.icon ? `<div class="pg-says-task"><span class="pg-says-art${x.dim ? ' is-dim' : ''}" aria-hidden="true"><img src="${x.icon}" alt="" loading="lazy"></span><div>${words}</div></div>` : words;
   }
   // A step's card (1 A): under its heading, what the game says of it and its way onto the Map.
   function stepCard(r, s, g, cls = '') {
@@ -503,7 +514,7 @@
     const done = !!g && (s.ok || s.bypassed), x = STEP_SAYS[s.id] ? STEP_SAYS[s.id](s) : null, title = stepTitle(r, s);
     return `<div class="pg-says is-peek" role="region" aria-label="${esc(title)}"><p class="pg-peek-h"><small>${esc(t('pgPeekStep', { n: num(i + 1) }))}${done ? ' · ' + esc(t('pgPeekDone')) : ''}</small><span>${esc(title)}</span></p>
         <button type="button" class="pg-peek-x" data-act="pgPeek" data-value="${esc(peekAt)}" aria-label="${esc(t('pgPeekClose'))}" title="${esc(t('pgPeekClose'))}">${App.cross}</button>
-        ${x ? saysHtml(x) : `<p class="pg-says-none">${esc(t('pgSaysNone'))}</p>`}${done ? '' : mapLink(r, s, stepMarks(r, s, g))}</div>`;
+        ${x ? saysHtml(x) : ''}${x && x.text ? '' : `<p class="pg-says-none">${esc(t('pgSaysNone'))}</p>`}${done ? '' : mapLink(r, s, stepMarks(r, s, g))}</div>`;
   }
   // A row's own words (4 A), folded under «Lo que dice el juego».
   function saysRow(x) {

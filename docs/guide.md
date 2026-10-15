@@ -598,12 +598,14 @@ opens its card where it was clicked: «Step 3», its title, what the game says o
 the Map (a step done says «done» and has no map); the × or the step again close it, and the step
 you're on takes you to its heading. Then the step you're on, with its picture and, under its
 heading, **what the game says of it**: the objective as the game's pause menu «Tasks» titles it,
-with its line («Grand Gate · Pharloom») and its description as the game words it in that state
+with the picture the Tasks tab draws by it, its line («Grand Gate · Pharloom») and its description as the game words it in that state
 («Awaken the old bells throughout the lands.» while Bellshrines are left, «Return to the Grand
 Gate and open the way to the Citadel.» once they're rung; for the snare, «Acquire the necessary
 components…», then «Give the collected components to the Caretaker of Songclave.»). The Last Judge
 has no objective of her own, so her Journal entry speaks («Final arbiter of the Blasted Steps…»,
-tagged «Journal»); unlocking Silk and Soul has no text in the game, so it has none. Under it,
+tagged «Journal»); unlocking Silk and Soul has no text in the game, so it shows the wish it opens,
+its picture dim and its name and place («Silk and Soul · Caretaker of Songclave»). The same picture,
+smaller, goes by each step's card in the whole road and in a step opened from the thread. Under it,
 «See on the map» or «See the n on the map» (the Bellshrines not rung, the Grand Gate's and the
 Citadel's objective pins as the game's own map places them, the Last Judge and the Phantom, the
 Caretaker and Bellhart's Wishwall, the snare's pieces, the Cradle's top). Then its parts as small **rings** side by side (the wishes it requires, its
