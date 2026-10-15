@@ -456,11 +456,14 @@ boss's arena, with the person who gives it. All of it on at first.
   Deep Docks) and the Bellhome Key (Pavo, in Bellhart).
 - **Fights**: the enemy gauntlets and bosses not beaten yet, each fight its own mark (Lace atop the
   Cradle, the two Moss Mothers of Weavenest Atla, the Act 3 Moss Mother and the Savage Beastfly
-  of the Far Fields too), and the unique enemies (Rhinogrunds,
+  of the Far Fields too), each boss where it's fought (Moorwing at Bellhart's east entrance, the
+  Second Sentinel in its High Halls arena). A gauntlet won by beating its boss (Lugoli's, Groal's,
+  the Coral Tower's four that end in Khann…) is that boss's mark, its waves and reward on the
+  boss's card. And the unique enemies (Rhinogrunds,
   Covetous Pilgrims, Shardillards, Void Masses).
 - **People**: Shakra's spots, and who gives something of the 100% (Plinney, Eva, Pinstress,
   Loddie, Lumble, Mooshka) and Scrounge, who buys the relics. **Everyone else** (off at first): every
-  other person the game's scenes place, 54 of them, each in one switch only, with their own figure
+  other person the game's scenes place, 44 of them, each in one switch only, with their own figure
   from the game's sprites (tools/extract-people.py), named as their title card names them. With a
   save, those you haven't met yet are dimmed, but only when the save has a flag for it: the ones it
   says nothing about are never dimmed by guess. Who moves shows only where the save says they are
@@ -468,8 +471,11 @@ boss's arena, with the person who gives it. All of it on at first.
   Second Sentinel resting, Pilby, the Chapel Maid, Seth at the Flea Festival); who has left or died
   is gone. Where the save doesn't say, every spot shows and the card says so (Garmond comes and
   goes, Sherma, Gilly, the Green Prince, Mister Mushroom…). In Free mode, everyone everywhere.
+  Each person once in a room: where another mark already stands for them (who asks for a wish, a
+  boss, the Herald's spots), Everyone else doesn't draw them again; Jubilana is her shop.
 - **Tasks**, as the game's pause menu calls its wishes and objectives: the Wishwalls and who asks
-  for a wish (with a save, only while one is still open there); where a wish is done (the
+  for a wish, by name (with a save, only while one is still open there; who already has a mark
+  there, a shop or who gives something of the 100%, has the wishes on that card instead); where a wish is done (the
   deliveries and the Steel Sentinel's spots where the game's own map pins them, of the Sentinel's
   six only the three your game chose, and only in Steel Soul; the Herald's seven; the rescues and
   fights, in the room where the game ends the wish); what a wish asks for (the 22 things lying in a
@@ -486,7 +492,8 @@ boss's arena, with the person who gives it. All of it on at first.
   that they're drawn one by one only close up; from afar, one mark per room and kind, with how
   many in its corner. Marks that would cover each other step a little apart, more the closer you zoom.
 - **Your game**, with a save: your cocoon, where you last fell, at the spot the game's own map
-  marks it (on at first), and the Journal's entries still missing, in the room where each is found.
+  marks it (on at first), and the Journal's entries still missing, where the enemy is in the room
+  where each is found (a boss's entry is its boss's mark already, not drawn again).
 
 Each mark is the thing's own picture on a dark disc with a thin rim, as the Hollow Knight site
 draws them, over a pale plate so a dark portrait reads, about the same size at any zoom, a little
@@ -514,10 +521,10 @@ With a save the map shows only what you're missing; in Free mode, what your mark
 (everything, as a guide, on a New Game). Tap any mark for its card (above the mark, or below it
 when above it would cover the search or the zoom): what
 it is, where, how it's had, and what it says of your game. A
-shop's says what of the 100% it still has for you, Shakra's which maps you lack, a Wishwall's or a
+shop's says what of the 100% it still has for you (and the wishes it asks, if it does), Shakra's which maps you lack, a Wishwall's or a
 wish giver's the wishes still open, a wish's place or thing which wish it's for, whether it's done
 and a button to its Wishwall or to who asks for it, a boss's whether it's beaten, with «Fight it in Combat» and
-«See in the Journal»; a gauntlet's its waves and reward; a Journal entry's its kills. In Free mode
+«See in the Journal» (and its gauntlet's waves and reward, if its fight is one); a gauntlet's its waves and reward; a Journal entry's its kills. In Free mode
 a piece's card marks it had; a Mask Shard, Spool Fragment, Silk Heart or upgrade of the Needle, Kit
 or Pouch follows the Inventory's levels instead, as on Progress, and its card leads there. Tap an area's name for its card: the rooms of it you've visited,
 and what's left there of the 100%, the Journal and the gauntlets.

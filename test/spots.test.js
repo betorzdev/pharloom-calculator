@@ -54,7 +54,27 @@ test('each boss fight is a mark of its own: the first fight by its name, the sec
   assert.deepEqual(['lace-the-cradle', 'moss-mother-weavenest-atla', 'moss-mother-act-3-moss-grotto', 'savage-beastfly-far-fields'].map((f) => at[f]),
     ['Song_Tower_01', 'Weave_03', 'Tut_02', 'Bone_East_08']);
   // What a second fight gives is had in its arena: the Weavelight, the Silk Heart Lace leaves.
-  assert.equal(SP.AT.tools.weavelight, 'Weave_03');
+  assert.equal(SP.AT.tools.weavelight.toLowerCase(), 'weave_03');
+  // What a boss only opens the way to is where the game has it, not in the arena: Cling Grip's
+  // shrine is the room past Sister Splinter's, the Conchcutter lies inside the Coral Tower.
+  assert.equal(SP.AT.arts['cling-grip'].toLowerCase(), 'shellwood_10');
+  assert.equal(SP.AT.tools.conchcutter.toLowerCase(), 'coral_tower_01');
+  // A boss in several rooms is in the one it's fought in: Moorwing at Bellhart's east entrance (not
+  // its Act 2 rematch by the Bellway), the Second Sentinel in its High Halls arena, where the
+  // Reserve Bind it gives lies (not at the Wishwall of its wish).
+  assert.equal(at.moorwing, 'greymoor_08_boss');
+  assert.equal(at['second-sentinel'], 'Hang_17b');
+  assert.equal(SP.AT.tools['reserve-bind'].toLowerCase(), 'hang_17b');
+  // A boss scene loaded over its room has the boss's own point in it.
+  for (const f of ['moorwing', 'bell-beast', 'fourth-chorus', 'the-unravelled']) assert.ok(SP.XY['boss:' + f], f);
+  // A Memento the game has in several rooms is with who gives it: Lost Garmond's arena, Seth's festival.
+  const memento = (n) => SP.EXTRAS.find((x) => x[2][0] === 'memento' && x[2][1] === n)[3];
+  assert.equal(memento('Memento Garmond'), 'coral_33');
+  assert.equal(memento('Memento Seth'), 'aqueduct_05_festival');
+  // The Journal's entries where the enemy is, and Shakra on guard inside her room, not under it.
+  assert.ok(Object.keys(SP.XY).filter((k) => k.startsWith('journal:')).length > 150);
+  const g8 = SS.map.ROOMS.Greymoor_08, [sx, sy] = SP.XY[`shakra:${SP.VENDORS.shakra.indexOf('greymoor_08')}`];
+  assert.ok(sx >= g8[0] && sx <= g8[0] + g8[2] && sy >= g8[1] && sy <= g8[1] + g8[3]);
   const heart = CO.PIECES.findIndex((p, i) => p[0] === 'silk-heart' && SP.AT.pieces[i] === 'Song_Tower_01');
   assert.ok(heart >= 0);
   // The Summoned Saviour is fought in Act 2 (its wish, Steel Sentinel Pt2, is an Act 2 wish), not
