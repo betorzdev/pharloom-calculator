@@ -769,6 +769,14 @@ to the game's own pin for it (the melodies and the Old Hearts to where each lies
 the pin goes to who gives it, or else to its marks. One mark opens the Map on it; several open the
 Map with only them (‹ 1 of n ›, the nearest to your bench first). A task with no mark keeps the
 pin's empty place, and a task done has none.
+In a save, a wish you've promised (the game's «Wish Promised») goes first in its group, under
+«Promised», its mark the hollow diamond lit and its pip in the group's row half lit. In place of how
+to get it, what it asks with how much of each you carry («Fine Pin 10/12», the rosaries, the shell
+shards or the Journal's entries for a donation or Nuu's), what you already have dimmed; once you
+have it all, the diamond fills and the line is the game's own for handing it in («Turn in the Fine
+Pins to Songclave's wishwall…»). A delivery is ready as soon as you take it: you carry it. A wish
+whose first step you've taken (a board's notice that sends you to someone) is promised with nothing
+counted yet. The main objectives keep to the road.
 In a save it shows what's missing, or everything with a tick where you have it; without a save,
 the whole list, as a guide. Which piece you have is read from the save one by one, and on the
 92 real saves it agrees with the game's own counters (masks, spools, the three upgrade ladders,

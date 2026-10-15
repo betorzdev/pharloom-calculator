@@ -41,7 +41,7 @@ the work up reads it first, then the step it's on.
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html` |
-| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html` |
+| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html` |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
@@ -1000,6 +1000,30 @@ weave).
 main objectives' group no slot and puts `.pg-spacer` between it and the wishes, only when both are
 drawn; `css/app.css` centres it in a row's height (`--filigree-art` in the tokens, the plaque's
 share).
+
+### Each wish's state from the save (15 October 2026)
+
+Albert: the game's wishes have states (promised, under way with part of it done, done), and Tasks
+showed only done or not. The save has them: `QuestCompletionData` keeps `IsAccepted` and
+`IsCompleted` for each quest (the site already read the first as `taken`), and what a wish asks to
+be brought is a `Collectable` held (its `Amount`; the Needle Phial a Tool unlocked): over the 73
+saves, a hunt's `CompletedCount` while open always equals that amount, so the amount is the count.
+The game's pane says «Wish Promised» (`WISH_PROMISED`) and, once the targets are met, each quest's
+`_DESC_READY` line (js/quests.js CHAIN `ready`). `81-task-states-variants.html` (kept out of the
+repo), the real tab's HTML for `Restore_Points3/restoreData22.dat` (nine wishes promised) and
+`user1.dat` (a delivery carried), the states read from the same files: 1 the row (A in the how
+line: what it asks with what's carried, «Ragpelt 7/25»; B the count in large numerals where the
+area was; C a thin bar per thing asked), 2 the order (A first in their group under «Promised»; B a
+group of their own on top; C by Act as before), 3 the group's pips (A a promised one half lit; B
+as before).
+
+**Decision: 1 A, 2 A, 3 A** (15 October 2026), built: `js/savefile.js` keeps `carried` (every
+thing a wish asks for, by its save name, only the held); `wishState()` and `wishLine()` in
+`js/app-progress.js` give a promised wish's row its mark (`.pg-promise`, filled when ready), its
+line and «Deseo prometido» for a screen reader; `listHtml()` puts the promised first under
+«Prometidos» and then always heads the rest; `strip()` lights their pips halfway
+(`.pg-pips i.is-promised`). The ten wishes Act 3 requires are the road's, which doesn't count them
+yet; the main objectives too.
 
 ## Step 6 · Map
 
