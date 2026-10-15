@@ -17,6 +17,10 @@ What it writes (read on 11-Oct-2026 and 14-Oct-2026, patch 1.0.30000):
       Snare's, the Black Thread's…; in inventory.spriteatlas or in mainquests.bundle itself), named by
       its m_Name, the name the save uses, in lower case with dashes («Citadel Seeker» →
       main-citadel-seeker.webp). js/app-progress.js TASK_ICON picks them.
+  assets/icons/tasks/spacer.webp  the pane's own filigree between the main objectives and the wishes
+      (its Quest List / Quests / Current Heading / Spacer, completed_quests_spacer in
+      inventory.spriteatlas; design/80, E): the pane gives the main objectives no heading and no
+      emblem, only this line under them. Kept whole and lossless.
 Each picture is cut to what it draws; the emblems are kept at most 128 px, the pane's pictures at
 most 64 px and lossless. Team Cherry's art, published as the map is (the colophon says so). Re-run
 after a patch. """
@@ -32,6 +36,7 @@ TYPES = {
     'TYPE_STEELSENTINEL_TITLE': 'steel',
 }
 BOARD = 'Hornet_Inv_pane_icons_0002_wish'
+SPACER = 'completed_quests_spacer'
 MAX, PANE_MAX = 128, 64
 
 def save(image, path, size=MAX, lossless=False):
@@ -95,10 +100,15 @@ def main(game):
         else:
             missing.append('tasks/main-' + slug(t['m_Name']))
     for s in small.values():
-        if 'board' not in done and s.read().m_Name == BOARD:
+        name = s.read().m_Name
+        if 'board' not in done and name == BOARD:
             save(s.read().image, os.path.join(out, 'board.webp'))
             done.append('board')
+        if 'spacer' not in panes and name == SPACER:
+            save(s.read().image, os.path.join(pane, 'spacer.webp'), 1024, True)
+            panes.append('spacer')
     missing += [v for v in [*TYPES.values(), 'board'] if v not in done]
+    missing += ['tasks/spacer'] if 'spacer' not in panes else []
     print(f'{len(done)} pictures → assets/icons/wishes/, {len(panes)} → assets/icons/tasks/'
           + (f'; not found: {", ".join(missing)}' if missing else ''))
     if missing:

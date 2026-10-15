@@ -34,7 +34,8 @@
      Your game      your cocoon; the Journal's entries still missing
    Each layer's switch is the game's own picture, with had of total (in Free mode, the total);
    "Only the 100%" turns on just the layers that count (design/03-redesign.md, step 6).
-   In a save, what's had is left out; in Free mode, everything shows, as a guide. A tap
+   In a save (or Free mode's marks) what's had is left out; "Show Completed" (prefs.mapHad) brings
+   it back, dimmed and ticked (design/03-redesign.md, step 6). A tap
    on a mark, or on an area's name, opens its card. Hornet sits at your bench, or stands where the
    game respawns her when the save says she isn't at one (js/app-hornet.js
    walks her there from the previous one). Other screens open the Map on a thing (App.mapShow).
@@ -510,7 +511,7 @@
   function passes(m, g, own) {
     return !(OWN_ONLY.has(m.layer) && !own);
   }
-  const shows = (m, g, own) => passes(m, g, own) && !(g && m.got);
+  const shows = (m, g, own) => passes(m, g, own) && !(g && m.got && !prefs.mapHad);
 
   /* ── The map, in SVG in the image's own pixels (M.W × M.H): the view is its viewBox, as the
      sibling's (hallownest-calculator js/app-map.js). ── */
@@ -616,7 +617,9 @@
         stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${g[1]}</svg>` : '';
   }
   const pinSvg = (m, p, title, cls) => `<g class="mp-mk is-${m.layer}${cls}${m.off ? ' is-off' : ''}${m.fix ? ' is-fixed' : ''}${m.hidden ? ' is-hidden' : ''}${sel(m.key)}" style="--px:${n2(p.x)}px;--py:${n2(p.y)}px;--ox:${n2(p.ox || 0)}px;--oy:${n2(p.oy || 0)}px"
-        data-mk="${esc(m.key)}" role="button" tabindex="0" aria-label="${esc(title)}"><title>${esc(title)}</title><circle r="0.5"/><circle class="mp-plate" r="0.47"/>${artOf(m)}</g>`;
+        data-mk="${esc(m.key)}" role="button" tabindex="0" aria-label="${esc(title)}"><title>${esc(title)}</title><circle r="0.5"/><circle class="mp-plate" r="0.47"/>${artOf(m)}${cls.includes(' is-had') ? HAD_TICK : ''}</g>`;
+  // A had mark's tick (design/77, 3 A): a small disc on its upper right, the site's tick in --good (css .mp-tick).
+  const HAD_TICK = '<g class="mp-tick" aria-hidden="true"><circle cx="0.36" cy="-0.36" r="0.22"/><path d="M0.25 -0.36 L0.33 -0.28 L0.48 -0.45"/></g>';
   const markTitle = (m) => [m.name, m.sub, m.act ? t('saveAct', { n: m.act }) : ''].filter(Boolean).join(' · ');
   /* Each mark on its point: the pin the game draws, else where the game has the thing (js/spots.js
      XY), else its room's middle; those on one point in a grid around it. The marks the legend has
@@ -631,14 +634,15 @@
       if (!inFocus && !passes(m, g, own)) continue;
       const c = count[m.layer] || (count[m.layer] = { all: 0, had: 0, shown: 0 });
       c.all++;
-      if (g && m.got) { c.had++; continue; }
-      c.shown++;
+      // What's had: counted, and on the map only with "Show Completed" (prefs.mapHad), dimmed and ticked.
+      const had = !!(g && m.got);
+      if (had) { c.had++; if (!prefs.mapHad) continue; } else c.shown++;
       const p = m.fix || pointOf(m);
       if (!p) continue;
       placed.set(m.key, { x: p.x, y: p.y, lift: m.rests ? REST : 0 });
       if (focusSet ? !inFocus : !on.has(m.layer)) continue;
-      if (FINE.has(m.layer)) { const k = ((R.roomOf(m.scene) || {}).scene || m.key) + '|' + m.layer; const f = fine.get(k) || { ...p, m, n: 0 }; f.n++; fine.set(k, f); }
-      items.push({ m, p: { x: p.x, y: p.y } });
+      if (FINE.has(m.layer) && !had) { const k = ((R.roomOf(m.scene) || {}).scene || m.key) + '|' + m.layer; const f = fine.get(k) || { ...p, m, n: 0 }; f.n++; fine.set(k, f); }
+      items.push({ m, p: { x: p.x, y: p.y }, had });
     }
     arrange(items);
     // A mark that rests on a floor (a bench on its seat) has its point at its bottom: up by its
@@ -815,7 +819,7 @@
     const lay = layout(list, g, own, on);
     placed = lay.placed;
     const { count, items, fine } = lay;
-    const marks = items.map(({ m, p }) => pinSvg(m, p, markTitle(m), FINE.has(m.layer) ? ' is-fine' : '')).join('');
+    const marks = items.map(({ m, p, had }) => pinSvg(m, p, markTitle(m), (FINE.has(m.layer) ? ' is-fine' : '') + (had ? ' is-had' : ''))).join('');
     // From afar, the caches and walls of a room one mark per layer: its picture, how many in a corner.
     const clusters = [...fine.values()].map((f) => `<g class="mp-mk mp-cluster is-${f.m.layer}" style="--px:${n2(f.x)}px;--py:${n2(f.y)}px" aria-hidden="true"><circle r="0.5"/><circle class="mp-plate" r="0.47"/>${artOf(f.m)}`
       + `${f.n > 1 ? `<g class="mp-count"><circle cx="0.36" cy="-0.36" r="0.21"/><text x="0.36" y="-0.34">${num(f.n)}</text></g>` : ''}</g>`).join('');
@@ -836,7 +840,7 @@
     }).join('') : '';
 
     /* The selector under the map (design/03-redesign.md, step 6, the selector; the sibling's
-       filter): its head (title, show all · hide all and the three choices), then the
+       filter): its head (title, show all · hide all and the choices), then the
        groups, each folding (prefs.mapOpen), its title its switch, with its count; each layer's
        picture its switch, in grey when off, with its count; a set's caret opens its layers. */
     const open = openGroups();
@@ -884,7 +888,7 @@
           <h3 class="mp-legend-t" id="mp-legend-t">${esc(t('mapShows'))}</h3>
           <span class="mp-all"><button type="button" class="text-btn" data-act="mapAll" data-value="1">${esc(t('mapShowAll'))}</button><button type="button" class="text-btn" data-act="mapAll" data-value="0">${esc(t('mapHideAll'))}</button><button type="button" class="text-btn" data-act="mapHundred">${esc(t('mapOnlyHundred'))}</button></span>
           <div class="mp-opts">
-            <div class="mp-checks">${own ? check('mapGame', !exact, t('mapWhole'), t('mapWholeTip')) : ''}${check('mapNames', names, t('mapNames'))}</div>
+            <div class="mp-checks">${own ? check('mapGame', !exact, t('mapWhole'), t('mapWholeTip')) : ''}${check('mapNames', names, t('mapNames'))}${g ? check('mapHad', !!prefs.mapHad, t('mapHad')) : ''}</div>
           </div>
         </div>
         <div class="mp-secs">${groups}</div>
@@ -1423,8 +1427,8 @@
     const out = AREA_NAMES().map((a) => ({ name: areaName(a.id), sub: t('mapArea'), key: 'area:' + a.id }));
     const seen = new Set();
     for (const m of list) {
-      // What the map can show: in a save, only what's missing (whatever its layer or the filters).
-      if (FINE.has(m.layer) || m.layer === 'bench' || (OWN_ONLY.has(m.layer) && !own) || (g && m.got)) continue;
+      // What the map can show: in a save, only what's missing (whatever its layer or the filters), and what's had with "Show Completed".
+      if (FINE.has(m.layer) || m.layer === 'bench' || (OWN_ONLY.has(m.layer) && !own) || (g && m.got && !prefs.mapHad)) continue;
       // One result per name, layer and area (Shakra's many spots in one area are one).
       const area = areaName(m.area || R.areaOf(m.scene));
       const id = m.name + '|' + m.layer + '|' + area;
@@ -1497,6 +1501,8 @@
     // A boss's or an entry's card: the Journal, that entry open.
     mapJournal(node) { if (App.journalOpen) App.journalOpen(node.dataset.value); App.go('journal'); },
     mapNames() { prefs.mapNames = prefs.mapNames === false; savePrefs(); redraw(); },
+    // What's had, back on the map (design/77): a choice of yours, kept in the prefs.
+    mapHad() { prefs.mapHad = !prefs.mapHad; savePrefs(); redraw(); },
     // A search result: its layer on, the view close on it, its card open.
     mapGo(node) {
       const x = finds[Number(node.dataset.value)];
@@ -1519,7 +1525,7 @@
     mapFocusOff() { focusSet = null; pick1(''); render(); },
   });
   // Whatever changes what the Map shows ends the focus, so a switch never seems to do nothing.
-  for (const k of ['mapLayer', 'mapGroup', 'mapSet', 'mapAll', 'mapHundred', 'mapGame']) {
+  for (const k of ['mapLayer', 'mapGroup', 'mapSet', 'mapAll', 'mapHundred', 'mapGame', 'mapHad']) {
     const f = actions[k];
     actions[k] = (node) => { focusSet = null; f(node); };
   }

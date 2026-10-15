@@ -343,7 +343,12 @@ Bellshrines and the Last Judge, or the Phantom), Act 2 to Grand Mother Silk, and
 through the Silk and Soul wish, reopening the save black-threaded: void, Bone Bottom destroyed,
 some bosses gone (Shakra, Garmond & Zaza) and others doubled in health, up to Lost Lace. The
 Completionist tracker tags every item with its Act; the site's "what's missing near the bench"
-has to too. **Steel Soul** is permadeath with a few pardons (deaths to the duels and inside the
+has to too. It takes the tracker's (`tools/gen-collectibles.js` stops on a missing one), set
+against the wiki where it gives one per thing (the Mask Shard and Spool Fragment tables, 6/10/4
+and 6/12; the Wishes page, which files Pinmaster's Oil under Act 1, where Plinney offers it,
+though no Pale Oil comes before Act 2) and against the author's 73 saves (`npm run check-pack`:
+nothing held in an earlier Act; 15-Oct-2026, none). Tools, Crests, skills and abilities have no
+Act on the wiki's pages: the saves are their check. **Steel Soul** is permadeath with a few pardons (deaths to the duels and inside the
 memories), its own boss, its own Tool and its own Journal entry; no other difficulty exists.
 
 **No Godhome.** Nothing in Silksong replays a boss: the four **Elegy memories** of Act 3 (Clover
@@ -1530,6 +1535,12 @@ time with no reload and no stale row. Fixed on the way:
 - **The flea caravan's rewards**: the Spool Fragment at 12 fleas and the Tool Pouch at 22, not the
   completionist's 14 and 20 (the Troupe Leader's Dialogue FSM, Greymoor_08_caravan and
   Coral_Judge_Arena, compares the FleasCollected Target's count against 12 and 22; the wiki agrees).
+  And that Spool Fragment's place (15 October): not Greymoor, as the completionist files it, but
+  the caravan's Blasted Steps camp, where Mooshka gives it the first time Hornet speaks to him there
+  (Coral_Judge_Arena's FSM, "Award Spool Piece", which sets MetCaravanTroupeLeaderJudge: now its
+  check, in place of CaravanTroupeLocation ≥ 2, the same on all 73 saves). The Progress row says
+  the Blasted Steps, and the Map puts it on Mooshka there instead of at Fleatopia
+  (`tools/completionist.js PIECE_FIX`; the wiki's Spool Fragment and Blasted Steps pages agree).
 - **Nineteen things of the 100% had no area** (Voltvessels, Flintslate, Swift Step, Clawline,
   Silkspear, three Spool Fragments…): the completionist files them as the area alone ("Deep Docks"),
   which the generator only read with a colon after it. Only the Everbloom has none now (a wish's).
@@ -1799,7 +1810,10 @@ the Snare's, each melody and Old Heart its own; two of them live in mainquests.b
 Snare wishes the site files apart are Wayfarer ones in the game. Rewards were looked at too
 (`rewardItem`, `rewardIcon`): only 28 of the 74 name one, the rest give theirs through the NPC's
 script, so they weren't used. `tools/extract-wish-icons.py` writes them into `assets/icons/tasks/`
-(37 lossless WebP, at most 64 px), and Progress's Tasks, now a tab of its own, draws them.
+(37 lossless WebP, at most 64 px), and Progress's Tasks, now a tab of its own, draws them. The main
+objectives have no emblem of their group: every MainQuest's `typeLargeIcon` is empty, and the pane
+draws them on top with no heading, then only a filigree (`completed_quests_spacer`, its «Current
+Heading») before the wishes; the script writes it too (`tasks/spacer.webp`; design/80, E).
 
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about

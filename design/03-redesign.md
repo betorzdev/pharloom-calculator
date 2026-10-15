@@ -41,8 +41,8 @@ the work up reads it first, then the step it's on.
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html` |
-| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html` |
-| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html` |
+| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html` |
+| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
@@ -940,6 +940,67 @@ Built (`js/app-progress.js`, `css/app.css`, `tools/extract-wish-icons.py`):
   Wishwall emblem (`.pg-emb`; `pips` keeps the head's pips, as its pictures repeat).
 - «Other collectibles» under `App.crown()`, the masthead's filigree.
 
+### Retouch: the task's picture on the road (15 October 2026)
+
+Albert: each Act's road can have a task at its top (the card under the step's heading, «Tasks ·
+Grand Gate · Pharloom»); its picture would make it prettier. The picture is the one the Tasks tab
+draws by it (`taskIcon`): Act 1's steps 1 and 2 the Grand Gate, step 4 The Great Citadel (step 3 is
+the Last Judge's Journal entry, not a task); Act 2's steps 2 to 4 Silk and Soul (a Wayfarer wish:
+its type's emblem), step 5 Soul Snare, and step 1 (unlocking the wish) none. Act 3 has no road.
+`79-road-task-variants.html` (kept out of the repo), the real screen captured from saves in Act 1
+(steps 1 and 4) and Act 2 (step 1, with step 5 opened): 1 where (**A** beside the card's words, B
+above them, C in place of the step heading's picture); 2 its size (**A** 48, B 64, C 32); 3 a frame
+(**A** none, as the Tasks tab, B a medallion, C a diamond); 4 the step with no task (**A** the wish it
+opens, Silk and Soul, its picture dim and its name and place, B nothing); 5 which cards (**A** every
+task's: the head, a step opened and the whole road, those at 32; B the head only; C also the
+Journal's portrait).
+
+**Decision: 1 A, 2 A, 3 A, 4 A, 5 A** (15 October 2026). Built (`js/app-progress.js`, `css/app.css`):
+`questSays()` carries the quest's picture (`questIcon()`, through `taskIcon()`), `saysHtml()` puts it
+beside the words (`.pg-says-task`, `.pg-says-art`), and `STEP_SAYS.unlock` is the wish Silk and Soul,
+dim, with no tag and no line (a step opened still says the game has no text for it).
+
+### Tasks' pins to the Map (15 October 2026)
+
+Albert: pins in Tasks, to go to the Map? The tab's rows had none (no `mark`: the empty slot). Every
+task has a place on the Map: who gives it (`board:` or `giver:`, js/quests.js FROM, the Pre first),
+54 of the 74, and what it asks for (js/spots.js TASKS by its quest or a stage before it no other
+task names; the melodies' and Old Hearts' pieces), every main objective. `78-task-pins-variants.html`
+(kept out of the repo), the real tab captured over Save 4 (Act 1), Save 2 (Act 2), Save 1 (Act 3) and
+Free mode, each pin opening what the Map would show: 1 the pin (**A** the lists' round pin, B with
+how many marks, C the Map's own mark in the circle); 2 where it goes (**A** where the task stands:
+not taken, who gives it; taken, what's left of it, then back to who gives it; an objective its pin,
+B who gives it and what it asks together, C who gives it only, D two pins); 3 a task with no place
+(**A** the empty slot, B a dim pin, C a line «No mark on the map»); 4 a task done (**A** no pin, B a
+faint one).
+
+**Decision: A in all four** (15 October 2026), built (`js/app-progress.js`): `taskPin()` gives each
+row not done a `focus` key, kept in `FOCUS` as the road's steps are; `row()` sends it to `pgFocus`
+(`App.mapFocus`: one mark is `App.mapShow`'s, several the Map on them alone, the nearest to the
+bench first). `taskStages()` and `taskTargets()` find the marks; test/spots.test.js checks every task
+has a place. Over the 73 saves of Albert's folder and Free mode, every task not done had its pin
+(2,898 rows, none left with the empty slot).
+
+### The main objectives' head (15 October 2026)
+
+Albert: in Tasks every type's group has its emblem by its name, but «Main objectives» had an empty
+slot, and its row looked gapped. The game has no emblem for them: each MainQuest of
+`mainquests.bundle` has a `typeLargeIcon`, empty in every one, and the pause menu's pane
+(`_GameCameras/.../Inventory/Quests/Quest List`) puts them on top with no heading, then its «Current
+Heading», only a filigree (`completed_quests_spacer`), then the wishes. The Hornet mask that opens
+the `QI_Main_*` series in `inventory.spriteatlas` (`QI_Main_0000_1`, and `_weave`) is in no other
+bundle: the game never draws it. `80-main-objectives-emblem-variants.html` (kept out of the repo),
+the real tab captured over Save 2 (Act 2, 7/21), closed and open: 1 the slot (A the Hornet mask, B
+no slot, C the current objective's own picture, D the pane's icon, as on the tab's card, E as the
+game: no slot and the pane's filigree between the objectives and the wishes, F the mask with its
+weave).
+
+**Decision: 1 E** (15 October 2026), built: `tools/extract-wish-icons.py` also writes the filigree
+(`assets/icons/tasks/spacer.webp`, whole and lossless); `tasks()` (`js/app-progress.js`) gives the
+main objectives' group no slot and puts `.pg-spacer` between it and the wishes, only when both are
+drawn; `css/app.css` centres it in a row's height (`--filigree-art` in the tokens, the plaque's
+share).
+
 ## Step 6 · Map
 
 ### What there is (28 September 2026)
@@ -1261,6 +1322,28 @@ map, B a stronger faint (0.7), C the outline only, D faint with a soft edge at t
 
 **Decision: A** (Albert, 14 October 2026). `js/rooms.js mapView` lost the whole-room rule; nothing
 new is drawn, and the game's straight cut shows as a change of tone.
+
+### What you already have (15 October 2026)
+
+Albert: «En Map, añadir botón para ver también lo que ya tienes». In a save (and Free mode's
+marks) the Map leaves out what's had, with no way to bring it back; the sibling has «Also show what
+you have» among its map's choices, its marks at 0.4. The game has its own switch for the same job
+on its Wishes pane: «Show Completed» / «Hide Completed» (`INV_TOGGLE_COMPLETED_ON`, `_OFF`).
+
+The options (`77-map-had-variants.html`, the real site on its Map over three saves, 15 %, 45 % and
+79 %, and Free mode; kept out of the repo): 1 where, **A** a `.check` beside «Whole map» and «Area
+names», B a text button beside «Show all · Hide all · Only the 100%» flipping its label as the game's
+prompt, C a button with the tick on the map's zoom bar; 2 the words, **A** «Mostrar completados» /
+"Show Completed" (the game's), B «Ver también lo conseguido» / "Also show what you have" (the
+sibling's), C «Completados» / "Completed" (`COMPLETED`); 3 the look, **A** dimmed with a tick in
+`--good` on its corner, B dimmed only (the closed benches are already at 0.4), C the tick only, D an
+empty ring; 4 Free mode, **A** too, with what's marked, B only with a save.
+
+**Decision: 1 A, 2 A, 3 A, 4 A** (Albert, 15 October 2026). `js/app-map.js`: `prefs.mapHad`
+(`mapHad`, off at first) lets `layout()` place what's had too, `is-had` with its tick
+(`HAD_TICK`), out of the fine layers' counts per room; the search finds it, and like every switch it
+ends a focus. `css/app.css` `.mp-mk.is-had`, `.mp-tick` (`--mp-had-dim` 0.42); whole again on hover
+or picked. The counts don't change: had of total as before.
 
 ## Step 7 · Journal
 

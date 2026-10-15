@@ -58,6 +58,7 @@ const Q = require('../js/quests.js');
 
 const OUT = path.join(__dirname, '..', 'js', 'how.js');
 const SRC = path.join(__dirname, '..', 'kb', 'data', 'completionist');
+const { PIECE_FIX } = require('./completionist.js');
 function fail(msg) { throw new Error('gen-how: ' + msg); }
 const warnings = [];
 const warn = (m) => warnings.push(m);
@@ -85,8 +86,10 @@ const HEART = { Memory_Silk_Heart_BellBeast: 'bell-beast', Memory_Silk_Heart_War
    files, read on 13-Oct-2026: the Troupe Leader's Dialogue FSM compares the FleasCollected
    Target's CompletedCount, the 27 SavedFlea_ flags with Kratt, Vog and the Huge Flea, against 12
    in Greymoor_08_caravan, "Convo Choice", and 22 in Coral_Judge_Arena, "Met?": below it, "Need
-   More Fleas"). Leaving Greymoor gives a Spool Fragment, leaving the Blasted Steps for Fleatopia
-   the Tool Pouch, as the wiki's Fleas page says. The completionist's 14 and 20 were wrong. */
+   More Fleas"). Leaving Greymoor earns a Spool Fragment, given at the next stop (Coral_Judge_Arena's
+   "Award Spool Piece", which sets MetCaravanTroupeLeaderJudge: tools/gen-collectibles.js
+   PIECE_FIX), leaving the Blasted Steps for Fleatopia the Tool Pouch, as the wiki's Fleas page
+   says. The completionist's 14 and 20 were wrong. */
 const FLEAS = { greymoor: 12, judge: 22 };
 /* A PIECES bool that isn't a pickup lying in the room: what it is. */
 const BOOL = {
@@ -286,6 +289,7 @@ function pieceWays(i, check) {
   const [t, a, b] = check;
   if (t === 'any') return check.slice(1).flatMap((c) => pieceWays(i, c));
   if (t === 'quest') return [wish(a)];
+  if (t === 'flag' && a === 'MetCaravanTroupeLeaderJudge') return [{ kind: 'fleas', npc: 'mooshka', fleas: FLEAS.greymoor }];
   if (t === 'flag') {
     const sold = S.SHOP.filter((x) => x.piece === i);
     if (!sold.length) fail(`PIECES[${i}] (${a}) is bought, and no SHOP item sets it`);
@@ -303,7 +307,6 @@ function pieceWays(i, check) {
     return [{ kind: 'boss', foe: foe(page) }];
   }
   if (t === 'min' && a === 'nailUpgrades') return needleWays[b] || fail(`no Needle upgrade ${b}`);
-  if (t === 'min' && a === 'CaravanTroupeLocation') return [{ kind: 'fleas', npc: 'mooshka', fleas: FLEAS.greymoor }];
   if (t === 'min' && a === 'pinGalleriesCompleted') return [{ kind: 'challenge', npc: 'loddie' }];  // Loddie's first pin gallery
   return fail(`PIECES[${i}]: no way for the check ${JSON.stringify(check)}`);
 }
@@ -407,7 +410,8 @@ for (const f of ['maskShards.ts', 'spoolFragments.ts', 'upgrades.ts']) {
     const one = (x) => (x.type === 'flag' ? ['flag', x.internalId] : x.type === 'quest' ? ['quest', x.internalId]
       : x.type === 'flagMin' ? ['min', ...x.internalId] : x.type === 'sceneDataBool' ? ['bool', ...x.internalId] : null);
     const check = Array.isArray(pi) ? ['any', ...pi.map(one)] : one(pi);
-    const i = pieceByCheck.get(JSON.stringify(check));
+    const fix = PIECE_FIX[JSON.stringify(check)];
+    const i = pieceByCheck.get(JSON.stringify(fix ? fix[0] : check));
     if (i === undefined) fail(`${f} ${it.name}: no PIECES entry checks ${JSON.stringify(check)}`);
     checkPrices(`pieces.${i} (${it.name})`, it.completionDetails, HOW.pieces[i]);
   }

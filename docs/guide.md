@@ -156,7 +156,7 @@ left unfilled. The Rosaries and Shell Shards are typed: Enter or leaving the fie
 takes the figure, and the shards stop at what your Pouch holds. With the keyboard, the focus stays
 where it was through each mark. «Start from»: «New Game» (the
 game's own words) takes it all back to the start; «Everything maxed» marks everything, every level
-at the top (a game at 100%). Progress counts what you mark, the Map leaves out what you have, and
+at the top (a game at 100%). Progress counts what you mark, the Map leaves out what you have (unless «Show Completed» is on), and
 the Crest screen tries it on «What I have». A visit from before this (when the levels belonged to
 the Crest screen's build and started at the top) keeps the levels you moved and puts the ones still
 at the top back to a New Game's, without a notice.
@@ -394,7 +394,11 @@ on a phone the area names show only zoomed in.
 
 Under the map, **What the map shows**, as the Hollow Knight site has it: «Show all · Hide all» on
 its right, and «Only the 100%», which turns on just the layers that count for completion, then «Whole map» with a save, on at first (see
-below), and the area names on or off. Then eleven groups, each a row that folds (its caret; all open
+below), the area names on or off, and «Show Completed» (the game's own words for the switch on its
+Wishes pane), off at first: on, what you already have comes back to the map too, each mark
+dimmed with a green tick on its corner, whole again under the pointer or once picked, its card
+saying how it was had; the search finds it too. In Free mode it brings back what you've marked.
+Then eleven groups, each a row that folds (its caret; all open
 at first, only the first two on a phone, then as you left them) whose title is the switch for the
 whole group, in ink when all of it is on, dimmer when part, muted when none. Inside, each layer's
 switch is the game's own picture of it, in grey when off. Beside each, how many: in a save, had of
@@ -598,12 +602,14 @@ opens its card where it was clicked: «Step 3», its title, what the game says o
 the Map (a step done says «done» and has no map); the × or the step again close it, and the step
 you're on takes you to its heading. Then the step you're on, with its picture and, under its
 heading, **what the game says of it**: the objective as the game's pause menu «Tasks» titles it,
-with its line («Grand Gate · Pharloom») and its description as the game words it in that state
+with the picture the Tasks tab draws by it, its line («Grand Gate · Pharloom») and its description as the game words it in that state
 («Awaken the old bells throughout the lands.» while Bellshrines are left, «Return to the Grand
 Gate and open the way to the Citadel.» once they're rung; for the snare, «Acquire the necessary
 components…», then «Give the collected components to the Caretaker of Songclave.»). The Last Judge
 has no objective of her own, so her Journal entry speaks («Final arbiter of the Blasted Steps…»,
-tagged «Journal»); unlocking Silk and Soul has no text in the game, so it has none. Under it,
+tagged «Journal»); unlocking Silk and Soul has no text in the game, so it shows the wish it opens,
+its picture dim and its name and place («Silk and Soul · Caretaker of Songclave»). The same picture,
+smaller, goes by each step's card in the whole road and in a step opened from the thread. Under it,
 «See on the map» or «See the n on the map» (the Bellshrines not rung, the Grand Gate's and the
 Citadel's objective pins as the game's own map places them, the Last Judge and the Phantom, the
 Caretaker and Bellhart's Wishwall, the snare's pieces, the Cradle's top). Then its parts as small **rings** side by side (the wishes it requires, its
@@ -751,12 +757,20 @@ completion, and what each is for is here, not on the page:
 **Tasks** («Tareas», the game's pane), the third tab (its card: the pause menu's Wishes tab and how
 many are done): the main objectives and the wishes on the boards by type (Wayfarer, Gather, Donate,
 Hunt, Grand Hunt, Delivery…), 74 in all. They don't count for completion. Each type's group carries
-the large emblem the Wishwalls show for it, and each task the picture the game's pane draws by it:
+the large emblem the Wishwalls show for it; the main objectives have none, as in the game, and the
+pane's own filigree parts them from the wishes. Each task carries the picture the game's pane draws by it:
 a wish its type's, a main objective its own (the Citadel's, the Bellshrines', the Snare's, the
 Black Thread's…). Each with the game's own name, its Act and where (a wish the pane files under no
 area, the area it's taken in), across the whole width as in the 100%. In Act 2, the ten wishes Act
 3 requires are in the road's tab instead. The one only Steel Soul has, and the one only Classic has, show only in a
 save of that mode, and both in Free mode, as the Journal and the Map show them. A task done also shows in "Since the previous save".
+Each task not done carries the lists' round pin to the Map, to where it stands now: before you take
+it, who gives it (its Wishwall, or whoever asks); once taken, what's still to do of it (what it asks
+you to bring, where it's done), and when nothing is, back to whoever gives it. A main objective goes
+to the game's own pin for it (the melodies and the Old Hearts to where each lies). Without a save
+the pin goes to who gives it, or else to its marks. One mark opens the Map on it; several open the
+Map with only them (‹ 1 of n ›, the nearest to your bench first). A task with no mark keeps the
+pin's empty place, and a task done has none.
 In a save it shows what's missing, or everything with a tick where you have it; without a save,
 the whole list, as a guide. Which piece you have is read from the save one by one, and on the
 92 real saves it agrees with the game's own counters (masks, spools, the three upgrade ladders,
@@ -843,8 +857,8 @@ texts and names are © Team Cherry; they're used here only to show the game's ow
 - **The wishes' emblems**: the large emblem of each type of wish and the pause menu's Wishes tab,
   extracted from the installed game's files by `tools/extract-wish-icons.py`
   (`assets/icons/wishes/`), for the road to the next Act in Progress; and with them the pictures
-  the pause menu's «Tasks» draws by each wish and main objective (`assets/icons/tasks/`), for the
-  Tasks tab.
+  the pause menu's «Tasks» draws by each wish and main objective, and its filigree under the main
+  objectives (`assets/icons/tasks/`), for the Tasks tab.
 - **Fonts**: Cinzel, Spectral and Patrick Hand SC, under the
   [SIL Open Font License 1.1](../assets/fonts/OFL.txt).
 - **Code**: MIT ([`LICENSE`](../LICENSE)). It covers only the code, not any of the above.

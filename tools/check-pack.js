@@ -23,6 +23,9 @@
                  save has every step of the road to Act 3 done but the last, Grand Mother Silk;
                  and in a later save of the same game no step of either road is undone (must:
                  exit code 1 if not). The road's steps done and the step it's on are printed per save.
+                 And nothing the Progress tab files under an Act (js/collectibles.js: the Tools,
+                 Crests, skills, abilities and Everbloom of WHERE, every piece and every wish) is
+                 held in a save of an earlier Act (must: exit code 1 if not).
    On Linux the game's folder is ~/.config/unity3d/Team Cherry/Hollow Knight Silksong/<id>/.
    The saves stay where they are: they're somebody's games and don't go in the repo. */
 'use strict';
@@ -63,6 +66,18 @@ function pieceDiffs(pd, g) {
   return Object.entries(want).filter(([k, v]) => n(k) !== v).map(([k, v]) => `${k} ${n(k)}≠${v}`);
 }
 
+/* What a game holds that its Act shouldn't have yet: [what, its Act]. */
+function early(g) {
+  const out = [];
+  for (const k of ['tools', 'crests', 'skills', 'arts']) {
+    for (const [id, w] of Object.entries(CO.WHERE[k])) if (w[0] > g.act && (g[k] || []).includes(id)) out.push([`${k} ${id}`, w[0]]);
+  }
+  if (g.everbloom && CO.WHERE.everbloom[0] > g.act) out.push(['everbloom', CO.WHERE.everbloom[0]]);
+  for (const i of g.pieces) if (CO.PIECES[i][1] > g.act) out.push([`${CO.PIECES[i][0]} ${i}`, CO.PIECES[i][1]]);
+  for (const i of g.wishes) if (CO.WISHES[i][1] > g.act) out.push([`wish ${CO.WISHES[i][4].en}`, CO.WISHES[i][1]]);
+  return out;
+}
+
 let bad = 0, badP = 0, unreadable = 0;
 const cleared = new Map();   // game → [[playTime, Set of gauntlets, file]]
 const roads = new Map();     // game → [[playTime, Set of road steps done (both roads, as if from Act 1 and 2), file]]
@@ -91,6 +106,7 @@ for (const file of files) {
     const left = A.next({ ...g, act: 2 }).steps.filter((s) => !s.ok && s.id !== 'silk').map((s) => s.id);
     if (left.length) pd.push('acts: Act 3 with the road not done: ' + left.join(', '));
   }
+  for (const [what, act] of early(g)) pd.push(`acts: ${what} (Act ${act}) held in Act ${g.act}`);
   if (g.build.crest) {
     const sl = E.compute(g.build).slots;
     for (const c of ['red', 'blue', 'yellow']) if (sl[c].over) pd.push(`build ${c} +${sl[c].over}`);
