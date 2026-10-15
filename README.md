@@ -53,17 +53,18 @@ switch its layers, and see what the game itself wouldn't draw yet.
 
 ### Progress
 **Where you are**: the three Acts as the game titles them, the steps to open the next one, and
-the **100% exactly as the game counts it**, part by part, with what you can already get. Equal to
-the game's own figure on 92 real saves.
+the **100% exactly as the game counts it**, part by part, with what you can already get, and the
+game's **Tasks** (its wishes and main objectives) in a tab of their own. Equal to the game's own
+figure on 92 real saves.
 
 </td>
 </tr>
 <tr>
 <td valign="top">
-<img src="docs/screenshots/map.webp" alt="The game's map of Pharloom with the collectibles on it, the area names and the route from the previous bench">
+<img src="docs/screenshots/map.webp" alt="The game's map of Pharloom with the collectibles on it, the area names and the layers to switch">
 </td>
 <td valign="top">
-<img src="docs/screenshots/progress.webp" alt="Progress in Act 3: the three Acts on one thread, the endings found and the ten things only Act 3 has">
+<img src="docs/screenshots/progress.webp" alt="Progress in Act 3: the three Acts on one thread, the three tabs (your game, the 100% and Tasks), the endings found and the ten things only Act 3 has">
 </td>
 </tr>
 <tr>
@@ -134,9 +135,11 @@ How each number is worked out is in the [guide](docs/guide.md#where-the-numbers-
 No framework, no build, no install. Double-click `index.html`, or serve the folder:
 
 ```sh
-python3 -m http.server 8000    # then http://localhost:8000
+npm run serve                  # python3 -m http.server 8000, then http://localhost:8000
 npm test                       # node --test, no dependencies
 ```
+
+Combat (the damage calculator and the bosses' pages) is hidden for now; the code is still there.
 
 Following a save live needs Chrome or Edge on a computer (the File System Access API); importing
 it once works anywhere. On Linux, Chrome won't open the game's save folder (`~/.config`), so
@@ -153,6 +156,9 @@ npm run collectibles           # the completionist's dictionary, pinned (the sav
 npm run art                    # the game's sprites from the wiki; npm run icons, its icons
 npm run pages                  # one page per search, in each language, sitemap.xml, robots.txt and CNAME
 npm run site-icons             # the site's icons and favicon.ico, Hornet's head (needs Pillow)
+npm run palette                # measures the game's colours on the wiki's sprites (needs Pillow)
+npm run mark-fit               # measures each Map mark picture so all draw at one visible size
+npm run admin                  # the Map's admin mode: place a mark right, saved to js/map-fixes.js
 npm run check-pack -- <folder> # the site against a folder of real saves: the 100% must match
 npm run drive -- --save <.dat> # any screen in headless Chrome with a real save, screenshotted
 npm run promo -- --before <save> --after <save>  # the announcement video (tools/promo/make.js)
