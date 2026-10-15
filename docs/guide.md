@@ -757,7 +757,8 @@ completion, and what each is for is here, not on the page:
 **Tasks** («Tareas», the game's pane), the third tab (its card: the pause menu's Wishes tab and how
 many are done): the main objectives and the wishes on the boards by type (Wayfarer, Gather, Donate,
 Hunt, Grand Hunt, Delivery…), 74 in all. They don't count for completion. Each type's group carries
-the large emblem the Wishwalls show for it, and each task the picture the game's pane draws by it:
+the large emblem the Wishwalls show for it; the main objectives have none, as in the game, and the
+pane's own filigree parts them from the wishes. Each task carries the picture the game's pane draws by it:
 a wish its type's, a main objective its own (the Citadel's, the Bellshrines', the Snare's, the
 Black Thread's…). Each with the game's own name, its Act and where (a wish the pane files under no
 area, the area it's taken in), across the whole width as in the 100%. In Act 2, the ten wishes Act
@@ -856,8 +857,8 @@ texts and names are © Team Cherry; they're used here only to show the game's ow
 - **The wishes' emblems**: the large emblem of each type of wish and the pause menu's Wishes tab,
   extracted from the installed game's files by `tools/extract-wish-icons.py`
   (`assets/icons/wishes/`), for the road to the next Act in Progress; and with them the pictures
-  the pause menu's «Tasks» draws by each wish and main objective (`assets/icons/tasks/`), for the
-  Tasks tab.
+  the pause menu's «Tasks» draws by each wish and main objective, and its filigree under the main
+  objectives (`assets/icons/tasks/`), for the Tasks tab.
 - **Fonts**: Cinzel, Spectral and Patrick Hand SC, under the
   [SIL Open Font License 1.1](../assets/fonts/OFL.txt).
 - **Code**: MIT ([`LICENSE`](../LICENSE)). It covers only the code, not any of the above.

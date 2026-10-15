@@ -41,7 +41,7 @@ the work up reads it first, then the step it's on.
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html` |
-| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road and Tasks' pins to the Map 15 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html` |
+| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html` |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
@@ -980,6 +980,26 @@ row not done a `focus` key, kept in `FOCUS` as the road's steps are; `row()` sen
 bench first). `taskStages()` and `taskTargets()` find the marks; test/spots.test.js checks every task
 has a place. Over the 73 saves of Albert's folder and Free mode, every task not done had its pin
 (2,898 rows, none left with the empty slot).
+
+### The main objectives' head (15 October 2026)
+
+Albert: in Tasks every type's group has its emblem by its name, but «Main objectives» had an empty
+slot, and its row looked gapped. The game has no emblem for them: each MainQuest of
+`mainquests.bundle` has a `typeLargeIcon`, empty in every one, and the pause menu's pane
+(`_GameCameras/.../Inventory/Quests/Quest List`) puts them on top with no heading, then its «Current
+Heading», only a filigree (`completed_quests_spacer`), then the wishes. The Hornet mask that opens
+the `QI_Main_*` series in `inventory.spriteatlas` (`QI_Main_0000_1`, and `_weave`) is in no other
+bundle: the game never draws it. `80-main-objectives-emblem-variants.html` (kept out of the repo),
+the real tab captured over Save 2 (Act 2, 7/21), closed and open: 1 the slot (A the Hornet mask, B
+no slot, C the current objective's own picture, D the pane's icon, as on the tab's card, E as the
+game: no slot and the pane's filigree between the objectives and the wishes, F the mask with its
+weave).
+
+**Decision: 1 E** (15 October 2026), built: `tools/extract-wish-icons.py` also writes the filigree
+(`assets/icons/tasks/spacer.webp`, whole and lossless); `tasks()` (`js/app-progress.js`) gives the
+main objectives' group no slot and puts `.pg-spacer` between it and the wishes, only when both are
+drawn; `css/app.css` centres it in a row's height (`--filigree-art` in the tokens, the plaque's
+share).
 
 ## Step 6 · Map
 

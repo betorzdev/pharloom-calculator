@@ -1475,6 +1475,10 @@ kbd {
 .pg-title:has(.pg-emb) { display: inline-flex; align-items: center; gap: var(--sp-2); }
 .pg-emb { flex: none; display: grid; place-items: center; width: var(--sp-8); height: var(--sp-8); }
 .pg-emb img { max-width: 100%; max-height: 100%; object-fit: contain; }
+/* Tasks: the pane's own filigree between the main objectives and the wishes (design/80, E), the
+   height of a group's row with its picture centred in it. */
+.pg-spacer { display: grid; place-items: center; padding: var(--sp-4) 0; }
+.pg-spacer img { width: min(100%, calc(var(--sp-16) * 6)); height: auto; opacity: var(--filigree-art); }
 /* The 100% and Tasks (design/75, 2 B): an open group's rows take the whole width, and on a wide
    screen each thing is one line: its picture, its name, how to get it, where, the pin. */
 .pg-groups.is-wide .pg-group.is-open > :not(.pg-head) { margin-left: 0; }

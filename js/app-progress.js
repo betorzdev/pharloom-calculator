@@ -231,7 +231,9 @@
      objective's own (tasks/main-<its quest>), a wish's its type's (tasks/<type>). The objectives the
      save checks by a flag or the Journal take their quest's; the Soul Snare's two are Wayfarer
      wishes in the game (their QuestType), though the pane's groups put them elsewhere. Each type's
-     group has its large emblem by its name (7 B), the Wishwalls' (assets/icons/wishes). */
+     group has its large emblem by its name (7 B), the Wishwalls' (assets/icons/wishes). The main
+     objectives have none, as in the game (MainQuest typeLargeIcon is empty in every one): no slot,
+     and the pane's own filigree between them and the wishes (design/80, E: its Current Heading). */
   const TYPE_NAME = { 'main-objectives': () => t('pgTasksMain'), collect: () => t('pgTasksCollect') };
   const TASK_QUEST = { HasMelodyConductor: 'Citadel Ascent Melody Conductor', HasMelodyArchitect: 'Citadel Ascent Melody Architect',
     HasMelodyLibrarian: 'Citadel Ascent Melody Librarian', CollectedHeartCoral: 'Black Thread Pt5 Heart Coral',
@@ -254,7 +256,7 @@
     const done = new Set(g ? g.quests : []);
     const sum = { got: 0, max: 0 };
     const pin = taskPin(g);
-    const html = CO.WISH_TYPES.map((ty) => {
+    const [main, ...rest] = CO.WISH_TYPES.map((ty) => {
       const list = CO.WISHES.map((w, i) => ({ w, i })).filter(({ w, i }) => w[0] === ty.id && !skip.has(i) && (!mode || !w[5] || w[5] === mode))
         .map(({ w, i }) => { const scene = wishScene(wishQuest(w), done);
           // With no area in the pane's list, the area it's taken in, as the road's rows (wishRow).
@@ -266,8 +268,11 @@
       sum.max += list.length;
       const emb = GROUP_EMBLEM[ty.id] || ty.id;
       return list.length ? group('wish-' + ty.id, title, list, g, got, list.length,
-        { pips: true, emblem: WISH_ICON.has(emb) ? `assets/icons/wishes/${emb}.webp` : null }) : '';
-    }).join('');
+        { pips: true, emblem: ty.id === 'main-objectives' ? undefined : WISH_ICON.has(emb) ? `assets/icons/wishes/${emb}.webp` : null }) : '';
+    });
+    // The filigree only between the two: with either side missing it has nothing to part.
+    const wishes = rest.join('');
+    const html = main && wishes ? `${main}<div class="pg-spacer" aria-hidden="true"><img src="assets/icons/tasks/spacer.webp" alt="" loading="lazy"></div>${wishes}` : main + wishes;
     return { html, ...sum };
   }
   /* Each task's pin to the Map (design/78-task-pins-variants.html, all A): the lists' round pin, to

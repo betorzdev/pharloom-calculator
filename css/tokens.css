@@ -291,6 +291,7 @@
   --lamp-frame: 24%;
   --frame-inset: var(--sp-2);
   --frame-corner: var(--sp-12);
+  --filigree-art: 0.8;                  /* a filigree the game draws as a picture (the Tasks pane's spacer), as strong as the plaque */
   --dur-flash: 900ms;                   /* the glow of a figure that just changed */
   --dur-delta: 4s;                      /* how long your last change's chip stays in view */
   /* What's touched on that black goes unboxed: on hover, a veil of ink; the chosen one, a
