@@ -142,19 +142,24 @@ function areaOf(details, strict = true) {
 
 /* ── Loose pieces ── */
 const check = (p) => C.check(p, fail);
+/* Every thing the site groups by Act (the Progress tab's lists, the Map's "later" marks) carries the
+   completionist's whichAct, and it has to be one of the game's three: a 0 or a missing one stops
+   the run (its caches and secrets, "0", aren't read here). Checked against the wiki where it says
+   (actsAgainstWiki, below) and on real saves (npm run check-pack: nothing held in an earlier Act). */
+const actOf = (it) => ([1, 2, 3].includes(it.whichAct) ? it.whichAct : fail(`${it.name}: no Act (whichAct ${it.whichAct})`));
 const KINDS = [
   ['mask-shard', 'maskShards.ts'], ['spool-fragment', 'spoolFragments.ts'],
   ['memory-locket', 'memoryLockets.ts'], ['craftmetal', 'craftmetals.ts'], ['pale-oil', 'paleOil.ts'],
   ['flea', 'fleas.ts'],
 ];
 const PIECES = [];
-for (const [kind, file] of KINDS) for (const it of load(file)) PIECES.push([kind, it.whichAct, check(it.parsingInfo), areaOf(it.completionDetails)]);
+for (const [kind, file] of KINDS) for (const it of load(file)) PIECES.push([kind, actOf(it), check(it.parsingInfo), areaOf(it.completionDetails)]);
 // The upgrades one by one, and the Silk Hearts: their sections of the dictionary.
 const SECTION_KINDS = [['upgrades.ts', 'Needle Upgrades', 'needle'], ['upgrades.ts', 'Tool Pouch Upgrades', 'tool-pouch'],
   ['upgrades.ts', 'Crafting Kit Upgrades', 'crafting-kit'], ['abilities.ts', 'Silk Hearts', 'silk-heart']];
 for (const [file, name, kind] of SECTION_KINDS) {
   const sec = sections(file).find((x) => x.name === name) || fail(`no section ${name} in ${file}`);
-  for (const it of sec.items) PIECES.push([kind, it.whichAct, check(it.parsingInfo), areaOf(it.completionDetails)]);
+  for (const it of sec.items) PIECES.push([kind, actOf(it), check(it.parsingInfo), areaOf(it.completionDetails)]);
 }
 
 /* The pieces the completionist doesn't list and the save keeps as flags, each with its own name:
@@ -199,7 +204,7 @@ for (const sec of sections('tasks.ts')) {
     // With no quest title of the game's (a few main objectives), the game's own name elsewhere.
     const name = key ? N.text(key) : N.gameName(en) || { es: en, en, key: undefined };
     const mode = it.onlyFoundInSteelSoulMode ? 'steel' : it.onlyFoundInClassicMode ? 'classic' : undefined;
-    WISHES.push([id, it.whichAct, check(it.parsingInfo), areaOf(it.completionDetails, false), name, mode]);
+    WISHES.push([id, actOf(it), check(it.parsingInfo), areaOf(it.completionDetails, false), name, mode]);
   }
 }
 const unnamed = WISHES.filter((w) => !w[4].key).map((w) => w[4].en);
@@ -209,15 +214,15 @@ const unnamed = WISHES.filter((w) => !w[4].key).map((w) => w[4].en);
    Step; "Curveclaw / Curvesickle" both). */
 const bare = (x) => norm(x.replace(/\s*\(.*\)$/, '').replace(/ Crest$/, ''));
 const WHERE = { tools: {}, crests: {}, skills: {}, arts: {} };
-for (const it of load('tools.ts')) for (const n of it.name.split(' / ')) WHERE.tools[toolByName.get(norm(n))] = [it.whichAct, areaOf(it.completionDetails)];
+for (const it of load('tools.ts')) for (const n of it.name.split(' / ')) WHERE.tools[toolByName.get(norm(n))] = [actOf(it), areaOf(it.completionDetails)];
 const byName = (list) => new Map(list.map((x) => [bare(x.name.en), x.id]));
 const skillBy = byName(D.SKILLS), artBy = byName(D.ARTS);
-for (const it of load('crests.ts')) { const id = crestByName.get(bare(it.name)); if (id && it.completionPercent) WHERE.crests[id] = [it.whichAct, areaOf(it.completionDetails)]; }
+for (const it of load('crests.ts')) { const id = crestByName.get(bare(it.name)); if (id && it.completionPercent) WHERE.crests[id] = [actOf(it), areaOf(it.completionDetails)]; }
 for (const it of load('abilities.ts')) {
   const k = bare(it.name);
-  if (skillBy.has(k)) WHERE.skills[skillBy.get(k)] = [it.whichAct, areaOf(it.completionDetails)];
-  else if (artBy.has(k)) WHERE.arts[artBy.get(k)] = [it.whichAct, areaOf(it.completionDetails)];
-  else if (k === 'everbloom') WHERE.everbloom = [it.whichAct, areaOf(it.completionDetails)];
+  if (skillBy.has(k)) WHERE.skills[skillBy.get(k)] = [actOf(it), areaOf(it.completionDetails)];
+  else if (artBy.has(k)) WHERE.arts[artBy.get(k)] = [actOf(it), areaOf(it.completionDetails)];
+  else if (k === 'everbloom') WHERE.everbloom = [actOf(it), areaOf(it.completionDetails)];
 }
 for (const [k, want] of [['tools', Object.keys(TOOLS).length], ['crests', 6], ['skills', 6], ['arts', 9]]) {
   const got = Object.keys(WHERE[k]).length;
@@ -264,6 +269,49 @@ const PURSE = PURSE_SRC.map(([id, save, page]) => {
   if (!max && id !== 'hornet-statuette' && id !== 'growstone') fail(`${page}: no max in its infobox`);
   return [id, save, eff ? (eff[1] === 'R' ? 'rosaries' : 'shards') : 'shards', eff ? Number(eff[2]) : 0, max ? Number(max[1]) : 1];
 });
+
+/* ── The Acts against the wiki, where it gives one per thing ──
+   The Mask Shard and Spool Fragment pages split their tables under "Accessible in Act N" (6, 10
+   and 4 Mask Shards; 6 and 12 Spool Fragments): the completionist's must split the same. The
+   Wishes page files each wish under an Act too, the Act it can be taken in: the completionist's
+   is the Act it can be done in, which is the same but for WISH_ACT_ASIDE. The main objectives
+   aren't on it (the Acts page lists them by the Act they belong to, as the completionist does),
+   and nor is A Vassal Lost's Act (filed under Steel Soul Mode: done in Act 2 in the author's
+   Steel Soul game, restoreData24). Tools, Crests, skills and abilities have no Act on the wiki's
+   pages; those are checked on real saves (npm run check-pack). */
+const WISH_ACT_ASIDE = {
+  // Plinney offers it in Act 1, but no Pale Oil is had before Act 2 (the three are Act 2, 2 and 3).
+  "pinmaster's oil": 2,
+};
+function actsAgainstWiki() {
+  for (const [kind, title] of [['mask-shard', 'Mask Shard (Silksong)'], ['spool-fragment', 'Spool Fragment']]) {
+    const wiki = [0, 0, 0, 0];
+    let act = 0;
+    for (const line of WL.page(title).split('\n')) {
+      const h = /Accessible in \[\[(?:Acts\|)?Act (\d)\]\]/.exec(line);
+      if (h) act = +h[1];
+      else if (act && /^!\s*(rowspan="\d+"\s*\|\s*)?\d+\s*$/.test(line)) wiki[act]++;
+    }
+    const ours = [0, 1, 2, 3].map((a) => PIECES.filter((p) => p[0] === kind && p[1] === a).length);
+    if (ours.join() !== wiki.join()) fail(`${kind} by Act ${ours.slice(1).join('/')}, the wiki's ${title} says ${wiki.slice(1).join('/')}`);
+  }
+  const wishAct = new Map();
+  let act = null;
+  for (const block of WL.page('Wishes').split('{{TaskEntry').slice(1)) {
+    const h = /\|\s*header\s*=(.*)/.exec(block);
+    if (h) act = /Act (\d)/.test(h[1]) ? +/Act (\d)/.exec(h[1])[1] : null;
+    const id = /\|\s*id\s*=\s*(.+)/.exec(block);
+    if (id) wishAct.set(qnorm(id[1]), act);
+  }
+  for (const w of WISHES) {
+    if (w[0] === 'main-objectives') continue;
+    const n = qnorm(w[4].en);
+    if (!wishAct.has(n)) fail(`the wish ${w[4].en} isn't on the wiki's Wishes page`);
+    const wiki = WISH_ACT_ASIDE[n] || wishAct.get(n);
+    if (wiki && wiki !== w[1]) fail(`the wish ${w[4].en} is Act ${w[1]}, the wiki's Wishes page says ${wiki}`);
+  }
+}
+actsAgainstWiki();
 
 const src = fs.readFileSync(path.join(SRC, 'SOURCE'), 'utf8').trim();
 // The Map admin's fixes keyed by a PIECES index follow their marks (stops the run if one can't).

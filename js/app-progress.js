@@ -178,7 +178,7 @@
       masks: pieces('mask-shard').sort(byAct),
       needle: pieces('needle', (k) => pick(D.NEEDLES[k + 1].name)),
       hearts: pieces('silk-heart').sort(byAct),
-      items: [{ name: pick(item('everbloom').name), got: !!g && g.everbloom, act: ev[0] || 3, area: ev[1] || null, ...howParts(HW.HOW.everbloom), ways: HW.HOW.everbloom,
+      items: [{ name: pick(item('everbloom').name), got: !!g && g.everbloom, act: ev[0], area: ev[1] || null, ...howParts(HW.HOW.everbloom), ways: HW.HOW.everbloom,
         icon: 'assets/icons/items/everbloom.webp', mark: 'everbloom' }],
     };
   }

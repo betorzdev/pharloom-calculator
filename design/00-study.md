@@ -343,7 +343,12 @@ Bellshrines and the Last Judge, or the Phantom), Act 2 to Grand Mother Silk, and
 through the Silk and Soul wish, reopening the save black-threaded: void, Bone Bottom destroyed,
 some bosses gone (Shakra, Garmond & Zaza) and others doubled in health, up to Lost Lace. The
 Completionist tracker tags every item with its Act; the site's "what's missing near the bench"
-has to too. **Steel Soul** is permadeath with a few pardons (deaths to the duels and inside the
+has to too. It takes the tracker's (`tools/gen-collectibles.js` stops on a missing one), set
+against the wiki where it gives one per thing (the Mask Shard and Spool Fragment tables, 6/10/4
+and 6/12; the Wishes page, which files Pinmaster's Oil under Act 1, where Plinney offers it,
+though no Pale Oil comes before Act 2) and against the author's 73 saves (`npm run check-pack`:
+nothing held in an earlier Act; 15-Oct-2026, none). Tools, Crests, skills and abilities have no
+Act on the wiki's pages: the saves are their check. **Steel Soul** is permadeath with a few pardons (deaths to the duels and inside the
 memories), its own boss, its own Tool and its own Journal entry; no other difficulty exists.
 
 **No Godhome.** Nothing in Silksong replays a boss: the four **Elegy memories** of Act 3 (Clover
