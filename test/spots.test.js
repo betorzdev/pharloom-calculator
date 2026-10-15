@@ -230,6 +230,28 @@ test('the wishes and the main objectives (TASKS) sit on the map, each with its p
   assert.ok(n.qitem >= 20 && n.wspot >= 25 && n.goal >= 25, JSON.stringify(n));
 });
 
+test('every task of «Tareas» has a place on the Map: who gives it, or what it asks for', () => {
+  /* js/app-progress.js taskPin (design/78): its Wishwall or who asks (js/quests.js FROM, of the
+     quest or a stage before it), else its marks: TASKS by the quest or a stage before it, or the
+     piece of its flag (the melodies, the old hearts). A check that's no quest takes the objective
+     app-progress's TASK_QUEST names for it. */
+  const src = require('fs').readFileSync(require('path').join(__dirname, '..', 'js', 'app-progress.js'), 'utf8');
+  const TASK_QUEST = Function(`return ${/const TASK_QUEST = (\{[^;]*\});/.exec(src)[1]}`)();
+  const questOf = (c) => (c[0] === 'quest' ? c[1] : c[0] === 'any' ? (c.slice(1).find((x) => x[0] === 'quest') || [])[1] : TASK_QUEST[c[1]]);
+  const stages = (q) => { const out = []; for (let x = q; x && Q.CHAIN[x]; x = Q.CHAIN[x].prev) out.push(x); return out; };
+  const missing = [];
+  CO.WISHES.forEach((w, i) => {
+    const q = questOf(w[2]);
+    const piece = w[2][0] === 'flag' ? CO.PIECES.findIndex((p) => p[2][0] === 'flag' && p[2][1] === w[2][1]) : -1;
+    const from = (q ? stages(q) : []).map((s) => Q.FROM[s]).filter(Boolean)
+      .some((f) => onMap(f.board) || (f.npc || []).some(onMap));
+    const targets = (q ? stages(q) : []).some((s) => SP.TASKS.some((k) => k[1] === s && onMap(k[3])))
+      || (w[0] === 'main-objectives' && SP.TASKS.some((k) => k[0] === 'goal' && onMap(k[3]) && JSON.stringify(k[2]).includes(JSON.stringify(['quest', q]))));
+    if (!(piece >= 0 && onMap(SP.AT.pieces[piece])) && !from && !targets) missing.push(`${i} ${w[4].en}`);
+  });
+  assert.deepEqual(missing, []);
+});
+
 test('a save says which wish items, places and objectives are done, the Steel Sentinel\'s spots, and a slot keeps them', () => {
   const flower = SP.TASKS.findIndex((x) => x[0] === 'qitem' && x[1] === 'Shell Flowers');
   const spot = SP.TASKS.findIndex((x) => x[7]);
