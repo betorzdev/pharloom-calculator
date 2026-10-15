@@ -19,6 +19,6 @@
     "pages": "node tools/pages.js",
     "admin": "node tools/admin.js",
     "drive": "node tools/drive.js",
-    "promo": "node tools/promo/make.js"
+    "trailer": "node tools/trailer/make.js"
   }
 }
