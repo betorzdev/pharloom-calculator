@@ -1804,7 +1804,10 @@ the Snare's, each melody and Old Heart its own; two of them live in mainquests.b
 Snare wishes the site files apart are Wayfarer ones in the game. Rewards were looked at too
 (`rewardItem`, `rewardIcon`): only 28 of the 74 name one, the rest give theirs through the NPC's
 script, so they weren't used. `tools/extract-wish-icons.py` writes them into `assets/icons/tasks/`
-(37 lossless WebP, at most 64 px), and Progress's Tasks, now a tab of its own, draws them.
+(37 lossless WebP, at most 64 px), and Progress's Tasks, now a tab of its own, draws them. The main
+objectives have no emblem of their group: every MainQuest's `typeLargeIcon` is empty, and the pane
+draws them on top with no heading, then only a filigree (`completed_quests_spacer`, its «Current
+Heading») before the wishes; the script writes it too (`tasks/spacer.webp`; design/80, E).
 
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
