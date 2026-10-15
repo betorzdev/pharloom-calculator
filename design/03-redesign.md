@@ -42,7 +42,7 @@ the work up reads it first, then the step it's on.
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html` |
-| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html` |
+| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
@@ -1261,6 +1261,28 @@ map, B a stronger faint (0.7), C the outline only, D faint with a soft edge at t
 
 **Decision: A** (Albert, 14 October 2026). `js/rooms.js mapView` lost the whole-room rule; nothing
 new is drawn, and the game's straight cut shows as a change of tone.
+
+### What you already have (15 October 2026)
+
+Albert: «En Map, añadir botón para ver también lo que ya tienes». In a save (and Free mode's
+marks) the Map leaves out what's had, with no way to bring it back; the sibling has «Also show what
+you have» among its map's choices, its marks at 0.4. The game has its own switch for the same job
+on its Wishes pane: «Show Completed» / «Hide Completed» (`INV_TOGGLE_COMPLETED_ON`, `_OFF`).
+
+The options (`77-map-had-variants.html`, the real site on its Map over three saves, 15 %, 45 % and
+79 %, and Free mode; kept out of the repo): 1 where, **A** a `.check` beside «Whole map» and «Area
+names», B a text button beside «Show all · Hide all · Only the 100%» flipping its label as the game's
+prompt, C a button with the tick on the map's zoom bar; 2 the words, **A** «Mostrar completados» /
+"Show Completed" (the game's), B «Ver también lo conseguido» / "Also show what you have" (the
+sibling's), C «Completados» / "Completed" (`COMPLETED`); 3 the look, **A** dimmed with a tick in
+`--good` on its corner, B dimmed only (the closed benches are already at 0.4), C the tick only, D an
+empty ring; 4 Free mode, **A** too, with what's marked, B only with a save.
+
+**Decision: 1 A, 2 A, 3 A, 4 A** (Albert, 15 October 2026). `js/app-map.js`: `prefs.mapHad`
+(`mapHad`, off at first) lets `layout()` place what's had too, `is-had` with its tick
+(`HAD_TICK`), out of the fine layers' counts per room; the search finds it, and like every switch it
+ends a focus. `css/app.css` `.mp-mk.is-had`, `.mp-tick` (`--mp-had-dim` 0.42); whole again on hover
+or picked. The counts don't change: had of total as before.
 
 ## Step 7 · Journal
 
