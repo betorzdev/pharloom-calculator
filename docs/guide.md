@@ -757,6 +757,13 @@ Black Thread's…). Each with the game's own name, its Act and where (a wish the
 area, the area it's taken in), across the whole width as in the 100%. In Act 2, the ten wishes Act
 3 requires are in the road's tab instead. The one only Steel Soul has, and the one only Classic has, show only in a
 save of that mode, and both in Free mode, as the Journal and the Map show them. A task done also shows in "Since the previous save".
+Each task not done carries the lists' round pin to the Map, to where it stands now: before you take
+it, who gives it (its Wishwall, or whoever asks); once taken, what's still to do of it (what it asks
+you to bring, where it's done), and when nothing is, back to whoever gives it. A main objective goes
+to the game's own pin for it (the melodies and the Old Hearts to where each lies). Without a save
+the pin goes to who gives it, or else to its marks. One mark opens the Map on it; several open the
+Map with only them (‹ 1 of n ›, the nearest to your bench first). A task with no mark keeps the
+pin's empty place, and a task done has none.
 In a save it shows what's missing, or everything with a tick where you have it; without a save,
 the whole list, as a guide. Which piece you have is read from the save one by one, and on the
 92 real saves it agrees with the game's own counters (masks, spools, the three upgrade ladders,

@@ -41,7 +41,7 @@ the work up reads it first, then the step it's on.
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html` |
-| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html` |
+| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; Tasks' pins to the Map 15 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html` |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
@@ -939,6 +939,27 @@ Built (`js/app-progress.js`, `css/app.css`, `tools/extract-wish-icons.py`):
 - `taskIcon()`: the pane's picture by each task (`assets/icons/tasks/`), and each type's group its
   Wishwall emblem (`.pg-emb`; `pips` keeps the head's pips, as its pictures repeat).
 - «Other collectibles» under `App.crown()`, the masthead's filigree.
+
+### Tasks' pins to the Map (15 October 2026)
+
+Albert: pins in Tasks, to go to the Map? The tab's rows had none (no `mark`: the empty slot). Every
+task has a place on the Map: who gives it (`board:` or `giver:`, js/quests.js FROM, the Pre first),
+54 of the 74, and what it asks for (js/spots.js TASKS by its quest or a stage before it no other
+task names; the melodies' and Old Hearts' pieces), every main objective. `78-task-pins-variants.html`
+(kept out of the repo), the real tab captured over Save 4 (Act 1), Save 2 (Act 2), Save 1 (Act 3) and
+Free mode, each pin opening what the Map would show: 1 the pin (**A** the lists' round pin, B with
+how many marks, C the Map's own mark in the circle); 2 where it goes (**A** where the task stands:
+not taken, who gives it; taken, what's left of it, then back to who gives it; an objective its pin,
+B who gives it and what it asks together, C who gives it only, D two pins); 3 a task with no place
+(**A** the empty slot, B a dim pin, C a line «No mark on the map»); 4 a task done (**A** no pin, B a
+faint one).
+
+**Decision: A in all four** (15 October 2026), built (`js/app-progress.js`): `taskPin()` gives each
+row not done a `focus` key, kept in `FOCUS` as the road's steps are; `row()` sends it to `pgFocus`
+(`App.mapFocus`: one mark is `App.mapShow`'s, several the Map on them alone, the nearest to the
+bench first). `taskStages()` and `taskTargets()` find the marks; test/spots.test.js checks every task
+has a place. Over the 73 saves of Albert's folder and Free mode, every task not done had its pin
+(2,898 rows, none left with the empty slot).
 
 ## Step 6 · Map
 

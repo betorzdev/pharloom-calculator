@@ -112,7 +112,8 @@
     const { name, got, act, area, color, sub = [], mark, icon, more = [] } = x;
     const later = g && !got && act > g.act;
     const place = [prefs.pgNear && act ? t('saveAct', { n: act }) : '', areaName(area), ...sub].filter(Boolean);
-    const onMap = !got && mark && App.mapHas && App.mapHas(mark);
+    // A task's pin goes its own way (focus, taskPin): it may open several marks.
+    const onMap = !got && (x.focus || (mark && App.mapHas && App.mapHas(mark)));
     const how = isFound(x) ? t(onMap ? 'pgFound' : 'pgFoundNoPin') : x.how;
     return `<li class="pg-item${got ? ' is-got' : ''}${later ? ' is-later' : ''}${icon ? '' : ' is-plain'}"${later ? ` title="${esc(t('pgLater', { n: act }))}"` : ''}>
         ${marking && mark && !(mark.startsWith('piece:') && LADDER[CO.PIECES[+mark.slice(6)][0]]) ? `<button type="button" class="pg-mark check is-own" data-act="pgOwn" data-value="${esc(mark)}" aria-pressed="${!!got}" aria-label="${esc(name)}"><span class="check-box" aria-hidden="true"></span></button>`
@@ -121,7 +122,7 @@
         <span class="pg-main"><span class="pg-name"${NT}>${color ? `<span class="pg-slot is-${color}" aria-hidden="true"></span>` : ''}${esc(name)}</span>
           ${got ? `<span class="sr-only">${esc(t('pgGot'))}</span>` : ''}${!got ? howHtml(how, more) + saysRow(x.says) : ''}</span>
         <span class="pg-place"><span class="pg-where">${place.map((w, i) => `<span${i || prefs.pgNear ? NT : ''}>${esc(w)}</span>`).join('')}</span></span>
-        ${onMap ? `<button type="button" class="pg-onmap" data-act="mapShow" data-value="${esc(mark)}" aria-label="${esc(t('mapOnMap') + ': ' + name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '<span class="pg-onmap is-none" aria-hidden="true"></span>'}
+        ${onMap ? `<button type="button" class="pg-onmap" data-act="${x.focus ? 'pgFocus' : 'mapShow'}" data-value="${esc(x.focus || mark)}" aria-label="${esc(t('mapOnMap') + ': ' + name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '<span class="pg-onmap is-none" aria-hidden="true"></span>'}
       </li>`;
   }
   /* A list of rows; in the Act's order, each Act a small head over its rows, when they span two
@@ -250,11 +251,13 @@
     const mode = !g || !App.game() ? null : m && m.steel ? 'steel' : 'classic';
     const done = new Set(g ? g.quests : []);
     const sum = { got: 0, max: 0 };
+    const pin = taskPin(g);
     const html = CO.WISH_TYPES.map((ty) => {
       const list = CO.WISHES.map((w, i) => ({ w, i })).filter(({ w, i }) => w[0] === ty.id && !skip.has(i) && (!mode || !w[5] || w[5] === mode))
         .map(({ w, i }) => { const scene = wishScene(wishQuest(w), done);
           // With no area in the pane's list, the area it's taken in, as the road's rows (wishRow).
-          return { name: pick(w[4]), got: !!g && g.wishes.includes(i), act: w[1], area: w[3] || (scene && R.areaOf(scene)) || null, scene, icon: taskIcon(w) }; }).sort(byAct);
+          return { name: pick(w[4]), got: !!g && g.wishes.includes(i), act: w[1], area: w[3] || (scene && R.areaOf(scene)) || null, scene, icon: taskIcon(w),
+            focus: !!g && g.wishes.includes(i) ? null : pin(w, i) }; }).sort(byAct);
       const title = ty.name ? pick(ty.name) : TYPE_NAME[ty.id]();
       const got = list.filter((x) => x.got).length;
       sum.got += got;
@@ -263,6 +266,49 @@
         { pips: true, emblem: WISH_ICON.has(ty.id) ? `assets/icons/wishes/${ty.id}.webp` : null }) : '';
     }).join('');
     return { html, ...sum };
+  }
+  /* Each task's pin to the Map (design/78-task-pins-variants.html, all A): the lists' round pin, to
+     where the task stands now. Before it's taken, who gives it (its Wishwall or who asks, wishFrom);
+     taken, what's still to do of it on the Map (what it asks for, where it's done: js/spots.js
+     TASKS), and once nothing is, back to who gives it. A main objective goes to the game's own pin
+     (the melodies and the old hearts to their piece). Without a save, who gives it, else its marks.
+     Several marks open the Map on them alone (App.mapFocus), the nearest to the bench first; with
+     none the row keeps the empty slot, and a done task has no pin. */
+  let ownQuests = null;
+  // A task's quest and the stages before it that no other task names (a Pre, the Diving Bell's first two).
+  function taskStages(q) {
+    ownQuests = ownQuests || new Set([...CO.WISHES.map(wishQuest), ...Object.values(TASK_QUEST)].filter(Boolean));
+    const out = [q];
+    for (let x = QU.CHAIN[q] && QU.CHAIN[q].prev; x && QU.CHAIN[x] && !ownQuests.has(x); x = QU.CHAIN[x].prev) out.unshift(x);
+    return out;
+  }
+  // What a task asks for on the Map, by stage, in order: [[keys], ...].
+  function taskTargets(w) {
+    const piece = w[2][0] === 'flag' ? CO.PIECES.findIndex((p) => p[2][0] === 'flag' && p[2][1] === w[2][1]) : -1;
+    if (piece >= 0) return [['piece:' + piece]];
+    const q = wishQuest(w) || TASK_QUEST[w[2][1]], T = SS.spots ? SS.spots.TASKS : [];
+    if (!q) return [];
+    const by = taskStages(q).map((s) => T.flatMap((k, i) => (k[1] === s ? ['task:' + i] : []))).filter((a) => a.length);
+    if (by.length || w[0] !== 'main-objectives') return by;
+    // An objective with no pin of its own (After the Fall): the game's pin whose check is the nearest to it.
+    const has = (k) => k[0] === 'goal' && JSON.stringify(k[2]).includes(JSON.stringify(['quest', q]));
+    const i = T.reduce((b, k, j) => (has(k) && (b < 0 || k[2].length < T[b][2].length) ? j : b), -1);
+    return i >= 0 ? [['task:' + i]] : [];
+  }
+  function taskPin(g) {
+    const marks = new Map((App.mapApi ? App.mapApi.list() : []).map((m) => [m.key, m]));
+    const own = App.game(), done = new Set(own ? own.quests : []), taken = new Set((own && own.taken) || []);
+    const rooms = (k) => (marks.get(k).scene ? away(marks.get(k).scene) : null);
+    return (w, i) => {
+      const q = wishQuest(w), from = q ? wishFrom(q, done).mark : null;
+      const giver = from && marks.has(from) ? [from] : [];
+      const left = taskTargets(w).map((s) => s.filter((k) => marks.has(k) && !(g && marks.get(k).got))).find((s) => s.length) || [];
+      const isTaken = !!q && taskStages(q).some((s) => taken.has(s));
+      const keys = !own ? (giver.length ? giver : left) : giver.length && !isTaken ? giver : left.length ? left : giver;
+      if (!keys.length) return null;
+      FOCUS.set('task:' + i, { keys: keys.map((k, n) => ({ k, n, d: rooms(k) })).sort((a, b) => (a.d ?? Infinity) - (b.d ?? Infinity) || a.n - b.n).map((e) => e.k), name: pick(w[4]) });
+      return 'task:' + i;
+    };
   }
 
   /* How the 100% splits (design/75-progress-100-variants.html, 1 A): one line of a hundred, a
