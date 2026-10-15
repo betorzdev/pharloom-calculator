@@ -633,9 +633,7 @@ rise above the Citadel). The Flea Caravan has no game text. Lace's row and the k
 their pin too, as the Bellshrines' do. «What's missing · Everything» under its title (the 100% tab's
 same toggle, kept as you leave it) shows what's done too: each done row in its place, its number's
 diamond ticked and dimmed, and the wishes that already gave points ticked among the options. The
-steps after it follow, dim. A line says how many things of the 100% you can already
-get in your Act (each counted on its own: a Mask Shard is one, not a point) and leads to the other
-tab; it's gone when there's nothing left to get. «The whole road» opens the road in full, as below.
+steps after it follow, dim. «The whole road» opens the road in full, as below.
 
 How to get each thing leads with what it is and what it costs (who asks for a wish and what it asks
 to be brought, the shop and its price), then what it waits for (what posts the wish, the wish to do
@@ -771,6 +769,14 @@ to the game's own pin for it (the melodies and the Old Hearts to where each lies
 the pin goes to who gives it, or else to its marks. One mark opens the Map on it; several open the
 Map with only them (‹ 1 of n ›, the nearest to your bench first). A task with no mark keeps the
 pin's empty place, and a task done has none.
+In a save, a wish you've promised (the game's «Wish Promised») goes first in its group, under
+«Promised», its mark the hollow diamond lit and its pip in the group's row half lit. In place of how
+to get it, what it asks with how much of each you carry («Fine Pin 10/12», the rosaries, the shell
+shards or the Journal's entries for a donation or Nuu's), what you already have dimmed; once you
+have it all, the diamond fills and the line is the game's own for handing it in («Turn in the Fine
+Pins to Songclave's wishwall…»). A delivery is ready as soon as you take it: you carry it. A wish
+whose first step you've taken (a board's notice that sends you to someone) is promised with nothing
+counted yet. The main objectives keep to the road.
 In a save it shows what's missing, or everything with a tick where you have it; without a save,
 the whole list, as a guide. Which piece you have is read from the save one by one, and on the
 92 real saves it agrees with the game's own counters (masks, spools, the three upgrade ladders,

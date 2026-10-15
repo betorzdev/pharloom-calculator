@@ -1395,9 +1395,6 @@ kbd {
 .pg-md.is-later .pg-md-art img { filter: var(--missing-soft); opacity: var(--missing-soft-opacity); }
 .pg-md.is-later .pg-md-name { color: var(--muted); }
 /* The bridge to the 100% tab, and the whole road under it. */
-.pg-reach { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--sp-2) var(--sp-6); max-width: calc(var(--column) + var(--sp-16)); margin: var(--sp-8) auto 0; padding: var(--sp-4); border: 1px solid var(--line); background: color-mix(in oklab, var(--tab) 5%, transparent); }
-.pg-reach p { margin: 0; display: flex; align-items: baseline; gap: var(--sp-2); font-size: var(--fs-sm); color: var(--ink-2); }
-.pg-reach b { font-family: var(--font-display); font-weight: 400; font-size: var(--fs-2xl); line-height: 1; color: var(--ink-strong); }
 .pg-whole { display: flex; justify-content: center; margin-top: var(--sp-4); }
 .pg-controls { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-2) var(--sp-12); margin-bottom: var(--sp-2); }
 .pg-part {
@@ -1423,7 +1420,7 @@ kbd {
 .pg-opts li.is-got { border-style: dashed; color: var(--muted); }
 .pg-opts li.is-got .ic { width: 10px; height: 10px; color: var(--ink-2); }
 /* The one list's toggle under its title, and a done row: the number's diamond, dimmed, with the tick
-   (design/81, 1 A). */
+   (design/82, 1 A). */
 .pg-todo .pg-seg { display: flex; margin-bottom: var(--sp-3); }
 .pg-num.is-done { border-color: var(--line-ctl); color: var(--ink-2); }
 .pg-num.is-done .ic { transform: rotate(-45deg); width: 10px; height: 10px; }
@@ -1478,6 +1475,7 @@ kbd {
 .pg-pips { gap: 3px; }
 .pg-pips i { width: var(--diamond); height: var(--diamond); transform: rotate(45deg); border: 1px solid var(--accent-line); }
 .pg-pips i.is-on { background: var(--accent); border-color: var(--accent); }
+.pg-pips i.is-promised { border-color: var(--accent); background: color-mix(in oklab, var(--accent) 35%, transparent); }
 .pg-group.is-open > :not(.pg-head) { margin-left: calc(13rem + var(--sp-4)); }
 .pg-group.is-open > :last-child { margin-bottom: var(--sp-4); }
 /* A Tasks group's emblem by its title, the Wishwalls' (design/75, 7 B); an empty one keeps its place. */
@@ -1523,8 +1521,6 @@ kbd {
   .pg-now h3 { font-size: var(--fs-lg); }
   .pg-rings { grid-template-columns: 1fr 1fr; gap: var(--sp-6) var(--sp-3); }
   .pg-md { width: calc(var(--pg-md) + var(--sp-3)); }
-  .pg-reach { flex-direction: column; text-align: center; }
-  .pg-reach p { flex-direction: column; align-items: center; gap: var(--sp-1); }
   /* The road's thread goes down the page, a step a line (design/41, 3 C): every step keeps its
      name (round 1, 7 A) and none wraps. */
   .pg-journey.is-road .pg-journey-steps { grid-template-columns: minmax(0, 1fr); justify-items: start; gap: var(--sp-2); width: auto; }
@@ -1560,6 +1556,16 @@ kbd {
 .pg-slot.is-blue { background: var(--slot-blue); }
 .pg-slot.is-yellow { background: var(--slot-yellow); }
 .pg-how { font-size: var(--fs-xs); color: var(--ink-2); }
+/* A wish promised (design/81-task-states-variants.html, all A): its mark the game's hollow diamond
+   lit, filled once it's ready to hand in; its line what it asks with how much is carried, what's in
+   hand dimmed, or the game's words for handing it in. */
+.pg-promise { display: block; width: calc(var(--diamond) + var(--sp-half)); height: calc(var(--diamond) + var(--sp-half)); margin: auto; transform: rotate(45deg); border: 1px solid var(--accent); }
+.pg-promise.is-ready { background: var(--accent); }
+.pg-wish { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--sp-half) var(--sp-3); color: var(--ink); }
+.pg-wish-n { white-space: nowrap; color: var(--ink-2); }
+.pg-wish-n b { font-family: var(--font-num); font-weight: 600; font-variant-numeric: tabular-nums; color: var(--ink-strong); }
+.pg-wish-n i { font-style: normal; font-family: var(--font-num); color: var(--muted); }
+.pg-wish-n.is-full, .pg-wish-n.is-full b { color: var(--muted); }
 /* What a how line waits for follows its lead; on a phone it folds behind «+n more» (design/41, 2 B). */
 .pg-how-btn { display: none; margin-left: var(--sp-1); font-size: var(--fs-xs); }
 @media (max-width: 640px) {
