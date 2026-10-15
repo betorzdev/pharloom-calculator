@@ -36,6 +36,8 @@
   // The map's pins that light up (a station, a toll bench), by what they are: "bellway Bellway_02".
   const pinKey = (p) => p[0] + ' ' + p[3];
   const LIGHTS = MAP.PINS.filter((p) => p[4]);
+  // Every thing a wish asks to be brought, by its save name (the game's), for «carried».
+  const ASKED = [...new Set(Object.values(QU.CHAIN).flatMap((e) => (e.asks || []).filter((a) => a.kind === 'item').map((a) => a.save)))];
 
   const KEY = 'UKu52ePUBwetZ9wNX88o54dnfKRu0T1l';
   const HEADER = [0, 1, 0, 0, 0, 255, 255, 255, 255, 1, 0, 0, 0, 0, 0, 0, 0, 6, 1, 0, 0, 0];
@@ -280,6 +282,9 @@
                           group counts
        taken              the save names of the quests accepted and not yet complete (IsAccepted):
                           the pane «Tareas» shows their description, a Wishwall the rest's
+       carried            { save name: how many held } of every thing a wish asks to be brought
+                          (js/quests.js CHAIN asks, kind 'item'): a Collectable's Amount, 1 for a
+                          Tool unlocked. Only the ones held; what a wish takes is gone once given
        bellshrines        the Bellshrines rung, by their playerData field (js/quests.js BELLSHRINES)
        bells              every Bellshrine rung, the Songclave's too (the Map's; the Grand Gate wants five)
        lastJudge, phantom the two bosses either of which opens the Citadel (defeated*)
@@ -375,6 +380,7 @@
       silkshot: WEBSHOT[Object.keys(WEBSHOT).find((n) => (tools.get(n) || {}).IsUnlocked === true)] || '',
       quests: [...quests].filter(([, d]) => !!d.IsCompleted).map(([n]) => n).sort(),
       taken: [...quests].filter(([, d]) => !!d.IsAccepted && !d.IsCompleted).map(([n]) => n).sort(),
+      carried: Object.fromEntries(ASKED.map((n) => [n, tools.has(n) ? +!!tools.get(n).IsUnlocked : Math.max(0, int((items.get(n) || {}).Amount))]).filter(([, k]) => k > 0)),
       bellshrines: QU.BELLSHRINES.map((b) => b.field).filter((f) => pd[f] === true),
       bells: Object.keys(pd).filter((f) => /^bellShrine[A-Z]/.test(f) && pd[f] === true),
       lastJudge: pd.defeatedLastJudge === true,
@@ -492,7 +498,7 @@
   }
   const EMPTY = Object.freeze({ tools: [], gaveBack: [], crests: [], skills: [], arts: [], journal: {}, masks: 0, spools: 0, hearts: 0,
     needle: 0, kit: 0, pouch: 0, everbloom: false, purse: {}, rosaries: 0, shards: 0, farsight: false, hasJournal: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', rested: true, marker: '', area: '', build: {},
-    quests: [], taken: [], bellshrines: [], bells: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
+    quests: [], taken: [], carried: {}, bellshrines: [], bells: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
     bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [],
     visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], bosses: [],
     tasks: [], steelSpots: [], peopleVars: {}, evaSlots: 0, silkshot: '' });
@@ -509,6 +515,7 @@
     }
     // The held counts: only the items the list has, as whole numbers.
     out.purse = Object.fromEntries(CO.PURSE.map((p) => [p[0], Number.isInteger(out.purse[p[0]]) ? Math.max(0, out.purse[p[0]]) : 0]));
+    out.carried = Object.fromEntries(ASKED.filter((n) => Number.isInteger(out.carried[n]) && out.carried[n] > 0).map((n) => [n, out.carried[n]]));
     // The pieces by their keys → today's places in the list; a key the list no longer has is dropped.
     out.pieces = out.pieces.map((k) => KEY_AT.get(k)).filter((i) => i !== undefined);
     out.wishes = out.wishes.map((k) => WISH_AT.get(k)).filter((i) => i !== undefined);
