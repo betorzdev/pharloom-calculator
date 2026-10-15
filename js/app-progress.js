@@ -205,14 +205,12 @@
   const LADDER_CATS = ['masks', 'spools', 'upgrades', 'needle', 'hearts'];
   const ladderNote = (id, g) => (marking && g && LADDER_CATS.includes(id)
     ? `<p class="pg-note">${esc(t('pgLadderNote'))} <a class="text-btn" href="${App.here(App.hashFor('game'))}" data-act="view" data-value="game">${esc(t('navGame'))}</a></p>` : '');
-  /* o (the road's parts, actHtml): all, every row, the done ones ticked, whatever the toggle says;
-     road, open unless folded (prefs.pgShut), as they start open; note, the line under the head (the
-     road's only: the 100% and Tasks open straight on their rows, design/75); emblem, a picture by
-     the title (null keeps its place, so the titles line up); pips, pips in the strip even when every
+  /* o: all, every row, the done ones ticked, whatever the toggle says; emblem, a picture by the
+     title (null keeps its place, so the titles line up); pips, pips in the strip even when every
      row has a picture. */
   function group(id, title, list, g, got, max, o = {}) {
     const all = o.all || prefs.pgAll || !g;
-    const open = o.road ? !(prefs.pgShut || []).includes(id) : isOpen(id);
+    const open = isOpen(id);
     const done = g && got >= max;
     const shown = open ? nearFirst(all ? list : list.filter((x) => !x.got)) : [];
     const body = !open ? '' : shown.length ? listHtml(shown, g)
@@ -222,7 +220,7 @@
           <span class="pg-title">${o.emblem !== undefined ? `<span class="pg-emb" aria-hidden="true">${o.emblem ? `<img src="${o.emblem}" alt="" loading="lazy">` : ''}</span>` : ''}${esc(title)}</span>${strip(list, g, got, max, o.pips)}
           ${g ? `<span class="pg-count"><b>${pts(got)}</b><i class="u">/${num(max)}</i></span>` : `<span class="pg-count"><i class="u">${num(max)}</i></span>`}
           <span class="disc-ring">${App.chevron(open)}</span></button></h3>
-        ${open ? `${o.note ? `<p class="pg-note">${esc(o.note)}</p>` : ''}${ladderNote(id, g)}${body}` : ''}
+        ${open ? `${ladderNote(id, g)}${body}` : ''}
       </section>`;
   }
 
@@ -755,29 +753,26 @@
      top, and its rows (the 100% tab's own: group(), row()) for the list under it, with its goal
      in words and how much is left. A step of one thing is its ring alone. */
   function parts(r, s, g) {
-    const part = (id, label, icon, got, of, goal, rows) => ({ id, label, icon, got: Math.min(got, of), of, rows,
-      note: [goal, got < of ? t('roadLeft', { n: pts(of - got) }) : ''].filter(Boolean).join(' ') });
+    const part = (id, label, icon, got, of, rows) => ({ id, label, icon, got: Math.min(got, of), of, rows });
     // A wish's picture is its type's emblem; what it waits for goes under its name.
     // Half a point leads with the rest; the wish to do first and the runt's warning follow.
     const wishes = (rows) => rows.map(({ sub, ...x }) => ({ ...x, icon: wishArt(x.wish), how: [x.how, sub[0]].filter(Boolean).join(' · '),
       more: [...x.more, ...sub.slice(1)].filter(Boolean) }));
     if (s.id === 'bellshrines') {
-      return [part('shrines', t('pgShrines'), STEP_ART.bellshrines, s.done, s.total, t('roadGoalShrines', { n: num(s.total) }),
-        s.shrines.map((b) => ({ name: pick(b.name), got: b.ok, act: 1, icon: STEP_ART.bellshrines, mark: 'bell:' + b.field })))];
+      return [part('shrines', t('pgShrines'), STEP_ART.bellshrines, s.done, s.total, s.shrines.map((b) => ({ name: pick(b.name), got: b.ok, act: 1, icon: STEP_ART.bellshrines, mark: 'bell:' + b.field })))];
     }
     if (s.id === 'unlock') {
       const points = wishes(groupRows('Soul Snare', g, false));
       return [
-        part('required', t('roadRequired'), BOARD, s.required.done, s.required.total, t('roadGoalReq'), wishes(groupRows('Soul Snare', g, true))),
-        part('points', t('pgPoints'), QUEST('snare'), s.points.got, s.points.need, t('roadGoalPts', { n: num(s.points.need), wishes: num(points.length) }), points),
-        part('checks', t('roadFour'), 'assets/benches/bellhome.png', s.tests.filter((x) => x.ok).length, s.tests.length, t('roadGoalChk'), checkRows(s, g)),
+        part('required', t('roadRequired'), BOARD, s.required.done, s.required.total, wishes(groupRows('Soul Snare', g, true))),
+        part('points', t('pgPoints'), QUEST('snare'), s.points.got, s.points.need, points),
+        part('checks', t('roadFour'), 'assets/benches/bellhome.png', s.tests.filter((x) => x.ok).length, s.tests.length, checkRows(s, g)),
       ];
     }
     if (s.id === 'pieces') {
-      return [part('snare', t('roadSnare'), STEP_ART.pieces, s.done, s.total, t('roadGoalSnare', { n: num(s.total) }),
-        s.pieces.map((x) => ({ ...snareRow(x), icon: QUEST('snare') })))];
+      return [part('snare', t('roadSnare'), STEP_ART.pieces, s.done, s.total, s.pieces.map((x) => ({ ...snareRow(x), icon: QUEST('snare') })))];
     }
-    return [part(s.id, stepShort(r, s), STEP_ART[s.id] || BOARD, s.done, s.total, '', [])];
+    return [part(s.id, stepShort(r, s), STEP_ART[s.id] || BOARD, s.done, s.total, [])];
   }
   // A step's parts at once: what the tab's card counts, in the rings' own units.
   const partsSum = (ps) => ps.reduce((a, p) => ({ got: a.got + p.got, of: a.of + p.of }), { got: 0, of: 0 });
@@ -799,59 +794,73 @@
       + reach(g) + `<div class="pg-whole"><button type="button" class="text-btn" data-act="pgRoad" aria-expanded="${open}">${esc(t(open ? 'roadLess' : 'roadWhole'))}</button></div>`
       + (open ? roadHtml(g) : '');
   }
-  /* The rings, then what's next (design/40-progress-clarity-variants.html, 2 A); every part's whole
-     list, the done ones ticked, folds under it (prefs.pgList). */
+  /* The rings, then what's next (design/40-progress-clarity-variants.html, 2 A), the step's one list
+     (design/81, 1 A). */
   function partsHtml(r, s, g) {
     const ps = parts(r, s, g);
     // The line over the rings: what the step asks, said once (the offer's and the snare's notes too).
     const say = s.id === 'unlock' ? t('roadAllThree', { caretaker: t('roadCaretaker'), wish: wishOf(r) })
       : s.id === 'offer' ? offerNote(s, g) : s.id === 'silk' ? t('roadSilkNote') : '';
     const lead = say ? `<p class="pg-lead">${esc(say)}</p>` : '';
-    const n = ps.reduce((a, p) => a + p.rows.length, 0);
-    const open = !!prefs.pgList;
     return `${lead}<div class="pg-rings is-sum" style="--n:${ps.length}">${ps.map((p) => ring({ ...p, items: [] })).join('')}</div>
-        ${todoHtml(r, s, ps)}
-        ${n ? `<div class="pg-whole"><button type="button" class="text-btn" data-act="pgList" aria-expanded="${open}">${esc(open ? t('pgListLess') : t('pgListAll', { n: num(n) }))}</button></div>` : ''}
-        ${n && open ? `<div class="pg-groups">${ps.filter((p) => p.rows.length)
-          .map((p) => group('road-' + p.id, p.label, p.rows, g, p.got, p.of, { all: true, road: true, note: p.note })).join('')}</div>` : ''}`;
+        ${todoHtml(r, s, ps)}`;
   }
-  /* What's next (design/40, 2 A): only what the step still lacks, as numbered things to do, read
-     from its parts' rows: each wish it requires, the wish points short (with the nearest wishes that
-     would give them), each condition, Bellshrine or piece of the snare; a step of one thing, its
-     title. Each with its picture, its place and the Map's pin. */
+  /* What's next (design/40, 2 A), the step's one list (design/81, 1 A): what the step still lacks,
+     as numbered things to do, read from its parts' rows: each wish it requires, the wish points short
+     (with the nearest wishes that would give them, the rest unfolding), each condition, Bellshrine or
+     piece of the snare; a step of one thing, its title. Each with its picture, its place and the
+     Map's pin. With «Everything» (prefs.pgAll, the 100% tab's own toggle), what's done too, ticked in
+     its place, and the wishes that gave points among the options. */
   const byNear = (rows) => rows.map((x, i) => ({ x, i, d: dist(x) })).sort((a, b) => (a.d ?? Infinity) - (b.d ?? Infinity) || a.i - b.i).map((e) => e.x);
-  function todo(r, s, ps) {
+  function todo(r, s, ps, all) {
     const out = [];
     for (const p of ps) {
       const left = p.rows.filter((x) => !x.got);
       if (p.id === 'points') {
-        if (p.got >= p.of) continue;
-        const near = byNear(left);
+        if (p.got >= p.of) { if (all) out.push({ name: p.label, icon: p.icon, done: true }); continue; }
         const known = left.some((x) => dist(x) != null);
         out.push({ name: t('pgTodoPoints', { n: pts(p.of - p.got) }), icon: p.icon, how: t(known ? 'pgTodoAnyNear' : 'pgTodoAny', { n: num(left.length) }),
-          opts: near.slice(0, 4), more: Math.max(0, near.length - 4) });
+          opts: byNear(left), had: all ? p.rows.filter((x) => x.got) : [] });
         continue;
       }
       if (!p.rows.length) { if (p.got < p.of) out.push({ name: stepTitle(r, s), icon: p.icon }); continue; }
-      for (const x of left) {
+      for (const x of all ? p.rows : left) {
+        const ready = !x.got && x.test === 'bellhomeKey' && x.ready;
         const name = p.id === 'required' ? t('pgTodoWish', { wish: x.name })
           : p.id === 'shrines' ? t('pgTodoShrine', { area: x.name })
-          : x.test === 'bellhomeKey' && x.ready ? t('pgTodoPavo', { key: x.name })
+          : ready ? t('pgTodoPavo', { key: x.name })
           : x.test === 'doubleJump' || x.test === 'bellhomeKey' || p.id === 'snare' ? t('pgTodoGet', { name: x.name }) : x.name;
-        out.push({ ...x, name, ...(x.test === 'bellhomeKey' && x.ready ? { how: '', more: [] } : {}), area: p.id === 'shrines' ? null : x.area });
+        out.push({ ...x, name, done: x.got, ...(ready ? { how: '', more: [] } : {}), area: p.id === 'shrines' ? null : x.area });
       }
     }
     return out;
   }
+  const OPTS = 4;   // the nearest wishes for points shown before «and n more»
   function todoHtml(r, s, ps) {
-    const items = todo(r, s, ps);
+    const items = todo(r, s, ps, !!prefs.pgAll);
     if (!items.length) return '';
-    return `<section class="pg-todo" aria-labelledby="pg-todo-h"><h3 class="pg-part" id="pg-todo-h">${esc(t('pgTodo'))}</h3><ol class="pg-list">${items.map((x, i) => {
+    const opt = (o, i) => `<li${i >= OPTS ? ' class="is-extra"' : ''}><img src="${o.icon}" alt="" loading="lazy"><span><span${NT}>${esc(o.name)}</span>${o.value === 0.5 ? ` · ${esc(t('roadHalf'))}` : ''}</span></li>`;
+    const had = (o) => `<li class="is-got">${App.tick}<img src="${o.icon}" alt="" loading="lazy"><span><span${NT}>${esc(o.name)}</span><span class="sr-only">${esc(t('pgGot'))}</span></span></li>`;
+    let n = 0;
+    return `<section class="pg-todo" aria-labelledby="pg-todo-h"><h3 class="pg-part" id="pg-todo-h">${esc(t('pgTodo'))}</h3>
+      <div class="seg pg-seg" role="group" aria-label="${esc(t('pgShow'))}">
+        <button type="button" data-act="pgShow" data-value="missing" aria-pressed="${!prefs.pgAll}">${esc(t('pgMissing'))}</button>
+        <button type="button" data-act="pgShow" data-value="all" aria-pressed="${!!prefs.pgAll}">${esc(t('pgAll'))}</button>
+      </div><ol class="pg-list">${items.map((x) => {
+      if (x.done) {
+        return `<li class="pg-item is-got"><span class="pg-num is-done" aria-hidden="true">${App.tick}</span>
+          <span class="pg-art"><img src="${x.icon}" alt="" loading="lazy"></span>
+          <span class="pg-main"><span class="pg-name">${esc(x.name)}</span><span class="sr-only">${esc(t('pgGot'))}</span></span>
+          <span class="pg-place"><span class="pg-where">${x.area ? `<span${NT}>${esc(areaName(x.area))}</span>` : ''}</span></span>
+          <span class="pg-onmap is-none" aria-hidden="true"></span>
+        </li>`;
+      }
       const onMap = x.mark && App.mapHas && App.mapHas(x.mark);
-      return `<li class="pg-item"><span class="pg-num" aria-hidden="true"><b>${num(i + 1)}</b></span>
+      const more = x.opts ? x.opts.length - OPTS : 0;
+      return `<li class="pg-item"><span class="pg-num" aria-hidden="true"><b>${num(++n)}</b></span>
           <span class="pg-art"><img src="${x.icon}" alt="" loading="lazy"></span>
           <span class="pg-main"><span class="pg-name">${esc(x.name)}</span>${howHtml(x.how, x.more)}${saysRow(x.says)}
-            ${x.opts ? `<ul class="pg-opts">${x.opts.map((o) => `<li><img src="${o.icon}" alt="" loading="lazy"><span><span${NT}>${esc(o.name)}</span>${o.value === 0.5 ? ` · ${esc(t('roadHalf'))}` : ''}</span></li>`).join('')}${x.more ? `<li class="is-more">${esc(t('pgTodoMore', { n: num(x.more) }))}</li>` : ''}</ul>` : ''}</span>
+            ${x.opts ? `<ul class="pg-opts" id="pg-opts">${x.opts.map(opt).join('')}${x.had.map(had).join('')}${more > 0 ? `<li class="is-more"><button type="button" class="text-btn" data-act="pgOpts" aria-expanded="false" aria-controls="pg-opts">${esc(t('pgTodoMore', { n: num(more) }))}</button></li>` : ''}</ul>` : ''}</span>
           <span class="pg-place"><span class="pg-where">${x.area ? `<span${NT}>${esc(areaName(x.area))}</span>` : ''}</span></span>
           ${onMap ? `<button type="button" class="pg-onmap" data-act="mapShow" data-value="${esc(x.mark)}" aria-label="${esc(t('mapOnMap') + ': ' + x.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '<span class="pg-onmap is-none" aria-hidden="true"></span>'}
         </li>`;
@@ -1050,10 +1059,8 @@
 
   Object.assign(actions, {
     pgOpen(node) {
-      const id = node.dataset.value;
-      // The road's parts start open: what's kept is the ones folded.
-      const key = id.startsWith('road-') ? 'pgShut' : 'pgOpen', list = prefs[key] || [];
-      prefs[key] = list.includes(id) ? list.filter((x) => x !== id) : [...list, id];
+      const id = node.dataset.value, list = prefs.pgOpen || [];
+      prefs.pgOpen = list.includes(id) ? list.filter((x) => x !== id) : [...list, id];
       savePrefs();
       render();
     },
@@ -1081,8 +1088,14 @@
       node.setAttribute('aria-expanded', String(!q.hidden));
       node.innerHTML = esc(t(q.hidden ? 'pgSays' : 'pgSaysHide')) + App.chevron(!q.hidden);
     },
-    // The step's whole list, under what's next (design/40, 2 A).
-    pgList() { prefs.pgList = !prefs.pgList; savePrefs(); render(); },
+    // What's next's wishes for points past the nearest four (design/81, 1 A).
+    pgOpts(node) {
+      const ul = document.getElementById(node.getAttribute('aria-controls'));
+      if (!ul) return;
+      const open = ul.classList.toggle('is-open');
+      node.setAttribute('aria-expanded', String(open));
+      node.textContent = open ? t('pgHowLess') : t('pgTodoMore', { n: num(ul.querySelectorAll('.is-extra').length) });
+    },
     // A list of the guide (no save), folded under «See all n».
     pgFold(node) {
       const id = node.dataset.value;

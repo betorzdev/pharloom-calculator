@@ -618,11 +618,11 @@ and how far as a figure under it; for Silk and Soul a line says that all three a
 the offer how it comes (or that you turned it down), and for the last step that the Needolin, not
 a Bind, is what snares her.
 
-Under the rings, **What's next**: only what the step still lacks, numbered, each with its picture,
+Under the rings, **What's next**: the step's one list. What it still lacks, numbered, each with its picture,
 its area and the Map's pin when it has the thing: each required wish («Complete the wish "Balm for
 the Wounded"», with who asks for it in the game's words, what posts it and the wish to do first),
 the wish points short («Get 1 more wish point») with the four wishes nearest your bench that would
-give it (any of the others will do), each condition not met (the Flea Caravan, the Faydown Cloak,
+give it («and n more» unfolds the rest), each condition not met (the Flea Caravan, the Faydown Cloak,
 Lace, the Bellhome Key, or «Talk to Pavo» once he has it for you), each Bellshrine not rung, each
 piece of the snare. Each row the game has words for has «What the game says» under it, which unfolds
 them: a wish as the game shows it now (what its Wishwall says until you take it, what «Tasks» says
@@ -630,10 +630,10 @@ once you have: the save's own record of each wish taken), the Caretaker's direct
 and the Snare Setter, the Inventory's line for the Faydown Cloak and the Bellhome Key, and for Lace
 the objective that leads to her (learn the Threefold Melody, then play it at the Citadel's heart, then
 rise above the Citadel). The Flea Caravan has no game text. Lace's row and the key's (Pavo) have
-their pin too, as the Bellshrines' do. «See the whole list, done included» opens every part as a group like the 100%
-tab's (it stays as you leave it): its pictures or pips and its count, what it asks in a sentence and
-how much is left, then its things in rows by Act, the ones done ticked, with «½ point» on a
-delivery. The steps after it follow, dim. A line says how many things of the 100% you can already
+their pin too, as the Bellshrines' do. «What's missing · Everything» under its title (the 100% tab's
+same toggle, kept as you leave it) shows what's done too: each done row in its place, its number's
+diamond ticked and dimmed, and the wishes that already gave points ticked among the options. The
+steps after it follow, dim. A line says how many things of the 100% you can already
 get in your Act (each counted on its own: a Mask Shard is one, not a point) and leads to the other
 tab; it's gone when there's nothing left to get. «The whole road» opens the road in full, as below.
 
