@@ -1415,6 +1415,15 @@ kbd {
 .pg-opts li { display: inline-flex; align-items: center; gap: var(--sp-1); padding: 0 var(--sp-2); border: 1px solid var(--line-ctl); }
 .pg-opts img { width: var(--sp-4); height: var(--sp-4); object-fit: contain; }
 .pg-opts li.is-more { border: 0; color: var(--muted); }
+.pg-opts li.is-more .text-btn { font-size: inherit; min-height: 0; }
+.pg-opts:not(.is-open) li.is-extra { display: none; }
+.pg-opts li.is-got { border-style: dashed; color: var(--muted); }
+.pg-opts li.is-got .ic { width: 10px; height: 10px; color: var(--ink-2); }
+/* The one list's toggle under its title, and a done row: the number's diamond, dimmed, with the tick
+   (design/82, 1 A). */
+.pg-todo .pg-seg { display: flex; margin-bottom: var(--sp-3); }
+.pg-num.is-done { border-color: var(--line-ctl); color: var(--ink-2); }
+.pg-num.is-done .ic { transform: rotate(-45deg); width: 10px; height: 10px; }
 /* How the 100% splits (design/75-progress-100-variants.html, 1 A; js/app-progress.js splitBar):
    one line of a hundred in a thin filigree frame with a diamond at each end, a hairline notch where
    each category ends, a taller one with its diamonds where the Tools' half ends. Self-contained:
