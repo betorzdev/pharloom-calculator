@@ -544,7 +544,7 @@
     ['spool-fragment', 1, ['bool', 'Peak_01', 'Silk Spool'], 'SLAB'],
     ['spool-fragment', 1, ['bool', 'Weave_11', 'Silk Spool'], 'WEAVE_PRIME'],
     ['spool-fragment', 1, ['flag', 'PurchasedBelltownSpoolSegment'], 'BELLHART'],
-    ['spool-fragment', 2, ['min', 'CaravanTroupeLocation', 2], 'GREYMOOR'],
+    ['spool-fragment', 2, ['flag', 'MetCaravanTroupeLeaderJudge'], 'CORAL_STEPS'],
     ['spool-fragment', 2, ['bool', 'Cog_07', 'Silk Spool'], 'COGWORK_CORE'],
     ['spool-fragment', 2, ['bool', 'Library_11b', 'Silk Spool'], 'UNDERSTORE'],
     ['spool-fragment', 2, ['bool', 'Song_19_entrance', 'Silk Spool'], 'GRANDGATE'],

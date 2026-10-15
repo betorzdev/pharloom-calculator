@@ -152,8 +152,17 @@ const KINDS = [
   ['memory-locket', 'memoryLockets.ts'], ['craftmetal', 'craftmetals.ts'], ['pale-oil', 'paleOil.ts'],
   ['flea', 'fleas.ts'],
 ];
+// A piece the completionist has wrong: the game's check and area (tools/completionist.js PIECE_FIX).
+const PIECE_FIX = C.PIECE_FIX;
+const fixed = new Set();
+const piece = (kind, it) => {
+  const c = check(it.parsingInfo), fix = PIECE_FIX[JSON.stringify(c)];
+  if (fix) { fixed.add(JSON.stringify(c)); AREAS[fix[1]] = zoneText(fix[1]) || fail(`PIECE_FIX: no area ${fix[1]}`); }
+  return fix ? [kind, actOf(it), fix[0], fix[1]] : [kind, actOf(it), c, areaOf(it.completionDetails)];
+};
 const PIECES = [];
-for (const [kind, file] of KINDS) for (const it of load(file)) PIECES.push([kind, actOf(it), check(it.parsingInfo), areaOf(it.completionDetails)]);
+for (const [kind, file] of KINDS) for (const it of load(file)) PIECES.push(piece(kind, it));
+for (const k of Object.keys(PIECE_FIX)) if (!fixed.has(k)) fail(`PIECE_FIX ${k}: no such piece in the completionist any more`);
 // The upgrades one by one, and the Silk Hearts: their sections of the dictionary.
 const SECTION_KINDS = [['upgrades.ts', 'Needle Upgrades', 'needle'], ['upgrades.ts', 'Tool Pouch Upgrades', 'tool-pouch'],
   ['upgrades.ts', 'Crafting Kit Upgrades', 'crafting-kit'], ['abilities.ts', 'Silk Hearts', 'silk-heart']];

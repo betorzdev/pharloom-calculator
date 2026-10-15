@@ -45,4 +45,18 @@ function check(p, fail) {
   }
 }
 
-module.exports = { SRC, sections, load, check };
+/* Where the completionist is wrong about a piece, by its check (as check() gives it): the game's
+   own check and the piece's area (an AREAS id). tools/gen-collectibles.js puts them in PIECES,
+   tools/gen-how.js follows them when it sets the completionist's prices against the pieces.
+   Mooshka's Spool Fragment isn't given in Greymoor (the completionist's "Fleamaster reward in
+   Greymoor, after rescuing 14 Fleas", checked by CaravanTroupeLocation 2): the caravan leaves
+   Greymoor at 12 fleas, and Mooshka gives it the first time Hornet speaks to him at its next stop,
+   the Last Judge's arena on the Blasted Steps (the game's files, read on 15-Oct-2026: Coral_Judge_Arena's
+   Troupe Leader Dialogue FSM, Met? → Meet → "Award Spool Piece", which sets
+   MetCaravanTroupeLeaderJudge; Greymoor_08_caravan's has no spool). The wiki says the same
+   (Spool Fragment: "upon their ascent to the Grand Gate", its mapshot the caravan there; the
+   Blasted Steps page lists it among its loot). MetCaravanTroupeLeaderJudge and CaravanTroupeLocation
+   ≥ 2 agree on all 73 of the author's saves; the flag is the gift itself, not the move before it. */
+const PIECE_FIX = { '["min","CaravanTroupeLocation",2]': [['flag', 'MetCaravanTroupeLeaderJudge'], 'CORAL_STEPS'] };
+
+module.exports = { SRC, sections, load, check, PIECE_FIX };
