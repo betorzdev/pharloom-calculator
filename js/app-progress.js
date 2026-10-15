@@ -236,6 +236,8 @@
     HasMelodyLibrarian: 'Citadel Ascent Melody Librarian', CollectedHeartCoral: 'Black Thread Pt5 Heart Coral',
     CollectedHeartFlower: 'Black Thread Pt5 Heart Flower', CollectedHeartHunter: 'Black Thread Pt5 Heart Ant', 'Lost Lace': 'Black Thread Pt6 Flower' };
   const TASK_TYPE = { 'Soul Snare': 'wayfarer', 'Soul Snare Pre': 'wayfarer' };
+  // The group «collect» is the Soul Snare's wish, a Wayfarer one in the game: it has no emblem of its own.
+  const GROUP_EMBLEM = { collect: TASK_TYPE['Soul Snare'] };
   const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   function taskIcon(w) {
     const q = wishQuest(w) || TASK_QUEST[w[2][1]];
@@ -259,8 +261,9 @@
       const got = list.filter((x) => x.got).length;
       sum.got += got;
       sum.max += list.length;
+      const emb = GROUP_EMBLEM[ty.id] || ty.id;
       return list.length ? group('wish-' + ty.id, title, list, g, got, list.length,
-        { pips: true, emblem: WISH_ICON.has(ty.id) ? `assets/icons/wishes/${ty.id}.webp` : null }) : '';
+        { pips: true, emblem: WISH_ICON.has(emb) ? `assets/icons/wishes/${emb}.webp` : null }) : '';
     }).join('');
     return { html, ...sum };
   }
