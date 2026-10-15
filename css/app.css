@@ -2557,6 +2557,13 @@ img.mp-fit { transform: translate(calc(var(--fx) * 100%), calc(var(--fy) * 100%)
 .mp-mk:is(:hover, :focus-visible, .is-sel) > circle:first-of-type { stroke: var(--accent); stroke-width: 0.1; }
 .mp-mk:focus { outline: none; }
 .mp-mk.is-off { opacity: 0.4; }
+/* What's had, with "Show Completed" (design/77, 3 A): dimmed, a tick in --good on its upper right;
+   whole again on hover or picked. */
+.mp-mk.is-had > :not(.mp-tick) { opacity: var(--mp-had-dim); }
+.mp-mk.is-had:is(:hover, :focus-visible, .is-sel) > * { opacity: 1; }
+.mp-tick { pointer-events: none; }
+.mp-tick circle { fill: var(--scene-bg); stroke: var(--good); stroke-width: 0.05; }
+.mp-tick path { fill: none; stroke: var(--good); stroke-width: 0.06; stroke-linecap: round; stroke-linejoin: round; }
 .mp-glyph { color: var(--ink-strong); }
 /* Behind the picture, the inventory's pale plate (--halo-plate), so a dark portrait or a thin
    needle reads on the black disc. */

@@ -156,7 +156,7 @@ left unfilled. The Rosaries and Shell Shards are typed: Enter or leaving the fie
 takes the figure, and the shards stop at what your Pouch holds. With the keyboard, the focus stays
 where it was through each mark. «Start from»: «New Game» (the
 game's own words) takes it all back to the start; «Everything maxed» marks everything, every level
-at the top (a game at 100%). Progress counts what you mark, the Map leaves out what you have, and
+at the top (a game at 100%). Progress counts what you mark, the Map leaves out what you have (unless «Show Completed» is on), and
 the Crest screen tries it on «What I have». A visit from before this (when the levels belonged to
 the Crest screen's build and started at the top) keeps the levels you moved and puts the ones still
 at the top back to a New Game's, without a notice.
@@ -394,7 +394,11 @@ on a phone the area names show only zoomed in.
 
 Under the map, **What the map shows**, as the Hollow Knight site has it: «Show all · Hide all» on
 its right, and «Only the 100%», which turns on just the layers that count for completion, then «Whole map» with a save, on at first (see
-below), and the area names on or off. Then eleven groups, each a row that folds (its caret; all open
+below), the area names on or off, and «Show Completed» (the game's own words for the switch on its
+Wishes pane), off at first: on, what you already have comes back to the map too, each mark
+dimmed with a green tick on its corner, whole again under the pointer or once picked, its card
+saying how it was had; the search finds it too. In Free mode it brings back what you've marked.
+Then eleven groups, each a row that folds (its caret; all open
 at first, only the first two on a phone, then as you left them) whose title is the switch for the
 whole group, in ink when all of it is on, dimmer when part, muted when none. Inside, each layer's
 switch is the game's own picture of it, in grey when off. Beside each, how many: in a save, had of
