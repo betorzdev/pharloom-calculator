@@ -823,7 +823,7 @@
         ${stale ? `<p class="pg-note is-warn">${esc(t('roadStale'))}</p>` : ''}
         ${s.bypassed ? '' : partsHtml(r, s, g)}
         ${later.length ? `<ul class="pg-mds pg-later">${later.map(medal).join('')}</ul>${peekFrom === 'later' && later.some((x) => x.peek === peekAt) ? peekHtml(r, g) : ''}` : ''}` : '')
-      + reach(g) + `<div class="pg-whole"><button type="button" class="text-btn" data-act="pgRoad" aria-expanded="${open}">${esc(t(open ? 'roadLess' : 'roadWhole'))}</button></div>`
+      + `<div class="pg-whole"><button type="button" class="text-btn" data-act="pgRoad" aria-expanded="${open}">${esc(t(open ? 'roadLess' : 'roadWhole'))}</button></div>`
       + (open ? roadHtml(g) : '');
   }
   /* The rings, then what's next (design/40-progress-clarity-variants.html, 2 A); every part's whole
@@ -897,14 +897,8 @@
         items: E.filter((e) => !seen.has(e.id) && !shut.includes(e)).map((e) => ({ name: t('ending_' + e.key), icon: QUEST('act3_finale') })) },
       { label: t('pgOnlyAct3'), icon: lack.length ? lack[0].icon : 'assets/icons/items/everbloom.webp', got: only.length - lack.length, of: only.length,
         items: lack.map((x) => ({ name: x.name, icon: x.icon, mark: x.mark })) },
-    ].map(ring).join('')}</div>` + reach(g);
+    ].map(ring).join('')}</div>`;
   }
-  /* The bridge to the 100%: how many of its things you can get in the Act you're in (each piece
-     one: a Mask Shard is a thing, not a point), and the way to the other tab. Nothing when there's
-     nothing left to get. */
-  let reachN = 0;
-  const reach = () => (!reachN ? '' : `<div class="pg-reach" title="${esc(t('pgReachTip'))}"><p><b>${num(reachN)}</b> ${esc(t('pgReach'))}</p>
-      <button type="button" class="btn" data-act="pgTab" data-value="100">${esc(t('pgSee100'))}</button></div>`);
   // The offer: turned down already (js/acts.js declined), or how it comes.
   const offerNote = (s, g) => (g && s.declined ? t('roadDeclined') : t('roadOfferNote', { town: areaName('BELLHART') }));
 
@@ -984,8 +978,6 @@
         <p class="pg-ring-k">${esc(t('pgCompletion'))}</p></div>
         ${own && theirs != null && theirs !== c.total ? `<p class="hm-check is-off">${esc(t('homeDiffers', { pct: num(theirs) + App.pctSpace() }))}</p>` : ''}</div>` : '';
     const next = own ? A.next(own) : null;
-    // The things of the 100% still missing in the Act you're in or before it, each piece one.
-    reachN = g ? Object.values(all).flat().filter((x) => !x.got && x.act && x.act <= g.act).length : 0;
     const hundred = CP.CATEGORIES.map((k, i) => {
       const cat = c ? c.categories[i] : { got: 0, max: k.max };
       return group(k.id, t('cat_' + k.id), all[k.id], g, cat.got, cat.max);

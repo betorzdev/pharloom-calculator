@@ -633,9 +633,7 @@ rise above the Citadel). The Flea Caravan has no game text. Lace's row and the k
 their pin too, as the Bellshrines' do. «See the whole list, done included» opens every part as a group like the 100%
 tab's (it stays as you leave it): its pictures or pips and its count, what it asks in a sentence and
 how much is left, then its things in rows by Act, the ones done ticked, with «½ point» on a
-delivery. The steps after it follow, dim. A line says how many things of the 100% you can already
-get in your Act (each counted on its own: a Mask Shard is one, not a point) and leads to the other
-tab; it's gone when there's nothing left to get. «The whole road» opens the road in full, as below.
+delivery. The steps after it follow, dim. «The whole road» opens the road in full, as below.
 
 How to get each thing leads with what it is and what it costs (who asks for a wish and what it asks
 to be brought, the shop and its price), then what it waits for (what posts the wish, the wish to do

@@ -782,9 +782,9 @@ Built (`js/app-progress.js`, `css/app.css`):
   part of it (`rings()`: required wishes, wish points, the other conditions; the Bellshrines; the
   snare's pieces) with the game's picture inside, the figure under it and only the missing as
   medallions (`medal()`: picture, name, the Map's pin when it has the thing); the points show the
-  nearest four wishes, «½» on a delivery. The later steps dim, then the bridge: how many things of
-  the 100% you can already get (each piece one, not points) and «Ver el 100 %». «El camino entero»
-  still opens the full road.
+  nearest four wishes, «½» on a delivery. The later steps dim. «El camino entero» still opens the
+  full road. (The bridge to the 100%, a count of what you could already get and «Ver el 100 %»,
+  was taken out: Albert didn't want it.)
 - In Act 3, «Tu partida»: the game's thread, a ring of the endings and one of what only Act 3 holds.
 - The wishes' pictures are the game's: each type's large emblem and the Wishes tab, read from its
   files by `tools/extract-wish-icons.py` (QuestType `largeIcon` in `wish.spriteatlas`). The steps'
