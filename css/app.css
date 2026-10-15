@@ -1395,9 +1395,6 @@ kbd {
 .pg-md.is-later .pg-md-art img { filter: var(--missing-soft); opacity: var(--missing-soft-opacity); }
 .pg-md.is-later .pg-md-name { color: var(--muted); }
 /* The bridge to the 100% tab, and the whole road under it. */
-.pg-reach { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--sp-2) var(--sp-6); max-width: calc(var(--column) + var(--sp-16)); margin: var(--sp-8) auto 0; padding: var(--sp-4); border: 1px solid var(--line); background: color-mix(in oklab, var(--tab) 5%, transparent); }
-.pg-reach p { margin: 0; display: flex; align-items: baseline; gap: var(--sp-2); font-size: var(--fs-sm); color: var(--ink-2); }
-.pg-reach b { font-family: var(--font-display); font-weight: 400; font-size: var(--fs-2xl); line-height: 1; color: var(--ink-strong); }
 .pg-whole { display: flex; justify-content: center; margin-top: var(--sp-4); }
 .pg-controls { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-2) var(--sp-12); margin-bottom: var(--sp-2); }
 .pg-part {
@@ -1514,8 +1511,6 @@ kbd {
   .pg-now h3 { font-size: var(--fs-lg); }
   .pg-rings { grid-template-columns: 1fr 1fr; gap: var(--sp-6) var(--sp-3); }
   .pg-md { width: calc(var(--pg-md) + var(--sp-3)); }
-  .pg-reach { flex-direction: column; text-align: center; }
-  .pg-reach p { flex-direction: column; align-items: center; gap: var(--sp-1); }
   /* The road's thread goes down the page, a step a line (design/41, 3 C): every step keeps its
      name (round 1, 7 A) and none wraps. */
   .pg-journey.is-road .pg-journey-steps { grid-template-columns: minmax(0, 1fr); justify-items: start; gap: var(--sp-2); width: auto; }
