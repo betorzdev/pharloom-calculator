@@ -683,6 +683,10 @@
     pgTasks:        { es: 'Tareas', en: 'Tasks' },   // PANE_QUESTS
     pgTasksMain:    { es: 'Objetivos principales', en: 'Main objectives' },
     pgTasksCollect: { es: 'Colección', en: 'Collect' },
+    // A wish promised (design/81): its state as the game shows it, and the head the promised go first under.
+    pgPromised:     { es: 'Deseo prometido', en: 'Wish Promised' },   // WISH_PROMISED
+    pgPromisedHead: { es: 'Prometidos', en: 'Promised' },   // no word of the game's for them together
+    pgRest:         { es: 'Los demás', en: 'The rest' },
     /* Progress's two tabs (design/27b-progress-variants.html): the road to the next Act and the 100% */
     pgStepOf:       { es: 'paso {n} de {of}', en: 'step {n} of {of}' },
     pgToGo:         { es: '{pct} por conseguir', en: '{pct} to go' },

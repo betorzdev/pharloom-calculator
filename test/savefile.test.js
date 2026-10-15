@@ -220,3 +220,15 @@ test("a wish taken is 'accepted' whether it's done or not; 'quest' only once don
   assert.equal(F.game({ ...BASE, ...quest(true, false) }, null).extras.includes(i), true);
   assert.equal(F.game({ ...BASE, ...quest(true, true) }, null).extras.includes(i), true);
 });
+
+test('what a wish asks to be brought is carried by its save name, kept through a snapshot', () => {
+  const item = (Name, Amount) => ({ Name, Data: { Amount } });
+  const pd = { ...BASE, Collectables: { savedData: [item('Crow Feather', 7), item('Fine Pin', 0), item('Rosary_Set_Small', 2)] },
+    Tools: { savedData: [{ Name: 'Extractor', Data: { IsUnlocked: true } }] } };
+  // Only the held, only what a wish asks for (a rosary string isn't).
+  assert.deepEqual(F.game(pd, null).carried, { 'Crow Feather': 7, Extractor: 1 });
+  assert.deepEqual(F.gameOf(F.toSnapshot(pd)).carried, { 'Crow Feather': 7, Extractor: 1 });
+  // A slot kept before the field, or one with junk in it, carries nothing it can't read.
+  assert.deepEqual(F.gameOf({ 'pharloom.progress': '{}' }).carried, {});
+  assert.deepEqual(F.gameOf({ 'pharloom.progress': '{"carried":{"Crow Feather":3,"Nope":2,"Fine Pin":-1}}' }).carried, { 'Crow Feather': 3 });
+});
