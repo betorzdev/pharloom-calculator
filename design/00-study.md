@@ -1535,6 +1535,12 @@ time with no reload and no stale row. Fixed on the way:
 - **The flea caravan's rewards**: the Spool Fragment at 12 fleas and the Tool Pouch at 22, not the
   completionist's 14 and 20 (the Troupe Leader's Dialogue FSM, Greymoor_08_caravan and
   Coral_Judge_Arena, compares the FleasCollected Target's count against 12 and 22; the wiki agrees).
+  And that Spool Fragment's place (15 October): not Greymoor, as the completionist files it, but
+  the caravan's Blasted Steps camp, where Mooshka gives it the first time Hornet speaks to him there
+  (Coral_Judge_Arena's FSM, "Award Spool Piece", which sets MetCaravanTroupeLeaderJudge: now its
+  check, in place of CaravanTroupeLocation ≥ 2, the same on all 73 saves). The Progress row says
+  the Blasted Steps, and the Map puts it on Mooshka there instead of at Fleatopia
+  (`tools/completionist.js PIECE_FIX`; the wiki's Spool Fragment and Blasted Steps pages agree).
 - **Nineteen things of the 100% had no area** (Voltvessels, Flintslate, Swift Step, Clawline,
   Silkspear, three Spool Fragments…): the completionist files them as the area alone ("Deep Docks"),
   which the generator only read with a colon after it. Only the Everbloom has none now (a wish's).
