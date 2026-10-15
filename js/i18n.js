@@ -272,6 +272,7 @@
     mapMissing:     { es: 'Lo que falta', en: 'Missing' },
     mapPlaces:      { es: 'Lugares', en: 'Places' },
     mapNames:       { es: 'Nombres de zona', en: 'Area names' },
+    mapHad:         { es: 'Mostrar completados', en: 'Show Completed' },   // INV_TOGGLE_COMPLETED_ON
     mapFit:         { es: 'Entero', en: 'Whole' },
     mapAlt:         { es: 'El mapa de Telalejana', en: 'The map of Pharloom' },
     mapPlace_bench: { es: 'Bancos', en: 'Benches' },   // KEY_BENCH, in the plural
