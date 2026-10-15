@@ -602,12 +602,14 @@ opens its card where it was clicked: «Step 3», its title, what the game says o
 the Map (a step done says «done» and has no map); the × or the step again close it, and the step
 you're on takes you to its heading. Then the step you're on, with its picture and, under its
 heading, **what the game says of it**: the objective as the game's pause menu «Tasks» titles it,
-with its line («Grand Gate · Pharloom») and its description as the game words it in that state
+with the picture the Tasks tab draws by it, its line («Grand Gate · Pharloom») and its description as the game words it in that state
 («Awaken the old bells throughout the lands.» while Bellshrines are left, «Return to the Grand
 Gate and open the way to the Citadel.» once they're rung; for the snare, «Acquire the necessary
 components…», then «Give the collected components to the Caretaker of Songclave.»). The Last Judge
 has no objective of her own, so her Journal entry speaks («Final arbiter of the Blasted Steps…»,
-tagged «Journal»); unlocking Silk and Soul has no text in the game, so it has none. Under it,
+tagged «Journal»); unlocking Silk and Soul has no text in the game, so it shows the wish it opens,
+its picture dim and its name and place («Silk and Soul · Caretaker of Songclave»). The same picture,
+smaller, goes by each step's card in the whole road and in a step opened from the thread. Under it,
 «See on the map» or «See the n on the map» (the Bellshrines not rung, the Grand Gate's and the
 Citadel's objective pins as the game's own map places them, the Last Judge and the Phantom, the
 Caretaker and Bellhart's Wishwall, the snare's pieces, the Cradle's top). Then its parts as small **rings** side by side (the wishes it requires, its
@@ -761,6 +763,13 @@ Black Thread's…). Each with the game's own name, its Act and where (a wish the
 area, the area it's taken in), across the whole width as in the 100%. In Act 2, the ten wishes Act
 3 requires are in the road's tab instead. The one only Steel Soul has, and the one only Classic has, show only in a
 save of that mode, and both in Free mode, as the Journal and the Map show them. A task done also shows in "Since the previous save".
+Each task not done carries the lists' round pin to the Map, to where it stands now: before you take
+it, who gives it (its Wishwall, or whoever asks); once taken, what's still to do of it (what it asks
+you to bring, where it's done), and when nothing is, back to whoever gives it. A main objective goes
+to the game's own pin for it (the melodies and the Old Hearts to where each lies). Without a save
+the pin goes to who gives it, or else to its marks. One mark opens the Map on it; several open the
+Map with only them (‹ 1 of n ›, the nearest to your bench first). A task with no mark keeps the
+pin's empty place, and a task done has none.
 In a save it shows what's missing, or everything with a tick where you have it; without a save,
 the whole list, as a guide. Which piece you have is read from the save one by one, and on the
 92 real saves it agrees with the game's own counters (masks, spools, the three upgrade ladders,

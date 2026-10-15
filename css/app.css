@@ -1317,6 +1317,15 @@ kbd {
 .pg-says-loc::before { content: '·'; margin-right: var(--sp-2); }
 .pg-says-d { margin: 0; font-style: italic; font-size: var(--fs-md); line-height: 1.5; color: var(--ink); text-wrap: pretty; white-space: pre-line; }
 .pg-says-none { margin: 0; font-size: var(--fs-xs); color: var(--muted); }
+/* A task's picture beside its words (design/79, 1 A to 5 A): bare, as the pane «Tareas» draws it. */
+.pg-says-task { display: flex; align-items: center; justify-content: center; gap: var(--sp-4); text-align: left; }
+.pg-says-task > div { min-width: 0; }
+.pg-says-task .pg-says-k { justify-content: flex-start; }
+.pg-says-art { flex: none; width: var(--sp-12); height: var(--sp-12); }
+.pg-says-art img { width: 100%; height: 100%; object-fit: contain; }
+.pg-says-art.is-dim img { filter: var(--missing-soft); opacity: var(--missing-soft-opacity); }
+:is(.pg-says.is-step, .pg-says.is-peek) .pg-says-task { justify-content: flex-start; gap: var(--sp-3); }
+:is(.pg-says.is-step, .pg-says.is-peek) .pg-says-art { width: var(--sp-8); height: var(--sp-8); }
 .pg-says-map { margin-top: var(--sp-2); font-size: var(--fs-sm); }
 .pg-says.is-step { margin: var(--sp-2) 0 var(--sp-3); padding: var(--sp-2) 0; text-align: left; border: 0; }
 .pg-says.is-step .pg-says-k { justify-content: flex-start; }
