@@ -157,6 +157,17 @@ test("the flea caravan's rewards wait for the game's counts: 12 fleas in Greymoo
   // The Troupe Leader's FSM (tools/gen-how.js FLEAS), as the wiki's Fleas page says; the completionist's 14 and 20 were wrong.
   const H = require('../js/how.js');
   const at = (kind, text) => CO.PIECES.findIndex((p) => p[0] === kind && JSON.stringify(p[2]).includes(text));
-  assert.deepEqual(H.HOW.pieces[at('spool-fragment', 'CaravanTroupeLocation')], [{ kind: 'fleas', npc: 'mooshka', fleas: 12 }]);
+  assert.deepEqual(H.HOW.pieces[at('spool-fragment', 'MetCaravanTroupeLeaderJudge')], [{ kind: 'fleas', npc: 'mooshka', fleas: 12 }]);
   assert.deepEqual(H.HOW.pieces[at('tool-pouch', 'Fleatopia')], [{ kind: 'fleas', npc: 'mooshka', fleas: 22 }]);
+});
+
+test("Mooshka's Spool Fragment is given at the caravan's Blasted Steps camp, not in Greymoor", () => {
+  // The Judge arena's Troupe Leader FSM ("Award Spool Piece", setting MetCaravanTroupeLeaderJudge;
+  // tools/completionist.js PIECE_FIX): its check, its area and its Map room are that camp's.
+  const S = require('../js/spots.js');
+  const i = CO.PIECES.findIndex((p) => p[0] === 'spool-fragment' && p[2][1] === 'MetCaravanTroupeLeaderJudge');
+  assert.ok(i >= 0);
+  assert.deepEqual(CO.PIECES[i].slice(1, 4), [2, ['flag', 'MetCaravanTroupeLeaderJudge'], 'CORAL_STEPS']);
+  assert.equal(S.AT.pieces[i], 'Coral_Judge_Arena');
+  assert.ok(!CO.PIECES.some((p) => p[2][1] === 'CaravanTroupeLocation'));
 });

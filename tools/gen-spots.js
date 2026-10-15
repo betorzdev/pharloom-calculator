@@ -137,9 +137,12 @@ const HAND_EXTRA = {
    check's flag or wish: where the scene that sets it is (read in the game's scenes on
    28-Sep-2026: the cage of the Huge Flea, Kratt strung up in Greymoor, the wild troupe hunter by
    the Putrified Ducts' Bellway, the Architect's cylinder puzzle, the Last Conductor, the Flea
-   Games at Fleatopia's festival, the Snail Shamans who take the Old Hearts). */
+   Games at Fleatopia's festival, the Snail Shamans who take the Old Hearts), and Mooshka's Spool
+   Fragment, given at the caravan's Blasted Steps camp, the Last Judge's arena (gen-collectibles
+   PIECE_FIX), not at Fleatopia where js/how.js has him stand. */
 const HAND_PIECE = {
   tamedGiantFlea: 'Arborium_08', CaravanLechReturnedToCaravan: 'Greymoor_24', MetTroupeHunterWild: 'Bellway_Aqueduct',
+  MetCaravanTroupeLeaderJudge: 'Coral_Judge_Arena',
   HasMelodyArchitect: 'Cog_09', HasMelodyConductor: 'Hang_12', 'Flea Games': 'Aqueduct_05_festival',
 };
 const EVERBLOOM = 'Tut_04';
@@ -890,8 +893,9 @@ const wayAt = (key, scene) => {
 };
 // A flag's script in a room (pickups.json fields).
 const fieldAt = (flag, scene) => entryAt(P.fields[flag], scene);
-// Kratt, strung up in Greymoor_24: no script there names his flag, he stands there himself.
-const PIECE_WHO = { CaravanLechReturnedToCaravan: 'FLEA_LECH' };
+// Kratt, strung up in Greymoor_24: no script there names his flag, he stands there himself; and
+// Mooshka at the Blasted Steps, who gives his Spool Fragment there.
+const PIECE_WHO = { CaravanLechReturnedToCaravan: 'FLEA_LECH', MetCaravanTroupeLeaderJudge: 'FLEAMASTER' };
 // A room's lost flea: the flea itself (in its cage, barrel, branches, asleep…), else what wakes it.
 const fleaIn = (scene) => {
   const all = (P.fleas[lower(scene)] || []).filter((f) => f[1] || f[2]);
