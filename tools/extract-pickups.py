@@ -3,7 +3,8 @@ files, into kb/data/game/pickups.json, which tools/gen-spots.js reads (offline) 
 the Map. Needs the game installed and UnityPy, as tools/extract-map.py does:
     uv venv /tmp/unitypy && uv pip install --python /tmp/unitypy/bin/python UnityPy
     /tmp/unitypy/bin/python tools/extract-pickups.py "<Steam>/steamapps/common/Hollow Knight Silksong" [--cache=<file>]
-Re-run it after a patch that moves things. The scan reads every scene (about ten minutes);
+Re-run it after a patch, and tools/extract-gating.py with it (npm run data stops until both are of
+the same patch: tools/gating.js). The scan reads every scene (about ten minutes);
 --cache=<file> keeps what it read (pickled) for the runs that follow.
 
 What it writes (read on 28-Sep-2026, patch 1.0.30000):
@@ -88,12 +89,15 @@ What it writes (read on 28-Sep-2026, patch 1.0.30000):
           with a PersistentBoolItem on its object, kept as the doors are) → [[Scene, id, x, y]]:
           the save keeps it in sceneData.persistentBools once it's picked up (read on 11-Oct-2026;
           gen-spots takes the rosaries and shell shards among them).
+  patch   the game's version the scan read ("1.0.30000"), as tools/extract-gating.py writes it too:
+          npm run data stops if the two differ (tools/gating.js)
 Every [scene, …] above ends with the object's place in the world, [x, y] (its Transforms composed
-from the scene's root), where there's one. Scene names are the bundles', lower case; js/rooms.js
+from the scene's root, their turns counted: tools/scene_place.py), where there's one. Scene names are the bundles', lower case; js/rooms.js
 finds them on the map either way. """
 import json, math, os, pickle, re, struct, sys
 from collections import defaultdict
 import UnityPy
+from scene_place import placer, world_of
 
 UnityPy.config.FALLBACK_UNITY_VERSION = '6000.0.50f1'
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -211,27 +215,6 @@ def one_each(v):
     return out
 
 
-def placer(T, of_go):
-    """A GameObject's own points → the world (gid → a function of x, y): each Transform's scale,
-    turn about z and place, from its own up to the root."""
-    def of(gid):
-        chain, t = [], of_go.get(gid)
-        while t is not None:
-            chain.append(t)
-            f = t.m_Father.m_PathID
-            t = T.get(f) if f else None
-        def at(x, y):
-            for t in chain:
-                s, r, p = t.m_LocalScale, t.m_LocalRotation, t.m_LocalPosition
-                a = 2 * math.atan2(r.z, r.w)
-                x, y = x * s.x, y * s.y
-                x, y = x * math.cos(a) - y * math.sin(a), x * math.sin(a) + y * math.cos(a)
-                x, y = x + p.x, y + p.y
-            return x, y
-        return at
-    return of
-
-
 def switched_on(T, of_go, gos):
     """Whether a GameObject and every one above it are on in the scene file."""
     def on(gid):
@@ -288,6 +271,19 @@ def ground_under(edges, x, y):
     return best
 
 
+def game_patch(game):
+    """The game's own version (PlayerSettings' bundleVersion in globalgamemanagers, read raw: its type
+    tree doesn't read with the stripped Unity version), "1.0.30000"; written into the output so that
+    tools/gating.js can tell whether pickups.json and gating.json were read from the same patch."""
+    env = UnityPy.load(os.path.join(game, 'Hollow Knight Silksong_Data', 'globalgamemanagers'))
+    for o in env.objects:
+        if o.type.name == 'PlayerSettings':
+            found = re.findall(rb'(?<![\d.])\d+\.\d+\.\d+(?![\d.])', o.get_raw_data())
+            if len(found) == 1:
+                return found[0].decode()
+    sys.exit('the game\'s version isn\'t where it was (globalgamemanagers PlayerSettings): game_patch needs reading again')
+
+
 def main(game, cache):
     got = pickle.load(open(cache, 'rb')) if cache and os.path.exists(cache) else None
     if not got or len(got) != 17:   # none, or one kept before the doors, … the records, the fleas, the locks or the respawns
@@ -313,7 +309,8 @@ def main(game, cache):
            'records': {k: srt(one_each(v)) for k, v in sorted(records.items())},
            'fleas': {s: srt(v) for s, v in sorted(fleas.items())},
            'locks': {s: srt(v) for s, v in sorted(locks.items())},
-           'respawns': {s: {n: r2(p[:3]) for n, p in sorted(v.items())} for s, v in sorted(respawns.items())}}
+           'respawns': {s: {n: r2(p[:3]) for n, p in sorted(v.items())} for s, v in sorted(respawns.items())},
+           'patch': game_patch(game)}
     if len(out['pd']) < len(PD_WAYS):
         sys.exit(f"extract-pickups: no scene names {', '.join(sorted(set(PD_WAYS) - set(out['pd'])))} any more: PD_WAYS needs reading again")
     if len(out['maps']) < 10:
@@ -432,19 +429,7 @@ def scan(game):
                         ys.append(p[1])
             mid = lambda v: sorted(v)[len(v) // 2]
             return [*([mid(xs), mid(ys)] if xs else at), d.get('setPDBoolOnEnd') or '']
-        def world(gid):
-            t, chain = of_go.get(gid), []
-            while t is not None:
-                chain.append(t)
-                f = t.m_Father.m_PathID
-                t = T.get(f) if f else None
-            x = y = 0.0
-            sx = sy = 1.0
-            for t in reversed(chain):
-                lp, ls = t.m_LocalPosition, t.m_LocalScale
-                x, y = x + lp.x * sx, y + lp.y * sy
-                sx, sy = sx * ls.x, sy * ls.y
-            return [x, y] if chain else []
+        world = world_of(T, of_go)   # its place, its parents' turns counted (tools/scene_place.py)
         want = wanted.get(scene, set())
         tag_of = {}   # GameObject's path id → its tag
         for o in env.objects:

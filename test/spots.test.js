@@ -28,7 +28,7 @@ test('the extras, bosses, people and Bellshrines are all on the map, with a chec
   const kinds = new Set(['bone-scroll', 'weaver-effigy', 'choral-commandment', 'rune-harp', 'psalm-cylinder', 'arcane-egg', 'mossberry', 'silkeater',
     'memento', 'bellhome', 'spawn', 'rosary-cache', 'shard-cache', 'wall', 'lever', 'plate', 'gate', 'lock', 'shortcut', 'silkwall', 'map', 'rosaries', 'shards',
     'key', 'keyitem', 'bead', 'silk-cocoon', 'lift', 'masked', 'eva']);
-  const checks = new Set(['bool', 'flag', 'min', 'quest', 'visited', 'journal', 'relic', 'memento', 'int', 'geo', 'any', 'all', 'crest']);
+  const checks = new Set(['bool', 'flag', 'min', 'quest', 'visited', 'journal', 'relic', 'memento', 'int', 'geo', 'any', 'all', 'crest', 'accepted']);
   for (const [kind, , check, scene] of SP.EXTRAS) {
     assert.ok(kinds.has(kind), kind);
     assert.ok(checks.has(check[0]), check[0]);
@@ -54,7 +54,27 @@ test('each boss fight is a mark of its own: the first fight by its name, the sec
   assert.deepEqual(['lace-the-cradle', 'moss-mother-weavenest-atla', 'moss-mother-act-3-moss-grotto', 'savage-beastfly-far-fields'].map((f) => at[f]),
     ['Song_Tower_01', 'Weave_03', 'Tut_02', 'Bone_East_08']);
   // What a second fight gives is had in its arena: the Weavelight, the Silk Heart Lace leaves.
-  assert.equal(SP.AT.tools.weavelight, 'Weave_03');
+  assert.equal(SP.AT.tools.weavelight.toLowerCase(), 'weave_03');
+  // What a boss only opens the way to is where the game has it, not in the arena: Cling Grip's
+  // shrine is the room past Sister Splinter's, the Conchcutter lies inside the Coral Tower.
+  assert.equal(SP.AT.arts['cling-grip'].toLowerCase(), 'shellwood_10');
+  assert.equal(SP.AT.tools.conchcutter.toLowerCase(), 'coral_tower_01');
+  // A boss in several rooms is in the one it's fought in: Moorwing at Bellhart's east entrance (not
+  // its Act 2 rematch by the Bellway), the Second Sentinel in its High Halls arena, where the
+  // Reserve Bind it gives lies (not at the Wishwall of its wish).
+  assert.equal(at.moorwing, 'greymoor_08_boss');
+  assert.equal(at['second-sentinel'], 'Hang_17b');
+  assert.equal(SP.AT.tools['reserve-bind'].toLowerCase(), 'hang_17b');
+  // A boss scene loaded over its room has the boss's own point in it.
+  for (const f of ['moorwing', 'bell-beast', 'fourth-chorus', 'the-unravelled']) assert.ok(SP.XY['boss:' + f], f);
+  // A Memento the game has in several rooms is with who gives it: Lost Garmond's arena, Seth's festival.
+  const memento = (n) => SP.EXTRAS.find((x) => x[2][0] === 'memento' && x[2][1] === n)[3];
+  assert.equal(memento('Memento Garmond'), 'coral_33');
+  assert.equal(memento('Memento Seth'), 'aqueduct_05_festival');
+  // The Journal's entries where the enemy is, and Shakra on guard inside her room, not under it.
+  assert.ok(Object.keys(SP.XY).filter((k) => k.startsWith('journal:')).length > 150);
+  const g8 = SS.map.ROOMS.Greymoor_08, [sx, sy] = SP.XY[`shakra:${SP.VENDORS.shakra.indexOf('greymoor_08')}`];
+  assert.ok(sx >= g8[0] && sx <= g8[0] + g8[2] && sy >= g8[1] && sy <= g8[1] + g8[3]);
   const heart = CO.PIECES.findIndex((p, i) => p[0] === 'silk-heart' && SP.AT.pieces[i] === 'Song_Tower_01');
   assert.ok(heart >= 0);
   // The Summoned Saviour is fought in Act 2 (its wish, Steel Sentinel Pt2, is an Act 2 wish), not
@@ -69,15 +89,19 @@ test('what opens a way comes after the completionist\'s extras, each a bool of i
   const first = SP.EXTRAS.findIndex((x) => DOORS.has(x[0])), after = SP.EXTRAS.findIndex((x, i) => i > first && !DOORS.has(x[0]));
   assert.ok(first > 0 && after > first && SP.EXTRAS.slice(first, after).every((x) => DOORS.has(x[0])), 'appended, never among the others (js/map-fixes.js keys by place)');
   const LATER = new Set(['map', 'rosaries', 'shards', 'key', 'keyitem', 'bead', 'silk-cocoon', 'lift', 'masked', 'eva']);
-  assert.ok(SP.EXTRAS.slice(after).every((x) => LATER.has(x[0]) || (DOORS.has(x[0]) && x[2][0] === 'flag')), 'only the maps and what came after them');
+  // After them, only the maps and what came after them, the ways kept in playerData (a flag each) and,
+  // last, the doors a key opens no mark had (kb/data/game/gating.json receptacles: Ward_01's).
+  const last = SP.EXTRAS.length - SP.EXTRAS.slice().reverse().findIndex((x) => !(x[0] === 'lock'));
+  assert.ok(SP.EXTRAS.slice(after, last).every((x) => LATER.has(x[0]) || (DOORS.has(x[0]) && x[2][0] === 'flag')), 'only the maps and what came after them');
   // What opens a way that the save keeps in playerData: a flag each, once.
-  const pd = SP.EXTRAS.slice(after).filter((x) => DOORS.has(x[0]));
+  const pd = SP.EXTRAS.slice(after, last).filter((x) => DOORS.has(x[0]));
   assert.ok(pd.length > 10, 'the playerData ways');
   assert.equal(new Set(pd.map((x) => x[2][1])).size, pd.length);
   const seen = new Set();
   for (const [kind, , check] of SP.EXTRAS.slice(first, after)) {
-    assert.equal(check[0], 'bool', kind);
-    const k = JSON.stringify(check).toLowerCase();
+    // Its own bool, or that bool and what the save keeps instead (test/save-checks.test.js, 2 A).
+    assert.ok(check[0] === 'bool' || (check[0] === 'any' && check[1][0] === 'bool'), kind);
+    const k = JSON.stringify(check[0] === 'bool' ? check : check[1]).toLowerCase();
     assert.ok(!seen.has(k), `${kind} ${JSON.stringify(check)} twice`);
     seen.add(k);
   }
@@ -136,7 +160,9 @@ test('the keys, key items, loose rosaries, cocoons, lifts, hidden corners and Ev
   // A room's hidden corners are one mark, had once every one of them is uncovered.
   const masked = of('masked');
   assert.equal(new Set(masked.map((x) => x[3])).size, masked.length);
-  for (const x of masked) assert.ok(x[2][0] === 'bool' || (x[2][0] === 'all' && x[2].length > 2));
+  // Each mask by its bool, or that and the way it sits in or the flag that takes it away (5 A).
+  const leaf = (c) => c[0] === 'bool' || (c[0] === 'any' && c[1][0] === 'bool');
+  for (const x of masked) assert.ok(leaf(x[2]) || (x[2][0] === 'all' && x[2].length > 2 && x[2].slice(1).every(leaf)), JSON.stringify(x[2]));
   // Eva's four, in her room, by the slots the wiki gives; the save's slot count, every Crest but the Hunter.
   const eva = of('eva');
   assert.deepEqual(eva.map((x) => x[5].slots), [0, 12, 20, 27]);
@@ -215,7 +241,7 @@ test('each thing with a point of its own sits in (or at the edge of) its room\'s
 test('the wishes and the main objectives (TASKS) sit on the map, each with its picture and a check the save reads', () => {
   const fs = require('fs');
   const path = require('path');
-  const checks = new Set(['bool', 'flag', 'quest', 'held', 'steel', 'any']);
+  const checks = new Set(['bool', 'flag', 'quest', 'held', 'steel', 'any', 'journal']);   // journal: Last Dive's, as its wish (save checks, 7 A)
   const walk = (c) => { assert.ok(checks.has(c[0]), c[0]); if (c[0] === 'any') c.slice(1).forEach(walk); };
   const n = { qitem: 0, wspot: 0, goal: 0 };
   for (const [kind, quest, check, scene, art] of SP.TASKS) {
@@ -268,4 +294,15 @@ test('a save says which wish items, places and objectives are done, the Steel Se
   const back = F.gameOf(F.toSnapshot(pd, sd));
   assert.deepEqual(back.tasks, g.tasks);
   assert.deepEqual(back.steelSpots, g.steelSpots);
+});
+
+test('each extra once: no two of a kind with the same check in the same scene, and no Heart Memento', () => {
+  const seen = new Set();
+  SP.EXTRAS.forEach((x, i) => {
+    const k = JSON.stringify([x[0], x[2], String(x[3]).toLowerCase()]);
+    assert.ok(!seen.has(k), `extra:${i} (${x[0]} in ${x[3]}) is there twice`);
+    seen.add(k);
+  });
+  // It isn't found anywhere: whichever Old Heart The Old Hearts doesn't take (design/03-redesign.md, step 6, 11 A).
+  assert.ok(!SP.EXTRAS.some((x) => x[0] === 'memento' && x[2][0] === 'all'), 'the Heart Memento has no mark');
 });

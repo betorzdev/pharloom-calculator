@@ -62,6 +62,21 @@ const OUT = path.join(__dirname, '..', 'js', 'spots.js');
 const PICKUPS = path.join(__dirname, '..', 'kb', 'data', 'game', 'pickups.json');
 function fail(msg) { throw new Error('gen-spots: ' + msg); }
 const P = JSON.parse(fs.readFileSync(PICKUPS, 'utf8'));
+/* What decides whether each thing the save keeps per room can be had (kb/data/game/gating.json,
+   tools/extract-gating.py, design/03-redesign.md, step 6, the save checks): the flags a way's own
+   components set, the other lock of a door, what the game takes away and when, what only one mode
+   or the demo has, what the scenes never switch on. By "Scene|ID" as the save writes them. */
+const GATING = require('./gating.js').load('gen-spots');   // stops unless pickups.json is of the same patch
+const GATE = new Map(Object.entries(GATING.items).map(([k, v]) => [k.toLowerCase(), v]));
+const gateOf = (scene, id) => GATE.get((scene + '|' + id).toLowerCase()) || {};
+// A check's sceneData bools, wherever they are in it; its saved items of any kind (a cache's int, a rock's hits).
+const boolsOf = (c) => (c[0] === 'bool' ? [c] : c[0] === 'any' || c[0] === 'all' ? c.slice(1).flatMap(boolsOf) : []);
+const savedOf = (c) => (['bool', 'int', 'geo'].includes(c[0]) ? [c] : c[0] === 'any' || c[0] === 'all' ? c.slice(1).flatMap(savedOf) : []);
+/* A thing the game never has (11 A): only in the demo (a demo gate, "Demo States/Demo"), or switched
+   off in its scene with nothing there that switches it on (none of the author's saves has one of
+   these bools, though their rooms were entered 8 to 73 times). Left out of the Map. */
+const neverHad = (c) => { const b = savedOf(c); return b.length > 0 && b.every((x) => gateOf(x[1], x[2]).never || gateOf(x[1], x[2]).demo); };
+const leftOut = [];
 const norm = (s) => String(s).toLowerCase().replace(/[’']/g, "'").trim();
 const onMap = (scene) => !!(scene && R.roomOf(scene));
 
@@ -92,8 +107,9 @@ const HAND = {
   arts: {
     // The rooms whose scripts set the ability's flag, by their areas: Swift Step's shrine in the
     // Deep Docks, Clawline's in the Underworks (Shrine Weaver HarpoonDash), Silk Soar's in the
-    // Abyss, the Drifter's Cloak from the Seamstress, the Faydown Cloak atop Mount Fay.
-    'swift-step': ['hasDash', 'bone_east_05'], clawline: ['hasHarpoonDash', 'under_18'],
+    // Abyss, Cling Grip's in Shellwood (the room past Sister Splinter's, not her arena), the
+    // Drifter's Cloak from the Seamstress, the Faydown Cloak atop Mount Fay.
+    'swift-step': ['hasDash', 'bone_east_05'], clawline: ['hasHarpoonDash', 'under_18'], 'cling-grip': ['hasWalljump', 'shellwood_10'],
     'silk-soar': ['hasSuperJump', 'abyss_08'], 'drifters-cloak': ['hasBrolly', 'bone_east_umbrella'],
     'faydown-cloak': ['hasDoubleJump', 'peak_08b'],
     // The two Needolin melodies outside the 100%, both Act 3's (their wiki pages): the Beastling
@@ -150,20 +166,35 @@ const EVERBLOOM = 'Tut_04';
 // and the fights that aren't in their entry's first room: the first Moss Mother in Tut_03 (its
 // Battle Scene; Tut_02 holds the Act 3 one, in the lower Moss Grotto), the Moss Mothers' pair in
 // Weavenest Atla (where the Weavelight lies), Lace's second fight atop the Cradle's tower, the
-// Savage Beastfly of the wish in the Far Fields (its boss scene's room).
+// Savage Beastfly of the wish in the Far Fields (its boss scene's room). Then the bosses whose entry
+// is in several rooms, none with more of it than the rest (the generator stops on a new one): the
+// first fight of each (Lace's in the Deep Docks, the Beastfly's in its chapel, the Skull Tyrant's in
+// the Marrow); Moorwing's at Bellhart's east entrance (greymoor_08_boss, Garmond and Zaza's help in
+// it; greymoor_05_boss is the Act 2 rematch by the Bellway, its wiki page); the Second Sentinel's
+// arena in the High Halls (Hang_17b, where the Reserve Bind it gives lies: Hang_07 and the Choral
+// Chambers are where it wanders); the Bell Eater, called to any Bellway in Act 3, at Bellhart's,
+// under which the Bell Beast gives the Beastling Call once it's beaten.
 const BOSS_ROOM = { 'raging-conchfly': 'Coral_27', 'moss-mother-ruined-chapel': 'Tut_03', 'lace-the-cradle': 'Song_Tower_01', 'moss-mother-weavenest-atla': 'Weave_03',
-  'moss-mother-act-3-moss-grotto': 'Tut_02', 'savage-beastfly-far-fields': 'Bone_East_08' };
+  'moss-mother-act-3-moss-grotto': 'Tut_02', 'savage-beastfly-far-fields': 'Bone_East_08',
+  lace: 'Bone_East_12', 'savage-beastfly-chapel-of-the-beast': 'Ant_19', 'skull-tyrant': 'Bone_15', moorwing: 'greymoor_08_boss',
+  'second-sentinel': 'Hang_17b', 'bell-eater': 'Belltown_basement' };
 /* The fights the completionist folds into its boss's entry (its check is the first fight's), each
    with what the save keeps once it's won, read in the scene that fights it (11-Oct-2026): the
-   flag Song_Tower_01's boss scene tests, Weave_03's Boss Scene bool, the Act 3 Moss Mother's own
-   PersistentBoolItem (no ID: the game saves it by the object's name), the flag the Far Fields
-   Beastfly's death sets. Then the first Act it can be fought in, from its wiki page: Lace atop
-   the Cradle closes Act 2, the pair in Weavenest Atla guards the Weavelight (Act 1), the Far
-   Fields Beastfly is its Act 2 wish's (the completionist's tasks.ts). */
+   flag Song_Tower_01's boss scene tests, Weave_03's Boss Scene bool, the flag the Far Fields
+   Beastfly's death sets. The Act 3 Moss Mother (Tut_02's "Mossbone Mother Ambient") keeps nothing
+   of her own: no PersistentBoolItem (never in any of the 77 files of the author's saves, though
+   Tut_02 was entered in 73), and no scene names defeatedMossEvolver (wokeMossEvolver is set when
+   she wakes). Her death counts for the Journal's Mossbone Mother (EnemyDeathEffects), whose
+   other fights are the Ruined Chapel's one and Weavenest Atla's two (killsRequired 3): she's
+   beaten once its kills pass theirs (design/03-redesign.md, step 6, the save checks, 6 A). Then
+   the first Act it can be fought in, from its wiki page: Lace atop the Cradle closes Act 2, the
+   pair in Weavenest Atla guards the Weavelight (Act 1), the Far Fields Beastfly is its Act 2 wish's
+   (the completionist's tasks.ts). */
 const BOSS_MORE = [
   ['lace-the-cradle', ['flag', 'defeatedLaceTower'], 2],
   ['moss-mother-weavenest-atla', ['bool', 'Weave_03', 'Boss Scene'], 1],
-  ['moss-mother-act-3-moss-grotto', ['bool', 'Tut_02', 'Mossbone Mother Ambient'], 3],
+  ['moss-mother-act-3-moss-grotto', ['any', ['all', ['not', ['bool', 'Weave_03', 'Boss Scene']], ['kills', 'Mossbone Mother', 2]],
+    ['kills', 'Mossbone Mother', 4]], 3],
   ['savage-beastfly-far-fields', ['flag', 'defeatedBoneFlyerGiantGolemScene'], 2],
 ];
 /* A boss whose Act the completionist has wrong: the Summoned Saviour, Steel Soul's, is Act 3 there,
@@ -171,7 +202,11 @@ const BOSS_MORE = [
    (Restore_Points3/restoreData24: act2Started, not blackThreadWorld; checked 14-Oct-2026). */
 const BOSS_ACT = { 'summoned-saviour': 2 };
 // Relics an NPC hands over: Jubilana's Choral Commandment, Grindle's Psalm Cylinder.
-const RELIC_ROOM = { 'Seal Chit City Merchant': 'song_enclave', 'Psalm Cylinder Grindle': 'coral_42' };
+const RELIC_ROOM = { 'Seal Chit City Merchant': 'song_enclave', 'Psalm Cylinder Grindle': 'coral_42',
+  // In several rooms (the generator stops on a new one): the Hero's Memento where Lost Garmond drops
+  // it, his Blasted Steps arena; the Guardian's Memento from Seth at Fleatopia's festival (beating his
+  // scores), not from Mooshka at the caravan.
+  'Memento Garmond': 'coral_33', 'Memento Seth': 'aqueduct_05_festival' };
 // The Bellhome, where its furnishings go (Pavo's house in Bellhart).
 const BELLHOME = 'Belltown_Room_Spare';
 
@@ -208,10 +243,18 @@ const foeOf = new Map(E.FOES.map((f) => [f.id, f]));
 const bookOf = (foe) => bookBy.get(foe) || bookBy.get(foe.replace(/-(the-cradle|far-fields|chapel-of-the-beast|weavenest-atla|coral-tower)$/, ''))
   || (foeOf.has(foe) && bookN.get(foeOf.get(foe).hj)) || null;
 const arena = (foe) => {
-  if (BOSS_ROOM[foe]) return BOSS_ROOM[foe];
   const e = bookOf(foe);
-  const rooms = e && SS.journalRooms[e.key];
-  return rooms ? (rooms.map(([s]) => s).find(onMap) || null) : null;
+  const rooms = ((e && SS.journalRooms[e.key]) || []).filter(([s]) => onMap(s));
+  if (BOSS_ROOM[foe]) {
+    // A room by hand has to be one where the game has its entry (or something naming its record).
+    const room = (s) => (R.roomOf(s) || {}).scene;
+    const has = [...rooms.map(([s]) => s), ...((e && P.records[e.key]) || []).map(([s]) => s)].map(room);
+    if (!has.includes(room(BOSS_ROOM[foe]))) fail(`${foe}: BOSS_ROOM's ${BOSS_ROOM[foe]} isn't among the rooms of its Journal entry: read it again`);
+    return BOSS_ROOM[foe];
+  }
+  // Several rooms with as much of the entry as the first: which is the fight is a choice (BOSS_ROOM).
+  if (rooms.length > 1 && rooms[1][1] === rooms[0][1]) fail(`${foe} is in ${rooms.map(([s]) => s).join(', ')} alike: choose its arena in BOSS_ROOM`);
+  return rooms.length ? rooms[0][0] : null;
 };
 const BOSSES = [];
 for (const it of C.load('bosses.ts')) {
@@ -236,8 +279,8 @@ function byWays(ways, found, key) {
     let s = null;
     if (w.kind === 'found' || w.kind === 'craft') s = found();
     else if (w.kind === 'shop') s = w.vendor === 'shakra' ? 'Belltown' : personScene(w.vendor);   // Shakra: where she rests
-    else if (w.kind === 'wish') s = wishScene(w.quest);
-    else if (w.kind === 'boss') s = arena(w.foe);
+    else if (w.kind === 'wish') s = found() || wishScene(w.quest);   // a reward lying in the world, where it lies (the Reserve Bind, in the Second Sentinel's arena)
+    else if (w.kind === 'boss') s = found() || arena(w.foe);   // what the boss opens the way to, where it lies (Conchcutter, past the Raging Conchfly)
     else if (['npc', 'challenge', 'fleas'].includes(w.kind)) s = personScene(w.npc);
     if (s && onMap(s)) { if (key) WAY_OF[key] = w; return s; }
   }
@@ -316,7 +359,14 @@ const roomOfCheck = (c) => {
   const s = R.sceneOf(c);
   if (onMap(s)) return s;
   if (c[0] === 'flag' && HAND_EXTRA[c[1]]) return HAND_EXTRA[c[1]];
-  if (c[0] === 'relic' || c[0] === 'memento') return RELIC_ROOM[c[1]] || lying(c[1])[0] || given(c[1]).find(onMap) || null;
+  if (c[0] === 'relic' || c[0] === 'memento') {
+    const hand = RELIC_ROOM[c[1]], all = given(c[1]);
+    if (hand && all.length && !all.includes(hand.toLowerCase())) fail(`${c[1]}: RELIC_ROOM's ${hand} isn't among the game's scenes for it (${all.join(', ')})`);
+    if (hand) return hand;
+    const where = lying(c[1]).length ? lying(c[1]) : given(c[1]).filter(onMap);
+    if (where.length > 1) fail(`${c[1]} is in ${where.join(', ')}: choose its room in RELIC_ROOM`);
+    return where[0] || null;
+  }
   if (c[0] === 'any') for (const x of c.slice(1)) { const r = roomOfCheck(x); if (r) return r; }
   return null;
 };
@@ -343,23 +393,27 @@ const cacheCheck = (c) => {
   return at.length === 1 ? at[0] : ['any', ...at];
 };
 /* A thing whose completionist check stops holding once it's had (placed where that check says):
-   the Heart Memento is the fourth Old Heart, the one The Old Hearts doesn't take. Any heart held or
-   shown in the Bellhome (its check) is true while the wish is on and false once three are handed
-   over; all four found (CollectedHeart*, never cleared) is the spare one had, shown or not.
    Bone_East_17b's breakable wall is gone once the Savage Beastfly wish is taken: a
    TestGameObjectActivator on it turns it off while Beastfly Hunt IsAccepted (Assembly-CSharp
    1.0.30000; IsAccepted stays true once it's done), and its bool, broken or not, no longer says
    (false in 40 of the author's saves past the wish). */
 const CHECK_OF = {
-  'Heart Memento': ['all', ...['Flower', 'Coral', 'Hunter', 'Clover'].map((h) => ['flag', 'CollectedHeart' + h])],
   'Breakable Wall (Bone_East_17b)': ['any', ['bool', 'Bone_East_17b', 'Breakable Wall'], ['accepted', 'Beastfly Hunt']],
 };
+/* The completionist lists some things twice: twelve breakable walls (one of them three times) by the
+   same bool in the same scene, one wall at one point. Each goes in once (design/03-redesign.md,
+   step 6, the switches' contents, 8 A). */
+const EXTRA_SEEN = new Set();
 const extra = (kind, it, name) => {
   let c = C.check(it.parsingInfo, fail);
   if ((kind === 'rosary-cache' || kind === 'shard-cache') && c[0] === 'int' && !(c = cacheCheck(c))) return;
   const s = kind === 'bellhome' ? BELLHOME : roomOfCheck(c);
   if (!s || !onMap(s)) { unplaced.push(`${kind} ${it.name}`); return; }
   if (CHECK_OF[it.name]) c = CHECK_OF[it.name];
+  if (neverHad(c)) { leftOut.push(`${kind} ${s} ${it.name}`); return; }
+  const seen = JSON.stringify([kind, c, s.toLowerCase()]);
+  if (EXTRA_SEEN.has(seen)) return;
+  EXTRA_SEEN.add(seen);
   /* A "cache" that is an item lying in its room (Coral_36's Beast Shard: a CollectableItemPickup,
      pickups.json lying) goes in the rosaries' or shards' layer, by its own bool, in its place in
      the list (js/map-fixes.js keys by it). */
@@ -379,7 +433,10 @@ function lyingPurse(c) {
 for (const sec of C.sections('relics.ts')) for (const it of sec.items) extra(RELIC_KIND[sec.name] || fail(`relic kind ${sec.name}`), it);
 for (const it of C.load('mossberries.ts')) extra('mossberry', it);
 for (const it of C.load('silkeaters.ts')) extra('silkeater', it);
-for (const it of C.load('mementos.ts')) extra('memento', it, N.gameName(it.name) || undefined);
+/* The Heart Memento isn't found anywhere: it's whichever of the four Old Hearts The Old Hearts
+   doesn't take, so it has no room and no mark of its own (the Old Hearts' marks are where they lie;
+   design/03-redesign.md, step 6, the switches' contents, 11 A). */
+for (const it of C.load('mementos.ts')) if (it.name !== 'Heart Memento') extra('memento', it, N.gameName(it.name) || undefined);
 for (const it of C.load('bellhome.ts')) extra('bellhome', it, N.gameName(it.name) || { es: it.name, en: it.name, key: undefined });
 for (const sec of C.sections('uniqueSpawns.ts')) for (const it of sec.items) extra('spawn', it, N.text(SPAWN_KIND[sec.name] || fail(`spawn kind ${sec.name}`)));
 for (const sec of C.sections('cachesAndSecrets.ts')) for (const it of sec.items) extra(CACHE_KIND[sec.name] || fail(`cache kind ${sec.name}`), it);
@@ -390,8 +447,13 @@ for (const sec of C.sections('cachesAndSecrets.ts')) for (const it of sec.items)
    already there under the same check (a one-way wall among the breakable walls) isn't twice. One
    whose bool the game never sets goes by its playerData flag instead (PD_WAYS, below): Song_27's
    lever (unset in all 44 of the author's saves that keep it, read on 12-Oct-2026; song_27_opened
-   in 25). */
+   in 25). Left out (kb/data/game/gating.json): what the game never switches on (neverHad:
+   Clover_04b's two gates, worked by a pressure plate nothing switches on), and a gate a battle
+   shuts and opens again (a BattleScene's gates, a "BG Control" FSM's), which isn't a way that
+   stays open. */
 const DOOR_KINDS = ['lever', 'plate', 'gate', 'lock', 'shortcut', 'silkwall'];
+// What opens a way: the doors and the breakable walls (the save checks' rules, below, are for these).
+const WAY_KINDS = new Set([...DOOR_KINDS, 'wall']);
 const DOOR_BY_FLAG = new Set(['song_27/song_lever_side']);
 const SCENE_AT = new Map();
 {
@@ -402,6 +464,7 @@ const SCENE_AT = new Map();
       const c = ['bool', scene, id], k = JSON.stringify(c).toLowerCase();
       if (had.has(k) || DOOR_BY_FLAG.has(`${scene}/${id}`.toLowerCase())) continue;
       if (!onMap(scene)) { unplaced.push(`${kind} ${scene} ${id}`); continue; }
+      if (neverHad(c) || gateOf(scene, id).battle) { leftOut.push(`${kind} ${scene} ${id}`); continue; }
       had.add(k);
       if (typeof x === 'number') SCENE_AT.set(EXTRAS.length, [x, y]);
       EXTRAS.push([kind, 0, c, scene]);
@@ -459,6 +522,7 @@ const PRIZE = / Reward \d+$/;
       const c = ['bool', scene, bid], k = JSON.stringify(c).toLowerCase();
       if (had.has(k) || PRIZE.test(bid)) continue;
       if (!onMap(scene)) { unplaced.push(`${id} ${scene} ${bid}`); continue; }
+      if (neverHad(c)) { leftOut.push(`${id} ${scene} ${bid}`); continue; }
       had.add(k);
       if (typeof x === 'number') SCENE_AT.set(EXTRAS.length, [x, y]);
       EXTRAS.push([cur === 'rosaries' ? 'rosaries' : 'shards', null, c, scene, item.name, { item: id }]);
@@ -579,6 +643,7 @@ const LIFT_OUT = new Set(['Organ_01 Hornet_cage_rect_lift_organ (1)']);
       const c = ['bool', scene, id], k = JSON.stringify(c).toLowerCase();
       if (had.has(k) || DOOR_BY_FLAG.has(`${scene}/${id}`.toLowerCase())) continue;
       if (!onMap(scene)) { unplaced.push(`${kind} ${scene} ${id}`); continue; }
+      if (neverHad(c)) { leftOut.push(`${as} ${scene} ${id}`); continue; }
       had.add(k);
       if (typeof x === 'number') SCENE_AT.set(EXTRAS.length, [x, y]);
       EXTRAS.push([as, null, c, scene]);
@@ -591,11 +656,29 @@ const LIFT_OUT = new Set(['Organ_01 Hornet_cage_rect_lift_organ (1)']);
     if (!rooms.has(scene)) rooms.set(scene, []);
     rooms.get(scene).push([id, x, y]);
   }
+  /* Each mask as the save can say it's uncovered (design/03-redesign.md, step 6, the save checks,
+     5 A; kb/data/game/gating.json): by its own bool, or the bool of the way it sits inside (a mask
+     in a one-way wall's Solid, a crust wall's collider: broken from outside, the wall takes the mask
+     with it and the mask never saves; 16 of those 30 were ever set in the author's saves), or a flag
+     that takes it away (Bone_01's Secret Mask goes once its gate is opened). A mask the game never
+     switches on, the demo's, or one only one mode has (Coral_37's Steel Soul mask) isn't asked for:
+     the room is uncovered once the rest are. */
+  const ways = new Set(EXTRAS.filter((x) => WAY_KINDS.has(x[0])).flatMap((x) => boolsOf(x[2])).map((c) => (c[1] + '|' + c[2]).toLowerCase()));
   for (const [scene, list] of rooms) {
+    const leaves = [];
+    for (const [id] of list) {
+      const g = gateOf(scene, id);
+      if (g.never || g.demo || g.mode) { leftOut.push(`mask ${scene} ${id}`); continue; }
+      const also = [...(g.inside && ways.has((scene + '|' + g.inside).toLowerCase()) ? [['bool', scene, g.inside]] : []), ...(g.removedBy || []).map((f) => ['flag', f])];
+      leaves.push(also.length ? ['any', ['bool', scene, id], ...also] : ['bool', scene, id]);
+    }
+    if (!leaves.length) continue;
     const pts = list.filter((r) => typeof r[1] === 'number');
     if (pts.length) SCENE_AT.set(EXTRAS.length, [pts.reduce((a, r) => a + r[1], 0) / pts.length, pts.reduce((a, r) => a + r[2], 0) / pts.length]);
-    const bools = list.map(([id]) => ['bool', scene, id]);
-    EXTRAS.push(['masked', null, bools.length > 1 ? ['all', ...bools] : bools[0], scene]);
+    const check = leaves.length > 1 ? ['all', ...leaves] : leaves[0];
+    // The room's check before the save checks (every mask by its own bool), for slots kept before (WAS).
+    const bools = list.map(([id]) => ['bool', scene, id]), was = bools.length > 1 ? ['all', ...bools] : bools[0];
+    EXTRAS.push(JSON.stringify(was) === JSON.stringify(check) ? ['masked', null, check, scene] : ['masked', null, check, scene, null, { was }]);
   }
 }
 
@@ -675,6 +758,90 @@ for (const [id, save, scene, comp, check] of GIVEN_PURSE) {
   EXTRAS.push([cur === 'rosaries' ? 'rosaries' : 'shards', null, check, R.roomOf(scene).scene, item.name, { item: id }]);
 }
 
+/* The doors a key opens that no mark has yet (kb/data/game/gating.json receptacles), last of the
+   extras: by the bool the key's ItemReceptacle writes (its `persistent`) or the flag it sets.
+   Ward_01's White Key machine writes the lift's own bool (under_lift_large): the door and the lift
+   are had together. A demo's receptacle (Bone_East_12's, the Dock Demo Key's) isn't a door of the
+   game (design/03-redesign.md, step 6, the save checks, 9 A). Each ['lock', null, check, scene]. */
+{
+  const hasLock = new Set(EXTRAS.filter((x) => x[0] === 'lock').map((x) => x[3].toLowerCase()));
+  for (const [scene, obj, target, flag, demo] of GATING.receptacles || fail('gating.json has no receptacles: run tools/extract-gating.py again')) {
+    if (demo || hasLock.has(scene.toLowerCase())) continue;
+    const parts = [...(target ? [['bool', scene, target]] : []), ...(flag ? [['flag', flag]] : [])];
+    if (!parts.length) fail(`${scene} ${obj}: a key's door that keeps nothing`);
+    if (!onMap(scene)) { unplaced.push(`lock ${scene} ${obj}`); continue; }
+    const at = ((P.locks || {})[scene.toLowerCase()] || []).find((e) => e[0] === obj);
+    if (at && typeof at[1] === 'number') SCENE_AT.set(EXTRAS.length, [at[1], at[2]]);
+    hasLock.add(scene.toLowerCase());
+    EXTRAS.push(['lock', null, parts.length > 1 ? ['any', ...parts] : parts[0], scene]);
+  }
+  const demoOnly = new Set((GATING.receptacles || []).filter((r) => r[4]).map((r) => r[0].toLowerCase()));
+  for (const [k, scenes] of Object.entries(Q.LOCKS)) for (const sc of scenes) {
+    if (!hasLock.has(sc.toLowerCase()) && !demoOnly.has(sc.toLowerCase())) fail(`${k}'s door in ${sc} has no mark: gating.json receptacles need reading again`);
+  }
+}
+
+/* ── What the save really keeps for each way, and what the game takes away (design/03-redesign.md,
+   step 6, the save checks), over every extra, after they're all in (their indices don't move):
+     2 A  a way (DOOR_KINDS and the breakable walls) is open by its own bool or by what the save
+          keeps instead (kb/data/game/gating.json): the flags its own components set (a Lever's
+          playerDataBool, which never writes the lever's bool: Ant_17, Dust_05, Room_CrowCourt), the
+          other lock of its door (the Slab's cells: only the side used saves), a flag that takes it
+          away (Mosshome's silk vines go with defeatedBellBeast, so a game cuts one, the other or
+          neither, and both are open after the beast), and the playerData flags its scripts set
+          (pickups.json pd: the Docks' back entrance seen from three rooms, the ant merchant's and
+          the Shellwood Bellshrine's walls, two each where a game breaks one). A door a key opens
+          isn't opened by a flag that only takes it away (Bone_12's second cell door goes with
+          IsPinGallerySetup: left for a later look).
+     3 A  a thing the game swaps out when Act 3 begins (every bool of its check under the room's
+          «Normal World», or a DeactivateIfPlayerdataTrue blackThreadWorld): { gone: 'act3' }, and
+          js/app-map.js draws it as taken away in an Act 3 game that doesn't have it.
+     4 A  a thing only one mode has (a TestGameObjectActivator on permadeathMode): { mode: 'steel'
+          or 'normal' }, and js/app-map.js leaves it out of the other mode's games. */
+{
+  const NOT_OPENING = new Set(['DeactivateIfPlayerdataFalse', 'ActivateIfPlayerdataTrue', 'ActivateIfPlayerdataFalse', 'DeactivatePlayerDataTest', 'TestGameObjectActivator']);
+  const PD_OF = new Map();
+  for (const [flag, hits] of Object.entries(P.pd || {})) {
+    for (const [scene, comp, obj] of hits) {
+      if (!obj || NOT_OPENING.has(comp)) continue;
+      const k = (scene + '|' + obj).toLowerCase();
+      PD_OF.set(k, [...(PD_OF.get(k) || []), flag]);
+    }
+  }
+  let opened = 0, gone = 0, mode = 0;
+  for (const x of EXTRAS) {
+    const bools = boolsOf(x[2]);
+    if (WAY_KINDS.has(x[0]) && bools.length && (x[2][0] === 'bool' || x[2][0] === 'any')) {
+      const more = [];
+      for (const [, s, id] of bools) {
+        const g = gateOf(s, id);
+        for (const f of [...(g.flags || []), ...(x[0] === 'lock' ? [] : g.removedBy || []), ...(PD_OF.get((s + '|' + id).toLowerCase()) || [])]) more.push(['flag', f]);
+        if (g.partner) more.push(['bool', s, g.partner]);
+      }
+      const had = new Set((x[2][0] === 'any' ? x[2].slice(1) : [x[2]]).map((c) => JSON.stringify(c)));
+      const add = more.filter((c) => { const k = JSON.stringify(c); if (had.has(k)) return false; had.add(k); return true; });
+      if (add.length) {
+        const was = x[2];
+        x[2] = ['any', ...(x[2][0] === 'any' ? x[2].slice(1) : [x[2]]), ...add];
+        while (x.length < 5) x.push(null);
+        x[5] = { ...(x[5] || {}), was };
+        opened++;
+      }
+    }
+    const saved = [...new Map(savedOf(x[2]).map((c) => [(c[1] + '|' + c[2]).toLowerCase(), c])).values()];
+    if (!saved.length || x[0] === 'masked') continue;
+    const gs = saved.map(([, s, id]) => gateOf(s, id));
+    const extraMore = {};
+    if (gs.every((g) => g.world === 'normal')) { extraMore.gone = 'act3'; gone++; }
+    if (gs.every((g) => g.mode) && new Set(gs.map((g) => g.mode)).size === 1) { extraMore.mode = gs[0].mode; mode++; }
+    if (Object.keys(extraMore).length) {
+      while (x.length < 5) x.push(null);
+      x[5] = { ...(x[5] || {}), ...extraMore };
+    }
+  }
+  console.log(`save checks: ${opened} ways also open by what the save keeps instead, ${gone} things taken away in Act 3, ${mode} of one mode only, ${leftOut.length} left out (never had): ${leftOut.join('; ')}`);
+}
+
 /* ── The Bellshrines and the keys ── */
 /* Each Bellshrine's room: the two whose flag a scene names (Far Fields' in Bellshrine_05, Bellhart's
    in Widow's arena, where its bell is rung), and the other three by their area (js/map.js). */
@@ -702,15 +869,9 @@ for (const k of Object.keys(Q.LOCKS)) KEYS[k] = N.text(KEY_TEXT[k] || fail(`no t
    (pickups.json sizes). Checked on the benches: each RestBench, placed so, has to fall by the
    bench pin the map itself draws (js/map.js PINS; the game sets those by hand, a few pixels off). */
 const M = SS.map;
-const ROOM_OF = new Map(Object.entries(M.ROOMS).map(([k, r]) => [k.toLowerCase(), r]));
-function toMap(scene, x, y) {
-  const r = ROOM_OF.get(String(scene).toLowerCase()), size = P.sizes[String(scene).toLowerCase()];
-  const p = r && size && x != null && y != null ? R.mapPoint(String(scene), x, y, size[0], size[1]) : null;
-  if (!p) return null;
-  // A point well outside its room's box is something parked off the scene: not used.
-  const out = Math.max(r[0] - p.x, p.x - r[0] - r[2], 0) + Math.max(r[1] - p.y, p.y - r[1] - r[3], 0);
-  return out > 12 ? null : [Math.round(p.x * 10) / 10, Math.round(p.y * 10) / 10];
-}
+// One rule for the generators (tools/map-point.js): a scene loaded over its room has the room's
+// coordinates, an interior has no point, one just outside its room is brought in to the edge.
+const { hostOf, toMap, ROOM_OF } = require('./map-point.js')(P.sizes);
 {
   const errs = [];
   for (const pin of M.PINS) {
@@ -781,7 +942,10 @@ const objectAt = (c) => {
   if (c[0] === 'any') { for (const x of c.slice(1)) { const p = objectAt(x); if (p) return p; } return null; }
   if (!['bool', 'int', 'geo'].includes(c[0])) return null;
   const o = (P.objects[lower(c[1])] || {})[c[2]];
-  return o && o.length ? toMap(c[1], o[0], o[1]) : null;
+  if (o && o.length) return toMap(c[1], o[0], o[1]);
+  // A person's own bool (Mooshka's at Fleatopia): the person, in the room or a scene loaded over it.
+  const n = (P.npcs[c[2]] || []).find((e) => hostOf(e[0]) === hostOf(c[1]) && typeof e[2] === 'number');
+  return n ? toMap(n[0], n[2], n[3]) : null;
 };
 const XY = {};
 const put2 = (key, p) => { if (p) XY[key] = p; };
@@ -809,6 +973,28 @@ EXTRAS.forEach((x, i) => {
   const door = SCENE_AT.get(i);
   put2('extra:' + i, objectAt(c) || (c[0] === 'relic' || c[0] === 'memento' ? itemAt(c[1], x[3]) : door ? toMap(x[3], door[0], door[1]) : null));
 });
+/* An extra whose own object is in a room the map draws, yet off its scene: parked until the game
+   moves it, at its room's middle. Since its parents' turns count (tools/scene_place.py, 16-Oct-2026)
+   these are the only ones; a new one is read again (a turn missed, or a patch that moved it). */
+// Read on 16-Oct-2026: Dock_03c's and Dock_03d's walls above their tilemaps, Song_19_entrance's side
+// lever and Slab_21's lock past their scenes' left edge, Aqueduct_04's planks under its floor,
+// Bone_East_18c's Remasker past its right edge.
+const PARKED = new Set(['Dock_03c/Breakable Wall_Silhouette', 'Dock_03d/Breakable Wall_Silhouette', 'Song_19_entrance/Song_lever_side',
+  'Slab_21/Slab Lock', 'Aqueduct_04/drop_planks', 'Bone_East_18c/Remasker New Sharp']);
+{
+  const parked = [];
+  EXTRAS.forEach((x, i) => {
+    if (XY['extra:' + i] || LATE_XY.has(i)) return;
+    // A way whose check also takes the save's flags (any) is still named by its own object.
+    const c = x[2][0] === 'any' ? x[2].slice(1).find((y) => ['bool', 'int', 'geo'].includes(y[0])) || x[2] : x[2], door = SCENE_AT.get(i);
+    const own = door || (['bool', 'int', 'geo'].includes(c[0]) && (P.objects[lower(c[1])] || {})[c[2]]);
+    const r = R.roomOf(x[3]), box = r && r.exact && M.ROOMS[r.scene];
+    if (own && own.length && box && box[2]) parked.push(`${x[3]}/${c[0] === 'bool' || c[0] === 'int' || c[0] === 'geo' ? c[2] : x[4] && x[4].en}`);
+  });
+  const fresh = parked.filter((k) => !PARKED.has(k));
+  if (fresh.length) fail(`off their scene, in a room the map draws: ${fresh.join('; ')}: read them again (PARKED)`);
+  console.log(`parked off their scene (their room's middle): ${parked.length}`);
+}
 for (const [id, obj] of Object.entries(PEOPLE_OBJ)) put2('person:' + id, entryAt(P.npcs[obj], PEOPLE[id]));
 for (const [field, scene] of BELLS) { const b = P.benches[lower(scene)]; put2('bell:' + field, b && toMap(scene, b[0], b[1])); }
 for (const [quest, f] of Object.entries(Q.FROM)) {
@@ -841,7 +1027,8 @@ const WHO = { grindle: 'GRINDLE', pebb: 'BB_SHOPKEEP', frey: 'BELLHART_SHOPKEEP'
   lumble: 'DICE_PILGRIM', mooshka: 'FLEAMASTER', 'forge-daughter': 'FORGEDAUGHTER', 'mottled-skarr': 'ANT_MERCHANT', scrounge: 'BELLHART_RELICDEALER' };
 // Who offers the wishes of each room js/quests.js FROM names (one mark per room): the Couriers in
 // Bellhart, the Bartender at the Halfway House (Nuu's is the Journal's), the Caretaker in the Songclave…
-// Fleatopia's Mr Mushroom (Aqueduct_05) has nobody of his in the room: its middle.
+// Fleatopia's Mr Mushroom (Aqueduct_05) has nobody of his in the room (null): the wish is taken at
+// the object whose script offers it, the Mr Mushroom Tablet (kb/data/game/wishes.json offers).
 const GIVER = { Belltown_Room_pinsmith: 'PINSMITH', Bone_East_Umbrella: 'SEAMSTRESS', Belltown: 'COURIERS_SHOP', Halfway_01: 'HH_BARTENDER',
   Belltown_Room_doctor: 'DOCTOR', Crawl_08: 'BLUE_SCIENTIST', aqueduct_05_festival: 'FLEAMASTER', Song_09b: 'GOURMAND_SERVANT',
   Room_Huntress: 'HUNTRESS', Mosstown_02c: 'MOSSCREEP', Aqueduct_05: null, Room_Pinstress: 'PINSTRESS', Dust_Shack: 'DUST_TRADERS_1',
@@ -856,7 +1043,17 @@ const personAt = (key, scene) => {
   return null;
 };
 const whoAt = (npc, scene) => (WHO[npc] ? personAt(WHO[npc], scene) : fail(`no person for ${npc} in WHO`));
-const giverAt = (scene) => (GIVER[scene] ? personAt(GIVER[scene], scene) : null);
+/* Where a wish nobody offers in person is taken: the object whose FSM offers a wish of that room
+   (tools/extract-wishes.py offers), or the generator stops: there's always one, or a patch moved it. */
+const OFFERS = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'kb', 'data', 'game', 'wishes.json'), 'utf8')).offers
+  || fail('wishes.json has no offers: run tools/extract-wishes.py again');
+const offerAt = (scene) => {
+  const at = Object.entries(Q.FROM).filter(([, f]) => (f.npc || []).some((n) => lower(n) === lower(scene)))
+    .flatMap(([q]) => (OFFERS[q] || []).filter(([sc]) => lower(sc) === lower(scene)));
+  if (!at.length) fail(`nobody offers the wishes of ${scene} (GIVER null), and no object of the scene does: GIVER needs reading again`);
+  return at.map(([sc, , x, y]) => toMap(sc, x, y)).find(Boolean) || null;
+};
+const giverAt = (scene) => (GIVER[scene] ? personAt(GIVER[scene], scene) : offerAt(scene));
 // A point inside its scene: one at the scene's origin, or off it, is parked until the game moves it.
 const inScene = (scene, x, y) => {
   const size = P.sizes[lower(scene)];
@@ -865,14 +1062,17 @@ const inScene = (scene, x, y) => {
 // A boss where it is in its arena: the first enemy carrying its Journal record there, else what names
 // it. One waiting just off its scene (the Widow above, Groal under the swamp) comes in where it waits:
 // its point is brought to the scene's edge. One at the scene's origin is parked: not used.
-const foeAt = (foe, scene) => {
-  const e = bookOf(foe), size = P.sizes[lower(scene)];
+const foeAt = (foe, scene) => recordAt(bookOf(foe), scene);
+// A Journal entry's enemy in a scene: the first carrying its record there, else what names it.
+const recordAt = (e, scene) => {
+  const host = hostOf(scene);   // a boss scene's room (toMap)
+  const size = P.sizes[host];
   const hits = ((e && P.records[e.key]) || []).filter(([sc, , , x, y]) => lower(sc) === lower(scene) && typeof x === 'number' && (Math.abs(x) > 0.5 || Math.abs(y) > 0.5));
   const first = (l) => l.find(([, comp]) => /^EnemyDeathEffects/.test(comp)) || l[0];
-  const hit = first(hits.filter(([, , , x, y]) => inScene(scene, x, y))) || first(hits);
+  const hit = first(hits.filter(([, , , x, y]) => inScene(host, x, y))) || first(hits);
   if (!hit || !size) return null;
   const clamp = (v, n) => Math.min(Math.max(v, 1), n - 1);
-  return toMap(scene, clamp(hit[3], size[0]), clamp(hit[4], size[1]));
+  return toMap(host, clamp(hit[3], size[0]), clamp(hit[4], size[1]));
 };
 // What a wish gives: at the Wishwall it's on, else at who offers it.
 const wishAt = (quest, scene) => {
@@ -906,6 +1106,22 @@ for (const id of Object.keys(PEOPLE)) if (!XY['person:' + id] && WHO[id]) put2('
 // The vendors, Shakra and who offers a wish.
 for (const [v, scenes] of Object.entries(VENDORS)) scenes.forEach((sc, i) => put2((v === 'shakra' ? 'shakra:' : 'shop:' + v + ':') + i, whoAt(v, sc)));
 for (const n of Object.keys(GIVER)) put2('giver:' + lower(n), giverAt(n));
+/* Who offers the wishes of each room, by name, and the mark that stands for them there already, if
+   any (Albert's choice, 15-Oct-2026: each person once in a room): a person of PEOPLE, a vendor of
+   VENDORS, or one of the traders js/people.js adds to the shops (tools/gen-people.js TRADERS, the
+   first of their spots). The Map lists the wishes on that mark instead of drawing another. */
+const TRADER = { COURIERS_SHOP: 'couriers', MOSSCREEP: 'druid', HH_BARTENDER: 'creige' };
+const sameRoom = (a, b) => !!(a && b) && lower((R.roomOf(a) || {}).scene || a) === lower((R.roomOf(b) || {}).scene || b);
+const GIVERS = {};
+for (const [scene, key] of Object.entries(GIVER)) {
+  if (!key) { GIVERS[scene] = null; continue; }
+  const ks = [key + '_SUPER', key + '_MAIN', key + '_SUB'].filter((k) => k in N.EN || k in N.ES);
+  const id = Object.keys(WHO).find((x) => WHO[x] === key);
+  const shop = id && (VENDORS[id] || []).findIndex((sc) => sameRoom(sc, scene));
+  const mark = id && sameRoom(PEOPLE[id], scene) ? 'person:' + id : id && shop >= 0 ? (id === 'shakra' ? 'shakra:' : 'shop:' + id + ':') + shop
+    : TRADER[key] ? 'shop:' + TRADER[key] + ':0' : null;
+  GIVERS[scene] = [key, ks.length ? N.text(ks.join('+')) : fail(`no name for ${key} (GIVER)`), mark];
+}
 // The 100% with no point of its own: by its way, the flea, or the script setting its flag.
 CO.PIECES.forEach((p, i) => {
   const key = 'piece:' + i, scene = AT.pieces[i];
@@ -926,16 +1142,18 @@ EXTRAS.forEach((x, i) => {
 });
 // The bosses in their arenas, the gauntlets at theirs, the key doors at their lock.
 for (const [foe, scene] of BOSSES) put2('boss:' + foe, foeAt(foe, scene));
+// The Journal's entries (the Map's layer of those still missing): where the enemy is in the first
+// room the Map gives the entry (js/app-map.js, its first room on the map).
+for (const e of J.BOOK) {
+  const scene = ((SS.journalRooms[e.key] || []).map(([s]) => s)).find(onMap);
+  if (scene) put2('journal:' + e.id, recordAt(e, scene));
+}
 const flat = (c) => (c[0] === 'any' || c[0] === 'all' ? c.slice(1).flatMap(flat) : [c]);
 for (const g of SS.gauntlets.GAUNTLETS) {
   const all = P.battles[lower(g.scene)] || [];
   const named = flat(g.done).map((c) => all.find((b) => (c[0] === 'bool' && lower(c[1]) === lower(g.scene) && b[0] === c[2]) || (c[0] === 'flag' && b[3] === c[1]))).find(Boolean);
   const b = named || (all.length === 1 ? all[0] : null);
   put2('gaunt:' + g.id, b && inScene(g.scene, b[1], b[2]) ? toMap(g.scene, b[1], b[2]) : null);
-}
-for (const [k, scenes] of Object.entries(Q.LOCKS)) for (const sc of scenes) {
-  const all = P.locks[lower(sc)] || [];
-  if (all.length === 1 && typeof all[0][1] === 'number') put2('lock:' + k + ':' + sc, toMap(sc, all[0][1], all[0][2]));
 }
 console.log(`${Object.keys(XY).length} things with their own point in their room`);
 
@@ -970,7 +1188,9 @@ const TASKS = [];
   const task = (kind, quest, check, scene, x, y, icon, name, pick) => {
     if (!onMap(scene)) { unplaced.push(`${kind} ${quest} ${scene}`); return; }
     const i = TASKS.length;
-    TASKS.push([kind, quest, check, proper(scene) || scene, icon, name || null, steel(quest), pick || null]);
+    // What the game swaps out when Act 3 begins (its pickup under the room's «Normal World»): 'act3'.
+    const bs = savedOf(check), gone = bs.length && bs.every(([, s, id]) => gateOf(s, id).world === 'normal') ? 'act3' : null;
+    TASKS.push([kind, quest, check, proper(scene) || scene, icon, name || null, steel(quest), pick || null, gone]);
     const p = x == null ? null : Array.isArray(x) ? x : toMap(scene, x, y);
     if (p) XY['task:' + i] = p;
   };
@@ -1024,7 +1244,14 @@ const TASKS = [];
         grow = false;
         for (const [n, c] of Object.entries(Q.CHAIN)) if (c.main && (c.prev === q || later.includes(c.prev)) && !later.includes(n)) { later.push(n); grow = true; }
       }
-      task('goal', q, ['any', ['quest', q], ...later.map((n) => ['quest', n])], scene, p, null, art('pins/' + sprite));
+      /* The objective's wish (js/collectibles.js WISHES, by the quest's name) when the save says it
+         another way: Last Dive's quest is never completed, not even after the Act 3 ending (both of
+         the author's finished games), and its wish is had by Lost Lace in the Journal (design/03-
+         redesign.md, step 6, the save checks, 7 A). */
+      const wish = CO.WISHES.find((w) => w[0] === 'main-objectives' && w[4] && w[4].key === (Q.CHAIN[q] || {}).name?.key);
+      // Only a check of another kind than a quest (a step's name is often its objective's: Pharloom's Crown's three).
+      const own = wish && wish[2][0] !== 'quest' ? [wish[2]] : [];
+      task('goal', q, ['any', ['quest', q], ...later.map((n) => ['quest', n]), ...own], scene, p, null, art('pins/' + sprite));
     } else {
       if (!isWish(q) && !isWish(Object.keys(Q.CHAIN).find((n) => Q.CHAIN[n].prev === q))) continue;
       pinned.add(q);
@@ -1071,34 +1298,43 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
      EXTRAS   [kind, act, check, scene, name?, more?]: what doesn't count (relics by kind, mossberry,
               silkeater, memento, bellhome, spawn, rosary-cache, shard-cache, wall, then lever,
               plate, gate, lock, shortcut, silkwall from the game's scenes, then map, rosaries,
-              shards); act null when the thing has no Act of its own; more { shop, price } for a
-              map Shakra sells, { found } for one found, { item } for a rosary or shard item; check as
+              shards, the doors a key opens no mark had yet); act null when the thing has no Act of
+              its own; more { shop, price } for a map Shakra sells, { found } for one found, { item }
+              for a rosary or shard item, { gone: 'act3' } for what the game takes away when Act 3
+              begins, { mode: 'steel' or 'normal' } for what only that mode has, { was } the
+              check it had before the save checks (a slot kept before has its marks by that one,
+              js/savefile.js gameOf: had then is had now, as the new check takes in the old); check as
               js/collectibles.js's, plus ['relic', name], ['memento', name], ['int', scene, id,
               value] (['int', scene, id, value, 'min']: at least value), ['geo', scene, id] and
               ['accepted', quest] (the wish taken, done or not)
      BOSSES   [foe id, scene, check, act]: each boss fight's arena, whether it's beaten and the
-              first Act it can be fought in
+              first Act it can be fought in; check also ['kills', Journal name, n] (at least n of
+              it beaten)
      VENDORS  vendor id → the rooms it sells in; PEOPLE  npc id → its room
      BELLS    [playerData field, scene (, name)]: the six Bellshrines (the Grand Gate asks for five)
      KEYS     a lock's key (js/quests.js LOCKS) → its name
      MAPS     a map's flag (Has<X>Map, without Has and Map) → the area it draws
-     TASKS    [kind, quest, check, scene, picture, name?, mode?, steel?]: the wishes and the main
+     TASKS    [kind, quest, check, scene, picture, name?, mode?, steel?, gone?]: the wishes and the main
               objectives (kind 'qitem' what a wish asks for, 'wspot' where a wish is done, 'goal' a
               main objective's pin), quest its save name (js/quests.js), check as EXTRAS' plus
               ['held', collectable] and ['steel', scene] (a Steel Sentinel spot seen), picture
               under assets/map/, name the thing's (a wish's and an objective's are the quest's),
               mode 'steel' when only Steel Soul has it, steel the spot's scene when the save
-              chooses it (SteelQuestSpots)
+              chooses it (SteelQuestSpots), gone 'act3' when the game takes it away as Act 3 begins
      XY       a thing's key ('piece:<i>', 'tools:<id>', 'arts:<id>', 'extra:<i>'…, 'person:<id>',
-              'board:<scene>', 'bell:<field>', 'task:<i>', 'shakra:<i>', 'shop:<vendor>:<i>', 'giver:<scene>', 'boss:<foe>', 'gaunt:<id>',
-              'lock:<key>:<scene>', 'everbloom') → its point on the map, in the image's pixels: where
+              'board:<scene>', 'bell:<field>', 'task:<i>', 'shakra:<i>', 'shop:<vendor>:<i>', 'giver:<scene>', 'boss:<foe>', 'journal:<entry>', 'gaunt:<id>',
+              'everbloom') → its point on the map, in the image's pixels: where
               the game has it in its room (the object's place in the scene, or whoever stands for it,
               placed as the game places a point: js/rooms.js mapPoint)
      SEATS    scene (lower case) → { respawn marker's name → its point on the map }: where the game
               wakes Hornet when a save names that marker (respawnScene, respawnMarkerName: a bench's
               RestBench, a room's Death Respawn Marker), her feet on the ground under it (a bench's
-              own foot, the terrain under a marker), in the image's pixels; js/rooms.js restPoint`,
-'spots', [['AT', AT], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['TASKS', TASKS], ['XY', XY], ['SEATS', SEATS]]);
+              own foot, the terrain under a marker), in the image's pixels; js/rooms.js restPoint
+     GIVER    scene a wish is offered in (js/quests.js FROM) → [the person who stands for it there
+              (their key in people.json), their name (the game's), the key of the mark that is them
+              in that room already, or null], or null, nobody: the Map names the mark by them or
+              lists the wishes on theirs; tools/gen-people.js doesn't draw them again`,
+'spots', [['AT', AT], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['TASKS', TASKS], ['XY', XY], ['SEATS', SEATS], ['GIVER', GIVERS]]);
 const kinds = {};
 for (const x of EXTRAS) kinds[x[0]] = (kinds[x[0]] || 0) + 1;
 console.log(`js/spots.js  ${placed.length} things of the 100% placed, ${EXTRAS.length} extras (${Object.entries(kinds).map(([k, n]) => n + ' ' + k).join(', ')}), `

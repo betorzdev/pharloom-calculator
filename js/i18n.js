@@ -307,6 +307,7 @@
     mapToolsOut:    { es: 'Fuera del 100 %', en: 'Outside the 100%' },
     mapToolUpgrade: { es: 'Mejora de {tool}: no suma aparte al 100 %', en: 'Upgrades {tool}: it doesn\'t add to the 100% on its own' },
     mapArtOut:      { es: 'No cuenta para el 100 %', en: 'It doesn\'t count for the 100%' },
+    mapArtsIn:      { es: 'Del 100 %', en: 'Of the 100%' },
     mapToolLent:    { es: 'Te la presta un deseo y te la quita al cumplirlo: no cuenta para el 100 %', en: 'A wish lends it and takes it back once done: it doesn\'t count for the 100%' },
     mapGroupShow:   { es: 'Mostrar todo el grupo', en: 'Show the whole group' },
     mapGroupHide:   { es: 'Esconder todo el grupo', en: 'Hide the whole group' },
@@ -346,7 +347,7 @@
     mapExtra_silkeater: { es: 'Devoraseda', en: 'Silkeater' },   // INV_NAME_SILK_GRUB
     mapExtra_memento:   { es: 'Recuerdos', en: 'Mementos' },   // COLLECTION_HEADING_MOMENTOS
     mapExtra_bellhome:  { es: 'Hogar campana', en: 'Bellhome' },   // BELLHOME
-    mapExtra_spawn:     { es: 'Enemigos únicos', en: 'Unique enemies' },
+    mapExtra_voidMass:  { es: 'Masa de vacío', en: 'Void Mass' },   // NAME_BLACK_THREAD_CORE
     mapExtra_rosary:    { es: 'Alijos de rosarios', en: 'Rosary caches' },
     mapExtra_shard:     { es: 'Alijos de fragmentos de coraza', en: 'Shell Shard caches' },   // Shell Shards as the game's item says it, then the site's «caches»
     mapExtra_wall:      { es: 'Paredes rompibles', en: 'Breakable walls' },
@@ -425,10 +426,15 @@
     mapWishesLeft:  { es: 'Deseos sin cumplir: {list}', en: 'Wishes still open: {list}' },
     mapWishesNone:  { es: 'No quedan deseos por cumplir.', en: 'No wishes left open.' },
     mapKills:       { es: '{n} de {m} derrotados', en: '{n} of {m} defeated' },
+    mapBeastHere:   { es: '{n} en esta sala', en: '{n} in this room' },
     mapTaskFor:     { es: 'Lo pide el deseo «{wish}».', en: 'The wish "{wish}" asks for it.' },
     mapWishGranted: { es: 'Deseo concedido', en: 'Wish Granted' },   // WISH_GRANTED
     mapDone:        { es: 'Completado', en: 'Completed' },   // COMPLETED
     mapNotDone:     { es: 'Sin cumplir', en: 'Not done yet' },
+    // A mark the game has taken away (design/86, 2 A): the site's words, the game has none for it.
+    mapLost:        { es: 'Ya no está', en: 'No longer there' },
+    mapLostAct3:    { es: 'El juego lo retira al empezar el Acto 3.', en: 'The game takes it away when Act 3 begins.' },
+    mapLostArena:   { es: 'Solo se lucha en una de las dos arenas, y luchaste en {name}.', en: 'Only one of the two arenas is fought, and you fought {name}.' },
     mapToWall:      { es: 'Ver el muro de deseos', en: 'See the Wishwall' },
     mapToGiver:     { es: 'Ver quién lo pide', en: 'See who asks for it' },
 
@@ -722,7 +728,6 @@
     pgInvite:       { es: 'Importa tu partida y verás en qué acto estás, y qué te falta para el siguiente y para el 100 %, pieza a pieza.',
                       en: 'Import your game to see which Act you\'re in, and what\'s left for the next one and for 100%, piece by piece.' },
     /* The road's steps by what to do, on its thread (3 A); the titles stay the whole road's */
-    pgStepN:        { es: '{n} · {step}', en: '{n} · {step}' },
     pgStepBells:    { es: 'Haz sonar los Santuarios', en: 'Ring the Bellshrines' },   // the game's word in it: BELLSHRINE
     pgStepGate:     { es: 'Abre la {gate}', en: 'Open the {gate}' },
     pgStepJudge:    { es: 'Derrota a la {judge}', en: 'Defeat the {judge}' },   // with its {judge}, DEFEATED_LAST_JUDGE_1_DESC
@@ -756,8 +761,6 @@
     pgInCats:       { es: 'en {n} categorías', en: 'in {n} categories' },
     pgColHead:      { es: 'Tienes / vale (%)', en: 'Got / worth (%)' },
     pgColHeadNone:  { es: 'Vale (%)', en: 'Worth (%)' },
-    pgFoldSee:      { es: 'Ver los {n}', en: 'See all {n}' },
-    pgFoldHide:     { es: 'Ocultar', en: 'Hide' },
 
     /* Progress: the road to the next Act (js/acts.js, the game's own rules) */
     roadTitle:      { es: 'Camino al Acto {n}', en: 'The road to Act {n}' },
@@ -769,8 +772,6 @@
     roadGame:       { es: 'Tu partida', en: 'Your game' },
     roadEndings:    { es: '{n} de {of} finales', en: '{n} of {of} endings' },
     roadEndingsReach:{ es: '{n} de {of} finales a tu alcance', en: '{n} of {of} endings within reach' },
-    roadWhole:      { es: 'El camino entero', en: 'The whole road' },
-    roadLess:       { es: 'Cerrar el camino', en: 'Close the road' },
     roadBoth:       { es: 'Los caminos a los Actos 2 y 3', en: 'The roads to Acts 2 and 3' },
     roadNote2:      { es: 'Lo que pide el juego para entrar en la Ciudadela, paso a paso.', en: 'What the game asks before you walk into the Citadel, step by step.' },
     roadNote3:      { es: 'Lo que pide el juego para abrir el Acto 3, leído de sus propios archivos. Las guías suelen dar solo seis deseos: cuentan también los que van antes de ellos, un mínimo de puntos de deseos y cuatro condiciones más.',
@@ -784,11 +785,8 @@
     roadCitadel:    { es: 'Entra en la Ciudadela', en: 'Walk into the Citadel' },
     roadUnlock:     { es: 'Desbloquea el deseo «{wish}»', en: 'Unlock the wish "{wish}"' },
     roadRequired:   { es: 'Deseos obligatorios', en: 'Required wishes' },
-    roadPoints:     { es: 'Puntos de deseos: {n} de {max} posibles', en: 'Wish points: {n} of a possible {max}' },
-    roadPointsNote: { es: 'Cualquiera de estos vale un punto; una entrega, medio, y solo la primera vez.', en: 'Any of these is worth a point; a delivery half of one, and only the first time.' },
     roadHalf:       { es: '½ punto', en: '½ point' },
     roadBefore:     { es: 'antes: {name}', en: 'first: {name}' },
-    roadChecks:     { es: 'Y además', en: 'And also' },
     roadFour:       { es: 'Cuatro condiciones', en: 'Four conditions' },
     roadAllThree:   { es: 'Para que el {caretaker} te ofrezca «{wish}» hacen falta las tres cosas:', en: 'For the {caretaker} to offer you "{wish}", all three are needed:' },
     roadLeft1:      { es: 'Te falta {n}.', en: '{n} to go.' },
@@ -797,7 +795,6 @@
     roadKey:        { es: 'Llave de hogar campana', en: 'Bellhome Key' },   // INV_NAME_BELL_HOUSE_KEY
     roadPavo:       { es: 'lista: habla con Pabo', en: 'ready: talk to Pavo' },   // his name: BELLHART_GREETER_MAIN
     roadKeyRule:    { es: 'Pabo la da tras «{glory}» y {n} deseos de su lista', en: 'Pavo gives it after {glory} and {n} wishes of his list' },
-    roadKeyHead:    { es: '{key}: lo que pide Pabo', en: '{key}: what Pavo asks' },
     roadOffer:      { es: 'Acepta «{wish}»: habla con el {caretaker} en {clave}', en: 'Accept "{wish}": talk to the {caretaker} in {clave}' },
     roadOfferNote:  { es: 'Con todo cumplido, te llama con la mano. El deseo sale también en el muro de deseos de {town}, que te manda a él.', en: 'Once everything is met he waves you over. The wish also shows on the Wishwall in {town}, which sends you to him.' },
     roadDeclined:   { es: 'Ya te lo ofreció y lo rechazaste: vuelve a hablar con él y acéptalo.', en: 'He offered it and you turned it down: talk to him again and accept.' },
@@ -822,12 +819,11 @@
        says of it, its Wishwall, the Inventory, the Journal or the Caretaker. */
     pgSays:         { es: 'Lo que dice el juego', en: 'What the game says' },
     pgSaysHide:     { es: 'Ocultar', en: 'Hide' },
-    pgSaysNone:     { es: 'El juego no tiene texto para este paso.', en: 'The game has no text for this step.' },
     pgPeekStep:     { es: 'Paso {n}', en: 'Step {n}' },
     pgPeekDone:     { es: 'hecho', en: 'done' },
-    pgPeekClose:    { es: 'Cerrar el paso', en: 'Close the step' },
-    pgPeekOpen:     { es: 'Lo que dice el juego de este paso', en: 'What the game says of this step' },
     pgMapN:         { es: 'Ver los {n} en el mapa', en: 'See the {n} on the map' },
+    // The route's last station, over the Act it opens (design/83, 4 A).
+    pgRouteEnd:     { es: 'Llegas al', en: 'You reach' },
     roadKeyDesc:    { es: 'Llave para acceder a una campana restaurada sobre Campanilla.', en: 'Key to a restored bell above Bellhart.' },   // INV_DESC_BELL_HOUSE_KEY
     roadSays_churchkeeper: { es: 'Abajo, en las tierras musgosas, aferrada aún a su capilla fallida, mi hermana se desprenderá de su poder, si se lo pides amablemente.',
                       en: 'Down in the mosslands, still clinging to her failed chapel, my sister\'ll part with her power, if asked kind enough.' },   // CARETAKER_SNARE_REPEAT_CHURCHKEEPER

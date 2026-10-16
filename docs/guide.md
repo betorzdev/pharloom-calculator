@@ -9,8 +9,8 @@ language and **Share**, and on the right the profile you're in (Hornet at a benc
 **Profiles**. The language is a dropdown, as the sibling's: the one chosen and a chevron (its name,
 its code on a phone) open a list of the site's languages, each in its own name; Esc closes it
 and the arrows walk it. **Share** copies the site's address, nothing more: no screen, build or
-language. The screen bar has six screens in a row: Your game, Inventory, Progress, Map, Journal
-and Crest.
+language. The screen bar has six screens in a row, in the order the site matters: Your game, Map,
+Progress, Journal, Inventory and Crest.
 With a profile loaded, Progress carries your completion and Journal the entries Nuu counts
 (`63%`, `120/230`); in Free mode the bar only has the names. On a phone the six don't fit, so
 Inventory folds under Your game: while you're in either, a second row under the bar switches
@@ -85,11 +85,15 @@ around her bench, its room right under her (drawn as the Map screen draws it, «
 game shows» included, never smaller than the map's own size, so a phone shows the rooms round
 her, and fading out to the scene's edges: a picture, with no marks; the Map tab is where you look
 things up); the room's area under the name when it's another (Coral Tower in the
-Sands of Karak), the Act and the time played; Hornet sitting on that very bench (each room's
+Sands of Karak) and the time played; Hornet sitting on that very bench (each room's
 bench is read from the game's files; one it doesn't know shows Bone Bottom's). When the save was
 written where the game wakes her at a room's own respawn point instead (a restore point after a
 boss or an ability), it says **Your respawn point** over that area and shows her standing with no
-bench. Under her, **your 100%** as one figure, which opens Progress («What's missing for 100%»;
+bench. On her left, what she is: the Act as the game titles it («ACT 3» over «ABYSS»), and her
+masks and silk as the game's HUD draws them (the masks in a row, the spool with its count). On her
+right, the Crest she wears with its Tools and Silk Skill in their slots (and the Vesticrest's
+beside it), drawn as the Crest tab draws it, smaller: a tap opens the Crest tab. On a phone they go
+under her, the Crest last. Under her, **your 100%** as one figure, which opens Progress («What's missing for 100%»;
 «Everything in Progress» once it's 100). The site counts as the game does, checked on 92 real
 saves (0% to 100%, four patches, Steel Soul): whole masks and spools, not loose shards and
 fragments (two shards are still 0%), and a Tool and its upgrade (Curveclaw and Curvesickle) are
@@ -97,8 +101,9 @@ one point; if a save's own figure ever differed, Progress says so. With a save l
 about the site under the screen folds into «About this site».
 
 What the other tabs show isn't repeated here: the parts of the 100% and the road to the next Act
-are in Progress, the Journal's count in the Journal (and on the bar), masks and rosaries in the
-Inventory, and what's missing nearby on the Map.
+are in Progress, the Journal's count in the Journal (and on the bar), the shards, fragments and
+rosaries in the Inventory, the Crest's figures in the Crest tab, and what's missing nearby on the
+Map.
 
 When the profile follows the game's save file, each new save the game writes to it (the auto saves
 go to their own folder and aren't followed) brings a block **Since
@@ -253,7 +258,8 @@ opens its page as the game's Journal shows it (from the foot on a phone; Esc or 
 closes it): the whole drawing, from the game's files, on a soft light and at the size the game
 draws it (a Mossgrub small, the Bell Beast filling it), so you know the bug when you meet it; one
 not seen yet is in shadow. Beside it the name, the kills, its areas and the nearest from your
-bench (with the pin the lists carry, which opens it on the Map, while it isn't complete), the description, and under the Hunter's symbol the Hunter's note once complete, or the
+bench (with the pin the lists carry, which opens the Map on every room its enemies are in, how
+many in each, with ‹ › to go through them, with a save or without, complete or not), the description, and under the Hunter's symbol the Hunter's note once complete, or the
 game's «Defeat 11 more to complete the hunter's notes.» (the Void Tendrils has no kills: it says «Completed by inspecting its rune-scroll.» instead). An entry is complete when the save lists it
 with its kills done: the game writes them even for the entries it completes another way, and on
 the saves where Nuu has given the Memento the site counts all 230. In Free mode, the whole
@@ -393,40 +399,55 @@ area name that would fall on another waits for the zoom (the larger area's stays
 on a phone the area names show only zoomed in.
 
 Under the map, **What the map shows**, as the Hollow Knight site has it: «Show all · Hide all» on
-its right, and «Only the 100%», which turns on just the layers that count for completion, then «Whole map» with a save, on at first (see
+its right, and «Only the 100%», which turns on just the layers that count for completion (the ten
+categories the game counts: Mask Shards, Spool Fragments, Silk Hearts, the Needle, Tool Pouch and
+Crafting Kit, the seven abilities, the 51 Tools, the Crests, the Silk Skills and the Everbloom), then «Whole map» with a save, on at first (see
 below), the area names on or off, and «Show Completed» (the game's own words for the switch on its
 Wishes pane), off at first: on, what you already have comes back to the map too, each mark
 dimmed with a green tick on its corner, whole again under the pointer or once picked, its card
 saying how it was had; the search finds it too. In Free mode it brings back what you've marked.
+What the game has taken away from your game goes with it, dimmed the same with a grey cross where
+the tick goes, its card saying «No longer there» and why: what the game swaps out when Act 3
+begins (rosary strings, shard caches, walls and doors of a room's «before» state) in an Act 3
+game that didn't get it, and the other arena of the Slab's pair once you've fought one. What only
+one mode has (a silkeater outside Steel Soul, a wall only in it) isn't on the other mode's map.
 Then eleven groups, each a row that folds (its caret; all open
 at first, only the first two on a phone, then as you left them) whose title is the switch for the
 whole group, in ink when all of it is on, dimmer when part, muted when none. Inside, each layer's
 switch is the game's own picture of it, in grey when off. Beside each, how many: in a save, had of
 the total (a layer complete in green); for places and people, which aren't had, how many there
-are; in Free mode, the total. A group's title counts its layers the same way, all but your cocoon,
-so «Your game» counts as its Journal does.
+are; in Free mode, the total. They count things, not marks: the marks that share one save check
+(the two places one map or key may be found in, the Silver Bells of one wish, the Bell Beast's
+spots) are one. A group's title counts its layers the same way, all but your cocoon, so «Your game»
+counts as its Journal does.
 
-What counts for the 100% is in the first four groups, each thing in the room where it's had:
-lying there, at the shop that sells it, at the Wishwall or with whoever gives the wish, in its
-boss's arena, with the person who gives it. All of it on at first.
+What counts for the 100% is in the first two groups and the Everbloom, each thing in the room where
+it's had: lying there, at the shop that sells it, at the Wishwall or with whoever gives the wish, in
+its boss's arena, with the person who gives it. All of it on at first, and what leads to it too
+(Memory Lockets, Lost Fleas, Old Hearts, Melodies, Craftmetal, Pale Oil), though «Only the 100%»
+leaves those off.
 
 - **Upgrades**: Mask Shards, Spool Fragments, Silk Hearts, the Needle, Tool Pouch and Crafting Kit
   upgrades (each Needle upgrade a mark of its own, named by the Needle it gives: the Sharpened Needle, the
-  Shining, the Hivesteel and the Pale Steel Needle), and the eleven abilities: the two Needolin melodies of Act 3 (the Beastling Call,
-  under Bellhart once the Bell Eater is beaten; the Elegy of the Deep, from the Snail Shamans) don't
-  count for the 100%, and their card says so.
+  Shining, the Hivesteel and the Pale Steel Needle), and the **Abilities**, one switch whose round caret opens the seven of the 100% and,
+  apart, the four **outside the 100%** (on at first too): Drifter's Cloak and Faydown Cloak, and the
+  two Needolin melodies of Act 3 (the Beastling Call, under Bellhart once the Bell Eater is beaten;
+  the Elegy of the Deep, from the Snail Shamans), each card saying it doesn't count.
 - **Crest** (the game's pane where they're equipped): the **Tools**, one switch whose round caret
   opens them by the colour of their slot (red, blue, yellow) and, apart, the six **outside the
   100%** (off at first): the upgrades of four Tools (Curvesickle, Druid's Eyes, Claw Mirrors, the
   Shell Satchel), which add nothing to it on their own, and the two a wish lends and takes back
-  (the Snare Setter, the Needle Phial), found once had even after handing them back. Then the Crests and Silk Skills.
+  (the Snare Setter, the Needle Phial), found once had even after handing them back. Then the
+  Crests, **What Eva gives** besides Sylphsong (off at first): the Hunter Crest's two evolutions and
+  the Vesticrest's yellow and blue slots, each with the slots it needs across your Crests (the
+  Hunter's aside) and, with a save, how many you have open; and the Silk Skills.
 - **Collectibles**: Memory Lockets, Lost Fleas, the Old Hearts, the Melodies and the Everbloom
   (on at first), then, off at first, the relics, one switch for the six (Bone Scrolls, Weaver
   Effigies, Choral Commandments, Rune Harps, Psalm Cylinders, the Arcane Egg) whose round caret
-  opens them one by one, Mementos, the Bellhome's furnishings, the **Silk cocoons**, the small ones
-  beside the Silkeaters, and **What Eva gives** besides Sylphsong: the Hunter Crest's two
-  evolutions and the Vesticrest's yellow and blue slots, each with the slots it needs across your
-  Crests (the Hunter's aside) and, with a save, how many you have open.
+  opens them one by one, Mementos (the seven found somewhere: the Heart Memento is whichever Old
+  Heart The Old Hearts doesn't take, so it has no mark) and the Bellhome's furnishings (the five
+  bought, and the Materium, Farsight and Crawbell built there once found: their Key items marks
+  are where each lies).
 - **Items**: Craftmetal and Pale Oil (on at first), then, off at first, Mossberries, Silkeaters, the
   **Maps**: the fourteen area maps found lying in a room (the Weavenest Atla Map, the
   Slab's…), each gone once your save has it; the fourteen Shakra sells have no mark of their own
@@ -440,9 +461,10 @@ boss's arena, with the person who gives it. All of it on at first.
   which its map doesn't pin; the Flea Caravan's two of its own, in Greymoor and the Blasted Steps,
   only while your caravan is there), Bellway and Ventrica stations (dimmed while
   your game hasn't opened them: a station not unlocked, a toll not paid), the six Bellshrines (the Grand Gate asks for five of them;
-  the Songclave's is the sixth) and the Vendors (the game's map key), and the **Lifts** (off at first), gone once your game has called each. The shops are the
+  the Songclave's is the sixth), the Vendors (the game's map key) and **Shakra**'s spots, she
+  being one of the game's shops too, her card saying which of her maps you lack. The shops are the
   game's own (its ShopOwners: Pebb, Frey, Mort, the Forge Daughter, Grindle, Jubilana, the
-  Mottled Skarr, the Twelfth Architect) and those who trade outside them: the Couriers' delivery
+  Mottled Skarr, the Twelfth Architect, Shakra) and those who trade outside them: the Couriers' delivery
   wishes in Bellhart, the Moss Druid, who buys Mossberries, and Creige's drinks.
   The switches are named as the game's own map legend names them, one thing each (Bench, Bellway,
   Vendor, Ventrica, Bellshrine), and a Ventrica station by its name in the game (First Shrine,
@@ -453,18 +475,29 @@ boss's arena, with the person who gives it. All of it on at first.
   from one side, or pulled open with Clawline), the doors a key opens (with the key each takes;
   the Slab's locks and cells among them), shortcuts (the one-way walls, planks, ladders and floors
   that break from one side) and the two silk walls Silkspear cuts in Mosshome. The doors the
-  Needolin opens aren't there: they open each time and the save keeps nothing of them. Some
+  Needolin opens aren't there: they open each time and the save keeps nothing of them, and neither
+  are the gates a battle shuts and opens again, or what the game never switches on. Some
   levers, gates and walls the save keeps by a flag of its own rather than per room (the Bellhome's
-  door among them): they're there too. **Keys**: the Simple Keys, the Slab's three and the
+  door among them): they're there too. A way is open by whatever your save keeps of it: its own
+  bool, the flag its lever or plate sets instead, the other lock of the same cell door (only the
+  side you use saves), or the flag that takes it away (Mosshome's two silk walls go once the Bell
+  Beast is beaten, whichever you cut, and the walls of a shortcut that opens from either end go
+  with it). **Keys**: the Simple Keys, the Slab's three and the
   Whiteward's two, where each lies, and the two an NPC gives: the Diving Bell Key (Ballow, in the
-  Deep Docks) and the Bellhome Key (Pavo, in Bellhart).
+  Deep Docks) and the Bellhome Key (Pavo, in Bellhart). And the **Lifts**, gone once your game has
+  called each.
 - **Fights**: the enemy gauntlets and bosses not beaten yet, each fight its own mark (Lace atop the
   Cradle, the two Moss Mothers of Weavenest Atla, the Act 3 Moss Mother and the Savage Beastfly
-  of the Far Fields too), and the unique enemies (Rhinogrunds,
-  Covetous Pilgrims, Shardillards, Void Masses).
-- **People**: Shakra's spots, and who gives something of the 100% (Plinney, Eva, Pinstress,
+  of the Far Fields too), each boss where it's fought (Moorwing at Bellhart's east entrance, the
+  Second Sentinel in its High Halls arena). A gauntlet won by beating its boss (Lugoli's, Groal's,
+  the Coral Tower's four that end in Khann…) is that boss's mark, its waves and reward on the
+  boss's card. And the Void Masses' cores. The other enemies that don't come back (Rhinogrunds,
+  Covetous Pilgrims, Shardillards) are found from their Journal entry, whose pin shows every room
+  they're in. A wish done by a boss's fight (Fatal Resolve, the Pinstress on Mount Fay; the end of
+  A Vassal Lost, the Summoned Saviour) is on that boss's card, not a mark of its own.
+- **People**: who gives something of the 100% (Plinney, Eva, Pinstress,
   Loddie, Lumble, Mooshka) and Scrounge, who buys the relics. **Everyone else** (off at first): every
-  other person the game's scenes place, 54 of them, each in one switch only, with their own figure
+  other person the game's scenes place, 44 of them, each in one switch only, with their own figure
   from the game's sprites (tools/extract-people.py), named as their title card names them. With a
   save, those you haven't met yet are dimmed, but only when the save has a flag for it: the ones it
   says nothing about are never dimmed by guess. Who moves shows only where the save says they are
@@ -472,8 +505,11 @@ boss's arena, with the person who gives it. All of it on at first.
   Second Sentinel resting, Pilby, the Chapel Maid, Seth at the Flea Festival); who has left or died
   is gone. Where the save doesn't say, every spot shows and the card says so (Garmond comes and
   goes, Sherma, Gilly, the Green Prince, Mister Mushroom…). In Free mode, everyone everywhere.
+  Each person once in a room: where another mark already stands for them (who asks for a wish, a
+  boss, the Herald's spots), Everyone else doesn't draw them again; Jubilana is her shop.
 - **Tasks**, as the game's pause menu calls its wishes and objectives: the Wishwalls and who asks
-  for a wish (with a save, only while one is still open there); where a wish is granted (the
+  for a wish, by name (with a save, only while one is still open there; who already has a mark
+  there, a shop or who gives something of the 100%, has the wishes on that card instead); where a wish is granted (the
   deliveries and the Steel Sentinel's spots where the game's own map pins them, of the Sentinel's
   six only the three your game chose, and only in Steel Soul; the Herald's seven; the rescues and
   fights, in the room where the game ends the wish); what a wish asks for (the 22 things lying in a
@@ -487,11 +523,16 @@ boss's arena, with the person who gives it. All of it on at first.
 - **Secrets**, off at first: the rosary and shell shard caches, the breakable walls (the
   one-way ones are among the shortcuts), the loose rosaries (one bead, cut from the game's picture of
   the Rosaries, so they don't look like the caches) and the **Hidden corners** (what
-  covers part of a room until you walk in, one mark per room, gone once all of it is uncovered), so many
+  covers part of a room until you walk in, one mark per room, gone once all of it is uncovered: a
+  cover inside a breakable wall counts once the wall is broken, one the game takes away once it's
+  gone, and one only the other mode has isn't asked for), so many
   that they're drawn one by one only close up; from afar, one mark per room and kind, with how
   many in its corner. Marks that would cover each other step a little apart, more the closer you zoom.
+  And the **Silk cocoons**, the small ones beside the Silkeaters, which give a little silk when struck.
 - **Your game**, with a save: your cocoon, where you last fell, at the spot the game's own map
-  marks it (on at first), and the Journal's entries still missing, in the room where each is found.
+  marks it (on at first), and the Journal's entries still missing, where the enemy is in the room
+  where each is found (a boss's entry is its boss's mark already, and the Void Mass's its own
+  switch's, not drawn again), counted as the Journal counts them: every entry.
 
 Each mark is the thing's own picture on a dark disc with a thin rim, as the Hollow Knight site
 draws them, over a pale plate so a dark portrait reads, about the same size at any zoom, a little
@@ -519,10 +560,10 @@ With a save the map shows only what you're missing; in Free mode, what your mark
 (everything, as a guide, on a New Game). Tap any mark for its card (above the mark, or below it
 when above it would cover the search or the zoom): what
 it is, where, how it's had, and what it says of your game. A
-shop's says what of the 100% it still has for you, Shakra's which maps you lack, a Wishwall's or a
+shop's says what of the 100% it still has for you (and the wishes it asks, if it does), Shakra's which maps you lack, a Wishwall's or a
 wish giver's the wishes still open, a wish's place or thing which wish it's for, whether it's done
 and a button to its Wishwall or to who asks for it, a boss's whether it's beaten, with «Fight it in Combat» and
-«See in the Journal»; a gauntlet's its waves and reward; a Journal entry's its kills. In Free mode
+«See in the Journal» (and its gauntlet's waves and reward, if its fight is one); a gauntlet's its waves and reward; a Journal entry's its kills. In Free mode
 a piece's card marks it had; a Mask Shard, Spool Fragment, Silk Heart or upgrade of the Needle, Kit
 or Pouch follows the Inventory's levels instead, as on Progress, and its card leads there. Tap an area's name for its card: the rooms of it you've visited,
 and what's left there of the 100%, the Journal and the gauntlets.
@@ -598,38 +639,41 @@ opens, the road's the first time. On a phone a card keeps its figure and leaves 
 it («step 1 of 5», «85% to go»). From the keyboard, Tab reaches the one selected and the arrows,
 Home and End move to another and open it.
 
-**The road to the next Act** (its card: the picture of the step you're on, how far into it, counted
-as its rings count, and «step 1 of 5»). Its steps as diamonds on one thread, the ones done lit and
-the one you're on larger, each numbered and named as what to do («1 · Unlock "Silk and Soul"»,
-«2 · Accept the wish», «3 · Gather the snare»…; the full title shows on hover). On a phone the thread
-goes down the page, a step a line. Each step there, and each dim medallion of the steps to come,
-opens its card where it was clicked: «Step 3», its title, what the game says of it and its way onto
-the Map (a step done says «done» and has no map); the × or the step again close it, and the step
-you're on takes you to its heading. Then the step you're on, with its picture and, under its
-heading, **what the game says of it**: the objective as the game's pause menu «Tasks» titles it,
-with the picture the Tasks tab draws by it, its line («Grand Gate · Pharloom») and its description as the game words it in that state
-(«Awaken the old bells throughout the lands.» while Bellshrines are left, «Return to the Grand
-Gate and open the way to the Citadel.» once they're rung; for the snare, «Acquire the necessary
-components…», then «Give the collected components to the Caretaker of Songclave.»). The Last Judge
-has no objective of her own, so her Journal entry speaks («Final arbiter of the Blasted Steps…»,
-tagged «Journal»); unlocking Silk and Soul has no text in the game, so it shows the wish it opens,
-its picture dim and its name and place («Silk and Soul · Caretaker of Songclave»). The same picture,
-smaller, goes by each step's card in the whole road and in a step opened from the thread. Under it,
-«See on the map» or «See the n on the map» (the Bellshrines not rung, the Grand Gate's and the
-Citadel's objective pins as the game's own map places them, the Last Judge and the Phantom, the
-Caretaker and Bellhart's Wishwall, the snare's pieces, the Cradle's top). Then its parts as small **rings** side by side (the wishes it requires, its
-wish points, its four conditions; the Bellshrines; the snare's pieces), the game's picture inside
-and how far as a figure under it; for Silk and Soul a line says that all three are needed, for
-the offer how it comes (or that you turned it down), and for the last step that the Needolin, not
-a Bind, is what snares her.
+**The road to the next Act is the whole route** (its card: the picture of the step you're on, how
+far into it, counted in its parts' units, and «step 1 of 5»). The road's thread runs down the page,
+a station per step with the game's diamonds: the steps done lit and ticked (the ones the Phantom's
+way skips say «No longer needed: defeating Phantom opens another way in»), the one you're on larger
+with «You are here» and its count («3/5», «3/31»), the ones to come dim. Each station is a row with
+its picture, «Step 1» and its title, and opens: a step done shows what the game says of it, a step to
+come that and its way onto the Map, and the one you're on, open from the start, its card, its parts
+and its **What's next** list. The route ends at the Act it opens («You reach · Act 2 · CITADEL OF
+SONG», «Act 3 · ABYSS»). What's open is kept while the page is.
 
-Under the rings, **What's next**: the step's one list. What it still lacks, numbered, each with its picture,
+**What the game says of a step**: the objective as the game's pause menu «Tasks» titles it, with the
+picture the Tasks tab draws by it, its line («Grand Gate · Pharloom») and its description as the game
+words it in that state («Awaken the old bells throughout the lands.» while Bellshrines are left,
+«Return to the Grand Gate and open the way to the Citadel.» once they're rung; for the snare,
+«Acquire the necessary components…», then «Give the collected components to the Caretaker of
+Songclave.»). The Last Judge has no objective of her own, so her Journal entry speaks («Final arbiter
+of the Blasted Steps…», tagged «Journal»); unlocking Silk and Soul has no text in the game, so it shows
+the wish it opens, its picture dim and its name and place («Silk and Soul · Caretaker of Songclave»).
+Under it, «See on the map» or «See the n on the map» (the Bellshrines not rung, the Grand Gate's and
+the Citadel's objective pins as the game's own map places them, the Last Judge and the Phantom, the
+Caretaker and Bellhart's Wishwall, the snare's pieces, the Cradle's top).
+
+**Its parts**: for Silk and Soul a line says that all three are needed, then the three in one line,
+each its picture, its name and its count, ticked when met (the wishes it requires, its wish points,
+its four conditions); for the offer, how it comes (or that you turned it down); for the last step,
+that the Needolin, not a Bind, is what snares her.
+
+**What's next**: the step's one list. What it still lacks, numbered, each with its picture,
 its area and the Map's pin when it has the thing: each required wish («Complete the wish "Balm for
 the Wounded"», with who asks for it in the game's words, what posts it and the wish to do first),
 the wish points short («Get 1 more wish point») with the four wishes nearest your bench that would
 give it («and n more» unfolds the rest), each condition not met (the Flea Caravan, the Faydown Cloak,
 Lace, the Bellhome Key, or «Talk to Pavo» once he has it for you), each Bellshrine not rung, each
-piece of the snare. Each row the game has words for has «What the game says» under it, which unfolds
+piece of the snare. A step of one thing (walking into the Citadel) doesn't repeat itself as a list.
+Each row the game has words for has «What the game says» under it, which unfolds
 them: a wish as the game shows it now (what its Wishwall says until you take it, what «Tasks» says
 once you have: the save's own record of each wish taken), the Caretaker's directions to each soul
 and the Snare Setter, the Inventory's line for the Faydown Cloak and the Bellhome Key, and for Lace
@@ -637,8 +681,7 @@ the objective that leads to her (learn the Threefold Melody, then play it at the
 rise above the Citadel). The Flea Caravan has no game text. Lace's row and the key's (Pavo) have
 their pin too, as the Bellshrines' do. «What's missing · Everything» under its title (the 100% tab's
 same toggle, kept as you leave it) shows what's done too: each done row in its place, its number's
-diamond ticked and dimmed, and the wishes that already gave points ticked among the options. The
-steps after it follow, dim. «The whole road» opens the road in full, as below.
+diamond ticked and dimmed, and the wishes that already gave points ticked among the options.
 
 How to get each thing leads with what it is and what it costs (who asks for a wish and what it asks
 to be brought, the shop and its price), then what it waits for (what posts the wish, the wish to do
@@ -654,7 +697,9 @@ within reach»), with a line under the ring naming the closed one.
 
 **Without a save**, a notice over every tab invites you to import yours (what it would show, and
 the button), the 100% card says «100% in 10 categories», and the road tab is both roads as a guide,
-each with its thread of steps, every list folded under «See all n».
+each under its title and what it is, as the route with no step yours: each station says how much it
+asks («5», «31») and opens, shut at first, on what the game says of it, its parts and the whole of
+its list, with no «What's next» title and no «What's missing · Everything».
 
 **For 100%** (its card: a small ring and what's left). At the top, **your 100%** in a ring that
 fills with it, as the Journal's Memento, with the game's word, «Finalización» (a line under it
@@ -679,9 +724,8 @@ Kit and the Pouch follow what the Inventory sets, and their groups say so, with 
 line on top says it's Free mode, counting your marks from a New Game, and that the road is the
 guide; the road tab is «The roads to Acts 2 and 3».
 
-The whole road, as the game's own rules have it (read from its files, not from a guide), in
-numbered steps, each with its count or a tick, and each step not done with what the game says of
-it and its way onto the Map, as above:
+The whole road, as the game's own rules have it (read from its files, not from a guide), step by
+step, each with what the game says of it and its way onto the Map, as above:
 
 - **To Act 2**: ring the five Bellshrines, open the Grand Gate, defeat the Last Judge, and walk into
   the Citadel. Defeating the Phantom opens another way in, and the first two steps then say
@@ -692,7 +736,7 @@ it and its way onto the Map, as above:
      - 17 of its 25 wish points (a delivery is worth half a point, the first time only);
      - four conditions: the Flea Caravan at Fleatopia, the Faydown Cloak, Lace defeated in the
        Cradle (with the three melodies that lead there), and the Bellhome Key. Pavo gives the key
-       after Bellhart's Glory and 2 wishes of his list, and the step lists them until then. The
+       after Bellhart's Glory and 2 wishes of his list, and its row says so until then. The
        caravan says where it stands and the fleas rescued: Mooshka takes it to Fleatopia with 22,
        once the empty Pale Lake has been seen (and on the Phantom's way, the Last Judge beaten
        first: its stop before is the Judge's arena).

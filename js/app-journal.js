@@ -112,8 +112,8 @@
   function whereHtml(e, state, name) {
     const where = whereOf(e);
     const near = state !== 'done' ? nearest(e, App.game()) : null;
-    const pin = state !== 'done' && App.mapHas && App.mapHas('journal:' + e.id)
-      ? `<button type="button" class="pg-onmap" data-act="mapShow" data-value="journal:${e.id}" aria-label="${esc(t('mapOnMap') + ': ' + name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '';
+    const pin = App.mapBeastKeys && App.mapBeastKeys(e.id).length
+      ? `<button type="button" class="pg-onmap" data-act="mapBeast" data-value="${e.id}" aria-label="${esc(t('mapOnMap') + ': ' + name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '';
     const line = (cls, text, last) => `<p class="${cls}${last && pin ? ' has-pin' : ''}"><span>${text}</span>${last ? pin : ''}</p>`;
     return (where.length ? line('hj-area', esc(where.slice(0, 4).join(' · ')), !near) : '')
       + (near ? line('hj-where', `${esc(t('hjNearest'))}: ${esc(near.place)}`, true) : '')

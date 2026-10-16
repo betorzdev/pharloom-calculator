@@ -33,6 +33,7 @@ const { names } = require('./names.js');
 require('../js/map.js');
 require('../js/graph.js');
 const R = require('../js/rooms.js');
+const SP = require('../js/spots.js');
 const M = globalThis.SS.map;
 
 const OUT = path.join(__dirname, '..', 'js', 'people.js');
@@ -67,21 +68,28 @@ const PORTRAIT = { GARMOND: 'garmond-and-zaza', SETH_NPC: 'shrine-guardian-seth'
 // One person under several keys: the first is theirs.
 const SAME = { SETH_NPC: ['SETH_NPC_BC'], LITTLE_PILGRIM_N: ['LITTLE_PILGRIM'], DUST_TRADERS_1: ['DUST_TRADERS_2'] };
 
-/* HAND: per person (their key), what the save says. The rest are in the list with no state. */
+/* HAND: per person (their key), what the save says. The rest are in the list with no state.
+   Checked over the 77 files of the author's saves (16-Oct-2026, design/03-redesign.md, step 6, the
+   save checks, 10 A): the Second Sentinel's resting talk (songChevalierRestingMet) is set in none,
+   though both finished games fought him (encounteredSongChevalierBoss; songChevalierEncounters 1
+   and 2), both read by his scripts, so those say he's met too. Garmond is gone once Lost Garmond is
+   beaten, when his spots kept showing: goneBoss names the boss a person becomes, whose own save
+   check (js/spots.js BOSSES, a flag: garmondBlackThreadDefeated) says it, though their own
+   scripts don't read it. */
 const HAND = {
   BLUE_SCIENTIST: { met: ['BlueScientistMet', 'BlueScientistInfectedMet'], gone: ['BlueScientistDead'] },
   CARETAKER: { met: ['metCaretaker'] },
   CHURCHKEEPER: { met: ['churchKeeperIntro'], at: [['ChurchKeeperLeftBasement', false, 'tut_03']] },
   BELLHART_GREETER: { met: ['BelltownGreeterConvo'] },
   SHERMA: { met: ['metSherma'] },
-  GARMOND: { met: ['metGarmond'], unsure: 'always' },
+  GARMOND: { met: ['metGarmond'], goneBoss: 'lost-garmond', unsure: 'always' },
   SEAMSTRESS: { met: ['MetSeamstress'] },
   STEEL_SENTINEL: { met: ['SteelSentinelMet'] },
   JUDGE_GATE_PILGRIM: { met: ['metGatePilgrim'] },
   GRUBFARMER: { met: ['metGrubFarmer'] },
   GRUBFARMER_MIMIC: { met: ['MetGrubFarmerMimic'] },
   HUNTER_FAN: { met: ['MetHalfwayHunterFan'], at: [['nuuIsHome', true, 'halfway_01']] },
-  SONG_KNIGHT: { met: ['songChevalierRestingMet'], at: [['songChevalierActiveInHang_02', true, 'hang_02'],
+  SONG_KNIGHT: { met: ['songChevalierRestingMet', 'encounteredSongChevalierBoss', 'songChevalierEncounters'], at: [['songChevalierActiveInHang_02', true, 'hang_02'],
     ['songChevalierActiveInSong_07', true, 'song_07'], ['songChevalierActiveInSong_24', true, 'song_24']] },
   HH_PATRON_LEFT: { gone: ['HalfwayPatronLeftGone'] },
   HH_PATRON_RIGHT: { gone: ['HalfwayPatronRightGone'] },
@@ -100,15 +108,9 @@ const HAND = {
   SETH_NPC: { met: ['MetSethNPC'], at: [['SethJoinedFleatopia', true, 'aqueduct_05_festival']] },
 };
 
-const ROOM_OF = new Map(Object.entries(M.ROOMS).map(([k, r]) => [k.toLowerCase(), r]));
-// A point of a scene where the game places it on its map (js/rooms.js mapPoint, as tools/gen-spots.js).
-function toMap(scene, x, y) {
-  const r = ROOM_OF.get(scene.toLowerCase()), size = SIZES[scene.toLowerCase()];
-  const p = r && size && x != null && y != null ? R.mapPoint(scene, x, y, size[0], size[1]) : null;
-  if (!p) return null;
-  const out = Math.max(r[0] - p.x, p.x - r[0] - r[2], 0) + Math.max(r[1] - p.y, p.y - r[1] - r[3], 0);
-  return out > 12 ? null : [Math.round(p.x * 10) / 10, Math.round(p.y * 10) / 10];
-}
+// A point of a scene where the game places it on its map, as tools/gen-spots.js places the rest
+// (tools/map-point.js: an interior's own coordinates aren't its door room's).
+const { toMap } = require('./map-point.js')(SIZES);
 const idOf = (key) => key.toLowerCase().replace(/_/g, '-');
 
 (async () => {
@@ -122,7 +124,11 @@ const idOf = (key) => key.toLowerCase().replace(/_/g, '-');
     const seen = new Map();
     for (const [scene, , x, y] of spotsOf(key)) {
       if (seen.has(scene) || !R.roomOf(scene)) continue;
-      const at = toMap(R.roomOf(scene).scene, x, y) || toMap(scene, x, y);
+      const at = toMap(scene, x, y);
+      // Off their scene in a room the map draws: parked, a turn missed or a walker's path not read
+      // (tools/extract-people.py). Since 16-Oct-2026 nobody is; only interiors and points go without.
+      const room = R.roomOf(scene), box = room.exact && M.ROOMS[room.scene];
+      if (!at && box && box[2]) fail(`${key} in ${scene} is off the scene (${x}, ${y}): read them again`);
       seen.set(scene, at ? [scene, ...at] : [scene]);
     }
     return [...seen.values()];
@@ -136,18 +142,50 @@ const idOf = (key) => key.toLowerCase().replace(/_/g, '-');
   };
   for (const k of Object.keys(HAND)) if (!P.people[k]) fail(`${k} isn't in the scenes any more`);
 
+  /* Each person once in a room, by the mark that says what they're there for (Albert's choice,
+     15-Oct-2026): not drawn again where js/spots.js has them already as who offers a wish (GIVER),
+     as a boss (their Journal portrait is the boss's: the Second Sentinel in its arena), or under a
+     place where a wish is done, which names nobody: the nearest person within 3 px of it in its
+     room, when only one is and the save doesn't follow them there (Mister Mushroom at the Herald's spots). */
+  const roomKey = (s) => ((R.roomOf(s) || {}).scene || s).toLowerCase();
+  const absorbed = new Map();   // person key → the room keys where another mark stands for them
+  const absorb = (key, scene, why) => {
+    if (!absorbed.has(key)) absorbed.set(key, new Set());
+    absorbed.get(key).add(roomKey(scene));
+    console.log(`  ${key} in ${scene}: ${why} stands for them`);
+  };
+  for (const [scene, g] of Object.entries(SP.GIVER)) if (g && !ELSEWHERE[g[0]] && !merged.has(g[0])) absorb(g[0], scene, 'giver:' + scene.toLowerCase());
+  for (const [foe, scene] of SP.BOSSES) {
+    const key = Object.keys(PORTRAIT).find((k) => PORTRAIT[k] === foe);
+    if (key && place(key).some((sp) => roomKey(sp[0]) === roomKey(scene))) absorb(key, scene, 'boss:' + foe);
+  }
+  SP.TASKS.forEach((x, i) => {
+    if (x[0] !== 'wspot' || !SP.XY['task:' + i]) return;
+    const [mx, my] = SP.XY['task:' + i], room = roomKey(x[3]);
+    const near = keys.filter((key) => !ELSEWHERE[key]).flatMap((key) => place(key).filter((sp) => roomKey(sp[0]) === room && sp.length === 3)
+      .map((sp) => [key, Math.hypot(sp[1] - mx, sp[2] - my)])).filter(([, d]) => d <= 3).sort((p, q) => p[1] - q[1]);
+    // Not where the save follows them (HAND at): there they outlast the wish (the Second Sentinel in Song_07).
+    const followed = (key) => [key, ...(SAME[key] || [])].some((k) => ((HAND[k] || {}).at || []).some(([, , sc]) => roomKey(sc) === room));
+    if (near.length && !(near[1] && near[1][1] - near[0][1] < 0.5) && !followed(near[0][0])) absorb(near[0][0], x[3], 'task:' + i);
+  });
   const PEOPLE = [], VARS = new Set();
-  const used = (h) => { for (const f of [...(h.met || []), ...(h.gone || []), ...(h.at || []).map((a) => a[0])]) VARS.add(f); };
+  // Gone also once the boss they become is beaten (HAND goneBoss): that boss's own check, a flag.
+  const bossFlag = (foe) => {
+    const b = SP.BOSSES.find((x) => x[0] === foe) || fail(`goneBoss: no boss ${foe} in js/spots.js`);
+    return b[2][0] === 'flag' ? b[2][1] : fail(`goneBoss: ${foe}'s check isn't a flag`);
+  };
+  const goneOf = (h) => [...(h.gone || []), ...(h.goneBoss ? [bossFlag(h.goneBoss)] : [])];
+  const used = (h) => { for (const f of [...(h.met || []), ...goneOf(h), ...(h.at || []).map((a) => a[0])]) VARS.add(f); };
   for (const key of keys) {
     if (ELSEWHERE[key]) continue;
-    const spots = place(key);
+    const spots = place(key).filter((sp) => !(absorbed.get(key) || new Set()).has(roomKey(sp[0])));
     if (!spots.length) { console.log(`  ${key}: no spot on the map (${spotsOf(key).map((s) => s[0]).join(', ')})`); continue; }
     const h = HAND[key] || {};
     check(key, h);
     used(h);
     const id = idOf(key);
     const art = fs.existsSync(path.join(FIGS, id + '.webp')) ? 'people/' + id : PORTRAIT[key] ? 'journal/' + PORTRAIT[key] : null;
-    PEOPLE.push({ id, name: titleOf(key), art, spots, met: h.met, gone: h.gone, at: h.at, unsure: h.unsure });
+    PEOPLE.push({ id, name: titleOf(key), art, spots, met: h.met, gone: goneOf(h).length ? goneOf(h) : undefined, at: h.at, unsure: h.unsure });
   }
   const TRADE = [];
   for (const [id, t] of Object.entries(TRADERS)) {
@@ -159,7 +197,7 @@ const idOf = (key) => key.toLowerCase().replace(/_/g, '-');
     TRADE.push({ id, name: titleOf(key), note: t.note, spots: spots.slice(0, 1) });
   }
   // Every key is someone's.
-  for (const k of keys) if (!ELSEWHERE[k] && !PEOPLE.some((p) => p.id === idOf(k)) && place(k).length) fail(`${k} is nobody's`);
+  for (const k of keys) if (!ELSEWHERE[k] && !PEOPLE.some((p) => p.id === idOf(k)) && place(k).some((sp) => !(absorbed.get(k) || new Set()).has(roomKey(sp[0])))) fail(`${k} is nobody's`);
   for (const k of Object.keys(ELSEWHERE)) if (!P.people[k]) fail(`${k} (ELSEWHERE) isn't in the scenes any more`);
 
   // The Map admin's fixes keyed by a trader's spot follow their marks (stops the run if one can't).

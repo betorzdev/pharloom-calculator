@@ -11,22 +11,22 @@
   "ant_04_mid": [
    [
     "Battle Scene",
-    204.69,
-    14.93,
+    199.37,
+    13.28,
     "ant04_battleCompleted"
    ],
    [
     "Battle Scene Black Thread",
-    204.69,
-    21.99,
+    199.37,
+    20.34,
     ""
    ]
   ],
   "ant_05b": [
    [
     "Battle Scene",
-    48.88,
-    8.33,
+    48.04,
+    7.73,
     ""
    ]
   ],
@@ -211,14 +211,14 @@
   "greymoor_04": [
    [
     "Battle Scene",
-    13.09,
-    13.55,
+    25.44,
+    11.91,
     "greymoor_04_battleCompleted"
    ],
    [
     "Black Thread Battle Scene",
-    8.41,
-    14.96,
+    20.76,
+    13.32,
     ""
    ]
   ],
@@ -515,8 +515,8 @@
    6.83
   ],
   "belltown_shrine": [
-   52.8,
-   9.87
+   52.77,
+   9.09
   ],
   "bellway_03": [
    49.4,
@@ -551,8 +551,8 @@
    17.9
   ],
   "bone_10": [
-   24.63,
-   15.45
+   25.3,
+   15.54
   ],
   "bone_12": [
    18.58,
@@ -3272,8 +3272,8 @@
    [
     "Ant_05b",
     "ant_lever_persistent",
-    110.53,
-    3.41
+    109.54,
+    6.16
    ],
    [
     "Ant_17",
@@ -4094,8 +4094,8 @@
    [
     "Ant_05b",
     "One Way Wall",
-    103.68,
-    3.36
+    102.7,
+    5.97
    ],
    [
     "Aqueduct_04",
@@ -4372,14 +4372,14 @@
    [
     "Mosstown_02",
     "Thick Silk Vines",
-    135.13,
-    10.23
+    134.9,
+    33.29
    ],
    [
     "Mosstown_02",
     "Thick Silk Vines (1)",
-    43.82,
-    45.46
+    38.9,
+    52.3
    ]
   ]
  },
@@ -4388,8 +4388,8 @@
    [
     "bone_10",
     "Caravan Troupe Leader Bone NPC",
-    37.72,
-    16.85
+    38.39,
+    16.94
    ]
   ],
   "HasBoundCrestUpgrader": [
@@ -4486,8 +4486,8 @@
    [
     "belltown_shrine",
     "RestBench",
-    52.8,
-    9.87
+    52.77,
+    9.09
    ],
    [
     "bellway_03",
@@ -4540,14 +4540,14 @@
    [
     "bone_10",
     "RestBench",
-    24.63,
-    15.45
+    25.3,
+    15.54
    ],
    [
     "bone_10",
     "RestBench",
-    25.74,
-    14.96
+    25.91,
+    15.94
    ],
    [
     "bone_12",
@@ -4912,8 +4912,8 @@
    [
     "under_01b",
     "RestBench",
-    29.9,
-    1.03
+    29.66,
+    3.77
    ],
    [
     "under_07b",
@@ -5032,8 +5032,8 @@
    [
     "bone_10",
     "Caravan Troupe Hunter",
-    55.38,
-    17.03
+    56.05,
+    17.12
    ],
    [
     "coral_judge_arena",
@@ -5064,8 +5064,8 @@
    [
     "ant_04_mid",
     "Mapper NPC",
-    198.81,
-    15.24
+    193.49,
+    13.59
    ],
    [
     "ant_20",
@@ -5168,8 +5168,8 @@
    [
     "ant_04_mid",
     "Mapper NPC",
-    198.81,
-    15.24
+    193.49,
+    13.59
    ],
    [
     "belltown",
@@ -5224,8 +5224,8 @@
    [
     "ant_04_mid",
     "Mapper NPC",
-    198.81,
-    15.24
+    193.49,
+    13.59
    ],
    [
     "ant_20",
@@ -5378,8 +5378,8 @@
    [
     "ant_04_mid",
     "Mapper NPC",
-    198.81,
-    15.24
+    193.49,
+    13.59
    ],
    [
     "belltown",
@@ -5434,8 +5434,8 @@
    [
     "ant_04_mid",
     "Mapper NPC",
-    198.81,
-    15.24
+    193.49,
+    13.59
    ],
    [
     "belltown",
@@ -5590,8 +5590,8 @@
    [
     "ant_04_mid",
     "Mapper NPC",
-    198.81,
-    15.24
+    193.49,
+    13.59
    ],
    [
     "ant_20",
@@ -5694,8 +5694,8 @@
    [
     "ant_04_mid",
     "Mapper NPC",
-    198.81,
-    15.24
+    193.49,
+    13.59
    ],
    [
     "belltown",
@@ -5750,8 +5750,8 @@
    [
     "ant_04_mid",
     "Mapper NPC",
-    198.81,
-    15.24
+    193.49,
+    13.59
    ],
    [
     "belltown",
@@ -5856,8 +5856,8 @@
    [
     "ant_04_mid",
     "Mapper NPC",
-    198.81,
-    15.24
+    193.49,
+    13.59
    ],
    [
     "ant_20",
@@ -6222,14 +6222,14 @@
    [
     "belltown_shrine",
     "Battle Gate (2)",
-    52.11,
-    25.64
+    52.08,
+    24.86
    ],
    [
     "belltown_shrine",
     "Boss Scene",
-    60.82,
-    17.69
+    60.79,
+    16.91
    ]
   ],
   "bellShrineWilds": [
@@ -6252,8 +6252,8 @@
    [
     "bone_01b",
     "Mossberry Pickup",
-    41.07,
-    43.52
+    28.06,
+    72.56
    ],
    [
     "bonetown",
@@ -6272,8 +6272,8 @@
    [
     "bone_east_10",
     "Pilgrim NPC Scene",
-    102.99,
-    49.26
+    22.28,
+    -32.01
    ]
   ],
   "hasBrolly": [
@@ -6286,8 +6286,8 @@
    [
     "bone_east_10",
     "Pilgrim NPC Scene",
-    102.99,
-    49.26
+    22.28,
+    -32.01
    ],
    [
     "bone_east_umbrella",
@@ -6416,8 +6416,8 @@
    [
     "bone_east_10",
     "Bonetown Resident",
-    89.84,
-    101.9
+    62.82,
+    4.05
    ],
    [
     "bone_east_10_room",
@@ -6662,14 +6662,14 @@
    [
     "belltown_shrine",
     "Boss Scene",
-    60.82,
-    17.69
+    60.79,
+    16.91
    ],
    [
     "belltown_shrine",
     "Spinner Boss",
-    57.04,
-    52.79
+    57.01,
+    52.01
    ],
    [
     "bone_east_05",
@@ -7049,18 +7049,18 @@
   "bone_east_10_church": [
    [
     "Flea Rescue Activation",
-    181.45,
-    23.47
+    181.08,
+    24.45
    ],
    [
     "Flea Rescue BlackSilk",
-    181.45,
-    23.47
+    181.08,
+    24.45
    ],
    [
     "Flea Rescue Sleeping",
-    181.94,
-    22.2
+    181.61,
+    23.19
    ]
   ],
   "bone_east_17b": [
@@ -7216,8 +7216,8 @@
   "shellwood_03": [
    [
     "Flea Rescue Activation",
-    23.12,
-    49.05
+    25.3,
+    49.08
    ],
    [
     "Flea Rescue Branches",
@@ -7314,7 +7314,7 @@
      "bone_east_18b",
      "CollectableItemPickup",
      "Collectable Item Pickup",
-     107.45,
+     107.47,
      19.25
     ]
    ],
@@ -7381,8 +7381,8 @@
      "bone_east_08_boss_beastfly",
      "CollectableItemPickup",
      "Collectable Item Pickup",
-     80.94,
-     7.07
+     81.45,
+     6.35
     ]
    ],
    "class": "CollectableItemBasic"
@@ -8403,8 +8403,8 @@
      "dust_shack",
      "PlayMakerFSM",
      "Dust Traders",
-     22.41,
-     6.93
+     22.62,
+     6.26
     ]
    ],
    "class": "CollectableItemBasic"
@@ -8998,22 +8998,22 @@
      "arborium_04",
      "SavedItemTrackerMarker",
      "moss_berry_fruit",
-     69.62,
-     14.54
+     71.21,
+     15.93
     ],
     [
      "bone_01b",
      "PlayMakerFSM",
      "Mossberry Pickup",
-     41.07,
-     43.52
+     28.06,
+     72.56
     ],
     [
      "bone_01b",
      "SavedItemTrackerMarker",
      "Berry Sprite",
-     41.07,
-     43.52
+     28.06,
+     72.56
     ],
     [
      "bone_05b",
@@ -9663,8 +9663,8 @@
      "dust_05",
      "BasicNPC",
      "Inspect Region",
-     185.15,
-     70.85
+     180.2,
+     4.27
     ]
    ],
    "class": "MateriumItem"
@@ -10258,43 +10258,43 @@
      "shellwood_01",
      "PlayMakerFSM",
      "Nectar Pickup",
-     92.29,
-     83.31
+     92.61,
+     83.34
     ],
     [
      "shellwood_02",
      "PlayMakerFSM",
      "Nectar Pickup",
-     74.01,
+     73.89,
      79.72
     ],
     [
      "shellwood_10",
      "PlayMakerFSM",
      "Nectar Pickup",
-     9.52,
-     27.14
+     9.94,
+     27.49
     ],
     [
      "shellwood_15",
      "PlayMakerFSM",
      "Nectar Pickup",
-     13.33,
-     6.25
+     13.7,
+     6.53
     ],
     [
      "shellwood_20",
      "PlayMakerFSM",
      "Nectar Pickup",
-     42.58,
-     34.63
+     42.99,
+     34.74
     ],
     [
      "shellwood_26",
      "PlayMakerFSM",
      "Nectar Pickup",
-     25.52,
-     84.28
+     30.8,
+     84.22
     ]
    ],
    "class": "CollectableItemBasic"
@@ -10646,8 +10646,8 @@
      "bone_15",
      "CollectableItemPickup",
      "Collectable Item Pickup",
-     66.24,
-     13.59
+     66.35,
+     13.63
     ],
     [
      "bone_15",
@@ -10892,8 +10892,8 @@
      "aqueduct_04",
      "CollectableItemPickup",
      "Collectable Item Pickup Slab Key",
-     7.57,
-     38.65
+     7.37,
+     38.67
     ],
     [
      "slab_03",
@@ -11276,8 +11276,8 @@
      "dust_shack",
      "CollectableItemPickup",
      "Collectable Item Dustpilo",
-     15.69,
-     5.46
+     15.73,
+     5.29
     ]
    ],
    "class": "ToolItemBasic"
@@ -11508,8 +11508,8 @@
      "aqueduct_05",
      "CollectableItemPickup",
      "Collectable Item Pickup - Tool Metal",
-     327.1,
-     16.35
+     326.85,
+     17.69
     ],
     [
      "bone_07",
@@ -11529,8 +11529,8 @@
      "coral_32",
      "CollectableItemPickup",
      "Collectable Item Pickup - Tool Metal",
-     74.53,
-     9.06
+     74.84,
+     9.64
     ],
     [
      "dock_03",
@@ -11564,15 +11564,15 @@
      "under_19b",
      "CollectableItemPickup",
      "Collectable Item Pickup - Tool Metal",
-     7.59,
-     7.18
+     7.74,
+     8.71
     ],
     [
      "wisp_05",
      "CollectableItemPickup",
      "Collectable Item Pickup - Tool Metal",
-     44.6,
-     59.94
+     45.55,
+     62.05
     ],
     [
      "wisp_06",
@@ -13638,15 +13638,15 @@
     "Ant_05b",
     "Remasker New",
     "bool",
-    105.56,
-    20.16
+    85.9,
+    7.86
    ],
    [
     "Ant_05b",
     "Remasker New (1)",
     "bool",
-    107.63,
-    -5.52
+    111.58,
+    9.92
    ],
    [
     "Ant_05c",
@@ -13883,15 +13883,15 @@
     "Belltown_04",
     "Remasker New",
     "bool",
-    21.11,
-    77.97
+    48.29,
+    69.63
    ],
    [
     "Belltown_04",
     "Remasker New",
     "bool",
-    40.94,
-    63.82
+    67.62,
+    68.34
    ],
    [
     "Belltown_04",
@@ -13904,22 +13904,22 @@
     "Belltown_04",
     "Remasker New (1)",
     "bool",
+    24.27,
+    75.18
+   ],
+   [
+    "Belltown_04",
+    "Remasker New (1)",
+    "bool",
+    29.54,
+    9.91
+   ],
+   [
+    "Belltown_04",
+    "Remasker New (1)",
+    "bool",
     37.1,
     23.42
-   ],
-   [
-    "Belltown_04",
-    "Remasker New (1)",
-    "bool",
-    45.13,
-    72.42
-   ],
-   [
-    "Belltown_04",
-    "Remasker New (1)",
-    "bool",
-    48.16,
-    13.71
    ],
    [
     "Belltown_04",
@@ -14023,8 +14023,8 @@
     "Bone_01",
     "Remasker New",
     "bool",
-    83.05,
-    26.02
+    83.28,
+    27.09
    ],
    [
     "Bone_01",
@@ -14184,15 +14184,15 @@
     "Bone_East_07",
     "Secret Mask New (1)",
     "bool",
-    41.19,
-    124.3
+    42.46,
+    124.39
    ],
    [
     "Bone_East_07",
     "Secret Mask New (2)",
     "bool",
-    30.23,
-    139.67
+    22.37,
+    134.11
    ],
    [
     "Bone_East_08",
@@ -14240,8 +14240,8 @@
     "Bone_East_11",
     "Remasker New Sharp",
     "bool",
-    20.15,
-    119.5
+    19.45,
+    118.22
    ],
    [
     "Bone_East_14",
@@ -14338,8 +14338,8 @@
     "Bonegrave",
     "Remasker New Sharp Ultra",
     "bool",
-    260.9,
-    66.08
+    256.69,
+    77.83
    ],
    [
     "Bonetown",
@@ -14548,15 +14548,15 @@
     "Coral_32",
     "Remasker New Sharp Ultra",
     "bool",
-    131.68,
-    110.23
+    145.48,
+    111.69
    ],
    [
     "Coral_32",
     "Remasker New Sharp Ultra (1)",
     "bool",
-    151.83,
-    106.87
+    125.12,
+    110.0
    ],
    [
     "Coral_32",
@@ -14569,8 +14569,8 @@
     "Coral_35b",
     "Remasker New Sharp Ultra",
     "bool",
-    40.54,
-    9.79
+    40.35,
+    7.01
    ],
    [
     "Coral_35b",
@@ -14583,8 +14583,8 @@
     "Coral_35b",
     "Remasker New Sharp Ultra 2",
     "bool",
-    22.05,
-    78.67
+    -8.16,
+    77.65
    ],
    [
     "Coral_36",
@@ -14611,22 +14611,22 @@
     "Coral_38",
     "Remasker New Sharp Ultra",
     "bool",
-    25.41,
-    75.78
+    25.5,
+    77.34
    ],
    [
     "Coral_38",
     "Remasker New Sharp Ultra",
     "bool",
-    50.89,
-    43.76
+    50.78,
+    45.22
    ],
    [
     "Coral_41",
     "Remasker New",
     "bool",
-    125.35,
-    50.53
+    119.8,
+    59.9
    ],
    [
     "Coral_41",
@@ -14716,7 +14716,7 @@
     "Dock_02",
     "Remasker New",
     "bool",
-    14.91,
+    14.9,
     57.13
    ],
    [
@@ -15115,15 +15115,15 @@
     "Greymoor_22",
     "Remasker New Sharp",
     "bool",
-    67.78,
-    30.67
+    74.88,
+    27.61
    ],
    [
     "Greymoor_22",
     "Remasker New Sharp Ultra",
     "bool",
-    67.56,
-    40.98
+    85.19,
+    27.83
    ],
    [
     "Halfway_01",
@@ -15556,15 +15556,15 @@
     "Peak_01",
     "Remasker New",
     "bool",
-    -8.97,
-    262.46
+    27.97,
+    263.6
    ],
    [
     "Peak_01",
     "Remasker New (1)",
     "bool",
-    20.1,
-    262.19
+    -1.1,
+    263.87
    ],
    [
     "Peak_04d",
@@ -15598,8 +15598,8 @@
     "Peak_07",
     "Remasker New Sharp Ultra",
     "bool",
-    23.79,
-    -6.09
+    6.71,
+    7.6
    ],
    [
     "Peak_07",
@@ -15619,15 +15619,15 @@
     "Room_CrowCourt_02",
     "Remasker New Sharp",
     "bool",
-    12.48,
-    90.81
+    11.01,
+    63.18
    ],
    [
     "Room_CrowCourt_02",
     "Remasker New Sharp (1)",
     "bool",
-    20.99,
-    54.03
+    47.79,
+    71.69
    ],
    [
     "Room_CrowCourt_02",
@@ -15934,8 +15934,8 @@
     "Slab_03",
     "Remasker New Sharp Ultra",
     "bool",
-    4.41,
-    22.01
+    1.44,
+    28.02
    ],
    [
     "Slab_03",
@@ -16109,8 +16109,8 @@
     "Slab_23",
     "Remasker New",
     "bool",
-    -0.23,
-    10.41
+    15.43,
+    3.89
    ],
    [
     "Song_01",
@@ -16487,15 +16487,15 @@
     "Song_Enclave_Tube",
     "Remasker New",
     "bool",
-    20.24,
-    22.23
+    37.2,
+    8.95
    ],
    [
     "Song_Enclave_Tube",
     "Remasker New (1)",
     "bool",
-    18.22,
-    -0.88
+    14.09,
+    10.97
    ],
    [
     "Tube_Hub",
@@ -16613,15 +16613,15 @@
     "Tut_02",
     "Remasker",
     "bool",
-    39.36,
-    12.3
+    3.5,
+    1.64
    ],
    [
     "Tut_02",
     "Remasker (1)",
     "bool",
-    39.36,
-    12.3
+    3.5,
+    1.64
    ],
    [
     "Tut_02",
@@ -17273,15 +17273,15 @@
     "Shellwood_01b",
     "Hornet_cage_rect_lift",
     "bool",
-    37.64,
-    36.2
+    37.13,
+    37.17
    ],
    [
     "Shellwood_01b",
     "Hornet_cage_rect_lift",
     "int",
-    37.64,
-    36.2
+    37.13,
+    37.17
    ],
    [
     "Shellwood_02",
@@ -17398,7 +17398,7 @@
    [
     "Bone_East_18b",
     "Collectable Item Pickup",
-    107.45,
+    107.47,
     19.25
    ]
   ],
@@ -17414,8 +17414,8 @@
    [
     "Bone_East_08_boss_beastfly",
     "Collectable Item Pickup",
-    80.94,
-    7.07
+    81.45,
+    6.35
    ]
   ],
   "Bell Bind": [
@@ -18318,8 +18318,8 @@
    [
     "Bone_15",
     "Collectable Item Pickup",
-    66.24,
-    13.59
+    66.35,
+    13.63
    ],
    [
     "Bone_15",
@@ -18386,16 +18386,16 @@
    [
     "Dust_Shack",
     "Collectable Item Dustpilo",
-    15.69,
-    5.46
+    15.73,
+    5.29
    ]
   ],
   "Tool Metal": [
    [
     "Aqueduct_05",
     "Collectable Item Pickup - Tool Metal",
-    327.1,
-    16.35
+    326.85,
+    17.69
    ],
    [
     "Bone_07",
@@ -18406,8 +18406,8 @@
    [
     "Coral_32",
     "Collectable Item Pickup - Tool Metal",
-    74.53,
-    9.06
+    74.84,
+    9.64
    ],
    [
     "Dock_03",
@@ -18418,14 +18418,14 @@
    [
     "Under_19b",
     "Collectable Item Pickup - Tool Metal",
-    7.59,
-    7.18
+    7.74,
+    8.71
    ],
    [
     "Wisp_05",
     "Collectable Item Pickup - Tool Metal",
-    44.6,
-    59.94
+    45.55,
+    62.05
    ]
   ],
   "Tri Pin": [
@@ -18658,8 +18658,8 @@
    [
     "bone_10",
     "Caravan Troupe Leader Bone NPC",
-    37.72,
-    16.85
+    38.39,
+    16.94
    ]
   ],
   "Caravan Troupe Leader Festival Intro": [
@@ -18852,8 +18852,8 @@
    [
     "ant_04_mid",
     "Mapper NPC",
-    198.81,
-    15.24
+    193.49,
+    13.59
    ],
    [
     "belltown",
@@ -18974,8 +18974,8 @@
    [
     "greymoor_08",
     "Mapper StandGuard NPC",
-    60.2,
-    -12.51
+    30.51,
+    5.77
    ],
    [
     "shellwood_01",
@@ -19104,8 +19104,8 @@
    [
     "ant_04_mid",
     "Shakra Fighter",
-    198.82,
-    15.28
+    193.5,
+    13.63
    ],
    [
     "hang_04_boss",
@@ -19202,12 +19202,12 @@
   },
   "ant_04": {
    "ant_shell_shard_string (1)": [
-    325.97,
-    101.69
+    335.24,
+    20.97
    ],
    "ant_shell_shard_string (2)": [
-    323.8,
-    101.23
+    333.02,
+    21.04
    ]
   },
   "ant_04_left": {
@@ -19230,12 +19230,12 @@
   },
   "ant_05b": {
    "Black_Thread_Core": [
-    46.76,
-    15.23
+    45.44,
+    16.06
    ],
    "One Way Wall": [
-    103.68,
-    3.36
+    102.7,
+    5.97
    ]
   },
   "ant_20": {
@@ -19358,8 +19358,8 @@
   },
   "aqueduct_05": {
    "Collectable Item Pickup - Tool Metal": [
-    327.1,
-    16.35
+    326.85,
+    17.69
    ],
    "Shell Shard Fossil Dustpen Short": [
     254.16,
@@ -19404,8 +19404,8 @@
   },
   "arborium_04": {
    "moss_berry_fruit": [
-    69.62,
-    14.54
+    71.21,
+    15.93
    ]
   },
   "arborium_05": {
@@ -19482,16 +19482,16 @@
   },
   "bellshrine_coral": {
    "Coral Crust Wall Sphere (2)": [
-    18.01,
-    22.4
+    17.44,
+    23.03
    ],
    "Coral Crust Wall Sphere (3)": [
-    15.1,
-    21.91
+    14.71,
+    21.9
    ],
    "Coral Crust Wall Sphere (4)": [
-    19.6,
-    14.67
+    20.73,
+    15.86
    ]
   },
   "belltown": {
@@ -19572,8 +19572,8 @@
   },
   "bellway_01": {
    "Act3_Bellway_01_Breakable_wall": [
-    34.28,
-    29.6
+    33.7,
+    29.27
    ]
   },
   "bellway_02": {
@@ -19678,14 +19678,14 @@
   },
   "bone_02": {
    "Black_Thread_Core": [
-    17.84,
-    37.6
+    8.15,
+    40.02
    ]
   },
   "bone_04": {
    "Black_Thread_Core": [
-    64.73,
-    15.59
+    58.92,
+    4.85
    ],
    "Geo Rock 3": [
     205.03,
@@ -19708,8 +19708,8 @@
   },
   "bone_07": {
    "Black_Thread_Core": [
-    54.51,
-    65.94
+    53.53,
+    66.52
    ],
    "Collectable Item Pickup - Tool Metal": [
     39.51,
@@ -19760,8 +19760,8 @@
   },
   "bone_09": {
    "Black_Thread_Core": [
-    134.57,
-    31.79
+    133.59,
+    36.55
    ]
   },
   "bone_10": {
@@ -19896,14 +19896,14 @@
   },
   "bone_east_04b": {
    "Breakable Wall (1)": [
-    12.03,
-    65.77
+    11.59,
+    65.92
    ]
   },
   "bone_east_05": {
    "Black_Thread_Core": [
-    145.62,
-    97.25
+    150.08,
+    7.08
    ]
   },
   "bone_east_07": {
@@ -20004,12 +20004,12 @@
   },
   "bone_east_14b": {
    "rosary_string_small": [
-    250.63,
-    57.27
+    249.54,
+    58.82
    ],
    "rosary_string_small_half": [
-    251.54,
-    58.01
+    250.43,
+    59.59
    ]
   },
   "bone_east_15": {
@@ -20290,8 +20290,8 @@
   },
   "coral_11": {
    "Black_Thread_Core": [
-    52.08,
-    25.1
+    51.47,
+    21.75
    ]
   },
   "coral_12": {
@@ -20380,8 +20380,8 @@
     70.29
    ],
    "Collectable Item Pickup - Tool Metal": [
-    74.53,
-    9.06
+    74.84,
+    9.64
    ],
    "Coral Crust Wall Tall": [
     138.67,
@@ -20852,24 +20852,24 @@
   },
   "dock_06_church": {
    "City Shard Chest": [
-    7.44,
-    21.67
+    7.27,
+    21.89
    ],
    "rosary_string_small": [
     40.65,
     29.8
    ],
    "rosary_string_small (1)": [
-    27.06,
-    28.75
+    26.66,
+    29.58
    ],
    "rosary_string_small_half": [
     41.89,
     30.57
    ],
    "rosary_string_small_half (1)": [
-    29.54,
-    30.95
+    29.08,
+    31.85
    ]
   },
   "dock_08": {
@@ -20926,12 +20926,12 @@
     7.82
    ],
    "rosary_string_small_half": [
-    23.17,
-    73.18
+    22.49,
+    72.06
    ],
    "rosary_string_small_half (1)": [
-    23.92,
-    73.58
+    23.25,
+    72.46
    ]
   },
   "dust_03": {
@@ -21354,8 +21354,8 @@
   },
   "hang_13": {
    "Black_Thread_Core": [
-    46.4,
-    43.87
+    46.06,
+    44.23
    ]
   },
   "hang_14": {
@@ -21556,20 +21556,20 @@
   },
   "mosstown_02": {
    "Black_Thread_Core": [
-    158.51,
-    31.0
+    154.37,
+    57.77
    ],
    "Breakable Wall": [
     7.8,
     33.61
    ],
    "rosary_string_small": [
-    158.54,
-    32.18
+    154.2,
+    58.94
    ],
    "rosary_string_small_half": [
-    157.72,
-    33.43
+    153.17,
+    60.03
    ]
   },
   "mosstown_03": {
@@ -21900,8 +21900,8 @@
   },
   "shellwood_01b": {
    "Black_Thread_Core": [
-    33.76,
-    12.14
+    34.01,
+    13.0
    ]
   },
   "shellwood_02": {
@@ -21994,8 +21994,8 @@
   },
   "shellwood_15": {
    "Black_Thread_Core": [
-    80.6,
-    28.59
+    57.04,
+    11.48
    ],
    "Shellwood Twig Wall": [
     27.27,
@@ -22662,8 +22662,8 @@
   },
   "under_19b": {
    "Collectable Item Pickup - Tool Metal": [
-    7.59,
-    7.18
+    7.74,
+    8.71
    ]
   },
   "under_20": {
@@ -22680,8 +22680,8 @@
   },
   "under_27": {
    "Black_Thread_Core": [
-    41.63,
-    51.38
+    41.11,
+    47.32
    ],
    "Shellwood Twig Wall": [
     68.19,
@@ -22742,8 +22742,8 @@
   },
   "weave_03": {
    "Black_Thread_Core": [
-    160.26,
-    -40.82
+    151.24,
+    30.47
    ],
    "moss_berry_fruit": [
     164.05,
@@ -22786,8 +22786,8 @@
     55.08
    ],
    "Collectable Item Pickup - Tool Metal": [
-    44.6,
-    59.94
+    45.55,
+    62.05
    ]
   },
   "wisp_07": {
@@ -22839,6 +22839,7 @@
    ]
   }
  },
+ "patch": "1.0.30000",
  "pd": {
   "BelltownHouseUnlocked": [
    [
@@ -23033,8 +23034,8 @@
     "bone_east_07",
     "PlayMakerFSM",
     "Updraft After",
-    6.14,
-    100.93
+    7.34,
+    99.73
    ],
    [
     "bone_east_07",
@@ -23458,8 +23459,8 @@
     "bone_east_10",
     "PlayMakerFSM",
     "Pilgrim NPC Scene",
-    102.99,
-    49.26
+    22.28,
+    -32.01
    ],
    [
     "bone_east_10_church",
@@ -23705,8 +23706,8 @@
     "arborium_01",
     "EnemyDeathEffectsRegular",
     "Arborium Keeper (2)",
-    12.99,
-    111.49
+    11.49,
+    110.45
    ],
    [
     "arborium_03",
@@ -23728,15 +23729,15 @@
     "aspid_01",
     "EnemyDeathEffectsRegular",
     "Aspid Collector (3)",
-    18.97,
-    13.93
+    27.45,
+    33.74
    ],
    [
     "bone_01b",
     "EnemyDeathEffectsRegular",
     "Aspid Collector",
-    28.38,
-    40.81
+    17.24,
+    65.41
    ],
    [
     "bone_05b",
@@ -23777,8 +23778,8 @@
     "mosstown_01",
     "EnemyDeathEffectsRegular",
     "Aspid Collector",
-    109.04,
-    12.34
+    108.73,
+    13.73
    ],
    [
     "mosstown_02",
@@ -23846,36 +23847,36 @@
     "ant_05b",
     "PlayMakerFSM",
     "Black_Thread_Core",
-    46.76,
-    15.23
+    45.44,
+    16.06
    ],
    [
     "bone_02",
     "PlayMakerFSM",
     "Black_Thread_Core",
-    17.84,
-    37.6
+    8.15,
+    40.02
    ],
    [
     "bone_04",
     "PlayMakerFSM",
     "Black_Thread_Core",
-    64.73,
-    15.59
+    58.92,
+    4.85
    ],
    [
     "bone_07",
     "PlayMakerFSM",
     "Black_Thread_Core",
-    54.51,
-    65.94
+    53.53,
+    66.52
    ],
    [
     "bone_09",
     "PlayMakerFSM",
     "Black_Thread_Core",
-    134.57,
-    31.79
+    133.59,
+    36.55
    ],
    [
     "bone_east_02b",
@@ -23895,8 +23896,8 @@
     "bone_east_05",
     "PlayMakerFSM",
     "Black_Thread_Core",
-    145.62,
-    97.25
+    150.08,
+    7.08
    ],
    [
     "bone_east_17",
@@ -23923,8 +23924,8 @@
     "coral_11",
     "PlayMakerFSM",
     "Black_Thread_Core",
-    52.08,
-    25.1
+    51.47,
+    21.75
    ],
    [
     "coral_12",
@@ -24007,8 +24008,8 @@
     "hang_13",
     "PlayMakerFSM",
     "Black_Thread_Core",
-    46.4,
-    43.87
+    46.06,
+    44.23
    ],
    [
     "library_04",
@@ -24028,8 +24029,8 @@
     "mosstown_02",
     "PlayMakerFSM",
     "Black_Thread_Core",
-    158.51,
-    31.0
+    154.37,
+    57.77
    ],
    [
     "shadow_05",
@@ -24042,8 +24043,8 @@
     "shellwood_01b",
     "PlayMakerFSM",
     "Black_Thread_Core",
-    33.76,
-    12.14
+    34.01,
+    13.0
    ],
    [
     "shellwood_02",
@@ -24063,8 +24064,8 @@
     "shellwood_15",
     "PlayMakerFSM",
     "Black_Thread_Core",
-    80.6,
-    28.59
+    57.04,
+    11.48
    ],
    [
     "shellwood_26",
@@ -24140,15 +24141,15 @@
     "under_27",
     "PlayMakerFSM",
     "Black_Thread_Core",
-    41.63,
-    51.38
+    41.11,
+    47.32
    ],
    [
     "weave_03",
     "PlayMakerFSM",
     "Black_Thread_Core",
-    160.26,
-    -40.82
+    151.24,
+    30.47
    ]
   ],
   "NAME_BLADE_SPIDER": [
@@ -24408,8 +24409,8 @@
     "bone_03",
     "EnemyDeathEffectsRegular",
     "Bone Circler (4)",
-    44.22,
-    85.31
+    15.25,
+    106.33
    ],
    [
     "bone_06",
@@ -24450,15 +24451,15 @@
     "bone_east_03",
     "EnemyDeathEffectsRegular",
     "Bone Circler (2)",
-    178.2,
-    77.54
+    163.54,
+    27.84
    ],
    [
     "bone_east_05",
     "EnemyDeathEffectsRegular",
     "Bone Circler (2)",
-    171.62,
-    40.6
+    153.57,
+    22.73
    ],
    [
     "bone_east_09",
@@ -24478,8 +24479,8 @@
     "bone_east_11",
     "EnemyDeathEffectsRegular",
     "Bone Circler (6)",
-    -75.47,
-    170.54
+    13.7,
+    166.32
    ],
    [
     "dock_02",
@@ -24529,15 +24530,15 @@
     "bone_east_03",
     "EnemyDeathEffectsRegular",
     "Bone Circler Vicious (1)",
-    132.64,
-    57.82
+    126.01,
+    22.71
    ],
    [
     "bone_east_07",
     "EnemyDeathEffectsRegular",
     "Bone Circler Vicious",
-    37.79,
-    74.2
+    18.58,
+    15.26
    ],
    [
     "bone_east_09",
@@ -24557,8 +24558,8 @@
     "bone_east_11",
     "EnemyDeathEffectsRegular",
     "Bone Circler Vicious (1)",
-    -84.19,
-    184.14
+    19.95,
+    181.22
    ],
    [
     "bone_east_15",
@@ -24659,8 +24660,8 @@
     "bone_east_03",
     "EnemyDeathEffectsRegular",
     "Bone Flyer (1)",
-    187.4,
-    81.61
+    185.41,
+    16.77
    ],
    [
     "bone_east_15",
@@ -24754,8 +24755,8 @@
     "bone_09",
     "EnemyDeathEffectsRegular",
     "Bone Goomba (2)",
-    64.99,
-    2.53
+    64.95,
+    5.13
    ],
    [
     "bone_14",
@@ -24835,8 +24836,8 @@
     "bone_03",
     "EnemyDeathEffectsRegular",
     "Bone Goomba Large (1)",
-    45.89,
-    94.67
+    14.55,
+    115.81
    ],
    [
     "bone_06",
@@ -24870,8 +24871,8 @@
     "bone_east_03",
     "EnemyDeathEffectsRegular",
     "Bone Goomba Large",
-    137.58,
-    52.67
+    127.81,
+    15.8
    ],
    [
     "dock_16",
@@ -24886,8 +24887,8 @@
     "bone_east_03",
     "EnemyDeathEffectsRegular",
     "Bone Hopper Simple",
-    83.84,
-    13.38
+    61.73,
+    7.72
    ],
    [
     "bone_east_18",
@@ -24925,8 +24926,8 @@
     "ant_04",
     "EnemyDeathEffectsRegular",
     "Bone Hunter",
-    281.76,
-    87.33
+    288.88,
+    17.53
    ],
    [
     "ant_04_left",
@@ -24939,8 +24940,8 @@
     "ant_04_mid",
     "EnemyDeathEffectsRegular",
     "Bone Hunter",
-    206.03,
-    14.93
+    200.71,
+    13.28
    ],
    [
     "ant_08",
@@ -24960,8 +24961,8 @@
     "bone_east_02",
     "EnemyDeathEffectsRegular",
     "Bone Hunter",
-    190.16,
-    -44.12
+    142.84,
+    10.48
    ],
    [
     "bone_east_02b",
@@ -24974,15 +24975,15 @@
     "bone_east_05",
     "EnemyDeathEffectsRegular",
     "Bone Hunter (1)",
-    129.42,
-    92.11
+    133.43,
+    10.5
    ],
    [
     "bone_east_16",
     "EnemyDeathEffectsRegular",
     "Bone Hunter",
-    16.95,
-    16.06
+    16.48,
+    17.45
    ],
    [
     "bone_east_17",
@@ -25025,29 +25026,29 @@
     "ant_04",
     "EnemyDeathEffectsRegular",
     "Bone Hunter Buzzer (1)",
-    310.15,
-    86.49
+    316.26,
+    9.96
    ],
    [
     "ant_04_left",
     "EnemyDeathEffectsRegular",
     "Bone Hunter Buzzer (3)",
-    104.3,
-    43.82
+    106.16,
+    17.44
    ],
    [
     "ant_04_mid",
     "EnemyDeathEffectsRegular",
     "Bone Hunter Buzzer (2)",
-    190.43,
-    26.25
+    185.11,
+    24.6
    ],
    [
     "ant_05b",
     "EnemyDeathEffectsRegular",
     "Bone Hunter Buzzer",
-    44.81,
-    18.8
+    43.97,
+    18.2
    ],
    [
     "ant_08",
@@ -25060,22 +25061,22 @@
     "ant_14",
     "EnemyDeathEffectsRegular",
     "Bone Hunter Buzzer (4)",
-    35.52,
-    143.57
+    11.42,
+    83.68
    ],
    [
     "bone_east_04",
     "EnemyDeathEffectsRegular",
     "Bone Hunter Buzzer (3)",
-    8.42,
-    150.47
+    43.27,
+    92.18
    ],
    [
     "bone_east_04b",
     "EnemyDeathEffectsRegular",
     "Bone Hunter Buzzer (7)",
-    19.13,
-    55.74
+    19.01,
+    56.12
    ]
   ],
   "NAME_BONE_HUNTER_CHIEF": [
@@ -25092,29 +25093,29 @@
     "ant_04",
     "EnemyDeathEffectsRegular",
     "Bone Hunter Child",
-    292.09,
-    78.74
+    296.87,
+    6.73
    ],
    [
     "ant_04_left",
     "EnemyDeathEffectsRegular",
     "Bone Hunter Child",
-    108.11,
-    43.03
+    109.68,
+    15.76
    ],
    [
     "ant_04_mid",
     "EnemyDeathEffectsRegular",
     "Bone Hunter Child (Return)",
-    196.88,
-    14.08
+    191.56,
+    12.43
    ],
    [
     "ant_05b",
     "EnemyDeathEffectsRegular",
     "Bone Hunter Child (3)",
-    49.23,
-    8.11
+    48.39,
+    7.51
    ],
    [
     "ant_08",
@@ -25127,8 +25128,8 @@
     "bone_east_02",
     "EnemyDeathEffectsRegular",
     "Bone Hunter Child",
-    184.71,
-    -44.94
+    137.39,
+    9.66
    ],
    [
     "bone_east_02b",
@@ -25141,8 +25142,8 @@
     "bone_east_03",
     "EnemyDeathEffectsRegular",
     "Bone Hunter Child",
-    190.52,
-    75.04
+    175.86,
+    25.34
    ],
    [
     "bone_east_04c",
@@ -25155,8 +25156,8 @@
     "bone_east_05",
     "EnemyDeathEffectsRegular",
     "Bone Hunter Child",
-    148.96,
-    27.55
+    130.91,
+    9.68
    ],
    [
     "bone_east_09b",
@@ -25220,15 +25221,15 @@
     "ant_04_mid",
     "EnemyDeathEffectsRegular",
     "Bone Hunter Fly (3)",
-    204.69,
-    22.01
+    199.37,
+    20.36
    ],
    [
     "ant_05b",
     "EnemyDeathEffectsRegular",
     "Bone Hunter Fly",
-    39.46,
-    13.28
+    42.66,
+    23.08
    ],
    [
     "ant_08",
@@ -25276,8 +25277,8 @@
     "bone_east_05",
     "EnemyDeathEffectsRegular",
     "Bone Hunter Fly",
-    115.72,
-    92.73
+    121.77,
+    17.72
    ],
    [
     "bone_east_17",
@@ -25343,15 +25344,15 @@
     "ant_03",
     "EnemyDeathEffectsRegular",
     "Bone Hunter Tiny",
-    22.36,
-    21.96
+    22.31,
+    20.81
    ],
    [
     "ant_04",
     "EnemyDeathEffectsRegular",
     "Bone Hunter Tiny (1)",
-    312.52,
-    96.19
+    320.86,
+    18.82
    ],
    [
     "ant_04_left",
@@ -25364,8 +25365,8 @@
     "ant_05b",
     "EnemyDeathEffectsRegular",
     "Bone Hunter Tiny",
-    57.3,
-    7.4
+    56.46,
+    6.8
    ],
    [
     "ant_08",
@@ -25378,8 +25379,8 @@
     "ant_14",
     "EnemyDeathEffectsRegular",
     "Bone Hunter Tiny (2)",
-    75.99,
-    94.91
+    4.99,
+    20.71
    ],
    [
     "bone_east_04",
@@ -25410,8 +25411,8 @@
     "tut_01b",
     "EnemyDeathEffectsRegular",
     "Bone Roller (4)",
-    155.72,
-    -1.28
+    152.54,
+    46.54
    ],
    [
     "weave_03",
@@ -25456,15 +25457,15 @@
     "tut_01",
     "EnemyDeathEffectsRegular",
     "Bone Thumper",
-    101.23,
-    17.29
+    101.12,
+    17.42
    ],
    [
     "tut_01b",
     "EnemyDeathEffectsRegular",
     "Bone Thumper",
-    119.85,
-    10.61
+    115.41,
+    39.5
    ],
    [
     "weave_03",
@@ -25838,8 +25839,8 @@
     "coral_11",
     "EnemyDeathEffectsRegular",
     "Driller B",
-    65.38,
-    36.21
+    68.93,
+    31.76
    ],
    [
     "coral_27",
@@ -25868,8 +25869,8 @@
     "coral_11",
     "EnemyDeathEffectsRegular",
     "Coral Conch Shooter (2)",
-    140.07,
-    13.38
+    139.78,
+    12.79
    ],
    [
     "coral_12",
@@ -25905,8 +25906,8 @@
     "coral_11",
     "EnemyDeathEffectsRegular",
     "Coral Conch Shooter Heavy",
-    62.27,
-    25.43
+    61.63,
+    21.0
    ],
    [
     "coral_23",
@@ -26147,8 +26148,8 @@
     "greymoor_02",
     "EnemyDeathEffectsRegular",
     "Crow (2)",
-    -11.27,
-    135.67
+    55.25,
+    126.75
    ],
    [
     "greymoor_03",
@@ -26198,8 +26199,8 @@
     "greymoor_02",
     "EnemyDeathEffectsRegular",
     "Crowman",
-    -11.49,
-    133.02
+    52.86,
+    125.6
    ],
    [
     "greymoor_15b",
@@ -26221,8 +26222,8 @@
     "greymoor_02",
     "EnemyDeathEffectsRegular",
     "Crowman Dagger (1)",
-    9.01,
-    116.81
+    49.26,
+    99.71
    ],
    [
     "greymoor_15b",
@@ -26322,15 +26323,15 @@
     "peak_02",
     "EnemyDeathEffectsRegular",
     "Crystal Drifter (12)",
-    29.99,
-    34.4
+    29.23,
+    35.93
    ],
    [
     "peak_02",
     "PlayMakerFSM",
     "Crystal Drifter (12)",
-    29.99,
-    34.4
+    29.23,
+    35.93
    ],
    [
     "peak_04",
@@ -26470,8 +26471,8 @@
     "bone_east_01",
     "EnemyDeathEffectsRegular",
     "Dock Flyer",
-    16.27,
-    40.15
+    16.25,
+    39.7
    ],
    [
     "bone_east_13",
@@ -26512,15 +26513,15 @@
     "dock_04",
     "EnemyDeathEffectsRegular",
     "Dock Flyer (1)",
-    18.41,
-    18.51
+    18.63,
+    18.61
    ],
    [
     "dock_06_church",
     "EnemyDeathEffectsRegular",
     "Dock Flyer",
-    29.92,
-    20.7
+    29.77,
+    21.62
    ],
    [
     "dock_08",
@@ -26558,15 +26559,15 @@
     "bone_09",
     "EnemyDeathEffectsRegular",
     "Dock Worker (1)",
-    144.71,
-    3.03
+    144.62,
+    8.12
    ],
    [
     "bone_east_01",
     "EnemyDeathEffectsRegular",
     "Dock Worker (1)",
-    25.67,
-    8.09
+    26.65,
+    7.94
    ],
    [
     "bone_east_03",
@@ -26579,8 +26580,8 @@
     "bone_east_05",
     "EnemyDeathEffectsRegular",
     "Dock Worker",
-    42.11,
-    40.23
+    31.91,
+    7.78
    ],
    [
     "dock_02",
@@ -26607,29 +26608,29 @@
     "dock_03c",
     "EnemyDeathEffectsRegular",
     "Dock Worker (4)",
-    24.31,
-    8.38
+    24.62,
+    7.84
    ],
    [
     "dock_04",
     "EnemyDeathEffectsRegular",
     "Dock Worker",
-    6.37,
-    49.05
+    5.64,
+    48.76
    ],
    [
     "dock_05",
     "EnemyDeathEffectsRegular",
     "Dock Worker (1)",
-    22.82,
-    3.48
+    23.04,
+    3.66
    ],
    [
     "dock_06_church",
     "EnemyDeathEffectsRegular",
     "Dock Worker (1)",
-    9.85,
-    21.49
+    9.69,
+    21.78
    ],
    [
     "dock_08",
@@ -26681,8 +26682,8 @@
     "dust_05",
     "EnemyDeathEffectsRegular",
     "Dustroach (1)",
-    185.85,
-    70.22
+    180.85,
+    3.2
    ],
    [
     "dust_11",
@@ -26713,15 +26714,15 @@
     "greymoor_03",
     "EnemyDeathEffectsRegular",
     "Farmer Catcher (4)",
-    -12.85,
-    124.11
+    65.29,
+    103.61
    ],
    [
     "greymoor_04",
     "EnemyDeathEffectsRegular",
     "Farmer Catcher (2)",
-    15.53,
-    14.08
+    27.88,
+    12.44
    ],
    [
     "greymoor_05",
@@ -26734,8 +26735,8 @@
     "greymoor_07",
     "EnemyDeathEffectsRegular",
     "Farmer Catcher (1)",
-    24.26,
-    89.5
+    34.15,
+    64.5
    ],
    [
     "greymoor_20c",
@@ -26757,8 +26758,8 @@
     "greymoor_04",
     "EnemyDeathEffectsRegular",
     "Farmer Centipede (1)",
-    0.8,
-    14.96
+    13.15,
+    13.32
    ],
    [
     "greymoor_05",
@@ -26808,8 +26809,8 @@
     "greymoor_07",
     "EnemyDeathEffectsRegular",
     "Farmer Scissors (2)",
-    37.55,
-    46.19
+    26.02,
+    19.92
    ],
    [
     "greymoor_20c",
@@ -26840,22 +26841,22 @@
     "bone_east_02",
     "EnemyDeathEffectsRegular",
     "Fields Flock Flyer (18)",
-    89.18,
-    87.75
+    83.1,
+    12.14
    ],
    [
     "bone_east_02b",
     "EnemyDeathEffectsRegular",
     "Fields Flock Flyer",
-    265.09,
-    10.85
+    265.24,
+    12.56
    ],
    [
     "bone_east_07",
     "EnemyDeathEffectsRegular",
     "Fields Flock Flyer (21)",
-    -84.19,
-    175.2
+    12.03,
+    173.49
    ],
    [
     "bone_east_14",
@@ -26882,8 +26883,8 @@
     "bone_east_17",
     "EnemyDeathEffectsRegular",
     "Fields Flock Flyer (4)",
-    82.86,
-    146.61
+    54.34,
+    61.14
    ],
    [
     "bone_east_24",
@@ -26898,8 +26899,8 @@
     "bone_east_02",
     "EnemyDeathEffectsRegular",
     "Fields Flyer",
-    128.89,
-    138.21
+    147.2,
+    15.85
    ],
    [
     "bone_east_02b",
@@ -26926,8 +26927,8 @@
     "bone_east_17",
     "EnemyDeathEffectsRegular",
     "Fields Flyer (3)",
-    54.12,
-    140.79
+    33.25,
+    81.51
    ],
    [
     "bone_east_18b",
@@ -26963,15 +26964,15 @@
     "bone_east_02",
     "EnemyDeathEffectsRegular",
     "Fields Goomba",
-    87.82,
-    100.56
+    91.79,
+    21.65
    ],
    [
     "bone_east_02b",
     "EnemyDeathEffectsRegular",
     "Fields Goomba (4)",
-    295.06,
-    24.05
+    294.78,
+    26.68
    ],
    [
     "bone_east_07",
@@ -27190,29 +27191,29 @@
     "bone_09",
     "PlayMakerFSM",
     "Garmond Fighter",
-    127.74,
-    11.09
+    130.26,
+    9.98
    ],
    [
     "bone_11",
     "PlayMakerFSM",
     "Garmond Fighter",
-    78.84,
-    21.36
+    78.9,
+    19.34
    ],
    [
     "bone_east_02",
     "PlayMakerFSM",
     "Garmond Fighter",
-    149.07,
-    -37.72
+    101.75,
+    16.88
    ],
    [
     "bone_east_05",
     "PlayMakerFSM",
     "Garmond Fighter",
-    110.8,
-    -7.23
+    127.93,
+    10.96
    ],
    [
     "bone_east_14",
@@ -27232,8 +27233,8 @@
     "dust_05",
     "PlayMakerFSM",
     "Garmond Fighter",
-    343.42,
-    -20.88
+    304.63,
+    14.22
    ],
    [
     "greymoor_05",
@@ -27347,8 +27348,8 @@
     "clover_10_web",
     "EnemyDeathEffectsRegular",
     "Grasshopper Child",
-    46.71,
-    32.34
+    46.4,
+    32.71
    ],
    [
     "clover_11",
@@ -28428,8 +28429,8 @@
     "greymoor_02",
     "EnemyDeathEffectsRegular",
     "Mite (1)",
-    -24.36,
-    113.95
+    29.9,
+    127.04
    ],
    [
     "greymoor_03",
@@ -28470,8 +28471,8 @@
     "greymoor_13",
     "EnemyDeathEffectsRegular",
     "Mite",
-    94.62,
-    10.87
+    95.62,
+    13.09
    ],
    [
     "greymoor_15",
@@ -28542,8 +28543,8 @@
     "greymoor_07",
     "EnemyDeathEffectsRegular",
     "Mitefly",
-    36.57,
-    94.87
+    47.56,
+    63.6
    ],
    [
     "greymoor_11",
@@ -28556,8 +28557,8 @@
     "greymoor_12",
     "EnemyDeathEffectsRegular",
     "Mitefly",
-    113.68,
-    7.63
+    113.45,
+    10.43
    ],
    [
     "greymoor_16",
@@ -28763,8 +28764,8 @@
     "tut_01b",
     "EnemyDeathEffectsRegular",
     "MossBone Crawler (2)",
-    88.66,
-    36.27
+    75.68,
+    46.78
    ],
    [
     "tut_02",
@@ -28823,8 +28824,8 @@
     "tut_01b",
     "EnemyDeathEffectsRegular",
     "MossBone Fly (4)",
-    110.57,
-    20.37
+    102.56,
+    43.53
    ],
    [
     "tut_02",
@@ -28846,8 +28847,8 @@
     "tut_02",
     "EnemyDeathEffectsRegular",
     "Mossbone Mother Ambient",
-    128.29,
-    37.49
+    127.95,
+    37.75
    ],
    [
     "tut_03",
@@ -28992,8 +28993,8 @@
     "greymoor_13",
     "EnemyDeathEffectsRegular",
     "Pilgrim 01 (4)",
-    38.11,
-    4.88
+    39.32,
+    5.34
    ],
    [
     "mosstown_01",
@@ -29006,8 +29007,8 @@
     "mosstown_02",
     "EnemyDeathEffectsRegular",
     "Pilgrim 01 (3)",
-    92.78,
-    19.11
+    91.66,
+    34.76
    ],
    [
     "shellgrave",
@@ -29078,8 +29079,8 @@
     "song_11",
     "EnemyDeathEffectsRegular",
     "Pilgrim 01 Song (1)",
-    14.26,
-    107.69
+    10.48,
+    103.49
    ],
    [
     "song_12",
@@ -29115,8 +29116,8 @@
     "bone_east_10",
     "EnemyDeathEffectsRegular",
     "Pilgrim 02 (Unique female)",
-    139.88,
-    85.76
+    59.17,
+    4.49
    ],
    [
     "bone_east_14",
@@ -29129,8 +29130,8 @@
     "bone_east_14b",
     "EnemyDeathEffectsRegular",
     "Pilgrim 02",
-    241.57,
-    51.09
+    240.68,
+    52.36
    ],
    [
     "chapel_wanderer",
@@ -29280,8 +29281,8 @@
     "mosstown_02",
     "EnemyDeathEffectsRegular",
     "Pilgrim 03 (1)",
-    149.82,
-    29.79
+    146.01,
+    55.08
    ],
    [
     "shellgrave",
@@ -29468,8 +29469,8 @@
     "greymoor_08",
     "EnemyDeathEffectsRegular",
     "Pilgrim 04",
-    68.87,
-    -13.82
+    39.18,
+    4.46
    ],
    [
     "shellwood_01",
@@ -29482,8 +29483,8 @@
     "shellwood_04b",
     "EnemyDeathEffectsRegular",
     "Pilgrim 04",
-    78.38,
-    74.22
+    84.13,
+    6.7
    ]
   ],
   "NAME_PILGRIM_04_SONG": [
@@ -29584,8 +29585,8 @@
     "greymoor_08",
     "EnemyDeathEffectsRegular",
     "Pilgrim 05",
-    69.06,
-    -13.85
+    39.37,
+    4.43
    ],
    [
     "shellwood_01",
@@ -29614,15 +29615,15 @@
     "greymoor_13",
     "EnemyDeathEffectsRegular",
     "Pilgrim Bellthrower Fly",
-    67.98,
-    11.13
+    68.98,
+    12.52
    ],
    [
     "shellwood_04c",
     "EnemyDeathEffectsRegular",
     "Pilgrim Bellthrower Fly (1)",
-    19.93,
-    38.62
+    8.93,
+    23.58
    ]
   ],
   "NAME_PILGRIM_BELL_THROWER": [
@@ -29644,8 +29645,8 @@
     "greymoor_13",
     "EnemyDeathEffectsRegular",
     "Pilgrim BellThrower (1)",
-    31.05,
-    4.92
+    32.26,
+    5.16
    ],
    [
     "shellgrave",
@@ -29674,8 +29675,8 @@
     "shellwood_04b",
     "EnemyDeathEffectsRegular",
     "Pilgrim Fisher Enemy",
-    115.85,
-    -8.44
+    110.72,
+    7.05
    ]
   ],
   "NAME_PILGRIM_FLY": [
@@ -29746,15 +29747,15 @@
     "greymoor_08",
     "EnemyDeathEffectsRegular",
     "Pilgrim Fly (2)",
-    67.04,
-    -9.85
+    37.35,
+    8.43
    ],
    [
     "shellwood_04c",
     "EnemyDeathEffectsRegular",
     "Pilgrim Fly (1)",
-    35.1,
-    50.05
+    17.42,
+    40.57
    ]
   ],
   "NAME_PILGRIM_HIKER": [
@@ -29813,15 +29814,15 @@
     "mosstown_01",
     "EnemyDeathEffectsRegular",
     "Pilgrim Moss Spitter",
-    92.39,
-    3.53
+    92.36,
+    4.4
    ],
    [
     "mosstown_02",
     "EnemyDeathEffectsRegular",
     "Pilgrim Moss Spitter (2)",
-    147.15,
-    16.38
+    145.69,
+    41.41
    ]
   ],
   "NAME_PILGRIM_STAFFWIELDER": [
@@ -29857,8 +29858,8 @@
     "greymoor_13",
     "EnemyDeathEffectsRegular",
     "Pilgrim StaffWielder",
-    34.71,
-    6.24
+    35.88,
+    6.59
    ],
    [
     "shellgrave",
@@ -30067,15 +30068,15 @@
     "greymoor_04",
     "EnemyDeathEffectsRegular",
     "Roachfeeder Short",
-    0.25,
-    19.54
+    12.6,
+    17.9
    ],
    [
     "greymoor_07",
     "EnemyDeathEffectsRegular",
     "Roachfeeder Short",
-    48.58,
-    15.25
+    47.21,
+    12.47
    ],
    [
     "greymoor_11",
@@ -30088,8 +30089,8 @@
     "greymoor_12",
     "EnemyDeathEffectsRegular",
     "Roachfeeder Short (1)",
-    94.7,
-    21.37
+    94.05,
+    23.57
    ]
   ],
   "NAME_ROACHFEEDER_TALL": [
@@ -30104,8 +30105,8 @@
     "dust_02",
     "EnemyDeathEffectsRegular",
     "Roachfeeder Tall",
-    19.91,
-    76.15
+    19.1,
+    74.88
    ],
    [
     "dust_03",
@@ -30295,8 +30296,8 @@
     "coral_02",
     "RangeAttacker",
     "Sand Centipede Attacker (9)",
-    82.65,
-    14.31
+    82.59,
+    13.5
    ],
    [
     "coral_03",
@@ -30365,8 +30366,8 @@
     "coral_32",
     "RangeAttacker",
     "Sand Centipede Attacker (95)",
-    93.54,
-    18.21
+    90.82,
+    29.55
    ],
    [
     "coral_34",
@@ -30492,8 +30493,8 @@
     "ant_04_mid",
     "PlayMakerFSM",
     "Mapper NPC",
-    198.81,
-    15.24
+    193.49,
+    13.59
    ],
    [
     "belltown",
@@ -30935,8 +30936,8 @@
     "cog_04",
     "EnemyDeathEffectsRegular",
     "Song Automaton 01 (1)",
-    16.04,
-    98.75
+    13.07,
+    97.19
    ],
    [
     "cog_05",
@@ -30965,8 +30966,8 @@
     "cog_04",
     "EnemyDeathEffectsRegular",
     "Song Automaton 02",
-    19.97,
-    46.42
+    18.75,
+    45.06
    ],
    [
     "cog_05",
@@ -31025,8 +31026,8 @@
     "song_29",
     "EnemyDeathEffectsRegular",
     "Song Automaton Fly (4)",
-    15.97,
-    42.26
+    14.53,
+    12.94
    ]
   ],
   "NAME_SONG_AUTOMATON_FLY_SPIKE": [
@@ -31105,8 +31106,8 @@
     "bone_east_08_boss_golem",
     "EnemyDeathEffectsRegular",
     "SG_head",
-    81.01,
-    12.31
+    81.25,
+    12.28
    ],
    [
     "bone_east_08_boss_golem",
@@ -31451,7 +31452,7 @@
     "EnemyDeathEffectsRegular",
     "Song Reed",
     43.35,
-    91.64
+    84.81
    ],
    [
     "song_03",
@@ -31513,8 +31514,8 @@
     "song_27",
     "EnemyDeathEffectsRegular",
     "Song Reed (9)",
-    25.04,
-    13.39
+    25.05,
+    13.2
    ]
   ],
   "NAME_SONG_REED_GRAND": [
@@ -31655,8 +31656,8 @@
     "belltown_shrine",
     "PlayMakerFSM",
     "Spinner Boss",
-    57.04,
-    52.79
+    57.01,
+    52.01
    ]
   ],
   "NAME_SPLINTER_QUEEN": [
@@ -32336,7 +32337,7 @@
     "dock_04",
     "EnemyDeathEffectsRegular",
     "Tar Slug (3)",
-    16.43,
+    14.39,
     90.82
    ],
    [

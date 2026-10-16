@@ -160,7 +160,8 @@ test('the 49 enemy gauntlets: every wave\'s enemies are in js/enemies.js, every 
     assert.ok(CO.AREAS[g.area], `${g.id}: area ${g.area}`);
     // How a save says it's cleared: one of js/savefile.js's conditions, with what it names.
     const ok = (c) => ({ flag: () => typeof c[1] === 'string', bool: () => c.length === 3 && c.slice(1).every((x) => typeof x === 'string'),
-      quest: () => typeof c[1] === 'string', all: () => c.length > 2 && c.slice(1).every(ok), not: () => ok(c[1]) }[c[0]] || (() => false))();
+      quest: () => typeof c[1] === 'string', all: () => c.length > 2 && c.slice(1).every(ok), any: () => c.length > 2 && c.slice(1).every(ok),
+      not: () => ok(c[1]) }[c[0]] || (() => false))();
     assert.ok(ok(g.done), `${g.id}: done ${JSON.stringify(g.done)}`);
   }
 });

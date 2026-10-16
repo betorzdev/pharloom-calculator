@@ -325,6 +325,7 @@
         case 'bool': return !!bools.get(c[1] + '\u0000' + c[2]);
         case 'visited': return visited.has(c[1]);
         case 'journal': return kills.has(c[1]);   // the entry is listed (seen)
+        case 'kills': return (kills.get(c[1]) || 0) >= c[2];   // at least that many of it beaten
         case 'relic': return !!(relics.get(c[1]) || {}).IsCollected;
         case 'memento': return deposited.has(c[1]) || int((items.get(c[1]) || {}).Amount) > 0;
         case 'held': return int((items.get(c[1]) || {}).Amount) > 0;
@@ -479,14 +480,27 @@
   // An extra by its key → its places in the list: a map had in two rooms is a mark in each, one check.
   const EXTRA_AT = new Map();
   SP.EXTRAS.forEach((x, i) => { const k = pieceKey(x); EXTRA_AT.set(k, [...(EXTRA_AT.get(k) || []), i]); });
+  /* A slot kept before an extra's check took in more of the save (js/spots.js EXTRAS' more.was: a
+     way also open by a flag, a room's masks also by their wall; design/03-redesign.md, step 6, the
+     save checks) has it under its old check: what was had then is had now, as the new check holds
+     whenever the old one did. Read silently; the slot's kept save, when there is one, reads it all
+     again at the next start (js/app-saves.js refreshSlots). */
+  SP.EXTRAS.forEach((x, i) => {
+    if (!x[5] || !x[5].was) return;
+    const k = x[0] + ' ' + JSON.stringify(x[5].was);
+    if (!EXTRA_AT.has(k)) EXTRA_AT.set(k, [i]);
+  });
   // A wish's or an objective's mark (js/spots.js TASKS): its kind, room and check (the Bellbeast's
-  // thirteen pins share a check).
+  // thirteen pins share a check), → its places in the list: the Silver Bells' seven drop spots in a
+  // room share one key and one check, so the key stands for all of them (it kept only the last, and
+  // twelve of the fourteen never showed done: design/03-redesign.md, step 6, the save checks, 1 A).
   const taskKey = (x) => x[0] + ' ' + x[3] + ' ' + JSON.stringify(x[2]);
-  const TASK_AT = new Map(SP.TASKS.map((x, i) => [taskKey(x), i]));
+  const TASK_AT = new Map();
+  SP.TASKS.forEach((x, i) => { const k = taskKey(x); TASK_AT.set(k, [...(TASK_AT.get(k) || []), i]); });
   function toSnapshot(pd, sd = null, saved = null) {
     const g = game(pd, sd);
     const progress = { ...g, pieces: g.pieces.map((i) => pieceKey(CO.PIECES[i])), wishes: g.wishes.map((i) => pieceKey(CO.WISHES[i])),
-      extras: [...new Set(g.extras.map((i) => pieceKey(SP.EXTRAS[i])))], tasks: g.tasks.map((i) => taskKey(SP.TASKS[i])) };
+      extras: [...new Set(g.extras.map((i) => pieceKey(SP.EXTRAS[i])))], tasks: [...new Set(g.tasks.map((i) => taskKey(SP.TASKS[i])))] };
     for (const k of [...OWNED, 'journal']) delete progress[k];
     const m = meta(pd);
     return {
@@ -524,13 +538,48 @@
     const bought = new Set(out.maps.map((a) => 'Has' + a + 'Map'));
     out.extras = [...new Set([...out.extras.flatMap((k) => EXTRA_AT.get(k) || []),
       ...SP.EXTRAS.flatMap((x, i) => (x[0] === 'map' && x[2][0] === 'flag' && bought.has(x[2][1]) ? [i] : []))])].sort((a, b) => a - b);
-    out.tasks = out.tasks.map((k) => TASK_AT.get(k)).filter((i) => i !== undefined);
+    out.tasks = [...new Set(out.tasks.flatMap((k) => TASK_AT.get(k) || []))].sort((a, b) => a - b);
     out.gaveBack = out.gaveBack.filter((id) => CO.TOOLS[id]);
     out.steelSpots = out.steelSpots.filter((x) => typeof x === 'string' && /^[\w ()-]{1,64}$/.test(x));
     out.cocoonAt = out.cocoon ? fourNumbers(out.cocoonAt) : [];
     out.bosses = out.bosses.filter((id) => SP.BOSSES.some((b) => b[0] === id));
     // The gauntlets go by their ids, the wiki's subpages: one the list no longer has is dropped.
     out.gauntlets = out.gauntlets.filter((id) => GA.GAUNTLETS.some((x) => x.id === id));
+    /* A slot kept before the save checks (design/03-redesign.md, step 6) has no word of the flags and
+       bools some marks now also go by, but the slot itself says some of them: the bool or flag of a
+       mark or boss had by that alone, the wishes complete, the Journal's kills. Each way, gauntlet,
+       boss and wish place not had whose check holds by those is had too (the other lock of a cell
+       door, a wall seen from another room, Mosshome's silk vines once the Bell Beast is beaten,
+       Sinner's Road's first gauntlet once its key is taken, Last Dive by Lost Lace, the Act 3 Moss
+       Mother by her kills), read three ways: holds, doesn't, or the slot can't say (then not had).
+       Silent, and never against the save: a slot made today has all of these already. The rest
+       waits for the slot's save to be read again (its kept copy at the next start, the live file,
+       an import). */
+    const knownBool = new Set(), knownFlag = new Set();
+    const learn = (c) => { if (c[0] === 'bool') knownBool.add(c[1] + '\u0000' + c[2]); if (c[0] === 'flag') knownFlag.add(c[1]); };
+    for (const i of out.extras) learn((SP.EXTRAS[i][5] && SP.EXTRAS[i][5].was) || SP.EXTRAS[i][2]);
+    for (const b of SP.BOSSES) if (out.bosses.includes(b[0])) learn(b[2]);
+    for (const x of GA.GAUNTLETS) if (out.gauntlets.includes(x.id)) learn(x.done);
+    const done = new Set(out.quests);
+    const killsOf = new Map(Object.entries(CO.JOURNAL).map(([id, name]) => [name, out.journal[id]]));
+    const says = (c) => {
+      switch (c[0]) {
+        case 'bool': return knownBool.has(c[1] + '\u0000' + c[2]) ? true : null;
+        case 'flag': return knownFlag.has(c[1]) ? true : null;
+        case 'quest': return done.has(c[1]);
+        case 'journal': return killsOf.has(c[1]) ? killsOf.get(c[1]) !== undefined : null;
+        case 'kills': return killsOf.has(c[1]) ? (killsOf.get(c[1]) || 0) >= c[2] : null;
+        case 'not': { const v = says(c[1]); return v === null ? null : !v; }
+        case 'any': { const v = c.slice(1).map(says); return v.includes(true) ? true : v.includes(null) ? null : false; }
+        case 'all': { const v = c.slice(1).map(says); return v.includes(false) ? false : v.includes(null) ? null : true; }
+        default: return null;
+      }
+    };
+    const more = (list, checks) => { const had = new Set(list); checks.forEach(([k, c]) => { if (!had.has(k) && says(c) === true) had.add(k); }); return [...had]; };
+    out.extras = more(out.extras, SP.EXTRAS.map((x, i) => [i, x[2]]).filter(([i]) => SP.EXTRAS[i][5] && SP.EXTRAS[i][5].was)).sort((a, b) => a - b);
+    out.tasks = more(out.tasks, SP.TASKS.map((x, i) => [i, x[2]])).sort((a, b) => a - b);
+    out.bosses = more(out.bosses, SP.BOSSES.map((b) => [b[0], b[2]]));
+    out.gauntlets = more(out.gauntlets, GA.GAUNTLETS.map((x) => [x.id, x.done]));
     out.lit = out.lit.filter((k) => LIGHTS.some((p) => pinKey(p) === k));
     out.mapFlags = out.mapFlags.filter((f) => MAP_VARY.includes(f));
     out.mapVars = Object.fromEntries(Object.entries(out.mapVars).filter(([k, x]) => MAP.VARS.includes(k) && mapValue(x, undefined) !== undefined));
