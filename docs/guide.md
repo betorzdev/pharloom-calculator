@@ -9,8 +9,8 @@ language and **Share**, and on the right the profile you're in (Hornet at a benc
 **Profiles**. The language is a dropdown, as the sibling's: the one chosen and a chevron (its name,
 its code on a phone) open a list of the site's languages, each in its own name; Esc closes it
 and the arrows walk it. **Share** copies the site's address, nothing more: no screen, build or
-language. The screen bar has six screens in a row: Your game, Inventory, Progress, Map, Journal
-and Crest.
+language. The screen bar has six screens in a row, in the order the site matters: Your game, Map,
+Progress, Journal, Inventory and Crest.
 With a profile loaded, Progress carries your completion and Journal the entries Nuu counts
 (`63%`, `120/230`); in Free mode the bar only has the names. On a phone the six don't fit, so
 Inventory folds under Your game: while you're in either, a second row under the bar switches
@@ -85,11 +85,15 @@ around her bench, its room right under her (drawn as the Map screen draws it, «
 game shows» included, never smaller than the map's own size, so a phone shows the rooms round
 her, and fading out to the scene's edges: a picture, with no marks; the Map tab is where you look
 things up); the room's area under the name when it's another (Coral Tower in the
-Sands of Karak), the Act and the time played; Hornet sitting on that very bench (each room's
+Sands of Karak) and the time played; Hornet sitting on that very bench (each room's
 bench is read from the game's files; one it doesn't know shows Bone Bottom's). When the save was
 written where the game wakes her at a room's own respawn point instead (a restore point after a
 boss or an ability), it says **Your respawn point** over that area and shows her standing with no
-bench. Under her, **your 100%** as one figure, which opens Progress («What's missing for 100%»;
+bench. On her left, what she is: the Act as the game titles it («ACT 3» over «ABYSS»), and her
+masks and silk as the game's HUD draws them (the masks in a row, the spool with its count). On her
+right, the Crest she wears with its Tools and Silk Skill in their slots (and the Vesticrest's
+beside it), drawn as the Crest tab draws it, smaller: a tap opens the Crest tab. On a phone they go
+under her, the Crest last. Under her, **your 100%** as one figure, which opens Progress («What's missing for 100%»;
 «Everything in Progress» once it's 100). The site counts as the game does, checked on 92 real
 saves (0% to 100%, four patches, Steel Soul): whole masks and spools, not loose shards and
 fragments (two shards are still 0%), and a Tool and its upgrade (Curveclaw and Curvesickle) are
@@ -97,8 +101,9 @@ one point; if a save's own figure ever differed, Progress says so. With a save l
 about the site under the screen folds into «About this site».
 
 What the other tabs show isn't repeated here: the parts of the 100% and the road to the next Act
-are in Progress, the Journal's count in the Journal (and on the bar), masks and rosaries in the
-Inventory, and what's missing nearby on the Map.
+are in Progress, the Journal's count in the Journal (and on the bar), the shards, fragments and
+rosaries in the Inventory, the Crest's figures in the Crest tab, and what's missing nearby on the
+Map.
 
 When the profile follows the game's save file, each new save the game writes to it (the auto saves
 go to their own folder and aren't followed) brings a block **Since

@@ -39,7 +39,7 @@ the work up reads it first, then the step it's on.
 |---|---|---|---|
 | 1 | **The shell**: header, screen bar (desktop and phone), the screen's frame and title, footer and About, the atmosphere | **Built** (28 Sep) | [`04-shell-variants.html`](04-shell-variants.html) |
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
-| 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html` |
+| 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct; the summary, 16 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html`, `89-your-game-summary-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html` |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html` |
@@ -404,6 +404,25 @@ to the sides, the foot and under the title; `js/app-map.js` (`areaCut`, inside `
 the frame's shape from the area's box, as wide (or tall) as the area but never smaller than the
 map's own size (on a phone, the rooms round her), with her bench's room right under Hornet
 (`.hm-rest`), kept inside the area. Free mode, with no map, is as it was.
+
+### The summary round (16 October 2026)
+
+Albert: «quizás un poco de resumen de tu partida pero muy visual (nada sobrecargado), cosas como
+las máscaras, tu carrete, el blasón con los items, el acto en el que estás». Drawn in
+`89-your-game-summary-variants.html` over two real saves (Act 3 at 100%, Act 1 early), four rows:
+1, where it goes (A the corners, the HUD where the game puts it; B one shelf under her bench; C
+either side of her); 2, the Crest (A drawn with its Tools in their slots, B its emblem and the
+worn as slot diamonds, C none); 3, the Act (A in the line as before, B three pips, C the game's act
+card); 4, anything more (A nothing, B the Needle, C the Needle and the Silk Hearts).
+
+Albert chose **1 C, 2 A, 3 C, 4 A**. Built:
+
+- `js/app-home.js` (`worn`): Hornet between `.hm-self` (the act card, `saveAct` over
+  `pgActName<n>`, from ACT_<n>_SUPER and ACT_<n>_NAME; the masks and the spool as the HUD) and
+  `.hm-worn`, the Crest, a link to the Crest tab. The Act left the line under the area.
+- `js/app-tools.js`: `App.wornNow()` gives the worn Crest as the Crest screen draws it, still
+  (`crestHtml(…, still)`: the slots are spans, no arrows), and the masks and silk from the engine.
+- `css/tokens.css`: `--hm-crest-k` (24 px, 19 on a phone) and `--hm-mask` (26 px, 20).
 
 ## Step 4 · Inventory
 
