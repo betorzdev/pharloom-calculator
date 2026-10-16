@@ -6,8 +6,12 @@
    all of Act 3's road, and no earlier save does.
 
    Act 1 → 2 (the wiki's Acts page and the main objective Grand Gate): ring the five Bellshrines,
-   open the Grand Gate, defeat the Last Judge and walk into the Citadel (act2Started). Defeating
-   the Phantom opens another way in, past the Bellshrines, the Gate and the Judge.
+   open the Grand Gate and walk into the Citadel (act2Started). The Gate is one step with the Last
+   Judge: the Needolin played before the great door calls her, and the objective is complete only
+   once she's beaten and the door opens (the scene's Gate Quest Ender, on SeenLastJudgeGateOpen).
+   Defeating the Phantom is the other way in, open from the start once Hornet has the Needolin (to
+   cross the Mist) and the Cling Grip (to reach Sinner's Road): it takes the place of the
+   Bellshrines and the Gate.
    Act 2 → 3:
      1. unlock    the game's group 'Soul Snare': its 10 required wishes, 17 of its 25 points (a
                   delivery is worth ½), and four checks on the save: the flea caravan at Fleatopia,
@@ -91,7 +95,7 @@
     return { ok: testsOk && required.missing.length === 0 && got >= G.target, required, points, tests };
   }
 
-  const EMPTY = { quests: [], bellshrines: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false,
+  const EMPTY = { quests: [], arts: [], bellshrines: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false,
     laceTower: false, bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, act: 1, pieces: [] };
   /* The Flea Caravan: CaravanTroupeLocation 0 the Marrow, 1 Greymoor, 2 the Blasted Steps, 3
      Fleatopia; it moves when Mooshka is spoken to. Its last move asks for 22 Lost Fleas (the
@@ -100,6 +104,8 @@
   const FLEA_AT = CO.PIECES.map((p, i) => (p[0] === 'flea' ? i : -1)).filter((i) => i >= 0);
   const step = (id, done, total, extra) => ({ id, ok: done >= total, done, total, ...extra });
 
+  // The abilities the Phantom's way asks: the Needolin for the Mist, the Cling Grip for Sinner's Road.
+  const PHANTOM_NEEDS = ['needolin', 'cling-grip'];
   function toAct2(g) {
     const done = new Set(g.quests);
     const rung = QU.BELLSHRINES.map((b) => ({ field: b.field, name: b.name, area: b.field.replace(/^bellShrine/, '').toUpperCase(),
@@ -107,10 +113,14 @@
     const bypassed = g.phantom;
     return [
       step('bellshrines', rung.filter((b) => b.ok).length, rung.length, { bypassed, shrines: rung }),
-      step('grand-gate', done.has('Grand Gate Bellshrines') ? 1 : 0, 1, { bypassed, quest: 'Grand Gate Bellshrines' }),
-      step('judge', g.lastJudge || g.phantom ? 1 : 0, 1, { lastJudge: g.lastJudge, phantom: g.phantom }),
+      step('grand-gate', done.has('Grand Gate Bellshrines') || g.lastJudge ? 1 : 0, 1, { bypassed, quest: 'Grand Gate Bellshrines' }),
       step('citadel', 0, 1),
     ];
+  }
+  // The other way in: the Phantom, in place of the steps it skips.
+  function altAct2(g) {
+    const needs = PHANTOM_NEEDS.map((id) => ({ id, ok: (g.arts || []).includes(id) }));
+    return [{ id: 'phantom', ok: g.phantom, open: needs.every((x) => x.ok), needs, skips: ['bellshrines', 'grand-gate'], joins: 'citadel' }];
   }
 
   function toAct3(g) {
@@ -144,11 +154,11 @@
   }
 
   /* A game → the road to the next Act, or null in Act 3:
-       { act: 2 or 3 (the Act it leads to), done, total (steps ok, of all), steps: [step] }
+       { act: 2 or 3 (the Act it leads to), done, total (steps ok, of all), steps: [step], alt: [way] }
      Each step is { id, ok, done, total } with its own parts:
        bellshrines  shrines: [{ field, name, area (an AREAS id), ok }], bypassed (the Phantom's way)
-       grand-gate   quest ('Grand Gate Bellshrines', the main objective), bypassed
-       judge        lastJudge, phantom: which one is defeated
+       grand-gate   quest ('Grand Gate Bellshrines', the main objective; done with the Last
+                    Judge beaten), bypassed
        citadel      (the change of Act)
        unlock       required: { done, total, missing: [wish] }, points: { got, need, max,
                     missing: [wish with its value] }, tests: [{ field, id, ok }] (id: 'caravan',
@@ -161,13 +171,16 @@
        pieces       pieces: [{ kind, save, name, ok }]
        ready        quest ('Soul Snare')
        silk         (the change of Act)
-     A wish is missing()'s { quest, name, value?, wish, before }. */
+     A wish is missing()'s { quest, name, value?, wish, before }.
+     alt is the other ways in, beside the steps (none on the road to Act 3): { id ('phantom'), ok
+     (taken), open (what it asks is held), needs: [{ id (an Ability), ok }], skips: [step id], joins
+     (the step it leads back to) }. A step it skips is bypassed once it's taken. */
   function next(game) {
     const g = { ...EMPTY, ...(game || {}) };
     if (g.act >= 3) return null;
     const steps = g.act === 2 ? toAct3(g) : toAct2(g);
     const ok = steps.filter((s) => s.ok || s.bypassed).length;
-    return { act: g.act + 1, done: ok, total: steps.length, steps };
+    return { act: g.act + 1, done: ok, total: steps.length, steps, alt: g.act === 2 ? [] : altAct2(g) };
   }
 
   SS.acts = { FIELDS, FLEAS, group, missing, next };

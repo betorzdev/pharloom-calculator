@@ -43,23 +43,32 @@ test('every field a rule tests is one the site reads, and every wish in a rule j
 
 test('a new game has the road to Act 2 ahead, and none in Act 3', () => {
   const road = A.next(F.game({ silk: 0 }));
-  assert.deepEqual([road.act, road.done, road.total], [2, 0, 4]);
-  assert.deepEqual(road.steps.map((s) => s.id), ['bellshrines', 'grand-gate', 'judge', 'citadel']);
+  assert.deepEqual([road.act, road.done, road.total], [2, 0, 3]);
+  assert.deepEqual(road.steps.map((s) => s.id), ['bellshrines', 'grand-gate', 'citadel']);
+  assert.deepEqual(road.alt.map((w) => [w.id, w.ok, w.open, w.skips, w.joins]), [['phantom', false, false, ['bellshrines', 'grand-gate'], 'citadel']]);
   assert.deepEqual(step(road, 'bellshrines').shrines.map((b) => b.area), ['BONEFOREST', 'WILDS', 'GREYMOOR', 'BELLHART', 'SHELLWOOD']);
   assert.equal(A.next({ act: 3 }), null);
   assert.equal(A.next(F.game({ silk: 0, blackThreadWorld: true })), null);
 });
 
-test('Act 1: the Bellshrines, the Grand Gate and the Last Judge; the Phantom goes round them', () => {
+test('Act 1: the Bellshrines, then the Grand Gate with the Last Judge; the Phantom goes round them', () => {
   const pd = { silk: 0, bellShrineWilds: true, bellShrineGreymoor: true, bellShrineEnclave: true };
   let road = A.next(F.game(pd));
   assert.deepEqual([step(road, 'bellshrines').done, step(road, 'bellshrines').total], [2, 5], "the Songclave's shrine isn't one of them");
-  road = A.next(F.game({ ...pd, bellShrineBoneForest: true, bellShrineBellhart: true, bellShrineShellwood: true, defeatedLastJudge: true,
+  // Rung, but the Judge not yet beaten: the Gate isn't open (its objective ends as the door opens).
+  const rung = { ...pd, bellShrineBoneForest: true, bellShrineBellhart: true, bellShrineShellwood: true };
+  road = A.next(F.game(rung));
+  assert.deepEqual(road.steps.map((s) => s.ok), [true, false, false]);
+  road = A.next(F.game({ ...rung, defeatedLastJudge: true,
     QuestCompletionData: { savedData: [{ Name: 'Grand Gate Bellshrines', Data: { IsCompleted: true } }] } }));
-  assert.deepEqual([road.done, road.total], [3, 4]);
+  assert.deepEqual([road.done, road.total], [2, 3]);
+  // The Phantom's way is open with the Needolin and the Cling Grip, whatever the Bellshrines.
+  assert.equal(A.next(F.game({ ...pd, hasNeedolin: true })).alt[0].open, false);
+  assert.equal(A.next(F.game({ ...pd, hasNeedolin: true, hasWalljump: true })).alt[0].open, true);
   road = A.next(F.game({ ...pd, defeatedPhantom: true }));
-  assert.deepEqual(road.steps.map((s) => [s.id, s.ok, !!s.bypassed]), [['bellshrines', false, true], ['grand-gate', false, true], ['judge', true, false], ['citadel', false, false]]);
-  assert.equal(road.done, 3);
+  assert.deepEqual(road.steps.map((s) => [s.id, s.ok, !!s.bypassed]), [['bellshrines', false, true], ['grand-gate', false, true], ['citadel', false, false]]);
+  assert.equal(road.alt[0].ok, true);
+  assert.equal(road.done, 2);
 });
 
 // Restore_Points3/restoreData25 of the author's Steel Soul game (1.0.28891): Act 2, everything

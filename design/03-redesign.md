@@ -41,7 +41,7 @@ the work up reads it first, then the step it's on.
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct; the summary, 16 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html`, `89-your-game-summary-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html` |
-| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html` |
+| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the road to Act 2 fixed, with the Phantom's way beside it, 16 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html`, `90c-act2-road-variants.html` |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct; their leftovers 16 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html`, `89-map-leftovers-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct; every room of an entry 16 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
@@ -1120,6 +1120,35 @@ old guide: `journey()` for the road, the step peek (`pgPeek`, `peekHtml()`), the
 `.pg-fold`, `.pg-jstep`, `.pg-peek-*`, `.pg-says.is-step`, `.pg-says.is-peek`, the phone's
 `.pg-journey.is-road`) and strings. The Bellhome Key's rule (Bellhart's Glory and 2 of Pavo's wishes)
 is now only its row's line: the whole road listed those wishes under it.
+
+### The road to Act 2, fixed, and the Phantom's way beside it (16 October 2026)
+
+Albert: «el camino al acto 2 tiene errores», checked against the wiki (Acts, Grand Gate, Last Judge,
+Phantom, Needolin, The Mist, Sinner's Road), the game's files and all his saves. Two were wrong: the
+Grand Gate was a step before the Last Judge, but the Needolin played at the great door calls her and
+the objective ends only once she's beaten and the door opens (the arena's Gate Quest Ender, on
+SeenLastJudgeGateOpen; no save has the Gate without the Judge); and the Phantom read as the Judge's
+alternative, when it is open from the start with the Needolin (the Mist) and the Cling Grip (Sinner's
+Road), whatever the Bellshrines (his three Phantom games beat it with four). Albert chose to merge
+the Gate and the Judge into one step.
+
+Three rounds (`90`, `90b`, `90c-act2-road-variants.html`, over three of his saves). Round 1 drew the
+Phantom as its own station, under step 1, or as a panel; Albert liked two ways you can see, «pero lo
+has montado mal». Round 2: **A** two threads in one column, B side by side, C a map with the step
+under it; he took A, but «no queda claro que sea un paso alternativo». Round 3 kept A and marked the
+other way: **A** framed and set in, «or» between the threads, B first where the threads part, C one
+box per way. Step 2's title: **A** «Open the Grand Gate: defeat the Last Judge», with her portrait (B
+the objective's «Open: Grand Gate»).
+
+**Decision: round 3, 1 A; 2 A** (16 October 2026), built: `js/acts.js` has the road to Act 2 in
+three steps (`grand-gate` done with the Judge) and `alt`, the other ways (`phantom`: `ok`, `open`,
+`needs` Needolin and Cling Grip, `skips`, `joins`); `js/app-progress.js` `routeHtml()` draws a start
+where the threads part («Two ways in», `.pg-rt-start` and its curve), the Phantom's framed station
+before the Citadel (`wayHtml()`, `.is-alt`, «or» between the threads, what it needs ticked) and its
+thread beside the steps it skips (`.is-beside`) back into the road (`.pg-rt-join`); lit once taken,
+the steps it skipped crossed out on a dotted thread instead of ticked, dashed while open, dotted while
+not. The guide's two roads share the wider gutter. Gone: the `judge` step and `roadJudge`,
+`pgStepJudge`.
 
 ## Step 6 · Map
 

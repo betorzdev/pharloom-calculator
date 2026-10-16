@@ -1621,6 +1621,65 @@ kbd {
   .pg-rt-st.is-cur .pg-rt-name { font-size: var(--fs-lg); }
   .pg-rt-end .pg-rt-h { padding-left: calc(var(--sp-8) + var(--sp-2)); }
 }
+/* The other way in beside the road (design/90c, 1 A): a wider gutter holds two threads, the road's
+   (--rt-x1) and the other way's (--rt-x2), which parts at the road's start (.pg-rt-start, its curve
+   .pg-rt-fork), runs beside the steps it skips (.is-beside), reaches its framed station (.is-alt,
+   set in by --rt-in, an «or» between the threads) and joins the road again (.pg-rt-join). Lit once
+   taken, dashed while it's open, dotted while it isn't; the steps it skipped go dim on a dotted
+   thread. */
+.pg-rt.has-alt { --rt-g: calc(var(--sp-16) + var(--sp-8)); --rt-x1: var(--sp-4); --rt-x2: calc(var(--sp-16) + var(--sp-3)); --rt-in: var(--sp-4);
+  --alt-c: color-mix(in oklab, var(--silk-rim) 70%, transparent); --alt-s: dashed; --alt-dash: 4 4; }
+.pg-rt.is-alt-lit { --alt-c: var(--silk); --alt-s: solid; --alt-dash: none; }
+.pg-rt.is-alt-shut { --alt-c: color-mix(in oklab, var(--silk-rim) 35%, transparent); --alt-s: dotted; --alt-dash: 1 4; }
+/* In the guide both roads take the wider gutter, so their steps line up one under the other. */
+.pg-road .pg-rt { --rt-g: calc(var(--sp-16) + var(--sp-8)); }
+.pg-rt.has-alt > li, .pg-road .pg-rt > li { padding-left: var(--rt-g); }
+.pg-rt-start { position: relative; padding-bottom: var(--sp-6); }
+.pg-rt-start .pg-rt-h { min-height: var(--sp-12); padding-left: calc(var(--sp-12) + var(--sp-3)); display: grid; align-content: center; }
+.pg-rt-start .pg-rt-name { color: var(--muted); }
+.pg-rt-start::before { content: ''; position: absolute; left: calc(var(--rt-x1) - 0.5px); top: calc(var(--sp-6) + var(--sp-3)); bottom: calc(-1 * var(--sp-6)); width: 1px; background: color-mix(in oklab, var(--silk-rim) 45%, transparent); }
+.pg-rt-start.is-done::before { background: var(--silk); box-shadow: 0 0 6px color-mix(in oklab, var(--silk) 50%, transparent); }
+.pg-rt-start.is-done .pg-rt-dia::before { width: var(--sp-2); height: var(--sp-2); background: var(--silk); border-color: var(--silk); }
+.pg-rt-start .pg-rt-dia::before { width: var(--sp-2); height: var(--sp-2); }
+.pg-rt-fork, .pg-rt-join { position: absolute; left: var(--rt-x1); width: calc(var(--rt-x2) - var(--rt-x1)); pointer-events: none; }
+.pg-rt-fork { top: calc(var(--sp-3) + var(--sp-4)); bottom: 0; }
+.pg-rt-fork svg, .pg-rt-join svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.pg-rt-fork path, .pg-rt-join path { fill: none; stroke: var(--alt-c); stroke-width: 1; stroke-dasharray: var(--alt-dash); }
+.pg-rt.is-alt-lit :is(.pg-rt-fork, .pg-rt-join) path { filter: drop-shadow(0 0 3px color-mix(in oklab, var(--silk) 55%, transparent)); }
+.pg-rt-st.is-beside::after { content: ''; position: absolute; top: 0; bottom: 0; left: calc(var(--rt-x2) - 0.5px); border-left: 1px var(--alt-s) var(--alt-c); }
+/* The other way's station: framed, set in, its diamond on its own thread and the «or» between the two. */
+.pg-rt-st.is-alt { padding: var(--sp-3) 0 var(--sp-6) calc(var(--rt-g) + var(--rt-in)); }
+.pg-rt-st.is-alt::after { content: ''; position: absolute; top: 0; bottom: var(--sp-4); left: calc(var(--rt-x2) - 0.5px); border-left: 1px var(--alt-s) var(--alt-c); }
+.pg-rt-st.is-alt::before { top: 0; }
+.pg-rt-st.is-alt .pg-rt-h { position: relative; }
+.pg-rt-st.is-alt .pg-rt-open { padding: var(--sp-2) var(--sp-3); border: 1px dashed var(--line-ctl); }
+.pg-rt-st.is-alt.is-done .pg-rt-open { border-style: solid; border-color: var(--line); }
+.pg-rt-st.is-alt .pg-rt-k { color: var(--ink-strong); }
+.pg-rt-st.is-alt .pg-rt-dia { z-index: 1; top: 50%; left: calc(var(--rt-x2) - var(--rt-g) - var(--rt-in) - var(--sp-4)); transform: translateY(-50%); }
+.pg-rt-st.is-alt:not(.is-done) .pg-rt-dia::before { border-style: var(--alt-s); border-color: var(--alt-c); }
+.pg-rt-or { position: absolute; z-index: 1; top: 50%; left: calc((var(--rt-x1) + var(--rt-x2)) / 2 - var(--rt-g) - var(--rt-in)); transform: translate(-50%, -50%);
+  padding: 0 var(--sp-1); border: 1px solid var(--line-ctl); background: var(--scene-bg); font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600;
+  letter-spacing: var(--track-label); text-transform: uppercase; line-height: 1.6; color: var(--ink-strong); }
+.pg-rt-join { top: calc(100% - var(--sp-4)); height: calc(var(--sp-4) + var(--sp-3) + var(--sp-4)); }
+.pg-rt-needs { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-1) var(--sp-4); margin-top: var(--sp-1); font-size: var(--fs-xs); color: var(--muted); }
+.pg-rt-needs > span { display: inline-flex; align-items: center; gap: var(--sp-1); }
+.pg-rt-needs img { width: var(--sp-6); height: var(--sp-6); object-fit: contain; }
+.pg-rt-needs .is-on { color: var(--ink); }
+.pg-rt-needs .is-off img { filter: var(--missing-soft); opacity: var(--missing-soft-opacity); }
+.pg-rt-needs .pg-mark { color: var(--good); }
+/* A step the other way skipped: dim and crossed out, on a dotted thread. */
+.pg-rt-st.is-skipped .pg-rt-name { color: var(--muted); text-decoration: line-through; text-decoration-color: color-mix(in oklab, var(--muted) 60%, transparent); }
+.pg-rt-st.is-skipped .pg-rt-art { opacity: 0.4; filter: grayscale(1); }
+.pg-rt-st.is-skipped .pg-rt-dia::before { border-style: dotted; border-color: color-mix(in oklab, var(--silk-rim) 40%, transparent); }
+.pg-rt.is-alt-lit :is(.pg-rt-start, .pg-rt-st.is-skipped, .pg-rt-st.is-skipped + .is-alt)::before {
+  background: repeating-linear-gradient(to bottom, color-mix(in oklab, var(--silk-rim) 30%, transparent) 0 2px, transparent 2px 7px); box-shadow: none; }
+.pg-rt-st.is-done + .pg-rt-st.is-alt::before { background: var(--silk); box-shadow: 0 0 6px color-mix(in oklab, var(--silk) 50%, transparent); }
+@media (max-width: 640px) {
+  .pg-road .pg-rt { --rt-g: calc(var(--sp-16) + var(--sp-3)); }
+  .pg-rt.has-alt { --rt-g: calc(var(--sp-16) + var(--sp-3)); --rt-x1: var(--sp-3); --rt-x2: calc(var(--sp-12) + var(--sp-2)); --rt-in: var(--sp-2); }
+  .pg-rt-st.is-alt .pg-rt-open { padding: var(--sp-2); }
+  .pg-rt-start .pg-rt-h { padding-left: calc(var(--sp-8) + var(--sp-2)); }
+}
 /* The guide (no save): each road under its title and what it is, as the route. */
 .pg-road + .pg-road { margin-top: var(--sp-16); }
 .pg-road > .pg-note { max-width: var(--column); margin-inline: auto; text-align: center; }

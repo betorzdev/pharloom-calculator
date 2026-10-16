@@ -734,7 +734,6 @@
     /* The road's steps by what to do, on its thread (3 A); the titles stay the whole road's */
     pgStepBells:    { es: 'Haz sonar los Santuarios', en: 'Ring the Bellshrines' },   // the game's word in it: BELLSHRINE
     pgStepGate:     { es: 'Abre la {gate}', en: 'Open the {gate}' },
-    pgStepJudge:    { es: 'Derrota a la {judge}', en: 'Defeat the {judge}' },   // with its {judge}, DEFEATED_LAST_JUDGE_1_DESC
     pgStepUnlock:   { es: 'Desbloquea «{wish}»', en: 'Unlock "{wish}"' },
     pgStepOffer:    { es: 'Acepta el deseo', en: 'Accept the wish' },   // the game's verb: CTRL_ACCEPT
     pgStepSnare:    { es: 'Reúne la trampa', en: 'Gather the snare' },
@@ -784,8 +783,19 @@
     // Defeating a foe as the game words it (MQ_TYPE_DEFEAT, DEFEATED_*_DESC: «Derrota a…», "Defeat…").
     roadBypassed:   { es: 'Ya no hace falta: derrotar a {phantom} abre otro camino.', en: 'No longer needed: defeating {phantom} opens another way in.' },
     roadBells:      { es: 'Haz sonar los cinco Santuarios de Campana', en: 'Ring the five Bellshrines' },   // the game's word in it: BELLSHRINE
-    roadGate:       { es: 'Abre: {gate}', en: 'Open: {gate}' },   // as the game titles the objective: MQ_TYPE_BELLSHRINES, then its name
-    roadJudge:      { es: 'Derrota a la {judge}, o a {phantom} por otro camino', en: 'Defeat the {judge}, or {phantom} for another way in' },
+    // The Gate opens only once its Judge is beaten (design/90c, 2 A): MQ_BELLSHRINES_NAME, NAME_LAST_JUDGE
+    roadGate:       { es: 'Abre la {gate}: derrota a la {judge}', en: 'Open the {gate}: defeat the {judge}' },
+    /* The other way in (design/90c, 1 A): the Phantom (NAME_PHANTOM), in place of the steps it skips */
+    roadPhantom:    { es: 'Derrota a {phantom}', en: 'Defeat {phantom}' },
+    roadInstead:    { es: 'En lugar de los pasos {a} y {b}', en: 'Instead of steps {a} and {b}' },
+    roadAltOpen:    { es: 'Abierto ya: te ahorra los pasos {a} y {b}.', en: 'Open now: it skips steps {a} and {b}.' },
+    roadAltShut:    { es: 'Se abre en cuanto tengas las dos: te ahorra los pasos {a} y {b}.', en: 'Opens once you have both: it skips steps {a} and {b}.' },
+    roadAltGuide:   { es: 'Se abre desde el paso {a} con las dos: te ahorra los pasos {a} y {b}.', en: 'Open from step {a} with both: it skips steps {a} and {b}.' },
+    roadAltDone:    { es: 'Hecho: la {gate} ya no hace falta.', en: 'Done: the {gate} is no longer needed.' },
+    roadNeeds:      { es: 'Requiere', en: 'Needs' },
+    roadOr:         { es: 'o', en: 'or' },
+    roadTwoWays:    { es: 'Dos caminos', en: 'Two ways in' },
+    roadFromTo:     { es: 'De {from} a la Ciudadela', en: 'From {from} to the Citadel' },
     roadCitadel:    { es: 'Entra en la Ciudadela', en: 'Walk into the Citadel' },
     roadUnlock:     { es: 'Desbloquea el deseo «{wish}»', en: 'Unlock the wish "{wish}"' },
     roadRequired:   { es: 'Deseos obligatorios', en: 'Required wishes' },

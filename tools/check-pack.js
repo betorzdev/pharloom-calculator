@@ -98,9 +98,10 @@ for (const file of files) {
   }
   const road = A.next(g);
   const stepOn = road ? road.steps.find((s) => !s.ok && !s.bypassed) : null;
-  const met = new Set([...A.next({ ...g, act: 1 }).steps.filter((s) => s.ok || s.bypassed).map((s) => '2:' + s.id),
+  const r2 = A.next({ ...g, act: 1 });
+  const met = new Set([...r2.steps.filter((s) => s.ok || s.bypassed).map((s) => '2:' + s.id), ...r2.alt.filter((w) => w.ok).map((w) => '2:' + w.id),
     ...A.next({ ...g, act: 2 }).steps.filter((s) => s.ok).map((s) => '3:' + s.id)]);
-  if (g.act >= 2 && !A.next({ ...g, act: 1 }).steps.find((s) => s.id === 'judge').ok) pd.push('acts: Act 2 without the Last Judge or the Phantom');
+  if (g.act >= 2 && !r2.steps.find((s) => s.id === 'grand-gate').ok && !r2.alt.some((w) => w.ok)) pd.push('acts: Act 2 without the Last Judge or the Phantom');
   if (g.snareOffered && !A.group('Soul Snare', g).ok) pd.push('acts: Silk and Soul offered without the group Soul Snare');
   if (g.act === 3) {
     const left = A.next({ ...g, act: 2 }).steps.filter((s) => !s.ok && s.id !== 'silk').map((s) => s.id);
