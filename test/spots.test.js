@@ -86,8 +86,11 @@ test('each boss fight is a mark of its own: the first fight by its name, the sec
 
 test('what opens a way comes after the completionist\'s extras, each a bool of its own the save keeps', () => {
   const DOORS = new Set(['lever', 'plate', 'gate', 'lock', 'shortcut', 'silkwall']);
-  const first = SP.EXTRAS.findIndex((x) => DOORS.has(x[0])), after = SP.EXTRAS.findIndex((x, i) => i > first && !DOORS.has(x[0]));
-  assert.ok(first > 0 && after > first && SP.EXTRAS.slice(first, after).every((x) => DOORS.has(x[0])), 'appended, never among the others (js/map-fixes.js keys by place)');
+  // Bone_12's two cell doors, struck open (pickups.json doors breakable), are breakable walls among them.
+  const door = (x) => DOORS.has(x[0]) || (x[0] === 'wall' && /^jail_door/.test(x[2][2] || ''));
+  const first = SP.EXTRAS.findIndex(door), after = SP.EXTRAS.findIndex((x, i) => i > first && !door(x));
+  assert.ok(first > 0 && after > first && SP.EXTRAS.slice(first, after).every(door), 'appended, never among the others (js/map-fixes.js keys by place)');
+  assert.equal(SP.EXTRAS.slice(first, after).filter((x) => x[0] === 'wall').length, 2, 'the two cell doors');
   const LATER = new Set(['map', 'rosaries', 'shards', 'key', 'keyitem', 'bead', 'silk-cocoon', 'lift', 'masked', 'eva']);
   // After them, only the maps and what came after them, the ways kept in playerData (a flag each) and,
   // last, the doors a key opens no mark had (kb/data/game/gating.json receptacles: Ward_01's).

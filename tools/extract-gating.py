@@ -19,11 +19,22 @@ What it writes (read on 16-Oct-2026, patch 1.0.30000, against the 77 files of th
                      Slab lock's FSM "PD Bool", an ItemReceptacle's playerDataBool (given to the
                      item its `persistent` names, else to the nearest saved one above it). A Lever
                      with a playerDataBool never writes its own bool (Ant_17, Dust_05,
-                     Room_CrowCourt: unset in every save, their flags set in 45 to 67).
+                     Room_CrowCourt: unset in every save, their flags set in 45 to 67). And the
+                     bools a gate's own FSM sets as it opens (a Gate, TempGate, Trapdoor or
+                     TrapBridgeExtend whose FSM has SetPlayerDataBool true with the name written
+                     in: Slab_16's jail gate, struck open from above, sets slab_cloak_gate_reopened)
             removedBy playerData bools that switch the object, or one above it, off once set
                      (DeactivateIfPlayerdataTrue, but blackThreadWorld, below): the silk vines of
                      Mosshome go with defeatedBellBeast, Bone_East_04's wall with the one in
                      Bone_East_04b, a Secret Mask with the gate it hid
+            withPerson the person its removedBy takes away with it: a DeactivateIfPlayerdataTrue above
+                     it switches off a part of the scene that holds someone to talk to (a
+                     PlayMakerNPC; their NpcDialogueTitle). Bone_12's second cell door goes with
+                     Grindle's cell once Shellwood or Far Fields is reached or Widow beaten: he
+                     gets out by himself, the door never broken, so it's gone, not opened
+            breaks   the saved item its own FSM passes its break on to (its "Event Receiver"):
+                     Coral_41's crust wall Tall (6) breaks Mid (20), which breaks Mid (21); each
+                     break sets that wall's own Activated, so its own bool (read on 16-Oct-2026)
             partner  another saved item that is the other side of the same door: a Slab lock's FSM
                      "Partner Lock" (one lock each side of a cell's door; only the side used saves)
             world    'normal': gone once Act 3 begins (under a TestGameObjectActivator's
@@ -59,6 +70,32 @@ OUT = os.path.join(HERE, '..', 'kb', 'data', 'game', 'gating.json')
 SAVED = {'PersistentBoolItem', 'PersistentIntItem'}
 FLAG_FIELDS = {('Lever', 'playerDataBool'), ('Lever_tk2d', 'setPlayerDataBool'), ('PersistentPressurePlate', 'playerDataBool')}
 WORLD, MODE, DEMO = 'blackThreadWorld', 'permadeathMode', 'IsDemoMode'
+GATES = {'Gate', 'TempGate', 'Trapdoor', 'TrapBridgeExtend'}
+
+
+def set_bools(d):
+    """The playerData bools an FSM sets true by a name written in (SetPlayerDataBool with literal
+    boolName and value), from its actions' serialized parameters."""
+    out = []
+    for st in (d.get('fsm') or {}).get('states') or []:
+        ad = st.get('actionData') or {}
+        names, starts = ad.get('actionNames') or [], ad.get('actionStartIndex') or []
+        pn, pt, pp = ad.get('paramName') or [], ad.get('paramDataType') or [], ad.get('paramDataPos') or []
+        for i, a in enumerate(names):
+            if a.split('.')[-1] != 'SetPlayerDataBool':
+                continue
+            got = {}
+            for j in range(starts[i], starts[i + 1] if i + 1 < len(starts) else len(pn)):
+                if pt[j] == 18:   # an FsmString
+                    v = ad['fsmStringParams'][pp[j]]
+                elif pt[j] == 17:   # an FsmBool
+                    v = ad['fsmBoolParams'][pp[j]]
+                else:
+                    continue
+                got[pn[j]] = None if v.get('useVariable') else v.get('value')
+            if got.get('boolName') and got.get('value'):
+                out.append(got['boolName'])
+    return out
 
 
 def fail(msg):
@@ -214,7 +251,10 @@ def scan(game, only=None):
                     fsm_names.setdefault(gid, set()).update(runs | {x for n in runs if '/' in n for x in n.split('/')})
                     if gid not in sid:
                         continue
-                    v = (read(o).get('fsm') or {}).get('variables') or {}
+                    d = read(o)
+                    v = (d.get('fsm') or {}).get('variables') or {}
+                    if any(c2 in GATES for c2, _ in comps.get(gid, [])):
+                        rec[gid].setdefault('flags', []).extend(f for f in set_bools(d) if f not in rec[gid].get('flags', []))
                     for x in v.get('stringVariables') or []:
                         if x.get('name') == 'PD Bool' and x.get('value'):
                             rec[gid].setdefault('flags', []).append(x['value'])
@@ -222,6 +262,8 @@ def scan(game, only=None):
                         g = pptr(x.get('value'))
                         if x.get('name') == 'Partner Lock' and g in sid:
                             rec[gid]['partner'] = sid[g]
+                        if x.get('name') == 'Event Receiver' and owner.get(g, g) in sid and owner.get(g, g) != gid:
+                            rec[gid]['breaks'] = sid[owner.get(g, g)]
                 elif gid in sid and any((c, f) in FLAG_FIELDS for f in ('playerDataBool', 'setPlayerDataBool')):
                     d = read(o)
                     for f in ('playerDataBool', 'setPlayerDataBool'):
@@ -280,6 +322,16 @@ def scan(game, only=None):
                 if g in off_all and g not in woken and live(gg):
                     woken.add(g)
                     grew = True
+        # Who stands in each part of the scene: every object above someone to talk to (a PlayMakerNPC)
+        # → their name, a titled one's first (NpcDialogueTitle: the dump's <KEY>_MAIN), else the object's.
+        person, named = {}, []
+        for g2, cs in comps.items():
+            if any(c == 'PlayMakerNPC' for c, _ in cs):
+                title = next(((read(o).get('titles') or [{}])[0].get('Title') for c, o in cs if c == 'NpcDialogueTitle'), None)
+                named.append((title is None, title or gos[g2].m_Name, g2))
+        for _, title, g2 in sorted(named, key=lambda x: x[0]):
+            for up in chain(g2):
+                person.setdefault(up, title)
         # Each item's place among the switches above it.
         for gid, r in rec.items():
             ch = chain(gid)
@@ -299,6 +351,8 @@ def scan(game, only=None):
                             r['demo'] = True
                     elif on:
                         r.setdefault('removedBy', []).append(b)
+                        if g != gid and g in person:
+                            r['withPerson'] = person[g]
                 if gos[g].m_Name == 'Demo' and parent(g) is not None and gos[parent(g)].m_Name == 'Demo States':
                     r['demo'] = True
             up = nearest_saved(gid, False)
@@ -319,7 +373,7 @@ def scan(game, only=None):
             gone = sorted(set.intersection(*[set(r.get('removedBy', [])) for r in rs]))
             if gone:
                 m['removedBy'] = gone
-            for k in ('partner', 'world', 'mode', 'demo', 'never', 'inside', 'battle'):
+            for k in ('partner', 'world', 'mode', 'demo', 'never', 'inside', 'battle', 'withPerson', 'breaks'):
                 vals = [r.get(k) for r in rs]
                 if vals[0] is not None and all(v == vals[0] for v in vals):
                     m[k] = vals[0]
@@ -349,7 +403,7 @@ def main(game, only=None, cache=None):
     if only:   # a look at some scenes, nothing written
         print(json.dumps({'items': items, 'receptacles': receptacles}, indent=1))
         return
-    kinds = {k: sum(1 for r in items.values() if k in r) for k in ('flags', 'removedBy', 'partner', 'world', 'mode', 'demo', 'never', 'inside', 'battle')}
+    kinds = {k: sum(1 for r in items.values() if k in r) for k in ('flags', 'removedBy', 'partner', 'world', 'mode', 'demo', 'never', 'inside', 'battle', 'withPerson', 'breaks')}
     if kinds['flags'] < 25 or kinds['world'] < 100 or kinds['partner'] < 4 or len(receptacles) < 8:
         fail(f'too few of something ({kinds}, {len(receptacles)} receptacles): the components need reading again')
     out = {'items': dict(sorted(items.items())), 'receptacles': sorted(receptacles, key=lambda r: [str(x) for x in r]), 'patch': game_patch(game)}

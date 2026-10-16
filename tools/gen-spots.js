@@ -450,8 +450,14 @@ for (const sec of C.sections('cachesAndSecrets.ts')) for (const it of sec.items)
    in 25). Left out (kb/data/game/gating.json): what the game never switches on (neverHad:
    Clover_04b's two gates, worked by a pressure plate nothing switches on), and a gate a battle
    shuts and opens again (a BattleScene's gates, a "BG Control" FSM's), which isn't a way that
-   stays open. */
-const DOOR_KINDS = ['lever', 'plate', 'gate', 'lock', 'shortcut', 'silkwall'];
+   stays open. Bone_12's two cell doors, struck open with no key (pickups.json doors breakable), go
+   among the breakable walls ('wall'). */
+const DOOR_KINDS = ['lever', 'plate', 'gate', 'lock', 'shortcut', 'silkwall', 'breakable'];
+const MARK_KIND = { breakable: 'wall' };
+/* Three doors filed as doors a key opens until 16-Oct-2026 (design/03-redesign.md, step 6, the
+   leftovers, 1 A and 3 A): Slab_16's jail gate (a Gate struck open from above) and Bone_12's two cell
+   doors. A slot kept before has them under that kind (more.wasKind, js/savefile.js). */
+const KIND_WAS = new Set(['slab_16|jail gate door - persistent', 'bone_12|jail_door (1)', 'bone_12|jail_door (2)']);
 // What opens a way: the doors and the breakable walls (the save checks' rules, below, are for these).
 const WAY_KINDS = new Set([...DOOR_KINDS, 'wall']);
 const DOOR_BY_FLAG = new Set(['song_27/song_lever_side']);
@@ -467,9 +473,11 @@ const SCENE_AT = new Map();
       if (neverHad(c) || gateOf(scene, id).battle) { leftOut.push(`${kind} ${scene} ${id}`); continue; }
       had.add(k);
       if (typeof x === 'number') SCENE_AT.set(EXTRAS.length, [x, y]);
-      EXTRAS.push([kind, 0, c, scene]);
+      EXTRAS.push([MARK_KIND[kind] || kind, 0, c, scene, ...(KIND_WAS.has(`${scene}|${id}`.toLowerCase()) ? [null, { wasKind: 'lock' }] : [])]);
     }
   }
+  const kept = EXTRAS.filter((x) => x[5] && x[5].wasKind).length;
+  if (kept !== KIND_WAS.size) fail(`KIND_WAS names ${KIND_WAS.size} doors, ${kept} are marks: it needs reading again`);
 }
 
 /* The area maps, after the doors: each of the 28 Has<Area>Map flags (MAPS) where it's had, with no
@@ -514,6 +522,22 @@ const LATE_XY = new Map();   // an extra's index → its point on the map, worke
    item's name, { item: its id }]. The Flea Games' prizes (Aqueduct_05_festival's "… Reward <n>")
    are a prize, not a thing lying, and the save keeps them under Aqueduct_05 (the author's): left out. */
 const PRIZE = / Reward \d+$/;
+/* The gauntlet whose arena drops a pickup (gating.json inside: the pickup sits in the arena's object,
+   which switches it on once won; the arena by pickups.json battles, as its mark is placed below):
+   Library_02's Heavy Rosary Necklace is the Acolytes' arena's, Cog_07's Pristine Core the Cogwork
+   Core's third (design/03-redesign.md, step 6, the leftovers, 2 A). Its card says so. */
+function arenaDropping(scene, id) {
+  const inside = gateOf(scene, id).inside;
+  if (!inside) return null;
+  const flat = (c) => (c[0] === 'any' || c[0] === 'all' ? c.slice(1).flatMap(flat) : [c]);
+  const all = P.battles[scene.toLowerCase()] || [];
+  const arena = all.find((b) => b[0] === inside);
+  if (!arena) return null;
+  const g = SS.gauntlets.GAUNTLETS.filter((x) => x.scene.toLowerCase() === scene.toLowerCase()
+    && flat(x.done).some((c) => (c[0] === 'bool' && c[2] === arena[0]) || (c[0] === 'flag' && c[1] === arena[3])));
+  if (g.length > 1) fail(`${scene} ${id}: ${g.length} gauntlets drop it`);
+  return g.length ? g[0].id : null;
+}
 {
   const had = new Set(EXTRAS.map((x) => JSON.stringify(x[2]).toLowerCase()));
   for (const [id, save, cur] of CO.PURSE) {
@@ -525,7 +549,8 @@ const PRIZE = / Reward \d+$/;
       if (neverHad(c)) { leftOut.push(`${id} ${scene} ${bid}`); continue; }
       had.add(k);
       if (typeof x === 'number') SCENE_AT.set(EXTRAS.length, [x, y]);
-      EXTRAS.push([cur === 'rosaries' ? 'rosaries' : 'shards', null, c, scene, item.name, { item: id }]);
+      const fight = arenaDropping(scene, bid);
+      EXTRAS.push([cur === 'rosaries' ? 'rosaries' : 'shards', null, c, scene, item.name, fight ? { item: id, fight } : { item: id }]);
     }
   }
 }
@@ -808,15 +833,32 @@ for (const [id, save, scene, comp, check] of GIVEN_PURSE) {
       PD_OF.set(k, [...(PD_OF.get(k) || []), flag]);
     }
   }
-  let opened = 0, gone = 0, mode = 0;
+  /* What opens a way that no component of its own says, from its room's FSM (read on 16-Oct-2026):
+     Slab_16's jail gate is its Event Control's «Battle Completed» state's, shown from the
+     Cloakless fight won until the Broodmother's hunt is taken; then the room keeps the Broodmother's
+     state for good, no gate at all, the way open (design/03-redesign.md, step 6, the leftovers, 1 A). */
+  const OPEN_WITH = { 'slab_16|jail gate door - persistent': [['accepted', 'Broodmother Hunt']] };
+  for (const cs of Object.values(OPEN_WITH)) for (const c of cs) if (c[0] === 'accepted' && !Q.CHAIN[c[1]]) fail(`OPEN_WITH: no wish ${c[1]} in js/quests.js`);
+  /* Who a way's removedBy takes with it (gating.json withPerson): then it's gone, not opened, and
+     its card says why (js/app-map.js, by the person). Bone_12's second cell door goes with Grindle's
+     cell, Grindle getting out by himself (design/03-redesign.md, step 6, the leftovers, 3 A). */
+  const PEOPLE_GONE = new Set(['GRINDLE']);
+  let opened = 0, gone = 0, mode = 0, lost = 0;
   for (const x of EXTRAS) {
     const bools = boolsOf(x[2]);
+    let takenBy = null;
     if (WAY_KINDS.has(x[0]) && bools.length && (x[2][0] === 'bool' || x[2][0] === 'any')) {
       const more = [];
       for (const [, s, id] of bools) {
         const g = gateOf(s, id);
-        for (const f of [...(g.flags || []), ...(x[0] === 'lock' ? [] : g.removedBy || []), ...(PD_OF.get((s + '|' + id).toLowerCase()) || [])]) more.push(['flag', f]);
+        const away = x[0] !== 'lock' && !g.withPerson ? g.removedBy || [] : [];
+        for (const f of [...(g.flags || []), ...away, ...(PD_OF.get((s + '|' + id).toLowerCase()) || [])]) more.push(['flag', f]);
         if (g.partner) more.push(['bool', s, g.partner]);
+        more.push(...(OPEN_WITH[(s + '|' + id).toLowerCase()] || []));
+        if (g.withPerson && (g.removedBy || []).length && x[0] !== 'lock') {
+          if (!PEOPLE_GONE.has(g.withPerson)) fail(`${s} ${id} goes with ${g.withPerson}: its card needs words (js/app-map.js, PEOPLE_GONE)`);
+          takenBy = { lost: g.removedBy.length > 1 ? ['any', ...g.removedBy.map((f) => ['flag', f])] : ['flag', g.removedBy[0]], person: g.withPerson };
+        }
       }
       const had = new Set((x[2][0] === 'any' ? x[2].slice(1) : [x[2]]).map((c) => JSON.stringify(c)));
       const add = more.filter((c) => { const k = JSON.stringify(c); if (had.has(k)) return false; had.add(k); return true; });
@@ -834,12 +876,13 @@ for (const [id, save, scene, comp, check] of GIVEN_PURSE) {
     const extraMore = {};
     if (gs.every((g) => g.world === 'normal')) { extraMore.gone = 'act3'; gone++; }
     if (gs.every((g) => g.mode) && new Set(gs.map((g) => g.mode)).size === 1) { extraMore.mode = gs[0].mode; mode++; }
+    if (takenBy) { Object.assign(extraMore, takenBy); lost++; }
     if (Object.keys(extraMore).length) {
       while (x.length < 5) x.push(null);
       x[5] = { ...(x[5] || {}), ...extraMore };
     }
   }
-  console.log(`save checks: ${opened} ways also open by what the save keeps instead, ${gone} things taken away in Act 3, ${mode} of one mode only, ${leftOut.length} left out (never had): ${leftOut.join('; ')}`);
+  console.log(`save checks: ${opened} ways also open by what the save keeps instead, ${gone} things taken away in Act 3, ${lost} with someone who leaves, ${mode} of one mode only, ${leftOut.length} left out (never had): ${leftOut.join('; ')}`);
 }
 
 /* ── The Bellshrines and the keys ── */
@@ -1146,10 +1189,22 @@ for (const cat of ['tools', 'crests', 'skills', 'arts']) for (const [id, scene] 
 put2('everbloom', wayAt('everbloom', AT.everbloom));
 // The extras whose flag has no room (HAND_EXTRA), and the relics an NPC hands over (RELIC_ROOM: Jubilana, Grindle).
 const RELIC_WHO = { 'Seal Chit City Merchant': 'jubilana', 'Psalm Cylinder Grindle': 'grindle' };
+/* A Void Mass kept by the flag an arena sets once won (Dust_11's two, silkFarmAbyssCoresCleared): at
+   the middle of the Void Masses its waves hold (pickups.json battles' cores), where the game draws
+   them, not at the script that names the flag (Styx). It has to have them, or the generator stops. */
+const coresOf = (flag, scene) => {
+  const b = (P.battles[lower(scene)] || []).find((x) => x[3] === flag);
+  return b && b[4] && b[4].length ? b[4] : null;
+};
 EXTRAS.forEach((x, i) => {
   const c = x[2];
   if (XY['extra:' + i]) return;
-  if (c[0] === 'flag' && HAND_EXTRA[c[1]]) put2('extra:' + i, fieldAt(c[1], x[3]));
+  const core = x[0] === 'spawn' && x[4] && x[4].key === 'NAME_BLACK_THREAD_CORE';
+  if (core && c[0] === 'flag') {
+    const cores = coresOf(c[1], x[3]) || fail(`the Void Mass of ${c[1]} (${x[3]}): no arena that sets it holds Void Masses (pickups.json battles)`);
+    const mid = (k) => cores.reduce((t, p) => t + p[k], 0) / cores.length;
+    put2('extra:' + i, toMap(x[3], mid(0), mid(1)));
+  } else if (c[0] === 'flag' && HAND_EXTRA[c[1]]) put2('extra:' + i, fieldAt(c[1], x[3]));
   else if (c[0] === 'relic' && RELIC_WHO[c[1]]) put2('extra:' + i, whoAt(RELIC_WHO[c[1]], x[3]));
 });
 // The bosses in their arenas, the gauntlets at theirs, the key doors at their lock.
@@ -1312,10 +1367,13 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               plate, gate, lock, shortcut, silkwall from the game's scenes, then map, rosaries,
               shards, the doors a key opens no mark had yet); act null when the thing has no Act of
               its own; more { shop, price } for a map Shakra sells, { found } for one found, { item }
-              for a rosary or shard item, { gone: 'act3' } for what the game takes away when Act 3
-              begins, { mode: 'steel' or 'normal' } for what only that mode has, { was } the
-              check it had before the save checks (a slot kept before has its marks by that one,
-              js/savefile.js gameOf: had then is had now, as the new check takes in the old); check as
+              for a rosary or shard item ({ item, fight } for one an arena drops: that gauntlet's
+              id), { gone: 'act3' } for what the game takes away when Act 3 begins, { lost:
+              check, person } for what the game takes away with someone once that check holds
+              (Grindle's cell door), { mode: 'steel' or 'normal' } for what only that mode has,
+              { was } the check it had before the save checks and { wasKind } the kind it had
+              before (a slot kept before has its marks by those, js/savefile.js gameOf: had then
+              is had now, as the new check takes in the old); check as
               js/collectibles.js's, plus ['relic', name], ['memento', name], ['int', scene, id,
               value] (['int', scene, id, value, 'min']: at least value), ['geo', scene, id] and
               ['accepted', quest] (the wish taken, done or not)

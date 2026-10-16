@@ -671,6 +671,7 @@
     {
       id: 'whispering-vaults-2',
       area: 'LIBRARY',
+      reward: { es: 'Collar de rosarios pesado', en: 'Heavy Rosary Necklace', key: 'INV_NAME_COIN_SET_M2' },
       waves: [
         [['vaultborn', 4]],
         [['vaultborn', 1]],

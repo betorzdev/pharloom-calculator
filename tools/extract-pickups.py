@@ -42,8 +42,9 @@ What it writes (read on 28-Sep-2026, patch 1.0.30000):
           one the game reads (GameManager.RefreshTilemapInfo): on a root object tagged TileMap,
           else any object so tagged, else the scene's first (read on 13-Oct-2026).
   battles each scene's BattleScene objects (an enemy arena: a gauntlet's) → [[object, x, y, the
-          playerData flag it sets once won, or '']]: x, y the middle of its waves' enemies (the
-          object's own place is often a prefab's corner, or parked off the scene).
+          playerData flag it sets once won, or '', cores?]]: x, y the middle of its waves' enemies (the
+          object's own place is often a prefab's corner, or parked off the scene); cores, when its
+          waves hold Void Masses, each one's [x, y] (Dust_11's two: the mark of the flag it sets).
   locks   each scene's ItemReceptacle (a door a key opens) → [[object, x, y]].
   records each Journal record (its NAME_ key) → [[scene, component, object, x, y]]: what points at it
           in a scene, one per scene and kind (the first enemy carrying it, EnemyDeathEffects, and
@@ -61,6 +62,9 @@ What it writes (read on 28-Sep-2026, patch 1.0.30000):
                       gates Clawline pulls open and the gates an FSM works (GATES)
             lock      a door a key opens: the Simple Key's, the Architect's, the Ward Boss Key's,
                       the Slab's locks and cells (LOCK)
+            breakable a cell door struck open, no key: Bone_12's two (its FSM breaks after three
+                      hits from the side, or one heavy hit; BREAKABLE). Slab_16's jail gate, opened
+                      by a hit from above, is a gate (its Gate component; read on 16-Oct-2026)
             shortcut  a way opened from one side: one-way walls, planks, ladders, floors, the
                       Citadel's plug gates (SHORTCUT)
             silkwall  the thick silk vines Silkspear cuts (SILK)
@@ -176,7 +180,8 @@ GATE = {'Gate', 'TempGate', 'Trapdoor', 'TrapBridgeExtend'}
 SILK = re.compile(r'Thick Silk Vines')
 PLATE = re.compile(r'Hornet_pressure_plate.*|Plate|Plaque Pressure Plate|Shrine Pressure Plate.*|Harpoon Ring Pull Switch|dock_pressure_plate_lock')
 LOCK = re.compile(r'Slab Lock( [LR])?|aspid_sealed_gate_stone|Prince Cell Door|bank_door|dock_sealed_gate|Diving Bell Door|Architect Shrine Door|'
-                  r'lock_machine|jail_door|Jail Gate Door - Persistent|door_slabCaged')
+                  r'lock_machine|door_slabCaged')
+BREAKABLE = re.compile(r'jail_door')
 # What an FSM works rather than a component, by name: the levers (the Cogwork Core's; Greymoor_06's,
 # whose bool is on the platform its Lever drops) and the gates (Clawline's rings, Bone_04's).
 LEVERS = re.compile(r'cog_lever|belltown_lever_drop_plat')
@@ -197,6 +202,7 @@ def door_kind(comps, name):
     if SILK.fullmatch(n): return 'silkwall'
     if PLATE.fullmatch(n): return 'plate'
     if LOCK.fullmatch(n): return 'lock'
+    if BREAKABLE.fullmatch(n): return 'breakable'
     if GATES.fullmatch(n): return 'gate'
     if SHORTCUT.fullmatch(n): return 'shortcut'
     if comps & GATE: return 'gate'
@@ -410,12 +416,13 @@ def scan(game):
         of_go = {t.m_GameObject.m_PathID: t for t in T.values()}
         def arena(d, at):
             """A BattleScene's arena: the middle (median) of its waves' enemies, the children of each
-            wave's object (its own transform is often a prefab's corner or parked), and its flag."""
+            wave's object (its own transform is often a prefab's corner or parked), and its flag; then,
+            when its waves hold Void Masses (Black_Thread_Core…), each one's place."""
             byid = {o.path_id: o for o in env.objects}
             kids = defaultdict(list)
             for t in T.values():
                 kids[t.m_Father.m_PathID].append(t)
-            xs, ys = [], []
+            xs, ys, cores = [], [], []
             for w in d.get('waves') or []:
                 wo = byid.get(w['m_PathID'])
                 if wo is None:
@@ -427,8 +434,10 @@ def scan(game):
                     if p:
                         xs.append(p[0])
                         ys.append(p[1])
+                        if k.m_GameObject.read().m_Name.startswith('Black_Thread_Core'):
+                            cores.append((round(p[0], 2), round(p[1], 2)))
             mid = lambda v: sorted(v)[len(v) // 2]
-            return [*([mid(xs), mid(ys)] if xs else at), d.get('setPDBoolOnEnd') or '']
+            return [*([mid(xs), mid(ys)] if xs else at), d.get('setPDBoolOnEnd') or '', *([tuple(sorted(cores))] if cores else [])]
         world = world_of(T, of_go)   # its place, its parents' turns counted (tools/scene_place.py)
         want = wanted.get(scene, set())
         tag_of = {}   # GameObject's path id → its tag

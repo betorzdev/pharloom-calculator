@@ -372,7 +372,8 @@ their card says so. The Muckmaggots, the Sandcarver and the Void Tendrils can't 
 
 **Enemy gauntlets**: the other half of the screen, the game's 49 arenas of waves, each named by
 its place or its area, with its reward (the game's name for it, when it gives something the game
-names). For each wave, its enemies with their health, your slash's damage against each and how
+names; when the wiki says none but the arena drops a pickup once won, that one: the Whispering
+Vaults' second, the Acolytes', drops a Heavy Rosary Necklace). For each wave, its enemies with their health, your slash's damage against each and how
 many kill it; for the whole arena, its health and the quickest way through, silk and loads
 carried from wave to wave (an estimate: each enemy's damage at your Needle's level). In a save,
 a tick on each one you've cleared and how many of the 49; a gauntlet cleared also shows in
@@ -409,7 +410,9 @@ saying how it was had; the search finds it too. In Free mode it brings back what
 What the game has taken away from your game goes with it, dimmed the same with a grey cross where
 the tick goes, its card saying «No longer there» and why: what the game swaps out when Act 3
 begins (rosary strings, shard caches, walls and doors of a room's «before» state) in an Act 3
-game that didn't get it, and the other arena of the Slab's pair once you've fought one. What only
+game that didn't get it, the other arena of the Slab's pair once you've fought one, and Grindle's
+cell door in the Marrow once he's left it by himself (Shellwood or Far Fields reached, or Widow
+beaten, before it was broken). What only
 one mode has (a silkeater outside Steel Soul, a wall only in it) isn't on the other mode's map.
 Then eleven groups, each a row that folds (its caret; all open
 at first, only the first two on a phone, then as you left them) whose title is the switch for the
@@ -452,8 +455,9 @@ leaves those off.
   **Maps**: the fourteen area maps found lying in a room (the Weavenest Atla Map, the
   Slab's…), each gone once your save has it; the fourteen Shakra sells have no mark of their own
   (they'd sit on her), her card says which you lack. And the **Rosaries** and **Shell Shards** lying in a
-  room (strings, necklaces, Shard Bundles, Great Shards, Pristine Cores), each by its own pickup,
-  and the ones given: the Fixer's Hornet Statuette in Bone Bottom and the Sprintmaster's two race
+  room (strings, necklaces, Shard Bundles, Great Shards, Pristine Cores), each by its own pickup
+  (one an arena drops once won says which: the Whispering Vaults' Heavy Rosary Necklace, the
+  Cogwork Core's Pristine Core), and the ones given: the Fixer's Hornet Statuette in Bone Bottom and the Sprintmaster's two race
   prizes (a Rosary Necklace and a Beast Shard).
   And the **Key items** lying in a room (the Cogheart Pieces, the broken Silkshot, Farsight, the
   Materium, and the Crawbell, after the Court of Craws).
@@ -473,7 +477,9 @@ leaves those off.
 - **Passages**, off at first: what opens a way and stays open, each read from the game's own
   scenes with the bool your save keeps once it's open, so with a save only what's still shut
   shows. Levers (with the pressure plates and Clawline's pull switch), gates (opened by a lever,
-  from one side, or pulled open with Clawline), the doors a key opens (with the key each takes;
+  from one side, or pulled open with Clawline; the Slab's jail gate, struck open from above after
+  the Cloakless fight, is open too once the Broodmother's hunt is taken, the room then having no
+  gate at all), the doors a key opens (with the key each takes;
   the Slab's locks and cells among them), shortcuts (the one-way walls, planks, ladders and floors
   that break from one side) and the two silk walls Silkspear cuts in Mosshome. The doors the
   Needolin opens aren't there: they open each time and the save keeps nothing of them, and neither
@@ -523,7 +529,9 @@ leaves those off.
   or a later step of it (Pale Monarch stays incomplete when Act 3 opens through the Soul Snare), a
   thing picked up, held or its wish granted. Off at first.
 - **Secrets**, off at first: the rosary and shell shard caches, the breakable walls (the
-  one-way ones are among the shortcuts), the loose rosaries (one bead, cut from the game's picture of
+  one-way ones are among the shortcuts; Bone_12's two cell doors, struck open with no key, among
+  them; each wall its own mark, even where breaking one breaks the next, as three in the Sands of
+  Karak do), the loose rosaries (one bead, cut from the game's picture of
   the Rosaries, so they don't look like the caches) and the **Hidden corners** (what
   covers part of a room until you walk in, one mark per room, gone once all of it is uncovered: a
   cover inside a breakable wall counts once the wall is broken, one the game takes away once it's

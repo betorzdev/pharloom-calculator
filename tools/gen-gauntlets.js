@@ -119,7 +119,34 @@ const PAIRS = { 'the-slab-2': 'the-slab-3', 'the-slab-3': 'the-slab-2' };
 const GATING = require('./gating.js').load('gen-gauntlets').items;   // stops unless pickups.json is of the same patch
 const GATING_LC = new Map(Object.entries(GATING).map(([k, v]) => [k.toLowerCase(), v]));
 // An arena saved by a playerData flag (its setPDBoolOnEnd): its object, by kb/data/game/pickups.json battles.
-const BATTLES = JSON.parse(require('fs').readFileSync(path.join(__dirname, '..', 'kb', 'data', 'game', 'pickups.json'), 'utf8')).battles;
+const PICKUPS = JSON.parse(require('fs').readFileSync(path.join(__dirname, '..', 'kb', 'data', 'game', 'pickups.json'), 'utf8'));
+const BATTLES = PICKUPS.battles;
+/* An arena's own object in its scene (pickups.json battles): the one its done check names, by its
+   bool or the flag it sets once won, else the scene's only one. [object, x, y, flag] or null. */
+const flatOf = (c) => (c[0] === 'any' || c[0] === 'all' ? c.slice(1).flatMap(flatOf) : [c]);
+function arenaOf(scene, done) {
+  const all = BATTLES[scene.toLowerCase()] || [];
+  return flatOf(done).map((c) => all.find((b) => (c[0] === 'bool' && c[1].toLowerCase() === scene.toLowerCase() && b[0] === c[2])
+    || (c[0] === 'flag' && b[3] === c[1]))).find(Boolean) || (all.length === 1 ? all[0] : null);
+}
+/* What an arena drops, from the game when the wiki gives no reward: the pickup lying in its scene
+   inside the arena's object (gating.json inside; the arena switches it on once won). Library_02's
+   Acolytes' arena drops a Heavy Rosary Necklace (its activeAfterBattle; the wiki says «Nothing»;
+   read on 16-Oct-2026). Its name the game's (js/data.js ITEMS, by js/collectibles.js PURSE). */
+function droppedBy(scene, done, D) {
+  const arena = arenaOf(scene, done);
+  if (!arena) return null;
+  const got = [];
+  for (const [save, at] of Object.entries(PICKUPS.lying || {})) {
+    for (const [sc, id] of at) {
+      if (sc.toLowerCase() !== scene.toLowerCase() || (GATING_LC.get((sc + '|' + id).toLowerCase()) || {}).inside !== arena[0]) continue;
+      const p = CO.PURSE.find((x) => x[1] === save) || fail(`${scene}: its arena drops ${save}, which js/collectibles.js PURSE doesn't name`);
+      got.push((D.ITEMS.find((x) => x.id === p[0]) || fail(`no item ${p[0]}`)).name);
+    }
+  }
+  if (got.length > 1) fail(`${scene}: its arena drops ${got.length} things: droppedBy needs reading again`);
+  return got[0] || null;
+}
 const gatingOf = (c) => {
   if (c && c[0] === 'bool') return GATING_LC.get((c[1] + '|' + c[2]).toLowerCase()) || {};
   if (c && c[0] === 'flag') {
@@ -218,7 +245,7 @@ const norm = (x) => String(x).toLowerCase().replace(/[’']/g, "'").replace(/ \(
     out.push({
       id: W.slug(sub), area: areaId || undefined,
       place: place ? (N.gameName(place) || { es: place, en: place }) : undefined,
-      reward: reward || undefined, waves, done: REMOVED(DONE[W.slug(sub)] || fail(`${sub}: no condition in DONE`)),
+      reward: reward || droppedBy(SCENE[W.slug(sub)] || fail(`${sub}: no scene in SCENE`), DONE[W.slug(sub)] || fail(`${sub}: no condition in DONE`), D) || undefined, waves, done: REMOVED(DONE[W.slug(sub)] || fail(`${sub}: no condition in DONE`)),
       gone: goneOf(W.slug(sub), DONE[W.slug(sub)]),
       scene: SCENE[W.slug(sub)] || fail(`${sub}: no scene in SCENE`),
       act: ACT[W.slug(sub)] || fail(`${sub}: no Act in ACT`),

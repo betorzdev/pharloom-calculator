@@ -146,6 +146,7 @@
    "removedBy": [
     "BonebottomBellwayPilgrimLeft"
    ],
+   "withPerson": "Bellway Pilgrim",
    "world": "normal"
   },
   "Bellway_08|Sherma BellBench NPC": {
@@ -267,6 +268,7 @@
     "visitedShellwood",
     "visitedWilds"
    ],
+   "withPerson": "GRINDLE",
    "world": "normal"
   },
   "Bone_12|Thief NPC Save": {
@@ -276,6 +278,7 @@
     "visitedShellwood",
     "visitedWilds"
    ],
+   "withPerson": "GRINDLE",
    "world": "normal"
   },
   "Bone_12|Thief NPC Saved": {
@@ -285,6 +288,7 @@
     "visitedShellwood",
     "visitedWilds"
    ],
+   "withPerson": "GRINDLE",
    "world": "normal"
   },
   "Bone_12|jail_door (1)": {
@@ -297,6 +301,7 @@
     "visitedShellwood",
     "visitedWilds"
    ],
+   "withPerson": "GRINDLE",
    "world": "normal"
   },
   "Bone_16|Collapser Small (1)": {
@@ -468,6 +473,7 @@
    "removedBy": [
     "skullKingInvaded"
    ],
+   "withPerson": "FIXER",
    "world": "normal"
   },
   "Bonetown|Fixer Pilgrim": {
@@ -691,8 +697,20 @@
   "Coral_37|Silk Grub Small Cocoon 2 (1)": {
    "mode": "normal"
   },
+  "Coral_41|Coral Crust Wall Mid (20)": {
+   "breaks": "Coral Crust Wall Mid (21)"
+  },
+  "Coral_41|Coral Crust Wall Tall (6)": {
+   "breaks": "Coral Crust Wall Mid (20)"
+  },
   "Coral_41|Coral Crust Wall Tall (8)": {
    "never": true
+  },
+  "Coral_44|Coral Crust Wall Mid": {
+   "breaks": "Secret Mask New Sharp Ultra"
+  },
+  "Coral_44|Coral Crust Wall Mid (1)": {
+   "breaks": "Secret Mask New Sharp Ultra"
   },
   "Cradle_03|Abyss_Collapse_Wall": {
    "never": true
@@ -876,7 +894,8 @@
   "Greymoor_05|Garmond Sleep NPC": {
    "removedBy": [
     "garmondMoorwingConvoReady"
-   ]
+   ],
+   "withPerson": "Garmond Sleep NPC"
   },
   "Greymoor_05|Slab Fly Large Cage": {
    "removedBy": [
@@ -997,22 +1016,26 @@
   "Hang_17b|Silkfly Ambient": {
    "removedBy": [
     "defeatedSongChevalierBoss"
-   ]
+   ],
+   "withPerson": "Meet NPC"
   },
   "Hang_17b|Silkfly Ambient (1)": {
    "removedBy": [
     "defeatedSongChevalierBoss"
-   ]
+   ],
+   "withPerson": "Meet NPC"
   },
   "Hang_17b|Silkfly Ambient (2)": {
    "removedBy": [
     "defeatedSongChevalierBoss"
-   ]
+   ],
+   "withPerson": "Meet NPC"
   },
   "Hang_17b|Silkfly Ambient Perched": {
    "removedBy": [
     "defeatedSongChevalierBoss"
-   ]
+   ],
+   "withPerson": "Meet NPC"
   },
   "Library_01|Breakable Wall": {
    "world": "normal"
@@ -1400,6 +1423,11 @@
    "inside": "Battle Scene Broodmother",
    "never": true
   },
+  "Slab_16|Jail Gate Door - Persistent": {
+   "flags": [
+    "slab_cloak_gate_reopened"
+   ]
+  },
   "Slab_16|Slab Lock (1)": {
    "partner": "Slab Lock (2)"
   },
@@ -1717,6 +1745,11 @@
   "Ward_02_boss|Remasker New": {
    "removedBy": [
     "wardBossDefeated"
+   ]
+  },
+  "Ward_02|Pipe_Vent_Hatch": {
+   "flags": [
+    "wardBossHatchOpened"
    ]
   },
   "Ward_02|lock_machine": {
