@@ -456,8 +456,8 @@ boss's arena, with the person who gives it. All of it on at first.
   Deep Docks) and the Bellhome Key (Pavo, in Bellhart).
 - **Fights**: the enemy gauntlets and bosses not beaten yet, each fight its own mark (Lace atop the
   Cradle, the two Moss Mothers of Weavenest Atla, the Act 3 Moss Mother and the Savage Beastfly
-  of the Far Fields too), and the unique enemies (Rhinogrunds,
-  Covetous Pilgrims, Shardillards, Void Masses).
+  of the Far Fields too), the unique enemies (Rhinogrunds,
+  Covetous Pilgrims, Shardillards) and, in a switch of their own, the Void Masses' cores.
 - **People**: Shakra's spots, and who gives something of the 100% (Plinney, Eva, Pinstress,
   Loddie, Lumble, Mooshka) and Scrounge, who buys the relics. **Everyone else** (off at first): every
   other person the game's scenes place, 54 of them, each in one switch only, with their own figure

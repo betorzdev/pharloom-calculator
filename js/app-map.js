@@ -19,7 +19,7 @@
                     and pressure plates, gates, the doors a key opens and the keys lying, shortcuts
                     (the one-way walls among them) and silk walls (off at first; design/03-redesign.md,
                     step 6), whether the save keeps them per room or in playerData
-     Fights         the gauntlets and bosses not beaten, the unique spawns
+     Fights         the gauntlets and bosses not beaten, the unique spawns, the Void Masses apart
      People         Shakra's spots and the people who give a thing of the 100%
      Tasks          the Wishwalls and who offers a wish still open, where a wish is done, what a
                     wish asks for, and the main objectives where the game's map pins them
@@ -105,6 +105,7 @@
     L('gauntlet', () => t('ftModeGauntlets'), null),   // the first gauntlet's champion (legendArt)
     L('boss', () => t('mapLayer_boss'), FACE('lace')),
     L('spawn', () => t('mapExtra_spawn'), FACE('rhinogrund')),
+    L('void-mass', () => t('mapExtra_voidMass'), FACE('void-mass')),
     L('shakra', () => t('mapLayer_shakra'), FACE('shakra')),
     L('wishwall', () => t('mapLayer_wishwalls'), ICON('hornet_inv_pane_icons_0002_wish')),
     L('giver', () => t('mapLayer_givers'), ICON('quest_icon_large__0008_gather')),
@@ -149,7 +150,7 @@
     ['items', ['craftmetal', 'pale-oil', 'mossberry', 'silkeater', 'map', 'keyitem', 'rosaries', 'shards']],
     ['places', ['bench', 'bellway', 'ventrica', 'bellshrine', 'shop', 'lift']],
     ['passage', ['lever', 'gate', 'lock', 'key', 'shortcut', 'silkwall']],   // design/03-redesign.md, step 6, Passages
-    ['fights', ['gauntlet', 'boss', 'spawn']],
+    ['fights', ['gauntlet', 'boss', 'spawn', 'void-mass']],
     ['people', ['shakra', 'person', 'npc']],
     // The game's Tasks (PANE_QUESTS): the wishes and the main objectives (design/03-redesign.md, step 6).
     ['quests', ['wishwall', 'giver', 'wspot', 'qitem', 'goal']],
@@ -171,11 +172,13 @@
   /* Passages: the extras that open a way (js/spots.js EXTRAS, from the game's scenes), each drawn
      as its layer's: the mark's name, and the game's art where it reads at a mark's size, else the
      glyph (design/03-redesign.md, step 6). A pressure plate goes among the levers; a one-way wall the completionist
-     lists among the breakable walls goes among the shortcuts. */
+     lists among the breakable walls goes among the shortcuts. A Void Mass's core, a unique spawn,
+     has its own layer. */
   const DOOR = { lever: { name: 'mapLever', art: '_0005_core_lever_02' }, gate: { name: 'mapGate' }, lock: { name: 'mapLock', art: 'i_slab_key' },
     shortcut: { name: 'mapShortcut' }, silkwall: { name: 'mapSilkwall' } };
   const ONE_WAY = /^One Way|Shortcut/;
-  const layerOf = (x) => (x[0] === 'plate' ? 'lever' : x[0] === 'wall' && ONE_WAY.test(x[2][2]) ? 'shortcut' : x[0]);
+  const layerOf = (x) => (x[0] === 'plate' ? 'lever' : x[0] === 'wall' && ONE_WAY.test(x[2][2]) ? 'shortcut'
+    : x[0] === 'spawn' && x[4] && x[4].key === 'NAME_BLACK_THREAD_CORE' ? 'void-mass' : x[0]);
   // The doors a key opens that the save keeps (a 'lock' extra), by scene → the key (js/quests.js LOCKS).
   const LOCK_AT = new Map();
   for (const x of SP.EXTRAS) {
@@ -196,6 +199,12 @@
   const silkNote = () => t('mapSilkwallNote', { skill: pick(D.SKILLS.find((s) => s.id === 'silkspear').name) });
   function layersOn() {
     // The Tools were one layer before they went by colour.
+    // The Void Masses were among the unique enemies before they had a layer: on where those were.
+    if (Array.isArray(prefs.mapLayers) && !prefs.mapVoidMass) {
+      if (prefs.mapLayers.includes('spawn') && !prefs.mapLayers.includes('void-mass')) prefs.mapLayers = [...prefs.mapLayers, 'void-mass'];
+      prefs.mapVoidMass = true;
+      savePrefs();
+    }
     if (Array.isArray(prefs.mapLayers)) return prefs.mapLayers.flatMap((k) => (k === 'tools' ? ['tools-red', 'tools-blue', 'tools-yellow'] : [k])).filter((k) => LAYER.has(k));
     // The earlier switches (mapKinds, mapPlaces), kept where they said something.
     const on = new Set(FIRST_ON);
@@ -441,7 +450,7 @@
           draw: (s, ti, kk, c) => badge(layer, d.art ? img(ICON(kind === 'plate' ? 'dock_door_bottom_pressure_plate' : d.art)) : GLYPH[layer], s, ti, kk, c) });
         return;
       }
-      const layer = kind;
+      const layer = layerOf(x);
       /* An area map (js/spots.js EXTRAS' last field: Shakra's price, or found lying), a rosary or
          shell shard item lying in its room (its item). */
       const more = x[5] || {};
@@ -455,7 +464,7 @@
         name: name ? pick(name) : kind === 'eva' ? evaName(more.reward) : ONE[kind] ? t(ONE[kind]) : LAYER.get(layer).name(), eva: kind === 'eva' ? more : null,
         note: kind === 'masked' ? t('mapHiddenNote', { n: num(check[0] === 'all' ? check.length - 1 : 1) }) : more.shop ? t('mapMapShakra', { npc: pick(HW.NPCS[more.shop]), price: num(more.price) }) : more.found ? t('mapMapFound') : '',
         draw: (s, ti, k, c) => (kind === 'silkeater' ? pin('silkeater', 'pin_grub_location', s, ti, k, c)
-          : kind === 'spawn' ? badge('spawn', portrait(spawn && spawn.id) || GLYPH.spawn, s, ti, k, c)
+          : kind === 'spawn' ? badge(layer, portrait(spawn && spawn.id) || GLYPH.spawn, s, ti, k, c)
             : kind === 'bellhome' ? pin('bellhome', 'pin_bench_bell', s, ti, k, c)
               : icon ? dot(layer, icon, s, ti, k, c) : badge(layer, GLYPH[layer] || GLYPH.wall, s, ti, k, c)) });
     });

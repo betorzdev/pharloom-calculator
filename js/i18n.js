@@ -341,6 +341,7 @@
     mapExtra_memento:   { es: 'Recuerdos', en: 'Mementos' },   // COLLECTION_HEADING_MOMENTOS
     mapExtra_bellhome:  { es: 'Hogar campana', en: 'Bellhome' },   // BELLHOME
     mapExtra_spawn:     { es: 'Enemigos únicos', en: 'Unique enemies' },
+    mapExtra_voidMass:  { es: 'Masa de vacío', en: 'Void Mass' },   // NAME_BLACK_THREAD_CORE
     mapExtra_rosary:    { es: 'Alijos de rosarios', en: 'Rosary caches' },
     mapExtra_shard:     { es: 'Alijos de fragmentos', en: 'Shell shard caches' },
     mapExtra_wall:      { es: 'Paredes rompibles', en: 'Breakable walls' },
