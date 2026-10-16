@@ -336,8 +336,8 @@
     [
      "belltown",
      "Pilgrim Round BG Look",
-     90.75,
-     19.41
+     63.08,
+     6.01
     ],
     [
      "bone_08",
@@ -652,8 +652,8 @@
     [
      "bellway_01",
      "Bellway Pilgrim",
-     66.57,
-     10.78
+     66.88,
+     9.39
     ]
    ]
   },
@@ -1842,8 +1842,8 @@
     [
      "dust_shack",
      "Dust Traders",
-     22.41,
-     6.93
+     22.62,
+     6.26
     ]
    ]
   },
@@ -1880,8 +1880,8 @@
     [
      "dust_shack",
      "Dust Traders",
-     22.41,
-     6.93
+     22.62,
+     6.26
     ]
    ]
   },
@@ -2011,20 +2011,20 @@
     [
      "belltown",
      "Pilgrim Fisher NPC Walker",
-     42.2,
-     -20.4
+     14.11,
+     7.47
     ],
     [
      "belltown_07",
      "Pilgrim Fisher NPC Walker",
-     42.2,
-     -20.4
+     -1.99,
+     8.13
     ],
     [
      "shellwood_01",
      "Pilgrim Fisher NPC Walker",
-     109.5,
-     -20.4
+     92.49,
+     18.03
     ]
    ]
   },
@@ -2103,8 +2103,8 @@
     [
      "bone_10",
      "Fixer Sitting Bone_10",
-     30.78,
-     15.33
+     30.95,
+     16.4
     ],
     [
      "bonetown",
@@ -2367,8 +2367,8 @@
     [
      "bone_10",
      "Caravan Troupe Leader Bone NPC",
-     37.72,
-     16.85
+     38.39,
+     16.94
     ],
     [
      "coral_judge_arena",
@@ -2449,8 +2449,8 @@
     [
      "bone_10",
      "Caravan Troup Member Short",
-     31.45,
-     16.27
+     32.12,
+     16.36
     ],
     [
      "coral_judge_arena",
@@ -2502,8 +2502,8 @@
     [
      "bone_10",
      "Caravan Troup Member Tall",
-     19.39,
-     16.83
+     20.06,
+     16.92
     ],
     [
      "room_caravan_interior",
@@ -2821,8 +2821,8 @@
     [
      "bone_10",
      "Caravan Lech",
-     46.99,
-     16.45
+     47.66,
+     16.54
     ],
     [
      "coral_judge_arena",
@@ -3068,8 +3068,8 @@
     [
      "bone_10",
      "Caravan Troupe Hunter",
-     55.38,
-     17.03
+     56.05,
+     17.12
     ],
     [
      "coral_judge_arena",
@@ -3529,26 +3529,26 @@
     [
      "bone_09",
      "Citadel Library NPC",
-     127.74,
-     11.09
+     130.26,
+     9.98
     ],
     [
      "bone_11",
      "Citadel Library NPC",
-     78.84,
-     21.36
+     78.9,
+     19.34
     ],
     [
      "bone_east_02",
      "Citadel Library NPC",
-     149.07,
-     -37.72
+     101.75,
+     16.88
     ],
     [
      "bone_east_05",
      "Citadel Library NPC",
-     110.8,
-     -7.23
+     127.93,
+     10.96
     ],
     [
      "bone_east_14",
@@ -3577,8 +3577,8 @@
     [
      "greymoor_07",
      "Garmond Aid NPC",
-     78.59,
-     21.28
+     54.98,
+     4.76
     ],
     [
      "greymoor_08_boss",
@@ -4406,8 +4406,8 @@
     [
      "halfway_01",
      "HH Patron Left",
-     19.83,
-     4.76
+     19.98,
+     4.25
     ]
    ]
   },
@@ -4429,8 +4429,8 @@
     [
      "halfway_01",
      "HH Patron Right",
-     25.06,
-     5.12
+     25.21,
+     4.61
     ]
    ]
   },
@@ -5011,8 +5011,8 @@
     [
      "bone_east_10",
      "Bonetown Resident",
-     89.84,
-     101.9
+     62.82,
+     4.05
     ],
     [
      "bone_east_10_room",
@@ -5073,8 +5073,8 @@
     [
      "bone_east_10",
      "Bonetown Resident",
-     89.84,
-     101.9
+     62.82,
+     4.05
     ],
     [
      "bone_east_10_room",
@@ -5495,8 +5495,8 @@
     [
      "ant_04_mid",
      "Mapper NPC",
-     198.81,
-     15.24
+     193.49,
+     13.59
     ],
     [
      "ant_20",
@@ -5567,8 +5567,8 @@
     [
      "greymoor_08",
      "Mapper StandGuard NPC",
-     60.2,
-     -12.51
+     30.51,
+     5.77
     ],
     [
      "greymoor_08_mapper",
@@ -6995,8 +6995,8 @@
     [
      "bone_east_10",
      "Sherma Docks NPC",
-     140.11,
-     85.46
+     59.4,
+     4.19
     ],
     [
      "coral_10",
@@ -7060,20 +7060,20 @@
     [
      "belltown",
      "Generic Pilgrim Large BG Look",
-     92.33,
-     20.04
+     64.66,
+     6.64
     ],
     [
      "bone_10",
      "Generic Pilgrim Large BG Look (1)",
-     14.99,
-     23.57
+     15.12,
+     16.99
     ],
     [
      "bone_east_10",
      "Generic Pilgrim Large",
-     143.74,
-     85.64
+     63.03,
+     4.37
     ],
     [
      "bonetown",
@@ -7084,8 +7084,8 @@
     [
      "halfway_01",
      "Generic Pilgrim Large",
-     14.98,
-     3.66
+     15.13,
+     3.15
     ]
    ]
   },

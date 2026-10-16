@@ -14,7 +14,9 @@ How the game names a person (read on 11-Oct-2026, patch 1.0.30000):
     (a PlayMakerNPC or BasicNPC on it): a key named by a scene's manager, a boss or a map pole isn't
     a person standing there.
 What it writes:
-  people   title key → { spots: [[scene, object, x, y]] (one per scene, an active object first),
+  people   title key → { spots: [[scene, object, x, y]] (one per scene, an active object first;
+           x, y its place, its parents' turns counted, and for one who walks between scenes, a
+           SplineWalker, the last point of its path on the ground),
            fields: the identifiers the person's scripts read: every length-prefixed name in the raw
            data of the FSMs on their objects and the four objects above them, and the playerData
            tests (Deactivate/ActivateIfPlayerdata…, PlayerDataTestResponse, TestGameObjectActivator)
@@ -27,6 +29,7 @@ What it writes:
 import json, os, re, struct, sys, warnings
 import UnityPy
 from PIL import Image
+from scene_place import placer, world_of
 
 warnings.filterwarnings('ignore')
 UnityPy.config.FALLBACK_UNITY_VERSION = '6000.0.50f1'
@@ -45,7 +48,7 @@ BUST_TOP = {'GRUBFARMER': 0.3, 'HUNTRESS': 0.2}
 NAME = re.compile(rb'[A-Za-z][A-Za-z0-9_]{4,47}')
 TESTS = {'DeactivateIfPlayerdataTrue', 'DeactivateIfPlayerdataFalse', 'ActivateIfPlayerdataTrue', 'ActivateIfPlayerdataFalse',
          'TestGameObjectActivator', 'PlayerDataTestResponse'}
-READ = TESTS | {'NpcDialogueTitle', 'ShopOwner', 'SimpleQuestsShopOwner', 'tk2dSprite'}
+READ = TESTS | {'NpcDialogueTitle', 'ShopOwner', 'SimpleQuestsShopOwner', 'tk2dSprite', 'SplineWalker'}
 TALKS = {'PlayMakerNPC', 'BasicNPC'}
 # The talkers whose title only their FSM shows (read on 11-Oct-2026): a talker's FSM also names
 # areas, bosses and other people (Shakra's names every area she maps), so only these keys, and the
@@ -144,14 +147,26 @@ def main(game):
                 out.append(g); g = parent(g)
             return out
 
-        def world(g):
-            ch = [of_go[x] for x in chain(g) if x in of_go]
-            x = y = 0.0; sx = sy = 1.0
-            for t in reversed(ch):
-                lp, ls = t.m_LocalPosition, t.m_LocalScale
-                x, y = x + lp.x * sx, y + lp.y * sy
-                sx, sy = sx * ls.x, sy * ls.y
-            return [round(x, 2), round(y, 2)]
+        world = world_of(T, of_go, 2)   # its place, its parents' turns counted (tools/scene_place.py)
+        by_pid = {}
+
+        def walk_end(g):
+            """One who walks between scenes (a SplineWalker, parked off the scene until its
+            CrossSceneWalker's turn comes: Pondcatcher Reed): the last point of its path on the
+            ground (z 0; it flies in and out above it), where it stops walking in this scene."""
+            for c, d, _ in comps.get(g, []):
+                pid = c == 'SplineWalker' and (d.get('path') or {}).get('m_PathID')
+                if not pid:
+                    continue
+                if not by_pid:
+                    by_pid.update((o.path_id, o) for o in env.objects)
+                o = by_pid.get(pid)
+                tt = o.read_typetree() if o is not None else {}
+                ground = [q for q in tt.get('controlPoints') or [] if abs(q['z']) < 0.01]
+                if ground:
+                    x, y = placer(T, of_go)(tt['m_GameObject']['m_PathID'])(ground[-1]['x'], ground[-1]['y'])
+                    return [round(x, 2), round(y, 2)]
+            return None
         comps = {}   # gid → [(class, data, object)]
         fsm_names, fsm_keys = {}, {}
         for o in env.objects:
@@ -215,7 +230,7 @@ def main(game):
                 fields |= switch.get(g, set())
             active = all(GO.get(g, ('', True))[1] for g in ch)
             name = GO.get(gid, ('?',))[0]
-            at = world(gid)
+            at = walk_end(gid) or world(gid)
             for k, via in ks.items():
                 p = people.setdefault(k, {'spots': {}, 'fields': set(), 'titled': False})
                 p['titled'] = p['titled'] or via == 'title'

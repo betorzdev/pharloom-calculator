@@ -26,7 +26,9 @@ test('every person and trader has a room on the map and a picture', () => {
       const file = path.join(__dirname, '..', 'assets', x.art.startsWith('journal/') ? 'icons' : 'map', x.art + '.webp');
       assert.ok(fs.existsSync(file), `${x.id}: ${file} is missing`);
     }
-    for (const [, , scene] of x.at || []) assert.ok(x.spots.some((s) => s[0] === scene), `${x.id}: ${scene} isn't a spot of theirs`);
+    // A room where another mark stands for them (who makes a wish there: Nuu at home) isn't a spot.
+    const standsIn = (scene) => Object.entries(require('../js/spots.js').GIVER).some(([id, g]) => g && id.split(':')[0].toLowerCase() === scene && x.name.key.startsWith(g[0] + '_'));
+    for (const [, , scene] of x.at || []) assert.ok(x.spots.some((s) => s[0] === scene) || standsIn(scene), `${x.id}: ${scene} isn't a spot of theirs`);
     for (const f of [...(x.met || []), ...(x.gone || []), ...(x.at || []).map((a) => a[0])]) assert.ok(PE.VARS.includes(f), `${x.id}: ${f} isn't in VARS`);
   }
 });
@@ -38,4 +40,23 @@ test('a save keeps the fields the people\'s rules read, and a slot gives them ba
   const back = F.gameOf(F.toSnapshot({ silk: 0, [f]: true }));
   assert.strictEqual(back.peopleVars[f], true);
   assert.deepStrictEqual(F.gameOf({}).peopleVars, {});
+});
+
+test('each person once in a room: not again where who asks for a wish, a boss or the Herald stands for them', () => {
+  const SP = require('../js/spots.js');
+  const room = (s) => ((R.roomOf(s) || {}).scene || s).toLowerCase();
+  const spotsOf = (id) => (PE.PEOPLE.find((x) => x.id === id) || { spots: [] }).spots.map(([s]) => room(s));
+  // Who asks for a wish is named, the game's words, and isn't in Everyone else in that room.
+  const [key, name] = SP.GIVER.Room_Huntress;
+  assert.strictEqual(key, 'HUNTRESS');
+  assert.deepStrictEqual([name.es, name.en], ['Cazadora', 'Huntress']);
+  assert.ok(!spotsOf('huntress').includes(room('Room_Huntress')));
+  // One with a mark of theirs there already has the wishes on it: Plinney, the Couriers' shop.
+  assert.strictEqual(SP.GIVER.Belltown_Room_pinsmith[2], 'person:plinney');
+  assert.strictEqual(SP.GIVER.Belltown[2], 'shop:couriers:0');
+  // The Second Sentinel is its boss in its arena, but still stands in Song_07, where the save follows it.
+  assert.ok(!spotsOf('song-knight').includes(room('Hang_17b')));
+  assert.ok(spotsOf('song-knight').includes(room('Song_07')));
+  // Mister Mushroom is the Herald's spot where the wish's mark is.
+  assert.ok(!spotsOf('mr-mushroom').includes(room('Peak_08b')));
 });

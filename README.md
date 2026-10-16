@@ -161,7 +161,7 @@ npm run mark-fit               # measures each Map mark picture so all draw at o
 npm run admin                  # the Map's admin mode: place a mark right, saved to js/map-fixes.js
 npm run check-pack -- <folder> # the site against a folder of real saves: the 100% must match
 npm run drive -- --save <.dat> # any screen in headless Chrome with a real save, screenshotted
-npm run promo -- --before <save> --after <save>  # the announcement video (tools/promo/make.js)
+npm run trailer -- --before <save> --after <save>  # the announcement video (tools/trailer/make.js)
 ```
 
 What's read from the installed game (each script's header says how):

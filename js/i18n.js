@@ -152,9 +152,9 @@
     cat_tools:      { es: 'Herramientas', en: 'Tools' },
     cat_spools:     { es: 'Carretes de seda', en: 'Silk Spools' },
     cat_upgrades:   { es: 'Bolsa de herramientas y kit de fabricación', en: 'Tool Pouch & Crafting Kit' },   // INV_NAME_POUCHANDTOOLKIT
-    cat_arts:       { es: 'Habilidades', en: 'Abilities' },
-    cat_skills:     { es: 'Habilidades de seda', en: 'Silk Skills' },
-    cat_crests:     { es: 'Blasones', en: 'Crests' },
+    cat_arts:       { es: 'Habilidades', en: 'Abilities' },   // es: PANE_SKILLS; en: the wiki's "Skills and Abilities" (the 100%'s Abilities), the game's Skills pane being the same
+    cat_skills:     { es: 'Habilidades de seda', en: 'Silk Skills' },   // as the game says it in «Bind all Silk Skills»
+    cat_crests:     { es: 'Blasones', en: 'Crests' },   // as the game says it in «Claim all Crests»
     cat_masks:      { es: 'Máscaras', en: 'Masks' },
     cat_needle:     { es: 'Mejoras de la aguja', en: 'Needle upgrades' },
     cat_hearts:     { es: 'Corazones de seda', en: 'Silk Hearts' },   // INV_DESC_SPOOL_SILKHEARTS
@@ -275,10 +275,17 @@
     mapHad:         { es: 'Mostrar completados', en: 'Show Completed' },   // INV_TOGGLE_COMPLETED_ON
     mapFit:         { es: 'Entero', en: 'Whole' },
     mapAlt:         { es: 'El mapa de Telalejana', en: 'The map of Pharloom' },
-    mapPlace_bench: { es: 'Bancos', en: 'Benches' },   // KEY_BENCH, in the plural
     mapPlace_bench1:{ es: 'Banco', en: 'Bench' },   // KEY_BENCH
-    mapPlace_bellway:{ es: 'Vías Campana', en: 'Bellways' },   // MAP_LIST_TITLE
+    mapPlace_bellway:{ es: 'Vía Campana', en: 'Bellway' },   // KEY_BELLWAY
     mapPlace_ventrica:{ es: 'Ventrica', en: 'Ventrica' },   // KEY_TUBE
+    // A Ventrica station by its name in the game, by its scene (js/app-map.js TUBE).
+    mapTube_arborium: { es: 'Memorium', en: 'Memorium' },   // TUBE_NAME_ARBORIUM
+    mapTube_city:     { es: 'Gran Vía Campana', en: 'Grand Bellway' },   // TUBE_NAME_CITYBELLWAY
+    mapTube_hang:     { es: 'Altos Salones', en: 'High Halls' },   // TUBE_NAME_HANG
+    mapTube_song:     { es: 'Cámaras Corales', en: 'Choral Chambers' },   // TUBE_NAME_SONG
+    mapTube_enclave:  { es: 'Primer Santuario', en: 'First Shrine' },   // TUBE_NAME_ENCLAVE
+    mapTube_hub:      { es: 'Terminus', en: 'Terminus' },   // TUBE_NAME_HUB
+    mapTube_under:    { es: 'Talleres Inferiores', en: 'Underworks' },   // TUBE_NAME_UNDER
     // No game text for a respawn point (searched: respawn, reaparecer, wake): written for the context.
     mapRespawn:     { es: 'Tu punto de reaparición', en: 'Your respawn point' },
     mapClosed:      { es: 'sin abrir', en: 'not open yet' },
@@ -300,6 +307,7 @@
     mapToolsOut:    { es: 'Fuera del 100 %', en: 'Outside the 100%' },
     mapToolUpgrade: { es: 'Mejora de {tool}: no suma aparte al 100 %', en: 'Upgrades {tool}: it doesn\'t add to the 100% on its own' },
     mapArtOut:      { es: 'No cuenta para el 100 %', en: 'It doesn\'t count for the 100%' },
+    mapArtsIn:      { es: 'Del 100 %', en: 'Of the 100%' },
     mapToolLent:    { es: 'Te la presta un deseo y te la quita al cumplirlo: no cuenta para el 100 %', en: 'A wish lends it and takes it back once done: it doesn\'t count for the 100%' },
     mapGroupShow:   { es: 'Mostrar todo el grupo', en: 'Show the whole group' },
     mapGroupHide:   { es: 'Esconder todo el grupo', en: 'Hide the whole group' },
@@ -314,20 +322,19 @@
     mapArea:        { es: 'Zona', en: 'Area' },
     mapOnMap:       { es: 'Ver en el mapa', en: 'See on the map' },
     mapMore:        { es: 'y {n} más', en: 'and {n} more' },
-    mapLayer_boss:  { es: 'Jefes', en: 'Bosses' },
-    mapLayer_bells: { es: 'Santuarios de Campana', en: 'Bellshrines' },   // BELLSHRINE, in the plural
-    mapLayer_locks: { es: 'Puertas con llave', en: 'Locked doors' },
-    mapLayer_shops: { es: 'Vendedores', en: 'Vendors' },   // KEY_SHOP (the game's map key), in the plural
+    mapLayer_boss:  { es: 'Jefes', en: 'Bosses' },   // no game text for them together
+    mapLayer_bells: { es: 'Santuario de Campana', en: 'Bellshrine' },   // BELLSHRINE
+    mapLayer_locks: { es: 'Puertas cerradas', en: 'Locked doors' },   // BELLTOWN_HOUSE_LOCKED says «cerrado con llave»; no game text for the layer
+    mapLayer_shops: { es: 'Vendedor', en: 'Vendor' },   // KEY_SHOP (the game's map key)
     mapLayer_shakra:{ es: 'Shakra', en: 'Shakra' },   // MAPPER_MAIN
-    mapLayer_wishwalls: { es: 'Muros de deseos', en: 'Wishwalls' },
     mapLayer_wishwall1: { es: 'Muro de deseos', en: 'Wishwall' },   // QUESTBOARD_TITLE
-    mapLayer_givers:{ es: 'Quien pide un deseo', en: 'Who asks for a wish' },
-    mapLayer_giver1:{ es: 'Pide un deseo', en: 'Asks for a wish' },
+    mapLayer_givers:{ es: 'Quien pide un deseo', en: 'Who makes a wish' },
+    mapLayer_giver1:{ es: 'Pide un deseo', en: 'Makes a wish' },
     mapLayer_people:{ es: 'Quien da algo del 100 %', en: 'Who gives a 100% thing' },
     // The wishes and the main objectives (js/spots.js TASKS). No game source: written for context.
-    mapLayer_wspots:{ es: 'Dónde se cumple un deseo', en: 'Where a wish is done' },
+    mapLayer_wspots:{ es: 'Dónde se concede un deseo', en: 'Where a wish is granted' },   // WISH_GRANTED, FIRST_WISH_DESC: the game grants wishes
     mapLayer_qitems:{ es: 'Lo que pide un deseo', en: 'What a wish asks for' },
-    mapLayer_goals: { es: 'Objetivos', en: 'Objectives' },
+    mapLayer_goals: { es: 'Objetivos', en: 'Objectives' },   // TASKLIST_INTRO_PREFIX, TASKLIST_INTRO_2
     mapLayer_cocoon:{ es: 'Tu capullo', en: 'Your cocoon' },
     mapLayer_journal: { es: 'Diario', en: 'Journal' },   // PANE_JOURNAL
     'mapExtra_bone-scroll':        { es: 'Pergamino óseo', en: 'Bone Scroll' },   // INV_NAME_R_BONE_RECORD
@@ -340,15 +347,15 @@
     mapExtra_silkeater: { es: 'Devoraseda', en: 'Silkeater' },   // INV_NAME_SILK_GRUB
     mapExtra_memento:   { es: 'Recuerdos', en: 'Mementos' },   // COLLECTION_HEADING_MOMENTOS
     mapExtra_bellhome:  { es: 'Hogar campana', en: 'Bellhome' },   // BELLHOME
-    mapExtra_spawn:     { es: 'Enemigos únicos', en: 'Unique enemies' },
+    mapExtra_voidMass:  { es: 'Masa de vacío', en: 'Void Mass' },   // NAME_BLACK_THREAD_CORE
     mapExtra_rosary:    { es: 'Alijos de rosarios', en: 'Rosary caches' },
-    mapExtra_shard:     { es: 'Alijos de fragmentos', en: 'Shell shard caches' },
+    mapExtra_shard:     { es: 'Alijos de fragmentos de coraza', en: 'Shell Shard caches' },   // Shell Shards as the game's item says it, then the site's «caches»
     mapExtra_wall:      { es: 'Paredes rompibles', en: 'Breakable walls' },
     mapBell:        { es: 'Santuario de Campana de {area}', en: '{area} Bellshrine' },
     mapLock:        { es: 'Puerta cerrada', en: 'Locked door' },
     mapLockKey:     { es: 'Se abre con: {key}', en: 'Opened with: {key}' },
     // What opens a way (the Map's Passages): the game names none of these, so written for context.
-    mapGroup_passage:   { es: 'Pasos', en: 'Passages' },
+    mapGroup_passage:   { es: 'Accesos', en: 'Passages' },   // no game text for them together
     mapLayer_levers:    { es: 'Palancas', en: 'Levers' },
     mapLayer_gates:     { es: 'Rejas', en: 'Gates' },
     mapLayer_shortcuts: { es: 'Atajos', en: 'Shortcuts' },
@@ -361,7 +368,7 @@
     mapSilkwallNote:{ es: 'Se corta con la {skill}.', en: 'Cut with {skill}.' },   // {skill}: Silkspear's name, the game's
     // The area maps (each mark carries its own name, the game's), and the rosaries and shell shards
     // lying in a room (each its item's name).
-    mapExtra_map:      { es: 'Mapas', en: 'Maps' },   // PANE_MAP, in the plural
+    mapExtra_map:      { es: 'Mapa', en: 'Map' },   // INV_NAME_MAP
     mapExtra_rosaries: { es: 'Rosarios', en: 'Rosaries' },   // INV_NAME_COIN
     mapExtra_shards:   { es: 'Fragmentos de coraza', en: 'Shell Shards' },   // INV_NAME_SHARD
     mapMapFound:    { es: 'Se consigue en esta sala.', en: 'Had in this room.' },
@@ -370,8 +377,8 @@
     // none of these groups, so written for context (each key and item carries its own game name).
     mapLayer_keys:     { es: 'Llaves', en: 'Keys' },
     mapLayer_lifts:    { es: 'Ascensores', en: 'Lifts' },
-    mapExtra_keyitems: { es: 'Objetos clave', en: 'Key items' },
-    mapExtra_cocoons:  { es: 'Capullos de seda', en: 'Silk cocoons' },
+    mapExtra_keyitems: { es: 'Objetos clave', en: 'Key items' },   // no game text for them together
+    mapExtra_cocoons:  { es: 'Capullos de seda', en: 'Silk cocoons' },   // no game text: the small «Silk Grub Small Cocoon» objects
     mapExtra_beads:    { es: 'Rosarios sueltos', en: 'Loose rosaries' },
     mapExtra_hidden:   { es: 'Rincones ocultos', en: 'Hidden corners' },
     mapLift:        { es: 'Ascensor', en: 'Lift' },
@@ -419,10 +426,15 @@
     mapWishesLeft:  { es: 'Deseos sin cumplir: {list}', en: 'Wishes still open: {list}' },
     mapWishesNone:  { es: 'No quedan deseos por cumplir.', en: 'No wishes left open.' },
     mapKills:       { es: '{n} de {m} derrotados', en: '{n} of {m} defeated' },
+    mapBeastHere:   { es: '{n} en esta sala', en: '{n} in this room' },
     mapTaskFor:     { es: 'Lo pide el deseo «{wish}».', en: 'The wish "{wish}" asks for it.' },
     mapWishGranted: { es: 'Deseo concedido', en: 'Wish Granted' },   // WISH_GRANTED
     mapDone:        { es: 'Completado', en: 'Completed' },   // COMPLETED
     mapNotDone:     { es: 'Sin cumplir', en: 'Not done yet' },
+    // A mark the game has taken away (design/86, 2 A): the site's words, the game has none for it.
+    mapLost:        { es: 'Ya no está', en: 'No longer there' },
+    mapLostAct3:    { es: 'El juego lo retira al empezar el Acto 3.', en: 'The game takes it away when Act 3 begins.' },
+    mapLostArena:   { es: 'Solo se lucha en una de las dos arenas, y luchaste en {name}.', en: 'Only one of the two arenas is fought, and you fought {name}.' },
     mapToWall:      { es: 'Ver el muro de deseos', en: 'See the Wishwall' },
     mapToGiver:     { es: 'Ver quién lo pide', en: 'See who asks for it' },
 
@@ -683,12 +695,13 @@
     pgTasks:        { es: 'Tareas', en: 'Tasks' },   // PANE_QUESTS
     pgTasksMain:    { es: 'Objetivos principales', en: 'Main objectives' },
     pgTasksCollect: { es: 'Colección', en: 'Collect' },
+    // A wish promised (design/81): its state as the game shows it, and the head the promised go first under.
+    pgPromised:     { es: 'Deseo prometido', en: 'Wish Promised' },   // WISH_PROMISED
+    pgPromisedHead: { es: 'Prometidos', en: 'Promised' },   // no word of the game's for them together
+    pgRest:         { es: 'Los demás', en: 'The rest' },
     /* Progress's two tabs (design/27b-progress-variants.html): the road to the next Act and the 100% */
     pgStepOf:       { es: 'paso {n} de {of}', en: 'step {n} of {of}' },
     pgToGo:         { es: '{pct} por conseguir', en: '{pct} to go' },
-    pgReach:        { es: 'cosas del 100 % que ya puedes conseguir', en: 'things of the 100% you can already get' },
-    pgReachTip:     { es: 'Cada cosa cuenta por separado: un fragmento de máscara es una, no un punto de la finalización.', en: 'Each thing counts on its own: a Mask Shard is one, not a point of completion.' },
-    pgSee100:       { es: 'Ver el 100 %', en: 'See the 100%' },
     pgShrines:      { es: 'Santuarios de Campana', en: 'Bellshrines' },   // BELLSHRINE, in the plural
     pgPoints:       { es: 'Puntos de deseos', en: 'Wish points' },
     pgEndings:      { es: 'Finales', en: 'Endings' },   // no word of the game's for them
@@ -715,7 +728,6 @@
     pgInvite:       { es: 'Importa tu partida y verás en qué acto estás, y qué te falta para el siguiente y para el 100 %, pieza a pieza.',
                       en: 'Import your game to see which Act you\'re in, and what\'s left for the next one and for 100%, piece by piece.' },
     /* The road's steps by what to do, on its thread (3 A); the titles stay the whole road's */
-    pgStepN:        { es: '{n} · {step}', en: '{n} · {step}' },
     pgStepBells:    { es: 'Haz sonar los Santuarios', en: 'Ring the Bellshrines' },   // the game's word in it: BELLSHRINE
     pgStepGate:     { es: 'Abre la {gate}', en: 'Open the {gate}' },
     pgStepJudge:    { es: 'Derrota a la {judge}', en: 'Defeat the {judge}' },   // with its {judge}, DEFEATED_LAST_JUDGE_1_DESC
@@ -745,14 +757,10 @@
     pgHereFreeK:    { es: 'Modo libre.', en: 'Free mode.' },
     pgHereFree:     { es: 'El 100 % cuenta lo que marcas aquí o en el Inventario, desde una partida nueva; el camino es la guía, como sin un perfil cargado.', en: 'The 100% counts what you mark here or in the Inventory, from a New Game; the road is the guide, as with no profile loaded.' },
     pgLadderNote:   { es: 'Esto se fija en el Inventario:', en: 'This is set in the Inventory:' },
-    pgListAll:      { es: 'Ver la lista entera, con lo hecho ({n})', en: 'See the whole list, done included ({n})' },
-    pgListLess:     { es: 'Cerrar la lista entera', en: 'Close the whole list' },
     /* The 100% tab (4 A), and the guide without a save (5 A) */
     pgInCats:       { es: 'en {n} categorías', en: 'in {n} categories' },
     pgColHead:      { es: 'Tienes / vale (%)', en: 'Got / worth (%)' },
     pgColHeadNone:  { es: 'Vale (%)', en: 'Worth (%)' },
-    pgFoldSee:      { es: 'Ver los {n}', en: 'See all {n}' },
-    pgFoldHide:     { es: 'Ocultar', en: 'Hide' },
 
     /* Progress: the road to the next Act (js/acts.js, the game's own rules) */
     roadTitle:      { es: 'Camino al Acto {n}', en: 'The road to Act {n}' },
@@ -764,8 +772,6 @@
     roadGame:       { es: 'Tu partida', en: 'Your game' },
     roadEndings:    { es: '{n} de {of} finales', en: '{n} of {of} endings' },
     roadEndingsReach:{ es: '{n} de {of} finales a tu alcance', en: '{n} of {of} endings within reach' },
-    roadWhole:      { es: 'El camino entero', en: 'The whole road' },
-    roadLess:       { es: 'Cerrar el camino', en: 'Close the road' },
     roadBoth:       { es: 'Los caminos a los Actos 2 y 3', en: 'The roads to Acts 2 and 3' },
     roadNote2:      { es: 'Lo que pide el juego para entrar en la Ciudadela, paso a paso.', en: 'What the game asks before you walk into the Citadel, step by step.' },
     roadNote3:      { es: 'Lo que pide el juego para abrir el Acto 3, leído de sus propios archivos. Las guías suelen dar solo seis deseos: cuentan también los que van antes de ellos, un mínimo de puntos de deseos y cuatro condiciones más.',
@@ -779,26 +785,16 @@
     roadCitadel:    { es: 'Entra en la Ciudadela', en: 'Walk into the Citadel' },
     roadUnlock:     { es: 'Desbloquea el deseo «{wish}»', en: 'Unlock the wish "{wish}"' },
     roadRequired:   { es: 'Deseos obligatorios', en: 'Required wishes' },
-    roadPoints:     { es: 'Puntos de deseos: {n} de {max} posibles', en: 'Wish points: {n} of a possible {max}' },
-    roadPointsNote: { es: 'Cualquiera de estos vale un punto; una entrega, medio, y solo la primera vez.', en: 'Any of these is worth a point; a delivery half of one, and only the first time.' },
     roadHalf:       { es: '½ punto', en: '½ point' },
     roadBefore:     { es: 'antes: {name}', en: 'first: {name}' },
-    roadChecks:     { es: 'Y además', en: 'And also' },
     roadFour:       { es: 'Cuatro condiciones', en: 'Four conditions' },
     roadAllThree:   { es: 'Para que el {caretaker} te ofrezca «{wish}» hacen falta las tres cosas:', en: 'For the {caretaker} to offer you "{wish}", all three are needed:' },
-    roadGoalReq:    { es: 'Hay que hacerlos todos.', en: 'Every one of them is needed.' },
-    roadGoalPts:    { es: '{n} puntos con cualquiera de estos {wishes} deseos: cada uno vale un punto; una entrega, medio, y solo la primera vez.', en: '{n} points from any of these {wishes} wishes: each is worth a point; a delivery half of one, and only the first time.' },
-    roadGoalChk:    { es: 'Hay que cumplirlas todas.', en: 'Every one of them is needed.' },
-    roadGoalShrines: { es: 'Hay que hacer sonar los {n}.', en: 'All {n} must be rung.' },
-    roadGoalSnare:  { es: 'Hay que reunir las {n}.', en: 'All {n} are needed.' },
-    roadLeft:       { es: 'Te faltan {n}.', en: '{n} to go.' },
     roadLeft1:      { es: 'Te falta {n}.', en: '{n} to go.' },
     roadCaravan:    { es: 'La Caravana de las pulgas en Pulgatopía', en: 'The Flea Caravan at Fleatopia' },   // KEY_CARAVAN, FLEATOPIA
     roadLace:       { es: 'Derrota a Lace en la Cuna', en: 'Defeat Lace in the Cradle' },   // DEFEATED_LACE_2_DESC
     roadKey:        { es: 'Llave de hogar campana', en: 'Bellhome Key' },   // INV_NAME_BELL_HOUSE_KEY
     roadPavo:       { es: 'lista: habla con Pabo', en: 'ready: talk to Pavo' },   // his name: BELLHART_GREETER_MAIN
     roadKeyRule:    { es: 'Pabo la da tras «{glory}» y {n} deseos de su lista', en: 'Pavo gives it after {glory} and {n} wishes of his list' },
-    roadKeyHead:    { es: '{key}: lo que pide Pabo', en: '{key}: what Pavo asks' },
     roadOffer:      { es: 'Acepta «{wish}»: habla con el {caretaker} en {clave}', en: 'Accept "{wish}": talk to the {caretaker} in {clave}' },
     roadOfferNote:  { es: 'Con todo cumplido, te llama con la mano. El deseo sale también en el muro de deseos de {town}, que te manda a él.', en: 'Once everything is met he waves you over. The wish also shows on the Wishwall in {town}, which sends you to him.' },
     roadDeclined:   { es: 'Ya te lo ofreció y lo rechazaste: vuelve a hablar con él y acéptalo.', en: 'He offered it and you turned it down: talk to him again and accept.' },
@@ -823,12 +819,11 @@
        says of it, its Wishwall, the Inventory, the Journal or the Caretaker. */
     pgSays:         { es: 'Lo que dice el juego', en: 'What the game says' },
     pgSaysHide:     { es: 'Ocultar', en: 'Hide' },
-    pgSaysNone:     { es: 'El juego no tiene texto para este paso.', en: 'The game has no text for this step.' },
     pgPeekStep:     { es: 'Paso {n}', en: 'Step {n}' },
     pgPeekDone:     { es: 'hecho', en: 'done' },
-    pgPeekClose:    { es: 'Cerrar el paso', en: 'Close the step' },
-    pgPeekOpen:     { es: 'Lo que dice el juego de este paso', en: 'What the game says of this step' },
     pgMapN:         { es: 'Ver los {n} en el mapa', en: 'See the {n} on the map' },
+    // The route's last station, over the Act it opens (design/83, 4 A).
+    pgRouteEnd:     { es: 'Llegas al', en: 'You reach' },
     roadKeyDesc:    { es: 'Llave para acceder a una campana restaurada sobre Campanilla.', en: 'Key to a restored bell above Bellhart.' },   // INV_DESC_BELL_HOUSE_KEY
     roadSays_churchkeeper: { es: 'Abajo, en las tierras musgosas, aferrada aún a su capilla fallida, mi hermana se desprenderá de su poder, si se lo pides amablemente.',
                       en: 'Down in the mosslands, still clinging to her failed chapel, my sister\'ll part with her power, if asked kind enough.' },   // CARETAKER_SNARE_REPEAT_CHURCHKEEPER

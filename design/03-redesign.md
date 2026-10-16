@@ -39,11 +39,11 @@ the work up reads it first, then the step it's on.
 |---|---|---|---|
 | 1 | **The shell**: header, screen bar (desktop and phone), the screen's frame and title, footer and About, the atmosphere | **Built** (28 Sep) | [`04-shell-variants.html`](04-shell-variants.html) |
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
-| 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html` |
+| 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct; the summary, 16 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html`, `89-your-game-summary-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html` |
-| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html` |
-| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html` |
-| 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
+| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html` |
+| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html` |
+| 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct; every room of an entry 16 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
 | 10 | **Built** (28 Sep) · The static pages (`tools/pages*.js`: `bosses/`, `es/jefes/`, the landing folders): they inherit steps 1 and 2; only what's theirs | To do | |
@@ -404,6 +404,25 @@ to the sides, the foot and under the title; `js/app-map.js` (`areaCut`, inside `
 the frame's shape from the area's box, as wide (or tall) as the area but never smaller than the
 map's own size (on a phone, the rooms round her), with her bench's room right under Hornet
 (`.hm-rest`), kept inside the area. Free mode, with no map, is as it was.
+
+### The summary round (16 October 2026)
+
+Albert: «quizás un poco de resumen de tu partida pero muy visual (nada sobrecargado), cosas como
+las máscaras, tu carrete, el blasón con los items, el acto en el que estás». Drawn in
+`89-your-game-summary-variants.html` over two real saves (Act 3 at 100%, Act 1 early), four rows:
+1, where it goes (A the corners, the HUD where the game puts it; B one shelf under her bench; C
+either side of her); 2, the Crest (A drawn with its Tools in their slots, B its emblem and the
+worn as slot diamonds, C none); 3, the Act (A in the line as before, B three pips, C the game's act
+card); 4, anything more (A nothing, B the Needle, C the Needle and the Silk Hearts).
+
+Albert chose **1 C, 2 A, 3 C, 4 A**. Built:
+
+- `js/app-home.js` (`worn`): Hornet between `.hm-self` (the act card, `saveAct` over
+  `pgActName<n>`, from ACT_<n>_SUPER and ACT_<n>_NAME; the masks and the spool as the HUD) and
+  `.hm-worn`, the Crest, a link to the Crest tab. The Act left the line under the area.
+- `js/app-tools.js`: `App.wornNow()` gives the worn Crest as the Crest screen draws it, still
+  (`crestHtml(…, still)`: the slots are spans, no arrows), and the masks and silk from the engine.
+- `css/tokens.css`: `--hm-crest-k` (24 px, 19 on a phone) and `--hm-mask` (26 px, 20).
 
 ## Step 4 · Inventory
 
@@ -782,9 +801,9 @@ Built (`js/app-progress.js`, `css/app.css`):
   part of it (`rings()`: required wishes, wish points, the other conditions; the Bellshrines; the
   snare's pieces) with the game's picture inside, the figure under it and only the missing as
   medallions (`medal()`: picture, name, the Map's pin when it has the thing); the points show the
-  nearest four wishes, «½» on a delivery. The later steps dim, then the bridge: how many things of
-  the 100% you can already get (each piece one, not points) and «Ver el 100 %». «El camino entero»
-  still opens the full road.
+  nearest four wishes, «½» on a delivery. The later steps dim. «El camino entero» still opens the
+  full road. (The bridge to the 100%, a count of what you could already get and «Ver el 100 %»,
+  was taken out: Albert didn't want it.)
 - In Act 3, «Tu partida»: the game's thread, a ring of the endings and one of what only Act 3 holds.
 - The wishes' pictures are the game's: each type's large emblem and the Wishes tab, read from its
   files by `tools/extract-wish-icons.py` (QuestType `largeIcon` in `wish.spriteatlas`). The steps'
@@ -1000,6 +1019,107 @@ weave).
 main objectives' group no slot and puts `.pg-spacer` between it and the wishes, only when both are
 drawn; `css/app.css` centres it in a row's height (`--filigree-art` in the tokens, the plaque's
 share).
+
+### Each wish's state from the save (15 October 2026)
+
+Albert: the game's wishes have states (promised, under way with part of it done, done), and Tasks
+showed only done or not. The save has them: `QuestCompletionData` keeps `IsAccepted` and
+`IsCompleted` for each quest (the site already read the first as `taken`), and what a wish asks to
+be brought is a `Collectable` held (its `Amount`; the Needle Phial a Tool unlocked): over the 73
+saves, a hunt's `CompletedCount` while open always equals that amount, so the amount is the count.
+The game's pane says «Wish Promised» (`WISH_PROMISED`) and, once the targets are met, each quest's
+`_DESC_READY` line (js/quests.js CHAIN `ready`). `81-task-states-variants.html` (kept out of the
+repo), the real tab's HTML for `Restore_Points3/restoreData22.dat` (nine wishes promised) and
+`user1.dat` (a delivery carried), the states read from the same files: 1 the row (A in the how
+line: what it asks with what's carried, «Ragpelt 7/25»; B the count in large numerals where the
+area was; C a thin bar per thing asked), 2 the order (A first in their group under «Promised»; B a
+group of their own on top; C by Act as before), 3 the group's pips (A a promised one half lit; B
+as before).
+
+**Decision: 1 A, 2 A, 3 A** (15 October 2026), built: `js/savefile.js` keeps `carried` (every
+thing a wish asks for, by its save name, only the held); `wishState()` and `wishLine()` in
+`js/app-progress.js` give a promised wish's row its mark (`.pg-promise`, filled when ready), its
+line and «Deseo prometido» for a screen reader; `listHtml()` puts the promised first under
+«Prometidos» and then always heads the rest; `strip()` lights their pips halfway
+(`.pg-pips i.is-promised`). The ten wishes Act 3 requires are the road's, which doesn't count them
+yet; the main objectives too.
+
+### The road's one list (15 October 2026)
+
+Albert, over Save 4 (Act 1, the Bellshrines): «Lo siguiente» and the folded «Ver la lista entera, con
+lo hecho» repeated the same missing rows; in Act 2 (Save 2, «Seda y alma») the whole list only added
+what's done and the 23 wishes for points past the nearest four. `82-road-list-variants.html` (kept
+out of the repo), the real panel of both saves: 1 the list (A one list: «Lo siguiente» is the step's
+whole list, the done rows ticked and dimmed, the 100% tab's «Lo que falta · Todo» toggle, «y 23 más»
+unfolding the rest of the wishes; B by parts, the rings' parts as groups, every wish for points in
+full; C «Lo siguiente» as it was and only what's done folded under it); 2 where the done rows go (A
+in place, B at the end under «Hecho»); 3 the toggle (A «Lo que falta» first, shared with the 100%
+tab's; B its own; C «Todo» first).
+
+**Decision: 1 A, 2 A, 3 A** (15 October 2026), built (`js/app-progress.js`, `css/app.css`):
+`todoHtml()` carries the toggle (`prefs.pgAll`, the 100% tab's own) under its title; with «Todo»,
+`todo()` keeps each part's done rows in their place, the number's diamond ticked (`.pg-num.is-done`),
+and the wishes that gave points as dashed chips among the options. Every wish for points is in the
+line, the ones past the nearest four folded under «y n más» (`pgOpts`). The folded groups
+(`prefs.pgList`, `prefs.pgShut`) and the parts' goal sentences are gone.
+
+### The road to Act 2 as the whole route (16 October 2026)
+
+Albert, over Save 4 (Act 1, step 1): could the road be «the whole route», with the step you're on
+open? The road tab said its four steps up to five times (the sentence on top, the card, the thread,
+the dim medallions of the steps to come, and «The whole road» folded under them), the ring under the
+step repeated the card's 3/5, and a step of one thing (walking into the Citadel) listed its own title
+again as «What's next». The sibling has no road (Hollow Knight has no Acts); its ledger's rows that
+open are the 100% tab's. `83-road-route-variants.html` (kept out of the repo), the real screen
+captured over Save 4 (step 1) and `Restore_Points2/restoreData8.dat` (step 4, the first two steps
+skipped by the Phantom's way): 1 the shape (**A** the route: the thread down the page, a station per
+step, yours open; B the ledger: each step a row of the 100% tab's; C the thread on top as an index
+and the ledger under it; D as it was); 2 the step open (**A** the game's words and the list, its
+count on its line, no ring; B with the ring; C the list first, the words folded); 3 the other steps
+(**A** they open too; B their game line always under the name; C only the name); 4 the end (**A**
+the Act it opens as the last station; B none).
+
+**Decision: A in all four** (16 October 2026), built for the road to Act 2 only (`js/app-progress.js`
+`routeHtml()`, `css/app.css` `.pg-rt`); the road to Act 3 is next. Each station's button
+(`pgRoute`) opens or shuts it, kept while the page is (`routeOpen`), the one you're on open at
+first: a step done shows the game's words without the Map, a step to come its card
+(`stepCard()`), yours its card and `todoHtml()`, unless its one part has no rows. The route ends at
+«You reach · Act 2 · CITADEL OF SONG» (`saveAct`, `pgActName2`). The thread, the step's heading,
+the ring, the medallions and «The whole road» are gone from it; Albert also asked that design pages
+be drawn in English from now on.
+
+### The road to Act 3 as the whole route (16 October 2026)
+
+Albert, after the road to Act 2: show me the road to Act 3, and propose what's worth changing. It
+repeated its five steps as the Act 2 road did, and its first step, unlocking Silk and Soul, has three
+parts needed at once (the ten required wishes, 17 wish points, four conditions): three large rings
+over the list, half a screen even at 30/31 with one row left. `84-road-route-act3-variants.html`
+(kept out of the repo, the first page drawn in English), the real screen rendered by the site's own
+code over Save 2 (3/31) and `Restore_Points3/restoreData24.dat` (30/31): 1 the shape (**A** the route,
+as Act 2; B as it was); 2 the step's parts (**A** one line, each part its picture, name and count,
+ticked when met; B the rings inside the station; C the list split under the parts' heads).
+
+**Decision: 1 A, 2 A** (16 October 2026), built: `actHtml()` is the route for both roads;
+`routeParts()` gives the step you're on its lead line (`roadAllThree`, the offer's note, the Needolin's)
+and, with several parts, `.pg-rt-parts`; the station's count is the parts' sum, as the tab's card's
+(3/31). Gone with the old layout: `partsHtml()`, the later medallions' peek, «The whole road»
+(`pgRoad`, `roadWhole`, `roadLess`), `.pg-now`, `.pg-later`, `.pg-whole`, `.pg-rings.is-sum`. The
+rings stay in Act 3's «Your game»; the guide without a save keeps its thread and the full road.
+
+### The guide as the route (16 October 2026)
+
+Albert: now Free mode, deciding without options or a page. Without a save (and in Free mode, whose
+road is the guide), the tab still drew both roads the old way: a thread across and the full road in
+numbered steps, every list folded under «See all n». Built (`js/app-progress.js`, `css/app.css`):
+`roadHtml()` is each road under its title and note, as `routeHtml(r, null)`: no step yours, no ticks,
+each station with what it asks («5», «31», «4»: its parts' sum) and shut at first (its state kept
+apart, `guide:`); opened, its card, its parts (`routeParts()` with the targets only) and its whole list
+(`todoHtml(…, false)`: no title, no «What's missing · Everything»; each list its own ids). Gone with the
+old guide: `journey()` for the road, the step peek (`pgPeek`, `peekHtml()`), the folds (`pgFold`,
+`list()`), `toAct2()`, `toAct3()`, `step()`, `subHead()`, their CSS (`.pg-steps`, `.pg-step*`, `.pg-sub`,
+`.pg-fold`, `.pg-jstep`, `.pg-peek-*`, `.pg-says.is-step`, `.pg-says.is-peek`, the phone's
+`.pg-journey.is-road`) and strings. The Bellhome Key's rule (Bellhart's Glory and 2 of Pavo's wishes)
+is now only its row's line: the whole road listed those wishes under it.
 
 ## Step 6 · Map
 
@@ -1344,6 +1464,146 @@ empty ring; 4 Free mode, **A** too, with what's marked, B only with a save.
 (`HAD_TICK`), out of the fine layers' counts per room; the search finds it, and like every switch it
 ends a focus. `css/app.css` `.mp-mk.is-had`, `.mp-tick` (`--mp-had-dim` 0.42); whole again on hover
 or picked. The counts don't change: had of total as before.
+
+### The Journal's enemies, every room (16 October 2026)
+
+Albert, on the Map's selector: the Void Masses apart from the other unique enemies (their own
+switch, «Masa de vacío» / "Void Mass", `NAME_BLACK_THREAD_CORE`), and then «Enemigos únicos» read as
+nothing a player would know before turning it on, and only served the Journal: 3 Rhinogrunds (2
+asked), 3 Covetous Pilgrims (2), 6 Shardillards (3). His idea: the Journal on the Map instead.
+`js/journal-rooms.js` already has every room each of the 237 entries is in and how many (1150 rows,
+402 rooms, up to 15 entries in one): too many for a switch. A first page,
+`83-unique-enemies-variants.html` (kept out of the repo), split «Enemigos únicos» (A one switch per
+enemy, B one with the sets' caret, C one renamed); the idea above replaced it.
+
+The options (`84-journal-map-variants.html`, the real site in Free mode: the entry, the Map's search
+and the focus on the Shardillard's 7 rooms; kept out of the repo): **A** from the Journal, the
+entry's pin opens the Map's focus on every room, B from the Map, its search finds each entry and
+opens the same focus, C both. In all three «Enemigos únicos» leaves the selector.
+
+**Decision: A** (Albert, 16 October 2026), the Void Mass's switch kept. `js/app-map.js`: a 'beast'
+mark per entry and room (no switch, never in the search), `App.mapBeast(id)` the focus on them, its
+card «{n} en esta sala» / "{n} in this room" with the kills and «Ver en el Diario»; the other
+spawns' marks are gone. `js/app-journal.js`: the pin opens it, with a save or without, complete or
+not.
+
+### The switches' contents (16 October 2026)
+
+Albert: «haz una revision profunda de todos los interruptores del mapa», in four parts (names and
+icons, save checks, contents and grouping, positions); this is the third: is each thing in the right
+switch, once, each switch in the right group, on or off at first, counted right? Swept over Free
+mode and all 70 of his saves (every mark dumped from the site; same name in the same room across
+layers, marks against distinct save checks, `HUNDRED` against `js/completion.js`), with #113 and
+#117 in. Found: «Only the 100%» lit six layers that don't count (Memory Lockets, Lost Fleas, Old
+Hearts, Melodies, Craftmetal, Pale Oil: 68 marks) and four abilities outside it (the two cloaks,
+whose cards didn't say so, and the two melodies); since #113 the Journal switch counted 193 entries,
+not the Journal's 236/237 (design/64, 1 A), and the Void Mass sat twice in Dust_11; Eva's rewards
+(Crest things) and the small silk cocoons (struck for a bar or two of silk, the wiki's Silkeater)
+in Collectibles; Shakra, one of the game's nine ShopOwners, in People; the lifts, gone once called,
+in Places; counts by mark (twelve breakable walls listed twice by the completionist at one point,
+two places for one map or key, the 14 Silver Bells and the Bell Beast's 13 spots of one check each);
+the Heart Memento, found nowhere (whichever Old Heart The Old Hearts doesn't take), marked on the
+Pollen Heart; the Pinstress's fight twice in Peak_07 (her boss mark and Fatal Resolve's place).
+Checked and right: Pristine Cores and the Hornet Statuette are shell shard items (each breaks into
+shards); the three rosary switches never share a save object; the Materium, Farsight and Crawbell
+are two steps (found, then built at home).
+
+The options (`87-map-contents-variants.html`, the real selector over Free mode, Save 3 and Save 4,
+with the state after «Only the 100%»; kept out of the repo): 1 «Only the 100%» **A** exactly the
+100%, B as it was; 2 the abilities **A** a set like the Tools (of the 100%, outside it), B one switch;
+3 the Journal's count **A** the whole Journal, the Void Mass left to its switch, B what it draws; 4
+Eva's rewards **A** in Crest, B on her card only, C in Collectibles; 5 the small silk cocoons **A** in
+Secrets, B in Items, C in Collectibles; 6 Shakra **A** in Places by the Vendors, B inside Vendors, C
+in People; 7 **A** the lifts to Passages, B and the Bellshrines to Tasks, C as they were; 8 counts
+**A** one per save check, B only the doubled walls, C per mark; 9 the Materium, Farsight and Crawbell
+**A** in both, B the key items only, C the Bellhome only; 10 the rosaries **A** as they were, B the
+loose ones to Items; 11 the Heart Memento **A** off the map, B kept; 12 the Pinstress's fight **A** on
+the boss card, B both.
+
+**Decision: A in all twelve** (Albert, 16 October 2026). `js/app-map.js`: `HUNDRED` the ten
+categories; `FIRST_ON` keeps the six on; 'arts' the seven, 'arts-other' the four (`mapArtOut` on
+each card), the set `abilities`; a stored layer list with 'arts' gets 'arts-other' once, silently
+(`prefs.mapArtsOut`); `journalTally()` counts the Journal switch, and an entry whose things have a
+switch (`OWN_SWITCH`, the Void Mass) isn't drawn; the groups as chosen; `layout()` counts by a mark's
+`chk` (its save check); `WISH_FIGHT` folds a wish's place in its boss's scene onto the boss's card,
+`App.mapKeyOf` sending Progress's task pins there. `tools/gen-spots.js`: an extra of a kind with the
+same check in the same scene goes in once, and the Heart Memento has no mark
+(`test/spots.test.js`).
+
+### The save checks (16 October 2026)
+
+Albert: «haz una revision profunda de todos los interruptores del mapa», part 2: does each mark's
+had or done follow the player's real save? Every mark's check was run over the 77 files of the
+author's saves (four games: 100%, Steel Soul 100%, 15% and 10%), both through `game()` and through
+a slot (`toSnapshot` → `gameOf`, what the page reads), and every mark's object was read in the
+game's scenes: what switches it on or off, by which flag, in which Act or mode, and what writes
+for it instead of its own bool (`tools/extract-gating.py`). The findings and their options went to Albert with
+`86-map-save-checks-variants.html` for the one that changes a look (the live Map with the Steel
+Soul save, its marks in the site's own markup over the ground the site drew; kept out of the
+repo). **Decision: A in all twelve** (Albert, 16 October 2026):
+
+1. **The Silver Bells**: a slot kept one of the seven drop spots of a room (they share kind, room
+   and check, and `TASK_AT` took the last): now a task's key stands for all its marks.
+2. **A way is open by what the save keeps**: its own bool, or the flags its own components set
+   (a Lever's `playerDataBool` never writes the lever's bool: Ant_17, Dust_05, Room_CrowCourt; a
+   pressure plate's, a key door's receptacle, a Slab lock's FSM), the other lock of a cell door
+   (only the side used saves), the flag that takes it away (Mosshome's silk vines with
+   defeatedBellBeast: a game cuts one, the other or neither), and the flags its scripts set
+   (PD_WAYS: the Docks' back entrance seen from three rooms): 48 ways, of which 13 that no save
+   ever had now turn, and 19 pending in the 100% save (17 in the Steel Soul one). A key door isn't
+   opened by a flag that only takes it away (Bone_12's second cell, left for a later look).
+3. **What the game takes away**: what it swaps out when Act 3 begins (35 extras and 5 gauntlets
+   under the rooms' «Normal World») and the other arena of the Slab's pair go with what's done, **1 A** hidden
+   with it and, with «Show Completed», dimmed with a cross in `--muted` where the tick goes; **2
+   A** its card says «Ya no está» / "No longer there" and why (the site's words: the game has none).
+   B was faint at 0.4 always, C the tick, D as before.
+4. **One mode's things** (Coral_37's silkeater and cocoons outside Steel Soul, Dust_11's wall in
+   it) aren't on the other mode's map.
+5. **Hidden corners**: a cover inside a breakable is uncovered by the breakable's bool too, one a
+   flag takes away by that flag; one never switched on, the demo's or only one mode's isn't asked
+   for (61 of 221 rooms could never complete).
+6. **The Act 3 Moss Mother** keeps no bool of her own: beaten once the Journal's Mossbone Mother
+   kills pass the Chapel's and Weavenest Atla's (`['kills', name, n]`).
+7. **Last Dive's pin**: its quest is never completed, even after the ending; done as its wish is,
+   by Lost Lace in the Journal.
+8. **Sinner's Road's first gauntlet**: by CollectedDustCageKey, which takes its key's pickup away.
+9. **Key doors**: every one a mark with a check (Ward_01's White Key machine writes the lift's
+   bool), the demo's none.
+10. **People**: the Second Sentinel met once woken or fought; Garmond gone once Lost Garmond is beaten.
+11. **Never had**: what the scenes never switch on (switched off, with nothing that is on
+    pointing at or naming it: Clover_04b's two gates are worked by a plate nothing switches on)
+    and the demo's aren't marks: 24 extras and 11 masks, none ever set in the 77 files.
+12. The rest never done in these saves is really optional and stays (the courier deliveries,
+    Advanced Alchemy, Whispering Vaults' second arena, the spars, Void Masses past Dark Hearts…).
+
+Built: `tools/extract-gating.py` reads the scenes into `kb/data/game/gating.json` (each saved
+item's flags, removedBy, partner, world, mode, demo, never, inside, battle, and the key doors'
+receptacles); `tools/gen-spots.js` and `tools/gen-gauntlets.js` turn it into checks, `gone` and
+`mode`; `tools/gen-people.js` the two rules; `js/savefile.js` the task keys and `kills`;
+`js/app-map.js` `m.lost` (`closed()`), the cross (`LOST_CROSS`, `.mp-cross`), the card, the
+mode filter, and no more marks for the doors the save didn't keep (`test/save-checks.test.js`).
+Left for later: Slab_16's «Jail Gate Door - Persistent» filed as a lock, Library_02's Heavy Rosary
+Necklace as an arena's reward, Bone_12's second cell door, Coral_41's chained crust walls.
+
+Then two more of Albert's, **A** both (16 October 2026):
+
+- **A slot kept before this change comes out right, silently** (no notice: migrations run
+  silently). A slot whose save the browser keeps (`pharloom-live`'s `games`: every import since
+  14 October, and every live-linked slot at each sync) is read again from it at every start by
+  `refreshSlots`, so it's recomputed by today's checks. One without (imported before, or with no
+  IndexedDB) holds only the old per-mark results: `gameOf` finds each old key by the check it
+  had (`{ was }` in `js/spots.js`, 69 extras) and adds what the slot itself proves, read three
+  ways (holds, doesn't, can't say): the bool or flag of a mark or boss it had, its wishes, its
+  Journal's kills (the other Slab lock, Mosshome's vines once the Bell Beast is beaten, Last Dive
+  by Lost Lace, Whiteward's arena by Save Sherma). Over 77 slots made with the old code: nothing
+  had is lost, nothing is had that the save hasn't; tasks, bosses and gauntlets equal the save in
+  all; the extras only the save can tell (a lever's flag, a plate, a wall seen from another room:
+  18 in each 100% game) wait for the next import or live sync. Free mode marks only pieces by hand,
+  and is unchanged.
+- **The extractors in step**: each writes the game's version it read (`patch`), and
+  `npm run data` stops first (`tools/gating.js`) while `gating.json` and `pickups.json` differ or
+  one says none (`kb/README.md`: both run after a patch). `npm run drive -- --slot <file>` seeds a
+  slot's keys as an older site kept them, to see today's code read it.
 
 ## Step 7 · Journal
 

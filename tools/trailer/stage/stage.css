@@ -1,0 +1,16 @@
+/* stage.css: the video's 1920x1080 frame, in the site's own look (its fonts and colours from
+   css/tokens.css): the main menu's red-cast black with its red light rising from the bottom,
+   Cinzel titles, Spectral lines. */
+.stage { position: relative; width: 1920px; height: 1080px; flex: none; overflow: hidden; transform-origin: center;
+  background: var(--ember-glow), var(--bg); }
+.stage::after { content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 75% 70% at 50% 45%, transparent 55%, rgba(0,0,0,.6) 100%); }
+.stage canvas { position: absolute; inset: 0; }
+.title { position: absolute; left: 0; right: 0; top: 150px; text-align: center; color: var(--ink-strong); opacity: 0; will-change: transform, opacity, filter; z-index: 2; }
+.title h1 { margin: 0; font: 700 128px/1 var(--font-display); font-variant: small-caps; letter-spacing: .03em;
+  text-shadow: 0 0 40px rgba(255,220,200,.25), 0 6px 30px rgba(0,0,0,.8); }
+.crown { width: 420px; height: 59px; margin: 0 auto 18px; color: var(--filigree); }
+.crown svg { width: 100%; height: 100%; display: block; }
+.crown path { stroke-dasharray: 1; stroke-dashoffset: calc(1 - var(--draw, 0)); stroke-width: 1.3; }
+.tag { margin: 26px 0 0; font: italic 300 52px/1.2 var(--font-body); color: var(--ink-2); letter-spacing: .01em; opacity: 0; }
+.flash { position: absolute; inset: 0; background: var(--ink-strong); opacity: 0; pointer-events: none; z-index: 5; mix-blend-mode: screen; }
