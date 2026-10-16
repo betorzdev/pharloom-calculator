@@ -1140,8 +1140,10 @@ BELLSHRINES, SNARE), with the test and comparison enums from Assembly-CSharp:
   from his FSM).
 
 After that come the offer, the four pieces, the snare, and Grand Mother Silk snared with the
-Needolin. Act 2 opens after the five Bellshrines, the Grand Gate and the Last Judge, or with the
-Phantom, which goes round the first two. Broodfeast done the Runt's way gives no point.
+Needolin. Act 2 opens after the five Bellshrines and the Grand Gate, which is one step with the
+Last Judge (the Needolin at its door calls her; the objective ends once she's beaten and the door
+opens: the arena's Gate Quest Ender, on SeenLastJudgeGateOpen), or with the Phantom, open from the
+start with the Needolin (the Mist) and the Cling Grip (Sinner's Road), which goes round both. Broodfeast done the Runt's way gives no point.
 `js/acts.js` `next(g)` gives the road as steps, and check-pack checks it on the 92 saves: every Act
 3 save meets it all and no earlier one does, and one had everything but Pavo's talk until it.
 
