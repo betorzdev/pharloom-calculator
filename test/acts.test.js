@@ -102,6 +102,19 @@ test("a real Act 2 save with all but Pavo's talk: the key is the one check left,
   assert.equal(step(after, 'unlock').ok, true);
   assert.equal(A.group('Soul Snare', { ...RP25, bellhomeKey: true }).ok, true);
   assert.deepEqual([after.done, step(after, 'offer').ok], [1, false]);
+  assert.equal(road.cursed, false);
+});
+
+test('the Cursed Crest worn blocks the road to Act 3: Pavo keeps the key, and the road says so', () => {
+  // Restore_Points3's restoreData24 is this one, cursed (CurrentCrestID "Cursed"): Pavo's FSM gives
+  // only his cursed talk while IsAnyCursed, and Grand Mother Silk's Death Type sends her to Twisted Child.
+  const cursed = { ...RP25, build: { ...(RP25.build || {}), cursed: true } };
+  const road = A.next(cursed);
+  assert.equal(road.cursed, true);
+  const key = step(road, 'unlock').tests.find((t) => t.id === 'bellhomeKey').key;
+  assert.deepEqual([key.ready, key.cursed], [true, true]);
+  assert.equal(A.next({ ...cursed, act: 1 }).cursed, undefined);
+  assert.equal(A.next({ ...cursed, act: 3 }), null);
 });
 
 test('a missing wish says what comes first; Broodfeast done the Runt way gives no point', () => {

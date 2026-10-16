@@ -373,7 +373,8 @@
   const SNARE_AREA = { 'Snare Soul Churchkeeper': 'BONEBOTTOM', 'Snare Soul Bell Hermit': 'BELLHART',
     'Snare Soul Swamp Bug': 'SHADOW', 'Silk Snare': 'WEAVE_PRIME' };
   const wishName = (q) => pick(QU.CHAIN[q].name);
-  const personName = (id) => { const p = SS.people && SS.people.PEOPLE.find((x) => x.id === id); return p ? pick(p.name) : id; };
+  // A person's name as the game titles them (js/people.js: PEOPLE, or TRADE for the couriers).
+  const personName = (id) => { const p = SS.people && [...SS.people.PEOPLE, ...(SS.people.TRADE || [])].find((x) => x.id === id); return p ? pick(p.name) : id; };
   /* How each piece is had (the wiki's pages and the Caretaker's FSM): his sister and his uncle give
      theirs only once the wish is accepted. The uncle, the Bell Hermit, sits below Bellhart's Bellway
      (Belltown_basement): past its right side's hidden wall (a Remasker, walked through: the room has
@@ -383,7 +384,8 @@
      Map: a soul's (js/spots.js TASKS, what the wish asks for), the Snare Setter's as a Tool's. */
   const SNARE_HOW = {
     'Snare Soul Churchkeeper': () => t('roadPieceGiven', { npc: personName('churchkeeper') }),
-    'Snare Soul Bell Hermit': () => [t('roadPieceGiven', { npc: personName('bell-hermit') }), t('roadHermitWay')].join(' · '),
+    // Met first: his FSM gives the soul only once BelltownHermitMet is set (Do Snare Convo?).
+    'Snare Soul Bell Hermit': () => [t('roadPieceGiven', { npc: personName('bell-hermit') }), t('roadHermitWay'), t('roadHermitMeet')].join(' · '),
     'Snare Soul Swamp Bug': () => t('roadPieceAfter', { foe: foeName('groal-the-great') }),
     'Silk Snare': () => t('roadPieceNeeds', { art: artName('faydown-cloak') }),
   };
@@ -427,15 +429,31 @@
   /* What posts a required wish later than the rest, and what the point of Pinmaster's Oil also
      comes with (the wiki: the second Needle upgrade grants it, wish or not; the author's Steel
      Soul save has it complete, never accepted). Shown while the wish isn't done. Shakra's maps are
-     the ones she sells (js/spots.js EXTRAS), counted in a save. */
+     the ones she sells (js/spots.js EXTRAS), counted in a save. The flags these wishes wait for
+     are set as time passes (Assembly-CSharp, GameManager.TimePasses; a bench's rest is where it
+     does, its Bench Control FSM's Save Game state), so each says the rest too:
+       Trail's End      ShakraFinalQuestAppear: every map of Shakra's stock (Mapper Stock, type
+                        flag 2) bought, and DefeatedSwampShaman (Groal) or 2 of the 3 melodies;
+                        not while in the Belltown scene. The wish adds the Faydown Cloak.
+       Bellhart's Glory citadelHalfwayComplete: the Cogwork Dancers, the Clawline (hasHarpoonDash)
+                        or Songclave entered (visitedEnclave); and BelltownHouseState 1, set
+                        once Restoration of Bellhart is done, away from Bellhart's map zone.
+       Restoration      BelltownGreeterMetTimePassed, away from Bellhart's map zone.
+       Strengthening    enclaveDonation2_Available (4 of Songclave's board done), not while in
+                        Song_Enclave or Bellshrine_Enclave.
+       Balm             shermaQuestActive, in TimePassesElsewhere: when the map zone differs
+                        from the last rest's. */
   const SHAKRA_MAPS = SS.spots ? SS.spots.EXTRAS.filter((x) => x[0] === 'map' && x[5] && x[5].shop === 'shakra').map((x) => x[2][1].slice(3, -3)) : [];
   const OPENS = {
-    'Shakra Final Quest': (g) => [t('roadOpensShakra', { npc: pick(HW.NPCS.shakra), art: artName('faydown-cloak') }),
-      g ? t('roadMapsBought', { n: num(SHAKRA_MAPS.filter((m) => (g.maps || []).includes(m)).length), of: num(SHAKRA_MAPS.length) }) : ''],
-    'Save Sherma': () => [t('roadOpensSherma', { npc: personName('sherma'), clave: areaName('ENCLAVE'), ward: areaName('WARD') })],
-    'Songclave Donation 2': () => [t('roadOpensClave', { clave: areaName('ENCLAVE'), first: wishName('Songclave Donation 1') })],
-    'Belltown House Start': () => [t('roadOpensTown', { npc: t('mapScrounge'), pavo: personName('bellhart-greeter') })],
-    'Belltown House Mid': () => [t('roadOpensGlory', { foe: foeName('cogwork-dancers'), art: artName('clawline') })],
+    'Shakra Final Quest': (g) => [t('roadOpensShakra', { npc: pick(HW.NPCS.shakra), art: artName('faydown-cloak'), foe: foeName('groal-the-great') }),
+      g ? t('roadMapsBought', { n: num(SHAKRA_MAPS.filter((m) => (g.maps || []).includes(m)).length), of: num(SHAKRA_MAPS.length) }) : '',
+      t('roadRestOut', { area: areaName('BELLHART') })],
+    'Save Sherma': () => [t('roadOpensSherma', { npc: personName('sherma'), clave: areaName('ENCLAVE'), ward: areaName('WARD') }), t('roadRestAway')],
+    'Songclave Donation 2': () => [t('roadOpensClave', { clave: areaName('ENCLAVE'), first: wishName('Songclave Donation 1') }),
+      t('roadRestOut', { area: areaName('ENCLAVE') })],
+    'Belltown House Start': () => [t('roadOpensTown', { npc: t('mapScrounge'), pavo: personName('bellhart-greeter') }), t('roadRestOut', { area: areaName('BELLHART') })],
+    'Belltown House Mid': () => [t('roadOpensGlory', { foe: foeName('cogwork-dancers'), art: artName('clawline'), clave: areaName('ENCLAVE') }),
+      t('roadRestOut', { area: areaName('BELLHART') })],
     'A Pinsmiths Tools': () => [t('roadPinOil', { npc: pick(HW.NPCS.plinney) })],
   };
   // A wish's quest (js/collectibles.js WISHES check): its own, or the first of several.
@@ -570,19 +588,25 @@
   }
   /* The caravan, while it isn't in Fleatopia (js/acts.js): the fleas rescued and its stop now, what
      its last move asks (the empty Pale Lake seen), and on the Phantom's way, the Last Judge (the
-     stop after Greymoor is the Judge's arena). Without a save, the rule. */
+     stop after Greymoor is the Judge's arena). It moves on only once time has passed since Mooshka
+     was met at that stop, away from its room (GameManager.TimePasses: CaravanTroupeLeaderCanLeave
+     Greymoor and Judge, not in Greymoor_08 or Coral_Judge_Arena): a bench's rest. Without a save, the rule. */
   const STOP = ['BONEFOREST', 'GREYMOOR', 'CORAL_STEPS'];
   // { how, more }: where it stands, then what its next stop asks first.
   function caravanHow(c, g) {
     const lake = t('roadCaravanLake', { lake: t('roadPaleLake'), ducts: areaName('AQUEDUCTS') });
-    if (!g || !c) return { how: t('roadCaravanRule', { need: num(A.FLEAS), npc: pick(HW.NPCS.mooshka) }), more: [lake] };
+    const rest = t('roadCaravanRest', { npc: pick(HW.NPCS.mooshka) });
+    if (!g || !c) return { how: t('roadCaravanRule', { need: num(A.FLEAS), npc: pick(HW.NPCS.mooshka) }), more: [lake, rest] };
     return { how: t('roadCaravanHow', { n: num(c.fleas), need: num(c.need), npc: pick(HW.NPCS.mooshka), at: areaName(STOP[c.at]) }),
-      more: [c.at === 2 ? lake : '', c.at < 2 && !g.lastJudge ? t('roadCaravanJudge', { steps: areaName('CORAL_STEPS'), judge: foeName('last-judge') }) : ''].filter(Boolean) };
+      more: [c.at === 2 ? lake : '', c.at < 2 && !g.lastJudge ? t('roadCaravanJudge', { steps: areaName('CORAL_STEPS'), judge: foeName('last-judge') }) : '', rest].filter(Boolean) };
   }
   const count = (got, max) => `<span class="pg-count"><b>${num(got)}</b><i class="u">/${num(max)}</i></span>`;
   /* The Soul Snare's four checks on the save (js/acts.js): the caravan, the Faydown Cloak, Lace
      beaten atop the Cradle's tower (defeatedLaceTower: set in Song_Tower_01, the Cradle's) and the
-     Bellhome's key, with what each still asks. */
+     Bellhome's key, with what each still asks. Pavo's FSM (Belltown Greeter NPC, Convo) gives the
+     key at BelltownHouseState 2, set once Bellhart's Glory is done, as time passes away from
+     Bellhart's map zone (GameManager.TimePasses), and never while she wears the Cursed Crest
+     (IsAnyCursed): the row says both. */
   function checkRows(unlock, g) {
     const test = (id) => unlock.tests.find((x) => x.id === id);
     const key = test('bellhomeKey').key;
@@ -593,8 +617,9 @@
         says: says('inv', D.ARTS.find((x) => x.id === 'faydown-cloak').desc) },
       { test: 'laceTower', name: t('roadLace'), got: test('laceTower').ok, act: 2, area: 'CRADLE', icon: PORTRAIT('lace'), mark: 'boss:lace-the-cradle',
         how: test('laceTower').ok ? '' : t('roadMelodies', { n: num(melodies(g)) }), says: laceSays(g) },
-      { test: 'bellhomeKey', ready: key.ready, name: t('roadKey'), got: test('bellhomeKey').ok, act: 2, area: 'BELLHART', icon: 'assets/benches/bellhome.png', mark: PAVO,
-        how: test('bellhomeKey').ok ? '' : key.ready ? t('roadPavo') : t('roadKeyRule', { glory: wishName('Belltown House Mid'), n: num(key.need) }), says: says('inv', t('roadKeyDesc')) },
+      { test: 'bellhomeKey', ready: key.ready && !key.cursed, name: t('roadKey'), got: test('bellhomeKey').ok, act: 2, area: 'BELLHART', icon: 'assets/benches/bellhome.png', mark: PAVO,
+        how: test('bellhomeKey').ok ? '' : key.ready ? t(key.cursed ? 'roadKeyCursed' : 'roadPavo', { pavo: personName('bellhart-greeter') }) : t('roadKeyRule', { glory: wishName('Belltown House Mid'), n: num(key.need) }),
+        more: test('bellhomeKey').ok ? [] : [t('roadKeyRest', { glory: wishName('Belltown House Mid'), town: areaName('BELLHART'), pavo: personName('bellhart-greeter') })], says: says('inv', t('roadKeyDesc')) },
     ].map((x) => ({ act: 0, area: null, ...x }));
   }
 
@@ -733,8 +758,14 @@
      parts in one line, each its picture, its name and its count, ticked when met. */
   function routeParts(r, s, g, ps) {
     const say = s.id === 'unlock' ? t('roadAllThree', { caretaker: t('roadCaretaker'), wish: wishOf(r) })
-      : s.id === 'offer' ? offerNote(s, g) : s.id === 'silk' ? t('roadSilkNote') : '';
-    const lead = say ? `<p class="pg-lead">${esc(say)}</p>` : '';
+      : s.id === 'offer' ? offerNote(s, g) : s.id === 'silk' ? t('roadSilkNote', { twisted: t('ending_D') }) : '';
+    /* The Cursed Crest worn blocks the road to Act 3 (js/acts.js cursed): Pavo's FSM keeps the key,
+       the couriers' (Couriers Quest Giver, Shop?: the Cursed Crest equipped) give no deliveries, and
+       Grand Mother Silk's Death Type state ends a cursed fight in Twisted Child. Its cure is the
+       wish Infestation Operation (Doctor Curse Cure). */
+    const warn = r.cursed ? `<p class="pg-note is-warn">${esc(t('roadCursed', { cure: wishName('Doctor Curse Cure'), pavo: personName('bellhart-greeter'),
+      couriers: personName('couriers'), silk: foeName('grand-mother-silk'), twisted: t('ending_D') }))}</p>` : '';
+    const lead = warn + (say ? `<p class="pg-lead">${esc(say)}</p>` : '');
     if (ps.length < 2) return lead;
     return lead + `<ul class="pg-rt-parts">${ps.map((p) => `<li class="${g && p.got >= p.of ? 'is-done' : ''}"><img src="${p.icon}" alt="" loading="lazy"><span class="pg-rt-pk">${esc(p.label)}</span>${!g ? `<span class="pg-count"><i class="u">${num(p.of)}</i></span>` : p.got >= p.of
       ? `<span class="pg-count"><span class="pg-mark">${App.tick}</span> <b>${pts(p.of)}</b><i class="u">/${num(p.of)}</i></span>` : count(p.got, p.of)}</li>`).join('')}</ul>`;
@@ -826,7 +857,7 @@
           : p.id === 'shrines' ? t('pgTodoShrine', { area: x.name })
           : ready ? t('pgTodoPavo', { key: x.name })
           : x.test === 'doubleJump' || x.test === 'bellhomeKey' || p.id === 'snare' ? t('pgTodoGet', { name: x.name }) : x.name;
-        out.push({ ...x, name, done: x.got, ...(ready ? { how: '', more: [] } : {}), area: p.id === 'shrines' ? null : x.area });
+        out.push({ ...x, name, done: x.got, ...(ready ? { how: '' } : {}), area: p.id === 'shrines' ? null : x.area });
       }
     }
     return out;
