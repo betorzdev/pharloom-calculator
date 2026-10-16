@@ -2603,6 +2603,13 @@ img.mp-fit { transform: translate(calc(var(--fx) * 100%), calc(var(--fy) * 100%)
 .mp-tick { pointer-events: none; }
 .mp-tick circle { fill: var(--scene-bg); stroke: var(--good); stroke-width: 0.05; }
 .mp-tick path { fill: none; stroke: var(--good); stroke-width: 0.06; stroke-linecap: round; stroke-linejoin: round; }
+/* What the game took away (design/86, 1 A), shown with what's done: dimmed the same, a cross in
+   --muted where the tick goes. */
+.mp-mk.is-lost > :not(.mp-cross) { opacity: var(--mp-had-dim); }
+.mp-mk.is-lost:is(:hover, :focus-visible, .is-sel) > * { opacity: 1; }
+.mp-cross { pointer-events: none; }
+.mp-cross circle { fill: var(--scene-bg); stroke: var(--muted); stroke-width: 0.05; }
+.mp-cross path { fill: none; stroke: var(--muted); stroke-width: 0.06; stroke-linecap: round; }
 .mp-glyph { color: var(--ink-strong); }
 /* Behind the picture, the inventory's pale plate (--halo-plate), so a dark portrait or a thin
    needle reads on the black disc. */

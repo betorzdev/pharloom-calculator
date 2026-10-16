@@ -1,0 +1,1834 @@
+{
+ "items": {
+  "Abandoned_town|thread_memory": {
+   "inside": "Memory Group"
+  },
+  "Abyss_07|Abyss_Weaver_Hanging_Plat (1)": {
+   "never": true
+  },
+  "Abyss_Cocoon|glow_rim_Remasker": {
+   "never": true
+  },
+  "Ant_02|Bone Hunter Throw": {
+   "inside": "Battle Scene"
+  },
+  "Ant_04_left|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Ant_04_left|Collectable Item Pickup": {
+   "inside": "ant_item_string"
+  },
+  "Ant_04_left|Secret Mask New": {
+   "never": true
+  },
+  "Ant_04_mid|Battle Scene": {
+   "world": "normal"
+  },
+  "Ant_04_mid|Battle Scene Black Thread": {
+   "world": "act3"
+  },
+  "Ant_04_mid|Generic Pilgrim Horned": {
+   "never": true,
+   "removedBy": [
+    "hasDash"
+   ]
+  },
+  "Ant_04_mid|Mapper NPC": {
+   "inside": "Battle Scene",
+   "world": "normal"
+  },
+  "Ant_04_mid|Secret Mask New": {
+   "never": true
+  },
+  "Ant_04|Secret Mask New": {
+   "never": true
+  },
+  "Ant_04|ant_shell_shard_string (1)": {
+   "world": "normal"
+  },
+  "Ant_04|ant_shell_shard_string (2)": {
+   "world": "normal"
+  },
+  "Ant_05b|Battle Scene": {
+   "world": "normal"
+  },
+  "Ant_05b|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Ant_05b|One Way Wall": {
+   "world": "act3"
+  },
+  "Ant_05b|Remasker New": {
+   "inside": "One Way Wall",
+   "world": "act3"
+  },
+  "Ant_05b|Remasker New (1)": {
+   "inside": "One Way Wall",
+   "world": "act3"
+  },
+  "Ant_05b|ant_lever_persistent": {
+   "world": "normal"
+  },
+  "Ant_05c|Gilly": {
+   "world": "normal"
+  },
+  "Ant_17|Gilly": {
+   "world": "normal"
+  },
+  "Ant_17|ant_lever_persistent": {
+   "flags": [
+    "antBenchTrapDefused"
+   ]
+  },
+  "Ant_19|Collapser Small (6)": {
+   "never": true
+  },
+  "Ant_21|Ant Chest": {
+   "never": true
+  },
+  "Ant_21|Collectable Item Pickup": {
+   "inside": "ant_item_string"
+  },
+  "Aqueduct_05_caravan|Caravan Troup Member Tall - Act 2": {
+   "world": "normal"
+  },
+  "Aqueduct_05_caravan|Caravan Troup Member Tall - Act 3": {
+   "world": "act3"
+  },
+  "Aqueduct_05|Collectable Item Pickup - Tool Metal": {
+   "inside": "tool_metal_deposit"
+  },
+  "Aqueduct_05|thread_memory vassal": {
+   "never": true
+  },
+  "Arborium_04|Remasker New": {
+   "never": true
+  },
+  "Arborium_04|Remasker New (2)": {
+   "never": true
+  },
+  "Arborium_04|Remasker New (4)": {
+   "never": true
+  },
+  "Arborium_07|Collectable Item Pickup Battle": {
+   "inside": "Battle Scene"
+  },
+  "Arborium_09|Moss Vine Cluster": {
+   "flags": [
+    "arborium_09_oneWay"
+   ]
+  },
+  "Arborium_10|Collectable Item Pickup": {
+   "inside": "Music Box Sequence - EDITED"
+  },
+  "Aspid_01|thread_memory vassal": {
+   "never": true
+  },
+  "Bellshrine_02|Bellshrine Sequence": {
+   "world": "normal"
+  },
+  "Belltown_Shrine|Bellshrine Sequence Bellhart": {
+   "world": "normal"
+  },
+  "Belltown|Belltown Greeter Act3": {
+   "world": "act3"
+  },
+  "Belltown|Pilgrim Fisher NPC Walker": {
+   "world": "normal"
+  },
+  "Belltown|Pin Pilgrim": {
+   "never": true
+  },
+  "Bellway_01|Act3_Bellway_01_Breakable_wall": {
+   "world": "act3"
+  },
+  "Bellway_01|Bellway Pilgrim": {
+   "removedBy": [
+    "BonebottomBellwayPilgrimLeft"
+   ],
+   "world": "normal"
+  },
+  "Bellway_08|Sherma BellBench NPC": {
+   "removedBy": [
+    "visitedCitadel"
+   ]
+  },
+  "Bone_01|Bone Lever": {
+   "flags": [
+    "greatBoneGateOpened"
+   ]
+  },
+  "Bone_01|Collapser Small (1)": {
+   "inside": "Battle Scene"
+  },
+  "Bone_01|Remasker New": {
+   "inside": "Battle Scene"
+  },
+  "Bone_01|Secret Mask": {
+   "inside": "Battle Scene",
+   "removedBy": [
+    "greatBoneGateOpened"
+   ]
+  },
+  "Bone_02|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Bone_03|Song_lever_side": {
+   "flags": [
+    "bone03_openedTrapdoor"
+   ]
+  },
+  "Bone_04|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Bone_04|Fall_platform_barrels": {
+   "never": true
+  },
+  "Bone_04|Rock Roller": {
+   "removedBy": [
+    "bone03_openedTrapdoorForRockRoller"
+   ]
+  },
+  "Bone_04|Song_lever_side": {
+   "flags": [
+    "bone01shortcutPlat"
+   ]
+  },
+  "Bone_07|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Bone_07|Collectable Item Pickup - Tool Metal": {
+   "inside": "tool_metal_deposit"
+  },
+  "Bone_08|Generic Pilgrim (Post-Ant-Kill)": {
+   "never": true,
+   "removedBy": [
+    "hasDash"
+   ]
+  },
+  "Bone_08|Generic Pilgrim (Pre-Ant-Kill)": {
+   "never": true,
+   "removedBy": [
+    "ant02GuardDefeated",
+    "hasDash",
+    "visitedWilds"
+   ]
+  },
+  "Bone_09|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Bone_09|Garmond Fighter": {
+   "never": true,
+   "world": "act3"
+  },
+  "Bone_10|Caravan Troup Member Short": {
+   "world": "normal"
+  },
+  "Bone_10|Caravan Troup Member Tall": {
+   "world": "normal"
+  },
+  "Bone_10|Collectable Item Pickup Locket": {
+   "world": "act3"
+  },
+  "Bone_10|Fixer Sitting Bone_10": {
+   "world": "act3"
+  },
+  "Bone_10|Remasker New": {
+   "never": true
+  },
+  "Bone_10|Secret Mask New": {
+   "never": true
+  },
+  "Bone_11b|Plate": {
+   "flags": [
+    "BonePlazaOpened"
+   ]
+  },
+  "Bone_11|Garmond Fighter": {
+   "never": true,
+   "world": "act3"
+  },
+  "Bone_12|Ladybug Craft Pickup": {
+   "world": "act3"
+  },
+  "Bone_12|Pilgrim StaffWielder": {
+   "removedBy": [
+    "IsPinGallerySetup"
+   ],
+   "world": "normal"
+  },
+  "Bone_12|Pin Challenge": {
+   "world": "normal"
+  },
+  "Bone_12|Thief Dummy": {
+   "removedBy": [
+    "IsPinGallerySetup",
+    "spinnerDefeated",
+    "visitedShellwood",
+    "visitedWilds"
+   ],
+   "world": "normal"
+  },
+  "Bone_12|Thief NPC Save": {
+   "removedBy": [
+    "IsPinGallerySetup",
+    "spinnerDefeated",
+    "visitedShellwood",
+    "visitedWilds"
+   ],
+   "world": "normal"
+  },
+  "Bone_12|Thief NPC Saved": {
+   "removedBy": [
+    "IsPinGallerySetup",
+    "spinnerDefeated",
+    "visitedShellwood",
+    "visitedWilds"
+   ],
+   "world": "normal"
+  },
+  "Bone_12|jail_door (1)": {
+   "world": "normal"
+  },
+  "Bone_12|jail_door (2)": {
+   "removedBy": [
+    "IsPinGallerySetup",
+    "spinnerDefeated",
+    "visitedShellwood",
+    "visitedWilds"
+   ],
+   "world": "normal"
+  },
+  "Bone_16|Collapser Small (1)": {
+   "never": true
+  },
+  "Bone_16|Remasker New (1)": {
+   "never": true
+  },
+  "Bone_18|Collectable Item Pickup": {
+   "inside": "Battle Scene"
+  },
+  "Bone_18|Pilgrim Stomper NPC": {
+   "never": true
+  },
+  "Bone_East_01|Collectable Item Pickup": {
+   "demo": true
+  },
+  "Bone_East_02b|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Bone_East_02b|Rhino": {
+   "world": "act3"
+  },
+  "Bone_East_02|Garmond Fighter": {
+   "never": true,
+   "world": "act3"
+  },
+  "Bone_East_03|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Bone_East_03|Bone Hunter Child Alerter": {
+   "world": "normal"
+  },
+  "Bone_East_04b|Breakable Wall (1)": {
+   "world": "normal"
+  },
+  "Bone_East_04c|Gilly": {
+   "removedBy": [
+    "visitedHuntersTrail"
+   ],
+   "world": "normal"
+  },
+  "Bone_East_04c|Slab Fly Large Cage": {
+   "removedBy": [
+    "visitedUpperSlab"
+   ],
+   "world": "normal"
+  },
+  "Bone_East_04|explode_wall": {
+   "removedBy": [
+    "Bone_East_04b_ExplodeWall"
+   ]
+  },
+  "Bone_East_05|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Bone_East_05|Garmond Fighter": {
+   "never": true,
+   "world": "act3"
+  },
+  "Bone_East_07|Secret Mask New (1)": {
+   "inside": "explode_wall (6)"
+  },
+  "Bone_East_07|Secret Mask New (2)": {
+   "inside": "explode_wall (7) - boneEast07_openedMidRoof"
+  },
+  "Bone_East_10_Room|Geo Small Persistent": {
+   "world": "act3"
+  },
+  "Bone_East_10_Room|Geo Small Persistent (1)": {
+   "world": "act3"
+  },
+  "Bone_East_10_Room|Geo Small Persistent (3)": {
+   "world": "act3"
+  },
+  "Bone_East_10_Room|Rosary Thief": {
+   "removedBy": [
+    "pilgrimsRestRosaryThiefCowardLeft"
+   ],
+   "world": "act3"
+  },
+  "Bone_East_10_Room|Toll Door Breakable Cog": {
+   "world": "normal"
+  },
+  "Bone_East_10|Generic Pilgrim Large": {
+   "world": "normal"
+  },
+  "Bone_East_10|Pilgrim 02 (Unique female)": {
+   "world": "normal"
+  },
+  "Bone_East_10|Sherma Docks NPC": {
+   "world": "normal"
+  },
+  "Bone_East_11|Remasker New Sharp": {
+   "inside": "Bone East 11 Cross Over Group"
+  },
+  "Bone_East_11|Song_lever_side": {
+   "flags": [
+    "openedGeyserShaft"
+   ]
+  },
+  "Bone_East_12|Dock Key Receptacle": {
+   "demo": true
+  },
+  "Bone_East_12|Song_Gate_small_demo": {
+   "demo": true
+  },
+  "Bone_East_14b|Gilly": {
+   "never": true,
+   "removedBy": [
+    "visitedCitadel"
+   ]
+  },
+  "Bone_East_14b|rosary_string_small": {
+   "world": "normal"
+  },
+  "Bone_East_14b|rosary_string_small_half": {
+   "world": "normal"
+  },
+  "Bone_East_14|Garmond Fighter": {
+   "never": true,
+   "world": "act3"
+  },
+  "Bone_East_14|Inverse Remasker": {
+   "inside": "explode_wall"
+  },
+  "Bone_East_14|thread_memory vassal": {
+   "never": true
+  },
+  "Bone_East_17|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Bone_East_18b|Collectable Item Pickup": {
+   "inside": "ant_item_string"
+  },
+  "Bone_East_18|Ant Chest": {
+   "never": true
+  },
+  "Bone_East_24|Collectable Item Pickup": {
+   "inside": "ant_item_string"
+  },
+  "Bone_East_24|DropBomb Rock (2)": {
+   "never": true
+  },
+  "Bone_East_24|ant_lever_persistent": {
+   "never": true
+  },
+  "Bone_East_26|Black_Thread_Core_Citadel": {
+   "world": "act3"
+  },
+  "Bonegrave|Moss Vine Cluster": {
+   "flags": [
+    "bonegraveOpen"
+   ]
+  },
+  "Bonegrave|Remasker New Sharp Ultra": {
+   "inside": "One Way Wall"
+  },
+  "Bonetown|Bone Lever": {
+   "world": "normal"
+  },
+  "Bonetown|Churchkeeper": {
+   "removedBy": [
+    "soulSnareReady"
+   ],
+   "world": "normal"
+  },
+  "Bonetown|Fixer NPC Standing": {
+   "removedBy": [
+    "skullKingInvaded"
+   ],
+   "world": "normal"
+  },
+  "Bonetown|Fixer Pilgrim": {
+   "removedBy": [
+    "skullKingInvaded"
+   ],
+   "world": "normal"
+  },
+  "Bonetown|Fixer Pilgrim Bench Repair": {
+   "world": "normal"
+  },
+  "Bonetown|Generic Pilgrim Round": {
+   "removedBy": [
+    "skullKingInvaded",
+    "skullKingWillInvade"
+   ],
+   "world": "normal"
+  },
+  "Bonetown|Generic Pilgrim Stomper": {
+   "removedBy": [
+    "skullKingInvaded"
+   ],
+   "world": "normal"
+  },
+  "Bonetown|Mapper Sit NPC": {
+   "removedBy": [
+    "skullKingInvaded",
+    "skullKingWillInvade"
+   ]
+  },
+  "Bonetown|Shell Shard Fossil Big": {
+   "world": "normal"
+  },
+  "Bonetown|Weakness Scene": {
+   "flags": [
+    "churchKeeperIntro"
+   ]
+  },
+  "Chapel_Wanderer|Geo Small Persistent (1)": {
+   "never": true
+  },
+  "Chapel_Wanderer|Remasker New Sharp": {
+   "inside": "One Way Wall"
+  },
+  "Clover_01b|Green Prince Stand": {
+   "removedBy": [
+    "defeatedWhiteCloverstag",
+    "fullyEnteredVerdania"
+   ]
+  },
+  "Clover_02c|Grouped Remasker_Large": {
+   "inside": "Moss Vine Cluster"
+  },
+  "Clover_04b|Clover Gate": {
+   "never": true
+  },
+  "Clover_04b|Clover Gate (1)": {
+   "never": true
+  },
+  "Clover_04b|Grasshopper Child": {
+   "inside": "Battle Scene"
+  },
+  "Clover_04b|Grasshopper Child (1)": {
+   "inside": "Battle Scene"
+  },
+  "Clover_04b|Hornet_pressure_plate_small_persistent": {
+   "flags": [
+    "aspid_04_gate"
+   ],
+   "never": true
+  },
+  "Clover_06|Green Prince Kneel": {
+   "removedBy": [
+    "defeatedWhiteCloverstag"
+   ]
+  },
+  "Clover_10_web|Grasshopper Child": {
+   "never": true
+  },
+  "Clover_16|Breakable Wall (1)": {
+   "never": true
+  },
+  "Clover_18|Green Prince Sit": {
+   "removedBy": [
+    "summonedLakeOrbs"
+   ]
+  },
+  "Clover_18|thread_memory_orb_source": {
+   "never": true
+  },
+  "Clover_19|thread_memory_orb_source": {
+   "never": true
+  },
+  "Cog_04|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Cog_06|cog_lever": {
+   "flags": [
+    "opened_cog_06_door"
+   ]
+  },
+  "Cog_07|Battle Scene": {
+   "world": "act3"
+  },
+  "Cog_07|Collectable Item Pickup": {
+   "inside": "Battle Scene",
+   "world": "act3"
+  },
+  "Cog_07|cog_lever": {
+   "flags": [
+    "cog7_gateOpened"
+   ]
+  },
+  "Cog_09_Destroyed|Weakness Cog Drop Scene": {
+   "removedBy": [
+    "hasSuperJump"
+   ]
+  },
+  "Cog_10_Destroyed|Pipe_Vent_Hatch Broken": {
+   "removedBy": [
+    "completedCog10_abyssBattle"
+   ]
+  },
+  "Cog_10_Destroyed|Wake Scene": {
+   "inside": "Battle Scene"
+  },
+  "Cog_10|Active": {
+   "never": true
+  },
+  "Cog_Bench|cog_lever (2)": {
+   "never": true
+  },
+  "Cog_Dancers|cog_lever": {
+   "world": "normal"
+  },
+  "Cog_Dancers|slide_gate_ring": {
+   "world": "normal"
+  },
+  "Coral_02|Garmond Fighter": {
+   "never": true,
+   "world": "act3"
+  },
+  "Coral_03|song_bridge_pole_large (1)": {
+   "world": "normal"
+  },
+  "Coral_10|Sherma Citadel NPC": {
+   "removedBy": [
+    "shermaCitadelSpa_Seen",
+    "shermaInEnclave"
+   ]
+  },
+  "Coral_10|Silkfly Ambient (1)": {
+   "world": "normal"
+  },
+  "Coral_10|Silkfly Ambient (3)": {
+   "world": "normal"
+  },
+  "Coral_10|Silkfly Ambient (4)": {
+   "world": "normal"
+  },
+  "Coral_10|Silkfly Ambient (6)": {
+   "world": "normal"
+  },
+  "Coral_10|Silkfly Ambient Perched": {
+   "world": "normal"
+  },
+  "Coral_10|Silkfly Ambient Perched (1)": {
+   "world": "normal"
+  },
+  "Coral_10|Silkfly Ambient Perched (2)": {
+   "world": "normal"
+  },
+  "Coral_10|Silkfly Ambient Perched (3)": {
+   "world": "normal"
+  },
+  "Coral_11|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Coral_12|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Coral_24|Coral Crust Mask (1) - not used": {
+   "never": true
+  },
+  "Coral_24|Coral Crust Wall Tall (2)": {
+   "never": true
+  },
+  "Coral_28|thread_memory vassal": {
+   "never": true
+  },
+  "Coral_32|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Coral_32|Collectable Item Pickup - Tool Metal": {
+   "inside": "tool_metal_deposit"
+  },
+  "Coral_32|Remasker New Sharp Ultra": {
+   "inside": "Coral Crust Wall Tall"
+  },
+  "Coral_32|Remasker New Sharp Ultra (1)": {
+   "inside": "Coral Crust Wall Tall"
+  },
+  "Coral_33|Collectable Item Pickup": {
+   "world": "normal"
+  },
+  "Coral_35b|Remasker New Sharp Ultra": {
+   "inside": "Coral Crust Wall Tall (1)"
+  },
+  "Coral_35b|Remasker New Sharp Ultra 2": {
+   "inside": "Coral Crust Wall Tall (2)"
+  },
+  "Coral_37|Remasker New": {
+   "mode": "steel"
+  },
+  "Coral_37|Silk Grub Large Cocoon": {
+   "mode": "normal"
+  },
+  "Coral_37|Silk Grub Small Cocoon 2": {
+   "mode": "normal"
+  },
+  "Coral_37|Silk Grub Small Cocoon 2 (1)": {
+   "mode": "normal"
+  },
+  "Coral_41|Coral Crust Wall Tall (8)": {
+   "never": true
+  },
+  "Cradle_03|Abyss_Collapse_Wall": {
+   "never": true
+  },
+  "Cradle_03|cradle_plat (2)": {
+   "never": true
+  },
+  "Cradle_03|cradle_spike_plat (2)": {
+   "never": true
+  },
+  "Crawl_01|Collectable Item Pickup - Purse": {
+   "mode": "normal"
+  },
+  "Crawl_01|Collectable Item Pickup - Satchel": {
+   "mode": "steel"
+  },
+  "Crawl_01|Shell Fossil Mimic": {
+   "never": true
+  },
+  "Crawl_02|pustule_set_large_single_black_thread": {
+   "world": "act3"
+  },
+  "Crawl_03b|pustule_set_large_single_black_thread": {
+   "world": "act3"
+  },
+  "Crawl_03b|pustule_set_large_single_black_thread (1)": {
+   "world": "act3"
+  },
+  "Crawl_03b|pustule_set_large_single_black_thread (2)": {
+   "world": "act3"
+  },
+  "Crawl_03|pustule_set_large_single_black_thread": {
+   "world": "act3"
+  },
+  "Crawl_03|pustule_set_large_single_black_thread (2)": {
+   "world": "act3"
+  },
+  "Crawl_05|pustule_set_large_single_black_thread (1)": {
+   "world": "act3"
+  },
+  "Crawl_08|pustule_set_large_single_black_thread": {
+   "world": "act3"
+  },
+  "Crawl_08|pustule_set_large_single_black_thread (1)": {
+   "world": "act3"
+  },
+  "Crawl_08|pustule_set_large_single_black_thread (2)": {
+   "world": "act3"
+  },
+  "Crawl_09|pustule_set_large_single_black_thread (1)": {
+   "world": "act3"
+  },
+  "Crawl_09|pustule_set_large_single_black_thread (2)": {
+   "world": "act3"
+  },
+  "Crawl_10|Blue Assistant": {
+   "world": "act3"
+  },
+  "Crawl_10|thread_memory": {
+   "world": "normal"
+  },
+  "Dock_02b|Song_lever_side": {
+   "flags": [
+    "docks_02_shortcut_right"
+   ]
+  },
+  "Dock_03|Collectable Item Pickup": {
+   "inside": "City Shard Chest"
+  },
+  "Dock_04|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Dock_06_Church|City Shard Chest": {
+   "world": "normal"
+  },
+  "Dock_06_Church|rosary_string_small (1)": {
+   "world": "normal"
+  },
+  "Dock_06_Church|rosary_string_small_half (1)": {
+   "world": "normal"
+  },
+  "Dock_10|Forge Worker Sauna NPC": {
+   "world": "normal"
+  },
+  "Dock_11|Needolin Memory": {
+   "inside": "Memory Orb Challenge"
+  },
+  "Dust_02|Prince Cell Door": {
+   "flags": [
+    "UnlockedDustCage"
+   ]
+  },
+  "Dust_02|rosary_string_small_half": {
+   "world": "normal"
+  },
+  "Dust_02|rosary_string_small_half (1)": {
+   "world": "normal"
+  },
+  "Dust_03|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Dust_05|Garmond Fighter": {
+   "world": "act3"
+  },
+  "Dust_05|greymoor_lever_simple": {
+   "flags": [
+    "openedDust05Gate"
+   ]
+  },
+  "Dust_06|Collectable Item SimpleKey": {
+   "removedBy": [
+    "CollectedDustCageKey"
+   ]
+  },
+  "Dust_11|Battle Scene 1": {
+   "mode": "normal",
+   "world": "normal"
+  },
+  "Dust_11|Battle Scene Act3": {
+   "mode": "normal"
+  },
+  "Dust_11|Black_Thread_Core": {
+   "inside": "Battle Scene Act3",
+   "mode": "normal",
+   "world": "act3"
+  },
+  "Dust_11|Black_Thread_Core (1)": {
+   "inside": "Battle Scene Act3",
+   "mode": "normal",
+   "world": "act3"
+  },
+  "Dust_11|Breakable Wall": {
+   "mode": "steel"
+  },
+  "Dust_11|craw_court_summons_pin": {
+   "mode": "normal"
+  },
+  "Dust_11|craw_court_summons_pin (1)": {
+   "mode": "steel"
+  },
+  "Dust_Chef|Return Pickup": {
+   "inside": "Battle Scene",
+   "removedBy": [
+    "gotPickledRoachEgg"
+   ]
+  },
+  "Dust_Shack|Collectable Item Dustpilo": {
+   "world": "act3"
+  },
+  "Dust_Shack|Collectable Item Extractor Pins": {
+   "world": "act3"
+  },
+  "Dust_Shack|Dust Traders": {
+   "world": "normal"
+  },
+  "Greymoor_02|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Greymoor_02|Collapser Small": {
+   "never": true
+  },
+  "Greymoor_02|Flyaway Scene": {
+   "removedBy": [
+    "hitCrowCourtSwitch"
+   ],
+   "world": "normal"
+  },
+  "Greymoor_02|greymoor_lever_simple": {
+   "never": true
+  },
+  "Greymoor_04|Battle Scene": {
+   "world": "normal"
+  },
+  "Greymoor_04|Black Thread Battle Scene": {
+   "world": "act3"
+  },
+  "Greymoor_05|Garmond Fighter": {
+   "never": true,
+   "world": "act3"
+  },
+  "Greymoor_05|Garmond Sleep NPC": {
+   "removedBy": [
+    "garmondMoorwingConvoReady"
+   ]
+  },
+  "Greymoor_05|Slab Fly Large Cage": {
+   "removedBy": [
+    "visitedUpperSlab"
+   ]
+  },
+  "Greymoor_07|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Greymoor_07|Garmond Aid NPC": {
+   "world": "normal"
+  },
+  "Greymoor_08|Mapper StandGuard NPC": {
+   "world": "act3"
+  },
+  "Greymoor_08|grey_wood_chain_plat_mid_breakable": {
+   "removedBy": [
+    "greymoor08_plat_destroyed"
+   ]
+  },
+  "Greymoor_11|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Greymoor_12|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Greymoor_15b|Memory Orb Challenge": {
+   "never": true
+  },
+  "Greymoor_15b|Needolin Memory": {
+   "inside": "Memory Orb Challenge",
+   "never": true
+  },
+  "Greymoor_16|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Greymoor_16|Remasker New Sharp (1)": {
+   "inside": "greystore_floor_shortcut (1)"
+  },
+  "Greymoor_22|Remasker New Sharp": {
+   "inside": "One Way Wall (2)"
+  },
+  "Greymoor_22|Remasker New Sharp Ultra": {
+   "inside": "One Way Wall (2)"
+  },
+  "Greymoor_24|NPC": {
+   "removedBy": [
+    "CaravanLechReturnedToCaravan"
+   ],
+   "world": "normal"
+  },
+  "Halfway_01|Generic Pilgrim Horned": {
+   "world": "normal"
+  },
+  "Halfway_01|Generic Pilgrim Large": {
+   "world": "normal"
+  },
+  "Halfway_01|HH Patron Left": {
+   "removedBy": [
+    "HalfwayPatronLeftGone"
+   ],
+   "world": "normal"
+  },
+  "Halfway_01|HH Patron Right": {
+   "removedBy": [
+    "HalfwayPatronRightGone",
+    "laceMeetCitadel"
+   ],
+   "world": "normal"
+  },
+  "Hang_03_top|lamp_hang_top": {
+   "world": "normal"
+  },
+  "Hang_03|Black_Thread_Core_Citadel": {
+   "world": "act3"
+  },
+  "Hang_04_boss|Start Range": {
+   "inside": "Battle Scene"
+  },
+  "Hang_04|Battle Scene Act3": {
+   "world": "act3"
+  },
+  "Hang_04|City Merchant Scavenge Generic": {
+   "world": "normal"
+  },
+  "Hang_06_bank|Collectable Item Pickup": {
+   "inside": "Chest"
+  },
+  "Hang_06_bank|Song_lever_side": {
+   "flags": [
+    "bankOpened"
+   ]
+  },
+  "Hang_06_bank|rosary_string_large_mixed Variant": {
+   "world": "normal"
+  },
+  "Hang_06_bank|rosary_string_medium": {
+   "world": "normal"
+  },
+  "Hang_06_bank|rosary_string_small": {
+   "world": "normal"
+  },
+  "Hang_06_bank|rosary_string_small_half": {
+   "world": "normal"
+  },
+  "Hang_08|thread_memory vassal": {
+   "never": true
+  },
+  "Hang_12|Collectable Item Pickup": {
+   "world": "act3"
+  },
+  "Hang_13|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Hang_17b|Collectable Item Pickup": {
+   "never": true
+  },
+  "Hang_17b|Silkfly Ambient": {
+   "removedBy": [
+    "defeatedSongChevalierBoss"
+   ]
+  },
+  "Hang_17b|Silkfly Ambient (1)": {
+   "removedBy": [
+    "defeatedSongChevalierBoss"
+   ]
+  },
+  "Hang_17b|Silkfly Ambient (2)": {
+   "removedBy": [
+    "defeatedSongChevalierBoss"
+   ]
+  },
+  "Hang_17b|Silkfly Ambient Perched": {
+   "removedBy": [
+    "defeatedSongChevalierBoss"
+   ]
+  },
+  "Library_01|Breakable Wall": {
+   "world": "normal"
+  },
+  "Library_02|Collectable Item Pickup": {
+   "inside": "Battle Scene Acolyte"
+  },
+  "Library_04|Black_Thread_Core_Citadel": {
+   "world": "act3"
+  },
+  "Library_04|Black_Thread_Core_Citadel (1)": {
+   "world": "act3"
+  },
+  "Library_04|Library Sliding Plat": {
+   "world": "normal"
+  },
+  "Library_04|Library Sliding Plat (1)": {
+   "world": "normal"
+  },
+  "Library_05|Heart Piece": {
+   "inside": "library_glass_heart_piece"
+  },
+  "Library_06|Black_Thread_Core_Citadel": {
+   "world": "act3"
+  },
+  "Library_09|Song_lever_side": {
+   "flags": [
+    "libraryRoofShortcut"
+   ]
+  },
+  "Library_11b|Needolin Memory": {
+   "inside": "Memory Orb Challenge (1)"
+  },
+  "Library_12|Remasker": {
+   "inside": "One Way Wall"
+  },
+  "Library_12|Remasker (1)": {
+   "inside": "One Way Wall"
+  },
+  "Library_13b|Collectable Item Pickup - Quill Purple": {
+   "world": "act3"
+  },
+  "Library_13b|Collectable Item Pickup - Quill Red": {
+   "world": "normal"
+  },
+  "Library_15|Song_lever_side": {
+   "flags": [
+    "scholarAcolytesReleased"
+   ]
+  },
+  "Library_16|Collectable Item Pickup": {
+   "inside": "Music Box Sequence - EDITED"
+  },
+  "Memory_Coral_Tower|Coral Warrior (1)": {
+   "never": true
+  },
+  "Mosstown_01|Trapdoor Lever": {
+   "flags": [
+    "mosstown01_shortcut"
+   ]
+  },
+  "Mosstown_02|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Mosstown_02|Bone Lever 2": {
+   "never": true
+  },
+  "Mosstown_02|Reminder Silk Skill": {
+   "removedBy": [
+    "encounteredBellBeast"
+   ],
+   "world": "normal"
+  },
+  "Mosstown_02|Reminder Silk Skill (1)": {
+   "removedBy": [
+    "encounteredBellBeast"
+   ],
+   "world": "normal"
+  },
+  "Mosstown_02|Thick Silk Vines": {
+   "removedBy": [
+    "defeatedBellBeast"
+   ],
+   "world": "normal"
+  },
+  "Mosstown_02|Thick Silk Vines (1)": {
+   "removedBy": [
+    "defeatedBellBeast"
+   ],
+   "world": "normal"
+  },
+  "Mosstown_02|rosary_string_small": {
+   "world": "normal"
+  },
+  "Mosstown_02|rosary_string_small_half": {
+   "world": "normal"
+  },
+  "Peak_01|Remasker New": {
+   "inside": "One Way Wall Crystal"
+  },
+  "Peak_01|Remasker New (1)": {
+   "inside": "One Way Wall Crystal"
+  },
+  "Peak_04d|Remasker New Sharp Ultra": {
+   "inside": "junk_pile_break_peak"
+  },
+  "Peak_07|NPC": {
+   "world": "act3"
+  },
+  "Peak_07|Remasker New Sharp Ultra": {
+   "inside": "sack_multi_breakable (2)"
+  },
+  "Room_CrowCourt_02|Remasker New Sharp": {
+   "inside": "One Way Wall"
+  },
+  "Room_CrowCourt_02|Remasker New Sharp (1)": {
+   "inside": "One Way Wall"
+  },
+  "Room_CrowCourt|Bone Lever": {
+   "flags": [
+    "hitCrowCourtSwitch"
+   ],
+   "inside": "Battle Scene",
+   "never": true
+  },
+  "Room_CrowCourt|greymoor_lever_simple": {
+   "flags": [
+    "hitCrowCourtSwitch"
+   ]
+  },
+  "Room_CrowCourt|rosary_string_medium": {
+   "removedBy": [
+    "CrowCourtInSession",
+    "defeatedCrowCourt"
+   ]
+  },
+  "Room_CrowCourt|rosary_string_small": {
+   "removedBy": [
+    "CrowCourtInSession",
+    "defeatedCrowCourt"
+   ]
+  },
+  "Room_CrowCourt|rosary_string_small_half": {
+   "removedBy": [
+    "CrowCourtInSession",
+    "defeatedCrowCourt"
+   ]
+  },
+  "Room_CrowCourt|rosary_string_small_half (1)": {
+   "removedBy": [
+    "CrowCourtInSession",
+    "defeatedCrowCourt"
+   ]
+  },
+  "Room_CrowCourt|rosary_string_small_half (6)": {
+   "removedBy": [
+    "CrowCourtInSession",
+    "defeatedCrowCourt"
+   ]
+  },
+  "Room_CrowCourt|rosary_string_small_half (7)": {
+   "removedBy": [
+    "CrowCourtInSession",
+    "defeatedCrowCourt"
+   ]
+  },
+  "Room_CrowCourt|rosary_string_small_half (8)": {
+   "removedBy": [
+    "CrowCourtInSession",
+    "defeatedCrowCourt"
+   ]
+  },
+  "Room_Forge|Collectable Item Pickup (1)": {
+   "demo": true
+  },
+  "Room_Forge|dock_sealed_gate": {
+   "flags": [
+    "openedSongGateDocks"
+   ]
+  },
+  "Room_Huntress|Huntress": {
+   "world": "normal"
+  },
+  "Room_Huntress|Huntress Runt": {
+   "world": "act3"
+  },
+  "Room_Witch|body lower": {
+   "inside": "body top"
+  },
+  "Room_Witch|body top": {
+   "inside": "head"
+  },
+  "Shadow_01|Inverse Remasker": {
+   "inside": "Breakable Wall"
+  },
+  "Shadow_01|Remasker New": {
+   "inside": "Breakable Wall"
+  },
+  "Shadow_03|Swamp Muckman FG": {
+   "removedBy": [
+    "metSwampMuckmen"
+   ]
+  },
+  "Shadow_04b|Swamp Muckman FG": {
+   "removedBy": [
+    "metSwampMuckmen"
+   ]
+  },
+  "Shadow_05|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Shadow_05|Swamp Muckman FG": {
+   "removedBy": [
+    "metSwampMuckmen"
+   ]
+  },
+  "Shadow_05|rosary_string_small_half": {
+   "world": "normal"
+  },
+  "Shadow_09|Swamp Muckman FG": {
+   "removedBy": [
+    "metSwampMuckmen"
+   ]
+  },
+  "Shadow_12|Swamp Muckman FG": {
+   "removedBy": [
+    "metSwampMuckmen"
+   ]
+  },
+  "Shadow_12|Swamp Muckman FG (1)": {
+   "removedBy": [
+    "metSwampMuckmen"
+   ]
+  },
+  "Shadow_20|Swamp Muckman FG": {
+   "removedBy": [
+    "metSwampMuckmen"
+   ]
+  },
+  "Shadow_21|Slab Fly Large Cage": {
+   "removedBy": [
+    "visitedUpperSlab"
+   ]
+  },
+  "Shadow_21|thread_memory": {
+   "removedBy": [
+    "slab_cloak_battle_completed"
+   ]
+  },
+  "Shadow_27|Sack Corpse Pickup": {
+   "inside": "Breakable Hang Sack Memory Locket"
+  },
+  "Shellgrave|Geo Small Persistent": {
+   "world": "normal"
+  },
+  "Shellgrave|Geo Small Persistent (1)": {
+   "world": "normal"
+  },
+  "Shellwood_01b|Battle Scene": {
+   "world": "normal"
+  },
+  "Shellwood_01b|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Shellwood_01b|Hornet_cage_rect_lift": {
+   "world": "normal"
+  },
+  "Shellwood_01|Mapper StandGuard NPC": {
+   "world": "act3"
+  },
+  "Shellwood_01|Shellwood Hive": {
+   "world": "normal"
+  },
+  "Shellwood_02|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Shellwood_04b|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Shellwood_04b|Garmond Fighter": {
+   "never": true,
+   "world": "act3"
+  },
+  "Shellwood_04b|Shellwood Twig Wall (1)": {
+   "flags": [
+    "shellwoodBellshrineTwigWall"
+   ]
+  },
+  "Shellwood_08c|Shellwood Twig Wall": {
+   "flags": [
+    "shellwoodBellshrineTwigWall"
+   ]
+  },
+  "Shellwood_10|Silkfly Ambient": {
+   "removedBy": [
+    "hasWalljump"
+   ]
+  },
+  "Shellwood_10|Silkfly Ambient (1)": {
+   "removedBy": [
+    "hasWalljump"
+   ]
+  },
+  "Shellwood_10|Silkfly Ambient Perched": {
+   "removedBy": [
+    "hasWalljump"
+   ]
+  },
+  "Shellwood_11b|thread_memory": {
+   "removedBy": [
+    "defeatedFlowerQueen"
+   ]
+  },
+  "Shellwood_13|Bell Wall Tall": {
+   "flags": [
+    "shellwood13_BellWall"
+   ]
+  },
+  "Shellwood_15|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Shellwood_15|Shellwood Twig Wall (1)": {
+   "flags": [
+    "shellwoodTwigShortcut"
+   ]
+  },
+  "Shellwood_25|Shellwood Twig Wall (5)": {
+   "never": true
+  },
+  "Shellwood_25|Shellwood Twig Wall (6)": {
+   "never": true
+  },
+  "Shellwood_26|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Shellwood_26|Shell Shard Fossil Shellwood (2)": {
+   "world": "normal"
+  },
+  "Shellwood_26|thread_memory vassal": {
+   "never": true
+  },
+  "Slab_03|Remasker New Sharp Ultra": {
+   "inside": "One Way Wall"
+  },
+  "Slab_03|Secret Mask New": {
+   "inside": "One Way Wall (1)"
+  },
+  "Slab_03|Slab Lock (1)": {
+   "flags": [
+    "slab_17_openedGateLeft"
+   ]
+  },
+  "Slab_03|Slab Lock (2)": {
+   "flags": [
+    "slab_05_gateOpen"
+   ]
+  },
+  "Slab_05|Slab Lock (2)": {
+   "flags": [
+    "slab_05_gateOpen"
+   ]
+  },
+  "Slab_06|Collectable Item Pickup": {
+   "never": true
+  },
+  "Slab_10b|Tension Tone Single": {
+   "never": true
+  },
+  "Slab_14|Collectable Item Pickup (1)": {
+   "inside": "slab_item_chain"
+  },
+  "Slab_14|Slab Lock L": {
+   "partner": "Slab Lock R"
+  },
+  "Slab_14|Slab Lock R": {
+   "partner": "Slab Lock L"
+  },
+  "Slab_15|Slab Lock (1)": {
+   "partner": "Slab Lock (2)"
+  },
+  "Slab_15|Slab Lock (2)": {
+   "partner": "Slab Lock (1)"
+  },
+  "Slab_16b|Collectable Item Pickup": {
+   "inside": "Battle Scene Broodmother",
+   "never": true
+  },
+  "Slab_16|Slab Lock (1)": {
+   "partner": "Slab Lock (2)"
+  },
+  "Slab_16|Slab Lock (2)": {
+   "partner": "Slab Lock (1)"
+  },
+  "Slab_16|slab_item_chain (1)": {
+   "never": true
+  },
+  "Slab_21|Slab Lock": {
+   "flags": [
+    "slab_17_openedGateRight"
+   ]
+  },
+  "Slab_22|Remasker New": {
+   "inside": "Collapser Small (2)"
+  },
+  "Slab_23|Remasker New": {
+   "inside": "One Way Wall"
+  },
+  "Slab_Cell_Quiet|One Way Wall": {
+   "never": true
+  },
+  "Song_01|Black_Thread_Core_Citadel": {
+   "world": "act3"
+  },
+  "Song_01|Breakable Wall": {
+   "never": true
+  },
+  "Song_01|rosary_string_medium": {
+   "world": "normal"
+  },
+  "Song_01|rosary_string_small (1)": {
+   "world": "normal"
+  },
+  "Song_04|Battle Scene": {
+   "world": "normal"
+  },
+  "Song_04|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Song_04|Green Prince Stand Song_04": {
+   "world": "normal"
+  },
+  "Song_04|Wake Scene": {
+   "inside": "Battle Scene",
+   "world": "normal"
+  },
+  "Song_05|Black_Thread_Core_Citadel": {
+   "world": "act3"
+  },
+  "Song_07|thread_memory": {
+   "world": "normal"
+  },
+  "Song_10|Sherma Citadel Spa NPC": {
+   "removedBy": [
+    "shermaInEnclave"
+   ]
+  },
+  "Song_10|Song_lever_side": {
+   "flags": [
+    "openedCitadelSpaLeft"
+   ]
+  },
+  "Song_11|Plug_Gate": {
+   "flags": [
+    "song_11_oneway"
+   ]
+  },
+  "Song_15|Black_Thread_Core_Citadel": {
+   "world": "act3"
+  },
+  "Song_17|Black_Thread_Core_Citadel": {
+   "world": "act3"
+  },
+  "Song_17|black_thread_impacter": {
+   "world": "act3"
+  },
+  "Song_17|black_thread_impacter (1)": {
+   "world": "act3"
+  },
+  "Song_17|black_thread_impacter (2)": {
+   "world": "act3"
+  },
+  "Song_24|Chest": {
+   "never": true,
+   "world": "normal"
+  },
+  "Song_24|black_thread_impacter": {
+   "world": "act3"
+  },
+  "Song_24|black_thread_impacter (1)": {
+   "world": "act3"
+  },
+  "Song_25|Hatch": {
+   "inside": "Weakness Scene Act3 Final",
+   "removedBy": [
+    "hasSuperJump"
+   ],
+   "world": "act3"
+  },
+  "Song_25|Remasker New": {
+   "world": "normal"
+  },
+  "Song_25|Weakness Scene Act3 Final": {
+   "removedBy": [
+    "hasSuperJump"
+   ],
+   "world": "act3"
+  },
+  "Song_26|Collectable Item Pickup": {
+   "inside": "Music Box Sequence - EDITED"
+  },
+  "Song_27|Black_Thread_Core_Citadel": {
+   "world": "act3"
+  },
+  "Song_27|Song_lever_side": {
+   "flags": [
+    "song_27_opened"
+   ]
+  },
+  "Song_Enclave_Tube|One Way Wall": {
+   "world": "act3"
+  },
+  "Song_Enclave_Tube|Remasker New": {
+   "inside": "One Way Wall",
+   "world": "act3"
+  },
+  "Song_Enclave_Tube|Remasker New (1)": {
+   "inside": "One Way Wall",
+   "world": "act3"
+  },
+  "Song_Enclave|Collectable Item Pickup": {
+   "world": "normal"
+  },
+  "Song_Enclave|Enclave Caretaker FirstMeet": {
+   "world": "normal"
+  },
+  "Song_Enclave|Enclave Pilgrim Small": {
+   "world": "normal"
+  },
+  "Song_Enclave|Enclave Simple NPC Large": {
+   "world": "act3"
+  },
+  "Song_Enclave|Enclave Simple NPC Short Horned": {
+   "world": "normal"
+  },
+  "Song_Enclave|Enclave Simple NPC Standard": {
+   "removedBy": [
+    "EnclaveScaredPilgrimAway"
+   ],
+   "world": "act3"
+  },
+  "Song_Enclave|Enclave Simple NPC Tall": {
+   "world": "normal"
+  },
+  "Song_Enclave|Garmond Sleep NPC": {
+   "world": "normal"
+  },
+  "Song_Enclave|Sherma Caretaker": {
+   "world": "act3"
+  },
+  "Song_Enclave|Sherma Enclave NPC": {
+   "removedBy": [
+    "shermaQuestActive"
+   ],
+   "world": "normal"
+  },
+  "Song_Enclave|Sherma Healer": {
+   "world": "normal"
+  },
+  "Tube_Hub|Breakable Floor_basic": {
+   "never": true
+  },
+  "Tube_Hub|Collectable Item Pickup": {
+   "removedBy": [
+    "HasCradleMap"
+   ],
+   "world": "act3"
+  },
+  "Tube_Hub|Remasker Pre Hub Left": {
+   "world": "normal"
+  },
+  "Tube_Hub|Remasker Pre Hub Right": {
+   "world": "normal"
+  },
+  "Tube_Hub|Understore Lever": {
+   "world": "normal"
+  },
+  "Tut_01|Bone Thumper": {
+   "world": "normal"
+  },
+  "Tut_01|Interact Reminder (1)": {
+   "removedBy": [
+    "completedTutorial"
+   ]
+  },
+  "Tut_01|Moss Vine Cluster (2)": {
+   "never": true
+  },
+  "Tut_01|Reminder Look Down": {
+   "removedBy": [
+    "completedTutorial"
+   ]
+  },
+  "Tut_01|Secret sounder": {
+   "never": true
+  },
+  "Tut_01|Silkfly Ambient": {
+   "removedBy": [
+    "completedTutorial"
+   ]
+  },
+  "Tut_02|Mossbone Mother Ambient": {
+   "world": "act3"
+  },
+  "Tut_02|Remasker": {
+   "inside": "One Way VineWall"
+  },
+  "Tut_02|Remasker (1)": {
+   "inside": "One Way VineWall"
+  },
+  "Tut_03|Battle Scene": {
+   "removedBy": [
+    "defeatedMossMother"
+   ],
+   "world": "normal"
+  },
+  "Tut_03|Churchkeeper Basement": {
+   "removedBy": [
+    "soulSnareReady"
+   ]
+  },
+  "Tut_03|Moss Vine Cluster": {
+   "world": "normal"
+  },
+  "Tut_03|Moss Vine Cluster (1)": {
+   "world": "normal"
+  },
+  "Under_01|Breakable Wall": {
+   "never": true
+  },
+  "Under_02|Barrel Plat Lift DROPPER": {
+   "removedBy": [
+    "droppedFloorBreakerPlat"
+   ]
+  },
+  "Under_02|Barrel Plat Lift Thin (6)": {
+   "never": true
+  },
+  "Under_02|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Under_02|Remasker New Sharp Ultra": {
+   "never": true
+  },
+  "Under_02|Song_lever_side (3)": {
+   "flags": [
+    "droppedFloorBreakerPlat"
+   ]
+  },
+  "Under_03d|Hero Treadmill Rosaries Paid": {
+   "world": "normal"
+  },
+  "Under_03d|Understore Large Worker": {
+   "world": "normal"
+  },
+  "Under_03d|thread_memory": {
+   "world": "act3"
+  },
+  "Under_04|Remasker New": {
+   "inside": "Collapser Small Understore Grate"
+  },
+  "Under_05|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Under_05|Fall_platform_barrel wide": {
+   "inside": "Barrel Plat Lift (2)"
+  },
+  "Under_05|Understore Thrower (1)": {
+   "never": true
+  },
+  "Under_07c|breakable blocker struts": {
+   "never": true
+  },
+  "Under_11|Breakable Wall": {
+   "never": true
+  },
+  "Under_18|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Under_19b|Collectable Item Pickup - Tool Metal": {
+   "inside": "tool_metal_deposit"
+  },
+  "Under_27|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Under_27|Remasker": {
+   "inside": "Shellwood Twig Wall (2)"
+  },
+  "Under_27|Remasker (1)": {
+   "inside": "Shellwood Twig Wall (2)"
+  },
+  "Under_27|Remasker New Sharp Ultra": {
+   "inside": "Fall_platform_barrel"
+  },
+  "Under_27|Shellwood Twig Wall (1)": {
+   "flags": [
+    "sethShortcut"
+   ]
+  },
+  "Ward_01|Breakable Wall (1)": {
+   "never": true
+  },
+  "Ward_02_boss|Remasker New": {
+   "removedBy": [
+    "wardBossDefeated"
+   ]
+  },
+  "Ward_02|lock_machine": {
+   "removedBy": [
+    "wardBossDefeated"
+   ]
+  },
+  "Ward_07|Collectable Item Pickup": {
+   "inside": "Junk Hatch"
+  },
+  "Ward_07|GG_Breakable_Junk_Pile_red": {
+   "never": true
+  },
+  "Weave_02|Weaver Sign": {
+   "never": true
+  },
+  "Weave_03|Black_Thread_Core": {
+   "world": "act3"
+  },
+  "Weave_03|Collectable Item Pickup": {
+   "inside": "Boss Scene"
+  },
+  "Weave_08|Needolin Memory": {
+   "inside": "Memory Orb Challenge (1)"
+  },
+  "Wisp_05|Collectable Item Pickup - Tool Metal": {
+   "inside": "tool_metal_deposit"
+  },
+  "Wisp_07|Remasker New": {
+   "inside": "Breakable Wall"
+  },
+  "Wisp_07|Remasker New (1)": {
+   "inside": "Breakable Wall"
+  }
+ },
+ "receptacles": [
+  [
+   "Belltown",
+   "Door Lock",
+   null,
+   "BelltownHouseUnlocked",
+   false
+  ],
+  [
+   "Bone_East_12",
+   "Dock Key Receptacle",
+   "Dock Key Receptacle",
+   null,
+   true
+  ],
+  [
+   "Crawl_02",
+   "lock",
+   "aspid_sealed_gate_stone",
+   null,
+   false
+  ],
+  [
+   "Dock_12",
+   "lock",
+   "Diving Bell Door",
+   null,
+   false
+  ],
+  [
+   "Dust_02",
+   "Key Receptactle",
+   null,
+   "UnlockedDustCage",
+   false
+  ],
+  [
+   "Hang_06",
+   "bank_door",
+   "bank_door",
+   null,
+   false
+  ],
+  [
+   "Room_Forge",
+   "song_knight_lock",
+   "dock_sealed_gate",
+   "openedSongGateDocks",
+   false
+  ],
+  [
+   "Under_17",
+   "Architect Shrine Door",
+   "Architect Shrine Door",
+   null,
+   false
+  ],
+  [
+   "Ward_01",
+   "key_machine",
+   "under_lift_large",
+   null,
+   false
+  ],
+  [
+   "Ward_02",
+   "lock_machine",
+   null,
+   null,
+   false
+  ],
+  [
+   "Ward_02",
+   "lock_machine",
+   "lock_machine",
+   null,
+   false
+  ]
+ ]
+}

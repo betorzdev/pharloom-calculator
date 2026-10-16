@@ -325,6 +325,7 @@
         case 'bool': return !!bools.get(c[1] + '\u0000' + c[2]);
         case 'visited': return visited.has(c[1]);
         case 'journal': return kills.has(c[1]);   // the entry is listed (seen)
+        case 'kills': return (kills.get(c[1]) || 0) >= c[2];   // at least that many of it beaten
         case 'relic': return !!(relics.get(c[1]) || {}).IsCollected;
         case 'memento': return deposited.has(c[1]) || int((items.get(c[1]) || {}).Amount) > 0;
         case 'held': return int((items.get(c[1]) || {}).Amount) > 0;
@@ -480,13 +481,16 @@
   const EXTRA_AT = new Map();
   SP.EXTRAS.forEach((x, i) => { const k = pieceKey(x); EXTRA_AT.set(k, [...(EXTRA_AT.get(k) || []), i]); });
   // A wish's or an objective's mark (js/spots.js TASKS): its kind, room and check (the Bellbeast's
-  // thirteen pins share a check).
+  // thirteen pins share a check), → its places in the list: the Silver Bells' seven drop spots in a
+  // room share one key and one check, so the key stands for all of them (it kept only the last, and
+  // twelve of the fourteen never showed done: design/03-redesign.md, step 6, the save checks, 1 A).
   const taskKey = (x) => x[0] + ' ' + x[3] + ' ' + JSON.stringify(x[2]);
-  const TASK_AT = new Map(SP.TASKS.map((x, i) => [taskKey(x), i]));
+  const TASK_AT = new Map();
+  SP.TASKS.forEach((x, i) => { const k = taskKey(x); TASK_AT.set(k, [...(TASK_AT.get(k) || []), i]); });
   function toSnapshot(pd, sd = null, saved = null) {
     const g = game(pd, sd);
     const progress = { ...g, pieces: g.pieces.map((i) => pieceKey(CO.PIECES[i])), wishes: g.wishes.map((i) => pieceKey(CO.WISHES[i])),
-      extras: [...new Set(g.extras.map((i) => pieceKey(SP.EXTRAS[i])))], tasks: g.tasks.map((i) => taskKey(SP.TASKS[i])) };
+      extras: [...new Set(g.extras.map((i) => pieceKey(SP.EXTRAS[i])))], tasks: [...new Set(g.tasks.map((i) => taskKey(SP.TASKS[i])))] };
     for (const k of [...OWNED, 'journal']) delete progress[k];
     const m = meta(pd);
     return {
@@ -524,7 +528,7 @@
     const bought = new Set(out.maps.map((a) => 'Has' + a + 'Map'));
     out.extras = [...new Set([...out.extras.flatMap((k) => EXTRA_AT.get(k) || []),
       ...SP.EXTRAS.flatMap((x, i) => (x[0] === 'map' && x[2][0] === 'flag' && bought.has(x[2][1]) ? [i] : []))])].sort((a, b) => a - b);
-    out.tasks = out.tasks.map((k) => TASK_AT.get(k)).filter((i) => i !== undefined);
+    out.tasks = [...new Set(out.tasks.flatMap((k) => TASK_AT.get(k) || []))].sort((a, b) => a - b);
     out.gaveBack = out.gaveBack.filter((id) => CO.TOOLS[id]);
     out.steelSpots = out.steelSpots.filter((x) => typeof x === 'string' && /^[\w ()-]{1,64}$/.test(x));
     out.cocoonAt = out.cocoon ? fourNumbers(out.cocoonAt) : [];

@@ -71,7 +71,9 @@ const DONE = {
   khann: ['flag', 'defeatedCoralKing'],
   'shellwood-1': ['bool', 'Shellwood_01b', 'Battle Scene'],
   'shellwood-2': ['flag', 'savedPlinney'],
-  // Not a BattleScene: the Roachkeeper in Dust_06 drops the Simple Key (none of the 92 saves has it yet).
+  /* Not a BattleScene: the Roachkeeper in Dust_06 drops the Simple Key. The key's pickup and the
+     Roachkeeper go once CollectedDustCageKey is set, so the pickup's bool is never written (unset in
+     all 77 of the author's saves): the flag that removes it says (REMOVED, below). */
   'sinners-road-1': ['bool', 'Dust_06', 'Collectable Item SimpleKey'],
   lugoli: ['flag', 'defeatedRoachkeeperChef'],
   'the-slab-1': ['bool', 'Slab_23', 'Battle Scene'],
@@ -107,6 +109,30 @@ const SCENE = {
   broodmother: 'Slab_16b', 'underworks-1': 'Under_07', 'underworks-2': 'Under_10', 'underworks-3': 'Under_18', verdania: 'Clover_04b',
   'whispering-vaults-1': 'Library_02', 'whispering-vaults-2': 'Library_02', 'whiteward-1': 'Ward_09', unravelled: 'Ward_02_Boss',
 };
+/* A gauntlet that can't be fought any more, and what says so (js/app-map.js draws it as one the game
+   has taken away, design/03-redesign.md, step 6, the save checks, 3 A): the other arena of a pair
+   (Slab_16's FSM picks one on the way in, by the Cloakless Crest: a game fights one; the author's
+   first game fought the second, its Steel Soul game the third), or an arena the game swaps out when
+   Act 3 begins (its object under the room's «Normal World»: kb/data/game/gating.json world
+   'normal'). Each { gauntlet: the other's id } or 'act3'. */
+const PAIRS = { 'the-slab-2': 'the-slab-3', 'the-slab-3': 'the-slab-2' };
+const GATING = JSON.parse(require('fs').readFileSync(path.join(__dirname, '..', 'kb', 'data', 'game', 'gating.json'), 'utf8')).items;
+const GATING_LC = new Map(Object.entries(GATING).map(([k, v]) => [k.toLowerCase(), v]));
+// An arena saved by a playerData flag (its setPDBoolOnEnd): its object, by kb/data/game/pickups.json battles.
+const BATTLES = JSON.parse(require('fs').readFileSync(path.join(__dirname, '..', 'kb', 'data', 'game', 'pickups.json'), 'utf8')).battles;
+const gatingOf = (c) => {
+  if (c && c[0] === 'bool') return GATING_LC.get((c[1] + '|' + c[2]).toLowerCase()) || {};
+  if (c && c[0] === 'flag') {
+    for (const [scene, list] of Object.entries(BATTLES)) for (const [obj, , , flag] of list) if (flag === c[1]) return GATING_LC.get((scene + '|' + obj).toLowerCase()) || {};
+  }
+  return {};
+};
+/* A reward's pickup that the game takes away once a flag is set (gating.json removedBy) is had by
+   that flag too: it never writes its own bool then. Only a pickup's, not an arena's (an arena the
+   game switches off is closed, not won). */
+const REMOVED = (c) => (c[0] === 'bool' && !/Battle Scene/.test(c[2]) && (gatingOf(c).removedBy || []).length
+  ? ['any', c, ...gatingOf(c).removedBy.map((f) => ['flag', f])] : c);
+const goneOf = (id, c) => (PAIRS[id] ? { gauntlet: PAIRS[id] } : gatingOf(c).world === 'normal' ? 'act3' : undefined);
 /* The first Act each can be fought in, read in its wiki subpage (11-Oct-2026): Act 3's own ("appears
    in Act 3", black-threaded, Silk Soar, Elegy of the Deep's Coral Tower and Karmelita, the
    Crawfather's), Act 2's by what it asks for (Clawline, Faydown Cloak, an Act 2 wish: the
@@ -192,7 +218,8 @@ const norm = (x) => String(x).toLowerCase().replace(/[’']/g, "'").replace(/ \(
     out.push({
       id: W.slug(sub), area: areaId || undefined,
       place: place ? (N.gameName(place) || { es: place, en: place }) : undefined,
-      reward: reward || undefined, waves, done: DONE[W.slug(sub)] || fail(`${sub}: no condition in DONE`),
+      reward: reward || undefined, waves, done: REMOVED(DONE[W.slug(sub)] || fail(`${sub}: no condition in DONE`)),
+      gone: goneOf(W.slug(sub), DONE[W.slug(sub)]),
       scene: SCENE[W.slug(sub)] || fail(`${sub}: no scene in SCENE`),
       act: ACT[W.slug(sub)] || fail(`${sub}: no Act in ACT`),
     });
@@ -210,7 +237,9 @@ const norm = (x) => String(x).toLowerCase().replace(/[’']/g, "'").replace(/ \(
      waves     [[enemy id (js/enemies.js FOES), how many], …] per wave, in order
      done      how a save says it's cleared, as js/collectibles.js's conditions (js/savefile.js)
      scene     the game's scene it's fought in (js/rooms.js places it on the map)
-     act       the first Act it can be fought in`,
+     act       the first Act it can be fought in
+     gone      when it can't be fought any more: { gauntlet: the other of its pair, once that one's
+               done } or 'act3' (the game swaps its arena out when Act 3 begins); none: always there`,
   'gauntlets', [['GAUNTLETS', out]]);
   const foes = out.reduce((a, g) => a + g.waves.reduce((b, w) => b + w.reduce((c, x) => c + x[1], 0), 0), 0);
   console.log(`js/gauntlets.js: ${out.length} gauntlets, ${out.reduce((a, g) => a + g.waves.length, 0)} waves, ${foes} enemies (${size} bytes)`);

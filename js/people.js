@@ -263,6 +263,7 @@
         ['song_enclave', 1685.1, 551.8],
       ],
       met: ['metGarmond'],
+      gone: ['garmondBlackThreadDefeated'],
       unsure: 'always',
     },
     {
@@ -495,7 +496,7 @@
         ['song_07', 1202.6, 688.9],
         ['song_24', 1462.6, 716.5],
       ],
-      met: ['songChevalierRestingMet'],
+      met: ['songChevalierRestingMet', 'encounteredSongChevalierBoss', 'songChevalierEncounters'],
       at: [
         ['songChevalierActiveInHang_02', true, 'hang_02'],
         ['songChevalierActiveInSong_07', true, 'song_07'],
@@ -550,6 +551,8 @@
     'MetTroupeHunterWild',
     'SethJoinedFleatopia',
     'churchKeeperIntro',
+    'encounteredSongChevalierBoss',
+    'garmondBlackThreadDefeated',
     'gillyMet',
     'libraryStatueWoken',
     'metCaretaker',
@@ -564,6 +567,7 @@
     'songChevalierActiveInHang_02',
     'songChevalierActiveInSong_07',
     'songChevalierActiveInSong_24',
+    'songChevalierEncounters',
     'songChevalierRestingMet',
   ];
 
