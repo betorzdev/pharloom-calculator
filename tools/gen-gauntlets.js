@@ -116,7 +116,7 @@ const SCENE = {
    Act 3 begins (its object under the room's «Normal World»: kb/data/game/gating.json world
    'normal'). Each { gauntlet: the other's id } or 'act3'. */
 const PAIRS = { 'the-slab-2': 'the-slab-3', 'the-slab-3': 'the-slab-2' };
-const GATING = JSON.parse(require('fs').readFileSync(path.join(__dirname, '..', 'kb', 'data', 'game', 'gating.json'), 'utf8')).items;
+const GATING = require('./gating.js').load('gen-gauntlets').items;   // stops unless pickups.json is of the same patch
 const GATING_LC = new Map(Object.entries(GATING).map(([k, v]) => [k.toLowerCase(), v]));
 // An arena saved by a playerData flag (its setPDBoolOnEnd): its object, by kb/data/game/pickups.json battles.
 const BATTLES = JSON.parse(require('fs').readFileSync(path.join(__dirname, '..', 'kb', 'data', 'game', 'pickups.json'), 'utf8')).battles;

@@ -126,3 +126,35 @@ test('11 A: what the game never switches on and the demo\'s aren\'t marks', () =
   assert.ok(!has('Bone_East_01', 'Collectable Item Pickup'), 'the demo gate\'s Shard Bundle');
   assert.ok(!has('Clover_04b', 'Clover Gate') && !has('Clover_04b', 'Clover Gate (1)'), 'Verdania\'s two gates, worked by a plate nothing switches on');
 });
+
+test('a slot kept before the save checks still has what it had: its marks under their old checks', () => {
+  // As the code before kept them: each extra by its kind and its old check (js/savefile.js pieceKey).
+  const old = (i) => SP.EXTRAS[i][0] + ' ' + JSON.stringify(SP.EXTRAS[i][5].was);
+  const lock = extraOf('lock', 'Slab_14', 'Slab Lock L'), vine = extraOf('silkwall', 'Mosstown_02', 'Thick Silk Vines (1)');
+  const room = SP.EXTRAS.findIndex((x) => x[0] === 'masked' && x[3] === 'Chapel_Wanderer');
+  for (const i of [lock, vine, room]) assert.ok(SP.EXTRAS[i][5] && SP.EXTRAS[i][5].was, `extra:${i} keeps its old check`);
+  assert.deepEqual(SP.EXTRAS[lock][5].was, ['bool', 'Slab_14', 'Slab Lock L']);
+  const back = F.gameOf({ 'pharloom.progress': JSON.stringify({ extras: [old(lock), old(vine), old(room)] }) });
+  for (const i of [lock, vine, room]) assert.ok(back.extras.includes(i), `extra:${i} had before, had now`);
+  // Today's keys go on as before.
+  const now = F.gameOf(F.toSnapshot({ ...base }, bools(['Slab_14', 'Slab Lock R'])));
+  assert.ok(now.extras.includes(lock) && now.extras.includes(extraOf('lock', 'Slab_14', 'Slab Lock R')));
+  // And what the old slot itself says of the rest: the other lock of the door, the vines once the
+  // Bell Beast is beaten, Last Dive by Lost Lace in the Journal; nothing it can't say.
+  const r = extraOf('lock', 'Slab_14', 'Slab Lock R'), vine0 = extraOf('silkwall', 'Mosstown_02', 'Thick Silk Vines');
+  const dive = SP.TASKS.findIndex((x) => x[0] === 'goal' && x[1] === 'Black Thread Pt6 Flower');
+  const said = F.gameOf({ 'pharloom.progress': JSON.stringify({ extras: [old(lock)], bosses: ['bell-beast'], tasks: [] }),
+    'pharloom.journal': JSON.stringify({ 'lost-lace': 1 }) });
+  assert.ok(said.extras.includes(r) && said.extras.includes(vine0) && said.extras.includes(vine), 'the other lock, both vines');
+  assert.ok(said.tasks.includes(dive), 'Last Dive');
+  assert.ok(!said.extras.includes(extraOf('lever', 'Ant_17', 'ant_lever_persistent')), 'a flag the slot never kept says nothing');
+});
+
+test('npm run data stops unless pickups.json and gating.json were read from the same patch', () => {
+  const G = require('../tools/gating.js');
+  assert.equal(G.load('test', { gating: { patch: '1.0.30000', items: {} }, pickups: { patch: '1.0.30000' } }).patch, '1.0.30000');
+  assert.throws(() => G.load('test', { gating: { patch: '1.0.30000' }, pickups: { patch: '1.0.40000' } }), /patch 1\.0\.30000 and pickups\.json from 1\.0\.40000/);
+  assert.throws(() => G.load('test', { gating: { patch: '1.0.30000' }, pickups: {} }), /pickups\.json says no patch/);
+  // The files in the repo agree.
+  assert.ok(G.load('test').patch);
+});

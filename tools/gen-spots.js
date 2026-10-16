@@ -66,7 +66,7 @@ const P = JSON.parse(fs.readFileSync(PICKUPS, 'utf8'));
    tools/extract-gating.py, design/03-redesign.md, step 6, the save checks): the flags a way's own
    components set, the other lock of a door, what the game takes away and when, what only one mode
    or the demo has, what the scenes never switch on. By "Scene|ID" as the save writes them. */
-const GATING = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'kb', 'data', 'game', 'gating.json'), 'utf8'));
+const GATING = require('./gating.js').load('gen-spots');   // stops unless pickups.json is of the same patch
 const GATE = new Map(Object.entries(GATING.items).map(([k, v]) => [k.toLowerCase(), v]));
 const gateOf = (scene, id) => GATE.get((scene + '|' + id).toLowerCase()) || {};
 // A check's sceneData bools, wherever they are in it; its saved items of any kind (a cache's int, a rock's hits).
@@ -675,7 +675,10 @@ const LIFT_OUT = new Set(['Organ_01 Hornet_cage_rect_lift_organ (1)']);
     if (!leaves.length) continue;
     const pts = list.filter((r) => typeof r[1] === 'number');
     if (pts.length) SCENE_AT.set(EXTRAS.length, [pts.reduce((a, r) => a + r[1], 0) / pts.length, pts.reduce((a, r) => a + r[2], 0) / pts.length]);
-    EXTRAS.push(['masked', null, leaves.length > 1 ? ['all', ...leaves] : leaves[0], scene]);
+    const check = leaves.length > 1 ? ['all', ...leaves] : leaves[0];
+    // The room's check before the save checks (every mask by its own bool), for slots kept before (WAS).
+    const bools = list.map(([id]) => ['bool', scene, id]), was = bools.length > 1 ? ['all', ...bools] : bools[0];
+    EXTRAS.push(JSON.stringify(was) === JSON.stringify(check) ? ['masked', null, check, scene] : ['masked', null, check, scene, null, { was }]);
   }
 }
 
@@ -817,7 +820,13 @@ for (const [id, save, scene, comp, check] of GIVEN_PURSE) {
       }
       const had = new Set((x[2][0] === 'any' ? x[2].slice(1) : [x[2]]).map((c) => JSON.stringify(c)));
       const add = more.filter((c) => { const k = JSON.stringify(c); if (had.has(k)) return false; had.add(k); return true; });
-      if (add.length) { x[2] = ['any', ...(x[2][0] === 'any' ? x[2].slice(1) : [x[2]]), ...add]; opened++; }
+      if (add.length) {
+        const was = x[2];
+        x[2] = ['any', ...(x[2][0] === 'any' ? x[2].slice(1) : [x[2]]), ...add];
+        while (x.length < 5) x.push(null);
+        x[5] = { ...(x[5] || {}), was };
+        opened++;
+      }
     }
     const saved = [...new Map(savedOf(x[2]).map((c) => [(c[1] + '|' + c[2]).toLowerCase(), c])).values()];
     if (!saved.length || x[0] === 'masked') continue;
@@ -1276,7 +1285,9 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               shards, the doors a key opens no mark had yet); act null when the thing has no Act of
               its own; more { shop, price } for a map Shakra sells, { found } for one found, { item }
               for a rosary or shard item, { gone: 'act3' } for what the game takes away when Act 3
-              begins, { mode: 'steel' or 'normal' } for what only that mode has; check as
+              begins, { mode: 'steel' or 'normal' } for what only that mode has, { was } the
+              check it had before the save checks (a slot kept before has its marks by that one,
+              js/savefile.js gameOf: had then is had now, as the new check takes in the old); check as
               js/collectibles.js's, plus ['relic', name], ['memento', name], ['int', scene, id,
               value] (['int', scene, id, value, 'min']: at least value), ['geo', scene, id] and
               ['accepted', quest] (the wish taken, done or not)

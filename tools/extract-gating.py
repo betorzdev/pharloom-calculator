@@ -46,6 +46,8 @@ What it writes (read on 16-Oct-2026, patch 1.0.30000, against the 77 files of th
                      outside, the wall takes the mask with it, which then never saves)
   receptacles  each ItemReceptacle (a door a key opens) → [Scene, object, the saved item its
           `persistent` names or null, its playerDataBool or null, demo (true/false)]
+  patch   the game's version the scan read, as tools/extract-pickups.py writes it: npm run data stops
+          if the two differ (tools/gating.js), so a patch re-extracts both
 Scene names are the scene's own, as the save writes them (aa/catalog.bin), as extract-pickups.py. """
 import json, os, pickle, re, struct, sys, warnings
 import UnityPy
@@ -326,6 +328,19 @@ def scan(game, only=None):
     return items, receptacles
 
 
+def game_patch(game):
+    """The game's own version (PlayerSettings' bundleVersion in globalgamemanagers, read raw: its type
+    tree doesn't read with the stripped Unity version), "1.0.30000"; written into the output so that
+    tools/gating.js can tell whether pickups.json and gating.json were read from the same patch."""
+    env = UnityPy.load(os.path.join(game, 'Hollow Knight Silksong_Data', 'globalgamemanagers'))
+    for o in env.objects:
+        if o.type.name == 'PlayerSettings':
+            found = re.findall(rb'(?<![\d.])\d+\.\d+\.\d+(?![\d.])', o.get_raw_data())
+            if len(found) == 1:
+                return found[0].decode()
+    sys.exit('the game\'s version isn\'t where it was (globalgamemanagers PlayerSettings): game_patch needs reading again')
+
+
 def main(game, only=None, cache=None):
     got = pickle.load(open(cache, 'rb')) if cache and os.path.exists(cache) and not only else None
     items, receptacles = got or scan(game, only)
@@ -337,7 +352,7 @@ def main(game, only=None, cache=None):
     kinds = {k: sum(1 for r in items.values() if k in r) for k in ('flags', 'removedBy', 'partner', 'world', 'mode', 'demo', 'never', 'inside', 'battle')}
     if kinds['flags'] < 25 or kinds['world'] < 100 or kinds['partner'] < 4 or len(receptacles) < 8:
         fail(f'too few of something ({kinds}, {len(receptacles)} receptacles): the components need reading again')
-    out = {'items': dict(sorted(items.items())), 'receptacles': sorted(receptacles, key=lambda r: [str(x) for x in r])}
+    out = {'items': dict(sorted(items.items())), 'receptacles': sorted(receptacles, key=lambda r: [str(x) for x in r]), 'patch': game_patch(game)}
     with open(OUT, 'w') as fh:
         json.dump(out, fh, indent=1, sort_keys=True)
         fh.write('\n')

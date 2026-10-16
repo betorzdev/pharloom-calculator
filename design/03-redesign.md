@@ -1585,6 +1585,26 @@ mode filter, and no more marks for the doors the save didn't keep (`test/save-ch
 Left for later: Slab_16's «Jail Gate Door - Persistent» filed as a lock, Library_02's Heavy Rosary
 Necklace as an arena's reward, Bone_12's second cell door, Coral_41's chained crust walls.
 
+Then two more of Albert's, **A** both (16 October 2026):
+
+- **A slot kept before this change comes out right, silently** (no notice: migrations run
+  silently). A slot whose save the browser keeps (`pharloom-live`'s `games`: every import since
+  14 October, and every live-linked slot at each sync) is read again from it at every start by
+  `refreshSlots`, so it's recomputed by today's checks. One without (imported before, or with no
+  IndexedDB) holds only the old per-mark results: `gameOf` finds each old key by the check it
+  had (`{ was }` in `js/spots.js`, 69 extras) and adds what the slot itself proves, read three
+  ways (holds, doesn't, can't say): the bool or flag of a mark or boss it had, its wishes, its
+  Journal's kills (the other Slab lock, Mosshome's vines once the Bell Beast is beaten, Last Dive
+  by Lost Lace, Whiteward's arena by Save Sherma). Over 77 slots made with the old code: nothing
+  had is lost, nothing is had that the save hasn't; tasks, bosses and gauntlets equal the save in
+  all; the extras only the save can tell (a lever's flag, a plate, a wall seen from another room:
+  18 in each 100% game) wait for the next import or live sync. Free mode marks only pieces by hand,
+  and is unchanged.
+- **The extractors in step**: each writes the game's version it read (`patch`), and
+  `npm run data` stops first (`tools/gating.js`) while `gating.json` and `pickups.json` differ or
+  one says none (`kb/README.md`: both run after a patch). `npm run drive -- --slot <file>` seeds a
+  slot's keys as an older site kept them, to see today's code read it.
+
 ## Step 7 · Journal
 
 ### What there is (28 September 2026)
