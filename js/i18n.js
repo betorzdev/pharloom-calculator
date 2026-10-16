@@ -808,6 +808,9 @@
     roadLace:       { es: 'Derrota a Lace en la Cuna', en: 'Defeat Lace in the Cradle' },   // DEFEATED_LACE_2_DESC
     roadKey:        { es: 'Llave de hogar campana', en: 'Bellhome Key' },   // INV_NAME_BELL_HOUSE_KEY
     roadPavo:       { es: 'lista: habla con Pabo', en: 'ready: talk to Pavo' },   // his name: BELLHART_GREETER_MAIN
+    roadKeyCursed:  { es: 'mientras estés maldita, {pavo} no te la da', en: 'while you\'re cursed, {pavo} won\'t give it' },   // the game's word: ENDING_D_DESC «mientras estás maldita»
+    roadKeyRest:    { es: 'tras «{glory}», descansa en un banco fuera de {town} antes de hablar con {pavo}', en: 'after {glory}, rest at a bench outside {town} before talking to {pavo}' },
+    roadCursed:     { es: 'Estás maldita: hasta que «{cure}» te cure, {pavo} no te da la llave, los {couriers} no te dan entregas y vencer a la {silk} da el final «{twisted}».', en: 'You\'re cursed: until {cure} cures you, {pavo} won\'t give you the key, {couriers} won\'t hand you deliveries and defeating {silk} gives the {twisted} ending.' },   // GAINED_CURSE, ENDING_D_DESC
     roadKeyRule:    { es: 'Pabo la da tras «{glory}» y {n} deseos de su lista', en: 'Pavo gives it after {glory} and {n} wishes of his list' },
     roadOffer:      { es: 'Acepta «{wish}»: habla con el {caretaker} en {clave}', en: 'Accept "{wish}": talk to the {caretaker} in {clave}' },
     roadOfferNote:  { es: 'Con todo cumplido, te llama con la mano. El deseo sale también en el muro de deseos de {town}, que te manda a él.', en: 'Once everything is met he waves you over. The wish also shows on the Wishwall in {town}, which sends you to him.' },
@@ -817,14 +820,16 @@
     roadPieceGiven: { es: 'te la da al aceptar el deseo: {npc}', en: 'given once you accept the wish: {npc}' },
     roadPieceAfter: { es: 'tras derrotar a {foe}', en: 'after defeating {foe}' },
     roadPieceNeeds: { es: 'requiere: {art}', en: 'needs: {art}' },
+    roadHermitMeet: { es: 'si nunca habías hablado con él, te la da la segunda vez', en: 'if you\'d never talked to him, he gives it the second time' },
     roadHermitWay:  { es: 'cruza la pared oculta a la derecha de la Vía Campana y baja: está a la izquierda', en: 'walk through the hidden wall right of the Bellway and drop down: he\'s to the left' },   // the game's word in it: KEY_BELLWAY
     roadReady:      { es: 'Llévaselas al {caretaker} en {clave}', en: 'Bring them to the {caretaker} in {clave}' },
     roadSilk:       { es: 'Derrota a la Gran Madre Seda y atrápala con la trampa anímica', en: 'Defeat Grand Mother Silk and entrap her with the Soul Snare' },   // ENDING_C_DESC
-    roadSilkNote:   { es: 'En el golpe final, toca el Agujolín en vez de enlazarla. Ese final cierra en esa partida los otros dos del Acto 2; tras los créditos, la partida se abre ya en el Acto 3.', en: 'On the final blow, play the Needolin instead of binding her. That ending closes the other two Act 2 endings in that game; after the credits the game opens in Act 3.' },
+    roadSilkNote:   { es: 'En el golpe final, toca el Agujolín en vez de enlazarla. Ese final cierra en esa partida los otros dos del Acto 2; tras los créditos, la partida se abre ya en el Acto 3. Si estás maldita, vencerla da en cambio el final «{twisted}».', en: 'On the final blow, play the Needolin instead of binding her. That ending closes the other two Act 2 endings in that game; after the credits the game opens in Act 3. If you\'re cursed, defeating her gives the {twisted} ending instead.' },
     roadRunt:       { es: 'para el Acto 3 cuenta su versión principal, no la de la cría', en: 'for Act 3 its main version counts, not the runt\'s' },
     roadMelodies:   { es: 'para llegar a la Cuna, las tres melodías: {n} de 3', en: 'to reach the Cradle, the three melodies: {n} of 3' },
     // The caravan (js/acts.js: Mooshka's FSM): its stop now, the fleas, and what its last move asks.
     roadCaravanHow: { es: '{n} de {need} pulgas rescatadas; habla con {npc} en cada parada (ahora: {at})', en: '{n} of {need} fleas rescued; talk to {npc} at each stop (now: {at})' },
+    roadCaravanRest:{ es: 'en cada parada, tras hablar con {npc}, descansa en un banco lejos de ella antes de que siga', en: 'at each stop, once you\'ve talked to {npc}, rest at a bench away from it before it moves on' },
     roadCaravanRule:{ es: 'rescata {need} pulgas y habla con {npc} en cada parada de la caravana', en: 'rescue {need} fleas and talk to {npc} at each of the Caravan\'s stops' },
     roadCaravanLake:{ es: 'antes, visita el {lake} vacío, en los {ducts}', en: 'first visit the empty {lake}, in the {ducts}' },
     roadCaravanJudge:{ es: 'antes de su parada en los {steps}, derrota a la {judge}', en: 'before its stop on the {steps}, defeat the {judge}' },
@@ -854,11 +859,13 @@
     mapFocusOff:    { es: 'Volver al mapa entero', en: 'Back to the whole map' },
     /* What posts a required wish later than the rest (its playerData test in js/quests.js CHAIN when,
        and the wiki's prerequisites for what sets it; checked on the author's saves). */
-    roadOpensShakra:{ es: 'sale al comprarle a {npc} todos sus mapas y tener la {art}', en: 'posted once you have bought all of {npc}\'s maps and have the {art}' },
+    roadOpensShakra:{ es: 'sale al comprarle a {npc} todos sus mapas y tener la {art}, con dos de las tres melodías aprendidas o tras derrotar a {foe}', en: 'posted once you have bought all of {npc}\'s maps and have the {art}, with two of the three melodies learned or {foe} defeated' },
     roadOpensSherma:{ es: 'sale tras conocer a {npc} en {clave} y visitar el {ward}', en: 'posted after meeting {npc} in {clave} and visiting the {ward}' },
     roadOpensClave: { es: 'sale cuando {clave} crece: «{first}» y otros 3 deseos de su muro', en: 'posted once {clave} grows: "{first}" and 3 more wishes from its board' },
     roadOpensTown:  { es: 'sale tras la primera mejora de aguja, venderle una reliquia a {npc} y hablar con {pavo}', en: 'posted after your first Needle upgrade, selling a relic to {npc} and speaking with {pavo}' },
-    roadOpensGlory: { es: 'sale tras derrotar a los {foe} o conseguir {art}', en: 'posted after defeating the {foe} or getting the {art}' },
+    roadOpensGlory: { es: 'sale tras derrotar a los {foe}, conseguir {art} o entrar en {clave}', en: 'posted after defeating the {foe}, getting the {art} or entering {clave}' },
+    roadRestOut:    { es: 'aparece al descansar en un banco fuera de {area}', en: 'it shows up when you rest at a bench outside {area}' },
+    roadRestAway:   { es: 'aparece al descansar en un banco de otra zona', en: 'it shows up when you rest at a bench in another area' },
     roadMapsBought: { es: '{n} de {of} comprados', en: '{n} of {of} bought' },
     roadPinOil:     { es: 'cuenta también con la segunda mejora de aguja de {npc}', en: 'also counts with {npc}\'s second Needle upgrade' },
     // What a wish asks to be brought (js/quests.js CHAIN asks): a donation's sum, the Journal's entries, its things.

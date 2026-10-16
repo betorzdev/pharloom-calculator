@@ -20,7 +20,15 @@
                   House Key''s wishes are (read from his FSM: the Belltown Greeter's). The
                   caravan settles in Fleatopia when Mooshka, at the Blasted Steps, has 22 fleas
                   and Hornet has seen the empty Pale Lake (his FSM there: Caravan Troupe Leader
-                  Judge NPC, Fleas Saved and SeenFleatopiaEmpty).
+                  Judge NPC, Fleas Saved and SeenFleatopiaEmpty), and once time has passed since
+                  she met him there (CaravanTroupeLeaderCanLeaveJudge: GameManager.TimePasses sets
+                  it after MetCaravanTroupeLeaderJudge, away from Coral_Judge_Arena; a bench's rest,
+                  its Bench Control FSM's Save Game state, is where time passes).
+                  While Hornet wears the Cursed Crest (PlayerData.IsAnyCursed: CurrentCrestID is
+                  it), Pavo gives only his cursed talk, never the key (his FSM's Convo state:
+                  IsAnyCursed and not soulSnareReady), and Grand Mother Silk's Death Type state
+                  (cradle_03, Silk Boss) sends a cursed Hornet to Twisted Child, never the snare:
+                  the road says so (cursed, from savefile's build).
      2. offer     the wish Silk and Soul accepted from the Caretaker (his FSM: Enclave Caretaker).
                   He offers it once the group holds (CaretakerOfferedSnareQuest, set as he offers
                   it, before the answer); taken from Bellhart's board, it still sends you to him.
@@ -123,6 +131,9 @@
     return [{ id: 'phantom', ok: g.phantom, open: needs.every((x) => x.ok), needs, skips: ['bellshrines', 'grand-gate'], joins: 'citadel' }];
   }
 
+  // The Cursed Crest worn (js/savefile.js build.cursed: CurrentCrestID "Cursed").
+  const cursed = (g) => !!(g.build && g.build.cursed);
+
   function toAct3(g) {
     const done = new Set(g.quests);
     const rule = group('Soul Snare', g);
@@ -131,7 +142,7 @@
     // The Bellhome's key, under its check: Bellhart's Glory and 2 of the group's wishes.
     const tests = rule.tests.map((t) => (t.id === 'bellhomeKey' ? { ...t, key: {
       glory: done.has('Belltown House Mid'), gloryQuest: glory, got: key.points.got, need: key.points.need,
-      missing: key.points.missing, ready: done.has('Belltown House Mid') && key.points.got >= key.points.need } }
+      missing: key.points.missing, ready: done.has('Belltown House Mid') && key.points.got >= key.points.need, cursed: cursed(g) } }
       // The caravan, while it isn't there: where it stands and the fleas rescued, of the 22.
       : t.id === 'caravan' ? { ...t, caravan: { at: Math.max(0, Math.min(FLEATOPIA, g.caravan | 0)),
         fleas: FLEA_AT.filter((i) => g.pieces.includes(i)).length, need: FLEAS } } : t));
@@ -154,7 +165,8 @@
   }
 
   /* A game → the road to the next Act, or null in Act 3:
-       { act: 2 or 3 (the Act it leads to), done, total (steps ok, of all), steps: [step], alt: [way] }
+       { act: 2 or 3 (the Act it leads to), done, total (steps ok, of all), steps: [step], alt: [way],
+         cursed (the road to Act 3 only: the Cursed Crest worn, which blocks it) }
      Each step is { id, ok, done, total } with its own parts:
        bellshrines  shrines: [{ field, name, area (an AREAS id), ok }], bypassed (the Phantom's way)
        grand-gate   quest ('Grand Gate Bellshrines', the main objective; done with the Last
@@ -164,7 +176,8 @@
                     missing: [wish with its value] }, tests: [{ field, id, ok }] (id: 'caravan',
                     'doubleJump', 'laceTower', 'bellhomeKey'); the bellhomeKey test carries key:
                     { glory, gloryQuest (a wish: Bellhart's Glory), got, need, missing: [wish],
-                    ready (go and talk to Pavo) }; the caravan test carries caravan: { at (its
+                    ready (go and talk to Pavo), cursed (he won't, while she's cursed) }; the
+                    caravan test carries caravan: { at (its
                     stop, 0 to 3), fleas (rescued), need (22) }
        offer        quest ('Soul Snare Pre': the wish Silk and Soul), declined (offered, and
                     turned down: talk to the Caretaker again)
@@ -180,7 +193,7 @@
     if (g.act >= 3) return null;
     const steps = g.act === 2 ? toAct3(g) : toAct2(g);
     const ok = steps.filter((s) => s.ok || s.bypassed).length;
-    return { act: g.act + 1, done: ok, total: steps.length, steps, alt: g.act === 2 ? [] : altAct2(g) };
+    return { act: g.act + 1, done: ok, total: steps.length, steps, alt: g.act === 2 ? [] : altAct2(g), ...(g.act === 2 ? { cursed: cursed(g) } : {}) };
   }
 
   SS.acts = { FIELDS, FLEAS, group, missing, next };

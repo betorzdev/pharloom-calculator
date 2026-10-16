@@ -1578,8 +1578,8 @@ Dexerto, Nintendo Life, allthings.how, gameshorizon; no Game8 or IGN page came u
   accepted, the Seeker's Soul past Groal, the Snare Setter behind the Faydown Cloak, each with its
   Map pin. What posts the late required wishes (Shakra's 14 maps, counted, for Trail's End; Sherma
   and the Whiteward; Songclave grown by 3 more of its wishes; the Needle and a relic for
-  Restoration of Bellhart; the Cogwork Dancers or the Clawline for Bellhart's Glory), each checked
-  against the saves. Pinmaster's Oil counts with Plinney's second Needle upgrade, wish or not (the
+  Restoration of Bellhart; the Cogwork Dancers or the Clawline for Bellhart's Glory, and entering
+  Songclave too: see the second audit, 16 October), each checked against the saves. Pinmaster's Oil counts with Plinney's second Needle upgrade, wish or not (the
   Steel Soul game has it complete and never accepted). The last step says the Needolin, not a Bind;
   in Act 3, the Act 2 endings never seen are closed in that game.
 - **The guides, where they're wrong:** "every wish" (it's 10 required and 17 of 25 points);
@@ -1947,3 +1947,35 @@ Save locations: [checkpoint64](https://checkpoint64.com/games/hollow-knight-silk
 [Shacknews](https://www.shacknews.com/article/145800/where-to-find-hollow-knight-silksong-steam-save-file).
 Fonts: [SilksongFontsInject on Nexus](https://www.nexusmods.com/hollowknightsilksong/mods/416).
 Unity version: [AssetRipper issue 1925](https://github.com/AssetRipper/AssetRipper/issues/1925).
+
+**The road to Act 3, audited again** (16 October 2026, Albert's four confirmed). Against the game's
+own files only (scene FSMs read with UnityPy, Assembly-CSharp disassembled), the wiki as
+corroboration, never a web guide:
+- **The Cursed Crest blocks the road.** Pavo's FSM (belltown, Belltown Greeter NPC, Convo) tests
+  IsAnyCursed (PlayerData: CurrentCrestID is the Cursed Crest) with soulSnareReady false first and
+  gives only GREETER_CURSED, never the key; Couriers Quest Giver (Shop?) gives no deliveries with
+  the Cursed Crest equipped; Grand Mother Silk's Silk Boss FSM (cradle_03, Death Type) sends a
+  cursed Hornet to Death Sequence Cursed and Ending D (Twisted Child), never the snare. A real save
+  shows it: Restore_Points3/restoreData24 is cursed with the key the one check left, where the road
+  said «Talk to Pavo». The road now carries `cursed` (js/acts.js, from savefile's build) and says it
+  on the step you're on and on the key's row; the cure is Infestation Operation. The wiki's Cursed
+  Crest page also says Trail's End won't begin while cursed; no game file was found to back it, so
+  the road doesn't say it. No check-pack test was added: the key and the snare can be had before
+  the curse, so neither held while cursed is a contradiction.
+- **Bellhart's Glory** waits for citadelHalfwayComplete, which GameManager.TimePasses sets on the
+  Cogwork Dancers, the Clawline or Songclave entered (visitedEnclave); the road named two.
+- **Trail's End** waits for ShakraFinalQuestAppear: every map of Shakra's stock bought and Groal
+  defeated (DefeatedSwampShaman) or 2 of the 3 melodies, set by TimePasses outside the Belltown
+  scene; the road named the maps and the cloak only.
+- **Time passing.** These flags, the Bellhome's BelltownHouseState (1 after Restoration, 2 after
+  Glory, both away from Bellhart's map zone; Pavo gives the key at 2) and the caravan's
+  CaravanTroupeLeaderCanLeaveGreymoor and Judge (after Mooshka is met at that stop, away from its
+  room) are set by GameManager.TimePasses, which a bench's rest runs (its Bench Control FSM's Save
+  Game state; dying and quitting to the menu run it too). Balm for the Wounded's shermaQuestActive
+  is set in TimePassesElsewhere, which runs only when the map zone differs from the last time's.
+  Each of those rows now says the rest.
+- **The Bell Hermit** gives his soul only once BelltownHermitMet is set (his FSM, Do Snare Convo?):
+  never met, the first talk is his meeting.
+Checked: npm test, the text audit, check-pack on the 77 saves (nothing changes in its counts), and
+Progress in headless Chrome at 1440 and 390, es and en, on the cursed save, a clean Act 2 save
+(Restore_Points1/restoreData18) and Free mode with every station open.

@@ -756,19 +756,26 @@ step, each with what the game says of it and its way onto the Map, as above:
      - 17 of its 25 wish points (a delivery is worth half a point, the first time only);
      - four conditions: the Flea Caravan at Fleatopia, the Faydown Cloak, Lace defeated in the
        Cradle (with the three melodies that lead there), and the Bellhome Key. Pavo gives the key
-       after Bellhart's Glory and 2 wishes of his list, and its row says so until then. The
-       caravan says where it stands and the fleas rescued: Mooshka takes it to Fleatopia with 22,
-       once the empty Pale Lake has been seen (and on the Phantom's way, the Last Judge beaten
-       first: its stop before is the Judge's arena).
+       after Bellhart's Glory and 2 wishes of his list, once you've rested at a bench outside
+       Bellhart, and its row says so until then. The caravan says where it stands and the fleas
+       rescued: Mooshka takes it to Fleatopia with 22, once the empty Pale Lake has been seen (and
+       on the Phantom's way, the Last Judge beaten first: its stop before is the Judge's arena);
+       at each stop it moves on only after you've talked to him and rested at a bench away from it.
   2. Accept the wish from the Caretaker in Songclave (Bellhart's Wishwall posts it too, and sends
      you to him). Offered and turned down isn't taken: the step says to talk to him again.
   3. Gather the snare's four pieces: the Chapel Maid's and the Bell Hermit's souls, given once the
      wish is accepted (the Hermit sits below Bellhart's Bellway: through the hidden wall on its
-     right and down, to the left; a wall you walk through, not one you break); the Seeker's Soul,
+     right and down, to the left; a wall you walk through, not one you break; if you'd never
+     talked to him, he gives it the second time); the Seeker's Soul,
      past Groal the Great; the Snare Setter, which needs the Faydown Cloak. Each with a pin to the
      Map.
   4. Bring them to the Caretaker in Songclave.
   5. Snare Grand Mother Silk with the Needolin.
+
+While Hornet is cursed (the Cursed Crest, until the wish Infestation Operation cures her), the step
+you're on says that the curse blocks the road: Pavo won't give the key, Couriers Tipp & Pill hand
+out no deliveries, and defeating Grand Mother Silk gives the Twisted Child ending instead. The key's
+row says so in place of «Talk to Pavo».
 
 Each missing wish shows its Act, its area, who asks for it in the game's own words («Creige of
 the Halfway Home»), what it asks to be brought, read from the game's files (the four required
@@ -776,8 +783,11 @@ donations: 250 and 400 rosaries for Pavo, 300 and 500 for the Caretaker, 1,450 i
 shell shards, 200, 300 and 440; the Journal's 100 entries for Nuu; 25 Ragpelts, 12 Fine Pins, the
 Great Gourmand's five dishes…), a pin to where it's taken on the Map, and the wish to do before it
 when there is one. «What's next» says the same under each wish it lists. The required wishes the game posts later say what posts them (Trail's End: all of Shakra's
-maps, counted, and the Faydown Cloak; Balm for the Wounded: Sherma met and the Whiteward visited;
-Strengthening Songclave, Restoration of Bellhart, Bellhart's Glory), and Pinmaster's Oil that
+maps, counted, the Faydown Cloak, and two of the three melodies or Groal the Great defeated; Balm
+for the Wounded: Sherma met and the Whiteward visited; Strengthening Songclave, Restoration of
+Bellhart; Bellhart's Glory: the Cogwork Dancers, the Clawline or Songclave entered) and that each
+shows up when you rest at a bench (outside Bellhart, outside Songclave, or in another area, as the
+game has it), and Pinmaster's Oil that
 Plinney's second Needle upgrade counts for it too. In Act 3, the Act 2 endings you never saw say
 they're closed in that game. Where it's taken is the game's: the Wishwall that lists it
 (Bellhart's, Bone Bottom's or Songclave's), or the NPC who offers it; a wish that comes after
