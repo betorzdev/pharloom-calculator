@@ -42,8 +42,8 @@ the work up reads it first, then the step it's on.
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct; the summary, 16 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html`, `89-your-game-summary-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html` |
-| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html` |
-| 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
+| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html` |
+| 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct; every room of an entry 16 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
 | 10 | **Built** (28 Sep) · The static pages (`tools/pages*.js`: `bosses/`, `es/jefes/`, the landing folders): they inherit steps 1 and 2; only what's theirs | To do | |
@@ -1464,6 +1464,28 @@ empty ring; 4 Free mode, **A** too, with what's marked, B only with a save.
 (`HAD_TICK`), out of the fine layers' counts per room; the search finds it, and like every switch it
 ends a focus. `css/app.css` `.mp-mk.is-had`, `.mp-tick` (`--mp-had-dim` 0.42); whole again on hover
 or picked. The counts don't change: had of total as before.
+
+### The Journal's enemies, every room (16 October 2026)
+
+Albert, on the Map's selector: the Void Masses apart from the other unique enemies (their own
+switch, «Masa de vacío» / "Void Mass", `NAME_BLACK_THREAD_CORE`), and then «Enemigos únicos» read as
+nothing a player would know before turning it on, and only served the Journal: 3 Rhinogrunds (2
+asked), 3 Covetous Pilgrims (2), 6 Shardillards (3). His idea: the Journal on the Map instead.
+`js/journal-rooms.js` already has every room each of the 237 entries is in and how many (1150 rows,
+402 rooms, up to 15 entries in one): too many for a switch. A first page,
+`83-unique-enemies-variants.html` (kept out of the repo), split «Enemigos únicos» (A one switch per
+enemy, B one with the sets' caret, C one renamed); the idea above replaced it.
+
+The options (`84-journal-map-variants.html`, the real site in Free mode: the entry, the Map's search
+and the focus on the Shardillard's 7 rooms; kept out of the repo): **A** from the Journal, the
+entry's pin opens the Map's focus on every room, B from the Map, its search finds each entry and
+opens the same focus, C both. In all three «Enemigos únicos» leaves the selector.
+
+**Decision: A** (Albert, 16 October 2026), the Void Mass's switch kept. `js/app-map.js`: a 'beast'
+mark per entry and room (no switch, never in the search), `App.mapBeast(id)` the focus on them, its
+card «{n} en esta sala» / "{n} in this room" with the kills and «Ver en el Diario»; the other
+spawns' marks are gone. `js/app-journal.js`: the pin opens it, with a save or without, complete or
+not.
 
 ## Step 7 · Journal
 
