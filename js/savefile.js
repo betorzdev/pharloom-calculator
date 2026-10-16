@@ -412,6 +412,8 @@
       cocoon: corpse,
       cocoonAt: corpse ? fourNumbers([at(pd.HeroDeathScenePos).x, at(pd.HeroDeathScenePos).y, at(pd.HeroDeathSceneSize).x, at(pd.HeroDeathSceneSize).y]) : [],
       extras: SP.EXTRAS.map((x, i) => (has(x[2]) ? i : -1)).filter((i) => i >= 0),
+      // What the game has taken away with someone (js/spots.js EXTRAS more.lost: Grindle's cell door), not had.
+      lostExtras: SP.EXTRAS.map((x, i) => (x[5] && x[5].lost && !has(x[2]) && has(x[5].lost) ? i : -1)).filter((i) => i >= 0),
       evaSlots: evaSlots(crests),
       bosses: SP.BOSSES.filter((b) => has(b[2])).map((b) => b[0]),
       tasks: SP.TASKS.map((x, i) => (has(x[2]) ? i : -1)).filter((i) => i >= 0),
@@ -486,8 +488,9 @@
      whenever the old one did. Read silently; the slot's kept save, when there is one, reads it all
      again at the next start (js/app-saves.js refreshSlots). */
   SP.EXTRAS.forEach((x, i) => {
-    if (!x[5] || !x[5].was) return;
-    const k = x[0] + ' ' + JSON.stringify(x[5].was);
+    if (!x[5] || (!x[5].was && !x[5].wasKind)) return;
+    // Its kind before too (more.wasKind: Slab_16's jail gate and Bone_12's cell doors were locks).
+    const k = (x[5].wasKind || x[0]) + ' ' + JSON.stringify(x[5].was || x[2]);
     if (!EXTRA_AT.has(k)) EXTRA_AT.set(k, [i]);
   });
   // A wish's or an objective's mark (js/spots.js TASKS): its kind, room and check (the Bellbeast's
@@ -500,7 +503,7 @@
   function toSnapshot(pd, sd = null, saved = null) {
     const g = game(pd, sd);
     const progress = { ...g, pieces: g.pieces.map((i) => pieceKey(CO.PIECES[i])), wishes: g.wishes.map((i) => pieceKey(CO.WISHES[i])),
-      extras: [...new Set(g.extras.map((i) => pieceKey(SP.EXTRAS[i])))], tasks: [...new Set(g.tasks.map((i) => taskKey(SP.TASKS[i])))] };
+      extras: [...new Set(g.extras.map((i) => pieceKey(SP.EXTRAS[i])))], lostExtras: [...new Set(g.lostExtras.map((i) => pieceKey(SP.EXTRAS[i])))], tasks: [...new Set(g.tasks.map((i) => taskKey(SP.TASKS[i])))] };
     for (const k of [...OWNED, 'journal']) delete progress[k];
     const m = meta(pd);
     return {
@@ -514,7 +517,7 @@
     needle: 0, kit: 0, pouch: 0, everbloom: false, purse: {}, rosaries: 0, shards: 0, farsight: false, hasJournal: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', rested: true, marker: '', area: '', build: {},
     quests: [], taken: [], carried: {}, bellshrines: [], bells: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
     bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [],
-    visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], bosses: [],
+    visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], lostExtras: [], bosses: [],
     tasks: [], steelSpots: [], peopleVars: {}, evaSlots: 0, silkshot: '' });
   const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
   // Each field only if it has the type an empty game gives it.
@@ -538,6 +541,7 @@
     const bought = new Set(out.maps.map((a) => 'Has' + a + 'Map'));
     out.extras = [...new Set([...out.extras.flatMap((k) => EXTRA_AT.get(k) || []),
       ...SP.EXTRAS.flatMap((x, i) => (x[0] === 'map' && x[2][0] === 'flag' && bought.has(x[2][1]) ? [i] : []))])].sort((a, b) => a - b);
+    out.lostExtras = [...new Set(out.lostExtras.flatMap((k) => EXTRA_AT.get(k) || []))].filter((i) => !out.extras.includes(i)).sort((a, b) => a - b);
     out.tasks = [...new Set(out.tasks.flatMap((k) => TASK_AT.get(k) || []))].sort((a, b) => a - b);
     out.gaveBack = out.gaveBack.filter((id) => CO.TOOLS[id]);
     out.steelSpots = out.steelSpots.filter((x) => typeof x === 'string' && /^[\w ()-]{1,64}$/.test(x));

@@ -61,6 +61,9 @@ What it writes (read on 28-Sep-2026, patch 1.0.30000):
                       gates Clawline pulls open and the gates an FSM works (GATES)
             lock      a door a key opens: the Simple Key's, the Architect's, the Ward Boss Key's,
                       the Slab's locks and cells (LOCK)
+            breakable a cell door struck open, no key: Bone_12's two (its FSM breaks after three
+                      hits from the side, or one heavy hit; BREAKABLE). Slab_16's jail gate, opened
+                      by a hit from above, is a gate (its Gate component; read on 16-Oct-2026)
             shortcut  a way opened from one side: one-way walls, planks, ladders, floors, the
                       Citadel's plug gates (SHORTCUT)
             silkwall  the thick silk vines Silkspear cuts (SILK)
@@ -176,7 +179,8 @@ GATE = {'Gate', 'TempGate', 'Trapdoor', 'TrapBridgeExtend'}
 SILK = re.compile(r'Thick Silk Vines')
 PLATE = re.compile(r'Hornet_pressure_plate.*|Plate|Plaque Pressure Plate|Shrine Pressure Plate.*|Harpoon Ring Pull Switch|dock_pressure_plate_lock')
 LOCK = re.compile(r'Slab Lock( [LR])?|aspid_sealed_gate_stone|Prince Cell Door|bank_door|dock_sealed_gate|Diving Bell Door|Architect Shrine Door|'
-                  r'lock_machine|jail_door|Jail Gate Door - Persistent|door_slabCaged')
+                  r'lock_machine|door_slabCaged')
+BREAKABLE = re.compile(r'jail_door')
 # What an FSM works rather than a component, by name: the levers (the Cogwork Core's; Greymoor_06's,
 # whose bool is on the platform its Lever drops) and the gates (Clawline's rings, Bone_04's).
 LEVERS = re.compile(r'cog_lever|belltown_lever_drop_plat')
@@ -197,6 +201,7 @@ def door_kind(comps, name):
     if SILK.fullmatch(n): return 'silkwall'
     if PLATE.fullmatch(n): return 'plate'
     if LOCK.fullmatch(n): return 'lock'
+    if BREAKABLE.fullmatch(n): return 'breakable'
     if GATES.fullmatch(n): return 'gate'
     if SHORTCUT.fullmatch(n): return 'shortcut'
     if comps & GATE: return 'gate'

@@ -1842,6 +1842,17 @@ extra parked so (six are: two walls above their tilemaps, a lever, a lock, plank
 an edge, each read). Everything else held: Shakra's 17 spots and the shops within 9.5 px of mapgenie,
 the Wishwalls, the wish items and places, the game's own objective pins. test/positions.test.js.
 
+**The save checks' four leftovers** (16 October 2026, design/03-redesign.md step 6, Albert's A in
+all four on design/89-map-leftovers). Read in the game's scenes and over the 77 files of the author's saves:
+Slab_16's jail gate, filed as a key door, is a gate struck open from above after the Cloakless
+fight (its FSM sets `slab_cloak_gate_reopened`), and the room has none once the Broodmother's hunt
+is taken (open in 37 saves); Library_02's Heavy Rosary Necklace is the Acolytes' arena's drop
+(its activeAfterBattle), so that gauntlet has a reward where the wiki says none and the necklace's
+card names it; Bone_12's two cell doors are breakable walls with no key, and Grindle's goes with
+his cell, unbroken, once Shellwood or Far Fields is reached or Widow beaten (broken in 32 saves,
+gone in 38, crossed «Ya no está»); Coral_41's three chained crust walls stay three marks, each
+break setting that wall's own bool. `check-pack` still matches all 77.
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).

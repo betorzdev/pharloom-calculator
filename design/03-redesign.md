@@ -42,7 +42,7 @@ the work up reads it first, then the step it's on.
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct; the summary, 16 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html`, `89-your-game-summary-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html` |
-| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html` |
+| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct; their leftovers 16 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html`, `89-map-leftovers-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct; every room of an entry 16 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
@@ -1604,6 +1604,38 @@ Then two more of Albert's, **A** both (16 October 2026):
   `npm run data` stops first (`tools/gating.js`) while `gating.json` and `pickups.json` differ or
   one says none (`kb/README.md`: both run after a patch). `npm run drive -- --slot <file>` seeds a
   slot's keys as an older site kept them, to see today's code read it.
+
+### The save checks' four leftovers (16 October 2026)
+
+What the save-checks round left for later, read in the game's scenes and over the 77 files of the
+author's saves; the options went to Albert with `89-map-leftovers-variants.html` (the live Map built
+with each option, real saves, 1440 and 390; kept out of the repo). **Decision: A in all four**
+(Albert, 16 October 2026):
+
+1. **Slab_16's jail gate is a gate**, not a door a key opens: the room's Event Control shows it in
+   its «Battle Completed» state, from the Cloakless fight won until the Broodmother's hunt is
+   taken, shut, and it opens struck from above (its own FSM sets `slab_cloak_gate_reopened`; a Gate
+   component). Once the hunt is taken the room keeps the Broodmother's state, with no gate: open.
+   So it's open by its bool, that flag (`tools/extract-gating.py`: a gate's own FSM's
+   SetPlayerDataBool) or `['accepted', 'Broodmother Hunt']` (`tools/gen-spots.js` OPEN_WITH). B was
+   a shortcut, C a gate by its bool and flag only, D as it was.
+2. **Library_02's Heavy Rosary Necklace is the Acolytes' arena's reward**: the arena switches it
+   on once won (its activeAfterBattle; gating.json inside). The gauntlet takes it as its reward
+   where the wiki says none (`tools/gen-gauntlets.js` droppedBy), and the necklace keeps its mark,
+   its card saying «Lo suelta {fight} al ganarlo.» (`{ fight }`; Cog_07's Pristine Core gets the
+   same note). B was the arena only, C the note only, D as it was.
+3. **Bone_12's cell doors are breakable walls**, struck open with no key (three hits from the side,
+   or one heavy hit; `tools/extract-pickups.py` BREAKABLE). Grindle's, the second, goes with his
+   cell once Shellwood or Far Fields is reached or Widow beaten (gating.json withPerson: a
+   DeactivateIfPlayerdataTrue above it switches off someone to talk to): gone, not opened, crossed
+   «Ya no está» with its reason (`mapLostCell`; `{ lost, person }`, `js/savefile.js` lostExtras).
+   Over the 77 saves: broken in 32, gone in 38, still there in 7. B kept them locks, C counted the
+   cell gone as done, D as it was.
+4. **Coral_41's chained crust walls stay three marks**: Tall (6) passes its break on to Mid (20),
+   Mid (20) to Mid (21) (gating.json breaks), each break setting that wall's own bool, and each can
+   be struck alone. A test pins it. B was one mark for the chain.
+
+A slot kept while those doors were locks still has them (`{ wasKind: 'lock' }`).
 
 ## Step 7 · Journal
 
