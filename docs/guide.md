@@ -428,7 +428,8 @@ its boss's arena, with the person who gives it. All of it on at first, and what 
 leaves those off.
 
 - **Upgrades**: Mask Shards, Spool Fragments, Silk Hearts, the Needle, Tool Pouch and Crafting Kit
-  upgrades, and the **Abilities**, one switch whose round caret opens the seven of the 100% and,
+  upgrades (each Needle upgrade a mark of its own, named by the Needle it gives: the Sharpened Needle, the
+  Shining, the Hivesteel and the Pale Steel Needle), and the **Abilities**, one switch whose round caret opens the seven of the 100% and,
   apart, the four **outside the 100%** (on at first too): Drifter's Cloak and Faydown Cloak, and the
   two Needolin melodies of Act 3 (the Beastling Call, under Bellhart once the Bell Eater is beaten;
   the Elegy of the Deep, from the Snail Shamans), each card saying it doesn't count.
@@ -465,6 +466,9 @@ leaves those off.
   game's own (its ShopOwners: Pebb, Frey, Mort, the Forge Daughter, Grindle, Jubilana, the
   Mottled Skarr, the Twelfth Architect, Shakra) and those who trade outside them: the Couriers' delivery
   wishes in Bellhart, the Moss Druid, who buys Mossberries, and Creige's drinks.
+  The switches are named as the game's own map legend names them, one thing each (Bench, Bellway,
+  Vendor, Ventrica, Bellshrine), and a Ventrica station by its name in the game (First Shrine,
+  Terminus, Choral Chambers…) with «Ventrica» under it.
 - **Passages**, off at first: what opens a way and stays open, each read from the game's own
   scenes with the bool your save keeps once it's open, so with a save only what's still shut
   shows. Levers (with the pressure plates and Clawline's pull switch), gates (opened by a lever,
@@ -505,7 +509,7 @@ leaves those off.
   boss, the Herald's spots), Everyone else doesn't draw them again; Jubilana is her shop.
 - **Tasks**, as the game's pause menu calls its wishes and objectives: the Wishwalls and who asks
   for a wish, by name (with a save, only while one is still open there; who already has a mark
-  there, a shop or who gives something of the 100%, has the wishes on that card instead); where a wish is done (the
+  there, a shop or who gives something of the 100%, has the wishes on that card instead); where a wish is granted (the
   deliveries and the Steel Sentinel's spots where the game's own map pins them, of the Sentinel's
   six only the three your game chose, and only in Steel Soul; the Herald's seven; the rescues and
   fights, in the room where the game ends the wish); what a wish asks for (the 22 things lying in a
@@ -517,7 +521,8 @@ leaves those off.
   or a later step of it (Pale Monarch stays incomplete when Act 3 opens through the Soul Snare), a
   thing picked up, held or its wish granted. Off at first.
 - **Secrets**, off at first: the rosary and shell shard caches, the breakable walls (the
-  one-way ones are among the shortcuts), the loose rosaries and the **Hidden corners** (what
+  one-way ones are among the shortcuts), the loose rosaries (one bead, cut from the game's picture of
+  the Rosaries, so they don't look like the caches) and the **Hidden corners** (what
   covers part of a room until you walk in, one mark per room, gone once all of it is uncovered: a
   cover inside a breakable wall counts once the wall is broken, one the game takes away once it's
   gone, and one only the other mode has isn't asked for), so many
@@ -535,12 +540,12 @@ bigger close up. Every picture shows at the same visible size, whatever margin i
 opaque part is measured (tools/fit-marks.py, js/mark-fit.js), centred and drawn at 0.8 of the disc,
 or smaller where it would cross the plate; the selector under the map and Your game's lists measure
 them the same way. What has no picture of its own takes one of the game's: Shakra's Journal portrait, a key of the
-inventory for a locked door, the pause menu's Wishes tab for a Wishwall, a wish's emblem for who
+inventory for the keys, the pause menu's Wishes tab for a Wishwall, a wish's emblem for who
 asks for one, the herald's emblem for who gives a thing of the 100%, the game's Bellhome bench pin
 for its furnishings, the Citadel's brass lever for the levers and a Docks plate for the pressure
 plates (tools/extract-map-icons.py takes them from the game's files). The breakable walls keep a
 drawn sign, bricks: the game's walls are tall dark rock that doesn't read that small; so do the
-gates (bars), the shortcuts (an arrow through a wall) and the silk walls (threads). It sits where the game
+gates (bars), the locked doors (a padlock: the game has none, and the Slab's key is the Key of Indolent's), the shortcuts (an arrow through a wall) and the silk walls (threads). It sits where the game
 has the thing in its room: the pickup lying there, the NPC, the shrine, the cache (the object's
 place in its scene, put on the map by the game's own rule for Hornet's compass and her cocoon;
 checked against the benches, which fall by the game's own bench pins). What has no object of its

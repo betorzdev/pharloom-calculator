@@ -4,7 +4,7 @@ assets/map/icons/, beside the pins (tools/extract-map-pins.py). One command, the
 UnityPy as tools/extract-map.py:
     /tmp/unitypy/bin/python tools/extract-map-icons.py "<Steam>/steamapps/common/Hollow Knight Silksong"
 What each is (read on 11-Oct-2026, in atlases_assets_assets/sprites/_atlases/):
-    i_slab_key                           Locked doors: a key of the inventory (inventory)
+    i_slab_key                           the Key of Indolent's mark: a key of the inventory (locked doors draw a padlock glyph)
     hornet_inv_pane_icons_0002_wish      Wishwalls: the pause menu's Wishes tab (inventory)
     hornet_inv_pane_icons_0003_journal   the Journal's layer: its tab (inventory)
     quest_icon_large__0008_gather        who asks for a wish: a wish's emblem (wish)

@@ -80,7 +80,7 @@
      the game's walls don't read that small. */
   const PIN = (n) => `assets/map/pins/${n}.webp`, ICON = (n) => `assets/map/icons/${n}.webp`, FACE = (id) => `assets/icons/journal/${id}.webp`;
   const L = (id, name, art) => ({ id, name, art });
-  const PIECE_NAME = { flea: 'kind_fleas', needle: 'cat_needle', 'silk-heart': 'cat_hearts', 'old-heart': 'kind_oldHearts', melody: 'kind_melodies' };
+  const PIECE_NAME = { flea: 'kind_flea', needle: 'cat_needle', 'silk-heart': 'kind_silkHeart', 'old-heart': 'kind_oldHearts', melody: 'kind_melodies' };
   const piece = (k) => L(k, () => (PIECE_NAME[k] ? t(PIECE_NAME[k]) : itemName(k)), pieceIcon(k));
   const LAYERS = [
     ...['mask-shard', 'spool-fragment', 'needle', 'tool-pouch', 'crafting-kit', 'silk-heart'].map(piece),
@@ -96,7 +96,7 @@
     L('arts-other', () => t('mapToolsOut'), 'assets/icons/arts/drifters-cloak.webp'),
     ...['memory-locket', 'craftmetal', 'pale-oil', 'flea', 'old-heart', 'melody'].map(piece),
     L('everbloom', () => t('cat_items'), 'assets/icons/items/everbloom.webp'),
-    L('bench', () => t('mapPlace_bench'), PIN('pin_bench')),
+    L('bench', () => t('mapPlace_bench1'), PIN('pin_bench')),
     L('bellway', () => t('mapPlace_bellway'), PIN('pin_stag_station')),
     L('ventrica', () => t('mapPlace_ventrica'), PIN('pin_tube_station')),
     L('bellshrine', () => t('mapLayer_bells'), PIN('quest_map_icon_grand_gate_final')),
@@ -104,7 +104,7 @@
     L('lift', () => t('mapLayer_lifts'), null),   // the glyph
     L('lever', () => t('mapLayer_levers'), ICON('_0005_core_lever_02')),
     L('gate', () => t('mapLayer_gates'), null),   // the glyph
-    L('lock', () => t('mapLayer_locks'), ICON('i_slab_key')),
+    L('lock', () => t('mapLayer_locks'), null),   // the glyph
     L('key', () => t('mapLayer_keys'), ICON('i_token_of_faith')),
     L('shortcut', () => t('mapLayer_shortcuts'), null),   // the glyph
     L('silkwall', () => t('mapLayer_silkwalls'), null),   // the glyph
@@ -112,7 +112,7 @@
     L('boss', () => t('mapLayer_boss'), FACE('lace')),
     L('void-mass', () => t('mapExtra_voidMass'), FACE('void-mass')),
     L('shakra', () => t('mapLayer_shakra'), FACE('shakra')),
-    L('wishwall', () => t('mapLayer_wishwalls'), ICON('hornet_inv_pane_icons_0002_wish')),
+    L('wishwall', () => t('mapLayer_wishwall1'), ICON('hornet_inv_pane_icons_0002_wish')),
     L('giver', () => t('mapLayer_givers'), ICON('quest_icon_large__0008_gather')),
     L('person', () => t('mapLayer_people'), ICON('quest_icon_large_0006_herald')),
     L('npc', () => t('mapLayer_npc'), 'assets/map/people/bellhart-greeter.webp'),
@@ -131,7 +131,7 @@
     L('rosary-cache', () => t('mapExtra_rosary'), 'assets/icons/extras/rosary-cache.webp'),
     L('shard-cache', () => t('mapExtra_shard'), 'assets/icons/extras/shard-cache.webp'),
     L('wall', () => t('mapExtra_wall'), null),   // the glyph
-    L('bead', () => t('mapExtra_beads'), 'assets/icons/items/rosaries.webp'),
+    L('bead', () => t('mapExtra_beads'), 'assets/icons/extras/rosary-bead.webp'),
     L('masked', () => t('mapExtra_hidden'), null),   // the glyph
     L('cocoon', () => t('mapLayer_cocoon'), PIN('shade_pin')),
     L('journal', () => t('mapLayer_journal'), ICON('hornet_inv_pane_icons_0003_journal')),
@@ -183,7 +183,7 @@
      as its layer's: the mark's name, and the game's art where it reads at a mark's size, else the
      glyph (design/03-redesign.md, step 6). A pressure plate goes among the levers; a one-way wall the completionist
      lists among the breakable walls goes among the shortcuts. A Void Mass's core has its own layer. */
-  const DOOR = { lever: { name: 'mapLever', art: '_0005_core_lever_02' }, gate: { name: 'mapGate' }, lock: { name: 'mapLock', art: 'i_slab_key' },
+  const DOOR = { lever: { name: 'mapLever', art: '_0005_core_lever_02' }, gate: { name: 'mapGate' }, lock: { name: 'mapLock' },
     shortcut: { name: 'mapShortcut' }, silkwall: { name: 'mapSilkwall' } };
   const ONE_WAY = /^One Way|Shortcut/;
   const layerOf = (x) => (x[0] === 'plate' ? 'lever' : x[0] === 'wall' && ONE_WAY.test(x[2][2]) ? 'shortcut'
@@ -200,6 +200,9 @@
   const evaArt = (r) => (/^hunter-/.test(r) ? `assets/crests/${r}.webp` : (SS.crestFrames || {})[r.slice(5)] || null);
   const evaName = (r) => (/^hunter-/.test(r) ? t('mapEvaHunter', { crest: pick(D.CRESTS.find((c) => c.id === 'hunter').name), n: r.slice(7) })
     : t(r === 'vest-yellow' ? 'mapEvaYellow' : 'mapEvaBlue', { vest: pick(D.VESTICREST.name) }));
+  // The Ventrica stations by their scene: each is named as the game names it (TUBE_NAME_*), «Ventrica» under it.
+  const TUBE = { arborium_tube: 'mapTube_arborium', bellway_city: 'mapTube_city', hang_06b: 'mapTube_hang', song_01b: 'mapTube_song',
+    song_enclave_tube: 'mapTube_enclave', tube_hub_right: 'mapTube_hub', tube_hub_destroyed: 'mapTube_hub', under_22: 'mapTube_under' };
   // A mark's own name where its layer's is a plural.
   const ONE = { lift: 'mapLift', 'silk-cocoon': 'mapCocoon', bead: 'mapBead', masked: 'mapHidden' };
   // The Tools outside the 100% (js/collectibles.js TOOLS, none a COUNTED group's first).
@@ -244,7 +247,8 @@
     // A folded map: an area's card.
     map: svg('<path d="M2 3.5l3.3-1 3.4 1.5 3.3-1v8l-3.3 1-3.4-1.5-3.3 1z"/><path d="M5.3 2.5v8M8.7 4v8"/>'),
     spawn: svg('<path d="M7 2l1.5 3.2 3.5.4-2.6 2.4.7 3.5L7 9.8 3.9 11.5l.7-3.5L2 5.6l3.5-.4z"/>'),
-    // A lift's cage on its cable; a room's hidden corner, dashed.
+    // A padlock (a locked door: the Slab's key is the Key of Indolent's); a lift's cage on its cable; a room's hidden corner, dashed.
+    lock: svg('<path d="M3.5 6.5h7v6h-7zM5 6.5V4.5a2 2 0 0 1 4 0v2M7 8.8v1.6"/>'),
     lift: svg('<path d="M7 1.5v3M3.5 4.5h7v8h-7zM7 7v3.5M5.5 8.5L7 7l1.5 1.5"/>'),
     masked: svg('<path d="M2 4.5V2h2.5M9.5 2H12v2.5M12 9.5V12H9.5M4.5 12H2V9.5M6 7h2"/>'),
   };
@@ -368,8 +372,10 @@
     // The 100%.
     CO.PIECES.forEach((p, i) => {
       const scene = SP.AT.pieces[i];
+      // A Needle upgrade by the Needle it gives (check: ['min', 'nailUpgrades', level]).
+      const needle = p[0] === 'needle' && p[2][0] === 'min' ? D.NEEDLES[p[2][2]] : null;
       add({ key: 'piece:' + i, layer: p[0], scene, act: p[1], got: !!g && g.pieces.includes(i), area: p[3],
-        name: p[4] ? pick(p[4]) : LAYER.get(p[0]).name(), draw: (s, ti, k, c) => dot(p[0], pieceIcon(p[0], p), s, ti, k, c) });
+        name: p[4] ? pick(p[4]) : needle ? pick(needle.name) : LAYER.get(p[0]).name(), draw: (s, ti, k, c) => dot(p[0], pieceIcon(p[0], p), s, ti, k, c) });
     });
     for (const ids of CO.COUNTED) {
       const id = ids[0], tool = D.TOOLS.find((x) => x.id === id), w = CO.WHERE.tools[id] || [];
@@ -406,10 +412,12 @@
     const lit = new Set(own ? own.lit : []);
     R.pinsOn(own).forEach((p) => {
       const open = !p[4] || !own || lit.has(pinKey(p));
-      const name = t(p[0] === 'bench' ? 'mapPlace_bench1' : 'mapPlace_' + p[0]);
+      const tube = p[0] === 'ventrica' && TUBE[lower(p[3])];
+      const name = t(tube || (p[0] === 'bench' ? 'mapPlace_bench1' : 'mapPlace_' + p[0]));
+      const shut = open ? '' : t(p[0] === 'bench' && /bell_toll_machine/.test(JSON.stringify(p[4])) ? 'mapToll' : 'mapClosed');
       const seat = R.benchSeat(p);
       out.push({ key: 'pin:' + M.PINS.indexOf(p), layer: p[0], scene: p[3], at: seat || { x: p[1], y: p[2] }, rests: !!seat, got: false, off: !open, pinData: p,
-        name, sub: open ? '' : t(p[0] === 'bench' && /bell_toll_machine/.test(JSON.stringify(p[4])) ? 'mapToll' : 'mapClosed'),
+        name, shut, sub: [tube ? t('mapPlace_ventrica') : '', shut].filter(Boolean).join(' · '),
         draw: (s, ti, k, c) => pin(p[0], p[0] === 'bench' ? 'pin_bench' : p[0] === 'bellway' ? 'pin_stag_station' : 'pin_tube_station', s, ti, k, c + (open ? '' : ' is-off')) });
     });
     /* A gauntlet won by beating its boss (its check is the boss's: Lugoli's, the Coral Tower's four
@@ -523,7 +531,7 @@
          shell shard item lying in its room (its item). */
       const more = x[5] || {};
       const icon = kind === 'map' ? ICON('i_map') : more.item ? `assets/icons/items/${more.item}.webp` : more.icon ? ICON(more.icon)
-        : kind === 'bead' ? 'assets/icons/items/rosaries.webp' : kind === 'silk-cocoon' ? ICON('silk_grub_small_cocoon')
+        : kind === 'bead' ? 'assets/icons/extras/rosary-bead.webp' : kind === 'silk-cocoon' ? ICON('silk_grub_small_cocoon')
           : kind === 'eva' ? evaArt(more.reward) : kind === 'lift' || kind === 'masked' ? null
         : kind === 'memento' ? (MEMENTO_ICON[check[1]] ? `assets/icons/extras/${MEMENTO_ICON[check[1]]}.webp` : 'assets/icons/pieces/heart-bloom.webp')
         : kind === 'silkeater' ? null : kind === 'spawn' || kind === 'bellhome' || kind === 'wall' ? null : `assets/icons/extras/${kind}.webp`;
@@ -1349,8 +1357,8 @@
       note = m.note || (App.howOf ? App.howOf(key) : '');
       if (g) acts = state(t(m.got ? 'pgGot' : 'invMissing'));
     } else if (kind === 'pin') {
-      if (m.off) acts = state(m.sub);
-      where = line([areaName(area)]);
+      if (m.off) acts = state(m.shut);
+      where = line([areaName(area), m.layer === 'ventrica' ? t('mapPlace_ventrica') : '']);
     } else if (kind === 'gaunt') {
       const x = m.gauntlet, n = x.waves.length;
       where = line([areaName(x.area), t(n === 1 ? 'ftWaves1' : 'ftWaves', { n: num(n) })]);

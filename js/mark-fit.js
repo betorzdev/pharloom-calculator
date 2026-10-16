@@ -35,6 +35,7 @@
     "assets/icons/extras/hunters-memento.webp": [119, 134, 59.5, 66.5, 129, 67.1],
     "assets/icons/extras/mossberry.webp": [102, 113, 51.5, 56.5, 109, 55.6],
     "assets/icons/extras/psalm-cylinder.webp": [123, 125, 61.5, 62.5, 121, 68.9],
+    "assets/icons/extras/rosary-bead.webp": [74, 78, 37.0, 39.0, 78, 53.1],
     "assets/icons/extras/rosary-cache.webp": [111, 114, 55.5, 57.0, 110, 62.9],
     "assets/icons/extras/rune-harp.webp": [96, 156, 47.5, 77.5, 151, 86.0],
     "assets/icons/extras/shard-cache.webp": [118, 101, 59.0, 50.5, 112, 72.1],
