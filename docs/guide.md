@@ -527,7 +527,8 @@ leaves those off.
   objectives, where the game's map pins them (the Bellshrines, Old Hearts and Melodies are already
   layers of their own). Each is done as your save says: the wish granted, the objective complete
   or a later step of it (Pale Monarch stays incomplete when Act 3 opens through the Soul Snare), a
-  thing picked up, held or its wish granted. Off at first.
+  thing picked up, held (when it lies in one place only: each Pollip Heart and Flintgem goes by
+  its own spot) or its wish granted. Off at first.
 - **Secrets**, off at first: the rosary and shell shard caches, the breakable walls (the
   one-way ones are among the shortcuts; Bone_12's two cell doors, struck open with no key, among
   them; each wall its own mark, even where breaking one breaks the next, as three in the Sands of

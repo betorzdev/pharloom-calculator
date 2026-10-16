@@ -299,6 +299,31 @@ test('a save says which wish items, places and objectives are done, the Steel Se
   assert.deepEqual(back.steelSpots, g.steelSpots);
 });
 
+test('a thing held marks one spot only: one Pollip Heart picked up, the wish not taken, isn\'t the six flowers', () => {
+  // Held says nothing of where, so no held check may stand for marks in two rooms.
+  const where = new Map();
+  for (const [list, name] of [[SP.TASKS, 'task'], [SP.EXTRAS, 'extra']]) {
+    list.forEach((x, i) => {
+      for (const m of JSON.stringify(x[2]).matchAll(/\["(?:held|memento)","[^"]+"\]/g)) {
+        if (!where.has(m[0])) where.set(m[0], new Set());
+        where.get(m[0]).add(`${String(x[3]).toLowerCase()} (${name}:${i})`);
+      }
+    });
+  }
+  for (const [k, v] of where) assert.ok(new Set([...v].map((s) => s.split(' ')[0])).size === 1, `${k} marks ${[...v].join(', ')}`);
+  const flowers = SP.TASKS.map((x, i) => (x[0] === 'qitem' && x[1] === 'Shell Flowers' ? i : -1)).filter((i) => i >= 0);
+  assert.equal(flowers.length, 6);
+  const [, , [, [, scene, id]]] = SP.TASKS[flowers[0]];
+  const pd = { silk: 0, silkMax: 9, maxHealth: 5, Collectables: { savedData: [{ Name: 'Shell Flower', Data: { Amount: 1 } }] } };
+  const sd = { persistentBools: { serializedList: [{ SceneName: scene, ID: id, Value: true }] } };
+  const g = F.game(pd, sd);
+  assert.deepEqual(flowers.filter((i) => g.tasks.includes(i)), [flowers[0]]);
+  assert.deepEqual(F.gameOf(F.toSnapshot(pd, sd)).tasks, g.tasks);
+  // The wish granted: all six.
+  const done = F.game({ ...pd, QuestCompletionData: { savedData: [{ Name: 'Shell Flowers', Data: { IsCompleted: true } }] } });
+  assert.deepEqual(flowers.filter((i) => done.tasks.includes(i)), flowers);
+});
+
 test('each extra once: no two of a kind with the same check in the same scene, and no Heart Memento', () => {
   const seen = new Set();
   SP.EXTRAS.forEach((x, i) => {

@@ -1228,7 +1228,8 @@ console.log(`${Object.keys(XY).length} things with their own point in their room
    (tools/extract-wishes.py, the game's own files; design/03-redesign.md, step 6, Albert's choice)
      qitem  what a wish asks for, where it lies (a pickup, the flower that gives it, the Flintbeetle
             that drops it, the spots the Silver Bells drop at) or who gives it: done once its
-            sceneData flag is set, it's held, or its wish is done (a drop spot: its wish only)
+            sceneData flag is set, it's held (when it lies in one spot only), or its wish is done
+            (a drop spot: its wish only)
      wspot  where a wish is done: the map's own pins for the deliveries and the Steel Sentinel's
             spots (the save chooses three of six, SteelQuestSpots), the Herald's seven spots
             (MushroomQuestFound<n>), and the one room where the game ends a wish that isn't where
@@ -1267,6 +1268,9 @@ const TASKS = [];
     const q = wants(save).find(isWish) || fail(`no wish asks for ${save}`);
     const name = N.text(WI.names[save] || fail(`no name for ${save}`)), icon = art('icons/' + WI.icons[save]);
     const seen = new Set();
+    // Held says which spot only when there's one: one Pollip Heart held isn't the six flowers, nor
+    // one Flintgem the four Flintbeetles (each spot keeps its own flag).
+    const spots = new Set(at.map(([scene, , obj, flag]) => scene + (flag || obj))).size;
     for (const [scene, comp, obj, flag, x, y] of at) {
       const one = scene + (flag || obj);
       if (seen.has(one)) continue;   // the Crown Fragment lies twice in its room, under one flag
@@ -1274,7 +1278,7 @@ const TASKS = [];
       // A spot where it drops by chance (the Silver Bells'): done with its wish, a bell held says
       // nothing of the other spots.
       const check = comp === 'QuestDropper' ? ['quest', q]
-        : ['any', ...(flag && proper(scene) ? [['bool', proper(scene), flag]] : []), ['held', save], ['quest', q]];
+        : ['any', ...(flag && proper(scene) ? [['bool', proper(scene), flag]] : []), ...(spots === 1 ? [['held', save]] : []), ['quest', q]];
       task('qitem', q, check, scene, x, y, icon, name);
     }
   }
