@@ -92,11 +92,12 @@ What it writes (read on 28-Sep-2026, patch 1.0.30000):
   patch   the game's version the scan read ("1.0.30000"), as tools/extract-gating.py writes it too:
           npm run data stops if the two differ (tools/gating.js)
 Every [scene, …] above ends with the object's place in the world, [x, y] (its Transforms composed
-from the scene's root), where there's one. Scene names are the bundles', lower case; js/rooms.js
+from the scene's root, their turns counted: tools/scene_place.py), where there's one. Scene names are the bundles', lower case; js/rooms.js
 finds them on the map either way. """
 import json, math, os, pickle, re, struct, sys
 from collections import defaultdict
 import UnityPy
+from scene_place import placer, world_of
 
 UnityPy.config.FALLBACK_UNITY_VERSION = '6000.0.50f1'
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -212,27 +213,6 @@ def one_each(v):
             seen.add(k)
             out.append(x)
     return out
-
-
-def placer(T, of_go):
-    """A GameObject's own points → the world (gid → a function of x, y): each Transform's scale,
-    turn about z and place, from its own up to the root."""
-    def of(gid):
-        chain, t = [], of_go.get(gid)
-        while t is not None:
-            chain.append(t)
-            f = t.m_Father.m_PathID
-            t = T.get(f) if f else None
-        def at(x, y):
-            for t in chain:
-                s, r, p = t.m_LocalScale, t.m_LocalRotation, t.m_LocalPosition
-                a = 2 * math.atan2(r.z, r.w)
-                x, y = x * s.x, y * s.y
-                x, y = x * math.cos(a) - y * math.sin(a), x * math.sin(a) + y * math.cos(a)
-                x, y = x + p.x, y + p.y
-            return x, y
-        return at
-    return of
 
 
 def switched_on(T, of_go, gos):
@@ -449,19 +429,7 @@ def scan(game):
                         ys.append(p[1])
             mid = lambda v: sorted(v)[len(v) // 2]
             return [*([mid(xs), mid(ys)] if xs else at), d.get('setPDBoolOnEnd') or '']
-        def world(gid):
-            t, chain = of_go.get(gid), []
-            while t is not None:
-                chain.append(t)
-                f = t.m_Father.m_PathID
-                t = T.get(f) if f else None
-            x = y = 0.0
-            sx = sy = 1.0
-            for t in reversed(chain):
-                lp, ls = t.m_LocalPosition, t.m_LocalScale
-                x, y = x + lp.x * sx, y + lp.y * sy
-                sx, sy = sx * ls.x, sy * ls.y
-            return [x, y] if chain else []
+        world = world_of(T, of_go)   # its place, its parents' turns counted (tools/scene_place.py)
         want = wanted.get(scene, set())
         tag_of = {}   # GameObject's path id → its tag
         for o in env.objects:

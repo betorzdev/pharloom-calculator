@@ -108,15 +108,9 @@ const HAND = {
   SETH_NPC: { met: ['MetSethNPC'], at: [['SethJoinedFleatopia', true, 'aqueduct_05_festival']] },
 };
 
-const ROOM_OF = new Map(Object.entries(M.ROOMS).map(([k, r]) => [k.toLowerCase(), r]));
-// A point of a scene where the game places it on its map (js/rooms.js mapPoint, as tools/gen-spots.js).
-function toMap(scene, x, y) {
-  const r = ROOM_OF.get(scene.toLowerCase()), size = SIZES[scene.toLowerCase()];
-  const p = r && size && x != null && y != null ? R.mapPoint(scene, x, y, size[0], size[1]) : null;
-  if (!p) return null;
-  const out = Math.max(r[0] - p.x, p.x - r[0] - r[2], 0) + Math.max(r[1] - p.y, p.y - r[1] - r[3], 0);
-  return out > 12 ? null : [Math.round(p.x * 10) / 10, Math.round(p.y * 10) / 10];
-}
+// A point of a scene where the game places it on its map, as tools/gen-spots.js places the rest
+// (tools/map-point.js: an interior's own coordinates aren't its door room's).
+const { toMap } = require('./map-point.js')(SIZES);
 const idOf = (key) => key.toLowerCase().replace(/_/g, '-');
 
 (async () => {
@@ -130,7 +124,11 @@ const idOf = (key) => key.toLowerCase().replace(/_/g, '-');
     const seen = new Map();
     for (const [scene, , x, y] of spotsOf(key)) {
       if (seen.has(scene) || !R.roomOf(scene)) continue;
-      const at = toMap(R.roomOf(scene).scene, x, y) || toMap(scene, x, y);
+      const at = toMap(scene, x, y);
+      // Off their scene in a room the map draws: parked, a turn missed or a walker's path not read
+      // (tools/extract-people.py). Since 16-Oct-2026 nobody is; only interiors and points go without.
+      const room = R.roomOf(scene), box = room.exact && M.ROOMS[room.scene];
+      if (!at && box && box[2]) fail(`${key} in ${scene} is off the scene (${x}, ${y}): read them again`);
       seen.set(scene, at ? [scene, ...at] : [scene]);
     }
     return [...seen.values()];

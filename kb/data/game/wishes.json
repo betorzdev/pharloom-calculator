@@ -318,8 +318,8 @@
    [
     "bone_10",
     "Fixer Sitting Bone_10",
-    30.78,
-    15.33
+    30.95,
+    16.4
    ]
   ],
   "Courier Delivery Fleatopia": [
@@ -534,8 +534,8 @@
    [
     "dust_shack",
     "Dust Traders",
-    22.41,
-    6.93
+    22.62,
+    6.26
    ]
   ],
   "Save City Merchant": [
@@ -582,8 +582,8 @@
    [
     "bone_10",
     "Caravan Troupe Leader Bone NPC",
-    37.72,
-    16.85
+    38.39,
+    16.94
    ]
   ],
   "Shakra Final Quest": [
@@ -630,8 +630,8 @@
    [
     "belltown_shrine",
     "Boss Scene",
-    60.82,
-    17.69
+    60.79,
+    16.91
    ]
   ],
   "Wood Witch Curse": [
@@ -731,7 +731,7 @@
     "CollectableItemPickup",
     "Collectable Item Pickup",
     "Collectable Item Pickup",
-    107.45,
+    107.47,
     19.25
    ]
   ],
@@ -741,8 +741,8 @@
     "CollectableItemPickup",
     "Collectable Item Pickup",
     "Collectable Item Pickup",
-    80.94,
-    7.07
+    81.45,
+    6.35
    ]
   ],
   "Broodmother Remains": [
@@ -771,8 +771,8 @@
     "PlayMakerFSM",
     "Dust Traders",
     null,
-    22.41,
-    6.93
+    22.62,
+    6.26
    ]
   ],
   "Pickled Roach Egg": [
@@ -825,15 +825,15 @@
     "PlayMakerFSM",
     "Nectar Pickup",
     "Nectar Pickup",
-    92.29,
-    83.31
+    92.61,
+    83.34
    ],
    [
     "shellwood_02",
     "PlayMakerFSM",
     "Nectar Pickup",
     "Nectar Pickup",
-    74.01,
+    73.89,
     79.72
    ],
    [
@@ -841,32 +841,32 @@
     "PlayMakerFSM",
     "Nectar Pickup",
     "Nectar Pickup",
-    9.52,
-    27.14
+    9.94,
+    27.49
    ],
    [
     "shellwood_15",
     "PlayMakerFSM",
     "Nectar Pickup",
     "Nectar Pickup",
-    13.33,
-    6.25
+    13.7,
+    6.53
    ],
    [
     "shellwood_20",
     "PlayMakerFSM",
     "Nectar Pickup",
     "Nectar Pickup",
-    42.58,
-    34.63
+    42.99,
+    34.74
    ],
    [
     "shellwood_26",
     "PlayMakerFSM",
     "Nectar Pickup",
     "Nectar Pickup",
-    25.52,
-    84.28
+    30.8,
+    84.22
    ]
   ],
   "Silver Bellclapper": [
@@ -989,8 +989,8 @@
     "CollectableItemPickup",
     "Collectable Item Pickup",
     "Collectable Item Pickup",
-    66.24,
-    13.59
+    66.35,
+    13.63
    ],
    [
     "bone_15",
@@ -1068,6 +1068,174 @@
   "Snare Soul Swamp Bug": "INV_NAME_SNARE_SOUL_SWAMP",
   "Vintage Nectar": "INV_NAME_GOURMAND_VINTAGE_NECTAR",
   "Wood Witch Item": "INV_NAME_WITCH_ITEM"
+ },
+ "offers": {
+  "A Pinsmiths Tools": [
+   [
+    "belltown_room_pinsmith",
+    "Plinney Inside",
+    25.81,
+    8.36
+   ]
+  ],
+  "Brolly Get": [
+   [
+    "bone_east_umbrella",
+    "Seamstress",
+    27.63,
+    8.37
+   ]
+  ],
+  "Crow Feathers": [
+   [
+    "halfway_01",
+    "HH Bartender",
+    31.29,
+    6.02
+   ]
+  ],
+  "Doctor Curse Cure": [
+   [
+    "belltown_room_doctor",
+    "Doctor Fly",
+    25.87,
+    10.32
+   ]
+  ],
+  "Flea Games": [
+   [
+    "aqueduct_05_festival",
+    "Caravan Troupe Leader Festival Intro",
+    153.69,
+    11.41
+   ],
+   [
+    "aqueduct_05_festival",
+    "Caravan_States",
+    127.27,
+    7.78
+   ]
+  ],
+  "Great Gourmand": [
+   [
+    "song_09b",
+    "Gourmand Servant",
+    109.64,
+    132.79
+   ]
+  ],
+  "Huntress Quest Runt": [
+   [
+    "room_huntress",
+    "Huntress Runt",
+    21.66,
+    9.03
+   ]
+  ],
+  "Journal": [
+   [
+    "halfway_01",
+    "Nuu",
+    25.15,
+    20.85
+   ]
+  ],
+  "Mossberry Collection 1": [
+   [
+    "mosstown_02c",
+    "Moss Creep NPC",
+    45.71,
+    5.67
+   ]
+  ],
+  "Mr Mushroom": [
+   [
+    "aqueduct_05",
+    "Mr Mushroom Tablet",
+    238.39,
+    84.8
+   ]
+  ],
+  "Pinstress Battle": [
+   [
+    "room_pinstress",
+    "Inspect Region",
+    25.75,
+    8.57
+   ]
+  ],
+  "Roach Killing": [
+   [
+    "dust_shack",
+    "Dust Traders",
+    22.62,
+    6.26
+   ]
+  ],
+  "Save Courier Tall": [
+   [
+    "belltown",
+    "Courier Short Bellhart",
+    46.28,
+    23.17
+   ]
+  ],
+  "Save the Fleas": [
+   [
+    "bone_10",
+    "Caravan Troupe Leader Bone NPC",
+    38.39,
+    16.94
+   ]
+  ],
+  "Shell Flowers": [
+   [
+    "room_witch",
+    "Wood Witch",
+    16.78,
+    8.36
+   ]
+  ],
+  "Soul Snare": [
+   [
+    "song_enclave",
+    "Enclave Caretaker",
+    59.92,
+    7.64
+   ]
+  ],
+  "Sprintmaster Race": [
+   [
+    "sprintmaster_cave",
+    "Sprintmaster Runner",
+    63.79,
+    8.51
+   ]
+  ],
+  "Steel Sentinel": [
+   [
+    "coral_37",
+    "Steel Sentinel",
+    65.67,
+    8.64
+   ]
+  ],
+  "Steel Sentinel Pt2": [
+   [
+    "bone_steel_servant",
+    "Steel Servant NPC",
+    22.15,
+    4.61
+   ]
+  ],
+  "Wood Witch Curse": [
+   [
+    "room_witch",
+    "Wood Witch",
+    16.78,
+    8.36
+   ]
+  ]
  },
  "pins": [
   [

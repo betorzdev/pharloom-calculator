@@ -1815,6 +1815,33 @@ objectives have no emblem of their group: every MainQuest's `typeLargeIcon` is e
 draws them on top with no heading, then only a filigree (`completed_quests_spacer`, its «Current
 Heading») before the wishes; the script writes it too (`tasks/spacer.webp`; design/80, E).
 
+**Every mark where it stands in its room, the rest of the audit** (16 October 2026, Albert's four
+choices). After the bosses, Crests and pieces (the 15th), the people, wishes, vendors and extras,
+set against mapgenie's whole map (fitted by the 103 bench, Bellway and Ventrica pins, a median 2.1 px
+apart), the map's drawing and the scenes themselves. Four rules were behind what was wrong:
+- The extractors composed an object's place without its parents' turn (`world()` in
+  `extract-pickups.py`, `extract-people.py`, `extract-wishes.py`; only the terrain counted it). Most
+  scenes keep their Act 3 variants under a "Black Thread States Thread Only Variant" turned 14 to
+  62 degrees, its children turned back, so what lies under it landed under the floor or above the
+  room: Shakra on guard in Greymoor_08 (clamped to the box's edge, in the black), Garmond in
+  Greymoor_07, Bone_East_02 and Bone_East_05, Sherma, a pilgrim and Pilby at the Pilgrim's Rest (at
+  its middle), two of Bellhart's pilgrims, Ant_04's two shard caches, Mosstown_02's silk walls,
+  twenty-odd Remaskers, three Void Masses and 21 Journal marks. `tools/scene_place.py` composes
+  scale, turn and place for all three; each moved mark now falls where mapgenie has it.
+- `tools/gen-people.js` placed a point its own way: an interior's coordinates in its door room's
+  box (the Bellway Pilgrim at Bone Bottom's far west), no clamp to the edge. `tools/map-point.js` is
+  now the one rule of both generators.
+- Pondcatcher Reed walks from Bellhart through Belltown_07 to Shellwood (a CrossSceneWalker on a
+  HermiteSplinePath), parked under the scenes until then: each spot is now where her path ends on
+  the ground (Bellhart's pond).
+- The wish nobody offers in person (Fleatopia's Passing of the Age) sat at Aqueduct_05's middle,
+  in the black: `extract-wishes.py` now keeps what offers each wish (`offers`), and it's at the Mr
+  Mushroom Tablet.
+The generators stop on a new person off their scene in a room the map draws (none is), and on a new
+extra parked so (six are: two walls above their tilemaps, a lever, a lock, planks and a Remasker past
+an edge, each read). Everything else held: Shakra's 17 spots and the shops within 9.5 px of mapgenie,
+the Wishwalls, the wish items and places, the game's own objective pins. test/positions.test.js.
+
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about
 two weeks of September 2026).
