@@ -2,11 +2,12 @@
    says (design/03-redesign.md, step 3, the calm round). In free mode, the ghost bench: the card a
    save shows, unlit, waiting for a game (the file dropped here goes, through js/app-saves.js, into
    the first empty save). In a save, the scene where Hornet rests: the area's title on its own
-   light, its map behind her (js/app-map.js, App.mapAreaHtml), the Act and the time, Hornet at
-   her bench and the 100% as one figure into Progress; under it what changed since the previous
-   save, short. The parts of the 100% and the road are Progress's, the Journal's count the
-   Journal's, masks and rosaries the Inventory's, what's missing nearby the Map's. Shares SS.app
-   with js/app.js (see there). */
+   light, its map behind her (js/app-map.js, App.mapAreaHtml), the time, Hornet at her bench
+   between what she is (the game's act card, her masks and silk as the HUD draws them) and the
+   Crest she wears (as the Crest screen draws it, into it), and the 100% as one figure into
+   Progress; under it what changed since the previous save, short. The parts of the 100% and the
+   road are Progress's, the Journal's count the Journal's, rosaries the Inventory's, what's
+   missing nearby the Map's. Shares SS.app with js/app.js (see there). */
 (() => {
   'use strict';
   const SS = globalThis.SS;
@@ -205,8 +206,9 @@
   /* A save: the scene where Hornet rests (design/03-redesign.md, step 3, the calm round, A): «Resting
      at» over the area of her bench, lit by that area's own light from the game's map
      (css/tokens.css, --area-*), the area's map round her bench (js/app-map.js, App.mapAreaHtml), one
-     line with the Act and the time, Hornet at her bench, and the 100% as one figure into Progress.
-     Under it what changed since the previous save, short. What another tab owns isn't repeated here. */
+     line with the time, Hornet at her bench with her summary either side (the summary round: C, A,
+     C, A), and the 100% as one figure into Progress. Under it what changed since the previous save,
+     short. What another tab owns isn't repeated here. */
   const areaId = (a) => a.toLowerCase().replace(/_/g, '-');
   const homeOf = (g) => (g.bench && SS.rooms.areaOf(g.bench)) || g.area;
   /* The area's colours, on .hm: the whole screen is lit by them, its frame included (css/app.css,
@@ -215,6 +217,23 @@
     const home = g && homeOf(g);
     return home ? ` style="--area-line:var(--area-${areaId(home)}-line, var(--spotlight));--area-fill:var(--area-${areaId(home)}-fill, var(--scene-glow))"` : '';
   };
+  /* Hornet between what she is and what she wears (design/03-redesign.md, step 3, the summary
+     round): on her left the game's act card (ACT_n_SUPER over ACT_n_NAME) and her masks and silk as
+     the HUD draws them; on her right the Crest she wears with its Tools in their slots, as the Crest
+     screen draws it (js/app-tools.js, App.wornNow), and the way into it. */
+  function worn(g, her) {
+    const w = App.wornNow ? App.wornNow() : null;
+    if (!w) return her;
+    const act = `<p class="hm-act"${NT}><span class="hm-act-sup">${esc(t('saveAct', { n: num(g.act) }))}</span><span class="hm-act-name">${esc(t('pgActName' + g.act))}</span></p>`;
+    const hud = `<div class="hm-hud">
+          <span class="hm-masks" role="img" aria-label="${esc(num(w.masks) + ' ' + t('cat_masks'))}">${'<img src="assets/hud/mask.png" alt="">'.repeat(w.masks)}</span>
+          <span class="hm-spool"><img src="assets/hud/spool.png" alt=""><b>${num(w.silk)}</b><span class="sr-only">${esc(t('invSilk'))}</span></span></div>`;
+    return `<div class="hm-flank">
+        <div class="hm-self">${act}${hud}</div>
+        ${her}
+        <a class="hm-worn" href="${App.here(App.hashFor('tools'))}" data-act="view" data-value="tools" aria-label="${esc(t('navTools'))}">${w.crest}</a>
+      </div>`;
+  }
   function game(g, m) {
     const c = CP.count(g);
     const h = Math.floor(m.time / 3600), min = Math.floor((m.time % 3600) / 60);
@@ -222,13 +241,13 @@
     const areaName = home && CO.AREAS[home] ? pick(CO.AREAS[home]) : '';
     const inside = g.area && g.area !== home && CO.AREAS[g.area] ? pick(CO.AREAS[g.area]) : '';
     const steel = m.steel ? ` · <span${NT}>${esc(t(m.dead ? 'saveDefeated' : 'steelSoul'))}</span>` : '';
-    const sub = [inside ? `<span${NT}>${esc(inside)}</span>` : '', esc(t('saveAct', { n: g.act })) + steel, esc(t('impTime', { h: num(h), m: num(min) }))].filter(Boolean).join(' · ');
+    const sub = [inside ? `<span${NT}>${esc(inside)}</span>` : '', steel.replace(/^ · /, ''), esc(t('impTime', { h: num(h), m: num(min) }))].filter(Boolean).join(' · ');
     const map = App.mapAreaHtml ? App.mapAreaHtml(g) : '';
     const done = c.total >= 100;
     return `<div class="hm-card hm-scene">${map}
         ${areaName ? `<p class="hm-sup">${esc(t(g.rested ? 'homeRest' : 'mapRespawn'))}</p><p class="hm-area"${NT}>${esc(areaName)}</p>` : ''}
         <p class="hm-sub">${sub}</p>
-        ${rest(g.bench, g.rested)}
+        ${worn(g, rest(g.bench, g.rested))}
         <a class="hm-pct" href="${App.here(App.hashFor('progress'))}" data-act="view" data-value="progress">
           <span class="hm-fig-k">${esc(t('homeCompletion'))}</span><b>${num(c.total)}<span class="u">${esc(pctSpace().trim() || '%')}</span></b>
           <span class="hm-pct-go">${esc(t(done ? 'homeAllParts' : 'homeGoProgress'))}</span></a>
