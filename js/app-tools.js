@@ -102,6 +102,14 @@
 
   // The build on screen, for the other screens too (Combat, js/app-fight.js).
   App.currentBuild = () => current().st;
+  /* What Hornet is and wears, for Your game (js/app-home.js): the Crest as this screen draws it,
+     still, and her masks and silk as the HUD counts them. */
+  App.wornNow = () => {
+    const { st, locked, have, vesti } = current();
+    held = st;
+    const r = E.compute(st);
+    return { crest: crestHtml(st, r, locked, have, vesti, true), masks: r.health.masks, silk: r.silk.spool };
+  };
 
   /* ── The Crest and its slots, as the game's pane draws them (js/crest-slots.js; design/43) ──
      Each colour's Tools go into its slots in the game's order, the open ones first and then those
@@ -129,7 +137,7 @@
   // A locked slot's ring, scaled down (InventoryToolCrestSlot.UpdateSlotDisplay, Assembly-CSharp 1.0.30000).
   const LOCKED_SCALE = 0.8;
   const sign = (kind, bind) => sprite(kind === 'red' || kind === 'skill' ? kind + BUTTON[bind || 0] : kind);
-  function slot(s, id, shut, locked) {
+  function slot(s, id, shut, locked, still) {
     const at = s.x == null ? '' : ` style="--x:${s.x};--y:${s.y}"`;
     if (!id) {
       // A locked slot is the lock ring alone, where the sign would be: the slot's Locked animation swaps
@@ -138,12 +146,15 @@
       return `<span class="ct-slot is-${s.kind}${shut ? ' is-locked' : ''}"${at} aria-hidden="true">${g}</span>`;
     }
     const name = slotName(s.kind, id);
-    const act = locked ? 'ctDescribe' : s.kind === 'skill' ? 'ctSkill' : 'ctTool';
     const ring = 'ring' + (s.kind === 'red' || s.kind === 'skill' ? BUTTON[s.bind || 0] : '');
     // The worn one is its inventory sprite at its own size and centre, about the ring's (SS.crestIcons, the slot's Item Icon).
     const [w, h, x, y] = s.kind === 'skill' ? SS.crestIcons.skills[id] : SS.crestIcons.tools[E.toolArt(id, held).art];
+    const img = `${sprite(ring)}<img src="${pic(s.kind, id)}" alt="" style="--iw:${w};--ih:${h};--ix:${x};--iy:${y}">`;
+    // A picture of the Crest (Your game's): nothing to tap, its slots aren't buttons.
+    if (still) return `<span class="ct-slot is-${s.kind} is-full"${at} title="${esc(name)}"${NT}>${img}</span>`;
+    const act = locked ? 'ctDescribe' : s.kind === 'skill' ? 'ctSkill' : 'ctTool';
     return `<button type="button" class="ct-slot is-${s.kind} is-full" data-act="${act}" data-kind="${s.kind === 'skill' ? 'skill' : 'tool'}" data-value="${id}"${at}
-        title="${esc(name)}" aria-label="${esc(name)}"${NT}>${sprite(ring)}<img src="${pic(s.kind, id)}" alt="" style="--iw:${w};--ih:${h};--ix:${x};--iy:${y}"></button>`;
+        title="${esc(name)}" aria-label="${esc(name)}"${NT}>${img}</button>`;
   }
   // The Vesticrest's column (SS.crestFloat, the game's Floating Slots): the slots and their brackets, in the Crest's units.
   function floating(items) {
@@ -154,7 +165,7 @@
     return `<div class="ct-float" style="--top:${top};--fh:${top - bottom}">${brackets.map(([b, y]) => `<span class="ct-bracket" style="--y:${y}">${sprite(b, '', F.k)}</span>`).join('')}${
       items.map((html, i) => html.replace('class="ct-slot', `style="--y:${F.slots[i]}" class="ct-slot`)).join('')}</div>`;
   }
-  function crestHtml(st, r, locked, have, vesti) {
+  function crestHtml(st, r, locked, have, vesti, still = false) {
     if (st.cursed) {
       const [w, h, ax, ay] = SS.crestArt.cursed;
       return `<div class="ct-crest"><div class="ct-crest-art" style="--w:${w};--h:${h};--ax:${ax};--ay:${ay}"><img src="assets/crests/cursed.webp" alt=""></div>
@@ -189,14 +200,14 @@
       if (i >= 0) held[i] = id;
     }
     if (!locked) seats[key] = held;
-    const html = (s, i) => slot(s, held[i], s.lock && !held[i] && !opened(s), locked);
+    const html = (s, i) => slot(s, held[i], s.lock && !held[i] && !opened(s), locked, still);
     const placed = spots.map((s, i) => (s.x == null ? '' : html(s, i))).join('');
     // What doesn't fit the Crest goes on the Vesticrest's slots, its blue over its yellow.
     const vest = spots.map((s, i) => (s.x == null ? html(s, i) : null)).filter(Boolean);
     // ‹ › change the Crest (Free mode), past the ones the Inventory's marks say you don't have.
     const had = D.CRESTS.filter((c) => c.id === 'hunter' || !have || have.crests.includes(c.id));
     const step = (d) => { const i = had.findIndex((c) => c.id === st.crest); return had[(i + d + had.length) % had.length].id; };
-    const arrow = (d, label) => (locked || had.length < 2 ? '' : `<button type="button" class="icon-btn ct-arrow" data-act="ctCrest" data-value="${step(d)}" aria-label="${esc(label)}" title="${esc(label)}">${d < 0 ? '‹' : '›'}</button>`);
+    const arrow = (d, label) => (locked || still || had.length < 2 ? '' : `<button type="button" class="icon-btn ct-arrow" data-act="ctCrest" data-value="${step(d)}" aria-label="${esc(label)}" title="${esc(label)}">${d < 0 ? '‹' : '›'}</button>`);
     return `<div class="ct-crest${vest.length ? ' has-float' : ''}">${vest.length ? floating(vest) : ''}
         <div class="ct-crest-art" style="--w:${w};--h:${h};--ax:${ax};--ay:${ay}"><img src="assets/crests/${art}.webp" alt="">${placed}</div>
         <div class="ct-crest-name">${arrow(-1, t('ctPrev'))}<div><h3${NT}>${esc(pick(crest.name))}</h3>

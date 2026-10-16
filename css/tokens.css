@@ -246,6 +246,10 @@
   --hm-map-opacity: calc(var(--map-faint) * 1.4);   /* that map: the Map's guide twice as strong as it was, still behind (design/03-redesign.md, step 3, 14 Oct) */
   --hn-rest: 0.5;      /* resting on her bench in Your game's card: the wiki's sprites at half (her 186 px → 93) */
   --hm-art: 36px;      /* a picture in Your game's lists, as Progress's rows (css: .hm-art) */
+  --hm-crest-k: 24px;  /* the Crest she wears beside her on Your game: the Crest screen's at about a third */
+  --hm-crest-k-sm: 19px;
+  --hm-mask: 26px;     /* her masks beside her on Your game, as the HUD draws them */
+  --hm-mask-sm: 20px;
 
   --page-max: 1216px;
   --page-pad: var(--sp-8);

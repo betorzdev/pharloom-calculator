@@ -1168,6 +1168,28 @@ kbd {
 .hmB-map { position: absolute; inset: 0; z-index: -2; margin: 0; overflow: hidden; opacity: var(--hm-map-opacity); pointer-events: none; }
 .hmB-canvas { position: absolute; inset: 0; width: 100%; height: 100%; filter: var(--map-tone);
   -webkit-mask: radial-gradient(ellipse 50% 46% at 50% 56%, #000 50%, transparent 100%); mask: radial-gradient(ellipse 50% 46% at 50% 56%, #000 50%, transparent 100%); }
+/* Hornet between what she is and what she wears (design/03-redesign.md, step 3, the summary round,
+   C, A, C, A): on her left the game's act card and the HUD (her masks in a row, the spool with its
+   silk), leaning towards her; on her right the Crest she wears, the Crest screen's figure at
+   --hm-crest-k, and the way into it. On a phone they go under her, the Crest last. */
+.hm-flank { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: var(--sp-12); width: 100%; max-width: var(--column); }
+.hm-self { display: grid; justify-items: end; justify-self: end; gap: var(--sp-3); }
+.hm-act { display: grid; justify-items: inherit; gap: var(--sp-1); margin: 0; font-family: var(--font-display); text-transform: uppercase; }
+.hm-act-sup { font-size: var(--fs-xs); letter-spacing: var(--track-wide); color: color-mix(in oklab, var(--area-line) 60%, var(--ink-2)); }
+.hm-act-name { font-size: var(--fs-lg); line-height: 1; letter-spacing: var(--track-title); color: var(--ink-strong); }
+.hm-hud { display: grid; justify-items: inherit; gap: var(--sp-2); }
+.hm-masks { display: flex; flex-wrap: wrap; justify-content: inherit; gap: var(--sp-1); }
+.hm-masks img { height: var(--hm-mask); width: auto; }
+.hm-spool { display: flex; align-items: center; gap: var(--sp-2); }
+.hm-spool img { height: calc(var(--hm-mask) * 0.62); width: auto; }
+.hm-spool b { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-lg); line-height: 1; color: var(--ink-strong); }
+.hm-worn { justify-self: start; color: var(--ink); text-decoration: none; }
+.hm .hm-worn .ct-crest { --k: var(--hm-crest-k); gap: var(--sp-1); }
+.hm-worn .ct-crest-name h3 { margin: 0; font-size: var(--fs-sm); transition: color var(--dur) var(--ease); }
+.hm-worn .ct-curse { display: none; }
+.hm-worn:is(:hover, :focus-visible) .ct-crest-name h3 { color: var(--ink-strong); }
+.hm-worn:focus-visible { outline: 1px solid var(--accent); outline-offset: var(--sp-2); }
+
 /* The 100% as one figure, the way into Progress: its label, the figure, and what Progress holds
    under it with the accent's arrow, stepping forward under the finger (as the ways on did). */
 .hm-pct { display: inline-grid; justify-items: center; gap: var(--sp-1); padding: var(--sp-2) var(--sp-4); text-decoration: none; color: var(--ink); }
@@ -1216,6 +1238,12 @@ kbd {
   /* Free mode's four figures two by two: four in a row don't fit, and three left one alone (Albert's choice, 14 Oct 2026). */
   .hm-figs { display: grid; grid-template-columns: repeat(2, auto); justify-content: center; gap: var(--sp-4) var(--sp-12); }
   .hm-scene { min-height: 0; }
+  .hm { --hm-crest-k: var(--hm-crest-k-sm); --hm-mask: var(--hm-mask-sm); }
+  .hm-flank { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: var(--sp-4); }
+  .hm-flank > .hm-rest { grid-row: 1; }
+  .hm-self { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; justify-self: center; gap: var(--sp-3) var(--sp-6); }
+  .hm-self > * { justify-items: start; }
+  .hm-worn { justify-self: center; }
 }
 
 /* ── Progress (js/app-progress.js): the ledger ────────────────────────────
