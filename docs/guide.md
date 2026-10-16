@@ -399,7 +399,9 @@ area name that would fall on another waits for the zoom (the larger area's stays
 on a phone the area names show only zoomed in.
 
 Under the map, **What the map shows**, as the Hollow Knight site has it: «Show all · Hide all» on
-its right, and «Only the 100%», which turns on just the layers that count for completion, then «Whole map» with a save, on at first (see
+its right, and «Only the 100%», which turns on just the layers that count for completion (the ten
+categories the game counts: Mask Shards, Spool Fragments, Silk Hearts, the Needle, Tool Pouch and
+Crafting Kit, the seven abilities, the 51 Tools, the Crests, the Silk Skills and the Everbloom), then «Whole map» with a save, on at first (see
 below), the area names on or off, and «Show Completed» (the game's own words for the switch on its
 Wishes pane), off at first: on, what you already have comes back to the map too, each mark
 dimmed with a green tick on its corner, whole again under the pointer or once picked, its card
@@ -409,29 +411,37 @@ at first, only the first two on a phone, then as you left them) whose title is t
 whole group, in ink when all of it is on, dimmer when part, muted when none. Inside, each layer's
 switch is the game's own picture of it, in grey when off. Beside each, how many: in a save, had of
 the total (a layer complete in green); for places and people, which aren't had, how many there
-are; in Free mode, the total. A group's title counts its layers the same way, all but your cocoon,
-so «Your game» counts as its Journal does.
+are; in Free mode, the total. They count things, not marks: the marks that share one save check
+(the two places one map or key may be found in, the Silver Bells of one wish, the Bell Beast's
+spots) are one. A group's title counts its layers the same way, all but your cocoon, so «Your game»
+counts as its Journal does.
 
-What counts for the 100% is in the first four groups, each thing in the room where it's had:
-lying there, at the shop that sells it, at the Wishwall or with whoever gives the wish, in its
-boss's arena, with the person who gives it. All of it on at first.
+What counts for the 100% is in the first two groups and the Everbloom, each thing in the room where
+it's had: lying there, at the shop that sells it, at the Wishwall or with whoever gives the wish, in
+its boss's arena, with the person who gives it. All of it on at first, and what leads to it too
+(Memory Lockets, Lost Fleas, Old Hearts, Melodies, Craftmetal, Pale Oil), though «Only the 100%»
+leaves those off.
 
 - **Upgrades**: Mask Shards, Spool Fragments, Silk Hearts, the Needle, Tool Pouch and Crafting Kit
-  upgrades, and the eleven abilities: the two Needolin melodies of Act 3 (the Beastling Call,
-  under Bellhart once the Bell Eater is beaten; the Elegy of the Deep, from the Snail Shamans) don't
-  count for the 100%, and their card says so.
+  upgrades, and the **Abilities**, one switch whose round caret opens the seven of the 100% and,
+  apart, the four **outside the 100%** (on at first too): Drifter's Cloak and Faydown Cloak, and the
+  two Needolin melodies of Act 3 (the Beastling Call, under Bellhart once the Bell Eater is beaten;
+  the Elegy of the Deep, from the Snail Shamans), each card saying it doesn't count.
 - **Crest** (the game's pane where they're equipped): the **Tools**, one switch whose round caret
   opens them by the colour of their slot (red, blue, yellow) and, apart, the six **outside the
   100%** (off at first): the upgrades of four Tools (Curvesickle, Druid's Eyes, Claw Mirrors, the
   Shell Satchel), which add nothing to it on their own, and the two a wish lends and takes back
-  (the Snare Setter, the Needle Phial), found once had even after handing them back. Then the Crests and Silk Skills.
+  (the Snare Setter, the Needle Phial), found once had even after handing them back. Then the
+  Crests, **What Eva gives** besides Sylphsong (off at first): the Hunter Crest's two evolutions and
+  the Vesticrest's yellow and blue slots, each with the slots it needs across your Crests (the
+  Hunter's aside) and, with a save, how many you have open; and the Silk Skills.
 - **Collectibles**: Memory Lockets, Lost Fleas, the Old Hearts, the Melodies and the Everbloom
   (on at first), then, off at first, the relics, one switch for the six (Bone Scrolls, Weaver
   Effigies, Choral Commandments, Rune Harps, Psalm Cylinders, the Arcane Egg) whose round caret
-  opens them one by one, Mementos, the Bellhome's furnishings, the **Silk cocoons**, the small ones
-  beside the Silkeaters, and **What Eva gives** besides Sylphsong: the Hunter Crest's two
-  evolutions and the Vesticrest's yellow and blue slots, each with the slots it needs across your
-  Crests (the Hunter's aside) and, with a save, how many you have open.
+  opens them one by one, Mementos (the seven found somewhere: the Heart Memento is whichever Old
+  Heart The Old Hearts doesn't take, so it has no mark) and the Bellhome's furnishings (the five
+  bought, and the Materium, Farsight and Crawbell built there once found: their Key items marks
+  are where each lies).
 - **Items**: Craftmetal and Pale Oil (on at first), then, off at first, Mossberries, Silkeaters, the
   **Maps**: the fourteen area maps found lying in a room (the Weavenest Atla Map, the
   Slab's…), each gone once your save has it; the fourteen Shakra sells have no mark of their own
@@ -445,9 +455,10 @@ boss's arena, with the person who gives it. All of it on at first.
   which its map doesn't pin; the Flea Caravan's two of its own, in Greymoor and the Blasted Steps,
   only while your caravan is there), Bellway and Ventrica stations (dimmed while
   your game hasn't opened them: a station not unlocked, a toll not paid), the six Bellshrines (the Grand Gate asks for five of them;
-  the Songclave's is the sixth) and the Vendors (the game's map key), and the **Lifts** (off at first), gone once your game has called each. The shops are the
+  the Songclave's is the sixth), the Vendors (the game's map key) and **Shakra**'s spots, she
+  being one of the game's shops too, her card saying which of her maps you lack. The shops are the
   game's own (its ShopOwners: Pebb, Frey, Mort, the Forge Daughter, Grindle, Jubilana, the
-  Mottled Skarr, the Twelfth Architect) and those who trade outside them: the Couriers' delivery
+  Mottled Skarr, the Twelfth Architect, Shakra) and those who trade outside them: the Couriers' delivery
   wishes in Bellhart, the Moss Druid, who buys Mossberries, and Creige's drinks.
 - **Passages**, off at first: what opens a way and stays open, each read from the game's own
   scenes with the bool your save keeps once it's open, so with a save only what's still shut
@@ -459,7 +470,8 @@ boss's arena, with the person who gives it. All of it on at first.
   levers, gates and walls the save keeps by a flag of its own rather than per room (the Bellhome's
   door among them): they're there too. **Keys**: the Simple Keys, the Slab's three and the
   Whiteward's two, where each lies, and the two an NPC gives: the Diving Bell Key (Ballow, in the
-  Deep Docks) and the Bellhome Key (Pavo, in Bellhart).
+  Deep Docks) and the Bellhome Key (Pavo, in Bellhart). And the **Lifts**, gone once your game has
+  called each.
 - **Fights**: the enemy gauntlets and bosses not beaten yet, each fight its own mark (Lace atop the
   Cradle, the two Moss Mothers of Weavenest Atla, the Act 3 Moss Mother and the Savage Beastfly
   of the Far Fields too), each boss where it's fought (Moorwing at Bellhart's east entrance, the
@@ -467,8 +479,9 @@ boss's arena, with the person who gives it. All of it on at first.
   the Coral Tower's four that end in Khann…) is that boss's mark, its waves and reward on the
   boss's card. And the Void Masses' cores. The other enemies that don't come back (Rhinogrunds,
   Covetous Pilgrims, Shardillards) are found from their Journal entry, whose pin shows every room
-  they're in.
-- **People**: Shakra's spots, and who gives something of the 100% (Plinney, Eva, Pinstress,
+  they're in. A wish done by a boss's fight (Fatal Resolve, the Pinstress on Mount Fay; the end of
+  A Vassal Lost, the Summoned Saviour) is on that boss's card, not a mark of its own.
+- **People**: who gives something of the 100% (Plinney, Eva, Pinstress,
   Loddie, Lumble, Mooshka) and Scrounge, who buys the relics. **Everyone else** (off at first): every
   other person the game's scenes place, 44 of them, each in one switch only, with their own figure
   from the game's sprites (tools/extract-people.py), named as their title card names them. With a
@@ -498,9 +511,11 @@ boss's arena, with the person who gives it. All of it on at first.
   covers part of a room until you walk in, one mark per room, gone once all of it is uncovered), so many
   that they're drawn one by one only close up; from afar, one mark per room and kind, with how
   many in its corner. Marks that would cover each other step a little apart, more the closer you zoom.
+  And the **Silk cocoons**, the small ones beside the Silkeaters, which give a little silk when struck.
 - **Your game**, with a save: your cocoon, where you last fell, at the spot the game's own map
   marks it (on at first), and the Journal's entries still missing, where the enemy is in the room
-  where each is found (a boss's entry is its boss's mark already, not drawn again).
+  where each is found (a boss's entry is its boss's mark already, and the Void Mass's its own
+  switch's, not drawn again), counted as the Journal counts them: every entry.
 
 Each mark is the thing's own picture on a dark disc with a thin rim, as the Hollow Knight site
 draws them, over a pale plate so a dark portrait reads, about the same size at any zoom, a little

@@ -9,31 +9,35 @@
    Free mode, the whole map before Act 3. On it, everything the game has for each room (js/spots.js, from the game's
    own files), in layers grouped as the selector under the map shows them:
      Upgrades       Mask Shards, Spool Fragments, Silk Hearts, the Needle, Pouch and Kit upgrades
-                    and the abilities, where each is had: lying in its room, its vendor's, its
+                    and the abilities (one switch, its caret opening the seven of the 100% and the
+                    four outside it), where each is had: lying in its room, its vendor's, its
                     Wishwall's, its boss's arena
      Crest          the Tools (one switch, its caret opening them by slot colour, and the six
-                    outside the 100%: four upgrades, two a wish lends), Crests and Silk Skills
+                    outside the 100%: four upgrades, two a wish lends), Crests, Eva's rewards and
+                    Silk Skills
      Places         benches, Bellway and Ventrica stations (the game's own pins, dimmed while your
-                    game hasn't opened them), the Bellshrines and the shops; the lifts (off at first)
+                    game hasn't opened them), the Bellshrines, the shops and Shakra's spots
      Passages       what opens a way and stays open, each gone once your save has it open: levers
                     and pressure plates, gates, the doors a key opens and the keys lying, shortcuts
-                    (the one-way walls among them) and silk walls (off at first; design/03-redesign.md,
-                    step 6), whether the save keeps them per room or in playerData
+                    (the one-way walls among them), silk walls and the lifts (off at first;
+                    design/03-redesign.md, step 6), whether the save keeps them per room or in playerData
      Fights         the gauntlets and bosses not beaten, the Void Masses' cores
-     People         Shakra's spots and the people who give a thing of the 100%
+     People         the people who give a thing of the 100%, and everyone else
      Tasks          the Wishwalls and who offers a wish still open, where a wish is done, what a
                     wish asks for, and the main objectives where the game's map pins them
      Collectibles   Memory Lockets, Lost Fleas, the Old Hearts, Melodies and the Everbloom, the
-                    relics (one switch, its caret opening the six), Mementos, the Bellhome's
-                    furnishings, the small silk cocoons and Eva's rewards
+                    relics (one switch, its caret opening the six), Mementos and the Bellhome's
+                    furnishings
      Items          Craftmetal, Pale Oil, Mossberries, Silkeaters, the area maps where each is had
                     (Shakra's spot in its area, or where it lies), the key items, the rosaries and
                     shell shards lying in a room or given (the Fixer's, the Sprintmaster's)
      Secrets        the rosary and shell shard caches, breakable walls, loose rosaries and each room's
-                    hidden corners (off at first; from afar, a count per room)
+                    hidden corners (off at first; from afar, a count per room), and the small silk
+                    cocoons
      Your game      your cocoon; the Journal's entries still missing
-   Each layer's switch is the game's own picture, with had of total (in Free mode, the total);
-   "Only the 100%" turns on just the layers that count (design/03-redesign.md, step 6).
+   Each layer's switch is the game's own picture, with had of total (in Free mode, the total),
+   counted by thing: marks that share one save check count once; "Only the 100%" turns on just
+   the layers that count (design/03-redesign.md, step 6, the switches' contents).
    In a save (or Free mode's marks) what's had is left out; "Show Completed" (prefs.mapHad) brings
    it back, dimmed and ticked (design/03-redesign.md, step 6). A tap
    on a mark, or on an area's name, opens its card. Hornet sits at your bench, or stands where the
@@ -87,7 +91,9 @@
     L('tools-other', () => t('mapToolsOut'), 'assets/icons/tools/snare-setter.webp'),
     L('crests', () => t('cat_crests'), 'assets/icons/crests/reaper.webp'),
     L('skills', () => t('cat_skills'), 'assets/icons/skills/silkspear.webp'),
-    L('arts', () => t('cat_arts'), 'assets/icons/arts/swift-step.webp'),
+    // The abilities: the seven of the 100% (js/completion.js ARTS) and the four outside it.
+    L('arts', () => t('mapArtsIn'), 'assets/icons/arts/swift-step.webp'),
+    L('arts-other', () => t('mapToolsOut'), 'assets/icons/arts/drifters-cloak.webp'),
     ...['memory-locket', 'craftmetal', 'pale-oil', 'flea', 'old-heart', 'melody'].map(piece),
     L('everbloom', () => t('cat_items'), 'assets/icons/items/everbloom.webp'),
     L('bench', () => t('mapPlace_bench'), PIN('pin_bench')),
@@ -139,31 +145,36 @@
   /* The sets: one switch in the selector for several layers, its caret opening them one by one
      (the sibling's, design/24 there). */
   const SETS = { relics: { name: () => t('mapSet_relics'), art: 'assets/icons/extras/bone-scroll.webp', layers: RELICS },
-    tools: { name: () => t('cat_tools'), art: 'assets/icons/tools/straight-pin.webp', layers: ['tools-red', 'tools-blue', 'tools-yellow', 'tools-other'] } };
-  /* The selector's groups, in this order (design/03-redesign.md, step 6, the groups: Albert's
-     choice); what counts for the 100% spread over the first three. */
+    tools: { name: () => t('cat_tools'), art: 'assets/icons/tools/straight-pin.webp', layers: ['tools-red', 'tools-blue', 'tools-yellow', 'tools-other'] },
+    abilities: { name: () => t('cat_arts'), art: 'assets/icons/arts/swift-step.webp', layers: ['arts', 'arts-other'] } };
+  /* The selector's groups, in this order (design/03-redesign.md, step 6, the groups and the
+     switches' contents: Albert's choices); what counts for the 100% in the first two and the
+     Everbloom. Eva's rewards are the Crest pane's; Shakra is one of the game's shops; a lift, gone
+     once called, is a passage; the small silk cocoons, struck for a little silk, a secret. */
   const GROUPS = [
-    ['upgrades', ['mask-shard', 'spool-fragment', 'silk-heart', 'needle', 'tool-pouch', 'crafting-kit', 'arts']],
-    ['crest', ['tools', 'crests', 'skills']],   // PANE_TOOLS
-    ['extras', ['memory-locket', 'flea', 'old-heart', 'melody', 'everbloom', 'relics', 'memento', 'bellhome', 'silk-cocoon', 'eva']],
+    ['upgrades', ['mask-shard', 'spool-fragment', 'silk-heart', 'needle', 'tool-pouch', 'crafting-kit', 'abilities']],
+    ['crest', ['tools', 'crests', 'eva', 'skills']],   // PANE_TOOLS
+    ['extras', ['memory-locket', 'flea', 'old-heart', 'melody', 'everbloom', 'relics', 'memento', 'bellhome']],
     ['items', ['craftmetal', 'pale-oil', 'mossberry', 'silkeater', 'map', 'keyitem', 'rosaries', 'shards']],
-    ['places', ['bench', 'bellway', 'ventrica', 'bellshrine', 'shop', 'lift']],
-    ['passage', ['lever', 'gate', 'lock', 'key', 'shortcut', 'silkwall']],   // design/03-redesign.md, step 6, Passages
+    ['places', ['bench', 'bellway', 'ventrica', 'bellshrine', 'shop', 'shakra']],
+    ['passage', ['lever', 'gate', 'lock', 'key', 'shortcut', 'silkwall', 'lift']],   // design/03-redesign.md, step 6, Passages
     ['fights', ['gauntlet', 'boss', 'void-mass']],
-    ['people', ['shakra', 'person', 'npc']],
+    ['people', ['person', 'npc']],
     // The game's Tasks (PANE_QUESTS): the wishes and the main objectives (design/03-redesign.md, step 6).
     ['quests', ['wishwall', 'giver', 'wspot', 'qitem', 'goal']],
-    ['secrets', ['rosary-cache', 'shard-cache', 'wall', 'bead', 'masked']],
+    ['secrets', ['rosary-cache', 'shard-cache', 'wall', 'bead', 'masked', 'silk-cocoon']],
     ['game', ['cocoon', 'journal']],
   ];
   const layersOf = (ids) => ids.flatMap((k) => (SETS[k] ? SETS[k].layers : [k]));
   const GROUP_OF = new Map(GROUPS.flatMap(([g, ids]) => layersOf(ids).map((k) => [k, g])));
   const groupName = (g) => t('mapGroup_' + g);
-  // The layers that count for the 100% ("Only the 100%").
+  // The layers that count for the 100% ("Only the 100%"): the ten categories of js/completion.js.
   const HUNDRED = ['mask-shard', 'spool-fragment', 'silk-heart', 'needle', 'tool-pouch', 'crafting-kit', 'arts', 'tools-red', 'tools-blue',
-    'tools-yellow', 'crests', 'skills', 'memory-locket', 'flea', 'old-heart', 'melody', 'everbloom', 'craftmetal', 'pale-oil'];
-  // On at first: the whole 100%, the stations, the gauntlets and bosses, and your cocoon.
-  const FIRST_ON = [...HUNDRED, 'bellway', 'ventrica', 'gauntlet', 'boss', 'cocoon'];
+    'tools-yellow', 'crests', 'skills', 'everbloom'];
+  /* On at first: the whole 100%, the abilities outside it, what leads to it (Memory Lockets, Lost
+     Fleas, Old Hearts, Melodies, Craftmetal, Pale Oil), the stations, the gauntlets and bosses, and
+     your cocoon. */
+  const FIRST_ON = [...HUNDRED, 'arts-other', 'memory-locket', 'flea', 'old-heart', 'melody', 'craftmetal', 'pale-oil', 'bellway', 'ventrica', 'gauntlet', 'boss', 'cocoon'];
   // So many they'd hide the map: drawn only close up; from afar, a count per room.
   const FINE = new Set(['rosary-cache', 'shard-cache', 'wall', 'bead', 'masked']);
   // The layers that only a save can say anything about.
@@ -201,6 +212,14 @@
     if (Array.isArray(prefs.mapLayers) && !prefs.mapVoidMass) {
       if (prefs.mapLayers.includes('spawn') && !prefs.mapLayers.includes('void-mass')) prefs.mapLayers = [...prefs.mapLayers, 'void-mass'];
       prefs.mapVoidMass = true;
+      savePrefs();
+    }
+    /* The abilities were one layer of eleven before the four outside the 100% had theirs: on where it
+       was. A list stored from now on (no list yet: nothing to carry) already knows. */
+    if (!Array.isArray(prefs.mapLayers)) prefs.mapArtsOut = true;
+    else if (!prefs.mapArtsOut) {
+      if (prefs.mapLayers.includes('arts') && !prefs.mapLayers.includes('arts-other')) prefs.mapLayers = [...prefs.mapLayers, 'arts-other'];
+      prefs.mapArtsOut = true;
       savePrefs();
     }
     if (Array.isArray(prefs.mapLayers)) return prefs.mapLayers.flatMap((k) => (k === 'tools' ? ['tools-red', 'tools-blue', 'tools-yellow'] : [k])).filter((k) => LAYER.has(k));
@@ -322,6 +341,20 @@
     const where = hit ? new Set([lower(hit[2])]) : new Set(x.spots.map((s) => lower(s[0])).filter((s) => !named.has(s)));
     return { met, gone, where: where.size ? where : null };
   }
+  // The Journal entries whose things have a switch of their own (the Void Masses' cores).
+  const OWN_SWITCH = new Set(SP.EXTRAS.filter((x) => layerOf(x) === 'void-mass').map((x) => x[4] && x[4].key).filter(Boolean));
+  // A mark folded into another's card (a wish's place that is a boss's fight) → that mark's key.
+  let folded = new Map();
+  /* The wishes done by a boss's fight, by quest → the boss (the wiki: the Pinstress is fought for
+     Fatal Resolve; the Summoned Saviour appears at the end of A Vassal Lost). A place of theirs in
+     that boss's own scene is the fight. */
+  const WISH_FIGHT = { 'Pinstress Battle': 'pinstress', 'Steel Sentinel': 'summoned-saviour' };
+  /* The Journal as its own tab counts it, had of total (design/64, 1 A): every entry of this game's
+     mode, the bosses' included, whose marks are their boss's. */
+  function journalTally(own) {
+    const steel = !!(App.gameMeta() || {}).steel, es = J.BOOK.filter((e) => !e.steel || steel), had = es.filter((e) => complete(own, e)).length;
+    return { all: es.length, had, shown: es.length - had };
+  }
   function things(g, own) {
     const out = [];
     const add = (m) => { if (m.scene && R.roomOf(m.scene)) out.push(m); };
@@ -344,17 +377,19 @@
         name: pick(tool.name), note: of ? t('mapToolUpgrade', { tool: pick(D.TOOLS.find((x) => x.id === of[0]).name) }) : t('mapToolLent'),
         draw: (s, ti, k, c) => dot('tools', `assets/icons/tools/${id}.webp`, s, ti, k, c) });
     }
+    // An ability outside the 100% (the two cloaks; js/completion.js ARTS) is in a layer of its own.
+    const artOut = (cat, id) => cat === 'arts' && !SS.completion.ARTS.includes(id);
     for (const [cat, list] of [['crests', D.CRESTS], ['skills', D.SKILLS], ['arts', D.ARTS]]) {
       for (const [id, w] of Object.entries(CO.WHERE[cat])) {
-        const x = list.find((y) => y.id === id);
-        add({ key: cat + ':' + id, layer: cat, scene: SP.AT[cat][id], act: w[0], area: w[1], got: !!g && g[cat].includes(id),
-          name: x ? pick(x.name) : id, draw: (s, ti, k, c) => dot(cat, `assets/icons/${cat}/${id}.webp`, s, ti, k, c) });
+        const x = list.find((y) => y.id === id), out1 = artOut(cat, id);
+        add({ key: cat + ':' + id, layer: out1 ? 'arts-other' : cat, scene: SP.AT[cat][id], act: w[0], area: w[1], got: !!g && g[cat].includes(id),
+          name: x ? pick(x.name) : id, note: out1 ? t('mapArtOut') : undefined, draw: (s, ti, k, c) => dot(cat, `assets/icons/${cat}/${id}.webp`, s, ti, k, c) });
       }
     }
-    // The abilities outside the 100% (the two Needolin melodies), with their Act from js/spots.js.
+    // The abilities the completionist doesn't list (the two Needolin melodies), with their Act from js/spots.js.
     for (const x of D.ARTS) {
       if (CO.WHERE.arts[x.id]) continue;
-      add({ key: 'arts:' + x.id, layer: 'arts', scene: SP.AT.arts[x.id], act: SP.AT.act['arts:' + x.id], got: !!g && g.arts.includes(x.id),
+      add({ key: 'arts:' + x.id, layer: 'arts-other', scene: SP.AT.arts[x.id], act: SP.AT.act['arts:' + x.id], got: !!g && g.arts.includes(x.id),
         name: pick(x.name), note: t('mapArtOut'), draw: (s, ti, k, c) => dot('arts', `assets/icons/arts/${x.id}.webp`, s, ti, k, c) });
     }
     add({ key: 'everbloom', layer: 'everbloom', scene: SP.AT.everbloom, act: (CO.WHERE.everbloom || [])[0], got: !!g && g.everbloom,
@@ -420,11 +455,18 @@
     /* The wishes and the main objectives (js/spots.js TASKS): what a wish asks for, where a wish is
        done, the main objectives' pins. A Steel Soul wish only in Steel Soul, and of the Steel
        Sentinel's six spots the three this game chose. A wish's and an objective's name is its quest's. */
+    /* Where a wish is done that is a boss's own fight (Fatal Resolve, the Pinstress on Mount Fay; A
+       Vassal Lost's end, the Summoned Saviour): on the boss's card, not a mark of its own (each
+       thing once; design/03-redesign.md, step 6, the switches' contents, 12 A). */
+    const bossAt = new Map(out.filter((m) => m.layer === 'boss').map((m) => [lower(m.scene), m]));
+    folded = new Map();
     SP.TASKS.forEach((x, i) => {
-      const [kind, quest, , scene, art, name, mode, spot] = x;
+      const [kind, quest, check, scene, art, name, mode, spot] = x;
       if (own && ((mode === 'steel' && !steelGame) || (spot && !own.steelSpots.includes(spot)))) return;
+      const boss = kind === 'wspot' && WISH_FIGHT[quest] && bossAt.get(lower(scene));
+      if (boss && boss.foe === WISH_FIGHT[quest]) { boss.quests = (boss.quests || []).concat(quest); folded.set('task:' + i, boss.key); return; }
       const w = CO.WISHES[wishOf(quest)];
-      add({ key: 'task:' + i, layer: kind, scene, act: kind === 'goal' ? undefined : w && w[1], got: !!g && (g.tasks || []).includes(i), quest,
+      add({ key: 'task:' + i, layer: kind, scene, act: kind === 'goal' ? undefined : w && w[1], got: !!g && (g.tasks || []).includes(i), quest, chk: JSON.stringify(check),
         name: name ? pick(name) : pick(QU.CHAIN[quest].name), sub: name ? pick(QU.CHAIN[quest].name) : '',
         draw: (s, ti, k, c) => dot(kind, `assets/map/${art}.webp`, s, ti, k, c) });
     });
@@ -462,7 +504,7 @@
       if (kind === 'spawn' && layerOf(x) !== 'void-mass') return;
       if (DOOR[layerOf(x)]) {
         const layer = layerOf(x), d = DOOR[layer], k = kind === 'lock' && LOCK_AT.get(lower(scene));
-        add({ key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i),
+        add({ key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i), chk: JSON.stringify(check),
           name: t(kind === 'plate' ? 'mapPlate' : d.name), sub: k ? t('mapLockKey', { key: pick(SP.KEYS[k]) }) : layer === 'silkwall' ? silkNote() : '',
           draw: (s, ti, kk, c) => badge(layer, d.art ? img(ICON(kind === 'plate' ? 'dock_door_bottom_pressure_plate' : d.art)) : GLYPH[layer], s, ti, kk, c) });
         return;
@@ -477,7 +519,7 @@
         : kind === 'memento' ? (MEMENTO_ICON[check[1]] ? `assets/icons/extras/${MEMENTO_ICON[check[1]]}.webp` : 'assets/icons/pieces/heart-bloom.webp')
         : kind === 'silkeater' ? null : kind === 'spawn' || kind === 'bellhome' || kind === 'wall' ? null : `assets/icons/extras/${kind}.webp`;
       const spawn = kind === 'spawn' ? BOOK_KEY.get(name && name.key) : null;
-      add({ key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i),
+      add({ key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i), chk: JSON.stringify(check),
         name: name ? pick(name) : kind === 'eva' ? evaName(more.reward) : ONE[kind] ? t(ONE[kind]) : LAYER.get(layer).name(), eva: kind === 'eva' ? more : null,
         note: kind === 'masked' ? t('mapHiddenNote', { n: num(check[0] === 'all' ? check.length - 1 : 1) }) : more.shop ? t('mapMapShakra', { npc: pick(HW.NPCS[more.shop]), price: num(more.price) }) : more.found ? t('mapMapFound') : '',
         draw: (s, ti, k, c) => (kind === 'silkeater' ? pin('silkeater', 'pin_grub_location', s, ti, k, c)
@@ -492,10 +534,12 @@
       add({ key: 'cocoon', layer: 'cocoon', scene: own.cocoon, at: at || undefined, got: false, name: t('mapLayer_cocoon'), sub: t('mapCocoonNote'),
         draw: (s, ti, k, c) => pin('cocoon', 'shade_pin', s, ti, k, c) });
     }
-    // A boss's entry is its boss mark's already (its "See in the Journal"): not again.
+    /* A boss's entry is its boss mark's already (its "See in the Journal"): not again; nor an entry
+       whose cores have a switch of their own (the Void Mass). The layer still counts the whole
+       Journal (journalTally). */
     const bossEntries = new Set(SP.BOSSES.map(([foe]) => (bookOfFoe(foe) || {}).id).filter(Boolean));
     if (own) for (const e of J.BOOK) {
-      if ((e.steel && !steelGame) || bossEntries.has(e.id)) continue;
+      if ((e.steel && !steelGame) || bossEntries.has(e.id) || OWN_SWITCH.has(e.key)) continue;
       const rooms = SS.journalRooms[e.key];
       const scene = rooms && (rooms.map(([sc]) => sc).find((sc) => R.roomOf(sc)));
       add({ key: 'journal:' + e.id, layer: 'journal', scene, got: complete(own, e), name: pick(e.name), entry: e.id,
@@ -539,6 +583,8 @@
     return cache;
   }
   App.mapHas = (key) => all().list.some((m) => m.key === key);
+  // The mark that stands for a key folded into another's card (else the key itself).
+  App.mapKeyOf = (key) => (all(), folded.get(key) || key);
 
   /* Which marks show: the layer on, and in a save (or Free mode's marks) not had yet. The pins
      show open or not; the Journal's and the save's own layers need a save. (Two filters were here
@@ -669,11 +715,14 @@
     for (const m of list) {
       const inFocus = !!focusSet && focusSet.keys.includes(m.key);
       if (!inFocus && !passes(m, g, own)) continue;
-      const c = count[m.layer] || (count[m.layer] = { all: 0, had: 0, shown: 0 });
-      c.all++;
+      const c = count[m.layer] || (count[m.layer] = { all: 0, had: 0, shown: 0, seen: new Set() });
+      // Counted by thing: marks that share one save check (two places for one map, a wish's Silver
+      // Bells, the Bell Beast's spots) count once (design/03-redesign.md, step 6, the switches' contents).
+      const id = m.chk || m.key, first = !c.seen.has(id);
+      if (first) { c.seen.add(id); c.all++; }
       // What's had: counted, and on the map only with "Show Completed" (prefs.mapHad), dimmed and ticked.
       const had = !!(g && m.got);
-      if (had) { c.had++; if (!prefs.mapHad) continue; } else c.shown++;
+      if (had) { if (first) c.had++; if (!prefs.mapHad) continue; } else if (first) c.shown++;
       const p = m.fix || pointOf(m);
       if (!p) continue;
       placed.set(m.key, { x: p.x, y: p.y, lift: m.rests ? REST : 0 });
@@ -856,6 +905,8 @@
     const lay = layout(list, g, own, on);
     placed = lay.placed;
     const { count, items, fine } = lay;
+    // The Journal switch counts as the Journal does, whatever of it the layer draws (design/64, 1 A).
+    if (own) count.journal = journalTally(own);
     const marks = items.map(({ m, p, had }) => pinSvg(m, p, markTitle(m), (FINE.has(m.layer) ? ' is-fine' : '') + (had ? ' is-had' : ''))).join('');
     // From afar, the caches and walls of a room one mark per layer: its picture, how many in a corner.
     const clusters = [...fine.values()].map((f) => `<g class="mp-mk mp-cluster is-${f.m.layer}" style="--px:${n2(f.x)}px;--py:${n2(f.y)}px" aria-hidden="true"><circle r="0.5"/><circle class="mp-plate" r="0.47"/>${artOf(f.m)}`
@@ -1302,6 +1353,8 @@
       const fight = !App.VIEWS.includes('fight') ? '' : xs.length ? xs.map((x) => btn('mapFight', x.id, xs.length > 1 ? App.gauntletName(x.id) : t('mapFight'))).join('')
         : btn('mapFoe', m.foe, t('mapFight'));
       acts += fight + (m.entry ? btn('mapJournal', m.entry, t('mapToJournal')) : '');
+      // The wish whose place is this fight (Fatal Resolve, A Vassal Lost).
+      if (m.quests) note = note ? note + (/[.!?]$/.test(note) ? ' ' : '. ') + wishesNote(m.quests) : wishesNote(m.quests);
     } else if (kind === 'bell') {
       if (g) acts = state(t(m.got ? 'mapRung' : 'mapNotRung'));
     } else if (kind === 'npc') {

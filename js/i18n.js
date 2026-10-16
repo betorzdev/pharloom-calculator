@@ -300,6 +300,7 @@
     mapToolsOut:    { es: 'Fuera del 100 %', en: 'Outside the 100%' },
     mapToolUpgrade: { es: 'Mejora de {tool}: no suma aparte al 100 %', en: 'Upgrades {tool}: it doesn\'t add to the 100% on its own' },
     mapArtOut:      { es: 'No cuenta para el 100 %', en: 'It doesn\'t count for the 100%' },
+    mapArtsIn:      { es: 'Del 100 %', en: 'Of the 100%' },
     mapToolLent:    { es: 'Te la presta un deseo y te la quita al cumplirlo: no cuenta para el 100 %', en: 'A wish lends it and takes it back once done: it doesn\'t count for the 100%' },
     mapGroupShow:   { es: 'Mostrar todo el grupo', en: 'Show the whole group' },
     mapGroupHide:   { es: 'Esconder todo el grupo', en: 'Hide the whole group' },
