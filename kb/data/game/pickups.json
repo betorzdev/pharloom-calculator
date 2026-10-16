@@ -197,7 +197,17 @@
     "Battle Scene Act3",
     111.21,
     12.74,
-    "silkFarmAbyssCoresCleared"
+    "silkFarmAbyssCoresCleared",
+    [
+     [
+      99.64,
+      12.74
+     ],
+     [
+      111.21,
+      9.25
+     ]
+    ]
    ]
   ],
   "dust_chef": [
