@@ -406,6 +406,11 @@ below), the area names on or off, and «Show Completed» (the game's own words f
 Wishes pane), off at first: on, what you already have comes back to the map too, each mark
 dimmed with a green tick on its corner, whole again under the pointer or once picked, its card
 saying how it was had; the search finds it too. In Free mode it brings back what you've marked.
+What the game has taken away from your game goes with it, dimmed the same with a grey cross where
+the tick goes, its card saying «No longer there» and why: what the game swaps out when Act 3
+begins (rosary strings, shard caches, walls and doors of a room's «before» state) in an Act 3
+game that didn't get it, and the other arena of the Slab's pair once you've fought one. What only
+one mode has (a silkeater outside Steel Soul, a wall only in it) isn't on the other mode's map.
 Then eleven groups, each a row that folds (its caret; all open
 at first, only the first two on a phone, then as you left them) whose title is the switch for the
 whole group, in ink when all of it is on, dimmer when part, muted when none. Inside, each layer's
@@ -466,9 +471,14 @@ leaves those off.
   from one side, or pulled open with Clawline), the doors a key opens (with the key each takes;
   the Slab's locks and cells among them), shortcuts (the one-way walls, planks, ladders and floors
   that break from one side) and the two silk walls Silkspear cuts in Mosshome. The doors the
-  Needolin opens aren't there: they open each time and the save keeps nothing of them. Some
+  Needolin opens aren't there: they open each time and the save keeps nothing of them, and neither
+  are the gates a battle shuts and opens again, or what the game never switches on. Some
   levers, gates and walls the save keeps by a flag of its own rather than per room (the Bellhome's
-  door among them): they're there too. **Keys**: the Simple Keys, the Slab's three and the
+  door among them): they're there too. A way is open by whatever your save keeps of it: its own
+  bool, the flag its lever or plate sets instead, the other lock of the same cell door (only the
+  side you use saves), or the flag that takes it away (Mosshome's two silk walls go once the Bell
+  Beast is beaten, whichever you cut, and the walls of a shortcut that opens from either end go
+  with it). **Keys**: the Simple Keys, the Slab's three and the
   Whiteward's two, where each lies, and the two an NPC gives: the Diving Bell Key (Ballow, in the
   Deep Docks) and the Bellhome Key (Pavo, in Bellhart). And the **Lifts**, gone once your game has
   called each.
@@ -508,7 +518,9 @@ leaves those off.
   thing picked up, held or its wish granted. Off at first.
 - **Secrets**, off at first: the rosary and shell shard caches, the breakable walls (the
   one-way ones are among the shortcuts), the loose rosaries and the **Hidden corners** (what
-  covers part of a room until you walk in, one mark per room, gone once all of it is uncovered), so many
+  covers part of a room until you walk in, one mark per room, gone once all of it is uncovered: a
+  cover inside a breakable wall counts once the wall is broken, one the game takes away once it's
+  gone, and one only the other mode has isn't asked for), so many
   that they're drawn one by one only close up; from afar, one mark per room and kind, with how
   many in its corner. Marks that would cover each other step a little apart, more the closer you zoom.
   And the **Silk cocoons**, the small ones beside the Silkeaters, which give a little silk when struck.

@@ -42,7 +42,7 @@ the work up reads it first, then the step it's on.
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct; the summary, 16 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html`, `89-your-game-summary-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html` |
-| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html` |
+| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct; every room of an entry 16 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
@@ -1529,6 +1529,81 @@ switch (`OWN_SWITCH`, the Void Mass) isn't drawn; the groups as chosen; `layout(
 `App.mapKeyOf` sending Progress's task pins there. `tools/gen-spots.js`: an extra of a kind with the
 same check in the same scene goes in once, and the Heart Memento has no mark
 (`test/spots.test.js`).
+
+### The save checks (16 October 2026)
+
+Albert: «haz una revision profunda de todos los interruptores del mapa», part 2: does each mark's
+had or done follow the player's real save? Every mark's check was run over the 77 files of the
+author's saves (four games: 100%, Steel Soul 100%, 15% and 10%), both through `game()` and through
+a slot (`toSnapshot` → `gameOf`, what the page reads), and every mark's object was read in the
+game's scenes: what switches it on or off, by which flag, in which Act or mode, and what writes
+for it instead of its own bool (`tools/extract-gating.py`). The findings and their options went to Albert with
+`86-map-save-checks-variants.html` for the one that changes a look (the live Map with the Steel
+Soul save, its marks in the site's own markup over the ground the site drew; kept out of the
+repo). **Decision: A in all twelve** (Albert, 16 October 2026):
+
+1. **The Silver Bells**: a slot kept one of the seven drop spots of a room (they share kind, room
+   and check, and `TASK_AT` took the last): now a task's key stands for all its marks.
+2. **A way is open by what the save keeps**: its own bool, or the flags its own components set
+   (a Lever's `playerDataBool` never writes the lever's bool: Ant_17, Dust_05, Room_CrowCourt; a
+   pressure plate's, a key door's receptacle, a Slab lock's FSM), the other lock of a cell door
+   (only the side used saves), the flag that takes it away (Mosshome's silk vines with
+   defeatedBellBeast: a game cuts one, the other or neither), and the flags its scripts set
+   (PD_WAYS: the Docks' back entrance seen from three rooms): 48 ways, of which 13 that no save
+   ever had now turn, and 19 pending in the 100% save (17 in the Steel Soul one). A key door isn't
+   opened by a flag that only takes it away (Bone_12's second cell, left for a later look).
+3. **What the game takes away**: what it swaps out when Act 3 begins (35 extras and 5 gauntlets
+   under the rooms' «Normal World») and the other arena of the Slab's pair go with what's done, **1 A** hidden
+   with it and, with «Show Completed», dimmed with a cross in `--muted` where the tick goes; **2
+   A** its card says «Ya no está» / "No longer there" and why (the site's words: the game has none).
+   B was faint at 0.4 always, C the tick, D as before.
+4. **One mode's things** (Coral_37's silkeater and cocoons outside Steel Soul, Dust_11's wall in
+   it) aren't on the other mode's map.
+5. **Hidden corners**: a cover inside a breakable is uncovered by the breakable's bool too, one a
+   flag takes away by that flag; one never switched on, the demo's or only one mode's isn't asked
+   for (61 of 221 rooms could never complete).
+6. **The Act 3 Moss Mother** keeps no bool of her own: beaten once the Journal's Mossbone Mother
+   kills pass the Chapel's and Weavenest Atla's (`['kills', name, n]`).
+7. **Last Dive's pin**: its quest is never completed, even after the ending; done as its wish is,
+   by Lost Lace in the Journal.
+8. **Sinner's Road's first gauntlet**: by CollectedDustCageKey, which takes its key's pickup away.
+9. **Key doors**: every one a mark with a check (Ward_01's White Key machine writes the lift's
+   bool), the demo's none.
+10. **People**: the Second Sentinel met once woken or fought; Garmond gone once Lost Garmond is beaten.
+11. **Never had**: what the scenes never switch on (switched off, with nothing that is on
+    pointing at or naming it: Clover_04b's two gates are worked by a plate nothing switches on)
+    and the demo's aren't marks: 24 extras and 11 masks, none ever set in the 77 files.
+12. The rest never done in these saves is really optional and stays (the courier deliveries,
+    Advanced Alchemy, Whispering Vaults' second arena, the spars, Void Masses past Dark Hearts…).
+
+Built: `tools/extract-gating.py` reads the scenes into `kb/data/game/gating.json` (each saved
+item's flags, removedBy, partner, world, mode, demo, never, inside, battle, and the key doors'
+receptacles); `tools/gen-spots.js` and `tools/gen-gauntlets.js` turn it into checks, `gone` and
+`mode`; `tools/gen-people.js` the two rules; `js/savefile.js` the task keys and `kills`;
+`js/app-map.js` `m.lost` (`closed()`), the cross (`LOST_CROSS`, `.mp-cross`), the card, the
+mode filter, and no more marks for the doors the save didn't keep (`test/save-checks.test.js`).
+Left for later: Slab_16's «Jail Gate Door - Persistent» filed as a lock, Library_02's Heavy Rosary
+Necklace as an arena's reward, Bone_12's second cell door, Coral_41's chained crust walls.
+
+Then two more of Albert's, **A** both (16 October 2026):
+
+- **A slot kept before this change comes out right, silently** (no notice: migrations run
+  silently). A slot whose save the browser keeps (`pharloom-live`'s `games`: every import since
+  14 October, and every live-linked slot at each sync) is read again from it at every start by
+  `refreshSlots`, so it's recomputed by today's checks. One without (imported before, or with no
+  IndexedDB) holds only the old per-mark results: `gameOf` finds each old key by the check it
+  had (`{ was }` in `js/spots.js`, 69 extras) and adds what the slot itself proves, read three
+  ways (holds, doesn't, can't say): the bool or flag of a mark or boss it had, its wishes, its
+  Journal's kills (the other Slab lock, Mosshome's vines once the Bell Beast is beaten, Last Dive
+  by Lost Lace, Whiteward's arena by Save Sherma). Over 77 slots made with the old code: nothing
+  had is lost, nothing is had that the save hasn't; tasks, bosses and gauntlets equal the save in
+  all; the extras only the save can tell (a lever's flag, a plate, a wall seen from another room:
+  18 in each 100% game) wait for the next import or live sync. Free mode marks only pieces by hand,
+  and is unchanged.
+- **The extractors in step**: each writes the game's version it read (`patch`), and
+  `npm run data` stops first (`tools/gating.js`) while `gating.json` and `pickups.json` differ or
+  one says none (`kb/README.md`: both run after a patch). `npm run drive -- --slot <file>` seeds a
+  slot's keys as an older site kept them, to see today's code read it.
 
 ## Step 7 · Journal
 

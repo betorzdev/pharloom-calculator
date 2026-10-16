@@ -425,6 +425,10 @@
     mapWishGranted: { es: 'Deseo concedido', en: 'Wish Granted' },   // WISH_GRANTED
     mapDone:        { es: 'Completado', en: 'Completed' },   // COMPLETED
     mapNotDone:     { es: 'Sin cumplir', en: 'Not done yet' },
+    // A mark the game has taken away (design/86, 2 A): the site's words, the game has none for it.
+    mapLost:        { es: 'Ya no está', en: 'No longer there' },
+    mapLostAct3:    { es: 'El juego lo retira al empezar el Acto 3.', en: 'The game takes it away when Act 3 begins.' },
+    mapLostArena:   { es: 'Solo se lucha en una de las dos arenas, y luchaste en {name}.', en: 'Only one of the two arenas is fought, and you fought {name}.' },
     mapToWall:      { es: 'Ver el muro de deseos', en: 'See the Wishwall' },
     mapToGiver:     { es: 'Ver quién lo pide', en: 'See who asks for it' },
 

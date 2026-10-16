@@ -68,21 +68,28 @@ const PORTRAIT = { GARMOND: 'garmond-and-zaza', SETH_NPC: 'shrine-guardian-seth'
 // One person under several keys: the first is theirs.
 const SAME = { SETH_NPC: ['SETH_NPC_BC'], LITTLE_PILGRIM_N: ['LITTLE_PILGRIM'], DUST_TRADERS_1: ['DUST_TRADERS_2'] };
 
-/* HAND: per person (their key), what the save says. The rest are in the list with no state. */
+/* HAND: per person (their key), what the save says. The rest are in the list with no state.
+   Checked over the 77 files of the author's saves (16-Oct-2026, design/03-redesign.md, step 6, the
+   save checks, 10 A): the Second Sentinel's resting talk (songChevalierRestingMet) is set in none,
+   though both finished games fought him (encounteredSongChevalierBoss; songChevalierEncounters 1
+   and 2), both read by his scripts, so those say he's met too. Garmond is gone once Lost Garmond is
+   beaten, when his spots kept showing: goneBoss names the boss a person becomes, whose own save
+   check (js/spots.js BOSSES, a flag: garmondBlackThreadDefeated) says it, though their own
+   scripts don't read it. */
 const HAND = {
   BLUE_SCIENTIST: { met: ['BlueScientistMet', 'BlueScientistInfectedMet'], gone: ['BlueScientistDead'] },
   CARETAKER: { met: ['metCaretaker'] },
   CHURCHKEEPER: { met: ['churchKeeperIntro'], at: [['ChurchKeeperLeftBasement', false, 'tut_03']] },
   BELLHART_GREETER: { met: ['BelltownGreeterConvo'] },
   SHERMA: { met: ['metSherma'] },
-  GARMOND: { met: ['metGarmond'], unsure: 'always' },
+  GARMOND: { met: ['metGarmond'], goneBoss: 'lost-garmond', unsure: 'always' },
   SEAMSTRESS: { met: ['MetSeamstress'] },
   STEEL_SENTINEL: { met: ['SteelSentinelMet'] },
   JUDGE_GATE_PILGRIM: { met: ['metGatePilgrim'] },
   GRUBFARMER: { met: ['metGrubFarmer'] },
   GRUBFARMER_MIMIC: { met: ['MetGrubFarmerMimic'] },
   HUNTER_FAN: { met: ['MetHalfwayHunterFan'], at: [['nuuIsHome', true, 'halfway_01']] },
-  SONG_KNIGHT: { met: ['songChevalierRestingMet'], at: [['songChevalierActiveInHang_02', true, 'hang_02'],
+  SONG_KNIGHT: { met: ['songChevalierRestingMet', 'encounteredSongChevalierBoss', 'songChevalierEncounters'], at: [['songChevalierActiveInHang_02', true, 'hang_02'],
     ['songChevalierActiveInSong_07', true, 'song_07'], ['songChevalierActiveInSong_24', true, 'song_24']] },
   HH_PATRON_LEFT: { gone: ['HalfwayPatronLeftGone'] },
   HH_PATRON_RIGHT: { gone: ['HalfwayPatronRightGone'] },
@@ -164,7 +171,13 @@ const idOf = (key) => key.toLowerCase().replace(/_/g, '-');
     if (near.length && !(near[1] && near[1][1] - near[0][1] < 0.5) && !followed(near[0][0])) absorb(near[0][0], x[3], 'task:' + i);
   });
   const PEOPLE = [], VARS = new Set();
-  const used = (h) => { for (const f of [...(h.met || []), ...(h.gone || []), ...(h.at || []).map((a) => a[0])]) VARS.add(f); };
+  // Gone also once the boss they become is beaten (HAND goneBoss): that boss's own check, a flag.
+  const bossFlag = (foe) => {
+    const b = SP.BOSSES.find((x) => x[0] === foe) || fail(`goneBoss: no boss ${foe} in js/spots.js`);
+    return b[2][0] === 'flag' ? b[2][1] : fail(`goneBoss: ${foe}'s check isn't a flag`);
+  };
+  const goneOf = (h) => [...(h.gone || []), ...(h.goneBoss ? [bossFlag(h.goneBoss)] : [])];
+  const used = (h) => { for (const f of [...(h.met || []), ...goneOf(h), ...(h.at || []).map((a) => a[0])]) VARS.add(f); };
   for (const key of keys) {
     if (ELSEWHERE[key]) continue;
     const spots = place(key).filter((sp) => !(absorbed.get(key) || new Set()).has(roomKey(sp[0])));
@@ -174,7 +187,7 @@ const idOf = (key) => key.toLowerCase().replace(/_/g, '-');
     used(h);
     const id = idOf(key);
     const art = fs.existsSync(path.join(FIGS, id + '.webp')) ? 'people/' + id : PORTRAIT[key] ? 'journal/' + PORTRAIT[key] : null;
-    PEOPLE.push({ id, name: titleOf(key), art, spots, met: h.met, gone: h.gone, at: h.at, unsure: h.unsure });
+    PEOPLE.push({ id, name: titleOf(key), art, spots, met: h.met, gone: goneOf(h).length ? goneOf(h) : undefined, at: h.at, unsure: h.unsure });
   }
   const TRADE = [];
   for (const [id, t] of Object.entries(TRADERS)) {

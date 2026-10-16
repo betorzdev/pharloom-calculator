@@ -53,7 +53,6 @@ function places() {
   for (const x of GA.GAUNTLETS) add('gaunt:' + x.id, x.scene);
   for (const [foe, scene] of SP.BOSSES) add('boss:' + foe, scene);
   for (const [field, scene] of SP.BELLS) add('bell:' + field, scene);
-  for (const [k, scenes] of Object.entries(QU.LOCKS)) for (const scene of scenes) add('lock:' + k + ':' + scene, scene);
   for (const [v, scenes] of Object.entries(SP.VENDORS)) scenes.forEach((scene, i) => add((v === 'shakra' ? 'shakra:' : 'shop:' + v + ':') + i, scene));
   for (const x of PE.TRADE) x.spots.forEach(([scene], i) => add('shop:' + x.id + ':' + i, scene));
   const isWish = (quest) => CO.WISHES.some((w) => w[2][0] === 'quest' && w[2][1] === quest);

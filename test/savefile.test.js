@@ -91,12 +91,15 @@ test('the gauntlets cleared: the arena\'s flag in sceneData or playerData, or wh
   assert.deepEqual(g.gauntlets.sort(), ['choral-chambers', 'the-marrow-1', 'the-slab-3', 'whiteward-1']);
   const caged = F.game(pd, bools(['Slab_03', 'door_slabCaged', true]));
   assert.ok(caged.gauntlets.includes('the-slab-2') && !caged.gauntlets.includes('the-slab-3'));
-  // Into a slot by id and back; an id the list no longer has is dropped, an old slot has none.
+  // Into a slot by id and back; an id the list no longer has is dropped, an old slot has none but
+  // what the slot itself says (its wishes complete: Save Sherma clears Whiteward's arena).
   const snap = F.toSnapshot(pd, null);
   assert.deepEqual(F.gameOf(snap).gauntlets, F.game(pd, null).gauntlets);
   const old = JSON.parse(snap['pharloom.progress']);
-  assert.deepEqual(F.gameOf({ ...snap, 'pharloom.progress': JSON.stringify({ ...old, gauntlets: ['gone', 'groal'] }) }).gauntlets, ['groal']);
+  assert.deepEqual(F.gameOf({ ...snap, 'pharloom.progress': JSON.stringify({ ...old, gauntlets: ['gone', 'groal'] }) }).gauntlets, ['groal', 'whiteward-1']);
   delete old.gauntlets;
+  assert.deepEqual(F.gameOf({ ...snap, 'pharloom.progress': JSON.stringify(old) }).gauntlets, ['whiteward-1']);
+  delete old.quests;
   assert.deepEqual(F.gameOf({ ...snap, 'pharloom.progress': JSON.stringify(old) }).gauntlets, []);
 });
 

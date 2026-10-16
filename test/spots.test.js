@@ -28,7 +28,7 @@ test('the extras, bosses, people and Bellshrines are all on the map, with a chec
   const kinds = new Set(['bone-scroll', 'weaver-effigy', 'choral-commandment', 'rune-harp', 'psalm-cylinder', 'arcane-egg', 'mossberry', 'silkeater',
     'memento', 'bellhome', 'spawn', 'rosary-cache', 'shard-cache', 'wall', 'lever', 'plate', 'gate', 'lock', 'shortcut', 'silkwall', 'map', 'rosaries', 'shards',
     'key', 'keyitem', 'bead', 'silk-cocoon', 'lift', 'masked', 'eva']);
-  const checks = new Set(['bool', 'flag', 'min', 'quest', 'visited', 'journal', 'relic', 'memento', 'int', 'geo', 'any', 'all', 'crest']);
+  const checks = new Set(['bool', 'flag', 'min', 'quest', 'visited', 'journal', 'relic', 'memento', 'int', 'geo', 'any', 'all', 'crest', 'accepted']);
   for (const [kind, , check, scene] of SP.EXTRAS) {
     assert.ok(kinds.has(kind), kind);
     assert.ok(checks.has(check[0]), check[0]);
@@ -89,15 +89,19 @@ test('what opens a way comes after the completionist\'s extras, each a bool of i
   const first = SP.EXTRAS.findIndex((x) => DOORS.has(x[0])), after = SP.EXTRAS.findIndex((x, i) => i > first && !DOORS.has(x[0]));
   assert.ok(first > 0 && after > first && SP.EXTRAS.slice(first, after).every((x) => DOORS.has(x[0])), 'appended, never among the others (js/map-fixes.js keys by place)');
   const LATER = new Set(['map', 'rosaries', 'shards', 'key', 'keyitem', 'bead', 'silk-cocoon', 'lift', 'masked', 'eva']);
-  assert.ok(SP.EXTRAS.slice(after).every((x) => LATER.has(x[0]) || (DOORS.has(x[0]) && x[2][0] === 'flag')), 'only the maps and what came after them');
+  // After them, only the maps and what came after them, the ways kept in playerData (a flag each) and,
+  // last, the doors a key opens no mark had (kb/data/game/gating.json receptacles: Ward_01's).
+  const last = SP.EXTRAS.length - SP.EXTRAS.slice().reverse().findIndex((x) => !(x[0] === 'lock'));
+  assert.ok(SP.EXTRAS.slice(after, last).every((x) => LATER.has(x[0]) || (DOORS.has(x[0]) && x[2][0] === 'flag')), 'only the maps and what came after them');
   // What opens a way that the save keeps in playerData: a flag each, once.
-  const pd = SP.EXTRAS.slice(after).filter((x) => DOORS.has(x[0]));
+  const pd = SP.EXTRAS.slice(after, last).filter((x) => DOORS.has(x[0]));
   assert.ok(pd.length > 10, 'the playerData ways');
   assert.equal(new Set(pd.map((x) => x[2][1])).size, pd.length);
   const seen = new Set();
   for (const [kind, , check] of SP.EXTRAS.slice(first, after)) {
-    assert.equal(check[0], 'bool', kind);
-    const k = JSON.stringify(check).toLowerCase();
+    // Its own bool, or that bool and what the save keeps instead (test/save-checks.test.js, 2 A).
+    assert.ok(check[0] === 'bool' || (check[0] === 'any' && check[1][0] === 'bool'), kind);
+    const k = JSON.stringify(check[0] === 'bool' ? check : check[1]).toLowerCase();
     assert.ok(!seen.has(k), `${kind} ${JSON.stringify(check)} twice`);
     seen.add(k);
   }
@@ -156,7 +160,9 @@ test('the keys, key items, loose rosaries, cocoons, lifts, hidden corners and Ev
   // A room's hidden corners are one mark, had once every one of them is uncovered.
   const masked = of('masked');
   assert.equal(new Set(masked.map((x) => x[3])).size, masked.length);
-  for (const x of masked) assert.ok(x[2][0] === 'bool' || (x[2][0] === 'all' && x[2].length > 2));
+  // Each mask by its bool, or that and the way it sits in or the flag that takes it away (5 A).
+  const leaf = (c) => c[0] === 'bool' || (c[0] === 'any' && c[1][0] === 'bool');
+  for (const x of masked) assert.ok(leaf(x[2]) || (x[2][0] === 'all' && x[2].length > 2 && x[2].slice(1).every(leaf)), JSON.stringify(x[2]));
   // Eva's four, in her room, by the slots the wiki gives; the save's slot count, every Crest but the Hunter.
   const eva = of('eva');
   assert.deepEqual(eva.map((x) => x[5].slots), [0, 12, 20, 27]);
@@ -235,7 +241,7 @@ test('each thing with a point of its own sits in (or at the edge of) its room\'s
 test('the wishes and the main objectives (TASKS) sit on the map, each with its picture and a check the save reads', () => {
   const fs = require('fs');
   const path = require('path');
-  const checks = new Set(['bool', 'flag', 'quest', 'held', 'steel', 'any']);
+  const checks = new Set(['bool', 'flag', 'quest', 'held', 'steel', 'any', 'journal']);   // journal: Last Dive's, as its wish (save checks, 7 A)
   const walk = (c) => { assert.ok(checks.has(c[0]), c[0]); if (c[0] === 'any') c.slice(1).forEach(walk); };
   const n = { qitem: 0, wspot: 0, goal: 0 };
   for (const [kind, quest, check, scene, art] of SP.TASKS) {

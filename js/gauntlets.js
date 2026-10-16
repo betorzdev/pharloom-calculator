@@ -9,7 +9,9 @@
      waves     [[enemy id (js/enemies.js FOES), how many], …] per wave, in order
      done      how a save says it's cleared, as js/collectibles.js's conditions (js/savefile.js)
      scene     the game's scene it's fought in (js/rooms.js places it on the map)
-     act       the first Act it can be fought in */
+     act       the first Act it can be fought in
+     gone      when it can't be fought any more: { gauntlet: the other of its pair, once that one's
+               done } or 'act3' (the game swaps its arena out when Act 3 begins); none: always there */
 (() => {
   'use strict';
   const SS = globalThis.SS || (globalThis.SS = {});
@@ -63,6 +65,7 @@
         [['clawmaiden', 1]],
       ],
       done: ['flag', 'song_04_battleCompleted'],
+      gone: 'act3',
       scene: 'Song_04',
       act: 2,
     },
@@ -189,6 +192,7 @@
       area: 'GREYMOOR',
       waves: [[['dreg-catcher', 2]], [['thread-raker', 1]]],
       done: ['flag', 'greymoor_04_battleCompleted'],
+      gone: 'act3',
       scene: 'Greymoor_04',
       act: 1,
     },
@@ -330,6 +334,7 @@
         [['spear-skarr', 1], ['skarr-stalker', 1]],
       ],
       done: ['flag', 'ant04_battleCompleted'],
+      gone: 'act3',
       scene: 'Ant_04_mid',
       act: 1,
     },
@@ -344,6 +349,7 @@
         [['skarr-scout', 1], ['skarrwing', 1]],
       ],
       done: ['bool', 'Ant_05b', 'Battle Scene'],
+      gone: 'act3',
       scene: 'Ant_05b',
       act: 1,
     },
@@ -501,6 +507,7 @@
         [['phacia', 1], ['splinter', 1], ['splinterhorn', 1]],
       ],
       done: ['bool', 'Shellwood_01b', 'Battle Scene'],
+      gone: 'act3',
       scene: 'Shellwood_01b',
       act: 1,
     },
@@ -521,7 +528,7 @@
       area: 'DUSTPENS',
       reward: { es: 'Llave sencilla', en: 'Simple Key', key: 'INV_NAME_TOKEN_FAITH' },
       waves: [[['roachkeeper', 1]]],
-      done: ['bool', 'Dust_06', 'Collectable Item SimpleKey'],
+      done: ['any', ['bool', 'Dust_06', 'Collectable Item SimpleKey'], ['flag', 'CollectedDustCageKey']],
       scene: 'Dust_06',
       act: 1,
     },
@@ -554,6 +561,7 @@
         [['wardenfly', 1], ['guardfly', 1]],
       ],
       done: ['all', ['flag', 'slab_cloak_battle_completed'], ['bool', 'Slab_03', 'door_slabCaged']],
+      gone: { gauntlet: 'the-slab-3' },
       scene: 'Slab_16',
       act: 1,
     },
@@ -567,6 +575,7 @@
         ['flag', 'slab_cloak_battle_completed'],
         ['not', ['bool', 'Slab_03', 'door_slabCaged']],
       ],
+      gone: { gauntlet: 'the-slab-2' },
       scene: 'Slab_16',
       act: 2,
     },

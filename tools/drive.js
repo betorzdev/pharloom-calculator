@@ -12,6 +12,9 @@
      --save <file>   a Silksong save (user#.dat, restoreData#.dat…); with none, Free mode, which
                      is how the site starts. The saves stay where they are, never copied to the repo.
      --prev <file>   an older save of the same game, so "Since last time" has something to show
+     --slot <file>   a slot as an older version of the site kept it: a JSON object of its keys
+                     (pharloom.owned, pharloom.progress…), seeded as is in slot 1 with no save
+                     kept behind it, to see how today's code reads it (instead of --save)
      --view <list>   home, game, progress, map, journal, tools, fight, saves (default home)
      --width <list>  viewport widths in px; under 700 emulates a phone (default 1440,390)
      --lang <list>   en, es (default en,es)
@@ -52,7 +55,7 @@ for (let i = 0; i < args.length; i++) {
   const m = /^--([a-z]+)$/.exec(args[i]);
   if (!m) usage('unknown argument: ' + args[i]);
   if (m[1] === 'verbose') { opt.verbose = true; continue; }
-  if (!['save', 'prev', 'view', 'width', 'lang', 'out', 'port', 'wait', 'eval'].includes(m[1])) usage('unknown option: ' + args[i]);
+  if (!['save', 'prev', 'slot', 'view', 'width', 'lang', 'out', 'port', 'wait', 'eval'].includes(m[1])) usage('unknown option: ' + args[i]);
   if (i + 1 >= args.length) usage('missing value for ' + args[i]);
   opt[m[1]] = args[++i];
 }
@@ -82,6 +85,14 @@ function seedFor() {
     setItem: (k, v) => { mem[k] = String(v); },
     removeItem: (k) => { delete mem[k]; },
   };
+  if (opt.slot) {
+    if (opt.save || opt.prev) usage('--slot takes the place of --save and --prev');
+    let snap = null;
+    try { snap = JSON.parse(fs.readFileSync(opt.slot, 'utf8')); } catch (e) { usage('not a slot\'s keys as JSON: ' + opt.slot); }
+    S.importTo(store, 1, snap);
+    S.select(store, 1);
+    return mem;
+  }
   if (!opt.save) {
     if (opt.prev) usage('--prev needs --save');
     return mem;
@@ -162,9 +173,9 @@ async function main() {
   if (!ver) { console.error(`Chrome did not answer on port ${port} (is it taken?)`); cleanup(); process.exit(1); }
   const c = await connect(ver.webSocketDebuggerUrl);
 
-  const tag = opt.save ? path.basename(opt.save).replace(/\.dat$/, '') : 'free';
+  const tag = opt.slot ? 'slot-' + path.basename(opt.slot).replace(/\.json$/, '') : opt.save ? path.basename(opt.save).replace(/\.dat$/, '') : 'free';
   const seedJs = `try { localStorage.clear(); const s = ${JSON.stringify(seed)}; for (const k in s) localStorage.setItem(k, s[k]); } catch (e) {}`;
-  console.log(`# ${opt.save ? 'save ' + opt.save + (opt.prev ? ' (prev ' + opt.prev + ')' : '') : 'Free mode'}, screenshots in ${out}`);
+  console.log(`# ${opt.slot ? 'slot ' + opt.slot : opt.save ? 'save ' + opt.save + (opt.prev ? ' (prev ' + opt.prev + ')' : '') : 'Free mode'}, screenshots in ${out}`);
   console.log('view\twidth\tlang\terrors\tscreenshot');
   let failed = 0;
 
