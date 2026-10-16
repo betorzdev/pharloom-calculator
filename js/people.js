@@ -344,7 +344,6 @@
         ['bone_15', 1085.4, 1413.1],
         ['coral_11', 475.4, 1022.5],
         ['coral_29'],
-        ['halfway_01'],
         ['shellwood_18', 953.8, 1101.7],
       ],
       met: ['MetHalfwayHunterFan'],

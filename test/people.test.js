@@ -26,7 +26,9 @@ test('every person and trader has a room on the map and a picture', () => {
       const file = path.join(__dirname, '..', 'assets', x.art.startsWith('journal/') ? 'icons' : 'map', x.art + '.webp');
       assert.ok(fs.existsSync(file), `${x.id}: ${file} is missing`);
     }
-    for (const [, , scene] of x.at || []) assert.ok(x.spots.some((s) => s[0] === scene), `${x.id}: ${scene} isn't a spot of theirs`);
+    // A room where another mark stands for them (who makes a wish there: Nuu at home) isn't a spot.
+    const standsIn = (scene) => Object.entries(require('../js/spots.js').GIVER).some(([id, g]) => g && id.split(':')[0].toLowerCase() === scene && x.name.key.startsWith(g[0] + '_'));
+    for (const [, , scene] of x.at || []) assert.ok(x.spots.some((s) => s[0] === scene) || standsIn(scene), `${x.id}: ${scene} isn't a spot of theirs`);
     for (const f of [...(x.met || []), ...(x.gone || []), ...(x.at || []).map((a) => a[0])]) assert.ok(PE.VARS.includes(f), `${x.id}: ${f} isn't in VARS`);
   }
 });

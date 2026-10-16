@@ -406,7 +406,7 @@
     while (q && QU.CHAIN[q] && QU.CHAIN[q].prev && !done.has(QU.CHAIN[q].prev)) q = QU.CHAIN[q].prev;
     const f = (q && QU.FROM[q]) || QU.FROM[quest] || {};
     const scene = f.board || (f.npc || [])[0] || null;
-    return { scene, mark: scene ? (f.board ? 'board:' : 'giver:') + scene.toLowerCase() : null };
+    return { scene, mark: scene ? (f.board ? 'board:' + scene.toLowerCase() : App.giverMark ? App.giverMark(q, scene) : 'giver:' + scene.toLowerCase()) : null };
   }
   const wishScene = (quest, done) => wishFrom(quest, done).scene;
   // The game's line under a wish's title (js/quests.js CHAIN loc: who asks for it, or where); a

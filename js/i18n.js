@@ -328,8 +328,8 @@
     mapLayer_shops: { es: 'Vendedor', en: 'Vendor' },   // KEY_SHOP (the game's map key)
     mapLayer_shakra:{ es: 'Shakra', en: 'Shakra' },   // MAPPER_MAIN
     mapLayer_wishwall1: { es: 'Muro de deseos', en: 'Wishwall' },   // QUESTBOARD_TITLE
-    mapLayer_givers:{ es: 'Quien pide un deseo', en: 'Who asks for a wish' },
-    mapLayer_giver1:{ es: 'Pide un deseo', en: 'Asks for a wish' },
+    mapLayer_givers:{ es: 'Quien pide un deseo', en: 'Who makes a wish' },
+    mapLayer_giver1:{ es: 'Pide un deseo', en: 'Makes a wish' },
     mapLayer_people:{ es: 'Quien da algo del 100 %', en: 'Who gives a 100% thing' },
     // The wishes and the main objectives (js/spots.js TASKS). No game source: written for context.
     mapLayer_wspots:{ es: 'Dónde se concede un deseo', en: 'Where a wish is granted' },   // WISH_GRANTED, FIRST_WISH_DESC: the game grants wishes
