@@ -536,7 +536,7 @@
   }
   /* Another step of the road, opened from the thread or its medallion (2 A): its number, title and
      card where it was opened; the × or its button again close it. One at a time, while the page is. */
-  let peekAt = null, peekFrom = 'thread';
+  let peekAt = null;
   function peekHtml(r, g) {
     if (!peekAt || !peekAt.startsWith(r.act + ':')) return '';
     const i = r.steps.findIndex((x) => r.act + ':' + x.id === peekAt), s = r.steps[i];
@@ -700,7 +700,7 @@
     return `<div class="pg-journey is-road" style="--n:${r.steps.length};--f:${Math.min(100, f).toFixed(1)}%">
         <ol class="pg-journey-steps">${r.steps.map((x, i) => `<li class="${!guide && (x.ok || x.bypassed) ? 'is-done' : ''}${i === at ? ' is-cur' : ''}${peekAt === r.act + ':' + x.id ? ' is-peek' : ''}" title="${esc(stepTitle(r, x))}">
           <i aria-hidden="true"></i><span><button type="button" class="pg-jstep" data-act="pgPeek" data-value="${r.act}:${x.id}"${i === at ? '' : ` aria-expanded="${peekAt === r.act + ':' + x.id}"`}>${esc(t('pgStepN', { n: num(i + 1), step: stepShort(r, x) }))}</button></span></li>`).join('')}</ol>
-      </div>${peekFrom === 'thread' ? peekHtml(r, guide ? null : cur) : ''}`;
+      </div>${peekHtml(r, guide ? null : cur)}`;
   }
   /* In Act 3, the endings (Albert, then design/40, 1 A: the Acts are on top of the tab now), lit the
      ones this save has seen (js/savefile.js ENDINGS), named as the game names them. They aren't a
@@ -743,11 +743,10 @@
     return `<div class="pg-acts"><div class="pg-journey" style="--n:3;--f:${f}%"><ol class="pg-journey-steps">${acts}</ol></div><p class="pg-here">${line}</p></div>`;
   }
 
-  /* ── What's left, drawn (design/03-redesign.md, step 5: the rings, then E) ──────────────
-     The step you're on as one small ring per part of it (the wishes it requires, its points, its
-     checks…), the game's picture inside and how far as a figure under it; under them each part
-     as a group of the 100% tab (parts(), partsHtml()). The steps after it follow, dim, as
-     medallions. The pictures are the game's: the map's quest medallions (assets/map/pins), the
+  /* ── What's left, drawn (design/03-redesign.md, step 5) ──────────────
+     The step you're on in its parts (parts(): the wishes it requires, its points, its checks…),
+     counted in one line on the route (routeParts()); the rings stay for Act 3's «Your game»
+     (gameHtml()). The pictures are the game's: the map's quest medallions (assets/map/pins), the
      Journal's portraits, the benches, the wishes' type emblems (assets/icons/wishes,
      tools/extract-wish-icons.py). */
   const QUEST = (n) => `assets/map/pins/quest_map_icon_${n}.webp`;
@@ -764,7 +763,7 @@
      browser translator may translate it). */
   function medal(x) {
     const onMap = x.mark && App.mapHas && App.mapHas(x.mark);
-    return `<li class="pg-md${x.later ? ' is-later' : ''}${x.peek && peekAt === x.peek ? ' is-peek' : ''}"${x.tip ? ` title="${esc(x.tip)}"` : ''}>${x.peek ? `<button type="button" class="pg-md-peek" data-act="pgPeek" data-value="${esc(x.peek)}" aria-expanded="${peekAt === x.peek}" aria-label="${esc(x.name + ': ' + t('pgPeekOpen'))}"></button>` : ''}<span class="pg-md-art"><img src="${x.icon}" alt="" loading="lazy">${x.badge ? `<span class="pg-md-badge">${esc(x.badge)}</span>` : ''}</span>
+    return `<li class="pg-md"><span class="pg-md-art"><img src="${x.icon}" alt="" loading="lazy">${x.badge ? `<span class="pg-md-badge">${esc(x.badge)}</span>` : ''}</span>
         ${onMap ? `<button type="button" class="pg-md-pin" data-act="mapShow" data-value="${esc(x.mark)}" aria-label="${esc(t('mapOnMap') + ': ' + x.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : ''}
         <span class="pg-md-name"${x.plain ? '' : NT}>${esc(x.name)}</span>${x.sub ? `<span class="pg-md-sub">${esc(x.sub)}</span>` : ''}</li>`;
   }
@@ -803,46 +802,42 @@
   }
   // A step's parts at once: what the tab's card counts, in the rings' own units.
   const partsSum = (ps) => ps.reduce((a, p) => ({ got: a.got + p.got, of: a.of + p.of }), { got: 0, of: 0 });
-  /* The Act tab with a save before Act 3: the journey, the step you're on as a heading with its
-     picture, its parts as rings side by side (with, when there are several, that all are needed),
-     then what's next (todoHtml) and, folded, each part as a group of the 100% tab; the steps after
-     it, the bridge to the 100% and the whole road. */
-  function actHtml(r, g) {
-    if (r.act === 2) return routeHtml(r, g);
-    const at = stepAt(r);
-    const s = r.steps[at];
-    const stale = !g.quests.length && g.wishes.length;
-    const later = r.steps.slice(at + 1).map((x) => ({ name: stepShort(r, x), icon: STEP_ART[x.id] || BOARD, later: true, tip: stepTitle(r, x), plain: true, peek: r.act + ':' + x.id }));
-    const open = !!prefs.pgRoad;
-    return journey(r) + (s ? `<div class="pg-now"><img src="${STEP_ART[s.id] || BOARD}" alt="" loading="lazy"><h3 tabindex="-1">${esc(stepTitle(r, s))}</h3></div>
-        ${stepCard(r, s, g)}
-        ${stale ? `<p class="pg-note is-warn">${esc(t('roadStale'))}</p>` : ''}
-        ${s.bypassed ? '' : partsHtml(r, s, g)}
-        ${later.length ? `<ul class="pg-mds pg-later">${later.map(medal).join('')}</ul>${peekFrom === 'later' && later.some((x) => x.peek === peekAt) ? peekHtml(r, g) : ''}` : ''}` : '')
-      + `<div class="pg-whole"><button type="button" class="text-btn" data-act="pgRoad" aria-expanded="${open}">${esc(t(open ? 'roadLess' : 'roadWhole'))}</button></div>`
-      + (open ? roadHtml(g) : '');
-  }
-  /* The road to Act 2 as the whole route (design/83, A in all four): the road's thread down the page,
+  // The Act tab with a save before Act 3: the road as the whole route (routeHtml).
+  const actHtml = (r, g) => routeHtml(r, g);
+  /* The road to the next Act as the whole route (design/83, A in all four; Act 3's, design/84): the
+     road's thread down the page,
      a station per step (done ones lit and ticked, the one you're on larger, «You are here»), each
      opening to what the game says of it and its way onto the Map; the one you're on opens on its
      list of what's left too, its count on its line (no ring), and a step of one thing doesn't repeat
      its title as a list. It ends at the Act it opens, named as the Acts on top name it. A step's
      open or shut is kept while the page is (routeOpen), the one you're on open at first. */
   const routeOpen = new Map();
+  /* The step you're on, when it has several parts (design/84, 2 A): what it asks said once, then its
+     parts in one line, each its picture, its name and its count, ticked when met. */
+  function routeParts(r, s, g, ps) {
+    const say = s.id === 'unlock' ? t('roadAllThree', { caretaker: t('roadCaretaker'), wish: wishOf(r) })
+      : s.id === 'offer' ? offerNote(s, g) : s.id === 'silk' ? t('roadSilkNote') : '';
+    const lead = say ? `<p class="pg-lead">${esc(say)}</p>` : '';
+    if (ps.length < 2) return lead;
+    return lead + `<ul class="pg-rt-parts">${ps.map((p) => `<li class="${p.got >= p.of ? 'is-done' : ''}"><img src="${p.icon}" alt="" loading="lazy"><span class="pg-rt-pk">${esc(p.label)}</span>${p.got >= p.of
+      ? `<span class="pg-count"><span class="pg-mark">${App.tick}</span> <b>${pts(p.of)}</b><i class="u">/${num(p.of)}</i></span>` : count(p.got, p.of)}</li>`).join('')}</ul>`;
+  }
   function routeHtml(r, g) {
     const at = stepAt(r);
     const stale = !g.quests.length && g.wishes.length;
     const stations = r.steps.map((s, i) => {
       const key = r.act + ':' + s.id, done = s.ok || s.bypassed, cur = i === at;
       const open = routeOpen.has(key) ? routeOpen.get(key) : cur;
-      const mark = done ? `<span class="pg-mark">${App.tick}</span><span class="sr-only">${esc(t('pgPeekDone'))}</span>` : cur && s.total > 1 ? count(s.done, s.total) : '';
+      const ps = cur ? parts(r, s, g) : [];
+      // Yours counts as its parts do, as the tab's card does (a wish point short is one).
+      const sum = partsSum(ps);
+      const mark = done ? `<span class="pg-mark">${App.tick}</span><span class="sr-only">${esc(t('pgPeekDone'))}</span>` : cur && sum.of > 1 ? count(Math.floor(sum.got), sum.of) : '';
       let body = '';
       if (open) {
-        const ps = cur ? parts(r, s, g) : [];
         const one = ps.length === 1 && !ps[0].rows.length;
         // A step done keeps the game's words, without the way onto the Map (as a step peeked at did).
         const x = done && STEP_SAYS[s.id] ? STEP_SAYS[s.id](s) : null;
-        body = `<div class="pg-rt-body">${done ? (x ? `<div class="pg-says">${saysHtml(x)}</div>` : '') : stepCard(r, s, g)}${cur && stale ? `<p class="pg-note is-warn">${esc(t('roadStale'))}</p>` : ''}${ps.length && !one ? todoHtml(r, s, ps) : ''}</div>`;
+        body = `<div class="pg-rt-body">${done ? (x ? `<div class="pg-says">${saysHtml(x)}</div>` : '') : stepCard(r, s, g)}${cur && stale ? `<p class="pg-note is-warn">${esc(t('roadStale'))}</p>` : ''}${cur ? routeParts(r, s, g, ps) : ''}${ps.length && !one ? todoHtml(r, s, ps) : ''}</div>`;
       }
       return `<li class="pg-rt-st${done ? ' is-done' : cur ? ' is-cur' : ' is-later'}"${cur ? ' aria-current="step"' : ''}><span class="pg-rt-dia" aria-hidden="true"></span>
           <h3 class="pg-rt-h"><button type="button" class="pg-rt-open" data-act="pgRoute" data-value="${key}" aria-expanded="${open}">
@@ -854,17 +849,6 @@
     const end = `<li class="pg-rt-end"><span class="pg-rt-dia" aria-hidden="true"></span><p class="pg-rt-h"><span class="pg-rt-t"><span class="pg-rt-k">${esc(t('pgRouteEnd'))}</span>
         <span class="pg-rt-name"${NT}>${esc(t('saveAct', { n: num(r.act) }))} · ${esc(t('pgActName' + r.act))}</span></span></p></li>`;
     return `<ol class="pg-rt">${stations}${end}</ol>`;
-  }
-  /* The rings, then what's next (design/40-progress-clarity-variants.html, 2 A), the step's one list
-     (design/82, 1 A). */
-  function partsHtml(r, s, g) {
-    const ps = parts(r, s, g);
-    // The line over the rings: what the step asks, said once (the offer's and the snare's notes too).
-    const say = s.id === 'unlock' ? t('roadAllThree', { caretaker: t('roadCaretaker'), wish: wishOf(r) })
-      : s.id === 'offer' ? offerNote(s, g) : s.id === 'silk' ? t('roadSilkNote') : '';
-    const lead = say ? `<p class="pg-lead">${esc(say)}</p>` : '';
-    return `${lead}<div class="pg-rings is-sum" style="--n:${ps.length}">${ps.map((p) => ring({ ...p, items: [] })).join('')}</div>
-        ${todoHtml(r, s, ps)}`;
   }
   /* What's next (design/40, 2 A), the step's one list (design/82, 1 A): what the step still lacks,
      as numbered things to do, read from its parts' rows: each wish it requires, the wish points short
@@ -907,7 +891,7 @@
       <div class="seg pg-seg" role="group" aria-label="${esc(t('pgShow'))}">
         <button type="button" data-act="pgShow" data-value="missing" aria-pressed="${!prefs.pgAll}">${esc(t('pgMissing'))}</button>
         <button type="button" data-act="pgShow" data-value="all" aria-pressed="${!!prefs.pgAll}">${esc(t('pgAll'))}</button>
-      </div><ol class="pg-list">${items.map((x) => {
+      </div>${(() => { const li = (x) => {
       if (x.done) {
         return `<li class="pg-item is-got"><span class="pg-num is-done" aria-hidden="true">${App.tick}</span>
           <span class="pg-art"><img src="${x.icon}" alt="" loading="lazy"></span>
@@ -925,7 +909,8 @@
           <span class="pg-place"><span class="pg-where">${x.area ? `<span${NT}>${esc(areaName(x.area))}</span>` : ''}</span></span>
           ${onMap ? `<button type="button" class="pg-onmap" data-act="mapShow" data-value="${esc(x.mark)}" aria-label="${esc(t('mapOnMap') + ': ' + x.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '<span class="pg-onmap is-none" aria-hidden="true"></span>'}
         </li>`;
-    }).join('')}</ol></section>`;
+    };
+      return `<ol class="pg-list">${items.map(li).join('')}</ol>`; })()}</section>`;
   }
   /* «Tu partida», in Act 3 (round 1, 4 A): the endings, then two rings: the endings seen, and the
      things of the 100% only Act 3 holds. */
@@ -1117,7 +1102,6 @@
       savePrefs();
       render();
     },
-    pgRoad() { prefs.pgRoad = !prefs.pgRoad; savePrefs(); render(); },
     // A station of the route (design/83): it opens or shuts, kept while the page is.
     pgRoute(node) {
       const v = node.dataset.value;
@@ -1126,18 +1110,10 @@
       const b = document.querySelector(`.pg-rt-open[data-value="${v}"]`);
       if (b) b.focus({ preventScroll: true });
     },
-    /* A step of the thread or a medallion: its card opens where it was clicked (design/28, 2 A); the
-       step you're on takes you to its heading instead. */
+    // A step of the guide's thread: its card opens under it (design/28, 2 A).
     pgPeek(node) {
-      const v = node.dataset.value, own = App.game(), r = own ? A.next(own) : null, at = r ? r.steps[stepAt(r)] : null;
-      if (at && v === r.act + ':' + at.id) {
-        peekAt = null;
-        const h = document.querySelector('.pg-now h3');
-        if (h) { h.scrollIntoView({ block: 'center' }); h.focus({ preventScroll: true }); }
-        return;
-      }
+      const v = node.dataset.value;
       peekAt = peekAt === v ? null : v;
-      peekFrom = node.classList.contains('pg-md-peek') ? 'later' : 'thread';
       render();
     },
     // A step's «See on the map»: the Map on what's left of it (js/app-map.js App.mapFocus).

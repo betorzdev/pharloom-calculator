@@ -41,7 +41,7 @@ the work up reads it first, then the step it's on.
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct; the summary, 16 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html`, `89-your-game-summary-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html` |
-| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html` |
+| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html` |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
@@ -1087,6 +1087,24 @@ first: a step done shows the game's words without the Map, a step to come its ca
 «You reach · Act 2 · CITADEL OF SONG» (`saveAct`, `pgActName2`). The thread, the step's heading,
 the ring, the medallions and «The whole road» are gone from it; Albert also asked that design pages
 be drawn in English from now on.
+
+### The road to Act 3 as the whole route (16 October 2026)
+
+Albert, after the road to Act 2: show me the road to Act 3, and propose what's worth changing. It
+repeated its five steps as the Act 2 road did, and its first step, unlocking Silk and Soul, has three
+parts needed at once (the ten required wishes, 17 wish points, four conditions): three large rings
+over the list, half a screen even at 30/31 with one row left. `84-road-route-act3-variants.html`
+(kept out of the repo, the first page drawn in English), the real screen rendered by the site's own
+code over Save 2 (3/31) and `Restore_Points3/restoreData24.dat` (30/31): 1 the shape (**A** the route,
+as Act 2; B as it was); 2 the step's parts (**A** one line, each part its picture, name and count,
+ticked when met; B the rings inside the station; C the list split under the parts' heads).
+
+**Decision: 1 A, 2 A** (16 October 2026), built: `actHtml()` is the route for both roads;
+`routeParts()` gives the step you're on its lead line (`roadAllThree`, the offer's note, the Needolin's)
+and, with several parts, `.pg-rt-parts`; the station's count is the parts' sum, as the tab's card's
+(3/31). Gone with the old layout: `partsHtml()`, the later medallions' peek, «The whole road»
+(`pgRoad`, `roadWhole`, `roadLess`), `.pg-now`, `.pg-later`, `.pg-whole`, `.pg-rings.is-sum`. The
+rings stay in Act 3's «Your game»; the guide without a save keeps its thread and the full road.
 
 ## Step 6 · Map
 
