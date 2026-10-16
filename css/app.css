@@ -1329,10 +1329,6 @@ kbd {
 .pg-tab:not([aria-selected="true"]) .pg-ring::before { opacity: 0.6; }
 /* What's left for the next Act (2 C): the step you're on with its picture, then one ring per
    part of it, the game's picture inside and the figure under; under each only what's missing. */
-.pg-now { display: flex; align-items: center; justify-content: center; gap: var(--sp-3); max-width: var(--column); margin: var(--sp-6) auto; text-align: left; }
-.pg-now img { flex: none; width: var(--sp-12); height: var(--sp-12); object-fit: contain; }
-.pg-now h3 { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: var(--fs-xl); color: var(--ink-strong); text-wrap: balance; }
-.pg-now h3:focus { outline: none; }
 /* The step in the game's own words (design/28, 1 A): what the pane «Tareas» (or the Journal) says
    of it, tagged with where, and its way onto the Map; under the step's heading, in the whole road
    under each step's, and opened from the thread (2 A). */
@@ -1369,9 +1365,6 @@ kbd {
 .pg-jstep::after { content: ''; position: absolute; inset: 0; }
 .pg-journey-steps li:has(.pg-jstep:is(:hover, :focus-visible)) span, .pg-journey-steps li.is-peek span { color: var(--ink-strong); }
 .pg-journey-steps li.is-peek i::before { outline: 1px solid var(--ink-strong); outline-offset: 3px; }
-.pg-md-peek { position: absolute; inset: 0; z-index: 1; }
-.pg-md:has(.pg-md-peek:is(:hover, :focus-visible)) .pg-md-name, .pg-md.is-peek .pg-md-name { color: var(--ink-strong); }
-.pg-md.is-peek .pg-md-art { outline: 1px solid var(--ink-strong); outline-offset: 2px; }
 /* A row's own words (4 A), folded. */
 .pg-says-row { display: block; }
 .pg-says-btn { min-height: 0; font-size: var(--fs-xs); }
@@ -1387,10 +1380,6 @@ kbd {
 /* The road's step as a summary (design/03-redesign.md, step 5, E): its parts' rings small, side by
    side, over their lists (.pg-groups); and, when there are several, the line that all are needed. */
 .pg-lead { max-width: var(--column); margin: 0 auto var(--sp-4); text-align: center; font-size: var(--fs-sm); color: var(--ink-2); text-wrap: balance; }
-.pg-rings.is-sum { --pg-rg-ring: calc(var(--pg-tab-art) * 2); grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); gap: var(--sp-6) var(--sp-3); margin: 0 auto var(--sp-8); }
-.pg-rings.is-sum .pg-rg-n { font-size: var(--fs-xl); }
-.pg-rings.is-sum .pg-rg-n .u { font-size: var(--fs-sm); }
-@media (max-width: 599px) { .pg-rings.is-sum { --pg-rg-ring: calc(var(--pg-tab-art) * 1.5); } }
 .pg-rg { display: grid; justify-items: center; align-content: start; gap: var(--sp-2); text-align: center; }
 .pg-rg-ring { --pg-ring: var(--pg-rg-ring); }
 .pg-rg-ring::after { inset: var(--sp-3); }
@@ -1417,13 +1406,6 @@ kbd {
 .pg-md-name { font-size: var(--fs-2xs); line-height: 1.25; color: var(--ink); text-wrap: balance; }
 .pg-md-sub { font-size: var(--fs-2xs); line-height: 1.25; color: var(--muted); text-wrap: balance; }
 .pg-md-more { align-self: center; font-family: var(--font-num); font-size: var(--fs-sm); color: var(--ink-2); }
-/* The steps after the one you're on: their pictures, dim. */
-.pg-later { gap: var(--sp-4); max-width: calc(var(--column) + var(--sp-16)); margin: var(--sp-8) auto 0; padding-top: var(--sp-4); border-top: 1px solid var(--line); }
-.pg-md.is-later .pg-md-art { border-style: dashed; background: none; box-shadow: none; }
-.pg-md.is-later .pg-md-art img { filter: var(--missing-soft); opacity: var(--missing-soft-opacity); }
-.pg-md.is-later .pg-md-name { color: var(--muted); }
-/* The bridge to the 100% tab, and the whole road under it. */
-.pg-whole { display: flex; justify-content: center; margin-top: var(--sp-4); }
 .pg-controls { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-2) var(--sp-12); margin-bottom: var(--sp-2); }
 .pg-part {
   display: flex; align-items: baseline; justify-content: center; gap: var(--sp-3); margin: var(--sp-8) 0 var(--sp-2);
@@ -1546,7 +1528,6 @@ kbd {
   .pg-tab { grid-template-columns: minmax(0, 1fr); justify-items: center; text-align: center; padding: var(--sp-2); }
   .pg-tab-art { grid-row: auto; }
   .pg-tab-l { font-size: var(--fs-xs); letter-spacing: var(--track-label); }
-  .pg-now h3 { font-size: var(--fs-lg); }
   .pg-rings { grid-template-columns: 1fr 1fr; gap: var(--sp-6) var(--sp-3); }
   .pg-md { width: calc(var(--pg-md) + var(--sp-3)); }
   /* The road's thread goes down the page, a step a line (design/41, 3 C): every step keeps its
@@ -1647,6 +1628,14 @@ kbd {
 .pg-rt-n .pg-mark { color: var(--good); }
 .pg-rt-body { padding: var(--sp-2) 0 var(--sp-6); }
 .pg-rt-body .pg-todo { margin-top: var(--sp-4); }
+.pg-rt-body .pg-lead { margin: var(--sp-4) 0 var(--sp-2); }
+/* A step of several parts (design/84): each part on one line, its picture, its name and its count. */
+.pg-rt-parts { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-2) var(--sp-6); margin: 0; padding: 0; list-style: none; }
+.pg-rt-parts li { display: flex; align-items: center; gap: var(--sp-2); }
+.pg-rt-parts img { width: var(--sp-8); height: var(--sp-8); object-fit: contain; }
+.pg-rt-pk { font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; color: var(--label); }
+.pg-rt-parts .is-done .pg-count b { color: var(--good); }
+.pg-rt-parts .pg-mark { color: var(--good); }
 .pg-rt-end .pg-rt-h { padding: var(--sp-2) 0 var(--sp-2) calc(var(--sp-12) + var(--sp-3)); min-height: calc(var(--sp-12) + var(--sp-4)); display: grid; align-content: center; }
 .pg-rt-end .pg-rt-name { font-size: var(--fs-lg); }
 @media (max-width: 640px) {

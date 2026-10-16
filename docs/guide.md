@@ -598,48 +598,41 @@ opens, the road's the first time. On a phone a card keeps its figure and leaves 
 it («step 1 of 5», «85% to go»). From the keyboard, Tab reaches the one selected and the arrows,
 Home and End move to another and open it.
 
-**The road to Act 2 is the whole route** (its card as below). The road's thread runs down the page,
+**The road to the next Act is the whole route** (its card: the picture of the step you're on, how
+far into it, counted in its parts' units, and «step 1 of 5»). The road's thread runs down the page,
 a station per step with the game's diamonds: the steps done lit and ticked (the ones the Phantom's
 way skips say «No longer needed: defeating Phantom opens another way in»), the one you're on larger
-with «You are here» and its count («3/5»), the ones to come dim. Each station is a row with its
-picture, «Step 1» and its title, and opens: a step done shows what the game says of it, a step to
-come that and its way onto the Map, and the one you're on, open from the start, also its **What's
-next** list (as below; a step of one thing, as walking into the Citadel, doesn't repeat itself as a
-list). The route ends at the Act it opens, «You reach · Act 2 · CITADEL OF SONG». What's open is
-kept while the page is.
+with «You are here» and its count («3/5», «3/31»), the ones to come dim. Each station is a row with
+its picture, «Step 1» and its title, and opens: a step done shows what the game says of it, a step to
+come that and its way onto the Map, and the one you're on, open from the start, its card, its parts
+and its **What's next** list. The route ends at the Act it opens («You reach · Act 2 · CITADEL OF
+SONG», «Act 3 · ABYSS»). What's open is kept while the page is.
 
-**The road to Act 3** (its card: the picture of the step you're on, how far into it, counted
-as its rings count, and «step 1 of 5»). Its steps as diamonds on one thread, the ones done lit and
-the one you're on larger, each numbered and named as what to do («1 · Unlock "Silk and Soul"»,
-«2 · Accept the wish», «3 · Gather the snare»…; the full title shows on hover). On a phone the thread
-goes down the page, a step a line. Each step there, and each dim medallion of the steps to come,
-opens its card where it was clicked: «Step 3», its title, what the game says of it and its way onto
-the Map (a step done says «done» and has no map); the × or the step again close it, and the step
-you're on takes you to its heading. Then the step you're on, with its picture and, under its
-heading, **what the game says of it**: the objective as the game's pause menu «Tasks» titles it,
-with the picture the Tasks tab draws by it, its line («Grand Gate · Pharloom») and its description as the game words it in that state
-(«Awaken the old bells throughout the lands.» while Bellshrines are left, «Return to the Grand
-Gate and open the way to the Citadel.» once they're rung; for the snare, «Acquire the necessary
-components…», then «Give the collected components to the Caretaker of Songclave.»). The Last Judge
-has no objective of her own, so her Journal entry speaks («Final arbiter of the Blasted Steps…»,
-tagged «Journal»); unlocking Silk and Soul has no text in the game, so it shows the wish it opens,
-its picture dim and its name and place («Silk and Soul · Caretaker of Songclave»). The same picture,
-smaller, goes by each step's card in the whole road and in a step opened from the thread. Under it,
-«See on the map» or «See the n on the map» (the Bellshrines not rung, the Grand Gate's and the
-Citadel's objective pins as the game's own map places them, the Last Judge and the Phantom, the
-Caretaker and Bellhart's Wishwall, the snare's pieces, the Cradle's top). Then its parts as small **rings** side by side (the wishes it requires, its
-wish points, its four conditions; the Bellshrines; the snare's pieces), the game's picture inside
-and how far as a figure under it; for Silk and Soul a line says that all three are needed, for
-the offer how it comes (or that you turned it down), and for the last step that the Needolin, not
-a Bind, is what snares her.
+**What the game says of a step**: the objective as the game's pause menu «Tasks» titles it, with the
+picture the Tasks tab draws by it, its line («Grand Gate · Pharloom») and its description as the game
+words it in that state («Awaken the old bells throughout the lands.» while Bellshrines are left,
+«Return to the Grand Gate and open the way to the Citadel.» once they're rung; for the snare,
+«Acquire the necessary components…», then «Give the collected components to the Caretaker of
+Songclave.»). The Last Judge has no objective of her own, so her Journal entry speaks («Final arbiter
+of the Blasted Steps…», tagged «Journal»); unlocking Silk and Soul has no text in the game, so it shows
+the wish it opens, its picture dim and its name and place («Silk and Soul · Caretaker of Songclave»).
+Under it, «See on the map» or «See the n on the map» (the Bellshrines not rung, the Grand Gate's and
+the Citadel's objective pins as the game's own map places them, the Last Judge and the Phantom, the
+Caretaker and Bellhart's Wishwall, the snare's pieces, the Cradle's top).
 
-Under the rings, **What's next**: the step's one list. What it still lacks, numbered, each with its picture,
+**Its parts**: for Silk and Soul a line says that all three are needed, then the three in one line,
+each its picture, its name and its count, ticked when met (the wishes it requires, its wish points,
+its four conditions); for the offer, how it comes (or that you turned it down); for the last step,
+that the Needolin, not a Bind, is what snares her.
+
+**What's next**: the step's one list. What it still lacks, numbered, each with its picture,
 its area and the Map's pin when it has the thing: each required wish («Complete the wish "Balm for
 the Wounded"», with who asks for it in the game's words, what posts it and the wish to do first),
 the wish points short («Get 1 more wish point») with the four wishes nearest your bench that would
 give it («and n more» unfolds the rest), each condition not met (the Flea Caravan, the Faydown Cloak,
 Lace, the Bellhome Key, or «Talk to Pavo» once he has it for you), each Bellshrine not rung, each
-piece of the snare. Each row the game has words for has «What the game says» under it, which unfolds
+piece of the snare. A step of one thing (walking into the Citadel) doesn't repeat itself as a list.
+Each row the game has words for has «What the game says» under it, which unfolds
 them: a wish as the game shows it now (what its Wishwall says until you take it, what «Tasks» says
 once you have: the save's own record of each wish taken), the Caretaker's directions to each soul
 and the Snare Setter, the Inventory's line for the Faydown Cloak and the Bellhome Key, and for Lace
@@ -647,8 +640,7 @@ the objective that leads to her (learn the Threefold Melody, then play it at the
 rise above the Citadel). The Flea Caravan has no game text. Lace's row and the key's (Pavo) have
 their pin too, as the Bellshrines' do. «What's missing · Everything» under its title (the 100% tab's
 same toggle, kept as you leave it) shows what's done too: each done row in its place, its number's
-diamond ticked and dimmed, and the wishes that already gave points ticked among the options. The
-steps after it follow, dim. «The whole road» opens the road in full, as below.
+diamond ticked and dimmed, and the wishes that already gave points ticked among the options.
 
 How to get each thing leads with what it is and what it costs (who asks for a wish and what it asks
 to be brought, the shop and its price), then what it waits for (what posts the wish, the wish to do

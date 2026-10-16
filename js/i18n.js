@@ -763,8 +763,6 @@
     roadGame:       { es: 'Tu partida', en: 'Your game' },
     roadEndings:    { es: '{n} de {of} finales', en: '{n} of {of} endings' },
     roadEndingsReach:{ es: '{n} de {of} finales a tu alcance', en: '{n} of {of} endings within reach' },
-    roadWhole:      { es: 'El camino entero', en: 'The whole road' },
-    roadLess:       { es: 'Cerrar el camino', en: 'Close the road' },
     roadBoth:       { es: 'Los caminos a los Actos 2 y 3', en: 'The roads to Acts 2 and 3' },
     roadNote2:      { es: 'Lo que pide el juego para entrar en la Ciudadela, paso a paso.', en: 'What the game asks before you walk into the Citadel, step by step.' },
     roadNote3:      { es: 'Lo que pide el juego para abrir el Acto 3, leído de sus propios archivos. Las guías suelen dar solo seis deseos: cuentan también los que van antes de ellos, un mínimo de puntos de deseos y cuatro condiciones más.',
@@ -820,7 +818,6 @@
     pgPeekStep:     { es: 'Paso {n}', en: 'Step {n}' },
     pgPeekDone:     { es: 'hecho', en: 'done' },
     pgPeekClose:    { es: 'Cerrar el paso', en: 'Close the step' },
-    pgPeekOpen:     { es: 'Lo que dice el juego de este paso', en: 'What the game says of this step' },
     pgMapN:         { es: 'Ver los {n} en el mapa', en: 'See the {n} on the map' },
     // The route's last station, over the Act it opens (design/83, 4 A).
     pgRouteEnd:     { es: 'Llegas al', en: 'You reach' },
