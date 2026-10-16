@@ -683,12 +683,13 @@
     pgTasks:        { es: 'Tareas', en: 'Tasks' },   // PANE_QUESTS
     pgTasksMain:    { es: 'Objetivos principales', en: 'Main objectives' },
     pgTasksCollect: { es: 'Colección', en: 'Collect' },
+    // A wish promised (design/81): its state as the game shows it, and the head the promised go first under.
+    pgPromised:     { es: 'Deseo prometido', en: 'Wish Promised' },   // WISH_PROMISED
+    pgPromisedHead: { es: 'Prometidos', en: 'Promised' },   // no word of the game's for them together
+    pgRest:         { es: 'Los demás', en: 'The rest' },
     /* Progress's two tabs (design/27b-progress-variants.html): the road to the next Act and the 100% */
     pgStepOf:       { es: 'paso {n} de {of}', en: 'step {n} of {of}' },
     pgToGo:         { es: '{pct} por conseguir', en: '{pct} to go' },
-    pgReach:        { es: 'cosas del 100 % que ya puedes conseguir', en: 'things of the 100% you can already get' },
-    pgReachTip:     { es: 'Cada cosa cuenta por separado: un fragmento de máscara es una, no un punto de la finalización.', en: 'Each thing counts on its own: a Mask Shard is one, not a point of completion.' },
-    pgSee100:       { es: 'Ver el 100 %', en: 'See the 100%' },
     pgShrines:      { es: 'Santuarios de Campana', en: 'Bellshrines' },   // BELLSHRINE, in the plural
     pgPoints:       { es: 'Puntos de deseos', en: 'Wish points' },
     pgEndings:      { es: 'Finales', en: 'Endings' },   // no word of the game's for them
@@ -715,7 +716,6 @@
     pgInvite:       { es: 'Importa tu partida y verás en qué acto estás, y qué te falta para el siguiente y para el 100 %, pieza a pieza.',
                       en: 'Import your game to see which Act you\'re in, and what\'s left for the next one and for 100%, piece by piece.' },
     /* The road's steps by what to do, on its thread (3 A); the titles stay the whole road's */
-    pgStepN:        { es: '{n} · {step}', en: '{n} · {step}' },
     pgStepBells:    { es: 'Haz sonar los Santuarios', en: 'Ring the Bellshrines' },   // the game's word in it: BELLSHRINE
     pgStepGate:     { es: 'Abre la {gate}', en: 'Open the {gate}' },
     pgStepJudge:    { es: 'Derrota a la {judge}', en: 'Defeat the {judge}' },   // with its {judge}, DEFEATED_LAST_JUDGE_1_DESC
@@ -745,14 +745,10 @@
     pgHereFreeK:    { es: 'Modo libre.', en: 'Free mode.' },
     pgHereFree:     { es: 'El 100 % cuenta lo que marcas aquí o en el Inventario, desde una partida nueva; el camino es la guía, como sin un perfil cargado.', en: 'The 100% counts what you mark here or in the Inventory, from a New Game; the road is the guide, as with no profile loaded.' },
     pgLadderNote:   { es: 'Esto se fija en el Inventario:', en: 'This is set in the Inventory:' },
-    pgListAll:      { es: 'Ver la lista entera, con lo hecho ({n})', en: 'See the whole list, done included ({n})' },
-    pgListLess:     { es: 'Cerrar la lista entera', en: 'Close the whole list' },
     /* The 100% tab (4 A), and the guide without a save (5 A) */
     pgInCats:       { es: 'en {n} categorías', en: 'in {n} categories' },
     pgColHead:      { es: 'Tienes / vale (%)', en: 'Got / worth (%)' },
     pgColHeadNone:  { es: 'Vale (%)', en: 'Worth (%)' },
-    pgFoldSee:      { es: 'Ver los {n}', en: 'See all {n}' },
-    pgFoldHide:     { es: 'Ocultar', en: 'Hide' },
 
     /* Progress: the road to the next Act (js/acts.js, the game's own rules) */
     roadTitle:      { es: 'Camino al Acto {n}', en: 'The road to Act {n}' },
@@ -764,8 +760,6 @@
     roadGame:       { es: 'Tu partida', en: 'Your game' },
     roadEndings:    { es: '{n} de {of} finales', en: '{n} of {of} endings' },
     roadEndingsReach:{ es: '{n} de {of} finales a tu alcance', en: '{n} of {of} endings within reach' },
-    roadWhole:      { es: 'El camino entero', en: 'The whole road' },
-    roadLess:       { es: 'Cerrar el camino', en: 'Close the road' },
     roadBoth:       { es: 'Los caminos a los Actos 2 y 3', en: 'The roads to Acts 2 and 3' },
     roadNote2:      { es: 'Lo que pide el juego para entrar en la Ciudadela, paso a paso.', en: 'What the game asks before you walk into the Citadel, step by step.' },
     roadNote3:      { es: 'Lo que pide el juego para abrir el Acto 3, leído de sus propios archivos. Las guías suelen dar solo seis deseos: cuentan también los que van antes de ellos, un mínimo de puntos de deseos y cuatro condiciones más.',
@@ -779,26 +773,16 @@
     roadCitadel:    { es: 'Entra en la Ciudadela', en: 'Walk into the Citadel' },
     roadUnlock:     { es: 'Desbloquea el deseo «{wish}»', en: 'Unlock the wish "{wish}"' },
     roadRequired:   { es: 'Deseos obligatorios', en: 'Required wishes' },
-    roadPoints:     { es: 'Puntos de deseos: {n} de {max} posibles', en: 'Wish points: {n} of a possible {max}' },
-    roadPointsNote: { es: 'Cualquiera de estos vale un punto; una entrega, medio, y solo la primera vez.', en: 'Any of these is worth a point; a delivery half of one, and only the first time.' },
     roadHalf:       { es: '½ punto', en: '½ point' },
     roadBefore:     { es: 'antes: {name}', en: 'first: {name}' },
-    roadChecks:     { es: 'Y además', en: 'And also' },
     roadFour:       { es: 'Cuatro condiciones', en: 'Four conditions' },
     roadAllThree:   { es: 'Para que el {caretaker} te ofrezca «{wish}» hacen falta las tres cosas:', en: 'For the {caretaker} to offer you "{wish}", all three are needed:' },
-    roadGoalReq:    { es: 'Hay que hacerlos todos.', en: 'Every one of them is needed.' },
-    roadGoalPts:    { es: '{n} puntos con cualquiera de estos {wishes} deseos: cada uno vale un punto; una entrega, medio, y solo la primera vez.', en: '{n} points from any of these {wishes} wishes: each is worth a point; a delivery half of one, and only the first time.' },
-    roadGoalChk:    { es: 'Hay que cumplirlas todas.', en: 'Every one of them is needed.' },
-    roadGoalShrines: { es: 'Hay que hacer sonar los {n}.', en: 'All {n} must be rung.' },
-    roadGoalSnare:  { es: 'Hay que reunir las {n}.', en: 'All {n} are needed.' },
-    roadLeft:       { es: 'Te faltan {n}.', en: '{n} to go.' },
     roadLeft1:      { es: 'Te falta {n}.', en: '{n} to go.' },
     roadCaravan:    { es: 'La Caravana de las pulgas en Pulgatopía', en: 'The Flea Caravan at Fleatopia' },   // KEY_CARAVAN, FLEATOPIA
     roadLace:       { es: 'Derrota a Lace en la Cuna', en: 'Defeat Lace in the Cradle' },   // DEFEATED_LACE_2_DESC
     roadKey:        { es: 'Llave de hogar campana', en: 'Bellhome Key' },   // INV_NAME_BELL_HOUSE_KEY
     roadPavo:       { es: 'lista: habla con Pabo', en: 'ready: talk to Pavo' },   // his name: BELLHART_GREETER_MAIN
     roadKeyRule:    { es: 'Pabo la da tras «{glory}» y {n} deseos de su lista', en: 'Pavo gives it after {glory} and {n} wishes of his list' },
-    roadKeyHead:    { es: '{key}: lo que pide Pabo', en: '{key}: what Pavo asks' },
     roadOffer:      { es: 'Acepta «{wish}»: habla con el {caretaker} en {clave}', en: 'Accept "{wish}": talk to the {caretaker} in {clave}' },
     roadOfferNote:  { es: 'Con todo cumplido, te llama con la mano. El deseo sale también en el muro de deseos de {town}, que te manda a él.', en: 'Once everything is met he waves you over. The wish also shows on the Wishwall in {town}, which sends you to him.' },
     roadDeclined:   { es: 'Ya te lo ofreció y lo rechazaste: vuelve a hablar con él y acéptalo.', en: 'He offered it and you turned it down: talk to him again and accept.' },
@@ -823,12 +807,11 @@
        says of it, its Wishwall, the Inventory, the Journal or the Caretaker. */
     pgSays:         { es: 'Lo que dice el juego', en: 'What the game says' },
     pgSaysHide:     { es: 'Ocultar', en: 'Hide' },
-    pgSaysNone:     { es: 'El juego no tiene texto para este paso.', en: 'The game has no text for this step.' },
     pgPeekStep:     { es: 'Paso {n}', en: 'Step {n}' },
     pgPeekDone:     { es: 'hecho', en: 'done' },
-    pgPeekClose:    { es: 'Cerrar el paso', en: 'Close the step' },
-    pgPeekOpen:     { es: 'Lo que dice el juego de este paso', en: 'What the game says of this step' },
     pgMapN:         { es: 'Ver los {n} en el mapa', en: 'See the {n} on the map' },
+    // The route's last station, over the Act it opens (design/83, 4 A).
+    pgRouteEnd:     { es: 'Llegas al', en: 'You reach' },
     roadKeyDesc:    { es: 'Llave para acceder a una campana restaurada sobre Campanilla.', en: 'Key to a restored bell above Bellhart.' },   // INV_DESC_BELL_HOUSE_KEY
     roadSays_churchkeeper: { es: 'Abajo, en las tierras musgosas, aferrada aún a su capilla fallida, mi hermana se desprenderá de su poder, si se lo pides amablemente.',
                       en: 'Down in the mosslands, still clinging to her failed chapel, my sister\'ll part with her power, if asked kind enough.' },   // CARETAKER_SNARE_REPEAT_CHURCHKEEPER

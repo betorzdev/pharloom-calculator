@@ -117,23 +117,27 @@
     const how = isFound(x) ? t(onMap ? 'pgFound' : 'pgFoundNoPin') : x.how;
     return `<li class="pg-item${got ? ' is-got' : ''}${later ? ' is-later' : ''}${icon ? '' : ' is-plain'}"${later ? ` title="${esc(t('pgLater', { n: act }))}"` : ''}>
         ${marking && mark && !(mark.startsWith('piece:') && LADDER[CO.PIECES[+mark.slice(6)][0]]) ? `<button type="button" class="pg-mark check is-own" data-act="pgOwn" data-value="${esc(mark)}" aria-pressed="${!!got}" aria-label="${esc(name)}"><span class="check-box" aria-hidden="true"></span></button>`
-          : `<span class="pg-mark" aria-hidden="true">${got ? App.tick : ''}</span>`}
+          : `<span class="pg-mark" aria-hidden="true">${got ? App.tick : x.promise ? `<span class="pg-promise${x.promise.done ? ' is-ready' : ''}"></span>` : ''}</span>`}
         ${icon ? `<span class="pg-art"><img src="${icon}" alt="" loading="lazy"></span>` : ''}
         <span class="pg-main"><span class="pg-name"${NT}>${color ? `<span class="pg-slot is-${color}" aria-hidden="true"></span>` : ''}${esc(name)}</span>
-          ${got ? `<span class="sr-only">${esc(t('pgGot'))}</span>` : ''}${!got ? howHtml(how, more) + saysRow(x.says) : ''}</span>
+          ${got ? `<span class="sr-only">${esc(t('pgGot'))}</span>` : ''}${!got && x.promise ? `<span class="sr-only">${esc(t('pgPromised'))}</span>${wishLine(x.promise)}` : ''}${!got && !x.promise ? howHtml(how, more) + saysRow(x.says) : ''}</span>
         <span class="pg-place"><span class="pg-where">${place.map((w, i) => `<span${i || prefs.pgNear ? NT : ''}>${esc(w)}</span>`).join('')}</span></span>
         ${onMap ? `<button type="button" class="pg-onmap" data-act="${x.focus ? 'pgFocus' : 'mapShow'}" data-value="${esc(x.focus || mark)}" aria-label="${esc(t('mapOnMap') + ': ' + name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '<span class="pg-onmap is-none" aria-hidden="true"></span>'}
       </li>`;
   }
   /* A list of rows; in the Act's order, each Act a small head over its rows, when they span two
-     Acts or more. A row with no Act has no head (the caravan's condition had a lone «·»). */
+     Acts or more. A row with no Act has no head (the caravan's condition had a lone «·»). The
+     wishes promised go first, under a head of their own (design/81-task-states-variants.html, 2 A),
+     and then the rest has its heads whatever it spans: by Act, or «The rest» by distance. */
   function listHtml(shown, g) {
     let last = null;
-    const acts = !prefs.pgNear && new Set(shown.map((x) => x.act || 0).filter(Boolean)).size > 1;
-    return `<ul class="pg-list">${shown.map((x) => {
-      const head = acts && x.act && x.act !== last ? `<li class="pg-act" aria-hidden="true">${esc(t('saveAct', { n: x.act }))}</li>` : '';
+    const first = shown.filter((x) => x.promise && !x.got), rest = first.length ? shown.filter((x) => !first.includes(x)) : shown;
+    const acts = !prefs.pgNear && (first.length > 0 || new Set(rest.map((x) => x.act || 0).filter(Boolean)).size > 1);
+    const head = (s) => `<li class="pg-act" aria-hidden="true">${esc(s)}</li>`;
+    return `<ul class="pg-list">${first.length ? head(t('pgPromisedHead')) + first.map((x) => row(x, g)).join('') : ''}${first.length && rest.length && prefs.pgNear ? head(t('pgRest')) : ''}${rest.map((x) => {
+      const h = acts && x.act && x.act !== last ? head(t('saveAct', { n: x.act })) : '';
       last = x.act || 0;
-      return head + row(x, g);
+      return h + row(x, g);
     }).join('')}</ul>`;
   }
 
@@ -197,7 +201,9 @@
       return `<span class="pg-strip" aria-hidden="true">${list.map((x) => `<img class="${!g || x.got ? '' : 'is-missing'}" src="${x.icon}" alt="" loading="lazy">`).join('')}</span>`;
     }
     if (max > MAX_PIPS) return '<span class="pg-strip" aria-hidden="true"></span>';
-    return `<span class="pg-strip pg-pips" aria-hidden="true">${Array.from({ length: max }, (_, i) => `<i class="${g && i < got ? 'is-on' : ''}"></i>`).join('')}</span>`;
+    // A wish promised lights its pip halfway, after the done ones (design/81, 3 A).
+    const promised = g ? list.filter((x) => x.promise && !x.got).length : 0;
+    return `<span class="pg-strip pg-pips" aria-hidden="true">${Array.from({ length: max }, (_, i) => `<i class="${g && i < got ? 'is-on' : g && i < got + promised ? 'is-promised' : ''}"></i>`).join('')}</span>`;
   }
   /* Free mode's marks (design/41, 6 A): the categories whose pieces follow the Inventory's
      ladders (masks, silk, the upgrades, the Needle, the Silk Hearts) have no box; their group says
@@ -205,14 +211,12 @@
   const LADDER_CATS = ['masks', 'spools', 'upgrades', 'needle', 'hearts'];
   const ladderNote = (id, g) => (marking && g && LADDER_CATS.includes(id)
     ? `<p class="pg-note">${esc(t('pgLadderNote'))} <a class="text-btn" href="${App.here(App.hashFor('game'))}" data-act="view" data-value="game">${esc(t('navGame'))}</a></p>` : '');
-  /* o (the road's parts, actHtml): all, every row, the done ones ticked, whatever the toggle says;
-     road, open unless folded (prefs.pgShut), as they start open; note, the line under the head (the
-     road's only: the 100% and Tasks open straight on their rows, design/75); emblem, a picture by
-     the title (null keeps its place, so the titles line up); pips, pips in the strip even when every
+  /* o: all, every row, the done ones ticked, whatever the toggle says; emblem, a picture by the
+     title (null keeps its place, so the titles line up); pips, pips in the strip even when every
      row has a picture. */
   function group(id, title, list, g, got, max, o = {}) {
     const all = o.all || prefs.pgAll || !g;
-    const open = o.road ? !(prefs.pgShut || []).includes(id) : isOpen(id);
+    const open = isOpen(id);
     const done = g && got >= max;
     const shown = open ? nearFirst(all ? list : list.filter((x) => !x.got)) : [];
     const body = !open ? '' : shown.length ? listHtml(shown, g)
@@ -222,7 +226,7 @@
           <span class="pg-title">${o.emblem !== undefined ? `<span class="pg-emb" aria-hidden="true">${o.emblem ? `<img src="${o.emblem}" alt="" loading="lazy">` : ''}</span>` : ''}${esc(title)}</span>${strip(list, g, got, max, o.pips)}
           ${g ? `<span class="pg-count"><b>${pts(got)}</b><i class="u">/${num(max)}</i></span>` : `<span class="pg-count"><i class="u">${num(max)}</i></span>`}
           <span class="disc-ring">${App.chevron(open)}</span></button></h3>
-        ${open ? `${o.note ? `<p class="pg-note">${esc(o.note)}</p>` : ''}${ladderNote(id, g)}${body}` : ''}
+        ${open ? `${ladderNote(id, g)}${body}` : ''}
       </section>`;
   }
 
@@ -247,6 +251,27 @@
     const ty = TASK_TYPE[q] || (w[0] === 'main-objectives' ? null : w[0]);
     return ty ? `assets/icons/tasks/${ty}.webp` : q ? `assets/icons/tasks/main-${slug(q)}.webp` : null;
   }
+  /* A wish promised and not done (design/81-task-states-variants.html, all A): what it asks with
+     how much of each Hornet carries (js/savefile.js carried; the rosaries, the shell shards, the
+     Journal's entries), and once she has it all the game's line for handing it in (CHAIN ready).
+     A delivery is ready from the moment it's taken: she carries it. A stage before it taken (a
+     board's Pre) promises it with nothing counted yet. The main objectives are the road's. */
+  function wishState(w, taken, g) {
+    const q = wishQuest(w) || TASK_QUEST[w[2][1]];
+    if (!q || !taskStages(q).some((s) => taken.has(s))) return null;
+    const e = QU.CHAIN[q] || {}, all = taken.has(q) ? e.asks || [] : [];
+    const delivery = all.length === 1 && !!all[0].delivery;
+    const asks = delivery ? [] : all.map((a) => (a.kind === 'item' ? { name: pick(a.name), n: a.n, have: (g.carried || {})[a.save] || 0 }
+      : a.kind === 'journal' ? { name: pick(item('hunters-journal').name), n: a.n, have: Object.keys(g.journal || {}).length }
+        : { name: pick(item(a.kind === 'shards' ? 'shell-shards' : 'rosaries').name), n: a.n, have: a.kind === 'shards' ? g.shards : g.rosaries }));
+    const ready = delivery || (asks.length > 0 && asks.every((a) => a.have >= a.n));
+    return { asks, ready: ready && (e.ready || e.desc) ? pick(e.ready || e.desc) : '', done: ready };
+  }
+  // Its line, where other rows say how to get a thing: «Ragpelt 7/25», what's in hand dimmed.
+  function wishLine(s) {
+    if (s.done) return s.ready ? `<span class="pg-how pg-wish">${esc(s.ready)}</span>` : '';
+    return s.asks.length ? `<span class="pg-how pg-wish">${s.asks.map((a) => `<span class="pg-wish-n${a.have >= a.n ? ' is-full' : ''}"><span${NT}>${esc(a.name)}</span> <b>${num(Math.min(a.have, a.n))}</b><i>/${num(a.n)}</i></span>`).join('')}</span>` : '';
+  }
   // The groups, and how many tasks are done of how many (the tab's card).
   function tasks(g, skip = new Set()) {
     /* A wish only one mode has (the Steel Soul's, a Classic one) shows in a save of that mode. Free
@@ -255,13 +280,13 @@
     const mode = !g || !App.game() ? null : m && m.steel ? 'steel' : 'classic';
     const done = new Set(g ? g.quests : []);
     const sum = { got: 0, max: 0 };
-    const pin = taskPin(g);
+    const pin = taskPin(g), taken = new Set(g ? g.taken || [] : []);
     const [main, ...rest] = CO.WISH_TYPES.map((ty) => {
       const list = CO.WISHES.map((w, i) => ({ w, i })).filter(({ w, i }) => w[0] === ty.id && !skip.has(i) && (!mode || !w[5] || w[5] === mode))
         .map(({ w, i }) => { const scene = wishScene(wishQuest(w), done);
           // With no area in the pane's list, the area it's taken in, as the road's rows (wishRow).
           return { name: pick(w[4]), got: !!g && g.wishes.includes(i), act: w[1], area: w[3] || (scene && R.areaOf(scene)) || null, scene, icon: taskIcon(w),
-            focus: !!g && g.wishes.includes(i) ? null : pin(w, i) }; }).sort(byAct);
+            focus: !!g && g.wishes.includes(i) ? null : pin(w, i), promise: !g || g.wishes.includes(i) || ty.id === 'main-objectives' ? null : wishState(w, taken, g) }; }).sort(byAct);
       const title = ty.name ? pick(ty.name) : TYPE_NAME[ty.id]();
       const got = list.filter((x) => x.got).length;
       sum.got += got;
@@ -509,18 +534,6 @@
     const x = STEP_SAYS[s.id] ? STEP_SAYS[s.id](s) : null, map = mapLink(r, s, stepMarks(r, s, g));
     return x || map ? `<div class="pg-says${cls}">${x ? saysHtml(x) : ''}${map}</div>` : '';
   }
-  /* Another step of the road, opened from the thread or its medallion (2 A): its number, title and
-     card where it was opened; the × or its button again close it. One at a time, while the page is. */
-  let peekAt = null, peekFrom = 'thread';
-  function peekHtml(r, g) {
-    if (!peekAt || !peekAt.startsWith(r.act + ':')) return '';
-    const i = r.steps.findIndex((x) => r.act + ':' + x.id === peekAt), s = r.steps[i];
-    if (!s) return '';
-    const done = !!g && (s.ok || s.bypassed), x = STEP_SAYS[s.id] ? STEP_SAYS[s.id](s) : null, title = stepTitle(r, s);
-    return `<div class="pg-says is-peek" role="region" aria-label="${esc(title)}"><p class="pg-peek-h"><small>${esc(t('pgPeekStep', { n: num(i + 1) }))}${done ? ' · ' + esc(t('pgPeekDone')) : ''}</small><span>${esc(title)}</span></p>
-        <button type="button" class="pg-peek-x" data-act="pgPeek" data-value="${esc(peekAt)}" aria-label="${esc(t('pgPeekClose'))}" title="${esc(t('pgPeekClose'))}">${App.cross}</button>
-        ${x ? saysHtml(x) : ''}${x && x.text ? '' : `<p class="pg-says-none">${esc(t('pgSaysNone'))}</p>`}${done ? '' : mapLink(r, s, stepMarks(r, s, g))}</div>`;
-  }
   // A row's own words (4 A), folded under «Lo que dice el juego».
   function saysRow(x) {
     if (!x || !x.text) return '';
@@ -561,42 +574,7 @@
     return { how: t('roadCaravanHow', { n: num(c.fleas), need: num(c.need), npc: pick(HW.NPCS.mooshka), at: areaName(STOP[c.at]) }),
       more: [c.at === 2 ? lake : '', c.at < 2 && !g.lastJudge ? t('roadCaravanJudge', { steps: areaName('CORAL_STEPS'), judge: foeName('last-judge') }) : ''].filter(Boolean) };
   }
-  // met: a part already fulfilled (enough points) shows its rows only with Everything.
-  // Without a save (the guide), each list folds under «See all n» (design/40, 5 A).
-  const list = (rows, g, met) => {
-    if (met && g && !prefs.pgAll) return '';
-    const shown = nearFirst(prefs.pgAll || !g ? rows : rows.filter((x) => !x.got));
-    if (!shown.length) return '';
-    if (g) return listHtml(shown, g);
-    const id = 'f' + (foldN++), open = foldOpen.has(id);
-    return `<button type="button" class="text-btn pg-fold" data-act="pgFold" data-value="${id}" aria-expanded="${open}">${esc(open ? t('pgFoldHide') : t('pgFoldSee', { n: num(shown.length) }))}</button>${open ? listHtml(shown, g) : ''}`;
-  };
   const count = (got, max) => `<span class="pg-count"><b>${num(got)}</b><i class="u">/${num(max)}</i></span>`;
-  // A count past its target (21 points of 17) shows the target met, with a tick.
-  const subHead = (title, got, max, g) => `<p class="pg-sub"><span>${esc(title)}</span>${!g ? `<span class="pg-count"><i class="u">${num(max)}</i></span>`
-    : got >= max ? `<span class="pg-count"><span class="pg-mark">${App.tick}</span> <b>${num(max)}</b><i class="u">/${num(max)}</i></span>` : count(got, max)}</p>`;
-
-  function step(n, s, title, body, g, r) {
-    const state = !g ? '' : s.ok ? ' is-ok' : s.bypassed ? ' is-bypassed' : '';
-    const card = r && !(g && (s.ok || s.bypassed)) ? stepCard(r, s, g, ' is-step') : '';
-    const mark = !g ? '' : s.total > 1 && !s.ok && !s.bypassed ? count(s.done, s.total) : s.ok || s.bypassed ? `<span class="pg-mark">${App.tick}</span>` : '';
-    return `<li class="pg-step${state}"><h4 class="pg-step-h"><span class="pg-step-n">${num(n)}</span>
-        <span class="pg-step-t">${esc(title)}</span>${mark}</h4>${card}${s.bypassed && !s.ok ? `<p class="pg-note">${esc(t('roadBypassed', { phantom: foeName('phantom') }))}</p>` : ''}${body || ''}</li>`;
-  }
-
-  function toAct2(r, g) {
-    const [bells, gate, judge] = r.steps;
-    const shrines = bells.shrines.map((b) => ({ name: pick(b.name), got: b.ok, act: 1, mark: 'bell:' + b.field }));   // named by their area already
-    const gateName = pick(QU.CHAIN[gate.quest].name);
-    return [
-      // Gone round by the Phantom, the Bellshrines left are no longer to do: as a part met, only with Everything.
-      step(1, bells, t('roadBells'), list(shrines, g, !!bells.bypassed), g, r),
-      step(2, gate, t('roadGate', { gate: gateName }), '', g, r),
-      step(3, judge, t('roadJudge', { judge: foeName('last-judge'), phantom: foeName('phantom') }), '', g, r),
-      step(4, r.steps[3], t('roadCitadel'), '', g, r),
-    ];
-  }
-
   /* The Soul Snare's four checks on the save (js/acts.js): the caravan, the Faydown Cloak, Lace
      beaten atop the Cradle's tower (defeatedLaceTower: set in Song_Tower_01, the Cradle's) and the
      Bellhome's key, with what each still asks. */
@@ -613,33 +591,6 @@
       { test: 'bellhomeKey', ready: key.ready, name: t('roadKey'), got: test('bellhomeKey').ok, act: 2, area: 'BELLHART', icon: 'assets/benches/bellhome.png', mark: PAVO,
         how: test('bellhomeKey').ok ? '' : key.ready ? t('roadPavo') : t('roadKeyRule', { glory: wishName('Belltown House Mid'), n: num(key.need) }), says: says('inv', t('roadKeyDesc')) },
     ].map((x) => ({ act: 0, area: null, ...x }));
-  }
-
-  function toAct3(r, g) {
-    const [unlock, offer, pieces, ready, silk] = r.steps;
-    const wish = wishName(offer.quest);
-    const rule = QU.GROUPS['Soul Snare'];
-    const required = groupRows('Soul Snare', g, true), points = groupRows('Soul Snare', g, false);
-    const test = (id) => unlock.tests.find((x) => x.id === id);
-    const key = test('bellhomeKey').key;
-    // What each check still asks goes under its name, as in the Act tab (a long one doesn't fit by the area).
-    const checks = checkRows(unlock, g).map(({ icon, ...x }) => x);
-    // The key's own rule, while it isn't there: Bellhart's Glory, then 2 of the group's wishes.
-    const keyRows = [wishRow(key.gloryQuest, key.glory, new Set(g ? g.quests : []), g), ...groupRows('Belltown House Key', g, false)];
-    const keyPart = g && !test('bellhomeKey').ok && !key.ready
-      ? subHead(t('roadKeyHead', { key: t('roadKey') }), (key.glory ? 1 : 0) + Math.min(key.got, key.need), 1 + key.need, g) + list(keyRows, g) : '';
-    const unlockBody = subHead(t('roadRequired'), unlock.required.done, unlock.required.total, g) + list(required, g, !unlock.required.missing.length)
-      + subHead(t('roadPoints', { n: num(rule.target), max: num(unlock.points.max) }), unlock.points.got, unlock.points.need, g)
-      + `<p class="pg-note">${esc(t('roadPointsNote'))}</p>` + list(points, g, unlock.points.got >= unlock.points.need)
-      + subHead(t('roadChecks'), unlock.tests.filter((x) => x.ok).length, unlock.tests.length, g) + list(checks, g) + keyPart;
-    const snare = pieces.pieces.map(snareRow);
-    return [
-      step(1, unlock, t('roadUnlock', { wish }), unlockBody, g, r),
-      step(2, offer, t('roadOffer', { wish, caretaker: t('roadCaretaker'), clave: areaName('ENCLAVE') }), `<p class="pg-note">${esc(offerNote(offer, g))}</p>`, g, r),
-      step(3, pieces, t('roadPieces'), list(snare, g), g, r),
-      step(4, ready, t('roadReady', { caretaker: t('roadCaretaker'), clave: areaName('ENCLAVE') }), '', g, r),
-      step(5, silk, t('roadSilk'), `<p class="pg-note">${esc(t('roadSilkNote'))}</p>`, g, r),
-    ];
   }
 
   /* Each step by what it asks, read from its id (js/acts.js next()), so a step the road gains or
@@ -663,20 +614,6 @@
   const stepTitle = (r, s) => (TITLE[s.id] ? TITLE[s.id](r, s) : s.id);
   const stepShort = (r, s) => (SHORT[s.id] ? SHORT[s.id](r, s) : stepTitle(r, s));
   const stepAt = (r) => r.steps.findIndex((x) => !x.ok && !x.bypassed);
-  /* The road at a glance (design/03-redesign.md, step 5, "the journey"): its steps as the game's
-     diamonds on one thread, done ones lit, the one you're on larger, each numbered and named as what
-     to do. The tab above names the road; the step you're on heads what's left under it (actHtml).
-     As a guide (no save), no step is yours. */
-  function journey(r, guide = false) {
-    const at = guide ? -1 : stepAt(r);
-    const on = at < 0 ? (guide ? 0 : r.steps.length) : at;
-    const s = r.steps[at];
-    const f = ((on + (s && s.total > 1 ? s.done / s.total : 0)) / Math.max(1, r.steps.length - 1)) * 100;
-    return `<div class="pg-journey is-road" style="--n:${r.steps.length};--f:${Math.min(100, f).toFixed(1)}%">
-        <ol class="pg-journey-steps">${r.steps.map((x, i) => `<li class="${!guide && (x.ok || x.bypassed) ? 'is-done' : ''}${i === at ? ' is-cur' : ''}${peekAt === r.act + ':' + x.id ? ' is-peek' : ''}" title="${esc(stepTitle(r, x))}">
-          <i aria-hidden="true"></i><span><button type="button" class="pg-jstep" data-act="pgPeek" data-value="${r.act}:${x.id}"${i === at ? '' : ` aria-expanded="${peekAt === r.act + ':' + x.id}"`}>${esc(t('pgStepN', { n: num(i + 1), step: stepShort(r, x) }))}</button></span></li>`).join('')}</ol>
-      </div>${peekFrom === 'thread' ? peekHtml(r, guide ? null : cur) : ''}`;
-  }
   /* In Act 3, the endings (Albert, then design/40, 1 A: the Acts are on top of the tab now), lit the
      ones this save has seen (js/savefile.js ENDINGS), named as the game names them. They aren't a
      sequence: the thread under them stays unlit. An Act 2 ending never seen is closed for good once
@@ -718,11 +655,10 @@
     return `<div class="pg-acts"><div class="pg-journey" style="--n:3;--f:${f}%"><ol class="pg-journey-steps">${acts}</ol></div><p class="pg-here">${line}</p></div>`;
   }
 
-  /* ── What's left, drawn (design/03-redesign.md, step 5: the rings, then E) ──────────────
-     The step you're on as one small ring per part of it (the wishes it requires, its points, its
-     checks…), the game's picture inside and how far as a figure under it; under them each part
-     as a group of the 100% tab (parts(), partsHtml()). The steps after it follow, dim, as
-     medallions. The pictures are the game's: the map's quest medallions (assets/map/pins), the
+  /* ── What's left, drawn (design/03-redesign.md, step 5) ──────────────
+     The step you're on in its parts (parts(): the wishes it requires, its points, its checks…),
+     counted in one line on the route (routeParts()); the rings stay for Act 3's «Your game»
+     (gameHtml()). The pictures are the game's: the map's quest medallions (assets/map/pins), the
      Journal's portraits, the benches, the wishes' type emblems (assets/icons/wishes,
      tools/extract-wish-icons.py). */
   const QUEST = (n) => `assets/map/pins/quest_map_icon_${n}.webp`;
@@ -739,7 +675,7 @@
      browser translator may translate it). */
   function medal(x) {
     const onMap = x.mark && App.mapHas && App.mapHas(x.mark);
-    return `<li class="pg-md${x.later ? ' is-later' : ''}${x.peek && peekAt === x.peek ? ' is-peek' : ''}"${x.tip ? ` title="${esc(x.tip)}"` : ''}>${x.peek ? `<button type="button" class="pg-md-peek" data-act="pgPeek" data-value="${esc(x.peek)}" aria-expanded="${peekAt === x.peek}" aria-label="${esc(x.name + ': ' + t('pgPeekOpen'))}"></button>` : ''}<span class="pg-md-art"><img src="${x.icon}" alt="" loading="lazy">${x.badge ? `<span class="pg-md-badge">${esc(x.badge)}</span>` : ''}</span>
+    return `<li class="pg-md"><span class="pg-md-art"><img src="${x.icon}" alt="" loading="lazy">${x.badge ? `<span class="pg-md-badge">${esc(x.badge)}</span>` : ''}</span>
         ${onMap ? `<button type="button" class="pg-md-pin" data-act="mapShow" data-value="${esc(x.mark)}" aria-label="${esc(t('mapOnMap') + ': ' + x.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : ''}
         <span class="pg-md-name"${x.plain ? '' : NT}>${esc(x.name)}</span>${x.sub ? `<span class="pg-md-sub">${esc(x.sub)}</span>` : ''}</li>`;
   }
@@ -755,107 +691,146 @@
      top, and its rows (the 100% tab's own: group(), row()) for the list under it, with its goal
      in words and how much is left. A step of one thing is its ring alone. */
   function parts(r, s, g) {
-    const part = (id, label, icon, got, of, goal, rows) => ({ id, label, icon, got: Math.min(got, of), of, rows,
-      note: [goal, got < of ? t('roadLeft', { n: pts(of - got) }) : ''].filter(Boolean).join(' ') });
+    const part = (id, label, icon, got, of, rows) => ({ id, label, icon, got: Math.min(got, of), of, rows });
     // A wish's picture is its type's emblem; what it waits for goes under its name.
     // Half a point leads with the rest; the wish to do first and the runt's warning follow.
     const wishes = (rows) => rows.map(({ sub, ...x }) => ({ ...x, icon: wishArt(x.wish), how: [x.how, sub[0]].filter(Boolean).join(' · '),
       more: [...x.more, ...sub.slice(1)].filter(Boolean) }));
     if (s.id === 'bellshrines') {
-      return [part('shrines', t('pgShrines'), STEP_ART.bellshrines, s.done, s.total, t('roadGoalShrines', { n: num(s.total) }),
-        s.shrines.map((b) => ({ name: pick(b.name), got: b.ok, act: 1, icon: STEP_ART.bellshrines, mark: 'bell:' + b.field })))];
+      return [part('shrines', t('pgShrines'), STEP_ART.bellshrines, s.done, s.total, s.shrines.map((b) => ({ name: pick(b.name), got: b.ok, act: 1, icon: STEP_ART.bellshrines, mark: 'bell:' + b.field })))];
     }
     if (s.id === 'unlock') {
       const points = wishes(groupRows('Soul Snare', g, false));
       return [
-        part('required', t('roadRequired'), BOARD, s.required.done, s.required.total, t('roadGoalReq'), wishes(groupRows('Soul Snare', g, true))),
-        part('points', t('pgPoints'), QUEST('snare'), s.points.got, s.points.need, t('roadGoalPts', { n: num(s.points.need), wishes: num(points.length) }), points),
-        part('checks', t('roadFour'), 'assets/benches/bellhome.png', s.tests.filter((x) => x.ok).length, s.tests.length, t('roadGoalChk'), checkRows(s, g)),
+        part('required', t('roadRequired'), BOARD, s.required.done, s.required.total, wishes(groupRows('Soul Snare', g, true))),
+        part('points', t('pgPoints'), QUEST('snare'), s.points.got, s.points.need, points),
+        part('checks', t('roadFour'), 'assets/benches/bellhome.png', s.tests.filter((x) => x.ok).length, s.tests.length, checkRows(s, g)),
       ];
     }
     if (s.id === 'pieces') {
-      return [part('snare', t('roadSnare'), STEP_ART.pieces, s.done, s.total, t('roadGoalSnare', { n: num(s.total) }),
-        s.pieces.map((x) => ({ ...snareRow(x), icon: QUEST('snare') })))];
+      return [part('snare', t('roadSnare'), STEP_ART.pieces, s.done, s.total, s.pieces.map((x) => ({ ...snareRow(x), icon: QUEST('snare') })))];
     }
-    return [part(s.id, stepShort(r, s), STEP_ART[s.id] || BOARD, s.done, s.total, '', [])];
+    return [part(s.id, stepShort(r, s), STEP_ART[s.id] || BOARD, s.done, s.total, [])];
   }
   // A step's parts at once: what the tab's card counts, in the rings' own units.
   const partsSum = (ps) => ps.reduce((a, p) => ({ got: a.got + p.got, of: a.of + p.of }), { got: 0, of: 0 });
-  /* The Act tab with a save before Act 3: the journey, the step you're on as a heading with its
-     picture, its parts as rings side by side (with, when there are several, that all are needed),
-     then what's next (todoHtml) and, folded, each part as a group of the 100% tab; the steps after
-     it, the bridge to the 100% and the whole road. */
-  function actHtml(r, g) {
-    const at = stepAt(r);
-    const s = r.steps[at];
-    const stale = !g.quests.length && g.wishes.length;
-    const later = r.steps.slice(at + 1).map((x) => ({ name: stepShort(r, x), icon: STEP_ART[x.id] || BOARD, later: true, tip: stepTitle(r, x), plain: true, peek: r.act + ':' + x.id }));
-    const open = !!prefs.pgRoad;
-    return journey(r) + (s ? `<div class="pg-now"><img src="${STEP_ART[s.id] || BOARD}" alt="" loading="lazy"><h3 tabindex="-1">${esc(stepTitle(r, s))}</h3></div>
-        ${stepCard(r, s, g)}
-        ${stale ? `<p class="pg-note is-warn">${esc(t('roadStale'))}</p>` : ''}
-        ${s.bypassed ? '' : partsHtml(r, s, g)}
-        ${later.length ? `<ul class="pg-mds pg-later">${later.map(medal).join('')}</ul>${peekFrom === 'later' && later.some((x) => x.peek === peekAt) ? peekHtml(r, g) : ''}` : ''}` : '')
-      + reach(g) + `<div class="pg-whole"><button type="button" class="text-btn" data-act="pgRoad" aria-expanded="${open}">${esc(t(open ? 'roadLess' : 'roadWhole'))}</button></div>`
-      + (open ? roadHtml(g) : '');
-  }
-  /* The rings, then what's next (design/40-progress-clarity-variants.html, 2 A); every part's whole
-     list, the done ones ticked, folds under it (prefs.pgList). */
-  function partsHtml(r, s, g) {
-    const ps = parts(r, s, g);
-    // The line over the rings: what the step asks, said once (the offer's and the snare's notes too).
+  // The Act tab with a save before Act 3: the road as the whole route (routeHtml).
+  const actHtml = (r, g) => routeHtml(r, g);
+  /* The road to the next Act as the whole route (design/83, A in all four; Act 3's, design/84): the
+     road's thread down the page,
+     a station per step (done ones lit and ticked, the one you're on larger, «You are here»), each
+     opening to what the game says of it and its way onto the Map; the one you're on opens on its
+     list of what's left too, its count on its line (no ring), and a step of one thing doesn't repeat
+     its title as a list. It ends at the Act it opens, named as the Acts on top name it. A step's
+     open or shut is kept while the page is (routeOpen), the one you're on open at first. */
+  const routeOpen = new Map();
+  /* The step you're on, when it has several parts (design/84, 2 A): what it asks said once, then its
+     parts in one line, each its picture, its name and its count, ticked when met. */
+  function routeParts(r, s, g, ps) {
     const say = s.id === 'unlock' ? t('roadAllThree', { caretaker: t('roadCaretaker'), wish: wishOf(r) })
       : s.id === 'offer' ? offerNote(s, g) : s.id === 'silk' ? t('roadSilkNote') : '';
     const lead = say ? `<p class="pg-lead">${esc(say)}</p>` : '';
-    const n = ps.reduce((a, p) => a + p.rows.length, 0);
-    const open = !!prefs.pgList;
-    return `${lead}<div class="pg-rings is-sum" style="--n:${ps.length}">${ps.map((p) => ring({ ...p, items: [] })).join('')}</div>
-        ${todoHtml(r, s, ps)}
-        ${n ? `<div class="pg-whole"><button type="button" class="text-btn" data-act="pgList" aria-expanded="${open}">${esc(open ? t('pgListLess') : t('pgListAll', { n: num(n) }))}</button></div>` : ''}
-        ${n && open ? `<div class="pg-groups">${ps.filter((p) => p.rows.length)
-          .map((p) => group('road-' + p.id, p.label, p.rows, g, p.got, p.of, { all: true, road: true, note: p.note })).join('')}</div>` : ''}`;
+    if (ps.length < 2) return lead;
+    return lead + `<ul class="pg-rt-parts">${ps.map((p) => `<li class="${g && p.got >= p.of ? 'is-done' : ''}"><img src="${p.icon}" alt="" loading="lazy"><span class="pg-rt-pk">${esc(p.label)}</span>${!g ? `<span class="pg-count"><i class="u">${num(p.of)}</i></span>` : p.got >= p.of
+      ? `<span class="pg-count"><span class="pg-mark">${App.tick}</span> <b>${pts(p.of)}</b><i class="u">/${num(p.of)}</i></span>` : count(p.got, p.of)}</li>`).join('')}</ul>`;
   }
-  /* What's next (design/40, 2 A): only what the step still lacks, as numbered things to do, read
-     from its parts' rows: each wish it requires, the wish points short (with the nearest wishes that
-     would give them), each condition, Bellshrine or piece of the snare; a step of one thing, its
-     title. Each with its picture, its place and the Map's pin. */
+  function routeHtml(r, g) {
+    // Without a save it's the guide: no step is yours, each says how much it asks and opens on all
+    // of it, every station shut at first (their open or shut kept apart from a save's: 'guide:').
+    const guide = !g;
+    const at = guide ? -1 : stepAt(r);
+    const stale = !guide && !g.quests.length && g.wishes.length;
+    const stations = r.steps.map((s, i) => {
+      const key = (guide ? 'guide:' : '') + r.act + ':' + s.id, done = !guide && (s.ok || s.bypassed), cur = i === at;
+      const open = routeOpen.has(key) ? routeOpen.get(key) : cur;
+      const ps = cur || guide ? parts(r, s, g) : [];
+      // Yours counts as its parts do, as the tab's card does (a wish point short is one); in the guide, what it asks.
+      const sum = partsSum(ps);
+      const mark = done ? `<span class="pg-mark">${App.tick}</span><span class="sr-only">${esc(t('pgPeekDone'))}</span>`
+        : guide && sum.of > 1 ? `<span class="pg-count"><i class="u">${num(sum.of)}</i></span>` : cur && sum.of > 1 ? count(Math.floor(sum.got), sum.of) : '';
+      let body = '';
+      if (open) {
+        const one = ps.length === 1 && !ps[0].rows.length;
+        // A step done keeps the game's words, without the way onto the Map (as a step peeked at did).
+        const x = done && STEP_SAYS[s.id] ? STEP_SAYS[s.id](s) : null;
+        body = `<div class="pg-rt-body">${done ? (x ? `<div class="pg-says">${saysHtml(x)}</div>` : '') : stepCard(r, s, g)}${cur && stale ? `<p class="pg-note is-warn">${esc(t('roadStale'))}</p>` : ''}${cur || guide ? routeParts(r, s, g, ps) : ''}${ps.length && !one ? todoHtml(r, s, ps, !guide) : ''}</div>`;
+      }
+      return `<li class="pg-rt-st${done ? ' is-done' : cur ? ' is-cur' : guide ? '' : ' is-later'}"${cur ? ' aria-current="step"' : ''}><span class="pg-rt-dia" aria-hidden="true"></span>
+          <h3 class="pg-rt-h"><button type="button" class="pg-rt-open" data-act="pgRoute" data-value="${key}" aria-expanded="${open}">
+            <img class="pg-rt-art" src="${STEP_ART[s.id] || BOARD}" alt="" loading="lazy">
+            <span class="pg-rt-t"><span class="pg-rt-k">${esc(t('pgPeekStep', { n: num(i + 1) }))}${cur ? `<em>${esc(t('pgHere'))}</em>` : ''}</span>
+              <span class="pg-rt-name">${esc(stepTitle(r, s))}</span>${s.bypassed && !s.ok ? `<span class="pg-rt-sub">${esc(t('roadBypassed', { phantom: foeName('phantom') }))}</span>` : ''}</span>
+            <span class="pg-rt-n">${mark}</span><span class="disc-ring">${App.chevron(open)}</span></button></h3>${body}</li>`;
+    }).join('');
+    const end = `<li class="pg-rt-end"><span class="pg-rt-dia" aria-hidden="true"></span><p class="pg-rt-h"><span class="pg-rt-t"><span class="pg-rt-k">${esc(t('pgRouteEnd'))}</span>
+        <span class="pg-rt-name"${NT}>${esc(t('saveAct', { n: num(r.act) }))} · ${esc(t('pgActName' + r.act))}</span></span></p></li>`;
+    return `<ol class="pg-rt">${stations}${end}</ol>`;
+  }
+  /* What's next (design/40, 2 A), the step's one list (design/82, 1 A): what the step still lacks,
+     as numbered things to do, read from its parts' rows: each wish it requires, the wish points short
+     (with the nearest wishes that would give them, the rest unfolding), each condition, Bellshrine or
+     piece of the snare; a step of one thing, its title. Each with its picture, its place and the
+     Map's pin. With «Everything» (prefs.pgAll, the 100% tab's own toggle), what's done too, ticked in
+     its place, and the wishes that gave points among the options. */
   const byNear = (rows) => rows.map((x, i) => ({ x, i, d: dist(x) })).sort((a, b) => (a.d ?? Infinity) - (b.d ?? Infinity) || a.i - b.i).map((e) => e.x);
-  function todo(r, s, ps) {
+  function todo(r, s, ps, all) {
     const out = [];
     for (const p of ps) {
       const left = p.rows.filter((x) => !x.got);
       if (p.id === 'points') {
-        if (p.got >= p.of) continue;
-        const near = byNear(left);
+        if (p.got >= p.of) { if (all) out.push({ name: p.label, icon: p.icon, done: true }); continue; }
         const known = left.some((x) => dist(x) != null);
         out.push({ name: t('pgTodoPoints', { n: pts(p.of - p.got) }), icon: p.icon, how: t(known ? 'pgTodoAnyNear' : 'pgTodoAny', { n: num(left.length) }),
-          opts: near.slice(0, 4), more: Math.max(0, near.length - 4) });
+          opts: byNear(left), had: all ? p.rows.filter((x) => x.got) : [] });
         continue;
       }
       if (!p.rows.length) { if (p.got < p.of) out.push({ name: stepTitle(r, s), icon: p.icon }); continue; }
-      for (const x of left) {
+      for (const x of all ? p.rows : left) {
+        const ready = !x.got && x.test === 'bellhomeKey' && x.ready;
         const name = p.id === 'required' ? t('pgTodoWish', { wish: x.name })
           : p.id === 'shrines' ? t('pgTodoShrine', { area: x.name })
-          : x.test === 'bellhomeKey' && x.ready ? t('pgTodoPavo', { key: x.name })
+          : ready ? t('pgTodoPavo', { key: x.name })
           : x.test === 'doubleJump' || x.test === 'bellhomeKey' || p.id === 'snare' ? t('pgTodoGet', { name: x.name }) : x.name;
-        out.push({ ...x, name, ...(x.test === 'bellhomeKey' && x.ready ? { how: '', more: [] } : {}), area: p.id === 'shrines' ? null : x.area });
+        out.push({ ...x, name, done: x.got, ...(ready ? { how: '', more: [] } : {}), area: p.id === 'shrines' ? null : x.area });
       }
     }
     return out;
   }
-  function todoHtml(r, s, ps) {
-    const items = todo(r, s, ps);
+  const OPTS = 4;   // the nearest wishes for points shown before «and n more»
+  let todoN = 0;    // each list's own ids (the guide has one per road's step opened)
+  function todoHtml(r, s, ps, toggle = true) {
+    const items = todo(r, s, ps, !!prefs.pgAll);
     if (!items.length) return '';
-    return `<section class="pg-todo" aria-labelledby="pg-todo-h"><h3 class="pg-part" id="pg-todo-h">${esc(t('pgTodo'))}</h3><ol class="pg-list">${items.map((x, i) => {
+    const opt = (o, i) => `<li${i >= OPTS ? ' class="is-extra"' : ''}><img src="${o.icon}" alt="" loading="lazy"><span><span${NT}>${esc(o.name)}</span>${o.value === 0.5 ? ` · ${esc(t('roadHalf'))}` : ''}</span></li>`;
+    const had = (o) => `<li class="is-got">${App.tick}<img src="${o.icon}" alt="" loading="lazy"><span><span${NT}>${esc(o.name)}</span><span class="sr-only">${esc(t('pgGot'))}</span></span></li>`;
+    let n = 0;
+    // In the guide (toggle off), the whole list under its station, with no title and no «What's
+    // missing · Everything»: nothing's next or done there.
+    const hid = 'pg-todo-' + (++todoN);
+    return `<section class="pg-todo"${toggle ? ` aria-labelledby="${hid}"><h3 class="pg-part" id="${hid}">${esc(t('pgTodo'))}</h3>` : '>'}
+      ${toggle ? `<div class="seg pg-seg" role="group" aria-label="${esc(t('pgShow'))}">
+        <button type="button" data-act="pgShow" data-value="missing" aria-pressed="${!prefs.pgAll}">${esc(t('pgMissing'))}</button>
+        <button type="button" data-act="pgShow" data-value="all" aria-pressed="${!!prefs.pgAll}">${esc(t('pgAll'))}</button>
+      </div>` : ''}${(() => { const li = (x) => {
+      if (x.done) {
+        return `<li class="pg-item is-got"><span class="pg-num is-done" aria-hidden="true">${App.tick}</span>
+          <span class="pg-art"><img src="${x.icon}" alt="" loading="lazy"></span>
+          <span class="pg-main"><span class="pg-name">${esc(x.name)}</span><span class="sr-only">${esc(t('pgGot'))}</span></span>
+          <span class="pg-place"><span class="pg-where">${x.area ? `<span${NT}>${esc(areaName(x.area))}</span>` : ''}</span></span>
+          <span class="pg-onmap is-none" aria-hidden="true"></span>
+        </li>`;
+      }
       const onMap = x.mark && App.mapHas && App.mapHas(x.mark);
-      return `<li class="pg-item"><span class="pg-num" aria-hidden="true"><b>${num(i + 1)}</b></span>
+      const more = x.opts ? x.opts.length - OPTS : 0;
+      return `<li class="pg-item"><span class="pg-num" aria-hidden="true"><b>${num(++n)}</b></span>
           <span class="pg-art"><img src="${x.icon}" alt="" loading="lazy"></span>
           <span class="pg-main"><span class="pg-name">${esc(x.name)}</span>${howHtml(x.how, x.more)}${saysRow(x.says)}
-            ${x.opts ? `<ul class="pg-opts">${x.opts.map((o) => `<li><img src="${o.icon}" alt="" loading="lazy"><span><span${NT}>${esc(o.name)}</span>${o.value === 0.5 ? ` · ${esc(t('roadHalf'))}` : ''}</span></li>`).join('')}${x.more ? `<li class="is-more">${esc(t('pgTodoMore', { n: num(x.more) }))}</li>` : ''}</ul>` : ''}</span>
+            ${x.opts ? `<ul class="pg-opts" id="${hid}-opts">${x.opts.map(opt).join('')}${x.had.map(had).join('')}${more > 0 ? `<li class="is-more"><button type="button" class="text-btn" data-act="pgOpts" aria-expanded="false" aria-controls="${hid}-opts">${esc(t('pgTodoMore', { n: num(more) }))}</button></li>` : ''}</ul>` : ''}</span>
           <span class="pg-place"><span class="pg-where">${x.area ? `<span${NT}>${esc(areaName(x.area))}</span>` : ''}</span></span>
           ${onMap ? `<button type="button" class="pg-onmap" data-act="mapShow" data-value="${esc(x.mark)}" aria-label="${esc(t('mapOnMap') + ': ' + x.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '<span class="pg-onmap is-none" aria-hidden="true"></span>'}
         </li>`;
-    }).join('')}</ol></section>`;
+    };
+      return `<ol class="pg-list">${items.map(li).join('')}</ol>`; })()}</section>`;
   }
   /* «Tu partida», in Act 3 (round 1, 4 A): the endings, then two rings: the endings seen, and the
      things of the 100% only Act 3 holds. */
@@ -870,37 +845,20 @@
         items: E.filter((e) => !seen.has(e.id) && !shut.includes(e)).map((e) => ({ name: t('ending_' + e.key), icon: QUEST('act3_finale') })) },
       { label: t('pgOnlyAct3'), icon: lack.length ? lack[0].icon : 'assets/icons/items/everbloom.webp', got: only.length - lack.length, of: only.length,
         items: lack.map((x) => ({ name: x.name, icon: x.icon, mark: x.mark })) },
-    ].map(ring).join('')}</div>` + reach(g);
+    ].map(ring).join('')}</div>`;
   }
-  /* The bridge to the 100%: how many of its things you can get in the Act you're in (each piece
-     one: a Mask Shard is a thing, not a point), and the way to the other tab. Nothing when there's
-     nothing left to get. */
-  let reachN = 0;
-  const reach = () => (!reachN ? '' : `<div class="pg-reach" title="${esc(t('pgReachTip'))}"><p><b>${num(reachN)}</b> ${esc(t('pgReach'))}</p>
-      <button type="button" class="btn" data-act="pgTab" data-value="100">${esc(t('pgSee100'))}</button></div>`);
   // The offer: turned down already (js/acts.js declined), or how it comes.
   const offerNote = (s, g) => (g && s.declined ? t('roadDeclined') : t('roadOfferNote', { town: areaName('BELLHART') }));
 
-  /* The whole road. Without a save it's the guide (design/40, 5 A): each road with its thread, and
-     every list folded under «See all n» (foldOpen: which, while the page is open). */
-  const foldOpen = new Set();
-  let foldN = 0;
-  function roadHtml(g) {
-    const roads = g ? [A.next(g)].filter(Boolean) : [A.next({ act: 1 }), A.next({ act: 2 })];
-    if (!roads.length) return '';
-    foldN = 0;
-    // A slot kept before the site read the quests: its wishes are there, its quests aren't.
-    const stale = g && !g.quests.length && g.wishes.length;
-    return roads.map((r) => `<section class="pg-road" id="pg-road-${r.act}" aria-labelledby="pg-road-${r.act}-h">
-        <h3 class="pg-part" id="pg-road-${r.act}-h">${esc(t('roadTitle', { n: num(r.act) }))}${g ? ` <b>${num(r.done)}/${num(r.total)}</b>` : ''}</h3>
+  /* Without a save (and in Free mode), the guide (design/40, 5 A): each road under its title and what
+     it is, as the route with no step yours (routeHtml). */
+  function roadHtml() {
+    return [A.next({ act: 1 }), A.next({ act: 2 })].map((r) => `<section class="pg-road" id="pg-road-${r.act}" aria-labelledby="pg-road-${r.act}-h">
+        <h3 class="pg-part" id="pg-road-${r.act}-h">${esc(t('roadTitle', { n: num(r.act) }))}</h3>
         <p class="pg-note">${esc(t(r.act === 3 ? 'roadNote3' : 'roadNote2'))}</p>
-        ${!g ? journey(r, true) : ''}
-        ${stale ? `<p class="pg-note is-warn">${esc(t('roadStale'))}</p>` : ''}
-        <ol class="pg-steps">${(r.act === 3 ? toAct3 : toAct2)(r, g).join('')}</ol>
+        ${routeHtml(r, null)}
       </section>`).join('');
   }
-
-
 
   /* Free mode's game for Progress: the Inventory's marks, a New Game until you mark (design/42,
      3 A), and its ladders (masks, silk, Silk Hearts, Needle, Kit, Pouch) as the Inventory sets
@@ -957,8 +915,6 @@
         <p class="pg-ring-k">${esc(t('pgCompletion'))}</p></div>
         ${own && theirs != null && theirs !== c.total ? `<p class="hm-check is-off">${esc(t('homeDiffers', { pct: num(theirs) + App.pctSpace() }))}</p>` : ''}</div>` : '';
     const next = own ? A.next(own) : null;
-    // The things of the 100% still missing in the Act you're in or before it, each piece one.
-    reachN = g ? Object.values(all).flat().filter((x) => !x.got && x.act && x.act <= g.act).length : 0;
     const hundred = CP.CATEGORIES.map((k, i) => {
       const cat = c ? c.categories[i] : { got: 0, max: k.max };
       return group(k.id, t('cat_' + k.id), all[k.id], g, cat.got, cat.max);
@@ -1019,7 +975,7 @@
     /* The 100% and Tasks open straight on their rows, with no line over them (design/75, Albert);
        their rows take the whole width (2 B), and the part's title carries the masthead's filigree
        (6 B). */
-    const panel = tab === 'act' ? (next ? actHtml(next, own) : own ? gameHtml(own, all) : roadHtml(null))
+    const panel = tab === 'act' ? (next ? actHtml(next, own) : own ? gameHtml(own, all) : roadHtml())
       : tab === '100' ? `${total}${splitBar(cats)}
         ${controls}
         <p class="pg-colhead" aria-hidden="true">${esc(t(g ? 'pgColHead' : 'pgColHeadNone'))}</p>
@@ -1050,27 +1006,18 @@
 
   Object.assign(actions, {
     pgOpen(node) {
-      const id = node.dataset.value;
-      // The road's parts start open: what's kept is the ones folded.
-      const key = id.startsWith('road-') ? 'pgShut' : 'pgOpen', list = prefs[key] || [];
-      prefs[key] = list.includes(id) ? list.filter((x) => x !== id) : [...list, id];
+      const id = node.dataset.value, list = prefs.pgOpen || [];
+      prefs.pgOpen = list.includes(id) ? list.filter((x) => x !== id) : [...list, id];
       savePrefs();
       render();
     },
-    pgRoad() { prefs.pgRoad = !prefs.pgRoad; savePrefs(); render(); },
-    /* A step of the thread or a medallion: its card opens where it was clicked (design/28, 2 A); the
-       step you're on takes you to its heading instead. */
-    pgPeek(node) {
-      const v = node.dataset.value, own = App.game(), r = own ? A.next(own) : null, at = r ? r.steps[stepAt(r)] : null;
-      if (at && v === r.act + ':' + at.id) {
-        peekAt = null;
-        const h = document.querySelector('.pg-now h3');
-        if (h) { h.scrollIntoView({ block: 'center' }); h.focus({ preventScroll: true }); }
-        return;
-      }
-      peekAt = peekAt === v ? null : v;
-      peekFrom = node.classList.contains('pg-md-peek') ? 'later' : 'thread';
+    // A station of the route (design/83): it opens or shuts, kept while the page is.
+    pgRoute(node) {
+      const v = node.dataset.value;
+      routeOpen.set(v, node.getAttribute('aria-expanded') !== 'true');
       render();
+      const b = document.querySelector(`.pg-rt-open[data-value="${v}"]`);
+      if (b) b.focus({ preventScroll: true });
     },
     // A step's «See on the map»: the Map on what's left of it (js/app-map.js App.mapFocus).
     pgFocus(node) { const f = FOCUS.get(node.dataset.value); if (f && f.keys.length) App.mapFocus(f.keys, f.name); },
@@ -1081,13 +1028,13 @@
       node.setAttribute('aria-expanded', String(!q.hidden));
       node.innerHTML = esc(t(q.hidden ? 'pgSays' : 'pgSaysHide')) + App.chevron(!q.hidden);
     },
-    // The step's whole list, under what's next (design/40, 2 A).
-    pgList() { prefs.pgList = !prefs.pgList; savePrefs(); render(); },
-    // A list of the guide (no save), folded under «See all n».
-    pgFold(node) {
-      const id = node.dataset.value;
-      if (foldOpen.has(id)) foldOpen.delete(id); else foldOpen.add(id);
-      render();
+    // What's next's wishes for points past the nearest four (design/82, 1 A).
+    pgOpts(node) {
+      const ul = document.getElementById(node.getAttribute('aria-controls'));
+      if (!ul) return;
+      const open = ul.classList.toggle('is-open');
+      node.setAttribute('aria-expanded', String(open));
+      node.textContent = open ? t('pgHowLess') : t('pgTodoMore', { n: num(ul.querySelectorAll('.is-extra').length) });
     },
     // The tab: kept in the preferences, so the one used last opens next time.
     pgTab(node) {
