@@ -869,26 +869,9 @@ for (const k of Object.keys(Q.LOCKS)) KEYS[k] = N.text(KEY_TEXT[k] || fail(`no t
    (pickups.json sizes). Checked on the benches: each RestBench, placed so, has to fall by the
    bench pin the map itself draws (js/map.js PINS; the game sets those by hand, a few pixels off). */
 const M = SS.map;
-const ROOM_OF = new Map(Object.entries(M.ROOMS).map(([k, r]) => [k.toLowerCase(), r]));
-// A scene loaded over its room (greymoor_08_boss, aqueduct_05_caravan) has no size of its own and
-// the room's coordinates: its point is the room's.
-const hostOf = (scene) => {
-  let host = String(scene).toLowerCase();
-  if (!P.sizes[host]) while (host.includes('_') && !(P.sizes[host] && ROOM_OF.get(host))) host = host.slice(0, host.lastIndexOf('_'));
-  return host;
-};
-function toMap(scene, x, y) {
-  const host = hostOf(scene);
-  const r = ROOM_OF.get(host), size = P.sizes[host];
-  const p = r && size && x != null && y != null ? R.mapPoint(host, x, y, size[0], size[1]) : null;
-  if (!p) return null;
-  // A point well outside its room's box is something parked off the scene: not used. One just
-  // outside (Shakra on guard in Greymoor_08, her feet under the scene's floor) is brought in to the edge.
-  const out = Math.max(r[0] - p.x, p.x - r[0] - r[2], 0) + Math.max(r[1] - p.y, p.y - r[1] - r[3], 0);
-  if (out > 12) return null;
-  const px = Math.min(Math.max(p.x, r[0]), r[0] + r[2]), py = Math.min(Math.max(p.y, r[1]), r[1] + r[3]);
-  return [Math.round(px * 10) / 10, Math.round(py * 10) / 10];
-}
+// One rule for the generators (tools/map-point.js): a scene loaded over its room has the room's
+// coordinates, an interior has no point, one just outside its room is brought in to the edge.
+const { hostOf, toMap, ROOM_OF } = require('./map-point.js')(P.sizes);
 {
   const errs = [];
   for (const pin of M.PINS) {
@@ -990,6 +973,28 @@ EXTRAS.forEach((x, i) => {
   const door = SCENE_AT.get(i);
   put2('extra:' + i, objectAt(c) || (c[0] === 'relic' || c[0] === 'memento' ? itemAt(c[1], x[3]) : door ? toMap(x[3], door[0], door[1]) : null));
 });
+/* An extra whose own object is in a room the map draws, yet off its scene: parked until the game
+   moves it, at its room's middle. Since its parents' turns count (tools/scene_place.py, 16-Oct-2026)
+   these are the only ones; a new one is read again (a turn missed, or a patch that moved it). */
+// Read on 16-Oct-2026: Dock_03c's and Dock_03d's walls above their tilemaps, Song_19_entrance's side
+// lever and Slab_21's lock past their scenes' left edge, Aqueduct_04's planks under its floor,
+// Bone_East_18c's Remasker past its right edge.
+const PARKED = new Set(['Dock_03c/Breakable Wall_Silhouette', 'Dock_03d/Breakable Wall_Silhouette', 'Song_19_entrance/Song_lever_side',
+  'Slab_21/Slab Lock', 'Aqueduct_04/drop_planks', 'Bone_East_18c/Remasker New Sharp']);
+{
+  const parked = [];
+  EXTRAS.forEach((x, i) => {
+    if (XY['extra:' + i] || LATE_XY.has(i)) return;
+    // A way whose check also takes the save's flags (any) is still named by its own object.
+    const c = x[2][0] === 'any' ? x[2].slice(1).find((y) => ['bool', 'int', 'geo'].includes(y[0])) || x[2] : x[2], door = SCENE_AT.get(i);
+    const own = door || (['bool', 'int', 'geo'].includes(c[0]) && (P.objects[lower(c[1])] || {})[c[2]]);
+    const r = R.roomOf(x[3]), box = r && r.exact && M.ROOMS[r.scene];
+    if (own && own.length && box && box[2]) parked.push(`${x[3]}/${c[0] === 'bool' || c[0] === 'int' || c[0] === 'geo' ? c[2] : x[4] && x[4].en}`);
+  });
+  const fresh = parked.filter((k) => !PARKED.has(k));
+  if (fresh.length) fail(`off their scene, in a room the map draws: ${fresh.join('; ')}: read them again (PARKED)`);
+  console.log(`parked off their scene (their room's middle): ${parked.length}`);
+}
 for (const [id, obj] of Object.entries(PEOPLE_OBJ)) put2('person:' + id, entryAt(P.npcs[obj], PEOPLE[id]));
 for (const [field, scene] of BELLS) { const b = P.benches[lower(scene)]; put2('bell:' + field, b && toMap(scene, b[0], b[1])); }
 for (const [quest, f] of Object.entries(Q.FROM)) {
@@ -1022,7 +1027,8 @@ const WHO = { grindle: 'GRINDLE', pebb: 'BB_SHOPKEEP', frey: 'BELLHART_SHOPKEEP'
   lumble: 'DICE_PILGRIM', mooshka: 'FLEAMASTER', 'forge-daughter': 'FORGEDAUGHTER', 'mottled-skarr': 'ANT_MERCHANT', scrounge: 'BELLHART_RELICDEALER' };
 // Who offers the wishes of each room js/quests.js FROM names (one mark per room): the Couriers in
 // Bellhart, the Bartender at the Halfway House (Nuu's is the Journal's), the Caretaker in the Songclave…
-// Fleatopia's Mr Mushroom (Aqueduct_05) has nobody of his in the room: its middle.
+// Fleatopia's Mr Mushroom (Aqueduct_05) has nobody of his in the room (null): the wish is taken at
+// the object whose script offers it, the Mr Mushroom Tablet (kb/data/game/wishes.json offers).
 const GIVER = { Belltown_Room_pinsmith: 'PINSMITH', Bone_East_Umbrella: 'SEAMSTRESS', Belltown: 'COURIERS_SHOP', Halfway_01: 'HH_BARTENDER',
   Belltown_Room_doctor: 'DOCTOR', Crawl_08: 'BLUE_SCIENTIST', aqueduct_05_festival: 'FLEAMASTER', Song_09b: 'GOURMAND_SERVANT',
   Room_Huntress: 'HUNTRESS', Mosstown_02c: 'MOSSCREEP', Aqueduct_05: null, Room_Pinstress: 'PINSTRESS', Dust_Shack: 'DUST_TRADERS_1',
@@ -1037,7 +1043,17 @@ const personAt = (key, scene) => {
   return null;
 };
 const whoAt = (npc, scene) => (WHO[npc] ? personAt(WHO[npc], scene) : fail(`no person for ${npc} in WHO`));
-const giverAt = (scene) => (GIVER[scene] ? personAt(GIVER[scene], scene) : null);
+/* Where a wish nobody offers in person is taken: the object whose FSM offers a wish of that room
+   (tools/extract-wishes.py offers), or the generator stops: there's always one, or a patch moved it. */
+const OFFERS = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'kb', 'data', 'game', 'wishes.json'), 'utf8')).offers
+  || fail('wishes.json has no offers: run tools/extract-wishes.py again');
+const offerAt = (scene) => {
+  const at = Object.entries(Q.FROM).filter(([, f]) => (f.npc || []).some((n) => lower(n) === lower(scene)))
+    .flatMap(([q]) => (OFFERS[q] || []).filter(([sc]) => lower(sc) === lower(scene)));
+  if (!at.length) fail(`nobody offers the wishes of ${scene} (GIVER null), and no object of the scene does: GIVER needs reading again`);
+  return at.map(([sc, , x, y]) => toMap(sc, x, y)).find(Boolean) || null;
+};
+const giverAt = (scene) => (GIVER[scene] ? personAt(GIVER[scene], scene) : offerAt(scene));
 // A point inside its scene: one at the scene's origin, or off it, is parked until the game moves it.
 const inScene = (scene, x, y) => {
   const size = P.sizes[lower(scene)];

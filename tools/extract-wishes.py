@@ -22,6 +22,9 @@ What it reads (read on 11-Oct-2026, patch 1.0.30000):
       - where the game ends each quest: a PlayMakerFSM action EndQuest, EndQuestV2 or
         TryEndQuestV2 whose quest parameter is that quest (as tools/extract-quests.py maps an
         offer): [scene, object, x, y];
+      - what offers each wish: a PlayMakerFSM action QuestYesNo(V2), BeginQuest(V2) or
+        CanBeginQuest whose quest parameter is that wish (offers: [scene, object, x, y]), so a wish
+        nobody offers in person (Fleatopia's Mr Mushroom Tablet) is marked where it's taken;
       - the FSMs that name a playerData field MushroomQuestFound<n> (the Herald's seven spots).
   maps_assets_all.bundle  the map's own quest pins (Game_Map_Hornet / Main Quest Pins: each a
       QuestMapMarker with its quest, or the delivery item it stands for, and the scene it's for
@@ -30,11 +33,13 @@ What it reads (read on 11-Oct-2026, patch 1.0.30000):
   collectables/collectableitems.bundle  each target's name in the game's text (displayName).
   atlases: each target's inventory sprite and the emblems of EMBLEMS' wish types, saved to
       assets/map/icons/<sprite, lower case>.webp, at most 128 px.
-Every [scene, …] ends with the object's place in the world, its Transforms composed. Scene names
+Every [scene, …] ends with the object's place in the world, its Transforms composed
+(their turns counted: tools/scene_place.py). Scene names
 are the bundles', lower case. """
 import bisect, json, os, re, struct, sys
 from concurrent.futures import ProcessPoolExecutor
 import UnityPy
+from scene_place import world_of
 
 UnityPy.config.FALLBACK_UNITY_VERSION = '6000.0.50f1'
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -43,6 +48,8 @@ ICONS = os.path.join(HERE, '..', 'assets', 'map', 'icons')
 DATA = ['questsystem/quests.bundle', 'questsystem/mainquests.bundle', 'questsystem/types.bundle', 'collectables/collectableitems.bundle']
 ATLASES = ['inventory', 'inventory_furniture_items']
 END = {'EndQuest', 'EndQuestV2', 'TryEndQuestV2'}
+# The actions that offer a quest (as tools/extract-quests.py maps an offer to its scene).
+OFFER = {'QuestYesNo', 'QuestYesNoV2', 'BeginQuest', 'BeginQuestV2', 'CanBeginQuest'}
 GIVE = {'CollectableItemCollect', 'SavedItemGet', 'SavedItemGetV2'}
 FSM_OBJECT = 24   # PlayMaker's ParamDataType.FsmObject
 FIELD = re.compile(rb'MushroomQuestFound\d')
@@ -92,19 +99,7 @@ def scene(args):
     T = {o.path_id: o.read() for o in env.objects if o.type.name == 'Transform'}
     of_go = {t.m_GameObject.m_PathID: t for t in T.values()}
 
-    def world(gid):
-        t, chain = of_go.get(gid), []
-        while t is not None:
-            chain.append(t)
-            f = t.m_Father.m_PathID
-            t = T.get(f) if f else None
-        x = y = 0.0
-        sx = sy = 1.0
-        for t in reversed(chain):
-            lp, ls = t.m_LocalPosition, t.m_LocalScale
-            x, y = x + lp.x * sx, y + lp.y * sy
-            sx, sy = sx * ls.x, sy * ls.y
-        return [round(x, 2), round(y, 2)] if chain else []
+    world = world_of(T, of_go, 2)   # its place, its parents' turns counted (tools/scene_place.py)
 
     def at(af, r):
         """A reference in assets file af → (name, class) of a quest or a target, or None."""
@@ -129,7 +124,7 @@ def scene(args):
                 continue
             tt = o.read_typetree()
             var = {v['name']: v.get('value') for v in (tt['fsm'].get('variables') or {}).get('objectVariables') or []}
-            ends, gives, checks = set(), set(), set()
+            ends, gives, checks, offers = set(), set(), set(), set()
             for st in tt['fsm'].get('states') or []:
                 ad = st['actionData']
                 starts = ad['actionStartIndex']
@@ -148,8 +143,10 @@ def scene(args):
                         gives.add(ref[0])
                     elif action == CHECK and ref[1] == 'Quest':
                         checks.add(ref[0])
-            if ends or gives or hit or checks:
-                found.append(('fsm', gid, sorted(ends), sorted(gives), sorted({h.decode() for h in hit}), sorted(checks)))
+                    elif action in OFFER and ref[1] == 'Quest':
+                        offers.add(ref[0])
+            if ends or gives or hit or checks or offers:
+                found.append(('fsm', gid, sorted(ends), sorted(gives), sorted({h.decode() for h in hit}), sorted(checks), sorted(offers)))
         elif cls == 'PersistentBoolItem':
             tt = o.read_typetree()
             bools[gid] = (tt.get('itemData') or {}).get('ID') or ''
@@ -158,7 +155,7 @@ def scene(args):
             ref = at(o.assets_file, tt.get('item'))
             if ref:
                 found.append((cls, gid, ref))
-    out = {'items': [], 'ends': [], 'fields': []}
+    out = {'items': [], 'ends': [], 'fields': [], 'offers': []}
     for f in found:
         gid = f[1]
         try:
@@ -181,6 +178,8 @@ def scene(args):
                 out['items'].append([it, name, 'PlayMakerFSM', go, flag, *xy])
             for fld in f[4]:
                 out['fields'].append([fld, name, go, *xy])
+            for q in f[6]:
+                out['offers'].append([q, name, go, *xy])
             # A dropper: the wish it checks (main() files it under the wish's target).
             if go.startswith(DROPPERS):
                 for q in f[5]:
@@ -336,7 +335,7 @@ def main(game):
         fail(f'only {len(quests)} quests: the bundles changed')
     sdir = os.path.join(base, 'scenes_scenes_scenes')
     paths = sorted(os.path.join(sdir, f) for f in os.listdir(sdir) if f.endswith('.bundle') and f != 'menu_title.bundle')
-    items, ends, fields = {}, {}, {}
+    items, ends, fields, offers = {}, {}, {}, {}
     with ProcessPoolExecutor(min(12, os.cpu_count() or 1), initializer=init, initargs=(cls,)) as ex:
         for r in ex.map(scene, [(p, targets) for p in paths], chunksize=2):
             for x in r['items']:
@@ -348,6 +347,8 @@ def main(game):
                 ends.setdefault(x[0], []).append(x[1:])
             for x in r['fields']:
                 fields.setdefault(x[0], []).append(x[1:])
+            for x in r['offers']:
+                offers.setdefault(x[0], []).append(x[1:])
     qpins, benches = pins(game)
     if len(qpins) < 50 or len(benches) < 40:
         fail(f'{len(qpins)} quest pins, {len(benches)} bench pins on the map: Game_Map_Hornet changed')
@@ -364,7 +365,7 @@ def main(game):
         im.save(os.path.join(ICONS, n.lower() + '.webp'), 'WEBP', quality=90, method=6)
     srt = lambda d: {k: sorted(v, key=lambda x: [str(y) for y in x]) for k, v in sorted(d.items())}
     out = {'quests': dict(sorted(quests.items())), 'icons': dict(sorted(item_icon.items())), 'names': {k: v for k, v in sorted(item_name.items()) if k in items}, 'items': srt(items), 'ends': srt(ends),
-           'fields': srt(fields), 'pins': qpins, 'benches': benches}
+           'fields': srt(fields), 'offers': srt(offers), 'pins': qpins, 'benches': benches}
     with open(OUT, 'w') as fh:
         json.dump(out, fh, indent=1, sort_keys=True)
         fh.write('\n')
