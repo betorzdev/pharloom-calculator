@@ -92,8 +92,9 @@ const HAND = {
   arts: {
     // The rooms whose scripts set the ability's flag, by their areas: Swift Step's shrine in the
     // Deep Docks, Clawline's in the Underworks (Shrine Weaver HarpoonDash), Silk Soar's in the
-    // Abyss, the Drifter's Cloak from the Seamstress, the Faydown Cloak atop Mount Fay.
-    'swift-step': ['hasDash', 'bone_east_05'], clawline: ['hasHarpoonDash', 'under_18'],
+    // Abyss, Cling Grip's in Shellwood (the room past Sister Splinter's, not her arena), the
+    // Drifter's Cloak from the Seamstress, the Faydown Cloak atop Mount Fay.
+    'swift-step': ['hasDash', 'bone_east_05'], clawline: ['hasHarpoonDash', 'under_18'], 'cling-grip': ['hasWalljump', 'shellwood_10'],
     'silk-soar': ['hasSuperJump', 'abyss_08'], 'drifters-cloak': ['hasBrolly', 'bone_east_umbrella'],
     'faydown-cloak': ['hasDoubleJump', 'peak_08b'],
     // The two Needolin melodies outside the 100%, both Act 3's (their wiki pages): the Beastling
@@ -150,9 +151,18 @@ const EVERBLOOM = 'Tut_04';
 // and the fights that aren't in their entry's first room: the first Moss Mother in Tut_03 (its
 // Battle Scene; Tut_02 holds the Act 3 one, in the lower Moss Grotto), the Moss Mothers' pair in
 // Weavenest Atla (where the Weavelight lies), Lace's second fight atop the Cradle's tower, the
-// Savage Beastfly of the wish in the Far Fields (its boss scene's room).
+// Savage Beastfly of the wish in the Far Fields (its boss scene's room). Then the bosses whose entry
+// is in several rooms, none with more of it than the rest (the generator stops on a new one): the
+// first fight of each (Lace's in the Deep Docks, the Beastfly's in its chapel, the Skull Tyrant's in
+// the Marrow); Moorwing's at Bellhart's east entrance (greymoor_08_boss, Garmond and Zaza's help in
+// it; greymoor_05_boss is the Act 2 rematch by the Bellway, its wiki page); the Second Sentinel's
+// arena in the High Halls (Hang_17b, where the Reserve Bind it gives lies: Hang_07 and the Choral
+// Chambers are where it wanders); the Bell Eater, called to any Bellway in Act 3, at Bellhart's,
+// under which the Bell Beast gives the Beastling Call once it's beaten.
 const BOSS_ROOM = { 'raging-conchfly': 'Coral_27', 'moss-mother-ruined-chapel': 'Tut_03', 'lace-the-cradle': 'Song_Tower_01', 'moss-mother-weavenest-atla': 'Weave_03',
-  'moss-mother-act-3-moss-grotto': 'Tut_02', 'savage-beastfly-far-fields': 'Bone_East_08' };
+  'moss-mother-act-3-moss-grotto': 'Tut_02', 'savage-beastfly-far-fields': 'Bone_East_08',
+  lace: 'Bone_East_12', 'savage-beastfly-chapel-of-the-beast': 'Ant_19', 'skull-tyrant': 'Bone_15', moorwing: 'greymoor_08_boss',
+  'second-sentinel': 'Hang_17b', 'bell-eater': 'Belltown_basement' };
 /* The fights the completionist folds into its boss's entry (its check is the first fight's), each
    with what the save keeps once it's won, read in the scene that fights it (11-Oct-2026): the
    flag Song_Tower_01's boss scene tests, Weave_03's Boss Scene bool, the Act 3 Moss Mother's own
@@ -171,7 +181,11 @@ const BOSS_MORE = [
    (Restore_Points3/restoreData24: act2Started, not blackThreadWorld; checked 14-Oct-2026). */
 const BOSS_ACT = { 'summoned-saviour': 2 };
 // Relics an NPC hands over: Jubilana's Choral Commandment, Grindle's Psalm Cylinder.
-const RELIC_ROOM = { 'Seal Chit City Merchant': 'song_enclave', 'Psalm Cylinder Grindle': 'coral_42' };
+const RELIC_ROOM = { 'Seal Chit City Merchant': 'song_enclave', 'Psalm Cylinder Grindle': 'coral_42',
+  // In several rooms (the generator stops on a new one): the Hero's Memento where Lost Garmond drops
+  // it, his Blasted Steps arena; the Guardian's Memento from Seth at Fleatopia's festival (beating his
+  // scores), not from Mooshka at the caravan.
+  'Memento Garmond': 'coral_33', 'Memento Seth': 'aqueduct_05_festival' };
 // The Bellhome, where its furnishings go (Pavo's house in Bellhart).
 const BELLHOME = 'Belltown_Room_Spare';
 
@@ -208,10 +222,18 @@ const foeOf = new Map(E.FOES.map((f) => [f.id, f]));
 const bookOf = (foe) => bookBy.get(foe) || bookBy.get(foe.replace(/-(the-cradle|far-fields|chapel-of-the-beast|weavenest-atla|coral-tower)$/, ''))
   || (foeOf.has(foe) && bookN.get(foeOf.get(foe).hj)) || null;
 const arena = (foe) => {
-  if (BOSS_ROOM[foe]) return BOSS_ROOM[foe];
   const e = bookOf(foe);
-  const rooms = e && SS.journalRooms[e.key];
-  return rooms ? (rooms.map(([s]) => s).find(onMap) || null) : null;
+  const rooms = ((e && SS.journalRooms[e.key]) || []).filter(([s]) => onMap(s));
+  if (BOSS_ROOM[foe]) {
+    // A room by hand has to be one where the game has its entry (or something naming its record).
+    const room = (s) => (R.roomOf(s) || {}).scene;
+    const has = [...rooms.map(([s]) => s), ...((e && P.records[e.key]) || []).map(([s]) => s)].map(room);
+    if (!has.includes(room(BOSS_ROOM[foe]))) fail(`${foe}: BOSS_ROOM's ${BOSS_ROOM[foe]} isn't among the rooms of its Journal entry: read it again`);
+    return BOSS_ROOM[foe];
+  }
+  // Several rooms with as much of the entry as the first: which is the fight is a choice (BOSS_ROOM).
+  if (rooms.length > 1 && rooms[1][1] === rooms[0][1]) fail(`${foe} is in ${rooms.map(([s]) => s).join(', ')} alike: choose its arena in BOSS_ROOM`);
+  return rooms.length ? rooms[0][0] : null;
 };
 const BOSSES = [];
 for (const it of C.load('bosses.ts')) {
@@ -236,8 +258,8 @@ function byWays(ways, found, key) {
     let s = null;
     if (w.kind === 'found' || w.kind === 'craft') s = found();
     else if (w.kind === 'shop') s = w.vendor === 'shakra' ? 'Belltown' : personScene(w.vendor);   // Shakra: where she rests
-    else if (w.kind === 'wish') s = wishScene(w.quest);
-    else if (w.kind === 'boss') s = arena(w.foe);
+    else if (w.kind === 'wish') s = found() || wishScene(w.quest);   // a reward lying in the world, where it lies (the Reserve Bind, in the Second Sentinel's arena)
+    else if (w.kind === 'boss') s = found() || arena(w.foe);   // what the boss opens the way to, where it lies (Conchcutter, past the Raging Conchfly)
     else if (['npc', 'challenge', 'fleas'].includes(w.kind)) s = personScene(w.npc);
     if (s && onMap(s)) { if (key) WAY_OF[key] = w; return s; }
   }
@@ -316,7 +338,14 @@ const roomOfCheck = (c) => {
   const s = R.sceneOf(c);
   if (onMap(s)) return s;
   if (c[0] === 'flag' && HAND_EXTRA[c[1]]) return HAND_EXTRA[c[1]];
-  if (c[0] === 'relic' || c[0] === 'memento') return RELIC_ROOM[c[1]] || lying(c[1])[0] || given(c[1]).find(onMap) || null;
+  if (c[0] === 'relic' || c[0] === 'memento') {
+    const hand = RELIC_ROOM[c[1]], all = given(c[1]);
+    if (hand && all.length && !all.includes(hand.toLowerCase())) fail(`${c[1]}: RELIC_ROOM's ${hand} isn't among the game's scenes for it (${all.join(', ')})`);
+    if (hand) return hand;
+    const where = lying(c[1]).length ? lying(c[1]) : given(c[1]).filter(onMap);
+    if (where.length > 1) fail(`${c[1]} is in ${where.join(', ')}: choose its room in RELIC_ROOM`);
+    return where[0] || null;
+  }
   if (c[0] === 'any') for (const x of c.slice(1)) { const r = roomOfCheck(x); if (r) return r; }
   return null;
 };
@@ -703,13 +732,24 @@ for (const k of Object.keys(Q.LOCKS)) KEYS[k] = N.text(KEY_TEXT[k] || fail(`no t
    bench pin the map itself draws (js/map.js PINS; the game sets those by hand, a few pixels off). */
 const M = SS.map;
 const ROOM_OF = new Map(Object.entries(M.ROOMS).map(([k, r]) => [k.toLowerCase(), r]));
+// A scene loaded over its room (greymoor_08_boss, aqueduct_05_caravan) has no size of its own and
+// the room's coordinates: its point is the room's.
+const hostOf = (scene) => {
+  let host = String(scene).toLowerCase();
+  if (!P.sizes[host]) while (host.includes('_') && !(P.sizes[host] && ROOM_OF.get(host))) host = host.slice(0, host.lastIndexOf('_'));
+  return host;
+};
 function toMap(scene, x, y) {
-  const r = ROOM_OF.get(String(scene).toLowerCase()), size = P.sizes[String(scene).toLowerCase()];
-  const p = r && size && x != null && y != null ? R.mapPoint(String(scene), x, y, size[0], size[1]) : null;
+  const host = hostOf(scene);
+  const r = ROOM_OF.get(host), size = P.sizes[host];
+  const p = r && size && x != null && y != null ? R.mapPoint(host, x, y, size[0], size[1]) : null;
   if (!p) return null;
-  // A point well outside its room's box is something parked off the scene: not used.
+  // A point well outside its room's box is something parked off the scene: not used. One just
+  // outside (Shakra on guard in Greymoor_08, her feet under the scene's floor) is brought in to the edge.
   const out = Math.max(r[0] - p.x, p.x - r[0] - r[2], 0) + Math.max(r[1] - p.y, p.y - r[1] - r[3], 0);
-  return out > 12 ? null : [Math.round(p.x * 10) / 10, Math.round(p.y * 10) / 10];
+  if (out > 12) return null;
+  const px = Math.min(Math.max(p.x, r[0]), r[0] + r[2]), py = Math.min(Math.max(p.y, r[1]), r[1] + r[3]);
+  return [Math.round(px * 10) / 10, Math.round(py * 10) / 10];
 }
 {
   const errs = [];
@@ -781,7 +821,10 @@ const objectAt = (c) => {
   if (c[0] === 'any') { for (const x of c.slice(1)) { const p = objectAt(x); if (p) return p; } return null; }
   if (!['bool', 'int', 'geo'].includes(c[0])) return null;
   const o = (P.objects[lower(c[1])] || {})[c[2]];
-  return o && o.length ? toMap(c[1], o[0], o[1]) : null;
+  if (o && o.length) return toMap(c[1], o[0], o[1]);
+  // A person's own bool (Mooshka's at Fleatopia): the person, in the room or a scene loaded over it.
+  const n = (P.npcs[c[2]] || []).find((e) => hostOf(e[0]) === hostOf(c[1]) && typeof e[2] === 'number');
+  return n ? toMap(n[0], n[2], n[3]) : null;
 };
 const XY = {};
 const put2 = (key, p) => { if (p) XY[key] = p; };
@@ -865,14 +908,17 @@ const inScene = (scene, x, y) => {
 // A boss where it is in its arena: the first enemy carrying its Journal record there, else what names
 // it. One waiting just off its scene (the Widow above, Groal under the swamp) comes in where it waits:
 // its point is brought to the scene's edge. One at the scene's origin is parked: not used.
-const foeAt = (foe, scene) => {
-  const e = bookOf(foe), size = P.sizes[lower(scene)];
+const foeAt = (foe, scene) => recordAt(bookOf(foe), scene);
+// A Journal entry's enemy in a scene: the first carrying its record there, else what names it.
+const recordAt = (e, scene) => {
+  const host = hostOf(scene);   // a boss scene's room (toMap)
+  const size = P.sizes[host];
   const hits = ((e && P.records[e.key]) || []).filter(([sc, , , x, y]) => lower(sc) === lower(scene) && typeof x === 'number' && (Math.abs(x) > 0.5 || Math.abs(y) > 0.5));
   const first = (l) => l.find(([, comp]) => /^EnemyDeathEffects/.test(comp)) || l[0];
-  const hit = first(hits.filter(([, , , x, y]) => inScene(scene, x, y))) || first(hits);
+  const hit = first(hits.filter(([, , , x, y]) => inScene(host, x, y))) || first(hits);
   if (!hit || !size) return null;
   const clamp = (v, n) => Math.min(Math.max(v, 1), n - 1);
-  return toMap(scene, clamp(hit[3], size[0]), clamp(hit[4], size[1]));
+  return toMap(host, clamp(hit[3], size[0]), clamp(hit[4], size[1]));
 };
 // What a wish gives: at the Wishwall it's on, else at who offers it.
 const wishAt = (quest, scene) => {
@@ -906,6 +952,22 @@ for (const id of Object.keys(PEOPLE)) if (!XY['person:' + id] && WHO[id]) put2('
 // The vendors, Shakra and who offers a wish.
 for (const [v, scenes] of Object.entries(VENDORS)) scenes.forEach((sc, i) => put2((v === 'shakra' ? 'shakra:' : 'shop:' + v + ':') + i, whoAt(v, sc)));
 for (const n of Object.keys(GIVER)) put2('giver:' + lower(n), giverAt(n));
+/* Who offers the wishes of each room, by name, and the mark that stands for them there already, if
+   any (Albert's choice, 15-Oct-2026: each person once in a room): a person of PEOPLE, a vendor of
+   VENDORS, or one of the traders js/people.js adds to the shops (tools/gen-people.js TRADERS, the
+   first of their spots). The Map lists the wishes on that mark instead of drawing another. */
+const TRADER = { COURIERS_SHOP: 'couriers', MOSSCREEP: 'druid', HH_BARTENDER: 'creige' };
+const sameRoom = (a, b) => !!(a && b) && lower((R.roomOf(a) || {}).scene || a) === lower((R.roomOf(b) || {}).scene || b);
+const GIVERS = {};
+for (const [scene, key] of Object.entries(GIVER)) {
+  if (!key) { GIVERS[scene] = null; continue; }
+  const ks = [key + '_SUPER', key + '_MAIN', key + '_SUB'].filter((k) => k in N.EN || k in N.ES);
+  const id = Object.keys(WHO).find((x) => WHO[x] === key);
+  const shop = id && (VENDORS[id] || []).findIndex((sc) => sameRoom(sc, scene));
+  const mark = id && sameRoom(PEOPLE[id], scene) ? 'person:' + id : id && shop >= 0 ? (id === 'shakra' ? 'shakra:' : 'shop:' + id + ':') + shop
+    : TRADER[key] ? 'shop:' + TRADER[key] + ':0' : null;
+  GIVERS[scene] = [key, ks.length ? N.text(ks.join('+')) : fail(`no name for ${key} (GIVER)`), mark];
+}
 // The 100% with no point of its own: by its way, the flea, or the script setting its flag.
 CO.PIECES.forEach((p, i) => {
   const key = 'piece:' + i, scene = AT.pieces[i];
@@ -926,6 +988,12 @@ EXTRAS.forEach((x, i) => {
 });
 // The bosses in their arenas, the gauntlets at theirs, the key doors at their lock.
 for (const [foe, scene] of BOSSES) put2('boss:' + foe, foeAt(foe, scene));
+// The Journal's entries (the Map's layer of those still missing): where the enemy is in the first
+// room the Map gives the entry (js/app-map.js, its first room on the map).
+for (const e of J.BOOK) {
+  const scene = ((SS.journalRooms[e.key] || []).map(([s]) => s)).find(onMap);
+  if (scene) put2('journal:' + e.id, recordAt(e, scene));
+}
 const flat = (c) => (c[0] === 'any' || c[0] === 'all' ? c.slice(1).flatMap(flat) : [c]);
 for (const g of SS.gauntlets.GAUNTLETS) {
   const all = P.battles[lower(g.scene)] || [];
@@ -1090,15 +1158,19 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               mode 'steel' when only Steel Soul has it, steel the spot's scene when the save
               chooses it (SteelQuestSpots)
      XY       a thing's key ('piece:<i>', 'tools:<id>', 'arts:<id>', 'extra:<i>'…, 'person:<id>',
-              'board:<scene>', 'bell:<field>', 'task:<i>', 'shakra:<i>', 'shop:<vendor>:<i>', 'giver:<scene>', 'boss:<foe>', 'gaunt:<id>',
+              'board:<scene>', 'bell:<field>', 'task:<i>', 'shakra:<i>', 'shop:<vendor>:<i>', 'giver:<scene>', 'boss:<foe>', 'journal:<entry>', 'gaunt:<id>',
               'lock:<key>:<scene>', 'everbloom') → its point on the map, in the image's pixels: where
               the game has it in its room (the object's place in the scene, or whoever stands for it,
               placed as the game places a point: js/rooms.js mapPoint)
      SEATS    scene (lower case) → { respawn marker's name → its point on the map }: where the game
               wakes Hornet when a save names that marker (respawnScene, respawnMarkerName: a bench's
               RestBench, a room's Death Respawn Marker), her feet on the ground under it (a bench's
-              own foot, the terrain under a marker), in the image's pixels; js/rooms.js restPoint`,
-'spots', [['AT', AT], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['TASKS', TASKS], ['XY', XY], ['SEATS', SEATS]]);
+              own foot, the terrain under a marker), in the image's pixels; js/rooms.js restPoint
+     GIVER    scene a wish is offered in (js/quests.js FROM) → [the person who stands for it there
+              (their key in people.json), their name (the game's), the key of the mark that is them
+              in that room already, or null], or null, nobody: the Map names the mark by them or
+              lists the wishes on theirs; tools/gen-people.js doesn't draw them again`,
+'spots', [['AT', AT], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['TASKS', TASKS], ['XY', XY], ['SEATS', SEATS], ['GIVER', GIVERS]]);
 const kinds = {};
 for (const x of EXTRAS) kinds[x[0]] = (kinds[x[0]] || 0) + 1;
 console.log(`js/spots.js  ${placed.length} things of the 100% placed, ${EXTRAS.length} extras (${Object.entries(kinds).map(([k, n]) => n + ' ' + k).join(', ')}), `

@@ -39,9 +39,9 @@ the work up reads it first, then the step it's on.
 |---|---|---|---|
 | 1 | **The shell**: header, screen bar (desktop and phone), the screen's frame and title, footer and About, the atmosphere | **Built** (28 Sep) | [`04-shell-variants.html`](04-shell-variants.html) |
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
-| 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html` |
+| 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct; the summary, 16 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html`, `89-your-game-summary-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html` |
-| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html` |
+| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html` |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct; every room of an entry 16 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
@@ -404,6 +404,25 @@ to the sides, the foot and under the title; `js/app-map.js` (`areaCut`, inside `
 the frame's shape from the area's box, as wide (or tall) as the area but never smaller than the
 map's own size (on a phone, the rooms round her), with her bench's room right under Hornet
 (`.hm-rest`), kept inside the area. Free mode, with no map, is as it was.
+
+### The summary round (16 October 2026)
+
+Albert: «quizás un poco de resumen de tu partida pero muy visual (nada sobrecargado), cosas como
+las máscaras, tu carrete, el blasón con los items, el acto en el que estás». Drawn in
+`89-your-game-summary-variants.html` over two real saves (Act 3 at 100%, Act 1 early), four rows:
+1, where it goes (A the corners, the HUD where the game puts it; B one shelf under her bench; C
+either side of her); 2, the Crest (A drawn with its Tools in their slots, B its emblem and the
+worn as slot diamonds, C none); 3, the Act (A in the line as before, B three pips, C the game's act
+card); 4, anything more (A nothing, B the Needle, C the Needle and the Silk Hearts).
+
+Albert chose **1 C, 2 A, 3 C, 4 A**. Built:
+
+- `js/app-home.js` (`worn`): Hornet between `.hm-self` (the act card, `saveAct` over
+  `pgActName<n>`, from ACT_<n>_SUPER and ACT_<n>_NAME; the masks and the spool as the HUD) and
+  `.hm-worn`, the Crest, a link to the Crest tab. The Act left the line under the area.
+- `js/app-tools.js`: `App.wornNow()` gives the worn Crest as the Crest screen draws it, still
+  (`crestHtml(…, still)`: the slots are spans, no arrows), and the masks and silk from the engine.
+- `css/tokens.css`: `--hm-crest-k` (24 px, 19 on a phone) and `--hm-mask` (26 px, 20).
 
 ## Step 4 · Inventory
 
@@ -1043,6 +1062,64 @@ tab's; B its own; C «Todo» first).
 and the wishes that gave points as dashed chips among the options. Every wish for points is in the
 line, the ones past the nearest four folded under «y n más» (`pgOpts`). The folded groups
 (`prefs.pgList`, `prefs.pgShut`) and the parts' goal sentences are gone.
+
+### The road to Act 2 as the whole route (16 October 2026)
+
+Albert, over Save 4 (Act 1, step 1): could the road be «the whole route», with the step you're on
+open? The road tab said its four steps up to five times (the sentence on top, the card, the thread,
+the dim medallions of the steps to come, and «The whole road» folded under them), the ring under the
+step repeated the card's 3/5, and a step of one thing (walking into the Citadel) listed its own title
+again as «What's next». The sibling has no road (Hollow Knight has no Acts); its ledger's rows that
+open are the 100% tab's. `83-road-route-variants.html` (kept out of the repo), the real screen
+captured over Save 4 (step 1) and `Restore_Points2/restoreData8.dat` (step 4, the first two steps
+skipped by the Phantom's way): 1 the shape (**A** the route: the thread down the page, a station per
+step, yours open; B the ledger: each step a row of the 100% tab's; C the thread on top as an index
+and the ledger under it; D as it was); 2 the step open (**A** the game's words and the list, its
+count on its line, no ring; B with the ring; C the list first, the words folded); 3 the other steps
+(**A** they open too; B their game line always under the name; C only the name); 4 the end (**A**
+the Act it opens as the last station; B none).
+
+**Decision: A in all four** (16 October 2026), built for the road to Act 2 only (`js/app-progress.js`
+`routeHtml()`, `css/app.css` `.pg-rt`); the road to Act 3 is next. Each station's button
+(`pgRoute`) opens or shuts it, kept while the page is (`routeOpen`), the one you're on open at
+first: a step done shows the game's words without the Map, a step to come its card
+(`stepCard()`), yours its card and `todoHtml()`, unless its one part has no rows. The route ends at
+«You reach · Act 2 · CITADEL OF SONG» (`saveAct`, `pgActName2`). The thread, the step's heading,
+the ring, the medallions and «The whole road» are gone from it; Albert also asked that design pages
+be drawn in English from now on.
+
+### The road to Act 3 as the whole route (16 October 2026)
+
+Albert, after the road to Act 2: show me the road to Act 3, and propose what's worth changing. It
+repeated its five steps as the Act 2 road did, and its first step, unlocking Silk and Soul, has three
+parts needed at once (the ten required wishes, 17 wish points, four conditions): three large rings
+over the list, half a screen even at 30/31 with one row left. `84-road-route-act3-variants.html`
+(kept out of the repo, the first page drawn in English), the real screen rendered by the site's own
+code over Save 2 (3/31) and `Restore_Points3/restoreData24.dat` (30/31): 1 the shape (**A** the route,
+as Act 2; B as it was); 2 the step's parts (**A** one line, each part its picture, name and count,
+ticked when met; B the rings inside the station; C the list split under the parts' heads).
+
+**Decision: 1 A, 2 A** (16 October 2026), built: `actHtml()` is the route for both roads;
+`routeParts()` gives the step you're on its lead line (`roadAllThree`, the offer's note, the Needolin's)
+and, with several parts, `.pg-rt-parts`; the station's count is the parts' sum, as the tab's card's
+(3/31). Gone with the old layout: `partsHtml()`, the later medallions' peek, «The whole road»
+(`pgRoad`, `roadWhole`, `roadLess`), `.pg-now`, `.pg-later`, `.pg-whole`, `.pg-rings.is-sum`. The
+rings stay in Act 3's «Your game»; the guide without a save keeps its thread and the full road.
+
+### The guide as the route (16 October 2026)
+
+Albert: now Free mode, deciding without options or a page. Without a save (and in Free mode, whose
+road is the guide), the tab still drew both roads the old way: a thread across and the full road in
+numbered steps, every list folded under «See all n». Built (`js/app-progress.js`, `css/app.css`):
+`roadHtml()` is each road under its title and note, as `routeHtml(r, null)`: no step yours, no ticks,
+each station with what it asks («5», «31», «4»: its parts' sum) and shut at first (its state kept
+apart, `guide:`); opened, its card, its parts (`routeParts()` with the targets only) and its whole list
+(`todoHtml(…, false)`: no title, no «What's missing · Everything»; each list its own ids). Gone with the
+old guide: `journey()` for the road, the step peek (`pgPeek`, `peekHtml()`), the folds (`pgFold`,
+`list()`), `toAct2()`, `toAct3()`, `step()`, `subHead()`, their CSS (`.pg-steps`, `.pg-step*`, `.pg-sub`,
+`.pg-fold`, `.pg-jstep`, `.pg-peek-*`, `.pg-says.is-step`, `.pg-says.is-peek`, the phone's
+`.pg-journey.is-road`) and strings. The Bellhome Key's rule (Bellhart's Glory and 2 of Pavo's wishes)
+is now only its row's line: the whole road listed those wishes under it.
 
 ## Step 6 · Map
 

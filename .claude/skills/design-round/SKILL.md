@@ -21,7 +21,8 @@ section if it already has one. This is that method as a checklist.
 4. **Draw the options** in `design/NN-<step>-variants.html`, NN the next free number (with
    parallel agents, the orchestrator hands out the numbers). Copy the frame of the latest
    variants page (`<base href="../">`, `css/tokens.css` + `css/app.css`). Real data from a save,
-   not invented; every value from the tokens. The bottom bar (`.mk-bar`):
+   not invented; every value from the tokens. **In English** (Albert, 16 Oct): the site captured
+   with `--lang en`, the bar's rows, labels and notes in English. The bottom bar (`.mk-bar`):
    - one numbered row per open decision (1, 2, 3...), one lettered button per option (A, B,
      C...), the recommended one marked ★, every decision switchable live, not only the layout;
    - rows that only change the preview (save, width, tab) carry no number or letter;

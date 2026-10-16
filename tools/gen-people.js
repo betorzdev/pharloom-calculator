@@ -33,6 +33,7 @@ const { names } = require('./names.js');
 require('../js/map.js');
 require('../js/graph.js');
 const R = require('../js/rooms.js');
+const SP = require('../js/spots.js');
 const M = globalThis.SS.map;
 
 const OUT = path.join(__dirname, '..', 'js', 'people.js');
@@ -136,11 +137,37 @@ const idOf = (key) => key.toLowerCase().replace(/_/g, '-');
   };
   for (const k of Object.keys(HAND)) if (!P.people[k]) fail(`${k} isn't in the scenes any more`);
 
+  /* Each person once in a room, by the mark that says what they're there for (Albert's choice,
+     15-Oct-2026): not drawn again where js/spots.js has them already as who offers a wish (GIVER),
+     as a boss (their Journal portrait is the boss's: the Second Sentinel in its arena), or under a
+     place where a wish is done, which names nobody: the nearest person within 3 px of it in its
+     room, when only one is and the save doesn't follow them there (Mister Mushroom at the Herald's spots). */
+  const roomKey = (s) => ((R.roomOf(s) || {}).scene || s).toLowerCase();
+  const absorbed = new Map();   // person key → the room keys where another mark stands for them
+  const absorb = (key, scene, why) => {
+    if (!absorbed.has(key)) absorbed.set(key, new Set());
+    absorbed.get(key).add(roomKey(scene));
+    console.log(`  ${key} in ${scene}: ${why} stands for them`);
+  };
+  for (const [scene, g] of Object.entries(SP.GIVER)) if (g && !ELSEWHERE[g[0]] && !merged.has(g[0])) absorb(g[0], scene, 'giver:' + scene.toLowerCase());
+  for (const [foe, scene] of SP.BOSSES) {
+    const key = Object.keys(PORTRAIT).find((k) => PORTRAIT[k] === foe);
+    if (key && place(key).some((sp) => roomKey(sp[0]) === roomKey(scene))) absorb(key, scene, 'boss:' + foe);
+  }
+  SP.TASKS.forEach((x, i) => {
+    if (x[0] !== 'wspot' || !SP.XY['task:' + i]) return;
+    const [mx, my] = SP.XY['task:' + i], room = roomKey(x[3]);
+    const near = keys.filter((key) => !ELSEWHERE[key]).flatMap((key) => place(key).filter((sp) => roomKey(sp[0]) === room && sp.length === 3)
+      .map((sp) => [key, Math.hypot(sp[1] - mx, sp[2] - my)])).filter(([, d]) => d <= 3).sort((p, q) => p[1] - q[1]);
+    // Not where the save follows them (HAND at): there they outlast the wish (the Second Sentinel in Song_07).
+    const followed = (key) => [key, ...(SAME[key] || [])].some((k) => ((HAND[k] || {}).at || []).some(([, , sc]) => roomKey(sc) === room));
+    if (near.length && !(near[1] && near[1][1] - near[0][1] < 0.5) && !followed(near[0][0])) absorb(near[0][0], x[3], 'task:' + i);
+  });
   const PEOPLE = [], VARS = new Set();
   const used = (h) => { for (const f of [...(h.met || []), ...(h.gone || []), ...(h.at || []).map((a) => a[0])]) VARS.add(f); };
   for (const key of keys) {
     if (ELSEWHERE[key]) continue;
-    const spots = place(key);
+    const spots = place(key).filter((sp) => !(absorbed.get(key) || new Set()).has(roomKey(sp[0])));
     if (!spots.length) { console.log(`  ${key}: no spot on the map (${spotsOf(key).map((s) => s[0]).join(', ')})`); continue; }
     const h = HAND[key] || {};
     check(key, h);
@@ -159,7 +186,7 @@ const idOf = (key) => key.toLowerCase().replace(/_/g, '-');
     TRADE.push({ id, name: titleOf(key), note: t.note, spots: spots.slice(0, 1) });
   }
   // Every key is someone's.
-  for (const k of keys) if (!ELSEWHERE[k] && !PEOPLE.some((p) => p.id === idOf(k)) && place(k).length) fail(`${k} is nobody's`);
+  for (const k of keys) if (!ELSEWHERE[k] && !PEOPLE.some((p) => p.id === idOf(k)) && place(k).some((sp) => !(absorbed.get(k) || new Set()).has(roomKey(sp[0])))) fail(`${k} is nobody's`);
   for (const k of Object.keys(ELSEWHERE)) if (!P.people[k]) fail(`${k} (ELSEWHERE) isn't in the scenes any more`);
 
   // The Map admin's fixes keyed by a trader's spot follow their marks (stops the run if one can't).

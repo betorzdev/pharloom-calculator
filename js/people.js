@@ -80,18 +80,6 @@
       met: ['BelltownHermitMet'],
     },
     {
-      id: 'blue-scientist',
-      name: {
-        es: 'Alquimista Zylotol',
-        en: 'Alchemist Zylotol',
-        key: 'BLUE_SCIENTIST_SUPER+BLUE_SCIENTIST_MAIN',
-      },
-      art: 'people/blue-scientist',
-      spots: [['crawl_08', 370, 1289.2]],
-      met: ['BlueScientistMet', 'BlueScientistInfectedMet'],
-      gone: ['BlueScientistDead'],
-    },
-    {
       id: 'bonetown-funeral-leader',
       name: {
         es: 'Peregrina Solemne',
@@ -112,25 +100,9 @@
       id: 'churchkeeper',
       name: { es: 'Doncella de la Capilla', en: 'Chapel Maid', key: 'CHURCHKEEPER_MAIN' },
       art: 'people/churchkeeper',
-      spots: [['bonetown', 509.7, 1468.2], ['song_enclave', 1654.1, 552], ['tut_03', 516.2, 1487.1]],
+      spots: [['bonetown', 509.7, 1468.2], ['tut_03', 516.2, 1487.1]],
       met: ['churchKeeperIntro'],
       at: [['ChurchKeeperLeftBasement', false, 'tut_03']],
-    },
-    {
-      id: 'doctor',
-      name: { es: 'Yarnaby', en: 'Yarnaby', key: 'DOCTOR_MAIN' },
-      art: 'people/doctor',
-      spots: [['belltown_room_doctor', 1149, 1238.3]],
-    },
-    {
-      id: 'dust-traders-1',
-      name: {
-        es: 'Crull y Benjin',
-        en: 'Crull And Benjin',
-        key: 'DUST_TRADERS_1_MAIN+DUST_TRADERS_1_SUB',
-      },
-      art: 'people/dust-traders-1',
-      spots: [['dust_shack']],
     },
     {
       id: 'enclave-pilgrim',
@@ -283,7 +255,6 @@
         ['greymoor_08_boss', 1356.3, 1236.4],
         ['hang_04_boss', 1201.3, 514.5],
         ['hang_06', 1236.3, 517.5],
-        ['library_09', 1770.2, 584.6],
         ['shellwood_04b', 698, 1229.7],
         ['song_01', 1009.7, 818.2],
         ['song_02', 1177.9, 721.9],
@@ -308,17 +279,6 @@
         ['bone_east_24', 1944.1, 1291],
       ],
       met: ['gillyMet'],
-    },
-    {
-      id: 'gourmand-servant',
-      name: {
-        es: 'Leal Mergwin',
-        en: 'Loyal Mergwin',
-        key: 'GOURMAND_SERVANT_SUPER+GOURMAND_SERVANT_MAIN',
-      },
-      art: 'people/gourmand-servant',
-      spots: [['song_09b', 1304.9, 615.7]],
-      met: ['MetGourmandServant'],
     },
     {
       id: 'green-prince',
@@ -386,12 +346,6 @@
       at: [['nuuIsHome', true, 'halfway_01']],
     },
     {
-      id: 'huntress',
-      name: { es: 'Cazadora', en: 'Huntress', key: 'HUNTRESS_MAIN' },
-      art: 'people/huntress',
-      spots: [['room_huntress']],
-    },
-    {
       id: 'huntress-runt',
       name: { es: 'Pequeñuela', en: 'Runt', key: 'HUNTRESS_RUNT_MAIN' },
       art: 'people/huntress-runt',
@@ -456,15 +410,7 @@
       id: 'mr-mushroom',
       name: { es: 'Señor Seta', en: 'Mister Mushroom', key: 'MR_MUSHROOM_SUPER+MR_MUSHROOM_MAIN' },
       art: 'people/mr-mushroom',
-      spots: [
-        ['bone_east_14b', 2255.2, 1529.9],
-        ['bonetown', 703.5, 1454],
-        ['cradle_destroyed_challenge_01'],
-        ['greymoor_06', 1406.8, 1072],
-        ['peak_08b', 651, 299.4],
-        ['slab_10c', 830.7, 708.5],
-        ['tut_03', 517, 1487.1],
-      ],
+      spots: [['cradle_destroyed_challenge_01']],
     },
     {
       id: 'old-statue',
@@ -478,13 +424,6 @@
       met: ['libraryStatueWoken'],
     },
     {
-      id: 'seamstress',
-      name: { es: 'Costurera', en: 'Seamstress', key: 'SEAMSTRESS_MAIN' },
-      art: 'people/seamstress',
-      spots: [['bone_east_umbrella']],
-      met: ['MetSeamstress'],
-    },
-    {
       id: 'seth-npc',
       name: { es: 'Seth', en: 'Seth', key: 'SETH_NPC_MAIN' },
       art: 'people/seth-npc',
@@ -496,13 +435,6 @@
       ],
       met: ['MetSethNPC'],
       at: [['SethJoinedFleatopia', true, 'aqueduct_05_festival']],
-    },
-    {
-      id: 'shellwood-witch',
-      name: { es: 'Raíz Gris', en: 'Greyroot', key: 'SHELLWOOD_WITCH_MAIN' },
-      art: null,
-      spots: [['room_witch', 894.7, 1195.8]],
-      met: ['MetWoodWitch'],
     },
     {
       id: 'sherma',
@@ -560,7 +492,6 @@
       spots: [
         ['hang_02', 1128.7, 463.5],
         ['hang_07', 1288.7, 537.6],
-        ['hang_17b', 1320.7, 494.1],
         ['song_07', 1202.6, 688.9],
         ['song_24', 1462.6, 716.5],
       ],
@@ -570,33 +501,6 @@
         ['songChevalierActiveInSong_07', true, 'song_07'],
         ['songChevalierActiveInSong_24', true, 'song_24'],
       ],
-    },
-    {
-      id: 'speedmaster',
-      name: {
-        es: 'Maestro de Sprints Veloz',
-        en: 'Sprintmaster Swift',
-        key: 'SPEEDMASTER_SUPER+SPEEDMASTER_MAIN',
-      },
-      art: 'people/speedmaster',
-      spots: [['sprintmaster_cave']],
-    },
-    {
-      id: 'steel-sentinel',
-      name: {
-        es: 'Vidente Acerina Zi',
-        en: 'Steel Seer Zi',
-        key: 'STEEL_SENTINEL_SUPER+STEEL_SENTINEL_MAIN',
-      },
-      art: 'people/steel-sentinel',
-      spots: [['coral_37', 750.9, 1043.4]],
-      met: ['SteelSentinelMet'],
-    },
-    {
-      id: 'steel-servant',
-      name: { es: 'Sula', en: 'Sula', key: 'STEEL_SERVANT_MAIN' },
-      art: 'people/steel-servant',
-      spots: [['bone_steel_servant', 215.7, 1499.8]],
     },
   ];
 
@@ -632,9 +536,6 @@
   const VARS = [
     'BelltownGreeterConvo',
     'BelltownHermitMet',
-    'BlueScientistDead',
-    'BlueScientistInfectedMet',
-    'BlueScientistMet',
     'CaravanLechMet',
     'CaravanLechReturnedToCaravan',
     'CaravanTroupeLocation',
@@ -642,16 +543,12 @@
     'HalfwayPatronLeftGone',
     'HalfwayPatronRightGone',
     'MetCaravanTroupeLeader',
-    'MetGourmandServant',
     'MetGrubFarmerMimic',
     'MetHalfwayHunterFan',
     'MetMaskMaker',
-    'MetSeamstress',
     'MetSethNPC',
     'MetTroupeHunterWild',
-    'MetWoodWitch',
     'SethJoinedFleatopia',
-    'SteelSentinelMet',
     'churchKeeperIntro',
     'gillyMet',
     'libraryStatueWoken',
