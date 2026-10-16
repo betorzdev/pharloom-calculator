@@ -716,7 +716,6 @@
     pgInvite:       { es: 'Importa tu partida y verás en qué acto estás, y qué te falta para el siguiente y para el 100 %, pieza a pieza.',
                       en: 'Import your game to see which Act you\'re in, and what\'s left for the next one and for 100%, piece by piece.' },
     /* The road's steps by what to do, on its thread (3 A); the titles stay the whole road's */
-    pgStepN:        { es: '{n} · {step}', en: '{n} · {step}' },
     pgStepBells:    { es: 'Haz sonar los Santuarios', en: 'Ring the Bellshrines' },   // the game's word in it: BELLSHRINE
     pgStepGate:     { es: 'Abre la {gate}', en: 'Open the {gate}' },
     pgStepJudge:    { es: 'Derrota a la {judge}', en: 'Defeat the {judge}' },   // with its {judge}, DEFEATED_LAST_JUDGE_1_DESC
@@ -750,8 +749,6 @@
     pgInCats:       { es: 'en {n} categorías', en: 'in {n} categories' },
     pgColHead:      { es: 'Tienes / vale (%)', en: 'Got / worth (%)' },
     pgColHeadNone:  { es: 'Vale (%)', en: 'Worth (%)' },
-    pgFoldSee:      { es: 'Ver los {n}', en: 'See all {n}' },
-    pgFoldHide:     { es: 'Ocultar', en: 'Hide' },
 
     /* Progress: the road to the next Act (js/acts.js, the game's own rules) */
     roadTitle:      { es: 'Camino al Acto {n}', en: 'The road to Act {n}' },
@@ -776,11 +773,8 @@
     roadCitadel:    { es: 'Entra en la Ciudadela', en: 'Walk into the Citadel' },
     roadUnlock:     { es: 'Desbloquea el deseo «{wish}»', en: 'Unlock the wish "{wish}"' },
     roadRequired:   { es: 'Deseos obligatorios', en: 'Required wishes' },
-    roadPoints:     { es: 'Puntos de deseos: {n} de {max} posibles', en: 'Wish points: {n} of a possible {max}' },
-    roadPointsNote: { es: 'Cualquiera de estos vale un punto; una entrega, medio, y solo la primera vez.', en: 'Any of these is worth a point; a delivery half of one, and only the first time.' },
     roadHalf:       { es: '½ punto', en: '½ point' },
     roadBefore:     { es: 'antes: {name}', en: 'first: {name}' },
-    roadChecks:     { es: 'Y además', en: 'And also' },
     roadFour:       { es: 'Cuatro condiciones', en: 'Four conditions' },
     roadAllThree:   { es: 'Para que el {caretaker} te ofrezca «{wish}» hacen falta las tres cosas:', en: 'For the {caretaker} to offer you "{wish}", all three are needed:' },
     roadLeft1:      { es: 'Te falta {n}.', en: '{n} to go.' },
@@ -789,7 +783,6 @@
     roadKey:        { es: 'Llave de hogar campana', en: 'Bellhome Key' },   // INV_NAME_BELL_HOUSE_KEY
     roadPavo:       { es: 'lista: habla con Pabo', en: 'ready: talk to Pavo' },   // his name: BELLHART_GREETER_MAIN
     roadKeyRule:    { es: 'Pabo la da tras «{glory}» y {n} deseos de su lista', en: 'Pavo gives it after {glory} and {n} wishes of his list' },
-    roadKeyHead:    { es: '{key}: lo que pide Pabo', en: '{key}: what Pavo asks' },
     roadOffer:      { es: 'Acepta «{wish}»: habla con el {caretaker} en {clave}', en: 'Accept "{wish}": talk to the {caretaker} in {clave}' },
     roadOfferNote:  { es: 'Con todo cumplido, te llama con la mano. El deseo sale también en el muro de deseos de {town}, que te manda a él.', en: 'Once everything is met he waves you over. The wish also shows on the Wishwall in {town}, which sends you to him.' },
     roadDeclined:   { es: 'Ya te lo ofreció y lo rechazaste: vuelve a hablar con él y acéptalo.', en: 'He offered it and you turned it down: talk to him again and accept.' },
@@ -814,10 +807,8 @@
        says of it, its Wishwall, the Inventory, the Journal or the Caretaker. */
     pgSays:         { es: 'Lo que dice el juego', en: 'What the game says' },
     pgSaysHide:     { es: 'Ocultar', en: 'Hide' },
-    pgSaysNone:     { es: 'El juego no tiene texto para este paso.', en: 'The game has no text for this step.' },
     pgPeekStep:     { es: 'Paso {n}', en: 'Step {n}' },
     pgPeekDone:     { es: 'hecho', en: 'done' },
-    pgPeekClose:    { es: 'Cerrar el paso', en: 'Close the step' },
     pgMapN:         { es: 'Ver los {n} en el mapa', en: 'See the {n} on the map' },
     // The route's last station, over the Act it opens (design/83, 4 A).
     pgRouteEnd:     { es: 'Llegas al', en: 'You reach' },

@@ -656,7 +656,9 @@ within reach»), with a line under the ring naming the closed one.
 
 **Without a save**, a notice over every tab invites you to import yours (what it would show, and
 the button), the 100% card says «100% in 10 categories», and the road tab is both roads as a guide,
-each with its thread of steps, every list folded under «See all n».
+each under its title and what it is, as the route with no step yours: each station says how much it
+asks («5», «31») and opens, shut at first, on what the game says of it, its parts and the whole of
+its list, with no «What's next» title and no «What's missing · Everything».
 
 **For 100%** (its card: a small ring and what's left). At the top, **your 100%** in a ring that
 fills with it, as the Journal's Memento, with the game's word, «Finalización» (a line under it
@@ -681,9 +683,8 @@ Kit and the Pouch follow what the Inventory sets, and their groups say so, with 
 line on top says it's Free mode, counting your marks from a New Game, and that the road is the
 guide; the road tab is «The roads to Acts 2 and 3».
 
-The whole road, as the game's own rules have it (read from its files, not from a guide), in
-numbered steps, each with its count or a tick, and each step not done with what the game says of
-it and its way onto the Map, as above:
+The whole road, as the game's own rules have it (read from its files, not from a guide), step by
+step, each with what the game says of it and its way onto the Map, as above:
 
 - **To Act 2**: ring the five Bellshrines, open the Grand Gate, defeat the Last Judge, and walk into
   the Citadel. Defeating the Phantom opens another way in, and the first two steps then say
@@ -694,7 +695,7 @@ it and its way onto the Map, as above:
      - 17 of its 25 wish points (a delivery is worth half a point, the first time only);
      - four conditions: the Flea Caravan at Fleatopia, the Faydown Cloak, Lace defeated in the
        Cradle (with the three melodies that lead there), and the Bellhome Key. Pavo gives the key
-       after Bellhart's Glory and 2 wishes of his list, and the step lists them until then. The
+       after Bellhart's Glory and 2 wishes of his list, and its row says so until then. The
        caravan says where it stands and the fleas rescued: Mooshka takes it to Fleatopia with 22,
        once the empty Pale Lake has been seen (and on the Phantom's way, the Last Judge beaten
        first: its stop before is the Judge's arena).
