@@ -435,6 +435,10 @@
     mapLost:        { es: 'Ya no está', en: 'No longer there' },
     mapLostAct3:    { es: 'El juego lo retira al empezar el Acto 3.', en: 'The game takes it away when Act 3 begins.' },
     mapLostArena:   { es: 'Solo se lucha en una de las dos arenas, y luchaste en {name}.', en: 'Only one of the two arenas is fought, and you fought {name}.' },
+    // Grindle's cell door, gone with him (design/89-map-leftovers, 3 A): {npc} GRINDLE_MAIN, {a} SHELLWOOD_MAIN, {b} WILDS, {boss} NAME_SPINNER_BOSS.
+    mapLostCell:    { es: 'La celda de {npc} se va cuando llegas a {a} o {b}, o vences a {boss}: él sale por su cuenta.', en: '{npc}\'s cell goes once you reach {a} or {b}, or beat {boss}: he gets out on his own.' },
+    // A pickup an arena drops once won (design/89-map-leftovers, 2 A): {fight} the gauntlet's name (App.gauntletName).
+    mapRewardOf:    { es: 'Lo suelta {fight} al ganarlo.', en: 'Dropped by {fight} once won.' },
     mapToWall:      { es: 'Ver el muro de deseos', en: 'See the Wishwall' },
     mapToGiver:     { es: 'Ver quién lo pide', en: 'See who asks for it' },
 

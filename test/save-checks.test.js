@@ -47,8 +47,8 @@ test('2 A: a way is open by what the save keeps instead of its own bool', () => 
   for (const v of vines) assert.ok(v >= 0 && done({ defeatedBellBeast: true }, null, v) && !done({}, null, v));
   // One wall seen from three rooms, by the flag the far side's script sets.
   assert.ok(done({ openedDocksBackEntrance: true }, null, extraOf('wall', 'Dock_03', 'Breakable Wall_Silhouette')));
-  // A door a key opens isn't opened by a flag that only takes it away (Bone_12's second cell).
-  const cell = SP.EXTRAS.find((x) => x[0] === 'lock' && x[3] === 'Bone_12' && JSON.stringify(x[2]).includes('jail_door (2)'));
+  // A door that goes with someone isn't opened by the flag that takes it away (Bone_12's second cell).
+  const cell = SP.EXTRAS.find((x) => x[3] === 'Bone_12' && JSON.stringify(x[2]).includes('jail_door (2)'));
   assert.ok(cell && !JSON.stringify(cell[2]).includes('IsPinGallerySetup'));
 });
 
@@ -157,4 +157,62 @@ test('npm run data stops unless pickups.json and gating.json were read from the 
   assert.throws(() => G.load('test', { gating: { patch: '1.0.30000' }, pickups: {} }), /pickups\.json says no patch/);
   // The files in the repo agree.
   assert.ok(G.load('test').patch);
+});
+
+/* The four the save checks left (design/03-redesign.md, step 6, the leftovers; design/89-map-leftovers, Albert's
+   picks: A in all four). */
+const G = require('../tools/gating.js').load('test');
+const gate = (scene, id) => G.items[scene + '|' + id] || {};
+const accepted = (name) => ({ QuestCompletionData: { savedData: [{ Name: name, Data: { IsAccepted: true } }] } });
+
+test('leftovers 1 A: Slab_16\'s jail gate is a gate, open by its bool, its own flag or the Broodmother\'s hunt', () => {
+  const i = extraOf('gate', 'Slab_16', 'Jail Gate Door - Persistent');
+  assert.ok(i >= 0 && extraOf('lock', 'Slab_16', 'Jail Gate Door - Persistent') < 0, 'a gate, not a lock');
+  assert.deepEqual(gate('Slab_16', 'Jail Gate Door - Persistent').flags, ['slab_cloak_gate_reopened'], 'the flag its own FSM sets');
+  assert.ok(done({}, bools(['Slab_16', 'Jail Gate Door - Persistent']), i) && done({ slab_cloak_gate_reopened: true }, null, i));
+  assert.ok(done(accepted('Broodmother Hunt'), null, i), 'the hunt taken: the room keeps no gate');
+  assert.ok(!done({ slab_cloak_battle_completed: true }, null, i), 'the fight won: shut');
+  // A slot kept while it was a lock still has it.
+  const old = 'lock ' + JSON.stringify(['bool', 'Slab_16', 'Jail Gate Door - Persistent']);
+  assert.ok(F.gameOf({ 'pharloom.progress': JSON.stringify({ extras: [old] }) }).extras.includes(i));
+});
+
+test('leftovers 2 A: the Acolytes\' arena drops the Heavy Rosary Necklace, and the necklace\'s card says so', () => {
+  const vaults = GA.GAUNTLETS.find((g) => g.id === 'whispering-vaults-2');
+  assert.equal(vaults.reward && vaults.reward.key, 'INV_NAME_COIN_SET_M2', 'the game\'s reward, where the wiki says none');
+  const neck = SP.EXTRAS.find((x) => x[0] === 'rosaries' && x[3] === 'Library_02');
+  assert.ok(neck && neck[5].fight === 'whispering-vaults-2');
+  assert.deepEqual(neck[2], ['bool', 'Library_02', 'Collectable Item Pickup'], 'had by its own pickup');
+  // Every arena a pickup is dropped by is a gauntlet with that very reward or one the wiki names.
+  for (const x of SP.EXTRAS) if (x[5] && x[5].fight) assert.ok((GA.GAUNTLETS.find((g) => g.id === x[5].fight) || {}).reward, x[5].fight);
+});
+
+test('leftovers 3 A: Bone_12\'s cell doors are struck open, and Grindle\'s goes with him', () => {
+  const one = extraOf('wall', 'Bone_12', 'jail_door (1)'), two = extraOf('wall', 'Bone_12', 'jail_door (2)');
+  assert.ok(one >= 0 && two >= 0 && !SP.EXTRAS.some((x) => x[0] === 'lock' && x[3] === 'Bone_12'), 'breakable walls, not locks');
+  assert.equal(gate('Bone_12', 'jail_door (2)').withPerson, 'GRINDLE');
+  assert.equal(SP.EXTRAS[two][5].person, 'GRINDLE');
+  // Gone, not opened, once Shellwood is reached with the door unbroken; opened by its bool.
+  const away = F.game({ ...base, visitedShellwood: true });
+  assert.ok(!away.extras.includes(two) && away.lostExtras.includes(two), 'gone with Grindle');
+  const broken = F.game({ ...base, visitedShellwood: true }, bools(['Bone_12', 'jail_door (2)']));
+  assert.ok(broken.extras.includes(two) && !broken.lostExtras.includes(two), 'broken first: had');
+  assert.deepEqual(F.gameOf(F.toSnapshot({ ...base, visitedShellwood: true })).lostExtras, away.lostExtras, 'the slot keeps it');
+  assert.ok(!F.game({ ...base }).lostExtras.includes(two), 'still there');
+  // Only Grindle's: another way that goes with someone needs its own words on the card.
+  assert.deepEqual([...new Set(SP.EXTRAS.filter((x) => x[5] && x[5].person).map((x) => x[5].person))], ['GRINDLE']);
+  // A slot kept while they were locks still has them.
+  const old = 'lock ' + JSON.stringify(['bool', 'Bone_12', 'jail_door (1)']);
+  assert.ok(F.gameOf({ 'pharloom.progress': JSON.stringify({ extras: [old] }) }).extras.includes(one));
+});
+
+test('leftovers 4 A: Coral_41\'s chained crust walls are each a mark by its own bool', () => {
+  const chain = ['Coral Crust Wall Tall (6)', 'Coral Crust Wall Mid (20)', 'Coral Crust Wall Mid (21)'];
+  assert.equal(gate('Coral_41', chain[0]).breaks, chain[1]);
+  assert.equal(gate('Coral_41', chain[1]).breaks, chain[2]);
+  // Each break, struck or passed on, sets that wall's own bool: each its own mark.
+  for (const id of chain) {
+    const x = SP.EXTRAS.find((e) => e[0] === 'wall' && e[3] === 'Coral_41' && JSON.stringify(e[2]) === JSON.stringify(['bool', 'Coral_41', id]));
+    assert.ok(x, id);
+  }
 });

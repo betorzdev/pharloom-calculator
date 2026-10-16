@@ -3054,6 +3054,20 @@
   ]
  ],
  "doors": {
+  "breakable": [
+   [
+    "Bone_12",
+    "jail_door (1)",
+    19.36,
+    28.87
+   ],
+   [
+    "Bone_12",
+    "jail_door (2)",
+    38.71,
+    21.99
+   ]
+  ],
   "gate": [
    [
     "Bone_04",
@@ -3216,6 +3230,12 @@
     "slab_break_weaver_gate_ring (3)",
     31.53,
     23.72
+   ],
+   [
+    "Slab_16",
+    "Jail Gate Door - Persistent",
+    25.56,
+    29.41
    ],
    [
     "Song_04",
@@ -3852,18 +3872,6 @@
   ],
   "lock": [
    [
-    "Bone_12",
-    "jail_door (1)",
-    19.36,
-    28.87
-   ],
-   [
-    "Bone_12",
-    "jail_door (2)",
-    38.71,
-    21.99
-   ],
-   [
     "Crawl_02",
     "aspid_sealed_gate_stone",
     4.31,
@@ -3958,12 +3966,6 @@
     "Slab Lock (2)",
     80.54,
     4.39
-   ],
-   [
-    "Slab_16",
-    "Jail Gate Door - Persistent",
-    25.56,
-    29.41
    ],
    [
     "Slab_16",

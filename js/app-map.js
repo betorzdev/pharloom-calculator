@@ -368,6 +368,9 @@
      once this game has fought that one ({ arena: its id }). Only with a save, and only while the thing
      isn't had (m.lost): it's drawn with what's done, crossed, and its card says why. */
   const goneAct3 = (own) => (own && own.act === 3 ? { act3: true } : null);
+  // Why it went with someone (js/spots.js EXTRAS more.person; tools/gen-spots.js PEOPLE_GONE): its words.
+  const LOST_WITH = { GRINDLE: () => t('mapLostCell', { npc: pick(HW.NPCS.grindle), a: pick(CO.AREAS.SHELLWOOD), b: pick(CO.AREAS.WILDS),
+    boss: pick(FOE.get('widow').name) }) };
   // Nothing left to do with a mark: had, or taken away.
   const closed = (m, g) => !!g && (m.got || !!m.lost);
   function things(g, own) {
@@ -528,7 +531,10 @@
       /* What only one mode has (Coral_37's silkeater outside Steel Soul, Dust_11's wall in it): not
          in the other mode's games (design/03-redesign.md, step 6, the save checks, 4 A). */
       if (own && x[5] && x[5].mode && (x[5].mode === 'steel') !== !!(App.gameMeta() || {}).steel) return;
-      const lost = x[5] && x[5].gone === 'act3' ? goneAct3(own) : null;
+      /* What the game takes away with someone (more.lost: Grindle's cell door, design/89-map-leftovers, 3 A), as the
+         save says (js/savefile.js lostExtras), or when Act 3 begins. */
+      const lost = x[5] && x[5].lost && own && own.lostExtras.includes(i) ? { person: x[5].person }
+        : x[5] && x[5].gone === 'act3' ? goneAct3(own) : null;
       // The other unique enemies (Rhinogrunds, Covetous Pilgrims, Shardillards) are found from their
       // Journal entry, every room they're in (App.mapBeast).
       if (kind === 'spawn' && layerOf(x) !== 'void-mass') return;
@@ -551,7 +557,7 @@
       const spawn = kind === 'spawn' ? BOOK_KEY.get(name && name.key) : null;
       add({ key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i), lost, chk: JSON.stringify(check),
         name: name ? pick(name) : kind === 'eva' ? evaName(more.reward) : ONE[kind] ? t(ONE[kind]) : LAYER.get(layer).name(), eva: kind === 'eva' ? more : null,
-        note: kind === 'masked' ? t('mapHiddenNote', { n: num(check[0] === 'all' ? check.length - 1 : 1) }) : more.shop ? t('mapMapShakra', { npc: pick(HW.NPCS[more.shop]), price: num(more.price) }) : more.found ? t('mapMapFound') : '',
+        note: kind === 'masked' ? t('mapHiddenNote', { n: num(check[0] === 'all' ? check.length - 1 : 1) }) : more.shop ? t('mapMapShakra', { npc: pick(HW.NPCS[more.shop]), price: num(more.price) }) : more.found ? t('mapMapFound') : more.fight ? t('mapRewardOf', { fight: App.gauntletName(more.fight) }) : '',
         draw: (s, ti, k, c) => (kind === 'silkeater' ? pin('silkeater', 'pin_grub_location', s, ti, k, c)
           : kind === 'spawn' ? badge(layer, portrait(spawn && spawn.id) || GLYPH.spawn, s, ti, k, c)
             : kind === 'bellhome' ? pin('bellhome', 'pin_bench_bell', s, ti, k, c)
@@ -1444,7 +1450,7 @@
     /* Taken away (design/86, 2 A): «No longer there», and why, from the save: the Act, or the other
        arena of the pair, fought. A gauntlet keeps its way to Fight. */
     if (own && m.lost) {
-      const why = m.lost.arena ? t('mapLostArena', { name: App.gauntletName(m.lost.arena) }) : t('mapLostAct3');
+      const why = m.lost.person ? LOST_WITH[m.lost.person]() : m.lost.arena ? t('mapLostArena', { name: App.gauntletName(m.lost.arena) }) : t('mapLostAct3');
       note = note ? note + (/[.!?]$/.test(note) ? ' ' : '. ') + why : why;
       acts = state(t('mapLost')) + (kind === 'gaunt' ? acts : '');
     }
