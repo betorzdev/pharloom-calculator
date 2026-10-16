@@ -289,3 +289,14 @@ test('a save says which wish items, places and objectives are done, the Steel Se
   assert.deepEqual(back.tasks, g.tasks);
   assert.deepEqual(back.steelSpots, g.steelSpots);
 });
+
+test('each extra once: no two of a kind with the same check in the same scene, and no Heart Memento', () => {
+  const seen = new Set();
+  SP.EXTRAS.forEach((x, i) => {
+    const k = JSON.stringify([x[0], x[2], String(x[3]).toLowerCase()]);
+    assert.ok(!seen.has(k), `extra:${i} (${x[0]} in ${x[3]}) is there twice`);
+    seen.add(k);
+  });
+  // It isn't found anywhere: whichever Old Heart The Old Hearts doesn't take (design/03-redesign.md, step 6, 11 A).
+  assert.ok(!SP.EXTRAS.some((x) => x[0] === 'memento' && x[2][0] === 'all'), 'the Heart Memento has no mark');
+});

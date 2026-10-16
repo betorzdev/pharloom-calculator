@@ -321,7 +321,9 @@
     if (piece >= 0) return [['piece:' + piece]];
     const q = wishQuest(w) || TASK_QUEST[w[2][1]], T = SS.spots ? SS.spots.TASKS : [];
     if (!q) return [];
-    const by = taskStages(q).map((s) => T.flatMap((k, i) => (k[1] === s ? ['task:' + i] : []))).filter((a) => a.length);
+    // A wish's place that is a boss's fight is that boss's mark (App.mapKeyOf).
+    const markOf = (k) => (App.mapKeyOf ? App.mapKeyOf(k) : k);
+    const by = taskStages(q).map((s) => [...new Set(T.flatMap((k, i) => (k[1] === s ? [markOf('task:' + i)] : [])))]).filter((a) => a.length);
     if (by.length || w[0] !== 'main-objectives') return by;
     // An objective with no pin of its own (After the Fall): the game's pin whose check is the nearest to it.
     const has = (k) => k[0] === 'goal' && JSON.stringify(k[2]).includes(JSON.stringify(['quest', q]));

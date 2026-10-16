@@ -42,7 +42,7 @@ the work up reads it first, then the step it's on.
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct; the summary, 16 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html`, `89-your-game-summary-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html` |
-| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html` |
+| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct; every room of an entry 16 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
@@ -1486,6 +1486,49 @@ mark per entry and room (no switch, never in the search), `App.mapBeast(id)` the
 card «{n} en esta sala» / "{n} in this room" with the kills and «Ver en el Diario»; the other
 spawns' marks are gone. `js/app-journal.js`: the pin opens it, with a save or without, complete or
 not.
+
+### The switches' contents (16 October 2026)
+
+Albert: «haz una revision profunda de todos los interruptores del mapa», in four parts (names and
+icons, save checks, contents and grouping, positions); this is the third: is each thing in the right
+switch, once, each switch in the right group, on or off at first, counted right? Swept over Free
+mode and all 70 of his saves (every mark dumped from the site; same name in the same room across
+layers, marks against distinct save checks, `HUNDRED` against `js/completion.js`), with #113 and
+#117 in. Found: «Only the 100%» lit six layers that don't count (Memory Lockets, Lost Fleas, Old
+Hearts, Melodies, Craftmetal, Pale Oil: 68 marks) and four abilities outside it (the two cloaks,
+whose cards didn't say so, and the two melodies); since #113 the Journal switch counted 193 entries,
+not the Journal's 236/237 (design/64, 1 A), and the Void Mass sat twice in Dust_11; Eva's rewards
+(Crest things) and the small silk cocoons (struck for a bar or two of silk, the wiki's Silkeater)
+in Collectibles; Shakra, one of the game's nine ShopOwners, in People; the lifts, gone once called,
+in Places; counts by mark (twelve breakable walls listed twice by the completionist at one point,
+two places for one map or key, the 14 Silver Bells and the Bell Beast's 13 spots of one check each);
+the Heart Memento, found nowhere (whichever Old Heart The Old Hearts doesn't take), marked on the
+Pollen Heart; the Pinstress's fight twice in Peak_07 (her boss mark and Fatal Resolve's place).
+Checked and right: Pristine Cores and the Hornet Statuette are shell shard items (each breaks into
+shards); the three rosary switches never share a save object; the Materium, Farsight and Crawbell
+are two steps (found, then built at home).
+
+The options (`87-map-contents-variants.html`, the real selector over Free mode, Save 3 and Save 4,
+with the state after «Only the 100%»; kept out of the repo): 1 «Only the 100%» **A** exactly the
+100%, B as it was; 2 the abilities **A** a set like the Tools (of the 100%, outside it), B one switch;
+3 the Journal's count **A** the whole Journal, the Void Mass left to its switch, B what it draws; 4
+Eva's rewards **A** in Crest, B on her card only, C in Collectibles; 5 the small silk cocoons **A** in
+Secrets, B in Items, C in Collectibles; 6 Shakra **A** in Places by the Vendors, B inside Vendors, C
+in People; 7 **A** the lifts to Passages, B and the Bellshrines to Tasks, C as they were; 8 counts
+**A** one per save check, B only the doubled walls, C per mark; 9 the Materium, Farsight and Crawbell
+**A** in both, B the key items only, C the Bellhome only; 10 the rosaries **A** as they were, B the
+loose ones to Items; 11 the Heart Memento **A** off the map, B kept; 12 the Pinstress's fight **A** on
+the boss card, B both.
+
+**Decision: A in all twelve** (Albert, 16 October 2026). `js/app-map.js`: `HUNDRED` the ten
+categories; `FIRST_ON` keeps the six on; 'arts' the seven, 'arts-other' the four (`mapArtOut` on
+each card), the set `abilities`; a stored layer list with 'arts' gets 'arts-other' once, silently
+(`prefs.mapArtsOut`); `journalTally()` counts the Journal switch, and an entry whose things have a
+switch (`OWN_SWITCH`, the Void Mass) isn't drawn; the groups as chosen; `layout()` counts by a mark's
+`chk` (its save check); `WISH_FIGHT` folds a wish's place in its boss's scene onto the boss's card,
+`App.mapKeyOf` sending Progress's task pins there. `tools/gen-spots.js`: an extra of a kind with the
+same check in the same scene goes in once, and the Heart Memento has no mark
+(`test/spots.test.js`).
 
 ## Step 7 · Journal
 

@@ -372,23 +372,26 @@ const cacheCheck = (c) => {
   return at.length === 1 ? at[0] : ['any', ...at];
 };
 /* A thing whose completionist check stops holding once it's had (placed where that check says):
-   the Heart Memento is the fourth Old Heart, the one The Old Hearts doesn't take. Any heart held or
-   shown in the Bellhome (its check) is true while the wish is on and false once three are handed
-   over; all four found (CollectedHeart*, never cleared) is the spare one had, shown or not.
    Bone_East_17b's breakable wall is gone once the Savage Beastfly wish is taken: a
    TestGameObjectActivator on it turns it off while Beastfly Hunt IsAccepted (Assembly-CSharp
    1.0.30000; IsAccepted stays true once it's done), and its bool, broken or not, no longer says
    (false in 40 of the author's saves past the wish). */
 const CHECK_OF = {
-  'Heart Memento': ['all', ...['Flower', 'Coral', 'Hunter', 'Clover'].map((h) => ['flag', 'CollectedHeart' + h])],
   'Breakable Wall (Bone_East_17b)': ['any', ['bool', 'Bone_East_17b', 'Breakable Wall'], ['accepted', 'Beastfly Hunt']],
 };
+/* The completionist lists some things twice: twelve breakable walls (one of them three times) by the
+   same bool in the same scene, one wall at one point. Each goes in once (design/03-redesign.md,
+   step 6, the switches' contents, 8 A). */
+const EXTRA_SEEN = new Set();
 const extra = (kind, it, name) => {
   let c = C.check(it.parsingInfo, fail);
   if ((kind === 'rosary-cache' || kind === 'shard-cache') && c[0] === 'int' && !(c = cacheCheck(c))) return;
   const s = kind === 'bellhome' ? BELLHOME : roomOfCheck(c);
   if (!s || !onMap(s)) { unplaced.push(`${kind} ${it.name}`); return; }
   if (CHECK_OF[it.name]) c = CHECK_OF[it.name];
+  const seen = JSON.stringify([kind, c, s.toLowerCase()]);
+  if (EXTRA_SEEN.has(seen)) return;
+  EXTRA_SEEN.add(seen);
   /* A "cache" that is an item lying in its room (Coral_36's Beast Shard: a CollectableItemPickup,
      pickups.json lying) goes in the rosaries' or shards' layer, by its own bool, in its place in
      the list (js/map-fixes.js keys by it). */
@@ -408,7 +411,10 @@ function lyingPurse(c) {
 for (const sec of C.sections('relics.ts')) for (const it of sec.items) extra(RELIC_KIND[sec.name] || fail(`relic kind ${sec.name}`), it);
 for (const it of C.load('mossberries.ts')) extra('mossberry', it);
 for (const it of C.load('silkeaters.ts')) extra('silkeater', it);
-for (const it of C.load('mementos.ts')) extra('memento', it, N.gameName(it.name) || undefined);
+/* The Heart Memento isn't found anywhere: it's whichever of the four Old Hearts The Old Hearts
+   doesn't take, so it has no room and no mark of its own (the Old Hearts' marks are where they lie;
+   design/03-redesign.md, step 6, the switches' contents, 11 A). */
+for (const it of C.load('mementos.ts')) if (it.name !== 'Heart Memento') extra('memento', it, N.gameName(it.name) || undefined);
 for (const it of C.load('bellhome.ts')) extra('bellhome', it, N.gameName(it.name) || { es: it.name, en: it.name, key: undefined });
 for (const sec of C.sections('uniqueSpawns.ts')) for (const it of sec.items) extra('spawn', it, N.text(SPAWN_KIND[sec.name] || fail(`spawn kind ${sec.name}`)));
 for (const sec of C.sections('cachesAndSecrets.ts')) for (const it of sec.items) extra(CACHE_KIND[sec.name] || fail(`cache kind ${sec.name}`), it);
