@@ -340,7 +340,6 @@
     mapExtra_silkeater: { es: 'Devoraseda', en: 'Silkeater' },   // INV_NAME_SILK_GRUB
     mapExtra_memento:   { es: 'Recuerdos', en: 'Mementos' },   // COLLECTION_HEADING_MOMENTOS
     mapExtra_bellhome:  { es: 'Hogar campana', en: 'Bellhome' },   // BELLHOME
-    mapExtra_spawn:     { es: 'Enemigos únicos', en: 'Unique enemies' },
     mapExtra_voidMass:  { es: 'Masa de vacío', en: 'Void Mass' },   // NAME_BLACK_THREAD_CORE
     mapExtra_rosary:    { es: 'Alijos de rosarios', en: 'Rosary caches' },
     mapExtra_shard:     { es: 'Alijos de fragmentos', en: 'Shell shard caches' },
@@ -420,6 +419,7 @@
     mapWishesLeft:  { es: 'Deseos sin cumplir: {list}', en: 'Wishes still open: {list}' },
     mapWishesNone:  { es: 'No quedan deseos por cumplir.', en: 'No wishes left open.' },
     mapKills:       { es: '{n} de {m} derrotados', en: '{n} of {m} defeated' },
+    mapBeastHere:   { es: '{n} en esta sala', en: '{n} in this room' },
     mapTaskFor:     { es: 'Lo pide el deseo «{wish}».', en: 'The wish "{wish}" asks for it.' },
     mapWishGranted: { es: 'Deseo concedido', en: 'Wish Granted' },   // WISH_GRANTED
     mapDone:        { es: 'Completado', en: 'Completed' },   // COMPLETED

@@ -253,7 +253,8 @@ opens its page as the game's Journal shows it (from the foot on a phone; Esc or 
 closes it): the whole drawing, from the game's files, on a soft light and at the size the game
 draws it (a Mossgrub small, the Bell Beast filling it), so you know the bug when you meet it; one
 not seen yet is in shadow. Beside it the name, the kills, its areas and the nearest from your
-bench (with the pin the lists carry, which opens it on the Map, while it isn't complete), the description, and under the Hunter's symbol the Hunter's note once complete, or the
+bench (with the pin the lists carry, which opens the Map on every room its enemies are in, how
+many in each, with ‹ › to go through them, with a save or without, complete or not), the description, and under the Hunter's symbol the Hunter's note once complete, or the
 game's «Defeat 11 more to complete the hunter's notes.» (the Void Tendrils has no kills: it says «Completed by inspecting its rune-scroll.» instead). An entry is complete when the save lists it
 with its kills done: the game writes them even for the entries it completes another way, and on
 the saves where Nuu has given the Memento the site counts all 230. In Free mode, the whole
@@ -456,8 +457,9 @@ boss's arena, with the person who gives it. All of it on at first.
   Deep Docks) and the Bellhome Key (Pavo, in Bellhart).
 - **Fights**: the enemy gauntlets and bosses not beaten yet, each fight its own mark (Lace atop the
   Cradle, the two Moss Mothers of Weavenest Atla, the Act 3 Moss Mother and the Savage Beastfly
-  of the Far Fields too), the unique enemies (Rhinogrunds,
-  Covetous Pilgrims, Shardillards) and, in a switch of their own, the Void Masses' cores.
+  of the Far Fields too), and the Void Masses' cores. The other enemies that
+  don't come back (Rhinogrunds, Covetous Pilgrims, Shardillards) are found from their Journal entry,
+  whose pin shows every room they're in.
 - **People**: Shakra's spots, and who gives something of the 100% (Plinney, Eva, Pinstress,
   Loddie, Lumble, Mooshka) and Scrounge, who buys the relics. **Everyone else** (off at first): every
   other person the game's scenes place, 54 of them, each in one switch only, with their own figure

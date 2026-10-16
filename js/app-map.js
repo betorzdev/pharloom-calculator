@@ -19,7 +19,7 @@
                     and pressure plates, gates, the doors a key opens and the keys lying, shortcuts
                     (the one-way walls among them) and silk walls (off at first; design/03-redesign.md,
                     step 6), whether the save keeps them per room or in playerData
-     Fights         the gauntlets and bosses not beaten, the unique spawns, the Void Masses apart
+     Fights         the gauntlets and bosses not beaten, the Void Masses' cores
      People         Shakra's spots and the people who give a thing of the 100%
      Tasks          the Wishwalls and who offers a wish still open, where a wish is done, what a
                     wish asks for, and the main objectives where the game's map pins them
@@ -104,7 +104,6 @@
     L('silkwall', () => t('mapLayer_silkwalls'), null),   // the glyph
     L('gauntlet', () => t('ftModeGauntlets'), null),   // the first gauntlet's champion (legendArt)
     L('boss', () => t('mapLayer_boss'), FACE('lace')),
-    L('spawn', () => t('mapExtra_spawn'), FACE('rhinogrund')),
     L('void-mass', () => t('mapExtra_voidMass'), FACE('void-mass')),
     L('shakra', () => t('mapLayer_shakra'), FACE('shakra')),
     L('wishwall', () => t('mapLayer_wishwalls'), ICON('hornet_inv_pane_icons_0002_wish')),
@@ -150,7 +149,7 @@
     ['items', ['craftmetal', 'pale-oil', 'mossberry', 'silkeater', 'map', 'keyitem', 'rosaries', 'shards']],
     ['places', ['bench', 'bellway', 'ventrica', 'bellshrine', 'shop', 'lift']],
     ['passage', ['lever', 'gate', 'lock', 'key', 'shortcut', 'silkwall']],   // design/03-redesign.md, step 6, Passages
-    ['fights', ['gauntlet', 'boss', 'spawn', 'void-mass']],
+    ['fights', ['gauntlet', 'boss', 'void-mass']],
     ['people', ['shakra', 'person', 'npc']],
     // The game's Tasks (PANE_QUESTS): the wishes and the main objectives (design/03-redesign.md, step 6).
     ['quests', ['wishwall', 'giver', 'wspot', 'qitem', 'goal']],
@@ -172,8 +171,7 @@
   /* Passages: the extras that open a way (js/spots.js EXTRAS, from the game's scenes), each drawn
      as its layer's: the mark's name, and the game's art where it reads at a mark's size, else the
      glyph (design/03-redesign.md, step 6). A pressure plate goes among the levers; a one-way wall the completionist
-     lists among the breakable walls goes among the shortcuts. A Void Mass's core, a unique spawn,
-     has its own layer. */
+     lists among the breakable walls goes among the shortcuts. A Void Mass's core has its own layer. */
   const DOOR = { lever: { name: 'mapLever', art: '_0005_core_lever_02' }, gate: { name: 'mapGate' }, lock: { name: 'mapLock', art: 'i_slab_key' },
     shortcut: { name: 'mapShortcut' }, silkwall: { name: 'mapSilkwall' } };
   const ONE_WAY = /^One Way|Shortcut/;
@@ -199,7 +197,7 @@
   const silkNote = () => t('mapSilkwallNote', { skill: pick(D.SKILLS.find((s) => s.id === 'silkspear').name) });
   function layersOn() {
     // The Tools were one layer before they went by colour.
-    // The Void Masses were among the unique enemies before they had a layer: on where those were.
+    // The Void Masses were among the unique enemies (a layer gone) before they had one: on where those were.
     if (Array.isArray(prefs.mapLayers) && !prefs.mapVoidMass) {
       if (prefs.mapLayers.includes('spawn') && !prefs.mapLayers.includes('void-mass')) prefs.mapLayers = [...prefs.mapLayers, 'void-mass'];
       prefs.mapVoidMass = true;
@@ -443,6 +441,9 @@
       const [kind, act, check, scene, name] = x;
       // The maps Shakra sells aren't marks of their own: they'd sit on her, and her card lists them.
       if (kind === 'map' && x[5] && x[5].shop === 'shakra') return;
+      // The other unique enemies (Rhinogrunds, Covetous Pilgrims, Shardillards) are found from their
+      // Journal entry, every room they're in (App.mapBeast).
+      if (kind === 'spawn' && layerOf(x) !== 'void-mass') return;
       if (DOOR[layerOf(x)]) {
         const layer = layerOf(x), d = DOOR[layer], k = kind === 'lock' && LOCK_AT.get(lower(scene));
         add({ key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i),
@@ -481,6 +482,15 @@
       const scene = rooms && (rooms.map(([sc]) => sc).find((sc) => R.roomOf(sc)));
       add({ key: 'journal:' + e.id, layer: 'journal', scene, got: complete(own, e), name: pick(e.name), entry: e.id,
         draw: (s, ti, k, c) => badge('journal', portrait(e.id), s, ti, k, c) });
+    }
+    /* Every room each Journal entry's enemies are in (js/journal-rooms.js) and how many: shown only
+       through a focus (App.mapBeast), never by a switch. */
+    for (const e of J.BOOK) {
+      if (own && e.steel && !steelGame) continue;
+      for (const [scene, n] of SS.journalRooms[e.key] || []) {
+        add({ key: 'beast:' + e.id + ':' + lower(scene), layer: 'beast', scene, got: false, name: pick(e.name), entry: e.id, n,
+          draw: (s, ti, k, c) => badge('journal', portrait(e.id), s, ti, k, c) });
+      }
     }
     return fixed(out);
   }
@@ -971,6 +981,16 @@
     pick1('');
     if (prefs.view === 'map') render(); else App.go('map');
   };
+  /* A Journal entry's rooms (the 'beast' marks), the most first, from its pin in the Journal
+     (design/84, A); one room is a focus of one. */
+  App.mapBeastKeys = (id) => all().list.filter((m) => m.layer === 'beast' && m.entry === id).map((m) => m.key);
+  App.mapBeast = (id) => {
+    const keys = App.mapBeastKeys(id), e = BOOK.get(id);
+    if (!keys.length || !e) return;
+    focusSet = { keys, name: pick(e.name), i: keys.length > 1 ? -1 : 0, fit: true };
+    pick1(keys.length > 1 ? '' : keys[0]);
+    if (prefs.view === 'map') render(); else App.go('map');
+  };
   function focusBar() {
     const f = focusSet, n = f.keys.length;
     const b = (dir, label, glyph) => `<button type="button" class="mp-focus-go" data-act="mapFocusStep" data-value="${dir}" aria-label="${esc(label)}" title="${esc(label)}">${glyph}</button>`;
@@ -1301,6 +1321,10 @@
       if (m.eva) note = (m.eva.slots ? t('mapEvaSlots', { npc: pick(HW.NPCS.eva), n: num(m.eva.slots), crest: pick(D.CRESTS.find((c) => c.id === 'hunter').name) }) : t('mapEvaMeet', { npc: pick(HW.NPCS.eva) }))
         + (own && m.eva.slots ? ' ' + t('mapEvaHave', { n: num(own.evaSlots || 0) }) : '');
       if (g) acts = state(t(m.got ? 'pgGot' : 'invMissing'));
+    } else if (kind === 'beast') {
+      const e = BOOK.get(m.entry), k = own && own.journal[e.id];
+      note = [t('mapBeastHere', { n: num(m.n) }), own ? (k === undefined ? t('hjState_unseen') : e.kills != null ? t('mapKills', { n: num(k), m: num(e.kills) }) : t('hjState_seen')) : ''].filter(Boolean).join(' · ');
+      acts = btn('mapJournal', e.id, t('mapToJournal'));
     } else if (kind === 'journal') {
       const e = BOOK.get(m.entry), k = own && own.journal[e.id];
       note = k === undefined ? t('hjState_unseen') : e.kills != null ? t('mapKills', { n: num(k), m: num(e.kills) }) : t('hjState_seen');
@@ -1437,7 +1461,7 @@
     const seen = new Set();
     for (const m of list) {
       // What the map can show: in a save, only what's missing (whatever its layer or the filters), and what's had with "Show Completed".
-      if (FINE.has(m.layer) || m.layer === 'bench' || (OWN_ONLY.has(m.layer) && !own) || (g && m.got && !prefs.mapHad)) continue;
+      if (FINE.has(m.layer) || m.layer === 'bench' || m.layer === 'beast' || (OWN_ONLY.has(m.layer) && !own) || (g && m.got && !prefs.mapHad)) continue;
       // One result per name, layer and area (Shakra's many spots in one area are one).
       const area = areaName(m.area || R.areaOf(m.scene));
       const id = m.name + '|' + m.layer + '|' + area;
@@ -1523,6 +1547,7 @@
     },
     // Another screen's "on the map" button.
     mapShow(node) { App.mapShow(node.dataset.value); },
+    mapBeast(node) { App.mapBeast(node.dataset.value); },
     // The focus: the next or previous of its marks, centred with its card; or back to the whole map.
     mapFocusStep(node) {
       if (!focusSet) return;
