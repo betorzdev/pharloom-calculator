@@ -98,7 +98,7 @@
     L('lift', () => t('mapLayer_lifts'), null),   // the glyph
     L('lever', () => t('mapLayer_levers'), ICON('_0005_core_lever_02')),
     L('gate', () => t('mapLayer_gates'), null),   // the glyph
-    L('lock', () => t('mapLayer_locks'), ICON('i_slab_key')),
+    L('lock', () => t('mapLayer_locks'), null),   // the glyph
     L('key', () => t('mapLayer_keys'), ICON('i_token_of_faith')),
     L('shortcut', () => t('mapLayer_shortcuts'), null),   // the glyph
     L('silkwall', () => t('mapLayer_silkwalls'), null),   // the glyph
@@ -172,7 +172,7 @@
      as its layer's: the mark's name, and the game's art where it reads at a mark's size, else the
      glyph (design/03-redesign.md, step 6). A pressure plate goes among the levers; a one-way wall the completionist
      lists among the breakable walls goes among the shortcuts. */
-  const DOOR = { lever: { name: 'mapLever', art: '_0005_core_lever_02' }, gate: { name: 'mapGate' }, lock: { name: 'mapLock', art: 'i_slab_key' },
+  const DOOR = { lever: { name: 'mapLever', art: '_0005_core_lever_02' }, gate: { name: 'mapGate' }, lock: { name: 'mapLock' },
     shortcut: { name: 'mapShortcut' }, silkwall: { name: 'mapSilkwall' } };
   const ONE_WAY = /^One Way|Shortcut/;
   const layerOf = (x) => (x[0] === 'plate' ? 'lever' : x[0] === 'wall' && ONE_WAY.test(x[2][2]) ? 'shortcut' : x[0]);
@@ -221,7 +221,8 @@
     // A folded map: an area's card.
     map: svg('<path d="M2 3.5l3.3-1 3.4 1.5 3.3-1v8l-3.3 1-3.4-1.5-3.3 1z"/><path d="M5.3 2.5v8M8.7 4v8"/>'),
     spawn: svg('<path d="M7 2l1.5 3.2 3.5.4-2.6 2.4.7 3.5L7 9.8 3.9 11.5l.7-3.5L2 5.6l3.5-.4z"/>'),
-    // A lift's cage on its cable; a room's hidden corner, dashed.
+    // A padlock (a locked door: the Slab's key is the Key of Indolent's); a lift's cage on its cable; a room's hidden corner, dashed.
+    lock: svg('<path d="M3.5 6.5h7v6h-7zM5 6.5V4.5a2 2 0 0 1 4 0v2M7 8.8v1.6"/>'),
     lift: svg('<path d="M7 1.5v3M3.5 4.5h7v8h-7zM7 7v3.5M5.5 8.5L7 7l1.5 1.5"/>'),
     masked: svg('<path d="M2 4.5V2h2.5M9.5 2H12v2.5M12 9.5V12H9.5M4.5 12H2V9.5M6 7h2"/>'),
   };
@@ -390,7 +391,7 @@
     }
     // The doors a key opens whose door the save doesn't keep (the rest are extras, LOCK_AT below).
     for (const [k, scenes] of Object.entries(QU.LOCKS)) scenes.filter((scene) => !LOCK_AT.has(lower(scene))).forEach((scene) => add({ key: 'lock:' + k + ':' + scene, layer: 'lock', scene, got: false,
-      name: t('mapLock'), sub: t('mapLockKey', { key: pick(SP.KEYS[k]) }), lockKey: k, draw: (s, ti, kk, c) => badge('lock', img(ICON('i_slab_key')), s, ti, kk, c) }));
+      name: t('mapLock'), sub: t('mapLockKey', { key: pick(SP.KEYS[k]) }), lockKey: k, draw: (s, ti, kk, c) => badge('lock', GLYPH.lock, s, ti, kk, c) }));
     for (const [v, scenes] of Object.entries(SP.VENDORS)) {
       if (v === 'shakra') { scenes.forEach((scene, i) => add({ key: 'shakra:' + i, layer: 'shakra', scene, got: false, name: pick(HW.NPCS.shakra), npc: 'shakra',
         draw: (s, ti, k, c) => badge('shakra', portrait('shakra'), s, ti, k, c) })); continue; }

@@ -499,12 +499,12 @@ bigger close up. Every picture shows at the same visible size, whatever margin i
 opaque part is measured (tools/fit-marks.py, js/mark-fit.js), centred and drawn at 0.8 of the disc,
 or smaller where it would cross the plate; the selector under the map and Your game's lists measure
 them the same way. What has no picture of its own takes one of the game's: Shakra's Journal portrait, a key of the
-inventory for a locked door, the pause menu's Wishes tab for a Wishwall, a wish's emblem for who
+inventory for the keys, the pause menu's Wishes tab for a Wishwall, a wish's emblem for who
 asks for one, the herald's emblem for who gives a thing of the 100%, the game's Bellhome bench pin
 for its furnishings, the Citadel's brass lever for the levers and a Docks plate for the pressure
 plates (tools/extract-map-icons.py takes them from the game's files). The breakable walls keep a
 drawn sign, bricks: the game's walls are tall dark rock that doesn't read that small; so do the
-gates (bars), the shortcuts (an arrow through a wall) and the silk walls (threads). It sits where the game
+gates (bars), the locked doors (a padlock: the game has none, and the Slab's key is the Key of Indolent's), the shortcuts (an arrow through a wall) and the silk walls (threads). It sits where the game
 has the thing in its room: the pickup lying there, the NPC, the shrine, the cache (the object's
 place in its scene, put on the map by the game's own rule for Hornet's compass and her cocoon;
 checked against the benches, which fall by the game's own bench pins). What has no object of its

@@ -2549,6 +2549,8 @@ html:has(.mp.is-full) { overflow: hidden; }
   --c: var(--ink); position: absolute; z-index: 2; display: grid; place-items: center; width: var(--mp-s, 22px); height: var(--mp-s, 22px);
   margin: calc(var(--mp-s, 22px) / -2) 0 0 calc(var(--mp-s, 22px) / -2); border-radius: 50%;
   background: var(--scene-bg); border: 1px solid var(--line-ctl);
+  /* One row of the disc's own height: a tall picture (the Needle's 256 px) would stretch an auto row past the disc, its 100% height resolving to its own. */
+  grid-template-rows: minmax(0, 1fr);
 }
 .mp-dot img { width: calc(var(--mp-s, 22px) * 0.86); height: calc(var(--mp-s, 22px) * 0.86); object-fit: contain; }
 /* The Needle, a long thin line, laid across the disc as the fight's card lays it (.ft-cardx). */
