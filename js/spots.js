@@ -48,7 +48,9 @@
      GIVER    scene a wish is offered in (js/quests.js FROM) → [the person who stands for it there
               (their key in people.json), their name (the game's), the key of the mark that is them
               in that room already, or null], or null, nobody: the Map names the mark by them or
-              lists the wishes on theirs; tools/gen-people.js doesn't draw them again */
+              lists the wishes on theirs; tools/gen-people.js doesn't draw them again. 'room:who'
+              for a wish someone else offers in that room
+     QUEST_GIVER  such a wish → its 'room:who' */
 (() => {
   'use strict';
   const SS = globalThis.SS || (globalThis.SS = {});
@@ -9994,8 +9996,11 @@
       null,
     ],
     Bone_Steel_Servant: ['STEEL_SERVANT', { es: 'Sula', en: 'Sula', key: 'STEEL_SERVANT_MAIN' }, null],
+    'Halfway_01:hunter_fan': ['HUNTER_FAN', { es: 'Nuu', en: 'Nuu', key: 'HUNTER_FAN_MAIN' }, null],
   };
 
-  SS.spots = { AT, EXTRAS, BOSSES, VENDORS, PEOPLE, BELLS, KEYS, MAPS, TASKS, XY, SEATS, GIVER };
+  const QUEST_GIVER = { Journal: 'Halfway_01:hunter_fan' };
+
+  SS.spots = { AT, EXTRAS, BOSSES, VENDORS, PEOPLE, BELLS, KEYS, MAPS, TASKS, XY, SEATS, GIVER, QUEST_GIVER };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.spots;
 })();

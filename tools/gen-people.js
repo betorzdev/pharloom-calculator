@@ -154,7 +154,8 @@ const idOf = (key) => key.toLowerCase().replace(/_/g, '-');
     absorbed.get(key).add(roomKey(scene));
     console.log(`  ${key} in ${scene}: ${why} stands for them`);
   };
-  for (const [scene, g] of Object.entries(SP.GIVER)) if (g && !ELSEWHERE[g[0]] && !merged.has(g[0])) absorb(g[0], scene, 'giver:' + scene.toLowerCase());
+  // A 'room:who' giver (js/spots.js QUEST_GIVER) stands in its room.
+  for (const [id, g] of Object.entries(SP.GIVER)) if (g && !ELSEWHERE[g[0]] && !merged.has(g[0])) absorb(g[0], id.split(':')[0], 'giver:' + id.toLowerCase());
   for (const [foe, scene] of SP.BOSSES) {
     const key = Object.keys(PORTRAIT).find((k) => PORTRAIT[k] === foe);
     if (key && place(key).some((sp) => roomKey(sp[0]) === roomKey(scene))) absorb(key, scene, 'boss:' + foe);

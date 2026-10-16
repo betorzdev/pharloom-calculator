@@ -1034,6 +1034,9 @@ const GIVER = { Belltown_Room_pinsmith: 'PINSMITH', Bone_East_Umbrella: 'SEAMSTR
   Room_Huntress: 'HUNTRESS', Mosstown_02c: 'MOSSCREEP', Aqueduct_05: null, Room_Pinstress: 'PINSTRESS', Dust_Shack: 'DUST_TRADERS_1',
   Bone_10: 'FLEAMASTER', Room_Witch: 'SHELLWOOD_WITCH', Song_Enclave: 'CHURCHKEEPER', Sprintmaster_Cave: 'SPEEDMASTER',
   Coral_37: 'STEEL_SENTINEL', Bone_Steel_Servant: 'STEEL_SERVANT' };
+// A wish someone else than the room's GIVER offers there, a mark of their own: Nuu's (the Journal) in
+// Creige's Halfway House.
+const GIVER_QUEST = { Journal: 'HUNTER_FAN' };
 for (const f of Object.values(Q.FROM)) for (const n of f.npc || []) if (!(n in GIVER)) fail(`nobody stands for the wishes offered in ${n}: GIVER needs reading again`);
 // The first of a person's spots in a room, where the game places it (null in an interior); they have to stand there.
 const personAt = (key, scene) => {
@@ -1079,7 +1082,7 @@ const wishAt = (quest, scene) => {
   const f = Q.FROM[quest] || {};
   if (f.board && lower(f.board) === lower(scene)) return XY['board:' + lower(f.board)] || null;
   const n = (f.npc || []).find((x) => lower(x) === lower(scene));
-  return n ? giverAt(n) : null;
+  return n ? (GIVER_QUEST[quest] ? personAt(GIVER_QUEST[quest], n) : giverAt(n)) : null;
 };
 // A thing's point by the way its room came from (WAY_OF).
 const wayAt = (key, scene) => {
@@ -1121,6 +1124,15 @@ for (const [scene, key] of Object.entries(GIVER)) {
   const mark = id && sameRoom(PEOPLE[id], scene) ? 'person:' + id : id && shop >= 0 ? (id === 'shakra' ? 'shakra:' : 'shop:' + id + ':') + shop
     : TRADER[key] ? 'shop:' + TRADER[key] + ':0' : null;
   GIVERS[scene] = [key, ks.length ? N.text(ks.join('+')) : fail(`no name for ${key} (GIVER)`), mark];
+}
+// GIVER_QUEST's, under 'room:who' (QUEST_GIVER: the wish → that id), with their own mark and point.
+const QUEST_GIVER = {};
+for (const [quest, key] of Object.entries(GIVER_QUEST)) {
+  const scene = ((Q.FROM[quest] || {}).npc || [])[0] || fail(`${quest} isn't offered by anyone (GIVER_QUEST)`);
+  const id = scene + ':' + lower(key), ks = [key + '_SUPER', key + '_MAIN', key + '_SUB'].filter((k) => k in N.EN || k in N.ES);
+  QUEST_GIVER[quest] = id;
+  GIVERS[id] = [key, ks.length ? N.text(ks.join('+')) : fail(`no name for ${key} (GIVER_QUEST)`), null];
+  put2('giver:' + lower(id), personAt(key, scene));
 }
 // The 100% with no point of its own: by its way, the flea, or the script setting its flag.
 CO.PIECES.forEach((p, i) => {
@@ -1333,8 +1345,10 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
      GIVER    scene a wish is offered in (js/quests.js FROM) → [the person who stands for it there
               (their key in people.json), their name (the game's), the key of the mark that is them
               in that room already, or null], or null, nobody: the Map names the mark by them or
-              lists the wishes on theirs; tools/gen-people.js doesn't draw them again`,
-'spots', [['AT', AT], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['TASKS', TASKS], ['XY', XY], ['SEATS', SEATS], ['GIVER', GIVERS]]);
+              lists the wishes on theirs; tools/gen-people.js doesn't draw them again. 'room:who'
+              for a wish someone else offers in that room
+     QUEST_GIVER  such a wish → its 'room:who'`,
+'spots', [['AT', AT], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['TASKS', TASKS], ['XY', XY], ['SEATS', SEATS], ['GIVER', GIVERS], ['QUEST_GIVER', QUEST_GIVER]]);
 const kinds = {};
 for (const x of EXTRAS) kinds[x[0]] = (kinds[x[0]] || 0) + 1;
 console.log(`js/spots.js  ${placed.length} things of the 100% placed, ${EXTRAS.length} extras (${Object.entries(kinds).map(([k, n]) => n + ' ' + k).join(', ')}), `

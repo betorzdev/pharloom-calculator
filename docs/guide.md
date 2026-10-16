@@ -465,7 +465,8 @@ leaves those off.
   being one of the game's shops too, her card saying which of her maps you lack. The shops are the
   game's own (its ShopOwners: Pebb, Frey, Mort, the Forge Daughter, Grindle, Jubilana, the
   Mottled Skarr, the Twelfth Architect, Shakra) and those who trade outside them: the Couriers' delivery
-  wishes in Bellhart, the Moss Druid, who buys Mossberries, and Creige's drinks.
+  wishes in Bellhart, the Moss Druid, who buys Mossberries, Creige's drinks and Scrounge, who buys
+  the relics.
   The switches are named as the game's own map legend names them, one thing each (Bench, Bellway,
   Vendor, Ventrica, Bellshrine), and a Ventrica station by its name in the game (First Shrine,
   Terminus, Choral Chambers…) with «Ventrica» under it.
@@ -496,7 +497,7 @@ leaves those off.
   they're in. A wish done by a boss's fight (Fatal Resolve, the Pinstress on Mount Fay; the end of
   A Vassal Lost, the Summoned Saviour) is on that boss's card, not a mark of its own.
 - **People**: who gives something of the 100% (Plinney, Eva, Pinstress,
-  Loddie, Lumble, Mooshka) and Scrounge, who buys the relics. **Everyone else** (off at first): every
+  Loddie, Lumble, Mooshka). **Everyone else** (off at first): every
   other person the game's scenes place, 44 of them, each in one switch only, with their own figure
   from the game's sprites (tools/extract-people.py), named as their title card names them. With a
   save, those you haven't met yet are dimmed, but only when the save has a flag for it: the ones it
@@ -505,11 +506,12 @@ leaves those off.
   Second Sentinel resting, Pilby, the Chapel Maid, Seth at the Flea Festival); who has left or died
   is gone. Where the save doesn't say, every spot shows and the card says so (Garmond comes and
   goes, Sherma, Gilly, the Green Prince, Mister Mushroom…). In Free mode, everyone everywhere.
-  Each person once in a room: where another mark already stands for them (who asks for a wish, a
+  Each person once in a room: where another mark already stands for them (who makes a wish, a
   boss, the Herald's spots), Everyone else doesn't draw them again; Jubilana is her shop.
-- **Tasks**, as the game's pause menu calls its wishes and objectives: the Wishwalls and who asks
-  for a wish, by name (with a save, only while one is still open there; who already has a mark
-  there, a shop or who gives something of the 100%, has the wishes on that card instead); where a wish is granted (the
+- **Tasks**, as the game's pause menu calls its wishes and objectives: the Wishwalls and who makes
+  a wish, by name (with a save, only while one is still open there; who already has a mark
+  there, a shop or who gives something of the 100%, has the wishes on that card instead, and who
+  offers a wish in someone else's room has a mark of their own: Nuu in Creige's Halfway House); where a wish is granted (the
   deliveries and the Steel Sentinel's spots where the game's own map pins them, of the Sentinel's
   six only the three your game chose, and only in Steel Soul; the Herald's seven; the rescues and
   fights, in the room where the game ends the wish); what a wish asks for (the 22 things lying in a

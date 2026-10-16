@@ -61,6 +61,10 @@
   const itemName = (id) => pick(D.ITEMS.find((x) => x.id === id).name);
   const lower = (s) => String(s || '').toLowerCase();
   const pinKey = SS.savefile.pinKey;
+  // Who offers a wish in a room, as js/spots.js GIVER keys it: the room, or 'room:who' when someone
+  // else than the room's giver offers it (QUEST_GIVER: Nuu in Creige's Halfway House).
+  const giverOf = (quest, scene) => (SP.QUEST_GIVER && SP.QUEST_GIVER[quest]) || scene;
+  App.giverMark = (quest, scene) => 'giver:' + lower(giverOf(quest, scene));
 
   /* ── The layers ──
      Each: its group, its name, and its mark in the legend. The pieces' kinds keep their colour
@@ -461,7 +465,11 @@
       const wi = wishOf(quest);
       if (wi < 0 || (CO.WISHES[wi][5] === 'steel' && !steelGame)) continue;   // a Steel Soul wish is only asked in Steel Soul
       if (f.board) { const k = lower(f.board); if (!boards.has(k)) boards.set(k, { scene: f.board, quests: [] }); boards.get(k).quests.push(quest); }
-      for (const n of f.npc || []) { const k = lower(n); if (!givers.has(k)) givers.set(k, { scene: n, quests: [] }); givers.get(k).quests.push(quest); }
+      for (const n of f.npc || []) {
+        const gid = giverOf(quest, n), k = lower(gid);
+        if (!givers.has(k)) givers.set(k, { scene: n, gid, quests: [] });
+        givers.get(k).quests.push(quest);
+      }
     }
     for (const [k, b] of boards) add({ key: 'board:' + k, layer: 'wishwall', scene: b.scene, quests: b.quests, got: !!g && b.quests.every((q) => wishDone(g, q)),
       name: t('mapLayer_wishwall1'), draw: (s, ti, kk, c) => badge('wishwall', img(ICON('hornet_inv_pane_icons_0002_wish')), s, ti, kk, c) });
@@ -485,12 +493,17 @@
     });
     // Who gives a thing of the 100%, but where they sell it: their shop is them (Jubilana in the Songclave).
     const sameRoom = (a, b) => lower((R.roomOf(a) || {}).scene || a) === lower((R.roomOf(b) || {}).scene || b);
-    for (const [id, scene] of Object.entries(SP.PEOPLE)) if (!(SP.VENDORS[id] || []).some((sc) => sameRoom(sc, scene))) add({ key: 'person:' + id, layer: 'person', scene, got: false, npc: id,
-      name: id === 'scrounge' ? t('mapScrounge') : pick(HW.NPCS[id]), draw: (s, ti, k, c) => badge('person', img(ICON('quest_icon_large_0006_herald')), s, ti, k, c) });
+    // Scrounge, who only buys the relics, goes among the shops, his key kept (js/map-fixes.js).
+    for (const [id, scene] of Object.entries(SP.PEOPLE)) {
+      if ((SP.VENDORS[id] || []).some((sc) => sameRoom(sc, scene))) continue;
+      if (id === 'scrounge') { add({ key: 'person:' + id, layer: 'shop', scene, got: false, npc: id, name: t('mapScrounge'), draw: (s, ti, k, c) => pin('shop', 'pin_shop', s, ti, k, c) }); continue; }
+      add({ key: 'person:' + id, layer: 'person', scene, got: false, npc: id, name: pick(HW.NPCS[id]),
+        draw: (s, ti, k, c) => badge('person', img(ICON('quest_icon_large_0006_herald')), s, ti, k, c) });
+    }
     /* Who offers a wish (js/spots.js GIVER), by name: on the mark that is them in that room already
        (a vendor, who gives a thing of the 100%) their wishes go on it; else a mark of its own. */
     for (const [k, b] of givers) {
-      const [, who, mark] = SP.GIVER[b.scene] || [];
+      const [, who, mark] = SP.GIVER[b.gid] || [];
       const theirs = mark && out.find((x) => x.key === mark);
       if (theirs) { theirs.quests = (theirs.quests || []).concat(b.quests); continue; }
       add({ key: 'giver:' + k, layer: 'giver', scene: b.scene, quests: b.quests, got: !!g && b.quests.every((q) => wishDone(g, q)),
@@ -1411,7 +1424,7 @@
       let q = m.quest;
       while (QU.CHAIN[q] && QU.CHAIN[q].prev && !done.has(QU.CHAIN[q].prev)) q = QU.CHAIN[q].prev;
       const f = QU.FROM[q] || QU.FROM[m.quest] || {};
-      const to = f.board ? 'board:' + lower(f.board) : f.npc && f.npc.length ? 'giver:' + lower(f.npc[0]) : '';
+      const to = f.board ? 'board:' + lower(f.board) : f.npc && f.npc.length ? App.giverMark(q, f.npc[0]) : '';
       if (to && list.some((x) => x.key === to)) acts += btn('mapShow', to, t(f.board ? 'mapToWall' : 'mapToGiver'));
     } else if (kind === 'extra') {
       note = m.note || '';
