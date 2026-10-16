@@ -152,9 +152,9 @@
     cat_tools:      { es: 'Herramientas', en: 'Tools' },
     cat_spools:     { es: 'Carretes de seda', en: 'Silk Spools' },
     cat_upgrades:   { es: 'Bolsa de herramientas y kit de fabricación', en: 'Tool Pouch & Crafting Kit' },   // INV_NAME_POUCHANDTOOLKIT
-    cat_arts:       { es: 'Habilidades', en: 'Abilities' },
-    cat_skills:     { es: 'Habilidades de seda', en: 'Silk Skills' },
-    cat_crests:     { es: 'Blasones', en: 'Crests' },
+    cat_arts:       { es: 'Habilidades', en: 'Abilities' },   // es: PANE_SKILLS; en: the wiki's "Skills and Abilities" (the 100%'s Abilities), the game's Skills pane being the same
+    cat_skills:     { es: 'Habilidades de seda', en: 'Silk Skills' },   // as the game says it in «Bind all Silk Skills»
+    cat_crests:     { es: 'Blasones', en: 'Crests' },   // as the game says it in «Claim all Crests»
     cat_masks:      { es: 'Máscaras', en: 'Masks' },
     cat_needle:     { es: 'Mejoras de la aguja', en: 'Needle upgrades' },
     cat_hearts:     { es: 'Corazones de seda', en: 'Silk Hearts' },   // INV_DESC_SPOOL_SILKHEARTS
@@ -275,10 +275,17 @@
     mapHad:         { es: 'Mostrar completados', en: 'Show Completed' },   // INV_TOGGLE_COMPLETED_ON
     mapFit:         { es: 'Entero', en: 'Whole' },
     mapAlt:         { es: 'El mapa de Telalejana', en: 'The map of Pharloom' },
-    mapPlace_bench: { es: 'Bancos', en: 'Benches' },   // KEY_BENCH, in the plural
     mapPlace_bench1:{ es: 'Banco', en: 'Bench' },   // KEY_BENCH
-    mapPlace_bellway:{ es: 'Vías Campana', en: 'Bellways' },   // MAP_LIST_TITLE
+    mapPlace_bellway:{ es: 'Vía Campana', en: 'Bellway' },   // KEY_BELLWAY
     mapPlace_ventrica:{ es: 'Ventrica', en: 'Ventrica' },   // KEY_TUBE
+    // A Ventrica station by its name in the game, by its scene (js/app-map.js TUBE).
+    mapTube_arborium: { es: 'Memorium', en: 'Memorium' },   // TUBE_NAME_ARBORIUM
+    mapTube_city:     { es: 'Gran Vía Campana', en: 'Grand Bellway' },   // TUBE_NAME_CITYBELLWAY
+    mapTube_hang:     { es: 'Altos Salones', en: 'High Halls' },   // TUBE_NAME_HANG
+    mapTube_song:     { es: 'Cámaras Corales', en: 'Choral Chambers' },   // TUBE_NAME_SONG
+    mapTube_enclave:  { es: 'Primer Santuario', en: 'First Shrine' },   // TUBE_NAME_ENCLAVE
+    mapTube_hub:      { es: 'Terminus', en: 'Terminus' },   // TUBE_NAME_HUB
+    mapTube_under:    { es: 'Talleres Inferiores', en: 'Underworks' },   // TUBE_NAME_UNDER
     // No game text for a respawn point (searched: respawn, reaparecer, wake): written for the context.
     mapRespawn:     { es: 'Tu punto de reaparición', en: 'Your respawn point' },
     mapClosed:      { es: 'sin abrir', en: 'not open yet' },
@@ -314,20 +321,19 @@
     mapArea:        { es: 'Zona', en: 'Area' },
     mapOnMap:       { es: 'Ver en el mapa', en: 'See on the map' },
     mapMore:        { es: 'y {n} más', en: 'and {n} more' },
-    mapLayer_boss:  { es: 'Jefes', en: 'Bosses' },
-    mapLayer_bells: { es: 'Santuarios de Campana', en: 'Bellshrines' },   // BELLSHRINE, in the plural
-    mapLayer_locks: { es: 'Puertas con llave', en: 'Locked doors' },
-    mapLayer_shops: { es: 'Vendedores', en: 'Vendors' },   // KEY_SHOP (the game's map key), in the plural
+    mapLayer_boss:  { es: 'Jefes', en: 'Bosses' },   // no game text for them together
+    mapLayer_bells: { es: 'Santuario de Campana', en: 'Bellshrine' },   // BELLSHRINE
+    mapLayer_locks: { es: 'Puertas cerradas', en: 'Locked doors' },   // BELLTOWN_HOUSE_LOCKED says «cerrado con llave»; no game text for the layer
+    mapLayer_shops: { es: 'Vendedor', en: 'Vendor' },   // KEY_SHOP (the game's map key)
     mapLayer_shakra:{ es: 'Shakra', en: 'Shakra' },   // MAPPER_MAIN
-    mapLayer_wishwalls: { es: 'Muros de deseos', en: 'Wishwalls' },
     mapLayer_wishwall1: { es: 'Muro de deseos', en: 'Wishwall' },   // QUESTBOARD_TITLE
     mapLayer_givers:{ es: 'Quien pide un deseo', en: 'Who asks for a wish' },
     mapLayer_giver1:{ es: 'Pide un deseo', en: 'Asks for a wish' },
     mapLayer_people:{ es: 'Quien da algo del 100 %', en: 'Who gives a 100% thing' },
     // The wishes and the main objectives (js/spots.js TASKS). No game source: written for context.
-    mapLayer_wspots:{ es: 'Dónde se cumple un deseo', en: 'Where a wish is done' },
+    mapLayer_wspots:{ es: 'Dónde se concede un deseo', en: 'Where a wish is granted' },   // WISH_GRANTED, FIRST_WISH_DESC: the game grants wishes
     mapLayer_qitems:{ es: 'Lo que pide un deseo', en: 'What a wish asks for' },
-    mapLayer_goals: { es: 'Objetivos', en: 'Objectives' },
+    mapLayer_goals: { es: 'Objetivos', en: 'Objectives' },   // TASKLIST_INTRO_PREFIX, TASKLIST_INTRO_2
     mapLayer_cocoon:{ es: 'Tu capullo', en: 'Your cocoon' },
     mapLayer_journal: { es: 'Diario', en: 'Journal' },   // PANE_JOURNAL
     'mapExtra_bone-scroll':        { es: 'Pergamino óseo', en: 'Bone Scroll' },   // INV_NAME_R_BONE_RECORD
@@ -342,13 +348,13 @@
     mapExtra_bellhome:  { es: 'Hogar campana', en: 'Bellhome' },   // BELLHOME
     mapExtra_spawn:     { es: 'Enemigos únicos', en: 'Unique enemies' },
     mapExtra_rosary:    { es: 'Alijos de rosarios', en: 'Rosary caches' },
-    mapExtra_shard:     { es: 'Alijos de fragmentos', en: 'Shell shard caches' },
+    mapExtra_shard:     { es: 'Alijos de fragmentos de coraza', en: 'Shell Shard caches' },   // Shell Shards as the game's item says it, then the site's «caches»
     mapExtra_wall:      { es: 'Paredes rompibles', en: 'Breakable walls' },
     mapBell:        { es: 'Santuario de Campana de {area}', en: '{area} Bellshrine' },
     mapLock:        { es: 'Puerta cerrada', en: 'Locked door' },
     mapLockKey:     { es: 'Se abre con: {key}', en: 'Opened with: {key}' },
     // What opens a way (the Map's Passages): the game names none of these, so written for context.
-    mapGroup_passage:   { es: 'Pasos', en: 'Passages' },
+    mapGroup_passage:   { es: 'Accesos', en: 'Passages' },   // no game text for them together
     mapLayer_levers:    { es: 'Palancas', en: 'Levers' },
     mapLayer_gates:     { es: 'Rejas', en: 'Gates' },
     mapLayer_shortcuts: { es: 'Atajos', en: 'Shortcuts' },
@@ -361,7 +367,7 @@
     mapSilkwallNote:{ es: 'Se corta con la {skill}.', en: 'Cut with {skill}.' },   // {skill}: Silkspear's name, the game's
     // The area maps (each mark carries its own name, the game's), and the rosaries and shell shards
     // lying in a room (each its item's name).
-    mapExtra_map:      { es: 'Mapas', en: 'Maps' },   // PANE_MAP, in the plural
+    mapExtra_map:      { es: 'Mapa', en: 'Map' },   // INV_NAME_MAP
     mapExtra_rosaries: { es: 'Rosarios', en: 'Rosaries' },   // INV_NAME_COIN
     mapExtra_shards:   { es: 'Fragmentos de coraza', en: 'Shell Shards' },   // INV_NAME_SHARD
     mapMapFound:    { es: 'Se consigue en esta sala.', en: 'Had in this room.' },
@@ -370,8 +376,8 @@
     // none of these groups, so written for context (each key and item carries its own game name).
     mapLayer_keys:     { es: 'Llaves', en: 'Keys' },
     mapLayer_lifts:    { es: 'Ascensores', en: 'Lifts' },
-    mapExtra_keyitems: { es: 'Objetos clave', en: 'Key items' },
-    mapExtra_cocoons:  { es: 'Capullos de seda', en: 'Silk cocoons' },
+    mapExtra_keyitems: { es: 'Objetos clave', en: 'Key items' },   // no game text for them together
+    mapExtra_cocoons:  { es: 'Capullos de seda', en: 'Silk cocoons' },   // no game text: the small «Silk Grub Small Cocoon» objects
     mapExtra_beads:    { es: 'Rosarios sueltos', en: 'Loose rosaries' },
     mapExtra_hidden:   { es: 'Rincones ocultos', en: 'Hidden corners' },
     mapLift:        { es: 'Ascensor', en: 'Lift' },

@@ -411,7 +411,8 @@ lying there, at the shop that sells it, at the Wishwall or with whoever gives th
 boss's arena, with the person who gives it. All of it on at first.
 
 - **Upgrades**: Mask Shards, Spool Fragments, Silk Hearts, the Needle, Tool Pouch and Crafting Kit
-  upgrades, and the eleven abilities: the two Needolin melodies of Act 3 (the Beastling Call,
+  upgrades (each Needle upgrade a mark of its own, named by the Needle it gives: the Sharpened Needle, the
+  Shining, the Hivesteel and the Pale Steel Needle), and the eleven abilities: the two Needolin melodies of Act 3 (the Beastling Call,
   under Bellhart once the Bell Eater is beaten; the Elegy of the Deep, from the Snail Shamans) don't
   count for the 100%, and their card says so.
 - **Crest** (the game's pane where they're equipped): the **Tools**, one switch whose round caret
@@ -443,6 +444,9 @@ boss's arena, with the person who gives it. All of it on at first.
   game's own (its ShopOwners: Pebb, Frey, Mort, the Forge Daughter, Grindle, Jubilana, the
   Mottled Skarr, the Twelfth Architect) and those who trade outside them: the Couriers' delivery
   wishes in Bellhart, the Moss Druid, who buys Mossberries, and Creige's drinks.
+  The switches are named as the game's own map legend names them, one thing each (Bench, Bellway,
+  Vendor, Ventrica, Bellshrine), and a Ventrica station by its name in the game (First Shrine,
+  Terminus, Choral Chambers…) with «Ventrica» under it.
 - **Passages**, off at first: what opens a way and stays open, each read from the game's own
   scenes with the bool your save keeps once it's open, so with a save only what's still shut
   shows. Levers (with the pressure plates and Clawline's pull switch), gates (opened by a lever,
@@ -469,7 +473,7 @@ boss's arena, with the person who gives it. All of it on at first.
   is gone. Where the save doesn't say, every spot shows and the card says so (Garmond comes and
   goes, Sherma, Gilly, the Green Prince, Mister Mushroom…). In Free mode, everyone everywhere.
 - **Tasks**, as the game's pause menu calls its wishes and objectives: the Wishwalls and who asks
-  for a wish (with a save, only while one is still open there); where a wish is done (the
+  for a wish (with a save, only while one is still open there); where a wish is granted (the
   deliveries and the Steel Sentinel's spots where the game's own map pins them, of the Sentinel's
   six only the three your game chose, and only in Steel Soul; the Herald's seven; the rescues and
   fights, in the room where the game ends the wish); what a wish asks for (the 22 things lying in a
@@ -481,7 +485,8 @@ boss's arena, with the person who gives it. All of it on at first.
   or a later step of it (Pale Monarch stays incomplete when Act 3 opens through the Soul Snare), a
   thing picked up, held or its wish granted. Off at first.
 - **Secrets**, off at first: the rosary and shell shard caches, the breakable walls (the
-  one-way ones are among the shortcuts), the loose rosaries and the **Hidden corners** (what
+  one-way ones are among the shortcuts), the loose rosaries (one bead, cut from the game's picture of
+  the Rosaries, so they don't look like the caches) and the **Hidden corners** (what
   covers part of a room until you walk in, one mark per room, gone once all of it is uncovered), so many
   that they're drawn one by one only close up; from afar, one mark per room and kind, with how
   many in its corner. Marks that would cover each other step a little apart, more the closer you zoom.
