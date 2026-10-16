@@ -1445,7 +1445,8 @@ quest pins (`Main Quest Pins`, QuestMapMarker, which `extract-map.py` leaves out
 by the bench pins. `tools/gen-spots.js` writes `js/spots.js` TASKS: 22 things a wish asks for, 30
 places where a wish is done, 31 objective pins (19 of the 20 objectives; After the Fall has none;
 the Bellshrines', Old Hearts' and Melodies' pins are layers already). The save says each: a
-pickup's flag, the item held (`held`), the wish granted, a Steel Sentinel spot seen (`steel`:
+pickup's flag, the item held (`held`; only when it lies in one spot: one Pollip Heart held marked
+all six flowers, fixed 16 October), the wish granted, a Steel Sentinel spot seen (`steel`:
 `SteelQuestSpots` keeps the three of six a game chose), an objective complete or a later step of
 it (the author's 100% save left Pale Monarch incomplete, Act 3 opened through the Soul Snare).
 Inscriptions (57 in 51 rooms) keep nothing in the save: left out. The 72 saves of the author's

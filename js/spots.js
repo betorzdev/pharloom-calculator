@@ -6804,12 +6804,7 @@
     [
       'qitem',
       'Rock Rollers',
-      [
-        'any',
-        ['bool', 'Bone_01', 'Rock Roller_item_Rock Rollers'],
-        ['held', 'Rock Roller Item'],
-        ['quest', 'Rock Rollers'],
-      ],
+      ['any', ['bool', 'Bone_01', 'Rock Roller_item_Rock Rollers'], ['quest', 'Rock Rollers']],
       'Bone_01',
       'icons/bone_roller_rock_icon',
       { es: 'Pedergema', en: 'Flintgem', key: 'INV_NAME_ROCK_ROLLER_ITEM' },
@@ -6820,12 +6815,7 @@
     [
       'qitem',
       'Rock Rollers',
-      [
-        'any',
-        ['bool', 'Bone_04', 'Rock Roller_item_Rock Rollers'],
-        ['held', 'Rock Roller Item'],
-        ['quest', 'Rock Rollers'],
-      ],
+      ['any', ['bool', 'Bone_04', 'Rock Roller_item_Rock Rollers'], ['quest', 'Rock Rollers']],
       'Bone_04',
       'icons/bone_roller_rock_icon',
       { es: 'Pedergema', en: 'Flintgem', key: 'INV_NAME_ROCK_ROLLER_ITEM' },
@@ -6836,12 +6826,7 @@
     [
       'qitem',
       'Rock Rollers',
-      [
-        'any',
-        ['bool', 'Bone_06', 'Rock Roller_item_Rock Rollers'],
-        ['held', 'Rock Roller Item'],
-        ['quest', 'Rock Rollers'],
-      ],
+      ['any', ['bool', 'Bone_06', 'Rock Roller_item_Rock Rollers'], ['quest', 'Rock Rollers']],
       'Bone_06',
       'icons/bone_roller_rock_icon',
       { es: 'Pedergema', en: 'Flintgem', key: 'INV_NAME_ROCK_ROLLER_ITEM' },
@@ -6852,12 +6837,7 @@
     [
       'qitem',
       'Rock Rollers',
-      [
-        'any',
-        ['bool', 'Bone_07', 'Rock Roller_item_Rock Rollers'],
-        ['held', 'Rock Roller Item'],
-        ['quest', 'Rock Rollers'],
-      ],
+      ['any', ['bool', 'Bone_07', 'Rock Roller_item_Rock Rollers'], ['quest', 'Rock Rollers']],
       'Bone_07',
       'icons/bone_roller_rock_icon',
       { es: 'Pedergema', en: 'Flintgem', key: 'INV_NAME_ROCK_ROLLER_ITEM' },
@@ -6868,12 +6848,7 @@
     [
       'qitem',
       'Shell Flowers',
-      [
-        'any',
-        ['bool', 'Shellwood_01', 'Nectar Pickup'],
-        ['held', 'Shell Flower'],
-        ['quest', 'Shell Flowers'],
-      ],
+      ['any', ['bool', 'Shellwood_01', 'Nectar Pickup'], ['quest', 'Shell Flowers']],
       'Shellwood_01',
       'icons/_0007_shell_flower_purple_icon',
       { es: 'Corazón de pólipo', en: 'Pollip Heart', key: 'INV_NAME_SHELL_FLOWER' },
@@ -6884,12 +6859,7 @@
     [
       'qitem',
       'Shell Flowers',
-      [
-        'any',
-        ['bool', 'Shellwood_02', 'Nectar Pickup'],
-        ['held', 'Shell Flower'],
-        ['quest', 'Shell Flowers'],
-      ],
+      ['any', ['bool', 'Shellwood_02', 'Nectar Pickup'], ['quest', 'Shell Flowers']],
       'Shellwood_02',
       'icons/_0007_shell_flower_purple_icon',
       { es: 'Corazón de pólipo', en: 'Pollip Heart', key: 'INV_NAME_SHELL_FLOWER' },
@@ -6900,12 +6870,7 @@
     [
       'qitem',
       'Shell Flowers',
-      [
-        'any',
-        ['bool', 'Shellwood_10', 'Nectar Pickup'],
-        ['held', 'Shell Flower'],
-        ['quest', 'Shell Flowers'],
-      ],
+      ['any', ['bool', 'Shellwood_10', 'Nectar Pickup'], ['quest', 'Shell Flowers']],
       'Shellwood_10',
       'icons/_0007_shell_flower_purple_icon',
       { es: 'Corazón de pólipo', en: 'Pollip Heart', key: 'INV_NAME_SHELL_FLOWER' },
@@ -6916,12 +6881,7 @@
     [
       'qitem',
       'Shell Flowers',
-      [
-        'any',
-        ['bool', 'Shellwood_15', 'Nectar Pickup'],
-        ['held', 'Shell Flower'],
-        ['quest', 'Shell Flowers'],
-      ],
+      ['any', ['bool', 'Shellwood_15', 'Nectar Pickup'], ['quest', 'Shell Flowers']],
       'Shellwood_15',
       'icons/_0007_shell_flower_purple_icon',
       { es: 'Corazón de pólipo', en: 'Pollip Heart', key: 'INV_NAME_SHELL_FLOWER' },
@@ -6932,12 +6892,7 @@
     [
       'qitem',
       'Shell Flowers',
-      [
-        'any',
-        ['bool', 'Shellwood_20', 'Nectar Pickup'],
-        ['held', 'Shell Flower'],
-        ['quest', 'Shell Flowers'],
-      ],
+      ['any', ['bool', 'Shellwood_20', 'Nectar Pickup'], ['quest', 'Shell Flowers']],
       'Shellwood_20',
       'icons/_0007_shell_flower_purple_icon',
       { es: 'Corazón de pólipo', en: 'Pollip Heart', key: 'INV_NAME_SHELL_FLOWER' },
@@ -6948,12 +6903,7 @@
     [
       'qitem',
       'Shell Flowers',
-      [
-        'any',
-        ['bool', 'Shellwood_26', 'Nectar Pickup'],
-        ['held', 'Shell Flower'],
-        ['quest', 'Shell Flowers'],
-      ],
+      ['any', ['bool', 'Shellwood_26', 'Nectar Pickup'], ['quest', 'Shell Flowers']],
       'Shellwood_26',
       'icons/_0007_shell_flower_purple_icon',
       { es: 'Corazón de pólipo', en: 'Pollip Heart', key: 'INV_NAME_SHELL_FLOWER' },
