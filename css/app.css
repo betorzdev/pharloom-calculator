@@ -1612,6 +1612,52 @@ kbd {
 .pg-item.is-got .pg-name { color: var(--ink-2); }
 .pg-item.is-later { opacity: 0.55; }
 .pg-done { display: flex; align-items: center; gap: var(--sp-2); margin: var(--sp-2) 0 0; font-size: var(--fs-sm); color: var(--ink-2); }
+/* The road to Act 2 as the whole route (design/83): the journey's thread down the page, a station
+   per step with the journey's diamonds (done lit, yours larger), the thread lit behind the steps
+   done; each station a row that opens, the one you're on with its name larger. */
+.pg-rt { position: relative; max-width: calc(var(--column) + var(--sp-16)); margin: var(--sp-8) auto 0; padding: 0; list-style: none; }
+.pg-rt-st, .pg-rt-end { position: relative; padding-left: calc(var(--sp-8) + var(--sp-4)); }
+.pg-rt-st::before {
+  content: ''; position: absolute; left: calc(var(--sp-4) - 0.5px); top: calc(var(--sp-6) + var(--sp-3)); bottom: calc(-1 * var(--sp-6));
+  width: 1px; background: color-mix(in oklab, var(--silk-rim) 45%, transparent);
+}
+.pg-rt-st.is-done::before { background: var(--silk); box-shadow: 0 0 6px color-mix(in oklab, var(--silk) 50%, transparent); }
+.pg-rt-dia { position: absolute; left: 0; top: var(--sp-3); display: grid; place-items: center; width: var(--sp-8); height: var(--sp-8); }
+.pg-rt-dia::before { content: ''; width: var(--sp-3); height: var(--sp-3); transform: rotate(45deg); border: 1px solid var(--silk-rim); background: var(--scene-bg); }
+.pg-rt-st.is-done .pg-rt-dia::before { background: var(--silk); border-color: var(--silk); box-shadow: 0 0 8px color-mix(in oklab, var(--silk) 60%, transparent); }
+.pg-rt-st.is-cur .pg-rt-dia::before { width: calc(var(--sp-4) + var(--sp-half)); height: calc(var(--sp-4) + var(--sp-half)); border-color: var(--accent); box-shadow: var(--glow); }
+.pg-rt-end .pg-rt-dia::before { width: var(--sp-6); height: var(--sp-6); }
+.pg-rt-h { margin: 0; font-size: var(--fs-md); font-weight: 400; }
+.pg-rt-open {
+  display: grid; grid-template-columns: var(--sp-12) minmax(0, 1fr) auto auto; align-items: center; gap: var(--sp-3);
+  width: 100%; min-height: calc(var(--sp-12) + var(--sp-4)); padding: var(--sp-2) 0; text-align: left; color: var(--ink);
+  border-bottom: 1px solid var(--line-row); transition: color var(--dur) var(--ease);
+}
+.pg-rt-open:is(:hover, :focus-visible) { color: var(--ink-strong); }
+.pg-rt-open:is(:hover, :focus-visible, [aria-expanded="true"]) .disc-ring { color: var(--ink-strong); border-color: var(--accent); background-color: var(--accent-soft); }
+.pg-rt-art { width: var(--sp-12); height: var(--sp-12); object-fit: contain; }
+.pg-rt-st.is-later .pg-rt-art { opacity: 0.55; filter: grayscale(0.6); }
+.pg-rt-t { display: grid; gap: var(--sp-half); min-width: 0; }
+.pg-rt-k { font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; color: var(--label); }
+.pg-rt-k em { margin-left: var(--sp-2); padding: 0 var(--sp-2); border: 1px solid var(--accent-line); font-style: normal; letter-spacing: 0; text-transform: none; color: var(--ink-strong); }
+.pg-rt-name { font-family: var(--font-display); font-size: var(--fs-md); color: var(--ink-2); text-wrap: balance; }
+.pg-rt-st.is-cur .pg-rt-name { font-size: var(--fs-xl); color: var(--ink-strong); }
+.pg-rt-sub { font-size: var(--fs-xs); font-style: italic; color: var(--muted); }
+.pg-rt-n { font-family: var(--font-num); white-space: nowrap; }
+.pg-rt-n .pg-mark { color: var(--good); }
+.pg-rt-body { padding: var(--sp-2) 0 var(--sp-6); }
+.pg-rt-body .pg-todo { margin-top: var(--sp-4); }
+.pg-rt-end .pg-rt-h { padding: var(--sp-2) 0 var(--sp-2) calc(var(--sp-12) + var(--sp-3)); min-height: calc(var(--sp-12) + var(--sp-4)); display: grid; align-content: center; }
+.pg-rt-end .pg-rt-name { font-size: var(--fs-lg); }
+@media (max-width: 640px) {
+  .pg-rt-st, .pg-rt-end { padding-left: calc(var(--sp-6) + var(--sp-2)); }
+  .pg-rt-dia { width: var(--sp-6); height: var(--sp-6); top: var(--sp-4); }
+  .pg-rt-st::before { left: calc(var(--sp-3) - 0.5px); }
+  .pg-rt-open { grid-template-columns: var(--sp-8) minmax(0, 1fr) auto auto; gap: var(--sp-2); }
+  .pg-rt-art { width: var(--sp-8); height: var(--sp-8); }
+  .pg-rt-st.is-cur .pg-rt-name { font-size: var(--fs-lg); }
+  .pg-rt-end .pg-rt-h { padding-left: calc(var(--sp-8) + var(--sp-2)); }
+}
 /* The road to the next Act: numbered steps in one column, as the game's objectives read, each
    titled with its count or a tick; a step done goes quiet, one the Phantom's way skips too. */
 .pg-road { max-width: var(--column); margin: 0 auto; }

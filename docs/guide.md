@@ -598,7 +598,17 @@ opens, the road's the first time. On a phone a card keeps its figure and leaves 
 it («step 1 of 5», «85% to go»). From the keyboard, Tab reaches the one selected and the arrows,
 Home and End move to another and open it.
 
-**The road to the next Act** (its card: the picture of the step you're on, how far into it, counted
+**The road to Act 2 is the whole route** (its card as below). The road's thread runs down the page,
+a station per step with the game's diamonds: the steps done lit and ticked (the ones the Phantom's
+way skips say «No longer needed: defeating Phantom opens another way in»), the one you're on larger
+with «You are here» and its count («3/5»), the ones to come dim. Each station is a row with its
+picture, «Step 1» and its title, and opens: a step done shows what the game says of it, a step to
+come that and its way onto the Map, and the one you're on, open from the start, also its **What's
+next** list (as below; a step of one thing, as walking into the Citadel, doesn't repeat itself as a
+list). The route ends at the Act it opens, «You reach · Act 2 · CITADEL OF SONG». What's open is
+kept while the page is.
+
+**The road to Act 3** (its card: the picture of the step you're on, how far into it, counted
 as its rings count, and «step 1 of 5»). Its steps as diamonds on one thread, the ones done lit and
 the one you're on larger, each numbered and named as what to do («1 · Unlock "Silk and Soul"»,
 «2 · Accept the wish», «3 · Gather the snare»…; the full title shows on hover). On a phone the thread

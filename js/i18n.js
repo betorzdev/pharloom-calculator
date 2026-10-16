@@ -822,6 +822,8 @@
     pgPeekClose:    { es: 'Cerrar el paso', en: 'Close the step' },
     pgPeekOpen:     { es: 'Lo que dice el juego de este paso', en: 'What the game says of this step' },
     pgMapN:         { es: 'Ver los {n} en el mapa', en: 'See the {n} on the map' },
+    // The route's last station, over the Act it opens (design/83, 4 A).
+    pgRouteEnd:     { es: 'Llegas al', en: 'You reach' },
     roadKeyDesc:    { es: 'Llave para acceder a una campana restaurada sobre Campanilla.', en: 'Key to a restored bell above Bellhart.' },   // INV_DESC_BELL_HOUSE_KEY
     roadSays_churchkeeper: { es: 'Abajo, en las tierras musgosas, aferrada aún a su capilla fallida, mi hermana se desprenderá de su poder, si se lo pides amablemente.',
                       en: 'Down in the mosslands, still clinging to her failed chapel, my sister\'ll part with her power, if asked kind enough.' },   // CARETAKER_SNARE_REPEAT_CHURCHKEEPER
