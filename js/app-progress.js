@@ -477,10 +477,8 @@
   const questIcon = (q) => { const w = CO.WISHES.find((x) => wishQuest(x) === q); return w ? taskIcon(w) : null; };
   const STEP_SAYS = {
     bellshrines: (s) => questSays(s.quest || 'Grand Gate Bellshrines'),
-    // The Bellshrines rung, the objective's own next line: back to the Grand Gate.
+    // The Bellshrines rung, the objective's own next line: back to the Grand Gate (and its Judge).
     'grand-gate': (s) => questSays(s.quest, 'ready'),
-    // No objective names her: her Journal entry says who she is and what she guards (design/28, 5 A).
-    judge: () => { const e = SS.journal && SS.journal.BOOK.find((x) => x.id === 'last-judge'); return e ? says('journal', e.desc, e.name) : null; },
     citadel: () => questSays('Citadel Seeker'),
     /* No task yet (design/79, 4 A): the wish the step opens, its picture dim, with its name and
        place as «Tareas» will show them (Q_SOUL_SNARE_NAME, Q_SOUL_SNARE_LOC). */
@@ -492,6 +490,10 @@
     silk: () => questSays('Silk Defeat Snare'),
   };
 
+  // The other way in (design/90c): no objective names the Phantom, so its Journal entry says who it is.
+  const journalSays = (id) => { const e = SS.journal && SS.journal.BOOK.find((x) => x.id === id); return e ? says('journal', e.desc, e.name) : null; };
+  const ALT_SAYS = { phantom: () => journalSays('phantom') };
+
   /* Where a step is on the Map (design/28, 3 A): the marks still to do, in the order to go. The
      objectives' are the game's own map pins, found by their quest (js/spots.js TASKS 'goal'). */
   const goal = (q) => { const i = SS.spots ? SS.spots.TASKS.findIndex((k) => k[0] === 'goal' && k[1] === q) : -1; return i >= 0 ? 'task:' + i : null; };
@@ -502,8 +504,8 @@
   function stepMarks(r, s, g) {
     const of = {
       bellshrines: () => s.shrines.filter((b) => !(g && b.ok)).map((b) => 'bell:' + b.field),
-      'grand-gate': () => [goal(s.quest)],
-      judge: () => ['boss:last-judge', 'boss:phantom'],
+      'grand-gate': () => [goal(s.quest), 'boss:last-judge'],
+      phantom: () => ['boss:phantom'],
       citadel: () => [goal('Citadel Seeker')],
       offer: () => [caretakerMark(), QU.FROM[s.quest] && QU.FROM[s.quest].board ? 'board:' + lower(QU.FROM[s.quest].board) : null],
       ready: () => [caretakerMark()],
@@ -533,7 +535,8 @@
   }
   // A step's card (1 A): under its heading, what the game says of it and its way onto the Map.
   function stepCard(r, s, g, cls = '') {
-    const x = STEP_SAYS[s.id] ? STEP_SAYS[s.id](s) : null, map = mapLink(r, s, stepMarks(r, s, g));
+    const say = s.alt ? ALT_SAYS[s.id] : STEP_SAYS[s.id];
+    const x = say ? say(s) : null, map = mapLink(r, s, stepMarks(r, s, g));
     return x || map ? `<div class="pg-says${cls}">${x ? saysHtml(x) : ''}${map}</div>` : '';
   }
   // A row's own words (4 A), folded under «Lo que dice el juego».
@@ -601,15 +604,15 @@
   const wishOf = (r) => { const o = r.steps.find((x) => x.id === 'offer'); return wishName(o ? o.quest : 'Soul Snare Pre'); };
   const gateOf = (s) => pick(QU.CHAIN[s.quest || 'Grand Gate Bellshrines'].name);
   const TITLE = {
-    bellshrines: () => t('roadBells'), 'grand-gate': (r, s) => t('roadGate', { gate: gateOf(s) }),
-    judge: () => t('roadJudge', { judge: foeName('last-judge'), phantom: foeName('phantom') }), citadel: () => t('roadCitadel'),
+    bellshrines: () => t('roadBells'), 'grand-gate': (r, s) => t('roadGate', { gate: gateOf(s), judge: foeName('last-judge') }),
+    citadel: () => t('roadCitadel'), phantom: () => t('roadPhantom', { phantom: foeName('phantom') }),
     unlock: (r) => t('roadUnlock', { wish: wishOf(r) }),
     offer: (r) => t('roadOffer', { wish: wishOf(r), caretaker: t('roadCaretaker'), town: areaName('BELLHART'), clave: areaName('ENCLAVE') }),
     pieces: () => t('roadPieces'), ready: () => t('roadReady', { caretaker: t('roadCaretaker'), clave: areaName('ENCLAVE') }), silk: () => t('roadSilk'),
   };
   const SHORT = {
     bellshrines: () => t('pgStepBells'), 'grand-gate': (r, s) => t('pgStepGate', { gate: gateOf(s) }),
-    judge: () => t('pgStepJudge', { judge: foeName('last-judge') }), citadel: () => t('roadCitadel'),
+    citadel: () => t('roadCitadel'), phantom: () => t('roadPhantom', { phantom: foeName('phantom') }),
     unlock: (r) => t('pgStepUnlock', { wish: wishOf(r) }), offer: () => t('pgStepOffer'), pieces: () => t('pgStepSnare'),
     ready: () => t('pgStepReady', { caretaker: t('roadCaretaker') }), silk: () => t('pgStepSilk', { silk: foeName('grand-mother-silk') }),
   };
@@ -668,7 +671,7 @@
   const BOARD = 'assets/icons/wishes/board.webp';
   const WISH_ICON = new Set(['wayfarer', 'gather', 'donate', 'hunt', 'grand-hunt', 'delivery', 'learn', 'sprint', 'witness', 'steel']);
   const wishArt = (i) => { const ty = i >= 0 ? CO.WISHES[i][0] : null; return WISH_ICON.has(ty) ? `assets/icons/wishes/${ty}.webp` : BOARD; };
-  const STEP_ART = { bellshrines: QUEST('songshrines'), 'grand-gate': QUEST('grand_gate_final'), judge: PORTRAIT('last-judge'),
+  const STEP_ART = { bellshrines: QUEST('songshrines'), 'grand-gate': PORTRAIT('last-judge'), phantom: PORTRAIT('phantom'),
     citadel: QUEST('citadel_seeker'), unlock: BOARD, offer: QUEST('snare'), pieces: QUEST('citadel_seeker'), ready: QUEST('act3_finale'),
     silk: PORTRAIT('grand-mother-silk') };
   // Half a point shows as such: 16,5.
@@ -736,14 +739,37 @@
     return lead + `<ul class="pg-rt-parts">${ps.map((p) => `<li class="${g && p.got >= p.of ? 'is-done' : ''}"><img src="${p.icon}" alt="" loading="lazy"><span class="pg-rt-pk">${esc(p.label)}</span>${!g ? `<span class="pg-count"><i class="u">${num(p.of)}</i></span>` : p.got >= p.of
       ? `<span class="pg-count"><span class="pg-mark">${App.tick}</span> <b>${pts(p.of)}</b><i class="u">/${num(p.of)}</i></span>` : count(p.got, p.of)}</li>`).join('')}</ul>`;
   }
+  /* The other way in beside the road (design/90c, 1 A): the Phantom's station, framed, before the
+     step it leads back to, on a second thread that parts from the road before its first step and
+     joins it there again; an «or» between the two threads, level with it. Lit once taken (the
+     steps it skips crossed out on a faint thread), dashed while it's open, dotted while it isn't. */
+  function wayHtml(r, w, g, guide) {
+    const key = (guide ? 'guide:' : '') + r.act + ':' + w.id, done = !guide && w.ok;
+    const open = routeOpen.has(key) ? routeOpen.get(key) : false;
+    const n = w.skips.map((id) => num(r.steps.findIndex((x) => x.id === id) + 1)), ab = { a: n[0], b: n[n.length - 1] };
+    const gate = gateOf(r.steps.find((x) => x.id === 'grand-gate') || {});
+    const lead = guide ? t('roadAltGuide', ab) : done ? t('roadAltDone', { gate }) : t(w.open ? 'roadAltOpen' : 'roadAltShut', ab);
+    const needs = done ? '' : `<span class="pg-rt-needs"><span class="pg-rt-pk">${esc(t('roadNeeds'))}</span>${w.needs.map((x) => `<span class="${guide || x.ok ? 'is-on' : 'is-off'}"><img src="assets/icons/arts/${x.id}.webp" alt="" loading="lazy"><span${NT}>${esc(artName(x.id))}</span>${!guide && x.ok
+      ? `<span class="pg-mark">${App.tick}</span><span class="sr-only">${esc(t('pgGot'))}</span>` : ''}</span>`).join('')}</span>`;
+    const x = { ...w, alt: true };
+    const says = done && ALT_SAYS[w.id] ? ALT_SAYS[w.id](x) : null;
+    const body = open ? `<div class="pg-rt-body">${done ? (says ? `<div class="pg-says">${saysHtml(says)}</div>` : '') : stepCard(r, x, g)}</div>` : '';
+    return `<li class="pg-rt-st is-alt${done ? ' is-done' : guide ? '' : ' is-later'}">
+          <h3 class="pg-rt-h"><span class="pg-rt-dia" aria-hidden="true"></span><span class="pg-rt-or" aria-hidden="true">${esc(t('roadOr'))}</span><button type="button" class="pg-rt-open" data-act="pgRoute" data-value="${key}" aria-expanded="${open}">
+            <img class="pg-rt-art" src="${STEP_ART[w.id] || BOARD}" alt="" loading="lazy">
+            <span class="pg-rt-t"><span class="pg-rt-k">${esc(t('roadInstead', ab))}</span><span class="pg-rt-name">${esc(stepTitle(r, w))}</span><span class="pg-rt-sub">${esc(lead)}</span>${needs}</span>
+            <span class="pg-rt-n">${done ? `<span class="pg-mark">${App.tick}</span><span class="sr-only">${esc(t('pgPeekDone'))}</span>` : ''}</span><span class="disc-ring">${App.chevron(open)}</span></button></h3>${body}<span class="pg-rt-join" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M100 0 C100 50 0 50 0 100" vector-effect="non-scaling-stroke"/></svg></span></li>`;
+  }
   function routeHtml(r, g) {
     // Without a save it's the guide: no step is yours, each says how much it asks and opens on all
     // of it, every station shut at first (their open or shut kept apart from a save's: 'guide:').
     const guide = !g;
     const at = guide ? -1 : stepAt(r);
     const stale = !guide && !g.quests.length && g.wishes.length;
+    const ways = r.alt || [];
+    const beside = new Set(ways.flatMap((w) => w.skips));
     const stations = r.steps.map((s, i) => {
-      const key = (guide ? 'guide:' : '') + r.act + ':' + s.id, done = !guide && (s.ok || s.bypassed), cur = i === at;
+      const key = (guide ? 'guide:' : '') + r.act + ':' + s.id, done = !guide && s.ok, skipped = !guide && !s.ok && !!s.bypassed, cur = i === at;
       const open = routeOpen.has(key) ? routeOpen.get(key) : cur;
       const ps = cur || guide ? parts(r, s, g) : [];
       // Yours counts as its parts do, as the tab's card does (a wish point short is one); in the guide, what it asks.
@@ -753,21 +779,28 @@
       let body = '';
       if (open) {
         const one = ps.length === 1 && !ps[0].rows.length;
-        // A step done keeps the game's words, without the way onto the Map (as a step peeked at did).
-        const x = done && STEP_SAYS[s.id] ? STEP_SAYS[s.id](s) : null;
-        body = `<div class="pg-rt-body">${done ? (x ? `<div class="pg-says">${saysHtml(x)}</div>` : '') : stepCard(r, s, g)}${cur && stale ? `<p class="pg-note is-warn">${esc(t('roadStale'))}</p>` : ''}${cur || guide ? routeParts(r, s, g, ps) : ''}${ps.length && !one ? todoHtml(r, s, ps, !guide) : ''}</div>`;
+        // A step done or skipped keeps the game's words, without the way onto the Map (as a step peeked at did).
+        const x = (done || skipped) && STEP_SAYS[s.id] ? STEP_SAYS[s.id](s) : null;
+        body = `<div class="pg-rt-body">${done || skipped ? (x ? `<div class="pg-says">${saysHtml(x)}</div>` : '') : stepCard(r, s, g)}${cur && stale ? `<p class="pg-note is-warn">${esc(t('roadStale'))}</p>` : ''}${cur || guide ? routeParts(r, s, g, ps) : ''}${ps.length && !one ? todoHtml(r, s, ps, !guide) : ''}</div>`;
       }
-      return `<li class="pg-rt-st${done ? ' is-done' : cur ? ' is-cur' : guide ? '' : ' is-later'}"${cur ? ' aria-current="step"' : ''}><span class="pg-rt-dia" aria-hidden="true"></span>
+      const li = `<li class="pg-rt-st${done ? ' is-done' : skipped ? ' is-skipped' : cur ? ' is-cur' : guide ? '' : ' is-later'}${beside.has(s.id) ? ' is-beside' : ''}"${cur ? ' aria-current="step"' : ''}><span class="pg-rt-dia" aria-hidden="true"></span>
           <h3 class="pg-rt-h"><button type="button" class="pg-rt-open" data-act="pgRoute" data-value="${key}" aria-expanded="${open}">
             <img class="pg-rt-art" src="${STEP_ART[s.id] || BOARD}" alt="" loading="lazy">
             <span class="pg-rt-t"><span class="pg-rt-k">${esc(t('pgPeekStep', { n: num(i + 1) }))}${cur ? `<em>${esc(t('pgHere'))}</em>` : ''}</span>
-              <span class="pg-rt-name">${esc(stepTitle(r, s))}</span>${s.bypassed && !s.ok ? `<span class="pg-rt-sub">${esc(t('roadBypassed', { phantom: foeName('phantom') }))}</span>` : ''}</span>
+              <span class="pg-rt-name">${esc(stepTitle(r, s))}</span>${skipped ? `<span class="pg-rt-sub">${esc(t('roadBypassed', { phantom: foeName('phantom') }))}</span>` : ''}</span>
             <span class="pg-rt-n">${mark}</span><span class="disc-ring">${App.chevron(open)}</span></button></h3>${body}</li>`;
+      // The other ways go just before the step they lead back to.
+      return ways.filter((w) => w.joins === s.id).map((w) => wayHtml(r, w, g, guide)).join('') + li;
     }).join('');
+    // Where the threads part: before the first step, when the road has another way in.
+    const lane = !ways.length ? '' : guide ? ' is-alt-open' : ways.some((w) => w.ok) ? ' is-alt-lit' : ways.some((w) => w.open) ? ' is-alt-open' : ' is-alt-shut';
+    const start = ways.length ? `<li class="pg-rt-start${guide ? '' : ' is-done'}"><span class="pg-rt-dia" aria-hidden="true"></span><p class="pg-rt-h"><span class="pg-rt-t"><span class="pg-rt-k">${esc(t('roadTwoWays'))}</span>
+        <span class="pg-rt-name">${esc(t('roadFromTo', { from: t('homeKingdom') }))}</span></span></p><span class="pg-rt-fork" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0 0 C0 50 100 50 100 100" vector-effect="non-scaling-stroke"/></svg></span></li>` : '';
     const end = `<li class="pg-rt-end"><span class="pg-rt-dia" aria-hidden="true"></span><p class="pg-rt-h"><span class="pg-rt-t"><span class="pg-rt-k">${esc(t('pgRouteEnd'))}</span>
         <span class="pg-rt-name"${NT}>${esc(t('saveAct', { n: num(r.act) }))} · ${esc(t('pgActName' + r.act))}</span></span></p></li>`;
-    return `<ol class="pg-rt">${stations}${end}</ol>`;
+    return `<ol class="pg-rt${ways.length ? ' has-alt' + lane : ''}">${start}${stations}${end}</ol>`;
   }
+
   /* What's next (design/40, 2 A), the step's one list (design/82, 1 A): what the step still lacks,
      as numbered things to do, read from its parts' rows: each wish it requires, the wish points short
      (with the nearest wishes that would give them, the rest unfolding), each condition, Bellshrine or

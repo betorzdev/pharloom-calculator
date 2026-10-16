@@ -652,13 +652,20 @@ Home and End move to another and open it.
 
 **The road to the next Act is the whole route** (its card: the picture of the step you're on, how
 far into it, counted in its parts' units, and «step 1 of 5»). The road's thread runs down the page,
-a station per step with the game's diamonds: the steps done lit and ticked (the ones the Phantom's
-way skips say «No longer needed: defeating Phantom opens another way in»), the one you're on larger
+a station per step with the game's diamonds: the steps done lit and ticked, the one you're on larger
 with «You are here» and its count («3/5», «3/31»), the ones to come dim. Each station is a row with
 its picture, «Step 1» and its title, and opens: a step done shows what the game says of it, a step to
 come that and its way onto the Map, and the one you're on, open from the start, its card, its parts
 and its **What's next** list. The route ends at the Act it opens («You reach · Act 2 · CITADEL OF
 SONG», «Act 3 · ABYSS»). What's open is kept while the page is.
+
+The road to Act 2 has **two ways in**, drawn as two threads that part at its start («Two ways in ·
+From Pharloom to the Citadel») and meet again at the Citadel. The Phantom's way runs beside the
+Bellshrines and the Grand Gate to its own framed station, «Instead of steps 1 and 2 · Defeat
+Phantom», with an «or» between the threads and what it needs (the Needolin and the Cling Grip, ticked
+when held). Its thread is dotted until you hold both, dashed once it's open and lit once Phantom is
+defeated; the steps it skipped are then crossed out on a dotted thread and say «No longer needed:
+defeating Phantom opens another way in».
 
 **What the game says of a step**: the objective as the game's pause menu «Tasks» titles it, with the
 picture the Tasks tab draws by it, its line («Grand Gate · Pharloom») and its description as the game
@@ -738,9 +745,11 @@ guide; the road tab is «The roads to Acts 2 and 3».
 The whole road, as the game's own rules have it (read from its files, not from a guide), step by
 step, each with what the game says of it and its way onto the Map, as above:
 
-- **To Act 2**: ring the five Bellshrines, open the Grand Gate, defeat the Last Judge, and walk into
-  the Citadel. Defeating the Phantom opens another way in, and the first two steps then say
-  they're no longer needed (the Bellshrines left unrung aren't listed as to do).
+- **To Act 2**: ring the five Bellshrines, open the Grand Gate (the Needolin played at its door calls
+  the Last Judge, and the Gate opens once she's defeated: one step), and walk into the Citadel. Or,
+  from the start, defeat the Phantom (it needs the Needolin, to cross the Mist, and the Cling Grip,
+  to reach Sinner's Road): it takes the place of the first two steps, which then say they're no
+  longer needed (the Bellshrines left unrung aren't listed as to do).
 - **To Act 3**:
   1. Unlock the wish Silk and Soul:
      - its 10 required wishes (guides give six: the ones before them count too);
