@@ -1841,6 +1841,13 @@ The generators stop on a new person off their scene in a room the map draws (non
 extra parked so (six are: two walls above their tilemaps, a lever, a lock, planks and a Remasker past
 an edge, each read). Everything else held: Shakra's 17 spots and the shops within 9.5 px of mapgenie,
 the Wishwalls, the wish items and places, the game's own objective pins. test/positions.test.js.
+Then the Void Masses (Albert saw some slightly off): 12 of the 46 were 10 to 28 px from mapgenie's
+pins, in every direction, and mapgenie files some under another room (Song_18 for Song_27,
+Bone_East_04b for Bone_East_03). Read in the scenes, every mass's sprites (its Core and Threads)
+lie within two units of the core object the Map uses, and the rooms' other marks sit on mapgenie's
+within a few pixels: the game's points stay (Albert's choice). The one kept by a flag, Dust_11's
+pair in the silk farm's Act 3 arena, now sits at the middle of its two cores (pickups.json battles
+keep the Void Masses an arena's waves hold), not at Styx. test/void-mass.test.js.
 
 **The save checks' four leftovers** (16 October 2026, design/03-redesign.md step 6, Albert's A in
 all four on design/89-map-leftovers). Read in the game's scenes and over the 77 files of the author's saves:

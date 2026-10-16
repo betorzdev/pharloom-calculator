@@ -1189,10 +1189,22 @@ for (const cat of ['tools', 'crests', 'skills', 'arts']) for (const [id, scene] 
 put2('everbloom', wayAt('everbloom', AT.everbloom));
 // The extras whose flag has no room (HAND_EXTRA), and the relics an NPC hands over (RELIC_ROOM: Jubilana, Grindle).
 const RELIC_WHO = { 'Seal Chit City Merchant': 'jubilana', 'Psalm Cylinder Grindle': 'grindle' };
+/* A Void Mass kept by the flag an arena sets once won (Dust_11's two, silkFarmAbyssCoresCleared): at
+   the middle of the Void Masses its waves hold (pickups.json battles' cores), where the game draws
+   them, not at the script that names the flag (Styx). It has to have them, or the generator stops. */
+const coresOf = (flag, scene) => {
+  const b = (P.battles[lower(scene)] || []).find((x) => x[3] === flag);
+  return b && b[4] && b[4].length ? b[4] : null;
+};
 EXTRAS.forEach((x, i) => {
   const c = x[2];
   if (XY['extra:' + i]) return;
-  if (c[0] === 'flag' && HAND_EXTRA[c[1]]) put2('extra:' + i, fieldAt(c[1], x[3]));
+  const core = x[0] === 'spawn' && x[4] && x[4].key === 'NAME_BLACK_THREAD_CORE';
+  if (core && c[0] === 'flag') {
+    const cores = coresOf(c[1], x[3]) || fail(`the Void Mass of ${c[1]} (${x[3]}): no arena that sets it holds Void Masses (pickups.json battles)`);
+    const mid = (k) => cores.reduce((t, p) => t + p[k], 0) / cores.length;
+    put2('extra:' + i, toMap(x[3], mid(0), mid(1)));
+  } else if (c[0] === 'flag' && HAND_EXTRA[c[1]]) put2('extra:' + i, fieldAt(c[1], x[3]));
   else if (c[0] === 'relic' && RELIC_WHO[c[1]]) put2('extra:' + i, whoAt(RELIC_WHO[c[1]], x[3]));
 });
 // The bosses in their arenas, the gauntlets at theirs, the key doors at their lock.
