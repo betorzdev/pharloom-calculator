@@ -808,6 +808,7 @@
      then what's next (todoHtml) and, folded, each part as a group of the 100% tab; the steps after
      it, the bridge to the 100% and the whole road. */
   function actHtml(r, g) {
+    if (r.act === 2) return routeHtml(r, g);
     const at = stepAt(r);
     const s = r.steps[at];
     const stale = !g.quests.length && g.wishes.length;
@@ -820,6 +821,39 @@
         ${later.length ? `<ul class="pg-mds pg-later">${later.map(medal).join('')}</ul>${peekFrom === 'later' && later.some((x) => x.peek === peekAt) ? peekHtml(r, g) : ''}` : ''}` : '')
       + `<div class="pg-whole"><button type="button" class="text-btn" data-act="pgRoad" aria-expanded="${open}">${esc(t(open ? 'roadLess' : 'roadWhole'))}</button></div>`
       + (open ? roadHtml(g) : '');
+  }
+  /* The road to Act 2 as the whole route (design/83, A in all four): the road's thread down the page,
+     a station per step (done ones lit and ticked, the one you're on larger, «You are here»), each
+     opening to what the game says of it and its way onto the Map; the one you're on opens on its
+     list of what's left too, its count on its line (no ring), and a step of one thing doesn't repeat
+     its title as a list. It ends at the Act it opens, named as the Acts on top name it. A step's
+     open or shut is kept while the page is (routeOpen), the one you're on open at first. */
+  const routeOpen = new Map();
+  function routeHtml(r, g) {
+    const at = stepAt(r);
+    const stale = !g.quests.length && g.wishes.length;
+    const stations = r.steps.map((s, i) => {
+      const key = r.act + ':' + s.id, done = s.ok || s.bypassed, cur = i === at;
+      const open = routeOpen.has(key) ? routeOpen.get(key) : cur;
+      const mark = done ? `<span class="pg-mark">${App.tick}</span><span class="sr-only">${esc(t('pgPeekDone'))}</span>` : cur && s.total > 1 ? count(s.done, s.total) : '';
+      let body = '';
+      if (open) {
+        const ps = cur ? parts(r, s, g) : [];
+        const one = ps.length === 1 && !ps[0].rows.length;
+        // A step done keeps the game's words, without the way onto the Map (as a step peeked at did).
+        const x = done && STEP_SAYS[s.id] ? STEP_SAYS[s.id](s) : null;
+        body = `<div class="pg-rt-body">${done ? (x ? `<div class="pg-says">${saysHtml(x)}</div>` : '') : stepCard(r, s, g)}${cur && stale ? `<p class="pg-note is-warn">${esc(t('roadStale'))}</p>` : ''}${ps.length && !one ? todoHtml(r, s, ps) : ''}</div>`;
+      }
+      return `<li class="pg-rt-st${done ? ' is-done' : cur ? ' is-cur' : ' is-later'}"${cur ? ' aria-current="step"' : ''}><span class="pg-rt-dia" aria-hidden="true"></span>
+          <h3 class="pg-rt-h"><button type="button" class="pg-rt-open" data-act="pgRoute" data-value="${key}" aria-expanded="${open}">
+            <img class="pg-rt-art" src="${STEP_ART[s.id] || BOARD}" alt="" loading="lazy">
+            <span class="pg-rt-t"><span class="pg-rt-k">${esc(t('pgPeekStep', { n: num(i + 1) }))}${cur ? `<em>${esc(t('pgHere'))}</em>` : ''}</span>
+              <span class="pg-rt-name">${esc(stepTitle(r, s))}</span>${s.bypassed && !s.ok ? `<span class="pg-rt-sub">${esc(t('roadBypassed', { phantom: foeName('phantom') }))}</span>` : ''}</span>
+            <span class="pg-rt-n">${mark}</span><span class="disc-ring">${App.chevron(open)}</span></button></h3>${body}</li>`;
+    }).join('');
+    const end = `<li class="pg-rt-end"><span class="pg-rt-dia" aria-hidden="true"></span><p class="pg-rt-h"><span class="pg-rt-t"><span class="pg-rt-k">${esc(t('pgRouteEnd'))}</span>
+        <span class="pg-rt-name"${NT}>${esc(t('saveAct', { n: num(r.act) }))} · ${esc(t('pgActName' + r.act))}</span></span></p></li>`;
+    return `<ol class="pg-rt">${stations}${end}</ol>`;
   }
   /* The rings, then what's next (design/40-progress-clarity-variants.html, 2 A), the step's one list
      (design/82, 1 A). */
@@ -1084,6 +1118,14 @@
       render();
     },
     pgRoad() { prefs.pgRoad = !prefs.pgRoad; savePrefs(); render(); },
+    // A station of the route (design/83): it opens or shuts, kept while the page is.
+    pgRoute(node) {
+      const v = node.dataset.value;
+      routeOpen.set(v, node.getAttribute('aria-expanded') !== 'true');
+      render();
+      const b = document.querySelector(`.pg-rt-open[data-value="${v}"]`);
+      if (b) b.focus({ preventScroll: true });
+    },
     /* A step of the thread or a medallion: its card opens where it was clicked (design/28, 2 A); the
        step you're on takes you to its heading instead. */
     pgPeek(node) {

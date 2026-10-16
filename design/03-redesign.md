@@ -41,7 +41,7 @@ the work up reads it first, then the step it's on.
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html` |
-| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html` |
+| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html` |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
@@ -1043,6 +1043,31 @@ tab's; B its own; C «Todo» first).
 and the wishes that gave points as dashed chips among the options. Every wish for points is in the
 line, the ones past the nearest four folded under «y n más» (`pgOpts`). The folded groups
 (`prefs.pgList`, `prefs.pgShut`) and the parts' goal sentences are gone.
+
+### The road to Act 2 as the whole route (16 October 2026)
+
+Albert, over Save 4 (Act 1, step 1): could the road be «the whole route», with the step you're on
+open? The road tab said its four steps up to five times (the sentence on top, the card, the thread,
+the dim medallions of the steps to come, and «The whole road» folded under them), the ring under the
+step repeated the card's 3/5, and a step of one thing (walking into the Citadel) listed its own title
+again as «What's next». The sibling has no road (Hollow Knight has no Acts); its ledger's rows that
+open are the 100% tab's. `83-road-route-variants.html` (kept out of the repo), the real screen
+captured over Save 4 (step 1) and `Restore_Points2/restoreData8.dat` (step 4, the first two steps
+skipped by the Phantom's way): 1 the shape (**A** the route: the thread down the page, a station per
+step, yours open; B the ledger: each step a row of the 100% tab's; C the thread on top as an index
+and the ledger under it; D as it was); 2 the step open (**A** the game's words and the list, its
+count on its line, no ring; B with the ring; C the list first, the words folded); 3 the other steps
+(**A** they open too; B their game line always under the name; C only the name); 4 the end (**A**
+the Act it opens as the last station; B none).
+
+**Decision: A in all four** (16 October 2026), built for the road to Act 2 only (`js/app-progress.js`
+`routeHtml()`, `css/app.css` `.pg-rt`); the road to Act 3 is next. Each station's button
+(`pgRoute`) opens or shuts it, kept while the page is (`routeOpen`), the one you're on open at
+first: a step done shows the game's words without the Map, a step to come its card
+(`stepCard()`), yours its card and `todoHtml()`, unless its one part has no rows. The route ends at
+«You reach · Act 2 · CITADEL OF SONG» (`saveAct`, `pgActName2`). The thread, the step's heading,
+the ring, the medallions and «The whole road» are gone from it; Albert also asked that design pages
+be drawn in English from now on.
 
 ## Step 6 · Map
 
