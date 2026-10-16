@@ -363,7 +363,14 @@
         name, sub: open ? '' : t(p[0] === 'bench' && /bell_toll_machine/.test(JSON.stringify(p[4])) ? 'mapToll' : 'mapClosed'),
         draw: (s, ti, k, c) => pin(p[0], p[0] === 'bench' ? 'pin_bench' : p[0] === 'bellway' ? 'pin_stag_station' : 'pin_tube_station', s, ti, k, c + (open ? '' : ' is-off')) });
     });
+    /* A gauntlet won by beating its boss (its check is the boss's: Lugoli's, the Coral Tower's four
+       ending in Khann…) is that boss's fight: on the boss's card, not a mark of its own (Albert's
+       choice, 15-Oct-2026: each thing once). */
+    const bossCheck = new Map(SP.BOSSES.map(([foe, , check]) => [JSON.stringify(check), foe]));
+    const fightsOf = new Map();
     for (const x of SS.gauntlets.GAUNTLETS) {
+      const foe = bossCheck.get(JSON.stringify(x.done));
+      if (foe) { fightsOf.set(foe, (fightsOf.get(foe) || []).concat(x)); continue; }
       add({ key: 'gaunt:' + x.id, layer: 'gauntlet', scene: x.scene, act: x.act, got: !!g && g.gauntlets.includes(x.id), area: x.area, gauntlet: x,
         name: App.gauntletName(x.id), draw: (s, ti, k, c) => badge('gauntlet', portrait(champion(x)) || GLYPH.gauntlet, s, ti, k, c) });
     }
@@ -373,7 +380,7 @@
     for (const [foe, scene, , act] of SP.BOSSES) {
       const f = FOE.get(foe), e = bookOfFoe(foe);
       if (e && e.steel && !steelGame) continue;
-      add({ key: 'boss:' + foe, layer: 'boss', scene, act, got: !!g && g.bosses.includes(foe), name: f ? pick(f.name) : foe, foe, entry: e && e.id,
+      add({ key: 'boss:' + foe, layer: 'boss', scene, act, got: !!g && g.bosses.includes(foe), name: f ? pick(f.name) : foe, foe, entry: e && e.id, gauntlets: fightsOf.get(foe),
         draw: (s, ti, k, c) => badge('boss', portrait(e && e.id) || GLYPH.boss, s, ti, k, c) });
     }
     for (const [field, scene, own] of SP.BELLS) {
@@ -403,8 +410,6 @@
     }
     for (const [k, b] of boards) add({ key: 'board:' + k, layer: 'wishwall', scene: b.scene, quests: b.quests, got: !!g && b.quests.every((q) => wishDone(g, q)),
       name: t('mapLayer_wishwall1'), draw: (s, ti, kk, c) => badge('wishwall', img(ICON('hornet_inv_pane_icons_0002_wish')), s, ti, kk, c) });
-    for (const [k, b] of givers) add({ key: 'giver:' + k, layer: 'giver', scene: b.scene, quests: b.quests, got: !!g && b.quests.every((q) => wishDone(g, q)),
-      name: t('mapLayer_giver1'), draw: (s, ti, kk, c) => badge('giver', img(ICON('quest_icon_large__0008_gather')), s, ti, kk, c) });
     /* The wishes and the main objectives (js/spots.js TASKS): what a wish asks for, where a wish is
        done, the main objectives' pins. A Steel Soul wish only in Steel Soul, and of the Steel
        Sentinel's six spots the three this game chose. A wish's and an objective's name is its quest's. */
@@ -416,8 +421,19 @@
         name: name ? pick(name) : pick(QU.CHAIN[quest].name), sub: name ? pick(QU.CHAIN[quest].name) : '',
         draw: (s, ti, k, c) => dot(kind, `assets/map/${art}.webp`, s, ti, k, c) });
     });
-    for (const [id, scene] of Object.entries(SP.PEOPLE)) add({ key: 'person:' + id, layer: 'person', scene, got: false, npc: id,
+    // Who gives a thing of the 100%, but where they sell it: their shop is them (Jubilana in the Songclave).
+    const sameRoom = (a, b) => lower((R.roomOf(a) || {}).scene || a) === lower((R.roomOf(b) || {}).scene || b);
+    for (const [id, scene] of Object.entries(SP.PEOPLE)) if (!(SP.VENDORS[id] || []).some((sc) => sameRoom(sc, scene))) add({ key: 'person:' + id, layer: 'person', scene, got: false, npc: id,
       name: id === 'scrounge' ? t('mapScrounge') : pick(HW.NPCS[id]), draw: (s, ti, k, c) => badge('person', img(ICON('quest_icon_large_0006_herald')), s, ti, k, c) });
+    /* Who offers a wish (js/spots.js GIVER), by name: on the mark that is them in that room already
+       (a vendor, who gives a thing of the 100%) their wishes go on it; else a mark of its own. */
+    for (const [k, b] of givers) {
+      const [, who, mark] = SP.GIVER[b.scene] || [];
+      const theirs = mark && out.find((x) => x.key === mark);
+      if (theirs) { theirs.quests = (theirs.quests || []).concat(b.quests); continue; }
+      add({ key: 'giver:' + k, layer: 'giver', scene: b.scene, quests: b.quests, got: !!g && b.quests.every((q) => wishDone(g, q)),
+        name: who ? pick(who) : t('mapLayer_giver1'), sub: who ? t('mapLayer_giver1') : '', draw: (s, ti, kk, c) => badge('giver', img(ICON('quest_icon_large__0008_gather')), s, ti, kk, c) });
+    }
     /* Everyone else (js/people.js), each at their own point in the room: in a save, only where it
        says they are now, gone once they've left, and dimmed until you've met (personNow). */
     for (const x of PE.PEOPLE) {
@@ -466,8 +482,10 @@
       add({ key: 'cocoon', layer: 'cocoon', scene: own.cocoon, at: at || undefined, got: false, name: t('mapLayer_cocoon'), sub: t('mapCocoonNote'),
         draw: (s, ti, k, c) => pin('cocoon', 'shade_pin', s, ti, k, c) });
     }
+    // A boss's entry is its boss mark's already (its "See in the Journal"): not again.
+    const bossEntries = new Set(SP.BOSSES.map(([foe]) => (bookOfFoe(foe) || {}).id).filter(Boolean));
     if (own) for (const e of J.BOOK) {
-      if (e.steel && !steelGame) continue;
+      if ((e.steel && !steelGame) || bossEntries.has(e.id)) continue;
       const rooms = SS.journalRooms[e.key];
       const scene = rooms && (rooms.map(([sc]) => sc).find((sc) => R.roomOf(sc)));
       add({ key: 'journal:' + e.id, layer: 'journal', scene, got: complete(own, e), name: pick(e.name), entry: e.id,
@@ -1199,6 +1217,11 @@
     const line = (xs) => xs.filter(Boolean).map((x) => `<span${NT}>${esc(x)}</span>`).join('');
     const state = (x) => `<span class="mp-card-state">${esc(x)}</span>`;
     const btn = (act, value, label) => `<button type="button" class="text-btn" data-act="${act}" data-value="${esc(value)}">${esc(label)}</button>`;
+    // The wishes still open of those asked here. One name per wish: Broodfeast's two quests, a wish's Pre stage and its own are the same wish.
+    const wishesNote = (quests) => {
+      const open = [...new Set(quests.filter((q) => !wishDone(g, q)).map((q) => wishOf(q)))].map((i) => pick(CO.WISHES[i][4]));
+      return open.length ? t(g ? 'mapWishesLeft' : 'mapWishes', { list: listOf(open) }) : t('mapWishesNone');
+    };
     let art = '', name = '', where = '', note = '', acts = '';
     if (key.startsWith('area:')) {
       const id = key.slice(5), a = AREA_NAMES().find((x) => x.id === id);
@@ -1243,7 +1266,13 @@
       if (App.VIEWS.includes('fight')) acts = btn('mapFight', x.id, t('mapFight'));
     } else if (kind === 'boss') {
       if (g) acts = state(t(m.got ? 'mapBeaten' : 'mapNotBeaten'));
-      acts += (App.VIEWS.includes('fight') ? btn('mapFoe', m.foe, t('mapFight')) : '') + (m.entry ? btn('mapJournal', m.entry, t('mapToJournal')) : '');
+      // Its gauntlets, if its fight is one (or several): their waves, their reward, each on Fight.
+      const xs = m.gauntlets || [], n = xs.reduce((k, x) => k + x.waves.length, 0), reward = xs.map((x) => x.reward).find(Boolean);
+      if (xs.length) where = line([areaName(area), m.act ? t('saveAct', { n: m.act }) : '', t(n === 1 ? 'ftWaves1' : 'ftWaves', { n: num(n) })]);
+      if (reward) note = t('ftReward') + ': ' + pick(reward);
+      const fight = !App.VIEWS.includes('fight') ? '' : xs.length ? xs.map((x) => btn('mapFight', x.id, xs.length > 1 ? App.gauntletName(x.id) : t('mapFight'))).join('')
+        : btn('mapFoe', m.foe, t('mapFight'));
+      acts += fight + (m.entry ? btn('mapJournal', m.entry, t('mapToJournal')) : '');
     } else if (kind === 'bell') {
       if (g) acts = state(t(m.got ? 'mapRung' : 'mapNotRung'));
     } else if (kind === 'npc') {
@@ -1266,10 +1295,9 @@
         const things = givenBy(id).map((k) => list.find((x) => x.key === k)).filter((x) => x && (!g || !x.got));
         note = things.length ? t(g ? 'mapSellsLeft' : 'mapSells', { list: listOf(things.map((x) => x.name)) }) : g ? t('mapSellsNone') : '';
       }
+      if (m.quests) note = note ? note + (/[.!?]$/.test(note) ? ' ' : '. ') + wishesNote(m.quests) : wishesNote(m.quests);
     } else if (kind === 'board' || kind === 'giver') {
-      // One name per wish: Broodfeast's two quests, a wish's Pre stage and its own are the same wish.
-      const open = [...new Set(m.quests.filter((q) => !wishDone(g, q)).map((q) => wishOf(q)))].map((i) => pick(CO.WISHES[i][4]));
-      note = open.length ? t(g ? 'mapWishesLeft' : 'mapWishes', { list: listOf(open) }) : t('mapWishesNone');
+      note = wishesNote(m.quests);
     } else if (kind === 'task') {
       // What it's for, whether it's done, and where its wish is taken (the Wishwall, or who asks).
       if (m.layer === 'qitem') note = t('mapTaskFor', { wish: m.sub });
