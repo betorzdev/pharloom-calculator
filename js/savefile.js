@@ -31,6 +31,13 @@
   const QU = SS.quests || require('./quests.js');
   // js/spots.js, the Map's extras and bosses; a page without it reads none.
   const SP = SS.spots || (() => { try { return require('./spots.js'); } catch (e) { return { EXTRAS: [], BOSSES: [] }; } })();
+  // The 'found' ways the save says (js/how.js HOW, a way's when): 'cat:id' → that check.
+  const HW = SS.how || (() => { try { return require('./how.js'); } catch (e) { return { HOW: {} }; } })();
+  const WHEN = [];
+  for (const [cat, m] of Object.entries(HW.HOW || {})) {
+    if (!m || Array.isArray(m)) continue;
+    for (const [id, ways] of Object.entries(m)) for (const w of ways || []) if (w.kind === 'found' && w.when) WHEN.push([cat + ':' + id, w.when]);
+  }
   // js/people.js, the Map's people: the playerData fields that say whom you've met and where they are.
   const PE = SS.people || (() => { try { return require('./people.js'); } catch (e) { return { VARS: [] }; } })();
   // The map's pins that light up (a station, a toll bench), by what they are: "bellway Bellway_02".
@@ -330,6 +337,7 @@
         case 'memento': return deposited.has(c[1]) || int((items.get(c[1]) || {}).Amount) > 0;
         case 'held': return int((items.get(c[1]) || {}).Amount) > 0;
         case 'crest': return !!(crests.get(c[1]) || {}).IsUnlocked;   // a Crest by its save name (Eva's Hunter_v2, _v3)
+        case 'tool': return !!(tools.get(c[1]) || {}).IsUnlocked;   // a Tool by its save name, hidden or not
         case 'steel': return steel.some((e) => e.SceneName === c[1] && e.IsSeen === true);
         case 'int': { const v = ints.get(c[1] + '\u0000' + c[2]); return c[4] === 'min' ? v >= c[3] : v === c[3]; }   // 'min': at least
         case 'geo': return rocks.get(c[1] + '\u0000' + c[2]) === 0;   // listed, with no hits left
@@ -412,6 +420,12 @@
       cocoon: corpse,
       cocoonAt: corpse ? fourNumbers([at(pd.HeroDeathScenePos).x, at(pd.HeroDeathScenePos).y, at(pd.HeroDeathSceneSize).x, at(pd.HeroDeathSceneSize).y]) : [],
       extras: SP.EXTRAS.map((x, i) => (has(x[2]) ? i : -1)).filter((i) => i >= 0),
+      // What lies in the room its 'found' way says now, its owner dead (js/how.js, a way's when:
+      // the Curveclaw once the Mottled Skarr is, the Weighted Belt by Mort's corpse, the Magnetite
+      // Dice by Lumble's), by 'cat:id' (the Map's key); foundRead: the save has said (an older slot
+      // hasn't: the Act says, js/completion.js wayOf).
+      foundNow: WHEN.filter(([, c]) => has(c)).map(([k]) => k),
+      foundRead: true,
       // What the game has taken away with someone (js/spots.js EXTRAS more.lost: Grindle's cell door), not had.
       lostExtras: SP.EXTRAS.map((x, i) => (x[5] && x[5].lost && !has(x[2]) && has(x[5].lost) ? i : -1)).filter((i) => i >= 0),
       evaSlots: evaSlots(crests),
@@ -517,7 +531,7 @@
     needle: 0, kit: 0, pouch: 0, everbloom: false, purse: {}, rosaries: 0, shards: 0, farsight: false, hasJournal: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', rested: true, marker: '', area: '', build: {},
     quests: [], taken: [], carried: {}, bellshrines: [], bells: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
     bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [],
-    visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], lostExtras: [], bosses: [],
+    visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], foundNow: [], foundRead: false, lostExtras: [], bosses: [],
     tasks: [], steelSpots: [], peopleVars: {}, evaSlots: 0, silkshot: '' });
   const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
   // Each field only if it has the type an empty game gives it.
@@ -544,6 +558,7 @@
     out.lostExtras = [...new Set(out.lostExtras.flatMap((k) => EXTRA_AT.get(k) || []))].filter((i) => !out.extras.includes(i)).sort((a, b) => a - b);
     out.tasks = [...new Set(out.tasks.flatMap((k) => TASK_AT.get(k) || []))].sort((a, b) => a - b);
     out.gaveBack = out.gaveBack.filter((id) => CO.TOOLS[id]);
+    out.foundNow = out.foundNow.filter((k) => WHEN.some(([x]) => x === k));
     out.steelSpots = out.steelSpots.filter((x) => typeof x === 'string' && /^[\w ()-]{1,64}$/.test(x));
     out.cocoonAt = out.cocoon ? fourNumbers(out.cocoonAt) : [];
     out.bosses = out.bosses.filter((id) => SP.BOSSES.some((b) => b[0] === id));

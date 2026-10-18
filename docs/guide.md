@@ -440,7 +440,11 @@ leaves those off.
   opens them by the colour of their slot (red, blue, yellow) and, apart, the six **outside the
   100%** (off at first): the upgrades of four Tools (Curvesickle, Druid's Eyes, Claw Mirrors, the
   Shell Satchel), which add nothing to it on their own, and the two a wish lends and takes back
-  (the Snare Setter, the Needle Phial), found once had even after handing them back. Then the
+  (the Snare Setter, the Needle Phial), found once had even after handing them back. Two Tools a
+  shop sells lie in another room once the seller dies before you buy them: the Curveclaw in the
+  room above the Mottled Skarr's corpse, past its gauntlet, and the Weighted Belt by Mort's corpse
+  in Act 3. With a save the mark is where your game has it (the shop while the seller lives or
+  once you bought it there); with none, at both, counted once. Then the
   Crests, **What Eva gives** besides Sylphsong (off at first): the Hunter Crest's two evolutions and
   the Vesticrest's yellow and blue slots, each with the slots it needs across your Crests (the
   Hunter's aside) and, with a save, how many you have open; and the Silk Skills.
@@ -529,7 +533,8 @@ leaves those off.
   or a later step of it (Pale Monarch stays incomplete when Act 3 opens through the Soul Snare), a
   thing picked up, held (when it lies in one place only: each Pollip Heart and Flintgem goes by
   its own spot) or its wish granted. Off at first.
-- **Secrets**, off at first: the rosary and shell shard caches, the breakable walls (the
+- **Secrets**, off at first: the rosary and shell shard caches (not the four ant strings and the
+  Deep Docks chest that only hold an item: that item has its own mark), the breakable walls (the
   one-way ones are among the shortcuts; Bone_12's two cell doors, struck open with no key, among
   them; each wall its own mark, even where breaking one breaks the next, as three in the Sands of
   Karak do), the loose rosaries (one bead, cut from the game's picture of
@@ -811,7 +816,11 @@ wiki's boss drops):
   the Slab's keys for its Mask Shard and Rune Rage.
 
 The way shown is the one your Act has reached: in Act 3 Pebb's and Mort's wares are Grindle's,
-and in Act 2 the Curveclaw and the Fractured Mask lie by the Mottled Skarr. Two traps the page
+and in Act 2 the Fractured Mask lies by the Mottled Skarr. Three things go by what your save says
+rather than by the Act, as they lie by someone's corpse only once that someone is dead: the
+Curveclaw (the Mottled Skarr's while he lives, above his corpse after), the Magnetite Dice
+(Lumble's challenge, then by his body, Grindle's in Act 3) and the Weighted Belt (Mort's, by his
+corpse in Act 3 if you didn't buy it). With no save (Free mode), the Act decides. Two traps the page
 doesn't spell out: the Curveclaw handed over to a Skarr loses its point until the Curvesickle, and
 the Silkshot's first repair closes the other two versions. Masks and spools count whole: four
 shards or two fragments are 1%.
