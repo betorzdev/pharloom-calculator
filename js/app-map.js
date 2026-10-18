@@ -122,7 +122,7 @@
     L('npc', () => t('mapLayer_npc'), 'assets/map/people/bellhart-greeter.webp'),
     ...RELICS.map((k) => L(k, () => t('mapExtra_' + k), `assets/icons/extras/${k}.webp`)),
     L('mossberry', () => t('mapExtra_mossberry'), 'assets/icons/extras/mossberry.webp'),
-    L('silkeater', () => t('mapExtra_silkeater'), PIN('pin_grub_location')),
+    L('silkeater', () => t('mapExtra_silkeater'), 'assets/icons/extras/silkeater.webp'),
     L('memento', () => t('mapExtra_memento'), 'assets/icons/extras/grey-memento.webp'),
     L('bellhome', () => t('mapExtra_bellhome'), PIN('pin_bench_bell')),
     // The area maps (the inventory's rolled map), and the rosaries and shell shards lying in a room.
@@ -371,6 +371,11 @@
   // Why it went with someone (js/spots.js EXTRAS more.person; tools/gen-spots.js PEOPLE_GONE): its words.
   const LOST_WITH = { GRINDLE: () => t('mapLostCell', { npc: pick(HW.NPCS.grindle), a: pick(CO.AREAS.SHELLWOOD), b: pick(CO.AREAS.WILDS),
     boss: pick(FOE.get('widow').name) }) };
+  // A Tool's other room (js/spots.js ALSO), on its card: why it's there, by the one who sold it.
+  const alsoNote = (id, saved) => {
+    const w = (HW.HOW.tools[id] || []).find((x) => x.kind === 'shop');
+    return w ? t(saved ? 'mapAlsoNow' : 'mapAlsoIf', { npc: pick(HW.NPCS[w.vendor]) }) : '';
+  };
   // Nothing left to do with a mark: had, or taken away.
   const closed = (m, g) => !!g && (m.got || !!m.lost);
   function things(g, own) {
@@ -385,9 +390,20 @@
         name: p[4] ? pick(p[4]) : needle ? pick(needle.name) : LAYER.get(p[0]).name(), draw: (s, ti, k, c) => dot(p[0], pieceIcon(p[0], p), s, ti, k, c) });
     });
     for (const ids of CO.COUNTED) {
-      const id = ids[0], tool = D.TOOLS.find((x) => x.id === id), w = CO.WHERE.tools[id] || [];
-      add({ key: 'tools:' + id, layer: 'tools-' + tool.color, scene: SP.AT.tools[id], act: w[0], area: w[1], got: !!g && ids.some((x) => g.tools.includes(x)),
-        name: pick(tool.name), draw: (s, ti, k, c) => dot('tools', `assets/icons/tools/${id}.webp`, s, ti, k, c) });
+      const id = ids[0], tool = D.TOOLS.find((x) => x.id === id), w = CO.WHERE.tools[id] || [], key = 'tools:' + id;
+      const mark = { key, layer: 'tools-' + tool.color, scene: SP.AT.tools[id], act: w[0], area: w[1], got: !!g && ids.some((x) => g.tools.includes(x)),
+        name: pick(tool.name), draw: (s, ti, k, c) => dot('tools', `assets/icons/tools/${id}.webp`, s, ti, k, c) };
+      /* A Tool sold that lies in another room once its seller is gone (js/spots.js ALSO): a save
+         says which room it's in (savefile foundNow), and the mark is there alone; with none (Free
+         mode too, or a slot kept before it said), both, one thing (chk). */
+      const also = (SP.ALSO || {})[key];
+      if (!also) { add(mark); continue; }
+      // There from the Act its seller dies in (js/how.js, its 'found' way's).
+      const found = (HW.HOW.tools[id] || []).find((x) => x.kind === 'found') || {};
+      const xy = SP.XY[key + ':found'], there = { scene: also[0], at: xy && { x: xy[0], y: xy[1] }, act: found.act || mark.act, note: alsoNote(id, !!own) };
+      if (own && own.foundRead) { add(own.foundNow.includes(key) ? { ...mark, ...there } : mark); continue; }
+      add(mark);
+      add({ ...mark, ...there, key: key + ':found', chk: key });
     }
     // The six outside the 100%: a Tool's upgrade, or one a wish lends and takes back.
     for (const id of OTHER_TOOLS) {
@@ -553,15 +569,14 @@
         : kind === 'bead' ? 'assets/icons/extras/rosary-bead.webp' : kind === 'silk-cocoon' ? ICON('silk_grub_small_cocoon')
           : kind === 'eva' ? evaArt(more.reward) : kind === 'lift' || kind === 'masked' ? null
         : kind === 'memento' ? (MEMENTO_ICON[check[1]] ? `assets/icons/extras/${MEMENTO_ICON[check[1]]}.webp` : 'assets/icons/pieces/heart-bloom.webp')
-        : kind === 'silkeater' ? null : kind === 'spawn' || kind === 'bellhome' || kind === 'wall' ? null : `assets/icons/extras/${kind}.webp`;
+        : kind === 'spawn' || kind === 'bellhome' || kind === 'wall' ? null : `assets/icons/extras/${kind}.webp`;
       const spawn = kind === 'spawn' ? BOOK_KEY.get(name && name.key) : null;
       add({ key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i), lost, chk: JSON.stringify(check),
         name: name ? pick(name) : kind === 'eva' ? evaName(more.reward) : ONE[kind] ? t(ONE[kind]) : LAYER.get(layer).name(), eva: kind === 'eva' ? more : null,
         note: kind === 'masked' ? t('mapHiddenNote', { n: num(check[0] === 'all' ? check.length - 1 : 1) }) : more.shop ? t('mapMapShakra', { npc: pick(HW.NPCS[more.shop]), price: num(more.price) }) : more.machine ? t('mapMapMachine', { price: num(more.price) }) : more.found ? t('mapMapFound') : more.fight ? t('mapRewardOf', { fight: App.gauntletName(more.fight) }) : '',
-        draw: (s, ti, k, c) => (kind === 'silkeater' ? pin('silkeater', 'pin_grub_location', s, ti, k, c)
-          : kind === 'spawn' ? badge(layer, portrait(spawn && spawn.id) || GLYPH.spawn, s, ti, k, c)
-            : kind === 'bellhome' ? pin('bellhome', 'pin_bench_bell', s, ti, k, c)
-              : icon ? dot(layer, icon, s, ti, k, c) : badge(layer, GLYPH[layer] || GLYPH.wall, s, ti, k, c)) });
+        draw: (s, ti, k, c) => (kind === 'spawn' ? badge(layer, portrait(spawn && spawn.id) || GLYPH.spawn, s, ti, k, c)
+          : kind === 'bellhome' ? pin('bellhome', 'pin_bench_bell', s, ti, k, c)
+            : icon ? dot(layer, icon, s, ti, k, c) : badge(layer, GLYPH[layer] || GLYPH.wall, s, ti, k, c)) });
     });
     // Your game: the cocoon, where the game's map marks it (js/rooms.js mapPoint, by where Hornet fell
     // in the scene; else its room's middle), and the Journal's entries still missing.

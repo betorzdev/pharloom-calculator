@@ -342,3 +342,43 @@ test('each extra once: no two of a kind with the same check in the same scene, a
   // It isn't found anywhere: whichever Old Heart The Old Hearts doesn't take (design/03-redesign.md, step 6, 11 A).
   assert.ok(!SP.EXTRAS.some((x) => x[0] === 'memento' && x[2][0] === 'all'), 'the Heart Memento has no mark');
 });
+
+test('a Tool sold that lies elsewhere once its seller is gone has that room too, and the save says which', () => {
+  assert.deepEqual(Object.keys(SP.ALSO).sort(), ['tools:curveclaw', 'tools:weighted-belt']);
+  for (const [key, [scene]] of Object.entries(SP.ALSO)) {
+    assert.ok(onMap(scene), `${key}: ${scene}`);
+    assert.notEqual(R.roomOf(scene).scene, R.roomOf(SP.AT.tools[key.slice(6)]).scene, `${key} is in its seller's room`);
+    assert.ok(SP.XY[key + ':found'], `${key} has no point in ${scene}`);
+  }
+  const base = { silk: 0, silkMax: 9, maxHealth: 5 };
+  const curve = (pd, broken) => F.game({ ...base, ...pd },
+    broken ? { persistentBools: { serializedList: [{ SceneName: 'Ant_21', ID: 'ant_item_string', Value: true }] } } : null).foundNow.filter((k) => k === 'tools:curveclaw');
+  const unlocked = { Tools: { savedData: [{ Name: 'Curve Claws', Data: { IsUnlocked: true } }] } };
+  // The Mottled Skarr alive: his. Dead, not bought: Ant_21. Bought before he died: his. Found there: Ant_21.
+  assert.deepEqual(curve({}), []);
+  assert.deepEqual(curve({ antMerchantKilled: true }), ['tools:curveclaw']);
+  assert.deepEqual(curve({ antMerchantKilled: true, ...unlocked }), []);
+  assert.deepEqual(curve({ antMerchantKilled: true, ...unlocked }, true), ['tools:curveclaw']);
+  // Handed to the Skarr Scout (hidden) after it was bought: still bought.
+  assert.deepEqual(curve({ antMerchantKilled: true, Tools: { savedData: [{ Name: 'Curve Claws', Data: { IsUnlocked: true, IsHidden: true } }] } }), []);
+  const pd = { ...base, mortKeptWeightedAnklet: true };
+  assert.deepEqual(F.game(pd).foundNow, ['tools:weighted-belt']);
+  assert.deepEqual(F.gameOf(F.toSnapshot(pd)).foundNow, ['tools:weighted-belt']);
+  assert.deepEqual(F.gameOf({}).foundNow, []);
+  assert.equal(F.gameOf({}).foundRead, false);
+  assert.equal(F.gameOf(F.toSnapshot(pd)).foundRead, true);
+});
+
+test('no cache is only the holder of an item that has its own mark (an ant_item_string, Dock_03\'s chest)', () => {
+  const P = require('../kb/data/game/pickups.json');
+  SP.EXTRAS.forEach((x, i) => {
+    if (!/-cache$/.test(x[0])) return;
+    const c = x[2][0] === 'any' ? x[2][1] : x[2];
+    const o = (P.objects[String(c[1]).toLowerCase()] || {})[c[2]];
+    if (!o) return;
+    for (const [save, at] of Object.entries(P.lying)) {
+      assert.ok(!at.some(([s, , ex, ey]) => s.toLowerCase() === c[1].toLowerCase() && Math.abs(ex - o[0]) < 0.1 && Math.abs(ey - o[1]) < 0.1),
+        `extra:${i} (${x[0]} ${c[1]} ${c[2]}) only holds ${save}`);
+    }
+  });
+});

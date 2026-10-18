@@ -1407,6 +1407,18 @@
       name: { es: 'Diario de caza', en: 'Hunter\'s Journal', key: 'INV_NAME_JOURNAL' },
     },
     {
+      id: 'silkeater',
+      key: 'INV_NAME_SILK_GRUB',
+      name: { es: 'Devoraseda', en: 'Silkeater', key: 'INV_NAME_SILK_GRUB' },
+      desc: {
+        es: 'Larva que vive y se alimenta de la seda de Telalejana, nacida con la capacidad de sentir la seda a grandes distancias. Tras abatirla en combate, consúmela para recuperar un capullo.',
+        en: 'Grub that lives within and feeds upon Pharloom\'s lingering Silk, born with the ability to sense Silk over great distances. Consume the Silkeater to retrieve a cocoon after falling in battle.',
+        key: 'INV_DESC_SILK_GRUB+INV_DESC_SILK_GRUB_FUNCTION',
+      },
+      art: 'extras',
+      max: 10,
+    },
+    {
       id: 'rosaries',
       key: 'INV_NAME_COIN',
       name: { es: 'Rosarios', en: 'Rosaries', key: 'INV_NAME_COIN' },
