@@ -792,7 +792,11 @@
     "Rock Roller",
     "Rock Roller_item_Rock Rollers",
     78.46,
-    78.95
+    78.95,
+    {
+     "dead": "rockRollerDefeated_bone01",
+     "needs": {}
+    }
    ],
    [
     "bone_04",
@@ -800,7 +804,13 @@
     "Rock Roller",
     "Rock Roller_item_Rock Rollers",
     165.86,
-    22.31
+    22.31,
+    {
+     "dead": "rockRollerDefeated_bone06",
+     "needs": {
+      "bone03_openedTrapdoorForRockRoller": false
+     }
+    }
    ],
    [
     "bone_06",
@@ -808,7 +818,13 @@
     "Rock Roller",
     "Rock Roller_item_Rock Rollers",
     84.94,
-    40.44
+    40.44,
+    {
+     "dead": "rockRollerDefeated_bone06",
+     "needs": {
+      "bone03_openedTrapdoorForRockRoller": true
+     }
+    }
    ],
    [
     "bone_07",
@@ -816,7 +832,11 @@
     "Rock Roller",
     "Rock Roller_item_Rock Rollers",
     60.63,
-    25.83
+    25.83,
+    {
+     "dead": "rockRollerDefeated_bone07",
+     "needs": {}
+    }
    ]
   ],
   "Shell Flower": [

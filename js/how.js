@@ -16,7 +16,9 @@
                  after the WISHES indices to be done first; needs the playerData flags it waits on
                { kind: 'wish', wish, quest, act? }  wish a WISHES index, quest its save name
                { kind: 'boss', foe }  a js/enemies.js FOES id
-               { kind: 'found', act? }  lying in a room (from that Act on)
+               { kind: 'found', act?, when? }  lying in a room (from that Act on)
+                 when: the save check that says it lies there now (its owner dead), which
+                 replaces act when the save says (js/completion.js wayOf)
                { kind: 'craft', craftmetal }  made at a craft table
                { kind: 'npc', npc }  given for nothing
                { kind: 'challenge', npc }  won from the NPC
@@ -77,7 +79,15 @@
       longpin: [{ kind: 'found' }],
       curveclaw: [
         { kind: 'shop', vendor: 'mottled-skarr', price: 140, item: 'Ant Merchant Curve Claws Tool' },
-        { kind: 'found', act: 2 },
+        {
+          kind: 'found',
+          act: 2,
+          when: [
+            'all',
+            ['flag', 'antMerchantKilled'],
+            ['any', ['bool', 'Ant_21', 'ant_item_string'], ['not', ['tool', 'Curve Claws']]],
+          ],
+        },
       ],
       'throwing-ring': [{ kind: 'wish', wish: 29, quest: 'Shakra Final Quest' }],
       pimpillo: [{ kind: 'craft', craftmetal: 1 }],
@@ -182,13 +192,22 @@
       ],
       'weighted-belt': [
         { kind: 'shop', vendor: 'mort', price: 160, item: 'Pilgrims Rest Weighted Anklet Tool' },
-        { kind: 'found', act: 3 },
+        { kind: 'found', act: 3, when: ['flag', 'mortKeptWeightedAnklet'] },
       ],
       'barbed-bracelet': [{ kind: 'found' }],
       'dead-bugs-purse': [{ kind: 'found' }],
       'magnetite-dice': [
         { kind: 'challenge', npc: 'lumble' },
-        { kind: 'found', act: 2 },
+        {
+          kind: 'found',
+          act: 2,
+          when: [
+            'all',
+            ['min', 'dicePilgrimState', 1],
+            ['not', ['min', 'dicePilgrimState', 2]],
+            ['not', ['flag', 'blackThreadWorld']],
+          ],
+        },
         { kind: 'shop', vendor: 'grindle', price: 300, item: 'Grindle Lucky Dice Tool', act: 3 },
       ],
       scuttlebrace: [
