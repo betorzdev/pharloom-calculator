@@ -929,8 +929,8 @@
                       en: 'What you mark (profiles, Tools and Crests, journal, progress, preferences) is kept only in this browser, with a copy of each save file you import; if you turn on "Follow the game", so is the access to your save file.' },
     footPrivSaves:  { es: 'Tus archivos guardados se leen aquí mismo y no se suben a ningún sitio.',
                       en: 'Your save files are read right here and never uploaded anywhere.' },   // the files as SAVE_CORRUPTED_TITLE and PS4_SAVE_IMPORT_RESULT_SUCCESS call them
-    footPrivCount:  { es: 'Las visitas se cuentan con {gc}: páginas, desde dónde llegas, navegador y sistema, ancho de pantalla, idioma, país y qué pantallas abres. El dueño las ve como recuentos por día y, las de hoy, una a una con la hora al minuto. No guarda tu IP ni usa cookies.',
-                      en: 'Visits are counted with {gc}: pages, where you came from, browser and system, screen width, language, country and which screens you open. The owner sees them as daily counts and, for today only, one by one with the time to the minute. It keeps no IP and uses no cookies.' },
+    footPrivCount:  { es: 'Las visitas se cuentan con {gc}: páginas, desde dónde llegas, navegador y sistema, ancho de pantalla, idioma, país, qué pantallas abres y qué botones y enlaces pulsas. El dueño las ve como recuentos por día y, las de hoy, una a una con la hora al minuto. No guarda tu IP ni usa cookies.',
+                      en: 'Visits are counted with {gc}: pages, where you came from, browser and system, screen width, language, country, which screens you open and which buttons and links you press. The owner sees them as daily counts and, for today only, one by one with the time to the minute. It keeps no IP and uses no cookies.' },
     footPrivHost:   { es: 'La web está alojada en {gh}, que guarda registros técnicos de cada visita.',
                       en: 'The site is hosted on {gh}, which keeps technical logs of each visit.' },
     footPrivErase:  { es: 'Para borrarlo todo, borra los datos de este sitio en tu navegador.',
