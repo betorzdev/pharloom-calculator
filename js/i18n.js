@@ -18,6 +18,9 @@
     langGroup:      { es: 'Idioma', en: 'Language' },   // GAME_LANGUAGE
     share:          { es: 'Compartir', en: 'Share' },
     shareHint:      { es: 'Copia el enlace a la web', en: 'Copy the link to the site' },
+    // The donation link after Share (design/94b): the full label on a wide screen, Ko-fi alone on a phone.
+    support:        { es: 'Apoya la web', en: 'Support the site' },
+    supportHint:    { es: 'Donar en Ko-fi', en: 'Donate on Ko-fi' },
     // The sister site's link (js/app-sister.js): the game's title, as it's sold in both languages; its
     // hint names the sister in each, as that site calls itself (its own title; «Amuletos» is Hollow
     // Knight's Spanish for Charms, PANE_CHARMS there).
@@ -309,6 +312,25 @@
     mapArtOut:      { es: 'No cuenta para el 100 %', en: 'It doesn\'t count for the 100%' },
     mapArtsIn:      { es: 'Del 100 %', en: 'Of the 100%' },
     mapToolLent:    { es: 'Te la presta un deseo y te la quita al cumplirlo: no cuenta para el 100 %', en: 'A wish lends it and takes it back once done: it doesn\'t count for the 100%' },
+    /* A Tool sold that lies in another room once its seller is gone (js/spots.js ALSO): that room's
+       mark, with no save and with one that has it there. */
+    mapAlsoIf:      { es: 'Aquí si {npc} muere antes de que se lo compres', en: 'Here if {npc} dies before you buy it' },
+    mapAlsoNow:     { es: '{npc} murió antes de que se lo compraras: está aquí', en: '{npc} died before you bought it: it lies here' },
+    // What Act 3 moves to another room (js/spots.js ALSO, way { kind: 'moved' }): that room's mark, why it's there.
+    mapMovedFoe:    { es: 'En el Acto 3, el {foe} que la lleva se muda a esta sala', en: 'In Act 3 the {foe} that carries it moves to this room' },
+    mapMovedWish:   { es: 'En el Acto 3 está aquí, si no se ha concedido el deseo «{wish}»', en: 'In Act 3 it lies here, if the wish "{wish}" isn\'t granted' },
+    /* What a vendor sells only in Act 3 (js/spots.js ALSO, a shop's), once who had it before is gone
+       (Grindle's: Pebb's, Mort's, Lumble's wares): its mark there, with no save and in an Act 3 game. */
+    mapAlsoSoldIf:  { es: 'En el Acto 3, cuando {from} ya no está, en la tienda de {npc}: {price} rosarios', en: 'In Act 3, once {from} is gone, in {npc}\'s shop: {price} rosaries' },
+    mapAlsoSoldNow: { es: '{from} ya no está: en la tienda de {npc}, {price} rosarios', en: '{from} is gone: in {npc}\'s shop, {price} rosaries' },
+    /* Silkshot's three repairs (js/spots.js VARIANTS): each place's card, the Ruined Tool's, and why
+       a place is closed in a save. {item} the Ruined Tool (INV_NAME_BROKEN_SILKSHOT), {tool} the
+       Silkshot (SILKSHOT_NAME), {npc} the Twelfth Architect (ARCHITECT_SHOP_TITLE). */
+    mapShotNeeds:   { es: 'Repara la {item}: la primera reparación cierra las otras dos', en: 'Repairs the {item}: the first repair closes the other two' },
+    mapShotRune:    { es: 'la runa de {area}', en: 'the rune in {area}' },
+    mapShotRuined:  { es: 'Repárala para obtener la {tool}, en uno de tres sitios: {list}', en: 'Repair it for the {tool}, at one of three places: {list}' },
+    mapShotSee:     { es: 'Ver los tres', en: 'See the three' },
+    mapShotLeft:    { es: '{npc} se ha marchado.', en: '{npc} has left.' },
     mapGroupShow:   { es: 'Mostrar todo el grupo', en: 'Show the whole group' },
     mapGroupHide:   { es: 'Esconder todo el grupo', en: 'Hide the whole group' },
     mapFoldOpen:    { es: 'Abrir {g}', en: 'Open {g}' },
@@ -373,6 +395,7 @@
     mapExtra_shards:   { es: 'Fragmentos de coraza', en: 'Shell Shards' },   // INV_NAME_SHARD
     mapMapFound:    { es: 'Se consigue en esta sala.', en: 'Had in this room.' },
     mapMapShakra:   { es: '{npc} lo vende por {price} rosarios desde que la ves en esta zona.', en: '{npc} sells it for {price} rosaries once you\'ve seen her in this area.' },   // {npc}: MAPPER_MAIN
+    mapMapMachine:  { es: 'Una máquina que muestra una maqueta de la Ciudadela lo vende por {price} rosarios.', en: 'A machine displaying a model of the Citadel sells it for {price} rosaries.' },   // the machine's words: CITADEL_MAP_PROMPT
     // The keys, key items, lifts, loose rosaries, small cocoons and hidden corners: the game names
     // none of these groups, so written for context (each key and item carries its own game name).
     mapLayer_keys:     { es: 'Llaves', en: 'Keys' },
@@ -428,6 +451,9 @@
     mapKills:       { es: '{n} de {m} derrotados', en: '{n} of {m} defeated' },
     mapBeastHere:   { es: '{n} en esta sala', en: '{n} in this room' },
     mapTaskFor:     { es: 'Lo pide el deseo «{wish}».', en: 'The wish "{wish}" asks for it.' },
+    // One enemy, two places (js/spots.js TASKS alt, by the shortcut): the Flintbeetle's.
+    mapAltShortcutShut: { es: 'Este {foe} cambia de sitio: está aquí hasta que se abre el atajo de la trampilla, y luego en otra sala.', en: 'This {foe} moves: it\'s here until the trapdoor shortcut is opened, then in another room.' },
+    mapAltShortcutOpen: { es: 'Este {foe} cambia de sitio: está aquí una vez abierto el atajo de la trampilla; hasta entonces, en otra sala.', en: 'This {foe} moves: it\'s here once the trapdoor shortcut is opened; until then, in another room.' },
     mapWishGranted: { es: 'Deseo concedido', en: 'Wish Granted' },   // WISH_GRANTED
     mapDone:        { es: 'Completado', en: 'Completed' },   // COMPLETED
     mapNotDone:     { es: 'Sin cumplir', en: 'Not done yet' },
@@ -752,6 +778,11 @@
     pgTodoMore:     { es: 'y {n} más', en: 'and {n} more' },
     /* A how line on a phone: its lead, and what it waits for behind a button (design/41, 2 B). */
     pgHowMore:      { es: '+{n} más', en: '+{n} more' },
+    /* The Silkshot's row (js/spots.js VARIANTS, design/102): what to do first, then each place.
+       {item} the Ruined Tool (INV_NAME_BROKEN_SILKSHOT), {area} the game's area name. */
+    pgShotFind:     { es: 'Busca la {item} en {area} y repárala', en: 'Find the {item} in {area}, then repair it' },
+    pgShotRepair:   { es: 'Repara la {item}', en: 'Repair the {item}' },
+    pgShotRune:     { es: 'La runa de {area}', en: 'The rune in {area}' },
     pgHowLess:      { es: 'menos', en: 'less' },
     /* A thing of the 100% lying in a room, which has no other way (design/41, 4 A). */
     pgFound:        { es: 'Se encuentra en la zona: el alfiler marca dónde', en: 'Found in the area: the pin shows where' },
@@ -890,22 +921,29 @@
 
     /* Footer: the fan-project notice, the sources and the author (docs/guide.md, "Credits and licences") */
     footLabel:      { es: 'Aviso, fuentes y contacto', en: 'Notice, sources and contact' },
-    footFan:        { es: 'Proyecto de fans no oficial, gratuito y sin ánimo de lucro, sin relación con {tc}. Hollow Knight: Silksong y su arte son © Team Cherry.',
-                      en: 'Unofficial fan project, free and non-commercial, not affiliated with {tc}. Hollow Knight: Silksong and its artwork are © Team Cherry.' },
+    footFan:        { es: 'Proyecto de fans no oficial y gratuito, sin relación con {tc}. Hollow Knight: Silksong y su arte son © Team Cherry.',
+                      en: 'Unofficial, free fan project, not affiliated with {tc}. Hollow Knight: Silksong and its artwork are © Team Cherry.' },
     footData:       { es: 'Datos de {wiki}, bajo {lic}; textos del juego, de su traducción oficial.',
                       en: 'Data from {wiki}, under {lic}; game texts from its official translation.' },
     footMade:       { es: 'Hecho por Albert. ¿Un número mal, una traducción rara o un fallo? Escribe a {mail}.',
                       en: 'Made by Albert. A wrong number, an odd translation or a bug? Write to {mail}.' },
+    footSupport:    { es: '¿Te es útil? Puedes apoyarla en {kofi}.', en: 'Is it useful to you? You can support it on {kofi}.' },
     // The privacy notice under it, folded (docs/guide.md, "Privacy"). No game source: written for context.
     footPrivacy:    { es: 'Privacidad', en: 'Privacy' },
+    // The legal notice, folded beside it (LSSI art. 10; docs/guide.md, "Privacy"): who runs the site, now that it takes donations.
+    footLegal:      { es: 'Aviso legal', en: 'Legal notice' },
+    footLegalOwner: { es: 'Responsable de esta web: {name}, España. Contacto: {mail}.',
+                      en: 'This site is run by {name}, Spain. Contact: {mail}.' },
+    footLegalKofi:  { es: 'Las donaciones en {kofi} son voluntarias y no dan acceso a nada más: la web es la misma para todos.',
+                      en: 'Donations on {kofi} are voluntary and unlock nothing: the site is the same for everyone.' },
     footPrivNone:   { es: 'Esta web no usa cookies ni rastreadores.',
                       en: 'This site uses no cookies and no trackers.' },
     footPrivLocal:  { es: 'Lo que marcas (perfiles, herramientas y blasones, diario, progreso, preferencias) se guarda solo en este navegador, con una copia de cada archivo guardado que importas; si pones «Seguir al juego», también el acceso a tu archivo guardado.',
                       en: 'What you mark (profiles, Tools and Crests, journal, progress, preferences) is kept only in this browser, with a copy of each save file you import; if you turn on "Follow the game", so is the access to your save file.' },
     footPrivSaves:  { es: 'Tus archivos guardados se leen aquí mismo y no se suben a ningún sitio.',
                       en: 'Your save files are read right here and never uploaded anywhere.' },   // the files as SAVE_CORRUPTED_TITLE and PS4_SAVE_IMPORT_RESULT_SUCCESS call them
-    footPrivCount:  { es: 'Las visitas se cuentan con {gc}: páginas, desde dónde llegas, navegador y sistema, ancho de pantalla, idioma, país y qué pantallas abres. El dueño las ve como recuentos por día y, las de hoy, una a una con la hora al minuto. No guarda tu IP ni usa cookies.',
-                      en: 'Visits are counted with {gc}: pages, where you came from, browser and system, screen width, language, country and which screens you open. The owner sees them as daily counts and, for today only, one by one with the time to the minute. It keeps no IP and uses no cookies.' },
+    footPrivCount:  { es: 'Las visitas se cuentan con {gc}: páginas, desde dónde llegas, navegador y sistema, ancho de pantalla, idioma, país, qué pantallas abres y qué botones y enlaces pulsas. El dueño las ve como recuentos por día y, las de hoy, una a una con la hora al minuto. No guarda tu IP ni usa cookies.',
+                      en: 'Visits are counted with {gc}: pages, where you came from, browser and system, screen width, language, country, which screens you open and which buttons and links you press. The owner sees them as daily counts and, for today only, one by one with the time to the minute. It keeps no IP and uses no cookies.' },
     footPrivHost:   { es: 'La web está alojada en {gh}, que guarda registros técnicos de cada visita.',
                       en: 'The site is hosted on {gh}, which keeps technical logs of each visit.' },
     footPrivErase:  { es: 'Para borrarlo todo, borra los datos de este sitio en tu navegador.',

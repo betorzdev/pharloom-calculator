@@ -199,8 +199,11 @@ const BOSS_MORE = [
 ];
 /* A boss whose Act the completionist has wrong: the Summoned Saviour, Steel Soul's, is Act 3 there,
    but its wish (A Vassal Lost) is taken in Act 2 and the author's Steel Soul game beat it then
-   (Restore_Points3/restoreData24: act2Started, not blackThreadWorld; checked 14-Oct-2026). */
-const BOSS_ACT = { 'summoned-saviour': 2 };
+   (Restore_Points3/restoreData24: act2Started, not blackThreadWorld; checked 14-Oct-2026). The
+   Craggler is Act 2 there, but it waits in the Wormways' lower entrance from the start (wiki
+   Wormways: that room, reached from Mosshome with the Swift Step, «and later, by several Cragglites
+   in Act 2»; Crawl_04's Roof Crab goes only with roofCrabDefeated, read in the scene on 18-Oct-2026). */
+const BOSS_ACT = { 'summoned-saviour': 2, craggler: 1 };
 // Relics an NPC hands over: Jubilana's Choral Commandment, Grindle's Psalm Cylinder.
 const RELIC_ROOM = { 'Seal Chit City Merchant': 'song_enclave', 'Psalm Cylinder Grindle': 'coral_42',
   // In several rooms (the generator stops on a new one): the Hero's Memento where Lost Garmond drops
@@ -261,6 +264,7 @@ for (const it of C.load('bosses.ts')) {
   const foe = BOSS_ALIAS[norm(it.name)] || foeBy.get(norm(it.name)) || fail(`no foe named ${it.name}`);
   const scene = arena(foe);
   if (!scene) { unplaced.push('boss ' + foe); continue; }
+  if (BOSS_ACT[foe] && BOSS_ACT[foe] === it.whichAct) fail(`BOSS_ACT: the completionist gives ${foe} Act ${it.whichAct} already: the fix goes`);
   BOSSES.push([foe, scene, C.check(it.parsingInfo, fail), BOSS_ACT[foe] || it.whichAct || fail(`${it.name} has no Act`)]);
 }
 for (const [foe, check, act] of BOSS_MORE) {
@@ -288,11 +292,35 @@ function byWays(ways, found, key) {
 }
 const AT = { pieces: {}, tools: {}, crests: {}, skills: {}, arts: {} };
 const put = (cat, id, scene, what) => { if (scene) { AT[cat][id] = scene; placed.push(what); } else unplaced.push(what); };
+/* What Act 3 moves (Albert's, 18-Oct-2026): a piece or another collectible whose own object lies
+   in another room once Act 3 begins, under that room's «Black Thread World», while the first one
+   goes with its own room's «Normal World» or with what the save says. ALSO too (below): that room,
+   the save check that says the game has it there now or had it there, and { kind: 'moved', act: 3, foe | wish }
+   for its card (js/app-map.js: why it moved); its first room and point go by its own check. Read in
+   the game's scenes (patch 1.0.30000), with the wiki (Mossberry, Memory Locket) and a sweep of every
+   pickup pickups.json lists, by the world its scene puts it in (only these two move; the Cradle
+   Map's machine and its Act 3 pickup are two extras already, Bone_18's locket is in both worlds):
+   - Mossberry no. 3 (bonetownAspidBerryCollected): the Aknid that carries it, «Aspid Collector (3)»
+     under Bonetown's Normal World, is in Bone_01b's Black Thread World in Act 3, with the same
+     DeactivateIfPlayerdataTrue and its Mossberry Pickup's «PD Bool» the same flag. No bool says
+     which room it was had in: had, it stays in Bonetown.
+   - The Memory Locket of «Volatile Flintbeetles» (tools/completionist.js PIECE_FIX): Bone_10's own,
+     there while the quest isn't done; its bool says it was had there.
+   Each stops the run if its thing, its pickup there or the room's Act 3 side is gone (a patch). */
+const MOVED = [
+  { list: 'extra', kind: 'mossberry', own: ['flag', 'bonetownAspidBerryCollected'], item: 'Mossberry', scene: 'Bone_01b',
+    there: ['all', ['flag', 'blackThreadWorld'], ['not', ['flag', 'bonetownAspidBerryCollected']]], more: { foe: 'NAME_ASPID_COLLECTOR' } },
+  { list: 'piece', kind: 'memory-locket', own: ['quest', 'Rock Rollers'], item: 'Crest Socket Unlocker', scene: 'Bone_10',
+    bool: 'Collectable Item Pickup Locket', more: { wish: 'Rock Rollers' } },
+];
+// Whether a check is that one, or takes it among others (['any', …]).
+const takes = (c, own) => JSON.stringify(c) === JSON.stringify(own) || (c[0] === 'any' && c.slice(1).some((x) => JSON.stringify(x) === JSON.stringify(own)));
+const movedOwn = (list, x) => (MOVED.find((m) => m.list === list && m.kind === x[0] && takes(x[2], m.own)) || {}).own;
 // Pieces: the room the check names first (what lies there), then the ways.
 const OLD_HEARTS = { CollectedHeartFlower: 'Flower Heart', CollectedHeartCoral: 'Coral Heart', CollectedHeartHunter: 'Hunter Heart',
   CollectedHeartClover: 'Clover Heart', HasMelodyLibrarian: 'Librarian Melody Cylinder' };
 CO.PIECES.forEach((p, i) => {
-  const own = R.sceneOf(p[2]);
+  const own = R.sceneOf(movedOwn('piece', p) || p[2]);
   // A piece sold with no counter of its own (js/shop.js SHOP gives it), from the vendor of the
   // earliest Act; one a wish gives (REWARDS), where the wish is taken.
   const seller = SH.SHOP.filter((x) => x.piece === i).sort((a, b) => (a.act || 0) - (b.act || 0)).find((x) => onMap(personScene(x.vendor)));
@@ -328,6 +356,47 @@ for (const id of OTHER_TOOLS) {
   if (OTHER_WISH[id]) WAY_OF['tools:' + id] = { kind: 'wish', quest: OTHER_WISH[id] };
   put('tools', id, s, 'tool ' + id);
 }
+/* A Tool sold that lies in another room once its seller is gone (its ways a shop and 'found', the
+   pickup in a room other than the vendor's): ALSO, that room and the save check that says the
+   game has it there, its 'found' way's when (tools/gen-how.js WHEN, read in the game's scenes:
+   the Curveclaw in Ant_21 once the Mottled Skarr is dead, the Weighted Belt by Mort's corpse).
+   One with no when stops the run: its scene is read again. */
+const ALSO = {};
+{
+  const room = (s) => (R.roomOf(s) || {}).scene;
+  for (const ids of CO.COUNTED) {
+    const id = ids[0], ways = H.HOW.tools[id] || [], scene = AT.tools[id];
+    if (!ways.some((w) => w.kind === 'shop') || !ways.some((w) => w.kind === 'found')) continue;
+    const apart = [...new Set(CO.TOOLS[id].flatMap(lying))].filter((s) => room(s) !== room(scene));
+    if (!apart.length) continue;
+    if (apart.length > 1) fail(`tools ${id} lies in ${apart.join(', ')} apart from its seller: choose one`);
+    const when = ways.find((w) => w.kind === 'found').when;
+    ALSO['tools:' + id] = [apart[0], when || fail(`tools ${id} lies in ${apart[0]} once its seller is gone: read its scene for the check that says so (tools/gen-how.js WHEN)`)];
+  }
+  /* A thing a vendor sells only in Act 3 (js/shop.js act 3), had elsewhere before: ALSO too, that
+     vendor's room, the check blackThreadWorld (the save's Act 3) and the way, { kind: 'shop',
+     vendor, price, act: 3, from }, from who had it before. Grindle's, in the Blasted Steps: Pebb's
+     Mask Shard, Craftmetal and Magnetite Brooch, Mort's Memory Locket and Tool Pouch, Lumble's
+     Magnetite Dice (his Simple Key has no mark: the sold keys have none). Read in the game's scenes
+     (18-Oct-2026): Bonetown's Bonechurch_Shop (Pebb), Bone_East_10_Room's Pilgrims Rest Shop (Mort)
+     and Coral_33's Dice Game (Lumble, his corpse too) are under each room's «Normal World», which
+     its «Black Thread States» (TestGameObjectActivator blackThreadWorld) switches off: in Act 3
+     only Grindle has them. One whose earlier source isn't among those stops the run: its scene is
+     read again (GONE_ACT3). */
+  const GONE_ACT3 = new Set(['pebb', 'mort', 'lumble']);
+  for (const x of SH.SHOP) {
+    if (x.act !== 3 || !(x.tool || x.piece != null)) continue;
+    const key = x.tool ? 'tools:' + x.tool : 'piece:' + x.piece, scene = x.tool ? AT.tools[x.tool] : AT.pieces[x.piece];
+    const there = VENDORS[x.vendor] && VENDORS[x.vendor][0];
+    if (!scene || !there || room(scene) === room(there)) continue;
+    const w = WAY_OF[key] || {}, from = w.vendor || w.npc;
+    if (!GONE_ACT3.has(from)) fail(`${key}: ${x.vendor} sells it in Act 3, and ${from || 'nothing'} had it in ${scene} before: is that one gone in Act 3? (GONE_ACT3)`);
+    if (ALSO[key]) fail(`${key} has two other rooms (${ALSO[key][0]}, ${there}): ALSO holds one`);
+    ALSO[key] = [there, ['flag', 'blackThreadWorld'], { kind: 'shop', vendor: x.vendor, price: x.price, act: 3, from }];
+  }
+}
+// The key of a thing's mark in its other room (ALSO): '<key>:found', or '<key>:<vendor>' for a shop's.
+const alsoKey = (key, also) => key + ':' + (also[2] && also[2].kind === 'shop' ? also[2].vendor : 'found');
 for (const cat of ['crests', 'skills', 'arts']) {
   for (const id of Object.keys(CO.WHERE[cat])) {
     const hand = HAND[cat][id];
@@ -404,6 +473,15 @@ const CHECK_OF = {
    same bool in the same scene, one wall at one point. Each goes in once (design/03-redesign.md,
    step 6, the switches' contents, 8 A). */
 const EXTRA_SEEN = new Set();
+/* An extra whose Act the completionist has wrong (the Map's Acts, checked one by one on
+   18-Oct-2026), by its name there: the first Act it can be had in. The Slab's Weaver Effigy lies
+   below the First Sinner's cell, behind the door the Key of Apostate opens (wiki Weaver Effigy), and
+   that key is the Putrified Ducts' (wiki Slab Keys; every one of the author's saves that entered
+   Slab_12 holds HasSlabKeyC): Act 2, not 1. Whiteward's second Choral Commandment takes the Silk Soar
+   or a precise jump with the Faydown Cloak (wiki Choral Commandment), Act 2's: not Act 3 only. The
+   run stops on one the completionist already agrees with, or no longer names. */
+const EXTRA_ACT = { 'Weaver Effigy · The Slab': 2, 'Choral Commandment · Whiteward (#2)': 2 };
+const EXTRA_ACT_USED = new Set();
 const extra = (kind, it, name) => {
   let c = C.check(it.parsingInfo, fail);
   if ((kind === 'rosary-cache' || kind === 'shard-cache') && c[0] === 'int' && !(c = cacheCheck(c))) return;
@@ -419,8 +497,34 @@ const extra = (kind, it, name) => {
      the list (js/map-fixes.js keys by it). */
   const purse = /-cache$/.test(kind) && c[0] === 'bool' && lyingPurse(c);
   if (purse) { EXTRAS.push([purse[2] === 'rosaries' ? 'rosaries' : 'shards', null, c, s, purse[3].name, { item: purse[0] }]); return; }
-  EXTRAS.push([kind, it.whichAct || 0, c, s, name]);
+  const held = /-cache$/.test(kind) && heldItem(c);
+  if (held) { HELD.push([held, s, it.name]); return; }
+  if (EXTRA_ACT[it.name] !== undefined) {
+    if (EXTRA_ACT[it.name] === it.whichAct) fail(`EXTRA_ACT: the completionist gives ${it.name} Act ${it.whichAct} already: the fix goes`);
+    EXTRA_ACT_USED.add(it.name);
+  }
+  EXTRAS.push([kind, EXTRA_ACT[it.name] || it.whichAct || 0, c, s, name]);
 };
+/* A "cache" that only holds an item isn't one: the four ant_item_strings the completionist files
+   among the rosary caches (Ant_04_left, Ant_21, Bone_East_18b, Bone_East_24) pay nothing (read in
+   the game's scenes, 18-Oct-2026: a BreakableHolder with no holdingGameObjects, where the ant_rosary
+   _strings beside them hold rosaries), nor does Dock_03's City Shard Chest among the shell shard
+   caches (its Chest Control's Shards and Geo counts are 0, where Bone_19's Bone Chest has 8 and
+   20); each only lets fall the item it keeps, which lies on its own point (pickups.json objects and
+   lying). That item has its own mark where it lies (a Rosary Necklace among the rosaries, the Ant
+   Trapper's item among the wishes', the Craftmetal among the 100%'s, the Curveclaw among the
+   Tools: ALSO, below), so the holder is left out, not drawn twice on two layers.
+   The item on a cache's point → its save name, else null. */
+const HELD = [];
+function heldItem(c) {
+  if (!['bool', 'int'].includes(c[0])) return null;
+  const o = (P.objects[c[1].toLowerCase()] || {})[c[2]];
+  if (!o) return null;
+  for (const [save, at] of Object.entries(P.lying || {})) {
+    if (at.some(([sc, , x, y]) => sc.toLowerCase() === c[1].toLowerCase() && Math.abs(x - o[0]) < 0.1 && Math.abs(y - o[1]) < 0.1)) return save;
+  }
+  return null;
+}
 // A sceneData bool → [item id, save name, 'rosaries' or 'shards', the item] if it's a PURSE pickup lying there.
 function lyingPurse(c) {
   for (const [id, save, cur] of CO.PURSE) {
@@ -440,6 +544,7 @@ for (const it of C.load('mementos.ts')) if (it.name !== 'Heart Memento') extra('
 for (const it of C.load('bellhome.ts')) extra('bellhome', it, N.gameName(it.name) || { es: it.name, en: it.name, key: undefined });
 for (const sec of C.sections('uniqueSpawns.ts')) for (const it of sec.items) extra('spawn', it, N.text(SPAWN_KIND[sec.name] || fail(`spawn kind ${sec.name}`)));
 for (const sec of C.sections('cachesAndSecrets.ts')) for (const it of sec.items) extra(CACHE_KIND[sec.name] || fail(`cache kind ${sec.name}`), it);
+for (const n of Object.keys(EXTRA_ACT)) if (!EXTRA_ACT_USED.has(n)) fail(`EXTRA_ACT: the completionist has no ${n} any more`);
 
 /* What opens a way and stays open (pickups.json doors, from the game's scenes): levers and
    pressure plates, gates, doors a key opens, shortcuts and silk walls, each by the bool the save
@@ -480,18 +585,27 @@ const SCENE_AT = new Map();
   if (kept !== KIND_WAS.size) fail(`KIND_WAS names ${KIND_WAS.size} doors, ${kept} are marks: it needs reading again`);
 }
 
-/* The area maps, after the doors: each of the 28 Has<Area>Map flags (MAPS) where it's had, with no
-   Act of its own (null). Shakra sells 14 (js/shop.js SHOP: its price, the game's name for it),
-   each marked at her spot in that map's area whose scripts set a SeenMapper<Area> flag (her stock
-   opens with them; Shellwood_01's and Greymoor_08's set none); the Mosslands have no spot of hers,
-   and their map is sold from the start: where she's first met, in the Marrow (MAP_SHAKRA). The
-   other 14 are had in a room (pickups.json maps: a fake collectable that sets the flag, its words
-   the name the game shows on getting it), marked where the game gives it: a map lying there or on
-   a sign (CollectableItemPickup), or a Citadel map machine (its FSM); the Choral Chambers' and the
-   Cradle's in two rooms each (two machines; the Cradle's machine and Ventrica's Terminus), so a
-   mark in each. Each
-   ['map', null, ['flag', Has<Area>Map], scene, name, { shop: 'shakra', price } or { found: true }]. */
+/* The area maps, after the doors: each of the 28 Has<Area>Map flags (MAPS) where it's had. Shakra
+   sells 14 (js/shop.js SHOP: its price, the game's name for it), each marked at her spot in that
+   map's area whose scripts set a SeenMapper<Area> flag (her stock opens with them; Shellwood_01's
+   and Greymoor_08's set none); the Mosslands have no spot of hers, and their map is sold from the
+   start: where she's first met, in the Marrow (MAP_SHAKRA). The other 14 are had in a room
+   (pickups.json maps: a fake collectable that sets the flag, its words the name the game shows on
+   getting it), marked where the game gives it: a map lying there or on a sign
+   (CollectableItemPickup: found), or a Citadel map machine (its FSM), which sells it (js/shop.js
+   MACHINES: its price; read on 18-Oct-2026). The Choral Chambers' are two machines, a mark each.
+   A map the game lays in a room only in Act 3 (its pickup under the room's Black Thread World,
+   gating.json world 'act3') is that spot's Act, 3, and its other spots are the ones before it,
+   gone once Act 3 begins (MAP_BEFORE_ACT3: their Act). The Cradle's: its machine in Cradle_02,
+   sold in Act 2 (the wiki's Map and Quill: «Obtained from a map machine in Act 2»), then found
+   free in Tube_Hub, by the broken machine (map_and_junk) of its Act 3 collapse (read on
+   18-Oct-2026): Act 3 swaps Cradle_01 and Cradle_03, Cradle_02's only ways in, for their
+   _Destroyed scenes, which have no door to it, and roofs Tube_Hub's way up to them over. Each
+   ['map', act, ['flag', Has<Area>Map], scene, name, { shop: 'shakra', price } or { machine: true,
+   price } or { found: true }, and { gone: 'act3' } for one before an Act 3 spot]; act null but
+   for those. */
 const MAP_SHAKRA = { MossGrotto: 'bone_04' };
+const MAP_BEFORE_ACT3 = { HasCradleMap: 2 };
 const LATE_XY = new Map();   // an extra's index → its point on the map, worked out with the rest (XY below)
 {
   const lower = (x) => String(x).toLowerCase();
@@ -509,9 +623,19 @@ const LATE_XY = new Map();   // an extra's index → its point on the map, worke
     } else {
       const scenes = given(f.item).filter(onMap);
       if (!scenes.length) fail(`${f.item} (${flag}) is had in no room on the map`);
+      const at = (scene) => P.items[f.item].at.filter(([sc]) => sc === scene);
+      // Only in Act 3: every pickup of it in that room under its Black Thread World.
+      const act3 = new Set(scenes.filter((sc) => at(sc).every(([, comp, obj]) => comp === 'CollectableItemPickup' && gateOf(sc, obj).world === 'act3')));
+      if (act3.size && !MAP_BEFORE_ACT3[flag]) fail(`${f.item} lies in ${[...act3].join(', ')} only in Act 3: MAP_BEFORE_ACT3 needs its other spots' Act`);
+      if (!act3.size && MAP_BEFORE_ACT3[flag]) fail(`${f.item} has no Act 3 spot any more: MAP_BEFORE_ACT3 needs reading again`);
       for (const scene of scenes) {
+        const how = at(scene).some(([, comp]) => comp === 'PlayMakerFSM')
+          ? { machine: true, price: (SH.MACHINES.find((m) => m.item === f.item && m.scene === scene) || fail(`${f.item} is given by an FSM in ${scene} that is no map machine of js/shop.js`)).price }
+          : { found: true };
+        const act = act3.size ? (act3.has(scene) ? 3 : MAP_BEFORE_ACT3[flag]) : null;
+        if (act3.size && !act3.has(scene)) how.gone = 'act3';
         LATE_XY.set(EXTRAS.length, () => entryAt((P.items[f.item] || {}).at, scene));
-        EXTRAS.push(['map', null, ['flag', flag], scene, N.text(f.key || fail(`${f.item} has no words`)), { found: true }]);
+        EXTRAS.push(['map', act, ['flag', flag], scene, N.text(f.key || fail(`${f.item} has no words`)), how]);
       }
     }
   }
@@ -885,6 +1009,62 @@ for (const [id, save, scene, comp, check] of GIVEN_PURSE) {
   console.log(`save checks: ${opened} ways also open by what the save keeps instead, ${gone} things taken away in Act 3, ${lost} with someone who leaves, ${mode} of one mode only, ${leftOut.length} left out (never had): ${leftOut.join('; ')}`);
 }
 
+/* ── What only Act 3 has: its Act (the Map's Acts, checked one by one on 18-Oct-2026) ──
+   An extra with no Act of its own (null, or the completionist's 0) says Act 3 when it can only be
+   had then: every saved item of its check is under its room's «Black Thread World» (gating.json
+   world 'act3': the beads in Mort's room once he's gone, Bellway_01's wall, Cog_07's Pristine
+   Core…), or its room is one only Act 3 has. Those rooms: the map's Act 3 pieces (js/map.js
+   PIECES act3: the Cradle, Cogwork Core and Ventrica hub destroyed), the rooms the game's doors
+   reach only through them (js/graph.js from Tut_01, the game's first room: the Border Caves and the
+   Nameless Town above), and the areas the game opens only in Act 3 (ACT3_AREAS). A mark with an
+   Act below 3 in such a place stops the run: its Act needs reading. */
+const ACT3_AREAS = {
+  ABYSS: 'wiki The Abyss: the diving bell takes the Diving Bell Key, Ballow\'s during «The Dark Below», in Act 3',
+  GROVE: 'wiki Verdania: its entrance in Craw Lake opens upon reaching Act 3',
+};
+const ACT3_ROOMS = (() => {
+  const low = (s) => String(s).toLowerCase();
+  const G = SS.graph, M = SS.map;
+  const late = new Set(M.PIECES.filter((e) => e.act3).map((e) => low(e.s)));
+  const isLate = (s) => late.has(low((R.roomOf(s) || {}).scene || s)) || /_destroyed/.test(low(s));
+  const adj = new Map();
+  const link = (a, b) => { if (!adj.has(a)) adj.set(a, new Set()); adj.get(a).add(b); };
+  for (const [a, bs] of Object.entries(G)) for (const b of bs) { link(low(a), low(b)); link(low(b), low(a)); }
+  if (!adj.has('tut_01')) fail('Tut_01 has no doors in js/graph.js: ACT3_ROOMS needs reading again');
+  const reached = new Set(['tut_01']), todo = ['tut_01'];
+  while (todo.length) for (const n of adj.get(todo.pop()) || []) if (!reached.has(n) && !isLate(n)) { reached.add(n); todo.push(n); }
+  const out = new Set([...adj.keys()].filter((s) => !reached.has(s)));
+  for (const s of late) out.add(s);
+  return out;
+})();
+const act3Only = (scene) => !!scene && (ACT3_ROOMS.has(String(scene).toLowerCase()) || ACT3_ROOMS.has(String((R.roomOf(scene) || {}).scene).toLowerCase())
+  || !!ACT3_AREAS[R.areaOf(scene)]);
+{
+  let late = 0;
+  /* A piece of the 100% only Act 3 has: in a room only Act 3 has, or every way of its check under
+     Black Thread World (an 'any' only if all its ways are; a quest, a flag or a count could be had
+     before). A thing Act 3 moves (MOVED) takes a bool of its Act 3 room under Black Thread World
+     (the Memory Locket of «Volatile Flintbeetles», Bone_10's, beside its quest): that room's mark
+     says Act 3 (its ALSO way), the thing keeps its own Act, read by its own check. So does the
+     Ladybugs' Tool Pouch (Bone_12's Act 3 pickup, or the pin galleries before). */
+  const only3By = (c) => (c[0] === 'bool' || c[0] === 'int' || c[0] === 'geo' ? gateOf(c[1], c[2]).world === 'act3'
+    : c[0] === 'any' ? c.slice(1).every(only3By) : c[0] === 'all' ? c.slice(1).some(only3By) : false);
+  CO.PIECES.forEach((p, i) => {
+    if (p[1] !== 3 && (act3Only(AT.pieces[i]) || only3By(movedOwn('piece', p) || p[2]))) fail(`piece ${i} ${p[0]} is Act ${p[1]} where only Act 3 has it: read its Act again`);
+  });
+  for (const x of EXTRAS) {
+    const saved = savedOf(movedOwn('extra', x) || x[2]);
+    const only3 = act3Only(x[3]) || (saved.length > 0 && saved.every(([, s, id]) => gateOf(s, id).world === 'act3'));
+    if (!only3) continue;
+    if (x[1] === 3) continue;
+    if (x[1]) fail(`${x[0]} ${x[3]} ${JSON.stringify(x[2])} is Act ${x[1]} where only Act 3 has it: read its Act again`);
+    x[1] = 3;
+    late++;
+  }
+  for (const [foe, scene, , act] of BOSSES) if (act < 3 && act3Only(scene)) fail(`boss ${foe} is Act ${act} in ${scene}, where only Act 3 has it`);
+  console.log(`Act 3 only: ${late} extras with no Act of their own now say Act 3 (${ACT3_ROOMS.size} rooms only Act 3 has, and ${Object.keys(ACT3_AREAS).join(', ')})`);
+}
+
 /* ── The Bellshrines and the keys ── */
 /* Each Bellshrine's room: the two whose flag a scene names (Far Fields' in Bellshrine_05, Bellhart's
    in Widow's arena, where its bell is rung), and the other three by their area (js/map.js). */
@@ -979,7 +1159,8 @@ const entryAt = (entries, scene, want = () => true) => {
   }
   return null;
 };
-const itemAt = (save, scene) => entryAt((P.items[save] || {}).at, scene, (e) => LYING.test(e[1])) || entryAt((P.items[save] || {}).at, scene);
+const lyingAt = (save, scene) => entryAt((P.items[save] || {}).at, scene, (e) => LYING.test(e[1]));
+const itemAt = (save, scene) => lyingAt(save, scene) || entryAt((P.items[save] || {}).at, scene);
 const objectAt = (c) => {
   if (!Array.isArray(c)) return null;
   if (c[0] === 'any') { for (const x of c.slice(1)) { const p = objectAt(x); if (p) return p; } return null; }
@@ -990,19 +1171,111 @@ const objectAt = (c) => {
   const n = (P.npcs[c[2]] || []).find((e) => hostOf(e[0]) === hostOf(c[1]) && typeof e[2] === 'number');
   return n ? toMap(n[0], n[2], n[3]) : null;
 };
+// What Act 3 moves (MOVED, above): each in ALSO, its key → its own check.
+const MOVED_FROM = {};   // a moved thing's key → its own check, the one its first room's point goes by
+for (const x of MOVED) {
+  const items = x.list === 'piece' ? CO.PIECES : EXTRAS, same = JSON.stringify(x.own);
+  const at = items.map((y, i) => (y[0] === x.kind && takes(y[2], x.own) ? i : -1)).filter((i) => i >= 0);
+  if (at.length !== 1) fail(`MOVED ${x.kind} ${same}: ${at.length} entries have it`);
+  const key = x.list + ':' + at[0], check = items[at[0]][2], first = x.list === 'piece' ? AT.pieces[at[0]] : items[at[0]][3];
+  const room = (s) => (R.roomOf(s) || {}).scene;
+  if (!room(x.scene) || room(x.scene) === room(first)) fail(`MOVED ${key}: ${x.scene} isn't another room of the map's than ${first}`);
+  if (!(P.items[x.item] || {}).at || !P.items[x.item].at.some((e) => lower(e[0]) === lower(x.scene))) fail(`MOVED ${key}: no ${x.item} in ${x.scene} any more`);
+  let there = x.there;
+  if (x.bool) {
+    // Its own bool there: under Black Thread World (gating.json), and in the thing's check, so the mark syncs.
+    if (gateOf(x.scene, x.bool).world !== 'act3') fail(`MOVED ${key}: ${x.scene} ${x.bool} isn't Act 3's any more`);
+    const b = ['bool', x.scene, x.bool];
+    if (!boolsOf(check).some((c) => JSON.stringify(c) === JSON.stringify(b))) fail(`MOVED ${key}: its check doesn't take ${x.scene}'s bool (tools/completionist.js PIECE_FIX)`);
+    there = ['any', b, ['all', ['flag', 'blackThreadWorld'], ['not', check]]];
+  }
+  const more = { kind: 'moved', act: 3 };
+  if (x.more.foe) more.foe = N.text(x.more.foe);
+  if (x.more.wish) more.wish = Q.CHAIN[x.more.wish] ? x.more.wish : fail(`MOVED ${key}: no wish ${x.more.wish}`);
+  if (ALSO[key]) fail(`MOVED ${key} has another room already (${ALSO[key][0]}): ALSO holds one`);
+  ALSO[key] = [x.scene, there, more];
+  MOVED_FROM[key] = x.own;
+}
 const XY = {};
 const put2 = (key, p) => { if (p) XY[key] = p; };
 CO.PIECES.forEach((p, i) => {
-  const scene = AT.pieces[i];
-  put2('piece:' + i, objectAt(p[2]) || (OLD_HEARTS[p[2][1]] ? itemAt(OLD_HEARTS[p[2][1]], scene) : null));
+  const scene = AT.pieces[i], c = movedOwn('piece', p) || p[2];
+  put2('piece:' + i, objectAt(c) || (OLD_HEARTS[c[1]] ? itemAt(OLD_HEARTS[c[1]], scene) : null));
 });
+/* A Tool lying in its room is where it lies. One a shop sells, lying nowhere there, waits for its
+   vendor's point (wayAt, below): what else in the room names it is no place of its own (the
+   Snitchflies' FSMs at the Blasted Steps, which stop hiding from whoever wears the Thief's Mark
+   Grindle sells there). */
+const soldOnly = (id, names, scene) => (WAY_OF['tools:' + id] || {}).kind === 'shop' && !names.some((n) => lyingAt(n, scene));
 for (const ids of CO.COUNTED) {
-  const id = ids[0], scene = AT.tools[id], hand = HAND.tools[id];
-  put2('tools:' + id, hand ? entryAt((P.items[hand[0]] || {}).at, scene) : ids.flatMap((x) => CO.TOOLS[x]).map((n) => itemAt(n, scene)).find(Boolean));
+  const id = ids[0], scene = AT.tools[id], hand = HAND.tools[id], names = ids.flatMap((x) => CO.TOOLS[x]);
+  if (!hand && soldOnly(id, names, scene)) continue;
+  put2('tools:' + id, hand ? entryAt((P.items[hand[0]] || {}).at, scene) : names.map((n) => itemAt(n, scene)).find(Boolean));
 }
 for (const id of OTHER_TOOLS) {
   const scene = AT.tools[id], hand = OTHER_HAND[id];
+  if (!hand && soldOnly(id, CO.TOOLS[id], scene)) continue;
   put2('tools:' + id, hand ? entryAt((P.items[hand[0]] || {}).at, scene) : CO.TOOLS[id].map((n) => itemAt(n, scene)).find(Boolean));
+}
+// A thing's other room (ALSO): where it lies there (a Tool by its save names, what Act 3 moves by its
+// item; a shop's, at its vendor: below).
+for (const [key, [scene, , way]] of Object.entries(ALSO)) {
+  if (way && way.kind === 'shop') continue;
+  const names = key.startsWith('tools:') ? CO.TOOLS[key.slice(6)] : [MOVED.find((x) => MOVED_FROM[key] === x.own).item];
+  put2(key + ':found', names.map((n) => itemAt(n, scene)).find(Boolean) || fail(`${key} has no point in ${scene}`));
+}
+/* Silkshot's three repairs (js/how.js TRAPS, its variants), read in the game's files (18-Oct-2026):
+   the Ruined Tool (Broken SilkShot, a keyitem extra, lying in Shadow_Weavehome) is taken by one of
+   three, and the Silkshot is that one's: Peak_12's «Webshot Scene» (its «Repair webshot» FSM, a rune
+   desk: WEB_SHOT_WORKSHOP_PROMPT «Repair the Ruined Tool?», then WebShot Weaver), and the ShopItems
+   «Forge SilkShot» and «Architect SilkShot» (each upgradeFromItem Broken SilkShot, requiredItem one
+   Tool Metal; shown once the Forge Daughter or the Twelfth Architect has mentioned it, which they do
+   to whoever holds the Ruined Tool: ForgeDaughterMentionedWebShot, ArchitectMentionedWebShot). The
+   first repair takes the Ruined Tool (its Amount 0 after), so the other two can't follow; a vendor
+   gone (LEFT, below) closes theirs before it.
+   VARIANTS  key → { item: the Ruined Tool's EXTRAS index, at: [[variant, save name, scene, act]] }:
+   variant the js/data.js attack id, act the first Act it can be done in there; each at the point of what takes the Ruined Tool there
+   (pickups.json items: the FSM), XY key in the thing's own AT room, key + ':' + variant in the
+   others.
+   LEFT  a vendor the game takes away for good → the check that says it has: the Twelfth Architect
+   (Under_17's «Architect Scene Control», a PlayerDataTestResponse on ArchitectLeft, switches off
+   «Architect Scene», him and his shop, for «Architect Final_Scene»; 21 of the author's saves). His
+   shop's pin goes, and his Silkshot. */
+const LEFT = { 'twelfth-architect': ['flag', 'ArchitectLeft'] };
+for (const v of Object.keys(LEFT)) if (!VENDORS[v]) fail(`LEFT: ${v} is no vendor`);
+const VARIANTS = {};
+{
+  const ID = { 'WebShot Weaver': 'original', 'WebShot Architect': 'architect', 'WebShot Forge': 'forge' };
+  const ITEM = 'Broken SilkShot';
+  const trap = H.TRAPS.find((x) => x.variants), key = 'tools:' + trap.thing[1];
+  const attacks = (D.TOOLS.find((x) => x.id === trap.thing[1]).attacks || []).filter((a) => a.variant).map((a) => a.id);
+  const item = EXTRAS.findIndex((x) => x[0] === 'keyitem' && x[4] && x[4].key === 'INV_NAME_BROKEN_SILKSHOT');
+  if (item < 0) fail(`the ${ITEM} has no keyitem extra`);
+  const room = (s) => (R.roomOf(s) || {}).scene;
+  /* Its Act: the earliest of the 100%'s things in that room, else in its area (js/collectibles.js
+     WHERE, the Map's Acts): the Forge Daughter's Act 1, the Architect's and Mount Fay's Act 2. */
+  const hundred = [...Object.entries(AT.tools).map(([id, sc]) => [sc, (CO.WHERE.tools[id] || [])[0]]),
+    ...['crests', 'skills', 'arts'].flatMap((cat) => Object.entries(AT[cat]).map(([id, sc]) => [sc, (CO.WHERE[cat][id] || [])[0]])),
+    ...CO.PIECES.map((x, i) => [AT.pieces[i], x[1]])].filter(([sc, a]) => sc && a);
+  const actAt = (scene) => {
+    for (const same of [(sc) => room(sc) === scene, (sc) => R.areaOf(sc) === R.areaOf(scene)]) {
+      const acts = hundred.filter(([sc]) => same(sc)).map(([, a]) => a);
+      if (acts.length) return Math.min(...acts);
+    }
+    return fail(`${scene}: no Act for a repair there`);
+  };
+  const at = trap.variants.map((v) => {
+    const id = ID[v.save] || fail(`${v.save}: no variant id`);
+    if (!attacks.includes(id)) fail(`${v.save}: ${id} isn't one of js/data.js ${trap.thing[1]}'s variants`);
+    const scenes = v.way.kind === 'shop' ? [personScene(v.way.vendor)] : given(v.save);
+    if (scenes.length !== 1 || !onMap(scenes[0])) fail(`${v.save} is repaired in ${scenes.join(', ') || 'no room'}: read its scene again`);
+    const scene = room(scenes[0]);
+    const p = entryAt((P.items[ITEM] || {}).at, scene) || fail(`nothing takes the ${ITEM} in ${scene}`);
+    put2(room(AT.tools[trap.thing[1]]) === scene ? key : key + ':' + id, p);
+    return [id, v.save, scene, actAt(scene)];
+  });
+  if (!at.some(([, , s]) => s === room(AT.tools[trap.thing[1]]))) fail(`${key}'s own room isn't one of its repairs`);
+  VARIANTS[key] = { item, at };
 }
 for (const cat of ['crests', 'skills', 'arts']) {
   for (const [id, hand] of Object.entries(HAND[cat])) {
@@ -1151,6 +1424,8 @@ const fleaIn = (scene) => {
 for (const id of Object.keys(PEOPLE)) if (!XY['person:' + id] && WHO[id]) put2('person:' + id, whoAt(id, PEOPLE[id]));
 // The vendors, Shakra and who offers a wish.
 for (const [v, scenes] of Object.entries(VENDORS)) scenes.forEach((sc, i) => put2((v === 'shakra' ? 'shakra:' : 'shop:' + v + ':') + i, whoAt(v, sc)));
+// A thing's other room when a vendor sells it there (ALSO): at the vendor, as what it sells there already.
+for (const [key, also] of Object.entries(ALSO)) if (also[2] && also[2].kind === 'shop') put2(alsoKey(key, also), whoAt(also[2].vendor, also[0]) || fail(`${key}: no point for ${also[2].vendor} in ${also[0]}`));
 for (const n of Object.keys(GIVER)) put2('giver:' + lower(n), giverAt(n));
 /* Who offers the wishes of each room, by name, and the mark that stands for them there already, if
    any (Albert's choice, 15-Oct-2026: each person once in a room): a person of PEOPLE, a vendor of
@@ -1242,6 +1517,11 @@ const WI = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'kb', 'data', '
 // The Twisted Bud no target names: the Wood Witch takes it for Rite of Rebirth (her FSM ends that wish).
 const WISH_OF = { 'Wood Witch Item': 'Wood Witch Curse' };
 const LATER = { 'Citadel Ascent Silk Defeat': ['Black Thread Pt0'] };
+/* The playerData bool that says which of its places an enemy is in, → what it stands for in the
+   Map's card (js/app-map.js ALT_BY): bone03_openedTrapdoorForRockRoller, the shortcut whose lever
+   in Bone_03 opens the trapdoor after the Bell Beast (its flag bone03_openedTrapdoor; the two are
+   equal in each of the author's 87 saves). */
+const PICKED_BY = { bone03_openedTrapdoorForRockRoller: 'shortcut' };
 const TASKS = [];
 {
   // The scenes as the game names them (a sceneData flag is kept under that name); one nobody enters
@@ -1253,12 +1533,12 @@ const TASKS = [];
   const isWish = (q) => CO.WISHES.some((w) => w[2][0] === 'quest' && w[2][1] === q);
   const art = (n) => { if (!fs.existsSync(path.join(__dirname, '..', 'assets', 'map', n + '.webp'))) fail(`assets/map/${n}.webp is missing`); return n; };
   const steel = (q) => (WI.quests[q] || {}).type === 'Steel Sentinel' ? 'steel' : null;
-  const task = (kind, quest, check, scene, x, y, icon, name, pick) => {
+  const task = (kind, quest, check, scene, x, y, icon, name, pick, alt) => {
     if (!onMap(scene)) { unplaced.push(`${kind} ${quest} ${scene}`); return; }
     const i = TASKS.length;
     // What the game swaps out when Act 3 begins (its pickup under the room's «Normal World»): 'act3'.
     const bs = savedOf(check), gone = bs.length && bs.every(([, s, id]) => gateOf(s, id).world === 'normal') ? 'act3' : null;
-    TASKS.push([kind, quest, check, proper(scene) || scene, icon, name || null, steel(quest), pick || null, gone]);
+    TASKS.push([kind, quest, check, proper(scene) || scene, icon, name || null, steel(quest), pick || null, gone, ...(alt ? [alt] : [])]);
     const p = x == null ? null : Array.isArray(x) ? x : toMap(scene, x, y);
     if (p) XY['task:' + i] = p;
   };
@@ -1268,18 +1548,38 @@ const TASKS = [];
     const q = wants(save).find(isWish) || fail(`no wish asks for ${save}`);
     const name = N.text(WI.names[save] || fail(`no name for ${save}`)), icon = art('icons/' + WI.icons[save]);
     const seen = new Set();
+    /* One enemy in two places (tools/extract-wishes.py's { dead, needs }: the Flintbeetle whose
+       death sets rockRollerDefeated_bone06 is in Bone_04 while the shortcut's trapdoor in Bone_03 is
+       shut, bone03_openedTrapdoorForRockRoller false, and in Bone_06 once it's open): its places by
+       that bool. */
+    const sameFoe = new Map();
+    for (const x of at) if (x[6] && x[6].dead) sameFoe.set(x[6].dead, [...(sameFoe.get(x[6].dead) || []), x]);
     // Held says which spot only when there's one: one Pollip Heart held isn't the six flowers, nor
-    // one Flintgem the four Flintbeetles (each spot keeps its own flag).
-    const spots = new Set(at.map(([scene, , obj, flag]) => scene + (flag || obj))).size;
-    for (const [scene, comp, obj, flag, x, y] of at) {
+    // one Flintgem the three Flintbeetles (each spot keeps its own flag).
+    const spots = new Set(at.map(([scene, , obj, flag, , , foe]) => (foe && foe.dead) || scene + (flag || obj))).size;
+    const own = (scene, flag) => (flag && proper(scene) ? [['bool', proper(scene), flag]] : []);
+    for (const [scene, comp, obj, flag, x, y, foe] of at) {
       const one = scene + (flag || obj);
       if (seen.has(one)) continue;   // the Crown Fragment lies twice in its room, under one flag
       seen.add(one);
-      // A spot where it drops by chance (the Silver Bells'): done with its wish, a bell held says
-      // nothing of the other spots.
+      const pair = foe && foe.dead && sameFoe.get(foe.dead).length > 1 ? sameFoe.get(foe.dead) : null;
+      /* A spot where it drops by chance (the Silver Bells'): done with its wish, a bell held says
+         nothing of the other spots. One enemy's places share one check (either place's drop picked
+         up, else its wish done) and so count once, each with the check that it's the place this
+         game has it in (alt.at): its drop picked up here, else not there and this place's bools as
+         the save has them; alt.by and alt.open name what picks, alt.foe the enemy by its Journal
+         name (NAME_ and its object's: NAME_ROCK_ROLLER), for the Map's card (js/app-map.js). */
       const check = comp === 'QuestDropper' ? ['quest', q]
-        : ['any', ...(flag && proper(scene) ? [['bool', proper(scene), flag]] : []), ...(spots === 1 ? [['held', save]] : []), ['quest', q]];
-      task('qitem', q, check, scene, x, y, icon, name);
+        : ['any', ...(pair ? pair.flatMap(([s, , , f]) => own(s, f)) : own(scene, flag)), ...(spots === 1 ? [['held', save]] : []), ['quest', q]];
+      let alt = null;
+      if (pair) {
+        const others = pair.filter((p) => p[0] !== scene), by = Object.entries(foe.needs).filter(([f, v]) => others.every((p) => p[6].needs[f] === !v));
+        if (by.length !== 1 || !PICKED_BY[by[0][0]]) fail(`${save} in ${scene}: its places should part by one known bool (PICKED_BY), not ${JSON.stringify(by)}`);
+        const [f, v] = by[0];
+        alt = { at: ['any', ...own(scene, flag), ['all', ...others.flatMap(([s, , , fl]) => own(s, fl)).map((c) => ['not', c]), v ? ['flag', f] : ['not', ['flag', f]]]],
+          by: PICKED_BY[f], open: v, foe: N.text('NAME_' + obj.toUpperCase().replace(/\W+/g, '_')) };
+      }
+      task('qitem', q, check, scene, x, y, icon, name, null, alt);
     }
   }
   // The map's own pins, on the map by its bench pins (their median offset; the bench pins are the
@@ -1301,13 +1601,31 @@ const TASKS = [];
     .sort(([, a], [, b]) => a[2] * a[3] - b[2] * b[3]).map(([s]) => sceneOfPart(s))[0];
   const byItem = (save) => Object.keys(WI.quests).find((q) => WI.quests[q].targets.includes(save));
   const pinned = new Set();
-  for (const [, sprite, quest, item, target, wx, wy] of WI.pins) {
+  /* The Bellbeast's pins (Beast in the Bells), one per Bellway station: the game shows one only
+     while the beast waits at that station (each pin's DeactivatePlayerDataTest turns it off when
+     FastTravelNPCLocation isn't its station's). One whose room has no station never shows: the
+     Waterwheel's, FastTravelNPCLocation 7, a value the game's FastTravelLocations doesn't have (a
+     station cut from the game), under Greymoor_17 in the black. Each of the others carries its
+     station's value (alt.at, as a Flintbeetle's places): a save with the wish taken and not done
+     shows only the one the beast is at; before it's taken, once it's done and in Free mode, all
+     twelve (one check, so one thing on the layer's count). */
+  const stations = new Set(M.PINS.filter((x) => x[0] === 'bellway').map((x) => sceneOfPart(x[3])));
+  let unstationed = 0;
+  const STATION = 'FastTravelNPCLocation';
+  const stationOf = (off, name) => {
+    const [g] = off || [];
+    // Off while the field isn't its value: one test, an enum (Type 3), NotEqual (NumType 1).
+    if (!off || off.length !== 1 || g.length !== 1 || g[0][0] !== STATION || g[0][1] !== 3 || g[0][2] !== 1) fail(`${name}: a Bellbeast pin switched off by something else than ${STATION} (${JSON.stringify(off)})`);
+    return g[0][3];
+  };
+  for (const [pinName, sprite, quest, item, target, wx, wy, off] of WI.pins) {
     const q = quest || byItem(item);
     const info = WI.quests[q];
     if (!info) continue;   // a step of a main objective (an Old Heart, a Melody): a piece of the 100%
     const p = [Math.round((wx - ox) * M.PPU * 10) / 10, Math.round((oy - wy) * M.PPU * 10) / 10];
     const scene = target || inRoom(p);
     if (!scene) { unplaced.push(`pin ${q}`); continue; }
+    if (sprite === 'quest_map_icon_bellbeast' && !stations.has(scene)) { unstationed++; continue; }
     if (info.main) {
       if (sprite === 'quest_map_icon_songshrines') continue;   // the Bellshrines' layer
       const later = [...(LATER[q] || [])];
@@ -1322,7 +1640,14 @@ const TASKS = [];
       const wish = CO.WISHES.find((w) => w[0] === 'main-objectives' && w[4] && w[4].key === (Q.CHAIN[q] || {}).name?.key);
       // Only a check of another kind than a quest (a step's name is often its objective's: Pharloom's Crown's three).
       const own = wish && wish[2][0] !== 'quest' ? [wish[2]] : [];
-      task('goal', q, ['any', ['quest', q], ...later.map((n) => ['quest', n]), ...own], scene, p, null, art('pins/' + sprite));
+      const check = ['any', ['quest', q], ...later.map((n) => ['quest', n]), ...own];
+      let alt = null;
+      if (sprite === 'quest_map_icon_bellbeast') {
+        const v = stationOf(off, pinName);
+        // Its station's: not taken yet, done, or the beast waits there (the value, as 'min' reads an int).
+        alt = { at: ['any', ['not', ['accepted', q]], check, ['all', ['min', STATION, v], ['not', ['min', STATION, v + 1]]]] };
+      }
+      task('goal', q, check, scene, p, null, art('pins/' + sprite), null, null, alt);
     } else {
       if (!isWish(q) && !isWish(Object.keys(Q.CHAIN).find((n) => Q.CHAIN[n].prev === q))) continue;
       pinned.add(q);
@@ -1347,8 +1672,45 @@ const TASKS = [];
     const [scene, , x, y] = at.find((e) => e[0] === scenes[0]);
     task('wspot', q, ['quest', q], scene, x, y, art('icons/' + WI.quests[q].emblem));
   }
+  // More than the Waterwheel's: a station's pin no longer falls in its station's room.
+  if (unstationed > 1) fail(`${unstationed} Bellbeast pins in no Bellway station's room`);
   const n = (k) => TASKS.filter((x) => x[0] === k).length;
-  console.log(`tasks: ${n('qitem')} wish items, ${n('wspot')} places where a wish is done, ${n('goal')} objective pins`);
+  console.log(`tasks: ${n('qitem')} wish items, ${n('wspot')} places where a wish is done, ${n('goal')} objective pins (${unstationed} Bellbeast pin off any station left out)`);
+}
+// The caches that only hold an item (HELD, above): that item has a mark of its own in that room, by
+// its pickup's bool (a piece of the 100%, a rosary item, a wish's item) or as a Tool's other room.
+for (const [save, scene, name] of HELD) {
+  const bids = new Set(P.lying[save].filter(([s]) => lower(s) === lower(scene)).map(([, b]) => b));
+  const names = (c) => boolsOf(c).some(([, s, b]) => lower(s) === lower(scene) && bids.has(b));
+  const own = CO.PIECES.some((p) => names(p[2])) || EXTRAS.some((x) => names(x[2])) || TASKS.some((x) => names(x[2]))
+    || Object.entries(ALSO).some(([k, [s, , way]]) => !way && lower(s) === lower(scene) && k.startsWith('tools:') && CO.TOOLS[k.slice(6)].includes(save));
+  if (!own) fail(`${name} holds ${save}, which has no mark of its own in ${scene}`);
+}
+console.log(`caches that only hold an item, left out: ${HELD.map(([save, scene]) => scene + ' ' + save).join(', ')}`);
+/* What only Act 3 has lying in a room (gating.json world 'act3', a CollectableItemPickup of
+   pickups.json items) is a mark's: its check names that bool, or a mark of that item is in that
+   room (its check names the item or its map's flag, or a Tool's save names do). One that isn't is a
+   thing Act 3 moves there (MOVED, above: the Memory Locket of «Volatile Flintbeetles» was one,
+   before its check took Bone_10's bool), or a new one: read its scene. A move with no bool of its
+   own (Mossberry no. 3's Aknid) can't be told this way: a sweep of the scenes found it. */
+{
+  const named = new Set(savedOf(['any', ...CO.PIECES.map((p) => p[2]), ...EXTRAS.map((x) => x[2]), ...TASKS.map((x) => x[2])]).map((b) => lower(b[1] + '|' + b[2])));
+  const room = (s) => lower((R.roomOf(s) || {}).scene || s);
+  const marked = (scene, item) => {
+    const r = room(scene), names = [item, ...((P.maps[item] || []).slice(0, 1))].map((n) => JSON.stringify(n));
+    const of = (c) => names.some((n) => JSON.stringify(c).includes(n));
+    return CO.PIECES.some((p, i) => room(AT.pieces[i]) === r && of(p[2])) || EXTRAS.some((x) => room(x[3]) === r && of(x[2]))
+      || TASKS.some((x) => room(x[3]) === r && of(x[2])) || Object.entries(AT.tools).some(([id, s]) => room(s) === r && (CO.TOOLS[id] || []).includes(item));
+  };
+  let n = 0;
+  for (const [item, it] of Object.entries(P.items)) {
+    for (const e of it.at) {
+      if (e[1] !== 'CollectableItemPickup' || gateOf(e[0], e[2]).world !== 'act3') continue;
+      n++;
+      if (!named.has(lower(e[0] + '|' + e[2])) && !marked(e[0], item)) fail(`${item} lies in ${e[0]} (${e[2]}) only in Act 3 and no mark has it there: a thing Act 3 moves (MOVED)?`);
+    }
+  }
+  console.log(`only in Act 3, lying: ${n} pickups, each a mark's; moved there: ${MOVED.map((x) => x.kind + ' to ' + x.scene).join(', ')}`);
 }
 
 // The Map admin's fixes keyed by an index of these lists follow their marks (stops the run if one can't).
@@ -1366,14 +1728,32 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               act: { key: Act } for what's outside the 100% and js/collectibles.js WHERE lacks }:
               where each thing of the 100% is had (its pickup, its vendor, its Wishwall, its
               boss's arena, its giver)
+     ALSO     a thing's key ('tools:<id>', 'piece:<i>', 'extra:<i>') → [scene, check, way?]: its other
+              room, and the check that says the game has it there. A Tool sold that lies there once
+              its seller is gone (the Curveclaw once the Mottled Skarr dies, the Weighted Belt once
+              Mort does; its point XY '<key>:found'); with way { kind: 'shop', vendor, price, act: 3,
+              from }, what a vendor sells only in Act 3 once from (who had it before) is gone
+              (Grindle's: Pebb's, Mort's and Lumble's wares; its point XY '<key>:<vendor>'); with way
+              { kind: 'moved', act: 3, foe | wish }, what Act 3 moves to another room (MOVED:
+              Mossberry no. 3, the Memory Locket of «Volatile Flintbeetles»; its point XY
+              '<key>:found'); check as EXTRAS', plus ['tool', name] (that Tool unlocked) and
+              ['not', check]
+     VARIANTS a thing's key ('tools:silkshot') → { item, at: [[variant, save name, scene, act]] }:
+              the places one of its variants is had (the Silkshot's three repairs: the rune desk in
+              Mount Fay, the Twelfth Architect, the Forge Daughter), each the js/data.js attack id,
+              the save's name for it, its room (its point: XY key in the thing's own AT room, else
+              key + ':' + variant) and the first Act it can be done in there; item the EXTRAS index of what each repair takes (the
+              Ruined Tool)
+     LEFT     a vendor the game takes away for good → the check that says it has (the Twelfth
+              Architect, ArchitectLeft): its shop and what it repairs go
      EXTRAS   [kind, act, check, scene, name?, more?]: what doesn't count (relics by kind, mossberry,
               silkeater, memento, bellhome, spawn, rosary-cache, shard-cache, wall, then lever,
               plate, gate, lock, shortcut, silkwall from the game's scenes, then map, rosaries,
               shards, the doors a key opens no mark had yet); act null when the thing has no Act of
-              its own; more { shop, price } for a map Shakra sells, { found } for one found, { item }
-              for a rosary or shard item ({ item, fight } for one an arena drops: that gauntlet's
-              id), { gone: 'act3' } for what the game takes away when Act 3 begins, { lost:
-              check, person } for what the game takes away with someone once that check holds
+              its own; more { shop, price } for a map Shakra sells, { machine, price } for one a
+              map machine sells, { found } for one found, { item } for a rosary or shard item
+              ({ item, fight } for one an arena drops: that gauntlet's id), { gone: 'act3' }
+              for what the game takes away when Act 3 begins, { lost: check, person } for what the game takes away with someone once that check holds
               (Grindle's cell door), { mode: 'steel' or 'normal' } for what only that mode has,
               { was } the check it had before the save checks and { wasKind } the kind it had
               before (a slot kept before has its marks by those, js/savefile.js gameOf: had then
@@ -1388,14 +1768,18 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
      BELLS    [playerData field, scene (, name)]: the six Bellshrines (the Grand Gate asks for five)
      KEYS     a lock's key (js/quests.js LOCKS) → its name
      MAPS     a map's flag (Has<X>Map, without Has and Map) → the area it draws
-     TASKS    [kind, quest, check, scene, picture, name?, mode?, steel?, gone?]: the wishes and the main
+     TASKS    [kind, quest, check, scene, picture, name?, mode?, steel?, gone?, alt?]: the wishes and the main
               objectives (kind 'qitem' what a wish asks for, 'wspot' where a wish is done, 'goal' a
               main objective's pin), quest its save name (js/quests.js), check as EXTRAS' plus
               ['held', collectable] and ['steel', scene] (a Steel Sentinel spot seen), picture
               under assets/map/, name the thing's (a wish's and an objective's are the quest's),
               mode 'steel' when only Steel Soul has it, steel the spot's scene when the save
-              chooses it (SteelQuestSpots), gone 'act3' when the game takes it away as Act 3 begins
-     XY       a thing's key ('piece:<i>', 'tools:<id>', 'arts:<id>', 'extra:<i>'…, 'person:<id>',
+              chooses it (SteelQuestSpots), gone 'act3' when the game takes it away as Act 3 begins,
+              alt { at, by, open, foe } for one of the places one thing may be in (a Flintbeetle's
+              two, the Bellbeast's twelve stations): at the check that it's this one in this game,
+              by what picks ('shortcut'), open whether it's this one once that's open, foe the
+              enemy's name (the Bellbeast's have at alone)
+     XY       a thing's key ('piece:<i>', 'tools:<id>', '<key>:found', '<key>:<vendor>', 'tools:<id>:<variant>', 'arts:<id>', 'extra:<i>'…, 'person:<id>',
               'board:<scene>', 'bell:<field>', 'task:<i>', 'shakra:<i>', 'shop:<vendor>:<i>', 'giver:<scene>', 'boss:<foe>', 'journal:<entry>', 'gaunt:<id>',
               'everbloom') → its point on the map, in the image's pixels: where
               the game has it in its room (the object's place in the scene, or whoever stands for it,
@@ -1410,7 +1794,7 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               lists the wishes on theirs; tools/gen-people.js doesn't draw them again. 'room:who'
               for a wish someone else offers in that room
      QUEST_GIVER  such a wish → its 'room:who'`,
-'spots', [['AT', AT], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['TASKS', TASKS], ['XY', XY], ['SEATS', SEATS], ['GIVER', GIVERS], ['QUEST_GIVER', QUEST_GIVER]]);
+'spots', [['AT', AT], ['ALSO', ALSO], ['VARIANTS', VARIANTS], ['LEFT', LEFT], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['TASKS', TASKS], ['XY', XY], ['SEATS', SEATS], ['GIVER', GIVERS], ['QUEST_GIVER', QUEST_GIVER]]);
 const kinds = {};
 for (const x of EXTRAS) kinds[x[0]] = (kinds[x[0]] || 0) + 1;
 console.log(`js/spots.js  ${placed.length} things of the 100% placed, ${EXTRAS.length} extras (${Object.entries(kinds).map(([k, n]) => n + ' ' + k).join(', ')}), `

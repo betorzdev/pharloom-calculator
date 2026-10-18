@@ -54,8 +54,8 @@
   /* The way shown is js/completion.js wayOf's, for the game on screen (Free mode's marks: none, the
      guide's first), in two parts (design/41, 2 B): lead, what it is and what it costs; more, what it
      waits for (from an Act, the wishes first, the abilities and keys), which a phone folds. */
-  function howParts(ways, need) {
-    const { way: w, first, arts } = CP.wayOf(ways, marking ? null : cur, SS.savefile.ART_PD);
+  function howParts(ways, need, key) {
+    const { way: w, first, arts } = CP.wayOf(ways, marking ? null : cur, SS.savefile.ART_PD, key);
     const needs = needText(need);
     if (!w) return { how: needs, more: [] };
     const npc = (id) => (HW.NPCS[id] ? pick(HW.NPCS[id]) : id);
@@ -78,7 +78,7 @@
         arts.length ? t('howNeeds', { keys: arts.map(artName).join(', ') }) : '', needs].filter(Boolean) };
   }
   // The same in one line (the Map's cards).
-  const howText = (ways, need) => { const h = howParts(ways, need); return [h.how, ...h.more].filter(Boolean).join(' · '); };
+  const howText = (ways, need, key) => { const h = howParts(ways, need, key); return [h.how, ...h.more].filter(Boolean).join(' · '); };
 
   /* One row: its name, whether you have it, its Act and its area; how to get it, when it's missing. */
   // Where the Map has a thing (js/spots.js AT), to sort by nearest when its check names no room.
@@ -107,7 +107,7 @@
   /* A thing of the 100% lying in a room (its way 'found', or none) says so (design/41, 4 A): with
      no line under its name it looked like missing data. */
   const isFound = (x) => !x.got && !x.how && !(x.more || []).length && 'ways' in x
-    && (!x.ways || !x.ways.length || (CP.wayOf(x.ways, marking ? null : cur).way || {}).kind === 'found');
+    && (!x.ways || !x.ways.length || (CP.wayOf(x.ways, marking ? null : cur, {}, x.mark).way || {}).kind === 'found');
   function row(x, g) {
     const { name, got, act, area, color, sub = [], mark, icon, more = [] } = x;
     const later = g && !got && act > g.act;
@@ -152,6 +152,31 @@
     : PIECE_ICON[kind] ? `assets/icons/${PIECE_ICON[kind]}.webp` : null);
   const ART_NEEDLE = (n) => App.ART.needle(n);
 
+  /* A Tool had at one of several places, a variant each (js/spots.js VARIANTS: the Silkshot's three
+     repairs of the Ruined Tool; design/102, all A): what to do first (find the Ruined Tool where it
+     lies, or repair it once held), then each place still open with its way (a vendor the game has
+     taken away, savefile left, is gone); the area where to go now (the Ruined Tool's, then the
+     places'), and its pin every mark of it on the Map, the Ruined Tool first while missing. */
+  function variantRow(key, g) {
+    const v = SS.spots && SS.spots.VARIANTS && SS.spots.VARIANTS[key];
+    if (!v) return {};
+    const own = App.game(), id = key.slice(6), x = SS.spots.EXTRAS[v.item];
+    const trap = HW.TRAPS.find((tr) => tr.variants && tr.thing[1] === id);
+    const gone = new Set(own && own.leftRead ? own.left : []);
+    const held = !marking && !!g && (g.extras || []).includes(v.item);
+    const open = v.at.map((p, i) => ({ scene: p[2], way: trap.variants[i].way })).filter((p) => !(p.way.vendor && gone.has(p.way.vendor)));
+    const item = pick(x[4]), lead = held ? t('pgShotRepair', { item }) : t('pgShotFind', { item, area: areaName(R.areaOf(x[3])) });
+    const cost = (w) => (w.craftmetal ? `${num(w.craftmetal)} ${itemName('craftmetal')}` : '');
+    const more = open.map((p) => (p.way.kind === 'shop' ? howParts([p.way], null, key).how : [t('pgShotRune', { area: areaName(R.areaOf(p.scene)) }), cost(p.way)].filter(Boolean).join(': ')));
+    const areas = held ? [...new Set(open.map((p) => R.areaOf(p.scene)))] : [R.areaOf(x[3])];
+    // Its marks on the Map (js/app-map.js: the Ruined Tool 'extra:<i>', each place key or key:variant), not had.
+    const marks = App.mapApi ? App.mapApi.list() : [];
+    const keys = [...(held ? [] : ['extra:' + v.item]), ...marks.filter((m) => m.chk === key && !m.key.startsWith('extra:')).map((m) => m.key)]
+      .filter((k) => marks.some((m) => m.key === k && !m.got && !m.lost));
+    if (keys.length) FOCUS.set('variants:' + key, { keys, name: pick(D.TOOLS.find((tl) => tl.id === id).name) });
+    return { how: lead, more, area: areas[0] || null, sub: areas.slice(1).map(areaName), scene: held ? undefined : x[3],
+      focus: keys.length ? 'variants:' + key : null };
+  }
   /* The things of a category: [{ name, got, act, area, color, icon, mark }] in the order to show them. */
   const byAct = (a, b) => (a.act || 9) - (b.act || 9) || areaName(a.area).localeCompare(areaName(b.area));
   function things(g) {
@@ -159,7 +184,7 @@
     const where = (map, id) => { const w = map[id] || []; return { act: w[0] || 0, area: w[1] || null }; };
     const pieces = (kind, name) => CO.PIECES.map((p, i) => ({ p, i })).filter(({ p }) => p[0] === kind)
       .map(({ p, i }, k) => ({ name: name ? name(k) : KIND_NAME[kind](), got: !!g && g.pieces.includes(i), act: p[1], area: p[3], scene: R.sceneOf(p[2]),
-        ...howParts(HW.HOW.pieces[i], HW.NEEDS.pieces[i]), ways: HW.HOW.pieces[i], icon: pieceIcon(kind, k), mark: 'piece:' + i }));
+        ...howParts(HW.HOW.pieces[i], HW.NEEDS.pieces[i], 'piece:' + i), ways: HW.HOW.pieces[i], icon: pieceIcon(kind, k), mark: 'piece:' + i }));
     /* A Steel Soul save has the Tool its mode gives instead of another (js/data.js replaces: the
        Shell Satchel for the Dead Bug's Purse): the row is named and drawn as that one. Free mode,
        with no mode, as Classic. Where it is, how to get it and its mark stay the pair's. */
@@ -167,11 +192,11 @@
     const tools = CO.COUNTED.map((ids) => {
       const tool = (steel && ids.map((id) => D.TOOLS.find((x) => x.id === id)).find((x) => x && x.replaces)) || D.TOOLS.find((x) => x.id === ids[0]);
       const got = !!g && ids.some((id) => g.tools.includes(id));
-      return { name: pick(tool.name), got, color: tool.color, ...where(CO.WHERE.tools, ids[0]), ...howParts(HW.HOW.tools[ids[0]], HW.NEEDS.tools[ids[0]]), ways: HW.HOW.tools[ids[0]],
-        icon: `assets/icons/tools/${tool.id}.webp`, mark: 'tools:' + ids[0] };
+      return { name: pick(tool.name), got, color: tool.color, ...where(CO.WHERE.tools, ids[0]), ...howParts(HW.HOW.tools[ids[0]], HW.NEEDS.tools[ids[0]], 'tools:' + ids[0]), ways: HW.HOW.tools[ids[0]],
+        icon: `assets/icons/tools/${tool.id}.webp`, mark: 'tools:' + ids[0], ...(got ? {} : variantRow('tools:' + ids[0], g)) };
     });
     const named = (list, ids, map, key) => ids.map((id) => ({ name: pick(list.find((x) => x.id === id).name), got: has(g ? g[key] : [], id), ...where(map, id),
-      ...howParts(HW.HOW[key][id], HW.NEEDS[key][id]), ways: HW.HOW[key][id], icon: `assets/icons/${key}/${id}.webp`, mark: key + ':' + id }));
+      ...howParts(HW.HOW[key][id], HW.NEEDS[key][id], key + ':' + id), ways: HW.HOW[key][id], icon: `assets/icons/${key}/${id}.webp`, mark: key + ':' + id }));
     const ev = CO.WHERE.everbloom || [];
     return {
       tools: tools.sort(byAct),
@@ -945,11 +970,12 @@
 
   // The Map's card, with the game on screen (cur is Progress's, set per render).
   App.howPiece = (i) => { cur = App.game(); marking = false; return howText(HW.HOW.pieces[i], HW.NEEDS.pieces[i]); };
-  App.howOf = (key) => {   // the Map's card, for a Tool, Crest, Silk Skill, ability or the Everbloom
+  // ways: only those (one of a Tool's variants, the Map's mark of its place: js/spots.js VARIANTS).
+  App.howOf = (key, ways) => {   // the Map's card, for a Tool, Crest, Silk Skill, ability or the Everbloom
     cur = App.game(); marking = false;
     if (key === 'everbloom') return howText(HW.HOW.everbloom);
     const [cat, id] = key.split(':');
-    return HW.HOW[cat] && HW.HOW[cat][id] ? howText(HW.HOW[cat][id], (HW.NEEDS[cat] || {})[id]) : '';
+    return HW.HOW[cat] && HW.HOW[cat][id] ? howText(ways || HW.HOW[cat][id], (HW.NEEDS[cat] || {})[id], cat + ':' + id) : '';
   };
   App.freeView = () => { const f = App.freeGame(); return f ? freeView(f) : null; };   // the Map's too
 

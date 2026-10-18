@@ -171,3 +171,40 @@ test("Mooshka's Spool Fragment is given at the caravan's Blasted Steps camp, not
   assert.equal(S.AT.pieces[i], 'Coral_Judge_Arena');
   assert.ok(!CO.PIECES.some((p) => p[2][1] === 'CaravanTroupeLocation'));
 });
+
+test('a way found by its owner\'s corpse is the save\'s to say, not the Act\'s: the Curveclaw, the Weighted Belt, the Magnetite Dice', () => {
+  const H = require('../js/how.js');
+  const base = { silk: 0, silkMax: 9, maxHealth: 5 };
+  const way = (cat, id, pd, sd) => CP.wayOf(H.HOW[cat][id], F.game({ ...base, ...pd }, sd), {}, cat + ':' + id).way;
+  const kind = (w) => w.kind + (w.vendor ? ':' + w.vendor : w.npc ? ':' + w.npc : '');
+  // An Act 2 game with the Mottled Skarr alive: his shop, though the Act alone says found.
+  assert.equal(kind(way('tools', 'curveclaw', { act2Started: true })), 'shop:mottled-skarr');
+  assert.equal(kind(CP.wayOf(H.HOW.tools.curveclaw, { act: 2 }).way), 'found');   // no word from a save: the Act
+  assert.equal(kind(way('tools', 'curveclaw', { act2Started: true, antMerchantKilled: true })), 'found');
+  // Lumble alive in Act 2: his game. Dead (state 1): by his body. Act 3: Grindle sells it.
+  assert.equal(kind(way('tools', 'magnetite-dice', { act2Started: true })), 'challenge:lumble');
+  assert.equal(kind(way('tools', 'magnetite-dice', { act2Started: true, dicePilgrimState: 1 })), 'found');
+  assert.equal(kind(way('tools', 'magnetite-dice', { act2Started: true, blackThreadWorld: true, dicePilgrimState: 1 })), 'shop:grindle');
+  assert.equal(kind(way('tools', 'weighted-belt', { act2Started: true, blackThreadWorld: true, mortKeptWeightedAnklet: true })), 'found');
+  // A slot kept before the save said: the Act, as before.
+  assert.equal(kind(CP.wayOf(H.HOW.tools.curveclaw, F.gameOf({ 'pharloom.progress': JSON.stringify({ act: 2 }) }), {}, 'tools:curveclaw').way), 'found');
+  // Every way with a when is a 'found' one, and only these three have one.
+  const whens = [];
+  for (const cat of ['tools', 'crests', 'skills', 'arts']) for (const [id, ws] of Object.entries(H.HOW[cat])) for (const w of ws) if (w.when) whens.push(cat + ':' + id + ':' + w.kind);
+  for (const [i, ws] of Object.entries(H.HOW.pieces)) for (const w of ws) if (w.when) whens.push('piece:' + i);
+  assert.deepEqual(whens.sort(), ['tools:curveclaw:found', 'tools:magnetite-dice:found', 'tools:weighted-belt:found']);
+});
+
+test('Pebb\'s, Mort\'s and Lumble\'s wares are Grindle\'s once the game is in Act 3, theirs before: the Act says, with a save or none', () => {
+  const H = require('../js/how.js');
+  const base = { silk: 0, silkMax: 9, maxHealth: 5 };
+  const act2 = F.game({ ...base, act2Started: true }), act3 = F.game({ ...base, act2Started: true, blackThreadWorld: true });
+  const seller = (ways, g, key) => { const w = CP.wayOf(ways, g, {}, key).way; return w.vendor || w.npc || w.kind; };
+  for (const [key, ways, before] of [['piece:0', H.HOW.pieces[0], 'pebb'], ['piece:103', H.HOW.pieces[103], 'mort'],
+    ['tools:magnetite-brooch', H.HOW.tools['magnetite-brooch'], 'pebb'], ['tools:magnetite-dice', H.HOW.tools['magnetite-dice'], 'lumble']]) {
+    assert.equal(seller(ways, act2, key), before, `${key} in Act 2`);
+    assert.equal(seller(ways, act3, key), 'grindle', `${key} in Act 3`);
+    assert.equal(seller(ways, { act: 3 }, key), 'grindle', `${key} in Free mode's Act 3`);
+    assert.equal(seller(ways, null, key), before, `${key} with no game: the first way`);
+  }
+});

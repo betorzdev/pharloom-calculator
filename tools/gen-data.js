@@ -423,6 +423,8 @@ const ITEMS = [
   ['crafting-kit', 'INV_MSG_TOOLKIT'], ['pale-oil', 'INV_NAME_PLINNEY_TOOLS'],
   ['craftmetal', 'INV_NAME_TOOL_METAL'], ['everbloom', 'INV_NAME_WHITE_FLOWER'],
   ['farsight', 'INV_NAME_FARSIGHT'], ['hunters-journal', 'INV_NAME_JOURNAL'],
+  // The Silkeater (a consumable: the Inventory's purse, design/91, 1 A): its picture is the Map's.
+  ['silkeater', 'INV_NAME_SILK_GRUB', 'extras'],
   // The purse (Inventory): the two currencies, and what breaks into them (the pane's Consumables).
   ['rosaries', 'INV_NAME_COIN'], ['shell-shards', 'INV_NAME_SHARD'],
   ['beast-shard', 'INV_NAME_GREAT_SHARD'], ['shard-bundle', 'INV_NAME_SHARD_POUCH'], ['pristine-core', 'INV_NAME_PRISTINE_CORE'],
@@ -439,10 +441,19 @@ const ITEMS = [
   ['guardians-memento', 'INV_NAME_SETH_MEMENTO', 'extras'],
 ];
 /* Their description, the inventory's: INV_DESC_ for INV_NAME_; the Crafting Kit has none of its
-   own, and shares the Tool Pouch's pane text (INV_DESC_POUCHANDTOOLKIT); the Journal has none. */
-const ITEM_DESC = { 'crafting-kit': 'INV_DESC_POUCHANDTOOLKIT' };
+   own, and shares the Tool Pouch's pane text (INV_DESC_POUCHANDTOOLKIT); the Journal has none.
+   The Silkeater's is two of the game's texts, what it is and what it does, read as one paragraph. */
+const ITEM_DESC = { 'crafting-kit': 'INV_DESC_POUCHANDTOOLKIT', silkeater: 'INV_DESC_SILK_GRUB+INV_DESC_SILK_GRUB_FUNCTION' };
+// How many can be held, from the item's wiki infobox ("max = 10").
+const ITEM_MAX = { silkeater: 'Silkeater' };
+const maxOf = (id) => {
+  if (!ITEM_MAX[id]) return undefined;
+  const m = /\|\s*max\s*=\s*(\d+)/.exec(W.page(ITEM_MAX[id]));
+  if (!m) fail(`${ITEM_MAX[id]}: no max in its infobox`);
+  return Number(m[1]);
+};
 const buildItems = () => ITEMS.map(([id, key, art]) => ({ id, key, name: text(key),
-  desc: (ITEM_DESC[id] ? text(ITEM_DESC[id], true) : text(key.replace('INV_NAME_', 'INV_DESC_'), true)) || undefined, art }));
+  desc: (ITEM_DESC[id] ? text(ITEM_DESC[id], true) : text(key.replace('INV_NAME_', 'INV_DESC_'), true)) || undefined, art, max: maxOf(id) }));
 
 /* The Shell Shards' capacity, read from the Tool Pouch & Crafting Kit page's sentence ("a capacity
    of 400, up to 800", "by 100"); it fails if the wiki rewords it. */

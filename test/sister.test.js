@@ -28,6 +28,14 @@ test('every move he plays is in js/knight-moves.js, with its strip of n cells', 
   assert.ok(KNIGHT.FLOOR > 0);
 });
 
+// Fetched only when shown, a strip left him blank until it came over the network: on the first
+// hover, just before the click, he vanished (the site over https; file:// hid it).
+test('his strips are all fetched at the start, before any move asks for one', () => {
+  assert.match(src, /strips = Object\.keys\(M\)\.map\(\(name\) => Object\.assign\(new Image\(\), \{ src: `assets\/knight\/\$\{name\}\.png` \}\)\)/);
+  const start = src.slice(src.indexOf('function start()'));
+  assert.ok(start.indexOf('fetchStrips()') > 0 && start.indexOf('fetchStrips()') < start.indexOf('sync();'), 'start() fetches them before he first shows');
+});
+
 test('the link goes to the sister site, in your language, and its strings come in both', () => {
   assert.match(src, /const HOME = 'https:\/\/hallownestcalculator\.com\/';/);
   assert.match(src, /prefs\.lang === 'es' \? 'es\/' : ''/);

@@ -122,7 +122,7 @@
     L('npc', () => t('mapLayer_npc'), 'assets/map/people/bellhart-greeter.webp'),
     ...RELICS.map((k) => L(k, () => t('mapExtra_' + k), `assets/icons/extras/${k}.webp`)),
     L('mossberry', () => t('mapExtra_mossberry'), 'assets/icons/extras/mossberry.webp'),
-    L('silkeater', () => t('mapExtra_silkeater'), PIN('pin_grub_location')),
+    L('silkeater', () => t('mapExtra_silkeater'), 'assets/icons/extras/silkeater.webp'),
     L('memento', () => t('mapExtra_memento'), 'assets/icons/extras/grey-memento.webp'),
     L('bellhome', () => t('mapExtra_bellhome'), PIN('pin_bench_bell')),
     // The area maps (the inventory's rolled map), and the rosaries and shell shards lying in a room.
@@ -371,6 +371,73 @@
   // Why it went with someone (js/spots.js EXTRAS more.person; tools/gen-spots.js PEOPLE_GONE): its words.
   const LOST_WITH = { GRINDLE: () => t('mapLostCell', { npc: pick(HW.NPCS.grindle), a: pick(CO.AREAS.SHELLWOOD), b: pick(CO.AREAS.WILDS),
     boss: pick(FOE.get('widow').name) }) };
+  // What picks among the places one thing may be in (js/spots.js TASKS alt.by) → its card's words, [shut, open].
+  const ALT_BY = { shortcut: ['mapAltShortcutShut', 'mapAltShortcutOpen'] };
+  // A thing's ways (js/how.js HOW), by its mark's key ('piece:<i>', 'tools:<id>'…).
+  const waysOf = (key) => { const [cat, id] = key.split(':'); return (cat === 'piece' ? HW.HOW.pieces[id] : (HW.HOW[cat] || {})[id]) || []; };
+  /* A thing's other room (js/spots.js ALSO), on its card: why it's there, by the one who sold it;
+     a vendor's Act 3 stock (way), by who sells it, for how much, and who had it before. */
+  const alsoNote = (key, way, saved) => {
+    if (way) return t(saved ? 'mapAlsoSoldNow' : 'mapAlsoSoldIf', { npc: pick(HW.NPCS[way.vendor]), from: pick(HW.NPCS[way.from]), price: num(way.price) });
+    const w = waysOf(key).find((x) => x.kind === 'shop');
+    return w ? t(saved ? 'mapAlsoNow' : 'mapAlsoIf', { npc: pick(HW.NPCS[w.vendor]) }) : '';
+  };
+  // What Act 3 moves (js/spots.js ALSO's way { kind: 'moved' }), on its card in its Act 3 room: why it's there.
+  const movedNote = (way) => (way.foe ? t('mapMovedFoe', { foe: pick(way.foe) })
+    : way.wish && QU.CHAIN[way.wish] ? t('mapMovedWish', { wish: pick(QU.CHAIN[way.wish].name) }) : '');
+  /* A thing with another room (js/spots.js ALSO). A Tool sold that lies there once its seller is
+     gone: a save says which room it's in (savefile foundNow), and the mark is there alone. What a
+     vendor sells only in Act 3 and was had elsewhere before (way { kind: 'shop' }: Grindle's, Pebb's,
+     Mort's and Lumble's wares, whose rooms the game empties in Act 3): with a save, at the vendor
+     while the game is in Act 3 and hasn't it, where it was before otherwise. What Act 3 moves to
+     another room (way { kind: 'moved' }: Mossberry no. 3, the Memory Locket of «Volatile
+     Flintbeetles»): with a save, there in Act 3 while not had, or once the save says it was had
+     there (foundNow), in its first room otherwise. With none (Free mode too, or a slot kept before
+     it said), both, one thing (chk), the other's card saying when it's there. */
+  function withAlso(add, mark, own) {
+    // One of several places, a variant each (VARIANTS, below).
+    const vars = (SP.VARIANTS || {})[mark.key];
+    if (vars) { variantMarks(add, mark, vars, own); return; }
+    const also = (SP.ALSO || {})[mark.key];
+    if (!also) { add(mark); return; }
+    const [scene, , way] = also, shop = !!way && way.kind === 'shop', moved = !!way && way.kind === 'moved';
+    const key = mark.key + ':' + (shop ? way.vendor : 'found'), xy = SP.XY[key];
+    // There from the Act its seller dies in (js/how.js, its 'found' way's), or the vendor's, or Act 3; in that room's area.
+    const from = way || waysOf(mark.key).find((x) => x.kind === 'found') || {};
+    const there = { scene, at: xy && { x: xy[0], y: xy[1] }, area: R.areaOf(scene) || mark.area, act: from.act || mark.act,
+      note: moved ? movedNote(way) : alsoNote(mark.key, shop ? way : null, !!own) };
+    if (own && shop) { add(own.act >= way.act && !mark.got ? { ...mark, ...there } : mark); return; }
+    if (own && own.foundRead) { add(own.foundNow.includes(mark.key) || (moved && own.act >= way.act && !mark.got) ? { ...mark, ...there } : mark); return; }
+    add(mark);
+    add({ ...mark, ...there, key, chk: mark.chk || mark.key });
+  }
+  /* A Tool had at one of several places, a variant each (js/spots.js VARIANTS: the Silkshot's three
+     repairs of the Ruined Tool, design/99, all A). With a save that has repaired it, only the place
+     of the one it holds, had (savefile silkshot); with none yet, every place, one thing (chk), the
+     one the game has closed crossed (savefile left: the Twelfth Architect gone); Free mode, every
+     place. Each with its variant's picture and name, its card that place's way. */
+  const variantName = (id, v) => pick(((D.TOOLS.find((x) => x.id === id) || {}).attacks || []).find((a) => a.id === v).name);
+  // A vendor the game has taken away for good, as the save says (savefile left; js/spots.js LEFT).
+  const vendorGone = (own, v) => !!own && own.leftRead && own.left.includes(v);
+  const trapOf = (id) => HW.TRAPS.find((x) => x.variants && x.thing[1] === id);
+  // Where a variant is had, in a few words: who repairs it, or the rune in its area.
+  const variantPlace = (id, i, scene) => {
+    const w = (trapOf(id).variants[i] || {}).way || {};
+    return w.kind === 'shop' ? pick(HW.NPCS[w.vendor]) : t('mapShotRune', { area: areaName(R.areaOf(scene)) });
+  };
+  function variantMarks(add, mark, vars, own) {
+    const id = mark.key.slice(6), held = own ? own.silkshot : '', trap = trapOf(id), item = pick(SP.EXTRAS[vars.item][4]);
+    const home = (R.roomOf(SP.AT.tools[id]) || {}).scene;
+    vars.at.forEach(([v, , scene, act], i) => {
+      if (held && held !== v) return;
+      const key = R.roomOf(scene).scene === home ? mark.key : mark.key + ':' + v, xy = SP.XY[key], way = trap.variants[i].way;
+      const lost = !held && way.vendor && vendorGone(own, way.vendor) ? { left: way.vendor } : null;
+      const art = SS.engine.toolArt(id, { silkshot: v }).art;
+      add({ ...mark, key, chk: mark.key, scene, at: xy && { x: xy[0], y: xy[1] }, area: R.areaOf(scene), act: act || mark.act, got: own ? held === v : mark.got, lost,
+        sub: variantName(id, v), howWays: [way], noteAfter: t('mapShotNeeds', { item }),
+        draw: (s, ti, k, c) => dot('tools', `assets/icons/tools/${art}.webp`, s, ti, k, c) });
+    });
+  }
   // Nothing left to do with a mark: had, or taken away.
   const closed = (m, g) => !!g && (m.got || !!m.lost);
   function things(g, own) {
@@ -381,13 +448,13 @@
       const scene = SP.AT.pieces[i];
       // A Needle upgrade by the Needle it gives (check: ['min', 'nailUpgrades', level]).
       const needle = p[0] === 'needle' && p[2][0] === 'min' ? D.NEEDLES[p[2][2]] : null;
-      add({ key: 'piece:' + i, layer: p[0], scene, act: p[1], got: !!g && g.pieces.includes(i), area: p[3],
-        name: p[4] ? pick(p[4]) : needle ? pick(needle.name) : LAYER.get(p[0]).name(), draw: (s, ti, k, c) => dot(p[0], pieceIcon(p[0], p), s, ti, k, c) });
+      withAlso(add, { key: 'piece:' + i, layer: p[0], scene, act: p[1], got: !!g && g.pieces.includes(i), area: p[3],
+        name: p[4] ? pick(p[4]) : needle ? pick(needle.name) : LAYER.get(p[0]).name(), draw: (s, ti, k, c) => dot(p[0], pieceIcon(p[0], p), s, ti, k, c) }, own);
     });
     for (const ids of CO.COUNTED) {
       const id = ids[0], tool = D.TOOLS.find((x) => x.id === id), w = CO.WHERE.tools[id] || [];
-      add({ key: 'tools:' + id, layer: 'tools-' + tool.color, scene: SP.AT.tools[id], act: w[0], area: w[1], got: !!g && ids.some((x) => g.tools.includes(x)),
-        name: pick(tool.name), draw: (s, ti, k, c) => dot('tools', `assets/icons/tools/${id}.webp`, s, ti, k, c) });
+      withAlso(add, { key: 'tools:' + id, layer: 'tools-' + tool.color, scene: SP.AT.tools[id], act: w[0], area: w[1], got: !!g && ids.some((x) => g.tools.includes(x)),
+        name: pick(tool.name), draw: (s, ti, k, c) => dot('tools', `assets/icons/tools/${id}.webp`, s, ti, k, c) }, own);
     }
     // The six outside the 100%: a Tool's upgrade, or one a wish lends and takes back.
     for (const id of OTHER_TOOLS) {
@@ -454,6 +521,7 @@
         draw: (s, ti, k, c) => pin('bellshrine', 'quest_map_icon_grand_gate_final', s, ti, k, c) });
     }
     for (const [v, scenes] of Object.entries(SP.VENDORS)) {
+      if (vendorGone(own, v)) continue;   // taken away for good (js/spots.js LEFT: the Twelfth Architect)
       if (v === 'shakra') { scenes.forEach((scene, i) => add({ key: 'shakra:' + i, layer: 'shakra', scene, got: false, name: pick(HW.NPCS.shakra), npc: 'shakra',
         draw: (s, ti, k, c) => badge('shakra', portrait('shakra'), s, ti, k, c) })); continue; }
       scenes.forEach((scene, i) => add({ key: 'shop:' + v + ':' + i, layer: 'shop', scene, got: false, name: pick(HW.NPCS[v]), npc: v,
@@ -485,12 +553,16 @@
     const bossAt = new Map(out.filter((m) => m.layer === 'boss').map((m) => [lower(m.scene), m]));
     folded = new Map();
     SP.TASKS.forEach((x, i) => {
-      const [kind, quest, check, scene, art, name, mode, spot, gone] = x;
+      const [kind, quest, check, scene, art, name, mode, spot, gone, alt] = x;
       if (own && ((mode === 'steel' && !steelGame) || (spot && !own.steelSpots.includes(spot)))) return;
+      /* Of the places one thing may be in (alt: a Flintbeetle's two, by the shortcut; the Bellbeast's
+         twelve stations while its wish is on), only the one this game has it in; all in Free mode
+         or when the slot can't say (kept before it). */
+      if (alt && own && (own.elsewhere || []).includes(i)) return;
       const boss = kind === 'wspot' && WISH_FIGHT[quest] && bossAt.get(lower(scene));
       if (boss && boss.foe === WISH_FIGHT[quest]) { boss.quests = (boss.quests || []).concat(quest); folded.set('task:' + i, boss.key); return; }
       const w = CO.WISHES[wishOf(quest)];
-      add({ key: 'task:' + i, layer: kind, scene, act: kind === 'goal' ? undefined : w && w[1], got: !!g && (g.tasks || []).includes(i), lost: gone === 'act3' ? goneAct3(own) : null, quest, chk: JSON.stringify(check),
+      add({ key: 'task:' + i, layer: kind, scene, act: kind === 'goal' ? undefined : w && w[1], got: !!g && (g.tasks || []).includes(i), lost: gone === 'act3' ? goneAct3(own) : null, quest, chk: JSON.stringify(check), alt,
         name: name ? pick(name) : pick(QU.CHAIN[quest].name), sub: name ? pick(QU.CHAIN[quest].name) : '',
         draw: (s, ti, k, c) => dot(kind, `assets/map/${art}.webp`, s, ti, k, c) });
     });
@@ -546,22 +618,32 @@
         return;
       }
       const layer = layerOf(x);
-      /* An area map (js/spots.js EXTRAS' last field: Shakra's price, or found lying), a rosary or
+      /* An area map (js/spots.js EXTRAS' last field: Shakra's price, a map machine's, or found lying), a rosary or
          shell shard item lying in its room (its item). */
       const more = x[5] || {};
       const icon = kind === 'map' ? ICON('i_map') : more.item ? `assets/icons/items/${more.item}.webp` : more.icon ? ICON(more.icon)
         : kind === 'bead' ? 'assets/icons/extras/rosary-bead.webp' : kind === 'silk-cocoon' ? ICON('silk_grub_small_cocoon')
           : kind === 'eva' ? evaArt(more.reward) : kind === 'lift' || kind === 'masked' ? null
         : kind === 'memento' ? (MEMENTO_ICON[check[1]] ? `assets/icons/extras/${MEMENTO_ICON[check[1]]}.webp` : 'assets/icons/pieces/heart-bloom.webp')
-        : kind === 'silkeater' ? null : kind === 'spawn' || kind === 'bellhome' || kind === 'wall' ? null : `assets/icons/extras/${kind}.webp`;
+        : kind === 'spawn' || kind === 'bellhome' || kind === 'wall' ? null : `assets/icons/extras/${kind}.webp`;
       const spawn = kind === 'spawn' ? BOOK_KEY.get(name && name.key) : null;
-      add({ key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i), lost, chk: JSON.stringify(check),
+      /* What a Tool's variants are made from (js/spots.js VARIANTS item: the Ruined Tool) goes with
+         that Tool (its layer, one thing with it: design/99, 1 A), its card naming the places. */
+      const of = Object.entries(SP.VARIANTS || {}).find(([, v]) => v.item === i);
+      if (of) {
+        const tid = of[0].slice(6), tl = D.TOOLS.find((x) => x.id === tid), places = of[1].at.map(([, , s], k) => variantPlace(tid, k, s));
+        const ids = CO.COUNTED.find((x) => x[0] === tid) || [tid];
+        add({ key: 'extra:' + i, layer: 'tools-' + tl.color, scene, act, got: !!g && (g.extras.includes(i) || ids.some((x) => g.tools.includes(x))), chk: of[0],
+          name: pick(name), note: t('mapShotRuined', { tool: pick(tl.name), list: places.join(', ') }), ruinedOf: of[0],
+          draw: (s, ti, k, c) => dot(layer, icon, s, ti, k, c) });
+        return;
+      }
+      withAlso(add, { key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i), lost, chk: JSON.stringify(check),
         name: name ? pick(name) : kind === 'eva' ? evaName(more.reward) : ONE[kind] ? t(ONE[kind]) : LAYER.get(layer).name(), eva: kind === 'eva' ? more : null,
-        note: kind === 'masked' ? t('mapHiddenNote', { n: num(check[0] === 'all' ? check.length - 1 : 1) }) : more.shop ? t('mapMapShakra', { npc: pick(HW.NPCS[more.shop]), price: num(more.price) }) : more.found ? t('mapMapFound') : more.fight ? t('mapRewardOf', { fight: App.gauntletName(more.fight) }) : '',
-        draw: (s, ti, k, c) => (kind === 'silkeater' ? pin('silkeater', 'pin_grub_location', s, ti, k, c)
-          : kind === 'spawn' ? badge(layer, portrait(spawn && spawn.id) || GLYPH.spawn, s, ti, k, c)
-            : kind === 'bellhome' ? pin('bellhome', 'pin_bench_bell', s, ti, k, c)
-              : icon ? dot(layer, icon, s, ti, k, c) : badge(layer, GLYPH[layer] || GLYPH.wall, s, ti, k, c)) });
+        note: kind === 'masked' ? t('mapHiddenNote', { n: num(check[0] === 'all' ? check.length - 1 : 1) }) : more.shop ? t('mapMapShakra', { npc: pick(HW.NPCS[more.shop]), price: num(more.price) }) : more.machine ? t('mapMapMachine', { price: num(more.price) }) : more.found ? t('mapMapFound') : more.fight ? t('mapRewardOf', { fight: App.gauntletName(more.fight) }) : '',
+        draw: (s, ti, k, c) => (kind === 'spawn' ? badge(layer, portrait(spawn && spawn.id) || GLYPH.spawn, s, ti, k, c)
+          : kind === 'bellhome' ? pin('bellhome', 'pin_bench_bell', s, ti, k, c)
+            : icon ? dot(layer, icon, s, ti, k, c) : badge(layer, GLYPH[layer] || GLYPH.wall, s, ti, k, c)) }, own);
     });
     // Your game: the cocoon, where the game's map marks it (js/rooms.js mapPoint, by where Hornet fell
     // in the scene; else its room's middle), and the Journal's entries still missing.
@@ -795,11 +877,17 @@
     }
   }
 
-  /* Each area's name at the middle of its drawn rooms, for the areas with more than three; with
-     the rooms it has (for its card). Worked out once. */
+  /* Each area's name at the middle of its drawn rooms, for the areas with more than three, and a
+     smaller one that holds a thing of the 100% (the Songclave: its card's «For 100%», so the cards
+     add up to what «Only the 100%» draws; Albert's choice, 18-Oct-2026); with the rooms it has (for
+     its card). Worked out once. */
   let areaNames = null;
   function AREA_NAMES() {
     if (areaNames) return areaNames;
+    const hundred = new Set([...CO.PIECES.flatMap((p, i) => (HUNDRED.includes(p[0]) ? [SP.AT.pieces[i]] : [])),
+      ...CO.COUNTED.map((ids) => SP.AT.tools[ids[0]]),
+      ...['crests', 'skills', 'arts'].flatMap((cat) => Object.keys(CO.WHERE[cat]).filter((id) => cat !== 'arts' || SS.completion.ARTS.includes(id)).map((id) => SP.AT[cat][id])),
+      SP.AT.everbloom].filter(Boolean).map((s) => R.areaOf(s)));
     const sum = {};
     for (const [scene, r] of Object.entries(M.ROOMS)) {
       const a = R.areaOf(scene);
@@ -807,7 +895,7 @@
       const s = sum[a] || (sum[a] = [0, 0, 0, []]);
       s[0] += r[0] + r[2] / 2; s[1] += r[1] + r[3] / 2; s[2]++; s[3].push(scene);
     }
-    return (areaNames = Object.entries(sum).filter(([, s]) => s[2] > 3).map(([id, s]) => ({ id, x: s[0] / s[2], y: s[1] / s[2], rooms: s[3] })));
+    return (areaNames = Object.entries(sum).filter(([id, s]) => s[2] > 3 || hundred.has(id)).map(([id, s]) => ({ id, x: s[0] / s[2], y: s[1] / s[2], rooms: s[3] })));
   }
   const mapped = (own) => new Set((own ? own.maps : []).map((f) => SP.MAPS[f]).filter(Boolean));
   const MAPPABLE = new Set(Object.values(SP.MAPS));
@@ -1365,15 +1453,16 @@
     where = line([areaName(area), m.act ? t('saveAct', { n: m.act }) : '', m.sub]);
     const kind = key.split(':')[0];
     if (kind === 'piece') {
-      const i = Number(key.slice(6));
-      note = App.howPiece ? App.howPiece(i) : '';
+      const i = Number(key.split(':')[1]);   // its other room's too ('piece:<i>:<vendor>')
+      note = m.note || (App.howPiece ? App.howPiece(i) : '');
       /* In Free mode a piece is marked here, but those of a ladder (masks, silk, the Silk Hearts, the
          Needle, the Kit, the Pouch) follow the Inventory's levels, as on Progress: the way there. */
       acts = own ? state(t(m.got ? 'pgGot' : 'invMissing'))
         : LADDER_KINDS.includes(m.layer) ? `${state(t('pgLadderNote'))}<a class="text-btn" href="${App.here(App.hashFor('game'))}" data-act="view" data-value="game">${esc(t('navGame'))}</a>`
           : `<button type="button" class="text-btn" data-act="mapMark" data-value="${i}" aria-pressed="${m.got}">${esc(t(m.got ? 'mapUnmark' : 'mapMark'))}</button>`;
     } else if (['tools', 'crests', 'skills', 'arts', 'everbloom'].includes(kind)) {
-      note = m.note || (App.howOf ? App.howOf(key) : '');
+      // A variant's place (js/spots.js VARIANTS): its own way, then what it takes.
+      note = m.note || [App.howOf ? App.howOf(key, m.howWays) : '', m.noteAfter].filter(Boolean).join(' · ');
       if (g) acts = state(t(m.got ? 'pgGot' : 'invMissing'));
     } else if (kind === 'pin') {
       if (m.off) acts = state(m.shut);
@@ -1422,6 +1511,7 @@
     } else if (kind === 'task') {
       // What it's for, whether it's done, and where its wish is taken (the Wishwall, or who asks).
       if (m.layer === 'qitem') note = t('mapTaskFor', { wish: m.sub });
+      if (m.alt && ALT_BY[m.alt.by]) note += ' ' + t(ALT_BY[m.alt.by][+m.alt.open], { foe: pick(m.alt.foe) });
       where = line([areaName(area), m.act ? t('saveAct', { n: m.act }) : '']);
       if (g) acts = state(t(m.layer === 'qitem' ? (m.got ? 'pgGot' : 'invMissing') : m.got ? (m.layer === 'wspot' ? 'mapWishGranted' : 'mapDone') : 'mapNotDone'));
       /* Where it's taken: the part of the wish still to do (a «Pre» at the board, then who it sends
@@ -1434,10 +1524,14 @@
       if (to && list.some((x) => x.key === to)) acts += btn('mapShow', to, t(f.board ? 'mapToWall' : 'mapToGiver'));
     } else if (kind === 'extra') {
       note = m.note || '';
+
       // Eva's: the slots it needs, and with a save how many are open.
       if (m.eva) note = (m.eva.slots ? t('mapEvaSlots', { npc: pick(HW.NPCS.eva), n: num(m.eva.slots), crest: pick(D.CRESTS.find((c) => c.id === 'hunter').name) }) : t('mapEvaMeet', { npc: pick(HW.NPCS.eva) }))
         + (own && m.eva.slots ? ' ' + t('mapEvaHave', { n: num(own.evaSlots || 0) }) : '');
       if (g) acts = state(t(m.got ? 'pgGot' : 'invMissing'));
+      // What a Tool's variants are made from: the places it's repaired in, as a focus.
+      const ks = m.ruinedOf ? list.filter((x) => x.chk === m.ruinedOf && x.key !== key).map((x) => x.key) : [];
+      if (ks.length > 1) acts += btn('mapShotSee', ks.join(','), t('mapShotSee'));
     } else if (kind === 'beast') {
       const e = BOOK.get(m.entry), k = own && own.journal[e.id];
       note = [t('mapBeastHere', { n: num(m.n) }), own ? (k === undefined ? t('hjState_unseen') : e.kills != null ? t('mapKills', { n: num(k), m: num(e.kills) }) : t('hjState_seen')) : ''].filter(Boolean).join(' · ');
@@ -1450,7 +1544,7 @@
     /* Taken away (design/86, 2 A): «No longer there», and why, from the save: the Act, or the other
        arena of the pair, fought. A gauntlet keeps its way to Fight. */
     if (own && m.lost) {
-      const why = m.lost.person ? LOST_WITH[m.lost.person]() : m.lost.arena ? t('mapLostArena', { name: App.gauntletName(m.lost.arena) }) : t('mapLostAct3');
+      const why = m.lost.person ? LOST_WITH[m.lost.person]() : m.lost.left ? t('mapShotLeft', { npc: pick(HW.NPCS[m.lost.left]) }) : m.lost.arena ? t('mapLostArena', { name: App.gauntletName(m.lost.arena) }) : t('mapLostAct3');
       note = note ? note + (/[.!?]$/.test(note) ? ' ' : '. ') + why : why;
       acts = state(t('mapLost')) + (kind === 'gaunt' ? acts : '');
     }
@@ -1671,6 +1765,8 @@
     },
     // Another screen's "on the map" button.
     mapShow(node) { App.mapShow(node.dataset.value); },
+    // The Ruined Tool's card: the places it's repaired in, as a focus (js/spots.js VARIANTS).
+    mapShotSee(node) { const ks = node.dataset.value.split(','), m = all().list.find((x) => x.key === ks[0]); App.mapFocus(ks, m ? m.name : ''); },
     mapBeast(node) { App.mapBeast(node.dataset.value); },
     // The focus: the next or previous of its marks, centred with its card; or back to the whole map.
     mapFocusStep(node) {

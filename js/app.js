@@ -184,6 +184,7 @@
           <ul class="lang-menu" id="lang-menu"${langOpen ? '' : ' hidden'}>${I.LANGS.map(langItem).join('')}</ul>
         </div>
         <button type="button" class="text-btn mh-link" data-act="share" title="${esc(t('shareHint'))}">${esc(t('share'))}</button>
+        <a class="text-btn mh-link mh-support" href="${KOFI}" target="_blank" rel="noopener" title="${esc(t('supportHint'))}" aria-label="${esc(t('support'))}"><span class="support-long">${esc(t('support'))}</span><span class="support-short">Ko-fi</span></a>
       </div>
       <a class="brand" href="${here(hashFor('home'))}" data-act="view" data-value="home" title="${esc(t('goHome'))}">
         ${CROWN}
@@ -250,6 +251,10 @@
     } catch (e) { return null; }
   }
 
+  // Where donations go: a plain link, never Ko-fi's widget (it loads third-party scripts; docs/guide.md, "Privacy").
+  const KOFI = 'https://ko-fi.com/betorzdev';
+  // Who runs the site, for the legal notice (LSSI art. 10).
+  const OWNER = 'betorzdev';
   // GitHub's mark (Octicons mark-github), in currentColor so it takes the links' accent.
   const GITHUB = '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>';
   /* The footer, under every screen: a fan project with Team Cherry's artwork, where the numbers
@@ -264,6 +269,7 @@
       <p>${t('footData', { wiki: ext('https://hollowknight.wiki/', 'hollowknight.wiki'), lic: ext('https://creativecommons.org/licenses/by-sa/3.0/', 'CC BY-SA 3.0') })}</p>
       <p>${t('footMade', { mail: '<a href="mailto:betorzdev@gmail.com">betorzdev@gmail.com</a>' })}
         <a class="gh" href="https://github.com/betorzdev/pharloom-calculator" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">${GITHUB}</a></p>
+      <p>${t('footSupport', { kofi: ext(KOFI, 'Ko-fi') })}</p>
       <details class="colophon-privacy">
         <summary>${esc(t('footPrivacy'))}</summary>
         <ul>
@@ -273,6 +279,13 @@
           <li>${t('footPrivCount', { gc: ext('https://footworn.betorzdev.workers.dev/privacy', 'Footworn') })}</li>
           <li>${t('footPrivHost', { gh: ext('https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement', 'GitHub Pages') })}</li>
           <li>${t('footPrivErase')}</li>
+        </ul>
+      </details>
+      <details class="colophon-privacy">
+        <summary>${esc(t('footLegal'))}</summary>
+        <ul>
+          <li>${t('footLegalOwner', { name: esc(OWNER), mail: '<a href="mailto:betorzdev@gmail.com">betorzdev@gmail.com</a>' })}</li>
+          <li>${t('footLegalKofi', { kofi: ext(KOFI, 'Ko-fi') })}</li>
         </ul>
       </details>`;
   }
@@ -405,8 +418,14 @@
   function safely(name, fn) {
     try { fn(); } catch (e) {
       console.error(e);
-      track('error', { part: name });
+      track('error', errorProps(name, e));
     }
+  }
+  /* What the counter gets of it, enough to find it: the part, the message's first 64 characters
+     (all Footworn keeps of a value) and the script and line it was thrown from. */
+  function errorProps(part, e) {
+    const at = /([\w.-]+\.js):(\d+)/.exec(String((e && e.stack) || ''));
+    return { part, msg: String((e && e.message) || e).slice(0, 64), at: at ? at[1] + ':' + at[2] : '' };
   }
   function render() {
     const focus = focusDescriptor();
@@ -509,6 +528,9 @@
   // The language's list is a dropdown: a tap anywhere else closes it (and still does what it was for).
   document.addEventListener('click', (ev) => {
     if (langOpen && !ev.target.closest('.langsel')) langMenu(false);
+    // The donation link, wherever it is (header, footer, the About block's answer): `at` says which.
+    const kofi = ev.target.closest(`a[href="${KOFI}"]`);
+    if (kofi) track('support', { at: kofi.closest('#masthead') ? 'header' : kofi.closest('#colophon') ? 'footer' : 'about' });
     const node = ev.target.closest('[data-act]');
     if (!node) return;
     if (node.tagName === 'A' && (ev.ctrlKey || ev.metaKey || ev.shiftKey || ev.altKey || ev.button)) return;

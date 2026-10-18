@@ -43,8 +43,9 @@ the word (`js/app-sister.js`, css `.mh-sister`, `.sis-*`), as Hornet stands on �
 no arrival, he's simply there (Albert, 13 Oct 2026), breathing (the game's Idle at a third of its
 speed, there and back). Every 15–25 s (header in view, tab visible) his cloak stirs in the wind, he
 looks up, reads his map or focuses soul in a white light; he turns to the mouse over the header and
-looks up while it's on the link. A click counts as `sister` with `to: 'hallownest'` (the sister's Footworn id, which its dashboard draws as a villager crossing to that quarter), as on the sibling. With reduced motion
-he only stands. He's decoration: hidden from screen readers, never under the pointer.
+looks up while it's on the link. A click counts as `sister` with `to: 'hallownest'` (the sister's Footworn id, which its dashboard draws as a villager crossing to that quarter), as on the sibling, and he stays on the word through it, while
+the new tab is open and when you come back (his moves' strips are fetched as the page starts, so none
+leaves him blank while it comes). With reduced motion he only stands. He's decoration: hidden from screen readers, never under the pointer.
 
 ### Profiles
 
@@ -139,7 +140,8 @@ handed back they still show found (here and on the Map: the save keeps them, hid
 Shell Shards as big figures, the shards out of what your Tool Pouch holds, 400 to 800, with a bar,
 and under each what breaks into it, counted, with the sum you would get from breaking it all: the
 five Rosary strings and necklaces under the rosaries; the Beast Shards, Shard Bundles, Pristine
-Cores, Hornet Statuettes and the Growstone under the shards, the last only in a Steel Soul game or Free mode); the **items** (the
+Cores, Hornet Statuettes and the Growstone under the shards, the last only in a Steel Soul game or Free mode; and under
+both, the **Silkeaters** you hold, up to ten, the grubs you consume to bring your cocoon back); the **items** (the
 Everbloom, the Farsight, the Hunter's Journal, the Old Hearts, the melodies and the fleas); the
 **Relics** (how many you hold of each kind) and the **Mementos**. Crests, items, what's in the
 purse, Relics and Mementos are plates with their name, and under it their count or «Not found
@@ -156,7 +158,7 @@ Crest, Silk Skill, ability, the Everbloom, the Farsight, the Journal, an Old Hea
 Memento to mark it had or not (its text opens under the shelf); a slot a Tool shares with its
 upgrade goes none, had, upgraded with each tap. Each shelf has «All · None», and what comes in numbers (loose Mask
 Shards and Spool Fragments, Memory Lockets, Craftmetal, Pale Oil, fleas, what's in the purse, the
-Relics of each kind) has − N +, its maximum beside the figure («− 6/20 +»): the loose shards and fragments stop at what the masks and silk
+Silkeaters, the Relics of each kind) has − N +, its maximum beside the figure («− 6/20 +»): the loose shards and fragments stop at what the masks and silk
 left unfilled. The Rosaries and Shell Shards are typed: Enter or leaving the field
 takes the figure, and the shards stop at what your Pouch holds. With the keyboard, the focus stays
 where it was through each mark. «Start from»: «New Game» (the
@@ -420,7 +422,7 @@ whole group, in ink when all of it is on, dimmer when part, muted when none. Ins
 switch is the game's own picture of it, in grey when off. Beside each, how many: in a save, had of
 the total (a layer complete in green); for places and people, which aren't had, how many there
 are; in Free mode, the total. They count things, not marks: the marks that share one save check
-(the two places one map or key may be found in, the Silver Bells of one wish, the Bell Beast's
+(the two places one map or key may be found in, a Flintbeetle's two, the Silver Bells of one wish, the Bell Beast's
 spots) are one. A group's title counts its layers the same way, all but your cocoon, so «Your game»
 counts as its Journal does.
 
@@ -440,7 +442,22 @@ leaves those off.
   opens them by the colour of their slot (red, blue, yellow) and, apart, the six **outside the
   100%** (off at first): the upgrades of four Tools (Curvesickle, Druid's Eyes, Claw Mirrors, the
   Shell Satchel), which add nothing to it on their own, and the two a wish lends and takes back
-  (the Snare Setter, the Needle Phial), found once had even after handing them back. Then the
+  (the Snare Setter, the Needle Phial), found once had even after handing them back. Two Tools a
+  shop sells lie in another room once the seller dies before you buy them: the Curveclaw in the
+  room above the Mottled Skarr's corpse, past its gauntlet, and the Weighted Belt by Mort's corpse
+  in Act 3. With a save the mark is where your game has it (the shop while the seller lives or
+  once you bought it there); with none, at both, counted once. So does what Grindle sells only in
+  Act 3 and you could have had elsewhere before, each in its own layer (Pebb's Mask Shard,
+  Craftmetal and Magnetite Brooch, Mort's Memory Locket and Tool Pouch, Lumble's Magnetite Dice):
+  Act 3 empties those three rooms, so it also has a mark at Grindle's in the Blasted Steps. With a
+  save in Act 3 it's there alone while you don't have it; before Act 3, or once had, where it was;
+  with none, at both, counted once, Grindle's saying Act 3 and his price. The Silkshot is repaired
+  from the Ruined Tool at one of three places, and the first repair closes the other two: the rune
+  in Mount Fay (the Original), the Twelfth Architect and the Forge Daughter, each a mark with its
+  version's picture and its own way, and the Ruined Tool itself where it lies in Bilewater, its
+  card naming the three («See the three»), all counted as one Tool. With a save that repaired it,
+  only the place it was repaired at, had; before that, every place, the Architect's crossed once
+  he has left for good (and his shop with him); with none, all four. Then the
   Crests, **What Eva gives** besides Sylphsong (off at first): the Hunter Crest's two evolutions and
   the Vesticrest's yellow and blue slots, each with the slots it needs across your Crests (the
   Hunter's aside) and, with a save, how many you have open; and the Silk Skills.
@@ -450,17 +467,24 @@ leaves those off.
   opens them one by one, Mementos (the seven found somewhere: the Heart Memento is whichever Old
   Heart The Old Hearts doesn't take, so it has no mark) and the Bellhome's furnishings (the five
   bought, and the Materium, Farsight and Crawbell built there once found: their Key items marks
-  are where each lies).
-- **Items**: Craftmetal and Pale Oil (on at first), then, off at first, Mossberries, Silkeaters, the
-  **Maps**: the fourteen area maps found lying in a room (the Weavenest Atla Map, the
-  Slab's…), each gone once your save has it; the fourteen Shakra sells have no mark of their own
+  are where each lies). Two things move in Act 3 if you don't have them yet, and have a second
+  mark there saying Act 3 and why: the Memory Locket of «Volatile Flintbeetles» lies in Survivor's
+  Camp while the wish isn't granted, and the Aknid carrying Mossberry no. 3 moves one room east.
+  With a save the mark is where your game has it (the Act 3 room in Act 3 while not had, or once
+  the locket was picked up there; the first room otherwise); with none, at both, counted once.
+- **Items**: Craftmetal and Pale Oil (on at first), then, off at first, Mossberries, Silkeaters (each drawn as the item), the
+  **Maps**: the fourteen area maps had in a room, found lying there (the Weavenest Atla Map, the
+  Slab's…) or sold by one of the Citadel's map machines (its card says for how many rosaries), each
+  gone once your save has it. The Cradle's has two marks, one per Act: its machine in Act 2 (crossed
+  out in an Act 3 game, which can't reach it), and in Act 3 the map found free by the broken
+  machine by Ventrica's Terminus. The fourteen Shakra sells have no mark of their own
   (they'd sit on her), her card says which you lack. And the **Rosaries** and **Shell Shards** lying in a
   room (strings, necklaces, Shard Bundles, Great Shards, Pristine Cores), each by its own pickup
   (one an arena drops once won says which: the Whispering Vaults' Heavy Rosary Necklace, the
   Cogwork Core's Pristine Core), and the ones given: the Fixer's Hornet Statuette in Bone Bottom and the Sprintmaster's two race
   prizes (a Rosary Necklace and a Beast Shard).
-  And the **Key items** lying in a room (the Cogheart Pieces, the broken Silkshot, Farsight, the
-  Materium, and the Crawbell, after the Court of Craws).
+  And the **Key items** lying in a room (the Cogheart Pieces, Farsight, the Materium, and the
+  Crawbell, after the Court of Craws; the Ruined Tool goes with the Silkshot, among the Tools).
 - **Places**: benches (off at first: there are 82, the game's own bench pins, the Songclave's, the Bellhome's (dimmed until the house is unlocked) and the Border Caves' (dimmed until Act 3),
   which its map doesn't pin; the Flea Caravan's two of its own, in Greymoor and the Blasted Steps,
   only while your caravan is there), Bellway and Ventrica stations (dimmed while
@@ -525,11 +549,20 @@ leaves those off.
   Gourmand's delicacies, the three souls, the Twisted Bud, the Steel Spines; and the fourteen
   spots above and below Bellhart where a Silver Bell may drop, gone once their wish is granted); and the main
   objectives, where the game's map pins them (the Bellshrines, Old Hearts and Melodies are already
-  layers of their own). Each is done as your save says: the wish granted, the objective complete
+  layers of their own; Beast in the Bells has one pin per Bellway station, and the game's
+  thirteenth, under Greymoor for a station cut from the game, is left out, as the game never
+  shows it; with a save where that wish is taken and not yet granted, only the station the Bell
+  Beast waits at shows, as in the game, and all twelve before it's taken, once it's granted and in
+  Free mode, one thing on the count). Each is done as your save says: the wish granted, the objective complete
   or a later step of it (Pale Monarch stays incomplete when Act 3 opens through the Soul Snare), a
   thing picked up, held (when it lies in one place only: each Pollip Heart and Flintgem goes by
-  its own spot) or its wish granted. Off at first.
-- **Secrets**, off at first: the rosary and shell shard caches, the breakable walls (the
+  its own spot) or its wish granted. The three Flintgems drop from three Flintbeetles, and one of
+  them has two places, one mark each, counted once: in Bone_04 while the Marrow's trapdoor
+  shortcut is shut, in Bone_06 once it's open (the game reads it when the beetle appears); its
+  card says so, and with a save only the place your game has it in shows (where its gem was picked
+  up, else by the shortcut), both in Free mode. Off at first.
+- **Secrets**, off at first: the rosary and shell shard caches (not the four ant strings and the
+  Deep Docks chest that only hold an item: that item has its own mark), the breakable walls (the
   one-way ones are among the shortcuts; Bone_12's two cell doors, struck open with no key, among
   them; each wall its own mark, even where breaking one breaks the next, as three in the Sands of
   Karak do), the loose rosaries (one bead, cut from the game's picture of
@@ -570,14 +603,19 @@ stays sharp as you zoom.
 With a save the map shows only what you're missing; in Free mode, what your marks say is missing
 (everything, as a guide, on a New Game). Tap any mark for its card (above the mark, or below it
 when above it would cover the search or the zoom): what
-it is, where, how it's had, and what it says of your game. A
+it is, where (its area, and the first Act it can be had in there; what only Act 3 has says Act 3:
+the Abyss, Verdania, the destroyed Cradle and Cogwork Core, the Border Caves and the Nameless Town,
+and what lies only in a room's Act 3 state, as the rosaries in Mort's room once he's gone; a cache,
+a wall or a door with no Act of its own says none), how it's had, and what it says of your game. A
 shop's says what of the 100% it still has for you (and the wishes it asks, if it does), Shakra's which maps you lack, a Wishwall's or a
 wish giver's the wishes still open, a wish's place or thing which wish it's for, whether it's done
 and a button to its Wishwall or to who asks for it, a boss's whether it's beaten, with «Fight it in Combat» and
 «See in the Journal» (and its gauntlet's waves and reward, if its fight is one); a gauntlet's its waves and reward; a Journal entry's its kills. In Free mode
 a piece's card marks it had; a Mask Shard, Spool Fragment, Silk Heart or upgrade of the Needle, Kit
 or Pouch follows the Inventory's levels instead, as on Progress, and its card leads there. Tap an area's name for its card: the rooms of it you've visited,
-and what's left there of the 100%, the Journal and the gauntlets.
+and what's left there of the 100%, the Journal and the gauntlets. The map names the areas of
+more than three rooms, and a smaller one that holds something of the 100% (the Songclave), so the
+cards' «For 100%» add up to what «Only the 100%» shows.
 
 Other screens open the map on a thing: «See on the map» on each missing row of Progress and on a
 Journal entry. A step of Progress's road
@@ -811,9 +849,16 @@ wiki's boss drops):
   the Slab's keys for its Mask Shard and Rune Rage.
 
 The way shown is the one your Act has reached: in Act 3 Pebb's and Mort's wares are Grindle's,
-and in Act 2 the Curveclaw and the Fractured Mask lie by the Mottled Skarr. Two traps the page
-doesn't spell out: the Curveclaw handed over to a Skarr loses its point until the Curvesickle, and
-the Silkshot's first repair closes the other two versions. Masks and spools count whole: four
+and in Act 2 the Fractured Mask lies by the Mottled Skarr. Three things go by what your save says
+rather than by the Act, as they lie by someone's corpse only once that someone is dead: the
+Curveclaw (the Mottled Skarr's while he lives, above his corpse after), the Magnetite Dice
+(Lumble's challenge, then by his body, Grindle's in Act 3) and the Weighted Belt (Mort's, by his
+corpse in Act 3 if you didn't buy it). With no save (Free mode), the Act decides. The Silkshot says
+what to do first, find the Ruined Tool in Bilewater (or, once you carry it, repair it), then each
+place that repairs it with its price, the Twelfth Architect's gone once he has left; its area is where
+to go now, and its pin shows all its marks on the Map, the Ruined Tool first while you lack it. A trap
+the page doesn't spell out: the Curveclaw handed over to a Skarr loses its point until the
+Curvesickle; and the Silkshot's first repair closes the other two versions. Masks and spools count whole: four
 shards or two fragments are 1%.
 
 "Nearest first" orders the missing things by rooms from your bench, the ones with no room after;
@@ -908,7 +953,7 @@ texts (`npm run text`), and the rules are in `CLAUDE.md`, "Translations".
 
 ## Credits and licences
 
-**Unofficial fan project**, free and non-commercial, not affiliated with or endorsed by
+**Unofficial fan project**, free, not affiliated with or endorsed by
 [Team Cherry](https://www.teamcherry.com.au/). *Hollow Knight: Silksong*, its artwork, sprites,
 texts and names are © Team Cherry; they're used here only to show the game's own information.
 
@@ -962,20 +1007,26 @@ for (LSSI art. 22.2, ePrivacy art. 5.3), and never leaves it:
 - IndexedDB: `pharloom-live`, a copy of each imported save (so a slot is read again when the
   site learns something new) and, only after "Follow the game", the save-file handle (`js/live.js`).
 - Save files are read in the browser; nothing is uploaded.
+- **Donations**: a plain link to [Ko-fi](https://ko-fi.com/betorzdev), "Support the site" in the
+  header after Share ("Ko-fi" alone on a phone), a line in the footer and the end of the About
+  block's "Is it free?" answer (`KOFI` in `js/app.js`, `tools/pages-text.js`; design/94b). Never
+  Ko-fi's widget: it loads third-party scripts, and the privacy notice says there are none.
 
 The visit counter is [Footworn](https://github.com/betorzdev/footworn) (`track()` in `js/app.js`;
 `404.html` loads it too, to see which broken addresses people land on), Albert's own, on a
 Cloudflare Worker in Western Europe. It sets no cookies, keeps no IP, and stores one row per visit
 with nothing that names you: the page, referrer host, browser and system families, screen width,
 language, country and the site's events (`screen` with `view` and `lang`, `lang`, `error` with
-`part`, `sister` with `to` (the other site's id), and the plain ones: `share`, `save-import`, `save-sync`...). The owner sees them as daily
+`part`, `msg` (the first 64 characters of what went wrong) and `at` (the script and line), `sister` with `to` (the other site's id), `support` with `at` (`header`, `footer` or `about`: which donation link was clicked), and the plain ones: `share`, `save-import`, `save-sync`...). The owner sees them as daily
 counts and, for today only, one by one, rounded (the minute, phone/tablet/desktop); its own
 record of what it stores is at footworn.betorzdev.workers.dev/privacy. That fits the AEPD's exemption for audience measurement ("Guía uso de
 cookies para herramientas de medición de audiencia", January 2024), whose one condition that
 falls on the site is to **inform** visitors: that's what the notice is for. GitHub Pages, the
-host, keeps technical logs (GDPR art. 13), which the notice also says. If the site ever adds ads,
-donations or a counter that stores something, this changes: a legal notice (LSSI art. 10) and,
-for ads, a consent banner.
+host, keeps technical logs (GDPR art. 13), which the notice also says. Since it takes donations (Ko-fi,
+"Credits and licences"), the footer also carries a folded **legal notice** (LSSI art. 10): who
+runs the site (`OWNER` in `js/app.js`), Spain, the contact address, and that donations are
+voluntary and unlock nothing. If the site ever adds ads or a counter that stores something, this
+changes again: for ads, a consent banner.
 
 ## Contact
 

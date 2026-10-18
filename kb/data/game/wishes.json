@@ -792,7 +792,11 @@
     "Rock Roller",
     "Rock Roller_item_Rock Rollers",
     78.46,
-    78.95
+    78.95,
+    {
+     "dead": "rockRollerDefeated_bone01",
+     "needs": {}
+    }
    ],
    [
     "bone_04",
@@ -800,7 +804,13 @@
     "Rock Roller",
     "Rock Roller_item_Rock Rollers",
     165.86,
-    22.31
+    22.31,
+    {
+     "dead": "rockRollerDefeated_bone06",
+     "needs": {
+      "bone03_openedTrapdoorForRockRoller": false
+     }
+    }
    ],
    [
     "bone_06",
@@ -808,7 +818,13 @@
     "Rock Roller",
     "Rock Roller_item_Rock Rollers",
     84.94,
-    40.44
+    40.44,
+    {
+     "dead": "rockRollerDefeated_bone06",
+     "needs": {
+      "bone03_openedTrapdoorForRockRoller": true
+     }
+    }
    ],
    [
     "bone_07",
@@ -816,7 +832,11 @@
     "Rock Roller",
     "Rock Roller_item_Rock Rollers",
     60.63,
-    25.83
+    25.83,
+    {
+     "dead": "rockRollerDefeated_bone07",
+     "needs": {}
+    }
    ]
   ],
   "Shell Flower": [
@@ -1245,7 +1265,8 @@
    null,
    "",
    -391.332,
-   78.805
+   78.805,
+   []
   ],
   [
    "Quest_Pin_BellbeastRescue_Aqueduct",
@@ -1254,7 +1275,17 @@
    null,
    "",
    -377.565,
-   75.787
+   75.787,
+   [
+    [
+     [
+      "FastTravelNPCLocation",
+      3,
+      1,
+      15
+     ]
+    ]
+   ]
   ],
   [
    "Quest_Pin_BellbeastRescue_Belltown",
@@ -1263,7 +1294,17 @@
    null,
    "",
    -395.3,
-   60.79
+   60.79,
+   [
+    [
+     [
+      "FastTravelNPCLocation",
+      3,
+      1,
+      5
+     ]
+    ]
+   ]
   ],
   [
    "Quest_Pin_BellbeastRescue_Bone",
@@ -1272,7 +1313,17 @@
    null,
    "",
    -402.876,
-   57.665
+   57.665,
+   [
+    [
+     [
+      "FastTravelNPCLocation",
+      3,
+      1,
+      13
+     ]
+    ]
+   ]
   ],
   [
    "Quest_Pin_BellbeastRescue_BoneforestEast",
@@ -1281,7 +1332,17 @@
    null,
    "",
    -379.813,
-   55.666
+   55.666,
+   [
+    [
+     [
+      "FastTravelNPCLocation",
+      3,
+      1,
+      3
+     ]
+    ]
+   ]
   ],
   [
    "Quest_Pin_BellbeastRescue_Bonetown",
@@ -1290,7 +1351,17 @@
    null,
    "",
    -405.957,
-   55.965
+   55.965,
+   [
+    [
+     [
+      "FastTravelNPCLocation",
+      3,
+      1,
+      1
+     ]
+    ]
+   ]
   ],
   [
    "Quest_Pin_BellbeastRescue_City",
@@ -1299,7 +1370,17 @@
    null,
    "",
    -387.603,
-   70.958
+   70.958,
+   [
+    [
+     [
+      "FastTravelNPCLocation",
+      3,
+      1,
+      9
+     ]
+    ]
+   ]
   ],
   [
    "Quest_Pin_BellbeastRescue_CoralTower",
@@ -1308,7 +1389,17 @@
    null,
    "",
    -408.909,
-   66.326
+   66.326,
+   [
+    [
+     [
+      "FastTravelNPCLocation",
+      3,
+      1,
+      6
+     ]
+    ]
+   ]
   ],
   [
    "Quest_Pin_BellbeastRescue_Docks",
@@ -1317,7 +1408,17 @@
    null,
    "",
    -391.808,
-   54.92
+   54.92,
+   [
+    [
+     [
+      "FastTravelNPCLocation",
+      3,
+      1,
+      2
+     ]
+    ]
+   ]
   ],
   [
    "Quest_Pin_BellbeastRescue_Greymoor",
@@ -1326,7 +1427,17 @@
    null,
    "",
    -387.312,
-   61.032
+   61.032,
+   [
+    [
+     [
+      "FastTravelNPCLocation",
+      3,
+      1,
+      4
+     ]
+    ]
+   ]
   ],
   [
    "Quest_Pin_BellbeastRescue_Peak",
@@ -1335,7 +1446,17 @@
    null,
    "",
    -405.066,
-   71.666
+   71.666,
+   [
+    [
+     [
+      "FastTravelNPCLocation",
+      3,
+      1,
+      11
+     ]
+    ]
+   ]
   ],
   [
    "Quest_Pin_BellbeastRescue_Shadow",
@@ -1344,7 +1465,17 @@
    null,
    "",
    -380.674,
-   66.863
+   66.863,
+   [
+    [
+     [
+      "FastTravelNPCLocation",
+      3,
+      1,
+      14
+     ]
+    ]
+   ]
   ],
   [
    "Quest_Pin_BellbeastRescue_Shellwood",
@@ -1353,7 +1484,17 @@
    null,
    "",
    -403.737,
-   62.29
+   62.29,
+   [
+    [
+     [
+      "FastTravelNPCLocation",
+      3,
+      1,
+      12
+     ]
+    ]
+   ]
   ],
   [
    "Quest_Pin_BellbeastRescue_Waterwheel",
@@ -1362,7 +1503,17 @@
    null,
    "",
    -378.841,
-   62.685
+   62.685,
+   [
+    [
+     [
+      "FastTravelNPCLocation",
+      3,
+      1,
+      7
+     ]
+    ]
+   ]
   ],
   [
    "Quest_Pin_Bellshrine_Bellhart",
@@ -1371,7 +1522,17 @@
    null,
    "",
    -394.961,
-   61.602
+   61.602,
+   [
+    [
+     [
+      "bellShrineBellhart",
+      0,
+      1,
+      0
+     ]
+    ]
+   ]
   ],
   [
    "Quest_Pin_Bellshrine_BoneForest",
@@ -1380,7 +1541,17 @@
    null,
    "",
    -401.218,
-   57.607
+   57.607,
+   [
+    [
+     [
+      "bellShrineBoneForest",
+      0,
+      1,
+      0
+     ]
+    ]
+   ]
   ],
   [
    "Quest_Pin_Bellshrine_Greymoor",
@@ -1389,7 +1560,17 @@
    null,
    "",
    -380.326,
-   62.006
+   62.006,
+   [
+    [
+     [
+      "bellShrineGreymoor",
+      0,
+      1,
+      0
+     ]
+    ]
+   ]
   ],
   [
    "Quest_Pin_Bellshrine_Shellwood",
@@ -1398,7 +1579,17 @@
    null,
    "",
    -404.94,
-   62.242
+   62.242,
+   [
+    [
+     [
+      "bellShrineShellwood",
+      0,
+      1,
+      0
+     ]
+    ]
+   ]
   ],
   [
    "Quest_Pin_Bellshrine_Wilds",
@@ -1407,7 +1598,17 @@
    null,
    "",
    -387.519,
-   55.205
+   55.205,
+   [
+    [
+     [
+      "bellShrineWilds",
+      0,
+      1,
+      0
+     ]
+    ]
+   ]
   ],
   [
    "Quest_Pin_Bellshrines_Final",
@@ -1416,7 +1617,8 @@
    null,
    "",
    -403.328,
-   67.556
+   67.556,
+   []
   ],
   [
    "Quest_Pin_BlackThread_Pt1",
@@ -1425,7 +1627,8 @@
    null,
    "",
    -409.996,
-   55.131
+   55.131,
+   []
   ],
   [
    "Quest_Pin_BlackThread_Pt2",
@@ -1434,7 +1637,8 @@
    null,
    "",
    -391.388,
-   46.124
+   46.124,
+   []
   ],
   [
    "Quest_Pin_BlackThread_Pt3",
@@ -1443,7 +1647,8 @@
    null,
    "",
    -391.608,
-   53.296
+   53.296,
+   []
   ],
   [
    "Quest_Pin_BlackThread_Pt4",
@@ -1452,7 +1657,8 @@
    null,
    "",
    -409.998,
-   55.137
+   55.137,
+   []
   ],
   [
    "Quest_Pin_BlackThread_Pt5_Ant",
@@ -1461,7 +1667,8 @@
    null,
    "",
    -375.027,
-   59.136
+   59.136,
+   []
   ],
   [
    "Quest_Pin_BlackThread_Pt5_Coral",
@@ -1470,7 +1677,8 @@
    null,
    "",
    -414.092,
-   70.786
+   70.786,
+   []
   ],
   [
    "Quest_Pin_BlackThread_Pt5_Flower",
@@ -1479,7 +1687,8 @@
    null,
    "",
    -405.098,
-   65.395
+   65.395,
+   []
   ],
   [
    "Quest_Pin_BlackThread_Pt5_Return",
@@ -1488,7 +1697,8 @@
    null,
    "",
    -409.998,
-   55.137
+   55.137,
+   []
   ],
   [
    "Quest_Pin_BlackThread_Pt6_Flower",
@@ -1497,7 +1707,8 @@
    null,
    "",
    -391.378,
-   46.075
+   46.075,
+   []
   ],
   [
    "Quest_Pin_Citadel_Ascent",
@@ -1506,7 +1717,8 @@
    null,
    "",
    -391.36,
-   74.846
+   74.846,
+   []
   ],
   [
    "Quest_Pin_Citadel_Ascent_Lift",
@@ -1515,7 +1727,8 @@
    null,
    "",
    -391.388,
-   79.716
+   79.716,
+   []
   ],
   [
    "Quest_Pin_Citadel_Ascent_Melodies",
@@ -1524,7 +1737,8 @@
    null,
    "",
    -391.358,
-   74.836
+   74.836,
+   []
   ],
   [
    "Quest_Pin_Citadel_Investigate",
@@ -1533,7 +1747,8 @@
    null,
    "",
    -390.608,
-   72.846
+   72.846,
+   []
   ],
   [
    "Quest_Pin_Citadel_Seeker",
@@ -1542,7 +1757,8 @@
    null,
    "",
    -402.413,
-   67.582
+   67.582,
+   []
   ],
   [
    "Quest_Pin_Conductor",
@@ -1551,7 +1767,8 @@
    null,
    "",
    -396.32,
-   75.656
+   75.656,
+   []
   ],
   [
    "Quest_Pin_Delivery_Bonebottom",
@@ -1560,7 +1777,8 @@
    null,
    "",
    -405.934,
-   55.563
+   55.563,
+   []
   ],
   [
    "Quest_Pin_Delivery_Dustpens",
@@ -1569,7 +1787,8 @@
    null,
    "",
    -377.912,
-   64.197
+   64.197,
+   []
   ],
   [
    "Quest_Pin_Delivery_Fixer",
@@ -1578,7 +1797,8 @@
    null,
    "",
    -399.708,
-   56.386
+   56.386,
+   []
   ],
   [
    "Quest_Pin_Delivery_Fleatopia",
@@ -1587,7 +1807,8 @@
    null,
    "",
    -371.722,
-   74.145
+   74.145,
+   []
   ],
   [
    "Quest_Pin_Delivery_GourmandMeat",
@@ -1596,7 +1817,8 @@
    "Courier Supplies Gourmand",
    "",
    -392.523,
-   73.275
+   73.275,
+   []
   ],
   [
    "Quest_Pin_Delivery_MaskMaker",
@@ -1605,7 +1827,8 @@
    null,
    "",
    -413.767,
-   78.698
+   78.698,
+   []
   ],
   [
    "Quest_Pin_Delivery_PilgrimsRest",
@@ -1614,7 +1837,8 @@
    null,
    "",
    -380.06,
-   57.376
+   57.376,
+   []
   ],
   [
    "Quest_Pin_Delivery_Songclave",
@@ -1623,7 +1847,8 @@
    null,
    "",
    -385.138,
-   74.856
+   74.856,
+   []
   ],
   [
    "Quest_Pin_DivingBell_Pt1",
@@ -1632,7 +1857,8 @@
    null,
    "",
    -386.589,
-   52.161
+   52.161,
+   []
   ],
   [
    "Quest_Pin_DivingBell_Pt2",
@@ -1641,7 +1867,8 @@
    null,
    "",
    -388.568,
-   54.746
+   54.746,
+   []
   ],
   [
    "Quest_Pin_DivingBell_Pt3",
@@ -1650,7 +1877,8 @@
    null,
    "",
    -386.59,
-   52.172
+   52.172,
+   []
   ],
   [
    "Quest_Pin_Haunted_Bellhart",
@@ -1659,7 +1887,8 @@
    null,
    "",
    -395.661,
-   61.602
+   61.602,
+   []
   ],
   [
    "Quest_Pin_Librarian",
@@ -1668,7 +1897,8 @@
    null,
    "",
    -383.968,
-   71.03
+   71.03,
+   []
   ],
   [
    "Quest_Pin_Librarian Return",
@@ -1677,7 +1907,8 @@
    null,
    "",
    -383.848,
-   73.155
+   73.155,
+   []
   ],
   [
    "Quest_Pin_Silk_Defeat",
@@ -1686,7 +1917,8 @@
    null,
    "",
    -391.828,
-   82.646
+   82.646,
+   []
   ],
   [
    "Quest_Pin_Silk_Defeat_Snare",
@@ -1695,7 +1927,8 @@
    null,
    "",
    -391.028,
-   82.646
+   82.646,
+   []
   ],
   [
    "Quest_Pin_SteelSoul_Aqueduct_05",
@@ -1704,7 +1937,8 @@
    null,
    "Aqueduct_05",
    -369.088,
-   74.656
+   74.656,
+   []
   ],
   [
    "Quest_Pin_SteelSoul_Aspid_01",
@@ -1713,7 +1947,8 @@
    null,
    "Aspid_01",
    -407.152,
-   61.173
+   61.173,
+   []
   ],
   [
    "Quest_Pin_SteelSoul_Bone_East_14",
@@ -1722,7 +1957,8 @@
    null,
    "Bone_East_14",
    -375.168,
-   55.056
+   55.056,
+   []
   ],
   [
    "Quest_Pin_SteelSoul_Coral_28",
@@ -1731,7 +1967,8 @@
    null,
    "Coral_28",
    -414.702,
-   70.548
+   70.548,
+   []
   ],
   [
    "Quest_Pin_SteelSoul_Final",
@@ -1740,7 +1977,8 @@
    null,
    "",
    -415.288,
-   54.956
+   54.956,
+   []
   ],
   [
    "Quest_Pin_SteelSoul_Hang_08",
@@ -1749,7 +1987,8 @@
    null,
    "Hang_08",
    -393.308,
-   78.736
+   78.736,
+   []
   ],
   [
    "Quest_Pin_SteelSoul_Pt2",
@@ -1758,7 +1997,8 @@
    null,
    "",
    -404.378,
-   64.286
+   64.286,
+   []
   ],
   [
    "Quest_Pin_SteelSoul_Shellwood_26",
@@ -1767,7 +2007,8 @@
    null,
    "Shellwood_26",
    -398.778,
-   63.574
+   63.574,
+   []
   ]
  ],
  "quests": {

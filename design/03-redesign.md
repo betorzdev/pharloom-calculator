@@ -40,7 +40,7 @@ the work up reads it first, then the step it's on.
 | 1 | **The shell**: header, screen bar (desktop and phone), the screen's frame and title, footer and About, the atmosphere | **Built** (28 Sep) | [`04-shell-variants.html`](04-shell-variants.html) |
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct; the summary, 16 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html`, `89-your-game-summary-variants.html` |
-| 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html` |
+| 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct; the Silkeater 18 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html`, `91-silkeater-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the road to Act 2 fixed, with the Phantom's way beside it, 16 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html`, `90c-act2-road-variants.html` |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct; their leftovers 16 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html`, `89-map-leftovers-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct; every room of an entry 16 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
@@ -50,6 +50,7 @@ the work up reads it first, then the step it's on.
 | 6c | The Map's people: everyone in the world and every place that sells | **Built** (11 Oct) | `30-map-people-variants.html` (kept out of the repo) |
 | 6b | The Map's admin mode (`#view=map&admin=1`): the panel, adding, the save check, hide and delete, the marks | **Built** (11 Oct) | `30-map-admin-variants.html` (kept out of the repo) |
 | 1c | The site's icon: the favicon, the home-screen icon | **Built** (14 Oct) | `72-site-icon-variants.html` (kept out of the repo) |
+| 1d | The donation link (Ko-fi) | **Built, draft** (18 Oct) | `94-donate-variants.html`, `94b-donate-variants.html` (kept out of the repo) |
 
 ## Step 1 · The shell
 
@@ -699,6 +700,26 @@ under an `.inv-sub` named with Progress's `pgOtherArts` (the game has no name fo
 true)` adds the maximum in the materials and the plates (the loose shards and fragments keep theirs
 in the row beside); the Hunter Crest's art is `assets/crests/hunter-<stage>.webp` from stage 2 (the
 wiki's «Hunter Crest Inventory 2/3», the Crest screen's art), its stage from Eva's rewards.
+
+### The Silkeater (18 October 2026)
+
+Albert: the Silkeater (`INV_NAME_SILK_GRUB`, «Devoraseda») is a plain item, consumed to bring the
+cocoon back, and it should show in the Inventory; the Map drew it with `pin_grub_location`, a sprite
+of the game's map atlas whose name comes from Hollow Knight's grub pin (it's in that game's
+`resources.assets` too): nothing in Silksong marks Silkeaters on its map. The save keeps how many
+Hornet holds as the Collectables' `"Silk Grub"` Amount (read over the author's 87 saves: 0 to 7;
+the wiki's infobox says 10 at most). `91-silkeater-variants.html` (the real Inventory's markup from
+a save, the real Map before and after; kept out of the repo) drew 1 · where in the Inventory: **A**
+the purse, a row of its own under the two currencies (the wiki's Items page lists it among the
+Consumables, with the strings and bundles), B the purse as a big figure, C a plate among the items,
+D a row of ten under Hornet's Silk Hearts; 2 · the Map's mark: **A** the item's picture in the
+round badge, as the Mossberries', B the pin, as it was.
+
+**Decision: A and A** (Albert, 18 October 2026). `js/savefile.js` reads `silkeaters` (up to
+`js/data.js` ITEMS' `max`, from the wiki's infobox); the purse draws it as the Memory Locket's row
+(`mat`), − N + in Free mode; its text is the game's two lines in one paragraph
+(`INV_DESC_SILK_GRUB+INV_DESC_SILK_GRUB_FUNCTION`). The Map's layer, marks and card use
+`assets/icons/extras/silkeater.webp`. Your game is unchanged.
 
 ## Step 5 · Progress
 
@@ -1559,6 +1580,14 @@ switch (`OWN_SWITCH`, the Void Mass) isn't drawn; the groups as chosen; `layout(
 same check in the same scene goes in once, and the Heart Memento has no mark
 (`test/spots.test.js`).
 
+«Only the 100%» audited again (18 October 2026): its 124 marks are exactly the 100% in Free mode
+and in all 87 of Albert's save files. The area cards added up to 118: the Songclave (two rooms) had
+no name, so its six were in no card. The options (`93-only-hundred-variants.html`, kept out of
+the repo) also asked whether the button shows it's on, toggles back, or touches «Show Completed»
+and the cocoon. **Decision:** only the Songclave's name and card (Albert, 18 October 2026): an area
+of three rooms or fewer is named when it holds a thing of the 100% (`AREA_NAMES`); the button
+stays as it was.
+
 ### The save checks (16 October 2026)
 
 Albert: «haz una revision profunda de todos los interruptores del mapa», part 2: does each mark's
@@ -2201,3 +2230,22 @@ from below (`--ember-glow`, the same gradient), B plain (as it was), C transpare
 
 A and A. `tools/site-icons.py` cuts the head from the sprite and draws `--ember-glow` over `--bg`,
 both read from `css/tokens.css`; `npm run site-icons` writes the four files.
+
+## Step 1d · The donation link
+
+### The options (18 October 2026)
+
+Always a plain link to Ko-fi, never its widget (third-party scripts, against the privacy notice).
+`94-donate-variants.html` drew it low on the page: 1 · where, A the footer, **B** the footer and
+the end of the About block's "Is it free?" answer, C those and a block of its own in About; 2 · its
+look, **A** a text link, B with a drawn cup, C a small outlined button. Albert: too low, nobody
+scrolls there. `94b-donate-variants.html` (a copy of `index.html` with the options injected)
+drew it where it's seen: 1 · **A** the header after Share, B a quiet line under the screen's
+frame, C both; 2 · **A** text like Share, B with the cup, C a small button. The footer and the FAQ
+carry it in every option.
+
+### Decision (18 October 2026)
+
+A and A: "Support the site" («Apoya la web») after Share, set apart by the same thin rule as the
+language, "Ko-fi" alone on a phone; plus the footer line and the FAQ's. Left in a draft PR.
+

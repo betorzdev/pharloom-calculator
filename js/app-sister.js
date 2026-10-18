@@ -51,6 +51,12 @@
     return { l: r.left - p.left, t: r.top - p.top, w: r.width, cx: r.left - p.left + r.width / 2 };
   };
 
+  /* ── His strips, fetched once at the start: a move's strip only asked for when it's shown left
+     him blank until it came (the site over the network, not file://), and the first hover on the
+     link, just before a click, was such a move: he vanished as you clicked. Kept here so they stay. ── */
+  let strips = [];
+  const fetchStrips = () => { if (!still()) strips = Object.keys(M).map((name) => Object.assign(new Image(), { src: `assets/knight/${name}.png` })); };
+
   /* ── The Knight: one element, his move's strip as its background; placed by his pivot ── */
   const kn = {
     el: null, x: 0, y: 0, dir: 1, name: '', i: 0, anim: null, done: null, state: '',
@@ -151,6 +157,7 @@
     if (started) return;
     started = true;
     kn.make();
+    fetchStrips();
     // The masthead in view: his life pauses without it.
     if ('IntersectionObserver' in window) new IntersectionObserver((es) => { inView = es[0].isIntersecting; }).observe(el.masthead);
     addEventListener('resize', () => sync());

@@ -15,7 +15,12 @@ What it reads (read on 11-Oct-2026, patch 1.0.30000):
         (SavedItemGet: the Maiden's and the Hermit's Souls), and each PersistentEnemyItemDrop (the
         Flintbeetles: it names the quest, and drops its target): [scene, component, object, bool, x, y],
         bool the sceneData flag the object keeps (its PersistentBoolItem's ID, else the object's
-        name; a PersistentEnemyItemDrop's is "<object>_item_<quest>"), null when it has none;
+        name; a PersistentEnemyItemDrop's is "<object>_item_<quest>"), null when it has none; a
+        PersistentEnemyItemDrop's ends in { dead, needs }: the playerData bool its enemy's death
+        sets (EnemyDeathEffectsRegular: one Flintbeetle has two places, Bone_04 and Bone_06, and
+        either death sets rockRollerDefeated_bone06), and the playerData bools it or a parent needs
+        to be there (DeactivateIfPlayerdataTrue / False: Bone_04's only while
+        bone03_openedTrapdoorForRockRoller is false, Bone_06's once it's true), field → value;
       - each of DROPPERS' FSMs, a spot where a wish's target drops by chance while the wish is
         active (its CheckQuestStateV2 names the wish): the Silver Bells' seven spots above
         Bellhart and seven below (component QuestDropper, no flag);
@@ -28,8 +33,11 @@ What it reads (read on 11-Oct-2026, patch 1.0.30000):
       - the FSMs that name a playerData field MushroomQuestFound<n> (the Herald's seven spots).
   maps_assets_all.bundle  the map's own quest pins (Game_Map_Hornet / Main Quest Pins: each a
       QuestMapMarker with its quest, or the delivery item it stands for, and the scene it's for
-      when the save chooses among several: the Steel Sentinel's), in world units, with the bench
-      pins' world places (tools/gen-spots.js puts the quest pins on the map by them).
+      when the save chooses among several: the Steel Sentinel's), in world units, and what
+      switches it off (its DeactivatePlayerDataTest: a list of test groups, each a list of
+      [field, Type, NumType, IntValue]; the Bellbeast's pins, off while FastTravelNPCLocation
+      isn't their station's), with the bench pins' world places (tools/gen-spots.js puts the
+      quest pins on the map by them).
   collectables/collectableitems.bundle  each target's name in the game's text (displayName).
   atlases: each target's inventory sprite and the emblems of EMBLEMS' wish types, saved to
       assets/map/icons/<sprite, lower case>.webp, at most 128 px.
@@ -51,6 +59,9 @@ END = {'EndQuest', 'EndQuestV2', 'TryEndQuestV2'}
 # The actions that offer a quest (as tools/extract-quests.py maps an offer to its scene).
 OFFER = {'QuestYesNo', 'QuestYesNoV2', 'BeginQuest', 'BeginQuestV2', 'CanBeginQuest'}
 GIVE = {'CollectableItemCollect', 'SavedItemGet', 'SavedItemGetV2'}
+# What says where an enemy that drops a target is (the Flintbeetles): the bool its death sets, and
+# the bools that take it (or a parent) away.
+SPAWN = {'EnemyDeathEffectsRegular', 'DeactivateIfPlayerdataTrue', 'DeactivateIfPlayerdataFalse'}
 FSM_OBJECT = 24   # PlayMaker's ParamDataType.FsmObject
 FIELD = re.compile(rb'MushroomQuestFound\d')
 MAX = 128
@@ -109,10 +120,14 @@ def scene(args):
         return targets.get(cab.lower(), {}).get(r['m_PathID'])
 
     bools, found = {}, []   # GameObject → its PersistentBoolItem's ID; (kind, gid, …)
+    spawn = {}   # GameObject → its SPAWN components, read only for an enemy that drops a target
     for o in env.objects:
         if o.type.name != 'MonoBehaviour':
             continue
         cls = script_of(o)
+        if cls in SPAWN:
+            spawn.setdefault(struct.unpack_from('<q', o.get_raw_data(), 4)[0], []).append((cls, o))
+            continue
         if cls not in ('CollectableItemPickup', 'PersistentEnemyItemDrop', 'PersistentBoolItem', 'PlayMakerFSM'):
             continue
         raw = o.get_raw_data()
@@ -155,6 +170,24 @@ def scene(args):
             ref = at(o.assets_file, tt.get('item'))
             if ref:
                 found.append((cls, gid, ref))
+    def spawned(gid):
+        """An enemy that drops a target: the playerData bool its death sets (dead), and the bools its
+        object and its parents need to be there (needs: field → value; a DeactivateIfPlayerdata<True|False>
+        with no object of its own takes its own object away)."""
+        dead, needs, g = None, {}, gid
+        while g:
+            for cls, o in spawn.get(g, []):
+                tt = o.read_typetree()
+                if cls == 'EnemyDeathEffectsRegular':
+                    if g == gid:
+                        dead = tt.get('setPlayerDataBool') or None
+                elif tt.get('boolName') and not (tt.get('objectToDeactivate') or {}).get('m_PathID'):
+                    needs[tt['boolName']] = cls == 'DeactivateIfPlayerdataFalse'
+            t = of_go.get(g)
+            f = t.m_Father.m_PathID if t is not None else 0
+            g = T[f].m_GameObject.m_PathID if f in T else 0
+        return {'dead': dead, 'needs': dict(sorted(needs.items()))}
+
     out = {'items': [], 'ends': [], 'fields': [], 'offers': []}
     for f in found:
         gid = f[1]
@@ -170,7 +203,7 @@ def scene(args):
                 out['items'].append([f[2][0], name, f[0], go, flag, *xy])
         elif f[0] == 'PersistentEnemyItemDrop':
             # It names the quest, and drops its target (main() files it under the target).
-            out['items'].append([f[2][0], name, f[0], go, f'{go}_item_{f[2][0]}', *xy])
+            out['items'].append([f[2][0], name, f[0], go, f'{go}_item_{f[2][0]}', *xy, spawned(gid)])
         else:
             for q in f[2]:
                 out['ends'].append([q, name, go, *xy])
@@ -233,7 +266,7 @@ def pins(game):
             continue
         if 'Main Quest Pins' not in names:
             continue
-        sprite, marker = None, None
+        sprite, marker, off = None, None, []
         for c in comps:
             if c.type.name == 'SpriteRenderer':
                 try:
@@ -244,12 +277,14 @@ def pins(game):
                 tt = c.read_typetree()
                 if cls.get(tt['m_Script']['m_PathID']) == 'QuestMapMarker':
                     marker = (c, tt)
+                elif cls.get(tt['m_Script']['m_PathID']) == 'DeactivatePlayerDataTest':
+                    off += [[[x['FieldName'], x['Type'], x['NumType'], x['IntValue']] for x in g['Tests']] for g in tt['test']['TestGroups']]
         if not marker or not sprite:
             continue
         c, tt = marker
         quest = ref_name(c, tt.get('quest'))
         item = ref_name(c, tt.get('collectableItem'))
-        quest_pins.append([go.m_Name, sprite, quest, item, tt.get('targetSceneName') or '', *world(ts)])
+        quest_pins.append([go.m_Name, sprite, quest, item, tt.get('targetSceneName') or '', *world(ts), off])
     return sorted(quest_pins), dict(sorted(benches.items()))
 
 
