@@ -1979,3 +1979,31 @@ corroboration, never a web guide:
 Checked: npm test, the text audit, check-pack on the 77 saves (nothing changes in its counts), and
 Progress in headless Chrome at 1440 and 390, es and en, on the cursed save, a clean Act 2 save
 (Restore_Points1/restoreData18) and Free mode with every station open.
+
+**A Tool in two places, and caches that only hold an item** (18 October 2026, Albert saw the
+Curveclaw in two places). The Map marked the Curveclaw only at the Mottled Skarr's shop, and
+Ant_21's `ant_item_string`, which holds it, among the rosary caches. Read in the game's scenes:
+that string is on only once the Skarr is dead (DeactivateIfPlayerdataFalse antMerchantKilled; he
+dies after the Cogwork Dancers, the First Shrine's bell or the Clawline and a rest outside Hunter's
+March) and while Curve Claws isn't unlocked (ToolGameObjectActivator); its bool is set when it's
+struck down. The Weighted Belt is the same case: Bone_East_07's «Mort Death Scene» is on only when
+mortKeptWeightedAnklet. `tools/gen-spots.js` now finds every Tool whose ways are a shop and
+'found' with its pickup in another room (these two only) and writes `js/spots.js ALSO`, the room
+and the check (`['tool', name]` joins the checks); the Map draws the mark there alone when the
+save says so (`savefile.js elsewhere`), at the shop otherwise (its card then says the shop, not
+the Act's 'found' way), and both with no save. Progress chooses the same way: a 'found' way may
+carry `when` (`tools/gen-how.js WHEN`, the check the scene gives), which a save that has said
+(`savefile.js foundNow`, `foundRead`) takes over the Act (`completion.js wayOf`); the Act still
+decides in Free mode and in a slot kept before. The sweep of every thing with several ways found
+one more: the Magnetite Dice lie by Lumble's body only when dicePilgrimState is 1 (his
+Control FSM: 0 he plays, 2 departed) and outside Act 3, under Coral_33's «Normal World»; the
+others (Pebb's and Mort's wares at Grindle's, the Tacks, Loddie's Tool Pouch) are the Act's. And
+the caches: the four ant_item_strings
+(BreakableHolders with no holdingGameObjects, unlike the ant_rosary_strings) and Dock_03's City
+Shard Chest (its Chest Control's Shards and Geo counts at 0, where Bone_19's Bone Chest has 8 and
+20) pay nothing and only hold an item on their own point, each marked already (two Rosary
+Necklaces, the Ant Trapper's item, the Craftmetal, the Curveclaw): left out of the Secrets.
+Checked on the 87 saves now in the folder: Skarr alive in 21 (shop), dead in 66 (Ant_21; 18
+found it there), Mort's belt by his corpse in 15. None bought the Curveclaw, so that case is the
+test's only. On Progress, 4 Act 2 saves with the Skarr and Lumble alive now read the shop and the
+challenge, where the Act alone said found.

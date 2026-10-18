@@ -328,6 +328,24 @@ for (const id of OTHER_TOOLS) {
   if (OTHER_WISH[id]) WAY_OF['tools:' + id] = { kind: 'wish', quest: OTHER_WISH[id] };
   put('tools', id, s, 'tool ' + id);
 }
+/* A Tool sold that lies in another room once its seller is gone (its ways a shop and 'found', the
+   pickup in a room other than the vendor's): ALSO, that room and the save check that says the
+   game has it there, its 'found' way's when (tools/gen-how.js WHEN, read in the game's scenes:
+   the Curveclaw in Ant_21 once the Mottled Skarr is dead, the Weighted Belt by Mort's corpse).
+   One with no when stops the run: its scene is read again. */
+const ALSO = {};
+{
+  const room = (s) => (R.roomOf(s) || {}).scene;
+  for (const ids of CO.COUNTED) {
+    const id = ids[0], ways = H.HOW.tools[id] || [], scene = AT.tools[id];
+    if (!ways.some((w) => w.kind === 'shop') || !ways.some((w) => w.kind === 'found')) continue;
+    const apart = [...new Set(CO.TOOLS[id].flatMap(lying))].filter((s) => room(s) !== room(scene));
+    if (!apart.length) continue;
+    if (apart.length > 1) fail(`tools ${id} lies in ${apart.join(', ')} apart from its seller: choose one`);
+    const when = ways.find((w) => w.kind === 'found').when;
+    ALSO['tools:' + id] = [apart[0], when || fail(`tools ${id} lies in ${apart[0]} once its seller is gone: read its scene for the check that says so (tools/gen-how.js WHEN)`)];
+  }
+}
 for (const cat of ['crests', 'skills', 'arts']) {
   for (const id of Object.keys(CO.WHERE[cat])) {
     const hand = HAND[cat][id];
@@ -419,8 +437,30 @@ const extra = (kind, it, name) => {
      the list (js/map-fixes.js keys by it). */
   const purse = /-cache$/.test(kind) && c[0] === 'bool' && lyingPurse(c);
   if (purse) { EXTRAS.push([purse[2] === 'rosaries' ? 'rosaries' : 'shards', null, c, s, purse[3].name, { item: purse[0] }]); return; }
+  const held = /-cache$/.test(kind) && heldItem(c);
+  if (held) { HELD.push([held, s, it.name]); return; }
   EXTRAS.push([kind, it.whichAct || 0, c, s, name]);
 };
+/* A "cache" that only holds an item isn't one: the four ant_item_strings the completionist files
+   among the rosary caches (Ant_04_left, Ant_21, Bone_East_18b, Bone_East_24) pay nothing (read in
+   the game's scenes, 18-Oct-2026: a BreakableHolder with no holdingGameObjects, where the ant_rosary
+   _strings beside them hold rosaries), nor does Dock_03's City Shard Chest among the shell shard
+   caches (its Chest Control's Shards and Geo counts are 0, where Bone_19's Bone Chest has 8 and
+   20); each only lets fall the item it keeps, which lies on its own point (pickups.json objects and
+   lying). That item has its own mark where it lies (a Rosary Necklace among the rosaries, the Ant
+   Trapper's item among the wishes', the Craftmetal among the 100%'s, the Curveclaw among the
+   Tools: ALSO, below), so the holder is left out, not drawn twice on two layers.
+   The item on a cache's point → its save name, else null. */
+const HELD = [];
+function heldItem(c) {
+  if (!['bool', 'int'].includes(c[0])) return null;
+  const o = (P.objects[c[1].toLowerCase()] || {})[c[2]];
+  if (!o) return null;
+  for (const [save, at] of Object.entries(P.lying || {})) {
+    if (at.some(([sc, , x, y]) => sc.toLowerCase() === c[1].toLowerCase() && Math.abs(x - o[0]) < 0.1 && Math.abs(y - o[1]) < 0.1)) return save;
+  }
+  return null;
+}
 // A sceneData bool → [item id, save name, 'rosaries' or 'shards', the item] if it's a PURSE pickup lying there.
 function lyingPurse(c) {
   for (const [id, save, cur] of CO.PURSE) {
@@ -1004,6 +1044,10 @@ for (const id of OTHER_TOOLS) {
   const scene = AT.tools[id], hand = OTHER_HAND[id];
   put2('tools:' + id, hand ? entryAt((P.items[hand[0]] || {}).at, scene) : CO.TOOLS[id].map((n) => itemAt(n, scene)).find(Boolean));
 }
+// A Tool's other room (ALSO): where it lies there.
+for (const [key, [scene]] of Object.entries(ALSO)) {
+  put2(key + ':found', CO.TOOLS[key.slice(6)].map((n) => itemAt(n, scene)).find(Boolean) || fail(`${key} has no point in ${scene}`));
+}
 for (const cat of ['crests', 'skills', 'arts']) {
   for (const [id, hand] of Object.entries(HAND[cat])) {
     const scene = AT[cat][id];
@@ -1350,6 +1394,16 @@ const TASKS = [];
   const n = (k) => TASKS.filter((x) => x[0] === k).length;
   console.log(`tasks: ${n('qitem')} wish items, ${n('wspot')} places where a wish is done, ${n('goal')} objective pins`);
 }
+// The caches that only hold an item (HELD, above): that item has a mark of its own in that room, by
+// its pickup's bool (a piece of the 100%, a rosary item, a wish's item) or as a Tool's other room.
+for (const [save, scene, name] of HELD) {
+  const bids = new Set(P.lying[save].filter(([s]) => lower(s) === lower(scene)).map(([, b]) => b));
+  const names = (c) => boolsOf(c).some(([, s, b]) => lower(s) === lower(scene) && bids.has(b));
+  const own = CO.PIECES.some((p) => names(p[2])) || EXTRAS.some((x) => names(x[2])) || TASKS.some((x) => names(x[2]))
+    || Object.entries(ALSO).some(([k, [s]]) => lower(s) === lower(scene) && CO.TOOLS[k.slice(6)].includes(save));
+  if (!own) fail(`${name} holds ${save}, which has no mark of its own in ${scene}`);
+}
+console.log(`caches that only hold an item, left out: ${HELD.map(([save, scene]) => scene + ' ' + save).join(', ')}`);
 
 // The Map admin's fixes keyed by an index of these lists follow their marks (stops the run if one can't).
 require('./follow-fixes.js').run('spots', { EXTRAS, TASKS, VENDORS, XY });
@@ -1366,6 +1420,11 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               act: { key: Act } for what's outside the 100% and js/collectibles.js WHERE lacks }:
               where each thing of the 100% is had (its pickup, its vendor, its Wishwall, its
               boss's arena, its giver)
+     ALSO     a thing's key ('tools:<id>') → [scene, check]: a Tool sold that lies in another room
+              once its seller is gone (the Curveclaw once the Mottled Skarr dies, the Weighted Belt
+              once Mort does), that room, and the check that says the game has it there (its point:
+              XY '<key>:found'); check as EXTRAS', plus ['tool', name] (that Tool unlocked) and
+              ['not', check]
      EXTRAS   [kind, act, check, scene, name?, more?]: what doesn't count (relics by kind, mossberry,
               silkeater, memento, bellhome, spawn, rosary-cache, shard-cache, wall, then lever,
               plate, gate, lock, shortcut, silkwall from the game's scenes, then map, rosaries,
@@ -1395,7 +1454,7 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               under assets/map/, name the thing's (a wish's and an objective's are the quest's),
               mode 'steel' when only Steel Soul has it, steel the spot's scene when the save
               chooses it (SteelQuestSpots), gone 'act3' when the game takes it away as Act 3 begins
-     XY       a thing's key ('piece:<i>', 'tools:<id>', 'arts:<id>', 'extra:<i>'…, 'person:<id>',
+     XY       a thing's key ('piece:<i>', 'tools:<id>', 'tools:<id>:found', 'arts:<id>', 'extra:<i>'…, 'person:<id>',
               'board:<scene>', 'bell:<field>', 'task:<i>', 'shakra:<i>', 'shop:<vendor>:<i>', 'giver:<scene>', 'boss:<foe>', 'journal:<entry>', 'gaunt:<id>',
               'everbloom') → its point on the map, in the image's pixels: where
               the game has it in its room (the object's place in the scene, or whoever stands for it,
@@ -1410,7 +1469,7 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               lists the wishes on theirs; tools/gen-people.js doesn't draw them again. 'room:who'
               for a wish someone else offers in that room
      QUEST_GIVER  such a wish → its 'room:who'`,
-'spots', [['AT', AT], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['TASKS', TASKS], ['XY', XY], ['SEATS', SEATS], ['GIVER', GIVERS], ['QUEST_GIVER', QUEST_GIVER]]);
+'spots', [['AT', AT], ['ALSO', ALSO], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['TASKS', TASKS], ['XY', XY], ['SEATS', SEATS], ['GIVER', GIVERS], ['QUEST_GIVER', QUEST_GIVER]]);
 const kinds = {};
 for (const x of EXTRAS) kinds[x[0]] = (kinds[x[0]] || 0) + 1;
 console.log(`js/spots.js  ${placed.length} things of the 100% placed, ${EXTRAS.length} extras (${Object.entries(kinds).map(([k, n]) => n + ' ' + k).join(', ')}), `

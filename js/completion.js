@@ -64,9 +64,18 @@
      wishes (WISHES indices) a shop waits on that the game hasn't done (Frey's Multibinder after My
      Missing Courier); arts: the abilities it asks for (playerData has* flags, as js/savefile.js
      ART_PD) that the game lacks (Grindle's Snitch Pick, the Clawline). */
-  function wayOf(ways, game, artPd = {}) {
+  /* A 'found' way with a when (its owner dead: the Curveclaw in Ant_21, the Weighted Belt by Mort,
+     the Magnetite Dice by Lumble) is the save's to say, not the Act's: key (the thing's 'cat:id')
+     in a game whose save has said (foundRead) takes that way while it lies there (foundNow), and
+     one of the others, by the Act, while it doesn't. With no word (Free mode, a slot kept before),
+     the Act decides alone. */
+  function wayOf(ways, game, artPd = {}, key = '') {
     const g = game || null;
-    const way = (ways && ((g && ways.filter((x) => x.act && x.act <= g.act).pop()) || ways[0])) || null;
+    let pool = ways;
+    if (g && g.foundRead && key && ways && ways.some((x) => x.when)) {
+      pool = (g.foundNow || []).includes(key) ? ways.filter((x) => x.when) : ways.filter((x) => !x.when);
+    }
+    const way = (pool && ((g && pool.filter((x) => x.act && x.act <= g.act).pop()) || pool[0])) || null;
     if (!way) return { way: null, first: [], arts: [] };
     const artOf = Object.fromEntries(Object.entries(artPd).map(([id, f]) => [f, id]));
     return {
