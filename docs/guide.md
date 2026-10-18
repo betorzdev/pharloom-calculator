@@ -932,7 +932,7 @@ texts (`npm run text`), and the rules are in `CLAUDE.md`, "Translations".
 
 ## Credits and licences
 
-**Unofficial fan project**, free and non-commercial, not affiliated with or endorsed by
+**Unofficial fan project**, free, not affiliated with or endorsed by
 [Team Cherry](https://www.teamcherry.com.au/). *Hollow Knight: Silksong*, its artwork, sprites,
 texts and names are © Team Cherry; they're used here only to show the game's own information.
 
@@ -996,14 +996,16 @@ The visit counter is [Footworn](https://github.com/betorzdev/footworn) (`track()
 Cloudflare Worker in Western Europe. It sets no cookies, keeps no IP, and stores one row per visit
 with nothing that names you: the page, referrer host, browser and system families, screen width,
 language, country and the site's events (`screen` with `view` and `lang`, `lang`, `error` with
-`part`, `msg` (the first 64 characters of what went wrong) and `at` (the script and line), `sister` with `to` (the other site's id), and the plain ones: `share`, `save-import`, `save-sync`...). The owner sees them as daily
+`part`, `msg` (the first 64 characters of what went wrong) and `at` (the script and line), `sister` with `to` (the other site's id), `support` with `at` (`header`, `footer` or `about`: which donation link was clicked), and the plain ones: `share`, `save-import`, `save-sync`...). The owner sees them as daily
 counts and, for today only, one by one, rounded (the minute, phone/tablet/desktop); its own
 record of what it stores is at footworn.betorzdev.workers.dev/privacy. That fits the AEPD's exemption for audience measurement ("Guía uso de
 cookies para herramientas de medición de audiencia", January 2024), whose one condition that
 falls on the site is to **inform** visitors: that's what the notice is for. GitHub Pages, the
-host, keeps technical logs (GDPR art. 13), which the notice also says. If the site ever adds ads,
-donations or a counter that stores something, this changes: a legal notice (LSSI art. 10) and,
-for ads, a consent banner.
+host, keeps technical logs (GDPR art. 13), which the notice also says. Since it takes donations (Ko-fi,
+"Credits and licences"), the footer also carries a folded **legal notice** (LSSI art. 10): who
+runs the site (`OWNER` in `js/app.js`), Spain, the contact address, and that donations are
+voluntary and unlock nothing. If the site ever adds ads or a counter that stores something, this
+changes again: for ads, a consent banner.
 
 ## Contact
 
