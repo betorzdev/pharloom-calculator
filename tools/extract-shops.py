@@ -18,10 +18,14 @@ How the game does it (read on 28-Sep-2026, patch 1.0.30000):
     the reward is given by the quest itself. The rest are given by an NPC's FSM, not read here
     (tools/gen-how.js joins them from the wiki and the completionist).
   · costs.bundle: Plinney's two paid Needle upgrades ("Nail Upgrade Further Cost", "Final").
+  · The Citadel's map machines (read on 18-Oct-2026): a PlayMakerFSM in a scene ("Unlock
+    Behaviour", its prompt CITADEL_MAP_PROMPT) whose object variables are a "Map" (the SavedItem it
+    gives, the area map's fake collectable) and a "Cost Reference" of costs.bundle (the rosaries it
+    takes: "City Map Machine Default" 70, "City Map Machine Song Gate" 40).
 It joins every Tool to the site's id (js/collectibles.js TOOLS, by the save's name) and every piece
 of the 100% to its js/collectibles.js PIECES entry (by the flag the purchase sets, or by the wish
 that gives it), and stops with an error when one doesn't join.
---cache=<file> keeps the scenes' shop owners, read once (the scan takes minutes). """
+--cache=<file> keeps the scenes' shop owners and map machines, read once (the scan takes minutes). """
 import json, os, pickle, struct, subprocess, sys
 import UnityPy
 
@@ -85,24 +89,38 @@ def follow(idx, ptr, src):
 
 def owners(aa, cls):
     """Every ShopOwner in the scenes: (scene, GameObject, the scene file's externals and name, its
-    stockList pointer, its own stock pointers)."""
+    stockList pointer, its own stock pointers); and every map machine: (scene, the scene file's
+    externals and name, its Map pointer, its Cost Reference pointer)."""
     want = {k for k, v in cls.items() if v == 'ShopOwner'}
+    fsm = {k for k, v in cls.items() if v == 'PlayMakerFSM'}
     scenes = os.path.join(aa, 'scenes_scenes_scenes')
-    out = []
+    out, machines = [], []
     for f in sorted(os.listdir(scenes)):
         if not f.endswith('.bundle'):
             continue
         for o in UnityPy.load(os.path.join(scenes, f)).objects:
-            if o.type.name != 'MonoBehaviour' or script(o.get_raw_data()) not in want:
+            if o.type.name != 'MonoBehaviour':
+                continue
+            raw = o.get_raw_data()
+            src = ([ext_name(e) for e in o.assets_file.externals], o.assets_file.name.lower())
+            if script(raw) in fsm and b'Cost Reference' in raw:
+                try:
+                    d = o.read_typetree()
+                except Exception:
+                    continue
+                v = {x['name']: x for x in ((d.get('fsm') or {}).get('variables') or {}).get('objectVariables') or []}
+                if v.get('Map', {}).get('typeName') == 'SavedItem' and v.get('Cost Reference', {}).get('typeName') == 'CostReference':
+                    machines.append((f[:-7], src, v['Map']['value'], v['Cost Reference']['value']))
+                continue
+            if script(raw) not in want:
                 continue
             d = o.read_typetree()
             try:
                 go = o.read().m_GameObject.read().m_Name
             except Exception:
                 go = None
-            out.append((f[:-7], go, ([ext_name(e) for e in o.assets_file.externals], o.assets_file.name.lower()),
-                        d.get('stockList'), d.get('stock') or []))
-    return out
+            out.append((f[:-7], go, src, d.get('stockList'), d.get('stock') or []))
+    return out, machines
 
 
 def site():
@@ -123,11 +141,11 @@ def main(game, cache):
     aa, bundles, cls = game_files(game)
     idx = index(bundles, cls)
     if cache and os.path.exists(cache):
-        shops = pickle.load(open(cache, 'rb'))
+        shops, machines = pickle.load(open(cache, 'rb'))
     else:
-        shops = owners(aa, cls)
+        shops, machines = owners(aa, cls)
         if cache:
-            pickle.dump(shops, open(cache, 'wb'))
+            pickle.dump((shops, machines), open(cache, 'wb'))
     tools, pieces = site()
     of = lambda kind, check: [i for i, p in enumerate(pieces) if p[0] == kind and p[2] == check]
 
@@ -228,10 +246,19 @@ def main(game, cache):
             g['countAct3'] = d['rewardCountAct3']
         rewards[d['m_Name']] = g
     needle = {'further': costs['Nail Upgrade Further Cost'], 'final': costs['Nail Upgrade Final Cost']}
-    write(where, shop, dict(sorted(rewards.items())), needle, sorted(unsold))
+    # The map machines: what each gives and for how much.
+    mach = []
+    for scene, src, item, cost in machines:
+        it = follow(idx, item, src) or fail(f'{scene}: a map machine whose map is not in the data assets')
+        c = follow(idx, cost, src) or fail(f'{scene}: a map machine whose cost is not in costs.bundle')
+        mach.append({'item': it[1]['m_Name'], 'scene': scene, 'price': c[1]['value']})
+    if not mach:
+        fail('no map machine in the scenes: owners() needs reading again')
+    mach.sort(key=lambda x: (x['item'], x['scene']))
+    write(where, shop, dict(sorted(rewards.items())), needle, sorted(unsold), mach)
 
 
-def write(where, shop, rewards, needle, unsold):
+def write(where, shop, rewards, needle, unsold, machines):
     line = lambda v: json.dumps(v, ensure_ascii=False, separators=(', ', ': '))
     body = lambda xs: ',\n'.join('    ' + line(x) for x in xs)
     rw = ',\n'.join(f'    {json.dumps(k)}: {line(v)}' for k, v in rewards.items())
@@ -248,16 +275,19 @@ def write(where, shop, rewards, needle, unsold):
         "     REWARDS  wish (save name) → what completing it gives, when the wish itself gives it\n"
         "              (the same shapes, and count); the rewards an NPC hands over aren't here\n"
         "     NEEDLE   Plinney's two paid upgrades, in rosaries (costs.bundle)\n"
-        "     UNSOLD   ShopItems in no vendor's stock: in the files, not in the game */\n"
+        "     UNSOLD   ShopItems in no vendor's stock: in the files, not in the game\n"
+        "     MACHINES the Citadel's map machines: item (the area map's fake collectable, by the save's\n"
+        "              name), scene, price (rosaries, its Cost Reference in costs.bundle) */\n"
         "(() => {\n  'use strict';\n  const SS = globalThis.SS || (globalThis.SS = {});\n\n"
         f"  const VENDORS = {{\n{vendors},\n  }};\n\n"
         f"  const SHOP = [\n{body(shop)},\n  ];\n\n"
         f"  const REWARDS = {{\n{rw},\n  }};\n\n"
         f"  const NEEDLE = {line(needle)};\n\n"
         f"  const UNSOLD = {line(unsold)};\n\n"
-        "  SS.shop = { VENDORS, SHOP, REWARDS, NEEDLE, UNSOLD };\n"
+        f"  const MACHINES = [\n{body(machines)},\n  ];\n\n"
+        "  SS.shop = { VENDORS, SHOP, REWARDS, NEEDLE, UNSOLD, MACHINES };\n"
         "  if (typeof module !== 'undefined' && module.exports) module.exports = SS.shop;\n})();\n")
-    print(f'{len(shop)} items from {len(where)} vendors, {len(rewards)} wish rewards, {len(unsold)} unsold → js/shop.js')
+    print(f'{len(shop)} items from {len(where)} vendors, {len(rewards)} wish rewards, {len(unsold)} unsold, {len(machines)} map machines → js/shop.js')
 
 
 if __name__ == '__main__':

@@ -9,7 +9,9 @@
      REWARDS  wish (save name) → what completing it gives, when the wish itself gives it
               (the same shapes, and count); the rewards an NPC hands over aren't here
      NEEDLE   Plinney's two paid upgrades, in rosaries (costs.bundle)
-     UNSOLD   ShopItems in no vendor's stock: in the files, not in the game */
+     UNSOLD   ShopItems in no vendor's stock: in the files, not in the game
+     MACHINES the Citadel's map machines: item (the area map's fake collectable, by the save's
+              name), scene, price (rosaries, its Cost Reference in costs.bundle) */
 (() => {
   'use strict';
   const SS = globalThis.SS || (globalThis.SS = {});
@@ -150,6 +152,17 @@
 
   const UNSOLD = ["Belltown Tool Pouch", "Forge Tacks Tool", "Grindle Reserve Bind"];
 
-  SS.shop = { VENDORS, SHOP, REWARDS, NEEDLE, UNSOLD };
+  const MACHINES = [
+    {"item": "Arborium Map", "scene": "arborium_11", "price": 70},
+    {"item": "Cradle Map", "scene": "cradle_02", "price": 70},
+    {"item": "Halls Map", "scene": "bellway_city", "price": 70},
+    {"item": "Halls Map", "scene": "song_01b", "price": 70},
+    {"item": "Hang Map", "scene": "hang_06b", "price": 70},
+    {"item": "Library Map", "scene": "library_04", "price": 70},
+    {"item": "Song Gate Map", "scene": "song_19_entrance", "price": 40},
+    {"item": "Ward Map", "scene": "ward_01", "price": 70},
+  ];
+
+  SS.shop = { VENDORS, SHOP, REWARDS, NEEDLE, UNSOLD, MACHINES };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.shop;
 })();

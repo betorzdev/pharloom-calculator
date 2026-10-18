@@ -117,13 +117,21 @@ test('each area map is a mark where it\'s had, by its flag: Shakra\'s spot in it
   assert.deepEqual([...new Set(maps.map((x) => x[2][1]))].sort(), Object.keys(SP.MAPS).map((a) => 'Has' + a + 'Map').sort());
   for (const [, act, check, scene, name, how] of maps) {
     assert.equal(check[0], 'flag');
-    assert.equal(act, null);
+    assert.equal(act, check[1] === 'HasCradleMap' ? (how.found ? 3 : 2) : null, check[1]);
     assert.ok(name && name.es && name.en && name.key, check[1]);
-    assert.ok(how.found || (how.shop === 'shakra' && how.price > 0), check[1]);
+    assert.ok(how.found || ((how.shop === 'shakra' || how.machine) && how.price > 0), check[1]);
     // Bought where Shakra sits in the map's own area (the Mosslands' from her first spot, in the Marrow).
     if (how.shop) assert.ok(SP.VENDORS.shakra.includes(scene) && (R.areaOf(scene) === SP.MAPS[check[1].slice(3, -3)] || check[1] === 'HasMossGrottoMap'), `${check[1]} at ${scene}`);
   }
-  assert.equal(new Set(maps.filter((x) => x[5].found).map((x) => x[2][1])).size, 14);
+  assert.equal(new Set(maps.filter((x) => x[5].found || x[5].machine).map((x) => x[2][1])).size, 14);
+  // The Citadel's map machines sell theirs (70 rosaries, the Grand Gate's 40): not found.
+  const sold = (flag) => maps.filter((x) => x[2][1] === flag).map((x) => x[5].machine && x[5].price);
+  assert.deepEqual(sold('HasHallsMap'), [70, 70]);
+  assert.deepEqual(sold('HasSongGateMap'), [40]);
+  // Albert's case: the Cradle Map, bought from its machine in Act 2 (gone once Act 3 begins), then
+  // found free in Tube_Hub, by the broken machine, only in Act 3.
+  const cradle = maps.filter((x) => x[2][1] === 'HasCradleMap').map((x) => [x[1], x[3], x[5]]);
+  assert.deepEqual(cradle, [[2, 'cradle_02', { machine: true, price: 70, gone: 'act3' }], [3, 'tube_hub', { found: true }]]);
   assert.equal(new Set(maps.filter((x) => x[5].shop).map((x) => x[2][1])).size, 14);
   // Albert's case: the Weavenest Atla Map lies in Weavenest Atla.
   const weave = maps.find((x) => x[2][1] === 'HasWeavehomeMap');
@@ -324,6 +332,39 @@ test('a thing held marks one spot only: one Pollip Heart picked up, the wish not
   assert.deepEqual(flowers.filter((i) => done.tasks.includes(i)), flowers);
 });
 
+test('the Flintgems are three Flintbeetles in four places: Bone_04 or Bone_06 by the shortcut, one check, and a save shows the one it has', () => {
+  const gems = SP.TASKS.map((x, i) => (x[0] === 'qitem' && x[1] === 'Rock Rollers' ? i : -1)).filter((i) => i >= 0);
+  const at = (s) => gems.find((i) => SP.TASKS[i][3] === s);
+  assert.deepEqual(gems.map((i) => SP.TASKS[i][3]), ['Bone_01', 'Bone_04', 'Bone_06', 'Bone_07']);
+  assert.equal(new Set(gems.map((i) => JSON.stringify(SP.TASKS[i][2]))).size, 3, 'the pair shares one check, so it counts once');
+  assert.deepEqual(gems.filter((i) => SP.TASKS[i][9]).map((i) => [SP.TASKS[i][3], SP.TASKS[i][9].by, SP.TASKS[i][9].open]),
+    [['Bone_04', 'shortcut', false], ['Bone_06', 'shortcut', true]]);
+  const bool = (s) => ({ SceneName: s, ID: 'Rock Roller_item_Rock Rollers', Value: true });
+  const quest = (done) => ({ QuestCompletionData: { savedData: [{ Name: 'Rock Rollers', Data: { IsAccepted: true, IsCompleted: done } }] } });
+  const base = { silk: 0, silkMax: 9, maxHealth: 5 };
+  // Taken, the shortcut shut: Bone_04's, none picked up yet.
+  let g = F.game({ ...base, ...quest(false), bone03_openedTrapdoorForRockRoller: false });
+  assert.deepEqual(g.elsewhere, [at('Bone_06')]);
+  assert.deepEqual(g.tasks, []);
+  // The shortcut open, Bone_01's picked up: Bone_06's, and only Bone_01 had.
+  const sd = { persistentBools: { serializedList: [bool('Bone_01')] } };
+  g = F.game({ ...base, ...quest(false), bone03_openedTrapdoorForRockRoller: true }, sd);
+  assert.deepEqual(g.elsewhere, [at('Bone_04')]);
+  assert.deepEqual(g.tasks, [at('Bone_01')]);
+  // Picked up in Bone_04, the shortcut opened after: still Bone_04's, had.
+  g = F.game({ ...base, ...quest(false), bone03_openedTrapdoorForRockRoller: true }, { persistentBools: { serializedList: [bool('Bone_04')] } });
+  assert.deepEqual(g.elsewhere, [at('Bone_06')]);
+  assert.deepEqual(g.tasks, [at('Bone_04'), at('Bone_06')]);
+  // A slot keeps it; one kept before it has none, and the Map shows both.
+  const pd = { ...base, ...quest(true), bone03_openedTrapdoorForRockRoller: true };
+  const back = F.gameOf(F.toSnapshot(pd, sd));
+  assert.deepEqual(back.elsewhere, [at('Bone_04')]);
+  assert.deepEqual(back.tasks, gems, 'the wish granted: all four marks');
+  const snap = F.toSnapshot(pd, sd), old = JSON.parse(snap['pharloom.progress']);
+  delete old.elsewhere;
+  assert.deepEqual(F.gameOf({ ...snap, 'pharloom.progress': JSON.stringify(old) }).elsewhere, []);
+});
+
 test('each extra once: no two of a kind with the same check in the same scene, and no Heart Memento', () => {
   const seen = new Set();
   SP.EXTRAS.forEach((x, i) => {
@@ -333,4 +374,44 @@ test('each extra once: no two of a kind with the same check in the same scene, a
   });
   // It isn't found anywhere: whichever Old Heart The Old Hearts doesn't take (design/03-redesign.md, step 6, 11 A).
   assert.ok(!SP.EXTRAS.some((x) => x[0] === 'memento' && x[2][0] === 'all'), 'the Heart Memento has no mark');
+});
+
+test('a Tool sold that lies elsewhere once its seller is gone has that room too, and the save says which', () => {
+  assert.deepEqual(Object.keys(SP.ALSO).sort(), ['tools:curveclaw', 'tools:weighted-belt']);
+  for (const [key, [scene]] of Object.entries(SP.ALSO)) {
+    assert.ok(onMap(scene), `${key}: ${scene}`);
+    assert.notEqual(R.roomOf(scene).scene, R.roomOf(SP.AT.tools[key.slice(6)]).scene, `${key} is in its seller's room`);
+    assert.ok(SP.XY[key + ':found'], `${key} has no point in ${scene}`);
+  }
+  const base = { silk: 0, silkMax: 9, maxHealth: 5 };
+  const curve = (pd, broken) => F.game({ ...base, ...pd },
+    broken ? { persistentBools: { serializedList: [{ SceneName: 'Ant_21', ID: 'ant_item_string', Value: true }] } } : null).foundNow.filter((k) => k === 'tools:curveclaw');
+  const unlocked = { Tools: { savedData: [{ Name: 'Curve Claws', Data: { IsUnlocked: true } }] } };
+  // The Mottled Skarr alive: his. Dead, not bought: Ant_21. Bought before he died: his. Found there: Ant_21.
+  assert.deepEqual(curve({}), []);
+  assert.deepEqual(curve({ antMerchantKilled: true }), ['tools:curveclaw']);
+  assert.deepEqual(curve({ antMerchantKilled: true, ...unlocked }), []);
+  assert.deepEqual(curve({ antMerchantKilled: true, ...unlocked }, true), ['tools:curveclaw']);
+  // Handed to the Skarr Scout (hidden) after it was bought: still bought.
+  assert.deepEqual(curve({ antMerchantKilled: true, Tools: { savedData: [{ Name: 'Curve Claws', Data: { IsUnlocked: true, IsHidden: true } }] } }), []);
+  const pd = { ...base, mortKeptWeightedAnklet: true };
+  assert.deepEqual(F.game(pd).foundNow, ['tools:weighted-belt']);
+  assert.deepEqual(F.gameOf(F.toSnapshot(pd)).foundNow, ['tools:weighted-belt']);
+  assert.deepEqual(F.gameOf({}).foundNow, []);
+  assert.equal(F.gameOf({}).foundRead, false);
+  assert.equal(F.gameOf(F.toSnapshot(pd)).foundRead, true);
+});
+
+test('no cache is only the holder of an item that has its own mark (an ant_item_string, Dock_03\'s chest)', () => {
+  const P = require('../kb/data/game/pickups.json');
+  SP.EXTRAS.forEach((x, i) => {
+    if (!/-cache$/.test(x[0])) return;
+    const c = x[2][0] === 'any' ? x[2][1] : x[2];
+    const o = (P.objects[String(c[1]).toLowerCase()] || {})[c[2]];
+    if (!o) return;
+    for (const [save, at] of Object.entries(P.lying)) {
+      assert.ok(!at.some(([s, , ex, ey]) => s.toLowerCase() === c[1].toLowerCase() && Math.abs(ex - o[0]) < 0.1 && Math.abs(ey - o[1]) < 0.1),
+        `extra:${i} (${x[0]} ${c[1]} ${c[2]}) only holds ${save}`);
+    }
+  });
 });
