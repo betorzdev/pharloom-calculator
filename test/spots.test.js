@@ -332,6 +332,39 @@ test('a thing held marks one spot only: one Pollip Heart picked up, the wish not
   assert.deepEqual(flowers.filter((i) => done.tasks.includes(i)), flowers);
 });
 
+test('the Flintgems are three Flintbeetles in four places: Bone_04 or Bone_06 by the shortcut, one check, and a save shows the one it has', () => {
+  const gems = SP.TASKS.map((x, i) => (x[0] === 'qitem' && x[1] === 'Rock Rollers' ? i : -1)).filter((i) => i >= 0);
+  const at = (s) => gems.find((i) => SP.TASKS[i][3] === s);
+  assert.deepEqual(gems.map((i) => SP.TASKS[i][3]), ['Bone_01', 'Bone_04', 'Bone_06', 'Bone_07']);
+  assert.equal(new Set(gems.map((i) => JSON.stringify(SP.TASKS[i][2]))).size, 3, 'the pair shares one check, so it counts once');
+  assert.deepEqual(gems.filter((i) => SP.TASKS[i][9]).map((i) => [SP.TASKS[i][3], SP.TASKS[i][9].by, SP.TASKS[i][9].open]),
+    [['Bone_04', 'shortcut', false], ['Bone_06', 'shortcut', true]]);
+  const bool = (s) => ({ SceneName: s, ID: 'Rock Roller_item_Rock Rollers', Value: true });
+  const quest = (done) => ({ QuestCompletionData: { savedData: [{ Name: 'Rock Rollers', Data: { IsAccepted: true, IsCompleted: done } }] } });
+  const base = { silk: 0, silkMax: 9, maxHealth: 5 };
+  // Taken, the shortcut shut: Bone_04's, none picked up yet.
+  let g = F.game({ ...base, ...quest(false), bone03_openedTrapdoorForRockRoller: false });
+  assert.deepEqual(g.elsewhere, [at('Bone_06')]);
+  assert.deepEqual(g.tasks, []);
+  // The shortcut open, Bone_01's picked up: Bone_06's, and only Bone_01 had.
+  const sd = { persistentBools: { serializedList: [bool('Bone_01')] } };
+  g = F.game({ ...base, ...quest(false), bone03_openedTrapdoorForRockRoller: true }, sd);
+  assert.deepEqual(g.elsewhere, [at('Bone_04')]);
+  assert.deepEqual(g.tasks, [at('Bone_01')]);
+  // Picked up in Bone_04, the shortcut opened after: still Bone_04's, had.
+  g = F.game({ ...base, ...quest(false), bone03_openedTrapdoorForRockRoller: true }, { persistentBools: { serializedList: [bool('Bone_04')] } });
+  assert.deepEqual(g.elsewhere, [at('Bone_06')]);
+  assert.deepEqual(g.tasks, [at('Bone_04'), at('Bone_06')]);
+  // A slot keeps it; one kept before it has none, and the Map shows both.
+  const pd = { ...base, ...quest(true), bone03_openedTrapdoorForRockRoller: true };
+  const back = F.gameOf(F.toSnapshot(pd, sd));
+  assert.deepEqual(back.elsewhere, [at('Bone_04')]);
+  assert.deepEqual(back.tasks, gems, 'the wish granted: all four marks');
+  const snap = F.toSnapshot(pd, sd), old = JSON.parse(snap['pharloom.progress']);
+  delete old.elsewhere;
+  assert.deepEqual(F.gameOf({ ...snap, 'pharloom.progress': JSON.stringify(old) }).elsewhere, []);
+});
+
 test('each extra once: no two of a kind with the same check in the same scene, and no Heart Memento', () => {
   const seen = new Set();
   SP.EXTRAS.forEach((x, i) => {
