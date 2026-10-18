@@ -2052,3 +2052,26 @@ in Act 3 shows where it was before. Checked: npm test, the text audit, check-pac
 (Restore_Points2/restoreData10: at Mort's and Pebb's), an Act 3 save without Mort's wares
 (Restore_Points3/restoreData27: the Memory Locket and Tool Pouch at Grindle alone) and a 100% Act
 3 save, the legend's counts the same as on dev in all three.
+
+**What Act 3 moves** (18 October 2026, Albert's, from the acts audit). Two marks stayed at their
+Act 1 spot though Act 3 moves the thing. Read in the scenes with UnityPy: Bonetown's «Aspid
+Collector (3)», the Aknid carrying Mossberry no. 3, sits under «Normal World»; Bone_01b's «Black
+Thread World» has its twin, with the same DeactivateIfPlayerdataTrue bonetownAspidBerryCollected and
+a Mossberry Pickup whose «PD Bool» is that flag. Bone_10's «Black Thread World» holds «Rock Rollers
+Quest Not Completed» (a TestGameObjectActivator that switches it off once the quest is done) around
+«Collectable Item Pickup Locket», with its own bool. The wiki agrees (Mossberry: "In Act 3 the
+Aknid moves one room east"; Memory Locket: Survivor's Camp in Act 3, the wish not done). The
+locket's check now takes that bool (tools/completionist.js PIECE_FIX), and `tools/gen-spots.js
+MOVED` puts both in the same ALSO as the Tools and Grindle's wares, with the way { kind: 'moved',
+act: 3, foe | wish } for the card and the check that says the game has them there; savefile's
+foundNow carries them (kept in a slot by what they are), and `js/app-map.js withAlso` shows the Act
+3 room alone in Act 3 while not had (or once the locket was picked up there), the first one
+otherwise, both without a save. The acts rule («What only Act 3 has») now reads a piece's check way
+by way: an 'any' is Act 3's only if all its ways are, so the locket keeps Act 1 (its quest) while its
+Bone_10 spot says Act 3, and so does the Ladybugs' Tool Pouch (the pin galleries, or Bone_12's Act 3
+pickup). A sweep of every pickup in pickups.json by the world its scene puts it in found no other
+move (the Cradle Map's machine and Act 3 pickup were two extras already; Bone_18's locket is in
+both worlds; Hero's Memento, the Pristine Cores, the Tacks and the Conductor relic are Act 3's own),
+and gen-spots now stops on an Act 3-only pickup no mark has. Of the 87 saves, 11 Act 3 ones lack
+the Mossberry (shown in Bone_01b); none in Act 3 lacks the locket, so its Act 3 room is the tests'
+only.

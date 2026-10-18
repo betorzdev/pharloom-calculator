@@ -562,7 +562,12 @@
     ['memory-locket', 2, ['bool', 'Halfway_01', 'Collectable Item Pickup'], 'GREYMOOR'],
     ['memory-locket', 1, ['flag', 'PurchasedBelltownMemoryLocket'], 'BELLHART'],
     ['memory-locket', 3, ['bool', 'Belltown', 'Collectable Item Pickup'], 'BELLHART'],
-    ['memory-locket', 1, ['quest', 'Rock Rollers'], 'BONEBOTTOM'],
+    [
+      'memory-locket',
+      1,
+      ['any', ['quest', 'Rock Rollers'], ['bool', 'Bone_10', 'Collectable Item Pickup Locket']],
+      'BONEBOTTOM',
+    ],
     ['memory-locket', 1, ['bool', 'Bone_18', 'Collectable Item Pickup'], 'BONEFOREST'],
     ['memory-locket', 2, ['bool', 'Bellway_City', 'Collectable Item Pickup'], 'HALLS'],
     ['memory-locket', 1, ['bool', 'Crawl_09', 'Collectable Item Pickup'], 'CRAWL'],

@@ -43,8 +43,8 @@ function places() {
   const add = (key, scene) => { if (scene && R.roomOf(scene)) out.set(key, scene); };
   CO.PIECES.forEach((p, i) => add('piece:' + i, SP.AT.pieces[i]));
   for (const ids of CO.COUNTED) add('tools:' + ids[0], SP.AT.tools[ids[0]]);
-  // A thing's other room (js/spots.js ALSO: the Map's mark there with no save): ':found', or a shop's ':<vendor>'.
-  for (const [key, [scene, , way]] of Object.entries(SP.ALSO)) add(key + ':' + (way ? way.vendor : 'found'), scene);
+  // A thing's other room (js/spots.js ALSO: the Map's mark there with no save): ':found', or a shop's ':<vendor>' (what Act 3 moves: ':found').
+  for (const [key, [scene, , way]] of Object.entries(SP.ALSO)) add(key + ':' + (way && way.kind === 'shop' ? way.vendor : 'found'), scene);
   // The six outside the 100% (js/app-map.js OTHER_TOOLS).
   for (const id of Object.keys(CO.TOOLS)) if (!CO.COUNTED.some((ids) => ids[0] === id)) add('tools:' + id, SP.AT.tools[id]);
   // The abilities outside the 100% (js/app-map.js, the Needolin melodies).

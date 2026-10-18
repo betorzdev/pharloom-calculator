@@ -41,6 +41,8 @@
     if (!m || Array.isArray(m)) continue;
     for (const [id, ways] of Object.entries(m)) for (const w of ways || []) if (w.kind === 'found' && w.when) WHEN.push([cat + ':' + id, w.when]);
   }
+  // And what Act 3 moves (js/spots.js ALSO with way { kind: 'moved' }): the check that says it's in its Act 3 room.
+  for (const [k, v] of Object.entries(SP.ALSO || {})) if (v[2] && v[2].kind === 'moved' && !WHEN.some(([x]) => x === k)) WHEN.push([k, v[1]]);
   // js/people.js, the Map's people: the playerData fields that say whom you've met and where they are.
   const PE = SS.people || (() => { try { return require('./people.js'); } catch (e) { return { VARS: [] }; } })();
   // The map's pins that light up (a station, a toll bench), by what they are: "bellway Bellway_02".
@@ -429,8 +431,10 @@
       extras: SP.EXTRAS.map((x, i) => (has(x[2]) ? i : -1)).filter((i) => i >= 0),
       // What lies in the room its 'found' way says now, its owner dead (js/how.js, a way's when:
       // the Curveclaw once the Mottled Skarr is, the Weighted Belt by Mort's corpse, the Magnetite
-      // Dice by Lumble's), by 'cat:id' (the Map's key); foundRead: the save has said (an older slot
-      // hasn't: the Act says, js/completion.js wayOf).
+      // Dice by Lumble's), by 'cat:id' (the Map's key), and what Act 3 has moved to another room
+      // (js/spots.js ALSO: Mossberry no. 3, the Memory Locket of «Volatile Flintbeetles»), by its
+      // 'piece:<i>' or 'extra:<i>'; foundRead: the save has said (an older slot hasn't: the Act
+      // says, js/completion.js wayOf, and the Map shows both rooms).
       foundNow: WHEN.filter(([, c]) => has(c)).map(([k]) => k),
       foundRead: true,
       // What the game has taken away with someone (js/spots.js EXTRAS more.lost: Grindle's cell door), not had.
@@ -502,6 +506,15 @@
      (new pieces, another order) still finds the ones a slot saved before it. */
   const pieceKey = (p) => p[0] + ' ' + JSON.stringify(p[2]);
   const KEY_AT = new Map(CO.PIECES.map((p, i) => [pieceKey(p), i]));
+  /* A piece whose check took in more of the save (['any', its old check, …]: the Memory Locket of
+     «Volatile Flintbeetles», also had in Bone_10 in Act 3) is found in a slot kept before by its old one. */
+  CO.PIECES.forEach((p, i) => {
+    if (p[2][0] !== 'any') return;
+    for (const c of p[2].slice(1)) if (!KEY_AT.has(p[0] + ' ' + JSON.stringify(c))) KEY_AT.set(p[0] + ' ' + JSON.stringify(c), i);
+  });
+  // A found way's key in a slot: a Tool's by its id, a moved piece or extra (js/spots.js ALSO) by what it is, as the pieces go.
+  const foundKey = (k) => { const [cat, i] = k.split(':'); const x = cat === 'piece' ? CO.PIECES[i] : cat === 'extra' ? SP.EXTRAS[i] : null; return x ? cat + ' ' + pieceKey(x) : k; };
+  const FOUND_AT = new Map(WHEN.map(([k]) => [foundKey(k), k]));
   const WISH_AT = new Map(CO.WISHES.map((w, i) => [pieceKey(w), i]));
   // An extra by its key → its places in the list: a map had in two rooms is a mark in each, one check.
   const EXTRA_AT = new Map();
@@ -527,7 +540,8 @@
   function toSnapshot(pd, sd = null, saved = null) {
     const g = game(pd, sd);
     const progress = { ...g, pieces: g.pieces.map((i) => pieceKey(CO.PIECES[i])), wishes: g.wishes.map((i) => pieceKey(CO.WISHES[i])),
-      extras: [...new Set(g.extras.map((i) => pieceKey(SP.EXTRAS[i])))], lostExtras: [...new Set(g.lostExtras.map((i) => pieceKey(SP.EXTRAS[i])))], tasks: [...new Set(g.tasks.map((i) => taskKey(SP.TASKS[i])))], elsewhere: [...new Set(g.elsewhere.map((i) => taskKey(SP.TASKS[i])))] };
+      extras: [...new Set(g.extras.map((i) => pieceKey(SP.EXTRAS[i])))], lostExtras: [...new Set(g.lostExtras.map((i) => pieceKey(SP.EXTRAS[i])))], tasks: [...new Set(g.tasks.map((i) => taskKey(SP.TASKS[i])))], elsewhere: [...new Set(g.elsewhere.map((i) => taskKey(SP.TASKS[i])))],
+      foundNow: g.foundNow.map(foundKey) };
     for (const k of [...OWNED, 'journal']) delete progress[k];
     const m = meta(pd);
     return {
@@ -571,7 +585,7 @@
     // A slot kept before it (or with a key gone) has none: the Map shows every place.
     out.elsewhere = [...new Set(out.elsewhere.flatMap((k) => TASK_AT.get(k) || []))].filter((i) => SP.TASKS[i][9]).sort((a, b) => a - b);
     out.gaveBack = out.gaveBack.filter((id) => CO.TOOLS[id]);
-    out.foundNow = out.foundNow.filter((k) => WHEN.some(([x]) => x === k));
+    out.foundNow = [...new Set(out.foundNow.map((k) => FOUND_AT.get(k)).filter(Boolean))];
     out.steelSpots = out.steelSpots.filter((x) => typeof x === 'string' && /^[\w ()-]{1,64}$/.test(x));
     out.cocoonAt = out.cocoon ? fourNumbers(out.cocoonAt) : [];
     out.bosses = out.bosses.filter((id) => SP.BOSSES.some((b) => b[0] === id));

@@ -69,6 +69,27 @@ test('what only Act 3 has says Act 3: in its rooms, or under its rooms\' «Black
   });
 });
 
+test('a piece only Act 3 has says Act 3; one Act 3 moves keeps its Act, and its Act 3 room says Act 3', () => {
+  // Every way of its check under Black Thread World (an 'any' only if all its ways are).
+  const only3By = (c) => (['bool', 'int', 'geo'].includes(c[0]) ? (GATE.get(low(c[1] + '|' + c[2])) || {}).world === 'act3'
+    : c[0] === 'any' ? c.slice(1).every(only3By) : c[0] === 'all' ? c.slice(1).some(only3By) : false);
+  CO.PIECES.forEach((p, i) => { if (only3By(p[2])) assert.equal(p[1], 3, `piece ${i} ${p[0]} ${JSON.stringify(p[2])}`); });
+  // The Memory Locket of «Volatile Flintbeetles»: its quest, or Bone_10's pickup under Black Thread World.
+  const i = CO.PIECES.findIndex((p) => p[0] === 'memory-locket' && JSON.stringify(p[2]).includes('"Rock Rollers"'));
+  const b = savedOf(CO.PIECES[i][2]);
+  assert.deepEqual(world(CO.PIECES[i][2]), ['act3'], 'its only saved way is Act 3\'s');
+  assert.equal(CO.PIECES[i][1], 1, 'the piece keeps Act 1 (the wish)');
+  const [scene, , way] = SP.ALSO['piece:' + i];
+  assert.equal(low(scene), low(b[0][1]));
+  assert.deepEqual([way.kind, way.act], ['moved', 3], 'its Bone_10 spot says Act 3');
+  // Every way a thing Act 3 moves takes there is Act 3's.
+  for (const [k, [s, check, w]] of Object.entries(SP.ALSO)) {
+    if (!w || w.kind !== 'moved') continue;
+    assert.equal(w.act, 3, k);
+    for (const c of savedOf(check)) if (low(c[1]) === low(s)) assert.equal((GATE.get(low(c[1] + '|' + c[2])) || {}).world, 'act3', `${k} ${c[2]}`);
+  }
+});
+
 test('what Act 3 takes away keeps its earlier Act', () => {
   SP.EXTRAS.forEach((x, i) => {
     const gone = x[5] && x[5].gone === 'act3';

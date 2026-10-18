@@ -382,23 +382,31 @@
     const w = waysOf(key).find((x) => x.kind === 'shop');
     return w ? t(saved ? 'mapAlsoNow' : 'mapAlsoIf', { npc: pick(HW.NPCS[w.vendor]) }) : '';
   };
+  // What Act 3 moves (js/spots.js ALSO's way { kind: 'moved' }), on its card in its Act 3 room: why it's there.
+  const movedNote = (way) => (way.foe ? t('mapMovedFoe', { foe: pick(way.foe) })
+    : way.wish && QU.CHAIN[way.wish] ? t('mapMovedWish', { wish: pick(QU.CHAIN[way.wish].name) }) : '');
   /* A thing with another room (js/spots.js ALSO). A Tool sold that lies there once its seller is
      gone: a save says which room it's in (savefile foundNow), and the mark is there alone. What a
-     vendor sells only in Act 3 and was had elsewhere before (Grindle's: Pebb's, Mort's and
-     Lumble's wares, whose rooms the game empties in Act 3): with a save, at the vendor while the
-     game is in Act 3 and hasn't it, where it was before otherwise. With none (Free mode too, or a
-     slot kept before it said), both, one thing (chk), the other's card saying when it's there. */
+     vendor sells only in Act 3 and was had elsewhere before (way { kind: 'shop' }: Grindle's, Pebb's,
+     Mort's and Lumble's wares, whose rooms the game empties in Act 3): with a save, at the vendor
+     while the game is in Act 3 and hasn't it, where it was before otherwise. What Act 3 moves to
+     another room (way { kind: 'moved' }: Mossberry no. 3, the Memory Locket of «Volatile
+     Flintbeetles»): with a save, there in Act 3 while not had, or once the save says it was had
+     there (foundNow), in its first room otherwise. With none (Free mode too, or a slot kept before
+     it said), both, one thing (chk), the other's card saying when it's there. */
   function withAlso(add, mark, own) {
     const also = (SP.ALSO || {})[mark.key];
     if (!also) { add(mark); return; }
-    const [scene, , way] = also, key = mark.key + ':' + (way ? way.vendor : 'found'), xy = SP.XY[key];
-    // There from the Act its seller dies in (js/how.js, its 'found' way's), or the vendor's; in that room's area.
+    const [scene, , way] = also, shop = !!way && way.kind === 'shop', moved = !!way && way.kind === 'moved';
+    const key = mark.key + ':' + (shop ? way.vendor : 'found'), xy = SP.XY[key];
+    // There from the Act its seller dies in (js/how.js, its 'found' way's), or the vendor's, or Act 3; in that room's area.
     const from = way || waysOf(mark.key).find((x) => x.kind === 'found') || {};
-    const there = { scene, at: xy && { x: xy[0], y: xy[1] }, area: R.areaOf(scene) || mark.area, act: from.act || mark.act, note: alsoNote(mark.key, way, !!own) };
-    if (own && way) { add(own.act >= way.act && !mark.got ? { ...mark, ...there } : mark); return; }
-    if (own && own.foundRead) { add(own.foundNow.includes(mark.key) ? { ...mark, ...there } : mark); return; }
+    const there = { scene, at: xy && { x: xy[0], y: xy[1] }, area: R.areaOf(scene) || mark.area, act: from.act || mark.act,
+      note: moved ? movedNote(way) : alsoNote(mark.key, shop ? way : null, !!own) };
+    if (own && shop) { add(own.act >= way.act && !mark.got ? { ...mark, ...there } : mark); return; }
+    if (own && own.foundRead) { add(own.foundNow.includes(mark.key) || (moved && own.act >= way.act && !mark.got) ? { ...mark, ...there } : mark); return; }
     add(mark);
-    add({ ...mark, ...there, key, chk: mark.key });
+    add({ ...mark, ...there, key, chk: mark.chk || mark.key });
   }
   // Nothing left to do with a mark: had, or taken away.
   const closed = (m, g) => !!g && (m.got || !!m.lost);
@@ -588,12 +596,12 @@
         : kind === 'memento' ? (MEMENTO_ICON[check[1]] ? `assets/icons/extras/${MEMENTO_ICON[check[1]]}.webp` : 'assets/icons/pieces/heart-bloom.webp')
         : kind === 'spawn' || kind === 'bellhome' || kind === 'wall' ? null : `assets/icons/extras/${kind}.webp`;
       const spawn = kind === 'spawn' ? BOOK_KEY.get(name && name.key) : null;
-      add({ key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i), lost, chk: JSON.stringify(check),
+      withAlso(add, { key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i), lost, chk: JSON.stringify(check),
         name: name ? pick(name) : kind === 'eva' ? evaName(more.reward) : ONE[kind] ? t(ONE[kind]) : LAYER.get(layer).name(), eva: kind === 'eva' ? more : null,
         note: kind === 'masked' ? t('mapHiddenNote', { n: num(check[0] === 'all' ? check.length - 1 : 1) }) : more.shop ? t('mapMapShakra', { npc: pick(HW.NPCS[more.shop]), price: num(more.price) }) : more.machine ? t('mapMapMachine', { price: num(more.price) }) : more.found ? t('mapMapFound') : more.fight ? t('mapRewardOf', { fight: App.gauntletName(more.fight) }) : '',
         draw: (s, ti, k, c) => (kind === 'spawn' ? badge(layer, portrait(spawn && spawn.id) || GLYPH.spawn, s, ti, k, c)
           : kind === 'bellhome' ? pin('bellhome', 'pin_bench_bell', s, ti, k, c)
-            : icon ? dot(layer, icon, s, ti, k, c) : badge(layer, GLYPH[layer] || GLYPH.wall, s, ti, k, c)) });
+            : icon ? dot(layer, icon, s, ti, k, c) : badge(layer, GLYPH[layer] || GLYPH.wall, s, ti, k, c)) }, own);
     });
     // Your game: the cocoon, where the game's map marks it (js/rooms.js mapPoint, by where Hornet fell
     // in the scene; else its room's middle), and the Journal's entries still missing.
