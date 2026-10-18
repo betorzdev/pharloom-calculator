@@ -117,13 +117,21 @@ test('each area map is a mark where it\'s had, by its flag: Shakra\'s spot in it
   assert.deepEqual([...new Set(maps.map((x) => x[2][1]))].sort(), Object.keys(SP.MAPS).map((a) => 'Has' + a + 'Map').sort());
   for (const [, act, check, scene, name, how] of maps) {
     assert.equal(check[0], 'flag');
-    assert.equal(act, null);
+    assert.equal(act, check[1] === 'HasCradleMap' ? (how.found ? 3 : 2) : null, check[1]);
     assert.ok(name && name.es && name.en && name.key, check[1]);
-    assert.ok(how.found || (how.shop === 'shakra' && how.price > 0), check[1]);
+    assert.ok(how.found || ((how.shop === 'shakra' || how.machine) && how.price > 0), check[1]);
     // Bought where Shakra sits in the map's own area (the Mosslands' from her first spot, in the Marrow).
     if (how.shop) assert.ok(SP.VENDORS.shakra.includes(scene) && (R.areaOf(scene) === SP.MAPS[check[1].slice(3, -3)] || check[1] === 'HasMossGrottoMap'), `${check[1]} at ${scene}`);
   }
-  assert.equal(new Set(maps.filter((x) => x[5].found).map((x) => x[2][1])).size, 14);
+  assert.equal(new Set(maps.filter((x) => x[5].found || x[5].machine).map((x) => x[2][1])).size, 14);
+  // The Citadel's map machines sell theirs (70 rosaries, the Grand Gate's 40): not found.
+  const sold = (flag) => maps.filter((x) => x[2][1] === flag).map((x) => x[5].machine && x[5].price);
+  assert.deepEqual(sold('HasHallsMap'), [70, 70]);
+  assert.deepEqual(sold('HasSongGateMap'), [40]);
+  // Albert's case: the Cradle Map, bought from its machine in Act 2 (gone once Act 3 begins), then
+  // found free in Tube_Hub, by the broken machine, only in Act 3.
+  const cradle = maps.filter((x) => x[2][1] === 'HasCradleMap').map((x) => [x[1], x[3], x[5]]);
+  assert.deepEqual(cradle, [[2, 'cradle_02', { machine: true, price: 70, gone: 'act3' }], [3, 'tube_hub', { found: true }]]);
   assert.equal(new Set(maps.filter((x) => x[5].shop).map((x) => x[2][1])).size, 14);
   // Albert's case: the Weavenest Atla Map lies in Weavenest Atla.
   const weave = maps.find((x) => x[2][1] === 'HasWeavehomeMap');

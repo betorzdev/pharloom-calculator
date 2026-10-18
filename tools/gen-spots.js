@@ -520,18 +520,27 @@ const SCENE_AT = new Map();
   if (kept !== KIND_WAS.size) fail(`KIND_WAS names ${KIND_WAS.size} doors, ${kept} are marks: it needs reading again`);
 }
 
-/* The area maps, after the doors: each of the 28 Has<Area>Map flags (MAPS) where it's had, with no
-   Act of its own (null). Shakra sells 14 (js/shop.js SHOP: its price, the game's name for it),
-   each marked at her spot in that map's area whose scripts set a SeenMapper<Area> flag (her stock
-   opens with them; Shellwood_01's and Greymoor_08's set none); the Mosslands have no spot of hers,
-   and their map is sold from the start: where she's first met, in the Marrow (MAP_SHAKRA). The
-   other 14 are had in a room (pickups.json maps: a fake collectable that sets the flag, its words
-   the name the game shows on getting it), marked where the game gives it: a map lying there or on
-   a sign (CollectableItemPickup), or a Citadel map machine (its FSM); the Choral Chambers' and the
-   Cradle's in two rooms each (two machines; the Cradle's machine and Ventrica's Terminus), so a
-   mark in each. Each
-   ['map', null, ['flag', Has<Area>Map], scene, name, { shop: 'shakra', price } or { found: true }]. */
+/* The area maps, after the doors: each of the 28 Has<Area>Map flags (MAPS) where it's had. Shakra
+   sells 14 (js/shop.js SHOP: its price, the game's name for it), each marked at her spot in that
+   map's area whose scripts set a SeenMapper<Area> flag (her stock opens with them; Shellwood_01's
+   and Greymoor_08's set none); the Mosslands have no spot of hers, and their map is sold from the
+   start: where she's first met, in the Marrow (MAP_SHAKRA). The other 14 are had in a room
+   (pickups.json maps: a fake collectable that sets the flag, its words the name the game shows on
+   getting it), marked where the game gives it: a map lying there or on a sign
+   (CollectableItemPickup: found), or a Citadel map machine (its FSM), which sells it (js/shop.js
+   MACHINES: its price; read on 18-Oct-2026). The Choral Chambers' are two machines, a mark each.
+   A map the game lays in a room only in Act 3 (its pickup under the room's Black Thread World,
+   gating.json world 'act3') is that spot's Act, 3, and its other spots are the ones before it,
+   gone once Act 3 begins (MAP_BEFORE_ACT3: their Act). The Cradle's: its machine in Cradle_02,
+   sold in Act 2 (the wiki's Map and Quill: «Obtained from a map machine in Act 2»), then found
+   free in Tube_Hub, by the broken machine (map_and_junk) of its Act 3 collapse (read on
+   18-Oct-2026): Act 3 swaps Cradle_01 and Cradle_03, Cradle_02's only ways in, for their
+   _Destroyed scenes, which have no door to it, and roofs Tube_Hub's way up to them over. Each
+   ['map', act, ['flag', Has<Area>Map], scene, name, { shop: 'shakra', price } or { machine: true,
+   price } or { found: true }, and { gone: 'act3' } for one before an Act 3 spot]; act null but
+   for those. */
 const MAP_SHAKRA = { MossGrotto: 'bone_04' };
+const MAP_BEFORE_ACT3 = { HasCradleMap: 2 };
 const LATE_XY = new Map();   // an extra's index → its point on the map, worked out with the rest (XY below)
 {
   const lower = (x) => String(x).toLowerCase();
@@ -549,9 +558,19 @@ const LATE_XY = new Map();   // an extra's index → its point on the map, worke
     } else {
       const scenes = given(f.item).filter(onMap);
       if (!scenes.length) fail(`${f.item} (${flag}) is had in no room on the map`);
+      const at = (scene) => P.items[f.item].at.filter(([sc]) => sc === scene);
+      // Only in Act 3: every pickup of it in that room under its Black Thread World.
+      const act3 = new Set(scenes.filter((sc) => at(sc).every(([, comp, obj]) => comp === 'CollectableItemPickup' && gateOf(sc, obj).world === 'act3')));
+      if (act3.size && !MAP_BEFORE_ACT3[flag]) fail(`${f.item} lies in ${[...act3].join(', ')} only in Act 3: MAP_BEFORE_ACT3 needs its other spots' Act`);
+      if (!act3.size && MAP_BEFORE_ACT3[flag]) fail(`${f.item} has no Act 3 spot any more: MAP_BEFORE_ACT3 needs reading again`);
       for (const scene of scenes) {
+        const how = at(scene).some(([, comp]) => comp === 'PlayMakerFSM')
+          ? { machine: true, price: (SH.MACHINES.find((m) => m.item === f.item && m.scene === scene) || fail(`${f.item} is given by an FSM in ${scene} that is no map machine of js/shop.js`)).price }
+          : { found: true };
+        const act = act3.size ? (act3.has(scene) ? 3 : MAP_BEFORE_ACT3[flag]) : null;
+        if (act3.size && !act3.has(scene)) how.gone = 'act3';
         LATE_XY.set(EXTRAS.length, () => entryAt((P.items[f.item] || {}).at, scene));
-        EXTRAS.push(['map', null, ['flag', flag], scene, N.text(f.key || fail(`${f.item} has no words`)), { found: true }]);
+        EXTRAS.push(['map', act, ['flag', flag], scene, N.text(f.key || fail(`${f.item} has no words`)), how]);
       }
     }
   }
@@ -1429,10 +1448,10 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               silkeater, memento, bellhome, spawn, rosary-cache, shard-cache, wall, then lever,
               plate, gate, lock, shortcut, silkwall from the game's scenes, then map, rosaries,
               shards, the doors a key opens no mark had yet); act null when the thing has no Act of
-              its own; more { shop, price } for a map Shakra sells, { found } for one found, { item }
-              for a rosary or shard item ({ item, fight } for one an arena drops: that gauntlet's
-              id), { gone: 'act3' } for what the game takes away when Act 3 begins, { lost:
-              check, person } for what the game takes away with someone once that check holds
+              its own; more { shop, price } for a map Shakra sells, { machine, price } for one a
+              map machine sells, { found } for one found, { item } for a rosary or shard item
+              ({ item, fight } for one an arena drops: that gauntlet's id), { gone: 'act3' }
+              for what the game takes away when Act 3 begins, { lost: check, person } for what the game takes away with someone once that check holds
               (Grindle's cell door), { mode: 'steel' or 'normal' } for what only that mode has,
               { was } the check it had before the save checks and { wasKind } the kind it had
               before (a slot kept before has its marks by those, js/savefile.js gameOf: had then

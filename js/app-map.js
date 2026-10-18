@@ -562,7 +562,7 @@
         return;
       }
       const layer = layerOf(x);
-      /* An area map (js/spots.js EXTRAS' last field: Shakra's price, or found lying), a rosary or
+      /* An area map (js/spots.js EXTRAS' last field: Shakra's price, a map machine's, or found lying), a rosary or
          shell shard item lying in its room (its item). */
       const more = x[5] || {};
       const icon = kind === 'map' ? ICON('i_map') : more.item ? `assets/icons/items/${more.item}.webp` : more.icon ? ICON(more.icon)
@@ -573,7 +573,7 @@
       const spawn = kind === 'spawn' ? BOOK_KEY.get(name && name.key) : null;
       add({ key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i), lost, chk: JSON.stringify(check),
         name: name ? pick(name) : kind === 'eva' ? evaName(more.reward) : ONE[kind] ? t(ONE[kind]) : LAYER.get(layer).name(), eva: kind === 'eva' ? more : null,
-        note: kind === 'masked' ? t('mapHiddenNote', { n: num(check[0] === 'all' ? check.length - 1 : 1) }) : more.shop ? t('mapMapShakra', { npc: pick(HW.NPCS[more.shop]), price: num(more.price) }) : more.found ? t('mapMapFound') : more.fight ? t('mapRewardOf', { fight: App.gauntletName(more.fight) }) : '',
+        note: kind === 'masked' ? t('mapHiddenNote', { n: num(check[0] === 'all' ? check.length - 1 : 1) }) : more.shop ? t('mapMapShakra', { npc: pick(HW.NPCS[more.shop]), price: num(more.price) }) : more.machine ? t('mapMapMachine', { price: num(more.price) }) : more.found ? t('mapMapFound') : more.fight ? t('mapRewardOf', { fight: App.gauntletName(more.fight) }) : '',
         draw: (s, ti, k, c) => (kind === 'spawn' ? badge(layer, portrait(spawn && spawn.id) || GLYPH.spawn, s, ti, k, c)
           : kind === 'bellhome' ? pin('bellhome', 'pin_bench_bell', s, ti, k, c)
             : icon ? dot(layer, icon, s, ti, k, c) : badge(layer, GLYPH[layer] || GLYPH.wall, s, ti, k, c)) });

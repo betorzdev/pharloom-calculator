@@ -377,6 +377,7 @@
     mapExtra_shards:   { es: 'Fragmentos de coraza', en: 'Shell Shards' },   // INV_NAME_SHARD
     mapMapFound:    { es: 'Se consigue en esta sala.', en: 'Had in this room.' },
     mapMapShakra:   { es: '{npc} lo vende por {price} rosarios desde que la ves en esta zona.', en: '{npc} sells it for {price} rosaries once you\'ve seen her in this area.' },   // {npc}: MAPPER_MAIN
+    mapMapMachine:  { es: 'Una máquina que muestra una maqueta de la Ciudadela lo vende por {price} rosarios.', en: 'A machine displaying a model of the Citadel sells it for {price} rosaries.' },   // the machine's words: CITADEL_MAP_PROMPT
     // The keys, key items, lifts, loose rosaries, small cocoons and hidden corners: the game names
     // none of these groups, so written for context (each key and item carries its own game name).
     mapLayer_keys:     { es: 'Llaves', en: 'Keys' },
