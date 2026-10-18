@@ -428,6 +428,9 @@
     mapKills:       { es: '{n} de {m} derrotados', en: '{n} of {m} defeated' },
     mapBeastHere:   { es: '{n} en esta sala', en: '{n} in this room' },
     mapTaskFor:     { es: 'Lo pide el deseo «{wish}».', en: 'The wish "{wish}" asks for it.' },
+    // One enemy, two places (js/spots.js TASKS alt, by the shortcut): the Flintbeetle's.
+    mapAltShortcutShut: { es: 'Este {foe} cambia de sitio: está aquí hasta que se abre el atajo de la trampilla, y luego en otra sala.', en: 'This {foe} moves: it\'s here until the trapdoor shortcut is opened, then in another room.' },
+    mapAltShortcutOpen: { es: 'Este {foe} cambia de sitio: está aquí una vez abierto el atajo de la trampilla; hasta entonces, en otra sala.', en: 'This {foe} moves: it\'s here once the trapdoor shortcut is opened; until then, in another room.' },
     mapWishGranted: { es: 'Deseo concedido', en: 'Wish Granted' },   // WISH_GRANTED
     mapDone:        { es: 'Completado', en: 'Completed' },   // COMPLETED
     mapNotDone:     { es: 'Sin cumplir', en: 'Not done yet' },

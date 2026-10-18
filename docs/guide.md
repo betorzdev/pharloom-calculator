@@ -420,7 +420,7 @@ whole group, in ink when all of it is on, dimmer when part, muted when none. Ins
 switch is the game's own picture of it, in grey when off. Beside each, how many: in a save, had of
 the total (a layer complete in green); for places and people, which aren't had, how many there
 are; in Free mode, the total. They count things, not marks: the marks that share one save check
-(the two places one map or key may be found in, the Silver Bells of one wish, the Bell Beast's
+(the two places one map or key may be found in, a Flintbeetle's two, the Silver Bells of one wish, the Bell Beast's
 spots) are one. A group's title counts its layers the same way, all but your cocoon, so «Your game»
 counts as its Journal does.
 
@@ -528,7 +528,11 @@ leaves those off.
   layers of their own). Each is done as your save says: the wish granted, the objective complete
   or a later step of it (Pale Monarch stays incomplete when Act 3 opens through the Soul Snare), a
   thing picked up, held (when it lies in one place only: each Pollip Heart and Flintgem goes by
-  its own spot) or its wish granted. Off at first.
+  its own spot) or its wish granted. The three Flintgems drop from three Flintbeetles, and one of
+  them has two places, one mark each, counted once: in Bone_04 while the Marrow's trapdoor
+  shortcut is shut, in Bone_06 once it's open (the game reads it when the beetle appears); its
+  card says so, and with a save only the place your game has it in shows (where its gem was picked
+  up, else by the shortcut), both in Free mode. Off at first.
 - **Secrets**, off at first: the rosary and shell shard caches, the breakable walls (the
   one-way ones are among the shortcuts; Bone_12's two cell doors, struck open with no key, among
   them; each wall its own mark, even where breaking one breaks the next, as three in the Sands of

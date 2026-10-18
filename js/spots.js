@@ -32,13 +32,16 @@
      BELLS    [playerData field, scene (, name)]: the six Bellshrines (the Grand Gate asks for five)
      KEYS     a lock's key (js/quests.js LOCKS) → its name
      MAPS     a map's flag (Has<X>Map, without Has and Map) → the area it draws
-     TASKS    [kind, quest, check, scene, picture, name?, mode?, steel?, gone?]: the wishes and the main
+     TASKS    [kind, quest, check, scene, picture, name?, mode?, steel?, gone?, alt?]: the wishes and the main
               objectives (kind 'qitem' what a wish asks for, 'wspot' where a wish is done, 'goal' a
               main objective's pin), quest its save name (js/quests.js), check as EXTRAS' plus
               ['held', collectable] and ['steel', scene] (a Steel Sentinel spot seen), picture
               under assets/map/, name the thing's (a wish's and an objective's are the quest's),
               mode 'steel' when only Steel Soul has it, steel the spot's scene when the save
-              chooses it (SteelQuestSpots), gone 'act3' when the game takes it away as Act 3 begins
+              chooses it (SteelQuestSpots), gone 'act3' when the game takes it away as Act 3 begins,
+              alt { at, by, open, foe } for one of the places one thing may be in (a Flintbeetle's
+              two): at the check that it's this one in this game, by what picks ('shortcut'), open
+              whether it's this one once that's open, foe the enemy's name
      XY       a thing's key ('piece:<i>', 'tools:<id>', 'arts:<id>', 'extra:<i>'…, 'person:<id>',
               'board:<scene>', 'bell:<field>', 'task:<i>', 'shakra:<i>', 'shop:<vendor>:<i>', 'giver:<scene>', 'boss:<foe>', 'journal:<entry>', 'gaunt:<id>',
               'everbloom') → its point on the map, in the image's pixels: where
@@ -6815,24 +6818,62 @@
     [
       'qitem',
       'Rock Rollers',
-      ['any', ['bool', 'Bone_04', 'Rock Roller_item_Rock Rollers'], ['quest', 'Rock Rollers']],
+      [
+        'any',
+        ['bool', 'Bone_04', 'Rock Roller_item_Rock Rollers'],
+        ['bool', 'Bone_06', 'Rock Roller_item_Rock Rollers'],
+        ['quest', 'Rock Rollers'],
+      ],
       'Bone_04',
       'icons/bone_roller_rock_icon',
       { es: 'Pedergema', en: 'Flintgem', key: 'INV_NAME_ROCK_ROLLER_ITEM' },
       null,
       null,
       null,
+      {
+        at: [
+          'any',
+          ['bool', 'Bone_04', 'Rock Roller_item_Rock Rollers'],
+          [
+            'all',
+            ['not', ['bool', 'Bone_06', 'Rock Roller_item_Rock Rollers']],
+            ['not', ['flag', 'bone03_openedTrapdoorForRockRoller']],
+          ],
+        ],
+        by: 'shortcut',
+        open: false,
+        foe: { es: 'Pedernajo', en: 'Flintbeetle', key: 'NAME_ROCK_ROLLER' },
+      },
     ],
     [
       'qitem',
       'Rock Rollers',
-      ['any', ['bool', 'Bone_06', 'Rock Roller_item_Rock Rollers'], ['quest', 'Rock Rollers']],
+      [
+        'any',
+        ['bool', 'Bone_04', 'Rock Roller_item_Rock Rollers'],
+        ['bool', 'Bone_06', 'Rock Roller_item_Rock Rollers'],
+        ['quest', 'Rock Rollers'],
+      ],
       'Bone_06',
       'icons/bone_roller_rock_icon',
       { es: 'Pedergema', en: 'Flintgem', key: 'INV_NAME_ROCK_ROLLER_ITEM' },
       null,
       null,
       null,
+      {
+        at: [
+          'any',
+          ['bool', 'Bone_06', 'Rock Roller_item_Rock Rollers'],
+          [
+            'all',
+            ['not', ['bool', 'Bone_04', 'Rock Roller_item_Rock Rollers']],
+            ['flag', 'bone03_openedTrapdoorForRockRoller'],
+          ],
+        ],
+        by: 'shortcut',
+        open: true,
+        foe: { es: 'Pedernajo', en: 'Flintbeetle', key: 'NAME_ROCK_ROLLER' },
+      },
     ],
     [
       'qitem',

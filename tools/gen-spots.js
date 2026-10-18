@@ -1242,6 +1242,11 @@ const WI = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'kb', 'data', '
 // The Twisted Bud no target names: the Wood Witch takes it for Rite of Rebirth (her FSM ends that wish).
 const WISH_OF = { 'Wood Witch Item': 'Wood Witch Curse' };
 const LATER = { 'Citadel Ascent Silk Defeat': ['Black Thread Pt0'] };
+/* The playerData bool that says which of its places an enemy is in, → what it stands for in the
+   Map's card (js/app-map.js ALT_BY): bone03_openedTrapdoorForRockRoller, the shortcut whose lever
+   in Bone_03 opens the trapdoor after the Bell Beast (its flag bone03_openedTrapdoor; the two are
+   equal in each of the author's 87 saves). */
+const PICKED_BY = { bone03_openedTrapdoorForRockRoller: 'shortcut' };
 const TASKS = [];
 {
   // The scenes as the game names them (a sceneData flag is kept under that name); one nobody enters
@@ -1253,12 +1258,12 @@ const TASKS = [];
   const isWish = (q) => CO.WISHES.some((w) => w[2][0] === 'quest' && w[2][1] === q);
   const art = (n) => { if (!fs.existsSync(path.join(__dirname, '..', 'assets', 'map', n + '.webp'))) fail(`assets/map/${n}.webp is missing`); return n; };
   const steel = (q) => (WI.quests[q] || {}).type === 'Steel Sentinel' ? 'steel' : null;
-  const task = (kind, quest, check, scene, x, y, icon, name, pick) => {
+  const task = (kind, quest, check, scene, x, y, icon, name, pick, alt) => {
     if (!onMap(scene)) { unplaced.push(`${kind} ${quest} ${scene}`); return; }
     const i = TASKS.length;
     // What the game swaps out when Act 3 begins (its pickup under the room's «Normal World»): 'act3'.
     const bs = savedOf(check), gone = bs.length && bs.every(([, s, id]) => gateOf(s, id).world === 'normal') ? 'act3' : null;
-    TASKS.push([kind, quest, check, proper(scene) || scene, icon, name || null, steel(quest), pick || null, gone]);
+    TASKS.push([kind, quest, check, proper(scene) || scene, icon, name || null, steel(quest), pick || null, gone, ...(alt ? [alt] : [])]);
     const p = x == null ? null : Array.isArray(x) ? x : toMap(scene, x, y);
     if (p) XY['task:' + i] = p;
   };
@@ -1268,18 +1273,38 @@ const TASKS = [];
     const q = wants(save).find(isWish) || fail(`no wish asks for ${save}`);
     const name = N.text(WI.names[save] || fail(`no name for ${save}`)), icon = art('icons/' + WI.icons[save]);
     const seen = new Set();
+    /* One enemy in two places (tools/extract-wishes.py's { dead, needs }: the Flintbeetle whose
+       death sets rockRollerDefeated_bone06 is in Bone_04 while the shortcut's trapdoor in Bone_03 is
+       shut, bone03_openedTrapdoorForRockRoller false, and in Bone_06 once it's open): its places by
+       that bool. */
+    const sameFoe = new Map();
+    for (const x of at) if (x[6] && x[6].dead) sameFoe.set(x[6].dead, [...(sameFoe.get(x[6].dead) || []), x]);
     // Held says which spot only when there's one: one Pollip Heart held isn't the six flowers, nor
-    // one Flintgem the four Flintbeetles (each spot keeps its own flag).
-    const spots = new Set(at.map(([scene, , obj, flag]) => scene + (flag || obj))).size;
-    for (const [scene, comp, obj, flag, x, y] of at) {
+    // one Flintgem the three Flintbeetles (each spot keeps its own flag).
+    const spots = new Set(at.map(([scene, , obj, flag, , , foe]) => (foe && foe.dead) || scene + (flag || obj))).size;
+    const own = (scene, flag) => (flag && proper(scene) ? [['bool', proper(scene), flag]] : []);
+    for (const [scene, comp, obj, flag, x, y, foe] of at) {
       const one = scene + (flag || obj);
       if (seen.has(one)) continue;   // the Crown Fragment lies twice in its room, under one flag
       seen.add(one);
-      // A spot where it drops by chance (the Silver Bells'): done with its wish, a bell held says
-      // nothing of the other spots.
+      const pair = foe && foe.dead && sameFoe.get(foe.dead).length > 1 ? sameFoe.get(foe.dead) : null;
+      /* A spot where it drops by chance (the Silver Bells'): done with its wish, a bell held says
+         nothing of the other spots. One enemy's places share one check (either place's drop picked
+         up, else its wish done) and so count once, each with the check that it's the place this
+         game has it in (alt.at): its drop picked up here, else not there and this place's bools as
+         the save has them; alt.by and alt.open name what picks, alt.foe the enemy by its Journal
+         name (NAME_ and its object's: NAME_ROCK_ROLLER), for the Map's card (js/app-map.js). */
       const check = comp === 'QuestDropper' ? ['quest', q]
-        : ['any', ...(flag && proper(scene) ? [['bool', proper(scene), flag]] : []), ...(spots === 1 ? [['held', save]] : []), ['quest', q]];
-      task('qitem', q, check, scene, x, y, icon, name);
+        : ['any', ...(pair ? pair.flatMap(([s, , , f]) => own(s, f)) : own(scene, flag)), ...(spots === 1 ? [['held', save]] : []), ['quest', q]];
+      let alt = null;
+      if (pair) {
+        const others = pair.filter((p) => p[0] !== scene), by = Object.entries(foe.needs).filter(([f, v]) => others.every((p) => p[6].needs[f] === !v));
+        if (by.length !== 1 || !PICKED_BY[by[0][0]]) fail(`${save} in ${scene}: its places should part by one known bool (PICKED_BY), not ${JSON.stringify(by)}`);
+        const [f, v] = by[0];
+        alt = { at: ['any', ...own(scene, flag), ['all', ...others.flatMap(([s, , , fl]) => own(s, fl)).map((c) => ['not', c]), v ? ['flag', f] : ['not', ['flag', f]]]],
+          by: PICKED_BY[f], open: v, foe: N.text('NAME_' + obj.toUpperCase().replace(/\W+/g, '_')) };
+      }
+      task('qitem', q, check, scene, x, y, icon, name, null, alt);
     }
   }
   // The map's own pins, on the map by its bench pins (their median offset; the bench pins are the
@@ -1388,13 +1413,16 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
      BELLS    [playerData field, scene (, name)]: the six Bellshrines (the Grand Gate asks for five)
      KEYS     a lock's key (js/quests.js LOCKS) → its name
      MAPS     a map's flag (Has<X>Map, without Has and Map) → the area it draws
-     TASKS    [kind, quest, check, scene, picture, name?, mode?, steel?, gone?]: the wishes and the main
+     TASKS    [kind, quest, check, scene, picture, name?, mode?, steel?, gone?, alt?]: the wishes and the main
               objectives (kind 'qitem' what a wish asks for, 'wspot' where a wish is done, 'goal' a
               main objective's pin), quest its save name (js/quests.js), check as EXTRAS' plus
               ['held', collectable] and ['steel', scene] (a Steel Sentinel spot seen), picture
               under assets/map/, name the thing's (a wish's and an objective's are the quest's),
               mode 'steel' when only Steel Soul has it, steel the spot's scene when the save
-              chooses it (SteelQuestSpots), gone 'act3' when the game takes it away as Act 3 begins
+              chooses it (SteelQuestSpots), gone 'act3' when the game takes it away as Act 3 begins,
+              alt { at, by, open, foe } for one of the places one thing may be in (a Flintbeetle's
+              two): at the check that it's this one in this game, by what picks ('shortcut'), open
+              whether it's this one once that's open, foe the enemy's name
      XY       a thing's key ('piece:<i>', 'tools:<id>', 'arts:<id>', 'extra:<i>'…, 'person:<id>',
               'board:<scene>', 'bell:<field>', 'task:<i>', 'shakra:<i>', 'shop:<vendor>:<i>', 'giver:<scene>', 'boss:<foe>', 'journal:<entry>', 'gaunt:<id>',
               'everbloom') → its point on the map, in the image's pixels: where

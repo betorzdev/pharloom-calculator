@@ -371,6 +371,8 @@
   // Why it went with someone (js/spots.js EXTRAS more.person; tools/gen-spots.js PEOPLE_GONE): its words.
   const LOST_WITH = { GRINDLE: () => t('mapLostCell', { npc: pick(HW.NPCS.grindle), a: pick(CO.AREAS.SHELLWOOD), b: pick(CO.AREAS.WILDS),
     boss: pick(FOE.get('widow').name) }) };
+  // What picks among the places one thing may be in (js/spots.js TASKS alt.by) → its card's words, [shut, open].
+  const ALT_BY = { shortcut: ['mapAltShortcutShut', 'mapAltShortcutOpen'] };
   // Nothing left to do with a mark: had, or taken away.
   const closed = (m, g) => !!g && (m.got || !!m.lost);
   function things(g, own) {
@@ -485,12 +487,15 @@
     const bossAt = new Map(out.filter((m) => m.layer === 'boss').map((m) => [lower(m.scene), m]));
     folded = new Map();
     SP.TASKS.forEach((x, i) => {
-      const [kind, quest, check, scene, art, name, mode, spot, gone] = x;
+      const [kind, quest, check, scene, art, name, mode, spot, gone, alt] = x;
       if (own && ((mode === 'steel' && !steelGame) || (spot && !own.steelSpots.includes(spot)))) return;
+      /* Of the places one thing may be in (alt: a Flintbeetle's two, by the shortcut), only the one
+         this game has it in; both in Free mode or when the slot can't say (kept before it). */
+      if (alt && own && (own.elsewhere || []).includes(i)) return;
       const boss = kind === 'wspot' && WISH_FIGHT[quest] && bossAt.get(lower(scene));
       if (boss && boss.foe === WISH_FIGHT[quest]) { boss.quests = (boss.quests || []).concat(quest); folded.set('task:' + i, boss.key); return; }
       const w = CO.WISHES[wishOf(quest)];
-      add({ key: 'task:' + i, layer: kind, scene, act: kind === 'goal' ? undefined : w && w[1], got: !!g && (g.tasks || []).includes(i), lost: gone === 'act3' ? goneAct3(own) : null, quest, chk: JSON.stringify(check),
+      add({ key: 'task:' + i, layer: kind, scene, act: kind === 'goal' ? undefined : w && w[1], got: !!g && (g.tasks || []).includes(i), lost: gone === 'act3' ? goneAct3(own) : null, quest, chk: JSON.stringify(check), alt,
         name: name ? pick(name) : pick(QU.CHAIN[quest].name), sub: name ? pick(QU.CHAIN[quest].name) : '',
         draw: (s, ti, k, c) => dot(kind, `assets/map/${art}.webp`, s, ti, k, c) });
     });
@@ -1422,6 +1427,7 @@
     } else if (kind === 'task') {
       // What it's for, whether it's done, and where its wish is taken (the Wishwall, or who asks).
       if (m.layer === 'qitem') note = t('mapTaskFor', { wish: m.sub });
+      if (m.alt && ALT_BY[m.alt.by]) note += ' ' + t(ALT_BY[m.alt.by][+m.alt.open], { foe: pick(m.alt.foe) });
       where = line([areaName(area), m.act ? t('saveAct', { n: m.act }) : '']);
       if (g) acts = state(t(m.layer === 'qitem' ? (m.got ? 'pgGot' : 'invMissing') : m.got ? (m.layer === 'wspot' ? 'mapWishGranted' : 'mapDone') : 'mapNotDone'));
       /* Where it's taken: the part of the wish still to do (a «Pre» at the board, then who it sends

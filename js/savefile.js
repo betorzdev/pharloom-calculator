@@ -402,7 +402,8 @@
       // the scene's size the game marks it by, HeroDeathScenePos and HeroDeathSceneSize, as
       // js/rooms.js mapPoint takes them; [] without), the things beyond the 100% had
       // (js/spots.js EXTRAS) and the bosses beaten; the wishes' and the main objectives' marks done
-      // (js/spots.js TASKS), and the Steel Sentinel's three spots this game chose (SteelQuestSpots).
+      // (js/spots.js TASKS) and the places one of them isn't in (elsewhere), and the Steel Sentinel's
+      // three spots this game chose (SteelQuestSpots).
       visited: [...visited].filter((x) => typeof x === 'string' && /^[\w ()-]{1,64}$/.test(x)).sort(),
       mapped: scenes(pd.scenesMapped),
       mappedRead: true,
@@ -417,6 +418,8 @@
       evaSlots: evaSlots(crests),
       bosses: SP.BOSSES.filter((b) => has(b[2])).map((b) => b[0]),
       tasks: SP.TASKS.map((x, i) => (has(x[2]) ? i : -1)).filter((i) => i >= 0),
+      // Of the places one thing may be in (TASKS' alt: a Flintbeetle's two), those it isn't in this game.
+      elsewhere: SP.TASKS.map((x, i) => (x[9] && !has(x[9].at) ? i : -1)).filter((i) => i >= 0),
       steelSpots: steel.map((e) => e.SceneName).sort(),
       // The Map's people: the fields their rules read (js/people.js VARS), as the save has them.
       peopleVars: Object.fromEntries(PE.VARS.filter((f) => mapValue(pd[f], undefined) !== undefined).map((f) => [f, pd[f]])),
@@ -447,7 +450,7 @@
        pharloom.progress  the rest of game(): masks, spools, hearts, needle, kit, pouch,
                           everbloom, purse, rosaries, shards, farsight, hasJournal, pieces, wishes, gauntlets, lit, act, mapFlags, mapVars, bench,
                           area, build, the road's fields (quests … snareReady) and the Map's
-                          (visited … steelSpots, peopleVars)
+                          (visited … elsewhere, steelSpots, peopleVars)
        pharloom.meta      what the profile screen shows (meta()) and when the file was saved
      toSnapshot() writes them; gameOf() reads them back into one game, with the same defaults as
      an empty game for anything missing or damaged. */
@@ -503,7 +506,7 @@
   function toSnapshot(pd, sd = null, saved = null) {
     const g = game(pd, sd);
     const progress = { ...g, pieces: g.pieces.map((i) => pieceKey(CO.PIECES[i])), wishes: g.wishes.map((i) => pieceKey(CO.WISHES[i])),
-      extras: [...new Set(g.extras.map((i) => pieceKey(SP.EXTRAS[i])))], lostExtras: [...new Set(g.lostExtras.map((i) => pieceKey(SP.EXTRAS[i])))], tasks: [...new Set(g.tasks.map((i) => taskKey(SP.TASKS[i])))] };
+      extras: [...new Set(g.extras.map((i) => pieceKey(SP.EXTRAS[i])))], lostExtras: [...new Set(g.lostExtras.map((i) => pieceKey(SP.EXTRAS[i])))], tasks: [...new Set(g.tasks.map((i) => taskKey(SP.TASKS[i])))], elsewhere: [...new Set(g.elsewhere.map((i) => taskKey(SP.TASKS[i])))] };
     for (const k of [...OWNED, 'journal']) delete progress[k];
     const m = meta(pd);
     return {
@@ -518,7 +521,7 @@
     quests: [], taken: [], carried: {}, bellshrines: [], bells: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
     bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [],
     visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], lostExtras: [], bosses: [],
-    tasks: [], steelSpots: [], peopleVars: {}, evaSlots: 0, silkshot: '' });
+    tasks: [], elsewhere: [], steelSpots: [], peopleVars: {}, evaSlots: 0, silkshot: '' });
   const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
   // Each field only if it has the type an empty game gives it.
   function gameOf(snap) {
@@ -543,6 +546,8 @@
       ...SP.EXTRAS.flatMap((x, i) => (x[0] === 'map' && x[2][0] === 'flag' && bought.has(x[2][1]) ? [i] : []))])].sort((a, b) => a - b);
     out.lostExtras = [...new Set(out.lostExtras.flatMap((k) => EXTRA_AT.get(k) || []))].filter((i) => !out.extras.includes(i)).sort((a, b) => a - b);
     out.tasks = [...new Set(out.tasks.flatMap((k) => TASK_AT.get(k) || []))].sort((a, b) => a - b);
+    // A slot kept before it (or with a key gone) has none: the Map shows every place.
+    out.elsewhere = [...new Set(out.elsewhere.flatMap((k) => TASK_AT.get(k) || []))].filter((i) => SP.TASKS[i][9]).sort((a, b) => a - b);
     out.gaveBack = out.gaveBack.filter((id) => CO.TOOLS[id]);
     out.steelSpots = out.steelSpots.filter((x) => typeof x === 'string' && /^[\w ()-]{1,64}$/.test(x));
     out.cocoonAt = out.cocoon ? fourNumbers(out.cocoonAt) : [];
