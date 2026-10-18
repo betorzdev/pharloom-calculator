@@ -152,6 +152,31 @@
     : PIECE_ICON[kind] ? `assets/icons/${PIECE_ICON[kind]}.webp` : null);
   const ART_NEEDLE = (n) => App.ART.needle(n);
 
+  /* A Tool had at one of several places, a variant each (js/spots.js VARIANTS: the Silkshot's three
+     repairs of the Ruined Tool; design/102, all A): what to do first (find the Ruined Tool where it
+     lies, or repair it once held), then each place still open with its way (a vendor the game has
+     taken away, savefile left, is gone); the area where to go now (the Ruined Tool's, then the
+     places'), and its pin every mark of it on the Map, the Ruined Tool first while missing. */
+  function variantRow(key, g) {
+    const v = SS.spots && SS.spots.VARIANTS && SS.spots.VARIANTS[key];
+    if (!v) return {};
+    const own = App.game(), id = key.slice(6), x = SS.spots.EXTRAS[v.item];
+    const trap = HW.TRAPS.find((tr) => tr.variants && tr.thing[1] === id);
+    const gone = new Set(own && own.leftRead ? own.left : []);
+    const held = !marking && !!g && (g.extras || []).includes(v.item);
+    const open = v.at.map((p, i) => ({ scene: p[2], way: trap.variants[i].way })).filter((p) => !(p.way.vendor && gone.has(p.way.vendor)));
+    const item = pick(x[4]), lead = held ? t('pgShotRepair', { item }) : t('pgShotFind', { item, area: areaName(R.areaOf(x[3])) });
+    const cost = (w) => (w.craftmetal ? `${num(w.craftmetal)} ${itemName('craftmetal')}` : '');
+    const more = open.map((p) => (p.way.kind === 'shop' ? howParts([p.way], null, key).how : [t('pgShotRune', { area: areaName(R.areaOf(p.scene)) }), cost(p.way)].filter(Boolean).join(': ')));
+    const areas = held ? [...new Set(open.map((p) => R.areaOf(p.scene)))] : [R.areaOf(x[3])];
+    // Its marks on the Map (js/app-map.js: the Ruined Tool 'extra:<i>', each place key or key:variant), not had.
+    const marks = App.mapApi ? App.mapApi.list() : [];
+    const keys = [...(held ? [] : ['extra:' + v.item]), ...marks.filter((m) => m.chk === key && !m.key.startsWith('extra:')).map((m) => m.key)]
+      .filter((k) => marks.some((m) => m.key === k && !m.got && !m.lost));
+    if (keys.length) FOCUS.set('variants:' + key, { keys, name: pick(D.TOOLS.find((tl) => tl.id === id).name) });
+    return { how: lead, more, area: areas[0] || null, sub: areas.slice(1).map(areaName), scene: held ? undefined : x[3],
+      focus: keys.length ? 'variants:' + key : null };
+  }
   /* The things of a category: [{ name, got, act, area, color, icon, mark }] in the order to show them. */
   const byAct = (a, b) => (a.act || 9) - (b.act || 9) || areaName(a.area).localeCompare(areaName(b.area));
   function things(g) {
@@ -168,7 +193,7 @@
       const tool = (steel && ids.map((id) => D.TOOLS.find((x) => x.id === id)).find((x) => x && x.replaces)) || D.TOOLS.find((x) => x.id === ids[0]);
       const got = !!g && ids.some((id) => g.tools.includes(id));
       return { name: pick(tool.name), got, color: tool.color, ...where(CO.WHERE.tools, ids[0]), ...howParts(HW.HOW.tools[ids[0]], HW.NEEDS.tools[ids[0]], 'tools:' + ids[0]), ways: HW.HOW.tools[ids[0]],
-        icon: `assets/icons/tools/${tool.id}.webp`, mark: 'tools:' + ids[0] };
+        icon: `assets/icons/tools/${tool.id}.webp`, mark: 'tools:' + ids[0], ...(got ? {} : variantRow('tools:' + ids[0], g)) };
     });
     const named = (list, ids, map, key) => ids.map((id) => ({ name: pick(list.find((x) => x.id === id).name), got: has(g ? g[key] : [], id), ...where(map, id),
       ...howParts(HW.HOW[key][id], HW.NEEDS[key][id], key + ':' + id), ways: HW.HOW[key][id], icon: `assets/icons/${key}/${id}.webp`, mark: key + ':' + id }));
@@ -945,11 +970,12 @@
 
   // The Map's card, with the game on screen (cur is Progress's, set per render).
   App.howPiece = (i) => { cur = App.game(); marking = false; return howText(HW.HOW.pieces[i], HW.NEEDS.pieces[i]); };
-  App.howOf = (key) => {   // the Map's card, for a Tool, Crest, Silk Skill, ability or the Everbloom
+  // ways: only those (one of a Tool's variants, the Map's mark of its place: js/spots.js VARIANTS).
+  App.howOf = (key, ways) => {   // the Map's card, for a Tool, Crest, Silk Skill, ability or the Everbloom
     cur = App.game(); marking = false;
     if (key === 'everbloom') return howText(HW.HOW.everbloom);
     const [cat, id] = key.split(':');
-    return HW.HOW[cat] && HW.HOW[cat][id] ? howText(HW.HOW[cat][id], (HW.NEEDS[cat] || {})[id], cat + ':' + id) : '';
+    return HW.HOW[cat] && HW.HOW[cat][id] ? howText(ways || HW.HOW[cat][id], (HW.NEEDS[cat] || {})[id], cat + ':' + id) : '';
   };
   App.freeView = () => { const f = App.freeGame(); return f ? freeView(f) : null; };   // the Map's too
 

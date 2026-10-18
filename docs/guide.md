@@ -451,7 +451,13 @@ leaves those off.
   Craftmetal and Magnetite Brooch, Mort's Memory Locket and Tool Pouch, Lumble's Magnetite Dice):
   Act 3 empties those three rooms, so it also has a mark at Grindle's in the Blasted Steps. With a
   save in Act 3 it's there alone while you don't have it; before Act 3, or once had, where it was;
-  with none, at both, counted once, Grindle's saying Act 3 and his price. Then the
+  with none, at both, counted once, Grindle's saying Act 3 and his price. The Silkshot is repaired
+  from the Ruined Tool at one of three places, and the first repair closes the other two: the rune
+  in Mount Fay (the Original), the Twelfth Architect and the Forge Daughter, each a mark with its
+  version's picture and its own way, and the Ruined Tool itself where it lies in Bilewater, its
+  card naming the three («See the three»), all counted as one Tool. With a save that repaired it,
+  only the place it was repaired at, had; before that, every place, the Architect's crossed once
+  he has left for good (and his shop with him); with none, all four. Then the
   Crests, **What Eva gives** besides Sylphsong (off at first): the Hunter Crest's two evolutions and
   the Vesticrest's yellow and blue slots, each with the slots it needs across your Crests (the
   Hunter's aside) and, with a save, how many you have open; and the Silk Skills.
@@ -477,8 +483,8 @@ leaves those off.
   (one an arena drops once won says which: the Whispering Vaults' Heavy Rosary Necklace, the
   Cogwork Core's Pristine Core), and the ones given: the Fixer's Hornet Statuette in Bone Bottom and the Sprintmaster's two race
   prizes (a Rosary Necklace and a Beast Shard).
-  And the **Key items** lying in a room (the Cogheart Pieces, the broken Silkshot, Farsight, the
-  Materium, and the Crawbell, after the Court of Craws).
+  And the **Key items** lying in a room (the Cogheart Pieces, Farsight, the Materium, and the
+  Crawbell, after the Court of Craws; the Ruined Tool goes with the Silkshot, among the Tools).
 - **Places**: benches (off at first: there are 82, the game's own bench pins, the Songclave's, the Bellhome's (dimmed until the house is unlocked) and the Border Caves' (dimmed until Act 3),
   which its map doesn't pin; the Flea Caravan's two of its own, in Greymoor and the Blasted Steps,
   only while your caravan is there), Bellway and Ventrica stations (dimmed while
@@ -847,9 +853,12 @@ and in Act 2 the Fractured Mask lies by the Mottled Skarr. Three things go by wh
 rather than by the Act, as they lie by someone's corpse only once that someone is dead: the
 Curveclaw (the Mottled Skarr's while he lives, above his corpse after), the Magnetite Dice
 (Lumble's challenge, then by his body, Grindle's in Act 3) and the Weighted Belt (Mort's, by his
-corpse in Act 3 if you didn't buy it). With no save (Free mode), the Act decides. Two traps the page
-doesn't spell out: the Curveclaw handed over to a Skarr loses its point until the Curvesickle, and
-the Silkshot's first repair closes the other two versions. Masks and spools count whole: four
+corpse in Act 3 if you didn't buy it). With no save (Free mode), the Act decides. The Silkshot says
+what to do first, find the Ruined Tool in Bilewater (or, once you carry it, repair it), then each
+place that repairs it with its price, the Twelfth Architect's gone once he has left; its area is where
+to go now, and its pin shows all its marks on the Map, the Ruined Tool first while you lack it. A trap
+the page doesn't spell out: the Curveclaw handed over to a Skarr loses its point until the
+Curvesickle; and the Silkshot's first repair closes the other two versions. Masks and spools count whole: four
 shards or two fragments are 1%.
 
 "Nearest first" orders the missing things by rooms from your bench, the ones with no room after;

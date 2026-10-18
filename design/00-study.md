@@ -2075,3 +2075,29 @@ both worlds; Hero's Memento, the Pristine Cores, the Tacks and the Conductor rel
 and gen-spots now stops on an Act 3-only pickup no mark has. Of the 87 saves, 11 Act 3 ones lack
 the Mossberry (shown in Bone_01b); none in Act 3 lacks the locket, so its Act 3 room is the tests'
 only.
+
+**The Silkshot's three repairs on the Map** (18 October 2026, Albert: «silkshot lo estamos mostrando
+en el mapa? no lo veo»; design/99, all A). The Map had one Silkshot, at the Forge Daughter, and the
+Ruined Tool only among the Key items (off at first): a game repaired in Mount Fay (Albert's) showed
+nothing there. Read in the game's files with UnityPy: the Ruined Tool (Broken SilkShot) lies in
+Shadow_Weavehome; Peak_12's «Webshot Scene» («Repair webshot» FSM: WEB_SHOT_WORKSHOP_MSG, «Repair
+the Ruined Tool?», then WebShot Weaver) and the ShopItems «Forge SilkShot» (240) and «Architect
+SilkShot» (130) take it (upgradeFromItem Broken SilkShot, requiredItem one Tool Metal; shown once
+ForgeDaughterMentionedWebShot or ArchitectMentionedWebShot, which each sets on seeing it on you), and
+the first repair uses it up (Amount 0 after), so the other two can't follow. Under_17's «Architect
+Scene Control» switches «Architect Scene» (him, his shop) off on ArchitectLeft, after his Tools,
+Crest, key and melody: then his version is closed too. `tools/gen-spots.js` writes `VARIANTS` (the
+three, by js/how.js TRAPS, each at what takes the Ruined Tool there and with the first Act of the
+100% in its room or area: 1, 2, 2) and `LEFT` (a vendor gone for good: the Architect); ALSO holds one
+other room per thing, a place the save says it lies, where these are three ways of which the save
+says which was taken, so they stay apart, served by the same `withAlso` on the Map. Four marks of one
+thing in the red Tools layer: the Ruined Tool (its card naming the three, «See the three»), and each
+repair with its version's picture and way. With a save that repaired it, only that place, had (its
+savefile silkshot); before, every place, the Architect's crossed when savefile `left` says he's gone,
+his shop pin gone too; with none, all four. Progress's row (design/102, all A) says what to do
+first («Find the Ruined Tool in Bilewater, then repair it», or «Repair the Ruined Tool» once held),
+then each place still open with its price, folded on a phone; its area where to go now (Bilewater,
+then the places' areas), and its pin all its marks on the Map at once, the Ruined Tool first. Of the 87 saves: 57 without the Ruined Tool (11 of them in
+Act 3 with the Architect gone), 8 holding it, 19 repaired the Original, 4 the Forge Daughter's, none
+the Architect's. Checked: npm test, the text audit, check-pack on the 87 saves (all match), the Map in
+headless Chrome at 1440 and 390, es and en, in Free mode and five saves, no console errors.

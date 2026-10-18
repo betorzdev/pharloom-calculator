@@ -45,6 +45,10 @@ function places() {
   for (const ids of CO.COUNTED) add('tools:' + ids[0], SP.AT.tools[ids[0]]);
   // A thing's other room (js/spots.js ALSO: the Map's mark there with no save): ':found', or a shop's ':<vendor>' (what Act 3 moves: ':found').
   for (const [key, [scene, , way]] of Object.entries(SP.ALSO)) add(key + ':' + (way && way.kind === 'shop' ? way.vendor : 'found'), scene);
+  // A Tool's variants (js/spots.js VARIANTS: the Silkshot's repairs): ':<variant>' outside its own room.
+  for (const [key, v] of Object.entries(SP.VARIANTS)) {
+    for (const [id, , scene] of v.at) if ((R.roomOf(scene) || {}).scene !== (R.roomOf(SP.AT.tools[key.slice(6)]) || {}).scene) add(key + ':' + id, scene);
+  }
   // The six outside the 100% (js/app-map.js OTHER_TOOLS).
   for (const id of Object.keys(CO.TOOLS)) if (!CO.COUNTED.some((ids) => ids[0] === id)) add('tools:' + id, SP.AT.tools[id]);
   // The abilities outside the 100% (js/app-map.js, the Needolin melodies).
