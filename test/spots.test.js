@@ -365,6 +365,32 @@ test('the Flintgems are three Flintbeetles in four places: Bone_04 or Bone_06 by
   assert.deepEqual(F.gameOf({ ...snap, 'pharloom.progress': JSON.stringify(old) }).elsewhere, []);
 });
 
+test("the Bellbeast's twelve stations are one check, and a save with its wish on shows the one the beast is at", () => {
+  const pins = SP.TASKS.map((x, i) => (x[1] === 'Bellbeast Rescue' ? i : -1)).filter((i) => i >= 0);
+  assert.equal(pins.length, 12);
+  assert.equal(new Set(pins.map((i) => JSON.stringify(SP.TASKS[i][2]))).size, 1, 'one check, so one thing on the count');
+  // Each station's value (GlobalEnums.FastTravelLocations: 1-6, 9, 11-15) is one mark's.
+  const base = { silk: 0, silkMax: 9, maxHealth: 5 };
+  const quest = (done) => ({ QuestCompletionData: { savedData: [{ Name: 'Bellbeast Rescue', Data: { IsAccepted: true, IsCompleted: done } }] } });
+  const shown = (g) => pins.filter((i) => !g.elsewhere.includes(i));
+  for (const v of [1, 2, 3, 4, 5, 6, 9, 11, 12, 13, 14, 15]) assert.equal(shown(F.game({ ...base, ...quest(false), FastTravelNPCLocation: v })).length, 1, `station ${v}`);
+  // On, the beast at the Grand Bellway (9): only Bellway_City's.
+  const pd = { ...base, ...quest(false), FastTravelNPCLocation: 9 };
+  const g = F.game(pd);
+  assert.deepEqual(shown(g).map((i) => SP.TASKS[i][3]), ['Bellway_City']);
+  // Not taken yet (the field follows the beast all game) and done: all twelve.
+  assert.deepEqual(shown(F.game({ ...base, FastTravelNPCLocation: 9 })), pins);
+  const done = F.game({ ...base, ...quest(true), FastTravelNPCLocation: 2 });
+  assert.deepEqual(shown(done), pins);
+  assert.ok(pins.every((i) => done.tasks.includes(i)));
+  // A slot keeps it; one kept before it has none, and the Map shows all twelve.
+  const snap = F.toSnapshot(pd);
+  assert.deepEqual(shown(F.gameOf(snap)), shown(g));
+  const old = JSON.parse(snap['pharloom.progress']);
+  delete old.elsewhere;
+  assert.deepEqual(shown(F.gameOf({ ...snap, 'pharloom.progress': JSON.stringify(old) })), pins);
+});
+
 test('each extra once: no two of a kind with the same check in the same scene, and no Heart Memento', () => {
   const seen = new Set();
   SP.EXTRAS.forEach((x, i) => {

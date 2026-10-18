@@ -535,7 +535,9 @@ leaves those off.
   objectives, where the game's map pins them (the Bellshrines, Old Hearts and Melodies are already
   layers of their own; Beast in the Bells has one pin per Bellway station, and the game's
   thirteenth, under Greymoor for a station cut from the game, is left out, as the game never
-  shows it). Each is done as your save says: the wish granted, the objective complete
+  shows it; with a save where that wish is taken and not yet granted, only the station the Bell
+  Beast waits at shows, as in the game, and all twelve before it's taken, once it's granted and in
+  Free mode, one thing on the count). Each is done as your save says: the wish granted, the objective complete
   or a later step of it (Pale Monarch stays incomplete when Act 3 opens through the Soul Snare), a
   thing picked up, held (when it lies in one place only: each Pollip Heart and Flintgem goes by
   its own spot) or its wish granted. The three Flintgems drop from three Flintbeetles, and one of

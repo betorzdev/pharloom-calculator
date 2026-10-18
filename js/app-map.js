@@ -505,8 +505,9 @@
     SP.TASKS.forEach((x, i) => {
       const [kind, quest, check, scene, art, name, mode, spot, gone, alt] = x;
       if (own && ((mode === 'steel' && !steelGame) || (spot && !own.steelSpots.includes(spot)))) return;
-      /* Of the places one thing may be in (alt: a Flintbeetle's two, by the shortcut), only the one
-         this game has it in; both in Free mode or when the slot can't say (kept before it). */
+      /* Of the places one thing may be in (alt: a Flintbeetle's two, by the shortcut; the Bellbeast's
+         twelve stations while its wish is on), only the one this game has it in; all in Free mode
+         or when the slot can't say (kept before it). */
       if (alt && own && (own.elsewhere || []).includes(i)) return;
       const boss = kind === 'wspot' && WISH_FIGHT[quest] && bossAt.get(lower(scene));
       if (boss && boss.foe === WISH_FIGHT[quest]) { boss.quests = (boss.quests || []).concat(quest); folded.set('task:' + i, boss.key); return; }

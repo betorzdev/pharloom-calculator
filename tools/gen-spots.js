@@ -1401,10 +1401,20 @@ const TASKS = [];
      while the beast waits at that station (each pin's DeactivatePlayerDataTest turns it off when
      FastTravelNPCLocation isn't its station's). One whose room has no station never shows: the
      Waterwheel's, FastTravelNPCLocation 7, a value the game's FastTravelLocations doesn't have (a
-     station cut from the game), under Greymoor_17 in the black. */
+     station cut from the game), under Greymoor_17 in the black. Each of the others carries its
+     station's value (alt.at, as a Flintbeetle's places): a save with the wish taken and not done
+     shows only the one the beast is at; before it's taken, once it's done and in Free mode, all
+     twelve (one check, so one thing on the layer's count). */
   const stations = new Set(M.PINS.filter((x) => x[0] === 'bellway').map((x) => sceneOfPart(x[3])));
   let unstationed = 0;
-  for (const [, sprite, quest, item, target, wx, wy] of WI.pins) {
+  const STATION = 'FastTravelNPCLocation';
+  const stationOf = (off, name) => {
+    const [g] = off || [];
+    // Off while the field isn't its value: one test, an enum (Type 3), NotEqual (NumType 1).
+    if (!off || off.length !== 1 || g.length !== 1 || g[0][0] !== STATION || g[0][1] !== 3 || g[0][2] !== 1) fail(`${name}: a Bellbeast pin switched off by something else than ${STATION} (${JSON.stringify(off)})`);
+    return g[0][3];
+  };
+  for (const [pinName, sprite, quest, item, target, wx, wy, off] of WI.pins) {
     const q = quest || byItem(item);
     const info = WI.quests[q];
     if (!info) continue;   // a step of a main objective (an Old Heart, a Melody): a piece of the 100%
@@ -1426,7 +1436,14 @@ const TASKS = [];
       const wish = CO.WISHES.find((w) => w[0] === 'main-objectives' && w[4] && w[4].key === (Q.CHAIN[q] || {}).name?.key);
       // Only a check of another kind than a quest (a step's name is often its objective's: Pharloom's Crown's three).
       const own = wish && wish[2][0] !== 'quest' ? [wish[2]] : [];
-      task('goal', q, ['any', ['quest', q], ...later.map((n) => ['quest', n]), ...own], scene, p, null, art('pins/' + sprite));
+      const check = ['any', ['quest', q], ...later.map((n) => ['quest', n]), ...own];
+      let alt = null;
+      if (sprite === 'quest_map_icon_bellbeast') {
+        const v = stationOf(off, pinName);
+        // Its station's: not taken yet, done, or the beast waits there (the value, as 'min' reads an int).
+        alt = { at: ['any', ['not', ['accepted', q]], check, ['all', ['min', STATION, v], ['not', ['min', STATION, v + 1]]]] };
+      }
+      task('goal', q, check, scene, p, null, art('pins/' + sprite), null, null, alt);
     } else {
       if (!isWish(q) && !isWish(Object.keys(Q.CHAIN).find((n) => Q.CHAIN[n].prev === q))) continue;
       pinned.add(q);
@@ -1517,8 +1534,9 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               mode 'steel' when only Steel Soul has it, steel the spot's scene when the save
               chooses it (SteelQuestSpots), gone 'act3' when the game takes it away as Act 3 begins,
               alt { at, by, open, foe } for one of the places one thing may be in (a Flintbeetle's
-              two): at the check that it's this one in this game, by what picks ('shortcut'), open
-              whether it's this one once that's open, foe the enemy's name
+              two, the Bellbeast's twelve stations): at the check that it's this one in this game,
+              by what picks ('shortcut'), open whether it's this one once that's open, foe the
+              enemy's name (the Bellbeast's have at alone)
      XY       a thing's key ('piece:<i>', 'tools:<id>', 'tools:<id>:found', 'arts:<id>', 'extra:<i>'…, 'person:<id>',
               'board:<scene>', 'bell:<field>', 'task:<i>', 'shakra:<i>', 'shop:<vendor>:<i>', 'giver:<scene>', 'boss:<foe>', 'journal:<entry>', 'gaunt:<id>',
               'everbloom') → its point on the map, in the image's pixels: where
