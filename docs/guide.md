@@ -43,8 +43,9 @@ the word (`js/app-sister.js`, css `.mh-sister`, `.sis-*`), as Hornet stands on Â
 no arrival, he's simply there (Albert, 13 Oct 2026), breathing (the game's Idle at a third of its
 speed, there and back). Every 15â€“25 s (header in view, tab visible) his cloak stirs in the wind, he
 looks up, reads his map or focuses soul in a white light; he turns to the mouse over the header and
-looks up while it's on the link. A click counts as `sister` with `to: 'hallownest'` (the sister's Footworn id, which its dashboard draws as a villager crossing to that quarter), as on the sibling. With reduced motion
-he only stands. He's decoration: hidden from screen readers, never under the pointer.
+looks up while it's on the link. A click counts as `sister` with `to: 'hallownest'` (the sister's Footworn id, which its dashboard draws as a villager crossing to that quarter), as on the sibling, and he stays on the word through it, while
+the new tab is open and when you come back (his moves' strips are fetched as the page starts, so none
+leaves him blank while it comes). With reduced motion he only stands. He's decoration: hidden from screen readers, never under the pointer.
 
 ### Profiles
 
