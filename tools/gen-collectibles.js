@@ -233,6 +233,31 @@ for (const it of load('abilities.ts')) {
   else if (artBy.has(k)) WHERE.arts[artBy.get(k)] = [actOf(it), areaOf(it.completionDetails)];
   else if (k === 'everbloom') WHERE.everbloom = [actOf(it), areaOf(it.completionDetails)];
 }
+/* The Acts the completionist has wrong (the Map's Acts, checked one by one on 18-Oct-2026): the
+   first Act each can be had in. An upgrade it files with its Tool ("Curveclaw / Curvesickle") takes
+   the Tool's Act there; and two it puts later than the game lets them be had. Each with its source;
+   the run stops on one the completionist already agrees with (the fix goes then).
+     curvesickle    the Far Fields targets room hands it over only in Act 3 (wiki Curveclaw)
+     claw-mirrors   the Dark Mirror is Tormented Trobbio's, an Act 3 fight (wiki Claw Mirror)
+     druids-eyes    the Moss Druid's second, for all the Mossberries (wiki Druid's Eye: 7 in all):
+                    the last of them to be had, by the completionist's own Acts (the Memorium's, 2)
+     silkshot       the Ruined Tool lies in Bilewater from Act 1 (wiki Ruined Tool: «obtainable in
+                    Act 1»), and the Forge Daughter repairs it (js/shop.js: once she's mentioned it)
+     sharpdart      Weavenest Karn's spire is reached with the Drifter's Cloak and Swift Step, Act 1's
+                    (wiki Sharpdart: the Clawline only makes it easier) */
+const BERRIES = load('mossberries.ts');
+if (BERRIES.length !== 7) fail(`${BERRIES.length} Mossberries, the wiki's Druid's Eye says 7: WHERE_ACT needs reading again`);
+const WHERE_ACT = {
+  tools: { curvesickle: 3, 'claw-mirrors': 3, 'druids-eyes': Math.max(...BERRIES.map(actOf)), silkshot: 1 },
+  skills: { sharpdart: 1 },
+};
+for (const [k, fix] of Object.entries(WHERE_ACT)) {
+  for (const [id, act] of Object.entries(fix)) {
+    const w = WHERE[k][id] || fail(`WHERE_ACT: no ${k} ${id}`);
+    if (w[0] === act) fail(`WHERE_ACT: the completionist gives ${k} ${id} Act ${act} already: the fix goes`);
+    w[0] = act;
+  }
+}
 for (const [k, want] of [['tools', Object.keys(TOOLS).length], ['crests', 6], ['skills', 6], ['arts', 9]]) {
   const got = Object.keys(WHERE[k]).length;
   if (got < want) fail(`WHERE.${k}: ${got} of ${want} (${(k === 'tools' ? Object.keys(TOOLS) : []).filter((id) => !WHERE.tools[id]).join(', ')})`);

@@ -165,13 +165,15 @@ const goneOf = (id, c) => (PAIRS[id] ? { gauntlet: PAIRS[id] } : gatingOf(c).wor
    Crawfather's), Act 2's by what it asks for (Clawline, Faydown Cloak, an Act 2 wish: the
    completionist's tasks.ts) or its area (the Citadel's, the boss's own Act in bosses.ts), the rest
    Act 1. The Choral Chambers' closes when Act 3 begins; the Slab's third is reached from the
-   Choral Chambers. */
+   Choral Chambers. Hunter's March's fifth appears only once the Mottled Skarr is dead (its subpage),
+   and he dies only after the Cogwork Dancers, the First Shrine's bell or the Clawline (wiki Tools,
+   its Curveclaw note): Act 2 (read again on 18-Oct-2026; it was Act 1 here). */
 const ACT = {
   groal: 2, 'bone-bottom': 1, 'choral-chambers': 2, 'cogwork-core-1': 2, 'cogwork-core-2': 3, 'cogwork-core-3': 3,
   'deep-docks-1': 1, 'deep-docks-2': 1, 'deep-docks-3': 2, 'far-fields-1': 2, karmelita: 3, 'far-fields-2': 3,
   'greymoor-1': 1, 'greymoor-2': 3, 'greymoor-3': 1, crawfather: 3, 'greymoor-4': 2, 'greymoor-5': 1,
   'high-halls-1': 2, 'high-halls-2': 3, 'hunters-march-1': 1, 'hunters-march-2': 1, 'hunters-march-3': 1,
-  'hunters-march-4': 1, 'hunters-march-5': 1, 'hunters-march-6': 3, 'the-marrow-1': 1, 'the-marrow-2': 1,
+  'hunters-march-4': 1, 'hunters-march-5': 2, 'hunters-march-6': 3, 'the-marrow-1': 1, 'the-marrow-2': 1,
   memorium: 2, 'coral-tower-1': 3, 'coral-tower-2': 3, 'coral-tower-3': 3, khann: 3, 'shellwood-1': 1, 'shellwood-2': 3,
   'sinners-road-1': 1, lugoli: 2, 'the-slab-1': 1, 'the-slab-2': 1, 'the-slab-3': 2, broodmother: 2,
   'underworks-1': 2, 'underworks-2': 2, 'underworks-3': 2, verdania: 3, 'whispering-vaults-1': 2,

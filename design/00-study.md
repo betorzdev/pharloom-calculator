@@ -2007,3 +2007,26 @@ Checked on the 87 saves now in the folder: Skarr alive in 21 (shop), dead in 66 
 found it there), Mort's belt by his corpse in 15. None bought the Curveclaw, so that case is the
 test's only. On Progress, 4 Act 2 saves with the Skarr and Lumble alive now read the shop and the
 challenge, where the Act alone said found.
+
+**The Map's Acts, one by one** (18 October 2026, Albert: «many items on the Map say the Act they
+appear in: check them all»). A mark's card and title say the first Act its thing can be had in,
+there. Every mark of Free mode was dumped with the Act it shows and where it comes from (1,773
+marks: 465 with an Act, the rest without one by design), each distinct thing set against the
+game's files first (gating.json `world`, the map's Act 3 pieces, the scenes read with UnityPy), the
+wiki's How to Acquire and Accessible-in-Act tables next, and the 87 save files of the author's
+folder (the lowest Act each mark is had in, and each room entered in). The completionist's Acts held
+for the 121 pieces (item by item against the wiki's Mask Shard, Spool Fragment, Memory Locket,
+Craftmetal, Fleas and Tool Pouch tables), the wishes (already against the Wishes page), the Crests
+and abilities, 47 of 48 bosses and 38 of 39 gauntlets. Nine were wrong, each a small table with
+its source: the upgrades it files with their Tool (Curvesickle and Claw Mirrors are Act 3's, the
+Druid's Eyes Act 2's: the seventh Mossberry is the Memorium's), the Silkshot and Sharpdart (Act 1:
+the Ruined Tool lies in Bilewater then, Weavenest Karn opens with the Drifter's Cloak and Swift
+Step), the Craggler (Act 1: Crawl_04's Roof Crab goes only once beaten), the Slab's Weaver Effigy
+(Act 2: the Key of Apostate's door), Whiteward's second Choral Commandment (Act 2: a Faydown Cloak
+jump) and Hunter's March's fifth gauntlet (Act 2: once the Mottled Skarr is dead). And 52 marks
+with no Act of their own that only Act 3 has now say Act 3: under their room's Black Thread World
+(the beads in Mort's room, Bellway_01's wall, Cog_07's Pristine Core) or in a room only Act 3 has
+(the destroyed Cradle and Cogwork Core, the Border Caves and the Nameless Town, the Abyss,
+Verdania). test/mark-acts.test.js. Left as they are, the wiki silent and the completionist
+consistent with the area: upper Bilewater's flea and Quick Sling (Faydown Cloak). The main
+objectives' pins still carry no Act (their stages don't line up with the completionist's).
