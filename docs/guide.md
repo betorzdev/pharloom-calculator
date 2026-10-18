@@ -585,7 +585,10 @@ stays sharp as you zoom.
 With a save the map shows only what you're missing; in Free mode, what your marks say is missing
 (everything, as a guide, on a New Game). Tap any mark for its card (above the mark, or below it
 when above it would cover the search or the zoom): what
-it is, where, how it's had, and what it says of your game. A
+it is, where (its area, and the first Act it can be had in there; what only Act 3 has says Act 3:
+the Abyss, Verdania, the destroyed Cradle and Cogwork Core, the Border Caves and the Nameless Town,
+and what lies only in a room's Act 3 state, as the rosaries in Mort's room once he's gone; a cache,
+a wall or a door with no Act of its own says none), how it's had, and what it says of your game. A
 shop's says what of the 100% it still has for you (and the wishes it asks, if it does), Shakra's which maps you lack, a Wishwall's or a
 wish giver's the wishes still open, a wish's place or thing which wish it's for, whether it's done
 and a button to its Wishwall or to who asks for it, a boss's whether it's beaten, with «Fight it in Combat» and
