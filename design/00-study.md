@@ -2008,6 +2008,51 @@ found it there), Mort's belt by his corpse in 15. None bought the Curveclaw, so 
 test's only. On Progress, 4 Act 2 saves with the Skarr and Lumble alive now read the shop and the
 challenge, where the Act alone said found.
 
+**The Map's Acts, one by one** (18 October 2026, Albert: «many items on the Map say the Act they
+appear in: check them all»). A mark's card and title say the first Act its thing can be had in,
+there. Every mark of Free mode was dumped with the Act it shows and where it comes from (1,773
+marks: 465 with an Act, the rest without one by design), each distinct thing set against the
+game's files first (gating.json `world`, the map's Act 3 pieces, the scenes read with UnityPy), the
+wiki's How to Acquire and Accessible-in-Act tables next, and the 87 save files of the author's
+folder (the lowest Act each mark is had in, and each room entered in). The completionist's Acts held
+for the 121 pieces (item by item against the wiki's Mask Shard, Spool Fragment, Memory Locket,
+Craftmetal, Fleas and Tool Pouch tables), the wishes (already against the Wishes page), the Crests
+and abilities, 47 of 48 bosses and 38 of 39 gauntlets. Nine were wrong, each a small table with
+its source: the upgrades it files with their Tool (Curvesickle and Claw Mirrors are Act 3's, the
+Druid's Eyes Act 2's: the seventh Mossberry is the Memorium's), the Silkshot and Sharpdart (Act 1:
+the Ruined Tool lies in Bilewater then, Weavenest Karn opens with the Drifter's Cloak and Swift
+Step), the Craggler (Act 1: Crawl_04's Roof Crab goes only once beaten), the Slab's Weaver Effigy
+(Act 2: the Key of Apostate's door), Whiteward's second Choral Commandment (Act 2: a Faydown Cloak
+jump) and Hunter's March's fifth gauntlet (Act 2: once the Mottled Skarr is dead). And 52 marks
+with no Act of their own that only Act 3 has now say Act 3: under their room's Black Thread World
+(the beads in Mort's room, Bellway_01's wall, Cog_07's Pristine Core) or in a room only Act 3 has
+(the destroyed Cradle and Cogwork Core, the Border Caves and the Nameless Town, the Abyss,
+Verdania). test/mark-acts.test.js. Left as they are, the wiki silent and the completionist
+consistent with the area: upper Bilewater's flea and Quick Sling (Faydown Cloak). The main
+objectives' pins still carry no Act (their stages don't line up with the completionist's).
+
+**Grindle's Act 3 stock on the Map** (18 October 2026, Albert: «marcar también en el Acto 3 lo
+que vende Grindle»). Progress already said Grindle's in Act 3 (the Act picks the way); the Map kept
+the marks at Bonetown, the Pilgrim's Rest and Coral_33. Read in the game's scenes: Pebb's
+Bonechurch_Shop, Mort's Pilgrims Rest Shop and Lumble's Dice Game (his corpse too) each sit under
+their room's «Normal World», which its «Black Thread States» (TestGameObjectActivator,
+blackThreadWorld) switches off, so in Act 3 only Grindle sells them (Pebb also leaves once his stock
+is sold out, BoneBottomShopKeepLeft, by then all had). `tools/gen-spots.js` now writes `ALSO` for
+every Act 3 ware of a vendor (js/shop.js act 3) that's a Tool or a piece with a mark in another
+room, with a third element, the way { kind: 'shop', vendor, price, act: 3, from }, and the check
+blackThreadWorld: the Mask Shard, Craftmetal and Magnetite Brooch (Pebb), the Memory Locket and
+Tool Pouch (Mort) and the Magnetite Dice (Lumble), its point at Grindle (`XY '<key>:grindle'`). It
+stops if a ware's earlier source isn't one read gone in Act 3 (GONE_ACT3). `js/app-map.js
+withAlso` serves pieces and Tools alike: with a save, at Grindle while the game is in Act 3 (the
+save's act, blackThreadWorld) and doesn't have it, where it was otherwise; with none, both,
+counted once (chk), the Grindle card saying Act 3, who's gone and the price. Grindle's Simple Key
+has no mark, as no sold key has. Bought from either, the save keeps the same flag, so a thing had
+in Act 3 shows where it was before. Checked: npm test, the text audit, check-pack on the 87 saves
+(all match), and the Map in headless Chrome at 1440 and 390, es and en, in Free mode, an Act 2 save
+(Restore_Points2/restoreData10: at Mort's and Pebb's), an Act 3 save without Mort's wares
+(Restore_Points3/restoreData27: the Memory Locket and Tool Pouch at Grindle alone) and a 100% Act
+3 save, the legend's counts the same as on dev in all three.
+
 **What Act 3 moves** (18 October 2026, Albert's, from the acts audit). Two marks stayed at their
 Act 1 spot though Act 3 moves the thing. Read in the scenes with UnityPy: Bonetown's «Aspid
 Collector (3)», the Aknid carrying Mossberry no. 3, sits under «Normal World»; Bone_01b's «Black
@@ -2017,12 +2062,16 @@ Quest Not Completed» (a TestGameObjectActivator that switches it off once the q
 «Collectable Item Pickup Locket», with its own bool. The wiki agrees (Mossberry: "In Act 3 the
 Aknid moves one room east"; Memory Locket: Survivor's Camp in Act 3, the wish not done). The
 locket's check now takes that bool (tools/completionist.js PIECE_FIX), and `tools/gen-spots.js
-MOVED` puts both in ALSO with their Act 3 room, the check that says the game has them there and
-`{ act: 3, foe | wish }` for the card; savefile's foundNow carries them (kept in a slot by what they
-are), and the Map shows the Act 3 room alone in Act 3 while not had (or once the locket was picked
-up there), the first one otherwise, both without a save. A sweep of every pickup in
-pickups.json by the world its scene puts it in found no other move (the Cradle Map's machine and
-Act 3 pickup were two extras already; Bone_18's locket is in both worlds; Hero's Memento, the
-Pristine Cores, the Tacks and the Conductor relic are Act 3's own), and gen-spots now stops on an
-Act 3-only pickup no mark has. Of the 87 saves, 11 Act 3 ones lack the Mossberry (shown in
-Bone_01b); none in Act 3 lacks the locket, so its Act 3 room is the tests' only.
+MOVED` puts both in the same ALSO as the Tools and Grindle's wares, with the way { kind: 'moved',
+act: 3, foe | wish } for the card and the check that says the game has them there; savefile's
+foundNow carries them (kept in a slot by what they are), and `js/app-map.js withAlso` shows the Act
+3 room alone in Act 3 while not had (or once the locket was picked up there), the first one
+otherwise, both without a save. The acts rule («What only Act 3 has») now reads a piece's check way
+by way: an 'any' is Act 3's only if all its ways are, so the locket keeps Act 1 (its quest) while its
+Bone_10 spot says Act 3, and so does the Ladybugs' Tool Pouch (the pin galleries, or Bone_12's Act 3
+pickup). A sweep of every pickup in pickups.json by the world its scene puts it in found no other
+move (the Cradle Map's machine and Act 3 pickup were two extras already; Bone_18's locket is in
+both worlds; Hero's Memento, the Pristine Cores, the Tacks and the Conductor relic are Act 3's own),
+and gen-spots now stops on an Act 3-only pickup no mark has. Of the 87 saves, 11 Act 3 ones lack
+the Mossberry (shown in Bone_01b); none in Act 3 lacks the locket, so its Act 3 room is the tests'
+only.

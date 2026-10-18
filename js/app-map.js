@@ -373,49 +373,58 @@
     boss: pick(FOE.get('widow').name) }) };
   // What picks among the places one thing may be in (js/spots.js TASKS alt.by) → its card's words, [shut, open].
   const ALT_BY = { shortcut: ['mapAltShortcutShut', 'mapAltShortcutOpen'] };
-  // A Tool's other room (js/spots.js ALSO), on its card: why it's there, by the one who sold it.
-  const alsoNote = (id, saved) => {
-    const w = (HW.HOW.tools[id] || []).find((x) => x.kind === 'shop');
+  // A thing's ways (js/how.js HOW), by its mark's key ('piece:<i>', 'tools:<id>'…).
+  const waysOf = (key) => { const [cat, id] = key.split(':'); return (cat === 'piece' ? HW.HOW.pieces[id] : (HW.HOW[cat] || {})[id]) || []; };
+  /* A thing's other room (js/spots.js ALSO), on its card: why it's there, by the one who sold it;
+     a vendor's Act 3 stock (way), by who sells it, for how much, and who had it before. */
+  const alsoNote = (key, way, saved) => {
+    if (way) return t(saved ? 'mapAlsoSoldNow' : 'mapAlsoSoldIf', { npc: pick(HW.NPCS[way.vendor]), from: pick(HW.NPCS[way.from]), price: num(way.price) });
+    const w = waysOf(key).find((x) => x.kind === 'shop');
     return w ? t(saved ? 'mapAlsoNow' : 'mapAlsoIf', { npc: pick(HW.NPCS[w.vendor]) }) : '';
   };
-  // What Act 3 moves (js/spots.js ALSO's more), on its card in its Act 3 room: why it's there.
-  const movedNote = (more) => (more.foe ? t('mapMovedFoe', { foe: pick(more.foe) })
-    : more.wish && QU.CHAIN[more.wish] ? t('mapMovedWish', { wish: pick(QU.CHAIN[more.wish].name) }) : '');
+  // What Act 3 moves (js/spots.js ALSO's way { kind: 'moved' }), on its card in its Act 3 room: why it's there.
+  const movedNote = (way) => (way.foe ? t('mapMovedFoe', { foe: pick(way.foe) })
+    : way.wish && QU.CHAIN[way.wish] ? t('mapMovedWish', { wish: pick(QU.CHAIN[way.wish].name) }) : '');
+  /* A thing with another room (js/spots.js ALSO). A Tool sold that lies there once its seller is
+     gone: a save says which room it's in (savefile foundNow), and the mark is there alone. What a
+     vendor sells only in Act 3 and was had elsewhere before (way { kind: 'shop' }: Grindle's, Pebb's,
+     Mort's and Lumble's wares, whose rooms the game empties in Act 3): with a save, at the vendor
+     while the game is in Act 3 and hasn't it, where it was before otherwise. What Act 3 moves to
+     another room (way { kind: 'moved' }: Mossberry no. 3, the Memory Locket of «Volatile
+     Flintbeetles»): with a save, there in Act 3 while not had, or once the save says it was had
+     there (foundNow), in its first room otherwise. With none (Free mode too, or a slot kept before
+     it said), both, one thing (chk), the other's card saying when it's there. */
+  function withAlso(add, mark, own) {
+    const also = (SP.ALSO || {})[mark.key];
+    if (!also) { add(mark); return; }
+    const [scene, , way] = also, shop = !!way && way.kind === 'shop', moved = !!way && way.kind === 'moved';
+    const key = mark.key + ':' + (shop ? way.vendor : 'found'), xy = SP.XY[key];
+    // There from the Act its seller dies in (js/how.js, its 'found' way's), or the vendor's, or Act 3; in that room's area.
+    const from = way || waysOf(mark.key).find((x) => x.kind === 'found') || {};
+    const there = { scene, at: xy && { x: xy[0], y: xy[1] }, area: R.areaOf(scene) || mark.area, act: from.act || mark.act,
+      note: moved ? movedNote(way) : alsoNote(mark.key, shop ? way : null, !!own) };
+    if (own && shop) { add(own.act >= way.act && !mark.got ? { ...mark, ...there } : mark); return; }
+    if (own && own.foundRead) { add(own.foundNow.includes(mark.key) || (moved && own.act >= way.act && !mark.got) ? { ...mark, ...there } : mark); return; }
+    add(mark);
+    add({ ...mark, ...there, key, chk: mark.chk || mark.key });
+  }
   // Nothing left to do with a mark: had, or taken away.
   const closed = (m, g) => !!g && (m.got || !!m.lost);
   function things(g, own) {
     const out = [];
     const add = (m) => { if (m.got || !own) m.lost = null; if (m.scene && R.roomOf(m.scene)) out.push(m); };
-    /* A thing in another room too (js/spots.js ALSO): a Tool sold that lies elsewhere once its seller
-       is gone, or what Act 3 moves (more: its Act there, why). A save says which room it's in
-       (savefile foundNow; what Act 3 moves also by the Act, there in Act 3 while not had), and the
-       mark is there alone; with none (Free mode too, or a slot kept before it said), both, one
-       thing (chk). there(more): what the mark is in that room. */
-    const twice = (mark, there) => {
-      const also = (SP.ALSO || {})[mark.key];
-      if (!also) { add(mark); return; }
-      const xy = SP.XY[mark.key + ':found'], at = { scene: also[0], at: xy && { x: xy[0], y: xy[1] }, ...there(also[2] || {}) };
-      if (own && own.foundRead) { add(own.foundNow.includes(mark.key) || (also[2] && own.act === 3 && !mark.got) ? { ...mark, ...at } : mark); return; }
-      add(mark);
-      add({ ...mark, ...at, key: mark.key + ':found', chk: mark.chk || mark.key });
-    };
-    const moved = (more) => ({ act: more.act, area: undefined, note: movedNote(more) });
     // The 100%.
     CO.PIECES.forEach((p, i) => {
       const scene = SP.AT.pieces[i];
       // A Needle upgrade by the Needle it gives (check: ['min', 'nailUpgrades', level]).
       const needle = p[0] === 'needle' && p[2][0] === 'min' ? D.NEEDLES[p[2][2]] : null;
-      twice({ key: 'piece:' + i, layer: p[0], scene, act: p[1], got: !!g && g.pieces.includes(i), area: p[3],
-        name: p[4] ? pick(p[4]) : needle ? pick(needle.name) : LAYER.get(p[0]).name(), draw: (s, ti, k, c) => dot(p[0], pieceIcon(p[0], p), s, ti, k, c) }, moved);
+      withAlso(add, { key: 'piece:' + i, layer: p[0], scene, act: p[1], got: !!g && g.pieces.includes(i), area: p[3],
+        name: p[4] ? pick(p[4]) : needle ? pick(needle.name) : LAYER.get(p[0]).name(), draw: (s, ti, k, c) => dot(p[0], pieceIcon(p[0], p), s, ti, k, c) }, own);
     });
     for (const ids of CO.COUNTED) {
-      const id = ids[0], tool = D.TOOLS.find((x) => x.id === id), w = CO.WHERE.tools[id] || [], key = 'tools:' + id;
-      const mark = { key, layer: 'tools-' + tool.color, scene: SP.AT.tools[id], act: w[0], area: w[1], got: !!g && ids.some((x) => g.tools.includes(x)),
-        name: pick(tool.name), draw: (s, ti, k, c) => dot('tools', `assets/icons/tools/${id}.webp`, s, ti, k, c) };
-      // A Tool sold that lies in another room once its seller is gone (twice): there from the Act its
-      // seller dies in (js/how.js, its 'found' way's).
-      const found = (HW.HOW.tools[id] || []).find((x) => x.kind === 'found') || {};
-      twice(mark, () => ({ act: found.act || mark.act, note: alsoNote(id, !!own) }));
+      const id = ids[0], tool = D.TOOLS.find((x) => x.id === id), w = CO.WHERE.tools[id] || [];
+      withAlso(add, { key: 'tools:' + id, layer: 'tools-' + tool.color, scene: SP.AT.tools[id], act: w[0], area: w[1], got: !!g && ids.some((x) => g.tools.includes(x)),
+        name: pick(tool.name), draw: (s, ti, k, c) => dot('tools', `assets/icons/tools/${id}.webp`, s, ti, k, c) }, own);
     }
     // The six outside the 100%: a Tool's upgrade, or one a wish lends and takes back.
     for (const id of OTHER_TOOLS) {
@@ -515,8 +524,9 @@
     SP.TASKS.forEach((x, i) => {
       const [kind, quest, check, scene, art, name, mode, spot, gone, alt] = x;
       if (own && ((mode === 'steel' && !steelGame) || (spot && !own.steelSpots.includes(spot)))) return;
-      /* Of the places one thing may be in (alt: a Flintbeetle's two, by the shortcut), only the one
-         this game has it in; both in Free mode or when the slot can't say (kept before it). */
+      /* Of the places one thing may be in (alt: a Flintbeetle's two, by the shortcut; the Bellbeast's
+         twelve stations while its wish is on), only the one this game has it in; all in Free mode
+         or when the slot can't say (kept before it). */
       if (alt && own && (own.elsewhere || []).includes(i)) return;
       const boss = kind === 'wspot' && WISH_FIGHT[quest] && bossAt.get(lower(scene));
       if (boss && boss.foe === WISH_FIGHT[quest]) { boss.quests = (boss.quests || []).concat(quest); folded.set('task:' + i, boss.key); return; }
@@ -586,12 +596,12 @@
         : kind === 'memento' ? (MEMENTO_ICON[check[1]] ? `assets/icons/extras/${MEMENTO_ICON[check[1]]}.webp` : 'assets/icons/pieces/heart-bloom.webp')
         : kind === 'spawn' || kind === 'bellhome' || kind === 'wall' ? null : `assets/icons/extras/${kind}.webp`;
       const spawn = kind === 'spawn' ? BOOK_KEY.get(name && name.key) : null;
-      twice({ key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i), lost, chk: JSON.stringify(check),
+      withAlso(add, { key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i), lost, chk: JSON.stringify(check),
         name: name ? pick(name) : kind === 'eva' ? evaName(more.reward) : ONE[kind] ? t(ONE[kind]) : LAYER.get(layer).name(), eva: kind === 'eva' ? more : null,
         note: kind === 'masked' ? t('mapHiddenNote', { n: num(check[0] === 'all' ? check.length - 1 : 1) }) : more.shop ? t('mapMapShakra', { npc: pick(HW.NPCS[more.shop]), price: num(more.price) }) : more.machine ? t('mapMapMachine', { price: num(more.price) }) : more.found ? t('mapMapFound') : more.fight ? t('mapRewardOf', { fight: App.gauntletName(more.fight) }) : '',
         draw: (s, ti, k, c) => (kind === 'spawn' ? badge(layer, portrait(spawn && spawn.id) || GLYPH.spawn, s, ti, k, c)
           : kind === 'bellhome' ? pin('bellhome', 'pin_bench_bell', s, ti, k, c)
-            : icon ? dot(layer, icon, s, ti, k, c) : badge(layer, GLYPH[layer] || GLYPH.wall, s, ti, k, c)) }, moved);
+            : icon ? dot(layer, icon, s, ti, k, c) : badge(layer, GLYPH[layer] || GLYPH.wall, s, ti, k, c)) }, own);
     });
     // Your game: the cocoon, where the game's map marks it (js/rooms.js mapPoint, by where Hornet fell
     // in the scene; else its room's middle), and the Journal's entries still missing.
@@ -1401,8 +1411,7 @@
     where = line([areaName(area), m.act ? t('saveAct', { n: m.act }) : '', m.sub]);
     const kind = key.split(':')[0];
     if (kind === 'piece') {
-      // Its index (its other room's mark is 'piece:<i>:found'); there, why it moved instead of the way.
-      const i = Number(key.split(':')[1]);
+      const i = Number(key.split(':')[1]);   // its other room's too ('piece:<i>:<vendor>')
       note = m.note || (App.howPiece ? App.howPiece(i) : '');
       /* In Free mode a piece is marked here, but those of a ladder (masks, silk, the Silk Hearts, the
          Needle, the Kit, the Pouch) follow the Inventory's levels, as on Progress: the way there. */

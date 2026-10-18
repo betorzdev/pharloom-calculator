@@ -313,9 +313,13 @@
        mark, with no save and with one that has it there. */
     mapAlsoIf:      { es: 'Aquí si {npc} muere antes de que se lo compres', en: 'Here if {npc} dies before you buy it' },
     mapAlsoNow:     { es: '{npc} murió antes de que se lo compraras: está aquí', en: '{npc} died before you bought it: it lies here' },
-    // What Act 3 moves to another room (js/spots.js ALSO's more): that room's mark, why it's there.
+    // What Act 3 moves to another room (js/spots.js ALSO, way { kind: 'moved' }): that room's mark, why it's there.
     mapMovedFoe:    { es: 'En el Acto 3, el {foe} que la lleva se muda a esta sala', en: 'In Act 3 the {foe} that carries it moves to this room' },
     mapMovedWish:   { es: 'En el Acto 3 está aquí, si no se ha concedido el deseo «{wish}»', en: 'In Act 3 it lies here, if the wish "{wish}" isn\'t granted' },
+    /* What a vendor sells only in Act 3 (js/spots.js ALSO, a shop's), once who had it before is gone
+       (Grindle's: Pebb's, Mort's, Lumble's wares): its mark there, with no save and in an Act 3 game. */
+    mapAlsoSoldIf:  { es: 'En el Acto 3, cuando {from} ya no está, en la tienda de {npc}: {price} rosarios', en: 'In Act 3, once {from} is gone, in {npc}\'s shop: {price} rosaries' },
+    mapAlsoSoldNow: { es: '{from} ya no está: en la tienda de {npc}, {price} rosarios', en: '{from} is gone: in {npc}\'s shop, {price} rosaries' },
     mapGroupShow:   { es: 'Mostrar todo el grupo', en: 'Show the whole group' },
     mapGroupHide:   { es: 'Esconder todo el grupo', en: 'Hide the whole group' },
     mapFoldOpen:    { es: 'Abrir {g}', en: 'Open {g}' },

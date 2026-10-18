@@ -41,8 +41,8 @@
     if (!m || Array.isArray(m)) continue;
     for (const [id, ways] of Object.entries(m)) for (const w of ways || []) if (w.kind === 'found' && w.when) WHEN.push([cat + ':' + id, w.when]);
   }
-  // And what Act 3 moves (js/spots.js ALSO's 'piece:<i>', 'extra:<i>'): the check that says it's in its Act 3 room.
-  for (const [k, v] of Object.entries(SP.ALSO || {})) if (!WHEN.some(([x]) => x === k)) WHEN.push([k, v[1]]);
+  // And what Act 3 moves (js/spots.js ALSO with way { kind: 'moved' }): the check that says it's in its Act 3 room.
+  for (const [k, v] of Object.entries(SP.ALSO || {})) if (v[2] && v[2].kind === 'moved' && !WHEN.some(([x]) => x === k)) WHEN.push([k, v[1]]);
   // js/people.js, the Map's people: the playerData fields that say whom you've met and where they are.
   const PE = SS.people || (() => { try { return require('./people.js'); } catch (e) { return { VARS: [] }; } })();
   // The map's pins that light up (a station, a toll bench), by what they are: "bellway Bellway_02".
@@ -442,7 +442,8 @@
       evaSlots: evaSlots(crests),
       bosses: SP.BOSSES.filter((b) => has(b[2])).map((b) => b[0]),
       tasks: SP.TASKS.map((x, i) => (has(x[2]) ? i : -1)).filter((i) => i >= 0),
-      // Of the places one thing may be in (TASKS' alt: a Flintbeetle's two), those it isn't in this game.
+      // Of the places one thing may be in (TASKS' alt: a Flintbeetle's two, the Bellbeast's stations
+      // while its wish is on, FastTravelNPCLocation), those it isn't in this game.
       elsewhere: SP.TASKS.map((x, i) => (x[9] && !has(x[9].at) ? i : -1)).filter((i) => i >= 0),
       steelSpots: steel.map((e) => e.SceneName).sort(),
       // The Map's people: the fields their rules read (js/people.js VARS), as the save has them.

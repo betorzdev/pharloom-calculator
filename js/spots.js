@@ -10,13 +10,16 @@
               act: { key: Act } for what's outside the 100% and js/collectibles.js WHERE lacks }:
               where each thing of the 100% is had (its pickup, its vendor, its Wishwall, its
               boss's arena, its giver)
-     ALSO     a thing's key ('tools:<id>', 'piece:<i>', 'extra:<i>') → [scene, check, more?]: a Tool
-              sold that lies in another room once its seller is gone (the Curveclaw once the Mottled
-              Skarr dies, the Weighted Belt once Mort does), or a thing Act 3 moves to another room
-              (MOVED: Mossberry no. 3, the Memory Locket of «Volatile Flintbeetles»; more { act: 3,
-              foe } or { act: 3, wish }), that room, and the check that says the game has it there
-              (its point: XY '<key>:found'); check as EXTRAS', plus ['tool', name] (that Tool
-              unlocked) and ['not', check]
+     ALSO     a thing's key ('tools:<id>', 'piece:<i>', 'extra:<i>') → [scene, check, way?]: its other
+              room, and the check that says the game has it there. A Tool sold that lies there once
+              its seller is gone (the Curveclaw once the Mottled Skarr dies, the Weighted Belt once
+              Mort does; its point XY '<key>:found'); with way { kind: 'shop', vendor, price, act: 3,
+              from }, what a vendor sells only in Act 3 once from (who had it before) is gone
+              (Grindle's: Pebb's, Mort's and Lumble's wares; its point XY '<key>:<vendor>'); with way
+              { kind: 'moved', act: 3, foe | wish }, what Act 3 moves to another room (MOVED:
+              Mossberry no. 3, the Memory Locket of «Volatile Flintbeetles»; its point XY
+              '<key>:found'); check as EXTRAS', plus ['tool', name] (that Tool unlocked) and
+              ['not', check]
      EXTRAS   [kind, act, check, scene, name?, more?]: what doesn't count (relics by kind, mossberry,
               silkeater, memento, bellhome, spawn, rosary-cache, shard-cache, wall, then lever,
               plate, gate, lock, shortcut, silkwall from the game's scenes, then map, rosaries,
@@ -47,9 +50,10 @@
               mode 'steel' when only Steel Soul has it, steel the spot's scene when the save
               chooses it (SteelQuestSpots), gone 'act3' when the game takes it away as Act 3 begins,
               alt { at, by, open, foe } for one of the places one thing may be in (a Flintbeetle's
-              two): at the check that it's this one in this game, by what picks ('shortcut'), open
-              whether it's this one once that's open, foe the enemy's name
-     XY       a thing's key ('piece:<i>', 'tools:<id>', 'tools:<id>:found', 'arts:<id>', 'extra:<i>'…, 'person:<id>',
+              two, the Bellbeast's twelve stations): at the check that it's this one in this game,
+              by what picks ('shortcut'), open whether it's this one once that's open, foe the
+              enemy's name (the Bellbeast's have at alone)
+     XY       a thing's key ('piece:<i>', 'tools:<id>', '<key>:found', '<key>:<vendor>', 'arts:<id>', 'extra:<i>'…, 'person:<id>',
               'board:<scene>', 'bell:<field>', 'task:<i>', 'shakra:<i>', 'shop:<vendor>:<i>', 'giver:<scene>', 'boss:<foe>', 'journal:<entry>', 'gaunt:<id>',
               'everbloom') → its point on the map, in the image's pixels: where
               the game has it in its room (the object's place in the scene, or whoever stands for it,
@@ -294,10 +298,40 @@
       ],
     ],
     'tools:weighted-belt': ['bone_east_07', ['flag', 'mortKeptWeightedAnklet']],
+    'piece:38': [
+      'coral_42',
+      ['flag', 'blackThreadWorld'],
+      { kind: 'shop', vendor: 'grindle', price: 250, act: 3, from: 'mort' },
+    ],
+    'tools:magnetite-dice': [
+      'coral_42',
+      ['flag', 'blackThreadWorld'],
+      { kind: 'shop', vendor: 'grindle', price: 300, act: 3, from: 'lumble' },
+    ],
+    'piece:0': [
+      'coral_42',
+      ['flag', 'blackThreadWorld'],
+      { kind: 'shop', vendor: 'grindle', price: 320, act: 3, from: 'pebb' },
+    ],
+    'tools:magnetite-brooch': [
+      'coral_42',
+      ['flag', 'blackThreadWorld'],
+      { kind: 'shop', vendor: 'grindle', price: 220, act: 3, from: 'pebb' },
+    ],
+    'piece:58': [
+      'coral_42',
+      ['flag', 'blackThreadWorld'],
+      { kind: 'shop', vendor: 'grindle', price: 120, act: 3, from: 'pebb' },
+    ],
+    'piece:103': [
+      'coral_42',
+      ['flag', 'blackThreadWorld'],
+      { kind: 'shop', vendor: 'grindle', price: 220, act: 3, from: 'mort' },
+    ],
     'extra:23': [
       'Bone_01b',
       ['all', ['flag', 'blackThreadWorld'], ['not', ['flag', 'bonetownAspidBerryCollected']]],
-      { act: 3, foe: { es: 'Aknid', en: 'Aknid', key: 'NAME_ASPID_COLLECTOR' } },
+      { kind: 'moved', act: 3, foe: { es: 'Aknid', en: 'Aknid', key: 'NAME_ASPID_COLLECTOR' } },
     ],
     'piece:44': [
       'Bone_10',
@@ -317,7 +351,7 @@
           ],
         ],
       ],
-      { act: 3, wish: 'Rock Rollers' },
+      { kind: 'moved', act: 3, wish: 'Rock Rollers' },
     ],
   };
 
@@ -328,10 +362,10 @@
     ['bone-scroll', 2, ['relic', 'Bone Record Wisp Top'], 'wisp_08', undefined],
     ['weaver-effigy', 1, ['relic', 'Weaver Totem Bonetown_upper_room'], 'bonetown', undefined],
     ['weaver-effigy', 2, ['relic', 'Weaver Totem Witch'], 'shellwood_25', undefined],
-    ['weaver-effigy', 1, ['relic', 'Weaver Totem Slab_Bottom'], 'slab_12', undefined],
+    ['weaver-effigy', 2, ['relic', 'Weaver Totem Slab_Bottom'], 'slab_12', undefined],
     ['choral-commandment', 1, ['relic', 'Seal Chit Aspid_01'], 'aspid_01', undefined],
     ['choral-commandment', 2, ['relic', 'Seal Chit Ward Corpse'], 'ward_02b', undefined],
-    ['choral-commandment', 3, ['relic', 'Seal Chit Silk Siphon'], 'ward_05', undefined],
+    ['choral-commandment', 2, ['relic', 'Seal Chit Silk Siphon'], 'ward_05', undefined],
     ['choral-commandment', 2, ['relic', 'Seal Chit City Merchant'], 'song_enclave', undefined],
     ['rune-harp', 1, ['relic', 'Weaver Record Weave_08'], 'weave_08', undefined],
     ['rune-harp', 1, ['relic', 'Weaver Record Sprint_Challenge'], 'bone_east_weavehome', undefined],
@@ -2429,51 +2463,51 @@
     ['shard-cache', 0, ['bool', 'Under_17', 'Shell Shard 01 Persistent'], 'Under_17', undefined],
     [
       'shard-cache',
-      0,
+      3,
       ['int', 'Abyss_03', 'Shell Shard Fossil Tiny Front', 0],
       'Abyss_03',
       undefined,
     ],
     [
       'shard-cache',
-      0,
+      3,
       ['int', 'Abyss_03', 'Shell Shard Fossil Tiny Front (1)', 0],
       'Abyss_03',
       undefined,
     ],
     [
       'shard-cache',
-      0,
+      3,
       ['int', 'Abyss_03', 'Shell Shard Fossil Tiny Bumpy', 0],
       'Abyss_03',
       undefined,
     ],
-    ['shard-cache', 0, ['int', 'Abyss_03', 'Shell Shard Fossil Tiny Egg', 0], 'Abyss_03', undefined],
+    ['shard-cache', 3, ['int', 'Abyss_03', 'Shell Shard Fossil Tiny Egg', 0], 'Abyss_03', undefined],
     [
       'shard-cache',
-      0,
+      3,
       ['int', 'Abyss_05', 'Shell Shard Fossil Tiny Front', 0],
       'Abyss_05',
       undefined,
     ],
     [
       'shard-cache',
-      0,
+      3,
       ['int', 'Abyss_05', 'Shell Shard Fossil Tiny Bumpy', 0],
       'Abyss_05',
       undefined,
     ],
-    ['shard-cache', 0, ['int', 'Abyss_05', 'Shell Shard Fossil Tiny Egg', 0], 'Abyss_05', undefined],
+    ['shard-cache', 3, ['int', 'Abyss_05', 'Shell Shard Fossil Tiny Egg', 0], 'Abyss_05', undefined],
     [
       'shard-cache',
-      0,
+      3,
       ['int', 'Abyss_05', 'Shell Shard Fossil Tiny Egg (1)', 0],
       'Abyss_05',
       undefined,
     ],
     [
       'shard-cache',
-      0,
+      3,
       ['int', 'Abyss_05', 'Shell Shard Fossil Mid Variant', 0],
       'Abyss_05',
       undefined,
@@ -3167,14 +3201,14 @@
       'Wisp_09',
       undefined,
     ],
-    ['wall', 0, ['bool', 'Abyss_11', 'Abyss_Collapse_Wall_bot'], 'Abyss_11', undefined],
-    ['wall', 0, ['bool', 'Abyss_03', 'Shaman_Collapse_Wall'], 'Abyss_03', undefined],
-    ['wall', 0, ['bool', 'Abyss_09', 'explode_wall (4)'], 'Abyss_09', undefined],
-    ['wall', 0, ['bool', 'Abyss_09', 'explode_wall (3)'], 'Abyss_09', undefined],
-    ['wall', 0, ['bool', 'Abyss_09', 'explode_wall 4'], 'Abyss_09', undefined],
-    ['wall', 0, ['bool', 'Abyss_09', 'Abyss_Collapse_Wall'], 'Abyss_09', undefined],
-    ['wall', 0, ['bool', 'Abyss_13', 'Abyss_Collapse_Wall'], 'Abyss_13', undefined],
-    ['wall', 0, ['bool', 'Ant_05b', 'One Way Wall'], 'Ant_05b', undefined],
+    ['wall', 3, ['bool', 'Abyss_11', 'Abyss_Collapse_Wall_bot'], 'Abyss_11', undefined],
+    ['wall', 3, ['bool', 'Abyss_03', 'Shaman_Collapse_Wall'], 'Abyss_03', undefined],
+    ['wall', 3, ['bool', 'Abyss_09', 'explode_wall (4)'], 'Abyss_09', undefined],
+    ['wall', 3, ['bool', 'Abyss_09', 'explode_wall (3)'], 'Abyss_09', undefined],
+    ['wall', 3, ['bool', 'Abyss_09', 'explode_wall 4'], 'Abyss_09', undefined],
+    ['wall', 3, ['bool', 'Abyss_09', 'Abyss_Collapse_Wall'], 'Abyss_09', undefined],
+    ['wall', 3, ['bool', 'Abyss_13', 'Abyss_Collapse_Wall'], 'Abyss_13', undefined],
+    ['wall', 3, ['bool', 'Ant_05b', 'One Way Wall'], 'Ant_05b', undefined],
     ['wall', 0, ['bool', 'Aqueduct_01', 'Breakable Wall Aqueduct Start'], 'Aqueduct_01', undefined],
     ['wall', 0, ['bool', 'Aqueduct_08', 'Breakable Wall_Silhouette'], 'Aqueduct_08', undefined],
     ['wall', 0, ['bool', 'Aqueduct_02', 'Breakable Wall'], 'Aqueduct_02', undefined],
@@ -3253,7 +3287,7 @@
       'Belltown_basement_03',
       undefined,
     ],
-    ['wall', 0, ['bool', 'Bellway_01', 'Act3_Bellway_01_Breakable_wall'], 'Bellway_01', undefined],
+    ['wall', 3, ['bool', 'Bellway_01', 'Act3_Bellway_01_Breakable_wall'], 'Bellway_01', undefined],
     ['wall', 0, ['bool', 'Bellway_02', 'Breakable Wall'], 'Bellway_02', undefined],
     ['wall', 0, ['bool', 'Bellway_04', 'plank_wall_cluster'], 'Bellway_04', undefined],
     ['wall', 0, ['bool', 'Bellway_Peak', 'Breakable Wall'], 'Bellway_Peak', undefined],
@@ -3351,25 +3385,25 @@
       undefined,
     ],
     ['wall', 0, ['bool', 'Chapel_Wanderer', 'One Way Wall'], 'Chapel_Wanderer', undefined],
-    ['wall', 0, ['bool', 'Clover_01', 'Breakable Wall_Silhouette'], 'Clover_01', undefined],
-    ['wall', 0, ['bool', 'Clover_16', 'Breakable Wall'], 'Clover_16', undefined],
+    ['wall', 3, ['bool', 'Clover_01', 'Breakable Wall_Silhouette'], 'Clover_01', undefined],
+    ['wall', 3, ['bool', 'Clover_16', 'Breakable Wall'], 'Clover_16', undefined],
     [
       'wall',
-      0,
+      3,
       ['bool', 'Cog_10_Destroyed', 'plank_wall_cluster_metal'],
       'Cog_10_Destroyed',
       undefined,
     ],
     [
       'wall',
-      0,
+      3,
       ['bool', 'Cog_10_Destroyed', 'plank_wall_cluster_metal (1)'],
       'Cog_10_Destroyed',
       undefined,
     ],
     [
       'wall',
-      0,
+      3,
       ['bool', 'Cog_10_Destroyed', 'plank_wall_cluster_metal (2)'],
       'Cog_10_Destroyed',
       undefined,
@@ -3442,7 +3476,7 @@
     ['wall', 0, ['bool', 'Coral_44', 'Coral Crust Wall Mid'], 'Coral_44', undefined],
     [
       'wall',
-      0,
+      3,
       ['bool', 'Cradle_Destroyed_Challenge_Bench', 'plank_wall_cluster'],
       'Cradle_Destroyed_Challenge_Bench',
       undefined,
@@ -3648,7 +3682,7 @@
     ['wall', 0, ['bool', 'Song_10', 'Breakable Wall  second'], 'Song_10', undefined],
     ['wall', 0, ['bool', 'Song_11', 'Breakable Wall'], 'Song_11', undefined],
     ['wall', 0, ['bool', 'Song_11', 'Breakable Wall (1)'], 'Song_11', undefined],
-    ['wall', 0, ['bool', 'Song_Enclave_Tube', 'One Way Wall'], 'Song_Enclave_Tube', undefined],
+    ['wall', 3, ['bool', 'Song_Enclave_Tube', 'One Way Wall'], 'Song_Enclave_Tube', undefined],
     ['wall', 0, ['bool', 'Tube_Hub', 'Breakable Wall'], 'Tube_Hub', undefined],
     ['wall', 0, ['bool', 'Tube_Hub', 'Breakable Wall_Silhouette'], 'Tube_Hub', undefined],
     ['wall', 0, ['bool', 'Tut_02', 'One Way VineWall'], 'Tut_02', undefined],
@@ -3892,11 +3926,11 @@
       null,
       { was: ['bool', 'Bone_11b', 'Plate'] },
     ],
-    ['plate', 0, ['bool', 'Clover_05c', 'Hornet_pressure_plate_small_persistent'], 'Clover_05c'],
-    ['plate', 0, ['bool', 'Clover_18', 'Plaque Pressure Plate'], 'Clover_18'],
-    ['plate', 0, ['bool', 'Clover_18', 'Shrine Pressure Plate BR'], 'Clover_18'],
-    ['plate', 0, ['bool', 'Clover_18', 'Shrine Pressure Plate L'], 'Clover_18'],
-    ['plate', 0, ['bool', 'Clover_18', 'Shrine Pressure Plate TR'], 'Clover_18'],
+    ['plate', 3, ['bool', 'Clover_05c', 'Hornet_pressure_plate_small_persistent'], 'Clover_05c'],
+    ['plate', 3, ['bool', 'Clover_18', 'Plaque Pressure Plate'], 'Clover_18'],
+    ['plate', 3, ['bool', 'Clover_18', 'Shrine Pressure Plate BR'], 'Clover_18'],
+    ['plate', 3, ['bool', 'Clover_18', 'Shrine Pressure Plate L'], 'Clover_18'],
+    ['plate', 3, ['bool', 'Clover_18', 'Shrine Pressure Plate TR'], 'Clover_18'],
     ['plate', 0, ['bool', 'Cog_Bench', 'Hornet_pressure_plate_small_persistent'], 'Cog_Bench'],
     ['plate', 0, ['bool', 'Coral_10', 'Coral10rightsidegate'], 'Coral_10'],
     ['plate', 0, ['bool', 'Dock_03', 'Harpoon Ring Pull Switch'], 'Dock_03'],
@@ -3912,7 +3946,7 @@
     ['gate', 0, ['bool', 'Bone_East_10_Church', 'Song_Gate_small (1)'], 'Bone_East_10_Church'],
     ['gate', 0, ['bool', 'Bone_East_12', 'Song_Gate_small'], 'Bone_East_12'],
     ['gate', 0, ['bool', 'Bone_East_15', 'Song_Gate_small (3)'], 'Bone_East_15'],
-    ['gate', 0, ['bool', 'Clover_05c', 'Clover Gate (1)'], 'Clover_05c'],
+    ['gate', 3, ['bool', 'Clover_05c', 'Clover Gate (1)'], 'Clover_05c'],
     ['gate', 0, ['bool', 'Cog_Dancers', 'slide_gate_ring'], 'Cog_Dancers', null, { gone: 'act3' }],
     ['gate', 0, ['bool', 'Coral_28', 'Coral_gate_large'], 'Coral_28'],
     ['gate', 0, ['bool', 'Coral_28', 'Coral_gate_large (1)'], 'Coral_28'],
@@ -3927,7 +3961,7 @@
     ['gate', 0, ['bool', 'Library_13', 'Song_Gate_small'], 'Library_13'],
     [
       'gate',
-      0,
+      3,
       ['bool', 'Room_Diving_Bell_Abyss', 'diving_bell_door_breakable'],
       'Room_Diving_Bell_Abyss',
     ],
@@ -4075,7 +4109,7 @@
     ['shortcut', 0, ['bool', 'Aqueduct_04', 'drop_planks'], 'Aqueduct_04'],
     [
       'shortcut',
-      0,
+      3,
       [
         'any',
         ['bool', 'Cog_10_Destroyed', 'Pipe_Vent_Hatch Broken'],
@@ -4297,7 +4331,7 @@
     ],
     [
       'map',
-      null,
+      3,
       ['flag', 'HasCloverMap'],
       'clover_20',
       { es: 'Mapa de Verdania', en: 'Verdania Map', key: 'CLOVER_MAP_GET_MSG' },
@@ -4305,7 +4339,7 @@
     ],
     [
       'map',
-      null,
+      3,
       ['flag', 'HasAbyssMap'],
       'abyss_12',
       { es: 'Mapa del Abismo', en: 'Abyss Map', key: 'ABYSS_MAP_GET_MSG' },
@@ -4521,7 +4555,7 @@
     ],
     [
       'shards',
-      null,
+      3,
       ['bool', 'Cog_07', 'Collectable Item Pickup'],
       'Cog_07',
       { es: 'Núcleo prístino', en: 'Pristine Core', key: 'INV_NAME_PRISTINE_CORE' },
@@ -4983,7 +5017,7 @@
     ],
     [
       'keyitem',
-      null,
+      3,
       ['bool', 'Abyss_08', 'Collectable Item Pickup'],
       'Abyss_08',
       { es: 'Vistalejana', en: 'Farsight', key: 'INV_NAME_FARSIGHT' },
@@ -5025,9 +5059,9 @@
     ['bead', null, ['bool', 'Bone_19', 'Geo Small Persistent'], 'Bone_19'],
     ['bead', null, ['bool', 'Bone_19', 'Geo Small Persistent (1)'], 'Bone_19'],
     ['bead', null, ['bool', 'Bone_19', 'Geo Small Persistent (2)'], 'Bone_19'],
-    ['bead', null, ['bool', 'Bone_East_10_Room', 'Geo Small Persistent'], 'Bone_East_10_Room'],
-    ['bead', null, ['bool', 'Bone_East_10_Room', 'Geo Small Persistent (1)'], 'Bone_East_10_Room'],
-    ['bead', null, ['bool', 'Bone_East_10_Room', 'Geo Small Persistent (3)'], 'Bone_East_10_Room'],
+    ['bead', 3, ['bool', 'Bone_East_10_Room', 'Geo Small Persistent'], 'Bone_East_10_Room'],
+    ['bead', 3, ['bool', 'Bone_East_10_Room', 'Geo Small Persistent (1)'], 'Bone_East_10_Room'],
+    ['bead', 3, ['bool', 'Bone_East_10_Room', 'Geo Small Persistent (3)'], 'Bone_East_10_Room'],
     ['bead', null, ['bool', 'Bonegrave', 'Geo Small Persistent'], 'Bonegrave'],
     ['bead', null, ['bool', 'Bonegrave', 'Geo Small Persistent (1)'], 'Bonegrave'],
     ['bead', null, ['bool', 'Bonegrave', 'Geo Small Persistent (2)'], 'Bonegrave'],
@@ -5157,11 +5191,11 @@
     ],
     ['lift', null, ['bool', 'Shellwood_02', 'Hornet_cage_rect_lift'], 'Shellwood_02'],
     ['lift', null, ['bool', 'Ward_01', 'under_lift_large'], 'Ward_01'],
-    ['masked', null, ['bool', 'Abandoned_town', 'Remasker New'], 'Abandoned_town'],
-    ['masked', null, ['bool', 'Abyss_05', 'Remasker New Sharp Ultra'], 'Abyss_05'],
+    ['masked', 3, ['bool', 'Abandoned_town', 'Remasker New'], 'Abandoned_town'],
+    ['masked', 3, ['bool', 'Abyss_05', 'Remasker New Sharp Ultra'], 'Abyss_05'],
     [
       'masked',
-      null,
+      3,
       [
         'all',
         ['any', ['bool', 'Ant_05b', 'Remasker New'], ['bool', 'Ant_05b', 'One Way Wall']],
@@ -5419,10 +5453,10 @@
         ],
       },
     ],
-    ['masked', null, ['bool', 'Clover_01', 'Remasker New Sharp Ultra'], 'Clover_01'],
+    ['masked', 3, ['bool', 'Clover_01', 'Remasker New Sharp Ultra'], 'Clover_01'],
     [
       'masked',
-      null,
+      3,
       [
         'all',
         ['bool', 'Clover_10', 'Remasker New'],
@@ -5432,11 +5466,11 @@
       ],
       'Clover_10',
     ],
-    ['masked', null, ['bool', 'Clover_10_web', 'Remasker New Sharp Ultra'], 'Clover_10_web'],
-    ['masked', null, ['bool', 'Clover_16', 'Remasker New Sharp Ultra'], 'Clover_16'],
+    ['masked', 3, ['bool', 'Clover_10_web', 'Remasker New Sharp Ultra'], 'Clover_10_web'],
+    ['masked', 3, ['bool', 'Clover_16', 'Remasker New Sharp Ultra'], 'Clover_16'],
     [
       'masked',
-      null,
+      3,
       [
         'all',
         ['bool', 'Clover_18', 'Remasker New'],
@@ -5456,7 +5490,7 @@
       ],
       'Cog_07',
     ],
-    ['masked', null, ['bool', 'Cog_10_Destroyed', 'Secret Mask New'], 'Cog_10_Destroyed'],
+    ['masked', 3, ['bool', 'Cog_10_Destroyed', 'Secret Mask New'], 'Cog_10_Destroyed'],
     [
       'masked',
       null,
@@ -5566,10 +5600,10 @@
     ],
     ['masked', null, ['bool', 'Coral_Tower_01', 'Remasker New Sharp Ultra'], 'Coral_Tower_01'],
     ['masked', null, ['bool', 'Cradle_03', 'Remasker New Sharp Ultra'], 'Cradle_03'],
-    ['masked', null, ['bool', 'Cradle_03_Destroyed', 'Remasker New Sharp'], 'Cradle_03_Destroyed'],
+    ['masked', 3, ['bool', 'Cradle_03_Destroyed', 'Remasker New Sharp'], 'Cradle_03_Destroyed'],
     [
       'masked',
-      null,
+      3,
       [
         'all',
         ['bool', 'Cradle_Destroyed_Challenge_01', 'Remasker New'],
@@ -6269,7 +6303,7 @@
     ],
     [
       'masked',
-      null,
+      3,
       [
         'all',
         [
@@ -6623,7 +6657,7 @@
     ['disgraced-chef-lugoli', 'Dust_Chef', ['flag', 'defeatedRoachkeeperChef'], 2],
     ['father-of-the-flame', 'Belltown_08', ['flag', 'defeatedWispPyreEffigy'], 2],
     ['groal-the-great', 'Shadow_18', ['flag', 'DefeatedSwampShaman'], 2],
-    ['craggler', 'Crawl_04', ['flag', 'roofCrabDefeated'], 2],
+    ['craggler', 'Crawl_04', ['flag', 'roofCrabDefeated'], 1],
     ['voltvyrm', 'Coral_29', ['flag', 'defeatedZapCoreEnemy'], 2],
     ['raging-conchfly', 'Coral_27', ['flag', 'defeatedCoralDrillerSolo'], 2],
     ['first-sinner', 'Slab_10b', ['flag', 'defeatedFirstWeaver'], 2],
@@ -7241,6 +7275,18 @@
       null,
       null,
       null,
+      {
+        at: [
+          'any',
+          ['not', ['accepted', 'Bellbeast Rescue']],
+          ['any', ['quest', 'Bellbeast Rescue']],
+          [
+            'all',
+            ['min', 'FastTravelNPCLocation', 15],
+            ['not', ['min', 'FastTravelNPCLocation', 16]],
+          ],
+        ],
+      },
     ],
     [
       'goal',
@@ -7252,6 +7298,14 @@
       null,
       null,
       null,
+      {
+        at: [
+          'any',
+          ['not', ['accepted', 'Bellbeast Rescue']],
+          ['any', ['quest', 'Bellbeast Rescue']],
+          ['all', ['min', 'FastTravelNPCLocation', 5], ['not', ['min', 'FastTravelNPCLocation', 6]]],
+        ],
+      },
     ],
     [
       'goal',
@@ -7263,6 +7317,18 @@
       null,
       null,
       null,
+      {
+        at: [
+          'any',
+          ['not', ['accepted', 'Bellbeast Rescue']],
+          ['any', ['quest', 'Bellbeast Rescue']],
+          [
+            'all',
+            ['min', 'FastTravelNPCLocation', 13],
+            ['not', ['min', 'FastTravelNPCLocation', 14]],
+          ],
+        ],
+      },
     ],
     [
       'goal',
@@ -7274,6 +7340,14 @@
       null,
       null,
       null,
+      {
+        at: [
+          'any',
+          ['not', ['accepted', 'Bellbeast Rescue']],
+          ['any', ['quest', 'Bellbeast Rescue']],
+          ['all', ['min', 'FastTravelNPCLocation', 3], ['not', ['min', 'FastTravelNPCLocation', 4]]],
+        ],
+      },
     ],
     [
       'goal',
@@ -7285,6 +7359,14 @@
       null,
       null,
       null,
+      {
+        at: [
+          'any',
+          ['not', ['accepted', 'Bellbeast Rescue']],
+          ['any', ['quest', 'Bellbeast Rescue']],
+          ['all', ['min', 'FastTravelNPCLocation', 1], ['not', ['min', 'FastTravelNPCLocation', 2]]],
+        ],
+      },
     ],
     [
       'goal',
@@ -7296,6 +7378,18 @@
       null,
       null,
       null,
+      {
+        at: [
+          'any',
+          ['not', ['accepted', 'Bellbeast Rescue']],
+          ['any', ['quest', 'Bellbeast Rescue']],
+          [
+            'all',
+            ['min', 'FastTravelNPCLocation', 9],
+            ['not', ['min', 'FastTravelNPCLocation', 10]],
+          ],
+        ],
+      },
     ],
     [
       'goal',
@@ -7307,6 +7401,14 @@
       null,
       null,
       null,
+      {
+        at: [
+          'any',
+          ['not', ['accepted', 'Bellbeast Rescue']],
+          ['any', ['quest', 'Bellbeast Rescue']],
+          ['all', ['min', 'FastTravelNPCLocation', 6], ['not', ['min', 'FastTravelNPCLocation', 7]]],
+        ],
+      },
     ],
     [
       'goal',
@@ -7318,6 +7420,14 @@
       null,
       null,
       null,
+      {
+        at: [
+          'any',
+          ['not', ['accepted', 'Bellbeast Rescue']],
+          ['any', ['quest', 'Bellbeast Rescue']],
+          ['all', ['min', 'FastTravelNPCLocation', 2], ['not', ['min', 'FastTravelNPCLocation', 3]]],
+        ],
+      },
     ],
     [
       'goal',
@@ -7329,6 +7439,14 @@
       null,
       null,
       null,
+      {
+        at: [
+          'any',
+          ['not', ['accepted', 'Bellbeast Rescue']],
+          ['any', ['quest', 'Bellbeast Rescue']],
+          ['all', ['min', 'FastTravelNPCLocation', 4], ['not', ['min', 'FastTravelNPCLocation', 5]]],
+        ],
+      },
     ],
     [
       'goal',
@@ -7340,6 +7458,18 @@
       null,
       null,
       null,
+      {
+        at: [
+          'any',
+          ['not', ['accepted', 'Bellbeast Rescue']],
+          ['any', ['quest', 'Bellbeast Rescue']],
+          [
+            'all',
+            ['min', 'FastTravelNPCLocation', 11],
+            ['not', ['min', 'FastTravelNPCLocation', 12]],
+          ],
+        ],
+      },
     ],
     [
       'goal',
@@ -7351,6 +7481,18 @@
       null,
       null,
       null,
+      {
+        at: [
+          'any',
+          ['not', ['accepted', 'Bellbeast Rescue']],
+          ['any', ['quest', 'Bellbeast Rescue']],
+          [
+            'all',
+            ['min', 'FastTravelNPCLocation', 14],
+            ['not', ['min', 'FastTravelNPCLocation', 15]],
+          ],
+        ],
+      },
     ],
     [
       'goal',
@@ -7362,6 +7504,18 @@
       null,
       null,
       null,
+      {
+        at: [
+          'any',
+          ['not', ['accepted', 'Bellbeast Rescue']],
+          ['any', ['quest', 'Bellbeast Rescue']],
+          [
+            'all',
+            ['min', 'FastTravelNPCLocation', 12],
+            ['not', ['min', 'FastTravelNPCLocation', 13]],
+          ],
+        ],
+      },
     ],
     [
       'goal',
@@ -9399,6 +9553,12 @@
     'shakra:15': [1078.1, 1239.4],
     'shakra:16': [892.2, 1228],
     'shop:twelfth-architect:0': [1441.7, 855.8],
+    'piece:38:grindle': [461.8, 909],
+    'tools:magnetite-dice:grindle': [461.8, 909],
+    'piece:0:grindle': [461.8, 909],
+    'tools:magnetite-brooch:grindle': [461.8, 909],
+    'piece:58:grindle': [461.8, 909],
+    'piece:103:grindle': [461.8, 909],
     'giver:belltown': [1165.2, 1226.9],
     'giver:crawl_08': [370, 1289.2],
     'giver:aqueduct_05_festival': [2380.1, 576.2],

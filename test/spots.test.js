@@ -117,7 +117,8 @@ test('each area map is a mark where it\'s had, by its flag: Shakra\'s spot in it
   assert.deepEqual([...new Set(maps.map((x) => x[2][1]))].sort(), Object.keys(SP.MAPS).map((a) => 'Has' + a + 'Map').sort());
   for (const [, act, check, scene, name, how] of maps) {
     assert.equal(check[0], 'flag');
-    assert.equal(act, check[1] === 'HasCradleMap' ? (how.found ? 3 : 2) : null, check[1]);
+    // No Act of its own but the Cradle's two, and the two lying where only Act 3 goes (the Abyss's, Verdania's).
+    assert.equal(act, check[1] === 'HasCradleMap' ? (how.found ? 3 : 2) : ['HasAbyssMap', 'HasCloverMap'].includes(check[1]) ? 3 : null, check[1]);
     assert.ok(name && name.es && name.en && name.key, check[1]);
     assert.ok(how.found || ((how.shop === 'shakra' || how.machine) && how.price > 0), check[1]);
     // Bought where Shakra sits in the map's own area (the Mosslands' from her first spot, in the Marrow).
@@ -365,6 +366,32 @@ test('the Flintgems are three Flintbeetles in four places: Bone_04 or Bone_06 by
   assert.deepEqual(F.gameOf({ ...snap, 'pharloom.progress': JSON.stringify(old) }).elsewhere, []);
 });
 
+test("the Bellbeast's twelve stations are one check, and a save with its wish on shows the one the beast is at", () => {
+  const pins = SP.TASKS.map((x, i) => (x[1] === 'Bellbeast Rescue' ? i : -1)).filter((i) => i >= 0);
+  assert.equal(pins.length, 12);
+  assert.equal(new Set(pins.map((i) => JSON.stringify(SP.TASKS[i][2]))).size, 1, 'one check, so one thing on the count');
+  // Each station's value (GlobalEnums.FastTravelLocations: 1-6, 9, 11-15) is one mark's.
+  const base = { silk: 0, silkMax: 9, maxHealth: 5 };
+  const quest = (done) => ({ QuestCompletionData: { savedData: [{ Name: 'Bellbeast Rescue', Data: { IsAccepted: true, IsCompleted: done } }] } });
+  const shown = (g) => pins.filter((i) => !g.elsewhere.includes(i));
+  for (const v of [1, 2, 3, 4, 5, 6, 9, 11, 12, 13, 14, 15]) assert.equal(shown(F.game({ ...base, ...quest(false), FastTravelNPCLocation: v })).length, 1, `station ${v}`);
+  // On, the beast at the Grand Bellway (9): only Bellway_City's.
+  const pd = { ...base, ...quest(false), FastTravelNPCLocation: 9 };
+  const g = F.game(pd);
+  assert.deepEqual(shown(g).map((i) => SP.TASKS[i][3]), ['Bellway_City']);
+  // Not taken yet (the field follows the beast all game) and done: all twelve.
+  assert.deepEqual(shown(F.game({ ...base, FastTravelNPCLocation: 9 })), pins);
+  const done = F.game({ ...base, ...quest(true), FastTravelNPCLocation: 2 });
+  assert.deepEqual(shown(done), pins);
+  assert.ok(pins.every((i) => done.tasks.includes(i)));
+  // A slot keeps it; one kept before it has none, and the Map shows all twelve.
+  const snap = F.toSnapshot(pd);
+  assert.deepEqual(shown(F.gameOf(snap)), shown(g));
+  const old = JSON.parse(snap['pharloom.progress']);
+  delete old.elsewhere;
+  assert.deepEqual(shown(F.gameOf({ ...snap, 'pharloom.progress': JSON.stringify(old) })), pins);
+});
+
 test('each extra once: no two of a kind with the same check in the same scene, and no Heart Memento', () => {
   const seen = new Set();
   SP.EXTRAS.forEach((x, i) => {
@@ -377,9 +404,9 @@ test('each extra once: no two of a kind with the same check in the same scene, a
 });
 
 test('a Tool sold that lies elsewhere once its seller is gone has that room too, and the save says which', () => {
-  const tools = Object.entries(SP.ALSO).filter(([k]) => k.startsWith('tools:'));
-  assert.deepEqual(tools.map(([k]) => k).sort(), ['tools:curveclaw', 'tools:weighted-belt']);
-  for (const [key, [scene]] of tools) {
+  const found = Object.entries(SP.ALSO).filter(([, a]) => !a[2]);
+  assert.deepEqual(found.map(([k]) => k).sort(), ['tools:curveclaw', 'tools:weighted-belt']);
+  for (const [key, [scene]] of found) {
     assert.ok(onMap(scene), `${key}: ${scene}`);
     assert.notEqual(R.roomOf(scene).scene, R.roomOf(SP.AT.tools[key.slice(6)]).scene, `${key} is in its seller's room`);
     assert.ok(SP.XY[key + ':found'], `${key} has no point in ${scene}`);
@@ -404,7 +431,7 @@ test('a Tool sold that lies elsewhere once its seller is gone has that room too,
 });
 
 test('what Act 3 moves has its Act 3 room too, and the save says which: Mossberry no. 3 and the Volatile Flintbeetles\' locket', () => {
-  const moved = Object.entries(SP.ALSO).filter(([k]) => !k.startsWith('tools:'));
+  const moved = Object.entries(SP.ALSO).filter(([, a]) => a[2] && a[2].kind === 'moved');
   const berry = SP.EXTRAS.findIndex((x) => x[0] === 'mossberry' && x[2][1] === 'bonetownAspidBerryCollected');
   const locket = CO.PIECES.findIndex((p) => p[0] === 'memory-locket' && JSON.stringify(p[2]).includes('"Rock Rollers"'));
   const both = ['extra:' + berry, 'piece:' + locket].sort();
@@ -463,4 +490,38 @@ test('no cache is only the holder of an item that has its own mark (an ant_item_
         `extra:${i} (${x[0]} ${c[1]} ${c[2]}) only holds ${save}`);
     }
   });
+});
+
+test('what Grindle sells only in Act 3, had elsewhere before, has his room too: Pebb\'s, Mort\'s and Lumble\'s wares', () => {
+  const SH = require('../js/shop.js');
+  const sold = Object.entries(SP.ALSO).filter(([, a]) => a[2] && a[2].kind === 'shop');
+  assert.deepEqual(sold.map(([k]) => k).sort(),
+    ['piece:0', 'piece:103', 'piece:38', 'piece:58', 'tools:magnetite-brooch', 'tools:magnetite-dice']);
+  const room = (s) => R.roomOf(s).scene;
+  for (const [key, [scene, check, way]] of sold) {
+    const [cat, id] = key.split(':'), at = cat === 'piece' ? SP.AT.pieces[id] : SP.AT.tools[id];
+    const ware = SH.SHOP.find((x) => x.vendor === 'grindle' && x.act === 3 && (cat === 'piece' ? x.piece === Number(id) : x.tool === id));
+    assert.ok(ware, `${key} isn't among Grindle's Act 3 stock`);
+    assert.equal(scene, 'coral_42');
+    assert.deepEqual(check, ['flag', 'blackThreadWorld'], `${key}: there in Act 3`);
+    assert.deepEqual(way, { kind: 'shop', vendor: 'grindle', price: ware.price, act: 3, from: way.from });
+    // Who had it before, in the room where the Map had it, is gone in Act 3 (the game's «Normal World»).
+    assert.ok(['pebb', 'mort', 'lumble'].includes(way.from), `${key} from ${way.from}`);
+    assert.notEqual(room(at), room(scene), `${key} is in Grindle's room already`);
+    assert.deepEqual(SP.XY[key + ':grindle'], SP.XY['shop:grindle:0'], `${key} isn't at Grindle`);
+  }
+  assert.equal(SP.ALSO['piece:0'][2].from, 'pebb');
+  assert.equal(SP.ALSO['piece:103'][2].from, 'mort');
+  assert.equal(SP.ALSO['tools:magnetite-dice'][2].from, 'lumble');
+  // Every Act 3 ware of a vendor that's a thing with a mark elsewhere has one: none left out.
+  for (const x of SH.SHOP) {
+    if (x.act !== 3 || !(x.tool || x.piece != null)) continue;
+    const key = x.tool ? 'tools:' + x.tool : 'piece:' + x.piece, at = x.tool ? SP.AT.tools[x.tool] : SP.AT.pieces[x.piece];
+    if (room(at) !== room(SH.VENDORS[x.vendor][0])) assert.ok(SP.ALSO[key], `${key}: ${x.item} has no mark at ${x.vendor}`);
+  }
+  // The check is the save's Act 3: what the Map reads (game().act) says the same.
+  const base = { silk: 0, silkMax: 9, maxHealth: 5 };
+  assert.equal(F.game({ ...base, act2Started: true }).act, 2);
+  assert.equal(F.game({ ...base, act2Started: true, blackThreadWorld: true }).act, 3);
+  assert.equal(F.gameOf(F.toSnapshot({ ...base, act2Started: true, blackThreadWorld: true })).act, 3);
 });
