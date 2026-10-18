@@ -1038,7 +1038,8 @@ const entryAt = (entries, scene, want = () => true) => {
   }
   return null;
 };
-const itemAt = (save, scene) => entryAt((P.items[save] || {}).at, scene, (e) => LYING.test(e[1])) || entryAt((P.items[save] || {}).at, scene);
+const lyingAt = (save, scene) => entryAt((P.items[save] || {}).at, scene, (e) => LYING.test(e[1]));
+const itemAt = (save, scene) => lyingAt(save, scene) || entryAt((P.items[save] || {}).at, scene);
 const objectAt = (c) => {
   if (!Array.isArray(c)) return null;
   if (c[0] === 'any') { for (const x of c.slice(1)) { const p = objectAt(x); if (p) return p; } return null; }
@@ -1055,12 +1056,19 @@ CO.PIECES.forEach((p, i) => {
   const scene = AT.pieces[i];
   put2('piece:' + i, objectAt(p[2]) || (OLD_HEARTS[p[2][1]] ? itemAt(OLD_HEARTS[p[2][1]], scene) : null));
 });
+/* A Tool lying in its room is where it lies. One a shop sells, lying nowhere there, waits for its
+   vendor's point (wayAt, below): what else in the room names it is no place of its own (the
+   Snitchflies' FSMs at the Blasted Steps, which stop hiding from whoever wears the Thief's Mark
+   Grindle sells there). */
+const soldOnly = (id, names, scene) => (WAY_OF['tools:' + id] || {}).kind === 'shop' && !names.some((n) => lyingAt(n, scene));
 for (const ids of CO.COUNTED) {
-  const id = ids[0], scene = AT.tools[id], hand = HAND.tools[id];
-  put2('tools:' + id, hand ? entryAt((P.items[hand[0]] || {}).at, scene) : ids.flatMap((x) => CO.TOOLS[x]).map((n) => itemAt(n, scene)).find(Boolean));
+  const id = ids[0], scene = AT.tools[id], hand = HAND.tools[id], names = ids.flatMap((x) => CO.TOOLS[x]);
+  if (!hand && soldOnly(id, names, scene)) continue;
+  put2('tools:' + id, hand ? entryAt((P.items[hand[0]] || {}).at, scene) : names.map((n) => itemAt(n, scene)).find(Boolean));
 }
 for (const id of OTHER_TOOLS) {
   const scene = AT.tools[id], hand = OTHER_HAND[id];
+  if (!hand && soldOnly(id, CO.TOOLS[id], scene)) continue;
   put2('tools:' + id, hand ? entryAt((P.items[hand[0]] || {}).at, scene) : CO.TOOLS[id].map((n) => itemAt(n, scene)).find(Boolean));
 }
 // A Tool's other room (ALSO): where it lies there.
