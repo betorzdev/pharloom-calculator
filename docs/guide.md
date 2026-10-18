@@ -445,7 +445,12 @@ leaves those off.
   shop sells lie in another room once the seller dies before you buy them: the Curveclaw in the
   room above the Mottled Skarr's corpse, past its gauntlet, and the Weighted Belt by Mort's corpse
   in Act 3. With a save the mark is where your game has it (the shop while the seller lives or
-  once you bought it there); with none, at both, counted once. Then the
+  once you bought it there); with none, at both, counted once. So does what Grindle sells only in
+  Act 3 and you could have had elsewhere before, each in its own layer (Pebb's Mask Shard,
+  Craftmetal and Magnetite Brooch, Mort's Memory Locket and Tool Pouch, Lumble's Magnetite Dice):
+  Act 3 empties those three rooms, so it also has a mark at Grindle's in the Blasted Steps. With a
+  save in Act 3 it's there alone while you don't have it; before Act 3, or once had, where it was;
+  with none, at both, counted once, Grindle's saying Act 3 and his price. Then the
   Crests, **What Eva gives** besides Sylphsong (off at first): the Hunter Crest's two evolutions and
   the Vesticrest's yellow and blue slots, each with the slots it needs across your Crests (the
   Hunter's aside) and, with a save, how many you have open; and the Silk Skills.
@@ -587,7 +592,10 @@ stays sharp as you zoom.
 With a save the map shows only what you're missing; in Free mode, what your marks say is missing
 (everything, as a guide, on a New Game). Tap any mark for its card (above the mark, or below it
 when above it would cover the search or the zoom): what
-it is, where, how it's had, and what it says of your game. A
+it is, where (its area, and the first Act it can be had in there; what only Act 3 has says Act 3:
+the Abyss, Verdania, the destroyed Cradle and Cogwork Core, the Border Caves and the Nameless Town,
+and what lies only in a room's Act 3 state, as the rosaries in Mort's room once he's gone; a cache,
+a wall or a door with no Act of its own says none), how it's had, and what it says of your game. A
 shop's says what of the 100% it still has for you (and the wishes it asks, if it does), Shakra's which maps you lack, a Wishwall's or a
 wish giver's the wishes still open, a wish's place or thing which wish it's for, whether it's done
 and a button to its Wishwall or to who asks for it, a boss's whether it's beaten, with «Fight it in Combat» and
