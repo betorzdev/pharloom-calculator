@@ -65,7 +65,9 @@ test("the home's title is the one the site puts on the tab in the other language
 
 test('the texts carry only the tags they may, and their links go to real pages', () => {
   const all = JSON.stringify(PAGES);
-  for (const tag of all.match(/<\/?([a-z]+)/g) || []) assert.ok(/^<\/?(code|strong|em)$/.test(tag), `tag ${tag} in pages-text.js`);
+  for (const tag of all.match(/<\/?([a-z]+)/g) || []) assert.ok(/^<\/?(code|strong|em|a)$/.test(tag), `tag ${tag} in pages-text.js`);
+  // A link in the texts goes out (the Ko-fi one, design/94b): the site's own pages are linked by tools/pages.js.
+  for (const [, href] of all.matchAll(/<a href=\\"([^\\]*)\\"/g)) assert.ok(/^https:\/\//.test(href), `link ${href} in pages-text.js`);
   for (const { page, lang } of EVERY) {
     const html = read(P.file(page, lang));
     for (const [, href] of html.matchAll(/<a href="([^"]*)" data-page>/g)) {

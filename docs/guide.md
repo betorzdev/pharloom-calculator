@@ -986,6 +986,10 @@ for (LSSI art. 22.2, ePrivacy art. 5.3), and never leaves it:
 - IndexedDB: `pharloom-live`, a copy of each imported save (so a slot is read again when the
   site learns something new) and, only after "Follow the game", the save-file handle (`js/live.js`).
 - Save files are read in the browser; nothing is uploaded.
+- **Donations**: a plain link to [Ko-fi](https://ko-fi.com/betorzdev), "Support the site" in the
+  header after Share ("Ko-fi" alone on a phone), a line in the footer and the end of the About
+  block's "Is it free?" answer (`KOFI` in `js/app.js`, `tools/pages-text.js`; design/94b). Never
+  Ko-fi's widget: it loads third-party scripts, and the privacy notice says there are none.
 
 The visit counter is [Footworn](https://github.com/betorzdev/footworn) (`track()` in `js/app.js`;
 `404.html` loads it too, to see which broken addresses people land on), Albert's own, on a

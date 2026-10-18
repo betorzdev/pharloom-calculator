@@ -18,6 +18,9 @@
     langGroup:      { es: 'Idioma', en: 'Language' },   // GAME_LANGUAGE
     share:          { es: 'Compartir', en: 'Share' },
     shareHint:      { es: 'Copia el enlace a la web', en: 'Copy the link to the site' },
+    // The donation link after Share (design/94b): the full label on a wide screen, Ko-fi alone on a phone.
+    support:        { es: 'Apoya la web', en: 'Support the site' },
+    supportHint:    { es: 'Donar en Ko-fi', en: 'Donate on Ko-fi' },
     // The sister site's link (js/app-sister.js): the game's title, as it's sold in both languages; its
     // hint names the sister in each, as that site calls itself (its own title; «Amuletos» is Hollow
     // Knight's Spanish for Charms, PANE_CHARMS there).
@@ -904,6 +907,7 @@
                       en: 'Data from {wiki}, under {lic}; game texts from its official translation.' },
     footMade:       { es: 'Hecho por Albert. ¿Un número mal, una traducción rara o un fallo? Escribe a {mail}.',
                       en: 'Made by Albert. A wrong number, an odd translation or a bug? Write to {mail}.' },
+    footSupport:    { es: '¿Te es útil? Puedes apoyarla en {kofi}.', en: 'Is it useful to you? You can support it on {kofi}.' },
     // The privacy notice under it, folded (docs/guide.md, "Privacy"). No game source: written for context.
     footPrivacy:    { es: 'Privacidad', en: 'Privacy' },
     footPrivNone:   { es: 'Esta web no usa cookies ni rastreadores.',

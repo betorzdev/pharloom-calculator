@@ -50,7 +50,9 @@ const APP_LD = {
 
 const FREE = {
   q: { es: '¿Es gratis? ¿Hace falta cuenta?', en: 'Is it free? Do I need an account?' },
-  a: { es: 'Es gratis, sin cuenta y sin anuncios. Tu partida no sale de tu navegador: se lee ahí y se guarda ahí.', en: 'Free, no account and no ads. Your save never leaves your browser: it\'s read there and kept there.' },
+  // The donation link closes it: the one place a visitor asks about money (design/94b).
+  a: { es: 'Es gratis, sin cuenta y sin anuncios. Tu partida no sale de tu navegador: se lee ahí y se guarda ahí. Si te es útil, puedes apoyarla en <a href="https://ko-fi.com/betorzdev" target="_blank" rel="noopener">Ko-fi</a>.',
+       en: 'Free, no account and no ads. Your save never leaves your browser: it\'s read there and kept there. If it\'s useful to you, you can support it on <a href="https://ko-fi.com/betorzdev" target="_blank" rel="noopener">Ko-fi</a>.' },
 };
 // The file as the game calls it, «archivo guardado» (SAVE_CORRUPTED_TITLE).
 const WHERE = {

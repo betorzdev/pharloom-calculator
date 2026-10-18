@@ -362,6 +362,13 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
   font-size: var(--fs-sm); letter-spacing: var(--track-label); white-space: nowrap;
 }
 .lang-btn { gap: var(--sp-2); }
+/* The donation link after Share, set apart by the same thin rule as the language. */
+.mh-support { position: relative; }
+.mh-support::before {
+  content: ''; position: absolute; top: 50%; left: calc(var(--tools-gap) / -2 - 0.5px);
+  width: 1px; height: var(--sp-4); transform: translateY(-50%); background: var(--line-ctl);
+}
+.support-short { display: none; }
 .lang-btn[aria-expanded="true"] { color: var(--ink-strong); text-decoration-color: var(--accent); }
 .lang-code { display: none; }
 .lang-menu {
@@ -662,6 +669,8 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
   .masthead:has(.mh-sister-row) .mh-tools { order: 3; align-self: flex-end; }
   .lang-name { display: none; }
   .lang-code { display: inline; }
+  .support-long { display: none; }
+  .support-short { display: inline; }
   /* At the right edge, the list opens leftwards. */
   .lang-menu { left: auto; right: calc(var(--sp-4) * -1); }
   .title { font-size: var(--fs-lg); text-align: left; letter-spacing: var(--track-title); }

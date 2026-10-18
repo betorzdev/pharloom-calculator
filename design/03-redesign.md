@@ -50,6 +50,7 @@ the work up reads it first, then the step it's on.
 | 6c | The Map's people: everyone in the world and every place that sells | **Built** (11 Oct) | `30-map-people-variants.html` (kept out of the repo) |
 | 6b | The Map's admin mode (`#view=map&admin=1`): the panel, adding, the save check, hide and delete, the marks | **Built** (11 Oct) | `30-map-admin-variants.html` (kept out of the repo) |
 | 1c | The site's icon: the favicon, the home-screen icon | **Built** (14 Oct) | `72-site-icon-variants.html` (kept out of the repo) |
+| 1d | The donation link (Ko-fi) | **Built, draft** (18 Oct) | `94-donate-variants.html`, `94b-donate-variants.html` (kept out of the repo) |
 
 ## Step 1 · The shell
 
@@ -2229,3 +2230,22 @@ from below (`--ember-glow`, the same gradient), B plain (as it was), C transpare
 
 A and A. `tools/site-icons.py` cuts the head from the sprite and draws `--ember-glow` over `--bg`,
 both read from `css/tokens.css`; `npm run site-icons` writes the four files.
+
+## Step 1d · The donation link
+
+### The options (18 October 2026)
+
+Always a plain link to Ko-fi, never its widget (third-party scripts, against the privacy notice).
+`94-donate-variants.html` drew it low on the page: 1 · where, A the footer, **B** the footer and
+the end of the About block's "Is it free?" answer, C those and a block of its own in About; 2 · its
+look, **A** a text link, B with a drawn cup, C a small outlined button. Albert: too low, nobody
+scrolls there. `94b-donate-variants.html` (a copy of `index.html` with the options injected)
+drew it where it's seen: 1 · **A** the header after Share, B a quiet line under the screen's
+frame, C both; 2 · **A** text like Share, B with the cup, C a small button. The footer and the FAQ
+carry it in every option.
+
+### Decision (18 October 2026)
+
+A and A: "Support the site" («Apoya la web») after Share, set apart by the same thin rule as the
+language, "Ko-fi" alone on a phone; plus the footer line and the FAQ's. Left in a draft PR.
+
