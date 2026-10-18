@@ -445,7 +445,12 @@ leaves those off.
   shop sells lie in another room once the seller dies before you buy them: the Curveclaw in the
   room above the Mottled Skarr's corpse, past its gauntlet, and the Weighted Belt by Mort's corpse
   in Act 3. With a save the mark is where your game has it (the shop while the seller lives or
-  once you bought it there); with none, at both, counted once. Then the
+  once you bought it there); with none, at both, counted once. So does what Grindle sells only in
+  Act 3 and you could have had elsewhere before, each in its own layer (Pebb's Mask Shard,
+  Craftmetal and Magnetite Brooch, Mort's Memory Locket and Tool Pouch, Lumble's Magnetite Dice):
+  Act 3 empties those three rooms, so it also has a mark at Grindle's in the Blasted Steps. With a
+  save in Act 3 it's there alone while you don't have it; before Act 3, or once had, where it was;
+  with none, at both, counted once, Grindle's saying Act 3 and his price. Then the
   Crests, **What Eva gives** besides Sylphsong (off at first): the Hunter Crest's two evolutions and
   the Vesticrest's yellow and blue slots, each with the slots it needs across your Crests (the
   Hunter's aside) and, with a save, how many you have open; and the Silk Skills.
