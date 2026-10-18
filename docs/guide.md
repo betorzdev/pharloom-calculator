@@ -139,7 +139,8 @@ handed back they still show found (here and on the Map: the save keeps them, hid
 Shell Shards as big figures, the shards out of what your Tool Pouch holds, 400 to 800, with a bar,
 and under each what breaks into it, counted, with the sum you would get from breaking it all: the
 five Rosary strings and necklaces under the rosaries; the Beast Shards, Shard Bundles, Pristine
-Cores, Hornet Statuettes and the Growstone under the shards, the last only in a Steel Soul game or Free mode); the **items** (the
+Cores, Hornet Statuettes and the Growstone under the shards, the last only in a Steel Soul game or Free mode; and under
+both, the **Silkeaters** you hold, up to ten, the grubs you consume to bring your cocoon back); the **items** (the
 Everbloom, the Farsight, the Hunter's Journal, the Old Hearts, the melodies and the fleas); the
 **Relics** (how many you hold of each kind) and the **Mementos**. Crests, items, what's in the
 purse, Relics and Mementos are plates with their name, and under it their count or «Not found
@@ -156,7 +157,7 @@ Crest, Silk Skill, ability, the Everbloom, the Farsight, the Journal, an Old Hea
 Memento to mark it had or not (its text opens under the shelf); a slot a Tool shares with its
 upgrade goes none, had, upgraded with each tap. Each shelf has «All · None», and what comes in numbers (loose Mask
 Shards and Spool Fragments, Memory Lockets, Craftmetal, Pale Oil, fleas, what's in the purse, the
-Relics of each kind) has − N +, its maximum beside the figure («− 6/20 +»): the loose shards and fragments stop at what the masks and silk
+Silkeaters, the Relics of each kind) has − N +, its maximum beside the figure («− 6/20 +»): the loose shards and fragments stop at what the masks and silk
 left unfilled. The Rosaries and Shell Shards are typed: Enter or leaving the field
 takes the figure, and the shards stop at what your Pouch holds. With the keyboard, the focus stays
 where it was through each mark. «Start from»: «New Game» (the
@@ -455,7 +456,7 @@ leaves those off.
   Heart The Old Hearts doesn't take, so it has no mark) and the Bellhome's furnishings (the five
   bought, and the Materium, Farsight and Crawbell built there once found: their Key items marks
   are where each lies).
-- **Items**: Craftmetal and Pale Oil (on at first), then, off at first, Mossberries, Silkeaters, the
+- **Items**: Craftmetal and Pale Oil (on at first), then, off at first, Mossberries, Silkeaters (each drawn as the item), the
   **Maps**: the fourteen area maps found lying in a room (the Weavenest Atla Map, the
   Slab's…), each gone once your save has it; the fourteen Shakra sells have no mark of their own
   (they'd sit on her), her card says which you lack. And the **Rosaries** and **Shell Shards** lying in a
@@ -977,7 +978,7 @@ The visit counter is [Footworn](https://github.com/betorzdev/footworn) (`track()
 Cloudflare Worker in Western Europe. It sets no cookies, keeps no IP, and stores one row per visit
 with nothing that names you: the page, referrer host, browser and system families, screen width,
 language, country and the site's events (`screen` with `view` and `lang`, `lang`, `error` with
-`part`, `sister` with `to` (the other site's id), and the plain ones: `share`, `save-import`, `save-sync`...). The owner sees them as daily
+`part`, `msg` (the first 64 characters of what went wrong) and `at` (the script and line), `sister` with `to` (the other site's id), and the plain ones: `share`, `save-import`, `save-sync`...). The owner sees them as daily
 counts and, for today only, one by one, rounded (the minute, phone/tablet/desktop); its own
 record of what it stores is at footworn.betorzdev.workers.dev/privacy. That fits the AEPD's exemption for audience measurement ("Guía uso de
 cookies para herramientas de medición de audiencia", January 2024), whose one condition that

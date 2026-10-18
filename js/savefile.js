@@ -26,6 +26,9 @@
   'use strict';
   const SS = globalThis.SS || (globalThis.SS = {});
   const CO = SS.collectibles || require('./collectibles.js');
+  const D = SS.data || require('./data.js');
+  // The most Silkeaters Hornet can hold (the wiki's infobox, js/data.js ITEMS).
+  const EATERS = D.ITEMS.find((x) => x.id === 'silkeater').max;
   const GA = SS.gauntlets || require('./gauntlets.js');
   const MAP = SS.map || require('./map.js');
   const QU = SS.quests || require('./quests.js');
@@ -259,6 +262,8 @@
        everbloom          the White Flower in Collectables
        purse              { item id: how many held } of js/collectibles.js's PURSE (the strings of
                           rosaries and the things that break into shell shards: Collectables Amount)
+       silkeaters         the Silkeaters held (the "Silk Grub" in Collectables, Amount), up to
+                          js/data.js ITEMS' max for it
        rosaries, shards   what Hornet holds (geo, ShellShards); farsight: the Farsight carried or
                           already assembled (ConstructedFarsight); hasJournal: the Hunter's Journal
        pieces             the indices of js/collectibles.js's PIECES found
@@ -369,6 +374,7 @@
       pouch: Math.min(4, whole(pd.ToolPouchUpgrades, 0)),
       everbloom: int(flower) > 0,
       purse: Object.fromEntries(CO.PURSE.map((p) => [p[0], Math.max(0, int((items.get(p[1]) || {}).Amount))])),
+      silkeaters: Math.min(EATERS, Math.max(0, int((items.get('Silk Grub') || {}).Amount))),
       rosaries: Math.max(0, int(pd.geo)), shards: Math.max(0, int(pd.ShellShards)),
       farsight: int((items.get('Farsight') || {}).Amount) > 0 || pd.ConstructedFarsight === true,
       hasJournal: pd.hasJournal === true,
@@ -528,7 +534,7 @@
     };
   }
   const EMPTY = Object.freeze({ tools: [], gaveBack: [], crests: [], skills: [], arts: [], journal: {}, masks: 0, spools: 0, hearts: 0,
-    needle: 0, kit: 0, pouch: 0, everbloom: false, purse: {}, rosaries: 0, shards: 0, farsight: false, hasJournal: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', rested: true, marker: '', area: '', build: {},
+    needle: 0, kit: 0, pouch: 0, everbloom: false, purse: {}, silkeaters: 0, rosaries: 0, shards: 0, farsight: false, hasJournal: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', rested: true, marker: '', area: '', build: {},
     quests: [], taken: [], carried: {}, bellshrines: [], bells: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
     bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [],
     visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], foundNow: [], foundRead: false, lostExtras: [], bosses: [],
@@ -546,6 +552,7 @@
     }
     // The held counts: only the items the list has, as whole numbers.
     out.purse = Object.fromEntries(CO.PURSE.map((p) => [p[0], Number.isInteger(out.purse[p[0]]) ? Math.max(0, out.purse[p[0]]) : 0]));
+    out.silkeaters = Number.isInteger(out.silkeaters) ? Math.max(0, Math.min(EATERS, out.silkeaters)) : 0;
     out.carried = Object.fromEntries(ASKED.filter((n) => Number.isInteger(out.carried[n]) && out.carried[n] > 0).map((n) => [n, out.carried[n]]));
     // The pieces by their keys → today's places in the list; a key the list no longer has is dropped.
     out.pieces = out.pieces.map((k) => KEY_AT.get(k)).filter((i) => i !== undefined);
