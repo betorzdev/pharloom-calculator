@@ -592,7 +592,9 @@ and a button to its Wishwall or to who asks for it, a boss's whether it's beaten
 «See in the Journal» (and its gauntlet's waves and reward, if its fight is one); a gauntlet's its waves and reward; a Journal entry's its kills. In Free mode
 a piece's card marks it had; a Mask Shard, Spool Fragment, Silk Heart or upgrade of the Needle, Kit
 or Pouch follows the Inventory's levels instead, as on Progress, and its card leads there. Tap an area's name for its card: the rooms of it you've visited,
-and what's left there of the 100%, the Journal and the gauntlets.
+and what's left there of the 100%, the Journal and the gauntlets. The map names the areas of
+more than three rooms, and a smaller one that holds something of the 100% (the Songclave), so the
+cards' «For 100%» add up to what «Only the 100%» shows.
 
 Other screens open the map on a thing: «See on the map» on each missing row of Progress and on a
 Journal entry. A step of Progress's road
