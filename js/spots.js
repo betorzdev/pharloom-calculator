@@ -10,11 +10,13 @@
               act: { key: Act } for what's outside the 100% and js/collectibles.js WHERE lacks }:
               where each thing of the 100% is had (its pickup, its vendor, its Wishwall, its
               boss's arena, its giver)
-     ALSO     a thing's key ('tools:<id>') → [scene, check]: a Tool sold that lies in another room
-              once its seller is gone (the Curveclaw once the Mottled Skarr dies, the Weighted Belt
-              once Mort does), that room, and the check that says the game has it there (its point:
-              XY '<key>:found'); check as EXTRAS', plus ['tool', name] (that Tool unlocked) and
-              ['not', check]
+     ALSO     a thing's key ('tools:<id>', 'piece:<i>', 'extra:<i>') → [scene, check, more?]: a Tool
+              sold that lies in another room once its seller is gone (the Curveclaw once the Mottled
+              Skarr dies, the Weighted Belt once Mort does), or a thing Act 3 moves to another room
+              (MOVED: Mossberry no. 3, the Memory Locket of «Volatile Flintbeetles»; more { act: 3,
+              foe } or { act: 3, wish }), that room, and the check that says the game has it there
+              (its point: XY '<key>:found'); check as EXTRAS', plus ['tool', name] (that Tool
+              unlocked) and ['not', check]
      EXTRAS   [kind, act, check, scene, name?, more?]: what doesn't count (relics by kind, mossberry,
               silkeater, memento, bellhome, spawn, rosary-cache, shard-cache, wall, then lever,
               plate, gate, lock, shortcut, silkwall from the game's scenes, then map, rosaries,
@@ -292,6 +294,31 @@
       ],
     ],
     'tools:weighted-belt': ['bone_east_07', ['flag', 'mortKeptWeightedAnklet']],
+    'extra:23': [
+      'Bone_01b',
+      ['all', ['flag', 'blackThreadWorld'], ['not', ['flag', 'bonetownAspidBerryCollected']]],
+      { act: 3, foe: { es: 'Aknid', en: 'Aknid', key: 'NAME_ASPID_COLLECTOR' } },
+    ],
+    'piece:44': [
+      'Bone_10',
+      [
+        'any',
+        ['bool', 'Bone_10', 'Collectable Item Pickup Locket'],
+        [
+          'all',
+          ['flag', 'blackThreadWorld'],
+          [
+            'not',
+            [
+              'any',
+              ['quest', 'Rock Rollers'],
+              ['bool', 'Bone_10', 'Collectable Item Pickup Locket'],
+            ],
+          ],
+        ],
+      ],
+      { act: 3, wish: 'Rock Rollers' },
+    ],
   };
 
   const EXTRAS = [
@@ -8044,6 +8071,8 @@
     'tools:shell-satchel': [493.9, 1283.6],
     'tools:curveclaw:found': [1555.7, 1283.7],
     'tools:weighted-belt:found': [1840.1, 1445],
+    'extra:23:found': [748.3, 1417.2],
+    'piece:44:found': [959.2, 1428.5],
     'skills:silkspear': [697, 1326.8],
     'skills:thread-storm': [2075, 1046.8],
     'skills:sharpdart': [124.8, 1345],

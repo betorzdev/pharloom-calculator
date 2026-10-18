@@ -455,7 +455,11 @@ leaves those off.
   opens them one by one, Mementos (the seven found somewhere: the Heart Memento is whichever Old
   Heart The Old Hearts doesn't take, so it has no mark) and the Bellhome's furnishings (the five
   bought, and the Materium, Farsight and Crawbell built there once found: their Key items marks
-  are where each lies).
+  are where each lies). Two things move in Act 3 if you don't have them yet, and have a second
+  mark there saying Act 3 and why: the Memory Locket of «Volatile Flintbeetles» lies in Survivor's
+  Camp while the wish isn't granted, and the Aknid carrying Mossberry no. 3 moves one room east.
+  With a save the mark is where your game has it (the Act 3 room in Act 3 while not had, or once
+  the locket was picked up there; the first room otherwise); with none, at both, counted once.
 - **Items**: Craftmetal and Pale Oil (on at first), then, off at first, Mossberries, Silkeaters (each drawn as the item), the
   **Maps**: the fourteen area maps had in a room, found lying there (the Weavenest Atla Map, the
   Slab's…) or sold by one of the Citadel's map machines (its card says for how many rosaries), each

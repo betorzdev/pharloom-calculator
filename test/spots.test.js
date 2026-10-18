@@ -377,8 +377,9 @@ test('each extra once: no two of a kind with the same check in the same scene, a
 });
 
 test('a Tool sold that lies elsewhere once its seller is gone has that room too, and the save says which', () => {
-  assert.deepEqual(Object.keys(SP.ALSO).sort(), ['tools:curveclaw', 'tools:weighted-belt']);
-  for (const [key, [scene]] of Object.entries(SP.ALSO)) {
+  const tools = Object.entries(SP.ALSO).filter(([k]) => k.startsWith('tools:'));
+  assert.deepEqual(tools.map(([k]) => k).sort(), ['tools:curveclaw', 'tools:weighted-belt']);
+  for (const [key, [scene]] of tools) {
     assert.ok(onMap(scene), `${key}: ${scene}`);
     assert.notEqual(R.roomOf(scene).scene, R.roomOf(SP.AT.tools[key.slice(6)]).scene, `${key} is in its seller's room`);
     assert.ok(SP.XY[key + ':found'], `${key} has no point in ${scene}`);
@@ -400,6 +401,54 @@ test('a Tool sold that lies elsewhere once its seller is gone has that room too,
   assert.deepEqual(F.gameOf({}).foundNow, []);
   assert.equal(F.gameOf({}).foundRead, false);
   assert.equal(F.gameOf(F.toSnapshot(pd)).foundRead, true);
+});
+
+test('what Act 3 moves has its Act 3 room too, and the save says which: Mossberry no. 3 and the Volatile Flintbeetles\' locket', () => {
+  const moved = Object.entries(SP.ALSO).filter(([k]) => !k.startsWith('tools:'));
+  const berry = SP.EXTRAS.findIndex((x) => x[0] === 'mossberry' && x[2][1] === 'bonetownAspidBerryCollected');
+  const locket = CO.PIECES.findIndex((p) => p[0] === 'memory-locket' && JSON.stringify(p[2]).includes('"Rock Rollers"'));
+  const both = ['extra:' + berry, 'piece:' + locket].sort();
+  assert.deepEqual(moved.map(([k]) => k).sort(), both);
+  // Each first where it was (the Aknid above the town, the Wishwall), then in Act 3 one room east,
+  // and Survivor's Camp, with its point there and Act 3 on its card.
+  assert.equal(SP.EXTRAS[berry][3], 'Bonetown');
+  assert.equal(SP.AT.pieces[locket], 'Bonetown');
+  assert.deepEqual([SP.ALSO['extra:' + berry][0], SP.ALSO['piece:' + locket][0]], ['Bone_01b', 'Bone_10']);
+  for (const [key, [scene, , more]] of moved) {
+    assert.ok(onMap(scene), `${key}: ${scene}`);
+    assert.notEqual(R.roomOf(scene).scene, R.roomOf('Bonetown').scene, `${key} stays in its room`);
+    assert.ok(SP.XY[key + ':found'], `${key} has no point in ${scene}`);
+    assert.equal(more.act, 3);
+  }
+  assert.deepEqual(SP.ALSO['extra:' + berry][2].foe, { es: 'Aknid', en: 'Aknid', key: 'NAME_ASPID_COLLECTOR' });
+  assert.equal(SP.ALSO['piece:' + locket][2].wish, 'Rock Rollers');
+  // The locket picked up in Bone_10 is had: its check takes that bool.
+  assert.deepEqual(CO.PIECES[locket][2], ['any', ['quest', 'Rock Rollers'], ['bool', 'Bone_10', 'Collectable Item Pickup Locket']]);
+  const base = { silk: 0, silkMax: 9, maxHealth: 5 };
+  const quest = (done) => ({ QuestCompletionData: { savedData: [{ Name: 'Rock Rollers', Data: { IsAccepted: true, IsCompleted: done } }] } });
+  const picked = { persistentBools: { serializedList: [{ SceneName: 'Bone_10', ID: 'Collectable Item Pickup Locket', Value: true }] } };
+  const mine = (l) => l.filter((k) => !k.startsWith('tools:')).sort();
+  const now = (pd, sd) => mine(F.game({ ...base, ...pd }, sd).foundNow);
+  // Before Act 3, had or not: their first rooms.
+  assert.deepEqual(now({}), []);
+  assert.deepEqual(now({ bonetownAspidBerryCollected: true, ...quest(true) }), []);
+  // Act 3, neither had: both in their Act 3 rooms.
+  assert.deepEqual(now({ blackThreadWorld: true, ...quest(false) }), both);
+  // Act 3, the berry had (no bool says where: Bonetown) and the wish granted: their first rooms.
+  assert.deepEqual(now({ blackThreadWorld: true, bonetownAspidBerryCollected: true, ...quest(true) }), []);
+  // Act 3, the locket picked up in Bone_10: had, and there.
+  const g = F.game({ ...base, blackThreadWorld: true, bonetownAspidBerryCollected: true }, picked);
+  assert.ok(g.pieces.includes(locket));
+  assert.deepEqual(mine(g.foundNow), ['piece:' + locket]);
+  // Kept in a slot by what they are, not by their place in the lists.
+  const snap = F.toSnapshot({ ...base, blackThreadWorld: true });
+  assert.ok(!JSON.parse(snap['pharloom.progress']).foundNow.some((k) => /^(piece|extra):\d/.test(k)));
+  assert.deepEqual(mine(F.gameOf(snap).foundNow), both);
+  // A slot kept before the locket's check took in Bone_10 still has it, by its old check.
+  const done = F.toSnapshot({ ...base, ...quest(true) }), old = JSON.parse(done['pharloom.progress']);
+  old.pieces = old.pieces.map((k) => (k.startsWith('memory-locket ["any"') ? 'memory-locket ["quest","Rock Rollers"]' : k));
+  assert.ok(old.pieces.includes('memory-locket ["quest","Rock Rollers"]'));
+  assert.ok(F.gameOf({ ...done, 'pharloom.progress': JSON.stringify(old) }).pieces.includes(locket));
 });
 
 test('no cache is only the holder of an item that has its own mark (an ant_item_string, Dock_03\'s chest)', () => {

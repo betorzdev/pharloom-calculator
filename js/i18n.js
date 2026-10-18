@@ -313,6 +313,9 @@
        mark, with no save and with one that has it there. */
     mapAlsoIf:      { es: 'Aquí si {npc} muere antes de que se lo compres', en: 'Here if {npc} dies before you buy it' },
     mapAlsoNow:     { es: '{npc} murió antes de que se lo compraras: está aquí', en: '{npc} died before you bought it: it lies here' },
+    // What Act 3 moves to another room (js/spots.js ALSO's more): that room's mark, why it's there.
+    mapMovedFoe:    { es: 'En el Acto 3, el {foe} que la lleva se muda a esta sala', en: 'In Act 3 the {foe} that carries it moves to this room' },
+    mapMovedWish:   { es: 'En el Acto 3 está aquí, si no se ha concedido el deseo «{wish}»', en: 'In Act 3 it lies here, if the wish "{wish}" isn\'t granted' },
     mapGroupShow:   { es: 'Mostrar todo el grupo', en: 'Show the whole group' },
     mapGroupHide:   { es: 'Esconder todo el grupo', en: 'Hide the whole group' },
     mapFoldOpen:    { es: 'Abrir {g}', en: 'Open {g}' },

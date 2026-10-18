@@ -56,7 +56,16 @@ function check(p, fail) {
    MetCaravanTroupeLeaderJudge; Greymoor_08_caravan's has no spool). The wiki says the same
    (Spool Fragment: "upon their ascent to the Grand Gate", its mapshot the caravan there; the
    Blasted Steps page lists it among its loot). MetCaravanTroupeLeaderJudge and CaravanTroupeLocation
-   ≥ 2 agree on all 73 of the author's saves; the flag is the gift itself, not the move before it. */
-const PIECE_FIX = { '["min","CaravanTroupeLocation",2]': [['flag', 'MetCaravanTroupeLeaderJudge'], 'CORAL_STEPS'] };
+   ≥ 2 agree on all 73 of the author's saves; the flag is the gift itself, not the move before it.
+   The Memory Locket of «Volatile Flintbeetles» (the completionist's quest Rock Rollers) is also had
+   in Bone_10 in Act 3: that scene's «Black Thread World» holds «Rock Rollers Quest Not Completed»
+   (a TestGameObjectActivator that switches it off once the quest is done) around «Collectable Item
+   Pickup Locket», whose own bool the save keeps once it's picked up (read on 18-Oct-2026; the wiki's
+   Memory Locket: "In Act 3, found in Survivor's Camp", the wish not done). tools/gen-spots.js MOVED
+   gives it that room. */
+const PIECE_FIX = {
+  '["min","CaravanTroupeLocation",2]': [['flag', 'MetCaravanTroupeLeaderJudge'], 'CORAL_STEPS'],
+  '["quest","Rock Rollers"]': [['any', ['quest', 'Rock Rollers'], ['bool', 'Bone_10', 'Collectable Item Pickup Locket']], 'BONEBOTTOM'],
+};
 
 module.exports = { SRC, sections, load, check, PIECE_FIX };

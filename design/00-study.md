@@ -2007,3 +2007,22 @@ Checked on the 87 saves now in the folder: Skarr alive in 21 (shop), dead in 66 
 found it there), Mort's belt by his corpse in 15. None bought the Curveclaw, so that case is the
 test's only. On Progress, 4 Act 2 saves with the Skarr and Lumble alive now read the shop and the
 challenge, where the Act alone said found.
+
+**What Act 3 moves** (18 October 2026, Albert's, from the acts audit). Two marks stayed at their
+Act 1 spot though Act 3 moves the thing. Read in the scenes with UnityPy: Bonetown's «Aspid
+Collector (3)», the Aknid carrying Mossberry no. 3, sits under «Normal World»; Bone_01b's «Black
+Thread World» has its twin, with the same DeactivateIfPlayerdataTrue bonetownAspidBerryCollected and
+a Mossberry Pickup whose «PD Bool» is that flag. Bone_10's «Black Thread World» holds «Rock Rollers
+Quest Not Completed» (a TestGameObjectActivator that switches it off once the quest is done) around
+«Collectable Item Pickup Locket», with its own bool. The wiki agrees (Mossberry: "In Act 3 the
+Aknid moves one room east"; Memory Locket: Survivor's Camp in Act 3, the wish not done). The
+locket's check now takes that bool (tools/completionist.js PIECE_FIX), and `tools/gen-spots.js
+MOVED` puts both in ALSO with their Act 3 room, the check that says the game has them there and
+`{ act: 3, foe | wish }` for the card; savefile's foundNow carries them (kept in a slot by what they
+are), and the Map shows the Act 3 room alone in Act 3 while not had (or once the locket was picked
+up there), the first one otherwise, both without a save. A sweep of every pickup in
+pickups.json by the world its scene puts it in found no other move (the Cradle Map's machine and
+Act 3 pickup were two extras already; Bone_18's locket is in both worlds; Hero's Memento, the
+Pristine Cores, the Tacks and the Conductor relic are Act 3's own), and gen-spots now stops on an
+Act 3-only pickup no mark has. Of the 87 saves, 11 Act 3 ones lack the Mossberry (shown in
+Bone_01b); none in Act 3 lacks the locket, so its Act 3 room is the tests' only.
