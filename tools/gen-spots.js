@@ -349,7 +349,30 @@ const ALSO = {};
     const when = ways.find((w) => w.kind === 'found').when;
     ALSO['tools:' + id] = [apart[0], when || fail(`tools ${id} lies in ${apart[0]} once its seller is gone: read its scene for the check that says so (tools/gen-how.js WHEN)`)];
   }
+  /* A thing a vendor sells only in Act 3 (js/shop.js act 3), had elsewhere before: ALSO too, that
+     vendor's room, the check blackThreadWorld (the save's Act 3) and the way, { kind: 'shop',
+     vendor, price, act: 3, from }, from who had it before. Grindle's, in the Blasted Steps: Pebb's
+     Mask Shard, Craftmetal and Magnetite Brooch, Mort's Memory Locket and Tool Pouch, Lumble's
+     Magnetite Dice (his Simple Key has no mark: the sold keys have none). Read in the game's scenes
+     (18-Oct-2026): Bonetown's Bonechurch_Shop (Pebb), Bone_East_10_Room's Pilgrims Rest Shop (Mort)
+     and Coral_33's Dice Game (Lumble, his corpse too) are under each room's «Normal World», which
+     its «Black Thread States» (TestGameObjectActivator blackThreadWorld) switches off: in Act 3
+     only Grindle has them. One whose earlier source isn't among those stops the run: its scene is
+     read again (GONE_ACT3). */
+  const GONE_ACT3 = new Set(['pebb', 'mort', 'lumble']);
+  for (const x of SH.SHOP) {
+    if (x.act !== 3 || !(x.tool || x.piece != null)) continue;
+    const key = x.tool ? 'tools:' + x.tool : 'piece:' + x.piece, scene = x.tool ? AT.tools[x.tool] : AT.pieces[x.piece];
+    const there = VENDORS[x.vendor] && VENDORS[x.vendor][0];
+    if (!scene || !there || room(scene) === room(there)) continue;
+    const w = WAY_OF[key] || {}, from = w.vendor || w.npc;
+    if (!GONE_ACT3.has(from)) fail(`${key}: ${x.vendor} sells it in Act 3, and ${from || 'nothing'} had it in ${scene} before: is that one gone in Act 3? (GONE_ACT3)`);
+    if (ALSO[key]) fail(`${key} has two other rooms (${ALSO[key][0]}, ${there}): ALSO holds one`);
+    ALSO[key] = [there, ['flag', 'blackThreadWorld'], { kind: 'shop', vendor: x.vendor, price: x.price, act: 3, from }];
+  }
 }
+// The key of a thing's mark in its other room (ALSO): '<key>:found', or '<key>:<vendor>' for a shop's.
+const alsoKey = (key, also) => key + ':' + (also[2] ? also[2].vendor : 'found');
 for (const cat of ['crests', 'skills', 'arts']) {
   for (const id of Object.keys(CO.WHERE[cat])) {
     const hand = HAND[cat][id];
@@ -1134,9 +1157,10 @@ for (const id of OTHER_TOOLS) {
   if (!hand && soldOnly(id, CO.TOOLS[id], scene)) continue;
   put2('tools:' + id, hand ? entryAt((P.items[hand[0]] || {}).at, scene) : CO.TOOLS[id].map((n) => itemAt(n, scene)).find(Boolean));
 }
-// A Tool's other room (ALSO): where it lies there.
-for (const [key, [scene]] of Object.entries(ALSO)) {
-  put2(key + ':found', CO.TOOLS[key.slice(6)].map((n) => itemAt(n, scene)).find(Boolean) || fail(`${key} has no point in ${scene}`));
+// A Tool's other room (ALSO): where it lies there (a shop's, at its vendor: below).
+for (const [key, [scene, , way]] of Object.entries(ALSO)) {
+  if (way) continue;
+  put2(key + ':found',CO.TOOLS[key.slice(6)].map((n) => itemAt(n, scene)).find(Boolean) || fail(`${key} has no point in ${scene}`));
 }
 for (const cat of ['crests', 'skills', 'arts']) {
   for (const [id, hand] of Object.entries(HAND[cat])) {
@@ -1285,6 +1309,8 @@ const fleaIn = (scene) => {
 for (const id of Object.keys(PEOPLE)) if (!XY['person:' + id] && WHO[id]) put2('person:' + id, whoAt(id, PEOPLE[id]));
 // The vendors, Shakra and who offers a wish.
 for (const [v, scenes] of Object.entries(VENDORS)) scenes.forEach((sc, i) => put2((v === 'shakra' ? 'shakra:' : 'shop:' + v + ':') + i, whoAt(v, sc)));
+// A thing's other room when a vendor sells it there (ALSO): at the vendor, as what it sells there already.
+for (const [key, also] of Object.entries(ALSO)) if (also[2]) put2(alsoKey(key, also), whoAt(also[2].vendor, also[0]) || fail(`${key}: no point for ${also[2].vendor} in ${also[0]}`));
 for (const n of Object.keys(GIVER)) put2('giver:' + lower(n), giverAt(n));
 /* Who offers the wishes of each room, by name, and the mark that stands for them there already, if
    any (Albert's choice, 15-Oct-2026: each person once in a room): a person of PEOPLE, a vendor of
@@ -1464,10 +1490,20 @@ const TASKS = [];
      while the beast waits at that station (each pin's DeactivatePlayerDataTest turns it off when
      FastTravelNPCLocation isn't its station's). One whose room has no station never shows: the
      Waterwheel's, FastTravelNPCLocation 7, a value the game's FastTravelLocations doesn't have (a
-     station cut from the game), under Greymoor_17 in the black. */
+     station cut from the game), under Greymoor_17 in the black. Each of the others carries its
+     station's value (alt.at, as a Flintbeetle's places): a save with the wish taken and not done
+     shows only the one the beast is at; before it's taken, once it's done and in Free mode, all
+     twelve (one check, so one thing on the layer's count). */
   const stations = new Set(M.PINS.filter((x) => x[0] === 'bellway').map((x) => sceneOfPart(x[3])));
   let unstationed = 0;
-  for (const [, sprite, quest, item, target, wx, wy] of WI.pins) {
+  const STATION = 'FastTravelNPCLocation';
+  const stationOf = (off, name) => {
+    const [g] = off || [];
+    // Off while the field isn't its value: one test, an enum (Type 3), NotEqual (NumType 1).
+    if (!off || off.length !== 1 || g.length !== 1 || g[0][0] !== STATION || g[0][1] !== 3 || g[0][2] !== 1) fail(`${name}: a Bellbeast pin switched off by something else than ${STATION} (${JSON.stringify(off)})`);
+    return g[0][3];
+  };
+  for (const [pinName, sprite, quest, item, target, wx, wy, off] of WI.pins) {
     const q = quest || byItem(item);
     const info = WI.quests[q];
     if (!info) continue;   // a step of a main objective (an Old Heart, a Melody): a piece of the 100%
@@ -1489,7 +1525,14 @@ const TASKS = [];
       const wish = CO.WISHES.find((w) => w[0] === 'main-objectives' && w[4] && w[4].key === (Q.CHAIN[q] || {}).name?.key);
       // Only a check of another kind than a quest (a step's name is often its objective's: Pharloom's Crown's three).
       const own = wish && wish[2][0] !== 'quest' ? [wish[2]] : [];
-      task('goal', q, ['any', ['quest', q], ...later.map((n) => ['quest', n]), ...own], scene, p, null, art('pins/' + sprite));
+      const check = ['any', ['quest', q], ...later.map((n) => ['quest', n]), ...own];
+      let alt = null;
+      if (sprite === 'quest_map_icon_bellbeast') {
+        const v = stationOf(off, pinName);
+        // Its station's: not taken yet, done, or the beast waits there (the value, as 'min' reads an int).
+        alt = { at: ['any', ['not', ['accepted', q]], check, ['all', ['min', STATION, v], ['not', ['min', STATION, v + 1]]]] };
+      }
+      task('goal', q, check, scene, p, null, art('pins/' + sprite), null, null, alt);
     } else {
       if (!isWish(q) && !isWish(Object.keys(Q.CHAIN).find((n) => Q.CHAIN[n].prev === q))) continue;
       pinned.add(q);
@@ -1525,7 +1568,7 @@ for (const [save, scene, name] of HELD) {
   const bids = new Set(P.lying[save].filter(([s]) => lower(s) === lower(scene)).map(([, b]) => b));
   const names = (c) => boolsOf(c).some(([, s, b]) => lower(s) === lower(scene) && bids.has(b));
   const own = CO.PIECES.some((p) => names(p[2])) || EXTRAS.some((x) => names(x[2])) || TASKS.some((x) => names(x[2]))
-    || Object.entries(ALSO).some(([k, [s]]) => lower(s) === lower(scene) && CO.TOOLS[k.slice(6)].includes(save));
+    || Object.entries(ALSO).some(([k, [s, , way]]) => !way && lower(s) === lower(scene) && CO.TOOLS[k.slice(6)].includes(save));
   if (!own) fail(`${name} holds ${save}, which has no mark of its own in ${scene}`);
 }
 console.log(`caches that only hold an item, left out: ${HELD.map(([save, scene]) => scene + ' ' + save).join(', ')}`);
@@ -1545,11 +1588,13 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               act: { key: Act } for what's outside the 100% and js/collectibles.js WHERE lacks }:
               where each thing of the 100% is had (its pickup, its vendor, its Wishwall, its
               boss's arena, its giver)
-     ALSO     a thing's key ('tools:<id>') → [scene, check]: a Tool sold that lies in another room
-              once its seller is gone (the Curveclaw once the Mottled Skarr dies, the Weighted Belt
-              once Mort does), that room, and the check that says the game has it there (its point:
-              XY '<key>:found'); check as EXTRAS', plus ['tool', name] (that Tool unlocked) and
-              ['not', check]
+     ALSO     a thing's key ('tools:<id>', 'piece:<i>') → [scene, check, way?]: its other room, and
+              the check that says the game has it there. A Tool sold that lies there once its
+              seller is gone (the Curveclaw once the Mottled Skarr dies, the Weighted Belt once
+              Mort does; its point XY '<key>:found'), or, with way { kind: 'shop', vendor, price,
+              act: 3, from }, what a vendor sells only in Act 3 once from (who had it before) is
+              gone (Grindle's: Pebb's, Mort's and Lumble's wares; its point XY '<key>:<vendor>');
+              check as EXTRAS', plus ['tool', name] (that Tool unlocked) and ['not', check]
      EXTRAS   [kind, act, check, scene, name?, more?]: what doesn't count (relics by kind, mossberry,
               silkeater, memento, bellhome, spawn, rosary-cache, shard-cache, wall, then lever,
               plate, gate, lock, shortcut, silkwall from the game's scenes, then map, rosaries,
@@ -1580,9 +1625,10 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               mode 'steel' when only Steel Soul has it, steel the spot's scene when the save
               chooses it (SteelQuestSpots), gone 'act3' when the game takes it away as Act 3 begins,
               alt { at, by, open, foe } for one of the places one thing may be in (a Flintbeetle's
-              two): at the check that it's this one in this game, by what picks ('shortcut'), open
-              whether it's this one once that's open, foe the enemy's name
-     XY       a thing's key ('piece:<i>', 'tools:<id>', 'tools:<id>:found', 'arts:<id>', 'extra:<i>'…, 'person:<id>',
+              two, the Bellbeast's twelve stations): at the check that it's this one in this game,
+              by what picks ('shortcut'), open whether it's this one once that's open, foe the
+              enemy's name (the Bellbeast's have at alone)
+     XY       a thing's key ('piece:<i>', 'tools:<id>', '<key>:found', '<key>:<vendor>', 'arts:<id>', 'extra:<i>'…, 'person:<id>',
               'board:<scene>', 'bell:<field>', 'task:<i>', 'shakra:<i>', 'shop:<vendor>:<i>', 'giver:<scene>', 'boss:<foe>', 'journal:<entry>', 'gaunt:<id>',
               'everbloom') → its point on the map, in the image's pixels: where
               the game has it in its room (the object's place in the scene, or whoever stands for it,

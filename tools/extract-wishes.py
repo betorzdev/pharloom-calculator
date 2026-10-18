@@ -33,8 +33,11 @@ What it reads (read on 11-Oct-2026, patch 1.0.30000):
       - the FSMs that name a playerData field MushroomQuestFound<n> (the Herald's seven spots).
   maps_assets_all.bundle  the map's own quest pins (Game_Map_Hornet / Main Quest Pins: each a
       QuestMapMarker with its quest, or the delivery item it stands for, and the scene it's for
-      when the save chooses among several: the Steel Sentinel's), in world units, with the bench
-      pins' world places (tools/gen-spots.js puts the quest pins on the map by them).
+      when the save chooses among several: the Steel Sentinel's), in world units, and what
+      switches it off (its DeactivatePlayerDataTest: a list of test groups, each a list of
+      [field, Type, NumType, IntValue]; the Bellbeast's pins, off while FastTravelNPCLocation
+      isn't their station's), with the bench pins' world places (tools/gen-spots.js puts the
+      quest pins on the map by them).
   collectables/collectableitems.bundle  each target's name in the game's text (displayName).
   atlases: each target's inventory sprite and the emblems of EMBLEMS' wish types, saved to
       assets/map/icons/<sprite, lower case>.webp, at most 128 px.
@@ -263,7 +266,7 @@ def pins(game):
             continue
         if 'Main Quest Pins' not in names:
             continue
-        sprite, marker = None, None
+        sprite, marker, off = None, None, []
         for c in comps:
             if c.type.name == 'SpriteRenderer':
                 try:
@@ -274,12 +277,14 @@ def pins(game):
                 tt = c.read_typetree()
                 if cls.get(tt['m_Script']['m_PathID']) == 'QuestMapMarker':
                     marker = (c, tt)
+                elif cls.get(tt['m_Script']['m_PathID']) == 'DeactivatePlayerDataTest':
+                    off += [[[x['FieldName'], x['Type'], x['NumType'], x['IntValue']] for x in g['Tests']] for g in tt['test']['TestGroups']]
         if not marker or not sprite:
             continue
         c, tt = marker
         quest = ref_name(c, tt.get('quest'))
         item = ref_name(c, tt.get('collectableItem'))
-        quest_pins.append([go.m_Name, sprite, quest, item, tt.get('targetSceneName') or '', *world(ts)])
+        quest_pins.append([go.m_Name, sprite, quest, item, tt.get('targetSceneName') or '', *world(ts), off])
     return sorted(quest_pins), dict(sorted(benches.items()))
 
 

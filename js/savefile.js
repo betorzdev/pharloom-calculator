@@ -438,7 +438,8 @@
       evaSlots: evaSlots(crests),
       bosses: SP.BOSSES.filter((b) => has(b[2])).map((b) => b[0]),
       tasks: SP.TASKS.map((x, i) => (has(x[2]) ? i : -1)).filter((i) => i >= 0),
-      // Of the places one thing may be in (TASKS' alt: a Flintbeetle's two), those it isn't in this game.
+      // Of the places one thing may be in (TASKS' alt: a Flintbeetle's two, the Bellbeast's stations
+      // while its wish is on, FastTravelNPCLocation), those it isn't in this game.
       elsewhere: SP.TASKS.map((x, i) => (x[9] && !has(x[9].at) ? i : -1)).filter((i) => i >= 0),
       steelSpots: steel.map((e) => e.SceneName).sort(),
       // The Map's people: the fields their rules read (js/people.js VARS), as the save has them.
