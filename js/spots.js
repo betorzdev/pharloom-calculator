@@ -14,10 +14,10 @@
               silkeater, memento, bellhome, spawn, rosary-cache, shard-cache, wall, then lever,
               plate, gate, lock, shortcut, silkwall from the game's scenes, then map, rosaries,
               shards, the doors a key opens no mark had yet); act null when the thing has no Act of
-              its own; more { shop, price } for a map Shakra sells, { found } for one found, { item }
-              for a rosary or shard item ({ item, fight } for one an arena drops: that gauntlet's
-              id), { gone: 'act3' } for what the game takes away when Act 3 begins, { lost:
-              check, person } for what the game takes away with someone once that check holds
+              its own; more { shop, price } for a map Shakra sells, { machine, price } for one a
+              map machine sells, { found } for one found, { item } for a rosary or shard item
+              ({ item, fight } for one an arena drops: that gauntlet's id), { gone: 'act3' }
+              for what the game takes away when Act 3 begins, { lost: check, person } for what the game takes away with someone once that check holds
               (Grindle's cell door), { mode: 'steel' or 'normal' } for what only that mode has,
               { was } the check it had before the save checks and { wasKind } the kind it had
               before (a slot kept before has its marks by those, js/savefile.js gameOf: had then
@@ -4275,7 +4275,7 @@
       ['flag', 'HasHangMap'],
       'hang_06b',
       { es: 'Mapa de los Altos Salones', en: 'High Halls Map', key: 'HANG_MAP_GET_MSG' },
-      { found: true },
+      { machine: true, price: 70 },
     ],
     [
       'map',
@@ -4283,7 +4283,7 @@
       ['flag', 'HasSongGateMap'],
       'song_19_entrance',
       { es: 'Mapa de la Gran Puerta', en: 'Grand Gate Map', key: 'SONGGATE_MAP_GET_MSG' },
-      { found: true },
+      { machine: true, price: 40 },
     ],
     [
       'map',
@@ -4291,7 +4291,7 @@
       ['flag', 'HasHallsMap'],
       'bellway_city',
       { es: 'Mapa de las Cámaras Corales', en: 'Choral Chambers Map', key: 'HALLS_MAP_GET_MSG' },
-      { found: true },
+      { machine: true, price: 70 },
     ],
     [
       'map',
@@ -4299,7 +4299,7 @@
       ['flag', 'HasHallsMap'],
       'song_01b',
       { es: 'Mapa de las Cámaras Corales', en: 'Choral Chambers Map', key: 'HALLS_MAP_GET_MSG' },
-      { found: true },
+      { machine: true, price: 70 },
     ],
     [
       'map',
@@ -4307,7 +4307,7 @@
       ['flag', 'HasWardMap'],
       'ward_01',
       { es: 'Mapa del Ala Blanca', en: 'Whiteward Map', key: 'WARD_MAP_GET_MSG' },
-      { found: true },
+      { machine: true, price: 70 },
     ],
     [
       'map',
@@ -4327,19 +4327,19 @@
         en: 'Whispering Vaults Map',
         key: 'LIBRARY_MAP_GET_MSG',
       },
-      { found: true },
+      { machine: true, price: 70 },
     ],
     [
       'map',
-      null,
+      2,
       ['flag', 'HasCradleMap'],
       'cradle_02',
       { es: 'Mapa de la Cuna', en: 'Cradle Map', key: 'CRADLE_MAP_GET_MSG' },
-      { found: true },
+      { machine: true, price: 70, gone: 'act3' },
     ],
     [
       'map',
-      null,
+      3,
       ['flag', 'HasCradleMap'],
       'tube_hub',
       { es: 'Mapa de la Cuna', en: 'Cradle Map', key: 'CRADLE_MAP_GET_MSG' },
@@ -4351,7 +4351,7 @@
       ['flag', 'HasArboriumMap'],
       'arborium_11',
       { es: 'Mapa del Memorium', en: 'Memorium Map', key: 'ARBORIUM_MAP_GET_MSG' },
-      { found: true },
+      { machine: true, price: 70 },
     ],
     [
       'map',

@@ -452,8 +452,11 @@ leaves those off.
   bought, and the Materium, Farsight and Crawbell built there once found: their Key items marks
   are where each lies).
 - **Items**: Craftmetal and Pale Oil (on at first), then, off at first, Mossberries, Silkeaters, the
-  **Maps**: the fourteen area maps found lying in a room (the Weavenest Atla Map, the
-  Slab's…), each gone once your save has it; the fourteen Shakra sells have no mark of their own
+  **Maps**: the fourteen area maps had in a room, found lying there (the Weavenest Atla Map, the
+  Slab's…) or sold by one of the Citadel's map machines (its card says for how many rosaries), each
+  gone once your save has it. The Cradle's has two marks, one per Act: its machine in Act 2 (crossed
+  out in an Act 3 game, which can't reach it), and in Act 3 the map found free by the broken
+  machine by Ventrica's Terminus. The fourteen Shakra sells have no mark of their own
   (they'd sit on her), her card says which you lack. And the **Rosaries** and **Shell Shards** lying in a
   room (strings, necklaces, Shard Bundles, Great Shards, Pristine Cores), each by its own pickup
   (one an arena drops once won says which: the Whispering Vaults' Heavy Rosary Necklace, the
