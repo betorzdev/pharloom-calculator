@@ -1224,6 +1224,59 @@ for (const [key, [scene, , way]] of Object.entries(ALSO)) {
   const names = key.startsWith('tools:') ? CO.TOOLS[key.slice(6)] : [MOVED.find((x) => MOVED_FROM[key] === x.own).item];
   put2(key + ':found', names.map((n) => itemAt(n, scene)).find(Boolean) || fail(`${key} has no point in ${scene}`));
 }
+/* Silkshot's three repairs (js/how.js TRAPS, its variants), read in the game's files (18-Oct-2026):
+   the Ruined Tool (Broken SilkShot, a keyitem extra, lying in Shadow_Weavehome) is taken by one of
+   three, and the Silkshot is that one's: Peak_12's «Webshot Scene» (its «Repair webshot» FSM, a rune
+   desk: WEB_SHOT_WORKSHOP_PROMPT «Repair the Ruined Tool?», then WebShot Weaver), and the ShopItems
+   «Forge SilkShot» and «Architect SilkShot» (each upgradeFromItem Broken SilkShot, requiredItem one
+   Tool Metal; shown once the Forge Daughter or the Twelfth Architect has mentioned it, which they do
+   to whoever holds the Ruined Tool: ForgeDaughterMentionedWebShot, ArchitectMentionedWebShot). The
+   first repair takes the Ruined Tool (its Amount 0 after), so the other two can't follow; a vendor
+   gone (LEFT, below) closes theirs before it.
+   VARIANTS  key → { item: the Ruined Tool's EXTRAS index, at: [[variant, save name, scene, act]] }:
+   variant the js/data.js attack id, act the first Act it can be done in there; each at the point of what takes the Ruined Tool there
+   (pickups.json items: the FSM), XY key in the thing's own AT room, key + ':' + variant in the
+   others.
+   LEFT  a vendor the game takes away for good → the check that says it has: the Twelfth Architect
+   (Under_17's «Architect Scene Control», a PlayerDataTestResponse on ArchitectLeft, switches off
+   «Architect Scene», him and his shop, for «Architect Final_Scene»; 21 of the author's saves). His
+   shop's pin goes, and his Silkshot. */
+const LEFT = { 'twelfth-architect': ['flag', 'ArchitectLeft'] };
+for (const v of Object.keys(LEFT)) if (!VENDORS[v]) fail(`LEFT: ${v} is no vendor`);
+const VARIANTS = {};
+{
+  const ID = { 'WebShot Weaver': 'original', 'WebShot Architect': 'architect', 'WebShot Forge': 'forge' };
+  const ITEM = 'Broken SilkShot';
+  const trap = H.TRAPS.find((x) => x.variants), key = 'tools:' + trap.thing[1];
+  const attacks = (D.TOOLS.find((x) => x.id === trap.thing[1]).attacks || []).filter((a) => a.variant).map((a) => a.id);
+  const item = EXTRAS.findIndex((x) => x[0] === 'keyitem' && x[4] && x[4].key === 'INV_NAME_BROKEN_SILKSHOT');
+  if (item < 0) fail(`the ${ITEM} has no keyitem extra`);
+  const room = (s) => (R.roomOf(s) || {}).scene;
+  /* Its Act: the earliest of the 100%'s things in that room, else in its area (js/collectibles.js
+     WHERE, the Map's Acts): the Forge Daughter's Act 1, the Architect's and Mount Fay's Act 2. */
+  const hundred = [...Object.entries(AT.tools).map(([id, sc]) => [sc, (CO.WHERE.tools[id] || [])[0]]),
+    ...['crests', 'skills', 'arts'].flatMap((cat) => Object.entries(AT[cat]).map(([id, sc]) => [sc, (CO.WHERE[cat][id] || [])[0]])),
+    ...CO.PIECES.map((x, i) => [AT.pieces[i], x[1]])].filter(([sc, a]) => sc && a);
+  const actAt = (scene) => {
+    for (const same of [(sc) => room(sc) === scene, (sc) => R.areaOf(sc) === R.areaOf(scene)]) {
+      const acts = hundred.filter(([sc]) => same(sc)).map(([, a]) => a);
+      if (acts.length) return Math.min(...acts);
+    }
+    return fail(`${scene}: no Act for a repair there`);
+  };
+  const at = trap.variants.map((v) => {
+    const id = ID[v.save] || fail(`${v.save}: no variant id`);
+    if (!attacks.includes(id)) fail(`${v.save}: ${id} isn't one of js/data.js ${trap.thing[1]}'s variants`);
+    const scenes = v.way.kind === 'shop' ? [personScene(v.way.vendor)] : given(v.save);
+    if (scenes.length !== 1 || !onMap(scenes[0])) fail(`${v.save} is repaired in ${scenes.join(', ') || 'no room'}: read its scene again`);
+    const scene = room(scenes[0]);
+    const p = entryAt((P.items[ITEM] || {}).at, scene) || fail(`nothing takes the ${ITEM} in ${scene}`);
+    put2(room(AT.tools[trap.thing[1]]) === scene ? key : key + ':' + id, p);
+    return [id, v.save, scene, actAt(scene)];
+  });
+  if (!at.some(([, , s]) => s === room(AT.tools[trap.thing[1]]))) fail(`${key}'s own room isn't one of its repairs`);
+  VARIANTS[key] = { item, at };
+}
 for (const cat of ['crests', 'skills', 'arts']) {
   for (const [id, hand] of Object.entries(HAND[cat])) {
     const scene = AT[cat][id];
@@ -1685,6 +1738,14 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               Mossberry no. 3, the Memory Locket of «Volatile Flintbeetles»; its point XY
               '<key>:found'); check as EXTRAS', plus ['tool', name] (that Tool unlocked) and
               ['not', check]
+     VARIANTS a thing's key ('tools:silkshot') → { item, at: [[variant, save name, scene, act]] }:
+              the places one of its variants is had (the Silkshot's three repairs: the rune desk in
+              Mount Fay, the Twelfth Architect, the Forge Daughter), each the js/data.js attack id,
+              the save's name for it, its room (its point: XY key in the thing's own AT room, else
+              key + ':' + variant) and the first Act it can be done in there; item the EXTRAS index of what each repair takes (the
+              Ruined Tool)
+     LEFT     a vendor the game takes away for good → the check that says it has (the Twelfth
+              Architect, ArchitectLeft): its shop and what it repairs go
      EXTRAS   [kind, act, check, scene, name?, more?]: what doesn't count (relics by kind, mossberry,
               silkeater, memento, bellhome, spawn, rosary-cache, shard-cache, wall, then lever,
               plate, gate, lock, shortcut, silkwall from the game's scenes, then map, rosaries,
@@ -1718,7 +1779,7 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               two, the Bellbeast's twelve stations): at the check that it's this one in this game,
               by what picks ('shortcut'), open whether it's this one once that's open, foe the
               enemy's name (the Bellbeast's have at alone)
-     XY       a thing's key ('piece:<i>', 'tools:<id>', '<key>:found', '<key>:<vendor>', 'arts:<id>', 'extra:<i>'…, 'person:<id>',
+     XY       a thing's key ('piece:<i>', 'tools:<id>', '<key>:found', '<key>:<vendor>', 'tools:<id>:<variant>', 'arts:<id>', 'extra:<i>'…, 'person:<id>',
               'board:<scene>', 'bell:<field>', 'task:<i>', 'shakra:<i>', 'shop:<vendor>:<i>', 'giver:<scene>', 'boss:<foe>', 'journal:<entry>', 'gaunt:<id>',
               'everbloom') → its point on the map, in the image's pixels: where
               the game has it in its room (the object's place in the scene, or whoever stands for it,
@@ -1733,7 +1794,7 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               lists the wishes on theirs; tools/gen-people.js doesn't draw them again. 'room:who'
               for a wish someone else offers in that room
      QUEST_GIVER  such a wish → its 'room:who'`,
-'spots', [['AT', AT], ['ALSO', ALSO], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['TASKS', TASKS], ['XY', XY], ['SEATS', SEATS], ['GIVER', GIVERS], ['QUEST_GIVER', QUEST_GIVER]]);
+'spots', [['AT', AT], ['ALSO', ALSO], ['VARIANTS', VARIANTS], ['LEFT', LEFT], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['TASKS', TASKS], ['XY', XY], ['SEATS', SEATS], ['GIVER', GIVERS], ['QUEST_GIVER', QUEST_GIVER]]);
 const kinds = {};
 for (const x of EXTRAS) kinds[x[0]] = (kinds[x[0]] || 0) + 1;
 console.log(`js/spots.js  ${placed.length} things of the 100% placed, ${EXTRAS.length} extras (${Object.entries(kinds).map(([k, n]) => n + ' ' + k).join(', ')}), `

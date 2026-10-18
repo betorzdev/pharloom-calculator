@@ -20,6 +20,14 @@
               Mossberry no. 3, the Memory Locket of «Volatile Flintbeetles»; its point XY
               '<key>:found'); check as EXTRAS', plus ['tool', name] (that Tool unlocked) and
               ['not', check]
+     VARIANTS a thing's key ('tools:silkshot') → { item, at: [[variant, save name, scene, act]] }:
+              the places one of its variants is had (the Silkshot's three repairs: the rune desk in
+              Mount Fay, the Twelfth Architect, the Forge Daughter), each the js/data.js attack id,
+              the save's name for it, its room (its point: XY key in the thing's own AT room, else
+              key + ':' + variant) and the first Act it can be done in there; item the EXTRAS index of what each repair takes (the
+              Ruined Tool)
+     LEFT     a vendor the game takes away for good → the check that says it has (the Twelfth
+              Architect, ArchitectLeft): its shop and what it repairs go
      EXTRAS   [kind, act, check, scene, name?, more?]: what doesn't count (relics by kind, mossberry,
               silkeater, memento, bellhome, spawn, rosary-cache, shard-cache, wall, then lever,
               plate, gate, lock, shortcut, silkwall from the game's scenes, then map, rosaries,
@@ -53,7 +61,7 @@
               two, the Bellbeast's twelve stations): at the check that it's this one in this game,
               by what picks ('shortcut'), open whether it's this one once that's open, foe the
               enemy's name (the Bellbeast's have at alone)
-     XY       a thing's key ('piece:<i>', 'tools:<id>', '<key>:found', '<key>:<vendor>', 'arts:<id>', 'extra:<i>'…, 'person:<id>',
+     XY       a thing's key ('piece:<i>', 'tools:<id>', '<key>:found', '<key>:<vendor>', 'tools:<id>:<variant>', 'arts:<id>', 'extra:<i>'…, 'person:<id>',
               'board:<scene>', 'bell:<field>', 'task:<i>', 'shakra:<i>', 'shop:<vendor>:<i>', 'giver:<scene>', 'boss:<foe>', 'journal:<entry>', 'gaunt:<id>',
               'everbloom') → its point on the map, in the image's pixels: where
               the game has it in its room (the object's place in the scene, or whoever stands for it,
@@ -354,6 +362,19 @@
       { kind: 'moved', act: 3, wish: 'Rock Rollers' },
     ],
   };
+
+  const VARIANTS = {
+    'tools:silkshot': {
+      item: 1047,
+      at: [
+        ['forge', 'WebShot Forge', 'Room_Forge', 1],
+        ['architect', 'WebShot Architect', 'Under_17', 2],
+        ['original', 'WebShot Weaver', 'Peak_12', 2],
+      ],
+    },
+  };
+
+  const LEFT = { 'twelfth-architect': ['flag', 'ArchitectLeft'] };
 
   const EXTRAS = [
     ['bone-scroll', 1, ['relic', 'Bone Record Greymoor_flooded_corridor'], 'greymoor_21', undefined],
@@ -8227,6 +8248,9 @@
     'tools:weighted-belt:found': [1840.1, 1445],
     'extra:23:found': [748.3, 1417.2],
     'piece:44:found': [959.2, 1428.5],
+    'tools:silkshot': [1504.9, 1512.7],
+    'tools:silkshot:architect': [1441.7, 855.8],
+    'tools:silkshot:original': [637.4, 330.3],
     'skills:silkspear': [697, 1326.8],
     'skills:thread-storm': [2075, 1046.8],
     'skills:sharpdart': [124.8, 1345],
@@ -9624,7 +9648,6 @@
     'tools:sting-shard': [1504.9, 1512.7],
     'tools:curveclaw': [1502.2, 1303.1],
     'tools:throwing-ring': [1169, 1239.2],
-    'tools:silkshot': [1504.9, 1512.7],
     'tools:cogwork-wheel': [1441.7, 855.8],
     'tools:flea-brew': [973.4, 1428],
     'tools:plasmium-phial': [370, 1289.2],
@@ -10218,6 +10241,6 @@
 
   const QUEST_GIVER = { Journal: 'Halfway_01:hunter_fan' };
 
-  SS.spots = { AT, ALSO, EXTRAS, BOSSES, VENDORS, PEOPLE, BELLS, KEYS, MAPS, TASKS, XY, SEATS, GIVER, QUEST_GIVER };
+  SS.spots = { AT, ALSO, VARIANTS, LEFT, EXTRAS, BOSSES, VENDORS, PEOPLE, BELLS, KEYS, MAPS, TASKS, XY, SEATS, GIVER, QUEST_GIVER };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.spots;
 })();

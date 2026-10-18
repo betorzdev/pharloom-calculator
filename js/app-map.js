@@ -395,6 +395,9 @@
      there (foundNow), in its first room otherwise. With none (Free mode too, or a slot kept before
      it said), both, one thing (chk), the other's card saying when it's there. */
   function withAlso(add, mark, own) {
+    // One of several places, a variant each (VARIANTS, below).
+    const vars = (SP.VARIANTS || {})[mark.key];
+    if (vars) { variantMarks(add, mark, vars, own); return; }
     const also = (SP.ALSO || {})[mark.key];
     if (!also) { add(mark); return; }
     const [scene, , way] = also, shop = !!way && way.kind === 'shop', moved = !!way && way.kind === 'moved';
@@ -407,6 +410,33 @@
     if (own && own.foundRead) { add(own.foundNow.includes(mark.key) || (moved && own.act >= way.act && !mark.got) ? { ...mark, ...there } : mark); return; }
     add(mark);
     add({ ...mark, ...there, key, chk: mark.chk || mark.key });
+  }
+  /* A Tool had at one of several places, a variant each (js/spots.js VARIANTS: the Silkshot's three
+     repairs of the Ruined Tool, design/99, all A). With a save that has repaired it, only the place
+     of the one it holds, had (savefile silkshot); with none yet, every place, one thing (chk), the
+     one the game has closed crossed (savefile left: the Twelfth Architect gone); Free mode, every
+     place. Each with its variant's picture and name, its card that place's way. */
+  const variantName = (id, v) => pick(((D.TOOLS.find((x) => x.id === id) || {}).attacks || []).find((a) => a.id === v).name);
+  // A vendor the game has taken away for good, as the save says (savefile left; js/spots.js LEFT).
+  const vendorGone = (own, v) => !!own && own.leftRead && own.left.includes(v);
+  const trapOf = (id) => HW.TRAPS.find((x) => x.variants && x.thing[1] === id);
+  // Where a variant is had, in a few words: who repairs it, or the rune in its area.
+  const variantPlace = (id, i, scene) => {
+    const w = (trapOf(id).variants[i] || {}).way || {};
+    return w.kind === 'shop' ? pick(HW.NPCS[w.vendor]) : t('mapShotRune', { area: areaName(R.areaOf(scene)) });
+  };
+  function variantMarks(add, mark, vars, own) {
+    const id = mark.key.slice(6), held = own ? own.silkshot : '', trap = trapOf(id), item = pick(SP.EXTRAS[vars.item][4]);
+    const home = (R.roomOf(SP.AT.tools[id]) || {}).scene;
+    vars.at.forEach(([v, , scene, act], i) => {
+      if (held && held !== v) return;
+      const key = R.roomOf(scene).scene === home ? mark.key : mark.key + ':' + v, xy = SP.XY[key], way = trap.variants[i].way;
+      const lost = !held && way.vendor && vendorGone(own, way.vendor) ? { left: way.vendor } : null;
+      const art = SS.engine.toolArt(id, { silkshot: v }).art;
+      add({ ...mark, key, chk: mark.key, scene, at: xy && { x: xy[0], y: xy[1] }, area: R.areaOf(scene), act: act || mark.act, got: own ? held === v : mark.got, lost,
+        sub: variantName(id, v), howWays: [way], noteAfter: t('mapShotNeeds', { item }),
+        draw: (s, ti, k, c) => dot('tools', `assets/icons/tools/${art}.webp`, s, ti, k, c) });
+    });
   }
   // Nothing left to do with a mark: had, or taken away.
   const closed = (m, g) => !!g && (m.got || !!m.lost);
@@ -491,6 +521,7 @@
         draw: (s, ti, k, c) => pin('bellshrine', 'quest_map_icon_grand_gate_final', s, ti, k, c) });
     }
     for (const [v, scenes] of Object.entries(SP.VENDORS)) {
+      if (vendorGone(own, v)) continue;   // taken away for good (js/spots.js LEFT: the Twelfth Architect)
       if (v === 'shakra') { scenes.forEach((scene, i) => add({ key: 'shakra:' + i, layer: 'shakra', scene, got: false, name: pick(HW.NPCS.shakra), npc: 'shakra',
         draw: (s, ti, k, c) => badge('shakra', portrait('shakra'), s, ti, k, c) })); continue; }
       scenes.forEach((scene, i) => add({ key: 'shop:' + v + ':' + i, layer: 'shop', scene, got: false, name: pick(HW.NPCS[v]), npc: v,
@@ -596,6 +627,17 @@
         : kind === 'memento' ? (MEMENTO_ICON[check[1]] ? `assets/icons/extras/${MEMENTO_ICON[check[1]]}.webp` : 'assets/icons/pieces/heart-bloom.webp')
         : kind === 'spawn' || kind === 'bellhome' || kind === 'wall' ? null : `assets/icons/extras/${kind}.webp`;
       const spawn = kind === 'spawn' ? BOOK_KEY.get(name && name.key) : null;
+      /* What a Tool's variants are made from (js/spots.js VARIANTS item: the Ruined Tool) goes with
+         that Tool (its layer, one thing with it: design/99, 1 A), its card naming the places. */
+      const of = Object.entries(SP.VARIANTS || {}).find(([, v]) => v.item === i);
+      if (of) {
+        const tid = of[0].slice(6), tl = D.TOOLS.find((x) => x.id === tid), places = of[1].at.map(([, , s], k) => variantPlace(tid, k, s));
+        const ids = CO.COUNTED.find((x) => x[0] === tid) || [tid];
+        add({ key: 'extra:' + i, layer: 'tools-' + tl.color, scene, act, got: !!g && (g.extras.includes(i) || ids.some((x) => g.tools.includes(x))), chk: of[0],
+          name: pick(name), note: t('mapShotRuined', { tool: pick(tl.name), list: places.join(', ') }), ruinedOf: of[0],
+          draw: (s, ti, k, c) => dot(layer, icon, s, ti, k, c) });
+        return;
+      }
       withAlso(add, { key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i), lost, chk: JSON.stringify(check),
         name: name ? pick(name) : kind === 'eva' ? evaName(more.reward) : ONE[kind] ? t(ONE[kind]) : LAYER.get(layer).name(), eva: kind === 'eva' ? more : null,
         note: kind === 'masked' ? t('mapHiddenNote', { n: num(check[0] === 'all' ? check.length - 1 : 1) }) : more.shop ? t('mapMapShakra', { npc: pick(HW.NPCS[more.shop]), price: num(more.price) }) : more.machine ? t('mapMapMachine', { price: num(more.price) }) : more.found ? t('mapMapFound') : more.fight ? t('mapRewardOf', { fight: App.gauntletName(more.fight) }) : '',
@@ -1419,7 +1461,8 @@
         : LADDER_KINDS.includes(m.layer) ? `${state(t('pgLadderNote'))}<a class="text-btn" href="${App.here(App.hashFor('game'))}" data-act="view" data-value="game">${esc(t('navGame'))}</a>`
           : `<button type="button" class="text-btn" data-act="mapMark" data-value="${i}" aria-pressed="${m.got}">${esc(t(m.got ? 'mapUnmark' : 'mapMark'))}</button>`;
     } else if (['tools', 'crests', 'skills', 'arts', 'everbloom'].includes(kind)) {
-      note = m.note || (App.howOf ? App.howOf(key) : '');
+      // A variant's place (js/spots.js VARIANTS): its own way, then what it takes.
+      note = m.note || [App.howOf ? App.howOf(key, m.howWays) : '', m.noteAfter].filter(Boolean).join(' · ');
       if (g) acts = state(t(m.got ? 'pgGot' : 'invMissing'));
     } else if (kind === 'pin') {
       if (m.off) acts = state(m.shut);
@@ -1481,10 +1524,14 @@
       if (to && list.some((x) => x.key === to)) acts += btn('mapShow', to, t(f.board ? 'mapToWall' : 'mapToGiver'));
     } else if (kind === 'extra') {
       note = m.note || '';
+
       // Eva's: the slots it needs, and with a save how many are open.
       if (m.eva) note = (m.eva.slots ? t('mapEvaSlots', { npc: pick(HW.NPCS.eva), n: num(m.eva.slots), crest: pick(D.CRESTS.find((c) => c.id === 'hunter').name) }) : t('mapEvaMeet', { npc: pick(HW.NPCS.eva) }))
         + (own && m.eva.slots ? ' ' + t('mapEvaHave', { n: num(own.evaSlots || 0) }) : '');
       if (g) acts = state(t(m.got ? 'pgGot' : 'invMissing'));
+      // What a Tool's variants are made from: the places it's repaired in, as a focus.
+      const ks = m.ruinedOf ? list.filter((x) => x.chk === m.ruinedOf && x.key !== key).map((x) => x.key) : [];
+      if (ks.length > 1) acts += btn('mapShotSee', ks.join(','), t('mapShotSee'));
     } else if (kind === 'beast') {
       const e = BOOK.get(m.entry), k = own && own.journal[e.id];
       note = [t('mapBeastHere', { n: num(m.n) }), own ? (k === undefined ? t('hjState_unseen') : e.kills != null ? t('mapKills', { n: num(k), m: num(e.kills) }) : t('hjState_seen')) : ''].filter(Boolean).join(' · ');
@@ -1497,7 +1544,7 @@
     /* Taken away (design/86, 2 A): «No longer there», and why, from the save: the Act, or the other
        arena of the pair, fought. A gauntlet keeps its way to Fight. */
     if (own && m.lost) {
-      const why = m.lost.person ? LOST_WITH[m.lost.person]() : m.lost.arena ? t('mapLostArena', { name: App.gauntletName(m.lost.arena) }) : t('mapLostAct3');
+      const why = m.lost.person ? LOST_WITH[m.lost.person]() : m.lost.left ? t('mapShotLeft', { npc: pick(HW.NPCS[m.lost.left]) }) : m.lost.arena ? t('mapLostArena', { name: App.gauntletName(m.lost.arena) }) : t('mapLostAct3');
       note = note ? note + (/[.!?]$/.test(note) ? ' ' : '. ') + why : why;
       acts = state(t('mapLost')) + (kind === 'gaunt' ? acts : '');
     }
@@ -1718,6 +1765,8 @@
     },
     // Another screen's "on the map" button.
     mapShow(node) { App.mapShow(node.dataset.value); },
+    // The Ruined Tool's card: the places it's repaired in, as a focus (js/spots.js VARIANTS).
+    mapShotSee(node) { const ks = node.dataset.value.split(','), m = all().list.find((x) => x.key === ks[0]); App.mapFocus(ks, m ? m.name : ''); },
     mapBeast(node) { App.mapBeast(node.dataset.value); },
     // The focus: the next or previous of its marks, centred with its card; or back to the whole map.
     mapFocusStep(node) {

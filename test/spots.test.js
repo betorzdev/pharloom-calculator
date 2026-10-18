@@ -525,3 +525,43 @@ test('what Grindle sells only in Act 3, had elsewhere before, has his room too: 
   assert.equal(F.game({ ...base, act2Started: true, blackThreadWorld: true }).act, 3);
   assert.equal(F.gameOf(F.toSnapshot({ ...base, act2Started: true, blackThreadWorld: true })).act, 3);
 });
+
+test('the Silkshot has its three repairs, each where the game takes the Ruined Tool, and the save says which and what is closed', () => {
+  const P = require('../kb/data/game/pickups.json');
+  const H = require('../js/how.js');
+  assert.deepEqual(Object.keys(SP.VARIANTS), ['tools:silkshot']);
+  const v = SP.VARIANTS['tools:silkshot'], home = R.roomOf(SP.AT.tools.silkshot).scene;
+  // Its three, as js/how.js TRAPS lists them, by js/data.js's variant ids and the save's names.
+  const trap = H.TRAPS.find((x) => x.id === 'silkshot');
+  assert.deepEqual(v.at.map(([, save]) => save), trap.variants.map((x) => x.save));
+  assert.deepEqual(v.at.map(([id]) => id).sort(), D.TOOLS.find((x) => x.id === 'silkshot').attacks.filter((a) => a.variant).map((a) => a.id).sort());
+  assert.deepEqual(v.at.map(([, , s]) => s), ['Room_Forge', 'Under_17', 'Peak_12']);
+  // From the Act each can be done in there: the Forge Daughter's Act 1, the Architect's and Mount Fay's Act 2.
+  assert.deepEqual(v.at.map(([, , , a]) => a), [1, 2, 2]);
+  // Each where something takes the Ruined Tool (the rune desk's FSM, the Forge Daughter, the Architect), on its own point.
+  const takers = new Set(P.items['Broken SilkShot'].at.filter(([, c]) => c === 'PlayMakerFSM').map(([s]) => s.toLowerCase()));
+  for (const [id, , scene] of v.at) {
+    assert.ok(onMap(scene) && takers.has(scene.toLowerCase()), `${id}: ${scene}`);
+    assert.ok(SP.XY[R.roomOf(scene).scene === home ? 'tools:silkshot' : 'tools:silkshot:' + id], `${id} has no point`);
+  }
+  assert.equal(v.at.filter(([, , s]) => R.roomOf(s).scene === home).length, 1, 'one of them is the Tool\'s own room');
+  // What the three repair: the Ruined Tool, where it lies.
+  const x = SP.EXTRAS[v.item];
+  assert.equal(x[0], 'keyitem');
+  assert.equal(x[4].key, 'INV_NAME_BROKEN_SILKSHOT');
+  assert.equal(x[3], 'Shadow_Weavehome');
+  // The Twelfth Architect goes for good (ArchitectLeft): the save says so, kept through a slot.
+  assert.deepEqual(SP.LEFT, { 'twelfth-architect': ['flag', 'ArchitectLeft'] });
+  const base = { silk: 0, silkMax: 9, maxHealth: 5 };
+  assert.deepEqual(F.game(base).left, []);
+  assert.deepEqual(F.game({ ...base, ArchitectLeft: true }).left, ['twelfth-architect']);
+  assert.deepEqual(F.gameOf(F.toSnapshot({ ...base, ArchitectLeft: true })).left, ['twelfth-architect']);
+  assert.equal(F.gameOf(F.toSnapshot(base)).leftRead, true);
+  assert.equal(F.gameOf({}).leftRead, false);
+  // The variant repaired, by its ToolItem (WebShot Weaver is the Original).
+  const tools = (n) => ({ Tools: { savedData: [{ Name: n, Data: { IsUnlocked: true } }] } });
+  assert.equal(F.game({ ...base, ...tools('WebShot Weaver') }).silkshot, 'original');
+  assert.equal(F.game({ ...base, ...tools('WebShot Architect') }).silkshot, 'architect');
+  assert.equal(F.game({ ...base, ...tools('WebShot Forge') }).silkshot, 'forge');
+  assert.equal(F.game(base).silkshot, '');
+});

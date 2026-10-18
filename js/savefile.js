@@ -43,6 +43,8 @@
   }
   // And what Act 3 moves (js/spots.js ALSO with way { kind: 'moved' }): the check that says it's in its Act 3 room.
   for (const [k, v] of Object.entries(SP.ALSO || {})) if (v[2] && v[2].kind === 'moved' && !WHEN.some(([x]) => x === k)) WHEN.push([k, v[1]]);
+  // The vendors the game takes away for good (js/spots.js LEFT: the Twelfth Architect) → that check.
+  const LEFT = Object.entries(SP.LEFT || {});
   // js/people.js, the Map's people: the playerData fields that say whom you've met and where they are.
   const PE = SS.people || (() => { try { return require('./people.js'); } catch (e) { return { VARS: [] }; } })();
   // The map's pins that light up (a station, a toll bench), by what they are: "bellway Bellway_02".
@@ -437,6 +439,10 @@
       // says, js/completion.js wayOf, and the Map shows both rooms).
       foundNow: WHEN.filter(([, c]) => has(c)).map(([k]) => k),
       foundRead: true,
+      // The vendors the game has taken away (js/spots.js LEFT: the Twelfth Architect, ArchitectLeft):
+      // their shop and what they repair are gone; leftRead as foundRead.
+      left: LEFT.filter(([, c]) => has(c)).map(([v]) => v),
+      leftRead: true,
       // What the game has taken away with someone (js/spots.js EXTRAS more.lost: Grindle's cell door), not had.
       lostExtras: SP.EXTRAS.map((x, i) => (x[5] && x[5].lost && !has(x[2]) && has(x[5].lost) ? i : -1)).filter((i) => i >= 0),
       evaSlots: evaSlots(crests),
@@ -555,7 +561,7 @@
     needle: 0, kit: 0, pouch: 0, everbloom: false, purse: {}, silkeaters: 0, rosaries: 0, shards: 0, farsight: false, hasJournal: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', rested: true, marker: '', area: '', build: {},
     quests: [], taken: [], carried: {}, bellshrines: [], bells: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
     bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [],
-    visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], foundNow: [], foundRead: false, lostExtras: [], bosses: [],
+    visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], foundNow: [], foundRead: false, left: [], leftRead: false, lostExtras: [], bosses: [],
     tasks: [], elsewhere: [], steelSpots: [], peopleVars: {}, evaSlots: 0, silkshot: '' });
   const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
   // Each field only if it has the type an empty game gives it.
@@ -586,6 +592,7 @@
     out.elsewhere = [...new Set(out.elsewhere.flatMap((k) => TASK_AT.get(k) || []))].filter((i) => SP.TASKS[i][9]).sort((a, b) => a - b);
     out.gaveBack = out.gaveBack.filter((id) => CO.TOOLS[id]);
     out.foundNow = [...new Set(out.foundNow.map((k) => FOUND_AT.get(k)).filter(Boolean))];
+    out.left = out.left.filter((v) => LEFT.some(([x]) => x === v));
     out.steelSpots = out.steelSpots.filter((x) => typeof x === 'string' && /^[\w ()-]{1,64}$/.test(x));
     out.cocoonAt = out.cocoon ? fourNumbers(out.cocoonAt) : [];
     out.bosses = out.bosses.filter((id) => SP.BOSSES.some((b) => b[0] === id));

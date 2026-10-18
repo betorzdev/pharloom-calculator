@@ -323,6 +323,14 @@
        (Grindle's: Pebb's, Mort's, Lumble's wares): its mark there, with no save and in an Act 3 game. */
     mapAlsoSoldIf:  { es: 'En el Acto 3, cuando {from} ya no está, en la tienda de {npc}: {price} rosarios', en: 'In Act 3, once {from} is gone, in {npc}\'s shop: {price} rosaries' },
     mapAlsoSoldNow: { es: '{from} ya no está: en la tienda de {npc}, {price} rosarios', en: '{from} is gone: in {npc}\'s shop, {price} rosaries' },
+    /* Silkshot's three repairs (js/spots.js VARIANTS): each place's card, the Ruined Tool's, and why
+       a place is closed in a save. {item} the Ruined Tool (INV_NAME_BROKEN_SILKSHOT), {tool} the
+       Silkshot (SILKSHOT_NAME), {npc} the Twelfth Architect (ARCHITECT_SHOP_TITLE). */
+    mapShotNeeds:   { es: 'Repara la {item}: la primera reparación cierra las otras dos', en: 'Repairs the {item}: the first repair closes the other two' },
+    mapShotRune:    { es: 'la runa de {area}', en: 'the rune in {area}' },
+    mapShotRuined:  { es: 'Repárala para obtener la {tool}, en uno de tres sitios: {list}', en: 'Repair it for the {tool}, at one of three places: {list}' },
+    mapShotSee:     { es: 'Ver los tres', en: 'See the three' },
+    mapShotLeft:    { es: '{npc} se ha marchado.', en: '{npc} has left.' },
     mapGroupShow:   { es: 'Mostrar todo el grupo', en: 'Show the whole group' },
     mapGroupHide:   { es: 'Esconder todo el grupo', en: 'Hide the whole group' },
     mapFoldOpen:    { es: 'Abrir {g}', en: 'Open {g}' },
@@ -770,6 +778,11 @@
     pgTodoMore:     { es: 'y {n} más', en: 'and {n} more' },
     /* A how line on a phone: its lead, and what it waits for behind a button (design/41, 2 B). */
     pgHowMore:      { es: '+{n} más', en: '+{n} more' },
+    /* The Silkshot's row (js/spots.js VARIANTS, design/102): what to do first, then each place.
+       {item} the Ruined Tool (INV_NAME_BROKEN_SILKSHOT), {area} the game's area name. */
+    pgShotFind:     { es: 'Busca la {item} en {area} y repárala', en: 'Find the {item} in {area}, then repair it' },
+    pgShotRepair:   { es: 'Repara la {item}', en: 'Repair the {item}' },
+    pgShotRune:     { es: 'La runa de {area}', en: 'The rune in {area}' },
     pgHowLess:      { es: 'menos', en: 'less' },
     /* A thing of the 100% lying in a room, which has no other way (design/41, 4 A). */
     pgFound:        { es: 'Se encuentra en la zona: el alfiler marca dónde', en: 'Found in the area: the pin shows where' },
