@@ -369,7 +369,7 @@
       waves: [[['spear-skarr', 2]]],
       done: ['bool', 'Ant_21', 'Battle Scene Extra'],
       scene: 'Ant_21',
-      act: 1,
+      act: 2,
     },
     {
       id: 'hunters-march-6',

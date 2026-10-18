@@ -117,7 +117,8 @@ test('each area map is a mark where it\'s had, by its flag: Shakra\'s spot in it
   assert.deepEqual([...new Set(maps.map((x) => x[2][1]))].sort(), Object.keys(SP.MAPS).map((a) => 'Has' + a + 'Map').sort());
   for (const [, act, check, scene, name, how] of maps) {
     assert.equal(check[0], 'flag');
-    assert.equal(act, check[1] === 'HasCradleMap' ? (how.found ? 3 : 2) : null, check[1]);
+    // No Act of its own but the Cradle's two, and the two lying where only Act 3 goes (the Abyss's, Verdania's).
+    assert.equal(act, check[1] === 'HasCradleMap' ? (how.found ? 3 : 2) : ['HasAbyssMap', 'HasCloverMap'].includes(check[1]) ? 3 : null, check[1]);
     assert.ok(name && name.es && name.en && name.key, check[1]);
     assert.ok(how.found || ((how.shop === 'shakra' || how.machine) && how.price > 0), check[1]);
     // Bought where Shakra sits in the map's own area (the Mosslands' from her first spot, in the Marrow).
