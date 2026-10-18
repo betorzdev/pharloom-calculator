@@ -32,7 +32,9 @@
                { kind: 'wish', wish, quest, act? }  wish a js/collectibles.js WISHES index, quest
                  its save name (Broodfeast has two: the Runt's is Act 3's)
                { kind: 'boss', foe }  a js/enemies.js FOES id
-               { kind: 'found', act? }  lying in a room (from that Act on, when act is given)
+               { kind: 'found', act?, when? }  lying in a room (from that Act on, when act is given)
+                 when: the save check that says it lies there now (its owner dead), which
+                 replaces act when the save says (js/completion.js wayOf)
                { kind: 'craft', craftmetal }  made at a craft table
                { kind: 'npc', npc }  given by an NPC, for nothing
                { kind: 'challenge', npc }  won from an NPC (Loddie's pins, Lumble's dice)
@@ -99,10 +101,30 @@ const BOOL = {
 const PICKUP = /^(Heart Piece|Silk Spool)( \(\d+\))?$/;
 /* The rest, by hand (the wiki's "How to Acquire" and its Tools table's per-Act lines; the
    completionist where the wiki is silent). Added after the ways the sources give. */
+/* A 'found' way that isn't the Act's to say (when): the save check that says the thing lies
+   there now, its owner dead, read in the game's scenes (18-Oct-2026). With a save that says, it
+   replaces the way's act (js/completion.js wayOf): the way is that one while it holds, and one of
+   the others while it doesn't; the Act only decides with no such word (an older slot, Free mode).
+     curveclaw       Ant_21's ant_item_string, which holds it, is on once the Mottled Skarr is
+                     dead (DeactivateIfPlayerdataFalse antMerchantKilled) and while Curve Claws
+                     isn't unlocked (ToolGameObjectActivator); its bool is set once it's struck
+                     down: found there. Bought before he died, it was his.
+     weighted-belt   Bone_East_07's «Mort Death Scene», the pickup by his corpse, is on only when
+                     Mort kept it (DeactivateIfPlayerdataFalse mortKeptWeightedAnklet), which Act 3
+                     sets when it wasn't bought.
+     magnetite-dice  Coral_33's «Dice Game Corpse», the pickup by Lumble's body, is what its
+                     Control FSM switches on when dicePilgrimState is 1 (0 he plays, 2 departed),
+                     under the room's «Normal World», which Act 3 (blackThreadWorld) switches off:
+                     then Grindle sells it. */
+const WHEN = {
+  curveclaw: ['all', ['flag', 'antMerchantKilled'], ['any', ['bool', 'Ant_21', 'ant_item_string'], ['not', ['tool', 'Curve Claws']]]],
+  'weighted-belt': ['flag', 'mortKeptWeightedAnklet'],
+  'magnetite-dice': ['all', ['min', 'dicePilgrimState', 1], ['not', ['min', 'dicePilgrimState', 2]], ['not', ['flag', 'blackThreadWorld']]],
+};
 const HAND = {
   tools: {
     'straight-pin': [{ kind: 'found' }], 'threefold-pin': [{ kind: 'found' }], longpin: [{ kind: 'found' }],
-    curveclaw: [{ kind: 'found', act: 2 }],  // Tools: behind a gauntlet once the Mottled Skarr dies
+    curveclaw: [{ kind: 'found', act: 2, when: WHEN.curveclaw }],  // Tools: behind a gauntlet once the Mottled Skarr dies
     pimpillo: [{ kind: 'craft', craftmetal: 1 }],  // Pimpillo: a crafting bench above Yarnaby's home
     silkshot: [{ kind: 'craft', craftmetal: 1 }],  // Silkshot: the Weaver variant, repaired at Mount Fay's table
     'delvers-drill': [{ kind: 'found' }], cogfly: [{ kind: 'craft', craftmetal: 1 }], 'rosary-cannon': [{ kind: 'found' }],
@@ -110,9 +132,9 @@ const HAND = {
     'fractured-mask': [{ kind: 'found', act: 2 }],  // Tools: beside the Mottled Skarr's corpse
     'injector-band': [{ kind: 'found' }], 'memory-crystal': [{ kind: 'found' }], 'quick-sling': [{ kind: 'found' }],
     'wreath-of-purity': [{ kind: 'found' }], 'egg-of-flealia': [{ kind: 'fleas', npc: 'mooshka', fleas: 'all' }],
-    'shard-pendant': [{ kind: 'found' }], 'weighted-belt': [{ kind: 'found', act: 3 }],  // Tools: next to Mort's body
+    'shard-pendant': [{ kind: 'found' }], 'weighted-belt': [{ kind: 'found', act: 3, when: WHEN['weighted-belt'] }],  // Tools: next to Mort's body
     'barbed-bracelet': [{ kind: 'found' }], 'dead-bugs-purse': [{ kind: 'found' }], 'silkspeed-anklets': [{ kind: 'found' }],
-    'magnetite-dice': [{ kind: 'challenge', npc: 'lumble' }, { kind: 'found', act: 2 }],  // Tools: 5 wins; then by his corpse
+    'magnetite-dice': [{ kind: 'challenge', npc: 'lumble' }, { kind: 'found', act: 2, when: WHEN['magnetite-dice'] }],  // Tools: 5 wins; then by his corpse
     tacks: [{ kind: 'found', act: 3 }],  // completionist: on the hut's floor in Act 3
   },
   crests: {
@@ -445,7 +467,9 @@ write(OUT, `js/how.js: how to get each thing of the 100%, as data (no prose): it
                  after the WISHES indices to be done first; needs the playerData flags it waits on
                { kind: 'wish', wish, quest, act? }  wish a WISHES index, quest its save name
                { kind: 'boss', foe }  a js/enemies.js FOES id
-               { kind: 'found', act? }  lying in a room (from that Act on)
+               { kind: 'found', act?, when? }  lying in a room (from that Act on)
+                 when: the save check that says it lies there now (its owner dead), which
+                 replaces act when the save says (js/completion.js wayOf)
                { kind: 'craft', craftmetal }  made at a craft table
                { kind: 'npc', npc }  given for nothing
                { kind: 'challenge', npc }  won from the NPC

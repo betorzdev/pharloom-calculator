@@ -309,6 +309,10 @@
     mapArtOut:      { es: 'No cuenta para el 100 %', en: 'It doesn\'t count for the 100%' },
     mapArtsIn:      { es: 'Del 100 %', en: 'Of the 100%' },
     mapToolLent:    { es: 'Te la presta un deseo y te la quita al cumplirlo: no cuenta para el 100 %', en: 'A wish lends it and takes it back once done: it doesn\'t count for the 100%' },
+    /* A Tool sold that lies in another room once its seller is gone (js/spots.js ALSO): that room's
+       mark, with no save and with one that has it there. */
+    mapAlsoIf:      { es: 'Aquí si {npc} muere antes de que se lo compres', en: 'Here if {npc} dies before you buy it' },
+    mapAlsoNow:     { es: '{npc} murió antes de que se lo compraras: está aquí', en: '{npc} died before you bought it: it lies here' },
     mapGroupShow:   { es: 'Mostrar todo el grupo', en: 'Show the whole group' },
     mapGroupHide:   { es: 'Esconder todo el grupo', en: 'Hide the whole group' },
     mapFoldOpen:    { es: 'Abrir {g}', en: 'Open {g}' },
@@ -373,6 +377,7 @@
     mapExtra_shards:   { es: 'Fragmentos de coraza', en: 'Shell Shards' },   // INV_NAME_SHARD
     mapMapFound:    { es: 'Se consigue en esta sala.', en: 'Had in this room.' },
     mapMapShakra:   { es: '{npc} lo vende por {price} rosarios desde que la ves en esta zona.', en: '{npc} sells it for {price} rosaries once you\'ve seen her in this area.' },   // {npc}: MAPPER_MAIN
+    mapMapMachine:  { es: 'Una máquina que muestra una maqueta de la Ciudadela lo vende por {price} rosarios.', en: 'A machine displaying a model of the Citadel sells it for {price} rosaries.' },   // the machine's words: CITADEL_MAP_PROMPT
     // The keys, key items, lifts, loose rosaries, small cocoons and hidden corners: the game names
     // none of these groups, so written for context (each key and item carries its own game name).
     mapLayer_keys:     { es: 'Llaves', en: 'Keys' },

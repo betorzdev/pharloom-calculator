@@ -171,3 +171,26 @@ test("Mooshka's Spool Fragment is given at the caravan's Blasted Steps camp, not
   assert.equal(S.AT.pieces[i], 'Coral_Judge_Arena');
   assert.ok(!CO.PIECES.some((p) => p[2][1] === 'CaravanTroupeLocation'));
 });
+
+test('a way found by its owner\'s corpse is the save\'s to say, not the Act\'s: the Curveclaw, the Weighted Belt, the Magnetite Dice', () => {
+  const H = require('../js/how.js');
+  const base = { silk: 0, silkMax: 9, maxHealth: 5 };
+  const way = (cat, id, pd, sd) => CP.wayOf(H.HOW[cat][id], F.game({ ...base, ...pd }, sd), {}, cat + ':' + id).way;
+  const kind = (w) => w.kind + (w.vendor ? ':' + w.vendor : w.npc ? ':' + w.npc : '');
+  // An Act 2 game with the Mottled Skarr alive: his shop, though the Act alone says found.
+  assert.equal(kind(way('tools', 'curveclaw', { act2Started: true })), 'shop:mottled-skarr');
+  assert.equal(kind(CP.wayOf(H.HOW.tools.curveclaw, { act: 2 }).way), 'found');   // no word from a save: the Act
+  assert.equal(kind(way('tools', 'curveclaw', { act2Started: true, antMerchantKilled: true })), 'found');
+  // Lumble alive in Act 2: his game. Dead (state 1): by his body. Act 3: Grindle sells it.
+  assert.equal(kind(way('tools', 'magnetite-dice', { act2Started: true })), 'challenge:lumble');
+  assert.equal(kind(way('tools', 'magnetite-dice', { act2Started: true, dicePilgrimState: 1 })), 'found');
+  assert.equal(kind(way('tools', 'magnetite-dice', { act2Started: true, blackThreadWorld: true, dicePilgrimState: 1 })), 'shop:grindle');
+  assert.equal(kind(way('tools', 'weighted-belt', { act2Started: true, blackThreadWorld: true, mortKeptWeightedAnklet: true })), 'found');
+  // A slot kept before the save said: the Act, as before.
+  assert.equal(kind(CP.wayOf(H.HOW.tools.curveclaw, F.gameOf({ 'pharloom.progress': JSON.stringify({ act: 2 }) }), {}, 'tools:curveclaw').way), 'found');
+  // Every way with a when is a 'found' one, and only these three have one.
+  const whens = [];
+  for (const cat of ['tools', 'crests', 'skills', 'arts']) for (const [id, ws] of Object.entries(H.HOW[cat])) for (const w of ws) if (w.when) whens.push(cat + ':' + id + ':' + w.kind);
+  for (const [i, ws] of Object.entries(H.HOW.pieces)) for (const w of ws) if (w.when) whens.push('piece:' + i);
+  assert.deepEqual(whens.sort(), ['tools:curveclaw:found', 'tools:magnetite-dice:found', 'tools:weighted-belt:found']);
+});
