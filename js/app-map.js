@@ -122,7 +122,7 @@
     L('npc', () => t('mapLayer_npc'), 'assets/map/people/bellhart-greeter.webp'),
     ...RELICS.map((k) => L(k, () => t('mapExtra_' + k), `assets/icons/extras/${k}.webp`)),
     L('mossberry', () => t('mapExtra_mossberry'), 'assets/icons/extras/mossberry.webp'),
-    L('silkeater', () => t('mapExtra_silkeater'), PIN('pin_grub_location')),
+    L('silkeater', () => t('mapExtra_silkeater'), 'assets/icons/extras/silkeater.webp'),
     L('memento', () => t('mapExtra_memento'), 'assets/icons/extras/grey-memento.webp'),
     L('bellhome', () => t('mapExtra_bellhome'), PIN('pin_bench_bell')),
     // The area maps (the inventory's rolled map), and the rosaries and shell shards lying in a room.
@@ -553,15 +553,14 @@
         : kind === 'bead' ? 'assets/icons/extras/rosary-bead.webp' : kind === 'silk-cocoon' ? ICON('silk_grub_small_cocoon')
           : kind === 'eva' ? evaArt(more.reward) : kind === 'lift' || kind === 'masked' ? null
         : kind === 'memento' ? (MEMENTO_ICON[check[1]] ? `assets/icons/extras/${MEMENTO_ICON[check[1]]}.webp` : 'assets/icons/pieces/heart-bloom.webp')
-        : kind === 'silkeater' ? null : kind === 'spawn' || kind === 'bellhome' || kind === 'wall' ? null : `assets/icons/extras/${kind}.webp`;
+        : kind === 'spawn' || kind === 'bellhome' || kind === 'wall' ? null : `assets/icons/extras/${kind}.webp`;
       const spawn = kind === 'spawn' ? BOOK_KEY.get(name && name.key) : null;
       add({ key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i), lost, chk: JSON.stringify(check),
         name: name ? pick(name) : kind === 'eva' ? evaName(more.reward) : ONE[kind] ? t(ONE[kind]) : LAYER.get(layer).name(), eva: kind === 'eva' ? more : null,
         note: kind === 'masked' ? t('mapHiddenNote', { n: num(check[0] === 'all' ? check.length - 1 : 1) }) : more.shop ? t('mapMapShakra', { npc: pick(HW.NPCS[more.shop]), price: num(more.price) }) : more.found ? t('mapMapFound') : more.fight ? t('mapRewardOf', { fight: App.gauntletName(more.fight) }) : '',
-        draw: (s, ti, k, c) => (kind === 'silkeater' ? pin('silkeater', 'pin_grub_location', s, ti, k, c)
-          : kind === 'spawn' ? badge(layer, portrait(spawn && spawn.id) || GLYPH.spawn, s, ti, k, c)
-            : kind === 'bellhome' ? pin('bellhome', 'pin_bench_bell', s, ti, k, c)
-              : icon ? dot(layer, icon, s, ti, k, c) : badge(layer, GLYPH[layer] || GLYPH.wall, s, ti, k, c)) });
+        draw: (s, ti, k, c) => (kind === 'spawn' ? badge(layer, portrait(spawn && spawn.id) || GLYPH.spawn, s, ti, k, c)
+          : kind === 'bellhome' ? pin('bellhome', 'pin_bench_bell', s, ti, k, c)
+            : icon ? dot(layer, icon, s, ti, k, c) : badge(layer, GLYPH[layer] || GLYPH.wall, s, ti, k, c)) });
     });
     // Your game: the cocoon, where the game's map marks it (js/rooms.js mapPoint, by where Hornet fell
     // in the scene; else its room's middle), and the Journal's entries still missing.

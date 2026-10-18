@@ -8,7 +8,7 @@
    the Tools on their slots by colour, one slot per point of the 100% (a Tool and its upgrade
    share one, the two a wish lends apart). Under both, across the width, what she carries: the
    purse (Rosaries and Shell Shards with the strings, bundles and shards that break into them,
-   design/29-inventory-variants.html, A), the items, the Relics and the Mementos, each a plate
+   design/29-inventory-variants.html, A; under them the Silkeaters held, design/91, 1 A), the items, the Relics and the Mementos, each a plate
    with its name. Every shelf's head counts n/max and its rule lights up to it.
    In Free mode all of it is set here: your game marked by hand, from a New Game
    (js/app-saves.js, App.freeGame; design/42-free-mode-start-variants.html, 1 A): the levels, a
@@ -106,6 +106,9 @@
       const x = item(id), v = Math.min(max, g.purse[id] || 0);
       out.push({ list: 'items', id, name: x.name, desc: x.desc, got: v > 0, keep: true, count: `${num(v)}/${num(max)}`, n: [v, max], shelf: 'purse', cur, worth });
     }
+    // The Silkeaters held, a consumable as those are (its picture the Map's, assets/icons/extras/).
+    { const x = item('silkeater'), v = Math.min(x.max, g.silkeaters || 0);
+      out.push({ list: 'extras', id: x.id, name: x.name, desc: x.desc, got: v > 0, count: `${num(v)}/${num(x.max)}`, n: [v, x.max], shelf: 'eaters' }); }
     // The Relics by kind (how many of the kind), the Mementos one by one.
     for (const k of RELICS) {
       const at = extrasOf(k), v = at.filter((i) => g.extras.includes(i)).length, x = item(k);
@@ -147,7 +150,7 @@
   /* Free mode marks (design/03-redesign.md, step 4): a tap on a Tool, Crest, Silk Skill,
      ability, the Everbloom, an Old Heart or a melody marks it had or not and opens its text; the
      counted ones (loose shards and fragments, lockets, Craftmetal, Pale Oil, fleas, what's in the
-     purse, the Relics of each kind) go by − N +, and the two currencies are typed.
+     purse, the Silkeaters, the Relics of each kind) go by − N +, and the two currencies are typed.
      The Hunter Crest is always had: Hornet starts with it. */
   let marking = false;
   const markable = (x) => !x.n && x.id !== 'silk-heart' && !(x.list === 'crests' && x.id === 'hunter')
@@ -353,7 +356,8 @@
     const money = own ? { rosaries: (App.gameMeta() || {}).rosaries || 0, shards: (App.gameMeta() || {}).shards || 0 } : g;
     const counts = { relics: { got: relics.reduce((a, x) => a + x.n[0], 0), max: relics.reduce((a, x) => a + x.n[1], 0) },
       mementos: { got: mementos.filter((x) => x.got).length, max: mementos.length } };
-    const purseShelf = [...all.filter((x) => x.shelf === 'currency'), ...all.filter((x) => x.shelf === 'purse')];
+    const eaters = all.find((x) => x.shelf === 'eaters');
+    const purseShelf = [...all.filter((x) => x.shelf === 'currency'), ...all.filter((x) => x.shelf === 'purse'), eaters];
     const start = own ? ''
       : `<p class="inv-lead">${esc(t('invFreeLead'))}</p><p class="inv-presets"><span class="lbl">${esc(t('invStart'))}</span><button type="button" class="text-btn" data-act="ctPreset" data-value="base">${esc(t('invBase'))}</button>
           <span class="lbl" aria-hidden="true">·</span><button type="button" class="text-btn" data-act="ctPreset" data-value="max">${esc(t('invMax'))}</button></p>`;
@@ -375,7 +379,7 @@
         </div>
       </div>
       <div class="inv-bag">
-        <section class="inv-sec">${head(t('invPurse'))}${purse(g, all, money)}${open(purseShelf)}</section>
+        <section class="inv-sec">${head(t('invPurse'))}${purse(g, all, money)}${mat(eaters, true)}${open(purseShelf)}</section>
         <section class="inv-sec">${head(t('invItems'), itemsN, 'items')}${platesOf(items)}${open(items)}</section>
         <section class="inv-sec">${head(t('invRelics'), counts.relics, 'relics')}${platesOf(relics, true)}${open(relics)}</section>
         <section class="inv-sec">${head(t('invMementos'), counts.mementos, 'mementos')}${platesOf(mementos, true)}${open(mementos)}</section>
@@ -475,6 +479,7 @@
       const key = CSS.escape(node.dataset.key), dir = node.dataset.dir, other = dir === 'more' ? 'less' : 'more';
       const back = () => refocus(`[data-act="invCount"][data-key="${key}"][data-dir="${dir}"]`, `[data-act="invCount"][data-key="${key}"][data-dir="${other}"]`);
       if (x.shelf === 'purse') { mark((m) => { m.purse[x.id] = v; }); back(); return; }
+      if (x.shelf === 'eaters') { mark((m) => { m.silkeaters = v; }); back(); return; }
       if (x.shelf === 'relics') { mark((m) => setRelics(m, x.kind, v)); back(); return; }
       // The loose shards and fragments come after those already in whole masks and spools.
       const over = x.id === 'mask-shard' ? 4 * b.masks : x.id === 'spool-fragment' ? 2 * b.spools : 0;
