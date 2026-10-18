@@ -1397,6 +1397,13 @@ const TASKS = [];
     .sort(([, a], [, b]) => a[2] * a[3] - b[2] * b[3]).map(([s]) => sceneOfPart(s))[0];
   const byItem = (save) => Object.keys(WI.quests).find((q) => WI.quests[q].targets.includes(save));
   const pinned = new Set();
+  /* The Bellbeast's pins (Beast in the Bells), one per Bellway station: the game shows one only
+     while the beast waits at that station (each pin's DeactivatePlayerDataTest turns it off when
+     FastTravelNPCLocation isn't its station's). One whose room has no station never shows: the
+     Waterwheel's, FastTravelNPCLocation 7, a value the game's FastTravelLocations doesn't have (a
+     station cut from the game), under Greymoor_17 in the black. */
+  const stations = new Set(M.PINS.filter((x) => x[0] === 'bellway').map((x) => sceneOfPart(x[3])));
+  let unstationed = 0;
   for (const [, sprite, quest, item, target, wx, wy] of WI.pins) {
     const q = quest || byItem(item);
     const info = WI.quests[q];
@@ -1404,6 +1411,7 @@ const TASKS = [];
     const p = [Math.round((wx - ox) * M.PPU * 10) / 10, Math.round((oy - wy) * M.PPU * 10) / 10];
     const scene = target || inRoom(p);
     if (!scene) { unplaced.push(`pin ${q}`); continue; }
+    if (sprite === 'quest_map_icon_bellbeast' && !stations.has(scene)) { unstationed++; continue; }
     if (info.main) {
       if (sprite === 'quest_map_icon_songshrines') continue;   // the Bellshrines' layer
       const later = [...(LATER[q] || [])];
@@ -1443,8 +1451,10 @@ const TASKS = [];
     const [scene, , x, y] = at.find((e) => e[0] === scenes[0]);
     task('wspot', q, ['quest', q], scene, x, y, art('icons/' + WI.quests[q].emblem));
   }
+  // More than the Waterwheel's: a station's pin no longer falls in its station's room.
+  if (unstationed > 1) fail(`${unstationed} Bellbeast pins in no Bellway station's room`);
   const n = (k) => TASKS.filter((x) => x[0] === k).length;
-  console.log(`tasks: ${n('qitem')} wish items, ${n('wspot')} places where a wish is done, ${n('goal')} objective pins`);
+  console.log(`tasks: ${n('qitem')} wish items, ${n('wspot')} places where a wish is done, ${n('goal')} objective pins (${unstationed} Bellbeast pin off any station left out)`);
 }
 // The caches that only hold an item (HELD, above): that item has a mark of its own in that room, by
 // its pickup's bool (a piece of the 100%, a rosary item, a wish's item) or as a Tool's other room.
