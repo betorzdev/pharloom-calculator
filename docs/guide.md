@@ -525,7 +525,9 @@ leaves those off.
   Gourmand's delicacies, the three souls, the Twisted Bud, the Steel Spines; and the fourteen
   spots above and below Bellhart where a Silver Bell may drop, gone once their wish is granted); and the main
   objectives, where the game's map pins them (the Bellshrines, Old Hearts and Melodies are already
-  layers of their own). Each is done as your save says: the wish granted, the objective complete
+  layers of their own; Beast in the Bells has one pin per Bellway station, and the game's
+  thirteenth, under Greymoor for a station cut from the game, is left out, as the game never
+  shows it). Each is done as your save says: the wish granted, the objective complete
   or a later step of it (Pale Monarch stays incomplete when Act 3 opens through the Soul Snare), a
   thing picked up, held (when it lies in one place only: each Pollip Heart and Flintgem goes by
   its own spot) or its wish granted. Off at first.
