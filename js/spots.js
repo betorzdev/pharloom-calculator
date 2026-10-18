@@ -47,8 +47,9 @@
               mode 'steel' when only Steel Soul has it, steel the spot's scene when the save
               chooses it (SteelQuestSpots), gone 'act3' when the game takes it away as Act 3 begins,
               alt { at, by, open, foe } for one of the places one thing may be in (a Flintbeetle's
-              two): at the check that it's this one in this game, by what picks ('shortcut'), open
-              whether it's this one once that's open, foe the enemy's name
+              two, the Bellbeast's twelve stations): at the check that it's this one in this game,
+              by what picks ('shortcut'), open whether it's this one once that's open, foe the
+              enemy's name (the Bellbeast's have at alone)
      XY       a thing's key ('piece:<i>', 'tools:<id>', '<key>:found', '<key>:<vendor>', 'arts:<id>', 'extra:<i>'…, 'person:<id>',
               'board:<scene>', 'bell:<field>', 'task:<i>', 'shakra:<i>', 'shop:<vendor>:<i>', 'giver:<scene>', 'boss:<foe>', 'journal:<entry>', 'gaunt:<id>',
               'everbloom') → its point on the map, in the image's pixels: where
@@ -7246,6 +7247,18 @@
       null,
       null,
       null,
+      {
+        at: [
+          'any',
+          ['not', ['accepted', 'Bellbeast Rescue']],
+          ['any', ['quest', 'Bellbeast Rescue']],
+          [
+            'all',
+            ['min', 'FastTravelNPCLocation', 15],
+            ['not', ['min', 'FastTravelNPCLocation', 16]],
+          ],
+        ],
+      },
     ],
     [
       'goal',
@@ -7257,6 +7270,14 @@
       null,
       null,
       null,
+      {
+        at: [
+          'any',
+          ['not', ['accepted', 'Bellbeast Rescue']],
+          ['any', ['quest', 'Bellbeast Rescue']],
+          ['all', ['min', 'FastTravelNPCLocation', 5], ['not', ['min', 'FastTravelNPCLocation', 6]]],
+        ],
+      },
     ],
     [
       'goal',
@@ -7268,6 +7289,18 @@
       null,
       null,
       null,
+      {
+        at: [
+          'any',
+          ['not', ['accepted', 'Bellbeast Rescue']],
+          ['any', ['quest', 'Bellbeast Rescue']],
+          [
+            'all',
+            ['min', 'FastTravelNPCLocation', 13],
+            ['not', ['min', 'FastTravelNPCLocation', 14]],
+          ],
+        ],
+      },
     ],
     [
       'goal',
@@ -7279,6 +7312,14 @@
       null,
       null,
       null,
+      {
+        at: [
+          'any',
+          ['not', ['accepted', 'Bellbeast Rescue']],
+          ['any', ['quest', 'Bellbeast Rescue']],
+          ['all', ['min', 'FastTravelNPCLocation', 3], ['not', ['min', 'FastTravelNPCLocation', 4]]],
+        ],
+      },
     ],
     [
       'goal',
@@ -7290,6 +7331,14 @@
       null,
       null,
       null,
+      {
+        at: [
+          'any',
+          ['not', ['accepted', 'Bellbeast Rescue']],
+          ['any', ['quest', 'Bellbeast Rescue']],
+          ['all', ['min', 'FastTravelNPCLocation', 1], ['not', ['min', 'FastTravelNPCLocation', 2]]],
+        ],
+      },
     ],
     [
       'goal',
@@ -7301,6 +7350,18 @@
       null,
       null,
       null,
+      {
+        at: [
+          'any',
+          ['not', ['accepted', 'Bellbeast Rescue']],
+          ['any', ['quest', 'Bellbeast Rescue']],
+          [
+            'all',
+            ['min', 'FastTravelNPCLocation', 9],
+            ['not', ['min', 'FastTravelNPCLocation', 10]],
+          ],
+        ],
+      },
     ],
     [
       'goal',
@@ -7312,6 +7373,14 @@
       null,
       null,
       null,
+      {
+        at: [
+          'any',
+          ['not', ['accepted', 'Bellbeast Rescue']],
+          ['any', ['quest', 'Bellbeast Rescue']],
+          ['all', ['min', 'FastTravelNPCLocation', 6], ['not', ['min', 'FastTravelNPCLocation', 7]]],
+        ],
+      },
     ],
     [
       'goal',
@@ -7323,6 +7392,14 @@
       null,
       null,
       null,
+      {
+        at: [
+          'any',
+          ['not', ['accepted', 'Bellbeast Rescue']],
+          ['any', ['quest', 'Bellbeast Rescue']],
+          ['all', ['min', 'FastTravelNPCLocation', 2], ['not', ['min', 'FastTravelNPCLocation', 3]]],
+        ],
+      },
     ],
     [
       'goal',
@@ -7334,6 +7411,14 @@
       null,
       null,
       null,
+      {
+        at: [
+          'any',
+          ['not', ['accepted', 'Bellbeast Rescue']],
+          ['any', ['quest', 'Bellbeast Rescue']],
+          ['all', ['min', 'FastTravelNPCLocation', 4], ['not', ['min', 'FastTravelNPCLocation', 5]]],
+        ],
+      },
     ],
     [
       'goal',
@@ -7345,6 +7430,18 @@
       null,
       null,
       null,
+      {
+        at: [
+          'any',
+          ['not', ['accepted', 'Bellbeast Rescue']],
+          ['any', ['quest', 'Bellbeast Rescue']],
+          [
+            'all',
+            ['min', 'FastTravelNPCLocation', 11],
+            ['not', ['min', 'FastTravelNPCLocation', 12]],
+          ],
+        ],
+      },
     ],
     [
       'goal',
@@ -7356,6 +7453,18 @@
       null,
       null,
       null,
+      {
+        at: [
+          'any',
+          ['not', ['accepted', 'Bellbeast Rescue']],
+          ['any', ['quest', 'Bellbeast Rescue']],
+          [
+            'all',
+            ['min', 'FastTravelNPCLocation', 14],
+            ['not', ['min', 'FastTravelNPCLocation', 15]],
+          ],
+        ],
+      },
     ],
     [
       'goal',
@@ -7367,6 +7476,18 @@
       null,
       null,
       null,
+      {
+        at: [
+          'any',
+          ['not', ['accepted', 'Bellbeast Rescue']],
+          ['any', ['quest', 'Bellbeast Rescue']],
+          [
+            'all',
+            ['min', 'FastTravelNPCLocation', 12],
+            ['not', ['min', 'FastTravelNPCLocation', 13]],
+          ],
+        ],
+      },
     ],
     [
       'goal',
