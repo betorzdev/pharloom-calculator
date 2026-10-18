@@ -2007,3 +2007,25 @@ Checked on the 87 saves now in the folder: Skarr alive in 21 (shop), dead in 66 
 found it there), Mort's belt by his corpse in 15. None bought the Curveclaw, so that case is the
 test's only. On Progress, 4 Act 2 saves with the Skarr and Lumble alive now read the shop and the
 challenge, where the Act alone said found.
+
+**Grindle's Act 3 stock on the Map** (18 October 2026, Albert: «marcar también en el Acto 3 lo
+que vende Grindle»). Progress already said Grindle's in Act 3 (the Act picks the way); the Map kept
+the marks at Bonetown, the Pilgrim's Rest and Coral_33. Read in the game's scenes: Pebb's
+Bonechurch_Shop, Mort's Pilgrims Rest Shop and Lumble's Dice Game (his corpse too) each sit under
+their room's «Normal World», which its «Black Thread States» (TestGameObjectActivator,
+blackThreadWorld) switches off, so in Act 3 only Grindle sells them (Pebb also leaves once his stock
+is sold out, BoneBottomShopKeepLeft, by then all had). `tools/gen-spots.js` now writes `ALSO` for
+every Act 3 ware of a vendor (js/shop.js act 3) that's a Tool or a piece with a mark in another
+room, with a third element, the way { kind: 'shop', vendor, price, act: 3, from }, and the check
+blackThreadWorld: the Mask Shard, Craftmetal and Magnetite Brooch (Pebb), the Memory Locket and
+Tool Pouch (Mort) and the Magnetite Dice (Lumble), its point at Grindle (`XY '<key>:grindle'`). It
+stops if a ware's earlier source isn't one read gone in Act 3 (GONE_ACT3). `js/app-map.js
+withAlso` serves pieces and Tools alike: with a save, at Grindle while the game is in Act 3 (the
+save's act, blackThreadWorld) and doesn't have it, where it was otherwise; with none, both,
+counted once (chk), the Grindle card saying Act 3, who's gone and the price. Grindle's Simple Key
+has no mark, as no sold key has. Bought from either, the save keeps the same flag, so a thing had
+in Act 3 shows where it was before. Checked: npm test, the text audit, check-pack on the 87 saves
+(all match), and the Map in headless Chrome at 1440 and 390, es and en, in Free mode, an Act 2 save
+(Restore_Points2/restoreData10: at Mort's and Pebb's), an Act 3 save without Mort's wares
+(Restore_Points3/restoreData27: the Memory Locket and Tool Pouch at Grindle alone) and a 100% Act
+3 save, the legend's counts the same as on dev in all three.

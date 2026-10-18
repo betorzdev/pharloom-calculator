@@ -373,11 +373,33 @@
     boss: pick(FOE.get('widow').name) }) };
   // What picks among the places one thing may be in (js/spots.js TASKS alt.by) → its card's words, [shut, open].
   const ALT_BY = { shortcut: ['mapAltShortcutShut', 'mapAltShortcutOpen'] };
-  // A Tool's other room (js/spots.js ALSO), on its card: why it's there, by the one who sold it.
-  const alsoNote = (id, saved) => {
-    const w = (HW.HOW.tools[id] || []).find((x) => x.kind === 'shop');
+  // A thing's ways (js/how.js HOW), by its mark's key ('piece:<i>', 'tools:<id>'…).
+  const waysOf = (key) => { const [cat, id] = key.split(':'); return (cat === 'piece' ? HW.HOW.pieces[id] : (HW.HOW[cat] || {})[id]) || []; };
+  /* A thing's other room (js/spots.js ALSO), on its card: why it's there, by the one who sold it;
+     a vendor's Act 3 stock (way), by who sells it, for how much, and who had it before. */
+  const alsoNote = (key, way, saved) => {
+    if (way) return t(saved ? 'mapAlsoSoldNow' : 'mapAlsoSoldIf', { npc: pick(HW.NPCS[way.vendor]), from: pick(HW.NPCS[way.from]), price: num(way.price) });
+    const w = waysOf(key).find((x) => x.kind === 'shop');
     return w ? t(saved ? 'mapAlsoNow' : 'mapAlsoIf', { npc: pick(HW.NPCS[w.vendor]) }) : '';
   };
+  /* A thing with another room (js/spots.js ALSO). A Tool sold that lies there once its seller is
+     gone: a save says which room it's in (savefile foundNow), and the mark is there alone. What a
+     vendor sells only in Act 3 and was had elsewhere before (Grindle's: Pebb's, Mort's and
+     Lumble's wares, whose rooms the game empties in Act 3): with a save, at the vendor while the
+     game is in Act 3 and hasn't it, where it was before otherwise. With none (Free mode too, or a
+     slot kept before it said), both, one thing (chk), the other's card saying when it's there. */
+  function withAlso(add, mark, own) {
+    const also = (SP.ALSO || {})[mark.key];
+    if (!also) { add(mark); return; }
+    const [scene, , way] = also, key = mark.key + ':' + (way ? way.vendor : 'found'), xy = SP.XY[key];
+    // There from the Act its seller dies in (js/how.js, its 'found' way's), or the vendor's; in that room's area.
+    const from = way || waysOf(mark.key).find((x) => x.kind === 'found') || {};
+    const there = { scene, at: xy && { x: xy[0], y: xy[1] }, area: R.areaOf(scene) || mark.area, act: from.act || mark.act, note: alsoNote(mark.key, way, !!own) };
+    if (own && way) { add(own.act >= way.act && !mark.got ? { ...mark, ...there } : mark); return; }
+    if (own && own.foundRead) { add(own.foundNow.includes(mark.key) ? { ...mark, ...there } : mark); return; }
+    add(mark);
+    add({ ...mark, ...there, key, chk: mark.key });
+  }
   // Nothing left to do with a mark: had, or taken away.
   const closed = (m, g) => !!g && (m.got || !!m.lost);
   function things(g, own) {
@@ -388,24 +410,13 @@
       const scene = SP.AT.pieces[i];
       // A Needle upgrade by the Needle it gives (check: ['min', 'nailUpgrades', level]).
       const needle = p[0] === 'needle' && p[2][0] === 'min' ? D.NEEDLES[p[2][2]] : null;
-      add({ key: 'piece:' + i, layer: p[0], scene, act: p[1], got: !!g && g.pieces.includes(i), area: p[3],
-        name: p[4] ? pick(p[4]) : needle ? pick(needle.name) : LAYER.get(p[0]).name(), draw: (s, ti, k, c) => dot(p[0], pieceIcon(p[0], p), s, ti, k, c) });
+      withAlso(add, { key: 'piece:' + i, layer: p[0], scene, act: p[1], got: !!g && g.pieces.includes(i), area: p[3],
+        name: p[4] ? pick(p[4]) : needle ? pick(needle.name) : LAYER.get(p[0]).name(), draw: (s, ti, k, c) => dot(p[0], pieceIcon(p[0], p), s, ti, k, c) }, own);
     });
     for (const ids of CO.COUNTED) {
-      const id = ids[0], tool = D.TOOLS.find((x) => x.id === id), w = CO.WHERE.tools[id] || [], key = 'tools:' + id;
-      const mark = { key, layer: 'tools-' + tool.color, scene: SP.AT.tools[id], act: w[0], area: w[1], got: !!g && ids.some((x) => g.tools.includes(x)),
-        name: pick(tool.name), draw: (s, ti, k, c) => dot('tools', `assets/icons/tools/${id}.webp`, s, ti, k, c) };
-      /* A Tool sold that lies in another room once its seller is gone (js/spots.js ALSO): a save
-         says which room it's in (savefile foundNow), and the mark is there alone; with none (Free
-         mode too, or a slot kept before it said), both, one thing (chk). */
-      const also = (SP.ALSO || {})[key];
-      if (!also) { add(mark); continue; }
-      // There from the Act its seller dies in (js/how.js, its 'found' way's).
-      const found = (HW.HOW.tools[id] || []).find((x) => x.kind === 'found') || {};
-      const xy = SP.XY[key + ':found'], there = { scene: also[0], at: xy && { x: xy[0], y: xy[1] }, act: found.act || mark.act, note: alsoNote(id, !!own) };
-      if (own && own.foundRead) { add(own.foundNow.includes(key) ? { ...mark, ...there } : mark); continue; }
-      add(mark);
-      add({ ...mark, ...there, key: key + ':found', chk: key });
+      const id = ids[0], tool = D.TOOLS.find((x) => x.id === id), w = CO.WHERE.tools[id] || [];
+      withAlso(add, { key: 'tools:' + id, layer: 'tools-' + tool.color, scene: SP.AT.tools[id], act: w[0], area: w[1], got: !!g && ids.some((x) => g.tools.includes(x)),
+        name: pick(tool.name), draw: (s, ti, k, c) => dot('tools', `assets/icons/tools/${id}.webp`, s, ti, k, c) }, own);
     }
     // The six outside the 100%: a Tool's upgrade, or one a wish lends and takes back.
     for (const id of OTHER_TOOLS) {
@@ -1391,8 +1402,8 @@
     where = line([areaName(area), m.act ? t('saveAct', { n: m.act }) : '', m.sub]);
     const kind = key.split(':')[0];
     if (kind === 'piece') {
-      const i = Number(key.slice(6));
-      note = App.howPiece ? App.howPiece(i) : '';
+      const i = Number(key.split(':')[1]);   // its other room's too ('piece:<i>:<vendor>')
+      note = m.note || (App.howPiece ? App.howPiece(i) : '');
       /* In Free mode a piece is marked here, but those of a ladder (masks, silk, the Silk Hearts, the
          Needle, the Kit, the Pouch) follow the Inventory's levels, as on Progress: the way there. */
       acts = own ? state(t(m.got ? 'pgGot' : 'invMissing'))

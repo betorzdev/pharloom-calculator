@@ -10,11 +10,13 @@
               act: { key: Act } for what's outside the 100% and js/collectibles.js WHERE lacks }:
               where each thing of the 100% is had (its pickup, its vendor, its Wishwall, its
               boss's arena, its giver)
-     ALSO     a thing's key ('tools:<id>') → [scene, check]: a Tool sold that lies in another room
-              once its seller is gone (the Curveclaw once the Mottled Skarr dies, the Weighted Belt
-              once Mort does), that room, and the check that says the game has it there (its point:
-              XY '<key>:found'); check as EXTRAS', plus ['tool', name] (that Tool unlocked) and
-              ['not', check]
+     ALSO     a thing's key ('tools:<id>', 'piece:<i>') → [scene, check, way?]: its other room, and
+              the check that says the game has it there. A Tool sold that lies there once its
+              seller is gone (the Curveclaw once the Mottled Skarr dies, the Weighted Belt once
+              Mort does; its point XY '<key>:found'), or, with way { kind: 'shop', vendor, price,
+              act: 3, from }, what a vendor sells only in Act 3 once from (who had it before) is
+              gone (Grindle's: Pebb's, Mort's and Lumble's wares; its point XY '<key>:<vendor>');
+              check as EXTRAS', plus ['tool', name] (that Tool unlocked) and ['not', check]
      EXTRAS   [kind, act, check, scene, name?, more?]: what doesn't count (relics by kind, mossberry,
               silkeater, memento, bellhome, spawn, rosary-cache, shard-cache, wall, then lever,
               plate, gate, lock, shortcut, silkwall from the game's scenes, then map, rosaries,
@@ -47,7 +49,7 @@
               alt { at, by, open, foe } for one of the places one thing may be in (a Flintbeetle's
               two): at the check that it's this one in this game, by what picks ('shortcut'), open
               whether it's this one once that's open, foe the enemy's name
-     XY       a thing's key ('piece:<i>', 'tools:<id>', 'tools:<id>:found', 'arts:<id>', 'extra:<i>'…, 'person:<id>',
+     XY       a thing's key ('piece:<i>', 'tools:<id>', '<key>:found', '<key>:<vendor>', 'arts:<id>', 'extra:<i>'…, 'person:<id>',
               'board:<scene>', 'bell:<field>', 'task:<i>', 'shakra:<i>', 'shop:<vendor>:<i>', 'giver:<scene>', 'boss:<foe>', 'journal:<entry>', 'gaunt:<id>',
               'everbloom') → its point on the map, in the image's pixels: where
               the game has it in its room (the object's place in the scene, or whoever stands for it,
@@ -292,6 +294,36 @@
       ],
     ],
     'tools:weighted-belt': ['bone_east_07', ['flag', 'mortKeptWeightedAnklet']],
+    'piece:38': [
+      'coral_42',
+      ['flag', 'blackThreadWorld'],
+      { kind: 'shop', vendor: 'grindle', price: 250, act: 3, from: 'mort' },
+    ],
+    'tools:magnetite-dice': [
+      'coral_42',
+      ['flag', 'blackThreadWorld'],
+      { kind: 'shop', vendor: 'grindle', price: 300, act: 3, from: 'lumble' },
+    ],
+    'piece:0': [
+      'coral_42',
+      ['flag', 'blackThreadWorld'],
+      { kind: 'shop', vendor: 'grindle', price: 320, act: 3, from: 'pebb' },
+    ],
+    'tools:magnetite-brooch': [
+      'coral_42',
+      ['flag', 'blackThreadWorld'],
+      { kind: 'shop', vendor: 'grindle', price: 220, act: 3, from: 'pebb' },
+    ],
+    'piece:58': [
+      'coral_42',
+      ['flag', 'blackThreadWorld'],
+      { kind: 'shop', vendor: 'grindle', price: 120, act: 3, from: 'pebb' },
+    ],
+    'piece:103': [
+      'coral_42',
+      ['flag', 'blackThreadWorld'],
+      { kind: 'shop', vendor: 'grindle', price: 220, act: 3, from: 'mort' },
+    ],
   };
 
   const EXTRAS = [
@@ -9370,6 +9402,12 @@
     'shakra:15': [1078.1, 1239.4],
     'shakra:16': [892.2, 1228],
     'shop:twelfth-architect:0': [1441.7, 855.8],
+    'piece:38:grindle': [461.8, 909],
+    'tools:magnetite-dice:grindle': [461.8, 909],
+    'piece:0:grindle': [461.8, 909],
+    'tools:magnetite-brooch:grindle': [461.8, 909],
+    'piece:58:grindle': [461.8, 909],
+    'piece:103:grindle': [461.8, 909],
     'giver:belltown': [1165.2, 1226.9],
     'giver:crawl_08': [370, 1289.2],
     'giver:aqueduct_05_festival': [2380.1, 576.2],

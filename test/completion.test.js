@@ -194,3 +194,17 @@ test('a way found by its owner\'s corpse is the save\'s to say, not the Act\'s: 
   for (const [i, ws] of Object.entries(H.HOW.pieces)) for (const w of ws) if (w.when) whens.push('piece:' + i);
   assert.deepEqual(whens.sort(), ['tools:curveclaw:found', 'tools:magnetite-dice:found', 'tools:weighted-belt:found']);
 });
+
+test('Pebb\'s, Mort\'s and Lumble\'s wares are Grindle\'s once the game is in Act 3, theirs before: the Act says, with a save or none', () => {
+  const H = require('../js/how.js');
+  const base = { silk: 0, silkMax: 9, maxHealth: 5 };
+  const act2 = F.game({ ...base, act2Started: true }), act3 = F.game({ ...base, act2Started: true, blackThreadWorld: true });
+  const seller = (ways, g, key) => { const w = CP.wayOf(ways, g, {}, key).way; return w.vendor || w.npc || w.kind; };
+  for (const [key, ways, before] of [['piece:0', H.HOW.pieces[0], 'pebb'], ['piece:103', H.HOW.pieces[103], 'mort'],
+    ['tools:magnetite-brooch', H.HOW.tools['magnetite-brooch'], 'pebb'], ['tools:magnetite-dice', H.HOW.tools['magnetite-dice'], 'lumble']]) {
+    assert.equal(seller(ways, act2, key), before, `${key} in Act 2`);
+    assert.equal(seller(ways, act3, key), 'grindle', `${key} in Act 3`);
+    assert.equal(seller(ways, { act: 3 }, key), 'grindle', `${key} in Free mode's Act 3`);
+    assert.equal(seller(ways, null, key), before, `${key} with no game: the first way`);
+  }
+});
