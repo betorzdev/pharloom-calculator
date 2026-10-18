@@ -795,11 +795,17 @@
     }
   }
 
-  /* Each area's name at the middle of its drawn rooms, for the areas with more than three; with
-     the rooms it has (for its card). Worked out once. */
+  /* Each area's name at the middle of its drawn rooms, for the areas with more than three, and a
+     smaller one that holds a thing of the 100% (the Songclave: its card's «For 100%», so the cards
+     add up to what «Only the 100%» draws; Albert's choice, 18-Oct-2026); with the rooms it has (for
+     its card). Worked out once. */
   let areaNames = null;
   function AREA_NAMES() {
     if (areaNames) return areaNames;
+    const hundred = new Set([...CO.PIECES.flatMap((p, i) => (HUNDRED.includes(p[0]) ? [SP.AT.pieces[i]] : [])),
+      ...CO.COUNTED.map((ids) => SP.AT.tools[ids[0]]),
+      ...['crests', 'skills', 'arts'].flatMap((cat) => Object.keys(CO.WHERE[cat]).filter((id) => cat !== 'arts' || SS.completion.ARTS.includes(id)).map((id) => SP.AT[cat][id])),
+      SP.AT.everbloom].filter(Boolean).map((s) => R.areaOf(s)));
     const sum = {};
     for (const [scene, r] of Object.entries(M.ROOMS)) {
       const a = R.areaOf(scene);
@@ -807,7 +813,7 @@
       const s = sum[a] || (sum[a] = [0, 0, 0, []]);
       s[0] += r[0] + r[2] / 2; s[1] += r[1] + r[3] / 2; s[2]++; s[3].push(scene);
     }
-    return (areaNames = Object.entries(sum).filter(([, s]) => s[2] > 3).map(([id, s]) => ({ id, x: s[0] / s[2], y: s[1] / s[2], rooms: s[3] })));
+    return (areaNames = Object.entries(sum).filter(([id, s]) => s[2] > 3 || hundred.has(id)).map(([id, s]) => ({ id, x: s[0] / s[2], y: s[1] / s[2], rooms: s[3] })));
   }
   const mapped = (own) => new Set((own ? own.maps : []).map((f) => SP.MAPS[f]).filter(Boolean));
   const MAPPABLE = new Set(Object.values(SP.MAPS));

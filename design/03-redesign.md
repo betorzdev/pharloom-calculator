@@ -1559,6 +1559,14 @@ switch (`OWN_SWITCH`, the Void Mass) isn't drawn; the groups as chosen; `layout(
 same check in the same scene goes in once, and the Heart Memento has no mark
 (`test/spots.test.js`).
 
+«Only the 100%» audited again (18 October 2026): its 124 marks are exactly the 100% in Free mode
+and in all 87 of Albert's save files. The area cards added up to 118: the Songclave (two rooms) had
+no name, so its six were in no card. The options (`93-only-hundred-variants.html`, kept out of
+the repo) also asked whether the button shows it's on, toggles back, or touches «Show Completed»
+and the cocoon. **Decision:** only the Songclave's name and card (Albert, 18 October 2026): an area
+of three rooms or fewer is named when it holds a thing of the 100% (`AREA_NAMES`); the button
+stays as it was.
+
 ### The save checks (16 October 2026)
 
 Albert: «haz una revision profunda de todos los interruptores del mapa», part 2: does each mark's
