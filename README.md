@@ -201,7 +201,7 @@ this site was built from its skeleton.
 
 ## Credits
 
-**Unofficial fan project**, free and non-commercial, not affiliated with or endorsed by
+**Unofficial fan project**, free, not affiliated with or endorsed by
 [Team Cherry](https://www.teamcherry.com.au/). *Hollow Knight: Silksong*, its artwork, texts and
 names are © Team Cherry.
 
