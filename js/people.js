@@ -66,7 +66,7 @@
         key: 'BELLWAY_PILGRIM_SUPER+BELLWAY_PILGRIM_MAIN+BELLWAY_PILGRIM_SUB',
       },
       art: 'people/bellway-pilgrim',
-      spots: [['bellway_01']],
+      spots: [['bellway_01', 675.9, 1469.6]],
     },
     {
       id: 'bell-hermit',

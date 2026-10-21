@@ -137,9 +137,27 @@
   }
   /* A Footworn event (index.html loads it): a name and, at most, a few short properties. Only
      those travel, never the hash. Without the script (blocked, offline, file://) it does
-     nothing. */
+     nothing. Every event also carries the active save's progress, only with a real save loaded
+     (none in Free mode): `pct`, the completion as the game shows it (the whole number of the
+     Progress figure on the bar), and `act`, its Act (1, 2 or 3; Silksong's only, the sibling has
+     no Acts and sends `pct` alone). Footworn keeps at most 10 properties per event: these are two
+     and the busiest event (`error`) has three of its own. A caller's own property wins a
+     collision (none has these names). */
+  function progressProps() {
+    const g = App.game ? App.game() : null;
+    if (!g) return null;
+    return { pct: Math.floor(SS.completion.count(g).total), act: g.act };
+  }
   function track(name, props) {
-    try { if (window.footworn && footworn.event) footworn.event(name, props); } catch (e) {}
+    try {
+      if (!(window.footworn && footworn.event)) return;
+      let p = props;
+      try {
+        const pr = progressProps();
+        if (pr) p = Object.assign({}, pr, props);
+      } catch (e) { /* the event goes without the progress */ }
+      footworn.event(name, p);
+    } catch (e) {}
   }
   const persist = () => { writeUrl(false); };
 

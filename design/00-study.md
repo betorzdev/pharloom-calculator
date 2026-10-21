@@ -840,7 +840,8 @@ whose enemy carries it, in every component's raw data, and its RUNTIME table say
 Every water names the Muckmaggots' record, and only the MaggotRegions that are on count
 (overrideActive, or the scene's MapZone in the region's mask), which leaves the wiki's four areas
 exactly. Lost Lace's cocoon and the Bell Eater's arena aren't on the map, so they count as the scenes
-that load them (Abyss_05's dive, every Bellway station), and the nearest from the bench covers all
+that load them (Abyss_05's dive, every Bellway station; since 21 October also the Wingmoulds' Red
+Memory, by Tut_04, which first stayed off the map), and the nearest from the bench covers all
 237. The Void Mass looked like a disagreement (45 scenes against 34), but it isn't one: see the
 next paragraph.
 
@@ -1402,7 +1403,8 @@ fix from the game's files and a save field):
   one not given to the Snail Shamans becomes a memento (the wiki's Materium page): one mark, had
   with any of them. The Fleatopia Memento in the game's text is cut content.
 - **Silkeaters**, mapgenie 10, the site 9: the tenth is what Styx grows in Sinner's Road, one an
-  hour, with nothing in the save to say it's had.
+  hour, with nothing in the save to say it's had. (21 October: the site has ten, Under_20's lying
+  one added; Styx's is still out.)
 - **Bosses**, mapgenie 46, the site 44, now 48. The completionist checks each boss by its first
   fight, and gen-spots named the fight by the last foe of that name in `enemies.js`, so the first
   Moss Mother, Lace and Savage Beastfly carried their later fights' ids (and the first Moss Mother
@@ -1412,7 +1414,8 @@ fix from the game's files and a save field):
   `Mossbone Mother Ambient`, its PersistentBoolItem: no save has it yet to confirm), the Savage
   Beastfly of the Far Fields (`defeatedBoneFlyerGiantGolemScene`). The Weavelight and the Silk
   Heart Lace leaves moved to their fights' rooms with them. Not added: the Skull Tyrant's return
-  to Bone Bottom (no foe of its own; `skullKingKilled` looks like its flag). The site also has
+  to Bone Bottom (no foe of its own; `skullKingKilled` looks like its flag). (21 October: added,
+  BOSS_BACK, below.) The site also has
   three mapgenie hasn't: Garmond & Zaza, Craggler and Shakra.
 - **Vendors**, mapgenie 23 (eight shopkeepers and fifteen of Shakra's spots), the site 10 shop
   marks (the same eight, Jubilana in her three rooms) and 17 of Shakra's: none missing. The game's
@@ -1452,7 +1455,13 @@ all six flowers, fixed 16 October), the wish granted, a Steel Sentinel spot seen
 `SteelQuestSpots` keeps the three of six a game chose), an objective complete or a later step of
 it (the author's 100% save left Pale Monarch incomplete, Act 3 opened through the Soul Snare).
 Inscriptions (57 in 51 rooms) keep nothing in the save: left out. The 72 saves of the author's
-folder still match.
+folder still match. On 21 October the three Plasmium buds of Alchemist's Assistant joined them
+(25 things): a bud (LifebloodPustule) names no item, the Needle Phial gives Plasmium from code,
+so `extract-wishes.py` takes them by component (BUDS), only the ones there before
+`BlueScientistSceneryPustulesGrown` (Crawl_03, Crawl_07, Crawl_09; the large ones that grow in
+Act 3 after the wish only give Plasmium masks), each done by its persistentBroken bool, which the
+author's saves set one by one (restoreData19: one extracted, one Plasmium held). Advanced
+Alchemy's Plasmified Blood comes from infected worms, semi-persistent, so it stays off the Map.
 
 **The people** (11 October). Set against mapgenie's 146 NPC marks, the Map had seven people. The
 game's scenes give every person: an NpcDialogueTitle names them (its keys are the dump's
@@ -1664,12 +1673,12 @@ room the map doesn't draw, and gave a place to what had none. Albert dropped the
 (`js/map-fixes.js` is empty, its admin mode as before), and what had no object of its own now goes where
 whoever stands for it is (`tools/gen-spots.js`, from `tools/extract-pickups.py`'s new battles, records,
 fleas and locks and people.json): Shakra and the vendors where they stand and their stock with them,
-a wish's reward at its Wishwall or giver, a boss where the game has it in its arena, a gauntlet at the
+a wish's reward at its Wishwall or giver (from 21 October, with whoever hands it over: below), a boss where the game has it in its arena, a gauntlet at the
 middle of its waves, a lost flea in its cage, a key's door at its lock. Of the 71 fixed marks that had no
 point of their own, 62 have one now, a median 6.7 px from where Albert had put them by hand (32.8 at
 the room's middle). Of the Map's 2,170 marks (Free mode), 260 still sit at their room's middle: 232 in a
 room the map doesn't draw (an interior, a bench's room, a memory: the game places nothing of them on its
-map either), and 28 with nothing to go by: five bosses the game spawns at run time or parks at the
+map either; from 21 October an interior's are at its door: below), and 28 with nothing to go by: five bosses the game spawns at run time or parks at the
 scene's origin (the Last Judge, Tormented Trobbio, the Cogwork Dancers, the Forebrothers, Weavenest
 Atla's Moss Mothers) and two whose fight is in an arena off the map (Lost Lace, the Far Fields
 Beastfly), the Sinner's Road gauntlet (no BattleScene), Fleatopia's Tool Pouch and Mr Mushroom wish
@@ -2029,7 +2038,8 @@ with no Act of their own that only Act 3 has now say Act 3: under their room's B
 (the destroyed Cradle and Cogwork Core, the Border Caves and the Nameless Town, the Abyss,
 Verdania). test/mark-acts.test.js. Left as they are, the wiki silent and the completionist
 consistent with the area: upper Bilewater's flea and Quick Sling (Faydown Cloak). The main
-objectives' pins still carry no Act (their stages don't line up with the completionist's).
+objectives' pins still carry no Act (their stages don't line up with the completionist's; the steps
+pinned on one point have theirs since 21 October, below).
 
 **Grindle's Act 3 stock on the Map** (18 October 2026, Albert: «marcar también en el Acto 3 lo
 que vende Grindle»). Progress already said Grindle's in Act 3 (the Act picks the way); the Map kept
@@ -2101,3 +2111,199 @@ then the places' areas), and its pin all its marks on the Map at once, the Ruine
 Act 3 with the Architect gone), 8 holding it, 19 repaired the Original, 4 the Forge Daughter's, none
 the Architect's. Checked: npm test, the text audit, check-pack on the 87 saves (all match), the Map in
 headless Chrome at 1440 and 390, es and en, in Free mode and five saves, no console errors.
+
+**Places and moves on the Map** (21 October 2026, Albert's choices from the Map's audit, design
+phase 2, W2). Read in the game's files (scenes and quest assets with UnityPy, Assembly-CSharp with
+dnfile and dncil) and over the 89 files of the author's saves:
+- **A wish's reward where the game hands it over.** A quest with `canTurnInAtBoard` 0 whose FSM ends
+  it in person in another room than it's taken in (kb/data/game/wishes.json `ends`) gives its reward
+  there: Trail's End's Throwing Ring from Shakra in Shadow_24, Fatal Resolve's Pin Badge from the
+  Pinstress in Peak_07, Balm for the Wounded's Spool Fragment from Sherma in Ward_09 («Get Spool
+  Piece»). `tools/gen-how.js endBy` gives such a way `by` (who, joined through people.json), the Map
+  draws it there (`tools/gen-spots.js endScene`) and its card and Progress's row say who gives it and
+  where the wish is taken (`howWishBy`). The Growstone (Steel Sentinel Pt2) has no mark: its place is
+  the wish's own spot in Coral_37 already.
+- **The Vaultkeeper's Melody** is Cardinius's, in Library_08 (the only FSM that sets
+  HasMelodyLibrarian), not the Sacred Cylinder's spot in library_10, which keeps its relic mark; its
+  way says to bring him the cylinder first (`how.js` way `bring`, `howBring`).
+- **What's inside an interior is at its door.** `tools/extract-entrances.py` writes every
+  TransitionPoint into kb/data/game/entrances.json (1,386 doors into 519 scenes); `tools/map-point.js`
+  puts a point of an interior (a scene with a tilemap and no room on the map) at the door into it in
+  the room the Map files it under (js/rooms.js roomOf), for gen-spots and gen-people alike: Plinney and
+  the Needle upgrades at his house's door in Bellhart, the Skull Cave's Mask Shard at its door in
+  Bone_East_14b, the Bellhome's built furnishings at its door, the Bellway Pilgrim at Bellway_01's door
+  in Bone Bottom. An interior with no door in that room (the Doctor's house, whose only TransitionPoint
+  is Wisp_03's) keeps the room's point. The benches and where Hornet wakes keep the game's own pins
+  (`toRoom`). The Flea Games' Pale Oil, which had no point, is on the piñata (aqueduct_05_festival
+  shares Aqueduct_05's place).
+- **Plinney leaves in Act 3.** Belltown's «hanging_bell_house_Pinsmith» opens on (!blackThreadWorld
+  && spinnerDefeated) || (savedPlinney && blackThreadWorld); Shellgrave's «Event Control» puts him in a
+  battle there while blackThreadWorld, not savedPlinney and sawPlinneyLeft; GameManager.StartAct3 sets
+  savedPlinney when he was never met. js/spots.js ALSO now holds what someone takes away (MOVED_BY):
+  Plinney's person mark and the four Needle upgrades, each while not had, go to Shellgrave at «Plinney
+  Outside» with the check blackThreadWorld and not savedPlinney (17 of the author's Act 3 files: game 1's
+  restore points 23 to 34 at two upgrades, the Steel Soul game's 26 to 30 at three). The withAlso rule
+  lost a clause (Act 3 and not had) the save checks already say.
+- **Moorwing**: Greymoor_08's Boss Scene Loader loads its first arena only while visitedBellhart is
+  false; once Bellhart is entered unbeaten it's fought at greymoor_05_boss from Act 2. An ALSO moved
+  way with `skipped` (game 1's NODELrestoreData12, restoreData16 and 17 have it there); bosses now go
+  through withAlso.
+- **PLACES, where a value of the save puts a thing**: the Flea Brew is Grishkin's («Give Brew» at the
+  caravan's Greymoor, Blasted Steps and Fleatopia stops, never in the Marrow), so its way is his, not The
+  Lost Fleas', and with a save it's at the stop CaravanTroupeLocation names (Greymoor while still 0);
+  in Free mode at the three. The Bell Eater's check is its fight (UnlockedFastTravelTeleport, or its
+  Journal kill), not bellCentipedeAppeared, which the game sets before the fight; while it has appeared
+  and isn't beaten it waits at the Bellway FastTravelNPCLocation names (no save of the author's is
+  caught between). savefile `placesNow`.
+- **The Herald** shows one spot at a time while his wish is on (each Mr Mushroom NPC's Check: its own
+  MushroomQuestFound false and the count reaching its Location Index): TASKS alt, the next spot only
+  (no save is caught mid-wish). And Frey's five furnishings are at Frey with their price.
+Checked: npm test, the text audit, check-pack on the 88 saves (all match), the Map in headless Chrome
+at 1440 and 390, es and en, in Free mode and five saves (early, mid, Act 3 Steel Soul, 100%), no
+console errors; each moved mark and its card looked at.
+
+**The Journal by Act, fights that wait for something, how an extra is had** (21 October 2026, the Map
+appearance audit, Albert's D25, D27, D28, D29, D16 and D32; design notes in the audit's reports). Read
+in the game's scenes with UnityPy and its code with dnfile/dncil (TestGameObjectActivator.Evaluate
+sets activateGameObject active when its test passes and deactivateGameObject when it fails):
+- **The Journal by Act.** The Journal's mark sat in its entry's first room, the one with the most of
+  it, whatever the Act: for 37 of the 192 that was a gauntlet's waves (Beastfly at Deep Docks 2, the
+  three Skarr at Hunter's March 2, the Cogworkers at Cogwork Core 1), a room Act 3 has them in only
+  (Snitchfly at Bone Bottom) or one Act 3 empties (Gromling and Grom in the Wormways, turned
+  Plasmified). `tools/extract-journal-rooms.py` now reads, per entry and room, each enemy's world by
+  the nearest switch above it (a TestGameObjectActivator testing blackThreadWorld alone, a
+  DeactivateIfPlayerdata on it), its scene's loaders (Hang_04_boss, the Forum's arena, loads only
+  before Act 3) or a memory (Act 3), and the BattleScene whose waves alone bring it
+  (`SS.journalWhen`); `tools/gen-spots.js` adds the rooms only Act 3 has and the ones
+  act3MapUpdated takes away (`js/spots.js JOURNAL`, `JOURNAL_ACT3`, and an XY point per room the Map
+  may give). With a save the mark goes where the entry roams in its Act, else to a gauntlet not yet
+  won whose waves bring it, else its first room there; an entry no room has before Act 3 says Act 3
+  (40, the Coral Tower's, Lost Verdania's, the Abyss's, the Plasmified grubs'). The focus of an
+  entry's rooms dims a room the game's Act lacks it in or only a won gauntlet brought it to, and each
+  room's card says when it's there.
+- **Off the map.** A scene `js/rooms.js roomOf` can't place is given by the rooms that load it or name
+  it (a loader, a door), through the ones in between: the Wingmoulds (entry 222, in the Red Memory)
+  now have Tut_04, and `SS.sceneHosts` lists every such scene, so Hornet's cocoon in the Bell Eater's
+  or Lost Lace's arena goes to the room that leads there (or a door's room for a graph-only interior),
+  and its card says the rosaries it holds (HeroCorpseMoneyPool: 463 in the one save of the 89 that
+  has a cocoon). No arenas beyond the wiki's 49 gauntlets (D30).
+- **What opens a fight** (`js/spots.js OPENS`, savefile `opens`): a boss or gauntlet the game puts
+  there only once something holds says so on its card, and with a save whether yours has it: the
+  wish taken (the Broodmother, the Far Fields Beastfly whose loader tests it, Gurr, Lost Garmond,
+  Tormented Trobbio, the Second Sentinel), Trail's End granted (Greymoor_08's Mapper Sparring Scene
+  Loader), the Drifter's Cloak (the Fourth Chorus's loader, hasBrolly), scholarAcolytesReleased (the
+  Acolytes' arena in Library_02, which TimePassesElsewhere fills once they're freed; StartAct3 frees
+  them). Over the 89 saves no fight is beaten without its opening held.
+- **How an extra is had** (`EXTRAS more`): an extra a vendor sells takes its shop entry (js/shop.js:
+  Jubilana's Choral Commandment, 180, after The Lost Merchant; Grindle's Psalm Cylinder, 240; Frey's
+  five furnishings, with what his shop waits for: the Bellhome entered, a relic sold to Scrounge,
+  the Vaultkeeper's collection, the Desk; the Spa's own flag isn't one the site can name, so it's left
+  out), and a small table the rest (the Grey, Hero's and Craw Mementos by their fights, the Hunter's
+  by Nuu, the Guardian's and Sprintmaster's by their challenges, the Far Fields Rune Harp the speed
+  challenge's prize, Shellwood's Weaver Effigy through the Chapel of the Witch after Rite of Rebirth).
+  The cards say it in the words Progress already uses (howShop, howBoss, howGift, howChallenge).
+- **Objective steps on one point** (`js/spots.js STEPS`, `GOAL_ACT`): the game draws one pin of an
+  objective at a time, and the site drew its steps stacked (Tut_03 49, 52, 53; Dock_12 68, 70;
+  Cog_Dancers 55, 57; the Abyss 50, 54, 2 px apart). They're one mark now, the first step's key, named
+  by the step a save is on, its card listing them in order (complete, current), with an Act from the
+  objective's chain: 3 past After the Fall, 2 past The Great Citadel (none done in a save of an
+  earlier Act, over the 89).
+test/journal-acts.test.js. Checked: npm test, the text audit, check-pack on the 88 saves (all match), and the Map in
+headless Chrome over file:// at 1440 and 390, es and en, Free mode and saves of Acts 1, 2 and 3, the
+cocoon's and Steel Soul's among them.
+
+**The Map's checks and small fixes** (21 October 2026, the Map audit's phase 2, W3; Albert's picks
+D8 to D34 of audit-B/C/D/F/G). Each read in the game's files first and checked over the 88 saves of
+the author's folder:
+- **The Dead Bug's Purse and the Shell Satchel** (D8): Crawl_01's «Tool Conditions»
+  (TestGameObjectActivator, permadeathMode) lays the purse in a normal game and the satchel in Steel
+  Soul (the 26 Steel Soul saves hold only the satchel, the 62 others only the purse). The Map drew
+  both everywhere and called the satchel an upgrade: now one mark, as Progress (js/data.js replaces),
+  the satchel's in a Steel Soul game, the purse's otherwise, its card in Free mode naming Steel Soul's.
+- **The Snare Setter** (D9) lies in Weave_14 and is handed to the Caretaker for Silk and Soul: its
+  card says so (`mapToolGivenUp`), not that a wish lends it; only the Needle Phial is lent.
+- **The Fractured Mask** (D10) lies on the Mottled Skarr's body only once he's dead (Ant_Merchant's
+  «Ant Merchant Dead», antMerchantKilled): tools/gen-how.js WHEN, the Curveclaw's rule. Three Act 2
+  saves with him alive read the shop now, not «found».
+- **A card's area** (D11) is its mark's room's (js/rooms.js areaOf), as the area cards count it; the
+  completionist's WHERE stays Progress's. It moves the Curvesickle and the Warding Bell to the Far
+  Fields, the Longpin to Shellwood, the Compass to Bellhart.
+- **NEEDS takes abilities** (D13): the Threefold Pin lies in a Group of Greymoor_15b that its
+  «Needolin Memory» switches on only once the Needolin is played there. Its card and Progress row say
+  «Needs: Needolin» while the game lacks it.
+- **Acts** (D14, D20): the Ruined Tool is Act 1 (no condition on its pickup; Bilewater through Sinner's
+  Road, the wiki), the Silkshot's own; the Diving Bell Key is Act 3 (BallowGivenKey false in every Act
+  1 and 2 save), and a door a key opens takes its key's Act when every mark of the key has one
+  (Dock_12's door, Act 3; the others keep none).
+- **What the completionist's list lacks** (D15), appended last so no index moves: Dock_01's two
+  rosary strings (RosaryCacheString, new in 1.0.30000: emptied in every 1.0.30000 save that entered the
+  room, absent before; tools/extract-pickups.py's caches now keep each one's point), and Under_20's
+  «Silk Grub Large Cocoon», a tenth Silkeater (Act 2, the Architect's chapel; unbroken in the 25 saves
+  that entered the room). The generator stops if that list changes.
+- **The Skull Tyrant's return** (D26, overturning 11 October): Bonetown's Boss Loader loads
+  bonetown_boss while skullKingKilled is false and skullKingWillInvade or skullKingInvaded is true,
+  outside Act 3. `tools/gen-spots.js BOSS_BACK` adds a boss mark of its own at Bone Bottom (BOSSES'
+  fifth element { of, coming, gone }), had by skullKingKilled; savefile `coming`. With a save it shows
+  while coming or once beaten, crossed in Act 3 if unbeaten (the game clears its coming then: 15 Steel
+  Soul Act 3 saves); in Free mode its card says it may come back. Over the saves: coming in 9 Act 2
+  saves, beaten in 19.
+- **Gourmand** (D33): a pickup's own removedBy flag joins its wish item's check (Dust_Chef's «Return
+  Pickup» goes with gotPickledRoachEgg, which the first egg sets: two Steel Soul saves had it before
+  the wish was done); the Rasher's delivery pin is done by GourmandGivenMeat too.
+- **Pins and rooms** (D34): a map pin falls in the smallest room box within 3 px of it. Last Dive's
+  pin is Abyss_05's now (1 px below its box, it was Abyss_09_top's); the same margin files the
+  Snail Shamans' three pins under Tut_04, the chapel they stand in (1.6 px from its point), and the
+  Mask Maker's delivery under his house, Peak_Mask_Maker. The other pins don't move.
+Checked: npm test, the text audit, check-pack on the 88 saves (all match), and the Map in headless
+Chrome at 1440 and 390, es and en, in Free mode and six saves (early, Act 2 with the Skarr alive and
+dead, Steel Soul before and after the satchel, 100%, Steel Soul Act 3), no console errors.
+
+**Where to hunt** (21 October, design/103, Albert's picks 1 A, 2 B, 3 A). Albert asked whether the
+Map shows everything each wish needs. Seven wishes ask for things that only enemies give while the
+wish is taken, and the Map had nothing for them but the Wishwall or the giver. `tools/extract-hunts.py`
+reads the game's files into kb/data/game/hunts.json: a quest is a thing the game can drop (dropping
+it drops its target while it's on), and an enemy placed in a scene (its EnemyJournalRecord) gives
+one by its HealthManager's drops (the Craws: Crawbug Clearing), by its corpse prefab's ActiveCorpse
+or a SpecialQuestItemVariant under it (the pilgrims' Pilgrim Shawl, the Choir's cloaks, the
+Muckroach's guts, the Choristors' and Reeds' Fine Pins), by another prefab it throws (the Hoker's
+spines) or by a LifebloodState, which the Needle Phial draws Plasmified Blood from (Advanced
+Alchemy; the infected Bone Worms, only in Act 3). Broodfeast's organs come from the kind of Tool
+damage on any enemy: nothing to place. The rooms match the Journal's (js/journal-rooms.js) but for a
+few variants whose corpse is another. The saves keep nothing per enemy or room (the enemies'
+PersistentBoolItem is semi-persistent and never reaches the save, but for a few unique ones); they
+keep the wish's count (QuestCompletionData CompletedCount), equal to the thing held in every open
+hunt of the 88 saves. So no marks (there's nothing a mark could tick): js/spots.js HUNTS gives each
+hunt's Journal entries and rooms, the Wishwall's or giver's card has «Where to hunt: <wish>» for
+each one still open, a focus of those rooms (one portrait per room, the most first), and each
+room's card says what the enemy gives there and for which wish, with the wish taken «You have
+7 of 12» (savefile's carried). Progress's pin of a hunt taken and still short opens the same rooms,
+the nearest first. The two Spine Cores stuck in Bone_East_14b's wall (copies of the Hoker's spine,
+each with a persistent flag) stay off: in every save Flexile Spines was done before their flags
+appear, so it's unverified they count. Checked: npm test, the text audit, the Map and Progress in
+headless Chrome at 1440 and 390, es and en, with three saves (Pilgrim Shawls 7 of 12; Ragpelt 7
+of 25 and Roach Guts 0 of 10; Choir Cloaks 0 of 16) and in Free mode, no console errors.
+
+**Every wish and objective on the Map, audited** (21 October 2026, Albert: «revisar todas las tasks
+para ver si estamos mostrando todo lo necesario en el mapa»; the Hunt wishes whose items drop from
+enemies went to their own task). Each of the 74, against what the Map shows for it (its qitem,
+wspot or goal marks, its Wishwall or giver, a boss card, another layer), left three wishes with
+nothing where they're done: Pain, Anguish and Misery, Final Audience and Hero's Call. No scene
+ends them: read in the game's files with UnityPy, their bosses' corpses do, prefabs outside the
+scenes (Corpse Tormented Trobbio and Corpse Garmond BlackThreaded EndQuest, Corpse Song Knight
+TryEndQuest, once the fight is won and they've spoken). `tools/extract-wishes.py` now reads every
+other bundle for an FSM that ends a quest (TryEndQuest added to the actions) and files it under the
+scene whose enemy leaves that prefab as its corpse (EnemyDeathEffectsRegular corpsePrefab or
+altCorpses): an end marked 'corpse'. `tools/gen-spots.js` puts such a wish where the fight is,
+whatever else may end it (Hero's Call's Memento Pickups in Bellway_08, Coral_33, Coral_35 and
+Coral_43, which Zaza carries along her trail while Garmond is undefeated), and of several rooms in
+the boss's arena (the Second Sentinel's prefab is also its Act 3 resting place, Hang_07's Song Reed
+Scene). The Map folds the three places into their boss's card (js/app-map.js WISH_FIGHT, now looked
+up by scene and boss: Library_13 has Trobbio and Tormented Trobbio). In all 88 saves of the author's
+folder each quest is complete exactly when its boss's flag is set (defeatedTormentedTrobbio,
+defeatedSongChevalierBoss, garmondBlackThreadDefeated). Final Audience's «markers left near
+Songclave» (Song Knight Trail Quest Parent: a Tracking Object and its trails in Cog_Dancers, Hang_06,
+Hang_07, Hang_08, Hang_17b and Song_25) keep nothing in the save: shown while the wish is taken and
+not done, their FSM (the tracking_object template) only sets disablePause. Left out. Confirmed
+covered: Fastest in Pharloom (the three races are all in Sprintmaster_Cave, its giver's room), Ecstasy
+of the End (Flea Games, ended at the festival, where Mooshka offers it), After the Fall (begun by
+the Act 3 intro cutscene in Song_Tower_Destroyed, ended by nothing in a room, no pin in the game).

@@ -93,8 +93,13 @@ test('what opens a way comes after the completionist\'s extras, each a bool of i
   assert.equal(SP.EXTRAS.slice(first, after).filter((x) => x[0] === 'wall').length, 2, 'the two cell doors');
   const LATER = new Set(['map', 'rosaries', 'shards', 'key', 'keyitem', 'bead', 'silk-cocoon', 'lift', 'masked', 'eva']);
   // After them, only the maps and what came after them, the ways kept in playerData (a flag each) and,
-  // last, the doors a key opens no mark had (kb/data/game/gating.json receptacles: Ward_01's).
-  const last = SP.EXTRAS.length - SP.EXTRAS.slice().reverse().findIndex((x) => !(x[0] === 'lock'));
+  // the doors a key opens no mark had (kb/data/game/gating.json receptacles: Ward_01's) and, last of
+  // all, what the completionist's list lacks of the game's own: Dock_01's two rosary strings, Under_20's Silkeater.
+  const tail = SP.EXTRAS.length - SP.EXTRAS.slice().reverse().findIndex((x) => !['rosary-cache', 'silkeater'].includes(x[0]));
+  const ids = (c) => (c[0] === 'any' ? ids(c[1]) : c[1] + ' ' + c[2]);
+  assert.deepEqual(SP.EXTRAS.slice(tail).map((x) => x[0] + ' ' + ids(x[2])),
+    ['rosary-cache Dock_01 rosary_string_medium', 'rosary-cache Dock_01 rosary_string_small_half', 'silkeater Under_20 Silk Grub Large Cocoon']);
+  const last = tail - SP.EXTRAS.slice(0, tail).reverse().findIndex((x) => !(x[0] === 'lock'));
   assert.ok(SP.EXTRAS.slice(after, last).every((x) => LATER.has(x[0]) || (DOORS.has(x[0]) && x[2][0] === 'flag')), 'only the maps and what came after them');
   // What opens a way that the save keeps in playerData: a flag each, once.
   const pd = SP.EXTRAS.slice(after, last).filter((x) => DOORS.has(x[0]));
@@ -268,6 +273,26 @@ test('the wishes and the main objectives (TASKS) sit on the map, each with its p
   assert.ok(n.qitem >= 20 && n.wspot >= 25 && n.goal >= 25, JSON.stringify(n));
 });
 
+test('a wish done by a boss\'s fight has its place in that boss\'s arena, which the boss\'s card stands for', () => {
+  /* js/app-map.js WISH_FIGHT folds the place into the boss's card: Pain, Anguish and Misery, Final
+     Audience and Hero's Call are ended by their boss's corpse (tools/extract-wishes.py 'corpse'),
+     Hero's Call in Coral_33 although Zaza's Memento Pickups could end it in three more rooms, and
+     Final Audience in the Hang_17b arena, not the Act 3 resting place that shares the prefab. */
+  const src = require('fs').readFileSync(require('path').join(__dirname, '..', 'js', 'app-map.js'), 'utf8');
+  const FIGHT = Function(`return ${/const WISH_FIGHT = (\{[^;]*\});/.exec(src)[1]}`)();
+  for (const q of ['Pinstress Battle', 'Steel Sentinel', 'Tormented Trobbio', 'Song Knight', 'Garmond Black Threaded']) assert.ok(FIGHT[q], q);
+  for (const [q, foe] of Object.entries(FIGHT)) {
+    const arena = SP.BOSSES.find((b) => b[0] === foe);
+    assert.ok(arena, foe);
+    const at = SP.TASKS.filter((x) => x[0] === 'wspot' && x[1] === q);
+    assert.ok(at.some((x) => x[3].toLowerCase() === arena[1].toLowerCase()), `${q}: a place in ${arena[1]} (${at.map((x) => x[3])})`);
+  }
+  for (const q of ['Tormented Trobbio', 'Song Knight', 'Garmond Black Threaded']) {
+    const at = SP.TASKS.filter((x) => x[1] === q);
+    assert.deepEqual(at.map((x) => [x[0], x[3], x[2]]), [['wspot', SP.BOSSES.find((b) => b[0] === FIGHT[q])[1], ['quest', q]]], q);
+  }
+});
+
 test('every task of «Tareas» has a place on the Map: who gives it, or what it asks for', () => {
   /* js/app-progress.js taskPin (design/78): its Wishwall or who asks (js/quests.js FROM, of the
      quest or a stage before it), else its marks: TASKS by the quest or a stage before it, or the
@@ -366,6 +391,20 @@ test('the Flintgems are three Flintbeetles in four places: Bone_04 or Bone_06 by
   assert.deepEqual(F.gameOf({ ...snap, 'pharloom.progress': JSON.stringify(old) }).elsewhere, []);
 });
 
+test("Alchemist's Assistant's three Plasmium buds, each had by its own bool, none by the Plasmium held", () => {
+  // As restoreData19 of the author's folder: the wish taken, one Plasmium extracted in Crawl_03.
+  const buds = SP.TASKS.map((x, i) => (x[0] === 'qitem' && x[1] === 'Extractor Blue' ? i : -1)).filter((i) => i >= 0);
+  assert.deepEqual(buds.map((i) => SP.TASKS[i][3]), ['Crawl_03', 'Crawl_07', 'Crawl_09']);
+  assert.ok(buds.every((i) => SP.XY['task:' + i]), 'each at the bud in its room');
+  assert.ok(buds.every((i) => !JSON.stringify(SP.TASKS[i][2]).includes('held')));
+  const base = { silk: 0, silkMax: 9, maxHealth: 5, Collectables: { savedData: [{ Name: 'Plasmium', Data: { Amount: 1 } }] },
+    QuestCompletionData: { savedData: [{ Name: 'Extractor Blue', Data: { IsAccepted: true, IsCompleted: false } }] } };
+  const sd = { persistentBools: { serializedList: [{ SceneName: 'Crawl_03', ID: 'pustule_set_small (1)', Value: true }] } };
+  assert.deepEqual(buds.filter((i) => F.game(base, sd).tasks.includes(i)), [buds[0]]);
+  const done = F.game({ ...base, QuestCompletionData: { savedData: [{ Name: 'Extractor Blue', Data: { IsCompleted: true } }] } });
+  assert.deepEqual(buds.filter((i) => done.tasks.includes(i)), buds, 'the wish granted: all three');
+});
+
 test("the Bellbeast's twelve stations are one check, and a save with its wish on shows the one the beast is at", () => {
   const pins = SP.TASKS.map((x, i) => (x[1] === 'Bellbeast Rescue' ? i : -1)).filter((i) => i >= 0);
   assert.equal(pins.length, 12);
@@ -431,7 +470,8 @@ test('a Tool sold that lies elsewhere once its seller is gone has that room too,
 });
 
 test('what Act 3 moves has its Act 3 room too, and the save says which: Mossberry no. 3 and the Volatile Flintbeetles\' locket', () => {
-  const moved = Object.entries(SP.ALSO).filter(([, a]) => a[2] && a[2].kind === 'moved');
+  // What Act 3 moves of itself (a foe that carries it, a wish's pickup); who moves it is another test's.
+  const moved = Object.entries(SP.ALSO).filter(([, a]) => a[2] && a[2].kind === 'moved' && !a[2].npc && !a[2].skipped);
   const berry = SP.EXTRAS.findIndex((x) => x[0] === 'mossberry' && x[2][1] === 'bonetownAspidBerryCollected');
   const locket = CO.PIECES.findIndex((p) => p[0] === 'memory-locket' && JSON.stringify(p[2]).includes('"Rock Rollers"'));
   const both = ['extra:' + berry, 'piece:' + locket].sort();
@@ -454,7 +494,7 @@ test('what Act 3 moves has its Act 3 room too, and the save says which: Mossberr
   const base = { silk: 0, silkMax: 9, maxHealth: 5 };
   const quest = (done) => ({ QuestCompletionData: { savedData: [{ Name: 'Rock Rollers', Data: { IsAccepted: true, IsCompleted: done } }] } });
   const picked = { persistentBools: { serializedList: [{ SceneName: 'Bone_10', ID: 'Collectable Item Pickup Locket', Value: true }] } };
-  const mine = (l) => l.filter((k) => !k.startsWith('tools:')).sort();
+  const mine = (l) => l.filter((k) => both.includes(k)).sort();
   const now = (pd, sd) => mine(F.game({ ...base, ...pd }, sd).foundNow);
   // Before Act 3, had or not: their first rooms.
   assert.deepEqual(now({}), []);
@@ -564,4 +604,77 @@ test('the Silkshot has its three repairs, each where the game takes the Ruined T
   assert.equal(F.game({ ...base, ...tools('WebShot Architect') }).silkshot, 'architect');
   assert.equal(F.game({ ...base, ...tools('WebShot Forge') }).silkshot, 'forge');
   assert.equal(F.game(base).silkshot, '');
+});
+
+test('the hunt wishes whose thing only enemies give: their Journal rooms on the map, and the save says how many', () => {
+  require('../js/journal.js');
+  require('../js/journal-rooms.js');
+  const J = globalThis.SS.journal, JR = globalThis.SS.journalRooms;
+  // The seven the game's files give (tools/extract-hunts.py); Broodfeast's organs come from any enemy a Tool kills: none.
+  assert.deepEqual(Object.keys(SP.HUNTS).sort(), ['Brolly Get', 'Crow Feathers', 'Extractor Blue Worms', 'Fine Pins', 'Pilgrim Rags', 'Roach Killing', 'Song Pilgrim Cloaks']);
+  for (const [q, [item, at]] of Object.entries(SP.HUNTS)) {
+    const w = CO.WISHES.find((x) => x[2][0] === 'quest' && x[2][1] === q);
+    assert.ok(w && ['hunt', 'gather'].includes(w[0]), `${q} is a hunt or gather wish`);
+    assert.ok(Q.CHAIN[q].asks.some((a) => a.kind === 'item' && a.save === item), `${q} asks for ${item}`);
+    // No mark of its own: the Map focuses the enemies' rooms, which the Journal has.
+    assert.ok(!SP.TASKS.some((x) => x[0] === 'qitem' && x[1] === q), `${q} has no item marks`);
+    for (const [key, scene, n] of at) {
+      assert.ok(J.BOOK.some((e) => e.key === key), key);
+      assert.ok(onMap(scene), `${q}: ${scene}`);
+      assert.ok((JR[key] || []).some(([s]) => s === scene), `${key} isn't in ${scene} for the Journal`);
+      assert.ok(n > 0);
+    }
+  }
+  // The pilgrims' twelve entries in 29 rooms; the Hokers' two rooms of the Far Fields.
+  assert.equal(new Set(SP.HUNTS['Pilgrim Rags'][1].map(([k]) => k)).size, 12);
+  assert.equal(new Set(SP.HUNTS['Pilgrim Rags'][1].map(([, s]) => s)).size, 29);
+  assert.deepEqual([...new Set(SP.HUNTS['Brolly Get'][1].map(([, s]) => s))].sort(), ['Bone_East_14', 'Bone_East_14b']);
+  // How many Hornet has: the thing held (the quest's CompletedCount is the same in every open hunt
+  // of the author's 88 saves), kept through a slot.
+  const base = { silk: 0, silkMax: 9, maxHealth: 5,
+    QuestCompletionData: { savedData: [{ Name: 'Pilgrim Rags', Data: { IsAccepted: true, IsCompleted: false, CompletedCount: 7 } }] },
+    Collectables: { savedData: [{ Name: 'Pilgrim Rag', Data: { Amount: 7 } }] } };
+  const g = F.gameOf(F.toSnapshot(base));
+  assert.deepEqual(g.taken, ['Pilgrim Rags']);
+  assert.equal(g.carried['Pilgrim Rag'], 7);
+});
+
+test('each objective pin is filed under the room it falls in, within 3 px of its box (Last Dive\'s is Abyss_05)', () => {
+  const M = globalThis.SS.map;
+  SP.TASKS.forEach((x, i) => {
+    if (x[0] !== 'goal') return;
+    const p = SP.XY['task:' + i], r = M.ROOMS[x[3]];
+    assert.ok(p && r, `task:${i} ${x[3]}`);
+    assert.ok(p[0] >= r[0] - 3 && p[0] <= r[0] + r[2] + 3 && p[1] >= r[1] - 3 && p[1] <= r[1] + r[3] + 3, `task:${i} ${x[1]} isn't by ${x[3]}`);
+  });
+  assert.equal(SP.TASKS.find((x) => x[0] === 'goal' && x[1] === 'Black Thread Pt6 Flower')[3], 'Abyss_05');
+});
+
+/* Tasks as the three Wishwalls (js/app-progress.js wishSource, giverOf; design/104): every wish is
+   posted on Bone Bottom's, Bellhart's or the Songclave's wall, or offered in person by someone the
+   tab can name and draw. A patch that moves a wish elsewhere shows here. */
+test('every wish is on one of the three Wishwalls or asked in person by someone with a name and a figure', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const WALLS = new Set(['Bonetown', 'Belltown', 'Song_Enclave']);
+  const NO_FIGURE = new Set(['SHELLWOOD_WITCH']);   // Greyroot
+  const NOBODY = { Aqueduct_05: 'mr-mushroom' };   // the tablet in Fleatopia
+  const quest = (w) => (w[2][0] === 'quest' ? w[2][1] : w[2][0] === 'any' ? (w[2].slice(1).find((c) => c[0] === 'quest') || [])[1] : null);
+  for (const w of CO.WISHES.filter((x) => x[0] !== 'main-objectives')) {
+    const q = quest(w);
+    assert.ok(q, `${w[4].en} has no quest`);
+    let wall = null, npc = null;
+    for (let x = q; x && !wall; x = Q.CHAIN[x] && Q.CHAIN[x].prev) {
+      const f = Q.FROM[x] || {};
+      if (f.board) wall = f.board;
+      else if (f.npc && !npc) npc = f.npc[0];
+    }
+    if (wall) { assert.ok(WALLS.has(wall), `${w[4].en} is on a fourth wall, ${wall}`); continue; }
+    assert.ok(npc, `${w[4].en} is neither on a wall nor offered by anyone`);
+    const gv = SP.GIVER[(SP.QUEST_GIVER || {})[q] || npc] || SP.GIVER[npc];
+    if (!gv) { assert.ok(NOBODY[npc], `nobody stands for ${w[4].en} (${npc})`); continue; }
+    if (NO_FIGURE.has(gv[0])) continue;
+    const art = path.join(__dirname, '..', 'assets', 'map', 'people', gv[0].toLowerCase().replace(/_/g, '-') + '.webp');
+    assert.ok(fs.existsSync(art), `${gv[1].en} (${w[4].en}) has no figure: ${art}`);
+  }
 });

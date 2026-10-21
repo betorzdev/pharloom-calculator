@@ -411,6 +411,13 @@
    ],
    [
     "coral_33",
+    "Garmond Black Threaded Fighter",
+    23.74,
+    61.99,
+    "corpse"
+   ],
+   [
+    "coral_33",
     "Memento Pickup",
     34.73,
     60.26
@@ -602,6 +609,22 @@
     8.36
    ]
   ],
+  "Song Knight": [
+   [
+    "hang_07",
+    "Song Knight",
+    81.98,
+    7.96,
+    "corpse"
+   ],
+   [
+    "hang_17b",
+    "Song Knight",
+    44.53,
+    5.92,
+    "corpse"
+   ]
+  ],
   "Soul Snare": [
    [
     "song_enclave",
@@ -632,6 +655,15 @@
     "Boss Scene",
     60.79,
     16.91
+   ]
+  ],
+  "Tormented Trobbio": [
+   [
+    "library_13",
+    "Tormented Trobbio",
+    77.06,
+    16.3,
+    "corpse"
    ]
   ],
   "Wood Witch Curse": [
@@ -714,6 +746,7 @@
   "Coral Ingredient": "_0007_quest_coral_nut",
   "Extractor Machine Pins": "hornet_extractor_pins",
   "Pickled Roach Egg": "century_maggot_icon",
+  "Plasmium": "icon_inv_blue_health_jar_0001_3",
   "Rock Roller Item": "bone_roller_rock_icon",
   "Shell Flower": "_0007_shell_flower_purple_icon",
   "Silver Bellclapper": "hornet_icon_bell_clapper",
@@ -783,6 +816,32 @@
     "Return Pickup",
     41.77,
     34.36
+   ]
+  ],
+  "Plasmium": [
+   [
+    "crawl_03",
+    "LifebloodPustule",
+    "PUSTULE",
+    "pustule_set_small (1)",
+    124.98,
+    26.63
+   ],
+   [
+    "crawl_07",
+    "LifebloodPustule",
+    "pustule",
+    "pustule_set_small (1)",
+    79.28,
+    21.09
+   ],
+   [
+    "crawl_09",
+    "LifebloodPustule",
+    "PUSTULE",
+    "pustule_set_small (1)",
+    24.35,
+    25.18
    ]
   ],
   "Rock Roller Item": [
@@ -1079,6 +1138,7 @@
   "Coral Ingredient": "INV_NAME_GOURMAND_CORAL_INGREDIENT",
   "Extractor Machine Pins": "ITEM_EXTRACTOR_PINS_NAME",
   "Pickled Roach Egg": "INV_NAME_PICKLEDEGG",
+  "Plasmium": "INV_NAME_BLUE_GOOP",
   "Rock Roller Item": "INV_NAME_ROCK_ROLLER_ITEM",
   "Shell Flower": "INV_NAME_SHELL_FLOWER",
   "Silver Bellclapper": "INV_NAME_BELLCLAPPER_ITEM",
