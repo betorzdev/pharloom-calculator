@@ -249,10 +249,11 @@ test('every Journal entry has a place, the 29 the game makes at run time too, an
   const w = R.walk('Tut_01', lit);
   const off = Object.keys(HOW).filter((k) => !JR[k].some(([s]) => w.has(R.graphScene(s))));
   assert.deepEqual(off, []);
-  // So is every placed one, a memory by the room it's entered from (its lower-case name too), but
-  // the Red Memory's, which isn't on the map.
+  // So is every placed one, a memory by the room it's entered from (its lower-case name too); the
+  // Red Memory, which no door reaches, by the room that loads it (the Wingmoulds', Tut_04).
   assert.strictEqual(R.graphScene('memory_coral_tower'), 'Coral_Tower_01');
-  const lost = J.BOOK.filter((e) => !JR[e.key].some(([s]) => s === 'memory_red' || w.has(R.graphScene(s)))).map((e) => e.key);
+  assert.deepEqual(JR.NAME_WHITE_PALACE_FLY.map(([s]) => s), ['Tut_04']);
+  const lost = J.BOOK.filter((e) => !JR[e.key].some(([s]) => w.has(R.graphScene(s)))).map((e) => e.key);
   assert.deepEqual(lost, []);
   const areas = (k) => new Set(JR[k].map(([s]) => R.areaOf(s)).filter(Boolean));
   // Checked against the wiki (kb/data/raw/): the Muckmaggots only where their waters are on
@@ -270,7 +271,7 @@ test('every Journal entry has a place, the 29 the game makes at run time too, an
   assert.ok(!JR.NAME_BLACK_THREAD_CORE.some(([s]) => /^(Belltown|Menu_Title)$/i.test(s)));
   // A boss in its arena; the two arenas off the map by the scenes that load them.
   assert.deepEqual(JR.NAME_SPINNER_BOSS, [['Belltown_Shrine', 1]]);
-  assert.deepEqual(LOADS, { NAME_GIANT_CENTIPEDE: 'bellway_centipede_arena', NAME_LOST_LACE: 'abyss_cocoon' });
+  assert.deepEqual(LOADS, { NAME_GIANT_CENTIPEDE: 'bellway_centipede_arena', NAME_LOST_LACE: 'abyss_cocoon', NAME_WHITE_PALACE_FLY: 'memory_red' });
   assert.deepEqual(JR.NAME_LOST_LACE.map(([s]) => s), ['Abyss_05']);
   const stations = M.PINS.filter((p) => p[0] === 'bellway').length;
   assert.strictEqual(JR.NAME_GIANT_CENTIPEDE.length, stations);

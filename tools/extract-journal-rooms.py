@@ -31,8 +31,17 @@ and each entry says in RUNTIME which objects count (by name) and how they make i
             their record in every scene they're met in, but the entry is their duel's (RUNTIME).
 A count for these is how many objects in the scene name it or spawn it, not how many enemies.
 Nuu names every entry in her dialogue, and isn't where any of them is (NAMES_ONLY).
-Two arenas aren't on the map or reached by a door (Lost Lace's cocoon and the Bell Eater's): each
-is given as the scenes on the map that load it (LOADED).
+A scene the Map can't place (js/rooms.js roomOf: not a room, no room's "_part", no ENTRANCE) is
+given as the scenes that load it or name it, through the ones in between (entered): Lost Lace's
+cocoon and the Bell Eater's arena, and an entry placed only in such a scene (the Wingmoulds, in the
+Red Memory: Tut_04). sceneHosts lists every such scene with its rooms (Hornet's cocoon there).
+
+When (journalWhen, 21-Oct-2026, design/00-study.md): each placed enemy's world, by the nearest switch
+above it (a TestGameObjectActivator testing blackThreadWorld alone, the scenes' «Normal World» and
+«Black Thread World»; a DeactivateIfPlayerdataTrue / False on it) or its scene's loaders (every
+SceneAdditiveLoadConditional that loads it tests blackThreadWorld the same way: Hang_04_boss, the
+Forum's arena, only before Act 3), or a memory (Act 3: the Elegy of the Deep's, the Red Memory); and
+the BattleScene above it when it only comes in an arena's waves.
 
 It also prints, not writes, the health each record's enemies have in the game (HealthManager.hp,
 on the same object) against js/enemies.js's, the wiki's: a check, since the site's numbers are the
@@ -100,38 +109,80 @@ RUNTIME = {
     'NAME_SHAKRA': ('duel', 'Mapper Spar NPC', 'greymoor_08_mapper'),
     'NAME_GARMOND_ZAZA': ('duel', 'Garmond Fighter', 'library_09'),
 }
-# Two arenas aren't on the map or reached by a door, so they're given as the scenes that load them,
-# found by their names in the scenes' components: Lost Lace's cocoon is loaded by Last_Dive, which
-# Abyss_05's Abyss Dive Cutscene loads; the Bell Eater's arena by Bellway_Centipede_additive, which
-# each station's Bell Centipede Loader loads (in Act 3). The two arenas and the scenes in between.
-LOADED = ('abyss_cocoon', 'last_dive', 'bellway_centipede_arena', 'bellway_centipede_additive')
+# A scene the map doesn't know (not in js/graph.js or js/map.js) is given as the scenes that load it,
+# found by its name in their components (a loader, a door, a cutscene), through the ones in between:
+# Lost Lace's cocoon (Abyss_Cocoon) is loaded by Last_Dive, which Abyss_05's Abyss Dive Cutscene
+# loads; the Bell Eater's arena by Bellway_Centipede_additive, which each station's Bell Centipede
+# Loader loads (in Act 3); the Red Memory (memory_red, the Wingmoulds') by the Snail Shamans' room.
 
 
-def main(game, cache):
-    if cache and os.path.exists(cache):
-        where, hp, other, total, loads = pickle.load(open(cache, 'rb'))
-    else:
-        where, hp, other, total, loads = scan(game)
-        if cache:
-            pickle.dump((where, hp, other, total, loads), open(cache, 'wb'))
-    # The scenes' names with their capitals, from js/graph.js and js/map.js.
+def on_map():
+    """The scenes the map knows, lower case → with their capitals (js/graph.js and js/map.js)."""
     proper = {}
     for f in ('graph.js', 'map.js'):
         src = open(os.path.join(ROOT, 'js', f)).read()
         obj = json.loads(re.search(r'SS\.\w+ = (\{.*\});', src, re.S).group(1))
         for k in (obj['ROOMS'] if f == 'map.js' else list(obj) + [t for v in obj.values() for t in v]):
             proper.setdefault(k.lower(), k)
+    return proper
+
+
+def placer():
+    """Whether the Map can place a scene, as js/rooms.js roomOf does: by its ENTRANCE table (an
+    arena or a memory by the room it's entered from), else the scene or the scene with its last
+    "_part"s cut off is a room of js/map.js (a boss's additive scene, bone_05_boss, is Bone_05's)."""
+    src = open(os.path.join(ROOT, 'js', 'map.js')).read()
+    rooms = {k.lower() for k in json.loads(re.search(r'SS\.\w+ = (\{.*\});', src, re.S).group(1))['ROOMS']}
+    block = re.search(r'const ENTRANCE = \{(.*?)\};', open(os.path.join(ROOT, 'js', 'rooms.js')).read(), re.S).group(1)
+    door = {k.lower() for k in re.findall(r'(\w+):\s*\'', block)}
+
+    def placeable(scene):
+        s = scene.lower()
+        if s in door:
+            return True
+        while s:
+            if s in rooms:
+                return True
+            s = s.rsplit('_', 1)[0] if '_' in s else ''
+        return False
+    return placeable
+
+
+def main(game, cache):
+    proper = on_map()
+    placeable = placer()
+    if cache and os.path.exists(cache):
+        got = pickle.load(open(cache, 'rb'))
+        if len(got) != 7:
+            sys.exit(f'extract-journal-rooms: {cache} was written by an older version of this script: delete it')
+        where, hp, other, total, loads, cls, loader_act = got
+    else:
+        where, hp, other, total, loads, cls, loader_act = scan(game, proper)
+        if cache:
+            pickle.dump((where, hp, other, total, loads, cls, loader_act), open(cache, 'wb'))
 
     def entered(scene, path=()):
-        """A scene off the map: the scenes on it that load it, through the ones in between (LOADED).
-        One that nothing loads stays as it is; a loader that leads nowhere is dropped."""
-        if scene in proper or not loads.get(scene) or scene in path:
-            return [scene] if scene in proper or not path else []
+        """A scene off the map: the scenes on it that load it (or name it, as a door does), through
+        the ones in between. One that nothing loads stays as it is; a loader that leads nowhere is
+        dropped."""
+        known = placeable(scene)
+        if known or not loads.get(scene) or scene in path:
+            return [scene] if known or not path else []
         return sorted({x for l in loads[scene] for x in entered(l, path + (scene,))}) or ([] if path else [scene])
 
     rooms, how, loaded = {}, {}, {}
     for key, scenes in where.items():
         rooms[key], how[key] = scenes, 'placed'
+        # An entry placed only where the Map can't place it (the Wingmoulds, in the Red Memory): the
+        # rooms that load it.
+        if not any(placeable(s) for s in scenes):
+            count = Counter()
+            for scene, n in scenes.items():
+                for at in entered(scene):
+                    count[at] += n
+                    if at != scene:
+                        loaded[key] = scene
+            rooms[key] = count
     for key, scenes in other.items():
         if key in rooms:   # placed: what spawns more of it isn't counted
             continue
@@ -159,6 +210,38 @@ def main(game, cache):
             sys.exit(f'extract-journal-rooms: nothing names {key} any more: RUNTIME needs reading again')
     ROOMS = {k: sorted(([proper.get(s, s), n] for s, n in v.items()), key=lambda x: (-x[1], x[0])) for k, v in sorted(rooms.items())}
     HOW = {k: how[k] for k in sorted(how) if how[k] != 'placed'}
+    # When each entry is in each room (journalWhen): its enemies there by the world they're in (0
+    # both, 1 before Act 3 only, 3 Act 3 only: the Normal World / Black Thread World switch above
+    # each one, or its scene's loader) and whether they only come in an arena's waves (the arena's
+    # object and the playerData flag it sets once won, '' if none). Only the rooms that aren't
+    # simply "there, roaming, in every Act"; an entry made at run time isn't read so (roaming).
+    # A memory (memory_*, *_memory) is entered in Act 3 only: the Elegy of the Deep's (wiki Elegy of
+    # the Deep), the Red Memory once three Old Hearts are back with the Snail Shamans (wiki Red
+    # Memory). An entry given by the rooms that load its scene is read there.
+    WHEN = {}
+    for key, scenes in sorted(cls.items()):
+        if how.get(key) != 'placed':
+            continue
+        out = {}
+        for scene, c in scenes.items():
+            act0 = loader_act.get(scene, 0) or (3 if MEMORY.search(scene) else 0)
+            groups = Counter()
+            for (act, arena, pd), n in c.items():
+                groups[(act or act0, arena, pd)] += n
+            for at in (entered(scene) if key in loaded else [scene]):
+                out.setdefault(proper.get(at, at), Counter()).update(groups)
+        out = {s: g for s, g in out.items() if not all(act == 0 and arena is None for (act, arena, pd) in g)}
+        if out:
+            WHEN[key] = {s: sorted(([act, n] + ([arena, pd] if arena is not None else []) for (act, arena, pd), n in g.items()),
+                                   key=lambda x: (x[0], len(x), str(x[2:]))) for s, g in sorted(out.items())}
+    # The rooms that load each scene the Map can't place (sceneHosts): where Hornet's cocoon there is drawn.
+    HOSTS = {}
+    for scene in sorted(loads):
+        if placeable(scene):
+            continue
+        at = [proper.get(x, x) for x in entered(scene) if x in proper]
+        if at:
+            HOSTS[scene] = at
     open(OUT, 'w').write(
         "/* js/journal-rooms.js: where to find each Hunter's Journal entry, by its NAME_ key (js/journal.js) →\n"
         "   [scene, how many] in the scene, the most first.\n"
@@ -167,11 +250,16 @@ def main(game, cache):
         "   how many enemies. One the game makes at run time is where something names its record or\n"
         "   spawns it (SS.journalHow: 'record', 'spawn' or 'duel'; the generator's header): how many is\n"
         "   how many objects do. SS.journalLoads: the entries whose arena is off the map, given as the\n"
-        "   scenes that load it → that arena. */\n"
+        "   scenes that load it → that arena. SS.journalWhen: entry → room → [[act, how many, arena,\n"
+        "   flag], …], the rooms where it isn't simply there in every Act: act 0 both, 1 before Act 3\n"
+        "   only, 3 Act 3 only; arena (and the playerData flag it sets once won) when they only come in\n"
+        "   its waves. SS.sceneHosts: a scene off the map (lower case) → the rooms that load it. */\n"
         "(() => {\n  'use strict';\n  const SS = globalThis.SS || (globalThis.SS = {});\n"
         f"  SS.journalRooms = {json.dumps(ROOMS, separators=(',', ':'))};\n"
         f"  SS.journalHow = {json.dumps(HOW, separators=(',', ':'))};\n"
         f"  SS.journalLoads = {json.dumps(dict(sorted(loaded.items())), separators=(',', ':'))};\n"
+        f"  SS.journalWhen = {json.dumps(WHEN, separators=(',', ':'))};\n"
+        f"  SS.sceneHosts = {json.dumps(HOSTS, separators=(',', ':'))};\n"
         "  if (typeof module !== 'undefined' && module.exports) module.exports = SS.journalRooms;\n})();\n")
     placed = sum(sum(v.values()) for v in where.values())
     print(f'{len(where)} entries placed, {placed} enemies in {len({s for v in where.values() for s in v})} scenes; '
@@ -185,15 +273,42 @@ def main(game, cache):
         json.dump({k: dict(v) for k, v in hp.items()}, f)
 
 
-def scan(game):
+WORLD = 'blackThreadWorld'
+MEMORY = re.compile(r'^memory_|_memory$')
+
+
+def world_of(groups):
+    """A test's groups ([[(field, Type, BoolValue)…]…]) → the blackThreadWorld value every group
+    needs (True / False), or None when it doesn't decide by it alone."""
+    vals = set()
+    for g in groups:
+        w = [t for t in g if t[0] == WORLD and t[1] == 0]
+        if not w:
+            return None
+        vals.update(bool(t[2]) for t in w)
+    return vals.pop() if len(vals) == 1 else None
+
+
+def scan(game, proper):
     """Every scene read once: where (key → scene → enemies placed), hp (key → health → how many),
-    other (key → scene → {'record' | 'spawn': how many components}) and how many records."""
+    other (key → scene → {'record' | 'spawn': how many components}), how many records, loads (a
+    scene off the map → the scenes whose components name it), cls (key → scene → Counter of (act,
+    arena, flag) per enemy placed: act 1 when a switch above it has it before Act 3 only, 3 in Act 3
+    only, else 0; arena and the flag it sets when it's in a BattleScene's waves) and loader_act (a
+    scene → 1 or 3 when every loader of it tests blackThreadWorld so).
+    The switches read: a TestGameObjectActivator (it sets activateGameObject active when its test
+    passes and deactivateGameObject when it fails: Assembly-CSharp, TestGameObjectActivator.Evaluate)
+    whose every group tests blackThreadWorld the same way, the scenes' «Normal World» and «Black
+    Thread World»; a DeactivateIfPlayerdataTrue / False on blackThreadWorld; a
+    SceneAdditiveLoadConditional's tests, for the scene it loads."""
     aa = os.path.join(game, 'Hollow Knight Silksong_Data', 'StreamingAssets', 'aa', 'StandaloneLinux64')
     scenes = os.path.join(aa, 'scenes_scenes_scenes')
     bundles = {f: os.path.join(dp, f) for dp, dn, fn in os.walk(aa) for f in fn if f.endswith('.bundle')}
     mono = next(p for f, p in bundles.items() if f.endswith('_monoscripts.bundle'))
     CLS = {o.path_id: o.read().m_ClassName for o in UnityPy.load(mono).objects if o.type.name == 'MonoScript'}
-    sid = {v: k for k, v in CLS.items() if v in ('EnemyJournalRecord', 'HealthManager', 'CustomSceneManager', 'MaggotRegion')}
+    sid = {v: k for k, v in CLS.items() if v in ('EnemyJournalRecord', 'HealthManager', 'CustomSceneManager', 'MaggotRegion', 'TestGameObjectActivator',
+                                                   'DeactivateIfPlayerdataTrue', 'DeactivateIfPlayerdataFalse', 'BattleScene', 'SceneAdditiveLoadConditional')}
+    SWITCH = {sid[c] for c in ('TestGameObjectActivator', 'DeactivateIfPlayerdataTrue', 'DeactivateIfPlayerdataFalse', 'BattleScene', 'SceneAdditiveLoadConditional')}
     # EnemyDeathEffects is abstract: the components placed are its subclasses (Regular, NoEffect…).
     DEATH = {k for k, v in CLS.items() if v.startswith('EnemyDeathEffects') and v != 'EnemyDeathEffectsProfile'}
 
@@ -216,12 +331,16 @@ def scan(game):
     where = defaultdict(Counter)   # key → scene → how many
     hp = defaultdict(Counter)      # key → health → how many
     other = defaultdict(lambda: defaultdict(dict))   # key → scene → object → (its name, its kinds)
-    loads = defaultdict(set)       # a scene in LOADED → the scenes whose components name it
-    named = re.compile(('(?i)' + '|'.join(sorted(LOADED, key=len, reverse=True))).encode())
+    loads = defaultdict(set)       # a scene off the map → the scenes whose components name it
+    cls = defaultdict(lambda: defaultdict(Counter))   # key → scene → (act, arena, flag) → how many
+    loader_act = defaultdict(set)  # a scene → the worlds its loaders load it in (True: Act 3)
     names = sorted(f[:-7] for f in os.listdir(scenes) if f.endswith('.bundle'))
+    off = [n for n in names if n not in proper]
+    named = re.compile(('(?i)(?<![A-Za-z0-9_])(' + '|'.join(re.escape(n) for n in sorted(off, key=len, reverse=True)) + ')(?![A-Za-z0-9_])').encode())
     for i, name in enumerate(names):
         env = UnityPy.load(os.path.join(scenes, name + '.bundle'))
         rec, health, zone, maggots = {}, {}, None, []
+        world, battle = {}, {}   # gid → act 1/3 a switch gives it; a BattleScene's gid → (its name, its flag)
         for o in env.objects:
             if o.type.name != 'MonoBehaviour':
                 continue
@@ -229,6 +348,32 @@ def scan(game):
             for m in named.findall(o.get_raw_data()):
                 if m.decode().lower() != name:
                     loads[m.decode().lower()].add(name)
+            if s in SWITCH:
+                d = o.read_typetree()
+                own = d['m_GameObject']['m_PathID']
+                groups = lambda t: [[(x.get('FieldName'), x.get('Type', 0), x.get('BoolValue')) for x in g.get('Tests') or [] if x.get('FieldName')]
+                                    for g in ((t or {}).get('TestGroups') or [])]
+                if s == sid['TestGameObjectActivator']:
+                    gs = groups(d.get('playerDataTest'))
+                    w = world_of(gs)
+                    if w is not None:
+                        a = (d.get('activateGameObject') or {}).get('m_PathID')
+                        if a:
+                            world[a] = 3 if w else 1
+                        dd = (d.get('deactivateGameObject') or {}).get('m_PathID')
+                        if dd and len(gs) == 1 and len(gs[0]) == 1:
+                            world[dd] = 1 if w else 3
+                elif s in (sid['DeactivateIfPlayerdataTrue'], sid['DeactivateIfPlayerdataFalse']):
+                    if d.get('boolName') == WORLD:
+                        t = (d.get('objectToDeactivate') or {}).get('m_PathID') or own
+                        world[t] = 1 if s == sid['DeactivateIfPlayerdataTrue'] else 3
+                elif s == sid['BattleScene']:
+                    battle[own] = (read_name(o), d.get('setPDBoolOnEnd') or '')
+                else:
+                    w = world_of(groups(d.get('tests')))
+                    if d.get('sceneNameToLoad'):
+                        loader_act[d['sceneNameToLoad'].lower()].add(w)
+                continue
             if s in DEATH:
                 d = o.read_typetree()
                 p = d.get('journalRecord') or {}
@@ -265,14 +410,30 @@ def scan(game):
             if on:
                 for kind, key in got:
                     add(other[key][name], go, who, kind)
+        # Each enemy's world and arena: the nearest switch above it, the nearest BattleScene above it.
+        father = {}
+        if rec:
+            tr = {o.path_id: o.read() for o in env.objects if o.type.name in ('Transform', 'RectTransform')}
+            for t in tr.values():
+                f = t.m_Father.m_PathID
+                father[t.m_GameObject.m_PathID] = tr[f].m_GameObject.m_PathID if f in tr else None
         for go, key in rec.items():
             where[key][name] += 1
             if health.get(go):
                 hp[key][health[go]] += 1
+            act, arena, g = 0, None, go
+            while g is not None:
+                if not act and g in world:
+                    act = world[g]
+                if arena is None and g in battle:
+                    arena = battle[g]
+                g = father.get(g)
+            cls[key][name][(act,) + (arena or (None, None))] += 1
         if i % 50 == 0:
             print(f'{i}/{len(names)} {name}', file=sys.stderr, flush=True)
     other = {k: {s: {go: (n, sorted(ks)) for go, (n, ks) in c.items()} for s, c in v.items()} for k, v in other.items()}
-    return dict(where), dict(hp), other, len(set(RECORD.values())), dict(loads)
+    acts = {s: (3 if w.pop() else 1) for s, w in loader_act.items() if len(w) == 1 and None not in w}
+    return dict(where), dict(hp), other, len(set(RECORD.values())), dict(loads), {k: dict(v) for k, v in cls.items()}, acts
 
 
 def add(objs, go, name, kind):

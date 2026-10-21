@@ -430,6 +430,8 @@
       maps: MAP_FLAGS.filter((f) => pd[f] === true).map((f) => f.slice(3, -3)),
       cocoon: corpse,
       cocoonAt: corpse ? fourNumbers([at(pd.HeroDeathScenePos).x, at(pd.HeroDeathScenePos).y, at(pd.HeroDeathSceneSize).x, at(pd.HeroDeathSceneSize).y]) : [],
+      // The rosaries the cocoon holds (HeroCorpseMoneyPool), while there is one.
+      cocoonRosaries: corpse ? whole(pd.HeroCorpseMoneyPool, 0) : 0,
       extras: SP.EXTRAS.map((x, i) => (has(x[2]) ? i : -1)).filter((i) => i >= 0),
       // What lies in the room its 'found' way says now, its owner dead (js/how.js, a way's when:
       // the Curveclaw once the Mottled Skarr is, the Weighted Belt by Mort's corpse, the Magnetite
@@ -452,6 +454,9 @@
       // while its wish is on, FastTravelNPCLocation), those it isn't in this game.
       elsewhere: SP.TASKS.map((x, i) => (x[9] && !has(x[9].at) ? i : -1)).filter((i) => i >= 0),
       steelSpots: steel.map((e) => e.SceneName).sort(),
+      // The fights whose opening the game waits for (js/spots.js OPENS) that this game has opened.
+      opens: Object.entries(SP.OPENS || {}).filter(([, o]) => has(o.check)).map(([k]) => k),
+      opensRead: true,
       // The Map's people: the fields their rules read (js/people.js VARS), as the save has them.
       peopleVars: Object.fromEntries(PE.VARS.filter((f) => mapValue(pd[f], undefined) !== undefined).map((f) => [f, pd[f]])),
     };
@@ -562,7 +567,7 @@
     quests: [], taken: [], carried: {}, bellshrines: [], bells: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
     bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [],
     visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], foundNow: [], foundRead: false, left: [], leftRead: false, lostExtras: [], bosses: [],
-    tasks: [], elsewhere: [], steelSpots: [], peopleVars: {}, evaSlots: 0, silkshot: '' });
+    tasks: [], elsewhere: [], steelSpots: [], peopleVars: {}, evaSlots: 0, silkshot: '', cocoonRosaries: 0, opens: [], opensRead: false });
   const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
   // Each field only if it has the type an empty game gives it.
   function gameOf(snap) {
@@ -595,6 +600,9 @@
     out.left = out.left.filter((v) => LEFT.some(([x]) => x === v));
     out.steelSpots = out.steelSpots.filter((x) => typeof x === 'string' && /^[\w ()-]{1,64}$/.test(x));
     out.cocoonAt = out.cocoon ? fourNumbers(out.cocoonAt) : [];
+    out.cocoonRosaries = out.cocoon && Number.isInteger(out.cocoonRosaries) ? Math.max(0, out.cocoonRosaries) : 0;
+    // A fight's opening by its key; a slot kept before says nothing (opensRead false: the card then says what opens it only).
+    out.opens = out.opens.filter((k) => typeof k === 'string' && SP.OPENS && SP.OPENS[k]);
     out.bosses = out.bosses.filter((id) => SP.BOSSES.some((b) => b[0] === id));
     // The gauntlets go by their ids, the wiki's subpages: one the list no longer has is dropped.
     out.gauntlets = out.gauntlets.filter((id) => GA.GAUNTLETS.some((x) => x.id === id));

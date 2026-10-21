@@ -1713,6 +1713,163 @@ console.log(`caches that only hold an item, left out: ${HELD.map(([save, scene])
   console.log(`only in Act 3, lying: ${n} pickups, each a mark's; moved there: ${MOVED.map((x) => x.kind + ' to ' + x.scene).join(', ')}`);
 }
 
+/* ── The Journal by Act (21-Oct-2026, Albert's D25) ──
+   Each entry's rooms, in each Act: SS.journalWhen (tools/extract-journal-rooms.py) says which of its
+   enemies there are before Act 3 only, Act 3 only, or only in an arena's waves; the room says the
+   rest: one only Act 3 has (act3Only: the destroyed Cradle and Cogwork Core, the Abyss, Verdania…)
+   or a memory (the Elegy of the Deep's, Act 3) has nothing before it, one act3MapUpdated takes away
+   (js/map.js PIECES hide: Cog_08, the Cradle, the Ventrica hub) nothing in Act 3. JOURNAL: entry →
+   room → [before Act 3, Act 3], each 1 (roaming), 0 (not there) or the gauntlets (js/gauntlets.js
+   ids, '' an arena that's none of them) whose waves alone bring it; only the rooms that aren't 1 in
+   both. JOURNAL_ACT3: the entries no room has before Act 3. */
+const JOURNAL = {}, JOURNAL_ACT3 = [];
+{
+  const hidden3 = new Set(SS.map.PIECES.filter((p) => JSON.stringify(p.hide) === '["flag","act3MapUpdated"]').map((p) => lower(p.s)));
+  const MEMORY = /^memory_|_memory$/i;
+  const flat = (c) => (c[0] === 'any' || c[0] === 'all' ? c.slice(1).flatMap(flat) : [c]);
+  // An arena's gauntlet: by the bool the save keeps for it or the flag it sets, else the scene's only one (or ones that save alike).
+  const gauntletOf = (scene, arena, pd) => {
+    const here = SS.gauntlets.GAUNTLETS.filter((g) => lower(g.scene) === lower(scene));
+    const hit = here.find((g) => flat(g.done).some((c) => (c[0] === 'bool' && lower(c[1]) === lower(scene) && c[2] === arena) || (pd && c[0] === 'flag' && c[1] === pd)));
+    if (hit) return hit.id;
+    return here.length && here.every((g) => JSON.stringify(g.done) === JSON.stringify(here[0].done)) ? here[0].id : '';
+  };
+  const when = SS.journalWhen || {};
+  for (const e of J.BOOK) {
+    const out = {};
+    let before = false;
+    for (const [scene] of SS.journalRooms[e.key] || []) {
+      const groups = (when[e.key] || {})[scene] || [[0, 1]];
+      const side = (want) => {
+        const gs = groups.filter((g) => g[0] === 0 || g[0] === want);
+        if (!gs.length) return 0;
+        if (gs.some((g) => g.length === 2)) return 1;
+        return [...new Set(gs.map((g) => gauntletOf(scene, g[2], g[3])))].sort();
+      };
+      const pre = act3Only(scene) || MEMORY.test(scene) ? 0 : side(1);
+      const late = hidden3.has(lower(scene)) ? 0 : side(3);
+      if (pre) before = true;
+      if (pre !== 1 || late !== 1) out[scene] = [pre, late];
+    }
+    if (Object.keys(out).length) JOURNAL[e.key] = out;
+    if (!before && (SS.journalRooms[e.key] || []).length) JOURNAL_ACT3.push(e.key);
+    /* Where the enemy is in each other room the Map may give the entry (js/app-map.js: in an Act, the
+       first room it roams, else a room of a gauntlet's waves, else its first there), as XY
+       'journal:<entry>:<room, lower case>'; 'journal:<entry>' stays its first room's. */
+    const on = (SS.journalRooms[e.key] || []).map(([s]) => s).filter(onMap);
+    const pick = new Set();
+    for (const k of [0, 1]) {
+      const side = (sc) => (out[sc] || [1, 1])[k];
+      [on.find((sc) => side(sc) === 1), ...on.filter((sc) => Array.isArray(side(sc))), on.find((sc) => side(sc))].forEach((sc) => sc && pick.add(sc));
+    }
+    for (const sc of pick) if (sc !== on[0]) put2('journal:' + e.id + ':' + lower(sc), recordAt(e, sc));
+  }
+}
+
+/* ── What opens a fight (21-Oct-2026, Albert's D27), read in the game's scenes on 21-Oct-2026 ──
+   A boss or gauntlet the game only puts there once something holds: OPENS key → { wish (taken),
+   after (granted), art (had), freed (a Journal entry's name) }, and check, what the save keeps of it.
+   The Broodmother's passage opens once The Wailing Mother is taken (wiki Broodmother); Bone_East_08
+   loads the Far Fields Beastfly while Savage Beastfly is taken and not done (its loader's quest
+   test); Gurr waits behind The Hidden Hunter, Lost Garmond behind Hero's Call, Tormented Trobbio
+   behind Pain, Anguish and Misery, the Second Sentinel's arena behind Final Audience (their wiki
+   pages); Greymoor_08 loads Shakra's duel only once Trail's End is granted (Mapper Sparring Scene
+   Loader); Bone_East_08 loads the Fourth Chorus only with the Drifter's Cloak (hasBrolly); Library_02
+   holds the Acolytes' arena only once scholarAcolytesReleased (TimePassesElsewhere sets
+   scholarAcolytesInLibrary_02 then; StartAct3 sets it). The Pinstress's and the Summoned Saviour's
+   wishes are their fights' places already (js/app-map.js WISH_FIGHT). */
+const OPENS = {};
+{
+  const ART_PD = require('../js/savefile.js').ART_PD;
+  const HAND = {
+    'boss:broodmother': { wish: 'Broodmother Hunt' }, 'boss:savage-beastfly-far-fields': { wish: 'Beastfly Hunt' },
+    'boss:gurr-the-outcast': { wish: 'Ant Trapper' }, 'boss:lost-garmond': { wish: 'Garmond Black Threaded' },
+    'boss:tormented-trobbio': { wish: 'Tormented Trobbio' }, 'boss:second-sentinel': { wish: 'Song Knight' },
+    'boss:shakra': { after: 'Shakra Final Quest' }, 'boss:fourth-chorus': { art: 'drifters-cloak' },
+    'gaunt:whispering-vaults-2': { freed: 'NAME_SCHOLAR', flag: 'scholarAcolytesReleased' },
+  };
+  for (const [key, o] of Object.entries(HAND)) {
+    const [kind, id] = key.split(':');
+    if (kind === 'boss' ? !BOSSES.some((b) => b[0] === id) : !SS.gauntlets.GAUNTLETS.some((g) => g.id === id)) fail(`OPENS: no ${key}`);
+    const q = o.wish || o.after;
+    if (q && !Q.CHAIN[q]) fail(`OPENS: ${key}'s wish ${q} isn't one of js/quests.js`);
+    if (o.art && !ART_PD[o.art]) fail(`OPENS: ${key}'s ${o.art} has no save flag`);
+    if (o.freed && !J.BOOK.some((e) => e.key === o.freed)) fail(`OPENS: ${key}'s ${o.freed} isn't a Journal entry`);
+    const check = o.wish ? ['accepted', o.wish] : o.after ? ['quest', o.after] : o.art ? ['flag', ART_PD[o.art]] : ['flag', o.flag];
+    OPENS[key] = { ...(o.wish ? { wish: o.wish } : o.after ? { after: o.after } : o.art ? { art: o.art } : { freed: o.freed }), check };
+  }
+}
+
+/* ── Objective steps on one point (21-Oct-2026, Albert's D32) ──
+   The game draws one objective's pin at a time (QuestMapMarker); the steps whose pins fall on the
+   same point (within 3 px) are one mark: STEPS, each group of TASKS indices in the objectives'
+   order (js/quests.js CHAIN prev), and GOAL_ACT, each step's Act: 3 past After the Fall (Black
+   Thread Pt0, the Act 3 objective all the others follow), 2 past The Great Citadel (Citadel Seeker,
+   which entering the Citadel ends), else 1. */
+const STEPS = [], GOAL_ACT = {};
+{
+  const goals = TASKS.map((x, i) => i).filter((i) => TASKS[i][0] === 'goal' && XY['task:' + i]);
+  const depth = (q) => { let n = 0; for (let c = Q.CHAIN[q]; c && c.prev; c = Q.CHAIN[c.prev]) n++; return n; };
+  const past = (q, root) => { for (let k = (Q.CHAIN[q] || {}).prev; k; k = (Q.CHAIN[k] || {}).prev) if (k === root) return true; return q === root && root === 'Black Thread Pt0'; };
+  const used = new Set();
+  for (const i of goals) {
+    if (used.has(i)) continue;
+    const p = XY['task:' + i];
+    const g = goals.filter((j) => !used.has(j) && Math.hypot(XY['task:' + j][0] - p[0], XY['task:' + j][1] - p[1]) <= 3);
+    if (g.length < 2) continue;
+    g.forEach((j) => used.add(j));
+    g.sort((a, b) => depth(TASKS[a][1]) - depth(TASKS[b][1]) || a - b);
+    STEPS.push(g);
+    for (const j of g) GOAL_ACT[j] = past(TASKS[j][1], 'Black Thread Pt0') ? 3 : past(TASKS[j][1], 'Citadel Seeker') ? 2 : 1;
+  }
+}
+
+/* ── How an extra is had, on its card (21-Oct-2026, Albert's D16) ──
+   An extra a vendor sells (js/shop.js SHOP, by the thing it gives or its name: Jubilana's Choral
+   Commandment, Grindle's Psalm Cylinder, Frey's furnishings): more { shop, price, after (the wishes
+   first), needs (what else the shop waits for: NEEDS below) }. Then HOW: the ones a fight drops, a
+   person gives or a challenge awards (read in their scenes, design/00-study.md, 21 Oct): more.how
+   { kind: 'boss', foe } | { kind: 'npc' | 'challenge', who } | { kind: 'speed' } (the Weavenest's
+   timed run in the Far Fields) | { kind: 'chapel', place, wish } (Shellwood's Weaver Effigy, reached
+   through the Chapel of the Witch after Rite of Rebirth: wiki Weaver Effigy). */
+{
+  // What Frey's furnishings wait for that the site names (js/shop.js needs): the Bellhome entered, a
+  // relic sold to Scrounge, the Vaultkeeper's collection complete, the Desk; BelltownFurnishingSpaAvailable
+  // isn't read anywhere the site can say what sets it, so it's left out.
+  const NEEDS = ['BelltownHouseVisited', 'IsAnyRelicsDeposited', 'LibrarianCollectionComplete', 'BelltownFurnishingDesk'];
+  const shopList = Array.isArray(SH.SHOP) ? SH.SHOP : Object.values(SH.SHOP).flat();
+  let sold = 0;
+  for (const x of EXTRAS) {
+    // A relic by its name, a furnishing by its flag or its name (the Bell Lacquer's flag isn't the thing Frey sells).
+    if (x[0] !== 'bellhome' && x[2] && x[2][0] !== 'relic') continue;
+    const s = shopList.find((w) => w.thing && (w.thing === x[2][1] || w.flag === x[2][1] || (x[0] === 'bellhome' && x[4] && x[4].key === w.name)));
+    if (!s) continue;
+    const after = (s.after || []).filter((q) => Q.CHAIN[q] || fail(`${s.item}: its wish ${q} isn't one of js/quests.js`));
+    const needs = (s.needs || []).filter((f) => NEEDS.includes(f));
+    x[5] = { ...(x[5] || {}), shop: s.vendor, price: s.price, ...(after.length ? { after } : {}), ...(needs.length ? { needs } : {}) };
+    sold++;
+  }
+  const witch = Object.keys(Q.CHAIN).find((q) => Q.CHAIN[q].name && Q.CHAIN[q].name.key === 'QUEST_WITCH_CURSE_TITLE') || fail('no quest named QUEST_WITCH_CURSE_TITLE');
+  const HOW_EXTRA = {
+    'Grey Memento': { kind: 'boss', foe: 'watcher-at-the-edge' },      // Coral_39: DeactivateIfPlayerdataFalse defeatedGreyWarrior
+    'Memento Garmond': { kind: 'boss', foe: 'lost-garmond' },          // Coral_33: Garmond Defeated Scene, garmondBlackThreadDefeated
+    'Crowman Memento': { kind: 'boss', foe: 'crawfather' },            // Room_CrowCourt_02: the Battle Scene's drop
+    'Memento Seth': { kind: 'challenge', who: N.text('SETH_NPC_MAIN') },   // Aqueduct_05_festival: once SethJoinedFleatopia, his scores beaten
+    'Hunter Memento': { kind: 'npc', who: N.text('HUNTER_FAN_MAIN') },     // Halfway_01: Nuu, the Journal complete
+    'Sprintmaster Memento': { kind: 'challenge', who: N.text('SPEEDMASTER_SUPER+SPEEDMASTER_MAIN') },   // his last race
+    'Weaver Record Sprint_Challenge': { kind: 'speed' },               // Bone_East_Weavehome: it rises once the run is won
+    'Weaver Totem Witch': { kind: 'chapel', place: N.text('CHAPEL_WITCH_SUPER+CHAPEL_WITCH_MAIN'), wish: witch },   // Shellwood_25
+  };
+  for (const [thing, how] of Object.entries(HOW_EXTRA)) {
+    const x = EXTRAS.find((y) => y[2] && y[2][1] === thing) || fail(`HOW_EXTRA: no extra ${thing}`);
+    if (how.foe && !BOSSES.some((b) => b[0] === how.foe)) fail(`HOW_EXTRA: no boss ${how.foe}`);
+    x[5] = { ...(x[5] || {}), how };
+  }
+  console.log(`how they're had: ${sold} extras sold by a vendor, ${Object.keys(HOW_EXTRA).length} by a fight, a person or a challenge; `
+    + `${Object.keys(JOURNAL).length} Journal entries with rooms by Act (${JOURNAL_ACT3.length} Act 3 only); ${Object.keys(OPENS).length} fights opened by something; `
+    + `objective steps on one point: ${STEPS.map((g) => g.join('+')).join(', ')}`);
+}
+
 // The Map admin's fixes keyed by an index of these lists follow their marks (stops the run if one can't).
 require('./follow-fixes.js').run('spots', { EXTRAS, TASKS, VENDORS, XY });
 
@@ -1793,8 +1950,18 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               in that room already, or null], or null, nobody: the Map names the mark by them or
               lists the wishes on theirs; tools/gen-people.js doesn't draw them again. 'room:who'
               for a wish someone else offers in that room
-     QUEST_GIVER  such a wish → its 'room:who'`,
-'spots', [['AT', AT], ['ALSO', ALSO], ['VARIANTS', VARIANTS], ['LEFT', LEFT], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['TASKS', TASKS], ['XY', XY], ['SEATS', SEATS], ['GIVER', GIVERS], ['QUEST_GIVER', QUEST_GIVER]]);
+     QUEST_GIVER  such a wish → its 'room:who'
+     JOURNAL  a Journal entry's key → { room: [before Act 3, Act 3] }: 1 its enemies roam there, 0 none
+              there then, or [gauntlet ids]: only in their waves ('' an arena that's none of the 49);
+              only the rooms that aren't 1 in both (js/journal-rooms.js has them all)
+     JOURNAL_ACT3  the entries no room has before Act 3
+     OPENS    'boss:<foe>' or 'gaunt:<id>' → { wish | after | art | freed, check }: what the game waits
+              for before it puts that fight there (a wish taken, a wish granted, an ability, a Journal
+              entry's enemies freed), and the save's check that it holds
+     STEPS    [[TASKS index, …]]: a main objective's steps the game pins on one point, in its order
+     GOAL_ACT TASKS index → the first Act that step can be on (its objective's chain)`,
+'spots', [['AT', AT], ['ALSO', ALSO], ['VARIANTS', VARIANTS], ['LEFT', LEFT], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['TASKS', TASKS], ['XY', XY], ['SEATS', SEATS], ['GIVER', GIVERS], ['QUEST_GIVER', QUEST_GIVER],
+  ['JOURNAL', JOURNAL], ['JOURNAL_ACT3', JOURNAL_ACT3], ['OPENS', OPENS], ['STEPS', STEPS], ['GOAL_ACT', GOAL_ACT]]);
 const kinds = {};
 for (const x of EXTRAS) kinds[x[0]] = (kinds[x[0]] || 0) + 1;
 console.log(`js/spots.js  ${placed.length} things of the 100% placed, ${EXTRAS.length} extras (${Object.entries(kinds).map(([k, n]) => n + ' ' + k).join(', ')}), `
