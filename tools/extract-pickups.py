@@ -80,8 +80,10 @@ What it writes (read on 28-Sep-2026, patch 1.0.30000):
           each saved bool or int of its own on an object with that component, kept as the doors are.
   caches  each rosary or shell shard cache whose save is an int (a PersistentIntItem beside a
           RosaryCache, RosaryCacheHanging, RosaryCacheString or BreakableHolder, kept as the doors are)
-          → [[Scene, id, component, emptied, last]]: the int from which it's emptied, up to the last
-          it can hold (read in Assembly-CSharp 1.0.30000 and against the author's saves, 12-Oct-2026).
+          → [[Scene, id, component, emptied, last, x, y]]: the int from which it's emptied, up to the
+          last it can hold (read in Assembly-CSharp 1.0.30000 and against the author's saves,
+          12-Oct-2026), and where it is (its place, from 21-Oct-2026: what the completionist's list
+          lacks has no other).
           A BreakableHolder keeps its hits left: 0 once broken (emptied and last 0). A RosaryCache
           keeps its state: -1 untouched, a step up each hit, held at its hitStates' last, which is
           when it's emptied (emptied and last its hitStates' count - 1). A RosaryCacheString adds a
@@ -596,7 +598,7 @@ def scan(game):
                     emptied, last = t['maxHits'] - 1, t['maxHits']
                 else:
                     emptied = last = len(t['hitStates']) - 1
-                caches.append((own, it.get('ID') or name_of(gid), comp, emptied, last))
+                caches.append((own, it.get('ID') or name_of(gid), comp, emptied, last, *world(gid)))
             for f, comp, gid in pd_hits:
                 pd[f].append((scene, comp, name_of(gid) if gid else '', *(world(gid) if gid else [])))
         if tilemaps:

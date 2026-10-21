@@ -93,8 +93,13 @@ test('what opens a way comes after the completionist\'s extras, each a bool of i
   assert.equal(SP.EXTRAS.slice(first, after).filter((x) => x[0] === 'wall').length, 2, 'the two cell doors');
   const LATER = new Set(['map', 'rosaries', 'shards', 'key', 'keyitem', 'bead', 'silk-cocoon', 'lift', 'masked', 'eva']);
   // After them, only the maps and what came after them, the ways kept in playerData (a flag each) and,
-  // last, the doors a key opens no mark had (kb/data/game/gating.json receptacles: Ward_01's).
-  const last = SP.EXTRAS.length - SP.EXTRAS.slice().reverse().findIndex((x) => !(x[0] === 'lock'));
+  // the doors a key opens no mark had (kb/data/game/gating.json receptacles: Ward_01's) and, last of
+  // all, what the completionist's list lacks of the game's own: Dock_01's two rosary strings, Under_20's Silkeater.
+  const tail = SP.EXTRAS.length - SP.EXTRAS.slice().reverse().findIndex((x) => !['rosary-cache', 'silkeater'].includes(x[0]));
+  const ids = (c) => (c[0] === 'any' ? ids(c[1]) : c[1] + ' ' + c[2]);
+  assert.deepEqual(SP.EXTRAS.slice(tail).map((x) => x[0] + ' ' + ids(x[2])),
+    ['rosary-cache Dock_01 rosary_string_medium', 'rosary-cache Dock_01 rosary_string_small_half', 'silkeater Under_20 Silk Grub Large Cocoon']);
+  const last = tail - SP.EXTRAS.slice(0, tail).reverse().findIndex((x) => !(x[0] === 'lock'));
   assert.ok(SP.EXTRAS.slice(after, last).every((x) => LATER.has(x[0]) || (DOORS.has(x[0]) && x[2][0] === 'flag')), 'only the maps and what came after them');
   // What opens a way that the save keeps in playerData: a flag each, once.
   const pd = SP.EXTRAS.slice(after, last).filter((x) => DOORS.has(x[0]));
@@ -564,4 +569,15 @@ test('the Silkshot has its three repairs, each where the game takes the Ruined T
   assert.equal(F.game({ ...base, ...tools('WebShot Architect') }).silkshot, 'architect');
   assert.equal(F.game({ ...base, ...tools('WebShot Forge') }).silkshot, 'forge');
   assert.equal(F.game(base).silkshot, '');
+});
+
+test('each objective pin is filed under the room it falls in, within 3 px of its box (Last Dive\'s is Abyss_05)', () => {
+  const M = globalThis.SS.map;
+  SP.TASKS.forEach((x, i) => {
+    if (x[0] !== 'goal') return;
+    const p = SP.XY['task:' + i], r = M.ROOMS[x[3]];
+    assert.ok(p && r, `task:${i} ${x[3]}`);
+    assert.ok(p[0] >= r[0] - 3 && p[0] <= r[0] + r[2] + 3 && p[1] >= r[1] - 3 && p[1] <= r[1] + r[3] + 3, `task:${i} ${x[1]} isn't by ${x[3]}`);
+  });
+  assert.equal(SP.TASKS.find((x) => x[0] === 'goal' && x[1] === 'Black Thread Pt6 Flower')[3], 'Abyss_05');
 });

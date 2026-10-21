@@ -439,10 +439,15 @@ leaves those off.
   two Needolin melodies of Act 3 (the Beastling Call, under Bellhart once the Bell Eater is beaten;
   the Elegy of the Deep, from the Snail Shamans), each card saying it doesn't count.
 - **Crest** (the game's pane where they're equipped): the **Tools**, one switch whose round caret
-  opens them by the colour of their slot (red, blue, yellow) and, apart, the six **outside the
-  100%** (off at first): the upgrades of four Tools (Curvesickle, Druid's Eyes, Claw Mirrors, the
-  Shell Satchel), which add nothing to it on their own, and the two a wish lends and takes back
-  (the Snare Setter, the Needle Phial), found once had even after handing them back. Two Tools a
+  opens them by the colour of their slot (red, blue, yellow) and, apart, the five **outside the
+  100%** (off at first): the upgrades of three Tools (Curvesickle, Druid's Eyes, Claw Mirrors),
+  which add nothing to it on their own, the Needle Phial a wish lends and takes back, and the Snare
+  Setter, found in Weavenest Atla and given up for Silk and Soul, both found once had even after
+  handing them over. The Dead Bug's Purse is the Shell Satchel in a Steel Soul game (the game lays
+  one or the other in the Wormways): one mark, named and drawn as your mode's, the purse's card in
+  Free mode saying Steel Soul has the satchel there. A card says what a thing waits on that your game
+  lacks: a key, or an ability (the Threefold Pin lies where the Needolin's memory in Greymoor
+  brings it). A card's area is the one its mark's room is in. Two Tools a
   shop sells lie in another room once the seller dies before you buy them: the Curveclaw in the
   room above the Mottled Skarr's corpse, past its gauntlet, and the Weighted Belt by Mort's corpse
   in Act 3. With a save the mark is where your game has it (the shop while the seller lives or
@@ -520,7 +525,9 @@ leaves those off.
 - **Fights**: the enemy gauntlets and bosses not beaten yet, each fight its own mark (Lace atop the
   Cradle, the two Moss Mothers of Weavenest Atla, the Act 3 Moss Mother and the Savage Beastfly
   of the Far Fields too), each boss where it's fought (Moorwing at Bellhart's east entrance, the
-  Second Sentinel in its High Halls arena). A gauntlet won by beating its boss (Lugoli's, Groal's,
+  Second Sentinel in its High Halls arena), and the Skull Tyrant's return to Bone Bottom, which the
+  game may send in Act 2: with a save, only once it's on its way or beaten, and crossed («No longer
+  there») in Act 3 if you didn't beat it; in Free mode its card says it may come back. A gauntlet won by beating its boss (Lugoli's, Groal's,
   the Coral Tower's four that end in Khann…) is that boss's mark, its waves and reward on the
   boss's card. And the Void Masses' cores. The other enemies that don't come back (Rhinogrunds,
   Covetous Pilgrims, Shardillards) are found from their Journal entry, whose pin shows every room

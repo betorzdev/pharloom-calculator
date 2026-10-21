@@ -30,7 +30,8 @@
      BOSSES   [foe id, scene, check, act]: each boss of the completionist's list, its arena and whether
               it's beaten (a playerData flag, or its Journal entry listed), then the second fights
               it folds into one entry (BOSS_MORE), each with what the save keeps of it; act the
-              first Act it can be fought in (the completionist's whichAct, BOSS_MORE's own, BOSS_ACT's fix).
+              first Act it can be fought in (the completionist's whichAct, BOSS_MORE's own, BOSS_ACT's fix);
+              last, a boss that may come back (BOSS_BACK), with a fifth element.
      VENDORS  vendor id → its rooms (js/shop.js), Shakra's among them
      PEOPLE   npc id → its room: the people who give something of the 100%, and Scrounge, who
               buys the relics
@@ -271,6 +272,25 @@ for (const [foe, check, act] of BOSS_MORE) {
   if (!foeOf.has(foe) || BOSSES.some((b) => b[0] === foe)) fail(`BOSS_MORE: ${foe} isn't a foe of its own`);
   if (!onMap(arena(foe))) fail(`BOSS_MORE: ${foe}'s arena isn't on the map`);
   BOSSES.push([foe, arena(foe), check, act]);
+}
+/* A boss that may come back, with no foe of its own (Albert's choice, 21-Oct-2026): the Skull Tyrant
+   to Bone Bottom. Bonetown's «Boss Loader» loads bonetown_boss while skullKingKilled is false,
+   skullKingWillInvade or skullKingInvaded is true and blackThreadWorld false; GameManager.TimePasses
+   sets skullKingWillInvade (the wiki: a chance once the Blasted Steps, the Citadel or Sinner's Road
+   is reached; never once Silk and Soul is taken). In the author's saves WillInvade is set first in
+   Act 2 (game 1's NODELrestoreData12, its Steel Soul game's restoreData19, user4's restoreData14)
+   and skullKingKilled only after it (game 1, from restoreData22). Each [id, of: the foe it is,
+   scene, its check, Act, coming: the check that it's on its way]; BOSSES gets it as
+   [id, scene, check, act, { of, coming, gone: 'act3' }]: outside the completionist's list, shown
+   with a save only while it's coming or once beaten, gone in Act 3 if not beaten. */
+const BOSS_BACK = [
+  ['skull-tyrant-bone-bottom', 'skull-tyrant', 'bonetown_boss', ['flag', 'skullKingKilled'], 2, ['any', ['flag', 'skullKingWillInvade'], ['flag', 'skullKingInvaded']]],
+];
+for (const [id, of, scene, check, act, coming] of BOSS_BACK) {
+  if (!foeOf.has(of) || foeOf.has(id) || BOSSES.some((b) => b[0] === id)) fail(`BOSS_BACK: ${id} isn't ${of}'s return`);
+  const e = bookOf(of), rooms = ((e && SS.journalRooms[e.key]) || []).map(([sc]) => sc.toLowerCase());
+  if (!rooms.includes(scene.toLowerCase()) || !onMap(scene)) fail(`BOSS_BACK: ${of}'s Journal entry isn't in ${scene}, or it isn't on the map`);
+  BOSSES.push([id, scene, check, act, { of, coming, gone: 'act3' }]);
 }
 
 /* ── The 100%: each thing's room, by its ways ── */
@@ -742,6 +762,15 @@ const KEY_ITEMS = [
   ['keyitem', 'Farsight', 'INV_NAME_FARSIGHT', 'farsight'], ['keyitem', 'Materium', 'INV_NAME_MATERIUM', 'materium'],
 ];
 const KEY_FLAG = { 'Simple Key dust_06': 'CollectedDustCageKey', 'Ward Key song_enclave': 'collectedWardKey', 'Ward Boss Key ward_07': 'collectedWardBossKey' };
+/* A key or key item's Act, where it has one of its own: the Ruined Tool lies in Weavenest Murglin,
+   behind a Needolin door in Bilewater, which Act 1 reaches through Sinner's Road's breakable wall
+   (wiki Ruined Tool; its pickup has no condition in Shadow_Weavehome, read on 21-Oct-2026): the
+   Silkshot's own Act (js/collectibles.js WHERE). The run stops if they part. */
+const KEY_ACT = { 'Broken SilkShot': CO.WHERE.tools.silkshot[0] };
+if (KEY_ACT['Broken SilkShot'] !== 1) fail('KEY_ACT: the Silkshot is no longer Act 1: read the Ruined Tool\'s Act again');
+// Each key's marks' Acts, by its save name (a lock takes its key's, below).
+const KEY_MARK_ACT = new Map();
+const keyMark = (item, act) => KEY_MARK_ACT.set(item, [...(KEY_MARK_ACT.get(item) || []), act]);
 for (const [kind, item, text, icon] of KEY_ITEMS) {
   const fake = (P.maps || {})[item];
   const name = N.text(fake ? fake[1] : text);
@@ -760,7 +789,8 @@ for (const [kind, item, text, icon] of KEY_ITEMS) {
     const flag = KEY_FLAG[item + ' ' + scene.toLowerCase()];
     const check = fake ? ['flag', fake[0]] : flag ? ['flag', flag] : ids.length > 1 ? ['any', ...ids.map((id) => ['bool', scene, id])] : ['bool', scene, ids[0]];
     if (at) SCENE_AT.set(EXTRAS.length, at);
-    EXTRAS.push([kind, null, check, scene, name, { icon }]);
+    keyMark(item, KEY_ACT[item] || null);
+    EXTRAS.push([kind, KEY_ACT[item] || null, check, scene, name, { icon }]);
   }
 }
 
@@ -865,18 +895,23 @@ const LIFT_OUT = new Set(['Organ_01 Hornet_cage_rect_lift_organ (1)']);
        picked up), so it's also had once held, or installed in the Bellhome (CrawbellInstalled). */
 {
   const iconOk = (icon) => fs.existsSync(path.join(__dirname, '..', 'assets', 'map', 'icons', icon + '.webp')) || fail(`assets/map/icons/${icon}.webp is missing`);
+  /* Then its Act: Ballow gives the Diving Bell Key only in Act 3, once the Snail Shamans have sent
+     Hornet down (wiki Diving Bell Key, «The Dark Below»): BallowGivenKey is false in every Act 1
+     and 2 save of the author's and turns true only in Act 3 (Restore_Points1/restoreData25,
+     Restore_Points3/restoreData28; read on 21-Oct-2026). Pavo's has none of its own. */
   const NPC_KEYS = [
-    ['Dock Key', 'INV_NAME_DOCK_KEY', 'dock_key', 'Ballow Diving Bell NPC', ['any', ['flag', 'BallowGivenKey'], ['held', 'Dock Key']]],
+    ['Dock Key', 'INV_NAME_DOCK_KEY', 'dock_key', 'Ballow Diving Bell NPC', ['any', ['flag', 'BallowGivenKey'], ['held', 'Dock Key']], 3],
     ['Belltown House Key', 'INV_NAME_BELL_HOUSE_KEY', 'belltown_house_key', 'Belltown Greeter NPC',
-      ['any', ['flag', 'BelltownGreeterHouseFullDlg'], ['flag', 'BelltownHouseUnlocked'], ['held', 'Belltown House Key']]],
+      ['any', ['flag', 'BelltownGreeterHouseFullDlg'], ['flag', 'BelltownHouseUnlocked'], ['held', 'Belltown House Key']], null],
   ];
-  for (const [item, text, icon, npc, check] of NPC_KEYS) {
+  for (const [item, text, icon, npc, check, act] of NPC_KEYS) {
     iconOk(icon);
     const e = ((P.items[item] || {}).at || []).find(([, comp, obj]) => comp === 'PlayMakerFSM' && obj === npc)
       || fail(`${item}: no ${npc} gives it in pickups.json items: NPC_KEYS needs reading again`);
     if (!onMap(e[0])) fail(`${item}: ${e[0]} isn't on the map`);
     if (typeof e[3] === 'number') SCENE_AT.set(EXTRAS.length, [e[3], e[4]]);
-    EXTRAS.push(['key', null, check, e[0], N.text(text), { icon }]);
+    keyMark(item, act);
+    EXTRAS.push(['key', act, check, e[0], N.text(text), { icon }]);
   }
   iconOk('crawbell');
   const [scene, id, x, y] = (P.lying.Crawbell || fail('the Crawbell lies in no room: pickups.json lying')).find(([sc]) => onMap(sc)) || fail('the Crawbell\'s room isn\'t on the map');
@@ -928,6 +963,53 @@ for (const [id, save, scene, comp, check] of GIVEN_PURSE) {
   for (const [k, scenes] of Object.entries(Q.LOCKS)) for (const sc of scenes) {
     if (!hasLock.has(sc.toLowerCase()) && !demoOnly.has(sc.toLowerCase())) fail(`${k}'s door in ${sc} has no mark: gating.json receptacles need reading again`);
   }
+}
+
+/* What the completionist's list lacks of what the save keeps, after every other extra (so no index
+   js/map-fixes.js keys moves; read in the game's scenes and the author's saves on 21-Oct-2026):
+     caches     a rosary cache or string the save keeps (pickups.json caches, a RosaryCache or
+                RosaryCacheString, with hits to give) that no extra has: Dock_01's two rosary
+                strings, new in patch 1.0.30000 (in no save of an earlier patch; emptied, 3 and 2,
+                in every 1.0.30000 save that entered Dock_01). Not the BreakableHolders the list
+                lacks (the ant_item_strings, which only hold an item: HELD) nor the hanging
+                «scissor_string»s of the Chapel of the Reaper, whose hit states are empty (nothing
+                to give: their last state is their first).
+     silkeater  a Silkeater lying in its room (pickups.json kept, a «Silk Grub Large Cocoon»'s own
+                bool) that no extra has: Under_20's, beside the three small cocoons there, in the
+                Chapel of the Architect (the Architect's Key: Act 2, js/collectibles.js WHERE's
+                Architect Crest). Its room is an interior, so it goes at the room's point. */
+{
+  const lc = (x) => String(x).toLowerCase();
+  const has = new Set(EXTRAS.flatMap((x) => savedOf(x[2]).map(([, sc, id]) => lc(sc) + '|' + id)));
+  const added = [];
+  for (const [scene, id, comp, from, to, x, y] of P.caches || []) {
+    if (has.has(lc(scene) + '|' + id) || !/^RosaryCache(String)?$/.test(comp) || to < 1) continue;
+    if (!onMap(scene)) { unplaced.push(`rosary-cache ${scene} ${id}`); continue; }
+    const c = cacheCheck(['int', scene, id]);
+    if (typeof x === 'number') SCENE_AT.set(EXTRAS.length, [x, y]);
+    EXTRAS.push(['rosary-cache', 0, c, scene]);
+    added.push(`${scene} ${id}`);
+  }
+  for (const [scene, id, type, x, y] of (P.kept || {}).cocoon || []) {
+    if (type !== 'bool' || !/Large Cocoon/.test(id) || has.has(lc(scene) + '|' + id)) continue;
+    if (!onMap(scene)) { unplaced.push(`silkeater ${scene} ${id}`); continue; }
+    const act = lc(scene) === 'under_20' ? CO.WHERE.crests.architect[0] : fail(`a Silkeater in ${scene} the completionist lacks: read its Act`);
+    if (typeof x === 'number') SCENE_AT.set(EXTRAS.length, [x, y]);
+    EXTRAS.push(['silkeater', act, ['bool', scene, id], scene, null]);
+    added.push(`${scene} ${id}`);
+  }
+  const want = ['Dock_01 rosary_string_medium', 'Dock_01 rosary_string_small_half', 'Under_20 Silk Grub Large Cocoon'];
+  if (JSON.stringify(added) !== JSON.stringify(want)) fail(`the game's own caches and Silkeaters the completionist lacks are now ${added.join(', ') || 'none'}: read them again`);
+}
+
+/* A door a key opens takes its key's Act when every mark of that key has one (the key's marks, above:
+   the Diving Bell Key's Act 3 dates Dock_12's Diving Bell door). */
+for (const x of EXTRAS) {
+  if (x[0] !== 'lock' || x[1]) continue;
+  const lc = (v) => String(v).toLowerCase();
+  const key = Object.keys(Q.LOCKS).find((k) => Q.LOCKS[k].some((sc) => lc(sc) === lc(x[3])));
+  const acts = key ? KEY_MARK_ACT.get(key) || [] : [];
+  if (acts.length && acts.every(Boolean)) x[1] = Math.min(...acts);
 }
 
 /* ── What the save really keeps for each way, and what the game takes away (design/03-redesign.md,
@@ -1483,7 +1565,7 @@ EXTRAS.forEach((x, i) => {
   else if (c[0] === 'relic' && RELIC_WHO[c[1]]) put2('extra:' + i, whoAt(RELIC_WHO[c[1]], x[3]));
 });
 // The bosses in their arenas, the gauntlets at theirs, the key doors at their lock.
-for (const [foe, scene] of BOSSES) put2('boss:' + foe, foeAt(foe, scene));
+for (const [foe, scene, , , more] of BOSSES) put2('boss:' + foe, foeAt((more && more.of) || foe, scene));
 // The Journal's entries (the Map's layer of those still missing): where the enemy is in the first
 // room the Map gives the entry (js/app-map.js, its first room on the map).
 for (const e of J.BOOK) {
@@ -1557,7 +1639,11 @@ const TASKS = [];
     // Held says which spot only when there's one: one Pollip Heart held isn't the six flowers, nor
     // one Flintgem the three Flintbeetles (each spot keeps its own flag).
     const spots = new Set(at.map(([scene, , obj, flag, , , foe]) => (foe && foe.dead) || scene + (flag || obj))).size;
-    const own = (scene, flag) => (flag && proper(scene) ? [['bool', proper(scene), flag]] : []);
+    /* A pickup's own bool, and the playerData flags that take it away once set (gating.json
+       removedBy): those say it was picked up too. Dust_Chef's «Return Pickup», the Pickled
+       Muckmaggot laid back after a death, goes with gotPickledRoachEgg, which the first one picked
+       up sets; its own bool is set in none of the author's saves (read on 21-Oct-2026). */
+    const own = (scene, flag) => (flag && proper(scene) ? [['bool', proper(scene), flag], ...(gateOf(proper(scene), flag).removedBy || []).map((f) => ['flag', f])] : []);
     for (const [scene, comp, obj, flag, x, y, foe] of at) {
       const one = scene + (flag || obj);
       if (seen.has(one)) continue;   // the Crown Fragment lies twice in its room, under one flag
@@ -1594,12 +1680,18 @@ const TASKS = [];
   const bad = off.filter((o) => Math.hypot(o[0] - ox, o[1] - oy) * M.PPU > 2).length;
   if (off.length < 40 || bad > off.length / 10) fail(`the map's quest pins don't line up by its bench pins (${off.length} benches, ${bad} off)`);
   // The room a pin falls in: the smallest box holding it, as the scene it's a part of (Bellway_Aqueduct_top
-  // is Bellway_Aqueduct's: a part is no scene, and which part holds a pin can turn on a hair).
+  // is Bellway_Aqueduct's: a part is no scene, and which part holds a pin can turn on a hair). A box
+  // holds what lies within PIN_MARGIN px of its edge: the game sets its pins by hand, and Last Dive's
+  // falls a pixel below Abyss_05, where The Dark Below's is and Lost Lace waits, into the tall box of
+  // Abyss_09_top; the same margin files the Snail Shamans' three pins under Tut_04, the chapel they stand in
+  // (1.6 px from its point), and the Mask Maker's delivery under his house (read on 21-Oct-2026: five of the pins move).
+  const PIN_MARGIN = 3;
   const isScene = (s) => !!P.sizes[lower(s)];
   const sceneOfPart = (s) => { let x = s; while (!isScene(x) && x.lastIndexOf('_') > 0) x = x.slice(0, x.lastIndexOf('_')); return isScene(x) && M.ROOMS[x] ? x : s; };
-  const inRoom = ([px, py]) => Object.entries(M.ROOMS).filter(([, r]) => px >= r[0] && px <= r[0] + r[2] && py >= r[1] && py <= r[1] + r[3])
+  const inRoom = ([px, py], d = PIN_MARGIN) => Object.entries(M.ROOMS).filter(([, r]) => px >= r[0] - d && px <= r[0] + r[2] + d && py >= r[1] - d && py <= r[1] + r[3] + d)
     .sort(([, a], [, b]) => a[2] * a[3] - b[2] * b[3]).map(([s]) => sceneOfPart(s))[0];
   const byItem = (save) => Object.keys(WI.quests).find((q) => WI.quests[q].targets.includes(save));
+  const DELIVERED = { 'Great Gourmand': 'GourmandGivenMeat' };
   const pinned = new Set();
   /* The Bellbeast's pins (Beast in the Bells), one per Bellway station: the game shows one only
      while the beast waits at that station (each pin's DeactivatePlayerDataTest turns it off when
@@ -1652,7 +1744,11 @@ const TASKS = [];
       if (!isWish(q) && !isWish(Object.keys(Q.CHAIN).find((n) => Q.CHAIN[n].prev === q))) continue;
       pinned.add(q);
       const spot = target && (proper(target) || fail(`no scene named ${target}`));
-      const check = spot ? ['any', ['steel', spot], ['quest', q]] : ['quest', q];
+      /* A delivery's pin is done once delivered (DELIVERED: the flag the one who takes it sets), not
+         only once its wish is: the Courier's Rasher for the Great Gourmand, GourmandGivenMeat (the
+         Gourmand's servant takes each dish apart; read on 21-Oct-2026). */
+      const given = DELIVERED[q] && sprite === 'quest_map_icon_courier' ? [['flag', DELIVERED[q]]] : [];
+      const check = spot ? ['any', ['steel', spot], ['quest', q]] : given.length ? ['any', ...given, ['quest', q]] : ['quest', q];
       // The Courier's Rasher is a delivery the Great Gourmand's wish asks for: the couriers' emblem.
       const emblem = sprite === 'quest_map_icon_courier' ? Object.values(WI.quests).find((x) => x.type === 'Courier').emblem : info.emblem;
       task('wspot', q, check, scene, p, null, art('icons/' + emblem), null, spot);
@@ -1761,9 +1857,11 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               js/collectibles.js's, plus ['relic', name], ['memento', name], ['int', scene, id,
               value] (['int', scene, id, value, 'min']: at least value), ['geo', scene, id] and
               ['accepted', quest] (the wish taken, done or not)
-     BOSSES   [foe id, scene, check, act]: each boss fight's arena, whether it's beaten and the
-              first Act it can be fought in; check also ['kills', Journal name, n] (at least n of
-              it beaten)
+     BOSSES   [foe id, scene, check, act, more?]: each boss fight's arena, whether it's beaten and
+              the first Act it can be fought in; check also ['kills', Journal name, n] (at least n
+              of it beaten); more { of, coming, gone } for a boss that may come back (the Skull
+              Tyrant to Bone Bottom): of the foe it is, coming the check that it's on its way,
+              gone 'act3' when Act 3 takes it away unbeaten
      VENDORS  vendor id → the rooms it sells in; PEOPLE  npc id → its room
      BELLS    [playerData field, scene (, name)]: the six Bellshrines (the Grand Gate asks for five)
      KEYS     a lock's key (js/quests.js LOCKS) → its name

@@ -43,9 +43,11 @@
               js/collectibles.js's, plus ['relic', name], ['memento', name], ['int', scene, id,
               value] (['int', scene, id, value, 'min']: at least value), ['geo', scene, id] and
               ['accepted', quest] (the wish taken, done or not)
-     BOSSES   [foe id, scene, check, act]: each boss fight's arena, whether it's beaten and the
-              first Act it can be fought in; check also ['kills', Journal name, n] (at least n of
-              it beaten)
+     BOSSES   [foe id, scene, check, act, more?]: each boss fight's arena, whether it's beaten and
+              the first Act it can be fought in; check also ['kills', Journal name, n] (at least n
+              of it beaten); more { of, coming, gone } for a boss that may come back (the Skull
+              Tyrant to Bone Bottom): of the foe it is, coming the check that it's on its way,
+              gone 'act3' when Act 3 takes it away unbeaten
      VENDORS  vendor id → the rooms it sells in; PEOPLE  npc id → its room
      BELLS    [playerData field, scene (, name)]: the six Bellshrines (the Grand Gate asks for five)
      KEYS     a lock's key (js/quests.js LOCKS) → its name
@@ -4022,7 +4024,7 @@
       { was: ['bool', 'Ward_02', 'Pipe_Vent_Hatch'] },
     ],
     ['lock', 0, ['bool', 'Crawl_02', 'aspid_sealed_gate_stone'], 'Crawl_02'],
-    ['lock', 0, ['bool', 'Dock_12', 'Diving Bell Door'], 'Dock_12'],
+    ['lock', 3, ['bool', 'Dock_12', 'Diving Bell Door'], 'Dock_12'],
     [
       'lock',
       0,
@@ -5030,7 +5032,7 @@
     ],
     [
       'keyitem',
-      null,
+      1,
       ['bool', 'Shadow_Weavehome', 'Collectable Item Pickup'],
       'Shadow_Weavehome',
       { es: 'Herramienta estropeada', en: 'Ruined Tool', key: 'INV_NAME_BROKEN_SILKSHOT' },
@@ -6598,7 +6600,7 @@
     ['eva', null, ['crest', 'Hunter_v3'], 'weave_10', null, { reward: 'hunter-3', slots: 27 }],
     [
       'key',
-      null,
+      3,
       ['any', ['flag', 'BallowGivenKey'], ['held', 'Dock Key']],
       'dock_12',
       { es: 'Llave de campana de buceo', en: 'Diving Bell Key', key: 'INV_NAME_DOCK_KEY' },
@@ -6655,6 +6657,27 @@
       { item: 'beast-shard' },
     ],
     ['lock', null, ['bool', 'Ward_01', 'under_lift_large'], 'Ward_01'],
+    [
+      'rosary-cache',
+      0,
+      [
+        'any',
+        ['int', 'Dock_01', 'rosary_string_medium', 2],
+        ['int', 'Dock_01', 'rosary_string_medium', 3],
+      ],
+      'Dock_01',
+    ],
+    [
+      'rosary-cache',
+      0,
+      [
+        'any',
+        ['int', 'Dock_01', 'rosary_string_small_half', 1],
+        ['int', 'Dock_01', 'rosary_string_small_half', 2],
+      ],
+      'Dock_01',
+    ],
+    ['silkeater', 2, ['bool', 'Under_20', 'Silk Grub Large Cocoon'], 'Under_20', null],
   ];
 
   const BOSSES = [
@@ -6715,6 +6738,17 @@
       3,
     ],
     ['savage-beastfly-far-fields', 'Bone_East_08', ['flag', 'defeatedBoneFlyerGiantGolemScene'], 2],
+    [
+      'skull-tyrant-bone-bottom',
+      'bonetown_boss',
+      ['flag', 'skullKingKilled'],
+      2,
+      {
+        of: 'skull-tyrant',
+        coming: ['any', ['flag', 'skullKingWillInvade'], ['flag', 'skullKingInvaded']],
+        gone: 'act3',
+      },
+    ],
   ];
 
   const VENDORS = {
@@ -6888,6 +6922,7 @@
       [
         'any',
         ['bool', 'Dust_Chef', 'Return Pickup'],
+        ['flag', 'gotPickledRoachEgg'],
         ['held', 'Pickled Roach Egg'],
         ['quest', 'Great Gourmand'],
       ],
@@ -7564,7 +7599,7 @@
         ['quest', 'Black Thread Pt5 Heart'],
         ['quest', 'Black Thread Pt6 Flower'],
       ],
-      'Tut_03',
+      'Tut_04',
       'pins/quest_map_icon_shaman',
       null,
       null,
@@ -7615,7 +7650,7 @@
         ['quest', 'Black Thread Pt5 Heart'],
         ['quest', 'Black Thread Pt6 Flower'],
       ],
-      'Tut_03',
+      'Tut_04',
       'pins/quest_map_icon_shaman',
       null,
       null,
@@ -7626,7 +7661,7 @@
       'goal',
       'Black Thread Pt5 Heart',
       ['any', ['quest', 'Black Thread Pt5 Heart'], ['quest', 'Black Thread Pt6 Flower']],
-      'Tut_03',
+      'Tut_04',
       'pins/quest_map_icon_shaman',
       null,
       null,
@@ -7637,7 +7672,7 @@
       'goal',
       'Black Thread Pt6 Flower',
       ['any', ['quest', 'Black Thread Pt6 Flower'], ['journal', 'Lost Lace']],
-      'Abyss_09',
+      'Abyss_05',
       'pins/quest_map_icon_act3_finale',
       null,
       null,
@@ -7772,7 +7807,7 @@
     [
       'wspot',
       'Great Gourmand',
-      ['quest', 'Great Gourmand'],
+      ['any', ['flag', 'GourmandGivenMeat'], ['quest', 'Great Gourmand']],
       'Song_09b',
       'icons/qi_courier',
       null,
@@ -7784,7 +7819,7 @@
       'wspot',
       'Courier Delivery Mask Maker',
       ['quest', 'Courier Delivery Mask Maker'],
-      'Peak_05d',
+      'Peak_Mask_Maker',
       'icons/qi_courier',
       null,
       null,
@@ -9539,6 +9574,8 @@
     'extra:1396': [1191.7, 1237.6],
     'extra:1398': [697.7, 1469],
     'extra:1401': [1287.2, 721.5],
+    'extra:1402': [1361, 1451.5],
+    'extra:1403': [1360.1, 1450.8],
     'person:eva': [831.8, 1595.4],
     'person:lumble': [366.9, 965.5],
     'person:mooshka': [2318.3, 574.4],
@@ -9701,6 +9738,7 @@
     'boss:summoned-saviour': [218.8, 1496.2],
     'boss:lace-the-cradle': [1374.8, 304.2],
     'boss:moss-mother-act-3-moss-grotto': [553.3, 1542.9],
+    'boss:skull-tyrant-bone-bottom': [716.8, 1466.9],
     'journal:mossgrub': [464.4, 1558.3],
     'journal:massive-mossgrub': [1441.5, 511.8],
     'journal:mossmir': [543.4, 1583.3],

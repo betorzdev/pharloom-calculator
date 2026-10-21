@@ -1402,7 +1402,8 @@ fix from the game's files and a save field):
   one not given to the Snail Shamans becomes a memento (the wiki's Materium page): one mark, had
   with any of them. The Fleatopia Memento in the game's text is cut content.
 - **Silkeaters**, mapgenie 10, the site 9: the tenth is what Styx grows in Sinner's Road, one an
-  hour, with nothing in the save to say it's had.
+  hour, with nothing in the save to say it's had. (21 October: the site has ten, Under_20's lying
+  one added; Styx's is still out.)
 - **Bosses**, mapgenie 46, the site 44, now 48. The completionist checks each boss by its first
   fight, and gen-spots named the fight by the last foe of that name in `enemies.js`, so the first
   Moss Mother, Lace and Savage Beastfly carried their later fights' ids (and the first Moss Mother
@@ -1412,7 +1413,8 @@ fix from the game's files and a save field):
   `Mossbone Mother Ambient`, its PersistentBoolItem: no save has it yet to confirm), the Savage
   Beastfly of the Far Fields (`defeatedBoneFlyerGiantGolemScene`). The Weavelight and the Silk
   Heart Lace leaves moved to their fights' rooms with them. Not added: the Skull Tyrant's return
-  to Bone Bottom (no foe of its own; `skullKingKilled` looks like its flag). The site also has
+  to Bone Bottom (no foe of its own; `skullKingKilled` looks like its flag). (21 October: added,
+  BOSS_BACK, below.) The site also has
   three mapgenie hasn't: Garmond & Zaza, Craggler and Shakra.
 - **Vendors**, mapgenie 23 (eight shopkeepers and fifteen of Shakra's spots), the site 10 shop
   marks (the same eight, Jubilana in her three rooms) and 17 of Shakra's: none missing. The game's
@@ -2101,3 +2103,49 @@ then the places' areas), and its pin all its marks on the Map at once, the Ruine
 Act 3 with the Architect gone), 8 holding it, 19 repaired the Original, 4 the Forge Daughter's, none
 the Architect's. Checked: npm test, the text audit, check-pack on the 87 saves (all match), the Map in
 headless Chrome at 1440 and 390, es and en, in Free mode and five saves, no console errors.
+
+**The Map's checks and small fixes** (21 October 2026, the Map audit's phase 2, W3; Albert's picks
+D8 to D34 of audit-B/C/D/F/G). Each read in the game's files first and checked over the 88 saves of
+the author's folder:
+- **The Dead Bug's Purse and the Shell Satchel** (D8): Crawl_01's «Tool Conditions»
+  (TestGameObjectActivator, permadeathMode) lays the purse in a normal game and the satchel in Steel
+  Soul (the 26 Steel Soul saves hold only the satchel, the 62 others only the purse). The Map drew
+  both everywhere and called the satchel an upgrade: now one mark, as Progress (js/data.js replaces),
+  the satchel's in a Steel Soul game, the purse's otherwise, its card in Free mode naming Steel Soul's.
+- **The Snare Setter** (D9) lies in Weave_14 and is handed to the Caretaker for Silk and Soul: its
+  card says so (`mapToolGivenUp`), not that a wish lends it; only the Needle Phial is lent.
+- **The Fractured Mask** (D10) lies on the Mottled Skarr's body only once he's dead (Ant_Merchant's
+  «Ant Merchant Dead», antMerchantKilled): tools/gen-how.js WHEN, the Curveclaw's rule. Three Act 2
+  saves with him alive read the shop now, not «found».
+- **A card's area** (D11) is its mark's room's (js/rooms.js areaOf), as the area cards count it; the
+  completionist's WHERE stays Progress's. It moves the Curvesickle and the Warding Bell to the Far
+  Fields, the Longpin to Shellwood, the Compass to Bellhart.
+- **NEEDS takes abilities** (D13): the Threefold Pin lies in a Group of Greymoor_15b that its
+  «Needolin Memory» switches on only once the Needolin is played there. Its card and Progress row say
+  «Needs: Needolin» while the game lacks it.
+- **Acts** (D14, D20): the Ruined Tool is Act 1 (no condition on its pickup; Bilewater through Sinner's
+  Road, the wiki), the Silkshot's own; the Diving Bell Key is Act 3 (BallowGivenKey false in every Act
+  1 and 2 save), and a door a key opens takes its key's Act when every mark of the key has one
+  (Dock_12's door, Act 3; the others keep none).
+- **What the completionist's list lacks** (D15), appended last so no index moves: Dock_01's two
+  rosary strings (RosaryCacheString, new in 1.0.30000: emptied in every 1.0.30000 save that entered the
+  room, absent before; tools/extract-pickups.py's caches now keep each one's point), and Under_20's
+  «Silk Grub Large Cocoon», a tenth Silkeater (Act 2, the Architect's chapel; unbroken in the 25 saves
+  that entered the room). The generator stops if that list changes.
+- **The Skull Tyrant's return** (D26, overturning 11 October): Bonetown's Boss Loader loads
+  bonetown_boss while skullKingKilled is false and skullKingWillInvade or skullKingInvaded is true,
+  outside Act 3. `tools/gen-spots.js BOSS_BACK` adds a boss mark of its own at Bone Bottom (BOSSES'
+  fifth element { of, coming, gone }), had by skullKingKilled; savefile `coming`. With a save it shows
+  while coming or once beaten, crossed in Act 3 if unbeaten (the game clears its coming then: 15 Steel
+  Soul Act 3 saves); in Free mode its card says it may come back. Over the saves: coming in 9 Act 2
+  saves, beaten in 19.
+- **Gourmand** (D33): a pickup's own removedBy flag joins its wish item's check (Dust_Chef's «Return
+  Pickup» goes with gotPickledRoachEgg, which the first egg sets: two Steel Soul saves had it before
+  the wish was done); the Rasher's delivery pin is done by GourmandGivenMeat too.
+- **Pins and rooms** (D34): a map pin falls in the smallest room box within 3 px of it. Last Dive's
+  pin is Abyss_05's now (1 px below its box, it was Abyss_09_top's); the same margin files the
+  Snail Shamans' three pins under Tut_04, the chapel they stand in (1.6 px from its point), and the
+  Mask Maker's delivery under his house, Peak_Mask_Maker. The other pins don't move.
+Checked: npm test, the text audit, check-pack on the 88 saves (all match), and the Map in headless
+Chrome at 1440 and 390, es and en, in Free mode and six saves (early, Act 2 with the Skarr alive and
+dead, Steel Soul before and after the satchel, 100%, Steel Soul Act 3), no console errors.
