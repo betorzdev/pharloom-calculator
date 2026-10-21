@@ -2276,3 +2276,28 @@ each with a persistent flag) stay off: in every save Flexile Spines was done bef
 appear, so it's unverified they count. Checked: npm test, the text audit, the Map and Progress in
 headless Chrome at 1440 and 390, es and en, with three saves (Pilgrim Shawls 7 of 12; Ragpelt 7
 of 25 and Roach Guts 0 of 10; Choir Cloaks 0 of 16) and in Free mode, no console errors.
+
+**Every wish and objective on the Map, audited** (21 October 2026, Albert: «revisar todas las tasks
+para ver si estamos mostrando todo lo necesario en el mapa»; the Hunt wishes whose items drop from
+enemies went to their own task). Each of the 74, against what the Map shows for it (its qitem,
+wspot or goal marks, its Wishwall or giver, a boss card, another layer), left three wishes with
+nothing where they're done: Pain, Anguish and Misery, Final Audience and Hero's Call. No scene
+ends them: read in the game's files with UnityPy, their bosses' corpses do, prefabs outside the
+scenes (Corpse Tormented Trobbio and Corpse Garmond BlackThreaded EndQuest, Corpse Song Knight
+TryEndQuest, once the fight is won and they've spoken). `tools/extract-wishes.py` now reads every
+other bundle for an FSM that ends a quest (TryEndQuest added to the actions) and files it under the
+scene whose enemy leaves that prefab as its corpse (EnemyDeathEffectsRegular corpsePrefab or
+altCorpses): an end marked 'corpse'. `tools/gen-spots.js` puts such a wish where the fight is,
+whatever else may end it (Hero's Call's Memento Pickups in Bellway_08, Coral_33, Coral_35 and
+Coral_43, which Zaza carries along her trail while Garmond is undefeated), and of several rooms in
+the boss's arena (the Second Sentinel's prefab is also its Act 3 resting place, Hang_07's Song Reed
+Scene). The Map folds the three places into their boss's card (js/app-map.js WISH_FIGHT, now looked
+up by scene and boss: Library_13 has Trobbio and Tormented Trobbio). In all 88 saves of the author's
+folder each quest is complete exactly when its boss's flag is set (defeatedTormentedTrobbio,
+defeatedSongChevalierBoss, garmondBlackThreadDefeated). Final Audience's «markers left near
+Songclave» (Song Knight Trail Quest Parent: a Tracking Object and its trails in Cog_Dancers, Hang_06,
+Hang_07, Hang_08, Hang_17b and Song_25) keep nothing in the save: shown while the wish is taken and
+not done, their FSM (the tracking_object template) only sets disablePause. Left out. Confirmed
+covered: Fastest in Pharloom (the three races are all in Sprintmaster_Cave, its giver's room), Ecstasy
+of the End (Flea Games, ended at the festival, where Mooshka offers it), After the Fall (begun by
+the Act 3 intro cutscene in Song_Tower_Destroyed, ended by nothing in a room, no pin in the game).

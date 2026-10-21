@@ -411,6 +411,13 @@
    ],
    [
     "coral_33",
+    "Garmond Black Threaded Fighter",
+    23.74,
+    61.99,
+    "corpse"
+   ],
+   [
+    "coral_33",
     "Memento Pickup",
     34.73,
     60.26
@@ -602,6 +609,22 @@
     8.36
    ]
   ],
+  "Song Knight": [
+   [
+    "hang_07",
+    "Song Knight",
+    81.98,
+    7.96,
+    "corpse"
+   ],
+   [
+    "hang_17b",
+    "Song Knight",
+    44.53,
+    5.92,
+    "corpse"
+   ]
+  ],
   "Soul Snare": [
    [
     "song_enclave",
@@ -632,6 +655,15 @@
     "Boss Scene",
     60.79,
     16.91
+   ]
+  ],
+  "Tormented Trobbio": [
+   [
+    "library_13",
+    "Tormented Trobbio",
+    77.06,
+    16.3,
+    "corpse"
    ]
   ],
   "Wood Witch Curse": [

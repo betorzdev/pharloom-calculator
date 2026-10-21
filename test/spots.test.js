@@ -273,6 +273,26 @@ test('the wishes and the main objectives (TASKS) sit on the map, each with its p
   assert.ok(n.qitem >= 20 && n.wspot >= 25 && n.goal >= 25, JSON.stringify(n));
 });
 
+test('a wish done by a boss\'s fight has its place in that boss\'s arena, which the boss\'s card stands for', () => {
+  /* js/app-map.js WISH_FIGHT folds the place into the boss's card: Pain, Anguish and Misery, Final
+     Audience and Hero's Call are ended by their boss's corpse (tools/extract-wishes.py 'corpse'),
+     Hero's Call in Coral_33 although Zaza's Memento Pickups could end it in three more rooms, and
+     Final Audience in the Hang_17b arena, not the Act 3 resting place that shares the prefab. */
+  const src = require('fs').readFileSync(require('path').join(__dirname, '..', 'js', 'app-map.js'), 'utf8');
+  const FIGHT = Function(`return ${/const WISH_FIGHT = (\{[^;]*\});/.exec(src)[1]}`)();
+  for (const q of ['Pinstress Battle', 'Steel Sentinel', 'Tormented Trobbio', 'Song Knight', 'Garmond Black Threaded']) assert.ok(FIGHT[q], q);
+  for (const [q, foe] of Object.entries(FIGHT)) {
+    const arena = SP.BOSSES.find((b) => b[0] === foe);
+    assert.ok(arena, foe);
+    const at = SP.TASKS.filter((x) => x[0] === 'wspot' && x[1] === q);
+    assert.ok(at.some((x) => x[3].toLowerCase() === arena[1].toLowerCase()), `${q}: a place in ${arena[1]} (${at.map((x) => x[3])})`);
+  }
+  for (const q of ['Tormented Trobbio', 'Song Knight', 'Garmond Black Threaded']) {
+    const at = SP.TASKS.filter((x) => x[1] === q);
+    assert.deepEqual(at.map((x) => [x[0], x[3], x[2]]), [['wspot', SP.BOSSES.find((b) => b[0] === FIGHT[q])[1], ['quest', q]]], q);
+  }
+});
+
 test('every task of «Tareas» has a place on the Map: who gives it, or what it asks for', () => {
   /* js/app-progress.js taskPin (design/78): its Wishwall or who asks (js/quests.js FROM, of the
      quest or a stage before it), else its marks: TASKS by the quest or a stage before it, or the

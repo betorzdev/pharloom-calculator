@@ -550,7 +550,8 @@ leaves those off.
   boss's card. And the Void Masses' cores. The other enemies that don't come back (Rhinogrunds,
   Covetous Pilgrims, Shardillards) are found from their Journal entry, whose pin shows every room
   they're in. A wish done by a boss's fight (Fatal Resolve, the Pinstress on Mount Fay; the end of
-  A Vassal Lost, the Summoned Saviour) is on that boss's card, not a mark of its own. Moorwing, if
+  A Vassal Lost, the Summoned Saviour; Pain, Anguish and Misery, Tormented Trobbio; Final Audience,
+  the Second Sentinel; Hero's Call, Lost Garmond) is on that boss's card, not a mark of its own. Moorwing, if
   you enter Bellhart without beating it, waits by the Greymoor Bellway from Act 2: with a save that
   says so, its mark is there; with none, at both. The Bell Eater is beaten when you win its fight
   (the Beastling Call), not when it first shows; while it waits for you, its mark is at the Bellway

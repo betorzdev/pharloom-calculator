@@ -246,7 +246,8 @@ const WI = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'kb', 'data', '
 const PP = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'kb', 'data', 'game', 'people.json'), 'utf8'));
 const roomOf = (s) => (s && (R.roomOf(s) || {}).scene) || null;
 const endBy = (quest) => {
-  const ends = (WI.ends[quest] || []).filter(([s]) => roomOf(s));
+  // A boss's corpse that ends it (wishes.json 'corpse': Final Audience, Tormented Trobbio) is its fight, on the boss's card: nobody hands it over.
+  const ends = (WI.ends[quest] || []).filter(([s, , , , how]) => roomOf(s) && how !== 'corpse');
   const from = Q.FROM[quest] || {}, taken = [from.board, ...(from.npc || [])].map(roomOf).filter(Boolean);
   if (!ends.length || !taken.length || ends.some(([s]) => taken.includes(roomOf(s)))) return null;
   const [scene, obj] = ends[0];
