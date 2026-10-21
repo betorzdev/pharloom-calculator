@@ -1105,6 +1105,17 @@ for (const x of EXTRAS) {
       }
     }
     const saved = [...new Map(savedOf(x[2]).map((c) => [(c[1] + '|' + c[2]).toLowerCase(), c])).values()];
+    /* A Void Mass kept by the flag its arena sets once won (Dust_11's two, silkFarmAbyssCoresCleared):
+       the arena's own place in the scene says (pickups.json battles; gating.json: Dust_11's «Battle
+       Scene Act3» is under Steel Soul States/Regular, so normal games only. The 19 Steel Soul saves
+       that entered Dust_11 have none of its cores' bools, the 26 others all; the wishes' audit,
+       21-Oct-2026). */
+    const arena = !saved.length && x[0] === 'spawn' && x[2][0] === 'flag' ? (P.battles[x[3].toLowerCase()] || []).find((b) => b[3] === x[2][1]) : null;
+    if (arena && gateOf(x[3], arena[0]).mode) {
+      while (x.length < 5) x.push(null);
+      x[5] = { ...(x[5] || {}), mode: gateOf(x[3], arena[0]).mode };
+      mode++;
+    }
     if (!saved.length || x[0] === 'masked') continue;
     const gs = saved.map(([, s, id]) => gateOf(s, id));
     const extraMore = {};
@@ -1677,7 +1688,7 @@ console.log(`${Object.keys(XY).length} things with their own point in their room
    (tools/extract-wishes.py, the game's own files; design/03-redesign.md, step 6, Albert's choice)
      qitem  what a wish asks for, where it lies (a pickup, the flower that gives it, the Flintbeetle
             that drops it, the Plasmium bud the Needle Phial draws it from, the spots the Silver
-            Bells drop at) or who gives it: done once its
+            Bells drop at), who gives it, or who hosts it (a Flea Game, done by its own test): done once its
             sceneData flag is set, it's held (when it lies in one spot only), or its wish is done
             (a drop spot: its wish only)
      wspot  where a wish is done: the map's own pins for the deliveries and the Steel Sentinel's
@@ -1697,7 +1708,7 @@ const LATER = { 'Citadel Ascent Silk Defeat': ['Black Thread Pt0'] };
    in Bone_03 opens the trapdoor after the Bell Beast (its flag bone03_openedTrapdoor; the two are
    equal in each of the author's 87 saves). */
 const PICKED_BY = { bone03_openedTrapdoorForRockRoller: 'shortcut' };
-const TASKS = [], HUNTS = {};
+const TASKS = [], HUNTS = {}, ASKS = {};
 {
   // The scenes as the game names them (a sceneData flag is kept under that name); one nobody enters
   // by a door keeps the bundle's lower case (js/rooms.js finds its room either way), and no flag.
@@ -1769,6 +1780,19 @@ const TASKS = [], HUNTS = {};
           by: PICKED_BY[f], open: v, foe: N.text('NAME_' + obj.toUpperCase().replace(/\W+/g, '_')) };
       }
       task('qitem', q, check, scene, x, y, icon, name, null, alt);
+    }
+  }
+  /* What a wish asks for that the game tracks by a playerData test alone (tools/extract-wishes.py
+     alts: Ecstasy of the End's three Flea Games, each done once Hornet is its champion, which
+     PlayerData's getter reads off the game's highscore, fleaGames_juggling_highscore > 30): at the
+     host of that game, with the picture and the name the pane «Tareas» counts it by (read on
+     21-Oct-2026; no save of the author's is caught mid-festival: the 16 with the wish done have the
+     three highscores past it, the others none). */
+  for (const [q, xs] of Object.entries(WI.alts || {})) {
+    if (!isWish(q)) fail(`${q}: alts of a quest that isn't a wish`);
+    for (const a of xs) {
+      const [scene, , x, y] = a.at;
+      task('qitem', q, ['any', a.test, ['quest', q]], scene, x, y, art('icons/' + a.icon), N.text(a.name));
     }
   }
   // The map's own pins, on the map by its bench pins (their median offset; the bench pins are the
@@ -1917,6 +1941,43 @@ const TASKS = [], HUNTS = {};
     HUNTS[q] = [ask.save, at.sort((a, b) => b[2] - a[2] || a[1].localeCompare(b[1]) || a[0].localeCompare(b[0]))];
   }
   console.log(`hunts: ${Object.entries(HUNTS).map(([q, [, at]]) => `${q} ${new Set(at.map((x) => x[1])).size} rooms`).join(', ')}`);
+  /* What a wish asks for that the Map marks on another layer (ASKS; the wishes' audit, 21-Oct-2026):
+     its pin opens those marks too while the wish is short of it (js/app-progress.js taskPin). By
+     the target (kb/data/game/wishes.json, tools/extract-wishes.py): Pinmaster's Oil's Pale Oil, the
+     three pieces of the 100% (any one will do: Library_03's, the Great Gourmand's, the Flea
+     Games'); Berry Picking's Mossberries, their own layer; Silk and Soul's Snare Setter and the
+     Alchemist's Needle Phial, their Tools; The Lost Fleas' five fleas (its FleasCollected Target
+     counts every SavedFlea_ bool, Kratt's, Vog's and the giant flea's), the Fleas; Dark Hearts'
+     twelve Black Thread Cores, the Void Masses, whose every core with a bool of its own
+     (wishes.json kills) has to be a mark of that layer. Each { save, n, keys, held }: held, met by
+     n of the thing held (js/savefile.js carried); else by n of its marks had. */
+  const ASK_LAYER = {
+    Pale_Oil: () => CO.PIECES.flatMap((p, i) => (p[0] === 'pale-oil' ? ['piece:' + i] : [])),
+    Mossberry: () => EXTRAS.flatMap((x, i) => (x[0] === 'mossberry' ? ['extra:' + i] : [])),
+    'FleasCollected Target': () => CO.PIECES.flatMap((p, i) => (p[0] === 'flea' ? ['piece:' + i] : [])),
+  };
+  const HELD = new Set(['Pale_Oil', 'Mossberry']);
+  for (const [q, info] of Object.entries(WI.quests)) {
+    if (!isWish(q) && !isWish(Object.keys(Q.CHAIN).find((n) => Q.CHAIN[n].prev === q))) continue;
+    info.targets.forEach((t, j) => {
+      const n = (info.counts || [])[j] || fail(`wishes.json: no count for ${q}'s ${t}: run tools/extract-wishes.py again`);
+      const tool = Object.keys(CO.TOOLS).find((id) => CO.TOOLS[id].includes(t) && AT.tools[id]);
+      let keys = null, held = false;
+      if (tool) { keys = ['tools:' + tool]; held = true; }
+      else if (ASK_LAYER[t]) { keys = ASK_LAYER[t](); held = HELD.has(t); }
+      else if ((WI.kills || {})[t]) {
+        const k = WI.kills[t], of = EXTRAS.map((x, i) => [x, i]).filter(([x]) => x[4] && x[4].key === k.name);
+        const bools = new Set(of.flatMap(([x]) => savedOf(x[2]).map((c) => lower(c[1] + '|' + c[2])))), rooms = new Set(of.map(([x]) => lower(x[3])));
+        const left = k.at.filter(([s, , b]) => !bools.has(lower(s + '|' + b)) && !rooms.has(lower(s)));
+        if (left.length) fail(`${q}: ${left.length} of its ${t}s are no mark of the Map: ${left.map((x) => x[0]).join(', ')}`);
+        keys = of.map(([, i]) => 'extra:' + i);
+      }
+      if (!keys) return;
+      if (!keys.length) fail(`${q} asks for ${t}, whose layer has no marks`);
+      (ASKS[q] = ASKS[q] || []).push({ save: t, n, keys, held });
+    });
+  }
+  console.log(`asks: ${Object.entries(ASKS).map(([q, a]) => `${q} ${a.map((x) => x.keys.length).join('+')}`).join(', ')}`);
 }
 /* The Bell Eater's stations (PLACES): the Bellway of each FastTravelNPCLocation value, as the
    Bellbeast's pins name them (STATION_AT, with the tasks above), at that station's pin. */
@@ -2222,6 +2283,10 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
      HUNTS    a hunt or gather wish whose thing only enemies give while it's on → [the thing's save
               name (its js/quests.js CHAIN asks), [[Journal entry key, scene, how many], ...]]: the
               rooms on the map where those enemies are, the most first (the Map's «Where to hunt»)
+     ASKS     a wish's quest → [{ save, n, keys, held }]: what it asks for that the Map marks on
+              another layer (Pale Oil, Mossberries, a Tool, the Fleas, the Void Masses: those
+              marks' keys), n of it; held when the thing held says it's met (js/savefile.js
+              carried), else n of those marks had. The wish's pin opens them until it's met
      XY       a thing's key ('piece:<i>', 'tools:<id>', '<key>:found', '<key>:<vendor>', 'tools:<id>:<variant>', 'arts:<id>', 'extra:<i>'…, 'person:<id>',
               'board:<scene>', 'bell:<field>', 'task:<i>', 'shakra:<i>', 'shop:<vendor>:<i>', 'giver:<scene>', 'boss:<foe>', 'journal:<entry>', 'gaunt:<id>',
               'everbloom') → its point on the map, in the image's pixels: where
@@ -2247,7 +2312,7 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               entry's enemies freed), and the save's check that it holds
      STEPS    [[TASKS index, …]]: a main objective's steps the game pins on one point, in its order
      GOAL_ACT TASKS index → the first Act that step can be on (its objective's chain)`,
-'spots', [['AT', AT], ['ALSO', ALSO], ['PLACES', PLACES], ['VARIANTS', VARIANTS], ['LEFT', LEFT], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['TASKS', TASKS], ['HUNTS', HUNTS], ['XY', XY], ['SEATS', SEATS], ['GIVER', GIVERS], ['QUEST_GIVER', QUEST_GIVER],
+'spots', [['AT', AT], ['ALSO', ALSO], ['PLACES', PLACES], ['VARIANTS', VARIANTS], ['LEFT', LEFT], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['TASKS', TASKS], ['HUNTS', HUNTS], ['ASKS', ASKS], ['XY', XY], ['SEATS', SEATS], ['GIVER', GIVERS], ['QUEST_GIVER', QUEST_GIVER],
   ['JOURNAL', JOURNAL], ['JOURNAL_ACT3', JOURNAL_ACT3], ['OPENS', OPENS], ['STEPS', STEPS], ['GOAL_ACT', GOAL_ACT]]);
 const kinds = {};
 for (const x of EXTRAS) kinds[x[0]] = (kinds[x[0]] || 0) + 1;

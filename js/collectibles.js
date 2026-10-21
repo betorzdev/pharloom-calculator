@@ -956,7 +956,7 @@
     [
       'wayfarer',
       1,
-      ['any', ['quest', 'Save the Fleas'], ['quest', 'Save the Fleas Pre']],
+      ['quest', 'Save the Fleas'],
       'BONEFOREST',
       { es: 'Las pulgas perdidas', en: 'The Lost Fleas', key: 'QUEST_FLEAS_TITLE' },
       undefined,
