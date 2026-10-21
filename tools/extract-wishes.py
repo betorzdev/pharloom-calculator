@@ -12,7 +12,8 @@ What it reads (read on 11-Oct-2026, patch 1.0.30000):
   scenes_scenes_scenes/*.bundle  in every scene:
       - each CollectableItemPickup of a wish's target (the thing lying there), each PlayMakerFSM
         that collects one (CollectableItemCollect, the Pollip Hearts' flowers) or gives one
-        (SavedItemGet: the Maiden's and the Hermit's Souls), and each PersistentEnemyItemDrop (the
+        (SavedItemGet: the Maiden's and the Hermit's Souls; CollectableItemCollect: the Druid's
+        Mossberry Stew; ObjectCompare of a STANDALONE delivery: the Couriers' Rasher), and each PersistentEnemyItemDrop (the
         Flintbeetles: it names the quest, and drops its target): [scene, component, object, bool, x, y],
         bool the sceneData flag the object keeps (its PersistentBoolItem's ID, else the object's
         name; a PersistentEnemyItemDrop's is "<object>_item_<quest>"), null when it has none; a
@@ -70,6 +71,11 @@ END = {'EndQuest', 'EndQuestV2', 'TryEndQuest', 'TryEndQuestV2'}
 # The actions that offer a quest (as tools/extract-quests.py maps an offer to its scene).
 OFFER = {'QuestYesNo', 'QuestYesNoV2', 'BeginQuest', 'BeginQuestV2', 'CanBeginQuest'}
 GIVE = {'CollectableItemCollect', 'SavedItemGet', 'SavedItemGetV2'}
+# A delivery a wish asks for outside a courier wish (STANDALONE: the Courier's Rasher, the Great
+# Gourmand's) is handed over where an FSM compares it (ObjectCompare): the Couriers' «Couriers Quest
+# Giver» in Bellhart, whose Begin Quest? checks what was bought from their shop (read on 21-Oct-2026).
+STANDALONE = 'DeliveryQuestItemStandalone'
+TARGET_CLASSES = ('CollectableItemBasic', 'CollectableItemStates', 'CollectableItemStack', STANDALONE)
 # What says where an enemy that drops a target is (the Flintbeetles): the bool its death sets, and
 # the bools that take it (or a parent) away.
 SPAWN = {'EnemyDeathEffectsRegular', 'DeactivateIfPlayerdataTrue', 'DeactivateIfPlayerdataFalse'}
@@ -79,9 +85,10 @@ MAX = 128
 # What a wish wants that no target names: the Twisted Bud the Wood Witch takes for Rite of Rebirth
 # (tools/gen-spots.js WISH_OF).
 EXTRA = ['Wood Witch Item']
-# Targets the Map already shows another way, left out: the Mossberries (their own layer), Pale Oil
-# (a piece of the 100%), the Mossberry Stew (the Druid makes it from the berries).
-ELSEWHERE = {'Mossberry', 'Pale_Oil', 'Mossberry Stew'}
+# Targets the Map already shows another way, left out: the Mossberries (their own layer) and Pale
+# Oil (a piece of the 100%). The Mossberry Stew is kept: the Druid hands it over on asking
+# (mosstown_02c's «Moss Creep NPC», Give Ingredient?, CollectableItemCollect), no berries taken.
+ELSEWHERE = {'Mossberry', 'Pale_Oil'}
 # The wish types whose emblem marks a place on the Map (tools/gen-spots.js TASKS: the deliveries,
 # the Steel Sentinel's spots, the Herald's, the rescues and fights). It stops on a missing one.
 EMBLEMS = {'Courier', 'Steel Sentinel', 'Herald', 'Wayfarer'}
@@ -180,7 +187,7 @@ def scene(args):
                         continue
                     if action in END and ref[1] in ('Quest', 'MainQuest'):
                         ends.add(ref[0])
-                    elif action in GIVE and ref[1] not in ('Quest', 'MainQuest', 'SubQuest'):
+                    elif (action in GIVE and ref[1] not in ('Quest', 'MainQuest', 'SubQuest')) or (action == 'ObjectCompare' and ref[1] == STANDALONE):
                         gives.add(ref[0])
                     elif action == CHECK and ref[1] == 'Quest':
                         checks.add(ref[0])
@@ -286,8 +293,10 @@ def scene(args):
         else:
             for q in f[2]:
                 out['ends'].append([q, name, go, *xy])
+            # One that offers a wish too is a person's (the Druid's «Moss Creep NPC»): its object's
+            # bool is theirs, not the thing's (false in every save, the stew given or not).
             for it in f[3]:
-                out['items'].append([it, name, 'PlayMakerFSM', go, flag, *xy])
+                out['items'].append([it, name, 'PlayMakerFSM', go, None if f[6] else flag, *xy])
             for fld in f[4]:
                 out['fields'].append([fld, name, go, *xy])
             for q in f[6]:
@@ -476,7 +485,7 @@ def main(game):
             hit = ref(o, t.get('Counter'))
             if hit:
                 want.append(hit[1]['m_Name'])
-            if hit and hit[0] in ('CollectableItemBasic', 'CollectableItemStates', 'CollectableItemStack'):
+            if hit and hit[0] in TARGET_CLASSES:
                 targets.setdefault(hit[2].assets_file.name.lower(), {})[hit[2].path_id] = (hit[1]['m_Name'], hit[0])
         q = {'main': c == 'MainQuest', 'targets': want}
         if typ:
@@ -487,7 +496,7 @@ def main(game):
     # The targets' own sprites, by name (icon() above kept them by sprite).
     item_icon, item_name = {}, {}
     for (cab, pid), (c, tt, o) in objs.items():
-        if c in ('CollectableItemBasic', 'CollectableItemStates', 'CollectableItemStack') and (tt['m_Name'] in EXTRA or any(tt['m_Name'] in q['targets'] for q in quests.values())):
+        if c in TARGET_CLASSES and (tt['m_Name'] in EXTRA or any(tt['m_Name'] in q['targets'] for q in quests.values())):
             targets.setdefault(cab, {})[pid] = (tt['m_Name'], c)
             s = icon(o, 'icon')
             if s:

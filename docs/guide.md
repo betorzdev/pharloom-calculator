@@ -581,9 +581,10 @@ leaves those off.
   deliveries and the Steel Sentinel's spots where the game's own map pins them, of the Sentinel's
   six only the three your game chose, and only in Steel Soul; the Herald's seven, only the next one
 while the wish is on, as the game shows him one at a time; the rescues and
-  fights, in the room where the game ends the wish); what a wish asks for (the 25 things lying in a
+  fights, in the room where the game ends the wish); what a wish asks for (the 27 things lying in a
   room or given there: the Pollip Hearts, the Flintgems, the Grand Hunts' trophies, the
-  Gourmand's delicacies, the three souls, the Twisted Bud, the Steel Spines, the three Plasmium
+  Gourmand's five delicacies (the Mossberry Stew where the Moss Druid hands it over, the Courier's
+  Rasher where Tipp & Pill sell it, each done once given to his servant), the three souls, the Twisted Bud, the Steel Spines, the three Plasmium
   buds of Alchemist's Assistant in the lower Wormways, each done once the Needle Phial has drawn
   its Plasmium, as the save keeps it; and the fourteen
   spots above and below Bellhart where a Silver Bell may drop, gone once their wish is granted); and the main
