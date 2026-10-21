@@ -41,7 +41,7 @@ the work up reads it first, then the step it's on.
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct; the summary, 16 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html`, `89-your-game-summary-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct; the Silkeater 18 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html`, `91-silkeater-variants.html` |
-| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the road to Act 2 fixed, with the Phantom's way beside it, 16 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html`, `90c-act2-road-variants.html` |
+| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the road to Act 2 fixed, with the Phantom's way beside it, 16 Oct; the Silk and Soul step lighter, 21 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html`, `90c-act2-road-variants.html`, `103-silk-soul-step-variants.html` |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct; their leftovers 16 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html`, `89-map-leftovers-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct; every room of an entry 16 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
@@ -1170,6 +1170,27 @@ thread beside the steps it skips (`.is-beside`) back into the road (`.pg-rt-join
 the steps it skipped crossed out on a dotted thread instead of ticked, dashed while open, dotted while
 not. The guide's two roads share the wider gutter. Gone: the `judge` step and `roadJudge`,
 `pgStepJudge`.
+
+### The Silk and Soul step, lighter (21 October 2026)
+
+Albert: the road to Act 3's first step, «Unlock the wish "Silk and Soul"», had too much text, «feo y
+lioso». Over Save 2 (3/31) it stacked the wish's card, its way onto the Map, the line that all three
+are needed, the three parts, «What's next» and its toggle, then thirteen rows, nine of them «Complete
+the wish "…"», each with who asks, what it asks, what posts it, when it shows up and «What the game
+says». `103-silk-soul-step-variants.html` (kept out of the repo), the site's own render over Save 2
+and `Restore_Points3/restoreData24.dat` (30/31), reshaped live: 1 each row (**A** its name and one
+line, who asks and what, «More» at its end unfolding the rest and the game's words; B the name alone,
+opening; C as it was); 2 the list (**A** under the three parts as heads, a part met its head alone; B
+one list under the parts' line); 3 the top (**A** the card and its way onto the Map on one line, no
+«What's next» title, the toggle on the right; B as it was).
+
+**Decision: A in all three** (21 October 2026), built (`js/app-progress.js`, `css/app.css`):
+`todoHtml()` draws a step of several parts under its heads (`.pg-todo-h`, `partCount()`), its rows
+named bare (`todo()`: no «Complete the wish», no «Get:» there); its rows' how is `foldHtml()`, the lead
+and «More» (`pgFold`, `.pg-fold`) holding what it waits for and the game's words, on every step of the
+road; the list has no «What's next» title (the section is labelled by it), its toggle on the right; a
+step's card with no words of the game is one line (`.pg-says.is-line`). Gone: the parts' line
+(`.pg-rt-parts`) and `pgTodoWish`. The 100% tab's rows keep `howHtml()` and «What the game says».
 
 ## Step 6 · Map
 

@@ -170,6 +170,7 @@ What's read from the installed game (each script's header says how):
 |---|---|---|
 | `tools/extract-map.py` | `assets/map/`, `js/map.js` | The map's pieces and the rules that draw them |
 | `tools/extract-graph.py` | `js/graph.js` | How the rooms connect |
+| `tools/extract-entrances.py` | `kb/data/game/entrances.json` | Where each room's doors are, so what's inside an interior sits at its door on the Map |
 | `tools/extract-battles.py` | | The arenas, and how a save marks each gauntlet cleared |
 | `tools/extract-benches.py` | `js/benches.js` | Which bench each bench room has |
 | `tools/extract-crests.py` | `assets/crests/`, `js/crest-slots.js` | Each Crest's art and where its slots sit |

@@ -436,7 +436,8 @@ test('a Tool sold that lies elsewhere once its seller is gone has that room too,
 });
 
 test('what Act 3 moves has its Act 3 room too, and the save says which: Mossberry no. 3 and the Volatile Flintbeetles\' locket', () => {
-  const moved = Object.entries(SP.ALSO).filter(([, a]) => a[2] && a[2].kind === 'moved');
+  // What Act 3 moves of itself (a foe that carries it, a wish's pickup); who moves it is another test's.
+  const moved = Object.entries(SP.ALSO).filter(([, a]) => a[2] && a[2].kind === 'moved' && !a[2].npc && !a[2].skipped);
   const berry = SP.EXTRAS.findIndex((x) => x[0] === 'mossberry' && x[2][1] === 'bonetownAspidBerryCollected');
   const locket = CO.PIECES.findIndex((p) => p[0] === 'memory-locket' && JSON.stringify(p[2]).includes('"Rock Rollers"'));
   const both = ['extra:' + berry, 'piece:' + locket].sort();
@@ -459,7 +460,7 @@ test('what Act 3 moves has its Act 3 room too, and the save says which: Mossberr
   const base = { silk: 0, silkMax: 9, maxHealth: 5 };
   const quest = (done) => ({ QuestCompletionData: { savedData: [{ Name: 'Rock Rollers', Data: { IsAccepted: true, IsCompleted: done } }] } });
   const picked = { persistentBools: { serializedList: [{ SceneName: 'Bone_10', ID: 'Collectable Item Pickup Locket', Value: true }] } };
-  const mine = (l) => l.filter((k) => !k.startsWith('tools:')).sort();
+  const mine = (l) => l.filter((k) => both.includes(k)).sort();
   const now = (pd, sd) => mine(F.game({ ...base, ...pd }, sd).foundNow);
   // Before Act 3, had or not: their first rooms.
   assert.deepEqual(now({}), []);

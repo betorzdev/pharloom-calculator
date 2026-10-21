@@ -9,18 +9,20 @@
      HOW     { tools, crests, skills, arts: { site id: [way…] }, pieces: { PIECES index: [way…] },
              everbloom: [way…] }. The Tools by their COUNTED group's first id; the pieces those
              that count (Mask Shards, Spool Fragments, Crafting Kit, Tool Pouch, Needle, Silk
-             Hearts). A way is one of:
+             Hearts) and the Vaultkeeper's Melody. A way is one of:
                { kind: 'shop', vendor, price, item, craftmetal?, paleOil?, act?, after?, needs? }
                  price in rosaries; item the ShopItem in js/shop.js SHOP (Plinney's Needle: its
                  cost's name); craftmetal, paleOil what it also takes; act 3 sold only then;
                  after the WISHES indices to be done first; needs the playerData flags it waits on
-               { kind: 'wish', wish, quest, act? }  wish a WISHES index, quest its save name
+               { kind: 'wish', wish, quest, act?, by? }  wish a WISHES index, quest its save name, by
+                 who hands it over in person in another room than the wish is taken in
                { kind: 'boss', foe }  a js/enemies.js FOES id
                { kind: 'found', act?, when? }  lying in a room (from that Act on)
                  when: the save check that says it lies there now (its owner dead), which
                  replaces act when the save says (js/completion.js wayOf)
                { kind: 'craft', craftmetal }  made at a craft table
-               { kind: 'npc', npc }  given for nothing
+               { kind: 'npc', npc, bring? }  given for nothing; bring { name, scene }: what to bring
+                 them first and where it lies
                { kind: 'challenge', npc }  won from the NPC
                { kind: 'fleas', npc, fleas }  Mooshka's, for that many Lost Fleas ('all')
      TRAPS   the ways to lose a point or a wish: curveclaw (lost: the save names hidden and
@@ -50,6 +52,9 @@
     loddie: { es: 'Loddie', en: 'Loddie', key: 'LADYBUG_LARGE_MAIN' },
     lumble: { es: 'Lumble', en: 'Lumble', key: 'DICE_PILGRIM_MAIN' },
     mooshka: { es: 'Mooshka', en: 'Mooshka', key: 'FLEAMASTER_MAIN' },
+    sherma: { es: 'Sherma', en: 'Sherma', key: 'SHERMA_MAIN' },
+    grishkin: { es: 'Grishkin', en: 'Grishkin', key: 'FLEAMEMBER_SHORT_MAIN' },
+    cardinius: { es: 'Cardinius', en: 'Cardinius', key: 'LIBRARIAN_RELIC_MAIN' },
     'forge-daughter': {
       es: 'Hija de la Forja',
       en: 'Forge Daughter',
@@ -89,7 +94,7 @@
           ],
         },
       ],
-      'throwing-ring': [{ kind: 'wish', wish: 29, quest: 'Shakra Final Quest' }],
+      'throwing-ring': [{ kind: 'wish', wish: 29, quest: 'Shakra Final Quest', by: 'shakra' }],
       pimpillo: [{ kind: 'craft', craftmetal: 1 }],
       conchcutter: [{ kind: 'boss', foe: 'raging-conchfly' }],
       silkshot: [
@@ -125,7 +130,7 @@
       'rosary-cannon': [{ kind: 'found' }],
       voltvessels: [{ kind: 'found' }],
       flintslate: [{ kind: 'found' }],
-      'flea-brew': [{ kind: 'wish', wish: 21, quest: 'Save the Fleas' }],
+      'flea-brew': [{ kind: 'npc', npc: 'grishkin' }],
       'plasmium-phial': [{ kind: 'wish', wish: 39, quest: 'Extractor Blue' }],
       'druids-eye': [{ kind: 'wish', wish: 36, quest: 'Mossberry Collection 1' }],
       'magma-bell': [
@@ -183,7 +188,7 @@
       ],
       'wispfire-lantern': [{ kind: 'boss', foe: 'father-of-the-flame' }],
       'egg-of-flealia': [{ kind: 'fleas', npc: 'mooshka', fleas: 'all' }],
-      'pin-badge': [{ kind: 'wish', wish: 32, quest: 'Pinstress Battle' }],
+      'pin-badge': [{ kind: 'wish', wish: 32, quest: 'Pinstress Battle', by: 'pinstress' }],
       compass: [{ kind: 'shop', vendor: 'shakra', price: 70, item: 'Mapper Compass Tool' }],
       'shard-pendant': [{ kind: 'found' }],
       'magnetite-brooch': [
@@ -293,7 +298,7 @@
       '29': [{ kind: 'found' }],
       '30': [{ kind: 'found' }],
       '31': [{ kind: 'found' }],
-      '32': [{ kind: 'wish', wish: 28, quest: 'Save Sherma' }],
+      '32': [{ kind: 'wish', wish: 28, quest: 'Save Sherma', by: 'sherma' }],
       '33': [{ kind: 'found' }],
       '34': [{ kind: 'found' }],
       '35': [{ kind: 'found' }],
@@ -333,6 +338,16 @@
       '111': [{ kind: 'boss', foe: 'bell-beast' }],
       '112': [{ kind: 'boss', foe: 'the-unravelled' }],
       '113': [{ kind: 'boss', foe: 'lace-the-cradle' }],
+      '119': [
+        {
+          kind: 'npc',
+          npc: 'cardinius',
+          bring: {
+            name: { es: 'Cilindro sagrado', en: 'Sacred Cylinder', key: 'INV_NAME_R_PSALM_CYL_MELODY' },
+            scene: 'library_10',
+          },
+        },
+      ],
     },
     everbloom: [{ kind: 'wish', wish: 16, quest: 'Black Thread Pt5 Heart' }],
   };
