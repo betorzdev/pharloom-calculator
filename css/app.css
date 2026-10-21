@@ -1489,14 +1489,96 @@ kbd {
 .pg-pips i.is-promised { border-color: var(--accent); background: color-mix(in oklab, var(--accent) 35%, transparent); }
 .pg-group.is-open > :not(.pg-head) { margin-left: calc(13rem + var(--sp-4)); }
 .pg-group.is-open > :last-child { margin-bottom: var(--sp-4); }
-/* A Tasks group's emblem by its title, the Wishwalls' (design/75, 7 B); an empty one keeps its place. */
+/* A group's emblem by its title; an empty one keeps its place. */
 .pg-title:has(.pg-emb) { display: inline-flex; align-items: center; gap: var(--sp-2); }
 .pg-emb { flex: none; display: grid; place-items: center; width: var(--sp-8); height: var(--sp-8); }
 .pg-emb img { max-width: 100%; max-height: 100%; object-fit: contain; }
-/* Tasks: the pane's own filigree between the main objectives and the wishes (design/80, E), the
-   height of a group's row with its picture centred in it. */
-.pg-spacer { display: grid; place-items: center; padding: var(--sp-4) 0; }
-.pg-spacer img { width: min(100%, calc(var(--sp-16) * 6)); height: auto; opacity: var(--filigree-art); }
+
+/* ── Tasks as the three Wishwalls (design/104-tasks-variants.html and its look, 104b, all A) ──
+   No boxes: the screen's black, each section headed as the game's pane (a centred title over its
+   filigree), the walls side by side lit from their top by their area (as each screen's frame by its
+   tab), a hairline between them; then the people standing over their names. */
+.pg-tasks-view { display: grid; gap: var(--sp-8); padding-top: var(--sp-4); }
+.pg-tasks-sec { display: grid; gap: var(--sp-4); min-width: 0; }
+.pg-tasks-head { display: grid; justify-items: center; gap: var(--sp-1); text-align: center; }
+.pg-tasks-head h3 { margin: 0; font-family: var(--font-display); font-size: var(--fs-lg); font-weight: 400; letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--ink-strong); }
+.pg-tasks-head img { width: min(100%, calc(var(--sp-16) * 5)); height: auto; opacity: var(--filigree-art); }
+.pg-tasks-sec .pg-count { font-size: var(--fs-sm); }
+.pg-tasks-sec .pg-count b { font-family: var(--font-num); font-weight: 600; color: var(--ink-strong); }
+/* The main objective you're on, large with the pane's words; under it the 21 on a line by Act, as
+   the Acts' track over the tabs, the done ones lit and the one you're on ringed. */
+.pg-nows { display: grid; gap: var(--sp-4); width: min(100%, calc(var(--sp-16) * 11)); margin: 0 auto; }
+.pg-now { display: grid; grid-template-columns: var(--sp-12) minmax(0, 1fr) 28px; align-items: center; gap: var(--sp-1) var(--sp-3); }
+/* Its picture as large as the road's card draws a task's (design/79, 2 A: 48 px), not more: the pane's are 64 px at most. */
+.pg-now > img { width: 100%; height: auto; object-fit: contain; filter: drop-shadow(0 0 var(--sp-2) color-mix(in oklab, var(--accent) 22%, transparent)); }
+.pg-now p { margin: 0; }
+.pg-now-act { font-family: var(--font-num); font-size: var(--fs-2xs); letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
+.pg-now-name { font-family: var(--font-display); font-size: var(--fs-lg); color: var(--ink-strong); }
+.pg-now-says { font-size: var(--fs-sm); line-height: 1.45; color: var(--ink-2); }
+.pg-track { display: grid; grid-template-columns: 3fr 7fr 11fr; gap: var(--sp-3); margin: 0; padding: var(--sp-2) 0 0; list-style: none; }
+.pg-track-act { display: grid; gap: var(--sp-1); align-content: start; }
+.pg-track-n { font-family: var(--font-num); font-size: var(--fs-2xs); letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--muted); text-align: center; }
+.pg-track-row { position: relative; display: flex; justify-content: space-around; align-items: center; min-height: 40px; margin: 0; padding: 0; list-style: none; }
+.pg-track-row::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: color-mix(in oklab, var(--filigree) 30%, transparent); }
+.pg-track-row li { position: relative; display: grid; place-items: center; width: 34px; height: 34px; }
+.pg-track-row img { width: 30px; height: 30px; object-fit: contain; opacity: 0.25; filter: grayscale(1); }
+.pg-track-row li.is-done img { opacity: 1; filter: none; }
+.pg-track-row li.is-now { outline: 1px solid var(--accent); outline-offset: 2px; }
+.pg-track-row li.is-now img { opacity: 0.8; filter: none; }
+/* The three walls: each its figure in its town, larger, lit from behind and standing on a pool of
+   its area's light (--area-line, --area-fill: set inline, as Your game's bench card), its town's
+   name over the filigree. Under 1000 px one under another. */
+.pg-walls { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
+.pg-wall { display: grid; gap: var(--sp-2); align-content: start; min-width: 0; padding: var(--sp-2) var(--sp-4) var(--sp-4);
+  background: radial-gradient(ellipse 70% calc(var(--sp-16) * 2.2) at 50% 0, color-mix(in oklab, var(--area-fill) 55%, transparent), transparent); }
+.pg-wall + .pg-wall { border-left: 1px solid color-mix(in oklab, var(--filigree) 12%, transparent); }
+.pg-wall-fig { position: relative; display: grid; justify-items: center; gap: var(--sp-1); padding-bottom: var(--sp-2); text-align: center; }
+.pg-wall-fig::before { content: ""; position: absolute; left: 50%; top: var(--sp-4); width: calc(var(--sp-16) * 3); height: calc(var(--sp-16) * 2); transform: translateX(-50%);
+  background: radial-gradient(closest-side, color-mix(in oklab, var(--area-line) 22%, transparent), transparent); pointer-events: none; }
+.pg-wall-fig > img:first-child { position: relative; height: clamp(calc(var(--sp-16) * 1.4), 22vw, calc(var(--sp-16) * 2.6)); width: auto;
+  filter: drop-shadow(0 var(--sp-2) var(--sp-4) color-mix(in oklab, var(--area-fill) 90%, transparent)); }
+.pg-wall-fig h4 { margin: 0; font-family: var(--font-display); font-size: var(--fs-lg); font-weight: 400; letter-spacing: var(--track-title); color: var(--ink-strong); }
+.pg-wall-fil { width: min(100%, calc(var(--sp-16) * 3.5)); height: auto; opacity: var(--filigree-art); }
+@media (max-width: 1000px) {
+  .pg-walls { grid-template-columns: minmax(0, 1fr); }
+  .pg-wall + .pg-wall { border-left: 0; border-top: 1px solid color-mix(in oklab, var(--filigree) 12%, transparent); padding-top: var(--sp-6); }
+}
+/* A task left, with air: no rule between lines, the pane's picture larger; a promised one lit
+   faintly, what it asks counted as the pane counts it (its slim bar, or a dot each for twelve or
+   fewer: assets/icons/tasks, tools/extract-wish-icons.py). */
+.pg-tasks .pg-item { grid-template-columns: var(--sp-3) 44px minmax(0, 1fr) 28px; gap: 0 var(--sp-2); padding: var(--sp-2) var(--sp-1); border-bottom: 0; }
+.pg-tasks .pg-art { width: 44px; height: 44px; }
+.pg-tasks .pg-art img { max-width: 42px; max-height: 42px; }
+.pg-tasks .pg-name { white-space: normal; }
+.pg-tasks .pg-how { line-height: 1.4; }
+.pg-tasks .pg-item.is-promised { background: linear-gradient(to right, var(--veil), transparent 70%); }
+.pg-meters { display: grid; gap: var(--sp-1); margin-top: var(--sp-half); }
+.pg-meter { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: var(--sp-half) var(--sp-2); font-size: var(--fs-xs); color: var(--ink-2); }
+.pg-meter-n { font-family: var(--font-num); font-variant-numeric: tabular-nums; color: var(--muted); }
+.pg-meter-n b { font-weight: 600; color: var(--ink-strong); }
+.pg-bar { grid-column: 1 / -1; position: relative; height: 10px; border-image: url("../assets/icons/tasks/bar.webp") 0 12 fill / 0 6px stretch; }
+.pg-bar i { position: absolute; inset: -1px auto -1px -2px; min-width: 14px; border-image: url("../assets/icons/tasks/bar-full.webp") 0 14 fill / 0 7px stretch; }
+.pg-dots { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 2px; }
+.pg-dots i { width: 11px; height: 11px; background: url("../assets/icons/tasks/dot-empty.webp") center / 8px no-repeat; }
+.pg-dots i.is-on { background: url("../assets/icons/tasks/dot.webp") center / contain no-repeat; }
+/* What comes later and what's done, as rows of pictures under the lines. */
+.pg-tasks-l { margin: var(--sp-2) 0 var(--sp-1); font-family: var(--font-num); font-size: var(--fs-2xs); letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--muted); }
+.pg-pics { display: flex; flex-wrap: wrap; gap: var(--sp-1); margin: 0; padding: 0; list-style: none; }
+.pg-pics img { display: block; width: 30px; height: 30px; object-fit: contain; opacity: 0.3; }
+.pg-pics .is-done img { opacity: 0.75; }
+/* Who asks in person: a gallery, each standing large over their name, flowing in columns with no holes. */
+.pg-people { columns: 4 calc(var(--sp-16) * 3.75); column-gap: var(--sp-6); }
+.pg-person { display: grid; gap: var(--sp-2); margin-bottom: var(--sp-6); break-inside: avoid; }
+.pg-person-who { display: grid; justify-items: center; gap: var(--sp-half); padding-bottom: var(--sp-2); text-align: center; border-bottom: 1px solid color-mix(in oklab, var(--filigree) 12%, transparent); }
+.pg-person-who > img, .pg-person-none { width: 88px; height: 88px; object-fit: contain; }
+.pg-person-none { display: grid; place-items: center; }
+.pg-person-none i { width: var(--sp-3); height: var(--sp-3); transform: rotate(45deg); border: 1px solid var(--line-ctl); }
+.pg-person-who h4 { margin: var(--sp-1) 0 0; font-family: var(--font-display); font-size: var(--fs-md); font-weight: 400; color: var(--ink-strong); }
+.pg-person-who p { margin: 0; font-size: var(--fs-xs); color: var(--muted); }
+@media (max-width: 700px) {
+  .pg-track { grid-template-columns: minmax(0, 1fr); }
+  .pg-track-row { flex-wrap: wrap; justify-content: center; }
+}
 /* The 100% and Tasks (design/75, 2 B): an open group's rows take the whole width, and on a wide
    screen each thing is one line: its picture, its name, how to get it, where, the pin. */
 .pg-groups.is-wide .pg-group.is-open > :not(.pg-head) { margin-left: 0; }

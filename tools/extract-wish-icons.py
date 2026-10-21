@@ -17,6 +17,13 @@ What it writes (read on 11-Oct-2026 and 14-Oct-2026, patch 1.0.30000):
       Snare's, the Black Thread's…; in inventory.spriteatlas or in mainquests.bundle itself), named by
       its m_Name, the name the save uses, in lower case with dashes («Citadel Seeker» →
       main-citadel-seeker.webp). js/app-progress.js TASK_ICON picks them.
+  assets/icons/wishes/wall-<town>.webp  each Wishwall as it stands in its town, the Tasks tab's three
+      boards (design/104b, 2 A): Bone Bottom's bonebottom_quest_board (bonetown.spriteatlas), Bellhart's
+      belltown_quest_board_larger (bell.spriteatlas), the Songclave's sc_wishwall (tents.spriteatlas).
+      Pilgrim's Rest has a fourth board in the game's files (pilgrimsrestquestboard), with no wish.
+  assets/icons/tasks/bar.webp, bar-full.webp, dot.webp, dot-empty.webp  how the pane counts what a
+      wish asks for (quest_dot_bar, quest_dot_bar_full, quest_dot_full, quest_dot_empty in
+      inventory.spriteatlas; design/104b, 3 A): a slim bar, or a dot each for a few.
   assets/icons/tasks/spacer.webp  the pane's own filigree between the main objectives and the wishes
       (its Quest List / Quests / Current Heading / Spacer, completed_quests_spacer in
       inventory.spriteatlas; design/80, E): the pane gives the main objectives no heading and no
@@ -36,6 +43,12 @@ TYPES = {
     'TYPE_STEELSENTINEL_TITLE': 'steel',
 }
 BOARD = 'Hornet_Inv_pane_icons_0002_wish'
+# The Wishwalls in their towns: town → (atlas, sprite).
+WALLS = {'bonebottom': ('bonetown', 'bonebottom_quest_board'), 'bellhart': ('bell', 'belltown_quest_board_larger'),
+         'songclave': ('tents', 'sc_wishwall')}
+# The pane's counters: sprite → file in assets/icons/tasks.
+METERS = {'quest_dot_bar': 'bar', 'quest_dot_bar_full': 'bar-full', 'quest_dot_full': 'dot', 'quest_dot_empty': 'dot-empty'}
+WALL_MAX = 384
 SPACER = 'completed_quests_spacer'
 MAX, PANE_MAX = 128, 64
 
@@ -107,8 +120,16 @@ def main(game):
         if 'spacer' not in panes and name == SPACER:
             save(s.read().image, os.path.join(pane, 'spacer.webp'), 1024, True)
             panes.append('spacer')
-    missing += [v for v in [*TYPES.values(), 'board'] if v not in done]
-    missing += ['tasks/spacer'] if 'spacer' not in panes else []
+        if name in METERS and METERS[name] not in panes:
+            save(s.read().image, os.path.join(pane, METERS[name] + '.webp'), 1024, True)
+            panes.append(METERS[name])
+    for town, (atlas, sprite) in WALLS.items():
+        found = [o for o in sprites_of(UnityPy.load(os.path.join(atlases, atlas + '.spriteatlas.bundle'))).values() if o.read().m_Name == sprite]
+        if found:
+            save(found[0].read().image, os.path.join(out, 'wall-' + town + '.webp'), WALL_MAX)
+            done.append('wall-' + town)
+    missing += [v for v in [*TYPES.values(), 'board', *('wall-' + w for w in WALLS)] if v not in done]
+    missing += ['tasks/' + v for v in ['spacer', *METERS.values()] if v not in panes]
     print(f'{len(done)} pictures → assets/icons/wishes/, {len(panes)} → assets/icons/tasks/'
           + (f'; not found: {", ".join(missing)}' if missing else ''))
     if missing:
