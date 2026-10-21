@@ -2701,10 +2701,12 @@ html:has(.mp.is-full) { overflow: hidden; }
 .pg-onmap { justify-self: start; font-size: var(--fs-xs); }
 
 /* Where a search result is: a ring that swells and fades. */
-.mp-ping { position: absolute; z-index: 3; width: var(--sp-12); height: var(--sp-12); margin: calc(var(--sp-6) * -1) 0 0 calc(var(--sp-6) * -1); border: 2px solid var(--accent); border-radius: 50%; opacity: 0; pointer-events: none; }
-@keyframes mp-ping { 0% { opacity: 1; transform: scale(0.4); } 100% { opacity: 0; transform: scale(1.6); } }
-.mp-ping.is-on { animation: mp-ping 1.2s var(--ease-fade) 3; }
-@media (prefers-reduced-motion: reduce) { .mp-ping.is-on { opacity: 1; } }
+/* The ring on what another screen, the search or a focus opened the Map on (js/app-map.js ringOn):
+   in each mark's own <g>, in pins (1.1: a 48 px ring round a 22 px pin), its line 2 px at any zoom. */
+.mp-arrive { fill: none; stroke: var(--accent); stroke-width: 2px; vector-effect: non-scaling-stroke; opacity: 0; pointer-events: none;
+  transform-box: fill-box; transform-origin: center; animation: mp-arrive 1.2s var(--ease-fade) 3; }
+@keyframes mp-arrive { 0% { opacity: 1; transform: scale(0.4); } 100% { opacity: 0; transform: scale(1.6); } }
+@media (prefers-reduced-motion: reduce) { .mp-arrive { animation: none; opacity: 1; } }
 @media (max-width: 899px) {
   .mp-find { width: auto; right: calc(var(--ctl-sm) * 3 + var(--sp-3) * 2); }   /* the zoom's three buttons (no large map here) */
 }
@@ -2717,6 +2719,8 @@ html:has(.mp.is-full) { overflow: hidden; }
   /* The focus's line keeps the room the search leaves for the zoom outside its frame, its name over ‹ i of n ›. */
   .mp-find.mp-focus { flex-wrap: wrap; width: auto; margin-right: calc(var(--ctl-sm) * 4 + var(--sp-3) * 2); padding: var(--sp-1) var(--sp-1) var(--sp-1) var(--sp-3); }
   .mp-focus-t { flex-basis: 100%; }
+  .mp-find.mp-focus.is-one { flex-wrap: nowrap; }   /* one thing: its name and its × on one line */
+  .mp-focus.is-one .mp-focus-t { flex-basis: auto; }
   /* Whole, the map is small: smaller marks, so they don't cover it. */
   .mp-view:not(.is-zoomed) { --mp-s: 16px; }
   .mp-tools { top: 0; }
@@ -2762,15 +2766,15 @@ img.mp-fit { transform: translate(calc(var(--fx) * 100%), calc(var(--fy) * 100%)
 .mp-mk.is-off { opacity: 0.4; }
 /* What's had, with "Show Completed" (design/77, 3 A): dimmed, a tick in --good on its upper right;
    whole again on hover or picked. */
-.mp-mk.is-had > :not(.mp-tick) { opacity: var(--mp-had-dim); }
-.mp-mk.is-had:is(:hover, :focus-visible, .is-sel) > * { opacity: 1; }
+.mp-mk.is-had > :not(.mp-tick, .mp-arrive) { opacity: var(--mp-had-dim); }
+.mp-mk.is-had:is(:hover, :focus-visible, .is-sel) > :not(.mp-arrive) { opacity: 1; }
 .mp-tick { pointer-events: none; }
 .mp-tick circle { fill: var(--scene-bg); stroke: var(--good); stroke-width: 0.05; }
 .mp-tick path { fill: none; stroke: var(--good); stroke-width: 0.06; stroke-linecap: round; stroke-linejoin: round; }
 /* What the game took away (design/86, 1 A), shown with what's done: dimmed the same, a cross in
    --muted where the tick goes. */
-.mp-mk.is-lost > :not(.mp-cross) { opacity: var(--mp-had-dim); }
-.mp-mk.is-lost:is(:hover, :focus-visible, .is-sel) > * { opacity: 1; }
+.mp-mk.is-lost > :not(.mp-cross, .mp-arrive) { opacity: var(--mp-had-dim); }
+.mp-mk.is-lost:is(:hover, :focus-visible, .is-sel) > :not(.mp-arrive) { opacity: 1; }
 .mp-cross { pointer-events: none; }
 .mp-cross circle { fill: var(--scene-bg); stroke: var(--muted); stroke-width: 0.05; }
 .mp-cross path { fill: none; stroke: var(--muted); stroke-width: 0.06; stroke-linecap: round; }
