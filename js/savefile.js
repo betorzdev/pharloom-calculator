@@ -453,6 +453,10 @@
       lostExtras: SP.EXTRAS.map((x, i) => (x[5] && x[5].lost && !has(x[2]) && has(x[5].lost) ? i : -1)).filter((i) => i >= 0),
       evaSlots: evaSlots(crests),
       bosses: SP.BOSSES.filter((b) => has(b[2])).map((b) => b[0]),
+      // A boss that may come back (js/spots.js BOSSES' more.coming: the Skull Tyrant to Bone Bottom)
+      // the game has on its way; comingRead as foundRead.
+      coming: SP.BOSSES.filter((b) => b[4] && b[4].coming && has(b[4].coming)).map((b) => b[0]),
+      comingRead: true,
       tasks: SP.TASKS.map((x, i) => (has(x[2]) ? i : -1)).filter((i) => i >= 0),
       // Of the places one thing may be in (TASKS' alt: a Flintbeetle's two, the Bellbeast's stations
       // while its wish is on, FastTravelNPCLocation), those it isn't in this game.
@@ -570,7 +574,7 @@
     needle: 0, kit: 0, pouch: 0, everbloom: false, purse: {}, silkeaters: 0, rosaries: 0, shards: 0, farsight: false, hasJournal: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', rested: true, marker: '', area: '', build: {},
     quests: [], taken: [], carried: {}, bellshrines: [], bells: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
     bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [],
-    visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], foundNow: [], foundRead: false, placesNow: [], placesRead: false, left: [], leftRead: false, lostExtras: [], bosses: [],
+    visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], foundNow: [], foundRead: false, placesNow: [], placesRead: false, left: [], leftRead: false, lostExtras: [], bosses: [], coming: [], comingRead: false,
     tasks: [], elsewhere: [], steelSpots: [], peopleVars: {}, evaSlots: 0, silkshot: '', cocoonRosaries: 0, opens: [], opensRead: false });
   const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
   // Each field only if it has the type an empty game gives it.
@@ -609,6 +613,7 @@
     // A fight's opening by its key; a slot kept before says nothing (opensRead false: the card then says what opens it only).
     out.opens = out.opens.filter((k) => typeof k === 'string' && SP.OPENS && SP.OPENS[k]);
     out.bosses = out.bosses.filter((id) => SP.BOSSES.some((b) => b[0] === id));
+    out.coming = out.coming.filter((id) => SP.BOSSES.some((b) => b[0] === id && b[4] && b[4].coming));
     // The gauntlets go by their ids, the wiki's subpages: one the list no longer has is dropped.
     out.gauntlets = out.gauntlets.filter((id) => GA.GAUNTLETS.some((x) => x.id === id));
     /* A slot kept before the save checks (design/03-redesign.md, step 6) has no word of the flags and

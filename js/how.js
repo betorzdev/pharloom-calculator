@@ -32,8 +32,8 @@
      KEYS    key id → { save, name, locks? }: the collectable the game's locks take, its name,
              and the scenes of its doors (js/quests.js LOCKS; the Slab's have none there)
      NEEDS   { tools, crests, skills, arts: { id: need }, pieces: { PIECES index: need } }: the
-             keys a thing lies behind, need { keys: [key id], or? }, or an ability (ARTS id) that
-             goes round them */
+             keys a thing lies behind, need { keys: [key id], arts?, or? }: the abilities (ARTS
+             ids) it waits on too, or an ability that goes round the keys */
 (() => {
   'use strict';
   const SS = globalThis.SS || (globalThis.SS = {});
@@ -151,7 +151,7 @@
           price: 260,
           item: 'Ant Merchant Fractured Mask Tool',
         },
-        { kind: 'found', act: 2 },
+        { kind: 'found', act: 2, when: ['flag', 'antMerchantKilled'] },
       ],
       multibinder: [{ kind: 'shop', vendor: 'frey', price: 880, item: 'Bellhart Multibind', after: [22] }],
       weavelight: [{ kind: 'boss', foe: 'moss-mother-weavenest-atla' }],
@@ -438,6 +438,7 @@
       'rosary-cannon': { keys: ['simple'] },
       flintslate: { keys: ['simple'], or: 'clawline' },
       'injector-band': { keys: ['white'] },
+      'threefold-pin': { keys: [], arts: ['needolin'] },
     },
     crests: { architect: { keys: ['architect'] } },
     skills: { 'rune-rage': { keys: ['indolent', 'heretic', 'apostate'] } },

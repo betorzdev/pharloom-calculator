@@ -46,8 +46,8 @@
      KEYS    key id → { save, name, locks? }: the key's collectable (its save name), its game
              name, and the scenes of its doors (js/quests.js LOCKS, read from the game)
      NEEDS   { tools, crests, skills, arts: { id: need }, pieces: { index: need } }, need
-             { keys: [key id], or? }: the keys a thing lies behind, or an ability that goes round
-             them (an ARTS id) */
+             { keys: [key id], arts?, or? }: the keys a thing lies behind, the abilities it waits
+             on (ARTS ids), or an ability that goes round the keys (an ARTS id) */
 'use strict';
 const fs = require('fs');
 const path = require('path');
@@ -122,11 +122,16 @@ const PICKUP = /^(Heart Piece|Silk Spool)( \(\d+\))?$/;
      magnetite-dice  Coral_33's «Dice Game Corpse», the pickup by Lumble's body, is what its
                      Control FSM switches on when dicePilgrimState is 1 (0 he plays, 2 departed),
                      under the room's «Normal World», which Act 3 (blackThreadWorld) switches off:
-                     then Grindle sells it. */
+                     then Grindle sells it.
+     fractured-mask  Ant_Merchant's «Ant Merchant Dead», with the pickup on the Skarr's body, is
+                     what «Ant Merchant States» (TestGameObjectActivator antMerchantKilled) switches
+                     on instead of the Skarr and his shop: found there (read on 21-Oct-2026; three
+                     Act 2 saves have him alive and the mask unbought). */
 const WHEN = {
   curveclaw: ['all', ['flag', 'antMerchantKilled'], ['any', ['bool', 'Ant_21', 'ant_item_string'], ['not', ['tool', 'Curve Claws']]]],
   'weighted-belt': ['flag', 'mortKeptWeightedAnklet'],
   'magnetite-dice': ['all', ['min', 'dicePilgrimState', 1], ['not', ['min', 'dicePilgrimState', 2]], ['not', ['flag', 'blackThreadWorld']]],
+  'fractured-mask': ['flag', 'antMerchantKilled'],
 };
 /* A Tool its wish names as reward but somebody else hands over (Albert's choice, 21-Oct-2026, from
    the Map's audit): the Flea Brew, the reward of The Lost Fleas (Save the Fleas' rewardItem), is
@@ -144,7 +149,7 @@ const HAND = {
     silkshot: [{ kind: 'craft', craftmetal: 1 }],  // Silkshot: the Weaver variant, repaired at Mount Fay's table
     'delvers-drill': [{ kind: 'found' }], cogfly: [{ kind: 'craft', craftmetal: 1 }], 'rosary-cannon': [{ kind: 'found' }],
     voltvessels: [{ kind: 'found' }], flintslate: [{ kind: 'found' }], 'warding-bell': [{ kind: 'found' }],
-    'fractured-mask': [{ kind: 'found', act: 2 }],  // Tools: beside the Mottled Skarr's corpse
+    'fractured-mask': [{ kind: 'found', act: 2, when: WHEN['fractured-mask'] }],  // Tools: beside the Mottled Skarr's corpse
     'injector-band': [{ kind: 'found' }], 'memory-crystal': [{ kind: 'found' }], 'quick-sling': [{ kind: 'found' }],
     'wreath-of-purity': [{ kind: 'found' }], 'egg-of-flealia': [{ kind: 'fleas', npc: 'mooshka', fleas: 'all' }],
     'shard-pendant': [{ kind: 'found' }], 'weighted-belt': [{ kind: 'found', act: 3, when: WHEN['weighted-belt'] }],  // Tools: next to Mort's body
@@ -198,6 +203,11 @@ const BEHIND = [
   // First Sinner (all three keys).
   { thing: ['pieces', ['bool', 'Slab_17', 'Heart Piece']], keys: ['apostate'] },
   { thing: ['skills', 'rune-rage'], keys: ['indolent', 'heretic', 'apostate'] },
+  /* And what lies behind an ability, read in the game's scenes (arts: ARTS ids). The Threefold Pin:
+     Greymoor_15b's pickup sits in a Group that «Memory Orb Challenge/Needolin Memory» switches off
+     at Init and on only in its Complete state, once the Needolin has been played there (read on
+     21-Oct-2026). */
+  { thing: ['tools', 'threefold-pin'], keys: [], arts: ['needolin'] },
 ];
 
 // The completionist's categories (as tools/gen-collectibles.js reads them): only to cross-check.
@@ -397,7 +407,9 @@ for (const b of BEHIND) {
   b.keys.forEach((k) => { if (!KEYS[k]) fail(`BEHIND: no key ${k}`); });
   if (b.lock && !(KEYS[b.keys[b.keys.length - 1]].locks || []).includes(b.lock)) fail(`BEHIND: the game has no ${KEYS[b.keys[b.keys.length - 1]].save} lock in ${b.lock}`);
   if (b.or && !D.ARTS.some((x) => x.id === b.or)) fail(`BEHIND: no ability ${b.or}`);
-  NEEDS[cat][id] = { keys: b.keys, ...(b.or ? { or: b.or } : {}) };
+  (b.arts || []).forEach((a) => { if (!D.ARTS.some((x) => x.id === a)) fail(`BEHIND: no ability ${a}`); });
+  if (!b.keys.length && !(b.arts || []).length) fail(`BEHIND: ${cat} ${JSON.stringify(at)} needs nothing`);
+  NEEDS[cat][id] = { keys: b.keys, ...(b.arts ? { arts: b.arts } : {}), ...(b.or ? { or: b.or } : {}) };
 }
 
 /* The Everbloom. */
@@ -531,8 +543,8 @@ write(OUT, `js/how.js: how to get each thing of the 100%, as data (no prose): it
      KEYS    key id → { save, name, locks? }: the collectable the game's locks take, its name,
              and the scenes of its doors (js/quests.js LOCKS; the Slab's have none there)
      NEEDS   { tools, crests, skills, arts: { id: need }, pieces: { PIECES index: need } }: the
-             keys a thing lies behind, need { keys: [key id], or? }, or an ability (ARTS id) that
-             goes round them`, 'how', [['NPCS', NPCS], ['HOW', HOW], ['TRAPS', TRAPS], ['KEYS', KEYS], ['NEEDS', NEEDS]]);
+             keys a thing lies behind, need { keys: [key id], arts?, or? }: the abilities (ARTS
+             ids) it waits on too, or an ability that goes round the keys`, 'how', [['NPCS', NPCS], ['HOW', HOW], ['TRAPS', TRAPS], ['KEYS', KEYS], ['NEEDS', NEEDS]]);
 
 const n = Object.values(HOW).reduce((a, m) => a + (Array.isArray(m) ? 1 : Object.keys(m).length), 0);
 console.log(`${n} things with their ways → js/how.js (${checked} of the completionist's prices checked against the game's)`);

@@ -312,6 +312,12 @@
     mapArtOut:      { es: 'No cuenta para el 100 %', en: 'It doesn\'t count for the 100%' },
     mapArtsIn:      { es: 'Del 100 %', en: 'Of the 100%' },
     mapToolLent:    { es: 'Te la presta un deseo y te la quita al cumplirlo: no cuenta para el 100 %', en: 'A wish lends it and takes it back once done: it doesn\'t count for the 100%' },
+    // A Tool found and then handed over for good (the Snare Setter, for the wish Silk and Soul).
+    mapToolGivenUp: { es: 'Está aquí; se entrega para {wish} y ya no vuelve: no cuenta para el 100 %', en: 'It lies here; it\'s given up for {wish} and doesn\'t come back: it doesn\'t count for the 100%' },
+    // A Tool another lies in place of in Steel Soul (the Shell Satchel for the Dead Bug's Purse), in Free mode.
+    // A boss that may come back to a place (the Skull Tyrant to Bone Bottom), its card in Free mode.
+    mapBossBack:    { es: 'Puede volver a {area}', en: 'It may come back to {area}' },
+    mapSteelInstead: { es: 'En {mode}, aquí está {tool} en su lugar', en: 'In {mode}, {tool} lies here instead' },
     /* A Tool sold that lies in another room once its seller is gone (js/spots.js ALSO): that room's
        mark, with no save and with one that has it there. */
     mapAlsoIf:      { es: 'Aquí si {npc} muere antes de que se lo compres', en: 'Here if {npc} dies before you buy it' },

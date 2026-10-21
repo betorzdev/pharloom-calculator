@@ -404,7 +404,10 @@ test('the keys a thing of the 100% lies behind, and the two NPCs whose names the
   assert.ok(CP.SKILLS.includes('rune-rage') && H.NEEDS.skills['rune-rage'].keys.length === 3);
   const heart = CO.PIECES.findIndex((p) => JSON.stringify(p[2]) === JSON.stringify(['visited', 'Memory_Silk_Heart_WardBoss']));
   assert.deepEqual(H.NEEDS.pieces[heart].keys, ['white', 'surgeon']);
-  assert.equal(needs.length, 9);
+  assert.equal(needs.length, 10);
+  // And an ability: the Threefold Pin lies where the Needolin's memory in Greymoor_15b brings it.
+  assert.deepEqual(H.NEEDS.tools['threefold-pin'], { keys: [], arts: ['needolin'] });
+  for (const m of Object.values(H.NEEDS)) for (const n of Object.values(m)) (n.arts || []).forEach((a) => assert.ok(D.ARTS.some((x) => x.id === a), a));
   // The Spanish puts the title's other half under _SUB: «Hija de la Forja», «Skarr Moteado».
   assert.deepEqual([H.NPCS['forge-daughter'].es, H.NPCS['forge-daughter'].en], ['Hija de la Forja', 'Forge Daughter']);
   assert.deepEqual([H.NPCS['mottled-skarr'].es, H.NPCS['mottled-skarr'].en], ['Skarr Moteado', 'Mottled Skarr']);

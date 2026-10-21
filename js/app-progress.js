@@ -48,7 +48,10 @@
   let marking = false;
   function needText(need) {
     if (!need || (need.or && cur && cur.arts.includes(need.or))) return '';
-    const keys = need.keys.map((k) => pick(HW.KEYS[k].name)).join(', ');
+    // An ability it waits on (the Needolin for the Threefold Pin) only while the game lacks it.
+    const arts = (need.arts || []).filter((id) => !(cur && (cur.arts || []).includes(id))).map((id) => pick(D.ARTS.find((x) => x.id === id).name));
+    const keys = [...need.keys.map((k) => pick(HW.KEYS[k].name)), ...arts].join(', ');
+    if (!keys) return '';
     return need.or ? t('howNeedsOr', { keys, alt: pick(D.ARTS.find((x) => x.id === need.or).name) }) : t('howNeeds', { keys });
   }
   /* The way shown is js/completion.js wayOf's, for the game on screen (Free mode's marks: none, the

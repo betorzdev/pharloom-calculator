@@ -211,6 +211,9 @@
   const ONE = { lift: 'mapLift', 'silk-cocoon': 'mapCocoon', bead: 'mapBead', masked: 'mapHidden' };
   // The Tools outside the 100% (js/collectibles.js TOOLS, none a COUNTED group's first).
   const OTHER_TOOLS = Object.keys(CO.TOOLS).filter((id) => !CO.COUNTED.some((ids) => ids[0] === id));
+  /* A Tool outside the 100% found and handed over for good, not lent: the Snare Setter, lying in
+     Weavenest Atla (Weave_14), which the Caretaker takes for Silk and Soul (its wish, js/quests.js). */
+  const GIVEN_UP = { 'snare-setter': 'Soul Snare' };
   const SHAKRA_MAPS = SP.EXTRAS.filter((x) => x[0] === 'map' && x[5] && x[5].shop === 'shakra');
   const silkNote = () => t('mapSilkwallNote', { skill: pick(D.SKILLS.find((s) => s.id === 'silkspear').name) });
   function layersOn() {
@@ -489,15 +492,25 @@
     });
     for (const ids of CO.COUNTED) {
       const id = ids[0], tool = D.TOOLS.find((x) => x.id === id), w = CO.WHERE.tools[id] || [];
+      /* The Tool Steel Soul has instead (js/data.js replaces: the Shell Satchel for the Dead Bug's
+         Purse, Crawl_01's «Tool Conditions» by permadeathMode), as Progress: in a Steel Soul game
+         the mark is that one; in Free mode the other's, its card naming Steel Soul's. */
+      const instead = ids.map((x) => D.TOOLS.find((y) => y.id === x)).find((x) => x && x.replaces);
+      const shown = instead && own && (App.gameMeta() || {}).steel ? instead : tool;
       withAlso(add, { key: 'tools:' + id, layer: 'tools-' + tool.color, scene: SP.AT.tools[id], act: w[0], area: w[1], got: !!g && ids.some((x) => g.tools.includes(x)),
-        name: pick(tool.name), draw: (s, ti, k, c) => dot('tools', `assets/icons/tools/${id}.webp`, s, ti, k, c) }, own);
+        name: pick(shown.name), noteAfter: instead && !own ? t('mapSteelInstead', { mode: t('steelSoul'), tool: pick(instead.name) }) : undefined,
+        draw: (s, ti, k, c) => dot('tools', `assets/icons/tools/${shown.id}.webp`, s, ti, k, c) }, own);
     }
-    // The six outside the 100%: a Tool's upgrade, or one a wish lends and takes back.
+    /* Those outside the 100%: a Tool's upgrade, the one a wish lends and takes back (the Needle
+       Phial), the one found and given up for a wish (the Snare Setter, for Silk and Soul). One
+       Steel Soul has instead of another is that one's mark (above). */
     for (const id of OTHER_TOOLS) {
       const tool = D.TOOLS.find((x) => x.id === id), w = CO.WHERE.tools[id] || [], of = CO.COUNTED.find((ids) => ids.includes(id));
-      // One a wish lent and took back was found: it shows found (savefile gaveBack).
+      if (tool.replaces) continue;
+      // One a wish lent and took back, or one given up, was found: it shows found (savefile gaveBack).
+      const up = GIVEN_UP[id] && QU.CHAIN[GIVEN_UP[id]];
       add({ key: 'tools:' + id, layer: 'tools-other', scene: SP.AT.tools[id], act: w[0], area: w[1], got: !!g && (g.tools.includes(id) || (!of && g.gaveBack.includes(id))),
-        name: pick(tool.name), note: of ? t('mapToolUpgrade', { tool: pick(D.TOOLS.find((x) => x.id === of[0]).name) }) : t('mapToolLent'),
+        name: pick(tool.name), note: of ? t('mapToolUpgrade', { tool: pick(D.TOOLS.find((x) => x.id === of[0]).name) }) : up ? t('mapToolGivenUp', { wish: pick(up.name) }) : t('mapToolLent'),
         draw: (s, ti, k, c) => dot('tools', `assets/icons/tools/${id}.webp`, s, ti, k, c) });
     }
     // An ability outside the 100% (the two cloaks; js/completion.js ARTS) is in a layer of its own.
@@ -545,10 +558,16 @@
     // Steel Soul's own (the Summoned Saviour, its fight and its Journal entry) only in Steel Soul;
     // with no save, all of it, as a guide.
     const steelGame = !own || !!(App.gameMeta() || {}).steel;
-    for (const [foe, scene, , act] of SP.BOSSES) {
-      const f = FOE.get(foe), e = bookOfFoe(foe);
+    for (const [foe, scene, , act, more] of SP.BOSSES) {
+      // A boss that may come back (more: the Skull Tyrant to Bone Bottom) is the foe it is (more.of).
+      const of = (more && more.of) || foe, f = FOE.get(of), e = bookOfFoe(of);
       if (e && e.steel && !steelGame) continue;
-      withAlso(add, { key: 'boss:' + foe, layer: 'boss', scene, act, got: !!g && g.bosses.includes(foe), name: f ? pick(f.name) : foe, foe, entry: e && e.id, gauntlets: fightsOf.get(foe),
+      /* With a save, only while the game has it on its way (savefile coming) or once beaten, and in
+         Act 3 crossed if unbeaten («No longer there»: the game no longer loads it, and clears its
+         coming). A slot kept before says nothing yet: shown. */
+      if (more && more.coming && own && own.comingRead && !own.coming.includes(foe) && !g.bosses.includes(foe) && !goneAct3(own)) continue;
+      withAlso(add, { key: 'boss:' + foe, layer: 'boss', scene, act, got: !!g && g.bosses.includes(foe), name: f ? pick(f.name) : foe, foe: of, entry: e && e.id, gauntlets: fightsOf.get(foe),
+        lost: more && more.gone === 'act3' ? goneAct3(own) : null, note: more && more.coming && !own ? t('mapBossBack', { area: areaName(R.areaOf(scene)) }) : undefined,
         draw: (s, ti, k, c) => badge('boss', portrait(e && e.id) || GLYPH.boss, s, ti, k, c) }, own);
     }
     for (const [field, scene, own] of SP.BELLS) {
@@ -1535,7 +1554,8 @@
     if (!m) return '';
     art = m.draw('', '', '', '');
     name = m.name;
-    const area = m.area || R.areaOf(m.scene);
+    // The area of the room the mark is in, as the area cards count it (the Progress tab keeps its own, js/collectibles.js WHERE).
+    const area = R.areaOf(m.scene) || m.area;
     where = line([areaName(area), m.act ? t('saveAct', { n: m.act }) : '', m.sub]);
     const kind = key.split(':')[0];
     if (kind === 'piece') {
@@ -1555,12 +1575,12 @@
       where = line([areaName(area), m.layer === 'ventrica' ? t('mapPlace_ventrica') : '']);
     } else if (kind === 'gaunt') {
       const x = m.gauntlet, n = x.waves.length;
-      where = line([areaName(x.area), t(n === 1 ? 'ftWaves1' : 'ftWaves', { n: num(n) })]);
+      where = line([areaName(area), t(n === 1 ? 'ftWaves1' : 'ftWaves', { n: num(n) })]);
       note = then(x.reward ? t('ftReward') + ': ' + pick(x.reward) : '', opensNote(key));
       if (App.VIEWS.includes('fight')) acts = btn('mapFight', x.id, t('mapFight'));
     } else if (kind === 'boss') {
       if (g) acts = state(t(m.got ? 'mapBeaten' : 'mapNotBeaten'));
-      note = m.note || m.noteAfter || '';   // where it waits now (js/spots.js ALSO, PLACES)
+      note = m.note || m.noteAfter || '';   // where it waits now (js/spots.js ALSO, PLACES), or where it may come back to
       // Its gauntlets, if its fight is one (or several): their waves, their reward, each on Fight.
       const xs = m.gauntlets || [], n = xs.reduce((k, x) => k + x.waves.length, 0), reward = xs.map((x) => x.reward).find(Boolean);
       if (xs.length) where = line([areaName(area), m.act ? t('saveAct', { n: m.act }) : '', t(n === 1 ? 'ftWaves1' : 'ftWaves', { n: num(n) })]);
@@ -1786,7 +1806,7 @@
       // What the map can show: in a save, only what's missing (whatever its layer or the filters), and what's had with "Show Completed".
       if (FINE.has(m.layer) || m.layer === 'bench' || m.layer === 'beast' || (OWN_ONLY.has(m.layer) && !own) || (closed(m, g) && !prefs.mapHad)) continue;
       // One result per name, layer and area (Shakra's many spots in one area are one).
-      const area = areaName(m.area || R.areaOf(m.scene));
+      const area = areaName(R.areaOf(m.scene) || m.area);
       const id = m.name + '|' + m.layer + '|' + area;
       if (seen.has(id)) continue;
       seen.add(id);
