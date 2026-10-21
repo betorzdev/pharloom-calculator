@@ -940,31 +940,46 @@ completion, and what each is for is here, not on the page:
 - the 49 enemy gauntlets, named as Combat names them.
 
 **Tasks** («Tareas», the game's pane), the third tab (its card: the pause menu's Wishes tab and how
-many are done): the main objectives and the wishes on the boards by type (Wayfarer, Gather, Donate,
-Hunt, Grand Hunt, Delivery…), 74 in all. They don't count for completion. Each type's group carries
-the large emblem the Wishwalls show for it; the main objectives have none, as in the game, and the
-pane's own filigree parts them from the wishes. Each task carries the picture the game's pane draws by it:
-a wish its type's, a main objective its own (the Citadel's, the Bellshrines', the Snare's, the
-Black Thread's…). Each with the game's own name, its Act and where (a wish the pane files under no
-area, the area it's taken in), across the whole width as in the 100%. In Act 2, the ten wishes Act
-3 requires are in the road's tab instead. The one only Steel Soul has, and the one only Classic has, show only in a
-save of that mode, and both in Free mode, as the Journal and the Map show them. A task done also shows in "Since the previous save".
+many are done): the 21 main objectives and the 53 wishes, 74 in all, laid out as where you take
+them. They don't count for completion. Each section is headed as the game's pane heads its own: a
+title over its filigree, with how many are done.
+- **Main objectives**: the one you're on (those of your Act still open, two at most; in Free mode
+  the first not marked), large, with its picture, its Act, the pane's line for it and its pin; under
+  it all 21 on a line by Act, as the Acts' track at the top of Progress, the done ones lit and the
+  one you're on ringed.
+- **Wishwalls**: the game's three, side by side (one under another on a narrower screen): Bone
+  Bottom's, Bellhart's and the Songclave's, each headed by its figure as it stands in its town, lit
+  by its area's colour, with the town's name and its count. On each, the wishes it posts (33: Bone
+  Bottom 8, Bellhart 15, the Songclave 10; a wish a board sends you on to someone else counts as the
+  board's, and the Lost Fleas are on Bone Bottom's though Mooshka offers them too).
+- **Who makes a wish**: the 20 wishes asked for in person, under whoever asks, each standing over
+  their name and their area (their figure from the Map; Greyroot has none), in the order you meet
+  them: the Couriers' seven deliveries, the Alchemist's two, Mister Mushroom's at his tablet…
+In each wall and under each person, what's left as lines: the picture the game's pane draws by it
+(a wish its type's emblem), the game's own name, who asks for it (the line the pane writes under
+its title: «Frey of Bellhart») and the lists' round pin to the Map. Then what comes in a later Act
+than yours, faded, and what's done («Completed», as the pane says), each as a row of pictures (a
+picture's name shows on hovering it). Every wish is on its wall, the ten Act 3 requires too, though
+the road's tab lists them as well. The one only Steel Soul has, and the one only Classic has, show
+only in a save of that mode, and both in Free mode, as the Journal and the Map show them. A task done
+also shows in "Since the previous save".
 Each task not done carries the lists' round pin to the Map, to where it stands now: before you take
 it, who gives it (its Wishwall, or whoever asks); once taken, what's still to do of it (what it asks
 you to bring, where it's done), and when nothing is, back to whoever gives it. A main objective goes
 to the game's own pin for it (the melodies and the Old Hearts to where each lies). Without a save
 the pin goes to who gives it, or else to its marks. One mark opens the Map on it; several open the
-Map with only them (‹ 1 of n ›, the nearest to your bench first). A task with no mark keeps the
-pin's empty place, and a task done has none.
-In a save, a wish you've promised (the game's «Wish Promised») goes first in its group, under
-«Promised», its mark the hollow diamond lit and its pip in the group's row half lit. In place of how
-to get it, what it asks with how much of each you carry («Fine Pin 10/12», the rosaries, the shell
-shards or the Journal's entries for a donation or Nuu's), what you already have dimmed; once you
-have it all, the diamond fills and the line is the game's own for handing it in («Turn in the Fine
-Pins to Songclave's wishwall…»). A delivery is ready as soon as you take it: you carry it. A wish
-whose first step you've taken (a board's notice that sends you to someone) is promised with nothing
-counted yet. The main objectives keep to the road.
-In a save it shows what's missing, or everything with a tick where you have it; without a save,
+Map with only them (‹ 1 of n ›, the nearest to your bench first).
+In a save, a wish you've promised (the game's «Wish Promised») goes first on its wall or under its
+person, lit faintly, its mark the hollow diamond. In place of who asks, what it asks with how much
+of each you carry, counted as the game's pane counts it: «Fine Pin 10/12» over a dot each when it
+asks for twelve or fewer, else over the pane's slim bar (the rosaries, the shell shards or the
+Journal's entries for a donation or Nuu's); a single thing asked has its count alone. Once you have
+it all, the diamond fills and the line is the game's own for handing it in («Turn in the Fine Pins
+to Songclave's wishwall…»). A delivery is ready as soon as you take it: you carry it. A wish whose
+first step you've taken (a board's notice that sends you to someone) is promised with nothing
+counted yet, and a promised wish is never «later», whatever its Act.
+
+The 100% tab, in a save, shows what's missing, or everything with a tick where you have it; without a save,
 the whole list, as a guide. Which piece you have is read from the save one by one, and on the
 92 real saves it agrees with the game's own counters (masks, spools, the three upgrade ladders,
 the Silk Hearts).
@@ -1050,8 +1065,10 @@ texts and names are © Team Cherry; they're used here only to show the game's ow
 - **The wishes' emblems**: the large emblem of each type of wish and the pause menu's Wishes tab,
   extracted from the installed game's files by `tools/extract-wish-icons.py`
   (`assets/icons/wishes/`), for the road to the next Act in Progress; and with them the pictures
-  the pause menu's «Tasks» draws by each wish and main objective, and its filigree under the main
-  objectives (`assets/icons/tasks/`), for the Tasks tab.
+  the pause menu's «Tasks» draws by each wish and main objective, its filigree and how it counts
+  what a wish asks for (its slim bar and its dots, `assets/icons/tasks/`), and the three Wishwalls
+  as they stand in Bone Bottom, Bellhart and the Songclave (`assets/icons/wishes/wall-*.webp`), for
+  the Tasks tab.
 - **Fonts**: Cinzel, Spectral and Patrick Hand SC, under the
   [SIL Open Font License 1.1](../assets/fonts/OFL.txt).
 - **Code**: MIT ([`LICENSE`](../LICENSE)). It covers only the code, not any of the above.
@@ -1080,7 +1097,7 @@ The visit counter is [Footworn](https://github.com/betorzdev/footworn) (`track()
 Cloudflare Worker in Western Europe. It sets no cookies, keeps no IP, and stores one row per visit
 with nothing that names you: the page, referrer host, browser and system families, screen width,
 language, country and the site's events (`screen` with `view` and `lang`, `lang`, `error` with
-`part`, `msg` (the first 64 characters of what went wrong) and `at` (the script and line), `sister` with `to` (the other site's id), `support` with `at` (`header`, `footer` or `about`: which donation link was clicked), and the plain ones: `share`, `save-import`, `save-sync`...). The owner sees them as daily
+`part`, `msg` (the first 64 characters of what went wrong) and `at` (the script and line), `sister` with `to` (the other site's id), `support` with `at` (`header`, `footer` or `about`: which donation link was clicked), and the plain ones: `share`, `save-import`, `save-sync`...). With a real save loaded (never in Free mode) every event also carries `pct` (the completion as the game shows it, a whole number) and `act` (the save's Act, 1 to 3). The owner sees them as daily
 counts and, for today only, one by one, rounded (the minute, phone/tablet/desktop); its own
 record of what it stores is at footworn.betorzdev.workers.dev/privacy. That fits the AEPD's exemption for audience measurement ("Guía uso de
 cookies para herramientas de medición de audiencia", January 2024), whose one condition that
