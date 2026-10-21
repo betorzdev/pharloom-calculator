@@ -41,7 +41,7 @@ the work up reads it first, then the step it's on.
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct; the summary, 16 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html`, `89-your-game-summary-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct; the Silkeater 18 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html`, `91-silkeater-variants.html` |
-| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the road to Act 2 fixed, with the Phantom's way beside it, 16 Oct; the Silk and Soul step lighter, 21 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html`, `90c-act2-road-variants.html`, `103-silk-soul-step-variants.html` |
+| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the road to Act 2 fixed, with the Phantom's way beside it, 16 Oct; the Silk and Soul step lighter, 21 Oct; Tasks as the three Wishwalls 21 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html`, `90c-act2-road-variants.html`, `103-silk-soul-step-variants.html`, `104-tasks-variants.html`, `104b-tasks-look-variants.html` |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct; their leftovers 16 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html`, `89-map-leftovers-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct; every room of an entry 16 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
@@ -829,7 +829,8 @@ Built (`js/app-progress.js`, `css/app.css`):
 - The wishes' pictures are the game's: each type's large emblem and the Wishes tab, read from its
   files by `tools/extract-wish-icons.py` (QuestType `largeIcon` in `wish.spriteatlas`). The steps'
   are the map's quest medallions, the Journal's portraits and the benches.
-- Tasks leaves out the ten wishes Act 3 requires while they're in the road's tab.
+- Tasks leaves out the ten wishes Act 3 requires while they're in the road's tab (until 21 October
+  2026: the three Wishwalls, below, show every wish on its wall).
 
 Round 3, the rings (`33-road-rings-variants.html`, 11 October 2026). Albert: the rings are pretty
 but don't read: what each counts, and what's missing for the next Act. Over Save 2 (Act 2 at 15%,
@@ -1191,6 +1192,51 @@ and «More» (`pgFold`, `.pg-fold`) holding what it waits for and the game's wor
 road; the list has no «What's next» title (the section is labelled by it), its toggle on the right; a
 step's card with no words of the game is one line (`.pg-says.is-line`). Gone: the parts' line
 (`.pg-rt-parts`) and `pgTodoWish`. The 100% tab's rows keep `howHtml()` and «What the game says».
+
+### Tasks as the three Wishwalls (21 October 2026)
+
+Albert: Tasks is useful but muddled and unattractive; what if it were the game's three boards, and
+what isn't on a board shown some other way? Explore more. The tab was twelve folded groups by type
+of wish with pips: the type says nothing of where to go. From the game's files: `js/quests.js` FROM
+posts 33 of the 53 wishes on a Wishwall (Bone Bottom 8, Bellhart 15, the Songclave 10; a board
+that sends you on to someone counts as the board's), the other 20 are asked in person (the Couriers'
+seven deliveries, the Alchemist's two…; Fleatopia's at Mister Mushroom's tablet, GIVER null), and
+the 21 main objectives. The questsystem also has a fourth board, Pilgrim's Rest's, with no wish. The
+walls' own figures are sprites (`bonebottom_quest_board` in bonetown, `belltown_quest_board_larger`
+in bell, `sc_wishwall` in tents), and the Wishwall screen's backing and filigree are in quest_ui.
+`104-tasks-variants.html` (kept out of the repo), the real site captured over four games (Act 1, 2
+with nine promised, 3, Free mode), its panel replaced: 1 the shape (**A** the three walls side by
+side and then who asks in person, B by state: promised, to take, done; C one wall at a time, picked
+by its figure, as the game's screen; D as it was); 2 a wall's head (**A** its figure in town, B the
+game's Wishwall screen, C a plain head); 3 a wish on it (**C** what's left as lines, what's done as
+emblems; A emblems with a card on tapping; B all lines); 4 those asked in person (**A** a card per
+person with their figure; B one list; C under their town's wall); 5 the main objectives (**A** the
+one you're on and a thread of all 21; B one more board; C left to the road).
+
+**Decision: 1 A, 2 A, 3 C, 4 A, 5 A** (21 October 2026). Albert: the idea, yes; the look could be
+better. A second round on the look alone, `104b-tasks-look-variants.html`: 1 the wall's frame (**A**
+no box, the screen's black lit from its top in its area's colour, a hairline between walls, each
+section headed as the pane, a centred title over its filigree; B the game's Wishwall screen, its
+backing and filigree; C the box); 2 the figure (**A** larger, lit from behind, on a pool of its light;
+B white, as the pause menu's pictures; C as before); 3 the lines (**A** air, no rules, larger
+pictures, what a promised wish asks counted with the pane's own slim bar or dots; B as before; C a
+small plate each); 4 the people (**A** a gallery, each standing over their name, no boxes, in columns
+with no holes; B the cards packed; C a row of figures, one picked); 5 the main objectives (**A** the
+one you're on as a title, the 21 on a line by Act as the Acts' track; B as before).
+
+**Decision: A in all five** (21 October 2026), and every wish on its wall, the ten Act 3 requires
+too, though the road lists them (round 1, 5 had left them out of Tasks: the walls would count less
+than the game's). Built (`js/app-progress.js`, `css/app.css`, `tools/extract-wish-icons.py`):
+`tasks()` draws `mainHtml()` (`.pg-nows`, `.pg-track`), the walls (`WALLS`, `wishSource()`,
+`.pg-walls`, `.pg-wall`, lit by `--area-line` / `--area-fill` as Your game's card, the Songclave
+unmeasured on the spotlight's bone) and the people (`giverOf()`, `NO_FIGURE`, `NOBODY`,
+`.pg-people` in CSS columns); `taskList()` the lines (`taskRow()`, `wishMeter()`: dots up to
+`METER_DOTS`, else the bar; one thing asked, its count alone) and the rows of pictures (`pgTasksLater`,
+`pgTasksDone` the pane's «Completados»). The walls and the pane's bar and dots are extracted
+(`assets/icons/wishes/wall-*.webp`, `assets/icons/tasks/bar*.webp`, `dot*.webp`). Gone from Tasks:
+the type groups and their pips, the «What's missing · Everything» and «By Act · Nearest first»
+toggles (the 100% tab keeps them), `.pg-spacer`, `pgTasksCollect`. test/spots.test.js checks every
+wish is on one of the three walls or asked by someone named with a figure.
 
 ## Step 6 · Map
 

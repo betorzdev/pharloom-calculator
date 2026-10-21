@@ -765,7 +765,10 @@
     pgOtherArts:    { es: 'Otras habilidades', en: 'Other abilities' },
     pgTasks:        { es: 'Tareas', en: 'Tasks' },   // PANE_QUESTS
     pgTasksMain:    { es: 'Objetivos principales', en: 'Main objectives' },
-    pgTasksCollect: { es: 'Colección', en: 'Collect' },
+    // Tasks as the three Wishwalls (design/104): their head, and the pictures under each wall's lines.
+    pgTasksWalls:   { es: 'Muros de deseos', en: 'Wishwalls' },   // QUESTBOARD_TITLE, the three of them
+    pgTasksLater:   { es: 'Más adelante', en: 'Later' },
+    pgTasksDone:    { es: 'Completados', en: 'Completed' },   // UI_TITLE_QUESTS_COMPLETE
     // A wish promised (design/81): its state as the game shows it, and the head the promised go first under.
     pgPromised:     { es: 'Deseo prometido', en: 'Wish Promised' },   // WISH_PROMISED
     pgPromisedHead: { es: 'Prometidos', en: 'Promised' },   // no word of the game's for them together
