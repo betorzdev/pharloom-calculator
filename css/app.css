@@ -1357,6 +1357,17 @@ kbd {
 .pg-says-art img { width: 100%; height: 100%; object-fit: contain; }
 .pg-says-art.is-dim img { filter: var(--missing-soft); opacity: var(--missing-soft-opacity); }
 .pg-says-map { margin-top: var(--sp-2); font-size: var(--fs-sm); }
+/* A road's row (design/103, 1 A): «More» closes its line and unfolds what it waits for and the
+   game's words under it. */
+.pg-fold-btn { display: inline-flex; align-items: center; gap: var(--sp-1); min-height: 0; font-size: var(--fs-xs); }
+.pg-fold { display: grid; gap: var(--sp-1); margin-top: var(--sp-1); padding-left: var(--sp-3); border-left: 1px solid var(--line-ctl); font-size: var(--fs-xs); color: var(--ink-2); }
+.pg-fold[hidden] { display: none; }
+.pg-fold .pg-says-q { margin: 0; padding: 0; border: 0; }
+/* A step's card with no words of the game (design/103, 3 A): its picture, name and the Map's way on one line. */
+.pg-says.is-line { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--sp-1) var(--sp-4); padding-block: var(--sp-2); }
+.pg-says.is-line .pg-says-art { width: var(--sp-8); height: var(--sp-8); }
+.pg-says.is-line .pg-says-k { margin: 0; }
+.pg-says.is-line .pg-says-map { margin-top: 0; }
 /* A row's own words (4 A), folded. */
 .pg-says-row { display: block; }
 .pg-says-btn { min-height: 0; font-size: var(--fs-xs); }
@@ -1422,7 +1433,7 @@ kbd {
 .pg-opts li.is-got .ic { width: 10px; height: 10px; color: var(--ink-2); }
 /* The one list's toggle under its title, and a done row: the number's diamond, dimmed, with the tick
    (design/82, 1 A). */
-.pg-todo .pg-seg { display: flex; margin-bottom: var(--sp-3); }
+.pg-todo .pg-seg { display: flex; justify-content: flex-end; margin-bottom: var(--sp-2); }
 .pg-num.is-done { border-color: var(--line-ctl); color: var(--ink-2); }
 .pg-num.is-done .ic { transform: rotate(-45deg); width: 10px; height: 10px; }
 /* How the 100% splits (design/75-progress-100-variants.html, 1 A; js/app-progress.js splitBar):
@@ -1612,13 +1623,14 @@ kbd {
 .pg-rt-body { padding: var(--sp-2) 0 var(--sp-6); }
 .pg-rt-body .pg-todo { margin-top: var(--sp-4); }
 .pg-rt-body .pg-lead { margin: var(--sp-4) 0 var(--sp-2); }
-/* A step of several parts (design/84): each part on one line, its picture, its name and its count. */
-.pg-rt-parts { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-2) var(--sp-6); margin: 0; padding: 0; list-style: none; }
-.pg-rt-parts li { display: flex; align-items: center; gap: var(--sp-2); }
-.pg-rt-parts img { width: var(--sp-8); height: var(--sp-8); object-fit: contain; }
 .pg-rt-pk { font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; color: var(--label); }
-.pg-rt-parts .is-done .pg-count b { color: var(--good); }
-.pg-rt-parts .pg-mark { color: var(--good); }
+/* A step of several parts (design/103, 2 A): each part heads its rows, its picture, its name and its
+   count on the right, ticked when met. */
+.pg-todo-h { display: flex; align-items: center; gap: var(--sp-2); margin: var(--sp-6) 0 0; padding-bottom: var(--sp-2); border-bottom: 1px solid color-mix(in oklab, var(--filigree) 22%, transparent); font-weight: 400; }
+.pg-todo-h:first-of-type { margin-top: 0; }
+.pg-todo-h img { width: var(--sp-8); height: var(--sp-8); object-fit: contain; }
+.pg-todo-h .pg-count { margin-left: auto; }
+.pg-todo-h.is-done .pg-count b, .pg-todo-h .pg-mark { color: var(--good); }
 .pg-rt-end .pg-rt-h { padding: var(--sp-2) 0 var(--sp-2) calc(var(--sp-12) + var(--sp-3)); min-height: calc(var(--sp-12) + var(--sp-4)); display: grid; align-content: center; }
 .pg-rt-end .pg-rt-name { font-size: var(--fs-lg); }
 @media (max-width: 640px) {
