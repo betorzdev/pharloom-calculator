@@ -572,6 +572,39 @@ test('the Silkshot has its three repairs, each where the game takes the Ruined T
   assert.equal(F.game(base).silkshot, '');
 });
 
+test('the hunt wishes whose thing only enemies give: their Journal rooms on the map, and the save says how many', () => {
+  require('../js/journal.js');
+  require('../js/journal-rooms.js');
+  const J = globalThis.SS.journal, JR = globalThis.SS.journalRooms;
+  // The seven the game's files give (tools/extract-hunts.py); Broodfeast's organs come from any enemy a Tool kills: none.
+  assert.deepEqual(Object.keys(SP.HUNTS).sort(), ['Brolly Get', 'Crow Feathers', 'Extractor Blue Worms', 'Fine Pins', 'Pilgrim Rags', 'Roach Killing', 'Song Pilgrim Cloaks']);
+  for (const [q, [item, at]] of Object.entries(SP.HUNTS)) {
+    const w = CO.WISHES.find((x) => x[2][0] === 'quest' && x[2][1] === q);
+    assert.ok(w && ['hunt', 'gather'].includes(w[0]), `${q} is a hunt or gather wish`);
+    assert.ok(Q.CHAIN[q].asks.some((a) => a.kind === 'item' && a.save === item), `${q} asks for ${item}`);
+    // No mark of its own: the Map focuses the enemies' rooms, which the Journal has.
+    assert.ok(!SP.TASKS.some((x) => x[0] === 'qitem' && x[1] === q), `${q} has no item marks`);
+    for (const [key, scene, n] of at) {
+      assert.ok(J.BOOK.some((e) => e.key === key), key);
+      assert.ok(onMap(scene), `${q}: ${scene}`);
+      assert.ok((JR[key] || []).some(([s]) => s === scene), `${key} isn't in ${scene} for the Journal`);
+      assert.ok(n > 0);
+    }
+  }
+  // The pilgrims' twelve entries in 29 rooms; the Hokers' two rooms of the Far Fields.
+  assert.equal(new Set(SP.HUNTS['Pilgrim Rags'][1].map(([k]) => k)).size, 12);
+  assert.equal(new Set(SP.HUNTS['Pilgrim Rags'][1].map(([, s]) => s)).size, 29);
+  assert.deepEqual([...new Set(SP.HUNTS['Brolly Get'][1].map(([, s]) => s))].sort(), ['Bone_East_14', 'Bone_East_14b']);
+  // How many Hornet has: the thing held (the quest's CompletedCount is the same in every open hunt
+  // of the author's 88 saves), kept through a slot.
+  const base = { silk: 0, silkMax: 9, maxHealth: 5,
+    QuestCompletionData: { savedData: [{ Name: 'Pilgrim Rags', Data: { IsAccepted: true, IsCompleted: false, CompletedCount: 7 } }] },
+    Collectables: { savedData: [{ Name: 'Pilgrim Rag', Data: { Amount: 7 } }] } };
+  const g = F.gameOf(F.toSnapshot(base));
+  assert.deepEqual(g.taken, ['Pilgrim Rags']);
+  assert.equal(g.carried['Pilgrim Rag'], 7);
+});
+
 test('each objective pin is filed under the room it falls in, within 3 px of its box (Last Dive\'s is Abyss_05)', () => {
   const M = globalThis.SS.map;
   SP.TASKS.forEach((x, i) => {

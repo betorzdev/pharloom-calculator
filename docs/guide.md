@@ -597,6 +597,14 @@ while the wish is on, as the game shows him one at a time; the rescues and
   shortcut is shut, in Bone_06 once it's open (the game reads it when the beetle appears); its
   card says so, and with a save only the place your game has it in shows (where its gem was picked
   up, else by the shortcut), both in Free mode. Off at first.
+  The hunts whose things only enemies give while the wish is taken (Garb of the Pilgrims,
+  Flexile Spines, Crawbug Clearing, Roach Guts, Fine Pins, Cloaks of the Choir and Advanced
+  Alchemy) have no marks: the card of their Wishwall or of whoever asks has «Where to hunt: …»
+  for each one still open, which shows only the rooms where those enemies are, one Journal
+  portrait per room, the room with the most first, stepped with ‹ ›. Each room's card says what
+  the enemy gives there and for which wish, and with the wish taken how many you have of how many
+  («You have 7 of 12»). In Progress, a hunt taken and still short has its pin open those rooms,
+  the nearest first. Broodfeast's organs come from any enemy a Tool kills, so it has none.
 - **Secrets**, off at first: the rosary and shell shard caches (not the four ant strings and the
   Deep Docks chest that only hold an item: that item has its own mark), the breakable walls (the
   one-way ones are among the shortcuts; Bone_12's two cell doors, struck open with no key, among

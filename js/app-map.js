@@ -1263,6 +1263,27 @@
   /* A Journal entry's rooms (the 'beast' marks), the most first, from its pin in the Journal
      (design/84, A); one room is a focus of one. */
   App.mapBeastKeys = (id) => all().list.filter((m) => m.layer === 'beast' && m.entry === id).map((m) => m.key);
+  /* A hunt's grounds (design/103, 1 A): the wishes whose thing only enemies give while they're on
+     (js/spots.js HUNTS) have no mark; «Where to hunt» focuses the Journal's rooms of those enemies,
+     one portrait per room (the entry with the most there), the room with the most first. */
+  const HUNTS = SP.HUNTS || {};
+  App.mapHuntKeys = (quest) => {
+    const at = (HUNTS[quest] || [])[1] || [], list = all().list, room = new Map(), total = new Map();
+    for (const [key, scene, n] of at) {
+      const e = J.BOOK.find((x) => x.key === key), k = e && 'beast:' + e.id + ':' + lower(scene);
+      if (!k || !list.some((m) => m.key === k)) continue;
+      if (!room.has(lower(scene))) room.set(lower(scene), k);
+      total.set(lower(scene), (total.get(lower(scene)) || 0) + n);
+    }
+    return [...room].sort((a, b) => total.get(b[0]) - total.get(a[0])).map(([, k]) => k);
+  };
+  App.mapHunt = (quest) => {
+    const keys = App.mapHuntKeys(quest);
+    if (!keys.length || !QU.CHAIN[quest]) return;
+    focusSet = { keys, name: t('mapHuntFocus', { wish: pick(QU.CHAIN[quest].name) }), i: keys.length > 1 ? -1 : 0, fit: true };
+    pick1(keys.length > 1 ? '' : keys[0]);
+    if (prefs.view === 'map') render(); else App.go('map');
+  };
   App.mapBeast = (id) => {
     const keys = App.mapBeastKeys(id), e = BOOK.get(id);
     if (!keys.length || !e) return;
@@ -1512,6 +1533,9 @@
       const open = [...new Set(quests.filter((q) => !wishDone(g, q)).map((q) => wishOf(q)))].map((i) => pick(CO.WISHES[i][4]));
       return open.length ? t(g ? 'mapWishesLeft' : 'mapWishes', { list: listOf(open) }) : t('mapWishesNone');
     };
+    // The hunts still open among the wishes asked here: a way to each one's grounds (design/103, 1 A).
+    const huntBtns = (quests) => [...new Set(quests)].filter((q) => HUNTS[q] && !wishDone(g, q) && App.mapHuntKeys(q).length)
+      .map((q) => btn('mapHunt', q, t('mapHuntGo', { wish: pick(QU.CHAIN[q].name) }))).join('');
     // Two sentences of a card's note, one after the other.
     const then = (a, b) => (a && b ? a + (/[.!?)]$/.test(a) ? ' ' : '. ') + b : a || b);
     /* What the game waits for before it puts this fight there (js/spots.js OPENS: a wish taken, a
@@ -1615,9 +1639,10 @@
       }
       // Where they are now (js/spots.js ALSO: Plinney, gone from Bellhart in Act 3).
       if (m.note) note = note ? m.note + '. ' + note : m.note;
-      if (m.quests) note = note ? note + (/[.!?]$/.test(note) ? ' ' : '. ') + wishesNote(m.quests) : wishesNote(m.quests);
+      if (m.quests) { note = then(note, wishesNote(m.quests)); acts += huntBtns(m.quests); }
     } else if (kind === 'board' || kind === 'giver') {
       note = wishesNote(m.quests);
+      acts += huntBtns(m.quests);
     } else if (kind === 'task') {
       // What it's for, whether it's done, and where its wish is taken (the Wishwall, or who asks).
       if (m.layer === 'qitem') note = t('mapTaskFor', { wish: m.sub });
@@ -1658,6 +1683,14 @@
       const e = BOOK.get(m.entry), k = own && own.journal[e.id];
       note = [t('mapBeastHere', { n: num(m.n) }), m.before3 ? t('mapLostAct3') : '', wavesNote(m.waves),
         own ? (k === undefined ? t('hjState_unseen') : e.kills != null ? t('mapKills', { n: num(k), m: num(e.kills) }) : t('hjState_seen')) : ''].filter(Boolean).join(' · ');
+      /* What it gives here for a hunt still open (js/spots.js HUNTS), and with the wish taken how
+         many Hornet has of how many (js/savefile.js carried: the quest's count, the thing held). */
+      for (const [q, [item, at]] of Object.entries(HUNTS)) {
+        const a = ((QU.CHAIN[q] || {}).asks || []).find((x) => x.save === item);
+        if (!a || wishDone(g, q) || !at.some(([k2, s]) => k2 === e.key && lower(s) === lower(m.scene))) continue;
+        note = then(note, t('mapHuntDrops', { wish: pick(QU.CHAIN[q].name), item: pick(a.name) })
+          + (own && (own.taken || []).includes(q) ? ' ' + t('mapHuntHave', { n: num(Math.min((own.carried || {})[item] || 0, a.n)), m: num(a.n) }) : ''));
+      }
       acts = btn('mapJournal', e.id, t('mapToJournal'));
     } else if (kind === 'journal') {
       const e = BOOK.get(m.entry), k = own && own.journal[e.id];
@@ -1893,6 +1926,7 @@
     // The Ruined Tool's card: the places it's repaired in, as a focus (js/spots.js VARIANTS).
     mapShotSee(node) { const ks = node.dataset.value.split(','), m = all().list.find((x) => x.key === ks[0]); App.mapFocus(ks, m ? m.name : ''); },
     mapBeast(node) { App.mapBeast(node.dataset.value); },
+    mapHunt(node) { App.mapHunt(node.dataset.value); },
     // The focus: the next or previous of its marks, centred with its card; or back to the whole map.
     mapFocusStep(node) {
       if (!focusSet) return;

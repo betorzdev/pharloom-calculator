@@ -485,6 +485,13 @@
     mapSteps:       { es: 'Pasos: {list}', en: 'Steps: {list}' },
     mapStepNow:     { es: 'en curso', en: 'current' },
     mapTaskFor:     { es: 'Lo pide el deseo «{wish}».', en: 'The wish "{wish}" asks for it.' },
+    // A hunt's grounds (design/103): the Wishwall's way there, the focus, and what each room gives.
+    // Written for the context; a wish is "taken" / «tomado» as Hornet says it (COURIER_SHORT_QUEST_ACCEPTED),
+    // to hunt / «cazar» as the wishes' own lines (QUEST_FINEPINS_DESC_INV, «Da caza a…»).
+    mapHuntGo:      { es: 'Dónde cazar: {wish}', en: 'Where to hunt: {wish}' },
+    mapHuntFocus:   { es: '{wish}: dónde cazar', en: '{wish}: where to hunt' },
+    mapHuntDrops:   { es: 'Para el deseo «{wish}», una vez tomado: {item}.', en: 'For the wish "{wish}", once taken: {item}.' },
+    mapHuntHave:    { es: 'Llevas {n} de {m}.', en: 'You have {n} of {m}.' },
     // One enemy, two places (js/spots.js TASKS alt, by the shortcut): the Flintbeetle's.
     mapAltShortcutShut: { es: 'Este {foe} cambia de sitio: está aquí hasta que se abre el atajo de la trampilla, y luego en otra sala.', en: 'This {foe} moves: it\'s here until the trapdoor shortcut is opened, then in another room.' },
     mapAltShortcutOpen: { es: 'Este {foe} cambia de sitio: está aquí una vez abierto el atajo de la trampilla; hasta entonces, en otra sala.', en: 'This {foe} moves: it\'s here once the trapdoor shortcut is opened; until then, in another room.' },

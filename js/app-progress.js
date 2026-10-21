@@ -372,9 +372,15 @@
       const giver = from && marks.has(from) ? [from] : [];
       const left = taskTargets(w).map((s) => s.filter((k) => marks.has(k) && !(g && marks.get(k).got))).find((s) => s.length) || [];
       const isTaken = !!q && taskStages(q).some((s) => taken.has(s));
-      const keys = !own ? (giver.length ? giver : left) : giver.length && !isTaken ? giver : left.length ? left : giver;
+      /* A hunt taken and still short of what it asks (design/103, 1 A): the Journal's rooms of the
+         enemies that give its thing (js/spots.js HUNTS, App.mapHuntKeys), nearest first as the rest. */
+      const hunt = own && isTaken && ((SS.spots || {}).HUNTS || {})[q];
+      const ask = hunt && ((QU.CHAIN[q] || {}).asks || []).find((a) => a.save === hunt[0]);
+      const grounds = ask && ((own.carried || {})[hunt[0]] || 0) < ask.n && App.mapHuntKeys ? App.mapHuntKeys(q) : [];
+      const keys = grounds.length ? grounds : !own ? (giver.length ? giver : left) : giver.length && !isTaken ? giver : left.length ? left : giver;
       if (!keys.length) return null;
-      FOCUS.set('task:' + i, { keys: keys.map((k, n) => ({ k, n, d: rooms(k) })).sort((a, b) => (a.d ?? Infinity) - (b.d ?? Infinity) || a.n - b.n).map((e) => e.k), name: pick(w[4]) });
+      FOCUS.set('task:' + i, { keys: keys.map((k, n) => ({ k, n, d: rooms(k) })).sort((a, b) => (a.d ?? Infinity) - (b.d ?? Infinity) || a.n - b.n).map((e) => e.k),
+        name: grounds.length ? t('mapHuntFocus', { wish: pick(w[4]) }) : pick(w[4]) });
       return 'task:' + i;
     };
   }
