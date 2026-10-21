@@ -54,6 +54,8 @@
   /* The way shown is js/completion.js wayOf's, for the game on screen (Free mode's marks: none, the
      guide's first), in two parts (design/41, 2 B): lead, what it is and what it costs; more, what it
      waits for (from an Act, the wishes first, the abilities and keys), which a phone folds. */
+  // Where a wish is taken: its Wishwall, else who offers it (js/quests.js FROM).
+  const takenAt = (quest) => { const f = (SS.quests.FROM || {})[quest] || {}; return f.board || (f.npc || [])[0] || null; };
   function howParts(ways, need, key) {
     const { way: w, first, arts } = CP.wayOf(ways, marking ? null : cur, SS.savefile.ART_PD, key);
     const needs = needText(need);
@@ -62,8 +64,11 @@
     const cost = [w.craftmetal ? `${num(w.craftmetal)} ${itemName('craftmetal')}` : '', w.paleOil ? `${num(w.paleOil)} ${itemName('pale-oil')}` : ''];
     const main = {
       shop: () => (w.price ? t('howShop', { vendor: npc(w.vendor), price: num(w.price) }) : npc(w.vendor)),
-      npc: () => t('howGift', { npc: npc(w.npc) }),
-      wish: () => t('howWish', { wish: pick(CO.WISHES[w.wish][4]) }),
+      // Who plays a melody once brought what it's kept on (js/how.js bring: the Vaultkeeper's).
+      npc: () => (w.bring ? t('howBring', { npc: npc(w.npc), item: pick(w.bring.name), area: areaName(R.areaOf(w.bring.scene)) }) : t('howGift', { npc: npc(w.npc) })),
+      // A wish ended in person elsewhere than where it's taken (js/how.js by): who gives it, and where it's taken.
+      wish: () => (w.by ? t('howWishBy', { wish: pick(CO.WISHES[w.wish][4]), npc: npc(w.by), area: areaName(R.areaOf(takenAt(w.quest))) })
+        : t('howWish', { wish: pick(CO.WISHES[w.wish][4]) })),
       boss: () => t('howBoss', { foe: pick(SS.enemies.FOES.find((f) => f.id === w.foe).name) }),
       craft: () => t('howCraft'),
       challenge: () => t('howChallenge', { npc: npc(w.npc) }),

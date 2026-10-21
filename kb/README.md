@@ -14,6 +14,7 @@ plan (`design/00-study.md` §9).
 | `completionist/` | Br3zzly/silksong-completionist's dictionary (MIT, its `LICENSE` beside it), at the commit in `SOURCE`: `npm run collectibles`. Only its facts are used (each thing's save field and Act), not its prose |
 | `game/pickups.json` | Where the game has each item picked up or given, which scenes' scripts name an ability's flag, where each NPC stands, each of those objects' place in its scene, each scene's size and each bench: `tools/extract-pickups.py` from the game's own scene bundles (needs the game installed; committed, so `npm run data` runs offline). `tools/gen-spots.js` reads it |
 | `game/gating.json` | What decides whether each thing the save keeps per room can be had: the flags a way's own components set instead of its bool, the other lock of a door, what the game takes away (Act 3, a flag), what only Steel Soul or the normal game has, what only the demo has or the scenes never switch on, and the doors a key opens: `tools/extract-gating.py` from the same scene bundles (needs the game installed; committed). `tools/gen-spots.js` and `tools/gen-gauntlets.js` read it |
+| `game/entrances.json` | Every TransitionPoint (a door, an edge, a drop) by the scene it leads into, with its place in its own scene: `tools/extract-entrances.py` from the same scene bundles (needs the game installed; committed). `tools/map-point.js` puts what's inside an interior at its door |
 | `game/wanted.json` | The scene objects a save's checks name, whose place the extractor keeps: `node tools/spots-wanted.js`, run before the extractor |
 | `all_text.json` | The game's text dump, downloaded by `npm run text` (not committed; `.gitignore`) |
 | `art/` | The sprites `npm run palette` measures for `design/02-silksong.md` (not committed: Team Cherry's art) |
@@ -36,11 +37,12 @@ Shared by them: `tools/wiki.js` (pages, templates, `{{Localisation}}`, tables wi
 `tools/gating.js` (`game/gating.json`, checked against `game/pickups.json`) and
 `tools/emit.js` (the output files).
 
-**After a game patch, run both scene extractors**, `tools/extract-pickups.py` and
-`tools/extract-gating.py` (about ten minutes each; `--cache=<file>` keeps a scan for the runs that
-follow), then `npm run data`. Each writes the game's version it read (`patch`), and `npm run data`
-stops with a message, before any generator runs (`tools/gating.js` goes first), while the two
-differ or while one says none: one patch's checks are never joined to another's places.
+**After a game patch, run the scene extractors**, `tools/extract-pickups.py`,
+`tools/extract-gating.py` and `tools/extract-entrances.py` (about ten minutes each; the first two
+take `--cache=<file>` to keep a scan for the runs that follow), then `npm run data`. Each writes the
+game's version it read (`patch`), and `npm run data` stops with a message while they differ:
+`tools/gating.js`, which goes first, for pickups.json and gating.json, before any generator runs;
+`tools/map-point.js` for entrances.json. One patch's checks are never joined to another's places.
 
 ## Source and reliability
 
