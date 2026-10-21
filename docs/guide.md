@@ -727,37 +727,39 @@ words it in that state («Awaken the old bells throughout the lands.» while Bel
 «Acquire the necessary components…», then «Give the collected components to the Caretaker of
 Songclave.»). The Last Judge has no objective of her own, so her Journal entry speaks («Final arbiter
 of the Blasted Steps…», tagged «Journal»); unlocking Silk and Soul has no text in the game, so it shows
-the wish it opens, its picture dim and its name and place («Silk and Soul · Caretaker of Songclave»).
-Under it, «See on the map» or «See the n on the map» (the Bellshrines not rung, the Grand Gate's and
+the wish it opens, its picture dim and its name and place («Silk and Soul · Caretaker of Songclave»)
+on one line with its way onto the Map. Under the words, or beside a card with none, «See on the map» or «See the n on the map» (the Bellshrines not rung, the Grand Gate's and
 the Citadel's objective pins as the game's own map places them, the Last Judge and the Phantom, the
 Caretaker and Bellhart's Wishwall, the snare's pieces, the Cradle's top).
 
-**Its parts**: for Silk and Soul a line says that all three are needed, then the three in one line,
-each its picture, its name and its count, ticked when met (the wishes it requires, its wish points,
-its four conditions); for the offer, how it comes (or that you turned it down); for the last step,
+**Its parts**: for Silk and Soul a line says that all three are needed, and the list goes under the
+three as heads, each its picture, its name and its count on the right, ticked when met (the wishes
+it requires, its wish points, its four conditions); a part met is its head alone. For the offer, how it comes (or that you turned it down); for the last step,
 that the Needolin, not a Bind, is what snares her.
 
 **What's next**: the step's one list. What it still lacks, numbered, each with its picture,
-its area and the Map's pin when it has the thing: each required wish («Complete the wish "Balm for
-the Wounded"», with who asks for it in the game's words, what posts it and the wish to do first),
+its area and the Map's pin when it has the thing: each required wish (under its head just its name,
+«Balm for the Wounded», with who asks for it in the game's words and what it asks),
 the wish points short («Get 1 more wish point») with the four wishes nearest your bench that would
 give it («and n more» unfolds the rest), each condition not met (the Flea Caravan, the Faydown Cloak,
 Lace, the Bellhome Key, or «Talk to Pavo» once he has it for you), each Bellshrine not rung, each
 piece of the snare. A step of one thing (walking into the Citadel) doesn't repeat itself as a list.
-Each row the game has words for has «What the game says» under it, which unfolds
-them: a wish as the game shows it now (what its Wishwall says until you take it, what «Tasks» says
+Each row is its name and one line, how to get it, ended by «More» when there's more to
+say: it unfolds what the thing waits for (what posts the wish, when it shows up, the wish to do first) and
+what the game says
+of it: a wish as the game shows it now (what its Wishwall says until you take it, what «Tasks» says
 once you have: the save's own record of each wish taken), the Caretaker's directions to each soul
 and the Snare Setter, the Inventory's line for the Faydown Cloak and the Bellhome Key, and for Lace
 the objective that leads to her (learn the Threefold Melody, then play it at the Citadel's heart, then
 rise above the Citadel). The Flea Caravan has no game text. Lace's row and the key's (Pavo) have
-their pin too, as the Bellshrines' do. «What's missing · Everything» under its title (the 100% tab's
-same toggle, kept as you leave it) shows what's done too: each done row in its place, its number's
+their pin too, as the Bellshrines' do. «What's missing · Everything» on the right over the list (the
+100% tab's same toggle, kept as you leave it) shows what's done too: each done row in its place, its number's
 diamond ticked and dimmed, and the wishes that already gave points ticked among the options.
 
 How to get each thing leads with what it is and what it costs (who asks for a wish and what it asks
 to be brought, the shop and its price), then what it waits for (what posts the wish, the wish to do
-first, the Act it comes in, the keys or abilities it needs). On a phone only the lead shows, and
-«+n more» opens the rest.
+first, the Act it comes in, the keys or abilities it needs). On the road «More» holds the rest; in the
+100% tab's lists it follows the lead, and on a phone «+n more» opens it.
 
 In Act 3 the tab is **«Your game»**: the four endings on a thread (the Acts are already on top), lit
 the ones your save has seen (the game keeps them: Weaver Queen, Snared Silk, Twisted Child, Sister
@@ -770,7 +772,7 @@ within reach»), with a line under the ring naming the closed one.
 the button), the 100% card says «100% in 10 categories», and the road tab is both roads as a guide,
 each under its title and what it is, as the route with no step yours: each station says how much it
 asks («5», «31») and opens, shut at first, on what the game says of it, its parts and the whole of
-its list, with no «What's next» title and no «What's missing · Everything».
+its list, with no «What's missing · Everything».
 
 **For 100%** (its card: a small ring and what's left). At the top, **your 100%** in a ring that
 fills with it, as the Journal's Memento, with the game's word, «Finalización» (a line under it

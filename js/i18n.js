@@ -772,7 +772,6 @@
     pgStepSilk:     { es: 'Atrapa a la {silk}', en: 'Snare {silk}' },
     /* What's next on the step you're on (2 A) */
     pgTodo:         { es: 'Lo siguiente', en: 'What\'s next' },
-    pgTodoWish:     { es: 'Completa el deseo «{wish}»', en: 'Complete the wish "{wish}"' },
     pgTodoPoints:   { es: 'Consigue {n} puntos más de deseos', en: 'Get {n} more wish points' },
     pgTodoPoints1:  { es: 'Consigue {n} punto más de deseos', en: 'Get {n} more wish point' },
     pgTodoAny:      { es: 'Vale cualquiera de estos {n} deseos; por ejemplo:', en: 'Any of these {n} wishes will do; for example:' },
@@ -874,6 +873,7 @@
        says of it, its Wishwall, the Inventory, the Journal or the Caretaker. */
     pgSays:         { es: 'Lo que dice el juego', en: 'What the game says' },
     pgSaysHide:     { es: 'Ocultar', en: 'Hide' },
+    pgFold:         { es: 'Más', en: 'More' },
     pgPeekStep:     { es: 'Paso {n}', en: 'Step {n}' },
     pgPeekDone:     { es: 'hecho', en: 'done' },
     pgMapN:         { es: 'Ver los {n} en el mapa', en: 'See the {n} on the map' },
