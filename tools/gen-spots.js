@@ -9,7 +9,9 @@
      found      the room its check names (a piece's sceneData bool), else where the game has its
                 pickup lying (pickups.json: a CollectableItemPickup of its save name)
      shop       the vendor's room (js/shop.js VENDORS; Shakra walks, so never hers)
-     wish       the Wishwall that lists it, else who offers it (js/quests.js FROM)
+     wish       who hands it over when the game ends the wish in person in another room (js/how.js
+                way.by, kb/data/game/wishes.json ends), else the Wishwall that lists it, else who
+                offers it (js/quests.js FROM)
      boss       the boss's arena: the room of its Journal entry (js/journal-rooms.js)
      npc, challenge, fleas   where that person is (PEOPLE below)
    HAND overrides that for what the game gives from a script (a shrine, an NPC's FSM) rather than a
@@ -120,6 +122,8 @@ const HAND = {
   tools: {
     // The craft pickups (Craft Pickup).
     cogfly: ['Cogwork Flier', 'hang_09'], pimpillo: ['Pimpilo', 'wisp_06'],
+    // Grishkin, at the caravan's first stop with a brew (its others: PLACES, below).
+    'flea-brew': ['Flea Brew', 'greymoor_08_caravan'],
   },
 };
 /* The people (by js/how.js NPCS id, and Scrounge) and the object that stands for them in the
@@ -160,6 +164,9 @@ const HAND_PIECE = {
   tamedGiantFlea: 'Arborium_08', CaravanLechReturnedToCaravan: 'Greymoor_24', MetTroupeHunterWild: 'Bellway_Aqueduct',
   MetCaravanTroupeLeaderJudge: 'Coral_Judge_Arena',
   HasMelodyArchitect: 'Cog_09', HasMelodyConductor: 'Hang_12', 'Flea Games': 'Aqueduct_05_festival',
+  // Cardinius plays the Vaultkeeper's Melody in Library_08 once brought the Sacred Cylinder of
+  // library_10 (Albert's choice, 21-Oct-2026; tools/gen-how.js MELODY_BY): there, not on the cylinder.
+  HasMelodyLibrarian: 'Library_08',
 };
 const EVERBLOOM = 'Tut_04';
 // Bosses whose Journal entry is another's (the Raging Conchfly is the Great Conchfly fought alone),
@@ -210,8 +217,11 @@ const RELIC_ROOM = { 'Seal Chit City Merchant': 'song_enclave', 'Psalm Cylinder 
   // it, his Blasted Steps arena; the Guardian's Memento from Seth at Fleatopia's festival (beating his
   // scores), not from Mooshka at the caravan.
   'Memento Garmond': 'coral_33', 'Memento Seth': 'aqueduct_05_festival' };
-// The Bellhome, where its furnishings go (Pavo's house in Bellhart).
+// The Bellhome, where its furnishings go (Pavo's house in Bellhart); those Frey sells, at Frey
+// (Albert's choice, 21-Oct-2026: Desk, Gleamlights, Bell Lacquer, Personal Spa, Gramophone, by their
+// ShopItem's name in js/shop.js SHOP), with their price (more.vendor, more.price).
 const BELLHOME = 'Belltown_Room_Spare';
+const FURNISHER = 'frey';
 
 (async () => {
 const N = await names();
@@ -259,13 +269,25 @@ const arena = (foe) => {
   if (rooms.length > 1 && rooms[1][1] === rooms[0][1]) fail(`${foe} is in ${rooms.map(([s]) => s).join(', ')} alike: choose its arena in BOSS_ROOM`);
   return rooms.length ? rooms[0][0] : null;
 };
+/* A boss whose check the completionist has wrong (Albert's choice, 21-Oct-2026, from the Map's
+   audit): the Bell Eater was beaten as soon as it appeared (bellCentipedeAppeared, which
+   Bellway_Centipede_additive's FSM sets in «Set Location», before the fight). It's beaten once the
+   Beastling Call is had (UnlockedFastTravelTeleport: PlayerData.BellCentipedeLocked is
+   bellCentipedeAppeared and not that) or its Journal entry has a kill; over the 89 files of the
+   author's saves the two agree in every one. The run stops if the completionist's check changes. */
+const BOSS_CHECK = { 'bell-eater': [['flag', 'bellCentipedeAppeared'], ['any', ['flag', 'UnlockedFastTravelTeleport'], ['kills', 'Giant Centipede', 1]]] };
 const BOSSES = [];
 for (const it of C.load('bosses.ts')) {
   const foe = BOSS_ALIAS[norm(it.name)] || foeBy.get(norm(it.name)) || fail(`no foe named ${it.name}`);
   const scene = arena(foe);
   if (!scene) { unplaced.push('boss ' + foe); continue; }
   if (BOSS_ACT[foe] && BOSS_ACT[foe] === it.whichAct) fail(`BOSS_ACT: the completionist gives ${foe} Act ${it.whichAct} already: the fix goes`);
-  BOSSES.push([foe, scene, C.check(it.parsingInfo, fail), BOSS_ACT[foe] || it.whichAct || fail(`${it.name} has no Act`)]);
+  let check = C.check(it.parsingInfo, fail);
+  if (BOSS_CHECK[foe]) {
+    if (JSON.stringify(check) !== JSON.stringify(BOSS_CHECK[foe][0])) fail(`BOSS_CHECK: the completionist's check for ${foe} is ${JSON.stringify(check)} now: read it again`);
+    check = BOSS_CHECK[foe][1];
+  }
+  BOSSES.push([foe, scene, check, BOSS_ACT[foe] || it.whichAct || fail(`${it.name} has no Act`)]);
 }
 for (const [foe, check, act] of BOSS_MORE) {
   if (!foeOf.has(foe) || BOSSES.some((b) => b[0] === foe)) fail(`BOSS_MORE: ${foe} isn't a foe of its own`);
@@ -276,6 +298,11 @@ for (const [foe, check, act] of BOSS_MORE) {
 /* ── The 100%: each thing's room, by its ways ── */
 const quests = Q.FROM;
 const wishScene = (quest) => { const f = quests[quest]; return f ? (f.board && onMap(f.board) ? f.board : (f.npc || []).find(onMap)) || null : null; };
+/* Where the game hands a wish's reward over when it ends the wish in person in another room (js/how.js
+   way.by, tools/gen-how.js endBy: Shakra in Shadow_24, the Pinstress in Peak_07, Sherma in Ward_09;
+   Albert's choice, 21-Oct-2026): that room, and the point of who ends it (kb/data/game/wishes.json ends). */
+const ENDS = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'kb', 'data', 'game', 'wishes.json'), 'utf8')).ends || {};
+const endScene = (quest) => ((ENDS[quest] || []).find(([s]) => onMap(s)) || [])[0] || null;
 // The way each thing's room came from (key → a js/how.js way), for its point in the room (WHO below).
 const WAY_OF = {};
 function byWays(ways, found, key) {
@@ -283,7 +310,7 @@ function byWays(ways, found, key) {
     let s = null;
     if (w.kind === 'found' || w.kind === 'craft') s = found();
     else if (w.kind === 'shop') s = w.vendor === 'shakra' ? 'Belltown' : personScene(w.vendor);   // Shakra: where she rests
-    else if (w.kind === 'wish') s = found() || wishScene(w.quest);   // a reward lying in the world, where it lies (the Reserve Bind, in the Second Sentinel's arena)
+    else if (w.kind === 'wish') s = found() || (w.by && endScene(w.quest)) || wishScene(w.quest);   // a reward lying in the world, where it lies (the Reserve Bind, in the Second Sentinel's arena); one handed over elsewhere, there
     else if (w.kind === 'boss') s = found() || arena(w.foe);   // what the boss opens the way to, where it lies (Conchcutter, past the Raging Conchfly)
     else if (['npc', 'challenge', 'fleas'].includes(w.kind)) s = personScene(w.npc);
     if (s && onMap(s)) { if (key) WAY_OF[key] = w; return s; }
@@ -318,7 +345,7 @@ const takes = (c, own) => JSON.stringify(c) === JSON.stringify(own) || (c[0] ===
 const movedOwn = (list, x) => (MOVED.find((m) => m.list === list && m.kind === x[0] && takes(x[2], m.own)) || {}).own;
 // Pieces: the room the check names first (what lies there), then the ways.
 const OLD_HEARTS = { CollectedHeartFlower: 'Flower Heart', CollectedHeartCoral: 'Coral Heart', CollectedHeartHunter: 'Hunter Heart',
-  CollectedHeartClover: 'Clover Heart', HasMelodyLibrarian: 'Librarian Melody Cylinder' };
+  CollectedHeartClover: 'Clover Heart' };
 CO.PIECES.forEach((p, i) => {
   const own = R.sceneOf(movedOwn('piece', p) || p[2]);
   // A piece sold with no counter of its own (js/shop.js SHOP gives it), from the vendor of the
@@ -485,7 +512,8 @@ const EXTRA_ACT_USED = new Set();
 const extra = (kind, it, name) => {
   let c = C.check(it.parsingInfo, fail);
   if ((kind === 'rosary-cache' || kind === 'shard-cache') && c[0] === 'int' && !(c = cacheCheck(c))) return;
-  const s = kind === 'bellhome' ? BELLHOME : roomOfCheck(c);
+  const sold = kind === 'bellhome' && name && SH.SHOP.find((x) => x.vendor === FURNISHER && x.name === name.key);
+  const s = sold ? VENDORS[FURNISHER][0] : kind === 'bellhome' ? BELLHOME : roomOfCheck(c);
   if (!s || !onMap(s)) { unplaced.push(`${kind} ${it.name}`); return; }
   if (CHECK_OF[it.name]) c = CHECK_OF[it.name];
   if (neverHad(c)) { leftOut.push(`${kind} ${s} ${it.name}`); return; }
@@ -503,7 +531,7 @@ const extra = (kind, it, name) => {
     if (EXTRA_ACT[it.name] === it.whichAct) fail(`EXTRA_ACT: the completionist gives ${it.name} Act ${it.whichAct} already: the fix goes`);
     EXTRA_ACT_USED.add(it.name);
   }
-  EXTRAS.push([kind, EXTRA_ACT[it.name] || it.whichAct || 0, c, s, name]);
+  EXTRAS.push([kind, EXTRA_ACT[it.name] || it.whichAct || 0, c, s, name, ...(sold ? [{ vendor: FURNISHER, price: sold.price }] : [])]);
 };
 /* A "cache" that only holds an item isn't one: the four ant_item_strings the completionist files
    among the rosary caches (Ant_04_left, Ant_21, Bone_East_18b, Bone_East_24) pay nothing (read in
@@ -1093,13 +1121,13 @@ for (const k of Object.keys(Q.LOCKS)) KEYS[k] = N.text(KEY_TEXT[k] || fail(`no t
    bench pin the map itself draws (js/map.js PINS; the game sets those by hand, a few pixels off). */
 const M = SS.map;
 // One rule for the generators (tools/map-point.js): a scene loaded over its room has the room's
-// coordinates, an interior has no point, one just outside its room is brought in to the edge.
-const { hostOf, toMap, ROOM_OF } = require('./map-point.js')(P.sizes);
+// coordinates, an interior is at its door, one just outside its room is brought in to the edge.
+const { hostOf, toMap, toRoom, doorAt, ROOM_OF } = require('./map-point.js')(P.sizes, P.patch);
 {
   const errs = [];
   for (const pin of M.PINS) {
     if (pin[0] !== 'bench') continue;
-    const b = P.benches[pin[3].toLowerCase()], at = b && toMap(pin[3], b[0], b[1]);
+    const b = P.benches[pin[3].toLowerCase()], at = b && toRoom(pin[3], b[0], b[1]);
     if (at) errs.push([Math.hypot(at[0] - pin[1], at[1] - pin[2]), pin[3]]);
   }
   errs.sort((a, b) => a[0] - b[0]);
@@ -1124,7 +1152,7 @@ const SEATS = {};
     let host = scene;
     if (!P.sizes[scene]) while (host.includes('_') && !(P.sizes[host] && ROOM_OF.get(host))) host = host.slice(0, host.lastIndexOf('_'));
     for (const [name, [x, y, feet]] of Object.entries(marks)) {
-      const at = toMap(host, x, feet == null ? y : feet);
+      const at = toRoom(host, x, feet == null ? y : feet);
       if (!at) continue;
       (SEATS[scene] || (SEATS[scene] = {}))[name] = at;
       if (host === scene) continue;
@@ -1196,7 +1224,58 @@ for (const x of MOVED) {
   ALSO[key] = [x.scene, there, more];
   MOVED_FROM[key] = x.own;
 }
+/* What a person or a boss takes to another room (Albert's choices, 21-Oct-2026, from the Map's
+   audit), in ALSO as what Act 3 moves, its point that person's or that boss's there (below):
+   - Plinney (piece:<the four Needle upgrades> and person:plinney): Belltown's
+     «hanging_bell_house_Pinsmith» opens on (!blackThreadWorld && spinnerDefeated) || (savedPlinney
+     && blackThreadWorld), so in Act 3 his house is shut until he's rescued in Shellgrave, whose
+     «Event Control» FSM («Plinney?») puts him in a battle there while blackThreadWorld, not
+     savedPlinney and sawPlinneyLeft (set by Bellhart's Black Thread World). GameManager.StartAct3
+     sets savedPlinney when he was never met (PinsmithMetBelltown false). 17 of the author's Act 3
+     files had him away (Restore_Points1 23-34, Restore_Points3 26-30). A Needle upgrade had stays
+     at Bellhart.
+   - Moorwing (boss:moorwing): Greymoor_08's «Boss Scene Loader» loads its first arena only while
+     visitedBellhart is false; once Bellhart is entered unbeaten, Greymoor_05's «Scene Control»
+     («Boss Check») brings it to the Bellway's arena, greymoor_05_boss, from Act 2
+     (VampireGnatBossInAltLoc). Restore_Points1 NODELrestoreData12 and restoreData16-17 have it so. */
+const MOVED_BY = [
+  ...CO.PIECES.map((p, i) => (p[0] === 'needle' ? ['piece:' + i, 'Shellgrave', { npc: 'plinney', person: 'PINSMITH' }] : null)).filter(Boolean),
+  ['person:plinney', 'Shellgrave', { npc: 'plinney', person: 'PINSMITH' }],
+  ['boss:moorwing', 'greymoor_05_boss', { foe: 'moorwing' }],
+];
+const MOVED_THERE = {
+  plinney: { act: 3, there: ['all', ['flag', 'blackThreadWorld'], ['not', ['flag', 'savedPlinney']]], more: { npc: 'plinney', from: 'BELLHART' } },
+  moorwing: { act: 2, there: ['all', ['flag', 'visitedBellhart'], ['not', ['flag', 'defeatedVampireGnatBoss']]], more: { skipped: 'BELLHART' } },
+};
+if (MOVED_BY.filter(([k]) => k.startsWith('piece:')).length !== 4) fail('MOVED_BY: the Needle has four upgrades');
+if (!BOSSES.some((b) => b[0] === 'moorwing' && JSON.stringify(b[2]) === JSON.stringify(['flag', 'defeatedVampireGnatBoss']))) fail('MOVED_BY: Moorwing\'s check changed');
+for (const [key, scene, who] of MOVED_BY) {
+  const m = MOVED_THERE[who.npc || who.foe];
+  if (!onMap(scene)) fail(`MOVED_BY ${key}: ${scene} isn't on the map`);
+  if (ALSO[key]) fail(`MOVED_BY ${key} has another room already (${ALSO[key][0]}): ALSO holds one`);
+  // A piece goes there only while not had (had, it stays where it was: Bellhart).
+  const own = key.startsWith('piece:') ? CO.PIECES[+key.slice(6)][2] : null;
+  ALSO[key] = [scene, own ? ['all', ...m.there.slice(1), ['not', own]] : m.there, { kind: 'moved', act: m.act, ...m.more }];
+}
+/* A thing at the place a playerData value names (Albert's choices, 21-Oct-2026, from the Map's
+   audit): PLACES, key → { at: [[scene, check, act?]], guide, why }: the other places it may be at, each
+   with the check that says the game has it there now (and the Act it's there from, when later than
+   the thing's: the caravan reaches the Blasted Steps and Fleatopia in Act 2); with a save that says none, its own room; guide:
+   Free mode shows them all too; why, what moves it, for its card (js/app-map.js mapPlace…_<why>).
+   - The Flea Brew (tools:flea-brew): Grishkin gives it at the caravan's later stops, its «Give
+     Brew» in greymoor_08_caravan (its own room, AT), coral_judge_arena and aqueduct_05_caravan, by
+     CaravanTroupeLocation (1 Greymoor, 2 the Blasted Steps, 3 Fleatopia; 0, the Marrow, has no
+     brew: Greymoor's, where it goes next). Over the 88 files: 0 in 35 (none holds it), 1 in 10, 2
+     in 4, 3 in 39 (all hold it).
+   - The Bell Eater (boss:bell-eater): once it has appeared and until it's beaten, it waits at the
+     Bellway FastTravelNPCLocation names (Bellway_Centipede_additive's «This Scene?»), the station
+     the Bellbeast's pins name by the same values (below, with the tasks). Free mode: its arena only. */
+const PLACES = {
+  'tools:flea-brew': { at: [['coral_judge_arena', ['all', ['min', 'CaravanTroupeLocation', 2], ['not', ['min', 'CaravanTroupeLocation', 3]]], 2],
+    ['aqueduct_05_caravan', ['min', 'CaravanTroupeLocation', 3], 2]], guide: true, why: 'caravan' },
+};
 const XY = {};
+const STATION_AT = new Map();   // FastTravelNPCLocation → [its Bellway's scene, its pin] (the Bellbeast's pins, with the tasks below)
 const put2 = (key, p) => { if (p) XY[key] = p; };
 CO.PIECES.forEach((p, i) => {
   const scene = AT.pieces[i], c = movedOwn('piece', p) || p[2];
@@ -1220,7 +1299,7 @@ for (const id of OTHER_TOOLS) {
 // A thing's other room (ALSO): where it lies there (a Tool by its save names, what Act 3 moves by its
 // item; a shop's, at its vendor: below).
 for (const [key, [scene, , way]] of Object.entries(ALSO)) {
-  if (way && way.kind === 'shop') continue;
+  if (way && (way.kind === 'shop' || way.npc || way.skipped)) continue;   // at the vendor, the person, the boss: below
   const names = key.startsWith('tools:') ? CO.TOOLS[key.slice(6)] : [MOVED.find((x) => MOVED_FROM[key] === x.own).item];
   put2(key + ':found', names.map((n) => itemAt(n, scene)).find(Boolean) || fail(`${key} has no point in ${scene}`));
 }
@@ -1405,6 +1484,7 @@ const wayAt = (key, scene) => {
   const w = WAY_OF[key];
   if (!w || !scene) return null;
   if (w.kind === 'shop') return whoAt(w.vendor, w.vendor === 'shakra' ? 'Belltown' : scene);
+  if (w.kind === 'wish' && w.by && lower(endScene(w.quest)) === lower(scene)) return entryAt(ENDS[w.quest], scene);
   if (w.kind === 'wish') return wishAt(w.quest, scene);
   if (w.kind === 'boss') return foeAt(w.foe, scene);
   if (['npc', 'challenge', 'fleas'].includes(w.kind)) return XY['person:' + w.npc] && lower(PEOPLE[w.npc]) === lower(scene) ? XY['person:' + w.npc] : whoAt(w.npc, scene);
@@ -1413,8 +1493,11 @@ const wayAt = (key, scene) => {
 // A flag's script in a room (pickups.json fields).
 const fieldAt = (flag, scene) => entryAt(P.fields[flag], scene);
 // Kratt, strung up in Greymoor_24: no script there names his flag, he stands there himself; and
-// Mooshka at the Blasted Steps, who gives his Spool Fragment there.
-const PIECE_WHO = { CaravanLechReturnedToCaravan: 'FLEA_LECH', MetCaravanTroupeLeaderJudge: 'FLEAMASTER' };
+// Mooshka at the Blasted Steps, who gives his Spool Fragment there; Cardinius, who plays the Vaultkeeper's Melody.
+// Or the piece itself lying there once it's won (the Flea Games' Pale Oil, on the festival's piñata
+// in aqueduct_05_festival, a scene loaded over Aqueduct_05 that shares its place).
+const PIECE_SAVE = { 'pale-oil': 'Pale_Oil' };
+const PIECE_WHO = { CaravanLechReturnedToCaravan: 'FLEA_LECH', MetCaravanTroupeLeaderJudge: 'FLEAMASTER', HasMelodyLibrarian: 'LIBRARIAN_RELIC' };
 // A room's lost flea: the flea itself (in its cage, barrel, branches, asleep…), else what wakes it.
 const fleaIn = (scene) => {
   const all = (P.fleas[lower(scene)] || []).filter((f) => f[1] || f[2]);
@@ -1427,6 +1510,14 @@ for (const [v, scenes] of Object.entries(VENDORS)) scenes.forEach((sc, i) => put
 // A thing's other room when a vendor sells it there (ALSO): at the vendor, as what it sells there already.
 for (const [key, also] of Object.entries(ALSO)) if (also[2] && also[2].kind === 'shop') put2(alsoKey(key, also), whoAt(also[2].vendor, also[0]) || fail(`${key}: no point for ${also[2].vendor} in ${also[0]}`));
 for (const n of Object.keys(GIVER)) put2('giver:' + lower(n), giverAt(n));
+// What a person or a boss takes to another room (MOVED_BY): where that person stands there, where that boss is fought.
+for (const [key, scene, who] of MOVED_BY) {
+  put2(key + ':found', (who.person ? personAt(who.person, scene) : foeAt(who.foe, scene)) || fail(`${key}: no point in ${scene}`));
+}
+// What a vendor sells that isn't of the 100% (EXTRAS more.vendor: Frey's furnishings), at the vendor.
+EXTRAS.forEach((x, i) => { if (x[5] && x[5].vendor) put2('extra:' + i, whoAt(x[5].vendor, x[3])); });
+// The places a thing may be at (PLACES): Grishkin at each caravan stop.
+for (const [scene] of PLACES['tools:flea-brew'].at) put2('tools:flea-brew:' + lower(scene), entryAt(P.items['Flea Brew'].at, scene) || fail(`no Grishkin in ${scene}`));
 /* Who offers the wishes of each room, by name, and the mark that stands for them there already, if
    any (Albert's choice, 15-Oct-2026: each person once in a room): a person of PEOPLE, a vendor of
    VENDORS, or one of the traders js/people.js adds to the shops (tools/gen-people.js TRADERS, the
@@ -1458,6 +1549,7 @@ CO.PIECES.forEach((p, i) => {
   if (XY[key] || !scene) return;
   const flea = p[2][0] === 'flag' && /^SavedFlea_/.test(p[2][1]) ? fleaIn(scene) : null;
   put2(key, flea ? toMap(scene, flea[1], flea[2]) : HAND_PIECE[p[2][1]] ? fieldAt(p[2][1], scene) || (PIECE_WHO[p[2][1]] && personAt(PIECE_WHO[p[2][1]], scene))
+    || (PIECE_SAVE[p[0]] && lyingAt(PIECE_SAVE[p[0]], scene))
     : wayAt(key, scene));
 });
 for (const cat of ['tools', 'crests', 'skills', 'arts']) for (const [id, scene] of Object.entries(AT[cat])) if (!XY[cat + ':' + id]) put2(cat + ':' + id, wayAt(cat + ':' + id, scene));
@@ -1612,6 +1704,7 @@ const TASKS = [];
   const stations = new Set(M.PINS.filter((x) => x[0] === 'bellway').map((x) => sceneOfPart(x[3])));
   let unstationed = 0;
   const STATION = 'FastTravelNPCLocation';
+  STATION_AT.clear();
   const stationOf = (off, name) => {
     const [g] = off || [];
     // Off while the field isn't its value: one test, an enum (Type 3), NotEqual (NumType 1).
@@ -1644,6 +1737,7 @@ const TASKS = [];
       let alt = null;
       if (sprite === 'quest_map_icon_bellbeast') {
         const v = stationOf(off, pinName);
+        STATION_AT.set(v, [scene, M.PINS.find((x) => x[0] === 'bellway' && sceneOfPart(x[3]) === scene)]);
         // Its station's: not taken yet, done, or the beast waits there (the value, as 'min' reads an int).
         alt = { at: ['any', ['not', ['accepted', q]], check, ['all', ['min', STATION, v], ['not', ['min', STATION, v + 1]]]] };
       }
@@ -1658,10 +1752,20 @@ const TASKS = [];
       task('wspot', q, check, scene, p, null, art('icons/' + emblem), null, spot);
     }
   }
-  // The Herald's spots, each its own flag.
-  for (const [field, at] of Object.entries(WI.fields)) {
+  /* The Herald's spots, each its own flag. The game shows one at a time (Albert's choice,
+     21-Oct-2026, from the Map's audit): each «Mr Mushroom NPC» FSM (Control, «Check») is there only
+     while the wish is on, its own MushroomQuestFound<n> false and the spots found reach its Location
+     Index (n - 1: Tut_03 first, the Cradle's last). So with the wish taken and not done, only the
+     next spot (alt.at: the ones before it found, its own not); before it's taken, once it's done and
+     in Free mode, all seven. */
+  const HERALD = Object.keys(WI.fields).filter((f) => /^MushroomQuestFound\d+$/.test(f)).sort((a, b) => parseInt(a.slice(18), 10) - parseInt(b.slice(18), 10));
+  if (HERALD.length !== 7 || HERALD.some((f, i) => f !== 'MushroomQuestFound' + (i + 1))) fail(`the Herald's spots aren't MushroomQuestFound1..7: ${HERALD.join(', ')}`);
+  for (const [n, field] of HERALD.entries()) {
+    const at = WI.fields[field];
     const [scene, , x, y] = at.find((e) => /NPC/.test(e[1])) || at[0];
-    task('wspot', 'Mr Mushroom', ['any', ['flag', field], ['quest', 'Mr Mushroom']], scene, x, y, art('icons/' + WI.quests['Mr Mushroom'].emblem));
+    const q = 'Mr Mushroom', next = ['all', ...HERALD.slice(0, n).map((f) => ['flag', f]), ['not', ['flag', field]]];
+    task('wspot', q, ['any', ['flag', field], ['quest', q]], scene, x, y, art('icons/' + WI.quests[q].emblem), null, null,
+      { at: ['any', ['not', ['accepted', q]], ['quest', q], next] });
   }
   // The one room where the game ends a wish, when it isn't where the wish is taken.
   for (const [q, at] of Object.entries(WI.ends)) {
@@ -1676,6 +1780,37 @@ const TASKS = [];
   if (unstationed > 1) fail(`${unstationed} Bellbeast pins in no Bellway station's room`);
   const n = (k) => TASKS.filter((x) => x[0] === k).length;
   console.log(`tasks: ${n('qitem')} wish items, ${n('wspot')} places where a wish is done, ${n('goal')} objective pins (${unstationed} Bellbeast pin off any station left out)`);
+}
+/* The Bell Eater's stations (PLACES): the Bellway of each FastTravelNPCLocation value, as the
+   Bellbeast's pins name them (STATION_AT, with the tasks above), at that station's pin. */
+{
+  const beaten = (BOSSES.find((b) => b[0] === 'bell-eater') || fail('no Bell Eater among the bosses'))[2];
+  if (STATION_AT.size < 10) fail(`only ${STATION_AT.size} Bellway stations by their FastTravelNPCLocation`);
+  const at = [];
+  for (const [v, [scene, pin]] of [...STATION_AT].sort((a, b) => a[0] - b[0])) {
+    if (!pin) fail(`no Bellway pin in ${scene}`);
+    at.push([scene, ['all', ['flag', 'bellCentipedeAppeared'], ['not', beaten], ['min', 'FastTravelNPCLocation', v], ['not', ['min', 'FastTravelNPCLocation', v + 1]]]]);
+    put2('boss:bell-eater:' + lower(scene), [pin[1], pin[2]]);
+  }
+  PLACES['boss:bell-eater'] = { at, guide: false, why: 'bellway' };
+}
+for (const key of Object.keys(PLACES)) if (ALSO[key]) fail(`${key} is in both PLACES and ALSO`);
+/* Last, what's in an interior with no point of its own yet (a flag's furnishing, a person, a vendor):
+   at the door it's entered by (tools/map-point.js doorAt; Albert's choice, 21-Oct-2026), as the rest
+   of the interior. */
+{
+  let n = 0;
+  const door = (key, scene) => { if (!XY[key] && scene) { const p = doorAt(scene); if (p) { XY[key] = p; n++; } } };
+  CO.PIECES.forEach((p, i) => door('piece:' + i, AT.pieces[i]));
+  for (const cat of ['tools', 'crests', 'skills', 'arts']) for (const [id, sc] of Object.entries(AT[cat])) door(cat + ':' + id, sc);
+  door('everbloom', AT.everbloom);
+  EXTRAS.forEach((x, i) => door('extra:' + i, x[3]));
+  for (const [foe, sc] of BOSSES) door('boss:' + foe, sc);
+  TASKS.forEach((x, i) => door('task:' + i, x[3]));
+  for (const [v, scenes] of Object.entries(VENDORS)) scenes.forEach((sc, i) => door((v === 'shakra' ? 'shakra:' : 'shop:' + v + ':') + i, sc));
+  for (const [id, sc] of Object.entries(PEOPLE)) door('person:' + id, sc);
+  for (const sc of Object.keys(GIVER)) door('giver:' + lower(sc), sc);
+  console.log(`in an interior, at its door: ${n} more`);
 }
 // The caches that only hold an item (HELD, above): that item has a mark of its own in that room, by
 // its pickup's bool (a piece of the 100%, a rosary item, a wish's item) or as a Tool's other room.
@@ -1875,8 +2010,8 @@ require('./follow-fixes.js').run('spots', { EXTRAS, TASKS, VENDORS, XY });
 
 const size = write(OUT, `js/spots.js — where the Map draws each thing, and what it shows beyond the 100%.
    GENERATED by tools/gen-spots.js from the site's data, kb/data/completionist/ and
-   kb/data/game/pickups.json and wishes.json (tools/extract-pickups.py, tools/extract-wishes.py,
-   the game's own files): not edited by hand.
+   kb/data/game/pickups.json, wishes.json and entrances.json (tools/extract-pickups.py,
+   tools/extract-wishes.py, tools/extract-entrances.py, the game's own files): not edited by hand.
    Change the generator and run npm run data. Scenes as the game names them (js/rooms.js places
    them in either case).
 
@@ -1884,8 +2019,8 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               outside the 100%: scene }, crests, skills, arts: { id: scene }, everbloom: scene,
               act: { key: Act } for what's outside the 100% and js/collectibles.js WHERE lacks }:
               where each thing of the 100% is had (its pickup, its vendor, its Wishwall, its
-              boss's arena, its giver)
-     ALSO     a thing's key ('tools:<id>', 'piece:<i>', 'extra:<i>') → [scene, check, way?]: its other
+              boss's arena, its giver, who ends its wish in person elsewhere)
+     ALSO     a thing's key ('tools:<id>', 'piece:<i>', 'extra:<i>', 'person:<id>', 'boss:<foe>') → [scene, check, way?]: its other
               room, and the check that says the game has it there. A Tool sold that lies there once
               its seller is gone (the Curveclaw once the Mottled Skarr dies, the Weighted Belt once
               Mort does; its point XY '<key>:found'); with way { kind: 'shop', vendor, price, act: 3,
@@ -1893,8 +2028,15 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               (Grindle's: Pebb's, Mort's and Lumble's wares; its point XY '<key>:<vendor>'); with way
               { kind: 'moved', act: 3, foe | wish }, what Act 3 moves to another room (MOVED:
               Mossberry no. 3, the Memory Locket of «Volatile Flintbeetles»; its point XY
-              '<key>:found'); check as EXTRAS', plus ['tool', name] (that Tool unlocked) and
-              ['not', check]
+              '<key>:found'); { kind: 'moved', act, npc, from } what someone takes away (Plinney
+              and the Needle upgrades not had, in Shellgrave in Act 3 till rescued), { kind:
+              'moved', act: 2, skipped } a boss met elsewhere once that area is entered unbeaten
+              (Moorwing at the Greymoor Bellway): MOVED_BY; check as EXTRAS', plus ['tool', name]
+              (that Tool unlocked) and ['not', check]
+     PLACES   a thing's key → { at: [[scene, check, act?]], guide, why }: the places a value of the save puts
+              it at instead of its own room (the Flea Brew at the caravan's stop, the Bell Eater at
+              its Bellway), each with the check that it's there now; guide, Free mode shows them;
+              why, its card's reason ('caravan', 'bellway'); its point XY '<key>:<scene>'
      VARIANTS a thing's key ('tools:silkshot') → { item, at: [[variant, save name, scene, act]] }:
               the places one of its variants is had (the Silkshot's three repairs: the rune desk in
               Mount Fay, the Twelfth Architect, the Forge Daughter), each the js/data.js attack id,
@@ -1909,7 +2051,8 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               shards, the doors a key opens no mark had yet); act null when the thing has no Act of
               its own; more { shop, price } for a map Shakra sells, { machine, price } for one a
               map machine sells, { found } for one found, { item } for a rosary or shard item
-              ({ item, fight } for one an arena drops: that gauntlet's id), { gone: 'act3' }
+              ({ item, fight } for one an arena drops: that gauntlet's id), { vendor, price } for
+              one a vendor sells (Frey's furnishings), { gone: 'act3' }
               for what the game takes away when Act 3 begins, { lost: check, person } for what the game takes away with someone once that check holds
               (Grindle's cell door), { mode: 'steel' or 'normal' } for what only that mode has,
               { was } the check it had before the save checks and { wasKind } the kind it had
@@ -1935,12 +2078,13 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               alt { at, by, open, foe } for one of the places one thing may be in (a Flintbeetle's
               two, the Bellbeast's twelve stations): at the check that it's this one in this game,
               by what picks ('shortcut'), open whether it's this one once that's open, foe the
-              enemy's name (the Bellbeast's have at alone)
+              enemy's name (the Bellbeast's and the Herald's have at alone)
      XY       a thing's key ('piece:<i>', 'tools:<id>', '<key>:found', '<key>:<vendor>', 'tools:<id>:<variant>', 'arts:<id>', 'extra:<i>'…, 'person:<id>',
               'board:<scene>', 'bell:<field>', 'task:<i>', 'shakra:<i>', 'shop:<vendor>:<i>', 'giver:<scene>', 'boss:<foe>', 'journal:<entry>', 'gaunt:<id>',
               'everbloom') → its point on the map, in the image's pixels: where
               the game has it in its room (the object's place in the scene, or whoever stands for it,
-              placed as the game places a point: js/rooms.js mapPoint)
+              placed as the game places a point: js/rooms.js mapPoint); in an interior, the door
+              it's entered by (tools/map-point.js)
      SEATS    scene (lower case) → { respawn marker's name → its point on the map }: where the game
               wakes Hornet when a save names that marker (respawnScene, respawnMarkerName: a bench's
               RestBench, a room's Death Respawn Marker), her feet on the ground under it (a bench's
@@ -1960,7 +2104,7 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               entry's enemies freed), and the save's check that it holds
      STEPS    [[TASKS index, …]]: a main objective's steps the game pins on one point, in its order
      GOAL_ACT TASKS index → the first Act that step can be on (its objective's chain)`,
-'spots', [['AT', AT], ['ALSO', ALSO], ['VARIANTS', VARIANTS], ['LEFT', LEFT], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['TASKS', TASKS], ['XY', XY], ['SEATS', SEATS], ['GIVER', GIVERS], ['QUEST_GIVER', QUEST_GIVER],
+'spots', [['AT', AT], ['ALSO', ALSO], ['PLACES', PLACES], ['VARIANTS', VARIANTS], ['LEFT', LEFT], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['TASKS', TASKS], ['XY', XY], ['SEATS', SEATS], ['GIVER', GIVERS], ['QUEST_GIVER', QUEST_GIVER],
   ['JOURNAL', JOURNAL], ['JOURNAL_ACT3', JOURNAL_ACT3], ['OPENS', OPENS], ['STEPS', STEPS], ['GOAL_ACT', GOAL_ACT]]);
 const kinds = {};
 for (const x of EXTRAS) kinds[x[0]] = (kinds[x[0]] || 0) + 1;

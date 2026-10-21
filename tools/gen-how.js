@@ -4,7 +4,7 @@
    Offline. The things are the Progress screen's (js/app-progress.js things()): the 51 counted
    Tools (js/collectibles.js COUNTED, by each group's first id), the Crests, Silk Skills and
    abilities of js/completion.js, the pieces of js/collectibles.js PIECES that count (Mask
-   Shards, Spool Fragments, Crafting Kit, Tool Pouch, Needle, Silk Hearts) and the Everbloom.
+   Shards, Spool Fragments, Crafting Kit, Tool Pouch, Needle, Silk Hearts), the Vaultkeeper's Melody (learned from Cardinius) and the Everbloom.
 
    Each gets its ways, best source first:
      1. the game's files (js/shop.js, tools/extract-shops.py): what a vendor sells, and what a
@@ -29,14 +29,17 @@
                  price in rosaries; item the game's ShopItem (js/shop.js SHOP); craftmetal and
                  paleOil what it also takes; act 3 when sold only then; after: the wishes (WISHES
                  indices) to be done first; needs: playerData flags for it to show
-               { kind: 'wish', wish, quest, act? }  wish a js/collectibles.js WISHES index, quest
-                 its save name (Broodfeast has two: the Runt's is Act 3's)
+               { kind: 'wish', wish, quest, act?, by? }  wish a js/collectibles.js WISHES index, quest
+                 its save name (Broodfeast has two: the Runt's is Act 3's); by the NPCS id of who
+                 hands the reward over when the game ends the wish in person in another room
                { kind: 'boss', foe }  a js/enemies.js FOES id
                { kind: 'found', act?, when? }  lying in a room (from that Act on, when act is given)
                  when: the save check that says it lies there now (its owner dead), which
                  replaces act when the save says (js/completion.js wayOf)
                { kind: 'craft', craftmetal }  made at a craft table
-               { kind: 'npc', npc }  given by an NPC, for nothing
+               { kind: 'npc', npc, bring? }  given by an NPC, for nothing; bring { name, scene }
+                 what to bring them first and where it lies (Cardinius plays the Vaultkeeper's
+                 Melody from the Sacred Cylinder)
                { kind: 'challenge', npc }  won from an NPC (Loddie's pins, Lumble's dice)
                { kind: 'fleas', npc, fleas }  Mooshka's reward for that many Lost Fleas
      TRAPS   the three ways to lose a point or a wish, with the save's state that shows each
@@ -57,6 +60,9 @@ const CO = require('../js/collectibles.js');
 const CP = require('../js/completion.js');
 const S = require('../js/shop.js');
 const Q = require('../js/quests.js');
+require('../js/map.js');
+require('../js/graph.js');
+const R = require('../js/rooms.js');
 
 const OUT = path.join(__dirname, '..', 'js', 'how.js');
 const SRC = path.join(__dirname, '..', 'kb', 'data', 'completionist');
@@ -72,7 +78,8 @@ const NPC_KEYS = {
   grindle: 'GRINDLE_MAIN', pebb: 'BB_SHOPKEEP_MAIN', frey: 'BELLHART_SHOPKEEP_MAIN', mort: 'PILGRIM_REST_SHOP_MAIN',
   'twelfth-architect': 'ARCHITECT_SHOP_TITLE', jubilana: 'CITY_MERCHANT_MAIN', shakra: 'MAPPER_MAIN',
   plinney: 'PINSMITH_MAIN', eva: 'CREST_UPG_SHRINE_MAIN', pinstress: 'PINSTRESS_MAIN', loddie: 'LADYBUG_LARGE_MAIN',
-  lumble: 'DICE_PILGRIM_MAIN', mooshka: 'FLEAMASTER_MAIN',
+  lumble: 'DICE_PILGRIM_MAIN', mooshka: 'FLEAMASTER_MAIN', sherma: 'SHERMA_MAIN', grishkin: 'FLEAMEMBER_SHORT_MAIN',
+  cardinius: 'LIBRARIAN_RELIC_MAIN',
   'forge-daughter': 'FORGEDAUGHTER_SUPER+FORGEDAUGHTER_MAIN+FORGEDAUGHTER_SUB',
   'mottled-skarr': 'ANT_MERCHANT_SUPER+ANT_MERCHANT_MAIN+ANT_MERCHANT_SUB',
 };
@@ -121,8 +128,16 @@ const WHEN = {
   'weighted-belt': ['flag', 'mortKeptWeightedAnklet'],
   'magnetite-dice': ['all', ['min', 'dicePilgrimState', 1], ['not', ['min', 'dicePilgrimState', 2]], ['not', ['flag', 'blackThreadWorld']]],
 };
+/* A Tool its wish names as reward but somebody else hands over (Albert's choice, 21-Oct-2026, from
+   the Map's audit): the Flea Brew, the reward of The Lost Fleas (Save the Fleas' rewardItem), is
+   given by Grishkin, the troupe's short member, at the caravan's later stops: his «Behaviour» FSM,
+   state «Give Brew» (SetToolUnlocked), in greymoor_08_caravan, coral_judge_arena and
+   aqueduct_05_caravan, never in Bone_10 (read on 21-Oct-2026; the wiki: "talking to Grishkin" once
+   the caravan is in Greymoor). Its way is his, not the wish's (HAND below). */
+const NOT_REWARD = { 'flea-brew': 'Save the Fleas' };
 const HAND = {
   tools: {
+    'flea-brew': [{ kind: 'npc', npc: 'grishkin' }],
     'straight-pin': [{ kind: 'found' }], 'threefold-pin': [{ kind: 'found' }], longpin: [{ kind: 'found' }],
     curveclaw: [{ kind: 'found', act: 2, when: WHEN.curveclaw }],  // Tools: behind a gauntlet once the Mottled Skarr dies
     pimpillo: [{ kind: 'craft', craftmetal: 1 }],  // Pimpillo: a crafting bench above Yarnaby's home
@@ -209,9 +224,31 @@ CO.WISHES.forEach((w, i) => {
   const qs = w[2][0] === 'quest' ? [w[2][1]] : w[2][0] === 'any' ? w[2].slice(1).filter((c) => c[0] === 'quest').map((c) => c[1]) : [];
   qs.forEach((q) => wishOf.set(q, i));
 });
+/* Who hands a wish's reward over, when the game ends the wish in person in another room than the
+   one it's taken in (Albert's choice, 21-Oct-2026, from the Map's audit): its way says by whom
+   (by, an NPCS id), and the Map draws it there (tools/gen-spots.js). Where the game ends each wish:
+   kb/data/game/wishes.json ends (tools/extract-wishes.py: the FSM that runs EndQuest), joined to
+   the person standing at that object (kb/data/game/people.json). Read on 21-Oct-2026: Trail's End
+   ends with Shakra in Bilewater (Shadow_24), Fatal Resolve with the Pinstress atop Mount Fay
+   (Peak_07), Balm for the Wounded with Sherma in the Whiteward (Ward_09, «Get Spool Piece»), each
+   with canTurnInAtBoard 0 on its quest. */
+const WI = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'kb', 'data', 'game', 'wishes.json'), 'utf8'));
+const PP = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'kb', 'data', 'game', 'people.json'), 'utf8'));
+const roomOf = (s) => (s && (R.roomOf(s) || {}).scene) || null;
+const endBy = (quest) => {
+  const ends = (WI.ends[quest] || []).filter(([s]) => roomOf(s));
+  const from = Q.FROM[quest] || {}, taken = [from.board, ...(from.npc || [])].map(roomOf).filter(Boolean);
+  if (!ends.length || !taken.length || ends.some(([s]) => taken.includes(roomOf(s)))) return null;
+  const [scene, obj] = ends[0];
+  const who = Object.keys(PP.people).find((k) => PP.people[k].spots.some(([s, o]) => s === scene && o === obj));
+  const id = who && Object.keys(NPC_KEYS).find((x) => NPC_KEYS[x].split('+').includes(who + '_MAIN'));
+  return id || fail(`${quest} ends with ${obj} in ${scene} (${who || 'nobody'}): name them in NPC_KEYS`);
+};
+const wishIndex = (quest) => (wishOf.has(quest) ? wishOf.get(quest) : fail(`the wish ${quest} isn't in js/collectibles.js WISHES`));
+// A wish as the way a thing is had: its reward, and who hands it over when it isn't where it's taken.
 const wish = (quest, act) => {
-  if (!wishOf.has(quest)) fail(`the wish ${quest} isn't in js/collectibles.js WISHES`);
-  return { kind: 'wish', wish: wishOf.get(quest), quest, ...(act ? { act } : {}) };
+  const i = wishIndex(quest), by = endBy(quest);
+  return { kind: 'wish', wish: i, quest, ...(act ? { act } : {}), ...(by ? { by } : {}) };
 };
 const wishByTitle = new Map(CO.WISHES.map((w, i) => [norm(w[4].en), i]));
 const foe = (page) => {
@@ -224,7 +261,7 @@ const shopWay = (x) => {
   const w = { kind: 'shop', vendor: x.vendor, price: x.price, item: x.item };
   if (x.craftmetal) w.craftmetal = x.craftmetal;
   if (x.act) w.act = x.act;
-  if (x.after) w.after = x.after.map((q) => wish(q).wish);
+  if (x.after) w.after = x.after.map((q) => wishIndex(q));
   if (x.needs) w.needs = x.needs;
   return w;
 };
@@ -262,7 +299,7 @@ for (const x of S.SHOP) if (x.tool) {
   const cat = things.tools.includes(x.tool) ? 'tools' : null;
   if (cat) add('tools', x.tool, shopWay(x));
 }
-for (const [q, r] of Object.entries(S.REWARDS)) if (r.tool && things.tools.includes(r.tool)) {
+for (const [q, r] of Object.entries(S.REWARDS)) if (r.tool && things.tools.includes(r.tool) && NOT_REWARD[r.tool] !== q) {
   add('tools', r.tool, wish(q, /Runt$/.test(q) ? 3 : undefined));
 }
 
@@ -286,6 +323,7 @@ for (const b of W.templates(W.page('Wishes'), 'TaskEntry')) {
   if (!quest) continue;  // Broodfeast's two: the game's REWARDS already gave them
   const game = S.REWARDS[quest];
   if (game && !(game.tool === at[1])) warn(`${f.id}: the wiki's reward is ${at[1]}, the game's ${JSON.stringify(game)}`);
+  if (NOT_REWARD[at[1]] === quest) continue;
   add(at[0], at[1], wish(quest));
 }
 
@@ -333,6 +371,16 @@ function pieceWays(i, check) {
   return fail(`PIECES[${i}]: no way for the check ${JSON.stringify(check)}`);
 }
 CO.PIECES.forEach((p, i) => { if (COUNTS.has(p[0])) HOW.pieces[i] = pieceWays(i, p[2]); });
+/* A melody learned from someone (Albert's choice, 21-Oct-2026): the Vaultkeeper's, which Cardinius
+   plays once he has the Sacred Cylinder that lies in library_10 (Library_08's «Librarian Scene/
+   Librarian», FSM «Dialogue», the only one setting HasMelodyLibrarian; read on 21-Oct-2026): its
+   way is his, with what to bring him first and where it lies (bring: the item's name, its scene). */
+const MELODY_BY = { HasMelodyLibrarian: { npc: 'cardinius', item: 'INV_NAME_R_PSALM_CYL_MELODY', scene: 'library_10' } };
+CO.PIECES.forEach((p, i) => {
+  const m = p[0] === 'melody' && MELODY_BY[p[2][1]];
+  if (m) HOW.pieces[i] = [{ kind: 'npc', npc: m.npc, bring: { name: N.text(m.item), scene: m.scene } }];
+});
+for (const f of Object.keys(MELODY_BY)) if (!CO.PIECES.some((p) => p[0] === 'melody' && p[2][1] === f)) fail(`MELODY_BY: no melody checked by ${f}`);
 if (needle.length !== 5) fail('js/data.js NEEDLES is not five');
 
 /* The keys and what lies behind them. */
@@ -460,18 +508,20 @@ write(OUT, `js/how.js: how to get each thing of the 100%, as data (no prose): it
      HOW     { tools, crests, skills, arts: { site id: [way…] }, pieces: { PIECES index: [way…] },
              everbloom: [way…] }. The Tools by their COUNTED group's first id; the pieces those
              that count (Mask Shards, Spool Fragments, Crafting Kit, Tool Pouch, Needle, Silk
-             Hearts). A way is one of:
+             Hearts) and the Vaultkeeper's Melody. A way is one of:
                { kind: 'shop', vendor, price, item, craftmetal?, paleOil?, act?, after?, needs? }
                  price in rosaries; item the ShopItem in js/shop.js SHOP (Plinney's Needle: its
                  cost's name); craftmetal, paleOil what it also takes; act 3 sold only then;
                  after the WISHES indices to be done first; needs the playerData flags it waits on
-               { kind: 'wish', wish, quest, act? }  wish a WISHES index, quest its save name
+               { kind: 'wish', wish, quest, act?, by? }  wish a WISHES index, quest its save name, by
+                 who hands it over in person in another room than the wish is taken in
                { kind: 'boss', foe }  a js/enemies.js FOES id
                { kind: 'found', act?, when? }  lying in a room (from that Act on)
                  when: the save check that says it lies there now (its owner dead), which
                  replaces act when the save says (js/completion.js wayOf)
                { kind: 'craft', craftmetal }  made at a craft table
-               { kind: 'npc', npc }  given for nothing
+               { kind: 'npc', npc, bring? }  given for nothing; bring { name, scene }: what to bring
+                 them first and where it lies
                { kind: 'challenge', npc }  won from the NPC
                { kind: 'fleas', npc, fleas }  Mooshka's, for that many Lost Fleas ('all')
      TRAPS   the ways to lose a point or a wish: curveclaw (lost: the save names hidden and

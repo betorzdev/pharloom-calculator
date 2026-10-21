@@ -318,6 +318,11 @@
     mapAlsoNow:     { es: '{npc} murió antes de que se lo compraras: está aquí', en: '{npc} died before you bought it: it lies here' },
     // What Act 3 moves to another room (js/spots.js ALSO, way { kind: 'moved' }): that room's mark, why it's there.
     mapMovedFoe:    { es: 'En el Acto 3, el {foe} que la lleva se muda a esta sala', en: 'In Act 3 the {foe} that carries it moves to this room' },
+    mapMovedNpc:    { es: 'En el Acto 3 {npc} se va de {area}: rescátalo aquí y vuelve', en: 'In Act 3 {npc} leaves {area}: rescue him here and he goes back' },
+    mapMovedSkipped: { es: 'Si entras en {area} sin haberlo vencido, te espera aquí desde el Acto {n}', en: 'If you enter {area} without beating it, it waits here from Act {n}' },
+    mapPlaceNow_caravan: { es: 'La Caravana de las pulgas está aquí ahora', en: 'The Flea Caravan is here now' },
+    mapPlaceIf_caravan:  { es: 'O aquí, si la Caravana de las pulgas está en esta parada', en: 'Or here, if the Flea Caravan is at this stop' },
+    mapPlaceNow_bellway: { es: 'Te espera en esta Vía Campana', en: 'It waits for you at this Bellway' },
     mapMovedWish:   { es: 'En el Acto 3 está aquí, si no se ha concedido el deseo «{wish}»', en: 'In Act 3 it lies here, if the wish "{wish}" isn\'t granted' },
     /* What a vendor sells only in Act 3 (js/spots.js ALSO, a shop's), once who had it before is gone
        (Grindle's: Pebb's, Mort's, Lumble's wares): its mark there, with no save and in an Act 3 game. */
@@ -790,7 +795,6 @@
     pgStepSilk:     { es: 'Atrapa a la {silk}', en: 'Snare {silk}' },
     /* What's next on the step you're on (2 A) */
     pgTodo:         { es: 'Lo siguiente', en: 'What\'s next' },
-    pgTodoWish:     { es: 'Completa el deseo «{wish}»', en: 'Complete the wish "{wish}"' },
     pgTodoPoints:   { es: 'Consigue {n} puntos más de deseos', en: 'Get {n} more wish points' },
     pgTodoPoints1:  { es: 'Consigue {n} punto más de deseos', en: 'Get {n} more wish point' },
     pgTodoAny:      { es: 'Vale cualquiera de estos {n} deseos; por ejemplo:', en: 'Any of these {n} wishes will do; for example:' },
@@ -892,6 +896,7 @@
        says of it, its Wishwall, the Inventory, the Journal or the Caretaker. */
     pgSays:         { es: 'Lo que dice el juego', en: 'What the game says' },
     pgSaysHide:     { es: 'Ocultar', en: 'Hide' },
+    pgFold:         { es: 'Más', en: 'More' },
     pgPeekStep:     { es: 'Paso {n}', en: 'Step {n}' },
     pgPeekDone:     { es: 'hecho', en: 'done' },
     pgMapN:         { es: 'Ver los {n} en el mapa', en: 'See the {n} on the map' },
@@ -933,6 +938,8 @@
     howShop:        { es: '{vendor}: {price} rosarios', en: '{vendor}: {price} rosaries' },
     howGift:        { es: 'Te lo da {npc}', en: 'Given by {npc}' },
     howWish:        { es: 'Deseo: {wish}', en: 'Wish: {wish}' },
+    howWishBy:      { es: 'Deseo: {wish}, que se acepta en {area} · te lo da {npc}', en: 'Wish: {wish}, taken in {area} · given by {npc}' },
+    howBring:       { es: '{npc} la toca si le llevas el {item} de {area}', en: '{npc} plays it once you bring the {item} from {area}' },
     howBoss:        { es: 'Tras el combate: {foe}', en: 'After the fight: {foe}' },
     howCraft:       { es: 'Se fabrica', en: 'Crafted' },
     howChallenge:   { es: 'Reto de {npc}', en: '{npc}\'s challenge' },

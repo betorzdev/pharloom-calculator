@@ -1665,12 +1665,12 @@ room the map doesn't draw, and gave a place to what had none. Albert dropped the
 (`js/map-fixes.js` is empty, its admin mode as before), and what had no object of its own now goes where
 whoever stands for it is (`tools/gen-spots.js`, from `tools/extract-pickups.py`'s new battles, records,
 fleas and locks and people.json): Shakra and the vendors where they stand and their stock with them,
-a wish's reward at its Wishwall or giver, a boss where the game has it in its arena, a gauntlet at the
+a wish's reward at its Wishwall or giver (from 21 October, with whoever hands it over: below), a boss where the game has it in its arena, a gauntlet at the
 middle of its waves, a lost flea in its cage, a key's door at its lock. Of the 71 fixed marks that had no
 point of their own, 62 have one now, a median 6.7 px from where Albert had put them by hand (32.8 at
 the room's middle). Of the Map's 2,170 marks (Free mode), 260 still sit at their room's middle: 232 in a
 room the map doesn't draw (an interior, a bench's room, a memory: the game places nothing of them on its
-map either), and 28 with nothing to go by: five bosses the game spawns at run time or parks at the
+map either; from 21 October an interior's are at its door: below), and 28 with nothing to go by: five bosses the game spawns at run time or parks at the
 scene's origin (the Last Judge, Tormented Trobbio, the Cogwork Dancers, the Forebrothers, Weavenest
 Atla's Moss Mothers) and two whose fight is in an arena off the map (Lost Lace, the Far Fields
 Beastfly), the Sinner's Road gauntlet (no BattleScene), Fleatopia's Tool Pouch and Mr Mushroom wish
@@ -2103,6 +2103,56 @@ then the places' areas), and its pin all its marks on the Map at once, the Ruine
 Act 3 with the Architect gone), 8 holding it, 19 repaired the Original, 4 the Forge Daughter's, none
 the Architect's. Checked: npm test, the text audit, check-pack on the 87 saves (all match), the Map in
 headless Chrome at 1440 and 390, es and en, in Free mode and five saves, no console errors.
+
+**Places and moves on the Map** (21 October 2026, Albert's choices from the Map's audit, design
+phase 2, W2). Read in the game's files (scenes and quest assets with UnityPy, Assembly-CSharp with
+dnfile and dncil) and over the 89 files of the author's saves:
+- **A wish's reward where the game hands it over.** A quest with `canTurnInAtBoard` 0 whose FSM ends
+  it in person in another room than it's taken in (kb/data/game/wishes.json `ends`) gives its reward
+  there: Trail's End's Throwing Ring from Shakra in Shadow_24, Fatal Resolve's Pin Badge from the
+  Pinstress in Peak_07, Balm for the Wounded's Spool Fragment from Sherma in Ward_09 («Get Spool
+  Piece»). `tools/gen-how.js endBy` gives such a way `by` (who, joined through people.json), the Map
+  draws it there (`tools/gen-spots.js endScene`) and its card and Progress's row say who gives it and
+  where the wish is taken (`howWishBy`). The Growstone (Steel Sentinel Pt2) has no mark: its place is
+  the wish's own spot in Coral_37 already.
+- **The Vaultkeeper's Melody** is Cardinius's, in Library_08 (the only FSM that sets
+  HasMelodyLibrarian), not the Sacred Cylinder's spot in library_10, which keeps its relic mark; its
+  way says to bring him the cylinder first (`how.js` way `bring`, `howBring`).
+- **What's inside an interior is at its door.** `tools/extract-entrances.py` writes every
+  TransitionPoint into kb/data/game/entrances.json (1,386 doors into 519 scenes); `tools/map-point.js`
+  puts a point of an interior (a scene with a tilemap and no room on the map) at the door into it in
+  the room the Map files it under (js/rooms.js roomOf), for gen-spots and gen-people alike: Plinney and
+  the Needle upgrades at his house's door in Bellhart, the Skull Cave's Mask Shard at its door in
+  Bone_East_14b, the Bellhome's built furnishings at its door, the Bellway Pilgrim at Bellway_01's door
+  in Bone Bottom. An interior with no door in that room (the Doctor's house, whose only TransitionPoint
+  is Wisp_03's) keeps the room's point. The benches and where Hornet wakes keep the game's own pins
+  (`toRoom`). The Flea Games' Pale Oil, which had no point, is on the piñata (aqueduct_05_festival
+  shares Aqueduct_05's place).
+- **Plinney leaves in Act 3.** Belltown's «hanging_bell_house_Pinsmith» opens on (!blackThreadWorld
+  && spinnerDefeated) || (savedPlinney && blackThreadWorld); Shellgrave's «Event Control» puts him in a
+  battle there while blackThreadWorld, not savedPlinney and sawPlinneyLeft; GameManager.StartAct3 sets
+  savedPlinney when he was never met. js/spots.js ALSO now holds what someone takes away (MOVED_BY):
+  Plinney's person mark and the four Needle upgrades, each while not had, go to Shellgrave at «Plinney
+  Outside» with the check blackThreadWorld and not savedPlinney (17 of the author's Act 3 files: game 1's
+  restore points 23 to 34 at two upgrades, the Steel Soul game's 26 to 30 at three). The withAlso rule
+  lost a clause (Act 3 and not had) the save checks already say.
+- **Moorwing**: Greymoor_08's Boss Scene Loader loads its first arena only while visitedBellhart is
+  false; once Bellhart is entered unbeaten it's fought at greymoor_05_boss from Act 2. An ALSO moved
+  way with `skipped` (game 1's NODELrestoreData12, restoreData16 and 17 have it there); bosses now go
+  through withAlso.
+- **PLACES, where a value of the save puts a thing**: the Flea Brew is Grishkin's («Give Brew» at the
+  caravan's Greymoor, Blasted Steps and Fleatopia stops, never in the Marrow), so its way is his, not The
+  Lost Fleas', and with a save it's at the stop CaravanTroupeLocation names (Greymoor while still 0);
+  in Free mode at the three. The Bell Eater's check is its fight (UnlockedFastTravelTeleport, or its
+  Journal kill), not bellCentipedeAppeared, which the game sets before the fight; while it has appeared
+  and isn't beaten it waits at the Bellway FastTravelNPCLocation names (no save of the author's is
+  caught between). savefile `placesNow`.
+- **The Herald** shows one spot at a time while his wish is on (each Mr Mushroom NPC's Check: its own
+  MushroomQuestFound false and the count reaching its Location Index): TASKS alt, the next spot only
+  (no save is caught mid-wish). And Frey's five furnishings are at Frey with their price.
+Checked: npm test, the text audit, check-pack on the 88 saves (all match), the Map in headless Chrome
+at 1440 and 390, es and en, in Free mode and five saves (early, mid, Act 3 Steel Soul, 100%), no
+console errors; each moved mark and its card looked at.
 
 **The Journal by Act, fights that wait for something, how an extra is had** (21 October 2026, the Map
 appearance audit, Albert's D25, D27, D28, D29, D16 and D32; design notes in the audit's reports). Read

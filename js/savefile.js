@@ -441,6 +441,10 @@
       // says, js/completion.js wayOf, and the Map shows both rooms).
       foundNow: WHEN.filter(([, c]) => has(c)).map(([k]) => k),
       foundRead: true,
+      // Where a thing is at the place a value of the save names (js/spots.js PLACES: the Flea Brew at
+      // the caravan's stop, the Bell Eater at its Bellway), by '<key>@<place>'; placesRead as foundRead.
+      placesNow: Object.entries(SP.PLACES || {}).flatMap(([k, p]) => p.at.map((x, i) => (has(x[1]) ? k + '@' + i : null))).filter(Boolean),
+      placesRead: true,
       // The vendors the game has taken away (js/spots.js LEFT: the Twelfth Architect, ArchitectLeft):
       // their shop and what they repair are gone; leftRead as foundRead.
       left: LEFT.filter(([, c]) => has(c)).map(([v]) => v),
@@ -566,7 +570,7 @@
     needle: 0, kit: 0, pouch: 0, everbloom: false, purse: {}, silkeaters: 0, rosaries: 0, shards: 0, farsight: false, hasJournal: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', rested: true, marker: '', area: '', build: {},
     quests: [], taken: [], carried: {}, bellshrines: [], bells: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
     bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [],
-    visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], foundNow: [], foundRead: false, left: [], leftRead: false, lostExtras: [], bosses: [],
+    visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], foundNow: [], foundRead: false, placesNow: [], placesRead: false, left: [], leftRead: false, lostExtras: [], bosses: [],
     tasks: [], elsewhere: [], steelSpots: [], peopleVars: {}, evaSlots: 0, silkshot: '', cocoonRosaries: 0, opens: [], opensRead: false });
   const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
   // Each field only if it has the type an empty game gives it.
@@ -598,6 +602,7 @@
     out.gaveBack = out.gaveBack.filter((id) => CO.TOOLS[id]);
     out.foundNow = [...new Set(out.foundNow.map((k) => FOUND_AT.get(k)).filter(Boolean))];
     out.left = out.left.filter((v) => LEFT.some(([x]) => x === v));
+    out.placesNow = out.placesNow.filter((k) => typeof k === 'string' && (SP.PLACES || {})[k.split('@')[0]]);
     out.steelSpots = out.steelSpots.filter((x) => typeof x === 'string' && /^[\w ()-]{1,64}$/.test(x));
     out.cocoonAt = out.cocoon ? fourNumbers(out.cocoonAt) : [];
     out.cocoonRosaries = out.cocoon && Number.isInteger(out.cocoonRosaries) ? Math.max(0, out.cocoonRosaries) : 0;
