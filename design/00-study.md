@@ -2249,7 +2249,14 @@ the author's folder:
   saves, beaten in 19.
 - **Gourmand** (D33): a pickup's own removedBy flag joins its wish item's check (Dust_Chef's «Return
   Pickup» goes with gotPickledRoachEgg, which the first egg sets: two Steel Soul saves had it before
-  the wish was done); the Rasher's delivery pin is done by GourmandGivenMeat too.
+  the wish was done); the Rasher's delivery pin is done by GourmandGivenMeat too. All five dishes
+  are marked (21-Oct-2026): the Mossberry Stew where the Druid hands it over (mosstown_02c's «Moss
+  Creep NPC», CollectableItemCollect; it was left out as if made from the berries) and the Courier's
+  Rasher where Tipp & Pill hand it over in Bellhart (a DeliveryQuestItemStandalone their «Couriers
+  Quest Giver» compares, ObjectCompare). Each dish is done by its own GourmandGiven<x> flag too
+  (the servant's Get Collected sets one per dish; tools/gen-spots.js GIVEN): a dish handed over is
+  no longer held, and the Vintage Nectar's pickup bool is set in no save. Over the 88 saves: the
+  five flags set in all 27 with the wish done, none in the 8 with it taken and not done.
 - **Pins and rooms** (D34): a map pin falls in the smallest room box within 3 px of it. Last Dive's
   pin is Abyss_05's now (1 px below its box, it was Abyss_09_top's); the same margin files the
   Snail Shamans' three pins under Tut_04, the chapel they stand in (1.6 px from its point), and the

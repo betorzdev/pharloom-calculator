@@ -744,7 +744,9 @@
   "Beastfly Remains": "m_crest",
   "Broodmother Remains": "brood_mother_eye_icon",
   "Coral Ingredient": "_0007_quest_coral_nut",
+  "Courier Supplies Gourmand": "icon_courier_supplies_meat_sack",
   "Extractor Machine Pins": "hornet_extractor_pins",
+  "Mossberry Stew": "mossberry_stew",
   "Pickled Roach Egg": "century_maggot_icon",
   "Plasmium": "icon_inv_blue_health_jar_0001_3",
   "Rock Roller Item": "bone_roller_rock_icon",
@@ -798,6 +800,16 @@
     36.44
    ]
   ],
+  "Courier Supplies Gourmand": [
+   [
+    "belltown",
+    "PlayMakerFSM",
+    "Couriers Quest Giver",
+    null,
+    44.74,
+    21.34
+   ]
+  ],
   "Extractor Machine Pins": [
    [
     "dust_shack",
@@ -806,6 +818,16 @@
     null,
     22.62,
     6.26
+   ]
+  ],
+  "Mossberry Stew": [
+   [
+    "mosstown_02c",
+    "PlayMakerFSM",
+    "Moss Creep NPC",
+    null,
+    45.71,
+    5.67
    ]
   ],
   "Pickled Roach Egg": [
@@ -1136,7 +1158,9 @@
   "Beastfly Remains": "INV_NAME_BEASTFLY_REMAINS",
   "Broodmother Remains": "INV_NAME_BROODMOTHER_REMAINS",
   "Coral Ingredient": "INV_NAME_GOURMAND_CORAL_INGREDIENT",
+  "Courier Supplies Gourmand": "COURIER_SUPPLIES_MEAT_NAME",
   "Extractor Machine Pins": "ITEM_EXTRACTOR_PINS_NAME",
+  "Mossberry Stew": "INV_NAME_GOURMAND_MOSSBERRY_STEW",
   "Pickled Roach Egg": "INV_NAME_PICKLEDEGG",
   "Plasmium": "INV_NAME_BLUE_GOOP",
   "Rock Roller Item": "INV_NAME_ROCK_ROLLER_ITEM",

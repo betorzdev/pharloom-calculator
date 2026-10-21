@@ -1717,6 +1717,14 @@ const TASKS = [], HUNTS = {};
     const p = x == null ? null : Array.isArray(x) ? x : toMap(scene, x, y);
     if (p) XY['task:' + i] = p;
   };
+  /* The flag the one who takes a wish's thing sets for it, by the thing (the Gourmand's servant,
+     song_09b's «Gourmand Servant», Get Collected: one GourmandGiven<x> per dish, set as it's handed
+     over and read by its Hint; read on 21-Oct-2026). A dish handed over is no longer held, and the
+     Vintage Nectar's pickup keeps no bool in any save: without it the dish would read as missing
+     until the wish is done. Every one of the Great Gourmand's targets has to be here. */
+  const GIVEN = { 'Courier Supplies Gourmand': 'GourmandGivenMeat', 'Pickled Roach Egg': 'GourmandGivenEgg', 'Vintage Nectar': 'GourmandGivenNectar',
+    'Mossberry Stew': 'GourmandGivenStew', 'Coral Ingredient': 'GourmandGivenCoral' };
+  for (const t of (WI.quests['Great Gourmand'] || fail('no Great Gourmand in wishes.json')).targets) if (!GIVEN[t]) fail(`the Great Gourmand asks for ${t}: GIVEN needs its flag`);
   // What a wish asks for.
   const wants = (save) => WISH_OF[save] ? [WISH_OF[save]] : Object.keys(WI.quests).filter((q) => !WI.quests[q].main && WI.quests[q].targets.includes(save));
   for (const [save, at] of Object.entries(WI.items)) {
@@ -1737,6 +1745,8 @@ const TASKS = [], HUNTS = {};
        Muckmaggot laid back after a death, goes with gotPickledRoachEgg, which the first one picked
        up sets; its own bool is set in none of the author's saves (read on 21-Oct-2026). */
     const own = (scene, flag) => (flag && proper(scene) ? [['bool', proper(scene), flag], ...(gateOf(proper(scene), flag).removedBy || []).map((f) => ['flag', f])] : []);
+    // Given to who asks for it (GIVEN): a dish handed to the Gourmand's servant is no longer held.
+    const given = GIVEN[save] ? [['flag', GIVEN[save]]] : [];
     for (const [scene, comp, obj, flag, x, y, foe] of at) {
       const one = scene + (flag || obj);
       if (seen.has(one)) continue;   // the Crown Fragment lies twice in its room, under one flag
@@ -1749,7 +1759,7 @@ const TASKS = [], HUNTS = {};
          the save has them; alt.by and alt.open name what picks, alt.foe the enemy by its Journal
          name (NAME_ and its object's: NAME_ROCK_ROLLER), for the Map's card (js/app-map.js). */
       const check = comp === 'QuestDropper' ? ['quest', q]
-        : ['any', ...(pair ? pair.flatMap(([s, , , f]) => own(s, f)) : own(scene, flag)), ...(spots === 1 ? [['held', save]] : []), ['quest', q]];
+        : ['any', ...(pair ? pair.flatMap(([s, , , f]) => own(s, f)) : own(scene, flag)), ...given, ...(spots === 1 ? [['held', save]] : []), ['quest', q]];
       let alt = null;
       if (pair) {
         const others = pair.filter((p) => p[0] !== scene), by = Object.entries(foe.needs).filter(([f, v]) => others.every((p) => p[6].needs[f] === !v));
@@ -1784,7 +1794,6 @@ const TASKS = [], HUNTS = {};
   const inRoom = ([px, py], d = PIN_MARGIN) => Object.entries(M.ROOMS).filter(([, r]) => px >= r[0] - d && px <= r[0] + r[2] + d && py >= r[1] - d && py <= r[1] + r[3] + d)
     .sort(([, a], [, b]) => a[2] * a[3] - b[2] * b[3]).map(([s]) => sceneOfPart(s))[0];
   const byItem = (save) => Object.keys(WI.quests).find((q) => WI.quests[q].targets.includes(save));
-  const DELIVERED = { 'Great Gourmand': 'GourmandGivenMeat' };
   const pinned = new Set();
   /* The Bellbeast's pins (Beast in the Bells), one per Bellway station: the game shows one only
      while the beast waits at that station (each pin's DeactivatePlayerDataTest turns it off when
@@ -1839,10 +1848,9 @@ const TASKS = [], HUNTS = {};
       if (!isWish(q) && !isWish(Object.keys(Q.CHAIN).find((n) => Q.CHAIN[n].prev === q))) continue;
       pinned.add(q);
       const spot = target && (proper(target) || fail(`no scene named ${target}`));
-      /* A delivery's pin is done once delivered (DELIVERED: the flag the one who takes it sets), not
-         only once its wish is: the Courier's Rasher for the Great Gourmand, GourmandGivenMeat (the
-         Gourmand's servant takes each dish apart; read on 21-Oct-2026). */
-      const given = DELIVERED[q] && sprite === 'quest_map_icon_courier' ? [['flag', DELIVERED[q]]] : [];
+      /* A delivery's pin is done once delivered (GIVEN: the flag the one who takes it sets), not
+         only once its wish is: the Courier's Rasher for the Great Gourmand, GourmandGivenMeat. */
+      const given = GIVEN[item] && sprite === 'quest_map_icon_courier' ? [['flag', GIVEN[item]]] : [];
       const check = spot ? ['any', ['steel', spot], ['quest', q]] : given.length ? ['any', ...given, ['quest', q]] : ['quest', q];
       // The Courier's Rasher is a delivery the Great Gourmand's wish asks for: the couriers' emblem.
       const emblem = sprite === 'quest_map_icon_courier' ? Object.values(WI.quests).find((x) => x.type === 'Courier').emblem : info.emblem;
