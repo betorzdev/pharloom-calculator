@@ -1508,11 +1508,12 @@ kbd {
 /* The main objective you're on, large with the pane's words; under it the 21 on a line by Act, as
    the Acts' track over the tabs, the done ones lit and the one you're on ringed. */
 .pg-nows { display: grid; gap: var(--sp-4); width: min(100%, calc(var(--sp-16) * 11)); margin: 0 auto; }
-.pg-now { display: grid; grid-template-columns: calc(var(--sp-16) * 1.5) minmax(0, 1fr) 28px; align-items: center; gap: var(--sp-1) var(--sp-4); }
-.pg-now > img { width: 100%; height: auto; object-fit: contain; filter: drop-shadow(0 0 var(--sp-4) color-mix(in oklab, var(--accent) 22%, transparent)); }
+.pg-now { display: grid; grid-template-columns: var(--sp-12) minmax(0, 1fr) 28px; align-items: center; gap: var(--sp-1) var(--sp-3); }
+/* Its picture as large as the road's card draws a task's (design/79, 2 A: 48 px), not more: the pane's are 64 px at most. */
+.pg-now > img { width: 100%; height: auto; object-fit: contain; filter: drop-shadow(0 0 var(--sp-2) color-mix(in oklab, var(--accent) 22%, transparent)); }
 .pg-now p { margin: 0; }
 .pg-now-act { font-family: var(--font-num); font-size: var(--fs-2xs); letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--label); }
-.pg-now-name { font-family: var(--font-display); font-size: var(--fs-xl); color: var(--ink-strong); }
+.pg-now-name { font-family: var(--font-display); font-size: var(--fs-lg); color: var(--ink-strong); }
 .pg-now-says { font-size: var(--fs-sm); line-height: 1.45; color: var(--ink-2); }
 .pg-track { display: grid; grid-template-columns: 3fr 7fr 11fr; gap: var(--sp-3); margin: 0; padding: var(--sp-2) 0 0; list-style: none; }
 .pg-track-act { display: grid; gap: var(--sp-1); align-content: start; }
@@ -1577,8 +1578,6 @@ kbd {
 @media (max-width: 700px) {
   .pg-track { grid-template-columns: minmax(0, 1fr); }
   .pg-track-row { flex-wrap: wrap; justify-content: center; }
-  .pg-now { grid-template-columns: var(--sp-16) minmax(0, 1fr) 28px; }
-  .pg-now-name { font-size: var(--fs-lg); }
 }
 /* The 100% and Tasks (design/75, 2 B): an open group's rows take the whole width, and on a wide
    screen each thing is one line: its picture, its name, how to get it, where, the pin. */
