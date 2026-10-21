@@ -354,9 +354,12 @@
   // A mark folded into another's card (a wish's place that is a boss's fight) → that mark's key.
   let folded = new Map();
   /* The wishes done by a boss's fight, by quest → the boss (the wiki: the Pinstress is fought for
-     Fatal Resolve; the Summoned Saviour appears at the end of A Vassal Lost). A place of theirs in
-     that boss's own scene is the fight. */
-  const WISH_FIGHT = { 'Pinstress Battle': 'pinstress', 'Steel Sentinel': 'summoned-saviour' };
+     Fatal Resolve; the Summoned Saviour appears at the end of A Vassal Lost; the game's files: the
+     corpses of Tormented Trobbio, the Second Sentinel and Lost Garmond end Pain, Anguish and
+     Misery, Final Audience and Hero's Call, tools/extract-wishes.py). A place of theirs in that
+     boss's own scene is the fight. */
+  const WISH_FIGHT = { 'Pinstress Battle': 'pinstress', 'Steel Sentinel': 'summoned-saviour', 'Tormented Trobbio': 'tormented-trobbio',
+    'Song Knight': 'second-sentinel', 'Garmond Black Threaded': 'lost-garmond' };
   /* The Journal as its own tab counts it, had of total (design/64, 1 A): every entry of this game's
      mode, the bosses' included, whose marks are their boss's. */
   function journalTally(own) {
@@ -548,9 +551,11 @@
        done, the main objectives' pins. A Steel Soul wish only in Steel Soul, and of the Steel
        Sentinel's six spots the three this game chose. A wish's and an objective's name is its quest's. */
     /* Where a wish is done that is a boss's own fight (Fatal Resolve, the Pinstress on Mount Fay; A
-       Vassal Lost's end, the Summoned Saviour): on the boss's card, not a mark of its own (each
+       Vassal Lost's end, the Summoned Saviour; Pain, Anguish and Misery, Final Audience and Hero's
+       Call, WISH_FIGHT): on the boss's card, not a mark of its own (each
        thing once; design/03-redesign.md, step 6, the switches' contents, 12 A). */
-    const bossAt = new Map(out.filter((m) => m.layer === 'boss').map((m) => [lower(m.scene), m]));
+    // By scene and boss: Library_13 has two (Trobbio, and Tormented Trobbio in Act 3).
+    const bossAt = new Map(out.filter((m) => m.layer === 'boss').map((m) => [lower(m.scene) + '|' + m.foe, m]));
     folded = new Map();
     SP.TASKS.forEach((x, i) => {
       const [kind, quest, check, scene, art, name, mode, spot, gone, alt] = x;
@@ -559,8 +564,8 @@
          twelve stations while its wish is on), only the one this game has it in; all in Free mode
          or when the slot can't say (kept before it). */
       if (alt && own && (own.elsewhere || []).includes(i)) return;
-      const boss = kind === 'wspot' && WISH_FIGHT[quest] && bossAt.get(lower(scene));
-      if (boss && boss.foe === WISH_FIGHT[quest]) { boss.quests = (boss.quests || []).concat(quest); folded.set('task:' + i, boss.key); return; }
+      const boss = kind === 'wspot' && WISH_FIGHT[quest] && bossAt.get(lower(scene) + '|' + WISH_FIGHT[quest]);
+      if (boss) { boss.quests = (boss.quests || []).concat(quest); folded.set('task:' + i, boss.key); return; }
       const w = CO.WISHES[wishOf(quest)];
       add({ key: 'task:' + i, layer: kind, scene, act: kind === 'goal' ? undefined : w && w[1], got: !!g && (g.tasks || []).includes(i), lost: gone === 'act3' ? goneAct3(own) : null, quest, chk: JSON.stringify(check), alt,
         name: name ? pick(name) : pick(QU.CHAIN[quest].name), sub: name ? pick(QU.CHAIN[quest].name) : '',
@@ -1481,7 +1486,7 @@
       const fight = !App.VIEWS.includes('fight') ? '' : xs.length ? xs.map((x) => btn('mapFight', x.id, xs.length > 1 ? App.gauntletName(x.id) : t('mapFight'))).join('')
         : btn('mapFoe', m.foe, t('mapFight'));
       acts += fight + (m.entry ? btn('mapJournal', m.entry, t('mapToJournal')) : '');
-      // The wish whose place is this fight (Fatal Resolve, A Vassal Lost).
+      // The wish whose place is this fight (Fatal Resolve, A Vassal Lost, Hero's Call... WISH_FIGHT).
       if (m.quests) note = note ? note + (/[.!?]$/.test(note) ? ' ' : '. ') + wishesNote(m.quests) : wishesNote(m.quests);
     } else if (kind === 'bell') {
       if (g) acts = state(t(m.got ? 'mapRung' : 'mapNotRung'));

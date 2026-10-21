@@ -525,7 +525,8 @@ leaves those off.
   boss's card. And the Void Masses' cores. The other enemies that don't come back (Rhinogrunds,
   Covetous Pilgrims, Shardillards) are found from their Journal entry, whose pin shows every room
   they're in. A wish done by a boss's fight (Fatal Resolve, the Pinstress on Mount Fay; the end of
-  A Vassal Lost, the Summoned Saviour) is on that boss's card, not a mark of its own.
+  A Vassal Lost, the Summoned Saviour; Pain, Anguish and Misery, Tormented Trobbio; Final Audience,
+  the Second Sentinel; Hero's Call, Lost Garmond) is on that boss's card, not a mark of its own.
 - **People**: who gives something of the 100% (Plinney, Eva, Pinstress,
   Loddie, Lumble, Mooshka). **Everyone else** (off at first): every
   other person the game's scenes place, 44 of them, each in one switch only, with their own figure

@@ -1663,9 +1663,18 @@ const TASKS = [];
     const [scene, , x, y] = at.find((e) => /NPC/.test(e[1])) || at[0];
     task('wspot', 'Mr Mushroom', ['any', ['flag', field], ['quest', 'Mr Mushroom']], scene, x, y, art('icons/' + WI.quests['Mr Mushroom'].emblem));
   }
-  // The one room where the game ends a wish, when it isn't where the wish is taken.
-  for (const [q, at] of Object.entries(WI.ends)) {
+  /* The one room where the game ends a wish, when it isn't where the wish is taken. A wish its
+     boss's corpse ends (tools/extract-wishes.py 'corpse': Pain, Anguish and Misery, Final
+     Audience, Hero's Call) is done where that fight is, whatever else may end it (Hero's Call's
+     Memento Pickups, which Zaza carries along her trail while Garmond is undefeated); of several
+     rooms, the boss's arena (BOSSES: the Second Sentinel's prefab is also its Act 3 resting place
+     in Hang_07, which shares its corpse). The Map folds it into that boss's card (js/app-map.js
+     WISH_FIGHT). */
+  const arenas = new Set(BOSSES.map((b) => lower(b[1])));
+  for (const [q, all] of Object.entries(WI.ends)) {
     if (!isWish(q) || WI.quests[q].main || pinned.has(q) || WI.quests[q].type === 'Herald') continue;
+    const fights = all.filter((e) => e[4] === 'corpse'), inArena = fights.filter((e) => arenas.has(e[0]));
+    const at = inArena.length ? inArena : fights.length ? fights : all;
     const scenes = [...new Set(at.map((e) => e[0]))].filter(onMap);
     const from = Q.FROM[q] || {}, taken = [from.board, ...(from.npc || [])].filter(Boolean).map((s) => s.toLowerCase());
     if (scenes.length !== 1 || taken.includes(scenes[0])) continue;
