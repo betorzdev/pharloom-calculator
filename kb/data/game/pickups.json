@@ -831,2226 +831,2862 @@
    "Shell Shard Fossil Tiny Bumpy",
    "BreakableHolder",
    0,
-   0
+   0,
+   75.19,
+   8.53
   ],
   [
    "Abyss_03",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   70.94,
+   13.29
   ],
   [
    "Abyss_03",
    "Shell Shard Fossil Tiny Front",
    "BreakableHolder",
    0,
-   0
+   0,
+   73.14,
+   14.68
   ],
   [
    "Abyss_03",
    "Shell Shard Fossil Tiny Front (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   76.95,
+   13.9
   ],
   [
    "Abyss_05",
    "Shell Shard Fossil Mid Variant",
    "BreakableHolder",
    0,
-   0
+   0,
+   51.6,
+   55.81
   ],
   [
    "Abyss_05",
    "Shell Shard Fossil Tiny Bumpy",
    "BreakableHolder",
    0,
-   0
+   0,
+   138.95,
+   49.77
   ],
   [
    "Abyss_05",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   137.09,
+   51.16
   ],
   [
    "Abyss_05",
    "Shell Shard Fossil Tiny Egg (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   56.52,
+   58.39
   ],
   [
    "Abyss_05",
    "Shell Shard Fossil Tiny Front",
    "BreakableHolder",
    0,
-   0
+   0,
+   140.42,
+   47.74
   ],
   [
    "Ant_02",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   72.9,
+   15.04
   ],
   [
    "Ant_02",
    "Shell Shard Fossil Tiny Front",
    "BreakableHolder",
    0,
-   0
+   0,
+   71.51,
+   16.82
   ],
   [
    "Ant_04",
    "ant_shell_shard_string (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   335.24,
+   20.97
   ],
   [
    "Ant_04",
    "ant_shell_shard_string (2)",
    "BreakableHolder",
    0,
-   0
+   0,
+   333.02,
+   21.04
   ],
   [
    "Ant_04_left",
    "ant_item_string",
    "BreakableHolder",
    0,
-   0
+   0,
+   85.02,
+   26.99
   ],
   [
    "Ant_04_left",
    "ant_rosary_string",
    "BreakableHolder",
    0,
-   0
+   0,
+   6.06,
+   30.68
   ],
   [
    "Ant_04_left",
    "ant_rosary_string (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   7.87,
+   30.68
   ],
   [
    "Ant_21",
    "ant_rosary_string",
    "BreakableHolder",
    0,
-   0
+   0,
+   49.78,
+   76.25
   ],
   [
    "Ant_21",
    "ant_rosary_string (3)",
    "BreakableHolder",
    0,
-   0
+   0,
+   43.46,
+   76.34
   ],
   [
    "Ant_21",
    "ant_rosary_string_large",
    "BreakableHolder",
    0,
-   0
+   0,
+   42.11,
+   76.44
   ],
   [
    "Ant_21",
    "ant_rosary_string_large (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   51.0,
+   76.03
   ],
   [
    "Ant_21",
    "ant_rosary_string_medium (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   46.54,
+   76.37
   ],
   [
    "Ant_21",
    "ant_rosary_string_medium (3)",
    "BreakableHolder",
    0,
-   0
+   0,
+   47.65,
+   76.7
   ],
   [
    "Ant_21",
    "ant_rosary_string_medium Variant",
    "BreakableHolder",
    0,
-   0
+   0,
+   53.67,
+   76.28
   ],
   [
    "Ant_Merchant",
    "ant_shell_shard_string",
    "BreakableHolder",
    0,
-   0
+   0,
+   132.2,
+   17.75
   ],
   [
    "Ant_Merchant",
    "ant_shell_shard_string (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   134.69,
+   17.8
   ],
   [
    "Ant_Merchant",
    "ant_shell_shard_string (2)",
    "BreakableHolder",
    0,
-   0
+   0,
+   132.76,
+   10.37
   ],
   [
    "Ant_Merchant",
    "ant_shell_shard_string (3)",
    "BreakableHolder",
    0,
-   0
+   0,
+   141.1,
+   17.63
   ],
   [
    "Aqueduct_01",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   212.43,
+   16.92
   ],
   [
    "Aqueduct_01",
    "Shell Shard Fossil Tiny Front",
    "BreakableHolder",
    0,
-   0
+   0,
+   212.63,
+   19.64
   ],
   [
    "Aqueduct_04",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   79.24,
+   54.3
   ],
   [
    "Aqueduct_04",
    "Shell Shard Fossil Tiny Egg (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   15.72,
+   17.12
   ],
   [
    "Aqueduct_04",
    "Shell Shard Fossil Tiny Egg (2)",
    "BreakableHolder",
    0,
-   0
+   0,
+   12.67,
+   15.02
   ],
   [
    "Aqueduct_04",
    "Shell Shard Fossil Tiny Front",
    "BreakableHolder",
    0,
-   0
+   0,
+   75.24,
+   55.73
   ],
   [
    "Aqueduct_04",
    "Shell Shard Fossil Tiny Front (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   17.75,
+   16.96
   ],
   [
    "Aqueduct_05",
    "Shell Shard Fossil Dustpen Short",
    "BreakableHolder",
    0,
-   0
+   0,
+   254.16,
+   39.6
   ],
   [
    "Aqueduct_05",
    "Shell Shard Fossil Dustpen Tall",
    "BreakableHolder",
    0,
-   0
+   0,
+   258.84,
+   40.15
   ],
   [
    "Aqueduct_05",
    "Shell Shard Fossil Dustpen Tall (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   252.75,
+   38.96
   ],
   [
    "Aqueduct_05",
    "Shell Shard Fossil Dustpen Tall (2)",
    "BreakableHolder",
    0,
-   0
+   0,
+   207.33,
+   34.23
   ],
   [
    "Arborium_06",
    "Shell Shard Fossil Coral Conch",
    "BreakableHolder",
    0,
-   0
+   0,
+   5.69,
+   18.36
   ],
   [
    "Arborium_06",
    "Shell Shard Fossil Coral Conch (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   70.75,
+   25.04
   ],
   [
    "Belltown_04",
    "rosary_cache_bell_ground",
    "RosaryCache",
    2,
-   2
+   2,
+   76.93,
+   47.61
   ],
   [
    "Belltown_04",
    "rosary_string_medium",
    "RosaryCacheString",
    2,
-   3
+   3,
+   62.35,
+   22.91
   ],
   [
    "Belltown_04",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   63.71,
+   23.37
   ],
   [
    "Belltown_07",
    "rosary_cache_hang_bell",
    "RosaryCacheHanging",
    2,
-   2
+   2,
+   24.28,
+   25.24
   ],
   [
    "Belltown_basement_03",
    "rosary_cache_bell_ground",
    "RosaryCache",
    2,
-   2
+   2,
+   71.31,
+   115.44
   ],
   [
    "Belltown_basement_03",
    "rosary_cache_bell_ground (1)",
    "RosaryCache",
    2,
-   2
+   2,
+   70.93,
+   5.16
   ],
   [
    "Belltown_basement_03",
    "rosary_cache_hang_bell",
    "RosaryCacheHanging",
    2,
-   2
+   2,
+   110.48,
+   67.52
   ],
   [
    "Bellway_Peak",
    "rosary_string_medium",
    "RosaryCacheString",
    2,
-   3
+   3,
+   9.86,
+   40.23
   ],
   [
    "Bellway_Peak",
    "rosary_string_medium (1)",
    "RosaryCacheString",
    2,
-   3
+   3,
+   8.79,
+   40.88
   ],
   [
    "Bellway_Peak",
    "rosary_string_small_mixed",
    "RosaryCacheString",
    1,
-   2
+   2,
+   10.96,
+   41.82
   ],
   [
    "Bellway_Peak_02",
    "rosary_cache_hang",
    "RosaryCacheHanging",
    2,
-   2
+   2,
+   24.88,
+   27.75
   ],
   [
    "Bone_01",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   48.2,
+   74.93
   ],
   [
    "Bone_01",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   117.59,
+   12.95
   ],
   [
    "Bone_01",
    "rosary_string_small_half (2)",
    "RosaryCacheString",
    1,
-   2
+   2,
+   116.73,
+   13.76
   ],
   [
    "Bone_01b",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   13.02,
+   87.43
   ],
   [
    "Bone_01b",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   14.1,
+   88.0
   ],
   [
    "Bone_01c",
    "rosary_string_medium",
    "RosaryCacheString",
    2,
-   3
+   3,
+   139.43,
+   11.74
   ],
   [
    "Bone_01c",
    "rosary_string_small_half (1)",
    "RosaryCacheString",
    1,
-   2
+   2,
+   138.47,
+   13.13
   ],
   [
    "Bone_04",
    "Shell Shard Fossil Tiny Front (2)",
    "BreakableHolder",
    0,
-   0
+   0,
+   46.7,
+   8.48
   ],
   [
    "Bone_04",
    "Shell Shard Fossil Tiny Front (3)",
    "BreakableHolder",
    0,
-   0
+   0,
+   48.49,
+   7.64
   ],
   [
    "Bone_07",
    "Shell Shard Fossil Large Uni",
    "BreakableHolder",
    0,
-   0
+   0,
+   49.37,
+   41.0
   ],
   [
    "Bone_11",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   8.85,
+   11.72
   ],
   [
    "Bone_11",
    "rosary_string_small_mixed",
    "RosaryCacheString",
    1,
-   2
+   2,
+   9.73,
+   12.47
   ],
   [
    "Bone_14",
    "Shell Shard Fossil Tiny Bumpy",
    "BreakableHolder",
    0,
-   0
+   0,
+   101.7,
+   35.16
   ],
   [
    "Bone_14",
    "Shell Shard Fossil Tiny Front",
    "BreakableHolder",
    0,
-   0
+   0,
+   103.38,
+   35.59
   ],
   [
    "Bone_19",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   30.32,
+   17.46
   ],
   [
    "Bone_19",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   29.22,
+   18.17
   ],
   [
    "Bone_19",
    "rosary_string_small_half (1)",
    "RosaryCacheString",
    1,
-   2
+   2,
+   118.14,
+   22.31
   ],
   [
    "Bone_East_02b",
    "Shell Shard Fossil Mid",
    "BreakableHolder",
    0,
-   0
+   0,
+   293.44,
+   19.04
   ],
   [
    "Bone_East_07",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   10.79,
+   168.57
   ],
   [
    "Bone_East_09b",
    "ant_rosary_string",
    "BreakableHolder",
    0,
-   0
+   0,
+   63.99,
+   143.14
   ],
   [
    "Bone_East_09b",
    "ant_rosary_string (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   61.83,
+   142.71
   ],
   [
    "Bone_East_13",
    "Shell Shard Fossil Dock (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   90.98,
+   4.69
   ],
   [
    "Bone_East_13",
    "Shell Shard Fossil Dock (2)",
    "BreakableHolder",
    0,
-   0
+   0,
+   74.1,
+   4.65
   ],
   [
    "Bone_East_13",
    "Shell Shard Fossil Dock (3)",
    "BreakableHolder",
    0,
-   0
+   0,
+   76.28,
+   4.52
   ],
   [
    "Bone_East_14",
    "rosary_string_medium",
    "RosaryCacheString",
    2,
-   3
+   3,
+   87.36,
+   42.39
   ],
   [
    "Bone_East_14",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   88.29,
+   42.73
   ],
   [
    "Bone_East_14b",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   249.54,
+   58.82
   ],
   [
    "Bone_East_14b",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   250.43,
+   59.59
   ],
   [
    "Bone_East_16",
    "ant_rosary_string",
    "BreakableHolder",
    0,
-   0
+   0,
+   11.41,
+   18.84
   ],
   [
    "Bone_East_16",
    "ant_rosary_string (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   13.05,
+   18.37
   ],
   [
    "Bone_East_16",
    "ant_rosary_string (2)",
    "BreakableHolder",
    0,
-   0
+   0,
+   9.0,
+   18.59
   ],
   [
    "Bone_East_17",
    "ant_rosary_string",
    "BreakableHolder",
    0,
-   0
+   0,
+   10.21,
+   84.09
   ],
   [
    "Bone_East_17",
    "ant_rosary_string (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   8.98,
+   85.09
   ],
   [
    "Bone_East_17b",
    "ant_rosary_string",
    "BreakableHolder",
    0,
-   0
+   0,
+   11.92,
+   32.25
   ],
   [
    "Bone_East_17b",
    "ant_rosary_string (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   10.88,
+   32.08
   ],
   [
    "Bone_East_18",
    "ant_rosary_string",
    "BreakableHolder",
    0,
-   0
+   0,
+   139.87,
+   38.38
   ],
   [
    "Bone_East_18",
    "ant_shell_shard_string",
    "BreakableHolder",
    0,
-   0
+   0,
+   137.98,
+   38.89
   ],
   [
    "Bone_East_18",
    "ant_shell_shard_string (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   135.04,
+   38.87
   ],
   [
    "Bone_East_18b",
    "ant_item_string",
    "BreakableHolder",
    0,
-   0
+   0,
+   107.48,
+   19.21
   ],
   [
    "Bone_East_24",
    "Shell Shard Fossil Mid Variant",
    "BreakableHolder",
    0,
-   0
+   0,
+   194.63,
+   8.51
   ],
   [
    "Bone_East_24",
    "Shell Shard Fossil Tiny Bumpy",
    "BreakableHolder",
    0,
-   0
+   0,
+   107.39,
+   51.3
   ],
   [
    "Bone_East_24",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   17.44,
+   22.29
   ],
   [
    "Bone_East_24",
    "Shell Shard Fossil Tiny Front",
    "BreakableHolder",
    0,
-   0
+   0,
+   16.93,
+   19.61
   ],
   [
    "Bone_East_24",
    "ant_item_string",
    "BreakableHolder",
    0,
-   0
+   0,
+   248.93,
+   67.41
   ],
   [
    "Bone_East_24",
    "ant_rosary_string (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   245.94,
+   67.81
   ],
   [
    "Bone_East_24",
    "ant_rosary_string_large",
    "BreakableHolder",
    0,
-   0
+   0,
+   247.65,
+   67.75
   ],
   [
    "Bone_East_LavaChallenge",
    "Shell Shard Fossil Mid",
    "BreakableHolder",
    0,
-   0
+   0,
+   14.64,
+   193.01
   ],
   [
    "Bonegrave",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   270.79,
+   76.74
   ],
   [
    "Bonegrave",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   269.85,
+   78.1
   ],
   [
    "Bonetown",
    "Shell Shard Fossil Big",
    "BreakableHolder",
    0,
-   0
+   0,
+   215.85,
+   9.21
   ],
   [
    "Bonetown",
    "rosary_string_medium",
    "RosaryCacheString",
    2,
-   3
+   3,
+   226.42,
+   84.13
   ],
   [
    "Bonetown",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   225.37,
+   85.97
   ],
   [
    "Chapel_Wanderer",
    "rosary_string_medium",
    "RosaryCacheString",
    2,
-   3
+   3,
+   80.73,
+   109.59
   ],
   [
    "Chapel_Wanderer",
    "rosary_string_small_half (1)",
    "RosaryCacheString",
    1,
-   2
+   2,
+   8.25,
+   106.69
   ],
   [
    "Chapel_Wanderer",
    "rosary_string_small_half (4)",
    "RosaryCacheString",
    1,
-   2
+   2,
+   11.36,
+   106.69
   ],
   [
    "Chapel_Wanderer",
    "rosary_string_small_half (5)",
    "RosaryCacheString",
    1,
-   2
+   2,
+   79.53,
+   110.79
   ],
   [
    "Coral_02",
    "Shell Shard Fossil Tiny Bumpy",
    "BreakableHolder",
    0,
-   0
+   0,
+   54.7,
+   12.48
   ],
   [
    "Coral_02",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   56.41,
+   11.08
   ],
   [
    "Coral_02",
    "Shell Shard Fossil Tiny Front",
    "BreakableHolder",
    0,
-   0
+   0,
+   50.89,
+   12.73
   ],
   [
    "Coral_24",
    "Shell Shard Fossil Tiny Bumpy",
    "BreakableHolder",
    0,
-   0
+   0,
+   124.52,
+   23.06
   ],
   [
    "Coral_24",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   126.8,
+   23.46
   ],
   [
    "Coral_27",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   59.12,
+   25.4
   ],
   [
    "Coral_27",
    "Shell Shard Fossil Tiny Front",
    "BreakableHolder",
    0,
-   0
+   0,
+   57.26,
+   26.78
   ],
   [
    "Coral_36",
    "Shell Shard Fossil Beast",
    "BreakableHolder",
    0,
-   0
+   0,
+   19.77,
+   48.58
   ],
   [
    "Coral_36",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   29.62,
+   51.73
   ],
   [
    "Coral_38",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   60.16,
+   48.54
   ],
   [
    "Coral_38",
    "Shell Shard Fossil Tiny Front",
    "BreakableHolder",
    0,
-   0
+   0,
+   66.86,
+   44.5
   ],
   [
    "Coral_38",
    "Shell Shard Fossil Tiny Front (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   60.38,
+   40.16
   ],
   [
    "Coral_38",
    "Shell Shard Fossil Tiny Front (2)",
    "BreakableHolder",
    0,
-   0
+   0,
+   58.18,
+   48.18
   ],
   [
    "Coral_40",
    "Shell Shard Fossil Coral Conch",
    "BreakableHolder",
    0,
-   0
+   0,
+   16.36,
+   20.88
   ],
   [
    "Coral_40",
    "Shell Shard Fossil Coral Conch (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   19.23,
+   20.28
   ],
   [
    "Coral_41",
    "Shell Shard Fossil Coral Conch",
    "BreakableHolder",
    0,
-   0
+   0,
+   142.09,
+   59.11
   ],
   [
    "Cradle_03",
    "Shell Shard Fossil Mid Variant",
    "BreakableHolder",
    0,
-   0
+   0,
+   74.3,
+   84.06
   ],
   [
    "Dock_01",
    "Song Shard Barrel",
    "BreakableHolder",
    0,
-   0
+   0,
+   30.52,
+   36.04
   ],
   [
    "Dock_01",
    "rosary_string_medium",
    "RosaryCacheString",
    2,
-   3
+   3,
+   8.45,
+   27.86
   ],
   [
    "Dock_01",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   7.52,
+   28.75
   ],
   [
    "Dock_02",
    "Song Shard Barrel",
    "BreakableHolder",
    0,
-   0
+   0,
+   119.95,
+   79.03
   ],
   [
    "Dock_02",
    "rosary_string_small_half (1)",
    "RosaryCacheString",
    1,
-   2
+   2,
+   103.04,
+   57.54
   ],
   [
    "Dock_02",
    "rosary_string_small_half (2)",
    "RosaryCacheString",
    1,
-   2
+   2,
+   103.92,
+   58.09
   ],
   [
    "Dock_02b",
    "Shell Shard Fossil Tiny Bumpy",
    "BreakableHolder",
    0,
-   0
+   0,
+   26.45,
+   36.73
   ],
   [
    "Dock_02b",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   32.59,
+   37.35
   ],
   [
    "Dock_02b",
    "Shell Shard Fossil Tiny Front",
    "BreakableHolder",
    0,
-   0
+   0,
+   27.77,
+   37.51
   ],
   [
    "Dock_02b",
    "Song Shard Barrel",
    "BreakableHolder",
    0,
-   0
+   0,
+   31.94,
+   32.18
   ],
   [
    "Dock_06_Church",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   40.65,
+   29.8
   ],
   [
    "Dock_06_Church",
    "rosary_string_small (1)",
    "RosaryCacheString",
    2,
-   3
+   3,
+   26.66,
+   29.58
   ],
   [
    "Dock_06_Church",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   41.89,
+   30.57
   ],
   [
    "Dock_06_Church",
    "rosary_string_small_half (1)",
    "RosaryCacheString",
    1,
-   2
+   2,
+   29.08,
+   31.85
   ],
   [
    "Dust_02",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   22.49,
+   72.06
   ],
   [
    "Dust_02",
    "rosary_string_small_half (1)",
    "RosaryCacheString",
    1,
-   2
+   2,
+   23.25,
+   72.46
   ],
   [
    "Dust_03",
    "Shell Shard Fossil Tiny Bumpy",
    "BreakableHolder",
    0,
-   0
+   0,
+   102.44,
+   30.94
   ],
   [
    "Dust_03",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   105.06,
+   29.3
   ],
   [
    "Dust_03",
    "Shell Shard Fossil Tiny Front",
    "BreakableHolder",
    0,
-   0
+   0,
+   96.78,
+   28.95
   ],
   [
    "Dust_03",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   68.57,
+   23.12
   ],
   [
    "Dust_04",
    "Shell Shard Fossil Tiny Bumpy (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   78.54,
+   55.03
   ],
   [
    "Dust_04",
    "Shell Shard Fossil Tiny Front",
    "BreakableHolder",
    0,
-   0
+   0,
+   77.01,
+   55.99
   ],
   [
    "Dust_05",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   19.78,
+   10.09
   ],
   [
    "Dust_05",
    "Shell Shard Fossil Tiny Front",
    "BreakableHolder",
    0,
-   0
+   0,
+   17.76,
+   10.06
   ],
   [
    "Dust_06",
    "rosary_string_medium",
    "RosaryCacheString",
    2,
-   3
+   3,
+   10.93,
+   82.35
   ],
   [
    "Dust_06",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   11.8,
+   83.66
   ],
   [
    "Dust_06",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   12.62,
+   84.72
   ],
   [
    "Greymoor_02",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   52.01,
+   95.12
   ],
   [
    "Greymoor_02",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   52.95,
+   96.34
   ],
   [
    "Greymoor_03",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   89.77,
+   100.72
   ],
   [
    "Greymoor_03",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   91.11,
+   101.85
   ],
   [
    "Greymoor_05",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   6.62,
+   24.71
   ],
   [
    "Greymoor_05",
    "rosary_string_small_half (1)",
    "RosaryCacheString",
    1,
-   2
+   2,
+   7.35,
+   25.95
   ],
   [
    "Greymoor_07",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   27.33,
+   15.29
   ],
   [
    "Greymoor_07",
    "rosary_string_small_half (1)",
    "RosaryCacheString",
    1,
-   2
+   2,
+   28.43,
+   16.25
   ],
   [
    "Greymoor_08",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   140.08,
+   33.82
   ],
   [
    "Greymoor_11",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   25.06,
+   55.68
   ],
   [
    "Greymoor_11",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   25.9,
+   57.09
   ],
   [
    "Greymoor_15b",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   205.73,
+   67.43
   ],
   [
    "Greymoor_15b",
    "rosary_string_small_half (1)",
    "RosaryCacheString",
    1,
-   2
+   2,
+   204.05,
+   69.67
   ],
   [
    "Greymoor_15b",
    "rosary_string_small_half (2)",
    "RosaryCacheString",
    1,
-   2
+   2,
+   197.47,
+   44.2
   ],
   [
    "Greymoor_15b",
    "rosary_string_small_half (3)",
    "RosaryCacheString",
    1,
-   2
+   2,
+   182.98,
+   103.65
   ],
   [
    "Greymoor_16",
    "Shell Shard Fossil Tiny Bumpy",
    "BreakableHolder",
    0,
-   0
+   0,
+   91.78,
+   14.56
   ],
   [
    "Greymoor_16",
    "Shell Shard Fossil Tiny Egg (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   90.18,
+   13.09
   ],
   [
    "Greymoor_16",
    "rosary_string_medium",
    "RosaryCacheString",
    2,
-   3
+   3,
+   160.61,
+   24.84
   ],
   [
    "Greymoor_16",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   161.48,
+   25.57
   ],
   [
    "Greymoor_16",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   162.38,
+   26.59
   ],
   [
    "Greymoor_17",
    "Shell Shard Fossil Tiny Egg (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   21.63,
+   35.32
   ],
   [
    "Greymoor_17",
    "Shell Shard Fossil Tiny Egg (3)",
    "BreakableHolder",
    0,
-   0
+   0,
+   19.56,
+   24.63
   ],
   [
    "Greymoor_17",
    "Shell Shard Fossil Tiny Front",
    "BreakableHolder",
    0,
-   0
+   0,
+   11.38,
+   29.1
   ],
   [
    "Greymoor_17",
    "Shell Shard Fossil Tiny Front (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   21.2,
+   24.29
   ],
   [
    "Greymoor_17",
    "Shell Shard Fossil Tiny Front (2)",
    "BreakableHolder",
    0,
-   0
+   0,
+   23.22,
+   30.61
   ],
   [
    "Greymoor_20b",
    "scissor_string (4)",
    "RosaryCacheHanging",
    0,
-   0
+   0,
+   18.3,
+   12.74
   ],
   [
    "Greymoor_20b",
    "scissor_string (5)",
    "RosaryCacheHanging",
    0,
-   0
+   0,
+   13.2,
+   11.62
   ],
   [
    "Greymoor_20b",
    "scissor_string (6)",
    "RosaryCacheHanging",
    0,
-   0
+   0,
+   20.29,
+   13.14
   ],
   [
    "Greymoor_20b",
    "scissor_string (7)",
    "RosaryCacheHanging",
    0,
-   0
+   0,
+   21.77,
+   11.18
   ],
   [
    "Greymoor_20c",
    "scissor_string (1)",
    "RosaryCacheHanging",
    0,
-   0
+   0,
+   27.86,
+   54.37
   ],
   [
    "Greymoor_20c",
    "scissor_string (2)",
    "RosaryCacheHanging",
    0,
-   0
+   0,
+   29.1,
+   55.84
   ],
   [
    "Greymoor_20c",
    "scissor_string (4)",
    "RosaryCacheHanging",
    0,
-   0
+   0,
+   40.96,
+   70.31
   ],
   [
    "Greymoor_20c",
    "scissor_string (5)",
    "RosaryCacheHanging",
    0,
-   0
+   0,
+   39.03,
+   70.17
   ],
   [
    "Greymoor_20c",
    "scissor_string (6)",
    "RosaryCacheHanging",
    0,
-   0
+   0,
+   48.09,
+   25.82
   ],
   [
    "Greymoor_20c",
    "scissor_string (7)",
    "RosaryCacheHanging",
    0,
-   0
+   0,
+   44.6,
+   27.62
   ],
   [
    "Greymoor_20c",
    "scissor_string (8)",
    "RosaryCacheHanging",
    0,
-   0
+   0,
+   46.85,
+   77.55
   ],
   [
    "Greymoor_20c",
    "scissor_string (9)",
    "RosaryCacheHanging",
    0,
-   0
+   0,
+   48.5,
+   75.47
   ],
   [
    "Greymoor_22",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   104.6,
+   33.57
   ],
   [
    "Greymoor_22",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   88.57,
+   31.71
   ],
   [
    "Hang_06_bank",
    "rosary_string_large_full Variant",
    "RosaryCacheString",
    1,
-   2
+   2,
+   91.98,
+   39.63
   ],
   [
    "Hang_06_bank",
    "rosary_string_large_mixed Variant",
    "RosaryCacheString",
    2,
-   3
+   3,
+   81.82,
+   40.15
   ],
   [
    "Hang_06_bank",
    "rosary_string_medium",
    "RosaryCacheString",
    2,
-   3
+   3,
+   86.38,
+   40.61
   ],
   [
    "Hang_06_bank",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   80.92,
+   40.69
   ],
   [
    "Hang_06_bank",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   85.42,
+   41.89
   ],
   [
    "Hang_06_bank",
    "rosary_string_small_half (1)",
    "RosaryCacheString",
    1,
-   2
+   2,
+   91.59,
+   32.09
   ],
   [
    "Hang_09",
    "Song Shard Under Chest",
    "BreakableHolder",
    0,
-   0
+   0,
+   105.1,
+   16.73
   ],
   [
    "Hang_15",
    "Song Shard Under Chest",
    "BreakableHolder",
    0,
-   0
+   0,
+   70.13,
+   13.19
   ],
   [
    "Library_04",
    "rosary_bucket_library",
    "RosaryCache",
    2,
-   2
+   2,
+   51.39,
+   78.98
   ],
   [
    "Library_06",
    "rosary_bucket_library",
    "RosaryCache",
    2,
-   2
+   2,
+   38.84,
+   64.69
   ],
   [
    "Library_06",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   36.16,
+   67.13
   ],
   [
    "Library_06",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   37.16,
+   68.37
   ],
   [
    "Library_07",
    "Song Shard Under Chest",
    "BreakableHolder",
    0,
-   0
+   0,
+   55.5,
+   126.61
   ],
   [
    "Library_07",
    "rosary_cache_bell_ground",
    "RosaryCache",
    2,
-   2
+   2,
+   39.55,
+   138.46
   ],
   [
    "Library_08",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   109.15,
+   35.59
   ],
   [
    "Library_08",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   107.92,
+   37.42
   ],
   [
    "Library_11b",
    "Shell Shard Fossil Tiny Bumpy",
    "BreakableHolder",
    0,
-   0
+   0,
+   41.91,
+   141.16
   ],
   [
    "Library_11b",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   29.89,
+   139.02
   ],
   [
    "Library_11b",
    "Shell Shard Fossil Tiny Egg (2)",
    "BreakableHolder",
    0,
-   0
+   0,
+   41.77,
+   143.55
   ],
   [
    "Library_11b",
    "Shell Shard Fossil Tiny Front",
    "BreakableHolder",
    0,
-   0
+   0,
+   39.26,
+   144.99
   ],
   [
    "Library_11b",
    "Song Shard Barrel",
    "BreakableHolder",
    0,
-   0
+   0,
+   27.66,
+   88.99
   ],
   [
    "Library_11b",
    "Song Shard Barrel (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   24.38,
+   88.99
   ],
   [
    "Library_12",
    "Shell Shard Fossil Dustpen Short",
    "BreakableHolder",
    0,
-   0
+   0,
+   39.49,
+   13.48
   ],
   [
    "Library_12",
    "Shell Shard Fossil Dustpen Tall",
    "BreakableHolder",
    0,
-   0
+   0,
+   40.88,
+   13.48
   ],
   [
    "Library_12",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   44.81,
+   104.31
   ],
   [
    "Library_12",
    "Shell Shard Fossil Tiny Front",
    "BreakableHolder",
    0,
-   0
+   0,
+   47.19,
+   105.13
   ],
   [
    "Library_12b",
    "Song Shard Under Chest",
    "BreakableHolder",
    0,
-   0
+   0,
+   163.79,
+   17.04
   ],
   [
    "Library_13",
    "Song Shard Barrel",
    "BreakableHolder",
    0,
-   0
+   0,
+   24.47,
+   29.17
   ],
   [
    "Mosstown_01",
    "rosary_string_small (1)",
    "RosaryCacheString",
    2,
-   3
+   3,
+   47.49,
+   25.6
   ],
   [
    "Mosstown_01",
    "rosary_string_small (2)",
    "RosaryCacheString",
    2,
-   3
+   3,
+   48.38,
+   25.3
   ],
   [
    "Mosstown_02",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   154.2,
+   58.94
   ],
   [
    "Mosstown_02",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   153.17,
+   60.03
   ],
   [
    "Mosstown_03",
    "Shell Shard Fossil Tiny Bumpy",
    "BreakableHolder",
    0,
-   0
+   0,
+   6.55,
+   86.61
   ],
   [
    "Mosstown_03",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   11.47,
+   86.82
   ],
   [
    "Mosstown_03",
    "Shell Shard Fossil Tiny Front",
    "BreakableHolder",
    0,
-   0
+   0,
+   8.68,
+   86.46
   ],
   [
    "Peak_01",
    "Shell Shard Fossil Tiny Bumpy (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   94.56,
+   110.33
   ],
   [
    "Peak_01",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   94.58,
+   112.35
   ],
   [
    "Peak_06",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   8.89,
+   44.17
   ],
   [
    "Peak_06",
    "Shell Shard Fossil Tiny Front",
    "BreakableHolder",
    0,
-   0
+   0,
+   10.68,
+   45.42
   ],
   [
    "Peak_07",
    "Shell Shard Fossil Tiny Bumpy",
    "BreakableHolder",
    0,
-   0
+   0,
+   33.16,
+   49.15
   ],
   [
    "Peak_07",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   32.15,
+   51.63
   ],
   [
    "Peak_07",
    "Shell Shard Fossil Tiny Front",
    "BreakableHolder",
    0,
-   0
+   0,
+   30.35,
+   54.58
   ],
   [
    "Room_CrowCourt",
    "rosary_string_medium",
    "RosaryCacheString",
    2,
-   3
+   3,
+   26.33,
+   25.54
   ],
   [
    "Room_CrowCourt",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   31.99,
+   25.64
   ],
   [
    "Room_CrowCourt",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   24.13,
+   26.93
   ],
   [
    "Room_CrowCourt",
    "rosary_string_small_half (1)",
    "RosaryCacheString",
    1,
-   2
+   2,
+   33.5,
+   26.93
   ],
   [
    "Room_CrowCourt",
    "rosary_string_small_half (6)",
    "RosaryCacheString",
    1,
-   2
+   2,
+   46.95,
+   38.88
   ],
   [
    "Room_CrowCourt",
    "rosary_string_small_half (7)",
    "RosaryCacheString",
    1,
-   2
+   2,
+   25.72,
+   37.68
   ],
   [
    "Room_CrowCourt",
    "rosary_string_small_half (8)",
    "RosaryCacheString",
    1,
-   2
+   2,
+   24.67,
+   38.09
   ],
   [
    "Room_CrowCourt_02",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   19.3,
+   50.52
   ],
   [
    "Room_CrowCourt_02",
    "rosary_string_small_half (2)",
    "RosaryCacheString",
    1,
-   2
+   2,
+   8.54,
+   81.09
   ],
   [
    "Room_CrowCourt_02",
    "rosary_string_small_half (3)",
    "RosaryCacheString",
    1,
-   2
+   2,
+   17.69,
+   53.17
   ],
   [
    "Room_Forge",
    "Song Shard Barrel",
    "BreakableHolder",
    0,
-   0
+   0,
+   4.53,
+   20.03
   ],
   [
    "Shadow_05",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   102.55,
+   33.73
   ],
   [
    "Shadow_10",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   165.35,
+   5.59
   ],
   [
    "Shadow_10",
    "Shell Shard Fossil Tiny Front",
    "BreakableHolder",
    0,
-   0
+   0,
+   168.17,
+   5.18
   ],
   [
    "Shadow_11",
    "Shell Shard Fossil Tiny Bumpy",
    "BreakableHolder",
    0,
-   0
+   0,
+   4.87,
+   11.67
   ],
   [
    "Shadow_11",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   6.44,
+   14.73
   ],
   [
    "Shadow_25",
    "Shell Shard Fossil Mid Variant",
    "BreakableHolder",
    0,
-   0
+   0,
+   8.9,
+   31.24
   ],
   [
    "Shadow_25",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   15.27,
+   31.74
   ],
   [
    "Shadow_25",
    "Shell Shard Fossil Tiny Front",
    "BreakableHolder",
    0,
-   0
+   0,
+   17.69,
+   30.58
   ],
   [
    "Shellwood_01",
    "Shell Shard Fossil Tiny Bumpy",
    "BreakableHolder",
    0,
-   0
+   0,
+   106.61,
+   23.27
   ],
   [
    "Shellwood_01",
    "Shell Shard Fossil Tiny Bumpy (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   111.61,
+   26.21
   ],
   [
    "Shellwood_01",
    "Shell Shard Fossil Tiny Front",
    "BreakableHolder",
    0,
-   0
+   0,
+   108.26,
+   23.35
   ],
   [
    "Shellwood_11",
    "Shell Shard Fossil Mid",
    "BreakableHolder",
    0,
-   0
+   0,
+   77.59,
+   72.09
   ],
   [
    "Shellwood_11",
    "Shell Shard Fossil Tiny Bumpy",
    "BreakableHolder",
    0,
-   0
+   0,
+   81.94,
+   72.69
   ],
   [
    "Shellwood_11",
    "Shell Shard Fossil Tiny Bumpy (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   82.84,
+   69.88
   ],
   [
    "Shellwood_11",
    "Shell Shard Fossil Tiny Bumpy (2)",
    "BreakableHolder",
    0,
-   0
+   0,
+   77.46,
+   68.03
   ],
   [
    "Shellwood_11",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   79.27,
+   75.91
   ],
   [
    "Shellwood_25",
    "Shell Shard Fossil Tiny Egg (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   31.46,
+   11.65
   ],
   [
    "Slab_05",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   49.77,
+   33.01
   ],
   [
    "Slab_05",
    "Shell Shard Fossil Tiny Front",
    "BreakableHolder",
    0,
-   0
+   0,
+   52.3,
+   31.74
   ],
   [
    "Slab_05",
    "Shell Shard Fossil Tiny Front (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   55.77,
+   28.51
   ],
   [
    "Slab_12",
    "Shell Shard Fossil Tiny Bumpy",
    "BreakableHolder",
    0,
-   0
+   0,
+   24.67,
+   18.38
   ],
   [
    "Slab_12",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   23.47,
+   16.07
   ],
   [
    "Slab_18",
    "Shell Shard Fossil Tiny Bumpy",
    "BreakableHolder",
    0,
-   0
+   0,
+   82.24,
+   70.31
   ],
   [
    "Slab_18",
    "Shell Shard Fossil Tiny Front",
    "BreakableHolder",
    0,
-   0
+   0,
+   82.9,
+   72.41
   ],
   [
    "Slab_18",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   16.36,
+   25.54
   ],
   [
    "Slab_19b",
    "rosary_string_medium",
    "RosaryCacheString",
    2,
-   3
+   3,
+   20.06,
+   17.02
   ],
   [
    "Slab_19b",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   21.17,
+   16.66
   ],
   [
    "Slab_19b",
    "rosary_string_small (1)",
    "RosaryCacheString",
    2,
-   3
+   3,
+   23.13,
+   15.01
   ],
   [
    "Slab_19b",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   28.06,
+   12.68
   ],
   [
    "Song_01",
    "Song Shard Barrel",
    "BreakableHolder",
    0,
-   0
+   0,
+   71.1,
+   110.02
   ],
   [
    "Song_01",
    "rosary_string_medium",
    "RosaryCacheString",
    2,
-   3
+   3,
+   20.16,
+   85.34
   ],
   [
    "Song_01",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   110.48,
+   132.23
   ],
   [
    "Song_01",
    "rosary_string_small (1)",
    "RosaryCacheString",
    2,
-   3
+   3,
+   19.39,
+   84.69
   ],
   [
    "Song_01",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   109.45,
+   134.37
   ],
   [
    "Song_01b",
    "rosary_string_medium",
    "RosaryCacheString",
    2,
-   3
+   3,
+   16.81,
+   10.9
   ],
   [
    "Song_01b",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   13.65,
+   10.54
   ],
   [
    "Song_01b",
    "rosary_string_small_mixed",
    "RosaryCacheString",
    1,
-   2
+   2,
+   12.72,
+   10.74
   ],
   [
    "Song_03",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   40.55,
+   34.2
   ],
   [
    "Song_03",
    "rosary_string_small_half (1)",
    "RosaryCacheString",
    1,
-   2
+   2,
+   39.53,
+   34.79
   ],
   [
    "Song_07",
    "rosary_string_medium",
    "RosaryCacheString",
    2,
-   3
+   3,
+   3.12,
+   8.71
   ],
   [
    "Song_09",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   10.78,
+   59.84
   ],
   [
    "Song_09",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   9.87,
+   61.64
   ],
   [
    "Song_09",
    "rosary_string_small_half (1)",
    "RosaryCacheString",
    1,
-   2
+   2,
+   11.72,
+   60.65
   ],
   [
    "Song_11",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   45.71,
+   50.42
   ],
   [
    "Song_11",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   43.35,
+   52.59
   ],
   [
    "Song_11",
    "rosary_string_small_half (1)",
    "RosaryCacheString",
    1,
-   2
+   2,
+   46.74,
+   50.99
   ],
   [
    "Song_15",
    "rosary_string_medium",
    "RosaryCacheString",
    2,
-   3
+   3,
+   5.16,
+   10.04
   ],
   [
    "Song_15",
    "rosary_string_small",
    "RosaryCacheString",
    2,
-   3
+   3,
+   6.43,
+   10.54
   ],
   [
    "Song_15",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   7.75,
+   12.04
   ],
   [
    "Tut_01",
    "Shell Shard Fossil Large Uni",
    "BreakableHolder",
    0,
-   0
+   0,
+   79.61,
+   9.84
   ],
   [
    "Tut_01b",
    "Shell Shard Fossil Mid (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   86.48,
+   44.11
   ],
   [
    "Tut_01b",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   144.45,
+   51.45
   ],
   [
    "Tut_01b",
    "Shell Shard Fossil Tiny Front",
    "BreakableHolder",
    0,
-   0
+   0,
+   145.3,
+   54.6
   ],
   [
    "Tut_02",
    "Shell Shard Fossil Tiny Bumpy",
    "BreakableHolder",
    0,
-   0
+   0,
+   14.71,
+   36.06
   ],
   [
    "Tut_02",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   14.12,
+   32.42
   ],
   [
    "Tut_02",
    "Shell Shard Fossil Tiny Front",
    "BreakableHolder",
    0,
-   0
+   0,
+   13.32,
+   37.31
   ],
   [
    "Under_03b",
    "Song Shard Under Chest",
    "BreakableHolder",
    0,
-   0
+   0,
+   9.86,
+   14.01
   ],
   [
    "Under_04",
    "Song Shard Under Chest",
    "BreakableHolder",
    0,
-   0
+   0,
+   7.89,
+   22.0
   ],
   [
    "Under_07",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   78.06,
+   20.11
   ],
   [
    "Under_07c",
    "Song Shard Under Chest (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   46.47,
+   63.72
   ],
   [
    "Under_07c",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   18.2,
+   73.0
   ],
   [
    "Under_07c",
    "rosary_string_small_half (1)",
    "RosaryCacheString",
    1,
-   2
+   2,
+   19.11,
+   72.28
   ],
   [
    "Under_08",
    "Song Shard Under Chest",
    "BreakableHolder",
    0,
-   0
+   0,
+   101.27,
+   28.85
   ],
   [
    "Under_17",
    "Song Shard Under Chest",
    "BreakableHolder",
    0,
-   0
+   0,
+   55.77,
+   3.32
   ],
   [
    "Under_23",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   38.47,
+   5.35
   ],
   [
    "Under_27",
    "Song Shard Barrel",
    "BreakableHolder",
    0,
-   0
+   0,
+   16.53,
+   28.13
   ],
   [
    "Ward_06",
    "rosary_string_medium",
    "RosaryCacheString",
    2,
-   3
+   3,
+   71.9,
+   51.74
   ],
   [
    "Ward_06",
    "rosary_string_small_half",
    "RosaryCacheString",
    1,
-   2
+   2,
+   72.83,
+   53.15
   ],
   [
    "Wisp_09",
    "Shell Shard Fossil Mid Variant",
    "BreakableHolder",
    0,
-   0
+   0,
+   10.6,
+   24.85
   ],
   [
    "Wisp_09",
    "Shell Shard Fossil Tiny Bumpy",
    "BreakableHolder",
    0,
-   0
+   0,
+   72.79,
+   7.62
   ],
   [
    "Wisp_09",
    "Shell Shard Fossil Tiny Bumpy (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   7.75,
+   18.61
   ],
   [
    "Wisp_09",
    "Shell Shard Fossil Tiny Egg",
    "BreakableHolder",
    0,
-   0
+   0,
+   72.77,
+   5.4
   ],
   [
    "Wisp_09",
    "Shell Shard Fossil Tiny Egg (1)",
    "BreakableHolder",
    0,
-   0
+   0,
+   16.03,
+   24.29
   ],
   [
    "Wisp_09",
    "Shell Shard Fossil Tiny Egg (2)",
    "BreakableHolder",
    0,
-   0
+   0,
+   4.02,
+   20.59
   ],
   [
    "Wisp_09",
    "Shell Shard Fossil Tiny Egg (3)",
    "BreakableHolder",
    0,
-   0
+   0,
+   4.63,
+   24.14
   ]
  ],
  "doors": {
