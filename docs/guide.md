@@ -1091,7 +1091,7 @@ The visit counter is [Footworn](https://github.com/betorzdev/footworn) (`track()
 Cloudflare Worker in Western Europe. It sets no cookies, keeps no IP, and stores one row per visit
 with nothing that names you: the page, referrer host, browser and system families, screen width,
 language, country and the site's events (`screen` with `view` and `lang`, `lang`, `error` with
-`part`, `msg` (the first 64 characters of what went wrong) and `at` (the script and line), `sister` with `to` (the other site's id), `support` with `at` (`header`, `footer` or `about`: which donation link was clicked), and the plain ones: `share`, `save-import`, `save-sync`...). The owner sees them as daily
+`part`, `msg` (the first 64 characters of what went wrong) and `at` (the script and line), `sister` with `to` (the other site's id), `support` with `at` (`header`, `footer` or `about`: which donation link was clicked), and the plain ones: `share`, `save-import`, `save-sync`...). With a real save loaded (never in Free mode) every event also carries `pct` (the completion as the game shows it, a whole number) and `act` (the save's Act, 1 to 3). The owner sees them as daily
 counts and, for today only, one by one, rounded (the minute, phone/tablet/desktop); its own
 record of what it stores is at footworn.betorzdev.workers.dev/privacy. That fits the AEPD's exemption for audience measurement ("Guía uso de
 cookies para herramientas de medición de audiencia", January 2024), whose one condition that
