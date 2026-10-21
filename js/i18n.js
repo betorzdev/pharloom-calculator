@@ -765,7 +765,10 @@
     pgOtherArts:    { es: 'Otras habilidades', en: 'Other abilities' },
     pgTasks:        { es: 'Tareas', en: 'Tasks' },   // PANE_QUESTS
     pgTasksMain:    { es: 'Objetivos principales', en: 'Main objectives' },
-    pgTasksCollect: { es: 'Colección', en: 'Collect' },
+    // Tasks as the three Wishwalls (design/104): their head, and the pictures under each wall's lines.
+    pgTasksWalls:   { es: 'Muros de deseos', en: 'Wishwalls' },   // QUESTBOARD_TITLE, the three of them
+    pgTasksLater:   { es: 'Más adelante', en: 'Later' },
+    pgTasksDone:    { es: 'Completados', en: 'Completed' },   // UI_TITLE_QUESTS_COMPLETE
     // A wish promised (design/81): its state as the game shows it, and the head the promised go first under.
     pgPromised:     { es: 'Deseo prometido', en: 'Wish Promised' },   // WISH_PROMISED
     pgPromisedHead: { es: 'Prometidos', en: 'Promised' },   // no word of the game's for them together
@@ -985,8 +988,8 @@
                       en: 'What you mark (profiles, Tools and Crests, journal, progress, preferences) is kept only in this browser, with a copy of each save file you import; if you turn on "Follow the game", so is the access to your save file.' },
     footPrivSaves:  { es: 'Tus archivos guardados se leen aquí mismo y no se suben a ningún sitio.',
                       en: 'Your save files are read right here and never uploaded anywhere.' },   // the files as SAVE_CORRUPTED_TITLE and PS4_SAVE_IMPORT_RESULT_SUCCESS call them
-    footPrivCount:  { es: 'Las visitas se cuentan con {gc}: páginas, desde dónde llegas, navegador y sistema, ancho de pantalla, idioma, país, qué pantallas abres y qué botones y enlaces pulsas. El dueño las ve como recuentos por día y, las de hoy, una a una con la hora al minuto. No guarda tu IP ni usa cookies.',
-                      en: 'Visits are counted with {gc}: pages, where you came from, browser and system, screen width, language, country, which screens you open and which buttons and links you press. The owner sees them as daily counts and, for today only, one by one with the time to the minute. It keeps no IP and uses no cookies.' },
+    footPrivCount:  { es: 'Las visitas se cuentan con {gc}: páginas, desde dónde llegas, navegador y sistema, ancho de pantalla, idioma, país, qué pantallas abres y qué botones y enlaces pulsas. Con una partida cargada, esos eventos llevan además su porcentaje de progreso y su acto. El dueño las ve como recuentos por día y, las de hoy, una a una con la hora al minuto. No guarda tu IP ni usa cookies.',
+                      en: 'Visits are counted with {gc}: pages, where you came from, browser and system, screen width, language, country, which screens you open and which buttons and links you press. With a save loaded, those events also carry its completion percentage and its Act. The owner sees them as daily counts and, for today only, one by one with the time to the minute. It keeps no IP and uses no cookies.' },
     footPrivHost:   { es: 'La web está alojada en {gh}, que guarda registros técnicos de cada visita.',
                       en: 'The site is hosted on {gh}, which keeps technical logs of each visit.' },
     footPrivErase:  { es: 'Para borrarlo todo, borra los datos de este sitio en tu navegador.',
