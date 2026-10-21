@@ -489,7 +489,9 @@ leaves those off.
   and Craw Mementos), who gives it (Nuu, the Hunter's), the challenge that awards it (Seth's,
   Sprintmaster Swift's, the Far Fields Rune Harp's speed challenge), and the Shellwood Weaver
   Effigy, through the Chapel of the Witch after Rite of Rebirth. The Vaultkeeper's Melody is with
-  Cardinius, who plays it once you bring him the Sacred Cylinder of the Whispering Vaults. Two
+  Cardinius, who plays it once you bring him the Sacred Cylinder of the Whispering Vaults; the
+  cylinder has its own mark where it lies, among the Psalm Cylinders, with its own name and icon,
+  and each card has a button to the other. Two
   things move in Act 3 if you don't have them yet, and have a second
   mark there saying Act 3 and why: the Memory Locket of «Volatile Flintbeetles» lies in Survivor's
   Camp while the wish isn't granted, and the Aknid carrying Mossberry no. 3 moves one room east.

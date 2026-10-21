@@ -416,6 +416,7 @@
     "assets/map/icons/farsight.webp": [110, 128, 55.0, 64.5, 127, 79.7],
     "assets/map/icons/gilly_doll.webp": [124, 117, 62.0, 58.0, 122, 65.6],
     "assets/map/icons/hornet_extractor_pins.webp": [104, 128, 52.0, 64.0, 128, 70.7],
+    "assets/map/icons/hornet_icon_0000_r_psalm_cylinder_white.webp": [120, 121, 59.5, 60.5, 121, 68.9],
     "assets/map/icons/hornet_icon_bell_clapper.webp": [99, 128, 50.0, 63.5, 125, 72.0],
     "assets/map/icons/hornet_inv_pane_icons_0002_wish.webp": [65, 96, 32.5, 47.5, 95, 47.5],
     "assets/map/icons/hornet_inv_pane_icons_0003_journal.webp": [70, 72, 35.0, 37.0, 68, 36.8],
