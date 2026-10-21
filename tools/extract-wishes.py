@@ -21,16 +21,27 @@ What it reads (read on 11-Oct-2026, patch 1.0.30000):
         either death sets rockRollerDefeated_bone06), and the playerData bools it or a parent needs
         to be there (DeactivateIfPlayerdataTrue / False: Bone_04's only while
         bone03_openedTrapdoorForRockRoller is false, Bone_06's once it's true), field → value;
+      - each of BUDS' components, a thing that gives a wish's target with no reference to it (the
+        Plasmium buds, LifebloodPustule, read on 21-Oct-2026): [scene, component, object, bool, x, y],
+        bool its persistentBroken's (set once the Needle Phial's charged stab extracts it), the
+        object the bud itself; only the ones there before GROWN is set, the ones the wish is done
+        with (three, one each in crawl_03, crawl_07 and crawl_09, as many as it asks for);
       - each of DROPPERS' FSMs, a spot where a wish's target drops by chance while the wish is
         active (its CheckQuestStateV2 names the wish): the Silver Bells' seven spots above
         Bellhart and seven below (component QuestDropper, no flag);
-      - where the game ends each quest: a PlayMakerFSM action EndQuest, EndQuestV2 or
-        TryEndQuestV2 whose quest parameter is that quest (as tools/extract-quests.py maps an
-        offer): [scene, object, x, y];
+      - where the game ends each quest: a PlayMakerFSM action EndQuest, EndQuestV2, TryEndQuest
+        or TryEndQuestV2 whose quest parameter is that quest (as tools/extract-quests.py maps an
+        offer): [scene, object, x, y]; or the corpse an enemy of the scene leaves
+        (EnemyDeathEffectsRegular's corpsePrefab or altCorpses) when a prefab's FSM ends a quest
+        (below): [scene, enemy, x, y, 'corpse'], the wish done by that fight;
       - what offers each wish: a PlayMakerFSM action QuestYesNo(V2), BeginQuest(V2) or
         CanBeginQuest whose quest parameter is that wish (offers: [scene, object, x, y]), so a wish
         nobody offers in person (Fleatopia's Mr Mushroom Tablet) is marked where it's taken;
       - the FSMs that name a playerData field MushroomQuestFound<n> (the Herald's seven spots).
+  every other bundle (the prefabs)  each PlayMakerFSM that ends a quest, as a scene's: the
+      bosses' corpses that end their wish once the fight is won and they've spoken (Corpse
+      Tormented Trobbio for Pain, Anguish and Misery, Corpse Song Knight for Final Audience,
+      Corpse Garmond BlackThreaded for Hero's Call), by the prefab they're the root of.
   maps_assets_all.bundle  the map's own quest pins (Game_Map_Hornet / Main Quest Pins: each a
       QuestMapMarker with its quest, or the delivery item it stands for, and the scene it's for
       when the save chooses among several: the Steel Sentinel's), in world units, and what
@@ -55,7 +66,7 @@ OUT = os.path.join(HERE, '..', 'kb', 'data', 'game', 'wishes.json')
 ICONS = os.path.join(HERE, '..', 'assets', 'map', 'icons')
 DATA = ['questsystem/quests.bundle', 'questsystem/mainquests.bundle', 'questsystem/types.bundle', 'collectables/collectableitems.bundle']
 ATLASES = ['inventory', 'inventory_furniture_items']
-END = {'EndQuest', 'EndQuestV2', 'TryEndQuestV2'}
+END = {'EndQuest', 'EndQuestV2', 'TryEndQuest', 'TryEndQuestV2'}
 # The actions that offer a quest (as tools/extract-quests.py maps an offer to its scene).
 OFFER = {'QuestYesNo', 'QuestYesNoV2', 'BeginQuest', 'BeginQuestV2', 'CanBeginQuest'}
 GIVE = {'CollectableItemCollect', 'SavedItemGet', 'SavedItemGetV2'}
@@ -78,6 +89,13 @@ EMBLEMS = {'Courier', 'Steel Sentinel', 'Herald', 'Wayfarer'}
 # Bells' (Quest Bell Dropper, Quest Bell Dropper (1)…, in belltown_04 and belltown_basement_03).
 DROPPERS = ('Quest Bell Dropper',)
 CHECK = 'CheckQuestStateV2'
+# What gives a wish's target from the game's code, by component → the target: Hornet's Needle Phial
+# takes Plasmium from a bud (LifebloodPustule). The buds the wish is done with stand under a
+# TestGameObjectActivator that takes them away once GROWN is set (Alchemist's Assistant granted);
+# the ones it brings (crawl_07's "After State", Act 3's large ones, each with a
+# DeactivateIfPlayerdataFalse of it) are only for the Plasmium masks: left out.
+BUDS = {'LifebloodPustule': 'Plasmium'}
+GROWN = 'BlueScientistSceneryPustulesGrown'
 CLS = None
 
 
@@ -104,7 +122,7 @@ def scene(args):
     Herald's fields."""
     import warnings
     warnings.filterwarnings('ignore')
-    path, targets = args
+    path, targets, corpses = args
     name = os.path.basename(path)[:-len('.bundle')]
     env = UnityPy.load(path)
     T = {o.path_id: o.read() for o in env.objects if o.type.name == 'Transform'}
@@ -121,6 +139,8 @@ def scene(args):
 
     bools, found = {}, []   # GameObject → its PersistentBoolItem's ID; (kind, gid, …)
     spawn = {}   # GameObject → its SPAWN components, read only for an enemy that drops a target
+    bool_go = {}   # a PersistentBoolItem → its GameObject
+    switch = []   # the TestGameObjectActivators, read only for a bud
     for o in env.objects:
         if o.type.name != 'MonoBehaviour':
             continue
@@ -128,10 +148,16 @@ def scene(args):
         if cls in SPAWN:
             spawn.setdefault(struct.unpack_from('<q', o.get_raw_data(), 4)[0], []).append((cls, o))
             continue
-        if cls not in ('CollectableItemPickup', 'PersistentEnemyItemDrop', 'PersistentBoolItem', 'PlayMakerFSM'):
+        if cls == 'TestGameObjectActivator':
+            switch.append(o)
+            continue
+        if cls not in ('CollectableItemPickup', 'PersistentEnemyItemDrop', 'PersistentBoolItem', 'PlayMakerFSM', *BUDS):
             continue
         raw = o.get_raw_data()
         gid = struct.unpack_from('<q', raw, 4)[0]
+        if cls in BUDS:
+            found.append((cls, gid, o.read_typetree()['persistentBroken']['m_PathID']))
+            continue
         if cls == 'PlayMakerFSM':
             hit = FIELD.findall(raw)
             ext = {e.path.split('/')[-1].lower() for e in o.assets_file.externals}
@@ -165,6 +191,7 @@ def scene(args):
         elif cls == 'PersistentBoolItem':
             tt = o.read_typetree()
             bools[gid] = (tt.get('itemData') or {}).get('ID') or ''
+            bool_go[o.path_id] = gid
         else:
             tt = o.read_typetree()
             ref = at(o.assets_file, tt.get('item'))
@@ -188,7 +215,53 @@ def scene(args):
             g = T[f].m_GameObject.m_PathID if f in T else 0
         return {'dead': dead, 'needs': dict(sorted(needs.items()))}
 
+    def grown(gid):
+        """A bud: what GROWN must be for it to be there (True, False, or None when it doesn't
+        matter), from the DeactivateIfPlayerdata<True|False>s of GROWN (on their objectToDeactivate,
+        else their own object) and the TestGameObjectActivators of one test of GROWN (the object it
+        activates is there when the test holds, the one it deactivates when it doesn't), on the bud
+        or a parent."""
+        tests = {}   # an object → the GROWN it's there with
+        for host, cs in spawn.items():
+            for cls, o in cs:
+                tt = o.read_typetree()
+                if cls != 'EnemyDeathEffectsRegular' and tt.get('boolName') == GROWN:
+                    tests[(tt.get('objectToDeactivate') or {}).get('m_PathID') or host] = cls == 'DeactivateIfPlayerdataFalse'
+        for o in switch:
+            tt = o.read_typetree()
+            groups = (tt.get('playerDataTest') or {}).get('TestGroups') or []
+            if len(groups) == 1 and len(groups[0]['Tests']) == 1 and groups[0]['Tests'][0]['FieldName'] == GROWN:
+                v = bool(groups[0]['Tests'][0]['BoolValue'])
+                tests[tt['activateGameObject']['m_PathID']] = v
+                tests[tt['deactivateGameObject']['m_PathID']] = not v
+        need, g = set(), gid
+        while g:
+            if g in tests:
+                need.add(tests[g])
+            t = of_go.get(g)
+            f = t.m_Father.m_PathID if t is not None else 0
+            g = T[f].m_GameObject.m_PathID if f in T else 0
+        if len(need) > 1:
+            fail(f'{name}: a bud there both before and after {GROWN}')
+        return need.pop() if need else None
+
     out = {'items': [], 'ends': [], 'fields': [], 'offers': []}
+    # An enemy whose corpse ends a quest (corpses: a prefab's root, by its CAB and path id): the
+    # wish is done where that enemy falls.
+    pids = [struct.pack('<q', k) for c in corpses.values() for k in c]
+    for gid, comps in spawn.items():
+        for cls, o in comps:
+            if cls != 'EnemyDeathEffectsRegular' or not any(p in o.get_raw_data() for p in pids):
+                continue
+            tt = o.read_typetree()
+            refs = [tt.get('corpsePrefab')] + [r for a in tt.get('altCorpses') or [] for r in (a.values() if isinstance(a, dict) and 'm_PathID' not in a else [a])]
+            for r in refs:
+                if not isinstance(r, dict) or not r.get('m_PathID'):
+                    continue
+                af = o.assets_file
+                cab = af.name if r['m_FileID'] == 0 else af.externals[r['m_FileID'] - 1].path.split('/')[-1]
+                for q in corpses.get(cab.lower(), {}).get(r['m_PathID'], []):
+                    out['ends'].append([q, name, of_go[gid].m_GameObject.read().m_Name, *world(gid), 'corpse'])
     for f in found:
         gid = f[1]
         try:
@@ -198,7 +271,13 @@ def scene(args):
         xy = world(gid)
         own = bools.get(gid)
         flag = (own or go) if own is not None else None
-        if f[0] == 'CollectableItemPickup':
+        if f[0] in BUDS:
+            b = bool_go.get(f[2])
+            if b is None:
+                fail(f'{name}: a {f[0]} with no persistentBroken of its own')
+            if grown(gid) is not True:
+                out['items'].append([BUDS[f[0]], name, f[0], go, bools[b] or of_go[b].m_GameObject.read().m_Name, *xy])
+        elif f[0] == 'CollectableItemPickup':
             if f[2][1] not in ('Quest', 'MainQuest'):   # one that only waits on a quest isn't the thing
                 out['items'].append([f[2][0], name, f[0], go, flag, *xy])
         elif f[0] == 'PersistentEnemyItemDrop':
@@ -218,6 +297,54 @@ def scene(args):
                 for q in f[5]:
                     out['items'].append([q, name, 'QuestDropper', go, None, *xy])
     return out
+
+
+def prefab(args):
+    """One bundle that isn't a scene: the PlayMakerFSMs that end a quest (as scene() reads them),
+    by the prefab they're in: {CAB lower: {its root GameObject's path id: [quest]}}."""
+    import warnings
+    warnings.filterwarnings('ignore')
+    path, targets = args
+    out = {}
+    try:
+        env = UnityPy.load(path)
+    except Exception:
+        return out
+    T = None
+    for o in env.objects:
+        if o.type.name != 'MonoBehaviour' or not {e.path.split('/')[-1].lower() for e in o.assets_file.externals} & targets.keys():
+            continue
+        if script_of(o) != 'PlayMakerFSM':
+            continue
+        tt = o.read_typetree()
+        var = {v['name']: v.get('value') for v in (tt['fsm'].get('variables') or {}).get('objectVariables') or []}
+        ends = set()
+        for st in tt['fsm'].get('states') or []:
+            ad = st['actionData']
+            starts = ad['actionStartIndex']
+            for j, (ty, pos) in enumerate(zip(ad['paramDataType'], ad['paramDataPos'])):
+                if ty != FSM_OBJECT:
+                    continue
+                action = ad['actionNames'][bisect.bisect_right(starts, j) - 1].split(',')[0].split('.')[-1]
+                p = ad['fsmObjectParams'][pos]
+                r = var.get(p.get('name')) if p.get('useVariable') else p.get('value')
+                if action not in END or not isinstance(r, dict) or not r.get('m_PathID'):
+                    continue
+                af = o.assets_file
+                cab = af.name if r['m_FileID'] == 0 else af.externals[r['m_FileID'] - 1].path.split('/')[-1]
+                ref = targets.get(cab.lower(), {}).get(r['m_PathID'])
+                if ref and ref[1] in ('Quest', 'MainQuest'):
+                    ends.add(ref[0])
+        if not ends:
+            continue
+        if T is None:
+            T = {t.path_id: t.read() for t in env.objects if t.type.name == 'Transform'}
+            of_go = {t.m_GameObject.m_PathID: t for t in T.values()}
+        g = struct.unpack_from('<q', o.get_raw_data(), 4)[0]
+        while of_go.get(g) is not None and of_go[g].m_Father.m_PathID in T:   # up to the prefab's root
+            g = T[of_go[g].m_Father.m_PathID].m_GameObject.m_PathID
+        out.setdefault(o.assets_file.name.lower(), {}).setdefault(g, set()).update(ends)
+    return {c: {g: sorted(q) for g, q in d.items()} for c, d in out.items()}
 
 
 def pins(game):
@@ -370,9 +497,16 @@ def main(game):
         fail(f'only {len(quests)} quests: the bundles changed')
     sdir = os.path.join(base, 'scenes_scenes_scenes')
     paths = sorted(os.path.join(sdir, f) for f in os.listdir(sdir) if f.endswith('.bundle') and f != 'menu_title.bundle')
-    items, ends, fields, offers = {}, {}, {}, {}
+    # The prefabs (every bundle but the scenes) whose FSM ends a quest: the bosses' corpses.
+    others = sorted(os.path.join(r, f) for r, _, fs in os.walk(base) if os.path.abspath(r) != os.path.abspath(sdir) for f in fs if f.endswith('.bundle'))
+    items, ends, fields, offers, corpses = {}, {}, {}, {}, {}
     with ProcessPoolExecutor(min(12, os.cpu_count() or 1), initializer=init, initargs=(cls,)) as ex:
-        for r in ex.map(scene, [(p, targets) for p in paths], chunksize=2):
+        for r in ex.map(prefab, [(p, targets) for p in others], chunksize=2):
+            for c, d in r.items():
+                corpses.setdefault(c, {}).update(d)
+        if not corpses:
+            fail('no prefab ends a quest: the bosses\' corpses changed')
+        for r in ex.map(scene, [(p, targets, corpses) for p in paths], chunksize=2):
             for x in r['items']:
                 q = quests.get(x[0])
                 if (q['targets'][0] if q else x[0]) in ELSEWHERE:
@@ -384,6 +518,8 @@ def main(game):
                 fields.setdefault(x[0], []).append(x[1:])
             for x in r['offers']:
                 offers.setdefault(x[0], []).append(x[1:])
+    if not items.get('Plasmium'):
+        fail('no Plasmium bud found in the scenes: LifebloodPustule changed')
     qpins, benches = pins(game)
     if len(qpins) < 50 or len(benches) < 40:
         fail(f'{len(qpins)} quest pins, {len(benches)} bench pins on the map: Game_Map_Hornet changed')

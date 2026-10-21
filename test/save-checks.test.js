@@ -216,3 +216,61 @@ test('leftovers 4 A: Coral_41\'s chained crust walls are each a mark by its own 
     assert.ok(x, id);
   }
 });
+
+/* The Map's checks and small fixes of 21-Oct-2026 (the Map audit, W3): a pickup's own removedBy
+   flag says it was had, a delivery its delivered flag, the game's caches and Silkeater the
+   completionist lacks, the keys' and their doors' Acts, the Skull Tyrant's return. */
+test('the Pickled Muckmaggot is had once gotPickledRoachEgg is set, the Rasher once delivered', () => {
+  const egg = SP.TASKS.findIndex((x) => x[0] === 'qitem' && x[3] === 'Dust_Chef');
+  assert.ok(egg >= 0);
+  assert.ok(F.game({ ...base, gotPickledRoachEgg: true }).tasks.includes(egg));
+  assert.ok(!F.game(base).tasks.includes(egg));
+  const rasher = SP.TASKS.findIndex((x) => x[0] === 'wspot' && x[1] === 'Great Gourmand');
+  assert.ok(F.game({ ...base, GourmandGivenMeat: true }).tasks.includes(rasher));
+  assert.ok(!F.game(base).tasks.includes(rasher));
+});
+
+test('Dock_01\'s two rosary strings and Under_20\'s Silkeater are marks, emptied and broken by their own save', () => {
+  const ints = (...xs) => ({ persistentInts: { serializedList: xs.map(([SceneName, ID, Value]) => ({ SceneName, ID, Value })) } });
+  const med = SP.EXTRAS.findIndex((x) => x[0] === 'rosary-cache' && x[3] === 'Dock_01' && JSON.stringify(x[2]).includes('rosary_string_medium'));
+  const half = SP.EXTRAS.findIndex((x) => x[0] === 'rosary-cache' && x[3] === 'Dock_01' && JSON.stringify(x[2]).includes('rosary_string_small_half'));
+  assert.ok(med > 0 && half > 0 && SP.XY['extra:' + med] && SP.XY['extra:' + half], 'each at its point in Dock_01');
+  // Emptied at 3 and 2 in every 1.0.30000 save of the author's that entered Dock_01; below, it still pays.
+  const both = ints(['Dock_01', 'rosary_string_medium', 3], ['Dock_01', 'rosary_string_small_half', 2]);
+  assert.ok(F.game(base, both).extras.includes(med) && F.game(base, both).extras.includes(half));
+  assert.ok(!F.game(base, ints(['Dock_01', 'rosary_string_medium', 1])).extras.includes(med));
+  const eater = SP.EXTRAS.findIndex((x) => x[0] === 'silkeater' && x[3] === 'Under_20');
+  assert.equal(SP.EXTRAS.filter((x) => x[0] === 'silkeater').length, 10);
+  assert.equal(SP.EXTRAS[eater][1], 2, 'the Chapel of the Architect: Act 2');
+  assert.ok(done({}, bools(['Under_20', 'Silk Grub Large Cocoon']), eater));
+});
+
+test('the Diving Bell Key and its door are Act 3\'s, the Ruined Tool Act 1\'s', () => {
+  const key = SP.EXTRAS.find((x) => x[0] === 'key' && x[4] && x[4].key === 'INV_NAME_DOCK_KEY');
+  const door = SP.EXTRAS.find((x) => x[0] === 'lock' && x[3] === 'Dock_12');
+  const ruined = SP.EXTRAS.find((x) => x[0] === 'keyitem' && x[4] && x[4].key === 'INV_NAME_BROKEN_SILKSHOT');
+  assert.equal(key[1], 3);
+  assert.equal(door[1], 3, 'a door takes its key\'s Act');
+  assert.equal(ruined[1], 1);
+  // The doors whose keys have no Act of their own keep none.
+  for (const sc of Q.LOCKS['Simple Key']) {
+    const x = SP.EXTRAS.find((y) => y[0] === 'lock' && y[3].toLowerCase() === sc.toLowerCase());
+    if (x) assert.ok(!x[1], sc);
+  }
+});
+
+test('the Skull Tyrant\'s return to Bone Bottom: coming, beaten, and its own mark outside the completionist\'s list', () => {
+  const b = SP.BOSSES.find((x) => x[0] === 'skull-tyrant-bone-bottom');
+  assert.ok(b && b[4] && b[4].of === 'skull-tyrant' && b[4].gone === 'act3' && b[3] === 2);
+  assert.ok(SP.XY['boss:skull-tyrant-bone-bottom'], 'where the game has it in bonetown_boss');
+  const g = (pd) => F.game({ ...base, ...pd });
+  assert.deepEqual(g({}).coming, []);
+  assert.deepEqual(g({ skullKingWillInvade: true }).coming, ['skull-tyrant-bone-bottom']);
+  assert.deepEqual(g({ skullKingInvaded: true }).coming, ['skull-tyrant-bone-bottom']);
+  assert.ok(g({ skullKingKilled: true }).bosses.includes('skull-tyrant-bone-bottom'));
+  assert.ok(!g({ skullKingKilled: true }).bosses.includes('skull-tyrant'), 'the first fight is its own flag');
+  const back = F.gameOf(F.toSnapshot({ ...base, skullKingWillInvade: true }));
+  assert.deepEqual(back.coming, ['skull-tyrant-bone-bottom']);
+  assert.equal(back.comingRead, true);
+  assert.equal(F.gameOf({}).comingRead, false, 'a slot kept before says nothing');
+});

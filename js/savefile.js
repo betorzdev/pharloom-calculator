@@ -430,6 +430,8 @@
       maps: MAP_FLAGS.filter((f) => pd[f] === true).map((f) => f.slice(3, -3)),
       cocoon: corpse,
       cocoonAt: corpse ? fourNumbers([at(pd.HeroDeathScenePos).x, at(pd.HeroDeathScenePos).y, at(pd.HeroDeathSceneSize).x, at(pd.HeroDeathSceneSize).y]) : [],
+      // The rosaries the cocoon holds (HeroCorpseMoneyPool), while there is one.
+      cocoonRosaries: corpse ? whole(pd.HeroCorpseMoneyPool, 0) : 0,
       extras: SP.EXTRAS.map((x, i) => (has(x[2]) ? i : -1)).filter((i) => i >= 0),
       // What lies in the room its 'found' way says now, its owner dead (js/how.js, a way's when:
       // the Curveclaw once the Mottled Skarr is, the Weighted Belt by Mort's corpse, the Magnetite
@@ -439,6 +441,10 @@
       // says, js/completion.js wayOf, and the Map shows both rooms).
       foundNow: WHEN.filter(([, c]) => has(c)).map(([k]) => k),
       foundRead: true,
+      // Where a thing is at the place a value of the save names (js/spots.js PLACES: the Flea Brew at
+      // the caravan's stop, the Bell Eater at its Bellway), by '<key>@<place>'; placesRead as foundRead.
+      placesNow: Object.entries(SP.PLACES || {}).flatMap(([k, p]) => p.at.map((x, i) => (has(x[1]) ? k + '@' + i : null))).filter(Boolean),
+      placesRead: true,
       // The vendors the game has taken away (js/spots.js LEFT: the Twelfth Architect, ArchitectLeft):
       // their shop and what they repair are gone; leftRead as foundRead.
       left: LEFT.filter(([, c]) => has(c)).map(([v]) => v),
@@ -447,11 +453,18 @@
       lostExtras: SP.EXTRAS.map((x, i) => (x[5] && x[5].lost && !has(x[2]) && has(x[5].lost) ? i : -1)).filter((i) => i >= 0),
       evaSlots: evaSlots(crests),
       bosses: SP.BOSSES.filter((b) => has(b[2])).map((b) => b[0]),
+      // A boss that may come back (js/spots.js BOSSES' more.coming: the Skull Tyrant to Bone Bottom)
+      // the game has on its way; comingRead as foundRead.
+      coming: SP.BOSSES.filter((b) => b[4] && b[4].coming && has(b[4].coming)).map((b) => b[0]),
+      comingRead: true,
       tasks: SP.TASKS.map((x, i) => (has(x[2]) ? i : -1)).filter((i) => i >= 0),
       // Of the places one thing may be in (TASKS' alt: a Flintbeetle's two, the Bellbeast's stations
       // while its wish is on, FastTravelNPCLocation), those it isn't in this game.
       elsewhere: SP.TASKS.map((x, i) => (x[9] && !has(x[9].at) ? i : -1)).filter((i) => i >= 0),
       steelSpots: steel.map((e) => e.SceneName).sort(),
+      // The fights whose opening the game waits for (js/spots.js OPENS) that this game has opened.
+      opens: Object.entries(SP.OPENS || {}).filter(([, o]) => has(o.check)).map(([k]) => k),
+      opensRead: true,
       // The Map's people: the fields their rules read (js/people.js VARS), as the save has them.
       peopleVars: Object.fromEntries(PE.VARS.filter((f) => mapValue(pd[f], undefined) !== undefined).map((f) => [f, pd[f]])),
     };
@@ -561,8 +574,8 @@
     needle: 0, kit: 0, pouch: 0, everbloom: false, purse: {}, silkeaters: 0, rosaries: 0, shards: 0, farsight: false, hasJournal: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', rested: true, marker: '', area: '', build: {},
     quests: [], taken: [], carried: {}, bellshrines: [], bells: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
     bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [],
-    visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], foundNow: [], foundRead: false, left: [], leftRead: false, lostExtras: [], bosses: [],
-    tasks: [], elsewhere: [], steelSpots: [], peopleVars: {}, evaSlots: 0, silkshot: '' });
+    visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], foundNow: [], foundRead: false, placesNow: [], placesRead: false, left: [], leftRead: false, lostExtras: [], bosses: [], coming: [], comingRead: false,
+    tasks: [], elsewhere: [], steelSpots: [], peopleVars: {}, evaSlots: 0, silkshot: '', cocoonRosaries: 0, opens: [], opensRead: false });
   const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
   // Each field only if it has the type an empty game gives it.
   function gameOf(snap) {
@@ -593,9 +606,14 @@
     out.gaveBack = out.gaveBack.filter((id) => CO.TOOLS[id]);
     out.foundNow = [...new Set(out.foundNow.map((k) => FOUND_AT.get(k)).filter(Boolean))];
     out.left = out.left.filter((v) => LEFT.some(([x]) => x === v));
+    out.placesNow = out.placesNow.filter((k) => typeof k === 'string' && (SP.PLACES || {})[k.split('@')[0]]);
     out.steelSpots = out.steelSpots.filter((x) => typeof x === 'string' && /^[\w ()-]{1,64}$/.test(x));
     out.cocoonAt = out.cocoon ? fourNumbers(out.cocoonAt) : [];
+    out.cocoonRosaries = out.cocoon && Number.isInteger(out.cocoonRosaries) ? Math.max(0, out.cocoonRosaries) : 0;
+    // A fight's opening by its key; a slot kept before says nothing (opensRead false: the card then says what opens it only).
+    out.opens = out.opens.filter((k) => typeof k === 'string' && SP.OPENS && SP.OPENS[k]);
     out.bosses = out.bosses.filter((id) => SP.BOSSES.some((b) => b[0] === id));
+    out.coming = out.coming.filter((id) => SP.BOSSES.some((b) => b[0] === id && b[4] && b[4].coming));
     // The gauntlets go by their ids, the wiki's subpages: one the list no longer has is dropped.
     out.gauntlets = out.gauntlets.filter((id) => GA.GAUNTLETS.some((x) => x.id === id));
     /* A slot kept before the save checks (design/03-redesign.md, step 6) has no word of the flags and
