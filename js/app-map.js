@@ -64,7 +64,11 @@
   // Who offers a wish in a room, as js/spots.js GIVER keys it: the room, or 'room:who' when someone
   // else than the room's giver offers it (QUEST_GIVER: Nuu in Creige's Halfway House).
   const giverOf = (quest, scene) => (SP.QUEST_GIVER && SP.QUEST_GIVER[quest]) || scene;
-  App.giverMark = (quest, scene) => 'giver:' + lower(giverOf(quest, scene));
+  /* Their mark: the one that is them in that room already when there is one (js/spots.js GIVER's
+     third: Plinney, the Couriers, Creige, Mooshka at the festival, the Moss Druid, the Pinstress,
+     whose wishes go on it; the wishes' audit, 21-Oct-2026: their wishes' pins and «To who asks»
+     looked for a giver: mark that isn't drawn), else their own. */
+  App.giverMark = (quest, scene) => { const gid = giverOf(quest, scene); return ((SP.GIVER || {})[gid] || [])[2] || 'giver:' + lower(gid); };
 
   /* ── The layers ──
      Each: its group, its name, and its mark in the legend. The pieces' kinds keep their colour

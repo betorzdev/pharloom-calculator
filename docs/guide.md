@@ -547,7 +547,8 @@ leaves those off.
   game may send in Act 2: with a save, only once it's on its way or beaten, and crossed («No longer
   there») in Act 3 if you didn't beat it; in Free mode its card says it may come back. A gauntlet won by beating its boss (Lugoli's, Groal's,
   the Coral Tower's four that end in Khann…) is that boss's mark, its waves and reward on the
-  boss's card. And the Void Masses' cores. The other enemies that don't come back (Rhinogrunds,
+  boss's card. And the Void Masses' cores (the two in the Dustpens' Act 3 arena only in a normal
+  game: Steel Soul has none there). The other enemies that don't come back (Rhinogrunds,
   Covetous Pilgrims, Shardillards) are found from their Journal entry, whose pin shows every room
   they're in. A wish done by a boss's fight (Fatal Resolve, the Pinstress on Mount Fay; the end of
   A Vassal Lost, the Summoned Saviour; Pain, Anguish and Misery, Tormented Trobbio; Final Audience,
@@ -579,12 +580,14 @@ leaves those off.
   deliveries and the Steel Sentinel's spots where the game's own map pins them, of the Sentinel's
   six only the three your game chose, and only in Steel Soul; the Herald's seven, only the next one
 while the wish is on, as the game shows him one at a time; the rescues and
-  fights, in the room where the game ends the wish); what a wish asks for (the 27 things lying in a
-  room or given there: the Pollip Hearts, the Flintgems, the Grand Hunts' trophies, the
+  fights, in the room where the game ends the wish); what a wish asks for (the 30 things lying in a
+  room, given or played there: the Pollip Hearts, the Flintgems, the Grand Hunts' trophies, the
   Gourmand's five delicacies (the Mossberry Stew where the Moss Druid hands it over, the Courier's
   Rasher where Tipp & Pill sell it, each done once given to his servant), the three souls, the Twisted Bud, the Steel Spines, the three Plasmium
   buds of Alchemist's Assistant in the lower Wormways, each done once the Needle Phial has drawn
-  its Plasmium, as the save keeps it; and the fourteen
+  its Plasmium, as the save keeps it; Ecstasy of the End's three Flea Games at their hosts in the
+  festival, each done once your score is past the champion's, as the game reads it from the
+  highscore it saves; and the fourteen
   spots above and below Bellhart where a Silver Bell may drop, gone once their wish is granted); and the main
   objectives, where the game's map pins them (an objective's steps the game pins on one spot are
   one mark, with the Act of its first step, its card listing the steps in order, with a save which
@@ -945,8 +948,14 @@ area, the area it's taken in), across the whole width as in the 100%. In Act 2, 
 3 requires are in the road's tab instead. The one only Steel Soul has, and the one only Classic has, show only in a
 save of that mode, and both in Free mode, as the Journal and the Map show them. A task done also shows in "Since the previous save".
 Each task not done carries the lists' round pin to the Map, to where it stands now: before you take
-it, who gives it (its Wishwall, or whoever asks); once taken, what's still to do of it (what it asks
-you to bring, where it's done), and when nothing is, back to whoever gives it. A main objective goes
+it, who gives it (its Wishwall, or whoever asks: Plinney, the Couriers, Creige, the Moss Druid,
+Mooshka and the Pinstress on the mark that is them already); once taken, what's still to do of it
+(what it asks you to bring, where it's done), and when nothing is, back to whoever gives it. What a
+wish asks for that another layer of the Map marks is on its pin too, until you have enough of it:
+Pinmaster's Oil's Pale Oil (any of the three), Berry Picking's Mossberries (three held), The Lost
+Fleas' fleas (five saved), Dark Hearts' Void Masses (twelve destroyed), Silk and Soul's Snare
+Setter. The Lost Fleas is done once Mooshka has the five fleas, not when its Wishwall sends you to
+the caravan. A main objective goes
 to the game's own pin for it (the melodies and the Old Hearts to where each lies). Without a save
 the pin goes to who gives it, or else to its marks. One mark opens the Map on it; several open the
 Map with only them (‹ 1 of n ›, the nearest to your bench first). A task with no mark keeps the

@@ -258,7 +258,8 @@ test('each thing with a point of its own sits in (or at the edge of) its room\'s
 test('the wishes and the main objectives (TASKS) sit on the map, each with its picture and a check the save reads', () => {
   const fs = require('fs');
   const path = require('path');
-  const checks = new Set(['bool', 'flag', 'quest', 'held', 'steel', 'any', 'journal']);   // journal: Last Dive's, as its wish (save checks, 7 A)
+  // journal: Last Dive's, as its wish (save checks, 7 A); min: a Flea Game's highscore past its champion's (the wishes' audit).
+  const checks = new Set(['bool', 'flag', 'quest', 'held', 'steel', 'any', 'journal', 'min']);
   const walk = (c) => { assert.ok(checks.has(c[0]), c[0]); if (c[0] === 'any') c.slice(1).forEach(walk); };
   const n = { qitem: 0, wspot: 0, goal: 0 };
   for (const [kind, quest, check, scene, art] of SP.TASKS) {

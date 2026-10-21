@@ -348,6 +348,9 @@
     for (let x = QU.CHAIN[q] && QU.CHAIN[q].prev; x && QU.CHAIN[x] && !ownQuests.has(x); x = QU.CHAIN[x].prev) out.unshift(x);
     return out;
   }
+  /* What a wish asks for that the Map marks on another layer (js/spots.js ASKS: Pale Oil, the
+     Mossberries, a Tool, the Fleas, the Void Masses), by stage: { stage: [{ save, n, keys, held }] }. */
+  const asksOf = (s) => ((SS.spots && SS.spots.ASKS) || {})[s] || [];
   // What a task asks for on the Map, by stage, in order: [[keys], ...].
   function taskTargets(w) {
     const piece = w[2][0] === 'flag' ? CO.PIECES.findIndex((p) => p[2][0] === 'flag' && p[2][1] === w[2][1]) : -1;
@@ -356,7 +359,8 @@
     if (!q) return [];
     // A wish's place that is a boss's fight is that boss's mark (App.mapKeyOf).
     const markOf = (k) => (App.mapKeyOf ? App.mapKeyOf(k) : k);
-    const by = taskStages(q).map((s) => [...new Set(T.flatMap((k, i) => (k[1] === s ? [markOf('task:' + i)] : [])))]).filter((a) => a.length);
+    const by = taskStages(q).map((s) => [...new Set([...T.flatMap((k, i) => (k[1] === s ? [markOf('task:' + i)] : [])), ...asksOf(s).flatMap((a) => a.keys)])])
+      .filter((a) => a.length);
     if (by.length || w[0] !== 'main-objectives') return by;
     // An objective with no pin of its own (After the Fall): the game's pin whose check is the nearest to it.
     const has = (k) => k[0] === 'goal' && JSON.stringify(k[2]).includes(JSON.stringify(['quest', q]));
@@ -370,7 +374,11 @@
     return (w, i) => {
       const q = wishQuest(w), from = q ? wishFrom(q, done).mark : null;
       const giver = from && marks.has(from) ? [from] : [];
-      const left = taskTargets(w).map((s) => s.filter((k) => marks.has(k) && !(g && marks.get(k).got))).find((s) => s.length) || [];
+      /* What it asks for on another layer, once the save has enough of it, is no more to find (Pale
+         Oil held, three Mossberries, five fleas saved, twelve Void Masses): its marks drop out. */
+      const met = new Set(own && q ? taskStages(q).flatMap(asksOf).filter((a) => (a.held ? ((own.carried || {})[a.save] || 0)
+        : a.keys.filter((k) => marks.has(k) && marks.get(k).got).length) >= a.n).flatMap((a) => a.keys) : []);
+      const left = taskTargets(w).map((s) => s.filter((k) => marks.has(k) && !(g && marks.get(k).got) && !met.has(k))).find((s) => s.length) || [];
       const isTaken = !!q && taskStages(q).some((s) => taken.has(s));
       /* A hunt taken and still short of what it asks (design/103, 1 A): the Journal's rooms of the
          enemies that give its thing (js/spots.js HUNTS, App.mapHuntKeys), nearest first as the rest. */

@@ -1,4 +1,56 @@
 {
+ "alts": {
+  "Flea Games": [
+   {
+    "at": [
+     "aqueduct_05_festival",
+     "Flea Games Host NPC",
+     156.01,
+     11.45
+    ],
+    "field": "FleaGamesIsJugglingChampion",
+    "icon": "flea_games_quest_icons__0000_1",
+    "name": "FESTIVAL_BOARD_TITLE_JUGGLE",
+    "test": [
+     "min",
+     "fleaGames_juggling_highscore",
+     31
+    ]
+   },
+   {
+    "at": [
+     "aqueduct_05_festival",
+     "Flea Games Host NPC",
+     179.14,
+     9.02
+    ],
+    "field": "FleaGamesIsDodgingChampion",
+    "icon": "flea_games_quest_icons__0001_1",
+    "name": "FESTIVAL_BOARD_TITLE_DODGE",
+    "test": [
+     "min",
+     "fleaGames_dodging_highscore",
+     66
+    ]
+   },
+   {
+    "at": [
+     "aqueduct_05_festival",
+     "Flea Games Host NPC",
+     200.91,
+     7.54
+    ],
+    "field": "FleaGamesIsBouncingChampion",
+    "icon": "flea_games_quest_icons__0002_1",
+    "name": "FESTIVAL_BOARD_TITLE_BOUNCE",
+    "test": [
+     "min",
+     "fleaGames_bouncing_highscore",
+     43
+    ]
+   }
+  ]
+ },
  "benches": {
   "abyss_12": [
    -392.274,
@@ -1153,6 +1205,342 @@
    ]
   ]
  },
+ "kills": {
+  "Black Thread Core": {
+   "at": [
+    [
+     "ant_04_left",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     58.69,
+     30.08
+    ],
+    [
+     "ant_05b",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     45.44,
+     16.06
+    ],
+    [
+     "bone_02",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     8.15,
+     40.02
+    ],
+    [
+     "bone_04",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     58.92,
+     4.85
+    ],
+    [
+     "bone_07",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     53.53,
+     66.52
+    ],
+    [
+     "bone_09",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     133.59,
+     36.55
+    ],
+    [
+     "bone_east_02b",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     289.67,
+     12.27
+    ],
+    [
+     "bone_east_03",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     181.84,
+     31.7
+    ],
+    [
+     "bone_east_05",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     150.08,
+     7.08
+    ],
+    [
+     "bone_east_17",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     16.53,
+     86.64
+    ],
+    [
+     "bone_east_26",
+     "Black_Thread_Core_Citadel",
+     "Black_Thread_Core_Citadel",
+     107.97,
+     26.02
+    ],
+    [
+     "cog_04",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     68.78,
+     28.48
+    ],
+    [
+     "coral_11",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     51.47,
+     21.75
+    ],
+    [
+     "coral_12",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     6.17,
+     47.72
+    ],
+    [
+     "coral_32",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     95.54,
+     70.29
+    ],
+    [
+     "dock_04",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     4.4,
+     68.32
+    ],
+    [
+     "dust_03",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     96.46,
+     19.67
+    ],
+    [
+     "dust_11",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     111.21,
+     9.25
+    ],
+    [
+     "dust_11",
+     "Black_Thread_Core (1)",
+     "Black_Thread_Core (1)",
+     99.64,
+     12.74
+    ],
+    [
+     "greymoor_02",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     56.47,
+     138.33
+    ],
+    [
+     "greymoor_07",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     53.47,
+     11.12
+    ],
+    [
+     "greymoor_11",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     11.24,
+     45.21
+    ],
+    [
+     "greymoor_12",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     81.39,
+     27.12
+    ],
+    [
+     "greymoor_16",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     116.0,
+     35.51
+    ],
+    [
+     "hang_03",
+     "Black_Thread_Core_Citadel",
+     "Black_Thread_Core_Citadel",
+     5.43,
+     20.16
+    ],
+    [
+     "hang_13",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     46.06,
+     44.23
+    ],
+    [
+     "library_04",
+     "Black_Thread_Core_Citadel",
+     "Black_Thread_Core_Citadel",
+     15.64,
+     140.24
+    ],
+    [
+     "library_04",
+     "Black_Thread_Core_Citadel (1)",
+     "Black_Thread_Core_Citadel (1)",
+     59.12,
+     89.31
+    ],
+    [
+     "library_06",
+     "Black_Thread_Core_Citadel",
+     "Black_Thread_Core_Citadel",
+     6.4,
+     40.17
+    ],
+    [
+     "mosstown_02",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     154.37,
+     57.77
+    ],
+    [
+     "shadow_05",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     101.88,
+     30.62
+    ],
+    [
+     "shellwood_01b",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     34.01,
+     13.0
+    ],
+    [
+     "shellwood_02",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     52.17,
+     79.52
+    ],
+    [
+     "shellwood_04b",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     80.27,
+     14.78
+    ],
+    [
+     "shellwood_15",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     57.04,
+     11.48
+    ],
+    [
+     "shellwood_26",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     67.23,
+     109.14
+    ],
+    [
+     "song_01",
+     "Black_Thread_Core_Citadel",
+     "Black_Thread_Core_Citadel",
+     36.89,
+     88.22
+    ],
+    [
+     "song_04",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     58.37,
+     14.01
+    ],
+    [
+     "song_05",
+     "Black_Thread_Core_Citadel",
+     "Black_Thread_Core_Citadel",
+     44.89,
+     36.61
+    ],
+    [
+     "song_15",
+     "Black_Thread_Core_Citadel",
+     "Black_Thread_Core_Citadel",
+     21.97,
+     8.47
+    ],
+    [
+     "song_17",
+     "Black_Thread_Core_Citadel",
+     "Black_Thread_Core_Citadel",
+     70.89,
+     64.22
+    ],
+    [
+     "song_27",
+     "Black_Thread_Core_Citadel",
+     "Black_Thread_Core_Citadel",
+     31.38,
+     13.64
+    ],
+    [
+     "under_02",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     12.99,
+     79.27
+    ],
+    [
+     "under_05",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     23.34,
+     71.24
+    ],
+    [
+     "under_18",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     26.89,
+     29.82
+    ],
+    [
+     "under_27",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     41.11,
+     47.32
+    ],
+    [
+     "weave_03",
+     "Black_Thread_Core",
+     "Black_Thread_Core",
+     151.24,
+     30.47
+    ]
+   ],
+   "name": "NAME_BLACK_THREAD_CORE"
+  }
+ },
  "names": {
   "Ant Trapper Item": "INV_NAME_ANT_TRAPPER_ITEM",
   "Beastfly Remains": "INV_NAME_BEASTFLY_REMAINS",
@@ -2097,6 +2485,9 @@
  ],
  "quests": {
   "A Pinsmiths Tools": {
+   "counts": [
+    1
+   ],
    "emblem": "qi_wayfarer",
    "main": false,
    "targets": [
@@ -2105,6 +2496,9 @@
    "type": "Wayfarer"
   },
   "Ant Trapper": {
+   "counts": [
+    1
+   ],
    "emblem": "qi_hunt_grand",
    "main": false,
    "targets": [
@@ -2113,6 +2507,9 @@
    "type": "Grand Hunt"
   },
   "Beastfly Hunt": {
+   "counts": [
+    1
+   ],
    "emblem": "qi_hunt_grand",
    "main": false,
    "targets": [
@@ -2121,50 +2518,71 @@
    "type": "Grand Hunt"
   },
   "Bellbeast Rescue": {
+   "counts": [],
    "main": true,
    "targets": []
   },
   "Belltown House Mid": {
+   "counts": [
+    400
+   ],
    "emblem": "qi_donate",
    "main": false,
-   "targets": [],
+   "targets": [
+    "Rosary Quest Target"
+   ],
    "type": "Donate"
   },
   "Belltown House Start": {
+   "counts": [
+    250
+   ],
    "emblem": "qi_donate",
    "main": false,
-   "targets": [],
+   "targets": [
+    "Rosary Quest Target"
+   ],
    "type": "Donate"
   },
   "Black Thread Pt0": {
+   "counts": [],
    "main": true,
    "targets": []
   },
   "Black Thread Pt1 Shamans": {
+   "counts": [],
    "main": true,
    "targets": []
   },
   "Black Thread Pt2 Abyss": {
+   "counts": [],
    "main": true,
    "targets": []
   },
   "Black Thread Pt3 Escape": {
+   "counts": [],
    "main": true,
    "targets": []
   },
   "Black Thread Pt4 Return": {
+   "counts": [],
    "main": true,
    "targets": []
   },
   "Black Thread Pt5 Heart": {
+   "counts": [],
    "main": true,
    "targets": []
   },
   "Black Thread Pt6 Flower": {
+   "counts": [],
    "main": true,
    "targets": []
   },
   "Brolly Get": {
+   "counts": [
+    25
+   ],
    "emblem": "qi_hunt",
    "main": false,
    "targets": [
@@ -2173,6 +2591,9 @@
    "type": "Hunt"
   },
   "Broodmother Hunt": {
+   "counts": [
+    1
+   ],
    "emblem": "qi_hunt_grand",
    "main": false,
    "targets": [
@@ -2181,48 +2602,72 @@
    "type": "Grand Hunt"
   },
   "Building Materials": {
+   "counts": [
+    200
+   ],
    "emblem": "qi_donate",
    "main": false,
-   "targets": [],
+   "targets": [
+    "Shard Quest Target"
+   ],
    "type": "Donate"
   },
   "Building Materials (Bridge)": {
+   "counts": [
+    300
+   ],
    "emblem": "qi_donate",
    "main": false,
-   "targets": [],
+   "targets": [
+    "Shard Quest Target"
+   ],
    "type": "Donate"
   },
   "Building Materials (Statue)": {
+   "counts": [
+    440
+   ],
    "emblem": "qi_donate",
    "main": false,
-   "targets": [],
+   "targets": [
+    "Shard Quest Target"
+   ],
    "type": "Donate"
   },
   "Citadel Ascent": {
+   "counts": [],
    "main": true,
    "targets": []
   },
   "Citadel Ascent Lift": {
+   "counts": [],
    "main": true,
    "targets": []
   },
   "Citadel Ascent Melodies": {
+   "counts": [],
    "main": true,
    "targets": []
   },
   "Citadel Ascent Silk Defeat": {
+   "counts": [],
    "main": true,
    "targets": []
   },
   "Citadel Investigate": {
+   "counts": [],
    "main": true,
    "targets": []
   },
   "Citadel Seeker": {
+   "counts": [],
    "main": true,
    "targets": []
   },
   "Courier Delivery Bonebottom": {
+   "counts": [
+    5
+   ],
    "emblem": "qi_courier",
    "main": false,
    "targets": [
@@ -2231,6 +2676,9 @@
    "type": "Courier"
   },
   "Courier Delivery Dustpens Slave": {
+   "counts": [
+    4
+   ],
    "emblem": "qi_courier",
    "main": false,
    "targets": [
@@ -2239,6 +2687,9 @@
    "type": "Courier"
   },
   "Courier Delivery Fixer": {
+   "counts": [
+    5
+   ],
    "emblem": "qi_courier",
    "main": false,
    "targets": [
@@ -2247,6 +2698,9 @@
    "type": "Courier"
   },
   "Courier Delivery Fleatopia": {
+   "counts": [
+    5
+   ],
    "emblem": "qi_courier",
    "main": false,
    "targets": [
@@ -2255,6 +2709,9 @@
    "type": "Courier"
   },
   "Courier Delivery Mask Maker": {
+   "counts": [
+    3
+   ],
    "emblem": "qi_courier",
    "main": false,
    "targets": [
@@ -2263,6 +2720,9 @@
    "type": "Courier"
   },
   "Courier Delivery Pilgrims Rest": {
+   "counts": [
+    5
+   ],
    "emblem": "qi_courier",
    "main": false,
    "targets": [
@@ -2271,6 +2731,9 @@
    "type": "Courier"
   },
   "Courier Delivery Songclave": {
+   "counts": [
+    5
+   ],
    "emblem": "qi_courier",
    "main": false,
    "targets": [
@@ -2279,6 +2742,9 @@
    "type": "Courier"
   },
   "Crow Feathers": {
+   "counts": [
+    25
+   ],
    "emblem": "qi_hunt",
    "main": false,
    "targets": [
@@ -2287,30 +2753,42 @@
    "type": "Hunt"
   },
   "Crow Feathers Pre": {
+   "counts": [],
    "emblem": "qi_hunt",
    "main": false,
    "targets": [],
    "type": "Hunt"
   },
   "Destroy Thread Cores": {
+   "counts": [
+    12
+   ],
    "emblem": "qi_hunt",
    "main": false,
-   "targets": [],
+   "targets": [
+    "Black Thread Core"
+   ],
    "type": "Hunt"
   },
   "Diving Bell Pt1 Inspect": {
+   "counts": [],
    "main": true,
    "targets": []
   },
   "Diving Bell Pt2 Ballow": {
+   "counts": [],
    "main": true,
    "targets": []
   },
   "Diving Bell Pt3 Descend": {
+   "counts": [],
    "main": true,
    "targets": []
   },
   "Doctor Curse Cure": {
+   "counts": [
+    1
+   ],
    "emblem": "qi_wayfarer",
    "main": false,
    "targets": [
@@ -2319,22 +2797,35 @@
    "type": "Wayfarer"
   },
   "Extractor Blue": {
+   "counts": [
+    3,
+    1
+   ],
    "emblem": "qi_gather",
    "main": false,
    "targets": [
-    "Plasmium"
+    "Plasmium",
+    "Extractor"
    ],
    "type": "Gather"
   },
   "Extractor Blue Worms": {
+   "counts": [
+    10,
+    1
+   ],
    "emblem": "qi_gather",
    "main": false,
    "targets": [
-    "Plasmium Blood"
+    "Plasmium Blood",
+    "Extractor"
    ],
    "type": "Gather"
   },
   "Fine Pins": {
+   "counts": [
+    12
+   ],
    "emblem": "qi_hunt",
    "main": false,
    "targets": [
@@ -2343,28 +2834,39 @@
    "type": "Hunt"
   },
   "Flea Games": {
+   "counts": [],
    "emblem": "qi_wayfarer",
    "main": false,
    "targets": [],
    "type": "Wayfarer"
   },
   "Flea Games Pre": {
+   "counts": [],
    "emblem": "qi_wayfarer",
    "main": false,
    "targets": [],
    "type": "Wayfarer"
   },
   "Garmond Black Threaded": {
+   "counts": [],
    "emblem": "qi_wayfarer",
    "main": false,
    "targets": [],
    "type": "Wayfarer"
   },
   "Grand Gate Bellshrines": {
+   "counts": [],
    "main": true,
    "targets": []
   },
   "Great Gourmand": {
+   "counts": [
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
    "emblem": "qi_gather",
    "main": false,
    "targets": [
@@ -2377,6 +2879,11 @@
    "type": "Gather"
   },
   "Huntress Quest": {
+   "counts": [
+    15,
+    35,
+    10
+   ],
    "emblem": "qi_hunt",
    "main": false,
    "targets": [
@@ -2387,6 +2894,11 @@
    "type": "Hunt"
   },
   "Huntress Quest Runt": {
+   "counts": [
+    15,
+    35,
+    10
+   ],
    "emblem": "qi_hunt",
    "main": false,
    "targets": [
@@ -2397,12 +2909,16 @@
    "type": "Hunt"
   },
   "Journal": {
+   "counts": [],
    "emblem": "qi_journal",
    "main": false,
    "targets": [],
    "type": "Journal"
   },
   "Mossberry Collection 1": {
+   "counts": [
+    3
+   ],
    "emblem": "qi_gather",
    "main": false,
    "targets": [
@@ -2411,18 +2927,23 @@
    "type": "Gather"
   },
   "Mossberry Collection Pre": {
+   "counts": [],
    "emblem": "qi_gather",
    "main": false,
    "targets": [],
    "type": "Gather"
   },
   "Mr Mushroom": {
+   "counts": [],
    "emblem": "qi_herald",
    "main": false,
    "targets": [],
    "type": "Herald"
   },
   "Pilgrim Rags": {
+   "counts": [
+    12
+   ],
    "emblem": "qi_hunt",
    "main": false,
    "targets": [
@@ -2431,18 +2952,23 @@
    "type": "Hunt"
   },
   "Pinstress Battle": {
+   "counts": [],
    "emblem": "qi_wayfarer",
    "main": false,
    "targets": [],
    "type": "Wayfarer"
   },
   "Pinstress Battle Pre": {
+   "counts": [],
    "emblem": "qi_wayfarer",
    "main": false,
    "targets": [],
    "type": "Wayfarer"
   },
   "Roach Killing": {
+   "counts": [
+    10
+   ],
    "emblem": "qi_hunt",
    "main": false,
    "targets": [
@@ -2451,6 +2977,9 @@
    "type": "Hunt"
   },
   "Rock Rollers": {
+   "counts": [
+    3
+   ],
    "emblem": "qi_hunt",
    "main": false,
    "targets": [
@@ -2459,54 +2988,69 @@
    "type": "Hunt"
   },
   "Save City Merchant": {
+   "counts": [],
    "emblem": "qi_wayfarer",
    "main": false,
    "targets": [],
    "type": "Wayfarer"
   },
   "Save City Merchant Bridge": {
+   "counts": [],
    "emblem": "qi_wayfarer",
    "main": false,
    "targets": [],
    "type": "Wayfarer"
   },
   "Save Courier Short": {
+   "counts": [],
    "emblem": "qi_wayfarer",
    "main": false,
    "targets": [],
    "type": "Wayfarer"
   },
   "Save Courier Tall": {
+   "counts": [],
    "emblem": "qi_wayfarer",
    "main": false,
    "targets": [],
    "type": "Wayfarer"
   },
   "Save Sherma": {
+   "counts": [],
    "emblem": "qi_wayfarer",
    "main": false,
    "targets": [],
    "type": "Wayfarer"
   },
   "Save the Fleas": {
+   "counts": [
+    5
+   ],
    "emblem": "qi_wayfarer",
    "main": false,
-   "targets": [],
+   "targets": [
+    "FleasCollected Target"
+   ],
    "type": "Wayfarer"
   },
   "Save the Fleas Pre": {
+   "counts": [],
    "emblem": "qi_wayfarer",
    "main": false,
    "targets": [],
    "type": "Wayfarer"
   },
   "Shakra Final Quest": {
+   "counts": [],
    "emblem": "qi_wayfarer",
    "main": false,
    "targets": [],
    "type": "Wayfarer"
   },
   "Shell Flowers": {
+   "counts": [
+    6
+   ],
    "emblem": "qi_gather",
    "main": false,
    "targets": [
@@ -2515,6 +3059,9 @@
    "type": "Gather"
   },
   "Shiny Bell Goomba": {
+   "counts": [
+    8
+   ],
    "emblem": "qi_gather",
    "main": false,
    "targets": [
@@ -2523,10 +3070,14 @@
    "type": "Gather"
   },
   "Silk Defeat Snare": {
+   "counts": [],
    "main": true,
    "targets": []
   },
   "Skull King": {
+   "counts": [
+    1
+   ],
    "emblem": "qi_hunt_grand",
    "main": false,
    "targets": [
@@ -2535,12 +3086,16 @@
    "type": "Grand Hunt"
   },
   "Song Knight": {
+   "counts": [],
    "emblem": "qi_wayfarer",
    "main": false,
    "targets": [],
    "type": "Wayfarer"
   },
   "Song Pilgrim Cloaks": {
+   "counts": [
+    16
+   ],
    "emblem": "qi_hunt",
    "main": false,
    "targets": [
@@ -2549,68 +3104,101 @@
    "type": "Hunt"
   },
   "Songclave Donation 1": {
+   "counts": [
+    300
+   ],
    "emblem": "qi_donate",
    "main": false,
-   "targets": [],
+   "targets": [
+    "Rosary Quest Target"
+   ],
    "type": "Donate"
   },
   "Songclave Donation 2": {
+   "counts": [
+    500
+   ],
    "emblem": "qi_donate",
    "main": false,
-   "targets": [],
+   "targets": [
+    "Rosary Quest Target"
+   ],
    "type": "Donate"
   },
   "Soul Snare": {
+   "counts": [
+    1,
+    1,
+    1,
+    1
+   ],
    "emblem": "qi_wayfarer",
    "main": false,
    "targets": [
     "Snare Soul Churchkeeper",
     "Snare Soul Bell Hermit",
-    "Snare Soul Swamp Bug"
+    "Snare Soul Swamp Bug",
+    "Silk Snare"
    ],
    "type": "Wayfarer"
   },
   "Soul Snare Pre": {
+   "counts": [],
    "emblem": "qi_wayfarer",
    "main": false,
    "targets": [],
    "type": "Wayfarer"
   },
   "Sprintmaster Pre": {
+   "counts": [],
    "emblem": "qi_sprintmaster",
    "main": false,
    "targets": [],
    "type": "Sprint"
   },
   "Sprintmaster Race": {
+   "counts": [
+    3
+   ],
    "emblem": "qi_sprintmaster",
    "main": false,
-   "targets": [],
+   "targets": [
+    "Sprintmaster Race Target"
+   ],
    "type": "Sprint"
   },
   "Steel Sentinel": {
+   "counts": [
+    3
+   ],
    "emblem": "qi_steelservant",
    "main": false,
-   "targets": [],
+   "targets": [
+    "Steel Sentinal Target"
+   ],
    "type": "Steel Sentinel"
   },
   "Steel Sentinel Pt2": {
+   "counts": [],
    "emblem": "qi_steelservant",
    "main": false,
    "targets": [],
    "type": "Steel Sentinel"
   },
   "The Threadspun Town": {
+   "counts": [],
    "main": true,
    "targets": []
   },
   "Tormented Trobbio": {
+   "counts": [],
    "emblem": "qi_wayfarer",
    "main": false,
    "targets": [],
    "type": "Wayfarer"
   },
   "Wood Witch Curse": {
+   "counts": [],
    "emblem": "qi_wayfarer",
    "main": false,
    "targets": [],
