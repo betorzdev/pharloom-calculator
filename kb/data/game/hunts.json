@@ -1,0 +1,1118 @@
+{
+ "Brolly Get": {
+  "NAME_SPINE_FLOATER": {
+   "bone_east_14": [
+    5,
+    [
+     "spawn"
+    ]
+   ],
+   "bone_east_14b": [
+    4,
+    [
+     "spawn"
+    ]
+   ]
+  }
+ },
+ "Crow Feathers": {
+  "NAME_CROW": {
+   "greymoor_01": [
+    3,
+    [
+     "drop"
+    ]
+   ],
+   "greymoor_02": [
+    2,
+    [
+     "drop"
+    ]
+   ],
+   "greymoor_03": [
+    5,
+    [
+     "drop"
+    ]
+   ],
+   "greymoor_15": [
+    3,
+    [
+     "drop"
+    ]
+   ],
+   "greymoor_15b": [
+    9,
+    [
+     "drop"
+    ]
+   ],
+   "greymoor_17": [
+    1,
+    [
+     "drop"
+    ]
+   ],
+   "greymoor_22": [
+    3,
+    [
+     "drop"
+    ]
+   ],
+   "room_crowcourt": [
+    8,
+    [
+     "drop"
+    ]
+   ]
+  },
+  "NAME_CROWMAN": {
+   "greymoor_02": [
+    2,
+    [
+     "drop"
+    ]
+   ],
+   "greymoor_15b": [
+    3,
+    [
+     "drop"
+    ]
+   ],
+   "room_crowcourt": [
+    3,
+    [
+     "drop"
+    ]
+   ]
+  },
+  "NAME_CROWMAN_DAGGER": {
+   "greymoor_02": [
+    2,
+    [
+     "drop"
+    ]
+   ],
+   "greymoor_15b": [
+    2,
+    [
+     "drop"
+    ]
+   ],
+   "room_crowcourt": [
+    3,
+    [
+     "drop"
+    ]
+   ]
+  },
+  "NAME_CROWMAN_JUROR_TINY": {
+   "greymoor_15": [
+    3,
+    [
+     "drop"
+    ]
+   ],
+   "greymoor_15b": [
+    9,
+    [
+     "drop"
+    ]
+   ]
+  }
+ },
+ "Extractor Blue Worms": {
+  "NAME_BONE_WORM_BLUEBLOOD": {
+   "crawl_03": [
+    3,
+    [
+     "lifeblood"
+    ]
+   ],
+   "crawl_05": [
+    2,
+    [
+     "lifeblood"
+    ]
+   ],
+   "crawl_07": [
+    2,
+    [
+     "lifeblood"
+    ]
+   ],
+   "crawl_09": [
+    4,
+    [
+     "lifeblood"
+    ]
+   ]
+  },
+  "NAME_BONE_WORM_BLUETURRET": {
+   "crawl_03": [
+    2,
+    [
+     "lifeblood"
+    ]
+   ],
+   "crawl_03b": [
+    2,
+    [
+     "lifeblood"
+    ]
+   ],
+   "crawl_05": [
+    1,
+    [
+     "lifeblood"
+    ]
+   ]
+  }
+ },
+ "Fine Pins": {
+  "NAME_SONG_PILGRIM_03": {
+   "hang_04_boss": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "library_02": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "library_09": [
+    4,
+    [
+     "corpse"
+    ]
+   ],
+   "slab_01": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "song_01": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "song_03": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "song_04": [
+    4,
+    [
+     "corpse"
+    ]
+   ],
+   "song_05": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "song_07": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "song_13": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "song_17": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "song_20": [
+    3,
+    [
+     "corpse"
+    ]
+   ],
+   "song_24": [
+    1,
+    [
+     "corpse"
+    ]
+   ]
+  },
+  "NAME_SONG_REED": {
+   "hang_04_boss": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "library_09": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "slab_01": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "song_01": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "song_03": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "song_04": [
+    4,
+    [
+     "corpse"
+    ]
+   ],
+   "song_05": [
+    5,
+    [
+     "corpse"
+    ]
+   ],
+   "song_08": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "song_15": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "song_17": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "song_20": [
+    5,
+    [
+     "corpse"
+    ]
+   ],
+   "song_20b": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "song_27": [
+    1,
+    [
+     "corpse"
+    ]
+   ]
+  }
+ },
+ "Garmond Black Threaded": {
+  "NAME_GARMOND": {
+   "coral_33": [
+    1,
+    [
+     "corpse"
+    ]
+   ]
+  }
+ },
+ "Pilgrim Rags": {
+  "NAME_PILGRIM_01": {
+   "bone_04": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "bone_07": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "bone_09": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "bone_11": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "bone_14": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "bone_18": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "bone_east_14": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "bonegrave": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "chapel_wanderer": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "coral_02": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "greymoor_13": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "mosstown_01": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "mosstown_02": [
+    3,
+    [
+     "corpse"
+    ]
+   ],
+   "shellgrave": [
+    1,
+    [
+     "corpse"
+    ]
+   ]
+  },
+  "NAME_PILGRIM_02": {
+   "bone_east_14": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "bone_east_14b": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "chapel_wanderer": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "dock_08": [
+    1,
+    [
+     "corpse"
+    ]
+   ]
+  },
+  "NAME_PILGRIM_03": {
+   "bone_04": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "bone_11": [
+    5,
+    [
+     "corpse"
+    ]
+   ],
+   "bone_14": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "bone_18": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "bone_east_14": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "bonegrave": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "coral_02": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "greymoor_13": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "mosstown_01": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "mosstown_02": [
+    3,
+    [
+     "corpse"
+    ]
+   ],
+   "shellgrave": [
+    1,
+    [
+     "corpse"
+    ]
+   ]
+  },
+  "NAME_PILGRIM_04": {
+   "bone_east_14b": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "bonegrave": [
+    3,
+    [
+     "corpse"
+    ]
+   ],
+   "chapel_wanderer": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "crawl_06": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "greymoor_08": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "shellwood_01": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "shellwood_04b": [
+    1,
+    [
+     "corpse"
+    ]
+   ]
+  },
+  "NAME_PILGRIM_05": {
+   "bone_18": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "bonegrave": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "coral_33": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "greymoor_08": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "shellwood_01": [
+    1,
+    [
+     "corpse"
+    ]
+   ]
+  },
+  "NAME_PILGRIM_BELLTHROWER_FLY": {
+   "coral_12": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "crawl_02": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "greymoor_13": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "shellwood_04c": [
+    3,
+    [
+     "corpse"
+    ]
+   ]
+  },
+  "NAME_PILGRIM_BELL_THROWER": {
+   "bonegrave": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "coral_02": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "greymoor_13": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "shellgrave": [
+    2,
+    [
+     "corpse"
+    ]
+   ]
+  },
+  "NAME_PILGRIM_FLY": {
+   "bone_04": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "bone_07": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "bone_18": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "bone_east_14": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "bonegrave": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "chapel_wanderer": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "coral_32": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "coral_33": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "crawl_02": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "greymoor_08": [
+    3,
+    [
+     "corpse"
+    ]
+   ],
+   "shellwood_04c": [
+    2,
+    [
+     "corpse"
+    ]
+   ]
+  },
+  "NAME_PILGRIM_HIKER": {
+   "coral_02": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "coral_03": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "coral_12": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "coral_32": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "coral_33": [
+    1,
+    [
+     "corpse"
+    ]
+   ]
+  },
+  "NAME_PILGRIM_MOSS_SPITTER": {
+   "bonegrave": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "crawl_06": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "mosstown_01": [
+    4,
+    [
+     "corpse"
+    ]
+   ],
+   "mosstown_02": [
+    3,
+    [
+     "corpse"
+    ]
+   ]
+  },
+  "NAME_PILGRIM_STAFFWIELDER": {
+   "bone_12": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "bonegrave": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "chapel_wanderer": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "greymoor_12": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "greymoor_13": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "shellgrave": [
+    2,
+    [
+     "corpse"
+    ]
+   ]
+  },
+  "NAME_ROSARY_PILGRIM": {
+   "bonegrave": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "shadow_23": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "shellgrave": [
+    1,
+    [
+     "corpse"
+    ]
+   ]
+  }
+ },
+ "Roach Killing": {
+  "NAME_DUSTROACH": {
+   "dust_01": [
+    3,
+    [
+     "corpse"
+    ]
+   ],
+   "dust_03": [
+    11,
+    [
+     "corpse"
+    ]
+   ],
+   "dust_05": [
+    4,
+    [
+     "corpse"
+    ]
+   ],
+   "dust_11": [
+    3,
+    [
+     "corpse"
+    ]
+   ],
+   "dust_12": [
+    1,
+    [
+     "corpse"
+    ]
+   ]
+  }
+ },
+ "Rock Rollers": {
+  "NAME_ROCK_ROLLER": {
+   "bone_01": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "bone_04": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "bone_06": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "bone_07": [
+    1,
+    [
+     "corpse"
+    ]
+   ]
+  }
+ },
+ "Song Knight": {
+  "NAME_SONG_KNIGHT": {
+   "hang_07": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "hang_17b": [
+    1,
+    [
+     "corpse"
+    ]
+   ]
+  }
+ },
+ "Song Pilgrim Cloaks": {
+  "NAME_PILGRIM_01_SONG": {
+   "song_01": [
+    3,
+    [
+     "corpse"
+    ]
+   ],
+   "song_02": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "song_03": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "song_04": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "song_05": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "song_09": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "song_09b": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "song_11": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "song_12": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "song_17": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "song_20": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "song_27": [
+    1,
+    [
+     "corpse"
+    ]
+   ]
+  },
+  "NAME_PILGRIM_02_SONG": {
+   "song_01": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "song_02": [
+    3,
+    [
+     "corpse"
+    ]
+   ],
+   "song_05": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "song_09": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "song_11": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "song_27": [
+    3,
+    [
+     "corpse"
+    ]
+   ]
+  },
+  "NAME_PILGRIM_04_SONG": {
+   "library_02": [
+    3,
+    [
+     "corpse"
+    ]
+   ],
+   "song_01": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "song_02": [
+    3,
+    [
+     "corpse"
+    ]
+   ],
+   "song_04": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "song_09": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "song_11": [
+    3,
+    [
+     "corpse"
+    ]
+   ],
+   "song_12": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "song_14": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "song_20": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "song_27": [
+    4,
+    [
+     "corpse"
+    ]
+   ]
+  },
+  "NAME_PILGRIM_STOMPER_SONG": {
+   "song_02": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "song_11": [
+    1,
+    [
+     "corpse"
+    ]
+   ],
+   "song_12": [
+    2,
+    [
+     "corpse"
+    ]
+   ],
+   "song_20": [
+    1,
+    [
+     "corpse"
+    ]
+   ]
+  }
+ }
+}

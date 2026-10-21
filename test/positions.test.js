@@ -17,6 +17,7 @@ require('../js/graph.js');
 const R = require('../js/rooms.js');
 const SP = require('../js/spots.js');
 const PE = require('../js/people.js');
+const CO = require('../js/collectibles.js');
 const M = globalThis.SS.map;
 
 const near = (p, [x, y], d, what) => assert.ok(p && Math.hypot(p[0] - x, p[1] - y) <= d, `${what}: ${JSON.stringify(p)}, not by ${x}, ${y}`);
@@ -45,11 +46,20 @@ test('a place counts its parents\' turns: Shakra on guard in Greymoor_08, Garmon
   }
 });
 
-test('an interior\'s own coordinates aren\'t its door room\'s: the Bellway Pilgrim', () => {
-  // Bellway_01 is a scene of its own, entered from Bone Bottom: no point of it in Bonetown's box
-  // (it was drawn at Bone Bottom's far west, by the Chapel Maid).
+test('an interior is at the door it\'s entered by: the Bellway Pilgrim, Plinney, the Skull Cave', () => {
+  // Bellway_01 is a scene of its own, entered from Bone Bottom: its own coordinates aren't Bonetown's
+  // (they drew it at Bone Bottom's far west, by the Chapel Maid), so everything in it is at its door,
+  // Bonetown's door1 at the town's east end, by the Bellway (Albert's choice, 21-Oct-2026).
   const pilgrim = PE.PEOPLE.find((x) => x.id === 'bellway-pilgrim');
-  assert.deepStrictEqual(pilgrim.spots, [['bellway_01']]);
+  assert.strictEqual(pilgrim.spots.length, 1);
+  inBox(pilgrim.spots[0].slice(1), 'Bonetown', 'the Bellway Pilgrim');
+  near(pilgrim.spots[0].slice(1), [675.9, 1469.6], 1, 'the Bellway Pilgrim at Bellway_01\'s door');
+  // Plinney's house (Belltown_Room_pinsmith), his Needle upgrades with him: its door3 in Bellhart.
+  const needle = CO.PIECES.map((p, i) => i).filter((i) => CO.PIECES[i][0] === 'needle');
+  for (const k of ['person:plinney', ...needle.map((i) => 'piece:' + i)]) near(SP.XY[k], [1196.3, 1216.1], 1, k);
+  // The Skull Cave's Mask Shard (Bone_East_LavaChallenge), at its door in Bone_East_14b.
+  const cave = CO.PIECES.findIndex((p) => JSON.stringify(p[2]).includes('Bone_East_LavaChallenge'));
+  near(SP.XY['piece:' + cave], [2208.8, 1528.2], 1, 'the Skull Cave\'s Mask Shard');
 });
 
 test('one who walks between scenes is where their path ends on the ground: Pondcatcher Reed', () => {

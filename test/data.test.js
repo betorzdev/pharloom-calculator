@@ -322,7 +322,8 @@ test('how to get each thing of the 100%: every one has a way, and every way join
   const COUNTS = new Set(['mask-shard', 'spool-fragment', 'crafting-kit', 'tool-pouch', 'needle', 'silk-heart']);
   const want = {
     tools: CO.COUNTED.map((g) => g[0]), crests: CP.CRESTS, skills: CP.SKILLS, arts: CP.ARTS,
-    pieces: CO.PIECES.map((p, i) => (COUNTS.has(p[0]) ? String(i) : null)).filter((i) => i !== null),
+    // and the one melody learned from someone (the Vaultkeeper's, from Cardinius).
+    pieces: CO.PIECES.map((p, i) => (COUNTS.has(p[0]) || (p[0] === 'melody' && p[2][1] === 'HasMelodyLibrarian') ? String(i) : null)).filter((i) => i !== null),
   };
   const ways = [];
   for (const [cat, ids] of Object.entries(want)) {
@@ -332,8 +333,8 @@ test('how to get each thing of the 100%: every one has a way, and every way join
       H.HOW[cat][id].forEach((w) => ways.push([`${cat}.${id}`, w]));
     }
   }
-  // 51 Tools, 6 Crests, 6 Silk Skills, 7 abilities; 20 + 18 + 4 + 4 + 4 + 3 pieces.
-  assert.deepEqual(Object.values(want).map((l) => l.length), [51, 6, 6, 7, 53]);
+  // 51 Tools, 6 Crests, 6 Silk Skills, 7 abilities; 20 + 18 + 4 + 4 + 4 + 3 pieces and a melody.
+  assert.deepEqual(Object.values(want).map((l) => l.length), [51, 6, 6, 7, 54]);
   assert.ok(H.HOW.everbloom.length);
   H.HOW.everbloom.forEach((w) => ways.push(['everbloom', w]));
   for (const [where, w] of ways) {
@@ -350,7 +351,14 @@ test('how to get each thing of the 100%: every one has a way, and every way join
     }
     (w.after || []).forEach((i) => assert.ok(CO.WISHES[i], `${where}: after ${i}`));
     if (w.kind === 'fleas') assert.ok(w.fleas === 'all' || Number.isInteger(w.fleas), where);
+    if (w.by) assert.ok(w.kind === 'wish' && H.NPCS[w.by], `${where}: by ${w.by}`);
+    if (w.bring) assert.ok(w.bring.name.es && w.bring.name.en && w.bring.scene, `${where}: bring`);
   }
+  /* A wish's reward handed over in person elsewhere than it's taken says by whom (Albert's choice,
+     21-Oct-2026): these three, and the Flea Brew is Grishkin's, not The Lost Fleas'. */
+  const by = ways.filter(([, w]) => w.by).map(([where, w]) => [where, w.by]).sort();
+  assert.deepEqual(by, [['pieces.32', 'sherma'], ['tools.pin-badge', 'pinstress'], ['tools.throwing-ring', 'shakra']]);
+  assert.deepEqual(H.HOW.tools['flea-brew'], [{ kind: 'npc', npc: 'grishkin' }]);
   for (const [id, n] of Object.entries(H.NPCS)) assert.ok(n.es && n.en, id);
   // The Crafting Kit's four, in PIECES order.
   const kit = CO.PIECES.map((p, i) => [p, i]).filter(([p]) => p[0] === 'crafting-kit').map(([, i]) => H.HOW.pieces[i][0]);
@@ -396,7 +404,10 @@ test('the keys a thing of the 100% lies behind, and the two NPCs whose names the
   assert.ok(CP.SKILLS.includes('rune-rage') && H.NEEDS.skills['rune-rage'].keys.length === 3);
   const heart = CO.PIECES.findIndex((p) => JSON.stringify(p[2]) === JSON.stringify(['visited', 'Memory_Silk_Heart_WardBoss']));
   assert.deepEqual(H.NEEDS.pieces[heart].keys, ['white', 'surgeon']);
-  assert.equal(needs.length, 9);
+  assert.equal(needs.length, 10);
+  // And an ability: the Threefold Pin lies where the Needolin's memory in Greymoor_15b brings it.
+  assert.deepEqual(H.NEEDS.tools['threefold-pin'], { keys: [], arts: ['needolin'] });
+  for (const m of Object.values(H.NEEDS)) for (const n of Object.values(m)) (n.arts || []).forEach((a) => assert.ok(D.ARTS.some((x) => x.id === a), a));
   // The Spanish puts the title's other half under _SUB: «Hija de la Forja», «Skarr Moteado».
   assert.deepEqual([H.NPCS['forge-daughter'].es, H.NPCS['forge-daughter'].en], ['Hija de la Forja', 'Forge Daughter']);
   assert.deepEqual([H.NPCS['mottled-skarr'].es, H.NPCS['mottled-skarr'].en], ['Skarr Moteado', 'Mottled Skarr']);
