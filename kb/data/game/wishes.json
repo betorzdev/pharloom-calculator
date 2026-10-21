@@ -746,6 +746,7 @@
   "Coral Ingredient": "_0007_quest_coral_nut",
   "Extractor Machine Pins": "hornet_extractor_pins",
   "Pickled Roach Egg": "century_maggot_icon",
+  "Plasmium": "icon_inv_blue_health_jar_0001_3",
   "Rock Roller Item": "bone_roller_rock_icon",
   "Shell Flower": "_0007_shell_flower_purple_icon",
   "Silver Bellclapper": "hornet_icon_bell_clapper",
@@ -815,6 +816,32 @@
     "Return Pickup",
     41.77,
     34.36
+   ]
+  ],
+  "Plasmium": [
+   [
+    "crawl_03",
+    "LifebloodPustule",
+    "PUSTULE",
+    "pustule_set_small (1)",
+    124.98,
+    26.63
+   ],
+   [
+    "crawl_07",
+    "LifebloodPustule",
+    "pustule",
+    "pustule_set_small (1)",
+    79.28,
+    21.09
+   ],
+   [
+    "crawl_09",
+    "LifebloodPustule",
+    "PUSTULE",
+    "pustule_set_small (1)",
+    24.35,
+    25.18
    ]
   ],
   "Rock Roller Item": [
@@ -1111,6 +1138,7 @@
   "Coral Ingredient": "INV_NAME_GOURMAND_CORAL_INGREDIENT",
   "Extractor Machine Pins": "ITEM_EXTRACTOR_PINS_NAME",
   "Pickled Roach Egg": "INV_NAME_PICKLEDEGG",
+  "Plasmium": "INV_NAME_BLUE_GOOP",
   "Rock Roller Item": "INV_NAME_ROCK_ROLLER_ITEM",
   "Shell Flower": "INV_NAME_SHELL_FLOWER",
   "Silver Bellclapper": "INV_NAME_BELLCLAPPER_ITEM",

@@ -1455,7 +1455,13 @@ all six flowers, fixed 16 October), the wish granted, a Steel Sentinel spot seen
 `SteelQuestSpots` keeps the three of six a game chose), an objective complete or a later step of
 it (the author's 100% save left Pale Monarch incomplete, Act 3 opened through the Soul Snare).
 Inscriptions (57 in 51 rooms) keep nothing in the save: left out. The 72 saves of the author's
-folder still match.
+folder still match. On 21 October the three Plasmium buds of Alchemist's Assistant joined them
+(25 things): a bud (LifebloodPustule) names no item, the Needle Phial gives Plasmium from code,
+so `extract-wishes.py` takes them by component (BUDS), only the ones there before
+`BlueScientistSceneryPustulesGrown` (Crawl_03, Crawl_07, Crawl_09; the large ones that grow in
+Act 3 after the wish only give Plasmium masks), each done by its persistentBroken bool, which the
+author's saves set one by one (restoreData19: one extracted, one Plasmium held). Advanced
+Alchemy's Plasmified Blood comes from infected worms, semi-persistent, so it stays off the Map.
 
 **The people** (11 October). Set against mapgenie's 146 NPC marks, the Map had seven people. The
 game's scenes give every person: an NpcDialogueTitle names them (its keys are the dump's

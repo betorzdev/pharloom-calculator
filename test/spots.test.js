@@ -391,6 +391,20 @@ test('the Flintgems are three Flintbeetles in four places: Bone_04 or Bone_06 by
   assert.deepEqual(F.gameOf({ ...snap, 'pharloom.progress': JSON.stringify(old) }).elsewhere, []);
 });
 
+test("Alchemist's Assistant's three Plasmium buds, each had by its own bool, none by the Plasmium held", () => {
+  // As restoreData19 of the author's folder: the wish taken, one Plasmium extracted in Crawl_03.
+  const buds = SP.TASKS.map((x, i) => (x[0] === 'qitem' && x[1] === 'Extractor Blue' ? i : -1)).filter((i) => i >= 0);
+  assert.deepEqual(buds.map((i) => SP.TASKS[i][3]), ['Crawl_03', 'Crawl_07', 'Crawl_09']);
+  assert.ok(buds.every((i) => SP.XY['task:' + i]), 'each at the bud in its room');
+  assert.ok(buds.every((i) => !JSON.stringify(SP.TASKS[i][2]).includes('held')));
+  const base = { silk: 0, silkMax: 9, maxHealth: 5, Collectables: { savedData: [{ Name: 'Plasmium', Data: { Amount: 1 } }] },
+    QuestCompletionData: { savedData: [{ Name: 'Extractor Blue', Data: { IsAccepted: true, IsCompleted: false } }] } };
+  const sd = { persistentBools: { serializedList: [{ SceneName: 'Crawl_03', ID: 'pustule_set_small (1)', Value: true }] } };
+  assert.deepEqual(buds.filter((i) => F.game(base, sd).tasks.includes(i)), [buds[0]]);
+  const done = F.game({ ...base, QuestCompletionData: { savedData: [{ Name: 'Extractor Blue', Data: { IsCompleted: true } }] } });
+  assert.deepEqual(buds.filter((i) => done.tasks.includes(i)), buds, 'the wish granted: all three');
+});
+
 test("the Bellbeast's twelve stations are one check, and a save with its wish on shows the one the beast is at", () => {
   const pins = SP.TASKS.map((x, i) => (x[1] === 'Bellbeast Rescue' ? i : -1)).filter((i) => i >= 0);
   assert.equal(pins.length, 12);
