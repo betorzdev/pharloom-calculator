@@ -93,8 +93,13 @@ test('what opens a way comes after the completionist\'s extras, each a bool of i
   assert.equal(SP.EXTRAS.slice(first, after).filter((x) => x[0] === 'wall').length, 2, 'the two cell doors');
   const LATER = new Set(['map', 'rosaries', 'shards', 'key', 'keyitem', 'bead', 'silk-cocoon', 'lift', 'masked', 'eva']);
   // After them, only the maps and what came after them, the ways kept in playerData (a flag each) and,
-  // last, the doors a key opens no mark had (kb/data/game/gating.json receptacles: Ward_01's).
-  const last = SP.EXTRAS.length - SP.EXTRAS.slice().reverse().findIndex((x) => !(x[0] === 'lock'));
+  // the doors a key opens no mark had (kb/data/game/gating.json receptacles: Ward_01's) and, last of
+  // all, what the completionist's list lacks of the game's own: Dock_01's two rosary strings, Under_20's Silkeater.
+  const tail = SP.EXTRAS.length - SP.EXTRAS.slice().reverse().findIndex((x) => !['rosary-cache', 'silkeater'].includes(x[0]));
+  const ids = (c) => (c[0] === 'any' ? ids(c[1]) : c[1] + ' ' + c[2]);
+  assert.deepEqual(SP.EXTRAS.slice(tail).map((x) => x[0] + ' ' + ids(x[2])),
+    ['rosary-cache Dock_01 rosary_string_medium', 'rosary-cache Dock_01 rosary_string_small_half', 'silkeater Under_20 Silk Grub Large Cocoon']);
+  const last = tail - SP.EXTRAS.slice(0, tail).reverse().findIndex((x) => !(x[0] === 'lock'));
   assert.ok(SP.EXTRAS.slice(after, last).every((x) => LATER.has(x[0]) || (DOORS.has(x[0]) && x[2][0] === 'flag')), 'only the maps and what came after them');
   // What opens a way that the save keeps in playerData: a flag each, once.
   const pd = SP.EXTRAS.slice(after, last).filter((x) => DOORS.has(x[0]));
@@ -431,7 +436,8 @@ test('a Tool sold that lies elsewhere once its seller is gone has that room too,
 });
 
 test('what Act 3 moves has its Act 3 room too, and the save says which: Mossberry no. 3 and the Volatile Flintbeetles\' locket', () => {
-  const moved = Object.entries(SP.ALSO).filter(([, a]) => a[2] && a[2].kind === 'moved');
+  // What Act 3 moves of itself (a foe that carries it, a wish's pickup); who moves it is another test's.
+  const moved = Object.entries(SP.ALSO).filter(([, a]) => a[2] && a[2].kind === 'moved' && !a[2].npc && !a[2].skipped);
   const berry = SP.EXTRAS.findIndex((x) => x[0] === 'mossberry' && x[2][1] === 'bonetownAspidBerryCollected');
   const locket = CO.PIECES.findIndex((p) => p[0] === 'memory-locket' && JSON.stringify(p[2]).includes('"Rock Rollers"'));
   const both = ['extra:' + berry, 'piece:' + locket].sort();
@@ -454,7 +460,7 @@ test('what Act 3 moves has its Act 3 room too, and the save says which: Mossberr
   const base = { silk: 0, silkMax: 9, maxHealth: 5 };
   const quest = (done) => ({ QuestCompletionData: { savedData: [{ Name: 'Rock Rollers', Data: { IsAccepted: true, IsCompleted: done } }] } });
   const picked = { persistentBools: { serializedList: [{ SceneName: 'Bone_10', ID: 'Collectable Item Pickup Locket', Value: true }] } };
-  const mine = (l) => l.filter((k) => !k.startsWith('tools:')).sort();
+  const mine = (l) => l.filter((k) => both.includes(k)).sort();
   const now = (pd, sd) => mine(F.game({ ...base, ...pd }, sd).foundNow);
   // Before Act 3, had or not: their first rooms.
   assert.deepEqual(now({}), []);
@@ -597,4 +603,15 @@ test('the hunt wishes whose thing only enemies give: their Journal rooms on the 
   const g = F.gameOf(F.toSnapshot(base));
   assert.deepEqual(g.taken, ['Pilgrim Rags']);
   assert.equal(g.carried['Pilgrim Rag'], 7);
+});
+
+test('each objective pin is filed under the room it falls in, within 3 px of its box (Last Dive\'s is Abyss_05)', () => {
+  const M = globalThis.SS.map;
+  SP.TASKS.forEach((x, i) => {
+    if (x[0] !== 'goal') return;
+    const p = SP.XY['task:' + i], r = M.ROOMS[x[3]];
+    assert.ok(p && r, `task:${i} ${x[3]}`);
+    assert.ok(p[0] >= r[0] - 3 && p[0] <= r[0] + r[2] + 3 && p[1] >= r[1] - 3 && p[1] <= r[1] + r[3] + 3, `task:${i} ${x[1]} isn't by ${x[3]}`);
+  });
+  assert.equal(SP.TASKS.find((x) => x[0] === 'goal' && x[1] === 'Black Thread Pt6 Flower')[3], 'Abyss_05');
 });

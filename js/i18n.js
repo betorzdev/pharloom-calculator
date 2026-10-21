@@ -312,12 +312,23 @@
     mapArtOut:      { es: 'No cuenta para el 100 %', en: 'It doesn\'t count for the 100%' },
     mapArtsIn:      { es: 'Del 100 %', en: 'Of the 100%' },
     mapToolLent:    { es: 'Te la presta un deseo y te la quita al cumplirlo: no cuenta para el 100 %', en: 'A wish lends it and takes it back once done: it doesn\'t count for the 100%' },
+    // A Tool found and then handed over for good (the Snare Setter, for the wish Silk and Soul).
+    mapToolGivenUp: { es: 'Está aquí; se entrega para {wish} y ya no vuelve: no cuenta para el 100 %', en: 'It lies here; it\'s given up for {wish} and doesn\'t come back: it doesn\'t count for the 100%' },
+    // A Tool another lies in place of in Steel Soul (the Shell Satchel for the Dead Bug's Purse), in Free mode.
+    // A boss that may come back to a place (the Skull Tyrant to Bone Bottom), its card in Free mode.
+    mapBossBack:    { es: 'Puede volver a {area}', en: 'It may come back to {area}' },
+    mapSteelInstead: { es: 'En {mode}, aquí está {tool} en su lugar', en: 'In {mode}, {tool} lies here instead' },
     /* A Tool sold that lies in another room once its seller is gone (js/spots.js ALSO): that room's
        mark, with no save and with one that has it there. */
     mapAlsoIf:      { es: 'Aquí si {npc} muere antes de que se lo compres', en: 'Here if {npc} dies before you buy it' },
     mapAlsoNow:     { es: '{npc} murió antes de que se lo compraras: está aquí', en: '{npc} died before you bought it: it lies here' },
     // What Act 3 moves to another room (js/spots.js ALSO, way { kind: 'moved' }): that room's mark, why it's there.
     mapMovedFoe:    { es: 'En el Acto 3, el {foe} que la lleva se muda a esta sala', en: 'In Act 3 the {foe} that carries it moves to this room' },
+    mapMovedNpc:    { es: 'En el Acto 3 {npc} se va de {area}: rescátalo aquí y vuelve', en: 'In Act 3 {npc} leaves {area}: rescue him here and he goes back' },
+    mapMovedSkipped: { es: 'Si entras en {area} sin haberlo vencido, te espera aquí desde el Acto {n}', en: 'If you enter {area} without beating it, it waits here from Act {n}' },
+    mapPlaceNow_caravan: { es: 'La Caravana de las pulgas está aquí ahora', en: 'The Flea Caravan is here now' },
+    mapPlaceIf_caravan:  { es: 'O aquí, si la Caravana de las pulgas está en esta parada', en: 'Or here, if the Flea Caravan is at this stop' },
+    mapPlaceNow_bellway: { es: 'Te espera en esta Vía Campana', en: 'It waits for you at this Bellway' },
     mapMovedWish:   { es: 'En el Acto 3 está aquí, si no se ha concedido el deseo «{wish}»', en: 'In Act 3 it lies here, if the wish "{wish}" isn\'t granted' },
     /* What a vendor sells only in Act 3 (js/spots.js ALSO, a shop's), once who had it before is gone
        (Grindle's: Pebb's, Mort's, Lumble's wares): its mark there, with no save and in an Act 3 game. */
@@ -450,6 +461,29 @@
     mapWishesNone:  { es: 'No quedan deseos por cumplir.', en: 'No wishes left open.' },
     mapKills:       { es: '{n} de {m} derrotados', en: '{n} of {m} defeated' },
     mapBeastHere:   { es: '{n} en esta sala', en: '{n} in this room' },
+    // Where an entry's enemies only come in a gauntlet's waves (js/spots.js JOURNAL; the site's words).
+    mapBeastWaves:  { es: 'Solo en las oleadas de {fight}', en: 'Only in the waves of {fight}' },
+    mapBeastWavesAny: { es: 'Solo en las oleadas de un combate', en: 'Only in a fight\'s waves' },
+    // Hornet's cocoon: the rosaries it holds (HeroCorpseMoneyPool; the game's word: INV_NAME_COIN).
+    mapCocoonRosaries: { es: 'Guarda {n} rosarios.', en: 'Holds {n} rosaries.' },
+    // What the game waits for before it puts a fight there (js/spots.js OPENS), and whether this game has it.
+    mapOpensWish:   { es: 'Aparece con el deseo «{wish}»', en: 'Appears with the wish "{wish}"' },
+    mapOpensAfter:  { es: 'Aparece tras conceder el deseo «{wish}»', en: 'Appears once the wish "{wish}" is granted' },
+    mapOpensFreed:  { es: 'Aparece cuando quedan libres: {foe}', en: 'Appears once these are freed: {foe}' },
+    mapOpenYes:     { es: 'ya está', en: 'done' },
+    mapOpenNo:      { es: 'aún no', en: 'not yet' },
+    // What Frey's furnishings wait for (js/shop.js needs), and the names in them.
+    mapNeedVisited: { es: 'haber entrado en el {place}', en: 'having been in the {place}' },
+    mapNeedRelic:   { es: 'una reliquia vendida a {npc}', en: 'a relic sold to {npc}' },
+    mapNeedCollection: { es: 'la colección de {npc} completa', en: '{npc}\'s collection complete' },
+    mapBellhome:    { es: 'Hogar campana', en: 'Bellhome' },   // BELLHOME
+    mapCardinius:   { es: 'Guardián de las Bóvedas Cardinius', en: 'Vaultkeeper Cardinius' },   // LIBRARIAN_RELIC_SUPER+LIBRARIAN_RELIC_MAIN
+    // How an extra is had when no one sells it (js/spots.js EXTRAS more.how).
+    mapSpeedPrize:  { es: 'Premio de un reto de velocidad', en: 'A speed challenge\'s prize' },
+    mapThroughChapel: { es: 'Por la {place}, tras «{wish}»', en: 'Through the {place}, after "{wish}"' },
+    // An objective's steps the game pins on one point (js/spots.js STEPS).
+    mapSteps:       { es: 'Pasos: {list}', en: 'Steps: {list}' },
+    mapStepNow:     { es: 'en curso', en: 'current' },
     mapTaskFor:     { es: 'Lo pide el deseo «{wish}».', en: 'The wish "{wish}" asks for it.' },
     // A hunt's grounds (design/103): the Wishwall's way there, the focus, and what each room gives.
     // Written for the context; a wish is "taken" / «tomado» as Hornet says it (COURIER_SHORT_QUEST_ACCEPTED),
@@ -774,7 +808,6 @@
     pgStepSilk:     { es: 'Atrapa a la {silk}', en: 'Snare {silk}' },
     /* What's next on the step you're on (2 A) */
     pgTodo:         { es: 'Lo siguiente', en: 'What\'s next' },
-    pgTodoWish:     { es: 'Completa el deseo «{wish}»', en: 'Complete the wish "{wish}"' },
     pgTodoPoints:   { es: 'Consigue {n} puntos más de deseos', en: 'Get {n} more wish points' },
     pgTodoPoints1:  { es: 'Consigue {n} punto más de deseos', en: 'Get {n} more wish point' },
     pgTodoAny:      { es: 'Vale cualquiera de estos {n} deseos; por ejemplo:', en: 'Any of these {n} wishes will do; for example:' },
@@ -876,6 +909,7 @@
        says of it, its Wishwall, the Inventory, the Journal or the Caretaker. */
     pgSays:         { es: 'Lo que dice el juego', en: 'What the game says' },
     pgSaysHide:     { es: 'Ocultar', en: 'Hide' },
+    pgFold:         { es: 'Más', en: 'More' },
     pgPeekStep:     { es: 'Paso {n}', en: 'Step {n}' },
     pgPeekDone:     { es: 'hecho', en: 'done' },
     pgMapN:         { es: 'Ver los {n} en el mapa', en: 'See the {n} on the map' },
@@ -917,6 +951,8 @@
     howShop:        { es: '{vendor}: {price} rosarios', en: '{vendor}: {price} rosaries' },
     howGift:        { es: 'Te lo da {npc}', en: 'Given by {npc}' },
     howWish:        { es: 'Deseo: {wish}', en: 'Wish: {wish}' },
+    howWishBy:      { es: 'Deseo: {wish}, que se acepta en {area} · te lo da {npc}', en: 'Wish: {wish}, taken in {area} · given by {npc}' },
+    howBring:       { es: '{npc} la toca si le llevas el {item} de {area}', en: '{npc} plays it once you bring the {item} from {area}' },
     howBoss:        { es: 'Tras el combate: {foe}', en: 'After the fight: {foe}' },
     howCraft:       { es: 'Se fabrica', en: 'Crafted' },
     howChallenge:   { es: 'Reto de {npc}', en: '{npc}\'s challenge' },
