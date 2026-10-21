@@ -399,8 +399,10 @@ point, + and − at the middle, and ⤢ opens it large, the window's whole width
 it swaps to twice the resolution. The last button, the four corners, takes it to full screen (Esc or
 the same button leave it; where the browser can't, it fills the window). On it: a search at the top left and the zoom at the top right.
 The search finds any area and anything on the map by name (a piece, a Tool, a boss, a shop, an
-NPC, a Journal entry), each with its layer and area under it: pick one and the map goes there,
-with its layer switched on, its card open and a ring where it is. With the whole map in view, an
+NPC, a Journal entry), each with its layer and area under it: pick one and the map shows only
+that thing, as a focus of one (its name and area in the search's place, × back to the whole map,
+with its layer switched on), centred on its mark as drawn, its card open and a ring pulsing on it
+three times. An area's name centres the map on it with its ring. With the whole map in view, an
 area name that would fall on another waits for the zoom (the larger area's stays, by its rooms);
 on a phone the area names show only zoomed in.
 
@@ -489,7 +491,9 @@ leaves those off.
   and Craw Mementos), who gives it (Nuu, the Hunter's), the challenge that awards it (Seth's,
   Sprintmaster Swift's, the Far Fields Rune Harp's speed challenge), and the Shellwood Weaver
   Effigy, through the Chapel of the Witch after Rite of Rebirth. The Vaultkeeper's Melody is with
-  Cardinius, who plays it once you bring him the Sacred Cylinder of the Whispering Vaults. Two
+  Cardinius, who plays it once you bring him the Sacred Cylinder of the Whispering Vaults; the
+  cylinder has its own mark where it lies, among the Psalm Cylinders, with its own name and icon,
+  and each card has a button to the other. Two
   things move in Act 3 if you don't have them yet, and have a second
   mark there saying Act 3 and why: the Memory Locket of «Volatile Flintbeetles» lies in Survivor's
   Camp while the wish isn't granted, and the Aknid carrying Mossberry no. 3 moves one room east.
@@ -547,7 +551,8 @@ leaves those off.
   game may send in Act 2: with a save, only once it's on its way or beaten, and crossed («No longer
   there») in Act 3 if you didn't beat it; in Free mode its card says it may come back. A gauntlet won by beating its boss (Lugoli's, Groal's,
   the Coral Tower's four that end in Khann…) is that boss's mark, its waves and reward on the
-  boss's card. And the Void Masses' cores. The other enemies that don't come back (Rhinogrunds,
+  boss's card. And the Void Masses' cores (the two in the Dustpens' Act 3 arena only in a normal
+  game: Steel Soul has none there). The other enemies that don't come back (Rhinogrunds,
   Covetous Pilgrims, Shardillards) are found from their Journal entry, whose pin shows every room
   they're in. A wish done by a boss's fight (Fatal Resolve, the Pinstress on Mount Fay; the end of
   A Vassal Lost, the Summoned Saviour; Pain, Anguish and Misery, Tormented Trobbio; Final Audience,
@@ -579,11 +584,14 @@ leaves those off.
   deliveries and the Steel Sentinel's spots where the game's own map pins them, of the Sentinel's
   six only the three your game chose, and only in Steel Soul; the Herald's seven, only the next one
 while the wish is on, as the game shows him one at a time; the rescues and
-  fights, in the room where the game ends the wish); what a wish asks for (the 25 things lying in a
-  room or given there: the Pollip Hearts, the Flintgems, the Grand Hunts' trophies, the
-  Gourmand's delicacies, the three souls, the Twisted Bud, the Steel Spines, the three Plasmium
+  fights, in the room where the game ends the wish); what a wish asks for (the 30 things lying in a
+  room, given or played there: the Pollip Hearts, the Flintgems, the Grand Hunts' trophies, the
+  Gourmand's five delicacies (the Mossberry Stew where the Moss Druid hands it over, the Courier's
+  Rasher where Tipp & Pill sell it, each done once given to his servant), the three souls, the Twisted Bud, the Steel Spines, the three Plasmium
   buds of Alchemist's Assistant in the lower Wormways, each done once the Needle Phial has drawn
-  its Plasmium, as the save keeps it; and the fourteen
+  its Plasmium, as the save keeps it; Ecstasy of the End's three Flea Games at their hosts in the
+  festival, each done once your score is past the champion's, as the game reads it from the
+  highscore it saves; and the fourteen
   spots above and below Bellhart where a Silver Bell may drop, gone once their wish is granted); and the main
   objectives, where the game's map pins them (an objective's steps the game pins on one spot are
   one mark, with the Act of its first step, its card listing the steps in order, with a save which
@@ -673,12 +681,16 @@ more than three rooms, and a smaller one that holds something of the 100% (the S
 cards' «For 100%» add up to what «Only the 100%» shows.
 
 Other screens open the map on a thing: «See on the map» on each missing row of Progress and on a
-Journal entry. A step of Progress's road
+Journal entry, and the buttons on a card that go to someone else's mark. One thing is shown alone,
+as the search does: only its mark, whatever the switches and «Show completed» say (what you have
+dimmed and ticked as always), centred on it, its card open and a ring pulsing on it, and a line in
+the search's place with its name and area and its × back to the whole map. A step of Progress's road
 opens it on all that's left of the step at once («See the 2 on the map»: the Bellshrines still to
-ring, the snare's pieces, what's next for Silk and Soul): the map shows only those marks, whatever
-its switches say, framed to fit them, and a line in the search's place names the step, with ‹ › to
-go from one to the next (the nearest to your bench first, «1 of 2», each centred with its card)
-and its × back to the whole map. Any switch below ends it too; Back returns to Progress.
+ring, the snare's pieces, what's next for Silk and Soul), and so do a Journal entry's rooms and a
+wish's hunting grounds: the map shows only those marks, whatever its switches say, framed to fit
+them, each with the ring, and the line names the step, with ‹ › to go from one to the next (the
+nearest to your bench first, «1 of 2», each centred with its card and its ring) and its × back to
+the whole map. Any switch below ends it too; Back returns to Progress.
 
 Pharloom as the game's own map screen draws it for your game, piece by piece and by its own
 rules, taken from its files and its code, in a dim tone, with Hornet sitting at her bench, her feet
@@ -958,8 +970,14 @@ the road's tab lists them as well. The one only Steel Soul has, and the one only
 only in a save of that mode, and both in Free mode, as the Journal and the Map show them. A task done
 also shows in "Since the previous save".
 Each task not done carries the lists' round pin to the Map, to where it stands now: before you take
-it, who gives it (its Wishwall, or whoever asks); once taken, what's still to do of it (what it asks
-you to bring, where it's done), and when nothing is, back to whoever gives it. A main objective goes
+it, who gives it (its Wishwall, or whoever asks: Plinney, the Couriers, Creige, the Moss Druid,
+Mooshka and the Pinstress on the mark that is them already); once taken, what's still to do of it
+(what it asks you to bring, where it's done), and when nothing is, back to whoever gives it. What a
+wish asks for that another layer of the Map marks is on its pin too, until you have enough of it:
+Pinmaster's Oil's Pale Oil (any of the three), Berry Picking's Mossberries (three held), The Lost
+Fleas' fleas (five saved), Dark Hearts' Void Masses (twelve destroyed), Silk and Soul's Snare
+Setter. The Lost Fleas is done once Mooshka has the five fleas, not when its Wishwall sends you to
+the caravan. A main objective goes
 to the game's own pin for it (the melodies and the Old Hearts to where each lies). Without a save
 the pin goes to who gives it, or else to its marks. One mark opens the Map on it; several open the
 Map with only them (‹ 1 of n ›, the nearest to your bench first).

@@ -201,7 +201,7 @@ for (const k of Object.keys(EN).sort()) if (QUEST_KEY.test(k)) { const n = qnorm
 const WISH_TYPE_KEY = { 'Main Objectives': null, Wayfarer: 'TYPE_WAYFARER_1_TITLE', Gather: 'TYPE_GATHER_1_TITLE', Donate: 'TYPE_DONATE_1_TITLE',
   Hunt: 'TYPE_HUNT_1_TITLE', 'Grand Hunt': 'TYPE_HUNT_2_TITLE', Delivery: 'TYPE_COURIER_TITLE', Learn: 'TYPE_JOURNAL_TITLE',
   Collect: null, Sprint: 'TYPE_SPRINT_TITLE', Witness: 'TYPE_HERALD_TITLE', Steel: 'TYPE_STEELSENTINEL_TITLE' };
-const WISH_TYPES = [], WISHES = [];
+const WISH_TYPES = [], WISHES = [], usedWishFix = new Set();
 for (const sec of sections('tasks.ts')) {
   const type = sec.name.replace(/^Wishes · /, '');
   if (!(type in WISH_TYPE_KEY)) fail(`a wish type the generator doesn't know: ${type}`);
@@ -213,9 +213,12 @@ for (const sec of sections('tasks.ts')) {
     // With no quest title of the game's (a few main objectives), the game's own name elsewhere.
     const name = key ? N.text(key) : N.gameName(en) || { es: en, en, key: undefined };
     const mode = it.onlyFoundInSteelSoulMode ? 'steel' : it.onlyFoundInClassicMode ? 'classic' : undefined;
-    WISHES.push([id, actOf(it), check(it.parsingInfo), areaOf(it.completionDetails, false), name, mode]);
+    const c = check(it.parsingInfo), fix = C.WISH_FIX[JSON.stringify(c)];
+    if (fix) usedWishFix.add(JSON.stringify(c));
+    WISHES.push([id, actOf(it), fix || c, areaOf(it.completionDetails, false), name, mode]);
   }
 }
+for (const k of Object.keys(C.WISH_FIX)) if (!usedWishFix.has(k)) fail(`WISH_FIX ${k}: no wish has that check now (tools/completionist.js)`);
 const unnamed = WISHES.filter((w) => !w[4].key).map((w) => w[4].en);
 
 /* ── Where the rest of the 100% is: Tools, Crests, Silk Skills, abilities, the Everbloom ──

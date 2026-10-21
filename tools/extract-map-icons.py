@@ -18,6 +18,9 @@ What each is (read on 11-Oct-2026, in atlases_assets_assets/sprites/_atlases/):
     cog_heart_pieces, _0000_T_web_shot_broken, farsight, materium, crawbell
                                          Key items: the Cogheart Pieces, the broken Silkshot, Farsight,
                                          the Materium, the Crawbell (inventory, inventory_furniture_items)
+    Hornet_icon_0000_R_psalm_cylinder_white
+                                         the Sacred Cylinder: its relic's own icon (collectableitems.bundle,
+                                         «R Librarian Melody Cylinder» typeIcon; the Psalm Cylinders' is the dark one)
     Silk_Grub_small_cocoon               the small silk cocoons by the Silkeaters (core)
     _0005_core_lever_02                  Levers: the Citadel's brass lever (core)
     dock_door_bottom_pressure_plate      a pressure plate, among the levers: the Docks' (dock)
@@ -33,7 +36,7 @@ UnityPy.config.FALLBACK_UNITY_VERSION = '6000.0.50f1'   # Unity 6 strips its ver
 WANT = {
     'inventory': ['I_slab_key', 'Hornet_Inv_pane_icons_0002_wish', 'Hornet_Inv_pane_icons_0003_journal', 'I_map',
                   'I_token_of_faith', 'I_slab_key_gold', 'I_slab_key_brass', 'I_key_whiteward', 'cog_heart_pieces', '_0000_T_web_shot_broken',
-                  'dock_key', 'belltown_house_key'],
+                  'dock_key', 'belltown_house_key', 'Hornet_icon_0000_R_psalm_cylinder_white'],
     'inventory_furniture_items': ['farsight', 'materium', 'crawbell'],
     'wish': ['quest_icon_large__0008_gather', 'quest_icon_large_0006_herald'],
     'core': ['_0005_core_lever_02', 'Silk_Grub_small_cocoon'],

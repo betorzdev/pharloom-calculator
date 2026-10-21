@@ -258,7 +258,8 @@ test('each thing with a point of its own sits in (or at the edge of) its room\'s
 test('the wishes and the main objectives (TASKS) sit on the map, each with its picture and a check the save reads', () => {
   const fs = require('fs');
   const path = require('path');
-  const checks = new Set(['bool', 'flag', 'quest', 'held', 'steel', 'any', 'journal']);   // journal: Last Dive's, as its wish (save checks, 7 A)
+  // journal: Last Dive's, as its wish (save checks, 7 A); min: a Flea Game's highscore past its champion's (the wishes' audit).
+  const checks = new Set(['bool', 'flag', 'quest', 'held', 'steel', 'any', 'journal', 'min']);
   const walk = (c) => { assert.ok(checks.has(c[0]), c[0]); if (c[0] === 'any') c.slice(1).forEach(walk); };
   const n = { qitem: 0, wspot: 0, goal: 0 };
   for (const [kind, quest, check, scene, art] of SP.TASKS) {
@@ -648,6 +649,21 @@ test('each objective pin is filed under the room it falls in, within 3 px of its
     assert.ok(p[0] >= r[0] - 3 && p[0] <= r[0] + r[2] + 3 && p[1] >= r[1] - 3 && p[1] <= r[1] + r[3] + 3, `task:${i} ${x[1]} isn't by ${x[3]}`);
   });
   assert.equal(SP.TASKS.find((x) => x[0] === 'goal' && x[1] === 'Black Thread Pt6 Flower')[3], 'Abyss_05');
+});
+
+test('the Sacred Cylinder is a mark of its own, named and drawn as the game does, pointing at the melody it teaches', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const x = SP.EXTRAS.find((y) => y[2][0] === 'relic' && y[2][1] === 'Librarian Melody Cylinder');
+  assert.ok(x, 'the Sacred Cylinder has a mark');
+  assert.equal(x[3], 'library_10');
+  // Its own name, not the Psalm Cylinders' (INV_NAME_R_PSALM_CYL_MELODY), and its own icon (the white one).
+  assert.equal(x[4].key, 'INV_NAME_R_PSALM_CYL_MELODY');
+  assert.equal(x[4].en, 'Sacred Cylinder');
+  assert.ok(fs.existsSync(path.join(__dirname, '..', 'assets', 'map', 'icons', x[5].icon + '.webp')), x[5].icon);
+  // The melody Cardinius plays once he has it: another mark, in another room.
+  const m = CO.PIECES[x[5].melody];
+  assert.ok(m && m[0] === 'melody' && m[2][1] === 'HasMelodyLibrarian');
 });
 
 /* Tasks as the three Wishwalls (js/app-progress.js wishSource, giverOf; design/104): every wish is

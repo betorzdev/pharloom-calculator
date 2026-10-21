@@ -68,4 +68,14 @@ const PIECE_FIX = {
   '["quest","Rock Rollers"]': [['any', ['quest', 'Rock Rollers'], ['bool', 'Bone_10', 'Collectable Item Pickup Locket']], 'BONEBOTTOM'],
 };
 
-module.exports = { SRC, sections, load, check, PIECE_FIX };
+/* Where the completionist is wrong about a wish, by its check (as check() gives it): the game's own.
+   The Lost Fleas is done once its quest, Save the Fleas, is (five fleas, Mooshka's FleasCollected
+   Target, brought to the caravan): its Save the Fleas Pre, the Wishwall's step that sends Hornet to
+   the caravan, is done first, and three of the author's saves are between the two, the wish on in
+   the game's pane with 1 and 5 fleas (read on 21-Oct-2026). tools/gen-collectibles.js puts them in
+   WISHES and stops on one it doesn't use. */
+const WISH_FIX = {
+  '["any",["quest","Save the Fleas"],["quest","Save the Fleas Pre"]]': ['quest', 'Save the Fleas'],
+};
+
+module.exports = { SRC, sections, load, check, PIECE_FIX, WISH_FIX };
