@@ -2101,3 +2101,28 @@ then the places' areas), and its pin all its marks on the Map at once, the Ruine
 Act 3 with the Architect gone), 8 holding it, 19 repaired the Original, 4 the Forge Daughter's, none
 the Architect's. Checked: npm test, the text audit, check-pack on the 87 saves (all match), the Map in
 headless Chrome at 1440 and 390, es and en, in Free mode and five saves, no console errors.
+
+**Where to hunt** (21 October, design/103, Albert's picks 1 A, 2 B, 3 A). Albert asked whether the
+Map shows everything each wish needs. Seven wishes ask for things that only enemies give while the
+wish is taken, and the Map had nothing for them but the Wishwall or the giver. `tools/extract-hunts.py`
+reads the game's files into kb/data/game/hunts.json: a quest is a thing the game can drop (dropping
+it drops its target while it's on), and an enemy placed in a scene (its EnemyJournalRecord) gives
+one by its HealthManager's drops (the Craws: Crawbug Clearing), by its corpse prefab's ActiveCorpse
+or a SpecialQuestItemVariant under it (the pilgrims' Pilgrim Shawl, the Choir's cloaks, the
+Muckroach's guts, the Choristors' and Reeds' Fine Pins), by another prefab it throws (the Hoker's
+spines) or by a LifebloodState, which the Needle Phial draws Plasmified Blood from (Advanced
+Alchemy; the infected Bone Worms, only in Act 3). Broodfeast's organs come from the kind of Tool
+damage on any enemy: nothing to place. The rooms match the Journal's (js/journal-rooms.js) but for a
+few variants whose corpse is another. The saves keep nothing per enemy or room (the enemies'
+PersistentBoolItem is semi-persistent and never reaches the save, but for a few unique ones); they
+keep the wish's count (QuestCompletionData CompletedCount), equal to the thing held in every open
+hunt of the 88 saves. So no marks (there's nothing a mark could tick): js/spots.js HUNTS gives each
+hunt's Journal entries and rooms, the Wishwall's or giver's card has «Where to hunt: <wish>» for
+each one still open, a focus of those rooms (one portrait per room, the most first), and each
+room's card says what the enemy gives there and for which wish, with the wish taken «You have
+7 of 12» (savefile's carried). Progress's pin of a hunt taken and still short opens the same rooms,
+the nearest first. The two Spine Cores stuck in Bone_East_14b's wall (copies of the Hoker's spine,
+each with a persistent flag) stay off: in every save Flexile Spines was done before their flags
+appear, so it's unverified they count. Checked: npm test, the text audit, the Map and Progress in
+headless Chrome at 1440 and 390, es and en, with three saves (Pilgrim Shawls 7 of 12; Ragpelt 7
+of 25 and Roach Guts 0 of 10; Choir Cloaks 0 of 16) and in Free mode, no console errors.
