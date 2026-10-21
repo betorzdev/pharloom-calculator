@@ -534,7 +534,16 @@ function lyingPurse(c) {
   }
   return null;
 }
-for (const sec of C.sections('relics.ts')) for (const it of sec.items) extra(RELIC_KIND[sec.name] || fail(`relic kind ${sec.name}`), it);
+/* The Sacred Cylinder (Librarian Melody Cylinder) is the Vaultkeeper's Melody, one of the three the
+   ending asks for: it's the Melodies' mark (CO.PIECES, HasMelodyLibrarian, on at first), not a Psalm
+   Cylinder's too. The run stops if the completionist no longer names it. */
+const MELODY_RELIC = 'Librarian Melody Cylinder';
+let melodyRelicSeen = false;
+for (const sec of C.sections('relics.ts')) for (const it of sec.items) {
+  if (it.parsingInfo && it.parsingInfo.internalId === MELODY_RELIC) { melodyRelicSeen = true; continue; }
+  extra(RELIC_KIND[sec.name] || fail(`relic kind ${sec.name}`), it);
+}
+if (!melodyRelicSeen) fail(`relics.ts no longer names ${MELODY_RELIC}: drop MELODY_RELIC`);
 for (const it of C.load('mossberries.ts')) extra('mossberry', it);
 for (const it of C.load('silkeaters.ts')) extra('silkeater', it);
 /* The Heart Memento isn't found anywhere: it's whichever of the four Old Hearts The Old Hearts

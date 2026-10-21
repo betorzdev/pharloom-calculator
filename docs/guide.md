@@ -464,7 +464,8 @@ leaves those off.
 - **Collectibles**: Memory Lockets, Lost Fleas, the Old Hearts, the Melodies and the Everbloom
   (on at first), then, off at first, the relics, one switch for the six (Bone Scrolls, Weaver
   Effigies, Choral Commandments, Rune Harps, Psalm Cylinders, the Arcane Egg) whose round caret
-  opens them one by one, Mementos (the seven found somewhere: the Heart Memento is whichever Old
+  opens them one by one (the Sacred Cylinder is the Vaultkeeper's Melody, so it's among the Melodies
+  only), Mementos (the seven found somewhere: the Heart Memento is whichever Old
   Heart The Old Hearts doesn't take, so it has no mark) and the Bellhome's furnishings (the five
   bought, and the Materium, Farsight and Crawbell built there once found: their Key items marks
   are where each lies). Two things move in Act 3 if you don't have them yet, and have a second
